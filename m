@@ -2,78 +2,161 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0074D1D5285
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:53:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9009C1D5287
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:53:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4kSXOKDQhu866v1F/Q+vO3UArqZ6KT1F3kSiKDZL1bA=; b=L7lqX3kxfnuTdS
-	v2jxhlfpgPhNIiwSVe6UCcexhL5vFT3fWpZNAgRlsj9Mt7DFXgCkFsPwsffXGEwhaGrAdN/2AWPYC
-	9yrwXesirOfUP2c1XqmUnWLR48PPZvkfDvXt5A7e8PyignUKu+aEy2zHO3YCl1skWyB0T7LWMD1Dr
-	YMPt17aSX6egzLykdmT3w+ongOJRaXqJYo6y+QwbzHZiWHVKj0ZXAdRBh+197Qg2xPXVzZvU0HeZl
-	sED6IfGF5KIN3tWYd4cMr2RZT9uVsVfLsjX8tSwVeSCwsYQG8qAbYlByTd6NcIfiWwZubwElTnE7r
-	tl5AftucYaS3qulUwCXw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IglG9xFzULaD6QpiCOHA5EOSZSkUCRxEOb7mxwPiyZo=; b=Khso3o6ftkSPa5
+	KYMAM3b1B7uI5teQFFyFvIQDWwIRu4WuGNOwLlaqYubusDpB0W+dsYbNFOR9Z17j8so+NPk0fUx8Q
+	o2yiT0/6+7e+HnkB5idwjZmR3pdNQlNx31Ek8ReuNTJ5+2+0P4NKazXG0vP0QUZ+cj3n2OfsYilwO
+	lbiOj2XoAFn3jGEUZq3zQx/BrRUDyNr28fRXn4jH8SgmG/Exe5UJ6+P2dWh23vYPWThRytY163fnn
+	PrxG7hXxyTtDCHZhszGmWgDeQ4OTsY9IYeFGxwbI0/ZEKUQn8DVoELhLNybDSsOuw4hPvYwMlCl0g
+	6JfXuR2bMn1As7aZSaOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbhg-0000Ll-0T; Fri, 15 May 2020 14:52:48 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1jZbhy-0000WG-Mo; Fri, 15 May 2020 14:53:06 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbhU-0000Ki-AX
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 14:52:39 +0000
-Received: by mail-io1-xd42.google.com with SMTP id j8so2955766iog.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 07:52:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vydHQTzj3c686TmTMHL1QqAtMRNRd4XB3MteF3kHgAs=;
- b=UZ8+sJI+p0f3is3kkpc69G6irKX6PH1tH/sgzavBs66A67D3Q6q/lwNTuPV3zb6U68
- kqyrxtvEIkD7xcxvxSbLBvuowF52WJLwD3Ss7hSzlm66kdDyGCH1rpB63yzx+J5uHGcT
- ZEo3HnRA6MgTbSPk0O2J8ZLHIDgWLFLcxrCJLMU7oRNLQNXO9B9bgaIzsaINvzb92+2e
- HYHMjemU7Or55Oo6WkBlhT7O8JQd5nisDmoJ4k31ZH8J+2mulyDIfylPXwIxqZF1t8db
- +k+i08xW0fNlzPv6B0FXdlzkwrIobKrR06ywlxbxIX+C4SkvQTd0iuquFfGoKywD3Mmg
- 6wiA==
+ id 1jZbha-0000Le-1p; Fri, 15 May 2020 14:52:46 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u16so2975384wmc.5;
+ Fri, 15 May 2020 07:52:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=eoxFeq5TLT+SokX6TFYLhXxdTlFVmV6sKuahT+qT+1w=;
+ b=MVqpK+Ts1YcGSjzm8abeKTgpcdccOfZ6J0q0q0TMw+dXKUt+z5PW8luwO9INoNjADB
+ eN+vGKYqSf+9UdtiGa6djDSO72Pkr9kTGxKX3Tsw4lbyi36A+LwUhvk7vK5SeMsta95q
+ 6WtV9PhKoiQG28iYRMWa3QHQkoytk0CldOIaaAlW/n+vNYITuS69ETdUFtYL0ICSBnxB
+ 8Ngj4Ur/E1+AolFhRgW+pL0+msL5ip1zPHphY8wtaBnzb/E+Q4nSASZmpytu74LJrBNt
+ 19vq4aS8hSB0qk4Iovxy720aHSHpGjoihCMeD3XhUF+VngquHSayxPQ+2x2VnOSE+0w3
+ Xp9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vydHQTzj3c686TmTMHL1QqAtMRNRd4XB3MteF3kHgAs=;
- b=khLadP1FjcxIAd/u7jBkUODxmtMDm2nsERDSQsdV51O1m0AZsuJ3J17JF7bpODg/LQ
- 7wNsCJJMCXQPzkLJ2Zhis4jgna1xG2DFxymDpmpYIvUSe3k5z9wr+C0Jgnmh+d3WXs09
- eMm5UpSKiW0ZQjloIaV0fKM9HFJHFYrctr4S1tBNlLl3D+HymgUiHBJZEc96qjWkS9My
- qCDpihQ3ABMU0Qr0AzqbtKleElEqDXLBWOjfFqEx9RA6/cNUE4RLJz4H/zukWLKxeI34
- fs6YQ6rzieFBzBzO3vEb8vwRsJxUcaMdxV5W8h3PQcnrRl8h8VZx6HK2STJVQVey45ov
- hVCQ==
-X-Gm-Message-State: AOAM531nkI2an/LEtLys45//3vUPHr4hifEJcTUlaLijY9Y5EEWUHtYD
- ngLtFay7n4iNH24V05Rj2/JF+CrTnVzrz7s2Cx9W5g==
-X-Google-Smtp-Source: ABdhPJyzKkiEkV8gyGv78TG2faQUaA8S/y2Gi7ZBEVgHXbh3X8djjspFmWdU7Sbf0WvFrTABd+a2aIxBe6daar4yk9U=
-X-Received: by 2002:a02:2708:: with SMTP id g8mr3682319jaa.52.1589554354623;
- Fri, 15 May 2020 07:52:34 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=eoxFeq5TLT+SokX6TFYLhXxdTlFVmV6sKuahT+qT+1w=;
+ b=emTqaWUxGkAYzDDCByZRSocR5wNkzzwtmlJszTO1zS/t9LrMCDVXTCT/p5immxvuB8
+ +06lGmXNM60Ua9zOCVXRir7dcf3Ric+O6yzFRAzl0JvHHo2ucNgi4CfKuDsPShJN0riq
+ Gf/Dkh5qLXWJRsXrLrr71aSZkiF+8JV/vaRfoA8ZwuCKgHK2E6QLjmSnmf+EsVow90Lv
+ 2Q4vqAYBQ8JqXTT8DxBz5iC0WbkLh9M5L57fMLjQuLDWsJdOEfah2//Rs+2VgJlrSbYW
+ duMALEVEwXDhaVBSzqBaygU1bIiJ5xpJRfCaobRQcx5hTnZ7N7rKMvtuA+Q5jV0HiivW
+ m3ug==
+X-Gm-Message-State: AOAM531xmjPrvsiRGWu7QL5Sl8HByD5mtIlI3SO74dhbR5Vx7EeauqZ0
+ 0hggf5GR9ezj3wkw8dR7O7Qosu8X
+X-Google-Smtp-Source: ABdhPJxxxs03jVh3mWST+aDn+nvjzfZsyCNb9Nz4QwjUGJKv0Q0oGw2SLHjMvT269ePaabKESh3mrA==
+X-Received: by 2002:a1c:6706:: with SMTP id b6mr4154532wmc.54.1589554359900;
+ Fri, 15 May 2020 07:52:39 -0700 (PDT)
+Received: from ziggy.stardust ([213.195.113.243])
+ by smtp.gmail.com with ESMTPSA id v2sm4084702wrn.21.2020.05.15.07.52.38
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 15 May 2020 07:52:39 -0700 (PDT)
+Subject: Re: [PATCH -next] soc: mediatek: Missing platform_device_unregister()
+ on error in mtk_mmsys_probe()
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ Wei Yongjun <weiyongjun1@huawei.com>
+References: <20200506141317.119537-1-weiyongjun1@huawei.com>
+ <923a48d8-eb9e-2729-a4be-dad63a6df28a@collabora.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <490d37e9-3661-ef4b-75bc-8ca7523e5bde@gmail.com>
+Date: Fri, 15 May 2020 16:52:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200514105915.27516-1-saiprakash.ranjan@codeaurora.org>
- <20200514180055.GA29384@xps15>
- <2c932d57288508cc72a6ee323cf5595e@codeaurora.org>
-In-Reply-To: <2c932d57288508cc72a6ee323cf5595e@codeaurora.org>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Fri, 15 May 2020 08:52:23 -0600
-Message-ID: <CANLsYkxun2EWGeLU42ShbqkJMtCTh+Q9L3t=CXQR+-2zVuuJYg@mail.gmail.com>
-Subject: Re: [PATCH] coresight: etm4x: Add support to disable trace unit power
- up
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+In-Reply-To: <923a48d8-eb9e-2729-a4be-dad63a6df28a@collabora.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_075236_366832_9BA6B300 
-X-CRM114-Status: GOOD (  28.42  )
+X-CRM114-CacheID: sfid-20200515_075242_147097_4C9C3E05 
+X-CRM114-Status: GOOD (  17.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [matthias.bgg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,154 +176,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Coresight ML <coresight@lists.linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Tingwei Zhang <tingwei@codeaurora.org>,
- Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mike Leach <mike.leach@linaro.org>
+Cc: kernel-janitors@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 14 May 2020 at 12:39, Sai Prakash Ranjan
-<saiprakash.ranjan@codeaurora.org> wrote:
->
-> Hi Mathieu,
->
-> On 2020-05-14 23:30, Mathieu Poirier wrote:
-> > Good morning Sai,
-> >
-> > On Thu, May 14, 2020 at 04:29:15PM +0530, Sai Prakash Ranjan wrote:
-> >> From: Tingwei Zhang <tingwei@codeaurora.org>
-> >>
-> >> On some Qualcomm Technologies Inc. SoCs like SC7180, there
-> >> exists a hardware errata where the APSS (Application Processor
-> >> SubSystem)/CPU watchdog counter is stopped when ETM register
-> >> TRCPDCR.PU=1.
-> >
-> > Fun stuff...
-> >
->
-> Yes :)
->
-> >> Since the ETMs share the same power domain as
-> >> that of respective CPU cores, they are powered on when the
-> >> CPU core is powered on. So we can disable powering up of the
-> >> trace unit after checking for this errata via new property
-> >> called "qcom,tupwr-disable".
-> >>
-> >> Signed-off-by: Tingwei Zhang <tingwei@codeaurora.org>
-> >> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> >> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> >
-> > Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> > Signed-off-by: Tingwei Zhang <tingwei@codeaurora.org>
-> >
->
-> Tingwei is the author, so if I understand correctly, his signed-off-by
-> should appear first, am I wrong?
 
-It's a gray area and depends on who's code is more prevalent in the
-patch.  If Tingwei wrote the most of the code then his name is in the
-"from:" section, yours as co-developer and he signs off on it (as I
-suggested).  If you did most of the work then it is the opposite.
-Adding a Co-developed and a signed-off with the same name doesn't make
-sense.
 
->
-> >> ---
-> >>  .../devicetree/bindings/arm/coresight.txt     |  6 ++++
-> >>  drivers/hwtracing/coresight/coresight-etm4x.c | 29
-> >> ++++++++++++-------
-> >
-> > Please split in two patches.
-> >
->
-> Sure, I will split the dt-binding into separate patch, checkpatch did
-> warn.
+On 06/05/2020 19:24, Enric Balletbo i Serra wrote:
+> Hi Wei,
+> 
+> Thank you for your patch.
+> 
+> On 6/5/20 16:13, Wei Yongjun wrote:
+>> Add the missing platform_device_unregister() before return
+>> from mtk_mmsys_probe() in the error handling case.
+>>
+>> Fixes: 667c769246b0 ("soc / drm: mediatek: Fix mediatek-drm device probing")
+>> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+> 
+> Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+> 
 
-And you still sent me the patch...  I usually run checkpatch before
-all the submissions I review and flatly ignore patches that return
-errors.  You got lucky...
+applied to v5.7-next/soc
 
->
-> >>  2 files changed, 25 insertions(+), 10 deletions(-)
-> >>
-> >> diff --git a/Documentation/devicetree/bindings/arm/coresight.txt
-> >> b/Documentation/devicetree/bindings/arm/coresight.txt
-> >> index 846f6daae71b..d2030128fe46 100644
-> >> --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> >> +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> >> @@ -108,6 +108,12 @@ its hardware characteristcs.
-> >>      * arm,cp14: must be present if the system accesses ETM/PTM
-> >> management
-> >>        registers via co-processor 14.
-> >>
-> >> +    * qcom,tupwr-disable: boolean. Indicates that trace unit power up
-> >> can
-> >> +      be disabled on Qualcomm Technologies Inc. systems where ETMs are
-> >> in
-> >> +      the same power domain as their CPU cores. This property is
-> >> required
-> >> +      to identify such systems with hardware errata where the CPU
-> >> watchdog
-> >> +      counter is stopped when TRCPDCR.PU=1.
-> >> +
-> >
-> > I think something like "qcom,skip-power-up" would be clearer.
-> >
-> > Also, a better choice of words is that TRCPDCR.PU does not have to be
-> > set on
-> > Qualcomm...
-> >
->
-> Yes "qcom,skip-power-up" is a lot better, thanks. Also will use
-> something as
-> you suggested for description.
->
-> >>  * Optional property for TMC:
-> >>
-> >>      * arm,buffer-size: size of contiguous buffer space for TMC ETR
-> >> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c
-> >> b/drivers/hwtracing/coresight/coresight-etm4x.c
-> >> index fb0f5f4f3a91..6886b44f6947 100644
-> >> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> >> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> >> @@ -104,6 +104,11 @@ struct etm4_enable_arg {
-> >>      int rc;
-> >>  };
-> >>
-> >> +static inline bool etm4_can_disable_tupwr(struct device *dev)
-> >> +{
-> >> +    return fwnode_property_present(dev_fwnode(dev),
-> >> "qcom,tupwr-disable");
-> >> +}
-> >> +
-> >
-> > Please call fwnode_property_present() at initialisation time to set a
-> > new
-> > drvdata::skip_power_up variable.  From there just switch on that in
-> > etm4_enable/disable_hw().
-> >
->
-> Will do, thanks.
->
-> Thanks,
-> Sai
->
-> --
-> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a
-> member
-> of Code Aurora Forum, hosted by The Linux Foundation
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Thanks!
+
+>> ---
+>>  drivers/soc/mediatek/mtk-mmsys.c | 4 +++-
+>>  1 file changed, 3 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/soc/mediatek/mtk-mmsys.c b/drivers/soc/mediatek/mtk-mmsys.c
+>> index 05e322c9c301..05ce4cb464b0 100644
+>> --- a/drivers/soc/mediatek/mtk-mmsys.c
+>> +++ b/drivers/soc/mediatek/mtk-mmsys.c
+>> @@ -312,8 +312,10 @@ static int mtk_mmsys_probe(struct platform_device *pdev)
+>>  
+>>  	drm = platform_device_register_data(&pdev->dev, "mediatek-drm",
+>>  					    PLATFORM_DEVID_AUTO, NULL, 0);
+>> -	if (IS_ERR(drm))
+>> +	if (IS_ERR(drm)) {
+>> +		platform_device_unregister(clks);
+>>  		return PTR_ERR(drm);
+>> +	}
+>>  
+>>  	return 0;
+>>  }
+>>
+>>
+>>
+>>
+>> _______________________________________________
+>> linux-arm-kernel mailing list
+>> linux-arm-kernel@lists.infradead.org
+>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
