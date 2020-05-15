@@ -2,60 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1A191D440E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 05:29:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12AD01D4416
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 05:36:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x8xGQHhdpN1g82r9R5z5VizV9n45FRxfmwPVHpg1cSs=; b=MdRGgxJBqztFpa
-	YbJ7zLkaf+QIu8vlCA7RYRFsTR4m/GC8Hd9E5/ieqfTpuFchF+8GdMaXI9xQOGEjkLWjItFprWjy7
-	KWMmH10SUtC8y7Eh5TctNZ6Ltd0woS0q/77CQcj4z4GP5rLy7Ri/XCqGYF9Nk7rYB4elx2KkAq/LE
-	LFB3XYwg6/tSzcT9s5XrMDAYO+TS3Vi9sWnCSRllin44eHibcXi9Yh91wFom7Xbn4sa+GupaGBOQH
-	wpKWRTZYPr0mD8iwoOVz0lyLuTuNRW5y9VW227dKrOwFb5TPFV8ev8TEKzwqAqKOa3p8zpZh2DYtm
-	G/7+loVNNP0ErOcVkREg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=27+U41GSBN7DEeRYL3k6Dr30toLVSeNmxfsb1q9zDS8=; b=BTWY3j8ildoKXy
+	IJaIn5eP9XI/dZ7ccOO4zZ/Jxjm0mAHIl4J2jU9yTOgz/1/aW+qK6xwMj1MlY4yh7PH5Rw08CdBEo
+	hg3FqF5LZw85YgvSzcLrf/8y3PU1j0fVQlSndugoUTE1a4edB71VhDNZW+qRTvvGs3TAosNGzwyq0
+	iBgGQ90svZ0FzMnbWo7m6aPZaE7rCYtVzlWJ6hfgI/3T0LgQYV4FrXtX/xJ6STCnHyiHuoXCgnkij
+	G1TLiGJyaX4XwS3ldc+4AIvSHtTrxFDHlqY+4Ns9XgxWk9/O1hEMseqD6+swGJbiI+MxeFkkaQMkk
+	MouIBrHr/VOzjUuNuI4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZR1r-0001Jo-Oa; Fri, 15 May 2020 03:28:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZR1k-0001HD-I3
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 03:28:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 863611042;
- Thu, 14 May 2020 20:28:44 -0700 (PDT)
-Received: from [192.168.0.129] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D7DF3F68F;
- Thu, 14 May 2020 20:28:41 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V2] arm64/cpuinfo: Move HWCAP name arrays alongside their
- bit definitions
-To: Will Deacon <will@kernel.org>
-References: <1588858150-26823-1-git-send-email-anshuman.khandual@arm.com>
- <20200513150405.GS21779@arm.com>
- <0999fa28-3ee7-3f02-4def-a0c6013ec6dd@arm.com>
- <20200514073613.GB4280@willie-the-truck>
-Message-ID: <8ddd0ca5-07c9-3a99-2ec6-4a201725ebe8@arm.com>
-Date: Fri, 15 May 2020 08:58:05 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1jZR8f-0006eI-3n; Fri, 15 May 2020 03:35:57 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZR8T-0006de-P6; Fri, 15 May 2020 03:35:49 +0000
+X-UUID: 6f46e8b64367460499e477bf3da51099-20200514
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=VxhYLuYYOUOPauVln+W+RafLc/0dBm6EzZm2DoQqFmU=; 
+ b=cGanwmtltlb50v9nBDJldJMBTElcXI9IYhedmxWhkOk8RecTuAYUla7kWlH0wb8KE5XwkKcIUckE8BlrQQIve9vWoQ0crt1o5jwLEckqKa58y01eKjskh5FDELLjP5zF7uLWcDWB1BownmhJz0BpzZlabHEkxbOMimrIH6JucWU=;
+X-UUID: 6f46e8b64367460499e477bf3da51099-20200514
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <weiyi.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2141509862; Thu, 14 May 2020 19:35:42 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 14 May 2020 20:35:36 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 15 May 2020 11:35:22 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 15 May 2020 11:35:24 +0800
+Message-ID: <1589513724.16252.3.camel@mtksdaap41>
+Subject: Re: [PATCH v14 03/11] soc: mediatek: Add basic_clk_name to
+ scp_power_data
+From: Weiyi Lu <weiyi.lu@mediatek.com>
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Date: Fri, 15 May 2020 11:35:24 +0800
+In-Reply-To: <1589176947.21832.9.camel@mtksdaap41>
+References: <1588752963-19934-1-git-send-email-weiyi.lu@mediatek.com>
+ <1588752963-19934-4-git-send-email-weiyi.lu@mediatek.com>
+ <7ad67855-a3f8-f979-8849-3765bd8289d3@collabora.com>
+ <1589176947.21832.9.camel@mtksdaap41>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20200514073613.GB4280@willie-the-truck>
-Content-Language: en-US
+X-TM-SNTS-SMTP: AE0EB50745E17FFC46BA5D313A2DD7F2096360A4F9CCEF4C7F6FE617EB23E18B2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_202848_693491_C10D1122 
-X-CRM114-Status: GOOD (  19.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200514_203545_823870_696B0EBA 
+X-CRM114-Status: GOOD (  28.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,143 +87,254 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Ard Biesheuvel <ardb@kernel.org>, Mark Brown <broonie@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: James Liao <jamesjj.liao@mediatek.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com, Rob
+ Herring <robh@kernel.org>, Enric Balletbo Serra <eballetbo@gmail.com>,
+ linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Sascha Hauer <kernel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 05/14/2020 01:06 PM, Will Deacon wrote:
-> On Thu, May 14, 2020 at 07:14:58AM +0530, Anshuman Khandual wrote:
->> On 05/13/2020 08:34 PM, Dave Martin wrote:
->>> On Thu, May 07, 2020 at 06:59:10PM +0530, Anshuman Khandual wrote:
->>>> diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
->>>> index 0f00265248b5..589ac02e1ddd 100644
->>>> --- a/arch/arm64/include/asm/hwcap.h
->>>> +++ b/arch/arm64/include/asm/hwcap.h
->>>> @@ -8,18 +8,27 @@
->>>>  #include <uapi/asm/hwcap.h>
->>>>  #include <asm/cpufeature.h>
->>>>  
->>>> +#define COMPAT_HWCAP_SWP	(1 << 0)
->>>>  #define COMPAT_HWCAP_HALF	(1 << 1)
->>>>  #define COMPAT_HWCAP_THUMB	(1 << 2)
->>>> +#define COMPAT_HWCAP_26BIT	(1 << 3)
->>>>  #define COMPAT_HWCAP_FAST_MULT	(1 << 4)
->>>> +#define COMPAT_HWCAP_FPA	(1 << 5)
->>>>  #define COMPAT_HWCAP_VFP	(1 << 6)
->>>>  #define COMPAT_HWCAP_EDSP	(1 << 7)
->>>> +#define COMPAT_HWCAP_JAVA	(1 << 8)
->>>> +#define COMPAT_HWCAP_IWMMXT	(1 << 9)
->>>> +#define COMPAT_HWCAP_CRUNCH	(1 << 10)
->>>> +#define COMPAT_HWCAP_THUMBEE	(1 << 11)
->>>>  #define COMPAT_HWCAP_NEON	(1 << 12)
->>>>  #define COMPAT_HWCAP_VFPv3	(1 << 13)
->>>> +#define COMPAT_HWCAP_VFPV3D16	(1 << 14)
->>>>  #define COMPAT_HWCAP_TLS	(1 << 15)
->>>>  #define COMPAT_HWCAP_VFPv4	(1 << 16)
->>>>  #define COMPAT_HWCAP_IDIVA	(1 << 17)
->>>>  #define COMPAT_HWCAP_IDIVT	(1 << 18)
->>>>  #define COMPAT_HWCAP_IDIV	(COMPAT_HWCAP_IDIVA|COMPAT_HWCAP_IDIVT)
->>>> +#define COMPAT_HWCAP_VFPD32	(1 << 19)
->>>>  #define COMPAT_HWCAP_LPAE	(1 << 20)
->>>>  #define COMPAT_HWCAP_EVTSTRM	(1 << 21)
->>>
->>> With the possible exception of SWP (does the swp emulation allow us to
->>> report this as supported?), I think all these weren't mentioned because
->>> they aren't included in ARMv8 and so can never be reported.
->>>
->>> If we find ourselves reporting them, there's a bug somewhere.
->>>
->>> So, can we just default all obsolete string entries to NULL?
->>>
->>> When generating the cpuinfo strings we could WARN and just emit an empty
->>> string for that hwcap.
->>
->> All these above will be a change in the existing user visible behavior on
->> the system and this patch never intended to create one.
+On Mon, 2020-05-11 at 14:02 +0800, Weiyi Lu wrote:
+> On Wed, 2020-05-06 at 23:01 +0200, Enric Balletbo i Serra wrote:
+> > Hi Weiyi,
+> > 
+> > Thank you for your patch.
+> > 
+> > On 6/5/20 10:15, Weiyi Lu wrote:
+> > > Try to stop extending the clk_id or clk_names if there are
+> > > more and more new BASIC clocks. To get its own clocks by the
+> > > basic_clk_name of each power domain.
+> > > And then use basic_clk_name strings for all compatibles, instead of
+> > > mixing clk_id and clk_name.
+> > > 
+> > > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> > > Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+> > > ---
+> > >  drivers/soc/mediatek/mtk-scpsys.c | 134 ++++++++++++--------------------------
+> > >  1 file changed, 41 insertions(+), 93 deletions(-)
+> > > 
+> > > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> > > index f669d37..c9c3cf7 100644
+> > > --- a/drivers/soc/mediatek/mtk-scpsys.c
+> > > +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> > > @@ -78,34 +78,6 @@
+> > >  #define PWR_STATUS_HIF1			BIT(26)	/* MT7622 */
+> > >  #define PWR_STATUS_WB			BIT(27)	/* MT7622 */
+> > >  
+> > > -enum clk_id {
+> > > -	CLK_NONE,
+> > > -	CLK_MM,
+> > > -	CLK_MFG,
+> > > -	CLK_VENC,
+> > > -	CLK_VENC_LT,
+> > > -	CLK_ETHIF,
+> > > -	CLK_VDEC,
+> > > -	CLK_HIFSEL,
+> > > -	CLK_JPGDEC,
+> > > -	CLK_AUDIO,
+> > > -	CLK_MAX,
+> > > -};
+> > > -
+> > > -static const char * const clk_names[] = {
+> > > -	NULL,
+> > > -	"mm",
+> > > -	"mfg",
+> > > -	"venc",
+> > > -	"venc_lt",
+> > > -	"ethif",
+> > > -	"vdec",
+> > > -	"hif_sel",
+> > > -	"jpgdec",
+> > > -	"audio",
+> > > -	NULL,
+> > > -};
+> > > -
+> > >  #define MAX_CLKS	3
+> > >  
+> > >  /**
+> > > @@ -116,7 +88,7 @@ enum clk_id {
+> > >   * @sram_pdn_bits: The mask for sram power control bits.
+> > >   * @sram_pdn_ack_bits: The mask for sram power control acked bits.
+> > >   * @bus_prot_mask: The mask for single step bus protection.
+> > > - * @clk_id: The basic clocks required by this power domain.
+> > > + * @basic_clk_name: The basic clocks required by this power domain.
+> > >   * @caps: The flag for active wake-up action.
+> > >   */
+> > >  struct scp_domain_data {
+> > > @@ -126,7 +98,7 @@ struct scp_domain_data {
+> > >  	u32 sram_pdn_bits;
+> > >  	u32 sram_pdn_ack_bits;
+> > >  	u32 bus_prot_mask;
+> > > -	enum clk_id clk_id[MAX_CLKS];
+> > > +	const char *basic_clk_name[MAX_CLKS];
+> > 
+> > I only reviewed v13, so sorry if this was already discussed. I am wondering if
+> > would be better take advantage of the devm_clk_bulk_get() function instead of
+> > kind of reimplementing the same, something like this
+> > 
+> > 	const struct clk_bulk_data *basic_clocks;
+> > 
 > 
-> Why is it a change? We've never reported e.g. "java" on an arm64 kernel, so
-
-We already have "java" defined in existing compat_hwcap_str[] array even
-though it might never get set in compat_elf_hwcap. AFAICS, compat_elf_hwcap
-will have the following capabilities set (at the most).
-
-Via COMPAT_ELF_HWCAP_DEFAULT
-
-01.  COMPAT_HWCAP_HALF
-02.  COMPAT_HWCAP_THUMB
-03.  COMPAT_HWCAP_FAST_MULT
-04.  COMPAT_HWCAP_EDSP
-05.  COMPAT_HWCAP_TLS
-06.  COMPAT_HWCAP_IDIV
-07.  COMPAT_HWCAP_LPAE
-
-Via setup_elf_hwcaps(compat_elf_hwcaps) <-- setup_cpu_features()
-
-8.  COMPAT_HWCAP_NEON
-9.  COMPAT_HWCAP_VFPv4
-10. COMPAT_HWCAP_VFP
-11. COMPAT_HWCAP_VFPv3
-
-Via arch_timer_set_evtstrm_feature()
-
-12. COMPAT_HWCAP_EVTSTRM
-
-The code exists for "java" string to be displayed with /proc/cpuinfo but it
-may never get triggered as compat_elf_hwcap will never have JAVA capability
-unless there is a bug as you had rightly mentioned.
-
-The current patch preserves status quo without fixing the underlying problem
-("java" should have been dropped from possible /proc/cpuinfo display strings
-as it can never happen). It tries to formalize what is already being done.
-
-arch/arm64/kernel/cpuinfo.c
-
-static int c_show(struct seq_file *m, void *v)
-{
-	....
-#ifdef CONFIG_COMPAT
-	for (j = 0; compat_hwcap_str[j]; j++)
-		if (compat_elf_hwcap & (1 << j))
-		seq_printf(m, " %s", compat_hwcap_str[j]);
-	....
-#endif
-	....
-}
-
-When compat_hwcap_str[j] == "java" just define COMPAT_HWCAP_JAVA as (1 << j).
-
-> I agree with Dave that we shouldn't be adding this string. If it /ever/ ends
-> up in userspace it's because something has gone horribly wrong. NULL would
-> be much better. Couldn't you achieve that by simply omitting these entries?
-> e.g. deleting things like:
+> I thought it should be const struct clk_bulk_data
+> basic_clocks[MAX_CLKS]; instead of const struct clk_bulk_data
+> *basic_clocks; in struct scp_domain_data data type
 > 
-> 	[COMPAT_KERNEL_HWCAP(JAVA)]     = "java",
+> > >  	u8 caps;
+> > >  };
+> > >  
+> > > @@ -411,12 +383,19 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+> > >  	return ret;
+> > >  }
+> > >  
+> > > -static void init_clks(struct platform_device *pdev, struct clk **clk)
+> > > +static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
+> > > +			const char * const *name)
+> > >  {
+> > >  	int i;
+> > >  
+> > > -	for (i = CLK_NONE + 1; i < CLK_MAX; i++)
+> > > -		clk[i] = devm_clk_get(&pdev->dev, clk_names[i]);
+> > > +	for (i = 0; i < MAX_CLKS && name[i]; i++) {
+> > > +		clk[i] = devm_clk_get(&pdev->dev, name[i]);
+> > > +
+> > > +		if (IS_ERR(clk[i]))
+> > > +			return PTR_ERR(clk[i]);
+> > > +	}
+> > 
+> > You will be able to remove this function, see below ...
+> > 
+> > > +
+> > > +	return 0;
+> > >  }
+> > >  
+> > >  static struct scp *init_scp(struct platform_device *pdev,
+> > > @@ -426,9 +405,8 @@ static struct scp *init_scp(struct platform_device *pdev,
+> > >  {
+> > >  	struct genpd_onecell_data *pd_data;
+> > >  	struct resource *res;
+> > > -	int i, j;
+> > > +	int i, ret;
+> > >  	struct scp *scp;
+> > > -	struct clk *clk[CLK_MAX];
+> > >  
+> > >  	scp = devm_kzalloc(&pdev->dev, sizeof(*scp), GFP_KERNEL);
+> > >  	if (!scp)
+> > > @@ -481,8 +459,6 @@ static struct scp *init_scp(struct platform_device *pdev,
+> > >  
+> > >  	pd_data->num_domains = num;
+> > >  
+> > > -	init_clks(pdev, clk);
+> > > -
+> > >  	for (i = 0; i < num; i++) {
+> > >  		struct scp_domain *scpd = &scp->domains[i];
+> > >  		struct generic_pm_domain *genpd = &scpd->genpd;
+> > > @@ -493,17 +469,9 @@ static struct scp *init_scp(struct platform_device *pdev,
+> > >  
+> > >  		scpd->data = data;
+> > >  
+> > > -		for (j = 0; j < MAX_CLKS && data->clk_id[j]; j++) {
+> > > -			struct clk *c = clk[data->clk_id[j]];
+> > > -
+> > > -			if (IS_ERR(c)) {
+> > > -				dev_err(&pdev->dev, "%s: clk unavailable\n",
+> > > -					data->name);
+> > > -				return ERR_CAST(c);
+> > > -			}
+> > > -
+> > > -			scpd->clk[j] = c;
+> > > -		}
+> > > +		ret = init_basic_clks(pdev, scpd->clk, data->basic_clk_name);
+> > > +		if (ret)
+> > > +			return ERR_PTR(ret);
+> > 
+> > Just call:
+> > 
+> > 	ret = devm_clk_bulk_get(&pdev->dev, ARRAY_SIZE(basic_clocks),
+> > 				data->basic_clocks);
+> > 	if (ret)
+> > 		return ERR_PTR(ret);
+> > 
+> > >  
+> > >  		genpd->name = data->name;
+> > >  		genpd->power_off = scpsys_power_off;
+> > > @@ -560,7 +528,6 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+> > >  		.ctl_offs = SPM_CONN_PWR_CON,
+> > >  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_CONN_M |
+> > >  				 MT2701_TOP_AXI_PROT_EN_CONN_S,
+> > > -		.clk_id = {CLK_NONE},
+> > >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+> > >  	},
+> > >  	[MT2701_POWER_DOMAIN_DISP] = {
+> > > @@ -568,7 +535,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+> > >  		.sta_mask = PWR_STATUS_DISP,
+> > >  		.ctl_offs = SPM_DIS_PWR_CON,
+> > >  		.sram_pdn_bits = GENMASK(11, 8),
+> > > -		.clk_id = {CLK_MM},
+> > > +		.basic_clk_name = {"mm"},
+> > 
+> > 		.basic_clocks[] = {
+> > 			{ .id = "mm" },
+> > 		};
+> > 
 > 
-> completely (including the COMPAT_HWCAP_JAVA definition)?
+> Those basic clocks without given a name (name: null) would get incorrect
+> clock via clk_bulk_get(...) due to 
+> 
+> /**
+>  * of_parse_clkspec() - Parse a DT clock specifier for a given device
+> node
+>  * @np: device node to parse clock specifier from
+>  * @index: index of phandle to parse clock out of. If index < 0, @name
+> is used
+>  * @name: clock name to find and parse. If name is NULL, the index is
+> used
+> 
+> And the index is 0 here in this callstack
+> 
+> I guess something need to be improved before we use the clk_bulk_ APIs.
+> 
 
-Right, dropping these above will fix the existing underlying problem. But the
-only point here is should that be done in this patch (which keeps everything
-as is) or with a separate patch fixing an already existing problem.
+Hi Enric,
+
+According to the result above, is it necessary to change the APIs or
+maybe I should send the next version v15 first to fix other problems you
+mentioned? Many thanks.
 
 > 
->> Hence, I will just defer this to maintainers on whether we should change
->> existing /proc/cpuinfo output (including non-practically-possible ones on
->> ARMv8) or even treat swap emulation as SWP.
+> > >  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_MM_M0,
+> > >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+> > >  	},
+> > > @@ -578,7 +545,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+> > >  		.ctl_offs = SPM_MFG_PWR_CON,
+> > >  		.sram_pdn_bits = GENMASK(11, 8),
+> > >  		.sram_pdn_ack_bits = GENMASK(12, 12),
+> > > -		.clk_id = {CLK_MFG},
+> > > +		.basic_clk_name = {"mfg"},
+> > 
+> > 		.basic_clocks[] = {
+> > 			{ .id = "mfg" },
+> > 		};
+> > 
+> > >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+> > >  	},
+> > >  	[MT2701_POWER_DOMAIN_VDEC] = {
+> > > @@ -587,7 +554,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+> > >  		.ctl_offs = SPM_VDE_PWR_CON,
+> > >  		.sram_pdn_bits = GENMASK(11, 8),
+> > >  		.sram_pdn_ack_bits = GENMASK(12, 12),
+> > > -		.clk_id = {CLK_MM},
+> > > +		.basic_clk_name = {"mm"},
+> > 
+> > ...
+> > 
+> > [snip]
 > 
-> SWP is fine because we emulate it and so userspace can use it. Removing that
-> *would* be a change in behaviour. I don't think the compat ABI is broken
-> here, so please don't change it without good reason.
-
-Understood, this patch was not trying to change the compat ABI. SWP just gets
-carried over as is like before.
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
