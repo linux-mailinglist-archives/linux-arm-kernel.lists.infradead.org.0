@@ -2,55 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C135A1D4CBA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:38:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9B231D4CBB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:38:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zPTdojMdo1VR+mCFneIcv1hDKK+7FXcLPXZG3uwQcfI=; b=J3mu7vxMj+hR4O
-	Xmgx1E5rZ+SOHd6DRstFmsd6PUr8fhw6CE+oqALsAwEvRXZmkPXaE9dx4/TVlXgFwRX/SJScDZ/et
-	jsYKmNvmfeLOgI5Ys2dMvQLb7Jhc2dWvRJFtjxa8czeHlTn6Ij3PICxqzjh+Oxk/BcZvI5TshlK5Z
-	BcgmpT5qsZ17L/gcPnE1Ah+Shyh55PkNM+bPUZdQYxJhnvnpVBkQr0NhtkmtMMvApOJIroj4GXP+y
-	IfhdEV5pn1Uj530iwfZouR55OH3vKKqPlFXoFyWpQAsS36LBD6MZJNtqtQy+YXCWp3pr9UvYWdJMB
-	Y1xbOfNbrWQYTn1RqsvQ==;
+	List-Owner; bh=MEbGuKUIBn+NqPaOVzpMLBOUAdcHpHs340Jt5ChVRqA=; b=o9c29ZUSu1yzEn
+	kGualTG3+L9NMQF0RK/nqk7NR7y5yyHYFIZc5A37r6CSkjP8HhflJK0ffxo8rPOr6lWAsB670gTh7
+	sQc/1beNORm0xlIZzd91cg8AO56zi1ysh6kHdqaIz206rvBIKOhcDyqmj+j4lBGYxzHJ9qs9BlQ8s
+	H+suqMOwyMaSRMsVOi5PDlA4mYXwTXzN4gs294R8YHAgS4vLuBJbA6VgdJNp7GnZfZz2LJ144V+tI
+	cZo3ivKAw84P95FzetwRlafQljM0/+bKWWq3Meibt5VgLZsYnxUUbevWrWCkdSdZKB/kkIEwbp8o/
+	RpQHn0l9w9+rdWMBlk6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZYfb-0004Z0-LQ; Fri, 15 May 2020 11:38:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZYfG-0004UT-LN
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:38:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 34762D6E;
- Fri, 15 May 2020 04:38:06 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.24.119])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D4893F305;
- Fri, 15 May 2020 04:38:03 -0700 (PDT)
-Date: Fri, 15 May 2020 12:38:01 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH v3 3/7] firmware: smccc: Add the definition for SMCCCv1.2
- version/error codes
-Message-ID: <20200515113801.GC67718@C02TD0UTHF1T.local>
-References: <20200506164411.3284-1-sudeep.holla@arm.com>
- <20200506164411.3284-4-sudeep.holla@arm.com>
+	id 1jZYfm-0004o7-7A; Fri, 15 May 2020 11:38:38 +0000
+Received: from mga11.intel.com ([192.55.52.93])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZYfH-0004V8-QS; Fri, 15 May 2020 11:38:10 +0000
+IronPort-SDR: co4hyqZ8C8w30k1oUW52pWlgkefR8DyLO2e2yCKFJxvl3etrT6UV16GgXTePa5/nSYcSsht0/q
+ fg3eNo1x8hzw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 15 May 2020 04:38:07 -0700
+IronPort-SDR: 7syfHYZiSk8sdH8ji4fv9pM54Sp1BiN4RvBPVmxzksORhZghe3ut/diu/a4C7Nlf1zWtmcXfJu
+ gIzg/VPBiymw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,395,1583222400"; d="scan'208";a="464877908"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga006.fm.intel.com with ESMTP; 15 May 2020 04:38:05 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jZYfI-006qgY-Gz; Fri, 15 May 2020 14:38:08 +0300
+Date: Fri, 15 May 2020 14:38:08 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Fengping Yu <fengping.yu@mediatek.com>
+Subject: Re: [PATCH v8] Add matrix keypad driver support for Mediatek SoCs
+Message-ID: <20200515113808.GQ185537@smile.fi.intel.com>
+References: <20200515062007.28346-1-fengping.yu@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200506164411.3284-4-sudeep.holla@arm.com>
+In-Reply-To: <20200515062007.28346-1-fengping.yu@mediatek.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_043807_224843_D6431501 
-X-CRM114-Status: GOOD (  16.54  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200515_043807_879926_B8C73592 
+X-CRM114-Status: GOOD (  12.39  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,69 +71,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Steven Price <steven.price@arm.com>,
- harb@amperecomputing.com, Will Deacon <will@kernel.org>,
+Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Marco Felsch <m.felsch@pengutronix.de>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 06, 2020 at 05:44:07PM +0100, Sudeep Holla wrote:
-> Add the definition for SMCCC v1.2 version and new error code added.
-> While at it, also add a note that ARM DEN 0070A is deprecated and is
-> now merged into the main SMCCC specification(ARM DEN 0028C).
+On Fri, May 15, 2020 at 02:20:04PM +0800, Fengping Yu wrote:
 > 
-> Reviewed-by: Steven Price <steven.price@arm.com>
-> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> Change since v7:
+> - specify compatible property as const string
+> - add maxItem in required property
+> - squash keypad example nodes
+> - sort header file with alphabetic order
+> - align all define values and add MTK_ prefix to make more uniform
+> - change debounce value to default 16ms if not specified in dts
+> - remove extra braces
+> - separate clk prepare as an internal driver function
+> - add special compatible string
+> - modify CONFIG_KEYBOARD_MTK_KPD=m to build keypad as ko module
 
-Hmm... the SMCCC v1.2 doc still seems to be EAC rather than a final
-release.
+You forgot to address at least some of my comments...
 
-I don't expect that this would change, but I am a little hesitant to add
-other stuff based on an unfinalized spec. Do we know when the final
-release will be?
-
-Thanks,
-Mark.
-
-> ---
->  include/linux/arm-smccc.h | 7 ++++++-
->  1 file changed, 6 insertions(+), 1 deletion(-)
 > 
-> diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-> index 6c1d1eda3be4..9d9a2e42e919 100644
-> --- a/include/linux/arm-smccc.h
-> +++ b/include/linux/arm-smccc.h
-> @@ -56,6 +56,7 @@
->  
->  #define ARM_SMCCC_VERSION_1_0		0x10000
->  #define ARM_SMCCC_VERSION_1_1		0x10001
-> +#define ARM_SMCCC_VERSION_1_2		0x10002
->  
->  #define ARM_SMCCC_VERSION_FUNC_ID					\
->  	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
-> @@ -314,10 +315,14 @@ asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
->   */
->  #define arm_smccc_1_1_hvc(...)	__arm_smccc_1_1(SMCCC_HVC_INST, __VA_ARGS__)
->  
-> -/* Return codes defined in ARM DEN 0070A */
-> +/*
-> + * Return codes defined in ARM DEN 0070A
-> + * ARM DEN 0070A is now merged/consolidated into ARM DEN 0028C
-> + */
->  #define SMCCC_RET_SUCCESS			0
->  #define SMCCC_RET_NOT_SUPPORTED			-1
->  #define SMCCC_RET_NOT_REQUIRED			-2
-> +#define SMCCC_RET_INVALID_PARAMETER		-3
->  
->  /*
->   * Like arm_smccc_1_1* but always returns SMCCC_RET_NOT_SUPPORTED.
-> -- 
-> 2.17.1
+> fengping.yu (3):
+>   dt-bindings: Add keypad devicetree documentation
+>   drivers: input: keyboard: Add mtk keypad driver
+>   configs: defconfig: Add CONFIG_ng.yu (3):
+>   dt-bindings: Add keypad devicetree documentation
+>   drivers: input: keyboard: Add mtk keypad driver
+>   configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD=m
 > 
+>  .../devicetree/bindings/input/mtk-kpd.yaml    |  94 +++++++
+>  arch/arm64/configs/defconfig                  |   1 +
+>  drivers/input/keyboard/Kconfig                |   9 +
+>  drivers/input/keyboard/Makefile               |   1 +
+>  drivers/input/keyboard/mtk-kpd.c              | 231 ++++++++++++++++++
+>  5 files changed, 336 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.yaml
+>  create mode 100644 drivers/input/keyboard/mtk-kpd.c
+> 
+> --
+> 2.18.0
+> 
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
