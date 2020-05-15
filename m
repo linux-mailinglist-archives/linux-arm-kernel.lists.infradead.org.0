@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BC601D4C01
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:02:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F302F1D4C0B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:03:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DL6GR7UqrYgOxE7+YDZjUxWMnzU9hJae8LGDL30zjhw=; b=d8LhVdabGeoTLh
-	niTh0w+6lM4g3yR9SrFf4GJAhAb6oMfZl8DHAgdOMhIo9zwOlcvHZt57bX6c3McjMyY+2snhzIcz3
-	IfBKi0AbJD4NakUo18Mk6zHPIOcHcvZjg0RyyK5V1QNoIPUMK0QS5Kb0beTvcOjAfSCALT2wxVqSg
-	tn1MMUz2GJi067AlGxSAZKkRyBcYYrP3Y3NCAG8FkUtYBivv92qN7JE2fpIcY70QqQFER5/MyZQjA
-	T/wkdspgNJ3KqBXhUKqIG3rYOmhkC24QCeHTMeQgjvxeWg17wpdZS+qAPJyVDAQkzQWeAEZGGBr+g
-	TSF8rHu1Q1/FpipWV5Sg==;
+	List-Owner; bh=kPzM6VSl0fbNZMTlehhvJCZBpwyyu1bO6pcd+XGHEmk=; b=dPBvZS80gnAdpY
+	0r6zMI0NOxneYwB9l44f5ljzLMBWBY+a/Y3YpBgz2JQ13Tb9vZcePu35vQEAqlX/C7bh7UBMVk/dF
+	EQ5775VsL/CuK6XiUkNb3XZFHkP6V/tneC1hwkAksAuoUMEbrf7uKF2EhOcT1Uyw5hopRGP6Fr5qD
+	D+tldTddXs0ui6Vu09Ds4Y2Mnp1pfuAcJcyB8LI5lFDHm8GAVwmmqufSwryHWPyKOn5ZXxZ6e7Fp0
+	UGavxkX3HArI3weyW2uG4lTH71WZbIf7pS8XsvWs+tb7ePh+tBf+35MqQ914IA9uig4HhaoaQvObB
+	2YFZGOzL1cxwmi8MfNwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZY6m-0007p6-Jp; Fri, 15 May 2020 11:02:28 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jZY7r-0000DC-26; Fri, 15 May 2020 11:03:35 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZY3h-00022D-3E
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:59:21 +0000
-Received: by mail-wr1-x443.google.com with SMTP id k13so916905wrx.3
+ id 1jZY3j-00023V-0p
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:59:23 +0000
+Received: by mail-wr1-x442.google.com with SMTP id l17so3033127wrr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 03:59:17 -0700 (PDT)
+ Fri, 15 May 2020 03:59:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=wKY3Sv04y9T25D28x0+yoca4JqoOKU6viRzuCp/o2d8=;
- b=MYaMiRiz1CtiS090xzgno9gIDJcuB2yEV9pYsHZtfn9MDBV+1Lb61O84bGSxxbGm/3
- elvcYsu2EMhv9Gis8QZnBIOfyFjmlnBWT0yDiIl16ZEZyh3Qm2DUSWuuWJSyOUeY583g
- VlLJUs441j/vco+A7dJ+tQTgMJFr8y3hnQBIXgJ8aKdEObgPU12qX43fP37XyYzPrG1l
- SBK8QAmP9SNb143vdUN+gyCeM1j9SpSGBwNh2pu1WvbRYKCLTVIlN5u/kP3JR6OXkrIu
- rx5ygMcBqj5CmvNXSxpp7oj3wxNgnG8OattGZ5qDmnj7RZ8ahWDTu8FsKX32glfhzpzs
- QbpA==
+ bh=qIsoQzx8QXc1ir+dRugWu1fsq9J9q4alaZWOk635tTE=;
+ b=hem7MA7Smzp8TqztYBuB5W3IWuLc4iqDhkp4S4YrnIqEmIZYd5pPdRcokkZiSQCBXL
+ 58opF2y7yXszqJ3evDxLwos9xZqkclw8sRQh7P0+fHtLZlqrEbIdYFuY2QzUT/3oNp3+
+ 56D/84m33gXnqSp+cu9AJxgtA7yK1RJAbAO0VQpW+NCdV214WKsw960f4Toq0JR2zORt
+ KAesZDc+Dr2ZIqP8yY5XwJ6nLSGu7pB7APkga9EQl8I78PToaK+HwDB54eqVuf/tRtOS
+ pzcnoFrrzdZU3MnypcCryPp2ei+6BLBHpvUaf/5Qk4Uvog7s+owQl8nsBFbR/RUPagH9
+ HC7w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=wKY3Sv04y9T25D28x0+yoca4JqoOKU6viRzuCp/o2d8=;
- b=b9bzt6GpSfhZCMHlLQxPtUtzFdWBPOEKJnTd0/HbuhiOJHE5o5N9y/dAx7/UbLnZM0
- 8u82TVKtBqsm+0TAhmE9T8X4CVpnzHF+fAuu6CByfsG1fWdQmRET9OCd50oxUTJfEHfD
- 8MB4VRRVnLj5aOI1UPyMAYg3umC6bhsRmYMC0+VpuC99MPbg6WKaNV974M8srgKtW8Q8
- b4gvItYq00N6n/HeI3m/hxa+iGyxl5R8NwDWNQ+yA5da2OfCI0GZDtQNBvYxO3B5yTKz
- MJWfyuMK9GU83M5As1sFKzZ9FmlA3q78XeFeF5KWTFH2bZLBTHRshOdCQBpoyB7Ji6/9
- fZfA==
-X-Gm-Message-State: AOAM530DBXvuQtSHHsMadqOhBfVKsYkP3GHa5JAYvlq4q+KLgcP4J8dj
- Dd2SiLf31aTVt9Nw19Nm96lbgA==
-X-Google-Smtp-Source: ABdhPJxDpM4n30e5iBr2RTiZvdPUETO1aVERF22wXT/LtFQlS2FUwWdRvrja8ivqmLjEU8Yx1VWMvA==
-X-Received: by 2002:a5d:62c7:: with SMTP id o7mr3622526wrv.212.1589540355340; 
- Fri, 15 May 2020 03:59:15 -0700 (PDT)
+ bh=qIsoQzx8QXc1ir+dRugWu1fsq9J9q4alaZWOk635tTE=;
+ b=rgIsfnlMEmH+Ic81NcjdtYik0ZDNXXV14LO6szp+qY+ebgsKkAJ6vma8dQnOXrm6Fj
+ p0GEZeYdePa6Q0LiCEeqYOBzCABtyBKDO11ybZ7pFck/jSaNomrUbIA8RUVY9dKA4pLV
+ +6CQcwqdCcunOSxfA7u9zOlYDjANDn9Mh/RmUsPQSDhX/k3f4wWaNg+E0ZBAXXPuEY5Q
+ aENGG8LcjIA+hzZoVvdgQPYG7CBCvO7NQwV/jDsDGqdliBaBYAqfTfQrErhyKoBgtZ1l
+ CGl+Khl5sryrg/nsytaGVjovEyiGQeqbJBoaHYO434tcQpiGe4H09V+qcsx3TmD1x5Uf
+ 227g==
+X-Gm-Message-State: AOAM532SE6yTgPZDXD6wEnfT58whRXcpXtQbeDcJEAXvuMJuY3CFDQ44
+ 1/Mqrn5f/rclOzrWC9yLggRtvQ==
+X-Google-Smtp-Source: ABdhPJyxwMkIRcpBncYa6eIwpuEAvcR55Rq93vJeaU2e4BAy6oJpiroVdqRq+R0wPBTMFUMxTSk9rw==
+X-Received: by 2002:adf:fa44:: with SMTP id y4mr3731198wrr.135.1589540357099; 
+ Fri, 15 May 2020 03:59:17 -0700 (PDT)
 Received: from localhost ([2a01:4b00:8523:2d03:d11b:f847:8002:7411])
- by smtp.gmail.com with ESMTPSA id l19sm3242185wmj.14.2020.05.15.03.59.14
+ by smtp.gmail.com with ESMTPSA id 128sm3156597wme.39.2020.05.15.03.59.16
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 15 May 2020 03:59:14 -0700 (PDT)
+ Fri, 15 May 2020 03:59:16 -0700 (PDT)
 From: David Brazdil <dbrazdil@google.com>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  James Morse <james.morse@arm.com>,
  Julien Thierry <julien.thierry.kdev@gmail.com>,
  Marc Zyngier <maz@kernel.org>, Suzuki K Poulose <suzuki.poulose@arm.com>,
  Will Deacon <will@kernel.org>
-Subject: [PATCH v2 11/14] arm64: kvm: Compile remaining hyp/ files for both
- VHE/nVHE
-Date: Fri, 15 May 2020 11:58:38 +0100
-Message-Id: <20200515105841.73532-12-dbrazdil@google.com>
+Subject: [PATCH v2 12/14] arm64: kvm: Add comments around __kvm_nvhe_ symbol
+ aliases
+Date: Fri, 15 May 2020 11:58:39 +0100
+Message-Id: <20200515105841.73532-13-dbrazdil@google.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200515105841.73532-1-dbrazdil@google.com>
 References: <20200515105841.73532-1-dbrazdil@google.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_035917_226310_F51F2DF7 
-X-CRM114-Status: GOOD (  12.39  )
+X-CRM114-CacheID: sfid-20200515_035919_095853_CFB0B023 
+X-CRM114-Status: GOOD (  12.35  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -117,72 +117,75 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 This patch is part of a series which builds KVM's non-VHE hyp code separately
 from VHE and the rest of the kernel.
 
-The following files in hyp/ contain only code shared by VHE/nVHE:
-  vgic-v3-sr.c, aarch32.c, vgic-v2-cpuif-proxy.c, entry.S, fpsimd.S
-Compile them under both configurations. Deletions in image-vars.h reflect
-eliminated dependencies of nVHE code on the rest of the kernel.
+With all source files split between VHE/nVHE, add comments around the list of
+symbols where nVHE code still links against kernel proper. Split them into
+groups and explain how each group is currently used.
+
+Some of these dependencies will be removed in the future.
 
 Signed-off-by: David Brazdil <dbrazdil@google.com>
 ---
- arch/arm64/kernel/image-vars.h   | 19 -------------------
- arch/arm64/kvm/hyp/nvhe/Makefile |  5 +++--
- 2 files changed, 3 insertions(+), 21 deletions(-)
+ arch/arm64/kernel/image-vars.h | 47 ++++++++++++++++++++++------------
+ 1 file changed, 30 insertions(+), 17 deletions(-)
 
 diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
-index c16cf4e2cd8b..217e5e5a101d 100644
+index 217e5e5a101d..0b3a3fe07a64 100644
 --- a/arch/arm64/kernel/image-vars.h
 +++ b/arch/arm64/kernel/image-vars.h
-@@ -61,26 +61,8 @@ __efistub__ctype		= _ctype;
+@@ -61,23 +61,36 @@ __efistub__ctype		= _ctype;
   * memory mappings.
   */
  
--__kvm_nvhe___fpsimd_restore_state = __fpsimd_restore_state;
--__kvm_nvhe___fpsimd_save_state = __fpsimd_save_state;
--__kvm_nvhe___guest_enter = __guest_enter;
--__kvm_nvhe___guest_exit = __guest_exit;
- __kvm_nvhe___icache_flags = __icache_flags;
- __kvm_nvhe___kvm_handle_stub_hvc = __kvm_handle_stub_hvc;
--__kvm_nvhe___vgic_v2_perform_cpuif_access = __vgic_v2_perform_cpuif_access;
--__kvm_nvhe___vgic_v3_activate_traps = __vgic_v3_activate_traps;
--__kvm_nvhe___vgic_v3_deactivate_traps = __vgic_v3_deactivate_traps;
--__kvm_nvhe___vgic_v3_get_ich_vtr_el2 = __vgic_v3_get_ich_vtr_el2;
--__kvm_nvhe___vgic_v3_init_lrs = __vgic_v3_init_lrs;
--__kvm_nvhe___vgic_v3_perform_cpuif_access = __vgic_v3_perform_cpuif_access;
--__kvm_nvhe___vgic_v3_read_vmcr = __vgic_v3_read_vmcr;
--__kvm_nvhe___vgic_v3_restore_aprs = __vgic_v3_restore_aprs;
--__kvm_nvhe___vgic_v3_restore_state = __vgic_v3_restore_state;
--__kvm_nvhe___vgic_v3_save_aprs = __vgic_v3_save_aprs;
--__kvm_nvhe___vgic_v3_save_state = __vgic_v3_save_state;
--__kvm_nvhe___vgic_v3_write_vmcr = __vgic_v3_write_vmcr;
--__kvm_nvhe_abort_guest_exit_end = abort_guest_exit_end;
--__kvm_nvhe_abort_guest_exit_start = abort_guest_exit_start;
- __kvm_nvhe_arm64_const_caps_ready = arm64_const_caps_ready;
- __kvm_nvhe_arm64_enable_wa2_handling = arm64_enable_wa2_handling;
- __kvm_nvhe_arm64_ssbd_callback_required = arm64_ssbd_callback_required;
-@@ -89,7 +71,6 @@ __kvm_nvhe_cpu_hwcaps = cpu_hwcaps;
- __kvm_nvhe_kimage_voffset = kimage_voffset;
- __kvm_nvhe_kvm_host_data = kvm_host_data;
- __kvm_nvhe_kvm_patch_vector_branch = kvm_patch_vector_branch;
--__kvm_nvhe_kvm_skip_instr32 = kvm_skip_instr32;
- __kvm_nvhe_kvm_update_va_mask = kvm_update_va_mask;
- __kvm_nvhe_kvm_vgic_global_state = kvm_vgic_global_state;
- __kvm_nvhe_panic = panic;
-diff --git a/arch/arm64/kvm/hyp/nvhe/Makefile b/arch/arm64/kvm/hyp/nvhe/Makefile
-index a67958f29fd7..819d5271c49a 100644
---- a/arch/arm64/kvm/hyp/nvhe/Makefile
-+++ b/arch/arm64/kvm/hyp/nvhe/Makefile
-@@ -7,8 +7,9 @@ asflags-y := -D__KVM_NVHE_HYPERVISOR__
- ccflags-y := -D__KVM_NVHE_HYPERVISOR__ -fno-stack-protector \
- 	     -DDISABLE_BRANCH_PROFILING $(DISABLE_STACKLEAK_PLUGIN)
+-__kvm_nvhe___icache_flags = __icache_flags;
+-__kvm_nvhe___kvm_handle_stub_hvc = __kvm_handle_stub_hvc;
+-__kvm_nvhe_arm64_const_caps_ready = arm64_const_caps_ready;
+-__kvm_nvhe_arm64_enable_wa2_handling = arm64_enable_wa2_handling;
+-__kvm_nvhe_arm64_ssbd_callback_required = arm64_ssbd_callback_required;
+-__kvm_nvhe_cpu_hwcap_keys = cpu_hwcap_keys;
+-__kvm_nvhe_cpu_hwcaps = cpu_hwcaps;
+-__kvm_nvhe_kimage_voffset = kimage_voffset;
+-__kvm_nvhe_kvm_host_data = kvm_host_data;
+-__kvm_nvhe_kvm_patch_vector_branch = kvm_patch_vector_branch;
+-__kvm_nvhe_kvm_update_va_mask = kvm_update_va_mask;
+-__kvm_nvhe_kvm_vgic_global_state = kvm_vgic_global_state;
+-__kvm_nvhe_panic = panic;
+-__kvm_nvhe_sve_load_state = sve_load_state;
+-__kvm_nvhe_sve_save_state = sve_save_state;
+-__kvm_nvhe_vgic_v2_cpuif_trap = vgic_v2_cpuif_trap;
+-__kvm_nvhe_vgic_v3_cpuif_trap = vgic_v3_cpuif_trap;
++/* If nVHE code panics, it ERETs into panic() in EL1. */
++__kvm_nvhe_panic			= panic;
++
++/* Stub HVC IDs are routed to a handler in .hyp.idmap.text. Executed in EL2. */
++__kvm_nvhe___kvm_handle_stub_hvc	= __kvm_handle_stub_hvc;
++
++/* Alternative callbacks, referenced in .altinstructions. Executed in EL1. */
++__kvm_nvhe_arm64_enable_wa2_handling	= arm64_enable_wa2_handling;
++__kvm_nvhe_kvm_patch_vector_branch	= kvm_patch_vector_branch;
++__kvm_nvhe_kvm_update_va_mask		= kvm_update_va_mask;
++
++/* Values used to convert between memory mappings, read-only after init. */
++__kvm_nvhe_kimage_voffset		= kimage_voffset;
++
++/* Data shared with the kernel. */
++__kvm_nvhe_cpu_hwcaps			= cpu_hwcaps;
++__kvm_nvhe_cpu_hwcap_keys		= cpu_hwcap_keys;
++__kvm_nvhe___icache_flags		= __icache_flags;
++__kvm_nvhe_kvm_vgic_global_state	= kvm_vgic_global_state;
++__kvm_nvhe_arm64_ssbd_callback_required	= arm64_ssbd_callback_required;
++__kvm_nvhe_kvm_host_data		= kvm_host_data;
++
++/* Static keys shared with the kernel. */
++__kvm_nvhe_arm64_const_caps_ready	= arm64_const_caps_ready;
++__kvm_nvhe_vgic_v2_cpuif_trap		= vgic_v2_cpuif_trap;
++__kvm_nvhe_vgic_v3_cpuif_trap		= vgic_v3_cpuif_trap;
++
++/* SVE support, currently unused by nVHE. */
++__kvm_nvhe_sve_save_state		= sve_save_state;
++__kvm_nvhe_sve_load_state		= sve_load_state;
  
--obj-y := ../timer-sr.o timer-sr.o sysreg-sr.o debug-sr.o switch.o tlb.o \
--	 ../hyp-entry.o
-+obj-y := ../vgic-v3-sr.o ../timer-sr.o timer-sr.o ../aarch32.o \
-+	 ../vgic-v2-cpuif-proxy.o sysreg-sr.o debug-sr.o ../entry.o switch.o \
-+	 ../fpsimd.o tlb.o ../hyp-entry.o
+ #endif /* CONFIG_KVM */
  
- obj-y := $(patsubst %.o,%.hyp.o,$(obj-y))
- extra-y := $(patsubst %.hyp.o,%.hyp.tmp.o,$(obj-y))
 -- 
 2.26.2
 
