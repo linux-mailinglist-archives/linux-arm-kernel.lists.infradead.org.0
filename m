@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 360F91D529D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:54:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E19C91D529E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:54:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8NiNjfnqoc4p+VcXUKpuScupeSTL5gc9Zz/rZW0zl5k=; b=dumLai0k4dYpet
-	Ijjmfkzm/GOQfXtgMDBdvMq8ad3tbheFnq8dL/WRq/IXlzSp5kgJ6AQmlm6TatTMyLop5nUPs3Qm0
-	KIQsVq/PVzxX2qMJOcreaP/wt1O34s+2a4bvhckegpp921v9Wbm/Hu50q91q9QxXx04W0gtMq6TCz
-	B0rbGDqvjtUUwYSWO+auJPWfoDZNz5Ienf6yz2nWbdFRtoovTJlCxgyzNpKLPLGzq1b11aoG19bdz
-	WJ/Gtb3G3/R7O2kwtCBqGeTIF/PUSQqiAvEv8xTvJJizgZiMWnNyteoHJHSloL/Pe1b5IycLBKNeO
-	/63g+IPbBleESH4a72kQ==;
+	List-Owner; bh=5GArEnv5VcgtikCvvmHKsGKCFkS5ivyk4csCOS+04tg=; b=lKUYEYMDptlAw1
+	tAmtwRgYnZqj8YMbFOaYz6pJIYivMOlAgDo/MwvHP2XQUJN7zt+zoiqr+xTxawNv7p89WvSSmT8H9
+	xMpd+9iEAExR8rkN4vXcZdYplNOeIHqEGYRGXv9Gju0oQ9tZVI1X8/6XiKZEyt3znC1oHPl8TSPHg
+	hx8CE1ivZfkOauF8a6k6RPKzXSVqtP6Pl2tjJ6odoy2K7XWasel5SyEMD2bCANDkTUJ5vT9ms0Ui+
+	+5hpmw2QBgAOw8gNKGg4JGNXSMaBbVn0Y76uukDcMtuE2bItSxJZyqe+jbUmArtvLCAuXnLz7AJ7S
+	yHRLAZIXTbC/6HxrnYjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbjD-0001Pg-QU; Fri, 15 May 2020 14:54:23 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jZbjX-0001kD-Sg; Fri, 15 May 2020 14:54:43 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbiD-0000uO-0B
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 14:53:22 +0000
-Received: by mail-wm1-x343.google.com with SMTP id k12so2612926wmj.3
+ id 1jZbiF-0000vM-IZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 14:53:25 +0000
+Received: by mail-wr1-x444.google.com with SMTP id e1so3897379wrt.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 07:53:20 -0700 (PDT)
+ Fri, 15 May 2020 07:53:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=daJIaHtEcsY5ucOdxwXsEadgUyi229pnexQf+rQw1kE=;
- b=rof2rvoEmfhNVAMRabYVfiC8mwUFzqLo5XQZtVhYYWCKa/rBWl7+ZOstKaX7aFhIH8
- oX0eGFuJwSbvNCBu0hqD6E73YM3PtnJnKuwFSfpDzWoKZO/GZeiiV8Qa/lLkWSDB5bx7
- +RpmDU2DWyvQ9sPZj1QdeqP/l9r8Yi0EB9/vwxzHUjDDa9EmphcFZLFzC4wvT6qJ+l11
- +Cqk6fu7yF1aVMQaAHLbOHeBrfG68BDXE5kU/fHSSVIVNUBNUHBdpCEYewBDNsLydZzV
- ug82ZL3wDDhQZHZtQSv1ueQeEY2Zz6nyNsd2UvCN8OBrGPZLTyA4KELT9NW4qdcB8CvR
- wlrg==
+ bh=1SsS+ZSTt/ULxJrwRQDkWWTbTiy0pezxPev3oDys/NQ=;
+ b=iysdOe4FAn3ll8B3ThqIjAYC97gkTK6GJYK6e2G9Edo/ZG49ZDlqMWper0xOGunFje
+ hXxuDmze9n1mgqI/VpLiiM0tqXcq9F5T9sED5L//v/DW7JHQZUAFR9bE/2XhqfC5Jo8j
+ U/x7cp12WXwjz/xAgyz8HbP2HhU79xHznPxryUnAXOPdj8k743ur+0fJOHxhtRLW5BPI
+ 43K4tw810Hwy6U2QcOOhqLH4tlz1I1nhv5s1f+SnF7SfzIvsrUir5RmNdPl9S01AqUZL
+ ucGIvNfPFIip+yudT7sXWKdf7zU4gNHjWz3dgsH09bkhXmLZL+pvh/t3N46yvpFeERZI
+ 6Qig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=daJIaHtEcsY5ucOdxwXsEadgUyi229pnexQf+rQw1kE=;
- b=E+g6t758xV6ujLQMMWT1Pa/D61PWWEde+2Cz6aZk28qm2v2zaByMgbmENTH1XpEoSQ
- u/d3VMw1zYoSyvz6ZbPAVl4S+C1jTT5ymK+B460qRplkr8W6P1S+UYligwcUFteiyB4n
- jWVskfiTNj8X9n6ZqhdHeG6f/y7Mwgp4qb3oHcwDZH1T+x2UFkBwOenqZIaZo8YrJDnk
- 1lXO2b5Q8D2WqQOZ3lOJMAc6vacZDoKlIPMlDWT1q0419j5/nXM3fzswad0k4a8bMP9o
- DzLBIDjQlnDkd9M45tIkj1gIShS+L8s25kmQZ74qsPbOsWS4F8Ir5St4gayHzqy1xt5w
- PLHg==
-X-Gm-Message-State: AOAM530zyJFCn1artxCmKbmQGs7wS7DnSmi1Zm61M4u2EWIvgavg6Ioi
- HaSqINJXBrPpHKahAiTiAwY=
-X-Google-Smtp-Source: ABdhPJzxsM3zV+aHCxZa6T3PLyBezMGeRRfXMUDrHsSap/mVYjf8XlvDByTCRNAGgCaH20BksqoXog==
-X-Received: by 2002:a1c:7305:: with SMTP id d5mr4548864wmb.85.1589554399790;
- Fri, 15 May 2020 07:53:19 -0700 (PDT)
+ bh=1SsS+ZSTt/ULxJrwRQDkWWTbTiy0pezxPev3oDys/NQ=;
+ b=t86W7S3IIXsH/HdIij71c1TYYn6EHBiLXXbx5mtRnUvcOqXeAFfgacKUIQrgoh3FF0
+ zLzzxYEoLcVSFbacrr2XbRG6K/RxrjJP62Hh5rP4+h8OsJBx8F1hSCVYmVfphT0vn04J
+ OiITNotnj+t7UxIduzQc49jJn1D1movk2pg+gOSPsULA6/cQ8txgExKiFSWmlaUt/BTx
+ RoP9IGgUdFPBHTiWfPGkFdFFDJ0owJoQRHCFDkB6twSywsQqeDgru6kOpPCq7xBj/VXh
+ vHuGNm2ere3LFRYAyC1CH9r8VZk80H8eP+DkW2EGoK2Jbagp9gjsj6xizOn9h26ZCSE2
+ Gu9Q==
+X-Gm-Message-State: AOAM530oxehZbf3tZntj/Opqkr9jkmTndBSZhX+6FQL/eJnTX58eLaQF
+ DN15cV7fu4PNnrQaq8uLj/c=
+X-Google-Smtp-Source: ABdhPJyGosKoHaIyb7spq/jdjjQ71Kd31n//F2dO6CqRU84CNLY2LpOSEHa9VifxuNHIDydbbs0riQ==
+X-Received: by 2002:adf:ed82:: with SMTP id c2mr4878997wro.255.1589554401520; 
+ Fri, 15 May 2020 07:53:21 -0700 (PDT)
 Received: from localhost (pD9E51079.dip0.t-ipconnect.de. [217.229.16.121])
- by smtp.gmail.com with ESMTPSA id x17sm3903589wrp.71.2020.05.15.07.53.18
+ by smtp.gmail.com with ESMTPSA id h133sm4213503wmf.25.2020.05.15.07.53.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 May 2020 07:53:18 -0700 (PDT)
+ Fri, 15 May 2020 07:53:20 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL 02/11] cpuidle: Changes for v5.8-rc1
-Date: Fri, 15 May 2020 16:53:02 +0200
-Message-Id: <20200515145311.1580134-3-thierry.reding@gmail.com>
+Subject: [GIT PULL 03/11] dt-bindings: Changes for v5.8-rc1
+Date: Fri, 15 May 2020 16:53:03 +0200
+Message-Id: <20200515145311.1580134-4-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200515145311.1580134-1-thierry.reding@gmail.com>
 References: <20200515145311.1580134-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_075321_041925_C5DCDF84 
-X-CRM114-Status: GOOD (  12.14  )
+X-CRM114-CacheID: sfid-20200515_075323_666943_517A4C9F 
+X-CRM114-Status: GOOD (  12.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,39 +114,51 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.8-cpuidle
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.8-dt-bindings
 
-for you to fetch changes up to fafd62e7688096dcfe4107d7a2f6c7c6eb6045de:
+for you to fetch changes up to 4e79691d050e6d06ee7fa09002c52dd1ce9ac6e6:
 
-  cpuidle: tegra: Support CPU cluster power-down state on Tegra30 (2020-05-06 18:42:55 +0200)
+  dt-bindings: i2c: tegra: Document Tegra210 VI I2C (2020-05-12 22:47:36 +0200)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-cpuidle: Changes for v5.8-rc1
+dt-bindings: Changes for v5.8-rc1
 
-These changes add support for cluster power-down on Tegra30.
+This adds bindings for the CSI TPG clock on Tegra210, moves various
+clocks from the clock and reset controller to the PMC where their
+controls really are, adds bindings for the external memory controller
+and video capture controller on Tegra210, as well as CPU frequency
+scaling on Tegra20 and Tegra30.
 
 ----------------------------------------------------------------
-Dmitry Osipenko (4):
-      firmware: tf: Different way of L2 cache enabling after LP2 suspend
-      ARM: tegra: Initialize r0 register for firmware wake-up
-      ARM: tegra: Do not fully reinitialize L2 on resume
-      cpuidle: tegra: Support CPU cluster power-down state on Tegra30
+Dmitry Osipenko (1):
+      dt-bindings: cpufreq: Add binding for NVIDIA Tegra20/30
 
-Thierry Reding (3):
-      firmware: tegra: Make BPMP a regular driver
-      Merge branch 'for-5.8/firmware' into for-5.8/arm/core
-      Merge branch 'for-5.8/arm/core' into for-5.8/cpuidle
+Joseph Lo (1):
+      dt-bindings: memory: tegra: Add external memory controller binding for Tegra210
 
- arch/arm/mach-tegra/pm.c                     |  4 ++++
- arch/arm/mach-tegra/reset-handler.S          |  7 ++++++-
- drivers/cpuidle/cpuidle-tegra.c              |  1 -
- drivers/firmware/tegra/bpmp.c                |  9 +++------
- drivers/firmware/trusted_foundations.c       | 21 +++++++++++++++++++--
- include/linux/firmware/trusted_foundations.h |  1 +
- 6 files changed, 33 insertions(+), 10 deletions(-)
+Sowjanya Komatineni (3):
+      dt-bindings: clock: tegra: Add clock ID for CSI TPG clock
+      dt-bindings: clock: tegra: Remove PMC clock IDs
+      dt-bindings: tegra: Add VI and CSI bindings
+
+Thierry Reding (1):
+      dt-bindings: i2c: tegra: Document Tegra210 VI I2C
+
+ .../bindings/cpufreq/nvidia,tegra20-cpufreq.txt    | 56 +++++++++++++++
+ .../display/tegra/nvidia,tegra20-host1x.txt        | 73 +++++++++++++++----
+ .../devicetree/bindings/i2c/nvidia,tegra20-i2c.txt |  6 ++
+ .../memory-controllers/nvidia,tegra210-emc.yaml    | 82 ++++++++++++++++++++++
+ include/dt-bindings/clock/tegra114-car.h           | 14 ++--
+ include/dt-bindings/clock/tegra124-car-common.h    | 14 ++--
+ include/dt-bindings/clock/tegra20-car.h            |  2 +-
+ include/dt-bindings/clock/tegra210-car.h           | 16 ++---
+ include/dt-bindings/clock/tegra30-car.h            | 14 ++--
+ 9 files changed, 234 insertions(+), 43 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/cpufreq/nvidia,tegra20-cpufreq.txt
+ create mode 100644 Documentation/devicetree/bindings/memory-controllers/nvidia,tegra210-emc.yaml
 
 _______________________________________________
 linux-arm-kernel mailing list
