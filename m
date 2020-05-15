@@ -2,90 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF54D1D4C17
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:05:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B9ED1D4C30
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:12:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hf2y3k/WAUAPbqm+qkL4ECWCG4jXJJ+6qeuaoYSFrDc=; b=dkiVLLpN+Bky1x
-	8NawwGEjEOzO0rIZSu9Ln4h87Gy84C+OD1pvEtACTexuSTDk0qQ8HCg0OtezU06Z4OOVQI14PcShj
-	79jh5oGn0g+EsUem/OkReCbijHLGXqdFMXzFCYepSIFAFiUikbPdFcFKNLOkdj1vM2pX1JdQ4Gi1W
-	riw8mXCaFv290Ft/VrHW3G7kLUrDStPJsjfbzoWGR/D8+m11vfsguRxwq9vvExOdjGnCTG7auWhuu
-	KF9gewZPXYmsi+uwIvtgUaBEYKFH1KYle54WzNl5epc3AIr6aaSC5aN1hIz5ITdK0VqWtoHq9M4aH
-	lEI+l2bvtGnoCxZBVSGg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fb5ZD/ZeaVbm+sjvkxCaISZvXzR7v47cE9M9LWohrp8=; b=C8BRsl6u44fKm2
+	iS57VMmTvnzTJxh6rUtPilhm5DZcc1ZDmFjwTsz4KZRqDpHwNO14pGlXrmgi+YROGY00QNs8nHp4R
+	xRtmeHx2mC9ovdwj0+JQrOzOASvh3LdHEt25sbJKRl6036gzW8PrRgfOcE0SP4LtwVw7buLYzEPr4
+	UmsvsVUz8EdlCIlKE3+INmRjsVIhOroVxu64zO5LaV/AQqGExKSbC+fTLq9yoYP+L9vGxO5H18UlM
+	ZQm3xrEUbMTQWHPdPv15KZJOgdAzSygytvTiLKIUbuKTcOuFYgTSCAWLCFv+H9M4RU3EA1l8qHEUL
+	3UqnTqEXgfTx54mlB2Og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZYA0-0002jf-Pt; Fri, 15 May 2020 11:05:48 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jZYGL-00017T-LF; Fri, 15 May 2020 11:12:21 +0000
+Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZY7T-0000BR-U0
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:03:18 +0000
-Received: by mail-wm1-x344.google.com with SMTP id z72so2191663wmc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 04:03:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=iqpq12gc8bTtNBtY5ZIVdxCDS9UGGhps1DCBy7t56Sc=;
- b=KQhWFuX/FjBpvSsD5C4JlqNzD53keqf6x1HZUfMWY9SjMgRvTGdIRcgtfxx+yEhOua
- 7FJGFLE/tL21fgq7R1DP6qTmAsILkA7I4iQbUswloXIptvbMaIjLiQ+JuFAqdrgh1K0q
- MbxDuvveGypUJvaM4vhgWjhk+g01QInFSXY+fXcmb8H23HUhzpdgrUgoAPnLuzrQOkWm
- MTgueJG/9fB0PYlgMmHxWSLuDK4wk/ybO7LPPQ3E9Jono3Ly/QGKv6JYwPBZAB34Hyb6
- 0R3efCIjIciXDeRMX/oaSGKEeTMXO5WiPRNUMAvLtFGnUIaQHpXivbwnoRATQBzMBAMS
- ZKfg==
+ id 1jZYGB-00015o-MU; Fri, 15 May 2020 11:12:15 +0000
+Received: by mail-ej1-x644.google.com with SMTP id e2so1844979eje.13;
+ Fri, 15 May 2020 04:12:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=mDPmX+zBOB1FOVcPGDXxtVKn0gcZ1qfhCRVWeTxq8uE=;
+ b=r/XGnEaxt/IlcucOMaN3sI+Tptdk5KSSK1jNiq+OfqytAfLNuieRI02BKpUT4ym3Yc
+ p20kSvAg85TX+qcGEM68nG5NKC272BkkbstQ1O8TIIpjGvCGY/B6VLRi9pp4RXb9Iftl
+ zlpUX0mf5VBou3CNPJTs12nQMkm4i06fCn6oDehO0iSrYbQhxxBn50S/zxtJdVYBKvAf
+ fXFFmnd4uhJEOuE3rtfbWyOOL45K77nvUjzc9X7T1CpXnUDIw7aob1QLXz6qJyXS6feQ
+ luSgeSW6SwA6/jM8VgYlXqJXamPw1XMJWWsfEMvhZNCehu/+bpz45c+HVdp6lpZa+kMz
+ oyEQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=iqpq12gc8bTtNBtY5ZIVdxCDS9UGGhps1DCBy7t56Sc=;
- b=Qy/1UPyElxOuAJ1W09C+Ckg7fqPT1maOArT+2jy+Q8LJMnu34iwIrKj08QIlGRtTEN
- c2n4IiIslMHSCHQVsODrP0RN4GlZSm5rRDYTPvFoZF/mJEXOHwC2qJprHabfcuK7rg/u
- toRoBegHj4eUiO810AnZzvUn0h7LaC5bwydvE8//UZQgoP1Cu2dNviZG60JabxuXhRJX
- pgJMzC2ZqHNcH/adzJjE4G17LQoURvsxl6JpoknoeRgXLkMzEu5iGyGsIXFPZvTcblLU
- iIDBlH2MNkmx4ZxkyZBcqugcfDbetKymSdPFVeke1TpCRDhxWt3E1pxKl4+dh8QKt573
- k4iw==
-X-Gm-Message-State: AOAM5326fPkI4faYliu/aYhOtV5cwf9oXST/SzPvP561bIeKm6PpLmL3
- 9Jx7TDKwA/42b+fj1TTm0yo8XFT56WI=
-X-Google-Smtp-Source: ABdhPJz09zqvaqC1JaFDugl18vq78E+RNFXiDIdWvrDoMdsvhWsiQds56u5FrbQHPH1HGgUnZIcgDA==
-X-Received: by 2002:a1c:bbc5:: with SMTP id l188mr3289666wmf.163.1589540589509; 
- Fri, 15 May 2020 04:03:09 -0700 (PDT)
-Received: from ?IPv6:2a01:e34:ed2f:f020:28df:6b80:d69f:9c0a?
- ([2a01:e34:ed2f:f020:28df:6b80:d69f:9c0a])
- by smtp.googlemail.com with ESMTPSA id z12sm458111wmc.6.2020.05.15.04.03.08
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 15 May 2020 04:03:08 -0700 (PDT)
-Subject: Re: [PATCH v4 4/4] thermal: cpuidle: Register cpuidle cooling device
-To: Sudeep Holla <sudeep.holla@arm.com>
-References: <20200429103644.5492-1-daniel.lezcano@linaro.org>
- <20200429103644.5492-4-daniel.lezcano@linaro.org>
- <99b3bc79-f48a-3d51-a8ae-8b9ca4856d36@arm.com>
- <04b5da25-d591-b08a-e554-6e084d7ea908@linaro.org>
- <f3cee834-4946-10bd-a504-df6cf62d9e90@linaro.org>
- <20200515095751.GA25267@bogus>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Message-ID: <6faac4ac-b711-11ad-32e7-26ae930db6fa@linaro.org>
-Date: Fri, 15 May 2020 13:03:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mDPmX+zBOB1FOVcPGDXxtVKn0gcZ1qfhCRVWeTxq8uE=;
+ b=jXr9jNXh+THwAZzq9kWuVmVaj5qsEug4JPNQ/FbseJamxmNY/9UxxkQlbFiUemD8Ui
+ 9PbZN5MIGNcAcOHMvhbHW5mEBupGnqdW1YSOjQmZrAivcg+MKIBHlekxI+27AmjfLNkA
+ mgdX71BCzP7o08a6F3GLaX1eoDzHGvhxAy31xxXKx94PmHcd/EPSnSda+BxnZbwmpLbE
+ ok4G90kMauq5tSeo6nduv2izrv5Mv1EYBz103QR54hHOrA4ozsvrHAYPvbh7JC8swDtD
+ sVxS8YzSzUAmW7uGzGm766NXXgNh7kfM0WrEbyOP1AuMqd3BrFuS4LMY191j3B1OD/qA
+ MceA==
+X-Gm-Message-State: AOAM533txf3m2vJWrzoh6Mjd0Ap0K6gDQlEEV5LOWzdK0NuZjLviNDxp
+ w/GQwh8QnKGqh1aRmjdW6HbyGJBXqBGHm8GnZq8=
+X-Google-Smtp-Source: ABdhPJyhR5Qi/o52NNgorqHZojlWgNxoKOe4vSX9Z7H8DNlGfH8Y07x1O5/FkONXwvRt6pldVQ0otaZTj0aHFftlGdU=
+X-Received: by 2002:a17:906:d8c1:: with SMTP id
+ re1mr2275220ejb.184.1589541129907; 
+ Fri, 15 May 2020 04:12:09 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200515095751.GA25267@bogus>
-Content-Language: en-US
+References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
+ <1589472657-3930-2-git-send-email-amittomer25@gmail.com>
+ <20200514182750.GJ14092@vkoul-mobl>
+ <CABHD4K8F_sk3Xsevu4pMtR1jEanh5-dSATLYySPKW-nDY9fAvA@mail.gmail.com>
+ <20200515065827.GL333670@vkoul-mobl>
+ <CABHD4K92yySOJs9heBienGBieu6N+ALj7NKcAPvThQGXMWfOdA@mail.gmail.com>
+In-Reply-To: <CABHD4K92yySOJs9heBienGBieu6N+ALj7NKcAPvThQGXMWfOdA@mail.gmail.com>
+From: Amit Tomer <amittomer25@gmail.com>
+Date: Fri, 15 May 2020 16:41:33 +0530
+Message-ID: <CABHD4K-njmpbJQ3XR+qfgTK0QCOF819o6JCaSJcEn05-jqTNCw@mail.gmail.com>
+Subject: Re: [PATCH v1 1/9] dmaengine: Actions: get rid of bit fields from dma
+ descriptor
+To: Vinod Koul <vkoul@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_040311_983989_986041F4 
-X-CRM114-Status: GOOD (  16.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_041211_736305_D77FC655 
+X-CRM114-Status: UNSURE (   6.05  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [amittomer25[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [amittomer25[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -105,48 +100,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:CPU IDLE TIME MANAGEMENT FRAMEWORK" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:CPUIDLE DRIVER - ARM PSCI" <linux-arm-kernel@lists.infradead.org>,
- rui.zhang@intel.com, Lukasz Luba <lukasz.luba@arm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Andre Przywara <andre.przywara@arm.com>, linux-actions@lists.infradead.org,
+ cristian.ciocaltea@gmail.com,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMTUvMDUvMjAyMCAxMTo1OCwgU3VkZWVwIEhvbGxhIHdyb3RlOgo+IE9uIE1vbiwgTWF5IDA0
-LCAyMDIwIGF0IDA4OjAwOjAxUE0gKzAyMDAsIERhbmllbCBMZXpjYW5vIHdyb3RlOgo+Pgo+PiBI
-aSwKPj4KPj4gT24gMjkvMDQvMjAyMCAyMzowMSwgRGFuaWVsIExlemNhbm8gd3JvdGU6Cj4+PiBP
-biAyOS8wNC8yMDIwIDIyOjAyLCBMdWthc3ogTHViYSB3cm90ZToKPj4+Pgo+Pj4+Cj4+Pj4gT24g
-NC8yOS8yMCAxMTozNiBBTSwgRGFuaWVsIExlemNhbm8gd3JvdGU6Cj4+Pj4+IFRoZSBjcHVpZGxl
-IGRyaXZlciBjYW4gYmUgdXNlZCBhcyBhIGNvb2xpbmcgZGV2aWNlIGJ5IGluamVjdGluZyBpZGxl
-Cj4+Pj4+IGN5Y2xlcy4gVGhlIERUIGJpbmRpbmcgZm9yIHRoZSBpZGxlIHN0YXRlIGFkZGVkIGFu
-IG9wdGlvbmFsCj4+Pj4+Cj4+Pj4+IFdoZW4gdGhlIHByb3BlcnR5IGlzIHNldCwgcmVnaXN0ZXIg
-dGhlIGNwdWlkbGUgZHJpdmVyIHdpdGggdGhlIGlkbGUKPj4+Pj4gc3RhdGUgbm9kZSBwb2ludGVy
-IGFzIGEgY29vbGluZyBkZXZpY2UuIFRoZSB0aGVybWFsIGZyYW1ld29yayB3aWxsIGRvCj4+Pj4+
-IHRoZSBhc3NvY2lhdGlvbiBhdXRvbWF0aWNhbGx5IHdpdGggdGhlIHRoZXJtYWwgem9uZSB2aWEg
-dGhlCj4+Pj4+IGNvb2xpbmctZGV2aWNlIGRlZmluZWQgaW4gdGhlIGRldmljZSB0cmVlIGNvb2xp
-bmctbWFwcyBzZWN0aW9uLgo+Pj4+Pgo+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBEYW5pZWwgTGV6Y2Fu
-byA8ZGFuaWVsLmxlemNhbm9AbGluYXJvLm9yZz4KPj4+Pj4gLS0tCj4+Pj4+IMKgIC0gVjQ6Cj4+
-Pj4+IMKgwqDCoCAtIERvIG5vdCBjaGVjayB0aGUgcmV0dXJuIHZhbHVlIGFzIHRoZSBmdW5jdGlv
-biBkb2VzIG5vIGxvbmdlcgo+Pj4+PiByZXR1cm4gb25lCj4+Pj4+IC0tLQo+Pj4KPj4+IFsgLi4u
-IF0KPj4+Cj4+Pj4gUmV2aWV3ZWQtYnk6IEx1a2FzeiBMdWJhIDxsdWthc3oubHViYUBhcm0uY29t
-Pgo+Pj4KPj4+IFRoYW5rcyBMdWthc3ogZm9yIHRoZSByZXZpZXcuCj4+Pgo+Pj4gUmFmYWVsLCBh
-cyBMb3JlbnpvIGFuZCBTdWRlZXAgYXJlIG5vdCByZXNwb25zaXZlLCBjb3VsZCB5b3UgY29uc2lk
-ZXIgYWNrCj4+PiB0aGlzIHBhdGNoIHNvIEkgY2FuIG1lcmdlIHRoZSBzZXJpZXMgdGhyb3VnaCB0
-aGUgdGhlcm1hbCB0cmVlID8KPj4KPj4gR2VudGxlIHBpbmcgLi4uIFN1ZGVlcCwgTG9yZW56byBv
-ciBSYWZhZWwgPwo+Pgo+IAo+IFNvcnJ5IGZvciB0aGUgZGVsYXkuIEkgaWdub3JlIHRoaXMgYXMg
-aXQgd2FzIGdlbmVyaWMgYW5kIEkgd2FzIGZpbmUgd2l0aAo+IGl0LiBEaWRuJ3Qga25vdyB5b3Ug
-d2VyZSB3YWl0aW5nIG1lLCBzb3JyeSBmb3IgdGhhdC4KCk5vIHByb2JsZW0sIHRoYW5rcyBmb3Ig
-dGhlIGFjay4KCj4gQWNrZWQtYnk6IFN1ZGVlcCBIb2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+
-CgpSYWZhZWwsIGlmIHlvdSBhcmUgb2sgd2l0aCB0aGF0LCBJJ2xsIHRha2UgdGhpcyBwYXRjaCBp
-biB0aGUgdGhlcm1hbAp0cmVlIGFsb25nIHdpdGggdGhlIG90aGVycy4KCgotLSAKPGh0dHA6Ly93
-d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBB
-Uk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9wYWdlcy9M
-aW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0
-ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4gQmxvZwoKX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
-YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
-aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi,
+
+> I do have a cover letter for this series , But CCed only to Actions
+> Semi SoC maintainers
+> and mailing list.
+
+and following is the link to cover letter for v1:
+
+http://lists.infradead.org/pipermail/linux-arm-kernel/2020-May/732075.html
+
+Thanks
+-Amit
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
