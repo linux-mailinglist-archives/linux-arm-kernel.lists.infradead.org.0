@@ -2,162 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC4B91D54CB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 17:34:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13BE01D54DB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 17:37:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4MJOOCzH+WH3HbSAkPBoE2L9b0dSkkGiDkOwHJguRIU=; b=ih/o5ZlLeyTXmq
-	CKRw/el4Irnt4DshUexVjtOoFj+hHCYT/Rc4RhofFM/rVutJQMdMjdFHmbVv8F0lS0Ju627h5SYXl
-	ua+lOaObhJ2TQImeoynh0UyAmj46mgNzXoRg9fsUxgh81nmEbmyh7nYSUR7sOIchiGcmNVj86pNRF
-	8huGGiVT9ctahR+/7XGlhdIMfibjTeNIOfsQpgO7LEUdkjvpcs4q3Rf1peXD4smrutXzY78KIYOPe
-	8XuPVcHSUX0vZPzmXznToNlcXSeYpwxYYUf1dhLMMagPYrfZ1rk8mFoHY+rpoaaAzRH48YC/kmoyK
-	ZqrV7zRt/kXrxtASC0AQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=LOSKQzy8wYsy1d0qnaI6gZ/qGigsdxKpNXQGSMhk9HQ=; b=l7mn9PoNwQ3g0TA7mrzET1ipO
+	DNETmZ5j3P/xaWyDQKElAKcTA73XAJAa9zacBsVU26P1hniE0FnPMjo3pxQo2f+9VtmodeI9Ty6xD
+	utGMf28mTz+HrMOr4CCkwa3jKvsKDc9patc4iSJjR6Z0FCCFsXXoqK8df0QlebimTxI2HSTI5PNd5
+	HCc4jL9A1OKOMHRYHOmoXnsd4ddKOT9Q3G9DAe16ELz1jxOkIJixF9t9UdcupXM0RfQ3uT07UANJM
+	m1nfSMLFBUDAwpIL+dxa4AeWaa+giVktbHhnvxfyCiJmukJPLAXQBU0FZiUkJ79GAYB86d9aYMxfF
+	hypuq0Zxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZcLN-0003Yd-DL; Fri, 15 May 2020 15:33:49 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jZcOn-0006p0-1H; Fri, 15 May 2020 15:37:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZcLA-0003Wu-8v; Fri, 15 May 2020 15:33:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id l17so4060326wrr.4;
- Fri, 15 May 2020 08:33:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=9Bszcdm8rAKne12ogdriQoF78H0+EQvpFbUS01vAHEc=;
- b=Ai1MfX0Nxn+0N2Nu4n7LYWJ9GWokV2wkOu2mEtjx1dIA/YLKV4xaAwXmNl/Q6qxfsQ
- tP0XgMn2BNddDjGkPUEz5IBL3f1vgiqf7dDQQRxAYrX23xdsYvGevhmWe/gKJyxurSVF
- hSmR/4enrRVMNCGDtEO5uKk9h6LfCOKMIEW/e3LS7il1GFFP2EzI6xvbDOJ4llaQICFT
- /UeN47NTsnk21m+gaiqpPGa6xvz2qHbFIBmUG9pcscqvLhaNTw0Tkxpn2U8wTW2GOl2Q
- 8uTGQrIBkdNAGc7nb1t8f3kYa0imOqMinGfRcEM36TBXk+zOho3k27ZtIb6ttkoZe8EZ
- dJTg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=9Bszcdm8rAKne12ogdriQoF78H0+EQvpFbUS01vAHEc=;
- b=a4Ornn1n42tqtXG4KFUB8mEpu+Mk4V+LzRFmVa0zXoZNejL7F5o8ftPhEuF6L3Eihb
- O7uLtlwM67d2rTMXQJhNi6Ck5ytfo7frYHImBUSAyBBbBEA74Sj/HHrFiSGCUPvT8ryu
- BgBnVG10OHjJMg9aH+E8DO9UfkkYxrpfmYyT0qCfjdVUO1EHXWzcv5fNomiAViVixXCW
- 9vXEaMLA2VCDicW9qka2nYRMVCHWkiR9e8gcLBVpr04AaMO6MfxG12uR9eTnEIzSe90Q
- 4BiBD5GmyS/tL3d9iSM9d5ofWsM6nmIbFcyhZ5hHxpRaHJdtuPUb+eaG0WQmF0y29wL1
- UbTQ==
-X-Gm-Message-State: AOAM532xaUA1at9YVJugJz4T2xUFSR9GAbMA58URQ89NpZtk9JhbiUgk
- syyAwiteoKIeyi0zCVc+qJRt0ups
-X-Google-Smtp-Source: ABdhPJwyZfWELMTFyRg2jPVUVMIInUGcjz+oVnvl2RIDLrZ5whxCfyb+PzC7iso0QfXV1BOxcihSZA==
-X-Received: by 2002:adf:a118:: with SMTP id o24mr4690403wro.330.1589556814609; 
- Fri, 15 May 2020 08:33:34 -0700 (PDT)
-Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id t71sm4180867wmt.31.2020.05.15.08.33.32
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 15 May 2020 08:33:33 -0700 (PDT)
-Subject: Re: [PATCH] [RESEND] arm64: dts: mt8173: fix cooling device range
-To: Michael Kao <michael.kao@mediatek.com>, Zhang Rui <rui.zhang@intel.com>,
- Eduardo Valentin <edubezval@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- hsinyi@chromium.org, linux-pm@vger.kernel.org, srv_heupstream@mediatek.com
-References: <20200424082340.4127-1-michael.kao@mediatek.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <8e8a17ef-6919-0aef-2e8c-4ce6bb388bec@gmail.com>
-Date: Fri, 15 May 2020 17:33:32 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jZcOb-0006oc-Ns
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 15:37:11 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 05DF120758;
+ Fri, 15 May 2020 15:37:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589557029;
+ bh=XmfYacoWpckw7SIZkW14MRGHswo6szBUF/OdRKOWU6Y=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=oFKwC/DgLyczCZ6gBJvC7+1EHKf1XMn4dlmjjklunbn8bc46Chk7nHpj1LTRqGtEm
+ OZLl5u9+isnWLT/Zj0SACT6AFT3sLEPzXW2IQaDdIcYlFPdL9xSpnVfh7GAuAHK9F+
+ +oAYckwkn2XVbhPEIZviec2wYQNvcafFJW7MXfoA=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jZcOZ-00CcMH-DG; Fri, 15 May 2020 16:37:07 +0100
 MIME-Version: 1.0
-In-Reply-To: <20200424082340.4127-1-michael.kao@mediatek.com>
-Content-Language: en-US
+Date: Fri, 15 May 2020 16:37:07 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: John Garry <john.garry@huawei.com>
+Subject: Re: [PATCH v3 0/2] irqchip/gic-v3-its: Balance LPI affinity across
+ CPUs
+In-Reply-To: <a22aaa72-4f5f-40d4-33e0-0aff8b65fdc2@huawei.com>
+References: <20200316115433.9017-1-maz@kernel.org>
+ <9171c554-50d2-142b-96ae-1357952fce52@huawei.com>
+ <80b673a7-1097-c5fa-82c0-1056baa5309d@huawei.com>
+ <f2971d1c-50f8-bf5a-8b16-8d84a631b0ba@huawei.com>
+ <7c05b08b-2edc-7f97-0175-898e9772673e@huawei.com>
+ <668f819c8747104814245cd6faebdd9a@kernel.org>
+ <a22aaa72-4f5f-40d4-33e0-0aff8b65fdc2@huawei.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <c37d8b15f09c6c933e39b81f39fcb827@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: john.garry@huawei.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, jason@lakedaemon.net,
+ chenxiang66@hisilicon.com, robin.murphy@arm.com, luojiaxing@huawei.com,
+ ming.lei@redhat.com, wangzhou1@hisilicon.com, tglx@linutronix.de,
+ will@kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_083336_334145_0608B372 
-X-CRM114-Status: GOOD (  16.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_083709_822964_CD5BC6A8 
+X-CRM114-Status: GOOD (  25.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -166,6 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -177,67 +98,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Jason Cooper <jason@lakedaemon.net>,
+ "chenxiang \(M\)" <chenxiang66@hisilicon.com>, Will Deacon <will@kernel.org>,
+ luojiaxing <luojiaxing@huawei.com>, linux-kernel@vger.kernel.org,
+ Ming Lei <ming.lei@redhat.com>, "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 24/04/2020 10:23, Michael Kao wrote:
-> When thermal reaches target temperature,it would be pinned to state 0
-> (max frequency and power).
-> Fix the throttling range to no limit.
+On 2020-05-15 12:50, John Garry wrote:
+> Hi Marc,
 > 
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
-
-applied to v5.7-next/dts64
-
-Thanks!
-
-> ---
->  arch/arm64/boot/dts/mediatek/mt8173.dtsi | 13 +++++++++----
->  1 file changed, 9 insertions(+), 4 deletions(-)
+>> Absolutely. Life has got in the way, so let me page it back in...
 > 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> index ccb8e88a60c5..cae2cec46cdc 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> @@ -19,6 +19,7 @@
->  #include <dt-bindings/power/mt8173-power.h>
->  #include <dt-bindings/reset/mt8173-resets.h>
->  #include <dt-bindings/gce/mt8173-gce.h>
-> +#include <dt-bindings/thermal/thermal.h>
->  #include "mt8173-pinfunc.h"
->  
->  / {
-> @@ -294,14 +295,18 @@
->  			cooling-maps {
->  				map@0 {
->  					trip = <&target>;
-> -					cooling-device = <&cpu0 0 0>,
-> -							 <&cpu1 0 0>;
-> +					cooling-device = <&cpu0 THERMAL_NO_LIMIT
-> +							  THERMAL_NO_LIMIT>,
-> +							 <&cpu1 THERMAL_NO_LIMIT
-> +							  THERMAL_NO_LIMIT>;
->  					contribution = <3072>;
->  				};
->  				map@1 {
->  					trip = <&target>;
-> -					cooling-device = <&cpu2 0 0>,
-> -							 <&cpu3 0 0>;
-> +					cooling-device = <&cpu2 THERMAL_NO_LIMIT
-> +							  THERMAL_NO_LIMIT>,
-> +							 <&cpu3 THERMAL_NO_LIMIT
-> +							  THERMAL_NO_LIMIT>;
->  					contribution = <1024>;
->  				};
->  			};
+> Great
 > 
+>>> 
+>>> [PATCH 2/2] irqchip/gic-v3-its: Handle no overlap of non-managed irq
+>>>   affinity mask
+>>> 
+>>> In selecting the target CPU for a non-managed interrupt, we may 
+>>> select
+>>> a
+>>> target CPU outside the requested affinity mask.
+>>> 
+>>> This is because there may be no overlap of the ITS node mask and the
+>>> requested CPU affinity mask. The requested affinity mask may be 
+>>> coming
+>>> from userspace or some drivers which try to set irq affinity, see 
+>>> [0].
+>>> 
+>>> In this case, just ignore the ITS node cpumask. This is a deviation
+>>> from
+>>> what Thomas described. Having said that, I am not sure if the
+>>> interrupt is ever bound to a node for us.
+>>> 
+>>> [0]
+>>> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/perf/hisilicon/hisi_uncore_pmu.c#n417
+>>> 
+>>> ---
+>>>   drivers/irqchip/irq-gic-v3-its.c | 4 ----
+>>>   1 file changed, 4 deletions(-)
+>>> 
+>>> diff --git a/drivers/irqchip/irq-gic-v3-its.c
+>>> b/drivers/irqchip/irq-gic-v3-its.c
+>>> index 2b18feb..12d5d4b4 100644
+>>> --- a/drivers/irqchip/irq-gic-v3-its.c
+>>> +++ b/drivers/irqchip/irq-gic-v3-its.c
+>>> @@ -1584,10 +1584,6 @@ static int its_select_cpu(struct irq_data *d,
+>>>   			cpumask_and(tmpmask, cpumask_of_node(node), aff_mask);
+>>>   			cpumask_and(tmpmask, tmpmask, cpu_online_mask);
+>>> 
+>>> -			/* If that doesn't work, try the nodemask itself */
+>>> -			if (cpumask_empty(tmpmask))
+>>> -				cpumask_and(tmpmask, cpumask_of_node(node), cpu_online_mask);
+>>> -
+>>>   			cpu = cpumask_pick_least_loaded(d, tmpmask);
+>>>   			if (cpu < nr_cpu_ids)
+>>>   				goto out;
+>> 
+>> I'm really not sure. Shouldn't we then drop the wider search on
+>> cpu_inline_mask, because userspace could have given us something
+>> that we cannot deal with?
+> 
+> It's not just userspace. Some drivers call irq_set_affinity{_hint}}()
+> also, with a non-overlapping affinity mask.
+> 
+> We could just error these requests, but some drivers rely on this
+> behavior. Consider the uncore driver I mentioned above, which WARNs
+> when the affinity setting fails. So it tries to set the affinity with
+> the cpumask of the cluster associated with the device, but with D06's
+> ITS config, below, there may be no overlap.
+
+Does this PMU use the ITS? That's a pretty odd setup.
+
+So this is a case where the device has an implicit affinity that
+isn't that of the ITS. Huhu...
+
+>> 
+>> What you are advocating for is a strict adherence to the provided
+>> mask, and it doesn't seem to be what other architectures are 
+>> providing.
+>> I consider the userspace-provided affinity as a hint more that 
+>> anything
+>> else, as in this case the kernel does know better (routing the 
+>> interrupt
+>> to a foreign node might be costly, or even impossible, see the TX1
+>> erratum).
+> 
+> Right
+> 
+>> 
+>>   From what I remember of the earlier discussion, you saw an issue on
+>> a system with two sockets and a single ITS, with the node mask limited
+>> to the first socket. Is that correct?
+> 
+> A bit more complicated: 2 sockets, 2 NUMA nodes per socket, and ITS
+> config as follows:
+> D06ES  1x ITS with proximity node #0
+> 
+> root@(none)$ dmesg | grep ITS
+> [ 0.000000] SRAT: PXM 0 -> ITS 0 -> Node 0
+> 
+> 
+> D06CS
+> 2x ITS with proximity node #0, #2
+> 
+> estuary:/$ dmesg | grep ITS
+> [    0.000000] SRAT: PXM 0 -> ITS 0 -> Node 0
+> [    0.000000] SRAT: PXM 2 -> ITS 1 -> Node 2
+> 
+> It complicates things.
+> 
+> We could add extra intelligence to record if an node has an ITS
+> associated. In the case of that not being true, we would fallback on
+> the requested affin only (for case of no overlap). It gets a bit more
+> messy then.
+
+It looks like part of the problem is that we can't reliably describe
+an ITS affine to multiple NUMA nodes... If we could describe that, then
+the above situation wouldn't occur (we'd say that ITS-0 covers both
+nodes 0 and 1). But I can't find a way to express this with SRAT and
+_PXM. Also, SRAT describes the affinity of the ITS with memory, and not
+with the CPUs... It is all a bit fsck'd. :-(
+
+I guess I'll apply your change for now with a comment explaining the
+situation.
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
