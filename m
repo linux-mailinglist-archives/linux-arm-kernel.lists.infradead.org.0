@@ -2,52 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 545A51D56DE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 18:56:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFAC11D56E9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 18:58:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WTheBTioRuaqyOZL5WWh34NMgqTgBkkKHRlqVw0yme0=; b=S+iOtm8UZ/B3KOn5/MC7JCrCc
-	3oEDvpTgMWNd3mDwUYaup2G8Qq7l8QChwSBWhG5c65tnTNPcCfn0eQKipKhTphiUCXYGI0H0ogu5q
-	zOQDbHlBdC+WV59fXz4M8ByMKU3Pcq9dTbV9gBEUfpfl+RZmIAsAjIn3vkeXO9dc/ZUzVlwFfA22z
-	w5WsOXNL9DCtPSdZDf9o1PrkPLpOJ6l2qyzua5ze2rz/YtZdAAjF2ucuZZ9ykYckakVB+udLSh9QF
-	/G7KONL+iGLZ8iUSX4pBPTtRG0Pw3K6VgVTx9VkGITi2TRQnynO506Hoq1OZgrTsToohNiWD2dIZ5
-	UrgdCkRMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AtYJE84gW4ucd4OOEAQs+OP7o77ICYedch8VvdKw0q8=; b=NKhpazayfCmLRQ
+	nPsEfpNBTWl0s1ljkFwOTaKMnoKQ+5suDb/VCP9LlVJyTjz1AcTSbTdnv8R98aAAn2CXZfp3X1V0f
+	J4zhNCdJTAGWofgbRPM6QhU3LLzBO2/ucHcNc+zrSndBbC86pfW0uW1xj16FF6btuTwMUUEx/gZJq
+	qtt+VtZZCU4njkSFeiKswjd7DXas0mvtV1MiYxGV8263k+B8kVRut/fI51UU1IcUjkwkEPZPOEHlk
+	bduJYNfyLHlEy8y2AuKg4FH1VRaPxcuyBf4YKyVrNiKjF61mISii/vb5Oak72zbZWwJiTEtr3T6D3
+	p8hUL68iSgLjRAOtYA6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZddA-0004SD-FY; Fri, 15 May 2020 16:56:16 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZdd1-0004Ro-K4; Fri, 15 May 2020 16:56:09 +0000
-Received: from localhost (p5486CC07.dip0.t-ipconnect.de [84.134.204.7])
- by pokefinder.org (Postfix) with ESMTPSA id 1297F2C1F6B;
- Fri, 15 May 2020 18:56:06 +0200 (CEST)
-Date: Fri, 15 May 2020 18:56:05 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: Re: [PATCH 1/4] dt-bindings: i2c: Document I2C controller binding
- for MT6797 SoC
-Message-ID: <20200515165605.GA19423@ninjato>
-References: <20200222162444.11590-1-manivannan.sadhasivam@linaro.org>
- <20200222162444.11590-2-manivannan.sadhasivam@linaro.org>
- <20200226222330.GA9392@bogus>
- <aa9ea456-dbee-229c-aea0-4860c6eb7adf@gmail.com>
+	id 1jZdf3-0004sn-9l; Fri, 15 May 2020 16:58:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZdet-0004rp-NA
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 16:58:04 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 041CF206C0;
+ Fri, 15 May 2020 16:58:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589561883;
+ bh=Jr8RWO2hebBgByv9c7P4kyiawF8c8Qgaavm6YeRiLs0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=cKKw8kejPfZBRQDJkXrbTZUYlBpzB0WtP1ZPDXuFHRUkglSDPf0KJHjrRZyFCidrn
+ oqITzG9xZod2XWzfkdyWj9MunZLEz+sPTbXtC5Vf9nxtUP0T6kqf26b6thkHg7kDQ+
+ 0fJgIXoNsNdK/9UuVofb8U8ziQh+4qATer/Ttu3c=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why.lan) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jZder-00Cdec-CP; Fri, 15 May 2020 17:58:01 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v4 0/2] irqchip/gic-v3-its: Balance LPI affinity across CPUs
+Date: Fri, 15 May 2020 17:57:50 +0100
+Message-Id: <20200515165752.121296-1-maz@kernel.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <aa9ea456-dbee-229c-aea0-4860c6eb7adf@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, john.garry@huawei.com,
+ chenxiang66@hisilicon.com, wangzhou1@hisilicon.com, ming.lei@redhat.com,
+ jason@lakedaemon.net, tglx@linutronix.de, kernel-team@android.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_095607_807056_06027441 
-X-CRM114-Status: GOOD (  12.12  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200515_095803_772295_C13C96D2 
+X-CRM114-Status: GOOD (  10.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,87 +88,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- adamboardman@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6151951033123003057=="
+Cc: Jason Cooper <jason@lakedaemon.net>, chenxiang <chenxiang66@hisilicon.com>,
+ John Garry <john.garry@huawei.com>, Ming Lei <ming.lei@redhat.com>,
+ Zhou Wang <wangzhou1@hisilicon.com>, Thomas Gleixner <tglx@linutronix.de>,
+ kernel-team@android.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+When mapping a LPI, the ITS driver picks the first possible
+affinity, which is in most cases CPU0, assuming that if
+that's not suitable, someone will come and set the affinity
+to something more interesting.
 
---===============6151951033123003057==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="SLDf9lqlvOQaIe6s"
-Content-Disposition: inline
+It apparently isn't the case, and people complain of poor
+performance when many interrupts are glued to the same CPU.
+So let's place the interrupts by finding the "least loaded"
+CPU (that is, the one that has the fewer LPIs mapped to it).
+So called 'managed' interrupts are an interesting case where
+the affinity is actually dictated by the kernel itself, and
+we should honor this.
 
+* From v3:
+  - Always pre-decrement/post-increment affinity to avoid useless
+    changes of affinity (John)
+  - Don't use the node mask as a superset of the proposed affinity
+    as the ACPI tables can't really describe this (John)
+  - Rebased on v5.7-rc5
 
---SLDf9lqlvOQaIe6s
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+* From v2:
+  - Split accounting from CPU selection
+  - Track managed and unmanaged interrupts separately
 
-On Fri, May 15, 2020 at 04:48:28PM +0200, Matthias Brugger wrote:
-> Hi Wolfram,
->=20
-> On 26/02/2020 23:23, Rob Herring wrote:
-> > On Sat, 22 Feb 2020 21:54:41 +0530, Manivannan Sadhasivam wrote:
-> >> I2C controller driver for MT6577 SoC is reused for MT6797 SoC. Hence,
-> >> document that in DT binding.
-> >>
-> >> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-> >> ---
-> >>  Documentation/devicetree/bindings/i2c/i2c-mt65xx.txt | 1 +
-> >>  1 file changed, 1 insertion(+)
-> >>
-> >=20
-> > Acked-by: Rob Herring <robh@kernel.org>
-> >=20
->=20
-> Do you want to take this thorough your tree or are you OK if I take it th=
-orough
-> mine?
+Marc Zyngier (2):
+  irqchip/gic-v3-its: Track LPI distribution on a per CPU basis
+  irqchip/gic-v3-its: Balance initial LPI affinity across CPUs
 
-The I2C list is neither in the CC field, nor is the patch in patchwork.
-I suggest you take it.
+ drivers/irqchip/irq-gic-v3-its.c | 170 ++++++++++++++++++++++++++-----
+ 1 file changed, 143 insertions(+), 27 deletions(-)
 
-Acked-by: Wolfram Sang <wsa@kernel.org>
+-- 
+2.26.2
 
-
---SLDf9lqlvOQaIe6s
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6+yaEACgkQFA3kzBSg
-KbZzoxAAmChj28HYksgpo/MWV/BUG0pk9pOZqJPw/klKVXwQthuLR5VhB8skNnKX
-ZJK0R4lBqOiTUkt9ASzuuXtA3Is/YlvAfyL6Q53pKcuaMJBIEl3xgf+hJxeUv8tv
-xKv2nXRtIIcnuVCfK3D6WmxR4De3vVYjZmg4YrCmdl6JUzDc/vXRXCPdeGI3HzXV
-S4thVcwulxtW77EVbZtbK7DObPVXQb6CFb8oPYblIBqAQRers0/s+zag9j6suBFF
-nRCr9uNrec1IPhnIwqSqe5uPqsr02kEaVFg0DCyXmR+l4FuM3yu19W9e1Jxxp/1Q
-RqIJ+OfCgiVgoG5SUHREIkOWbivBgy7sAdQ41PEQ91Wxa4Qjmvk+YhBn7SK/12za
-wYfD2FxikaYWlOW2vlMFIlHnXxjXuCQeMZl3BbHejgaNdYtGaxcp1mtFsLsG/acR
-a6VMR635bMGETBg4aN/8c0A4KAKDEhzL/ucn/JtKBK6LwGCdmNnIYpi+VOQ9YfVw
-8q6gVA88+MMK+pfOtPPLXnv8I9UU08oijKG3W+K1WS/ewL/bOI484C95s3yXg25Q
-9gpslUUdYlNy9SQilZ65IjjsjIDmF0v6bbSaygHqw8HWeMaRu4YV6leIOu51+yFK
-4OnklpdFEd+YwLSYVUyPZ3IK+4D2heK9etKViSs8HDCpSTBs1Po=
-=Vxiu
------END PGP SIGNATURE-----
-
---SLDf9lqlvOQaIe6s--
-
-
---===============6151951033123003057==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6151951033123003057==--
-
