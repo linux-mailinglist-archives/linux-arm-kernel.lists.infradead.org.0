@@ -2,71 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A1181D468E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 08:59:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 897261D46A9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:06:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T+Q2xMQ43zVoj9VfuR4UhNtxlpZg0GCPBDrJC6uewDs=; b=rH0sNVpdF+aoGy
-	H9oYbiEd9Opy6db6KvzEHvAC6AgU37gjjUCMO6txjbO4rqnVikuhplNnR6Goxd5nVFqHrfixyv58i
-	oztQScc06hTUQ0cjdV0n9qknfHU9oFOLZskzSCvyBmg2XpOjxI2SYo0QT/HKKPVKRl4FarvQ076HQ
-	btGnmpapzZ345Zs60Bge5zFmquUb6W6AhxdklMN+pnz5nn/9OZHADc3VqXpLb5FE/+/q6m6LsplVd
-	rBM8QADHlDlw6RGc6XWCAqTQu1No2445a4MEaNKk5wRR7aQGGH8gYe+Zno2xJZtTpVqydejm5DwtP
-	oMGpfbPfUGKm2Q8APR+Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xcRYIEeAg2wl79aNyLsHn0ecfUV+yoUzu9EVlxeWiDI=; b=P9noiaSOZa0op5
+	sII+kiO8YguRYSxvbc3I075o6REr9M52MXql3+ccShBQjOM5f2VfrQ1kv64x/FTo0d6xbAObQ7aEb
+	BvUx+RJ8yOBWdpWGiIjSSu91AU6Vlw+U8FUIRr5lk7ccP02Uo11evNL7/wkcths9uLHZ2CFbNG9WN
+	RKpTEs4lzm/sv+MQgfH5clLc3U9Ffc9TeJk2vkKIWub8rZBiU4yGxZq7yiPz4eNpkR9bm0Y5+aujt
+	jQQM4aP/SOZBkRgxYpqLGSGdZlu2iC3HQFw1vwI9444lUSkPllnATNtxAmtegB4RKQpiNieJzuQRW
+	Ok1nRSIms7fQPjAi7hOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZUJ4-0006gO-2X; Fri, 15 May 2020 06:58:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jZUQ3-0004jX-0L; Fri, 15 May 2020 07:06:07 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZUIn-0006WX-0n; Fri, 15 May 2020 06:58:38 +0000
-Received: from localhost (unknown [122.178.196.30])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6A8CD206F1;
- Fri, 15 May 2020 06:58:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589525916;
- bh=hUlz/rCkfZ+xgR8DMjnzNDlI1sbpdHErcZSsJkt/seU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=1A22I7krsIZihkqwPfAxmtTUF3iKA2KRWFzbmbv1BU0+VUlhk1Kyv+8fqKICg8j9y
- Cjs4kC5ZZfW6vv2hKdXux+tFKprzz0EZSutPWafbt0BHL6jX9qjeZw9zCgoaK/oDB6
- oVPEeYxHfqhyEp6flJG7XqJdUAAaS5Z2GG6lLHug=
-Date: Fri, 15 May 2020 12:28:27 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: Amit Tomer <amittomer25@gmail.com>
-Subject: Re: [PATCH v1 1/9] dmaengine: Actions: get rid of bit fields from
- dma descriptor
-Message-ID: <20200515065827.GL333670@vkoul-mobl>
-References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
- <1589472657-3930-2-git-send-email-amittomer25@gmail.com>
- <20200514182750.GJ14092@vkoul-mobl>
- <CABHD4K8F_sk3Xsevu4pMtR1jEanh5-dSATLYySPKW-nDY9fAvA@mail.gmail.com>
+ id 1jZUPv-0004iL-2G
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:06:00 +0000
+Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 318A6F1B7B422E81CA00;
+ Fri, 15 May 2020 15:05:51 +0800 (CST)
+Received: from [10.57.101.250] (10.57.101.250) by
+ DGGEMS403-HUB.china.huawei.com (10.3.19.203) with Microsoft SMTP Server id
+ 14.3.487.0; Fri, 15 May 2020 15:05:46 +0800
+Subject: Re: [PATCH] arm64: dts: hikey960: pinctrl: Fix spi2/spi3 pinconf
+To: Loic Poulain <loic.poulain@linaro.org>, <robh+dt@kernel.org>
+References: <1585044472-16706-1-git-send-email-loic.poulain@linaro.org>
+From: Wei Xu <xuwei5@hisilicon.com>
+Message-ID: <5EBE3F4A.7090006@hisilicon.com>
+Date: Fri, 15 May 2020 15:05:46 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
+ Thunderbird/38.2.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABHD4K8F_sk3Xsevu4pMtR1jEanh5-dSATLYySPKW-nDY9fAvA@mail.gmail.com>
+In-Reply-To: <1585044472-16706-1-git-send-email-loic.poulain@linaro.org>
+X-Originating-IP: [10.57.101.250]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_235837_095338_F87A3B75 
-X-CRM114-Status: GOOD (  14.04  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200515_000559_282609_C782729D 
+X-CRM114-Status: GOOD (  12.10  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.32 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,49 +69,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andre Przywara <andre.przywara@arm.com>, linux-actions@lists.infradead.org,
- cristian.ciocaltea@gmail.com,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 15-05-20, 00:04, Amit Tomer wrote:
-> Hi,
-> 
-> On Thu, May 14, 2020 at 11:58 PM Vinod Koul <vkoul@kernel.org> wrote:
-> >
-> > On 14-05-20, 21:40, Amit Singh Tomar wrote:
-> > > At the moment, Driver uses bit fields to describe registers of the DMA
-> > > descriptor structure that makes it less portable and maintainable, and
-> > > Andre suugested(and even sketched important bits for it) to make use of
-> > > array to describe this DMA descriptors instead. It gives the flexibility
-> > > while extending support for other platform such as Actions S700.
-> > >
-> > > This commit removes the "owl_dma_lli_hw" (that includes bit-fields) and
-> > > uses array to describe DMA descriptor.
-> >
-> > So i see patch 1/9 and 2/9 in my inbox... where are the rest ? No cover
-> > to detail out what the rest contains, who should merge them etc etc!
+Hi Loic,
 
-and what is the answer for this..?
-
-> >
-> > If you are sending a series to different subsystem please make a habit
-> > to CC everyone on cover letter so that we understand details about the
-> > series. If not dependent, just send as individual units to subsystems!
+On 2020/3/24 18:07, Loic Poulain wrote:
+> Only the pinmux was selected, not the pinconf, leading to spi issues.
+> Increase drive strength so that max speed (25Mhz) can be achieved.
 > 
-> Ok, I would make note of it and Cc everyone on cover letter going forward.
-> 
-> Thanks
-> -Amit
+> Signed-off-by: Loic Poulain <loic.poulain@linaro.org>
 
--- 
-~Vinod
+Thanks!
+Applied to the hisilicon arm64 dt tree.
+
+Best Regards,
+Wei
+
+> ---
+>  arch/arm64/boot/dts/hisilicon/hi3660.dtsi           | 4 ++--
+>  arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi | 6 +++---
+>  2 files changed, 5 insertions(+), 5 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/hisilicon/hi3660.dtsi b/arch/arm64/boot/dts/hisilicon/hi3660.dtsi
+> index 253cc34..c39b7898 100644
+> --- a/arch/arm64/boot/dts/hisilicon/hi3660.dtsi
+> +++ b/arch/arm64/boot/dts/hisilicon/hi3660.dtsi
+> @@ -974,7 +974,7 @@
+>  			clocks = <&crg_ctrl HI3660_CLK_GATE_SPI2>;
+>  			clock-names = "apb_pclk";
+>  			pinctrl-names = "default";
+> -			pinctrl-0 = <&spi2_pmx_func>;
+> +			pinctrl-0 = <&spi2_pmx_func &spi2_cfg_func>;
+>  			num-cs = <1>;
+>  			cs-gpios = <&gpio27 2 0>;
+>  			status = "disabled";
+> @@ -989,7 +989,7 @@
+>  			clocks = <&crg_ctrl HI3660_CLK_GATE_SPI3>;
+>  			clock-names = "apb_pclk";
+>  			pinctrl-names = "default";
+> -			pinctrl-0 = <&spi3_pmx_func>;
+> +			pinctrl-0 = <&spi3_pmx_func &spi3_cfg_func>;
+>  			num-cs = <1>;
+>  			cs-gpios = <&gpio18 5 0>;
+>  			status = "disabled";
+> diff --git a/arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi b/arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi
+> index d11efc8..920a311 100644
+> --- a/arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi
+> +++ b/arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi
+> @@ -717,7 +717,7 @@
+>  			spi3_cfg_func: spi3_cfg_func {
+>  				pinctrl-single,pins = <
+>  					0x008 0x0 /* SPI3_CLK */
+> -					0x0 /* SPI3_DI */
+> +					0x00c 0x0 /* SPI3_DI */
+>  					0x010 0x0 /* SPI3_DO */
+>  					0x014 0x0 /* SPI3_CS0_N */
+>  				>;
+> @@ -734,7 +734,7 @@
+>  					PULL_UP
+>  				>;
+>  				pinctrl-single,drive-strength = <
+> -					DRIVE7_02MA DRIVE6_MASK
+> +					DRIVE7_06MA DRIVE6_MASK
+>  				>;
+>  			};
+>  		};
+> @@ -1031,7 +1031,7 @@
+>  					PULL_UP
+>  				>;
+>  				pinctrl-single,drive-strength = <
+> -					DRIVE7_02MA DRIVE6_MASK
+> +					DRIVE7_06MA DRIVE6_MASK
+>  				>;
+>  			};
+>  
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
