@@ -2,218 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC3021D4F2F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 15:23:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A07CD1D4F4F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 15:33:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WZY4ZoEWRAZk87EEVQlrce0B2I3+uA4M7puB1FI2wa0=; b=Jd93v18d2cea5R
-	AqjlIIm1ziCyp52DmWupyzAmXsCjOEk1Aej33tZ2gWjVzu7Jxol01bjyHtQ/3iakiTp1k9XGbh1F2
-	szMgt2Rrd5u4vgX9FQvn77LwgLjtC8v9pPoqtIh8geDk78QzXfLgRtP7Aibam5/qwByPl6aGnAnAp
-	6iGOVn2e1j8PfNJ83mrlfZfVQcf7vOqyFhQV+azkw6JY0JkJQiKVRMgT4qIZAkL4TU22rSzR+MIL2
-	b+Q5O7J3Z/7pcY7bKcnFi5AZWPbG2xYs63SLxIJbeiQ9bmwz3Ov0n9H0O4PYy9rsZBU9KlyVMyV8E
-	KLw7MxQW7REbVqYvUU4g==;
+	List-Owner; bh=wwuOCcLSafHHu+8tfX56w5wN4vJGstdm6rUoUR8vhjQ=; b=Y4LhqAZ9JLH/JI
+	bRY4I86xpKduuuNu7NqPZ6Ikoj2YT9nqiSqWwG0uOSqhVeA2H5uM2dJNXYhxHAKZlSmo8Gid5ifI7
+	v3GY6Z7zexj+7kLc1zMqHFdIpL1TRxS3PLjhEqGglB1zgczMyCEbmg/enr+4l6ukpcUPIhjYpzNb4
+	iWOZ7ao9wfCriBSxRnyTCagyYse1aJOCzZjQuGCpFVucoVMmajTfHYYUxBtFJKqPm6BnnmKQMcONJ
+	7sPDOLgSnsLo8vLCkOMm3/xkAan/ctwi/5bKwgtR1hcS7z3PA3xvgMgDy82iVQrcfRJewhqlc6quO
+	3odJ9GDc8JUvbPli4BWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZaIz-0001Dw-4r; Fri, 15 May 2020 13:23:13 +0000
-Received: from smtprelay-out1.synopsys.com ([149.117.87.133])
+	id 1jZaSV-0008Fv-JH; Fri, 15 May 2020 13:33:03 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZaIl-0001DE-OI
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 13:23:03 +0000
-Received: from mailhost.synopsys.com (badc-mailhost1.synopsys.com
- [10.192.0.17])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 20A4DC0F08;
- Fri, 15 May 2020 13:22:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1589548979; bh=EWEN8MS75LrydY49G7dfILiA105fpIr+TZRt1qkDiYc=;
- h=From:To:CC:Subject:Date:References:In-Reply-To:From;
- b=hQG6DzozOvevUf7zcjpMeK97kB6IgGgQE7ft3VJb4Wypd5oo8UvjqFcQbbG3DG6L/
- EFrWKlNWz9crSavDUHb09Mso0ahGbsO4zU2ndP+YMaxUwQlF3bJkL6TuCewMnM2rT7
- f8ShTH/DF7wBPSss2n13O3poxGFVmrUXMwFlWDlpI49uD4TJZIfW6YZfkFGqTIZRhu
- EskH3SuQt+hLz10OXbviWgxiUF15wguHErUAQ1Jz7OfBoLAHiRiAvkmQ7MbK1MNdZ2
- oXHuUDev6X8s2Y4EUbtDTngd477fUpFmUwoCW76HjCiN+Co5rlnTC0r7gn19NsbiYo
- yWqo1ZRBqrY0g==
-Received: from US01WEHTC3.internal.synopsys.com
- (us01wehtc3.internal.synopsys.com [10.15.84.232])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mailhost.synopsys.com (Postfix) with ESMTPS id BE7F6A00DE;
- Fri, 15 May 2020 13:22:58 +0000 (UTC)
-Received: from us01hybrid1.internal.synopsys.com (10.200.27.51) by
- US01WEHTC3.internal.synopsys.com (10.15.84.232) with Microsoft SMTP Server
- (TLS) id 14.3.408.0; Fri, 15 May 2020 06:21:53 -0700
-Received: from NAM04-CO1-obe.outbound.protection.outlook.com (10.202.3.67) by
- mrs.synopsys.com (10.200.27.51) with Microsoft SMTP Server (TLS) id
- 14.3.487.0; Fri, 15 May 2020 06:21:53 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Z1D79RPCgFr7pPYF7l591yJylX/nIQ92DzilUJV7j3t+/1BmHGtRrV+6zqO7YPM6JsRBFVqbe9JbYR+lbPbqatcZXZYZYPWKwONTDE/kwj346N1DW4naUS9F0AIRkgJMg3QG3U9t9NQzTHWrklRFUlQZOR0rU9630dRavADtfiDmW2SXUeZujDMXevbpLM7Zgx1y573aX+ap4uupZ96uokCkv2HXuDlAc/bBmfEoydI6fP1p9C8snNvQ6y6MBNn3rDeiklhsd1p+fIccSKeZDLf7kVXHidll3ehbfvoVO6K7wqmpHwU0dT/iaQ9z5T2JJLKFWukeJrDhc5jEw+xYUQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e2IeESNOvwMbKK8xielUMAbo7uuwrKVRkDuXOn3nRQA=;
- b=fd2uc1KrDwGMl9n3jSA5WBvkvvZw2AQ4AtosMY4MVdbpt1anYvpNagYI0uYjy6egJdYjbTFXpgARvk3SaG5vloy29730AFekpiy3M1u8wbZwcGwKQEQ+g2IWESdyV5XdeMiyOpQ9YOt3uzy+dQXuinVqNDiCg09k82UaSjYMqLJHe028ifSeN2NyHYBUV2rOTVH6/vaxTNhRoM7vAc6jFRivt18mKOjjYOEioiU0b4s2u0PQfRTBt6mr+0+K9p9dMIXB0TatPjAY3GBfxo/+nF7ZV7aqqdorJAy5XfzkZlKIFV7tCcqeI1uWE2p7UTkftlGRHl0Tk7I+FjCU38JRww==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synopsys.com; dmarc=pass action=none header.from=synopsys.com;
- dkim=pass header.d=synopsys.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=synopsys.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e2IeESNOvwMbKK8xielUMAbo7uuwrKVRkDuXOn3nRQA=;
- b=ezl+Gc+qbxm+RkyQFnzcEVuTQQKoWWIZFfzys7/r0kzEXIeHjKkTlfKUhuguJfY3ePzf98HMtnMDlQyHgDZrgz+Fjt3BG9cl3P1SCApV+L4uJSBCQ/QUwa24P6Yp8p5Klrho0wZ2EX1iUW+rq84qWmzCjYsw3d0UggYZFA/dGhw=
-Received: from DM5PR12MB1276.namprd12.prod.outlook.com (2603:10b6:3:79::18) by
- DM5PR12MB2485.namprd12.prod.outlook.com (2603:10b6:4:bb::29) with
- Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3000.26; Fri, 15 May 2020 13:21:52 +0000
-Received: from DM5PR12MB1276.namprd12.prod.outlook.com
- ([fe80::2062:f350:1cd1:1023]) by DM5PR12MB1276.namprd12.prod.outlook.com
- ([fe80::2062:f350:1cd1:1023%12]) with mapi id 15.20.3000.022; Fri, 15 May
- 2020 13:21:52 +0000
-From: Gustavo Pimentel <Gustavo.Pimentel@synopsys.com>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>, Bjorn Helgaas
- <bhelgaas@google.com>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jingoo
- Han <jingoohan1@gmail.com>, Rob Herring <robh+dt@kernel.org>, Masahiro Yamada
- <yamada.masahiro@socionext.com>, Marc Zyngier <marc.zyngier@arm.com>
-Subject: RE: [PATCH v2 2/5] PCI: uniphier: Add misc interrupt handler to
- invoke PME and AER
-Thread-Topic: [PATCH v2 2/5] PCI: uniphier: Add misc interrupt handler to
- invoke PME and AER
-Thread-Index: AQHWKqn+J6PejP4smEyuAHg27gTxOKipIg/w
-Date: Fri, 15 May 2020 13:21:51 +0000
-Message-ID: <DM5PR12MB1276B952144F1B282A2E4825DABD0@DM5PR12MB1276.namprd12.prod.outlook.com>
-References: <1589536743-6684-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1589536743-6684-3-git-send-email-hayashi.kunihiko@socionext.com>
-In-Reply-To: <1589536743-6684-3-git-send-email-hayashi.kunihiko@socionext.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-dg-ref: =?us-ascii?Q?PG1ldGE+PGF0IG5tPSJib2R5LnR4dCIgcD0iYzpcdXNlcnNcZ3VzdGF2b1xh?=
- =?us-ascii?Q?cHBkYXRhXHJvYW1pbmdcMDlkODQ5YjYtMzJkMy00YTQwLTg1ZWUtNmI4NGJh?=
- =?us-ascii?Q?MjllMzViXG1zZ3NcbXNnLTA4MmYxYTUwLTk2YWYtMTFlYS05OGI0LWY4OTRj?=
- =?us-ascii?Q?MjczODA0MlxhbWUtdGVzdFwwODJmMWE1Mi05NmFmLTExZWEtOThiNC1mODk0?=
- =?us-ascii?Q?YzI3MzgwNDJib2R5LnR4dCIgc3o9IjQ1NDciIHQ9IjEzMjM0MDIyNTA5OTA2?=
- =?us-ascii?Q?OTAyMyIgaD0iejkrU0tJZmQyMisrYkVrTFRFTEJwaFZ0Rk1zPSIgaWQ9IiIg?=
- =?us-ascii?Q?Ymw9IjAiIGJvPSIxIiBjaT0iY0FBQUFFUkhVMVJTUlVGTkNnVUFBQlFKQUFC?=
- =?us-ascii?Q?ZmRvYkt1eXJXQVgrbWhlOHhQR3E2ZjZhRjd6RThhcm9PQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUhBQUFBQ2tDQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUVBQVFBQkFBQUFFbU1la3dBQUFBQUFBQUFBQUFBQUFKNEFBQUJtQUdrQWJn?=
- =?us-ascii?Q?QmhBRzRBWXdCbEFGOEFjQUJzQUdFQWJnQnVBR2tBYmdCbkFGOEFkd0JoQUhR?=
- =?us-ascii?Q?QVpRQnlBRzBBWVFCeUFHc0FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?RUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFHWUFid0IxQUc0QVpBQnlBSGtBWHdC?=
- =?us-ascii?Q?d0FHRUFjZ0IwQUc0QVpRQnlBSE1BWHdCbkFHWUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFBQUFDQUFB?=
- =?us-ascii?Q?QUFBQ2VBQUFBWmdCdkFIVUFiZ0JrQUhJQWVRQmZBSEFBWVFCeUFIUUFiZ0Js?=
- =?us-ascii?Q?QUhJQWN3QmZBSE1BWVFCdEFITUFkUUJ1QUdjQVh3QmpBRzhBYmdCbUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUJBQUFBQUFBQUFBSUFBQUFBQUo0QUFBQm1BRzhB?=
- =?us-ascii?Q?ZFFCdUFHUUFjZ0I1QUY4QWNBQmhBSElBZEFCdUFHVUFjZ0J6QUY4QWN3QmhB?=
- =?us-ascii?Q?RzBBY3dCMUFHNEFad0JmQUhJQVpRQnpBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFFQUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUdZQWJ3QjFBRzRBWkFCeUFIa0FY?=
- =?us-ascii?Q?d0J3QUdFQWNnQjBBRzRBWlFCeUFITUFYd0J6QUcwQWFRQmpBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFBQUFBQUNB?=
- =?us-ascii?Q?QUFBQUFDZUFBQUFaZ0J2QUhVQWJnQmtBSElBZVFCZkFIQUFZUUJ5QUhRQWJn?=
- =?us-ascii?Q?QmxBSElBY3dCZkFITUFkQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQkFBQUFBQUFBQUFJQUFBQUFBSjRBQUFCbUFH?=
- =?us-ascii?Q?OEFkUUJ1QUdRQWNnQjVBRjhBY0FCaEFISUFkQUJ1QUdVQWNnQnpBRjhBZEFC?=
- =?us-ascii?Q?ekFHMEFZd0FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUVBQUFBQUFBQUFBZ0FBQUFBQW5nQUFBR1lBYndCMUFHNEFaQUJ5QUhr?=
- =?us-ascii?Q?QVh3QndBR0VBY2dCMEFHNEFaUUJ5QUhNQVh3QjFBRzBBWXdBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFRQUFBQUFBQUFB?=
- =?us-ascii?Q?Q0FBQUFBQUNlQUFBQVp3QjBBSE1BWHdCd0FISUFid0JrQUhVQVl3QjBBRjhB?=
- =?us-ascii?Q?ZEFCeUFHRUFhUUJ1QUdrQWJnQm5BQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFCQUFBQUFBQUFBQUlBQUFBQUFKNEFBQUJ6?=
- =?us-ascii?Q?QUdFQWJBQmxBSE1BWHdCaEFHTUFZd0J2QUhVQWJnQjBBRjhBY0FCc0FHRUFi?=
- =?us-ascii?Q?Z0FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBRUFBQUFBQUFBQUFnQUFBQUFBbmdBQUFITUFZUUJzQUdVQWN3QmZB?=
- =?us-ascii?Q?SEVBZFFCdkFIUUFaUUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVFBQUFBQUFB?=
- =?us-ascii?Q?QUFDQUFBQUFBQ2VBQUFBY3dCdUFIQUFjd0JmQUd3QWFRQmpBR1VBYmdCekFH?=
- =?us-ascii?Q?VUFYd0IwQUdVQWNnQnRBRjhBTVFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUJBQUFBQUFBQUFBSUFBQUFBQUo0QUFB?=
- =?us-ascii?Q?QnpBRzRBY0FCekFGOEFiQUJwQUdNQVpRQnVBSE1BWlFCZkFIUUFaUUJ5QUcw?=
- =?us-ascii?Q?QVh3QnpBSFFBZFFCa0FHVUFiZ0IwQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFFQUFBQUFBQUFBQWdBQUFBQUFuZ0FBQUhZQVp3QmZBR3NBWlFC?=
- =?us-ascii?Q?NUFIY0Fid0J5QUdRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFB?=
- =?us-ascii?Q?QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBUUFBQUFB?=
- =?us-ascii?Q?QUFBQUNBQUFBQUFBPSIvPjwvbWV0YT4=3D?=
-authentication-results: socionext.com; dkim=none (message not signed)
- header.d=none; socionext.com; dmarc=none action=none header.from=synopsys.com; 
-x-originating-ip: [83.174.63.141]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: ed123073-fcd4-4035-bfa1-08d7f8d2ee52
-x-ms-traffictypediagnostic: DM5PR12MB2485:
-x-microsoft-antispam-prvs: <DM5PR12MB248552E2A38AF04562272BDFDABD0@DM5PR12MB2485.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 04041A2886
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 4i4otP6MZuq3BXIL5MCPyflFfxnJziHsiQ5yp+ij2PZSiQ0IwiMgktyL5zZoKh3T0be/ZsduJzc7D/hRzein9Rl3nkfbKt6P8uyZEAar3w0QQtEnULWyYFjUxo5Bju/E3NkcMja5679sKkRvJjR10HJ26BQh+RgQAxV3fnRHYsNIXKtQCKc22WZo4V4AFZXUgThj0zEBeuYBHOAMtYcXxZQQdGGv0d2B8jLajqgau6Xw9Q2TNudtb9/CbfQKHXoERLZ/FdyZ+phHCeOeQRxyFYB/4ls5Zk3OWDiziPwB3kflT3tCXb7fYEt9P8aWdgveHlVPqKMOkyk3uTGw9sgxtHlLIhy2dnYeTE/Ba0Jk8CNpX798EdoL/tNMG5XQENvZpgeuH0p8jZmZeFS0mWg7zATe+5X7dyRMKJ+rHqGO+U2qrImqC/oT4L+vuKDT8oYs
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM5PR12MB1276.namprd12.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(346002)(396003)(376002)(39860400002)(366004)(136003)(8676002)(66476007)(52536014)(26005)(66556008)(66446008)(64756008)(66946007)(76116006)(55016002)(4326008)(9686003)(316002)(110136005)(2906002)(54906003)(478600001)(7416002)(8936002)(5660300002)(33656002)(86362001)(186003)(71200400001)(6506007)(7696005)(53546011);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: 2jcOPnUcslIWGusotZb/7A7r09b2Oxj466HW13ABhwzp3dAXlI3dvNtOfGm05zEm+piQXWeL2zoipZIk/gNzF/mlVKJQoUpt5ZvWhgqf5sZcfmRVYrB+AcdfCLLxE/k9/Af7ZuFaU/uAN/G+bxQce91FSw0bPQERRUbuC7APzaEkshFkfX20q20mJFX1hNdTF8S09pxcnEHJOskVYaa1SkNcY9lNo7NjmlPvxITD+uJzQ7xVc8S9Tr+6XN8gINoX0ML/nmCM0rNirdNf4HxWCYgkBDtXwuzXVJRZ67/7qtM2R0mw0QmXqF8jTGqqvB/YZgLHmQIMGIncek9FrOu/5SRGP9FosU9xMHjCNbG27FwWI0GKBmGULOrTFNQGK9jzCv8mkPs9Z1A0ZsGbjuqmn6bQZdWQj/jbeIoUH0c3NOzqQ8xY2iDQEOLxA+nXObkS0U2LGaR1IKS/MPw4VKfAGXspINro2ky3zNMdNuBL22U=
-x-ms-exchange-transport-forked: True
+ id 1jZaSJ-0008EB-JE; Fri, 15 May 2020 13:32:53 +0000
+Received: from mail-qv1-f45.google.com ([209.85.219.45]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MLyzP-1jrWym0ghl-00HsXG; Fri, 15 May 2020 15:32:49 +0200
+Received: by mail-qv1-f45.google.com with SMTP id d1so1050380qvl.6;
+ Fri, 15 May 2020 06:32:48 -0700 (PDT)
+X-Gm-Message-State: AOAM530JwE0bxDFD9+eDlPLZQUxXP4H2M/zizrBPnyi9gQF3pvNqQt0s
+ tAbSy34cnSsQ8WcJtZBMvx65VjC4FI/UUBPhrYY=
+X-Google-Smtp-Source: ABdhPJxRaY7zY8QTvNzuxerWSaqGbHKOK4FIyf/5qJLFxDuhmkrh8pWdFCVTHGQsHaBEpA8LvsOh8UJboFLS9sON+fo=
+X-Received: by 2002:a0c:eb11:: with SMTP id j17mr3448680qvp.197.1589549567720; 
+ Fri, 15 May 2020 06:32:47 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: ed123073-fcd4-4035-bfa1-08d7f8d2ee52
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2020 13:21:51.9966 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: c33c9f88-1eb7-4099-9700-16013fd9e8aa
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: dq4tPoSz0VNTrk4XyHXAG59nzdJJMl/1T2VgxQm6PSo2/a6hyHAQ3DGJxYEeylbTZdk9DepAViBqQ3wwwvK0Xw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR12MB2485
-X-OriginatorOrg: synopsys.com
+References: <20200514075942.10136-1-brgl@bgdev.pl>
+ <20200514075942.10136-11-brgl@bgdev.pl>
+In-Reply-To: <20200514075942.10136-11-brgl@bgdev.pl>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 15 May 2020 15:32:31 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a0XgJtZNKePZUUpzADO25-JZKyDiVHFS_yuHRXTjvjDwg@mail.gmail.com>
+Message-ID: <CAK8P3a0XgJtZNKePZUUpzADO25-JZKyDiVHFS_yuHRXTjvjDwg@mail.gmail.com>
+Subject: Re: [PATCH v3 10/15] net: ethernet: mtk-eth-mac: new driver
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+X-Provags-ID: V03:K1:7NQvBRThVrzObBDSJ03Eocseq+bZx5c3QTKTd0EBFoXkb0IabPo
+ WBkUQ8OPKR+AY/DJjNkuorc3fMeSuYmVtHwzcwaBwPOtcXOkaCkNbYFWtjsPQjnw23iYQN+
+ sTU9oXEiYf9Bd91E/qqwzqCFNOBKOFcx5UZGPieMNzMhJAZsoYvSPGmBDkkGxdoC/Ux6/yX
+ KFGORbeo5W3sc0YBxgZGA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:pR54HUXy2TA=:QC/gINpMpCTjA2olnii28D
+ MXSH9dJaDaYmgJmG+S7psobl59GHolYKzQge0/0HlefbruqAet1KzcruqTkV9bjUwu13GOtH/
+ XwBuvabe6FMNO+rlOIbj18Vp//ojcp+YqnjKUwL2w2R21R/6qMghnKFziO7mtXSiegHoQixP1
+ qj4D0cF6rB+hEbUGIpEe6Y2vi7HLzAbFvf+zIrxIfXW4P8Mpcbw1rlCz3/E8S3bfMskdRDJ0i
+ G9VWgdaw64lIb8mkpRR9JOI0gt6Mix2T6j7Tfb1OybaLeph16otBYZDGQdRuJYwULJgFR0SQz
+ YIL4VxfLpCcNlzbOJzqiqEXtsF1S/2EHUO3kg/51HNIIx905R4KEYuv1cJh/MJpMmoFgu8zXV
+ 8q6wS8qL6b0ABDolIk9Mjfsw6dUZ6Guposo8Mtel2FuwCV0dlmj9+LgzghmTzdErRYvnVOlOM
+ bICzTuQ+iXqLGPJuhPdc0psbE+Mr55ihlCHeT1QjZwyZOqwuCaVzdTazxU+ZUBvMp7LSUPtKA
+ vvyampbsjGIJUanoDPnA2laNazgQryNm0NsPpdZ1QGmDp9DWSCw6FyCHvJZvWmokYCekYC55h
+ 14VfAHgQxvpPL8oVGb6z+mS/VS7SE5tlTBbfO86ASwUAePZP9rmaogmLzNaFCSoqRlLp3UX8t
+ U90b46tjAOHRf9zDcZlKXDNbvd7wg9nLPyxam+Ps5NEIO3+L4/MmZreLkOLjsTvkmtTyc2TCW
+ 1KkZhIYxz4LwcWv1wkK2FM4jahER3NTA7aHb/+s4CqtfNRoBOZY1HxgIOHT4esKSH+l+tj3AT
+ sv7t3z6KO8OmjFfpPSdsNoO58gpBzEI7+HgxonLo0ZZBHqaJlc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_062259_863918_A1DCB7D0 
-X-CRM114-Status: GOOD (  17.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_063251_926240_A020A6E3 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.74 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.72.192.74 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -225,141 +86,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+Cc: Edwin Peer <edwin.peer@broadcom.com>, DTML <devicetree@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Jonathan Corbet <corbet@lwn.net>, Networking <netdev@vger.kernel.org>,
+ Sean Wang <sean.wang@mediatek.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Jassi Brar <jaswinder.singh@linaro.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Pedro Tsai <pedro.tsai@mediatek.com>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Fabien Parent <fparent@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[+cc Marc; IRQ DOMAINS (IRQ NUMBER MAPPING LIBRARY) maintainer]
+On Thu, May 14, 2020 at 10:00 AM Bartosz Golaszewski <brgl@bgdev.pl> wrote:
+> +static int mtk_mac_ring_pop_tail(struct mtk_mac_ring *ring,
+> +                                struct mtk_mac_ring_desc_data *desc_data)
 
-On Fri, May 15, 2020 at 10:59:0, Kunihiko Hayashi 
-<hayashi.kunihiko@socionext.com> wrote:
+I took another look at this function because of your comment on the locking
+the descriptor updates, which seemed suspicious as the device side does not
+actually use the locks to access them
 
-> The misc interrupts consisting of PME, AER, and Link event, is handled
-> by INTx handler, however, these interrupts should be also handled by
-> MSI handler.
-> 
-> This adds the function uniphier_pcie_misc_isr() that handles misc
-> intterupts, which is called from both INTx and MSI handlers.
-> This function detects PME and AER interrupts with the status register,
-> and invoke PME and AER drivers related to INTx or MSI.
-> 
-> And this sets the mask for misc interrupts from INTx if MSI is enabled
-> and sets the mask for misc interrupts from MSI if MSI is disabled.
-> 
-> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-> ---
->  drivers/pci/controller/dwc/pcie-uniphier.c | 53 +++++++++++++++++++++++-------
->  1 file changed, 42 insertions(+), 11 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
-> index a5401a0..a8dda39 100644
-> --- a/drivers/pci/controller/dwc/pcie-uniphier.c
-> +++ b/drivers/pci/controller/dwc/pcie-uniphier.c
-> @@ -44,7 +44,9 @@
->  #define PCL_SYS_AUX_PWR_DET		BIT(8)
->  
->  #define PCL_RCV_INT			0x8108
-> +#define PCL_RCV_INT_ALL_INT_MASK	GENMASK(28, 25)
->  #define PCL_RCV_INT_ALL_ENABLE		GENMASK(20, 17)
-> +#define PCL_RCV_INT_ALL_MSI_MASK	GENMASK(12, 9)
->  #define PCL_CFG_BW_MGT_STATUS		BIT(4)
->  #define PCL_CFG_LINK_AUTO_BW_STATUS	BIT(3)
->  #define PCL_CFG_AER_RC_ERR_MSI_STATUS	BIT(2)
-> @@ -167,7 +169,15 @@ static void uniphier_pcie_stop_link(struct dw_pcie *pci)
->  
->  static void uniphier_pcie_irq_enable(struct uniphier_pcie_priv *priv)
->  {
-> -	writel(PCL_RCV_INT_ALL_ENABLE, priv->base + PCL_RCV_INT);
-> +	u32 val;
-> +
-> +	val = PCL_RCV_INT_ALL_ENABLE;
-> +	if (pci_msi_enabled())
-> +		val |= PCL_RCV_INT_ALL_INT_MASK;
-> +	else
-> +		val |= PCL_RCV_INT_ALL_MSI_MASK;
-> +
-> +	writel(val, priv->base + PCL_RCV_INT);
->  	writel(PCL_RCV_INTX_ALL_ENABLE, priv->base + PCL_RCV_INTX);
->  }
->  
-> @@ -231,28 +241,48 @@ static const struct irq_domain_ops uniphier_intx_domain_ops = {
->  	.map = uniphier_pcie_intx_map,
->  };
->  
-> -static void uniphier_pcie_irq_handler(struct irq_desc *desc)
-> +static void uniphier_pcie_misc_isr(struct pcie_port *pp)
->  {
-> -	struct pcie_port *pp = irq_desc_get_handler_data(desc);
->  	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
->  	struct uniphier_pcie_priv *priv = to_uniphier_pcie(pci);
-> -	struct irq_chip *chip = irq_desc_get_chip(desc);
-> -	unsigned long reg;
-> -	u32 val, bit, virq;
-> +	u32 val, virq;
->  
-> -	/* INT for debug */
->  	val = readl(priv->base + PCL_RCV_INT);
->  
->  	if (val & PCL_CFG_BW_MGT_STATUS)
->  		dev_dbg(pci->dev, "Link Bandwidth Management Event\n");
-> +
->  	if (val & PCL_CFG_LINK_AUTO_BW_STATUS)
->  		dev_dbg(pci->dev, "Link Autonomous Bandwidth Event\n");
-> -	if (val & PCL_CFG_AER_RC_ERR_MSI_STATUS)
-> -		dev_dbg(pci->dev, "Root Error\n");
-> -	if (val & PCL_CFG_PME_MSI_STATUS)
-> -		dev_dbg(pci->dev, "PME Interrupt\n");
-> +
-> +	if (pci_msi_enabled()) {
-> +		if (val & PCL_CFG_AER_RC_ERR_MSI_STATUS) {
-> +			dev_dbg(pci->dev, "Root Error Status\n");
-> +			virq = irq_linear_revmap(pp->irq_domain, 0);
-> +			generic_handle_irq(virq);
-> +		}
-> +
-> +		if (val & PCL_CFG_PME_MSI_STATUS) {
-> +			dev_dbg(pci->dev, "PME Interrupt\n");
-> +			virq = irq_linear_revmap(pp->irq_domain, 0);
-> +			generic_handle_irq(virq);
-> +		}
-> +	}
->  
->  	writel(val, priv->base + PCL_RCV_INT);
-> +}
-> +
-> +static void uniphier_pcie_irq_handler(struct irq_desc *desc)
 > +{
-> +	struct pcie_port *pp = irq_desc_get_handler_data(desc);
-> +	struct dw_pcie *pci = to_dw_pcie_from_pp(pp);
-> +	struct uniphier_pcie_priv *priv = to_uniphier_pcie(pci);
-> +	struct irq_chip *chip = irq_desc_get_chip(desc);
-> +	unsigned long reg;
-> +	u32 val, bit, virq;
+> +       struct mtk_mac_ring_desc *desc = &ring->descs[ring->tail];
+> +       unsigned int status;
 > +
-> +	/* misc interrupt */
-> +	uniphier_pcie_misc_isr(pp);
->  
->  	/* INTx */
->  	chained_irq_enter(chip, desc);
-> @@ -330,6 +360,7 @@ static int uniphier_pcie_host_init(struct pcie_port *pp)
->  
->  static const struct dw_pcie_host_ops uniphier_pcie_host_ops = {
->  	.host_init = uniphier_pcie_host_init,
-> +	.msi_host_isr = uniphier_pcie_misc_isr,
->  };
->  
->  static int uniphier_add_pcie_port(struct uniphier_pcie_priv *priv,
-> -- 
-> 2.7.4
+> +       /* Let the device release the descriptor. */
+> +       dma_rmb();
+> +       status = desc->status;
+> +       if (!(status & MTK_MAC_DESC_BIT_COWN))
+> +               return -1;
 
+The dma_rmb() seems odd here, as I don't see which prior read
+is being protected by this.
 
+> +       desc_data->len = status & MTK_MAC_DESC_MSK_LEN;
+> +       desc_data->flags = status & ~MTK_MAC_DESC_MSK_LEN;
+> +       desc_data->dma_addr = ring->dma_addrs[ring->tail];
+> +       desc_data->skb = ring->skbs[ring->tail];
+> +
+> +       desc->data_ptr = 0;
+> +       desc->status = MTK_MAC_DESC_BIT_COWN;
+> +       if (status & MTK_MAC_DESC_BIT_EOR)
+> +               desc->status |= MTK_MAC_DESC_BIT_EOR;
+> +
+> +       /* Flush writes to descriptor memory. */
+> +       dma_wmb();
+
+The comment and the barrier here seem odd as well. I would have expected
+a barrier after the update to the data pointer, and only a single store
+but no read of the status flag instead of the read-modify-write,
+something like
+
+      desc->data_ptr = 0;
+      dma_wmb(); /* make pointer update visible before status update */
+      desc->status = MTK_MAC_DESC_BIT_COWN | (status & MTK_MAC_DESC_BIT_EOR);
+
+> +       ring->tail = (ring->tail + 1) % MTK_MAC_RING_NUM_DESCS;
+> +       ring->count--;
+
+I would get rid of the 'count' here, as it duplicates the information
+that is already known from the difference between head and tail, and you
+can't update it atomically without holding a lock around the access to
+the ring. The way I'd do this is to have the head and tail pointers
+in separate cache lines, and then use READ_ONCE/WRITE_ONCE
+and smp barriers to access them, with each one updated on one
+thread but read by the other.
+
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
