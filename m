@@ -2,74 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 605F51D4702
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:23:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 021991D470B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:27:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g0d4bCAEsPI6AfSDXm71mGuG7ifzvvPfrOyK+xm06F8=; b=GA9SVTXGeCajX7
-	xEUnldBnH5m2//15e/sDgsiUHs4hQh2DuFHFZOd5PnDwiVAtmLQqLxss5RcYQbZgEGBBI+WKTtohj
-	T+qPRgQCqrY4pIO3/KBKZ0T6YH4MmuHUt81N4g610h2WfgbzyAo8pQNtB77mUSDxeB8f8ROaesNhL
-	J0p1Bo/XenmCFOKBw7R79v1GkpxRYUAun37lIv4OrJRb0F5hUy+5Yta4PlaG5+8rSlHPPE1Msl/Ys
-	qhVZ5Tg4yHWMTHqzn78PGuHulx1LBuZU5KLd3sEc0vkPGAPrlFBG0xePrLx9bhgx0T6dCdIp2C1Y3
-	NnIYZXnBGEkYGQ9NDHlA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=abBuc7HFwotJuhB+bKyzrp7Ebu5XLNedybcsP1c4u30=; b=S0Om3ro9fHFgeX
+	t7T5T+/e6/JuxQYSSOrA3pVnO0CmFXwnxGAujR1Rr9eucL2Rkb2GwWFzxUFVFJ4GkMFLIWO51bZLM
+	89nwO8iUOfnonnlvjj/tRnYQyWsv40+VTmacltHUqJj1G/witT6aOKO6l+y/Q74WwcMbfHFYUmcDy
+	aRJlhnpl9Nl6KjNuNEt2fWxtQY/UflrJGMCJBVFp0FuJUnXLcJ/xdPcSj9mgICjQm6Fn00RRqTBd8
+	vPmHZL4e3cQxT1bZtcnGwqZoO7G+RDRKPfhc7F/S+4kJDdWwjJnsZgqg7S0t1H72t6oSv0Ny2/ixu
+	8FyasJjhLcIWjPP0Uhag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZUgF-0000cX-4E; Fri, 15 May 2020 07:22:51 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jZUkH-0004eu-V6; Fri, 15 May 2020 07:27:01 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZUg5-0000bp-5b
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:22:43 +0000
-Received: by mail-oi1-f194.google.com with SMTP id i13so1380728oie.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 00:22:40 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=unTaiYNsyJHNbPep69SOcCNp6Xe5J0UrX0ALNxnvuwk=;
- b=p2BJAKJJ8Vp9FM9AmLQl7arqh1Nj/5AUWJhK3IP3NfOFD3x2Uz/dRj6/jQiVO3eCf+
- GSC+ZkotwiF2zjgy/qLfV1fD7AEdt+6AyWbAJXIkENrs1nc0vD+ECQ7xk4Y2SkfLCrma
- qeFEpQAWVK8srZctrVxIIW1OFS5T5LeeF9MBBcry2zf7vP4ANmGdjRsPF1/Uec4yJeoo
- 40Lk4z/V9aqKBv6P93ESgDmtzx1tocVSD6/ipkf+1Q1zjBf5i2gZWimoISdc7uJ4EpRS
- /5/0RmvbEhX4JggSuPoe+07OjOAxLxVhjzSXaHfGPkTRUqZdN1qJvMfczCup8w16HN9O
- Q91Q==
-X-Gm-Message-State: AOAM530lboEdCSAHn55xuRZOESZxyXUumh5LutuwCKGvfudhGBwihUtl
- bUJiGzRhkbBiiC9lbdA1w7hlKz79rwtCRwsKcAQ=
-X-Google-Smtp-Source: ABdhPJyjJ+/cjMBY1UUSSo3Cxe2NWI07C8OJj+hqOcWICEGnCReUQGucy5vB7JV7cSes4CyFwN+7ATV+zop4u3K0sxQ=
-X-Received: by 2002:aca:cd93:: with SMTP id d141mr1113849oig.148.1589527359964; 
- Fri, 15 May 2020 00:22:39 -0700 (PDT)
+ id 1jZUkA-0004eX-3Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:26:55 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 1409B19DE76B665EE01D;
+ Fri, 15 May 2020 15:26:52 +0800 (CST)
+Received: from [10.57.101.250] (10.57.101.250) by
+ DGGEMS412-HUB.china.huawei.com (10.3.19.212) with Microsoft SMTP Server id
+ 14.3.487.0; Fri, 15 May 2020 15:26:42 +0800
+To: <soc@kernel.org>, "arm@kernel.org" <arm@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+From: Wei Xu <xuwei5@hisilicon.com>
+Subject: [GIT PULL] Hisilicon driver updates for v5.8
+Message-ID: <5EBE4432.4090604@hisilicon.com>
+Date: Fri, 15 May 2020 15:26:42 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
+ Thunderbird/38.2.0
 MIME-Version: 1.0
-References: <1589494238-2933-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <1589494238-2933-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 15 May 2020 09:22:28 +0200
-Message-ID: <CAMuHMdW8aQyHm7uzOd3cL2kPXc0EZ=DN_MmVa4AVFLqo5PwMKA@mail.gmail.com>
-Subject: Re: [PATCH] arm64: defconfig: enable CONFIG_PCIE_RCAR_HOST
-To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Originating-IP: [10.57.101.250]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_002241_203026_E80B157F 
-X-CRM114-Status: GOOD (  11.63  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200515_002654_318831_B85811E1 
+X-CRM114-Status: UNSURE (   7.88  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,48 +66,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Prabhakar Lad <prabhakar.csengg@gmail.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: song.bao.hua@hisilicon.com, Salil
+ Mehta <salil.mehta@huawei.com>, Tangkunshan <tangkunshan@huawei.com>,
+ Arnd Bergmann <arnd@arndb.de>, John Garry <john.garry@huawei.com>,
+ Linuxarm <linuxarm@huawei.com>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ huangdaode <huangdaode@hisilicon.com>, "xuwei
+ \(O\)" <xuwei5@huawei.com>, Jonathan Cameron <jonathan.cameron@huawei.com>,
+ Olof Johansson <olof@lixom.net>, "Liguozhu
+ \(Kenneth\)" <liguozhu@hisilicon.com>, Zhangyi ac <zhangyi.ac@huawei.com>,
+ Shiju Jose <shiju.jose@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
+Hi ARM-SoC team,
 
-On Fri, May 15, 2020 at 12:10 AM Lad Prabhakar
-<prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
-> config option PCIE_RCAR internally selects PCIE_RCAR_HOST which builds the
-> same driver. So this patch renames CONFIG_PCIE_RCAR to
-> CONFIG_PCIE_RCAR_HOST so that PCIE_RCAR can be safely dropped from Kconfig
-> file.
->
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+Please consider to pull the following changes.
+Thanks!
 
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Best Regards,
+Wei
 
-I wrote before:
+---
 
-   "I can take patch 2/11 through renesas-devel.
-    Probably it's best if I submit it to arm-soc as a fix for v5.8, after
-    the driver part has been merged into v5.8-rc1."
+The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
-so this will have to wait for v5.8-rc1.
+  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
 
-Gr{oetje,eeting}s,
+are available in the Git repository at:
 
-                        Geert
+  git://github.com/hisilicon/linux-hisi.git tags/hisi-drivers-for-5.8
 
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+for you to fetch changes up to 4acaa93ef64377417677d777a596e22da68c5e0d:
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+  logic_pio: Use _inX() and _outX() (2020-05-07 14:54:26 +0800)
+
+----------------------------------------------------------------
+ARM64: hisi: SoC driver updates for 5.8
+
+- Generate consistent behaviour for logic_pio by defining and using
+  generic _inX() and _outX() in asm-generic/io.h which have per-arch
+  overrideable barriers.
+
+----------------------------------------------------------------
+John Garry (3):
+      io: Provide _inX() and _outX()
+      logic_pio: Improve macro argument name
+      logic_pio: Use _inX() and _outX()
+
+ include/asm-generic/io.h | 64 +++++++++++++++++++++++++++++++++---------------
+ lib/logic_pio.c          | 22 ++++++++---------
+ 2 files changed, 55 insertions(+), 31 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
