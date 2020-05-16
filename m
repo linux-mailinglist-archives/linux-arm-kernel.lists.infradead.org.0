@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACEE91D62E8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 19:13:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C94A71D62F0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 19:15:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fjB4zYgcMOrIAwG7TvSk2qi10eJgDlRkzTmRlVqXGQM=; b=J0b0UK1ji1Ga6q
-	2ZXzpNL4Fb0xfFxffMemMQpZY2FEOrHzaJ/hsohj1K87IZd4j96opwIhAKqg0fY7w7L7iEmwyBlzK
-	+zN6e7VzYH3CL52J0w7evA5u0Bip5TDu7uARPGxsTPkjEF+5XT4mRVdcl9Q2f/hlHg/FiBDhjIwBQ
-	+P/PZbabZT6NSLvehsN1lnKjTpukbbXbsmpVuRQdNLxi3EjPO3gPGSp0Mqt3IsepbjpuC96ecM/B8
-	1Fl3kGC2UpBiRkjQR9JOlQjM0oDr4jstakb9StDPJ82b/PvqH4uGj1yMcWOHQahh5Ta/6Yy8SqggB
-	ipNTxbcZn1F+ci+ehLYw==;
+	List-Owner; bh=d20g86q+rSPGzZ4vxGdR9g/qaN9HiU7o6X8Zd2/b/FE=; b=sDGGS0AzWQ5UvW
+	axEyqufGVLhOdLpKybHr7pTzvc9Xj3HxCYkVf0SLI8Dz9GvjZaUOTbGhcdpAKX+JRoqIgYq2qD4wt
+	cIaEHuLAdZBQ/kI/6oLIDtl5nr+HE/7/f4uROaGAUU5jqmkHdwdmUEa5jwrGAnFTAnw01cn4kdafd
+	BUYiXMZsS00Hz2DXoF726Jk9fpkhPwI58852mtNYQoAIwjARKaHT+EBCn4/r3sRmYb927ZUgRWYB6
+	RQGEOdMLFGM5065MH+W2IJBVhe/BoNpF2sG1+c2fa0K87l5artx8AkoHBXIamqhN7dBYZFLYmEC/N
+	nc3xzUlY53x4Yf7CJmvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ja0Mr-0000kv-GQ; Sat, 16 May 2020 17:12:57 +0000
+	id 1ja0PP-0003ti-KP; Sat, 16 May 2020 17:15:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ja0Mj-0000kX-UV
- for linux-arm-kernel@lists.infradead.org; Sat, 16 May 2020 17:12:51 +0000
+ id 1ja0PH-0003t7-K5
+ for linux-arm-kernel@lists.infradead.org; Sat, 16 May 2020 17:15:28 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
  [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9D9E8206D8;
- Sat, 16 May 2020 17:12:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 618AC20756;
+ Sat, 16 May 2020 17:15:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589649169;
- bh=6IJY4KxDuWPHH1o658HGioayIj3kO/S0obPuk7kZ6mU=;
+ s=default; t=1589649327;
+ bh=UFcxAeFE3SPRLnvNasRhmzG8Bcy6a0fnOsbSJPfdJ60=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=STLdi0QoDx5qKD4mjTSUI0w8gqa09q+XkcRAlqIajis1bhP/yjdMgL5GfnID13mXG
- BBjJ6101DlofeKYd3TIyMzLQ01BPWN7aQMhu+bjpzro1KL4aeQkp2r2kKlv2GmQ4/V
- 0OnH77GGibp4wG/Bpvc9DiX+lQeesvHCgsq6wqxU=
-Date: Sat, 16 May 2020 18:12:44 +0100
+ b=IjDYS2+lL53IsLZmPGS9PxVLjYvUEWxRk58arwUdxRBAHEiERoPkdkSur8zVAV4gT
+ Vaj8DkhvkYppWWOJRcNVj10K7VXZ7TbgtabI+8uWRGJj06kVrWQq7bLDdTMQWb4nWo
+ rQqIhLe0OgGTQRACXGKGTMQxb3ZygaGgkpg7lCiI=
+Date: Sat, 16 May 2020 18:15:22 +0100
 From: Jonathan Cameron <jic23@kernel.org>
 To: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Subject: Re: [PATCH v2 1/8] iio: proximity: ping: pass reference to IIO
- device via call-stack
-Message-ID: <20200516181244.4d22c60b@archlinux>
-In-Reply-To: <20200514131710.84201-2-alexandru.ardelean@analog.com>
+Subject: Re: [PATCH v2 2/8] iio: at91-sama5d2_adc: pass ref to IIO device
+ via param for int function
+Message-ID: <20200516181522.096433bc@archlinux>
+In-Reply-To: <20200514131710.84201-3-alexandru.ardelean@analog.com>
 References: <20200514131710.84201-1-alexandru.ardelean@analog.com>
- <20200514131710.84201-2-alexandru.ardelean@analog.com>
+ <20200514131710.84201-3-alexandru.ardelean@analog.com>
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_101250_002815_7F297CE6 
-X-CRM114-Status: GOOD (  19.16  )
+X-CRM114-CacheID: sfid-20200516_101527_679314_A00084BA 
+X-CRM114-Status: GOOD (  17.95  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,7 +88,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 14 May 2020 16:17:03 +0300
+On Thu, 14 May 2020 16:17:04 +0300
 Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
 
 > Since there will be some changes to how iio_priv_to_dev() is implemented,
@@ -96,58 +96,48 @@ Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
 > in the IIO core.
 > 
 > For this driver, the IIO device can be passed directly as a parameter to
-> the ping_read() function, thus making it immune to the change of
-> iio_priv_to_dev().
+> the at91_adc_no_pen_detect_interrupt() function, thus making it immune to
+> the change of iio_priv_to_dev().
+> The function gets called in an interrupt context.
 > 
 > Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
 
-Patch makes sense and I should have spotted this one during original
-review :( Going backwards and forwards is never a good idea even without
-the rework you have.
+Looks sensible to me.   We could get the state structure from the 
+iio_dev inside that function, but then it would be different from the
+pen version, so I think what you have here is probably best option.
 
-But... (you knew that was coming :), there is no need to pass
-data to the the read function.  It is the structure returned by
-iio_priv() and not used anywhere else in the read_raw callback.
-So might as well just pass the iio_dev and get the data structure
-with in the read function via iio_priv(indio_dev)
-
-Thanks,
-
-J
+Jonathan
 
 > ---
->  drivers/iio/proximity/ping.c | 5 ++---
->  1 file changed, 2 insertions(+), 3 deletions(-)
+>  drivers/iio/adc/at91-sama5d2_adc.c | 7 +++----
+>  1 file changed, 3 insertions(+), 4 deletions(-)
 > 
-> diff --git a/drivers/iio/proximity/ping.c b/drivers/iio/proximity/ping.c
-> index 12b893c5b0ee..ddc43a5a2ef8 100644
-> --- a/drivers/iio/proximity/ping.c
-> +++ b/drivers/iio/proximity/ping.c
-> @@ -89,14 +89,13 @@ static irqreturn_t ping_handle_irq(int irq, void *dev_id)
->  	return IRQ_HANDLED;
+> diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
+> index 9abbbdcc7420..822b8782acba 100644
+> --- a/drivers/iio/adc/at91-sama5d2_adc.c
+> +++ b/drivers/iio/adc/at91-sama5d2_adc.c
+> @@ -1275,10 +1275,9 @@ static void at91_adc_pen_detect_interrupt(struct at91_adc_state *st)
+>  	st->touch_st.touching = true;
 >  }
 >  
-> -static int ping_read(struct ping_data *data)
-> +static int ping_read(struct iio_dev *indio_dev, struct ping_data *data)
+> -static void at91_adc_no_pen_detect_interrupt(struct at91_adc_state *st)
+> +static void at91_adc_no_pen_detect_interrupt(struct iio_dev *indio_dev,
+> +					     struct at91_adc_state *st)
 >  {
->  	int ret;
->  	ktime_t ktime_dt;
->  	s64 dt_ns;
->  	u32 time_ns, distance_mm;
->  	struct platform_device *pdev = to_platform_device(data->dev);
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(data);
->  
->  	/*
->  	 * just one read-echo-cycle can take place at a time
-> @@ -236,7 +235,7 @@ static int ping_read_raw(struct iio_dev *indio_dev,
->  
->  	switch (info) {
->  	case IIO_CHAN_INFO_RAW:
-> -		ret = ping_read(data);
-> +		ret = ping_read(indio_dev, data);
->  		if (ret < 0)
->  			return ret;
->  		*val = ret;
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(st);
+> -
+>  	at91_adc_writel(st, AT91_SAMA5D2_TRGR,
+>  			AT91_SAMA5D2_TRGR_TRGMOD_NO_TRIGGER);
+>  	at91_adc_writel(st, AT91_SAMA5D2_IDR, AT91_SAMA5D2_IER_NOPEN |
+> @@ -1318,7 +1317,7 @@ static irqreturn_t at91_adc_interrupt(int irq, void *private)
+>  		at91_adc_pen_detect_interrupt(st);
+>  	} else if ((status & AT91_SAMA5D2_IER_NOPEN)) {
+>  		/* nopen detected IRQ */
+> -		at91_adc_no_pen_detect_interrupt(st);
+> +		at91_adc_no_pen_detect_interrupt(indio, st);
+>  	} else if ((status & AT91_SAMA5D2_ISR_PENS) &&
+>  		   ((status & rdy_mask) == rdy_mask)) {
+>  		/* periodic trigger IRQ - during pen sense */
 
 
 _______________________________________________
