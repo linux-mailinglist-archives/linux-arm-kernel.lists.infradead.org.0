@@ -2,64 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3659D1D61B7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 17:10:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 639941D61FE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 17:25:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y6MAY9iWC2LHWMqCZx73TlAE1kGRDL57u9q8xDNoGJ4=; b=Yl+eWJWdGHb7dz
-	o0hem95GeKUV0TiTFebWTDGoK+HnbVoNQOnrG4N7Px2O50TTtHp/al+IMHYVaJLAEpEZ4x6sxRLoH
-	b95Fas9dfh1w1hjo/JnG+y0zgyNztW0kHW6EodnlWR02CL6PsdvglBSReZQkXCxrCfRSzeWDaQnLH
-	ncnvar0tTitKelj8Nv6onK9ZfxAkxLv+nLW2LmrJTktaY6zFDlUwp1JeHqImH0X+Av0eKkwayllsS
-	YHUFUy6PLLlbJhhi3Ufz7bCWQj/4lD0KYJ8qqHIyr9pdi/tAuzNHW80aG5pHzYzQiH91ZMQuIA0q0
-	dcBnUl/Kq+e7VvY18m9w==;
+	List-Owner; bh=PdK3uBM8X8FT6+2ZXoM3ccnLu8DJytZXfcv6nzpJnwM=; b=H8n4eXTu9zBN5q
+	xAQvZx5dx9BWMzmAt17AB8lvE+jY89xpQGBNKuymenBds9f+LD3SANwbG3dzpSKApZ2J034Qcw9Rd
+	BbewEneK4IKXj30O17sfBa6w3tKL60Gm9DzbiUdxRr9KZzDoSdABMpaWCTdyrmqYkK8Yzlt0NDyfO
+	nDZgZXfmvMMxlSfDltfnQheFNjSztGJ/MSKALf/hctuIrnMfL02h/3iYydOvnxt79n+RU5rUB30US
+	ek2ot9ne4Nif8h+xIgkstK7xzDGcvchTSBuJshHSRNCunk23iiZHhjq+sIqO4Z0CpnlEb2rItVo0h
+	mP1dv/KJ4idLNm9OLh0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZyRm-0005aM-K9; Sat, 16 May 2020 15:09:54 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1jZyh5-0001PU-6v; Sat, 16 May 2020 15:25:43 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZyRb-0005Yk-Mi; Sat, 16 May 2020 15:09:44 +0000
-Received: by mail-oi1-x241.google.com with SMTP id r25so5055196oij.4;
- Sat, 16 May 2020 08:09:43 -0700 (PDT)
+ id 1jZygv-0001OB-1w; Sat, 16 May 2020 15:25:34 +0000
+Received: by mail-ot1-x343.google.com with SMTP id x22so820046otq.4;
+ Sat, 16 May 2020 08:25:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=CWKr1dm/dGs/SAQr2A86gqzkLCoaeZJZ7mzh4t7OOXE=;
- b=rCGR/OgfPa5FYNa5ha0ZvecPQd3eGprLBcmgiqEv+9qYWESTT/GIggBS5UQdoZDcG+
- 559GEEQwgE8tVKhTrFTFeqB6LcGdsIgyNJFev3fwGve7OhkPAmLPhHeJBQck44dYm6tz
- NIaEVm6hxwIP8xu9aKkRLtL4da3vUHthosBdmok1O8/NGZR/rsI3UticDBHYXhUTHlwj
- D0wn4rCk4lvT1kNJbE5EU3ZOiZf3uPFJEhq+MOYRdmCnVVjWJU17NbtrilU0KpRb2MTC
- xnSGIJogjzr7Cf6aa0Fy2iquNto5b4G8LFvmQEtjAwqQi0lgBretgm8ngGQF9N70LPiY
- FE7A==
+ bh=VcTJY7PqKkXIKUmEOIoaFR4YEtji8JLpj560KQIawUY=;
+ b=djN4We9VD58Bz/NKe+EBtJcVgnExvg71GNlaOtXzYLPx5T9UzMv8f75PHpOExI43Hd
+ vpYH35Epj2qQikFd9jidsB1fWAJ+5pamZUAF3KAqGIGRyd+jrWiI5NsXIDsmiR22JgIO
+ uKTmaVSptM4AfDRgYSSOwGtrPU0JaU2wRAMH8TvioL6VSs3TuefCD8+1LjbYgnQQx6aJ
+ ul3t61mpbegbJtX9TCFylGgE4toh5Wohx7mCeZzgJEHitOjA8J1Ohb2XVSljbfV8kqh/
+ zKrD4H/IDRfOpzvXCEeszOMyv1xBgh05HP/l36AoHTAN4MOBOdC3Vyf2XQaLWVhmbWSb
+ HmGQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=CWKr1dm/dGs/SAQr2A86gqzkLCoaeZJZ7mzh4t7OOXE=;
- b=IHWwbAGkRmop+dxr0/wOtbMo9ESBqzNrT5ZoqJUAJBU65KbroBZMe8pBguyWLrIGLS
- +krrNVTj7T6xnIYC7Dji6JoDYfmqR0EKgsUAuyjIH8zVe5EG6Em1lPjXsIH9/D5XrTB5
- p9ahdAccYpztvN9VKZJ7tZZdoCZtfSCw3PEUOEGNI5pzgds+siFk19FGZMJZDQt8nsqM
- 4QsCupqW2aMpDNuYDEK0esLlsKFjPCzwWN/IG/09+jpSHpaSFsKUxwnL6NWi8roln5Ca
- 7cDIEui4aq1skhIQUCsLg6s3tWPWyJ9HqN3zTRLU4KCFM3n4aWVEtc5TvLHp7UvKtfdv
- xbrw==
-X-Gm-Message-State: AOAM533nPeO7JVjmZ6GaB21fhu3ybV5fhTMyKMj6sxbnrdwekQ4CtOWv
- NMGz4iIr5Q+qpeYlHIgmB0Q=
-X-Google-Smtp-Source: ABdhPJyL6WtYw+OJ6FjMtVoO6da+rp41GGXRLKhEoF8/vmzhBiXisiMmZ9ea9qvzEyGz/oh+6uUCpg==
-X-Received: by 2002:aca:1313:: with SMTP id e19mr5617815oii.74.1589641783037; 
- Sat, 16 May 2020 08:09:43 -0700 (PDT)
+ bh=VcTJY7PqKkXIKUmEOIoaFR4YEtji8JLpj560KQIawUY=;
+ b=qZydFxvp/FFndArzA3/k9LlGWSTDTmPJ5WfJsV9DZy68lrE3Z54uk6VlODptsDnqMD
+ 1dWcPD7nEJxOUH1e52MEyEy9f79PDNBo3TSDOGbmz6VM01Lj0HXWTdIpKsZpDPqv+vjS
+ 4EIfpzeeEP7zuLu9BmVv6qubV5COmF6LvH8kL1ol66vQzJBeWpSL4X3mVBk0r84moqiS
+ rMi5IZfyMNZrSPvuiFkBlVUUXSiG3QubEHHFTq1j8ahC/twjCnXrVTeWi2fetIJR0eH1
+ U1k2IusvKusIg1X/3+A35FAV/N4mUz3jGuqGG50WGCkFgfJAQ96Yw18nqVxqgqKdGZuL
+ vMtw==
+X-Gm-Message-State: AOAM531L74UGDOBTyiG2EFQQHuQK+9HpZ5Z5PlO9HcTiCgTTHt3QWjZE
+ 8sg1/gT6DOVWajGW38O/K+0=
+X-Google-Smtp-Source: ABdhPJz3N6FNNOmkQp4aAoNyx4CExb3IccdADUvGm7NRJL78JWAwpVbpvI3vx+cN7wi9MCL9t6Gj3w==
+X-Received: by 2002:a9d:4a1:: with SMTP id 30mr3322864otm.319.1589642731996;
+ Sat, 16 May 2020 08:25:31 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id j23sm1435800otl.64.2020.05.16.08.09.40
+ by smtp.gmail.com with ESMTPSA id a6sm1232426oia.19.2020.05.16.08.25.27
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 16 May 2020 08:09:42 -0700 (PDT)
-Subject: Re: [PATCH 1/2] arm64: dts: mt8173: fix mdp aliases property name
-To: Hans Verkuil <hverkuil@xs4all.nl>, Hsin-Yi Wang <hsinyi@chromium.org>,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org
-References: <20200414030815.192104-1-hsinyi@chromium.org>
- <4e335bc7-a45d-4688-a578-1e9793a61229@xs4all.nl>
+ Sat, 16 May 2020 08:25:31 -0700 (PDT)
+Subject: Re: [PATCH v13 5/6] rtc: mt6397: Add support for the MediaTek MT6358
+ RTC
+To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
+ Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>
+References: <1587438012-24832-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1587438012-24832-6-git-send-email-hsin-hsiung.wang@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -135,23 +137,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <c82b3f81-b75e-38ca-d03e-baec2c3e5f84@gmail.com>
-Date: Sat, 16 May 2020 17:09:38 +0200
+Message-ID: <27c107b3-6ea8-e6f9-697c-7c3c4479008c@gmail.com>
+Date: Sat, 16 May 2020 17:25:26 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <4e335bc7-a45d-4688-a578-1e9793a61229@xs4all.nl>
+In-Reply-To: <1587438012-24832-6-git-send-email-hsin-hsiung.wang@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_080943_744918_7FC4DDA9 
-X-CRM114-Status: GOOD (  15.10  )
+X-CRM114-CacheID: sfid-20200516_082533_099517_258580E8 
+X-CRM114-Status: GOOD (  23.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [matthias.bgg[at]gmail.com]
@@ -175,69 +177,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Houlong Wei <houlong.wei@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-media@vger.kernel.org
+Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
+ Josef Friedl <josef.friedl@speed.at>, drinkcat@chromium.org,
+ srv_heupstream@mediatek.com, Frank Wunderlich <frank-w@public-files.de>,
+ Ran Bi <ran.bi@mediatek.com>, Sean Wang <sean.wang@mediatek.com>,
+ Sebastian Reichel <sre@kernel.org>, linux-kernel@vger.kernel.org,
+ Richard Fontana <rfontana@redhat.com>, devicetree@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-pm@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Lee,
 
-
-On 16/04/2020 10:41, Hans Verkuil wrote:
-> On 14/04/2020 05:08, Hsin-Yi Wang wrote:
->> Fix warning:
->> Warning (alias_paths): /aliases: aliases property name must include only lowercase and '-'
->>
->> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
->> ---
->>  arch/arm64/boot/dts/mediatek/mt8173.dtsi | 16 ++++++++--------
->>  1 file changed, 8 insertions(+), 8 deletions(-)
+On 21/04/2020 05:00, Hsin-Hsiung Wang wrote:
+> From: Ran Bi <ran.bi@mediatek.com>
 > 
-> I'll merge patch 2/2 for 5.8. I assume that this dtsi patch is merged through
-> a mediatek subsystem?
+> This add support for the MediaTek MT6358 RTC. Driver using
+> compatible data to store different RTC_WRTGR address offset.
+> This replace RTC_WRTGR to RTC_WRTGR_MT6323 in mt6323-poweroff
+> driver which only needed by armv7 CPU without ATF.
 > 
+> Signed-off-by: Ran Bi <ran.bi@mediatek.com>
+> Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+> Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Acked-by: Sebastian Reichel <sre@kernel.org>
+> Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
 
-Correct. Now queued in v5.7-next/dts64
+We have Acked-by from rtc and reset drivers maintainers. Are you OK to take them
+through your mfd branch?
 
-Thanks!
+Are you planning to queue them for v5.8?
 
-> Regards,
+Just asking because if so I'd queue patch 6 through my tree.
+
+Regards,
+Matthias
+
+> ---
+>  drivers/power/reset/mt6323-poweroff.c |  2 +-
+>  drivers/rtc/rtc-mt6397.c              | 18 +++++++++++++++---
+>  include/linux/mfd/mt6397/rtc.h        |  9 ++++++++-
+>  3 files changed, 24 insertions(+), 5 deletions(-)
 > 
-> 	Hans
-> 
->>
->> diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
->> index a212bf124e81..d1e9c41004b4 100644
->> --- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
->> +++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
->> @@ -42,14 +42,14 @@ aliases {
->>  		dpi0 = &dpi0;
->>  		dsi0 = &dsi0;
->>  		dsi1 = &dsi1;
->> -		mdp_rdma0 = &mdp_rdma0;
->> -		mdp_rdma1 = &mdp_rdma1;
->> -		mdp_rsz0 = &mdp_rsz0;
->> -		mdp_rsz1 = &mdp_rsz1;
->> -		mdp_rsz2 = &mdp_rsz2;
->> -		mdp_wdma0 = &mdp_wdma0;
->> -		mdp_wrot0 = &mdp_wrot0;
->> -		mdp_wrot1 = &mdp_wrot1;
->> +		mdp-rdma0 = &mdp_rdma0;
->> +		mdp-rdma1 = &mdp_rdma1;
->> +		mdp-rsz0 = &mdp_rsz0;
->> +		mdp-rsz1 = &mdp_rsz1;
->> +		mdp-rsz2 = &mdp_rsz2;
->> +		mdp-wdma0 = &mdp_wdma0;
->> +		mdp-wrot0 = &mdp_wrot0;
->> +		mdp-wrot1 = &mdp_wrot1;
->>  		serial0 = &uart0;
->>  		serial1 = &uart1;
->>  		serial2 = &uart2;
->>
+> diff --git a/drivers/power/reset/mt6323-poweroff.c b/drivers/power/reset/mt6323-poweroff.c
+> index 1caf43d..0532803 100644
+> --- a/drivers/power/reset/mt6323-poweroff.c
+> +++ b/drivers/power/reset/mt6323-poweroff.c
+> @@ -30,7 +30,7 @@ static void mt6323_do_pwroff(void)
+>  	int ret;
+>  
+>  	regmap_write(pwrc->regmap, pwrc->base + RTC_BBPU, RTC_BBPU_KEY);
+> -	regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR, 1);
+> +	regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR_MT6323, 1);
+>  
+>  	ret = regmap_read_poll_timeout(pwrc->regmap,
+>  					pwrc->base + RTC_BBPU, val,
+> diff --git a/drivers/rtc/rtc-mt6397.c b/drivers/rtc/rtc-mt6397.c
+> index cda238d..f8b1353 100644
+> --- a/drivers/rtc/rtc-mt6397.c
+> +++ b/drivers/rtc/rtc-mt6397.c
+> @@ -9,6 +9,7 @@
+>  #include <linux/mfd/mt6397/core.h>
+>  #include <linux/module.h>
+>  #include <linux/mutex.h>
+> +#include <linux/of_device.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/regmap.h>
+>  #include <linux/rtc.h>
+> @@ -20,7 +21,7 @@ static int mtk_rtc_write_trigger(struct mt6397_rtc *rtc)
+>  	int ret;
+>  	u32 data;
+>  
+> -	ret = regmap_write(rtc->regmap, rtc->addr_base + RTC_WRTGR, 1);
+> +	ret = regmap_write(rtc->regmap, rtc->addr_base + rtc->data->wrtgr, 1);
+>  	if (ret < 0)
+>  		return ret;
+>  
+> @@ -269,6 +270,8 @@ static int mtk_rtc_probe(struct platform_device *pdev)
+>  	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>  	rtc->addr_base = res->start;
+>  
+> +	rtc->data = of_device_get_match_data(&pdev->dev);
+> +
+>  	rtc->irq = platform_get_irq(pdev, 0);
+>  	if (rtc->irq < 0)
+>  		return rtc->irq;
+> @@ -325,9 +328,18 @@ static int mt6397_rtc_resume(struct device *dev)
+>  static SIMPLE_DEV_PM_OPS(mt6397_pm_ops, mt6397_rtc_suspend,
+>  			mt6397_rtc_resume);
+>  
+> +static const struct mtk_rtc_data mt6358_rtc_data = {
+> +	.wrtgr = RTC_WRTGR_MT6358,
+> +};
+> +
+> +static const struct mtk_rtc_data mt6397_rtc_data = {
+> +	.wrtgr = RTC_WRTGR_MT6397,
+> +};
+> +
+>  static const struct of_device_id mt6397_rtc_of_match[] = {
+> -	{ .compatible = "mediatek,mt6323-rtc", },
+> -	{ .compatible = "mediatek,mt6397-rtc", },
+> +	{ .compatible = "mediatek,mt6323-rtc", .data = &mt6397_rtc_data },
+> +	{ .compatible = "mediatek,mt6358-rtc", .data = &mt6358_rtc_data },
+> +	{ .compatible = "mediatek,mt6397-rtc", .data = &mt6397_rtc_data },
+>  	{ }
+>  };
+>  MODULE_DEVICE_TABLE(of, mt6397_rtc_of_match);
+> diff --git a/include/linux/mfd/mt6397/rtc.h b/include/linux/mfd/mt6397/rtc.h
+> index 7dfb63b..66989a1 100644
+> --- a/include/linux/mfd/mt6397/rtc.h
+> +++ b/include/linux/mfd/mt6397/rtc.h
+> @@ -18,7 +18,9 @@
+>  #define RTC_BBPU_CBUSY         BIT(6)
+>  #define RTC_BBPU_KEY            (0x43 << 8)
+>  
+> -#define RTC_WRTGR              0x003c
+> +#define RTC_WRTGR_MT6358       0x003a
+> +#define RTC_WRTGR_MT6397       0x003c
+> +#define RTC_WRTGR_MT6323       RTC_WRTGR_MT6397
+>  
+>  #define RTC_IRQ_STA            0x0002
+>  #define RTC_IRQ_STA_AL         BIT(0)
+> @@ -65,6 +67,10 @@
+>  #define MTK_RTC_POLL_DELAY_US  10
+>  #define MTK_RTC_POLL_TIMEOUT   (jiffies_to_usecs(HZ))
+>  
+> +struct mtk_rtc_data {
+> +	u32                     wrtgr;
+> +};
+> +
+>  struct mt6397_rtc {
+>  	struct device           *dev;
+>  	struct rtc_device       *rtc_dev;
+> @@ -74,6 +80,7 @@ struct mt6397_rtc {
+>  	struct regmap           *regmap;
+>  	int                     irq;
+>  	u32                     addr_base;
+> +	const struct mtk_rtc_data *data;
+>  };
+>  
+>  #endif /* _LINUX_MFD_MT6397_RTC_H_ */
 > 
 
 _______________________________________________
