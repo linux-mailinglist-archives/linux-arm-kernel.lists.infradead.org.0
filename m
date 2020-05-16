@@ -2,72 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5505F1D5C7D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 00:46:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E09611D5EFD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 08:06:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1HxAfi7UXHN7SaS3Cltgj1OAXLZ1Thcv0Yhb9yKIHsk=; b=UoWz14R9/8EwuF
-	dWnE0VjGEsFR7Dc+NFzdD8oH1EAsTaEarefOTy6pzcirR0EV2KHJzOcCHXi6bkOMq1HHEzLL2jIQj
-	Nike0y8i7PlU9Dj4YKPPKLjMUIlRnnJGi37Kmg7z5wH2JZ+0G3BU9EhpHtTFN6puIMJp4lKXWmWMa
-	kMaTLLABnT18bFmeDcdt1zcB3o2wgb3Zdzu5Pu5/PyuABtvQFKIsDnYbd98+TUDnSBgGBp/UmqIUE
-	GjORQNwxD17z8U8KmYf68aqJAySttSMtEJL2J+rwHn8cQsJ6aru/il20QXpIGo04zfopruOCxwYmv
-	2YSNGaWqW9ajRMWC9Pdg==;
+	List-Owner; bh=j3q2eez4SK9DWL+vz3a7UeaVt3/UrZ741wKy12d4ULs=; b=Xx1RnacIlqrjh2
+	OBnPfKd05KKn6I+UYP37kpz54wEnW/sRZ1D6XBCxAlkFJZQAID0+5QjKxJn4y+xnM6jxZrAecXsIO
+	laFz+5TCKzi8doroPv21v1qyPsFGGfMUuOxLIKfFymL5yQQ/Za47FHFVjjnoVaH0zu7UV2A/kdw8V
+	aOx2y+xmhd7Ab/nrAx4RvQTmfeVXv7xCwIEKfjQeP5+/2QXNFKPIAKqaneEOXhMbwRcPZEp71K3yu
+	Jq2QhrC1jXYNFrGmQPgEK5GiYd4K3sfAojjIk95hCUygbwuYtCXvCitsBStjsT9TdgOMijEmdeoZt
+	vfcpBBif1oXXzvRuGUww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZj5n-0002jV-NW; Fri, 15 May 2020 22:46:11 +0000
-Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
+	id 1jZpy2-0004YJ-8B; Sat, 16 May 2020 06:06:38 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZj5f-0002iI-6s
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 22:46:05 +0000
-Received: from dggemi402-hub.china.huawei.com (unknown [172.30.72.55])
- by Forcepoint Email with ESMTP id BD7C87220B5DED9F9533;
- Sat, 16 May 2020 06:45:54 +0800 (CST)
-Received: from DGGEMI525-MBS.china.huawei.com ([169.254.6.251]) by
- dggemi402-hub.china.huawei.com ([10.3.17.135]) with mapi id 14.03.0487.000;
- Sat, 16 May 2020 06:45:48 +0800
-From: Song Bao Hua <song.bao.hua@hisilicon.com>
-To: Robin Murphy <robin.murphy@arm.com>, "linux@armlinux.org.uk"
- <linux@armlinux.org.uk>, "hch@lst.de" <hch@lst.de>,
- "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>,
- "dagum@barrel.engr.sgi.com" <dagum@barrel.engr.sgi.com>, "ralf@oss.sgi.com"
- <ralf@oss.sgi.com>, "grundler@cup.hp.com" <grundler@cup.hp.com>,
- "Jay.Estabrook@compaq.com" <Jay.Estabrook@compaq.com>,
- "sailer@ife.ee.ethz.ch" <sailer@ife.ee.ethz.ch>, "andrea@suse.de"
- <andrea@suse.de>, "jens.axboe@oracle.com" <jens.axboe@oracle.com>,
- "davidm@hpl.hp.com" <davidm@hpl.hp.com>
-Subject: RE: Constantly map and unmap of streaming DMA buffers with IOMMU
- backend might cause serious performance problem
-Thread-Topic: Constantly map and unmap of streaming DMA buffers with IOMMU
- backend might cause serious performance problem
-Thread-Index: AdYqec9gnuD/5zUSTfGZehfpOCqtzP//6eGA//7RmGA=
-Date: Fri, 15 May 2020 22:45:47 +0000
-Message-ID: <B926444035E5E2439431908E3842AFD249FA4D@DGGEMI525-MBS.china.huawei.com>
-References: <B926444035E5E2439431908E3842AFD249F263@DGGEMI525-MBS.china.huawei.com>
- <36d67d68-4381-c7a7-dcf1-6383bd9ae0ad@arm.com>
-In-Reply-To: <36d67d68-4381-c7a7-dcf1-6383bd9ae0ad@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.126.201.78]
+ id 1jZpxu-0004Xx-8N
+ for linux-arm-kernel@lists.infradead.org; Sat, 16 May 2020 06:06:31 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id a5so1918890pjh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 May 2020 23:06:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=9yedn3qfHjLM32OIbYmV/Cr3YjdgfcJ0Re0Gxm2GLZg=;
+ b=CiSDknuW2CMRJcaVSe9+ahgAMOD3wVXZZnG3298IFAjWCkN9aLnZT5eiBzoRU/9aXy
+ egbfwuoj8CVSPlgRT6xaI2W4FrvUAGdFx857ZhrgxBubFNXnA6DkdJkJrNONhobUUAOV
+ YMNJ7yd9CipogGdTJM2Oa1gc2QlmHziCfTwzL2oYf9np0E6ZpHTjjUG8Jif4ObLYp9vn
+ 0C2yPY/uZ17YWxTbon97nipp94Z87HXdak+ufcmyooY+iXFcJbjHyM37fdbHjgtLONKk
+ 331d95TkOfJ6w7wSi0XNbHrtBOiKRQAJBEhsdYQ/ZhbUM3sD41WsCHKXdOJ89TMi0I4v
+ cZ+w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=9yedn3qfHjLM32OIbYmV/Cr3YjdgfcJ0Re0Gxm2GLZg=;
+ b=IDi4I5CuX5byHFXIWXAJw4Br+FjR1NIiEP+IT0+ieSl9wkF96MTdckXy/3DbXJJgnI
+ q9hY9hh8DkMQhjxGqC2N7GAeA4V3rXTX3+0b/h06vmueBht5X+HjbVHP045XnuIcfd/T
+ Yw2RCtN4G3wwJBgER8MgOnjcFpGdvNm81/cNxL2nIPzsnK2Rn0ko2BQ8saC4twao4/GX
+ vT7ZVVACw8gweKMosGXHDaD0HuhokREQk+f2fOf1RjzcSWThNtYVedImJ7WG9Vqv3N1z
+ xnuk9aZvnGSWNvFEL+spuKkU6JoXv0Y0RgxiLJoFWVtX3GpD6qWJofU48FaoeRIHioIV
+ FAqQ==
+X-Gm-Message-State: AOAM532nULshdFX+cXVmBRQPEZr7Au7god2q7BNIeCDl1IxXDI2Acit1
+ EjEQED8LNCzReXmUWYyBlW4=
+X-Google-Smtp-Source: ABdhPJzGAfpa04r3IfhHrHbETdXS4Ctg9HnFuKMrWSojSbA63aMYelLohClIUG1dqCwqc1UpdZ+BVQ==
+X-Received: by 2002:a17:90a:2567:: with SMTP id
+ j94mr6900442pje.26.1589609187183; 
+ Fri, 15 May 2020 23:06:27 -0700 (PDT)
+Received: from localhost ([49.205.222.224])
+ by smtp.gmail.com with ESMTPSA id s2sm946201pjs.9.2020.05.15.23.06.25
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 15 May 2020 23:06:26 -0700 (PDT)
+Date: Sat, 16 May 2020 11:36:24 +0530
+From: afzal mohammed <afzal.mohd.ma@gmail.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: ARM: static kernel in vmalloc space
+Message-ID: <20200516060624.GA6371@afzalpc>
+References: <20200504091018.GA24897@afzalpc>
+ <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
+ <20200511142113.GA31707@afzalpc>
+ <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
+ <20200512104758.GA12980@afzalpc>
+ <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
+ <20200514111755.GA4997@afzalpc>
+ <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
+ <20200514133545.GA5020@afzalpc>
+ <CAK8P3a1PVwkAi8ycUAB-7EMk4nQ_qOu0rC5vJAQk_q9j5xvOJw@mail.gmail.com>
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a1PVwkAi8ycUAB-7EMk4nQ_qOu0rC5vJAQk_q9j5xvOJw@mail.gmail.com>
+User-Agent: Mutt/1.9.3 (2018-01-21)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_154603_606358_0FFC7CBD 
-X-CRM114-Status: GOOD (  24.87  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200515_230630_323085_62E90658 
+X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.255 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:102e listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [afzal.mohd.ma[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,107 +110,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- Linuxarm <linuxarm@huawei.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: Re: Constantly map and unmap of streaming DMA buffers with
-> IOMMU backend might cause serious performance problem
-> 
-> On 2020-05-15 09:19, Song Bao Hua wrote:
-> [ snip... nice analysis, but ultimately it's still "doing stuff has more overhead
-> than not doing stuff" ]
-> 
-> > I am thinking several possible ways on decreasing or removing the latency of
-> DMA map/unmap for every single DMA transfer. Meanwhile, "non-strict" as an
-> existing option with possible safety issues, I won't discuss it in this mail.
-> 
-> But passthrough and non-strict mode *specifically exist* for the cases where
-> performance is the most important concern - streaming DMA with an IOMMU
-> in the middle has an unavoidable tradeoff between performance and isolation,
-> so dismissing that out of hand is not a good way to start making this
-> argument.
+Hi,
 
-I do understand there is a tradeoff between performance and isolation. However, users might ask for performance while supporting isolation. 
-In passthrough mode, the whole memory might be accessible by DMA. In non-strict mode, a buffer could be still mapped in IOMMU when users have returned it to buddy and the buffer has even been allocated by another user. 
+On Thu, May 14, 2020 at 05:32:41PM +0200, Arnd Bergmann wrote:
 
-> 
-> > 1. provide bounce coherent buffers for streaming buffers.
-> > As the coherent buffers keep the status of mapping, we can remove the
-> overhead of map and unmap for each single DMA operations. However, this
-> solution requires memory copy between stream buffers and bounce buffers.
-> Thus it will work only if copy is faster than map/unmap. Meanwhile, it will
-> consume much more memory bandwidth.
-> 
-> I'm struggling to understand how that would work, can you explain it in more
-> detail?
+> Typical distros currently offer two kernels, with and without LPAE,
+> and they probably don't want to add a third one for LPAE with
+> either highmem or vmsplit-4g-4g. Having extra user address
+> space and more lowmem is both going to help users that
+> still have 8GB configurations.
 
-lower-layer drivers maintain some reusable coherent buffers.
-For TX path, drivers copy streaming buffer to coherent buffer, then do DMA;
-For RX path, drivers do DMA in coherent buffer, then copy to streaming buffer.
+Okay, so the conclusion i take is,
 
-> 
-> > 2.make upper-layer kernel components aware of the pain of iommu
-> > map/unmap upper-layer fs, mm, networks can somehow let the lower-layer
-> drivers know the end of the life cycle of sg buffers. In zswap case, I have seen
-> zswap always use the same 2 pages as the destination buffers to save
-> compressed page, but the compressor driver still has to constantly map and
-> unmap those same two pages for every single compression since zswap and zip
-> drivers are working in two completely different software layers.
-> >
-> > I am thinking some way as below, upper-layer kernel code can call:
-> > sg_init_table(&sg...);
-> > sg_mark_reusable(&sg....);
-> > .... /* use the buffer many times */
-> > ....
-> > sg_mark_stop_reuse(&sg);
-> >
-> > After that, if low level drivers see "reusable" flag, it will realize the buffer can
-> be used multiple times and will not do map/unmap every time. it means
-> upper-layer components will further use the buffers and the same buffers will
-> probably be given to lower-layer drivers for new DMA transfer later. When
-> upper-layer code sets " stop_reuse", lower-layer driver will unmap the sg
-> buffers, possibly by providing a unmap-callback to upper-layer components.
-> For zswap case, I have seen the same buffers are always re-used and zip driver
-> maps and unmaps it again and again. Shortly after the buffer is unmapped, it
-> will be mapped in the next transmission, almost without any time gap
-> between unmap and map. In case zswap can set the "reusable" flag, zip driver
-> will save a lot of time.
-> > Meanwhile, for the safety of buffers, lower-layer drivers need to make certain
-> the buffers have already been unmapped in iommu before those buffers go
-> back to buddy for other users.
-> 
-> That sounds like it would only have benefit in a very small set of specific
-> circumstances, and would be very difficult to generalise to buffers that are
-> mapped via dma_map_page() or dma_map_single().
+1. VMSPLIT 4G/4G have to live alongside highmem
+2. For user space copy, do pinning followed by kmap
 
-Yes, indeed. Hopefully the small set of specific circumstances will encourage more upper-layer consumers to reuse buffers, then the "reusable" flag can extend to more common cases, such as page and single buffer.
+Regards
+afzal
 
-> Furthermore, a high-level API that affects a low-level driver's interpretation of
-> mid-layer API calls without the mid-layer's knowledge sounds like a hideous
-> abomination of anti-design. If a mid-layer API lends itself to inefficiency at the
-> lower level, it would seem a lot cleaner and more robust to extend *that* API
-> for stateful buffer reuse.
-
-Absolutely agree. I didn't say the method is elegant. For this moment, maybe "reuse" can get started from a small case like zswap. After some while, it is possible more users are encouraged to do some optimization for buffer reuse, understanding the suffering of lower-layer drivers. Then those performance problems might be solved case by case.
-On the other hand, it is always the freedom of upper-layer code to indicate "reuse" or not. If they don't say anything about reuse, lower-layer drivers can simply do map and unmap.
-
-> Failing that, it might possibly be appropriate to approach this at the driver
-> level - many of the cleverer network drivers already implement buffer pools to
-> recycle mapped SKBs internally, couldn't the "zip driver" simply try doing
-> something like that for itself?
-
-are the buffer pools for RX path? For TX path, buffers come from upper-layer so network drivers can't do anything for recycling SKBs?
-
-> 
-> Robin.
-
-Thanks
-Barry
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
