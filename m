@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65B2A1D60ED
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 14:50:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E97C21D60EF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 14:51:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XuwNMAaEl5MdU1TMBsaoIStDYRBPjvo6Ev+GB31Erms=; b=uot+LGl6dgSWXP
-	7Cqr4sFlEEmHsxdbmPSB2Gd+5ODqNKjq+4A2tbALCA4ZVdTR1XheCiLqHfHAT4unfsyDsjh0y2wMm
-	HDpLX8K51+iAP4MhCVEzk/iRmWolQcGg7BWGq7G0PgtPJYNX/Bl6Swl+b/avcuT7/m8nuoVMRv7OY
-	EMtifn3WiJt8it2OHQkN+rhSpfxR/YpDL559Xqa2ok11tNzya9xV2BLA847p7Edi9K1iZeslNR8i5
-	wr8umZISTrWH+fj8Qy6jJ5hNi4DLuCm6agIiTmd014vZ1iFb+dACAIVMFJiRiY8vb1XuV/nGWdqzd
-	FpGEBSxiLReW2po5NtBg==;
+	List-Owner; bh=2nbg5G3tab8OdWzUov5rhodcnvq7BJSa5obqXCmxepQ=; b=njw2DLL9iE3a7I
+	5jHaJqV188cbeXHjSmGcaUbnd4uI+IZkg28hKQazhUii8EsTdxIKfww3ZDGcm/sn0rMKJUcE+a1WE
+	262mcjaFhWPxrz1W8Lyi9uZkC3cgP3WzhdyL8CCAjd/dsZdJUbpRzJLuEt6hKzcqG5sOcY84be+pt
+	JF106D0ejA6OUia+NqcPbR4u0Ps3CWwLHteO+8o6jOnuhhOHkOAsPewQ+l9EMnLjBl9SfwReilm7Y
+	DAUv1a4A6NpkQJA+YqETAhyTjZGYl0o3PmIv6a1hu3Bbfl/2+nI0ORk047+n58AVPByl4r10SYkZO
+	c1FbniEWCiTZZ1ipy2ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZwH0-0003KN-Uf; Sat, 16 May 2020 12:50:38 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1jZwHK-0003fJ-Tz; Sat, 16 May 2020 12:50:58 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZwGU-00037T-Cp; Sat, 16 May 2020 12:50:08 +0000
-Received: by mail-pl1-x642.google.com with SMTP id x10so2084903plr.4;
- Sat, 16 May 2020 05:50:06 -0700 (PDT)
+ id 1jZwGZ-0003B2-L0; Sat, 16 May 2020 12:50:13 +0000
+Received: by mail-pg1-x543.google.com with SMTP id n11so2357944pgl.9;
+ Sat, 16 May 2020 05:50:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=M/VElStb6fjAYbZ4B7vgbZVnEhth0ws2lGWe8fvBxrg=;
- b=SCJnrewntUekgCrLrPYKTjDyWUiaT6tukJ7ghZCp/+OlBZYuLFZdo2vx6iAo08VGqN
- HA9FU+E4IuYzi3E4RLgOGtcsrMKaIVhKfJk8juuPDehu3XUNZEfCnrFKPBAZKCX4xGqb
- hs1nFDZ67Bdf0zkzStFPU4wszli+z8hWwt3+8E2+bCSZh+E2Bm66Im4l8o0Ips+Flf/n
- FFQ1sO1tqv4qIv2PgbVNPXtzzz4QFerAN3CxpgNEm3uUPTzlh/z8jL8/4qLXPiJzRbeb
- PGGA/oywLbZkAycUIqB9G9+4YBpewcErpSWjLaYM/h/L6u16827k/r8aJfYhCa2S8oPu
- y4ZA==
+ bh=3Z6dDEgJ8JOKztYXxydgUej7Z//VJ8spR5lsEGk0ThA=;
+ b=Wfmkk6YLVQyys3v12FMJyKSckjTTVNq2Ei/+qQ9hyv9vpR/RMpkRz/hBkEe2dapNid
+ IVsTNI1hHNfkQLlg1NxoxI1q+Z51znwv+LyW1iO/OOFMr7xFIbVRNI+brXpKPjX5MENB
+ ajGEQcanj1mDwOiASbV84kEpQjOwAAWYtEwcYciYO5lXsEnQl++umR+MXOwihDIY/ZPy
+ nkXdGJfLwLcoiVY1YMp6m1DpPyYz3WDPDd3kwAfpdjwBaxvLfP5rejq4Se/XSGj21P/c
+ 5uHmd2WrY5io8clRne5suBQYEIwgcAK1+r5ZTClo6qiArJfMJSWRlr1rmwwPVMTlYqW+
+ WwqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=M/VElStb6fjAYbZ4B7vgbZVnEhth0ws2lGWe8fvBxrg=;
- b=N8UO1BNd/X8AkvNOHhOceN2cTZULU7gon2FQmreU6w9+0w/cMer2TEGL68yAIk8CUk
- qVovPXJuyqTqpnhmsLLkvms9jgie35B2PXnrAT267CnkqaR7M0XSy+OfEYusJTioJvye
- IvK5ZJyyFBEcWwiUWex8KMYkjD6goRMLB7/eEKFOEmx7lSUWFmb9YWLR1RfKnSYnpS1W
- HAUL6RX87pGyFWINbGp/ifi/hz6icHrCzs1i0KyJmFAPOwm/jOmkChnKOGXkhvjNJZBh
- ZAq7phaPzz7jMGiIJ3xgdCrvXQ59wqAFFXLfEZYdPKbEWhUAQNCWmAgA5DA7mvJI8gYv
- SQRA==
-X-Gm-Message-State: AOAM531jDT3dNX25SA7YqNnf8MqL0JftdN/XWyQf67S5YCJW/FJB5LZm
- FM3TAwU9mwXaiDN9t20bHBk=
-X-Google-Smtp-Source: ABdhPJzcs64HJTWzTse+oOBspVOEV5XzRGG9wrG7svjtS4HdTsyk3E3hIOd9b+hUCGQIn9WnzsqeTQ==
-X-Received: by 2002:a17:90a:7349:: with SMTP id
- j9mr9123258pjs.196.1589633405850; 
- Sat, 16 May 2020 05:50:05 -0700 (PDT)
+ bh=3Z6dDEgJ8JOKztYXxydgUej7Z//VJ8spR5lsEGk0ThA=;
+ b=d2bMcaLjcaPpIH+1G/7rd73IcfJN0Y1rUSLkpjU1NQfjZnzK8hkV+raea/j1YXzWL+
+ 4rMHR+gHwrv2+CduhCRKBeEVls1c/iju5XKCRiuvtmOjbmiKiRqqGaYDxr8hDf03aoPR
+ KM/zDnDe0W2LpX77zX1GCCw1GS5PUrI+/q9wkGovx+ust9JnfgdHiwCEuRA25oyyUY3e
+ 4+F1YxalnGuoHS0F5fFK5Da2lZLwSSX7FXQRLTpjp042SYwzTtkW9oKrt0aZehrIR34E
+ WrOBn/RZmttkWFwy1PqSRKhdsJifkwhINIIwnU2quff3c/YopSiHE5w6rvSXmw04bBKF
+ 0oNg==
+X-Gm-Message-State: AOAM532r+3EnrMmkYjZ6C2zPw0hnNChiH1IMyDhbJPkb/0Q/H9iNe7Qj
+ CGkELYy3mgn6s0+XjgPLvKg=
+X-Google-Smtp-Source: ABdhPJwTurwJxVNlU96gRcq5LNsYIbq02ALyV5Dcv7PzRcjk9FXAX24fNayH3a4igWL0noCY6Oz53w==
+X-Received: by 2002:a62:e402:: with SMTP id r2mr8634666pfh.300.1589633410908; 
+ Sat, 16 May 2020 05:50:10 -0700 (PDT)
 Received: from localhost.localdomain (61-228-240-171.dynamic-ip.hinet.net.
  [61.228.240.171])
- by smtp.gmail.com with ESMTPSA id k27sm3768323pgb.30.2020.05.16.05.50.01
+ by smtp.gmail.com with ESMTPSA id k27sm3768323pgb.30.2020.05.16.05.50.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 16 May 2020 05:50:05 -0700 (PDT)
+ Sat, 16 May 2020 05:50:10 -0700 (PDT)
 From: Lecopzer Chen <lecopzer@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 1/3] arm_pmu: Add support for perf NMI interrupts registration
-Date: Sat, 16 May 2020 20:48:55 +0800
-Message-Id: <20200516124857.75004-2-lecopzer@gmail.com>
+Subject: [PATCH 2/3] arm64: perf: Support NMI context for perf event ISR
+Date: Sat, 16 May 2020 20:48:56 +0800
+Message-Id: <20200516124857.75004-3-lecopzer@gmail.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200516124857.75004-1-lecopzer@gmail.com>
 References: <20200516124857.75004-1-lecopzer@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_055006_437714_FCBB72A1 
-X-CRM114-Status: GOOD (  11.90  )
+X-CRM114-CacheID: sfid-20200516_055011_702507_560D08F0 
+X-CRM114-Status: GOOD (  12.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [lecopzer[at]gmail.com]
@@ -109,103 +108,118 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Register perf interrupts by request_nmi()/percpu_nmi() when both
-ARM64_PSEUDO_NMI and ARM64_PSEUDO_NMI_PERF are enabled and nmi
-cpufreature is active.
+Perf ISR doesn't support for NMI context, thus add some necessary
+condition-if to handle NMI context:
+
+- We should not hold pmu_lock since it may have already been acquired
+before NMI triggered.
+- irq_work should not run at NMI context.
 
 Signed-off-by: Lecopzer Chen <lecopzer.chen@mediatek.com>
 ---
- drivers/perf/arm_pmu.c       | 51 +++++++++++++++++++++++++++++++-----
- include/linux/perf/arm_pmu.h |  6 +++++
- 2 files changed, 51 insertions(+), 6 deletions(-)
+ arch/arm64/kernel/perf_event.c | 36 +++++++++++++++++++++++++---------
+ 1 file changed, 27 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
-index df352b334ea7..fa37b72d19e2 100644
---- a/drivers/perf/arm_pmu.c
-+++ b/drivers/perf/arm_pmu.c
-@@ -559,6 +559,48 @@ void armpmu_free_irq(int irq, int cpu)
- 	per_cpu(cpu_irq, cpu) = 0;
+diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+index 4d7879484cec..94b404509f02 100644
+--- a/arch/arm64/kernel/perf_event.c
++++ b/arch/arm64/kernel/perf_event.c
+@@ -313,6 +313,23 @@ static inline bool armv8pmu_event_is_chained(struct perf_event *event)
+ 	       (idx != ARMV8_IDX_CYCLE_COUNTER);
  }
  
-+static void armpmu_prepare_percpu_nmi_other(void *info)
-+{
-+	/*
-+	 * We don't need to disable preemption since smp_call_function()
-+	 * did this for us.
-+	 */
-+	prepare_percpu_nmi((uintptr_t) info);
-+}
++/*
++ * NMI Perf interrupts may be triggered during kernel holding
++ * same lock.
++ * Avoid acquiring lock again in NMI context.
++ */
++#define armv8pmu_lock(lock, flags)				\
++	do {							\
++		if (!in_nmi())					\
++			raw_spin_lock_irqsave(lock, flags);	\
++	} while (0)
 +
-+static int _armpmu_request_irq(unsigned int irq, irq_handler_t handler,
-+			       unsigned long flags, int cpu)
-+{
-+	if (armpmu_support_nmi())
-+		return request_nmi(irq, handler, flags, "arm-pmu",
-+				   per_cpu_ptr(&cpu_armpmu, cpu));
-+	return request_irq(irq, handler, flags, "arm-pmu",
-+			   per_cpu_ptr(&cpu_armpmu, cpu));
-+}
++#define armv8pmu_unlock(lock, flags)				\
++	do {							\
++		if (!in_nmi())					\
++			raw_spin_unlock_irqrestore(lock, flags);\
++	} while (0)
 +
-+static int _armpmu_request_percpu_irq(unsigned int irq, irq_handler_t handler)
-+{
-+	if (armpmu_support_nmi()) {
-+		int err;
-+
-+		err = request_percpu_nmi(irq, handler, "arm-pmu",
-+					 &cpu_armpmu);
-+		if (err)
-+			return err;
-+
-+		preempt_disable();
-+		err = prepare_percpu_nmi(irq);
-+		if (err) {
-+			return err;
-+			preempt_enable();
-+		}
-+		smp_call_function(armpmu_prepare_percpu_nmi_other,
-+				  (void *)(uintptr_t) irq, true);
-+		preempt_enable();
-+	}
-+	return request_percpu_irq(irq, handler, "arm-pmu",
-+				  &cpu_armpmu);
-+}
-+
- int armpmu_request_irq(int irq, int cpu)
- {
- 	int err = 0;
-@@ -582,12 +624,9 @@ int armpmu_request_irq(int irq, int cpu)
- 			    IRQF_NO_THREAD;
+ /*
+  * ARMv8 low level PMU access
+  */
+@@ -589,7 +606,7 @@ static void armv8pmu_enable_event(struct perf_event *event)
+ 	 * Enable counter and interrupt, and set the counter to count
+ 	 * the event that we're interested in.
+ 	 */
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	armv8pmu_lock(&events->pmu_lock, flags);
  
- 		irq_set_status_flags(irq, IRQ_NOAUTOEN);
--		err = request_irq(irq, handler, irq_flags, "arm-pmu",
--				  per_cpu_ptr(&cpu_armpmu, cpu));
--	} else if (armpmu_count_irq_users(irq) == 0) {
--		err = request_percpu_irq(irq, handler, "arm-pmu",
--					 &cpu_armpmu);
--	}
-+		err = _armpmu_request_irq(irq, handler, irq_flags, cpu);
-+	} else if (armpmu_count_irq_users(irq) == 0)
-+		err = _armpmu_request_percpu_irq(irq, handler);
+ 	/*
+ 	 * Disable counter
+@@ -611,7 +628,7 @@ static void armv8pmu_enable_event(struct perf_event *event)
+ 	 */
+ 	armv8pmu_enable_event_counter(event);
  
- 	if (err)
- 		goto err_out;
-diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
-index 5b616dde9a4c..5b878b5a22aa 100644
---- a/include/linux/perf/arm_pmu.h
-+++ b/include/linux/perf/arm_pmu.h
-@@ -160,6 +160,12 @@ int arm_pmu_acpi_probe(armpmu_init_fn init_fn);
- static inline int arm_pmu_acpi_probe(armpmu_init_fn init_fn) { return 0; }
- #endif
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	armv8pmu_unlock(&events->pmu_lock, flags);
+ }
  
-+static inline bool armpmu_support_nmi(void)
-+{
-+	return IS_ENABLED(CONFIG_ARM64_PSEUDO_NMI_PERF) &&
-+	       system_uses_irq_prio_masking();
-+}
-+
- /* Internal functions only for core arm_pmu code */
- struct arm_pmu *armpmu_alloc(void);
- struct arm_pmu *armpmu_alloc_atomic(void);
+ static void armv8pmu_disable_event(struct perf_event *event)
+@@ -623,7 +640,7 @@ static void armv8pmu_disable_event(struct perf_event *event)
+ 	/*
+ 	 * Disable counter and interrupt
+ 	 */
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	armv8pmu_lock(&events->pmu_lock, flags);
+ 
+ 	/*
+ 	 * Disable counter
+@@ -635,7 +652,7 @@ static void armv8pmu_disable_event(struct perf_event *event)
+ 	 */
+ 	armv8pmu_disable_event_irq(event);
+ 
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	armv8pmu_unlock(&events->pmu_lock, flags);
+ }
+ 
+ static void armv8pmu_start(struct arm_pmu *cpu_pmu)
+@@ -643,10 +660,10 @@ static void armv8pmu_start(struct arm_pmu *cpu_pmu)
+ 	unsigned long flags;
+ 	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+ 
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	armv8pmu_lock(&events->pmu_lock, flags);
+ 	/* Enable all counters */
+ 	armv8pmu_pmcr_write(armv8pmu_pmcr_read() | ARMV8_PMU_PMCR_E);
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	armv8pmu_unlock(&events->pmu_lock, flags);
+ }
+ 
+ static void armv8pmu_stop(struct arm_pmu *cpu_pmu)
+@@ -654,10 +671,10 @@ static void armv8pmu_stop(struct arm_pmu *cpu_pmu)
+ 	unsigned long flags;
+ 	struct pmu_hw_events *events = this_cpu_ptr(cpu_pmu->hw_events);
+ 
+-	raw_spin_lock_irqsave(&events->pmu_lock, flags);
++	armv8pmu_lock(&events->pmu_lock, flags);
+ 	/* Disable all counters */
+ 	armv8pmu_pmcr_write(armv8pmu_pmcr_read() & ~ARMV8_PMU_PMCR_E);
+-	raw_spin_unlock_irqrestore(&events->pmu_lock, flags);
++	armv8pmu_unlock(&events->pmu_lock, flags);
+ }
+ 
+ static irqreturn_t armv8pmu_handle_irq(struct arm_pmu *cpu_pmu)
+@@ -722,7 +739,8 @@ static irqreturn_t armv8pmu_handle_irq(struct arm_pmu *cpu_pmu)
+ 	 * platforms that can have the PMU interrupts raised as an NMI, this
+ 	 * will not work.
+ 	 */
+-	irq_work_run();
++	if (!armpmu_support_nmi())
++		irq_work_run();
+ 
+ 	return IRQ_HANDLED;
+ }
 -- 
 2.25.1
 
