@@ -2,162 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 061C61D6219
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 17:35:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FEF21D621A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 17:35:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FBwigpAMgSVvFEL32IbsgLKzgnwPuEpsDS5jvb+HAt0=; b=E70tU4NT/eJJ4S
-	kR08r/8ABuMDJOEBi5TduXxQfB6hsOKtUpWWAZTT+njbbE20sJ0Y1+CVmmdHULw4LVo4J9+XD21Es
-	ccvMD03ky2VWYYF3x1D6o9PCJ5uIzXswECaE/gcygmPRaNCzS83Ps4y5RX0Li/Xukr1lhJofISXr2
-	Kfm6v0gSWc6/0wBb+0mShVWnnX9NzUjf9AyJPqWc084HrzlIwu3CxSKqY6ZbAfjiMCmhlp3yyhJ/Q
-	C/LEpJrFEvGyLb59FFe86iR6owvW5DgPGMscgVCQ89P4LSvLlngGlzWNYbksUyjqNPzuSdB2Gwlzo
-	nWnUbPDeCpOEObDFh/MA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LCHjTdj92STnFilNsYufNe+/7rAihJk6PeSOxMGJYPM=; b=fI8wDBXvnzQBwV
+	EDUmDd6qZt2nuCrbghSVHbR6ZoyTIh1JbuYKNukcE8sOFlYqJC+WvQIWqaj4rm8zqvuWjSUOhq8bX
+	NB4UuWGYRZuUHsQ20t3hTsorDRibH7dEsbpUlkVp/UAbQL2RLaM6JMjVeaQclVoiE+lGD7ewywMgI
+	wf41IKtf79y8wI0+iz2ZCJxIdq9xTbzKOqPTnkeYj8ULGVOVPe6J9YMjqH7J3qltze5GAKMaTa1tI
+	TeqaFPuFVJp/GA1SSeaMarWkkfk/M8909z+02+O0Tk0ThGJGsfEXdVzN/STqQabwUyMj3iG7IltER
+	BOGA53savyl7WP+o0DoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZyqb-0007XM-9X; Sat, 16 May 2020 15:35:33 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1jZyqt-0007fj-5M; Sat, 16 May 2020 15:35:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZyqR-0007Vi-MN; Sat, 16 May 2020 15:35:25 +0000
-Received: by mail-ot1-x343.google.com with SMTP id z3so2759414otp.9;
- Sat, 16 May 2020 08:35:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=/GuI5j0F8zuQQcxV/ULqO2KUI6KnIMmelfO0Ywbye2U=;
- b=ZjR+fgEFmg99/oZKZeWNX6ftxjDJ+WubmSsWdDH4NZOV1qBxCcawaGb1NIJU/C9bGU
- ti8kCvRZ7F2M165Tll4dcq9VIMh5PtfcfgitdQIXktEyy+vLgvmlJnNTb/rngHfaRnrB
- XpWWEs2nePOZI5TJqZcYkXWSjwv70zQjlWtmlD65tUuR/IcllzaNLop6PSjFAO/BOO1a
- hLXRCRKykxZQWYXuoSPYpnlOCHobJsQg5sQjYBKDl0MpVbcw7771/VJIDNHszFKgVrbG
- 0tFvcOkz8jMw4wMmrr73XpMgeRP7B3C95W4bh3YNEf1Wy7/w6kjQPghtx9lOIM1DOYEb
- Klqw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=/GuI5j0F8zuQQcxV/ULqO2KUI6KnIMmelfO0Ywbye2U=;
- b=A1cepSA8ktLSmESTZfqELZFw1w05n7C65oDlKfi4Ho03d8FOYCwx4VANXtftqFYk81
- hRDyl3X25cC+heTMDbQxp3cy8wXVFN75TUSDSLqC8E5UPCD5NBDsfzkYkz7TI3UYej2P
- u8QTrPOCYtC3wmmfnwW4T8ZpduNmIOZAfnwEmwhxXoEFbwrmb/FMfEQ8OnCRGJKV0xzt
- zhKHKaHwtBdCM/6Zu1qK+/F9y16nE5emNK9quB4tKekX2DjEr3Lk8/EiHgzaSuktMeZW
- j/Vkm5XTJQvqbfvjVtE70hI9uiIAPpxm5K4xgE8cvJBiLRB3CwZ7mIm+XyGsZdXd847r
- MEsg==
-X-Gm-Message-State: AOAM531qMb7ZytXXTh/HYJ6aIRGz9xuGFUuhynveJovLKZYd/fbQokiS
- /kxMzRLtHj35r2qZeI6eQt71XqiX
-X-Google-Smtp-Source: ABdhPJwX+o5CfAxYzi43Y0SQF4bpeViXitXKpO2mk7bh22ms/FZilYOcRe4dVdV78XDI9wywsT5dpw==
-X-Received: by 2002:a9d:70d4:: with SMTP id w20mr1746192otj.179.1589643322718; 
- Sat, 16 May 2020 08:35:22 -0700 (PDT)
-Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id g94sm1440356otg.74.2020.05.16.08.35.20
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 16 May 2020 08:35:21 -0700 (PDT)
-Subject: Re: [RESEND PATCH v5 11/11] arm64: dts: mt2712: use non-empty ranges
- for usb-phy
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Kishon Vijay Abraham I <kishon@ti.com>
-References: <bfcf6a4dd6829dfa1bd0119b34043db7364dfd8e.1581389234.git.chunfeng.yun@mediatek.com>
- <0b039294697126edb25a699b8c25b7fcc84eed36.1581389234.git.chunfeng.yun@mediatek.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <dbeb21d5-ece6-5a09-4802-ad5ba3d2b21a@gmail.com>
-Date: Sat, 16 May 2020 17:35:18 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jZyqU-0007WJ-UY
+ for linux-arm-kernel@lists.infradead.org; Sat, 16 May 2020 15:35:28 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3DE4720727;
+ Sat, 16 May 2020 15:35:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589643326;
+ bh=6bIdM83OAz8NTK5LfuYkYjYz/+gMNTHlGbMRn7g3eRA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=b4273gexRENjUClnSjPWBqppBfsxCPCulwXSSMnKmtQkW2MzB/1hej7sgTuuHA8M4
+ CmO7PmyAlU/3gX5mX2zuFSuVCQ6W0S4XZnhrLtaL0TAmHvKPfY8ew93CtkLKczWPRC
+ xHYCcily2ddVLnRI0BJ88lzvL1gYXZ9Q3vp1ttjE=
+Date: Sat, 16 May 2020 16:35:21 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Sergiu Cuciurean <sergiu.cuciurean@analog.com>
+Subject: Re: [PATCH] iio: stm32-dac: Replace indio_dev->mlock with own
+ device lock
+Message-ID: <20200516163521.2812cf86@archlinux>
+In-Reply-To: <20200514085018.79948-1-sergiu.cuciurean@analog.com>
+References: <20200514085018.79948-1-sergiu.cuciurean@analog.com>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <0b039294697126edb25a699b8c25b7fcc84eed36.1581389234.git.chunfeng.yun@mediatek.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_083523_752014_EC59E333 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200516_083527_076724_1BBB0318 
+X-CRM114-Status: GOOD (  16.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -165,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -176,124 +77,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Lars-Peter Clausen <lars@metafoo.de>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Hartmut Knaack <knaack.h@gmx.de>, Fabrice Gasnier <fabrice.gasnier@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Alexandre Torgue <alexandre.torgue@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 14 May 2020 11:50:12 +0300
+Sergiu Cuciurean <sergiu.cuciurean@analog.com> wrote:
 
-
-On 11/02/2020 04:21, Chunfeng Yun wrote:
-> Use non-empty ranges for usb-phy to make the layout of
-> its registers clearer;
-> Replace deprecated compatible by generic
+> As part of the general cleanup of indio_dev->mlock, this change replaces
+> it with a local lock on the device's state structure.
 > 
-> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-
-queued for v5.7-next/dts64
-
-Thanks a lot
-
+> Signed-off-by: Sergiu Cuciurean <sergiu.cuciurean@analog.com>
 > ---
-> v3~v5: no changes
+>  drivers/iio/dac/stm32-dac.c | 12 ++++++++----
+>  1 file changed, 8 insertions(+), 4 deletions(-)
 > 
-> v2: use generic compatible
-> ---
->  arch/arm64/boot/dts/mediatek/mt2712e.dtsi | 42 ++++++++++++-----------
->  1 file changed, 22 insertions(+), 20 deletions(-)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
-> index 43307bad3f0d..e24f2f2f6004 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt2712e.dtsi
-> @@ -697,30 +697,31 @@ usb_host0: xhci@11270000 {
->  	};
+> diff --git a/drivers/iio/dac/stm32-dac.c b/drivers/iio/dac/stm32-dac.c
+> index f22c1d9129b2..74b9474c8590 100644
+> --- a/drivers/iio/dac/stm32-dac.c
+> +++ b/drivers/iio/dac/stm32-dac.c
+> @@ -26,9 +26,11 @@
+>  /**
+>   * struct stm32_dac - private data of DAC driver
+>   * @common:		reference to DAC common data
+> + * @lock: lock to protect the data buffer during regmap ops
+
+In this particular case I'm not sure that's what mlock was being used for.
+I think it's about avoiding races around checking if powered down and
+actually doing it.
+
+
+>   */
+>  struct stm32_dac {
+>  	struct stm32_dac_common *common;
+> +	struct mutex		lock;
+>  };
 >  
->  	u3phy0: usb-phy@11290000 {
-> -		compatible = "mediatek,mt2712-u3phy";
-> -		#address-cells = <2>;
-> -		#size-cells = <2>;
-> -		ranges;
-> +		compatible = "mediatek,mt2712-tphy",
-> +			     "mediatek,generic-tphy-v2";
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +		ranges = <0 0 0x11290000 0x9000>;
->  		status = "okay";
+>  static int stm32_dac_is_enabled(struct iio_dev *indio_dev, int channel)
+> @@ -58,10 +60,10 @@ static int stm32_dac_set_enable_state(struct iio_dev *indio_dev, int ch,
+>  	int ret;
 >  
-> -		u2port0: usb-phy@11290000 {
-> -			reg = <0 0x11290000 0 0x700>;
-> +		u2port0: usb-phy@0 {
-> +			reg = <0x0 0x700>;
->  			clocks = <&clk26m>;
->  			clock-names = "ref";
->  			#phy-cells = <1>;
->  			status = "okay";
->  		};
+>  	/* already enabled / disabled ? */
+> -	mutex_lock(&indio_dev->mlock);
+> +	mutex_lock(&dac->lock);
+>  	ret = stm32_dac_is_enabled(indio_dev, ch);
+>  	if (ret < 0 || enable == !!ret) {
+> -		mutex_unlock(&indio_dev->mlock);
+> +		mutex_unlock(&dac->lock);
+>  		return ret < 0 ? ret : 0;
+>  	}
 >  
-> -		u2port1: usb-phy@11298000 {
-> -			reg = <0 0x11298000 0 0x700>;
-> +		u2port1: usb-phy@8000 {
-> +			reg = <0x8000 0x700>;
->  			clocks = <&clk26m>;
->  			clock-names = "ref";
->  			#phy-cells = <1>;
->  			status = "okay";
->  		};
+> @@ -69,13 +71,13 @@ static int stm32_dac_set_enable_state(struct iio_dev *indio_dev, int ch,
+>  		ret = pm_runtime_get_sync(dev);
+>  		if (ret < 0) {
+>  			pm_runtime_put_noidle(dev);
+> -			mutex_unlock(&indio_dev->mlock);
+> +			mutex_unlock(&dac->lock);
+>  			return ret;
+>  		}
+>  	}
 >  
-> -		u3port0: usb-phy@11298700 {
-> -			reg = <0 0x11298700 0 0x900>;
-> +		u3port0: usb-phy@8700 {
-> +			reg = <0x8700 0x900>;
->  			clocks = <&clk26m>;
->  			clock-names = "ref";
->  			#phy-cells = <1>;
-> @@ -760,30 +761,31 @@ usb_host1: xhci@112c0000 {
->  	};
+>  	ret = regmap_update_bits(dac->common->regmap, STM32_DAC_CR, msk, en);
+> -	mutex_unlock(&indio_dev->mlock);
+> +	mutex_unlock(&dac->lock);
+>  	if (ret < 0) {
+>  		dev_err(&indio_dev->dev, "%s failed\n", en ?
+>  			"Enable" : "Disable");
+> @@ -328,6 +330,8 @@ static int stm32_dac_probe(struct platform_device *pdev)
+>  	indio_dev->info = &stm32_dac_iio_info;
+>  	indio_dev->modes = INDIO_DIRECT_MODE;
 >  
->  	u3phy1: usb-phy@112e0000 {
-> -		compatible = "mediatek,mt2712-u3phy";
-> -		#address-cells = <2>;
-> -		#size-cells = <2>;
-> -		ranges;
-> +		compatible = "mediatek,mt2712-tphy",
-> +			     "mediatek,generic-tphy-v2";
-> +		#address-cells = <1>;
-> +		#size-cells = <1>;
-> +		ranges = <0 0 0x112e0000 0x9000>;
->  		status = "okay";
->  
-> -		u2port2: usb-phy@112e0000 {
-> -			reg = <0 0x112e0000 0 0x700>;
-> +		u2port2: usb-phy@0 {
-> +			reg = <0x0 0x700>;
->  			clocks = <&clk26m>;
->  			clock-names = "ref";
->  			#phy-cells = <1>;
->  			status = "okay";
->  		};
->  
-> -		u2port3: usb-phy@112e8000 {
-> -			reg = <0 0x112e8000 0 0x700>;
-> +		u2port3: usb-phy@8000 {
-> +			reg = <0x8000 0x700>;
->  			clocks = <&clk26m>;
->  			clock-names = "ref";
->  			#phy-cells = <1>;
->  			status = "okay";
->  		};
->  
-> -		u3port1: usb-phy@112e8700 {
-> -			reg = <0 0x112e8700 0 0x900>;
-> +		u3port1: usb-phy@8700 {
-> +			reg = <0x8700 0x900>;
->  			clocks = <&clk26m>;
->  			clock-names = "ref";
->  			#phy-cells = <1>;
-> 
+> +	mutex_init(&dac->lock);
+> +
+>  	ret = stm32_dac_chan_of_init(indio_dev);
+>  	if (ret < 0)
+>  		return ret;
+
 
 _______________________________________________
 linux-arm-kernel mailing list
