@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D81B91D622E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 17:37:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF9221D627F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 18:10:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s40noz8+U8UmqkTTH0jQZADLmhLFxvhS8hPPBkZIe+o=; b=SVtvmSBBU26Kzm
-	anvOcqNeiJg8pzSYNX7Q/Qz9zUylZA2NGCOvi3B8EerDG1elRT655LnkvQeNJhCDvxBmNkxDCiNjp
-	LtcmWkgH6PqmXUhP2gfx5S8PAqhk08bpDFiNtVQ7XD5tQUwQ54jFnyzdVSuA+BfZTKSP3zM9kUnW8
-	dCgVs1PUilfP6EnpTcYjyxHnDCRM/cKUydMkY3ATLXvwhmpokedVkt0mwOz7lfCRcQshG/Pb/ZzNP
-	NY6q9mcdJKcb8w4wcL81wfNO1merigUkBSCp2tVIHHRZCE+h6TKEO8lfnSfVG5+verS9Rt5bKAtch
-	c8odZcT+9GtfjJWR/aNA==;
+	List-Owner; bh=aqdsRYKzhAODwzYIo7ljuVnMgU92rd9srOMInA9+SvQ=; b=PaeYab47SzW0jy
+	6acArMu/BEDg6Za+YvLLyYQkRBovqRY02ziRzXnpJrwG0d+/t8yaB0REws0zwSOTpm+DKST0m88O9
+	z8d6fEhI9EZ/7U8yMR439QcfF8Vi6DJkZ9T+cBy3NOU56mALo3EzpSGWZs2q9n0FFEMVGMFvZ0uOb
+	RSbvUzlRAyg5OAsAeHljfNQ38Wu8sbRy6u2VqlcQ3LOKmx90vwYRqE5atZa1I5jMaMDb12uyl/IhJ
+	XK2DLtz9D+C/yrJxm2taeMsm6LZgCUmXiEe+F69aWyVQwsBHiHwLSEFmJUJPujCb5tglgsqJX0PBo
+	555EP9Aixf6A01fZWN9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZysT-0008JI-MX; Sat, 16 May 2020 15:37:29 +0000
-Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
+	id 1jZzOP-0004PI-88; Sat, 16 May 2020 16:10:29 +0000
+Received: from mail-oo1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZysG-0008HG-Db; Sat, 16 May 2020 15:37:17 +0000
-Received: by mail-ot1-x344.google.com with SMTP id 72so4450566otu.1;
- Sat, 16 May 2020 08:37:16 -0700 (PDT)
+ id 1jZzOJ-0004Om-0E; Sat, 16 May 2020 16:10:24 +0000
+Received: by mail-oo1-xc41.google.com with SMTP id c83so1131169oob.6;
+ Sat, 16 May 2020 09:10:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=QOdQPhactMNYx+K6jcC2qpt1HbOWUydWFj161zelHf8=;
- b=mJWKENB9adXPcpbGhUYy/BPS7y+JJa1jph/49WJPSWdkPNnhYaBkngSLGt1G44Dm8k
- D66hR8eLpYiMCTXmGDgJJ5nAGSSdLJRgrQMCGKluTM6TZ+j3KF3157tTagNJmICTwU9Y
- Xq+1Z3UGFsaU67wBnwwQC6VaojhGzgEragHsdFOOl1qGICJBQeZ161KPxHcFIGoa4pDY
- hqij0e70YOjRTYfHtwc+gLMkQQE/oIooPD0awE/26gdTS75rZnU3lSeHQBx6RmqMpoz4
- bra7K1sbti/NP08KEJAlctCq6u+kMnHSX5SpHoj7gvZhxykn3HFiQR/0GvSq2nOS6lH5
- ptFg==
+ bh=EacKjSDopXWyW8JoiO70qr07SPwYhYpatq/0eY+a1eU=;
+ b=NNH9yXgFK+d5gov4vMTntUA9vwX4zVohtYBOM/gkZPOTtCw+ziH747SpaWnyWW5ylP
+ xHQvxnNPvKxvwXm1PTKaeE4NJjwdfXwkOoV9FyTdFwVxRBVFZVJB0DDUM0fVqtOJxkU+
+ MF+E9iBP4TxCgLIZcej461qTxU4IlQ/8/mA8Wkv0mtklp0N7TmzJFZvQFISavJVKDrGg
+ Q1b7c/5YATICUn6j5uVT2oceL9+9R/KMKPpqPC4t+dQF36s2JMNPP9Z8G2CHBDuNigOd
+ wc5H7vI8XhlEbUAIFqrv3whjtGVXfqaPERduLikNaCIm01wPGpgQk8i5mECUThebO9Pi
+ ygNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=QOdQPhactMNYx+K6jcC2qpt1HbOWUydWFj161zelHf8=;
- b=uJ58y1EYYdeRNRRzhBG68JtGOWGBRDWUtiMSVI/ZXYJzKuetqbG92yVRL7h/06jHon
- Fzh6Y21qUpwbtt/F9NiapUxj1AMrQtKli1judCT0+m8tMicg5sUwl//cVWhXe5Uz+3R6
- Pzv0DV9MSe8CfTBhEbUqiYyj9X4BJp7aQHhKSIjgNH8jm3ZtRlRpb4mmciBGt2H/YqNu
- 3o3U1doIQgeq9/2qOczTKWsqKRqMHYVXWm/jV6GjHUDLdo8ZpNdGc6Lyk5fFijfFqJ0x
- EA4YBCNUKPxiQOVFp+bK509VsQGrTTx31jzwYlrNOnuEiNjUAU2chF+ODie33g6YsIWO
- 1OSQ==
-X-Gm-Message-State: AOAM532rOQ8eA1zT/UoRRb1NSPm5rUbU48fNKr63df0gdGIj5i9PdACV
- 2gkO+8O+/UheAU15ajfL21YUr11k
-X-Google-Smtp-Source: ABdhPJz/dLu2FtR/qvaCVyzCFgiac06bhsJKwhD5V58+PukhVRoDFdBM8Bjtfk9q/USkY05FC0LIfA==
-X-Received: by 2002:a05:6830:1551:: with SMTP id
- l17mr6413015otp.153.1589643435309; 
- Sat, 16 May 2020 08:37:15 -0700 (PDT)
+ bh=EacKjSDopXWyW8JoiO70qr07SPwYhYpatq/0eY+a1eU=;
+ b=Iy5oRVV1YbJEUfckOH9/H/ZcWI34//Ks67mC8pf15NHSnnX9zjZbl3TVFd4WcqCLRF
+ 1c2TZk/uFx/6JINbqE/KfyTTe819AbHsM41/veAbDibNz43qEm7nxcmlD++G3RqqJdlt
+ sHV1wfFIBqBWoGr+z72l0DAvQKFPim4ydRjGJAnfk1Ixr/xD6sYHV+Fu++mlL8NYyMRw
+ x8EupojFzEmofeKytkHWUjTyAOyqUPQYI3wYpI61JA4NrizI1lqexvhyx6KjBxdWyRU+
+ XHBaruw5U7HVM0NSIRQlAIruik5fnXr9DKE/QedRU950K15jK7ItQqqZ3AZUjDLcCXwk
+ Ph5A==
+X-Gm-Message-State: AOAM530UArvCF/+FccdiNolUxVbCyNFpqd8VAIc/rSXFD9va/U0gaRwG
+ WRuSWCaNX55TxJrdZGhOTeY=
+X-Google-Smtp-Source: ABdhPJwjoY5UTtSd4WAUE0adW6nCGFeCTzy/hfbySAkry2wU8dbZQNgTsz1ziHIgfXvWtOnd3c9E4w==
+X-Received: by 2002:a4a:956a:: with SMTP id n39mr6703896ooi.64.1589645422115; 
+ Sat, 16 May 2020 09:10:22 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id 22sm1438888otc.34.2020.05.16.08.37.12
+ by smtp.gmail.com with ESMTPSA id v8sm1590217oos.0.2020.05.16.09.10.18
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 16 May 2020 08:37:14 -0700 (PDT)
-Subject: Re: [RESEND,v2,1/1] arm: dts: mediatek: add mt7629 pwm support
-To: Sam Shih <sam.shih@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-References: <1581474926-28633-1-git-send-email-sam.shih@mediatek.com>
- <1581474926-28633-2-git-send-email-sam.shih@mediatek.com>
+ Sat, 16 May 2020 09:10:21 -0700 (PDT)
+Subject: Re: [PATCH v5 03/13] mailbox: cmdq: support mt6779 gce platform
+ definition
+To: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Jassi Brar <jassisinghbrar@gmail.com>, Philipp Zabel
+ <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel@ffwll.ch>
+References: <1583664775-19382-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1583664775-19382-4-git-send-email-dennis-yc.hsieh@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -136,23 +139,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <d59e900b-d0a1-e17a-c948-320eb3f4e343@gmail.com>
-Date: Sat, 16 May 2020 17:37:11 +0200
+Message-ID: <07f2898b-1e00-cb73-00d1-91910f87a227@gmail.com>
+Date: Sat, 16 May 2020 18:10:16 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1581474926-28633-2-git-send-email-sam.shih@mediatek.com>
+In-Reply-To: <1583664775-19382-4-git-send-email-dennis-yc.hsieh@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_083716_454189_4B3E0042 
-X-CRM114-Status: GOOD (  15.53  )
+X-CRM114-CacheID: sfid-20200516_091023_063109_1BDB6746 
+X-CRM114-Status: GOOD (  15.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [matthias.bgg[at]gmail.com]
@@ -176,8 +179,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ HS Liao <hs.liao@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Bibby Hsieh <bibby.hsieh@mediatek.com>,
+ CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -185,49 +191,35 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 12/02/2020 03:35, Sam Shih wrote:
-> This adds pwm support for MT7629.
-> Used:
-> https://patchwork.kernel.org/patch/11160851/
+On 08/03/2020 11:52, Dennis YC Hsieh wrote:
+> Add gce v4 hardware support with different thread number and shift.
 > 
-> Change since v1:
-> remove unused property num-pwm
-> 
-> Signed-off-by: Sam Shih <sam.shih@mediatek.com>
+> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
-Applied now to v5.7-next/dts32
-
-Thanks!
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 
 > ---
->  arch/arm/boot/dts/mt7629.dtsi | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
+>  drivers/mailbox/mtk-cmdq-mailbox.c | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/arch/arm/boot/dts/mt7629.dtsi b/arch/arm/boot/dts/mt7629.dtsi
-> index 867b88103b9d..ce2a30a24017 100644
-> --- a/arch/arm/boot/dts/mt7629.dtsi
-> +++ b/arch/arm/boot/dts/mt7629.dtsi
-> @@ -241,6 +241,20 @@
->  			status = "disabled";
->  		};
+> diff --git a/drivers/mailbox/mtk-cmdq-mailbox.c b/drivers/mailbox/mtk-cmdq-mailbox.c
+> index 4dbee9258127..9994ac9426d6 100644
+> --- a/drivers/mailbox/mtk-cmdq-mailbox.c
+> +++ b/drivers/mailbox/mtk-cmdq-mailbox.c
+> @@ -572,10 +572,12 @@ static const struct dev_pm_ops cmdq_pm_ops = {
 >  
-> +		pwm: pwm@11006000 {
-> +			compatible = "mediatek,mt7629-pwm";
-> +			reg = <0x11006000 0x1000>;
-> +			interrupts = <GIC_SPI 77 IRQ_TYPE_LEVEL_LOW>;
-> +			clocks = <&topckgen CLK_TOP_PWM_SEL>,
-> +				 <&pericfg CLK_PERI_PWM_PD>,
-> +				 <&pericfg CLK_PERI_PWM1_PD>;
-> +			clock-names = "top", "main", "pwm1";
-> +			assigned-clocks = <&topckgen CLK_TOP_PWM_SEL>;
-> +			assigned-clock-parents =
-> +					<&topckgen CLK_TOP_UNIVPLL2_D4>;
-> +			status = "disabled";
-> +		};
-> +
->  		i2c: i2c@11007000 {
->  			compatible = "mediatek,mt7629-i2c",
->  				     "mediatek,mt2712-i2c";
+>  static const struct gce_plat gce_plat_v2 = {.thread_nr = 16};
+>  static const struct gce_plat gce_plat_v3 = {.thread_nr = 24};
+> +static const struct gce_plat gce_plat_v4 = {.thread_nr = 24, .shift = 3};
+>  
+>  static const struct of_device_id cmdq_of_ids[] = {
+>  	{.compatible = "mediatek,mt8173-gce", .data = (void *)&gce_plat_v2},
+>  	{.compatible = "mediatek,mt8183-gce", .data = (void *)&gce_plat_v3},
+> +	{.compatible = "mediatek,mt6779-gce", .data = (void *)&gce_plat_v4},
+>  	{}
+>  };
+>  
 > 
 
 _______________________________________________
