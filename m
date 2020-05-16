@@ -2,77 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FE1B1D5FE7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 11:13:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6C5C1D6036
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 12:05:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dznk3R+534oCY7/GUTDRJ6fyUOdcuRgbVCPjSVKnSkw=; b=W45lMfVF3d7zKO
-	F/Ac0oVUH93Y9sB4NlgvgSeUmDNCjWPbb+mbDvMnBZUYUaPmtawju4CmrDMYWll1/KKQ0Vb1Hz/gT
-	vVN708GDnYXjxPkJ0py0NdBaciUzzuVoSqQqV5jaLo/1ExzqelYnZb/2c2SWtUbYZNtXsm/PEmezB
-	LYj/72rntSwzUXoA5bV8H3gtAgQq/Bg+8GaFxzHUCVMstjxrLHL899iDCe8z6jVVYyGvKlVA52+fq
-	5jzgPe30UWdserWV1e4erReixeCQusecDgPiMHMcvOd3hoJOURfwJez3IQoBgJxdQ7u4jQvTda9hz
-	65YPHt6bz4CHUdoZVxsQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=uivL3WA1QKB+nYJmewYSaMKQ2TP5qafeaL3SERkrDI0=; b=lZQCKa5fZYDJx/KZ1+XEzDKMb
+	x7w6LU5Gpr1OhJb6E8DFPW4onEzy0fPJzSHAIY+pJN/JNBsAcjA2DuU+jrSdtaVepjTOonMSn69Zo
+	7EIxKh1LKhz62dSkgz8abm3FtuWchYyl+T/vSLXkOodxO3O9Ioun7Ci9nFE2QWXIDHWbuLWM7aZ44
+	5CPROWmzz/DQm5Syu6m90lgvZyM1cuOWKnnJivhaqneLSruJUI6MOWRaeekDfazndUWSiaLTuHzhw
+	nxM0CYHJ2Bx4S8d9quYi0T7xPNMPnjlLKFx8rEUgptvTdaudoT0uSjt9rwAVEd/X+hzkrvxEgumty
+	UQUkv2A8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZssV-0000Rv-G2; Sat, 16 May 2020 09:13:07 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jZth2-00079R-MA; Sat, 16 May 2020 10:05:20 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZssK-0000Qw-LX; Sat, 16 May 2020 09:12:58 +0000
-Received: from mail-ej1-f51.google.com (mail-ej1-f51.google.com
- [209.85.218.51])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jZtgr-0006ab-SM
+ for linux-arm-kernel@lists.infradead.org; Sat, 16 May 2020 10:05:13 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589623511; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=WDd/TmjSkDxWpcbv2qlPjBzNCM6Ov+9OH5uMf7CoPEk=;
+ b=P3ZvDe6eNdVkKX2JMUe9iUCeAg069rnNa36eJpJMXPicH9sI+dkeZZeTNrIGWb2CKzs6HgBU
+ NzZHPt0zxXxI+8y4HEKN55zXMrnrZ+CQtT0UhOv8DIa+N4DH5s+Illg3anQmFIzujUEwiJYl
+ ykCmBPeH9/YJ/JyeLgdyWi0oHJs=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ebfbac1.7f698f6bc2d0-smtp-out-n03;
+ Sat, 16 May 2020 10:04:49 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 28370C44788; Sat, 16 May 2020 10:04:49 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A9D822075F;
- Sat, 16 May 2020 09:12:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589620373;
- bh=nImC5Lqhf3m2EzWrtneElBAhRDJ15TlDvFtmSiX6f7A=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=RGWW1cJr2LvrfH09qMjVWsx8mNmCA5lXbW0QSHs1KdZsbmeH4TE50jQOM+gAkWV9A
- omL750r+TYwA39nB7PeG4t838ZbdCw4GuAR8wLBh7xGMDjeXgFrngjACBhvInxNe5w
- 2WduJotZ51M1UhTHYAAxHdj6qip3Ebv5VGdGgpv8=
-Received: by mail-ej1-f51.google.com with SMTP id l21so4345793eji.4;
- Sat, 16 May 2020 02:12:53 -0700 (PDT)
-X-Gm-Message-State: AOAM531NQH7cs90bKeoxHDotlv6LOn16sqYTn/bR5LsBeLqhMQDQNRSe
- PkuBknfUqP9tRY5gNqLgrXZPyt8c+aoFAlKXOw==
-X-Google-Smtp-Source: ABdhPJxqXiBmi+YOlaHROm44eIZV54f3axqEuGxo7+ttRmcSCa8fZsoluwuiSKiAlI4IsRpaXMHAB1+wPGTuO+pbJpk=
-X-Received: by 2002:a17:906:924a:: with SMTP id
- c10mr2519194ejx.360.1589620372129; 
- Sat, 16 May 2020 02:12:52 -0700 (PDT)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id A58C3C433D2;
+ Sat, 16 May 2020 10:04:48 +0000 (UTC)
 MIME-Version: 1.0
-References: <20200504141408.60877-1-enric.balletbo@collabora.com>
- <CAAOTY_8vMG1k86V+qBhs0YH5QHELmgtJ0PNOAzWTHoTy2j=R2Q@mail.gmail.com>
-In-Reply-To: <CAAOTY_8vMG1k86V+qBhs0YH5QHELmgtJ0PNOAzWTHoTy2j=R2Q@mail.gmail.com>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Sat, 16 May 2020 17:12:40 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_9PdpKTwN46ZwpnRyOw-Ky758oxX11mLer6EksZgfsXSw@mail.gmail.com>
-Message-ID: <CAAOTY_9PdpKTwN46ZwpnRyOw-Ky758oxX11mLer6EksZgfsXSw@mail.gmail.com>
-Subject: Re: [PATCH 0/3] Convert mtk-dpi to drm_bridge API
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Date: Sat, 16 May 2020 15:34:48 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mike Leach <mike.leach@linaro.org>, Suzuki K Poulose
+ <suzuki.poulose@arm.com>, Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
+ connections
+In-Reply-To: <5a76926a6532d3f91cca169d474ba98e@codeaurora.org>
+References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
+ <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
+ <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
+ <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
+ <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
+ <5b0f5d77c4eec22d8048bb0ffa078345@codeaurora.org>
+ <759d47de-2101-39cf-2f1c-cfefebebd548@arm.com>
+ <7d343e96cf0701d91152fd14c2fdec42@codeaurora.org>
+ <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
+ <a4bba03d41a2b0145b3c6c19d48698eb@codeaurora.org>
+ <CAJ9a7Vj4eyv1n=RxuqfV=pdBN3SDG+ShYS5J4s40KJtqOnR7vw@mail.gmail.com>
+ <ae0fe2050be01cc1403c7d53a0da8cb8@codeaurora.org>
+ <b8c1cc35846d425a1677c73fddf5874d@codeaurora.org>
+ <eee1b9a90266eed9a9c75401f0679777@codeaurora.org>
+ <CAJ9a7Vjd0XG+rAvHptAAjGtE6xRhYsPaOSC_Bf9B-w-FZFu_Qw@mail.gmail.com>
+ <47f6d51bfad0a0bf1553e101e6a2c8c9@codeaurora.org>
+ <37b3749e-2363-0877-c318-9c334a5d1881@arm.com>
+ <d47271ee6a2a6f0f30da7e140b6f196c@codeaurora.org>
+ <CAJ9a7Vg95tcgMXgQKLAZc=TpV6FnPZ7wdF=Kwbuy7d2kRCjYQw@mail.gmail.com>
+ <364049a30dc9d242ec611bf27a16a6c9@codeaurora.org>
+ <CAJ9a7VjAoUmMG9pLEzE_rMSpOjwVOi-ZCinF87n9H0JgfMDsiQ@mail.gmail.com>
+ <5a76926a6532d3f91cca169d474ba98e@codeaurora.org>
+Message-ID: <4bd741e342f8e2743197ed6105dacffa@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200516_021256_747840_B3961D68 
-X-CRM114-Status: GOOD (  13.63  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200516_030511_856540_EA30D503 
+X-CRM114-Status: GOOD (  10.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.27 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,49 +112,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nicolas Boichat <drinkcat@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Russell King <linux@armlinux.org.uk>, linux-arm-msm@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Stephen Boyd <swboyd@chromium.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIEVucmljOgoKQ2h1bi1LdWFuZyBIdSA8Y2h1bmt1YW5nLmh1QGtlcm5lbC5vcmc+IOaWvCAy
-MDIw5bm0NeaciDEw5pelIOmAseaXpSDkuIrljYg5OjI05a+r6YGT77yaCj4KPiBIaSwgRW5yaWM6
-Cj4KPiBFbnJpYyBCYWxsZXRibyBpIFNlcnJhIDxlbnJpYy5iYWxsZXRib0Bjb2xsYWJvcmEuY29t
-PiDmlrwgMjAyMOW5tDXmnIg05pelIOmAseS4gCDkuIvljYgxMDoxNOWvq+mBk++8mgo+ID4KPiA+
-IFRoZSBtdGstZHBpIGRyaXZlciBzdGlsbCB1c2VzIHRoZSBkcm1fZW5jb2RlciBBUEkgd2hpY2gg
-aXMgbm93IHNvbWVob3cKPiA+IGRlcHJlY2F0ZWQuIFdlIHN0YXJ0ZWQgdG8gbW92ZSBhbGwgdGhl
-IE1lZGlhdGVrIGRyaXZlcnMgdG8gdGhlIGRybV9icmlkZ2UgQVBJLAo+ID4gbGlrZSB3ZSBkaWQg
-Zm9yIHRoZSBtdGstZHNpIGRyaXZlciBbMV0sIHRoaXMgaXMgYW5vdGhlciBzbWFsbCBzdGVwIHRv
-IGJlIGFibGUgdG8KPiA+IGZ1bGx5IGNvbnZlcnQgdGhlIERSTSBNZWRpYXRlayBkcml2ZXJzIHRv
-IHRoZSBkcm1fYnJpZGdlIEFQSS4gQSBkdW1teQo+ID4gZHJtX2VuY29kZXIgaXMgbWFpbnRhaW5l
-ZCBpbiB0aGUgbXRrLWRwaSBkcml2ZXIgYnV0IHRoZSBlbmQgZ29hbCBpcyBtb3ZlIGFsbCB0aGUK
-PiA+IGR1bW15IGRybV9lbmNvZGVyIChtdGstZHNpLCBtdGstZHBpLCBldGMpIHRvIHRoZSBtYWlu
-IG10a19kcm1fZHJ2IGRyaXZlci4KPgo+IEZvciB0aGlzIHNlcmllcywgYXBwbGllZCB0byBtZWRp
-YXRlay1kcm0tbmV4dCBbMV0sIHRoYW5rcy4KPgo+IFsxXSBodHRwczovL2dpdC5rZXJuZWwub3Jn
-L3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9jaHVua3VhbmcuaHUvbGludXguZ2l0L2xvZy8/aD1t
-ZWRpYXRlay1kcm0tbmV4dAo+CgpJIHJlbW92ZSB0aGlzIHNlcmllcyBmcm9tIG1lZGlhdGVrLWRy
-bS1uZXh0IGJlY2F1c2UgZHJtIGJyaWRnZSBkcml2ZXIKbmVlZCBhY2sgb2YgZHJtIGJyaWRnZSBt
-YWludGFpbmVyLgoKUmVnYXJkcywKQ2h1bi1LdWFuZy4KCj4gUmVnYXJkcywKPiBDaHVuLUt1YW5n
-Lgo+Cj4gPgo+ID4gQmVzdCByZWdhcmRzLAo+ID4gIEVucmljCj4gPgo+ID4gWzFdIGh0dHBzOi8v
-bG9yZS5rZXJuZWwub3JnL3BhdGNod29yay9wcm9qZWN0L2xrbWwvbGlzdC8/c2VyaWVzPTQ0MTU1
-OQo+ID4KPiA+IEVucmljIEJhbGxldGJvIGkgU2VycmEgKDMpOgo+ID4gICBkcm0vbWVkaWF0ZWs6
-IG10a19kcGk6IFJlbmFtZSBicmlkZ2UgdG8gbmV4dF9icmlkZ2UKPiA+ICAgZHJtL21lZGlhdGVr
-OiBtdGtfZHBpOiBDb252ZXJ0IHRvIGJyaWRnZSBkcml2ZXIKPiA+ICAgZHJtL21lZGlhdGVrOiBt
-dGtfZHBpOiBVc2Ugc2ltcGxlIGVuY29kZXIKPiA+Cj4gPiAgZHJpdmVycy9ncHUvZHJtL21lZGlh
-dGVrL210a19kcGkuYyB8IDg0ICsrKysrKysrKysrKysrLS0tLS0tLS0tLS0tLS0tLQo+ID4gIDEg
-ZmlsZSBjaGFuZ2VkLCAzOSBpbnNlcnRpb25zKCspLCA0NSBkZWxldGlvbnMoLSkKPiA+Cj4gPiAt
-LQo+ID4gMi4yNi4yCj4gPgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Mike, Suzuki
+
+[...]
+
+>> 
+>> Please look at the CoreSight components specification 3.0 (ARM IHI
+>> 0029E) Section B2.1.2 which describes the Unique Component Identifier
+>> (UCI).
+>> As mentioned above this consists of a combination of bits from
+>> multiple registers, including PIDR4.
+>> 
+> 
+> Ok got it now, thanks for clearing the doubt. I will go ahead with
+> this method to identify QCOM impl and post a patch.
+> 
+
+Looking some more into this, since we have this limitation only on
+specific replicator on very few QCOM SoCs, rather than having a blanket
+workaround for all QCOM, we were thinking it would be better to have
+this workaround based on a firmware property something like
+"qcom,replicator-loses-context" for those replicators with this
+limitation and then set the drvdata->check_idfilter_val based on
+this property.
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
