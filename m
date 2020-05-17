@@ -2,82 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 497271D6782
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 May 2020 12:47:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E37481D67D9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 May 2020 13:57:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RxL+s7snxrBmSzO30qIWrntKEU4MgrhPFWwPro6HT4I=; b=n0l
-	+JitV4uiRjBmtJKfddKgI00CW6zj9YAOqLfIyAzyHfZRH0PEv3Tat213QTlnN+HaoHgcaXXOYZe9N
-	OcXmwMGRpuK1Zjre4IZTHFHTQyxn7l1A79byF4zVYE+ehQydZULDCQsENGP5drPX60WkTQc+Pqszv
-	nIUFUn6ujOETcO9iSmPQUJfGdBW9Afr5mRbA3GM62e5Y8GULhkOyfCKyWsVNId3CRda0N+t9AS6N5
-	t6IOFBPjapxWbyHoScXMLtSYJxK9lazWDVwPw8MKHzcON3vxKh9iv6U41h6eUCa/YWZzc+MicxHJv
-	N+cjROvAI+z8/0C7+IQEkKa5mAZ1ebw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U66mLfDBtbaDTvszwDhcQYOM5dhgh1TcIREGsoUj6sA=; b=TVdo4Ny/wXrTy0
+	NdBhIlrXm0q6bpP/dnHw5v8lxoC51ykXc/W9bE+TtytxHreaJ/O0tlfNb63JrLTnw4r3j/iCeIaw6
+	SVpcWN+C2y3yGt0LCqoibX5BpkJdecz/ZRY+Unk+bBjaxpD2SSYdcJ5ZAOelrJifc+63nKT5RNqh0
+	rtltEjCvF/IAaFYDH1JDYBnw4dKIa64sBLfg0vOT2AZ8ELNAYFVkeb9E7G9mvYzhpMpr+BhO3pBmq
+	CJjZrVCH42deBmdxqhAG/NHsZ/sAbZ0CEwk3zngJkcGWB9qrmMvfjXrppjjvrdbixojzya3khgxsC
+	SL84/mR1NpqmTpAqNr2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaGp7-00023f-Qb; Sun, 17 May 2020 10:47:13 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jaHul-0001Il-9m; Sun, 17 May 2020 11:57:07 +0000
+Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaGp0-00022k-0G
- for linux-arm-kernel@lists.infradead.org; Sun, 17 May 2020 10:47:07 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1589712424; h=Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=bpYRKGxi7S4lmPb9T2zE3w/nH3uH2ZxR+FnFM4pHa+Y=;
- b=faHOgwC+OvC4aUWNOA1hun1BEIOoznAP7BF73xYlma4AcPddthcDokT6zDCRlYoSsJr8G0HJ
- LbLrYvWA/A+YX3eR0ECFA6x8hnRVDw+JosRBRzkSOTWjzdOt9cO1TJqREjnczfjTKmoiNybe
- dKMUtnYHmYoTgMDxWZOKUCKSJ90=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5ec11627.7f026d5e7228-smtp-out-n04;
- Sun, 17 May 2020 10:47:03 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 422BBC432C2; Sun, 17 May 2020 10:47:02 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from pillair-linux.qualcomm.com
- (blr-c-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.19.19])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: pillair)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id B753DC433F2;
- Sun, 17 May 2020 10:46:58 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org B753DC433F2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=pillair@codeaurora.org
-From: Rakesh Pillai <pillair@codeaurora.org>
-To: devicetree@vger.kernel.org
-Subject: [PATCH v9] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module device
- node
-Date: Sun, 17 May 2020 16:16:51 +0530
-Message-Id: <1589712411-26718-1-git-send-email-pillair@codeaurora.org>
-X-Mailer: git-send-email 2.7.4
+ id 1jaHub-0001IB-V0; Sun, 17 May 2020 11:56:59 +0000
+Received: by mail-ej1-x641.google.com with SMTP id j21so1725288ejy.1;
+ Sun, 17 May 2020 04:56:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=n2zu9JqKU5bD9sWT2p4LZR3ZmrdpAMY3DJ+tw0eadKI=;
+ b=QfoWxHBpfNJW5n5jO+SfP+ueYUTnzn93yioe/AsSefpOShVmtxDv3cL/k+BYJzZjj4
+ loieYc/Q/FcRVoUHHeotMND7sImOYHIoviE3FL8yIzu4US/1bHhoOcZP+2pgzt5J4EsO
+ Rqc9UsDZ74x5UX8eXAVrtFiiXy35g0V6+tD7S4CyXim+O5+la6H+e6hTeyZeThhIu/Ft
+ V+D/hkxsUR/Pt79mjclETYLMGe9a4fUWw+uuQyHCclwnP6/+mtDinfpBpAXtab5pJ/vc
+ mYyaZxirHk5YTr8deDgu2Rge972T3kys/KPxmQLvoBKAKDwPtJPI6EhkgabNln8mEx+1
+ lEFA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=n2zu9JqKU5bD9sWT2p4LZR3ZmrdpAMY3DJ+tw0eadKI=;
+ b=UVamX1kLJgmhJnO/UGRCm03sU6t8CZbiIDLKYyCr0Pk73WSwaAqICPUTUSYwKysRst
+ wjulC/WB8OQahK5x3fbK94TSBLA0ZpDZgyIZAetFcnAN0zMF8NGRBeEEDp/0v5v+f3z6
+ bJSKRI2Zx4rMfzEtxHBdU3HH5ZCIVAo/6RdhADA8wAwmQvcZOXJLBHQHfc1oz20CYQkl
+ iTJ5dGiniyUQH3u5A7Jk+yze5xMJyqCwOQCRwj6ZtBrOeE+kQEnBKsbZcJ3uBSlz/ZV2
+ cZCAvONcup7OqqnwtCdpZph8Z+qQKY0InD3k2y1jlxb7984VtlWVul7RWq+VStFcKDHs
+ 8MLw==
+X-Gm-Message-State: AOAM532Mw1hUiQEdNexAJitEEtK/3TlahTuqvZz78Ay92PnbwoUTVJOi
+ wO95reJ5AX4mldQ/e/8Jb8/csTUrNIxTueITgXs=
+X-Google-Smtp-Source: ABdhPJzZ/QScx0gQ2p297ajwfhl1LwTq7Gispx4C00yR1Em6K9vahsl5Aaq2FRtkVMhA4PtTiZTacouGjS+1fUspoqA=
+X-Received: by 2002:a17:906:d8c1:: with SMTP id
+ re1mr11417735ejb.184.1589716614442; 
+ Sun, 17 May 2020 04:56:54 -0700 (PDT)
+MIME-Version: 1.0
+References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
+ <1589472657-3930-9-git-send-email-amittomer25@gmail.com>
+ <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
+In-Reply-To: <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
+From: Amit Tomer <amittomer25@gmail.com>
+Date: Sun, 17 May 2020 17:26:17 +0530
+Message-ID: <CABHD4K9yjUGuo0w-RfhdZQJm3Wtj6bU2H4DXcp4Jjp=e0fFeyA@mail.gmail.com>
+Subject: Re: [PATCH v1 8/9] arm64: dts: actions: Add MMC controller support
+ for S700
+To: =?UTF-8?Q?Andr=C3=A9_Przywara?= <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_034706_109954_E9EB4DE7 
-X-CRM114-Status: GOOD (  10.83  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200517_045658_016805_F0358823 
+X-CRM114-Status: UNSURE (   6.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [amittomer25[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [amittomer25[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,91 +97,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Rakesh Pillai <pillair@codeaurora.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, linux-actions@lists.infradead.org,
+ cristian.ciocaltea@gmail.com, Rob Herring <robh+dt@kernel.org>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add device node for the ath10k SNOC platform driver probe
-and add resources required for WCN3990 on sc7180 soc.
+Hi,
 
-Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
----
-Changes from v8:
-- Removed the qcom,msa-fixed-perm
----
- arch/arm64/boot/dts/qcom/sc7180-idp.dts |  7 +++++++
- arch/arm64/boot/dts/qcom/sc7180.dtsi    | 27 +++++++++++++++++++++++++++
- 2 files changed, 34 insertions(+)
+> So, using "actions,s700-mmc", "actions,owl-mmc" here, adding this combo
+> to the binding, but leaving the driver alone for now.
 
-diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-index 4e9149d..38b102e 100644
---- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-+++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
-@@ -389,6 +389,13 @@
- 	};
- };
- 
-+&wifi {
-+	status = "okay";
-+	wifi-firmware {
-+		iommus = <&apps_smmu 0xc2 0x1>;
-+	};
-+};
-+
- /* PINCTRL - additions to nodes defined in sc7180.dtsi */
- 
- &qspi_clk {
-diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-index f1280e0..dd4e095 100644
---- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
-+++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
-@@ -63,6 +63,11 @@
- 			clock-frequency = <32764>;
- 			#clock-cells = <0>;
- 		};
-+
-+		wlan_fw_mem: memory@94100000 {
-+			reg = <0 0x94100000 0 0x200000>;
-+			no-map;
-+		};
- 	};
- 
- 	reserved_memory: reserved-memory {
-@@ -944,6 +949,28 @@
- 			};
- 		};
- 
-+		wifi: wifi@18800000 {
-+			compatible = "qcom,wcn3990-wifi";
-+			reg = <0 0x18800000 0 0x800000>;
-+			reg-names = "membase";
-+			iommus = <&apps_smmu 0xc0 0x1>;
-+			interrupts =
-+				<GIC_SPI 414 IRQ_TYPE_LEVEL_HIGH /* CE0 */ >,
-+				<GIC_SPI 415 IRQ_TYPE_LEVEL_HIGH /* CE1 */ >,
-+				<GIC_SPI 416 IRQ_TYPE_LEVEL_HIGH /* CE2 */ >,
-+				<GIC_SPI 417 IRQ_TYPE_LEVEL_HIGH /* CE3 */ >,
-+				<GIC_SPI 418 IRQ_TYPE_LEVEL_HIGH /* CE4 */ >,
-+				<GIC_SPI 419 IRQ_TYPE_LEVEL_HIGH /* CE5 */ >,
-+				<GIC_SPI 420 IRQ_TYPE_LEVEL_HIGH /* CE6 */ >,
-+				<GIC_SPI 421 IRQ_TYPE_LEVEL_HIGH /* CE7 */ >,
-+				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH /* CE8 */ >,
-+				<GIC_SPI 423 IRQ_TYPE_LEVEL_HIGH /* CE9 */ >,
-+				<GIC_SPI 424 IRQ_TYPE_LEVEL_HIGH /* CE10 */>,
-+				<GIC_SPI 425 IRQ_TYPE_LEVEL_HIGH /* CE11 */>;
-+			memory-region = <&wlan_fw_mem>;
-+			status = "disabled";
-+		};
-+
- 		config_noc: interconnect@1500000 {
- 			compatible = "qcom,sc7180-config-noc";
- 			reg = <0 0x01500000 0 0x28000>;
--- 
-2.7.4
+But if we leave this new string from driver , there would be DT
+validation issue.
+Are we okay with it ?
+
+Thanks
+-Amit
 
 _______________________________________________
 linux-arm-kernel mailing list
