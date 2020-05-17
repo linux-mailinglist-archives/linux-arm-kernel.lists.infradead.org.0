@@ -2,86 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBEC21D68B3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 May 2020 17:51:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6A8A1D68BA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 May 2020 18:02:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e8ORyCt6QG+9AgE4ZEkRfARiF2RarAUTdr76tvEp2Vc=; b=O20CKGuVbPn4t4
-	B5qUQX8e1aSn8jMpSQGNL4g63a0VhDSHhDFfgeLTLGPT+msBngI47JYvkCAOIMrjuHgCAvKqgUwdF
-	Gx9TnB3TBiPg/4t4XRCRyZ0moRCE7O3uTZiUN/yVTyKHoZilOmyBU5AMKJsI6Dnx0FvnEb8rRd9A5
-	yvt5QTg7ov4H5AcqX/FG/46B77UWJL/KQqkRRNI0IJ35n1z0Lo+LKFxFWVS6/lDCGVZk9Pfugq2oo
-	2kpjxZUgL5dYRZuCAMtB4/ocRTcvukgm/A7aFO5ESNQJUmcnboOiFyKDf5gqskJ0K7NRMdKZfpqUF
-	uLZZOMDIXuHxlsytWQHQ==;
+	List-Owner; bh=4Q7EMeKmr8OiyMxkpe1rFHFLusWYlCnVpbnOqHFPsQ4=; b=iBvW2F8tdlzOuO
+	Cxp6IQYuyby31Imxro4PdYBtHBLdK2aV0nz+d5BKiq2Rf6bVTdOdM378ajPKc7Gid+t+zZNaZmag7
+	p3nWzN7/0GqgenmWVRCBfIijsgV1tFWgnE0jEGmrk/ERL1ArOjQJpz5EWRyh7eKUw+vOmEkCwvnLe
+	hPruyueRn1OYwLBoQrNxFahE+GK9UAHj3Pq7eqnDsG68DHo741gmTcHBBkRbpP5XZPQLBa2MWNgVm
+	IuDMOgJxyahKuAXuf/5j1yudqAPZF8vno9hQe5h0Auu2uxXvS/EHd+Eq5Bq52JWPvJhcMBqz3XKya
+	1C8Lj+ZkVY7Qqv/zqXaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaLZX-0007gn-39; Sun, 17 May 2020 15:51:27 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jaLjg-0005cM-Du; Sun, 17 May 2020 16:01:56 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaLZP-0007gI-6C
- for linux-arm-kernel@lists.infradead.org; Sun, 17 May 2020 15:51:20 +0000
-Received: by mail-wm1-x341.google.com with SMTP id g14so20542828wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 17 May 2020 08:51:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4Y2aFJKNUiFBLQvn2vvnEK/Ead8cU3LUw4bCLelXdS0=;
- b=UGGCy6TvvsLP2q0CxhmrvQHdIFIIbEfPAtgdI3IOIOuKhkTMRC/BC4WwPaymCW0tny
- iuA1xi7IXR+ab/Gx0dG3BMqyVmQg3Fi9qXVgYFFiVuTIAyRHolD+PSSvfjAT7fMiHAZj
- 6nVTrrB4wq/zGBWaBB2eigVDmgqT/jlUuS3Q4d4L3pCviJGQ7AmJji+r28/hQCT+Qpzb
- LyygNaW6zHilFl/dki//YzSLiEU13nnIKpfjyb07vIDh9jBNsMzNlb2KHuPmWmoqqHPt
- +cHDt4W+xnFcnAzw5kDJxl5hjRkNZVI8s2trrxDWcCjhAXpW5WPXN/FXgCPGFfEx1bP4
- JirQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4Y2aFJKNUiFBLQvn2vvnEK/Ead8cU3LUw4bCLelXdS0=;
- b=R8oNbDGnns+PSlK11SCJQEj//OT+9Vu6uxPtPwlLNwnlemEQcZY/flbQlCtSqidvHO
- 008DztSFfJbj5mwV2dNaFAUqhTF4+tiscGk06Vy8W0reem2t/IENA6UVLLPhY4Y2C45m
- Vk9YZ9608iXiB6+LGlbXR6A+XHxxpNFJYSqnjpCuVs22RK387dyqaxOxElmiHxtMuXj7
- l3HWOqt9wdib5QAKbPKmd4CUzV4PUyju8ikKZI0/Uoa5Do5uGhXE/y+0djEz+KdDmH//
- LRIYZgUw8X76n7YO6oZF8iCRuEfhJ0NCQ7cV/SeUiOZJ3DaPpGbYw79/Rl9HJVkt/B3N
- d0SA==
-X-Gm-Message-State: AOAM532s6tAAl4BGdBrDVP5udH59++acHgLAgmr2dEtA29PmuPxmV/6H
- bslFREasv3J5+ChNny5sZlBj7+Dk1mjNcqrKm4c=
-X-Google-Smtp-Source: ABdhPJw8gi9ZQ9b7ziDhHvd7AdBz6Ju+aZl0wFkN7BHXZ/1UxBruJsqKUGVLfoAJ0nQTpVk7cv98fXWPYNpz5Op4udc=
-X-Received: by 2002:a1c:de05:: with SMTP id v5mr14097715wmg.1.1589730675709;
- Sun, 17 May 2020 08:51:15 -0700 (PDT)
+ id 1jaLjY-0005bK-KB
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 May 2020 16:01:50 +0000
+X-Originating-IP: 91.175.115.186
+Received: from localhost (91-175-115-186.subs.proxad.net [91.175.115.186])
+ (Authenticated sender: gregory.clement@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 54695FF804;
+ Sun, 17 May 2020 16:01:32 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Baruch Siach <baruch@tkos.co.il>, Jason Cooper <jason@lakedaemon.net>,
+ Andrew Lunn <andrew@lunn.ch>,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Subject: Re: [PATCH 2/2] arm64: dts: marvell: drop i2c timeout-ms property
+In-Reply-To: <26aad6ac18993b78496ea224337d9944878fcc81.1588134636.git.baruch@tkos.co.il>
+References: <21ba4c9abd5e411ba936ead8f043c5a7e490d530.1588134636.git.baruch@tkos.co.il>
+ <26aad6ac18993b78496ea224337d9944878fcc81.1588134636.git.baruch@tkos.co.il>
+Date: Sun, 17 May 2020 18:01:32 +0200
+Message-ID: <87mu66h7oj.fsf@FE-laptop>
 MIME-Version: 1.0
-References: <20200409070448.3209-1-paweldembicki@gmail.com>
- <20200409070448.3209-2-paweldembicki@gmail.com> <87sgfyh9au.fsf@FE-laptop>
-In-Reply-To: <87sgfyh9au.fsf@FE-laptop>
-From: =?UTF-8?Q?Pawe=C5=82_Dembicki?= <paweldembicki@gmail.com>
-Date: Sun, 17 May 2020 17:51:04 +0200
-Message-ID: <CAJN1KkyhnG7qByXYP14ULTrUhYNbDt0AQ_Er=bnM-KymLz8bPQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] ARM: dts: kirkwood: Add Check Point L-50 board
-To: Gregory CLEMENT <gregory.clement@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_085119_230652_BC05E078 
-X-CRM114-Status: GOOD (  10.37  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200517_090148_804287_3C8C3C2A 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [paweldembicki[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,44 +63,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- Stephan Gerhold <stephan@gerhold.net>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
- Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Mark Brown <broonie@kernel.org>, Sam Ravnborg <sam@ravnborg.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Baruch Siach <baruch@tkos.co.il>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17.05.2020 at 17:26 Gregory CLEMENT <gregory.clement@bootlin.com> wrote:
+Hello Baruch,
+
+> The timeout-ms property for i2c master nodes is undocumented, and as
+> never been supported. Drop it.
 >
-> Hi Pawel Dembicki,
+> Signed-off-by: Baruch Siach <baruch@tkos.co.il>
+
+Applied on mvebu/dt64
+
+Thanks,
+
+Gregory
+
+> ---
+>  arch/arm64/boot/dts/marvell/armada-ap80x.dtsi | 1 -
+>  1 file changed, 1 deletion(-)
+>
+> diff --git a/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+> index e7438c21ccee..7f9b9a647717 100644
+> --- a/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+> +++ b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+> @@ -201,7 +201,6 @@ i2c0: i2c@511000 {
+>  				#address-cells = <1>;
+>  				#size-cells = <0>;
+>  				interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
+> -				timeout-ms = <1000>;
+>  				clocks = <&ap_clk 3>;
+>  				status = "disabled";
+>  			};
+> -- 
+> 2.26.2
 >
 
-Hi Gregory,
-
->
-> Applied on mvebu/dt. I think the first patch should be applied by the
-> device tree maintainers.
->
-> Thanks,
->
-> Gregory
->
-
-I sent v3 of this patch some time ago:
-https://lkml.org/lkml/2020/4/22/1353
-
-Is possible to use it instead v2?
-
-Best Regards,
-Pawel Dembicki
+-- 
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
