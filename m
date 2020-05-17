@@ -2,82 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E37481D67D9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 May 2020 13:57:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C14E41D67ED
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 May 2020 14:10:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U66mLfDBtbaDTvszwDhcQYOM5dhgh1TcIREGsoUj6sA=; b=TVdo4Ny/wXrTy0
-	NdBhIlrXm0q6bpP/dnHw5v8lxoC51ykXc/W9bE+TtytxHreaJ/O0tlfNb63JrLTnw4r3j/iCeIaw6
-	SVpcWN+C2y3yGt0LCqoibX5BpkJdecz/ZRY+Unk+bBjaxpD2SSYdcJ5ZAOelrJifc+63nKT5RNqh0
-	rtltEjCvF/IAaFYDH1JDYBnw4dKIa64sBLfg0vOT2AZ8ELNAYFVkeb9E7G9mvYzhpMpr+BhO3pBmq
-	CJjZrVCH42deBmdxqhAG/NHsZ/sAbZ0CEwk3zngJkcGWB9qrmMvfjXrppjjvrdbixojzya3khgxsC
-	SL84/mR1NpqmTpAqNr2Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=LXGabnICo424V8cWVlt41Zes/AmNCPmbCrFbnSvKWhU=; b=h//
+	BLfjGYu8MxQjPJPEIqXTJVvNDxxd1gE9z9vJ5idWEVVfjaUyeAqZB1sOJlGSBAfGcfERMysB5G9PQ
+	pZ1YaiZyMEIBviups1+BAPOqf5Bifbd/RbIsWYyVkBhzIBebaSxi6hALeNJNZnWf61RtgzUUcMFAR
+	8FRF4mhnCvZ0DRdxctWvdb50itM5tN/zU8Vcq612I7wk1uSiBRm3xbUV8esbndDliTwDMfL62qkJ1
+	szmuAekEFhJF/G2KplKklYwxYM+5lq22LbHHxihBWNN+WEAuK5uWsnRj+3PbhKDEhB/+CNzezWnYd
+	5Wu5/fdwZzPN6IEeURw4qhqDxtoAHrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaHul-0001Il-9m; Sun, 17 May 2020 11:57:07 +0000
-Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
+	id 1jaI7X-0000Ec-AK; Sun, 17 May 2020 12:10:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaHub-0001IB-V0; Sun, 17 May 2020 11:56:59 +0000
-Received: by mail-ej1-x641.google.com with SMTP id j21so1725288ejy.1;
- Sun, 17 May 2020 04:56:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=n2zu9JqKU5bD9sWT2p4LZR3ZmrdpAMY3DJ+tw0eadKI=;
- b=QfoWxHBpfNJW5n5jO+SfP+ueYUTnzn93yioe/AsSefpOShVmtxDv3cL/k+BYJzZjj4
- loieYc/Q/FcRVoUHHeotMND7sImOYHIoviE3FL8yIzu4US/1bHhoOcZP+2pgzt5J4EsO
- Rqc9UsDZ74x5UX8eXAVrtFiiXy35g0V6+tD7S4CyXim+O5+la6H+e6hTeyZeThhIu/Ft
- V+D/hkxsUR/Pt79mjclETYLMGe9a4fUWw+uuQyHCclwnP6/+mtDinfpBpAXtab5pJ/vc
- mYyaZxirHk5YTr8deDgu2Rge972T3kys/KPxmQLvoBKAKDwPtJPI6EhkgabNln8mEx+1
- lEFA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=n2zu9JqKU5bD9sWT2p4LZR3ZmrdpAMY3DJ+tw0eadKI=;
- b=UVamX1kLJgmhJnO/UGRCm03sU6t8CZbiIDLKYyCr0Pk73WSwaAqICPUTUSYwKysRst
- wjulC/WB8OQahK5x3fbK94TSBLA0ZpDZgyIZAetFcnAN0zMF8NGRBeEEDp/0v5v+f3z6
- bJSKRI2Zx4rMfzEtxHBdU3HH5ZCIVAo/6RdhADA8wAwmQvcZOXJLBHQHfc1oz20CYQkl
- iTJ5dGiniyUQH3u5A7Jk+yze5xMJyqCwOQCRwj6ZtBrOeE+kQEnBKsbZcJ3uBSlz/ZV2
- cZCAvONcup7OqqnwtCdpZph8Z+qQKY0InD3k2y1jlxb7984VtlWVul7RWq+VStFcKDHs
- 8MLw==
-X-Gm-Message-State: AOAM532Mw1hUiQEdNexAJitEEtK/3TlahTuqvZz78Ay92PnbwoUTVJOi
- wO95reJ5AX4mldQ/e/8Jb8/csTUrNIxTueITgXs=
-X-Google-Smtp-Source: ABdhPJzZ/QScx0gQ2p297ajwfhl1LwTq7Gispx4C00yR1Em6K9vahsl5Aaq2FRtkVMhA4PtTiZTacouGjS+1fUspoqA=
-X-Received: by 2002:a17:906:d8c1:: with SMTP id
- re1mr11417735ejb.184.1589716614442; 
- Sun, 17 May 2020 04:56:54 -0700 (PDT)
-MIME-Version: 1.0
-References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
- <1589472657-3930-9-git-send-email-amittomer25@gmail.com>
- <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
-In-Reply-To: <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
-From: Amit Tomer <amittomer25@gmail.com>
-Date: Sun, 17 May 2020 17:26:17 +0530
-Message-ID: <CABHD4K9yjUGuo0w-RfhdZQJm3Wtj6bU2H4DXcp4Jjp=e0fFeyA@mail.gmail.com>
-Subject: Re: [PATCH v1 8/9] arm64: dts: actions: Add MMC controller support
- for S700
-To: =?UTF-8?Q?Andr=C3=A9_Przywara?= <andre.przywara@arm.com>
+ id 1jaI7L-000799-9C
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 May 2020 12:10:08 +0000
+Received: from e123331-lin.nice.arm.com
+ (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0FCC7204EC;
+ Sun, 17 May 2020 12:10:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589717402;
+ bh=auZDmc8uW6OcQB29fEJ/RnVaomBCvmNLzYuYDuMv4n8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=OhDp4xjxAPH8UmXGt0bUrepFuOBr9FJ4zkNK/zQqlf6R0qvFgOcwan2lzTUyaxtcL
+ yf5Cb5Joq00APMtzgpMh6B2WU4RNjzPKIBzyEKVhod/dQRw060KiAyDSJzQYht9vP4
+ X+KAUOuXUhCGAMjJh1Jqc8w8KHVnoSTRJD1s3hoI=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-efi@vger.kernel.org
+Subject: [GIT PULL] ARM: simplify handover from UEFI to decompressor
+Date: Sun, 17 May 2020 14:09:59 +0200
+Message-Id: <20200517120959.7191-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_045658_016805_F0358823 
-X-CRM114-Status: UNSURE (   6.53  )
+X-CRM114-CacheID: sfid-20200517_051007_361366_DBBF0F2C 
+X-CRM114-Status: UNSURE (   9.92  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [amittomer25[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [amittomer25[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,27 +74,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-actions@lists.infradead.org,
- cristian.ciocaltea@gmail.com, Rob Herring <robh+dt@kernel.org>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux+pull@armlinux.org.uk, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The following changes since commit 91e4f3d37e1a932396801fc2831286353821ff23:
 
-> So, using "actions,s700-mmc", "actions,owl-mmc" here, adding this combo
-> to the binding, but leaving the driver alone for now.
+  ARM: 8972/1: boot: Obtain start of physical memory from DTB (2020-04-29 13:30:29 +0100)
 
-But if we leave this new string from driver , there would be DT
-validation issue.
-Are we okay with it ?
+are available in the Git repository at:
 
-Thanks
--Amit
+  git://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git tags/pr-efi-arm-no-relocate
+
+for you to fetch changes up to ea98a6da3baf477541f8cbb036d1827e6b84ac91:
+
+  ARM: decompressor: run decompressor in place if loaded via UEFI (2020-05-06 09:58:24 +0200)
+
+----------------------------------------------------------------
+Simply EFI handover to decompressor
+
+The EFI stub in the ARM kernel runs in the context of the firmware, which
+means it usually runs with the caches and MMU on. Currently, we relocate
+the zImage so it appears in the first 128 MiB, disable the MMU and caches
+and invoke the decompressor via its ordinary entry point. However, since we
+can pass the base of DRAM directly, there is no need to relocate the zImage,
+which also means there is no need to disable and re-enable the caches and
+create new page tables etc.
+
+----------------------------------------------------------------
+Ard Biesheuvel (5):
+      ARM: decompressor: move headroom variable out of LC0
+      ARM: decompressor: split off _edata and stack base into separate object
+      ARM: decompressor: defer loading of the contents of the LC0 structure
+      ARM: decompressor: move GOT into .data for EFI enabled builds
+      ARM: decompressor: run decompressor in place if loaded via UEFI
+
+ arch/arm/boot/compressed/head.S           | 91 +++++++++++++------------------
+ arch/arm/boot/compressed/vmlinux.lds.S    |  5 ++
+ drivers/firmware/efi/libstub/arm32-stub.c | 45 ++-------------
+ 3 files changed, 48 insertions(+), 93 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
