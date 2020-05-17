@@ -2,62 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 549551D6D79
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 May 2020 23:31:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5F1C1D6DA7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 17 May 2020 23:49:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MHO1eU2CsxcRJLPp7bPF8/cWXRUuM3/MnDFZtlR5XBQ=; b=Y9HbX4nnlUBYRy
-	08pBi/xAMSTHlN/TMyrdzPvxvIZ3JJssq+Ntgi5I+DZ+vY2JhiiKxiryrwwPLO0N5oS+sqhf1T8bH
-	q9okOtnpb9VpllhdtM4RfzM00PpQ52ZnXaOTzwxCbtyQjv1m7dHMFOwFeEk0/ja1JOWZCTQqCiz2V
-	xQFIz1RQc74Cj3+p8p/hM3E42JYt+9MGPPuGQvbcGqujl/nzuzr+7sAaGjMC5VYEeSoPEWZy0jBhs
-	RJhj8UkcfIjjEStmDhseBGFId1EqaA1AqsOqFWcDH1+p+G9XPNq+lPsKC71195lUa0LWm/sVDIMiv
-	4tf56ZQXokvsVAa3JqHA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OHALPvT/Ul9WfaRGAaoOOh+rDaPW491nqgv0V1eMezk=; b=Xm7/kK9Amim8EO
+	kGGC1pyZmdHbnhUDL5ECCR2tBXHndtE2Ccmi4KGw/luKmo9V1Z66TMNlEFnsPYW563s6Hbw/oDteJ
+	3RAKvobbIKcHRETs5gD8iaQfcVmmIPUaIbKp12LyxNlFUPEwJoCbPTEGvN3awlNUg7pMR0BFSFa0U
+	na+R3BL3uNeub0wLhXlD4H8e2pWtxgKNCjjlV6Su5huWxfo1Q7oiCdGmdfBF5JsMUOmaOG+60bKUt
+	j5hOBArAuvuGecKDlzkOjbsRGP/YdS5YUR/37+GODEBPPmljQFEjHFAXUE8dTnPjThCQMZFKz3Zgh
+	8qFulu1GOQDLXBYkM07g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaQsF-0001Vo-IU; Sun, 17 May 2020 21:31:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaQs6-0001VC-6k; Sun, 17 May 2020 21:31:00 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5EF6E31B;
- Sun, 17 May 2020 14:30:55 -0700 (PDT)
-Received: from [192.168.2.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 230D43F52E;
- Sun, 17 May 2020 14:30:54 -0700 (PDT)
-Subject: Re: [PATCH v1 8/9] arm64: dts: actions: Add MMC controller support
- for S700
-To: Amit Tomer <amittomer25@gmail.com>
-References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
- <1589472657-3930-9-git-send-email-amittomer25@gmail.com>
- <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
- <CABHD4K9yjUGuo0w-RfhdZQJm3Wtj6bU2H4DXcp4Jjp=e0fFeyA@mail.gmail.com>
- <2cd3cdaf-826e-9d12-9fd4-9f7e2a517ecd@arm.com>
- <CABHD4K-OaQ4Vf_+dg9FMR97ocLeUkDswyEnChPV=H=VcbyUhkg@mail.gmail.com>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Organization: ARM Ltd.
-Message-ID: <abbef32c-84d2-7dac-c667-49610d014710@arm.com>
-Date: Sun, 17 May 2020 22:30:05 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jaR9j-0003Cy-IS; Sun, 17 May 2020 21:49:11 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jaR9T-0003Bo-9U
+ for linux-arm-kernel@lists.infradead.org; Sun, 17 May 2020 21:48:56 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id ci21so688262pjb.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 17 May 2020 14:48:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=TseoBxNXqkGmc0BKeUpNhNoekdY6lwjjJANkYe94qbs=;
+ b=fXmuXfld1C+1UPw1bv9c3bwmjxXKQ31A0dYo8c5KzRXgHDVDq/BETl1kTkVyzT4Izt
+ vP9YW8g7iuXzdYnOt9Tx31MSyhBkvlqnenYGMaitwycLw4gdiHYi66Dl4OiTkwb0oTH9
+ F1q76kq5IFts9C62noNssP5sjvsEmychJJIgY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=TseoBxNXqkGmc0BKeUpNhNoekdY6lwjjJANkYe94qbs=;
+ b=d6y3FQqZnD2ktgPzQrzDDbet6Ev2yel6nxGY9OBXPeQSq+cfF42lU7aWeWwzX71Xsh
+ KlPhqNc/VlsprlYAxfiVdjAgoVySEna6X/TC4Wc1wisW0GDZJLmrSQeYn3JLZpHk+umL
+ T50EHpwzH/3+vTb132T23f05wq4R4zzR9i54CiwQMCZ1fEIQaTiKrSdDDLrvTIDLorK3
+ mknIDC8O2/rvRx+jC3nvp+UFEEu8aKU0/6CasBlgQdSzbSmHtkBWGGVATUzbwVtbrEl0
+ c5ImPWou9Hhne8+Am2tY3Vh2KYb0Gxbu3kZyuXqDcGH3JWLu61CVw2vMIuechOtaOfP8
+ 7UKg==
+X-Gm-Message-State: AOAM532lr+w3jy5U5zSQkcXEwEUAee94N5OEw8K4fJ87c1TFv1ZzAnAT
+ ygHVDgGQYdF+LKGL3jV2fVQ3Z1Xv4ZU=
+X-Google-Smtp-Source: ABdhPJwu0BwlUzPfekehCQs1ka3ojGBVEk1UZ0Rcu5atUYqn4c22iHglE7ZsiOSiXntjAfphkl4Hcw==
+X-Received: by 2002:a17:90a:dc83:: with SMTP id
+ j3mr15509573pjv.59.1589752133982; 
+ Sun, 17 May 2020 14:48:53 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id i184sm6443327pgc.36.2020.05.17.14.48.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 17 May 2020 14:48:53 -0700 (PDT)
+Date: Sun, 17 May 2020 14:48:52 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Andrew Jeffery <andrew@aj.id.au>
+Subject: Re: [PATCH] ARM: kprobes: Avoid fortify_panic() when copying
+ optprobe template
+Message-ID: <202005171447.00CFE0C@keescook>
+References: <20200517153959.293224-1-andrew@aj.id.au>
 MIME-Version: 1.0
-In-Reply-To: <CABHD4K-OaQ4Vf_+dg9FMR97ocLeUkDswyEnChPV=H=VcbyUhkg@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200517153959.293224-1-andrew@aj.id.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_143058_293919_9C8E2404 
-X-CRM114-Status: GOOD (  11.41  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200517_144855_355104_C2EA1D02 
+X-CRM114-Status: GOOD (  11.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,32 +96,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-actions@lists.infradead.org,
- cristian.ciocaltea@gmail.com, Rob Herring <robh+dt@kernel.org>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-kernel@vger.kernel.org, linux@armlinux.org.uk,
+ mathieu.desnoyers@efficios.com, mhiramat@kernel.org, labbott@redhat.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 17/05/2020 18:12, Amit Tomer wrote:
->> I don't understand what this has to do with the driver, but I asked
->> above to also change the binding, allowing this compatible string
->> combination.
-> if we add these two strings "actions,s700-mmc", "actions,owl-mmc" to dts file
-> and leave the driver as it. Wouldn't this be mismatch(as driver only
-> has "actions,owl-mmc"
-> and DTS has two strings).
-> 
-> Shouldn't that be concerned about  ?
+On Mon, May 18, 2020 at 01:09:59AM +0930, Andrew Jeffery wrote:
+> As mentioned, a couple of attempts have been made to address the issue
+> by casting a pointer to optprobe_template_entry before providing it to
+> memcpy(), however gccs such as Ubuntu 20.04's arm-linux-gnueabi-gcc
+> 9.3.0 (Ubuntu 9.3.0-10ubuntu1) see through these efforts.
 
-I recommend reading the DT spec, chapter 2.3.1 "compatible":
-https://github.com/devicetree-org/devicetree-specification/releases/download/v0.3/devicetree-specification-v0.3.pdf
+Ah, dang. :P
 
-Cheers,
-Andre
+How about converting them all to unsized arrays, which would also allow
+the code to drop the "&" everywhere, I think. This is untested:
+
+
+diff --git a/arch/arm/include/asm/kprobes.h b/arch/arm/include/asm/kprobes.h
+index 213607a1f45c..e26a278d301a 100644
+--- a/arch/arm/include/asm/kprobes.h
++++ b/arch/arm/include/asm/kprobes.h
+@@ -44,20 +44,20 @@ int kprobe_exceptions_notify(struct notifier_block *self,
+ 			     unsigned long val, void *data);
+ 
+ /* optinsn template addresses */
+-extern __visible kprobe_opcode_t optprobe_template_entry;
+-extern __visible kprobe_opcode_t optprobe_template_val;
+-extern __visible kprobe_opcode_t optprobe_template_call;
+-extern __visible kprobe_opcode_t optprobe_template_end;
+-extern __visible kprobe_opcode_t optprobe_template_sub_sp;
+-extern __visible kprobe_opcode_t optprobe_template_add_sp;
+-extern __visible kprobe_opcode_t optprobe_template_restore_begin;
+-extern __visible kprobe_opcode_t optprobe_template_restore_orig_insn;
+-extern __visible kprobe_opcode_t optprobe_template_restore_end;
++extern __visible kprobe_opcode_t optprobe_template_entry[];
++extern __visible kprobe_opcode_t optprobe_template_val[];
++extern __visible kprobe_opcode_t optprobe_template_call[];
++extern __visible kprobe_opcode_t optprobe_template_end[];
++extern __visible kprobe_opcode_t optprobe_template_sub_sp[];
++extern __visible kprobe_opcode_t optprobe_template_add_sp[];
++extern __visible kprobe_opcode_t optprobe_template_restore_begin[];
++extern __visible kprobe_opcode_t optprobe_template_restore_orig_insn[];
++extern __visible kprobe_opcode_t optprobe_template_restore_end[];
+ 
+ #define MAX_OPTIMIZED_LENGTH	4
+ #define MAX_OPTINSN_SIZE				\
+-	((unsigned long)&optprobe_template_end -	\
+-	 (unsigned long)&optprobe_template_entry)
++	((unsigned long)optprobe_template_end -	\
++	 (unsigned long)optprobe_template_entry)
+ #define RELATIVEJUMP_SIZE	4
+ 
+ struct arch_optimized_insn {
+diff --git a/arch/arm/probes/kprobes/opt-arm.c b/arch/arm/probes/kprobes/opt-arm.c
+index 7a449df0b359..c78180172120 100644
+--- a/arch/arm/probes/kprobes/opt-arm.c
++++ b/arch/arm/probes/kprobes/opt-arm.c
+@@ -85,21 +85,21 @@ asm (
+ 			"optprobe_template_end:\n");
+ 
+ #define TMPL_VAL_IDX \
+-	((unsigned long *)&optprobe_template_val - (unsigned long *)&optprobe_template_entry)
++	((unsigned long *)optprobe_template_val - (unsigned long *)optprobe_template_entry)
+ #define TMPL_CALL_IDX \
+-	((unsigned long *)&optprobe_template_call - (unsigned long *)&optprobe_template_entry)
++	((unsigned long *)optprobe_template_call - (unsigned long *)optprobe_template_entry)
+ #define TMPL_END_IDX \
+-	((unsigned long *)&optprobe_template_end - (unsigned long *)&optprobe_template_entry)
++	((unsigned long *)optprobe_template_end - (unsigned long *)optprobe_template_entry)
+ #define TMPL_ADD_SP \
+-	((unsigned long *)&optprobe_template_add_sp - (unsigned long *)&optprobe_template_entry)
++	((unsigned long *)optprobe_template_add_sp - (unsigned long *)optprobe_template_entry)
+ #define TMPL_SUB_SP \
+-	((unsigned long *)&optprobe_template_sub_sp - (unsigned long *)&optprobe_template_entry)
++	((unsigned long *)optprobe_template_sub_sp - (unsigned long *)optprobe_template_entry)
+ #define TMPL_RESTORE_BEGIN \
+-	((unsigned long *)&optprobe_template_restore_begin - (unsigned long *)&optprobe_template_entry)
++	((unsigned long *)optprobe_template_restore_begin - (unsigned long *)optprobe_template_entry)
+ #define TMPL_RESTORE_ORIGN_INSN \
+-	((unsigned long *)&optprobe_template_restore_orig_insn - (unsigned long *)&optprobe_template_entry)
++	((unsigned long *)optprobe_template_restore_orig_insn - (unsigned long *)optprobe_template_entry)
+ #define TMPL_RESTORE_END \
+-	((unsigned long *)&optprobe_template_restore_end - (unsigned long *)&optprobe_template_entry)
++	((unsigned long *)optprobe_template_restore_end - (unsigned long *)optprobe_template_entry)
+ 
+ /*
+  * ARM can always optimize an instruction when using ARM ISA, except
+@@ -234,7 +234,7 @@ int arch_prepare_optimized_kprobe(struct optimized_kprobe *op, struct kprobe *or
+ 	}
+ 
+ 	/* Copy arch-dep-instance from template. */
+-	memcpy(code, (unsigned long *)&optprobe_template_entry,
++	memcpy(code, (unsigned long *)optprobe_template_entry,
+ 			TMPL_END_IDX * sizeof(kprobe_opcode_t));
+ 
+ 	/* Adjust buffer according to instruction. */
+
+-- 
+Kees Cook
 
 _______________________________________________
 linux-arm-kernel mailing list
