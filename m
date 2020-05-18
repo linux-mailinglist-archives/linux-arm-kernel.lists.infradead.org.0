@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CB6A1D8B5B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 01:04:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FEAE1D8B66
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 01:05:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K+23W1FdnzJN1DE9QHdT7tgNXda62XXmoAGfO5PrZx4=; b=rUGljWLctPGUK8
-	E4321hj53UfOr6xhxZw0M7dyTENi3MiIom/Simasx8jNwROoood6ZDQo+a2YQydJuiG37awJ+TLM0
-	pvsJzt9VGlo7rd3ZBCtGWbiMVtm9Irjglv01KYU9TzGVnGFiZunxGKZPi2agVQ77vlJ+pH/wpFzSb
-	XcA0F1iVvFCfiEncPR5l38t9lOTqgLojfPlr/3t0ojhj9xHeTGW3wHNX5HIQa5FWxD2WfHj/2gOqY
-	WoRL5L1lVzGqNMrcVtBREZyST0IUJ0IIEvtbcdtffwZruh18I2/uwnbZa/w/JKd0y3d0N+AXGjPlL
-	HCnmVn6DVn0il6JVQuoQ==;
+	List-Owner; bh=4emQeW34TDAD+L41ISJ4Q+O5grC9AfkBX1k27zbtG6c=; b=m3sPxKkk7efO3F
+	Ar2R1hzyvHmqjGcV+Fr0KWY1nAoAgrFWQ/i1QOxx9veBpmVZLQhnT9KOw8OcDnkIbXXbo5AZdWvVF
+	asw0qZsDGNj7QTpq+JGVU9+OucCeEjqp8JkGaZuCNbwBoHLTCnBfEiF5gmaJR4/+pIwShUBK4K4Y4
+	/+6pixG10keILCiPCObQ3PQDUrvODxQmsZ+4jL3v6euIVfMXgEGPsGVEVMQKlY4HZ6DwK0qF2L9bY
+	l6vkykzBsPro8GNz/AtTNk4vaC6lGQNaAnZ/I8G/Eo1GjuLabPBt8cRQck+QnY2Er6QdANhxActXs
+	ZvuhymVvN3hA2RLtK/4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaooB-0008KX-2o; Mon, 18 May 2020 23:04:31 +0000
+	id 1jaooe-00008r-Q9; Mon, 18 May 2020 23:05:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaonw-0008In-KC
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 23:04:20 +0000
+ id 1jaoo0-0008Jt-GB
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 23:04:24 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A3A93207ED;
- Mon, 18 May 2020 23:04:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 97D012081A;
+ Mon, 18 May 2020 23:04:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589843056;
- bh=vTTgvB3JUjULE7uYpMa6wmTcpdP6w+Gge17Ze+4Iieg=;
+ s=default; t=1589843060;
+ bh=FivWSGA5nKr+8BVNRlfId66BwqKvfngHdf0PvsDY1Gk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=z1iP9xOGKusy7dXpZxmij9FsdSXHE/iAuAUadwQPy4Kgpj8W+sCDMtIsxLC0SX18j
- s1JHrjl8jEQEUtnsVVs8QJofrVz/k0mYVBS9pyPH1y04FT4PMi6RpLzIc+y4NiF8xg
- 5jC0xa2bWfrTRV4w8bxA0PAdrb3QU6aP/cTKxwSo=
+ b=VHXwzWPUne9lNRLze2eVuRdHvkAB3cprbaBFfewEjJY46dL74bSD6c43meXBwefFz
+ 8Ff13vNT0YVAVYK6ZuLCiCBb/hKd8p1jjr5DR7uackt2nEf7mrkdz1hmvgIJkixlww
+ eBns6vIZvKw6GHKnaVdx54+jKGUPcy+BwXaxDiHs=
 From: Will Deacon <will@kernel.org>
-To: joro@8bytes.org, robin.murphy@arm.com, Chen Zhou <chenzhou10@huawei.com>
-Subject: Re: [PATCH -next] iommu/arm-smmu-v3: remove set but not used variable
- 'smmu'
-Date: Tue, 19 May 2020 00:04:03 +0100
-Message-Id: <158981035268.232610.8507071130600467853.b4-ty@kernel.org>
+To: Daniel Thompson <daniel.thompson@linaro.org>,
+ Douglas Anderson <dianders@chromium.org>,
+ Jason Wessel <jason.wessel@windriver.com>
+Subject: Re: [PATCH] arm64: Call debug_traps_init() from trap_init() to help
+ early kgdb
+Date: Tue, 19 May 2020 00:04:04 +0100
+Message-Id: <158982068109.260335.5582031208894337234.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200508014955.87630-1-chenzhou10@huawei.com>
-References: <20200508014955.87630-1-chenzhou10@huawei.com>
+In-Reply-To: <20200513160501.1.I0b5edf030cc6ebef6ab4829f8867cdaea42485d8@changeid>
+References: <20200513160501.1.I0b5edf030cc6ebef6ab4829f8867cdaea42485d8@changeid>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_160416_680095_82E95C98 
-X-CRM114-Status: UNSURE (   7.43  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200518_160420_564028_86418586 
+X-CRM114-Status: GOOD (  10.79  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,24 +79,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, iommu@lists.linux-foundation.org,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, sumit.garg@linaro.org,
+ liwei391@huawei.com, "Eric W. Biederman" <ebiederm@xmission.com>,
+ "Paul E. McKenney" <paulmck@kernel.org>,
+ Alexios Zavras <alexios.zavras@intel.com>, Enrico Weigelt <info@metux.net>,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ jinho lim <jordan.lim@samsung.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
+ kgdb-bugreport@lists.sourceforge.net, Zenghui Yu <yuzenghui@huawei.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, Allison Randal <allison@lohutok.net>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCA4IE1heSAyMDIwIDA5OjQ5OjU1ICswODAwLCBDaGVuIFpob3Ugd3JvdGU6Cj4gRml4
-ZXMgZ2NjICctV3VudXNlZC1idXQtc2V0LXZhcmlhYmxlJyB3YXJuaW5nOgo+IAo+IGRyaXZlcnMv
-aW9tbXUvYXJtLXNtbXUtdjMuYzoyOTg5OjI2Ogo+IHdhcm5pbmc6IHZhcmlhYmxlIOKAmHNtbXXi
-gJkgc2V0IGJ1dCBub3QgdXNlZCBbLVd1bnVzZWQtYnV0LXNldC12YXJpYWJsZV0KPiAgIHN0cnVj
-dCBhcm1fc21tdV9kZXZpY2UgKnNtbXU7CgpBcHBsaWVkIHRvIHdpbGwgKGZvci1qb2VyZy9hcm0t
-c21tdS91cGRhdGVzKSwgdGhhbmtzIQoKWzEvMV0gaW9tbXUvYXJtLXNtbXUtdjM6IHJlbW92ZSBz
-ZXQgYnV0IG5vdCB1c2VkIHZhcmlhYmxlICdzbW11JwogICAgICBodHRwczovL2dpdC5rZXJuZWwu
-b3JnL3dpbGwvYy8wNjAyMDE5NmM4MmUKCkNoZWVycywKLS0gCldpbGwKCmh0dHBzOi8vZml4ZXMu
-YXJtNjQuZGV2Cmh0dHBzOi8vbmV4dC5hcm02NC5kZXYKaHR0cHM6Ly93aWxsLmFybTY0LmRldgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Wed, 13 May 2020 16:06:37 -0700, Douglas Anderson wrote:
+> A new kgdb feature will soon land (kgdb_earlycon) that lets us run
+> kgdb much earlier.  In order for everything to work properly it's
+> important that the break hook is setup by the time we process
+> "kgdbwait".
+> 
+> Right now the break hook is setup in debug_traps_init() and that's
+> called from arch_initcall().  That's a bit too late since
+> kgdb_earlycon really needs things to be setup by the time the system
+> calls dbg_late_init().
+> 
+> [...]
+
+Applied to arm64 (for-next/misc), thanks!
+
+[1/1] arm64: Call debug_traps_init() from trap_init() to help early kgdb
+      https://git.kernel.org/arm64/c/b322c65f8ca3
+
+Cheers,
+-- 
+Will
+
+https://fixes.arm64.dev
+https://next.arm64.dev
+https://will.arm64.dev
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
