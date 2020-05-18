@@ -2,63 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 172CF1D743E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 11:42:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 691461D7454
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 11:48:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L5VLcw6u79+uf5ig8SZ4EY1kKZGPpa2d0nw0fBYI+as=; b=S1gORf1OhNVcy3
-	s6BmdsoeGlucCU3XuRzkdZWsyJ+JuaQ0d/oPZxL1Ouy5FeGEgYmGcS9aNE56mifGsQWDBP8dmpWka
-	tqK/fjtb7KpnbnRTbwShZEQWu2OcY1ypxb09CVDZPDbHc24yXxp1Jt3/OgHPyrt7wcjOOhxYvS7Q9
-	ZFydGB/y2rUx9HS4Ys+ZBS3FGRuejr9NyvJGhm6ltWxX9CeD9VMDtOdlZM7X7MKZyvZNvPQiGjvjd
-	/KANtpjkN8dxNTqaXqHm0+PMWovf9TF/75Dfn9uGfuwJ67WHOWm6E+tVWc8mx7g+06S4vvROS+x2P
-	zx85MkAcHJdq/RyN2/Hg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5tR2s3to0MaqtrW7gds1xYaW2YAbG9lPNAwSlyCz1wM=; b=Olm5SN8CVGFrGrVsa18eypGO9
+	+f+8L+nH0UoaiUtGzo0iY0/TrSZLhAFst6WeNEOgF6xYS8bPcUKp+GARF/h3dhP2AsAZsxvio7rw4
+	xVrDfHWMenQE/Tm3HGZnULlOlbLn8KabCcUpEn64ZIj526nwIvyh2aFOD2q/pDOc/BVfIh+s2pFzk
+	4uIA0EhOmPOU9iswYboamWUv41q4uHB9IN0FBuB3m0FPXqWI9BveYOBgiiG5w3PAMqzNVT1mAHT9o
+	e+pqWHO8Prl8o9jwtBS/5VEIQfToaQVtj/h2fC/tJS8wV93ceqwxFLJNfc8sa/zO4lYO5Ex1yAY7Y
+	8UpzJJpQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jacHT-0002Wr-CF; Mon, 18 May 2020 09:41:55 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jacNh-0005nG-4E; Mon, 18 May 2020 09:48:21 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jacHJ-0002WE-RA
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 09:41:47 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1jacHE-0001oF-9i; Mon, 18 May 2020 11:41:40 +0200
-Received: from pza by lupine with local (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1jacHD-00015B-CV; Mon, 18 May 2020 11:41:39 +0200
-Message-ID: <719ed778a36e7edfea080d42e9b837432e595d15.camel@pengutronix.de>
-Subject: Re: [PATCH] dt-bindings: reset: Convert i.MX reset to json-schema
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Anson Huang <Anson.Huang@nxp.com>, robh+dt@kernel.org,
- shawnguo@kernel.org,  s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com,  devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,  linux-kernel@vger.kernel.org
-Date: Mon, 18 May 2020 11:41:39 +0200
-In-Reply-To: <1589250194-29441-1-git-send-email-Anson.Huang@nxp.com>
-References: <1589250194-29441-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Evolution 3.30.5-1.1 
+ id 1jacNX-0005mH-GB; Mon, 18 May 2020 09:48:13 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 655B2AA6F;
+ Mon, 18 May 2020 09:48:10 +0000 (UTC)
+Subject: Re: [PATCH v1 8/9] arm64: dts: actions: Add MMC controller support
+ for S700
+To: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Amit Tomer <amittomer25@gmail.com>
+References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
+ <1589472657-3930-9-git-send-email-amittomer25@gmail.com>
+ <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
+ <CABHD4K9yjUGuo0w-RfhdZQJm3Wtj6bU2H4DXcp4Jjp=e0fFeyA@mail.gmail.com>
+ <2cd3cdaf-826e-9d12-9fd4-9f7e2a517ecd@arm.com>
+ <CABHD4K-OaQ4Vf_+dg9FMR97ocLeUkDswyEnChPV=H=VcbyUhkg@mail.gmail.com>
+ <abbef32c-84d2-7dac-c667-49610d014710@arm.com>
+ <CABHD4K-MHs4jhL_9otJJ_xjC1uv1N20mnHqT39b2kob7WjZcVQ@mail.gmail.com>
+ <20200518061755.GA25113@mani> <29500523-0fe4-955d-57de-d4b9f11cedb8@arm.com>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <fceaf802-5923-1be3-d582-59465c6e7369@suse.de>
+Date: Mon, 18 May 2020 11:48:06 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <29500523-0fe4-955d-57de-d4b9f11cedb8@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_024145_880277_6F2585FF 
-X-CRM114-Status: GOOD (  19.97  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200518_024811_687753_E09E4913 
+X-CRM114-Status: GOOD (  15.17  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,140 +75,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-actions@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ cristian.ciocaltea@gmail.com
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anson,
-
-On Tue, 2020-05-12 at 10:23 +0800, Anson Huang wrote:
-> Convert the i.MX reset binding to DT schema format using json-schema.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-thank you for the conversion.
-
-> ---
->  .../devicetree/bindings/reset/fsl,imx-src.txt      | 49 ------------------
->  .../devicetree/bindings/reset/fsl,imx-src.yaml     | 58 ++++++++++++++++++++++
->  2 files changed, 58 insertions(+), 49 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/reset/fsl,imx-src.txt
->  create mode 100644 Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-src.txt b/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
-> deleted file mode 100644
-> index 6ed79e6..0000000
-> --- a/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
-> +++ /dev/null
-> @@ -1,49 +0,0 @@
-> -Freescale i.MX System Reset Controller
-> -======================================
-> -
-> -Please also refer to reset.txt in this directory for common reset
-> -controller binding usage.
-> -
-> -Required properties:
-> -- compatible: Should be "fsl,<chip>-src"
-> -- reg: should be register base and length as documented in the
-> -  datasheet
-> -- interrupts: Should contain SRC interrupt and CPU WDOG interrupt,
-> -  in this order.
-> -- #reset-cells: 1, see below
-> -
-> -example:
-> -
-> -src: src@20d8000 {
-> -        compatible = "fsl,imx6q-src";
-> -        reg = <0x020d8000 0x4000>;
-> -        interrupts = <0 91 0x04 0 96 0x04>;
-> -        #reset-cells = <1>;
-> -};
-> -
-> -Specifying reset lines connected to IP modules
-> -==============================================
-> -
-> -The system reset controller can be used to reset the GPU, VPU,
-> -IPU, and OpenVG IP modules on i.MX5 and i.MX6 ICs. Those device
-> -nodes should specify the reset line on the SRC in their resets
-> -property, containing a phandle to the SRC device node and a
-> -RESET_INDEX specifying which module to reset, as described in
-> -reset.txt
-> -
-> -example:
-> -
-> -        ipu1: ipu@2400000 {
-> -                resets = <&src 2>;
-> -        };
-> -        ipu2: ipu@2800000 {
-> -                resets = <&src 4>;
-> -        };
-> -
-> -The following RESET_INDEX values are valid for i.MX5:
-> -GPU_RESET     0
-> -VPU_RESET     1
-> -IPU1_RESET    2
-> -OPEN_VG_RESET 3
-> -The following additional RESET_INDEX value is valid for i.MX6:
-> -IPU2_RESET    4
-> diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml b/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
-> new file mode 100644
-> index 0000000..276a533
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
-> @@ -0,0 +1,58 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/reset/fsl,imx-src.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Freescale i.MX System Reset Controller
-> +
-> +maintainers:
-> +  - Philipp Zabel <p.zabel@pengutronix.de>
-> +
-> +description: |
-> +  The system reset controller can be used to reset the GPU, VPU,
-> +  IPU, and OpenVG IP modules on i.MX5 and i.MX6 ICs. Those device
-> +  nodes should specify the reset line on the SRC in their resets
-> +  property, containing a phandle to the SRC device node and a
-> +  RESET_INDEX specifying which module to reset, as described in
-> +  reset.txt
-> +
-> +  The following RESET_INDEX values are valid for i.MX5:
-> +    GPU_RESET     0
-> +    VPU_RESET     1
-> +    IPU1_RESET    2
-> +    OPEN_VG_RESET 3
-> +  The following additional RESET_INDEX value is valid for i.MX6:
-> +    IPU2_RESET    4
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - const: "fsl,imx51-src"
-
-"fsl,imx51-src" is the only compatible the driver matches on, but we
-have these combinations on compatible SRCs in the device trees:
-
-  "fsl,imx50-src", "fsl,imx51-src"
-  "fsl,imx51-src"
-  "fsl,imx53-src", "fsl,imx51-src"
-  "fsl,imx6q-src", "fsl,imx51-src"
-  "fsl,imx6sl-src", "fsl,imx51-src"
-  "fsl,imx6sll-src", "fsl,imx51-src"
-  "fsl,imx6sx-src", "fsl,imx51-src"
-  "fsl,imx6ul-src", "fsl,imx51-src"
-
-That could be described using oneOf and and an items list of const
-values per SoC like in the qcom bindings.
-
-regards
-Philipp
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpBbSAxOC4wNS4yMCB1bSAxMDoyOSBzY2hyaWViIEFuZHLDqSBQcnp5d2FyYToKPiBPbiAx
+OC8wNS8yMDIwIDA3OjE3LCBNYW5pdmFubmFuIFNhZGhhc2l2YW0gd3JvdGU6Cj4+IEkgZG9uJ3Qg
+a25vdyBpZiB0aGUgRFQgZmFsbGJhY2sgaXMgZGlzY291cmFnZWQgb3Igbm90Lgo+IAo+IEkgZG9u
+J3Qga25vdyBpZiB0aGVyZSBpcyBhbiAib2ZmaWNpYWwiIHN0YXRlbWVudCBvbiB0aGlzLCBidXQg
+bGFzdCB0aGluZwo+IEkgaGVhcmQsIGFkZGluZyBTb0Mgc3BlY2lmaWMgY29tcGF0aWJsZXMgdG8g
+Z2VuZXJpYyBmYWxsYmFjayBzdHJpbmdzIHdhcwo+IGVuY291cmFnZWQuIEhlbmNlIG15IHByb3Bv
+c2FsLCB0byBhZGQgb25lLgoKSSBiZWxpZXZlIHRoZSBvZmZpY2lhbCBndWlkYW5jZSB3b3VsZCBi
+ZSB0byBuZXZlciBiZSB0b28gZ2VuZXJpYyBpbiB0aGUgCmZpcnN0IHBsYWNlLiBJLmUuLCBwcmVm
+ZXIgczUwMCAob2xkZXN0IG1vZGVsIHRlc3RlZCkgb3ZlciBnZW5lcmljIG93bC4KCkJ1dCBub3cg
+dGhhdCB3ZSBoYXZlIGl0LCBwcmVwZW5kaW5nIGEgbW9yZSBzcGVjaWZpYyBvbmUgKHJhdGhlciB0
+aGFuIApyZXBsYWNpbmcgaXQpIGlzIHRoZSBvbmx5IHdheSB0byBnby4gSW4gdGhhdCBjYXNlIHRo
+ZSBiaW5kaW5nIG5lZWRzIHRvIApiZSBjaGFuZ2VkIHRvIGFsbG93IGJvdGggdGhlIG9sZCBhbmQg
+dGhlIHJlY29tbWVuZGVkIG5ldyB2YXJpYW50LCBhcyAKQW5kcsOpIHBvaW50cyBvdXQuIFBsZWFz
+ZSBhZGQgYSBjb21tZW50IHRvIGhlbHAgYmluZGluZ3MgcmVhZGVycyBjaG9vc2UgCndoaWNoIG9m
+IHRoZSB0d28gdG8gYWRvcHQgdGhlbi4KCkFtaXQsIG5leHQgdGltZSBwbGVhc2UgcXVvdGUgZXJy
+b3JzIHlvdSBzZWUgcmlnaHQgYXdheSwgdGhhdCBjb3VsZCd2ZSAKc3BhcmVkIGEgaGFuZGZ1bCBv
+ZiBtZXNzYWdlcyBkaXNjdXNzaW5nIGFib3V0IHRoZSBkcml2ZXIgd2hlbiBpdCB3YXMgaW4gCmZh
+Y3QganVzdCBhIGJpbmRpbmdzIGlzc3VlICh3aGljaCB5b3UgaGFkIGJlZW4gYXNrZWQgdG8gZml4
+IGJ5IEFuZHLDqSkuCgpSZWdhcmRzLApBbmRyZWFzCgotLSAKU1VTRSBTb2Z0d2FyZSBTb2x1dGlv
+bnMgR2VybWFueSBHbWJICk1heGZlbGRzdHIuIDUsIDkwNDA5IE7DvHJuYmVyZywgR2VybWFueQpH
+RjogRmVsaXggSW1lbmTDtnJmZmVyCkhSQiAzNjgwOSAoQUcgTsO8cm5iZXJnKQoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
+YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
