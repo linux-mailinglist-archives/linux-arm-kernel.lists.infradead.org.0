@@ -2,84 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACA281D6E9A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 03:27:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BF991D6EB9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 04:21:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=glV9Yz66gIoOzps8L9jQTt5AQnNvHpQTiOqeWis5XHo=; b=upN8hA2qsAX5bm
-	fmZuP61hdu8cglblFdrPCr0kn05Ij+86Y6eoCNSegGzWFxQK2y/Ci4twE00Fm2lzJ9ySPu0zSAShB
-	XRFL+Vz09F5ZTFAi1i7d8AY3WdWcC86pFhYYxJveXApvT259FWHC+qJApWbfsa89Ei/6Iwr0RlYUh
-	Pct7CY1Fg26H2L7XdxrWfI8w8gdfQX6JNh2Y/d602MOfeMLKI5LvKUGUrED/MflPK4UdQ4RgrFn0d
-	JqXDLAEge9w/qmgmZ0kumXVQXCK0wQ5TIqbH9BOMrfohZ7JKnXPKxcKZB/zwH+dd0FDo9QQMbH/EN
-	P51YPEySMcj3XMjyUFhA==;
+	List-Owner; bh=S18A2MoGnJJ6uOqHEDoFtzeqmvfSriBRCeeOf/l6B2g=; b=qYBzwG8rxDCiLQ
+	LKoBcbn/ckhMHTEt3k/ohuX1UeBd1B80xFk6H5znZ6ohsQKZ87B1hFVh+WtuiHgqen91/dDPMnicH
+	GKDWWBUCQKDEamATkd37t6SOfLBuFA+yWk+Cnr3qEhVM7PiJ7GE7mVEHMPyJEbdQ3hjgiZZFkxPnC
+	yyM4bNYT9rNaYFFCQ/YkiBmJ3CB/907a0YaS0iCr6omANHShr1jKFzF71n/zbmZ6l/90CsCDBY6CC
+	zKynZl0zdegNnp/gbNP5ATndkOJ7nWDlUAH+yegJKIgvXLiGxWhhgvLzz2kZpuj2TH5xMQd8/bY8z
+	nDyQpk61ldFZ6Qwil8dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaUZ7-0000z5-3Q; Mon, 18 May 2020 01:27:37 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jaVP0-0007Ww-CV; Mon, 18 May 2020 02:21:14 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaUYx-0000yI-Lb
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 01:27:29 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u188so8449760wmu.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 17 May 2020 18:27:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uZfH/yW2EkwOl9gEcet4jN7ZXi9BLKHqqQrfr1sC6ac=;
- b=vDcWgigWf+8ZKsquN2u4JqfQ8umHJX5fe46rUTGhJECREweESiSfWnUn0R+kFnVYzL
- Po+JjR2lydKpGPNuAuKUfwyrCt05L9FE2SiboNT/Di3jcIyohybAZ7DEy0Rfme5FXmov
- hLdWtACwrYRBlLG0QN8oUbUrydmDczxFu2izF8ScEASNprtdB5wc/pnUdJmba6hRwV9n
- aHCMGNU+KjzWjQTSpCRhc4bWnVvgd0rJg1YDnGNoSnyOoDtovxLu56C1biuKkr+dRjvW
- tJZ3MvsoObtcyH+Pvwi+VeXvwxYehRqFZ5a/TM/TAH2YVIfFH9U6+mtgTNk5l3SnaaaD
- oGZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uZfH/yW2EkwOl9gEcet4jN7ZXi9BLKHqqQrfr1sC6ac=;
- b=AtLxpFUgQ1gIsnUD05HWvo7d7Sxzi7DNP5aBvA5XQqGuYIMNyFn+vhOHZevg47GN3f
- V4eTpTm/kVnX9DW9K6Pa9XRprpozhN63O2DVY+H3KB98kthgAECeG8apXtgvUVvYRzYS
- RiH5Rh3tsvxZyYUa8GBPCY+u2439fO2fMPhtk9jc/8ErFOKJgIQpHzsvAt1R/KqJcqe8
- 5TVFGDDMqmTgd6wb1sSD9VjYedqdvUCHa+d7oqTulhT+i5PpvzrohtamG3bJdRWKwQ/2
- YuqF51GK1fwoZX5b0vOW8BW1ok61aeZqARiuJQamUE3AYPcii2GM0Qb0IXAGHaNpLbvN
- rlxA==
-X-Gm-Message-State: AOAM531jybKfV0zlkYqGfjP7TEhrG/syrilqn6jrbh0PLEn7UUBdUreX
- d1Mmsu2R3X7k0xpti5lBDu0qtvhyVsBJHVnsgC8=
-X-Google-Smtp-Source: ABdhPJwYXjut1W+agJe7qHIAazerG/VY4Qh5rG0NKf6TSwEA+kmhHmC2ZVellCufA3F7oGA23ea+FfJqOJUfr5uzS0A=
-X-Received: by 2002:a05:600c:2255:: with SMTP id
- a21mr17035637wmm.67.1589765242888; 
- Sun, 17 May 2020 18:27:22 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200513132114.6046-1-m.szyprowski@samsung.com>
- <CGME20200513133305eucas1p15187ed8fa1e4af181cafa5c65ddab4cd@eucas1p1.samsung.com>
- <20200513133245.6408-1-m.szyprowski@samsung.com>
- <20200513133245.6408-13-m.szyprowski@samsung.com>
-In-Reply-To: <20200513133245.6408-13-m.szyprowski@samsung.com>
-From: Qiang Yu <yuq825@gmail.com>
-Date: Mon, 18 May 2020 09:27:11 +0800
-Message-ID: <CAKGbVbsSPhQY5zEBGPQtyhLu38w=Hw73OQr6UiV_dHC46DescQ@mail.gmail.com>
-Subject: Re: [PATCH v5 13/38] drm: lima: fix common struct sg_table related
- issues
-To: Marek Szyprowski <m.szyprowski@samsung.com>
+ id 1jaVOt-0007Vu-Ky
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 02:21:09 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9334420758;
+ Mon, 18 May 2020 02:21:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589768464;
+ bh=7RJuET2p1c9crhC6k5Md3KsYrDZ64Vq388qDBF/PKT4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=qKUPHDhKfAvKoQDw6aUbF5oxk/2fSXt6cYTcG445x6tHLCS0hMJXSKIXc5Z28WHUO
+ nlFuCGycnKryukgl1b3dKlivig1RoGMgEXo6P+4drDpHbZO6YsywoMt6lOz6h4/dae
+ CgzG2Fh0kTL1dKHu4p+ITL+Ewb1+xwPHzKxpolUU=
+Date: Mon, 18 May 2020 11:20:59 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Kees Cook <keescook@chromium.org>
+Subject: Re: [PATCH] ARM: kprobes: Avoid fortify_panic() when copying
+ optprobe template
+Message-Id: <20200518112059.c19899ffb17a4843bf4f74ab@kernel.org>
+In-Reply-To: <202005171447.00CFE0C@keescook>
+References: <20200517153959.293224-1-andrew@aj.id.au>
+ <202005171447.00CFE0C@keescook>
+X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_182727_734771_5B67D0D3 
-X-CRM114-Status: GOOD (  21.06  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200517_192107_729956_387E301C 
+X-CRM114-Status: GOOD (  16.57  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [yuq825[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [yuq825[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,116 +77,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lima@lists.freedesktop.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, linaro-mm-sig@lists.linaro.org,
- iommu@lists.linux-foundation.org, Daniel Vetter <daniel@ffwll.ch>,
- Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Andrew Jeffery <andrew@aj.id.au>, linux@armlinux.org.uk,
+ linux-kernel@vger.kernel.org, mathieu.desnoyers@efficios.com,
+ mhiramat@kernel.org, labbott@redhat.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Looks good for me, patch is:
-Reviewed-by: Qiang Yu <yuq825@gmail.com>
+On Sun, 17 May 2020 14:48:52 -0700
+Kees Cook <keescook@chromium.org> wrote:
 
-Regards,
-Qiang
+> On Mon, May 18, 2020 at 01:09:59AM +0930, Andrew Jeffery wrote:
+> > As mentioned, a couple of attempts have been made to address the issue
+> > by casting a pointer to optprobe_template_entry before providing it to
+> > memcpy(), however gccs such as Ubuntu 20.04's arm-linux-gnueabi-gcc
+> > 9.3.0 (Ubuntu 9.3.0-10ubuntu1) see through these efforts.
+> 
+> Ah, dang. :P
+> 
+> How about converting them all to unsized arrays, which would also allow
+> the code to drop the "&" everywhere, I think. This is untested:
+> 
 
-On Wed, May 13, 2020 at 9:33 PM Marek Szyprowski
-<m.szyprowski@samsung.com> wrote:
->
-> The Documentation/DMA-API-HOWTO.txt states that the dma_map_sg() function
-> returns the number of the created entries in the DMA address space.
-> However the subsequent calls to the dma_sync_sg_for_{device,cpu}() and
-> dma_unmap_sg must be called with the original number of the entries
-> passed to the dma_map_sg().
->
-> struct sg_table is a common structure used for describing a non-contiguous
-> memory buffer, used commonly in the DRM and graphics subsystems. It
-> consists of a scatterlist with memory pages and DMA addresses (sgl entry),
-> as well as the number of scatterlist entries: CPU pages (orig_nents entry)
-> and DMA mapped pages (nents entry).
->
-> It turned out that it was a common mistake to misuse nents and orig_nents
-> entries, calling DMA-mapping functions with a wrong number of entries or
-> ignoring the number of mapped entries returned by the dma_map_sg()
-> function.
->
-> To avoid such issues, lets use a common dma-mapping wrappers operating
-> directly on the struct sg_table objects and use scatterlist page
-> iterators where possible. This, almost always, hides references to the
-> nents and orig_nents entries, making the code robust, easier to follow
-> and copy/paste safe.
->
-> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> ---
-> For more information, see '[PATCH v5 00/38] DRM: fix struct sg_table nents
-> vs. orig_nents misuse' thread:
-> https://lore.kernel.org/linux-iommu/20200513132114.6046-1-m.szyprowski@samsung.com/T/
-> ---
->  drivers/gpu/drm/lima/lima_gem.c | 11 ++++++++---
->  drivers/gpu/drm/lima/lima_vm.c  |  5 ++---
->  2 files changed, 10 insertions(+), 6 deletions(-)
->
-> diff --git a/drivers/gpu/drm/lima/lima_gem.c b/drivers/gpu/drm/lima/lima_gem.c
-> index 5404e0d..cda43f6 100644
-> --- a/drivers/gpu/drm/lima/lima_gem.c
-> +++ b/drivers/gpu/drm/lima/lima_gem.c
-> @@ -69,8 +69,7 @@ int lima_heap_alloc(struct lima_bo *bo, struct lima_vm *vm)
->                 return ret;
->
->         if (bo->base.sgt) {
-> -               dma_unmap_sg(dev, bo->base.sgt->sgl,
-> -                            bo->base.sgt->nents, DMA_BIDIRECTIONAL);
-> +               dma_unmap_sgtable(dev, bo->base.sgt, DMA_BIDIRECTIONAL, 0);
->                 sg_free_table(bo->base.sgt);
->         } else {
->                 bo->base.sgt = kmalloc(sizeof(*bo->base.sgt), GFP_KERNEL);
-> @@ -80,7 +79,13 @@ int lima_heap_alloc(struct lima_bo *bo, struct lima_vm *vm)
->                 }
->         }
->
-> -       dma_map_sg(dev, sgt.sgl, sgt.nents, DMA_BIDIRECTIONAL);
-> +       ret = dma_map_sgtable(dev, &sgt, DMA_BIDIRECTIONAL, 0);
-> +       if (ret) {
-> +               sg_free_table(&sgt);
-> +               kfree(bo->base.sgt);
-> +               bo->base.sgt = NULL;
-> +               return ret;
-> +       }
->
->         *bo->base.sgt = sgt;
->
-> diff --git a/drivers/gpu/drm/lima/lima_vm.c b/drivers/gpu/drm/lima/lima_vm.c
-> index 5b92fb8..2b2739a 100644
-> --- a/drivers/gpu/drm/lima/lima_vm.c
-> +++ b/drivers/gpu/drm/lima/lima_vm.c
-> @@ -124,7 +124,7 @@ int lima_vm_bo_add(struct lima_vm *vm, struct lima_bo *bo, bool create)
->         if (err)
->                 goto err_out1;
->
-> -       for_each_sg_dma_page(bo->base.sgt->sgl, &sg_iter, bo->base.sgt->nents, 0) {
-> +       for_each_sgtable_dma_page(bo->base.sgt, &sg_iter, 0) {
->                 err = lima_vm_map_page(vm, sg_page_iter_dma_address(&sg_iter),
->                                        bo_va->node.start + offset);
->                 if (err)
-> @@ -298,8 +298,7 @@ int lima_vm_map_bo(struct lima_vm *vm, struct lima_bo *bo, int pageoff)
->         mutex_lock(&vm->lock);
->
->         base = bo_va->node.start + (pageoff << PAGE_SHIFT);
-> -       for_each_sg_dma_page(bo->base.sgt->sgl, &sg_iter,
-> -                            bo->base.sgt->nents, pageoff) {
-> +       for_each_sgtable_dma_page(bo->base.sgt, &sg_iter, pageoff) {
->                 err = lima_vm_map_page(vm, sg_page_iter_dma_address(&sg_iter),
->                                        base + offset);
->                 if (err)
-> --
-> 1.9.1
->
+This looks good to me since it uses same technique in sections.h.
+
+Acked-by: Masami Hiramatsu <mhiramat@kernel.org>
+
+Thank you!
+
+> 
+> diff --git a/arch/arm/include/asm/kprobes.h b/arch/arm/include/asm/kprobes.h
+> index 213607a1f45c..e26a278d301a 100644
+> --- a/arch/arm/include/asm/kprobes.h
+> +++ b/arch/arm/include/asm/kprobes.h
+> @@ -44,20 +44,20 @@ int kprobe_exceptions_notify(struct notifier_block *self,
+>  			     unsigned long val, void *data);
+>  
+>  /* optinsn template addresses */
+> -extern __visible kprobe_opcode_t optprobe_template_entry;
+> -extern __visible kprobe_opcode_t optprobe_template_val;
+> -extern __visible kprobe_opcode_t optprobe_template_call;
+> -extern __visible kprobe_opcode_t optprobe_template_end;
+> -extern __visible kprobe_opcode_t optprobe_template_sub_sp;
+> -extern __visible kprobe_opcode_t optprobe_template_add_sp;
+> -extern __visible kprobe_opcode_t optprobe_template_restore_begin;
+> -extern __visible kprobe_opcode_t optprobe_template_restore_orig_insn;
+> -extern __visible kprobe_opcode_t optprobe_template_restore_end;
+> +extern __visible kprobe_opcode_t optprobe_template_entry[];
+> +extern __visible kprobe_opcode_t optprobe_template_val[];
+> +extern __visible kprobe_opcode_t optprobe_template_call[];
+> +extern __visible kprobe_opcode_t optprobe_template_end[];
+> +extern __visible kprobe_opcode_t optprobe_template_sub_sp[];
+> +extern __visible kprobe_opcode_t optprobe_template_add_sp[];
+> +extern __visible kprobe_opcode_t optprobe_template_restore_begin[];
+> +extern __visible kprobe_opcode_t optprobe_template_restore_orig_insn[];
+> +extern __visible kprobe_opcode_t optprobe_template_restore_end[];
+>  
+>  #define MAX_OPTIMIZED_LENGTH	4
+>  #define MAX_OPTINSN_SIZE				\
+> -	((unsigned long)&optprobe_template_end -	\
+> -	 (unsigned long)&optprobe_template_entry)
+> +	((unsigned long)optprobe_template_end -	\
+> +	 (unsigned long)optprobe_template_entry)
+>  #define RELATIVEJUMP_SIZE	4
+>  
+>  struct arch_optimized_insn {
+> diff --git a/arch/arm/probes/kprobes/opt-arm.c b/arch/arm/probes/kprobes/opt-arm.c
+> index 7a449df0b359..c78180172120 100644
+> --- a/arch/arm/probes/kprobes/opt-arm.c
+> +++ b/arch/arm/probes/kprobes/opt-arm.c
+> @@ -85,21 +85,21 @@ asm (
+>  			"optprobe_template_end:\n");
+>  
+>  #define TMPL_VAL_IDX \
+> -	((unsigned long *)&optprobe_template_val - (unsigned long *)&optprobe_template_entry)
+> +	((unsigned long *)optprobe_template_val - (unsigned long *)optprobe_template_entry)
+>  #define TMPL_CALL_IDX \
+> -	((unsigned long *)&optprobe_template_call - (unsigned long *)&optprobe_template_entry)
+> +	((unsigned long *)optprobe_template_call - (unsigned long *)optprobe_template_entry)
+>  #define TMPL_END_IDX \
+> -	((unsigned long *)&optprobe_template_end - (unsigned long *)&optprobe_template_entry)
+> +	((unsigned long *)optprobe_template_end - (unsigned long *)optprobe_template_entry)
+>  #define TMPL_ADD_SP \
+> -	((unsigned long *)&optprobe_template_add_sp - (unsigned long *)&optprobe_template_entry)
+> +	((unsigned long *)optprobe_template_add_sp - (unsigned long *)optprobe_template_entry)
+>  #define TMPL_SUB_SP \
+> -	((unsigned long *)&optprobe_template_sub_sp - (unsigned long *)&optprobe_template_entry)
+> +	((unsigned long *)optprobe_template_sub_sp - (unsigned long *)optprobe_template_entry)
+>  #define TMPL_RESTORE_BEGIN \
+> -	((unsigned long *)&optprobe_template_restore_begin - (unsigned long *)&optprobe_template_entry)
+> +	((unsigned long *)optprobe_template_restore_begin - (unsigned long *)optprobe_template_entry)
+>  #define TMPL_RESTORE_ORIGN_INSN \
+> -	((unsigned long *)&optprobe_template_restore_orig_insn - (unsigned long *)&optprobe_template_entry)
+> +	((unsigned long *)optprobe_template_restore_orig_insn - (unsigned long *)optprobe_template_entry)
+>  #define TMPL_RESTORE_END \
+> -	((unsigned long *)&optprobe_template_restore_end - (unsigned long *)&optprobe_template_entry)
+> +	((unsigned long *)optprobe_template_restore_end - (unsigned long *)optprobe_template_entry)
+>  
+>  /*
+>   * ARM can always optimize an instruction when using ARM ISA, except
+> @@ -234,7 +234,7 @@ int arch_prepare_optimized_kprobe(struct optimized_kprobe *op, struct kprobe *or
+>  	}
+>  
+>  	/* Copy arch-dep-instance from template. */
+> -	memcpy(code, (unsigned long *)&optprobe_template_entry,
+> +	memcpy(code, (unsigned long *)optprobe_template_entry,
+>  			TMPL_END_IDX * sizeof(kprobe_opcode_t));
+>  
+>  	/* Adjust buffer according to instruction. */
+> 
+> -- 
+> Kees Cook
+
+
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
