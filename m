@@ -2,130 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 598871D7301
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 10:32:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B38E31D732E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 10:45:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8hb4FVRIdSNIhTn+Ccc/MOM7J7CgmHmg/I/zl4FYU4=; b=AQOWhHH/txwT2Y
-	1Qchx3Ljvi6+dtn08GvHp2+T8jk5xUQlYZinkunhOU0fg81cPYIt6NlWCHjUeQghOFTl2tYwC+kTo
-	zjUuaaN8trpotlNXIK+OpV5f+QOd4R2EpvAXpEHT+C5/wyKOdEKh7G5w0HNXd5y3FInRYdUcRq0HW
-	79G4fR7zKsD6RVS7D7bGOOZorUsITgHH2URMMP9tcnMrXW35mGIG1kxmdl4G6yFisQhS8DD+ESGmi
-	I1arJYJNyAvznKy1iwYTGu/YFNr2Fvm+OoL+nylKi97lHuEpmKcVa59HNoNQcnAh810jxskEFNxx3
-	I0+aJM93DtjgGzZYKsXA==;
+	List-Owner; bh=lTz0JpT1FE/HOp7EmYk1HEleclv1t+ASkEQ2h3rr6d8=; b=ZqSBHIPY9fezXL
+	g+ufNy9Qen3mMU0eQzRwYMw/F8fmWCjud6CiVTrhgyyawVX/D1gV2Fv+XdF+WR0rEXNQR6bRJuv4E
+	qu214FpgLTwe+qndKOe5dwWXh42gP05+kAPWhUiaoa+/P0z+m8AOhVPS8EPcMQ3sX4Sdmr38aMtKa
+	HrYxMcgxP0qgTpCJ4y/jQLaaMY7QkVXgULg8lotjS3cjnOXGup1LVcQDcFMXcr/iUpI2vq3sw2Dhp
+	ago9NKJdDJmEF9rECqulXR+f4ssaezwYCtSygzSwG610koVtQh8+sBCkkKXc4nYh0wUuEJKTwZWTy
+	HmL2Jq8+rMzdvUzT84IA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jabCJ-00068F-M7; Mon, 18 May 2020 08:32:31 +0000
-Received: from mx0b-00128a01.pphosted.com ([148.163.139.77])
+	id 1jabOe-0003ex-Vo; Mon, 18 May 2020 08:45:17 +0000
+Received: from mail-eopbgr80088.outbound.protection.outlook.com ([40.107.8.88]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jabC9-00067Y-Oe
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 08:32:24 +0000
-Received: from pps.filterd (m0167091.ppops.net [127.0.0.1])
- by mx0b-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04I8Tc9Z014680; Mon, 18 May 2020 04:32:14 -0400
-Received: from nam11-bn8-obe.outbound.protection.outlook.com
- (mail-bn8nam11lp2176.outbound.protection.outlook.com [104.47.58.176])
- by mx0b-00128a01.pphosted.com with ESMTP id 313ca0h7wt-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 18 May 2020 04:32:14 -0400
+ id 1jabOM-0003eK-49
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 08:44:59 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=c79YWHvnB51Vr3X8l9gUqHk/PLCf4XAAGMTcDBKbWJXNbps4I65u3GH0R7MhQTdQgyg+BrOFV59IQyXICZl8wqT6qen5fcXqrhIv8HUFpkMskaB9weN0pQgv34A57cykCR0DU+NXiZrWz5MD8KbnwQ7txuUqVhHbEePxtRGsDs33TAGBflzPjmCeqyoENcgplHH8t80EUOvhhQrVIxwv/FEAMiQ8e5HJe7+jnmd8dOTTi+vGkcW6ntwGABkPfFSZMSjk2vghLqDQwGKRd+DoGwPcLX2Ggeb2vwd4s8lJflNaLAZcPTb4w8rra8gZ4Ra03jhYch7wBRuaRmwzBulU0Q==
+ b=L59aOvSnuc2MU3qFmetZR/9uq71ocJetFeAcNpSLTDvW8hbnsQ/AISnokEFCjaIfN/V9SR5P1J/zPVZqJnoxZOYzDU7The3RBixzKPwzxQcz7Eh9ckQRHGRDOx4DPoeshFSOOV48Pa4m4ODScpz/OfXRaK68zVa7ie/3GDlxK9p6zLVes1mxLnFvke19j3fHa7HGkbalLJriG0ehp4/wCbBROhhLNZPYlHMqSCrHoYXdaj7YzHINwlONsDdNPQt+P3fo0GIpNjscKJCN5O4DBoW8KVO+uKNbkZF30S9atN8Z5M8Q3GQDbp3ZyLVnST/1SwuXAsw+zSE1cnMIqNDctA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1OWym3pZhKX9DjO94+9ky8/RS5aMQBt3sCj1e4fXWDI=;
- b=lzOkB3fT0dyTe95YR7u1PT7Yz17OHHL+wZteCL3EVn7zoiNFKeD2vZ32WBqmQ3R115YAX4pqrwAHCKfcp56sUlWXamcCukRTSBRH2wS8YLxpW2efGZOP9wl+vqAlWm1qFpLCJiMONtN+rTqotMvDkIi/Itf8SdHlKWy4LPqZ395fMJ2CTVlNw5a+QxT75Wj4dSM7mWmHe2Jd1JjxyjM+iFH+I5LCbSErhwE5kbNBmTLs3hKVR4KrBj5K3FsVgwJINK+FiCI9GXDNdDSmt82yesE1kc9QfrW1nwXKw2mQi5ClXJHdvDy9T3ro2vwLs/UuOgs/y3KVQVmyr0i5z8fe4A==
+ bh=A4ZfTzF/VHX/IxAp6Vy5mJRh5UMjYzxVxmkiyD/9tOU=;
+ b=Ou3H/rPIlcrrE4zTw476RYEX24Yum+YAWa1++jRqRF6S56MDrUk7AKq7EhPPFEoxuElhFfkDiEAc8VWO04Cx/PVondNrqr3NYE0dkDeVb+NOvqHAXNv6k68Zae7+ZzEbUKly1bcexuLOtgNHnsvMUGLDP/S10Kqqt8G5Z0MWm2oMTM9BNgjkm9VXAyXNVvhi7IbUS/787b9u7Q55T2qFkYscxswgBu4SDZMdSo7bBwYXkQicIUhFc6BED+UwTTlOjR5fd/MKANUtis7WKlbvHhcshOxCZy0u1uV0Grle34tgGGvikhc95yvwrk5PoTQDcpzMiFHAYXZ9ZX99nqHhYg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=analog.com; dmarc=pass action=none header.from=analog.com;
- dkim=pass header.d=analog.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=analog.onmicrosoft.com; s=selector2-analog-onmicrosoft-com;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=1OWym3pZhKX9DjO94+9ky8/RS5aMQBt3sCj1e4fXWDI=;
- b=lg548RzVrE/UY81LZJ6mOT4UAEbPliuDeZDkCPQ41cKIGoabzCjXSbJgyD/eSPxBYEOumSfjq+4heR0cnBm7YscOkut1UvJy6yBfzyWfkwvUBrAcc95VlJDR+fZ6KHNFvBkM4N5dL1/j4DKoUXii+1Ehb0YSor2+VX9PGBWZpG0=
-Received: from DM6PR03MB4411.namprd03.prod.outlook.com (2603:10b6:5:10f::14)
- by DM6PR03MB4635.namprd03.prod.outlook.com (2603:10b6:5:15d::32) with
+ bh=A4ZfTzF/VHX/IxAp6Vy5mJRh5UMjYzxVxmkiyD/9tOU=;
+ b=gNzsaVy44biKuHZsoqjv5JpDNTYHje4oveKdrw0ovpsgok0sTLWUU+99y21jrWlHRGA1VijF9quD1OKOljOSISwg5kSrWTTdhuIENeR3KXqOC7TjH4nnmjLXKEJmmVnNGZgM2PI/pM37XmCHef38LwLX5dwAXqo9XE6G2YpdHe4=
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
+ by AM6PR04MB4120.eurprd04.prod.outlook.com (2603:10a6:209:4b::11) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.25; Mon, 18 May
- 2020 08:32:12 +0000
-Received: from DM6PR03MB4411.namprd03.prod.outlook.com
- ([fe80::e02f:b3c0:d1e9:5eaf]) by DM6PR03MB4411.namprd03.prod.outlook.com
- ([fe80::e02f:b3c0:d1e9:5eaf%3]) with mapi id 15.20.3000.034; Mon, 18 May 2020
- 08:32:12 +0000
-From: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
-To: "jic23@kernel.org" <jic23@kernel.org>
-Subject: Re: [PATCH v2 3/8] iio: at91_adc: pass ref to IIO device via param
- for int function
-Thread-Topic: [PATCH v2 3/8] iio: at91_adc: pass ref to IIO device via param
- for int function
-Thread-Index: AQHWKfIbMZtFzYSRw02DR0rPoi4Ajqiq9/SAgAKRzAA=
-Date: Mon, 18 May 2020 08:32:11 +0000
-Message-ID: <99993df0dce7f7561e9659985265d6c1f5839208.camel@analog.com>
-References: <20200514131710.84201-1-alexandru.ardelean@analog.com>
- <20200514131710.84201-4-alexandru.ardelean@analog.com>
- <20200516181749.243c9515@archlinux>
-In-Reply-To: <20200516181749.243c9515@archlinux>
-Accept-Language: en-US
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.31; Mon, 18 May
+ 2020 08:44:54 +0000
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3000.033; Mon, 18 May 2020
+ 08:44:54 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH 1/2] ARM: dts: imx6qdl: Use nvmem interface to get fuse
+ data
+Thread-Topic: [PATCH 1/2] ARM: dts: imx6qdl: Use nvmem interface to get fuse
+ data
+Thread-Index: AQHWKY2Nff+uSdQzb0mgNHq+guQUhKitiANA
+Date: Mon, 18 May 2020 08:44:54 +0000
+Message-ID: <AM6PR04MB49665A2E7AB525E8C7627F1180B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
+References: <1589418528-26410-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1589418528-26410-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: zh-CN, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-authentication-results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=analog.com;
-x-originating-ip: [137.71.226.54]
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
 x-ms-publictraffictype: Email
 x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 9c72f8cf-48f5-4a6d-755c-08d7fb05f63d
-x-ms-traffictypediagnostic: DM6PR03MB4635:
-x-microsoft-antispam-prvs: <DM6PR03MB4635111A0019A8DA1DC71A0AF9B80@DM6PR03MB4635.namprd03.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-ms-office365-filtering-correlation-id: 18c88c78-f904-41f2-8600-08d7fb07bcea
+x-ms-traffictypediagnostic: AM6PR04MB4120:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM6PR04MB41203724686B91EAAF41241080B80@AM6PR04MB4120.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1751;
 x-forefront-prvs: 04073E895A
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: IbhnqQWfpQvncB9jOW4KEAQaG9Nu6zlIbP8L6sn5wwc0J8vcZqPSVWk9m8LKdUeBj5KKrPLK2OcWP773wreRJ3bXyduNGvdQog2gyWf3f9EJbGFK4vWPJJGb641H43y7L0LEfXeRl8IG4QLRqWidfETs0cIHbJZL5IBAtkoHTElpF6zbqfJsrx5DxOUd19Bwioz+fEfswhKWawE0OqtCQaySopKrv5O9r3OTmcj76TEdjo1FyowmItLB1w1IP8JhD0hFXBq8PTLukpk+DAwguXCYLga1dFN5MMYSABrJ60CUDGB6FlMFQ+r52uuDDjNkXDd0C043pMHf5B47Jl4saEBP/cSctpxnwzUhbjS/AQowBMLtEhzkZ1upNX/rKRoDfDIpfPxgbIsmGqeM9IIUCaQiqe1GlB3fwLANdbVrn24LL5t3NIkBjwXWjbNeiNom
+x-microsoft-antispam-message-info: p+kgXgWdX7I7gtmm3DGz0jGn5EDxyNtKCr4OsYJHr0f55wykoR2reJcdkejCkdrqthLBvCEcn6xpC+FjwOYCTaWD1MDjgnzFh3UqJy9tmfzgl0HYHeX5i1m7Ph5wPweiwmS0ia2tcmlk7ERm9miSsi2tAvr0nLuHOevDAwA+FvmuIDglF+cqkb9DowSxTYShZ8+C39YlCcQ2Np2pKLDvLwi8B0OTfJ4k3bIhugRE87n8KqGkVWSYfLxjfzmMRcAQjlZQNFuOQnyTJ7aAfsxo8KSMciJXc6lnbCL01NfYT1EpM+TAHDFL/SX6sHO1i7hTcGxTUrFgqeGLWZt1mc8doE4AopiteEBx+eensFcibvORZveZHnMPXMjkGd+fde5Iuj62gsaKTtc4IS09ZDD34XAq8K7PYmmW9OdqlflhO+2gjtEMUry4HfvOo42Mj5Et4A4BMRmLdl4/+QN2adc4AkSQXT2Y6aauj3rTTnq6xET8B6sfskJ368K2rTUmjx1Z
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM6PR03MB4411.namprd03.prod.outlook.com; PTR:; CAT:NONE;
+ IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(396003)(136003)(366004)(39860400002)(346002)(376002)(8676002)(478600001)(6506007)(186003)(6512007)(66446008)(64756008)(66556008)(8936002)(6916009)(26005)(66476007)(86362001)(36756003)(66946007)(5660300002)(54906003)(2906002)(2616005)(4326008)(91956017)(7416002)(71200400001)(76116006)(316002)(6486002);
+ SFS:(4636009)(396003)(39860400002)(136003)(376002)(346002)(366004)(66556008)(64756008)(66446008)(66476007)(76116006)(66946007)(86362001)(5660300002)(7696005)(478600001)(4326008)(2906002)(8676002)(6506007)(8936002)(55016002)(44832011)(71200400001)(9686003)(52536014)(26005)(186003)(110136005)(316002)(33656002)(4744005)(32563001);
  DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: 87A/NcRrfy54lXDV0O4VuMevKjtUJqF8Xq9n0aSod9XMoMKpoZFXzd4f3C/b+dCZIB9Zd7NoELMQjDn4wm6pbZkl0XjNoBAwXg4jwf1X5PyE2WmBsYKrblxwd9RhdudScTFh/c6PzhiNL2nmx5AbucwjjGjCKn6DcuXTt7MXbN2hfTfMniArV0Ot+n1ASjZlo9mTkuGkBlvCSwAS60SEYAD+UpwwKlvLaEYgN/ZZtB+UhTcQZ2B5SpKPOlMrChVx3ORmZdCsseEnOWkyZEAmbEqRLhTcY4J1POes7SQEbLGj242+KVSDxPwHViX9nzYFZgSaYyTK48bbQWtikeh/LtkPYkzV1Nwx6d4b/HfUBdv8rrTs71WEF+BkJyNB87BBwW+c11gD6q1NfFQlri6AEMERC4V3FkdZpEG/U17EkC76JOYTLYmh1MK05Fn/zp+OV5x6df2s3BEqqOwu04sxlu3pnUJc4CEAYRlSQJ66IB8=
-x-ms-exchange-transport-forked: True
-Content-ID: <6EB7D248FB59784192EBA145EDAE02D5@namprd03.prod.outlook.com>
+x-ms-exchange-antispam-messagedata: irXoVF3U9ugrN9aSpekwU+39eBrO5Rsht4q9YOE8fhX2wtj32S+KWR7UyFP0/e9t6TAlKASb8Q+mYYm6nLfPlnhzwjO50tCBv1Bp+Zq/3l2fmmhJgqEE1h/f67oJkbk2LVl8yp09stIChx/PraBDWMkfQTGG+VwXucRnGJV2uAHbjtucD1XRHEQ9jcOfheB81T53O0Uq6xpVeRUtHh/68vlQxGPmDD9fcMzyP0wtu0UziFRsmfW2iUVMDirvuoPfSle05tvSyCb5KSGyqdJPFJLYRz+aiRXdQXUW9chgAQ9vnnYz3pxTyWjU+xf/9UAO+EUs5tz4vrRofJGhOVjuuZxelbp76kM0DClzCxbPNo6DMQ85zUgKFZPp7fzbLD4bs+3HFro8tCUrw1d9JmshoTTG8tg7rLZer6PqTTM1ili0GHGaa8vyJi6sVsFBgGIBJVhbcHoUoiNHK8QvTJB6Am3Lwa6m+KtZupeXBVYMJgCuZmcOeEPt05iWL9zhocRn
 MIME-Version: 1.0
-X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9c72f8cf-48f5-4a6d-755c-08d7fb05f63d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2020 08:32:11.9216 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 18c88c78-f904-41f2-8600-08d7fb07bcea
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2020 08:44:54.7894 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: nj+rH+bwdNhlERhnmz9wNQ4vBRVXEAYf8Nid+g409qo/ka2stilLyH/nQuzML6b4Ll5yRWhf/f1udd3SEb3JEez8KpEEcBA6PgxJFZAyfv8=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR03MB4635
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-18_03:2020-05-15,
- 2020-05-18 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 mlxlogscore=999
- mlxscore=0 cotscore=-2147483648 clxscore=1015 priorityscore=1501
- phishscore=0 suspectscore=0 lowpriorityscore=0 impostorscore=0
- malwarescore=0 adultscore=0 bulkscore=0 classifier=spam adjust=0
- reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2005180078
+X-MS-Exchange-CrossTenant-userprincipalname: 8j7ipcIEMuya2Qk8vAS0Z6gHv/Ldky+h9no9owKdyzwy6KhXbuZbI9T1TwONkg0vMrJs0hQXteAqvAaezX/6bA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4120
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_013221_922804_12E69A2B 
-X-CRM114-Status: GOOD (  24.68  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200518_014458_164581_314923B1 
+X-CRM114-Status: UNSURE (   8.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.139.77 listed in list.dnswl.org]
+ low trust [40.107.8.88 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.8.88 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -138,93 +131,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "ak@it-klinger.de" <ak@it-klinger.de>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "eugen.hristev@microchip.com" <eugen.hristev@microchip.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 2020-05-16 at 18:17 +0100, Jonathan Cameron wrote:
-> [External]
+> From: Anson Huang <Anson.Huang@nxp.com>
+> Sent: Thursday, May 14, 2020 9:09 AM
 > 
-> On Thu, 14 May 2020 16:17:05 +0300
-> Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
+> Although ocotp clock is always ON for i.MX6QDL, OCOTP can be accessed
+> directly, but since i.MX6QDL nvmem interface is supported, and
+> fsl,tempmon-data is deprecated, use it instead of getting fuse data by reading
+> ocotp directly, this makes all i.MX6 SoCs aligned.
 > 
-> > Since there will be some changes to how iio_priv_to_dev() is implemented,
-> > it could be that the helper becomes a bit slower, as it will be hidden away
-> > in the IIO core.
-> > 
-> > For this driver, the IIO device can be passed directly as a parameter to
-> > the at91_ts_sample() function, thus making it immune to the change of
-> > iio_priv_to_dev().
-> > The function gets called in an interrupt context.
-> > 
-> > Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-> I wonder. Should we just pass the struct device?  It's only used for
-> error printing I think, so we could make that explicit.
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-I was also thinking that for this series, [for some drivers] it would make sense
-to put a reference to indio_dev on the state-struct; and just return it.
-I'll see about it.
-I am feeling that sometimes these IIO core cleanups end up being more than I
-want to do. But I'll try to see about it. Maybe I can make time or delegate some
-of this.
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 
-My personal interest with them, is to reduce my complaints during reviews.
-People starting to write IIO drivers: well, I can see their frustration [on
-their faces] when I complain that they shouldn't use something, and they copied
-it from somewhere.
-
-
-> 
-> I'm not that bothered either way though.
-> 
-> Jonathan
-> 
-> > ---
-> >  drivers/iio/adc/at91_adc.c | 5 ++---
-> >  1 file changed, 2 insertions(+), 3 deletions(-)
-> > 
-> > diff --git a/drivers/iio/adc/at91_adc.c b/drivers/iio/adc/at91_adc.c
-> > index 0368b6dc6d60..5999defe47cd 100644
-> > --- a/drivers/iio/adc/at91_adc.c
-> > +++ b/drivers/iio/adc/at91_adc.c
-> > @@ -287,13 +287,12 @@ static void handle_adc_eoc_trigger(int irq, struct
-> > iio_dev *idev)
-> >  	}
-> >  }
-> >  
-> > -static int at91_ts_sample(struct at91_adc_state *st)
-> > +static int at91_ts_sample(struct iio_dev *idev, struct at91_adc_state *st)
-> >  {
-> >  	unsigned int xscale, yscale, reg, z1, z2;
-> >  	unsigned int x, y, pres, xpos, ypos;
-> >  	unsigned int rxp = 1;
-> >  	unsigned int factor = 1000;
-> > -	struct iio_dev *idev = iio_priv_to_dev(st);
-> >  
-> >  	unsigned int xyz_mask_bits = st->res;
-> >  	unsigned int xyz_mask = (1 << xyz_mask_bits) - 1;
-> > @@ -449,7 +448,7 @@ static irqreturn_t at91_adc_9x5_interrupt(int irq, void
-> > *private)
-> >  
-> >  		if (status & AT91_ADC_ISR_PENS) {
-> >  			/* validate data by pen contact */
-> > -			at91_ts_sample(st);
-> > +			at91_ts_sample(idev, st);
-> >  		} else {
-> >  			/* triggered by event that is no pen contact, just read
-> >  			 * them to clean the interrupt and discard all.
+Regards
+Aisheng
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
