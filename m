@@ -2,58 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2DFE1D7589
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 12:48:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE3651D75A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 12:53:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BJlpEif2mghM/lQud5Q4FAsnoH3eUhCrOzBXOyMcoAA=; b=WuwzF6hIpj+zhr3Prb/8nQX00
-	RZm9WcKKLDvpTtXfYHu5gw8RorCc2A9oXYse4LOmZf0FzOhrWTQs/8FlxMWeEVFgmgLrBS9n1E/yB
-	0s3RZQ4pHUBV093zhapB1B17cHc42xZ4hwmZKqdbhDDmsE+dGC6nGPnLrc2ZoFfJG6bKi9bKaV+4s
-	at2GV1yxBjiJV5idiN5MWw92q1yAQ8rxXDUHgMQdiSj5P4p4FH0h16gtIoAiNaULBa5TAfrBGEKSg
-	mYIN8ADl1xQSYm7otV7w57bdoV4reg88QPRvtKajTMtWNuHZNtJNmPdnZTFRC9p4usPno5IZN1hEq
-	E+n0sR2Wg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=el0bG66PCMzQM679jkHFwZ1QQfPrShN/F5uomQZvZxw=; b=UwH8zrZaXev4qk
+	Q5bbficedQKx+I3xEeWoAe+f2DVuLxn/I923EjYlX0mbkc5ERDqFfjmT1WTKRFJJfOe8qauMb6E6N
+	a11IMxdE80z3de3OXy5kfKGZ1vy08IihSXEeH33qBF33Ac3A5oMDtO/sKCwN53hxRmJqrsyX4nCp4
+	LBQHjdS7W4tM9XhQSIuw3Ne+yowyHldyhw2lVqufj7JGIzbasjGDprvuox48yYF0PuQozcEnSvzRs
+	FE93o09rOP8v2pKbaoNY1mV1Dan52zZ9J6t2pHWzuS6DFIjbMwzK06gBTUhGWNpX+Wfb/cWqv4z/y
+	moHTdfP68VrNf5VBO6uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jadJt-0001lL-D6; Mon, 18 May 2020 10:48:29 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jadP7-0004sd-PA; Mon, 18 May 2020 10:53:53 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jadJk-0001kV-Gn
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 10:48:22 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 849C52A04C1
-Subject: Re: [PATCHv2 0/7] Support inhibiting input devices
-To: Hans de Goede <hdegoede@redhat.com>, linux-input@vger.kernel.org,
- linux-acpi@vger.kernel.org, linux-iio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-tegra@vger.kernel.org, patches@opensource.cirrus.com,
- ibm-acpi-devel@lists.sourceforge.net, platform-driver-x86@vger.kernel.org
-References: <20200506002746.GB89269@dtor-ws>
- <20200515164943.28480-1-andrzej.p@collabora.com>
- <842b95bb-8391-5806-fe65-be64b02de122@redhat.com>
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Message-ID: <e6030957-97dc-5b04-7855-bc14a78164c8@collabora.com>
-Date: Mon, 18 May 2020 12:48:11 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jadOz-0004rP-7d
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 10:53:47 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04IAqpKn026437; Mon, 18 May 2020 12:53:32 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=date : from : to : cc :
+ subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=STMicroelectronics;
+ bh=hYr/Z/iJo/s19A9RchK0rY3q7SlsXVvKYRI52EdpnXw=;
+ b=NCJGs8JUFONHamPapy20sfh1fVkO6XQyHiQSd4/xROmPage7ADLZqklwszMqpqsVgwxA
+ lMqc4bG5glGFxTXrs1Iir6on5eImHx+BjlfkdAo1fBRN9CiiiURGpiHRgNeAoGI23/2z
+ r48D7xnVP9cQPfjtXi+e132cpzaM3YlI4nxDjTOmqp54tvlcjhIutScTFDq+hGRco6kT
+ eK/8hqBMdmUSqVmg5+ZyRAvqO1jR2WB/wkcfL6y54LAkGAGLipPUMcsR2+UE99FAGL6N
+ PE8SJaqn+1OU3VoUlxzX/G1s72TlsPhNh7D3FT1XHGQt9tQq7YL+Zke3zDzz4WLA4zIs gg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3125a93cjj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 18 May 2020 12:53:32 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2AF8410002A;
+ Mon, 18 May 2020 12:53:32 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 150562AEF19;
+ Mon, 18 May 2020 12:53:32 +0200 (CEST)
+Received: from gnbcxd0016.gnb.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 18 May
+ 2020 12:53:31 +0200
+Date: Mon, 18 May 2020 12:53:26 +0200
+From: Alain Volmat <alain.volmat@st.com>
+To: Rob Herring <robh@kernel.org>, "wsa@kernel.org" <wsa@kernel.org>
+Subject: Re: [PATCH 3/4] dt-bindings: i2c-stm32: add SMBus Alert bindings
+Message-ID: <20200518105326.GA3267@gnbcxd0016.gnb.st.com>
+Mail-Followup-To: Rob Herring <robh@kernel.org>,
+ "wsa@kernel.org" <wsa@kernel.org>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Pierre Yves MORDRET <pierre-yves.mordret@st.com>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, 
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>, 
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Fabrice GASNIER <fabrice.gasnier@st.com>
+References: <1588657871-14747-1-git-send-email-alain.volmat@st.com>
+ <1588657871-14747-4-git-send-email-alain.volmat@st.com>
+ <20200513021932.GA9172@bogus>
+ <20200513054231.GA16558@gnbcxd0016.gnb.st.com>
 MIME-Version: 1.0
-In-Reply-To: <842b95bb-8391-5806-fe65-be64b02de122@redhat.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200513054231.GA16558@gnbcxd0016.gnb.st.com>
+X-Disclaimer: ce message est personnel / this message is private
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-18_04:2020-05-15,
+ 2020-05-18 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_034820_691917_5A576E89 
-X-CRM114-Status: GOOD (  18.97  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200518_035345_806611_EB75F27C 
+X-CRM114-Status: GOOD (  22.43  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,68 +112,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nick Dyer <nick@shmanahar.org>, Benjamin Tissoires <btissoir@redhat.com>,
- Laxman Dewangan <ldewangan@nvidia.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, Lars-Peter Clausen <lars@metafoo.de>,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>, Len Brown <lenb@kernel.org>,
- Peter Hutterer <peter.hutterer@redhat.com>,
- Michael Hennerich <michael.hennerich@analog.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
- Vladimir Zapolskiy <vz@mleia.com>, Barry Song <baohua@kernel.org>,
- Ferruh Yigit <fery@cypress.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
- Jonathan Cameron <jic23@kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Pierre Yves MORDRET <pierre-yves.mordret@st.com>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Fabrice GASNIER <fabrice.gasnier@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSGFucywKClcgZG5pdSAxNS4wNS4yMDIwIG/CoDIwOjE5LCBIYW5zIGRlIEdvZWRlIHBpc3pl
-Ogo+IEhpIEFuZHJlemosCj4gCj4gT24gNS8xNS8yMCA2OjQ5IFBNLCBBbmRyemVqIFBpZXRyYXNp
-ZXdpY3ogd3JvdGU6Cj4+IFVzZXJzcGFjZSBtaWdodCB3YW50IHRvIGltcGxlbWVudCBhIHBvbGlj
-eSB0byB0ZW1wb3JhcmlseSBkaXNyZWdhcmQgaW5wdXQKPj4gZnJvbSBjZXJ0YWluIGRldmljZXMs
-IGluY2x1ZGluZyBub3QgdHJlYXRpbmcgdGhlbSBhcyB3YWtldXAgc291cmNlcy4KPj4KPj4gQW4g
-ZXhhbXBsZSB1c2UgY2FzZSBpcyBhIGxhcHRvcCwgd2hvc2Uga2V5Ym9hcmQgY2FuIGJlIGZvbGRl
-ZCB1bmRlciB0aGUKPj4gc2NyZWVuIHRvIGNyZWF0ZSB0YWJsZXQtbGlrZSBleHBlcmllbmNlLiBU
-aGUgdXNlciB0aGVuIG11c3QgaG9sZCB0aGUgbGFwdG9wCj4+IGluIHN1Y2ggYSB3YXkgdGhhdCBp
-dCBpcyBkaWZmaWN1bHQgdG8gYXZvaWQgcHJlc3NpbmcgdGhlIGtleWJvYXJkIGtleXMuIEl0Cj4+
-IGlzIHRoZXJlZm9yZSBkZXNpcmFibGUgdG8gdGVtcG9yYXJpbHkgZGlzcmVnYXJkIGlucHV0IGZy
-b20gdGhlIGtleWJvYXJkLAo+PiB1bnRpbCBpdCBpcyBmb2xkZWQgYmFjay4gVGhpcyBvYnZpb3Vz
-bHkgaXMgYSBwb2xpY3kgd2hpY2ggc2hvdWxkIGJlIGtlcHQKPj4gb3V0IG9mIHRoZSBrZXJuZWws
-IGJ1dCB0aGUga2VybmVsIG11c3QgcHJvdmlkZSBzdWl0YWJsZSBtZWFucyB0byBpbXBsZW1lbnQK
-Pj4gc3VjaCBhIHBvbGljeS4KPiAKPiBBY3R1YWxseSBsaWJpbnB1dCBhbHJlYWR5IGJpbmRzIHRv
-Z2V0aGVyIChpbnNpZGUgbGliaW5wdXQpIFNXX1RBQkxFVF9NT0RFCj4gZ2VuZXJhdGluZyBldmRl
-diBub2RlcyBhbmQgZS5nLiBpbnRlcm5hbCBrZXlib2FyZHMgb24gZGV2aWNlcyB3aXRoIDM2MMKw
-Cj4gaGluZ2VzIGZvciB0aGlzIHJlYXNvbi4gbGliaW5wdXQgc2ltcGx5IGNsb3NlcyB0aGUgL2Rl
-di9pbnB1dC9ldmVudCMKPiBub2RlIHdoZW4gZm9sZGVkIGFuZCByZS1vcGVucyBpdCB3aGVuIHRo
-ZSBrZXlib2FyZCBzaG91bGQgYmVjb21lIGFjdGl2ZQo+IGFnYWluLiBUaHVzIG5vdCBvbmx5IHN1
-cHByZXNzZXMgZXZlbnRzIGJ1dCBhbGxvd3MgZS5nLiB0b3VjaHBhZHMgdG8KPiBlbnRlciBydW50
-aW1lIHN1c3BlbmQgbW9kZSB3aGljaCBzYXZlcyBwb3dlci4gVHlwaWNhbGx5IGNsb3NpbmcgdGhl
-Cj4gL2Rldi9pbnB1dC9ldmVudCMgbm9kZSB3aWxsIGFsc28gZGlzYWJsZSB0aGUgZGV2aWNlIGFz
-IHdha2V1cCBzb3VyY2UuCj4gCj4gU28gSSB3b25kZXIgd2hhdCB0aGlzIHNlcmllcyBhY3R1YWxs
-eSBhZGRzIGZvciBmdW5jdGlvbmFsaXR5IGZvcgo+IHVzZXJzcGFjZSB3aGljaCBjYW4gbm90IGFs
-cmVhZHkgYmUgYWNoaWV2ZWQgdGhpcyB3YXk/Cj4gCj4gSSBhbHNvIG5vdGljZWQgdGhhdCB5b3Ug
-a2VlcCB0aGUgZGV2aWNlIG9wZW4gKGRvIG5vdCBjYWxsIHRoZQo+IGlucHV0X2RldmljZSdzIGNs
-b3NlIGNhbGxiYWNrKSB3aGVuIGluaGliaXRlZCBhbmQganVzdCB0aHJvdyBhd2F5CgpJJ20gbm90
-IHN1cmUgaWYgSSB1bmRlcnN0YW5kIHlvdSBjb3JyZWN0bHksIGl0IGlzIGNhbGxlZDoKCitzdGF0
-aWMgaW5saW5lIHZvaWQgaW5wdXRfc3RvcChzdHJ1Y3QgaW5wdXRfZGV2ICpkZXYpCit7CisJaWYg
-KGRldi0+cG9sbGVyKQorCQlpbnB1dF9kZXZfcG9sbGVyX3N0b3AoZGV2LT5wb2xsZXIpOworCWlm
-IChkZXYtPmNsb3NlKQorCQlkZXYtPmNsb3NlKGRldik7CiAgICAgICAgICAgICAgICAgXl5eXl5e
-Xl5eXl5eXl5eXgorc3RhdGljIGludCBpbnB1dF9pbmhpYml0KHN0cnVjdCBpbnB1dF9kZXYgKmRl
-dikKK3sKKwlpbnQgcmV0ID0gMDsKKworCW11dGV4X2xvY2soJmRldi0+bXV0ZXgpOworCisJaWYg
-KGRldi0+aW5oaWJpdGVkKQorCQlnb3RvIG91dDsKKworCWlmIChkZXYtPnVzZXJzKSB7CisJCWlm
-IChkZXYtPmluaGliaXQpIHsKKwkJCXJldCA9IGRldi0+aW5oaWJpdChkZXYpOworCQkJaWYgKHJl
-dCkKKwkJCQlnb3RvIG91dDsKKwkJfQorCQlpbnB1dF9zdG9wKGRldik7CiAgICAgICAgICAgICAg
-ICAgXl5eXl5eXl5eXl5eXl5eXgoKSXQgd2lsbCBub3QgYmUgY2FsbGVkIHdoZW4gZGV2LT51c2Vy
-cyBpcyB6ZXJvLCBidXQgaWYgaXQgaXMgemVybywKdGhlbiBub2JvZHkgaGFzIG9wZW5lZCB0aGUg
-ZGV2aWNlIHlldCBzbyB0aGVyZSBpcyBub3RoaW5nIHRvIGNsb3NlLgoKQW5kcnplagoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Gentle Reminder, as I wrote in my previous responce, smbus_alert interrupt
+refers to an host and not a client. And since we do not have a dedicated
+irq for smbus_alert, I propose to add this st, binding to enable the
+smbus_alert mechanism.
+
+On Wed, May 13, 2020 at 07:42:31AM +0200, Alain Volmat wrote:
+> Hello Rob,
+> 
+> On Wed, May 13, 2020 at 02:19:32AM +0000, Rob Herring wrote:
+> > On Tue, May 05, 2020 at 07:51:10AM +0200, Alain Volmat wrote:
+> > > Add a new binding of the i2c-stm32f7 driver to enable the handling
+> > > of the SMBUS-Alert
+> > > 
+> > > Signed-off-by: Alain Volmat <alain.volmat@st.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml | 4 ++++
+> > >  1 file changed, 4 insertions(+)
+> > > 
+> > > diff --git a/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml b/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
+> > > index b50a2f420b36..04c0882c3661 100644
+> > > --- a/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
+> > > +++ b/Documentation/devicetree/bindings/i2c/st,stm32-i2c.yaml
+> > > @@ -36,6 +36,10 @@ allOf:
+> > >                  minItems: 3
+> > >                  maxItems: 3
+> > >  
+> > > +        st,smbus-alert:
+> > > +          description: Enable the SMBus Alert feature
+> > > +          $ref: /schemas/types.yaml#/definitions/flag
+> > > +
+> > 
+> > We already have smbus_alert interrupt. Can't you just check for this in 
+> > the slave nodes and enable if found?
+> 
+> My understanding reading the code (smbalert_probe within i2c-smbus.c, of_i2c_setup_smbus_alert called when
+> registering an adapter within i2c-core-smbus.c) is that smbus_alert refers to an interrupt on the
+> adapter side. That is an interrupt that would be triggered when the adapter is receiving an smbus_alert
+> message.
+> In our case (stm32f7), we do not have specific interrupt for that purpose. The interrupt triggered when
+> an SMBUS Alert is received (by the adapter) is the same interrupt as for other reasons and we check
+> within the irq handler within stm32f7 the reason before calling i2c_handle_smbus_alert if the status
+> register indicated an SMBUS Alert.
+> So my understanding is that we cannot rely on the mechanism of naming an interrupt smbus_alert.
+> Did I misunderstood something ?
+> 
+> > 
+> > >    - if:
+> > >        properties:
+> > >          compatible:
+> > > -- 
+> > > 2.17.1
+> > > 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
