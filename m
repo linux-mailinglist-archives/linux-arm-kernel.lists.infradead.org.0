@@ -2,80 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C08331D7AED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 16:19:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA3481D7AF5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 16:20:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q/ddA6yjWTP9iiH0gQZ0UOZHnqhxzCJcTyrst6etUR8=; b=Z4PdF75t/9tfvv
-	N9ZMMfujCw21bv9ZNqmgx0FAyLOhm0bw1PdHMchHUS3m6W6BuSkO90wg8c30iXGm2+hZAS7z/P/sF
-	K0ErCbObrlH/AN2IBVyBo/9+wxq2y8Gb4yjb8xqxRX6vKvTEpNmQ575fLhAmDunOagMROCHUkNrXY
-	A3D0lytthkMLCiqXBHfYXzSG5dTyklFB5QQEbILp0VT9ceshqWQotHAJ3K54n+InXAPO0WAcmWLwX
-	QPsvV1h4RygnEmZIe8PNE2J0EMnwksIEsvVNZW79/svBa4Lg+wrZbsT+tKcfZlQy217SNfVCDi2Fp
-	wbXI9SYttvheTKHcX8Ow==;
+	List-Owner; bh=u6R2KIyLedrE67HJUInEZNblx4Yn4jV8/zZ1psfad08=; b=MT3AcrYfACeSdV
+	OhUZ/JMG+irb0RBO1tPo7SI3dTtke6pey9szwAS5G7Vk0BxM9jrn/WpjE8Yb64Jnbvpf9tFFIRiCt
+	JLkdKfCABCybe4yfUPKRbJeKPJ33IVm9pj0l/kA5Xz0S3okxEXLo4tBUCk7yVTjJDRWBXqKNSkQ56
+	ZqsS37jy0zLuvkVRpHFWH8RkExCfvEdRkCWrU1QENcBv1f6s2+gxF1F9qAh04r1d6PO1oSaKryrOt
+	25dDIivpFoepXYLhYGWFsjEwjYXkZeewwkfY5lfOoWwGau30YReWjZiV7zcucvqH6bDqRjnuOtyoT
+	MDmXJmG4ArtOx6Flk/yQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jagbr-00070K-O6; Mon, 18 May 2020 14:19:15 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jagbi-0006zi-SE
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 14:19:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=8QSHn1QbwUCK/fw9frbOwXuQvZTOpXzHqEg5WkOMan0=; b=dRaieWLESy24cHMis/kxDGiAx
- zLfzIagJbl0bsfF1dOo6xhygWQ1XvDTEaXsUwbO65HN1h5n/itjHT80u1pFJ8ACsohjB+J2S8pZbJ
- YLNHYVlM2qlIcltPJGTfyvXb85LxtImqjSKoMFqrihyrwmyFiTpNx4RkbQk/jmIZ52+X6yU3L562x
- elFI6QRrtmHZyVb2oh2a/mK5E7MJUOs8gU7avzmFhuC6iQgfJMadLMUJIY3Yc3ywHnXKVzJ7W0joU
- MBcU9XxQ2Pei5a4ZMs3+KzqgUdYF/qGK9C1wxJqBoVkHJ/5MSj5aPZJgSbGHQVozKGP9kbprjjsJp
- yXcEnYckQ==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:59570)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jagbc-0002a5-Jj; Mon, 18 May 2020 15:19:00 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jagbb-0004lT-70; Mon, 18 May 2020 15:18:59 +0100
-Date: Mon, 18 May 2020 15:18:59 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Fredrik Strupe <fredrik@strupe.net>
-Subject: Re: [PING] [PATCH v2] arm: ptrace: Fix mask for thumb breakpoint hook
-Message-ID: <20200518141858.GV1551@shell.armlinux.org.uk>
-References: <20200413173841.29651-1-fredrik@strupe.net>
- <d7381f90-f597-2a9c-4387-5714b41e02e6@strupe.net>
+	id 1jagcr-0007Ow-QO; Mon, 18 May 2020 14:20:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jagcZ-0007Gz-4r; Mon, 18 May 2020 14:20:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E3C2101E;
+ Mon, 18 May 2020 07:19:56 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.29.34])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B7F9E3F52E;
+ Mon, 18 May 2020 07:19:52 -0700 (PDT)
+Date: Mon, 18 May 2020 15:19:46 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Sumit Garg <sumit.garg@linaro.org>
+Subject: Re: [PATCH 0/3] arm64: perf: Add support for Perf NMI interrupts
+Message-ID: <20200518141946.GA3164@C02TD0UTHF1T.local>
+References: <20200516124857.75004-1-lecopzer@gmail.com>
+ <CAFA6WYNwp+_ENiS8QDao5+RXyt5ofJZyq6c5CKG_d0CNEmBNYg@mail.gmail.com>
+ <CANr2M19unLW8n0P2DiOYEZ=GZcaD-L2ygPht_5HNtNZ6e4h6xQ@mail.gmail.com>
+ <20200518104524.GA1224@C02TD0UTHF1T.local>
+ <a9002b5e-aec5-b6e0-7174-87b93351d60c@arm.com>
+ <CAFA6WYPKD0Kkn5yQiKZQkM+tT0iW4oPnndegD-iau9EwB5DYog@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <d7381f90-f597-2a9c-4387-5714b41e02e6@strupe.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAFA6WYPKD0Kkn5yQiKZQkM+tT0iW4oPnndegD-iau9EwB5DYog@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_071907_105196_3E66A09C 
-X-CRM114-Status: GOOD (  10.47  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200518_071959_285130_A3BD3895 
+X-CRM114-Status: GOOD (  24.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,33 +65,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Oleg Nesterov <oleg@redhat.com>
+Cc: Jian-Lin Chen <lecopzer.chen@mediatek.com>, Will Deacon <will@kernel.org>,
+ alexander.shishkin@linux.intel.com, Catalin Marinas <catalin.marinas@arm.com>,
+ jolsa@redhat.com, Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ acme@kernel.org, Lecopzer Chen <lecopzer@gmail.com>,
+ Peter Zijlstra <peterz@infradead.org>, mingo@redhat.com,
+ linux-mediatek@lists.infradead.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ matthias.bgg@gmail.com, namhyung@kernel.org,
+ Alexandru Elisei <alexandru.elisei@arm.com>, yj.chiang@mediatek.com,
+ julien.thierry.kdev@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 03:12:06PM +0200, Fredrik Strupe wrote:
-> call_undef_hook() in traps.c applies the same instr_mask for both 16-bit
-> and 32-bit thumb instructions. If instr_mask then is only 16 bits wide
-> (0xffff as opposed to 0xffffffff), the first half-word of 32-bit thumb
-> instructions will be masked out. This makes the function match 32-bit
-> thumb instructions where the second half-word is equal to instr_val,
-> regardless of the first half-word.
+On Mon, May 18, 2020 at 07:39:23PM +0530, Sumit Garg wrote:
+> On Mon, 18 May 2020 at 16:47, Alexandru Elisei <alexandru.elisei@arm.com> wrote:
+> > On 5/18/20 11:45 AM, Mark Rutland wrote:
+> > > On Mon, May 18, 2020 at 02:26:00PM +0800, Lecopzer Chen wrote:
+> > >> HI Sumit,
+> > >>
+> > >> Thanks for your information.
+> > >>
+> > >> I've already implemented IPI (same as you did [1], little difference
+> > >> in detail), hardlockup detector and perf in last year(2019) for
+> > >> debuggability.
+> > >> And now we tend to upstream to reduce kernel maintaining effort.
+> > >> I'm glad if someone in ARM can do this work :)
+> > >>
+> > >> Hi Julien,
+> > >>
+> > >> Does any Arm maintainers can proceed this action?
+> > > Alexandru (Cc'd) has been rebasing and reworking Julien's patches, which
+> > > is my preferred approach.
+> > >
+> > > I understand that's not quite ready for posting since he's investigating
+> > > some of the nastier subtleties (e.g. mutual exclusion with the NMI), but
+> > > maybe we can put the work-in-progress patches somewhere in the mean
+> > > time.
+> > >
+> > > Alexandru, do you have an idea of what needs to be done, and/or when you
+> > > expect you could post that?
+> >
+> > I'm currently working on rebasing the patches on top of 5.7-rc5, when I have
+> > something usable I'll post a link (should be a couple of days). After that I will
+> > address the review comments, and I plan to do a thorough testing because I'm not
+> > 100% confident that some of the assumptions around the locks that were removed are
+> > correct. My guess is this will take a few weeks.
+> >
 > 
-> The result in this case is that all undefined 32-bit thumb instructions
-> with the second half-word equal to de01 (udf #1) work as breakpoints
-> and will raise a SIGTRAP instead of a SIGILL, instead of just the one
-> intended 16-bit instruction. An example of such an instruction is
-> eaa0b650, which is unallocated according to Arm ARM and should raise a
-> SIGILL, but instead raises a SIGTRAP.
+> Thanks Mark, Alex for the status updates on perf NMI feature.
+> 
+> Alex,
+> 
+> As the hard-lockup detection patch [1] has a dependency on perf NMI
+> patch-set, I will rebase and test hard-lockup detector when you have
+> got a working tree. But due to the dependency, I think patch [1]
+> should be accepted along with perf NMI patch-set. So would you be open
+> to include this patch as part of your series?
+> 
+> [1] http://lists.infradead.org/pipermail/linux-arm-kernel/2020-May/732227.html
 
-How can 0xeaa0b650 match 0xde01 when masked with 0xffff ?
+While it depends on the perf NMI bits, I don't think it makes sense to
+tie that into the series given it's trying to achieve something very
+different.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+I think that should be reposted separately once the perf NMI bits are in
+shape.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
