@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1FEAE1D8B66
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 01:05:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D6F81D8B68
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 01:05:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4emQeW34TDAD+L41ISJ4Q+O5grC9AfkBX1k27zbtG6c=; b=m3sPxKkk7efO3F
-	Ar2R1hzyvHmqjGcV+Fr0KWY1nAoAgrFWQ/i1QOxx9veBpmVZLQhnT9KOw8OcDnkIbXXbo5AZdWvVF
-	asw0qZsDGNj7QTpq+JGVU9+OucCeEjqp8JkGaZuCNbwBoHLTCnBfEiF5gmaJR4/+pIwShUBK4K4Y4
-	/+6pixG10keILCiPCObQ3PQDUrvODxQmsZ+4jL3v6euIVfMXgEGPsGVEVMQKlY4HZ6DwK0qF2L9bY
-	l6vkykzBsPro8GNz/AtTNk4vaC6lGQNaAnZ/I8G/Eo1GjuLabPBt8cRQck+QnY2Er6QdANhxActXs
-	ZvuhymVvN3hA2RLtK/4g==;
+	List-Owner; bh=TJa6sqPvjapI7ebpSiVhNDYvXoMo91Cw0Trj3qEiaBs=; b=DAiDTU1ecy7MWz
+	hgOq0P/k9PWVsomYPYR3K23OjXHDwldwt++cQq+UXgqJekM2zZ+rNC27dInqBOS6NJctqEllnF+aa
+	XkL7/h2M/IYKS8vs3C9XZS1Kg4YTZdAealdLkKSFW/fs+R1noef6EwCdyN7JakDEZDqRzgkq5NqoT
+	6YLE5dYQTc6nySIwEl/dVeI81QSa1Yz5zmZAiJ0rppur0iFs6Gp+mmgQeifr2+txpOsy5AXoQp8wL
+	pFdXBOj87KK2tm7R5t4jxNelpQ6yR/+o2C8jJbTJ409xeu/rGEBI5l+kPXORkDBnKIb1BVe9jsIR/
+	YOkbNQYqpMKRHb2qF2gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaooe-00008r-Q9; Mon, 18 May 2020 23:05:00 +0000
+	id 1jaopJ-0000i3-1s; Mon, 18 May 2020 23:05:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoo0-0008Jt-GB
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 23:04:24 +0000
+ id 1jaoo2-0008L1-ES
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 23:04:26 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 97D012081A;
- Mon, 18 May 2020 23:04:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 99AD520849;
+ Mon, 18 May 2020 23:04:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589843060;
- bh=FivWSGA5nKr+8BVNRlfId66BwqKvfngHdf0PvsDY1Gk=;
+ s=default; t=1589843062;
+ bh=GfUiNBtiusxD7tUiINLEXRG4SGNIJl7n+58QUt6qvZs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=VHXwzWPUne9lNRLze2eVuRdHvkAB3cprbaBFfewEjJY46dL74bSD6c43meXBwefFz
- 8Ff13vNT0YVAVYK6ZuLCiCBb/hKd8p1jjr5DR7uackt2nEf7mrkdz1hmvgIJkixlww
- eBns6vIZvKw6GHKnaVdx54+jKGUPcy+BwXaxDiHs=
+ b=fcpr6uvJ6iosc/Fx8JK5jSmyYYGSfn4dU9VGX/qMwOIsRA0LF2HSNtFOSIFc0isnN
+ Ny3QrRBf1uYVcHO38u4ujfkk5KuT1G72w7QuzKE1/igZ440cMRZTMVox05uY1Qk1ED
+ Lz3onPGS7fC7qoyDl+sBdGolBjGUK1DXHw4pWR8w=
 From: Will Deacon <will@kernel.org>
-To: Daniel Thompson <daniel.thompson@linaro.org>,
- Douglas Anderson <dianders@chromium.org>,
- Jason Wessel <jason.wessel@windriver.com>
-Subject: Re: [PATCH] arm64: Call debug_traps_init() from trap_init() to help
- early kgdb
-Date: Tue, 19 May 2020 00:04:04 +0100
-Message-Id: <158982068109.260335.5582031208894337234.b4-ty@kernel.org>
+To: Sudeep Holla <sudeep.holla@arm.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Hanjun Guo <guohanjun@huawei.com>
+Subject: Re: [PATCH 1/2] ACPI: GTDT: Put GTDT table after parsing
+Date: Tue, 19 May 2020 00:04:05 +0100
+Message-Id: <158982168456.1117.3371494781648874842.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200513160501.1.I0b5edf030cc6ebef6ab4829f8867cdaea42485d8@changeid>
-References: <20200513160501.1.I0b5edf030cc6ebef6ab4829f8867cdaea42485d8@changeid>
+In-Reply-To: <1588910753-18543-1-git-send-email-guohanjun@huawei.com>
+References: <1588910753-18543-1-git-send-email-guohanjun@huawei.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_160420_564028_86418586 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20200518_160422_503216_E1F3C037 
+X-CRM114-Status: UNSURE (   7.50  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,40 +80,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, sumit.garg@linaro.org,
- liwei391@huawei.com, "Eric W. Biederman" <ebiederm@xmission.com>,
- "Paul E. McKenney" <paulmck@kernel.org>,
- Alexios Zavras <alexios.zavras@intel.com>, Enrico Weigelt <info@metux.net>,
- catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- jinho lim <jordan.lim@samsung.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
- kgdb-bugreport@lists.sourceforge.net, Zenghui Yu <yuzenghui@huawei.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, Allison Randal <allison@lohutok.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-acpi@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 13 May 2020 16:06:37 -0700, Douglas Anderson wrote:
-> A new kgdb feature will soon land (kgdb_earlycon) that lets us run
-> kgdb much earlier.  In order for everything to work properly it's
-> important that the break hook is setup by the time we process
-> "kgdbwait".
-> 
-> Right now the break hook is setup in debug_traps_init() and that's
-> called from arch_initcall().  That's a bit too late since
-> kgdb_earlycon really needs things to be setup by the time the system
-> calls dbg_late_init().
-> 
-> [...]
+On Fri, 8 May 2020 12:05:52 +0800, Hanjun Guo wrote:
+> The mapped GTDT table needs to be released after
+> the driver init.
 
-Applied to arm64 (for-next/misc), thanks!
+Applied to arm64 (for-next/acpi), thanks!
 
-[1/1] arm64: Call debug_traps_init() from trap_init() to help early kgdb
-      https://git.kernel.org/arm64/c/b322c65f8ca3
+[1/2] ACPI: GTDT: Put GTDT table after parsing
+      https://git.kernel.org/arm64/c/5ec605108ff4
+[2/2] ACPI: IORT: Add comments for not calling acpi_put_table()
+      https://git.kernel.org/arm64/c/701dafe0670c
 
 Cheers,
 -- 
