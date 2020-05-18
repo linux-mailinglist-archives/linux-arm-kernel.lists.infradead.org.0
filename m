@@ -2,54 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F0611D7934
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 15:04:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CB3E1D794B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 15:05:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rNNIu7BAiiWrjw7fF21VIb0wqqwe8KetKeUirPh69zo=; b=kHaeVERGkqf2Oh
-	6IYmVG/ckf7Gq8AtQB+qfk7A8GlXHsb75CBJZ1YRBlGECD8eK4yQrTthJKGbzwga9OS+ONN7RDlFb
-	xwtzzxfbV/cJ2xiAhzbMzoaLprsxfizUtxGJJS7B7zT56kkTFmBQsCKrzNJyBonyHJjlHwCRzh8jb
-	SrWVS36r6cPeN6+/z4cvbOaALDXo+VFUn9HTKUYcIQQS02ikpxa+ROdyu+cvhqABNVdjCgSUU847o
-	umSRHndytCSg+XeDhIl1hfO+lF9simzJmPpIiCvrzrWPMnK5QJ3Bo+K+3T94CaxvJYHA0Mwu5ZMMM
-	lECHUU/2HgUDD7GNMUPg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OB6MV0Dl4HODonGnKoclfu8s6E7ELa+sem0T3SOIpa8=; b=Rpb24zsCGYh3MB9ue5nkpyii7
+	t78k4UJBkl9Z6ZvNInP/aqe18aQuBTW/ty5opJKrznIyHLTipbTNX/Sxl8r0qQdu08fEs788WwuN8
+	Kqy+JFHbANVrUSRAK2SwYo4sNjdmO1J7lvepGPrdkRv7SzPbNPyJU7/juLskyf+HqXIJId9hGiL8O
+	cE1FwhOD+h9Gf1YOZSHmIzB3VZ1nElPtdBME+DY/WgeEdhohPlQqSCE4/VEmUw+IGvkktKWxyPJzv
+	0Jz6C9ygbcrIrvELIfv0409djKQ8RQEXxpvfADb4IjHRDtfvP+ZNyfYWElCmDZcI4BIIb51Hddqhs
+	ur8CsizkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jafQu-0001sc-7V; Mon, 18 May 2020 13:03:52 +0000
+	id 1jafSQ-00036Z-Mb; Mon, 18 May 2020 13:05:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jafQk-0001rg-IL
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 13:03:43 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5893B207D3;
- Mon, 18 May 2020 13:03:40 +0000 (UTC)
+ id 1jafRt-0002z0-0s; Mon, 18 May 2020 13:04:58 +0000
+Received: from linux-8ccs.fritz.box (p57a239f2.dip0.t-ipconnect.de
+ [87.162.57.242])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AD592207D3;
+ Mon, 18 May 2020 13:04:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589807022;
- bh=cqBFppFXywtZsKM/FNOE0/NVU4loKWJIwGTdFBK4NK4=;
+ s=default; t=1589807091;
+ bh=bQOel0Owh5Jsy7D7It/KRrP7k71oDOZIFpOrOzQ9AhA=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=AQzs1Mwk69tSsp5qxInzTbdXkv04DyufsIs1+gjF3sXZ9S60tnJpxVJ7p0o34FOVa
- 0UDle+HFNXG2qYLjQrqK2hI0w2jrwrTjxLLvyI2MTmKnJRaV/nZ3Qi4Lg3FNyK9O2D
- MfKT2JzwFunN6II9sHmMU3UzvAPLXEJaYoucP8vI=
-Date: Mon, 18 May 2020 14:03:36 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 3/6] arm64: scs: Use 'scs_sp' register alias for x18
-Message-ID: <20200518130335.GC32394@willie-the-truck>
-References: <20200515172756.27185-1-will@kernel.org>
- <20200515172756.27185-4-will@kernel.org>
- <20200518115547.GC1957@C02TD0UTHF1T.local>
+ b=YqZBNW7MWDqiTSCxmly8oMsUsg4WN7C2JY9aDcakJBGzWq/UP00eyjCdLpfBridZ5
+ yEWjvi7dzrZTtKaXjd/2d6IuYc59csAsUVZSfRs5jq7Rr7rdKAsQZJF1Mc/s+At7dk
+ CA/eN9nd7O70bEOB0H0VqgRfIrUmH9kT0XamFLi8=
+Date: Mon, 18 May 2020 15:04:44 +0200
+From: Jessica Yu <jeyu@kernel.org>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 29/29] module: move the set_fs hack for
+ flush_icache_range to m68k
+Message-ID: <20200518130444.GA21096@linux-8ccs.fritz.box>
+References: <20200515143646.3857579-1-hch@lst.de>
+ <20200515143646.3857579-30-hch@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200518115547.GC1957@C02TD0UTHF1T.local>
+In-Reply-To: <20200515143646.3857579-30-hch@lst.de>
+X-OS: Linux linux-8ccs 4.12.14-lp150.12.61-default x86_64
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_060342_621031_49ED472D 
-X-CRM114-Status: GOOD (  19.88  )
+X-CRM114-CacheID: sfid-20200518_060453_129489_00B8F7D0 
+X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,75 +80,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Jann Horn <jannh@google.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Sami Tolvanen <samitolvanen@google.com>, kernel-team@android.com,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Roman Zippel <zippel@linux-m68k.org>, linux-mips@vger.kernel.org,
+ linux-mm@kvack.org, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ Geert Uytterhoeven <geert@linux-m68k.org>, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-um@lists.infradead.org,
+ linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev@lists.ozlabs.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 12:55:47PM +0100, Mark Rutland wrote:
-> On Fri, May 15, 2020 at 06:27:53PM +0100, Will Deacon wrote:
-> > x18 holds the SCS stack pointer value, so introduce a register alias to
-> > make this easier to read in assembly code.
-> > 
-> > Signed-off-by: Will Deacon <will@kernel.org>
-> 
-> I scanned through arm64 for all instances of x18, and it looks like
-> you've covered all the relevant uses here. In kvm we save/restore x18 a
-> bunch becasue it might be a platform register, but we do that
-> unconditionally and without knowledge of what it contains, so I think
-> that's fine to leave as-is. Therefore:
-> 
-> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-> 
-> As an aside, the comment in entry-ftrace.S is now stale where it says
-> that x18 is safe to clobber. I can send a patch to clean that up, unless
-> you want to do that yourself.
++++ Christoph Hellwig [15/05/20 16:36 +0200]:
+>flush_icache_range generally operates on kernel addresses, but for some
+>reason m68k needed a set_fs override.  Move that into the m68k code
+>insted of keeping it in the module loader.
+>
+>Signed-off-by: Christoph Hellwig <hch@lst.de>
+>Reviewed-by: Geert Uytterhoeven <geert@linux-m68k.org>
+>Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
+>---
+> arch/m68k/mm/cache.c | 4 ++++
+> kernel/module.c      | 8 --------
+> 2 files changed, 4 insertions(+), 8 deletions(-)
 
-Thanks, I'll fix that up (see below). Also, apologies for typo'ing your
-email address when I sent this out on Friday.
+Thanks for cleaning this up. For module.c:
 
-Will
+Acked-by: Jessica Yu <jeyu@kernel.org>
 
---->8
-
-From 7e86208cd6541c1229bc1fcd206596308d1727f8 Mon Sep 17 00:00:00 2001
-From: Will Deacon <will@kernel.org>
-Date: Mon, 18 May 2020 14:01:01 +0100
-Subject: [PATCH] arm64: entry-ftrace.S: Update comment to indicate that x18 is
- live
-
-The Shadow Call Stack pointer is held in x18, so update the ftrace
-entry comment to indicate that it cannot be safely clobbered.
-
-Reported-by: Mark Rutland <mark.rutland@arm.com>
-Signed-off-by: Will Deacon <will@kernel.org>
----
- arch/arm64/kernel/entry-ftrace.S | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
-diff --git a/arch/arm64/kernel/entry-ftrace.S b/arch/arm64/kernel/entry-ftrace.S
-index 833d48c9acb5..a338f40e64d3 100644
---- a/arch/arm64/kernel/entry-ftrace.S
-+++ b/arch/arm64/kernel/entry-ftrace.S
-@@ -23,8 +23,9 @@
-  *
-  * ... where <entry> is either ftrace_caller or ftrace_regs_caller.
-  *
-- * Each instrumented function follows the AAPCS, so here x0-x8 and x19-x30 are
-- * live, and x9-x18 are safe to clobber.
-+ * Each instrumented function follows the AAPCS, so here x0-x8 and x18-x30 are
-+ * live (x18 holds the Shadow Call Stack pointer), and x9-x17 are safe to
-+ * clobber.
-  *
-  * We save the callsite's context into a pt_regs before invoking any ftrace
-  * callbacks. So that we can get a sensible backtrace, we create a stack record
--- 
-2.26.2.761.g0e0b3e54be-goog
 
 _______________________________________________
 linux-arm-kernel mailing list
