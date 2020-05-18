@@ -2,58 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AEF61D7CE5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:33:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A09E1D7D09
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:37:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=04+0SlHHz5B80/f37B2l2M3iTPhbnp6i0V9GWOAtpY8=; b=Orw3Ih3svqe85Q
-	8Lwx+fXY3bU8xJyThsjsMt+jWCO+qgz4tZR5mexzSI9wLONqKkwqvyFgMHgmgUQ7xHZy1QOHZADhF
-	NpatHgaQ/QlDCJG6h654wceucS7BSf7C6kiAnLj+vBQWdC4zsfUiX1dchonsgC5QBlrXH/RKUnPCm
-	VepdvZ3NAoULQVjBYl+hvKP/UzB2SpSvumcyrJgF3yTEUkjVv2vtjvKZqT0NmLRWWIu8QjHyxwt9d
-	n/dOJ9jY00Z1UTY2WHJev4DVY83M/plgl+G5GpQFPHbKIQdCT2BCh3XSAWQCuhWxW1SWwa9yCI9UF
-	44704/YhDpfrWWosLNzw==;
+	List-Owner; bh=vu3kFg8dZpp8po8uJnmKvWmz4DCvR5Kj/Ys3E32+HIo=; b=sD0PunWhj3fBnY
+	HoZAUCCNf/0Hyi7AboaiWWXrnYPHO93pHxram4SQHdxoCePibP4StIS4EeqGM/4qYP3cXqGBmFLkW
+	82uU5pzFberw8LYMt8Gzc7zsMj4XT6qA0vT7xAUhOYuiCaw6ve9G4zmeDTbFTMZV2FRmIfM1sgwwc
+	T3CrZF+NG0En9nTDL20rNgwA7ToqYImaIJ4D72sZMbzSAfnZmjTZKlZtTbTxNNPiBAPXIvxxvNaQQ
+	289zarNTGs107sn+4V21YQOYLqfToZyLBRg834m8CUC8fBWWDrYflUxn5IpJE+RsW5RLViRAnJipN
+	E2WVjSqUUmHvueKrOb5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jahlb-0000i8-4W; Mon, 18 May 2020 15:33:23 +0000
+	id 1jahpt-0003eR-0f; Mon, 18 May 2020 15:37:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jahlS-0000hJ-TU
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 15:33:16 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 269B0207ED;
- Mon, 18 May 2020 15:33:14 +0000 (UTC)
+ id 1jahpj-0003cz-Rq
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 15:37:41 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B7CD720657;
+ Mon, 18 May 2020 15:37:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589815994;
- bh=TyenBBcRlC7bHcDCgrQGTESSKFo/bxcfFo2JmDj2gPg=;
+ s=default; t=1589816259;
+ bh=EhGDmXaw1hIzPjQBCe1L73zVhpK0WWSpGkldIfpkakQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2bkezwy1Dc3M7HZgrw3dCxOGmxDcnV20LYmEDJpxoZlAjzDsoEut3EaU8jMFKnHH7
- 9eO7bFr7vaIXSYWoj9XUc5T/0mtcMFZg0oDggYw7qupQHvTtJEOmou1pm00LR+XO+b
- gDN3m0O1mh9OPm14IdCrla7JnVoJlBC7DzuhojYA=
-Date: Mon, 18 May 2020 17:33:12 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Alan Stern <stern@rowland.harvard.edu>
-Subject: Re: [PATCH 1/3] usb/ohci-platform: Fix a warning when hibernating
-Message-ID: <20200518153312.GA1963214@kroah.com>
-References: <20200424134800.4629-1-qais.yousef@arm.com>
- <Pine.LNX.4.44L0.2004281459240.1555-100000@netrider.rowland.org>
- <20200518145748.puvxkcmyrxc7eqt7@e107158-lin.cambridge.arm.com>
- <20200518151940.GC15479@rowland.harvard.edu>
+ b=17iaSWZ809+SeQ4xkNM7+7yWrBt+CuPeic8ZjxN8zDpxcvigQFJAY6hS4xUTnZ0PV
+ TVNE0WEfptLrFqoIPl+lzqq+9vY4pkCjIEfB45N5i++g4SKevueEzjo6flcMF7+Uv7
+ CjtAqM5b0wEi2eNrbV0xoNpLji3A77Fduepja3Kw=
+Date: Mon, 18 May 2020 16:37:34 +0100
+From: Will Deacon <will@kernel.org>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH 3/4] iommu/arm-smmu-v3: Use pci_ats_supported()
+Message-ID: <20200518153733.GM32394@willie-the-truck>
+References: <20200515104359.1178606-1-jean-philippe@linaro.org>
+ <20200515104359.1178606-4-jean-philippe@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200518151940.GC15479@rowland.harvard.edu>
+In-Reply-To: <20200515104359.1178606-4-jean-philippe@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_083314_971741_AC4B7249 
-X-CRM114-Status: GOOD (  12.67  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200518_083739_941229_0E5FA007 
+X-CRM114-Status: GOOD (  19.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
@@ -62,6 +60,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,36 +77,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Oliver Neukum <oneukum@suse.de>, Mathias Nyman <mathias.nyman@intel.com>,
- linux-usb@vger.kernel.org, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, Tony Prisk <linux@prisktech.co.nz>,
- Qais Yousef <qais.yousef@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: ashok.raj@intel.com, linux-pci@vger.kernel.org, joro@8bytes.org,
+ alex.williamson@redhat.com, iommu@lists.linux-foundation.org,
+ bhelgaas@google.com, robin.murphy@arm.com, dwmw2@infradead.org,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 11:19:40AM -0400, Alan Stern wrote:
-> On Mon, May 18, 2020 at 03:57:49PM +0100, Qais Yousef wrote:
-> > > For both this patch and the 3/3 patch (ehci-platform):
-> > > 
-> > > Acked-by: Alan Stern <stern@rowland.harvard.edu>
-> > 
-> > Thanks Alan. Did this make it through to any tree? I don't see it on next, nor
-> > on Linus. But it could be queued somewhere else.
-> > 
-> > I have sent v2 to patch 2 (xhci) as a reply, so hopefully it wasn't missed.
-> > I can resend the whole series if necessary.
+On Fri, May 15, 2020 at 12:44:01PM +0200, Jean-Philippe Brucker wrote:
+> The new pci_ats_supported() function checks if a device supports ATS and
+> is allowed to use it.
 > 
-> Greg, what happened to this series?  Did it just fall through the 
-> cracks?
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+> I dropped the Ack because I slightly changed the patch to keep the
+> fwspec check, since last version:
+> https://lore.kernel.org/linux-iommu/20200311124506.208376-8-jean-philippe@linaro.org/
+> ---
+>  drivers/iommu/arm-smmu-v3.c | 20 +++++---------------
+>  1 file changed, 5 insertions(+), 15 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 82508730feb7a1..39b935e86ab203 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -2652,26 +2652,16 @@ static void arm_smmu_install_ste_for_dev(struct arm_smmu_master *master)
+>  	}
+>  }
+>  
+> -#ifdef CONFIG_PCI_ATS
+>  static bool arm_smmu_ats_supported(struct arm_smmu_master *master)
+>  {
+> -	struct pci_dev *pdev;
+> +	struct device *dev = master->dev;
+>  	struct arm_smmu_device *smmu = master->smmu;
+> -	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(master->dev);
+> -
+> -	if (!(smmu->features & ARM_SMMU_FEAT_ATS) || !dev_is_pci(master->dev) ||
+> -	    !(fwspec->flags & IOMMU_FWSPEC_PCI_RC_ATS) || pci_ats_disabled())
+> -		return false;
+> +	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
+>  
+> -	pdev = to_pci_dev(master->dev);
+> -	return !pdev->untrusted && pdev->ats_cap;
+> +	return (smmu->features & ARM_SMMU_FEAT_ATS) &&
+> +		!(fwspec->flags & IOMMU_FWSPEC_PCI_RC_ATS) &&
+> +		dev_is_pci(dev) && pci_ats_supported(to_pci_dev(dev));
 
-No idea, it's not in my to-review queue, so maybe it got merged
-somewhere?  If not, can someone resend it please?
+nit, but I think this is clearer if you leave it split up (untested diff
+below).
 
-thanks,
+Will
 
-greg k-h
+--->8
+
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 82508730feb7..c5730557dbe3 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -2652,26 +2652,20 @@ static void arm_smmu_install_ste_for_dev(struct arm_smmu_master *master)
+ 	}
+ }
+ 
+-#ifdef CONFIG_PCI_ATS
+ static bool arm_smmu_ats_supported(struct arm_smmu_master *master)
+ {
+-	struct pci_dev *pdev;
++	struct device *dev = master->dev;
+ 	struct arm_smmu_device *smmu = master->smmu;
+-	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(master->dev);
++	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
+ 
+-	if (!(smmu->features & ARM_SMMU_FEAT_ATS) || !dev_is_pci(master->dev) ||
+-	    !(fwspec->flags & IOMMU_FWSPEC_PCI_RC_ATS) || pci_ats_disabled())
++	if (!(smmu->features & ARM_SMMU_FEAT_ATS))
+ 		return false;
+ 
+-	pdev = to_pci_dev(master->dev);
+-	return !pdev->untrusted && pdev->ats_cap;
+-}
+-#else
+-static bool arm_smmu_ats_supported(struct arm_smmu_master *master)
+-{
+-	return false;
++	if (!(fwspec->flags & IOMMU_FWSPEC_PCI_RC_ATS))
++		return false;
++
++	return dev_is_pci(dev) && pci_ats_supported(to_pci_dev(dev));
+ }
+-#endif
+ 
+ static void arm_smmu_enable_ats(struct arm_smmu_master *master)
+ {
 
 _______________________________________________
 linux-arm-kernel mailing list
