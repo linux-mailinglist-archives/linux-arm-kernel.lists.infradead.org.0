@@ -2,98 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8CB8C1D6FD4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 06:29:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA5401D6FDF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 06:36:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kGOnx01A9C/kiu91iGWy1a70aAuPtRp9214DSfyFxQM=; b=goUFZQzqS3At/R
-	HO9JggkAq3k9ch4+ZOF1y0SKLPB1zPQz5TDRDzi43coGSwy3DSOSNUMQP1Y29+1YXvajiisRV/OK8
-	l3aOLtKMQJi2n/ovCv27IENsoA3q96P1VS7jjgKP9Zh6LXf/re9piLHtspek6UZyMU+Qg66UFz3c9
-	adWDEDNPRGk7l9JdmamPznzaYngd3KlFXHghK9YXB/o4/SnajpckYyGCr7RU+aTywk/bh1xSPae/G
-	RAGIVxi4nKdFnI5js8ur7jclpHgsLNVRJVatY7YWYASZviQr2yGOHJKfmd0pmqkAna+7S1pKa20jo
-	U7jW/6Im0CeujMoh73Jg==;
+	List-Owner; bh=XCvsr3WfdI+a5r1Bm21kn2hCHvC/gvEsQHdcK96yO6o=; b=dChGZUWd78lpAL
+	U/BLY31EoC0dKjaZRUP9PuCFckMACgwVjel7HH1WXRHbUSeNIRSmWWjiv/lalanHE8T3E9qQPoNvh
+	FwKAS1qkIKr3N26gBx1W2kTfsb1fVa0Ha8gon+YnIjeqEKEioveOGrBxnvviWq4bVbouxZweCllOA
+	eyC0xXYzb4K+T1op1y45FumO1+F0ZChcEPCuySDDAGBwPeABsxexSXY9vW+d5AMvoScz0/G8rUs6Y
+	cmyaop3DPWLx9FRgQGQd0igPnKtnn3dtDXTSrAkW8dtCMgSmMgGVLYtqxowBpEH/XjH1zXBFSa6Tn
+	WS2wXEHonwGgXznZWCAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaXPN-00075P-KZ; Mon, 18 May 2020 04:29:45 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jaXVd-0004wO-Fq; Mon, 18 May 2020 04:36:13 +0000
+Received: from mail-eopbgr150070.outbound.protection.outlook.com
+ ([40.107.15.70] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaXPD-00074C-7R; Mon, 18 May 2020 04:29:36 +0000
-Received: by mail-pg1-x542.google.com with SMTP id b8so4223802pgi.11;
- Sun, 17 May 2020 21:29:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=7bbx1vjAcGJU7o+yFip4EyC/ilyC7OBp4VPSqw3/c2c=;
- b=LimDPPmibz9vtWmb0MKZHn8c9RdWix1P/AFk6SDLaoXlBVdMlC7Hfce2We+MkFAz4E
- R/2Wy61j9gG0ixy9mMyHuhS77QZ+W2IqUs+cNkzrG6dQaDcMMpIgqWZr6ft8gTO/HSMB
- oF3oavsgnI2fjkM2QAjIyKAHhhOTcnWFH16xKUZkqjczHwsm/iprxuSgfWtVik27j84r
- 5n8U7fFfETauYry76p+6vX2RXQib8sKv+lhcWS2IP1EZ6KlTna+BQg/FRhPkbiW1PxTM
- QM0E7X94qZuWMPHXEPUx2ysbg6/oZL89r6bgB9KXLUanLbbSlSBCGfqIrn7x7qAQncoA
- /GCQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=7bbx1vjAcGJU7o+yFip4EyC/ilyC7OBp4VPSqw3/c2c=;
- b=M4My+a+kuv/J8grEz4VDRybdC5WjM+3TUK3vMZUFHMwt/GIqy2YaKGBCAcAOG0vkth
- 3fiwFqEMlbwVKnYWUdsikgxb6oLipAXs+aHXICvwI6Usm9TwUvdPjAG0UVAlIpwZGOve
- 7BjxCvNzxufgikc5CHUDvvxP6vBQfJnZtj6FReNoRkIjuZkUQtm5HzlU86ZqRpS8v93M
- hPS8t8ngRyC4iLKWditKDUiLFscx3nbRXDxD5LFweY3Z4uAaciL37Zf5fFhs/cC7HX0E
- R1K8wQHE11sIdpmRQVLNqT/KkG8Ck2GGtah6suVmoMVdS0+Fr3OJnfwO6EbZ80I53plh
- M8HA==
-X-Gm-Message-State: AOAM531kX+8BTracYrLG8ayupCwIWinbyaXxZw5sAwlRbLDAezJVTaZ1
- 8AmXpSPg9iL7P0iQy/c/2hM=
-X-Google-Smtp-Source: ABdhPJxbJqkFB3G+mfP7Q58PJuzXycNotbRv9vDLFxrEQ/xV/2+VRINR3zhBhOzJGROFI8CL8Y8+Lg==
-X-Received: by 2002:aa7:9a96:: with SMTP id w22mr15841791pfi.199.1589776174113; 
- Sun, 17 May 2020 21:29:34 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id 62sm7548040pfc.204.2020.05.17.21.29.32
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 17 May 2020 21:29:33 -0700 (PDT)
-Date: Sun, 17 May 2020 21:29:32 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Ira Weiny <ira.weiny@intel.com>
-Subject: Re: [PATCH V3 07/15] arch/kunmap_atomic: Consolidate duplicate code
-Message-ID: <20200518042932.GA59205@roeck-us.net>
-References: <20200507150004.1423069-1-ira.weiny@intel.com>
- <20200507150004.1423069-8-ira.weiny@intel.com>
- <20200516223306.GA161252@roeck-us.net>
- <20200518034938.GA3023182@iweiny-DESK2.sc.intel.com>
+ id 1jaXVS-0004vm-Os
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 04:36:05 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BZgwlb/8MFyxr9Og/350EDr5BbVxe++SMXqYebNbL9zO9sE8WHsUObPAhKJ0A0qhgH/5gjngHFn7gCT5FrtICshegeOFkuvhFs42s9AMjP2KPztnRri0WKiUffdjnDH7tZs1Ey553YN/PnbdgugxcyOvxD5WDx/LxqfUfD0v9FhApvUQ2ZwFj5ILcF15Jfwy9ljgpRZMO2PL+Jbjt7doMgYo9v5IRktzzelORA+3vKbPHiQ0oiXL7V6tK6vjdhjym4iW7kOC8Y9DRht2W7KY1DOU9OcmiDqxNuuhKu2c2o0WXWlpzzxwgs5lXANdFU8cUXRm2xqKwijEKPh3gaGw7w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fh2Xe+isBqhjr0Ui8OybR/1YRp7+dsDYd18FVnPbsSA=;
+ b=EDJMF/SwYiFfmw5TzMdjRxgMLV1+82Nsiaje3LawHZbgz4BfcjzU30dnQS/Wk19VFKS4bB4ufUYZUBBaQFp0f5vOx8uWlgKYc3PT2bIRMCHIIGjA1IiXvUXjq+6e+B0KEo4Bf7v8NIT65rfrjTc4NXEa0KQCGC9857if6YfmJJ9i6I53DQsy1TvOSKMCjB4QVTzuYeg++j+CgVD1/0zNhyw6P/9sMvs4past6L9Tsrr5riHRDTDEZ5Z8cjtrJKBrbdkjpOu4ioD2QqLoUGp9PFyFY94HLUneS16breEEK63l3vNx9cYyEahHK01q94imACyt82e94wBgCODNWuEjpg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Fh2Xe+isBqhjr0Ui8OybR/1YRp7+dsDYd18FVnPbsSA=;
+ b=G2osXfrXdNvubmcQxxJ6v8IjadFM0wxrL28o++K8PQG8hVkQ4RLn7QMhloc+jXPQVMGIIptJYGZTbkjGZoRR+xOQppT9rrfmrg8vVZmp597+70U01sUkdgFujfgNRhJVRfECvTJCAM/RuzK5P2U6W+6Oqi6xNbgsSjm2jy6VIg4=
+Received: from AM6PR0402MB3607.eurprd04.prod.outlook.com
+ (2603:10a6:209:12::18) by AM6PR0402MB3461.eurprd04.prod.outlook.com
+ (2603:10a6:209:3::25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.33; Mon, 18 May
+ 2020 04:35:58 +0000
+Received: from AM6PR0402MB3607.eurprd04.prod.outlook.com
+ ([fe80::35f8:f020:9b47:9aa1]) by AM6PR0402MB3607.eurprd04.prod.outlook.com
+ ([fe80::35f8:f020:9b47:9aa1%7]) with mapi id 15.20.3000.034; Mon, 18 May 2020
+ 04:35:58 +0000
+From: Andy Duan <fugang.duan@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, Steffen Trumtrar
+ <s.trumtrar@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
+Subject: RE: [PATCH] ARM: dts: imx7d-pinfunc: add input mux for ENET2 mdio
+Thread-Topic: [PATCH] ARM: dts: imx7d-pinfunc: add input mux for ENET2 mdio
+Thread-Index: AQHWKq3aOdOVoo6/TEyJrflUDB2tmaitOnaQgAAKtuA=
+Date: Mon, 18 May 2020 04:35:58 +0000
+Message-ID: <AM6PR0402MB3607E70A60E62656D1898424FFB80@AM6PR0402MB3607.eurprd04.prod.outlook.com>
+References: <20200515114151.6516-1-s.trumtrar@pengutronix.de>
+ <AM6PR04MB4966710261BD821190B2F0FD80B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
+In-Reply-To: <AM6PR04MB4966710261BD821190B2F0FD80B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: bc907064-787b-421e-3265-08d7fae4f64b
+x-ms-traffictypediagnostic: AM6PR0402MB3461:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM6PR0402MB34615419FB25E05E2265901BFFB80@AM6PR0402MB3461.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:421;
+x-forefront-prvs: 04073E895A
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: TMXluX0bAj7i++Hjk+gcuP8KZckixe1PHCHb92OCE1Io0jiqsWP78FskNJgO/2OKeiJWTQ2xpjnm+SIl0qOF2enE//6MV9h8bD6K9c5rCXg+OgU2pfnOYiWKo7osd5n/N1PdcJ29l0CwVLwEi2gYkhYcOEi5Mw7g2FAMlyeM0HKo6V+C12JX7+JfT+zdFsEvNTBIcn6GS8AVKzl1b4qft7ZcHhx+h8e9ABXWL1fgtBho2JWEDQWSsMMRucZCTdAw4w9IqxwqSby0WLA/ZYwY6wR6WiUPVRNuNqUyzGZrEAt6c/beXI/KYCamzHwswS7DZeDejM21BbMLqKWurWYtagI81Jaot9TacUwTMs9r4tL9uk5Ol3qPEFt+qlsDusYzmYjWLNMLsYqefCBi0RAtNs+UE0CZExrm6jdAG/lU1a1BGsftI60qZpqP6BGZRqVB
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR0402MB3607.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(39860400002)(376002)(346002)(136003)(396003)(110136005)(54906003)(52536014)(71200400001)(316002)(33656002)(26005)(6506007)(66476007)(64756008)(76116006)(66556008)(478600001)(66446008)(66946007)(186003)(7696005)(4326008)(9686003)(5660300002)(55016002)(86362001)(2906002)(8936002)(8676002);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: 1m0uOVVFEe8Eoym9ZzKiZ0UvBdoziiVOFcagAOloxXTKK9bMcKzqZC02lyvci2TTbRodhmVQ6qs+ROa0cujdKj+pEUzxdh9prGRA/8ZmcF/UerCNs5Tt168WngojXhBCsdsGfc8g6+3XTU+2P9B6hi7SB4UBpJx0VQWTv1yMPHjw4TnbBtaQM9CLjs4yhsVY6VkSz9JjDul3BNuOiZKYKfNqveJVDzxHo9AfQTQC7z51k6Ez2HNF0a5lVsQRpTVjllM7HkBxM+KFyHpt63gn0OZkmdZuP24ULz/Y7/XQi9woMA5VJ7SIWP8NHgMtwiM0pWkU+ePBQ86ujTofNkpJZpyeBqsJ6k4XzuYGaeaP61tg+LBgL0ztlmnZNlGqROSMQK+d6FCqCc6vWbQQvJtiHL1MZHuH30XXApxLsijK0yKqVkkl5hoNktFIGsStLUol4aa87JUBGgB7UM40RvCiUkOFDl10uhIukHWHiVjXINM=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200518034938.GA3023182@iweiny-DESK2.sc.intel.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: bc907064-787b-421e-3265-08d7fae4f64b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2020 04:35:58.7355 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: riEWbR2WBNUZLBWRYObUYIjbDY/ZWFfnfTcz0zUqL4u/AgkRQnTQDKH2R53HfOvRHs+GaNNCSyK9ORHASDYuQw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3461
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_212935_286775_A17FCA0A 
-X-CRM114-Status: GOOD (  16.99  )
-X-Spam-Score: 1.4 (+)
+X-CRM114-CacheID: sfid-20200517_213602_809391_D82224A2 
+X-CRM114-Status: GOOD (  14.72  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.4 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [groeck7[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [groeck7[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.15.70 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.15.70 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,157 +123,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh+dt@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 17, 2020 at 08:49:39PM -0700, Ira Weiny wrote:
-> On Sat, May 16, 2020 at 03:33:06PM -0700, Guenter Roeck wrote:
-> > On Thu, May 07, 2020 at 07:59:55AM -0700, ira.weiny@intel.com wrote:
-> > > From: Ira Weiny <ira.weiny@intel.com>
-> > > 
-> > > Every single architecture (including !CONFIG_HIGHMEM) calls...
-> > > 
-> > > 	pagefault_enable();
-> > > 	preempt_enable();
-> > > 
-> > > ... before returning from __kunmap_atomic().  Lift this code into the
-> > > kunmap_atomic() macro.
-> > > 
-> > > While we are at it rename __kunmap_atomic() to kunmap_atomic_high() to
-> > > be consistent.
-> > > 
-> > > Reviewed-by: Christoph Hellwig <hch@lst.de>
-> > > Signed-off-by: Ira Weiny <ira.weiny@intel.com>
-> > 
-> > This patch results in:
-> > 
-> > Starting init: /bin/sh exists but couldn't execute it (error -14)
-> > 
-> > when trying to boot microblazeel:petalogix-ml605 in qemu.
+From: Aisheng Dong <aisheng.dong@nxp.com> Sent: Monday, May 18, 2020 11:55 AM
+> > From: Steffen Trumtrar <s.trumtrar@pengutronix.de>
+> > Sent: Friday, May 15, 2020 7:42 PM
+> >
+> > Add the missing input mux for ENET2 mdio. Without this setting, it is
+> > not possible to read the MDIO answers back from the PHY.
+> >
+> > Signed-off-by: Steffen Trumtrar <s.trumtrar@pengutronix.de>
+> > ---
+> >  arch/arm/boot/dts/imx7d-pinfunc.h | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/arch/arm/boot/dts/imx7d-pinfunc.h
+> > b/arch/arm/boot/dts/imx7d-pinfunc.h
+> > index 08ca1608fdb1..69f2c1ec8254 100644
+> > --- a/arch/arm/boot/dts/imx7d-pinfunc.h
+> > +++ b/arch/arm/boot/dts/imx7d-pinfunc.h
+> > @@ -592,7 +592,7 @@
+> >  #define MX7D_PAD_UART2_RX_DATA__ECSPI1_SS3
+> > 0x0130 0x03A0 0x0000 0x3 0x0
+> >  #define MX7D_PAD_UART2_RX_DATA__ENET2_1588_EVENT1_IN
+> > 0x0130 0x03A0 0x0000 0x4 0x0
+> >  #define MX7D_PAD_UART2_RX_DATA__GPIO4_IO2
+> > 0x0130 0x03A0 0x0000 0x5 0x0
+> > -#define MX7D_PAD_UART2_RX_DATA__ENET2_MDIO
+> > 0x0130 0x03A0 0x0000 0x6 0x0
+> > +#define MX7D_PAD_UART2_RX_DATA__ENET2_MDIO
+> > 0x0130 0x03A0 0x0574 0x6 0x1
 > 
-> Thanks for the report.  I'm not readily seeing the issue.
+> It's strange that I didn't find this select input setting from latest RM.
+> Anything I missed?
 > 
-> Do you have a kernel config?  Specifically is CONFIG_HIGHMEM set?
+> Also copy Andy to comment.
 > 
-See below. Yes, CONFIG_HIGHMEM is set.
+Check the RM in my local, it define the signal select input from UART2_RX_DATA,
+it is correct with the change.
 
-The scripts used to build and boot the image are at:
-
-https://github.com/groeck/linux-build-test/tree/master/rootfs/microblazeel
-
-Hope this helps,
-
-Guenter
-
----
-CONFIG_SYSVIPC=y
-CONFIG_POSIX_MQUEUE=y
-CONFIG_AUDIT=y
-CONFIG_IKCONFIG=y
-CONFIG_IKCONFIG_PROC=y
-CONFIG_SYSFS_DEPRECATED=y
-CONFIG_SYSFS_DEPRECATED_V2=y
-CONFIG_BLK_DEV_INITRD=y
-# CONFIG_BASE_FULL is not set
-CONFIG_KALLSYMS_ALL=y
-CONFIG_EMBEDDED=y
-CONFIG_SLAB=y
-CONFIG_KERNEL_BASE_ADDR=0x50000000
-CONFIG_XILINX_MICROBLAZE0_USE_MSR_INSTR=1
-CONFIG_XILINX_MICROBLAZE0_USE_PCMP_INSTR=1
-CONFIG_XILINX_MICROBLAZE0_USE_BARREL=1
-CONFIG_XILINX_MICROBLAZE0_USE_DIV=1
-CONFIG_XILINX_MICROBLAZE0_USE_HW_MUL=2
-CONFIG_XILINX_MICROBLAZE0_USE_FPU=2
-CONFIG_XILINX_MICROBLAZE0_HW_VER="10.0.a"
-CONFIG_HZ_100=y
-CONFIG_MMU=y
-CONFIG_HIGHMEM=y
-CONFIG_PCI_XILINX=y
-CONFIG_MODULES=y
-CONFIG_MODULE_UNLOAD=y
-# CONFIG_BLK_DEV_BSG is not set
-CONFIG_PARTITION_ADVANCED=y
-# CONFIG_EFI_PARTITION is not set
-CONFIG_NET=y
-CONFIG_PACKET=y
-CONFIG_UNIX=y
-CONFIG_INET=y
-# CONFIG_IPV6 is not set
-CONFIG_BRIDGE=m
-CONFIG_PCI=y
-CONFIG_DEVTMPFS=y
-CONFIG_DEVTMPFS_MOUNT=y
-CONFIG_MTD=y
-CONFIG_MTD_CFI=y
-CONFIG_MTD_CFI_INTELEXT=y
-CONFIG_MTD_CFI_AMDSTD=y
-CONFIG_BLK_DEV_RAM=y
-CONFIG_BLK_DEV_RAM_SIZE=8192
-CONFIG_NETDEVICES=y
-CONFIG_XILINX_EMACLITE=y
-CONFIG_XILINX_LL_TEMAC=y
-# CONFIG_INPUT is not set
-# CONFIG_SERIO is not set
-# CONFIG_VT is not set
-CONFIG_SERIAL_8250=y
-CONFIG_SERIAL_8250_CONSOLE=y
-CONFIG_SERIAL_OF_PLATFORM=y
-CONFIG_SERIAL_UARTLITE=y
-CONFIG_SERIAL_UARTLITE_CONSOLE=y
-# CONFIG_HW_RANDOM is not set
-CONFIG_XILINX_HWICAP=y
-CONFIG_I2C=y
-CONFIG_I2C_XILINX=y
-CONFIG_SPI=y
-CONFIG_SPI_XILINX=y
-CONFIG_GPIOLIB=y
-CONFIG_GPIO_SYSFS=y
-CONFIG_GPIO_XILINX=y
-# CONFIG_HWMON is not set
-CONFIG_WATCHDOG=y
-CONFIG_XILINX_WATCHDOG=y
-CONFIG_FB=y
-CONFIG_FB_XILINX=y
-# CONFIG_USB_SUPPORT is not set
-CONFIG_UIO=y
-CONFIG_UIO_PDRV_GENIRQ=y
-CONFIG_UIO_DMEM_GENIRQ=y
-CONFIG_EXT2_FS=y
-# CONFIG_DNOTIFY is not set
-CONFIG_CRAMFS=y
-CONFIG_ROMFS_FS=y
-CONFIG_NFS_FS=y
-CONFIG_CIFS=y
-CONFIG_CIFS_STATS2=y
-CONFIG_ENCRYPTED_KEYS=y
-CONFIG_DEBUG_INFO=y
-CONFIG_KGDB=y
-CONFIG_KGDB_TESTS=y
-CONFIG_KGDB_KDB=y
-CONFIG_DEBUG_SLAB=y
-CONFIG_DETECT_HUNG_TASK=y
-CONFIG_DEBUG_SPINLOCK=y
+Aisheng, we can check together for our RM version.
+> Regards
+> Aisheng
+> 
+> >  #define MX7D_PAD_UART2_TX_DATA__UART2_DCE_TX
+> > 0x0134 0x03A4 0x0000 0x0 0x0
+> >  #define MX7D_PAD_UART2_TX_DATA__UART2_DTE_RX
+> > 0x0134 0x03A4 0x06FC 0x0 0x3
+> >  #define MX7D_PAD_UART2_TX_DATA__I2C2_SDA
+> > 0x0134 0x03A4 0x05E0 0x1 0x0
+> > --
+> > 2.26.2
 
 _______________________________________________
 linux-arm-kernel mailing list
