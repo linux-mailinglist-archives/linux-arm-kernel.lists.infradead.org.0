@@ -2,65 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 106A21D8AF1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 00:30:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 679721D8AF6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 00:30:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mCDhjrqJ0w8UHEmpoPlmK7oCQAsLCxfplLbT5RPIzKY=; b=WGFM8vydCwXUz3
-	oF5HAiUu/Pj68W55p408AV3Z/RYha4qST5N6V0inuuvQ3wbOFkFrdJW2+KScCSu6gyG0sIeZgHS0S
-	iHw3C7VnS86GQKvpWZyBIRjcIDbYsvJDtwHvX594nPe2cwTMnS0JVUgvbW47dryd2MdsOBQMykuk+
-	JgdbF0yDkUayPKq5/J/L6VsYpJPzB+4R1Pfk6weHRzoFImE0Y8+ZkqPMlg5qUl2OCs2MD84FCNubA
-	3qahc74C1N1xU0YZs9RD75q5CBZK1Es6/JLuPL8CVQPof5qtad3gJjORc05yNDpg9WkkiyOv3c04l
-	3o44w+fv8pz3Qz9LfQvg==;
+	List-Owner; bh=CTr5xKSK0UD9obBcsA4rd8rTl2OiRvfSY32QJGqSb7U=; b=S+z0X/+o0ultGH
+	Lhebj9A2g8rCizoBlVD0Mi8qC8Jjh+CgroFUzZGKUySTWCkI/BFsCF7tAK712+sNKkDEfguUfOtw3
+	Ekt7PQwFq/viEC3MSfkMX63NN30j9OXUf7++/Y+rh5PFpKu33cOi69TLLBpo9amu8Ms9ELMRVTsMh
+	ixrnFBcZaw8S/IHYjlbGlYALKJAGLkIWhuJNqspU9Wv2XcXiN7Fkh1MjH7i05W69kgXvS3pTaQ0Bn
+	MqJkyuMjSPQab7DQzrcJyekxKyLCuu56ZV8wNS2+/S7NGX4kvlybtcWJazbc6nGekQ5OjMoEvDgKQ
+	45pK2tYd4IHy8/P1koIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaoH4-0001f0-Ez; Mon, 18 May 2020 22:30:18 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoF5-0008Rr-Uu; Mon, 18 May 2020 22:28:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description;
- bh=GBFDThW3R0dl4e8TXH9nS2BV2we24l50tzDA/Qh9QnQ=; b=OSnIAQ9esP0AlD0CkeKJAgTWLw
- 46kQm9MzbrH0Cj94TIXmgvsNREFq+5sGZ2khzvjLmJNtGHuqNr58mOA+iWTxxUISIzt5I8ehyXiDs
- 52q2oatvwNzkL3r6hlnxC4pfGU0uljq/i8YhIfUu4XGb6OY7hF2pxJWueUbbrpZOXXhQhMYWIELNW
- FPZcVuaJwKnkbhBbd6sog4wi2S2MqXyThAyLUsQcmqhhCSmQ8V5HLIjUnePrgSfcbtYuVDgxUUD+c
- 8Hn42j4z8XSO9biwklppzUvp2I/UW4iZGoXX3TbF/Or6o2bWqq+BXRnNBMzshXqKR2TeEw/UR+fJF
- 35wN3nIQ==;
+	id 1jaoHZ-0004a7-NW; Mon, 18 May 2020 22:30:49 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoF0-0004Uz-I9; Mon, 18 May 2020 22:28:14 +0000
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jaoG1-0000vc-Tx; Mon, 18 May 2020 22:29:15 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=phil.lan)
+ helo=diego.localnet)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jaoEw-00005F-9d; Tue, 19 May 2020 00:28:06 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v3 1/4] ARM: dts: rockchip: remove identical #include from
- rk3288.dtsi
-Date: Tue, 19 May 2020 00:28:02 +0200
-Message-Id: <158984064169.2259329.2459091557844833236.b4-ty@sntech.de>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200403180159.13387-1-jbx6244@gmail.com>
-References: <20200403180159.13387-1-jbx6244@gmail.com>
+ id 1jaoFx-00007u-F7; Tue, 19 May 2020 00:29:09 +0200
+From: Heiko =?ISO-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+To: Johan Jonker <jbx6244@gmail.com>, kever.yang@rock-chips.com,
+ Caesar Wang <wxt@rock-chips.com>
+Subject: Re: [PATCH v2 2/2] arm64: dts: rockchip: rk3399: fix pd_tcpc0 and
+ pd_tcpc1 node position
+Date: Tue, 19 May 2020 00:29:08 +0200
+Message-ID: <2978296.PvbIKR7951@diego>
+In-Reply-To: <20200428203003.3318-2-jbx6244@gmail.com>
+References: <20200428203003.3318-1-jbx6244@gmail.com>
+ <20200428203003.3318-2-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_232810_943422_2C149136 
-X-CRM114-Status: UNSURE (   8.57  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -1.9 (-)
-X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
- Content analysis details:   (-1.9 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200518_152914_021661_FC2A87CC 
+X-CRM114-Status: GOOD (  13.59  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,25 +59,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 3 Apr 2020 20:01:56 +0200, Johan Jonker wrote:
-> There are 2 identical '#include' for 'rk3288-power.h',
-> so remove one of them.
+Hi Kever, Caesar,
 
-Applied, thanks!
+could you double check where the type-c power-domains are located
+in the power-tree, as Caesar did add them under pd_vio back in 2016.
 
-[1/1] ARM: dts: rockchip: remove identical #include from rk3288.dtsi
+Thanks
+Heiko
 
-Best regards,
--- 
-Heiko Stuebner <heiko@sntech.de>
+Am Dienstag, 28. April 2020, 22:30:03 CEST schrieb Johan Jonker:
+> The pd_tcpc0 and pd_tcpc1 nodes are currently a sub node of pd_vio.
+> In the rk3399 TRM figure of the 'Power Domain Partition' and in the
+> table of 'Power Domain and Voltage Domain Summary' these power domains
+> are positioned directly under VD_LOGIC, so fix that in 'rk3399.dtsi'.
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  arch/arm64/boot/dts/rockchip/rk3399.dtsi | 20 ++++++++++----------
+>  1 file changed, 10 insertions(+), 10 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> index 37279db53..a4dc1bf2e 100644
+> --- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> +++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
+> @@ -1056,6 +1056,16 @@
+>  				clocks = <&cru HCLK_SDIO>;
+>  				pm_qos = <&qos_sdioaudio>;
+>  			};
+> +			pd_tcpc0@RK3399_PD_TCPD0 {
+> +				reg = <RK3399_PD_TCPD0>;
+> +				clocks = <&cru SCLK_UPHY0_TCPDCORE>,
+> +					 <&cru SCLK_UPHY0_TCPDPHY_REF>;
+> +			};
+> +			pd_tcpc1@RK3399_PD_TCPD1 {
+> +				reg = <RK3399_PD_TCPD1>;
+> +				clocks = <&cru SCLK_UPHY1_TCPDCORE>,
+> +					 <&cru SCLK_UPHY1_TCPDPHY_REF>;
+> +			};
+>  			pd_usb3@RK3399_PD_USB3 {
+>  				reg = <RK3399_PD_USB3>;
+>  				clocks = <&cru ACLK_USB3>;
+> @@ -1088,16 +1098,6 @@
+>  					pm_qos = <&qos_isp1_m0>,
+>  						 <&qos_isp1_m1>;
+>  				};
+> -				pd_tcpc0@RK3399_PD_TCPD0 {
+> -					reg = <RK3399_PD_TCPD0>;
+> -					clocks = <&cru SCLK_UPHY0_TCPDCORE>,
+> -						 <&cru SCLK_UPHY0_TCPDPHY_REF>;
+> -				};
+> -				pd_tcpc1@RK3399_PD_TCPD1 {
+> -					reg = <RK3399_PD_TCPD1>;
+> -					clocks = <&cru SCLK_UPHY1_TCPDCORE>,
+> -						 <&cru SCLK_UPHY1_TCPDPHY_REF>;
+> -				};
+>  				pd_vo@RK3399_PD_VO {
+>  					reg = <RK3399_PD_VO>;
+>  					#address-cells = <1>;
+> 
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
