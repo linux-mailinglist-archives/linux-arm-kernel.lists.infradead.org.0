@@ -2,64 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EDE11D8B03
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 00:35:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8204E1D8B0E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 00:37:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/mSoV1yWNBRLMV5dxsj8Md2TZHzgGbFok3jyBlzm/gU=; b=S0zqKky7CMm+VX
-	zCTMFE/2a/ZFITxBEjgT+WEcX9zyxYESyDhJam3RloQDtVx8CclxD822ZndSXSr+dxydM9Iy/G0g4
-	o4j0TkgYlXdzrxF9iB1jvvCPGC+B+KYqtVC8pAuBCJK+UJSLLiSa7e2+TH93MbkbQNZ+dZoS6bbe4
-	OUUn4Y90Ie4rDpeX1FtLguinU+/cbB2hHOra3kzLu/KClM6MHBCkxUcX4k+G6nZ7jovKYc2D38egk
-	WkYScF53IwrPIpA2vCVBVnVQpBJVfFgrbBQYfqmL1hEN37GMqEw8e8bK4zKG4zC2bfzYuWgO0+YR7
-	QkfWH6w9UsCsDRZ8jrpg==;
+	List-Owner; bh=RqYsF5kKA9gVO9K69Jq+YDPj11c2fRfGCy7+kdA4kIg=; b=rBqal8YUv3FQVi
+	l6pDgHgCj2j8W9vSkjXjVE6kPXvPmRfB3LfTVYIz6u870UGeMif7DQVo2YbWwi2MGtVK+cJXBes/E
+	y+MnZ7/KF0pAYPybjxaucCdvFHLsCR8oV+Fg64RPZe7VNjc0eWl5atgG+QdLMx5m7kq5cEbdVACHP
+	y6wA0yweqwDvnCL/QavyoHHKufk31aS7C5aF92h+4GRQRfdnXTyM/DiMUIbzeoACWQkjiadD6oOkw
+	Xe7+GOm+lt2thOCLZaQWlyo4+TNV2iCM+EMsXZqNB60msbyNLLbgcCRHJJPviIug25Ziv7v7HbRJV
+	rBPa8c00F4VyLbD0IIwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaoLy-0007n2-Go; Mon, 18 May 2020 22:35:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jaoNk-000894-O7; Mon, 18 May 2020 22:37:12 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoLo-0007mN-JK
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 22:35:13 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9B32B20756;
- Mon, 18 May 2020 22:35:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589841312;
- bh=bim+Wqlbpg3ow1ruxMttpLSJEZx5ODlUGcT0+LbS9x0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pW9TdC2c/QFLC760zBJw3wq1A6pU7sv35XuqiL3ktsDSb7AnHVhrD1n1NHujzr+6i
- 1u+b5j7oBdWo0V5B4DA0cLNUUCBe6PeZ2ZXRTJRreG7KDyN1Ykcipc8Z5LRegzeBsj
- gCmzd+K/dcftxZhEl/xiq7BXIQGYUBjS+EYGZFrk=
-Date: Mon, 18 May 2020 23:35:07 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V2] arm64/cpuinfo: Move HWCAP name arrays alongside their
- bit definitions
-Message-ID: <20200518223506.GA5866@willie-the-truck>
-References: <1588858150-26823-1-git-send-email-anshuman.khandual@arm.com>
- <20200513150405.GS21779@arm.com>
- <0999fa28-3ee7-3f02-4def-a0c6013ec6dd@arm.com>
- <20200514073613.GB4280@willie-the-truck>
- <8ddd0ca5-07c9-3a99-2ec6-4a201725ebe8@arm.com>
+ id 1jaoNY-00088M-NP
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 22:37:04 +0000
+Received: by mail-pg1-x541.google.com with SMTP id u35so5488142pgk.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 18 May 2020 15:37:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=X67f6N/TB7/lmzTe8rOyg+PekxRmdn/lrnG7IaiK4Ik=;
+ b=nAVHFKWUbfBnlT6fSExrrp8Vwi0yApBLMl38HX8egS5c7xDNaQkhsaHsv8k/yLhoNK
+ onEufHENr57Vb2Uv85JpMb+nJYWovbjbOn0s3z+klub5Etn641hjl1/0hUqm0325p9Sc
+ pfxfQ0dohgF8+3FM03a4I1ZA0X9JzNvf7n8y//ExsRPJfQZ7lrOCEEtH4jmOnK3rq6oJ
+ y82T0aXWdXmYL6FmBkV1xP0fWZfKc6QTP9CY9pL0eyTSHdyQ5vVH80/3mj2xmh/v4om8
+ 3+4uuztUrJRSnYX9hs3BIw6/GkH1fUJAAYrM40cGgIGPAe0BePeZPPNb6w4GUvVAE8fw
+ Gj9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=X67f6N/TB7/lmzTe8rOyg+PekxRmdn/lrnG7IaiK4Ik=;
+ b=VKkcqS2NILC5ZpfAo6ZmL6gjuFkNxmvJ4LFJj/JUDI0+W7tjGFS6JALwOYF6B6mrNv
+ qs2Eq0piu/s/TvoqlFGyNGSlOF+CIQA5UCrqdkgvOf0hTziRQSxbQvez4aBz5GchLpry
+ dFmyTPjkwHJ8BJvyodXDlzaeFXrE5YtlAKyq8KvdxvLJ9FpHqt13f4t8qqp5R9MBkIMG
+ hpw3jRO7zf5aPCxCl+NV+sGRUyzdyw/48XFW56poL4lLD0qTBnn7UkWVO9CzQF4Jwb3F
+ oG9v7Q3oPaop9cpz+R58tWAIFWW7M17HKY9LJh1zKWHE8rbrhKCUl88jJYjDCwhPVvWN
+ SxhQ==
+X-Gm-Message-State: AOAM531gOus2VDdJD56y4kawlo2L+kFgLWMf4rm7KqGal36rTYZT/msK
+ c/xRw9OFPCBpdNBG0JbRfbarhQ==
+X-Google-Smtp-Source: ABdhPJxxmRJRzjqlDQUZoLrEMr+A2g4VH7fKXkn6ymAdxYa5w9ZqWt3+q0XntcXhA1ZpW3IBQp3MLQ==
+X-Received: by 2002:a63:77c6:: with SMTP id
+ s189mr16717156pgc.267.1589841419904; 
+ Mon, 18 May 2020 15:36:59 -0700 (PDT)
+Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id o190sm9600752pfb.178.2020.05.18.15.36.58
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 May 2020 15:36:59 -0700 (PDT)
+Date: Mon, 18 May 2020 15:35:36 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Subject: Re: [PATCH 1/2] arm64: dts: qcom: sc7180: Support ETMv4 power
+ management
+Message-ID: <20200518223536.GJ2165@builder.lan>
+References: <cover.1589539293.git.saiprakash.ranjan@codeaurora.org>
+ <b0a2ac4ffefe7d3e216a83ab56867620f120ff08.1589539293.git.saiprakash.ranjan@codeaurora.org>
+ <56a5563205da61c47eb4f8bbf6120e28@codeaurora.org>
+ <20200518185124.GG2165@builder.lan>
+ <badc88ecd5932033235ed9bcd173ea16@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <8ddd0ca5-07c9-3a99-2ec6-4a201725ebe8@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <badc88ecd5932033235ed9bcd173ea16@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_153512_657268_779A11FB 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200518_153700_802293_7CDE8C9F 
+X-CRM114-Status: GOOD (  17.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -69,7 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,52 +103,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Ard Biesheuvel <ardb@kernel.org>, Mark Brown <broonie@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
+ coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Stephen Boyd <swboyd@chromium.org>,
+ Andy Gross <agross@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBNYXkgMTUsIDIwMjAgYXQgMDg6NTg6MDVBTSArMDUzMCwgQW5zaHVtYW4gS2hhbmR1
-YWwgd3JvdGU6Cj4gT24gMDUvMTQvMjAyMCAwMTowNiBQTSwgV2lsbCBEZWFjb24gd3JvdGU6Cj4g
-PiBXaHkgaXMgaXQgYSBjaGFuZ2U/IFdlJ3ZlIG5ldmVyIHJlcG9ydGVkIGUuZy4gImphdmEiIG9u
-IGFuIGFybTY0IGtlcm5lbCwgc28KPiAKPiBXZSBhbHJlYWR5IGhhdmUgImphdmEiIGRlZmluZWQg
-aW4gZXhpc3RpbmcgY29tcGF0X2h3Y2FwX3N0cltdIGFycmF5IGV2ZW4KPiB0aG91Z2ggaXQgbWln
-aHQgbmV2ZXIgZ2V0IHNldCBpbiBjb21wYXRfZWxmX2h3Y2FwLiBBRkFJQ1MsIGNvbXBhdF9lbGZf
-aHdjYXAKPiB3aWxsIGhhdmUgdGhlIGZvbGxvd2luZyBjYXBhYmlsaXRpZXMgc2V0IChhdCB0aGUg
-bW9zdCkuCj4gCj4gVmlhIENPTVBBVF9FTEZfSFdDQVBfREVGQVVMVAo+IAo+IDAxLiAgQ09NUEFU
-X0hXQ0FQX0hBTEYKPiAwMi4gIENPTVBBVF9IV0NBUF9USFVNQgo+IDAzLiAgQ09NUEFUX0hXQ0FQ
-X0ZBU1RfTVVMVAo+IDA0LiAgQ09NUEFUX0hXQ0FQX0VEU1AKPiAwNS4gIENPTVBBVF9IV0NBUF9U
-TFMKPiAwNi4gIENPTVBBVF9IV0NBUF9JRElWCj4gMDcuICBDT01QQVRfSFdDQVBfTFBBRQo+IAo+
-IFZpYSBzZXR1cF9lbGZfaHdjYXBzKGNvbXBhdF9lbGZfaHdjYXBzKSA8LS0gc2V0dXBfY3B1X2Zl
-YXR1cmVzKCkKPiAKPiA4LiAgQ09NUEFUX0hXQ0FQX05FT04KPiA5LiAgQ09NUEFUX0hXQ0FQX1ZG
-UHY0Cj4gMTAuIENPTVBBVF9IV0NBUF9WRlAKPiAxMS4gQ09NUEFUX0hXQ0FQX1ZGUHYzCj4gCj4g
-VmlhIGFyY2hfdGltZXJfc2V0X2V2dHN0cm1fZmVhdHVyZSgpCj4gCj4gMTIuIENPTVBBVF9IV0NB
-UF9FVlRTVFJNCj4gCj4gVGhlIGNvZGUgZXhpc3RzIGZvciAiamF2YSIgc3RyaW5nIHRvIGJlIGRp
-c3BsYXllZCB3aXRoIC9wcm9jL2NwdWluZm8gYnV0IGl0Cj4gbWF5IG5ldmVyIGdldCB0cmlnZ2Vy
-ZWQgYXMgY29tcGF0X2VsZl9od2NhcCB3aWxsIG5ldmVyIGhhdmUgSkFWQSBjYXBhYmlsaXR5Cj4g
-dW5sZXNzIHRoZXJlIGlzIGEgYnVnIGFzIHlvdSBoYWQgcmlnaHRseSBtZW50aW9uZWQuCgpGYWly
-IGVub3VnaCwgYnV0IGFwcGx5aW5nIHRoaXMgcGF0Y2ggY2F1c2VzIGEgKnRvbm5lKiBvZiB3YXJu
-aW5ncyBmcm9tCmFpYWlhaToKCitJbiBmaWxlIGluY2x1ZGVkIGZyb20gYXJjaC9hcm02NC9pbmNs
-dWRlL2FzbS9jcHVmZWF0dXJlLmg6MTEsCisgICAgICAgICAgICAgICAgIGZyb20gYXJjaC9hcm02
-NC9pbmNsdWRlL2FzbS9wdHJhY2UuaDoxMSwKKyAgICAgICAgICAgICAgICAgZnJvbSBhcmNoL2Fy
-bTY0L2luY2x1ZGUvYXNtL2lycWZsYWdzLmg6MTAsCisgICAgICAgICAgICAgICAgIGZyb20gaW5j
-bHVkZS9saW51eC9pcnFmbGFncy5oOjE2LAorICAgICAgICAgICAgICAgICBmcm9tIGluY2x1ZGUv
-bGludXgvc3BpbmxvY2suaDo1NCwKKyAgICAgICAgICAgICAgICAgZnJvbSBpbmNsdWRlL2xpbnV4
-L3NlcWxvY2suaDozNiwKKyAgICAgICAgICAgICAgICAgZnJvbSBpbmNsdWRlL2xpbnV4L3RpbWUu
-aDo2LAorICAgICAgICAgICAgICAgICBmcm9tIGFyY2gvYXJtNjQvaW5jbHVkZS9hc20vc3RhdC5o
-OjEyLAorICAgICAgICAgICAgICAgICBmcm9tIGluY2x1ZGUvbGludXgvc3RhdC5oOjYsCisgICAg
-ICAgICAgICAgICAgIGZyb20gaW5jbHVkZS9saW51eC9tb2R1bGUuaDoxMywKKyAgICAgICAgICAg
-ICAgICAgZnJvbSBkcml2ZXJzL21lZGlhL3JjL2tleW1hcHMvcmMtaW1vbi1tY2UubW9kLmM6MToK
-K2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vaHdjYXAuaDoxODk6MjY6IHdhcm5pbmc6IOKAmGNvbXBh
-dF9od2NhcDJfc3Ry4oCZIGRlZmluZWQgYnV0IG5vdCB1c2VkIFstV3VudXNlZC1jb25zdC12YXJp
-YWJsZT1dCisgIDE4OSB8IHN0YXRpYyBjb25zdCBjaGFyICpjb25zdCBjb21wYXRfaHdjYXAyX3N0
-cltdID0geworICAgICAgfCAgICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+
-fn4KCnNvIEknbSBkcm9wcGluZyB0aGlzIGZvciBub3cuCgpXaWxsCgpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
-bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon 18 May 12:08 PDT 2020, Sai Prakash Ranjan wrote:
+
+> Hi Bjorn,
+> 
+> On 2020-05-19 00:21, Bjorn Andersson wrote:
+> > On Fri 15 May 03:55 PDT 2020, Sai Prakash Ranjan wrote:
+> 
+> [...]
+> 
+> > > 
+> > > 
+> > > The previous version of this patch in QCOM tree seems to have added
+> > > the
+> > > property to replicator node instead of etm7 node, can you please drop
+> > > that from the tree and apply this one?
+> > > 
+> > 
+> > I'm not able to replace the old commit without rewriting the history of
+> > the branch. So I've applied a patch ontop of the branch to fix this up
+> > instead.
+> > 
+> > Please review the branch and let me know if there's any issues.
+> > 
+> 
+> Thanks for the patch, I checked the branch and its good.
+> Sorry, I should have sent a patch on top of the old one
+> instead of repost.
+> 
+
+No worries, now you know for next time. Thanks confirming my fix.
+
+Thanks,
+Bjorn
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
