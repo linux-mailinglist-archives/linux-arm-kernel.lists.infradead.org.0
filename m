@@ -2,87 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8204E1D8B0E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 00:37:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 331161D8B22
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 00:42:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RqYsF5kKA9gVO9K69Jq+YDPj11c2fRfGCy7+kdA4kIg=; b=rBqal8YUv3FQVi
-	l6pDgHgCj2j8W9vSkjXjVE6kPXvPmRfB3LfTVYIz6u870UGeMif7DQVo2YbWwi2MGtVK+cJXBes/E
-	y+MnZ7/KF0pAYPybjxaucCdvFHLsCR8oV+Fg64RPZe7VNjc0eWl5atgG+QdLMx5m7kq5cEbdVACHP
-	y6wA0yweqwDvnCL/QavyoHHKufk31aS7C5aF92h+4GRQRfdnXTyM/DiMUIbzeoACWQkjiadD6oOkw
-	Xe7+GOm+lt2thOCLZaQWlyo4+TNV2iCM+EMsXZqNB60msbyNLLbgcCRHJJPviIug25Ziv7v7HbRJV
-	rBPa8c00F4VyLbD0IIwg==;
+	List-Owner; bh=F9afJIfiCP2sGpkLFUIz1j4KxeDGTd+4xpAVyyYe7EA=; b=TAHDHK42sxrgM0
+	JMAh/lL3itlMZnFHFD+qI8migdoWCbXA9GuSPvfLb4KICstbmn/bX8CYRuYcE2fec9BD/wOQ9pg4F
+	vcy8ZIl5CTrU3dzWo0LmjMXs59HTqmZ7y354o/RYKttfsPSK8fsWwJYVM5CDtr+CKRgVCNXj+lk5K
+	Fdn4zEmix+7vCJVzD2BNoyEyN1KWx5OsYmdP5ooul9mt1ojgFjNSCDi0CCHKr38rmErZ6SqU2y3QU
+	1lRQXmdimYmwt7tiq/mhI/jQSpjDWIAlplARtCETxTkWZJpXThPCz/lEr9YbmiC9vV+HvNYqg4WfA
+	X2jtukkbWiSmYb6YxJBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaoNk-000894-O7; Mon, 18 May 2020 22:37:12 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jaoSy-0003Bb-2B; Mon, 18 May 2020 22:42:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoNY-00088M-NP
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 22:37:04 +0000
-Received: by mail-pg1-x541.google.com with SMTP id u35so5488142pgk.6
+ id 1jaoSn-0003Ab-Oq
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 22:42:26 +0000
+Received: from mail-ot1-f53.google.com (mail-ot1-f53.google.com
+ [209.85.210.53])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0BEAB20835
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 15:37:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=X67f6N/TB7/lmzTe8rOyg+PekxRmdn/lrnG7IaiK4Ik=;
- b=nAVHFKWUbfBnlT6fSExrrp8Vwi0yApBLMl38HX8egS5c7xDNaQkhsaHsv8k/yLhoNK
- onEufHENr57Vb2Uv85JpMb+nJYWovbjbOn0s3z+klub5Etn641hjl1/0hUqm0325p9Sc
- pfxfQ0dohgF8+3FM03a4I1ZA0X9JzNvf7n8y//ExsRPJfQZ7lrOCEEtH4jmOnK3rq6oJ
- y82T0aXWdXmYL6FmBkV1xP0fWZfKc6QTP9CY9pL0eyTSHdyQ5vVH80/3mj2xmh/v4om8
- 3+4uuztUrJRSnYX9hs3BIw6/GkH1fUJAAYrM40cGgIGPAe0BePeZPPNb6w4GUvVAE8fw
- Gj9w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=X67f6N/TB7/lmzTe8rOyg+PekxRmdn/lrnG7IaiK4Ik=;
- b=VKkcqS2NILC5ZpfAo6ZmL6gjuFkNxmvJ4LFJj/JUDI0+W7tjGFS6JALwOYF6B6mrNv
- qs2Eq0piu/s/TvoqlFGyNGSlOF+CIQA5UCrqdkgvOf0hTziRQSxbQvez4aBz5GchLpry
- dFmyTPjkwHJ8BJvyodXDlzaeFXrE5YtlAKyq8KvdxvLJ9FpHqt13f4t8qqp5R9MBkIMG
- hpw3jRO7zf5aPCxCl+NV+sGRUyzdyw/48XFW56poL4lLD0qTBnn7UkWVO9CzQF4Jwb3F
- oG9v7Q3oPaop9cpz+R58tWAIFWW7M17HKY9LJh1zKWHE8rbrhKCUl88jJYjDCwhPVvWN
- SxhQ==
-X-Gm-Message-State: AOAM531gOus2VDdJD56y4kawlo2L+kFgLWMf4rm7KqGal36rTYZT/msK
- c/xRw9OFPCBpdNBG0JbRfbarhQ==
-X-Google-Smtp-Source: ABdhPJxxmRJRzjqlDQUZoLrEMr+A2g4VH7fKXkn6ymAdxYa5w9ZqWt3+q0XntcXhA1ZpW3IBQp3MLQ==
-X-Received: by 2002:a63:77c6:: with SMTP id
- s189mr16717156pgc.267.1589841419904; 
- Mon, 18 May 2020 15:36:59 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id o190sm9600752pfb.178.2020.05.18.15.36.58
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 15:36:59 -0700 (PDT)
-Date: Mon, 18 May 2020 15:35:36 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Subject: Re: [PATCH 1/2] arm64: dts: qcom: sc7180: Support ETMv4 power
- management
-Message-ID: <20200518223536.GJ2165@builder.lan>
-References: <cover.1589539293.git.saiprakash.ranjan@codeaurora.org>
- <b0a2ac4ffefe7d3e216a83ab56867620f120ff08.1589539293.git.saiprakash.ranjan@codeaurora.org>
- <56a5563205da61c47eb4f8bbf6120e28@codeaurora.org>
- <20200518185124.GG2165@builder.lan>
- <badc88ecd5932033235ed9bcd173ea16@codeaurora.org>
+ Mon, 18 May 2020 22:42:25 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589841745;
+ bh=ZI+2+ZLy6El97MHhuoWAAbeg02T2A/2czo6xMrDyQeQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=vOSx/Y4IyKGmqAuJ61atK8+HUo9I3nP2s/Bv2HwbAZtQyPTNC8eS0qTDTgCHuLzXv
+ I2qDAi7eosVWfEPP8f93XGzMjuPg2uOHxtBV16eQOU+HZNNRrUu14Femx1bHay9t5q
+ UBicFWQvH4DuOZhs/GVewhTX+Nfir9BToSzdHxA4=
+Received: by mail-ot1-f53.google.com with SMTP id v17so9638754ote.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 18 May 2020 15:42:25 -0700 (PDT)
+X-Gm-Message-State: AOAM530GSIj62KEwTQMPhAkksRNymBNk2zhSCFxSzmLq3b3kiCMf4RPD
+ usC8boGFzpDcNA1p24wACv1L+PwRIAVeGlWH0Q==
+X-Google-Smtp-Source: ABdhPJyTKe6FGOymx9XkJB3VrJm6FEmEGYNTais4t83A3HPZxAJIq6IGr2eZbbeLBRbZNy+cx/WbS3w2gtcXkBXBluc=
+X-Received: by 2002:a9d:1441:: with SMTP id h59mr14114210oth.192.1589841744310; 
+ Mon, 18 May 2020 15:42:24 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <badc88ecd5932033235ed9bcd173ea16@codeaurora.org>
+References: <1589198262-21372-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1589198262-21372-1-git-send-email-Anson.Huang@nxp.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 18 May 2020 16:42:13 -0600
+X-Gmail-Original-Message-ID: <CAL_Jsq+dTFy5HBhV9-eU1a0UZikXkUd1HJuHG0KfU-PFetsAMg@mail.gmail.com>
+Message-ID: <CAL_Jsq+dTFy5HBhV9-eU1a0UZikXkUd1HJuHG0KfU-PFetsAMg@mail.gmail.com>
+Subject: Re: [PATCH V2] dt-bindings: reset: Convert i.MX7 reset to json-schema
+To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_153700_802293_7CDE8C9F 
-X-CRM114-Status: GOOD (  17.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200518_154225_826402_36B4F7C7 
+X-CRM114-Status: GOOD (  12.23  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,6 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,50 +85,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Stephen Boyd <swboyd@chromium.org>,
- Andy Gross <agross@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+Cc: devicetree@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ NXP Linux Team <Linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 18 May 12:08 PDT 2020, Sai Prakash Ranjan wrote:
+On Mon, May 11, 2020 at 6:07 AM Anson Huang <Anson.Huang@nxp.com> wrote:
+>
+> Convert the i.MX7 reset binding to DT schema format using json-schema.
+>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> Changes since V1:
+>         - Improve description;
+>         - Remove i.MX8MM and i.MX8MN compatible, they use i.MX8MQ's compatible;
+>         - Keep original author as maintainer;
+>         - Remove unnecessary "..." at the end of file.
+> ---
+>  .../devicetree/bindings/reset/fsl,imx7-src.txt     | 56 ---------------------
+>  .../devicetree/bindings/reset/fsl,imx7-src.yaml    | 58 ++++++++++++++++++++++
+>  2 files changed, 58 insertions(+), 56 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/reset/fsl,imx7-src.txt
+>  create mode 100644 Documentation/devicetree/bindings/reset/fsl,imx7-src.yaml
 
-> Hi Bjorn,
-> 
-> On 2020-05-19 00:21, Bjorn Andersson wrote:
-> > On Fri 15 May 03:55 PDT 2020, Sai Prakash Ranjan wrote:
-> 
-> [...]
-> 
-> > > 
-> > > 
-> > > The previous version of this patch in QCOM tree seems to have added
-> > > the
-> > > property to replicator node instead of etm7 node, can you please drop
-> > > that from the tree and apply this one?
-> > > 
-> > 
-> > I'm not able to replace the old commit without rewriting the history of
-> > the branch. So I've applied a patch ontop of the branch to fix this up
-> > instead.
-> > 
-> > Please review the branch and let me know if there's any issues.
-> > 
-> 
-> Thanks for the patch, I checked the branch and its good.
-> Sorry, I should have sent a patch on top of the old one
-> instead of repost.
-> 
+I'd apply but doesn't apply cleanly to my tree, so:
 
-No worries, now you know for next time. Thanks confirming my fix.
-
-Thanks,
-Bjorn
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
