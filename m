@@ -2,100 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C56511D8870
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 21:46:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D17431D8897
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 21:58:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XOj5wtG0IvNo+6iXn/O/1aASQW/Q95VLREGsewmYJgM=; b=o6/oD3ALEXXJ+Y
-	7xf+miYQxirN+grZPf7auOXw04WydKjsWVVc4WCOyXDmPYKf9V//0E5AK5sRwuZ5YvJhJ9NgsxFEP
-	vvFOonkvYzzThCuqgBboUl/o6ej9M4lFjhOLU9VV7dvNcv9V+1zEl/ox37NA121JiGBSLf72xqsx0
-	lEpSmmJdvwqhTqhQwhnD0lcIpKYT9upNAaVVpA4lQvf2q5nmCpEiJGngkpnM3hCWEeJvwSYoYvqEo
-	djq3FB4GZ14ffIHXVBtHTeZlPCFtEVHuDytZs7If6gI1s2tcBnHmAHsOPLACbhBUsgMPfiwCsfNDu
-	q3pZNaQZRnVehXV06Gvg==;
+	List-Owner; bh=n0LTHGPGUrPegQpjoorvNakaAd8WgSAalKtldLLqN38=; b=BMfzb81VtOW3aA
+	443NWBKtkHqA3H72dH2Q8BnqvoFuK5FZNQeVoJN3Jhp54/IyKxkuo1cQN0kMcRL5KdxW+g8U7Jg4x
+	e7LGFlUNET++HRHz2Lnn/CDioT1AmpRzoM4S5Cn00BBf2MOfdQIIN7on8KDVIsYRURve6J2eesI9k
+	FTIBmwUpFJawYpqPxYYKDQU4T+XgL+Mu6NjgzWrRB533QgoiYUSAsXMBmVsvu7lzsKzdhY080Y25G
+	ql2EZpnXtxeOdaXzBi6rMfOfugtHVSGiJ3HODVSCTuCxJEZsSEGEY6tPgRMH/5FL7CIbbXufy3q7r
+	EifNLlvcYTVv1fmdsbJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaliD-0003E6-Gi; Mon, 18 May 2020 19:46:09 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1jaluI-0002DS-Gy; Mon, 18 May 2020 19:58:38 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jali2-0003DS-BG
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 19:45:59 +0000
-Received: from pps.filterd (m0098396.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04IJXAZ9092513; Mon, 18 May 2020 15:45:41 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 312agcx67x-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 18 May 2020 15:45:40 -0400
-Received: from m0098396.ppops.net (m0098396.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 04IJXsYg095586;
- Mon, 18 May 2020 15:45:40 -0400
-Received: from ppma05fra.de.ibm.com (6c.4a.5195.ip4.static.sl-reverse.com
- [149.81.74.108])
- by mx0a-001b2d01.pphosted.com with ESMTP id 312agcx678-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 18 May 2020 15:45:40 -0400
-Received: from pps.filterd (ppma05fra.de.ibm.com [127.0.0.1])
- by ppma05fra.de.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 04IJf8kT022557;
- Mon, 18 May 2020 19:45:38 GMT
-Received: from b06cxnps4075.portsmouth.uk.ibm.com
- (d06relay12.portsmouth.uk.ibm.com [9.149.109.197])
- by ppma05fra.de.ibm.com with ESMTP id 313x4xg31m-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 18 May 2020 19:45:38 +0000
-Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
- [9.149.105.232])
- by b06cxnps4075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 04IJjZP51049034
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 18 May 2020 19:45:36 GMT
-Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id E30A55204E;
- Mon, 18 May 2020 19:45:35 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.203.217])
- by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTPS id 0EF615204F;
- Mon, 18 May 2020 19:45:34 +0000 (GMT)
-Date: Mon, 18 May 2020 22:45:33 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Florian Fainelli <f.fainelli@gmail.com>
-Subject: Re: [PATCH 2/2] ARM: Allow either FLATMEM or SPARSEMEM on the
- multiplatform build
-Message-ID: <20200518194533.GD1059226@linux.ibm.com>
-References: <20200506235009.25023-1-f.fainelli@gmail.com>
- <20200506235009.25023-3-f.fainelli@gmail.com>
- <20200507072711.GB683243@linux.ibm.com>
- <bc44ed27-7dd7-67b6-93cf-f6f575b59441@gmail.com>
- <a7c86780-d65c-ab7b-ec3c-4029257cee7a@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a7c86780-d65c-ab7b-ec3c-4029257cee7a@gmail.com>
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-18_06:2020-05-15,
- 2020-05-18 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0 phishscore=0
- malwarescore=0 impostorscore=0 mlxlogscore=999 clxscore=1015 bulkscore=0
- priorityscore=1501 lowpriorityscore=0 suspectscore=2 cotscore=-2147483648
- spamscore=0 mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2004280000 definitions=main-2005180161
+ id 1jaluA-0002Cj-82
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 19:58:31 +0000
+Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
+ [73.231.172.41])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8E7D920758;
+ Mon, 18 May 2020 19:58:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589831909;
+ bh=nxo2uyrHnJi5DnLmPJ4mv9Kr35HEpbx7CmvMdiP/OH4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=gtLLQynTEahJo7NSEd9NHZR7KvmuyM4/0lzVMvnb0+zt8LVUBHow/82N1pU3WpL9P
+ 4bmTcYRRamBsfRU6+Bnh3o5MHVvMwPojnNIwrvXKv0GCleeS5OswE6zI1zvVftD+4a
+ FOaEiwJ0K89WE617Heq5rB2zjU1P0qd/KRsz1bSs=
+Date: Mon, 18 May 2020 12:58:28 -0700
+From: Andrew Morton <akpm@linux-foundation.org>
+To: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Subject: Re: [PATCH v2 1/3] mm/memory-failure: Add memory_failure_queue_kick()
+Message-Id: <20200518125828.e4e3973c743556e976c5ee65@linux-foundation.org>
+In-Reply-To: <49686237.p6yG9EJavU@kreacher>
+References: <20200501164543.24423-1-james.morse@arm.com>
+ <20200501164543.24423-2-james.morse@arm.com>
+ <49686237.p6yG9EJavU@kreacher>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_124558_390616_20173A7E 
-X-CRM114-Status: GOOD (  23.62  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200518_125830_323799_0B29CCA6 
+X-CRM114-Status: GOOD (  20.35  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.156.1 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,86 +74,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- sboyd@kernel.org, Kevin Cernekee <cernekee@gmail.com>,
- rmk+kernel@armlinux.org.uk, Gregory Fong <gregory.0xf0@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Tony Luck <tony.luck@intel.com>,
+ linux-acpi@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Xie XiuQi <xiexiuqi@huawei.com>, linux-mm@kvack.org,
+ Tyler Baicar <tyler@amperecomputing.com>, James Morse <james.morse@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Naoya Horiguchi <n-horiguchi@ah.jp.nec.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 08:58:36AM -0700, Florian Fainelli wrote:
-> 
-> 
-> On 5/7/2020 1:11 PM, Florian Fainelli wrote:
+On Mon, 18 May 2020 14:45:05 +0200 "Rafael J. Wysocki" <rjw@rjwysocki.net> wrote:
+
+> On Friday, May 1, 2020 6:45:41 PM CEST James Morse wrote:
+> > The GHES code calls memory_failure_queue() from IRQ context to schedule
+> > work on the current CPU so that memory_failure() can sleep.
 > > 
+> > For synchronous memory errors the arch code needs to know any signals
+> > that memory_failure() will trigger are pending before it returns to
+> > user-space, possibly when exiting from the IRQ.
 > > 
-> > On 5/7/2020 12:27 AM, Mike Rapoport wrote:
-> >> On Wed, May 06, 2020 at 04:50:09PM -0700, Florian Fainelli wrote:
-> >>> From: Gregory Fong <gregory.0xf0@gmail.com>
-> >>>
-> >>> ARMv7 chips with LPAE can often benefit from SPARSEMEM, as portions of
-> >>> system memory can be located deep in the 36-bit address space.  Allow
-> >>> FLATMEM or SPARSEMEM to be selectable at compile time; FLATMEM remains
-> >>> the default.
-> >>>
-> >>> This is based on Kevin's "[PATCH 3/3] ARM: Allow either FLATMEM or
-> >>> SPARSEMEM on the multi-v7 build" from [1] and shamelessly rips off his
-> >>> commit message text above.  As Arnd pointed out at [2] there doesn't
-> >>> seem to be any reason to tie this specifically to ARMv7, so this has
-> >>> been changed to apply to all multiplatform kernels.
-> >>>
-> >>> [1] http://lists.infradead.org/pipermail/linux-arm-kernel/2014-September/286837.html
-> >>> [2] http://lists.infradead.org/pipermail/linux-arm-kernel/2014-October/298950.html
-> >>>
-> >>> Cc: Kevin Cernekee <cernekee@gmail.com>
-> >>> Tested-by: Stephen Boyd <sboyd@codeaurora.org>
-> >>> Signed-off-by: Gregory Fong <gregory.0xf0@gmail.com>
-> >>> Signed-off-by: Doug Berger <opendmb@gmail.com>
-> >>> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> >>> ---
-> >>>  arch/arm/Kconfig | 5 +++++
-> >>>  1 file changed, 5 insertions(+)
-> >>>
-> >>> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-> >>> index 5986277296c3..7bb5264a9c3a 100644
-> >>> --- a/arch/arm/Kconfig
-> >>> +++ b/arch/arm/Kconfig
-> >>> @@ -312,6 +312,8 @@ choice
-> >>>  config ARCH_MULTIPLATFORM
-> >>>  	bool "Allow multiple platforms to be selected"
-> >>>  	depends on MMU
-> >>> +	select ARCH_FLATMEM_ENABLE
-> >>> +	select ARCH_SPARSEMEM_ENABLE
-> >>
-> >> The logic in mm/Kconfig is quite convoluted, so selecting
-> >> ARCH_SPARSEMEM_ENABLE will automatically make SPARSEMEM the only option.
-> >>
-> >> On top of this you would need to enable ARCH_SELECT_MEMORY_MODEL, e.g.
-> >> something like:
+> > Add a helper to kick the memory failure queue, to ensure the scheduled
+> > work has happened. This has to be called from process context, so may
+> > have been migrated from the original cpu. Pass the cpu the work was
+> > queued on.
 > > 
-> > Yes indeed, thanks that does allow me to select between flatmem and
-> > sparsemem from menuconfig correctly now.
+> > Change memory_failure_work_func() to permit being called on the 'wrong'
+> > cpu.
+> > 
+> > --- a/include/linux/mm.h
+> > +++ b/include/linux/mm.h
+> > @@ -3012,6 +3012,7 @@ enum mf_flags {
+> >  };
+> >  extern int memory_failure(unsigned long pfn, int flags);
+> >  extern void memory_failure_queue(unsigned long pfn, int flags);
+> > +extern void memory_failure_queue_kick(int cpu);
+> >  extern int unpoison_memory(unsigned long pfn);
+> >  extern int get_hwpoison_page(struct page *page);
+> >  #define put_hwpoison_page(page)	put_page(page)
+> > diff --git a/mm/memory-failure.c b/mm/memory-failure.c
+> > index a96364be8ab4..c4afb407bf0f 100644
+> > --- a/mm/memory-failure.c
+> > +++ b/mm/memory-failure.c
+> > @@ -1493,7 +1493,7 @@ static void memory_failure_work_func(struct work_struct *work)
+> >  	unsigned long proc_flags;
+> >  	int gotten;
+> >  
+> > -	mf_cpu = this_cpu_ptr(&memory_failure_cpu);
+> > +	mf_cpu = container_of(work, struct memory_failure_cpu, work);
+> >  	for (;;) {
+> >  		spin_lock_irqsave(&mf_cpu->lock, proc_flags);
+> >  		gotten = kfifo_get(&mf_cpu->fifo, &entry);
+> > @@ -1507,6 +1507,19 @@ static void memory_failure_work_func(struct work_struct *work)
+> >  	}
+> >  }
+> >  
+> > +/*
+> > + * Process memory_failure work queued on the specified CPU.
+> > + * Used to avoid return-to-userspace racing with the memory_failure workqueue.
+> > + */
+> > +void memory_failure_queue_kick(int cpu)
+> > +{
+> > +	struct memory_failure_cpu *mf_cpu;
+> > +
+> > +	mf_cpu = &per_cpu(memory_failure_cpu, cpu);
+> > +	cancel_work_sync(&mf_cpu->work);
+> > +	memory_failure_work_func(&mf_cpu->work);
+> > +}
+> > +
+> >  static int __init memory_failure_init(void)
+> >  {
+> >  	struct memory_failure_cpu *mf_cpu;
+> > 
 > 
-> Mike, do you want to make a formal submission to Russell's patch
-> tracker? If so, feel free to add:
-
-I actually hoped to hear from people what do they think about switching
-over to SPARSEMEM for the multiplatform builds. I think at least v7 CPUs
-it would make sense.
-
-Russel, Arnd, can you comment please?
-
-> Tested-by: Florian Fainelli <f.fainelli@gmail.com>
+> I could apply this provided an ACK from the mm people.
 > 
-> Thanks!
-> --
-> Florian
 
--- 
-Sincerely yours,
-Mike.
+Naoya Horiguchi is the memory-failure.c person.  A review would be
+appreciated please?
+
+I'm struggling with it a bit.  memory_failure_queue_kick() should be
+called on the cpu which is identified by arg `cpu', yes? 
+memory_failure_work_func() appears to assume this.
+
+If that's right then a) why bother passing in the `cpu' arg?  and b)
+what keeps this thread pinned to that CPU?  cancel_work_sync() can
+schedule.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
