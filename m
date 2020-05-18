@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 395A91D7397
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 11:13:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6ECD1D7398
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 11:13:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=wGfvHood9bRsVt2lMmPDqgXPFqK/CpmO00zrrERKYA0=; b=CoTQM3EHa67YFybZAI5yRny3jd
-	59P4Z3J0IrVaLTiEI4iEAh1qmO5fmL9R4rdceOKqnqzTN3wZCD6sfxkb4ZO3dc12YmqgvtrlHE3jj
-	XYnMiTsnHg7o4S+JqQWTbZDp3/cBp83HeeWrRQBHc+NRfPZygrgntZxHBj32zZRq74yxua4NKJLFi
-	ZsKZpuWQabjk6qQMpzmC3mpAOd1SBY1HtrNnmYgXJc3b+GSNFl2eJzDkNUiH57L45fsLp478IH3Hc
-	PhbOoywkU0L703ffMiMXpRyyImGSv27mW4oMngdzB+CVplf4sViB6UTYQ1sc80mnwtFS/sm6JLGUh
-	62/ButPQ==;
+	bh=pvg0RMySq7A7b4sKq4E1MkLmPLc325bvgD12vNvTN44=; b=tUCe7ln0A2hLvcpZAOLPwzWYUl
+	fzJu9XLlXgIB6rcrLsGbWHa80EC50EhRBXb6R4hIXh/xs05P/dQcz1pmQGEj9f81DeIUTO7Pf93hz
+	+e+MDOt8Fi4mB9cLGY7/fXhopAe0G5KviaouqgBi9Dh/TOWS7uu+JdjJTj/f6w1h/2diIfmkTqO2P
+	SBhfWVgDtaQzIdGO3u6IADLISUEUsLiXvTtL0BEyX9X7JneMSkLkXpXdgp9DmbIe7qsnonUTUyZts
+	wfhUI+djqcDjsuq2KxcWudI+2uZTIoa+pCCmhvPivoHD7DXB2L2VzuKCRV0J8Pd27nPmIlEas1OYp
+	Lv/l1JVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jabpT-0005uy-5Z; Mon, 18 May 2020 09:12:59 +0000
+	id 1jabpk-0006Ok-T3; Mon, 18 May 2020 09:13:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaboz-0005lA-VJ
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 09:12:31 +0000
+ id 1jabp1-0005lr-RY
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 09:12:33 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 477EC11FB;
- Mon, 18 May 2020 02:12:29 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D2E3312FC;
+ Mon, 18 May 2020 02:12:30 -0700 (PDT)
 Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id ED0C93F68F;
- Mon, 18 May 2020 02:12:27 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7BCCB3F68F;
+ Mon, 18 May 2020 02:12:29 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 1/7] firmware: smccc: Add HAVE_ARM_SMCCC_DISCOVERY to
- identify SMCCC v1.1 and above
-Date: Mon, 18 May 2020 10:12:16 +0100
-Message-Id: <20200518091222.27467-2-sudeep.holla@arm.com>
+Subject: [PATCH v4 2/7] firmware: smccc: Update link to latest SMCCC
+ specification
+Date: Mon, 18 May 2020 10:12:17 +0100
+Message-Id: <20200518091222.27467-3-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200518091222.27467-1-sudeep.holla@arm.com>
 References: <20200518091222.27467-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_021230_048700_FBFEA9D2 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20200518_021231_930601_C47883D7 
+X-CRM114-Status: GOOD (  12.40  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,72 +73,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SMCCC v1.0 lacked discoverability of version and features. To accelerate
-adoption of few mitigations and protect systems more rapidly from various
-vulnerability, PSCI v1.0 was updated to add SMCCC discovery mechanism
-though the PSCI firmware implementation of PSCI_FEATURES(SMCCC_VERSION)
-which returns success on firmware compliant to SMCCC v1.1 and above.
+The current link gets redirected to the revision B published in November
+2016 though it actually points to the original revision A published in
+June 2013.
 
-This inturn makes SMCCC v1.1 and above dependent on ARM_PSCI_FW for
-backward compatibility. Let us introduce a new hidden config for the
-same to build more features on top of SMCCC v1.1 and above.
-
-While at it, also sort alphabetically the psci entry.
+Let us update the link to point to the latest version, so that it
+doesn't get stale anytime soon. Currently it points to v1.2 published in
+March 2020(i.e. DEN0028C).
 
 Tested-by: Etienne Carriere <etienne.carriere@st.com>
+Reviewed-by: Steven Price <steven.price@arm.com>
 Reviewed-by: Etienne Carriere <etienne.carriere@st.com>
 Acked-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/Kconfig       |  6 ++----
- drivers/firmware/smccc/Kconfig | 16 ++++++++++++++++
- 2 files changed, 18 insertions(+), 4 deletions(-)
- create mode 100644 drivers/firmware/smccc/Kconfig
+ include/linux/arm-smccc.h | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index 8007d4aa76dc..4843e94713a4 100644
---- a/drivers/firmware/Kconfig
-+++ b/drivers/firmware/Kconfig
-@@ -295,15 +295,13 @@ config TURRIS_MOX_RWTM
- 	  other manufacturing data and also utilize the Entropy Bit Generator
- 	  for hardware random number generation.
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 59494df0f55b..31b15db9685d 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -10,7 +10,9 @@
+ /*
+  * This file provides common defines for ARM SMC Calling Convention as
+  * specified in
+- * http://infocenter.arm.com/help/topic/com.arm.doc.den0028a/index.html
++ * https://developer.arm.com/docs/den0028/latest
++ *
++ * This code is up-to-date with version DEN 0028 B
+  */
  
--config HAVE_ARM_SMCCC
--	bool
--
--source "drivers/firmware/psci/Kconfig"
- source "drivers/firmware/broadcom/Kconfig"
- source "drivers/firmware/google/Kconfig"
- source "drivers/firmware/efi/Kconfig"
- source "drivers/firmware/imx/Kconfig"
- source "drivers/firmware/meson/Kconfig"
-+source "drivers/firmware/psci/Kconfig"
-+source "drivers/firmware/smccc/Kconfig"
- source "drivers/firmware/tegra/Kconfig"
- source "drivers/firmware/xilinx/Kconfig"
- 
-diff --git a/drivers/firmware/smccc/Kconfig b/drivers/firmware/smccc/Kconfig
-new file mode 100644
-index 000000000000..27b675d76235
---- /dev/null
-+++ b/drivers/firmware/smccc/Kconfig
-@@ -0,0 +1,16 @@
-+# SPDX-License-Identifier: GPL-2.0-only
-+config HAVE_ARM_SMCCC
-+	bool
-+	help
-+	  Include support for the Secure Monitor Call (SMC) and Hypervisor
-+	  Call (HVC) instructions on Armv7 and above architectures.
-+
-+config HAVE_ARM_SMCCC_DISCOVERY
-+	bool
-+	depends on ARM_PSCI_FW
-+	default y
-+	help
-+	 SMCCC v1.0 lacked discoverability and hence PSCI v1.0 was updated
-+	 to add SMCCC discovery mechanism though the PSCI firmware
-+	 implementation of PSCI_FEATURES(SMCCC_VERSION) which returns
-+	 success on firmware compliant to SMCCC v1.1 and above.
+ #define ARM_SMCCC_STD_CALL	        _AC(0,U)
 -- 
 2.17.1
 
