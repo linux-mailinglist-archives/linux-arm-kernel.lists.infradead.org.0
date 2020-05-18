@@ -2,66 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78E581D8195
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 19:49:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 138811D81FF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 19:52:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zbSRVgdTd/nqiZJvtM4g+NtbnmVfrx28Cw06MA+b4S4=; b=C708K90ZC0GAle
-	e4rHb22Z0YVHcHdPoDlTXXaGAShZv+wLTtBfmWdcGESONLDuJ1KOPb9uQfv27f1cAkNchlD1yrzpK
-	WhFNyevfS+POznbeXM3BvSGDXcAgf0M6I6CueXu3WOQK8a7Hq9Exyf4lZWgcfEFP/HAP48CLvaN9b
-	3STUrWDvnFbHfAXWcCM/QplYKfrU5CN7HUIgSH4PbIqnrhxpjWaCh7fgBOd/HPdwQ7KuFWF8CwiKc
-	zfp2RwThVXwuLkFQSaeLun2LwaXhqVWLn0+jJk24TrRO3mO9eFQYEeSVqsYXyW94f28KaYIVtpmgM
-	vvK+Yoz73L2lG1WuJZiQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hNl+UXpNUBuTryOdBF5gpUNT54HFkufecYeixZUKdZE=; b=TOUU1eD9dlYgGe
+	XVQ9Pdzlez68jvHptp+Co5eo6BZTx6fgRMpUW9iGgVtQvDcjcuC3QD01R3kJQNj9XNAqJkIyVUeft
+	eJN0TASUFqrnB4liCRTFfxrGDF5rC98sd384VAkeO4hQPXrnnNBf6Do9IABwoA7sZUsg9IIepHShF
+	dQDL91g0B3Q59px/b63TiMnaoeUGFplDeUi+2VRvYhn0PvilT8nWAdhOy9dlCP3/h5GyuYGrBIvy5
+	xjKvhSQDVKRo/WKMLV+xV2djmaW74GJaK+KRaJRn/x9xzE5MykYQ+UqO/3D99Jhpdo1d2vBiVZ/BM
+	u8vXxr8w5FCieSENFseA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jajt2-0000Gv-Qm; Mon, 18 May 2020 17:49:12 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1jajwR-0003rG-UB; Mon, 18 May 2020 17:52:43 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jajsq-0000Et-Oz; Mon, 18 May 2020 17:49:02 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 4F54380512;
- Mon, 18 May 2020 19:48:49 +0200 (CEST)
-Date: Mon, 18 May 2020 19:48:47 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Enric Balletbo Serra <eballetbo@gmail.com>
-Subject: Re: [PATCH v4 7/7] drm/mediatek: mtk_dsi: Create connector for bridges
-Message-ID: <20200518174847.GA770263@ravnborg.org>
-References: <20200501152335.1805790-1-enric.balletbo@collabora.com>
- <20200501152335.1805790-8-enric.balletbo@collabora.com>
- <CAFqH_53h=3OXzwLnw1XT3rHYkMPOPNFBdQdPeFmNubN9qq_Twg@mail.gmail.com>
- <CAAOTY_-pOUuM7LQ1jm6gqpg8acMqDWOHxGucY5XOjq0ctGUkzA@mail.gmail.com>
- <53683f2d-23c7-57ab-2056-520c50795ffe@collabora.com>
- <CAAOTY__b6V12fS2xTKGjB1fQTfRjX7AQyBqDPXzshfhkjjSkeQ@mail.gmail.com>
- <37191700-5832-2931-5764-7f7fddd023b9@collabora.com>
- <e1ac7d75-c46a-445a-5fcf-5253548f2707@collabora.com>
- <CAAOTY_-w0V0iQgjZ0n26KKs_MdB-im9+LC2EDTmGo0wMG9p_Vw@mail.gmail.com>
- <CAFqH_52YJEnuoXmJVq1TgH5Ay76p-feVQPZ6s4h-1TMBDQ8fDA@mail.gmail.com>
+ id 1jajwH-0003qg-Pv; Mon, 18 May 2020 17:52:35 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id CF53F2A10C9
+Subject: Re: [PATCH v14 03/11] soc: mediatek: Add basic_clk_name to
+ scp_power_data
+To: Weiyi Lu <weiyi.lu@mediatek.com>
+References: <1588752963-19934-1-git-send-email-weiyi.lu@mediatek.com>
+ <1588752963-19934-4-git-send-email-weiyi.lu@mediatek.com>
+ <7ad67855-a3f8-f979-8849-3765bd8289d3@collabora.com>
+ <1589176947.21832.9.camel@mtksdaap41> <1589513724.16252.3.camel@mtksdaap41>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <c510cc46-3285-fa53-b2e1-0420b0bfb61c@collabora.com>
+Date: Mon, 18 May 2020 19:52:29 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFqH_52YJEnuoXmJVq1TgH5Ay76p-feVQPZ6s4h-1TMBDQ8fDA@mail.gmail.com>
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=MOBOZvRl c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=kj9zAlcOel0A:10 a=33rsfa9LKxz_d3rkTGwA:9 a=mxk1C73UtW0IAQGh:21
- a=CjuIK1q_8ugA:10
+In-Reply-To: <1589513724.16252.3.camel@mtksdaap41>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_104900_997711_36C62C1A 
-X-CRM114-Status: GOOD (  13.07  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200518_105234_102789_F8D07A0D 
+X-CRM114-Status: GOOD (  23.81  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,57 +62,267 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Nicolas Boichat <drinkcat@chromium.org>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
+Cc: James Liao <jamesjj.liao@mediatek.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ Rob Herring <robh@kernel.org>, Enric Balletbo Serra <eballetbo@gmail.com>,
+ linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Sascha Hauer <kernel@pengutronix.de>,
  Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Enric/Chun-Kuang.
+Hi Weiyi,
 
-> >
-> > My point is: when do you attach panel to a connector?
-> > In this patch,
-> >
-> > ret = drm_bridge_attach(&dsi->encoder, &dsi->bridge, NULL,
-> >                                           DRM_BRIDGE_ATTACH_NO_CONNECTOR);
-> >
-> > it would call into mtk_dsi_bridge_attach() with
-> > DRM_BRIDGE_ATTACH_NO_CONNECTOR, and call into panel_bridge_attach()
-> > with DRM_BRIDGE_ATTACH_NO_CONNECTOR.
+On 15/5/20 5:35, Weiyi Lu wrote:
+> On Mon, 2020-05-11 at 14:02 +0800, Weiyi Lu wrote:
+>> On Wed, 2020-05-06 at 23:01 +0200, Enric Balletbo i Serra wrote:
+>>> Hi Weiyi,
+>>>
+>>> Thank you for your patch.
+>>>
+>>> On 6/5/20 10:15, Weiyi Lu wrote:
+>>>> Try to stop extending the clk_id or clk_names if there are
+>>>> more and more new BASIC clocks. To get its own clocks by the
+>>>> basic_clk_name of each power domain.
+>>>> And then use basic_clk_name strings for all compatibles, instead of
+>>>> mixing clk_id and clk_name.
+>>>>
+>>>> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+>>>> Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+>>>> ---
+>>>>  drivers/soc/mediatek/mtk-scpsys.c | 134 ++++++++++++--------------------------
+>>>>  1 file changed, 41 insertions(+), 93 deletions(-)
+>>>>
+>>>> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+>>>> index f669d37..c9c3cf7 100644
+>>>> --- a/drivers/soc/mediatek/mtk-scpsys.c
+>>>> +++ b/drivers/soc/mediatek/mtk-scpsys.c
+>>>> @@ -78,34 +78,6 @@
+>>>>  #define PWR_STATUS_HIF1			BIT(26)	/* MT7622 */
+>>>>  #define PWR_STATUS_WB			BIT(27)	/* MT7622 */
+>>>>  
+>>>> -enum clk_id {
+>>>> -	CLK_NONE,
+>>>> -	CLK_MM,
+>>>> -	CLK_MFG,
+>>>> -	CLK_VENC,
+>>>> -	CLK_VENC_LT,
+>>>> -	CLK_ETHIF,
+>>>> -	CLK_VDEC,
+>>>> -	CLK_HIFSEL,
+>>>> -	CLK_JPGDEC,
+>>>> -	CLK_AUDIO,
+>>>> -	CLK_MAX,
+>>>> -};
+>>>> -
+>>>> -static const char * const clk_names[] = {
+>>>> -	NULL,
+>>>> -	"mm",
+>>>> -	"mfg",
+>>>> -	"venc",
+>>>> -	"venc_lt",
+>>>> -	"ethif",
+>>>> -	"vdec",
+>>>> -	"hif_sel",
+>>>> -	"jpgdec",
+>>>> -	"audio",
+>>>> -	NULL,
+>>>> -};
+>>>> -
+>>>>  #define MAX_CLKS	3
+>>>>  
+>>>>  /**
+>>>> @@ -116,7 +88,7 @@ enum clk_id {
+>>>>   * @sram_pdn_bits: The mask for sram power control bits.
+>>>>   * @sram_pdn_ack_bits: The mask for sram power control acked bits.
+>>>>   * @bus_prot_mask: The mask for single step bus protection.
+>>>> - * @clk_id: The basic clocks required by this power domain.
+>>>> + * @basic_clk_name: The basic clocks required by this power domain.
+>>>>   * @caps: The flag for active wake-up action.
+>>>>   */
+>>>>  struct scp_domain_data {
+>>>> @@ -126,7 +98,7 @@ struct scp_domain_data {
+>>>>  	u32 sram_pdn_bits;
+>>>>  	u32 sram_pdn_ack_bits;
+>>>>  	u32 bus_prot_mask;
+>>>> -	enum clk_id clk_id[MAX_CLKS];
+>>>> +	const char *basic_clk_name[MAX_CLKS];
+>>>
+>>> I only reviewed v13, so sorry if this was already discussed. I am wondering if
+>>> would be better take advantage of the devm_clk_bulk_get() function instead of
+>>> kind of reimplementing the same, something like this
+>>>
+>>> 	const struct clk_bulk_data *basic_clocks;
+>>>
+>>
+>> I thought it should be const struct clk_bulk_data
+>> basic_clocks[MAX_CLKS]; instead of const struct clk_bulk_data
+>> *basic_clocks; in struct scp_domain_data data type
+>>
+>>>>  	u8 caps;
+>>>>  };
+>>>>  
+>>>> @@ -411,12 +383,19 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+>>>>  	return ret;
+>>>>  }
+>>>>  
+>>>> -static void init_clks(struct platform_device *pdev, struct clk **clk)
+>>>> +static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
+>>>> +			const char * const *name)
+>>>>  {
+>>>>  	int i;
+>>>>  
+>>>> -	for (i = CLK_NONE + 1; i < CLK_MAX; i++)
+>>>> -		clk[i] = devm_clk_get(&pdev->dev, clk_names[i]);
+>>>> +	for (i = 0; i < MAX_CLKS && name[i]; i++) {
+>>>> +		clk[i] = devm_clk_get(&pdev->dev, name[i]);
+>>>> +
+>>>> +		if (IS_ERR(clk[i]))
+>>>> +			return PTR_ERR(clk[i]);
+>>>> +	}
+>>>
+>>> You will be able to remove this function, see below ...
+>>>
+>>>> +
+>>>> +	return 0;
+>>>>  }
+>>>>  
+>>>>  static struct scp *init_scp(struct platform_device *pdev,
+>>>> @@ -426,9 +405,8 @@ static struct scp *init_scp(struct platform_device *pdev,
+>>>>  {
+>>>>  	struct genpd_onecell_data *pd_data;
+>>>>  	struct resource *res;
+>>>> -	int i, j;
+>>>> +	int i, ret;
+>>>>  	struct scp *scp;
+>>>> -	struct clk *clk[CLK_MAX];
+>>>>  
+>>>>  	scp = devm_kzalloc(&pdev->dev, sizeof(*scp), GFP_KERNEL);
+>>>>  	if (!scp)
+>>>> @@ -481,8 +459,6 @@ static struct scp *init_scp(struct platform_device *pdev,
+>>>>  
+>>>>  	pd_data->num_domains = num;
+>>>>  
+>>>> -	init_clks(pdev, clk);
+>>>> -
+>>>>  	for (i = 0; i < num; i++) {
+>>>>  		struct scp_domain *scpd = &scp->domains[i];
+>>>>  		struct generic_pm_domain *genpd = &scpd->genpd;
+>>>> @@ -493,17 +469,9 @@ static struct scp *init_scp(struct platform_device *pdev,
+>>>>  
+>>>>  		scpd->data = data;
+>>>>  
+>>>> -		for (j = 0; j < MAX_CLKS && data->clk_id[j]; j++) {
+>>>> -			struct clk *c = clk[data->clk_id[j]];
+>>>> -
+>>>> -			if (IS_ERR(c)) {
+>>>> -				dev_err(&pdev->dev, "%s: clk unavailable\n",
+>>>> -					data->name);
+>>>> -				return ERR_CAST(c);
+>>>> -			}
+>>>> -
+>>>> -			scpd->clk[j] = c;
+>>>> -		}
+>>>> +		ret = init_basic_clks(pdev, scpd->clk, data->basic_clk_name);
+>>>> +		if (ret)
+>>>> +			return ERR_PTR(ret);
+>>>
+>>> Just call:
+>>>
+>>> 	ret = devm_clk_bulk_get(&pdev->dev, ARRAY_SIZE(basic_clocks),
+>>> 				data->basic_clocks);
+>>> 	if (ret)
+>>> 		return ERR_PTR(ret);
+>>>
+>>>>  
+>>>>  		genpd->name = data->name;
+>>>>  		genpd->power_off = scpsys_power_off;
+>>>> @@ -560,7 +528,6 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>>>>  		.ctl_offs = SPM_CONN_PWR_CON,
+>>>>  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_CONN_M |
+>>>>  				 MT2701_TOP_AXI_PROT_EN_CONN_S,
+>>>> -		.clk_id = {CLK_NONE},
+>>>>  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+>>>>  	},
+>>>>  	[MT2701_POWER_DOMAIN_DISP] = {
+>>>> @@ -568,7 +535,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>>>>  		.sta_mask = PWR_STATUS_DISP,
+>>>>  		.ctl_offs = SPM_DIS_PWR_CON,
+>>>>  		.sram_pdn_bits = GENMASK(11, 8),
+>>>> -		.clk_id = {CLK_MM},
+>>>> +		.basic_clk_name = {"mm"},
+>>>
+>>> 		.basic_clocks[] = {
+>>> 			{ .id = "mm" },
+>>> 		};
+>>>
+>>
+>> Those basic clocks without given a name (name: null) would get incorrect
+>> clock via clk_bulk_get(...) due to 
+>>
+>> /**
+>>  * of_parse_clkspec() - Parse a DT clock specifier for a given device
+>> node
+>>  * @np: device node to parse clock specifier from
+>>  * @index: index of phandle to parse clock out of. If index < 0, @name
+>> is used
+>>  * @name: clock name to find and parse. If name is NULL, the index is
+>> used
+>>
+>> And the index is 0 here in this callstack
+>>
+>> I guess something need to be improved before we use the clk_bulk_ APIs.
+>>
 > 
-> My understanding is that the DRM_BRIDGE_ATTACH_NO_CONNECTOR flag is to
-> ease transition between the old and the new model. The drivers that
-> support the new model shall set that flag.
-Yes, right now we have fous on migrating all bridge drivers to the new
-model and next step is to make the transition for the display drivers
-one by one.
-Display drivers that uses the old model rely on the bridge driver to
-create the connector, whereas display drivers using the new model will
-create the connector themself.
-Display drivers following the new model will pass DRM_BRIDGE_ATTACH_NO_CONNECTOR
-to tell the bridge drive that no connector shall be created by the
-bridge driver.
+> Hi Enric,
+> 
+> According to the result above, is it necessary to change the APIs or
+> maybe I should send the next version v15 first to fix other problems you
+> mentioned? Many thanks.
+> 
 
-For this driver where only the new model is needed there is no
-reason to try to support both models.
-So the display driver shall always create the connector, and never
-ask the bridge driver to do it (always pass
-DRM_BRIDGE_ATTACH_NO_CONNECTOR).
+It is fine to send a next version without changing the APIs, it depends on the
+extra work if you are fine with the change. To be honest I didn't see the
+problem above but I think can be fixed.
 
-I hope this confirm and clarifies it.
+Cheers,
+ Enric
 
-	Sam
+
+>>
+>>>>  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_MM_M0,
+>>>>  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+>>>>  	},
+>>>> @@ -578,7 +545,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>>>>  		.ctl_offs = SPM_MFG_PWR_CON,
+>>>>  		.sram_pdn_bits = GENMASK(11, 8),
+>>>>  		.sram_pdn_ack_bits = GENMASK(12, 12),
+>>>> -		.clk_id = {CLK_MFG},
+>>>> +		.basic_clk_name = {"mfg"},
+>>>
+>>> 		.basic_clocks[] = {
+>>> 			{ .id = "mfg" },
+>>> 		};
+>>>
+>>>>  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+>>>>  	},
+>>>>  	[MT2701_POWER_DOMAIN_VDEC] = {
+>>>> @@ -587,7 +554,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+>>>>  		.ctl_offs = SPM_VDE_PWR_CON,
+>>>>  		.sram_pdn_bits = GENMASK(11, 8),
+>>>>  		.sram_pdn_ack_bits = GENMASK(12, 12),
+>>>> -		.clk_id = {CLK_MM},
+>>>> +		.basic_clk_name = {"mm"},
+>>>
+>>> ...
+>>>
+>>> [snip]
+>>
+>>
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
