@@ -2,84 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B4F61D7B4A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 16:32:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C80E1D7B59
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 16:35:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nUd6VkhdS0YtC/+lOr4uvZwL1x5wYgDtsDXBb/eNa7Q=; b=PCbUwo6EFmVZ/C
-	5vakX7a04iPM7iGyaamUEHNF56wdvXXmAgal0bfE0gO7HmROkbY+hOWU1RgdVJAJBpQjT2+ZIVpjk
-	JRXphhmBfnU1tghWRdKvcQKKaXICyDxCOiuQbn88ebkmN2ZIzVlA8LETuKfXUlTrYAWREk/4SqTXc
-	rbACebRBphtBPPwccpkxOA1HmZ5a8vdjQWcuLn1+oH/iZYUlvHi/DMtkYzoh0xLvCUCj98XtX+YAO
-	dgaUSQg7JzsCUkzWtNmmYLW8/a0SLT+2KcIRKlZnGJ7LIduzU1B7KUoNsO/jFic5e6rFM4euEbOSo
-	qONJ3ievVsyZd1eaJImw==;
+	List-Owner; bh=qqBN6umWjj60r/jrIqVYpUXR8tZJxa9OleINU1OHxto=; b=nktiRKiwpHpQr4
+	9CaArbh6GdKE4W14YPvNT1wOJakBB3/CSKXm+VktRjJabf/uGwYqHStIp9ZFC5chVcUjsDc6fTLLB
+	UmtwS37C5q0CzDxRPzjTkf/42hQk59IKOBkhKltxLOqdB5CnDSRTt6ncvAwRnpDjHesynN6G+bNf4
+	ycJoWluVlKODGQD3edaBDe97rHGnB2RtBsEckJx05tKgnxzxveyaqXd8KyEPcpDBjfNtHoYxIjB0E
+	anBSRI/N+HQj00HmpKi2aOWmCdr+4RtHAIg+//l6Oo1sKwhsgGIPNuMMleuZNQmtNHCr06qenOf/M
+	3atg93GUt5XoSfbOG1pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jagoP-0008E6-Fw; Mon, 18 May 2020 14:32:13 +0000
-Received: from mail-io1-f67.google.com ([209.85.166.67])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jagoG-0008Cn-2f; Mon, 18 May 2020 14:32:05 +0000
-Received: by mail-io1-f67.google.com with SMTP id s10so10779521iog.7;
- Mon, 18 May 2020 07:32:03 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=MpT+nu7nNOLKspYEkQrWYjY1RVTqlNGjWcECXgpB5yE=;
- b=fMtaWbDBkHkN3cfwJovXwHWrQUxftkAO3K2hMCMsmkkocKZPWq558mrbT8IH+Rw3iM
- tNrr1SNEtQf7znWEpfTPj/OZ/LCp1WEK9qY2XEenTpSdrNJyf3trYqn4CoF3Q0X1v8cm
- VZgAWid2FQfT0j2kEHSHJduipezI4A3v8L50UdTVWTqqmsMKkaEyUfLIei59rS03mqBd
- 0kQxiElhWycgyMiR3VuxgOLIneXVqhJkYswttdClh/9x1nlkprJQIUat21dvdQpNfbO/
- qqG6OX2iclqvNEQSE9/wuL4j/E5ve8UkapYSftxhjTWfz8Sff0dtwAA11A//XCnJ8d2c
- oY9w==
-X-Gm-Message-State: AOAM5339g6EbfuNkN9gv5zsTglg3JGwqq/MU/E0hcf6uQqVXMjeGMBX7
- f/IrLJVoHaNxBruiHkLjZg==
-X-Google-Smtp-Source: ABdhPJwvbWX1i1YobTWJ2sW5L/vNBdw/cQ7LkbFo2JKkW8/BcRUhpnwK4wzuSXXypB3KuWClTxgjbA==
-X-Received: by 2002:a6b:500e:: with SMTP id e14mr13295274iob.47.1589812322692; 
- Mon, 18 May 2020 07:32:02 -0700 (PDT)
-Received: from rob-hp-laptop ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id a17sm1572365ild.31.2020.05.18.07.31.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 07:31:49 -0700 (PDT)
-Received: (nullmailer pid 24775 invoked by uid 1000);
- Mon, 18 May 2020 14:31:48 -0000
-Date: Mon, 18 May 2020 08:31:48 -0600
-From: Rob Herring <robh@kernel.org>
-To: Tomasz Figa <tfiga@chromium.org>
-Subject: Re: [V6, 1/2] media: dt-bindings: media: i2c: Document DW9768 bindings
-Message-ID: <20200518143148.GA18032@bogus>
-References: <20200518132731.20855-1-dongchun.zhu@mediatek.com>
- <20200518132731.20855-2-dongchun.zhu@mediatek.com>
- <CAAFQd5Byvc8Fb0f3_81xSKsuyvsQJm-8g8y1Kx2aUcC=PwpS7w@mail.gmail.com>
+	id 1jagrO-00016K-SL; Mon, 18 May 2020 14:35:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jagr8-0000C6-Mr
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 14:35:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2357F101E;
+ Mon, 18 May 2020 07:35:01 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.29.34])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 19CAB3F52E;
+ Mon, 18 May 2020 07:34:57 -0700 (PDT)
+Date: Mon, 18 May 2020 15:34:55 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Sumit Garg <sumit.garg@linaro.org>
+Subject: Re: [RFC] arm64: Enable perf events based hard lockup detector
+Message-ID: <20200518143455.GB3164@C02TD0UTHF1T.local>
+References: <1589532593-16428-1-git-send-email-sumit.garg@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAAFQd5Byvc8Fb0f3_81xSKsuyvsQJm-8g8y1Kx2aUcC=PwpS7w@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1589532593-16428-1-git-send-email-sumit.garg@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_073204_120115_C6C650D1 
-X-CRM114-Status: GOOD (  20.66  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200518_073502_873681_616EE359 
+X-CRM114-Status: GOOD (  25.72  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.67 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,154 +61,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Shengnan Wang =?utf-8?B?KOeOi+Wco+eUtyk=?= <shengnan.wang@mediatek.com>,
- Louis Kuo <louis.kuo@mediatek.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Nicolas Boichat <drinkcat@chromium.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: daniel.thompson@linaro.org, peterz@infradead.org, catalin.marinas@arm.com,
+ jolsa@redhat.com, dianders@chromium.org, acme@kernel.org,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com,
+ julien.thierry.kdev@gmail.com, namhyung@kernel.org, tglx@linutronix.de,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 04:12:28PM +0200, Tomasz Figa wrote:
-> Hi Dongchun,
-> 
-> On Mon, May 18, 2020 at 3:29 PM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> >
-> > Add DeviceTree binding documentation for Dongwoon Anatech DW9768 voice
-> > coil actuator.
-> 
-> Thanks for the patch. Please see my comments below.
-> 
-> >
-> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > Reviewed-by: Rob Herring <robh@kernel.org>
-> 
-> This version includes significant changes, so the reviewed-by tag
-> shouldn't have been carried out.
-> 
-> > ---
-> >  .../bindings/media/i2c/dongwoon,dw9768.yaml        | 105 +++++++++++++++++++++
-> >  MAINTAINERS                                        |   7 ++
-> >  2 files changed, 112 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> > new file mode 100644
-> > index 0000000..b909e83
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> > @@ -0,0 +1,105 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +# Copyright (c) 2020 MediaTek Inc.
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/media/i2c/dongwoon,dw9768.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Dongwoon Anatech DW9768 Voice Coil Motor (VCM) Lens Device Tree Bindings
-> > +
-> > +maintainers:
-> > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > +
-> > +description: |-
-> > +  The Dongwoon DW9768 is a single 10-bit digital-to-analog (DAC) converter
-> > +  with 100 mA output current sink capability. VCM current is controlled with
-> > +  a linear mode driver. The DAC is controlled via a 2-wire (I2C-compatible)
-> > +  serial interface that operates at clock rates up to 1MHz. This chip
-> > +  integrates Advanced Actuator Control (AAC) technology and is intended for
-> > +  driving voice coil lenses in camera modules.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      # for DW9768 VCM
-> > +      - dongwoon,dw9768
-> > +      # for GT9769 VCM
-> > +      - giantec,gt9769
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  vin-supply:
-> > +    description:
-> > +      Definition of the regulator used as I2C I/O interface power supply.
-> > +
-> > +  vdd-supply:
-> > +    description:
-> > +      Definition of the regulator used as VCM chip power supply.
-> > +
-> > +  dongwoon,aac-mode:
-> > +    description:
-> > +      Indication of AAC mode select.
-> > +    allOf:
-> > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > +      - enum:
-> > +          - 0    #  Direct (default)
+Hi Sumit,
 
-Default can be expressed as 'default: 0'.
+On Fri, May 15, 2020 at 02:19:53PM +0530, Sumit Garg wrote:
+> With the recent feature added to enable perf events to use pseudo NMIs
+> as interrupts on platforms which support GICv3 or later, its now been
+> possible to enable hard lockup detector (or NMI watchdog) on arm64
+> platforms. So enable corresponding support.
 
-> > +          - 1    #  AAC2 (operation time# 0.48 x Tvib)
-> > +          - 2    #  AAC3 (operation time# 0.70 x Tvib)
-> > +          - 3    #  AAC4 (operation time# 0.75 x Tvib)
-> > +          - 4    #  Reserved
-> > +          - 5    #  AAC8 (operation time# 1.13 x Tvib)
-> > +          - 6    #  Reserved
-> > +          - 7    #  Reserved
+Where/when do we expect to see this used?
+
+I thought for server systems we'd expect to have the SBSA watchdog, so
+why would we need this?
+
+> One thing to note here is that normally lockup detector is initialized
+> just after the early initcalls but PMU on arm64 comes up much later as
+> device_initcall(). So we need to re-initialize lockup detection once
+> PMU has been initialized.
 > 
-> I'll ultimately leave it to DT maintainers, but is there any reason to
-> define the reserved values?
-
-No.
-
+> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
+> ---
 > 
-> > +
-> > +  dongwoon,aac-timing:
-> > +    description:
-> > +      Indication of AAC Timing count, unit of 0.1 milliseconds.
-
-Why not just use standard units (-us)?
-
-> > +      Valid values vary from 0 to 63 (default 32).
-
-Looks like constraints.
-
-> > +    allOf:
-> > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > +
-> > +  dongwoon,clock-dividing-rate:
-> > +    description:
-> > +      Indication of VCM internal clock dividing rate select, as one multiple
-> > +      factor to calculate VCM ring periodic time Tvib.
-> > +    allOf:
-> > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > +      - enum:
-> > +          - 0    #  Dividing Rate -  2
-> > +          - 1    #  Dividing Rate -  1 (default)
-> > +          - 2    #  Dividing Rate -  1/2
-> > +          - 3    #  Dividing Rate -  1/4
-> > +          - 4    #  Dividing Rate -  8
-> > +          - 5    #  Dividing Rate -  4
-> > +          - 6    #  Dividing Rate -  Reserved
-> > +          - 7    #  Dividing Rate -  Reserved
+> This patch is dependent on perf NMI patch-set [1].
 > 
-> Ditto.
+> [1] https://patchwork.kernel.org/cover/11047407/
 > 
-> Best regards,
-> Tomasz
+>  arch/arm64/Kconfig             |  2 ++
+>  arch/arm64/kernel/perf_event.c | 32 ++++++++++++++++++++++++++++++--
+>  drivers/perf/arm_pmu.c         | 11 +++++++++++
+>  include/linux/perf/arm_pmu.h   |  2 ++
+>  4 files changed, 45 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 40fb05d..36f75c2 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -160,6 +160,8 @@ config ARM64
+>  	select HAVE_NMI
+>  	select HAVE_PATA_PLATFORM
+>  	select HAVE_PERF_EVENTS
+> +	select HAVE_PERF_EVENTS_NMI if ARM64_PSEUDO_NMI
+> +	select HAVE_HARDLOCKUP_DETECTOR_PERF if PERF_EVENTS && HAVE_PERF_EVENTS_NMI
+>  	select HAVE_PERF_REGS
+>  	select HAVE_PERF_USER_STACK_DUMP
+>  	select HAVE_REGS_AND_STACK_ACCESS_API
+> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+> index 3ad5c8f..df57360 100644
+> --- a/arch/arm64/kernel/perf_event.c
+> +++ b/arch/arm64/kernel/perf_event.c
+> @@ -20,6 +20,8 @@
+>  #include <linux/perf/arm_pmu.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/smp.h>
+> +#include <linux/nmi.h>
+> +#include <linux/cpufreq.h>
+>  
+>  /* ARMv8 Cortex-A53 specific event types. */
+>  #define ARMV8_A53_PERFCTR_PREF_LINEFILL				0xC2
+> @@ -1190,10 +1192,21 @@ static struct platform_driver armv8_pmu_driver = {
+>  
+>  static int __init armv8_pmu_driver_init(void)
+>  {
+> +	int ret;
+> +
+>  	if (acpi_disabled)
+> -		return platform_driver_register(&armv8_pmu_driver);
+> +		ret = platform_driver_register(&armv8_pmu_driver);
+>  	else
+> -		return arm_pmu_acpi_probe(armv8_pmuv3_init);
+> +		ret = arm_pmu_acpi_probe(armv8_pmuv3_init);
+> +
+> +	/*
+> +	 * Try to re-initialize lockup detector after PMU init in
+> +	 * case PMU events are triggered via NMIs.
+> +	 */
+> +	if (arm_pmu_irq_is_nmi())
+> +		lockup_detector_init();
+> +
+> +	return ret;
+>  }
+>  device_initcall(armv8_pmu_driver_init)
+>  
+> @@ -1225,3 +1238,18 @@ void arch_perf_update_userpage(struct perf_event *event,
+>  	userpg->time_shift = (u16)shift;
+>  	userpg->time_offset = -now;
+>  }
+> +
+> +#ifdef CONFIG_HARDLOCKUP_DETECTOR_PERF
+> +#define SAFE_MAX_CPU_FREQ	4000000000UL // 4 GHz
+
+Why is 4GHz "safe"?
+
+There's no architectural requirement on max frequency, and it's
+conceviable that there could be parts faster than this.
+
+If the frequency is critical, then we should bail out when it is
+unknown rather than guessing. If it is not cirital then we should
+explain what the requirements are and why using a hard-coded value is
+sane.
+
+> +u64 hw_nmi_get_sample_period(int watchdog_thresh)
+> +{
+> +	unsigned int cpu = smp_processor_id();
+> +	unsigned int max_cpu_freq;
+> +
+> +	max_cpu_freq = cpufreq_get_hw_max_freq(cpu);
+> +	if (max_cpu_freq)
+> +		return (u64)max_cpu_freq * 1000 * watchdog_thresh;
+> +	else
+> +		return (u64)SAFE_MAX_CPU_FREQ * watchdog_thresh;
+> +}
+
+I take it this uses CPU cycles?
+
+AFAIK those can be gated in idle/retention states (e.g. for WFI/WFE or
+any other instruction that could block). So if the CPU were blocked on
+one of those, the counter would never overflow and trigger the
+interrupt.
+
+i.e. this isn't going to detect a hard lockup of that sort.
+
+> +#endif
+> diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
+> index f96cfc4..691dfc9 100644
+> --- a/drivers/perf/arm_pmu.c
+> +++ b/drivers/perf/arm_pmu.c
+> @@ -718,6 +718,17 @@ static int armpmu_get_cpu_irq(struct arm_pmu *pmu, int cpu)
+>  	return per_cpu(hw_events->irq, cpu);
+>  }
+>  
+> +bool arm_pmu_irq_is_nmi(void)
+> +{
+> +	const struct pmu_irq_ops *irq_ops;
+> +
+> +	irq_ops = per_cpu(cpu_irq_ops, smp_processor_id());
+> +	if (irq_ops == &pmunmi_ops || irq_ops == &percpu_pmunmi_ops)
+> +		return true;
+> +	else
+> +		return false;
+
+You can simplify:
+
+| if (x)
+|	return true;
+| else
+|	return false;
+
+... to:
+
+| return x;
+
+Thanks,
+Mark.
+
+> +}
+> +
+>  /*
+>   * PMU hardware loses all context when a CPU goes offline.
+>   * When a CPU is hotplugged back in, since some hardware registers are
+> diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
+> index d9b8b76..a71f029 100644
+> --- a/include/linux/perf/arm_pmu.h
+> +++ b/include/linux/perf/arm_pmu.h
+> @@ -155,6 +155,8 @@ int arm_pmu_acpi_probe(armpmu_init_fn init_fn);
+>  static inline int arm_pmu_acpi_probe(armpmu_init_fn init_fn) { return 0; }
+>  #endif
+>  
+> +bool arm_pmu_irq_is_nmi(void);
+> +
+>  /* Internal functions only for core arm_pmu code */
+>  struct arm_pmu *armpmu_alloc(void);
+>  struct arm_pmu *armpmu_alloc_atomic(void);
+> -- 
+> 2.7.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
