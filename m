@@ -2,73 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E8631D7D2A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:44:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57A2F1D7D34
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:45:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/GUOk+c7dyUFBi+joGrwFR+tGF7Ingi8STWrNbeYhXE=; b=BRWDam/NmTS0/+
-	doIiv7ranL8cuLwlaL6PAFFT0P+gv7ctmwI2M39BG9W0yXMNsvmhYCdEGDiQxsyGP7Za34TWRFxkG
-	LQLd24HTT8dLUmdB2Nx6svLuMwS9y/ikXkiYMkrDK3gP7brCpp4RefaNKeqhY8y7YiGZPW45yk8O6
-	Myys8lf8rjOrNaNxVMH1IEhG4kzDkT1SnWJQf5kBCm5z78BS1bDRtbeeiN8ellqogFHLHg6DQapJU
-	DSITi77xFoqyKdKQGLvlR7VCFPaR2mRRwSUqPPoS7DWI4ojg8xKndq1FiUOeDzmMPoFTBmVjPuuwI
-	DOsdNYa1oXmaOM16RJBw==;
+	List-Owner; bh=C7As75aaiFL5tJl5xhrqxykXBECk/0XC6ilBN+0DhRc=; b=iue5XQpdkVAHhx
+	CVB6jxH3dtQ/htt9cAf9sheAK7EVcvNtKWX6w97NmwnMaDkTEGpRI114MHTCSoZILmjaFGTjC417r
+	aD4LMLEWjG/geh5yLmXtnhISkY29cEQ2pntVezCzlRTnjwGuhPzFdcxky8gtkdfw23HRejVzXiSUn
+	frGYFSE9NNk1lnhbelXMHD9F+TFbnwZhIvhPQI7Yo+De2kABhcrSsn7myBDjXX+RZe81OVCcXwaHz
+	+5SJHuTjr0dmQxOISZ84OXyEKYvAgunq8ra+20XX7NQ3UcTLzOHFflrDUYNDBl8QzYLLRpC/TnIkk
+	uKJImuIChw86g4Jc2PVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jahwY-0007XL-8Z; Mon, 18 May 2020 15:44:42 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
+	id 1jahxR-0001mA-6s; Mon, 18 May 2020 15:45:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jahwM-0007Vf-Ii; Mon, 18 May 2020 15:44:32 +0000
-Received: by mail-oi1-f193.google.com with SMTP id x23so2769337oic.3;
- Mon, 18 May 2020 08:44:29 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Zmc+aX1vQ2DoVqQHld2NGpTEXaFRkMWY7XPbs/Yym5g=;
- b=jg122jgVrNTArNr+euvwuYVz/nLhvKJM2+w/czTlDDjKIh9dfTun+Fv+NCFupl8bJo
- jdtSUYW4j1D4zb2+bCj6LteYxhLh/snmiQOYfQB8y5TxYuEVkvdFpGQZ4sed+Jei5FaB
- oZijHGC3gD2bo4rZG6y2L/2B1ePOWBN1w/4AnvZ4RhhA5gzR8P6cbiTuJA92aS9d94BU
- bGFNZ6XsxaRoQdzfy3Zvw8IGxn2gTmziV6dqE8na8ZRy37XcocuLuHtQwQ//KMhBBzRU
- 4HSSJObM59/iXZiihF3Anx5vTKzSjj+WL6D/JzGcL7uBVwgTbaKmRfbikfGkaicYTWN6
- heJA==
-X-Gm-Message-State: AOAM532L4E9JuBGhUMzrK6DOBNU1yUH55n/2J3LI7gdZEHMjdjYwHSlr
- jlUu18mGT6Cf27z+RCZ6Z9AbkKz88/mTtZ5SMn8=
-X-Google-Smtp-Source: ABdhPJy2nzNFTl+3u/yZOZKPJD6snXgr3/xAOGW+7fC9tpBtXaFCbD/tlFqxKMUwcf8LG/1SZLomAT8oopgBVFdHLgs=
-X-Received: by 2002:aca:895:: with SMTP id 143mr10832413oii.153.1589816669165; 
- Mon, 18 May 2020 08:44:29 -0700 (PDT)
+ id 1jahxI-0001l0-1q
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 15:45:29 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3E63920657;
+ Mon, 18 May 2020 15:45:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589816727;
+ bh=lkx1dqDKnZ+7YQ40oS1fSOiu3vaTshH77dFDIsJ7zpY=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=1R3PT4Fh7iXsD1dBKDsTA2zU+v6Fh9XxL6QeojwFzCuedeAidtnj708jw4tqa4daW
+ WQzvXD/kyiA6nLQ/cGC3LCXT/X1PHq4EszC5UwDZfsIpkO7JTCeIkjtPCyXP0PWYuV
+ HoXh0/YZGhjrBX0kbc703WUMPr7fTluicvDCKH8s=
+Date: Mon, 18 May 2020 16:45:23 +0100
+From: Will Deacon <will@kernel.org>
+To: Rob Clark <robdclark@gmail.com>, Robin Murphy <robin.murphy@arm.com>,
+ Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Joerg Roedel <joro@8bytes.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>, 
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, 
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>
+Subject: Re: [PATCH] iomm/arm-smmu: Add stall implementation hook
+Message-ID: <20200518154522.GN32394@willie-the-truck>
+References: <20200421202004.11686-1-saiprakash.ranjan@codeaurora.org>
+ <b491e02ad790a437115fdeab6b21bc48@codeaurora.org>
+ <1ced023b-157c-21a0-ac75-1adef7f029f0@arm.com>
+ <20200507125357.GA31783@willie-the-truck>
+ <CAF6AEGuLU+_qP8HNO1s9PTPHqJnCMHzehmcT8NiJhiAwrfSH6w@mail.gmail.com>
+ <CAF6AEGvuHKObTR97XdSXjmjKB+qjQ8N1_wxM=ZU8bEkF=cXp-A@mail.gmail.com>
+ <20200511173008.GA24282@jcrouse1-lnx.qualcomm.com>
 MIME-Version: 1.0
-References: <1589461844-15614-1-git-send-email-qii.wang@mediatek.com>
- <1589461844-15614-3-git-send-email-qii.wang@mediatek.com>
-In-Reply-To: <1589461844-15614-3-git-send-email-qii.wang@mediatek.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Mon, 18 May 2020 17:44:17 +0200
-Message-ID: <CAMuHMdXjLakWDDEy=02prC7XjAs_xBnt2mArPFNwyHgUoWw6-g@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] i2c: mediatek: Add i2c ac-timing adjust support
-To: Qii Wang <qii.wang@mediatek.com>
+Content-Disposition: inline
+In-Reply-To: <20200511173008.GA24282@jcrouse1-lnx.qualcomm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_084430_618553_61DE8DE8 
-X-CRM114-Status: GOOD (  16.92  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200518_084528_138931_5311426F 
+X-CRM114-Status: GOOD (  31.15  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,114 +90,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, srv_heupstream@mediatek.com,
- Wolfram Sang <wsa@the-dreams.de>, leilk.liu@mediatek.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-mediatek@lists.infradead.org, Linux I2C <linux-i2c@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 14, 2020 at 3:13 PM Qii Wang <qii.wang@mediatek.com> wrote:
-> This patch adds a algorithm to calculate some ac-timing parameters
-> which can fully meet I2C Spec.
->
-> Signed-off-by: Qii Wang <qii.wang@mediatek.com>
-> ---
->  drivers/i2c/busses/i2c-mt65xx.c | 328 +++++++++++++++++++++++++++++++++-------
->  1 file changed, 277 insertions(+), 51 deletions(-)
->
-> diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
-> index 0ca6c38a..7020618 100644
-> --- a/drivers/i2c/busses/i2c-mt65xx.c
-> +++ b/drivers/i2c/busses/i2c-mt65xx.c
+On Mon, May 11, 2020 at 11:30:08AM -0600, Jordan Crouse wrote:
+> On Fri, May 08, 2020 at 08:40:40AM -0700, Rob Clark wrote:
+> > On Fri, May 8, 2020 at 8:32 AM Rob Clark <robdclark@gmail.com> wrote:
+> > >
+> > > On Thu, May 7, 2020 at 5:54 AM Will Deacon <will@kernel.org> wrote:
+> > > >
+> > > > On Thu, May 07, 2020 at 11:55:54AM +0100, Robin Murphy wrote:
+> > > > > On 2020-05-07 11:14 am, Sai Prakash Ranjan wrote:
+> > > > > > On 2020-04-22 01:50, Sai Prakash Ranjan wrote:
+> > > > > > > Add stall implementation hook to enable stalling
+> > > > > > > faults on QCOM platforms which supports it without
+> > > > > > > causing any kind of hardware mishaps. Without this
+> > > > > > > on QCOM platforms, GPU faults can cause unrelated
+> > > > > > > GPU memory accesses to return zeroes. This has the
+> > > > > > > unfortunate result of command-stream reads from CP
+> > > > > > > getting invalid data, causing a cascade of fail.
+> > > > >
+> > > > > I think this came up before, but something about this rationale doesn't add
+> > > > > up - we're not *using* stalls at all, we're still terminating faulting
+> > > > > transactions unconditionally; we're just using CFCFG to terminate them with
+> > > > > a slight delay, rather than immediately. It's really not clear how or why
+> > > > > that makes a difference. Is it a GPU bug? Or an SMMU bug? Is this reliable
+> > > > > (or even a documented workaround for something), or might things start
+> > > > > blowing up again if any other behaviour subtly changes? I'm not dead set
+> > > > > against adding this, but I'd *really* like to have a lot more confidence in
+> > > > > it.
+> > > >
+> > > > Rob mentioned something about the "bus returning zeroes" before, but I agree
+> > > > that we need more information so that we can reason about this and maintain
+> > > > the code as the driver continues to change. That needs to be a comment in
+> > > > the driver, and I don't think "but android seems to work" is a good enough
+> > > > justification. There was some interaction with HUPCF as well.
+> > >
+> > > The issue is that there are multiple parallel memory accesses
+> > > happening at the same time, for example CP (the cmdstream processor)
+> > > will be reading ahead and setting things up for the next draw or
+> > > compute grid, in parallel with some memory accesses from the shader
+> > > which could trigger a fault.  (And with faults triggered by something
+> > > in the shader, there are *many* shader threads running in parallel so
+> > > those tend to generate a big number of faults at the same time.)
+> > >
+> > > We need either CFCFG or HUPCF, otherwise what I have observed is that
+> > > while the fault happens, CP's memory access will start returning
+> > > zero's instead of valid cmdstream data, which triggers a GPU hang.  I
+> > > can't say whether this is something unique to qcom's implementation of
+> > > the smmu spec or not.
+> > >
+> > > *Often* a fault is the result of the usermode gl/vk/cl driver bug,
+> > > although I don't think that is an argument against fixing this in the
+> > > smmu driver.. I've been carrying around a local patch to set HUPCF for
+> > > *years* because debugging usermode driver issues is so much harder
+> > > without.  But there are some APIs where faults can be caused by the
+> > > user's app on top of the usermode driver.
+> > >
+> > 
+> > Also, I'll add to that, a big wish of mine is to have stall with the
+> > ability to resume later from a wq context.  That would enable me to
+> > hook in the gpu crash dump handling for faults, which would make
+> > debugging these sorts of issues much easier.  I think I posted a
+> > prototype of this quite some time back, which would schedule a worker
+> > on the first fault (since there are cases where you see 1000's of
+> > faults at once), which grabbed some information about the currently
+> > executing submit and some gpu registers to indicate *where* in the
+> > submit (a single submit could have 100's or 1000's of draws), and then
+> > resumed the iommu cb.
+> > 
+> > (This would ofc eventually be useful for svm type things.. I expect
+> > we'll eventually care about that too.)
+> 
+> Rob is right about HUPCF. Due to the parallel nature of the command processor
+> there is always a very good chance that a CP access is somewhere in the bus so
+> any pagefault is usually a death sentence. The GPU context bank would always
+> want HUPCF set to 1.
 
-> +/*
-> + * Check and Calculate i2c ac-timing
-> + *
-> + * Hardware design:
-> + * sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src
-> + * xxx_cnt_div =  spec->min_xxx_ns / sample_ns
-> + *
-> + * Sample_ns is rounded down for xxx_cnt_div would be greater
-> + * than the smallest spec.
-> + * The sda_timing is chosen as the middle value between
-> + * the largest and smallest.
-> + */
-> +static int mtk_i2c_check_ac_timing(struct mtk_i2c *i2c,
-> +                                  unsigned int clk_src,
-> +                                  unsigned int check_speed,
-> +                                  unsigned int step_cnt,
-> +                                  unsigned int sample_cnt)
-> +{
-> +       const struct i2c_spec_values *spec;
-> +       unsigned int su_sta_cnt, low_cnt, high_cnt, max_step_cnt;
-> +       unsigned int sda_max, sda_min, clk_ns, max_sta_cnt = 0x3f;
-> +       long long sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src;
+So this sounds like an erratum to me, and I'm happy to set HUPCF if we
+detect the broken implementation. However, it will need an entry in
+Documentation/arm64/silicon-errata.rst and a decent comment in the driver
+to explain what we're doing and why.
 
-So sample_ns is a 64-bit value. Is that really needed?
+Thanks,
 
-> +       if (!i2c->dev_comp->timing_adjust)
-> +               return 0;
-> +
-> +       if (i2c->dev_comp->ltiming_adjust)
-> +               max_sta_cnt = 0x100;
-> +
-> +       spec = mtk_i2c_get_spec(check_speed);
-> +
-> +       if (i2c->dev_comp->ltiming_adjust)
-> +               clk_ns = 1000000000 / clk_src;
-> +       else
-> +               clk_ns = sample_ns / 2;
-> +
-> +       su_sta_cnt = DIV_ROUND_UP(spec->min_su_sta_ns, clk_ns);
-> +       if (su_sta_cnt > max_sta_cnt)
-> +               return -1;
-> +
-> +       low_cnt = DIV_ROUND_UP(spec->min_low_ns, sample_ns);
-
-So this is a 32-bit by 64-bit division (indeed, not 64-by-32!)
-
-noreply@ellerman.id.au reports:
-
-    ERROR: modpost: "__udivdi3" [drivers/i2c/busses/i2c-mt65xx.ko] undefined!
-    ERROR: modpost: "__divdi3" [drivers/i2c/busses/i2c-mt65xx.ko] undefined!
-
-for 32-bit builds.
-
-> +       max_step_cnt = mtk_i2c_max_step_cnt(check_speed);
-> +       if ((2 * step_cnt) > low_cnt && low_cnt < max_step_cnt) {
-> +               if (low_cnt > step_cnt) {
-> +                       high_cnt = 2 * step_cnt - low_cnt;
-> +               } else {
-> +                       high_cnt = step_cnt;
-> +                       low_cnt = step_cnt;
-> +               }
-> +       } else {
-> +               return -2;
-> +       }
-> +
-> +       sda_max = spec->max_hd_dat_ns / sample_ns;
-> +       if (sda_max > low_cnt)
-> +               sda_max = 0;
-> +
-> +       sda_min = DIV_ROUND_UP(spec->min_su_dat_ns, sample_ns);
-
-One more.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
