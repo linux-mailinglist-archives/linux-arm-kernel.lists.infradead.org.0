@@ -2,92 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4618D1D70C4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 08:18:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A3821D7117
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 08:33:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/OOxDTf7F3hhKT/u5l24kVkzM4lltrmAkuPXIzrpL0g=; b=QhlSNCkCha9yYX
-	E9P/Emh4bWTM3oNp4v7YQ6hygWy5z8dIt8U6PY14VZVVJAAvlWLiINcJpZjw3M4fezrDqj0Xsi0Zh
-	YOnS4ARSsZKJfhLsp5Qbx2JgM5g7sqgPXSnV6PfsFKfADcjQ29zLEB/gxhenQdx/mIHTMzXAnURhF
-	nBtYYWe4rQfFjK51u/i54dCIOudp5JjX2uwLFtbAzBI62SvrHSPcbT0GDKnxAR3v9x7JguPjf6HBq
-	/lAMEQpnaXk2smnDA1wcRKYubfvCrIEBmhrKuoo+aS7x+FkalyTNtcFDvzQoRgdpHV3kSTCXmq+GP
-	OR6m3cO4sUBu6TtzvjUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OHO5lo9y8rknuF91Yb+DGsjHXR96VF2xrS8mOqc2Ctc=; b=q4IATLp8VHQfQ8
+	+wA8Kzprjcm5dsdxFdNJC0MtOKOG1NHZFSUFOQ/i/i9f5ssCVDEI7PBYmTKLWM3MqLRfU8KGMN1C9
+	k7A3G04PE72ETlNaXJAx/QXbukK8LvSY5RoxXu9LfdbnQsz1VqNldcjbnEoydtEmL1YELAQ+SBprD
+	9ffin6CedlVUvuGaAHo7l4ollaNwauvV8yP4wdTyuAH8+TzJ5jpX83qopGdN71Ghw2wZjynM1+qYR
+	JczYLvX3du8bMyUWmFVfayjPVztJGpdgTPhlU1UPZXVRt8YYPk6ANrY90519ZgWi6KF9brbUx7U0y
+	TucVIeM5c0UNfIGmzrdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaZ6P-0004DF-In; Mon, 18 May 2020 06:18:17 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jaZL4-0006An-1C; Mon, 18 May 2020 06:33:26 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaZ6E-0004BL-BO
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 06:18:09 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id q9so4533090pjm.2
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 17 May 2020 23:18:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=M5n9pR8YrcNGB5Twdpxaglw1ExqBVeZzm3ypCn0PPMc=;
- b=DHnstMwQFGeIHpwRXsQCLJAkSNRVmDDGdUFKxiLJy74upnbawfn7dQnkZM0IiIiaZO
- i2YohVkDOY5B4KNM9xk5sHADOEWJ3IJz0/fRzPCg+kkRimTJU7qOC0obJwLQbkIPxYJ6
- omDZifamvwez3z2PdiCJE7dBhU2ziZ69HD+gPhojclA/renBHrtSD9rOqBxvOsV78ry3
- nr/ITYcrlOxaDiCSIsaw7v/f1r/aAs1EsEpgbn2UGyLl6CxmGFsdisCXgYhWwOHY3Z9M
- +rkfi0jokBWL+sbXsv79kBIsE5Ee5cD+Bf4CGbmDTYJUe2EY6Nm+vjSty9VjUny9zwc5
- h5Bg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=M5n9pR8YrcNGB5Twdpxaglw1ExqBVeZzm3ypCn0PPMc=;
- b=Si7ABblWA2vSbykUF2tW9Lb4fo3wq0vmvuC0y6Q70WfUYWFgvdic1jKWO60hrKZSzv
- ZbA/zmMOdt5TfRMaKPv9dmMJmYUbU4VZeEKc2iBVAwRrpajsuuYZ0XMdqjgkRuYW5/0P
- AGbEvDWjV2RIO1O0g9GzJtVZB8i3TzX6RfV0R21XexwAdFvcFzCE5dRsvZGuy4QBRKse
- amWKV0xLG6oWnCN1jPNWUk5hLoxq369bWyDg/lyZvyCdHj2Vxj7qTFTw5V/APIkDhi5R
- +pQlMJzh0X886O0b2fLfm7ifY7YBx76vBX1PyICixSZTQZgn5PpZNniGvZzx12p2rXZJ
- k4dQ==
-X-Gm-Message-State: AOAM531BC6C/hTebvwRkm5wtfcyR546bxN4k2BI3eDp6OOS+ho6ljVSq
- k1cWEx4QEw9+DquEBH5rL9gG
-X-Google-Smtp-Source: ABdhPJyxTNnwHhkx79KytdDT7I/oyy+aWpUyx9e1VX+AOmVzNnaJnertusFfu8KQ0oRzutonEF1f/Q==
-X-Received: by 2002:a17:90a:dd44:: with SMTP id
- u4mr16383713pjv.132.1589782684078; 
- Sun, 17 May 2020 23:18:04 -0700 (PDT)
-Received: from mani ([103.59.133.81])
- by smtp.gmail.com with ESMTPSA id w7sm7468032pfw.82.2020.05.17.23.18.00
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Sun, 17 May 2020 23:18:03 -0700 (PDT)
-Date: Mon, 18 May 2020 11:47:55 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: Amit Tomer <amittomer25@gmail.com>
-Subject: Re: [PATCH v1 8/9] arm64: dts: actions: Add MMC controller support
- for S700
-Message-ID: <20200518061755.GA25113@mani>
-References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
- <1589472657-3930-9-git-send-email-amittomer25@gmail.com>
- <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
- <CABHD4K9yjUGuo0w-RfhdZQJm3Wtj6bU2H4DXcp4Jjp=e0fFeyA@mail.gmail.com>
- <2cd3cdaf-826e-9d12-9fd4-9f7e2a517ecd@arm.com>
- <CABHD4K-OaQ4Vf_+dg9FMR97ocLeUkDswyEnChPV=H=VcbyUhkg@mail.gmail.com>
- <abbef32c-84d2-7dac-c667-49610d014710@arm.com>
- <CABHD4K-MHs4jhL_9otJJ_xjC1uv1N20mnHqT39b2kob7WjZcVQ@mail.gmail.com>
+ id 1jaZKv-0006AO-1a; Mon, 18 May 2020 06:33:18 +0000
+X-UUID: 1b93a2fe59f843a9bf893bcef2c6ff51-20200517
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=YxP6/pRzTiTVu/hcxWJ9yeQQWJwxGnsvUO9djcnnF3g=; 
+ b=pUDdCIu7od2N6fthFPhJ6qVt3MzgouNWoKuzZGYtmw4wo2YE4k16Yh8DEiWKPKZYjXgh4EII1CUy+1xj12oA+NifwiqT53AFS/8zd+LSelTArrb4eo85G5WcYnVKNqSICK+0UszdZ5ua7wgHsNg8Q+LAsV435lSAx6qNFHrUOfQ=;
+X-UUID: 1b93a2fe59f843a9bf893bcef2c6ff51-20200517
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 662579786; Sun, 17 May 2020 22:32:53 -0800
+Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 17 May 2020 23:24:34 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 18 May 2020 14:24:33 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Mon, 18 May 2020 14:24:31 +0800
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
+ <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, "Paul E . McKenney" <paulmck@kernel.org>, "Josh
+ Triplett" <josh@joshtriplett.org>, Mathieu Desnoyers
+ <mathieu.desnoyers@efficios.com>, Lai Jiangshan <jiangshanlai@gmail.com>,
+ Joel Fernandes <joel@joelfernandes.org>, Andrew Morton
+ <akpm@linux-foundation.org>
+Subject: [PATCH v3 0/4] kasan: memorize and print call_rcu stack
+Date: Mon, 18 May 2020 14:24:32 +0800
+Message-ID: <20200518062432.4508-1-walter-zh.wu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABHD4K-MHs4jhL_9otJJ_xjC1uv1N20mnHqT39b2kob7WjZcVQ@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_231806_394066_A13F61B3 
-X-CRM114-Status: GOOD (  13.83  )
+X-CRM114-CacheID: sfid-20200517_233317_088505_124700DF 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -95,6 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,50 +89,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- =?iso-8859-1?Q?Andr=E9?= Przywara <andre.przywara@arm.com>,
- linux-actions@lists.infradead.org, cristian.ciocaltea@gmail.com,
- Rob Herring <robh+dt@kernel.org>,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Walter Wu <walter-zh.wu@mediatek.com>,
+ wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 0518, Amit Tomer wrote:
-> Hi,
-> 
-> > I recommend reading the DT spec, chapter 2.3.1 "compatible":
-> > https://github.com/devicetree-org/devicetree-specification/releases/download/v0.3/devicetree-specification-v0.3.pdf
-> 
-> My point is more about, DT validation is not happy about this situation.
-> For instance when I run dt-validate, do see following:
-> 
-> /home/amit/work/kernel_work/linux/arch/arm64/boot/dts/actions/s700-cubieboard7.dt.yaml:
-> mmc@e0210000: compatible: Additional items are not allowed
-> ('actions,s700-mmc' was unexpected)
-> 
-> and I am not sure if this is because DT and driver has different
-> number of compatible strings.
-> 
+This patchset improves KASAN reports by making them to have
+call_rcu() call stack information. It is useful for programmers
+to solve use-after-free or double-free memory issue.
 
-Yeah, the DT YAML validation tool doesn't allow this. And there were patches
-removing the additional compatible from DTS.
+The KASAN report was as follows(cleaned up slightly):
 
-I don't know if the DT fallback is discouraged or not.
+BUG: KASAN: use-after-free in kasan_rcu_reclaim+0x58/0x60
 
-Anyway, is enough investigation done to justify that we need SoC specific tweaks
-in the driver? I think I did look into the downstream code for s700/s500 while
-upstreaming this driver and convinced myself that the same driver could be
-reused without modifications.
+Freed by task 0:
+ kasan_save_stack+0x24/0x50
+ kasan_set_track+0x24/0x38
+ kasan_set_free_info+0x18/0x20
+ __kasan_slab_free+0x10c/0x170
+ kasan_slab_free+0x10/0x18
+ kfree+0x98/0x270
+ kasan_rcu_reclaim+0x1c/0x60
 
-Thanks,
-Mani
+Last one call_rcu() call stack:
+ kasan_save_stack+0x24/0x50
+ kasan_record_aux_stack+0xbc/0xd0
+ call_rcu+0x8c/0x580
+ kasan_rcu_uaf+0xf4/0xf8
 
-> Thanks
-> Amit
+Generic KASAN will record the last two call_rcu() call stacks and
+print up to 2 call_rcu() call stacks in KASAN report. it is only
+suitable for generic KASAN.
 
+This feature considers the size of struct kasan_alloc_meta and
+kasan_free_meta, we try to optimize the structure layout and size
+, let it get better memory consumption.
+
+[1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
+[2]https://groups.google.com/forum/#!searchin/kasan-dev/better$20stack$20traces$20for$20rcu%7Csort:date/kasan-dev/KQsjT_88hDE/7rNUZprRBgAJ
+
+Changes since v2:
+- remove new config option, default enable it in generic KASAN
+- test this feature in SLAB/SLUB, it is pass.
+- modify macro to be more clearly
+- modify documentation
+
+Changes since v3:
+- change recording from first/last to the last two call stacks
+- move free track into kasan free meta
+- init slab_free_meta on object slot creation
+- modify documentation
+
+Walter Wu (4):
+rcu/kasan: record and print call_rcu() call stack
+kasan: record and print the free track
+kasan: add tests for call_rcu stack recording
+kasan: update documentation for generic kasan
+
+Documentation/dev-tools/kasan.rst |  3 +++
+include/linux/kasan.h             |  2 ++
+kernel/rcu/tree.c                 |  2 ++
+lib/Kconfig.kasan                 |  2 ++
+lib/test_kasan.c                  | 30 ++++++++++++++++++++++++++++++
+mm/kasan/common.c                 | 37 ++++++++++++-------------------------
+mm/kasan/generic.c                | 38 ++++++++++++++++++++++++++++++++++++++
+mm/kasan/kasan.h                  | 17 +++++++++++++++++
+mm/kasan/report.c                 | 36 ++++++++++++++++++++----------------
+mm/kasan/tags.c                   | 37 +++++++++++++++++++++++++++++++++++++
+10 files changed, 163 insertions(+), 41 deletions(-)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
