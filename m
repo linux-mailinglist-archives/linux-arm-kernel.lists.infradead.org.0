@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA4F41D83C0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:08:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 438701D83FE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:09:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+CgCDAe4+KeCxYSFxWDlA/BzO4RiNm01esmjJ0V0Dd0=; b=MJbPhIQC4+ygZ5
-	eKwwgy1FGMBbbDRZjJ6gqtCWmdsJBW7SnxCJwvhhwKezRpOB9lMkaD+/Pb+li/EKdlj4S4rbLNtre
-	TFgZ5b3j8AcYl6g2RtxzAOhSfYQNKrLjWFeiFNIK5TZeUekszarT/MYt81qKnBH1UsOAiled5i+wY
-	/y0Q6rejNlQuqqfblahAebhQKHwNo2FDKalZQTiMu1qDb3eLivLuQrG6QEMqbeN1vXb372MIx2nDy
-	gtl157XIIuedAQ9WMPkdE3xAr9fIQDAhK+/SXXF9yLmsCHd7gLm2W1qUvzChBZwzTJR8KguXFRa+/
-	2XhMAri6EjvYBDdiacRQ==;
+	List-Owner; bh=1cTR7FzVkp8RVPn+uqwPpr6sMpXSzglxkvZp9+Yj4JA=; b=kn62qui9TLSinf
+	Dv/hZV8ji9Gbi+lrhN8fvI2vj/sA9g9XePoTVAMJOahFEqB7/H8dC3Sp1Ecw3qy2QgWnVZCfm18lO
+	C/CMd8zx5t8NAZSwiLoRcB0poQNDgzpc2r2/OJU3PuHMdwrPSCZGqggS2aAxXUbv79u/WYHVUfHph
+	SjlYfJ764O7nPRDe+QSfi77m9rjKO38S5/FmFtR7O35L40IGIYm9C1fTTXs5X4UOnuTXu6n9HzrY/
+	vbOAJ+5pdSagCSsQvTAjXzaY2eV3P8qNtnTJmHMKUyOPSUZM9TDouDatkm5PERHa+UgEVpLJwRlWm
+	0Q03CymowZlXwvg886wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jakBl-0001Zc-VR; Mon, 18 May 2020 18:08:33 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jakCd-0002Y1-Q7; Mon, 18 May 2020 18:09:27 +0000
+Received: from mail-pl1-x636.google.com ([2607:f8b0:4864:20::636])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jak6Q-0003Sq-1X
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 18:03:03 +0000
-Received: by mail-pl1-x641.google.com with SMTP id w19so2755415ply.11
+ id 1jak6R-0003Tr-Fp
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 18:03:05 +0000
+Received: by mail-pl1-x636.google.com with SMTP id a13so2992644pls.8
  for <linux-arm-kernel@lists.infradead.org>;
  Mon, 18 May 2020 11:03:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=i3BWbBbkg8NyB0iXqBE55doZtUFR+gfZIquhH1ktDhE=;
- b=mJVRlvy7q0XT2dVo/1a6jMGnINkp6g4sFkzUJOFtT50IVmfcZKW5oWXVbz++zyWA7l
- iTzlDGkoR2WNvz/CkdFnIj2IeWA4X5NUSQJ45f7qI9TrqKHHkn4zuIIDUv5hhbl7TY6K
- j3ez8fMHe+og4a/xjLIFscra4qqsOv/fhuWvuCDZwQcnHb7WAzwd4vnpjf9h3QgOukrA
- ywRPjUNy1IsFOsG5SmvttHC+FTmiyCJjGuxuV1IodTdx36N+9dJaahYxB/utrL6sIQcZ
- 5gZ8ihpywXHd8Y/AdqGbyfINNUv+j4XRqtgkM+vGW8eztJ6Y9BF6kQxcyUAWTBnKf0hf
- XkIw==
+ bh=frOK4OZDYhbgzHRdQmb2gRizrXDsUQpDoZuLWDJWtp4=;
+ b=UWiaQNZgB0xYbQXioPaR6Njc3Lx8ppjNgiEvvjsOcLyXCy8sH+c+1MhEW5fSflvGTv
+ nr/kHdFTUx9HiYUj8eWPNSYYNpGPbdHf9I2s3WfI1NhNB2/EB0uQZbegnwpcudldktWH
+ 7qw7sGadxZ/+wUfGacwqfWu99FQLnvbV62dwr4tBG+Th/rlOcut4xiz1r7OoZyTAaHSL
+ cAzQliOfTUKDpMDET2xPclq95oOfVdofrrGyUAmhfJQc1BrTPGLqvXzpIjDJnhYX7HRK
+ EBWnaAhmAUvLj5YJ5QF5eLhYiQRwuS8vyqJmJoW7rIjC1ZnA0SQfRUjmHEq7ZZTqting
+ cXyQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=i3BWbBbkg8NyB0iXqBE55doZtUFR+gfZIquhH1ktDhE=;
- b=O428d+YP0QfUlwLEekFf8iHPEz9yZeDHFgX1JUi7VN/hCqzgQy3vqq4WMR1Gcz/T1/
- G2/MqsXlGllmUE/CMr6hOArcI+f/7iDa0CPFYMrfEwc+341M5qhRUmOA018p2lfJEAX1
- 0X8o8ITxhqXv+OtPef2rjub57RtqzaOFNUYm43vlS52eZr68Xp+gY4ygAwT0wvIxZr5p
- 35vryuaDGQ2ekUqQuHSpgLxvteEhuBDTcPhFoXxShwxiUW84hPqKKOnbwh53v6/jnLCP
- NSEuGfl47sO9ST+NAkwvubG0COWtVr3egIwsLrXrcaahmJ8GoUD+o4l8DhavBawgpPW0
- MSYg==
-X-Gm-Message-State: AOAM532uosgPieZ/YazK3sXjsth9sTguEDgVNvBT82BZQ930L7wSZV2G
- 3W2axEAhPoGbDgufoZ4NFiXrZv8XX9I=
-X-Google-Smtp-Source: ABdhPJzDfkWuMuQZ2I+6W737DmcL/mZXIXXcL8EeXC/Q5GDTg1ytGpB/3Y75vPa+GYE+2r5mnKLk0A==
-X-Received: by 2002:a17:90a:268f:: with SMTP id
- m15mr685647pje.190.1589824981460; 
- Mon, 18 May 2020 11:03:01 -0700 (PDT)
+ bh=frOK4OZDYhbgzHRdQmb2gRizrXDsUQpDoZuLWDJWtp4=;
+ b=W2MaMgOHJ4fpnikyE8MkowIWcRkzB60wHDViyRvCo+letOVjhnM/oBYGMWYKz148SQ
+ lgxPeNlbJF5QqCWDILxIGD1l06+8St0P3RPVYzSh/pM8n9ta5mwJQuxrXnaZGlfI5n0H
+ ulVQoOZ8j4aqY0RYxrjwD9MIWzup6K4nxqh23xrbdObk459KyFGgHSIWEe8Glp6MDVX1
+ 2zYahPdm2bHbMEXA1fi5RoMn+EDzGh7uWOAsV1TIv07fql2wvSJaXydtb0IboHFT1Iuf
+ 0hlJjC5O4RC1AKkKJebuVJaDgjtoyAOGAZx8igZk/TayOMgThMbZfW0SD07eAUQjW3sm
+ VLxQ==
+X-Gm-Message-State: AOAM530HPl3PbxoPbo/rbfJbyHF6atPsz1/tQOqtVJBLt1FFdVFIRmfQ
+ eeXMw6DIEp2d3skkv2v5LNdFkQ==
+X-Google-Smtp-Source: ABdhPJxkYwWR9jeiOA5WL3hNF6RXRP/I47uBCD/qn9sPl6MufOqWoFuFXSYb7KhIKd8zrp/W5DpBbg==
+X-Received: by 2002:a17:90a:f493:: with SMTP id
+ bx19mr565656pjb.45.1589824982250; 
+ Mon, 18 May 2020 11:03:02 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id v3sm9212314pfv.186.2020.05.18.11.03.00
+ by smtp.gmail.com with ESMTPSA id v3sm9212314pfv.186.2020.05.18.11.03.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 11:03:00 -0700 (PDT)
+ Mon, 18 May 2020 11:03:01 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 18/23] coresight: Initialize arg in sparse friendly way
-Date: Mon, 18 May 2020 12:02:37 -0600
-Message-Id: <20200518180242.7916-19-mathieu.poirier@linaro.org>
+Subject: [PATCH 19/23] coresight: Include required headers in C files
+Date: Mon, 18 May 2020 12:02:38 -0600
+Message-Id: <20200518180242.7916-20-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200518180242.7916-1-mathieu.poirier@linaro.org>
 References: <20200518180242.7916-1-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_110302_093864_FCFD3F62 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20200518_110303_549321_F9CFE165 
+X-CRM114-Status: GOOD (  10.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:636 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -106,45 +106,109 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Stephen Boyd <swboyd@chromium.org>
 
-Sparse gets annoyed when this initializer is 0 but the first struct
-member is a pointer. Just use { } to initialize instead so that sparse
-is quiet.
+We should include headers that C files use in the C files that use them
+and avoid relying on implicit includes as much as possible. This helps
+avoid compiler errors in the future about missing declarations when
+header files change includes in the future.
 
+Cc: Douglas Anderson <dianders@chromium.org>
 Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
 Cc: Mike Leach <mike.leach@linaro.org>
 Signed-off-by: Stephen Boyd <swboyd@chromium.org>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm3x.c | 2 +-
- drivers/hwtracing/coresight/coresight-etm4x.c | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ .../hwtracing/coresight/coresight-cti-platform.c    |  8 +++++++-
+ drivers/hwtracing/coresight/coresight-cti-sysfs.c   |  6 ++++++
+ drivers/hwtracing/coresight/coresight-cti.c         | 13 +++++++++++++
+ drivers/hwtracing/coresight/coresight-cti.h         |  8 +++++++-
+ 4 files changed, 33 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm3x.c b/drivers/hwtracing/coresight/coresight-etm3x.c
-index e2cb6873c3f2..bf22dcfd3327 100644
---- a/drivers/hwtracing/coresight/coresight-etm3x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm3x.c
-@@ -504,7 +504,7 @@ static int etm_enable_perf(struct coresight_device *csdev,
- static int etm_enable_sysfs(struct coresight_device *csdev)
- {
- 	struct etm_drvdata *drvdata = dev_get_drvdata(csdev->dev.parent);
--	struct etm_enable_arg arg = { 0 };
-+	struct etm_enable_arg arg = { };
- 	int ret;
+diff --git a/drivers/hwtracing/coresight/coresight-cti-platform.c b/drivers/hwtracing/coresight/coresight-cti-platform.c
+index c6c0c9b4827e..ab3bd4ed0910 100644
+--- a/drivers/hwtracing/coresight/coresight-cti-platform.c
++++ b/drivers/hwtracing/coresight/coresight-cti-platform.c
+@@ -2,11 +2,17 @@
+ /*
+  * Copyright (c) 2019, The Linaro Limited. All rights reserved.
+  */
++#include <linux/coresight.h>
++#include <linux/device.h>
++#include <linux/err.h>
++#include <linux/of.h>
++#include <linux/property.h>
++#include <linux/slab.h>
  
- 	spin_lock(&drvdata->spinlock);
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 7443a2e4528d..fb0f5f4f3a91 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -412,7 +412,7 @@ static int etm4_enable_perf(struct coresight_device *csdev,
- static int etm4_enable_sysfs(struct coresight_device *csdev)
- {
- 	struct etmv4_drvdata *drvdata = dev_get_drvdata(csdev->dev.parent);
--	struct etm4_enable_arg arg = { 0 };
-+	struct etm4_enable_arg arg = { };
- 	int ret;
+ #include <dt-bindings/arm/coresight-cti-dt.h>
+-#include <linux/of.h>
  
- 	spin_lock(&drvdata->spinlock);
+ #include "coresight-cti.h"
++#include "coresight-priv.h"
+ 
+ /* Number of CTI signals in the v8 architecturally defined connection */
+ #define NR_V8PE_IN_SIGS		2
+diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+index aeea39cbd161..392757f3a019 100644
+--- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
++++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+@@ -4,7 +4,13 @@
+  * Author: Mike Leach <mike.leach@linaro.org>
+  */
+ 
++#include <linux/atomic.h>
+ #include <linux/coresight.h>
++#include <linux/device.h>
++#include <linux/io.h>
++#include <linux/kernel.h>
++#include <linux/spinlock.h>
++#include <linux/sysfs.h>
+ 
+ #include "coresight-cti.h"
+ 
+diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+index 7fc1fc8d7738..be61c1705916 100644
+--- a/drivers/hwtracing/coresight/coresight-cti.c
++++ b/drivers/hwtracing/coresight/coresight-cti.c
+@@ -4,7 +4,20 @@
+  * Author: Mike Leach <mike.leach@linaro.org>
+  */
+ 
++#include <linux/amba/bus.h>
++#include <linux/atomic.h>
++#include <linux/bits.h>
++#include <linux/coresight.h>
++#include <linux/device.h>
++#include <linux/io.h>
++#include <linux/kernel.h>
++#include <linux/list.h>
++#include <linux/mutex.h>
++#include <linux/pm_runtime.h>
+ #include <linux/property.h>
++#include <linux/spinlock.h>
++
++#include "coresight-priv.h"
+ #include "coresight-cti.h"
+ 
+ /**
+diff --git a/drivers/hwtracing/coresight/coresight-cti.h b/drivers/hwtracing/coresight/coresight-cti.h
+index 004df3ab9dd0..acf7b545e6b9 100644
+--- a/drivers/hwtracing/coresight/coresight-cti.h
++++ b/drivers/hwtracing/coresight/coresight-cti.h
+@@ -7,8 +7,14 @@
+ #ifndef _CORESIGHT_CORESIGHT_CTI_H
+ #define _CORESIGHT_CORESIGHT_CTI_H
+ 
+-#include <asm/local.h>
++#include <linux/coresight.h>
++#include <linux/device.h>
++#include <linux/fwnode.h>
++#include <linux/list.h>
+ #include <linux/spinlock.h>
++#include <linux/sysfs.h>
++#include <linux/types.h>
++
+ #include "coresight-priv.h"
+ 
+ /*
 -- 
 2.20.1
 
