@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E10211D83A7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:06:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 163B41D83BE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:08:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EGdtPT1TwG+04leTrrdVQ9pSze2TvoMyWzw/JV3FAb8=; b=hFAV2XFzrPZ8HB
-	mBpZXHYgzFCJtZVBsNBnDSEiLLAmKA4ZbxKUOSrOqZRh2nEiGjXblLzZbwTN6qG+iEk/FIwgzDZUD
-	gQ9mXttb64zCtkdu3mKXbENYaZ5dOYvQ9Uohoyh4pFqXxrETDAl9LLa689RNwDWQNY8P/Paox2z8x
-	E4vnmvwcSq6KrAJis/0Pf6oi2rQtNfl2f0v0sojHwBzryu6pDJFPRc0FRmcRxdFn6fblUwVeHU9K/
-	42OVLOtgELTC2+kYQPq79INcIOUqqvyQ/InXbFxgQJbWGwW0AdBMeYJf5sxQr/mnymKWfZkSqBAtM
-	7aAvwzOi6gADTlI1oHsA==;
+	List-Owner; bh=0f0uzoz4cE5aStXKa9yFtQmtIWFLr4nby2SkGS0b8nc=; b=Xdsyhw3dLLXsN5
+	P7X7q3/A1W0Hy7JVgWfkByjQ69fFmjbWRdbg09PGbDl0ukjNQSRiWmOpyQ6CrHTd1+RgJgz5zSaFd
+	W9Idpn4ht9Z122O611PqnznLTNd6zVLEtzGGxQ/rtlD20yHJYIIlVmNzNetnCXk5URGmKCykNVmrV
+	wMCtDLuwU3m72AvzTD4dABhpGW6Ja602dxwteizdS9FVRR8owQgDluzg8xg//iF7eMJ0AmV6I7pd8
+	/ztZfYozBjFC9Cl5rUX8iKTJ06ZEk8BO9xvv0PKVAqh/RUr+4xKWPIyFRJLmijcYC4FDa10G+fW5v
+	U/J5kdYYvTRzld8ISLog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jak9v-0008Qv-9w; Mon, 18 May 2020 18:06:39 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jakBS-0001IQ-F0; Mon, 18 May 2020 18:08:14 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jak6L-0003OH-Q9
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 18:02:59 +0000
-Received: by mail-pl1-x641.google.com with SMTP id s20so4543648plp.6
+ id 1jak6N-0003PX-8H
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 18:03:01 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id l73so223771pjb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 11:02:57 -0700 (PDT)
+ Mon, 18 May 2020 11:02:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=lRmSiRVSYRvReMhh28RP4/vZKd6NlyKhQZ7NuWIDNS0=;
- b=ZDZpYpJeo6pTMJg73otjIXxupf4NOxLc3eJbCmx5qhl17gRTAOHA6aJ1NatGhw1XN8
- Zh5oRPtWLl3j/WpcZsGQUUQ/Nm56HpBhlyGXYz0PyVN9//u627UGxHe/LPgnc0pgaTgx
- t6tJRiBmIaVhyp+GsBqA+quAQZdcIs+eBdt23AzfSf7gXZbt7LEOrNRSzYS+3BXadUVl
- iwyY5jEf/CF6GbBGCTo4G/Begw7x+h6sa262NqlhwazqY+OEPm0lXR6W+yWVT7QExWeW
- yR2L4fgtEizaXkoFJQhKWv3AhoevDpML/oES1udTfVhTgbWxxCsRYd4rN0ufENBNkJtE
- 61cA==
+ bh=qI0hkZLl1p40lpmoqUP5FQkPLM/cVGruUyPdGcb4wIQ=;
+ b=v7rWz7edbqHgcpapNTcdBkkA49gPIQn9qCOdOWX8oswt5q6lNAOVvsk1B8bRpUKMgR
+ V4rLEToL+vznxN6V51xzvHyi5SPHiZ536ZXjjZoyZpAPKS9dcQ5Bh8uS/Zz7Bu9iFiGN
+ viTvAVkzFbmABREoO94u8xSroYUz6TiRqc2M3l3yy3Fvh8cpViYns3W5Rx41tuOqXBek
+ NzTUMh94cOHdFbYLrTUo86P60ddnETRFCJ+4E9i/9HKgo5c6ETsbX3Busz+cmB3vx00p
+ MFldLgSi0CsnmHYpZgDjDdFF6PwCZ5S1dINmBFKM1YF0JZBCjzS4JSlJVbPCtdrgfJwM
+ ocGg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=lRmSiRVSYRvReMhh28RP4/vZKd6NlyKhQZ7NuWIDNS0=;
- b=T+t1EpqekoE6MIg9J/4NkKbYisQgAqVedQDMviBQ4gS67kq9VVi4UlUwRk8T86teWu
- AS/sN4siBBXy89SxaQiFwGMKSoE9sxhEevh4EMXkn17bqpll0qwRbjwdvYDoCSuNzvb7
- zt+OZ474eD7ukDP1Efup7nDn/qU1pJmX9dNvvWAiB5LxhOBo4U2h5VMOnBpSrEJrHf4r
- vqvhXG+31cd4xGp22UoH3zUip2Ops93hGRiraaG6+aiFAAsTiE5Aa0ESScx29/KIGinQ
- P31E9VkBQSatmKW8f6nZXvHjo9hD807oiLOlyhWQSkvd/hzaKB8WpV1BDVwXA2vZgbAE
- jNWQ==
-X-Gm-Message-State: AOAM5319WEep8c4/yL/90AfJpfunxGf/4iJRKLGsJR5uftA1lGAL1XPS
- haw4VnznO2D1xTXzBz1Lugjsbg==
-X-Google-Smtp-Source: ABdhPJzV0PKf6kavOpovJEq9IGfpUxMsogNOF8aZXYQTItbGtVG3wVut+/ZGTMJqzGcJjrpVTYkCNg==
-X-Received: by 2002:a17:90a:2306:: with SMTP id
- f6mr589090pje.231.1589824976798; 
- Mon, 18 May 2020 11:02:56 -0700 (PDT)
+ bh=qI0hkZLl1p40lpmoqUP5FQkPLM/cVGruUyPdGcb4wIQ=;
+ b=ny4K1EF3LhWAcQIlSzJsuUOeG2KisBpIy2mdCyMh8/Mcv9LMebEAL3y4BCWlonppTb
+ G4wSXkaiHxbJnKjwPUUlTT717UlKV9lXatb4ydRE1bNvl5oSFljNs7LkTQeQtQafh0j1
+ dRU7P7MhqgWVcSc79Df1RKPLtdzYUqPmvlJ6ZW4Eq3lXD8cGlHrA0QKZJNk1OzzoX4m4
+ jaXWSnSKvqz2e+vt5pCJxd3FrYbifo9rI4BX9HefSBmPUgjJcb9iB8uJTqDdTSAI2ZcI
+ YeHJVrcqbAdogNppuyLFJ0JJJxEaqLMUhzN4CvcQgzw+igQKHm23+n9Oo8iLewec88z4
+ MxsQ==
+X-Gm-Message-State: AOAM531E78eOP/srkrOv1GloJYFQnb1u9rBgEjHV0CKH3MgAemThDLWf
+ xvVpIHcGFb5ecIJjn2x2rcM9+th40do=
+X-Google-Smtp-Source: ABdhPJwrsp4UxKFu/aIe6tugBNFzecrOXHzIRK2MK354U6zTOpapPG8A2PpDhYcYC5ub/H9BD/nkzg==
+X-Received: by 2002:a17:90a:c284:: with SMTP id f4mr680374pjt.68.1589824977944; 
+ Mon, 18 May 2020 11:02:57 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
  by smtp.gmail.com with ESMTPSA id v3sm9212314pfv.186.2020.05.18.11.02.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 11:02:56 -0700 (PDT)
+ Mon, 18 May 2020 11:02:57 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 13/23] coresight: tmc: Fix TMC mode read in
- tmc_read_prepare_etb()
-Date: Mon, 18 May 2020 12:02:32 -0600
-Message-Id: <20200518180242.7916-14-mathieu.poirier@linaro.org>
+Subject: [PATCH 14/23] coresight: etmv4: Update default filter and
+ initialisation
+Date: Mon, 18 May 2020 12:02:33 -0600
+Message-Id: <20200518180242.7916-15-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200518180242.7916-1-mathieu.poirier@linaro.org>
 References: <20200518180242.7916-1-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_110257_939018_EBEF0B19 
-X-CRM114-Status: GOOD (  13.95  )
+X-CRM114-CacheID: sfid-20200518_110259_358197_0A97BD86 
+X-CRM114-Status: GOOD (  13.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,86 +104,92 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+From: Mike Leach <mike.leach@linaro.org>
 
-On some QCOM platforms like SC7180, SDM845 and SM8150,
-reading TMC mode register without proper coresight power
-management can lead to async exceptions like the one in
-the call trace below in tmc_read_prepare_etb(). This can
-happen if the user tries to read the TMC etf data via
-device node without setting up source and the sink first.
-Fix this by having a check for coresight sysfs mode
-before reading TMC mode management register.
+Differing default states set on driver init / perf init and as a result
+of a sysfs reset.
 
- Kernel panic - not syncing: Asynchronous SError Interrupt
- CPU: 7 PID: 2605 Comm: hexdump Tainted: G S                5.4.30 #122
- Call trace:
-  dump_backtrace+0x0/0x188
-  show_stack+0x20/0x2c
-  dump_stack+0xdc/0x144
-  panic+0x168/0x36c
-  panic+0x0/0x36c
-  arm64_serror_panic+0x78/0x84
-  do_serror+0x130/0x138
-  el1_error+0x84/0xf8
-  tmc_read_prepare_etb+0x88/0xb8
-  tmc_open+0x40/0xd8
-  misc_open+0x120/0x158
-  chrdev_open+0xb8/0x1a4
-  do_dentry_open+0x268/0x3a0
-  vfs_open+0x34/0x40
-  path_openat+0x39c/0xdf4
-  do_filp_open+0x90/0x10c
-  do_sys_open+0x150/0x3e8
-  __arm64_compat_sys_openat+0x28/0x34
-  el0_svc_common+0xa8/0x160
-  el0_svc_compat_handler+0x2c/0x38
-  el0_svc_compat+0x8/0x10
+The ETMv4 can be programmed to trace the entire instruction address range
+without the need to use address comparator filter resources.
+(Described in the ETMv4.x technical reference manual)
 
-Fixes: 4525412a5046 ("coresight: tmc: making prepare/unprepare functions generic")
-Reported-by: Stephen Boyd <swboyd@chromium.org>
-Suggested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+sysfs reset was using this method, perf and default driver init were setup
+with an address range comparator for the entire address range.
+
+The perf / driver init has been altered to use the method without needing
+any comparator address hardware.
+
+Minor adjustment to the vinst_ctrl register initialisation to ensure
+correct zero initialisation.
+
+Signed-off-by: Mike Leach <mike.leach@linaro.org>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-tmc-etf.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ .../coresight/coresight-etm4x-sysfs.c         |  2 +-
+ drivers/hwtracing/coresight/coresight-etm4x.c | 23 +++++--------------
+ 2 files changed, 7 insertions(+), 18 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-index d0cc3985b72a..36cce2bfb744 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-@@ -596,13 +596,6 @@ int tmc_read_prepare_etb(struct tmc_drvdata *drvdata)
- 		goto out;
- 	}
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+index ce41482431f9..b673e738bc9a 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+@@ -205,7 +205,7 @@ static ssize_t reset_store(struct device *dev,
+ 	 * started state. ARM recommends start-stop logic is set before
+ 	 * each trace run.
+ 	 */
+-	config->vinst_ctrl |= BIT(0);
++	config->vinst_ctrl = BIT(0);
+ 	if (drvdata->nr_addr_cmp == true) {
+ 		config->mode |= ETM_MODE_VIEWINST_STARTSTOP;
+ 		/* SSSTATUS, bit[9] */
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index 94c5f204998e..0b2c7c7efacb 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -791,7 +791,7 @@ static void etm4_set_default_config(struct etmv4_config *config)
+ 	config->ts_ctrl = 0x0;
  
--	/* There is no point in reading a TMC in HW FIFO mode */
--	mode = readl_relaxed(drvdata->base + TMC_MODE);
--	if (mode != TMC_MODE_CIRCULAR_BUFFER) {
--		ret = -EINVAL;
--		goto out;
--	}
+ 	/* TRCVICTLR::EVENT = 0x01, select the always on logic */
+-	config->vinst_ctrl |= BIT(0);
++	config->vinst_ctrl = BIT(0);
+ }
+ 
+ static u64 etm4_get_ns_access_type(struct etmv4_config *config)
+@@ -894,17 +894,8 @@ static void etm4_set_start_stop_filter(struct etmv4_config *config,
+ 
+ static void etm4_set_default_filter(struct etmv4_config *config)
+ {
+-	u64 start, stop;
 -
- 	/* Don't interfere if operated from Perf */
- 	if (drvdata->mode == CS_MODE_PERF) {
- 		ret = -EINVAL;
-@@ -616,8 +609,15 @@ int tmc_read_prepare_etb(struct tmc_drvdata *drvdata)
- 	}
+-	/*
+-	 * Configure address range comparator '0' to encompass all
+-	 * possible addresses.
+-	 */
+-	start = 0x0;
+-	stop = ~0x0;
+-
+-	etm4_set_comparator_filter(config, start, stop,
+-				   ETM_DEFAULT_ADDR_COMP);
++	/* Trace everything 'default' filter achieved by no filtering */
++	config->viiectlr = 0x0;
  
- 	/* Disable the TMC if need be */
--	if (drvdata->mode == CS_MODE_SYSFS)
-+	if (drvdata->mode == CS_MODE_SYSFS) {
-+		/* There is no point in reading a TMC in HW FIFO mode */
-+		mode = readl_relaxed(drvdata->base + TMC_MODE);
-+		if (mode != TMC_MODE_CIRCULAR_BUFFER) {
-+			ret = -EINVAL;
-+			goto out;
-+		}
- 		__tmc_etb_disable_hw(drvdata);
-+	}
- 
- 	drvdata->reading = true;
- out:
+ 	/*
+ 	 * TRCVICTLR::SSSTATUS == 1, the start-stop logic is
+@@ -925,11 +916,9 @@ static void etm4_set_default(struct etmv4_config *config)
+ 	/*
+ 	 * Make default initialisation trace everything
+ 	 *
+-	 * Select the "always true" resource selector on the
+-	 * "Enablign Event" line and configure address range comparator
+-	 * '0' to trace all the possible address range.  From there
+-	 * configure the "include/exclude" engine to include address
+-	 * range comparator '0'.
++	 * This is done by a minimum default config sufficient to enable
++	 * full instruction trace - with a default filter for trace all
++	 * achieved by having no filtering.
+ 	 */
+ 	etm4_set_default_config(config);
+ 	etm4_set_default_filter(config);
 -- 
 2.20.1
 
