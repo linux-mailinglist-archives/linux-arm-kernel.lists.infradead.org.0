@@ -2,94 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC1181D71BF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:26:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A518F1D71D4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:30:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X1dwkhkXnXkE6mshsiEdLmoHC3NZzvItVdFtlr1A2NM=; b=i6sRfRIEJ2BYOd
-	HnNMK7ebZFNDpxy6VolnAQqCSjo9jQ9lizfBCU3fsUzxoNu0N8e8GV2oUzTnrYNp8FFbx8gsyf8TK
-	idrG0LRQRt6DHSpJfC92QH7/Jo4MqfU7yAtrhHCWMQv7NxfkO54U4afWR+CAETCzdLzn52KjXZ814
-	vTfjpaWGZO7XMA9+uQ3cpveFCjVt2FcA2lM71LJfkFM79A205niMX4ibvzJpxWbImAl5Zpel4UV+A
-	C5jTfpleIesjiYw7Qq7UsOgfnvnT1tbHvqhytW5dSfbeLmdDz6/qYWQunW3b5f6NshfXjQkM4apLL
-	ZlcNEHJx8scEYWdoIt5A==;
+	List-Owner; bh=HceleXkb7aKm9FbN27OazYCmEmzZXDLOlfE4cTgx6U8=; b=sbfoBwEZEov1ZN
+	C3Ivs9ecSXDTod+eMpNbJvpcJ8fNasv48+GbS2w7AZaywmRjXhStKa9ML6T96JB7B+6HC5IhwNokE
+	1Sc++ZE4aV5y/oan7s2TKC9TP6G2ET3L+vEj8gGxNsQKgPXptjoBvFY/y08G/FKRNXY6H9SA8qGtN
+	XNar9b7YlsvqQgJQkBdDbt//i+efJP3ymF+Jok5fgnJy4qJOxBLb4C0rJ61js4C8GApD9i9EBjKNE
+	HCJxevuVwmwscrmQ5yS6gkFpIOxdX0uXN+0LiZInyGanvSZVSJmQ2kNrMFscx7D84lVrrcA4B1IBD
+	89XFbHDAWEOQkZBtwztQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaaA3-0006w3-4R; Mon, 18 May 2020 07:26:07 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jaaDu-0007aA-9n; Mon, 18 May 2020 07:30:06 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaa9u-0006vJ-3c
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:25:59 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04I7MwVY000489; Mon, 18 May 2020 09:25:48 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=96Qx9T4l9btbZlYCanjYMz8LWe4TWd5HlYaC0S7keCg=;
- b=DD4gCEFgAjLIf4Sdl2mn9FNSK0ht4/M3toLBzrVmSh+c/wn2sbrhNyuuouB5oe6xHr2D
- cwb64BE6kpGK8tDbyi4Caqw4baabKjaPGqfMWOABIOrR5/aH9PBQYXCIXtSWnBFwHBpZ
- MgIlR8EdstvmG4VKciLF65st+VguxD/4aos+MPgfLC4udP05rP2MDRx73m2MJbMmRvFZ
- CpwS53KCF2gkXYGZrlwfswGv5bbFnPLBH0mAheWn41DooCt6DXktVBSVaaLDgIMmlpaO
- YD+ytoJ5VCnvL7MqBB1pjpDGGdIY9tkM4urxlYIf2EZt/GodnLmq/N/5Om6qUeqvlpDy zg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3125xxj4ut-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 18 May 2020 09:25:48 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D6AE310002A;
- Mon, 18 May 2020 09:25:47 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id C12FF2A759E;
- Mon, 18 May 2020 09:25:47 +0200 (CEST)
-Received: from SFHDAG3NODE1.st.com (10.75.127.7) by SFHDAG5NODE2.st.com
- (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 18 May
- 2020 09:25:47 +0200
-Received: from SFHDAG3NODE1.st.com ([fe80::1166:1abb:aad4:5f86]) by
- SFHDAG3NODE1.st.com ([fe80::1166:1abb:aad4:5f86%20]) with mapi id
- 15.00.1473.003; Mon, 18 May 2020 09:25:47 +0200
-From: Erwan LE RAY <erwan.leray@st.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>, "mani@kernel.org"
- <mani@kernel.org>
-Subject: Re: [Linux-stm32] [PATCH v3 1/2] dt-bindings: serial: Document
- CTS/RTS gpios in STM32 UART
-Thread-Topic: [Linux-stm32] [PATCH v3 1/2] dt-bindings: serial: Document
- CTS/RTS gpios in STM32 UART
-Thread-Index: AQHWLOKqKuTyIkoopEKFBSTOruYjFqitT8sA
-Date: Mon, 18 May 2020 07:25:47 +0000
-Message-ID: <4ff30338-e704-12bd-80fe-82b8c08e78d9@st.com>
-References: <20200420170204.24541-1-mani@kernel.org>
- <20200420170204.24541-2-mani@kernel.org>
- <CAMuHMdVGem_2BGQK4dqZQb3sOd0LZk+RS_z4SvSRcNECEJHdwA@mail.gmail.com>
-In-Reply-To: <CAMuHMdVGem_2BGQK4dqZQb3sOd0LZk+RS_z4SvSRcNECEJHdwA@mail.gmail.com>
-Accept-Language: en-US, fr-FR
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.49]
-Content-ID: <A9984B761F26544187A953C83E9086B0@st.com>
+ id 1jaaDh-0007Zg-LQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:29:54 +0000
+Received: by mail-lf1-x141.google.com with SMTP id 82so7137578lfh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 18 May 2020 00:29:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=0QQj8C5JeEmDZ6ZApGtOW1NT9hev78BCGty9WyW8HQU=;
+ b=KdzqRAP43Jx15JsBd7CMIo/2/+5tguTprPLSwNIyfoZQ0+ufPuN6S/BANnhJsjrhDD
+ DtP3v+cVRz1H4W7gZemFOLYygUe9Nnqc8CiVseZ1qH7MkopzW0uYIM/6QDifbVQUaEzY
+ I9Io5hrtK55gyaPukpP3UulY28GmqBr7704IEqyzsek9z5cWKXKh+nj6/8N35gBEzKLB
+ z7UbsMop5bQJkCqzM/P6qv2TYsuzenpxX9AvppK/Ewkg0FlUbL6cOIGLnAWxK13GtB1K
+ pL1FPAWkCnhD9H5FlvEDJp4hPMXkM7uAmjEi0J/HlDU7NpDvA7JOV3+ynsGeu4wzmRsg
+ XxWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=0QQj8C5JeEmDZ6ZApGtOW1NT9hev78BCGty9WyW8HQU=;
+ b=lfy+079XgP2BDmHvIEf0GjCbQms4t/trbqQFgfIJI9s3lAR650mboS8QHl7U5Z59cs
+ IqKf2nQ0rN93ACI5wF5G4WZhoFiRRXbDxaMUh34zCf14UgN2v4TnM0VKqtnXLou1XB8r
+ 6hKQojQZRSkjyhrZ/0OyoJkz+A9UuwZ5m83qsD5sAYHGKLHWx6BMohc6cHo/sk2iwZyD
+ NHxtZ0M9mzKMz/CWb26xQ25OnNEsO6ZuKPwwM6Y3Q7k1ZN45NJkYtd9Oth91m9dF2XF4
+ wBRSuat/qGULoG2L/FUYDxf0u/MOMTUxWr+Ut8cLFG/XeZEPmy7ZqKwPDqEme4lpEhww
+ LHMw==
+X-Gm-Message-State: AOAM5333wqzYzPPGbYZWFsp3Z4DnrxnChcOuDE+iv9IxIuOF8qgcL7eM
+ N2188Q5fw8EVeqWATu13GICc9So/lbN1d7gATHk7ag==
+X-Google-Smtp-Source: ABdhPJx6fCXx6eAlYEP7owDMWFfg7cz4sOJv/yQfCTAhywTwMqJW95DyJ7NsllwioD8AhEiAVzPb9dcty/D6ToHML3U=
+X-Received: by 2002:a19:c8cb:: with SMTP id y194mr7741076lff.89.1589786992310; 
+ Mon, 18 May 2020 00:29:52 -0700 (PDT)
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-18_02:2020-05-15,
- 2020-05-18 signatures=0
+References: <20200513125532.24585-1-lars.povlsen@microchip.com>
+ <20200513125532.24585-2-lars.povlsen@microchip.com>
+In-Reply-To: <20200513125532.24585-2-lars.povlsen@microchip.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 18 May 2020 09:29:41 +0200
+Message-ID: <CACRpkdZF++0AExBvDHNT+whKP2sNKnbczV4w9SXksG2Dyctecw@mail.gmail.com>
+Subject: Re: [PATCH 01/14] pinctrl: ocelot: Should register GPIO's even if not
+ irq controller
+To: Lars Povlsen <lars.povlsen@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_002558_600253_33057482 
-X-CRM114-Status: GOOD (  16.73  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200518_002953_711339_5D78D3B5 
+X-CRM114-Status: GOOD (  11.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -112,68 +94,38 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  <devicetree@vger.kernel.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Greg KH <gregkh@linuxfoundation.org>, Linux
- Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Maxime
- Coquelin <mcoquelin.stm32@gmail.com>, Fabrice GASNIER <fabrice.gasnier@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>,
+ Steen Hegelund <Steen.Hegelund@microchip.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, Olof Johansson <olof@lixom.net>,
+ Michael Turquette <mturquette@baylibre.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
+On Wed, May 13, 2020 at 2:56 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
 
-
-On 5/18/20 9:04 AM, Geert Uytterhoeven wrote:
-> Hi Mani,
+> This fixes the situation where the GPIO controller is not used as an
+> interrupt controller as well.
 >
-> On Mon, Apr 20, 2020 at 7:02 PM <mani@kernel.org> wrote:
->> From: Manivannan Sadhasivam <mani@kernel.org>
->>
->> Document the use of CTS/RTS gpios for flow control in STM32 UART
->> controller. These properties can be used instead of 'st,hw-flow-ctrl'
->> for making use of any gpio pins for flow control instead of dedicated
->> pins. It should be noted that both CTS/RTS and 'st,hw-flow-ctrl'
->> properties cannot co-exist in a design.
->>
->> Reviewed-by: Andy Shevchenko <andy.shevchenko@gmail.com>
->> Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
->> --- a/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
->> +++ b/Documentation/devicetree/bindings/serial/st,stm32-uart.yaml
->> @@ -55,6 +61,14 @@ properties:
->>     linux,rs485-enabled-at-boot-time: true
->>     rs485-rx-during-tx: true
->>
->> +if:
->> +  required:
->> +    - st,hw-flow-ctrl
-> Perhaps "st,hw-flow-ctrl" should be deprecated, in favor of the standard
-> "uart-has-rtscts" property?
-> Of course the driver needs to gain support for the latter first.
-
-You're fully right, the patch to deprecate "st, hw-flow-ctrl" and 
-introduce generic "uart-has-rtscts" property in the driver is ready and 
-will be sent this week on top of Mani patch.
-
-
+> Previously, the driver would silently fail to register even the
+> GPIO's. With this change, the driver will only register as an
+> interrupt controller if a parent interrupt is provided.
 >
->> +then:
->> +  properties:
->> +    cts-gpios: false
->> +    rts-gpios: false
->> +
->>   required:
->>     - compatible
->>     - reg
-> Gr{oetje,eeting}s,
->
->                          Geert
->
+> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
+
+This patch applied to the pinctrl tree.
+
+Yours,
+Linus Walleij
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
