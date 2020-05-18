@@ -2,55 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 138811D81FF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 19:52:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86ED31D8323
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:03:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hNl+UXpNUBuTryOdBF5gpUNT54HFkufecYeixZUKdZE=; b=TOUU1eD9dlYgGe
-	XVQ9Pdzlez68jvHptp+Co5eo6BZTx6fgRMpUW9iGgVtQvDcjcuC3QD01R3kJQNj9XNAqJkIyVUeft
-	eJN0TASUFqrnB4liCRTFfxrGDF5rC98sd384VAkeO4hQPXrnnNBf6Do9IABwoA7sZUsg9IIepHShF
-	dQDL91g0B3Q59px/b63TiMnaoeUGFplDeUi+2VRvYhn0PvilT8nWAdhOy9dlCP3/h5GyuYGrBIvy5
-	xjKvhSQDVKRo/WKMLV+xV2djmaW74GJaK+KRaJRn/x9xzE5MykYQ+UqO/3D99Jhpdo1d2vBiVZ/BM
-	u8vXxr8w5FCieSENFseA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=H8HVBuRNEQGcRDSm5wWFw2vSn/uplX5NC/KecDI0OPA=; b=F9ASV7uBfWsDs/
+	ZuJ7U85uht3/64ERwqxIJtjAF9tHm0L2KYOIr/uysZwZkm5IzEwTock4aHFOB8fsvJ1Zy84w8Djxl
+	et2E5hOZFSH3dSZCuA0/Q2A4J2TYF5GyKriSqyabJxIVfo/JadQT+zYsaeCIZtTHrnxMInMUZauAu
+	weIghiHenk52eV7xGY+Dbo/V4SVtsLDfl0PhbtN6Kn+TUDcypw4SFUeg6iK7mcb5bM2WrXWAtBLAf
+	Np8rterS5tlDo2FscsHJgB+ZagAE/bCNoIguFu7/BOiKGcJGG1inowMEIzv64MFpWEmzMrsmwO891
+	CX1VonXi9D+OTyzVY8pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jajwR-0003rG-UB; Mon, 18 May 2020 17:52:43 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jak6p-0003ZO-M9; Mon, 18 May 2020 18:03:27 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jajwH-0003qg-Pv; Mon, 18 May 2020 17:52:35 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id CF53F2A10C9
-Subject: Re: [PATCH v14 03/11] soc: mediatek: Add basic_clk_name to
- scp_power_data
-To: Weiyi Lu <weiyi.lu@mediatek.com>
-References: <1588752963-19934-1-git-send-email-weiyi.lu@mediatek.com>
- <1588752963-19934-4-git-send-email-weiyi.lu@mediatek.com>
- <7ad67855-a3f8-f979-8849-3765bd8289d3@collabora.com>
- <1589176947.21832.9.camel@mtksdaap41> <1589513724.16252.3.camel@mtksdaap41>
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Message-ID: <c510cc46-3285-fa53-b2e1-0420b0bfb61c@collabora.com>
-Date: Mon, 18 May 2020 19:52:29 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jak6B-0003Ek-9M
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 18:02:48 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n11so5182257pgl.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 18 May 2020 11:02:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=w9A8nzHZByIrXEP9o53/VVYr/19ZK2axbj0Q20U48iA=;
+ b=f1wVd929DAFon5UPUyCo+mwOqNivmVar2ELMn0/wwuKGvhYbcCGRvZzNAlb9wNyRqB
+ N5B+FuRkLkNucI869lnfNNacXD/XmwzGmHBmuin4SjMSgHhSqScmOCco0SJRK+buGmxG
+ TosA6TQz6IHIPtkNP/xGqL/b18EcxYE3mM3IFumyXnv2jbAhqOYYcGZunshTgFkcbvOP
+ /BPvX6QvaM+I0HaOhDhrt2Yp8zMQtK63bL3e0T4LmYk191OsDa5lATbulW/sJeIAu4LC
+ MQGLGzIR9w2VcPjG1guTEvqw8MCXBM+zMagOweVnuA1/YaVQhOs+zlXcjwLOZq1UXNxv
+ hK9g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=w9A8nzHZByIrXEP9o53/VVYr/19ZK2axbj0Q20U48iA=;
+ b=JZwStxGHeq6J3aZUC1g72TILYvzmBtXBikS6UOD2oBTYoA3fhCtr9Gl5BkgAORhGYL
+ coGwFp6zyp1CCVam/V2PIAYu7KM49L2RHVtamQh08UiilctgW0vC8Vxs3mfrcAAqYSQK
+ 2+pkXDFjz/X3d4hpEMJ4OZlie8l44yo5sfJTzip7OCK+KmqaoTkmsE6tNvyOHBG2dSQk
+ TAxSBm1QaGo3CqNy1mcxu/CH+IDxA56k4lkz+fFHQ3q0+q/IaIEKLWCaYmalkcmEpSBf
+ 5281w/g2YaEIkumICFTk4aXz+NMe1b8vBLFmvH2X/oQ4sr0tIqC25nO2awR3OoAeeojj
+ A+Yw==
+X-Gm-Message-State: AOAM533Vg0h3KmstfpmT9N8XYUsqZhxm4nrcXr5ZjVBLmLU07OkA8WOJ
+ AgNr0/ZLL81MrBRCftq0775/Ci5AWaM=
+X-Google-Smtp-Source: ABdhPJyavTc62L7CjUQBif9JoRFmJkHr0nsdE8+NVx/tM4NG3cEIksn+dwOsRrglnwY/nMCkquLncQ==
+X-Received: by 2002:a63:3101:: with SMTP id x1mr15395159pgx.392.1589824963933; 
+ Mon, 18 May 2020 11:02:43 -0700 (PDT)
+Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
+ [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id v3sm9212314pfv.186.2020.05.18.11.02.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 May 2020 11:02:43 -0700 (PDT)
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: gregkh@linuxfoundation.org
+Subject: [PATCH 00/23] coresight: next for v5.8 
+Date: Mon, 18 May 2020 12:02:19 -0600
+Message-Id: <20200518180242.7916-1-mathieu.poirier@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <1589513724.16252.3.camel@mtksdaap41>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_105234_102789_F8D07A0D 
-X-CRM114-Status: GOOD (  23.81  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200518_110247_323956_1F5ACA06 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,267 +96,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Liao <jamesjj.liao@mediatek.com>,
- Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
- Rob Herring <robh@kernel.org>, Enric Balletbo Serra <eballetbo@gmail.com>,
- linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
- linux-mediatek@lists.infradead.org, Sascha Hauer <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Weiyi,
+Good morning Greg,
 
-On 15/5/20 5:35, Weiyi Lu wrote:
-> On Mon, 2020-05-11 at 14:02 +0800, Weiyi Lu wrote:
->> On Wed, 2020-05-06 at 23:01 +0200, Enric Balletbo i Serra wrote:
->>> Hi Weiyi,
->>>
->>> Thank you for your patch.
->>>
->>> On 6/5/20 10:15, Weiyi Lu wrote:
->>>> Try to stop extending the clk_id or clk_names if there are
->>>> more and more new BASIC clocks. To get its own clocks by the
->>>> basic_clk_name of each power domain.
->>>> And then use basic_clk_name strings for all compatibles, instead of
->>>> mixing clk_id and clk_name.
->>>>
->>>> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
->>>> Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
->>>> ---
->>>>  drivers/soc/mediatek/mtk-scpsys.c | 134 ++++++++++++--------------------------
->>>>  1 file changed, 41 insertions(+), 93 deletions(-)
->>>>
->>>> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
->>>> index f669d37..c9c3cf7 100644
->>>> --- a/drivers/soc/mediatek/mtk-scpsys.c
->>>> +++ b/drivers/soc/mediatek/mtk-scpsys.c
->>>> @@ -78,34 +78,6 @@
->>>>  #define PWR_STATUS_HIF1			BIT(26)	/* MT7622 */
->>>>  #define PWR_STATUS_WB			BIT(27)	/* MT7622 */
->>>>  
->>>> -enum clk_id {
->>>> -	CLK_NONE,
->>>> -	CLK_MM,
->>>> -	CLK_MFG,
->>>> -	CLK_VENC,
->>>> -	CLK_VENC_LT,
->>>> -	CLK_ETHIF,
->>>> -	CLK_VDEC,
->>>> -	CLK_HIFSEL,
->>>> -	CLK_JPGDEC,
->>>> -	CLK_AUDIO,
->>>> -	CLK_MAX,
->>>> -};
->>>> -
->>>> -static const char * const clk_names[] = {
->>>> -	NULL,
->>>> -	"mm",
->>>> -	"mfg",
->>>> -	"venc",
->>>> -	"venc_lt",
->>>> -	"ethif",
->>>> -	"vdec",
->>>> -	"hif_sel",
->>>> -	"jpgdec",
->>>> -	"audio",
->>>> -	NULL,
->>>> -};
->>>> -
->>>>  #define MAX_CLKS	3
->>>>  
->>>>  /**
->>>> @@ -116,7 +88,7 @@ enum clk_id {
->>>>   * @sram_pdn_bits: The mask for sram power control bits.
->>>>   * @sram_pdn_ack_bits: The mask for sram power control acked bits.
->>>>   * @bus_prot_mask: The mask for single step bus protection.
->>>> - * @clk_id: The basic clocks required by this power domain.
->>>> + * @basic_clk_name: The basic clocks required by this power domain.
->>>>   * @caps: The flag for active wake-up action.
->>>>   */
->>>>  struct scp_domain_data {
->>>> @@ -126,7 +98,7 @@ struct scp_domain_data {
->>>>  	u32 sram_pdn_bits;
->>>>  	u32 sram_pdn_ack_bits;
->>>>  	u32 bus_prot_mask;
->>>> -	enum clk_id clk_id[MAX_CLKS];
->>>> +	const char *basic_clk_name[MAX_CLKS];
->>>
->>> I only reviewed v13, so sorry if this was already discussed. I am wondering if
->>> would be better take advantage of the devm_clk_bulk_get() function instead of
->>> kind of reimplementing the same, something like this
->>>
->>> 	const struct clk_bulk_data *basic_clocks;
->>>
->>
->> I thought it should be const struct clk_bulk_data
->> basic_clocks[MAX_CLKS]; instead of const struct clk_bulk_data
->> *basic_clocks; in struct scp_domain_data data type
->>
->>>>  	u8 caps;
->>>>  };
->>>>  
->>>> @@ -411,12 +383,19 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
->>>>  	return ret;
->>>>  }
->>>>  
->>>> -static void init_clks(struct platform_device *pdev, struct clk **clk)
->>>> +static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
->>>> +			const char * const *name)
->>>>  {
->>>>  	int i;
->>>>  
->>>> -	for (i = CLK_NONE + 1; i < CLK_MAX; i++)
->>>> -		clk[i] = devm_clk_get(&pdev->dev, clk_names[i]);
->>>> +	for (i = 0; i < MAX_CLKS && name[i]; i++) {
->>>> +		clk[i] = devm_clk_get(&pdev->dev, name[i]);
->>>> +
->>>> +		if (IS_ERR(clk[i]))
->>>> +			return PTR_ERR(clk[i]);
->>>> +	}
->>>
->>> You will be able to remove this function, see below ...
->>>
->>>> +
->>>> +	return 0;
->>>>  }
->>>>  
->>>>  static struct scp *init_scp(struct platform_device *pdev,
->>>> @@ -426,9 +405,8 @@ static struct scp *init_scp(struct platform_device *pdev,
->>>>  {
->>>>  	struct genpd_onecell_data *pd_data;
->>>>  	struct resource *res;
->>>> -	int i, j;
->>>> +	int i, ret;
->>>>  	struct scp *scp;
->>>> -	struct clk *clk[CLK_MAX];
->>>>  
->>>>  	scp = devm_kzalloc(&pdev->dev, sizeof(*scp), GFP_KERNEL);
->>>>  	if (!scp)
->>>> @@ -481,8 +459,6 @@ static struct scp *init_scp(struct platform_device *pdev,
->>>>  
->>>>  	pd_data->num_domains = num;
->>>>  
->>>> -	init_clks(pdev, clk);
->>>> -
->>>>  	for (i = 0; i < num; i++) {
->>>>  		struct scp_domain *scpd = &scp->domains[i];
->>>>  		struct generic_pm_domain *genpd = &scpd->genpd;
->>>> @@ -493,17 +469,9 @@ static struct scp *init_scp(struct platform_device *pdev,
->>>>  
->>>>  		scpd->data = data;
->>>>  
->>>> -		for (j = 0; j < MAX_CLKS && data->clk_id[j]; j++) {
->>>> -			struct clk *c = clk[data->clk_id[j]];
->>>> -
->>>> -			if (IS_ERR(c)) {
->>>> -				dev_err(&pdev->dev, "%s: clk unavailable\n",
->>>> -					data->name);
->>>> -				return ERR_CAST(c);
->>>> -			}
->>>> -
->>>> -			scpd->clk[j] = c;
->>>> -		}
->>>> +		ret = init_basic_clks(pdev, scpd->clk, data->basic_clk_name);
->>>> +		if (ret)
->>>> +			return ERR_PTR(ret);
->>>
->>> Just call:
->>>
->>> 	ret = devm_clk_bulk_get(&pdev->dev, ARRAY_SIZE(basic_clocks),
->>> 				data->basic_clocks);
->>> 	if (ret)
->>> 		return ERR_PTR(ret);
->>>
->>>>  
->>>>  		genpd->name = data->name;
->>>>  		genpd->power_off = scpsys_power_off;
->>>> @@ -560,7 +528,6 @@ static void mtk_register_power_domains(struct platform_device *pdev,
->>>>  		.ctl_offs = SPM_CONN_PWR_CON,
->>>>  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_CONN_M |
->>>>  				 MT2701_TOP_AXI_PROT_EN_CONN_S,
->>>> -		.clk_id = {CLK_NONE},
->>>>  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
->>>>  	},
->>>>  	[MT2701_POWER_DOMAIN_DISP] = {
->>>> @@ -568,7 +535,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
->>>>  		.sta_mask = PWR_STATUS_DISP,
->>>>  		.ctl_offs = SPM_DIS_PWR_CON,
->>>>  		.sram_pdn_bits = GENMASK(11, 8),
->>>> -		.clk_id = {CLK_MM},
->>>> +		.basic_clk_name = {"mm"},
->>>
->>> 		.basic_clocks[] = {
->>> 			{ .id = "mm" },
->>> 		};
->>>
->>
->> Those basic clocks without given a name (name: null) would get incorrect
->> clock via clk_bulk_get(...) due to 
->>
->> /**
->>  * of_parse_clkspec() - Parse a DT clock specifier for a given device
->> node
->>  * @np: device node to parse clock specifier from
->>  * @index: index of phandle to parse clock out of. If index < 0, @name
->> is used
->>  * @name: clock name to find and parse. If name is NULL, the index is
->> used
->>
->> And the index is 0 here in this callstack
->>
->> I guess something need to be improved before we use the clk_bulk_ APIs.
->>
-> 
-> Hi Enric,
-> 
-> According to the result above, is it necessary to change the APIs or
-> maybe I should send the next version v15 first to fix other problems you
-> mentioned? Many thanks.
-> 
+Please see if you can add these to your tally for the 5.8 cycle.
 
-It is fine to send a next version without changing the APIs, it depends on the
-extra work if you are fine with the change. To be honest I didn't see the
-problem above but I think can be fixed.
+Applies cleanly on char-misc-next (57c76221d5af)
 
-Cheers,
- Enric
+Thanks,
+Mathieu
 
+Anurag Koul (1):
+  coresight: etm4x: Add support for Neoverse N1 ETM
 
->>
->>>>  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_MM_M0,
->>>>  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
->>>>  	},
->>>> @@ -578,7 +545,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
->>>>  		.ctl_offs = SPM_MFG_PWR_CON,
->>>>  		.sram_pdn_bits = GENMASK(11, 8),
->>>>  		.sram_pdn_ack_bits = GENMASK(12, 12),
->>>> -		.clk_id = {CLK_MFG},
->>>> +		.basic_clk_name = {"mfg"},
->>>
->>> 		.basic_clocks[] = {
->>> 			{ .id = "mfg" },
->>> 		};
->>>
->>>>  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
->>>>  	},
->>>>  	[MT2701_POWER_DOMAIN_VDEC] = {
->>>> @@ -587,7 +554,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
->>>>  		.ctl_offs = SPM_VDE_PWR_CON,
->>>>  		.sram_pdn_bits = GENMASK(11, 8),
->>>>  		.sram_pdn_ack_bits = GENMASK(12, 12),
->>>> -		.clk_id = {CLK_MM},
->>>> +		.basic_clk_name = {"mm"},
->>>
->>> ...
->>>
->>> [snip]
->>
->>
-> 
+Jason Yan (2):
+  coresight: cti: Make some symbols static
+  coresight: etb10: Make coresight_etb_groups static
+
+Mauro Carvalho Chehab (1):
+  docs: trace: coresight-ect.rst: Fix a build warning
+
+Mike Leach (6):
+  coresight: Add generic sysfs link creation functions
+  coresight: cti: Add in sysfs links to other coresight devices
+  coresight: docs: Add information about the topology representations
+  coresight: etmv4: Update default filter and initialisation
+  coresight: cti: Add CPU Hotplug handling to CTI driver
+  coresight: cti: Add CPU idle pm notifer to CTI devices
+
+Sai Prakash Ranjan (3):
+  coresight: etm4x: Add support for Qualcomm SC7180 SoC
+  coresight: etm4x: Replace ETM PIDs with UCI IDs for Kryo385
+  coresight: tmc: Fix TMC mode read in tmc_read_prepare_etb()
+
+Stephen Boyd (5):
+  coresight: Mark some functions static
+  coresight: Don't initialize variables unnecessarily
+  coresight: Initialize arg in sparse friendly way
+  coresight: Include required headers in C files
+  coresight: Avoid casting void pointers
+
+Suzuki K Poulose (5):
+  coresight: Pass coresight_device for coresight_release_platform_data
+  coresight: Add return value for fixup connections
+  coresight: Expose device connections via sysfs
+  coresight: Fix support for sparsely populated ports
+  coresight: etm4x: Fix use-after-free of per-cpu etm drvdata
+
+ .../trace/coresight/coresight-ect.rst         |   6 +-
+ Documentation/trace/coresight/coresight.rst   |  85 +++++++
+ drivers/hwtracing/coresight/Makefile          |   3 +-
+ .../coresight/coresight-cti-platform.c        |  11 +-
+ .../hwtracing/coresight/coresight-cti-sysfs.c |  16 +-
+ drivers/hwtracing/coresight/coresight-cti.c   | 232 +++++++++++++++++-
+ drivers/hwtracing/coresight/coresight-cti.h   |   8 +-
+ drivers/hwtracing/coresight/coresight-etb10.c |   2 +-
+ drivers/hwtracing/coresight/coresight-etm3x.c |   2 +-
+ .../coresight/coresight-etm4x-sysfs.c         |   2 +-
+ drivers/hwtracing/coresight/coresight-etm4x.c |  33 +--
+ .../hwtracing/coresight/coresight-platform.c  |  91 ++++---
+ drivers/hwtracing/coresight/coresight-priv.h  |  21 +-
+ drivers/hwtracing/coresight/coresight-sysfs.c | 204 +++++++++++++++
+ .../hwtracing/coresight/coresight-tmc-etf.c   |  16 +-
+ drivers/hwtracing/coresight/coresight-tmc.c   |   2 +-
+ drivers/hwtracing/coresight/coresight.c       |  82 +++++--
+ include/linux/coresight.h                     |  32 ++-
+ include/linux/cpuhotplug.h                    |   1 +
+ 19 files changed, 738 insertions(+), 111 deletions(-)
+ create mode 100644 drivers/hwtracing/coresight/coresight-sysfs.c
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
