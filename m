@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EC281D7A24
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 15:38:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9757F1D7A35
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 15:40:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QPuPft1FNdcpA4AnQR25z569z96SbZR/IaYedsWBuAU=; b=UCM+J/Rr+Z0U7w
-	JMrr9ezvV2S7Xvsw6xDj7GRRePA5Dd1FmwrhthLNfDoiXgzPMxMy+/tJZqsybJ1mXwfoyPf214ZtD
-	uzrCZ8BigSZ4SQk51PCnPil40Ep/J9qyr3M9BV4nDjftMwiwooy2L6wmBm6Pfp00OHs212WkLpyky
-	CLeMFYQ9zbaPmXVnQav+/P83N/dAVwcshyWdpvrnHzM4lvCf/GP0yC62VeTPsH8stgqMCjsG7WgaS
-	bYKoRCizUZ6Hb8kWRolp3d70F/54RAup9UhUnulTDfjraFQZznep9HvGLlzPvmXvREbsuQJ0Mt+UD
-	BPRQqt1g5k30ZVHvtBBg==;
+	List-Owner; bh=vXKhkVtpZnqcksxVxrtVtP/rBbk+qS+FY6v+aMRaBw4=; b=g8zBNqpOGn0gK5
+	X4R3cNSONN1CCZA3VhWPvqCeWrN6wcKVVabl7mMmK5qf1CsriHYTiuMDB9ktQUVydr2N1J/D/gKmL
+	j0xTKcZqix9esMW93V6xRXIziBAGv8F+gi5g8BSANnCVa8eaXTf87hgKXW95eiN84dXAfhVZ01B5L
+	41Md6gCHQUK44Y/i2Tlieg2Vo1BZruaz9PN33RiSbn+01VPOPOGsTtxlKAAGLNFNuqk24ijTZ41wG
+	Kwx+SiYGsu9sXGyue9NhLc9QTsCQggfGHam+feXpUCSrTaZF4+VVtMaxusE4OfnkvNSGXHQTYRu7V
+	Ac4NviLOgmCVmcTlYxrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jafy6-00023t-HL; Mon, 18 May 2020 13:38:10 +0000
+	id 1jag0M-0003Jt-6B; Mon, 18 May 2020 13:40:30 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jafxs-00022r-2a
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 13:37:57 +0000
+ id 1jafzM-0002hs-Fh
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 13:39:29 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D4079206D4;
- Mon, 18 May 2020 13:37:53 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 18F98206D4;
+ Mon, 18 May 2020 13:39:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589809075;
- bh=qWLypqUxpjq+PWGqvdA08FUoyMUiPmK0wN1hOQJH8Kw=;
+ s=default; t=1589809167;
+ bh=D1sgcR3s0/mmhpAOarOMiHpa1UutLMQ17UcgkBniPGg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=B9UkcbY2jDAacUffVg4mgBVmOKNJgjBIi9QGO696HJhKqFVyxDCAnTe5VWZVmqFQA
- 6j/W5aBaup71jjp72bsEitt3GUeKjV7zBGm4M0D5NoERvarSIdTMvuih9Et4m+G9DE
- pNf9ckZXrxfozI/DNEFAo41VOq8rV7P52/nvKMkg=
-Date: Mon, 18 May 2020 14:37:50 +0100
+ b=AaWcYukF7z4VgGM1jdLOfON+zSJmb3CJvVMUi1xzQomqJ8I8az/Zwv94rOK/iKu2m
+ dIz6hHWpuhxKlABDxtR3LYXoxU19qGZs79TP90mfHwNwlir9vLL5wqeE+XuKzL2ecH
+ qweBr+RV3AEhvzAOCyMoKGFwrI/LVcpKM9YqgPLk=
+Date: Mon, 18 May 2020 14:39:23 +0100
 From: Will Deacon <will@kernel.org>
 To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 1/6] arm64: scs: Store absolute SCS stack pointer value
- in thread_info
-Message-ID: <20200518133750.GF32394@willie-the-truck>
+Subject: Re: [PATCH 2/6] scs: Move accounting into alloc/free functions
+Message-ID: <20200518133922.GG32394@willie-the-truck>
 References: <20200515172756.27185-1-will@kernel.org>
- <20200515172756.27185-2-will@kernel.org>
- <20200518113710.GA1957@C02TD0UTHF1T.local>
+ <20200515172756.27185-3-will@kernel.org>
+ <20200518113858.GB1957@C02TD0UTHF1T.local>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200518113710.GA1957@C02TD0UTHF1T.local>
+In-Reply-To: <20200518113858.GB1957@C02TD0UTHF1T.local>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_063756_132164_CA643FD5 
-X-CRM114-Status: GOOD (  18.08  )
+X-CRM114-CacheID: sfid-20200518_063928_585175_20008F69 
+X-CRM114-Status: GOOD (  17.40  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,55 +89,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 12:37:10PM +0100, Mark Rutland wrote:
-> On Fri, May 15, 2020 at 06:27:51PM +0100, Will Deacon wrote:
-> > Storing the SCS information in thread_info as a {base,offset} pair
-> > introduces an additional load instruction on the ret-to-user path,
-> > since the SCS stack pointer in x18 has to be converted back to an offset
-> > by subtracting the base.
-> > 
-> > Replace the offset with the absolute SCS stack pointer value instead
-> > and avoid the redundant load.
+On Mon, May 18, 2020 at 12:38:58PM +0100, Mark Rutland wrote:
+> On Fri, May 15, 2020 at 06:27:52PM +0100, Will Deacon wrote:
+> > There's no need to perform the shadow stack page accounting independently
+> > of the lifetime of the underlying allocation, so call the accounting code
+> > from the {alloc,free}() functions and simplify the code in the process.
 > > 
 > > Signed-off-by: Will Deacon <will@kernel.org>
+> > ---
+> >  kernel/scs.c | 45 +++++++++++++++++++++------------------------
+> >  1 file changed, 21 insertions(+), 24 deletions(-)
 > 
-> One trivial nit below, but regardless this looks sound to me, and I
-> certainly prefer having the absolute address rather than an offset, so:
+> One (super trivial) nit below, but regardless this looks like a sound
+> and sensible cleanup, so:
 > 
 > Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 > 
 > > diff --git a/kernel/scs.c b/kernel/scs.c
-> > index 9389c28f0853..5ff8663e4a67 100644
+> > index 5ff8663e4a67..aea841cd7586 100644
 > > --- a/kernel/scs.c
 > > +++ b/kernel/scs.c
-> > @@ -60,8 +60,7 @@ int scs_prepare(struct task_struct *tsk, int node)
-> >  	if (!s)
-> >  		return -ENOMEM;
-> >  
-> > -	task_scs(tsk) = s;
-> > -	task_scs_offset(tsk) = 0;
-> > +	task_scs(tsk) = task_scs_sp(tsk) = s;
+> > @@ -14,25 +14,35 @@
 > 
-> I think this would be more legible as two statements:
+> >  static void *scs_alloc(int node)
+> >  {
 > 
-> |	task_sys(tsk) = s;
-> |	task_scs_sp(tsk) = s;
+> > +	void *s = kmem_cache_alloc_node(scs_cache, GFP_SCS, node);
+> > +
+> > +	if (!s)
+> > +		return NULL;
+> 
+> Super trivial nit, but could we omit the line space between these two,
+> to fit with usual style?
 
-I think it's nice to be able to say:
+I really like having the empty line after the last variable declaration.
 
-	task_scs(tsk) = task_scs_sp(tsk);
-
-because it makes it very clear that they are initialised to the same thing.
-Having it as two statements means somebody will update one and forget to
-update the other one.
-
-> ... as we usually save `foo = bar = baz` stuff for the start of a
-> function or within loop conditions.
-
-Hmm, I can't really find anything consistent in that regard, to be honest
-with you. Did I miss something in the coding style doc?
-
-I'll leave it as-is for now.
+Sorry,
 
 Will
 
