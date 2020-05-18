@@ -2,81 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 163B41D83BE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:08:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF3801D83FC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:09:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0f0uzoz4cE5aStXKa9yFtQmtIWFLr4nby2SkGS0b8nc=; b=Xdsyhw3dLLXsN5
-	P7X7q3/A1W0Hy7JVgWfkByjQ69fFmjbWRdbg09PGbDl0ukjNQSRiWmOpyQ6CrHTd1+RgJgz5zSaFd
-	W9Idpn4ht9Z122O611PqnznLTNd6zVLEtzGGxQ/rtlD20yHJYIIlVmNzNetnCXk5URGmKCykNVmrV
-	wMCtDLuwU3m72AvzTD4dABhpGW6Ja602dxwteizdS9FVRR8owQgDluzg8xg//iF7eMJ0AmV6I7pd8
-	/ztZfYozBjFC9Cl5rUX8iKTJ06ZEk8BO9xvv0PKVAqh/RUr+4xKWPIyFRJLmijcYC4FDa10G+fW5v
-	U/J5kdYYvTRzld8ISLog==;
+	List-Owner; bh=NpE18QyS366DmXux1nj3bYxH5Em4xnz/8iMXBOgONA8=; b=TpVejjVkCFyfHp
+	e6FJPlzSv4IdxlQVfwP2q89Dr+F65iQAI83bCMSlKN9k1U184eacxFnjWPbkQR5chsVuPNOAXjorj
+	WBk6hE62zOk609iBUVH0K+2LYGt/O7xvgAtPB56tjPYacNixjD/IO8P5McDRWOcdM3zne2XjV5vMN
+	t2NU0+TNwuQyNLcvTmJ5/6DZSC+96BUgi4xPy21hnQVMig5I1hrBgciLaHqzCKt2qfHbA663HLyoR
+	BxKcTB6C49aUbc54HwKsr6WA7b7I9xYf8LpIWVQhS6b2xy5OD7uC6KpDGCd7d4pYHpxUCZ/F9Xh2V
+	AyQf1yVaBZEnC9RXyLyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jakBS-0001IQ-F0; Mon, 18 May 2020 18:08:14 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jakCD-00021x-NN; Mon, 18 May 2020 18:09:01 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jak6N-0003PX-8H
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 18:03:01 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id l73so223771pjb.1
+ id 1jak6R-0003Pz-0A
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 18:03:04 +0000
+Received: by mail-pl1-x643.google.com with SMTP id s20so4543694plp.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 11:02:58 -0700 (PDT)
+ Mon, 18 May 2020 11:02:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=qI0hkZLl1p40lpmoqUP5FQkPLM/cVGruUyPdGcb4wIQ=;
- b=v7rWz7edbqHgcpapNTcdBkkA49gPIQn9qCOdOWX8oswt5q6lNAOVvsk1B8bRpUKMgR
- V4rLEToL+vznxN6V51xzvHyi5SPHiZ536ZXjjZoyZpAPKS9dcQ5Bh8uS/Zz7Bu9iFiGN
- viTvAVkzFbmABREoO94u8xSroYUz6TiRqc2M3l3yy3Fvh8cpViYns3W5Rx41tuOqXBek
- NzTUMh94cOHdFbYLrTUo86P60ddnETRFCJ+4E9i/9HKgo5c6ETsbX3Busz+cmB3vx00p
- MFldLgSi0CsnmHYpZgDjDdFF6PwCZ5S1dINmBFKM1YF0JZBCjzS4JSlJVbPCtdrgfJwM
- ocGg==
+ bh=FoVRWcy/XNi4B/r5P2FDvOZUmVOjksYJfgQMSWpzBRM=;
+ b=xsx8AoVsLHOYJKfK/062oNs3Aao9eR/Fg/VHsKjUZ382yNan4FyFhoF/fJZzQ5JpEs
+ wfpy2Z9kOJ+ghkpgOfM3GxC/vuwSWmlhtbydN1rOclFMHJS94t1g7A/CcWv68s6ZCTOT
+ EKyfn74YvrUBk6PoeYRnZ+tqvKZgblvIAWWbewI6XlOy7k/DxCdzKCpxNVGBJHnIBciN
+ etVj0pA+hm6T9Imdqvi3Wv2WLtcBN3U4Mz080NXAPUtcOeCdy2peD+wb6EcrKpw66EBV
+ 0ahHDqO795Je8sUD2CBv0Ws78+kBMv8qz9bg22M3ZjPQHiXz++mwPPGU4qD9vaGWUuIY
+ /0ag==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=qI0hkZLl1p40lpmoqUP5FQkPLM/cVGruUyPdGcb4wIQ=;
- b=ny4K1EF3LhWAcQIlSzJsuUOeG2KisBpIy2mdCyMh8/Mcv9LMebEAL3y4BCWlonppTb
- G4wSXkaiHxbJnKjwPUUlTT717UlKV9lXatb4ydRE1bNvl5oSFljNs7LkTQeQtQafh0j1
- dRU7P7MhqgWVcSc79Df1RKPLtdzYUqPmvlJ6ZW4Eq3lXD8cGlHrA0QKZJNk1OzzoX4m4
- jaXWSnSKvqz2e+vt5pCJxd3FrYbifo9rI4BX9HefSBmPUgjJcb9iB8uJTqDdTSAI2ZcI
- YeHJVrcqbAdogNppuyLFJ0JJJxEaqLMUhzN4CvcQgzw+igQKHm23+n9Oo8iLewec88z4
- MxsQ==
-X-Gm-Message-State: AOAM531E78eOP/srkrOv1GloJYFQnb1u9rBgEjHV0CKH3MgAemThDLWf
- xvVpIHcGFb5ecIJjn2x2rcM9+th40do=
-X-Google-Smtp-Source: ABdhPJwrsp4UxKFu/aIe6tugBNFzecrOXHzIRK2MK354U6zTOpapPG8A2PpDhYcYC5ub/H9BD/nkzg==
-X-Received: by 2002:a17:90a:c284:: with SMTP id f4mr680374pjt.68.1589824977944; 
- Mon, 18 May 2020 11:02:57 -0700 (PDT)
+ bh=FoVRWcy/XNi4B/r5P2FDvOZUmVOjksYJfgQMSWpzBRM=;
+ b=QDsZ3alqNTDE1k/mFsT2afJ8+QYn2hSokM33pwJ+1GrtFo/gTNFERxleC1pIDF73Av
+ v0heMDyJ2+fY+XTfMLReDoUkd/9Y74RHsDLSio8Gcj6maYcFPgbOJvdvsqfO0PrUG8P9
+ gsqU2Ps42iWEVImiwQ+syvnAgSHwSQNmvIrCnVhoIN/vtDd8MNcBOaHjwGhHX3a7a437
+ vza61+LS3O65uK33sYirQ+zVwKX5CA2tCLcS4P65N405pQ3USHXr9xFiLbO8zUaEwM09
+ iLASbqTsKIU3ifh3BBNhTAOicuWkdqkOoSW8yaIq0mnYoSSA8xdzHnr0lrwGa+eCuUTu
+ SSog==
+X-Gm-Message-State: AOAM531hgi9QZCHBqXWXAZTRX0Ka++GE6IpZqV971U12Zt2LOsLjyvib
+ SBu7dlNlRmfmKxsl/3n/XJXyektXl0U=
+X-Google-Smtp-Source: ABdhPJz+dMzKPW2+sd77DhdV6OySI3saGSpbB+lE5thmPMr3NoyggeO75URGrYcnt776k7WLHOspNA==
+X-Received: by 2002:a17:90a:2009:: with SMTP id n9mr550946pjc.81.1589824978857; 
+ Mon, 18 May 2020 11:02:58 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id v3sm9212314pfv.186.2020.05.18.11.02.56
+ by smtp.gmail.com with ESMTPSA id v3sm9212314pfv.186.2020.05.18.11.02.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 11:02:57 -0700 (PDT)
+ Mon, 18 May 2020 11:02:58 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 14/23] coresight: etmv4: Update default filter and
- initialisation
-Date: Mon, 18 May 2020 12:02:33 -0600
-Message-Id: <20200518180242.7916-15-mathieu.poirier@linaro.org>
+Subject: [PATCH 15/23] coresight: etm4x: Add support for Neoverse N1 ETM
+Date: Mon, 18 May 2020 12:02:34 -0600
+Message-Id: <20200518180242.7916-16-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200518180242.7916-1-mathieu.poirier@linaro.org>
 References: <20200518180242.7916-1-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_110259_358197_0A97BD86 
-X-CRM114-Status: GOOD (  13.66  )
+X-CRM114-CacheID: sfid-20200518_110303_054865_AA447545 
+X-CRM114-Status: GOOD (  10.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -104,92 +103,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mike Leach <mike.leach@linaro.org>
+From: Anurag Koul <anurag.koul@arm.com>
 
-Differing default states set on driver init / perf init and as a result
-of a sysfs reset.
+Add PID for Arm Neoverse N1 ETM to the list of supported/known ETMs.
 
-The ETMv4 can be programmed to trace the entire instruction address range
-without the need to use address comparator filter resources.
-(Described in the ETMv4.x technical reference manual)
-
-sysfs reset was using this method, perf and default driver init were setup
-with an address range comparator for the entire address range.
-
-The perf / driver init has been altered to use the method without needing
-any comparator address hardware.
-
-Minor adjustment to the vinst_ctrl register initialisation to ensure
-correct zero initialisation.
-
-Signed-off-by: Mike Leach <mike.leach@linaro.org>
+Signed-off-by: Anurag Koul <anurag.koul@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- .../coresight/coresight-etm4x-sysfs.c         |  2 +-
- drivers/hwtracing/coresight/coresight-etm4x.c | 23 +++++--------------
- 2 files changed, 7 insertions(+), 18 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm4x.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-index ce41482431f9..b673e738bc9a 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-@@ -205,7 +205,7 @@ static ssize_t reset_store(struct device *dev,
- 	 * started state. ARM recommends start-stop logic is set before
- 	 * each trace run.
- 	 */
--	config->vinst_ctrl |= BIT(0);
-+	config->vinst_ctrl = BIT(0);
- 	if (drvdata->nr_addr_cmp == true) {
- 		config->mode |= ETM_MODE_VIEWINST_STARTSTOP;
- 		/* SSSTATUS, bit[9] */
 diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 94c5f204998e..0b2c7c7efacb 100644
+index 0b2c7c7efacb..7443a2e4528d 100644
 --- a/drivers/hwtracing/coresight/coresight-etm4x.c
 +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -791,7 +791,7 @@ static void etm4_set_default_config(struct etmv4_config *config)
- 	config->ts_ctrl = 0x0;
- 
- 	/* TRCVICTLR::EVENT = 0x01, select the always on logic */
--	config->vinst_ctrl |= BIT(0);
-+	config->vinst_ctrl = BIT(0);
- }
- 
- static u64 etm4_get_ns_access_type(struct etmv4_config *config)
-@@ -894,17 +894,8 @@ static void etm4_set_start_stop_filter(struct etmv4_config *config,
- 
- static void etm4_set_default_filter(struct etmv4_config *config)
- {
--	u64 start, stop;
--
--	/*
--	 * Configure address range comparator '0' to encompass all
--	 * possible addresses.
--	 */
--	start = 0x0;
--	stop = ~0x0;
--
--	etm4_set_comparator_filter(config, start, stop,
--				   ETM_DEFAULT_ADDR_COMP);
-+	/* Trace everything 'default' filter achieved by no filtering */
-+	config->viiectlr = 0x0;
- 
- 	/*
- 	 * TRCVICTLR::SSSTATUS == 1, the start-stop logic is
-@@ -925,11 +916,9 @@ static void etm4_set_default(struct etmv4_config *config)
- 	/*
- 	 * Make default initialisation trace everything
- 	 *
--	 * Select the "always true" resource selector on the
--	 * "Enablign Event" line and configure address range comparator
--	 * '0' to trace all the possible address range.  From there
--	 * configure the "include/exclude" engine to include address
--	 * range comparator '0'.
-+	 * This is done by a minimum default config sufficient to enable
-+	 * full instruction trace - with a default filter for trace all
-+	 * achieved by having no filtering.
- 	 */
- 	etm4_set_default_config(config);
- 	etm4_set_default_filter(config);
+@@ -1541,6 +1541,7 @@ static const struct amba_id etm4_ids[] = {
+ 	CS_AMBA_ID(0x000bb95a),			/* Cortex-A72 */
+ 	CS_AMBA_ID(0x000bb959),			/* Cortex-A73 */
+ 	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),/* Cortex-A35 */
++	CS_AMBA_UCI_ID(0x000bbd0c, uci_id_etm4),/* Neoverse N1 */
+ 	CS_AMBA_UCI_ID(0x000f0205, uci_id_etm4),/* Qualcomm Kryo */
+ 	CS_AMBA_UCI_ID(0x000f0211, uci_id_etm4),/* Qualcomm Kryo */
+ 	CS_AMBA_UCI_ID(0x000bb802, uci_id_etm4),/* Qualcomm Kryo 385 Cortex-A55 */
 -- 
 2.20.1
 
