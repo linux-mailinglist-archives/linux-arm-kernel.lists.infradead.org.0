@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 377F61D71DA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:31:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C1AB1D71DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:32:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IamItZ3GMX7pjXiVP7CON/W8gvKfXaV6QSIoTZEjXSA=; b=VM2MWSWOvFDTMf
-	bsZdNxmqugK3ZzP0FJxmmQ449PV27IK04EcPFILSO4GbkopDir5M6bLzbcEp0zdVZ84D40EEDdYYr
-	uL2qn2d0eflLduWW+E9g/CZbp1/osNiCjd2uOOvGW+E7fEe+Ys1xHpIX9AkvazaMgiKaNysgiJ86O
-	cu5N+5Nwx72YSltlZrrYmoajjuKeZkjTKh8ilJt0ABYTv/75rUlReddIOAvSBW3tUR82sOW6RRoNk
-	dRjWVOWX8KBdaGXVvlgYYSJhbtBSb+YTKQhlgB6FBmHY784kVixpD1dsiqxuPxaVz30XkZ9hpdza2
-	6TYRznoJy4btfXImy9eQ==;
+	List-Owner; bh=wL5BG1kP5qP3sC35L8LxH6VW8xW8JxPPZ8groIQiAy4=; b=CAGIP/dP2nbONz
+	votcG0YwxxCmw86mHWhVoAJ/Si6hhCzL3cXqEabZ6g9AoUsnWzhgE3n+tQuqqKKfH7BxCHtFbirrR
+	Wro+TteALisIgKxI1gq6M7bEuo+OxOKkRRFMLPDBvMDBKM8Zy36z1n481bvbi7cr2TL7/pzTyrIoA
+	btC/cB0fZkrNIF8uwpBjfBC3nJEA8WxGbm8Kl5Iv9Zg43FxcEyqb77xUY2pqduLZ5/qkLwFTEqz/I
+	JIs0IkilY4p+c6khbbzdlUWBMVMW/4xGqWQUc8CxWm4HVgVPVATNyTEkaaH5qzQf3cRkb2KYRjdtT
+	DZarlj+s2n0RI/EWMY8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaaF9-0001q8-9N; Mon, 18 May 2020 07:31:23 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jaaG2-0002Cq-MN; Mon, 18 May 2020 07:32:18 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaaEz-0001pN-Ol
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:31:14 +0000
-Received: by mail-lf1-x144.google.com with SMTP id h188so7132281lfd.7
+ id 1jaaFr-0002Bj-59
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:32:10 +0000
+Received: by mail-lf1-x142.google.com with SMTP id x27so6998335lfg.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 00:31:13 -0700 (PDT)
+ Mon, 18 May 2020 00:32:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uh6U4dZDkbJvSpWnsBIA2oI3GollY7EReC9a0+QL8ds=;
- b=fn+435nTT2iQwLK5/3IA7H4r47HpNUn5YBHSB+1i2lkrJx9KrtWfql0W22bANgDWw5
- L+MnwKFA0pBFg2ZykU7CHeBPNSJlNsXD4oq9wb64di1dAgA/DLCvWUzMGsZZiHOpJn4w
- sdj7TJpIOJhma0T9ExyDAW9vsJxto9cpcDC2gNsExVzImla6dOG4PThs9V+fZS3puNcm
- IYvoNztUspqoRABag4wKI3CTCltF+XNU7FLKsLq8hWkwpeG3kDeFRarJZf/aYQloYKVX
- k2rwKJHcNK+axSzVLvl1quy/Etht9cPCUxdvWfKXkKbRJVAvkKAcKv4Fo2J4e2g414lq
- 39IA==
+ :cc; bh=yDgJBK14qCAv+Ly5Qcs1dAnO6ksblSLGGgT9S8evwgc=;
+ b=JS49KQEH/OR4uP/4njTqN6ALEiaaKHohd/LBQiGVcdrqaLVdBHQ2w5e33tHi3qdAcV
+ r9/TEQFnykL839HJTEeOQyT9l62tOrOfSFETZeZBOfY04+GeZW0HIctkfKDt1KNXK2Yo
+ JS81rztNjP13LyCgnV8yV0i4SLa4Sbp0On6MmGxPxGt+WinOHQR2ErBrg0Vp1t/HOr9J
+ xCpO99Bf8AJIAKLlqEuA4cAHAxh+j853D0+NSddrXD5zbnBFs85R+hIRGjeb1HpNAhjL
+ LYY8pBUf+UuGhj/2ULDY7YsLPcr99IGVuvU+38C2/rTzuDA84Zw1hYFiyUSoQorlH/4C
+ 5dAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=uh6U4dZDkbJvSpWnsBIA2oI3GollY7EReC9a0+QL8ds=;
- b=loVVCgfC9JsUSHQZ4TanWElJPt1ZQLvvEcyA/rA0heXCpMFGnksHGKs0dhgArS62o8
- Ch1Dc22Qk6WJPdjzIrXLSFJGjb4/lfwEm2RolsloELZ+T9Rn3KCbwKKhQeWBaYu2Av6k
- h7Te0eroPrVYp27rW6xAPSQ2WbIgdL+xqkJYJpMRpO37urUPEO6VtAuAZAva3/9Lq7K3
- SJJVVZ0rVyT+u9X/8h1Mx2Bh9qGFEfjYwHOmk8z7dXxCnvsDVzxfhwxmKBTHazynmwSG
- QtuPQ9s7vpb1Vz0aJUh59maorwNsnnIkJlJlUaJ8ccba1IGN/r+gAc5zgQcCEc6xkYvh
- 7/yA==
-X-Gm-Message-State: AOAM533MUEKiyudPnvUdU1eSpY8cOc3kfyjcSm9DnrkdrX6fvTPysRIA
- LMmP69iVpmnsRpkvcynbLKi4EsBFMp+wTj6cm5A/lw==
-X-Google-Smtp-Source: ABdhPJznbrsFsG8QKFvYdy2XwjkDX2MMyM6frFix0Prjjj2ufcZwEICHddKXiikVCWz07ysLLhFYASma4iKq36dcOmQ=
-X-Received: by 2002:ac2:5588:: with SMTP id v8mr10393421lfg.217.1589787072183; 
- Mon, 18 May 2020 00:31:12 -0700 (PDT)
+ bh=yDgJBK14qCAv+Ly5Qcs1dAnO6ksblSLGGgT9S8evwgc=;
+ b=rUrBdQZp8SlsvxJYw9Q111EJIs2Ck0ydnDpjKBhcxiPsEm/wVz9DCmxKFnEev+t/Lq
+ cXDvOs9eBiq9GRKe4acISetjpDEgWVJdX2I+A+ACjiE/SPCoF93ZbSIwAx6r26D4nsoH
+ 6UUA7cZI5F8ood4xteWpZFXP5he/MdWQUGisS2rGTxxs0J0Jkyen6IwYA7hC2ubuhSaq
+ PgJlL3zz/+NuTu7zNypXpYkl+sG5TmrjY0Htuu0SoBHkhvfaEOQQ7rjBGz0n3OEkTa/T
+ SlR+xj7K3qPxwRxVMU1Rt0qCBUoppbi2fHYYtXsKw9/gqNjYh6VIuXkbfIL/OQFgKWwT
+ nYwQ==
+X-Gm-Message-State: AOAM531dwXpeStqmGxwTKnMSzAQf/qxXmQY244rNPAvpIA3arhxu6T1q
+ 4D+iXKeG9ylHgDF1dN2fGkG7wHOns2Kn7HuHTQPQgQ==
+X-Google-Smtp-Source: ABdhPJwxV8YVto5NNCCuMGHZxBejD642Xxg/qE3YJ9UCpF1p3OO1llWxz/lGbdc0Fb6TgpRyFpP/j9gd8eCnm9Agq/U=
+X-Received: by 2002:ac2:5cd1:: with SMTP id f17mr3837953lfq.4.1589787125044;
+ Mon, 18 May 2020 00:32:05 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200513125532.24585-1-lars.povlsen@microchip.com>
- <20200513125532.24585-3-lars.povlsen@microchip.com>
-In-Reply-To: <20200513125532.24585-3-lars.povlsen@microchip.com>
+ <20200513125532.24585-4-lars.povlsen@microchip.com>
+In-Reply-To: <20200513125532.24585-4-lars.povlsen@microchip.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 18 May 2020 09:31:01 +0200
-Message-ID: <CACRpkdaZjjxfnRPNxOZghyY=pFMwEsd8GqRYxt1QsU3Qhm79mA@mail.gmail.com>
-Subject: Re: [PATCH 02/14] pinctrl: ocelot: Remove instance number from pin
- functions
+Date: Mon, 18 May 2020 09:31:54 +0200
+Message-ID: <CACRpkdYo7AUzWTeK+1ouq29R_7rVJ8cz=rjBHVTQjHFx9HmMQA@mail.gmail.com>
+Subject: Re: [PATCH 03/14] pinctrl: ocelot: Fix GPIO interrupt decoding on
+ Jaguar2
 To: Lars Povlsen <lars.povlsen@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_003113_805480_743B508F 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20200518_003208_908903_A7F3FF7A 
+X-CRM114-Status: GOOD (  10.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,13 +111,12 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, May 13, 2020 at 2:56 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
 
-> This patch removes the instance number from the "miim", "reco_clk" and
-> "sfp" pin function.
+> This fixes a problem with using the GPIO as an interrupt on Jaguar2
+> (and similar), as the register layout of the platforms with 64 GPIO's
+> are pairwise, such that the original offset must be multiplied with
+> the platform stride.
 >
-> The change needed is to prepare the driver for adding new platforms
-> with more of these instances. The instance number is also redundant,
-> as this is implicit for each pin.
->
+> Fixes: da801ab56ad8 pinctrl: ocelot: add MSCC Jaguar2 support.
 > Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 > Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
 
