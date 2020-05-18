@@ -2,75 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B14041D7EBA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 18:40:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3EDE81D7ECE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 18:43:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HH0XM+eJ/85U3a9eG4rZvfbUxldZbSfjJjm1Nd9AgVQ=; b=IuCZAQ93LjYYBz
-	I9eh++ertwrKe828ohlBO01n9s7ynjxPg5NFfGCfBbmal+dnC/muyyHgf1xBXcGQIIfDs8mxnSkqF
-	gPmQcLHa15b8u97gf29FEZQcosm4B4ueLIvdAiy0tHns3lWy7seobGzm8HNG26O7Rhc1tRV+N/x1p
-	GV/LPM7wGIQ4kdMOtsCpT0PbQ8ivSZiJbEKcRQqaOWHuUTWl12UQWnb1IBZaIoSd93/W9aI7cRj6C
-	GL+ebznc0rgXsh4rzz9W47xuyRUT0eBfuG5vXl3pye8XXlvH+qVcS5PdEEoe56+0sXlG2wNjFKQg5
-	fbtsPCo8dT2Ba12IpT5w==;
+	List-Owner; bh=wmaVQyv5h2bW8CJWp02HK4LnWXRUK3tvvUy1x8kYzKU=; b=Sg3uJJmGfjuWdn
+	8nk96gc2gREHy9ugSRlYRoBjxmGOFv4FUmH9I46Vc/3RzyciL8sQau7MBvjgufd/of55dY/aOhVMf
+	RO26co/fDAUg6heomcXTdxRD0j4Oph5lR4cZPRZBL4Rr6V1PCuqu0hS54twjBU8xIv1moyFqY4/Ff
+	qd+95VOA9jpj1iy3LOOQl6tT+Og+D+s4wQN+Z9ONdtJQv7O2bZF4Ymv6PS50tpEgHP1+ZMU67rUAi
+	3nQqX3lXAwElHCoFQtmICXQebWjGlVEYXeTKshekozviCtr1Z6aojzIkEIX0+xI2NDKnWEVdOLhFN
+	67btHTrDYPI3tRLTFWFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaioD-0006zn-Do; Mon, 18 May 2020 16:40:09 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jair7-0001TO-A5; Mon, 18 May 2020 16:43:09 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jainz-0006yz-2a
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 16:39:56 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=uxUQwkSwUxkH3FLsgT0bH6KrkNI2haRpYKPWpkc6Sm0=; b=wMsHcUTNr7cX72TtW/aR6d3qj
- sihvtTWT36DNfWX5S+rgkZi5x2OmVjlYn09iqSnfgWCgsXKj9Q90D1n9zohsc8wWkYi2ZOb1NaDXL
- UkTtzBicoI80s3K3Jx8i/1JLt3v/Kpa5GurNrhh91TLfXG1/ihRNzVkNVLbj8rUUwdv5gnbwhYKn5
- 4tYOOUYw+n0G81FnfFRb5peB1d+Fmbo36CCdfnz4o2JUbw+1t5DGmLX9Csfila13MnaorGmSwpnBC
- HPfO3Hc/KS7dvjpA6piFC6LOOb64J3M85unRJS3HR8LACMiDhSJWH77FBZd4VnNtUleK2czCaUMog
- mGDYYZFHQ==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:59612)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jainm-0002s0-FB; Mon, 18 May 2020 17:39:42 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jaink-0004qr-NU; Mon, 18 May 2020 17:39:40 +0100
-Date: Mon, 18 May 2020 17:39:40 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Fredrik Strupe <fredrik@strupe.net>
-Subject: Re: [PING] [PATCH v2] arm: ptrace: Fix mask for thumb breakpoint hook
-Message-ID: <20200518163940.GW1551@shell.armlinux.org.uk>
-References: <20200413173841.29651-1-fredrik@strupe.net>
- <d7381f90-f597-2a9c-4387-5714b41e02e6@strupe.net>
- <20200518141858.GV1551@shell.armlinux.org.uk>
- <0afefde9-f121-c88c-2ceb-7c02f7561979@strupe.net>
+ id 1jaiqy-0001S3-D2
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 16:43:01 +0000
+Received: by mail-wr1-x444.google.com with SMTP id l11so12742716wru.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 18 May 2020 09:42:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=from:date:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=l7z6K0amO/UJk176kcJX4YeJlctfObnJzJsw8pKe4sQ=;
+ b=t5kbJ8vEQ29jXrypKtW3eJgqbsxD4z/bPK/nPLvx1ZJJGdVY79R33x66hal4j53Dr3
+ wfI41HluahUWCRhpDePMjy/Fmt7gXAHOX2Vj+m7i6uT7LNk1CW2NuqBhL2wnPWG8M/K6
+ ZfTiJ4TzIrY9qDOmQ6u+zRo0jx9Fz6R7MJeVPtAWDHtaQmY+j6ZA0GOIcc5EPHkRjJkv
+ hrsONuz0sTr4YL0NvVUVKzFickAjmDOkC5vxwPnkTV0clhri3E1bXds2SZq6FLpTAzK1
+ 4wI1CT8Qwnamr/v2pa27pFL0xCHq5rDzQ0JNtjk1KZxr/ikAms2TvFDyiczEIdvmOlpT
+ M9eQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:date:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=l7z6K0amO/UJk176kcJX4YeJlctfObnJzJsw8pKe4sQ=;
+ b=VGQ7/r1HCMBrWor0R/C8ybDc4zSh63RhuMwZflH2me96Fc+IAVgtJS11yhxo+VTIah
+ 5ugAq4fxb7TXhq8Lys3OA9gCYBH7BMbgOPamSrmUJcPAC5Dok8oj1YJz/n34VOsmNYcV
+ U2ydO+FLWJ1RUxRugQgYHsM3uHEbhBI5JFtHtbBnY4miiw+0S0kKR11TybCxljrEhQMk
+ RMov21LVqv1mUY18H+9+9NQCk7pb7ej1jCZ3BicXcK+r+zySkeNCvWcWMyHFYxUp6n54
+ nFS5g6SpMhfH6VLHlagZEwk2vGKG11aLjCU08X369TCylnDzRZ9366ffmhGUJJXf0pSj
+ x5NQ==
+X-Gm-Message-State: AOAM530yh8IYKZd7QO0E2AbdhDyRcRjDFk1bMBu75Bu19cKYinbuEhrP
+ SzilInMf26VXjmtbEzOeFcVd0A==
+X-Google-Smtp-Source: ABdhPJx0XDQyf7zT0sv6Q3paDSxLsaxOBCpajY4Yvk08GG2KYWSgZT6Ac/ffdWmbevL3HdDikI5PEw==
+X-Received: by 2002:a05:6000:1252:: with SMTP id
+ j18mr10965847wrx.3.1589820175994; 
+ Mon, 18 May 2020 09:42:55 -0700 (PDT)
+Received: from dbrazdil-macbookpro.roam.corp.google.com
+ ([2a01:4b00:8523:2d03:4431:2de6:16f:7f90])
+ by smtp.gmail.com with ESMTPSA id v24sm106645wmh.45.2020.05.18.09.42.54
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 18 May 2020 09:42:55 -0700 (PDT)
+From: David Brazdil <dbrazdil@google.com>
+X-Google-Original-From: David Brazdil
+ <dbrazdil@dbrazdil-macbookpro.roam.corp.google.com>
+Date: Mon, 18 May 2020 17:42:54 +0100
+To: Andrew Scull <ascull@google.com>
+Subject: Re: [PATCH v2 04/14] arm64: kvm: Add build rules for separate nVHE
+ object files
+Message-ID: <20200518164254.b26ankme6pb6ijqr@dbrazdil-macbookpro.roam.corp.google.com>
+References: <20200515105841.73532-1-dbrazdil@google.com>
+ <20200515105841.73532-5-dbrazdil@google.com>
+ <20200518155553.GB147668@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <0afefde9-f121-c88c-2ceb-7c02f7561979@strupe.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200518155553.GB147668@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_093955_116720_68261B4A 
-X-CRM114-Status: GOOD (  15.44  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200518_094300_442670_CC91F1AC 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -78,6 +96,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,45 +109,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Oleg Nesterov <oleg@redhat.com>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Marc Zyngier <maz@kernel.org>, David Brazdil <dbrazdil@google.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 05:02:27PM +0200, Fredrik Strupe wrote:
-> On 18.05.2020 16:18, Russell King - ARM Linux admin wrote:
-> > On Mon, May 18, 2020 at 03:12:06PM +0200, Fredrik Strupe wrote:
-> >> call_undef_hook() in traps.c applies the same instr_mask for both 16-bit
-> >> and 32-bit thumb instructions. If instr_mask then is only 16 bits wide
-> >> (0xffff as opposed to 0xffffffff), the first half-word of 32-bit thumb
-> >> instructions will be masked out. This makes the function match 32-bit
-> >> thumb instructions where the second half-word is equal to instr_val,
-> >> regardless of the first half-word.
-> >>
-> >> The result in this case is that all undefined 32-bit thumb instructions
-> >> with the second half-word equal to de01 (udf #1) work as breakpoints
-> >> and will raise a SIGTRAP instead of a SIGILL, instead of just the one
-> >> intended 16-bit instruction. An example of such an instruction is
-> >> eaa0b650, which is unallocated according to Arm ARM and should raise a
-> >> SIGILL, but instead raises a SIGTRAP.
-> >
-> > How can 0xeaa0b650 match 0xde01 when masked with 0xffff ?
-> >
+On Mon, May 18, 2020 at 04:55:53PM +0100, Andrew Scull wrote:
+> On Fri, May 15, 2020 at 11:58:31AM +0100, David Brazdil wrote:
+> > diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
+> > index 7f06ad93fc95..13850134fc28 100644
+> > --- a/arch/arm64/kernel/image-vars.h
+> > +++ b/arch/arm64/kernel/image-vars.h
+> > @@ -51,4 +51,16 @@ __efistub__ctype		= _ctype;
+> >  
+> >  #endif
+> >  
+> > +#ifdef CONFIG_KVM
+> > +
+> > +/*
+> > + * KVM nVHE code has its own symbol namespace prefixed by __hyp_text_, to
+> > + * isolate it from the kernel proper. The following symbols are legally
+> > + * accessed by it, therefore provide aliases to make them linkable.
+> > + * Do not include symbols which may not be safely accessed under hypervisor
+> > + * memory mappings.
+> > + */
 > 
-> Sorry, that is a typo; it should say 0xeaa0de01.
-> 
-> For reference, this is similar to the problem with SETEND emulation that
-> was fixed in commit fc2266011acc in the mainline kernel
-> (or as discussed here: https://lkml.org/lkml/2020/4/8/274).
+> nit: the prefix is not '__kvm_nvhe_' rather than '__hyp_text_'
 
-Thanks for the clarification.  Please update the patch description and
-put it in the patch system, thanks.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+Thanks, will fix in v3.
 
 _______________________________________________
 linux-arm-kernel mailing list
