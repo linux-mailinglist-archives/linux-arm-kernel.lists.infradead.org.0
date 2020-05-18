@@ -2,54 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C80E1D7B59
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 16:35:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CE491D7B68
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 16:39:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qqBN6umWjj60r/jrIqVYpUXR8tZJxa9OleINU1OHxto=; b=nktiRKiwpHpQr4
-	9CaArbh6GdKE4W14YPvNT1wOJakBB3/CSKXm+VktRjJabf/uGwYqHStIp9ZFC5chVcUjsDc6fTLLB
-	UmtwS37C5q0CzDxRPzjTkf/42hQk59IKOBkhKltxLOqdB5CnDSRTt6ncvAwRnpDjHesynN6G+bNf4
-	ycJoWluVlKODGQD3edaBDe97rHGnB2RtBsEckJx05tKgnxzxveyaqXd8KyEPcpDBjfNtHoYxIjB0E
-	anBSRI/N+HQj00HmpKi2aOWmCdr+4RtHAIg+//l6Oo1sKwhsgGIPNuMMleuZNQmtNHCr06qenOf/M
-	3atg93GUt5XoSfbOG1pQ==;
+	List-Owner; bh=YUiG23g/VEsbFsh8kjmplWPDMH2bMpN2rhHn5/fC1ig=; b=BKKcWrDFyeqQTe
+	ScqgIuiSYd64FYKeO+ZOOYpoZVb99s3htB92APNuaqPkZ27v/0IaezAydT/56lOoxkDwIkjJrTRG9
+	2q/bSnnR/BOuDgBGYY8nnWj9KmNah5oaXls9dQZDK/jBc3q2pmSmleuPcwTXOU2BUNhLfZ0bUPMOh
+	yN6XTlqQKDYULtDxYnheAW3CI9XdjqElIOUjkKGh2wWJkgnxBVUiqotwAhcvMW6c7QmigPKuBvWQp
+	3Y0xDR48oFp5NXVpODJbFbVgpvYRGXssUd7QWv3W3O1G0I36iPRVxpG0VwOqUIb1KO9+vs9AoK1WU
+	MUXfX6Wz5jAq+pIr4UNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jagrO-00016K-SL; Mon, 18 May 2020 14:35:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jagr8-0000C6-Mr
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 14:35:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2357F101E;
- Mon, 18 May 2020 07:35:01 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.29.34])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 19CAB3F52E;
- Mon, 18 May 2020 07:34:57 -0700 (PDT)
-Date: Mon, 18 May 2020 15:34:55 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Sumit Garg <sumit.garg@linaro.org>
-Subject: Re: [RFC] arm64: Enable perf events based hard lockup detector
-Message-ID: <20200518143455.GB3164@C02TD0UTHF1T.local>
-References: <1589532593-16428-1-git-send-email-sumit.garg@linaro.org>
+	id 1jagux-0003F8-Sk; Mon, 18 May 2020 14:38:59 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jagum-0003DB-Kb; Mon, 18 May 2020 14:38:50 +0000
+Received: from mail-qk1-f171.google.com ([209.85.222.171]) by
+ mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1M8QiW-1jf4cv0BBw-004XAr; Mon, 18 May 2020 16:38:45 +0200
+Received: by mail-qk1-f171.google.com with SMTP id y22so10279317qki.3;
+ Mon, 18 May 2020 07:38:43 -0700 (PDT)
+X-Gm-Message-State: AOAM5306K5u2iWpfwIs3Ntrqe/F1D4b4MuCt8Axei6wVSJ4Y1WO0l6TM
+ Fy/4/Um3qYhrN7Cchb4rIGdf3v4bBCUSkylN9/U=
+X-Google-Smtp-Source: ABdhPJxzhsnxVhq8ZSNDtJoBCI07uV5rPB2Xy6wBijq3wixD3dVCpTMzBq7wTOe/KdpPc4bGdgY7xrXJK4eQYms1WB8=
+X-Received: by 2002:a37:aa82:: with SMTP id t124mr15128415qke.3.1589812722617; 
+ Mon, 18 May 2020 07:38:42 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1589532593-16428-1-git-send-email-sumit.garg@linaro.org>
+References: <20200514075942.10136-1-brgl@bgdev.pl>
+ <20200514075942.10136-11-brgl@bgdev.pl>
+ <CAK8P3a0XgJtZNKePZUUpzADO25-JZKyDiVHFS_yuHRXTjvjDwg@mail.gmail.com>
+ <CAMRc=MeVyNzTWw_hk=J9kX1NE9reCE_O4P3wrNpMMc9z4xA_DA@mail.gmail.com>
+In-Reply-To: <CAMRc=MeVyNzTWw_hk=J9kX1NE9reCE_O4P3wrNpMMc9z4xA_DA@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 18 May 2020 16:38:25 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1xaWE0gNx-PnJz08XzUkPW6YB7U6NfFS+Y1VXwG+VR+w@mail.gmail.com>
+Message-ID: <CAK8P3a1xaWE0gNx-PnJz08XzUkPW6YB7U6NfFS+Y1VXwG+VR+w@mail.gmail.com>
+Subject: Re: [PATCH v3 10/15] net: ethernet: mtk-eth-mac: new driver
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+X-Provags-ID: V03:K1:JNTZ3sqNdk5D+8w2BvCzgGr3slwRLu6SKTQu7fezHsTMDQTgtYd
+ S8YUUJCNh5dmIyLK7E6koQVs16dAM5DdXgnihWkESR0iLp7KbwEUv0spdJqhs4DfFrr5jtq
+ HQty8bygDjt/vjZ0YzxvngeVS/ygDSSUn3qcP8nKix8tuc6kgR07BSnae0Ka3wn+Ld/AcQP
+ TfFrqpJ7v/lOkq39kkfjg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:bBdzMXl1Xzs=:FrEksEBt03Hvs16s/Aie9d
+ /zS/P8FZpuC/TsmH8OxhjEwYclYhdFCAyZyYt5nQ8uMjcVggIk3SvdBs8ErVxn8rMjojqOd/q
+ htDd6kR+z3ZnPcTqolO/ZxefcN6eVuyRgywwvvIXlrxhoZ62BMlpCQC0PzGgeXvfvi5JHXatm
+ YaJ2u71MuLneQSjAcpzhS3Nz6G0B8sHde2Nvhhmi05Ej0wG0jKDHR3FCMF4UTbbYd8qpuOQyr
+ KLm+DgAMSLWKM2fsytQgZplaaV4Ti6wQlPrT8+oUsLA6YLdhbBdXmC7382Xv4b3pGynBHeDNt
+ owTRWjo/VwnXrpRg+W7UkP1YUiEgm1/eq4m3aioglX4cVWZ5nMi6/Gtu8LRmuiLMeT6ikWnIo
+ 4SIeRa979r0dwAbmV3j1hgsEEh8FHumPI/KA9JmtFwU6vGsnMdL4I9U9eawQEAyWSeRilJDMr
+ OqSc2ToL+/f9RvhehOPiWR9sWahg08DQv026aFRfKLMqCM9Nc8J9jFTUB5V5redN/LN0qyHlB
+ Zf6qp2ihCH2U+ukgUExZSxYQg7RBjX0mHGCPClmupcgeGFWGGMNaVGpE0qaBhF97ZSEGC4Gx0
+ qoI2XzuEjLJnU+dINmFAuIlXOmB87i/H0DEfjRCC+a0xnx+HQ0as989qyMdeV0iq74bRnhtOn
+ ZP9ml/RfArXVAamVItUyuH4jZBCzMTKnRiEvu7sqR/8ovBFcTU6dMqvbvYy9GAJmq1cw5CBst
+ f0PQx4SkM18fjDI12d9omf6dfck+j6kOiislOQW1pTlm7ue0ZBBSg2SMd6r+UmOrzkE5sLF7r
+ tAJUINiKlR+bcd7FsE8MEX3FrnxJF0BdcbhdfWgZnVWSobHrwI=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_073502_873681_616EE359 
-X-CRM114-Status: GOOD (  25.72  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200518_073848_966341_718DC531 
+X-CRM114-Status: GOOD (  19.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.131 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,192 +87,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: daniel.thompson@linaro.org, peterz@infradead.org, catalin.marinas@arm.com,
- jolsa@redhat.com, dianders@chromium.org, acme@kernel.org,
- alexander.shishkin@linux.intel.com, mingo@redhat.com,
- julien.thierry.kdev@gmail.com, namhyung@kernel.org, tglx@linutronix.de,
- will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Edwin Peer <edwin.peer@broadcom.com>, DTML <devicetree@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Jonathan Corbet <corbet@lwn.net>, Networking <netdev@vger.kernel.org>,
+ Sean Wang <sean.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Pedro Tsai <pedro.tsai@mediatek.com>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Fabien Parent <fparent@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sumit,
-
-On Fri, May 15, 2020 at 02:19:53PM +0530, Sumit Garg wrote:
-> With the recent feature added to enable perf events to use pseudo NMIs
-> as interrupts on platforms which support GICv3 or later, its now been
-> possible to enable hard lockup detector (or NMI watchdog) on arm64
-> platforms. So enable corresponding support.
-
-Where/when do we expect to see this used?
-
-I thought for server systems we'd expect to have the SBSA watchdog, so
-why would we need this?
-
-> One thing to note here is that normally lockup detector is initialized
-> just after the early initcalls but PMU on arm64 comes up much later as
-> device_initcall(). So we need to re-initialize lockup detection once
-> PMU has been initialized.
-> 
-> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
-> ---
-> 
-> This patch is dependent on perf NMI patch-set [1].
-> 
-> [1] https://patchwork.kernel.org/cover/11047407/
-> 
->  arch/arm64/Kconfig             |  2 ++
->  arch/arm64/kernel/perf_event.c | 32 ++++++++++++++++++++++++++++++--
->  drivers/perf/arm_pmu.c         | 11 +++++++++++
->  include/linux/perf/arm_pmu.h   |  2 ++
->  4 files changed, 45 insertions(+), 2 deletions(-)
-> 
-> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> index 40fb05d..36f75c2 100644
-> --- a/arch/arm64/Kconfig
-> +++ b/arch/arm64/Kconfig
-> @@ -160,6 +160,8 @@ config ARM64
->  	select HAVE_NMI
->  	select HAVE_PATA_PLATFORM
->  	select HAVE_PERF_EVENTS
-> +	select HAVE_PERF_EVENTS_NMI if ARM64_PSEUDO_NMI
-> +	select HAVE_HARDLOCKUP_DETECTOR_PERF if PERF_EVENTS && HAVE_PERF_EVENTS_NMI
->  	select HAVE_PERF_REGS
->  	select HAVE_PERF_USER_STACK_DUMP
->  	select HAVE_REGS_AND_STACK_ACCESS_API
-> diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-> index 3ad5c8f..df57360 100644
-> --- a/arch/arm64/kernel/perf_event.c
-> +++ b/arch/arm64/kernel/perf_event.c
-> @@ -20,6 +20,8 @@
->  #include <linux/perf/arm_pmu.h>
->  #include <linux/platform_device.h>
->  #include <linux/smp.h>
-> +#include <linux/nmi.h>
-> +#include <linux/cpufreq.h>
->  
->  /* ARMv8 Cortex-A53 specific event types. */
->  #define ARMV8_A53_PERFCTR_PREF_LINEFILL				0xC2
-> @@ -1190,10 +1192,21 @@ static struct platform_driver armv8_pmu_driver = {
->  
->  static int __init armv8_pmu_driver_init(void)
->  {
-> +	int ret;
-> +
->  	if (acpi_disabled)
-> -		return platform_driver_register(&armv8_pmu_driver);
-> +		ret = platform_driver_register(&armv8_pmu_driver);
->  	else
-> -		return arm_pmu_acpi_probe(armv8_pmuv3_init);
-> +		ret = arm_pmu_acpi_probe(armv8_pmuv3_init);
-> +
-> +	/*
-> +	 * Try to re-initialize lockup detector after PMU init in
-> +	 * case PMU events are triggered via NMIs.
-> +	 */
-> +	if (arm_pmu_irq_is_nmi())
-> +		lockup_detector_init();
-> +
-> +	return ret;
->  }
->  device_initcall(armv8_pmu_driver_init)
->  
-> @@ -1225,3 +1238,18 @@ void arch_perf_update_userpage(struct perf_event *event,
->  	userpg->time_shift = (u16)shift;
->  	userpg->time_offset = -now;
->  }
-> +
-> +#ifdef CONFIG_HARDLOCKUP_DETECTOR_PERF
-> +#define SAFE_MAX_CPU_FREQ	4000000000UL // 4 GHz
-
-Why is 4GHz "safe"?
-
-There's no architectural requirement on max frequency, and it's
-conceviable that there could be parts faster than this.
-
-If the frequency is critical, then we should bail out when it is
-unknown rather than guessing. If it is not cirital then we should
-explain what the requirements are and why using a hard-coded value is
-sane.
-
-> +u64 hw_nmi_get_sample_period(int watchdog_thresh)
-> +{
-> +	unsigned int cpu = smp_processor_id();
-> +	unsigned int max_cpu_freq;
-> +
-> +	max_cpu_freq = cpufreq_get_hw_max_freq(cpu);
-> +	if (max_cpu_freq)
-> +		return (u64)max_cpu_freq * 1000 * watchdog_thresh;
-> +	else
-> +		return (u64)SAFE_MAX_CPU_FREQ * watchdog_thresh;
-> +}
-
-I take it this uses CPU cycles?
-
-AFAIK those can be gated in idle/retention states (e.g. for WFI/WFE or
-any other instruction that could block). So if the CPU were blocked on
-one of those, the counter would never overflow and trigger the
-interrupt.
-
-i.e. this isn't going to detect a hard lockup of that sort.
-
-> +#endif
-> diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
-> index f96cfc4..691dfc9 100644
-> --- a/drivers/perf/arm_pmu.c
-> +++ b/drivers/perf/arm_pmu.c
-> @@ -718,6 +718,17 @@ static int armpmu_get_cpu_irq(struct arm_pmu *pmu, int cpu)
->  	return per_cpu(hw_events->irq, cpu);
->  }
->  
-> +bool arm_pmu_irq_is_nmi(void)
-> +{
-> +	const struct pmu_irq_ops *irq_ops;
-> +
-> +	irq_ops = per_cpu(cpu_irq_ops, smp_processor_id());
-> +	if (irq_ops == &pmunmi_ops || irq_ops == &percpu_pmunmi_ops)
-> +		return true;
-> +	else
-> +		return false;
-
-You can simplify:
-
-| if (x)
-|	return true;
-| else
-|	return false;
-
-... to:
-
-| return x;
-
-Thanks,
-Mark.
-
-> +}
-> +
->  /*
->   * PMU hardware loses all context when a CPU goes offline.
->   * When a CPU is hotplugged back in, since some hardware registers are
-> diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
-> index d9b8b76..a71f029 100644
-> --- a/include/linux/perf/arm_pmu.h
-> +++ b/include/linux/perf/arm_pmu.h
-> @@ -155,6 +155,8 @@ int arm_pmu_acpi_probe(armpmu_init_fn init_fn);
->  static inline int arm_pmu_acpi_probe(armpmu_init_fn init_fn) { return 0; }
->  #endif
->  
-> +bool arm_pmu_irq_is_nmi(void);
-> +
->  /* Internal functions only for core arm_pmu code */
->  struct arm_pmu *armpmu_alloc(void);
->  struct arm_pmu *armpmu_alloc_atomic(void);
-> -- 
-> 2.7.4
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBNYXkgMTgsIDIwMjAgYXQgNDowNyBQTSBCYXJ0b3N6IEdvbGFzemV3c2tpIDxicmds
+QGJnZGV2LnBsPiB3cm90ZToKPiBwdC4sIDE1IG1haiAyMDIwIG8gMTU6MzIgQXJuZCBCZXJnbWFu
+biA8YXJuZEBhcm5kYi5kZT4gbmFwaXNhxYIoYSk6Cgo+ID4gSSB3b3VsZCBnZXQgcmlkIG9mIHRo
+ZSAnY291bnQnIGhlcmUsIGFzIGl0IGR1cGxpY2F0ZXMgdGhlIGluZm9ybWF0aW9uCj4gPiB0aGF0
+IGlzIGFscmVhZHkga25vd24gZnJvbSB0aGUgZGlmZmVyZW5jZSBiZXR3ZWVuIGhlYWQgYW5kIHRh
+aWwsIGFuZCB5b3UKPiA+IGNhbid0IHVwZGF0ZSBpdCBhdG9taWNhbGx5IHdpdGhvdXQgaG9sZGlu
+ZyBhIGxvY2sgYXJvdW5kIHRoZSBhY2Nlc3MgdG8KPiA+IHRoZSByaW5nLiBUaGUgd2F5IEknZCBk
+byB0aGlzIGlzIHRvIGhhdmUgdGhlIGhlYWQgYW5kIHRhaWwgcG9pbnRlcnMKPiA+IGluIHNlcGFy
+YXRlIGNhY2hlIGxpbmVzLCBhbmQgdGhlbiB1c2UgUkVBRF9PTkNFL1dSSVRFX09OQ0UKPiA+IGFu
+ZCBzbXAgYmFycmllcnMgdG8gYWNjZXNzIHRoZW0sIHdpdGggZWFjaCBvbmUgdXBkYXRlZCBvbiBv
+bmUKPiA+IHRocmVhZCBidXQgcmVhZCBieSB0aGUgb3RoZXIuCj4gPgo+Cj4gWW91ciBwcmV2aW91
+cyBzb2x1dGlvbiBzZWVtcyBtdWNoIG1vcmUgcmVsaWFibGUgdGhvdWdoLiBGb3IgaW5zdGFuY2UK
+PiBpbiB0aGUgYWJvdmU6IHdoZW4gd2UncmUgZG9pbmcgdGhlIFRYIGNsZWFudXAgKHdlIGdvdCB0
+aGUgVFggcmVhZHkKPiBpcnEsIHdlJ3JlIGl0ZXJhdGluZyBvdmVyIGRlc2NyaXB0b3JzIHVudGls
+IHdlIGtub3cgdGhlcmUgYXJlIG5vIG1vcmUKPiBwYWNrZXRzIHNjaGVkdWxlZCAoY291bnQgPT0g
+MCkgb3Igd2UgZW5jb3VudGVyIG9uZSB0aGF0J3Mgc3RpbGwgb3duZWQKPiBieSBETUEpLCBhIHBh
+cmFsbGVsIFRYIHBhdGggY2FuIHNjaGVkdWxlIG5ldyBwYWNrZXRzIHRvIGJlIHNlbnQgYW5kIEkK
+PiBkb24ndCBzZWUgaG93IHdlIGNhbiBhdG9taWNhbGx5IGNoZWNrIHRoZSBjb3VudCAodW5kZXJz
+dG9vZCBhcyBhCj4gZGlmZmVyZW5jZSBiZXR3ZWVuIHRhaWwgYW5kIGhlYWQpIGFuZCBydW4gYSBu
+ZXcgaXRlcmF0aW9uICh3aGVyZSB3ZSdkCj4gbW9kaWZ5IHRoZSBoZWFkIG9yIHRhaWwpIHdpdGhv
+dXQgcmlza2luZyB0aGUgb3RoZXIgcGF0aCBnZXR0aW5nIGluIHRoZQo+IHdheS4gV2UnZCBoYXZl
+IHRvIGFsd2F5cyBjaGVjayB0aGUgZGVzY3JpcHRvci4KCkl0IHNob3VsZCBiZSBlbm91Z2ggdG8g
+cmVhZCBib3RoIHBvaW50ZXJzIG9uY2UgYXQgdGhlIHN0YXJ0IG9mIGVhY2gKc2lkZSwgdGhlbiBk
+byB3aGF0ZXZlciB3b3JrIHlvdSB3YW50IHRvIGRvIChjbGVhbmluZywgc2VuZGluZywKcmVjZWl2
+aW5nLCByZWZpbGxpbmcpIGFuZCBmaW5hbGx5IHVwZGF0aW5nIHRoZSBvbmUgcG9pbnRlciB0aGF0
+IGNoYW5nZWQuCklmIGJvdGggc2lkZXMgZG8gdGhhdCwgeW91IG1pbmltaXplIHRoZSBjYWNoZSBs
+aW5lIGJvdW5jaW5nIGFuZAphbHdheXMgZG8gYSB1c2VmdWwgYW1vdW50IG9mIHdvcmsgdGhhdCBn
+dWFyYW50ZWVzIGZvcndhcmQgcHJvZ3Jlc3MKYW5kIGRvZXMgbm90IGludGVyZmVyZSB3aXRoIHRo
+ZSBvdGhlciBzaWRlLgoKPiBJIGV4cGVyaW1lbnRlZCBhIGJpdCB3aXRoIHRoaXMgYW5kIGNvdWxk
+bid0IGNvbWUgdXAgd2l0aCBhbnl0aGluZyB0aGF0Cj4gd291bGQgcGFzcyBhbnkgc3RyZXNzIHRl
+c3QuCj4KPiBPbiB0aGUgb3RoZXIgaGFuZDogc3Bpbl9sb2NrX2JoKCkgd29ya3MgZmluZSBhbmQg
+SSBsaWtlIHlvdXIgYXBwcm9hY2gKPiBmcm9tIHRoZSBwcmV2aW91cyBlLW1haWwgLSBleGNlcHQg
+Zm9yIHRoZSB3b3JrIGZvciB1cGRhdGluZyBzdGF0cyBhcwo+IHdlIGNvdWxkIHBvdGVudGlhbGx5
+IGxvc2Ugc29tZSBzdGF0cyB3aGVuIHdlJ3JlIHVwZGF0aW5nIGluIHByb2Nlc3MKPiBjb250ZXh0
+IHdpdGggUlgvVFggcGF0aHMgcnVubmluZyBpbiBwYXJhbGxlbCBpbiBuYXBpIGNvbnRleHQgYnV0
+IHRoYXQKPiB3b3VsZCBiZSByYXJlIGVub3VnaCB0byBvdmVybG9vayBpdC4KPgo+IEkgaG9wZSB2
+NCB3aWxsIGJlIGdvb2QgZW5vdWdoIGV2ZW4gd2l0aCBzcGlubG9ja3MuIDopCgpZZXMsIGl0IHNo
+b3VsZCBiZSBmaW5lLiBBdm9pZGluZyBhbGwgdGhlIGxvY2tzIGlzIG1haW5seSBhbiBvcHRpbWl6
+YXRpb24KZm9yIHRoZSBudW1iZXIgb2YgQ1BVIGN5Y2xlcyBzcGVudCBwZXIgcGFja2V0LCB0aGUg
+b3RoZXIgcG9pbnRzCmFyZSBtb3JlIGltcG9ydGFudCB0byBnZXQgcmlnaHQsIGluIHBhcnRpY3Vs
+YXIgdGhlIGZsb3cgY29udHJvbC4KCiAgICAgIEFybmQKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
