@@ -2,48 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8EE811D7800
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 13:56:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 853CA1D7801
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 13:56:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VGrCXtnhjW5LLE0krXfC7FZ/olb0smjIASENyEFjR/o=; b=Px3HshzpMk5ITH
-	4NDsZiFcAB2jCAGUv2ys+X9Sfs8mk/Cxk+aXm1bWMMRsV8bmiIldruXAjHggOUj4EIlJDZ+uge818
-	6PwTjYvE3IZ4jeDYDrciRHuhhdQuyapSZU3hzaIIxJDOdo+tOQovjKGTZVMH6t1gTJ8KkFvXFzU2y
-	B0XL6aUeYGf9HV1+ViHR7VYP8YW+q3I/tsfuUaLrhuAW2GFuOuEpy7cXDULGFazqvwdbcmMO1O1mr
-	Q9n8JqmqH7h11fUAH1r2mCsGsA0Y3sSUhdj7znUFeeMDU2jvyX6SJrWgKawH7gJ1S0esM4+B2EslY
-	UlJoLOueluSxmshgcyqw==;
+	List-Owner; bh=/I/9YGXHnUBkwOybNPQJ50EkFm22vTCu94JpZjiki5E=; b=JOU2rI/B/juu4l
+	f4wOeEheqN480pvyuFw6dwZ9qhxKy53H+/NegO/lfulQibTaR7/j/Rxyf9NWulJ7QaHRuoS+5vR9l
+	aGB+zh1k3TelM8VIpDV5+yVppPC5pWupbXXNJ9VGOoqC4jwfRMWiOGurUJHB9jOURN6IbSTz7Vj+R
+	FZfdBuDey8unLWMN0Nzk4fBSXtsFkXJ8q+lLB/ftRwI+IO4k9lDBxFeWyWrYHaNlk3CfkWc7p1cx9
+	hB0a/6/e6tHsvOwQhQzsTGGkgw4XSJgmE7G45KGj4dzd8b/mf2/C22AMap68dCE0kdH1KyzrbUsq9
+	bJ9agTDsIYoUc6BH/1CA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaeNI-0001v6-TH; Mon, 18 May 2020 11:56:04 +0000
+	id 1jaeNV-00025l-MX; Mon, 18 May 2020 11:56:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaeN6-0001tp-2X
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 11:55:53 +0000
+ id 1jaeN7-0001uA-2h
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 11:55:54 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D392D106F;
- Mon, 18 May 2020 04:55:50 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 328D33F305;
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A57B11FB;
+ Mon, 18 May 2020 04:55:52 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 068B03F774;
  Mon, 18 May 2020 04:55:49 -0700 (PDT)
-Date: Mon, 18 May 2020 12:55:46 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v4 7/7] firmware: smccc: Add ARCH_SOC_ID support
-Message-ID: <20200518115546.GB16262@bogus>
-References: <20200518091222.27467-1-sudeep.holla@arm.com>
- <20200518091222.27467-8-sudeep.holla@arm.com>
- <CAK8P3a20R+H6m5GZj2_0w3s-xF+J_qSVrQH8EjyQXe6+9WTYxw@mail.gmail.com>
+Date: Mon, 18 May 2020 12:55:47 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 3/6] arm64: scs: Use 'scs_sp' register alias for x18
+Message-ID: <20200518115547.GC1957@C02TD0UTHF1T.local>
+References: <20200515172756.27185-1-will@kernel.org>
+ <20200515172756.27185-4-will@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAK8P3a20R+H6m5GZj2_0w3s-xF+J_qSVrQH8EjyQXe6+9WTYxw@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200515172756.27185-4-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_045552_160045_F300B26B 
-X-CRM114-Status: GOOD (  13.60  )
+X-CRM114-CacheID: sfid-20200518_045553_201657_86AFAA8A 
+X-CRM114-Status: GOOD (  17.28  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,57 +62,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Mark Rutland <mark.rutland@am.com>, Sami Tolvanen <samitolvanen@google.com>,
+ kernel-team@android.com, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 11:30:21AM +0200, Arnd Bergmann wrote:
-> On Mon, May 18, 2020 at 11:12 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> > +static ssize_t
-> > +jep106_cont_bank_code_show(struct device *dev, struct device_attribute *attr,
-> > +                          char *buf)
-> > +{
-> > +       return sprintf(buf, "0x%02x\n", JEP106_BANK_CONT_CODE(soc_id_version));
-> > +}
-> > +
-> > +static DEVICE_ATTR_RO(jep106_cont_bank_code);
-> > +
-> > +static ssize_t
-> > +jep106_identification_code_show(struct device *dev,
-> > +                               struct device_attribute *attr, char *buf)
-> > +{
-> > +       return sprintf(buf, "0x%02x\n", JEP106_ID_CODE(soc_id_version));
-> > +}
->
-> I think we should try hard to avoid nonstandard attributes for the soc device.
->
+On Fri, May 15, 2020 at 06:27:53PM +0100, Will Deacon wrote:
+> x18 holds the SCS stack pointer value, so introduce a register alias to
+> make this easier to read in assembly code.
+> 
+> Signed-off-by: Will Deacon <will@kernel.org>
 
-I agree with that in general but this is bit different for below mentioned
-reason.
+I scanned through arm64 for all instances of x18, and it looks like
+you've covered all the relevant uses here. In kvm we save/restore x18 a
+bunch becasue it might be a platform register, but we do that
+unconditionally and without knowledge of what it contains, so I think
+that's fine to leave as-is. Therefore:
 
-> Did you run into a problem with finding one of the existing attributes
-> that can be used to hold the fields?
->
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 
-Not really! The 2 JEP106 codes can be used to derive the manufacturer which
-could match one of the existing attributes. However doing so might require
-importing the huge JEP106 list as it needs to be maintained and updated
-in the kernel. Also that approach will have the compatibility issue and
-that is the reason for introducing these attributes representing raw
-values for userspace.
+As an aside, the comment in entry-ftrace.S is now stale where it says
+that x18 is safe to clobber. I can send a patch to clean that up, unless
+you want to do that yourself.
 
---
-Regards,
-Sudeep
+Mark.
+
+> ---
+>  arch/arm64/include/asm/scs.h |  6 ++++--
+>  arch/arm64/kernel/entry.S    | 10 +++++-----
+>  arch/arm64/kernel/head.S     |  2 +-
+>  3 files changed, 10 insertions(+), 8 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/scs.h b/arch/arm64/include/asm/scs.h
+> index 6b8cf4352fe3..d46efdd2060a 100644
+> --- a/arch/arm64/include/asm/scs.h
+> +++ b/arch/arm64/include/asm/scs.h
+> @@ -7,12 +7,14 @@
+>  #include <asm/asm-offsets.h>
+>  
+>  #ifdef CONFIG_SHADOW_CALL_STACK
+> +	scs_sp	.req	x18
+> +
+>  	.macro scs_load tsk, tmp
+> -	ldr	x18, [\tsk, #TSK_TI_SCS_SP]
+> +	ldr	scs_sp, [\tsk, #TSK_TI_SCS_SP]
+>  	.endm
+>  
+>  	.macro scs_save tsk, tmp
+> -	str	x18, [\tsk, #TSK_TI_SCS_SP]
+> +	str	scs_sp, [\tsk, #TSK_TI_SCS_SP]
+>  	.endm
+>  #else
+>  	.macro scs_load tsk, tmp
+> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+> index cb0516e6f963..741faf0706f1 100644
+> --- a/arch/arm64/kernel/entry.S
+> +++ b/arch/arm64/kernel/entry.S
+> @@ -394,7 +394,7 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
+>  	.macro	irq_stack_entry
+>  	mov	x19, sp			// preserve the original sp
+>  #ifdef CONFIG_SHADOW_CALL_STACK
+> -	mov	x24, x18		// preserve the original shadow stack
+> +	mov	x24, scs_sp		// preserve the original shadow stack
+>  #endif
+>  
+>  	/*
+> @@ -416,7 +416,7 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
+>  
+>  #ifdef CONFIG_SHADOW_CALL_STACK
+>  	/* also switch to the irq shadow stack */
+> -	adr_this_cpu x18, irq_shadow_call_stack, x26
+> +	adr_this_cpu scs_sp, irq_shadow_call_stack, x26
+>  #endif
+>  
+>  9998:
+> @@ -430,7 +430,7 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
+>  	.macro	irq_stack_exit
+>  	mov	sp, x19
+>  #ifdef CONFIG_SHADOW_CALL_STACK
+> -	mov	x18, x24
+> +	mov	scs_sp, x24
+>  #endif
+>  	.endm
+>  
+> @@ -1071,9 +1071,9 @@ SYM_CODE_START(__sdei_asm_handler)
+>  #ifdef CONFIG_SHADOW_CALL_STACK
+>  	/* Use a separate shadow call stack for normal and critical events */
+>  	cbnz	w4, 3f
+> -	adr_this_cpu dst=x18, sym=sdei_shadow_call_stack_normal, tmp=x6
+> +	adr_this_cpu dst=scs_sp, sym=sdei_shadow_call_stack_normal, tmp=x6
+>  	b	4f
+> -3:	adr_this_cpu dst=x18, sym=sdei_shadow_call_stack_critical, tmp=x6
+> +3:	adr_this_cpu dst=scs_sp, sym=sdei_shadow_call_stack_critical, tmp=x6
+>  4:
+>  #endif
+>  
+> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
+> index 2b01c19c5483..1293baddfd20 100644
+> --- a/arch/arm64/kernel/head.S
+> +++ b/arch/arm64/kernel/head.S
+> @@ -426,7 +426,7 @@ SYM_FUNC_START_LOCAL(__primary_switched)
+>  	mov	x29, sp
+>  
+>  #ifdef CONFIG_SHADOW_CALL_STACK
+> -	adr_l	x18, init_shadow_call_stack	// Set shadow call stack
+> +	adr_l	scs_sp, init_shadow_call_stack	// Set shadow call stack
+>  #endif
+>  
+>  	str_l	x21, __fdt_pointer, x5		// Save FDT pointer
+> -- 
+> 2.26.2.761.g0e0b3e54be-goog
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
