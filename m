@@ -2,57 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B900C1D7C34
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:02:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 160DA1D7C85
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:15:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4O3D8iCUNYZxcPlEMYykeJfB3JoZVJljdyG+DGD6Xio=; b=gMVvNbNQqhil95
-	/+IBinJ3eSHDw+3Dz4fbjifeNo6BbSuFHnNiPG8x5n0lB5DIi45/paixQ+xT+5km0wqCLL/IoSu1w
-	aBILtY7HKbzXCtSotJb1YWTAFaIcuP8tvJX93r3+GF6CmVDzzJJK+GrlPECRMwWoTfeDWqdzsOLCz
-	cLoxH4cxOcpgdskN/zNpZ7ZRF09WNhHDu0RYXjSsj8CIXSoYB/4gOS6/hJL6rGSRqiXazpx1Vuzfp
-	f/rTpvMGdcelg1EAnUvqca6+fEDWq+h1CxtLep0dHCQu3+3gFN9kftYdewGIJYM76L3BEDKbDMwEk
-	B71OMIkYpjIXwtdSvuXQ==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M+rEnDxrK4ZzGfyAghV2ar0Xq1q0P+M/pYF72Kvbzuc=; b=A1RvyEMHwf0PzU
+	VDi7OzqTSDV2T3sGjsbh8qauQaoUtg2pjhC2/T21fvirVYmvEMo4gpQAqOkSG4hfhYRncL0t+IChD
+	XqWwIepBBM37eVTmxX9Rlh7oJmPwTEheGHv5ZZBoQcPImTZqTti553UAGcA2/zbPKZnPFkFtx97lz
+	YNOWKI0LBMh0aYKn05M3KqO8Szi/eyC3wr32SBICBNdkFA2BldAxg0iG34iVnIm/1GEO5b9lufkbT
+	vPtuAm4Cyp2arWVi0mF3OtALlLTxcKMnm5/PhhftbC3nzo7fKMGQbh4FTiq4oDc+ehjVMUpUmFfp4
+	rN0f1ihjEi2ZcS8dHzpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jahI1-0005mZ-Gv; Mon, 18 May 2020 15:02:49 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1jahTv-0004VP-R7; Mon, 18 May 2020 15:15:07 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jahHj-0005f7-Sk
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 15:02:33 +0000
-X-Originating-IP: 84.210.220.251
-Received: from [192.168.1.123] (cm-84.210.220.251.getinternet.no
- [84.210.220.251]) (Authenticated sender: fredrik@strupe.net)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 38FBCC000F;
- Mon, 18 May 2020 15:02:27 +0000 (UTC)
-Subject: Re: [PING] [PATCH v2] arm: ptrace: Fix mask for thumb breakpoint hook
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20200413173841.29651-1-fredrik@strupe.net>
- <d7381f90-f597-2a9c-4387-5714b41e02e6@strupe.net>
- <20200518141858.GV1551@shell.armlinux.org.uk>
-From: Fredrik Strupe <fredrik@strupe.net>
-Message-ID: <0afefde9-f121-c88c-2ceb-7c02f7561979@strupe.net>
-Date: Mon, 18 May 2020 17:02:27 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200518141858.GV1551@shell.armlinux.org.uk>
-Content-Language: en-US
+ id 1jahTd-0004UX-FD
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 15:14:50 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0EA1F20671;
+ Mon, 18 May 2020 15:14:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589814889;
+ bh=JoM91Et6EiXBZzmbk7OOu4mjYY2QCV5w5R56UhHxUw0=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=lb9iaIhklsRErpaFfMUhPUpl08X8tH3mCEAf1CEh1g5KABUupNGHfRDvfb7xkhVLC
+ +E9vSBCeQSXDozQBF61RNVDFrR6WlJr+vgZfvONf4nDI24lpboyGpCrLfnP8EnKLMF
+ og2/RXV5tgRWr2Q8ipRcW2O/BIVBDvxj4NqxSFnE=
+Date: Tue, 19 May 2020 00:14:43 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Doug Anderson <dianders@chromium.org>
+Subject: Re: [PATCH 2/4] arm64: Extract kprobes_save_local_irqflag() and
+ kprobes_restore_local_irqflag()
+Message-Id: <20200519001443.a1d1843e7809a7a68530fda5@kernel.org>
+In-Reply-To: <CAD=FV=XMSsMFpPzBckkWhP6iDR4WM+qdV7J=aQCBbbBit_rDwg@mail.gmail.com>
+References: <20200509214159.19680-1-liwei391@huawei.com>
+ <20200509214159.19680-3-liwei391@huawei.com>
+ <CAD=FV=VVz4QnQ6AWAsCMxw6Zne6es0omvJ--Gnag=PXkMPt42g@mail.gmail.com>
+ <d5bb9ccf-6047-13d9-45b3-18421629e83f@huawei.com>
+ <CAD=FV=XMSsMFpPzBckkWhP6iDR4WM+qdV7J=aQCBbbBit_rDwg@mail.gmail.com>
+X-Mailer: Sylpheed 3.7.0 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_080232_102251_6ED1BF69 
-X-CRM114-Status: GOOD (  10.87  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200518_081449_541058_E42FE7D6 
+X-CRM114-Status: GOOD (  26.10  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,40 +80,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Oleg Nesterov <oleg@redhat.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ liwei1412@163.com, Masami Hiramatsu <mhiramat@kernel.org>,
+ Jason Wessel <jason.wessel@windriver.com>,
+ "liwei \(GF\)" <liwei391@huawei.com>, David Miller <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18.05.2020 16:18, Russell King - ARM Linux admin wrote:
-> On Mon, May 18, 2020 at 03:12:06PM +0200, Fredrik Strupe wrote:
->> call_undef_hook() in traps.c applies the same instr_mask for both 16-bit
->> and 32-bit thumb instructions. If instr_mask then is only 16 bits wide
->> (0xffff as opposed to 0xffffffff), the first half-word of 32-bit thumb
->> instructions will be masked out. This makes the function match 32-bit
->> thumb instructions where the second half-word is equal to instr_val,
->> regardless of the first half-word.
->>
->> The result in this case is that all undefined 32-bit thumb instructions
->> with the second half-word equal to de01 (udf #1) work as breakpoints
->> and will raise a SIGTRAP instead of a SIGILL, instead of just the one
->> intended 16-bit instruction. An example of such an instruction is
->> eaa0b650, which is unallocated according to Arm ARM and should raise a
->> SIGILL, but instead raises a SIGTRAP.
->
-> How can 0xeaa0b650 match 0xde01 when masked with 0xffff ?
->
+On Sat, 16 May 2020 09:17:21 -0700
+Doug Anderson <dianders@chromium.org> wrote:
 
-Sorry, that is a typo; it should say 0xeaa0de01.
+> Hi,
+> 
+> On Sat, May 16, 2020 at 1:47 AM liwei (GF) <liwei391@huawei.com> wrote:
+> >
+> > >> -               kprobes_save_local_irqflag(kcb, regs);
+> > >> +               kernel_prepare_single_step(&kcb->saved_irqflag, regs);
+> > >
+> > > Is there some reason to have two functions?  It seems like every time
+> > > you call kernel_enable_single_step() you'd want to call
+> > > kernel_prepare_single_step().  ...and every time you call
+> > > kernel_disable_single_step() you'd want to call
+> > > kernel_cleanup_single_step().
+> > >
+> > > Maybe you can just add the flags parameter to
+> > > kernel_enable_single_step() / kernel_disable_single_step() and put the
+> > > code in there?
+> > >
+> >
+> > As kernel_enable_single_step() / kernel_disable_single_step() are also called in
+> > breakpoint_handler() and watchpoint_handler(), i am not sure it's a right thing
+> > to put the daif flag prepare/cleanup into them, especially we don't have a context
+> > to save the flags.
+> 
+> I think you misunderstood what I was suggesting.  Maybe better with
+> examples?  I was suggesting doing this:
+> 
+> kcb->saved_irqflag = kernel_enable_single_step(regs);
+> ...
+> kernel_disable_single_step(kcb->saved_irqflag, regs);
+> 
+> To me that seems better than what you have now:
+> 
+> kcb->saved_irqflag = kernel_prepare_single_step(regs);
+> kernel_enable_single_step(regs);
+> ...
+> kernel_cleanup_single_step(kcb->saved_irqflag, regs);
+> kernel_disable_single_step();
+> 
+> ...or am I confused?
 
-For reference, this is similar to the problem with SETEND emulation that
-was fixed in commit fc2266011acc in the mainline kernel
-(or as discussed here: https://lkml.org/lkml/2020/4/8/274).
++1, this sounds good to me. Currently arch/arm64/kernel/probes/kprobes.c
+has a code which sololy use kernel_disable_single_step() without regs
+restoring, but it looks like a bug there. So maybe you need following patch.
 
-Fredrik
+Thank you,
 
+-----
+From: Masami Hiramatsu <mhiramat@kernel.org>
+Date: Mon, 18 May 2020 23:08:28 +0900
+Subject: [PATCH] arm64: kprobes: Restore saved interrupt flag before disabling
+ single step
+
+Restore the saved interrupt flag in kprobe_ctlblk to regs->pstate
+when a page fault happens on single-stepping instruction.
+Without this fix, we will lose the flag if it happens because
+kcb->saved_irqflag only knows the previous flag.
+
+Fixes: 2dd0e8d2d2a1 ("arm64: Kprobes with single stepping support")
+Signed-off-by: Masami Hiramatsu <mhiramat@kernel.org>
+Cc: stable@vger.kernel.org
+---
+ arch/arm64/kernel/probes/kprobes.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm64/kernel/probes/kprobes.c b/arch/arm64/kernel/probes/kprobes.c
+index d1c95dcf1d78..73fb99770f69 100644
+--- a/arch/arm64/kernel/probes/kprobes.c
++++ b/arch/arm64/kernel/probes/kprobes.c
+@@ -308,6 +308,7 @@ int __kprobes kprobe_fault_handler(struct pt_regs *regs, unsigned int fsr)
+ 		if (!instruction_pointer(regs))
+ 			BUG();
+ 
++		kprobes_restore_local_irqflag(kcb, regs);
+ 		kernel_disable_single_step();
+ 
+ 		if (kcb->kprobe_status == KPROBE_REENTER)
+-- 
+2.25.1
+
+
+
+
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
