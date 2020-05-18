@@ -2,115 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B225D1D7486
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 11:57:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDD271D748A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 11:58:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=11bpm4VFLAn0iuTFsbFfYq4rnl03A38oyKOjzVMs9xY=; b=pype1Mka7amV1+
-	+eTYmxxPc6QaEozPk7wmKE/FAeMcPgxbir52kGE20ayNGOm2z2B9xhCugOel4kWH6kYpc0PaQzA0q
-	7cDWqVlc7f4pQwfwDlDcCE2FaImoG9cMNS5Gs8yV/yquF9URa8gpgHLwndkLzRl2c7yryYlwPGixM
-	wfF1Yo1kN2yd2XuyxKFWuzPbsg+BKWew2ABL421A1SuXd0H7vF/oHehQ9h6dz2vr6OStWIwkFfaEB
-	vAoef9b/EamuO2lDRZR9pQeoIBWfOXG59JJqHcnwK1stWK0xGeWjoM0ZOaueqPLwf1S407ZbZnH+s
-	WeWpIt1pbWLuwytXER5Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=jJ5FzSS/E7bJHtBCYVTixioiEaLWo/4EhLWktBxaf/Q=; b=D32KYujJdLqnV5Y9UnB1liZEQX
+	RO6VoWxA/Tz4UuWxMBPsUMOtmOYpZ0FPpXTom+TUvuQOaEtqUBxj+zsZbcOK8j/2iLr/5tOqYyhsL
+	lvM/teLgxp0nZvjB5P3W4rYNLKMweAn1aGYb2xZo0f6bEkiCyG/grvOMKWvmARxu5OHVYiWGKNXhY
+	8A7IHyMpO/uuB6Rh7NX+IF5LzgFhoUjkH/8RIsxFYO66DNA5S+NeH5f3Duzx+NjC/7qgwpFy5vu2I
+	DTs8IHCq3TniGLMR9qxiW8VyGqSX0hAMryWD6zG/pP5mdisv/THCsRwcJzl/J0GTDPQD1TYrU47SS
+	ljvKtpFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jacWo-00048P-7o; Mon, 18 May 2020 09:57:46 +0000
-Received: from mail-eopbgr140042.outbound.protection.outlook.com
- ([40.107.14.42] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1jacXF-0004SL-AC; Mon, 18 May 2020 09:58:13 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jacWd-00047g-SE
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 09:57:37 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lVY9nS90+ipMp33vWCtYJWQOxk4I62roKlPQxOWOpk1yflGJo+7b8RJ0svq4vc6LhLFPQcnROiNPGlrEBJqbyGgUR9S2nnAAjEJOZfnmWwjOxq/5ysJVUAdmv+fNRvNopQE7LQitmlu3oX/luw97nssyYJF6Nj0fYvc2O6OFKwOkCAiMHwZmoT3leX9cnZUMRWCDYp+qIpSLlvzR2jI+a77UoCdeBgdruS9L5kffnJccHc6eKygd/Z4TEusdzmQPuJmFjwMjl224Zg9APlv8f6wQD1P1VhdB0j5bAFvY3DQGI3/tiBrXU31lAFz4LvvAH24I1snu+SGJtz9SqWdVxg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7RGQbqCAO950wpxFmLsgDj7UGeEmPT/FZOgufmsiFJM=;
- b=KehAtH0VD+H68gy0e0GOkJ6uE/qRXT95F8kyBIhxqg1jY21RcXh+NSzFSM+hlCQFs+hbFfD1Gd4EBjrVcY8RRW98HzNDu5JeleFNyZ/YdUYUZqVTwUqvUfOAFBav2K/kxGY7exYDQceCAN4+aonQ9CpheLQlvJeAsVsv1++mAxk2se+F9/ugpKeHfvEglzYVBTLA7H2jWn0cAlvAYBxJZmbBhCZ2OZ/Lk60KwJwW8y7ggWPdbtaaegmA2eNvD3ofO81mYflHCETzxdcY1UIkeeEQf4lxTngHORrV6h1FXVFPyQm4rt1LaCpMLOV+oceLOTD1bPvaQwf502RD+EUKug==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7RGQbqCAO950wpxFmLsgDj7UGeEmPT/FZOgufmsiFJM=;
- b=Yi+9pAZx/gJs+mwt3rMpJAuACUOpQUHWu/z4D2wYtDKuqW8TMXbYleVolIZtcY3RPtLcP1TOByXw3svt7alBnnL0+nSZbnnHQkuLkcdngOBJeRJL/hfBRSxaBoQEkIJiO+EZlUna5X/WjdN8loGCHW1ogbL1gyaVA822Dc5rrDg=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
- by DB3PR0402MB3945.eurprd04.prod.outlook.com (2603:10a6:8:3::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.27; Mon, 18 May
- 2020 09:57:32 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3000.033; Mon, 18 May 2020
- 09:57:32 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Aisheng Dong <aisheng.dong@nxp.com>, "p.zabel@pengutronix.de"
- <p.zabel@pengutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] dt-bindings: reset: Convert i.MX reset to json-schema
-Thread-Topic: [PATCH] dt-bindings: reset: Convert i.MX reset to json-schema
-Thread-Index: AQHWKAWfz/hL/av3lkeqLSh6w78ioaitl5SAgAADGFA=
-Date: Mon, 18 May 2020 09:57:32 +0000
-Message-ID: <DB3PR0402MB39161E59A62C9802E8794E33F5B80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1589250194-29441-1-git-send-email-Anson.Huang@nxp.com>
- <AM6PR04MB496643088C27DB303166ED0D80B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
-In-Reply-To: <AM6PR04MB496643088C27DB303166ED0D80B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [183.192.13.100]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: b7241fa5-54cd-448f-bcb3-08d7fb11e27d
-x-ms-traffictypediagnostic: DB3PR0402MB3945:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3945883BD54561CDA9976BDAF5B80@DB3PR0402MB3945.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 04073E895A
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 56tSm1AMfdtXx0iJcHh3ZdedNCYwNIQRzZ6neABsSDdAitkbfBxbIroSJbh6gjhPr2ftldhSTDHI19fNAqBYJRwGAaAZcK2D4Nddocy6SRx50D1i+6D+/vLVi4duLjlhYEAyKUGwCRB2VahMAtfSmlfLHEQGjEJ1eCeqdBNUhc0uKGlbZs/7F9jckqtkV7JzOyeRdgnjHwpg4K8hriI+DEN1wRDZ7pTusBF4jRWTF6vNXNDEqKl+wKfP4cjfUHPQgCLB6paiAMqxKbmzPUgaenPuU9Bz5lKt7svYDGGegbeMDOkMMm0TLbsikVk5OoRXngxDyj1r2e2w00CoWxXS2lDIadUwXC6ZYzrx/ZP3ntl/uhUav9AKN92wpNe0nkqdBQjgBWgnhHJVDkoseUDuYvcgLkNT15Gx3SngH9BUokxMr8SK6ZRJzUChV4gKq8ZM60Opltf25Bn8lMjv55tAwyNWBeRXdt3GJZjPmhhPloE=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(376002)(396003)(39860400002)(136003)(366004)(26005)(5660300002)(71200400001)(186003)(2906002)(7696005)(8936002)(55016002)(44832011)(66946007)(76116006)(66556008)(66476007)(33656002)(86362001)(52536014)(66446008)(110136005)(316002)(478600001)(4326008)(6506007)(9686003)(64756008)(8676002)(921003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: uQ1KgHUzRkQvNtORMwYiwg1Ajrm/pZ7Y5+WB/opl2OSVeIZ4HaAsLH12z1YVc+ROfm/REaZRpU80qmnENswSBCvoCfntBmHdXEzKtdU0bio+2drEdDpLbbEPavA3tA2FjSVKnRR4FU9p+lXxocOCbER4yWzjkQoPOPcOYztGlFdfrFDetZ0VX7WsOuohFGpJR68xg6VvsmVwzkT2kPMSOhBNfZ8HWUmtB8j88IQRVj0ld7i8H/yub931cyVKFF7Vreg8FPl9ZFrURZUPMrT7Ar3jJ0Ctwm+v7+b9PyJqo3aoucwkFHo5fL/BuWqZO+Wfkbj8xhmZxXP61SvZFtvoyKCuCSc+zaL+dEKxq7VLPr7EgIGL2/YYSiMMLlEt+1iJY2nCZqrZEMp8J+4qTZQD2CLsCYCFiLBDUC7agaABA6onsdK5ojw3WPID+t/Mp0RoMJKU4dINobci+HzW+cPFFv95l0gWviF07sbCe9/JgUnjVB0vD3jmWBtBz3tsC9eI
+ id 1jacWz-0004QK-Q5
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 09:58:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589795877; x=1621331877;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=4OvW5X7lQPqJSj1FDeUtnvAV3jtnCoqzvXyXeZaCI54=;
+ b=qKblPw8O5t424MpU2gpFwRi2279Fdqa5MwjqQgDLDDUk/BSRoCD1ObW7
+ deVB8emQY7iyOP9FcjmppcRJX/v371TroL803I+ixlhoPuad3csiLZexp
+ Q45PNlWpRJ9epTpbzIIZoUkqBJ/bwnMaWm+OQd8+62pi4LIJMbjz6Qrj+
+ oFjPaNheEu78kOVV0kddHlfXsxEScNtkeKiQXZXiQ1k0ow3YrCwYDcfL0
+ QszeMJvfpdyZ1NOechzdrvQlv4Wx66jSw6UD6SLd98yEkyNkTsz3kfx0w
+ KNrtKiETBpRdKYvgbYcwTsoG2ZnGwJNZNDh26ADstTtXSV+WC+qYHrTTw w==;
+IronPort-SDR: r0o8fdMe+VRF7ORwmBrvsAcdfvtRYnk8GiP5A9+ii5LNqYTJ+ndORuwVonnHoR66E/kRLQNAmi
+ hncaM9Bdzc+n3Jf2/uoxitOac1o/YmAQZ0UUK32JhMKflNJ1sNNILeLNzc6TQWoeCYyiRZJ11l
+ 3+5Ipj3LglaavQejVzEBbALtZYVF3r6JwPBIocdSxORNpqUmGtgOvLFEAx1uVK3q1uSnGC/5Cu
+ GHWrvvb9/nSa8LcPmvFsactJGnHYrC+0AjVS4PG2U+R8g/fVaRQ+eu3043TYu1sp4cBQ9KEzNL
+ rpA=
+X-IronPort-AV: E=Sophos;i="5.73,406,1583218800"; d="scan'208";a="73754448"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 18 May 2020 02:57:56 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 18 May 2020 02:57:55 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 18 May 2020 02:57:54 -0700
+References: <20200513134140.25357-1-lars.povlsen@microchip.com>
+ <20200513134140.25357-4-lars.povlsen@microchip.com>
+ <20200513152018.GA60367@roeck-us.net>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH 3/3] hwmon: sparx5: Add Sparx5 SoC temperature driver
+In-Reply-To: <20200513152018.GA60367@roeck-us.net>
+Date: Mon, 18 May 2020 11:57:52 +0200
+Message-ID: <87tv0do99b.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b7241fa5-54cd-448f-bcb3-08d7fb11e27d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2020 09:57:32.8192 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: fNbGxSkfACYU93QWTCyKijCe36wbxxLzPBV3aLY1wPsbAGBRdAa8Cl3FGnNKeVJhCZsr8ijRgQ/YURd2bu285Q==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3945
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_025735_912916_E62240DA 
-X-CRM114-Status: GOOD (  21.71  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200518_025757_893888_93DF0984 
+X-CRM114-Status: GOOD (  19.17  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.14.42 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.14.42 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -129,160 +94,278 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: linux-hwmon@vger.kernel.org, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Jean Delvare <jdelvare@suse.com>, linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ SoC Team <soc@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Lars Povlsen <lars.povlsen@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+Guenter Roeck writes:
 
-> Subject: RE: [PATCH] dt-bindings: reset: Convert i.MX reset to json-schema
-> 
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> > Sent: Tuesday, May 12, 2020 10:23 AM
-> >
-> > Convert the i.MX reset binding to DT schema format using json-schema.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> >  .../devicetree/bindings/reset/fsl,imx-src.txt      | 49 ------------------
-> >  .../devicetree/bindings/reset/fsl,imx-src.yaml     | 58
-> > ++++++++++++++++++++++
-> >  2 files changed, 58 insertions(+), 49 deletions(-)  delete mode
-> > 100644 Documentation/devicetree/bindings/reset/fsl,imx-src.txt
-> >  create mode 100644
-> > Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
-> > b/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
-> > deleted file mode 100644
-> > index 6ed79e6..0000000
-> > --- a/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
-> > +++ /dev/null
-> > @@ -1,49 +0,0 @@
-> > -Freescale i.MX System Reset Controller
-> > -======================================
-> > -
-> > -Please also refer to reset.txt in this directory for common reset
-> > -controller binding usage.
-> > -
-> > -Required properties:
-> > -- compatible: Should be "fsl,<chip>-src"
-> > -- reg: should be register base and length as documented in the
-> > -  datasheet
-> > -- interrupts: Should contain SRC interrupt and CPU WDOG interrupt,
-> > -  in this order.
-> > -- #reset-cells: 1, see below
-> > -
-> > -example:
-> > -
-> > -src: src@20d8000 {
-> > -        compatible = "fsl,imx6q-src";
-> > -        reg = <0x020d8000 0x4000>;
-> > -        interrupts = <0 91 0x04 0 96 0x04>;
-> > -        #reset-cells = <1>;
-> > -};
-> > -
-> > -Specifying reset lines connected to IP modules
-> > -==============================================
-> > -
-> > -The system reset controller can be used to reset the GPU, VPU, -IPU,
-> > and OpenVG IP modules on i.MX5 and i.MX6 ICs. Those device -nodes
-> > should specify the reset line on the SRC in their resets -property,
-> > containing a phandle to the SRC device node and a -RESET_INDEX
-> > specifying which module to reset, as described in -reset.txt
-> > -
-> > -example:
-> > -
-> > -        ipu1: ipu@2400000 {
-> > -                resets = <&src 2>;
-> > -        };
-> > -        ipu2: ipu@2800000 {
-> > -                resets = <&src 4>;
-> > -        };
-> > -
-> > -The following RESET_INDEX values are valid for i.MX5:
-> > -GPU_RESET     0
-> > -VPU_RESET     1
-> > -IPU1_RESET    2
-> > -OPEN_VG_RESET 3
-> > -The following additional RESET_INDEX value is valid for i.MX6:
-> > -IPU2_RESET    4
-> > diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
-> > b/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
-> > new file mode 100644
-> > index 0000000..276a533
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
-> > @@ -0,0 +1,58 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML 1.2
-> > +---
-> > +title: Freescale i.MX System Reset Controller
-> > +
-> > +maintainers:
-> > +  - Philipp Zabel <p.zabel@pengutronix.de>
-> > +
-> > +description: |
-> > +  The system reset controller can be used to reset the GPU, VPU,
-> > +  IPU, and OpenVG IP modules on i.MX5 and i.MX6 ICs. Those device
-> > +  nodes should specify the reset line on the SRC in their resets
-> > +  property, containing a phandle to the SRC device node and a
-> > +  RESET_INDEX specifying which module to reset, as described in
-> > +  reset.txt
-> > +
-> > +  The following RESET_INDEX values are valid for i.MX5:
-> > +    GPU_RESET     0
-> > +    VPU_RESET     1
-> > +    IPU1_RESET    2
-> > +    OPEN_VG_RESET 3
-> > +  The following additional RESET_INDEX value is valid for i.MX6:
-> > +    IPU2_RESET    4
-> > +
-> > +properties:
-> > +  compatible:
-> > +    items:
-> > +      - const: "fsl,imx51-src"
-> 
-> What about mx6?
+> On Wed, May 13, 2020 at 03:41:40PM +0200, Lars Povlsen wrote:
+>> This patch adds a temperature sensor driver to the Sparx5 SoC.
+>>
+>> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+>> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
+>> ---
+>>  drivers/hwmon/Kconfig       |  10 +++
+>>  drivers/hwmon/Makefile      |   2 +-
+>>  drivers/hwmon/sparx5-temp.c | 154 ++++++++++++++++++++++++++++++++++++
+>>  3 files changed, 165 insertions(+), 1 deletion(-)
+>>  create mode 100644 drivers/hwmon/sparx5-temp.c
+>>
+>> diff --git a/drivers/hwmon/Kconfig b/drivers/hwmon/Kconfig
+>> index 4c62f900bf7e8..130cb1f1748ff 100644
+>> --- a/drivers/hwmon/Kconfig
+>> +++ b/drivers/hwmon/Kconfig
+>> @@ -480,6 +480,16 @@ config SENSORS_I5K_AMB
+>>         This driver can also be built as a module. If so, the module
+>>         will be called i5k_amb.
+>>
+>> +config SENSORS_SPARX5
+>> +     tristate "Sparx5 SoC temperature sensor"
+>> +     depends on ARCH_SPARX5
+>> +     help
+>> +       If you say yes here you get support for temperature monitoring
+>> +       with the Microchip Sparx5 SoC.
+>> +
+>> +       This driver can also be built as a module. If so, the module
+>> +       will be called sparx5-temp.
+>> +
+>>  config SENSORS_F71805F
+>>       tristate "Fintek F71805F/FG, F71806F/FG and F71872F/FG"
+>>       depends on !PPC
+>> diff --git a/drivers/hwmon/Makefile b/drivers/hwmon/Makefile
+>> index b0b9c8e571762..28a09986b7a62 100644
+>> --- a/drivers/hwmon/Makefile
+>> +++ b/drivers/hwmon/Makefile
+>> @@ -64,6 +64,7 @@ obj-$(CONFIG_SENSORS_DS1621)        += ds1621.o
+>>  obj-$(CONFIG_SENSORS_EMC1403)        += emc1403.o
+>>  obj-$(CONFIG_SENSORS_EMC2103)        += emc2103.o
+>>  obj-$(CONFIG_SENSORS_EMC6W201)       += emc6w201.o
+>> +obj-$(CONFIG_SENSORS_SPARX5) += sparx5-temp.o
+>>  obj-$(CONFIG_SENSORS_F71805F)        += f71805f.o
+>>  obj-$(CONFIG_SENSORS_F71882FG)       += f71882fg.o
+>>  obj-$(CONFIG_SENSORS_F75375S)        += f75375s.o
+>> @@ -190,4 +191,3 @@ obj-$(CONFIG_SENSORS_OCC) += occ/
+>>  obj-$(CONFIG_PMBUS)          += pmbus/
+>>
+>>  ccflags-$(CONFIG_HWMON_DEBUG_CHIP) := -DDEBUG
+>> -
+>> diff --git a/drivers/hwmon/sparx5-temp.c b/drivers/hwmon/sparx5-temp.c
+>> new file mode 100644
+>> index 0000000000000..bf9dd102a9825
+>> --- /dev/null
+>> +++ b/drivers/hwmon/sparx5-temp.c
+>> @@ -0,0 +1,154 @@
+>> +// SPDX-License-Identifier: GPL-2.0-or-later
+>> +/* Sparx5 SoC temperature sensor driver
+>> + *
+>> + * Copyright (C) 2020 Lars Povlsen <lars.povlsen@microchip.com>
+>> + */
+>> +
+>> +#include <linux/bitops.h>
+>> +#include <linux/hwmon.h>
+>> +#include <linux/hwmon-sysfs.h>
+>
+> Unnecessary include
 
-Will add all i.MX6 compatible according to DT.
+Ack.
 
-> 
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> 
-> Need description here
+>
+>> +#include <linux/init.h>
+>> +#include <linux/io.h>
+>> +#include <linux/module.h>
+>> +#include <linux/of_device.h>
+>> +
+>> +#define TEMP_CTRL            0
+>> +#define TEMP_CFG             4
+>> +#define  TEMP_CFG_CYCLES     GENMASK(24, 15)
+>> +#define  TEMP_CFG_CYCLES_OFF 15
+>> +#define  TEMP_CFG_ENA                BIT(0)
+>> +#define TEMP_STAT            8
+>> +#define  TEMP_STAT_VALID     BIT(12)
+>> +#define  TEMP_STAT_TEMP              GENMASK(11, 0)
+>> +
+>> +struct s5_hwmon {
+>> +     void __iomem *base;
+>> +};
+>> +
+>> +static void s5_temp_enable(struct s5_hwmon *hwmon)
+>> +{
+>> +     u32 val = readl(hwmon->base + TEMP_CFG);
+>> +     u32 clk = 250;
+>> +
+>> +     val &= ~TEMP_CFG_CYCLES;
+>> +     val |= (clk << TEMP_CFG_CYCLES_OFF);
+>> +     val |= TEMP_CFG_ENA;
+>> +
+>> +     writel(val, hwmon->base + TEMP_CFG);
+>> +}
+>> +
+>> +static void s5_temp_disable(void *data)
+>> +{
+>> +     struct s5_hwmon *hwmon = data;
+>> +     u32 val = readl(hwmon->base + TEMP_CFG);
+>> +
+>> +     val &= ~TEMP_CFG_ENA;
+>> +
+>> +     writel(val, hwmon->base + TEMP_CFG);
+>> +}
+>> +
+>> +static int s5_read(struct device *dev, enum hwmon_sensor_types type,
+>> +                u32 attr, int channel, long *temp)
+>> +{
+>> +     struct s5_hwmon *hwmon = dev_get_drvdata(dev);
+>> +     int rc = 0, value;
+>> +     u32 stat;
+>> +
+>> +     switch (attr) {
+>> +     case hwmon_temp_input:
+>> +             stat = readl_relaxed(hwmon->base + TEMP_STAT);
+>> +             if (stat & TEMP_STAT_VALID) {
+>> +                     value = (stat & TEMP_STAT_TEMP);
+>
+> Unnecessary ( )
 
-OK.
+Removed.
 
-> 
-> > +    minItems: 1
-> > +    maxItems: 2
-> > +
-> > +  '#reset-cells':
-> > +    const: 1
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - interrupts
-> > +  - '#reset-cells'
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +    src@73fd0000 {
-> 
-> s/src/reset-controller
+>
+>> +                     value = DIV_ROUND_CLOSEST(value * 3522, 4096) - 1094;
+>> +                     value *= 100;
+>> +                     *temp = value;
+>> +             } else
+>> +                     rc = -EINVAL;
+>
+> -EINVAL is for bad used input. -EIO, maybe, unless there is a better error.
+> Also,
+>
+>                 if (!(stat & TEMP_STAT_VALID))
+>                         return -EIO;
 
-OK.
+Ok, changed.
 
-Anson
+>                 ...
+>
+> would be easier to read (and not result in a checkpatch warning).
+>
+>> +             break;
+>> +     default:
+>> +             rc = -EOPNOTSUPP;
+>
+>                 break;
+>
+
+Added.
+
+>> +     }
+>> +
+>> +     return rc;
+>> +}
+>> +
+>> +static umode_t s5_is_visible(const void *_data, enum hwmon_sensor_types type,
+>> +                          u32 attr, int channel)
+>> +{
+>> +     if (type != hwmon_temp)
+>> +             return 0;
+>> +
+>> +     switch (attr) {
+>> +     case hwmon_temp_input:
+>> +             return 0444;
+>> +     default:
+>> +             return 0;
+>> +     }
+>> +}
+>> +
+>> +static const struct hwmon_channel_info *s5_info[] = {
+>> +     HWMON_CHANNEL_INFO(chip,
+>> +                        HWMON_C_REGISTER_TZ),
+>> +     HWMON_CHANNEL_INFO(temp,
+>> +                        HWMON_T_INPUT),
+>> +     NULL
+>> +};
+>> +
+>> +static const struct hwmon_ops s5_hwmon_ops = {
+>> +     .is_visible = s5_is_visible,
+>> +     .read = s5_read,
+>> +};
+>> +
+>> +static const struct hwmon_chip_info s5_chip_info = {
+>> +     .ops = &s5_hwmon_ops,
+>> +     .info = s5_info,
+>> +};
+>> +
+>> +static int s5_temp_probe(struct platform_device *pdev)
+>> +{
+>> +     struct device *hwmon_dev;
+>> +     struct s5_hwmon *hwmon;
+>> +     int err = 0;
+>
+> Unnecessary initialization
+>
+
+Removed
+
+>> +
+>> +     hwmon = devm_kzalloc(&pdev->dev, sizeof(*hwmon), GFP_KERNEL);
+>> +     if (!hwmon)
+>> +             return -ENOMEM;
+>> +
+>> +     hwmon->base = devm_platform_ioremap_resource(pdev, 0);
+>> +     if (IS_ERR(hwmon->base))
+>> +             return PTR_ERR(hwmon->base);
+>> +
+>> +     err = devm_add_action(&pdev->dev, s5_temp_disable, hwmon);
+>> +     if (err)
+>> +             return err;
+>> +
+>> +     s5_temp_enable(hwmon);
+>> +
+>> +     hwmon_dev = devm_hwmon_device_register_with_info(&pdev->dev,
+>> +                                                      "s5_temp",
+>> +                                                      hwmon,
+>> +                                                      &s5_chip_info,
+>> +                                                      NULL);
+>> +
+>> +     return PTR_ERR_OR_ZERO(hwmon_dev);
+>> +}
+>> +
+>> +const struct of_device_id s5_temp_match[] = {
+>> +     { .compatible = "microchip,sparx5-temp" },
+>> +     {},
+>> +};
+>> +MODULE_DEVICE_TABLE(of, s5_temp_match);
+>> +
+>> +static struct platform_driver s5_temp_driver = {
+>> +     .probe = s5_temp_probe,
+>> +     .driver = {
+>> +             .name = "sparx5-temp",
+>> +             .of_match_table = s5_temp_match,
+>> +     },
+>> +};
+>> +
+>> +module_platform_driver(s5_temp_driver);
+>> +
+>> +MODULE_AUTHOR("Lars Povlsen <lars.povlsen@microchip.com>");
+>> +MODULE_DESCRIPTION("Sparx5 SoC temperature sensor driver");
+>> +MODULE_LICENSE("GPL");
+>> --
+>> 2.26.2
+
+Thank you for your input, I will submit anew asap.
+
+---Lars
+
+-- 
+Lars Povlsen,
+Microchip
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
