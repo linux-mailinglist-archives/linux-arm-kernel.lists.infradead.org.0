@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16F991D7768
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 13:37:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7615E1D7770
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 13:39:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5sVpwsI3Olyw2aYBm4p5vutilh/0+QJzg6YoOsHqjDw=; b=dXTXSB6nkANO7l
-	wSz5V8I5dwE/JBJC2D+SNUUasxm2Jc5lSwGHz11zDP5nyX8roThcGS9mXJvTVU94ibU5xPClpVa5o
-	MdzVdfQ0hhhQm/+GrfajBrZBIVWa+5ZSBeylWU8kq2cZbElsqC3Ak7pUmChYI0KFKBkobiyRkvCTm
-	zAijYw3/VYm+5wlef35xjgGG5ChM32DIGFBfxoDS+uho+/9UrfhWEMb7pxeH/ZdyXUSEgCM1lOmlf
-	cpIhXGjV/UFGpMKzs/dpZdHwXEnxpkxOlGKWUh4hBSnU5iTUHx5cpcTMYyG57xzqkUUyp2mG+Jfi+
-	XQxrX/S43qMASAIZ/HkA==;
+	List-Owner; bh=l36ba+vCUvk0LDEd3mHVLvqOx6VlavDVJCahiKCrcoc=; b=lJXvCyg8IDU4y6
+	6GUMXEjWxEaw8FEw/2AFNzzCIXNBjER+W3H2SzeegqTDw1eIizwSVkD9H6GsKShJjNw36ijFswwd2
+	DGoVgumey1JJUOP7QIFnGPAMk8t4aIsKla5XmUU1V8tmTERpH8osdTt58MKhDL57ODIhGBxmE3d3l
+	0k0slo5SAfBYGaFZF3/QNi4OlbK4bbp3ze6fT75qUHsTJfBDiTg8CYgJNazSCI7TrL5b4oes8vaYn
+	Gug3gurGcFLzC3LN1NpI/gNTAxaSai9ZZrMNro037a47kQCr1KuGMa9S2sQ0+jzY98NBDjows153a
+	z5hJHdvC3Q3OAZ+xPAdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jae5K-0005ML-N8; Mon, 18 May 2020 11:37:30 +0000
+	id 1jae6z-0005lX-OD; Mon, 18 May 2020 11:39:13 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jae59-0005Lu-56
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 11:37:20 +0000
+ id 1jae6q-0005kl-Tp
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 11:39:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 73515106F;
- Mon, 18 May 2020 04:37:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D38C9106F;
+ Mon, 18 May 2020 04:39:03 -0700 (PDT)
 Received: from C02TD0UTHF1T.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D9F263F52E;
- Mon, 18 May 2020 04:37:15 -0700 (PDT)
-Date: Mon, 18 May 2020 12:37:10 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 73FB53F52E;
+ Mon, 18 May 2020 04:39:01 -0700 (PDT)
+Date: Mon, 18 May 2020 12:38:58 +0100
 From: Mark Rutland <mark.rutland@arm.com>
 To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 1/6] arm64: scs: Store absolute SCS stack pointer value
- in thread_info
-Message-ID: <20200518113710.GA1957@C02TD0UTHF1T.local>
+Subject: Re: [PATCH 2/6] scs: Move accounting into alloc/free functions
+Message-ID: <20200518113858.GB1957@C02TD0UTHF1T.local>
 References: <20200515172756.27185-1-will@kernel.org>
- <20200515172756.27185-2-will@kernel.org>
+ <20200515172756.27185-3-will@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200515172756.27185-2-will@kernel.org>
+In-Reply-To: <20200515172756.27185-3-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_043719_233996_B10887DB 
-X-CRM114-Status: GOOD (  13.71  )
+X-CRM114-CacheID: sfid-20200518_043905_004130_6B42E047 
+X-CRM114-Status: GOOD (  15.14  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,51 +73,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 06:27:51PM +0100, Will Deacon wrote:
-> Storing the SCS information in thread_info as a {base,offset} pair
-> introduces an additional load instruction on the ret-to-user path,
-> since the SCS stack pointer in x18 has to be converted back to an offset
-> by subtracting the base.
-> 
-> Replace the offset with the absolute SCS stack pointer value instead
-> and avoid the redundant load.
+On Fri, May 15, 2020 at 06:27:52PM +0100, Will Deacon wrote:
+> There's no need to perform the shadow stack page accounting independently
+> of the lifetime of the underlying allocation, so call the accounting code
+> from the {alloc,free}() functions and simplify the code in the process.
 > 
 > Signed-off-by: Will Deacon <will@kernel.org>
+> ---
+>  kernel/scs.c | 45 +++++++++++++++++++++------------------------
+>  1 file changed, 21 insertions(+), 24 deletions(-)
 
-One trivial nit below, but regardless this looks sound to me, and I
-certainly prefer having the absolute address rather than an offset, so:
+One (super trivial) nit below, but regardless this looks like a sound
+and sensible cleanup, so:
 
 Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 
 > diff --git a/kernel/scs.c b/kernel/scs.c
-> index 9389c28f0853..5ff8663e4a67 100644
+> index 5ff8663e4a67..aea841cd7586 100644
 > --- a/kernel/scs.c
 > +++ b/kernel/scs.c
-> @@ -60,8 +60,7 @@ int scs_prepare(struct task_struct *tsk, int node)
->  	if (!s)
->  		return -ENOMEM;
->  
-> -	task_scs(tsk) = s;
-> -	task_scs_offset(tsk) = 0;
-> +	task_scs(tsk) = task_scs_sp(tsk) = s;
+> @@ -14,25 +14,35 @@
 
-I think this would be more legible as two statements:
+>  static void *scs_alloc(int node)
+>  {
 
-|	task_sys(tsk) = s;
-|	task_scs_sp(tsk) = s;
+> +	void *s = kmem_cache_alloc_node(scs_cache, GFP_SCS, node);
+> +
+> +	if (!s)
+> +		return NULL;
 
-... as we usually save `foo = bar = baz` stuff for the start of a
-function or within loop conditions.
+Super trivial nit, but could we omit the line space between these two,
+to fit with usual style?
 
-Thanks,
 Mark.
-
->  	scs_account(tsk, 1);
->  	return 0;
->  }
-> -- 
-> 2.26.2.761.g0e0b3e54be-goog
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
