@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9151F1D8AED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 00:30:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27D641D8ADB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 00:29:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eRESvryV4XbplPyraS/ueXA4h41gSDjcF51ZhtEr9fc=; b=hXsr9GnMhZO21m
-	jV1g1QLcf9ZZ4KDReV8Bpa4ZhhfpnfEl4lS+weA/280CKNyS6eVCJ0AsjYPUAjvQvqj3q3Qdf1sQA
-	wuisOSoO0/FJA3k7+AFC2dBMAIAufPnKmyZgeI8oyRr9IWI+KXe8RsDZYRx4QQynCl7x4CpN0mbox
-	I34J2ISO3dFpnOnpAKgvflthD5bfyQJUqfNkescKLO/AUSQaX3r60RB89b6nc+F0S9XYBX46YRQqo
-	wWJcTc5RucIToDub01YGakQYQpIfjsnefo/w2Si+hbYWBRyjeM72MIAC6wwgAA2jXYUJ6FDX8eD8s
-	HlkWEo7qZr7DHwMek2ZA==;
+	List-Owner; bh=Ruja6OQPVlQl/OOUrimwoCG59awb+M6gwU4+9XkErt0=; b=J73XmtTdDpyH67
+	TR4I5tir/jAVT8nW3R7dMeLa9k7S4UhSaFjZU+3ZTSpI/GaN+GczFFeLGv20aSv/t1UJRUFWSbmhW
+	CN5Oq+jJXTa7WvGPgJGVqbaVxq7d0XysLSRbIFIw5aImwosw8M7eXSbqMdRy1HpI6Dm/lKG9X0azm
+	VSfPU8UtwF05tWFzt6JYgbIE02xC+nK6ljzWaUfLbJZJgNxBsM9kzjvs27RBZUToXrC4wZz685HzE
+	EJfJw+UcbZOFtp6LcMM8TuoIk0yimMb1XbYPGedne+vf7SU2BG3mwKZTBJ+ZsBNG900RXecPe5N96
+	QIegk6ETHOE6Cdm4/KFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaoGZ-0001Gl-R9; Mon, 18 May 2020 22:29:47 +0000
+	id 1jaoFi-0000Fm-3Z; Mon, 18 May 2020 22:28:54 +0000
 Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoF0-0008OC-4T; Mon, 18 May 2020 22:28:12 +0000
+ id 1jaoF0-0008OE-31; Mon, 18 May 2020 22:28:11 +0000
 Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
  helo=phil.lan)
  by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
  (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jaoEv-00005F-OU; Tue, 19 May 2020 00:28:05 +0200
+ id 1jaoEw-00005F-0v; Tue, 19 May 2020 00:28:06 +0200
 From: Heiko Stuebner <heiko@sntech.de>
 To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH v2 1/2] arm64: dts: rockchip: fix defines in pd_vio node
- for rk3399
-Date: Tue, 19 May 2020 00:28:00 +0200
-Message-Id: <158984064169.2259329.3276929143055218816.b4-ty@sntech.de>
+Subject: Re: [PATCH v2] arm64: dts: rockchip: fix phy nodename for rk3328
+Date: Tue, 19 May 2020 00:28:01 +0200
+Message-Id: <158984064169.2259329.15579989069543124777.b4-ty@sntech.de>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200428203003.3318-1-jbx6244@gmail.com>
-References: <20200428203003.3318-1-jbx6244@gmail.com>
+In-Reply-To: <20200505170227.6503-1-jbx6244@gmail.com>
+References: <20200321215423.12176-1-jbx6244@gmail.com>
+ <20200505170227.6503-1-jbx6244@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_152810_171770_AD935D68 
-X-CRM114-Status: UNSURE (   8.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200518_152810_129666_5567B39A 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,24 +66,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 Apr 2020 22:30:02 +0200, Johan Jonker wrote:
+On Tue, 5 May 2020 19:02:27 +0200, Johan Jonker wrote:
 > A test with the command below gives for example this error:
 > 
-> arch/arm64/boot/dts/rockchip/rk3399-evb.dt.yaml: pd_vio@15:
-> 'pd_tcpc0@RK3399_PD_TCPC0', 'pd_tcpc1@RK3399_PD_TCPC1'
-> do not match any of the regexes:
-> '.*-names$', '.*-supply$', '^#.*-cells$',
-> '^#[a-zA-Z0-9,+\\-._]{0,63}$',
-> '^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}$',
-> '^[a-zA-Z][a-zA-Z0-9,+\\-._]{0,63}@[0-9a-fA-F]+(,[0-9a-fA-F]+)*$',
-> '^__.*__$', 'pinctrl-[0-9]+'
+> arch/arm64/boot/dts/rockchip/rk3328-evb.dt.yaml: phy@0:
+> '#phy-cells' is a required property
+> 
+> The phy nodename is normally used by a phy-handle.
+> This node is however compatible with
+> "ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
+> which is just been added to 'ethernet-phy.yaml'.
+> So change nodename to 'ethernet-phy' for which '#phy-cells'
+> is not a required property
 > 
 > [...]
 
 Applied, thanks!
 
-[1/1] arm64: dts: rockchip: fix defines in pd_vio node for rk3399
-      commit: 84836ded76ec9a6f25d1d0acebaad44977e0ec6f
+[1/1] arm64: dts: rockchip: fix phy nodename for rk3328
+      commit: 8370cc5533b3baa5e0f18075ae638b050458aabd
 
 Best regards,
 -- 
