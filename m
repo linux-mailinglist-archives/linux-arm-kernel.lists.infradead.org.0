@@ -2,115 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21B6E1D7061
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 07:32:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A5171D7074
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 07:46:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hVIpY82942Pc61iXOjFVXpPWi4GgBQ79jZeFhPNkOU0=; b=HJ2gXwhNHN+pDJ
-	MXmz8r8MyICsvkQQxNcjywDF3Qrmnx1LgpNxDzXfoRIcexUa7uoYykMNuvpAafMRBeqwjyDFqxiyA
-	3CztpxhuzKLX0SLbwBBqQHcceGZOiKQ9cdry4Z/zd5wT+CvGrX9lwOKclOfgP4333YeR2LupAMXAa
-	agzuM+BDcXN33b6MQV5TrmV7sBu9Jjr4xCvB0FlozvemF26dqBcCo+MVjJIGFnt/uGZ7++MD90eFG
-	E4xIC2GwL7N/9en3UwmCdbN4Q5XU14P0vPbFOo59MTy5g/A+VdwuKNRzAm1rpNk16SJcOU6VgYKwh
-	N0RsbI3q/mIOcc2siQrA==;
+	List-Owner; bh=eRacdbrVvtEiYhKiCcMOAEi6rvfXPJi9SSq7SbU8dOk=; b=beEd/tzKv8xntE
+	NPAMtI5KGPbaJasX+AigBxmoOacMCu0DV9Sdtxpu3vzLYIt5S3+wYbG2pvet1gGcJB4nPhKKnrviq
+	8LvngXwbgB5tfbdAjzscMdNkrJoxl2h1jv9Vm47Qrt0BiB9ZJ8SzifspH57KL9mVcF1WoKF7Hl0mK
+	RwNJIMBbHs5x3GDeyLJIPLook75QSwFohSHr9JNfmA18MkWvnBob9deKJpUibh/YMa2nG9wvATatU
+	CIsRWJFTdACx98+w8jBz0WLkE4OFIRo1HY8qe+///02AEkQonBNVQ4BwX6/YKoIx1pFMPOpYM9dg4
+	jo+oooS9OMqFUsaGtA5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaYNZ-0002ah-VU; Mon, 18 May 2020 05:31:57 +0000
-Received: from mail-eopbgr80055.outbound.protection.outlook.com ([40.107.8.55]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1jaYbt-0002mP-M8; Mon, 18 May 2020 05:46:45 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaYNR-0002Zi-As
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 05:31:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YJfAxd0P9Dk4DLE3hfzOyhYv2z0dDuMVO39WrtvDFegZsm4wqHgZnvvpIROFdXnN25dXJ94s9cGYoShsRT6RY0IzENR2FVU60mHzVhmVFmL6gur44hXeuJlfxs5GNdPVXzjJ3EhbYBD8IW1pu+wH+Q58QDdURAPoVd/cg4DCHz/Iue5f4krcitqnkWV0litn9T7sjesNCVQAz+cJm01a8NDq2KvZInpn/Qyj8MLtQsk3uKRFzaFt3p/8uPgVjMwIIZXez0SPz7RIPa1cj6/QP+29Mpd3HXzhjD3/xuIVe12j0MGe9yOShVKpgZmxQjq6FPPciHKezNJSOIraOR8pDA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DRizpJhk7+qdJh3MbajO9cq3eB/cwAZ4p9CleWXEzdA=;
- b=WISaLMaIjk/8v4qp50tKZEzNSUJ+eBFSc7+CTYkIifwNkoGPOfee+C+7mG4IF1AapEPfqUacEEhifwiB98CNOC0qNzYNwF9X3FwdlhLHIxsJoxda5qumdCel2MTFEye4RS0SQiAmrudIAP0WpGHpAvPfhOcRtNqNqDliXoDrURubGonkFRCaR/NFoe8wJoaWUl683rtGXrxmluODwSBsdVdvtovGA7mO65/G1MxEO/maAyLUXrAERbuW4BXXtdYWTvjZcjxVOqWXX/CSC3WPpygiOC2M5cZE1L41BfTuravRxliNX4kk93ax6WZQuOd+XATjR56n1TaX8QDseFkfIw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DRizpJhk7+qdJh3MbajO9cq3eB/cwAZ4p9CleWXEzdA=;
- b=jZMmIFRSKAtWd1t8HFjC8k5NkhV33MKh4gDEI1gTB12lQOfjW4scCMJZ7WIt47KXnvACNfDh2FUy1MLUOz4QRbPUjIgmCGnLEM2/RQrgQT1BbnAgFrkT8yKAf1gRpoz2SOgY1UmzTsFoY1/cARBzTuY9neqi4mk9SE+TTdMWyug=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
- by DB3PR0402MB3691.eurprd04.prod.outlook.com (2603:10a6:8:5::22) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.31; Mon, 18 May
- 2020 05:31:43 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3000.033; Mon, 18 May 2020
- 05:31:43 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Aisheng Dong <aisheng.dong@nxp.com>, "thierry.reding@gmail.com"
- <thierry.reding@gmail.com>, "u.kleine-koenig@pengutronix.de"
- <u.kleine-koenig@pengutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "linux-pwm@vger.kernel.org"
- <linux-pwm@vger.kernel.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] dt-bindings: pwm: Convert mxs pwm to json-schema
-Thread-Topic: [PATCH] dt-bindings: pwm: Convert mxs pwm to json-schema
-Thread-Index: AQHWKeXnwgIqcPijn06Ta1X0H9EaU6itVJ0AgAAB8bA=
-Date: Mon, 18 May 2020 05:31:43 +0000
-Message-ID: <DB3PR0402MB3916B5980C0681BFF3C08FE5F5B80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1589456470-2658-1-git-send-email-Anson.Huang@nxp.com>
- <AM6PR04MB4966B92CFFA23DD77748C77680B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
-In-Reply-To: <AM6PR04MB4966B92CFFA23DD77748C77680B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [183.192.13.100]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: d7b47085-4ca6-4301-322b-08d7faecc010
-x-ms-traffictypediagnostic: DB3PR0402MB3691:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3691DEF429E06F2C6898F056F5B80@DB3PR0402MB3691.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 04073E895A
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: LDX3N41jtK/KebeZZ8f2no2NonKRWpI+w8ru/evEHqix5Xp8hG/S9Xkpgb3/vyCQHPFuIBLkzgx0RLPVvruZgFbW/MCfW6rvwCNW7GWIB8NfcrMA6Wls24SycJF+0BbkFPnKWmNQ7ND4cevA3qG54j7b5Z/Byj7EKetZ9gjbrdJQ57Nw8nLSoI5VrpwgRAeYqEdLDakE24T7paRg/eaqDafnAbqkGFpsyIcCnI/9YpOltb+SHFvvmcwIbrJERenQsCbd33IEEDHLSYFEIsM+d//wtcc5vWozenz4Y5YKNwqKpm/J2sqY4+vXDz0e9P9bqe1ArCPgrG/ymPxrlaWJ3qUGcRIGuOOTzXmgNAi3bKft+RZszZdhw5sChsUd0TYESu+Qwo4aeyqgIL25FV0BMoc4D4XnmvflnXjKeRh6cWMl0z6dA2o6cW9Ca/Hjk9bnDE2YxgSWZmmwNLyGdF2vPoWDiKkQy+/mAOPLCZTU/7w=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(39860400002)(136003)(396003)(376002)(346002)(366004)(66446008)(64756008)(66556008)(66476007)(76116006)(66946007)(86362001)(7696005)(478600001)(5660300002)(4326008)(2906002)(8676002)(6506007)(8936002)(55016002)(44832011)(71200400001)(9686003)(52536014)(26005)(186003)(110136005)(316002)(33656002)(7416002)(4744005)(921003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: zQ5k9qRWnFoebgB+3CUOod6FgKs9wGvonejCjt7F4hR3AW3HR3XSryIPndQK46HgpnTkgXfhjbrA4qaDajy0Gry5UYClTkHWSUMkFpHMqP4bgBYLl529MNhZavZOrUN19MFF/y668LA5Jw3UoeHu0FZszxcyRs7zUq45Fp0VgNVbTD19hxnYqSlGn1afbTIsEK4203KCThLEwpjUF18szXlQCJUiZXGI/XgxgH/SjsyTsPR83H0pebZZrh04uKn0MAlNPkEq6IX9k4y3xocGEEPzVTiPwAvHEIkE7ujxPAfCfLtSZEc9pWS0TgBpTy+4Ta5zNxmjxYUHzbq5oT9AOu7dIjFbAhmIbjQtejL+p8XiDJ4xuMnRzDIlTvgbNM0ts74wFNcdjgt/xYG/SDa6IyZKiI99Z6rgA+wQP8Imu68BwLlIjIqPsE3q4jnKG9SeGHBSgoP6ocHVzznVe8qgegr41/sfL7cy++GH+5bMngxA/xNv4Dic7FcxRseld06a
+ id 1jaYbj-0002l9-5L
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 05:46:37 +0000
+Received: by mail-lf1-x143.google.com with SMTP id h188so6916402lfd.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 17 May 2020 22:46:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ygsoJcQzy2g2jI/Taob7j4UIGHvK7ly0RJpFdbU+Cb4=;
+ b=G3b7ywljZcZCAX7nJXBHWye89fgIXWV1Y/Zi9/UIsGwtIZiAQx6o0HUfhuMVoDPo1w
+ hLvGWKlDX+XuIqbe3zySiJ9YKptYVBEz7TNH6oKzYopJNoJY37POYt3GcdMgO8U647BS
+ sEBMh9Qv3TmZ7Mps0cLu+9qi/HJniKyoE5IT/B1tEfEs9oKHXXAwf2KIN+WWwJwUQyRZ
+ KCZakvpO8oHau4eSIUGwLM09uWOlVosi5UtGk/WAqYqOlqII3hyHZRvOFDzXPNdNX+nd
+ UoEdzxlsRe9mhcxNjNtn81gNC8rPkwKMYMiPW5cMIMMQ2wdPlVYVDDZ+R7OvN0P2uE7f
+ hqYA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ygsoJcQzy2g2jI/Taob7j4UIGHvK7ly0RJpFdbU+Cb4=;
+ b=Rw1sEpuG1zcFGDiOvpvyF1A0kmN0aVpgwJh+rfvxTU+0boh6E0JGbBfjvdARreX9Xs
+ 4h+qy3c6IKZie6SnuwbhCQIlHGTBVCdI2BM98TwZgRivQua1mMI6brqRozES5aoU5sbG
+ V7EFQ2n7t+5tqTzm/3MZp6LpEHSVnWicf+DRoyfqrbKRkycWL5pOfCmd3CFtUefa2zZL
+ HcD2Z+GLQA2Rk93CeqKspotsLLpp4c4nRXdx60ugpfnCwMDG9/vNtfx6owZzm51DSHV0
+ xkDCgGMY4yyuEkxZaPwG8xiLaeLAWHxCIh6AKc4p0aGje0zhU2lPlGAndSYhjHDXeb8C
+ MImg==
+X-Gm-Message-State: AOAM530AETOOJN0dId009ACUPYKT9pKMIhSiPT9Bf9GAq+HTXMnWxbWD
+ yQbQ/IkOwbssaVOKRqRe5xA2yKcETUrd38yMPXvliQ==
+X-Google-Smtp-Source: ABdhPJyPLjwCY26rBdZ5XvQW0icPtULGRTn1trgI95j9zoosQIx4alkuPwcX0KcurhfvhDLJGNfimNIRIR5n3hOAMXM=
+X-Received: by 2002:ac2:4293:: with SMTP id m19mr10444777lfh.204.1589780791774; 
+ Sun, 17 May 2020 22:46:31 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d7b47085-4ca6-4301-322b-08d7faecc010
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2020 05:31:43.6887 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: X4pqvJLm0DZQqIl0787b5zod2+kZNjVMvoNBihtvYwyUZTNYYMt1uKcEZiogoLqP/L4esjUeC7mKl3IPsYV5xw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3691
+References: <20200516124857.75004-1-lecopzer@gmail.com>
+In-Reply-To: <20200516124857.75004-1-lecopzer@gmail.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Mon, 18 May 2020 11:16:20 +0530
+Message-ID: <CAFA6WYNwp+_ENiS8QDao5+RXyt5ofJZyq6c5CKG_d0CNEmBNYg@mail.gmail.com>
+Subject: Re: [PATCH 0/3] arm64: perf: Add support for Perf NMI interrupts
+To: Lecopzer Chen <lecopzer@gmail.com>, julien.thierry.kdev@gmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_223149_374470_6BD1FC92 
-X-CRM114-Status: UNSURE (   8.36  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200517_224635_214962_95DF8976 
+X-CRM114-Status: GOOD (  16.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.8.55 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -118,8 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.8.55 listed in wl.mailspike.net]
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,44 +90,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, lecopzer.chen@mediatek.com,
+ Will Deacon <will@kernel.org>, alexander.shishkin@linux.intel.com,
+ Catalin Marinas <catalin.marinas@arm.com>, yj.chiang@mediatek.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, acme@kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, mingo@redhat.com,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ namhyung@kernel.org, jolsa@redhat.com,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
++ Julien
 
+Hi Lecopzer,
 
-> Subject: RE: [PATCH] dt-bindings: pwm: Convert mxs pwm to json-schema
-> 
-> > +title: Freescale MXS PWM controller
-> > +
-> > +maintainers:
-> > +  - Shawn Guo <shawn.guo@linaro.org>
-> > +  - Anson Huang <anson.huang@nxp.com>
-> > +
-> > +properties:
-> > +  compatible:
-> > +    enum:
-> > +      - fsl,imx23-pwm
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  "#pwm-cells":
-> > +    const: 3
-> 
-> Seems you missed the reference to pwm.yaml.
+On Sat, 16 May 2020 at 18:20, Lecopzer Chen <lecopzer@gmail.com> wrote:
+>
+> These series implement Perf NMI funxtionality and depends on
+> Pseudo NMI [1] which has been upstreamed.
+>
+> In arm64 with GICv3, Pseudo NMI was implemented for NMI-like interruts.
+> That can be extended to Perf NMI which is the prerequisite for hard-lockup
+> detector which had already a standard interface inside Linux.
+>
+> Thus the first step we need to implement perf NMI interface and make sure
+> it works fine.
+>
 
-It is because many pwm yaml files also has no "#pwm-cells" reference, so I
-am NOT sure if it is a MUST:
+This is something that is already implemented via Julien's patch-set
+[1]. Its v4 has been floating since July, 2019 and I couldn't find any
+major blocking comments but not sure why things haven't progressed
+further.
 
-Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
-Documentation/devicetree/bindings/pwm/google,cros-ec-pwm.yaml
-Documentation/devicetree/bindings/pwm/iqs620a-pwm.yaml
-...
+Maybe Julien or Arm maintainers can provide updates on existing
+patch-set [1] and how we should proceed further with this interesting
+feature.
 
-Anson
+And regarding hard-lockup detection, I have been able to enable it
+based on perf NMI events using Julien's perf patch-set [1]. Have a
+look at the patch here [2].
+
+[1] https://patchwork.kernel.org/cover/11047407/
+[2] http://lists.infradead.org/pipermail/linux-arm-kernel/2020-May/732227.html
+
+-Sumit
+
+> Perf NMI has been test by dd if=/dev/urandom of=/dev/null like the link [2]
+> did.
+>
+> [1] https://lkml.org/lkml/2019/1/31/535
+> [2] https://www.linaro.org/blog/debugging-arm-kernels-using-nmifiq
+>
+>
+> Lecopzer Chen (3):
+>   arm_pmu: Add support for perf NMI interrupts registration
+>   arm64: perf: Support NMI context for perf event ISR
+>   arm64: Kconfig: Add support for the Perf NMI
+>
+>  arch/arm64/Kconfig             | 10 +++++++
+>  arch/arm64/kernel/perf_event.c | 36 ++++++++++++++++++------
+>  drivers/perf/arm_pmu.c         | 51 ++++++++++++++++++++++++++++++----
+>  include/linux/perf/arm_pmu.h   |  6 ++++
+>  4 files changed, 88 insertions(+), 15 deletions(-)
+>
+> --
+> 2.25.1
+>
+>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
