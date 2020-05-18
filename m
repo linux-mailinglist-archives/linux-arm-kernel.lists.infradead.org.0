@@ -2,68 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C1AB1D71DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:32:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CB2E1D71EC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:33:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wL5BG1kP5qP3sC35L8LxH6VW8xW8JxPPZ8groIQiAy4=; b=CAGIP/dP2nbONz
-	votcG0YwxxCmw86mHWhVoAJ/Si6hhCzL3cXqEabZ6g9AoUsnWzhgE3n+tQuqqKKfH7BxCHtFbirrR
-	Wro+TteALisIgKxI1gq6M7bEuo+OxOKkRRFMLPDBvMDBKM8Zy36z1n481bvbi7cr2TL7/pzTyrIoA
-	btC/cB0fZkrNIF8uwpBjfBC3nJEA8WxGbm8Kl5Iv9Zg43FxcEyqb77xUY2pqduLZ5/qkLwFTEqz/I
-	JIs0IkilY4p+c6khbbzdlUWBMVMW/4xGqWQUc8CxWm4HVgVPVATNyTEkaaH5qzQf3cRkb2KYRjdtT
-	DZarlj+s2n0RI/EWMY8Q==;
+	List-Owner; bh=K0skd9OT+7YQwLeWX9gTFyxo5VjF6ztFGxbdXWJsNSc=; b=Wsq1P1198pTTMf
+	vFOKZHgwvdTbZz4pzNzPDKJOm7oJc7sx45DjZ09FrffZbkYCDtqCdkdLth5d3PNYCRpaSj3b13ZEF
+	CRBNiR+ERi61g0O4pu4641fIkA6Sz3atMsbJKEby2sMJwCqNzzH14zFdrm5q6zaUrj6x7ElD4OYLH
+	8gO+a4DKNlU4YsTGBkIfdztUi9wWwXaWpygzGCsZSpJL+ah4uCdetagJ6QKduzTXzrV70y9lYzFBs
+	gKnDz0BlMXCMtg7G5GWmCaciOS7bL5k8rLUem/Q2Csej6Iz6/4Xxj+RKU7hPvdJl04q4kAZFdxdpD
+	LpgziphJo+EfSAGp73Rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaaG2-0002Cq-MN; Mon, 18 May 2020 07:32:18 +0000
+	id 1jaaHF-0002ZY-2j; Mon, 18 May 2020 07:33:33 +0000
 Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaaFr-0002Bj-59
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:32:10 +0000
-Received: by mail-lf1-x142.google.com with SMTP id x27so6998335lfg.9
+ id 1jaaH6-0002Y8-0Y
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:33:25 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 202so7109713lfe.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 00:32:07 -0700 (PDT)
+ Mon, 18 May 2020 00:33:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yDgJBK14qCAv+Ly5Qcs1dAnO6ksblSLGGgT9S8evwgc=;
- b=JS49KQEH/OR4uP/4njTqN6ALEiaaKHohd/LBQiGVcdrqaLVdBHQ2w5e33tHi3qdAcV
- r9/TEQFnykL839HJTEeOQyT9l62tOrOfSFETZeZBOfY04+GeZW0HIctkfKDt1KNXK2Yo
- JS81rztNjP13LyCgnV8yV0i4SLa4Sbp0On6MmGxPxGt+WinOHQR2ErBrg0Vp1t/HOr9J
- xCpO99Bf8AJIAKLlqEuA4cAHAxh+j853D0+NSddrXD5zbnBFs85R+hIRGjeb1HpNAhjL
- LYY8pBUf+UuGhj/2ULDY7YsLPcr99IGVuvU+38C2/rTzuDA84Zw1hYFiyUSoQorlH/4C
- 5dAw==
+ :cc; bh=6uhRFGDARrcoHPrKHMBYkaN/2j11MRjpDJJbVmx54CE=;
+ b=H+oFxtUqptu6CrGRKkzcmJs+eMoraTQOATafIq2NDm8CwHwFmls5nvwqEoT+8/mmOE
+ WU7jisauq4/IiaKjcokmWtKJ1DP0tvQIHBs2ljdiXl8qlGxOtvQEAa4lD7HDUDrqwTWo
+ VnA6gPlW7BZEITXpxQXAFUfO8KJGhgyzDF2UXRCdOQb2doToExJaRRP+vFv2jjUUPojT
+ 48hRbviNApp8pFFIMOcAtQbGT6U+m0T/qRRWzR9Dw1pnv66azfT1YUY+BE6/qqXLbxuk
+ l+jytCjh61iQMLKyg95PEYoavnodXi3brpiHHaRO7wI6myD90jtTysY/uu3Mf+GJycpC
+ l10w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=yDgJBK14qCAv+Ly5Qcs1dAnO6ksblSLGGgT9S8evwgc=;
- b=rUrBdQZp8SlsvxJYw9Q111EJIs2Ck0ydnDpjKBhcxiPsEm/wVz9DCmxKFnEev+t/Lq
- cXDvOs9eBiq9GRKe4acISetjpDEgWVJdX2I+A+ACjiE/SPCoF93ZbSIwAx6r26D4nsoH
- 6UUA7cZI5F8ood4xteWpZFXP5he/MdWQUGisS2rGTxxs0J0Jkyen6IwYA7hC2ubuhSaq
- PgJlL3zz/+NuTu7zNypXpYkl+sG5TmrjY0Htuu0SoBHkhvfaEOQQ7rjBGz0n3OEkTa/T
- SlR+xj7K3qPxwRxVMU1Rt0qCBUoppbi2fHYYtXsKw9/gqNjYh6VIuXkbfIL/OQFgKWwT
- nYwQ==
-X-Gm-Message-State: AOAM531dwXpeStqmGxwTKnMSzAQf/qxXmQY244rNPAvpIA3arhxu6T1q
- 4D+iXKeG9ylHgDF1dN2fGkG7wHOns2Kn7HuHTQPQgQ==
-X-Google-Smtp-Source: ABdhPJwxV8YVto5NNCCuMGHZxBejD642Xxg/qE3YJ9UCpF1p3OO1llWxz/lGbdc0Fb6TgpRyFpP/j9gd8eCnm9Agq/U=
-X-Received: by 2002:ac2:5cd1:: with SMTP id f17mr3837953lfq.4.1589787125044;
- Mon, 18 May 2020 00:32:05 -0700 (PDT)
+ bh=6uhRFGDARrcoHPrKHMBYkaN/2j11MRjpDJJbVmx54CE=;
+ b=NlLru8YJmO+asElV+h3xs5yeksIWiTwrhW0utT6DjeKjPQbBPy56lj4NsshGmEe5IQ
+ uB+8ZbwHRK+GPmrQQU8ojoO57KB5WHZ+n8+HsQBLXkkdDkeKZ4xDg+1HxyjBlJ0G83d3
+ Fj7hws42SvFJQJTdCkXLFuladp5xNjyR1svVJwRHTV5hIHWZoxnoYQL5kyBtWmp8eDfk
+ RdSlA/g5TbbQy/1gHv3DCpz1ofrZQ8zxY4o8tlOolxil9Vum8tUsLOhWxXYg67ZCLedA
+ UpTPOvnjpFLgOkqA6eiyUVyg5HaaSO6dMxgejJPPUGBFFTYs+I4dmGbiLzPh3fFvTHrk
+ oFcA==
+X-Gm-Message-State: AOAM532ci1nBVq1dk1GBOpgIX6jBSpebpixNqEWqe1+Y32XwlMMfFBW6
+ qZY7cw+3zvO32dKLqpZdcXAjBLsH+bezzTn2YNAYew==
+X-Google-Smtp-Source: ABdhPJzM1cLtBMnZR+j+nSiG3KeWErg7zOIoRWARiHZUlNStxktk9ge3qdAjjUUMvZG6fIllhCXtTAAglY/emlzid+o=
+X-Received: by 2002:ac2:5a07:: with SMTP id q7mr3670246lfn.77.1589787202475;
+ Mon, 18 May 2020 00:33:22 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200513125532.24585-1-lars.povlsen@microchip.com>
- <20200513125532.24585-4-lars.povlsen@microchip.com>
-In-Reply-To: <20200513125532.24585-4-lars.povlsen@microchip.com>
+ <20200513125532.24585-8-lars.povlsen@microchip.com>
+In-Reply-To: <20200513125532.24585-8-lars.povlsen@microchip.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 18 May 2020 09:31:54 +0200
-Message-ID: <CACRpkdYo7AUzWTeK+1ouq29R_7rVJ8cz=rjBHVTQjHFx9HmMQA@mail.gmail.com>
-Subject: Re: [PATCH 03/14] pinctrl: ocelot: Fix GPIO interrupt decoding on
- Jaguar2
+Date: Mon, 18 May 2020 09:33:11 +0200
+Message-ID: <CACRpkdZP=E=LvEFW4b8HvXR3yYFMzALC5_abiJuoewod6V+Y4w@mail.gmail.com>
+Subject: Re: [PATCH 07/14] dt-bindings: pinctrl: ocelot: Add Sparx5 SoC support
 To: Lars Povlsen <lars.povlsen@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_003208_908903_A7F3FF7A 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20200518_003324_056632_BA855C0D 
+X-CRM114-Status: UNSURE (   9.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,8 +101,8 @@ Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
  "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- SoC Team <soc@kernel.org>, Olof Johansson <olof@lixom.net>,
- Michael Turquette <mturquette@baylibre.com>,
+ SoC Team <soc@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Olof Johansson <olof@lixom.net>, Michael Turquette <mturquette@baylibre.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -111,12 +111,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, May 13, 2020 at 2:56 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
 
-> This fixes a problem with using the GPIO as an interrupt on Jaguar2
-> (and similar), as the register layout of the platforms with 64 GPIO's
-> are pairwise, such that the original offset must be multiplied with
-> the platform stride.
+> This adds documentation for the "compatible" value designated for Sparx5
 >
-> Fixes: da801ab56ad8 pinctrl: ocelot: add MSCC Jaguar2 support.
 > Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 > Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
 
