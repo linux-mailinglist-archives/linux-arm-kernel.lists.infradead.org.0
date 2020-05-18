@@ -2,91 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E01C1D6FCB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 06:25:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CB8C1D6FD4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 06:29:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sKb9Ake8MVTpoonE/FqHWC0DDpUIPxPHSZ1dwqJS5rU=; b=FD5EaiAjO0lbzh
-	LyAEVh1DTjFIZp7K6BgZuv1yOUUhde6bzZxUOEjhjRwPD/GTwoC35ief2mAmYzrZf+cOptN8zyBek
-	u5dSlsAo+VdC+bvxONeDnOmOixgvo8owhECeQWbE0VoCt+2hGIx/mCuVXgrJ+42sgESrh/mlGLGli
-	22aAKahvaBCUyPWgJiFs5vNW8jW39Hrp5VMtQpsR+ZolINJQcubaS1X9rZouWndZZMRsZOHpYUVEl
-	JhFsdB1KCHZaEjfhju+i1mR7/1Ddmj7ghc5E2qgn2oFDiYnQpTxry93Av3W4zj7+ZFu3XYoLJlWy0
-	VJZ3ZJSu8vv2vYnl5c5Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kGOnx01A9C/kiu91iGWy1a70aAuPtRp9214DSfyFxQM=; b=goUFZQzqS3At/R
+	HO9JggkAq3k9ch4+ZOF1y0SKLPB1zPQz5TDRDzi43coGSwy3DSOSNUMQP1Y29+1YXvajiisRV/OK8
+	l3aOLtKMQJi2n/ovCv27IENsoA3q96P1VS7jjgKP9Zh6LXf/re9piLHtspek6UZyMU+Qg66UFz3c9
+	adWDEDNPRGk7l9JdmamPznzaYngd3KlFXHghK9YXB/o4/SnajpckYyGCr7RU+aTywk/bh1xSPae/G
+	RAGIVxi4nKdFnI5js8ur7jclpHgsLNVRJVatY7YWYASZviQr2yGOHJKfmd0pmqkAna+7S1pKa20jo
+	U7jW/6Im0CeujMoh73Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaXLW-0006V4-Ff; Mon, 18 May 2020 04:25:46 +0000
-Received: from hqnvemgate24.nvidia.com ([216.228.121.143])
+	id 1jaXPN-00075P-KZ; Mon, 18 May 2020 04:29:45 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaXLK-0006UZ-QT
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 04:25:36 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate24.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5ec20db00000>; Sun, 17 May 2020 21:23:12 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Sun, 17 May 2020 21:25:33 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Sun, 17 May 2020 21:25:33 -0700
-Received: from [10.40.100.11] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 18 May
- 2020 04:25:25 +0000
-Subject: Re: [PATCH v6 09/10] arm64: efi: Export screen_info
-From: Nikhil Mahale <nmahale@nvidia.com>
-To: Michael Kelley <mikelley@microsoft.com>, Arnd Bergmann <arnd@arndb.de>
-References: <1584200119-18594-1-git-send-email-mikelley@microsoft.com>
- <1584200119-18594-10-git-send-email-mikelley@microsoft.com>
- <CAK8P3a1YUjhaVUmjVC2pCoTTBTU408iN44Q=QZ0RDz8rmzJisQ@mail.gmail.com>
- <MW2PR2101MB10524254D2FE3EFC72329465D7F70@MW2PR2101MB1052.namprd21.prod.outlook.com>
- <CAK8P3a1YCtc3LJ-_3iT90_Srehb96gLHvTXsbJ0wT6NFYCG=TQ@mail.gmail.com>
- <MW2PR2101MB1052E413218D295EF24E5E05D7F40@MW2PR2101MB1052.namprd21.prod.outlook.com>
- <f2b63853-24ae-d6b7-cd43-5792c0d4d31b@nvidia.com>
-X-Nvconfidentiality: Public
-Message-ID: <4202ea20-6e51-31d3-44b1-3861798a8158@nvidia.com>
-Date: Mon, 18 May 2020 09:55:21 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jaXPD-00074C-7R; Mon, 18 May 2020 04:29:36 +0000
+Received: by mail-pg1-x542.google.com with SMTP id b8so4223802pgi.11;
+ Sun, 17 May 2020 21:29:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=7bbx1vjAcGJU7o+yFip4EyC/ilyC7OBp4VPSqw3/c2c=;
+ b=LimDPPmibz9vtWmb0MKZHn8c9RdWix1P/AFk6SDLaoXlBVdMlC7Hfce2We+MkFAz4E
+ R/2Wy61j9gG0ixy9mMyHuhS77QZ+W2IqUs+cNkzrG6dQaDcMMpIgqWZr6ft8gTO/HSMB
+ oF3oavsgnI2fjkM2QAjIyKAHhhOTcnWFH16xKUZkqjczHwsm/iprxuSgfWtVik27j84r
+ 5n8U7fFfETauYry76p+6vX2RXQib8sKv+lhcWS2IP1EZ6KlTna+BQg/FRhPkbiW1PxTM
+ QM0E7X94qZuWMPHXEPUx2ysbg6/oZL89r6bgB9KXLUanLbbSlSBCGfqIrn7x7qAQncoA
+ /GCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=7bbx1vjAcGJU7o+yFip4EyC/ilyC7OBp4VPSqw3/c2c=;
+ b=M4My+a+kuv/J8grEz4VDRybdC5WjM+3TUK3vMZUFHMwt/GIqy2YaKGBCAcAOG0vkth
+ 3fiwFqEMlbwVKnYWUdsikgxb6oLipAXs+aHXICvwI6Usm9TwUvdPjAG0UVAlIpwZGOve
+ 7BjxCvNzxufgikc5CHUDvvxP6vBQfJnZtj6FReNoRkIjuZkUQtm5HzlU86ZqRpS8v93M
+ hPS8t8ngRyC4iLKWditKDUiLFscx3nbRXDxD5LFweY3Z4uAaciL37Zf5fFhs/cC7HX0E
+ R1K8wQHE11sIdpmRQVLNqT/KkG8Ck2GGtah6suVmoMVdS0+Fr3OJnfwO6EbZ80I53plh
+ M8HA==
+X-Gm-Message-State: AOAM531kX+8BTracYrLG8ayupCwIWinbyaXxZw5sAwlRbLDAezJVTaZ1
+ 8AmXpSPg9iL7P0iQy/c/2hM=
+X-Google-Smtp-Source: ABdhPJxbJqkFB3G+mfP7Q58PJuzXycNotbRv9vDLFxrEQ/xV/2+VRINR3zhBhOzJGROFI8CL8Y8+Lg==
+X-Received: by 2002:aa7:9a96:: with SMTP id w22mr15841791pfi.199.1589776174113; 
+ Sun, 17 May 2020 21:29:34 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id 62sm7548040pfc.204.2020.05.17.21.29.32
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Sun, 17 May 2020 21:29:33 -0700 (PDT)
+Date: Sun, 17 May 2020 21:29:32 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Ira Weiny <ira.weiny@intel.com>
+Subject: Re: [PATCH V3 07/15] arch/kunmap_atomic: Consolidate duplicate code
+Message-ID: <20200518042932.GA59205@roeck-us.net>
+References: <20200507150004.1423069-1-ira.weiny@intel.com>
+ <20200507150004.1423069-8-ira.weiny@intel.com>
+ <20200516223306.GA161252@roeck-us.net>
+ <20200518034938.GA3023182@iweiny-DESK2.sc.intel.com>
 MIME-Version: 1.0
-In-Reply-To: <f2b63853-24ae-d6b7-cd43-5792c0d4d31b@nvidia.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1589775792; bh=ekIXZzrCnsEE0UL348V3okhZK7T2Db9hjgnyPCpZFQo=;
- h=X-PGP-Universal:Subject:From:To:CC:References:X-Nvconfidentiality:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=hnm9iVrq0+hxj9S+6CP6ONZHVycQsEsKBoV846kHFRHb/EfZmjjw1YnuEJO3PMK31
- 7Tp+RQs87fW+2hXs5HIPHryeAvOYSGRc9+UHWUBLrpullIG/JR1+KreOTaDSXJ19WR
- JeLOJXR3gWEmPz+++aLpibN4o5szDoMAzbSEfOaRDFTz/O5xkQ0PeyApkA3P9AbQ2q
- Ah8PsuSWn+XGG0FGIsl22iBXaOszg2/WJyQXMg2Twzrzi73HEYxTmN1cVqgTikkOak
- J3K/0UDgQIKk+PmsmQNzZ/lXwCqBwcbsDtRdcFPBs45EevrTD027c1ngLGKycG8D4V
- GD3lUMo+rBrHA==
+Content-Disposition: inline
+In-Reply-To: <20200518034938.GA3023182@iweiny-DESK2.sc.intel.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_212534_866549_46BFBED6 
-X-CRM114-Status: GOOD (  20.55  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200517_212935_286775_A17FCA0A 
+X-CRM114-Status: GOOD (  16.99  )
+X-Spam-Score: 1.4 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [groeck7[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [groeck7[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,92 +105,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- linux-arch <linux-arch@vger.kernel.org>,
- "linux-hyperv@vger.kernel.org" <linux-hyperv@vger.kernel.org>,
- linux-efi <linux-efi@vger.kernel.org>, Boqun Feng <boqun.feng@gmail.com>,
- gregkh <gregkh@linuxfoundation.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Jason Wang <jasowang@redhat.com>, Sunil Muthuswamy <sunilmut@microsoft.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "marcelo.cerri@canonical.com" <marcelo.cerri@canonical.com>,
- "olaf@aepfle.de" <olaf@aepfle.de>, Marc Zyngier <maz@kernel.org>,
- Andy Whitcroft <apw@canonical.com>, vkuznets <vkuznets@redhat.com>,
- KY Srinivasan <kys@microsoft.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
+ linux-mips@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
+ Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
+ linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Chris Zankel <chris@zankel.net>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/13/20 7:56 PM, Nikhil Mahale wrote:
-> On 3/20/20 3:16 AM, Michael Kelley wrote:
->> From: Arnd Bergmann <arnd@arndb.de> Sent: Wednesday, March 18, 2020 2:27 AM
->>>
->>> On Wed, Mar 18, 2020 at 1:18 AM Michael Kelley <mikelley@microsoft.com> wrote:
->>>> From: Arnd Bergmann <arnd@arndb.de>
->>>>> On Sat, Mar 14, 2020 at 4:36 PM Michael Kelley <mikelley@microsoft.com> wrote:
->>>>>>
->>>>>> The Hyper-V frame buffer driver may be built as a module, and
->>>>>> it needs access to screen_info. So export screen_info.
->>>>>>
->>>>>> Signed-off-by: Michael Kelley <mikelley@microsoft.com>
->>>>>
->>>>> Is there any chance of using a more modern KMS based driver for the screen
->>>>> than the old fbdev subsystem? I had hoped to one day completely remove
->>>>> support for the old CONFIG_VIDEO_FBDEV and screen_info from modern
->>>>> architectures.
->>>>>
->>>>
->>>> The current hyperv_fb.c driver is all we have today for the synthetic Hyper-V
->>>> frame buffer device.  That driver builds and runs on both ARM64 and x86.
->>>>
->>>> I'm not knowledgeable about video/graphics drivers, but when you
->>>> say "a more modern KMS based driver", are you meaning one based on
->>>> DRM & KMS?  Does DRM make sense for a "dumb" frame buffer device?
->>>> Are there any drivers that would be a good pattern to look at?
->>>
->>> It used to be a lot harder to write a DRM driver compared to an fbdev
->>> driver, but this has changed to the opposite over the years.
->>>
->>> A fairly minimal example would be drivers/gpu/drm/pl111/pl111_drv.c
->>> or anything in drivers/gpu/drm/tiny/, but you may want to look at the
->>> other hypervisor platforms first, i.e drivers/gpu/drm/virtio/virtgpu_drv.c,
->>> drivers/gpu/drm/vmwgfx/vmwgfx_drv.c, drivers/gpu/drm/xen/xen_drm_front.c,
->>> drivers/gpu/drm/qxl/qxl_drv.c, and drivers/gpu/drm/bochs/bochs_drv.c.
->>>
->>
->> Thanks for the pointers, especially for the other hypervisors.
->>
-> Sorry if anybody in 'to' or 'cc' is receiving this reply multiple times.
-> I had configured by email client incorrectly to reply.
+On Sun, May 17, 2020 at 08:49:39PM -0700, Ira Weiny wrote:
+> On Sat, May 16, 2020 at 03:33:06PM -0700, Guenter Roeck wrote:
+> > On Thu, May 07, 2020 at 07:59:55AM -0700, ira.weiny@intel.com wrote:
+> > > From: Ira Weiny <ira.weiny@intel.com>
+> > > 
+> > > Every single architecture (including !CONFIG_HIGHMEM) calls...
+> > > 
+> > > 	pagefault_enable();
+> > > 	preempt_enable();
+> > > 
+> > > ... before returning from __kunmap_atomic().  Lift this code into the
+> > > kunmap_atomic() macro.
+> > > 
+> > > While we are at it rename __kunmap_atomic() to kunmap_atomic_high() to
+> > > be consistent.
+> > > 
+> > > Reviewed-by: Christoph Hellwig <hch@lst.de>
+> > > Signed-off-by: Ira Weiny <ira.weiny@intel.com>
+> > 
+> > This patch results in:
+> > 
+> > Starting init: /bin/sh exists but couldn't execute it (error -14)
+> > 
+> > when trying to boot microblazeel:petalogix-ml605 in qemu.
 > 
-> screen_info is still useful with a modern KMS-based driver.  It exposes
-> the mode parameters that the GOP driver chose.  This information is
-> needed to implement seamless or glitchless boot, by both ensuring that
-> the scanout parameters don't change and being able to read back the
-> scanout image to populate the initial contents of the new surface.
+> Thanks for the report.  I'm not readily seeing the issue.
 > 
-> This works today on arches which implement (U)EFI and export
-> screen_info, including x86 and powerpc, but doesn't work on arm or
-> arm64.  As arm64 systems that implement UEFI with real GOP drivers
-> become more prevalent, it would be nice to be have these features there
-> as well.
-
-In addition to this, even if a driver doesn't implement a framebuffer
-console, or if it does but has an option to disable it, the driver still
-needs to know whether the EFI console is using resources on the GPU so
-it can avoid clobbering them. For example screen_info provides information
-like offset and size of EFI console, using this information driver can
-reserve memory used by console and prevent corruption on it.
-
-I think arm64 should export screen_info.
-
-> Thanks,
-> Nikhil Mahale
+> Do you have a kernel config?  Specifically is CONFIG_HIGHMEM set?
 > 
->> Michael
->>
+See below. Yes, CONFIG_HIGHMEM is set.
+
+The scripts used to build and boot the image are at:
+
+https://github.com/groeck/linux-build-test/tree/master/rootfs/microblazeel
+
+Hope this helps,
+
+Guenter
+
+---
+CONFIG_SYSVIPC=y
+CONFIG_POSIX_MQUEUE=y
+CONFIG_AUDIT=y
+CONFIG_IKCONFIG=y
+CONFIG_IKCONFIG_PROC=y
+CONFIG_SYSFS_DEPRECATED=y
+CONFIG_SYSFS_DEPRECATED_V2=y
+CONFIG_BLK_DEV_INITRD=y
+# CONFIG_BASE_FULL is not set
+CONFIG_KALLSYMS_ALL=y
+CONFIG_EMBEDDED=y
+CONFIG_SLAB=y
+CONFIG_KERNEL_BASE_ADDR=0x50000000
+CONFIG_XILINX_MICROBLAZE0_USE_MSR_INSTR=1
+CONFIG_XILINX_MICROBLAZE0_USE_PCMP_INSTR=1
+CONFIG_XILINX_MICROBLAZE0_USE_BARREL=1
+CONFIG_XILINX_MICROBLAZE0_USE_DIV=1
+CONFIG_XILINX_MICROBLAZE0_USE_HW_MUL=2
+CONFIG_XILINX_MICROBLAZE0_USE_FPU=2
+CONFIG_XILINX_MICROBLAZE0_HW_VER="10.0.a"
+CONFIG_HZ_100=y
+CONFIG_MMU=y
+CONFIG_HIGHMEM=y
+CONFIG_PCI_XILINX=y
+CONFIG_MODULES=y
+CONFIG_MODULE_UNLOAD=y
+# CONFIG_BLK_DEV_BSG is not set
+CONFIG_PARTITION_ADVANCED=y
+# CONFIG_EFI_PARTITION is not set
+CONFIG_NET=y
+CONFIG_PACKET=y
+CONFIG_UNIX=y
+CONFIG_INET=y
+# CONFIG_IPV6 is not set
+CONFIG_BRIDGE=m
+CONFIG_PCI=y
+CONFIG_DEVTMPFS=y
+CONFIG_DEVTMPFS_MOUNT=y
+CONFIG_MTD=y
+CONFIG_MTD_CFI=y
+CONFIG_MTD_CFI_INTELEXT=y
+CONFIG_MTD_CFI_AMDSTD=y
+CONFIG_BLK_DEV_RAM=y
+CONFIG_BLK_DEV_RAM_SIZE=8192
+CONFIG_NETDEVICES=y
+CONFIG_XILINX_EMACLITE=y
+CONFIG_XILINX_LL_TEMAC=y
+# CONFIG_INPUT is not set
+# CONFIG_SERIO is not set
+# CONFIG_VT is not set
+CONFIG_SERIAL_8250=y
+CONFIG_SERIAL_8250_CONSOLE=y
+CONFIG_SERIAL_OF_PLATFORM=y
+CONFIG_SERIAL_UARTLITE=y
+CONFIG_SERIAL_UARTLITE_CONSOLE=y
+# CONFIG_HW_RANDOM is not set
+CONFIG_XILINX_HWICAP=y
+CONFIG_I2C=y
+CONFIG_I2C_XILINX=y
+CONFIG_SPI=y
+CONFIG_SPI_XILINX=y
+CONFIG_GPIOLIB=y
+CONFIG_GPIO_SYSFS=y
+CONFIG_GPIO_XILINX=y
+# CONFIG_HWMON is not set
+CONFIG_WATCHDOG=y
+CONFIG_XILINX_WATCHDOG=y
+CONFIG_FB=y
+CONFIG_FB_XILINX=y
+# CONFIG_USB_SUPPORT is not set
+CONFIG_UIO=y
+CONFIG_UIO_PDRV_GENIRQ=y
+CONFIG_UIO_DMEM_GENIRQ=y
+CONFIG_EXT2_FS=y
+# CONFIG_DNOTIFY is not set
+CONFIG_CRAMFS=y
+CONFIG_ROMFS_FS=y
+CONFIG_NFS_FS=y
+CONFIG_CIFS=y
+CONFIG_CIFS_STATS2=y
+CONFIG_ENCRYPTED_KEYS=y
+CONFIG_DEBUG_INFO=y
+CONFIG_KGDB=y
+CONFIG_KGDB_TESTS=y
+CONFIG_KGDB_KDB=y
+CONFIG_DEBUG_SLAB=y
+CONFIG_DETECT_HUNG_TASK=y
+CONFIG_DEBUG_SPINLOCK=y
 
 _______________________________________________
 linux-arm-kernel mailing list
