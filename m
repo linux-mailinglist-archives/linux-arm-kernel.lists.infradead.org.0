@@ -2,115 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A593D1D6F75
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 05:55:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F06B1D6F9C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 06:23:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zc+4ScTj7ON001rr/ak6mIu+35knHE/KBcSC01jM51c=; b=Cc0FEm1VCeJavG
-	tmGF6NZBVc0mb1YOPetsQzReYI1VqQKV4nf2NSHTebPrJ+pvL74q95F/LOtVdPAUCaOeBpyvvlvWe
-	9NiN2AuP+FWSKGaWepV9rvSRnj4lvxb89A9Mn2F1Tci/DjmQ5H1FhOuHdKD9x06oK1nGL6eVaB8v5
-	4u9+oTapJs6Ls7F/gfi4WFwDHe/2LBqwMbPEXnCq0Cx3hwiy9ze61pnrVc6IQMk8EiTpVCZ18HEHT
-	Xfm9fZtzsdGEheOXwfT9ZgBUDEwn4Yx/iyXlGYPLSxis+MgurxiurXpUrf0LcqQBHJsnC8KxgAd3/
-	Ofs6Kane3ygcKvA4OG1Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=upob+KRUtUghus/xCYLSzL0BeSGITAi8aCBShOkWkOI=; b=kXzX25QIM9S/qb
+	lD62fhWXLO7mAkutXDYZFp0wd8yuiOoSYyO0tdQiIJNdS5kr4+RolYlYfchhN2ASrl36hb8QMAWyN
+	wFK6VK12VNggMLVbjBy9n+F3Wtt3vnN3rkUQraZl3gGRCDcSZpQGWm556LSwX2q034QDm8wchNcFb
+	A6tMsnuYvmCGXnyJezAzylCWAipaLVaYQcJmAtfm/TW16IcQDUhVSp9dFUywxubVYFfr3cJo8wyFz
+	kEqAJ7ad6S7D5sjjQxC/Uj5JD7lm8azamEN8fVs3LB+Qme24BsUa/wv9Wb3oMxOHVKeXYfHjrdEIm
+	Ouj0Gq1h+A79PDAdj60Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaWrz-0003VZ-FM; Mon, 18 May 2020 03:55:15 +0000
-Received: from mail-eopbgr150074.outbound.protection.outlook.com
- ([40.107.15.74] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaWrj-0003UI-4E
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 03:55:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=hpEVV6aafvRKG+Lgm489oMJiptUamWkn9u17g0rk8sBILT/FnEMhxbMsMe9nsV66SC9srhqp8YlwlVJnxsb1IopOuMJeTM69A2zeSE4T8/sCz0IStr79RbNzjMk/SJpPTRFDumS0jz48XDjfzX+bDEB7YgRBH8pDZ2l36RPNOPoJ08UJL13ttRtdg1zo3UVjYuhnr44DVQVKoacPINOGNv2ttqdWZ7pGvXP0buAG3wI8ow/eXjLyg32tVyHwEnEpKnMWnI1IkDySevQOJvQqllnNa7+Yt8ZswkbdOqkvgEx5g0SwpJh6eFHd5hYzDNOvqxaqTGBvpi4FAWMUEFDUpQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GDlj1KOs9VAS/9D89/aoTz2D1FuYyhihz9bfNNiT3ZA=;
- b=SkbmsGaQ3rpJJEjQp+41L1uI//eGYpvEDqspzcm973qSKZCIYTYw6XhrbF57g6fGRhMRnSZOJR0nGcPKf3JNv9JlpSKKRqV5evJVVgdHsZp32GDBg76PoxBrMXduOAtVzAGub8+fx8BfM45/edIHf/aqQN1+uYoyT62407Cnswx8TVenzxMWLSBYmQXY1in0TRyrmGVr4p5hXNfesUsjLtokMVhylEElhjXS0Dm0ZDuZaKFfScx1SfcaLnKNN0ubSwDjh+CHEoZuzx2ODoXZ6Mdw/XFdDs27hV5XweMFntCVCOCF/wOKFBw/eF+oE3/9nUIJFW3UaaJVwQjeoPOhFQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=GDlj1KOs9VAS/9D89/aoTz2D1FuYyhihz9bfNNiT3ZA=;
- b=HQjD1MxTot2Gg3M9H7dGCin6GMWzaJadkv2Fu3705U3oEUxsgPTIhFZsE29Eee9p8HoiU4a+VZ9CPs/TeAJ5TOwOAWCnmz75Wx0Nnmcc6QLHMrSKtR4rk+QBzCUHiKezhwtGAYDDxk0pV2lce90WGvBiDwKaBhS7zhvfDDzNlN4=
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB6742.eurprd04.prod.outlook.com (2603:10a6:20b:f2::21) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.27; Mon, 18 May
- 2020 03:54:54 +0000
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3000.033; Mon, 18 May 2020
- 03:54:54 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Steffen Trumtrar <s.trumtrar@pengutronix.de>, Shawn Guo
- <shawnguo@kernel.org>, Andy Duan <fugang.duan@nxp.com>
-Subject: RE: [PATCH] ARM: dts: imx7d-pinfunc: add input mux for ENET2 mdio
-Thread-Topic: [PATCH] ARM: dts: imx7d-pinfunc: add input mux for ENET2 mdio
-Thread-Index: AQHWKq3aOdOVoo6/TEyJrflUDB2tmaitOnaQ
-Date: Mon, 18 May 2020 03:54:53 +0000
-Message-ID: <AM6PR04MB4966710261BD821190B2F0FD80B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
-References: <20200515114151.6516-1-s.trumtrar@pengutronix.de>
-In-Reply-To: <20200515114151.6516-1-s.trumtrar@pengutronix.de>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: pengutronix.de; dkim=none (message not signed)
- header.d=none;pengutronix.de; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: a067da20-d4fb-4931-9e9d-08d7fadf393b
-x-ms-traffictypediagnostic: AM6PR04MB6742:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB6742FF24262FF0ACB07518CF80B80@AM6PR04MB6742.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:849;
-x-forefront-prvs: 04073E895A
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: BiNPqQVNqyY+gdfvwFCJMLp0KIZwjIfVypBeFJIA2N+3kF2xnEuch2hL4xesdlo0wULEn2YAFCvzaZT0NTil2KrrDz5VfBmaoLyMPFPVWx4G3nuQHM3XjVgnAC4w5CCfU2T4TrKwIa7fm+RXMLyzUz0vzfQl6saKBvLuAEVlGN1GebGBJZGVRhxzMMY7gPwNxk8yzG0dZHe3eFmBxHZNKaaRk+eGkJHIlJDA0dUSdUejw0epBTpRmZAuaPaAl4lpWwGLmn06iG+VSYprAQAyHGc+EnByoO7/7AeaBi3WGQSYQ3NiDOJgnRZuAMKYUQTbxCKTzVXkrvk6u6NhzJPcgK8pUDIDxBNHYx5EDJKCRQj5lVrgX0HphCo1msMdW5eUGv1r9o+lll6eQ2AzYzOt72EqypKPDE+GOCZuWknLyC/o4ef8es62yyq8LimZ57aW
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(366004)(376002)(136003)(39860400002)(396003)(478600001)(6636002)(33656002)(52536014)(86362001)(9686003)(44832011)(71200400001)(186003)(110136005)(54906003)(8936002)(6506007)(4326008)(76116006)(8676002)(316002)(55016002)(26005)(66476007)(66556008)(64756008)(66446008)(7696005)(66946007)(5660300002)(2906002);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: 6YAAC50VHG1TY/EAav/rAD31EDvz35nnsisxnV0CczjYP28e97v5nTi9yJw0hScGXJweWnAeyR2K1ds9WKl5tzAzL1L4sBJmj71TSWVJJcb78fSkiV93Zxj61GgW2Ixa4/lEs/1Okf0XYqSw1b/BspSJUr0d5XKz58ENkz1JDas/zE4RDCSlONjBjZIkCiEkruen6e7VFGujvJIu7mO/Nckos+PvMMdGC1lsNHxx5hgcE7GEJJAk+A9TYDKT1mNBg48FJbmeABnY7Bd0sK2pkDKqZgW9PLRf/L8aX5pmxuEGGl2zjZjr/MZnl+Q31gIfzx8xaAN8AVU8a1WPik1xvYVtT6IHdNb3uHcCM8EJVpUrNtz7jVb9g8vFgSux18DcBDN0AQsLE8gNCLAozKjbO+3Nmacsw0DNQO2kfZbNzhfRSYyjabcZAVZYQ3YSWK17V32p/7UvmBxxJDEk96HWmYx7yritGSK07KaQKANcG0s=
+	id 1jaXIw-0003fJ-7F; Mon, 18 May 2020 04:23:06 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jaXIl-0003e6-Lb
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 04:22:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1E4D7101E;
+ Sun, 17 May 2020 21:22:50 -0700 (PDT)
+Received: from [10.163.74.67] (unknown [10.163.74.67])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 650DB3F68F;
+ Sun, 17 May 2020 21:22:45 -0700 (PDT)
+Subject: Re: [RFC PATCH v3 1/2] arm64: tlb: Detect the ARMv8.4 TLBI RANGE
+ feature
+To: Zhenyu Ye <yezhenyu2@huawei.com>, Mark Rutland <mark.rutland@arm.com>
+References: <20200414112835.1121-1-yezhenyu2@huawei.com>
+ <20200414112835.1121-2-yezhenyu2@huawei.com>
+ <20200505101405.GB82424@C02TD0UTHF1T.local>
+ <cb9d32b6-a9d8-3737-e69d-df4191b7afa9@huawei.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <4d8cb48c-4f47-d966-f29b-3343bd966c5f@arm.com>
+Date: Mon, 18 May 2020 09:52:12 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: a067da20-d4fb-4931-9e9d-08d7fadf393b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2020 03:54:53.9874 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: DAsblxXjRQMzgi2bDwx7Vnd2PZJoxB+Vl8jgZMezrBBsZz0vG72CIntTpa++hfNaSQCh1ttp90bdTm13OZaUdw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6742
+In-Reply-To: <cb9d32b6-a9d8-3737-e69d-df4191b7afa9@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_205459_170417_B57F26E9 
-X-CRM114-Status: GOOD (  13.56  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200517_212255_793850_26CD335C 
+X-CRM114-Status: GOOD (  15.04  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.15.74 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.15.74 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,59 +67,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh+dt@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>
+Cc: linux-arch@vger.kernel.org, maz@kernel.org, suzuki.poulose@arm.com,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, xiexiangyou@huawei.com,
+ steven.price@arm.com, zhangshaokun@hisilicon.com, linux-mm@kvack.org,
+ arm@kernel.org, prime.zeng@hisilicon.com, guohanjun@huawei.com, olof@lixom.net,
+ kuhn.chenqun@huawei.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Steffen Trumtrar <s.trumtrar@pengutronix.de>
-> Sent: Friday, May 15, 2020 7:42 PM
-> 
-> Add the missing input mux for ENET2 mdio. Without this setting, it is not
-> possible to read the MDIO answers back from the PHY.
-> 
-> Signed-off-by: Steffen Trumtrar <s.trumtrar@pengutronix.de>
-> ---
->  arch/arm/boot/dts/imx7d-pinfunc.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/boot/dts/imx7d-pinfunc.h
-> b/arch/arm/boot/dts/imx7d-pinfunc.h
-> index 08ca1608fdb1..69f2c1ec8254 100644
-> --- a/arch/arm/boot/dts/imx7d-pinfunc.h
-> +++ b/arch/arm/boot/dts/imx7d-pinfunc.h
-> @@ -592,7 +592,7 @@
->  #define MX7D_PAD_UART2_RX_DATA__ECSPI1_SS3
-> 0x0130 0x03A0 0x0000 0x3 0x0
->  #define MX7D_PAD_UART2_RX_DATA__ENET2_1588_EVENT1_IN
-> 0x0130 0x03A0 0x0000 0x4 0x0
->  #define MX7D_PAD_UART2_RX_DATA__GPIO4_IO2
-> 0x0130 0x03A0 0x0000 0x5 0x0
-> -#define MX7D_PAD_UART2_RX_DATA__ENET2_MDIO
-> 0x0130 0x03A0 0x0000 0x6 0x0
-> +#define MX7D_PAD_UART2_RX_DATA__ENET2_MDIO
-> 0x0130 0x03A0 0x0574 0x6 0x1
 
-It's strange that I didn't find this select input setting from latest RM.
-Anything I missed?
 
-Also copy Andy to comment.
+On 05/11/2020 05:55 PM, Zhenyu Ye wrote:
+> On 2020/5/5 18:14, Mark Rutland wrote:
+>> On Tue, Apr 14, 2020 at 07:28:34PM +0800, Zhenyu Ye wrote:
+>>> ARMv8.4-TLBI provides TLBI invalidation instruction that apply to a
+>>> range of input addresses. This patch detect this feature.
+>>>
+>>> Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
+>>> ---
+>>>  arch/arm64/include/asm/cpucaps.h |  3 ++-
+>>>  arch/arm64/include/asm/sysreg.h  |  4 ++++
+>>>  arch/arm64/kernel/cpufeature.c   | 11 +++++++++++
+>>>  3 files changed, 17 insertions(+), 1 deletion(-)
+>>>
+>>> diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
+>>> index 8eb5a088ae65..950095a72617 100644
+>>> --- a/arch/arm64/include/asm/cpucaps.h
+>>> +++ b/arch/arm64/include/asm/cpucaps.h
+>>> @@ -61,7 +61,8 @@
+>>>  #define ARM64_HAS_AMU_EXTN			51
+>>>  #define ARM64_HAS_ADDRESS_AUTH			52
+>>>  #define ARM64_HAS_GENERIC_AUTH			53
+>>> +#define ARM64_HAS_TLBI_RANGE			54
+>>>  
+>>> -#define ARM64_NCAPS				54
+>>> +#define ARM64_NCAPS				55
+>>>  
+>>>  #endif /* __ASM_CPUCAPS_H */
+>>> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+>>> index ebc622432831..ac1b98650234 100644
+>>> --- a/arch/arm64/include/asm/sysreg.h
+>>> +++ b/arch/arm64/include/asm/sysreg.h
+>>> @@ -592,6 +592,7 @@
+>>>  
+>>>  /* id_aa64isar0 */
+>>>  #define ID_AA64ISAR0_RNDR_SHIFT		60
+>>> +#define ID_AA64ISAR0_TLBI_RANGE_SHIFT	56
+>>>  #define ID_AA64ISAR0_TS_SHIFT		52
+>>>  #define ID_AA64ISAR0_FHM_SHIFT		48
+>>>  #define ID_AA64ISAR0_DP_SHIFT		44
+>>> @@ -605,6 +606,9 @@
+>>>  #define ID_AA64ISAR0_SHA1_SHIFT		8
+>>>  #define ID_AA64ISAR0_AES_SHIFT		4
+>>>  
+>>> +#define ID_AA64ISAR0_TLBI_RANGE_NI	0x0
+>>> +#define ID_AA64ISAR0_TLBI_RANGE		0x2
+>>> +
+>>>  /* id_aa64isar1 */
+>>>  #define ID_AA64ISAR1_I8MM_SHIFT		52
+>>>  #define ID_AA64ISAR1_DGH_SHIFT		48
+>>> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+>>> index 9fac745aa7bb..31bcfd0722b5 100644
+>>> --- a/arch/arm64/kernel/cpufeature.c
+>>> +++ b/arch/arm64/kernel/cpufeature.c
+>>> @@ -124,6 +124,7 @@ static bool __system_matches_cap(unsigned int n);
+>>>   */
+>>>  static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
+>>>  	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_RNDR_SHIFT, 4, 0),
+>>> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_TLBI_RANGE_SHIFT, 4, 0),
 
-Regards
-Aisheng
+Hello Zhenyu,
 
->  #define MX7D_PAD_UART2_TX_DATA__UART2_DCE_TX
-> 0x0134 0x03A4 0x0000 0x0 0x0
->  #define MX7D_PAD_UART2_TX_DATA__UART2_DTE_RX
-> 0x0134 0x03A4 0x06FC 0x0 0x3
->  #define MX7D_PAD_UART2_TX_DATA__I2C2_SDA
-> 0x0134 0x03A4 0x05E0 0x1 0x0
-> --
-> 2.26.2
+This is already being added through another patch [1] in a series [2] which primarily
+has cpufeature changes. I will soon update the series making this feature FTR_HIDDEN.
+
+[1] https://patchwork.kernel.org/patch/11523881/
+[2] https://patchwork.kernel.org/project/linux-arm-kernel/list/?series=281211
+
+I am planning to respin the series (V4) based on arm64 tree (for-next/cpufeature). So
+could you please rebase this patch (probably dropping cpufeature related changes) on
+upcoming V4, so that all the changes will be based on arm64 tree (for-next/cpufeature).
+
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
