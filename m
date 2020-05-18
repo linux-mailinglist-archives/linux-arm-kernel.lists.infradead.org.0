@@ -2,62 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C32151D7C0D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 16:58:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D97191D7C2F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:02:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=rdMHkjmwk9IqaPzeRvIATrSRi9ONYOXlFkOQ2aWmQlg=; b=OsrfkvA9/zheHHtmwua925Diw/
-	xpmTnRzsATpnOQHh16EUpOGuOpGy3n3g8uhi3JV/f1dL+VcjePppFJyKOnRmEZLjhxTO3oar2yME2
-	j8gA8rUF9grufq29x/9sjuj7IC+tK41VKB5XL3heZ2+qSXH+uvaildJh1l2cKBxC40gSGHZHgTVap
-	UMfIdNHVDwpsd2eyGt4U5GLBoKhkYq8jsUgm/Ltwt+r2/w++Xja4f3xMZ6w9xCurB6JxQb5O68af1
-	L+msN1eQmNqPh4BCPYBA1hvVt4WLa0TJ/b7j4AHXHCeEA89xGKtJg1ZUxfphLEuE1oAoEOeihT3/s
-	3qMpeu5g==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=yIEEUxDGXQVB7715t3KbgZdGfpSvmEpGlqYlERiclxI=; b=nRI
+	rOJ6rZo1qS58zbhdZNlMi2vfvxZAEBqG0n/5tLfHYHKlkVQsDVbc2zsow9xKZSkpVLdyd1zzDgZ0j
+	QUd7MgM2jkLR68o68yn22+phIatqpsaV3Oeb143lxzqMQl0dhS8rapb5LcoaH3X7q8OaSFIuo+AeD
+	UVIUrMhJ4mZtMvwfBTWEToGcgKPbMGLpSCNvbtE0CBN4yPrlQKgn+jZ/7YfI0VyyIAE6zboJSG8bE
+	B2X7U70p3//w0/me9tYDTnoiTW6BJRSpy9yAePXs2fFJpxk3USdCvRYUspCATGfdQ2EETET01j5b/
+	kjGExyKDzqMUpj7giCzkt+1XJGHMqbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jahDr-00007C-4b; Mon, 18 May 2020 14:58:31 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jahHo-0005dN-LI; Mon, 18 May 2020 15:02:36 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jahCs-0007sY-3n
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 14:57:33 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DF4281A0B13;
- Mon, 18 May 2020 16:57:28 +0200 (CEST)
+ id 1jahHZ-0005cE-0M
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 15:02:26 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6344A200941;
+ Mon, 18 May 2020 17:02:19 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6D0791A097E;
- Mon, 18 May 2020 16:57:23 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 290352009C2;
+ Mon, 18 May 2020 17:02:14 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 138D6402B3;
- Mon, 18 May 2020 22:57:17 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6D2F9402AF;
+ Mon, 18 May 2020 23:02:07 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
-To: daniel.lezcano@linaro.org, tglx@linutronix.de, robh+dt@kernel.org,
+To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, ping.bai@nxp.com, aisheng.dong@nxp.com,
- linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/3] dt-bindings: timer: Convert i.MX SYSCTR to json-schema
-Date: Mon, 18 May 2020 22:47:40 +0800
-Message-Id: <1589813260-20036-4-git-send-email-Anson.Huang@nxp.com>
+ festevam@gmail.com, Frank.Li@nxp.com, linux-clk@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH V2] dt-bindings: clock: Convert i.MX7D clock to json-schema
+Date: Mon, 18 May 2020 22:52:34 +0800
+Message-Id: <1589813554-20929-1-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1589813260-20036-1-git-send-email-Anson.Huang@nxp.com>
-References: <1589813260-20036-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_075730_440659_E4A23E7A 
-X-CRM114-Status: GOOD (  12.24  )
+X-CRM114-CacheID: sfid-20200518_080224_363316_B799DE7D 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,86 +76,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX SYSCTR binding to DT schema format using json-schema.
+Convert the i.MX7D clock binding to DT schema format using json-schema.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- .../devicetree/bindings/timer/nxp,sysctr-timer.txt | 25 ----------
- .../bindings/timer/nxp,sysctr-timer.yaml           | 54 ++++++++++++++++++++++
- 2 files changed, 54 insertions(+), 25 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
- create mode 100644 Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml
+Changes since V1:
+	- Update maintainer's e-mail address.
+---
+ .../devicetree/bindings/clock/imx7d-clock.txt      | 13 -----
+ .../devicetree/bindings/clock/imx7d-clock.yaml     | 64 ++++++++++++++++++++++
+ 2 files changed, 64 insertions(+), 13 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/clock/imx7d-clock.txt
+ create mode 100644 Documentation/devicetree/bindings/clock/imx7d-clock.yaml
 
-diff --git a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
+diff --git a/Documentation/devicetree/bindings/clock/imx7d-clock.txt b/Documentation/devicetree/bindings/clock/imx7d-clock.txt
 deleted file mode 100644
-index d576599..0000000
---- a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
+index 9d3026d..0000000
+--- a/Documentation/devicetree/bindings/clock/imx7d-clock.txt
 +++ /dev/null
-@@ -1,25 +0,0 @@
--NXP System Counter Module(sys_ctr)
--
--The system counter(sys_ctr) is a programmable system counter which provides
--a shared time base to Cortex A15, A7, A53, A73, etc. it is intended for use in
--applications where the counter is always powered and support multiple,
--unrelated clocks. The compare frame inside can be used for timer purpose.
+@@ -1,13 +0,0 @@
+-* Clock bindings for Freescale i.MX7 Dual
 -
 -Required properties:
+-- compatible: Should be "fsl,imx7d-ccm"
+-- reg: Address and length of the register set
+-- #clock-cells: Should be <1>
+-- clocks: list of clock specifiers, must contain an entry for each required
+-  entry in clock-names
+-- clock-names: should include entries "ckil", "osc"
 -
--- compatible :      should be "nxp,sysctr-timer"
--- reg :             Specifies the base physical address and size of the comapre
--                    frame and the counter control, read & compare.
--- interrupts :      should be the first compare frames' interrupt
--- clocks : 	    Specifies the counter clock.
--- clock-names: 	    Specifies the clock's name of this module
--
--Example:
--
--	system_counter: timer@306a0000 {
--		compatible = "nxp,sysctr-timer";
--		reg = <0x306a0000 0x20000>;/* system-counter-rd & compare */
--		clocks = <&clk_8m>;
--		clock-names = "per";
--		interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
--	};
-diff --git a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml
+-The clock consumer should specify the desired clock by having the clock
+-ID in its "clocks" phandle cell.  See include/dt-bindings/clock/imx7d-clock.h
+-for the full list of i.MX7 Dual clock IDs.
+diff --git a/Documentation/devicetree/bindings/clock/imx7d-clock.yaml b/Documentation/devicetree/bindings/clock/imx7d-clock.yaml
 new file mode 100644
-index 0000000..830211c
+index 0000000..8cd0573
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml
-@@ -0,0 +1,54 @@
++++ b/Documentation/devicetree/bindings/clock/imx7d-clock.yaml
+@@ -0,0 +1,64 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/timer/nxp,sysctr-timer.yaml#
++$id: http://devicetree.org/schemas/clock/imx7d-clock.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: NXP System Counter Module(sys_ctr)
++title: Clock bindings for Freescale i.MX7 Dual
 +
 +maintainers:
-+  - Bai Ping <ping.bai@nxp.com>
++  - Frank Li <Frank.Li@nxp.com>
++  - Anson Huang <Anson.Huang@nxp.com>
 +
 +description: |
-+  The system counter(sys_ctr) is a programmable system counter
-+  which provides a shared time base to Cortex A15, A7, A53, A73,
-+  etc. it is intended for use in applications where the counter
-+  is always powered and support multiple, unrelated clocks. The
-+  compare frame inside can be used for timer purpose.
++  The clock consumer should specify the desired clock by having the clock
++  ID in its "clocks" phandle cell. See include/dt-bindings/clock/imx7d-clock.h
++  for the full list of i.MX7 Dual clock IDs.
 +
 +properties:
 +  compatible:
-+    const: nxp,sysctr-timer
++    const: fsl,imx7d-ccm
 +
 +  reg:
 +    maxItems: 1
 +
 +  interrupts:
-+    maxItems: 1
++    items:
++      - description: CCM interrupt request 1
++      - description: CCM interrupt request 2
++    maxItems: 2
++
++  '#clock-cells':
++    const: 1
 +
 +  clocks:
-+    maxItems: 1
++    items:
++      - description: 32k osc
++      - description: 24m osc
 +
 +  clock-names:
-+    const: per
++    items:
++      - const: ckil
++      - const: osc
 +
 +required:
 +  - compatible
@@ -165,20 +163,21 @@ index 0000000..830211c
 +  - interrupts
 +  - clocks
 +  - clock-names
-+
-+additionalProperties: false
++  - '#clock-cells'
 +
 +examples:
 +  - |
 +    #include <dt-bindings/interrupt-controller/arm-gic.h>
 +
-+    timer@306a0000 {
-+        compatible = "nxp,sysctr-timer";
-+        reg = <0x306a0000 0x20000>;
-+        clocks = <&clk_8m>;
-+        clock-names = "per";
-+        interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
-+     };
++    clock-controller@30380000 {
++        compatible = "fsl,imx7d-ccm";
++        reg = <0x30380000 0x10000>;
++        interrupts = <GIC_SPI 85 IRQ_TYPE_LEVEL_HIGH>,
++                     <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>;
++        #clock-cells = <1>;
++        clocks = <&ckil>, <&osc>;
++        clock-names = "ckil", "osc";
++    };
 -- 
 2.7.4
 
