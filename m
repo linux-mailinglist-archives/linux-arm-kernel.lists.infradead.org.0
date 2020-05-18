@@ -2,76 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F3CF1D720B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:40:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99C3E1D7217
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:43:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dSMQ3C0PbbLlQqZMDaiSRjmEf4LUkdtknodbBXveFaw=; b=WIOjO4thzM3AX4
-	Akf6zLr405W94Ex5UIqHp1EZdpj3fjPdocpM8232p+4lOEQuJ/e25IYOheWyeOu+8HWJWJRXx5i/j
-	Mb3wKje/kkqurnmigbW5Dv9WwhIK526Ufx32P+HRHXP2MsB6PmJKNQFhq7TdzTnB4zfPLn662J8+e
-	gXtbjn2zsR7RMTQwtFGsOOdxco3rvzXW8OhW/XJTDMa0LvakVQbHIkY1iYcu14s1o2ZG84K0gPoul
-	g8JqqqUOhcXSAV2az+klnpXuJrNFvMM+YwuSZmjVR26rdWgaaMhzEuEcg+6vKZDdGtwoeM+mXhbV5
-	ACppH+7nBbnXUmm6uL9g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=0xcqTRTIWOuXFsU0KyypqKFxJRpO3JYTW4bVpBdX9RA=; b=aHJYIGAJHQyrh9j2CbX6kY1X3x
+	fKLq8Ek+1VipiJ/YoinD9n50D2Q5ntCwsUF2BdmL6S1lU8A0NKNUS3l8hf0I0c5pZ7Hju8cQ+3Spa
+	fDhnIfjChOL7DXZJrCbxjZeGMNfl1HAoqvBQIoJPSKojCXZdhZU7oDsldFn3C5EeWQTQf7rSjWyzy
+	NBK+TExeGKNMgGSjU/5LYZ77kE0+fQdZ9akXXul2BXG0hFohhg1pEgcNmprbQOSHlV/pSTQiMrBsK
+	RghiRkN7Je++yGZxdP/+5M/+98EISK/bCBX7lK0TkBZWdV7FuGDFZ30n8yt7ukpQ8R+/ZDmLHiXvt
+	IGkh3w8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaaO4-00009J-8e; Mon, 18 May 2020 07:40:36 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jaaR1-0000gB-7Q; Mon, 18 May 2020 07:43:39 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaaNv-00008g-4D
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:40:28 +0000
-Received: by mail-lf1-x141.google.com with SMTP id 82so7163144lfh.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 00:40:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mbNo2bO8UT/NFEvCqltEb1Sgxiq57A9y9mhkDWjZGSA=;
- b=aK+zuEJG4robhm4skrw9lQNXp7D7AJSechYuPi13f1BmzrJUmpTkyQylwz0URbvJLt
- 7Cdcro5gNOORmzH0rJCovjXjSk+ZIFt8jMV7hsiCF1BLk+AKvv1bEnwxAphyNvWJo1Oy
- Zgz3Esz1YYsCEbGWg5OAAbyclu6DQLuJPFnE5tp7nLRwqAOLMAvvuPyeyxckFcHXYfSS
- i3+mBKWz2GgyRpDw/BdYs0ZpOhWHD8v2dW/mc6YEr00sH/zxDPzEa3L7iopeXyRcQ8Xl
- i5hrG3E+IcMMe2MIZ90GFX9NqyZCTOSqMRpY05fav78/Pc7HAZu2Jy3l1y3tXnYsZQez
- ObgQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mbNo2bO8UT/NFEvCqltEb1Sgxiq57A9y9mhkDWjZGSA=;
- b=iUz9MCsOy0znwgfagKElKWWdp1hdXLaQWmVGrqGGGY8+QXm6kBdzWKL350e8FHvTj8
- r91hthKUppo4rkMgB+DtYhW81nQ5tYnEGw8G0ewOW4LKldzgxIwjB5v2I47s4xozcEuy
- bka8+ZhSD5RML3XXt3QxNkUDXoHNY+Y/x4nkeliMHYjRAl8OZF34G3zawSs4ThPGDM7R
- pd1bju1VaqfVRoJmI+5ALstx8fjJ2YX7x2vM40bNIUPeYj7+engbiDIkwDJYkoMguIRx
- 6778xK5krbo2VgZ0SAbkLQmworVwsp+2gnvSME0FiDrQ3PeR0ZqTvnDYNSl9Eh70sdal
- 1lsw==
-X-Gm-Message-State: AOAM532wUUEBsCluQyAL9wKUko9+VIEneR1sp0CmVqC+g6db5y33B6/B
- o4kR9ga0AEArdNINMaTf7gP2aRfs32MiSjY4fWuvYA==
-X-Google-Smtp-Source: ABdhPJyzpxA/jPQ4m8GVMOhz93WPaHbW4zXids0G1ejXAyNHf7LdEoJ/7wtEq0WWnsDkRrcVjUxYEX0ptm1k0s0Iwa4=
-X-Received: by 2002:ac2:414c:: with SMTP id c12mr10660804lfi.47.1589787625454; 
- Mon, 18 May 2020 00:40:25 -0700 (PDT)
+ id 1jaaQq-0000fI-0d
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:43:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589787807; x=1621323807;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=FKJAh1HkVv8d/p5YjXylM2nem6uVcaMiV5E5Xj3YJxg=;
+ b=WXCgwT6+sAla5aVtRz3FFeohbujP7Ev/w6W1n+SdYqNpFQoLS/Bwyj+9
+ RK27KuJKg2IGJJGKZOeiYKJMNPBO0kkbHgXpMIT2428hr6dHkxAcZT08i
+ ZmVLDhGe9ojVnRzZwa+GFizN4pPYRdoPaTfeUWHpxPOfUcT/h6VZB3QU5
+ GgxHoxBk82zaJVPkAUdsREJvibSud6CPHON6nt9WzQ7+zUDv+O5QWCxaK
+ ftI70IdbIxdg3RACusZv0anxRrhx0MFCvLOI+XLWkxEDUM9OiUnWvAFZW
+ mgPu4pR+gnp2Dkdic76mx0fhfn96gTUTbYq9zCjkwvvlcBiaER34qbAJR g==;
+IronPort-SDR: 9nIYTc6j7tSmHkUO/HDAiU7Hl4ptKImLP7FdPLXeUtwqYerLqPzqdExoE6E93pFxzBah3KHWWG
+ Q9JPG+I2MEL3gHJXGrutIvVYPjZUo1UEB3ylMVbpbguzVvgclguDsT6B3iZUd/aTMSYKFy83vM
+ CmUy67KdBD33r96EVfEhNlaspRBqwP35OdPswMyZsL8Gqtsd2knoZobWdvb4W8vZXCFq31c9xV
+ fWceeyx3oQjJyQHT8TKz77OVnpKjLO40OSg3akb7hIM2OYZrCRcRG94HfDVpY9JW6g17CLZwRG
+ ScA=
+X-IronPort-AV: E=Sophos;i="5.73,406,1583218800"; d="scan'208";a="73738900"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 18 May 2020 00:43:22 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 18 May 2020 00:43:22 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Mon, 18 May 2020 00:43:17 -0700
+References: <20200513125532.24585-1-lars.povlsen@microchip.com>
+ <20200513125532.24585-7-lars.povlsen@microchip.com>
+ <2d230dab95ee96727a42f9c242c93c18@misterjones.org>
+ <871rnlp740.fsf@soft-dev15.microsemi.net>
+ <18c0d9ef-9a2b-31d0-b317-f051bb26a907@arm.com>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH 06/14] arm64: dts: sparx5: Add basic cpu support
+In-Reply-To: <18c0d9ef-9a2b-31d0-b317-f051bb26a907@arm.com>
+Date: Mon, 18 May 2020 09:43:16 +0200
+Message-ID: <87wo59ofhn.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-References: <20200513141134.25819-1-lars.povlsen@microchip.com>
- <20200513141134.25819-2-lars.povlsen@microchip.com>
-In-Reply-To: <20200513141134.25819-2-lars.povlsen@microchip.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 18 May 2020 09:40:14 +0200
-Message-ID: <CACRpkdZa7OM3bqB+zRprEQ3M4m9hG3uPCoYxrdH_O=oxD8zi8Q@mail.gmail.com>
-Subject: Re: [PATCH 1/3] dt-bindings: pinctrl: Add bindings for mscc,
- ocelot-sgpio
-To: Lars Povlsen <lars.povlsen@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_004027_170069_94718AE9 
-X-CRM114-Status: GOOD (  12.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200518_004328_103531_0F94BC52 
+X-CRM114-Status: UNSURE (   9.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,63 +97,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
+Cc: devicetree@vger.kernel.org,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Olof
+ Johansson <olof@lixom.net>, linux-kernel@vger.kernel.org,
  Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- SoC Team <soc@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ linux-gpio@vger.kernel.org, SoC Team <soc@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org, Marc Zyngier <maz@misterjones.org>,
+ Steen Hegelund <Steen.Hegelund@microchip.com>, linux-clk@vger.kernel.org,
+ Lars Povlsen <lars.povlsen@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 4:11 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
 
-> This adds DT bindings for the Microsemi SGPIO controller, bindings
-> mscc,ocelot-sgpio and mscc,luton-sgpio.
+Robin Murphy writes:
+
+> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
 >
-> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
+> On 2020-05-15 16:09, Lars Povlsen wrote:
+> [...]
+>>>> +             cpu0: cpu@0 {
+>>>> +                     compatible = "arm,cortex-a53", "arm,armv8";
+>
+> Side note: only one compatible string for the real CPU please, running a
+> DT bindings check should complain about that.
+>
 
-> +  microchip,sgpio-ports:
-> +    description: This is a 32-bit bitmask, configuring whether a
-> +      particular port in the controller is enabled or not. This allows
-> +      unused ports to be removed from the bitstream and reduce latency.
-> +    $ref: "/schemas/types.yaml#/definitions/uint32"
+I'll change this.
 
-I don't know about this.
+>>>> +                     device_type = "cpu";
+>>>> +                     reg = <0x0 0x0>;
+>>>> +                     enable-method = "spin-table";
+>>>
+>>> Really? This is 2020, not 2012 any more. Surely a new platform
+>>> boots using PSCI, and not *this*.
+>>>
+>>
+>> We don't currently support PSCI. The platform does not have TrustZone,
+>> hence we don't use ATF.
+> AIUI, part of the purpose of ATF is to provide a nice standardised
+> platform interface regardless of whether you care about Secure software
+> or not. It shouldn't take much to knock up a trivial ATF port that just
+> uses an internal spin-table for its PSCI backend - in fact I suspect
+> that's probably just a copy-paste from the RPi3 port ;)
+>
 
-You are saying this pin controller can have up to 32 GPIO "ports"
-(also known as banks).
+I'll change this to PSCI if that's whats expected these days. We
+actually already have an ATF port. I fully understand the desire to
+standardize on PSCI.
 
-Why can't you just represent each such port as a separate GPIO
-node:
+> Robin.
 
-pinctrl@nnn {
-    gpio@0 {
-        ....
-    };
-    gpio@1 {
-        ....
-    };
-    ....
-    gpio@31 {
-        ....
-    };
-};
-
-Then if some of them are unused just set it to status = "disabled";
-
-This also makes your Linux driver simpler because each GPIO port
-just becomes a set of 32bit registers and you can use
-select GPIO_GENERIC and bgpio_init() and save a whole
-slew of standard stock code.
-
-Yours,
-Linus Walleij
+-- 
+Lars Povlsen,
+Microchip
 
 _______________________________________________
 linux-arm-kernel mailing list
