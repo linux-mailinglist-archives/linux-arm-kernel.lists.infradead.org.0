@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 675AD1D71A9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:21:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFDEB1D71AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 09:22:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KZWkiRtpyVxvtWfMzU4bmMCpj2RwiQbTMfIz9GTKI1I=; b=Bt8QdmXgHYtfSb
-	2V8TiB5ilGh6FbRK9r3jNqOtVtULV04CvREF0LNYcGZzr2IYw8zLFmLq2/6l/rZ5xURO5dx0bzWww
-	BhoEH/ikLfuRT5ZzJRxNlJiySt9WH4Pwr7H2s6VFNbBPq72guTfhgVstVsEGu/+NEKBvyLuQPYnnK
-	1yTYsuEhA74hlu5+KtVPW6Xt62RRlMDTut/xTK7UYcBKkjcq+5x08RM51UungwbUiNbJQAU5Yw7wg
-	cunSnC48e76JfojrwKb7ZSKWAfxdtUDmNtSQUH82Y//Q17aJzZ2VV15by4Um1IaYPiCZpgoFko3FF
-	PK6MhVschyoU4UCiP3QA==;
+	List-Owner; bh=umcV6YwilRiXS42NGFo6cGdc5acWjTYHq9aP0xNpv+g=; b=QKgQeG15rLYULw
+	3190ZX54N5uysI4GrtXVBOh807t0KSMUIihG+3AaJjX7i1jMVjejSO3+IMDKEfwJvViiFHQp1GdAh
+	q1rrJCSAJreS9gavCKLKgITqu4D8NjdJpQdSU18MCZQiygS6SYhTcg4jW6581BIN5I0Ua7DQwctvS
+	k344z/LGiITJmvAQgJszWra3yld96K1LPU57rREFForBfPZZuJtd80bTI1aL4HyD2sO7mfAfAdwYH
+	jK1cB+KnyQTh+73kK/R/IFY8bORRDXejNYvNXZl2o6O7NQew5TnyjPioo8Ld7QDmhzjYWedqpSh4u
+	B27fz8ZnLEXiVx8lQ13w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaa53-0003GM-TZ; Mon, 18 May 2020 07:20:57 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jaa6T-0003zx-Jt; Mon, 18 May 2020 07:22:25 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaa4r-0003Ex-Mq
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:20:46 +0000
-Received: by mail-lf1-x141.google.com with SMTP id a4so7075413lfh.12
+ id 1jaa6I-0003xI-TN
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 07:22:16 +0000
+Received: by mail-lf1-x142.google.com with SMTP id c12so3635337lfc.10
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 00:20:44 -0700 (PDT)
+ Mon, 18 May 2020 00:22:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=srjDyr9S0oB/6VDYDy70mCau/zVOnj84hKg9e/vKVUc=;
- b=UmO/e8bHlXbOw6t5litf5UhEV90GLZNKTvruCwSC9H28yYSU/xOoYiclTIFgm3pdnO
- G2mJQ3KyMOKPyxPHdDN0tPhEj22mLv03EN6NEHH+nuquSeVze0Ec3cxhipC/zAyQBbvi
- fNOIkvZANckbPP2uhRAYt7O9BSVI/SbbzeYgycvK4gtnAV+iC6Q0nzy96a5/JGg8E/Ve
- /rtn1LovXJiq6BnEV32NdI6aqSsAOskxgHGNSwF3BdMJLlsPqH2SZfaJ8TJ+2e9pNE7R
- ts0J69gQDaEeKH3Q/j7cgPk+y8d2ApLd5urmJ+WiPGV+0UM70Twzx0MwclzzJc0DIJch
- Hycw==
+ :cc; bh=ta2gbgUnTd9cjAo8d+iXtIxCCmOdQ9s25dbiJxtxN7c=;
+ b=H45b10GoSvrnbPb2a/o3lK9Nl0HuYne+YFGpSvMJiNjwcxbVxcZeeUrjPUQx7sXW+R
+ hQWjYwS51Nsn9o3d6QmcnVszrfyH2pFc5Wjwa0dzvxsSdLHpcpLTJI/d6cGHheznDOWr
+ aw+OrGy8tPVKae29pfSJi/RecDYQKtqV1KUlNJI2vPPJ4iide2fNvyqfk9HlxzuTBOnU
+ EPQklZ2sqMCZL9m0Tj2/hWeJ/WdYq14P0TDpxlWB5tUtgZbtOshsuI5mqiPEJ0x89Eje
+ unpR6vch5DGld+UnoJprw33lXuot+0VyLHHf+qLgbZnvm8/Lp/tDq/xbkMgZRftxIgaa
+ 3dyg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=srjDyr9S0oB/6VDYDy70mCau/zVOnj84hKg9e/vKVUc=;
- b=sGxBzaOH8MymQ4DEyGaGcbA9kKBTwlhSRq6/ihSDAmgDF6wAjDUyWkmkXQSAAJiRmq
- asgee/t98k9YmisWE1CuJwjp2thAPHL6DoNW3EzLUpLDkvIJS0QMEDWugx23OxnTuK+P
- TmhDI5xj1DMrF8gP8U1te5CCAO1rNF1fmxjksxyb7nLuCeaj6S6u5quzrRDP78G7oYEX
- /vyMYqeVjCmKSn2iPvGBfGBZH6TWo0S9UwSSWsoWf02XsXXHKs6zAvgc/3f+TgaYULvc
- aN3zRe2erUD1a5k0d5kTPiSAq1H1LaC2+qyxj4F0lqjBU1WoHWPAo5KgU+mddRi2FeBV
- KTXw==
-X-Gm-Message-State: AOAM533iiDrkLv2ot4sj5z9U4UGTvqIYkQ15tduLGZLJFLJswF8iysfC
- jXywtk6HdAFGw9if3MzbpeJFAhL1QJeGbFIsHHi3ow==
-X-Google-Smtp-Source: ABdhPJzRfqaofRPumXvphn7M6BnSMfYofnElhrI84EAZ3W5otCYBNBiXOugxiFN46j+QphGtW23HA+cXFzEqTcDNw+s=
-X-Received: by 2002:ac2:4823:: with SMTP id 3mr10546757lft.194.1589786443287; 
- Mon, 18 May 2020 00:20:43 -0700 (PDT)
+ bh=ta2gbgUnTd9cjAo8d+iXtIxCCmOdQ9s25dbiJxtxN7c=;
+ b=uj6PM/K1X7ZTc26AYmTmcidZQlctZRKz4g9av913kKaiqhzNUdKuZPTihHNWCnpOMQ
+ FXh3Q2cpILUqoCWhuSj2tfxn1cZaUaulU4EL/QKZBZ9z5qv0E/9BhJso/QtAB/xfpqvn
+ Tn+I8f0TJW8IyGOPfYELVrWTHWFUPA13jVBLSnQFZ4SMctHWnoomA+ChKGD+QxoChSGd
+ U36/iKxWoZ1rpsAPjWcf3qvArkztCDsQmzSIQAozWbJqiu1SngM/G0x2pILEw3khKq+P
+ pH9uBCWfeX6FRNhz4kguqqYa3w7TcxnhRqt3/UV2Jqhha6BojBVyhTCQ7VRW1WWH0qyL
+ 1yhw==
+X-Gm-Message-State: AOAM533VLV7qkiXvh6lCspzoYaN13Vg7YdTPn17G6qD8x+Jj5baZgr4l
+ xdQ7hUYqVvGXP7hneUXzBw3BDnFhNIxv2aOarStkFg==
+X-Google-Smtp-Source: ABdhPJwjBRm7gpLqIiY05Psy2U6dlWExnKINR/oAoQ5mkgDD5QtubFG19R6MFzkv42RekuXIOYC1qPLmFToR58V7Wmg=
+X-Received: by 2002:ac2:5473:: with SMTP id e19mr6307358lfn.21.1589786532265; 
+ Mon, 18 May 2020 00:22:12 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200512203524.7317-1-jbx6244@gmail.com>
- <20200512203524.7317-2-jbx6244@gmail.com>
-In-Reply-To: <20200512203524.7317-2-jbx6244@gmail.com>
+ <20200512203524.7317-3-jbx6244@gmail.com>
+In-Reply-To: <20200512203524.7317-3-jbx6244@gmail.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 18 May 2020 09:20:32 +0200
-Message-ID: <CACRpkdYrDHNp7esSYw9y7CQoZ1aZojWkhAU_MG4uvmk7nVJbOQ@mail.gmail.com>
-Subject: Re: [PATCH 2/3] dt-bindings: pinctrl: rockchip: update example
+Date: Mon, 18 May 2020 09:22:01 +0200
+Message-ID: <CACRpkdaN4tMcsOmsERdtcwC+Cw6SjTtSENxNRjTOeMU9rdU+RA@mail.gmail.com>
+Subject: Re: [PATCH 3/3] include: dt-bindings: rockchip: remove unused defines
 To: Johan Jonker <jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_002045_748785_059B512D 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20200518_002214_942023_97FAC682 
+X-CRM114-Status: UNSURE (   9.38  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,11 +109,14 @@ On Tue, May 12, 2020 at 10:35 PM Johan Jonker <jbx6244@gmail.com> wrote:
 > The Rockchip dtsi and dts files have been bulk-converted for the
 > remaining raw gpio numbers into their descriptive counterparts and
 > also got rid of the unhelpful RK_FUNC_x -> x and RK_GPIOx -> x
-> mappings, so update the example as well.
+> mappings, so remove the unused defines in 'rockchip.h' to prevent
+> that someone start using them again.
 >
 > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
 
-This patch applied to the pinctrl tree.
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
+
+I think patch 1 & 3 needs to be applied to the Rockchip tree.
 
 Yours,
 Linus Walleij
