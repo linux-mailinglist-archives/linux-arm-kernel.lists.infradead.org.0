@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27CFD1D783B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 14:15:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9A371D7844
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 14:16:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p/+c/TDbQE67nFBn1BglIG0SzIA2mhrlOfgsrX61Bw0=; b=tLJPzh+C0ZW2vE
-	Uj77mta9RDKY/gx3XesSXuU3IzScBXh7q5N7ejLsQxiKK6+jRfZ4BwjCG+qJvfb84Y5fofZbjyCpx
-	frWta+65isLNYPJIT32NGEPzdhR4LAul3JlYz74++8CROb8DcnQ/70Aihg91Ab3aWECMN27Ak3sVQ
-	kfLwvjmqVrLF2z13errY4LkdZsPtRG/1+6DThupfQP4ZMOjd5lIriqEkd+KiThCBDv6PVQo0i8q0h
-	QvWz3B7h/QFhCHxmdkb2Ucv3W9tm/WDrvL5tBedHq1OrN1SNC7ZmTX3OrsBi51RyEmdXbuEQkb8b6
-	i5tBlQ9sOyGgTTDG7d5A==;
+	List-Owner; bh=ZM+87pCAE4mVM1OJ89rx9mFhNUEprc10ngGKJIuSg0I=; b=HrFJtwWwCE0PwS
+	fE68dblytt/QnJRMSHkOVXOq5cLghFA4d1mkhAYM2G04Qk4ro3zkz1YpJy1ds+u5qKpVIHc5n97ti
+	gKYfLboZTxXvne0vrzS5oq8T4qMCSe2MmNuNJLKt1Paz3NWujSdllgYjkHHxBCHN3Z3Bz/dzij3v+
+	3VzwS1VCL8oZ3vMsZ4q1rWjeT/9ON4p7Lkmg78OCl7DFdjRM5EHjCUmaxKnHSV22V8Nn/hJV1HR9v
+	y0AZEwYHrZHSf6Aw8bsa3aZmxh1gLvw4AmdK9Azyw439lLDaVk4HVp8vDdiNptNdsso4mIkTX8ihl
+	bBWCX9fXGlznB7Gd344w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaefX-0003Md-FP; Mon, 18 May 2020 12:14:55 +0000
+	id 1jaego-0006WX-DZ; Mon, 18 May 2020 12:16:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaefP-0003Ls-Gy
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 12:14:48 +0000
+ id 1jaege-0006Vk-5Z
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 12:16:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DE3F6106F;
- Mon, 18 May 2020 05:14:46 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C67C3106F;
+ Mon, 18 May 2020 05:16:03 -0700 (PDT)
 Received: from C02TD0UTHF1T.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2D4383F305;
- Mon, 18 May 2020 05:14:44 -0700 (PDT)
-Date: Mon, 18 May 2020 13:14:41 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 39DE73F305;
+ Mon, 18 May 2020 05:16:01 -0700 (PDT)
+Date: Mon, 18 May 2020 13:15:58 +0100
 From: Mark Rutland <mark.rutland@arm.com>
 To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 6/6] scs: Move DEFINE_SCS macro into core code
-Message-ID: <20200518121441.GE1957@C02TD0UTHF1T.local>
+Subject: Re: [PATCH 5/6] scs: Remove references to asm/scs.h from core code
+Message-ID: <20200518121558.GF1957@C02TD0UTHF1T.local>
 References: <20200515172756.27185-1-will@kernel.org>
- <20200515172756.27185-7-will@kernel.org>
+ <20200515172756.27185-6-will@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200515172756.27185-7-will@kernel.org>
+In-Reply-To: <20200515172756.27185-6-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_051447_606061_4B13C286 
-X-CRM114-Status: GOOD (  15.95  )
+X-CRM114-CacheID: sfid-20200518_051604_252679_2EBF1298 
+X-CRM114-Status: GOOD (  16.27  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,52 +73,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 06:27:56PM +0100, Will Deacon wrote:
-> Defining static shadow call stacks is not architecture-specific, so move
-> the DEFINE_SCS() macro into the core header file.
+On Fri, May 15, 2020 at 06:27:55PM +0100, Will Deacon wrote:
+> asm/scs.h is no longer needed by the core code, so remove a redundant
+> header inclusion and update the stale Kconfig text.
 > 
 > Signed-off-by: Will Deacon <will@kernel.org>
 
-I think that we'll have to pull this back into arch code if/when we deal
-with VMAP'd stacks, so I'm not sure this is worthwhile given the
-diffstat is balanced.
+With the corruption checks moved out of arch code this looks sound to
+me, so modulo my comments on the prior patch, assuming we factor that
+out:
+
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 
 Mark.
 
 > ---
->  arch/arm64/kernel/scs.c | 4 ----
->  include/linux/scs.h     | 4 ++++
->  2 files changed, 4 insertions(+), 4 deletions(-)
+>  arch/Kconfig | 4 ++--
+>  kernel/scs.c | 1 -
+>  2 files changed, 2 insertions(+), 3 deletions(-)
 > 
-> diff --git a/arch/arm64/kernel/scs.c b/arch/arm64/kernel/scs.c
-> index 955875dff9e1..e8f7ff45dd8f 100644
-> --- a/arch/arm64/kernel/scs.c
-> +++ b/arch/arm64/kernel/scs.c
-> @@ -8,10 +8,6 @@
->  #include <linux/percpu.h>
+> diff --git a/arch/Kconfig b/arch/Kconfig
+> index 45dfca9a98d3..2e6f843d87c4 100644
+> --- a/arch/Kconfig
+> +++ b/arch/Kconfig
+> @@ -537,8 +537,8 @@ config ARCH_SUPPORTS_SHADOW_CALL_STACK
+>  	bool
+>  	help
+>  	  An architecture should select this if it supports Clang's Shadow
+> -	  Call Stack, has asm/scs.h, and implements runtime support for shadow
+> -	  stack switching.
+> +	  Call Stack and implements runtime support for shadow stack
+> +	  switching.
+>  
+>  config SHADOW_CALL_STACK
+>  	bool "Clang Shadow Call Stack"
+> diff --git a/kernel/scs.c b/kernel/scs.c
+> index faf0ecd7b893..222a7a9ad543 100644
+> --- a/kernel/scs.c
+> +++ b/kernel/scs.c
+> @@ -10,7 +10,6 @@
 >  #include <linux/scs.h>
+>  #include <linux/slab.h>
+>  #include <linux/vmstat.h>
+> -#include <asm/scs.h>
 >  
-> -/* Allocate a static per-CPU shadow stack */
-> -#define DEFINE_SCS(name)						\
-> -	DEFINE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], name)	\
-> -
->  DEFINE_SCS(irq_shadow_call_stack);
->  
->  #ifdef CONFIG_ARM_SDE_INTERFACE
-> diff --git a/include/linux/scs.h b/include/linux/scs.h
-> index 2fd3df50e93e..6dec390cf154 100644
-> --- a/include/linux/scs.h
-> +++ b/include/linux/scs.h
-> @@ -26,6 +26,10 @@
->  /* An illegal pointer value to mark the end of the shadow stack. */
->  #define SCS_END_MAGIC		(0x5f6UL + POISON_POINTER_DELTA)
->  
-> +/* Allocate a static per-CPU shadow stack */
-> +#define DEFINE_SCS(name)						\
-> +	DEFINE_PER_CPU(unsigned long [SCS_SIZE/sizeof(long)], name)	\
-> +
->  #define task_scs(tsk)		(task_thread_info(tsk)->scs_base)
->  #define task_scs_sp(tsk)	(task_thread_info(tsk)->scs_sp)
+>  static struct kmem_cache *scs_cache;
 >  
 > -- 
 > 2.26.2.761.g0e0b3e54be-goog
