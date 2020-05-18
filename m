@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 005C31D83FF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:09:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DC171D8400
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 20:10:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C4cnZkdbv0xBcQrWH8g/J6r8fFE9QXpaeZaRpRx402Y=; b=YEwfQKQCWPrmjw
-	kGZQI6b1BXP31yDlYhBuoObwS8CdyX3fQPilNKrNtzF+5NNuTFVgB0+E/h6RoRcu2xXnRf4RqYqBG
-	1X9t9DS6aKM6GvJmlCBJWlAJzybrPELfNFPnFSyIeroM8w1iHaJSXQQcqe3RMzYqh+d8BXgTynlKI
-	MWpg4iSqwMOam0hKyyVnBnTcxMLICkJdRFIDig6ViRlx7oIJM6oPa6XKi9rI/CS5PGawCw8eO2Zz3
-	mEPDQecCK6mDKj4yUKYE8UxTLI43qDorGM1m4sQdjkenGnRMjoAU1LfaBnMc9nPCyQUKyDz3E/GdI
-	S244wi/E+zB38MmXfUog==;
+	List-Owner; bh=8i07Rs2OgDjQV+aj8zn0NVcAVMaWrwagAPfI+4vX4QE=; b=HViqHon4izttKU
+	bbQ3wH0zWayOU0yY2L8ukFv9W8ALDeW6+oS6lb7evskzartYrVe6FIGFRyPU6XNvZold/UEuy3R++
+	bJpfmV60vgp1hHdrkBuhOcdA0iq+FyDqGgpH1+4dEdAXM6iyzEfFdS4lt8tR26wSYsnM7DFwS9e9Q
+	WpVx5CXiApSimjvbAG4M5ZhEvRXsmNysTcbZbs37CRXFDLrcxs8fvMEhgNPRkqvd5/8Qa9cRskGCg
+	rDS8wXGpj7T/hpQShchSuOUHCvC1/0Ts3HFZNCLmz63gOPg3aJLjwERGHEi1z+UklgnRpkvGOdkzq
+	NLgK9i40vrSiFic2otzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jakCu-0002o3-PA; Mon, 18 May 2020 18:09:44 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1jakD8-00037n-FX; Mon, 18 May 2020 18:09:58 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jak6T-0003Vz-E9
+ id 1jak6T-0003We-Uq
  for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 18:03:07 +0000
-Received: by mail-pl1-x642.google.com with SMTP id k19so4534206pll.9
+Received: by mail-pf1-x443.google.com with SMTP id b190so5307810pfg.6
  for <linux-arm-kernel@lists.infradead.org>;
  Mon, 18 May 2020 11:03:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=HaLIE01l00hWoIXZtVguX/ou+2+ENTVPVwBzESc1vbA=;
- b=SEJJxAMzr8CzW+Zh0rEoRRWoKYrYIvwibnpKI1ZUfK56e3bZOhCqLvzIC8Zslb2Hd3
- LOero3rx5jB37CWsFrReg8t5NaIL7MLFUEb32xHWcp0fWD/S9oevzn3BaKph5WblX2ny
- jBSsVRuevdayqz5vXCdK5bMUJ3mWb9lOoHYwf4FhZmyfeL2EHKGt+6Twr11vEOjE8wh+
- ZLCttBmzmPChUG8oVXagvFLiV5pxp5oJsBB7MViKgBaJTWbxRSZEym9u/8aHgCyjptk6
- jsUIl/W2VLEZcFAsUVjor2YzQsO7cYYvoR6nUiA/lS4yD/q/bhdr+vnhvwKfITIkLlt/
- AHhA==
+ bh=dq8B5i493pOtcT+TOE4LZPewgBRMXjn1BYe4NBtmAVw=;
+ b=kwiG2DaYFYwGC4mYVBNRxgPJSCEynjYsLPLlusJkO2YkopPhauLwYOY2iFjCQL2b4q
+ WeDLAUulKO0ZDZbjNWqGX27zghfaDZHM0aVX4oIJ99E8CoJGMoUORLq/0sNHydqzD3dT
+ MS7tqq1KfO2GtdVO5teJQJQh3H4jMYxvv6/3M9083Kve+lH7HekrXR4neNCl+wTbptze
+ oYO83gU3lrrAXSSHBdiUaIUY+zG9tU2mS1bImEBLav6bfFMPUbEMRlfwhgUY+Qgl3sXY
+ nKh1555HZ/i0xZ3JOYAqQBNR19VMEqj0EQZiPLeOR99FWES58545CxqwCkLmbAUrE1A5
+ vkhQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=HaLIE01l00hWoIXZtVguX/ou+2+ENTVPVwBzESc1vbA=;
- b=XCMeLfSTYMeFEms07lBfAQ24dO1s793sldciJFOuVVa1I48ShNxjwsI4gBsR7XEvSZ
- Nxl8kAVnWTcCTqYk+gW0Rzk9hdVOoB9FQm10hYlKrQojsE7z1UHImQ+3t9TEArkdwXCv
- h9x8M6QNzNuiU6wp95GVEHjW6WVJBum4harh9eDdtsWRv9Mio3Tf/Sz8/QydE4JwVDZm
- 8/InLRF6w6HxU0Y+Q18low3/+CcDfT3i+CzSebCIXfRSiq/X8rD63wE8xTbHLvtnlaVR
- 2rZPjxLidl2HGo++DrF8r+shtJU/VnabRb7L25YwZcEtydr09nxRfNw5Fn19PqHb8KaG
- CIcA==
-X-Gm-Message-State: AOAM530xqss5pG5dFHeNtZB0ITnliZ7VfWyCaoz0CIlFR01lw3tfE+VQ
- ZB0glWwT24g+07hGvGy52FUWU0+bJPU=
-X-Google-Smtp-Source: ABdhPJw/OFz2/1zN427pY+gekNC89H4JtZRo1SWQgm2et1Lsam3qS68YEbQrigdODkHYyAWu2sPnOg==
-X-Received: by 2002:a17:90b:798:: with SMTP id
- l24mr644146pjz.208.1589824984247; 
+ bh=dq8B5i493pOtcT+TOE4LZPewgBRMXjn1BYe4NBtmAVw=;
+ b=oIFrA8QESpXtTi+qNtqbOkJNLlJcTITTA49jakxS1C5T5ozcA8d8ZT/j2OdWwPrp4g
+ kkVvPTdAn3eJBb8M+fq2lXMYm/YKVjC3rWoi/3/bZCwt8D8cCSmxPWydryMCB9zb7UvC
+ koZ+DqwjAhhXLxRHL1S3ge2FB8Xo067X+zMOY8taBzUTNQhX5UR169Bggsx+oKK9zPo8
+ pFEM/1pOnfMj0KJnQ6pam3BiFSzyQX5c/Z1gGd/v+fnYDV0Rlojsq8Hok09O2uyrrPYF
+ rG66V1fH7vGQy/jTxnA1hBdGsIONuTTyDmTNzVsh81U8HGxQCNaefK2TpXcs1pUIyme/
+ tJ0w==
+X-Gm-Message-State: AOAM533lWsAToOzs0SbNmwSO5hSu56o+bpssMntKXOIlMBUC/8YX9dVL
+ tubNk6ELtaI3aXOkdEZUiTLG+IbzGR8=
+X-Google-Smtp-Source: ABdhPJyZmcg9BxVanpdURFIT6L3+3OVgOgKdS/p4UZo9QOwZvN+bOXiG9eznhx2sFBxLRpQvbTqW3w==
+X-Received: by 2002:a63:33ca:: with SMTP id
+ z193mr16553439pgz.210.1589824984972; 
  Mon, 18 May 2020 11:03:04 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id v3sm9212314pfv.186.2020.05.18.11.03.03
+ by smtp.gmail.com with ESMTPSA id v3sm9212314pfv.186.2020.05.18.11.03.04
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 11:03:03 -0700 (PDT)
+ Mon, 18 May 2020 11:03:04 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 21/23] coresight: etm4x: Fix use-after-free of per-cpu etm
- drvdata
-Date: Mon, 18 May 2020 12:02:40 -0600
-Message-Id: <20200518180242.7916-22-mathieu.poirier@linaro.org>
+Subject: [PATCH 22/23] coresight: cti: Add CPU Hotplug handling to CTI driver
+Date: Mon, 18 May 2020 12:02:41 -0600
+Message-Id: <20200518180242.7916-23-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200518180242.7916-1-mathieu.poirier@linaro.org>
 References: <20200518180242.7916-1-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_110305_574282_F6D1E9CC 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20200518_110306_179401_4C423B3A 
+X-CRM114-Status: GOOD (  18.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,130 +104,178 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
+From: Mike Leach <mike.leach@linaro.org>
 
-etm probe could be deferred due to the dependency in the trace
-path chain and may be retried. We need to clear the per-cpu
-etmdrvdata entry for the etm in case of a failure to avoid
-use-after-free cases as reported below:
+Adds registration of CPU start and stop functions to CPU hotplug
+mechanisms - for any CPU bound CTI.
 
-KASAN use-after-free bug in etm4_cpu_pm_notify():
+Sets CTI powered flag according to state.
+Will enable CTI on CPU start if there are existing enable requests.
 
-[    8.574566] coresight etm0: CPU0: ETM v4.2 initialized
-[    8.581920] BUG: KASAN: use-after-free in etm4_cpu_pm_notify+0x580/0x2024
-[    8.581925] Read of size 8 at addr ffffff813304f8c8 by task swapper/3/0
-[    8.581927]
-[    8.581934] CPU: 3 PID: 0 Comm: swapper/3 Tainted: G S      W         5.4.28 #314
-[    8.587775] coresight etm1: CPU1: ETM v4.2 initialized
-[    8.594195] Call trace:
-[    8.594205]  dump_backtrace+0x0/0x188
-[    8.594209]  show_stack+0x20/0x2c
-[    8.594216]  dump_stack+0xdc/0x144
-[    8.594227]  print_address_description+0x3c/0x494
-[    8.594232]  __kasan_report+0x144/0x168
-[    8.601598] coresight etm2: CPU2: ETM v4.2 initialized
-[    8.602563]  kasan_report+0x10/0x18
-[    8.602568]  check_memory_region+0x1a4/0x1b4
-[    8.602572]  __kasan_check_read+0x18/0x24
-[    8.602577]  etm4_cpu_pm_notify+0x580/0x2024
-[    8.665945]  notifier_call_chain+0x5c/0x90
-[    8.670166]  __atomic_notifier_call_chain+0x90/0xf8
-[    8.675182]  cpu_pm_notify+0x40/0x6c
-[    8.678858]  cpu_pm_enter+0x38/0x80
-[    8.682451]  psci_enter_idle_state+0x34/0x70
-[    8.686844]  cpuidle_enter_state+0xb8/0x20c
-[    8.691143]  cpuidle_enter+0x38/0x4c
-[    8.694820]  call_cpuidle+0x3c/0x68
-[    8.698408]  do_idle+0x1a0/0x280
-[    8.701729]  cpu_startup_entry+0x24/0x28
-[    8.705768]  secondary_start_kernel+0x15c/0x170
-[    8.710423]
-[    8.711972] Allocated by task 242:
-[    8.715473]  __kasan_kmalloc+0xf0/0x1ac
-[    8.719426]  kasan_slab_alloc+0x14/0x1c
-[    8.723375]  __kmalloc_track_caller+0x23c/0x388
-[    8.728040]  devm_kmalloc+0x38/0x94
-[    8.731632]  etm4_probe+0x48/0x3c8
-[    8.735140]  amba_probe+0xbc/0x158
-[    8.738645]  really_probe+0x144/0x408
-[    8.742412]  driver_probe_device+0x70/0x140
-[    8.746716]  __device_attach_driver+0x9c/0x110
-[    8.751287]  bus_for_each_drv+0x90/0xd8
-[    8.755236]  __device_attach+0xb4/0x164
-[    8.759188]  device_initial_probe+0x20/0x2c
-[    8.763490]  bus_probe_device+0x34/0x94
-[    8.767436]  device_add+0x34c/0x3e0
-[    8.771029]  amba_device_try_add+0x68/0x440
-[    8.775332]  amba_deferred_retry_func+0x48/0xc8
-[    8.779997]  process_one_work+0x344/0x648
-[    8.784127]  worker_thread+0x2ac/0x47c
-[    8.787987]  kthread+0x128/0x138
-[    8.791313]  ret_from_fork+0x10/0x18
-[    8.794993]
-[    8.796532] Freed by task 242:
-[    8.799684]  __kasan_slab_free+0x15c/0x22c
-[    8.803897]  kasan_slab_free+0x10/0x1c
-[    8.807761]  kfree+0x25c/0x4bc
-[    8.810913]  release_nodes+0x240/0x2b0
-[    8.814767]  devres_release_all+0x3c/0x54
-[    8.818887]  really_probe+0x178/0x408
-[    8.822661]  driver_probe_device+0x70/0x140
-[    8.826963]  __device_attach_driver+0x9c/0x110
-[    8.831539]  bus_for_each_drv+0x90/0xd8
-[    8.835487]  __device_attach+0xb4/0x164
-[    8.839431]  device_initial_probe+0x20/0x2c
-[    8.843732]  bus_probe_device+0x34/0x94
-[    8.847678]  device_add+0x34c/0x3e0
-[    8.851274]  amba_device_try_add+0x68/0x440
-[    8.855576]  amba_deferred_retry_func+0x48/0xc8
-[    8.860240]  process_one_work+0x344/0x648
-[    8.864366]  worker_thread+0x2ac/0x47c
-[    8.868228]  kthread+0x128/0x138
-[    8.871557]  ret_from_fork+0x10/0x18
-[    8.875231]
-[    8.876782] The buggy address belongs to the object at ffffff813304f800
-[    8.876782]  which belongs to the cache kmalloc-1k of size 1024
-[    8.889632] The buggy address is located 200 bytes inside of
-[    8.889632]  1024-byte region [ffffff813304f800, ffffff813304fc00)
-[    8.901761] The buggy address belongs to the page:
-[    8.906695] page:ffffffff04ac1200 refcount:1 mapcount:0 mapping:ffffff8146c03800 index:0x0 compound_mapcount: 0
-[    8.917047] flags: 0x4000000000010200(slab|head)
-[    8.921799] raw: 4000000000010200 dead000000000100 dead000000000122 ffffff8146c03800
-[    8.929753] raw: 0000000000000000 0000000000100010 00000001ffffffff 0000000000000000
-[    8.937703] page dumped because: kasan: bad access detected
-[    8.943433]
-[    8.944974] Memory state around the buggy address:
-[    8.949903]  ffffff813304f780: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
-[    8.957320]  ffffff813304f800: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-[    8.964742] >ffffff813304f880: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-[    8.972157]                                               ^
-[    8.977886]  ffffff813304f900: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-[    8.985298]  ffffff813304f980: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
-[    8.992713] ==================================================================
-
-Fixes: f188b5e76aae9 ( "coresight: etm4x: Save/restore state across CPU low power states ")
-Reported-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Tested-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Mike Leach <mike.leach@linaro.org>
-Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Mike Leach <mike.leach@linaro.org>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/hwtracing/coresight/coresight-cti.c | 92 +++++++++++++++++++++
+ include/linux/cpuhotplug.h                  |  1 +
+ 2 files changed, 93 insertions(+)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index fb0f5f4f3a91..747afc875f91 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -1516,6 +1516,7 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
+diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+index be61c1705916..7e7ec6dd93c0 100644
+--- a/drivers/hwtracing/coresight/coresight-cti.c
++++ b/drivers/hwtracing/coresight/coresight-cti.c
+@@ -8,6 +8,7 @@
+ #include <linux/atomic.h>
+ #include <linux/bits.h>
+ #include <linux/coresight.h>
++#include <linux/cpuhotplug.h>
+ #include <linux/device.h>
+ #include <linux/io.h>
+ #include <linux/kernel.h>
+@@ -40,6 +41,12 @@ static DEFINE_MUTEX(ect_mutex);
+ #define csdev_to_cti_drvdata(csdev)	\
+ 	dev_get_drvdata(csdev->dev.parent)
+ 
++/* power management handling */
++static int nr_cti_cpu;
++
++/* quick lookup list for CPU bound CTIs when power handling */
++static struct cti_drvdata *cti_cpu_drvdata[NR_CPUS];
++
+ /*
+  * CTI naming. CTI bound to cores will have the name cti_cpu<N> where
+  * N is the CPU ID. System CTIs will have the name cti_sys<I> where I
+@@ -129,6 +136,35 @@ static int cti_enable_hw(struct cti_drvdata *drvdata)
+ 	return rc;
+ }
+ 
++/* re-enable CTI on CPU when using CPU hotplug */
++static void cti_cpuhp_enable_hw(struct cti_drvdata *drvdata)
++{
++	struct cti_config *config = &drvdata->config;
++	struct device *dev = &drvdata->csdev->dev;
++
++	pm_runtime_get_sync(dev->parent);
++	spin_lock(&drvdata->spinlock);
++	config->hw_powered = true;
++
++	/* no need to do anything if no enable request */
++	if (!atomic_read(&drvdata->config.enable_req_count))
++		goto cti_hp_not_enabled;
++
++	/* try to claim the device */
++	if (coresight_claim_device(drvdata->base))
++		goto cti_hp_not_enabled;
++
++	cti_write_all_hw_regs(drvdata);
++	config->hw_enabled = true;
++	spin_unlock(&drvdata->spinlock);
++	return;
++
++	/* did not re-enable due to no claim / no request */
++cti_hp_not_enabled:
++	spin_unlock(&drvdata->spinlock);
++	pm_runtime_put(dev->parent);
++}
++
+ /* disable hardware */
+ static int cti_disable_hw(struct cti_drvdata *drvdata)
+ {
+@@ -620,6 +656,44 @@ static void cti_remove_conn_xrefs(struct cti_drvdata *drvdata)
+ 	}
+ }
+ 
++/* CPU HP handlers */
++static int cti_starting_cpu(unsigned int cpu)
++{
++	struct cti_drvdata *drvdata = cti_cpu_drvdata[cpu];
++
++	if (!drvdata)
++		return 0;
++
++	cti_cpuhp_enable_hw(drvdata);
++	return 0;
++}
++
++static int cti_dying_cpu(unsigned int cpu)
++{
++	struct cti_drvdata *drvdata = cti_cpu_drvdata[cpu];
++
++	if (!drvdata)
++		return 0;
++
++	spin_lock(&drvdata->spinlock);
++	drvdata->config.hw_powered = false;
++	coresight_disclaim_device(drvdata->base);
++	spin_unlock(&drvdata->spinlock);
++	return 0;
++}
++
++/* release PM registrations */
++static void cti_pm_release(struct cti_drvdata *drvdata)
++{
++	if (drvdata->ctidev.cpu >= 0) {
++		if (--nr_cti_cpu == 0) {
++			cpuhp_remove_state_nocalls(
++				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
++		}
++		cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
++	}
++}
++
+ /** cti ect operations **/
+ int cti_enable(struct coresight_device *csdev)
+ {
+@@ -655,6 +729,7 @@ static void cti_device_release(struct device *dev)
+ 
+ 	mutex_lock(&ect_mutex);
+ 	cti_remove_conn_xrefs(drvdata);
++	cti_pm_release(drvdata);
+ 
+ 	/* remove from the list */
+ 	list_for_each_entry_safe(ect_item, ect_tmp, &ect_net, node) {
+@@ -730,6 +805,22 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+ 		goto err_out;
+ 	}
+ 
++	/* setup CPU power management handling for CPU bound CTI devices. */
++	if (drvdata->ctidev.cpu >= 0) {
++		cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
++		if (!nr_cti_cpu++) {
++			cpus_read_lock();
++			ret = cpuhp_setup_state_nocalls_cpuslocked(
++				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
++				"arm/coresight_cti:starting",
++				cti_starting_cpu, cti_dying_cpu);
++
++			cpus_read_unlock();
++			if (ret)
++				goto err_out;
++		}
++	}
++
+ 	/* create dynamic attributes for connections */
+ 	ret = cti_create_cons_sysfs(dev, drvdata);
+ 	if (ret) {
+@@ -768,6 +859,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
  	return 0;
  
- err_arch_supported:
-+	etmdrvdata[drvdata->cpu] = NULL;
- 	if (--etm4_count == 0) {
- 		etm4_cpu_pm_unregister();
+ err_out:
++	cti_pm_release(drvdata);
+ 	return ret;
+ }
  
+diff --git a/include/linux/cpuhotplug.h b/include/linux/cpuhotplug.h
+index 77d70b633531..6dc7332307ca 100644
+--- a/include/linux/cpuhotplug.h
++++ b/include/linux/cpuhotplug.h
+@@ -142,6 +142,7 @@ enum cpuhp_state {
+ 	CPUHP_AP_ARM_XEN_STARTING,
+ 	CPUHP_AP_ARM_KVMPV_STARTING,
+ 	CPUHP_AP_ARM_CORESIGHT_STARTING,
++	CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
+ 	CPUHP_AP_ARM64_ISNDEP_STARTING,
+ 	CPUHP_AP_SMPCFD_DYING,
+ 	CPUHP_AP_X86_TBOOT_DYING,
 -- 
 2.20.1
 
