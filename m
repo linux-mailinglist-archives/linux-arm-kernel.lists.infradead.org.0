@@ -2,71 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F9631D7FBB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 19:10:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AA961D7FC2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 19:11:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mE+rhMCqcRDaZjUTsKjiZ7xGvjMNrngb9K/+cNNKKqY=; b=jC2FXP43Nf8pWw
-	EWvNrVwuY9nqBGGr6Hfa8gPf3oKY9jnkwTM2u/wj3FvWQE6QFAIwyOTIWaYm1132m5S10M3bWfceS
-	eDeco1vNBCiH5xe+VYJqbWlr1PmijmRo3G4h4CwIpXIH1Zj7+IbMfuPP1kvn/NTNjZZUxiI+lX6d9
-	/puT7rahmcH1sizBToJqsXB2EcmJ0zDnLyzYDz6HjHWHMJdu6ZZYujnRajEmw8Fj2Q0oZoZ07RS+V
-	c3ta1hOR/SfL3H/z2ewfoLQ3zGWuJypuMer5UspqvVtMoPvaToAcUVTvuafPVJbz8Ayod/K7umxfL
-	xgrjY/4amta8EP0d+Qnw==;
+	List-Owner; bh=Cu3kJkPP7kljOoohScGNZtrGk/kNtZf/xW6mG77Q3gs=; b=LD9XbohXiH4C/h
+	41zh73QCkQNmsO5kLPRuFCOE6YXWGaSOU+PLSHIgDzOUOZJol73jEHqS78/beZtV6D4kRLLfOHnFx
+	1+p+KxIDfr9LOgZsfbiZSmHtC3KxWbYjtgicS90hqUrmo5CM1iQHZCOLgwR6WQcghuvvcHHBycMtS
+	LfTTB5bqMY8pcAgSlYbeyYWLnus0nov1GL8NEvACn1uk6K11HLGyuLA7Ngc6ptW0OGVvWqFihzE2s
+	JzTQZgtn9Ys3gRTRWPlZFBN2d9/+hEePiinDzWsPAnJiE+Z8fWlJ+QtEH7o3ii8UGwYmq1QNUO0+2
+	mlLF2yXupzX8PUYqmktg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jajGy-0005FO-TB; Mon, 18 May 2020 17:09:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jajIa-0008C8-Se; Mon, 18 May 2020 17:11:32 +0000
+Received: from smtprelay0251.hostedemail.com ([216.40.44.251]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jajGl-0005A0-Qo
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 17:09:41 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 09D96207E8;
- Mon, 18 May 2020 17:09:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589821779;
- bh=n3Jpm9TY854YSFMuLHwI+o4mk5x9P1AZ1cqMTatvLiQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=V8L67bWuzL7d4qlbk48Otx7KYfhX0YF5j+C/FGzKYy7zntJaLwj/00MxWZCRYu2aR
- XIPzulnbJQY2ZCLWNImokFU8DgFzTt/RrzaMWPM28+kKmeRqyQ7uUlq5ynve8p7Hxt
- jU5kYqCUHm6B0xu6x5HEnbPzhPAVedwMsH5HctNs=
-Date: Mon, 18 May 2020 18:09:34 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V2] arm64/cpufeature: Drop open encodings while
- extracting parange
-Message-ID: <20200518170934.GT32394@willie-the-truck>
-References: <1589360614-1164-1-git-send-email-anshuman.khandual@arm.com>
- <20200518165958.GS32394@willie-the-truck>
+ id 1jajIS-000871-GY; Mon, 18 May 2020 17:11:25 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay01.hostedemail.com (Postfix) with ESMTP id DDE31100E7B40;
+ Mon, 18 May 2020 17:11:18 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2393:2553:2559:2562:2828:3138:3139:3140:3141:3142:3353:3622:3865:3866:3867:3868:3871:4321:5007:7576:7903:10004:10400:10848:11026:11232:11658:11914:12043:12296:12297:12438:12555:12740:12760:12895:12986:13069:13255:13311:13357:13439:14096:14097:14181:14659:14721:21080:21451:21627:30054:30090:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:3, LUA_SUMMARY:none
+X-HE-Tag: badge74_7fac34a359a27
+X-Filterd-Recvd-Size: 2431
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf08.hostedemail.com (Postfix) with ESMTPA;
+ Mon, 18 May 2020 17:11:17 +0000 (UTC)
+Message-ID: <06434e4d5980b17a1cacee80369087cbd7a8cbe0.camel@perches.com>
+Subject: Re: [PATCH][next] i2c: mediatek: fix integer overflow on an integer
+ multiplication
+From: Joe Perches <joe@perches.com>
+To: Wolfram Sang <wsa@kernel.org>, Colin King <colin.king@canonical.com>, 
+ qii.wang@mediatek.com
+Date: Mon, 18 May 2020 10:11:16 -0700
+In-Reply-To: <20200518165928.GA5109@ninjato>
+References: <20200518165529.57821-1-colin.king@canonical.com>
+ <20200518165928.GA5109@ninjato>
+User-Agent: Evolution 3.36.1-2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200518165958.GS32394@willie-the-truck>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_100939_901522_E350C3FB 
-X-CRM114-Status: GOOD (  13.85  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200518_101124_616124_5E1BD962 
+X-CRM114-Status: GOOD (  14.72  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.251 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,54 +74,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Marc Zyngier <maz@kernel.org>, kvmarm@lists.cs.columbia.edu,
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-i2c@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 05:59:59PM +0100, Will Deacon wrote:
-> On Wed, May 13, 2020 at 02:33:34PM +0530, Anshuman Khandual wrote:
-> > Currently there are multiple instances of parange feature width mask open
-> > encodings while fetching it's value. Even the width mask value (0x7) itself
-> > is not accurate. It should be (0xf) per ID_AA64MMFR0_EL1.PARange[3:0] as in
-> > ARM ARM (0487F.a). Replace them with cpuid_feature_extract_unsigned_field()
-> > which can extract given standard feature (4 bits width i.e 0xf mask) field.
+On Mon, 2020-05-18 at 18:59 +0200, Wolfram Sang wrote:
+> On Mon, May 18, 2020 at 05:55:29PM +0100, Colin King wrote:
+> > From: Colin Ian King <colin.king@canonical.com>
 > > 
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Marc Zyngier <maz@kernel.org>
-> > Cc: James Morse <james.morse@arm.com>
-> > Cc: kvmarm@lists.cs.columbia.edu
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: linux-kernel@vger.kernel.org
+> > Currently the calculation of sample_ns is using a 32 bit integer
+> > multiplication and can potentially overflow. Fix this by making the
+> > constant a long long to use a 64 bit multiply and hence
+> > avoid an overflow.
 > > 
-> > Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> > Addresses-Coverity: ("Unintentional integer overflow")
+> > Fixes: 5f1ae73d538a ("i2c: mediatek: Add i2c ac-timing adjust support")
+> > Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> 
+> CCing the patch author.
+> 
 > > ---
-> > Changes in V2:
+> >  drivers/i2c/busses/i2c-mt65xx.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
 > > 
-> > - Used cpuid_feature_extract_unsigned_field() per Mark
-> > 
-> > Changes in V1: (https://patchwork.kernel.org/patch/11541913/)
-> > 
-> >  arch/arm64/kernel/cpufeature.c |  3 ++-
-> >  arch/arm64/kvm/reset.c         | 11 ++++++++---
-> >  2 files changed, 10 insertions(+), 4 deletions(-)
-> 
-> Acked-by: Will Deacon <will@kernel.org>
-> 
-> I'm assuming Marc will take this, but let me know if it should go via arm64
-> instead (where we have a bunch of other cpufeature stuff queued).
+> > diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
+> > index 702061805925..c93492b997ce 100644
+> > --- a/drivers/i2c/busses/i2c-mt65xx.c
+> > +++ b/drivers/i2c/busses/i2c-mt65xx.c
+> > @@ -551,7 +551,7 @@ static int mtk_i2c_check_ac_timing(struct mtk_i2c *i2c,
+> >  	const struct i2c_spec_values *spec;
+> >  	unsigned int su_sta_cnt, low_cnt, high_cnt, max_step_cnt;
+> >  	unsigned int sda_max, sda_min, clk_ns, max_sta_cnt = 0x3f;
+> > -	long long sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src;
+> > +	long long sample_ns = (1000000000LL * (sample_cnt + 1)) / clk_src;
 
-Hmm, but having just spotted [1], it looks like we might need a bit of
-co-ordination here. Marc?
+unsigned long long?
 
-Will
 
-[1] https://lore.kernel.org/r/1589248647-22925-1-git-send-email-anshuman.khandual@arm.com
 
 _______________________________________________
 linux-arm-kernel mailing list
