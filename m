@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20B561D73F1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 11:25:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB6A61D741B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 11:32:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sIx2Dwf3ZQ0o8hU7Enxh1RcSBycKz3sQBIxXU+OWwLg=; b=DthpxQ4FIJeFKw
-	FVKnifAGC82EG+PIo+ZCLTHjqm55/1bZuUu0b6tYKnCqn/yKMqC2g6CTD2K3Q0PH1GGS5hrxZvrmq
-	719RlfxJSkR4pkCwns/UVscTZ8mT/MLQuONlfV0ehzX2pcby2FkpDmQGlIh2lWygCWLubCoVWNeJM
-	l/B7GFqsRwK/zD6y3muOjADdWbjL+wGEVJfpmem5bk8YLdrj2exJlHMOqhyPr7JMnkw7tYfMhnCmk
-	iHOcpB1XIZAZZAFWSLNc8++G6kcJXP0HODXTiBgPJXLJboV1wUKuCUgR5UVVujXx4qlg9yt3gNSCa
-	EJMkxVSYS5lTd2yZ6zUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W+x2mAq7IRgSKDRtdm+8Iym6NkS58cIRWO0WA36fqd0=; b=ZsljsLVp8mRPyK
+	sif8rQrhL/Dw5PSZAGUYsibG5ekcBaHBQXwDgVoiVDwNi3jA9qBkKje7s6G9Di6mml1cFiwYpIUvh
+	OmgdhziuhLG6gSH3u8u5cIq0Y8rMcn2j2I7p/O2CIcbg+UyL+ZCU0Fb7FkqQkGjmTgYltPlA9Y8wB
+	YUCyLrGhMCPemPGzlThjrIwRuYooe3UMyAu/WfTNA+xjmjE/tV+BXCHqL4Tgn7vFBXrK6pexxnreS
+	Zw1yuHJ6CjNEQpJ6f9LEjzQa+959Ikz+CuaEwTYm1bS9K49RmrNFDqezav/zLAYCJxLkKDQOdpbTk
+	ZDYYj5ViJ7zEYpXbvWzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jac1S-0006AD-Pz; Mon, 18 May 2020 09:25:22 +0000
+	id 1jac8K-0004bV-Pn; Mon, 18 May 2020 09:32:28 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jac13-00067o-KJ; Mon, 18 May 2020 09:24:59 +0000
-X-UUID: 6b503ae948b542649b259568cd64efcf-20200518
+ id 1jac89-0004ZR-9P; Mon, 18 May 2020 09:32:18 +0000
+X-UUID: 1ac67d4b51ae49ee9c71ed35befdf073-20200518
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=0DTYtg7DH/aaZsHajF1M0GEhpPDj6HE4U9Su4EW4ZBg=; 
- b=Va6hluz4/bYSptacD8bkhsa7nqDZ2RFMyTranQOalM8PvJkJFDufyvfFqfxrt16Eu3JTqNK1zXkkWjaYPe4/rTWrbAF32VKsT7VVlBavvczJ9jN19kkFozRrtllCR0Kyh2vL+FHwLlmDezX0unYUnglb0LuuuzxNYqAEFeq5e5w=;
-X-UUID: 6b503ae948b542649b259568cd64efcf-20200518
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=xOZ4MeTRfS9iV1mfQHvql2zLgBjMD0iQhXwC9YzCwxc=; 
+ b=tpTvXBQirvN7i/oouboCalTvovnhTaIagoshnPCqqT5a8shY4howIT6LF/hJjLPLOBH+drWfFIZBMahlMxO1bOxdNXfYGhot3jRuPSAu7PEd9xks5so2Oi92kMbRDEOs/25NTexTIJ07YZv5GTX5eLTD8th6+5ONxtcPwSVl8/U=;
+X-UUID: 1ac67d4b51ae49ee9c71ed35befdf073-20200518
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <roger.lu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 546234437; Mon, 18 May 2020 01:24:44 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 18 May 2020 02:24:48 -0700
+ with ESMTP id 511135093; Mon, 18 May 2020 01:32:11 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 18 May 2020 02:24:53 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 18 May 2020 17:24:45 +0800
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 18 May 2020 17:24:47 +0800
 Received: from mtksdaap41.mediatek.inc (172.21.77.4) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Mon, 18 May 2020 17:24:45 +0800
+ Frontend Transport; Mon, 18 May 2020 17:24:46 +0800
 From: Roger Lu <roger.lu@mediatek.com>
 To: Kevin Hilman <khilman@kernel.org>, Rob Herring <robh+dt@kernel.org>,
  Nicolas Boichat <drinkcat@google.com>, Stephen Boyd <sboyd@kernel.org>
-Subject: [PATCH v8 0/3] PM / AVS: SVS: Introduce SVS engine
-Date: Mon, 18 May 2020 17:24:01 +0800
-Message-ID: <20200518092403.22647-1-roger.lu@mediatek.com>
+Subject: [PATCH v8 1/3] dt-bindings: power: avs: add mtk svs dt-bindings
+Date: Mon, 18 May 2020 17:24:02 +0800
+Message-ID: <20200518092403.22647-2-roger.lu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20200518092403.22647-1-roger.lu@mediatek.com>
+References: <20200518092403.22647-1-roger.lu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5934DDCDEAF0C437AC4DD8F51EBED5FD5EACA359D2BA842B5D2816D48513A4412000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_022457_664592_2F9B343D 
-X-CRM114-Status: UNSURE (   8.25  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200518_023217_337533_85F8182C 
+X-CRM114-Status: GOOD (  10.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,47 +99,163 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-1. SVS driver use OPP adjust event in [1] to update OPP table voltage part.
-2. SVS dts node refers to CPU opp table [2] and GPU opp table [3].
-3. SVS and thermal dts use the same thermal efuse [4].
-4. SVS dts needs power-domain [5][6] and PMIC regulator [7].
+Document the binding for enabling mtk svs on MediaTek SoC.
 
-[1] https://patchwork.kernel.org/patch/11193513/
-[2] https://patchwork.kernel.org/patch/11304935/
-[3] https://patchwork.kernel.org/patch/11423009/
-[4] https://patchwork.kernel.org/patch/11316495/
-[5] https://lore.kernel.org/patchwork/patch/1236875/
-[6] https://lore.kernel.org/patchwork/patch/1236878/
-[7] https://patchwork.kernel.org/patch/11284617/
-
-pending discussion:
-- SVS sub-node architecture concern in below patch.
-https://lore.kernel.org/patchwork/patch/1175994/
-https://lore.kernel.org/patchwork/patch/1175994/
-
-changes since v7:
-- Add "mtk_svs.yaml" for device-tree binding document.
-- Add svs_add_thermal_device_link() in driver for svs device (consumer)
-to link thermal device (supplier).
-- replace pm_qos_add_request() with cpu_latency_qos_add_request() for
-letting CPUs leave idle-off state.
-
-Roger Lu (3):
-  dt-bindings: power: avs: add mtk svs dt-bindings
-  arm64: dts: mt8183: add svs device information
-  PM / AVS: SVS: Introduce SVS engine
-
- .../bindings/power/avs/mtk_svs.yaml           |  141 ++
- arch/arm64/boot/dts/mediatek/mt8183-evb.dts   |   16 +
- arch/arm64/boot/dts/mediatek/mt8183.dtsi      |   41 +
- drivers/power/avs/Kconfig                     |   10 +
- drivers/power/avs/Makefile                    |    1 +
- drivers/power/avs/mtk_svs.c                   | 2119 +++++++++++++++++
- include/linux/power/mtk_svs.h                 |   23 +
- 7 files changed, 2351 insertions(+)
+Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+---
+ .../bindings/power/avs/mtk_svs.yaml           | 141 ++++++++++++++++++
+ 1 file changed, 141 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/power/avs/mtk_svs.yaml
- create mode 100644 drivers/power/avs/mtk_svs.c
- create mode 100644 include/linux/power/mtk_svs.h
+
+diff --git a/Documentation/devicetree/bindings/power/avs/mtk_svs.yaml b/Documentation/devicetree/bindings/power/avs/mtk_svs.yaml
+new file mode 100644
+index 000000000000..77ab606814ce
+--- /dev/null
++++ b/Documentation/devicetree/bindings/power/avs/mtk_svs.yaml
+@@ -0,0 +1,141 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/power/avs/mtk_svs.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Introduce SVS engine
++
++maintainers:
++  - Kevin Hilman <khilman@kernel.org>
++  - Nishanth Menon <nm@ti.com>
++
++description: |+
++  The SVS (Smart Voltage Scaling) engine is a piece of hardware which is
++  used to calculate optimized voltage values of several power domains,
++  e.g. CPU/GPU/CCI, according to chip process corner, temperatures,
++  and other factors. Then DVFS driver could apply those optimized voltage
++  values to reduce power consumption.
++
++properties:
++  compatible:
++    const: mediatek,mt8183-svs
++
++  reg:
++    description: Address range of the MTK SVS controller.
++    maxItems: 1
++
++  interrupts:
++    description: IRQ for the MTK SVS controller.
++    maxItems: 1
++
++  clocks:
++    description: Main clock for svs controller to work.
++
++  clock-names:
++    const: main
++
++  nvmem-cells:
++    maxItems: 2
++    description:
++      Phandle to the calibration data provided by a nvmem device.
++
++  nvmem-cell-names:
++    items:
++      - const: svs-calibration-data
++      - const: calibration-data
++
++patternProperties:
++  "^svs-(cpu-little|cpu-big|cci|gpu)$":
++    type: object
++    description:
++      Each subnode represents one SVS bank.
++        - svs-cpu-little (SVS bank device node of little CPU)
++        - svs-cpu-big (SVS bank device node of big CPU)
++        - svs-cci (SVS bank device node of CCI)
++        - svs-gpu (SVS bank device node of GPU)
++
++    properties:
++      compatible:
++       enum:
++         - mediatek,mt8183-svs-cpu-little
++         - mediatek,mt8183-svs-cpu-big
++         - mediatek,mt8183-svs-cci
++         - mediatek,mt8183-svs-gpu
++
++      power-domains:
++        description: Phandle to the associated power domain
++        maxItems: 1
++
++      operating-points-v2: true
++
++      vcpu-little-supply:
++        description: PMIC buck of little CPU
++
++      vcpu-big-supply:
++        description: PMIC buck of big CPU
++
++      vcci-supply:
++        description: PMIC buck of CCI
++
++      vgpu-spply:
++        description: PMIC buck of GPU
++
++    required:
++      - compatible
++      - operating-points-v2
++
++    additionalProperties: false
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++  - nvmem-cells
++  - nvmem-cell-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/mt8183-clk.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    #include <dt-bindings/interrupt-controller/irq.h>
++    #include <dt-bindings/power/mt8183-power.h>
++
++    svs: svs@1100b000 {
++        compatible = "mediatek,mt8183-svs";
++        reg = <0 0x1100b000 0 0x1000>;
++        interrupts = <GIC_SPI 127 IRQ_TYPE_LEVEL_LOW>;
++        clocks = <&infracfg CLK_INFRA_THERM>;
++        clock-names = "main";
++        nvmem-cells = <&svs_calibration>, <&thermal_calibration>;
++        nvmem-cell-names = "svs-calibration-data", "calibration-data";
++
++        svs_cpu_little: svs-cpu-little {
++            compatible = "mediatek,mt8183-svs-cpu-little";
++            operating-points-v2 = <&cluster0_opp>;
++            vcpu-little-supply = <&mt6358_vproc12_reg>;
++        };
++
++        svs_cpu_big: svs-cpu-big {
++            compatible = "mediatek,mt8183-svs-cpu-big";
++            operating-points-v2 = <&cluster1_opp>;
++            vcpu-big-supply = <&mt6358_vproc11_reg>;
++        };
++
++        svs_cci: svs-cci {
++            compatible = "mediatek,mt8183-svs-cci";
++            operating-points-v2 = <&cci_opp>;
++            vcci-supply = <&mt6358_vproc12_reg>;
++        };
++
++        svs_gpu: svs-gpu {
++            compatible = "mediatek,mt8183-svs-gpu";
++            power-domains = <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
++            operating-points-v2 = <&gpu_opp_table>;
++            vgpu-spply = <&mt6358_vgpu_reg>;
++        };
++    };
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
