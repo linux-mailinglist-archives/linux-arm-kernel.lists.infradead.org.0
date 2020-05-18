@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB0531D7D56
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:50:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C09461D7D5A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 17:51:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=VyHGoXeCRANIj0INN2H5cino1R8p2Y/sl8s0pKBu/gs=; b=ho3/AaaZ53DCzEnItFbKaxpMKj
-	kla2CJiXXD23KJga4fTkiAmBcNzyomyBxofwjpaQ2TSODnTXCLwwiDo5mbk75wrydj2xDle6VRmiU
-	TCxB/MQlgtTDUeIc4uVkO7aIY9Bx2bjVtpAA84sZfiiXxTtt/s4CdYlOCmIaF7Gs80VYZ8yTdww9F
-	WeynkM9ZXPEjpcfN1LxtD5oUOZ9KAszBwydQwOwcH7tJDG2L+FrKy3qr27j4z+4O5uEEusgeMfO0d
-	o/M6/CYp7z+TWNqZeu/3VtqmxhlwzQekQWbL9n1387sCZMTpj92RZkOiKhuq3s0Yh2cRX5YcbzWsK
-	Rft4A64Q==;
+	bh=8ckkQIj+bOlNHxy2DLzr/uUcLLZiIrJ3F7xVP0eVKII=; b=almneC6cxWQ6blJ/MjpEVDbeE0
+	tXzI4IY0lmwel1FkkfuyfL49VEw+UvbsYzbN35baUjpppSUpZ5d7e4UhgKgYrg1NHvREDAXgfgQip
+	uKCIaFO90mb61f6BtpEvYggBBG57SfMiPfnDMpBdh4baOwBg2lZ9SE9VvPsxrA7h1ZIsJz97Ow5te
+	IiRm8DTf6/OWb6Qyzm12EGjWZZvl2lPe9ET0n82W+Rgy9GMGYr97w32IqTGl05CxYlZOObETOkQ7Q
+	9NCeWPIPF32Pjnkor67Z38Uih43ccLnHjgG729AWt1B8/9ZRRPnvZJj9TFt8ntut/XXnYct6ihdfu
+	TJ/lVi5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jai2G-0005Nm-4V; Mon, 18 May 2020 15:50:36 +0000
+	id 1jai2Z-0005an-4Q; Mon, 18 May 2020 15:50:55 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jai1j-0002tY-EU
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 15:50:05 +0000
+ id 1jai1m-0003L9-Cm
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 15:50:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6A7FE11FB;
- Mon, 18 May 2020 08:50:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6B357101E;
+ Mon, 18 May 2020 08:50:05 -0700 (PDT)
 Received: from e107158-lin.cambridge.arm.com (e107158-lin.cambridge.arm.com
  [10.1.195.21])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 34BBB3F52E;
- Mon, 18 May 2020 08:50:01 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 36AB03F52E;
+ Mon, 18 May 2020 08:50:04 -0700 (PDT)
 From: Qais Yousef <qais.yousef@arm.com>
 To: Alan Stern <stern@rowland.harvard.edu>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: [RESEND] [PATCH v2 2/3] usb/xhci-plat: Set PM runtime as active on
- resume
-Date: Mon, 18 May 2020 16:49:30 +0100
-Message-Id: <20200518154931.6144-2-qais.yousef@arm.com>
+Subject: [RESEND] [PATCH v2 3/3] usb/ehci-platform: Set PM runtime as active
+ on resume
+Date: Mon, 18 May 2020 16:49:31 +0100
+Message-Id: <20200518154931.6144-3-qais.yousef@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200518154931.6144-1-qais.yousef@arm.com>
 References: <20200518154931.6144-1-qais.yousef@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_085003_570556_8D24D25E 
-X-CRM114-Status: GOOD (  10.95  )
+X-CRM114-CacheID: sfid-20200518_085006_570203_E0912799 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -82,6 +83,7 @@ pm_runtime_set_active() [1].
 
 [1] https://lore.kernel.org/lkml/20200323143857.db5zphxhq4hz3hmd@e107158-lin.cambridge.arm.com/
 
+Acked-by: Alan Stern <stern@rowland.harvard.edu>
 Signed-off-by: Qais Yousef <qais.yousef@arm.com>
 CC: Tony Prisk <linux@prisktech.co.nz>
 CC: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
@@ -91,30 +93,24 @@ CC: linux-arm-kernel@lists.infradead.org
 CC: linux-usb@vger.kernel.org
 CC: linux-kernel@vger.kernel.org
 ---
- drivers/usb/host/xhci-plat.c | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+ drivers/usb/host/ehci-platform.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/drivers/usb/host/xhci-plat.c b/drivers/usb/host/xhci-plat.c
-index 1d4f6f85f0fe..05cafef702a9 100644
---- a/drivers/usb/host/xhci-plat.c
-+++ b/drivers/usb/host/xhci-plat.c
-@@ -407,7 +407,15 @@ static int __maybe_unused xhci_plat_resume(struct device *dev)
- 	if (ret)
- 		return ret;
+diff --git a/drivers/usb/host/ehci-platform.c b/drivers/usb/host/ehci-platform.c
+index e4fc3f66d43b..e9a49007cce4 100644
+--- a/drivers/usb/host/ehci-platform.c
++++ b/drivers/usb/host/ehci-platform.c
+@@ -455,6 +455,10 @@ static int ehci_platform_resume(struct device *dev)
  
--	return xhci_resume(xhci, 0);
-+	ret = xhci_resume(xhci, 0);
-+	if (ret)
-+		return ret;
-+
+ 	ehci_resume(hcd, priv->reset_on_resume);
+ 
 +	pm_runtime_disable(dev);
 +	pm_runtime_set_active(dev);
 +	pm_runtime_enable(dev);
 +
-+	return 0;
- }
+ 	if (priv->quirk_poll)
+ 		quirk_poll_init(priv);
  
- static int __maybe_unused xhci_plat_runtime_suspend(struct device *dev)
 -- 
 2.17.1
 
