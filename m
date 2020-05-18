@@ -2,115 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2EEE1D70B0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 08:07:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE2C71D70B8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 08:09:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8GpSoW6qqrT1QQIloJqWVT8aBYNR5uSmfz/in4xqrwM=; b=Hrl0caxZWVrxUg
-	c0qAdl4Jeh8dQnnt7An4rPsujURNsiGQobXTbZ0ufsUyvukaMIPL6vJXGOwCXBmEBCvpRvj0alXjM
-	wfLaV/yVC7UhJuhLU8k1ykuk+inGvtLTXeqFKpAEh8KFcQzP5yiTivTD1g7OW7aIbGcP5l43NMlhr
-	Qfzxi5WyY+qJ0JuvPHcO1McMkfcNo5lzxvkqRNu85tUvUgr0VHr4AvmX5VhUjqsrZwiAqARmHhHME
-	ldYr4GNVYkasIMQ8kn9+WyQ9vNLPALBLK9/1UzMnr9lWUxwqPEDvC8m9OrksKUUIzQkRA4j4h5GJq
-	GNlL18bg5JtT1yvqpYAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Nc88+s6e5HqtH1IeOOansncQ/7w45y4GefQo+2NH6yU=; b=MZLTyG+7Zi71i5
+	kshkf9BcJeuC1IROOT+JSukBkT1eTkAJc9mJ2wSGHAa4MKAQ8sDhFNpfXVME6TLzKx0qnQqo+WRh0
+	zzmxQ/S6LwS3iHpjXOFaQrpZTSPEbiHZvlzLsn8m1vTkGqQ2bqDCU2mBY0rigrDDpmj7LiGKZ2zaa
+	PmeXUianksSbJfJFYOYh7ieQnIi7pXHa3hw+1+3i7PEiT7OvzCXryUrN0Eu/u+alJ4D3mwPkza0CI
+	FIEsvcZdrG9FJ8YtA3GZqFGqK9d4bMgLPVPPl18MnPQP3X7sGHJkoRheo2TN365CFZVEosloEihJk
+	nxl/g24JhfL/FiGCfEww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaYvm-00066T-3s; Mon, 18 May 2020 06:07:18 +0000
-Received: from mail-eopbgr80040.outbound.protection.outlook.com ([40.107.8.40]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1jaYxU-0006hF-NO; Mon, 18 May 2020 06:09:04 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaYve-00065h-EF
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 06:07:11 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=R3UXY4lz7i8GAosW/ApyJn27AXVZVQqKs1O+sLdb3Fg+crMwvwHfxonC7HHOmk5xsBvfdVtxXcRyPB27OaEG96YN7FEg3F7v+t4kiVTKkdNz6MFPsu+huuPP9G06+k4+QB8horrCCzwbOOJ70JI/43KN6bO6yneI8CR9kVltGPFWF46a311R4krFRNRJ8bFJrARW8YLA25ePJUFeqW2GwJqzW5Q1/T0C39FfztWRPK/oefQSxKyiLJOUVAq4rBetBKanjuFCPFZkUTy+ja2vA02Yf+1dEJt0lVimuvYKRHvahjhTHlV1v3y4bpKJi/FP3FVl6A0uPXvngpnDgcYwsg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3ST0tZy0Y7rv0d8NxB+N3vkZm/udbm7FfXU8+17PmPg=;
- b=Fav430/KKfjsAsl2LTHVgf80HTI4+D8J8uie4SKJSuhRNKKYh6Q4KlP9pf/YpAWpSvQ8PoaUGmuWWCqrcj7QOmXif3B5Gx/XB+yiWdtR5koQyMCUIX3xaU9EGJZfmhe0xdmVQmVOZkl1TSalPPtebIA9nin0oIp9LD4Rln7JaTz+QaPgrjNg5kTkjiavAxQOUEbJ6y6DSYii1so6AL9OvN5fFjoh0Zu3yUM1FCJqw5bu4o4oZJPhy+X1tWvhwZczN1F3hzm4aSmV1Hjur4iVj+KUmmEBVYfDnmAlYLwpg3RzF1RT5GBqnJS8NY80+uj3X/zdPdlqXmSSYabCmuxO/g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3ST0tZy0Y7rv0d8NxB+N3vkZm/udbm7FfXU8+17PmPg=;
- b=EpyjcPUtZJ4lrV0ZbcM5esdVkF9/ATyJuQPIu1xv+hjLMm9AffHE1et4AF9dObl1yXHUBlt4XcsAuG8kmIdhDGw3JUIrLD4oWtfWCnN7cPUvH5NJ4sOgOE/IhyFyn+IyHo4ApJR+3/9CnXzsgka+SKeUJY30HWvjSEiRcQOHIlo=
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB6695.eurprd04.prod.outlook.com (2603:10a6:20b:d8::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.27; Mon, 18 May
- 2020 06:07:06 +0000
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3000.033; Mon, 18 May 2020
- 06:07:06 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "thierry.reding@gmail.com"
- <thierry.reding@gmail.com>, "u.kleine-koenig@pengutronix.de"
- <u.kleine-koenig@pengutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "linux-pwm@vger.kernel.org"
- <linux-pwm@vger.kernel.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] dt-bindings: pwm: Convert mxs pwm to json-schema
-Thread-Topic: [PATCH] dt-bindings: pwm: Convert mxs pwm to json-schema
-Thread-Index: AQHWKeXny41UDiiW/0yEHY+vY7fj6qitPUuggAAaI4CAAAlg8A==
-Date: Mon, 18 May 2020 06:07:06 +0000
-Message-ID: <AM6PR04MB4966D0851412CE57C860B63C80B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
-References: <1589456470-2658-1-git-send-email-Anson.Huang@nxp.com>
- <AM6PR04MB4966B92CFFA23DD77748C77680B80@AM6PR04MB4966.eurprd04.prod.outlook.com>
- <DB3PR0402MB3916B5980C0681BFF3C08FE5F5B80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-In-Reply-To: <DB3PR0402MB3916B5980C0681BFF3C08FE5F5B80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: b331b911-28bc-4f9b-cf7a-08d7faf1b131
-x-ms-traffictypediagnostic: AM6PR04MB6695:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB66959CA5D8DC1DE3B23BB28C80B80@AM6PR04MB6695.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5516;
-x-forefront-prvs: 04073E895A
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: jrXs1gPjk5TV0iMEeCHY6Cdi/aLbRiqbx+KPHcB/vi+DLIulF7yuqS8Cf5W3ZW9MmfNAiGgIGMMSL2VxsjRtCiWRPfc6gVxd5I6TLY3CmL3HOMnY6w/c62vvAfKK3Yph+yuYZr88QSxIMeuf8L/EP/ZGDJYW4lZ9q3SVGUQpUdLX0kFfc61ZqFdYHoi74UAMSDei9ko0Byhz9CPd1tnwP6zJNE4tDlHtB4FrWquog7cuk74c17ottf6ZZJwKNagqKxrqG2SYMVAoLvaTBBefuRZ4tsMUsyWRYXb9j4hKzb+6q6tSvjEuRyIkw1KijficqJ24n2TaNYuf98c8v5E9vdLJk5O7gBYm9gTV2THJo6eRUm9ZTNYdT2NVCTWpGszcIejYrZdBOTVMK4NKW+pSJ6vvnJBPxF4cPQAvfv048GhDoImAgw+JiteEbMsMRtIansbFzLkqTiVnDhwPMLStTbs9yIfeCsihpWy3Is9NSrQ=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(376002)(396003)(366004)(39860400002)(136003)(4744005)(55016002)(5660300002)(8936002)(4326008)(8676002)(478600001)(186003)(33656002)(9686003)(7416002)(2906002)(316002)(86362001)(110136005)(26005)(64756008)(7696005)(53546011)(66476007)(66946007)(66556008)(76116006)(66446008)(71200400001)(44832011)(6506007)(52536014)(921003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: OWEyHn2laRt9Bf08PTNvL8QJkJiHql6pLIFZ+9mJb4M345UEZGs8dhgb4WB8aEC20svmGXSZJV81QU5C0VTD8DKsyVpMHOrZEwX54Aky2v7kKDbiGn7dsQeJfKdYIY50SNoHIlL8zwRXH92/lSeTYnZfkl9gxrKaud5icXCjVR/RLTh6fImrvhtOLL6m1u9xcsvTaMUfiTkaBUdR1WhK7rDdTGdWJE+Q8Q/jC82yDDOngqklgSTHjcAkf7F78D4AzW9o4oa8JrodZAS9jmAaL4mTDFUQNiMIFArZ69s6jyjo0Chbc+B8V2E4CvnbV+ANoM7JuOKVf8Ys9udWsEXi/kcUZiKBllTZ2RwIGj8cbl7iW+fhBVxbMRt+Qwm8BgH+CfmcpFr/R/5dD5tuUwyncYhyauOsCJEOFuwLqUaIqkBlpJZFi3HoZy7pCSc8/zONqZRkYBlPbDlVbfTq90JIwP8zpKlDPQSVc8vcpVr04aw=
+ id 1jaYxB-0006b3-5A; Mon, 18 May 2020 06:08:46 +0000
+Received: by mail-wm1-x343.google.com with SMTP id z4so6807314wmi.2;
+ Sun, 17 May 2020 23:08:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=gzDmmSRgID/AAT9U9NADJh+Q7oTNQ3LSGXH6EEbMns0=;
+ b=s3WBzOtQG0ZljGSteUJ2eRPFU1efr1bExm1oTwdqFkxMXumhLyZ2lZVMFcsVD0Ogw4
+ 6oGpVTwLaDHkoO6WCqexPfswEoaAK8HpgI+TJI5uj7WIXHCAf9lE017pHW3WE4l4IcBZ
+ Apbb1thutl/X57y+xux0VVIHQ4N+eglWBDjSeKzFoD0XlWBcZ5lCj6OULveC0hfKSgBi
+ aEaWNYQfScsjCUzYeAlCR+Qu70cDDpOV7oNE9hECvpH1t2fzMslk0c03S3QaCWy+FNro
+ Mgm2YA1uKMteGjkXRqX6xdAiIMDRKGDVbfnh8QkNXbMO8D9vxPPi+IzyvhkAoJo3AKRe
+ Bh8g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=gzDmmSRgID/AAT9U9NADJh+Q7oTNQ3LSGXH6EEbMns0=;
+ b=GxTgrivszvbKT8ijjLrcpTDK+lGwrfJg1uOnNuq13PUsIlr1SIX1z+WSoqFnRuKvJ4
+ 5FYNSNtSzRleX7ycx/hMrm7NpA2cPwOa1FTgYZZMvZXmSyc9iZCci/LFOTKt3D4B94L2
+ UV+Qje0DS4XxlaapMBcvApey/6WWVNuMdJYzY81wd2JXkrmpMUET7Ztj/C0q+5r+DST2
+ YXzir6GUxkm9a9YqM530CuP23GGxhSENL4jUMGuBMYNHrdB7MK4asgybsVvrgi7JxuQw
+ QxDuWQF0b7xRnGSzo3o6Z/Chz0iurCxRA491H341cPsYpuUtb2TqPNa4yWP7uKIEPtes
+ OBpQ==
+X-Gm-Message-State: AOAM531xAE0tvhmvIxueKiCnFWu5YwbNMT/pO6GFXgJ3ebNlNx6CBKIV
+ PzkIeRiG15/M8yzPyxEzLPs=
+X-Google-Smtp-Source: ABdhPJxHHbeWWsbf/7SLYQQSyy4HAmj400J9BP8xOtLUkcaJuTQaA8l4sft05aKFWuA6QJi4ZtJBCg==
+X-Received: by 2002:a05:600c:2dd0:: with SMTP id
+ e16mr18593643wmh.121.1589782123183; 
+ Sun, 17 May 2020 23:08:43 -0700 (PDT)
+Received: from localhost.localdomain
+ (p200300f137132e00428d5cfffeb99db8.dip0.t-ipconnect.de.
+ [2003:f1:3713:2e00:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id b19sm16120469wmd.26.2020.05.17.23.08.42
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 17 May 2020 23:08:42 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: ulf.hansson@linaro.org, linux-mmc@vger.kernel.org,
+ linux-amlogic@lists.infradead.org
+Subject: [PATCH] mmc: host: meson-mx-sdhc: fix building with
+ CONFIG_MMC_MESON_MX_SDHC=m
+Date: Mon, 18 May 2020 08:08:11 +0200
+Message-Id: <20200518060811.1499962-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: b331b911-28bc-4f9b-cf7a-08d7faf1b131
-X-MS-Exchange-CrossTenant-originalarrivaltime: 18 May 2020 06:07:06.2149 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: HyTdADYB0dCnezrAH613pc1I7rwhgRcwMlWb8I5gQ4PePndHO5Ins2+MLbaZpTGWniUs375i6/FISezrn568Xg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6695
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200517_230710_481249_A1E0616F 
-X-CRM114-Status: GOOD (  10.42  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200517_230845_226088_F5C20CA3 
+X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.8.40 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [martin.blumenstingl[at]googlemail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -118,8 +89,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.8.40 listed in wl.mailspike.net]
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,52 +101,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Stephen Rothwell <sfr@canb.auug.org.au>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson Huang <anson.huang@nxp.com>
-> Sent: Monday, May 18, 2020 1:32 PM
-> 
-> > Subject: RE: [PATCH] dt-bindings: pwm: Convert mxs pwm to json-schema
-> >
-> > > +title: Freescale MXS PWM controller
-> > > +
-> > > +maintainers:
-> > > +  - Shawn Guo <shawn.guo@linaro.org>
-> > > +  - Anson Huang <anson.huang@nxp.com>
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    enum:
-> > > +      - fsl,imx23-pwm
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  "#pwm-cells":
-> > > +    const: 3
-> >
-> > Seems you missed the reference to pwm.yaml.
-> 
-> It is because many pwm yaml files also has no "#pwm-cells" reference, so I am
-> NOT sure if it is a MUST:
-> 
-> Documentation/devicetree/bindings/pwm/allwinner,sun4i-a10-pwm.yaml
-> Documentation/devicetree/bindings/pwm/google,cros-ec-pwm.yaml
-> Documentation/devicetree/bindings/pwm/iqs620a-pwm.yaml
-> ...
+For an x86_64 allmodconfig build Stephen reports that building
+meson-mx-sdhc-clkc.o warns that MODULE_LICENSE is missing and when
+linking meson_mx_sdhc_register_clkc cannot be found.
 
-I guess we'd better add it.
-Let's wait for Rob's feedback.
+Compile the MMC controller driver together with the build-in clock
+controller driver into one module rather than using two separate
+modules to fix these issues.
 
-Regards
-Aisheng
+Fixes: 53ded1b676d199 ("mmc: host: meson-mx-sdhc: new driver for the Amlogic Meson SDHC host")
+Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+ drivers/mmc/host/Makefile                                 | 3 ++-
+ drivers/mmc/host/{meson-mx-sdhc.c => meson-mx-sdhc-mmc.c} | 0
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ rename drivers/mmc/host/{meson-mx-sdhc.c => meson-mx-sdhc-mmc.c} (100%)
 
-> 
-> Anson
+diff --git a/drivers/mmc/host/Makefile b/drivers/mmc/host/Makefile
+index 8bcb420e071c..8f459259181e 100644
+--- a/drivers/mmc/host/Makefile
++++ b/drivers/mmc/host/Makefile
+@@ -68,7 +68,8 @@ obj-$(CONFIG_MMC_VUB300)	+= vub300.o
+ obj-$(CONFIG_MMC_USHC)		+= ushc.o
+ obj-$(CONFIG_MMC_WMT)		+= wmt-sdmmc.o
+ obj-$(CONFIG_MMC_MESON_GX)	+= meson-gx-mmc.o
+-obj-$(CONFIG_MMC_MESON_MX_SDHC)	+= meson-mx-sdhc-clkc.o meson-mx-sdhc.o
++meson-mx-sdhc-objs 		:= meson-mx-sdhc-clkc.o meson-mx-sdhc-mmc.o
++obj-$(CONFIG_MMC_MESON_MX_SDHC)	+= meson-mx-sdhc.o
+ obj-$(CONFIG_MMC_MESON_MX_SDIO)	+= meson-mx-sdio.o
+ obj-$(CONFIG_MMC_MOXART)	+= moxart-mmc.o
+ obj-$(CONFIG_MMC_SUNXI)		+= sunxi-mmc.o
+diff --git a/drivers/mmc/host/meson-mx-sdhc.c b/drivers/mmc/host/meson-mx-sdhc-mmc.c
+similarity index 100%
+rename from drivers/mmc/host/meson-mx-sdhc.c
+rename to drivers/mmc/host/meson-mx-sdhc-mmc.c
+-- 
+2.26.2
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
