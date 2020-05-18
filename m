@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6328F1D79E9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 15:32:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAECE1D7A13
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 15:37:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wGMk3sAzendnUdmn5m7vsJ1Nj6Pe40A1M276s26WoHo=; b=WMWDDqgemCbbE6
-	+7b8fMB3SyDtc9k4q8UOf85lsqo8GAMaoa9VMj5soEcl3cXHWR8ZCfvbYwvAPcCybQfwEw7Gy0hU2
-	ShneUSlTgpQPpNfRcjQUyMYUoD7tZ7hj2AK+pPhsq+HyFCxZEHxXiakf06H0j5RKMbyY3bWOAOwP+
-	6oCNULThfJmCLb2f1jI1bIqFeBVj2DByI6rg8IMV9wFDc+Ie4O6vbrUKKTPD3ih6LY/hUqqDRSMj6
-	pLJ1vA2N9LMdWnN3ZS/qsL/ijFZK5lvo/PdfG24qRKMbtu6yBaqbxx9lUoSkGWfgkAYl7TN6O779G
-	G3v0/wZrpYn2Yrii9QZw==;
+	List-Owner; bh=AY69iPSeVEX3XYnF6qP9MLJdv1bMIVjeA0bSlafVPKk=; b=C33v1H26wuM9V5
+	4ZYEUxhF8jP4F2g0+E/N1soE19v+OgoGDEZIiIHeT9G4jRYNkjnBWX0BTf1xnfSRgYRL9YNYYvgmI
+	JcFGTSZyzc5UauVYkbnLISEzSquALh0914ZLBwKlzYoyYi1YsBKLWIwIhzJO6zUR245lsT7lhgQ1Q
+	NZLDQjtC9k/JCeNBRsojFIUl2HVocpT7ntrfNELfjyIBA5chrhQOzNcBei2SrmDhlTszahCOqU3sc
+	CX4gpjtxnzxLe47i/XRsj3OHxSikNclaN0VJOFSvlTaZy8IFzNZ6zM+xQDhaTydFnVyjL0vI5vo/V
+	QYjbsrzHAekFB1AttZdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jafst-00074u-II; Mon, 18 May 2020 13:32:47 +0000
+	id 1jafxV-0001fj-KY; Mon, 18 May 2020 13:37:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jafsk-00073x-7y
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 13:32:39 +0000
+ id 1jafxM-0001ex-Dm
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 13:37:25 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4178C101E;
- Mon, 18 May 2020 06:32:37 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9C84A101E;
+ Mon, 18 May 2020 06:37:21 -0700 (PDT)
 Received: from C02TD0UTHF1T.local (unknown [10.57.29.34])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D82EF3F305;
- Mon, 18 May 2020 06:32:34 -0700 (PDT)
-Date: Mon, 18 May 2020 14:32:31 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 28C743F305;
+ Mon, 18 May 2020 06:37:18 -0700 (PDT)
+Date: Mon, 18 May 2020 14:37:16 +0100
 From: Mark Rutland <mark.rutland@arm.com>
 To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 4/6] scs: Move scs_overflow_check() out of architecture
- code
-Message-ID: <20200518133231.GC2787@C02TD0UTHF1T.local>
+Subject: Re: [PATCH 6/6] scs: Move DEFINE_SCS macro into core code
+Message-ID: <20200518133716.GD2787@C02TD0UTHF1T.local>
 References: <20200515172756.27185-1-will@kernel.org>
- <20200515172756.27185-5-will@kernel.org>
- <20200518121210.GD1957@C02TD0UTHF1T.local>
- <20200518132346.GD32394@willie-the-truck>
+ <20200515172756.27185-7-will@kernel.org>
+ <20200518121441.GE1957@C02TD0UTHF1T.local>
+ <20200518132612.GE32394@willie-the-truck>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200518132346.GD32394@willie-the-truck>
+In-Reply-To: <20200518132612.GE32394@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_063238_371676_02470379 
-X-CRM114-Status: GOOD (  29.13  )
+X-CRM114-CacheID: sfid-20200518_063724_505925_2858C050 
+X-CRM114-Status: GOOD (  14.74  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -76,96 +75,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 02:23:47PM +0100, Will Deacon wrote:
-> On Mon, May 18, 2020 at 01:12:10PM +0100, Mark Rutland wrote:
-> > On Fri, May 15, 2020 at 06:27:54PM +0100, Will Deacon wrote:
-> > > There is nothing architecture-specific about scs_overflow_check() as
-> > > it's just a trivial wrapper around scs_corrupted().
-> > > 
-> > > For parity with task_stack_end_corrupted(), rename scs_corrupted() to
-> > > task_scs_end_corrupted() and call it from schedule_debug() when
-> > > CONFIG_SCHED_STACK_END_CHECK_is enabled. Finally, remove the unused
-> > > scs_overflow_check() function entirely.
-> > > 
-> > > This has absolutely no impact on architectures that do not support SCS
-> > > (currently arm64 only).
+On Mon, May 18, 2020 at 02:26:12PM +0100, Will Deacon wrote:
+> On Mon, May 18, 2020 at 01:14:41PM +0100, Mark Rutland wrote:
+> > On Fri, May 15, 2020 at 06:27:56PM +0100, Will Deacon wrote:
+> > > Defining static shadow call stacks is not architecture-specific, so move
+> > > the DEFINE_SCS() macro into the core header file.
 > > > 
 > > > Signed-off-by: Will Deacon <will@kernel.org>
 > > 
-> > Pulling this out of arch code seems sane to me, and the arch-specific
-> > chanes look sound. However, I have a concern with the changes within the
-> > scheduler context-switch.
-> > 
-> > > diff --git a/arch/arm64/kernel/process.c b/arch/arm64/kernel/process.c
-> > > index a35d3318492c..56be4cbf771f 100644
-> > > --- a/arch/arm64/kernel/process.c
-> > > +++ b/arch/arm64/kernel/process.c
-> > > @@ -52,7 +52,6 @@
-> > >  #include <asm/mmu_context.h>
-> > >  #include <asm/processor.h>
-> > >  #include <asm/pointer_auth.h>
-> > > -#include <asm/scs.h>
-> > >  #include <asm/stacktrace.h>
-> > >  
-> > >  #if defined(CONFIG_STACKPROTECTOR) && !defined(CONFIG_STACKPROTECTOR_PER_TASK)
-> > > @@ -516,7 +515,6 @@ __notrace_funcgraph struct task_struct *__switch_to(struct task_struct *prev,
-> > >  	entry_task_switch(next);
-> > >  	uao_thread_switch(next);
-> > >  	ssbs_thread_switch(next);
-> > > -	scs_overflow_check(next);
-> > 
-> > Prior to this patch, we'd never switch to a task whose SCS had already
-> > been corrupted.
-> > 
-> > With this patch, we only check that when switching away from a task, and
-> > only when CONFIG_SCHED_STACK_END_CHECK is selected, which at first
-> > glance seems to weaken that.
+> > I think that we'll have to pull this back into arch code if/when we deal
+> > with VMAP'd stacks, so I'm not sure this is worthwhile given the
+> > diffstat is balanced.
 > 
-> Yes, ignoring vmap'd stacks, this patch brings the SCS checking in-line with
-> the main stack checking when CONFIG_SCHED_STACK_END_CHECK=y.
-> 
-> > Arguably:
-> > 
-> > * If the next task's SCS was corrupted by that task while it was
-> >   running, we had already lost at that point.
-> 
-> With this change, we'll at least catch this one sooner, and that might be
-> useful if a bug has caused us to overflow the SCS but not the main stack.
+> I dunno, if another architecture wants to use this then having the stuff
+> in the core code makes sense to me. I also want to kill asm/scs.h entirely
+> and move our asm macros somewhere else where they're not mixed up with the
+> C headers.
 
-Sure, but only if CONFIG_SCHED_STACK_END_CHECK is selected.
+Thinking about it a bit further, we'd have to make bigger changes anyhow
+(to dynamically allocate), but given we can do that for regular stacks
+we can probably do something similar here.
 
-> > * If the next task's SCS was corrupted by another task, then that could
-> >   also happen immediately after the check (though timing to avoid the
-> >   check but affect the process could be harder).
-> 
-> We're only checking the magic end value, so the cross-task case is basically
-> if you overrun your own SCS as above, but then continue to overrun entire
-> SCSs for other tasks as well. It's probably not very useful in that case.
-> 
-> > ... and a VMAP'd SCS would be much nicer in this regard.
-> > 
-> > Do we think this is weakening the check, or do we think it wasn't all
-> > that helpful to begin with?
-> 
-> I see it as a debug check to catch SCS overflow, rather than a hardening
-> feature, and I agree that using something like vmap stack for the SCS would
-> be better because we could have a guard page instead.
-
-Fair enough. Could we put something into the commit message that more
-explicitly calls out debug-not-hardening? I agree that under that model
-this patch looks fine, and with something to that effect:
+So no strong feelings either way on this patch.
 
 Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-
-Mark.
-
-> This is something I would like to revisit, but we need more
-> information from Sami about why Android rejected the larger allocation
-> size, since I don't think there's an awful lot of point merging this
-> series if Android doesn't pick it up.
-
-Indeed. I'd certainly prefer the robustness of a VMAP'd SCS if we can do
-that.
 
 Mark.
 
