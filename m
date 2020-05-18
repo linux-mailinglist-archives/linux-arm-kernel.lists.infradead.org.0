@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AD561D9255
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 10:45:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09B7B1D9256
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 10:46:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Resent-To:Resent-Message-ID:Resent-Date:Resent-From:Reply-To:Cc:
-	Content-ID:Content-Description:Resent-Sender:Resent-Cc:In-Reply-To:References
-	:List-Owner; bh=JcjoApPoec/O+9WM+L8T3ICoNXypuOir/ixR6fH4rDc=; b=qelTA5/NXsiSP
-	am1YZJZmZQ4z9/sxlcMdsyXYuY+Rlw7+5G/aH3Mqr0ZNYdHBV5jFPNIUAZH6koA6kaBrTisq6P5I0
-	lEPpxMR3HTYbNnPPBwoKp4v0mNzGtNFQUJrNpLdqFbi0oHa77TNNOTY5O/h0tmadPcynwxF064Q1P
-	mwiqm3wjnuVjNuYCACI7m7E+GCKUmfqjgNVkiSNzxuzqIX9e/EluQflCag43+e3gGMMr+RrR7g38P
-	Jen5JJgdaa1rr2bdsVlcyyFC4BmgXnaKoLl5NHUeNs99GBbKOXXkaTacFzBHjmMRQXJcjPQSwPii6
-	S5vEnrY9cfyM/dCtMLAkw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Resent-To:Resent-Message-ID:Resent-Date:
+	Resent-From:Reply-To:Cc:Content-ID:Content-Description:Resent-Sender:
+	Resent-Cc:List-Owner; bh=Y+54pSCuEv17PCFwgQiewW1GCNaDKyoq43A6uWwSD0M=; b=f4+A
+	56zB7mu4XlATV8H/WWqc0jLKpFKsRcqbt/jmLnEnLW7g8Uib+6NzoF5R69t9Xnm2jvrBTTV55um7o
+	tPqq0ICbKSEGH/s++qnJOizzBQRQVz7MDBfmo7Z3RBZ01DeqEDWpJF02WSrRy/1bkptKuyUQfS64N
+	V93C/z63RqNYh6OJP9rrWFkIQlq+P/Vt0KV8+QLyXrSm6F7dxdhkqcFd9J8dZVP2twc/hcEj/vVlW
+	mnhJ6bEELJMI9evjTweAnq/EJ2VoIXlqFcZX3Gbl5VBHcQ6RyXawMB7fHt7t/XER6Ru6hVabudDcC
+	usaYnnZSR/ROqoIYMaGfo8GGInVqvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaxsf-0007yB-DS; Tue, 19 May 2020 08:45:45 +0000
+	id 1jaxsy-00087h-Nb; Tue, 19 May 2020 08:46:04 +0000
 Received: from the.earth.li ([2a00:1098:86:4d:c0ff:ee:15:900d])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaxsV-0007x5-Pe
+ id 1jaxsW-0007xK-9H
  for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 08:45:37 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=earth.li;
- s=the; h=Content-Type:MIME-Version:Message-ID:Subject:To:From:Date:Resent-To
- :Resent-Message-ID:Resent-Date:Resent-From:Sender:Reply-To:Cc:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Sender:
- Resent-Cc:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=jJIjBXlG7IUX19DcU/q8Cx0YzyqRNE0zmnPm1XRvWis=; b=a2JcQAl288XQ7yl0+cwMPizIyj
- LvRV6vmc3VIXoLLEy5bN1O8Bz5g6QXE3CZf5Jz3JWLQ27SUZBSBIRBioTCz5xmuIeqv9NN41HvSBL
- diNtV9I9pRNJDQALRMDa7tF8wRckSX2HUMIs8W0xw32TyY4M3qSNQ+rDDF7oNeBcT4cPUk+g1UUnE
- D8r1iR4BTKpG+fMilM5zxr2Fi4n4JiRp0GWm369wsao7qFwd+EHfjzblqugZoMK5qKxiVznclMWTx
- uXfoE6sdBcpc5YmWC8dkjoohvJ9N6+vNttvYIzkUn1d+kzVr/MXBuSr38l2tSyooKcUxB0yWShRBs
- ilH6OzQw==;
+ s=the; h=In-Reply-To:Content-Transfer-Encoding:Content-Type:MIME-Version:
+ References:Message-ID:Subject:To:From:Date:Resent-To:Resent-Message-ID:
+ Resent-Date:Resent-From:Sender:Reply-To:Cc:Content-ID:Content-Description:
+ Resent-Sender:Resent-Cc:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=OE58ZX5Oa1e7YVFVtcnMs3q7vetLAsEVZFBhervmLAg=; b=HZ7v0WMMqWQK+ZvUq+76mMr9DZ
+ PVsFsgF4xe8cP6gFjQKWadxraZOCoaRWDYfGz9uS52oa1o+OmLT/3tQPfERa3RWJ74dcBTTcR6NFU
+ DlpHX2R1v+q7tXq9GQqr9GRXmWpR3+dghKEf4ZlQulCXhvvHskIpq7l+WahxgESHCro9njk/DQeMk
+ S7lzKsXoAKWDoilOCk93u4tQNN7EPAbejJKEjSc5wGD4RAvYnTGQ3iKNuxE8Mlchmh4LlcsTeu6ai
+ oxFHksocIPeHjsUP4ClLhP1BDpeULxBdFGlXWSJiVDikJT/vzK4pxZagC+r5nq7HXg6u6rIIMPJkD
+ jvVmSgfw==;
 Received: from noodles by the.earth.li with local (Exim 4.92)
- (envelope-from <noodles@earth.li>) id 1jaxsR-0002pX-Ai
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 09:45:31 +0100
+ (envelope-from <noodles@earth.li>) id 1jaxsU-0002pe-36
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 09:45:34 +0100
 Resent-From: Jonathan McDowell <noodles@earth.li>
-Resent-Date: Tue, 19 May 2020 09:45:31 +0100
-Resent-Message-ID: <20200519084531.GR311@earth.li>
+Resent-Date: Tue, 19 May 2020 09:45:34 +0100
+Resent-Message-ID: <20200519084534.GS311@earth.li>
 Resent-To: linux-arm-kernel@lists.infradead.org
-Date: Mon, 18 May 2020 19:09:10 +0100
+Date: Mon, 18 May 2020 19:09:30 +0100
 From: Jonathan McDowell <noodles@earth.li>
 To: linux-arm-msm@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 0/3] Add initial support for MikroTik RB3011
-Message-ID: <cover.1589824955.git.noodles@earth.li>
+Subject: [PATCH 1/3] dt-bindings: vendor-prefixes: Add MikroTik
+Message-ID: <aae96cddb2d1426482cae7f6fc4d1dc0aecfde5d.1589824955.git.noodles@earth.li>
+References: <cover.1589824955.git.noodles@earth.li>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <cover.1589824955.git.noodles@earth.li>
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-UID: 2044
+X-UID: 2045
 X-Keywords: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_014535_872947_87294B92 
-X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-CacheID: sfid-20200519_014536_319425_856CA103 
+X-CRM114-Status: UNSURE (   7.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -82,36 +84,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patches do some prep (device tree vendor addition, missing ethernet
-definitions for IPQ8064 dts) and then add an initial device tree for the
-MikroTik RB3011 1U router, which is an IPQ8064 device with 1G RAM. They
-are sufficient to boot with an initrd, the serial console and the first
-5 switch ports fully functional (the second bank of 5 require some extra
-patches to the QCA8K driver which will follow later). The bootloader NOR
-is also supported, but the 128MB NAND is not yet enabled.
-
-Jonathan McDowell (3):
-  dt-bindings: vendor-prefixes: Add MikroTik
-  ARM: dts: qcom: add ethernet definitions to ipq8064
-  ARM: dts: qcom: Add MikroTik RB3011
-
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- arch/arm/boot/dts/Makefile                    |   1 +
- arch/arm/boot/dts/qcom-ipq8064-rb3011.dts     | 308 ++++++++++++++++++
- arch/arm/boot/dts/qcom-ipq8064.dtsi           | 108 ++++++
- 4 files changed, 419 insertions(+)
- create mode 100644 arch/arm/boot/dts/qcom-ipq8064-rb3011.dts
-
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TWlrcm9UaWsgKFNJQSBNaWtyb3TEq2tscykgaXMgYSBMYXR2aWFuIGNvbXBhbnkgd2hvIGRldmVs
+b3Agcm91dGVycyBhbmQKd2lyZWxlc3MgSVNQIHN5c3RlbXMuCgpTaWduZWQtb2ZmLWJ5OiBKb25h
+dGhhbiBNY0Rvd2VsbCA8bm9vZGxlc0BlYXJ0aC5saT4KLS0tCiBEb2N1bWVudGF0aW9uL2Rldmlj
+ZXRyZWUvYmluZGluZ3MvdmVuZG9yLXByZWZpeGVzLnlhbWwgfCAyICsrCiAxIGZpbGUgY2hhbmdl
+ZCwgMiBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL3ZlbmRvci1wcmVmaXhlcy55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL3ZlbmRvci1wcmVmaXhlcy55YW1sCmluZGV4IGQzODkxMzg2ZDY3MS4uZDMyNzdm
+ZTY2NDBiIDEwMDY0NAotLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvdmVu
+ZG9yLXByZWZpeGVzLnlhbWwKKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
+L3ZlbmRvci1wcmVmaXhlcy55YW1sCkBAIC02MzMsNiArNjMzLDggQEAgcGF0dGVyblByb3BlcnRp
+ZXM6CiAgICAgZGVzY3JpcHRpb246IE1pY3Jvc29mdCBDb3Jwb3JhdGlvbgogICAiXm1pa3JvZSwu
+KiI6CiAgICAgZGVzY3JpcHRpb246IE1pa3JvRWxla3Ryb25pa2EgZC5vLm8uCisgICJebWlrcm90
+aWssLioiOgorICAgIGRlc2NyaXB0aW9uOiBNaWtyb1RpawogICAiXm1pbmlhbmQsLioiOgogICAg
+IGRlc2NyaXB0aW9uOiBNaW5pYW5kIFRlY2gKICAgIl5taW5peCwuKiI6Ci0tIAoyLjIwLjEKCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
