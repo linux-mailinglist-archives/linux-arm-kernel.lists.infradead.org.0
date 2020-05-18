@@ -2,55 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 853CA1D7801
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 13:56:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CC671D7814
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 14:03:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/I/9YGXHnUBkwOybNPQJ50EkFm22vTCu94JpZjiki5E=; b=JOU2rI/B/juu4l
-	f4wOeEheqN480pvyuFw6dwZ9qhxKy53H+/NegO/lfulQibTaR7/j/Rxyf9NWulJ7QaHRuoS+5vR9l
-	aGB+zh1k3TelM8VIpDV5+yVppPC5pWupbXXNJ9VGOoqC4jwfRMWiOGurUJHB9jOURN6IbSTz7Vj+R
-	FZfdBuDey8unLWMN0Nzk4fBSXtsFkXJ8q+lLB/ftRwI+IO4k9lDBxFeWyWrYHaNlk3CfkWc7p1cx9
-	hB0a/6/e6tHsvOwQhQzsTGGkgw4XSJgmE7G45KGj4dzd8b/mf2/C22AMap68dCE0kdH1KyzrbUsq9
-	bJ9agTDsIYoUc6BH/1CA==;
+	List-Owner; bh=IVlGyCmjK8xWoBVaTM0iF9ScnKc9CUO6P1wNPkNPkAM=; b=ObuJMMfXUZMBKr
+	GbMCaLI1lVtiP5/yNNCnovkwjRlQnxrP6tIrmuu5Am+2e8ge4TQ7Z7RufC4Y37vzzQu9OVLR/DeOF
+	xnzGPMXmxtJhHajYfJaciHZBMhR5meyn961tguwdf3MTRK01QMYPESQT51/0NrNG4ofJcrwzWgCq8
+	RA5HT7+DxwIWlHLbRhRsZJPLhKwjuuo1LV+jsSit0+m6lWH/jAw0pq4ObJTHdroi8vUM0X4IvfeYq
+	EFqo5C4e2oDCfrGfTicEi07rKUiBYvsUa7eN3awhw6ldX0GybCuzpZWQH0nhIxgVk7hWZVgUVKZjU
+	58aU2TExNN4oMVgFZtxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaeNV-00025l-MX; Mon, 18 May 2020 11:56:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaeN7-0001uA-2h
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 11:55:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7A57B11FB;
- Mon, 18 May 2020 04:55:52 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 068B03F774;
- Mon, 18 May 2020 04:55:49 -0700 (PDT)
-Date: Mon, 18 May 2020 12:55:47 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 3/6] arm64: scs: Use 'scs_sp' register alias for x18
-Message-ID: <20200518115547.GC1957@C02TD0UTHF1T.local>
-References: <20200515172756.27185-1-will@kernel.org>
- <20200515172756.27185-4-will@kernel.org>
+	id 1jaeUI-0005RF-Ed; Mon, 18 May 2020 12:03:18 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jaeU8-0005Qi-UV
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 12:03:10 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04IC2rku010157; Mon, 18 May 2020 14:02:54 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=tAbl2axdddZlaaXG2CNspEZUt31JN+F0gHWw9tO/rHM=;
+ b=ddgt4qxdT4oWVbfbhnLDLAFXbH9hijDV73qOYcZaPn45NL3bumpy8wLhX3mQ5Ty8Rnwe
+ Pw/wCLNK1hvokjk4gya24QRhEdq3qzzhUHo2amAWd+SCgiwsuoJWVOdlG/QND/4+sq3N
+ 5jLqzkCN4R7NsLwsozz2ISXgisXhvDnd/YfoWobYpTTwHGLE44CKN6D575ojATSSd8yh
+ bAPNfjZdCpCRfQQrS/5nnimfEQtpfn25tR48a6FX/1nC32MjP6wiP6KgKjuygx7erOLx
+ GvKmSrG19BHK8PrE2Aa0sR5sntD9/GrYvVY5vQspxGiw/RTUtF0Y+bIuCsta2yWpbh0n zg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3125n3bm24-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 18 May 2020 14:02:54 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E74D810002A;
+ Mon, 18 May 2020 14:02:47 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag4node3.st.com [10.75.127.12])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id CAC522BF9CF;
+ Mon, 18 May 2020 14:02:47 +0200 (CEST)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG4NODE3.st.com
+ (10.75.127.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 18 May
+ 2020 14:02:47 +0200
+Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
+ SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
+ 15.00.1473.003; Mon, 18 May 2020 14:02:47 +0200
+From: Christophe ROULLIER <christophe.roullier@st.com>
+To: "robh@kernel.org" <robh@kernel.org>, "davem@davemloft.net"
+ <davem@davemloft.net>, "joabreu@synopsys.com" <joabreu@synopsys.com>,
+ "mark.rutland@arm.com" <mark.rutland@arm.com>, "mcoquelin.stm32@gmail.com"
+ <mcoquelin.stm32@gmail.com>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ Peppe CAVALLARO <peppe.cavallaro@st.com>
+Subject: Re: [PATCH v3 0/1] net: ethernet: stmmac: simplify phy modes
+ management for stm32
+Thread-Topic: [PATCH v3 0/1] net: ethernet: stmmac: simplify phy modes
+ management for stm32
+Thread-Index: AQHWHHq3aaIPOA/wFEi5Ev+u/GvPiaitvfmA
+Date: Mon, 18 May 2020 12:02:47 +0000
+Message-ID: <3aaadf75-5399-4961-248a-c77c719155d4@st.com>
+References: <20200427100038.19252-1-christophe.roullier@st.com>
+In-Reply-To: <20200427100038.19252-1-christophe.roullier@st.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
+Content-ID: <CD3A060E2D09364A9ED8F23EAD3F016B@st.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200515172756.27185-4-will@kernel.org>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-18_05:2020-05-15,
+ 2020-05-18 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_045553_201657_86AFAA8A 
-X-CRM114-Status: GOOD (  17.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200518_050309_431324_78D27360 
+X-CRM114-Status: GOOD (  15.13  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,124 +111,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>, Jann Horn <jannh@google.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Mark Rutland <mark.rutland@am.com>, Sami Tolvanen <samitolvanen@google.com>,
- kernel-team@android.com, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "andrew@lunn.ch" <andrew@lunn.ch>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 06:27:53PM +0100, Will Deacon wrote:
-> x18 holds the SCS stack pointer value, so introduce a register alias to
-> make this easier to read in assembly code.
-> 
-> Signed-off-by: Will Deacon <will@kernel.org>
+Hi,
 
-I scanned through arm64 for all instances of x18, and it looks like
-you've covered all the relevant uses here. In kvm we save/restore x18 a
-bunch becasue it might be a platform register, but we do that
-unconditionally and without knowledge of what it contains, so I think
-that's fine to leave as-is. Therefore:
+Just a "gentleman ping"
 
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+Regards,
 
-As an aside, the comment in entry-ftrace.S is now stale where it says
-that x18 is safe to clobber. I can send a patch to clean that up, unless
-you want to do that yourself.
+Christophe.
 
-Mark.
-
-> ---
->  arch/arm64/include/asm/scs.h |  6 ++++--
->  arch/arm64/kernel/entry.S    | 10 +++++-----
->  arch/arm64/kernel/head.S     |  2 +-
->  3 files changed, 10 insertions(+), 8 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/scs.h b/arch/arm64/include/asm/scs.h
-> index 6b8cf4352fe3..d46efdd2060a 100644
-> --- a/arch/arm64/include/asm/scs.h
-> +++ b/arch/arm64/include/asm/scs.h
-> @@ -7,12 +7,14 @@
->  #include <asm/asm-offsets.h>
->  
->  #ifdef CONFIG_SHADOW_CALL_STACK
-> +	scs_sp	.req	x18
-> +
->  	.macro scs_load tsk, tmp
-> -	ldr	x18, [\tsk, #TSK_TI_SCS_SP]
-> +	ldr	scs_sp, [\tsk, #TSK_TI_SCS_SP]
->  	.endm
->  
->  	.macro scs_save tsk, tmp
-> -	str	x18, [\tsk, #TSK_TI_SCS_SP]
-> +	str	scs_sp, [\tsk, #TSK_TI_SCS_SP]
->  	.endm
->  #else
->  	.macro scs_load tsk, tmp
-> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index cb0516e6f963..741faf0706f1 100644
-> --- a/arch/arm64/kernel/entry.S
-> +++ b/arch/arm64/kernel/entry.S
-> @@ -394,7 +394,7 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
->  	.macro	irq_stack_entry
->  	mov	x19, sp			// preserve the original sp
->  #ifdef CONFIG_SHADOW_CALL_STACK
-> -	mov	x24, x18		// preserve the original shadow stack
-> +	mov	x24, scs_sp		// preserve the original shadow stack
->  #endif
->  
->  	/*
-> @@ -416,7 +416,7 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
->  
->  #ifdef CONFIG_SHADOW_CALL_STACK
->  	/* also switch to the irq shadow stack */
-> -	adr_this_cpu x18, irq_shadow_call_stack, x26
-> +	adr_this_cpu scs_sp, irq_shadow_call_stack, x26
->  #endif
->  
->  9998:
-> @@ -430,7 +430,7 @@ alternative_insn eret, nop, ARM64_UNMAP_KERNEL_AT_EL0
->  	.macro	irq_stack_exit
->  	mov	sp, x19
->  #ifdef CONFIG_SHADOW_CALL_STACK
-> -	mov	x18, x24
-> +	mov	scs_sp, x24
->  #endif
->  	.endm
->  
-> @@ -1071,9 +1071,9 @@ SYM_CODE_START(__sdei_asm_handler)
->  #ifdef CONFIG_SHADOW_CALL_STACK
->  	/* Use a separate shadow call stack for normal and critical events */
->  	cbnz	w4, 3f
-> -	adr_this_cpu dst=x18, sym=sdei_shadow_call_stack_normal, tmp=x6
-> +	adr_this_cpu dst=scs_sp, sym=sdei_shadow_call_stack_normal, tmp=x6
->  	b	4f
-> -3:	adr_this_cpu dst=x18, sym=sdei_shadow_call_stack_critical, tmp=x6
-> +3:	adr_this_cpu dst=scs_sp, sym=sdei_shadow_call_stack_critical, tmp=x6
->  4:
->  #endif
->  
-> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-> index 2b01c19c5483..1293baddfd20 100644
-> --- a/arch/arm64/kernel/head.S
-> +++ b/arch/arm64/kernel/head.S
-> @@ -426,7 +426,7 @@ SYM_FUNC_START_LOCAL(__primary_switched)
->  	mov	x29, sp
->  
->  #ifdef CONFIG_SHADOW_CALL_STACK
-> -	adr_l	x18, init_shadow_call_stack	// Set shadow call stack
-> +	adr_l	scs_sp, init_shadow_call_stack	// Set shadow call stack
->  #endif
->  
->  	str_l	x21, __fdt_pointer, x5		// Save FDT pointer
-> -- 
-> 2.26.2.761.g0e0b3e54be-goog
-> 
-
+On 27/04/2020 12:00, Christophe Roullier wrote:
+> No new feature, just to simplify stm32 part to be easier to use.
+> Add by default all Ethernet clocks in DT, and activate or not in function
+> of phy mode, clock frequency, if property "st,ext-phyclk" is set or not.
+> Keep backward compatibility
+>
+> version 3:
+> Add acked from Alexandre Torgue
+> Rebased on top of v5.7-rc2
+>
+> Christophe Roullier (1):
+>    net: ethernet: stmmac: simplify phy modes management for stm32
+>
+>   .../net/ethernet/stmicro/stmmac/dwmac-stm32.c | 74 +++++++++++--------
+>   1 file changed, 44 insertions(+), 30 deletions(-)
+>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
