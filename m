@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C65641D8B6B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 01:06:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 902621D8B6D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 01:06:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9vQYxcRMlhQibyYpmjTMbDqd6iCW9UckafS1TUiCCsU=; b=LM7JKu7b0oTT1R
-	s53xBqPAISWRYzhMAVn2xqGJ0akHcp0DYjeP/hrd8cRaqWFYXsMzI5rI+sCa1Hoz8DY+4vfNOQTDB
-	7FULdUm6kZD009zLZQRTfmzTsTH5EeCwPXSmYCGrQsRG6uTcFcDGl9WHIeyUggLcoXvcLf/grdsF8
-	JJ8XOXwNVfiFVHazjAStEtP/r+S3qf6edzCBT638tqTmCvitTVKQoMTziuyjiZPdQl8oAwJAPPBIh
-	dKXht4da8ZzIhLJYYG87NjrUkJQ/LgUOvVTxPmtowm30jxkAY9IUCF9GHDxgJGC92fr2WiW5fyGmE
-	Yu+684wDhSmgJTCMaLNA==;
+	List-Owner; bh=HEEgR3pOmbd1LeTj9sqJl+zB6nAiTq1IoIK+U+Kxwog=; b=CsyfClUpPdhbHH
+	S/hQ+u8ffULyQrpHLbrwRf4l19qr1M92st6FzXIy4irPiCfuS2A2mcFWfKfV6czsNYiFeDyMsCysa
+	I24bQrC1etT5Q9vomX3hot8lIqwWy4nQ7iCsKboAkdduFHGdhP9puV5easmAQTV9V8uScj4m+qClb
+	JZE6Sw7gCTgWSaiV0sIpqLgEfumIHAYbJ2s+QMbVY6jLnwJ8T8DaxJmMpUrsKghBWNrAZLibDeYWu
+	FHLAQQBZRhY3ME2oJHOv9CqQ/Y+g1B8XrYeBhbHk+uYgDjqmeSLygCC+CFCN7TctqGlXaaVMx9flV
+	dIvAtCuCHBgvj+4rWPzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaopc-0003Bj-Mw; Mon, 18 May 2020 23:06:00 +0000
+	id 1jaopn-0003RQ-Lc; Mon, 18 May 2020 23:06:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaoo3-0008Mt-Sa
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 23:04:26 +0000
+ id 1jaoo6-0008PB-GY
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 23:04:28 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 747C12084C;
- Mon, 18 May 2020 23:04:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D6EFA207ED;
+ Mon, 18 May 2020 23:04:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589843063;
- bh=mdDBICGc/1OVf1NxEPnOEe4l94uJZgJ0V0xs46WSuvU=;
+ s=default; t=1589843065;
+ bh=bitmyTr9R/oGSnaoA06CaiabbOP6nniUf9dbxg7nIgc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KxwyXazHoWJGhkwv66rMVcRMPq+clFDbR4QWw8u3bnJE8muf14kQJYHDSZGGOriFp
- 3YqntC+doiOvB8w82MSAAkHmxWDTk1J6H/WeD4g9Gbw80fjWEqY9tUKyb8tSrZoTli
- YeG0fdKwbvMBjlIShhBqVmWEncO9OosObwGRQ28A=
+ b=Rm+hqdIEk+57bdOzbpbAwxmoNUH53eOvFcjC/BhxDfUMOAa28P15GZ9A3IA7uWthQ
+ AGiK1xGsizoRHeV44aGcUonMII2B2Kvo3x6xbVNn5u4wNGsi2EqTMkhE5rgdQjeal0
+ q45OTpjA9/jwcQMb003DJJm0zFT3htnvxclTfipk=
 From: Will Deacon <will@kernel.org>
-To: mark.rutland@arm.com,
-	Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH] pmu/smmuv3: Clear IRQ affinity hint on device removal
-Date: Tue, 19 May 2020 00:04:06 +0100
-Message-Id: <158982257913.5151.8809626382618545833.b4-ty@kernel.org>
+To: linux-arm-kernel@lists.infradead.org,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ iommu@lists.linux-foundation.org
+Subject: Re: [PATCH v2] iommu/arm-smmu-v3: Don't reserve implementation
+ defined register space
+Date: Tue, 19 May 2020 00:04:07 +0100
+Message-Id: <158981256141.239287.4383286244395481954.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200422084805.237738-1-jean-philippe@linaro.org>
-References: <20200422084805.237738-1-jean-philippe@linaro.org>
+In-Reply-To: <20200513110255.597203-1-jean-philippe@linaro.org>
+References: <20200513110255.597203-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_160423_970120_1A614008 
-X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-CacheID: sfid-20200518_160426_684710_988DAB41 
+X-CRM114-Status: UNSURE (   7.74  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,43 +80,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: lorenzo.pieralisi@arm.com, catalin.marinas@arm.com, joro@8bytes.org,
+ robin.murphy@arm.com, tuanphan@amperemail.onmicrosoft.com,
+ Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 Apr 2020 10:48:06 +0200, Jean-Philippe Brucker wrote:
-> Currently when trying to remove the SMMUv3 PMU module we get a
-> WARN_ON_ONCE from free_irq(), because the affinity hint set during probe
-> hasn't been properly cleared.
+On Wed, 13 May 2020 13:02:57 +0200, Jean-Philippe Brucker wrote:
+> Some SMMUv3 implementation embed the Perf Monitor Group Registers (PMCG)
+> inside the first 64kB region of the SMMU. Since PMCG are managed by a
+> separate driver, this layout causes resource reservation conflicts
+> during boot.
 > 
-> [  238.878383] WARNING: CPU: 0 PID: 175 at kernel/irq/manage.c:1744 free_irq+0x324/0x358
-> ...
-> [  238.897263] Call trace:
-> [  238.897998]  free_irq+0x324/0x358
-> [  238.898792]  devm_irq_release+0x18/0x28
-> [  238.899189]  release_nodes+0x1b0/0x228
-> [  238.899984]  devres_release_all+0x38/0x60
-> [  238.900779]  device_release_driver_internal+0x10c/0x1d0
-> [  238.901574]  driver_detach+0x50/0xe0
-> [  238.902368]  bus_remove_driver+0x5c/0xd8
-> [  238.903448]  driver_unregister+0x30/0x60
-> [  238.903958]  platform_driver_unregister+0x14/0x20
-> [  238.905075]  arm_smmu_pmu_exit+0x1c/0xecc [arm_smmuv3_pmu]
-> [  238.905547]  __arm64_sys_delete_module+0x14c/0x260
-> [  238.906342]  el0_svc_common.constprop.0+0x74/0x178
-> [  238.907355]  do_el0_svc+0x24/0x90
-> [  238.907932]  el0_sync_handler+0x11c/0x198
-> [  238.908979]  el0_sync+0x158/0x180
-> 
-> [...]
+> To avoid this conflict, don't reserve the MMIO regions that are
+> implementation defined. Although devm_ioremap_resource() still works on
+> full pages under the hood, this way we benefit from resource conflict
+> checks.
 
-Applied to will (for-next/perf), thanks!
+Applied to will (for-joerg/arm-smmu/updates), thanks!
 
-[1/1] pmu/smmuv3: Clear IRQ affinity hint on device removal
-      https://git.kernel.org/will/c/10f6cd2af21b
+[1/1] iommu/arm-smmu-v3: Don't reserve implementation defined register space
+      https://git.kernel.org/will/c/52f3fab0067d
 
 Cheers,
 -- 
