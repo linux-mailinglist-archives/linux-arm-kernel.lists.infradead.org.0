@@ -2,100 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C0C31D7EEE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 18:44:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29BC31D7F0F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 18 May 2020 18:48:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gsWZHlBpP46E+mvAe2PZwiuURqgmtIigEa1sD4wZtWs=; b=rPTE9h0Lx+9ak0
-	SViN0pmxNrYns/htNnu0ZILnFydJx0rQiXANsSdK0C6qunVY8NbB+Cyz242F5mYYnUU6N1Ywye72Z
-	BfdM/irB1x87MI+j5S1ZS9r5ysp3JV//HqxYB845Kf7SxFUZFIa+4o3fAiEncz+VgJl3R7cDdiY3d
-	PSFoLfRiUNs964RvOWpwGkPXePgUhf1RnRBMeXpm5rvFkMl5ZtLbuokW2vNGZyzfvkXgh1Ab1/F8L
-	uo05JTa42D8xZxeY6IWZQ1iImaPLDZOa4n+zPBuxfwCv3PzUe0MOKsUDu55ipGSwfpxYZVmncZDOK
-	Z3gFPdOTOiednAL3e76w==;
+	List-Owner; bh=Qdhh9S9/lStx8dKlUYq75oGlYTBHfSlk6FSwzv1nmnQ=; b=WXYjHX/pQDC8BF
+	E/aOvQ2Dx839/MLIx2mDRS68NJZgoncsrEJlWlhF4iz9zbJ32KGn30P7p+Pomn6gA3NCrGVGMbpJ1
+	psOqwBKhN5SpnU1jGb+9cjQsla+lMIpiuJXlSppr3vIQoF1v1aZh3RV+dhL/ebRbc9II2XjKo4LQO
+	ST20YlR0EoeY1a9Ud3J+4GWX4FT6DNnww8Z9sl+oXFkrmEsHYQcU1w1SalSeHEf5CN+zXtzhYipr3
+	GrdFcnJ4GIfMMyN1qJblkMdiJF5LHwGxDfRNmGUPneoqCV7vQeB0MNm7EGTibbATQueKQDLyUw25s
+	06oL9ZGl+lL3iZOdWzfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaisV-0002HG-Ge; Mon, 18 May 2020 16:44:35 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaisC-00029Z-31
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 16:44:17 +0000
-Received: by mail-wm1-x344.google.com with SMTP id z72so240754wmc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 09:44:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=from:date:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=mrOVKHVJapH6kF5qReOp0wglPtw6uXIPRlbofv8HkOI=;
- b=nSW/zmI+oIKzyOLNG6etkGbyYqHBBsA2N8whXlXs5aLplRWbKVRVZJuGjkipitkMFd
- JpDvh6n1I6fl6OnyDNwsPT/olbSNWIvVDkOpC9T4/wi31U2gZWWAb9vaKvbqwiXWSzRE
- /OCEBdRmoFd+eNbb5XCzC9mXeGwdFmBqmUkmzBgIlhfo5zWNUwJ7+xhAVSwwqpiTwxhR
- YbwDxXTWPeNSRUpgsH2ZgBcUrvqn70knzY40sUTMnYGSikYPo9uylu89drqXy985LCES
- jwguU3GVWDkHvHwoJhoQ2HH/fA+IMRHX4PXEy9HH7+Dn53Y38W//jL36zKm6iMSn9XTQ
- JH1g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:date:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=mrOVKHVJapH6kF5qReOp0wglPtw6uXIPRlbofv8HkOI=;
- b=mhxnuf4AIATAsCDN/Tve8PJWdWM6Q664jrdXDBX4TY7brmp2GMXgKQE8QvKfIQeP+N
- DmNKAfnqX0mF71zaXiDdFkfrVzHVMg8BDpGKRPFuosS+emppZHkVt22+fu9vGX1UBVTs
- klYAYLonZBRJN14Lw6FxO2sDDG8uEXeo5FVDr90sjd4XU6jXY6K82U/ZGbZvBjimc5Fo
- 9s8rxW/w5q5hn+XiJzZQgZzKH5NKEseJHjgNEgKH1GrB/qqqtxAFur3O/gjOX//pq/Ej
- G72KMZJBp6PZdotn2wHPlUXqLVzknz9LO7ZJwWdFGJuk4/frvvafyt9tDlmQ7eAZENJD
- lPaA==
-X-Gm-Message-State: AOAM531DcE2oIf/fxgzAvAmA2tP7abaY/5v2rgkM2N8oBcTpC1cSHnPL
- 8WIw+enlNC6AlcxMa5xGITNa1w==
-X-Google-Smtp-Source: ABdhPJxvMfrufurokRmF+O8ESaZRzfiwWThU1ZHkuIFz5YhCwG7DhnQCN+0EO7FHTPHDCdOSTcYLjg==
-X-Received: by 2002:a1c:2e4d:: with SMTP id u74mr230711wmu.145.1589820253760; 
- Mon, 18 May 2020 09:44:13 -0700 (PDT)
-Received: from dbrazdil-macbookpro.roam.corp.google.com
- ([2a01:4b00:8523:2d03:4431:2de6:16f:7f90])
- by smtp.gmail.com with ESMTPSA id e21sm125834wme.34.2020.05.18.09.44.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 09:44:13 -0700 (PDT)
-From: David Brazdil <dbrazdil@google.com>
-X-Google-Original-From: David Brazdil
- <dbrazdil@dbrazdil-macbookpro.roam.corp.google.com>
-Date: Mon, 18 May 2020 17:44:12 +0100
-To: Andrew Scull <ascull@google.com>
-Subject: Re: [PATCH v2 07/14] arm64: kvm: Split hyp/switch.c to VHE/nVHE
-Message-ID: <20200518164412.coycmliijagaaw4m@dbrazdil-macbookpro.roam.corp.google.com>
-References: <20200515105841.73532-1-dbrazdil@google.com>
- <20200515105841.73532-8-dbrazdil@google.com>
- <20200518152851.GA147668@google.com>
+	id 1jaivs-0005n2-U1; Mon, 18 May 2020 16:48:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jaivj-0005mA-Kd
+ for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 16:47:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1C14D106F;
+ Mon, 18 May 2020 09:47:53 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 53E6E3F305;
+ Mon, 18 May 2020 09:47:51 -0700 (PDT)
+Date: Mon, 18 May 2020 17:47:40 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Luis Machado <luis.machado@linaro.org>
+Subject: Re: [PATCH v3 19/23] arm64: mte: Add PTRACE_{PEEK,POKE}MTETAGS support
+Message-ID: <20200518164723.GA5031@arm.com>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-20-catalin.marinas@arm.com>
+ <a7569985-eb85-497b-e3b2-5dce0acb1332@linaro.org>
+ <20200513104849.GC2719@gaia>
+ <3d2621ac-9d08-53ea-6c22-c62532911377@linaro.org>
+ <20200513141147.GD2719@gaia>
+ <eec9ddae-8aa0-6cd1-9a23-16b06bb457c5@linaro.org>
+ <e7f995d6-d48b-1ea2-c9e6-d2533e8eadd5@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200518152851.GA147668@google.com>
+In-Reply-To: <e7f995d6-d48b-1ea2-c9e6-d2533e8eadd5@linaro.org>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_094416_191178_07BD0F12 
-X-CRM114-Status: GOOD (  13.03  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200518_094755_766559_B59B965E 
+X-CRM114-Status: GOOD (  40.21  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,31 +69,188 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- Marc Zyngier <maz@kernel.org>, David Brazdil <dbrazdil@google.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Will Deacon <will@kernel.org>, Omair Javaid <omair.javaid@linaro.org>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, Alan Hayward <Alan.Hayward@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 04:28:51PM +0100, Andrew Scull wrote:
-> On Fri, May 15, 2020 at 11:58:34AM +0100, David Brazdil wrote:
-> > +__kvm_nvhe_sve_load_state = sve_load_state;
-> > +__kvm_nvhe_sve_save_state = sve_save_state;
+On Wed, May 13, 2020 at 01:45:27PM -0300, Luis Machado wrote:
+> On 5/13/20 12:09 PM, Luis Machado wrote:
+> >On 5/13/20 11:11 AM, Catalin Marinas wrote:
+> >>On Wed, May 13, 2020 at 09:52:52AM -0300, Luis Machado wrote:
+> >>>On 5/13/20 7:48 AM, Catalin Marinas wrote:
+> >>>>On Tue, May 12, 2020 at 04:05:15PM -0300, Luis Machado wrote:
+> >>>>>On 4/21/20 11:25 AM, Catalin Marinas wrote:
+> >>>>>>Add support for bulk setting/getting of the MTE tags in a tracee's
+> >>>>>>address space at 'addr' in the ptrace() syscall prototype.
+> >>>>>>'data' points
+> >>>>>>to a struct iovec in the tracer's address space with iov_base
+> >>>>>>representing the address of a tracer's buffer of length iov_len. The
+> >>>>>>tags to be copied to/from the tracer's buffer are stored as one
+> >>>>>>tag per
+> >>>>>>byte.
+> >>>>>>
+> >>>>>>On successfully copying at least one tag, ptrace() returns 0 and
+> >>>>>>updates
+> >>>>>>the tracer's iov_len with the number of tags copied. In case of
+> >>>>>>error,
+> >>>>>>either -EIO or -EFAULT is returned, trying to follow the ptrace() man
+> >>>>>>page.
+> >>>>>>
+> >>>>>>Note that the tag copying functions are not performance critical,
+> >>>>>>therefore they lack optimisations found in typical memory copy
+> >>>>>>routines.
+> >>>>>>
+> >>>>>>Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> >>>>>>Cc: Will Deacon <will@kernel.org>
+> >>>>>>Cc: Alan Hayward <Alan.Hayward@arm.com>
+> >>>>>>Cc: Luis Machado <luis.machado@linaro.org>
+> >>>>>>Cc: Omair Javaid <omair.javaid@linaro.org>
+> >>>>>
+> >>>>>I started working on MTE support for GDB and I'm wondering if
+> >>>>>we've already
+> >>>>>defined a way to check for runtime MTE support (as opposed to a
+> >>>>>HWCAP2-based
+> >>>>>check) in a traced process.
+> >>>>>
+> >>>>>Originally we were going to do it via empty-parameter ptrace
+> >>>>>calls, but you
+> >>>>>had mentioned something about a proc-based method, if I'm not
+> >>>>>mistaken.
+> >>>>
+> >>>>We could expose more information via proc_pid_arch_status() but that
+> >>>>would be the tagged address ABI and tag check fault mode and intended
+> >>>>for human consumption mostly. We don't have any ptrace interface that
+> >>>>exposes HWCAPs. Since the gdbserver runs on the same machine as the
+> >>>>debugged process, it can check the HWCAPs itself, they are the same for
+> >>>>all processes.
+> >>>
+> >>>Sorry, I think i haven't made it clear. I already have access to
+> >>>HWCAP2 both
+> >>>from GDB's and gdbserver's side. But HWCAP2 only indicates the
+> >>>availability
+> >>>of a particular feature in a CPU, it doesn't necessarily means the
+> >>>traced
+> >>>process is actively using MTE, right?
+> >>
+> >>Right, but "actively" is not well defined either. The only way to tell
+> >>whether a process is using MTE is to look for any PROT_MTE mappings. You
+> >>can access these via /proc/<pid>/maps. In theory, one can use MTE
+> >>without enabling the tagged address ABI or even tag checking (i.e. no
+> >>prctl() call).
+> >>
+> >
+> >I see the problem. I was hoping for a more immediate form of runtime
+> >check. One debuggers would validate and enable all the tag checks and
+> >register access at process attach/startup.
+> >
+> >With that said, checking for PROT_MTE in /proc/<pid>/maps may still be
+> >useful, but a process with no immediate PROT_MTE maps doesn't mean such
+> >process won't attempt to use PROT_MTE later on. I'll have to factor that
+> >in, but I think it'll work.
+> >
+> >I guess HWCAP2_MTE will be useful after all. We can just assume that
+> >whenever we have HWCAP2_MTE, we can fetch MTE registers and check for
+> >PROT_MTE.
+> >
+> >>>So GDB/gdbserver would need runtime checks to be able to tell if a
+> >>>process
+> >>>is using MTE, in which case the tools will pay attention to tags and
+> >>>additional MTE-related registers (sctlr and gcr) we plan to make
+> >>>available
+> >>>to userspace.
+> >>
+> >>I'm happy to expose GCR_EL1.Excl and the SCTLR_EL1.TCF0 bits via ptrace
+> >>as a thread state. The tags, however, are a property of the memory range
+> >>rather than a per-thread state. That's what makes it different from
+> >>other register-based features like SVE.
+> >
+> >That's my understanding as well. I'm assuming, based on our previous
+> >discussion, that we'll have those couple registers under a regset (maybe
+> >NT_ARM_MTE).
+> >
+> >>
+> >>>The original proposal was to have GDB send PTRACE_PEEKMTETAGS with a
+> >>>NULL
+> >>>address and check the result. Then GDB would be able to decide if the
+> >>>process is using MTE or not.
+> >>
+> >>We don't store this information in the kernel as a bool and I don't
+> >>think it would be useful either. I think gdb, when displaying memory,
+> >>should attempt to show tags as well if the corresponding range was
+> >>mapped with PROT_MTE. Just probing whether a thread ever used MTE
+> >>doesn't help since you need to be more precise on which address supports
+> >>tags.
+> >
+> >Thanks for making this clear. Checking with ptrace won't work then. It
+> >seems like /proc/<pid>/maps is the way to go.
+> >
+> >>
+> >>>>BTW, in my pre-v4 patches (hopefully I'll post v4 this week), I changed
+> >>>>the ptrace tag access slightly to return an error (and no tags copied)
+> >>>>if the page has not been mapped with PROT_MTE. The other option would
+> >>>>have been read-as-zero/write-ignored as per the hardware behaviour.
+> >>>>Either option is fine by me but I thought the write-ignored part would
+> >>>>be more confusing for the debugger. If you have any preference here,
+> >>>>please let me know.
+> >>>
+> >>>I think erroring out is a better alternative, as long as the debugger
+> >>>can
+> >>>tell what the error means, like, for example, "this particular address
+> >>>doesn't make use of tags".
+> >>
+> >>And you could use this for probing whether the range has tags or not.
+> >>With my current patches it returns -EFAULT but happy to change this to
+> >>-EOPNOTSUPP or -EINVAL. Note that it only returns an error if no tags
+> >>copied. If gdb asks for a range of two pages and only the first one has
+> >>PROT_MTE, it will return 0 and set the number of tags copied equivalent
+> >>to the first page. A subsequent call would return an error.
+> >>
+> >>In my discussion with Dave on the documentation patch, I thought retries
+> >>wouldn't be needed but in the above case it may be useful to get an
+> >>error code. That's unless we change the interface to return an error and
+> >>also update the user iovec structure.
+> >>
+> >
+> >Let me think about this for a bit. I'm trying to factor in the
+> >/proc/<pid>/maps contents. If debuggers know which pages have PROT_MTE
+> >set, then we can teach the tools not to PEEK/POKE tags from/to those
+> >memory ranges, which simplifies the error handling a bit.
 > 
-> Building without CONFIG_ARM64_VHE leads to a linker error due to the SVE
-> functions being referenced in this list. This is caused by
-> CONFIG_ARM64_VHE disabling CONFIG_ARM64_SVE and, in turn, preventing the
-> generation of those symbols. There aren't any references from code, just
-> this file.
+> I was checking the output of /proc/<pid>/maps and it doesn't seem to contain
+> flags against which i can match PROT_MTE. It seems /proc/<pid>/smaps is the
+> one that contains the flags (mt) for MTE. Am i missing something?
 > 
-> It can be resolved by having the SVE symbol aliases depend on
-> CONFIG_ARM64_SVE.
-Thanks, will fix the linker script in v3.
+> Is this the only place debuggers can check for PROT_MTE? If so, that's
+> unfortunate. /proc/<pid>/smaps doesn't seem to be convenient for parsing.
+
+Does the /proc approach work for gdbserver?
+
+For the SVE ptrace interface we eventually went with existence of the
+NT_ARM_SVE regset as being the canonical way of detecting whether SVE is
+present.
+
+As has been discussed here, I think we probably do want to expose the
+current MTE config for a thread via a new regset.  Without this, I can't
+see how the debugger can know for sure what's going on.
+
+
+Wrinkle: just because MTE is "off", pages might still be mapped with
+PROT_MTE and have arbitrary tags set on them, and the debugger perhaps
+needs a way to know that.  Currently grubbing around in /proc is the
+only way to discover that.  Dunno whether it matters.
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
