@@ -2,134 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29ECF1D929F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 10:54:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 902E91D92D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 10:59:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	References:MIME-Version:Message-ID:In-Reply-To:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NJzjlTeSRVKMKM1oxY3vnx0qab+Eiofq1xQ/3t+gqvA=; b=qfk+9loAN5+Y3zLzHp5ifjOrs
-	fSdjxQVZbprngODPutWckzoYDYm21opDXGtZoy/q34Xlq/d+qyhchp3I3XdBcih4j6E4LfBTBv5/1
-	LWBn3cKG1sI3ju1TYu1JTA3mBy5F8Fat4Mkfv9a9BxVmV0p02Yh1IDsrwse5heboCXmvimUeR0LED
-	Z8XSL69AXb7FcM2CG7upDKsUk6AoKFuUxEAiLCjQKdbfGJs5KsEqO+pBcYf+1MIsyrsTDgNClq1nw
-	FU57s5Qc53rTli9IuVlAeiJtm5S8HvbOyO7663owM4WwFJ3JScoCEX5TE4w+JOTF+CN9z1YDUnL+R
-	kVSWxVL0w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sG18wsspuP6Gou5VCVZuergXVCmt+cG07/WtEhIhfl4=; b=rHpnQziQ8R2JAQ
+	VZo8qucv3cAzKtxTvXs/ElBSUXvhyxniCa46Eqymys8nb5PG7Pllmr7kCxVezWyo41b4dxSJ6BRSZ
+	dpzM7aZpTUhd/Wgso8K7XZqEUrySebUn9GLbOc5EfOwsyj5U6JlVlpIXy7ZEmxwm6Hsas82uXbG9e
+	DWzhomKJYO5U2DvsWxWqbxoUy1Uj6VywhulJ/4U0hoapZeUz0TYjUYldPoj1kf2rmQv2P7TduSCic
+	BzNgi7j9L4/uxAMb0ghJvdTlth0qVbrnLDc8Mpp9Ksk6v0yXKREvL5NTRgJ8gGklpl0wewH1x5tHy
+	j7ToaDyKeEI+eTYfSABA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jay0z-0004kM-J7; Tue, 19 May 2020 08:54:21 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1jay69-00088Y-Io; Tue, 19 May 2020 08:59:41 +0000
+Received: from mail-eopbgr760041.outbound.protection.outlook.com
+ ([40.107.76.41] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jay0q-0004iQ-Ni
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 08:54:14 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200519085404euoutp0288233abf7df3cd4115df119368bbbde6~QYgWoPY_A0337903379euoutp02g;
- Tue, 19 May 2020 08:54:04 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200519085404euoutp0288233abf7df3cd4115df119368bbbde6~QYgWoPY_A0337903379euoutp02g
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1589878444;
- bh=3JaDDwepjp5b5eOtdATnyvFbsIs/b0zSeP+ctxwa7wA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=PVB4aw1zNuXYFvlc6Ikw1QrG6CfZ5CJaexCGut55gb55hwUpokEx2g6pqPJ74oj0y
- r49EP94CcfDMFOiM6F7iNz2ScDugAbRw8wG7wXWfxtxxma6mNpVFEKnQu/yALMP1ks
- aK0gvq8FW5PI6lCIghoYUguMom3QScaqznrEn4ho=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200519085404eucas1p2fa9f18b0c2d2b7ea20f2919a0b855d3c~QYgWaAAcD2006120061eucas1p2r;
- Tue, 19 May 2020 08:54:04 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id 5B.0E.61286.CAE93CE5; Tue, 19
- May 2020 09:54:04 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200519085404eucas1p2b916b0c8ad20c1fda8d196d19debb849~QYgWAbEAR1999019990eucas1p2v;
- Tue, 19 May 2020 08:54:04 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200519085404eusmtrp23f0997b8f4303c86d9f29f545be4724f~QYgV-mfOe2559225592eusmtrp2h;
- Tue, 19 May 2020 08:54:04 +0000 (GMT)
-X-AuditID: cbfec7f2-ef1ff7000001ef66-b1-5ec39eacf306
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 2D.80.08375.CAE93CE5; Tue, 19
- May 2020 09:54:04 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip2.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200519085403eusmtip245ccf2b89eee8f1c3f6b20cb5ff2cd0c~QYgVt4ev41112511125eusmtip2s;
- Tue, 19 May 2020 08:54:03 +0000 (GMT)
-From: Lukasz Stelmach <l.stelmach@samsung.com>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH v6] ARM: boot: Obtain start of physical memory from DTB
-Date: Tue, 19 May 2020 10:53:52 +0200
-In-Reply-To: <20200429082120.16259-1-geert+renesas@glider.be> (Geert
- Uytterhoeven's message of "Wed, 29 Apr 2020 10:21:20 +0200")
-Message-ID: <dleftjmu645mqn.fsf%l.stelmach@samsung.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jay60-00087n-NO
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 08:59:34 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZnlR70mPJ2kUrzJ0sPQaow5eOcjJvJSUJBFfszSQkXFCSFqpJqpcRaw3yR1cdWH6NU70l17kLXZZ6tz7SVqt2p8xv49VZ4A1KvZiJjJyGqRQTZ3zkIeGu6N4jOblzb2KMwAGWIOncMs2IVmx5VXD6bwY5TPMVHitCYm5q39jCitPS8vLoW040lRRCEOBVI91QMTCx1CuJbfXHRJrp4jtVUMrQZdDbHOcGIQVr0ykewP4lvNtjj5psKIBJiB5PIDUuzRWCCjWcswAcRRKwRA7ZT8SVJPcuswGL8qy2LeJzwPkMXYs8StOpDnT7lTbnHAvoepyHg57/3IoLUwTv3JYVw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wl712KMrd8Mj2cLoyPJp81kShObH94mQ7BIIGMXEvz0=;
+ b=I9ItcUM6X7S9JXqvdclji8Pn8lECe7MHcsrv/NIPDYV5mN+mCKVweZJgjdF+2Jj6n9nmkVr10/enhgKfcYIxH4i3qAeiBBVvF820ZtZTCX1yG/49twrIzKA4ab9k1z5ph5yrXnLNUcXmF1yduWH3aLxvmloTr8YDP8perIW/faKy0L41EmltQ14sjEMVOzXRiIT2FSTjjC5z90lsajJatn6Gqzdu0/lMWJIYuKkiP8ZYM5GGqwrV5VMN+8e/mz7SedR/wd/iRuUSadCNMDL33rr7uF0xfvu3A+t1k/ZMgQx3s1B0gC7/cBGzSRrTIZ7xOCApecuqL3lpWXXYBKthJg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=silabs.com; dmarc=pass action=none header.from=silabs.com;
+ dkim=pass header.d=silabs.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=silabs.onmicrosoft.com; s=selector2-silabs-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wl712KMrd8Mj2cLoyPJp81kShObH94mQ7BIIGMXEvz0=;
+ b=kZY8M4nREmSi2HMbLsTjJ1qMLBg5gpvWccsAlA7KGzScmDVKLg8olVEAwEGnY8TwZk3z5GngYJTs55rA8h8J2fMXiE9fct8oUXlrZdj8Jr3lgBXBT4nQ+kYx03JLqOITznojWy9n6MR8ot6NUN04zLBI8fsfZwRlEvuQ123d6J4=
+Authentication-Results: lists.infradead.org; dkim=none (message not signed)
+ header.d=none;lists.infradead.org; dmarc=none action=none
+ header.from=silabs.com;
+Received: from CY4PR11MB1766.namprd11.prod.outlook.com (2603:10b6:903:11a::23)
+ by CY4PR11MB1237.namprd11.prod.outlook.com (2603:10b6:903:2c::19)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.20; Tue, 19 May
+ 2020 08:59:30 +0000
+Received: from CY4PR11MB1766.namprd11.prod.outlook.com
+ ([fe80::31b4:ca69:21c8:3e49]) by CY4PR11MB1766.namprd11.prod.outlook.com
+ ([fe80::31b4:ca69:21c8:3e49%11]) with mapi id 15.20.3000.034; Tue, 19 May
+ 2020 08:59:30 +0000
+From: =?ISO-8859-1?Q?J=E9r=F4me?= Pouiller <jerome.pouiller@silabs.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: Possible race while masking IRQ on Allwinner A20
+Date: Tue, 19 May 2020 10:59:26 +0200
+Message-ID: <11042983.UNsANRFJuY@pc-42>
+Organization: Silicon Labs
+X-ClientProxiedBy: DM5PR11CA0023.namprd11.prod.outlook.com
+ (2603:10b6:3:115::33) To CY4PR11MB1766.namprd11.prod.outlook.com
+ (2603:10b6:903:11a::23)
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SWUwTURSGczrTmaFSvLaoJ2jUNBpcAuISHXeJPowxGuXBqIlKxUlRaUva
- gktiaDRuaBWKCxYBF1QsAlpZhIDRYkTjgkqCiBKlGC2goIK4onYcTHz77v3/859zbi5HaQ4w
- YdxGk020mPQJOkZFl93+VhdxKadmbdTHO2P4bz1dwPc5b7P8lcxiJZ973EHzBR9bgXeXV1N8
- dpYTeE9rg5KvrzzJ8KVtnQree7Qa+MJbzSzf8qpRyef4/Qz/PD0D5g8U6hseU8KP704Q3tzZ
- ywjpDyKEClczK3jc+xnhal6K4NjVyQiH+6KE3vvptHCoxA1Ct2fEsuDVqtkbxISNyaJl4txY
- Vbyv6jmb+DBm64XdmWAH+8JUCOKQTMXc9x1sKqg4DckHvHSuViEJGtIDeN43Xxa6AT/05in+
- VZz72gmycAGwpalbIR/eAuZ1+JSpwHEMicTCwpVSQSiJwtK6N4zkoUgNjdfLe0AStGQxtnZ4
- KYlpMgbLLtdQkimI7AIscz0DKUhNpqOjeIHkGUxmYIn/JSuxmgzCuyde0xJTxIgn6t79nQhJ
- FYdnDrj7R12ImRePKGXWYnttCSvzcPxdkauQ8pGkYIZzmlx7MND35Fda9szCFw+/MzJH4/3e
- HFb2h2Dj+0Fy3xB0lh2n5Gs17tujkd2jsehwVX9KGDra80FmAd9VPOt/6jRA79lXijQY5fpv
- Hdd/67gCsRQZh8WVE+XrCXj+dAcl8xwsKuqiT4HSDUPFJKvRIFonmcQtkVa90ZpkMkTGmY0e
- CHzLe79qP12Dz0/We4FwoAtWx5q9azVKfbJ1m9ELowNJvssFjyCMNplNoi5UneYPyOoN+m3b
- RYt5nSUpQbR6YRhH64aqp5xpW6MhBr1N3CyKiaLln6rggsLskJ/8dHy77dbskRPuDdb+KNLY
- 6iuHVByamVFvC5nXtimxKXX52ETtda1jb19B9qLsI9mG6uafO1KOzQzPim7sm+JrmRddHbP0
- hj1atTgubZTnw8sVTTMq48N3LDEUTjUbX0//vdMevnpVjY5tuDnAN/lKaKw/uCvGtU9cFf6Z
- /5L19lGrjrbG6yeNpyxW/R9OiLe9ngMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTcRTH++3e3U1z9GtN/LEgbBRR4tVptt9MRUrqQgRi/0T5GnrR0G1y
- 7wwNIqOikiyfZPNdPnA23860olpmimWaKZXZQ0snhlpZZGq0OQL/O5zP53zhcI6YkJ4XysUn
- dAaW02mSFZQr2ff36Xvv26WPo33NV0i8uDAH8Eputwg3FTYIcdn1LBLXfZsA2NR+n8AlRbkA
- N0+MCPFQZzGF26ZnBdhacB9gc9eYCH/6+FqIS202Co/m5IHQDczQyCDBLP3JBcxkz0WKyXnu
- zXQYx0RMs+kyxbRUnmGyzs1SzLUVX+bXsxySudpqAsyP5i3hbsfoIE6famA9E/W8IVhxXIn9
- aKUa03671bTSXxUV6Beg8AkJimeTT5xkOZ+QWDpx/N6oKKU/Iq3mQiHIABlhmcBFjOBuVPV7
- FmQCV7EUVgFUWtgmygRiO5Cj2pIEp7MJLY9kUk7nC0CVEzaBw6Egjczmow5HBn1R24vJVYeA
- vSSqaF8UOcAmeAhNzFgJ53A2QNZbHwUOQMLtyNL4eBW4wHMAWYxvgCNVAlUoq2G/w3GHatRq
- +7AaJIEbUe+Nz6SjJmAS+lk3RWQDaFyDjGuQ0Z5EwJ2oodPH2fZC1RUzhLMORvX1c2Q5EJqA
- jE3ltQlaXknzGi2fqkug4/TaZmC/uqV7seUOeNl0xAqgGCjcJLF6a7RUqDnJp2utYJs9Zryx
- bgDISZ1exypkkmybHUviNemnWE4fw6Ums7wVBNj3zCHk7nF6+z/pDDHKAKUKq5Uqf5X/Hqzw
- kFyCjyKlMEFjYJNYNoXl/s8JxC7yDOC3a2mF5gZOt211kaVpRwPrwhci+z8VW1zXlS1jXejD
- wajhDpN6c0iPpWLP94NkdVm1xBzfE5lfGoyH846q4x5MLam8/ReWs9bPU2Fdd5n2nwe65Gdr
- +grenQ47LJiP+Cp6mz8d7V71uTuWe3UzttxW65XSKt7r8WTec1/U26IdCpJP1Ch3ERyv+Qdc
- aT6zFwMAAA==
-X-CMS-MailID: 20200519085404eucas1p2b916b0c8ad20c1fda8d196d19debb849
-X-Msg-Generator: CA
-X-RootMTR: 20200429082134eucas1p2415c5269202529e6b019f2d70c1b5572
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200429082134eucas1p2415c5269202529e6b019f2d70c1b5572
-References: <CGME20200429082134eucas1p2415c5269202529e6b019f2d70c1b5572@eucas1p2.samsung.com>
- <20200429082120.16259-1-geert+renesas@glider.be>
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from pc-42.localnet (2a01:e35:2435:66a0:544b:f17b:7ae8:fb7) by
+ DM5PR11CA0023.namprd11.prod.outlook.com (2603:10b6:3:115::33) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3000.20 via Frontend Transport; Tue, 19 May 2020 08:59:29 +0000
+X-Originating-IP: [2a01:e35:2435:66a0:544b:f17b:7ae8:fb7]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 6bff373a-4e7b-4096-fa52-08d7fbd2f12e
+X-MS-TrafficTypeDiagnostic: CY4PR11MB1237:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <CY4PR11MB12379C4A0AE4310EF59597E293B90@CY4PR11MB1237.namprd11.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:7219;
+X-Forefront-PRVS: 040866B734
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: nRyjh7oixlkPj2x7WFSU9sFX5g1ZYGui0SmhugQ56hjOkb32+2cR5YrqIdMdJH88Les2l9SqfQlcaS04IQzvHFiC6k75Z5c0ywtNQSZtSYTZ8Fw3ROPduwEAQuiPBgFyZqI6rRVo7rSLbBXV5wYLEYt+8E7f68+oklUIb5lQ/BDt2A0wBo1mPf7zm+pMZAPCDiDXD02/E/YBZWz3+itNuQ1CvqemQq4W3ytBv678xuYQJYRa5cV4eWokoR1WOz6Ts3xZcgtBJ5u95K2bNLsfYT1z3lGgxdmu0IQOVnOCGbB4AwKi6rzP0HyfWZAs4VBU2IkTq+9MFqZARMWUNZezasTF1aU58GLHP2DoBK6zONkEIWUDcrl2z73HbabQV4oeXKtNPMyytPEBwy+NX6lh21PJNrqcloK4oSKmk+rE0wo1lAgPwcHG0/MV8XZj0Ohm
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:CY4PR11MB1766.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(376002)(396003)(39850400004)(136003)(366004)(346002)(54906003)(6486002)(5660300002)(66476007)(66556008)(4326008)(8936002)(8676002)(66946007)(9686003)(6506007)(52116002)(86362001)(33716001)(316002)(6666004)(6916009)(36916002)(6512007)(186003)(16526019)(2906002)(66574014)(478600001);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: H5V5cmGgfTiFctd3ZmTA6RP8whgiZHdQmKhrxhSTEmFiHOD+vVA5tIFBwnW1N6cCJARA7w7HF+tYFgW1SrzTOf0FJ9zOz9419DgAgUFWyFaeLlQlRyy0oQn66ZRh/qnKuDj454diYo6EXqhGrS28kj7d09n/mUJjVwsaS2JtRn38JuK/xGdLY6H7CgDlWGvrg+bbfw+mv2eWYxMlD6QGMKGkW5VSa3+IoQlHXiW6IiNKOqMWaz7bB2yNaI6EkFCj4csccWULNg6THwsckWFD264ZXIEjNufrG2Bv49qa3+ODnUjZB5uDw6MDEI8urpZnjRtuNZsSvbkUGpgfk9Rhh1lTztaYcXXevcZEXL9ygKaLQCvb0TWAY32WAlBQeNSSc5A/M1145HvSzvjI2Tj9J4gt+iN1bzZgQDVggAQz07vSXqYtOxjOO2mDmHPADi1ccisoK616EsKUdXL+Y2v7BnO2sXND+TGRVtjyELPUsbLxmgi/9rtyUhdRzYQg3BozKIK0JfHyVPcxDClI5bUVXHcN3sdPFG/B3anwJJ9Smc4=
+X-OriginatorOrg: silabs.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6bff373a-4e7b-4096-fa52-08d7fbd2f12e
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 May 2020 08:59:30.5985 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 54dbd822-5231-4b20-944d-6f4abcd541fb
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: YxiiidCSWlvNIenyXrQqeX9n/hfdclhCpfKADrjaGeetHjW4mOwPYVvQqoCJDCxMyWTiVg+/ATlSUIKVcyQ/BQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR11MB1237
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_015413_041606_FAF96FB0 
-X-CRM114-Status: GOOD (  24.21  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200519_015932_817106_1B056CFA 
+X-CRM114-Status: GOOD (  11.54  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.76.41 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.76.41 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,262 +120,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Masahiro Yamada <masahiroy@kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Chris Brandt <chris.brandt@renesas.com>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: multipart/mixed; boundary="===============6427558999690558792=="
+Cc: Marc Dorval <marc.dorval@silabs.com>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============6427558999690558792==
-Content-Type: multipart/signed; boundary="=-=-="; micalg="pgp-sha256";
-	protocol="application/pgp-signature"
+Hello arm developers,
 
---=-=-=
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+I have some trouble with integration of the wfx driver[1] on Allwinner
+A20 platform.
 
-It was <2020-04-29 =C5=9Bro 10:21>, when Geert Uytterhoeven wrote:
-> Currently, the start address of physical memory is obtained by masking
-> the program counter with a fixed mask of 0xf8000000.  This mask value
-> was chosen as a balance between the requirements of different platforms.
-> However, this does require that the start address of physical memory is
-> a multiple of 128 MiB, precluding booting Linux on platforms where this
-> requirement is not fulfilled.
->
-> Fix this limitation by obtaining the start address from the DTB instead,
-> if available (either explicitly passed, or appended to the kernel).
-> Fall back to the traditional method when needed.
->
-> This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
-> on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
-> i.e. not at a multiple of 128 MiB.
->
-> Suggested-by: Nicolas Pitre <nico@fluxnic.net>
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
-> Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
-> Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> Tested-by: Dmitry Osipenko <digetx@gmail.com>
-> ---
+The chip WF200 is connected to the SDIO bus. At the beginning, I tried =
 
-[...]
+to use the IRQ provided by the SDIO bus. However, I have noticed I =
 
-Apparently reading physical memory layout from DTB breaks crashdump
-kernels. A crashdump kernel is loaded into a region of memory, that is
-reserved in the original (i.e. to be crashed) kernel. The reserved
-region is large enough for the crashdump kernel to run completely inside
-it and don't modify anything outside it, just read and dump the remains
-of the crashed kernel. Using the information from DTB makes the
-decompressor place the kernel outside of the dedicated region.
+received some IRQs twice. Since the IRQ line is multiplexed with the =
 
-The log below shows that a zImage and DTB are loaded at 0x18eb8000 and
-0x193f6000 (physical). The kernel is expected to run at 0x18008000, but
-it is decompressed to 0x00008000 (see r4 reported before jumping from
-within __enter_kernel). If I were to suggest something, there need to be
-one more bit of information passed in the DTB telling the decompressor
-to use the old masking technique to determain kernel address. It would
-be set in the DTB loaded along with the crashdump kernel.
+data line, it is not very clear if it is a bug, or if the SDIO device =
 
-Despite the fact the kernel is able to start and get quite far it simply
-panics (for a reason unknown to me at the moment).
+has to support that.
 
-Kind regards,
-=C5=81S
+The chip WF200 allows to use a dedicated line for the IRQ (aka
+"Out-Of-Band" IRQ). So I have enabled this feature with a edge triggered =
 
-=2D-8<---------------cut here---------------start------------->8---
-[   42.358349] kexec_file:__do_sys_kexec_file_load:435: kexec_file: Loading=
- segment 0: buf=3D0xf1871bcb bufsz=3D0x52c870 mem=3D0x18eb8000 memsz=3D0x52=
-d000
-[   42.374615] kexec_file:__do_sys_kexec_file_load:435: kexec_file: Loading=
- segment 1: buf=3D0x012365f6 bufsz=3D0x5abf mem=3D0x193f6000 memsz=3D0x6000
-root@target:~# sync && echo c > /proc/sysrq-trigger
-[   62.206252] sysrq: Trigger a crash
-[   62.209711] Kernel panic - not syncing: sysrq triggered crash
-[   62.215548] CPU: 0 PID: 1236 Comm: bash Kdump: loaded Tainted: G        =
-W         5.7.0-rc6-00011-gad3fbe6a883e #174
-[   62.226225] Hardware name: BCM2711
-[   62.229676] Backtrace:
-[   62.232178] [<c010bfa4>] (dump_backtrace) from [<c010c334>] (show_stack+=
-0x20/0x24)
-[   62.239863]  r7:00000008 r6:c0b4a48d r5:00000000 r4:c0eb7b18
-[   62.245617] [<c010c314>] (show_stack) from [<c03e475c>] (dump_stack+0x20=
-/0x28)
-[   62.252954] [<c03e473c>] (dump_stack) from [<c011e368>] (panic+0xf4/0x32=
-0)
-[   62.259941] [<c011e274>] (panic) from [<c044bb60>] (sysrq_handle_crash+0=
-x1c/0x20)
-[   62.267536]  r3:c044bb44 r2:c57e1c21 r1:60000093 r0:c0b4a48d
-[   62.273278]  r7:00000008
-[   62.275853] [<c044bb44>] (sysrq_handle_crash) from [<c044c198>] (__handl=
-e_sysrq+0xa0/0x150)
-[   62.284334] [<c044c0f8>] (__handle_sysrq) from [<c044c620>] (write_sysrq=
-_trigger+0x68/0x78)
-[   62.292814]  r10:00000002 r9:e9123f50 r8:00000002 r7:012f2408 r6:e9112cc=
-0 r5:c044c5b8
-[   62.300757]  r4:00000002
-[   62.303335] [<c044c5b8>] (write_sysrq_trigger) from [<c02a7ad4>] (proc_r=
-eg_write+0x98/0xa8)
-[   62.311808]  r5:c044c5b8 r4:eb655700
-[   62.315443] [<c02a7a3c>] (proc_reg_write) from [<c023b080>] (__vfs_write=
-+0x48/0xf4)
-[   62.323216]  r9:012f2408 r8:c02a7a3c r7:00000002 r6:e9112cc0 r5:e9123f50=
- r4:c0e04248
-[   62.331077] [<c023b038>] (__vfs_write) from [<c023c900>] (vfs_write+0xa8=
-/0xcc)
-[   62.338407]  r8:e9123f50 r7:012f2408 r6:00000002 r5:00000000 r4:e9112cc0
-[   62.345211] [<c023c858>] (vfs_write) from [<c023cae0>] (ksys_write+0x78/=
-0xc4)
-[   62.352454]  r9:012f2408 r8:e9123f5c r7:c0e04248 r6:e9123f50 r5:012f2408=
- r4:e9112cc0
-[   62.360316] [<c023ca68>] (ksys_write) from [<c023cb44>] (sys_write+0x18/=
-0x1c)
-[   62.367559]  r10:00000004 r9:e9122000 r8:c0100264 r7:00000004 r6:b6edcd9=
-0 r5:012f2408
-[   62.375504]  r4:00000002
-[   62.378080] [<c023cb2c>] (sys_write) from [<c0100060>] (ret_fast_syscall=
-+0x0/0x54)
-[   62.385759] Exception stack(0xe9123fa8 to 0xe9123ff0)
-[   62.390889] 3fa0:                   00000002 012f2408 00000001 012f2408 =
-00000002 00000000
-[   62.399190] 3fc0: 00000002 012f2408 b6edcd90 00000004 012f2408 00000002 =
-00000000 00118fd8
-[   62.407488] 3fe0: 0000006c be82b7e8 b6df7010 b6e546e4
-[   62.412647] Loading crashdump kernel...
-[   62.416628] Bye!
-Uncompressing Linux... done, booting the kernel.
-r2:0x193F6000
-r4:0x00008000
-[    0.000000] Booting Linux on physical CPU 0x0
-[    0.000000] Linux version 5.7.0-rc6-00011-gad3fbe6a883e (l.stelmach@AMDC=
-1062) (gcc version 8.3.0 (Debian 8.3.0-2), GNU ld (GNU Binutils for Debian)=
- 2.31.1) #174 Tue May 19
-09:37:10 CEST 2020
-[    0.000000] CPU: ARMv7 Processor [410fd083] revision 3 (ARMv7), cr=3D10c=
-5383d
-[    0.000000] CPU: div instructions available: patching division code
-[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, PIPT instruction ca=
-che
-[    0.000000] OF: fdt: Machine model: Raspberry Pi 4 Model B
-[    0.000000] earlycon: uart8250 at MMIO32 0xfe215040 (options '')
-[    0.000000] printk: bootconsole [uart8250] enabled
-[    0.000000] Memory policy: Data cache writeback
-[    0.000000] Reserved memory: created CMA memory pool at 0x04000000, size=
- 64 MiB
-[    0.000000] OF: reserved mem: initialized node linux,cma, compatible id =
-shared-dma-pool
-[    0.000000] 8<--- cut here ---
-[    0.000000] Unable to handle kernel paging request at virtual address d9=
-3f6000
-[    0.000000] pgd =3D (ptrval)
-[    0.000000] [d93f6000] *pgd=3D00000000
-[    0.000000] Internal error: Oops: 5 [#1] ARM
-[    0.000000] Modules linked in:
-[    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted 5.7.0-rc6-00011-gad3=
-fbe6a883e #174
-[    0.000000] Hardware name: BCM2711
-[    0.000000] PC is at fdt32_ld+0xc/0x18
-[    0.000000] LR is at fdt_check_header+0x14/0x15c
-[    0.000000] pc : [<c03e4b10>]    lr : [<c03e4c24>]    psr: a00000d3
-[    0.000000] sp : c0e01ed8  ip : c0e01ee8  fp : c0e01ee4
-[    0.000000] r10: c3ffff40  r9 : c0e2e4f4  r8 : 00000000
-[    0.000000] r7 : c0f5b35c  r6 : d93f6000  r5 : c0e085d0  r4 : c0d25510
-[    0.000000] r3 : d93f6000  r2 : c0f5b35c  r1 : 00000000  r0 : d93f6000
-[    0.000000] Flags: NzCv  IRQs off  FIQs off  Mode SVC_32  ISA ARM  Segme=
-nt none
-[    0.000000] Control: 10c5383d  Table: 00004059  DAC: 00000051
-[    0.000000] Process swapper (pid: 0, stack limit =3D 0x(ptrval))
-[    0.000000] Stack: (0xc0e01ed8 to 0xc0e02000)
-[    0.000000] 1ec0:                                                       =
-c0e01f04 c0e01ee8
-[    0.000000] 1ee0: c03e4c24 c03e4b10 c0d25510 c0e085d0 d93f6000 c0f5b35c =
-c0e01f2c c0e01f08
-[    0.000000] 1f00: c05f7d94 c03e4c1c c0d25510 c0e085d0 07ffffff 00000000 =
-c0f4c580 c0e2e4f4
-[    0.000000] 1f20: c0e01f4c c0e01f30 c0d26a54 c05f7ccc 00000000 c0e01f40 =
-c0123458 c0d2ff08
-[    0.000000] 1f40: c0e01fa4 c0e01f50 c0d03c18 c0d26a28 ffffffff 10c5383d =
-c0d0d244 c0e04248
-[    0.000000] 1f60: c0b11587 c09000e7 c0e01f94 c0e01f78 c01580e4 00000000 =
-c0e01f9c c0d00330
-[    0.000000] 1f80: c0e04248 c0e04240 ffffffff 193f6000 c0eb77fc 10c53c7d =
-c0e01ff4 c0e01fa8
-[    0.000000] 1fa0: c0d00b5c c0d035a4 00000000 00000000 00000000 00000000 =
-00000000 c0d31a30
-[    0.000000] 1fc0: 00000000 00000000 00000000 c0d00330 00000051 10c03c7d =
-ffffffff 193f6000
-[    0.000000] 1fe0: 410fd083 10c53c7d 00000000 c0e01ff8 00000000 c0d00b08 =
-00000000 00000000
-[    0.000000] Backtrace:
-[    0.000000] [<c03e4b04>] (fdt32_ld) from [<c03e4c24>] (fdt_check_header+=
-0x14/0x15c)
-[    0.000000] [<c03e4c10>] (fdt_check_header) from [<c05f7d94>] (__unflatt=
-en_device_tree+0xd4/0x284)
-[    0.000000]  r7:c0f5b35c r6:d93f6000 r5:c0e085d0 r4:c0d25510
-[    0.000000] [<c05f7cc0>] (__unflatten_device_tree) from [<c0d26a54>] (un=
-flatten_device_tree+0x38/0x54)
-[    0.000000]  r9:c0e2e4f4 r8:c0f4c580 r7:00000000 r6:07ffffff r5:c0e085d0=
- r4:c0d25510
-[    0.000000] [<c0d26a1c>] (unflatten_device_tree) from [<c0d03c18>] (setu=
-p_arch+0x680/0xabc)
-[    0.000000]  r4:c0d2ff08
-[    0.000000] [<c0d03598>] (setup_arch) from [<c0d00b5c>] (start_kernel+0x=
-60/0x500)
-[    0.000000]  r10:10c53c7d r9:c0eb77fc r8:193f6000 r7:ffffffff r6:c0e0424=
-0 r5:c0e04248
-[    0.000000]  r4:c0d00330
-[    0.000000] [<c0d00afc>] (start_kernel) from [<00000000>] (0x0)
-[    0.000000]  r10:10c53c7d r9:410fd083 r8:193f6000 r7:ffffffff r6:10c03c7=
-d r5:00000051
-[    0.000000]  r4:c0d00330
-[    0.000000] Code: c03e49d0 e1a0c00d e92dd800 e24cb004 (e5900000)
-[    0.000000] random: get_random_bytes called from init_oops_id+0x30/0x4c =
-with crng_init=3D0
-[    0.000000] ---[ end trace 0000000000000000 ]---
-[    0.000000] Kernel panic - not syncing: Attempted to kill the idle task!
-[    0.000000] ---[ end Kernel panic - not syncing: Attempted to kill the i=
-dle task! ]---
-=2D-8<---------------cut here---------------end--------------->8---
+IRQ. However, I missed some IRQs. Indeed, it seems that Allwinner use a =
+
+32KHz clock to sample the IRQs. It is not fast enough for us. I think it =
+
+explains why we miss some IRQs (using the attribute "input-debounce"[2], =
+
+I tried to enable the 24Mhz clock, but without success).
+
+Nevermind, I tried to use a level triggered IRQ (and my request is on =
+
+this part). As you can see in the wfx driver (in  bus_sdio.c and bh.c), =
+
+I use a threaded IRQ for that. Unfortunately, I receive some IRQs twice. =
+
+I traced the problem, I get:
+
+ QSGRenderThread-981   [000] d.h.   247.485524: irq_handler_entry: irq=3D80=
+ name=3Dwfx
+ QSGRenderThread-981   [000] d.h.   247.485547: irq_handler_exit: irq=3D80 =
+ret=3Dhandled
+ QSGRenderThread-981   [000] d.h.   247.485600: irq_handler_entry: irq=3D80=
+ name=3Dwfx
+ QSGRenderThread-981   [000] d.h.   247.485606: irq_handler_exit: irq=3D80 =
+ret=3Dhandled
+      irq/80-wfx-260   [001] ....   247.485828: io_read32: CONTROL: 0000f046
+      irq/80-wfx-260   [001] ....   247.486072: io_read32: CONTROL: 0000f046
+    kworker/1:1H-116   [001] ....   247.486214: io_read: QUEUE: 8b 00 84 18=
+ 00 00 00 00 01 00 15 82 2b 48 01 1e 88 42 30 00 08 6b d7 c3 53 e0 28 80 88=
+ 67 32 af ... (192 bytes)
+    kworker/1:1H-116   [001] ....   247.493097: io_read: QUEUE: 00 00 00 00=
+ 00 00 00 00 06 06 00 6a 3f 95 00 60 00 00 00 00 08 62 00 00 01 00 5e 00 00=
+ 07 28 80 ... (192 bytes)
+    [...]
+
+On this trace, we can see:
+  - the hard IRQ handler
+  - the IRQ acknowledge from the thread irq/80-wfx-260
+  - the access to the data from kworker/1:1H-116
+
+As far as I understand, the first call to the IRQ handler (at =
+
+247.485524) should mask the IRQ 80. So, the second IRQ (at 247.485600) =
+
+should not happen and the thread irq/80 should be triggered only once.
+
+Do you have any idea of what is going wrong with this IRQ?
+
+Thank you,
+
+[1] available in drivers/staging/wfx of the staging-next branch of the
+Greg KH's repository. Be sure you get the up-to-date version.
+
+[2] see commit 7c926492d38a3feef4b4b29c91b7c03eb1b8b546 for detail about =
+
+the interactions between clock and debouncing.
+
+-- =
+
+J=E9r=F4me Pouiller
 
 
-=2D-=20
-=C5=81ukasz Stelmach
-Samsung R&D Institute Poland
-Samsung Electronics
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEXpuyqjq9kGEVr9UQsK4enJilgBAFAl7DnqAACgkQsK4enJil
-gBDdBAgAkYGcbst4fch5FCBWEjA9YFKnATGN5PZYL9giYIuiqyOQEVXlc/s1EOK9
-wXtfhjT/YrKMMPTcJcIYXcEuotdtM5I4Ez7z0SnHz9R5hPAub7krn3K3k4yjmWMv
-vghv8AxGBiomWnpB6evM6NENPR1+dDWxMb1B3/mvce3aCqlPKLu3dLVn0zN9pDDC
-QZZeWvHQN/SpHJfRXM/B10tKOLrJwNv7Puw2yBREfqfSE55CSjNEKFe8NRKemvzI
-KeV+d3NGjkc1GpZUk+TxONPAZ+UsAiFttOQ3iP9Z6gy9yV7WoLF98D7TcxMX1T4W
-XUvD6CtP+vrTDC+2kG09knMxOV+b+Q==
-=3Qe0
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============6427558999690558792==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6427558999690558792==--
-
