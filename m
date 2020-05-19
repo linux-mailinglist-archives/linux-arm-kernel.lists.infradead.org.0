@@ -2,80 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2E0B1D8D80
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 04:14:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C84121D8D8B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 04:23:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Subject:To:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=haMQR/X4uUFfwkqQioacHnCXm5oT6PXHhn1fKZ8O0C4=; b=kGk
-	Y2f18hM0nG8zzKwUIlwRrSD7eWVD7NKn1EBUHzI1XgcCcX41RBjpPYSYA8CdBNHE9KFneX0HqKs4E
-	AtEa+jUvvELjYv43+CpZKpBPoOuhJU+F7j2r++rwpb9PdXgWIYYKAWfwy66R2Jl1ULVw9R512LwhQ
-	xbs4R+/p3rUPSNh+IVSpKZjRTT0/9O+d/bomUWa3in35dX4bhTyYCZQSdvwXY1ooRR8+tC83EV/Dz
-	vLdOQlylpzKaV98nslQXkVS51h9bHQx1PWisP++Vvjeco6JKXA8IOawtAOjNfGcFcUTQyNXRKNIyp
-	v/BKzR87ZR3xOxfkbGSdYQu3O6KA8Lg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Arn09FbyygRO+rhLuQFeraIE+0DXuGaKJyTva9p2fvY=; b=o7mMgXUkyz98pL
+	S2Vf1O4T+1ws3tOubyRWvzYZtKzYNOiTs07uUHLIjJnFLeI2jEEImbLM68TKlY12QGywVW5cdq3rX
+	Dea6Fqm/ZOb2MZi9HZywMiI5P8Rbgq6waAFw4Oe2HR9bx9EmXaynTrurcHCVYi9KKfPReiSfJvAAH
+	ez3km7o/tGqiHQTPVUsUJR+vayp8+A35uh+enbi2a5jk3GOsPvX7g0tGWTOksXIKnRfxcAdDhv1tr
+	PnVvRrJRjmr8wcs0E8LgjnCqN+BzE1NSjOyI5fOxFqjqjnqRg7DdHLpR26CILY9jvuE2686cVb9bV
+	f+5UOyz5LbSYZD3J0ayQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jarm4-0005cb-9R; Tue, 19 May 2020 02:14:32 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jaruw-0002xP-06; Tue, 19 May 2020 02:23:42 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jarlw-0005c9-Bb
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 02:14:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589854460;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding;
- bh=QX3XmyjeIclT2ZAVr3k5yT++LGoIx4Itsc/yEkCQZjo=;
- b=CplsOeIKdi4dP2L/kp9FlH/4AR8Fsj4WWELbq1Q7d5v2QEYhcMYgimb7AdyCqe9N5uvVdR
- 5341nJz9VGfQDXpTlT9HjIDe/oExsgZ/yJ1MmQeUs6ohXx4qGOiJEacADtnI4/LmAk59ZL
- blFScMO+EZbUmC6rdmpDgHyUnygEq2M=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-25-r4h1wYF5PjqcKDwYh2_UFQ-1; Mon, 18 May 2020 22:14:17 -0400
-X-MC-Unique: r4h1wYF5PjqcKDwYh2_UFQ-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id C3E8B1005512;
- Tue, 19 May 2020 02:14:15 +0000 (UTC)
-Received: from [172.54.83.71] (cpt-1025.paas.prod.upshift.rdu2.redhat.com
- [10.0.19.47])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 7380B10013D9;
- Tue, 19 May 2020 02:14:12 +0000 (UTC)
+ id 1jarum-0002wM-Ry; Tue, 19 May 2020 02:23:34 +0000
+X-UUID: 9cae0945b9a741de95cec69b9fc411e6-20200518
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=pahJ2L0gjM1kDa0csOJAjHWKOME8knEXrsVPb3ccsfw=; 
+ b=KVgsLiVR7RBdzBe8Z0nxHU/1PvGo02wu5TZ+zlE0HVHItSCUw/KtajIveLitM1tNrhmu5vQBFE8jDv3k1Nsg43iRYvaXGZeM+LPCFTvflui04Bwh5P0GePazfsjwg7K6rZwenemCSDQWcpdKrtGApHptyI2Zx114YgSHq5nzUs4=;
+X-UUID: 9cae0945b9a741de95cec69b9fc411e6-20200518
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 864673315; Mon, 18 May 2020 18:23:30 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 18 May 2020 19:23:26 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 19 May 2020 10:23:24 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Tue, 19 May 2020 10:23:24 +0800
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
+ <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, "Paul E . McKenney" <paulmck@kernel.org>, "Josh
+ Triplett" <josh@joshtriplett.org>, Mathieu Desnoyers
+ <mathieu.desnoyers@efficios.com>, Lai Jiangshan <jiangshanlai@gmail.com>,
+ Joel Fernandes <joel@joelfernandes.org>, Andrew Morton
+ <akpm@linux-foundation.org>
+Subject: [PATCH v4 0/4] kasan: memorize and print call_rcu stack
+Date: Tue, 19 May 2020 10:23:22 +0800
+Message-ID: <20200519022322.24053-1-walter-zh.wu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-From: CKI Project <cki-project@redhat.com>
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org
-Subject: =?utf-8?b?4pyF?= PASS: Test report for kernel 5.7.0-rc6-93d53d2.cki
- (arm-next)
-Date: Tue, 19 May 2020 02:14:12 -0000
-Message-ID: <cki.5289555647.QBY6MBAI4Z@redhat.com>
-X-Gitlab-Pipeline-ID: 571360
-X-Gitlab-Url: https://xci32.lab.eng.rdu2.redhat.com
-X-Gitlab-Path: /cki-project/cki-pipeline/pipelines/571360
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_191424_473407_B0FFC7B4 
-X-CRM114-Status: UNSURE (   7.76  )
+X-CRM114-CacheID: sfid-20200518_192332_912301_DD405297 
+X-CRM114-Status: UNSURE (   9.36  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,8 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,74 +89,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Walter Wu <walter-zh.wu@mediatek.com>,
+ wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CkhlbGxvLAoKV2UgcmFuIGF1dG9tYXRlZCB0ZXN0cyBvbiBhIHJlY2VudCBjb21taXQgZnJvbSB0
-aGlzIGtlcm5lbCB0cmVlOgoKICAgICAgIEtlcm5lbCByZXBvOiBodHRwczovL2dpdC5rZXJuZWwu
-b3JnL3B1Yi9zY20vbGludXgva2VybmVsL2dpdC9hcm02NC9saW51eC5naXQKICAgICAgICAgICAg
-Q29tbWl0OiA5M2Q1M2QyNzhkMDEgLSBNZXJnZSBicmFuY2ggJ2Zvci1uZXh0L3NjcycgaW50byBm
-b3Ita2VybmVsY2kKClRoZSByZXN1bHRzIG9mIHRoZXNlIGF1dG9tYXRlZCB0ZXN0cyBhcmUgcHJv
-dmlkZWQgYmVsb3cuCgogICAgT3ZlcmFsbCByZXN1bHQ6IFBBU1NFRAogICAgICAgICAgICAgTWVy
-Z2U6IE9LCiAgICAgICAgICAgQ29tcGlsZTogT0sKICAgICAgICAgICAgIFRlc3RzOiBPSwoKQWxs
-IGtlcm5lbCBiaW5hcmllcywgY29uZmlnIGZpbGVzLCBhbmQgbG9ncyBhcmUgYXZhaWxhYmxlIGZv
-ciBkb3dubG9hZCBoZXJlOgoKICBodHRwczovL2NraS1hcnRpZmFjdHMuczMudXMtZWFzdC0yLmFt
-YXpvbmF3cy5jb20vaW5kZXguaHRtbD9wcmVmaXg9ZGF0YXdhcmVob3VzZS8yMDIwLzA1LzE4LzU3
-MTM2MAoKUGxlYXNlIHJlcGx5IHRvIHRoaXMgZW1haWwgaWYgeW91IGhhdmUgYW55IHF1ZXN0aW9u
-cyBhYm91dCB0aGUgdGVzdHMgdGhhdCB3ZQpyYW4gb3IgaWYgeW91IGhhdmUgYW55IHN1Z2dlc3Rp
-b25zIG9uIGhvdyB0byBtYWtlIGZ1dHVyZSB0ZXN0cyBtb3JlIGVmZmVjdGl2ZS4KCiAgICAgICAg
-LC0uICAgLC0uCiAgICAgICAoIEMgKSAoIEsgKSAgQ29udGludW91cwogICAgICAgIGAtJywtLmAt
-JyAgIEtlcm5lbAogICAgICAgICAgKCBJICkgICAgIEludGVncmF0aW9uCiAgICAgICAgICAgYC0n
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwoKQ29tcGlsZSB0ZXN0aW5nCi0tLS0tLS0tLS0tLS0tLQoK
-V2UgY29tcGlsZWQgdGhlIGtlcm5lbCBmb3IgMSBhcmNoaXRlY3R1cmU6CgogICAgYWFyY2g2NDoK
-ICAgICAgbWFrZSBvcHRpb25zOiAtajMwIElOU1RBTExfTU9EX1NUUklQPTEgdGFyZ3otcGtnCgoK
-CkhhcmR3YXJlIHRlc3RpbmcKLS0tLS0tLS0tLS0tLS0tLQpXZSBib290ZWQgZWFjaCBrZXJuZWwg
-YW5kIHJhbiB0aGUgZm9sbG93aW5nIHRlc3RzOgoKICBhYXJjaDY0OgogICAgSG9zdCAxOgogICAg
-ICAg4pyFIEJvb3QgdGVzdAogICAgICAg4pyFIHhmc3Rlc3RzIC0gZXh0NAogICAgICAg4pyFIHhm
-c3Rlc3RzIC0geGZzCiAgICAgICDinIUgc2VsaW51eC1wb2xpY3k6IHNlcmdlLXRlc3RzdWl0ZQog
-ICAgICAg4pyFIHN0b3JhZ2U6IHNvZnR3YXJlIFJBSUQgdGVzdGluZwogICAgICAg4pyFIHN0cmVz
-czogc3RyZXNzLW5nCiAgICAgICDwn5qnIOKchSBJUE1JIGRyaXZlciB0ZXN0CiAgICAgICDwn5qn
-IOKchSBJUE1JdG9vbCBsb29wIHN0cmVzcyB0ZXN0CiAgICAgICDwn5qnIOKchSBTdG9yYWdlIGJs
-a3Rlc3RzCgogICAgSG9zdCAyOgogICAgICAg4pyFIEJvb3QgdGVzdAogICAgICAg4pyFIFBvZG1h
-biBzeXN0ZW0gaW50ZWdyYXRpb24gdGVzdCAtIGFzIHJvb3QKICAgICAgIOKchSBQb2RtYW4gc3lz
-dGVtIGludGVncmF0aW9uIHRlc3QgLSBhcyB1c2VyCiAgICAgICDinIUgTFRQCiAgICAgICDinIUg
-TWVtb3J5IGZ1bmN0aW9uOiBtZW1mZF9jcmVhdGUKICAgICAgIOKchSBBTVRVIChBYnN0cmFjdCBN
-YWNoaW5lIFRlc3QgVXRpbGl0eSkKICAgICAgIOKchSBOZXR3b3JraW5nIGJyaWRnZTogc2FuaXR5
-CiAgICAgICDinIUgRXRoZXJuZXQgZHJpdmVycyBzYW5pdHkKICAgICAgIOKchSBOZXR3b3JraW5n
-IHNvY2tldDogZnV6egogICAgICAg4pyFIE5ldHdvcmtpbmc6IGlnbXAgY29uZm9ybWFuY2UgdGVz
-dAogICAgICAg4pyFIE5ldHdvcmtpbmcgcm91dGU6IHBtdHUKICAgICAgIOKchSBOZXR3b3JraW5n
-IHJvdXRlX2Z1bmMgLSBsb2NhbAogICAgICAg4pyFIE5ldHdvcmtpbmcgcm91dGVfZnVuYyAtIGZv
-cndhcmQKICAgICAgIOKchSBOZXR3b3JraW5nIFRDUDoga2VlcGFsaXZlIHRlc3QKICAgICAgIOKc
-hSBOZXR3b3JraW5nIFVEUDogc29ja2V0CiAgICAgICDinIUgTmV0d29ya2luZyB0dW5uZWw6IGdl
-bmV2ZSBiYXNpYyB0ZXN0CiAgICAgICDinIUgTmV0d29ya2luZyB0dW5uZWw6IGdyZSBiYXNpYwog
-ICAgICAg4pyFIEwyVFAgYmFzaWMgdGVzdAogICAgICAg4pyFIE5ldHdvcmtpbmcgdHVubmVsOiB2
-eGxhbiBiYXNpYwogICAgICAg4pyFIE5ldHdvcmtpbmcgaXBzZWM6IGJhc2ljIG5ldG5zIC0gdHJh
-bnNwb3J0CiAgICAgICDinIUgTmV0d29ya2luZyBpcHNlYzogYmFzaWMgbmV0bnMgLSB0dW5uZWwK
-ICAgICAgIOKchSBMaWJrY2FwaSBBRl9BTEcgdGVzdAogICAgICAg4pyFIEFMU0EgUENNIGxvb3Bi
-YWNrIHRlc3QKICAgICAgIOKchSBBTFNBIENvbnRyb2wgKG1peGVyKSBVc2Vyc3BhY2UgRWxlbWVu
-dCB0ZXN0CiAgICAgICDinIUgc3RvcmFnZTogU0NTSSBWUEQKICAgICAgIPCfmqcg4pyFIENJRlMg
-Q29ubmVjdGF0aG9uCiAgICAgICDwn5qnIOKchSBQT1NJWCBwamQtZnN0ZXN0IHN1aXRlcwogICAg
-ICAg8J+apyDinIUganZtIC0gRGFDYXBvIEJlbmNobWFyayBTdWl0ZQogICAgICAg8J+apyDinIUg
-anZtIC0gamNzdHJlc3MgdGVzdHMKICAgICAgIPCfmqcg4pyFIE1lbW9yeSBmdW5jdGlvbjoga2Fz
-bHIKICAgICAgIPCfmqcg4pyFIGF1ZGl0OiBhdWRpdCB0ZXN0c3VpdGUgdGVzdAogICAgICAg8J+a
-pyDinIUgdHJhY2U6IGZ0cmFjZS90cmFjZXIKCiAgVGVzdCBzb3VyY2VzOiBodHRwczovL2dpdGh1
-Yi5jb20vQ0tJLXByb2plY3QvdGVzdHMtYmVha2VyCiAgICDwn5KaIFB1bGwgcmVxdWVzdHMgYXJl
-IHdlbGNvbWUgZm9yIG5ldyB0ZXN0cyBvciBpbXByb3ZlbWVudHMgdG8gZXhpc3RpbmcgdGVzdHMh
-CgpBYm9ydGVkIHRlc3RzCi0tLS0tLS0tLS0tLS0KVGVzdHMgdGhhdCBkaWRuJ3QgY29tcGxldGUg
-cnVubmluZyBzdWNjZXNzZnVsbHkgYXJlIG1hcmtlZCB3aXRoIOKaoeKaoeKaoS4KSWYgdGhpcyB3
-YXMgY2F1c2VkIGJ5IGFuIGluZnJhc3RydWN0dXJlIGlzc3VlLCB3ZSB0cnkgdG8gbWFyayB0aGF0
-CmV4cGxpY2l0bHkgaW4gdGhlIHJlcG9ydC4KCldhaXZlZCB0ZXN0cwotLS0tLS0tLS0tLS0KSWYg
-dGhlIHRlc3QgcnVuIGluY2x1ZGVkIHdhaXZlZCB0ZXN0cywgdGhleSBhcmUgbWFya2VkIHdpdGgg
-8J+apy4gU3VjaCB0ZXN0cyBhcmUKZXhlY3V0ZWQgYnV0IHRoZWlyIHJlc3VsdHMgYXJlIG5vdCB0
-YWtlbiBpbnRvIGFjY291bnQuIFRlc3RzIGFyZSB3YWl2ZWQgd2hlbgp0aGVpciByZXN1bHRzIGFy
-ZSBub3QgcmVsaWFibGUgZW5vdWdoLCBlLmcuIHdoZW4gdGhleSdyZSBqdXN0IGludHJvZHVjZWQg
-b3IgYXJlCmJlaW5nIGZpeGVkLgoKVGVzdGluZyB0aW1lb3V0Ci0tLS0tLS0tLS0tLS0tLQpXZSBh
-aW0gdG8gcHJvdmlkZSBhIHJlcG9ydCB3aXRoaW4gcmVhc29uYWJsZSB0aW1lZnJhbWUuIFRlc3Rz
-IHRoYXQgaGF2ZW4ndApmaW5pc2hlZCBydW5uaW5nIHlldCBhcmUgbWFya2VkIHdpdGgg4o+xLgoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+This patchset improves KASAN reports by making them to have
+call_rcu() call stack information. It is useful for programmers
+to solve use-after-free or double-free memory issue.
+
+The KASAN report was as follows(cleaned up slightly):
+
+BUG: KASAN: use-after-free in kasan_rcu_reclaim+0x58/0x60
+
+Freed by task 0:
+ kasan_save_stack+0x24/0x50
+ kasan_set_track+0x24/0x38
+ kasan_set_free_info+0x18/0x20
+ __kasan_slab_free+0x10c/0x170
+ kasan_slab_free+0x10/0x18
+ kfree+0x98/0x270
+ kasan_rcu_reclaim+0x1c/0x60
+
+Last one call_rcu() call stack:
+ kasan_save_stack+0x24/0x50
+ kasan_record_aux_stack+0xbc/0xd0
+ call_rcu+0x8c/0x580
+ kasan_rcu_uaf+0xf4/0xf8
+
+Generic KASAN will record the last two call_rcu() call stacks and
+print up to 2 call_rcu() call stacks in KASAN report. it is only
+suitable for generic KASAN.
+
+This feature considers the size of struct kasan_alloc_meta and
+kasan_free_meta, we try to optimize the structure layout and size
+, let it get better memory consumption.
+
+[1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
+[2]https://groups.google.com/forum/#!searchin/kasan-dev/better$20stack$20traces$20for$20rcu%7Csort:date/kasan-dev/KQsjT_88hDE/7rNUZprRBgAJ
+
+Changes since v2:
+- remove new config option, default enable it in generic KASAN
+- test this feature in SLAB/SLUB, it is pass.
+- modify macro to be more clearly
+- modify documentation
+
+Changes since v3:
+- change recording from first/last to the last two call stacks
+- move free track into kasan free meta
+- init slab_free_meta on object slot creation
+- modify documentation
+
+Changes since v4:
+- change variable name to be more clearly
+- remove the redundant condition
+- remove init free meta-data and increasing object condition
+
+Walter Wu (4):
+rcu/kasan: record and print call_rcu() call stack
+kasan: record and print the free track
+kasan: add tests for call_rcu stack recording
+kasan: update documentation for generic kasan
+
+Documentation/dev-tools/kasan.rst |  3 +++
+include/linux/kasan.h             |  2 ++
+kernel/rcu/tree.c                 |  2 ++
+lib/Kconfig.kasan                 |  2 ++
+lib/test_kasan.c                  | 30 ++++++++++++++++++++++++++++++
+mm/kasan/common.c                 | 26 ++++----------------------
+mm/kasan/generic.c                | 37 +++++++++++++++++++++++++++++++++++++
+mm/kasan/kasan.h                  | 17 +++++++++++++++++
+mm/kasan/report.c                 | 36 ++++++++++++++++++++----------------
+mm/kasan/tags.c                   | 37 +++++++++++++++++++++++++++++++++++++
+10 files changed, 154 insertions(+), 38 deletions(-)
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
