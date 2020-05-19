@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D7521D8E7C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 06:05:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D10971D8E7D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 06:06:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=h7kgouZ4P37zEtQ0Vy1oC1psqNAzMV/alxy52m931qE=; b=O0A
-	EGmZhQ0/ZMDm6HIDCOZrOdSNCqfnYkQM2GDEgdHM7SK/IVrMf6/Yxm/rrdGoIITxpj9B4F5h9z1Ba
-	itnICo8v2+YGnapO78sdj2C0yd0UZ/B7XKhywqtM9d1rTR3ra0YZNZ2IRht26GcQDUjnPmzg9C8oa
-	fyXcJww2uyzTYjc+hF/hEWxLSrlfzXzi4RBJnZvTFqC3LeXb+vLCVQgIOXRz5Ynp8XUwNqIURZXq6
-	WsxVbWEbdyQRHUmpiTu2RZivTTSB/Ti1fjvxGiO+tvkq8bAt07POPT6iUNwNIhQXEiHz4pD2yKRGn
-	Au0MrWoyae7T3JFFbCFGgbKwh079ztQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=O1sg3FvchrG/VfUr8sQIUOWKRmOq5Q5Nskv8foIoTeE=; b=fOoB5Ubf/YmF15IDJJaBowtSCM
+	qB5xtJ/25NOwr6i7y9mux866FqFpiVQNCcsG1g3yaBj5xEeRgfuVgPONV5TEcG2QQisxMxYQjxUDf
+	C9XTQ01VTfDZPoLnNJ/AycU9SGL83t/T5DdQZKVDuvqyWyYPkxH7pb/zqZ12B3J8as1UPvD3E++NS
+	PfUeezzEWOxQ6b3abzrTveD1Av4Sm47k7fdFC5BCFWiKmKyGJ2j4uYoOe7DX431bxfQ/7J2dn2xwi
+	nm8hgAlAnb+N1Zy1Kf+Yy9JUBG6cTv5Zjxabs/4xAEXqbR7v+XctezO58u2axJIYYCTOe+qlJW/XS
+	e/n6U8ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jatVj-0000mG-4w; Tue, 19 May 2020 04:05:47 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jatVz-0000w7-Fq; Tue, 19 May 2020 04:06:03 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jatVY-0000km-4c
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 04:05:37 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5B203200097;
- Tue, 19 May 2020 06:05:34 +0200 (CEST)
+ id 1jatVa-0000lC-3F
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 04:05:40 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 45D891A000A;
+ Tue, 19 May 2020 06:05:36 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 08879200073;
- Tue, 19 May 2020 06:05:29 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 90BE51A00D2;
+ Tue, 19 May 2020 06:05:30 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 07712402AF;
- Tue, 19 May 2020 12:05:21 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 801F3402B3;
+ Tue, 19 May 2020 12:05:23 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: daniel.lezcano@linaro.org, tglx@linutronix.de, robh+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, ping.bai@nxp.com, aisheng.dong@nxp.com,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 0/3] Covert i.MX GPT/TPM/SYSCTR timer binding to json-schema
-Date: Tue, 19 May 2020 11:55:44 +0800
-Message-Id: <1589860547-3207-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 1/3] dt-bindings: timer: Convert i.MX GPT to json-schema
+Date: Tue, 19 May 2020 11:55:45 +0800
+Message-Id: <1589860547-3207-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1589860547-3207-1-git-send-email-Anson.Huang@nxp.com>
+References: <1589860547-3207-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_210536_323838_E4125350 
-X-CRM114-Status: UNSURE (   5.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200518_210538_415908_21CB8A38 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,30 +78,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series converts i.MX GPT, TPM and system counter timer
-binding to json-schema, test build passed.
+Convert the i.MX GPT binding to DT schema format using json-schema.
 
-Changes compared to V1 are listed in each patch.
-
-Anson Huang (3):
-  dt-bindings: timer: Convert i.MX GPT to json-schema
-  dt-bindings: timer: Convert i.MX TPM to json-schema
-  dt-bindings: timer: Convert i.MX SYSCTR to json-schema
-
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V1:
+	- remove unnecessary compatible item descriptions;
+	- remove unnecessary maxItems for clocks/clock-names;
+---
  .../devicetree/bindings/timer/fsl,imxgpt.txt       | 45 ------------
  .../devicetree/bindings/timer/fsl,imxgpt.yaml      | 80 ++++++++++++++++++++++
- .../devicetree/bindings/timer/nxp,sysctr-timer.txt | 25 -------
- .../bindings/timer/nxp,sysctr-timer.yaml           | 54 +++++++++++++++
- .../devicetree/bindings/timer/nxp,tpm-timer.txt    | 28 --------
- .../devicetree/bindings/timer/nxp,tpm-timer.yaml   | 61 +++++++++++++++++
- 6 files changed, 195 insertions(+), 98 deletions(-)
+ 2 files changed, 80 insertions(+), 45 deletions(-)
  delete mode 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
  create mode 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
- delete mode 100644 Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
- create mode 100644 Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml
- delete mode 100644 Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt
- create mode 100644 Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml
 
+diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt b/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
+deleted file mode 100644
+index 5d8fd5b..0000000
+--- a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
++++ /dev/null
+@@ -1,45 +0,0 @@
+-Freescale i.MX General Purpose Timer (GPT)
+-
+-Required properties:
+-
+-- compatible : should be one of following:
+-  for i.MX1:
+-  - "fsl,imx1-gpt";
+-  for i.MX21:
+-  - "fsl,imx21-gpt";
+-  for i.MX27:
+-  - "fsl,imx27-gpt", "fsl,imx21-gpt";
+-  for i.MX31:
+-  - "fsl,imx31-gpt";
+-  for i.MX25:
+-  - "fsl,imx25-gpt", "fsl,imx31-gpt";
+-  for i.MX50:
+-  - "fsl,imx50-gpt", "fsl,imx31-gpt";
+-  for i.MX51:
+-  - "fsl,imx51-gpt", "fsl,imx31-gpt";
+-  for i.MX53:
+-  - "fsl,imx53-gpt", "fsl,imx31-gpt";
+-  for i.MX6Q:
+-  - "fsl,imx6q-gpt", "fsl,imx31-gpt";
+-  for i.MX6DL:
+-  - "fsl,imx6dl-gpt";
+-  for i.MX6SL:
+-  - "fsl,imx6sl-gpt", "fsl,imx6dl-gpt";
+-  for i.MX6SX:
+-  - "fsl,imx6sx-gpt", "fsl,imx6dl-gpt";
+-- reg : specifies base physical address and size of the registers.
+-- interrupts : should be the gpt interrupt.
+-- clocks : the clocks provided by the SoC to drive the timer, must contain
+-           an entry for each entry in clock-names.
+-- clock-names : must include "ipg" entry first, then "per" entry.
+-
+-Example:
+-
+-gpt1: timer@10003000 {
+-	compatible = "fsl,imx27-gpt", "fsl,imx21-gpt";
+-	reg = <0x10003000 0x1000>;
+-	interrupts = <26>;
+-	clocks = <&clks IMX27_CLK_GPT1_IPG_GATE>,
+-		 <&clks IMX27_CLK_PER1_GATE>;
+-	clock-names = "ipg", "per";
+-};
+diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml b/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
+new file mode 100644
+index 0000000..5479290
+--- /dev/null
++++ b/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
+@@ -0,0 +1,80 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/timer/fsl,imxgpt.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX General Purpose Timer (GPT)
++
++maintainers:
++  - Sascha Hauer <s.hauer@pengutronix.de>
++
++properties:
++  compatible:
++    oneOf:
++      - const: "fsl,imx1-gpt"
++      - const: "fsl,imx21-gpt"
++      - items:
++          - const: "fsl,imx27-gpt"
++          - const: "fsl,imx21-gpt"
++      - const: "fsl,imx31-gpt"
++      - items:
++          - const: "fsl,imx25-gpt"
++          - const: "fsl,imx31-gpt"
++      - items:
++          - const: "fsl,imx50-gpt"
++          - const: "fsl,imx31-gpt"
++      - items:
++          - const: "fsl,imx51-gpt"
++          - const: "fsl,imx31-gpt"
++      - items:
++          - const: "fsl,imx53-gpt"
++          - const: "fsl,imx31-gpt"
++      - items:
++          - const: "fsl,imx6q-gpt"
++          - const: "fsl,imx31-gpt"
++      - const: "fsl,imx6dl-gpt"
++      - items:
++          - const: "fsl,imx6sl-gpt"
++          - const: "fsl,imx6dl-gpt"
++      - items:
++          - const: "fsl,imx6sx-gpt"
++          - const: "fsl,imx6dl-gpt"
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: SoC GPT ipg clock
++      - description: SoC GPT per clock
++
++  clock-names:
++    items:
++      - const: ipg
++      - const: per
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx27-clock.h>
++
++    timer@10003000 {
++        compatible = "fsl,imx27-gpt", "fsl,imx21-gpt";
++        reg = <0x10003000 0x1000>;
++        interrupts = <26>;
++        clocks = <&clks IMX27_CLK_GPT1_IPG_GATE>,
++                 <&clks IMX27_CLK_PER1_GATE>;
++        clock-names = "ipg", "per";
++    };
 -- 
 2.7.4
 
