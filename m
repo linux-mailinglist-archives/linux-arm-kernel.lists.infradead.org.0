@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D10971D8E7D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 06:06:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABF8B1D8E7F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 06:06:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=O1sg3FvchrG/VfUr8sQIUOWKRmOq5Q5Nskv8foIoTeE=; b=fOoB5Ubf/YmF15IDJJaBowtSCM
-	qB5xtJ/25NOwr6i7y9mux866FqFpiVQNCcsG1g3yaBj5xEeRgfuVgPONV5TEcG2QQisxMxYQjxUDf
-	C9XTQ01VTfDZPoLnNJ/AycU9SGL83t/T5DdQZKVDuvqyWyYPkxH7pb/zqZ12B3J8as1UPvD3E++NS
-	PfUeezzEWOxQ6b3abzrTveD1Av4Sm47k7fdFC5BCFWiKmKyGJ2j4uYoOe7DX431bxfQ/7J2dn2xwi
-	nm8hgAlAnb+N1Zy1Kf+Yy9JUBG6cTv5Zjxabs/4xAEXqbR7v+XctezO58u2axJIYYCTOe+qlJW/XS
-	e/n6U8ww==;
+	bh=XGERhduvf+B3NIHHc4DkYYbSIqggQMMJiw04R7//76w=; b=VsfAPtms1QDU6WMr8Kqrk8kQvk
+	PuHTm9wAnKWvvjsgfXXHM0FeF2evL0w+89EUF1RSCl5SqKeO8EhCNwfDrU7/8yhkj7QJ/1X2RQcqe
+	aq3guJc0eFdNXvSDpM4bbIhICo07eMLhMhVSRmE3ee10ckd/1NlFL9N0jHF813ukeFE2Q9yTgGw3k
+	Hx68W35SrtlocqnteS734EDnGnK1ttJUxPckX4Z/xuWGIEfM0x2jKNIQ7+D6Gjv9TKmBkAxVhGQMB
+	ov7DrQGnKTFfyUeWFXqHIMILXikcCRkGptGApx/Rpirgbb9QQqBIcletWnBCQWVtrHqj7uQBYkMtg
+	F/lyzxqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jatVz-0000w7-Fq; Tue, 19 May 2020 04:06:03 +0000
+	id 1jatWU-0001Qi-BL; Tue, 19 May 2020 04:06:34 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jatVa-0000lC-3F
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 04:05:40 +0000
+ id 1jatVf-0000pc-FX
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 04:05:46 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 45D891A000A;
- Tue, 19 May 2020 06:05:36 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1F8ED1A0067;
+ Tue, 19 May 2020 06:05:42 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 90BE51A00D2;
- Tue, 19 May 2020 06:05:30 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9F6661A00A9;
+ Tue, 19 May 2020 06:05:36 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 801F3402B3;
- Tue, 19 May 2020 12:05:23 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1A5FB402E7;
+ Tue, 19 May 2020 12:05:24 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: daniel.lezcano@linaro.org, tglx@linutronix.de, robh+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, ping.bai@nxp.com, aisheng.dong@nxp.com,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 1/3] dt-bindings: timer: Convert i.MX GPT to json-schema
-Date: Tue, 19 May 2020 11:55:45 +0800
-Message-Id: <1589860547-3207-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 2/3] dt-bindings: timer: Convert i.MX TPM to json-schema
+Date: Tue, 19 May 2020 11:55:46 +0800
+Message-Id: <1589860547-3207-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1589860547-3207-1-git-send-email-Anson.Huang@nxp.com>
 References: <1589860547-3207-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_210538_415908_21CB8A38 
-X-CRM114-Status: GOOD (  10.93  )
+X-CRM114-CacheID: sfid-20200518_210543_829880_05A86EC5 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,119 +78,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX GPT binding to DT schema format using json-schema.
+Convert the i.MX TPM binding to DT schema format using json-schema.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
 Changes since V1:
-	- remove unnecessary compatible item descriptions;
-	- remove unnecessary maxItems for clocks/clock-names;
+	- remove unnecessary maxItems for clocks/clock-names.
 ---
- .../devicetree/bindings/timer/fsl,imxgpt.txt       | 45 ------------
- .../devicetree/bindings/timer/fsl,imxgpt.yaml      | 80 ++++++++++++++++++++++
- 2 files changed, 80 insertions(+), 45 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
- create mode 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
+ .../devicetree/bindings/timer/nxp,tpm-timer.txt    | 28 ----------
+ .../devicetree/bindings/timer/nxp,tpm-timer.yaml   | 61 ++++++++++++++++++++++
+ 2 files changed, 61 insertions(+), 28 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt
+ create mode 100644 Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml
 
-diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt b/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
+diff --git a/Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt b/Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt
 deleted file mode 100644
-index 5d8fd5b..0000000
---- a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
+index f82087b..0000000
+--- a/Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt
 +++ /dev/null
-@@ -1,45 +0,0 @@
--Freescale i.MX General Purpose Timer (GPT)
+@@ -1,28 +0,0 @@
+-NXP Low Power Timer/Pulse Width Modulation Module (TPM)
+-
+-The Timer/PWM Module (TPM) supports input capture, output compare,
+-and the generation of PWM signals to control electric motor and power
+-management applications. The counter, compare and capture registers
+-are clocked by an asynchronous clock that can remain enabled in low
+-power modes. TPM can support global counter bus where one TPM drives
+-the counter bus for the others, provided bit width is the same.
 -
 -Required properties:
 -
--- compatible : should be one of following:
--  for i.MX1:
--  - "fsl,imx1-gpt";
--  for i.MX21:
--  - "fsl,imx21-gpt";
--  for i.MX27:
--  - "fsl,imx27-gpt", "fsl,imx21-gpt";
--  for i.MX31:
--  - "fsl,imx31-gpt";
--  for i.MX25:
--  - "fsl,imx25-gpt", "fsl,imx31-gpt";
--  for i.MX50:
--  - "fsl,imx50-gpt", "fsl,imx31-gpt";
--  for i.MX51:
--  - "fsl,imx51-gpt", "fsl,imx31-gpt";
--  for i.MX53:
--  - "fsl,imx53-gpt", "fsl,imx31-gpt";
--  for i.MX6Q:
--  - "fsl,imx6q-gpt", "fsl,imx31-gpt";
--  for i.MX6DL:
--  - "fsl,imx6dl-gpt";
--  for i.MX6SL:
--  - "fsl,imx6sl-gpt", "fsl,imx6dl-gpt";
--  for i.MX6SX:
--  - "fsl,imx6sx-gpt", "fsl,imx6dl-gpt";
--- reg : specifies base physical address and size of the registers.
--- interrupts : should be the gpt interrupt.
--- clocks : the clocks provided by the SoC to drive the timer, must contain
--           an entry for each entry in clock-names.
--- clock-names : must include "ipg" entry first, then "per" entry.
+-- compatible :	should be "fsl,imx7ulp-tpm"
+-- reg :		Specifies base physical address and size of the register sets
+-		for the clock event device and clock source device.
+-- interrupts :	Should be the clock event device interrupt.
+-- clocks :	The clocks provided by the SoC to drive the timer, must contain
+-		an entry for each entry in clock-names.
+-- clock-names : Must include the following entries: "ipg" and "per".
 -
 -Example:
--
--gpt1: timer@10003000 {
--	compatible = "fsl,imx27-gpt", "fsl,imx21-gpt";
--	reg = <0x10003000 0x1000>;
--	interrupts = <26>;
--	clocks = <&clks IMX27_CLK_GPT1_IPG_GATE>,
--		 <&clks IMX27_CLK_PER1_GATE>;
+-tpm5: tpm@40260000 {
+-	compatible = "fsl,imx7ulp-tpm";
+-	reg = <0x40260000 0x1000>;
+-	interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
+-	clocks = <&clks IMX7ULP_CLK_NIC1_BUS_DIV>,
+-		 <&clks IMX7ULP_CLK_LPTPM5>;
 -	clock-names = "ipg", "per";
 -};
-diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml b/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
+diff --git a/Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml b/Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml
 new file mode 100644
-index 0000000..5479290
+index 0000000..edd9585
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
-@@ -0,0 +1,80 @@
++++ b/Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml
+@@ -0,0 +1,61 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/timer/fsl,imxgpt.yaml#
++$id: http://devicetree.org/schemas/timer/nxp,tpm-timer.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Freescale i.MX General Purpose Timer (GPT)
++title: NXP Low Power Timer/Pulse Width Modulation Module (TPM)
 +
 +maintainers:
-+  - Sascha Hauer <s.hauer@pengutronix.de>
++  - Dong Aisheng <aisheng.dong@nxp.com>
++
++description: |
++  The Timer/PWM Module (TPM) supports input capture, output compare,
++  and the generation of PWM signals to control electric motor and power
++  management applications. The counter, compare and capture registers
++  are clocked by an asynchronous clock that can remain enabled in low
++  power modes. TPM can support global counter bus where one TPM drives
++  the counter bus for the others, provided bit width is the same.
 +
 +properties:
 +  compatible:
-+    oneOf:
-+      - const: "fsl,imx1-gpt"
-+      - const: "fsl,imx21-gpt"
-+      - items:
-+          - const: "fsl,imx27-gpt"
-+          - const: "fsl,imx21-gpt"
-+      - const: "fsl,imx31-gpt"
-+      - items:
-+          - const: "fsl,imx25-gpt"
-+          - const: "fsl,imx31-gpt"
-+      - items:
-+          - const: "fsl,imx50-gpt"
-+          - const: "fsl,imx31-gpt"
-+      - items:
-+          - const: "fsl,imx51-gpt"
-+          - const: "fsl,imx31-gpt"
-+      - items:
-+          - const: "fsl,imx53-gpt"
-+          - const: "fsl,imx31-gpt"
-+      - items:
-+          - const: "fsl,imx6q-gpt"
-+          - const: "fsl,imx31-gpt"
-+      - const: "fsl,imx6dl-gpt"
-+      - items:
-+          - const: "fsl,imx6sl-gpt"
-+          - const: "fsl,imx6dl-gpt"
-+      - items:
-+          - const: "fsl,imx6sx-gpt"
-+          - const: "fsl,imx6dl-gpt"
++    const: fsl,imx7ulp-tpm
 +
 +  reg:
 +    maxItems: 1
@@ -200,8 +163,8 @@ index 0000000..5479290
 +
 +  clocks:
 +    items:
-+      - description: SoC GPT ipg clock
-+      - description: SoC GPT per clock
++      - description: SoC TPM ipg clock
++      - description: SoC TPM per clock
 +
 +  clock-names:
 +    items:
@@ -219,14 +182,15 @@ index 0000000..5479290
 +
 +examples:
 +  - |
-+    #include <dt-bindings/clock/imx27-clock.h>
++    #include <dt-bindings/clock/imx7ulp-clock.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
 +
-+    timer@10003000 {
-+        compatible = "fsl,imx27-gpt", "fsl,imx21-gpt";
-+        reg = <0x10003000 0x1000>;
-+        interrupts = <26>;
-+        clocks = <&clks IMX27_CLK_GPT1_IPG_GATE>,
-+                 <&clks IMX27_CLK_PER1_GATE>;
++    timer@40260000 {
++        compatible = "fsl,imx7ulp-tpm";
++        reg = <0x40260000 0x1000>;
++        interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&scg1 IMX7ULP_CLK_NIC1_BUS_DIV>,
++                 <&pcc2 IMX7ULP_CLK_LPTPM5>;
 +        clock-names = "ipg", "per";
 +    };
 -- 
