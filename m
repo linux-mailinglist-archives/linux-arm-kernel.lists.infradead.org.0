@@ -2,87 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC9331D9357
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 11:29:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5205E1D935A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 11:30:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZZ7tV5qXhArt+3YUwC9MtAn4YR9LbJwQfItup7AjYHo=; b=H8yCIX0/oT08DT
-	4K9uJX7PWpmkl31yPkSQkaVmIuvatXjF9UrI2Ok9h6Xsi+QZjq6VQmP3rLBXd4X3jAp+VgocFwoTJ
-	YYTU9NigPPeQJ7gu6Mk0+ANVEo8pxtGC/ifMPdrkP3GQLNw+YByoFtl9MxHE+XWXlyw5KJtoLhyuw
-	eQW1InTdJoZO4M6uHcj6BjAPpNeX8l7xPshacN3rEy/gKUaVtry++a1QBtGpeX7Ac79v9FrAm/FJt
-	TQroSnxBkSYUX0s3+leOU2DgmOH0Fhjohma+Wy5d7Vu8AvHMcxs/6IyHasApKqbAc9tDdBNrGwqZk
-	CxVXYbLGQHnsoHt75Bag==;
+	List-Owner; bh=mLV6tKbvfoMOqRUQcCg7DPqJuLN1OguIg4PLdinh0+4=; b=YSRQ3BeC06d4nd
+	XtGDtfcZ2TdHIgi/35oWgW1R6pjwtrfR/MY1cAfqSYxNTrSbTQSS6g0toV9AWgMeVR6y16oOtyeH7
+	B7yg9ixT1yZDHxZhgriYHmqD5JUqTZMfXeyoN/U09ZVFddp2hzJmwJgRk+R8v16NPcdz/j/XdJLjc
+	ZPUxe4/9RUz1dpwgEsCD0VL4PiadT1KizXawJs+BhF85JbUOgYxOEU2W24DvGa9wNw7mASNWCTa9R
+	O+n4vX2alCYBrr7QGn0onHoOiNVLdCgsU/en2J/GFrpCgq27NxpThs0VsvROe/8mm6cdJFb5Ptj5J
+	tu71dSk1drlbxl6itgeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jayZ6-0003C9-P1; Tue, 19 May 2020 09:29:36 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jayYx-00039d-Hn
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 09:29:28 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1589880567; x=1621416567;
- h=date:from:to:cc:subject:message-id:references:
- mime-version:in-reply-to;
- bh=LaB5Sv8zHtLu9L4Qfmtj8Pn6PDVEZl9Yco0qR/2/0m8=;
- b=d144dB9ndn/EiiRNT0RQ57cuTMmiEkQd0REeoYz6TBnoEjhOppKbSxRH
- TN3VnyP7NN4MwDlr8UHmSgB7fRxSRdUB0rh1jj6WwZ5EY23hTuVFWWshc
- E8k4qwSbo9XXMdCOnqDt8LL+p92EjtaIMTRIRyYW5n8XTngKdmfNKHsGV
- zPRWt5ojWTMtxvdVcDIfd6TPthmeVx0Jee/VkIMSEVi1aM7s7RScGk3VC
- svdY4CiUaseRwLsZmZIXlLQDEc4hbsR7GfKlgH6Hu/EmHD3ul0dQKl+2C
- ChV5hshZQPDgT8OP8GGe0z1yoIet+gIftLkEBVAYiDmqYZQgO8tQ0BX/Z w==;
-IronPort-SDR: 0jSv+TvDQbzH9lV/jI9Rsy/kQWjkif90PfiWaRgHCo7c/7Z0zqfK/CJ0FFPd2hLgZpn9kIut+b
- P9e+46l0c/uTZnIWNyHevawBmLAJ+4vxvZVmh3LlmRwKWotrMV5ikDlNy4lEK1+xkR3dbJUOpF
- QuMevA6pIGc291C+AGZRCdOlQy3zLqKS9ACyLJfseLQagzO3VjDLdhoDkPz6v7wQ6lBhpDPxJy
- 5o8jC8ZtRYgad7mo+/KkU4VaonnSn2bb6fY3Sd9uqm9hSCe8bC5CjCGlprzB0yMG8/Q5LVk69N
- ASk=
-X-IronPort-AV: E=Sophos;i="5.73,409,1583218800"; d="scan'208";a="12818922"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 19 May 2020 02:29:19 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 19 May 2020 02:29:20 -0700
-Received: from localhost (10.10.115.15) by chn-vm-ex04.mchp-main.com
- (10.10.85.152) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
- Transport; Tue, 19 May 2020 02:29:18 -0700
-Date: Tue, 19 May 2020 11:29:17 +0200
-From: Lars Povlsen <lars.povlsen@microchip.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH 07/10] spi: spi-dw-mchp: Add Sparx5 support
-Message-ID: <20200519092917.GB24801@soft-dev15.microsemi.net>
-References: <20200513140031.25633-1-lars.povlsen@microchip.com>
- <20200513140031.25633-8-lars.povlsen@microchip.com>
- <20200514102516.GD5127@sirena.org.uk>
+	id 1jayZS-0003QI-JA; Tue, 19 May 2020 09:29:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jayZB-0003OB-Kn
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 09:29:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E9692101E;
+ Tue, 19 May 2020 02:29:39 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2AFEA3F305;
+ Tue, 19 May 2020 02:29:39 -0700 (PDT)
+Date: Tue, 19 May 2020 10:29:37 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Daniel Kiss <Daniel.Kiss@arm.com>
+Subject: Re: [PATCH] arm64: vdso: Fix CFI info in sigreturn.
+Message-ID: <20200519092934.GC5031@arm.com>
+References: <20200515162020.78169-1-daniel.kiss@arm.com>
+ <20200518155926.GA21779@arm.com>
+ <AC859EC1-68DE-4E66-9CD6-D4D42F191D1D@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200514102516.GD5127@sirena.org.uk>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <AC859EC1-68DE-4E66-9CD6-D4D42F191D1D@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_022927_639372_87FDC01A 
-X-CRM114-Status: GOOD (  19.38  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200519_022941_769835_73EF3815 
+X-CRM114-Status: GOOD (  34.80  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,120 +64,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- SoC Team <soc@kernel.org>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <Mark.Rutland@arm.com>, Tamas Zsoldos <Tamas.Zsoldos@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-[Sorry about the slight delay on getting back on this]
-
-On 14/05/20 11:25, Mark Brown wrote:
-
-> Date: Thu, 14 May 2020 11:25:16 +0100
-> From: Mark Brown <broonie@kernel.org>
-> To: Lars Povlsen <lars.povlsen@microchip.com>
-> Cc: SoC Team <soc@kernel.org>, Microchip Linux Driver Support
->  <UNGLinuxDriver@microchip.com>, linux-spi@vger.kernel.org,
->  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
->  linux-arm-kernel@lists.infradead.org, Alexandre Belloni
->  <alexandre.belloni@bootlin.com>
-> Subject: Re: [PATCH 07/10] spi: spi-dw-mchp: Add Sparx5 support
-> User-Agent: Mutt/1.10.1 (2018-07-13)
-> 
-> On Wed, May 13, 2020 at 04:00:28PM +0200, Lars Povlsen wrote:
-> 
-> > +static void dw_spi_mchp_set_cs_owner(struct dw_spi_mchp *dwsmchp,
-> > +				     const struct dw_spi_mchp_props *props,
-> > +				     u8 cs, u8 owner)
-> >  {
-> > +	u8 dummy = (owner == MSCC_IF_SI_OWNER_SIBM ?
-> > +		    MSCC_IF_SI_OWNER_SIMC : MSCC_IF_SI_OWNER_SIBM);
-> 
-> Please write normal conditional statements to improve legibility.
-> 
-
-I will take your recommendation to heart.
-
-> > +static void dw_spi_mchp_set_cs(struct spi_device *spi, bool nEnable)
-> > +{
-> > +	bool enable = !nEnable;	/* This keeps changing in the API... */
-> 
-> No, it doesn't.  The API has not changed for more than a decade.
-> 
-
-I will remove the comment.
-
-I think the comment was related to when we got bitten by the below
-change, but alas.
-
-commit ada9e3fcc175db4538f5b5e05abf5dedf626e550
-Author: Charles Keepax <ckeepax@opensource.cirrus.com>
-Date:   Wed Nov 27 15:39:36 2019 +0000
-
-    spi: dw: Correct handling of native chipselect
-
-    This patch reverts commit 6e0a32d6f376 ("spi: dw: Fix default polarity
-    of native chipselect").
-    
-> > +	} else if (props->ss_force_ena_off) {
-> > +		if (enable) {
-> > +			/* Ensure CS toggles, so start off all disabled */
-> > +			regmap_write(dwsmchp->syscon, props->ss_force_val_off,
-> > +				     ~0);
-> 
-> What's all this force_ena_off stuff about?  The controller should not be
-> making decisions about management of the chip select, this will break
-> users.
-> 
-
-Our controller is not using DMA, but the FIFO interface. And as the DW
-controller drops CS when the FIFO runs empty, this will upset SPI
-devices. The "ss_force" is something the HW designes put on top to
-"override" the CS. We could of course use the GPIO's specifically to
-overcome this - but the "boot" CS 0 is a builtin CS, with no
-underlying GPIO.
-
-Add to this that the HW dept decided to add *2* physical SPI busses to
-the same controller. That we also need to switch between. And ensure
-CS gets dropped correctly before changing tracks...
-
-Long story, lot of grief...
-
-> > +	if (pdev->dev.of_node) {
-> > +		int i;
-> > +
-> > +		for (i = 0; i < dws->num_cs; i++) {
-> > +			int cs_gpio = of_get_named_gpio(pdev->dev.of_node,
-> > +					"cs-gpios", i);
-> > +
-> > +			if (cs_gpio == -EPROBE_DEFER) {
-> > +				ret = cs_gpio;
-> > +				goto out;
-> > +			}
-> > +
-> > +			if (gpio_is_valid(cs_gpio)) {
-> > +				ret = devm_gpio_request(&pdev->dev, cs_gpio,
-> > +						dev_name(&pdev->dev));
-> > +				if (ret)
-> > +					goto out;
-> 
-> Set use_gpio_descriptors and let the core manage the GPIO.
-
-Good suggestion, just the ticket!
-
-And thank you very much for your time & comments.
-
----Lars
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBNYXkgMTgsIDIwMjAgYXQgMDU6MDA6MzJQTSArMDAwMCwgRGFuaWVsIEtpc3Mgd3Jv
+dGU6Cj4gCj4gCj4gPiBPbiAxOCBNYXkgMjAyMCwgYXQgMTc6NTksIERhdmUgTWFydGluIDxEYXZl
+Lk1hcnRpbkBhcm0uY29tPiB3cm90ZToKPiA+IAo+ID4gT24gRnJpLCBNYXkgMTUsIDIwMjAgYXQg
+MDY6MjA6MjBQTSArMDIwMCwgZGFua2lzMDEgd3JvdGU6Cj4gPj4gV2hlbiB0aGUgc2lnbmFsIGhh
+bmRsZXIgaXMgY2FsbGVkIHRoZSByZWdpc3RlcnMgc2V0IHVwIGFzIHRoZSByZXR1cm4gYWRkcmVz
+cwo+ID4+IHBvaW50cyB0byB0aGUgX19rZXJuZWxfcnRfc2lncmV0dXJuLiBUaGUgTk9QIGhlcmUg
+aXMgdGhlIHBsYWNlaG9sZGVyIG9mIHRoZQoKKEp1c3QgdG8gYmUgY2xlYXIgYWJvdXQgd2h5IEkg
+b3JpZ2luYWxseSBwaWNrZWQgdXAgb24gdGhpcywgeW91cgpzdGF0ZW1lbnQgYWJvdXQgdGhlIHB1
+cnBvc2Ugb2YgdGhlIE5PUCBoZXJlIHNlZW1zIHRvIGJlIGFuIGFzc3VtcHRpb24uCkNhbiB5b3Ug
+c2F5IGhvdyB5b3UgcmVhY2hlZCB0aGlzIGNvbmNsdXNpb24/KQoKPiA+PiBicmFuY2ggYW5kIGxp
+bmsgaW5zdHJ1Y3Rpb24gdGhhdCAiY2FsbHMiIHRoZSBzaWduYWwgaGFuZGxlci4gSW4gY2FzZSBv
+ZiBhCj4gPj4gcmV0dXJuIGFkZHJlc3MgdGhlIHVud2luZGVyIGlkZW50aWZpZXMgdGhlIGxvY2F0
+aW9uIG9mIHRoZSBjYWxsZXIgYmVjYXVzZQo+ID4+IGluIHNvbWUgY2FzZXMgdGhlIHJldHVybiBh
+ZGRyZXNzIG1pZ2h0IG5vdCBleGlzdC4gU2luY2UgdGhlIC5jZmlfc3RhcnRwcm9jCj4gPj4gaXMg
+YWZ0ZXIgdGhlIE5PUCwgaXQgd29uJ3QgYmUgYXNzb2NpYXRlZCB3aXRoIGFueSBsb2NhdGlvbiBh
+bmQgdGhlCj4gPj4gdW53aW5kZXIgd2lsbCBzdG9wIHdhbGtpbmcuCj4gPj4gCj4gPj4gVGhpcyBj
+aGFuZ2UgY29ycmVjdHMgdGhlIGdlbmVyYXRlZCBFSEZyYW1lcyBvbmx5Lgo+ID4gCj4gPiBUaGlz
+IGlzIGEgY2FuIG9mIHdvcm1zLgo+ID4gCj4gPiBXaGljaCB1bndpbmRlciBhcmUgeW91IGxvb2sg
+YXQsIGFuZCB3aGF0IGRvIG90aGVyIHVud2luZGVycyBkbz8gIEFyZSB5b3UKPiA+IHN1cmUgdGhl
+IHVud2luZGVyIGlzIGRvaW5nIHNvbWV0aGluZyB2YWxpZD8gIElzIHRoaXMgYSBuZXdseSBvYnNl
+cnZlZAo+ID4gcHJvYmxlbSwgb3IgaGFzIGl0IGhhcHBlbmVkIGZvcmV2ZXI/Cj4gSSBydW4gaW50
+byB0aGlzIHdpdGggTExWTeKAmXMgdW53aW5kZXIuCj4gVGhpcyBjb21iaW5hdGlvbiB3YXMgYWx3
+YXlzIGJyb2tlbi4KCk9LLCBzbyB3ZSd2ZSBuYXJyb3dlZCB0aGUgYnJlYWthZ2UgZG93biB0byBv
+bmUgb2YgdHdvIHRoaW5ncyA7KQoKSSBzdGlsbCBkb24ndCBzZWUgd2h5IHRoZXJlIG11c3QgYmUg
+YSB2YWxpZCBpbnN0cnVjdGlvbiAob3IgZXZlbiBtYXBwZWQKbWVtb3J5KSBiZWZvcmUgbHIuICBF
+eGFtcGxlcyBpbmNsdWRlIGJhY2t0cmFjaW5nIG5vcmV0dXJuIGZ1bmN0aW9ucywgYW5kCmJhY2t0
+cmFjaW5nIHRoZSBTSUdTRUdWIHdoZW4gZXhlY3V0aW9uIGZhbGxzIHRocm91Z2ggaW50byBhIG5v
+bi1leGVjdXRhYmxlCnBhZ2UuCgpTbywgc2lncmV0dXJuIGlzIGp1c3Qgb25lIGV4YW1wbGUgaWYg
+dGhpcyBpc3N1ZS4KClRoaXMgaXMgd2h5IEknbSBub3Qgc3VyZSB0aGUgcHJvYmxlbSBpcyB3ZWxs
+LXVuZGVyc3Rvb2QuICBBZGRpbmcgYSBub3AKaW50byB0aGUgX19rZXJuZWxfc2lncmV0dXJuIHVu
+d2luZCBibG9jayBtYXkgcGFwZXIgb3ZlciB0aGlzIHBhcnRpY3VsYXIKaW5zdGFuY2UsIGJ1dCB3
+aGF0IGFib3V0IHRoZSBvdGhlciBzaW1pbGFyIHNjZW5hcmlvcz8KCj4gCj4gPiBXaHkgc2hvdWxk
+IHRoZXJlIGJlIGFueSBpbnN0cnVjdGlvbiB0aGF0ICJjYWxscyIgdGhlIHNpZ25hbCBoYW5kbGVy
+Pwo+IEl0IGlzIGp1c3QgZnJvbSB0aGUgdW53aW5kZXIvdXNlciBzcGFjZSBwb2ludCBvZiB2aWV3
+LiAgTm9ybWFsbHkgdGhhdCBpbnN0cnVjdGlvbiB3b3VsZCBzZXQgdGhlIHJldHVybiBhZGRyZXNz
+LAo+IGFuZCBzb21lIGNhc2VzIGluIHRoZSB1c2Vyc3BhY2Ugbm8gaW5zdHJ1Y3Rpb24gaXMgZ2Vu
+ZXJhdGVkIGZvciB0aGUgcmV0dXJuIGFkZHJlc3Mgd2hlbiB0aGUgY29tcGlsZXIga25vd3MgCj4g
+aXQgaXMgdW5yZWFjaGFibGUuCj4gCj4gPiBJbiB0aGUgY2FzZSBpcyBhIFNJR1NFR1YgdGhlIGFm
+ZmVjdGVkIGluc3RydWN0aW9uIGlzIGFmdGVyIHRoZSBwYyBhbmQKPiA+IG5vdCBiZWZvcmUgaXQ7
+IGZvciBhbiBhc3luY2hyb25vdXMgc2lnbmFsIGFuZCBub3Rpb24gb2YgYSAiY2FsbGluZyIKPiA+
+IGluc3RydWN0aW9uIGlzIG5vbnNlbnNlLgo+ID4gCj4gPiAKPiA+IENlcnRhaW5seSBJJ3ZlIHNl
+ZW4gY29ycmVjdCB1bndpbmRpbmcgdGhyb3VnaCBzaWduYWwgaGFuZGxlcnMgd2l0aCBnbGliYwo+
+ID4gYW5kIGdkYiwgYnV0IEkgaGFkbid0IHRyaWVkIGV2ZXJ5dGhpbmfigKYKPiBHREIgcmVjb2du
+aXNlIF9fa2VybmVsX3J0X3NpZ3JldHVybiB0byB1bndpbmQgaXQgY29ycmVjdGx5LCBhcyBJIHNl
+ZSBpdDoKPiBodHRwczovL2dpdGh1Yi5jb20vYm1pbm9yL2JpbnV0aWxzLWdkYi9ibG9iLzM1ODA4
+MTBjNTFiYzE3Yzk0N2QwZGQ2YTdmNGViMzk5ZDdjYTQ2MTkvZ2RiL2kzODYtbGludXgtdGRlcC5j
+I0wyNjUKCmkzODY/Cgo+ID4gCj4gPj4gCj4gPj4gU2lnbmVkLW9mZi1ieTogRGFuaWVsIEtpc3Mg
+PGRhbmllbC5raXNzQGFybS5jb20+Cj4gPj4gU2lnbmVkLW9mZi1ieTogVGFtYXMgWnNvbGRvcyA8
+dGFtYXMuenNvbGRvc0Bhcm0uY29tPgo+ID4+IC0tLQo+ID4+IGFyY2gvYXJtNjQva2VybmVsL3Zk
+c28vc2lncmV0dXJuLlMgfCA0ICsrLS0KPiA+PiAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRpb25z
+KCspLCAyIGRlbGV0aW9ucygtKQo+ID4+IAo+ID4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2tl
+cm5lbC92ZHNvL3NpZ3JldHVybi5TIGIvYXJjaC9hcm02NC9rZXJuZWwvdmRzby9zaWdyZXR1cm4u
+Uwo+ID4+IGluZGV4IDEyMzI0ODYzZDVjMi4uNWQ1MGVlOTJmYWE0IDEwMDY0NAo+ID4+IC0tLSBh
+L2FyY2gvYXJtNjQva2VybmVsL3Zkc28vc2lncmV0dXJuLlMKPiA+PiArKysgYi9hcmNoL2FybTY0
+L2tlcm5lbC92ZHNvL3NpZ3JldHVybi5TCj4gPj4gQEAgLTEzLDEzICsxMywxMyBAQAo+ID4+IAo+
+ID4+IAkudGV4dAo+ID4+IAo+ID4+IC0Jbm9wCj4gPj4gLVNZTV9GVU5DX1NUQVJUKF9fa2VybmVs
+X3J0X3NpZ3JldHVybikKPiA+PiAJLmNmaV9zdGFydHByb2MKPiA+PiAJLmNmaV9zaWduYWxfZnJh
+bWUKPiA+PiAJLmNmaV9kZWZfY2ZhCXgyOSwgMAo+ID4+IAkuY2ZpX29mZnNldAl4MjksIDAgKiA4
+Cj4gPj4gCS5jZmlfb2Zmc2V0CXgzMCwgMSAqIDgKPiA+IAo+ID4gSG1tLCByZWNvdmVyaW5nIHgy
+OSx4MzAgbGlrZSB0aGlzIHdpbGwgYmUgd3JvbmcgaWYgdGhlIHNpZ25hbCBoYW5kbGVyCj4gPiBt
+dW5nZXMgc2lnY29udGV4dCBpbiB0aGUgbWVhbnRpbWUgKHNheSwgZG9pbmcgc29tZSBraW5kIG9m
+IHVzZXJzcGFjZQo+ID4gY29udGV4dCBzd2l0Y2gpLgo+ID4gCj4gPiBUaGV5IHNob3VsZCBiZSBw
+dWxsZWQgb3V0IG9mIHNpZ2NvbnRleHQgaW5zdGVhZCByZWFsbHkuICBBRkFJSywgdGhhdCdzCj4g
+PiB3aGF0ICIuY2ZpX3NpZ25hbF9mcmFtZSIgaXMgc3VwcG9zZWQgdG8gdGVsbCB0aGUgdW53aW5k
+ZXIuICBJJ20gbm90IHN1cmUKPiA+IHdoeSB3ZSBoYXZlIHRoZXNlIGFkZGl0aW9uYWwsIGNvbmZs
+aWN0aW5nIGFubm90YXRpb25zIGhlcmUuCj4gVGhlIHVud2luZGVyIHdvbuKAmXQgZmluZCB0aGUg
+4oCcY2ZpX3NpZ25hbF9mcmFtZeKAnSB1bnRpbCBpdCBmaWd1cmVzIG91dCB0aGUgdW53aW5kIGVu
+dHJ5Lgo+IAo+ID4gQW55IGlkZWFzLCBXaWxsPwo+ID4gCj4gPiBUaGlzIHByb2JhYmx5IGlzbid0
+IHJlbGF0ZWQgdG8gdGhlIGJ1ZyBoZXJlLCBidXQgaXQgd291bGQgYmUgZ29vZCB0bwo+ID4gdW5k
+ZXJzdGFuZC4KPiA+IAo+ID4+ICsJbm9wICAvKiBwbGFjZWhvbGRlciBmb3IgYmwgc2lnbmFsaGFu
+ZGxlciAqLwo+ID4gCj4gPiBXaWxsIGNhbiBjb3JyZWN0IG1lIG9uIHRoaXMsIGJ1dCBJIHNlZW0g
+dG8gcmVtZW1iZXIgc29tZXRoaW5nIGFib3V0IG5vcAo+ID4gYmVpbmcgdGhlcmUgZm9yIHBhZGRp
+bmcsIHNvIHRoYXQgdGhlcmUgaXMgYSBndWFyYW50ZWVkIGdhcCBiZXR3ZWVuCj4gPiB1bndpbmQg
+ZW50cmllcy4KPiA+IAo+ID4gSSBjYW4ndCByZW1lbWJlciB0aGUgcHJlY2lzZSByZWFzb25pbmcs
+IGJ1dCB0aGVyZSBhcmUgc29tZSBuYXN0eSBlZGdlCj4gPiBjYXNlcyBjb25uZWN0ZWQgd2l0aCB0
+aGUgZmFjdCB0aGF0IHRoZSBsaW5rZXIgY2FuIHBsYWNlIGFub3RoZXIgcmFuZG9tCj4gPiB1bndp
+bmQgYmxvY2sgZnJvbSBhbm90aGVyIC5vIGltbWVkaWF0ZWx5IGJlZm9yZSB0aGlzIG9uZS4KClsu
+Li5dCgpDaGVlcnMKLS0tRGF2ZQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5l
+bEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
+bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
