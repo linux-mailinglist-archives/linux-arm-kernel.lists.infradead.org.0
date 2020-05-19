@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0AE51D8F31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 07:27:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 975671D8F32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 07:27:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9z8vltxuWeVsCRUYsPx3e+ES27+cRpbbWwHLrs8ACIY=; b=VxmEyguTfUDkal
-	+RPUjjEwHzR5bK74gdWCC20zo2Cil9wfRKBKJeTRGOHUfpnik25VGsJODQO78gStz8aB7j5/3OLCl
-	y7O7pebdfcmUvIgj9omSogoyFuYGoeUsXKna4Exv8BAEiddv54xSrU8ddbGIHWDpVFLqek5puS5oo
-	DDZ7z0XmnabUtssf/ZfPsjwx+RmH6icDUHPPttvUqDQsVeadjy4eDzaZZp6VBIQhuTkXjvqD9eLVI
-	x0LPhdE6jkX1lFBE1sNNbW15dZCz2NJaLoWtF2vagD8WDftHSoteAt6ynS4DBTYtXAbm0MHvB1lKw
-	++RLhby+lVmSCN93EOLw==;
+	List-Owner; bh=KqbCdiI6g59o1aCSBSRpg4rhnCJenfSg+INoEgIO5RY=; b=SlQ7d+Z9yyk8fG
+	lkcs1YwvlyF5IF4hWG24HBgTS1QbxLBstKIQjjdVCrzW0+C2gvKtKuztUTG0GtMlyOtyfvmavlKrn
+	mAFy4wO3lT0Yq2RDOuYVwEsN+I0FPRvhi5yzRQMJWp1QXW+3IpdwmTp6RdrHu2/eg47NmO9AiLdjA
+	F9oiLcnbLwtuZWddVyYCxYQ01I6xY0/q+hnnM/Oin7M3jSRe7DZxi9o9VZS0jLcy6aWPqHzB01qoI
+	mA0xKAHUehAA/fCLf2ex9py8MybRizqnx5Ya0Eh6f3da1y9mMqjDFMM1eXkv4osZG3+uWmmHRQVNp
+	AJrBVrwZDiDjL4DMXj/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaumd-0005sM-FV; Tue, 19 May 2020 05:27:19 +0000
+	id 1jaumw-00065C-NH; Tue, 19 May 2020 05:27:38 +0000
 Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaumH-0005gZ-7s
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 05:26:59 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t16so5151879plo.7
+ id 1jaumK-0005l2-Kz
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 05:27:02 +0000
+Received: by mail-pl1-x643.google.com with SMTP id x10so5147110plr.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 22:26:56 -0700 (PDT)
+ Mon, 18 May 2020 22:27:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=6eAh0MZrhKEHVvxG4fmUgYQWHWJzvYUt4HqT+AfIqVs=;
- b=D6YnJdEJp8F9inv82USlVRtngZkf7VaGE5C01pYHqfqUBXuU2LTuo47c6I0chxmbB8
- pKp36b2LD8ykEAdyfMbo9qFxqTjUEzKYHTbXd2WH0BNMKIuI+ifTIdzMel4j+OCyCGld
- R9Czo6ysxE/Me10Zom+GUusNuSDLmpIy6JH+WRq+++uliIAAHcxCYUw2Tdvq/+e0meTy
- FRWBsmM19qBWSZDAm/D+Nxz+5EM6uMv7mKZswlfkGGw/1Pa4RPBVALJc3WZBGhpV36KE
- Q/aFFknbiDXSHK513YHH0BlFFyicy2Mfsv8l+2cj9lqSv/Df6HeEgkKZBD0VE9tE8wNx
- M0mQ==
+ bh=W2vog2Ri9IlYWlm16x+nWE4J9X1Hn0Mx2FQVvFcJuHk=;
+ b=FT4SKc2ToN/s8tkRnP+yLFiYtCWtUqBarM8+cWRx8BQ8UCvrDq+w6KD6qPZCtS/Fjy
+ sJzek8MBmQPdo6/B+Zb2aM1vdOoXeM/b+epi+H4OZZRwrf/ZsNpGAMEgF/F4s4iLniMF
+ 5VFAHju27XsW7im3sxHSOptozVRVB3W5qTdC/NVR5dHUBxhFp4Qqr348GRv3NeQrGIPR
+ tR5jKbOsOmOwa2Qdg4UE1D8FWzZYACIbgjhWgKtuuz9m4vgZh+j8gz4AR8EfHiHcQ9FM
+ 0tz4na/4jRLHVe5fxxMsYQ7XXYrW1lNrK3MX++qs4ujZ3Ttlq8uGV0bVvBGK7HpukP0n
+ 6nKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=6eAh0MZrhKEHVvxG4fmUgYQWHWJzvYUt4HqT+AfIqVs=;
- b=oJyJYQZiDAKDgwW6Z2iM799RtSgfA2hfF6p94HDc45ceudUojQ7f/xiRkYvWXM++x0
- yUK+MHCbTl5RGYBOhFM3qjNgh2tHQBSdHXDr1O/r+hf9wKaaODaskmBiOhYe9fnUwraQ
- MF4uH4ZC0izowQEyIB+20Vkl8s4IHPDI+nBRircmyaA2pvfs/S8zKAUZunwaBxsLFB6r
- 7WtheTweompBsnb1j2x57yf2ULHVj43hquZghANkBSYAkW5qu5VALMpU7qDU3n1WMbuW
- LLRkXnFqSJ9+TswFo6AXbijFe8DsfAgYSt6l3F7Ii6OKm31T8tgztv1jz7i//k5WvgiO
- LYeQ==
-X-Gm-Message-State: AOAM533odrTbsC4S56mNX7S0IX0trxYlyKqEjTKg7OjVWQh+0k0H4w/B
- DTYuvFwSCecO9uFV8COik9mUTg==
-X-Google-Smtp-Source: ABdhPJyv2c7g+7HoLW7GykwxyUGKo1gpeCC14aYJWuOGDGVRerqm7TeMRxE6aO/HkRbhemC/+hugyA==
-X-Received: by 2002:a17:90a:8509:: with SMTP id
- l9mr3091267pjn.113.1589866015849; 
- Mon, 18 May 2020 22:26:55 -0700 (PDT)
+ bh=W2vog2Ri9IlYWlm16x+nWE4J9X1Hn0Mx2FQVvFcJuHk=;
+ b=qHeJTddx1evd/9z60n5A6wG/LQT+jTzY+4bE3jMCGN193MkPbJpUpCC1fgk42tUFdb
+ VZXl5qzt1/pAaSGvoaSmz9VGaFa9HkZZq0QhjZeF/BZD2KHqRQ1jSumAziVVm5c56Jbq
+ SYg6aC43j+u2Tw6RO4UhK6BCfNPkUIVKVAvhl4lja/2kfH9Fr/xiBN+/8w6t9QfXSznq
+ mxD29vptwxLZnmD4/ukMnegixPPTvlyyVdoRKM5V2ZMX4OhlPw6qNmkF9Ezceva78RiW
+ cDCbNCbe0DxQGmEEJu5WhlkjrNa8IWQOi3LZcmFv4I6JbZNBrIWTbjR2oCB5iSSPx+OG
+ VnHQ==
+X-Gm-Message-State: AOAM530fM7Unidc2WZ7nxqWNASEXcYnDdO4wtXmjPMqJD53iiGRU7d3P
+ yePZenFT0jHAV12mDnztBPKkaw==
+X-Google-Smtp-Source: ABdhPJwMuyEr5qpyZilygNDQcs8MRuHwtC4LblBDYasXBuyhM8nMs4L6z5w2Ju5o13iWIu4WIK/6hA==
+X-Received: by 2002:a17:902:ff09:: with SMTP id
+ f9mr20398811plj.322.1589866019941; 
+ Mon, 18 May 2020 22:26:59 -0700 (PDT)
 Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
  [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id s199sm10256743pfs.124.2020.05.18.22.26.54
+ by smtp.gmail.com with ESMTPSA id z25sm9983081pfa.213.2020.05.18.22.26.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 22:26:55 -0700 (PDT)
+ Mon, 18 May 2020 22:26:59 -0700 (PDT)
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL] Qualcomm driver updates for v5.8
-Date: Mon, 18 May 2020 22:25:33 -0700
-Message-Id: <20200519052533.1250024-1-bjorn.andersson@linaro.org>
+Subject: [GIT PULL] Qualcomm ARM dts updates for v5.8
+Date: Mon, 18 May 2020 22:25:38 -0700
+Message-Id: <20200519052538.1250076-1-bjorn.andersson@linaro.org>
 X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_222657_351292_AADC324A 
-X-CRM114-Status: GOOD (  14.21  )
+X-CRM114-CacheID: sfid-20200518_222700_704179_329CC5DC 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,18 +98,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maulik Shah <mkshah@codeaurora.org>,
- "Gustavo A . R . Silva" <gustavoars@kernel.org>,
- Stephan Gerhold <stephan@gerhold.net>, Arnd Bergmann <arnd@arndb.de>,
- Jason Yan <yanaijie@huawei.com>, Vincent Knecht <vincent.knecht@mailoo.org>,
- linux-arm-msm@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
- Stephen Boyd <swboyd@chromium.org>,
- Markus Elfring <elfring@users.sourceforge.net>, Andy Gross <agross@kernel.org>,
- John Stultz <john.stultz@linaro.org>, Sibi Sankar <sibis@codeaurora.org>,
+Cc: Arnd Bergmann <arnd@arndb.de>, linux-arm-msm@vger.kernel.org,
+ Daniele Debernardi <drebrez@gmail.com>, Abhishek Sahu <absahu@codeaurora.org>,
+ Andy Gross <agross@kernel.org>, Iskren Chernev <iskren.chernev@gmail.com>,
  Kevin Hilman <khilman@baylibre.com>, Olof Johansson <olof@lixom.net>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- "Raju P . L . S . S . S . N" <rplsssn@codeaurora.org>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
+ Ansuel Smith <ansuelsmth@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -120,119 +114,41 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-drivers-for-5.8
+  https://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux.git tags/qcom-dts-for-5.8
 
-for you to fetch changes up to 1f7a3eb785e4a4e196729cd3d5ec97bd5f9f2940:
+for you to fetch changes up to cd13c72c1853f219e1f5577a107f48b9f9c44fdd:
 
-  Revert "soc: qcom: rpmh: Allow RPMH driver to be loaded as a module" (2020-05-17 23:13:00 -0700)
-
-----------------------------------------------------------------
-Qualcomm driver updates for v5.8
-
-This contains a large set of cleanups, bug fixes, general improvements
-and documentation fixes for the RPMH driver. It adds a debugfs mechanism
-for inspecting Command DB. Socinfo got the "soc_id" attribute defines
-and definitions for a various variants of MSM8939.
-
-RPMH, RPMPD and RPMHPD where made possible to build as modules, but RPMH
-had to be reverted due to a compilation issue when tracing is enabled.
-
-RPMHPD gained power-domains for the SM8250 voltage corners.
-
-The SCM driver gained fixes for two build warnings and the SMP2P had an
-unnecessary error print removed.
+  ARM: dts: qcom: msm8974-klte: Add max77826 pmic node (2020-04-21 00:23:27 -0700)
 
 ----------------------------------------------------------------
-Bjorn Andersson (3):
-      soc: qcom: rpmhpd: Add SM8250 power domains
-      soc: qcom: aoss: Add SM8250 compatible
-      Revert "soc: qcom: rpmh: Allow RPMH driver to be loaded as a module"
+Qualcomm ARM dts updates for v5.8
 
-Christoph Hellwig (1):
-      firmware: qcom_scm: fix bogous abuse of dma-direct internals
+This adds SCM firmware node for IPQ806x and fixes the high resolution
+timer for IPQ4019. Samsung Galaxy S5 gains regulators, eMMC and USB
+support.
 
-Douglas Anderson (18):
-      soc: qcom: rpmh-rsc: Clean code reading/writing TCS regs/cmds
-      soc: qcom: rpmh-rsc: Document the register layout better
-      soc: qcom: rpmh-rsc: Fold tcs_ctrl_write() into its single caller
-      soc: qcom: rpmh-rsc: Remove get_tcs_of_type() abstraction
-      soc: qcom: rpmh-rsc: Kill cmd_cache and find_match() with fire
-      soc: qcom: rpmh-rsc: A lot of comments
-      soc: qcom: rpmh-rsc: tcs_is_free() can just check tcs_in_use
-      soc: qcom: rpmh-rsc: Don't double-check rpmh payload
-      soc: qcom: rpmh-rsc: Caller handles tcs_invalidate() exclusivity
-      soc: qcom: rpmh-rsc: read_tcs_reg()/write_tcs_reg() are not for IRQ
-      soc: qcom: rpmh: Dirt can only make you dirtier, not cleaner
-      soc: qcom: rpmh-rsc: Factor "tcs_reg_addr" and "tcs_cmd_addr" calculation
-      soc: qcom: rpmh-rsc: Timeout after 1 second in write_tcs_reg_sync()
-      soc: qcom: rpmh-rsc: Correctly ignore CPU_CLUSTER_PM notifications
-      soc: qcom: rpmh-rsc: We aren't notified of our own failure w/ NOTIFY_BAD
-      kernel/cpu_pm: Fix uninitted local in cpu_pm
-      soc: qcom: rpmh-rsc: Simplify locking by eliminating the per-TCS lock
-      soc: qcom: rpmh-rsc: Remove the pm_lock
+----------------------------------------------------------------
+Abhishek Sahu (1):
+      ARM: dts: qcom: ipq4019: fix high resolution timer
 
-Gustavo A. R. Silva (1):
-      firmware: qcom_scm-legacy: Replace zero-length array with flexible-array
+Ansuel Smith (1):
+      ARM: dts: qcom: add scm definition to ipq806x
 
-Jason Yan (1):
-      firmware: qcom_scm: Remove unneeded conversion to bool
+Daniele Debernardi (5):
+      ARM: dts: qcom: msm8974-klte: Add pma8084 regulator nodes
+      ARM: dts: qcom: msm8974-klte: Remove inherited vreg_boost node
+      ARM: dts: qcom: msm8974-klte: Add gpio-keys nodes
+      ARM: dts: qcom: msm8974-klte: Add sdhci1 node
+      ARM: dts: qcom: msm8974-klte: Add USB node
 
-John Stultz (3):
-      soc: qcom: rpmh: Allow RPMH driver to be loaded as a module
-      soc: qcom: rpmhpd: Allow RPMHPD driver to be loaded as a module
-      soc: qcom: rpmpd: Allow RPMPD driver to be loaded as a module
+Iskren Chernev (1):
+      ARM: dts: qcom: msm8974-klte: Add max77826 pmic node
 
-Markus Elfring (1):
-      soc: qcom: smp2p: Delete an error message in qcom_smp2p_probe()
-
-Maulik Shah (4):
-      soc: qcom: rpmh: Update dirty flag only when data changes
-      soc: qcom: rpmh: Invalidate SLEEP and WAKE TCSes before flushing new data
-      soc: qcom: rpmh: Invoke rpmh_flush() for dirty caches
-      soc: qcom: rpmh-rsc: Allow using free WAKE TCS for active request
-
-Raju P.L.S.S.S.N (1):
-      soc: qcom: rpmh-rsc: Clear active mode configuration for wake TCS
-
-Sibi Sankar (2):
-      soc: qcom: cmd-db: Fix compilation error when CMD_DB is disabled
-      soc: qcom: pdr: Remove impossible error condition
-
-Srinivas Kandagatla (1):
-      soc: qcom: socinfo: add missing soc_id sysfs entry
-
-Stephan Gerhold (1):
-      dt-bindings: soc: qcom: apr: Use generic node names for APR services
-
-Stephen Boyd (4):
-      soc: qcom: cmd-db: Add debugfs dumping file
-      soc: qcom: cmd-db: Cast sizeof() to int to silence field width warning
-      soc: qcom: cmd-db: Use 5 digits for printing address
-      soc: qcom: cmd-db: Properly endian swap the slv_id for debugfs
-
-Vincent Knecht (1):
-      soc: qcom: socinfo: add msm8936/39 and apq8036/39 soc ids
-
- .../devicetree/bindings/power/qcom,rpmpd.yaml      |   1 +
- .../devicetree/bindings/soc/qcom/qcom,aoss-qmp.txt |   1 +
- .../devicetree/bindings/soc/qcom/qcom,apr.txt      |  20 +-
- drivers/firmware/qcom_scm-legacy.c                 |   2 +-
- drivers/firmware/qcom_scm.c                        |  11 +-
- drivers/soc/qcom/Kconfig                           |   6 +-
- drivers/soc/qcom/cmd-db.c                          |  78 ++-
- drivers/soc/qcom/pdr_interface.c                   |   4 -
- drivers/soc/qcom/qcom_aoss.c                       |   1 +
- drivers/soc/qcom/rpmh-internal.h                   |  59 +-
- drivers/soc/qcom/rpmh-rsc.c                        | 746 +++++++++++++++------
- drivers/soc/qcom/rpmh.c                            |  97 ++-
- drivers/soc/qcom/rpmhpd.c                          |  24 +
- drivers/soc/qcom/rpmpd.c                           |   5 +
- drivers/soc/qcom/smp2p.c                           |   4 +-
- drivers/soc/qcom/socinfo.c                         |   6 +
- include/dt-bindings/power/qcom-rpmpd.h             |  12 +
- include/soc/qcom/cmd-db.h                          |   1 +
- kernel/cpu_pm.c                                    |   4 +-
- 19 files changed, 775 insertions(+), 307 deletions(-)
+ arch/arm/boot/dts/qcom-ipq4019.dtsi             |   1 +
+ arch/arm/boot/dts/qcom-ipq8064.dtsi             |   6 +
+ arch/arm/boot/dts/qcom-msm8974-samsung-klte.dts | 405 +++++++++++++++++++++++-
+ arch/arm/boot/dts/qcom-msm8974.dtsi             |  11 +
+ 4 files changed, 421 insertions(+), 2 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
