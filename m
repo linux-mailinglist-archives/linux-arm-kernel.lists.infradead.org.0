@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 608FD1D9CA9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:29:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02E7A1D9CAC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:29:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7PfRax+fnCm25gO5Cy2jweZG4NeEm22xXsqoRSvHDHs=; b=lQTqklbjY3tQen
-	kEvLy4OjZ09T+gNRSA7h23rTpRFTe75kTJoxw8k3he+VOprxC1DcpkvSQBNyla3m+yvf7dLC8dg89
-	V0wn7a1WGlxnVOhGhI1bSrImfRKrtbYq4iVgjJ+wD2HxEuFNbuIBqucciVv5aBg6OOvMIU7gP5ePE
-	Vo6tosHbsyw84RSPY9OM9cWUdOOm5WYEh8digndFEx6TpQQG6cjmFJ7O2LEvdzoWVbAZ5serNiCVp
-	GTmfJDlh8r/sBuSVtL/3v38M06fOKCzQzan2Gj2LNPmqGjwEqlFW6dx3nHvGV3rv7MnsK6k82KLnW
-	RnPaZZKeFJ9YJLHbmhew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V8NQTuSaZX9/x9TThRZjE60T0biOqSzRR/6q5fDeEkY=; b=FPKaoENe2GTkNA
+	8zlXVXNKe8fVhv6EZNIY8Qt4Aspg4y/XQlq0Ct34XH3J2u7Ri12labEridsMEO10B+6E1YP+QE4rX
+	vWKK9Kbrp56vBhduX1b53QezfLCU8BBwOCN1DmuEwI6vU4Ao9kC8xzkdjdXNJglfVRUJ9ivH1uN2A
+	9yymSsozcLgO38Bq9aGShfFk5VNXvy7RKbelrmp5vy9GeAeNln3Cw6QC2qTDM03tc0tfXkwaFXx8g
+	AuEl4GtRTv0CIkNq5vrTqOeL2zUzhnuTZLwk8FpC/v7mZsSnGB3VnFXIog8sDluf01AjPwyoZ3o7r
+	+UyxmK5pxR+GwmJMKRlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb57T-00061y-Qn; Tue, 19 May 2020 16:29:31 +0000
+	id 1jb57n-0006Ku-7w; Tue, 19 May 2020 16:29:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb56V-0005JF-3d
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:28:32 +0000
+ id 1jb56X-0005Kj-0L
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:28:35 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 620FB20756;
- Tue, 19 May 2020 16:28:29 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1CDFB20823;
+ Tue, 19 May 2020 16:28:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589905710;
- bh=9pSmeNeoEojL3nh5royLfwApgwDwC90eO8N2eeydSRY=;
- h=From:To:Cc:Subject:Date:From;
- b=HL0FdyaMmeTtn8Go09//apv2q2A4rBcaa+LCnmTJkNVkgnSpB4YQy/NQ4bS5WHWHQ
- Up3vmum4mpbG44jmVuyk1CX0C6yrSN3i1E5dCpa2LSQ9vax3ouGLfbSng/FsDmH83F
- 7GNrKsBdI5/ckWt3rk8wgOq+OGIkW71LbT2aqo6k=
+ s=default; t=1589905712;
+ bh=j4A3t0pCmverH6aGXvri0NjPo8TRZCpBNuitavzar+M=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=lGoM62+j3ra5du1kgl9iVcPx0UK7iaLMBD5KTHoOuoqb7nKbZpjgsRW+f9W4A6JsU
+ oyCSQaI5L51/DNV1WNTTVIDk3HJmiKCNOuneiT6AwY8qXY4H6qpjUjM5LOXq1LO88z
+ 3FQLEEaHwxV3b1kn9PQNroVNQNXyPYpmBIf81BJ4=
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 0/2] arm64 sigreturn unwinding fixes
-Date: Tue, 19 May 2020 17:28:19 +0100
-Message-Id: <20200519162821.16857-1-will@kernel.org>
+Subject: [PATCH v2 1/2] arm64: vdso: Don't prefix sigreturn trampoline with a
+ BTI C instruction
+Date: Tue, 19 May 2020 17:28:20 +0100
+Message-Id: <20200519162821.16857-2-will@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200519162821.16857-1-will@kernel.org>
+References: <20200519162821.16857-1-will@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_092831_179420_197DA71F 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200519_092833_155360_F8D6C8DE 
+X-CRM114-Status: GOOD (  11.15  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -83,44 +85,108 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi again,
+For better or worse, GDB relies on the exact instruction sequence in the
+VDSO sigreturn trampoline in order to unwind from signals correctly.
+Commit c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
+unfortunately added a BTI C instruction to the start of __kernel_rt_sigreturn,
+which breaks this check. Thankfully, it's also not required, since the
+trampoline is called from a RET instruction when returning from the signal
+handler
 
-Hot off the press, here's v2 of the sigreturn unwinding fixes I sent out
-early on today:
-
-  https://lore.kernel.org/r/20200519121818.14511-1-will@kernel.org
-
-Changes since v1 include:
-
-  * Retain all CFI directives, as they are needed for unwinding after all
-  * Add tonnes of comments
-  * Squash the last two patches
-  * Use SYM_CODE_{START,END} instead of open-coding it
-  * Update Fixes: tag
-
-Please have a look, and give it a spin with your favourite unwinder.
-
-Ta,
-
-Will
+Remove the unnecessary BTI C instruction from __kernel_rt_sigreturn,
+and do the same for the 32-bit VDSO as well for good measure.
 
 Cc: Dave Martin <dave.martin@arm.com>
-Cc: Tamas Zsoldos <tamas.zsoldos@arm.com> 
-Cc: Daniel Kiss <daniel.kiss@arm.com>
 Cc: Mark Brown <broonie@kernel.org>
-Cc: <kernel-team@android.com>
+Cc: Daniel Kiss <daniel.kiss@arm.com>
+Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>
+Fixes: c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ arch/arm64/kernel/vdso/sigreturn.S   | 11 +++++++++--
+ arch/arm64/kernel/vdso32/sigreturn.S | 16 ++++++++--------
+ 2 files changed, 17 insertions(+), 10 deletions(-)
 
---->8
-
-Will Deacon (2):
-  arm64: vdso: Don't prefix sigreturn trampoline with a BTI C
-    instruction
-  arm64: vdso: Fix CFI directives in sigreturn trampoline
-
- arch/arm64/kernel/vdso/sigreturn.S   | 47 +++++++++++++++++++++++-----
- arch/arm64/kernel/vdso32/sigreturn.S | 16 +++++-----
- 2 files changed, 48 insertions(+), 15 deletions(-)
-
+diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
+index 3fb13b81f780..0c921130002a 100644
+--- a/arch/arm64/kernel/vdso/sigreturn.S
++++ b/arch/arm64/kernel/vdso/sigreturn.S
+@@ -15,7 +15,14 @@
+ 	.text
+ 
+ 	nop
+-SYM_FUNC_START(__kernel_rt_sigreturn)
++/*
++ * GDB relies on being able to identify the sigreturn instruction sequence to
++ * unwind from signal handlers. We cannot, therefore, use SYM_FUNC_START()
++ * here, as it will emit a BTI C instruction and break the unwinder. Thankfully,
++ * this function is only ever called from a RET and so omitting the landing pad
++ * is perfectly fine.
++ */
++SYM_CODE_START(__kernel_rt_sigreturn)
+ 	.cfi_startproc
+ 	.cfi_signal_frame
+ 	.cfi_def_cfa	x29, 0
+@@ -24,6 +31,6 @@ SYM_FUNC_START(__kernel_rt_sigreturn)
+ 	mov	x8, #__NR_rt_sigreturn
+ 	svc	#0
+ 	.cfi_endproc
+-SYM_FUNC_END(__kernel_rt_sigreturn)
++SYM_CODE_END(__kernel_rt_sigreturn)
+ 
+ emit_aarch64_feature_1_and
+diff --git a/arch/arm64/kernel/vdso32/sigreturn.S b/arch/arm64/kernel/vdso32/sigreturn.S
+index 620524969696..b36d4e2267a3 100644
+--- a/arch/arm64/kernel/vdso32/sigreturn.S
++++ b/arch/arm64/kernel/vdso32/sigreturn.S
+@@ -17,39 +17,39 @@
+ 	.save {r0-r15}
+ 	.pad #COMPAT_SIGFRAME_REGS_OFFSET
+ 	nop
+-SYM_FUNC_START(__kernel_sigreturn_arm)
++SYM_CODE_START(__kernel_sigreturn_arm)
+ 	mov r7, #__NR_compat_sigreturn
+ 	svc #0
+ 	.fnend
+-SYM_FUNC_END(__kernel_sigreturn_arm)
++SYM_CODE_END(__kernel_sigreturn_arm)
+ 
+ 	.fnstart
+ 	.save {r0-r15}
+ 	.pad #COMPAT_RT_SIGFRAME_REGS_OFFSET
+ 	nop
+-SYM_FUNC_START(__kernel_rt_sigreturn_arm)
++SYM_CODE_START(__kernel_rt_sigreturn_arm)
+ 	mov r7, #__NR_compat_rt_sigreturn
+ 	svc #0
+ 	.fnend
+-SYM_FUNC_END(__kernel_rt_sigreturn_arm)
++SYM_CODE_END(__kernel_rt_sigreturn_arm)
+ 
+ 	.thumb
+ 	.fnstart
+ 	.save {r0-r15}
+ 	.pad #COMPAT_SIGFRAME_REGS_OFFSET
+ 	nop
+-SYM_FUNC_START(__kernel_sigreturn_thumb)
++SYM_CODE_START(__kernel_sigreturn_thumb)
+ 	mov r7, #__NR_compat_sigreturn
+ 	svc #0
+ 	.fnend
+-SYM_FUNC_END(__kernel_sigreturn_thumb)
++SYM_CODE_END(__kernel_sigreturn_thumb)
+ 
+ 	.fnstart
+ 	.save {r0-r15}
+ 	.pad #COMPAT_RT_SIGFRAME_REGS_OFFSET
+ 	nop
+-SYM_FUNC_START(__kernel_rt_sigreturn_thumb)
++SYM_CODE_START(__kernel_rt_sigreturn_thumb)
+ 	mov r7, #__NR_compat_rt_sigreturn
+ 	svc #0
+ 	.fnend
+-SYM_FUNC_END(__kernel_rt_sigreturn_thumb)
++SYM_CODE_END(__kernel_rt_sigreturn_thumb)
 -- 
 2.26.2.761.g0e0b3e54be-goog
 
