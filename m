@@ -2,106 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D9201D9A3B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 16:43:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 961491D9A65
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 16:52:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ruoFgsNdwxXY7mqABsJl6TvLvNldoxhPEbYNbUSy1JA=; b=EvJ1M0iMAGB8vu
-	34x988HekvClm6R1c+qLuPKRla6hwlehjjqv+KGfIubQzIOJ7+XKV+LFSB40UggO3vo0FteDGH15U
-	FHWMqhcj+K6/8OYI0bMemnLBmrj7XvCwAWbZOdv54bf1TmJdtFKPWcSZ7jHmo8iBwNT3qnjqQAtyq
-	4sRbhR+9VbSBX/3rD9yqk1REZr2aMVmr66JSCiT46woSWmlSD+nK3wpW9nd6rWOXQXSEN9zNYFMxz
-	r4jraiaAhSvvN5JnHg+Lj3OfGzAxBFtlrBPxE4N4+gyifJQz9mVfWJaFt/5dSWk6JvnxnFXdoeMai
-	1P/OCYN1X7P6/xmxETEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AJ0x+c4qJhREEgUfOpiQL3sBrCDtn0YLzuN9G6DJLj4=; b=cKtL3iLXsqTOa9ORe4Y6+JXtq
+	gXOzepxQhzcPKG6XVGEGF02noMYNq/U4QAYXnjcG3QaLxGA4KTpuh3rOJWNezC2JLbXcLSolm5Zo8
+	a3U4B79/umCdDMTw1m6EaShYTWusLsOA6VZJ6vOE0IhgIq09C9+YWsOGTrVnbSHCchqG40TXZYt4L
+	4/1XiEJVWGKv2f1bqKZ3bQ8uZ9PMpq+DwwMMXAxvbJ6FZqTuau45sl/h4NJesiBh42MsvvVdscMVn
+	iSW+c3Lhq6yimh5xeIrhKwU4lcn8RHllbWE3S1e3Pv2sYnmnPl7nCq3yTf5VV10HVmVzM3MBoy7S5
+	fvpJjtv3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb3Sv-0003OQ-IP; Tue, 19 May 2020 14:43:33 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1jb3bG-0001t7-4y; Tue, 19 May 2020 14:52:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb3Sk-0003Nl-VG
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 14:43:25 +0000
-Received: from pps.filterd (m0098393.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04JEXLhZ118163; Tue, 19 May 2020 10:43:14 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 313x631nm9-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 19 May 2020 10:43:14 -0400
-Received: from m0098393.ppops.net (m0098393.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 04JEXnrJ121424;
- Tue, 19 May 2020 10:43:13 -0400
-Received: from ppma04ams.nl.ibm.com (63.31.33a9.ip4.static.sl-reverse.com
- [169.51.49.99])
- by mx0a-001b2d01.pphosted.com with ESMTP id 313x631nk9-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 19 May 2020 10:43:13 -0400
-Received: from pps.filterd (ppma04ams.nl.ibm.com [127.0.0.1])
- by ppma04ams.nl.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 04JEUUER023016;
- Tue, 19 May 2020 14:43:11 GMT
-Received: from b06cxnps3075.portsmouth.uk.ibm.com
- (d06relay10.portsmouth.uk.ibm.com [9.149.109.195])
- by ppma04ams.nl.ibm.com with ESMTP id 313xehhtn0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 19 May 2020 14:43:11 +0000
-Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
- [9.149.105.61])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 04JEh9aW60883168
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 19 May 2020 14:43:09 GMT
-Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 3A3DF11C04C;
- Tue, 19 May 2020 14:43:09 +0000 (GMT)
-Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 3EA2211C04A;
- Tue, 19 May 2020 14:43:08 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.202.182])
- by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Tue, 19 May 2020 14:43:08 +0000 (GMT)
-Date: Tue, 19 May 2020 17:43:06 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 2/2] ARM: Allow either FLATMEM or SPARSEMEM on the
- multiplatform build
-Message-ID: <20200519144306.GE1059226@linux.ibm.com>
-References: <20200506235009.25023-1-f.fainelli@gmail.com>
- <20200506235009.25023-3-f.fainelli@gmail.com>
- <20200507072711.GB683243@linux.ibm.com>
- <bc44ed27-7dd7-67b6-93cf-f6f575b59441@gmail.com>
- <a7c86780-d65c-ab7b-ec3c-4029257cee7a@gmail.com>
- <20200518194533.GD1059226@linux.ibm.com>
- <CAK8P3a1hd2uKsncgd=eyY1VHBbB8fPBDCWsyHpHT7q9eJp-URw@mail.gmail.com>
+ id 1jb3b1-0001sA-0c
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 14:51:56 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D6015207D8;
+ Tue, 19 May 2020 14:51:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589899913;
+ bh=Zzrxy9cnazliEWrlIB15AC7r330IHi741R32Bbnvffc=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=elbsIbehKMUPb6gsMgsVjgDQtTgLCXpuC2/zYeUAqVxXxNxaUDnx9SERduXJnE5BE
+ 3UAn7By/o1ofEjJnuNW+AYvusCq/8AXirGM5ANpIKD1NZjG0SLivHiBBo19VRav0FB
+ 31dYtk362fDfujYlVdiQ2JPNlRJb4a+/s7I8e8Qs=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jb3ax-00DdPE-3N; Tue, 19 May 2020 15:51:51 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a1hd2uKsncgd=eyY1VHBbB8fPBDCWsyHpHT7q9eJp-URw@mail.gmail.com>
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-19_04:2020-05-19,
- 2020-05-19 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- priorityscore=1501
- spamscore=0 impostorscore=0 phishscore=0 mlxscore=0 mlxlogscore=999
- suspectscore=2 cotscore=-2147483648 malwarescore=0 clxscore=1015
- lowpriorityscore=0 adultscore=0 bulkscore=0 classifier=spam adjust=0
- reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2005190128
+Date: Tue, 19 May 2020 15:51:51 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Sumit Garg <sumit.garg@linaro.org>
+Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
+ pseudo NMI
+In-Reply-To: <CAFA6WYO3=BHX1exF+J=93ECnQFe3S5O4HrT4t14euw3t9PXE7A@mail.gmail.com>
+References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
+ <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
+ <20200425112950.3a4815b6@why> <6fd3d96181ec53f735ef1b6a79d28da1@kernel.org>
+ <CAFA6WYPNNNZeX5zpadayfiZ7P_mHmiREpUd5LZ3Jp+TjGVqoEw@mail.gmail.com>
+ <ac57cb4bbb6507ee98f199d68a514503@kernel.org>
+ <CAFA6WYMheJxeKVC_YWN9owNJhcWTBsaOCvZXxq=GVj5ROJ0cvg@mail.gmail.com>
+ <20200430101322.420e4052@why>
+ <CAFA6WYO+NGLfNkOah4YzXx5XuaDh=QtWHgnMBwwMFY1zRt15GQ@mail.gmail.com>
+ <CAFA6WYPxiwxpJitX7fCSESUvQSa9Dq89GwL4e3w33ooetV=ysw@mail.gmail.com>
+ <CAFA6WYOn+DLf77C1+e5bq-NdT+o4=o32oPu2b3bxD_U+mLQ3WQ@mail.gmail.com>
+ <306aecc560a9503e500fbf1f512c6d30@kernel.org>
+ <CAFA6WYPHWP46TY_XdxVVrTr6AChU_1ATXu+p32vXCjkaXWPWOQ@mail.gmail.com>
+ <CAFA6WYO3=BHX1exF+J=93ECnQFe3S5O4HrT4t14euw3t9PXE7A@mail.gmail.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <53b74b80df5d64b2e702fd4de3eaffff@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: sumit.garg@linaro.org, daniel.thompson@linaro.org,
+ jason@lakedaemon.net, catalin.marinas@arm.com, dianders@chromium.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ jason.wessel@windriver.com, kgdb-bugreport@lists.sourceforge.net,
+ tglx@linutronix.de, will@kernel.org, julien.thierry.kdev@gmail.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_074323_011657_A87CE82E 
-X-CRM114-Status: GOOD (  31.69  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200519_075155_106577_4682A3BA 
+X-CRM114-Status: GOOD (  14.27  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.156.1 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,104 +104,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
- Kevin Cernekee <cernekee@gmail.com>, Russell King <rmk+kernel@armlinux.org.uk>,
- Florian Fainelli <f.fainelli@gmail.com>, Gregory Fong <gregory.0xf0@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Daniel Thompson <daniel.thompson@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Douglas Anderson <dianders@chromium.org>, julien.thierry.kdev@gmail.com,
+ Jason Wessel <jason.wessel@windriver.com>,
+ kgdb-bugreport@lists.sourceforge.net, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 09:59:48AM +0200, Arnd Bergmann wrote:
-> On Mon, May 18, 2020 at 9:45 PM Mike Rapoport <rppt@linux.ibm.com> wrote:
-> > On Mon, May 18, 2020 at 08:58:36AM -0700, Florian Fainelli wrote:
-> > > On 5/7/2020 1:11 PM, Florian Fainelli wrote:
-> > > > On 5/7/2020 12:27 AM, Mike Rapoport wrote:
-> > > >> On Wed, May 06, 2020 at 04:50:09PM -0700, Florian Fainelli wrote:
-> > > >>> From: Gregory Fong <gregory.0xf0@gmail.com>
-> > > >>>
-> > > >>> ARMv7 chips with LPAE can often benefit from SPARSEMEM, as portions of
-> > > >>> system memory can be located deep in the 36-bit address space.  Allow
-> > > >>> FLATMEM or SPARSEMEM to be selectable at compile time; FLATMEM remains
-> > > >>> the default.
-> > > >>>
-> > > >>> This is based on Kevin's "[PATCH 3/3] ARM: Allow either FLATMEM or
-> > > >>> SPARSEMEM on the multi-v7 build" from [1] and shamelessly rips off his
-> > > >>> commit message text above.  As Arnd pointed out at [2] there doesn't
-> > > >>> seem to be any reason to tie this specifically to ARMv7, so this has
-> > > >>> been changed to apply to all multiplatform kernels.
-> > > >>>
-> > > >>> [1] http://lists.infradead.org/pipermail/linux-arm-kernel/2014-September/286837.html
-> > > >>> [2] http://lists.infradead.org/pipermail/linux-arm-kernel/2014-October/298950.html
-> > > >>>
-> > > >>> Cc: Kevin Cernekee <cernekee@gmail.com>
-> > > >>> Tested-by: Stephen Boyd <sboyd@codeaurora.org>
-> > > >>> Signed-off-by: Gregory Fong <gregory.0xf0@gmail.com>
-> > > >>> Signed-off-by: Doug Berger <opendmb@gmail.com>
-> > > >>> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> > > >>> ---
-> > > >>>  arch/arm/Kconfig | 5 +++++
-> > > >>>  1 file changed, 5 insertions(+)
-> > > >>>
-> > > >>> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-> > > >>> index 5986277296c3..7bb5264a9c3a 100644
-> > > >>> --- a/arch/arm/Kconfig
-> > > >>> +++ b/arch/arm/Kconfig
-> > > >>> @@ -312,6 +312,8 @@ choice
-> > > >>>  config ARCH_MULTIPLATFORM
-> > > >>>   bool "Allow multiple platforms to be selected"
-> > > >>>   depends on MMU
-> > > >>> + select ARCH_FLATMEM_ENABLE
-> > > >>> + select ARCH_SPARSEMEM_ENABLE
-> > > >>
-> > > >> The logic in mm/Kconfig is quite convoluted, so selecting
-> > > >> ARCH_SPARSEMEM_ENABLE will automatically make SPARSEMEM the only option.
-> > > >>
-> > > >> On top of this you would need to enable ARCH_SELECT_MEMORY_MODEL, e.g.
-> > > >> something like:
-> > > >
-> > > > Yes indeed, thanks that does allow me to select between flatmem and
-> > > > sparsemem from menuconfig correctly now.
-> > >
-> > > Mike, do you want to make a formal submission to Russell's patch
-> > > tracker? If so, feel free to add:
-> >
-> > I actually hoped to hear from people what do they think about switching
-> > over to SPARSEMEM for the multiplatform builds. I think at least v7 CPUs
-> > it would make sense.
+On 2020-05-13 11:02, Sumit Garg wrote:
+> Hi Marc,
 > 
-> It seems that at least s5p/exynos and clps711x (armv4) used to default to
-> sparsemem, and that got lost in the multiplatform conversion.
+> On Tue, 5 May 2020 at 17:03, Sumit Garg <sumit.garg@linaro.org> wrote:
+>> 
+>> On Tue, 5 May 2020 at 15:38, Marc Zyngier <maz@kernel.org> wrote:
+>> >
+>> > On 2020-05-05 05:09, Sumit Garg wrote:
+>> > > On Fri, 1 May 2020 at 18:33, Sumit Garg <sumit.garg@linaro.org> wrote:
+>> >
+>> > [...]
+>> >
+>> > > In case there are no major objections to this approach, I will post
+>> > > complete v2 patch-set (alongwith Marc's patches) for detailed review.
+>> >
+>> > As this is still a work in progress (I'm currently wrestling with
+>> > the stupid RPi driver), whatever you have is unlikely to apply on
+>> > top of the final series.
+>> >
+>> > I'm not going to stop you from posting the patches, it is just that
+>> > they will be obsolete by the end of the week...
+>> 
+>> Thanks for the heads up. Will wait for your final series.
+>> 
 > 
-> I also see discontiguous memory ranges in multiple broadcom chips,
-> on TI dm8168, ecx-2000 and imx.
-> 
-> > Russel, Arnd, can you comment please?
-> 
-> I see no problem with giving users the choice for all multiplatform
-> builds. No idea on what the default should be really, i.e. whether
-> only v7 configurations should make it the default, or rather none of
-> them or all of them.
+> Were you able to give a final shape to your SGIs related patch-set?
 
-Me neither :)
+See 
+https://git.kernel.org/pub/scm/linux/kernel/git/maz/arm-platforms.git/log/?h=irq/ipi-as-irq
 
-I'd say let's move forward with letting user select the memory model for
-all multiplaform builds and keep flatmem the default.
+Thanks,
 
-Enabling sparsemem (with SPARSEMEM_STATIC) for defconfig build increases
-the kernel nearly by 8k and most probably will make things slower.
-
-
-> Maybe lets leave the default unchanged with flatmem but enable it in
-> multi_v7_defconfig and the configurations for chips that are known
-> to have discontiguous memory (clps, bcm, imx, exynos, ...).
->
->       Arnd
-
+         M.
 -- 
-Sincerely yours,
-Mike.
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
