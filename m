@@ -2,67 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1F161D9CB3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:30:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E4F61D9CC8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:33:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AUIHHjI7rPphDGtAP/Ur90Xq812PncIhIn6kZvy2RYY=; b=dezzWo+lcfVTPk
-	KgnDmwbfr5xCKuSMbU0wRkrL2H7kp577vFwvwEhEm0wjIcDJ1foHbD2vPkWmdWE13fcEOn04AYhZM
-	puF79bSAAfpP/JdaQ+EMwIIjd8sSCg8XqvgcmzhotwmwiFGbJx9Ea38qQZCpCnxPQ3L7ijTvGokaO
-	hGffjs/gEGnF5rTaXNmHmXmRDlG036ieOMcPZzkk1BXKP7ad58IyIrXvj1qw+WMEuEBqekrarVQip
-	Bt+t/1abhOoj4725Lomlvh5L0XZ6qHI0XSfqzAkcIFZP30wBlUgwlbYIqnzHP0mzn9DTOUX/0zmw2
-	KF4C171OGzsnoHdEKEhg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=XC4RiaDmTIv+B8utT9dnMEQ9M5l6dccAgm7/lLK97Dk=; b=pOKa9zrDTVxqpfexBSu+XTyDd
+	XZ6ei6dyV7Z/hS98v8akH8NsNiArsJl7XSyCs4aTV+R+ReFJn3BS+92+faKp6ofPBovy8Qr397xlE
+	e64uXLvMSk32ynbo2cLncEvU+055MtQ85fsZpiHEo9fcwpT7AAKJiIZvz0xIBUaqMMZJIynV1TC+5
+	+dYLFX4pMBMxMgLdyGaKtgWw08XYgmcYwHKBhA3pQ58H//K3LKNY0i0Xs3YIOpUtCJS2bbgxPeMZX
+	ouB7583hrCv79/QhqFYKiD7B1cnmir3QqTh52goaEXnWFPkpLnuEytkDLJZTCHzNsItDJ688TOkjn
+	Hry1Lsuig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb58K-00084F-2Q; Tue, 19 May 2020 16:30:24 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1jb5BB-0001Jq-61; Tue, 19 May 2020 16:33:21 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb578-0005ut-NP; Tue, 19 May 2020 16:29:13 +0000
-IronPort-SDR: qzCZPZac9iI8/b2rMrwci462/T9k3ZmQSP7iaKk97TmVV8ZkzZYp0TWUwHhnLEO24TAKZ0OTzQ
- /nktjbM4vSdg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 19 May 2020 09:29:06 -0700
-IronPort-SDR: wMgiwHen2OPFlYyzOEz7g2rJdzh5JJtN4dIY2VFB92QqQMm8kp4VvGIH/smvNQpDVMcoLkKqX3
- R44n5eaK0YwQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,410,1583222400"; d="scan'208";a="343188490"
-Received: from iweiny-desk2.sc.intel.com ([10.3.52.147])
- by orsmga001.jf.intel.com with ESMTP; 19 May 2020 09:29:05 -0700
-Date: Tue, 19 May 2020 09:29:05 -0700
-From: Ira Weiny <ira.weiny@intel.com>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH V3 07/15] arch/kunmap_atomic: Consolidate duplicate code
-Message-ID: <20200519162904.GA3356843@iweiny-DESK2.sc.intel.com>
-References: <20200507150004.1423069-1-ira.weiny@intel.com>
- <20200507150004.1423069-8-ira.weiny@intel.com>
- <20200516223306.GA161252@roeck-us.net>
- <20200518034938.GA3023182@iweiny-DESK2.sc.intel.com>
- <20200518042932.GA59205@roeck-us.net>
- <20200519000352.GF3025231@iweiny-DESK2.sc.intel.com>
- <47757f51-15f2-3abe-9035-abdb3ba5816e@roeck-us.net>
+ id 1jb5B1-0001J2-3H
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:33:12 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3B713207D3;
+ Tue, 19 May 2020 16:33:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589905990;
+ bh=XAMymEm3THX97rEIALBfRMY2q3FeH5c0z+r6c7uPV9U=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=M8WNTTko2PIZEnxJE20+K3aXp11x9/uLG3IuAm8kO76Amn9OLMuOWEGiPC0b1bMe1
+ Y3BbyQOXVhlrQAm+iAlXCGn6sjm7kAhNBlg03yL7QPUbl3qnf+EE/BNXWuExXr3NuU
+ RAAmxnNd4muc1/d5+9Sp9q1qwW5argYTUNNWrGk0=
+Date: Tue, 19 May 2020 17:33:08 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2 1/2] arm64: vdso: Don't prefix sigreturn trampoline
+ with a BTI C instruction
+Message-ID: <20200519163308.GP4611@sirena.org.uk>
+References: <20200519162821.16857-1-will@kernel.org>
+ <20200519162821.16857-2-will@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <47757f51-15f2-3abe-9035-abdb3ba5816e@roeck-us.net>
-User-Agent: Mutt/1.11.1 (2018-12-01)
+In-Reply-To: <20200519162821.16857-2-will@kernel.org>
+X-Cookie: Do not write below this line.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_092910_808753_F7F8680F 
-X-CRM114-Status: GOOD (  26.75  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200519_093311_164004_F7E7C082 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,138 +79,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, kernel-team@android.com,
+ Dave Martin <dave.martin@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Daniel Kiss <daniel.kiss@arm.com>
+Content-Type: multipart/mixed; boundary="===============1036055679569728925=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 07:50:36PM -0700, Guenter Roeck wrote:
-> Hi Ira,
-> 
-> On 5/18/20 5:03 PM, Ira Weiny wrote:
-> > On Sun, May 17, 2020 at 09:29:32PM -0700, Guenter Roeck wrote:
-> >> On Sun, May 17, 2020 at 08:49:39PM -0700, Ira Weiny wrote:
-> >>> On Sat, May 16, 2020 at 03:33:06PM -0700, Guenter Roeck wrote:
-> >>>> On Thu, May 07, 2020 at 07:59:55AM -0700, ira.weiny@intel.com wrote:
-> >>>>> From: Ira Weiny <ira.weiny@intel.com>
-> >>>>>
-> >>>
 
-Sorry for the delay I missed this email last night...  I blame outlook...  ;-)
+--===============1036055679569728925==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="aMDdG8xNveJz2ruI"
+Content-Disposition: inline
 
-...
 
-> >>> Do you have a kernel config?  Specifically is CONFIG_HIGHMEM set?
-> >>>
-> >> See below. Yes, CONFIG_HIGHMEM is set.
-> >>
-> >> The scripts used to build and boot the image are at:
-> >>
-> >> https://github.com/groeck/linux-build-test/tree/master/rootfs/microblazeel
-> > 
-> > Despite finding the obvious error earlier today I've still been trying to get
-> > this to work.
-> > 
-> > I had to make some slight modifications to use the 0-day cross compile build
-> > and my local qemu build.  But those were pretty minor modifications.  I'm
-> > running on x86_64 host.
-> > 
-> > With those slight mods to the scripts I get the following error even without my
-> > patch set on 5.7-rc4.  I have 1 cpu pegged at 100% while it is running...  Is
-> > there anything I can do to get more debug output?  Perhaps I just need to let
-> > it run longer?
-> > 
-> 
-> I don't think so. Try running it with "-d" parameter (run-qemu-microblazeel.sh
-> -d petalogix-s3adsp1800); that gives you the qemu command line. Once it says
-> "running", abort the script and execute qemu directly.
+--aMDdG8xNveJz2ruI
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-FYI Minor nit...  a simple copy/paste failed...  that print of the cmd line
-did not include quotes around the -append text:
+On Tue, May 19, 2020 at 05:28:20PM +0100, Will Deacon wrote:
+> For better or worse, GDB relies on the exact instruction sequence in the
+> VDSO sigreturn trampoline in order to unwind from signals correctly.
+> Commit c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
+> unfortunately added a BTI C instruction to the start of __kernel_rt_sigreturn,
+> which breaks this check. Thankfully, it's also not required, since the
+> trampoline is called from a RET instruction when returning from the signal
+> handler
 
-09:06:03 > /home/iweiny/dev/qemu/microblazeel-softmmu/qemu-system-microblazeel
-   -M petalogix-s3adsp1800 -m 256 -kernel arch/microblaze/boot/linux.bin
-   -no-reboot -initrd /tmp/buildbot-cache/microblazeel/rootfs.cpio -append
-   panic=-1 slub_debug=FZPUA rdinit=/sbin/init console=ttyUL0,115200 -monitor
-   none -serial stdio -nographic
+Reviwed-by: Mark Brown <broonie@kernel.org>
 
-qemu-system-microblazeel: slub_debug=FZPUA: Could not open 'slub_debug=FZPUA': No such file or directory
+--aMDdG8xNveJz2ruI
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> Oh, and please update
-> the repository; turns out I didn't push for a while and made a number of
-> changes.
+-----BEGIN PGP SIGNATURE-----
 
-Cool beans...  I've updated.
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7ECkMACgkQJNaLcl1U
+h9DncAf+Lv7ne7DYBjEWUIyXBwewBejRtjgayc0Bsifl6Meb9fHdi0QwzqPsWINN
+LrPvxDtf+EDHsoocs1VzvzsPZn+aRqCSqE/i5fF5seZz9TS9MjIgGSnHA4M5gmqB
+QwjycxK72Zw9wBvmxon0Q6Q2NWM6viIvuyn0NgZUIcoti6giimxTHXeM/oaqhOw2
+oyw9Lsbl5v+Ug0lXDY3X9WzjA7CHW2z8vMfSKdDKuniCWYf4c6d0QBK2y/0YSmSZ
+av5homD0Aixc7sSVG++wm5LUvuX+wFEK03wVWa3WkzJmKalsD6Hk7zYLT3aTYV1E
+DZkrRTPPGo/Kd6c/8FQVMEN0WsGErA==
+=THaO
+-----END PGP SIGNATURE-----
 
-> 
-> My compiler was compiled with buildroot (a long time ago). I don't recall if
-> it needed something special in the configuration, unfortunately.
+--aMDdG8xNveJz2ruI--
 
-AFAICT the compile is working...  It is running from the command line now...  I
-expected it to be slow so I have also increased the timeouts last night.  So
-far it still fails.  I did notice that there is a new 'R' in the wait output.
 
-<quote>
-.........................R......................... failed (silent)
-------------
-qemu log:
-qemu-system-microblazeel: terminating on signal 15 from pid 3357146 (/bin/bash)
-</quote>
-
-I was hoping that meant it found qemu 'running' but looks like that was just a
-retry...  :-(
-
-Last night I increased some of the timeouts I could find.
-
-<quote>
- LOOPTIME=5     # Wait time before checking status
- -MAXTIME=150    # Maximum wait time for qemu session to complete
- -MAXSTIME=60    # Maximum wait time for qemu session to generate output
- +#MAXTIME=150   # Maximum wait time for qemu session to complete
- +#MAXSTIME=60   # Maximum wait time for qemu session to generate output
- +MAXTIME=300    # Maximum wait time for qemu session to complete
- +MAXSTIME=120   # Maximum wait time for qemu session to generate output
-</quote>
-
-But thanks to the qemu command line hint I can see these were not nearly
-enough...  (It has been running for > 20 minutes...  and I'm not getting
-output...)  Or I've done something really wrong.  Shouldn't qemu be at least
-showing something on the terminal by now?  I normally run qemu with different
-display options (and my qemu foo is weak) so I'm not sure what I should be
-seeing with this command line.
-
-09:06:28 > /home/iweiny/dev/qemu/microblazeel-softmmu/qemu-system-microblazeel
-  -M petalogix-s3adsp1800 -m 256 -kernel arch/microblaze/boot/linux.bin
-  -no-reboot -initrd /tmp/buildbot-cache/microblazeel/rootfs.cpio -append
-  "panic=-1 slub_debug=FZPUA rdinit=/sbin/init console=ttyUL0,115200" -monitor
-  none -serial stdio -nographic
-
-Maybe I just have too slow of a machine...  :-/
-
-My qemu was built back in March.  I'm updating that now...
-
-Sorry for being so dense...
-Ira
+--===============1036055679569728925==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1036055679569728925==--
+
