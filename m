@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 604501DA29A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 22:30:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51E331DA29E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 22:32:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ed1YFQrMXRBH1nuudjI2ewxFi5FJRlbpg6vFOkOnOys=; b=UNPC6mKoQcvKJB
-	+JSfLGU4mWyWclZBRTHDdyebdeMF+eZcOUTu0ABQhKzX2Sw5Sw2AQhDnJhJQhSjs5qKB8yFu1n+Ct
-	jKpZqmq6YcshpWbq9wHoidOknEA7PLnbQ0PMtLbiOyaUFlan3s9zwAvMuzlMAqLI+ZTOih49IiHj+
-	n67iBBgjOp9Y7z1jl6HDpKW88SBRcMKOCLt24VAWNhrVa86omfpaQ6+L1YRS/ZXj90xoKflV7pLYE
-	0kChL8TbvmZUh1fFbzrsOFyERSVjFSTlnwnEWQk+8XrYmsynllVDwLDwYwuwlJr+A4nmewvMIUl0d
-	Rp+d1qOY0sZ5zPu48Ppg==;
+	List-Owner; bh=iXUgFyyFe1DSPXiT+PgLN5TV8YffNUeLF7Qk1zW2S3U=; b=czDEr3qF8m6Q9x
+	qhBef/jn85Kghx9/QPnxRYCUQ10mC0xOH3PapWE3u9L5IBaQhUqJYCYsdDWJ/9udZZzVMIzdB4An5
+	NxDPP8+te3yONGC3o+bVcPdOXF2FY1n2yU7SC0Zs/CzC1D+u9q+5UMqn+0lF3yNs4REfp1W4qLUjG
+	zi5dbID5oR8Pw2HulMfwL98oHPYJKOCFv27sXq9Xf49MX7FXIQLKWQqvM/cRQW9M0xirMOH9cmcys
+	gy4vCdUoKsWP/6QksmRgt0Cx+hcq1dduwMwkwtuBujxpBazZK1xoSGZ0zNidIvXCk5sW7c6JO4CW5
+	CYUPktbLDHtBx7ySJRKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb8s5-0004OO-TP; Tue, 19 May 2020 20:29:53 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1jb8u1-0007FR-Jj; Tue, 19 May 2020 20:31:53 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb8rw-0004Nn-9n
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 20:29:45 +0000
-Received: by mail-oi1-x242.google.com with SMTP id i22so931287oik.10
+ id 1jb8ts-0007Ee-4u
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 20:31:46 +0000
+Received: from mail-qt1-f178.google.com ([209.85.160.178]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MLRDv-1jKIbW2jND-00IWI0 for <linux-arm-kernel@lists.infradead.org>; Tue,
+ 19 May 2020 22:31:41 +0200
+Received: by mail-qt1-f178.google.com with SMTP id c24so766594qtw.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 13:29:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=gateworks-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Zpnctebz5JsG00b9dnvqrxDWPeUQwd+C1voSzStELVM=;
- b=QjSNvkOcDiUgtet0E/jVsZ4aMISulwLy3pXGNI7E4mn8PlM7rGR5Qcp5BR12gQJ7ES
- q9bz/acZ76nw3/sSl9O9epFdnx5bRtLu0JeyFqhyk7EkJ9vf7RPvOImYidQHe+N4Sxkj
- Bu35E45+R4+4Nw2LuGg6ZSI1ei7t1w/iNSJYEN6Hc0izoxlxIGGLeObcH35Vl+RNWkK4
- VcBRhswbw+d7/MGgP4qpyBx8HMaM4TEyhfLbpICIbrLCl6jc++rGZv/ms4xFJ8iIVujQ
- 17p1QbzdwjtMhbMQhSwZ49HdKkx+l4/1qgf1ccyHqYFAvoSbmZze6hEKL149XRtTGNiZ
- RKZQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Zpnctebz5JsG00b9dnvqrxDWPeUQwd+C1voSzStELVM=;
- b=mLxa+fpzmyrD8K6FsiZKHMlo9BJa/+Wm0Ya0StYJzI4fMqO/U24A/ya27WWUWMG5og
- 4YsvvQtkq45vp0pOaOgR1mcF8f1U/mIOvOju9EjMaKNODvIxtJmiliM+y9gyHWXpViVh
- aiOhTwS6RXrnwWvo61SRu8nqfWRvhoODdEwLKh8yMw+GPgeei4CeTEBUqJsVmT55rfnZ
- wfAciWbMacmMYYPDSNkAC2pEfI/oN5dCQVOLBOK7grcJYfHhAnt7d8NjaP35PQ/ko13m
- rF3Aexd7MBiRujhH/QsQESfSYnw79ThsDZVOIVMkFVm5vMTuI0HvdLtitejJNnifga1I
- IUHQ==
-X-Gm-Message-State: AOAM531vleUdCYiXqx7UdJaF3aq/d7hDNXOGLH+9ZSOB1hYGLSJVeGU8
- JVUxqqWy4oe0wv7lJT4YkzrcUB/xNLjKFIJWBdJQGQ==
-X-Google-Smtp-Source: ABdhPJys/3NSSmNVLRHHDHO1hXSA01gPwmY5NQh31qgjEE/ATbY/o+QKo0+2jfsv7i1f9sCKmDr9KuiEsl8eMl2QXA0=
-X-Received: by 2002:aca:e1d6:: with SMTP id y205mr950674oig.142.1589920182286; 
- Tue, 19 May 2020 13:29:42 -0700 (PDT)
+ Tue, 19 May 2020 13:31:41 -0700 (PDT)
+X-Gm-Message-State: AOAM533gR2MprAfzVtxuTX8pz2UtZUc4Joz5RByRpeTBmPmPciCzkb0W
+ iyiAnbShraWZ3uLcIX4WhoPSRTM+RxiNgJrAkbE=
+X-Google-Smtp-Source: ABdhPJwnFPtRSDJVnDnHL5c/dqE67Ig3qeBa0DrpfVygpw767tSMU+pDkvKG7qSXMmmSfY8tCzkK5UyIjTK6Dw2jmGk=
+X-Received: by 2002:aed:2441:: with SMTP id s1mr1854319qtc.304.1589920300436; 
+ Tue, 19 May 2020 13:31:40 -0700 (PDT)
 MIME-Version: 1.0
-References: <20191016103513.13088-1-shengjiu.wang@nxp.com>
-In-Reply-To: <20191016103513.13088-1-shengjiu.wang@nxp.com>
-From: Tim Harvey <tharvey@gateworks.com>
-Date: Tue, 19 May 2020 13:29:31 -0700
-Message-ID: <CAJ+vNU0GVCnX14fGsxoasBLoEcVsEUvB5rUeAiHDBQfuys4WSg@mail.gmail.com>
-Subject: Re: [PATCH] ARM64: dts: imx8mm-evk: Assigned clocks for audio plls
-To: "S.j. Wang" <shengjiu.wang@nxp.com>
+References: <CAK8P3a2Tw2w73ZkK-W6AA9veMK4-miLUx-TL1EuOdP7EdW-AmQ@mail.gmail.com>
+ <0c2abcd1-7da8-2559-1e93-4c3bdd38dec1@linaro.org>
+In-Reply-To: <0c2abcd1-7da8-2559-1e93-4c3bdd38dec1@linaro.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 19 May 2020 22:31:23 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3fxs+14ZdCRmt_GwJGv3Aipm1r9sAHH6aVj2UrWBNuQQ@mail.gmail.com>
+Message-ID: <CAK8P3a3fxs+14ZdCRmt_GwJGv3Aipm1r9sAHH6aVj2UrWBNuQQ@mail.gmail.com>
+Subject: Re: clock_gettime64 vdso bug on 32-bit arm, rpi-4
+To: Adhemerval Zanella <adhemerval.zanella@linaro.org>
+X-Provags-ID: V03:K1:b461xunjkpq5fa4vMQ7dGpWQQHS4sEeI1yHssQyOcZm97VaD8At
+ YgiT8bo5k8aXCbjk11UaflAOFhRPAYsMjT5eq5lVnpHsjyuEB2h2vtbj9DaQsaWqhDFDqw0
+ CFD8lilEZ5qK7Q9539Mg48mmYUCszcIe18O5LPFzBBQYdt22L7eBkHUAZclGD8K5xXr0qxC
+ WFzzC9nOvHxU4VZARGgCg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:2kBEjfYyOoU=:7vQ5GDxU9a7P08ASAvFO24
+ pHdWKB6pz9uagTEKx+rbUZmR5MAykEh4dmWSccTZMrmGPg5Fwxg6kmUrYZijWJYWn046hWYUc
+ S46cew78mb2r8lFbz69AG9OMuFhQxoltEsNkaODG49Fi2hYKBznDpnbgX9ENRrzzZJZ7OgUKf
+ G2UWceMojyBPwsza3jhlRUy0z+mNdn3/gkzemhHmaWXDxRBZlEFuSbrEO8kHdPEC4oFV5T1Vq
+ +75/bF7o6eHoZrVLKIjtd565aA1i51UUBlNf/7bq8iz3c66vzp/o6BsRVshMJKK9/dV/XldX4
+ AbaYTaMgehraIVi+TsKiYnj1tNBXcNXFJ6YfnzkL390uYVLD6550KKiHBHQi1L9VE1CmFGex+
+ nOv0PqjVPOpgn89e7a3VmExAStiErgNDNTlhfkAcDObkrcdoHMPgqE4P/7C2goi34mqRDpXSt
+ fklDOd/A7+1Q0g8pcJ+w0kP49YhwBb+wVX3ubHSsqPXE9RkEZSZLXYiCdP0qkYPupxHRkYpWw
+ Fl+AX34cYcslMGwe0Zdi0aqvcksnQcKoInGx4grFUBwQebeLHk6A0xDo82L5KoFR2STn384B+
+ F2Exd5nN+31dzsRzU+efM/Z10PSAz51p8vm5lM4dgFEdapSzpX+eMv6c/2KF1FB2HjOHcltxb
+ L713iXR85f4V6iYB476xRveM+Lf4kuuIOxomR31Ko4czAFaHAw4I7HI5C/xReZc/zUUqS20/f
+ rGNITBCS5EmrGYMebiYEGTGPeKuSfWQsTHiwylfG916OEb0EwM+GzNmTaw33tEkyzliEVtwwc
+ UWu9T/oseN/F+eV6/gh8+X9ihbdSh/XaqTULbdz3RjHlYdXCDk=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_132944_368018_82F6060C 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20200519_133144_482120_32A02CFB 
+X-CRM114-Status: GOOD (  31.18  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [212.227.126.133 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.133 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,63 +88,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jun Li <jun.li@nxp.com>
+Cc: Rich Felker <dalias@libc.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Will Deacon <will@kernel.org>,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Jack Schmidt <jack.schmidt@uky.edu>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Oct 16, 2019 at 3:36 AM S.j. Wang <shengjiu.wang@nxp.com> wrote:
+On Tue, May 19, 2020 at 10:24 PM Adhemerval Zanella
+<adhemerval.zanella@linaro.org> wrote:
+> On 19/05/2020 16:54, Arnd Bergmann wrote:
+> > Jack Schmidt reported a bug for the arm32 clock_gettimeofday64 vdso call last
+> > month: https://github.com/richfelker/musl-cross-make/issues/96 and
+> > https://github.com/raspberrypi/linux/issues/3579
+> >
+> > As Will Deacon pointed out, this was never reported on the mailing list,
+> > so I'll try to summarize what we know, so this can hopefully be resolved soon.
+> >
+> > - This happened reproducibly on Linux-5.6 on a 32-bit Raspberry Pi patched
+> >    kernel running on a 64-bit Raspberry Pi 4b (bcm2711) when calling
+> >    clock_gettime64(CLOCK_REALTIME)
 >
-> Assign clocks and clock-rates for audio plls, that audio
-> drivers can utilize them.
->
-> Add dai-tdm-slot-num and dai-tdm-slot-width for sound-wm8524,
-> that sai driver can generate correct bit clock.
->
-> Fixes: 13f3b9fdef6c ("arm64: dts: imx8mm-evk: Enable audio codec wm8524")
-> Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mm-evk.dts | 2 ++
->  arch/arm64/boot/dts/freescale/imx8mm.dtsi    | 8 ++++++--
->  2 files changed, 8 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-> index f7a15f3904c2..13137451b438 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-> +++ b/arch/arm64/boot/dts/freescale/imx8mm-evk.dts
-> @@ -62,6 +62,8 @@
->
->                 cpudai: simple-audio-card,cpu {
->                         sound-dai = <&sai3>;
-> +                       dai-tdm-slot-num = <2>;
-> +                       dai-tdm-slot-width = <32>;
->                 };
->
+> Does it happen with other clocks as well?
 
-Shengjiu,
+Unclear.
 
-Can you explain the why dai-tdm-slot-width here is 32? I noticed when
-I assigned that for an imx8mm board I'm working on (that uses a
-tlv320aic3x codec) I ended up with the clock being off by a factor of
-2 (audio playback was 2x too slow).
+> > - The kernel tree is at https://github.com/raspberrypi/linux/, but I could
+> >   see no relevant changes compared to a mainline kernel.
+>
+> Is this bug reproducible with mainline kernel or mainline kernel can't be
+> booted on bcm2711?
 
-Best Regards,
+Mainline linux-5.6 should boot on that machine but might not have
+all the other features, so I think users tend to use the raspberry pi
+kernel sources for now.
 
-Tim
+> > - From the report, I see that the returned time value is larger than the
+> >   expected time, by 3.4 to 14.5 million seconds in four samples, my
+> >   guess is that a random number gets added in at some point.
+>
+> What kind code are you using to reproduce it? It is threaded or issue
+> clock_gettime from signal handlers?
+
+The reproducer is very simple without threads or signals,
+see the start of https://github.com/richfelker/musl-cross-make/issues/96
+
+It does rely on calling into the musl wrapper, not the direct vdso
+call.
+
+> > - From other sources, I found that the Raspberry Pi clocksource runs
+> >   at 54 MHz, with a mask value of 0xffffffffffffff. From these numbers
+> >   I would expect that reading a completely random hardware register
+> >   value would result in an offset up to 1.33 billion seconds, which is
+> >   around factor 100 more than the error we see, though similar.
+> >
+> > - The test case calls the musl clock_gettime() function, which falls back to
+> >   the clock_gettime64() syscall on kernels prior to 5.5, or to the 32-bit
+> >   clock_gettime() prior to Linux-5.1. As reported in the bug, Linux-4.19 does
+> >   not show the bug.
+> >
+> > - The behavior was not reproduced on the same user space in qemu,
+> >   though I cannot tell whether the exact same kernel binary was used.
+> >
+> > - glibc-2.31 calls the same clock_gettime64() vdso function on arm to
+> >   implement clock_gettime(), but earlier versions did not. I have not
+> >   seen any reports of this bug, which could be explained by users
+> >   generally being on older versions.
+> >
+> > - As far as I can tell, there are no reports of this bug from other users,
+> >   and so far nobody could reproduce it.
+> >
+> > - The current musl git tree has been patched to not call clock_gettime64
+> >    on ARM because of this problem, so it cannot be used for reproducing it.
+>
+> So should glibc follow musl and remove arm clock_gettime6y4 vDSO support
+> or this bug is localized to an specific kernel version running on an
+> specific hardware?
+
+I hope we can figure out what is actually going on soon, there is probably
+no need to change glibc before we have.
+
+          Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
