@@ -2,77 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 099161D8DD6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 04:55:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 540AA1D8DDC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 04:55:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eDXoCW+vrzD//YcIfTLluKbls6sHKzOoD0MGe9KJn58=; b=gS9CU7LPMv1wi4
-	4JBGnHsW/0EOhcdAHjnD1bAE49EobDzk2eapaCY8YhDqtfO4/EVc35iH7VJx5yanSsLbo4vdBoAXg
-	pZNi/WYkaasH3Q5cAnFwSuv1fNel0AcBlEuomZFs/bc8Yae/w2kyorlBIvpBAMLIUuF5r+1Hxp2QQ
-	qDEBmM2gprspVpjBLEnK2RSPeKI+YxqDsqORQGGis8gDs1vDdA6cuV8nC5SF+pu8Fg2dk7eXXQ0yX
-	t4Bwi4jacIlC/imvLw6BcJm0MIyR4+21+mzVUjkO8iXl6RE9ffUQm5U38XN8a/Imw2qRDJFiw3TUp
-	5w7iKQ6PaKXle9dYi8eQ==;
+	List-Owner; bh=zZ2RrlxnnNKXuHYBeuv3FW7KAfHpa1DGds32eNMd/qI=; b=ERMAALAhEHUubZ
+	AyQVz6yU0QmC5vLCilnBURyiI2Kb+V5z59tgJf2bdcodYbJYif1ZDAAe8rl2BzEPZPxNgGdqtiaor
+	b9MH3x/5C0g4Zonyf5baCINbmSPUVMkcRLX1WcMHqW94u8jadHwoahIz9yLgalzs8WahlaqijKeaO
+	sgd8CeAYlaiDXO46DQwI5p8Xl66+XFzZhnjcPc9GNtpFWiJwPqvG2mpDaLCUiBALsvk1eBUp4rZOG
+	X/MegPtN4sFSqEO6mSvFSzv07wiUv8guJHpj1hVK3fQVH+KxvnZLQFmjMCFUZItFxY7nOKHB0aKfO
+	/vkMAoipHdYO0LQyHLAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jasPX-00069V-Ip; Tue, 19 May 2020 02:55:19 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jasPo-0000Bl-Tj; Tue, 19 May 2020 02:55:36 +0000
+Received: from mail-eopbgr10050.outbound.protection.outlook.com ([40.107.1.50]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jasPD-00060a-SD; Tue, 19 May 2020 02:55:01 +0000
-Received: by mail-wm1-x342.google.com with SMTP id n5so1700610wmd.0;
- Mon, 18 May 2020 19:54:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1lj55BfpTJjAfuTb4g/D5WGfSJIweJivFw92ZR65L9o=;
- b=hy7ZKx389ddhD3rN4QRSm1V9149iDHGX0kLP4MJ1xrIti9RLHUzZ0+kO4bSx5mheix
- CnZz1XOiLKOR8BSGOlLRdJmDOw998FtDrcI8ps4Y8c4WJjNPwNwPz4U+RI9WXSDZZ/+A
- w0woiRktQL5CWOmG1JKhD0MYoxvjcBBBgTH/fPYszJX0CWu4QaBPShyeaLMjRwQI0fN2
- ReTAV9X2lqq8VBGUe9IZglpnx8Keoe5wQcMoSAbnIQ+1LU/0GpfmvnllNg3KnCc1qn9f
- Y6y8UAobo1x4Wgid5+ijGPqIhapIYbPb55vOJN+QRxOq7jf9fgV2Np8u255TTxMNdkuV
- fGFw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1lj55BfpTJjAfuTb4g/D5WGfSJIweJivFw92ZR65L9o=;
- b=XRauHbUtQTd8A1KZSx66ZtVDw0c1eYBqiIFcyeKovBFRW1XuKZRHoVj1+sBpAsABo+
- G3VGMYeAAWbASZAzoWmbYYCcBF0yuVYhXYwgc9bAoDWK0Z9lagUhhCguIhHXQeND0qGv
- TrjbbVDhu7udIY4uN/rqV+6naJj0RzjPIgqyCOmbHdjxyGLPB2hea24FA9ATSy+xbeoC
- RI4m6yJ6lofcWYP0vmlZ5dRq4kZyvgb/lR1UkrO0IBYCVTHqDkH3v9WvNfQQoPFi+NjO
- O1BqADxAbYmwx7IZuRkDnIkTetm2GCAEFjuCn29Vb8o2tpC7DS/1BHgYl0KZihbay8ZQ
- +sVA==
-X-Gm-Message-State: AOAM531oJrPrgNaV31q26KYhLhMgKRswVIh/XzE2Nzv4RBzjlK4leIFQ
- i+ViIGaT3zJViUfWyx2xlUXGKNFT9HxGxVWSjx4=
-X-Google-Smtp-Source: ABdhPJyoRD5CX/NqFOffBiyLl8cmECh5DgKueK4GdLlY6WBns7lCeG/ekAcV79EYdzaRf1hsNJLEkY0fIncU4Jrpy6k=
-X-Received: by 2002:a7b:cc92:: with SMTP id p18mr2719332wma.174.1589856897659; 
- Mon, 18 May 2020 19:54:57 -0700 (PDT)
+ id 1jasPJ-0006Dz-9E
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 02:55:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=FOfP6QPyJQMwOqUqVhkt7J7JHcZCG/FakX4p/wuocbQGWRe7WYOvMIhribLYfKJbzfO7Asbz5BWsXAErLSFuWkTI002y6rMzP82xE/9iaqMKZI0qucmIw660morla2lw1aFCmvBSczh1fIikxaKHtTR2CsmUJP4nSbri095l52saGAHIuFCM9iQydp6yIGmvMfATb5+wmo1Jqa7zgfuJTDzTrbJKd3QMLJb5CwymmfPBRl929WF8ccGxIup1ExgWRa1ponQQVAEiu0KXMT/WqJJhiyaL+vt1nnmkwFDs6RhafgGFs0Hfm3xsItoA/DmjblXpyNmO1cSxuecAULe20A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=i33KtpjnNfq1RbGjHVQQma49QPXY9IBR5GCgfAsZ3Ms=;
+ b=UeIOsPGRGp3UEYCbgxkxWE0wRSdgr9kbWVRCCzkFZnYHHyiu2DOfzDZG0QWYgqApIiU5fvTfC1gmnIX+hGOUUxpJTqxeTE9DNj2yoW4WS04L1o0igowHANtM3NtT0x0aFAi1xXJgOkME1+ioMSV3QpwAZEFMySW3neDL013ecc+jizimORo57cL8c8aFqqL0uq6fvNTu8LZO+DKgKFZtvdgX/g9Apeg6ugZAnQKpTPOQf9J0wAatienG86WsWANQepaNUNMLCzJAOEinSkLyaCHMyUQ/+4nvSPkbaef91kp0QTyYTl0Hz1oTqFAtHF1y1+8iuxC+7t2GaH4Pv/zNDQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=i33KtpjnNfq1RbGjHVQQma49QPXY9IBR5GCgfAsZ3Ms=;
+ b=dXHkny3lhJxlx97VMlfITzfkoBcnQqZdPqsGh/7R04cei/SiAyS3Lzug33PV5qIsU+UIynmUzpC+zs2mA8URvSNgftRrnvr0wIHRMy2PCn4Oz0uno55EbccoqZfmPmJ3Braf2/PDyRIes4Qy0IPggzTKgGyKw3vtqGfYPD+4wyk=
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
+ by AM6PR04MB4150.eurprd04.prod.outlook.com (2603:10a6:209:43::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.27; Tue, 19 May
+ 2020 02:55:02 +0000
+Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
+ ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3000.034; Tue, 19 May 2020
+ 02:55:01 +0000
+From: Aisheng Dong <aisheng.dong@nxp.com>
+To: Anson Huang <anson.huang@nxp.com>, "p.zabel@pengutronix.de"
+ <p.zabel@pengutronix.de>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH V2] dt-bindings: reset: Convert i.MX reset to json-schema
+Thread-Topic: [PATCH V2] dt-bindings: reset: Convert i.MX reset to json-schema
+Thread-Index: AQHWLPzyLOeUPwdr6kC7CajWkJ7yjqiutw7Q
+Date: Tue, 19 May 2020 02:55:01 +0000
+Message-ID: <AM6PR04MB4966CEA2116B3BF13CADE70880B90@AM6PR04MB4966.eurprd04.prod.outlook.com>
+References: <1589796212-9993-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1589796212-9993-1-git-send-email-Anson.Huang@nxp.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: cc4d6417-e03a-490a-6b15-08d7fba00693
+x-ms-traffictypediagnostic: AM6PR04MB4150:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM6PR04MB41506EFB42A2B59419D3852680B90@AM6PR04MB4150.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-forefront-prvs: 040866B734
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: pUeps2QJKD/bbe108i4Ms7uC8zWGdCP+fbxxiFmvQNBOg+RZ0HuBGiQM0YYdiJB7TVIWy9x3X/Eh7WuFCPB76IKFRjIGwF8imV5B82nWt63hL1lbkh01S15WXYloh9Z7Xc80OR1FQdp4/rGMuD7YhPnWyxyelsSSRQaJOyhkEMCWbZyBW662rX/8nEtWSzLh3YbS7X3A0f4TBoj7N90KE6WhXEgiwuKb6PPbaQssAlr4Ea9G8hIoX+JX0wSvn7STYaFiBYV/2sw+qIibB8nAV6yOn+yH9JNah+IGqhxhIDhkqM95tI7uqJGWHoqYRLyrw7tVaomxtl3QZYJp21gGWoQE2nE7qaxFIVbu6wyezmuHUwhRIJs274wGDhpWhooptl7rzSQWYDH7VkH35JqndgY6qchrS55K9W7nNIKuSVH7DCEqpAEmAF28Z5bi5wb1W34MBc5Xek0NmXg7WnEro6ijZrMauqSoIetibbq9lvw=
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(39860400002)(366004)(136003)(376002)(396003)(346002)(316002)(66446008)(110136005)(52536014)(86362001)(9686003)(6506007)(4326008)(8676002)(64756008)(478600001)(71200400001)(186003)(5660300002)(26005)(76116006)(66556008)(66476007)(66946007)(2906002)(44832011)(55016002)(8936002)(7696005)(33656002)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: t2DxwYewJWPwa8pRhXqJzPu3/wQexIOyM6HwkFwGVQs0QhyapwVj3adE9A51egEMwAycBWa5CglRK/Yv72mess8U+yZkVo3twWIzhvqxJWnvlh7q37IYBHjL6JWg/pt4HFsImqF1d+BIskVyMBLk4zFHK1r6rYvrY2+DNKgex6Tbzhiq+jKd2PbpUWJ7HPwUbCkm1q29hEKJniZgP6+UBRFzX86lRMBxPWMLboS44Ih8mnemv2E6utefjGb7lihAAIwv2x5VZ0PfgtgbVLozjGpycNBgPPe8XmBY7NeRa4utbI1opglrhF3Op8zK2YIJg4fT8K1bRaDP0FmQM1f9EU2jPbqpR8Y6uo/EAbrwRS9Vo9NkaM/3QXhypM8ODQLHbTG+QuLAuDG3VfXrMhk0AKO62gchWIQox5b8cjNcw7sIsbyCENt95JqbEdeLEp3oAIkXG9SV1f0HoL4xJuSLguEpQ4xQZvBgkGGwm+A2dHBJZ/TiecAsollcrZcweTeM
 MIME-Version: 1.0
-References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
- <20200518155545.GO32394@willie-the-truck>
-In-Reply-To: <20200518155545.GO32394@willie-the-truck>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Tue, 19 May 2020 08:24:21 +0530
-Message-ID: <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
-Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-To: Will Deacon <will@kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cc4d6417-e03a-490a-6b15-08d7fba00693
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 May 2020 02:55:01.9328 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: LioajL3hkRwfBj3tNYCWIOQX7Th9AhYQiYaqXpavxcYevH8pxuRE1rOesdlTWRryZSfDz5XE1Eo6AcwLN7lXQg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4150
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_195459_950242_404D9B18 
-X-CRM114-Status: GOOD (  29.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200518_195505_403367_F886ED6D 
+X-CRM114-Status: GOOD (  23.64  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.1.50 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.1.50 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,170 +128,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
+> From: Anson Huang <Anson.Huang@nxp.com>
+> Sent: Monday, May 18, 2020 6:04 PM
+> 
+> Convert the i.MX reset binding to DT schema format using json-schema.
+> 
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> ---
+> Changes since V1:
+> 	- add the compatible strings per SoC;
+> 	- use "reset-controller" as node name instead of src;
+> 	- add interrupt items description.
+> ---
+>  .../devicetree/bindings/reset/fsl,imx-src.txt      | 49 -----------
+>  .../devicetree/bindings/reset/fsl,imx-src.yaml     | 98
+> ++++++++++++++++++++++
+>  2 files changed, 98 insertions(+), 49 deletions(-)  delete mode 100644
+> Documentation/devicetree/bindings/reset/fsl,imx-src.txt
+>  create mode 100644
+> Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
+> b/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
+> deleted file mode 100644
+> index 6ed79e6..0000000
+> --- a/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
+> +++ /dev/null
+> @@ -1,49 +0,0 @@
+> -Freescale i.MX System Reset Controller
+> -======================================
+> -
+> -Please also refer to reset.txt in this directory for common reset -controller
+> binding usage.
+> -
+> -Required properties:
+> -- compatible: Should be "fsl,<chip>-src"
+> -- reg: should be register base and length as documented in the
+> -  datasheet
+> -- interrupts: Should contain SRC interrupt and CPU WDOG interrupt,
+> -  in this order.
+> -- #reset-cells: 1, see below
+> -
+> -example:
+> -
+> -src: src@20d8000 {
+> -        compatible = "fsl,imx6q-src";
+> -        reg = <0x020d8000 0x4000>;
+> -        interrupts = <0 91 0x04 0 96 0x04>;
+> -        #reset-cells = <1>;
+> -};
+> -
+> -Specifying reset lines connected to IP modules
+> -==============================================
+> -
+> -The system reset controller can be used to reset the GPU, VPU, -IPU, and
+> OpenVG IP modules on i.MX5 and i.MX6 ICs. Those device -nodes should
+> specify the reset line on the SRC in their resets -property, containing a phandle
+> to the SRC device node and a -RESET_INDEX specifying which module to reset,
+> as described in -reset.txt
+> -
+> -example:
+> -
+> -        ipu1: ipu@2400000 {
+> -                resets = <&src 2>;
+> -        };
+> -        ipu2: ipu@2800000 {
+> -                resets = <&src 4>;
+> -        };
+> -
+> -The following RESET_INDEX values are valid for i.MX5:
+> -GPU_RESET     0
+> -VPU_RESET     1
+> -IPU1_RESET    2
+> -OPEN_VG_RESET 3
+> -The following additional RESET_INDEX value is valid for i.MX6:
+> -IPU2_RESET    4
+> diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
+> b/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
+> new file mode 100644
+> index 0000000..7cd6095
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
+> @@ -0,0 +1,98 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML 1.2
+> +---
 
-Sorry, I replied 1:1. Now replying with mailing list
+[...]
 
-On Mon, May 18, 2020 at 9:25 PM Will Deacon <will@kernel.org> wrote:
->
-> On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
-> > An SMMU Stream table is created by the primary kernel. This table is
-> > used by the SMMU to perform address translations for device-originated
-> > transactions. Any crash (if happened) launches the kdump kernel which
-> > re-creates the SMMU Stream table. New transactions will be translated
-> > via this new table.
-> >
-> > There are scenarios, where devices are still having old pending
-> > transactions (configured in the primary kernel). These transactions
-> > come in-between Stream table creation and device-driver probe.
-> > As new stream table does not have entry for older transactions,
-> > it will be aborted by SMMU.
-> >
-> > Similar observations were found with PCIe-Intel 82576 Gigabit
-> > Network card. It sends old Memory Read transaction in kdump kernel.
-> > Transactions configured for older Stream table entries, that do not
-> > exist any longer in the new table, will cause a PCIe Completion Abort.
-> > Returned PCIe completion abort further leads to AER Errors from APEI
-> > Generic Hardware Error Source (GHES) with completion timeout.
-> > A network device hang is observed even after continuous
-> > reset/recovery from driver, Hence device is no more usable.
-> >
-> > So, If we are in a kdump kernel try to copy SMMU Stream table from
-> > primary/old kernel to preserve the mappings until the device driver
-> > takes over.
-> >
-> > Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
-> > ---
-> > Changes for v2: Used memremap in-place of ioremap
-> >
-> > V2 patch has been sanity tested.
->
-> Are you sure?
->
+> +title: Freescale i.MX System Reset Controller
+> +
+> +maintainers:
+> +  - Philipp Zabel <p.zabel@pengutronix.de>
+> +
+> +description: |
+> +  The system reset controller can be used to reset the GPU, VPU,
+> +  IPU, and OpenVG IP modules on i.MX5 and i.MX6 ICs. Those device
+> +  nodes should specify the reset line on the SRC in their resets
+> +  property, containing a phandle to the SRC device node and a
+> +  RESET_INDEX specifying which module to reset, as described in
+> +  reset.txt
+> +
+> +  The following RESET_INDEX values are valid for i.MX5:
+> +    GPU_RESET     0
+> +    VPU_RESET     1
+> +    IPU1_RESET    2
+> +    OPEN_VG_RESET 3
+> +  The following additional RESET_INDEX value is valid for i.MX6:
+> +    IPU2_RESET    4
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - description: on i.MX51 the following compatible must be specified
 
-I tested v1 patch thoroughly.
+Unnecessary description
 
-After replacing ioremap with memremap, I tested 1-2 cycle per type.
-I can test this patch thoroughly to check any kind of possible error.
+Otherwise:
 
-> > V1 patch has been tested with
-> > A) PCIe-Intel 82576 Gigabit Network card in following
-> > configurations with "no AER error". Each iteration has
-> > been tested on both Suse kdump rfs And default Centos distro rfs.
-> >
-> >  1)  with 2 level stream table
-> >        ----------------------------------------------------
-> >        SMMU               |  Normal Ping   | Flood Ping
-> >        -----------------------------------------------------
-> >        Default Operation  |  100 times     | 10 times
-> >        -----------------------------------------------------
-> >        IOMMU bypass       |  41 times      | 10 times
-> >        -----------------------------------------------------
-> >
-> >  2)  with Linear stream table.
-> >        -----------------------------------------------------
-> >        SMMU               |  Normal Ping   | Flood Ping
-> >        ------------------------------------------------------
-> >        Default Operation  |  100 times     | 10 times
-> >        ------------------------------------------------------
-> >        IOMMU bypass       |  55 times      | 10 times
-> >        -------------------------------------------------------
-> >
-> > B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
-> > SSD card with 2 level stream table using "fio" in mixed read/write and
-> > only read configurations. It is tested for both Default Operation and
-> > IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
-> > default Centos ditstro rfs.
-> >
-> > This patch is not full proof solution. Issue can still come
-> > from the point device is discovered and driver probe called.
-> > This patch has reduced window of scenario from "SMMU Stream table
-> > creation - device-driver" to "device discovery - device-driver".
-> > Usually, device discovery to device-driver is very small time. So
-> > the probability is very low.
-> >
-> > Note: device-discovery will overwrite existing stream table entries
-> > with both SMMU stage as by-pass.
-> >
-> >
-> >  drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
-> >  1 file changed, 35 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > index 82508730feb7..d492d92c2dd7 100644
-> > --- a/drivers/iommu/arm-smmu-v3.c
-> > +++ b/drivers/iommu/arm-smmu-v3.c
-> > @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
-> >                       break;
-> >               case STRTAB_STE_0_CFG_S1_TRANS:
-> >               case STRTAB_STE_0_CFG_S2_TRANS:
-> > -                     ste_live = true;
-> > +                     /*
-> > +                      * As kdump kernel copy STE table from previous
-> > +                      * kernel. It still may have valid stream table entries.
-> > +                      * Forcing entry as false to allow overwrite.
-> > +                      */
-> > +                     if (!is_kdump_kernel())
-> > +                             ste_live = true;
-> >                       break;
-> >               case STRTAB_STE_0_CFG_ABORT:
-> >                       BUG_ON(!disable_bypass);
-> > @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> >               return -ENOMEM;
-> >       }
-> >
-> > +     if (is_kdump_kernel())
-> > +             return 0;
-> > +
-> >       for (i = 0; i < cfg->num_l1_ents; ++i) {
-> >               arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
-> >               strtab += STRTAB_L1_DESC_DWORDS << 3;
-> > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> >       return 0;
-> >  }
-> >
-> > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
-> > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
-> > +{
-> > +     struct arm_smmu_strtab_cfg rdcfg;
-> > +
-> > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
-> > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
-> > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
-> > +
-> > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
-> > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
-> > +
-> > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
-> > +
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 
-this need a fix. It should be memcpy.
+Regards
+Aisheng
 
-> > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
->
-> Sorry, but this is unacceptable. These things were allocated by the DMA API
-> so you can't just memcpy them around and hope for the best.
->
-
-I was referring copy_context_table() in drivers/iommu/intel-iommu.c.
-here i see usage of memremap and memcpy to copy older iommu table.
-did I take wrong reference?
-
-What kind of issue you are foreseeing in using memcpy(). May be we can
-try to find a solution.
-
--pk
+> +        items:
+> +          - const: "fsl,imx51-src"
+> +
+> +      - description: on i.MX50 the following compatibles must be specified
+> +        items:
+> +          - const: "fsl,imx50-src"
+> +          - const: "fsl,imx51-src"
+> +
+> +      - description: on i.MX53 the following compatibles must be specified
+> +        items:
+> +          - const: "fsl,imx53-src"
+> +          - const: "fsl,imx51-src"
+> +
+> +      - description: on i.MX6Q the following compatibles must be specified
+> +        items:
+> +          - const: "fsl,imx6q-src"
+> +          - const: "fsl,imx51-src"
+> +
+> +      - description: on i.MX6SX the following compatibles must be specified
+> +        items:
+> +          - const: "fsl,imx6sx-src"
+> +          - const: "fsl,imx51-src"
+> +
+> +      - description: on i.MX6SL the following compatibles must be specified
+> +        items:
+> +          - const: "fsl,imx6sl-src"
+> +          - const: "fsl,imx51-src"
+> +
+> +      - description: on i.MX6UL the following compatibles must be specified
+> +        items:
+> +          - const: "fsl,imx6ul-src"
+> +          - const: "fsl,imx51-src"
+> +
+> +      - description: on i.MX6SLL the following compatibles must be specified
+> +        items:
+> +          - const: "fsl,imx6sll-src"
+> +          - const: "fsl,imx51-src"
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    items:
+> +      - description: SRC interrupt
+> +      - description: CPU WDOG interrupts out of SRC
+> +    minItems: 1
+> +    maxItems: 2
+> +
+> +  '#reset-cells':
+> +    const: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - '#reset-cells'
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    reset-controller@73fd0000 {
+> +        compatible = "fsl,imx51-src";
+> +        reg = <0x73fd0000 0x4000>;
+> +        interrupts = <75>;
+> +        #reset-cells = <1>;
+> +    };
+> --
+> 2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
