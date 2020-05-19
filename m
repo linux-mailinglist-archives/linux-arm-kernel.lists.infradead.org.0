@@ -2,75 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F55E1D98B0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 15:57:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB5761D98C5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 16:02:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C8DqR0aM31LGEVk0wdXl8+5BarsV7cyezwwS63PeB6A=; b=m/9oWiRLVLKsA5
-	NWiEOZW3ZhCrS6QgTZPlOrTR2wrXemoo6ccjAyUiKV0RtbKS7CjqSbkzUtPJmA5BCiu4rF0RwkgIA
-	24RPcC3TEVBQ8nlkOPiHRIYNQV+tPVG0QCxIvB1j4zqHWBnOE1pkX4K4E/BAMAZtwCst7zkFFhBes
-	AgDAWacoLaJI2cwWkoSgZqg5DjbSRCFDs4y6E58Dlm6MFfKvyjclnqkMfvXkAXW2Q8mTdQaBFBxCE
-	sswaot5xj6+Na+i+8/DDXcAa4j/7I6+0IjEEmOIdFiRqgiFrWOw0G+GVofHgivzV6by09TBPhg49c
-	N0o9vAGsAw9NFdidVA+Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	References:MIME-Version:Message-ID:In-Reply-To:Date:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5RchZzvTCq1qHFISGGPN4U4loKQAO1QmbzLgDIp177c=; b=R5BqkbjY5kSCzsw/uM3TtLKUC
+	+SSBqpgqa2l1wMJsHWl9LyGcO8bIrp0BCBVzJBqhfNX90mfexEJOZEkCIeDupszDaL+yygDACF37x
+	rpNcAGEdyQw6Sfzq3IZZQ9fRXg+5EZNpXU+51bfprt5WV94djC/RSefzZNBJvtaD1INKYHwTr5Jq4
+	q0xTAOQau4O3/69m82MUeVASq7QGOFxDsestrWx4Gz4X9Q3be96oNquiJZcw7SOGCiXCgccjieQ1U
+	vPCF+rXstiODZG5FHhaXKT0eAGspltrVT8iyR8FxlCbqEBOfckqWIxmRxug4PNc3Nzs2OzEx0jsbi
+	6MzTOzTfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb2kH-0001zJ-8w; Tue, 19 May 2020 13:57:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jb2p6-0005wc-5C; Tue, 19 May 2020 14:02:24 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb2k4-0001rj-SS
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 13:57:14 +0000
-Received: from mail-io1-f49.google.com (mail-io1-f49.google.com
- [209.85.166.49])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 249AF2083E
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 13:57:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589896632;
- bh=1ge7GtnAk4d1zwaRewUucQ51+d00fLsHnCTj6b5UyPo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=w9c30JTdPhumdFKVx2WLG4ahdfmskibm3/J+VpvUHwCHDwxhKwWf068pSXin5P5W5
- sq6YVsbx0z10ZWXz4kigPPjLTQzdth1AYxFcExRK24RFiAXIqkLlV8ovdAkMN5l1WA
- M8mvGtaWJchuBp/Eh7FlgjR1Uss23J7O2tUEAQH4=
-Received: by mail-io1-f49.google.com with SMTP id 79so14602213iou.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 06:57:12 -0700 (PDT)
-X-Gm-Message-State: AOAM533W+ss2VONSsRVX229DgnjFtDQ+61xqMqF+ThjjOsCgD5HHCc+W
- g2NTZwN2l0kQ3Ts+EMUPgcGoVp/dBF98gAMNuc8=
-X-Google-Smtp-Source: ABdhPJxR1/bZ6OQaZesRjgU+B2k0BoP9B3nyHCz01LxPD8dIW+o5nveijsFfnE7y+oXqf41DyfMUKU6mdLde+phk4Ts=
-X-Received: by 2002:a6b:5008:: with SMTP id e8mr19309744iob.161.1589896631339; 
- Tue, 19 May 2020 06:57:11 -0700 (PDT)
-MIME-Version: 1.0
-References: <CGME20200429082134eucas1p2415c5269202529e6b019f2d70c1b5572@eucas1p2.samsung.com>
- <20200429082120.16259-1-geert+renesas@glider.be>
- <dleftjmu645mqn.fsf%l.stelmach@samsung.com>
- <CAMuHMdXxq6m6gebQbWvxDynDcZ7dLyZzKC_QroK63L8FGeac1Q@mail.gmail.com>
- <20200519094637.GZ1551@shell.armlinux.org.uk>
- <CAMuHMdU5DG06G4H=+PH+OONMT_9oE==KS=wP+bLgY9xVCez6Ww@mail.gmail.com>
-In-Reply-To: <CAMuHMdU5DG06G4H=+PH+OONMT_9oE==KS=wP+bLgY9xVCez6Ww@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 19 May 2020 15:56:59 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXH_s4qjDfTO03PkGNaiwfjmfkrZ-FE8vTm74QSrgoVt0A@mail.gmail.com>
-Message-ID: <CAMj1kXH_s4qjDfTO03PkGNaiwfjmfkrZ-FE8vTm74QSrgoVt0A@mail.gmail.com>
+ id 1jb2ow-0005w0-76
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 14:02:16 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200519140212euoutp02e56e7e2afcc4b68e3ea5e20aafc6805c~QctYI49rs1308813088euoutp025;
+ Tue, 19 May 2020 14:02:12 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200519140212euoutp02e56e7e2afcc4b68e3ea5e20aafc6805c~QctYI49rs1308813088euoutp025
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1589896932;
+ bh=1iEC+LgJeISD9H2S2oUt04t4i9dXN5pHJ/8jh3qukhE=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=GncI0Odxq/1P8I48quKZLMg5vgW5h3fZ1Cxhrh9PmPnePxK02MDXaOJ3WMRDzy1MR
+ FU/ps2JD9cJDR+1BCj3rlhsFGdJbLbe5naEuz3LJYPNyWU6N1A9nR2ZixtmRZvr052
+ Prd8WSgpa7cQnMU18pWOYHFMuq8q8enymLYusoPY=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200519140211eucas1p19ebc83aaab45222e4a8cf0cb511a2ef0~QctX6SBFh0594505945eucas1p1M;
+ Tue, 19 May 2020 14:02:11 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 40.7F.61286.3E6E3CE5; Tue, 19
+ May 2020 15:02:11 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200519140211eucas1p24dbc0f54594983731a2dcdd4a943ae27~QctXcHsgl3051130511eucas1p2I;
+ Tue, 19 May 2020 14:02:11 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200519140211eusmtrp1ccea2758fab8e85213d5978c12db149c~QctXbSuWp1915719157eusmtrp12;
+ Tue, 19 May 2020 14:02:11 +0000 (GMT)
+X-AuditID: cbfec7f2-f0bff7000001ef66-0f-5ec3e6e3f030
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 21.3C.07950.3E6E3CE5; Tue, 19
+ May 2020 15:02:11 +0100 (BST)
+Received: from localhost (unknown [106.120.51.46]) by eusmtip1.samsung.com
+ (KnoxPortal) with ESMTPA id
+ 20200519140211eusmtip126d0ef0940b01071d60ec552dd615e96~QctXOAg4K0728707287eusmtip17;
+ Tue, 19 May 2020 14:02:11 +0000 (GMT)
+From: Lukasz Stelmach <l.stelmach@samsung.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 Subject: Re: [PATCH v6] ARM: boot: Obtain start of physical memory from DTB
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 19 May 2020 16:02:01 +0200
+In-Reply-To: <20200519131252.GD1551@shell.armlinux.org.uk> (Russell King's
+ message of "Tue, 19 May 2020 14:12:52 +0100")
+Message-ID: <dleftjo8qk3twm.fsf%l.stelmach@samsung.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+MIME-Version: 1.0
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Se0hTURjneO/urqPVaWp9WkQNwzJSo7BT2ZP+uFFE0IMw0lZdbOmmbM4e
+ FA4qM99OwiYyH73MpaauVT6opmQ+sFKxMO3hzDRTyVlk7627oP9+3+/xPQ6HpWQmxo9VquN5
+ jVoRI2cktPXRVPtS+2BDREjywwAyNTmOyE/DIzGpvFQhIgW56TQpaGwXEfMnOyKld+opMthT
+ 70FuZ/bQpMreLSKdNfkMuT085kFsF+sRKWvsE5O3b16IiGloiCHn6hvF5GV2Dtog426abiKu
+ s/sZxX3/ZkDc4OPzDHcvr0/MVZVeYDhbQzLiqq8kculnxhgu82cI96Utm+YyLKWIc1TN2yEN
+ l4Qd5mOUCbwmeN0ByRFT5iQT5wg+nvGlh9GjuwEpyJMFvAJ+PHiHUpCEleESBDnZI2KhmERQ
+ eUbvVhxOpeQs/S/ieNXpFq4jqP1VRwnFewTNN2qdeZZlcBCUle11QW+8Gp6mLXJZKNzAwIWk
+ ag9XIy+8FewjNsrlofFCSGnd7qI98UloSzUxLizFK6G97jflwj54FViGXosFfiY0Gwf+7kNh
+ FRiffPy7D+A2FgbMuZSw6GaonUhFAvaCD00WsYDnQmtOGu2aCzgRcgyhQjYNgTX/q/vINdDb
+ /o0R8Ea4nDWABP90eDE6U5g7HQzWXEqgpZCcJBPc/lCeWefu4gfpH0rcSQ5aLAHCQ6UjcHQ/
+ Z7LQ/Lz/rsn775o8Z4TCi6GiJligl8C1ohFKwGuhvHycLkSiUjSb12lVUbx2mZo/FqRVqLQ6
+ dVTQoVhVFXL+1NZfTRN30eeOgzaEWSSfJg2pa4iQiRQJ2hMqG/J3duq/ZX6K/Gh1rJqXe0uz
+ hmwRMulhxYmTvCY2UqOL4bU2NIel5bOly4uH98twlCKej+b5OF7zT/VgPf30SLxzz7Bu3wzz
+ aGH4gH7C6MNgg+GrSH2p2K4p2uU1PkvZFWn01XRg30jJwaNJ1qbG4qLgh/3sjOg32T92xeeO
+ hjv0oS2Uctv6MUtsdPOpBev9e7vCfHZPhcy3ekfUkGGd2RSdkXzaoNySf3FJzf3U7pYr8XHG
+ wMqr+ZX9vZsKAuW09ohiWSCl0Sr+AA0qZEyxAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0hTYRjHeT1nZ9NcnOallxEiwy5mnbl52auoSCAcMCLwS1dt6MGJbrOd
+ KSpBRoU679pNKTUww3veryOaly6KWMYQc+Wl6cqYhJfQUtsagd9+z/P/Pc/LCw8PE9zjCHlJ
+ Ki2jUclTRIQLPrb72nR6cWko1v/7S1e0tb4K0E7ZKBe1PWrloOqHhTiqHp7goMafiwA19Ogx
+ tDSjd0JdxTM4al80ctBU/2MCdX2zOiHDfT1AzcMmLpqfm+agKouFQHf1w1z0qbQcRAropqom
+ QE8Z32P07+0yQC+9ySHovkoTl25vyCNow1AuoDtqb9KFt60EXbzjT2+Ol+J0UWcDoNfavc7z
+ L1FhGnWalvFWqFltuOiyBEkpSQiipIEhlCRAdjVUGiQSR4QlMClJ6YxGHHGNUlQVrxOpa+KM
+ os0ZIhv0HtcBZx4kA+Ha5ymgAy48AfkMQNOY2VbwbIEQ1j9JdDhu8I9RRzgcM4C7s/mY3SFI
+ CjY3X7CjOxkKJwtO2HWMHCHguwrGzm5kNFxcMfyzBWQIHNlwsiNOHoW6sXN2w5nMguP5VYSd
+ +aQMTgzuYXb2sNmdli9cR/8QfFvxFXdsT4YbjctYCSAr90WV+6JK2wsY6Qtb+8WOth+se7qC
+ OTgctrSs4jWA0wDcmTRWmahkpRQrV7JpqkQqXq1sB7Yr6B7d6uwFOmuMAZA8IHLl+w8OxQo4
+ 8nQ2U2kAPrY1Cy8aJ4EQV6lVjMidX2IxxAr4CfLMLEajjtOkpTCsAQTZvlmKCT3i1bb7Umnj
+ JEESGQqRyAJkAcFIdJifS766IiAT5VommWFSGc3/OSeeszAbGKu7Mw+Ivc/Mb/3qswrXkyYv
+ 3okJMHu6Z6RHSj8oFM7ZCwNefcNqbs/zUwfz9VkFpo+zCwUPlussU83dRwZ828LWaiOuH8vp
+ yNu+8YOaMETRummxZ/CcqNxTWPO0p6n1VkwZvQH3gotXoU+0eaEH94gSb571kxgF5pYNVf2s
+ CGcVcslJTMPK/wL/k5w+JwMAAA==
+X-CMS-MailID: 20200519140211eucas1p24dbc0f54594983731a2dcdd4a943ae27
+X-Msg-Generator: CA
+X-RootMTR: 20200519140211eucas1p24dbc0f54594983731a2dcdd4a943ae27
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200519140211eucas1p24dbc0f54594983731a2dcdd4a943ae27
+References: <20200519131252.GD1551@shell.armlinux.org.uk>
+ <CGME20200519140211eucas1p24dbc0f54594983731a2dcdd4a943ae27@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_065712_973225_2BA1696E 
-X-CRM114-Status: GOOD (  35.02  )
+X-CRM114-CacheID: sfid-20200519_070214_395684_D67CC156 
+X-CRM114-Status: GOOD (  26.49  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,6 +128,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -90,105 +141,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Grant Likely <grant.likely@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Masahiro Yamada <masahiroy@kernel.org>,
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE
+ TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Grant Likely <grant.likely@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Nicolas Pitre <nico@fluxnic.net>, Masahiro Yamada <masahiroy@kernel.org>,
  Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Lukasz Stelmach <l.stelmach@samsung.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
  Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
  Chris Brandt <chris.brandt@renesas.com>, Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Uwe =?utf-8?Q?Kleine?= =?utf-8?Q?-K=C3=B6nig?=
+ <u.kleine-koenig@pengutronix.de>, Eric Miao <eric.miao@nvidia.com>,
+ Dmitry Osipenko <digetx@gmail.com>, Ard Biesheuvel <ardb@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: multipart/mixed; boundary="===============3636723996457716550=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAxOSBNYXkgMjAyMCBhdCAxMzoyMSwgR2VlcnQgVXl0dGVyaG9ldmVuIDxnZWVydEBs
-aW51eC1tNjhrLm9yZz4gd3JvdGU6Cj4KPiBIaSBSdXNzZWxsLAo+Cj4gQ0MgZGV2aWNldHJlZQo+
-Cj4gT24gVHVlLCBNYXkgMTksIDIwMjAgYXQgMTE6NDYgQU0gUnVzc2VsbCBLaW5nIC0gQVJNIExp
-bnV4IGFkbWluCj4gPGxpbnV4QGFybWxpbnV4Lm9yZy51az4gd3JvdGU6Cj4gPiBPbiBUdWUsIE1h
-eSAxOSwgMjAyMCBhdCAxMTo0NDoxN0FNICswMjAwLCBHZWVydCBVeXR0ZXJob2V2ZW4gd3JvdGU6
-Cj4gPiA+IE9uIFR1ZSwgTWF5IDE5LCAyMDIwIGF0IDEwOjU0IEFNIEx1a2FzeiBTdGVsbWFjaCA8
-bC5zdGVsbWFjaEBzYW1zdW5nLmNvbT4gd3JvdGU6Cj4gPiA+ID4gSXQgd2FzIDwyMDIwLTA0LTI5
-IMWbcm8gMTA6MjE+LCB3aGVuIEdlZXJ0IFV5dHRlcmhvZXZlbiB3cm90ZToKPiA+ID4gPiA+IEN1
-cnJlbnRseSwgdGhlIHN0YXJ0IGFkZHJlc3Mgb2YgcGh5c2ljYWwgbWVtb3J5IGlzIG9idGFpbmVk
-IGJ5IG1hc2tpbmcKPiA+ID4gPiA+IHRoZSBwcm9ncmFtIGNvdW50ZXIgd2l0aCBhIGZpeGVkIG1h
-c2sgb2YgMHhmODAwMDAwMC4gIFRoaXMgbWFzayB2YWx1ZQo+ID4gPiA+ID4gd2FzIGNob3NlbiBh
-cyBhIGJhbGFuY2UgYmV0d2VlbiB0aGUgcmVxdWlyZW1lbnRzIG9mIGRpZmZlcmVudCBwbGF0Zm9y
-bXMuCj4gPiA+ID4gPiBIb3dldmVyLCB0aGlzIGRvZXMgcmVxdWlyZSB0aGF0IHRoZSBzdGFydCBh
-ZGRyZXNzIG9mIHBoeXNpY2FsIG1lbW9yeSBpcwo+ID4gPiA+ID4gYSBtdWx0aXBsZSBvZiAxMjgg
-TWlCLCBwcmVjbHVkaW5nIGJvb3RpbmcgTGludXggb24gcGxhdGZvcm1zIHdoZXJlIHRoaXMKPiA+
-ID4gPiA+IHJlcXVpcmVtZW50IGlzIG5vdCBmdWxmaWxsZWQuCj4gPiA+ID4gPgo+ID4gPiA+ID4g
-Rml4IHRoaXMgbGltaXRhdGlvbiBieSBvYnRhaW5pbmcgdGhlIHN0YXJ0IGFkZHJlc3MgZnJvbSB0
-aGUgRFRCIGluc3RlYWQsCj4gPiA+ID4gPiBpZiBhdmFpbGFibGUgKGVpdGhlciBleHBsaWNpdGx5
-IHBhc3NlZCwgb3IgYXBwZW5kZWQgdG8gdGhlIGtlcm5lbCkuCj4gPiA+ID4gPiBGYWxsIGJhY2sg
-dG8gdGhlIHRyYWRpdGlvbmFsIG1ldGhvZCB3aGVuIG5lZWRlZC4KPiA+ID4gPiA+Cj4gPiA+ID4g
-PiBUaGlzIGFsbG93cyB0byBib290IExpbnV4IG9uIHI3czkyMTAvcnphMm1ldmIgdXNpbmcgdGhl
-IDY0IE1pQiBvZiBTRFJBTQo+ID4gPiA+ID4gb24gdGhlIFJaQTJNRVZCIHN1YiBib2FyZCwgd2hp
-Y2ggaXMgbG9jYXRlZCBhdCAweDBDMDAwMDAwIChDUzMgc3BhY2UpLAo+ID4gPiA+ID4gaS5lLiBu
-b3QgYXQgYSBtdWx0aXBsZSBvZiAxMjggTWlCLgo+ID4gPiA+ID4KPiA+ID4gPiA+IFN1Z2dlc3Rl
-ZC1ieTogTmljb2xhcyBQaXRyZSA8bmljb0BmbHV4bmljLm5ldD4KPiA+ID4gPiA+IFNpZ25lZC1v
-ZmYtYnk6IEdlZXJ0IFV5dHRlcmhvZXZlbiA8Z2VlcnQrcmVuZXNhc0BnbGlkZXIuYmU+Cj4gPiA+
-ID4gPiBSZXZpZXdlZC1ieTogTmljb2xhcyBQaXRyZSA8bmljb0BmbHV4bmljLm5ldD4KPiA+ID4g
-PiA+IFJldmlld2VkLWJ5OiBBcmQgQmllc2hldXZlbCA8YXJkYkBrZXJuZWwub3JnPgo+ID4gPiA+
-ID4gVGVzdGVkLWJ5OiBNYXJlayBTenlwcm93c2tpIDxtLnN6eXByb3dza2lAc2Ftc3VuZy5jb20+
-Cj4gPiA+ID4gPiBUZXN0ZWQtYnk6IERtaXRyeSBPc2lwZW5rbyA8ZGlnZXR4QGdtYWlsLmNvbT4K
-PiA+ID4gPiA+IC0tLQo+ID4gPiA+Cj4gPiA+ID4gWy4uLl0KPiA+ID4gPgo+ID4gPiA+IEFwcGFy
-ZW50bHkgcmVhZGluZyBwaHlzaWNhbCBtZW1vcnkgbGF5b3V0IGZyb20gRFRCIGJyZWFrcyBjcmFz
-aGR1bXAKPiA+ID4gPiBrZXJuZWxzLiBBIGNyYXNoZHVtcCBrZXJuZWwgaXMgbG9hZGVkIGludG8g
-YSByZWdpb24gb2YgbWVtb3J5LCB0aGF0IGlzCj4gPiA+ID4gcmVzZXJ2ZWQgaW4gdGhlIG9yaWdp
-bmFsIChpLmUuIHRvIGJlIGNyYXNoZWQpIGtlcm5lbC4gVGhlIHJlc2VydmVkCj4gPiA+ID4gcmVn
-aW9uIGlzIGxhcmdlIGVub3VnaCBmb3IgdGhlIGNyYXNoZHVtcCBrZXJuZWwgdG8gcnVuIGNvbXBs
-ZXRlbHkgaW5zaWRlCj4gPiA+ID4gaXQgYW5kIGRvbid0IG1vZGlmeSBhbnl0aGluZyBvdXRzaWRl
-IGl0LCBqdXN0IHJlYWQgYW5kIGR1bXAgdGhlIHJlbWFpbnMKPiA+ID4gPiBvZiB0aGUgY3Jhc2hl
-ZCBrZXJuZWwuIFVzaW5nIHRoZSBpbmZvcm1hdGlvbiBmcm9tIERUQiBtYWtlcyB0aGUKPiA+ID4g
-PiBkZWNvbXByZXNzb3IgcGxhY2UgdGhlIGtlcm5lbCBvdXRzaWRlIG9mIHRoZSBkZWRpY2F0ZWQg
-cmVnaW9uLgo+ID4gPiA+Cj4gPiA+ID4gVGhlIGxvZyBiZWxvdyBzaG93cyB0aGF0IGEgekltYWdl
-IGFuZCBEVEIgYXJlIGxvYWRlZCBhdCAweDE4ZWI4MDAwIGFuZAo+ID4gPiA+IDB4MTkzZjYwMDAg
-KHBoeXNpY2FsKS4gVGhlIGtlcm5lbCBpcyBleHBlY3RlZCB0byBydW4gYXQgMHgxODAwODAwMCwg
-YnV0Cj4gPiA+ID4gaXQgaXMgZGVjb21wcmVzc2VkIHRvIDB4MDAwMDgwMDAgKHNlZSByNCByZXBv
-cnRlZCBiZWZvcmUganVtcGluZyBmcm9tCj4gPiA+ID4gd2l0aGluIF9fZW50ZXJfa2VybmVsKS4g
-SWYgSSB3ZXJlIHRvIHN1Z2dlc3Qgc29tZXRoaW5nLCB0aGVyZSBuZWVkIHRvIGJlCj4gPiA+ID4g
-b25lIG1vcmUgYml0IG9mIGluZm9ybWF0aW9uIHBhc3NlZCBpbiB0aGUgRFRCIHRlbGxpbmcgdGhl
-IGRlY29tcHJlc3Nvcgo+ID4gPiA+IHRvIHVzZSB0aGUgb2xkIG1hc2tpbmcgdGVjaG5pcXVlIHRv
-IGRldGVybWFpbiBrZXJuZWwgYWRkcmVzcy4gSXQgd291bGQKPiA+ID4gPiBiZSBzZXQgaW4gdGhl
-IERUQiBsb2FkZWQgYWxvbmcgd2l0aCB0aGUgY3Jhc2hkdW1wIGtlcm5lbC4KPiA+ID4KPiA+ID4g
-U2hvdWxkbid0IHRoZSBEVEIgcGFzc2VkIHRvIHRoZSBjcmFzaGtlcm5lbCBkZXNjcmliZSB3aGlj
-aCByZWdpb24gb2YKPiA+ID4gbWVtb3J5IGlzIHRvIGJlIHVzZWQgaW5zdGVhZD8KPiA+Cj4gPiBE
-ZWZpbml0ZWx5IG5vdC4gIFRoZSBjcmFzaGtlcm5lbCBuZWVkcyB0byBrbm93IHdoZXJlIHRoZSBS
-QU0gaW4gdGhlCj4gPiBtYWNoaW5lIGlzLCBzbyB0aGF0IGl0IGNhbiBjcmVhdGUgYSBjb3JlZHVt
-cCBvZiB0aGUgY3Jhc2hlZCBrZXJuZWwuCj4KPiBTbyB0aGUgRFRCIHNob3VsZCBkZXNjcmliZSBi
-b3RoIDstKQo+Cj4gPiA+IERlc2NyaWJpbmcgInRvIHVzZSB0aGUgb2xkIG1hc2tpbmcgdGVjaG5p
-cXVlIiBzb3VuZHMgYSBiaXQgaGFja2lzaCB0byBtZS4KPiA+ID4gSSBndWVzcyBpdCBjYW5ub3Qg
-anVzdCByZXN0cmljdCB0aGUgL21lbW9yeSBub2RlIHRvIHRoZSByZXNlcnZlZCByZWdpb24sCj4g
-PiA+IGFzIHRoZSBjcmFzaGtlcm5lbCBuZWVkcyB0byBiZSBhYmxlIHRvIGR1bXAgdGhlIHJlbWFp
-bnMgb2YgdGhlIGNyYXNoZWQKPiA+ID4ga2VybmVsLCB3aGljaCBsaWUgb3V0c2lkZSB0aGlzIHJl
-Z2lvbi4KPiA+Cj4gPiBDb3JyZWN0Lgo+ID4KPiA+ID4gSG93ZXZlciwgc29tZXRoaW5nIHVuZGVy
-IC9jaG9zZW4gc2hvdWxkIHdvcmsuCj4gPgo+ID4gWWV0IGFub3RoZXIgc3RpY2t5IHBsYXN0ZXIu
-Li4KPgo+IElNSE8gdGhlIG9sZCBtYXNraW5nIHRlY2huaXF1ZSBpcyB0aGUgaGFja3kgc29sdXRp
-b24gY292ZXJlZCBieQo+IHBsYXN0ZXJzLgo+CgpJIHRoaW5rIGRlYmF0aW5nIHdoaWNoIHNvbHV0
-aW9uIGlzIHRoZSBoYWNreSBvbmUgd2lsbCBub3QgZ2V0IHVzIGFueXdoZXJlLgoKVGhlIHNpbXBs
-ZSByZWFsaXR5IGlzIHRoYXQgdGhlIGV4aXN0aW5nIHNvbHV0aW9uIHdvcmtzIGZpbmUgZm9yCmV4
-aXN0aW5nIHBsYXRmb3JtcywgYW5kIHNvIGFueSBjaGFuZ2VzIGluIHRoZSBsb2dpYyB3aWxsIGhh
-dmUgdG8gYmUKb3B0LWluIGluIG9uZSB3YXkgb3IgdGhlIG90aGVyLgoKU2luY2UgVS1ib290IHN1
-cHBvcnRzIEVGSSBib290IHRoZXNlIGRheXMsIG9uZSBwb3RlbnRpYWwgb3B0aW9uIGlzIHRvCnJl
-bHkgb24gdGhhdC4gSSBoYXZlIHNvbWUgY2hhbmdlcyBpbXBsZW1lbnRpbmcgdGhpcyB0aGF0IGdv
-IG9uIHRvcCBvZgp0aGlzIHBhdGNoLCBidXQgdGhleSBkb24ndCBhY3R1YWxseSByZWx5IG9uIGl0
-IC0gaXQgd2FzIGp1c3QgdG8KcHJldmVudCBsZXhpY2FsIGNvbmZsaWN0cy4KClRoZSBvbmx5IHJl
-bWFpbmluZyBvcHRpb25zIGltbyBhcmUgYSBrZXJuZWwgY29tbWFuZCBsaW5lIG9wdGlvbiwgb3Ig
-YQpEVCBwcm9wZXJ0eSB0aGF0IHRlbGxzIHRoZSBkZWNvbXByZXNzb3IgdG8gbG9vayBhdCB0aGUg
-bWVtb3J5IG5vZGVzLgpCdXQgdXNpbmcgdGhlIERUIG1lbW9yeSBub2RlcyBvbiBhbGwgcGxhdGZv
-cm1zIGxpa2UgdGhpcyBwYXRjaCBkb2VzIGlzCm9idmlvdXNseSBqdXN0IHRvbyByaXNreS4KCk9u
-IGFub3RoZXIgbm90ZSwgSSBkbyB0aGluayB0aGUgdXNhYmxlLW1lbW9yeS1yZWdpb24gcHJvcGVy
-dHkgc2hvdWxkCmJlIGltcGxlbWVudGVkIGZvciBBUk0gYXMgd2VsbCAtIHJlbHlpbmcgb24gdGhp
-cyByb3VuZGluZyB0byBlbnN1cmUKdGhhdCB0aGUgZGVjb21wcmVzc29yIGRvZXMgdGhlIHJpZ2h0
-IHRoaW5nIGlzIHRvbyBmcmFnaWxlLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
-cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
-YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+--===============3636723996457716550==
+Content-Type: multipart/signed; boundary="=-=-="; micalg="pgp-sha256";
+	protocol="application/pgp-signature"
+
+--=-=-=
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+It was <2020-05-19 wto 14:12>, when Russell King - ARM Linux admin wrote:
+> On Tue, May 19, 2020 at 02:49:57PM +0200, Lukasz Stelmach wrote:
+>> It was <2020-05-19 wto 13:27>, when Russell King - ARM Linux admin wrote:
+>>> On Tue, May 19, 2020 at 02:20:25PM +0200, Lukasz Stelmach wrote:
+>>>> It was <2020-05-19 wto 12:43>, when Russell King - ARM Linux admin wro=
+te:
+>>>>> On Tue, May 19, 2020 at 01:21:09PM +0200, Geert Uytterhoeven wrote:
+>>>>>> On Tue, May 19, 2020 at 11:46 AM Russell King - ARM Linux admin
+>>>>>> <linux@armlinux.org.uk> wrote:
+>>>>>>> On Tue, May 19, 2020 at 11:44:17AM +0200, Geert Uytterhoeven wrote:
+>>>>>>>> On Tue, May 19, 2020 at 10:54 AM Lukasz Stelmach <l.stelmach@samsu=
+ng.com> wrote:
+>>>>>>>>> It was <2020-04-29 =C5=9Bro 10:21>, when Geert Uytterhoeven wrote:
+>>>>>>>>>> Currently, the start address of physical memory is obtained by m=
+asking
+>>>>>>>>>> the program counter with a fixed mask of 0xf8000000.  This mask =
+value
+>>>>>>>>>> was chosen as a balance between the requirements of different pl=
+atforms.
+>>>>>>>>>> However, this does require that the start address of physical me=
+mory is
+>>>>>>>>>> a multiple of 128 MiB, precluding booting Linux on platforms whe=
+re this
+>>>>>>>>>> requirement is not fulfilled.
+>>>>>>>>>>
+>>>>>>>>>> Fix this limitation by obtaining the start address from the DTB =
+instead,
+>>>>>>>>>> if available (either explicitly passed, or appended to the kerne=
+l).
+>>>>>>>>>> Fall back to the traditional method when needed.
+>> [...]
+>>>>>>>>> Apparently reading physical memory layout from DTB breaks crashdu=
+mp
+>>>>>>>>> kernels. A crashdump kernel is loaded into a region of memory, th=
+at is
+>>>>>>>>> reserved in the original (i.e. to be crashed) kernel. The reserved
+>>>>>>>>> region is large enough for the crashdump kernel to run completely=
+ inside
+>>>>>>>>> it and don't modify anything outside it, just read and dump the r=
+emains
+>>>>>>>>> of the crashed kernel. Using the information from DTB makes the
+>>>>>>>>> decompressor place the kernel outside of the dedicated region.
+>>>>>>>>>
+>>>>>>>>> The log below shows that a zImage and DTB are loaded at 0x18eb800=
+0 and
+>>>>>>>>> 0x193f6000 (physical). The kernel is expected to run at 0x1800800=
+0, but
+>>>>>>>>> it is decompressed to 0x00008000 (see r4 reported before jumping =
+from
+>>>>>>>>> within __enter_kernel). If I were to suggest something, there nee=
+d to be
+>>>>>>>>> one more bit of information passed in the DTB telling the decompr=
+essor
+>>>>>>>>> to use the old masking technique to determain kernel address. It =
+would
+>>>>>>>>> be set in the DTB loaded along with the crashdump kernel.
+>> [...]
+>>>>>>>> Describing "to use the old masking technique" sounds a bit hackish=
+ to me.
+>>>>>>>> I guess it cannot just restrict the /memory node to the reserved r=
+egion,
+>>>>>>>> as the crashkernel needs to be able to dump the remains of the cra=
+shed
+>>>>>>>> kernel, which lie outside this region.
+>>>>>>>
+>>>>>>> Correct.
+>>>>>>>
+>>>>>>>> However, something under /chosen should work.
+>>>>>>>
+>>>>>>> Yet another sticky plaster...
+>>>>>>=20
+>>>>>> IMHO the old masking technique is the hacky solution covered by
+>>>>>> plasters.
+>>>>>
+>>>>> One line of code is not "covered by plasters".  There are no plasters.
+>>>>> It's a solution that works for 99.99% of people, unlike your approach
+>>>>> that has had a stream of issues over the last four months, and has
+>>>>> required many reworks of the code to fix each one.  That in itself
+>>>>> speaks volumes about the suitability of the approach.
+>>>>=20
+>>>> As I have been working with kexec code (patches soon) I would like to
+>>>> defend the DT approach a bit. It allows to avoid zImage relocation when
+>>>> a decompressed kernel is larger than ~128MiB. In such case zImage isn't
+>>>> small either and moving it around takes some time.
+>>>
+>>> ... which is something that has been supported for a very long time,
+>>> before the days of DT.
+>>=20
+>> How? If a decompressed kernel requires >128M and a bootloader would like
+>> to put a zImage high enough to *avoid* copying it once again, then the
+>> decompressor can't see any memory below the 128M window it starts in and
+>> can't decompress the kernel there.
+>
+> Do you have such a large kernel?  It would be rather inefficient as
+> branch instructions could not be used; every function call would have
+> to be indirect.  The maximum is +/- 32MB for a branch.
+
+This number includes data, particularly initramfs which may be linked
+into the kernel. Assuming kernel <32MB (15MB like min ATM) we are left
+with slightly more than 100MB. Which isn't that much if you would like
+it to be root file system for your device.
+
+Of course initramfs could be loaded separately by a bootloader and yet
+having both kernel and initramfs in one file has some advantages.
+
+I am not here to argue. It's your call.
+
+>> If we do not care about copying
+>> zImage, then, indeed, everything works fine as it is today. You are
+>> most probably right 99% doesn't require 128M kernel, but the case is
+>> IMHO obvious enough, that it should be adressed somehow.
+>
+> If I have a kernel in excess of 4GB... "it should be addressed somehow"!
+
+I believe software and hardware limitations should not be compared this
+way.=20
+
+=2D-=20
+=C5=81ukasz Stelmach
+Samsung R&D Institute Poland
+Samsung Electronics
+
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEXpuyqjq9kGEVr9UQsK4enJilgBAFAl7D5tkACgkQsK4enJil
+gBAA3Qf/W1CMR8ZwO3hPtiny7s8gzAz50lCCSrdQiFDqxLivWjOq839Ku+5O6odw
+sJrbDhoz4TxTGqsaMQVXSFfqjbz6jXN1SgSImejYV6BT2UJMtzPhU8zSIIXoqiEM
+PK18k17xRMNBzHOII/Nv0S6sQaQc6fxO3/zABsx22uBFeOovlHtDBnXZrKy9oizB
+MaREIh5IvBjLwnSDsPulymWSRCaS6/ewZWQ8K5LTr8PpXj+E9n5twCWbAddHhryy
+nGQpK6Fvj8DREKA6Lq6u0PTfPW9kwtHjMiH9+p8hxLfMRU030X4f/BUkcv8YMrKg
+ICc5qvvcubA2BUdOvSWr/g1ii+C8Rw==
+=etso
+-----END PGP SIGNATURE-----
+--=-=-=--
+
+
+--===============3636723996457716550==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3636723996457716550==--
+
