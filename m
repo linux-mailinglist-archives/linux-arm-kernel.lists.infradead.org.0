@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63FDD1DA05F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A6B41DA059
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:02:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kWbkQ4YhEy6BRbqI+X5s0sQkG1ifFBpar5dIFpDpQ/0=; b=A8y7Ik2d0GuMLC
-	A4QYPErwHHaozJE+zJiPhTwjllXqSyYMdIN8Ai5GxtD/msjGxQE2O9VvSAj7Bbrtj/7g5fYroNhlE
-	o6U9MgRHz6hADk4pVYyuAW8y6scX+zT6Jp+HlHI3JY7jyuoeqjzULLooPPIFA7Ux+7edbPalU1y6f
-	wPrwvgzQA8IAlET8kMNEYb3E6Wh2BTsKeZW1CWYhzLnEUWO2MB3DwYsbk8Eyg7AHJgGCArXJr7kfZ
-	bnTMIJrWzdPFolV5fGTJzoAGx9NYPkish6FYlPln1mNqv6+CMBfXL9Zq6TsnjCyAxEhC8nws2SU12
-	uCo/5q+uJFaVPP31kyeQ==;
+	List-Owner; bh=45VvI6MGTvYokabG4hXD3hMgyZ3Eq44iFJb7XZEXS1Q=; b=qPCZZXNSeCTytT
+	F3QAuqDmPYUC44X6wzc4DxQ3vSOepsd0KhannXD4kFUv2Cd2fAo59xiZhQf5ies80yklc7wMBNVel
+	xaWbiDd3pXh5LmZgjIKJGl7SzNXoj6fRYiRViTjaMLwqidl9sGrzdcSpr8SQKqabwE+/XYz6nc0BC
+	LzEEHTG0sCqSvxkbTGcDyNTvFwKh7uvan84+2yXUEcqZdONyf88Z1XiGWS1p+M6MqJAWbCXahWoPY
+	ysYainYfpd/SMMhDF4oFJAY3cqVW/JRDIYFvkxDc/qbzZBzoh+Op30Vc24I/FFhUrqbOfrg0HMGzc
+	7/y5albotQMWXosGwDVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb7Vz-0007jz-St; Tue, 19 May 2020 19:03:00 +0000
+	id 1jb7Vo-0007UC-O0; Tue, 19 May 2020 19:02:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb7VK-0007In-RE
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 19:02:24 +0000
+ id 1jb7VM-0007Io-8k
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 19:02:23 +0000
 Received: from localhost.localdomain
  (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr [92.154.90.120])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 82FB320826;
- Tue, 19 May 2020 19:02:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EC62A20823;
+ Tue, 19 May 2020 19:02:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589914938;
- bh=Zs8ZcaZn3yzoZ78qRvdow83AlNV03guZups6sihCi3Y=;
+ s=default; t=1589914940;
+ bh=v7efvTu5talMRkBl/oTTM5IxNW02Zbh7QqxiZtAVavI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ZVHmE2yDqsvYOHDU76sZE25eHDVSFCMl88lzPtimcEnNUhiJ9jvSVrod01iqVG6FJ
- VU9EMswJEBBpOEzub82Z0lkKpIf4pnXOV8FM3re2nCzv07gtW9YfYQqFLmVQ2uG+zB
- yh/fcrxjokDmmYvqzOp9SpoiJTfkl6Udt4IUoZYk=
+ b=WhS89Qeu7ptX2jdVKD4tcmN3g/CYlVXoYJdb0drZVjoYXiey5TOAOhJQMmRdNOWKt
+ B9hfiCjQB2FsiIJ2RFxNDZ1Wsint6i1o8GrHBwqrR6rEYIjWhEJa3nt64BYpGL8n5P
+ mJqipMEAg86LrSHk3Y15DHcEbzXYiyY3+/Ls668E=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-crypto@vger.kernel.org
-Subject: [RFC/RFT PATCH 1/2] crypto: arm64/aes - align output IV with generic
- CBC-CTS driver
-Date: Tue, 19 May 2020 21:02:10 +0200
-Message-Id: <20200519190211.76855-2-ardb@kernel.org>
+Subject: [RFC/RFT PATCH 2/2] crypto: testmgr - add output IVs for AES-CBC with
+ ciphertext stealing
+Date: Tue, 19 May 2020 21:02:11 +0200
+Message-Id: <20200519190211.76855-3-ardb@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200519190211.76855-1-ardb@kernel.org>
 References: <20200519190211.76855-1-ardb@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_120222_039342_632BEADA 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20200519_120222_042977_2C34CE76 
+X-CRM114-Status: UNSURE (   9.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,45 +85,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The generic CTS chaining mode wraps the CBC mode driver in a way that
-results in the IV buffer referenced by the skcipher request to be
-updated with the last block of ciphertext. The arm64 implementation
-deviates from this, given that CTS itself does not specify the concept
-of an output IV, or how it should be generated, and so it was assumed
-that the output IV does not matter.
-
-However, Stephan reports that code exists that relies on this behavior,
-and that there is even a NIST validation tool that flags it as
-non-compliant [citation needed. Stephan?]
-
-So let's align with the generic implementation here, and return the
-penultimate block of ciphertext as the output IV.
+Add some test vectors to get coverage for the IV that is output by CTS
+implementations.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 ---
- arch/arm64/crypto/aes-modes.S | 2 ++
- 1 file changed, 2 insertions(+)
+ crypto/testmgr.h | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-diff --git a/arch/arm64/crypto/aes-modes.S b/arch/arm64/crypto/aes-modes.S
-index cf618d8f6cec..80832464df50 100644
---- a/arch/arm64/crypto/aes-modes.S
-+++ b/arch/arm64/crypto/aes-modes.S
-@@ -275,6 +275,7 @@ AES_FUNC_START(aes_cbc_cts_encrypt)
- 	add		x4, x0, x4
- 	st1		{v0.16b}, [x4]			/* overlapping stores */
- 	st1		{v1.16b}, [x0]
-+	st1		{v1.16b}, [x5]
- 	ret
- AES_FUNC_END(aes_cbc_cts_encrypt)
+diff --git a/crypto/testmgr.h b/crypto/testmgr.h
+index d29983908c38..d45fa1ad91ee 100644
+--- a/crypto/testmgr.h
++++ b/crypto/testmgr.h
+@@ -31041,6 +31041,8 @@ static const struct cipher_testvec cts_mode_tv_template[] = {
+ 		.ctext	= "\xc6\x35\x35\x68\xf2\xbf\x8c\xb4"
+ 			  "\xd8\xa5\x80\x36\x2d\xa7\xff\x7f"
+ 			  "\x97",
++		.iv_out	= "\xc6\x35\x35\x68\xf2\xbf\x8c\xb4"
++			  "\xd8\xa5\x80\x36\x2d\xa7\xff\x7f",
+ 	}, {
+ 		.klen	= 16,
+ 		.key    = "\x63\x68\x69\x63\x6b\x65\x6e\x20"
+@@ -31054,6 +31056,8 @@ static const struct cipher_testvec cts_mode_tv_template[] = {
+ 			  "\xd4\x45\xd4\xc8\xef\xf7\xed\x22"
+ 			  "\x97\x68\x72\x68\xd6\xec\xcc\xc0"
+ 			  "\xc0\x7b\x25\xe2\x5e\xcf\xe5",
++		.iv_out	= "\xfc\x00\x78\x3e\x0e\xfd\xb2\xc1"
++			  "\xd4\x45\xd4\xc8\xef\xf7\xed\x22",
+ 	}, {
+ 		.klen	= 16,
+ 		.key    = "\x63\x68\x69\x63\x6b\x65\x6e\x20"
+@@ -31067,6 +31071,8 @@ static const struct cipher_testvec cts_mode_tv_template[] = {
+ 			  "\xbe\x7f\xcb\xcc\x98\xeb\xf5\xa8"
+ 			  "\x97\x68\x72\x68\xd6\xec\xcc\xc0"
+ 			  "\xc0\x7b\x25\xe2\x5e\xcf\xe5\x84",
++		.iv_out	= "\x39\x31\x25\x23\xa7\x86\x62\xd5"
++			  "\xbe\x7f\xcb\xcc\x98\xeb\xf5\xa8",
+ 	}, {
+ 		.klen	= 16,
+ 		.key    = "\x63\x68\x69\x63\x6b\x65\x6e\x20"
+@@ -31084,6 +31090,8 @@ static const struct cipher_testvec cts_mode_tv_template[] = {
+ 			  "\x1b\x55\x49\xd2\xf8\x38\x02\x9e"
+ 			  "\x39\x31\x25\x23\xa7\x86\x62\xd5"
+ 			  "\xbe\x7f\xcb\xcc\x98\xeb\xf5",
++		.iv_out	= "\xb3\xff\xfd\x94\x0c\x16\xa1\x8c"
++			  "\x1b\x55\x49\xd2\xf8\x38\x02\x9e",
+ 	}, {
+ 		.klen	= 16,
+ 		.key    = "\x63\x68\x69\x63\x6b\x65\x6e\x20"
+@@ -31101,6 +31109,8 @@ static const struct cipher_testvec cts_mode_tv_template[] = {
+ 			  "\x3b\xc1\x03\xe1\xa1\x94\xbb\xd8"
+ 			  "\x39\x31\x25\x23\xa7\x86\x62\xd5"
+ 			  "\xbe\x7f\xcb\xcc\x98\xeb\xf5\xa8",
++		.iv_out	= "\x9d\xad\x8b\xbb\x96\xc4\xcd\xc0"
++			  "\x3b\xc1\x03\xe1\xa1\x94\xbb\xd8",
+ 	}, {
+ 		.klen	= 16,
+ 		.key    = "\x63\x68\x69\x63\x6b\x65\x6e\x20"
+@@ -31122,6 +31132,8 @@ static const struct cipher_testvec cts_mode_tv_template[] = {
+ 			  "\x26\x73\x0d\xbc\x2f\x7b\xc8\x40"
+ 			  "\x9d\xad\x8b\xbb\x96\xc4\xcd\xc0"
+ 			  "\x3b\xc1\x03\xe1\xa1\x94\xbb\xd8",
++		.iv_out	= "\x48\x07\xef\xe8\x36\xee\x89\xa5"
++			  "\x26\x73\x0d\xbc\x2f\x7b\xc8\x40",
+ 	}
+ };
  
-@@ -291,6 +292,7 @@ AES_FUNC_START(aes_cbc_cts_decrypt)
- 	ld1		{v1.16b}, [x1]
- 
- 	ld1		{v5.16b}, [x5]			/* get iv */
-+	st1		{v0.16b}, [x5]
- 	dec_prepare	w3, x2, x6
- 
- 	decrypt_block	v0, w3, x2, x6, w7
 -- 
 2.20.1
 
