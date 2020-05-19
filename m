@@ -2,46 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E8E11D97BB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 15:28:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C98DF1D97C9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 15:30:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=f2kkcyFWf6blMnq9PjR+ChxNrSMDVUZLgccqi998CpY=; b=Urb
-	AAH+WTL1d0XoBWKK4xRfpqof+nKF/dyXR7c7Hj0c3RcE89CPJz4T2sTV88OiIm0lqtG10f9EFYOsE
-	sREzECR7SNWiN8OlV+/AGrZN4AmoGWPjxYVmwsmbrBZaBFKHjF/o0VFzj2HMjRHgnZmzcvko5ONvD
-	+Myv/2HhiHuNyhOafxbQet2CyOTQBJx402i60U1YdHNDjBtebAdM6Aq0r4YFnY1+9D4GFOKpWVvKM
-	tjTGaQi0YpZLUY+35Pbkcu6bc6JC8y8aTfYQQl4RdPTmglcVXQEeA49tN2lZ27esZeyQgeQIXBh0y
-	6ubkXrvmMmJcar6FjehOfvdU+InLokw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=of1N4ITYUqlcSyY+TaKkvsKQOPsN432hy5J7WXxtX9o=; b=MOAtuJfnQ8X9ON
+	jFvgo/yTEBHVSD667oH6nA5YWnouQzd9wW3TX7ii4vAkP+qynJ+Q09cqvmRwtwcsVeJRa+2Sg2wqJ
+	liNM6hQTAc1mDBKhUIDSaeMCFki6zNbDLsnH9Zlx88edhFi+k/wTWBXAn3aqDCX4qVe5MzBT6gL/z
+	dzb3NYsfM5VoAh8V5Cb4mLtW4PD1M3Ly+5bnaTSshGiZ1uJ8vDYUP3Ao/wPglRgt53ByPxH7keFjb
+	rvJQT6MYgrh0cpKHu3Pi+ZrrNzC4zfE34Jawtr+LDC5F7ZL9sASW7S1SrBAo1BuKJWqz3LEnxlKOI
+	gKMpE9bC0KTomwOtayzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb2Ie-0007zv-Gi; Tue, 19 May 2020 13:28:52 +0000
-Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
+	id 1jb2K1-0000j8-7i; Tue, 19 May 2020 13:30:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb2IU-0007wf-7Y; Tue, 19 May 2020 13:28:43 +0000
-Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 7785F386; Tue, 19 May 2020 15:28:33 +0200 (CEST)
-From: Joerg Roedel <joro@8bytes.org>
-To: iommu@lists.linux-foundation.org
-Subject: [PATCH] iommu: Don't call .probe_finalize() under group->mutex
-Date: Tue, 19 May 2020 15:28:24 +0200
-Message-Id: <20200519132824.15163-1-joro@8bytes.org>
-X-Mailer: git-send-email 2.17.1
+ id 1jb2Jl-0008T6-J5
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 13:30:03 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0CA4020829;
+ Tue, 19 May 2020 13:29:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589895001;
+ bh=tNCHKvOQltRdjqZGdQsgQweqdTCaMtSK23iuq29pVfo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=wgRaH1DR+m6WF4pxjMX3N1SuD5kbrNqmTExYo0Bcx6amDNrCM/e/BwwA6rJLccJB0
+ cbVWMxfZ01vOzOWD29VHmtamajQfQn/vDmfMQXWm/zrHcurfhsNBd+YrdavsUfe1SU
+ p7Y8UxXfzJQv6YLBLHx60bqg573+soYkjmuP5OKI=
+Date: Tue, 19 May 2020 14:29:56 +0100
+From: Will Deacon <will@kernel.org>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH 1/3] arm64: vdso: Don't prefix sigreturn trampoline with
+ a BTI C instruction
+Message-ID: <20200519132955.GA14570@willie-the-truck>
+References: <20200519121818.14511-1-will@kernel.org>
+ <20200519121818.14511-2-will@kernel.org>
+ <20200519132100.GD5031@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200519132100.GD5031@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_062842_433084_4430C0DE 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200519_063001_674998_10AB9F01 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [81.169.241.247 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -53,93 +80,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joerg Roedel <jroedel@suse.de>, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Yong Wu <yong.wu@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-MIME-Version: 1.0
+Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, Mark Brown <broonie@kernel.org>,
+ kernel-team@android.com, linux-arm-kernel@lists.infradead.org,
+ Daniel Kiss <daniel.kiss@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Joerg Roedel <jroedel@suse.de>
+On Tue, May 19, 2020 at 02:21:01PM +0100, Dave Martin wrote:
+> On Tue, May 19, 2020 at 01:18:16PM +0100, Will Deacon wrote:
+> > For better or worse, GDB relies on the exact instruction sequence in the
+> > VDSO sigreturn trampoline in order to unwind from signals correctly.
+> 
+> Are you sure?  I'm struggling to find the relevant code in gdb.
 
-The .probe_finalize() call-back of some IOMMU drivers calls into
-arm_iommu_attach_device(). This function will call back into the
-IOMMU core code, where it tries to take group->mutex again, resulting
-in a deadlock.
+It looks pretty damning:
 
-As there is no reason why .probe_finalize() needs to be called under
-that mutex, move it after the lock has been released to fix the
-deadlock.
+https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=gdb/aarch64-linux-tdep.c;h=34ba0d87baaff12f1f9711e777ab15a0a394f59b;hb=HEAD#l361
 
-Cc: Yong Wu <yong.wu@mediatek.com>
-Reported-by: Yong Wu <yong.wu@mediatek.com>
-Fixes: deac0b3bed26 ("iommu: Split off default domain allocation from group assignment")
-Signed-off-by: Joerg Roedel <jroedel@suse.de>
----
- drivers/iommu/iommu.c | 28 ++++++++++++++++++----------
- 1 file changed, 18 insertions(+), 10 deletions(-)
+(and also look at struct tramp_frame).
 
-diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
-index 629d209b8e88..d5d9fcbc9714 100644
---- a/drivers/iommu/iommu.c
-+++ b/drivers/iommu/iommu.c
-@@ -1683,17 +1683,8 @@ static void probe_alloc_default_domain(struct bus_type *bus,
- static int iommu_group_do_dma_attach(struct device *dev, void *data)
- {
- 	struct iommu_domain *domain = data;
--	const struct iommu_ops *ops;
--	int ret;
--
--	ret = __iommu_attach_device(domain, dev);
--
--	ops = domain->ops;
--
--	if (ret == 0 && ops->probe_finalize)
--		ops->probe_finalize(dev);
- 
--	return ret;
-+	return __iommu_attach_device(domain, dev);
- }
- 
- static int __iommu_group_dma_attach(struct iommu_group *group)
-@@ -1702,6 +1693,21 @@ static int __iommu_group_dma_attach(struct iommu_group *group)
- 					  iommu_group_do_dma_attach);
- }
- 
-+static int iommu_group_do_probe_finalize(struct device *dev, void *data)
-+{
-+	struct iommu_domain *domain = data;
-+
-+	if (domain->ops->probe_finalize)
-+		domain->ops->probe_finalize(dev);
-+
-+	return 0;
-+}
-+
-+static void __iommu_group_dma_finalize(struct iommu_group *group)
-+{
-+	__iommu_group_for_each_dev(group, group->default_domain,
-+				   iommu_group_do_probe_finalize);
-+}
- static int iommu_do_create_direct_mappings(struct device *dev, void *data)
- {
- 	struct iommu_group *group = data;
-@@ -1754,6 +1760,8 @@ int bus_iommu_probe(struct bus_type *bus)
- 
- 		if (ret)
- 			break;
-+
-+		__iommu_group_dma_finalize(group);
- 	}
- 
- 	return ret;
--- 
-2.25.1
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
