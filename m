@@ -2,99 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92CB71DA123
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:42:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 712F11DA143
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:47:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VKl59GXO9Y1MBZvKybzmVtQraGWhhYaQOXOzokkYGxc=; b=dKFe76ODghsitj
-	bs1m92ZOOC5sV3Sz6XuJl3t8zvrefZcx7EoGbnhvJQW4gunchusEAGGfwG+wz68wEpn1it7Zfg5ic
-	bOcgbB459MkGA25xd3AKksY5AmdMJ5t6IKLlYDWmxaDdEo9l/eKqz12XDjic80VA59agSFYq7r62o
-	/4mmUY+ZRFPWRy/OIa0KLv0BwcRcjrMuRDzWIvRLvFiORipH0/Tp3/bC2Gd6Qn1e8Gvtwg/RSTQVF
-	HYEY4u/4zBqm9qODHwzrJWWfjwrOreLtfH06fn7ZqN/d/N39QFN0FFpALF9hNor7Q5Z+ZVRaAgNYO
-	wfihiVpqnJ+k7MSqIS0A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ALihIGeN2qg0ZqAjahXm6rOCk/sUYT/UYyzIyb9lX+o=; b=tLDsJmLMr52QDR
+	OnGR7ShVlEX+HO+GU4Q+W5MloxbC7/Pw4mvZ1xvj+X57uyOP9aAEaMx16LuxUeSFGgz8a/1/MQwM4
+	hQM5UjaDLSJNGqHH9ZxWeHm+LWXLWDvVBdhDGT+dVTbRkMl3CGLa8cEcVpXJFQl3a/apvmb/e2YgX
+	/ackw/2PD4eMlRJqjR/mb7vuU0Gr3DJ05eQ1pqBRc49UWSXd4Ek1JWc8pjUCqlRijzhXX4yVpzqS0
+	TWwwbY0+b3lUrhizDw4Fom6HufGtaADwOiCp1x+lOgupQXg6BAAmdx//IBSqLi2Tk1JmklXZ00YFr
+	sfvBrKq+CufLG/uQsZjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb88B-0000qG-Rq; Tue, 19 May 2020 19:42:27 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1jb8DE-0003wM-M1; Tue, 19 May 2020 19:47:40 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb882-0000pj-5h; Tue, 19 May 2020 19:42:20 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id ci21so130444pjb.3;
- Tue, 19 May 2020 12:42:18 -0700 (PDT)
+ id 1jb8D6-0003vf-EJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 19:47:33 +0000
+Received: by mail-pg1-x543.google.com with SMTP id p21so291773pgm.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 19 May 2020 12:47:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=1PbPu9MDpsX7CWlzIANvDidpxlS/QMPqApRlwiiHNw8=;
- b=Azzo19mxTglIY2DWsdeqvJCJvbRFWfMvCqe910K+bLoZcz9A0rEclUKyMtzUQpeHzC
- onlWdkJh3IcWILK4c2hRtOtl7mRzAbiyLlEcJdxmOebPU1v944BfCUyeskdH4MaSANGB
- mG1De8kuL8xqrOY6I9z2/irGnDdt+dXuW+nblD5+Bi7nB5W52s0/6ICGfZDepT9Noian
- auesxCt7/j2cCzmSLOIHL82Wa50HphpyDMpe82o3c9PeVBitNH+3VinlNYT9yXfWiYMK
- CoPZr98AYh6qGXAhrwf3fwANeJXKXy93GRy48lcmGQT0TIdmPLv0mxuhYKT+dVSO6mfx
- T51Q==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=ZGuRRRcbTaW8FWPggeFKscV8bVAevR+TD4KidxOAffU=;
+ b=SOy40ns36oc3zn7ljfpnUaBI+qiGaKfHLn/p2KvVh6KGCqg988xKzHeav8r4ADi+al
+ JMlzcpyMm2iAV0qQjdoFwlstcvzlPkZz7a4Ed62ly991kPw9qR3soQzvxgRHMXy11Mkt
+ T5bOiSqk0MEI2lITGszqvjSMp1pDCIvfAIWSMd/2KiQMiZUszZh7AKf51496oMFhqDE8
+ el2E+G1EIlVrf1LUymCs1SMnRoV299YkVmgi+QiZS6fTpG46AoJ0ipU0OuY9YEIWHOUM
+ z5+t0fv/T0hrhw0bs82HPobojLUycNl7mP/2RPVf0aGmaeCzOEorMevm0S9AxXHdqhCa
+ iCRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=1PbPu9MDpsX7CWlzIANvDidpxlS/QMPqApRlwiiHNw8=;
- b=PMDECkFtsAr2R698PtT9WC9/xcJbQBT5gvO/RxY+PtOYFp/TIGssL7/43ZmSZGBgJA
- Au+OSy5Hjd9wz8kw4YcGQayh42ZQ9fUYSdWqnqHhabh3OeDh+qGw/oVVRXPz9BbjZGE4
- PZ4a/tGJB1AeR4ppOpEvCG4OiTnO834XFH16CyZl2ehmbXlD/zz/HtsTdao+mUIwac/3
- p21/f61xYO9ERCU4sZ+JhT6IVbHnViv5HQRTVxR87rpBqn5TBqWreHawVkHXieIEDEMB
- vdo+GmJgDKSwRdwZcDByC3KfFp11Tt4wuYnqQWmSgG9ZBdUF6dL6QX+4FjwGpY/Kac+w
- zaTA==
-X-Gm-Message-State: AOAM532N9ZnLnS0U8zQMwlbKBR1JWKSxQw7FsSBh/YUbsbg1qAkcB0t/
- 6Pl8gkdznUR7RMm9jOf7J8E=
-X-Google-Smtp-Source: ABdhPJyHaPx1l/c1P1VXN2zRGyOacWb0vDLgVVmiFhoO/p9Se1Yt0uzr0GEQ80rPSqJdr43xSsWcZA==
-X-Received: by 2002:a17:90a:4811:: with SMTP id
- a17mr1198137pjh.130.1589917337613; 
- Tue, 19 May 2020 12:42:17 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id x5sm234038pfq.196.2020.05.19.12.42.16
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 19 May 2020 12:42:16 -0700 (PDT)
-Date: Tue, 19 May 2020 12:42:15 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Ira Weiny <ira.weiny@intel.com>
-Subject: Re: [PATCH] arch/{mips,sparc,microblaze,powerpc}: Don't enable
- pagefault/preempt twice
-Message-ID: <20200519194215.GA71941@roeck-us.net>
-References: <20200507150004.1423069-8-ira.weiny@intel.com>
- <20200518184843.3029640-1-ira.weiny@intel.com>
- <20200519165422.GA5838@roeck-us.net>
- <20200519184031.GB3356843@iweiny-DESK2.sc.intel.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=ZGuRRRcbTaW8FWPggeFKscV8bVAevR+TD4KidxOAffU=;
+ b=sVpOPxKC84CeAL67ecs3Fr6+rccRFRoFfmbo7Zamh7hVRF4t78a8Qn/yyiVi/gMjAO
+ 8vnw0HaGHeLq3CER/i1RbQd6JI6AqEEy9veB3AXqvHJCSWfYi+2LrYw4lzHQdPqn8TPn
+ K1Vzdot3a/CepBNP9dIA/siegRp6GCf8yziN3S13LfijDibTU0bgIHNHy2AY4YEtVsKk
+ N4rb1Wg6syRDJRXOjEDmrMIXm/zDbYBfEPf4VIPMh0dqlLfH+T5PEkmq+3mjRZKwjygL
+ 02BvsFR9U5IUf45VQ5EJWbTgU+SqyQ6faTioxlCFyNVrJDN+jqopFTTnHqryMcupm9oX
+ 3MRg==
+X-Gm-Message-State: AOAM533vvlzQ9dkMDEIMstQ2SuLFsCCdpbAzGS7OzKD2xvuW0JwfdllX
+ Pzb155xxgmc7slcLB67fJmo=
+X-Google-Smtp-Source: ABdhPJxGFs2gbJfJf03BO6VSSxo3ZeuxRoEcyfB/gfuOvP36kzgTf0L+EcK96MQIwQyh25HevsllAA==
+X-Received: by 2002:a63:3e46:: with SMTP id l67mr761106pga.430.1589917651467; 
+ Tue, 19 May 2020 12:47:31 -0700 (PDT)
+Received: from [10.230.188.43] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id e18sm251091pfh.75.2020.05.19.12.47.26
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 19 May 2020 12:47:30 -0700 (PDT)
+Subject: Re: [PATCH 01/11] genirq: Add fasteoi IPI flow
+To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+References: <20200519161755.209565-1-maz@kernel.org>
+ <20200519161755.209565-2-maz@kernel.org>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <b691a46e-7461-89c8-c760-a1ef9769091f@gmail.com>
+Date: Tue, 19 May 2020 12:47:24 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200519184031.GB3356843@iweiny-DESK2.sc.intel.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200519161755.209565-2-maz@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_124218_261089_B0C64B34 
-X-CRM114-Status: GOOD (  17.91  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200519_124732_481756_D152B468 
+X-CRM114-Status: GOOD (  21.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [groeck7[at]gmail.com]
+ provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [groeck7[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,86 +103,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: Sumit Garg <sumit.garg@linaro.org>, Russell King <linux@arm.linux.org.uk>,
+ Jason Cooper <jason@lakedaemon.net>, Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, kernel-team@android.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 11:40:32AM -0700, Ira Weiny wrote:
-> On Tue, May 19, 2020 at 09:54:22AM -0700, Guenter Roeck wrote:
-> > On Mon, May 18, 2020 at 11:48:43AM -0700, ira.weiny@intel.com wrote:
-> > > From: Ira Weiny <ira.weiny@intel.com>
-> > > 
-> > > The kunmap_atomic clean up failed to remove one set of pagefault/preempt
-> > > enables when vaddr is not in the fixmap.
-> > > 
-> > > Fixes: bee2128a09e6 ("arch/kunmap_atomic: consolidate duplicate code")
-> > > Signed-off-by: Ira Weiny <ira.weiny@intel.com>
-> > 
-> > microblazeel works with this patch,
+
+
+On 5/19/2020 9:17 AM, Marc Zyngier wrote:
+> For irqchips using the fasteoi flow, IPIs are a bit special.
 > 
-> Awesome...  Andrew in my rush yesterday I should have put a reported by on the
-> patch for Guenter as well.
+> They need to be EOId early (before calling the handler), as
+> funny things may happen in the handler (they do not necessarily
+> behave like a normal interrupt), and that the arch code is
+> already handling the stats.
 > 
-> Sorry about that Guenter,
-
-No worries.
-
-> Ira
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  include/linux/irq.h |  1 +
+>  kernel/irq/chip.c   | 26 ++++++++++++++++++++++++++
+>  2 files changed, 27 insertions(+)
 > 
-> > as do the nosmp sparc32 boot tests,
-> > but sparc32 boot tests with SMP enabled still fail with lots of messages
-> > such as:
-> > 
-> > BUG: Bad page state in process swapper/0  pfn:006a1
-> > page:f0933420 refcount:0 mapcount:1 mapping:(ptrval) index:0x1
-> > flags: 0x0()
-> > raw: 00000000 00000100 00000122 00000000 00000001 00000000 00000000 00000000
-> > page dumped because: nonzero mapcount
-> > Modules linked in:
-> > CPU: 0 PID: 1 Comm: swapper/0 Tainted: G    B             5.7.0-rc6-next-20200518-00002-gb178d2d56f29 #1
-> > [f00e7ab8 :
-> > bad_page+0xa8/0x108 ]
-> > [f00e8b54 :
-> > free_pcppages_bulk+0x154/0x52c ]
-> > [f00ea024 :
-> > free_unref_page+0x54/0x6c ]
-> > [f00ed864 :
-> > free_reserved_area+0x58/0xec ]
-> > [f0527104 :
-> > kernel_init+0x14/0x110 ]
-> > [f000b77c :
-> > ret_from_kernel_thread+0xc/0x38 ]
-> > [00000000 :
-> > 0x0 ]
-> > 
-> > Code path leading to that message is different but always the same
-> > from free_unref_page().
-> > 
-> > Still testing ppc images.
-> > 
+> diff --git a/include/linux/irq.h b/include/linux/irq.h
+> index 8d5bc2c237d7..726f94d8b8cc 100644
+> --- a/include/linux/irq.h
+> +++ b/include/linux/irq.h
+> @@ -621,6 +621,7 @@ static inline int irq_set_parent(int irq, int parent_irq)
+>   */
+>  extern void handle_level_irq(struct irq_desc *desc);
+>  extern void handle_fasteoi_irq(struct irq_desc *desc);
+> +extern void handle_percpu_devid_fasteoi_ipi(struct irq_desc *desc);
+>  extern void handle_edge_irq(struct irq_desc *desc);
+>  extern void handle_edge_eoi_irq(struct irq_desc *desc);
+>  extern void handle_simple_irq(struct irq_desc *desc);
+> diff --git a/kernel/irq/chip.c b/kernel/irq/chip.c
+> index 41e7e37a0928..7b0b789cfed4 100644
+> --- a/kernel/irq/chip.c
+> +++ b/kernel/irq/chip.c
+> @@ -955,6 +955,32 @@ void handle_percpu_devid_irq(struct irq_desc *desc)
+>  		chip->irq_eoi(&desc->irq_data);
+>  }
+>  
+> +/**
+> + * handle_percpu_devid_fasteoi_ipi - Per CPU local IPI handler with per cpu
+> + *				     dev ids
+> + * @desc:	the interrupt description structure for this irq
+> + *
+> + * The biggest differences with the IRQ version are that:
+> + * - the interrupt is EOIed early, as the IPI could result in a context
+> + *   switch, and we need to make sure the IPI can fire again
+> + * - Stats are usually handled at the architecture level, so we ignore them
+> + *   here
+> + */
+> +void handle_percpu_devid_fasteoi_ipi(struct irq_desc *desc)
+> +{
+> +	struct irq_chip *chip = irq_desc_get_chip(desc);
+> +	struct irqaction *action = desc->action;
+> +	unsigned int irq = irq_desc_get_irq(desc);
+> +	irqreturn_t res;
 
-ppc image tests are passing with this patch.
+Should not this have a:
 
-Guenter
+	if (!irq_settings_is_no_accounting(desc))
+		__kstat_incr_irqs_this_cpu(desc);
+
+here in case you are using that handler with a SGI interrupt which is
+not used as an IPI?
+
+> +
+> +	if (chip->irq_eoi)
+> +		chip->irq_eoi(&desc->irq_data);
+> +
+> +	trace_irq_handler_entry(irq, action);
+> +	res = action->handler(irq, raw_cpu_ptr(action->percpu_dev_id));
+> +	trace_irq_handler_exit(irq, action, res);
+> +}
+> +
+>  /**
+>   * handle_percpu_devid_fasteoi_nmi - Per CPU local NMI handler with per cpu
+>   *				     dev ids
+> 
+
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
