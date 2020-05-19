@@ -2,81 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2166E1D95FA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 14:11:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF7631D9611
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 14:18:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K/YDbJk8TAbANl+QTRyTndPybGmVlAHg2C4EFnR806s=; b=LaRr86U8Dc8RM+
-	T9baT7Zi1I8vp+LenoBeZkAnKBo8OcS0ALxzIQFy3BzaaGrREHzyh/b2IVtNMf/YzJIB8JCX7Augy
-	zjIdX/algr9IuJqJH4MuS+EVkA/Pk3OKk2eX24csNFfguXXXFzMSbHncp1VSBNBoer7Gc4dmkYidO
-	qV3b9YoRdr2ISVqJkMmhZtpXrmkIxDFFGIsgWws+Ep2oqi11p+kwR88YdCygzBBG2C5kfTdwfBaiW
-	UqkhClBU8fZHuCsuMJVkamkwoIseoKFQCdzmUC15t0wcsRdVqXGhn5ZLKDeTEaWRd3TYJQflusdZj
-	Nd4M2THBEKSS/1KiBgrw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1Oi96UNohufOg2P1yUOFasIUWJXLBqWpC9BtQm2rAN0=; b=F7MSJNXg45qw8X
+	D7CKFwgxGWsTQWQQTuHIrUWSj1xHVfheoShZK7jiV2fh5krO5PWny+BiDRmmHjfbhJaMGdwijcios
+	6INs7PvAyMFYb0ciG05vAMgf8+U95ibmD62u/J/PI0Ae6uPR5L6q4G60hNQw6UUBwXK1aCBAqpAxL
+	mxHUq9MwroQPnx62ymgAIkbX2ONi/9clCay8px42qky+UGMQzZIosqY8E1OFmvYeItRBMq4qEMk6H
+	a4rtg0htU0H2+O2aaNEJV9Em35NfVL1fckuf6bXISNEVdbQfxueK/qKBVEVkjBdevztgcPsR/BFm2
+	8h/d2/gYruYYasliUyAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb15w-0002vN-WC; Tue, 19 May 2020 12:11:41 +0000
-Received: from mail-oo1-f66.google.com ([209.85.161.66])
+	id 1jb1Cf-0006PI-0f; Tue, 19 May 2020 12:18:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb15o-0002uw-8S
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 12:11:33 +0000
-Received: by mail-oo1-f66.google.com with SMTP id p123so2753814oop.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 05:11:32 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=YzPr5ME/rx0mm8f1HXcVFMEaGYLRdecJyu3Hp8Rox/0=;
- b=kaYZmX4wqt/t5yGDvCZhOH1nzQqxHYwKDm3/0PLz0DJrj6r/twzO/cjxYY8tGpN33B
- xl9iPI3oianszc/P2GHOOFYBwok/OcRz9K+FKlYRBUgeQ/RonpVHZz0es5IkNrTzvAJf
- rYX2JRnoW3fccI+vvROCERqYACPBJKdaqHbnSQj0Sh9o7DKLzPu07ksPWbLGvmGekib/
- ijoocIVX++Ppn2/T2pECxyzQGlrdGB0UkNz5y955SqiccfOAlGwqyQVM5Dgs0J3OwLnm
- T8y2ffMqjIAyyaV+Xqeyu98Wy0bJsBF+5dnVu0bmd2S3qpCT7RYpno7hKtLztB2kq+M5
- e74Q==
-X-Gm-Message-State: AOAM533R01uxUtl6ee/IlfktKCZGmG+HEUaZxylTXJflvrpqMNIBhV/o
- U0g0buOWLetbIcWV2xCHnIXlC4gAACXSBL8MifI=
-X-Google-Smtp-Source: ABdhPJyRSziZNrfSrilLC08tU525imlrr6yhGihg5O4ZATTVfbhCA5/40gAFoQqsQv6KSsH1dU3TNKmkqJKDRrsQJwc=
-X-Received: by 2002:a4a:95d0:: with SMTP id p16mr16485117ooi.40.1589890287441; 
- Tue, 19 May 2020 05:11:27 -0700 (PDT)
+ id 1jb1CS-0006Oe-TQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 12:18:26 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B10A82081A;
+ Tue, 19 May 2020 12:18:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589890704;
+ bh=q637ZjMpwTbt9Gvx94zZjQ4loemAWCmrffrHk5e7mk0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=xQLcGKVnr5vGj1ywuEAcDCLnN6IAaPBEZrX9CgDeohmC/AjgDzzhwwNQt84Q0K9Dq
+ EKRi4B8CKjCBmAfSSmaBpLr2TI4v7pCIemZtsBa5RWmUQBECI0zEu6xMZXXb89zdtl
+ 0CYnsq3ihrb7p1iQTg7FNANRBjyoqNrhNh8NPKAU=
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/3] arm64 sigreturn unwinding fixes
+Date: Tue, 19 May 2020 13:18:15 +0100
+Message-Id: <20200519121818.14511-1-will@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <CGME20200429082134eucas1p2415c5269202529e6b019f2d70c1b5572@eucas1p2.samsung.com>
- <20200429082120.16259-1-geert+renesas@glider.be>
- <dleftjmu645mqn.fsf%l.stelmach@samsung.com>
- <CAMuHMdXxq6m6gebQbWvxDynDcZ7dLyZzKC_QroK63L8FGeac1Q@mail.gmail.com>
- <20200519094637.GZ1551@shell.armlinux.org.uk>
- <CAMuHMdU5DG06G4H=+PH+OONMT_9oE==KS=wP+bLgY9xVCez6Ww@mail.gmail.com>
- <CAK8P3a3H=7qx+Rz9sScTVCSMKWGwQ_ROnyoyK73A5yUd+_jbTw@mail.gmail.com>
-In-Reply-To: <CAK8P3a3H=7qx+Rz9sScTVCSMKWGwQ_ROnyoyK73A5yUd+_jbTw@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 19 May 2020 14:11:14 +0200
-Message-ID: <CAMuHMdV0_GTop+YTPeu+aSFB=1YHsyzLXn-+0fa8upkNMq10bQ@mail.gmail.com>
-Subject: Re: [PATCH v6] ARM: boot: Obtain start of physical memory from DTB
-To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_051132_301056_FFA7DE6E 
-X-CRM114-Status: GOOD (  22.07  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200519_051824_971754_75440178 
+X-CRM114-Status: GOOD (  11.77  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.161.66 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.161.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,94 +74,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Grant Likely <grant.likely@arm.com>,
- Nicolas Pitre <nico@fluxnic.net>, Masahiro Yamada <masahiroy@kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Lukasz Stelmach <l.stelmach@samsung.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>, Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- Ard Biesheuvel <ardb@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Will Deacon <will@kernel.org>, Tamas Zsoldos <tamas.zsoldos@arm.com>,
+ Mark Brown <broonie@kernel.org>, kernel-team@android.com,
+ Dave Martin <dave.martin@arm.com>, Daniel Kiss <daniel.kiss@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+Hi folks,
 
-On Tue, May 19, 2020 at 1:28 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> On Tue, May 19, 2020 at 1:21 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> > On Tue, May 19, 2020 at 11:46 AM Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
->
-> > >
-> > > > However, something under /chosen should work.
-> > >
-> > > Yet another sticky plaster...
-> >
-> > IMHO the old masking technique is the hacky solution covered by
-> > plasters.
-> >
-> > DT describes the hardware.  In general, where to put the kernel is a
-> > software policy, and thus doesn't belong in DT, except perhaps under
-> > /chosen.  But that would open another can of worms, as people usually
-> > have no business in specifying where the kernel should be located.
-> > In the crashkernel case, there is a clear separation between memory to
-> > be used by the crashkernel, and memory to be solely inspected by the
-> > crashkernel.
-> >
-> > Devicetree Specification, Release v0.3, Section 3.4 "/memory node" says:
-> >
-> >     "The client program may access memory not covered by any memory
-> >      reservations (see section 5.3)"
-> >
-> > (Section 5.3 "Memory Reservation Block" only talks about structures in
-> > the FDT, not about DTS)
-> >
-> > Hence according to the above, the crashkernel is rightfully allowed to
-> > do whatever it wants with all memory under the /memory node.
-> > However, there is also
-> > Documentation/devicetree/bindings/reserved-memory/reserved-memory.txt.
-> > This suggests the crashkernel should be passed a DTB that contains a
-> > /reserved-memory node, describing which memory cannot be used freely.
-> > Then the decompressor needs to take this into account when deciding
-> > where the put the kernel.
-> >
-> > Yes, the above requires changing code. But at least it provides a
-> > path forward, getting rid of the fragile old masking technique.
->
-> There is an existing "linux,usable-memory-range" property documented
-> in Documentation/devicetree/bindings/chosen.txt, which as I understand
-> is exactly what you are looking for, except that it is currently only
-> documented for arm64.
+Here are a handful of sigreturn unwinding fixes, based on top of for-next/bti.
+Note that I haven't confirmed the GDB breakage, I only spotted it by reading
+the code.
 
-Thank you, that looks appropriate!
+Daniel, Tamas: please can you confirm that these fix your unwinding issues with
+LLVM?
 
-It seems this is not really used by the early startup code.
-Is that because the early startup code always runs in-place, and the
-kernel image is not even copied?
+Given that this has always been broken and there's a risk of introducing
+a new regression, I plan to queue these for 5.8 so that we can revert
+bits if necessary.
 
-> Would extending this to arm work?
+Thanks,
 
-Let's see.... Th arm early boot code seems to be more complex than the
-arm64 code ;-)
+Will
 
-Gr{oetje,eeting}s,
+Cc: Dave Martin <dave.martin@arm.com>
+Cc: Tamas Zsoldos <tamas.zsoldos@arm.com> 
+Cc: Daniel Kiss <daniel.kiss@arm.com>
+Cc: Mark Brown <broonie@kernel.org>
+Cc: <kernel-team@android.com>
 
-                        Geert
+--->8
 
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+Will Deacon (3):
+  arm64: vdso: Don't prefix sigreturn trampoline with a BTI C
+    instruction
+  arm64: vdso: Add a comment to justify the mysterious NOP in sigreturn
+  arm64: vdso: Fix CFI directives in sigreturn trampoline
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+ arch/arm64/kernel/vdso/sigreturn.S | 20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
+
+-- 
+2.26.2.761.g0e0b3e54be-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
