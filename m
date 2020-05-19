@@ -2,74 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC6AB1D95CD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 14:02:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C30091D95D8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 14:05:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KFufUgM+oPMirQG69XmfT9iqaF+yqTRipnfbMDC1LGU=; b=d1zxDBjWPB0bAS
-	6/5+OTxJxIs9Z2Egu1BuYnFVmXgu4cpnseoTzK610mNv9eyrJqrtAg2SDXGNDbOrUnL4epQbPfHqG
-	Zj9VWD5q0i2HR1FVLajtp3L2aZuHmLp8Jqx/dlEc3qavKqM/jl+wSNFa/brMchu47/LIXk433WVsP
-	y4fe+EnTJGIaC9Vg4Vk41xC3exThW5qFxY4ICYU7yiDeMGam2aiv0l5q3LNd4kWWNb0on70L9YjoH
-	ONJnyq8zza4F6bfK6sRdII/c5gmfUxNaBS7jW05LxZO0z0zYpVe16CSBOJwJiIan0ZjcCqGRZNMZC
-	7ODqV6JDPY335bbHeXFA==;
+	List-Owner; bh=jwFoBk39XRhCtj+M9PNbKuZtAQt45RV4WaSWhFFe2K4=; b=GTQOGHv99cZwMz
+	hL1FXuziXxDYCR7pEP3Xsm9SMz/GSsRTpvkdei5LuBO2s9zfDE4um5YbLR2eND26UwVTqdofbf63F
+	LtAHtkgxne/x39SU+rVV23Defylgdaptx4kwO/9Zfd/gxlXl6+wHYyOjpoGB7qNCXK56TrS+4arnc
+	FH7iYULl022DtBGYkDv+oidg/IVphVkX/dxLeiT3UZSd0FV6IQ11xrmUr/uqE/JZ5mwy69ycaSSgD
+	YXVenwlIhqgXvGCixx65rry8WF5oYefpYCXheR3e0Isaj3clo3eMUUjffXa4ayDdTmbBZgVeR5wQJ
+	af1VTkPeSzWwpketF7ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb0xG-00042i-Mk; Tue, 19 May 2020 12:02:42 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jb105-0006om-C5; Tue, 19 May 2020 12:05:37 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb0x8-00042I-I3
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 12:02:36 +0000
-Received: by mail-lj1-x244.google.com with SMTP id u15so13428919ljd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 05:02:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=b8KwBLKnWCGgbe53yebPowDIx5ULF3rWj/6PyJ/tx+M=;
- b=mHTuqLAae2iE7ABruI92CLk17sUOghT8/kPediRmqiB4EaDa1ewV7fMfQ3JkVdsUEp
- 5/jrl3ekK7teSb1RpdgwqnPFjxyJEF3Wt0hjalfIimOGFqqtNGTMu79Qkk8hCazAMnUK
- /c9bNyrs/1vd304P5MYd6gdpC0pTOJM59BkOWeGPFH3AQmCiepiRk2tF/QL7qOx0U6Ch
- RSxp58rrqVBB4RV3DF56H0jmlGheMoxkn3Ife6YG9qa9zHwIHJ5qFHX/2Mfa3Y2c0b6i
- e5xVofQfINmNawBfojAVn/92vG5ZCASF+cUs0+YZtJYH1Cbpj80N+GLVBBA5fLCMYWuI
- TkjA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=b8KwBLKnWCGgbe53yebPowDIx5ULF3rWj/6PyJ/tx+M=;
- b=fXD47rNSTZGBmOFloM+PLi3u8WgLLXiQr07halTd2G5MZnRD2aIflkh+ZHvUm2bmhq
- cSNARnE/Aj/AGgniOyt1lSH9poPN7hfGHPRbSeBsbSugeZYVfc72SNlv8RszhSUj8mje
- SZ8o0ajcSPyFAnExmfW+IMiBSXmM93u0gl3qzBAiAZv7Z1A4YjdW8Z1r9G4YIbUJrpCu
- bobDngHGTb6E37IFiUIVFWBJZhui32Vq2AKHEixa/lyPeMvTXPP0nt8AJhuwDCCI5GBg
- 67Y7Nsi0N4LQUMsS8gHTMpnJV5TD05FAtwZVYrstjoUE72r88qQahblc9qRpTudwxvHX
- bZ1g==
-X-Gm-Message-State: AOAM531Pg4T2Cwc3KsakDP1EOsnpBTNrHJzWeqjw+1nGTZ4pTeAZT4Ip
- 9DGsZxxNj1Bxw0KM8yxy4iV0oRGYx7/1HKKb6EE1+NTisbI=
-X-Google-Smtp-Source: ABdhPJyTZo81kV8Mg2yhrwa9EXegaNSnP2ZfZ5NZoQywU2X/nwdhcVApbAAvw+QM9fSRrCuMxHQNpoL2NPavxhJYJKc=
-X-Received: by 2002:a2e:8018:: with SMTP id j24mr3228064ljg.99.1589889752730; 
- Tue, 19 May 2020 05:02:32 -0700 (PDT)
+ id 1jb0zv-0006o7-L3
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 12:05:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589889927; x=1621425927;
+ h=date:from:to:cc:subject:message-id:references:
+ mime-version:in-reply-to;
+ bh=q+uMgkWii/Rp8nZstyK9Xz4jIR2voQK7J5e60BEVm4E=;
+ b=L6yf27KRj+3Q19B10rsmxkA6OprftijbRgu1znMRub7TXqoJheE95Ugs
+ Qk6/st7cBQoPhq5jef6Ahn6EtvnR7H6UfxxscJt6jkWqAv4aQ7FWA+n/h
+ SYaqNoO9e6D2uMqdLkSitV0nOiP+oHoLiUZGB0TxAFua/5oEFBzipFQKs
+ mxoPbGY1WLqGcWo2NXILICodpX+9b4vz72ViWoiAz3s+JaGxBOYxVHqyb
+ rnqmTIrn0L8nspVK1yk01t7y2v99Ai1aQe9IJMkry9XWixmdr5owDg0VR
+ tkz0GizQrzkHapT8uaVkuLNoc0zf86yzdWxs1C5zAfKfOhLfgXGti1WiM A==;
+IronPort-SDR: RnaVAjoz7qlXYMO1U7Qf00Q1j9MjlGTJ5imBEoeQvtjHIpfDMXUeF8auplwCmIZVc3Kf61ZPrW
+ 7194go2GC/2b3tc8QV/pd+xedtcmeIiyBHKZcmiZ9lZ34WrUNApXEb4J2dEB1UWSCeiKMLjTS9
+ sFLtmAFWo9CiK+BITa8mB7Ka7lCPxPG50pqHKEUar6yR5l6L2VF2UWL1gGPUjhoDslBxMWqIho
+ EWs9ppZc7Yi+8JLhoT1SiMcuSSWFpdraxWoyDXOMjqCUQzaz/Sz+Es4OOBFoTrLAgnyEmQKbFl
+ o9s=
+X-IronPort-AV: E=Sophos;i="5.73,410,1583218800"; d="scan'208";a="73868962"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 19 May 2020 05:05:25 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 19 May 2020 05:05:26 -0700
+Received: from localhost (10.10.115.15) by chn-vm-ex04.mchp-main.com
+ (10.10.85.152) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Tue, 19 May 2020 05:05:25 -0700
+Date: Tue, 19 May 2020 14:05:19 +0200
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH 05/10] spi: spi-dw-mmio: Spin off MSCC platforms into
+ spi-dw-mchp
+Message-ID: <20200519120519.GE24801@soft-dev15.microsemi.net>
+References: <20200513140031.25633-1-lars.povlsen@microchip.com>
+ <20200513140031.25633-6-lars.povlsen@microchip.com>
+ <20200513151811.GL4803@sirena.org.uk>
 MIME-Version: 1.0
-References: <828135836.20701492468756240.nrg02771@nifty.com>
-In-Reply-To: <828135836.20701492468756240.nrg02771@nifty.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 19 May 2020 14:02:21 +0200
-Message-ID: <CACRpkdZP-JN2PNSnDeKcavod61gJfRQmm9mMUUU2yCd3cgchqw@mail.gmail.com>
-Subject: Re: Increase stack size to 16KB
-To: nrg02771@nifty.com
+Content-Disposition: inline
+In-Reply-To: <20200513151811.GL4803@sirena.org.uk>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_050234_595324_42F31309 
-X-CRM114-Status: GOOD (  11.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200519_050527_778818_9DFC6673 
+X-CRM114-Status: GOOD (  15.27  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.154.123 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,34 +95,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ SoC Team <soc@kernel.org>, Lars Povlsen <lars.povlsen@microchip.com>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 18, 2017 at 12:40 AM <nrg02771@nifty.com> wrote:
+On 13/05/20 16:18, Mark Brown wrote:
+> Date: Wed, 13 May 2020 16:18:11 +0100
+> From: Mark Brown <broonie@kernel.org>
+> To: Lars Povlsen <lars.povlsen@microchip.com>
+> Cc: SoC Team <soc@kernel.org>, Microchip Linux Driver Support
+>  <UNGLinuxDriver@microchip.com>, linux-spi@vger.kernel.org,
+>  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+>  linux-arm-kernel@lists.infradead.org, Alexandre Belloni
+>  <alexandre.belloni@bootlin.com>
+> Subject: Re: [PATCH 05/10] spi: spi-dw-mmio: Spin off MSCC platforms into
+>  spi-dw-mchp
+> User-Agent: Mutt/1.10.1 (2018-07-13)
+> 
+> On Wed, May 13, 2020 at 04:00:26PM +0200, Lars Povlsen wrote:
+> 
+> > +config SPI_DW_MCHP
+> > +	tristate "Memory-mapped io interface driver using DW SPI core of MSCC SoCs"
+> > +	default y if ARCH_SPARX5
+> > +	default y if SOC_VCOREIII
+> 
+> Why the default ys?
 
-> I want to increase stack size to 16KB on freescale 32bit arm system.
-(...)
-> I modified the following kernel source code to increase stack size.
-> I confirmed kernel work fine, but after mounted rootfs, init process
-> dose not work with the following error message.
->  I confirmed init process created without error, but it seems when
-> executing init process the error occurs.
-> Is it possible to increase stack size to 16KB with 32bit arm freescale
-> environment?
->
-> I confirmed OMAP arm 32bit environment work fine with the same modification.
+The SoC will typically boot from SPI... But its not a requirement per
+se. I will remove it.
 
-I think I have solved this as part of my work on the KASan
-support for ARMv4 and ARMv5.
+> 
+> > +++ b/drivers/spi/Makefile
+> > @@ -37,6 +37,7 @@ obj-$(CONFIG_SPI_DAVINCI)		+= spi-davinci.o
+> >  obj-$(CONFIG_SPI_DLN2)			+= spi-dln2.o
+> >  obj-$(CONFIG_SPI_DESIGNWARE)		+= spi-dw.o
+> >  obj-$(CONFIG_SPI_DW_MMIO)		+= spi-dw-mmio.o
+> > +obj-$(CONFIG_SPI_DW_MCHP)		+= spi-dw-mchp.o
+> >  obj-$(CONFIG_SPI_DW_PCI)		+= spi-dw-midpci.o
+> >  spi-dw-midpci-objs			:= spi-dw-pci.o spi-dw-mid.o
+> >  obj-$(CONFIG_SPI_EFM32)			+= spi-efm32.o
+> 
+> Please keep the file alphabetically sorted.
+> 
 
-Could you check this patch:
-https://lore.kernel.org/linux-arm-kernel/20200515124808.213538-1-linus.walleij@linaro.org/
+Noted.
 
-Yours,
-Linus Walleij
+> > +++ b/drivers/spi/spi-dw-mchp.c
+> > @@ -0,0 +1,232 @@
+> > +// SPDX-License-Identifier: GPL-2.0-only
+> > +/*
+> > + * Memory-mapped interface driver for MSCC SoCs
+> > + *
+> 
+> Please make the entire comment a C++ one so things look more
+> intentional.
+
+Sure, I can do that. The presented form matches that of the other
+spi-dw-* drivers, but I can see other using // blocks. Ack.
+
+> 
+> > +#define MAX_CS		4
+> 
+> This should be namespaced.
+
+Ack.
+
+> 
+> > +	rx_sample_dly = 0;
+> > +	device_property_read_u32(&pdev->dev, "spi-rx-delay-us", &rx_sample_dly);
+> > +	dws->rx_sample_dly = DIV_ROUND_UP(rx_sample_dly,
+> > +					  (dws->max_freq / 1000000));
+> 
+> If this is a standard feature of the DesignWare IP why parse it here and
+> not in the generic code?
+
+This is a standard feature of the DesignWare IP, so good suggestion. I
+will arrange with Serge.
+
+Thank you for your comments!
+
+---Lars
+
 
 _______________________________________________
 linux-arm-kernel mailing list
