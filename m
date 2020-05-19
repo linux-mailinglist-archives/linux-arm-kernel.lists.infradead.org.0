@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 342841D9C46
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:18:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 559A41D9C55
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:19:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Gcsy6syFLfvxRprzHk9UdWFOfX4Gmgd8f1aha0UVrDg=; b=OeSdrcn2biQL4J
-	9az5Rwlkv4YYtc0CzlPFQAyUxuE3K+Eqojsr1CO+MOWRW5CROujmU21osoPz4JBsWoh04+iLhrFV1
-	DRXiad1eZ1fMUnGOlKuzKgaVAFHqKIsi5pITvBbGncq5ANXtZq8HcQl5B+lfA1VzVw411n/xLkjWc
-	MazVIHb5j3Qhvfev1Tsar+oynQGM74RJZitVU29Y4umYjg+EGO4CqMSSkHu2663U9WMPu8VEaEtlx
-	+NCU93ZdbJMO25WbtfaQsOTb3+Z+z/KvzHJ0IFjyLuSn9ORqmXr/a6qAg5dJ9jn2mXG7PCXyf45RH
-	aJmBZA6Fi2LHaaVs7F3A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nxDdyq8E+a7VfKnJ0vL44jxE2BLtBd2hnTMgM1insww=; b=WDg2rY5bLVPHQ+
+	f7vnAk2Xy8FDA/PjYEwMIXXXES095PwNPowtcjpIhSwzrSFwR0BKuaHY5s99RjbFYjhuiypBtTU9/
+	L+DMLhdDd7DfspoTCUJ/gYweXPp2Fi9l1gZKk8cJSAaKf6e9GWI/ysj9uzeor3z6pVBqkfKnoIj8T
+	38Ce4SMkZ41bnJTuNq6PouhoIZxUrxO8hB0BpzK5Jq3XLqtZ6xpoVJCLsxdCs1GMsU24QypLgeJ6T
+	f0dVBiTBfjfsG85RSebJFEYQy/qxd5qGmP2HaLFUota1xOjCsx1q4+bC0Kbci7pSpmRqpZh7b9q7B
+	RuEpUavshfWaqnEC6eiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb4x0-0003IG-MP; Tue, 19 May 2020 16:18:42 +0000
+	id 1jb4xJ-0003Wa-Bf; Tue, 19 May 2020 16:19:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb4wg-0003Ft-Db
+ id 1jb4wg-0003G8-Qp
  for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:18:24 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DF6562075F;
- Tue, 19 May 2020 16:18:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 69B142081A;
+ Tue, 19 May 2020 16:18:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
  s=default; t=1589905102;
- bh=43ce4nit21Yc0x0JFx+LHp0qLH0ptaBXuqqPGTS36WI=;
- h=From:To:Cc:Subject:Date:From;
- b=GSE28+0qDdPvn+rf3b26ijIH0PB2Tb3q5+F9sWRssg3xdF9sv0lalo/qRKmykHxeS
- KhFU+4/8EXjTGXmWxw9JicapnJA+T0/JffZjGLCZYinV+FFgX9jps8soazjO50Hnlw
- GZw95knVh1mAm0+XEU3AEGvckgqiyCxvDllzvipE=
+ bh=ETceS5yARBIur5hySytUSkticz4wlgZ6d9YCm3cxtPg=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=i3yZhUlGNvJcRentzFVvLNeLIyti5dro9BGoBLWzXGOCw9ZpaxMTHWk9kUwZxuT3d
+ MxFmp0fiJeK3uDMYmnao8e8HIguvnsF5UDrii/DgLlaC2/Qblj3zXE22znL5P4bzgk
+ MI2gLoZBr+AH1PIrqdcPmOJKV98gF6MD5C39CrDU=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jb4we-00Decy-9b; Tue, 19 May 2020 17:18:20 +0100
+ id 1jb4we-00Decy-QX; Tue, 19 May 2020 17:18:20 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 00/11] arm/arm64: Turning IPIs into normal interrupts
-Date: Tue, 19 May 2020 17:17:44 +0100
-Message-Id: <20200519161755.209565-1-maz@kernel.org>
+Subject: [PATCH 01/11] genirq: Add fasteoi IPI flow
+Date: Tue, 19 May 2020 17:17:45 +0100
+Message-Id: <20200519161755.209565-2-maz@kernel.org>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200519161755.209565-1-maz@kernel.org>
+References: <20200519161755.209565-1-maz@kernel.org>
 MIME-Version: 1.0
 X-SA-Exim-Connect-IP: 62.31.163.78
 X-SA-Exim-Rcpt-To: linux-arm-kernel@lists.infradead.org,
@@ -58,8 +60,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_091822_497434_E1263D3E 
-X-CRM114-Status: GOOD (  14.83  )
+X-CRM114-CacheID: sfid-20200519_091822_904629_68DDF998 
+X-CRM114-Status: GOOD (  15.46  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,67 +99,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For as long as SMP ARM has existed, IPIs have been handled as
-something special. The arch code and the interrupt controller exchange
-a couple of hooks (one to generate an IPI, another to handle it).
+For irqchips using the fasteoi flow, IPIs are a bit special.
 
-Although this is perfectly manageable, it prevents the use of features
-that we could use if IPIs were Linux IRQs (such as pseudo-NMIs). It
-also means that each interrupt controller driver has to follow an
-architecture-specific interface instead of just implementing the base
-irqchip functionnalities. The arch code also duplicates a number of
-things that the core irq code already does (such as calling
-set_irq_regs(), irq_enter()...).
+They need to be EOId early (before calling the handler), as
+funny things may happen in the handler (they do not necessarily
+behave like a normal interrupt), and that the arch code is
+already handling the stats.
 
-This series tries to remedy this on arm/arm64 by offering a new
-registration interface where the irqchip gives the arch code a range
-of interrupts to use for IPIs. The arch code requests these as normal
-interrupts.
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+---
+ include/linux/irq.h |  1 +
+ kernel/irq/chip.c   | 26 ++++++++++++++++++++++++++
+ 2 files changed, 27 insertions(+)
 
-The bulk of the work is at the interrupt controller level, where all 3
-irqchips used on arm64 get converted.
-
-Finally, the arm64 code drops the legacy registration interface. The
-same thing could be done on 32bit as well once the two remaining
-irqchips using that interface get converted.
-
-There is probably more that could be done: statistics are still
-architecture-private code, for example, and no attempt is made to
-solve that (apart from hidding the IRQs from /proc/interrupt).
-
-This has been tested on a bunch of 32 and 64bit guests.
-
-Marc Zyngier (11):
-  genirq: Add fasteoi IPI flow
-  genirq: Allow interrupts to be excluded from /proc/interrupts
-  arm64: Allow IPIs to be handled as normal interrupts
-  ARM: Allow IPIs to be handled as normal interrupts
-  irqchip/gic-v3: Describe the SGI range
-  irqchip/gic-v3: Configure SGIs as standard interrupts
-  irqchip/gic: Refactor SMP configuration
-  irqchip/gic: Configure SGIs as standard interrupts
-  irqchip/gic-common: Don't enable SGIs by default
-  irqchip/bcm2836: Configure mailbox interrupts as standard interrupts
-  arm64: Kill __smp_cross_call and co
-
- arch/arm/Kconfig                  |   1 +
- arch/arm/include/asm/smp.h        |   5 +
- arch/arm/kernel/smp.c             |  97 +++++++++++---
- arch/arm64/Kconfig                |   1 +
- arch/arm64/include/asm/irq_work.h |   4 +-
- arch/arm64/include/asm/smp.h      |   6 +-
- arch/arm64/kernel/smp.c           |  98 +++++++++++----
- drivers/irqchip/irq-bcm2836.c     | 151 ++++++++++++++++++----
- drivers/irqchip/irq-gic-common.c  |   3 -
- drivers/irqchip/irq-gic-v3.c      | 109 ++++++++++------
- drivers/irqchip/irq-gic.c         | 203 ++++++++++++++++++------------
- include/linux/irq.h               |   4 +-
- kernel/irq/chip.c                 |  26 ++++
- kernel/irq/debugfs.c              |   1 +
- kernel/irq/proc.c                 |   2 +-
- kernel/irq/settings.h             |   7 ++
- 16 files changed, 515 insertions(+), 203 deletions(-)
-
+diff --git a/include/linux/irq.h b/include/linux/irq.h
+index 8d5bc2c237d7..726f94d8b8cc 100644
+--- a/include/linux/irq.h
++++ b/include/linux/irq.h
+@@ -621,6 +621,7 @@ static inline int irq_set_parent(int irq, int parent_irq)
+  */
+ extern void handle_level_irq(struct irq_desc *desc);
+ extern void handle_fasteoi_irq(struct irq_desc *desc);
++extern void handle_percpu_devid_fasteoi_ipi(struct irq_desc *desc);
+ extern void handle_edge_irq(struct irq_desc *desc);
+ extern void handle_edge_eoi_irq(struct irq_desc *desc);
+ extern void handle_simple_irq(struct irq_desc *desc);
+diff --git a/kernel/irq/chip.c b/kernel/irq/chip.c
+index 41e7e37a0928..7b0b789cfed4 100644
+--- a/kernel/irq/chip.c
++++ b/kernel/irq/chip.c
+@@ -955,6 +955,32 @@ void handle_percpu_devid_irq(struct irq_desc *desc)
+ 		chip->irq_eoi(&desc->irq_data);
+ }
+ 
++/**
++ * handle_percpu_devid_fasteoi_ipi - Per CPU local IPI handler with per cpu
++ *				     dev ids
++ * @desc:	the interrupt description structure for this irq
++ *
++ * The biggest differences with the IRQ version are that:
++ * - the interrupt is EOIed early, as the IPI could result in a context
++ *   switch, and we need to make sure the IPI can fire again
++ * - Stats are usually handled at the architecture level, so we ignore them
++ *   here
++ */
++void handle_percpu_devid_fasteoi_ipi(struct irq_desc *desc)
++{
++	struct irq_chip *chip = irq_desc_get_chip(desc);
++	struct irqaction *action = desc->action;
++	unsigned int irq = irq_desc_get_irq(desc);
++	irqreturn_t res;
++
++	if (chip->irq_eoi)
++		chip->irq_eoi(&desc->irq_data);
++
++	trace_irq_handler_entry(irq, action);
++	res = action->handler(irq, raw_cpu_ptr(action->percpu_dev_id));
++	trace_irq_handler_exit(irq, action, res);
++}
++
+ /**
+  * handle_percpu_devid_fasteoi_nmi - Per CPU local NMI handler with per cpu
+  *				     dev ids
 -- 
 2.26.2
 
