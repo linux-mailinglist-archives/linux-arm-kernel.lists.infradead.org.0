@@ -2,56 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 953E21D9F35
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 20:22:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 822E21D9F7B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 20:28:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4TtytQFePmTgShstjtmtZMJPSaGWSP8LT+4M9EVDuxA=; b=WapBdYlwAyGoUt
-	Vkf/0Oi6HxDaLnpOmdwuwmIzP0ZM6eMsZgnLE3mEuHgqkGoniM2Ym6o73HNi5pKUKpmiYXzdbag69
-	0+EDj9pj4uPVskOhmALcVyTpCjGDJWJ5RDn0DZBLLglEU1K/6qEc4U8Y9z2xhsaoXawWLSBTecC8W
-	weU+2MQdEbQOaoX4zvRiEhtYrG0MWwqBBhLvC9zsVHX5KwO/un2tX6HX4ctgXxDOt38btslAPhuvW
-	NPLQEXxj3TpgRzGS9kNYJ2jYWHTsNJm0zhP9EpbLMAuPex72ZJK310esp4s6Y47T+DaablNRjkPsA
-	iIIdYDQTG/5+wd6ggPRQ==;
+	List-Owner; bh=Za0facIw36DIzmDuGRJXfXc8whWRsfobWR53Cep+xFs=; b=RxiR9NZNEDZarh
+	s3c4FF9cr4dab5oEsfp4WT+SLm+3WEBOQkLxZoF/VvruB4cL4tmu8aavCNl0UxKJUqv3GAGVE2JSc
+	1hqda1sjMo1aAARFLcapPuqkWyds34NYyB0OLdNsDEhwcD1LrNKtBLKKU8hd2JV5bMu0K3TWnntk0
+	QOYsUJFaQIiuGwJeJyFj5YjG0swWi7qD1lSJRKE1zwhjmb58MzYbl7QwNf78bPIjVLKDMWe1t2AaW
+	SNYrvSDadiVsR/j07SJCX9uys20EyTiX+8ODPDn/aSW0s2hSu/b7lz1svD/lrkuO6nEssCSTjZI/9
+	jl3cVNe+WU3SDNDrAP7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb6t0-0000uV-2l; Tue, 19 May 2020 18:22:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb6rm-0008T2-HH
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 18:21:28 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7DE6B31B;
- Tue, 19 May 2020 11:21:25 -0700 (PDT)
-Received: from melchizedek.cambridge.arm.com (melchizedek.cambridge.arm.com
- [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 988E83F305;
- Tue, 19 May 2020 11:21:24 -0700 (PDT)
-From: James Morse <james.morse@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/3] firmware: arm_sdei: Document the motivation behind these
- set_fs() calls
-Date: Tue, 19 May 2020 19:21:08 +0100
-Message-Id: <20200519182108.13693-4-james.morse@arm.com>
-X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20200519182108.13693-1-james.morse@arm.com>
-References: <20200519182108.13693-1-james.morse@arm.com>
+	id 1jb6yu-0007Ce-Cj; Tue, 19 May 2020 18:28:48 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jb6yg-0007C2-RB; Tue, 19 May 2020 18:28:36 +0000
+Received: by mail-il1-f196.google.com with SMTP id j3so343915ilk.11;
+ Tue, 19 May 2020 11:28:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=J9uhOTh98EU4qKAMLm9nufM4MlbPiYXtLFkDWwncKGI=;
+ b=h7N4dlPME1JzFE+cMcHrhaRPUFJTmvAIL/MUjCx2kD29kHcekcBUKMLjhSi0n/N8sN
+ 2MYG1yzQmm7ouET1BooCVzrQq1tJF0QvAYQ0u4M/R9rQTAj9w9sWwu6n/sAYkdyl4fTr
+ h3Ei1brchu6I69MJS4vmd6AmuDR/KVdbzgR+MAN+dGg9cOgKYscxUrSsi50TSsXxVjJZ
+ ON841nu9k03vB75a5xUKOVSGollwEMWhOSul5pAJyW4rmtle929XL6RpdguaNHGKMntP
+ 39RAm/BmGujgjZuvVmq6dVnt0sd/V8hBddRL4Fhb0nZQJDSEpXGN7g13g4y4CumU6mKw
+ hRRw==
+X-Gm-Message-State: AOAM532nIMO252EUd+34PGfypPT8WYa/zwImTsExKyjHSkKqzrpz/UXK
+ 13D90u1M7Z5XF7HXDRK/KQ==
+X-Google-Smtp-Source: ABdhPJyzGMuEyVNB7e4uRuuhX+smoH/YHIHeUureMb4VVb62KfaPIvAZVXuVI5Ucz4yOw91ZAaFLjg==
+X-Received: by 2002:a05:6e02:cc1:: with SMTP id
+ c1mr341461ilj.260.1589912913424; 
+ Tue, 19 May 2020 11:28:33 -0700 (PDT)
+Received: from xps15 ([64.188.179.252])
+ by smtp.gmail.com with ESMTPSA id h9sm168552ioa.6.2020.05.19.11.28.31
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 19 May 2020 11:28:32 -0700 (PDT)
+Received: (nullmailer pid 424602 invoked by uid 1000);
+ Tue, 19 May 2020 18:28:31 -0000
+Date: Tue, 19 May 2020 12:28:31 -0600
+From: Rob Herring <robh@kernel.org>
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+Subject: Re: [PATCH v2 01/14] dt-bindings: arm: add a binding document for
+ MediaTek PERICFG controller
+Message-ID: <20200519182831.GA418402@bogus>
+References: <20200511150759.18766-1-brgl@bgdev.pl>
+ <20200511150759.18766-2-brgl@bgdev.pl>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200511150759.18766-2-brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_112126_726983_BA451629 
-X-CRM114-Status: GOOD (  11.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200519_112834_880714_01E34CBE 
+X-CRM114-Status: GOOD (  14.30  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,50 +91,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- James Morse <james.morse@arm.com>, Will Deacon <will@kernel.org>,
- Christoph Hellwig <hch@lst.de>, Hanjun Guo <guohanjun@huawei.com>
+Cc: Edwin Peer <edwin.peer@broadcom.com>, devicetree@vger.kernel.org,
+ Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Arnd Bergmann <arnd@arndb.de>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ netdev@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ linux-kernel@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
+ Fabien Parent <fparent@baylibre.com>, Pedro Tsai <pedro.tsai@mediatek.com>,
+ linux-mediatek@lists.infradead.org,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The SDEI handler save/restores the addr_limit using set_fs(). It isn't
-very clear why. The reason is to mirror the arch code's entry assembly.
-The arch code does this because perf may access user-space, and
-inheriting the addr_limit may be a problem.
+On Mon, May 11, 2020 at 05:07:46PM +0200, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> 
+> This adds a binding document for the PERICFG controller present on
+> MediaTek SoCs. For now the only variant supported is 'mt8516-pericfg'.
+> 
+> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> ---
+>  .../arm/mediatek/mediatek,pericfg.yaml        | 34 +++++++++++++++++++
+>  1 file changed, 34 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.yaml b/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.yaml
+> new file mode 100644
+> index 000000000000..74b2a6173ffb
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.yaml
+> @@ -0,0 +1,34 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: "http://devicetree.org/schemas/arm/mediatek/mediatek,pericfg.yaml#"
+> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> +
+> +title: MediaTek Peripheral Configuration Controller
+> +
+> +maintainers:
+> +  - Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
 
-Add a comment explaining why this is here.
+Don't need oneOf here.
 
-Link: https://bugs.chromium.org/p/project-zero/issues/detail?id=822
-Suggested-by: Christoph Hellwig <hch@lst.de>
-Signed-off-by: James Morse <james.morse@arm.com>
----
- drivers/firmware/arm_sdei.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+> +      - items:
+> +        - enum:
+> +          - mediatek,pericfg
 
-diff --git a/drivers/firmware/arm_sdei.c b/drivers/firmware/arm_sdei.c
-index b12b99a19f66..e7e36aab2386 100644
---- a/drivers/firmware/arm_sdei.c
-+++ b/drivers/firmware/arm_sdei.c
-@@ -1128,6 +1128,14 @@ int sdei_event_handler(struct pt_regs *regs,
- 	mm_segment_t orig_addr_limit;
- 	u32 event_num = arg->event_num;
- 
-+	/*
-+	 * Save restore 'fs'.
-+	 * The architecture's entry code save/restores 'fs' when taking an
-+	 * exception from the kernel. This ensures addr_limit isn't inherited
-+	 * if you interrupted something that allowed the uaccess routines to
-+	 * access kernel memory.
-+	 * Do the same here because this doesn't come via the same entry code.
-+	*/
- 	orig_addr_limit = get_fs();
- 	set_fs(USER_DS);
- 
--- 
-2.19.1
+Doesn't match the example (which is correct).
 
+> +        - const: syscon
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    pericfg: pericfg@10003050 {
+> +        compatible = "mediatek,mt8516-pericfg", "syscon";
+> +        reg = <0 0x10003050 0 0x1000>;
+> +    };
+> -- 
+> 2.25.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
