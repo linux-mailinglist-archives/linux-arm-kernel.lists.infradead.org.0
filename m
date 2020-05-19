@@ -2,86 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 651371DA03B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:01:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25ED81DA054
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:02:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=kFdk5XN4NX8Z9XCQdz0xDbs9mQY0nr6nBF/A8CphsoU=; b=er1BBleNT+W1x779Fa6zYSOIUK
-	76B5fGm87TtYIk1HjvjAs8SUVZhOOVCI0cyNaICf4WKPFsEbI2W0c9bVtnvSHiFQoBB9xmsnz9u3D
-	1Guy+rwp4UiMUoYZXxcWN+3fJyXubd9Vbmba9AYLWkBNkD3r/16c+wGLcaNnb1vc6itbhl4Qyrp4w
-	ne/thHAKBXNOlV3iRlGc1b1GwRmmTRD4XIaQ4IjxI7G9wPJPSpZQn7/3YjZBps7vIttGfzmD3P3LU
-	czAaQBvWm4lAeF6iLdsWDZGEJ6CJmNxHbmGpWlVeeqcPb3uBWvrp3zNEVCOM/Z3TD0mpiyi5l1DPD
-	kO/xhpGA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=AYRWrHsDIjKOv8zwgAfdKX3UPdhMdmMaNszmDwQz118=; b=SUKVoYIckceXe7
+	70BM9N17fEo9bC+0KHJn6XQHY6cRgMqSmAcGbZnaMjefsMq6qUy6bbvgBm3XA/uXBdXerKw829e0A
+	5W7oIHGTQH1KlpQQQIEFSUBh1JxyRYwDk8bPhvlLyODB/BlwFkT5a8Obi3bLZxCSEoGwFZ+pSbq3P
+	vyKyniBtNhfuEj/+lv74aXXeD9ctwHR2G2OH1Jk2IWQm9BR76P3eIdY3BSjc5rxPUatNS6JyO/oTY
+	QcdPgwKU78c7DaYDWxbBVZPUXjR5WEZeC/lyDOAk3PEfIq6tclzrc61oh/MtE9YGojdtN53KL4dPl
+	m17fNA+G5WYgMohwXP4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb7UF-0006zP-Vd; Tue, 19 May 2020 19:01:11 +0000
-Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
+	id 1jb7VX-0007KL-MP; Tue, 19 May 2020 19:02:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb7U4-0006y1-Rn; Tue, 19 May 2020 19:01:03 +0000
-Received: by mail-pj1-x102c.google.com with SMTP id q9so87642pjm.2;
- Tue, 19 May 2020 12:01:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=4feI+F4dRQodabQ0vztzMEpXoHHqdtslcAebc48QhuQ=;
- b=V8FZpf9QB5HvMPWR4n2yipk9nAHt9lzvzrk6aQhYx4qGZGtM8zGW1kD1vlNBWhqXZD
- UPT+1NbzpBylVFdJmd8Q3sh0r5J+rSQ8xaecm827s7eZ6aWHsPfJUB07EMSWZTkH2Dgl
- kSEa40EoyZYqiUZQxNeTFf5JrRXjZ2grV/m5Hua+0lvcXNZ2uhdupCi/eN1jQltTJnVi
- C1vPOZ8S8IqyFZu8i1Z1zvPJtgSRX9mRcWgZ8dqpnaJujEOu0u7QyWykd8c6KZGoCoy1
- aSwRfyDC0sGTpFfPXRJn++C+NI0w5ouPjaCuWxY9box11Dzy10potOHKjUcOKCOgA6GS
- LkVw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=4feI+F4dRQodabQ0vztzMEpXoHHqdtslcAebc48QhuQ=;
- b=AJZ5PuU2zCvYTuDE5Nf68zx8etRsLWyT0iRqFzQ85Qknc0CzWT2JAMKR89M8BQ4tFV
- 81wvPm/kg9jMCZQ8M7Q+mJWIs9h8FDaEAfZzYI2QeZWAdVSK8A7A9+thnQqrxDtHELgT
- +Mdk+lfBljTyMsO/pFYbyGBd2LTH/kyzTz0ArCitcMKIv+3j9NoEGIwhZKk6A17I2tWj
- bBywNcT5iY6EWeEhITi9k/P8rgDFMp6DSz381/aNkt0S6i/TDLRo9o8Cl7AUf2iId/t3
- 4NeYXmfGddD3WTe3YKeT5TOPpN3DnJSOh8Lm68AfCn+cFOO1kzdDLRTUDBswZzT8ZPsJ
- PtRQ==
-X-Gm-Message-State: AOAM533JAEAktQCgcTtjaWYOaCzzMUPBtg6uNKXe8u0gYySBbEsPY0F1
- f9pt+fWapFFV0SLZfSsECvE=
-X-Google-Smtp-Source: ABdhPJyiZ6GUF3NCEj+eBq7SSQdZCUNXewKkRllO1OxTLTo3bNYNftWhBN68lnt53o3fngDWu1RNpQ==
-X-Received: by 2002:a17:902:465:: with SMTP id 92mr836874ple.227.1589914859887; 
- Tue, 19 May 2020 12:00:59 -0700 (PDT)
-Received: from localhost.localdomain ([223.235.145.232])
- by smtp.gmail.com with ESMTPSA id k65sm196128pfd.156.2020.05.19.12.00.53
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 19 May 2020 12:00:58 -0700 (PDT)
-From: Amit Singh Tomar <amittomer25@gmail.com>
-To: andre.przywara@arm.com, afaerber@suse.de, manivannan.sadhasivam@linaro.org,
- robh+dt@kernel.org
-Subject: [PATCH v2 07/10] dt-bindings: reset: s700: Add binding constants for
- mmc
-Date: Wed, 20 May 2020 00:30:34 +0530
-Message-Id: <1589914834-1728-1-git-send-email-amittomer25@gmail.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1589912368-480-8-git-send-email-amittomer25@gmail.com>
-References: <1589912368-480-8-git-send-email-amittomer25@gmail.com>
+ id 1jb7VJ-0007Ia-NF
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 19:02:23 +0000
+Received: from localhost.localdomain
+ (laubervilliers-657-1-83-120.w92-154.abo.wanadoo.fr [92.154.90.120])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0E025207E8;
+ Tue, 19 May 2020 19:02:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589914937;
+ bh=p2x2LclJ0xI5fOs4bKaK0KKKNU41HHkLK1/dnIsHhbo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ed4rYd06KgneWuTtKnnW/R+djaWb82I8QTBhJc0jZJlJ0rzytKbNy+1RtJlXBofD1
+ 4brbfdRk+QiBYQNEfFB8eZdX4hEzXS7eGt2YhLnfNCZkBWNU+kPSapCxJ5YW9kBvRu
+ cR5tu2Ri5IFMPTwexevC84whByKeQ+IAON2s07GQ=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-crypto@vger.kernel.org
+Subject: [RFC/RFT PATCH 0/2] crypto: add CTS output IVs for arm64 and testmgr
+Date: Tue, 19 May 2020 21:02:09 +0200
+Message-Id: <20200519190211.76855-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_120100_899387_60A7BC62 
-X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-CacheID: sfid-20200519_120222_038057_94435AD8 
+X-CRM114-Status: UNSURE (   8.72  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:102c listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [amittomer25[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [amittomer25[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -89,6 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,44 +75,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-actions@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- cristian.ciocaltea@gmail.com
-MIME-Version: 1.0
+Cc: ebiggers@kernel.org, Stephan Mueller <smueller@chronox.de>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commit adds device tree binding reset constants for mmc controller
-present on Actions S700 Soc.
+Stephan reports that the arm64 implementation of cts(cbc(aes)) deviates
+from the generic implementation in what it returns as the output IV. So
+fix this, and add some test vectors to catch other non-compliant
+implementations.
 
-Acked-by: Rob Herring <robh@kernel.org>
-Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
----
-Changes since v1:
-	* No change.
-Changes since RFC:
-        * added Rob's acked-by tag
----
- include/dt-bindings/reset/actions,s700-reset.h | 3 +++
- 1 file changed, 3 insertions(+)
+Stephan, could you provide a reference for the NIST validation tool and
+how it flags this behaviour as non-compliant? Thanks.
 
-diff --git a/include/dt-bindings/reset/actions,s700-reset.h b/include/dt-bindings/reset/actions,s700-reset.h
-index 5e3b16b8ef53..a3118de6d7aa 100644
---- a/include/dt-bindings/reset/actions,s700-reset.h
-+++ b/include/dt-bindings/reset/actions,s700-reset.h
-@@ -30,5 +30,8 @@
- #define RESET_UART4				20
- #define RESET_UART5				21
- #define RESET_UART6				22
-+#define RESET_SD0				23
-+#define RESET_SD1				24
-+#define RESET_SD2				25
- 
- #endif /* __DT_BINDINGS_ACTIONS_S700_RESET_H */
+Cc: Stephan Mueller <smueller@chronox.de>
+
+Ard Biesheuvel (2):
+  crypto: arm64/aes - align output IV with generic CBC-CTS driver
+  crypto: testmgr - add output IVs for AES-CBC with ciphertext stealing
+
+ arch/arm64/crypto/aes-modes.S |  2 ++
+ crypto/testmgr.h              | 12 ++++++++++++
+ 2 files changed, 14 insertions(+)
+
 -- 
-2.7.4
+2.20.1
 
 
 _______________________________________________
