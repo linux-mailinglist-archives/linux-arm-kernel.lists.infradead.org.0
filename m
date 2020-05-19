@@ -2,91 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C88C1D8BAE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 01:38:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3098F1D8BFA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 02:04:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h9wuXi7Dz08m/tLwkUKT8wYqI6/S3Qe5nUstugwV2Nc=; b=r6L34YkBq2urri
-	oWrB/Wi64xUtWZ/+gm7nczqeqYU8V9RtCzjsgzS52L25F2CF4nerJlFsrkTuIXLApU/QwdSZSJqwO
-	V8G/4lkup2D+MuttID3rH32Dr13CmmgeJJVHuVcyqm6USAbtMemKK9Q3iMu7qcMPi7xuZLmS0Y9J9
-	GeqFW99QM9y29ZZeOPA8kV2Ja8bGIP86/91WItZvE+6pUAxTTth9YeHyJCVNhpC7lIiv530Zg9D8Q
-	rkGCO4S7fryUIV0ZBWWkplVPpo7915dmR0ErbFGK3EKHPy9uwrcN85+oTgKqOZmOmj4rwLO0mnJbr
-	dQLIKKXMbTT4AzrZvRzQ==;
+	List-Owner; bh=UyoRfXvX8HTm0WNCEFvQnD9W4AXHpuX0Tf6KeGeIJNY=; b=Ioj22+ZNupL3/7
+	yb2Ak5JkreUCOGNIgQVix9I58fy+lxRRg9qBH7h2uU7VoqjQ/T5Bc7eJb8y/POdg/fHn//Xd87L57
+	h+aEvsh2+eB8XCCFxmumJ2aKwkjsE0rx0FkNnZ3jzB61yKKBdAkoxdiVned6JGQKL3zCrcdP17rB8
+	0Q3YKpn1CUgVXxn6PK2+bjDErz1136fhhf7lG+VFC25TTWJDU7hvxfSh2QdNijm1lUcMWjsuTMbZd
+	v4fT3025xEAwcPOfEWL/H898IipUn8U6L0EBGbE2qTyy1yYdj0RkOJPEfCxoBf+IlBy1sYlubglxM
+	Md8RTECsmuX86QH1oUNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1japLC-0004hI-TP; Mon, 18 May 2020 23:38:38 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1japju-0002eR-Fe; Tue, 19 May 2020 00:04:10 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1japL3-0004g9-5K
- for linux-arm-kernel@lists.infradead.org; Mon, 18 May 2020 23:38:33 +0000
-Received: by mail-pl1-x644.google.com with SMTP id d3so153449pln.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 16:38:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=jUXXsTVi/ol985AWsfw16Z8ftNIvXp6W/qpkEYQEo4U=;
- b=s+mKwNYijhWIaplbTKQgFR81bjW3dhUrsvBZ7376un9NuP3I9BnY+6jNHD4t+ESEGL
- pdsEJyHKaNVvZ8/L5F5XsY8rGOchEDnWk4/7SsbN8CVOa//TA+YsGneY/7JT9DmUQFR3
- H2VS+nh+KO/dzlck7nYlysUPYGCrwwt0lz/g4jjtsFFQYuNnz4XgWZU0IwWMgWqynTqN
- v8u3q/9APfJ+yBh7DnuvgnXF4fdpQDb4Y8ajPAzLuM5YhhLJFLjzHTbSdU7acdyDoNOx
- m+1pO09nOIhxXKWbNq5038Xp7ZHJ7IdhAT65XzSsWnqhlG3z739aJMzXOD9rL2LuRX2F
- 5UyA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=jUXXsTVi/ol985AWsfw16Z8ftNIvXp6W/qpkEYQEo4U=;
- b=LUPPZAuJgCSZnp6amLzRYxGsFcOfZPm5+TzbR5nNboYe/Xhk9BNI3q3eI2eCNFe+IR
- +IyVcGRpJgkaj6IM7oCUEiMiCGNVKP+hml6u+PAv7wcyxXy5wc+W0kbl34IX3b/DXJne
- zeBZewxzaSS1zni+JSaZ1Yi8Z+xG6aiVMdh2nultVBpemEdhbyBv5VnSk+BSVeAjCnU1
- CGKAkVt4gm1d0FmQk7hoSx+dz/TN0KvM56zVv9JacaOZ2YEawAaw2p5+csVcvHAOfKnW
- OeZ1Y2HilEmqGWNq63WTT5Xsr4bRFbokcdVdFGlhCgzMgUWNAjOnO0phf4SUjAyiO/3r
- hc5g==
-X-Gm-Message-State: AOAM531rvuB/YRQClXs5L39EQgCrOFdwlW6Gif0IJkrfMeT8MWqKbxg+
- 5KfmBdBhWf3aTyrOlk+zSiS41A==
-X-Google-Smtp-Source: ABdhPJxYl66UOfL4Wmt6zKr1t0JLL0daGRW0Q1y3cPixiDFAjzScVKrnHuzvjxMckb9CWPsZyYjdgg==
-X-Received: by 2002:a17:90a:5802:: with SMTP id
- h2mr1765854pji.221.1589845103175; 
- Mon, 18 May 2020 16:38:23 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id i2sm8490631pgb.14.2020.05.18.16.38.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 16:38:22 -0700 (PDT)
-Date: Mon, 18 May 2020 16:37:00 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Alex Elder <elder@linaro.org>
-Subject: Re: [PATCH] arm64: defconfig: enable Qualcomm IPA and RMNet modules
-Message-ID: <20200518233700.GF279327@builder.lan>
-References: <20200518215455.10095-1-elder@linaro.org>
+ id 1japji-0002cd-5U; Tue, 19 May 2020 00:04:03 +0000
+IronPort-SDR: gZWmm/TEdsgnpd9ogOxWfOMGc/aGQHTtkpfINvOL6DiKqM1qQ8NErWGiJjvHi+GpmR6cbgCLNm
+ elqsv7knwHfw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 18 May 2020 17:03:54 -0700
+IronPort-SDR: CQuTQnTz1+JwZWX2d1WkK2LuNRFRtRrXIRjWbZwMShXh3iry4az0PRxvklanrFBM1Vj0az/yVj
+ 2Cp/II0Msphg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,408,1583222400"; d="scan'208";a="439413806"
+Received: from iweiny-desk2.sc.intel.com ([10.3.52.147])
+ by orsmga005.jf.intel.com with ESMTP; 18 May 2020 17:03:52 -0700
+Date: Mon, 18 May 2020 17:03:52 -0700
+From: Ira Weiny <ira.weiny@intel.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH V3 07/15] arch/kunmap_atomic: Consolidate duplicate code
+Message-ID: <20200519000352.GF3025231@iweiny-DESK2.sc.intel.com>
+References: <20200507150004.1423069-1-ira.weiny@intel.com>
+ <20200507150004.1423069-8-ira.weiny@intel.com>
+ <20200516223306.GA161252@roeck-us.net>
+ <20200518034938.GA3023182@iweiny-DESK2.sc.intel.com>
+ <20200518042932.GA59205@roeck-us.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200518215455.10095-1-elder@linaro.org>
+In-Reply-To: <20200518042932.GA59205@roeck-us.net>
+User-Agent: Mutt/1.11.1 (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_163829_256333_EA64CAD8 
-X-CRM114-Status: GOOD (  13.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200518_170358_221733_74CD5078 
+X-CRM114-Status: GOOD (  23.30  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,54 +72,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org, evgreen@chromium.org,
- agross@kernel.org, linux-arm-kernel@lists.infradead.org,
- subashab@codeaurora.org, will@kernel.org, cpratapa@codeaurora.org
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
+ linux-mips@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
+ Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
+ linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Chris Zankel <chris@zankel.net>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon 18 May 14:54 PDT 2020, Alex Elder wrote:
-
-> Enable building the Qualcomm IPA driver as a kernel module.  To be
-> useful, the IPA driver also requires RMNet, so enable building that
-> as a module as well.
+On Sun, May 17, 2020 at 09:29:32PM -0700, Guenter Roeck wrote:
+> On Sun, May 17, 2020 at 08:49:39PM -0700, Ira Weiny wrote:
+> > On Sat, May 16, 2020 at 03:33:06PM -0700, Guenter Roeck wrote:
+> > > On Thu, May 07, 2020 at 07:59:55AM -0700, ira.weiny@intel.com wrote:
+> > > > From: Ira Weiny <ira.weiny@intel.com>
+> > > > 
+> > > > Every single architecture (including !CONFIG_HIGHMEM) calls...
+> > > > 
+> > > > 	pagefault_enable();
+> > > > 	preempt_enable();
+> > > > 
+> > > > ... before returning from __kunmap_atomic().  Lift this code into the
+> > > > kunmap_atomic() macro.
+> > > > 
+> > > > While we are at it rename __kunmap_atomic() to kunmap_atomic_high() to
+> > > > be consistent.
+> > > > 
+> > > > Reviewed-by: Christoph Hellwig <hch@lst.de>
+> > > > Signed-off-by: Ira Weiny <ira.weiny@intel.com>
+> > > 
+> > > This patch results in:
+> > > 
+> > > Starting init: /bin/sh exists but couldn't execute it (error -14)
+> > > 
+> > > when trying to boot microblazeel:petalogix-ml605 in qemu.
+> > 
+> > Thanks for the report.  I'm not readily seeing the issue.
+> > 
+> > Do you have a kernel config?  Specifically is CONFIG_HIGHMEM set?
+> > 
+> See below. Yes, CONFIG_HIGHMEM is set.
 > 
-> Signed-off-by: Alex Elder <elder@linaro.org>
+> The scripts used to build and boot the image are at:
+> 
+> https://github.com/groeck/linux-build-test/tree/master/rootfs/microblazeel
 
-Applied
+Despite finding the obvious error earlier today I've still been trying to get
+this to work.
+
+I had to make some slight modifications to use the 0-day cross compile build
+and my local qemu build.  But those were pretty minor modifications.  I'm
+running on x86_64 host.
+
+With those slight mods to the scripts I get the following error even without my
+patch set on 5.7-rc4.  I have 1 cpu pegged at 100% while it is running...  Is
+there anything I can do to get more debug output?  Perhaps I just need to let
+it run longer?
 
 Thanks,
-Bjorn
+Ira
 
-> ---
->  arch/arm64/configs/defconfig | 2 ++
->  1 file changed, 2 insertions(+)
-> 
-> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index 9c6500b71bc6..56261fd7ea8d 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -306,6 +306,7 @@ CONFIG_MLX4_EN=m
->  CONFIG_MLX5_CORE=m
->  CONFIG_MLX5_CORE_EN=y
->  CONFIG_QCOM_EMAC=m
-> +CONFIG_RMNET=m
->  CONFIG_RAVB=y
->  CONFIG_SMC91X=y
->  CONFIG_SMSC911X=y
-> @@ -313,6 +314,7 @@ CONFIG_SNI_AVE=y
->  CONFIG_SNI_NETSEC=y
->  CONFIG_STMMAC_ETH=m
->  CONFIG_TI_K3_AM65_CPSW_NUSS=y
-> +CONFIG_QCOM_IPA=m
->  CONFIG_MDIO_BUS_MUX_MMIOREG=y
->  CONFIG_MDIO_BUS_MUX_MULTIPLEXER=y
->  CONFIG_AQUANTIA_PHY=y
-> -- 
-> 2.20.1
-> 
+16:46:54 > ../linux-build-test/rootfs/microblazeel/run-qemu-microblazeel.sh 
+Build reference: v5.7-rc4-2-g7c2411d7fb6a
+
+Building microblaze:petalogix-s3adsp1800:qemu_microblazeel_defconfig ...
+running ................ failed (silent)
+------------
+qemu log:
+qemu-system-microblazeel: terminating on signal 15 from pid 3277686 (/bin/bash)
+------------
+Building microblaze:petalogix-ml605:qemu_microblazeel_ml605_defconfig ...
+running ................ failed (silent)
+------------
+qemu log:
+qemu-system-microblazeel: terminating on signal 15 from pid 3277686 (/bin/bash)
+------------
+
+<env changes>
+16:47:23 > git di
+diff --git a/rootfs/microblazeel/run-qemu-microblazeel.sh b/rootfs/microblazeel/run-qemu-microblazeel.sh
+index 68d4de39ab50..0d6a4f85308f 100755
+--- a/rootfs/microblazeel/run-qemu-microblazeel.sh
++++ b/rootfs/microblazeel/run-qemu-microblazeel.sh
+@@ -3,7 +3,8 @@
+ dir=$(cd $(dirname $0); pwd)
+ . ${dir}/../scripts/common.sh
+ 
+-QEMU=${QEMU:-${QEMU_BIN}/qemu-system-microblazeel}
++#QEMU=${QEMU:-${QEMU_BIN}/qemu-system-microblazeel}
++QEMU=/home/iweiny/dev/qemu/microblazeel-softmmu/qemu-system-microblazeel
+ PREFIX=microblazeel-linux-
+ ARCH=microblaze
+ PATH_MICROBLAZE=/opt/kernel/microblazeel/gcc-4.9.1/usr/bin
+diff --git a/rootfs/scripts/common.sh b/rootfs/scripts/common.sh
+index 8fa6a9be2b2f..c4550a27beaa 100644
+--- a/rootfs/scripts/common.sh
++++ b/rootfs/scripts/common.sh
+@@ -1,5 +1,9 @@
+ #!/bin/bash
+ 
++# Set up make.cross
++export COMPILER_INSTALL_PATH=$HOME/0day
++export GCC_VERSION=6.5.0
++
+ # Set the following variable to true to skip DC395/AM53C97 build tests
+ __skip_dc395=0
+ 
+@@ -569,7 +573,7 @@ doclean()
+        then
+                git clean -x -d -f -q
+        else
+-               make ARCH=${ARCH} mrproper >/dev/null 2>&1
++               make.cross ARCH=${ARCH} mrproper >/dev/null 2>&1
+        fi
+ }
+ 
+@@ -669,7 +673,7 @@ __setup_config()
+        cp ${__progdir}/${defconfig} arch/${arch}/configs
+     fi
+ 
+-    if ! make ARCH=${ARCH} CROSS_COMPILE=${PREFIX} ${defconfig} >/dev/null 2>&1 </dev/null; then
++    if ! make.cross ARCH=${ARCH} ${defconfig} >/dev/null 2>&1 </dev/null; then
+        return 2
+     fi
+ 
+@@ -687,7 +691,7 @@ __setup_config()
+        if [[ "${rel}" = "v3.16" ]]; then
+            target="oldconfig"
+        fi
+-       if ! make ARCH=${ARCH} CROSS_COMPILE=${PREFIX} ${target} >/dev/null 2>&1 </dev/null; then
++       if ! make.cross ARCH=${ARCH} ${target} >/dev/null 2>&1 </dev/null; then
+            return 1
+        fi
+     fi
+@@ -1038,7 +1042,7 @@ dosetup()
+     rootfs="$(setup_rootfs ${dynamic} ${rootfs})"
+     __common_fixups "${fixups}" "${rootfs}"
+ 
+-    make -j${maxload} ARCH=${ARCH} CROSS_COMPILE=${PREFIX} ${EXTRAS} </dev/null >/dev/null 2>${logfile}
++    make.cross -j${maxload} ARCH=${ARCH} ${EXTRAS} </dev/null >/dev/null 2>${logfile}
+     rv=$?
+     if [ ${rv} -ne 0 ]
+     then
+
+</env changes>
 
 _______________________________________________
 linux-arm-kernel mailing list
