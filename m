@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABF8B1D8E7F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 06:06:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A84A1D8E7E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 06:06:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,46 +11,46 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=XGERhduvf+B3NIHHc4DkYYbSIqggQMMJiw04R7//76w=; b=VsfAPtms1QDU6WMr8Kqrk8kQvk
-	PuHTm9wAnKWvvjsgfXXHM0FeF2evL0w+89EUF1RSCl5SqKeO8EhCNwfDrU7/8yhkj7QJ/1X2RQcqe
-	aq3guJc0eFdNXvSDpM4bbIhICo07eMLhMhVSRmE3ee10ckd/1NlFL9N0jHF813ukeFE2Q9yTgGw3k
-	Hx68W35SrtlocqnteS734EDnGnK1ttJUxPckX4Z/xuWGIEfM0x2jKNIQ7+D6Gjv9TKmBkAxVhGQMB
-	ov7DrQGnKTFfyUeWFXqHIMILXikcCRkGptGApx/Rpirgbb9QQqBIcletWnBCQWVtrHqj7uQBYkMtg
-	F/lyzxqA==;
+	bh=NT3ayA54aNMoZCA/rQL0NJLPRq3nE5Y/XcuuV6Hrc4w=; b=DSrqb/iwZWNQgieDFX2r24o8vn
+	eBaKvd9p9HyRVAM7lCpRvLll8TOULIwHbu8Z4sOOuLL2ZNSxCKf4ZKileL2wVvIy6czSVHbv34j6F
+	chrLe7VwC1sjp+AQj96Zy7c1INWIxuXQO/k+ssaUsddqRVdeqw9RkporiKyoUVV6YiJYa6x3oA7g+
+	YbsmxruvDIhFmxE0fL5+xuJdmswk9Mesmxn68WetbucK1Hp/Bzp9HIo37iXUAluLBt7kM0Fv7WSDm
+	LQRjSxDjEdjbNL7ffjLUVAHIXgIfKXlMEyXLeHqXpn2ibhmNyMt8tscrmtwIbkuBQtZhdfwhVymjX
+	fTI6721w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jatWU-0001Qi-BL; Tue, 19 May 2020 04:06:34 +0000
+	id 1jatWG-0001C5-CE; Tue, 19 May 2020 04:06:20 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jatVf-0000pc-FX
+ id 1jatVf-0000py-Jn
  for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 04:05:46 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 1F8ED1A0067;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 465721A0013;
  Tue, 19 May 2020 06:05:42 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9F6661A00A9;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id CAF4F1A010C;
  Tue, 19 May 2020 06:05:36 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1A5FB402E7;
- Tue, 19 May 2020 12:05:24 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id DBAD340318;
+ Tue, 19 May 2020 12:05:26 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: daniel.lezcano@linaro.org, tglx@linutronix.de, robh+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
  festevam@gmail.com, ping.bai@nxp.com, aisheng.dong@nxp.com,
  linux-kernel@vger.kernel.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 2/3] dt-bindings: timer: Convert i.MX TPM to json-schema
-Date: Tue, 19 May 2020 11:55:46 +0800
-Message-Id: <1589860547-3207-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 3/3] dt-bindings: timer: Convert i.MX SYSCTR to json-schema
+Date: Tue, 19 May 2020 11:55:47 +0800
+Message-Id: <1589860547-3207-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1589860547-3207-1-git-send-email-Anson.Huang@nxp.com>
 References: <1589860547-3207-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_210543_829880_05A86EC5 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20200518_210543_933005_2766F09C 
+X-CRM114-Status: GOOD (  12.58  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,82 +78,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX TPM binding to DT schema format using json-schema.
+Convert the i.MX SYSCTR binding to DT schema format using json-schema.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
-Changes since V1:
-	- remove unnecessary maxItems for clocks/clock-names.
+No changes.
 ---
- .../devicetree/bindings/timer/nxp,tpm-timer.txt    | 28 ----------
- .../devicetree/bindings/timer/nxp,tpm-timer.yaml   | 61 ++++++++++++++++++++++
- 2 files changed, 61 insertions(+), 28 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt
- create mode 100644 Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml
+ .../devicetree/bindings/timer/nxp,sysctr-timer.txt | 25 ----------
+ .../bindings/timer/nxp,sysctr-timer.yaml           | 54 ++++++++++++++++++++++
+ 2 files changed, 54 insertions(+), 25 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
+ create mode 100644 Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml
 
-diff --git a/Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt b/Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt
+diff --git a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
 deleted file mode 100644
-index f82087b..0000000
---- a/Documentation/devicetree/bindings/timer/nxp,tpm-timer.txt
+index d576599..0000000
+--- a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.txt
 +++ /dev/null
-@@ -1,28 +0,0 @@
--NXP Low Power Timer/Pulse Width Modulation Module (TPM)
+@@ -1,25 +0,0 @@
+-NXP System Counter Module(sys_ctr)
 -
--The Timer/PWM Module (TPM) supports input capture, output compare,
--and the generation of PWM signals to control electric motor and power
--management applications. The counter, compare and capture registers
--are clocked by an asynchronous clock that can remain enabled in low
--power modes. TPM can support global counter bus where one TPM drives
--the counter bus for the others, provided bit width is the same.
+-The system counter(sys_ctr) is a programmable system counter which provides
+-a shared time base to Cortex A15, A7, A53, A73, etc. it is intended for use in
+-applications where the counter is always powered and support multiple,
+-unrelated clocks. The compare frame inside can be used for timer purpose.
 -
 -Required properties:
 -
--- compatible :	should be "fsl,imx7ulp-tpm"
--- reg :		Specifies base physical address and size of the register sets
--		for the clock event device and clock source device.
--- interrupts :	Should be the clock event device interrupt.
--- clocks :	The clocks provided by the SoC to drive the timer, must contain
--		an entry for each entry in clock-names.
--- clock-names : Must include the following entries: "ipg" and "per".
+-- compatible :      should be "nxp,sysctr-timer"
+-- reg :             Specifies the base physical address and size of the comapre
+-                    frame and the counter control, read & compare.
+-- interrupts :      should be the first compare frames' interrupt
+-- clocks : 	    Specifies the counter clock.
+-- clock-names: 	    Specifies the clock's name of this module
 -
 -Example:
--tpm5: tpm@40260000 {
--	compatible = "fsl,imx7ulp-tpm";
--	reg = <0x40260000 0x1000>;
--	interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
--	clocks = <&clks IMX7ULP_CLK_NIC1_BUS_DIV>,
--		 <&clks IMX7ULP_CLK_LPTPM5>;
--	clock-names = "ipg", "per";
--};
-diff --git a/Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml b/Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml
+-
+-	system_counter: timer@306a0000 {
+-		compatible = "nxp,sysctr-timer";
+-		reg = <0x306a0000 0x20000>;/* system-counter-rd & compare */
+-		clocks = <&clk_8m>;
+-		clock-names = "per";
+-		interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
+-	};
+diff --git a/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml
 new file mode 100644
-index 0000000..edd9585
+index 0000000..830211c
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/timer/nxp,tpm-timer.yaml
-@@ -0,0 +1,61 @@
++++ b/Documentation/devicetree/bindings/timer/nxp,sysctr-timer.yaml
+@@ -0,0 +1,54 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/timer/nxp,tpm-timer.yaml#
++$id: http://devicetree.org/schemas/timer/nxp,sysctr-timer.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: NXP Low Power Timer/Pulse Width Modulation Module (TPM)
++title: NXP System Counter Module(sys_ctr)
 +
 +maintainers:
-+  - Dong Aisheng <aisheng.dong@nxp.com>
++  - Bai Ping <ping.bai@nxp.com>
 +
 +description: |
-+  The Timer/PWM Module (TPM) supports input capture, output compare,
-+  and the generation of PWM signals to control electric motor and power
-+  management applications. The counter, compare and capture registers
-+  are clocked by an asynchronous clock that can remain enabled in low
-+  power modes. TPM can support global counter bus where one TPM drives
-+  the counter bus for the others, provided bit width is the same.
++  The system counter(sys_ctr) is a programmable system counter
++  which provides a shared time base to Cortex A15, A7, A53, A73,
++  etc. it is intended for use in applications where the counter
++  is always powered and support multiple, unrelated clocks. The
++  compare frame inside can be used for timer purpose.
 +
 +properties:
 +  compatible:
-+    const: fsl,imx7ulp-tpm
++    const: nxp,sysctr-timer
 +
 +  reg:
 +    maxItems: 1
@@ -162,14 +157,10 @@ index 0000000..edd9585
 +    maxItems: 1
 +
 +  clocks:
-+    items:
-+      - description: SoC TPM ipg clock
-+      - description: SoC TPM per clock
++    maxItems: 1
 +
 +  clock-names:
-+    items:
-+      - const: ipg
-+      - const: per
++    const: per
 +
 +required:
 +  - compatible
@@ -182,17 +173,15 @@ index 0000000..edd9585
 +
 +examples:
 +  - |
-+    #include <dt-bindings/clock/imx7ulp-clock.h>
 +    #include <dt-bindings/interrupt-controller/arm-gic.h>
 +
-+    timer@40260000 {
-+        compatible = "fsl,imx7ulp-tpm";
-+        reg = <0x40260000 0x1000>;
-+        interrupts = <GIC_SPI 22 IRQ_TYPE_LEVEL_HIGH>;
-+        clocks = <&scg1 IMX7ULP_CLK_NIC1_BUS_DIV>,
-+                 <&pcc2 IMX7ULP_CLK_LPTPM5>;
-+        clock-names = "ipg", "per";
-+    };
++    timer@306a0000 {
++        compatible = "nxp,sysctr-timer";
++        reg = <0x306a0000 0x20000>;
++        clocks = <&clk_8m>;
++        clock-names = "per";
++        interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
++     };
 -- 
 2.7.4
 
