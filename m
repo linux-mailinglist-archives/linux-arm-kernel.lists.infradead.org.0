@@ -2,79 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB3011DA180
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:54:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB4101DA23F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 22:08:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=h4hN82IJ4e9pTsbkXMFJuCXz0HLmrglcfD/wvN3ua64=; b=Tr16B3BLf4q9jE
-	6TJej9KPeY94bKMWDiOpt7rN8W935oDkXA1DS8IQX8PdnQLI3327Bk0O1Ix+FzOLgSQA6bV/WgtaI
-	+zb9kf7HYVtLQl9RLKIkqpuQjsHk4xJcWj3gVyHbxcciVRqlTJ7BKZXmU9vu/91YyKIE+x4nh5Fzk
-	/kUXdc1PanJ0sPNFR1uayhhy5P8w7qOqjX99q6r2ju6O/L58Mj2mSxO75M8qQ3XkvM5un2roiYBIw
-	shuo6CbmVWCFx8Sc5vblOu3YTUOVwhdhOzrOHrOgA9kJ5h9XMQov6ORF/jtvx0czzSmnF9RKo1Nn8
-	BH9RnMMyBujWwSzO7hbA==;
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bB9VwaVHitnUyl4YYozcyXTkn17E8pzepW/LRQDQ9Lw=; b=pjdatfPItp36hG
+	4d7Hnmb6OROp8gcjMZ9wrxztaR9+C+j6F1pfw6CeiF209iYFLF4qeczFni4/5nktik2jHciJ551zg
+	4OA74LVpmLn2V/+YZ0KZ4hWVxkK09oYvLQqeVlg44NiPnKVpSil1G/AZYGmaoUl8eyjWHA6RDvtHv
+	xJ0iZ3QHjMD9aS44wwiem+M2E87yRU2K8BYyWj6nNIpkToT0mfSsgtyXLfebsaP8yTgHP3uZxm/fY
+	ZgRyABQ5H+fN01M30TdFmLwJxxJUYgsaWXrwf5u0ExcZTf5O0r6aSzaryF6BnKIFCkuYNEdsvhyqw
+	CW/sq5Hw0uZalh3MpKnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb8Js-0007Kp-Tp; Tue, 19 May 2020 19:54:32 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1jb8Wq-0008SG-KF; Tue, 19 May 2020 20:07:56 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb8Jj-0007JV-VQ
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 19:54:25 +0000
-Received: from mail-qk1-f182.google.com ([209.85.222.182]) by
- mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MKbwg-1jKhMH1xIC-00Kugr for <linux-arm-kernel@lists.infradead.org>; Tue,
- 19 May 2020 21:54:21 +0200
-Received: by mail-qk1-f182.google.com with SMTP id s1so966262qkf.9
+ id 1jb8Wi-0008Ru-S2
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 20:07:50 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id e7so389928vsm.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 12:54:20 -0700 (PDT)
-X-Gm-Message-State: AOAM530OI1OlgnOZegAMkEF3bQGerOmwES8vZBBJ9M0oK7zTtsBUqkj/
- barjs/xX0tv0oCvEB2Ps4Fvykk/YkgXs1MbpTcA=
-X-Google-Smtp-Source: ABdhPJxmZ665bnKOzvdR2P18X8izcsTLDXWEaUV5X4KMbj1e+DoEU64Tu5I7jwlFmb0Sax5yLCI3R4V6Wl4XCtmZdLc=
-X-Received: by 2002:ae9:ed95:: with SMTP id c143mr1165079qkg.394.1589918059229; 
- Tue, 19 May 2020 12:54:19 -0700 (PDT)
+ Tue, 19 May 2020 13:07:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=UXbwGQX7NBj93macBQks6TpgCaCAqI85y6U/Eho5NaA=;
+ b=iMBY+L1k7S2P7A4yIvSJy4MuZVOr4X+yr4pt1EqaJLCp6UcTm+kmuYjI5XDEe9FOP2
+ SumGBT1xC3NYhOGo+zSCsVuJcjHpynQ2q6oJ45AVzmudv6qxVEOkF4nnIgDJqe8LeQwJ
+ yB5S7v/Ar4tfTj9fY0v9m2ouNF1hwJw9OzKyk=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UXbwGQX7NBj93macBQks6TpgCaCAqI85y6U/Eho5NaA=;
+ b=NxKdhtNyz7yHIwQp4NMBKcF88CCtv8oV3kG8V2ritDcelQBgcDj3WFdnB8nPC6LWk9
+ nDawE0Yx6Egt5mINZz4aMJAbCY6Whp4wZceGwJ+DXDQc2wUxG70XqKqRsKmK+4QM8Y0l
+ 5sLLVYSnLztjTCibkQFShX5XNsHI6sOki3xPFmuX3N8XmZ2ZhgMiTMFZ9n8pMM62ScAT
+ DWygUmXSVfIN/B06QGxzIlEqPDwBMQG29EgSYU0bbXNlov/pir2c16MQarzpuwiNYrGu
+ 6k59ij6h9KmZ2PzSUEQN+xtfzRAb6vPbPrnDE1BTPo5N6q/Ecl+Cz5GHhM8Yu5s4+9Og
+ zZFg==
+X-Gm-Message-State: AOAM530uLKKaic+ZZPheHfYXBKs1pgR6NZRD+xmYVwmvyAPED/2Cdc4z
+ zFTgooOVQzD0m9dSVJJ/kbWCFpuU/A4=
+X-Google-Smtp-Source: ABdhPJwSwrT1JIqydH8Cyna/gMvOleU06a1hvUbxyDGsbt3XQJ7NzQo3HxK3yxI9/2ab1qvkv/Kdsg==
+X-Received: by 2002:a67:ef1d:: with SMTP id j29mr823971vsr.238.1589918865646; 
+ Tue, 19 May 2020 13:07:45 -0700 (PDT)
+Received: from mail-ua1-f48.google.com (mail-ua1-f48.google.com.
+ [209.85.222.48])
+ by smtp.gmail.com with ESMTPSA id 43sm112626uah.3.2020.05.19.13.07.44
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 19 May 2020 13:07:44 -0700 (PDT)
+Received: by mail-ua1-f48.google.com with SMTP id a37so430652uad.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 19 May 2020 13:07:44 -0700 (PDT)
+X-Received: by 2002:ab0:b13:: with SMTP id b19mr945772uak.91.1589918864128;
+ Tue, 19 May 2020 13:07:44 -0700 (PDT)
 MIME-Version: 1.0
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 19 May 2020 21:54:03 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a2Tw2w73ZkK-W6AA9veMK4-miLUx-TL1EuOdP7EdW-AmQ@mail.gmail.com>
-Message-ID: <CAK8P3a2Tw2w73ZkK-W6AA9veMK4-miLUx-TL1EuOdP7EdW-AmQ@mail.gmail.com>
-Subject: clock_gettime64 vdso bug on 32-bit arm, rpi-4
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>, 
- Russell King - ARM Linux <linux@armlinux.org.uk>
-X-Provags-ID: V03:K1:xFs/q97CSz84QMyNNPwxBP83bmIoFvfG397HumvzEPbOj43hRQp
- zQe9wugWlemJImdXCYKMpiKI0tq275gRH8C0lEaeaudOUqfv1ilU2yWsa8MJGix0DV4tOJx
- 3OiwldUYpz1sIZU7gUvm6jv5Y+pNhsxLvi1AZNlN1AlcEjDnYvBp4Gu9bh9ErLDaOclPkUv
- ZtWzeH9PoYjt6wm6kZG4w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:CD4v6gr6PEo=:ITn5fhAdk/22CWoEW2MoLl
- HV6WLfoyfwiKQCw5HCXgmZADl+29sFHmP4F5pOMM/IwWRgnQt26kow1YE9ZOAj8ophIpfxP6k
- KL7al2xMblVRPgNFf3gGo6JygZq5q6fZ2VliWuQOfn3mytwziQVfUqFt7q8bLCcVUb7BfHqks
- VgwK6/fARnLvzheLh7NtNPsUFgNgqqT+x2yI0nMM6yD20HYLzDwuUqlSWE6d0QAriKlG4iGDv
- sQcaugPSg5Cf9a7NQsLrsfU3Ni8ywt2EpvNKiAjTRZIER7jEOBmof0OooouJgXHKZHJY4aFpD
- sWMQfqtGPSAPZqJcRJEp/gi2W+AZbjv0daEd0JbEYOorb2keqwupu7uDhKQkE8/Y2egkqgwvs
- 75Pm5Ngb0TDG+9fANgnW3Odx/I1eJihOH1ASH4St1E39Q5gqmsXKQi/IgMsr0WszEFF/b7iIY
- XD/ilKr0+HugwGCoQuK0r+tPlQeWdUlSnRtBU1VrF73IzXEiYu+NeLSMh4IjR+72m7FgGfW2h
- lOAOaSegPZXeKfl0Cx3uM0IkKB5D+ZGyBBiMeZZx1npcoHDbp5A8qrnqzulxvGMwK4l/g3Ct2
- UaIEPCtB0wXoe+hLIdXl3r/Fc4kFqVhESv20Yq1gUBm5AjTHy+wGLyZTRmizKZ9Wk/aDg4SGd
- fs75NulrarlldsYi+ADQIBk1pYCcKIuvkqj6UGLAZkQTL6ATPZZFmRXQZ59hNqCOsWFnPpWF1
- dNXEeWjjIf0fnmKPX9ciPBKUKnhq7Lh/qeD88YfR73PnOnBkFFGdtdQ7BOMq0jnsH1xqobw+d
- 1odWCVNXFWtmn+sn/tzLNl/Gh/ttDU4nJdePZ6bie5SOL7/4mc=
+References: <1589914405-6674-1-git-send-email-pillair@codeaurora.org>
+In-Reply-To: <1589914405-6674-1-git-send-email-pillair@codeaurora.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Tue, 19 May 2020 13:07:32 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=XXRhh-1cWH5rMPq4W_Dh4yE=++sga_aJ8cwFkKkrAXbg@mail.gmail.com>
+Message-ID: <CAD=FV=XXRhh-1cWH5rMPq4W_Dh4yE=++sga_aJ8cwFkKkrAXbg@mail.gmail.com>
+Subject: Re: [PATCH v10] arm64: dts: qcom: sc7180: Add WCN3990 WLAN module
+ device node
+To: Rakesh Pillai <pillair@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_125424_304975_BA9923D8 
-X-CRM114-Status: GOOD (  15.83  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200519_130748_923550_68975963 
+X-CRM114-Status: GOOD (  15.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.13 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,65 +101,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Will Deacon <will@kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>,
- Adhemerval Zanella <adhemerval.zanella@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>, Jack Schmidt <jack.schmidt@uky.edu>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Jack Schmidt reported a bug for the arm32 clock_gettimeofday64 vdso call last
-month: https://github.com/richfelker/musl-cross-make/issues/96 and
-https://github.com/raspberrypi/linux/issues/3579
+Hi,
 
-As Will Deacon pointed out, this was never reported on the mailing list,
-so I'll try to summarize what we know, so this can hopefully be resolved soon.
+On Tue, May 19, 2020 at 11:53 AM Rakesh Pillai <pillair@codeaurora.org> wrote:
+>
+> Add device node for the ath10k SNOC platform driver probe
+> and add resources required for WCN3990 on sc7180 soc.
+>
+> Signed-off-by: Rakesh Pillai <pillair@codeaurora.org>
+> ---
+> Changes from v9:
+> - Place the wlan_fw_mem under reserved-memory node
+> ---
+>  arch/arm64/boot/dts/qcom/sc7180-idp.dts |  7 +++++++
+>  arch/arm64/boot/dts/qcom/sc7180.dtsi    | 27 +++++++++++++++++++++++++++
+>  2 files changed, 34 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/qcom/sc7180-idp.dts b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> index 4e9149d..38b102e 100644
+> --- a/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> +++ b/arch/arm64/boot/dts/qcom/sc7180-idp.dts
+> @@ -389,6 +389,13 @@
+>         };
+>  };
+>
+> +&wifi {
+> +       status = "okay";
+> +       wifi-firmware {
+> +               iommus = <&apps_smmu 0xc2 0x1>;
+> +       };
+> +};
+> +
+>  /* PINCTRL - additions to nodes defined in sc7180.dtsi */
+>
+>  &qspi_clk {
+> diff --git a/arch/arm64/boot/dts/qcom/sc7180.dtsi b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> index f1280e0..19bd7d0 100644
+> --- a/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> +++ b/arch/arm64/boot/dts/qcom/sc7180.dtsi
+> @@ -106,6 +106,11 @@
+>                         no-map;
+>                 };
+>
+> +               wlan_fw_mem: memory@94100000 {
+> +                       reg = <0 0x94100000 0 0x200000>;
+> +                       no-map;
+> +               };
+> +
+>                 rmtfs_mem: memory@84400000 {
+>                         compatible = "qcom,rmtfs-mem";
+>                         reg = <0x0 0x84400000 0x0 0x200000>;
 
-- This happened reproducibly on Linux-5.6 on a 32-bit Raspberry Pi patched
-   kernel running on a 64-bit Raspberry Pi 4b (bcm2711) when calling
-   clock_gettime64(CLOCK_REALTIME)
+This is less wrong than v9, but still a little wrong.  You should be
+keeping these ordered by unit address.  94100000 comes after 84400000.
 
-- The kernel tree is at https://github.com/raspberrypi/linux/, but I could
-  see no relevant changes compared to a mainline kernel.
-
-- From the report, I see that the returned time value is larger than the
-  expected time, by 3.4 to 14.5 million seconds in four samples, my
-  guess is that a random number gets added in at some point.
-
-- From other sources, I found that the Raspberry Pi clocksource runs
-  at 54 MHz, with a mask value of 0xffffffffffffff. From these numbers
-  I would expect that reading a completely random hardware register
-  value would result in an offset up to 1.33 billion seconds, which is
-  around factor 100 more than the error we see, though similar.
-
-- The test case calls the musl clock_gettime() function, which falls back to
-  the clock_gettime64() syscall on kernels prior to 5.5, or to the 32-bit
-  clock_gettime() prior to Linux-5.1. As reported in the bug, Linux-4.19 does
-  not show the bug.
-
-- The behavior was not reproduced on the same user space in qemu,
-  though I cannot tell whether the exact same kernel binary was used.
-
-- glibc-2.31 calls the same clock_gettime64() vdso function on arm to
-  implement clock_gettime(), but earlier versions did not. I have not
-  seen any reports of this bug, which could be explained by users
-  generally being on older versions.
-
-- As far as I can tell, there are no reports of this bug from other users,
-  and so far nobody could reproduce it.
-
-- The current musl git tree has been patched to not call clock_gettime64
-   on ARM because of this problem, so it cannot be used for reproducing it.
-
-If anyone has other information that may help figure out what is going
-on, please share.
-
-        Arnd
+-Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
