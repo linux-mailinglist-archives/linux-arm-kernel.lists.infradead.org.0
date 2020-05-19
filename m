@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 712F11DA143
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:47:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F209B1DA146
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 21:48:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ALihIGeN2qg0ZqAjahXm6rOCk/sUYT/UYyzIyb9lX+o=; b=tLDsJmLMr52QDR
-	OnGR7ShVlEX+HO+GU4Q+W5MloxbC7/Pw4mvZ1xvj+X57uyOP9aAEaMx16LuxUeSFGgz8a/1/MQwM4
-	hQM5UjaDLSJNGqHH9ZxWeHm+LWXLWDvVBdhDGT+dVTbRkMl3CGLa8cEcVpXJFQl3a/apvmb/e2YgX
-	/ackw/2PD4eMlRJqjR/mb7vuU0Gr3DJ05eQ1pqBRc49UWSXd4Ek1JWc8pjUCqlRijzhXX4yVpzqS0
-	TWwwbY0+b3lUrhizDw4Fom6HufGtaADwOiCp1x+lOgupQXg6BAAmdx//IBSqLi2Tk1JmklXZ00YFr
-	sfvBrKq+CufLG/uQsZjQ==;
+	List-Owner; bh=OZLQZ5LnFvnYpmWYlIJp2tC7oXD3vXkPG1cPsYu3WHE=; b=O35EC0lLzoO5RO
+	ZUWyEwIIu0uewzHmIpj+6wrKlV6lHvol7pSvJIWYKfXrS2tK6+QNAnkgfdeHfuxN1UdPzh6QTKh55
+	/etiQumMtUF4yGOWlKHfiOBhBjfxi64edin5nIzz7J32JN6YLqGHYnIGKSejT9K9nc3aOR8cTqmJ0
+	JqSgXnMwQnRD4WKMysudo87ZzQrx20dYIyIAc8XYCcreys4tss0cnI+FNlh697YaCro3Dsn2OeW6h
+	pKmqJKI2MDdpbLwtGS6m1UFzMDegpvxTDeRJszXp5kLMeIlMTNkubbVl4/F1U7lt1OA7qRXYQVmEg
+	XFNT8lrm3jbxyNMZg57Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb8DE-0003wM-M1; Tue, 19 May 2020 19:47:40 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jb8Da-0004B6-6X; Tue, 19 May 2020 19:48:02 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb8D6-0003vf-EJ
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 19:47:33 +0000
-Received: by mail-pg1-x543.google.com with SMTP id p21so291773pgm.13
+ id 1jb8DP-00049t-S9
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 19:47:53 +0000
+Received: by mail-pl1-x644.google.com with SMTP id f15so322444plr.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 12:47:32 -0700 (PDT)
+ Tue, 19 May 2020 12:47:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
+ h=subject:from:to:cc:references:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=ZGuRRRcbTaW8FWPggeFKscV8bVAevR+TD4KidxOAffU=;
- b=SOy40ns36oc3zn7ljfpnUaBI+qiGaKfHLn/p2KvVh6KGCqg988xKzHeav8r4ADi+al
- JMlzcpyMm2iAV0qQjdoFwlstcvzlPkZz7a4Ed62ly991kPw9qR3soQzvxgRHMXy11Mkt
- T5bOiSqk0MEI2lITGszqvjSMp1pDCIvfAIWSMd/2KiQMiZUszZh7AKf51496oMFhqDE8
- el2E+G1EIlVrf1LUymCs1SMnRoV299YkVmgi+QiZS6fTpG46AoJ0ipU0OuY9YEIWHOUM
- z5+t0fv/T0hrhw0bs82HPobojLUycNl7mP/2RPVf0aGmaeCzOEorMevm0S9AxXHdqhCa
- iCRA==
+ bh=CgyntvvUzH1XXLBzT1ZgjwhZo6axGQJQNJMNpQq/mjY=;
+ b=p1lO8gQM6mxvNv1BlHL2svVHbsP69QZ+XlG0COlRjlYM1DGwsqpnqMh/39++m5KE96
+ 9n9ZehwfzYN68t7s0KmT0fNOdJ850WfDjLWMRxprnwcCwXNUa+oe4f7TLA117mDNkBiY
+ Fy4wvZ/eetly/jy2W6QHjqCgRMNox+JXoD7UOl+aDpZPISswLph6t/i6Szubr3feo3H5
+ 22bmwheyp0Vyy0Jq1xHQ/y9ulpgwj32vBWubfmcAokQg8qPyC16CdKJx8pSM0bZdMn62
+ 1+avZfYvheGKN0BzDIFCBnObRRrfeeNSFzCkEPoAms2Dj7pbE1prWTkrtEEQ7Kdpf5do
+ xfzw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=ZGuRRRcbTaW8FWPggeFKscV8bVAevR+TD4KidxOAffU=;
- b=sVpOPxKC84CeAL67ecs3Fr6+rccRFRoFfmbo7Zamh7hVRF4t78a8Qn/yyiVi/gMjAO
- 8vnw0HaGHeLq3CER/i1RbQd6JI6AqEEy9veB3AXqvHJCSWfYi+2LrYw4lzHQdPqn8TPn
- K1Vzdot3a/CepBNP9dIA/siegRp6GCf8yziN3S13LfijDibTU0bgIHNHy2AY4YEtVsKk
- N4rb1Wg6syRDJRXOjEDmrMIXm/zDbYBfEPf4VIPMh0dqlLfH+T5PEkmq+3mjRZKwjygL
- 02BvsFR9U5IUf45VQ5EJWbTgU+SqyQ6faTioxlCFyNVrJDN+jqopFTTnHqryMcupm9oX
- 3MRg==
-X-Gm-Message-State: AOAM533vvlzQ9dkMDEIMstQ2SuLFsCCdpbAzGS7OzKD2xvuW0JwfdllX
- Pzb155xxgmc7slcLB67fJmo=
-X-Google-Smtp-Source: ABdhPJxGFs2gbJfJf03BO6VSSxo3ZeuxRoEcyfB/gfuOvP36kzgTf0L+EcK96MQIwQyh25HevsllAA==
-X-Received: by 2002:a63:3e46:: with SMTP id l67mr761106pga.430.1589917651467; 
- Tue, 19 May 2020 12:47:31 -0700 (PDT)
+ bh=CgyntvvUzH1XXLBzT1ZgjwhZo6axGQJQNJMNpQq/mjY=;
+ b=ts1fMz75UFIDfCPe31xbUuWeCDkyzQ5lW53T6jJA7tePSzMWGNgenL/Zeu+NNSmCs9
+ RK1JAeT3QBEHS+GXIvtUIsyCon57MO44qPjYUKnRqzpXE9xHHGJjavTz3X+EZ2Wlb1hc
+ yRHv8AT0ICmE+7kL/chV79cjWAe5clCMXS5kcJB3tciGOeZuoeLRW2yYd+Qck8WJLGAX
+ btQbQ6fxxxIdfbArh+m8gnDT9GO+OF4xRCGEvOuXDHLl+7GR4BrKJ08eP9pMOAksAgNd
+ TSqi4UDKPObnorDSavadFhhgQtEalC66gLkMyroy2OqLA6eFTDhVw7Ez6xyy8Qb7FO1W
+ 2oPA==
+X-Gm-Message-State: AOAM533T8Hp6pABUXyy4i5fNjMgoxOoR+Z0x48D3AO5XAuT1/2OKVMBA
+ bqV0roc8ROzXFJCJCZUCffSsenmO
+X-Google-Smtp-Source: ABdhPJz81uFcj5ZQa6mkGTcmojKcSVnPbx9vOLpey0COrD8CM1hoAIfQebh1Ek7hG9dQucZqv5U15g==
+X-Received: by 2002:a17:902:c281:: with SMTP id
+ i1mr1004179pld.177.1589917671065; 
+ Tue, 19 May 2020 12:47:51 -0700 (PDT)
 Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id e18sm251091pfh.75.2020.05.19.12.47.26
+ by smtp.gmail.com with ESMTPSA id u5sm236045pfu.198.2020.05.19.12.47.46
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 19 May 2020 12:47:30 -0700 (PDT)
-Subject: Re: [PATCH 01/11] genirq: Add fasteoi IPI flow
+ Tue, 19 May 2020 12:47:50 -0700 (PDT)
+Subject: Re: [PATCH 00/11] arm/arm64: Turning IPIs into normal interrupts
+From: Florian Fainelli <f.fainelli@gmail.com>
 To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
 References: <20200519161755.209565-1-maz@kernel.org>
- <20200519161755.209565-2-maz@kernel.org>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <b691a46e-7461-89c8-c760-a1ef9769091f@gmail.com>
-Date: Tue, 19 May 2020 12:47:24 -0700
+ <d1ac7873-0f02-dbe0-dd3c-4fd14a87cf03@gmail.com>
+Message-ID: <7b06f351-40f3-74c3-5d16-d7d58ab490b6@gmail.com>
+Date: Tue, 19 May 2020 12:47:44 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200519161755.209565-2-maz@kernel.org>
+In-Reply-To: <d1ac7873-0f02-dbe0-dd3c-4fd14a87cf03@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_124732_481756_D152B468 
-X-CRM114-Status: GOOD (  21.55  )
+X-CRM114-CacheID: sfid-20200519_124751_903713_9D1B86FF 
+X-CRM114-Status: GOOD (  18.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,80 +115,54 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 5/19/2020 9:17 AM, Marc Zyngier wrote:
-> For irqchips using the fasteoi flow, IPIs are a bit special.
+On 5/19/2020 10:50 AM, Florian Fainelli wrote:
 > 
-> They need to be EOId early (before calling the handler), as
-> funny things may happen in the handler (they do not necessarily
-> behave like a normal interrupt), and that the arch code is
-> already handling the stats.
 > 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  include/linux/irq.h |  1 +
->  kernel/irq/chip.c   | 26 ++++++++++++++++++++++++++
->  2 files changed, 27 insertions(+)
+> On 5/19/2020 9:17 AM, Marc Zyngier wrote:
+>> For as long as SMP ARM has existed, IPIs have been handled as
+>> something special. The arch code and the interrupt controller exchange
+>> a couple of hooks (one to generate an IPI, another to handle it).
+>>
+>> Although this is perfectly manageable, it prevents the use of features
+>> that we could use if IPIs were Linux IRQs (such as pseudo-NMIs). It
+>> also means that each interrupt controller driver has to follow an
+>> architecture-specific interface instead of just implementing the base
+>> irqchip functionnalities. The arch code also duplicates a number of
+>> things that the core irq code already does (such as calling
+>> set_irq_regs(), irq_enter()...).
+>>
+>> This series tries to remedy this on arm/arm64 by offering a new
+>> registration interface where the irqchip gives the arch code a range
+>> of interrupts to use for IPIs. The arch code requests these as normal
+>> interrupts.
+>>
+>> The bulk of the work is at the interrupt controller level, where all 3
+>> irqchips used on arm64 get converted.
+>>
+>> Finally, the arm64 code drops the legacy registration interface. The
+>> same thing could be done on 32bit as well once the two remaining
+>> irqchips using that interface get converted.
+>>
+>> There is probably more that could be done: statistics are still
+>> architecture-private code, for example, and no attempt is made to
+>> solve that (apart from hidding the IRQs from /proc/interrupt).
+>>
+>> This has been tested on a bunch of 32 and 64bit guests.
 > 
-> diff --git a/include/linux/irq.h b/include/linux/irq.h
-> index 8d5bc2c237d7..726f94d8b8cc 100644
-> --- a/include/linux/irq.h
-> +++ b/include/linux/irq.h
-> @@ -621,6 +621,7 @@ static inline int irq_set_parent(int irq, int parent_irq)
->   */
->  extern void handle_level_irq(struct irq_desc *desc);
->  extern void handle_fasteoi_irq(struct irq_desc *desc);
-> +extern void handle_percpu_devid_fasteoi_ipi(struct irq_desc *desc);
->  extern void handle_edge_irq(struct irq_desc *desc);
->  extern void handle_edge_eoi_irq(struct irq_desc *desc);
->  extern void handle_simple_irq(struct irq_desc *desc);
-> diff --git a/kernel/irq/chip.c b/kernel/irq/chip.c
-> index 41e7e37a0928..7b0b789cfed4 100644
-> --- a/kernel/irq/chip.c
-> +++ b/kernel/irq/chip.c
-> @@ -955,6 +955,32 @@ void handle_percpu_devid_irq(struct irq_desc *desc)
->  		chip->irq_eoi(&desc->irq_data);
->  }
->  
-> +/**
-> + * handle_percpu_devid_fasteoi_ipi - Per CPU local IPI handler with per cpu
-> + *				     dev ids
-> + * @desc:	the interrupt description structure for this irq
-> + *
-> + * The biggest differences with the IRQ version are that:
-> + * - the interrupt is EOIed early, as the IPI could result in a context
-> + *   switch, and we need to make sure the IPI can fire again
-> + * - Stats are usually handled at the architecture level, so we ignore them
-> + *   here
-> + */
-> +void handle_percpu_devid_fasteoi_ipi(struct irq_desc *desc)
-> +{
-> +	struct irq_chip *chip = irq_desc_get_chip(desc);
-> +	struct irqaction *action = desc->action;
-> +	unsigned int irq = irq_desc_get_irq(desc);
-> +	irqreturn_t res;
-
-Should not this have a:
-
-	if (!irq_settings_is_no_accounting(desc))
-		__kstat_incr_irqs_this_cpu(desc);
-
-here in case you are using that handler with a SGI interrupt which is
-not used as an IPI?
-
-> +
-> +	if (chip->irq_eoi)
-> +		chip->irq_eoi(&desc->irq_data);
-> +
-> +	trace_irq_handler_entry(irq, action);
-> +	res = action->handler(irq, raw_cpu_ptr(action->percpu_dev_id));
-> +	trace_irq_handler_exit(irq, action, res);
-> +}
-> +
->  /**
->   * handle_percpu_devid_fasteoi_nmi - Per CPU local NMI handler with per cpu
->   *				     dev ids
+> Does this patch series change your position on this patch series
 > 
+> https://lore.kernel.org/linux-arm-kernel/20191023000547.7831-3-f.fainelli@gmail.com/T/
+> 
+> or is this still a no-no?
 
+Our firmware specifies SGI interrupts with the first interrupt cell
+specifier set to 2, so changing GIC_IRQ_TYPE_SGI to 2 allows me to use a
+nearly unmodified firmware with your changes, sweet! I know this is not
+supposed to be used that way, but the temptation was too big.
+
+FWIW, on ARM64:
+
+Tested-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
 Florian
 
