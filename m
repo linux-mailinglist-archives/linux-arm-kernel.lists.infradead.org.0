@@ -2,100 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73AD41D9EE6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 20:10:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC1301D9F0A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 20:20:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tX1Cxxivi9kE3LUj0IvOTE2mJ21RijE3gSKxwp2mgpE=; b=IyQolVhB1MK2OAOCpTP//4WzR
-	iBkB1Z+VgXlPiMOC79O2H+7zDh3bDuzKtM6fvX4oWpYrww8MLqZDr0aJAvKmOz5gdqDv6kFb0WqKa
-	8hdu4dz14/VE9dHynTlZQpaB4m0PJ4OzpCQk7LvE3K3F1drZNWhBxKgJJZbrK8XrA4a1jcxgwl8rV
-	s4JKvfGiVfQoyd4GA2suuYtMbVHlOGFOxacfdJT2aBHPwxzkY42laxHbNGlzG2EQV8tNgEyKse4Rx
-	jVFGhg7kJcL3b0nEtMktlFsdLPMXYZR6nywWoEO3BHW+kVbxRGR/NDxUTacAChIuHIGYcY9KKlcEf
-	rDdoiXOrQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=efnZzPMYj3kyzm6vgXjD1T9EA8fu51/+FWr0x8H3Nqs=; b=TnC
+	PHLFfc9jsO3mPP/8HiWRXeCOjy9fYbvEM2SIXnUrqdjCZSV8vCOV4iHwvzeLQa1UVuDZm9k7DmLtk
+	1G+BXaBvPlXbFnrkfblEXQNx4zyCR2uJVa4Jtd2x0gPm4P1ewS6Dfm5lPGW2MgdxLL1fKTijs0w6m
+	X6+OkdZ0q5f7ggFoKNlVWhTF+eU09EY8mZSI3VhZevFHcAcss/e5kyfYwcS6t4HODPHu4SBJZkRQ/
+	XioNMDtE9CyjUu1Nt491XGyk9DR1rS9h+LWKzRtyBTnuSpVS6h0jp7+pJT/dMYXLRXmlMTka/LXkg
+	iOyLd+gMVv1uFEvMmuu11Cgxoxpbi2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb6h6-0007cW-7l; Tue, 19 May 2020 18:10:24 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1jb6qs-0007n7-2m; Tue, 19 May 2020 18:20:30 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb6bC-0008Sk-3M
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 18:04:20 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04JHpj7k050572;
- Tue, 19 May 2020 18:04:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=M6R/9jCPPjZ0Z40jIhYBTQf+9wpABaTJMFO+RN34OXA=;
- b=x+YXCZzBmbzN9frri30aQU4Rzx1EPD/SrJ8k4Ng/E0VhVukGXQJbWVL51owiEWbNAK8a
- UCu9y9zIFOeI6pPJnSu4ynOMmG8hLX0Woq2wIxGv7eM/9pfsTFkKqOIBKI5seAueBzsF
- Etx5w+iZ5uAVz01XmqDQ8TwCk4yC6Pk7Sr1L9B1ZWPenwUPI4s8NY4lxV9jbfvwr6c1B
- Ssa6WhyTiwZxo4WDAlngj5FjD+1ADVz0hKacWl5uItoYup/FjtxEM8Xoz773XuTcqtxr
- MtyZeRWLxJeHUijeLi1oXQ/PR/J0QU7l67CJp9I0l1v1jK2LueyD24ebestsMtS8Tf6W kA== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by aserp2120.oracle.com with ESMTP id 31284kxyyp-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 19 May 2020 18:04:10 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04JHr8nq110322;
- Tue, 19 May 2020 18:04:10 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by userp3020.oracle.com with ESMTP id 312sxt8kj9-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 19 May 2020 18:04:10 +0000
-Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04JI483L016827;
- Tue, 19 May 2020 18:04:09 GMT
-Received: from [10.74.104.239] (/10.74.104.239)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 19 May 2020 11:04:08 -0700
-Subject: Re: [PATCH 1/1] soc: ti: omap-prm: use atomic iopoll instead of
- sleeping one
-To: Tony Lindgren <tony@atomide.com>, Tero Kristo <t-kristo@ti.com>
-References: <20200514073718.17690-1-t-kristo@ti.com>
- <20200519174555.GX37466@atomide.com>
-From: santosh.shilimkar@oracle.com
-Organization: Oracle Corporation
-Message-ID: <eff0d78e-7e94-6574-6b17-f3293ef55918@oracle.com>
-Date: Tue, 19 May 2020 11:04:06 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.7.2
-MIME-Version: 1.0
-In-Reply-To: <20200519174555.GX37466@atomide.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9626
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- phishscore=0 malwarescore=0
- mlxlogscore=999 bulkscore=0 mlxscore=0 suspectscore=0 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2005190153
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9626
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- mlxscore=0
- cotscore=-2147483648 impostorscore=0 malwarescore=0 mlxlogscore=999
- lowpriorityscore=0 phishscore=0 spamscore=0 bulkscore=0 adultscore=0
- priorityscore=1501 clxscore=1011 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2005190153
+ id 1jb6qf-0007ln-Cq; Tue, 19 May 2020 18:20:18 +0000
+Received: by mail-pl1-x641.google.com with SMTP id a13so226322pls.8;
+ Tue, 19 May 2020 11:20:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=tweaTiRjNAlBbJQOd2LW81zPO4VwEBmw+s1bm5RU2eU=;
+ b=vHq0swLh3ABD8frFY+Q+x4NSOGVByP2eneaj1MaHs/gOWHnrtLDjDI+f1gQefr0YLK
+ H8UsD5ubiyEhndkgLM10NpfpZCtap+ir7DE5Osjs+0VCavZ2LjY1ycsHaBrtXeX4EwQg
+ F8pEEDFuQmgKsdwhv7zaaQ1adwxVcEIeYilLCSMXNvXViMXtdQefRbLNEzyRZOj/6rip
+ u0/U54xMJ6D/yFYQP0IBCcfi8VwjOkr02wk29LfUC+SwPTImJ/jEwAv5anGiXZ+prS6V
+ 6jTX0/KlcimopFZncKG1q9rs8bq2ec9T3UryTZ6MxUHXoK1MTjuqxhSQEeFBDAVaepLx
+ S66Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=tweaTiRjNAlBbJQOd2LW81zPO4VwEBmw+s1bm5RU2eU=;
+ b=QOGvCBAJPc253IJrKYzLoPh+6wNn0V0XFDWhm+YWg8E041OMzMELZajx4P/XSe1SDa
+ 7vS6Q5/mDDyWSCvKD0tQV0j5SwjQb1l8uVggvYiQc6UQwAAD9J/st/3K6QF+677GNJh9
+ nIZTeNOznkA6JE4RbDmod9/OIiX1b9G8NzTkQOiYBsGEVB+t9fsSDOLI5987/JcPo/nb
+ BP4OFEa4gEp3MxW9YfqSyHHIV/kx5QdaaMxih13PkZ6S5OsqXZXCmhnNEOyNQ9qFypt5
+ d8uUkFVpSp0rHLlRVJcnFXHUzG9E3UDWiAqsCszWInxzMeeAdDyLulrOoKjvYfkOOgnW
+ D0Ag==
+X-Gm-Message-State: AOAM533y7K769FEdsVjz5GslE/ZYewD1zoWvpLK19LV+Hd8mdXuygr8K
+ 3KGOQ+EFl00S35KMmuvX51Q=
+X-Google-Smtp-Source: ABdhPJyx5zytVaBkGF0VlwfL0XvKFiqFmUUAxNpAKbtFa5W/8VkVNNuk72lYjfO4ELheovvj/LX0jA==
+X-Received: by 2002:a17:902:8b88:: with SMTP id
+ ay8mr697128plb.235.1589912413949; 
+ Tue, 19 May 2020 11:20:13 -0700 (PDT)
+Received: from localhost.localdomain ([223.235.145.232])
+ by smtp.gmail.com with ESMTPSA id p2sm148399pgh.25.2020.05.19.11.19.53
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 19 May 2020 11:20:13 -0700 (PDT)
+From: Amit Singh Tomar <amittomer25@gmail.com>
+To: andre.przywara@arm.com, afaerber@suse.de, manivannan.sadhasivam@linaro.org,
+ vkoul@kernel.org, sboyd@kernel.org, robh+dt@kernel.org
+Subject: [PATCH v2 00/10] Add MMC and DMA support for Actions S700
+Date: Tue, 19 May 2020 23:49:18 +0530
+Message-Id: <1589912368-480-1-git-send-email-amittomer25@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_110418_251626_8EA23DA1 
-X-CRM114-Status: GOOD (  14.53  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200519_112017_497277_31D2F143 
+X-CRM114-Status: GOOD (  17.69  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [141.146.126.78 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [amittomer25[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [amittomer25[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,28 +95,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: s-anna@ti.com, linux-omap@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, ssantosh@kernel.org
+Cc: dan.j.williams@intel.com, linux-actions@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ cristian.ciocaltea@gmail.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/19/20 10:45 AM, Tony Lindgren wrote:
-> * Tero Kristo <t-kristo@ti.com> [200514 00:38]:
->> The reset handling APIs for omap-prm can be invoked PM runtime which
->> runs in atomic context. For this to work properly, switch to atomic
->> iopoll version instead of the current which can sleep. Otherwise,
->> this throws a "BUG: scheduling while atomic" warning. Issue is seen
->> rather easily when CONFIG_PREEMPT is enabled.
->>
->> Signed-off-by: Tero Kristo <t-kristo@ti.com>
-> 
-> Santosh do you want me to pick this for fixes?
-> 
-Sure Tony. Thanks !!
+This series(v2) addressed the review comments provided by Andre, and
+there are changes in patch 1/10, 2/10, 5/10 and 9/10.
 
-Acked-by: Santosh Shilimkar <ssantosh@kernel.org>
+* Accessor function (to get the frame lenght) has moved from
+  patch 2/9 to patch 1/9 with inline removed.
+* Removed the unnecessary line break.
+* Added comments about the way DMA descriptor differs between S700
+  and S900.
+* Added a macro to define fcnt value.
+* Updated dma DT bindings.
+* Used SoC secific compatible string for MMC.
+
+Apart from it, a new patch 8/10 is added in this series to
+update mmc DT bindings.
+
+Series is rebased on 5.7.0-rc6.
+
+----------------------------------------------------------------------
+
+Series(v1) have following changes from the previous series.
+
+New patch(5/8) has been introduced that converts dma dt-binding
+for Actions OWL SoC from text format to yaml file.
+
+For patch(2/8) new accessor function is added to get the frame
+lenght which is common to both S900 and S700. Apart from it
+SoC check is removed from irq routine as it is not needed.
+
+Patch(4/8) which is an hack to prove our DMA and MMC works
+for S700 is now sent as *do not merge* patch.
+ 
+DMA is tested using dmatest with follwoing result:
+
+root@ubuntu:~# echo dma0chan1 > /sys/module/dmatest/parameters/channel
+root@ubuntu:~# echo 2000 > /sys/module/dmatest/parameters/timeout
+root@ubuntu:~# echo 1 > /sys/module/dmatest/parameters/iterations
+root@ubuntu:~# echo 1 > /sys/module/dmatest/parameters/run
+
+root@ubuntu:~# dmesg | tail
+[  303.362586] dmatest: Added 1 threads using dma0chan1
+[  317.258658] dmatest: Started 1 threads using dma0chan1
+[  317.259397] dmatest: dma0chan1-copy0: summary 1 tests, 0 failures 16129.03 iops 32258 KB/s (0)
+
+-------------------------------------------------------------------------------
+
+The intention of RFC series is to enable uSD and DMA support for
+Cubieboard7 based on Actions S700 SoC, and on the way we found that
+it requires changes in dmaengine present on S700 as its different
+from what is present on S900.
+
+Patch(1/8) does provide a new way to describe DMA descriptor, idea is
+to remove the bit-fields as its less maintainable. It is only build
+tested and it would be great if this can be tested on S900 based
+hardware.
+
+Patch(2/8) adds S700 DMA engine support, there is new compatible
+string added for it, which means a changed bindings needed to submitted
+for this. I would plan to send it later the converted "owl-dma.yaml".
+
+Patch(4/8) disables the sps node as its memory range is conflicting
+pinctrl node and results in pinctrl proble failure.
+
+Rest of patches in the series adds DMA/MMC nodes for S700
+alone with binding constants and enables the uSD for Cubieboard7.
+
+This whole series is tested, by building/compiling Kernel on
+Cubieboard7-lite which was *almost* successful (OOM kicked in,
+while Linking due to less RAM present on hardware).
+
+Following is the mmc speed :
+
+ubuntu@ubuntu:~$ sudo hdparm -tT /dev/mmcblk0
+
+/dev/mmcblk0:
+ Timing cached reads:   1310 MB in  2.00 seconds = 655.15 MB/sec
+ Timing buffered disk reads:  62 MB in  3.05 seconds =  20.30 MB/sec
+
+Amit Singh Tomar (10):
+  dmaengine: Actions: get rid of bit fields from dma descriptor
+  dmaengine: Actions: Add support for S700 DMA engine
+  clk: actions: Add MMC clock-register reset bits
+  arm64: dts: actions: do not merge disable sps node from S700
+  dt-bindings: dmaengine: convert Actions Semi Owl SoCs bindings to yaml
+  arm64: dts: actions: Add DMA Controller for S700
+  dt-bindings: reset: s700: Add binding constants for mmc
+  dt-bindings: mmc: owl: add compatible string actions,s700-mmc
+  arm64: dts: actions: Add MMC controller support for S700
+  arm64: dts: actions: Add uSD support for Cubieboard7
+
+ Documentation/devicetree/bindings/dma/owl-dma.txt  |  47 --------
+ Documentation/devicetree/bindings/dma/owl-dma.yaml |  76 +++++++++++++
+ Documentation/devicetree/bindings/mmc/owl-mmc.yaml |   6 +-
+ arch/arm64/boot/dts/actions/s700-cubieboard7.dts   |  41 +++++++
+ arch/arm64/boot/dts/actions/s700.dtsi              |  48 ++++++++
+ drivers/clk/actions/owl-s700.c                     |   3 +
+ drivers/dma/owl-dma.c                              | 126 ++++++++++++---------
+ include/dt-bindings/reset/actions,s700-reset.h     |   3 +
+ 8 files changed, 251 insertions(+), 99 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/dma/owl-dma.txt
+ create mode 100644 Documentation/devicetree/bindings/dma/owl-dma.yaml
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
