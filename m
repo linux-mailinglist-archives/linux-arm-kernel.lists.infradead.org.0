@@ -2,124 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D53E91D98EB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 16:06:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 517661DA44B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 00:10:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gAnruuoX/cbXDQY/v1PFgopSwurMZW64ohdSrm/FwsE=; b=CN4i6QX8SwmeBP
-	mVVi+XREdRRLu7ghSsrnBE+xItn0rceGmFRtouz7hC9k0jmNjfZaG5n10LxNvZQAvFiKBR7wwjILk
-	oQQYk/RxSvq2qKRbxMF7lJ97YDMw7IMxsu55SvHtqRNXl2nGNntCXpPggUY3EgvXLqnhCf7bkRjhH
-	LzkkCwcALmFxvcbi1cgU8qgIq6ULalsriNW10bP3u3F6SF2lcqMoww9iybATPvatj5dxqTeq57tV2
-	wafjqKeVKJ25w6CBeF08QX8lOHO3dqTsqQa6tUMNJjZ8PNj5SmGtJCWQh3XDDT6EoOCUBLgVCALe/
-	wcmG8u8719cHHimCepvQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=w+rYRm8HhmDVbKELYQa9bD1tACyjR6XZ7S8FS+UV07g=; b=NRrcu5XkyUwlUC
+	5DI6Thh+RBOIEwbA0QuUwV23zs0WnTY5eczxScFjrF95rHb4wCKqlNOZQq+K3JEB+flaRKxyy2uJ7
+	lYFV18Ated3UJ83yfzoQ7F9b7o6smLlpSD2/59barm3DLOC+DWRbH+EqhBHSjyViR2JDeqZwkU6ND
+	MFGBM2oBR240UMwLHGCWhfUsNqWyhDfXQvam7bsP43ADTyqZVmNSlPukCQUZaLqpG+Rd98dnzdjx6
+	aJMJwCAWsuPAPMtSxLFzEg1Po/HhiSxeHUTZuQ+BHXwpyyjIGgyq9ZJAvaBNfmnrUyL5z49Ze9JDA
+	4Cr2nB+4m2D28yGisPGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb2t9-0001Pw-9q; Tue, 19 May 2020 14:06:35 +0000
-Received: from mail-db8eur05on2082.outbound.protection.outlook.com
- ([40.107.20.82] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jbAQw-0005oZ-At; Tue, 19 May 2020 22:09:58 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb2rf-0006bv-JB
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 14:05:05 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ul+a2wJQjs1huUyq8QeSm6PCGgmN2Q4HqkJGJnS44pAi4MI011J+fO5sy0PE2kYTUew6mlhxboy4iN48XuqkIowITK2YUfND5Q2g+BkJKNB9PJcel8iiyvtojSxmdEAbOQmv4aJnZ8MxQ+z+x7ZS2DkgYCriIn4Osb7mUcTiHRig2meZpZI0mRffsn5c1ehsWkhU6MxIJigqCW/f/zZnjul6A5y0cgYuhi+/iyNF/Z5aUqL+ZgwCH/61HhQCAPBwutpc/k2q/wA8XYj/Ng2MlDRyeFRRrqpfbSl2IFN3zKpUMHMu2xN9bH4p+kt+Q4WNPS4tHKQ2BOMdHltkeZ6PnQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LTLiHa2vMVTb/qu7hQYVMHmXWHuN/6xwzyfcbluYw/Q=;
- b=GOHQn6BO+MI7LddjO1/wpFW8bFfsY64psR5Z0hh6cOHN6ILo1b6g94XjJ4N333qE2azdfKbuTw1IVPZ8okt/1NX5yOwdjj9Uw3Q/zz9NR8mhKGvlh9qPrGpY53AcZASQ/s8Xz2MiQqT5rIK1EDzc9+7nxOB6gbJJgXQJFpjIYP7zqghxT++9Bk9hM+0o1MDI3Rio6aG1RF49KkfCdYQ3TSnAyzP7OWwlMD0qqpVNvdGJ9vEEMLf+qUKGv00mD1+FaXvZGWm2u38naRwwvSKHCnQMBskwcOLTXIDNNa8XJehTnGKD4SfnLLOHTM8dv6SOFCa1pi/1Nee6LhdJMmmK+A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LTLiHa2vMVTb/qu7hQYVMHmXWHuN/6xwzyfcbluYw/Q=;
- b=bx+4ntuQxJqKq9zoOiD3dzmQ5xpTeBC6IaclQrTOrMZ0/+0c4T/MZBOoh87FPvq9BkVBp+c8gS7e7LTfMbsm1aiwLkYs0p1+gk62D5cj6Q/mdHUTfDhgs027Q0OkmNeaVBmvYhPs93M8+ghkKqjK+aw0WmjXpRPzxPawvVZQy5c=
-Authentication-Results: gmail.com; dkim=none (message not signed)
- header.d=none;gmail.com; dmarc=none action=none header.from=nxp.com;
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6429.eurprd04.prod.outlook.com (2603:10a6:803:11a::29)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.26; Tue, 19 May
- 2020 14:04:59 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::d5f0:c948:6ab0:c2aa]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::d5f0:c948:6ab0:c2aa%4]) with mapi id 15.20.3000.034; Tue, 19 May 2020
- 14:04:59 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: lgirdwood@gmail.com, broonie@kernel.org, robh+dt@kernel.org,
- catalin.marinas@arm.com, will@kernel.org, shawnguo@kernel.org,
- anson.huang@nxp.com, festevam@gmail.com, s.hauer@pengutronix.de,
- john.lee@nxp.com
-Subject: [PATCH v1 4/4] arm64: configs: add pca9450 pmic driver
-Date: Wed, 20 May 2020 06:05:07 +0800
-Message-Id: <1589925907-9195-5-git-send-email-yibin.gong@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1589925907-9195-1-git-send-email-yibin.gong@nxp.com>
-References: <1589925907-9195-1-git-send-email-yibin.gong@nxp.com>
-X-ClientProxiedBy: SG2PR03CA0128.apcprd03.prod.outlook.com
- (2603:1096:4:91::32) To VE1PR04MB6638.eurprd04.prod.outlook.com
- (2603:10a6:803:119::15)
+ id 1jbAQh-0005j9-FU
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 22:09:45 +0000
+Received: from localhost.localdomain ([149.172.98.151]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1Mj8Vx-1j5fUO0KHd-00f6z6; Wed, 20 May 2020 00:09:33 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH] ARM: pass -msoft-float to gcc earlier
+Date: Wed, 20 May 2020 00:08:55 +0200
+Message-Id: <20200519220923.1601303-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
- SG2PR03CA0128.apcprd03.prod.outlook.com (2603:1096:4:91::32) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3021.12 via Frontend Transport; Tue, 19 May 2020 14:04:54 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: ec1a46fa-74fb-4825-ec20-08d7fbfd9dd3
-X-MS-TrafficTypeDiagnostic: VE1PR04MB6429:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR04MB642956E2FDD11A73D35FCE8189B90@VE1PR04MB6429.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:296;
-X-Forefront-PRVS: 040866B734
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: t+uPU6balgi4KTp5wLvcK4VeXM3BWV7va8HrFwKWCj1hZND4o9H3Zg80z04gc/eJPST7U2gMsToPMowd49lJuLNFPoEKTd9RlEjTKrxS/JIDG5MopJiV9bDgSOT7+t88UntqpNbOIbAFp/GPkVWiHJZ5UQ3Bgxb2JnrVNaN12BDKwiJOXxw7U9oQO9KA4X+W5LHKJHfFk5uKX7F+1adBn5oQ1d+bbdlblAZjy9BdDzk+jyswCRQ729Spvb0cdZ3FatzsUidurVi0fPtU5fx2VZ77fcU4u3i9GIV7FytdsR00Lbt+tDzBOYB4cJ4KriqVyiQeJ1Bc7YPdgodfDQEgjxL6WECDcut7c1UAnM2ijIFvA4aVOl+YwK3pao9fcHQbHxb+NdmU84+BIHrNzrhsahG8qiaUOiHjcyZqJXHQQ6Q9BVPAXXinJs/fDiiCwWj96HuwjmAKyFYVvJ86i+BQlOXFayxOmkKqQJ+e55RZTKE=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(366004)(498600001)(6506007)(6486002)(5660300002)(4744005)(4326008)(186003)(2906002)(2616005)(6636002)(956004)(16526019)(86362001)(52116002)(6512007)(26005)(8676002)(36756003)(6666004)(7416002)(8936002)(66476007)(66556008)(66946007)(921003);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: dLVKBYovJwrz7ulJcEfTBhh4xKUxHa7lTNXeLvGP9wSfK0AtHw9UWpk9A+Wpx5zytzMmacbUl0Cvqzb4r/vYUd5dXB8dt6myyQiE8h2E+hUl4HU0zF6O71yrFllE46JUM9ibVZ8f0LRovc6atU6Q89GQcHQzVMnwCTtk7ZB+TfQxu+x+N6IjLABWqu57iqaMjKmzBDkuQwA0C4vnz8RTeMg8IP6vf3DylwE+WOXEkvGQZVHUq3HE6mfz6bP08yVyonyJPvg8AafeZBioCNnPpXE5qPMqbJb3JdYTjHQlX8bfcu2lJVWdHlGiAbCYBlywY11spoVNne3mSsEmeL0OHHg7mpRQ8FCcdG9TNHShk3/Aq2Mj+3I80T2+kPPV8idmNjyw2pmpqBlE+8yKm26hX1nOV4C76788/i39Tm0UBxlGyNyccpnLsZZyTcStxiCoX/1mmGeYsLwTp4XmjeqZP27tTzztpixBcTllIQRFaRU=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ec1a46fa-74fb-4825-ec20-08d7fbfd9dd3
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 19 May 2020 14:04:59.3381 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: GbxdSs37euDMVpqhRkIt6rRt+tJT44/dDKHJfg/pPqdpqDARQWDeVq9+gryVcqV9/zlfSiRqWvxbNtSJP94izA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6429
+X-Provags-ID: V03:K1:wV6x9QxzVEAmfgleaEmiJ1+1+ez2lYlhCOI97T7b7A0kktn7leA
+ eBNumwgh0dBbKPKtn+41PyK6S+nmES2j2TmO36+gTiFDUB/N9XddcQFPMmz0U7D1mTzzSNb
+ MwAp6ICoc/0TD2RKRnDzTHm40zeWhHHW8hv+m2V0GAYVT2cZple0hKqcb0wjc6uJwUU/wnR
+ R7UKIdUdosSPE8YD7owUg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:GczoRTp8Z20=:oElP6mJ4TmvCNUchkcksR+
+ 2pwnLqRT4T0zcnrSMOQAFu7G6tdX+3MyhN1+8omC9LGIJxSQiiaexTqh/czy/LPRJBRdnS8ui
+ htb14BcwzwvGw2tj1DXBpJKDpevif5iU+0qbrryfIi7NkHIzn0E/e91JmBhkMGpA9aDK7qAOv
+ DJDEtKvfFevGRlBnstNBQ+TW7jSjky8y3ZxwG3nbOPiJgHwmP12HXHCfEvkQm1hrIDg1ALQjq
+ 4L4AdTyNNTb2EQMMZ1QVCAHFXL0NbZCYIwUaHtRnD8gWqqb5wZLwyX+JodAUZW/URv/1NmL5e
+ Z/Gg0NdIP0yp/PVRrW9ls+JtzAShB9ZwDjacH3GDnr7JZAquKFKUMGJWJLQ/d+gz9pXrbkkr4
+ ykAJZE1qB1c7ih2GorSojElV/e+l3U7bKWmkuhCRsF7zsXTNarcj4fxXT+RG5AsBXQLQUvmkm
+ LJdit0f/yLMwg3YKC1kEV5y9/l2pRbyeCpvd5ym72EiXbVVulipUn6zrocaWTC8TcCXRLzzHz
+ n/PgxQ2QpySb0I30DTW3/RU2FZFoAq0xp/WouJLJLjQnCT33b+u3U5vDrTwU4aN0Mv9+mSYzz
+ vBtTbcE3fC23Mbv5a+PuVXZfS1Z0bTau4l915odZjay8hFi95vPbMpFry8dYWzR+qp19gbWcq
+ K/tleul1NYY8t+UU/5rY8skb7kPpeSbyf8cLg0wIOJBIvds1qNbMsGv5kcQXqvUJleNaodBp6
+ +Hgj2ERR/vpeJj1hwCpA8rD1xLe+cn8Kw9BHMRo6h5hqQOX80F6d/EmFMwFDNPP89H4d88Q0m
+ JVNGe4G5fxQLSpcuvoc6hAabeqVMPMT30WUTInGbL2lHjVL8Hw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_070503_688115_F28C6073 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200519_150943_814400_F30EAE11 
+X-CRM114-Status: GOOD (  11.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.82 listed in wl.mailspike.net]
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.20.82 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ [212.227.126.133 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,35 +76,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@pengutronix.de, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-imx@nxp.com
+Cc: Arnd Bergmann <arnd@arndb.de>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add pca9450 pmic driver.
+Szabolcs Nagy ran into a kernel build failure with a custom gcc
+toochain that sets -mfpu=auto -mfloat-abi=hard:
 
-Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+ /tmp/ccmNdcdf.s:1898: Error: selected processor does not support `cpsid i' in ARM mode
+
+The problem is that $(call cc-option, -march=armv7-a) fails before the
+kernel overrides the gcc options to also pass -msoft-float.
+
+Move the option to the beginning the Makefile, before we call
+cc-option for the first time.
+
+Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
+Link: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=87302
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/Makefile | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index c6c7e7e..36fcfd8 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -550,6 +550,7 @@ CONFIG_REGULATOR_HI6421V530=y
- CONFIG_REGULATOR_HI655X=y
- CONFIG_REGULATOR_MAX77620=y
- CONFIG_REGULATOR_MAX8973=y
-+CONFIG_REGULATOR_PCA9450=y
- CONFIG_REGULATOR_PFUZE100=y
- CONFIG_REGULATOR_PWM=y
- CONFIG_REGULATOR_QCOM_RPMH=y
+diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+index 7d5cd0f85461..e428ea6eb0fa 100644
+--- a/arch/arm/Makefile
++++ b/arch/arm/Makefile
+@@ -16,6 +16,8 @@ LDFLAGS_vmlinux	+= --be8
+ KBUILD_LDFLAGS_MODULE	+= --be8
+ endif
+ 
++KBUILD_CFLAGS	+= -msoft-float
++
+ ifeq ($(CONFIG_ARM_MODULE_PLTS),y)
+ KBUILD_LDS_MODULE	+= $(srctree)/arch/arm/kernel/module.lds
+ endif
+@@ -135,7 +137,7 @@ AFLAGS_ISA	:=$(CFLAGS_ISA)
+ endif
+ 
+ # Need -Uarm for gcc < 3.x
+-KBUILD_CFLAGS	+=$(CFLAGS_ABI) $(CFLAGS_ISA) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -msoft-float -Uarm
++KBUILD_CFLAGS	+=$(CFLAGS_ABI) $(CFLAGS_ISA) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -Uarm
+ KBUILD_AFLAGS	+=$(CFLAGS_ABI) $(AFLAGS_ISA) $(arch-y) $(tune-y) -include asm/unified.h -msoft-float
+ 
+ CHECKFLAGS	+= -D__arm__
 -- 
-2.7.4
+2.26.2
 
 
 _______________________________________________
