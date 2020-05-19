@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 46BBB1D9C57
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:19:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0FBA1D9C5E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:20:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LMdj7iBKSr+xXiYxbZXqa6AUHAid1hpgBU2vEV+eg3E=; b=qJTpV2bicTPqXt
-	4fB5vMQICjg6gbcHSluBtVw7fTmcnHvlTxGwQKa7bIRl2i/YMpvsNdAl3X9PLXA/Td3pA/P4FuRdd
-	DMqkt7sFRM6u0ffhm8gCOcP1iZTSShy/Z7dDG9TOMF92kLlXVfp0BYuQ5C8GautStOGDNunR94PuU
-	cjh+rj3wafIMcSVKte5YYfXBNDwkWWBPrO1cOfLBCfgPMlWNetiOF7I4kXYr+YDlVYtYZLdI07Uau
-	FbyhfgaLht5MP2NB2DXrZIdTH8WRz3300Yzcdepj+mRw4S88WfBmrsWhTbSp4BRy+Gej1qpO89zhv
-	4ypbwZd5uqAaYjotpY4w==;
+	List-Owner; bh=ogiOshOcO68I1xADIRLmDJaHflN0FDXXjluF8BEcU3Q=; b=kECZmOYxrF84RJ
+	tg9V0tADy53QjXwTzad5JVtzfTba1SMziC/FeERk8ks1Hcd/uXApXAGPqiuuWpQlM/ECl+4al2Clj
+	Xt+y3Ny22FK3Dqy21a4Ui2Wrmd0CyfRoK46dII0D5K7EHqTLv9jFGY4FiGxCVe8aI4uMCsC3e/UCB
+	FZbdCT5RpUNYdTXL0jl0vlCyrI47QbwK/HmuuhlAae2WOQtCnUr78740oyBpFld9wwcP6RSNc/sz+
+	Sgyam00q1QHTW+3//eI56BU9o6o8NzOVnciiMhqfY6VVYyp/6k3mfSZErgFbTKYNF/t5IRXnXQYKY
+	Wm0hhyAdaH2iObFeiIEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb4xn-0003zJ-Ex; Tue, 19 May 2020 16:19:31 +0000
+	id 1jb4yZ-0004Se-59; Tue, 19 May 2020 16:20:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb4wi-0003Gc-2Q
+ id 1jb4wi-0003Gr-Nn
  for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:18:26 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 98E4820826;
- Tue, 19 May 2020 16:18:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3B60020823;
+ Tue, 19 May 2020 16:18:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589905103;
- bh=Z/8rE9knOR8VChmENUebS2xixgsDnEFY7lqcRpg4rjE=;
+ s=default; t=1589905104;
+ bh=NAsYagXItn9U5WfJpuXcKwHhiaI8ja5x9lwzsNNR9GM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=TCIVoLNV4+2Gf+Ph0JsDrAIVLD30nfcCvQHNRkxPvV9yuqdXPmJkJlG9BqK7pxLum
- rH+A4umrrpBUGGRXvtJ7vBHamxEExvdiW7GEjMk+JTr5VpXChiJTQjCHpNNvjnMIn5
- MeiErQmwHM+OFQZKmD+egGCoJdh8r+dL9V3XK4Z8=
+ b=tEdvselxx2DDoQ1Y/OjXmiU6je31CszLKGRKUw3S5cwPity01R3N1fy6d1J3aMofz
+ ILL+m6zjyqNqWFC1j3ArlPMZ7wfeHc3RCeoFwrTYiVjWMrLYtHLB51HFzDkNVakMGE
+ eDYQsDTwuKlwL6fkSAyN8lXVrZuprVCcrPJHFCHM=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jb4wg-00Decy-2x; Tue, 19 May 2020 17:18:22 +0100
+ id 1jb4wg-00Decy-Jy; Tue, 19 May 2020 17:18:22 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 03/11] arm64: Allow IPIs to be handled as normal interrupts
-Date: Tue, 19 May 2020 17:17:47 +0100
-Message-Id: <20200519161755.209565-4-maz@kernel.org>
+Subject: [PATCH 04/11] ARM: Allow IPIs to be handled as normal interrupts
+Date: Tue, 19 May 2020 17:17:48 +0100
+Message-Id: <20200519161755.209565-5-maz@kernel.org>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200519161755.209565-1-maz@kernel.org>
 References: <20200519161755.209565-1-maz@kernel.org>
@@ -60,8 +60,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_091824_152822_11DB5939 
-X-CRM114-Status: GOOD (  20.54  )
+X-CRM114-CacheID: sfid-20200519_091824_853684_FF54E2D2 
+X-CRM114-Status: GOOD (  21.35  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -117,30 +117,30 @@ already exists for this purpose.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/Kconfig           |  1 +
- arch/arm64/include/asm/smp.h |  5 ++
- arch/arm64/kernel/smp.c      | 92 +++++++++++++++++++++++++++++++-----
- 3 files changed, 86 insertions(+), 12 deletions(-)
+ arch/arm/Kconfig           |  1 +
+ arch/arm/include/asm/smp.h |  5 ++
+ arch/arm/kernel/smp.c      | 97 ++++++++++++++++++++++++++++++++------
+ 3 files changed, 88 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 5d513f461957..6a6271281016 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -99,6 +99,7 @@ config ARM64
- 	select GENERIC_CPU_VULNERABILITIES
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index c77c93c485a0..0caaba9bf880 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -48,6 +48,7 @@ config ARM
+ 	select GENERIC_ARCH_TOPOLOGY if ARM_CPU_TOPOLOGY
+ 	select GENERIC_ATOMIC64 if CPU_V7M || CPU_V6 || !CPU_32v6K || !AEABI
+ 	select GENERIC_CLOCKEVENTS_BROADCAST if SMP
++	select GENERIC_IRQ_IPI if SMP
+ 	select GENERIC_CPU_AUTOPROBE
  	select GENERIC_EARLY_IOREMAP
  	select GENERIC_IDLE_POLL_SETUP
-+	select GENERIC_IRQ_IPI
- 	select GENERIC_IRQ_MULTI_HANDLER
- 	select GENERIC_IRQ_PROBE
- 	select GENERIC_IRQ_SHOW
-diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
-index 40d5ba029615..42f366ba88bf 100644
---- a/arch/arm64/include/asm/smp.h
-+++ b/arch/arm64/include/asm/smp.h
-@@ -82,6 +82,11 @@ extern void set_smp_cross_call(void (*)(const struct cpumask *, unsigned int));
- 
- extern void (*__smp_cross_call)(const struct cpumask *, unsigned int);
+diff --git a/arch/arm/include/asm/smp.h b/arch/arm/include/asm/smp.h
+index a91f21e3c5b5..0e29730295ca 100644
+--- a/arch/arm/include/asm/smp.h
++++ b/arch/arm/include/asm/smp.h
+@@ -45,6 +45,11 @@ extern void smp_init_cpus(void);
+  */
+ extern void set_smp_cross_call(void (*)(const struct cpumask *, unsigned int));
  
 +/*
 + * Register IPI interrupts with the arch SMP code
@@ -148,15 +148,15 @@ index 40d5ba029615..42f366ba88bf 100644
 +extern void set_smp_ipi_range(int ipi_base, int nr_ipi);
 +
  /*
-  * Called from the secondary holding pen, this is the secondary CPU entry point.
-  */
-diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index 061f60fe452f..93ba0025e7b9 100644
---- a/arch/arm64/kernel/smp.c
-+++ b/arch/arm64/kernel/smp.c
-@@ -67,6 +67,13 @@ struct secondary_data secondary_data;
- /* Number of CPUs which aren't online, but looping in kernel text. */
- int cpus_stuck_in_kernel;
+  * Called from platform specific assembly code, this is the
+  * secondary CPU entry point.
+diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
+index 46e1be9e57a8..618641978a5b 100644
+--- a/arch/arm/kernel/smp.c
++++ b/arch/arm/kernel/smp.c
+@@ -79,10 +79,19 @@ enum ipi_msg_type {
+ 	 */
+ };
  
 +static int ipi_irq_base;
 +static int nr_ipi = NR_IPI;
@@ -165,31 +165,37 @@ index 061f60fe452f..93ba0025e7b9 100644
 +static void ipi_setup(int cpu);
 +static void ipi_teardown(int cpu);
 +
- enum ipi_msg_type {
- 	IPI_RESCHEDULE,
- 	IPI_CALL_FUNC,
-@@ -247,6 +254,8 @@ asmlinkage notrace void secondary_start_kernel(void)
- 	 */
+ static DECLARE_COMPLETION(cpu_running);
+ 
+ static struct smp_operations smp_ops __ro_after_init;
+ 
++static void ipi_setup(int cpu);
++
+ void __init smp_set_ops(const struct smp_operations *ops)
+ {
+ 	if (ops)
+@@ -308,6 +317,8 @@ void arch_cpu_idle_dead(void)
+ 
+ 	local_irq_disable();
+ 
++	ipi_teardown(cpu);
++
+ 	/*
+ 	 * Flush the data out of the L1 cache for this CPU.  This must be
+ 	 * before the completion to ensure that data is safely written out
+@@ -424,6 +435,8 @@ asmlinkage void secondary_start_kernel(void)
+ 
  	notify_cpu_starting(cpu);
  
 +	ipi_setup(cpu);
 +
- 	store_cpu_topology(cpu);
- 	numa_add_cpu(cpu);
+ 	calibrate_delay();
  
-@@ -374,6 +383,8 @@ void cpu_die(void)
+ 	smp_store_cpu_info(cpu);
+@@ -629,10 +642,9 @@ asmlinkage void __exception_irq_entry do_IPI(int ipinr, struct pt_regs *regs)
+ 	handle_IPI(ipinr, regs);
+ }
  
- 	local_daif_mask();
- 
-+	ipi_teardown(cpu);
-+
- 	/* Tell __cpu_die() that this CPU is now safe to dispose of */
- 	(void)cpu_report_death();
- 
-@@ -900,10 +911,9 @@ static void ipi_cpu_crash_stop(unsigned int cpu, struct pt_regs *regs)
- /*
-  * Main handler for inter-processor interrupts
-  */
 -void handle_IPI(int ipinr, struct pt_regs *regs)
 +static void do_handle_IPI(int ipinr)
  {
@@ -198,7 +204,17 @@ index 061f60fe452f..93ba0025e7b9 100644
  
  	if ((unsigned)ipinr < NR_IPI) {
  		trace_ipi_entry_rcuidle(ipi_types[ipinr]);
-@@ -916,21 +926,16 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+@@ -645,9 +657,7 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+ 
+ #ifdef CONFIG_GENERIC_CLOCKEVENTS_BROADCAST
+ 	case IPI_TIMER:
+-		irq_enter();
+ 		tick_receive_broadcast();
+-		irq_exit();
+ 		break;
+ #endif
+ 
+@@ -656,36 +666,26 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
  		break;
  
  	case IPI_CALL_FUNC:
@@ -209,27 +225,9 @@ index 061f60fe452f..93ba0025e7b9 100644
  
  	case IPI_CPU_STOP:
 -		irq_enter();
- 		local_cpu_stop();
+ 		ipi_cpu_stop(cpu);
 -		irq_exit();
  		break;
- 
- 	case IPI_CPU_CRASH_STOP:
- 		if (IS_ENABLED(CONFIG_KEXEC_CORE)) {
--			irq_enter();
--			ipi_cpu_crash_stop(cpu, regs);
-+			ipi_cpu_crash_stop(cpu, get_irq_regs());
- 
- 			unreachable();
- 		}
-@@ -938,17 +943,13 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
- 
- #ifdef CONFIG_GENERIC_CLOCKEVENTS_BROADCAST
- 	case IPI_TIMER:
--		irq_enter();
- 		tick_receive_broadcast();
--		irq_exit();
- 		break;
- #endif
  
  #ifdef CONFIG_IRQ_WORK
  	case IPI_IRQ_WORK:
@@ -239,7 +237,22 @@ index 061f60fe452f..93ba0025e7b9 100644
  		break;
  #endif
  
-@@ -967,9 +968,76 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+ 	case IPI_COMPLETION:
+-		irq_enter();
+ 		ipi_complete(cpu);
+-		irq_exit();
+ 		break;
+ 
+ 	case IPI_CPU_BACKTRACE:
+ 		printk_nmi_enter();
+-		irq_enter();
+-		nmi_cpu_backtrace(regs);
+-		irq_exit();
++		nmi_cpu_backtrace(get_irq_regs());
+ 		printk_nmi_exit();
+ 		break;
+ 
+@@ -697,9 +697,76 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
  
  	if ((unsigned)ipinr < NR_IPI)
  		trace_ipi_exit_rcuidle(ipi_types[ipinr]);
@@ -307,7 +320,7 @@ index 061f60fe452f..93ba0025e7b9 100644
 +	}
 +
 +	ipi_irq_base = ipi_base;
-+	__smp_cross_call = ipi_send;
++	set_smp_cross_call(ipi_send);
 +
 +	/* Setup the boot CPU immediately */
 +	ipi_setup(smp_processor_id());
