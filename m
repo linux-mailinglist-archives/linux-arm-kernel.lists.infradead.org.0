@@ -2,82 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D42E1DA460
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 00:19:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B4FA1DA47F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 00:25:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qOlaAHO+PVEiSKjUuY9ihOM49+LUen7+7a+uK+0J7Nk=; b=T4CQVwASlLm3jk
-	ggcBUtrf+GwnOWB7A6c6vsUZjP0F01STe+yhS4gpg+Dqep7gKcYysSEl4y5Q1Dds92d5vYzmNSAqS
-	Nu29CuNi5PIXzKXk/VxpHIedFPT2A7v07rTBgCH83NgJYM1Li2YSqJ692puqzBlq7n5lNjTp3/lL2
-	ilRqTvaXK1jQ1Hz4J6irLDOSBHFj0AZLBWqqO9GOZ8SGB8LVR6L2VG6Kw89e5quYpApRZl11HTuDq
-	gryVY5naaWbxy1HaopaYyriHy/feSdVf9G5zjYqOShAAjSc8gyP0hDxViIz7AeqJAZ3/qpssatRqf
-	0FkDMCXHMCjqV6H0tgBA==;
+	List-Owner; bh=IGkKn4bGCdRnOQG9Ks9qwisa1x0OZiYpntlCsVVjnio=; b=EaASugI77WyzxZ
+	naOCiC4xE6RxoifiWiKhacTj5mwBhO4MfOUpOYA55CpE2yx1wDk359XG7XFqOYBvmryhDzneeGkbq
+	mXUzF6vpylhHrNAL8DBZ8kjYwesGzyX8Y9mvuJcTFIsHC6B6Y89Hn7qwXJSLvanHbqVnBn96E6COX
+	fcO6mpX7SF9iFSR1qFutQcLGcWUkthVTr5GEs0fNfG4vs+ffAowbLghOtWhCg+GUX6XXyxrimlHMx
+	r8Yyhy+tG8jv7hmhar/L0KFyEoKI82NBV8DDgE0sCtS24i8G5rSXmoKvXB2l9kvf8lTsA2Xqqt9H2
+	JRyAXq3R7PESWTe4irbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbAZk-00032N-9T; Tue, 19 May 2020 22:19:04 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jbAfo-0007NT-7w; Tue, 19 May 2020 22:25:20 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbAZc-00031Y-0C
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 22:18:57 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04JMIqOf057744;
- Tue, 19 May 2020 17:18:52 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589926732;
- bh=c1gNUTsHB3gfgkX/gTaB62tQSNuCVzXqjEsmpqFZNow=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=EVzxb79ac+E5BSzuU90j/JF6T/OBf/3ArGRe7NoRfuaOqdbtZHPjFEE8wun3fZ20t
- ZmU5QtpMoV31HWGLoXF6GGexouZIT56jAJMqz0O6fdspUPRQq9y/PEzzJgoKJqhCQi
- o+6JZyuZa5dCqiLH9kGS5LvrQu+l3EiyN5BRTg14=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04JMIqFx072467
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 19 May 2020 17:18:52 -0500
-Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Tue, 19
- May 2020 17:18:51 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Tue, 19 May 2020 17:18:51 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04JMIpPZ086866;
- Tue, 19 May 2020 17:18:51 -0500
-Date: Tue, 19 May 2020 17:18:51 -0500
-From: Bin Liu <b-liu@ti.com>
-To: Oleksij Rempel <o.rempel@pengutronix.de>
-Subject: Re: [PATCH v1] usb: musb: dsps: set MUSB_DA8XX quirk for AM335x
-Message-ID: <20200519221851.GA15845@iaqt7>
-Mail-Followup-To: Bin Liu <b-liu@ti.com>,
- Oleksij Rempel <o.rempel@pengutronix.de>,
- Michael Grzeschik <m.grzeschik@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-usb@vger.kernel.org, russell@personaltelco.net,
- fercerpav@gmail.com
-References: <20200327053849.5348-1-o.rempel@pengutronix.de>
+ id 1jbAfU-00068A-RL
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 22:25:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=GgP5zC47SHT+qNcVV1uheWiy+wsRUbO+ZR1apmeNXlo=; b=swZTGhpN+zvTVqTS4ZD59GZFW
+ hHzA3m9p87R9Y+j/mTdvD3P7jI5pKBmdGW9/k/CnSKJpxrkOiQI9PdWFP89hbJeDjPoJAC8rySbKP
+ OUgH0N8tlMdbOUqw0TB1eCZ2kHGJvOLVZHzgJA/cHNghCTEnxJnfbZnjrg3dMUUFeQJHgqGNycE5O
+ tXd7LGW9JkzKYzSsCMjXPvkMG++XmGisuR2RCBd569gTtboXVQKd/n956PH4W4hRDhFQ0tknWC02D
+ f6hFylVEa/nfaWFqpZFCskIpJbsXrbi24Uy6B6rR6Enw2c4CER7j4SKylTX6bPMaKRa6NKMfCCYjF
+ 6AyIbng5Q==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:34354)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jbAfL-0006VH-6a; Tue, 19 May 2020 23:24:51 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jbAfH-000661-5J; Tue, 19 May 2020 23:24:47 +0100
+Date: Tue, 19 May 2020 23:24:47 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 04/11] ARM: Allow IPIs to be handled as normal interrupts
+Message-ID: <20200519222447.GJ1551@shell.armlinux.org.uk>
+References: <20200519161755.209565-1-maz@kernel.org>
+ <20200519161755.209565-5-maz@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200327053849.5348-1-o.rempel@pengutronix.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20200519161755.209565-5-maz@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_151856_147279_10C4FCA3 
-X-CRM114-Status: GOOD (  18.49  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200519_152504_462015_80DE2128 
+X-CRM114-Status: GOOD (  27.91  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -86,7 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,74 +87,269 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michael Grzeschik <m.grzeschik@pengutronix.de>, fercerpav@gmail.com,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, russell@personaltelco.net,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sumit Garg <sumit.garg@linaro.org>, kernel-team@android.com,
+ Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, May 19, 2020 at 05:17:48PM +0100, Marc Zyngier wrote:
+> In order to deal with IPIs as normal interrupts, let's add
+> a new way to register them with the architecture code.
+> 
+> set_smp_ipi_range() takes a range of interrupts, and allows
+> the arch code to request them as if the were normal interrupts.
+> A standard handler is then called by the core IRQ code to deal
+> with the IPI.
+> 
+> This means that we don't need to call irq_enter/irq_exit, and
+> that we don't need to deal with set_irq_regs either. So let's
+> move the dispatcher into its own function, and leave handle_IPI()
+> as a compatibility function.
+> 
+> On the sending side, let's make use of ipi_send_mask, which
+> already exists for this purpose.
 
-On Fri, Mar 27, 2020 at 06:38:49AM +0100, Oleksij Rempel wrote:
-> Beagle Bone Black has different memory corruptions if kernel is
-> configured with USB_TI_CPPI41_DMA=y. This issue is reproducible with
-> ath9k-htc driver (ar9271 based wifi usb controller):
+You say nothing about the nesting of irq_enter() and irq_exit()
+for scheduler_ipi().
+
+Given that lockdep introduced the requirement that hard IRQs can't
+be nested, are we sure that calling irq_exit() twice is safe?
+
+Looking at irqtime_account_irq(), it seems that will cause double-
+accounting of in-interrupt time, since we will increment
+irq_start_time by just over twice the the period spent handling
+the IPI.
+
+I think the rest of irq_exit() should be safe, but still, this
+behaviour should be documented at the very least, if not avoided.
+
 > 
-> root@AccessBox:~ iw dev wlan0 set monitor  fcsfail otherbss
-> root@AccessBox:~ ip l s dev wlan0 up
-> kmemleak: Cannot insert 0xda577e40 into the object search tree (overlaps existing)
-> CPU: 0 PID: 176 Comm: ip Not tainted 5.5.0 #7
-> Hardware name: Generic AM33XX (Flattened Device Tree)
-> [<c0112c14>] (unwind_backtrace) from [<c010dc98>] (show_stack+0x18/0x1c)
-> [<c010dc98>] (show_stack) from [<c08c7c2c>] (dump_stack+0x84/0x98)
-> [<c08c7c2c>] (dump_stack) from [<c02c75a8>] (create_object+0x2f8/0x324)
-> [<c02c75a8>] (create_object) from [<c02b8928>] (kmem_cache_alloc+0x1a8/0x39c)
-> [<c02b8928>] (kmem_cache_alloc) from [<c072fb68>] (__alloc_skb+0x60/0x174)
-> [<c072fb68>] (__alloc_skb) from [<bf0c5c58>] (ath9k_wmi_cmd+0x50/0x184 [ath9k_htc])
-> [<bf0c5c58>] (ath9k_wmi_cmd [ath9k_htc]) from [<bf0cb410>] (ath9k_regwrite_multi+0x54/0x84 [ath9k_htc])
-> [<bf0cb410>] (ath9k_regwrite_multi [ath9k_htc]) from [<bf0cb7fc>] (ath9k_regwrite+0xf0/0xfc [ath9k_htc])
-> [<bf0cb7fc>] (ath9k_regwrite [ath9k_htc]) from [<bf1aca78>] (ar5008_hw_process_ini+0x280/0x6c0 [ath9k_hw])
-> [<bf1aca78>] (ar5008_hw_process_ini [ath9k_hw]) from [<bf1a66ac>] (ath9k_hw_reset+0x270/0x1458 [ath9k_hw])
-> [<bf1a66ac>] (ath9k_hw_reset [ath9k_hw]) from [<bf0c9588>] (ath9k_htc_start+0xb0/0x22c [ath9k_htc])
-> [<bf0c9588>] (ath9k_htc_start [ath9k_htc]) from [<bf0eb3c0>] (drv_start+0x4c/0x1e8 [mac80211])
-> [<bf0eb3c0>] (drv_start [mac80211]) from [<bf104a84>] (ieee80211_do_open+0x480/0x954 [mac80211])
-> [<bf104a84>] (ieee80211_do_open [mac80211]) from [<c075127c>] (__dev_open+0xdc/0x160)
-> [<c075127c>] (__dev_open) from [<c07516a8>] (__dev_change_flags+0x1a4/0x204)
-> [<c07516a8>] (__dev_change_flags) from [<c0751728>] (dev_change_flags+0x20/0x50)
-> [<c0751728>] (dev_change_flags) from [<c076971c>] (do_setlink+0x2ac/0x978)
-> 
-> After applying this patch, the system is running in monitor mode without
-> noticeable issues.
-> 
-> Suggested-by: Michael Grzeschik <m.grzeschik@pengutronix.de>
-> Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 > ---
->  drivers/usb/musb/musb_dsps.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  arch/arm/Kconfig           |  1 +
+>  arch/arm/include/asm/smp.h |  5 ++
+>  arch/arm/kernel/smp.c      | 97 ++++++++++++++++++++++++++++++++------
+>  3 files changed, 88 insertions(+), 15 deletions(-)
 > 
-> diff --git a/drivers/usb/musb/musb_dsps.c b/drivers/usb/musb/musb_dsps.c
-> index 88923175f71e..c01f9e9e69f5 100644
-> --- a/drivers/usb/musb/musb_dsps.c
-> +++ b/drivers/usb/musb/musb_dsps.c
-> @@ -690,7 +690,7 @@ static void dsps_dma_controller_resume(struct dsps_glue *glue) {}
->  #endif /* CONFIG_USB_TI_CPPI41_DMA */
+> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+> index c77c93c485a0..0caaba9bf880 100644
+> --- a/arch/arm/Kconfig
+> +++ b/arch/arm/Kconfig
+> @@ -48,6 +48,7 @@ config ARM
+>  	select GENERIC_ARCH_TOPOLOGY if ARM_CPU_TOPOLOGY
+>  	select GENERIC_ATOMIC64 if CPU_V7M || CPU_V6 || !CPU_32v6K || !AEABI
+>  	select GENERIC_CLOCKEVENTS_BROADCAST if SMP
+> +	select GENERIC_IRQ_IPI if SMP
+>  	select GENERIC_CPU_AUTOPROBE
+>  	select GENERIC_EARLY_IOREMAP
+>  	select GENERIC_IDLE_POLL_SETUP
+> diff --git a/arch/arm/include/asm/smp.h b/arch/arm/include/asm/smp.h
+> index a91f21e3c5b5..0e29730295ca 100644
+> --- a/arch/arm/include/asm/smp.h
+> +++ b/arch/arm/include/asm/smp.h
+> @@ -45,6 +45,11 @@ extern void smp_init_cpus(void);
+>   */
+>  extern void set_smp_cross_call(void (*)(const struct cpumask *, unsigned int));
 >  
->  static struct musb_platform_ops dsps_ops = {
-> -	.quirks		= MUSB_DMA_CPPI41 | MUSB_INDEXED_EP,
-> +	.quirks		= MUSB_DMA_CPPI41 | MUSB_INDEXED_EP | MUSB_DA8XX,
+> +/*
+> + * Register IPI interrupts with the arch SMP code
+> + */
+> +extern void set_smp_ipi_range(int ipi_base, int nr_ipi);
+> +
+>  /*
+>   * Called from platform specific assembly code, this is the
+>   * secondary CPU entry point.
+> diff --git a/arch/arm/kernel/smp.c b/arch/arm/kernel/smp.c
+> index 46e1be9e57a8..618641978a5b 100644
+> --- a/arch/arm/kernel/smp.c
+> +++ b/arch/arm/kernel/smp.c
+> @@ -79,10 +79,19 @@ enum ipi_msg_type {
+>  	 */
+>  };
+>  
+> +static int ipi_irq_base;
+> +static int nr_ipi = NR_IPI;
+> +static struct irq_desc *ipi_desc[NR_IPI];
+> +
+> +static void ipi_setup(int cpu);
+> +static void ipi_teardown(int cpu);
+> +
+>  static DECLARE_COMPLETION(cpu_running);
+>  
+>  static struct smp_operations smp_ops __ro_after_init;
+>  
+> +static void ipi_setup(int cpu);
+> +
+>  void __init smp_set_ops(const struct smp_operations *ops)
+>  {
+>  	if (ops)
+> @@ -308,6 +317,8 @@ void arch_cpu_idle_dead(void)
+>  
+>  	local_irq_disable();
+>  
+> +	ipi_teardown(cpu);
+> +
+>  	/*
+>  	 * Flush the data out of the L1 cache for this CPU.  This must be
+>  	 * before the completion to ensure that data is safely written out
+> @@ -424,6 +435,8 @@ asmlinkage void secondary_start_kernel(void)
+>  
+>  	notify_cpu_starting(cpu);
+>  
+> +	ipi_setup(cpu);
+> +
+>  	calibrate_delay();
+>  
+>  	smp_store_cpu_info(cpu);
+> @@ -629,10 +642,9 @@ asmlinkage void __exception_irq_entry do_IPI(int ipinr, struct pt_regs *regs)
+>  	handle_IPI(ipinr, regs);
+>  }
+>  
+> -void handle_IPI(int ipinr, struct pt_regs *regs)
+> +static void do_handle_IPI(int ipinr)
+>  {
+>  	unsigned int cpu = smp_processor_id();
+> -	struct pt_regs *old_regs = set_irq_regs(regs);
+>  
+>  	if ((unsigned)ipinr < NR_IPI) {
+>  		trace_ipi_entry_rcuidle(ipi_types[ipinr]);
+> @@ -645,9 +657,7 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+>  
+>  #ifdef CONFIG_GENERIC_CLOCKEVENTS_BROADCAST
+>  	case IPI_TIMER:
+> -		irq_enter();
+>  		tick_receive_broadcast();
+> -		irq_exit();
+>  		break;
+>  #endif
+>  
+> @@ -656,36 +666,26 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+>  		break;
+>  
+>  	case IPI_CALL_FUNC:
+> -		irq_enter();
+>  		generic_smp_call_function_interrupt();
+> -		irq_exit();
+>  		break;
+>  
+>  	case IPI_CPU_STOP:
+> -		irq_enter();
+>  		ipi_cpu_stop(cpu);
+> -		irq_exit();
+>  		break;
+>  
+>  #ifdef CONFIG_IRQ_WORK
+>  	case IPI_IRQ_WORK:
+> -		irq_enter();
+>  		irq_work_run();
+> -		irq_exit();
+>  		break;
+>  #endif
+>  
+>  	case IPI_COMPLETION:
+> -		irq_enter();
+>  		ipi_complete(cpu);
+> -		irq_exit();
+>  		break;
+>  
+>  	case IPI_CPU_BACKTRACE:
+>  		printk_nmi_enter();
+> -		irq_enter();
+> -		nmi_cpu_backtrace(regs);
+> -		irq_exit();
+> +		nmi_cpu_backtrace(get_irq_regs());
+>  		printk_nmi_exit();
+>  		break;
+>  
+> @@ -697,9 +697,76 @@ void handle_IPI(int ipinr, struct pt_regs *regs)
+>  
+>  	if ((unsigned)ipinr < NR_IPI)
+>  		trace_ipi_exit_rcuidle(ipi_types[ipinr]);
+> +}
+> +
+> +/* Legacy version, should go away once all irqchips have been converted */
+> +void handle_IPI(int ipinr, struct pt_regs *regs)
+> +{
+> +	struct pt_regs *old_regs = set_irq_regs(regs);
+> +
+> +	irq_enter();
+> +	do_handle_IPI(ipinr);
+> +	irq_exit();
+> +
+>  	set_irq_regs(old_regs);
+>  }
+>  
+> +static irqreturn_t ipi_handler(int irq, void *data)
+> +{
+> +	do_handle_IPI(irq - ipi_irq_base);
+> +	return IRQ_HANDLED;
+> +}
+> +
+> +static void ipi_send(const struct cpumask *target, unsigned int ipi)
+> +{
+> +	__ipi_send_mask(ipi_desc[ipi], target);
+> +}
+> +
+> +static void ipi_setup(int cpu)
+> +{
+> +	if (ipi_irq_base) {
+> +		int i;
+> +
+> +		for (i = 0; i < nr_ipi; i++)
+> +			enable_percpu_irq(ipi_irq_base + i, 0);
+> +	}
+> +}
+> +
+> +static void ipi_teardown(int cpu)
+> +{
+> +	if (ipi_irq_base) {
+> +		int i;
+> +
+> +		for (i = 0; i < nr_ipi; i++)
+> +			disable_percpu_irq(ipi_irq_base + i);
+> +	}
+> +}
+> +
+> +void __init set_smp_ipi_range(int ipi_base, int n)
+> +{
+> +	int i;
+> +
+> +	WARN_ON(n < NR_IPI);
+> +	nr_ipi = min(n, NR_IPI);
+> +
+> +	for (i = 0; i < nr_ipi; i++) {
+> +		int err;
+> +
+> +		err = request_percpu_irq(ipi_base + i, ipi_handler,
+> +					 "IPI", &irq_stat);
+> +		WARN_ON(err);
+> +
+> +		ipi_desc[i] = irq_to_desc(ipi_base + i);
+> +		irq_set_status_flags(ipi_base + i, IRQ_NO_ACCOUNTING);
+> +	}
+> +
+> +	ipi_irq_base = ipi_base;
+> +	set_smp_cross_call(ipi_send);
+> +
+> +	/* Setup the boot CPU immediately */
+> +	ipi_setup(smp_processor_id());
+> +}
+> +
+>  void smp_send_reschedule(int cpu)
+>  {
+>  	smp_cross_call(cpumask_of(cpu), IPI_RESCHEDULE);
+> -- 
+> 2.26.2
+> 
+> 
 
-The MUSB_DA8XX flag cannot be simply applied to MUSB_DSPS, at least the
-teardown and autoreq register offsets are different as show in
-cppi41_dma_controller_create().
-
-Do you understand what exactly caused the issue? The kernel trace above
-doesn't provide enuough information.
-
--Bin.
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
