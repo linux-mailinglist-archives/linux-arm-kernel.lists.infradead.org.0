@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C1FC1D9B13
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 17:25:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 123FC1D9B17
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 17:26:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m6MVYulAzplN5PK2itWeAxLFoWpVzcCcG7SSp7SAZJ0=; b=gJKXprUXokGuLi
-	uhpQtVV4ndpIcZgqlZ7dOC1rbb/M84urbIZ4gUSjsqrCNSToGcs5LSWfqyG488snqpybCkkvLrP4J
-	b/6pXNFO9u/QAmdsSHCQ6qeIcy30135LHhhowbFaatLWVekPX7AMV+L8cJ4JkBSf+GbSZDHAjtfGm
-	KkWlITupmhLTgMz1hyYP9dZj4AIjxDUH84LKR9b8ispWEUCcELeYcV9ygSo8AmaG0tlNvffGN4WdL
-	vqSmW2OgQ5GJ0MnBha9TBODSuQXbY9G5FeBOxX5B/Ibnormq35NBCmW215V068lSvIyKefNHISuxM
-	966fgVaN4yupJEw7js2w==;
+	List-Owner; bh=DnOmKHLFbFUevTHSKYn1jcWdFZU/oGWBhi0eg4YNcyQ=; b=fB1qP14JLraVFi
+	XBmN/WJyGO9GB+sxefjxt7geeCIjSJIVoKqZyQhPGoAxSv8GDfjZERqSrmBgzJWHHs3OUYBo4/vBI
+	oX/042L6eRfDwp2NsOwtqCcmjDJ+rOAz0cf4hyTaTBjj9V52QmMvLi9oaEYEwp8OrSOsqjyWF6NRa
+	KazGEVeJZXshn7xcsvvyrJCAjkdyqbbz8LXddnrwJ+gQEJsPmWBnwtaiBf4o6RQ48LwNPIvC6aiTK
+	+XYLcckWr2av5YH2BszgCkq3Hx46SFEBRsc+R51k+eCGjGoFhu865ojiwMdPGmOlVawyUPS/N/jhZ
+	IGki45DPTlXIk5yENFSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb47H-0007z3-WF; Tue, 19 May 2020 15:25:16 +0000
+	id 1jb48o-0002JM-AL; Tue, 19 May 2020 15:26:50 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb471-0007x3-1V
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 15:25:00 +0000
+ id 1jb48g-0002J1-32
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 15:26:43 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8944D20809;
- Tue, 19 May 2020 15:24:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A6C742075F;
+ Tue, 19 May 2020 15:26:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589901898;
- bh=xxCBLEEH+HqeK9UH/0I5OXKpHOOHU2mAFVzgfdcSb10=;
+ s=default; t=1589902001;
+ bh=8vQcrAtboUpyrk0w+y/s5khTeXHH32xrzsWg2Hqy7u4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=J835dLu9cjmPyCm+3/QLdU2WB+ZGYKYQTA5u/GiZNJDLD72ODcuRW1rW1UJLNt+My
- DP8nyHOnKmYnezntG2O2XRWH03isbIUof+Pf5MWt7MOwdcIp5EcpWmczmkatJflsVT
- 4RpkjlBLvZ3V3aBtNBKLM75szsSlQEu3moxKpP8Y=
-Date: Tue, 19 May 2020 16:24:54 +0100
+ b=c0XU5M4qhlfHjCcQ4nlTxmUxk3uhRGg2aBO/MVtb87KSfU0OsTyslKAvNFD4O9Udl
+ g7htGdpZlFGjO+ESIvHIKJ8bTy5F4m1vkAFd1G02WjrE54DVn95ZOm4dxXsdrtcxj8
+ e/bTggctDl6aH6b8EyA0i+t06f2oxXZD9kLqXjdA=
+Date: Tue, 19 May 2020 16:26:37 +0100
 From: Will Deacon <will@kernel.org>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH 3/3] arm64: vdso: Fix CFI directives in sigreturn
- trampoline
-Message-ID: <20200519152453.GA15811@willie-the-truck>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH 1/3] arm64: vdso: Don't prefix sigreturn trampoline with
+ a BTI C instruction
+Message-ID: <20200519152637.GB15811@willie-the-truck>
 References: <20200519121818.14511-1-will@kernel.org>
- <20200519121818.14511-4-will@kernel.org>
- <20200519130930.GO10636@e103592.cambridge.arm.com>
- <20200519133941.GB14570@willie-the-truck>
- <20200519135537.GG5031@arm.com>
+ <20200519121818.14511-2-will@kernel.org>
+ <20200519123843.GJ4611@sirena.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200519135537.GG5031@arm.com>
+In-Reply-To: <20200519123843.GJ4611@sirena.org.uk>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_082459_102006_FC515104 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20200519_082642_149221_F1320C37 
+X-CRM114-Status: GOOD (  17.37  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,64 +79,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tamas Zsoldos <Tamas.Zsoldos@arm.com>, Mark Brown <broonie@kernel.org>,
- "kernel-team@android.com" <kernel-team@android.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Daniel Kiss <Daniel.Kiss@arm.com>
+Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, kernel-team@android.com,
+ Dave Martin <dave.martin@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Daniel Kiss <daniel.kiss@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 02:55:37PM +0100, Dave Martin wrote:
-> On Tue, May 19, 2020 at 02:39:41PM +0100, Will Deacon wrote:
-> > The gas docs say:
-> > 
-> > 	"Mark current function as signal trampoline."
-> > 
-> > which is really informative.
+On Tue, May 19, 2020 at 01:38:43PM +0100, Mark Brown wrote:
+> On Tue, May 19, 2020 at 01:18:16PM +0100, Will Deacon wrote:
 > 
-> Well, we've demonstrated that identifying the signal frame is a gross
-> bodge.  The cfi annotation should provide a reliable way to identify the
-> signal frame, but I guess it was too poorly specified or came too late
-> to prevent the bodges from spreading.
+> > Fixes: 714a8d02ca4d ("arm64: asm: Override SYM_FUNC_START when building the kernel with BTI")
 > 
-> Since this seems to be a nonstandard invention, I wouldn't hold out
-> much hope of finding a usable spec.
+> I'd say it's the annotation conversion not this, and also that the
+> bikeshed would be most fetching in orange.
 > 
-> Of course, something might be using it now, so I guess we have to leave
-> it.
+> c91db232da484851 (arm64: vdso: Convert to modern assembler annotations)
 
-I had a quick look at libstdc++ (the horror!) and it looks like the DWARF
-backend in there /does/ make use of this information as part of the
-_Unwind_GetIPInfo() function:
+I initially had both, but that felt weird so I dropped this one. However,
+I'm happy to switch it for v2.
 
-https://refspecs.linuxfoundation.org/LSB_5.0.0/LSB-Core-generic/LSB-Core-generic/baselib--unwind-getipinfo.html
+> > -SYM_FUNC_START(__kernel_rt_sigreturn)
+> > +/*
+> > + * GDB relies on being able to identify the sigreturn instruction sequence to
+> > + * unwind from signal handlers. We cannot, therefore, use SYM_FUNC_START()
+> > + * here, as it will emit a BTI C instruction and break the unwinder. Thankfully,
+> > + * this function is only ever called from a RET and so omitting the landing pad
+> > + * is perfectly fine.
+> > + */
+> > +SYM_START(__kernel_rt_sigreturn, SYM_L_GLOBAL, SYM_A_ALIGN)
+> 
+> Shouldn't this be a SYM_CODE_START()?  It's the same thing as above
+> currently and we'll break an awful lot more if we change what it does in
+> a way that affects the code, plus the use of CODE basically says the
+> above - it's a "this is non-standard and we know exactly what we're
+> doing, don't mess with it" annotation.  If not then it'd be good to
+> cover that in the comment since otherwise this seems like it's asking
+> for a cleanup, we shouldn't really have raw SYM_START() in code.
+> 
+> I guess we also ought to annotate the 32 bit sigreturns as CODE too,
+> though it's academic there without BTI.
 
-*ip_before_insn is set to 1 or 0 depending on whether or not the PC
-corresponds to a function annotated with .cfi_signal_frame. So I think
-the code in libstdc++-v3/libsupc++/eh_personality.cc doesn't need the
-mysterious NOP at all!
+Yes, that's much better, I'll use SYM_CODE_START() and update the compat
+code too (I'd forgotten it wasn't an array of hex anymore).
 
-Unfortunately, it looks like the LLVM libc++ doesn't use this, and instead
-calls _Unwind_GetIP():
-
-https://refspecs.linuxfoundation.org/LSB_5.0.0/LSB-Core-generic/LSB-Core-generic/baselib--unwind-getip.html
-
-and unconditionally subtracts 1 in libcxxabi/src/cxa_personality.cpp,
-meaning that the NOP is necessary.
-
-So, after giving myself a splitting headache, it looks like:
-
-  1. We need the mysterious NOP for LLVM
-  2. We could drop .cfi_signal_frame but it's harmless to keep it
-  3. We need the .cfi_def_cfa directive to locate the frame record, as
-     .cfi_signal_frame doesn't do very much at all.
-
-Make sense? If so, I'll spin a v2 of the patches along with a comment
-trying to summarise some of this.
-
-Cheers,
+Thanks,
 
 Will
 
