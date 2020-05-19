@@ -2,59 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C62B51D91E6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 10:16:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C0CD1D91F3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 10:20:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Uv0STK8qJnKDS4oTsoarKh7hS/O6kytc4CG6sRxqqg=; b=rw9yAjhnzlOhp4
-	NNC6V/83rC0I81TdCp5Z666dbNOq2HV0tTcekT4Bj/Q8ejCtiN3jTn9wM5ueYdCBDYo6KEfCD69IS
-	Zct4OICFMfpQsvkT53G782MXq5cNr27cCyJBPA95Ffqd2kmC9B7w5VxuMS0OWMCfhAx7yJEMDAKEB
-	slWlsdUp9++F21FGzUvCcf8LTAE6bwIHyMdlb5AEDpUFEnIBwDzqXMrOARnYIRWm8Ufuw2mYjFt9F
-	83uoinF9LaxCKyBNhd1WKrqFp0OsRDSXi+yOKAQG5y46Iv0UJSLXUuLnLzcDkSc88QsbTjj7/iLf3
-	TmX5G8o/nr9Cc08OdQ6Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LHdoaMM6jbjGQPrcwTOa4R49/DdytvLBBfsno0Qy9TA=; b=kQejsBk34x7Cbv
+	UgCIvhuMjoTK3NWbJGBOBIA9T7CehE0Q6oDvQelmKU5qJJGRv0c2A6JNeI/TXLN126J2DfQE6gZPE
+	C8bj+u7sdl2H1rYqJBisEihsvQ7gmHA/4bRe27qV1FwQGZOYLepUmOroOa7KZ554PFajM0S0jBPSH
+	btxN+7m/oDh9j9ttFl6n6d5FZ/BJDtS1SphVSbihq2Mqt0W6ldVdgry71jhbXoG+h6k5HW1j+Jcxu
+	nsJNXZyDVkOCFg6UhU3S6XM0oe33Dbqu/FXsV/X0RSNHjFKXIhHc/r+p8t2IH8YFU7hN8UEuRdfn3
+	pLqSGCanwlzO7wDXMP2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaxPw-0004Dz-Iy; Tue, 19 May 2020 08:16:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jaxUP-00072q-Lz; Tue, 19 May 2020 08:20:41 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaxPq-0004D8-6i
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 08:15:59 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 504B420709;
- Tue, 19 May 2020 08:15:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589876156;
- bh=yJ7fQn1NM95tpi8PU4m61fRGPoc8lwpzDb11CKAj0so=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=DQG3fiAM/dNkN3TrVzzD/YLGD7Yp+f9/SSBXWXOp71gI4M9jQba3W7vhqiHk0PNu0
- WgvlAah532itEJXBqUtN54gGvhJZu+xpfFrQwxtygVx3L+C3LSu0Y1xIH68nbfgSf1
- F7HCHXgWNOuwJKy0joGSnNyhY/KIOi/q3jmKHOb0=
-Date: Tue, 19 May 2020 09:15:51 +0100
-From: Will Deacon <will@kernel.org>
-To: Keno Fischer <keno@juliacomputing.com>
-Subject: Re: arm64: Register modification during syscall entry/exit stop
-Message-ID: <20200519081551.GA9980@willie-the-truck>
-References: <CABV8kRz0mKSc=u1LeonQSLroKJLOKWOWktCoGji2nvEBc=e7=w@mail.gmail.com>
+ id 1jaxUH-00072R-G1
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 08:20:35 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04J8KVUw104110;
+ Tue, 19 May 2020 03:20:31 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1589876431;
+ bh=99xg+f+DsihApuSq8GEWJaX4IKZmwEVE27Km+1QV/ZQ=;
+ h=From:To:CC:Subject:Date;
+ b=qfwac1tRvCz+5L3MJ0XtyWmLq7zlTLebllBuBPNX+Z7fLGrphH/HrwZXdsT7se6Dk
+ IwVuJQXIE1HDLPCVZcH7ODiW+uKMuw6gUy0uT+GKgI5Lm0QD4rSvqGfoFleNmKsGTC
+ kQQPN2BLbmbjGnZ3P6VIQnsUKSJPCVExTGPbyqC8=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04J8KVAZ078580
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 19 May 2020 03:20:31 -0500
+Received: from DLEE112.ent.ti.com (157.170.170.23) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Tue, 19
+ May 2020 03:20:31 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE112.ent.ti.com
+ (157.170.170.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Tue, 19 May 2020 03:20:31 -0500
+Received: from a0230074-Latitude-E7470.ent.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04J8KSv3095476;
+ Tue, 19 May 2020 03:20:28 -0500
+From: Faiz Abbas <faiz_abbas@ti.com>
+To: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH v3] arm64: dts: ti: k3-am654-main: Update otap-del-sel values
+Date: Tue, 19 May 2020 13:50:27 +0530
+Message-ID: <20200519082027.5726-1-faiz_abbas@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABV8kRz0mKSc=u1LeonQSLroKJLOKWOWktCoGji2nvEBc=e7=w@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_011558_287839_BA12CB44 
-X-CRM114-Status: GOOD (  27.13  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200519_012033_574937_4DB30091 
+X-CRM114-Status: GOOD (  11.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -76,88 +89,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Kyle Huey <khuey@pernos.co>,
- Oleg Nesterov <oleg@redhat.com>, linux-arm-kernel@lists.infradead.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: t-kristo@ti.com, nm@ti.com, robh+dt@kernel.org, faiz_abbas@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Keno,
+According to the latest AM65x Data Manual[1], a different output tap
+delay value is optimum for a given speed mode. Update these values.
 
-On Mon, May 18, 2020 at 09:05:30PM -0400, Keno Fischer wrote:
-> Continuing my theme of "weird things I encounter
-> while trying to use ptrace on arm64", I ran into the
-> effect of the following code in the syscall entry/exit
-> reporting:
-> 
-> ```
-> /*
-> * A scratch register (ip(r12) on AArch32, x7 on AArch64) is
-> * used to denote syscall entry/exit:
-> */
-> regno = (is_compat_task() ? 12 : 7);
-> saved_reg = regs->regs[regno];
-> regs->regs[regno] = dir;
-> ```
-> 
-> This seems very weird to me. I can't think of any
-> other architecture that does something similar
-> (other than unicore32 apparently, but the ptrace
-> support there seems like it might have just been
-> copied from ARM). I'm able to work around this
-> in my application, but it adds another stumbling block.
+[1] http://www.ti.com/lit/gpn/am6526
 
-Yes, we inherited this from ARM and I think strace relies on it. In
-hindsight, it is a little odd, although x7 is a parameter register in the
-PCS and so it won't be live on entry to a system call.
+Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
+---
 
-> Some examples of things that happen:
-> - Writes to x7 during syscall exit stops are ignored, so
->   if the ptracer tries to emulate a setjmp-type thing, it
->   might miss this register (ptracers sometimes like to do
->   this to manually serialize execution between different
->   threads, puppeteering a single thread of execution
->   between different register states).
-> - Reads from x7 are incorrect, so if the ptracer saves
->   a register state and later tries to set it back to the task,
->   it may get x7 incorrect, but user space may be expecting
->   the register to be preserved (when might this happen? -
->   consider a ptracer that wants to modify some syscall
->   arguments, it modifies the arguments, restarts the syscall
->   but then incurs a signal, so it tries to restore the original
->   registers to let userspace deal with the signal without
->   being confused - expect signal traps don't ignore x7
->   modifications, so x7 may have been unexpectedly
->   modified).
-> - We now have seccomp traps, which kind of look and
->   act like syscall-entry traps, but don't have this behavior,
->   so it's not particularly reliable for ptracers to use.
-> 
-> Furthermore, it seems unnecessary to me on modern
-> kernels. We now have PTRACE_GET_SYSCALL_INFO,
-> which exposes this information without lying to the ptracer
-> about the tracee's registers.
-> 
-> I understand, we can't just change this, since people may
-> be relying on it, but I would like to propose adding a ptrace
-> option (PTRACE_O_ARM_REGSGOOD?) that turns this
-> behavior off. Now, I don't think we currently have any other
-> arch-specific ptrace options, so maybe there is a different
-> option that would be preferable (e.g. could be a different
-> regset), but I do think it would be good to have a way to
-> operate on the real x7 value. As I said, I can work around it,
-> but hopefully I will be able to save a future implementer
-> some headache.
+v3: Updated values to the latest data manual revision
 
-I'm not opposed to extending ptrace so that we can try to wean people off
-this interface, but I think we need some concrete situations where the
-current behaviour actually causes a problem. Although the examples you've
-listed above are interesting, I don't see why x7 is important in any of
-them (and we only support up to 6 system call arguments).
+v2: Updated to the latest mainline kernel
 
-Will
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+index 11887c72f23a..056130a126f9 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+@@ -244,7 +244,17 @@
+ 		interrupts = <GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>;
+ 		mmc-ddr-1_8v;
+ 		mmc-hs200-1_8v;
+-		ti,otap-del-sel = <0x2>;
++		ti,otap-del-sel-legacy = <0x0>;
++		ti,otap-del-sel-mmc-hs = <0x0>;
++		ti,otap-del-sel-sd-hs = <0x0>;
++		ti,otap-del-sel-sdr12 = <0x0>;
++		ti,otap-del-sel-sdr25 = <0x0>;
++		ti,otap-del-sel-sdr50 = <0x8>;
++		ti,otap-del-sel-sdr104 = <0x7>;
++		ti,otap-del-sel-ddr50 = <0x5>;
++		ti,otap-del-sel-ddr52 = <0x5>;
++		ti,otap-del-sel-hs200 = <0x5>;
++		ti,otap-del-sel-hs400 = <0x0>;
+ 		ti,trm-icp = <0x8>;
+ 		dma-coherent;
+ 	};
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
