@@ -2,90 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB0AF1D9059
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 08:54:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5142F1D909A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 09:01:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=TLn0IHqqSUGAsTQkgmcpjjEm1NPHgEM99ensIlArCCQ=; b=VUqy72oj5mjLUB
-	8OrOc7VR+C3384TXMMhzRS0gvogh/KA/gXFpTAQGKYYOM33xBTNmg6bkBtjQ/+bxdyB93fq+7ZzwG
-	rEJ2g2/hdgtIBb8k47O/BTWnMJA7vhYJLYT3vIaT2rpoxTeuuhle6OKNs8WXYqZcB/VH6jXiBoAmA
-	Ylh0LWSJiiAwEkxJ+VGCfbQEaev4d6DuuiC/GijYMEHYSw9sRE95SvIccxadvkzsZxoPPEYk7zPRC
-	ki9KLVzzkb0d9YmRg8MjHNNHZTmNUwgKNfUrKAVxRLOcE4fTsRWQwEH065Ku4CYbQqG3Uo850LLkQ
-	JCnayJq8L6CCRM/EUmfw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BlCJXjIwEunjimVIDmglxZ/3HQLLZoyMOuBX8vd9/hI=; b=KSu
+	U3FvUUwb/NAdF6Z/AtNrWzm/UJICql1BHJ4a0hH0OlfWA0dnDlWE56rtpdX+1jGMEjG6hWLwW4z19
+	DVUWtQI814vVKvV8c4TodwwQQ+vLMb8rzeSgZmyZVJro0mp1/NgXMn8DtB3PnjTdiSUYpl55upDRL
+	FGV771pavNSn48AooGXHI6pzqSL6vBayxDdwv2qzwwcxbXVcJYo2wqpVNNvnynHvzX2QhnHoLxx8/
+	zBEtpkArNzt5bGkk1fgJD3JYuYQgrOSNkEfeV0Bc+N276pdq/xXVUZTpi3Fc1vr81z+6mvpzyxvCn
+	pdq4AsDKxG20hg9Nx/RkW+G+Zdn/VRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaw8Z-00044D-VQ; Tue, 19 May 2020 06:54:04 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jawFm-0001NU-2u; Tue, 19 May 2020 07:01:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaw8D-0003vE-C6
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 06:53:42 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id s69so905962pjb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 23:53:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernelci-org.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from; bh=Ja14eDCvTavmsN8lMxWdH3+F7uMEpoJeeWQPefK/qCg=;
- b=cGeyi1qn9Z/1ZCxVUencAUm62naS2/oXNRxGUWteXtPsDxFww4Pk50zEwTwNFd32AS
- Et0XdagF9A0my1UbalAZ7ukPrAikxD/gloXJ/fL0IbP1SBnErjDHCebtMAcx4VI5d7VB
- H2U+A2ZaKRMsAODeUWFRipA3FMEUi6RRQ1lVBWNrrj/NXERk6Wd7+vcp5L/hmw0sTFWn
- BzUCF0gviQso0MJtDQoD51ZWWNRX7YUs+R/wPs3aLhNwAHgoPhd5k4bj7wYsEyDWPU5R
- IjIENl0oNnHhXK0R0mvGvI+8/8iyYELNrCbpQoyk/+uWAk+ZxfuqmijFNqRWT/TkkKPp
- NSrw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:mime-version
- :content-transfer-encoding:subject:to:from;
- bh=Ja14eDCvTavmsN8lMxWdH3+F7uMEpoJeeWQPefK/qCg=;
- b=ptY4FN8NKUIHirdOrUqvHxBev57vYOE1lX5hF/kQwgVaGv8rVw4WcAhMw3H3vo3tBi
- T4cpl1NjDyvjf5cTsyu1AQ/AtyVypRoXpM8vSRU0+rOXexWh5zGOQ+nq1LkF9Vkrqxn/
- uqFc1xh9zsHS/4ExEE/HYWYovkmzogTQts2MyPKeNL7ds7t0S1TcqL1WHnnV4WuHl3bv
- 9nKwI0/KvS4UqEKLpQYUKVJ/u6Is/+O9pL6THp9nG0KPPQsq09mZNbFbt3YjQZH+eYMh
- 4HUGpvbVHN8kr+lTgXOx/tCQuEHXHH+OiWekhBskXGNRFUCBwskfH2bKgJVITJib+lTw
- RXnA==
-X-Gm-Message-State: AOAM533nHFvMEcQoplBfUhecHQ084lnG/wMe2ML3rmO/+zz8K0lh7NDW
- qN2/VpNIzEfnoQU/q5WKdJIVew==
-X-Google-Smtp-Source: ABdhPJzqtCE8wO53LqLgV9gkIc2h1LMCF6Vw+eW/XLo33Umz0OgeCL0dAtHoK+5d5GjrFgfVCjAOhA==
-X-Received: by 2002:a17:90a:cd03:: with SMTP id
- d3mr3464986pju.233.1589871220450; 
- Mon, 18 May 2020 23:53:40 -0700 (PDT)
-Received: from kernelci-production.internal.cloudapp.net ([52.250.1.28])
- by smtp.gmail.com with ESMTPSA id q5sm6277335pfl.199.2020.05.18.23.53.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 18 May 2020 23:53:39 -0700 (PDT)
-Message-ID: <5ec38273.1c69fb81.689d7.fc2b@mx.google.com>
-Date: Mon, 18 May 2020 23:53:39 -0700 (PDT)
-MIME-Version: 1.0
-X-Kernelci-Tree: arm64
-X-Kernelci-Kernel: v5.7-rc6-124-g96bc42ff0a82
-X-Kernelci-Report-Type: boot
-X-Kernelci-Branch: for-kernelci
-Subject: arm64/for-kernelci boot: 26 boots: 0 failed,
- 26 passed (v5.7-rc6-124-g96bc42ff0a82)
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
-From: "kernelci.org bot" <bot@kernelci.org>
+ id 1jawFe-0001Mr-1X
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 07:01:23 +0000
+Received: from kozik-lap.mshome.net (unknown [194.230.155.188])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A858220758;
+ Tue, 19 May 2020 07:01:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589871678;
+ bh=DgJgSr5WT13nwD4Vf1SEEDTdH8bte8CrZ6hmb+jKKno=;
+ h=From:List-Id:To:Cc:Subject:Date:From;
+ b=pmuLI4J9V6gOB8rWJH3L4f9zSQkB4U1SA9mupxCSiM/uNQq4Dvpr6eBfJ/9ClbFZ0
+ Uq4SC2v6GHhPEF2MjTV96A6s917YDeuxF9BmurNmLcvc/iO76BKn8Xsrnl6cdp86ay
+ s5OIdevbIt+x1rZHzRb4N5mgYPbUa24kCZuR7S5Q=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
+ arm@kernel.org, soc@kernel.org
+Subject: [GIT PULL] soc/memory: samsung: Drivers update for v5.8
+Date: Tue, 19 May 2020 09:01:11 +0200
+Message-Id: <20200519070111.6265-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_235341_411483_304FB5EA 
-X-CRM114-Status: UNSURE (   5.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200519_000122_105426_280A47FF 
+X-CRM114-Status: GOOD (  11.25  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,42 +73,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-******************************************
-* WARNING: Boot tests are now deprecated *
-******************************************
+The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
-As kernelci.org is expanding its functional testing capabilities, the concept
-of boot testing is now deprecated.  Boot results are scheduled to be dropped on
-*5th June 2020*.  The full schedule for boot tests deprecation is available on
-this GitHub issue: https://github.com/kernelci/kernelci-backend/issues/238
+  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
 
-The new equivalent is the *baseline* test suite which also runs sanity checks
-using dmesg and bootrr: https://github.com/kernelci/bootrr
+are available in the Git repository at:
 
-See the *baseline results for this kernel revision* on this page:
-https://kernelci.org/test/job/arm64/branch/for-kernelci/kernel/v5.7-rc6-124-g96bc42ff0a82/plan/baseline/
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-drivers-5.8
 
--------------------------------------------------------------------------------
+for you to fetch changes up to 108c31e77594561eb239534fe019d971c1f8fe38:
 
-arm64/for-kernelci boot: 26 boots: 0 failed, 26 passed (v5.7-rc6-124-g96bc42ff0a82)
+  memory: samsung: exynos5422-dmc: Reduce protected code area in IRQ handler (2020-05-12 15:11:47 +0200)
 
-Full Boot Summary: https://kernelci.org/boot/all/job/arm64/branch/for-kernelci/kernel/v5.7-rc6-124-g96bc42ff0a82/
-Full Build Summary: https://kernelci.org/build/arm64/branch/for-kernelci/kernel/v5.7-rc6-124-g96bc42ff0a82/
+----------------------------------------------------------------
+Samsung SoC drivers changes for v5.8
 
-Tree: arm64
-Branch: for-kernelci
-Git Describe: v5.7-rc6-124-g96bc42ff0a82
-Git Commit: 96bc42ff0a82ea44f220ea721a5835e479ec8cea
-Git URL: https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
-Tested: 23 unique boards, 7 SoC families, 1 build out of 3
+Fix and minor cleanup of Exynos5422 DMC (Dynamic Memory Controller)
+driver.
 
----
-For more info write to <info@kernelci.org>
+----------------------------------------------------------------
+Bernard Zhao (2):
+      memory: samsung: exynos5422-dmc: Fix tFAW timings alignment
+      memory: samsung: exynos5422-dmc: Reduce protected code area in IRQ handler
+
+ drivers/memory/samsung/exynos5422-dmc.c | 8 +++-----
+ 1 file changed, 3 insertions(+), 5 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
