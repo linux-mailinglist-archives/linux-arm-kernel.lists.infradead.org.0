@@ -2,69 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CD3C1D9ACD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 17:10:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEA9F1D9ADB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 17:12:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L3PMXIfPiCUd7DoDuP3dQmy9loDY1+odLCd0rD0jjw0=; b=W+EA2A0zuhxzOB
-	mHPOuKLAEeK2LLgtMjzy2WGEFJnBKdFe8nYKNvfYCi1t4CT6q83z49fF7lGo+QPToPfjSMBgR1Kuo
-	VeE+b7Fqlyv5SvfA/r/FoydgrW5ubbjoIptwf0K4YQH7RLatb1Yvw8o2rXNOGtjAO+rlQWiluQgbG
-	MwhE0wNR837kQ0+llE+AhAf+VNOUouup6GvLU9+Hoho2QgYrZwSd7hH6vVtJq5AOLdh+LPy/ZnXYb
-	TiMbOae8hkbBgZgQJdK+nSqkcWQRjnOyrrm9zzKbJAXhQ6+IdRj56zN3qJ8VnVaTjFIvkgfmMNLYp
-	Bh+zlbkrAIuVSvU1jgUw==;
+	List-Owner; bh=5Yq9QOGWtISA4Wsj+OjIwGLPqLxqJk0peawgpr9FqRc=; b=hZ73zn/ibOQcT2
+	WDUK9CwDM9CEW8I5htZY5iJVWBMeM7LN6IZ1yvHDHVcShfcTWggev/AdjXVKXN+cn+we+XCJ0Iihl
+	wEqiBvAWw2gT53DFfbrtcMHzuJpjYxHJfetSZLSYt7HJkvfLrqWuP95z2XJKN65NUA3ol+zLN0H6Z
+	fYERwSaloBnKwQWjJRD/0ayxdF948SzhJhgkhBhOa913wxw41ZdzXJoF5Wl2vwxPj9ZTxB2BSaRlt
+	91oWWrMwlIjqZS5jWd3GHx+6gNS98YTO6gIfSJRweKir6Mhvb/sWWTi4XLU/8UDswqprCbn5XsrwN
+	tzkGNUq+eUwjhkpuvaQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb3t1-00083R-Vy; Tue, 19 May 2020 15:10:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jb3uN-0000Il-At; Tue, 19 May 2020 15:11:55 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb3su-00082k-7W; Tue, 19 May 2020 15:10:25 +0000
-Received: from mail-ej1-f47.google.com (mail-ej1-f47.google.com
- [209.85.218.47])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9DB6A20842;
- Tue, 19 May 2020 15:10:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589901023;
- bh=cDO81NBWR5JNkUDn06ROcvMZX+vtmK43mTmgDiFGwlQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=KYO1BVfG+R7kOpXoOmTAywsE0eiQsXss/NsSSgXJJjE3FHVJ9XnLrnHRjI2nXsvYf
- j1ys4f0Hr2/RAFw/0wbpP0QBwvnC76RP0kBoHkHzXNeyznPxdLUN6+eRLduEyLs0fv
- zK+V8OYpIDgB3wCdnBU8d7d9VH9tjhJAzhK1Dtfc=
-Received: by mail-ej1-f47.google.com with SMTP id x1so12187486ejd.8;
- Tue, 19 May 2020 08:10:23 -0700 (PDT)
-X-Gm-Message-State: AOAM532UVxM3hk+94Xsudv588NADdswT5QqVy/Zmny2vDlzDsdZ/5CUv
- iXaTz0EPrXMXS6pBIbcfKKCCYjs9v2OdU/h7Ew==
-X-Google-Smtp-Source: ABdhPJyhbV15yj67Zc07chzoIXRKEsVO7rqxl9HErvPnhH7lppKJMsefvURisxOzEimO9K8QU/uJGq8sP+RlLOQJFNs=
-X-Received: by 2002:a17:907:2649:: with SMTP id
- ar9mr18714534ejc.375.1589901021958; 
- Tue, 19 May 2020 08:10:21 -0700 (PDT)
+ id 1jb3uC-0000HI-SU
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 15:11:46 +0000
+Received: by mail-ej1-x643.google.com with SMTP id j21so7523494ejy.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 19 May 2020 08:11:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qFmnDDUmU7bAXUCXAiIOCZYqhy9KJ7cJu0vEwn4yYb0=;
+ b=G66bJ6dC8bOeKCV1WGYuwjLa+qKy7Y0+n3uWze8Gn1ZAszBOTqKWQ62WTUjzafwL9U
+ +GTPdcyHtNf5XKqMcGlQmJUpD97lSXKgCjwnFB4vjmiLtm75QmbmYTM3DtiB9XBAXubk
+ 8oSegy8cxFNV3j8wgjPmI1EI4FQZ05wphJXLMEfxZ7N/L87ptMxbQDNAdetxkOFNUMkL
+ HpE+J0BbniB9iXMsBbBOr2cxGGu68R8o5msor4h3OyP4WEVKPSwrF4l3Kxol9Kvm0vUG
+ oiXtOGlLJLyzkc5iFPnvHSCYntlakDIurYnTYtiSq9/gpPVc72+0QTJLIip+97mGYOYs
+ 4eDA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qFmnDDUmU7bAXUCXAiIOCZYqhy9KJ7cJu0vEwn4yYb0=;
+ b=XuE+6WdsqQL7A6iOw2ILNRyrQq+stKyN3lASxmpPD+LyGT/7vATkuaokl6yImY96L0
+ YZR2IOCm4+Y9lAwvWIG4IjhLZhAiSC4UqSBJE+KszEXj6PgU2WNAyOiUuTljfWupsnQ1
+ 1YkNPmx6JXwDHaZQJREVtdWUfL9wNTGVULChjUoKML/l2RalpbWNtdkjEyuSETuf5hLf
+ 08mJZSQ0gcWrIgEw8gj0A/qHUo28sbukbdclPpJdt7yrlFFwmk4WTJLf0RLMMt3IB1up
+ ejGoO1KhHin0E6p2coFFL5dB9a6WEXomYWenghfO4axa6AVdMWN7TXI8pQA/lMKn/1uH
+ Hzuw==
+X-Gm-Message-State: AOAM530/K9C3HGl29jV3C1az1FW9tr6iXd74L67OI6+X47aPsGlQGyGG
+ DtGCKYui5fNmIYomc47JbU52UWliuJZaGiYZXk0=
+X-Google-Smtp-Source: ABdhPJzO3neINwRRzJbIjXOIJwQTkTwZpvqUbx/rpVcTcaX7VHke7n+JUXqMuZyVp2d+kaG3FsnjsThgVhsZPoFWTDE=
+X-Received: by 2002:a17:906:1088:: with SMTP id
+ u8mr1110995eju.428.1589901102998; 
+ Tue, 19 May 2020 08:11:42 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200518113156.25009-1-matthias.bgg@kernel.org>
- <20200518113156.25009-3-matthias.bgg@kernel.org>
-In-Reply-To: <20200518113156.25009-3-matthias.bgg@kernel.org>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Tue, 19 May 2020 23:10:10 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_80D6ZMM5_nEyf_XDjOLaWCOyi3mn9ibWhNX8_ozPK1BQ@mail.gmail.com>
-Message-ID: <CAAOTY_80D6ZMM5_nEyf_XDjOLaWCOyi3mn9ibWhNX8_ozPK1BQ@mail.gmail.com>
-Subject: Re: [PATCH 3/4] clk/soc: mediatek: mt6779: Bind clock driver from
- platform device
-To: matthias.bgg@kernel.org
+References: <20200421202004.11686-1-saiprakash.ranjan@codeaurora.org>
+ <b491e02ad790a437115fdeab6b21bc48@codeaurora.org>
+ <1ced023b-157c-21a0-ac75-1adef7f029f0@arm.com>
+ <20200507125357.GA31783@willie-the-truck>
+ <CAF6AEGuLU+_qP8HNO1s9PTPHqJnCMHzehmcT8NiJhiAwrfSH6w@mail.gmail.com>
+ <CAF6AEGvuHKObTR97XdSXjmjKB+qjQ8N1_wxM=ZU8bEkF=cXp-A@mail.gmail.com>
+ <20200511173008.GA24282@jcrouse1-lnx.qualcomm.com>
+ <20200518154522.GN32394@willie-the-truck>
+ <5a0ad639e272026c8be57393937cda22@codeaurora.org>
+In-Reply-To: <5a0ad639e272026c8be57393937cda22@codeaurora.org>
+From: Rob Clark <robdclark@gmail.com>
+Date: Tue, 19 May 2020 08:11:59 -0700
+Message-ID: <CAF6AEGuzBtj+srindmOvhaom5BdS2adLaOF=v_MtguMja14V2w@mail.gmail.com>
+Subject: Re: [PATCH] iomm/arm-smmu: Add stall implementation hook
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_081024_309844_22DEBF20 
-X-CRM114-Status: GOOD (  19.52  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200519_081144_939578_2AB51666 
+X-CRM114-Status: GOOD (  37.11  )
+X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robdclark[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -73,7 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.1 DKIMWL_BL              DKIMwl.org - Blacklisted sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,79 +102,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>, devicetree@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Allison Randal <allison@lohutok.net>,
- Matthias Brugger <matthias.bgg@gmail.com>, mtk01761 <wendell.lin@mediatek.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "list@263.net:IOMMU DRIVERS , Joerg Roedel <joro@8bytes.org>,
+ " <iommu@lists.linux-foundation.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIE1hdHRoaWFzOgoKPG1hdHRoaWFzLmJnZ0BrZXJuZWwub3JnPiDmlrwgMjAyMOW5tDXmnIgx
-OOaXpSDpgLHkuIAg5LiL5Y2INzozM+Wvq+mBk++8mgo+Cj4gRnJvbTogTWF0dGhpYXMgQnJ1Z2dl
-ciA8bWF0dGhpYXMuYmdnQGdtYWlsLmNvbT4KPgo+IFRoZSBtbXN5cyBkcml2ZXIgaXMgbm93IHRo
-ZSB0b3AgbGV2ZWwgZW50cnkgcG9pbnQgZm9yIHRoZSBtdWx0aW1lZGlhCj4gc3lzdGVtIChtbXN5
-cyksIHdlIGJpbmQgdGhlIGNsb2NrIGRyaXZlciBieSBjcmVhdGluZyBhIHBsYXRmb3JtIGRldmlj
-ZS4KPiBXZSBhbHNvIGJpbmQgdGhlIE1lZGlhVGVrIERSTSBkcml2ZXIgd2hpY2ggaXMgbm90IHll
-dCBpbXBsZW1lbnQgYW5kCj4gdGhlcmVmb3Igd2lsbCBlcnJyb3Igb3V0IGZvciBub3cuCj4KPiBT
-aWduZWQtb2ZmLWJ5OiBNYXR0aGlhcyBCcnVnZ2VyIDxtYXR0aGlhcy5iZ2dAZ21haWwuY29tPgo+
-IC0tLQo+Cj4gIGRyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1tdDY3NzktbW0uYyB8IDkgKystLS0t
-LS0tCj4gIGRyaXZlcnMvc29jL21lZGlhdGVrL210ay1tbXN5cy5jICAgICB8IDggKysrKysrKysK
-PiAgMiBmaWxlcyBjaGFuZ2VkLCAxMCBpbnNlcnRpb25zKCspLCA3IGRlbGV0aW9ucygtKQo+Cj4g
-ZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1tdDY3NzktbW0uYyBiL2RyaXZl
-cnMvY2xrL21lZGlhdGVrL2Nsay1tdDY3NzktbW0uYwo+IGluZGV4IGZiNWZiYjhlM2U0MS4uMDU5
-YzFhNDFhYzdhIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1tdDY3Nzkt
-bW0uYwo+ICsrKyBiL2RyaXZlcnMvY2xrL21lZGlhdGVrL2Nsay1tdDY3NzktbW0uYwo+IEBAIC04
-NCwxNSArODQsMTEgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBtdGtfZ2F0ZSBtbV9jbGtzW10gPSB7
-Cj4gICAgICAgICBHQVRFX01NMShDTEtfTU1fRElTUF9PVkxfRkJEQywgIm1tX2Rpc3Bfb3ZsX2Zi
-ZGMiLCAibW1fc2VsIiwgMTYpLAo+ICB9Owo+Cj4gLXN0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2
-aWNlX2lkIG9mX21hdGNoX2Nsa19tdDY3NzlfbW1bXSA9IHsKPiAtICAgICAgIHsgLmNvbXBhdGli
-bGUgPSAibWVkaWF0ZWssbXQ2Nzc5LW1tc3lzIiwgfSwKPiAtICAgICAgIHt9Cj4gLX07Cj4gLQo+
-ICBzdGF0aWMgaW50IGNsa19tdDY3NzlfbW1fcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAq
-cGRldikKPiAgewo+ICsgICAgICAgc3RydWN0IGRldmljZSAqZGV2ID0gJnBkZXYtPmRldjsKPiAr
-ICAgICAgIHN0cnVjdCBkZXZpY2Vfbm9kZSAqbm9kZSA9IGRldi0+cGFyZW50LT5vZl9ub2RlOwo+
-ICAgICAgICAgc3RydWN0IGNsa19vbmVjZWxsX2RhdGEgKmNsa19kYXRhOwo+IC0gICAgICAgc3Ry
-dWN0IGRldmljZV9ub2RlICpub2RlID0gcGRldi0+ZGV2Lm9mX25vZGU7Cj4KPiAgICAgICAgIGNs
-a19kYXRhID0gbXRrX2FsbG9jX2Nsa19kYXRhKENMS19NTV9OUl9DTEspOwo+Cj4gQEAgLTEwNiw3
-ICsxMDIsNiBAQCBzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZlciBjbGtfbXQ2Nzc5X21tX2Ry
-diA9IHsKPiAgICAgICAgIC5wcm9iZSA9IGNsa19tdDY3NzlfbW1fcHJvYmUsCj4gICAgICAgICAu
-ZHJpdmVyID0gewo+ICAgICAgICAgICAgICAgICAubmFtZSA9ICJjbGstbXQ2Nzc5LW1tIiwKPiAt
-ICAgICAgICAgICAgICAgLm9mX21hdGNoX3RhYmxlID0gb2ZfbWF0Y2hfY2xrX210Njc3OV9tbSwK
-PiAgICAgICAgIH0sCj4gIH07Cj4KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9zb2MvbWVkaWF0ZWsv
-bXRrLW1tc3lzLmMgYi9kcml2ZXJzL3NvYy9tZWRpYXRlay9tdGstbW1zeXMuYwo+IGluZGV4IGZl
-ZTY0YzhkMzAyMC4uZGMxNTgwOGNmM2EzIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvc29jL21lZGlh
-dGVrL210ay1tbXN5cy5jCj4gKysrIGIvZHJpdmVycy9zb2MvbWVkaWF0ZWsvbXRrLW1tc3lzLmMK
-PiBAQCAtODgsNiArODgsMTAgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBtdGtfbW1zeXNfZHJpdmVy
-X2RhdGEgbXQyNzEyX21tc3lzX2RyaXZlcl9kYXRhID0gewo+ICAgICAgICAgLmNsa19kcml2ZXIg
-PSAiY2xrLW10MjcxMi1tbSIsCj4gIH07Cj4KPiArc3RhdGljIGNvbnN0IHN0cnVjdCBtdGtfbW1z
-eXNfZHJpdmVyX2RhdGEgbXQ2Nzc5X21tc3lzX2RyaXZlcl9kYXRhID0gewo+ICsgICAgICAgLmNs
-a19kcml2ZXIgPSAiY2xrLW10Njc3OS1tbSIsCgpUaGlzIHBhdGNoIGxvb2tzIGdvb2QgdG8gbWUs
-IGJ1dCBJJ3ZlIG9uZSBxdWVzdGlvbjogd2h5IGRybSBkcml2ZXIKanVzdCB1c2Ugc2luZ2xlICJt
-ZWRpYXRlay1kcm0iIGZvciBzdWIgZHJpdmVyIG5hbWUsIGJ1dCBjbG9jayBkcml2ZXIKaGFzIGRp
-ZmZlcmVudCBuYW1lIGZvciBlYWNoIFNvQz8KQ291bGQgd2UganVzdCB1c2Ugc2luZ2xlIG5hbWUg
-Zm9yIGNsb2NrIGRyaXZlciBzdWNoIGFzICJtZWRpYXRlay1jbGstbW0iPwoKUmVnYXJkcywKQ2h1
-bi1LdWFuZy4KCj4gK307Cj4gKwo+ICBzdGF0aWMgY29uc3Qgc3RydWN0IG10a19tbXN5c19kcml2
-ZXJfZGF0YSBtdDY3OTdfbW1zeXNfZHJpdmVyX2RhdGEgPSB7Cj4gICAgICAgICAuY2xrX2RyaXZl
-ciA9ICJjbGstbXQ2Nzk3LW1tIiwKPiAgfTsKPiBAQCAtMzQzLDYgKzM0NywxMCBAQCBzdGF0aWMg
-Y29uc3Qgc3RydWN0IG9mX2RldmljZV9pZCBvZl9tYXRjaF9tdGtfbW1zeXNbXSA9IHsKPiAgICAg
-ICAgICAgICAgICAgLmNvbXBhdGlibGUgPSAibWVkaWF0ZWssbXQyNzEyLW1tc3lzIiwKPiAgICAg
-ICAgICAgICAgICAgLmRhdGEgPSAmbXQyNzEyX21tc3lzX2RyaXZlcl9kYXRhLAo+ICAgICAgICAg
-fSwKPiArICAgICAgIHsKPiArICAgICAgICAgICAgICAgLmNvbXBhdGlibGUgPSAibWVkaWF0ZWss
-bXQ2Nzc5LW1tc3lzIiwKPiArICAgICAgICAgICAgICAgLmRhdGEgPSAmbXQ2Nzc5X21tc3lzX2Ry
-aXZlcl9kYXRhLAo+ICsgICAgICAgfSwKPiAgICAgICAgIHsKPiAgICAgICAgICAgICAgICAgLmNv
-bXBhdGlibGUgPSAibWVkaWF0ZWssbXQ2Nzk3LW1tc3lzIiwKPiAgICAgICAgICAgICAgICAgLmRh
-dGEgPSAmbXQ2Nzk3X21tc3lzX2RyaXZlcl9kYXRhLAo+IC0tCj4gMi4yNi4yCj4KPgo+IF9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gTGludXgtbWVkaWF0
-ZWsgbWFpbGluZyBsaXN0Cj4gTGludXgtbWVkaWF0ZWtAbGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtbWVkaWF0ZWsK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+On Tue, May 19, 2020 at 2:26 AM Sai Prakash Ranjan
+<saiprakash.ranjan@codeaurora.org> wrote:
+>
+> Hi Will,
+>
+> On 2020-05-18 21:15, Will Deacon wrote:
+> > On Mon, May 11, 2020 at 11:30:08AM -0600, Jordan Crouse wrote:
+> >> On Fri, May 08, 2020 at 08:40:40AM -0700, Rob Clark wrote:
+> >> > On Fri, May 8, 2020 at 8:32 AM Rob Clark <robdclark@gmail.com> wrote:
+> >> > >
+> >> > > On Thu, May 7, 2020 at 5:54 AM Will Deacon <will@kernel.org> wrote:
+> >> > > >
+> >> > > > On Thu, May 07, 2020 at 11:55:54AM +0100, Robin Murphy wrote:
+> >> > > > > On 2020-05-07 11:14 am, Sai Prakash Ranjan wrote:
+> >> > > > > > On 2020-04-22 01:50, Sai Prakash Ranjan wrote:
+> >> > > > > > > Add stall implementation hook to enable stalling
+> >> > > > > > > faults on QCOM platforms which supports it without
+> >> > > > > > > causing any kind of hardware mishaps. Without this
+> >> > > > > > > on QCOM platforms, GPU faults can cause unrelated
+> >> > > > > > > GPU memory accesses to return zeroes. This has the
+> >> > > > > > > unfortunate result of command-stream reads from CP
+> >> > > > > > > getting invalid data, causing a cascade of fail.
+> >> > > > >
+> >> > > > > I think this came up before, but something about this rationale doesn't add
+> >> > > > > up - we're not *using* stalls at all, we're still terminating faulting
+> >> > > > > transactions unconditionally; we're just using CFCFG to terminate them with
+> >> > > > > a slight delay, rather than immediately. It's really not clear how or why
+> >> > > > > that makes a difference. Is it a GPU bug? Or an SMMU bug? Is this reliable
+> >> > > > > (or even a documented workaround for something), or might things start
+> >> > > > > blowing up again if any other behaviour subtly changes? I'm not dead set
+> >> > > > > against adding this, but I'd *really* like to have a lot more confidence in
+> >> > > > > it.
+> >> > > >
+> >> > > > Rob mentioned something about the "bus returning zeroes" before, but I agree
+> >> > > > that we need more information so that we can reason about this and maintain
+> >> > > > the code as the driver continues to change. That needs to be a comment in
+> >> > > > the driver, and I don't think "but android seems to work" is a good enough
+> >> > > > justification. There was some interaction with HUPCF as well.
+> >> > >
+> >> > > The issue is that there are multiple parallel memory accesses
+> >> > > happening at the same time, for example CP (the cmdstream processor)
+> >> > > will be reading ahead and setting things up for the next draw or
+> >> > > compute grid, in parallel with some memory accesses from the shader
+> >> > > which could trigger a fault.  (And with faults triggered by something
+> >> > > in the shader, there are *many* shader threads running in parallel so
+> >> > > those tend to generate a big number of faults at the same time.)
+> >> > >
+> >> > > We need either CFCFG or HUPCF, otherwise what I have observed is that
+> >> > > while the fault happens, CP's memory access will start returning
+> >> > > zero's instead of valid cmdstream data, which triggers a GPU hang.  I
+> >> > > can't say whether this is something unique to qcom's implementation of
+> >> > > the smmu spec or not.
+> >> > >
+> >> > > *Often* a fault is the result of the usermode gl/vk/cl driver bug,
+> >> > > although I don't think that is an argument against fixing this in the
+> >> > > smmu driver.. I've been carrying around a local patch to set HUPCF for
+> >> > > *years* because debugging usermode driver issues is so much harder
+> >> > > without.  But there are some APIs where faults can be caused by the
+> >> > > user's app on top of the usermode driver.
+> >> > >
+> >> >
+> >> > Also, I'll add to that, a big wish of mine is to have stall with the
+> >> > ability to resume later from a wq context.  That would enable me to
+> >> > hook in the gpu crash dump handling for faults, which would make
+> >> > debugging these sorts of issues much easier.  I think I posted a
+> >> > prototype of this quite some time back, which would schedule a worker
+> >> > on the first fault (since there are cases where you see 1000's of
+> >> > faults at once), which grabbed some information about the currently
+> >> > executing submit and some gpu registers to indicate *where* in the
+> >> > submit (a single submit could have 100's or 1000's of draws), and then
+> >> > resumed the iommu cb.
+> >> >
+> >> > (This would ofc eventually be useful for svm type things.. I expect
+> >> > we'll eventually care about that too.)
+> >>
+> >> Rob is right about HUPCF. Due to the parallel nature of the command
+> >> processor
+> >> there is always a very good chance that a CP access is somewhere in
+> >> the bus so
+> >> any pagefault is usually a death sentence. The GPU context bank would
+> >> always
+> >> want HUPCF set to 1.
+> >
+> > So this sounds like an erratum to me, and I'm happy to set HUPCF if we
+> > detect the broken implementation. However, it will need an entry in
+> > Documentation/arm64/silicon-errata.rst and a decent comment in the
+> > driver
+> > to explain what we're doing and why.
+> >
+>
+> AFAIK there is no erratum documented internally for this behaviour and
+> this
+> exists from MSM8996 SoC time and errata usually don't survive this long
+> across generation of SoCs and there is no point for us in disguising it.
+
+possibly longer, qcom_iommu sets CFCFG..
+
+> Is it OK if we clearly mention it as the "design limitation" or some
+> other
+> term which we can agree upon along with the description which Rob and
+> Jordan
+> provided for setting HUPCF in the driver when we add the set_hupcf
+> callback?
+
+I'm not too picky on what we call it, but afaict it has been this way
+since the beginning of time, rather than specific to a certain SoC or
+generation of SoCs.  So it doesn't seem like the hw designers consider
+it a bug.
+
+(I'm not sure what the expected behavior is.. nor if any other SMMU
+implementation encounters this sort of situation..)
+
+BR,
+-R
+
+>
+> Thanks,
+> Sai
+>
+> --
+> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a
+> member
+> of Code Aurora Forum, hosted by The Linux Foundation
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
