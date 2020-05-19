@@ -2,83 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E42DB1D9A31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 16:41:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A45231D9A32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 16:41:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B8A9zme1pNua+J5diqD38s+bUeuYXBbbMjpMUdwYVDE=; b=f6NlX9/1myDB6w
-	Dufu2ZmUl5wy9FyvR8FdPsG+cyN9L4E6CdQdyRPI1+5TAvaJ8E7HhvadEH5dzGoZ5oJ7c48yCN+9j
-	gnc83YduuMm+NywuyP1jlrEfwIErV362Pu3UfvngEx2mExfQigvT8CVx+ra9hejPADha/1D2Cek5k
-	qpLjRaiM6PvPJk9TqVDsP/IlxumsRL/DqVVodpvwngXdgcdnP+tKVpNqlrYrHryKaMRnGx7n4hT8s
-	P4KunbfXxeQiIpSU4KLAAXkTXJJ5IV/jOzNob/7hyM7H+RdgtwOXp/71YYTNrrTk3aj8KXdwxzRqz
-	W+ljiRq21dDTVMyH+iOA==;
+	List-Owner; bh=DD9VOpXAIGG8P96FMlYCbOdbT5GBsYlot5LzDewIG9g=; b=urjl1J8wTsIjP2
+	Iyiw5VH+XPsMbbauoxgJIs1xj0W2McvUSLjG7eAk16gz1vuDD5D0n9zdwQLrh/pQy334ZFVUi4tQS
+	qSN/V4eA+ZK1nFMT2PS4TcrmxsNgajz6cD6Q8Wex4tWttJfHtHFWvub7PsT31vKsROueUx5i+Irvr
+	224FLm3MDGXxCmXLKmX6si4ExBOcgoNbcLWiKkniPsNHP29YyrgOP4+sQxxYqP+jQ9Jyrub2ThhVi
+	qacToq/UDZ+1VGmPrTwUOn+0T5hM7rUU56lCLERjmO94gu8ZUFiDzyxEn22C7UksH8cpDb02ZaVZl
+	WzYg6eWOnsTKTabSwqwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb3Qi-00022W-71; Tue, 19 May 2020 14:41:16 +0000
+	id 1jb3Qu-0002FY-3d; Tue, 19 May 2020 14:41:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb3Hx-0006UV-RK
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 14:32:19 +0000
-Received: from mail-io1-f42.google.com (mail-io1-f42.google.com
- [209.85.166.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jb3IQ-0006p9-OY
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 14:32:44 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E037B20825
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 14:32:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2783220709;
+ Tue, 19 May 2020 14:32:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589898733;
- bh=1XXHRqjtt+WSYWwOg1XwbutxmoWaeM/OCUneB2tBKtc=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=tG/WI7qQXvcO60JsLcmZL5mhQU5vPQ0IHLJS4jcjTvZENfGM+Yvq4lzkb9/1+kaB2
- boc74Yf1/+FDphKy4BZbh1UpmI2oYLclKJ0DLY3pUBKKMzVY8sF5M70UUe+gmRCTVZ
- kREZZxHkz8TNNNsJCb35V4HGVab/CIMbYgd8Pzn0=
-Received: by mail-io1-f42.google.com with SMTP id w25so14667541iol.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 07:32:12 -0700 (PDT)
-X-Gm-Message-State: AOAM532HQRGEqMHYN6MeAZDLyNZ8IkPIXsjvDilfdS46f6elbi3miFKt
- THd5QunBhI/2aaBmR+34B6IkcGnHERkjPBKxcYk=
-X-Google-Smtp-Source: ABdhPJxjyA1i44V17SV1ppXFEe39BzP/hHzIXIE8WLdS8tIhuMM1cTHG9CMqQhTXIWplXBdei1EfUxsbrT+5qpVkWgc=
-X-Received: by 2002:a5d:898a:: with SMTP id m10mr18219593iol.203.1589898732296; 
- Tue, 19 May 2020 07:32:12 -0700 (PDT)
+ s=default; t=1589898761;
+ bh=8dRoY75gctTa3FpzlxULfGi/mY+xKfG+ht4//YeYnwE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=uyXZhbfNBn5T/oaMo0WvrPoYavYZP3al02qsZk9krMsP9VtmmbuJI9pnvMzay0zzK
+ 7oymW7k/g2FTN0NqZ20t6w8BMj8n4JHfVb12qtGHsKdqMzrhCtWKrVb2khqjdwp+uq
+ vYk9gYlzYVgt04c1muZ6aZ20Yg5gj2QF3tg39fs8=
+Date: Tue, 19 May 2020 16:32:39 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH 21/23] coresight: etm4x: Fix use-after-free of per-cpu
+ etm drvdata
+Message-ID: <20200519143239.GA704887@kroah.com>
+References: <20200518180242.7916-1-mathieu.poirier@linaro.org>
+ <20200518180242.7916-22-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
-References: <CGME20200429082134eucas1p2415c5269202529e6b019f2d70c1b5572@eucas1p2.samsung.com>
- <20200429082120.16259-1-geert+renesas@glider.be>
- <dleftjmu645mqn.fsf%l.stelmach@samsung.com>
- <CAMuHMdXxq6m6gebQbWvxDynDcZ7dLyZzKC_QroK63L8FGeac1Q@mail.gmail.com>
- <20200519094637.GZ1551@shell.armlinux.org.uk>
- <CAMuHMdU5DG06G4H=+PH+OONMT_9oE==KS=wP+bLgY9xVCez6Ww@mail.gmail.com>
- <CAMj1kXH_s4qjDfTO03PkGNaiwfjmfkrZ-FE8vTm74QSrgoVt0A@mail.gmail.com>
- <20200519142854.GF1551@shell.armlinux.org.uk>
-In-Reply-To: <20200519142854.GF1551@shell.armlinux.org.uk>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Tue, 19 May 2020 16:32:01 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEk3Tkj2HQOhxPP3m7gMX7nAViJ7ZBU7XB0wUy2ceNuWw@mail.gmail.com>
-Message-ID: <CAMj1kXEk3Tkj2HQOhxPP3m7gMX7nAViJ7ZBU7XB0wUy2ceNuWw@mail.gmail.com>
-Subject: Re: [PATCH v6] ARM: boot: Obtain start of physical memory from DTB
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Content-Disposition: inline
+In-Reply-To: <20200518180242.7916-22-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_073213_961033_1E3CC0A9 
-X-CRM114-Status: GOOD (  38.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200519_073242_908101_78983EE9 
+X-CRM114-Status: GOOD (  11.35  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,124 +74,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Grant Likely <grant.likely@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Nicolas Pitre <nico@fluxnic.net>,
- Masahiro Yamada <masahiroy@kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Lukasz Stelmach <l.stelmach@samsung.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Chris Brandt <chris.brandt@renesas.com>, Rob Herring <robh+dt@kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Eric Miao <eric.miao@nvidia.com>, Dmitry Osipenko <digetx@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAxOSBNYXkgMjAyMCBhdCAxNjoyOSwgUnVzc2VsbCBLaW5nIC0gQVJNIExpbnV4IGFk
-bWluCjxsaW51eEBhcm1saW51eC5vcmcudWs+IHdyb3RlOgo+Cj4gT24gVHVlLCBNYXkgMTksIDIw
-MjAgYXQgMDM6NTY6NTlQTSArMDIwMCwgQXJkIEJpZXNoZXV2ZWwgd3JvdGU6Cj4gPiBPbiBUdWUs
-IDE5IE1heSAyMDIwIGF0IDEzOjIxLCBHZWVydCBVeXR0ZXJob2V2ZW4gPGdlZXJ0QGxpbnV4LW02
-OGsub3JnPiB3cm90ZToKPiA+ID4KPiA+ID4gSGkgUnVzc2VsbCwKPiA+ID4KPiA+ID4gQ0MgZGV2
-aWNldHJlZQo+ID4gPgo+ID4gPiBPbiBUdWUsIE1heSAxOSwgMjAyMCBhdCAxMTo0NiBBTSBSdXNz
-ZWxsIEtpbmcgLSBBUk0gTGludXggYWRtaW4KPiA+ID4gPGxpbnV4QGFybWxpbnV4Lm9yZy51az4g
-d3JvdGU6Cj4gPiA+ID4gT24gVHVlLCBNYXkgMTksIDIwMjAgYXQgMTE6NDQ6MTdBTSArMDIwMCwg
-R2VlcnQgVXl0dGVyaG9ldmVuIHdyb3RlOgo+ID4gPiA+ID4gT24gVHVlLCBNYXkgMTksIDIwMjAg
-YXQgMTA6NTQgQU0gTHVrYXN6IFN0ZWxtYWNoIDxsLnN0ZWxtYWNoQHNhbXN1bmcuY29tPiB3cm90
-ZToKPiA+ID4gPiA+ID4gSXQgd2FzIDwyMDIwLTA0LTI5IMWbcm8gMTA6MjE+LCB3aGVuIEdlZXJ0
-IFV5dHRlcmhvZXZlbiB3cm90ZToKPiA+ID4gPiA+ID4gPiBDdXJyZW50bHksIHRoZSBzdGFydCBh
-ZGRyZXNzIG9mIHBoeXNpY2FsIG1lbW9yeSBpcyBvYnRhaW5lZCBieSBtYXNraW5nCj4gPiA+ID4g
-PiA+ID4gdGhlIHByb2dyYW0gY291bnRlciB3aXRoIGEgZml4ZWQgbWFzayBvZiAweGY4MDAwMDAw
-LiAgVGhpcyBtYXNrIHZhbHVlCj4gPiA+ID4gPiA+ID4gd2FzIGNob3NlbiBhcyBhIGJhbGFuY2Ug
-YmV0d2VlbiB0aGUgcmVxdWlyZW1lbnRzIG9mIGRpZmZlcmVudCBwbGF0Zm9ybXMuCj4gPiA+ID4g
-PiA+ID4gSG93ZXZlciwgdGhpcyBkb2VzIHJlcXVpcmUgdGhhdCB0aGUgc3RhcnQgYWRkcmVzcyBv
-ZiBwaHlzaWNhbCBtZW1vcnkgaXMKPiA+ID4gPiA+ID4gPiBhIG11bHRpcGxlIG9mIDEyOCBNaUIs
-IHByZWNsdWRpbmcgYm9vdGluZyBMaW51eCBvbiBwbGF0Zm9ybXMgd2hlcmUgdGhpcwo+ID4gPiA+
-ID4gPiA+IHJlcXVpcmVtZW50IGlzIG5vdCBmdWxmaWxsZWQuCj4gPiA+ID4gPiA+ID4KPiA+ID4g
-PiA+ID4gPiBGaXggdGhpcyBsaW1pdGF0aW9uIGJ5IG9idGFpbmluZyB0aGUgc3RhcnQgYWRkcmVz
-cyBmcm9tIHRoZSBEVEIgaW5zdGVhZCwKPiA+ID4gPiA+ID4gPiBpZiBhdmFpbGFibGUgKGVpdGhl
-ciBleHBsaWNpdGx5IHBhc3NlZCwgb3IgYXBwZW5kZWQgdG8gdGhlIGtlcm5lbCkuCj4gPiA+ID4g
-PiA+ID4gRmFsbCBiYWNrIHRvIHRoZSB0cmFkaXRpb25hbCBtZXRob2Qgd2hlbiBuZWVkZWQuCj4g
-PiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiBUaGlzIGFsbG93cyB0byBib290IExpbnV4IG9uIHI3
-czkyMTAvcnphMm1ldmIgdXNpbmcgdGhlIDY0IE1pQiBvZiBTRFJBTQo+ID4gPiA+ID4gPiA+IG9u
-IHRoZSBSWkEyTUVWQiBzdWIgYm9hcmQsIHdoaWNoIGlzIGxvY2F0ZWQgYXQgMHgwQzAwMDAwMCAo
-Q1MzIHNwYWNlKSwKPiA+ID4gPiA+ID4gPiBpLmUuIG5vdCBhdCBhIG11bHRpcGxlIG9mIDEyOCBN
-aUIuCj4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiBTdWdnZXN0ZWQtYnk6IE5pY29sYXMgUGl0
-cmUgPG5pY29AZmx1eG5pYy5uZXQ+Cj4gPiA+ID4gPiA+ID4gU2lnbmVkLW9mZi1ieTogR2VlcnQg
-VXl0dGVyaG9ldmVuIDxnZWVydCtyZW5lc2FzQGdsaWRlci5iZT4KPiA+ID4gPiA+ID4gPiBSZXZp
-ZXdlZC1ieTogTmljb2xhcyBQaXRyZSA8bmljb0BmbHV4bmljLm5ldD4KPiA+ID4gPiA+ID4gPiBS
-ZXZpZXdlZC1ieTogQXJkIEJpZXNoZXV2ZWwgPGFyZGJAa2VybmVsLm9yZz4KPiA+ID4gPiA+ID4g
-PiBUZXN0ZWQtYnk6IE1hcmVrIFN6eXByb3dza2kgPG0uc3p5cHJvd3NraUBzYW1zdW5nLmNvbT4K
-PiA+ID4gPiA+ID4gPiBUZXN0ZWQtYnk6IERtaXRyeSBPc2lwZW5rbyA8ZGlnZXR4QGdtYWlsLmNv
-bT4KPiA+ID4gPiA+ID4gPiAtLS0KPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gWy4uLl0KPiA+ID4g
-PiA+ID4KPiA+ID4gPiA+ID4gQXBwYXJlbnRseSByZWFkaW5nIHBoeXNpY2FsIG1lbW9yeSBsYXlv
-dXQgZnJvbSBEVEIgYnJlYWtzIGNyYXNoZHVtcAo+ID4gPiA+ID4gPiBrZXJuZWxzLiBBIGNyYXNo
-ZHVtcCBrZXJuZWwgaXMgbG9hZGVkIGludG8gYSByZWdpb24gb2YgbWVtb3J5LCB0aGF0IGlzCj4g
-PiA+ID4gPiA+IHJlc2VydmVkIGluIHRoZSBvcmlnaW5hbCAoaS5lLiB0byBiZSBjcmFzaGVkKSBr
-ZXJuZWwuIFRoZSByZXNlcnZlZAo+ID4gPiA+ID4gPiByZWdpb24gaXMgbGFyZ2UgZW5vdWdoIGZv
-ciB0aGUgY3Jhc2hkdW1wIGtlcm5lbCB0byBydW4gY29tcGxldGVseSBpbnNpZGUKPiA+ID4gPiA+
-ID4gaXQgYW5kIGRvbid0IG1vZGlmeSBhbnl0aGluZyBvdXRzaWRlIGl0LCBqdXN0IHJlYWQgYW5k
-IGR1bXAgdGhlIHJlbWFpbnMKPiA+ID4gPiA+ID4gb2YgdGhlIGNyYXNoZWQga2VybmVsLiBVc2lu
-ZyB0aGUgaW5mb3JtYXRpb24gZnJvbSBEVEIgbWFrZXMgdGhlCj4gPiA+ID4gPiA+IGRlY29tcHJl
-c3NvciBwbGFjZSB0aGUga2VybmVsIG91dHNpZGUgb2YgdGhlIGRlZGljYXRlZCByZWdpb24uCj4g
-PiA+ID4gPiA+Cj4gPiA+ID4gPiA+IFRoZSBsb2cgYmVsb3cgc2hvd3MgdGhhdCBhIHpJbWFnZSBh
-bmQgRFRCIGFyZSBsb2FkZWQgYXQgMHgxOGViODAwMCBhbmQKPiA+ID4gPiA+ID4gMHgxOTNmNjAw
-MCAocGh5c2ljYWwpLiBUaGUga2VybmVsIGlzIGV4cGVjdGVkIHRvIHJ1biBhdCAweDE4MDA4MDAw
-LCBidXQKPiA+ID4gPiA+ID4gaXQgaXMgZGVjb21wcmVzc2VkIHRvIDB4MDAwMDgwMDAgKHNlZSBy
-NCByZXBvcnRlZCBiZWZvcmUganVtcGluZyBmcm9tCj4gPiA+ID4gPiA+IHdpdGhpbiBfX2VudGVy
-X2tlcm5lbCkuIElmIEkgd2VyZSB0byBzdWdnZXN0IHNvbWV0aGluZywgdGhlcmUgbmVlZCB0byBi
-ZQo+ID4gPiA+ID4gPiBvbmUgbW9yZSBiaXQgb2YgaW5mb3JtYXRpb24gcGFzc2VkIGluIHRoZSBE
-VEIgdGVsbGluZyB0aGUgZGVjb21wcmVzc29yCj4gPiA+ID4gPiA+IHRvIHVzZSB0aGUgb2xkIG1h
-c2tpbmcgdGVjaG5pcXVlIHRvIGRldGVybWFpbiBrZXJuZWwgYWRkcmVzcy4gSXQgd291bGQKPiA+
-ID4gPiA+ID4gYmUgc2V0IGluIHRoZSBEVEIgbG9hZGVkIGFsb25nIHdpdGggdGhlIGNyYXNoZHVt
-cCBrZXJuZWwuCj4gPiA+ID4gPgo+ID4gPiA+ID4gU2hvdWxkbid0IHRoZSBEVEIgcGFzc2VkIHRv
-IHRoZSBjcmFzaGtlcm5lbCBkZXNjcmliZSB3aGljaCByZWdpb24gb2YKPiA+ID4gPiA+IG1lbW9y
-eSBpcyB0byBiZSB1c2VkIGluc3RlYWQ/Cj4gPiA+ID4KPiA+ID4gPiBEZWZpbml0ZWx5IG5vdC4g
-IFRoZSBjcmFzaGtlcm5lbCBuZWVkcyB0byBrbm93IHdoZXJlIHRoZSBSQU0gaW4gdGhlCj4gPiA+
-ID4gbWFjaGluZSBpcywgc28gdGhhdCBpdCBjYW4gY3JlYXRlIGEgY29yZWR1bXAgb2YgdGhlIGNy
-YXNoZWQga2VybmVsLgo+ID4gPgo+ID4gPiBTbyB0aGUgRFRCIHNob3VsZCBkZXNjcmliZSBib3Ro
-IDstKQo+ID4gPgo+ID4gPiA+ID4gRGVzY3JpYmluZyAidG8gdXNlIHRoZSBvbGQgbWFza2luZyB0
-ZWNobmlxdWUiIHNvdW5kcyBhIGJpdCBoYWNraXNoIHRvIG1lLgo+ID4gPiA+ID4gSSBndWVzcyBp
-dCBjYW5ub3QganVzdCByZXN0cmljdCB0aGUgL21lbW9yeSBub2RlIHRvIHRoZSByZXNlcnZlZCBy
-ZWdpb24sCj4gPiA+ID4gPiBhcyB0aGUgY3Jhc2hrZXJuZWwgbmVlZHMgdG8gYmUgYWJsZSB0byBk
-dW1wIHRoZSByZW1haW5zIG9mIHRoZSBjcmFzaGVkCj4gPiA+ID4gPiBrZXJuZWwsIHdoaWNoIGxp
-ZSBvdXRzaWRlIHRoaXMgcmVnaW9uLgo+ID4gPiA+Cj4gPiA+ID4gQ29ycmVjdC4KPiA+ID4gPgo+
-ID4gPiA+ID4gSG93ZXZlciwgc29tZXRoaW5nIHVuZGVyIC9jaG9zZW4gc2hvdWxkIHdvcmsuCj4g
-PiA+ID4KPiA+ID4gPiBZZXQgYW5vdGhlciBzdGlja3kgcGxhc3Rlci4uLgo+ID4gPgo+ID4gPiBJ
-TUhPIHRoZSBvbGQgbWFza2luZyB0ZWNobmlxdWUgaXMgdGhlIGhhY2t5IHNvbHV0aW9uIGNvdmVy
-ZWQgYnkKPiA+ID4gcGxhc3RlcnMuCj4gPiA+Cj4gPgo+ID4gSSB0aGluayBkZWJhdGluZyB3aGlj
-aCBzb2x1dGlvbiBpcyB0aGUgaGFja3kgb25lIHdpbGwgbm90IGdldCB1cyBhbnl3aGVyZS4KPiA+
-Cj4gPiBUaGUgc2ltcGxlIHJlYWxpdHkgaXMgdGhhdCB0aGUgZXhpc3Rpbmcgc29sdXRpb24gd29y
-a3MgZmluZSBmb3IKPiA+IGV4aXN0aW5nIHBsYXRmb3JtcywgYW5kIHNvIGFueSBjaGFuZ2VzIGlu
-IHRoZSBsb2dpYyB3aWxsIGhhdmUgdG8gYmUKPiA+IG9wdC1pbiBpbiBvbmUgd2F5IG9yIHRoZSBv
-dGhlci4KPiA+Cj4gPiBTaW5jZSBVLWJvb3Qgc3VwcG9ydHMgRUZJIGJvb3QgdGhlc2UgZGF5cywg
-b25lIHBvdGVudGlhbCBvcHRpb24gaXMgdG8KPiA+IHJlbHkgb24gdGhhdC4gSSBoYXZlIHNvbWUg
-Y2hhbmdlcyBpbXBsZW1lbnRpbmcgdGhpcyB0aGF0IGdvIG9uIHRvcCBvZgo+ID4gdGhpcyBwYXRj
-aCwgYnV0IHRoZXkgZG9uJ3QgYWN0dWFsbHkgcmVseSBvbiBpdCAtIGl0IHdhcyBqdXN0IHRvCj4g
-PiBwcmV2ZW50IGxleGljYWwgY29uZmxpY3RzLgo+ID4KPiA+IFRoZSBvbmx5IHJlbWFpbmluZyBv
-cHRpb25zIGltbyBhcmUgYSBrZXJuZWwgY29tbWFuZCBsaW5lIG9wdGlvbiwgb3IgYQo+ID4gRFQg
-cHJvcGVydHkgdGhhdCB0ZWxscyB0aGUgZGVjb21wcmVzc29yIHRvIGxvb2sgYXQgdGhlIG1lbW9y
-eSBub2Rlcy4KPiA+IEJ1dCB1c2luZyB0aGUgRFQgbWVtb3J5IG5vZGVzIG9uIGFsbCBwbGF0Zm9y
-bXMgbGlrZSB0aGlzIHBhdGNoIGRvZXMgaXMKPiA+IG9idmlvdXNseSBqdXN0IHRvbyByaXNreS4K
-PiA+Cj4gPiBPbiBhbm90aGVyIG5vdGUsIEkgZG8gdGhpbmsgdGhlIHVzYWJsZS1tZW1vcnktcmVn
-aW9uIHByb3BlcnR5IHNob3VsZAo+ID4gYmUgaW1wbGVtZW50ZWQgZm9yIEFSTSBhcyB3ZWxsIC0g
-cmVseWluZyBvbiB0aGlzIHJvdW5kaW5nIHRvIGVuc3VyZQo+ID4gdGhhdCB0aGUgZGVjb21wcmVz
-c29yIGRvZXMgdGhlIHJpZ2h0IHRoaW5nIGlzIHRvbyBmcmFnaWxlLgo+Cj4gV2hhdCBpcyAidG9v
-IGZyYWdpbGUiIGlzIHRyeWluZyB0byBjaGFuZ2UgdGhpcyBhbmQgZXhwZWN0aW5nIGV2ZXJ5dGhp
-bmcKPiB0byBjb250aW51ZSB3b3JraW5nIGFzIGl0IGRpZCBiZWZvcmUuCj4KClRoYXQgaXMgbXkg
-cG9pbnQuCgo+IEhvdyB3aWxsIHN3aXRjaGluZyB0byBFRkkgaGVscD8gIFdvbid0IHRoZSBjcmFz
-aGR1bXAga2VybmVsIGRldGVjdCBFRkkKPiBhbmQgdHJ5IHRvIGdldCB0aGUgbWVtb3J5IG1hcCBm
-cm9tIEVGSSwgd2hlcmVieSBpdCBydW5zIGludG8gZXhhY3RseQo+IHRoZSBzYW1lIGlzc3VlIHRo
-YXQgdGhlIERUIGFwcHJvYWNoIGRvZXM/Cj4KCk5vLiBJZiB5b3UgYm9vdCBmcm9tIGtleGVjLCB0
-aGVuIHRoZSBFRkkgc3R1YiBpcyBjb21wbGV0ZWx5CmNpcmN1bXZlbnRlZCwgYW5kIHRoaW5ncyB3
-b3JrIGFzIGJlZm9yZS4KCj4gVGhlIGN1cnJlbnQgY3Jhc2hrZXJuZWwgc2l0dWF0aW9uIHdvcmtz
-IHByZWNpc2VseSBiZWNhdXNlIG9mIHRoZSAxMjhNCj4gbWFza2luZyB0aGF0IGlzIGJlaW5nIGRv
-bmUuCj4KCkluZGVlZC4gVGhhdCBpcyBwcmVjaXNlbHkgbXkgcG9pbnQuCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Mon, May 18, 2020 at 12:02:40PM -0600, Mathieu Poirier wrote:
+> From: Suzuki K Poulose <suzuki.poulose@arm.com>
+> 
+> etm probe could be deferred due to the dependency in the trace
+> path chain and may be retried. We need to clear the per-cpu
+> etmdrvdata entry for the etm in case of a failure to avoid
+> use-after-free cases as reported below:
+> 
+> KASAN use-after-free bug in etm4_cpu_pm_notify():
+> 
+> [    8.574566] coresight etm0: CPU0: ETM v4.2 initialized
+> [    8.581920] BUG: KASAN: use-after-free in etm4_cpu_pm_notify+0x580/0x2024
+> [    8.581925] Read of size 8 at addr ffffff813304f8c8 by task swapper/3/0
+> [    8.581927]
+> [    8.581934] CPU: 3 PID: 0 Comm: swapper/3 Tainted: G S      W         5.4.28 #314
+> [    8.587775] coresight etm1: CPU1: ETM v4.2 initialized
+> [    8.594195] Call trace:
+> [    8.594205]  dump_backtrace+0x0/0x188
+> [    8.594209]  show_stack+0x20/0x2c
+> [    8.594216]  dump_stack+0xdc/0x144
+> [    8.594227]  print_address_description+0x3c/0x494
+> [    8.594232]  __kasan_report+0x144/0x168
+> [    8.601598] coresight etm2: CPU2: ETM v4.2 initialized
+> [    8.602563]  kasan_report+0x10/0x18
+> [    8.602568]  check_memory_region+0x1a4/0x1b4
+> [    8.602572]  __kasan_check_read+0x18/0x24
+> [    8.602577]  etm4_cpu_pm_notify+0x580/0x2024
+> [    8.665945]  notifier_call_chain+0x5c/0x90
+> [    8.670166]  __atomic_notifier_call_chain+0x90/0xf8
+> [    8.675182]  cpu_pm_notify+0x40/0x6c
+> [    8.678858]  cpu_pm_enter+0x38/0x80
+> [    8.682451]  psci_enter_idle_state+0x34/0x70
+> [    8.686844]  cpuidle_enter_state+0xb8/0x20c
+> [    8.691143]  cpuidle_enter+0x38/0x4c
+> [    8.694820]  call_cpuidle+0x3c/0x68
+> [    8.698408]  do_idle+0x1a0/0x280
+> [    8.701729]  cpu_startup_entry+0x24/0x28
+> [    8.705768]  secondary_start_kernel+0x15c/0x170
+> [    8.710423]
+> [    8.711972] Allocated by task 242:
+> [    8.715473]  __kasan_kmalloc+0xf0/0x1ac
+> [    8.719426]  kasan_slab_alloc+0x14/0x1c
+> [    8.723375]  __kmalloc_track_caller+0x23c/0x388
+> [    8.728040]  devm_kmalloc+0x38/0x94
+> [    8.731632]  etm4_probe+0x48/0x3c8
+> [    8.735140]  amba_probe+0xbc/0x158
+> [    8.738645]  really_probe+0x144/0x408
+> [    8.742412]  driver_probe_device+0x70/0x140
+> [    8.746716]  __device_attach_driver+0x9c/0x110
+> [    8.751287]  bus_for_each_drv+0x90/0xd8
+> [    8.755236]  __device_attach+0xb4/0x164
+> [    8.759188]  device_initial_probe+0x20/0x2c
+> [    8.763490]  bus_probe_device+0x34/0x94
+> [    8.767436]  device_add+0x34c/0x3e0
+> [    8.771029]  amba_device_try_add+0x68/0x440
+> [    8.775332]  amba_deferred_retry_func+0x48/0xc8
+> [    8.779997]  process_one_work+0x344/0x648
+> [    8.784127]  worker_thread+0x2ac/0x47c
+> [    8.787987]  kthread+0x128/0x138
+> [    8.791313]  ret_from_fork+0x10/0x18
+> [    8.794993]
+> [    8.796532] Freed by task 242:
+> [    8.799684]  __kasan_slab_free+0x15c/0x22c
+> [    8.803897]  kasan_slab_free+0x10/0x1c
+> [    8.807761]  kfree+0x25c/0x4bc
+> [    8.810913]  release_nodes+0x240/0x2b0
+> [    8.814767]  devres_release_all+0x3c/0x54
+> [    8.818887]  really_probe+0x178/0x408
+> [    8.822661]  driver_probe_device+0x70/0x140
+> [    8.826963]  __device_attach_driver+0x9c/0x110
+> [    8.831539]  bus_for_each_drv+0x90/0xd8
+> [    8.835487]  __device_attach+0xb4/0x164
+> [    8.839431]  device_initial_probe+0x20/0x2c
+> [    8.843732]  bus_probe_device+0x34/0x94
+> [    8.847678]  device_add+0x34c/0x3e0
+> [    8.851274]  amba_device_try_add+0x68/0x440
+> [    8.855576]  amba_deferred_retry_func+0x48/0xc8
+> [    8.860240]  process_one_work+0x344/0x648
+> [    8.864366]  worker_thread+0x2ac/0x47c
+> [    8.868228]  kthread+0x128/0x138
+> [    8.871557]  ret_from_fork+0x10/0x18
+> [    8.875231]
+> [    8.876782] The buggy address belongs to the object at ffffff813304f800
+> [    8.876782]  which belongs to the cache kmalloc-1k of size 1024
+> [    8.889632] The buggy address is located 200 bytes inside of
+> [    8.889632]  1024-byte region [ffffff813304f800, ffffff813304fc00)
+> [    8.901761] The buggy address belongs to the page:
+> [    8.906695] page:ffffffff04ac1200 refcount:1 mapcount:0 mapping:ffffff8146c03800 index:0x0 compound_mapcount: 0
+> [    8.917047] flags: 0x4000000000010200(slab|head)
+> [    8.921799] raw: 4000000000010200 dead000000000100 dead000000000122 ffffff8146c03800
+> [    8.929753] raw: 0000000000000000 0000000000100010 00000001ffffffff 0000000000000000
+> [    8.937703] page dumped because: kasan: bad access detected
+> [    8.943433]
+> [    8.944974] Memory state around the buggy address:
+> [    8.949903]  ffffff813304f780: fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc fc
+> [    8.957320]  ffffff813304f800: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+> [    8.964742] >ffffff813304f880: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+> [    8.972157]                                               ^
+> [    8.977886]  ffffff813304f900: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+> [    8.985298]  ffffff813304f980: fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb fb
+> [    8.992713] ==================================================================
+> 
+> Fixes: f188b5e76aae9 ( "coresight: etm4x: Save/restore state across CPU low power states ")
+
+Nit, this should be:
+Fixes: f188b5e76aae ("coresight: etm4x: Save/restore state across CPU low power states")
+
+The extra ' ' characters messed with my script checks :(
+
+I'll fix it up by hand...
+
+greg k-h
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
