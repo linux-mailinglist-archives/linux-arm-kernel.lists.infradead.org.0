@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 403531D9CD8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:33:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 196F81D9CDA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:34:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UUhPQJvI0B+VClbczPR6uNw39vHm/zayfrHrNfbT838=; b=AsHXoZQJY4egrk
-	wR9d98KiVnx1fL7k4D4BxfcUBVnbd72TnMv3yG8gFUUKVzPZBGaFs+yhQld/A04f1kCxe5xC1d1zk
-	AdzRefeKBxq8hQuQgvQM6EVej6a+5vuwqj9WEksb+38WcykjL4fi5uFx8FLfO2iVE9wkDhbA8LWq4
-	SH03sUfWDN6B2GQJ8IH2disH8KX7A+kq90wdHlb1+sfuMGvG6ANBObUmvOKEWZid2DTQ+1fGo1kPX
-	dOQQQgnAHk7VM4+vHslrQL5WrCqy5oRRypoqeGvzPEERh+hqy/XJAJa6yh2h8QslV7pznN8xObXWg
-	qtozzl02CUhkLWsXQRog==;
+	List-Owner; bh=EgTwAkRm6iJK3nI2x4MQjhS0x81QHTKKPZDcJONUniY=; b=hk1iAnObPOWSrg
+	nguGTxUrFam1NAVgHcSBHce0OiDnOapOjQOOfH4ZkbCG4op34jKstyh40LkAauGTaWMGVg/vqQEFp
+	CFOPt+3UWOwvAaTwJDbQvin13VtLIIaVOp47eub87RhPIP3YSaFbxkFn0rwsAxHjGx4TvEFCqB6yI
+	TdwCBdxpuTu3B/g/d76w0h8O4DZXTHnNlu51nv4sXLfBVVRaXK4+BKd3WodBVfeNEJ1uBUpo4tkSh
+	8BLw68ReRTx+7qaxxpBtblmrJs6h1/XryR6kYzvEDvcfp3U55+q8abC5u/wOHA0Xj+e5lJ+KfK2Nb
+	NXAo6MLBcruk7HOuH68w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb5BW-0001WL-A1; Tue, 19 May 2020 16:33:42 +0000
+	id 1jb5Br-0001nt-Bb; Tue, 19 May 2020 16:34:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb5BB-0001R2-2R
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:33:22 +0000
+ id 1jb5BD-0001TD-3y
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:33:24 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8F54020709;
- Tue, 19 May 2020 16:33:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5120D2081A;
+ Tue, 19 May 2020 16:33:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589906000;
- bh=/FqRthJBIes2psHuDe3nUlSS/Kp1i2t1BfVeTp/GH7Q=;
+ s=default; t=1589906002;
+ bh=iPYo2NpmcQYEL/Oq/b9IlxETsTGKbEjWgKeRfJb8zs8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=0Uwquxo25efjMmJU3Z0QRaCaZLPCXTnsqwx55uZ+m6BpFQT2Z7gXwqsf1IiP6sGq4
- bBqRVOOOQ6avs/NlXDRR9l5hYZYyoRX+6atBA9icjj2DQc+5RAZ2uVBOXI9a8OC0fd
- 9v7hXy9Na4vK/Nllfzp2r0PuGbhEqrcqNMQG/lXw=
+ b=F87WLNyn+iLgN/GOx1luE4CUex3ah1kssLHuBQBJ2Kufxl5wDuKzvZpDR/0C3CE03
+ fz9Azya8NJKir3KIbJK2m4A06LYT9oN960pkz2GjPCzmEvCbW1Nee5fGTDzFoWC5O+
+ CX6rG1H1IZGzKYTPRKDuCFTJ6JBhsW2MgO2vcKSw=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jb4wj-00Decy-RA; Tue, 19 May 2020 17:18:25 +0100
+ id 1jb4wk-00Decy-CX; Tue, 19 May 2020 17:18:26 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: linux-arm-kernel@lists.infradead.org,
 	linux-kernel@vger.kernel.org
-Subject: [PATCH 10/11] irqchip/bcm2836: Configure mailbox interrupts as
- standard interrupts
-Date: Tue, 19 May 2020 17:17:54 +0100
-Message-Id: <20200519161755.209565-11-maz@kernel.org>
+Subject: [PATCH 11/11] arm64: Kill __smp_cross_call and co
+Date: Tue, 19 May 2020 17:17:55 +0100
+Message-Id: <20200519161755.209565-12-maz@kernel.org>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200519161755.209565-1-maz@kernel.org>
 References: <20200519161755.209565-1-maz@kernel.org>
@@ -61,8 +60,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_093321_171766_295A0AA8 
-X-CRM114-Status: GOOD (  19.79  )
+X-CRM114-CacheID: sfid-20200519_093323_330824_4030244B 
+X-CRM114-Status: GOOD (  15.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -100,242 +99,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to switch the bcm2836 driver to privide standard interrupts
-for IPIs, it first needs to stop lying about the way things work.
-
-The mailbox interrupt is actually a multiplexer, with enough
-bits to store 32 pending interrupts per CPU. So let's turn it
-into a chained irqchip.
-
-Once this is done, we can instanciate the corresponding IPIs,
-and pass them to the architecture code.
+The old IPI registration interface is now unused on arm64, so let's
+get rid of it.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- drivers/irqchip/irq-bcm2836.c | 151 ++++++++++++++++++++++++++++------
- 1 file changed, 125 insertions(+), 26 deletions(-)
+ arch/arm64/include/asm/irq_work.h |  4 +---
+ arch/arm64/include/asm/smp.h      |  7 -------
+ arch/arm64/kernel/smp.c           | 34 +++++--------------------------
+ 3 files changed, 6 insertions(+), 39 deletions(-)
 
-diff --git a/drivers/irqchip/irq-bcm2836.c b/drivers/irqchip/irq-bcm2836.c
-index 2038693f074c..85df6ddad9be 100644
---- a/drivers/irqchip/irq-bcm2836.c
-+++ b/drivers/irqchip/irq-bcm2836.c
-@@ -10,6 +10,7 @@
- #include <linux/of_irq.h>
- #include <linux/irqchip.h>
- #include <linux/irqdomain.h>
-+#include <linux/irqchip/chained_irq.h>
- #include <linux/irqchip/irq-bcm2836.h>
+diff --git a/arch/arm64/include/asm/irq_work.h b/arch/arm64/include/asm/irq_work.h
+index 8a1ef1907760..a1020285ea75 100644
+--- a/arch/arm64/include/asm/irq_work.h
++++ b/arch/arm64/include/asm/irq_work.h
+@@ -2,11 +2,9 @@
+ #ifndef __ASM_IRQ_WORK_H
+ #define __ASM_IRQ_WORK_H
  
- #include <asm/exception.h>
-@@ -89,12 +90,24 @@ static struct irq_chip bcm2836_arm_irqchip_gpu = {
- 	.irq_unmask	= bcm2836_arm_irqchip_unmask_gpu_irq,
+-#include <asm/smp.h>
+-
+ static inline bool arch_irq_work_has_interrupt(void)
+ {
+-	return !!__smp_cross_call;
++	return true;
+ }
+ 
+ #endif /* __ASM_IRQ_WORK_H */
+diff --git a/arch/arm64/include/asm/smp.h b/arch/arm64/include/asm/smp.h
+index 42f366ba88bf..bec6ef0eb642 100644
+--- a/arch/arm64/include/asm/smp.h
++++ b/arch/arm64/include/asm/smp.h
+@@ -75,13 +75,6 @@ extern void handle_IPI(int ipinr, struct pt_regs *regs);
+  */
+ extern void smp_init_cpus(void);
+ 
+-/*
+- * Provide a function to raise an IPI cross call on CPUs in callmap.
+- */
+-extern void set_smp_cross_call(void (*)(const struct cpumask *, unsigned int));
+-
+-extern void (*__smp_cross_call)(const struct cpumask *, unsigned int);
+-
+ /*
+  * Register IPI interrupts with the arch SMP code
+  */
+diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+index 93ba0025e7b9..d29823ac515d 100644
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -793,13 +793,6 @@ void __init smp_prepare_cpus(unsigned int max_cpus)
+ 	}
+ }
+ 
+-void (*__smp_cross_call)(const struct cpumask *, unsigned int);
+-
+-void __init set_smp_cross_call(void (*fn)(const struct cpumask *, unsigned int))
+-{
+-	__smp_cross_call = fn;
+-}
+-
+ static const char *ipi_types[NR_IPI] __tracepoint_string = {
+ #define S(x,s)	[x] = s
+ 	S(IPI_RESCHEDULE, "Rescheduling interrupts"),
+@@ -811,11 +804,7 @@ static const char *ipi_types[NR_IPI] __tracepoint_string = {
+ 	S(IPI_WAKEUP, "CPU wake-up interrupts"),
  };
  
-+static void bcm2836_arm_irqchip_dummy_op(struct irq_data *d)
-+{
-+}
-+
-+static struct irq_chip bcm2836_arm_irqchip_dummy = {
-+	.name		= "bcm2836-dummy",
-+	.irq_eoi	= bcm2836_arm_irqchip_dummy_op,
-+};
-+
- static int bcm2836_map(struct irq_domain *d, unsigned int irq,
- 		       irq_hw_number_t hw)
+-static void smp_cross_call(const struct cpumask *target, unsigned int ipinr)
+-{
+-	trace_ipi_raise(target, ipi_types[ipinr]);
+-	__smp_cross_call(target, ipinr);
+-}
++static void smp_cross_call(const struct cpumask *target, unsigned int ipinr);
+ 
+ void show_ipi_list(struct seq_file *p, int prec)
  {
- 	struct irq_chip *chip;
+@@ -862,8 +851,7 @@ void arch_send_wakeup_ipi_mask(const struct cpumask *mask)
+ #ifdef CONFIG_IRQ_WORK
+ void arch_irq_work_raise(void)
+ {
+-	if (__smp_cross_call)
+-		smp_cross_call(cpumask_of(smp_processor_id()), IPI_IRQ_WORK);
++	smp_cross_call(cpumask_of(smp_processor_id()), IPI_IRQ_WORK);
+ }
+ #endif
  
- 	switch (hw) {
-+	case LOCAL_IRQ_MAILBOX0:
-+		chip = &bcm2836_arm_irqchip_dummy;
-+		break;
- 	case LOCAL_IRQ_CNTPSIRQ:
- 	case LOCAL_IRQ_CNTPNSIRQ:
- 	case LOCAL_IRQ_CNTHPIRQ:
-@@ -127,17 +140,7 @@ __exception_irq_entry bcm2836_arm_irqchip_handle_irq(struct pt_regs *regs)
- 	u32 stat;
- 
- 	stat = readl_relaxed(intc.base + LOCAL_IRQ_PENDING0 + 4 * cpu);
--	if (stat & BIT(LOCAL_IRQ_MAILBOX0)) {
--#ifdef CONFIG_SMP
--		void __iomem *mailbox0 = (intc.base +
--					  LOCAL_MAILBOX0_CLR0 + 16 * cpu);
--		u32 mbox_val = readl(mailbox0);
--		u32 ipi = ffs(mbox_val) - 1;
--
--		writel(1 << ipi, mailbox0);
--		handle_IPI(ipi, regs);
--#endif
--	} else if (stat) {
-+	if (stat) {
- 		u32 hwirq = ffs(stat) - 1;
- 
- 		handle_domain_irq(intc.domain, hwirq, regs);
-@@ -145,8 +148,35 @@ __exception_irq_entry bcm2836_arm_irqchip_handle_irq(struct pt_regs *regs)
+@@ -970,27 +958,16 @@ static void do_handle_IPI(int ipinr)
+ 		trace_ipi_exit_rcuidle(ipi_types[ipinr]);
  }
  
- #ifdef CONFIG_SMP
--static void bcm2836_arm_irqchip_send_ipi(const struct cpumask *mask,
--					 unsigned int ipi)
-+static struct irq_domain *ipi_domain;
-+
-+static void bcm2836_arm_irqchip_handle_ipi(struct irq_desc *desc)
-+{
-+	struct irq_chip *chip = irq_desc_get_chip(desc);
-+	int cpu = smp_processor_id();
-+	u32 mbox_val;
-+
-+	chained_irq_enter(chip, desc);
-+
-+	mbox_val = readl_relaxed(intc.base + LOCAL_MAILBOX0_CLR0 + 16 * cpu);
-+	if (mbox_val) {
-+		int hwirq = ffs(mbox_val) - 1;
-+		generic_handle_irq(irq_find_mapping(ipi_domain, hwirq));
-+	}
-+
-+	chained_irq_exit(chip, desc);
-+}
-+
-+static void bcm2836_arm_irqchip_ipi_eoi(struct irq_data *d)
-+{
-+	int cpu = smp_processor_id();
-+
-+	writel_relaxed(BIT(d->hwirq),
-+		       intc.base + LOCAL_MAILBOX0_CLR0 + 16 * cpu);
-+}
-+
-+static void bcm2836_arm_irqchip_ipi_send_mask(struct irq_data *d,
-+					      const struct cpumask *mask)
+-/* Legacy version, should go away once all irqchips have been converted */
+-void handle_IPI(int ipinr, struct pt_regs *regs)
+-{
+-	struct pt_regs *old_regs = set_irq_regs(regs);
+-
+-	irq_enter();
+-	do_handle_IPI(ipinr);
+-	irq_exit();
+-
+-	set_irq_regs(old_regs);
+-}
+-
+ static irqreturn_t ipi_handler(int irq, void *data)
  {
- 	int cpu;
- 	void __iomem *mailbox0_base = intc.base + LOCAL_MAILBOX0_SET0;
-@@ -157,11 +187,45 @@ static void bcm2836_arm_irqchip_send_ipi(const struct cpumask *mask,
- 	 */
- 	smp_wmb();
+ 	do_handle_IPI(irq - ipi_irq_base);
+ 	return IRQ_HANDLED;
+ }
  
--	for_each_cpu(cpu, mask)	{
--		writel(1 << ipi, mailbox0_base + 16 * cpu);
-+	for_each_cpu(cpu, mask)
-+		writel_relaxed(BIT(d->hwirq), mailbox0_base + 16 * cpu);
-+}
-+
-+static struct irq_chip bcm2836_arm_irqchip_ipi = {
-+	.name		= "IPI",
-+	.irq_eoi	= bcm2836_arm_irqchip_ipi_eoi,
-+	.ipi_send_mask	= bcm2836_arm_irqchip_ipi_send_mask,
-+};
-+
-+static int bcm2836_arm_irqchip_ipi_alloc(struct irq_domain *d,
-+					 unsigned int virq,
-+					 unsigned int nr_irqs, void *args)
-+{
-+	int i;
-+
-+	for (i = 0; i < nr_irqs; i++) {
-+		irq_set_percpu_devid(virq + i);
-+		irq_domain_set_info(d, virq + i, i, &bcm2836_arm_irqchip_ipi,
-+				    d->host_data,
-+				    handle_percpu_devid_fasteoi_ipi,
-+				    NULL, NULL);
+-static void ipi_send(const struct cpumask *target, unsigned int ipi)
++static void smp_cross_call(const struct cpumask *target, unsigned int ipinr)
+ {
+-	__ipi_send_mask(ipi_desc[ipi], target);
++	trace_ipi_raise(target, ipi_types[ipinr]);
++	__ipi_send_mask(ipi_desc[ipinr], target);
+ }
+ 
+ static void ipi_setup(int cpu)
+@@ -1032,7 +1009,6 @@ void __init set_smp_ipi_range(int ipi_base, int n)
  	}
-+
-+	return 0;
- }
  
-+static void bcm2836_arm_irqchip_ipi_free(struct irq_domain *d,
-+					 unsigned int virq,
-+					 unsigned int nr_irqs)
-+{
-+	/* Not freeing IPIs */
-+}
-+
-+static const struct irq_domain_ops ipi_domain_ops = {
-+	.alloc	= bcm2836_arm_irqchip_ipi_alloc,
-+	.free	= bcm2836_arm_irqchip_ipi_free,
-+};
-+
- static int bcm2836_cpu_starting(unsigned int cpu)
- {
- 	bcm2836_arm_irqchip_unmask_per_cpu_irq(LOCAL_MAILBOX_INT_CONTROL0, 0,
-@@ -175,25 +239,58 @@ static int bcm2836_cpu_dying(unsigned int cpu)
- 					     cpu);
- 	return 0;
- }
--#endif
+ 	ipi_irq_base = ipi_base;
+-	__smp_cross_call = ipi_send;
  
--static const struct irq_domain_ops bcm2836_arm_irqchip_intc_ops = {
--	.xlate = irq_domain_xlate_onetwocell,
--	.map = bcm2836_map,
--};
-+#define BITS_PER_MBOX	32
- 
--static void
--bcm2836_arm_irqchip_smp_init(void)
-+static void bcm2836_arm_irqchip_smp_init(void)
- {
--#ifdef CONFIG_SMP
-+	struct irq_fwspec ipi_fwspec = {
-+		.fwnode		= intc.domain->fwnode,
-+		.param_count	= 1,
-+		.param		= {
-+			[0]	= LOCAL_IRQ_MAILBOX0,
-+		},
-+	};
-+	int base_ipi, mux_irq;
-+
-+	mux_irq = irq_create_fwspec_mapping(&ipi_fwspec);
-+	if (WARN_ON(mux_irq <= 0))
-+		return;
-+
-+	ipi_domain = irq_domain_create_linear(intc.domain->fwnode,
-+					      BITS_PER_MBOX, &ipi_domain_ops,
-+					      NULL);
-+	if (WARN_ON(!ipi_domain))
-+		return;
-+
-+	ipi_domain->flags |= IRQ_DOMAIN_FLAG_IPI_SINGLE;
-+	irq_domain_update_bus_token(ipi_domain, DOMAIN_BUS_IPI);
-+
-+	base_ipi = __irq_domain_alloc_irqs(ipi_domain, -1, BITS_PER_MBOX,
-+					   NUMA_NO_NODE, NULL,
-+					   false, NULL);
-+
-+	if (WARN_ON(!base_ipi))
-+		return;
-+
-+	set_smp_ipi_range(base_ipi, BITS_PER_MBOX);
-+
-+	irq_set_chained_handler_and_data(mux_irq,
-+					 bcm2836_arm_irqchip_handle_ipi, NULL);
-+
- 	/* Unmask IPIs to the boot CPU. */
- 	cpuhp_setup_state(CPUHP_AP_IRQ_BCM2836_STARTING,
- 			  "irqchip/bcm2836:starting", bcm2836_cpu_starting,
- 			  bcm2836_cpu_dying);
--
--	set_smp_cross_call(bcm2836_arm_irqchip_send_ipi);
--#endif
- }
-+#else
-+#define bcm2836_arm_irqchip_smp_init()	do { } while(0)
-+#endif
-+
-+static const struct irq_domain_ops bcm2836_arm_irqchip_intc_ops = {
-+	.xlate = irq_domain_xlate_onetwocell,
-+	.map = bcm2836_map,
-+};
- 
- /*
-  * The LOCAL_IRQ_CNT* timer firings are based off of the external
-@@ -232,6 +329,8 @@ static int __init bcm2836_arm_irqchip_l1_intc_of_init(struct device_node *node,
- 	if (!intc.domain)
- 		panic("%pOF: unable to create IRQ domain\n", node);
- 
-+	irq_domain_update_bus_token(intc.domain, DOMAIN_BUS_WIRED);
-+
- 	bcm2836_arm_irqchip_smp_init();
- 
- 	set_handle_irq(bcm2836_arm_irqchip_handle_irq);
+ 	/* Setup the boot CPU immediately */
+ 	ipi_setup(smp_processor_id());
 -- 
 2.26.2
 
