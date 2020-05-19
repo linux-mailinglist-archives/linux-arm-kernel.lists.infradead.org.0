@@ -2,79 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 422EE1D9443
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 12:22:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 298DC1D9452
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 12:26:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xCnIzRBUgi9ShKWByV3VBr+GNeqs9fAaaFMHPd2SJEs=; b=Fc3Cf+jL2VYVBZ
-	SvNWsmuPWaL76PczLqyepE8rtodoMCIAD/5XM1EVX462zACl/rnlSCpMSvfjodtd7diWbJeo1atsj
-	W7gabo6pIEjvz1Kx1J9uX/oN3sn/NoasCqfZdrloGB6oo3wyjLRfc2NpXYWb+LVBr4NucE9+3LcNk
-	oGqfpLyl5UwiW6LCG0yShYA0x/T6+h9yeLw40xTvMHUofN4xlNiXI50zw4vhdetlHzpUlvijD+wcF
-	v2rneaiIOYA+fbPKCaBlL8ja3D6fB31yFK6jIrN8uRMc8jlCYVaooobk28r+yLyMr9lCsO7NNnBdx
-	KHAiyYtsjnBDR8FWZbpQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=f1GoFAgtCKB0wov98FpAWBkPtfx8FnuGRLg4ldVzRkc=; b=Pwa/7tJ5GBGlQwYplTWufyL47p
+	BvvlqQeYii7/PYleP3m2c4HAZfO1E+edbHDwiLcss/o2aJlG4V2OOztb13n/OgTaDq3YZ9w7l3VY5
+	cFzyMvYVHqIYZ9mVdAP8P0QAafoXQLQzVP0eCAM1W1gq12uqYJ8sq6FRqMT3UxjS3lFeFCZciX2Ss
+	ALeCVy41jgbvd333Y5nUegudg0XI3SRNYTnbJgLYq/2WrqbC4725WPpN+9U7e50t+7L9svFl7FHfN
+	WkJXhxYgkvg4sn0kw2NNPu+Me22ZJr1wikTgtk9G84whcLB5mbSYbs8c5l6Guq+/IVKHsWyluAoan
+	NFlQcoQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jazOc-0005Fv-31; Tue, 19 May 2020 10:22:50 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1jazRx-0000Cb-EJ; Tue, 19 May 2020 10:26:17 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jazO5-0005Az-Su; Tue, 19 May 2020 10:22:19 +0000
-Received: from mail-qk1-f179.google.com ([209.85.222.179]) by
- mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MfYc4-1j8FH30O0u-00g3VY; Tue, 19 May 2020 12:22:13 +0200
-Received: by mail-qk1-f179.google.com with SMTP id f189so14205382qkd.5;
- Tue, 19 May 2020 03:22:12 -0700 (PDT)
-X-Gm-Message-State: AOAM530/X0d1BfpLkR/tnPT6BZADXeDgcIAt+qDjQeqDP1i2NTp2xzf2
- BMTdN3639+R/LCwqdgQAmK5XCKglxCWW8QOzaUM=
-X-Google-Smtp-Source: ABdhPJxOu+nLjvg7CMqkLaOXbJg4GTm6uL1Kx08HssunT+gb6Fi/yoTUZBq2l9jxT8nUph2PPk6WMqUkT4Yu1iuBXRQ=
-X-Received: by 2002:a37:434b:: with SMTP id q72mr21154808qka.352.1589883731571; 
- Tue, 19 May 2020 03:22:11 -0700 (PDT)
+ id 1jazRn-0000Bi-Cq
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 10:26:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589883967; x=1621419967;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=rt0ifteO2Q6DmuLLDH31oRBTPIJqimPHw4gnMaEY94M=;
+ b=e/cnaHj6Eg0LpOEnpe3Y1TJdfdFeFPQz+i0FUtj0drXsDo/N5zuu2pK7
+ pNlcYx3nSZ+LMlVJJqz+P0EdY6gcm1oLETPT4PFDiSGzG1PaQri7gJ4pU
+ FguaTKl7BPomXbS5Ko6WP0PdtxAOaWgNonFuaH6kYnXG73ZkgwHobleDT
+ cK17OJCmW4b80RWeqPElk83s5oetY7GNZRM+93dx19y33cxhC/ilWyrpx
+ oiT55zFAGZyTMs5fWLBDeAxPkDhSL9RasKMA0xncFD2Op1ORW2nxsoRF1
+ 56/xbvbeILwyFIKM5OSTzbbnJyEeMVR9pJ66O47YdqVIn1FSJEb0AtXt9 w==;
+IronPort-SDR: LdawkTFAm4n+RjRpzDLC2tUtB0nKBzLCfIAS+HLACuFeo7EkFgeCPl1TGx7GUd8jVy5JPcJRoq
+ h/N3cUP2rlzaCgREWQ6bhD/rT/bYVm0EJNb+aFMriMbVsT4nhQUVhsjy7FgtejdcKvlJvxaTOm
+ nTA8KGU9DjkqTLHL12uyrW/QbJk+y8HTtedTDOG8Lqgv9CweSedF6YVOR6HMoBdmlw3T4fGhjq
+ 3Z5EcZAamvESE2WYI0ThqVgKztDp32U/40OiaTIh/vOaxaI6hotPkDE0d/m0S4Ln3AImXxlhYz
+ bY4=
+X-IronPort-AV: E=Sophos;i="5.73,409,1583218800"; d="scan'208";a="77149472"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 19 May 2020 03:26:02 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
+ chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 19 May 2020 03:26:03 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Tue, 19 May 2020 03:26:01 -0700
+References: <20200513140031.25633-1-lars.povlsen@microchip.com>
+ <20200513140031.25633-2-lars.povlsen@microchip.com>
+ <CAHp75VcA-oDboufsDNx1ZR4+HBwYt7LdLOpbfs7-bM9ByucKJA@mail.gmail.com>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Subject: Re: [PATCH 01/10] spi: dw: Add support for polled operation via no
+ IRQ specified in DT
+In-Reply-To: <CAHp75VcA-oDboufsDNx1ZR4+HBwYt7LdLOpbfs7-bM9ByucKJA@mail.gmail.com>
+Date: Tue, 19 May 2020 12:25:58 +0200
+Message-ID: <87a724p6fd.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-References: <20191223152349.180172-1-chenzhou10@huawei.com>
- <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
-In-Reply-To: <a57d46bc-881e-3526-91ca-558bf64e2aa8@huawei.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 19 May 2020 12:21:55 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a2VrAqefPYF2JqRjwdhgTDtORUgWgVuYxRYWqKxE3+5pA@mail.gmail.com>
-Message-ID: <CAK8P3a2VrAqefPYF2JqRjwdhgTDtORUgWgVuYxRYWqKxE3+5pA@mail.gmail.com>
-Subject: Re: [PATCH v7 0/4] support reserving crashkernel above 4G on arm64
- kdump
-To: Chen Zhou <chenzhou10@huawei.com>
-X-Provags-ID: V03:K1:jz2Hvot0KeuothuFOZLaTRrDwLl9eNTy3LIoscacfSdUjY34BwK
- uVcaV+7rZ8A+UdNcYCoeXIh7dO3AHuHJ6/uAWgIDHLWJDcgrH8I8a/Ama0i4W/MUlxq0ABN
- ME42CJS64fxgh6LwVGR2DxOaBJWh65KLOwqDJYIdndBatVa7AHugWAH7aaRgAPnNsEf0AVR
- wCGeEyO585BzQ7c7k74Hg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:3yn6moQ3WXo=:eB46Ww3LlEucP4usDqDJQ4
- 5Au6YzXQBtTP9ZC1OHvARFmO7LAyMLwMaGCNtby7quUWPXfRw0vZC4K2NRXNUW++pC+0z5d/s
- pJ3f3EOgOCtMqtm1Hj0pNMU4Hp0u0q9wcKnJf8IfrOjIvLbPI07Lf8VxuoQne0c2BJFdLrzaN
- UnEdZxWjhjTD0VSBo2d6YkjJGmAsw0smKy805gsX87VzS5fiCOGZdJ00TJJ4Cn5QFNziTTC0Z
- ecYejSsp4Iwd8Ec6N2DogYG3KZcq9og0Yr4sliG/fTD5eaH31D6kL89wuTj2CLeDCO/fJ87O6
- 9QcGFTIQX3Dc96G4BfP0Ob82eNH3ZoiuYL71aAN+AyfjHQbVHXWwZFV8E6q7edbR1dA8MNjti
- emkHUpd2cpxCVuSoAH3UbGUQnHKHAfvWrpLKu2+mj5j66Y5ti31pSs4urI90ihPcDsJBH1X1n
- mHgcgk2LSaxtfY0Qxxw63oNbMd48YHhHQRKAThpIDjvBq2uNDZTH2IspR8Po7uteJkpO6alX/
- vxfg31vko/sDM8n35cDKH8iP4+mj1fQ4IoYUj5+5iScgNLC72YLgWaps/6aQHr1dZfSLKygHh
- g9xlgQ2lVTBHVwskFTdcyjRDbhcUi09OUGHvIo1G9W2eMbYyAbuLSIvjhcc9Z20zTTsZGCr3L
- LKQHQM9tqFmijPbR+pWHK1UpdWq0ppDsT0M+ldPwFbX2iWOeL5hNMxCnDRjAt16UsttZBokru
- yrPqEAkAqpSkiVUKlrehP4Z2fdyKFDuqZgIkh/gbjxHFZww21Daznume3zaYX7QQMud4xMWnw
- 1Jv8uBSnFX8V4hqJwZcA8haFi3GbvUA1FEj8FtXXeTNV+59s9E=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_032218_233284_E1748010 
-X-CRM114-Status: GOOD (  14.44  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200519_032607_446359_FBD0B2B0 
+X-CRM114-Status: GOOD (  10.15  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,57 +95,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Simon Horman <horms@verge.net.au>, john.p.donnelly@oracle.com,
- Will Deacon <will@kernel.org>,
- "open list:DOCUMENTATION" <linux-doc@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ingo Molnar <mingo@redhat.com>, James Morse <james.morse@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, pkushwaha@marvell.com,
- Dave Young <dyoung@redhat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, Linux
+ Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-spi <linux-spi@vger.kernel.org>,
+ Serge Semin <Sergey.Semin@baikalelectronics.ru>, SoC Team <soc@kernel.org>,
+ Mark Brown <broonie@kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 26, 2020 at 4:10 AM Chen Zhou <chenzhou10@huawei.com> wrote:
+
+Andy Shevchenko writes:
+
+> On Wed, May 13, 2020 at 5:03 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
+>>
+>> With this change a SPI controller can be added without having a IRQ
+>> associated, and causing all transfers to be polled. For SPI controllers
+>> without DMA, this can significantly improve performance by less
+>> interrupt handling overhead.
 >
-> Hi all,
+> ...
 >
-> Friendly ping...
+>> +#define VALID_IRQ(i) (i >= 0)
+>
+> drivers/rtc/rtc-cmos.c:95:#define is_valid_irq(n)               ((n) > 0)
+>
+> Candidate to be in include/linux/irq.h ?
+>
+> ...
+>
+>> +       if (VALID_IRQ(dws->irq))
+>> +               free_irq(dws->irq, master);
+>
+> Isn't free_irq() aware of invalid ones (not found IRQ in the tree or
+> any other backend container won't do anything)?
+>
+>
+>>  err_free_master:
+>>         spi_controller_put(master);
+>>         return ret;
+>> --
+>> 2.26.2
 
-I was asked about this patch series, and see that you last posted it in
-December. I think you should rebase it to linux-5.7-rc6 and post the
-entire series again to make progress, as it's unlikely that any maintainer
-would pick up the patches from last year.
+I'll rework this with Serge.
 
-For the contents, everything seems reasonable to me, but I noticed that
-you are adding a property to the /chosen node without adding the
-corresponding documentation to
-Documentation/devicetree/bindings/chosen.txt
+Thank you!
 
-Please add that, and Cc the devicetree maintainers on the updated
-patch.
-
-         Arnd
-
-> On 2019/12/23 23:23, Chen Zhou wrote:
-> > This patch series enable reserving crashkernel above 4G in arm64.
-> >
-> > There are following issues in arm64 kdump:
-> > 1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
-> > when there is no enough low memory.
-> > 2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
-> > in this case, if swiotlb or DMA buffers are required, crash dump kernel
-> > will boot failure because there is no low memory available for allocation.
-> >
-> > The previous changes and discussions can be retrieved from:
-> >
-> > Changes since [v6]
-> > - Fix build errors reported by kbuild test robot.
-...
+-- 
+Lars Povlsen,
+Microchip
 
 _______________________________________________
 linux-arm-kernel mailing list
