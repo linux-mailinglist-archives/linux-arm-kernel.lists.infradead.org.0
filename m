@@ -2,92 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B18081D8E56
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 05:41:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B9221D8E62
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 05:52:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0NTsT2wum2SNkovRSRgzg8cM9fewV2uTpxwMLW/tNWQ=; b=u5Y41pvn+dTTuu
-	OnOwh5wN4KPow5OtiLkBDEd+xN1puLzSauiz2dU/R3rS3f+9FztUEXDIqzuYObedk0HbgVgagiHLq
-	1/HRg6hw2OgaY4kq/mE1/DgA5SkENhyvNbMiJScNQTvp5Ryvj04s9X+KIgtW1SnUpMtPCiuAAB8CS
-	LEN6+aZB0Gu7J4H+SwvIbtvYPJPfVYLvB1FzTP8oBfLN8VchYShaykHzTVAdD0GiXgLiVrpLatR6C
-	7tJjiGL9GaVSU+PMpZfY8qPqIuWjn2RxNcbvSS9NuDyz2YRIGGxZGfgo8NJ3TJHs6mqnQWrt/vJYv
-	np1xRBWnjRGeNJPvxHHQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=bWf8XZBEqZsBeKYUWMiB23bL4tbNOD/dFJaI3cW9vyY=; b=tNE
+	cKBoAJ/uAUk5ap97kJPhiocH30kpCxkM1PMCQAg3DKYQkk0zet9Htw7Dt8Hn4Gmme6JWlx7EytzTw
+	OrHKgNG+qoVhen6e98lPR1n2MrPsQLN3dbr7E+m5FnVMlei3oSdshtqXHLZ3eRSUWfkeWNGuHmOWG
+	n+RaYWwzZnGECoNPHy8H3TksgIhnJRjNvOkuLnrngOgPnpRqMW0v9xXEsMwNCGVvmuhkgT16XwAM3
+	pfZIvVNc9f8afYkntLBya8AfXdeKrseQTy2ibR5EtFf0g3qMoHKZeLZSn0HiO1Kf5xo+FKt9vJmaG
+	fBNEurySn6sbHcZstWIYmpDwgkVhk7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jat7v-0002Qh-M3; Tue, 19 May 2020 03:41:11 +0000
-Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
+	id 1jatIo-0008LY-PN; Tue, 19 May 2020 03:52:26 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jat7l-0002Pl-KT
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 03:41:04 +0000
-Received: by mail-pj1-x1034.google.com with SMTP id ci21so737584pjb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 18 May 2020 20:40:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=CjNWuQJ9v0nVBb91ffdU0D6mxktZAQ032o7BcB0bNE4=;
- b=F+AEHxuCaRGPIloYgy1mhW3Lfe9dOfLHKUZU9PfFM6Q0ED6ra92Z9qv0lsSJKjefzL
- /G445Rt2MS+je7xFwaI3GdAaNppQpjtT9DZtZL1M+OFv4qHAM7NbdDZvrZQpYy476bzA
- qFgVBP+l5L3NYSHQLLu/Kv4IkKI1BZeeHoCwRx11PEdPNVemStjkzdTRV4MbtpajRJQH
- KY/4gQBQfdGL07373QE/k5YwyLOPIzVyqgueoA6pnQwXx8wUe0QKKoI3d8wNLCT+oYQP
- MEDCH36FGnkOJNXu58mqL3PjD+FQbyE+D2IL6UiNHtKkxvzRDycr43draHRKBAdCtxgx
- vfvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=CjNWuQJ9v0nVBb91ffdU0D6mxktZAQ032o7BcB0bNE4=;
- b=a8Y7wh6bpu4DmYotDGHZ/7HEugP8cahgrC6nXvYQGwetIKx3se1Jcq9Uuwj8O5DQkz
- byZaHsXF81Wx5FqJIN2Ef/iCsoGlJwCGZu70mYDPAtyxW/3hz6ae/qu2HwikZUzhVzB2
- rM0hDfyKRF3kmCEiUYZ9v5ycU3Pcor2BWPbj+7Dbln9G8IPhM9WIg2htz0QuyCXZ48zx
- ZBytWNdt1WxcLIAMp26D9xaES6SSfDgA5zIaWpQbBmZgsi3c4OyynnbOTpqbHamylRF5
- Vkrmc/zkK+suXE6sS2duC55chQfRIaDQppAbYdvK7NMatUFJNjr6kNUsn0OEjwmhVMgx
- ZM9Q==
-X-Gm-Message-State: AOAM531pCIuVtgLcTt81RDYpqAJFe1kfcx/Y3DAyvOSIUbWSaVAiPdcV
- s47Pe6/CYBg6FOGuSX6yRznmxw==
-X-Google-Smtp-Source: ABdhPJy30m1f36llwQe2czJwRgWZ2WYib3wh9j43NkV9xeaRb2PBycPJMqqn/lVk860NFOK6XhPyZQ==
-X-Received: by 2002:a17:90a:1b6c:: with SMTP id
- q99mr2824172pjq.214.1589859659084; 
- Mon, 18 May 2020 20:40:59 -0700 (PDT)
-Received: from localhost ([122.167.130.103])
- by smtp.gmail.com with ESMTPSA id g1sm9573943pfo.142.2020.05.18.20.40.57
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 18 May 2020 20:40:57 -0700 (PDT)
-Date: Tue, 19 May 2020 09:10:55 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [RFC] dt-bindings: mailbox: add doorbell support to ARM MHU
-Message-ID: <20200519034055.hfvifqz442yfduhg@vireshk-i7>
-References: <0a50f0cf5593baeb628dc8606c523665e5e2ae6c.1589519600.git.viresh.kumar@linaro.org>
- <20200519012927.GT2165@builder.lan>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200519012927.GT2165@builder.lan>
-User-Agent: NeoMutt/20180716-391-311a52
+ id 1jatIg-0008Kb-2B
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 03:52:20 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E299B200096;
+ Tue, 19 May 2020 05:52:12 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8AE1E20009B;
+ Tue, 19 May 2020 05:52:08 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E1212402B3;
+ Tue, 19 May 2020 11:52:02 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: p.zabel@pengutronix.de, robh+dt@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH V3] dt-bindings: reset: Convert i.MX reset to json-schema
+Date: Tue, 19 May 2020 11:42:27 +0800
+Message-Id: <1589859747-12926-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_204101_672986_9AFDAAE3 
-X-CRM114-Status: GOOD (  21.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200518_205218_379323_EBC4364E 
+X-CRM114-Status: GOOD (  12.19  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1034 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,58 +67,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 18-05-20, 18:29, Bjorn Andersson wrote:
-> On Thu 14 May 22:17 PDT 2020, Viresh Kumar wrote:
-> > This stuff has been doing rounds on the mailing list since several years
-> > now with no agreed conclusion by all the parties. And here is another
-> > attempt to get some feedback from everyone involved to close this once
-> > and for ever. Your comments will very much be appreciated.
-> > 
-> > The ARM MHU is defined here in the TRM [1] for your reference, which
-> > states following:
-> > 
-> > 	"The MHU drives the signal using a 32-bit register, with all 32
-> > 	bits logically ORed together. The MHU provides a set of
-> > 	registers to enable software to set, clear, and check the status
-> > 	of each of the bits of this register independently.  The use of
-> > 	32 bits for each interrupt line enables software to provide more
-> > 	information about the source of the interrupt. For example, each
-> > 	bit of the register can be associated with a type of event that
-> > 	can contribute to raising the interrupt."
-> > 
-> 
-> Does this mean that there are 32 different signals and they are all ORed
-> into the same interrupt line to trigger software action when something
-> happens?
-> 
-> Or does it mean that this register is used to pass multi-bit information
-> and when any such information is passed an interrupt will be triggered?
-> If so, what does that information mean? How is it tied into other Linux
-> drivers/subsystems?
+Convert the i.MX reset binding to DT schema format using json-schema.
 
-I have started to believe the hardware is written badly at this point
-:)
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+---
+Changes since V2:
+	- remove unnecessary compatible item descriptions.
+---
+ .../devicetree/bindings/reset/fsl,imx-src.txt      | 49 -------------
+ .../devicetree/bindings/reset/fsl,imx-src.yaml     | 82 ++++++++++++++++++++++
+ 2 files changed, 82 insertions(+), 49 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/reset/fsl,imx-src.txt
+ create mode 100644 Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
 
-The thing is that the register can be used to send a 32 bit data
-(which the driver already provides), or it can be used by writing
-different bits to the SET register concurrently, without corrupting
-the other bits as writing 0 to a bit has no effect, we have a separate
-CLEAR register for that. And so it says that all the bits are ORed
-together to generate the interrupt, i.e. any bit set will generate an
-interrupt. Which also means that you can't send data 0 with the
-register.
-
+diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-src.txt b/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
+deleted file mode 100644
+index 6ed79e6..0000000
+--- a/Documentation/devicetree/bindings/reset/fsl,imx-src.txt
++++ /dev/null
+@@ -1,49 +0,0 @@
+-Freescale i.MX System Reset Controller
+-======================================
+-
+-Please also refer to reset.txt in this directory for common reset
+-controller binding usage.
+-
+-Required properties:
+-- compatible: Should be "fsl,<chip>-src"
+-- reg: should be register base and length as documented in the
+-  datasheet
+-- interrupts: Should contain SRC interrupt and CPU WDOG interrupt,
+-  in this order.
+-- #reset-cells: 1, see below
+-
+-example:
+-
+-src: src@20d8000 {
+-        compatible = "fsl,imx6q-src";
+-        reg = <0x020d8000 0x4000>;
+-        interrupts = <0 91 0x04 0 96 0x04>;
+-        #reset-cells = <1>;
+-};
+-
+-Specifying reset lines connected to IP modules
+-==============================================
+-
+-The system reset controller can be used to reset the GPU, VPU,
+-IPU, and OpenVG IP modules on i.MX5 and i.MX6 ICs. Those device
+-nodes should specify the reset line on the SRC in their resets
+-property, containing a phandle to the SRC device node and a
+-RESET_INDEX specifying which module to reset, as described in
+-reset.txt
+-
+-example:
+-
+-        ipu1: ipu@2400000 {
+-                resets = <&src 2>;
+-        };
+-        ipu2: ipu@2800000 {
+-                resets = <&src 4>;
+-        };
+-
+-The following RESET_INDEX values are valid for i.MX5:
+-GPU_RESET     0
+-VPU_RESET     1
+-IPU1_RESET    2
+-OPEN_VG_RESET 3
+-The following additional RESET_INDEX value is valid for i.MX6:
+-IPU2_RESET    4
+diff --git a/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml b/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
+new file mode 100644
+index 0000000..27c5e34
+--- /dev/null
++++ b/Documentation/devicetree/bindings/reset/fsl,imx-src.yaml
+@@ -0,0 +1,82 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/reset/fsl,imx-src.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX System Reset Controller
++
++maintainers:
++  - Philipp Zabel <p.zabel@pengutronix.de>
++
++description: |
++  The system reset controller can be used to reset the GPU, VPU,
++  IPU, and OpenVG IP modules on i.MX5 and i.MX6 ICs. Those device
++  nodes should specify the reset line on the SRC in their resets
++  property, containing a phandle to the SRC device node and a
++  RESET_INDEX specifying which module to reset, as described in
++  reset.txt
++
++  The following RESET_INDEX values are valid for i.MX5:
++    GPU_RESET     0
++    VPU_RESET     1
++    IPU1_RESET    2
++    OPEN_VG_RESET 3
++  The following additional RESET_INDEX value is valid for i.MX6:
++    IPU2_RESET    4
++
++properties:
++  compatible:
++    oneOf:
++      - const: "fsl,imx51-src"
++      - items:
++          - const: "fsl,imx50-src"
++          - const: "fsl,imx51-src"
++      - items:
++          - const: "fsl,imx53-src"
++          - const: "fsl,imx51-src"
++      - items:
++          - const: "fsl,imx6q-src"
++          - const: "fsl,imx51-src"
++      - items:
++          - const: "fsl,imx6sx-src"
++          - const: "fsl,imx51-src"
++      - items:
++          - const: "fsl,imx6sl-src"
++          - const: "fsl,imx51-src"
++      - items:
++          - const: "fsl,imx6ul-src"
++          - const: "fsl,imx51-src"
++      - items:
++          - const: "fsl,imx6sll-src"
++          - const: "fsl,imx51-src"
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    items:
++      - description: SRC interrupt
++      - description: CPU WDOG interrupts out of SRC
++    minItems: 1
++    maxItems: 2
++
++  '#reset-cells':
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - '#reset-cells'
++
++additionalProperties: false
++
++examples:
++  - |
++    reset-controller@73fd0000 {
++        compatible = "fsl,imx51-src";
++        reg = <0x73fd0000 0x4000>;
++        interrupts = <75>;
++        #reset-cells = <1>;
++    };
 -- 
-viresh
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
