@@ -2,79 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAA441D8E19
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 05:12:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F31971D8E1F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 05:15:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rznZPcxdGva1gMV0YiigLS9Y8PzptQqy1HnjdfRfWDM=; b=bRREIuk1sLKEbg
-	xpj7TNO1E3zILR7cLwT+nAbfUKF4MyfftRR/10PHTfFtGDBxTejEqwL2XFaRsuW2zfvDit3WaLUsG
-	1+oF1dOaPcAKqRu4SKDFtDlvfjG5Eahc/Fs6a0UH8z1UNzo6FmkUFLWXnTsEBGdRhd+NpWyWwB1QA
-	ypfu7z5MlYueMZO6V6GjFtDlmExmnhlk+9HuKBWyG/389OBgEEDNde5RmA0RJvMm+CjUESJcC6pZu
-	pDrJi0nlgLB86FuC9q8fNxhTHM2Z5hvaQxilyHiI/qVME0ttmhldpQzpQTO8Zg3za+z4rWCsIjxGh
-	DHP4N3makMFZRTSGpsdQ==;
+	List-Owner; bh=ciRQe/Y7ZbAuwC2y6Fc1lVkss+EGS1Er8P7p8IXaXJI=; b=hJHLpDtZdR4ktW
+	qGdz59L6WeNxmcq9cVS7pXPrt6mhiAw5K+9bovacBQG/wBACqZ+q0kL/4x0pNMJpE8Ra0VWs5aPn3
+	l7J7h0vkDpdnFmhhRmrEiB5nAfLrRovAyKeJOlc+l+LbSOrdCfKK4NU8p9U9BujlOmh8+inNBvrSn
+	oMuBeOf9pQrin6DtKaTHfVsT//4+X/Iamxr+eCtZVsuhJnGpnqL3wP1XQ4y6UKObP6IntxModMdbu
+	L5W3y/p1VbZiWnq+ELDlTeXrqhIJKoZ8cdWP8Ds1g0UCXCVTLfzslfNxz2nUadTVeom/L6vx56uQT
+	eFca9gj68YOH/3vbgOZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jasgB-00029x-Vz; Tue, 19 May 2020 03:12:32 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jasj7-0005CM-IM; Tue, 19 May 2020 03:15:33 +0000
+Received: from mail-eopbgr1300041.outbound.protection.outlook.com
+ ([40.107.130.41] helo=APC01-HK2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jasfz-00028j-Ba; Tue, 19 May 2020 03:12:22 +0000
-X-UUID: b889564de63b4083ac0bfc008d8a26d4-20200518
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=r8eGAgqgE0pJRDFIe1Bekk6atwC/VS0Nd4EW/+LDtrk=; 
- b=F8dSsK/7FlMDsw7B1Znb8w/TMPhbawPSg+hm71SluQmc2fMPKkv+SAlo2MlXQBEos8kZxNw+jsUMjqkZyan0956GhRNEXZ3daEgYhHtA0DZ/lFRzmb3sXixMu6qXJOp5C7+YcwQlYVuaMJpakcX/DFyyvHR7BzvigU/9TwlyQF8=;
-X-UUID: b889564de63b4083ac0bfc008d8a26d4-20200518
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 792296670; Mon, 18 May 2020 19:11:37 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 18 May 2020 20:12:12 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 19 May 2020 11:12:09 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 19 May 2020 11:12:08 +0800
-Message-ID: <1589857839.8804.368.camel@mhfsdcap03>
-Subject: Re: [V6, 1/2] media: dt-bindings: media: i2c: Document DW9768 bindings
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Tue, 19 May 2020 11:10:39 +0800
-In-Reply-To: <20200518143148.GA18032@bogus>
-References: <20200518132731.20855-1-dongchun.zhu@mediatek.com>
- <20200518132731.20855-2-dongchun.zhu@mediatek.com>
- <CAAFQd5Byvc8Fb0f3_81xSKsuyvsQJm-8g8y1Kx2aUcC=PwpS7w@mail.gmail.com>
- <20200518143148.GA18032@bogus>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jasix-0005Az-Oo
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 03:15:25 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=M1Q3a/QhBQgNHc+5T6/U72mayONzlRzKfYWn2ssZxtRH3e4jXs2lOZa6mI11UAgERUY1XtTPGj847occzbEXEOvwUTxLkOI2wpP7KjRzv3842gjXlqiIiNfcfzQC8a/ilAlx9SJF7mqhjNQwehQLhs5ORI+TAdNQKLkiScN17X/u6piEl776ojrzmdVBQjZql2ROYyy0hbcb+/fBKE1b3Rx82upiLOtzHeTNsTd+yA3o1pY4py0Q1t7YK0p+aLtvxqjY3FrEm2XYrI+SXv3vm7ERG1JRiAWwjheBYJ6Rb10OaUuI6hWkD+VCIqYDzGPlIdzcYpLe9fDJ2I6TZ+7XDw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vWqOyqeRr1mwEo+b86cueOyFMF89zN6DpRX+1siARnI=;
+ b=GJcC7vE/vvRNfO5JOaLiMDDlvP3bB3+45+9Df3e7pVJRFif0yOWxhBFhazLObMGEHQ8QSwMHsoygrW6VELUAZqqh0w2DOyrEmT63wD8sSj+6MIyqCirvH0lnuxQ43hF5HwJAW36Rj5d5lJXF6Z/NiV8/4S2ua8n3rPZPv+EeH3x/ulmT2yWbiyH2ai1fa7s7zkwnWVLvoKg9gNbBV4/tFVUGul1XSZ7lzjPlTdPPxHoMpmTlQIvQ5pK6JEDsTOzDj181QMeZdGE13M9JPRkXKLPHo27t6QEuWbTLwVGVMl+URJmi2Nzjv7U6StGEcHIldJQr5q3z+EuDalSxlBFPdw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nec.com; dmarc=pass action=none header.from=nec.com; dkim=pass
+ header.d=nec.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=necglobal.onmicrosoft.com; s=selector1-necglobal-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vWqOyqeRr1mwEo+b86cueOyFMF89zN6DpRX+1siARnI=;
+ b=Cbka+AmrgC0RXsr9a+8ZHjcVhafzGjt5xF/iouCSThc2NlsEysgvudsSnbWhwiEHZDyZ/xTcwKi6Ylzg1Uv6pgcLdOsSgDZRHDQbSJdiCQnyXiBGN2BJfWH1JtPiWUoPJqb4iGX2Ve6q8Ojj1HQX4hNl1FbvxGzjMlfQNnviuxU=
+Received: from TY2PR01MB3210.jpnprd01.prod.outlook.com (2603:1096:404:74::14)
+ by TY2PR01MB4058.jpnprd01.prod.outlook.com (2603:1096:404:d7::21)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.26; Tue, 19 May
+ 2020 03:15:11 +0000
+Received: from TY2PR01MB3210.jpnprd01.prod.outlook.com
+ ([fe80::3841:ec9f:5cdf:f58]) by TY2PR01MB3210.jpnprd01.prod.outlook.com
+ ([fe80::3841:ec9f:5cdf:f58%5]) with mapi id 15.20.3000.034; Tue, 19 May 2020
+ 03:15:11 +0000
+From: =?iso-2022-jp?B?SE9SSUdVQ0hJIE5BT1lBKBskQktZOH0hIUQ+TGkbKEIp?=
+ <naoya.horiguchi@nec.com>
+To: Andrew Morton <akpm@linux-foundation.org>
+Subject: Re: [PATCH v2 1/3] mm/memory-failure: Add memory_failure_queue_kick()
+Thread-Topic: [PATCH v2 1/3] mm/memory-failure: Add memory_failure_queue_kick()
+Thread-Index: AQHWH9gLTSNZrBgxpkSNHu3+w+LRAKit5J6AgAB5FgCAAHoFgA==
+Date: Tue, 19 May 2020 03:15:11 +0000
+Message-ID: <20200519031511.GA31023@hori.linux.bs1.fc.nec.co.jp>
+References: <20200501164543.24423-1-james.morse@arm.com>
+ <20200501164543.24423-2-james.morse@arm.com> <49686237.p6yG9EJavU@kreacher>
+ <20200518125828.e4e3973c743556e976c5ee65@linux-foundation.org>
+In-Reply-To: <20200518125828.e4e3973c743556e976c5ee65@linux-foundation.org>
+Accept-Language: ja-JP, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: linux-foundation.org; dkim=none (message not signed)
+ header.d=none;linux-foundation.org; dmarc=none action=none
+ header.from=nec.com;
+x-originating-ip: [165.225.110.202]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: d15019ed-8d7d-4003-ef8f-08d7fba2d790
+x-ms-traffictypediagnostic: TY2PR01MB4058:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <TY2PR01MB4058E3EA651A3AB5220DC146E7B90@TY2PR01MB4058.jpnprd01.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 040866B734
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 0epd9lO8SuCSp6kp6qDTZOBwQ/H01gnqYY2+iqPikTej57FGhzjELrK8UpOFXJuY2+Zj0U6QcXdQ2dh3GRGDwg9yr4adLgd2bWqQr0lQVuVyIzn+9hmja4VINA0U9xB/ifrAFvoI6hqbp/7c7DdDviPnu4vPeo7cXCJXlRQNYsI3ymInLC1cxEnogh27bO8iPQTiSgXgWy79QwEYPRXhOSWzSeLrkdXum/0yFRJ/nQvAft8Nryt2sPAqzKg+RUezZdTdGC8j9MDrLFXyYjGtBeavYeXL+kjD+qX6w4cHmAdaqJU6ouJExuhKDoFi6tkR76xfX0zEgqU7TE53HnLpDVez+0rOnMZulT3jp3TFnGdl34ofntpmsTwTXQzVkFDdzjB9QbGy1nc6FG+gslWkPCEGKkyaGji1nUKQY9YNbmhjlRT4gQMm/56/gL0D8abC
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:TY2PR01MB3210.jpnprd01.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(136003)(346002)(376002)(39860400002)(396003)(4326008)(6916009)(6486002)(33656002)(2906002)(478600001)(9686003)(6512007)(85182001)(7416002)(55236004)(86362001)(6506007)(53546011)(186003)(71200400001)(26005)(54906003)(8676002)(8936002)(76116006)(66946007)(1076003)(66556008)(66476007)(64756008)(66446008)(316002)(5660300002);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: H4Al6d4lzlRJV4PxA+0GyiwedT2kOU88gyFMEzidHTUt78x0hBq71PI15smD9WKOvBoyaFroQXBBHAZxBCHhEDEpm7nZQCP8XWjrvFir9RBzF49947W7EP/dJ7HQVi+J+2qXhV5Eu9gRhgR0+/AglB7IU4OGNcjERDOhDhgHrzc68XKG8eQdYm5g7Dr//jRGqjVO8mbKdcZgjKYl0AWhs3g8l7DGSm0dfVu4ij0k0n94wXSg9gnCQJADvPiiKWEgV1CtyvJAZgGMZJRVnwQmMZY+Q9pCGpaFG7Ygpo3fMSp/LgtT73XDDC2tly+JN7ym+FA8jAbCh5bQs5bVv3Uk868uG55sEjXHuhY9wr5qMJzAUvw67oGVY5X88oVvvyp/zRjabYrqHXKwuQyUS/7VMLvnqsAwOzANyuDzJ8GRWfi+KwoQQgI4G4CGxcF93zlulA9Ff0Fj65jHGLxazcXf2HWGlslpTGLk2Yj6d4BsD5HqDtyLlfY9anq33+FbJHJz
+Content-ID: <E059626AE2FD5A41A7AAE8C323888CDB@jpnprd01.prod.outlook.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 10BF97F5F2B8C09090C06F8889D22CE821A519C8A6B26C57BE0218C418F075C12000:8
-X-MTK: N
+X-OriginatorOrg: nec.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: d15019ed-8d7d-4003-ef8f-08d7fba2d790
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 May 2020 03:15:11.5528 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: e67df547-9d0d-4f4d-9161-51c6ed1f7d11
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: cQ7zlTk2hJucDJ4dbMCEfOQ/m6pShI0AbSr/Kt6OwtuEsHqXKLDNFwJWrhDBeV+uj4LT65nCP/CBXfqjcFciJw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: TY2PR01MB4058
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_201220_219195_53970B24 
-X-CRM114-Status: GOOD (  24.59  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200518_201523_888376_5987F80C 
+X-CRM114-Status: GOOD (  25.43  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.130.41 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.130.41 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,221 +122,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Louis Kuo <louis.kuo@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Linus Walleij <linus.walleij@linaro.org>, Shengnan
- Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
- <shengnan.wang@mediatek.com>, Tomasz Figa <tfiga@chromium.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Nicolas Boichat <drinkcat@chromium.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing
- Bu <bingbu.cao@intel.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- "list@263.net:IOMMU DRIVERS
- <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
- " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Tony Luck <tony.luck@intel.com>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Xie XiuQi <xiexiuqi@huawei.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
+ Tyler Baicar <tyler@amperecomputing.com>, James Morse <james.morse@arm.com>,
+ Borislav Petkov <bp@alien8.de>, Naoya Horiguchi <n-horiguchi@ah.jp.nec.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz, Rob,
-
-Thanks for the timely review and good suggestions.
-
-On Mon, 2020-05-18 at 08:31 -0600, Rob Herring wrote:
-> On Mon, May 18, 2020 at 04:12:28PM +0200, Tomasz Figa wrote:
-> > Hi Dongchun,
-> > 
-> > On Mon, May 18, 2020 at 3:29 PM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> > >
-> > > Add DeviceTree binding documentation for Dongwoon Anatech DW9768 voice
-> > > coil actuator.
-> > 
-> > Thanks for the patch. Please see my comments below.
-> > 
-> > >
-> > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > 
-> > This version includes significant changes, so the reviewed-by tag
-> > shouldn't have been carried out.
-> > 
-
-Sorry, this is my fault.
-In fact, I've struggled with it at the beginning.
-Yes, you are right.
-Now the new version of patch-set includes huge changes relative to the
-last edition.
-It would be removed in next release.
-
-> > > ---
-> > >  .../bindings/media/i2c/dongwoon,dw9768.yaml        | 105 +++++++++++++++++++++
-> > >  MAINTAINERS                                        |   7 ++
-> > >  2 files changed, 112 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> > > new file mode 100644
-> > > index 0000000..b909e83
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> > > @@ -0,0 +1,105 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > +# Copyright (c) 2020 MediaTek Inc.
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/media/i2c/dongwoon,dw9768.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Dongwoon Anatech DW9768 Voice Coil Motor (VCM) Lens Device Tree Bindings
-> > > +
-> > > +maintainers:
-> > > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > +
-> > > +description: |-
-> > > +  The Dongwoon DW9768 is a single 10-bit digital-to-analog (DAC) converter
-> > > +  with 100 mA output current sink capability. VCM current is controlled with
-> > > +  a linear mode driver. The DAC is controlled via a 2-wire (I2C-compatible)
-> > > +  serial interface that operates at clock rates up to 1MHz. This chip
-> > > +  integrates Advanced Actuator Control (AAC) technology and is intended for
-> > > +  driving voice coil lenses in camera modules.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    enum:
-> > > +      # for DW9768 VCM
-> > > +      - dongwoon,dw9768
-> > > +      # for GT9769 VCM
-> > > +      - giantec,gt9769
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  vin-supply:
-> > > +    description:
-> > > +      Definition of the regulator used as I2C I/O interface power supply.
-> > > +
-> > > +  vdd-supply:
-> > > +    description:
-> > > +      Definition of the regulator used as VCM chip power supply.
-> > > +
-> > > +  dongwoon,aac-mode:
-> > > +    description:
-> > > +      Indication of AAC mode select.
-> > > +    allOf:
-> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > > +      - enum:
-> > > +          - 0    #  Direct (default)
+On Mon, May 18, 2020 at 12:58:28PM -0700, Andrew Morton wrote:
+> On Mon, 18 May 2020 14:45:05 +0200 "Rafael J. Wysocki" <rjw@rjwysocki.net> wrote:
 > 
-> Default can be expressed as 'default: 0'.
-> 
-
-Thanks for the reminder.
-Next release I'd try to write DT property "dongwoon,aac-mode" like this:
-dongwoon,aac-mode:
-  description:
-    Indication of AAC mode select.
-  allOf:
-    - $ref: "/schemas/types.yaml#/definitions/uint32"
-    - enum:
-        - 0  # Direct
-        - 1  # AAC2 (operation time# 0.48 x Tvib)
-        - 2  # AAC3 (operation time# 0.70 x Tvib)
-        - 3  # AAC4 (operation time# 0.75 x Tvib)
-        - 5  # AAC8 (operation time# 1.13 x Tvib)
-      default: 0
-
-> > > +          - 1    #  AAC2 (operation time# 0.48 x Tvib)
-> > > +          - 2    #  AAC3 (operation time# 0.70 x Tvib)
-> > > +          - 3    #  AAC4 (operation time# 0.75 x Tvib)
-> > > +          - 4    #  Reserved
-> > > +          - 5    #  AAC8 (operation time# 1.13 x Tvib)
-> > > +          - 6    #  Reserved
-> > > +          - 7    #  Reserved
-> > 
-> > I'll ultimately leave it to DT maintainers, but is there any reason to
-> > define the reserved values?
-> 
-> No.
-> 
-> > 
+> > On Friday, May 1, 2020 6:45:41 PM CEST James Morse wrote:
+> > > The GHES code calls memory_failure_queue() from IRQ context to schedule
+> > > work on the current CPU so that memory_failure() can sleep.
+> > > 
+> > > For synchronous memory errors the arch code needs to know any signals
+> > > that memory_failure() will trigger are pending before it returns to
+> > > user-space, possibly when exiting from the IRQ.
+> > > 
+> > > Add a helper to kick the memory failure queue, to ensure the scheduled
+> > > work has happened. This has to be called from process context, so may
+> > > have been migrated from the original cpu. Pass the cpu the work was
+> > > queued on.
+> > > 
+> > > Change memory_failure_work_func() to permit being called on the 'wrong'
+> > > cpu.
+> > > 
+> > > --- a/include/linux/mm.h
+> > > +++ b/include/linux/mm.h
+> > > @@ -3012,6 +3012,7 @@ enum mf_flags {
+> > >  };
+> > >  extern int memory_failure(unsigned long pfn, int flags);
+> > >  extern void memory_failure_queue(unsigned long pfn, int flags);
+> > > +extern void memory_failure_queue_kick(int cpu);
+> > >  extern int unpoison_memory(unsigned long pfn);
+> > >  extern int get_hwpoison_page(struct page *page);
+> > >  #define put_hwpoison_page(page)	put_page(page)
+> > > diff --git a/mm/memory-failure.c b/mm/memory-failure.c
+> > > index a96364be8ab4..c4afb407bf0f 100644
+> > > --- a/mm/memory-failure.c
+> > > +++ b/mm/memory-failure.c
+> > > @@ -1493,7 +1493,7 @@ static void memory_failure_work_func(struct work_struct *work)
+> > >  	unsigned long proc_flags;
+> > >  	int gotten;
+> > >  
+> > > -	mf_cpu = this_cpu_ptr(&memory_failure_cpu);
+> > > +	mf_cpu = container_of(work, struct memory_failure_cpu, work);
+> > >  	for (;;) {
+> > >  		spin_lock_irqsave(&mf_cpu->lock, proc_flags);
+> > >  		gotten = kfifo_get(&mf_cpu->fifo, &entry);
+> > > @@ -1507,6 +1507,19 @@ static void memory_failure_work_func(struct work_struct *work)
+> > >  	}
+> > >  }
+> > >  
+> > > +/*
+> > > + * Process memory_failure work queued on the specified CPU.
+> > > + * Used to avoid return-to-userspace racing with the memory_failure workqueue.
+> > > + */
+> > > +void memory_failure_queue_kick(int cpu)
+> > > +{
+> > > +	struct memory_failure_cpu *mf_cpu;
 > > > +
-> > > +  dongwoon,aac-timing:
-> > > +    description:
-> > > +      Indication of AAC Timing count, unit of 0.1 milliseconds.
-> 
-> Why not just use standard units (-us)?
-> 
-
-That sounds nice.
-I'd re-write the description like this in next release:
-dongwoon,aac-timing:
-  description:
-    Number of AAC Timing count that controlled by one 6-bit period
-    of vibration register AACT[5:0], the unit of which is 100us.
-  allOf:
-    - $ref: "/schemas/types.yaml#/definitions/uint32"
-    - minimum: 0x00
-    - maximum: 0x3F
-    - default: 0x20
-
-> > > +      Valid values vary from 0 to 63 (default 32).
-> 
-> Looks like constraints.
-> 
-
-Yes. This property is controlled by one 6-bit reg.
-So here we need to constrain the data set to a narrow range.
-
-> > > +    allOf:
-> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
+> > > +	mf_cpu = &per_cpu(memory_failure_cpu, cpu);
+> > > +	cancel_work_sync(&mf_cpu->work);
+> > > +	memory_failure_work_func(&mf_cpu->work);
+> > > +}
 > > > +
-> > > +  dongwoon,clock-dividing-rate:
-> > > +    description:
-> > > +      Indication of VCM internal clock dividing rate select, as one multiple
-> > > +      factor to calculate VCM ring periodic time Tvib.
-> > > +    allOf:
-> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > > +      - enum:
-> > > +          - 0    #  Dividing Rate -  2
-> > > +          - 1    #  Dividing Rate -  1 (default)
-> > > +          - 2    #  Dividing Rate -  1/2
-> > > +          - 3    #  Dividing Rate -  1/4
-> > > +          - 4    #  Dividing Rate -  8
-> > > +          - 5    #  Dividing Rate -  4
-> > > +          - 6    #  Dividing Rate -  Reserved
-> > > +          - 7    #  Dividing Rate -  Reserved
+> > >  static int __init memory_failure_init(void)
+> > >  {
+> > >  	struct memory_failure_cpu *mf_cpu;
+> > > 
 > > 
-> > Ditto.
+> > I could apply this provided an ACK from the mm people.
 > > 
+> 
+> Naoya Horiguchi is the memory-failure.c person.  A review would be
+> appreciated please?
+> 
+> I'm struggling with it a bit.  memory_failure_queue_kick() should be
+> called on the cpu which is identified by arg `cpu', yes? 
+> memory_failure_work_func() appears to assume this.
+> 
+> If that's right then a) why bother passing in the `cpu' arg?  and b)
+> what keeps this thread pinned to that CPU?  cancel_work_sync() can
+> schedule.
 
-Thanks for kindly reminder.
-Reserved values would be removed in next release.
-Like this:
-dongwoon,clock-dividing-rate:
-  description:
-    Indication of VCM internal clock dividing rate select, as one    
-    multiplier to calculate VCM ring periodic time Tvib.
-  allOf:
-    - $ref: "/schemas/types.yaml#/definitions/uint32"
-    - enum:
-        - 0   #  Dividing Rate -  2
-        - 1   #  Dividing Rate -  1
-        - 2    #  Dividing Rate -  1/2
-        - 3    #  Dividing Rate -  1/4
-        - 4    #  Dividing Rate -  8
-        - 5    #  Dividing Rate -  4
-      default: 1
+If I read correctly, memory_failure work is queue on the CPU on which the
+user process ran when it touched the corrupted memory, and the process can
+be scheduled on another CPU when the kernel returned back to userspace after
+handling the GHES event.  So we need to remember where the memory_failure
+event is queued to flush proper work queue.  So I feel that this properly
+implements it.
 
-> > Best regards,
-> > Tomasz
+Considering the effect to the other caller, currently memory_failure_queue()
+has 2 callers, ghes_handle_memory_failure() and cec_add_elem(). The former
+is what we try to change now.  And the latter is to execute soft offline
+(which is related to corrected non-fatal errors), so that's not affected by
+the reported issue.  So I don't think that this change breaks the other
+caller.
 
+So I'm fine with the suggested change.
+
+Acked-by: Naoya Horiguchi <naoya.horiguchi@nec.com>
+
+Thanks,
+Naoya Horiguchi
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
