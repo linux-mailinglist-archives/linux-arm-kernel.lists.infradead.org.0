@@ -2,81 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51E331DA29E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 22:32:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 117051DA2CD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 22:36:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iXUgFyyFe1DSPXiT+PgLN5TV8YffNUeLF7Qk1zW2S3U=; b=czDEr3qF8m6Q9x
-	qhBef/jn85Kghx9/QPnxRYCUQ10mC0xOH3PapWE3u9L5IBaQhUqJYCYsdDWJ/9udZZzVMIzdB4An5
-	NxDPP8+te3yONGC3o+bVcPdOXF2FY1n2yU7SC0Zs/CzC1D+u9q+5UMqn+0lF3yNs4REfp1W4qLUjG
-	zi5dbID5oR8Pw2HulMfwL98oHPYJKOCFv27sXq9Xf49MX7FXIQLKWQqvM/cRQW9M0xirMOH9cmcys
-	gy4vCdUoKsWP/6QksmRgt0Cx+hcq1dduwMwkwtuBujxpBazZK1xoSGZ0zNidIvXCk5sW7c6JO4CW5
-	CYUPktbLDHtBx7ySJRKg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=B0Otd1Tdc9nQ684YyvARRhcpekcB3DiyhSlrvbiDsNU=; b=qqM
+	dWZ/jw9j+FBKpGxGloHPgF0AW5OSnlEpZ8LIX5Q/Wod/AuLIbriC+b+a0UnevLICQ2vusnpHwjxYz
+	O6bcK9BGmexGKNJX+Oh+lPGTkQeRrvTbqA/TqS2Lxx33GQGO5EhSr2XXZ0lS6cw+O48yZxw6eLeYF
+	jJ7Zba7hYK03l0MsXw3wL5ThN+Zz/VoQkmViDWlg87ynpfzVJlGLoX5iJmxD3xPKvdmCAcb4j+wiA
+	9ZB/kynP+4bcYVQnmBBG/eJ7RHNgKITi+f+hFqDDw4jmkHcQRbO62No8PIn+5d3o1XtwxHCR0tI/l
+	CEu1q8fpSJ9T9jWgckI4pzZiax4qmnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb8u1-0007FR-Jj; Tue, 19 May 2020 20:31:53 +0000
-Received: from mout.kundenserver.de ([212.227.126.133])
+	id 1jb8yU-00030h-Fq; Tue, 19 May 2020 20:36:30 +0000
+Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb8ts-0007Ee-4u
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 20:31:46 +0000
-Received: from mail-qt1-f178.google.com ([209.85.160.178]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MLRDv-1jKIbW2jND-00IWI0 for <linux-arm-kernel@lists.infradead.org>; Tue,
- 19 May 2020 22:31:41 +0200
-Received: by mail-qt1-f178.google.com with SMTP id c24so766594qtw.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 13:31:41 -0700 (PDT)
-X-Gm-Message-State: AOAM533gR2MprAfzVtxuTX8pz2UtZUc4Joz5RByRpeTBmPmPciCzkb0W
- iyiAnbShraWZ3uLcIX4WhoPSRTM+RxiNgJrAkbE=
-X-Google-Smtp-Source: ABdhPJwnFPtRSDJVnDnHL5c/dqE67Ig3qeBa0DrpfVygpw767tSMU+pDkvKG7qSXMmmSfY8tCzkK5UyIjTK6Dw2jmGk=
-X-Received: by 2002:aed:2441:: with SMTP id s1mr1854319qtc.304.1589920300436; 
- Tue, 19 May 2020 13:31:40 -0700 (PDT)
-MIME-Version: 1.0
-References: <CAK8P3a2Tw2w73ZkK-W6AA9veMK4-miLUx-TL1EuOdP7EdW-AmQ@mail.gmail.com>
- <0c2abcd1-7da8-2559-1e93-4c3bdd38dec1@linaro.org>
-In-Reply-To: <0c2abcd1-7da8-2559-1e93-4c3bdd38dec1@linaro.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 19 May 2020 22:31:23 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a3fxs+14ZdCRmt_GwJGv3Aipm1r9sAHH6aVj2UrWBNuQQ@mail.gmail.com>
-Message-ID: <CAK8P3a3fxs+14ZdCRmt_GwJGv3Aipm1r9sAHH6aVj2UrWBNuQQ@mail.gmail.com>
-Subject: Re: clock_gettime64 vdso bug on 32-bit arm, rpi-4
-To: Adhemerval Zanella <adhemerval.zanella@linaro.org>
-X-Provags-ID: V03:K1:b461xunjkpq5fa4vMQ7dGpWQQHS4sEeI1yHssQyOcZm97VaD8At
- YgiT8bo5k8aXCbjk11UaflAOFhRPAYsMjT5eq5lVnpHsjyuEB2h2vtbj9DaQsaWqhDFDqw0
- CFD8lilEZ5qK7Q9539Mg48mmYUCszcIe18O5LPFzBBQYdt22L7eBkHUAZclGD8K5xXr0qxC
- WFzzC9nOvHxU4VZARGgCg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:2kBEjfYyOoU=:7vQ5GDxU9a7P08ASAvFO24
- pHdWKB6pz9uagTEKx+rbUZmR5MAykEh4dmWSccTZMrmGPg5Fwxg6kmUrYZijWJYWn046hWYUc
- S46cew78mb2r8lFbz69AG9OMuFhQxoltEsNkaODG49Fi2hYKBznDpnbgX9ENRrzzZJZ7OgUKf
- G2UWceMojyBPwsza3jhlRUy0z+mNdn3/gkzemhHmaWXDxRBZlEFuSbrEO8kHdPEC4oFV5T1Vq
- +75/bF7o6eHoZrVLKIjtd565aA1i51UUBlNf/7bq8iz3c66vzp/o6BsRVshMJKK9/dV/XldX4
- AbaYTaMgehraIVi+TsKiYnj1tNBXcNXFJ6YfnzkL390uYVLD6550KKiHBHQi1L9VE1CmFGex+
- nOv0PqjVPOpgn89e7a3VmExAStiErgNDNTlhfkAcDObkrcdoHMPgqE4P/7C2goi34mqRDpXSt
- fklDOd/A7+1Q0g8pcJ+w0kP49YhwBb+wVX3ubHSsqPXE9RkEZSZLXYiCdP0qkYPupxHRkYpWw
- Fl+AX34cYcslMGwe0Zdi0aqvcksnQcKoInGx4grFUBwQebeLHk6A0xDo82L5KoFR2STn384B+
- F2Exd5nN+31dzsRzU+efM/Z10PSAz51p8vm5lM4dgFEdapSzpX+eMv6c/2KF1FB2HjOHcltxb
- L713iXR85f4V6iYB476xRveM+Lf4kuuIOxomR31Ko4czAFaHAw4I7HI5C/xReZc/zUUqS20/f
- rGNITBCS5EmrGYMebiYEGTGPeKuSfWQsTHiwylfG916OEb0EwM+GzNmTaw33tEkyzliEVtwwc
- UWu9T/oseN/F+eV6/gh8+X9ihbdSh/XaqTULbdz3RjHlYdXCDk=
+ id 1jb8ww-0007wL-9G; Tue, 19 May 2020 20:34:57 +0000
+Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
+ [10.75.242.48])
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 02B4730D7BF;
+ Tue, 19 May 2020 13:33:22 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 02B4730D7BF
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
+ s=dkimrelay; t=1589920402;
+ bh=yuPEfulO+iRK9pTGrG+3vEVTPxwnaY2RYoFKfJNpl/4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=BGCCEXGcLPBUG5WcSDFpUnH7X6Scj2cn6JSilSFImuyVpUvNUEbcGLaTqCiJFjL3K
+ RC/aTNSU30qAdciwtiidWHRIF/dypocgc+fxv9lyMCer+wWJgYag7fmkpvdu32QtpX
+ rTr1Zk1rKZs1p0VraKIQ5wSOx8XgHzb84gj4JsY0=
+Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
+ [10.28.16.211])
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 4463514008B;
+ Tue, 19 May 2020 13:34:42 -0700 (PDT)
+From: Jim Quinlan <james.quinlan@broadcom.com>
+To: james.quinlan@broadcom.com, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: [PATCH 00/15] PCI: brcmstb: enable PCIe for STB chips
+Date: Tue, 19 May 2020 16:33:58 -0400
+Message-Id: <20200519203419.12369-1-james.quinlan@broadcom.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_133144_482120_32A02CFB 
-X-CRM114-Status: GOOD (  31.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200519_133454_375271_0E57FD80 
+X-CRM114-Status: UNSURE (   7.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.133 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.19.229.170 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.133 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,93 +76,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Will Deacon <will@kernel.org>,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jack Schmidt <jack.schmidt@uky.edu>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE"
+ <devicetree@vger.kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Saravana Kannan <saravanak@google.com>, Rob Herring <robh@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Julien Grall <julien.grall@arm.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ "open list:LIBATA SUBSYSTEM Serial and Parallel ATA drivers"
+ <linux-ide@vger.kernel.org>,
+ "open list:DMA MAPPING HELPERS" <iommu@lists.linux-foundation.org>,
+ Stefano Stabellini <sstabellini@kernel.org>,
+ "open list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
+ <linux-pci@vger.kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 10:24 PM Adhemerval Zanella
-<adhemerval.zanella@linaro.org> wrote:
-> On 19/05/2020 16:54, Arnd Bergmann wrote:
-> > Jack Schmidt reported a bug for the arm32 clock_gettimeofday64 vdso call last
-> > month: https://github.com/richfelker/musl-cross-make/issues/96 and
-> > https://github.com/raspberrypi/linux/issues/3579
-> >
-> > As Will Deacon pointed out, this was never reported on the mailing list,
-> > so I'll try to summarize what we know, so this can hopefully be resolved soon.
-> >
-> > - This happened reproducibly on Linux-5.6 on a 32-bit Raspberry Pi patched
-> >    kernel running on a 64-bit Raspberry Pi 4b (bcm2711) when calling
-> >    clock_gettime64(CLOCK_REALTIME)
->
-> Does it happen with other clocks as well?
+This patchset expands the usefulness of the Broadcom Settop Box PCIe
+controller by building upon the PCIe driver used currently by the
+Raspbery Pi.  Other forms of this patchset were submitted by me years
+ago and not accepted; the major sticking point was the code required
+for the DMA remapping needed for the PCIe driver to work [1].
 
-Unclear.
+There have been many changes to the DMA and OF subsystems since that
+time, making a cleaner and less intrusive patchset possible.  This
+patchset implements a generalization of "dev->dma_pfn_offset", except
+that instead of a single scalar offset it provides for multiple
+offsets via a function which depends upon the "dma-ranges" property of
+the PCIe host controller.  This is required for proper functionality
+of the BrcmSTB PCIe controller and possibly some other devices.
 
-> > - The kernel tree is at https://github.com/raspberrypi/linux/, but I could
-> >   see no relevant changes compared to a mainline kernel.
->
-> Is this bug reproducible with mainline kernel or mainline kernel can't be
-> booted on bcm2711?
+[1] https://lore.kernel.org/linux-arm-kernel/1516058925-46522-5-git-send-email-jim2101024@gmail.com/
 
-Mainline linux-5.6 should boot on that machine but might not have
-all the other features, so I think users tend to use the raspberry pi
-kernel sources for now.
+Jim Quinlan (15):
+  PCI: brcmstb: PCIE_BRCMSTB depends on ARCH_BRCMSTB
+  ahci_brcm: fix use of BCM7216 reset controller
+  dt-bindings: PCI: Add bindings for more Brcmstb chips
+  PCI: brcmstb: Add compatibily of other chips
+  PCI: brcmstb: Add suspend and resume pm_ops
+  PCI: brcmstb: Asserting PERST is different for 7278
+  PCI: brcmstb: Add control of rescal reset
+  of: Include a dev param in of_dma_get_range()
+  device core: Add ability to handle multiple dma offsets
+  dma-direct: Invoke dma offset func if needed
+  arm: dma-mapping: Invoke dma offset func if needed
+  PCI: brcmstb: Set internal memory viewport sizes
+  PCI: brcmstb: Accommodate MSI for older chips
+  PCI: brcmstb: Set bus max burst side by chip type
+  PCI: brcmstb: add compatilbe chips to match list
 
-> > - From the report, I see that the returned time value is larger than the
-> >   expected time, by 3.4 to 14.5 million seconds in four samples, my
-> >   guess is that a random number gets added in at some point.
->
-> What kind code are you using to reproduce it? It is threaded or issue
-> clock_gettime from signal handlers?
+ .../bindings/pci/brcm,stb-pcie.yaml           |  40 +-
+ arch/arm/include/asm/dma-mapping.h            |  17 +-
+ drivers/ata/ahci_brcm.c                       |  14 +-
+ drivers/of/address.c                          |  54 ++-
+ drivers/of/device.c                           |   2 +-
+ drivers/of/of_private.h                       |   8 +-
+ drivers/pci/controller/Kconfig                |   4 +-
+ drivers/pci/controller/pcie-brcmstb.c         | 403 +++++++++++++++---
+ include/linux/device.h                        |   9 +-
+ include/linux/dma-direct.h                    |  16 +
+ include/linux/dma-mapping.h                   |  44 ++
+ kernel/dma/Kconfig                            |  12 +
+ 12 files changed, 542 insertions(+), 81 deletions(-)
 
-The reproducer is very simple without threads or signals,
-see the start of https://github.com/richfelker/musl-cross-make/issues/96
+-- 
+2.17.1
 
-It does rely on calling into the musl wrapper, not the direct vdso
-call.
-
-> > - From other sources, I found that the Raspberry Pi clocksource runs
-> >   at 54 MHz, with a mask value of 0xffffffffffffff. From these numbers
-> >   I would expect that reading a completely random hardware register
-> >   value would result in an offset up to 1.33 billion seconds, which is
-> >   around factor 100 more than the error we see, though similar.
-> >
-> > - The test case calls the musl clock_gettime() function, which falls back to
-> >   the clock_gettime64() syscall on kernels prior to 5.5, or to the 32-bit
-> >   clock_gettime() prior to Linux-5.1. As reported in the bug, Linux-4.19 does
-> >   not show the bug.
-> >
-> > - The behavior was not reproduced on the same user space in qemu,
-> >   though I cannot tell whether the exact same kernel binary was used.
-> >
-> > - glibc-2.31 calls the same clock_gettime64() vdso function on arm to
-> >   implement clock_gettime(), but earlier versions did not. I have not
-> >   seen any reports of this bug, which could be explained by users
-> >   generally being on older versions.
-> >
-> > - As far as I can tell, there are no reports of this bug from other users,
-> >   and so far nobody could reproduce it.
-> >
-> > - The current musl git tree has been patched to not call clock_gettime64
-> >    on ARM because of this problem, so it cannot be used for reproducing it.
->
-> So should glibc follow musl and remove arm clock_gettime6y4 vDSO support
-> or this bug is localized to an specific kernel version running on an
-> specific hardware?
-
-I hope we can figure out what is actually going on soon, there is probably
-no need to change glibc before we have.
-
-          Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
