@@ -2,117 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96CD91D8E06
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 05:03:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAA441D8E19
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 05:12:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/ORuENz1wDB91GtbSgrVRw2oMr2+1aRq0U9VW5XGHTQ=; b=IWT1oxTgQVrowK
-	mD/cfMKzexOhQQMThdzfl7m0S44s+aD68+l+Th3gVYivVf/6iaqUtvND3vP6XKUCGTgm+j2ff3FpR
-	p5PKWAE5rbXZw0rxsES9o3Mm4LprxKv/dcMnFmJqdrjBd0dNsRp1ZfTmn3/jblob/FyoMBQwv6ndj
-	th0cXfH0j6zI1bs2vb3k13l7YCy0hdMER0IxkJ+9IJLuuTvMQvF64xiIoOcijuKoafg2fqPTSF8/E
-	yzYQUhMPA2FM1vQEwMnQXGwh87V+wzKev6bRZ6R6ueCcqnHw59pyExg7n5THlQc8HtYaG8vGcRDVd
-	11hZesLOkMqv/RF00cnw==;
+	List-Owner; bh=rznZPcxdGva1gMV0YiigLS9Y8PzptQqy1HnjdfRfWDM=; b=bRREIuk1sLKEbg
+	xpj7TNO1E3zILR7cLwT+nAbfUKF4MyfftRR/10PHTfFtGDBxTejEqwL2XFaRsuW2zfvDit3WaLUsG
+	1+oF1dOaPcAKqRu4SKDFtDlvfjG5Eahc/Fs6a0UH8z1UNzo6FmkUFLWXnTsEBGdRhd+NpWyWwB1QA
+	ypfu7z5MlYueMZO6V6GjFtDlmExmnhlk+9HuKBWyG/389OBgEEDNde5RmA0RJvMm+CjUESJcC6pZu
+	pDrJi0nlgLB86FuC9q8fNxhTHM2Z5hvaQxilyHiI/qVME0ttmhldpQzpQTO8Zg3za+z4rWCsIjxGh
+	DHP4N3makMFZRTSGpsdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jasXb-0004wg-K3; Tue, 19 May 2020 03:03:39 +0000
-Received: from mail-db8eur05on2046.outbound.protection.outlook.com
- ([40.107.20.46] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jasgB-00029x-Vz; Tue, 19 May 2020 03:12:32 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jasXQ-0004wI-Ni
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 03:03:30 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=OiZ+iW66KTyrORxq+ZAGvAkWgXAXD4wRqGLVH5NWd12MEgNZzkz3keE2EbBP7Z7UoF0mdn2RixpwK+PNQu4dMJuI4xB3CQAfjBRExTgwJCk2O61jYmvlLrCCk4PAH3e2SUSMw08++/LGssk0tJceyMdHL/gYECNzxv6TVw7mjytzWW0l7hjDuGSIs7F/VJE/J5Tj4A8fesGgIV3WR5aBk2wijRHORbqhr6XF3L3AHdfwg6SyDx83KL88hHd7zzjYuyjwJMryFXKXOhb9HFPcRF04UxHi1XY6WR7e/BUfcHjsUKFmP3FwNl7yvx35ABb/kZuuOUANbbp2vOvwU16sOw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JnjKNkUplrZwqV9WxWqlbyGb3v0XZ/jB2sNZ0Lsu/s0=;
- b=J82mIg/3FHXZuZ1/yaeg+9gnEqwUfzVoLnu9SRtOx0ezvfztPF7O6XukW5paclfeDZyVcpnNYw1tlCSIWs2bobJrBVNaSs2Ao/njE2TF/tZlJiPAFAO5wVoGtTFM2xnFaFwgcqLpj71dg/HM8/HHT6uOBFhKRi+2esAJ1ymwgWc1E0TNfpYOrxN49X7bjqy1C/wlEXGB4dszs2fG3XdIdFXIH8EnTXoGQK6pMh6QTJNo1eMTAG8hmkDkm+ayPf9UTko0rYeXGFPU0OqK4pchXDP7AGlLdoOjdRY5XU3XNV2K67EV802/931r2HyEYFEDqPtzLyqPEy09iWMrvgkY3g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JnjKNkUplrZwqV9WxWqlbyGb3v0XZ/jB2sNZ0Lsu/s0=;
- b=kVHJ56VdyqB9ST5ZTlHWtGkk950mThqfmJWNIjjl8sI6CUba1L0k1qk0YB/GZQQCvtKd5JqU+5/e8vSjrFxmaiVcLx+Nf73SVVaP1GPzrkG6PEP+7uHZ3cSV1hcc54VqBgOrlgnW8QY5UpLM0sqT/vHJRio4DKtCN3kM2FBX3uc=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
- by DB3PR0402MB3820.eurprd04.prod.outlook.com (2603:10a6:8:3::24) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.31; Tue, 19 May
- 2020 03:03:26 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3000.034; Tue, 19 May 2020
- 03:03:26 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Aisheng Dong <aisheng.dong@nxp.com>, "daniel.lezcano@linaro.org"
- <daniel.lezcano@linaro.org>, "tglx@linutronix.de" <tglx@linutronix.de>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, Jacky Bai <ping.bai@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: RE: [PATCH 1/3] dt-bindings: timer: Convert i.MX GPT to json-schema
-Thread-Topic: [PATCH 1/3] dt-bindings: timer: Convert i.MX GPT to json-schema
-Thread-Index: AQHWLSSm+hmARz7RGkeECubw76HaxaiutRGAgAAEUQA=
-Date: Tue, 19 May 2020 03:03:26 +0000
-Message-ID: <DB3PR0402MB3916A243DDB5BDE55AFA0577F5B90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1589813260-20036-1-git-send-email-Anson.Huang@nxp.com>
- <1589813260-20036-2-git-send-email-Anson.Huang@nxp.com>
- <AM6PR04MB49669345E21DC28009C486E680B90@AM6PR04MB4966.eurprd04.prod.outlook.com>
-In-Reply-To: <AM6PR04MB49669345E21DC28009C486E680B90@AM6PR04MB4966.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [183.192.13.100]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 42dc37b5-3f86-4025-243e-08d7fba13343
-x-ms-traffictypediagnostic: DB3PR0402MB3820:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB3820CFAF88D66F80F5022A54F5B90@DB3PR0402MB3820.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5236;
-x-forefront-prvs: 040866B734
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: hXpSFVN3uGiAhYhXM2HGNr/8VJf92zmewNja6nlqTeYcT10FC2q4R9SGh4k96S3azhvClQL9U4YJyncXf7s6DUqhFDiGYvCBCm8WinDWtoR8TeZLa0x6LGCrElmofjecUcCscxhUWZu1DNXtkhKdGdFVZN1qckmhGNdA3Z9vhy84IdBa1/o595RV99Qjg6OytdyAa+ytSwQxzYW8165CmgW2IcCZpnoB8OC6J0R12pMS8OVprIFideJQX8HF5BRZ2NVhna031kMRUW2unINbEM1J82i/MPcaQz8kVmK01qv0GwpNi25wvve+y/91AMMGZC+OY+kB9ZoiITK+fvWYI1Ty8TuUpp9liySut2YhzJItOC0O76mDi7QBBTTnUSZbFPEZlv3YkmBjIVZGlbodATrLYK2pOIeUwYwNQueF7Al1h9tBj7ecZqH9hwJvj3ZXouqPz+l8ZHa7nENwXYDI0GpctsmmD3k/kmmu7wslPGU=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(39860400002)(396003)(366004)(346002)(136003)(376002)(6506007)(71200400001)(66946007)(26005)(66556008)(44832011)(5660300002)(76116006)(66476007)(52536014)(8676002)(64756008)(66446008)(2906002)(86362001)(186003)(7696005)(110136005)(316002)(33656002)(8936002)(4326008)(7416002)(55016002)(9686003)(478600001)(921003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: DjVMpsWW9nObyzYET0r3goVLc4cfqiRiBK5ZlJo/6Dosk5PBk+xcn1fwTtji/FViYXYJLPGeIvP6HXveXefSusXG5PjDRPOJDbhIYZazVS31TF2zVr6BIlrGm4DxTO2AsnDK7YBL3mNOlcYoJSskB0cIXFzg00ldQIBjFnQw/V0Q05/jcTmq5tqrsAnbt0WNi+wARhPim/8/fjxO9ygDeQomVihfe1XcPStVaZef8+nIns3baeGyTwGFaQCZ1sCGfdI1jvWfdKF2Lu1qOudhkPNJzAo23cn6T9ZIcyeatnLU/Kve9Rr4WTKlQVLEDSFe9Hh7jCCGmuiUVKeHLVYvEb/mR5Qhr2iojhP2e6FensILyZAAbFzXMV2y9WDKxM0NbCEGrREx1Y4XZdl7eVA96vSsIOKLtNl8gaPT216OI30HfcFDlRJVlXs974cgmuFJi/O3MbckIWZC0UBKztPrIpl/tz3tZorIZCO6861Y1N11WDTVRKxZqcBQa1UK3utE
+ id 1jasfz-00028j-Ba; Tue, 19 May 2020 03:12:22 +0000
+X-UUID: b889564de63b4083ac0bfc008d8a26d4-20200518
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=r8eGAgqgE0pJRDFIe1Bekk6atwC/VS0Nd4EW/+LDtrk=; 
+ b=F8dSsK/7FlMDsw7B1Znb8w/TMPhbawPSg+hm71SluQmc2fMPKkv+SAlo2MlXQBEos8kZxNw+jsUMjqkZyan0956GhRNEXZ3daEgYhHtA0DZ/lFRzmb3sXixMu6qXJOp5C7+YcwQlYVuaMJpakcX/DFyyvHR7BzvigU/9TwlyQF8=;
+X-UUID: b889564de63b4083ac0bfc008d8a26d4-20200518
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 792296670; Mon, 18 May 2020 19:11:37 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 18 May 2020 20:12:12 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Tue, 19 May 2020 11:12:09 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Tue, 19 May 2020 11:12:08 +0800
+Message-ID: <1589857839.8804.368.camel@mhfsdcap03>
+Subject: Re: [V6, 1/2] media: dt-bindings: media: i2c: Document DW9768 bindings
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: Rob Herring <robh@kernel.org>
+Date: Tue, 19 May 2020 11:10:39 +0800
+In-Reply-To: <20200518143148.GA18032@bogus>
+References: <20200518132731.20855-1-dongchun.zhu@mediatek.com>
+ <20200518132731.20855-2-dongchun.zhu@mediatek.com>
+ <CAAFQd5Byvc8Fb0f3_81xSKsuyvsQJm-8g8y1Kx2aUcC=PwpS7w@mail.gmail.com>
+ <20200518143148.GA18032@bogus>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 42dc37b5-3f86-4025-243e-08d7fba13343
-X-MS-Exchange-CrossTenant-originalarrivaltime: 19 May 2020 03:03:26.1790 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: +pYNsqYoD8QFLcf2ZhI0uzeLK7BKoRF3AB36CIMAhCADFDRonoKHpI/Bz8iVRrebRiaJO/JjAsQvMwfmK6ElsQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3820
+X-TM-SNTS-SMTP: 10BF97F5F2B8C09090C06F8889D22CE821A519C8A6B26C57BE0218C418F075C12000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200518_200328_772355_120E22F7 
-X-CRM114-Status: GOOD (  17.74  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200518_201220_219195_53970B24 
+X-CRM114-Status: GOOD (  24.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.20.46 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.46 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -120,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,110 +86,221 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ linux-devicetree <devicetree@vger.kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Louis Kuo <louis.kuo@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Shengnan
+ Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
+ <shengnan.wang@mediatek.com>, Tomasz Figa <tfiga@chromium.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Sj Huang <sj.huang@mediatek.com>, Nicolas Boichat <drinkcat@chromium.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing
+ Bu <bingbu.cao@intel.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS
+ <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
+ " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Tomasz, Rob,
 
+Thanks for the timely review and good suggestions.
 
-> Subject: RE: [PATCH 1/3] dt-bindings: timer: Convert i.MX GPT to json-schema
+On Mon, 2020-05-18 at 08:31 -0600, Rob Herring wrote:
+> On Mon, May 18, 2020 at 04:12:28PM +0200, Tomasz Figa wrote:
+> > Hi Dongchun,
+> > 
+> > On Mon, May 18, 2020 at 3:29 PM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
+> > >
+> > > Add DeviceTree binding documentation for Dongwoon Anatech DW9768 voice
+> > > coil actuator.
+> > 
+> > Thanks for the patch. Please see my comments below.
+> > 
+> > >
+> > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > 
+> > This version includes significant changes, so the reviewed-by tag
+> > shouldn't have been carried out.
+> > 
+
+Sorry, this is my fault.
+In fact, I've struggled with it at the beginning.
+Yes, you are right.
+Now the new version of patch-set includes huge changes relative to the
+last edition.
+It would be removed in next release.
+
+> > > ---
+> > >  .../bindings/media/i2c/dongwoon,dw9768.yaml        | 105 +++++++++++++++++++++
+> > >  MAINTAINERS                                        |   7 ++
+> > >  2 files changed, 112 insertions(+)
+> > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+> > >
+> > > diff --git a/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+> > > new file mode 100644
+> > > index 0000000..b909e83
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+> > > @@ -0,0 +1,105 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > > +# Copyright (c) 2020 MediaTek Inc.
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/media/i2c/dongwoon,dw9768.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Dongwoon Anatech DW9768 Voice Coil Motor (VCM) Lens Device Tree Bindings
+> > > +
+> > > +maintainers:
+> > > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > +
+> > > +description: |-
+> > > +  The Dongwoon DW9768 is a single 10-bit digital-to-analog (DAC) converter
+> > > +  with 100 mA output current sink capability. VCM current is controlled with
+> > > +  a linear mode driver. The DAC is controlled via a 2-wire (I2C-compatible)
+> > > +  serial interface that operates at clock rates up to 1MHz. This chip
+> > > +  integrates Advanced Actuator Control (AAC) technology and is intended for
+> > > +  driving voice coil lenses in camera modules.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    enum:
+> > > +      # for DW9768 VCM
+> > > +      - dongwoon,dw9768
+> > > +      # for GT9769 VCM
+> > > +      - giantec,gt9769
+> > > +
+> > > +  reg:
+> > > +    maxItems: 1
+> > > +
+> > > +  vin-supply:
+> > > +    description:
+> > > +      Definition of the regulator used as I2C I/O interface power supply.
+> > > +
+> > > +  vdd-supply:
+> > > +    description:
+> > > +      Definition of the regulator used as VCM chip power supply.
+> > > +
+> > > +  dongwoon,aac-mode:
+> > > +    description:
+> > > +      Indication of AAC mode select.
+> > > +    allOf:
+> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
+> > > +      - enum:
+> > > +          - 0    #  Direct (default)
 > 
-> > From: Anson Huang <Anson.Huang@nxp.com>
-> > Sent: Monday, May 18, 2020 10:48 PM
-> >
-> > Convert the i.MX GPT binding to DT schema format using json-schema.
-> >
-> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > ---
-> >  .../devicetree/bindings/timer/fsl,imxgpt.txt       |  45 ---------
-> >  .../devicetree/bindings/timer/fsl,imxgpt.yaml      | 109
-> > +++++++++++++++++++++
-> >  2 files changed, 109 insertions(+), 45 deletions(-)  delete mode
-> > 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
-> >  create mode 100644
-> > Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
-> > b/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
-> > deleted file mode 100644
-> > index 5d8fd5b..0000000
-> > --- a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
-> > +++ /dev/null
-> > @@ -1,45 +0,0 @@
-> > -Freescale i.MX General Purpose Timer (GPT)
-> > -
-> > -Required properties:
-> > -
-> > -- compatible : should be one of following:
-> > -  for i.MX1:
-> > -  - "fsl,imx1-gpt";
-> > -  for i.MX21:
-> > -  - "fsl,imx21-gpt";
-> > -  for i.MX27:
-> > -  - "fsl,imx27-gpt", "fsl,imx21-gpt";
-> > -  for i.MX31:
-> > -  - "fsl,imx31-gpt";
-> > -  for i.MX25:
-> > -  - "fsl,imx25-gpt", "fsl,imx31-gpt";
-> > -  for i.MX50:
-> > -  - "fsl,imx50-gpt", "fsl,imx31-gpt";
-> > -  for i.MX51:
-> > -  - "fsl,imx51-gpt", "fsl,imx31-gpt";
-> > -  for i.MX53:
-> > -  - "fsl,imx53-gpt", "fsl,imx31-gpt";
-> > -  for i.MX6Q:
-> > -  - "fsl,imx6q-gpt", "fsl,imx31-gpt";
-> > -  for i.MX6DL:
-> > -  - "fsl,imx6dl-gpt";
-> > -  for i.MX6SL:
-> > -  - "fsl,imx6sl-gpt", "fsl,imx6dl-gpt";
-> > -  for i.MX6SX:
-> > -  - "fsl,imx6sx-gpt", "fsl,imx6dl-gpt";
-> > -- reg : specifies base physical address and size of the registers.
-> > -- interrupts : should be the gpt interrupt.
-> > -- clocks : the clocks provided by the SoC to drive the timer, must contain
-> > -           an entry for each entry in clock-names.
-> > -- clock-names : must include "ipg" entry first, then "per" entry.
-> > -
-> > -Example:
-> > -
-> > -gpt1: timer@10003000 {
-> > -	compatible = "fsl,imx27-gpt", "fsl,imx21-gpt";
-> > -	reg = <0x10003000 0x1000>;
-> > -	interrupts = <26>;
-> > -	clocks = <&clks IMX27_CLK_GPT1_IPG_GATE>,
-> > -		 <&clks IMX27_CLK_PER1_GATE>;
-> > -	clock-names = "ipg", "per";
-> > -};
-> > diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
-> > b/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
-> > new file mode 100644
-> > index 0000000..5c7186b
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
-> > @@ -0,0 +1,109 @@
-> > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML 1.2
-> > +---
-> > +
-> > +title: Freescale i.MX General Purpose Timer (GPT)
-> > +
-> > +maintainers:
-> > +  - Sascha Hauer <s.hauer@pengutronix.de>
-> > +
-> > +properties:
-> > +  compatible:
-> > +    oneOf:
-> > +      - description: on i.MX1 the following compatible must be
-> > +specified
+> Default can be expressed as 'default: 0'.
 > 
-> Such a description seems not necessary in order to make the doc more clean
 
-You meant the description is NOT necessary for those simple compatible string platforms or for
-all platforms, I feel like having the description is more clear for users.
+Thanks for the reminder.
+Next release I'd try to write DT property "dongwoon,aac-mode" like this:
+dongwoon,aac-mode:
+  description:
+    Indication of AAC mode select.
+  allOf:
+    - $ref: "/schemas/types.yaml#/definitions/uint32"
+    - enum:
+        - 0  # Direct
+        - 1  # AAC2 (operation time# 0.48 x Tvib)
+        - 2  # AAC3 (operation time# 0.70 x Tvib)
+        - 3  # AAC4 (operation time# 0.75 x Tvib)
+        - 5  # AAC8 (operation time# 1.13 x Tvib)
+      default: 0
 
-Anson
+> > > +          - 1    #  AAC2 (operation time# 0.48 x Tvib)
+> > > +          - 2    #  AAC3 (operation time# 0.70 x Tvib)
+> > > +          - 3    #  AAC4 (operation time# 0.75 x Tvib)
+> > > +          - 4    #  Reserved
+> > > +          - 5    #  AAC8 (operation time# 1.13 x Tvib)
+> > > +          - 6    #  Reserved
+> > > +          - 7    #  Reserved
+> > 
+> > I'll ultimately leave it to DT maintainers, but is there any reason to
+> > define the reserved values?
+> 
+> No.
+> 
+> > 
+> > > +
+> > > +  dongwoon,aac-timing:
+> > > +    description:
+> > > +      Indication of AAC Timing count, unit of 0.1 milliseconds.
+> 
+> Why not just use standard units (-us)?
+> 
+
+That sounds nice.
+I'd re-write the description like this in next release:
+dongwoon,aac-timing:
+  description:
+    Number of AAC Timing count that controlled by one 6-bit period
+    of vibration register AACT[5:0], the unit of which is 100us.
+  allOf:
+    - $ref: "/schemas/types.yaml#/definitions/uint32"
+    - minimum: 0x00
+    - maximum: 0x3F
+    - default: 0x20
+
+> > > +      Valid values vary from 0 to 63 (default 32).
+> 
+> Looks like constraints.
+> 
+
+Yes. This property is controlled by one 6-bit reg.
+So here we need to constrain the data set to a narrow range.
+
+> > > +    allOf:
+> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
+> > > +
+> > > +  dongwoon,clock-dividing-rate:
+> > > +    description:
+> > > +      Indication of VCM internal clock dividing rate select, as one multiple
+> > > +      factor to calculate VCM ring periodic time Tvib.
+> > > +    allOf:
+> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
+> > > +      - enum:
+> > > +          - 0    #  Dividing Rate -  2
+> > > +          - 1    #  Dividing Rate -  1 (default)
+> > > +          - 2    #  Dividing Rate -  1/2
+> > > +          - 3    #  Dividing Rate -  1/4
+> > > +          - 4    #  Dividing Rate -  8
+> > > +          - 5    #  Dividing Rate -  4
+> > > +          - 6    #  Dividing Rate -  Reserved
+> > > +          - 7    #  Dividing Rate -  Reserved
+> > 
+> > Ditto.
+> > 
+
+Thanks for kindly reminder.
+Reserved values would be removed in next release.
+Like this:
+dongwoon,clock-dividing-rate:
+  description:
+    Indication of VCM internal clock dividing rate select, as one    
+    multiplier to calculate VCM ring periodic time Tvib.
+  allOf:
+    - $ref: "/schemas/types.yaml#/definitions/uint32"
+    - enum:
+        - 0   #  Dividing Rate -  2
+        - 1   #  Dividing Rate -  1
+        - 2    #  Dividing Rate -  1/2
+        - 3    #  Dividing Rate -  1/4
+        - 4    #  Dividing Rate -  8
+        - 5    #  Dividing Rate -  4
+      default: 1
+
+> > Best regards,
+> > Tomasz
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
