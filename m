@@ -2,32 +2,31 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C350A1D9236
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 10:38:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 899CA1D9239
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 10:38:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ANc1u8SuRFmXYumnxmV9Xb+fD5PSmUggakAw02p4Yl0=; b=p0BoLud5pk229Y
-	41LFkDRSBBTC96uiRwnBXYhxWKNX03S3MnmBceBjFW8QMOXgRfX15shuPNBsxlWbewhxjTJ/5vkzt
-	zdrq1EpLHqGyHOgWWv+w96EEqZDxNsEa4KAiqDH/cWrY8dF0ZsnQ1svI0UDf/qjBOQYjU1D5sir7s
-	l8hd+OyLK29nEoVgrM4oppGmCcMwYLuaTSaS4Vu9UtGdRJAjTxTfaWzyQUPuDS3lu+Vvxal2oHkc3
-	Dzf8ANW+KNDf7m9DJGTSEbOOCvSlz3GeQL3pkhQ2wiHDYG/uxXoc9J0u1bYFAf0fSObV0sE7XDkIo
-	peiMX6XDWU+nfAnTmLPQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VEN2WUFLFS+620Idwo5wEKYZBYb5llke8nDuDGIFZ0E=; b=FxhQNIgd1Hf+2B
+	9SgwM02AYOpoAdT3f9YWi/5Bl3ZNLRa5XFyHUz1wLW/6UpWvLZUjXU/0g92kwgoVJlCyDxeQo05Hb
+	BsXBdRoNxTkiYD0tcSco134PSAzGnlER+r2N25SHCeKZb4k5j7CGbwDRK5I+k4xRwwMNIDSCWotPU
+	tpP81yxvQ3N2Jm9RjZ8vSUYJ80nrMb85yqhn6TNh5165M6VVDDq5OfUsvTGh49rK+X0uh7zDePrGy
+	dDeyd7Y9mehr+xBOjplN8ghb/vw0KFPnYyllLMTot1lCS1IZ1adFz176dwnkRvgcqUvXJua8gWAzv
+	drT3mdJSDf6d/WNLoniA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jaxlS-0000PY-9E; Tue, 19 May 2020 08:38:18 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1jaxlp-0000ue-5h; Tue, 19 May 2020 08:38:41 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jaxkl-0008D2-O5
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 08:37:37 +0000
-X-Originating-IP: 78.193.40.249
+ id 1jaxkl-0008DM-Pb
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 08:37:38 +0000
 Received: from localhost (unknown [78.193.40.249])
  (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 43E33240002;
- Tue, 19 May 2020 08:37:21 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 847D620000D;
+ Tue, 19 May 2020 08:37:22 +0000 (UTC)
 From: Kamel Bouhara <kamel.bouhara@bootlin.com>
 To: William Breathitt Gray <vilhelm.gray@gmail.com>,
  Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -35,26 +34,26 @@ To: William Breathitt Gray <vilhelm.gray@gmail.com>,
  Alexandre Belloni <alexandre.belloni@bootlin.com>,
  Ludovic Desroches <ludovic.desroches@microchip.com>,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 0/5] Microchip TCB Capture driver
-Date: Tue, 19 May 2020 10:37:11 +0200
-Message-Id: <20200519083716.938384-1-kamel.bouhara@bootlin.com>
+Subject: [PATCH v5 1/5] ARM: at91: add atmel tcb capabilities
+Date: Tue, 19 May 2020 10:37:12 +0200
+Message-Id: <20200519083716.938384-2-kamel.bouhara@bootlin.com>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200519083716.938384-1-kamel.bouhara@bootlin.com>
+References: <20200519083716.938384-1-kamel.bouhara@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_013735_942884_CB927A73 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20200519_013736_036063_789AECAA 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ low trust [217.70.178.232 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,72 +73,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Some atmel socs have extra tcb capabilities that allow using a generic
+clock source or enabling a quadrature decoder.
 
-Here is a new counter driver to support Microchip TCB capture devices.
+Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
+---
+ include/soc/at91/atmel_tcb.h | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-Each SoC has two TCB blocks, each one including three independent
-channels.The following series adds support for two counter modes:
-increase and quadrature decoder.
-
-As for the atmel clocksource and pwm, the counter driver needs to fill
-some tcb capabilities in order to operate with the right configuration.
-This is achieved in first patch of this series.
-
-Please feel free to comment.
-
-Cheers,
-
-Changes in v5:
- - Fix duplicate keys errors in yaml dt-schema
-
-Changes in v4:
- - Use existing binding to document capture mode of the Microchip TCBs.
-
-Changes in v3:
- - Updated the brand name: s/atmel/microchip/.
- - Added missing kernel doc for new elements introduced in structure
-   atmel_tcb_config.
- - Removed useless blank line
- - Added an explicit clock removing path using devm_add_action_or_reset
-
-Changes in v2:
- - Fixed first patch not applying on mainline
- - Updated return code to -EINVAL when user is requesting qdec mode on
-   a counter device not supporting it.
- - Added an error case returning -EINVAL when action edge is performed
-   in
-   qdec mode.
- - Removed no need to explicity setting ops to NULL from static struct
-   as
-   it is the default value.
- - Changed confusing code by using snprintf for the sake of clarity.
- - Changed code to use ARRAY_SIZE so that future reviewers will know
-   that num_counts matches what's in the atmel_tc_count array without
-   having to check so themselves.
- - Fixed errors reported by dt_binding_check
-
-Alexandre Belloni (2):
-  dt-bindings: atmel-tcb: convert bindings to json-schema
-  dt-bindings: microchip: atmel,at91rm9200-tcb: add sama5d2 compatible
-
-Kamel Bouhara (3):
-  ARM: at91: add atmel tcb capabilities
-  dt-bindings: counter: microchip-tcb-capture counter
-  counter: Add microchip TCB capture counter
-
- .../devicetree/bindings/mfd/atmel-tcb.txt     |  56 ---
- .../soc/microchip/atmel,at91rm9200-tcb.yaml   | 176 ++++++++
- drivers/counter/Kconfig                       |  11 +
- drivers/counter/Makefile                      |   1 +
- drivers/counter/microchip-tcb-capture.c       | 397 ++++++++++++++++++
- include/soc/at91/atmel_tcb.h                  |   5 +
- 6 files changed, 590 insertions(+), 56 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/mfd/atmel-tcb.txt
- create mode 100644 Documentation/devicetree/bindings/soc/microchip/atmel,at91rm9200-tcb.yaml
- create mode 100644 drivers/counter/microchip-tcb-capture.c
-
---
+diff --git a/include/soc/at91/atmel_tcb.h b/include/soc/at91/atmel_tcb.h
+index c3c7200ce151..1d7071dc0bca 100644
+--- a/include/soc/at91/atmel_tcb.h
++++ b/include/soc/at91/atmel_tcb.h
+@@ -36,9 +36,14 @@ struct clk;
+ /**
+  * struct atmel_tcb_config - SoC data for a Timer/Counter Block
+  * @counter_width: size in bits of a timer counter register
++ * @has_gclk: boolean indicating if a timer counter has a generic clock
++ * @has_qdec: boolean indicating if a timer counter has a quadrature
++ * decoder.
+  */
+ struct atmel_tcb_config {
+ 	size_t	counter_width;
++	bool    has_gclk;
++	bool    has_qdec;
+ };
+ 
+ /**
+-- 
 2.25.0
 
 
