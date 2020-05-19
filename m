@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 234301D9C90
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:27:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E1051D9C93
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 18:28:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=i7+Q+Yo/mX0leOFJ0rYy8vFz5pxhcV+dPzye42LFKAA=; b=D0Yuj+pky3NYSPidLbmBhQc9iq
-	v7onXXB4hBxDm0/nzxshQ8gfhlRV9Qh4KJfWrQQr45bkMIg/vPnQqbOWf5NsWWsZrK8bVoVALXanQ
-	Ix8KBia2eVCGTE7uCwfvCkR5KJnsH1YvuDWc4iFDKS9XEAxkv8SMBPpv/qdk7kCBzdoJ4AumCLaMK
-	WEgjR3nHct8TCQ5L6isNA4jT5ufDaKDAMk7xx+KPWiI+CmYjdQqCrsvJ+znJ5kyozVdwjsOuxCSRL
-	jEYi0X+FoR4sTvdumVIHzh6GyI/td+smXkEinr6ToWKmAJ8EePKyTG/n38FyK9UAcvTqTqmZE5R2t
-	4S5Z9nAQ==;
+	bh=0PsT2BbPMJpHw0aaMFLXTlabGj9VIEwcAaDVp60JKF4=; b=GIgqgpcn6nv83KgK2BiFY1dsu0
+	DmliM6BIoAJ5g7ZUlH33Fg2oSVUkBxcft44Y/ISqBCWbUGLjvPpbM7WBj3DZhEjBPSx4z4mkmr3J+
+	H5jIZdG5N+5k1qoenbbNI2vOYRd1aKtFTm5zoqO/79bf9EHdSAcxx45uLvIkd4JF8CiDZ/8RhhoIp
+	uipeSX17QXYPD1Y3bL+1YiObGpLRbQSiMKP9NzU9UaRSf0t6wkROYUff7HIwXvadoGeyfM3rdg9Uq
+	dAa1WXkp5aRGCsMy00Dr3+wVLNgIFPIzvGR1WnFMZm3GHsEcpSc8g375jvco/f0wHqP/b3QX6tcLU
+	sNnbsoDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jb55X-0004F0-8q; Tue, 19 May 2020 16:27:31 +0000
+	id 1jb55n-0004ST-D6; Tue, 19 May 2020 16:27:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jb554-000420-G8
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:27:04 +0000
+ id 1jb557-000440-4T
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 16:27:06 +0000
 Received: from e123331-lin.nice.arm.com
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CD43020823;
- Tue, 19 May 2020 16:26:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9D06A20826;
+ Tue, 19 May 2020 16:27:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589905622;
- bh=s1wJAwkrmgG1XjwsUm3v1xaTI0ARm6WW9gEhCur/Ryw=;
+ s=default; t=1589905624;
+ bh=Rnr1nZVVeFJ8Ie+KrJMA9hzs3cpYXGVP9cLvCfNZ5RE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Mhf8scZPUYtvuTAvYm0QeYPePZdh7+Qux7I5nVnoKRYC68hXA3BXA0qAJ9dsc1p9r
- 9FWz0qdGsTrIN4XttXlX8Ln5odkrizRT2Qrw3dLYhZy5x3dSB1TjRGi2F3wMH4HbX+
- eYqJSh29BI3rsCG/YQiRg9kmaUumjQ3a7f2MiwTU=
+ b=BaIcUPJO0UwNNr+BifsMlE6U9axBV/4+5mSQRLZxitMW5BasAfLi6BMOcFvXiyeZE
+ lU5+XmKS1kf/lUqb98vJFj17XHoTZi+oxWeqeu6Pwy5vgCQefBJxsIJxCaMCYqdHjx
+ RcwN7Atuv317jS60pgcG16sHDFKsmKEN3Aw/uejU=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 1/5] ARM: decompressor: move headroom variable out of LC0
-Date: Tue, 19 May 2020 18:26:41 +0200
-Message-Id: <20200519162645.31065-2-ardb@kernel.org>
+Subject: [PATCH v4 2/5] ARM: decompressor: split off _edata and stack base
+ into separate object
+Date: Tue, 19 May 2020 18:26:42 +0200
+Message-Id: <20200519162645.31065-3-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200519162645.31065-1-ardb@kernel.org>
 References: <20200519162645.31065-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_092702_555460_6774208D 
-X-CRM114-Status: GOOD (  11.41  )
+X-CRM114-CacheID: sfid-20200519_092705_228234_F25CB644 
+X-CRM114-Status: GOOD (  11.47  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,43 +87,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Before breaking up LC0 into different pieces, move out the variable
-that is already place-relative (given that it subtracts 'restart' in
-the expression) and so its value does not need to be added to the
-runtime address of the LC0 symbol itself.
+In preparation of moving the handling of the LC0 object to a later stage
+in the decompressor startup code, move out _edata and the initial value
+of the stack pointer, which are needed earlier than the remaining
+contents of LC0.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
 ---
- arch/arm/boot/compressed/head.S | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ arch/arm/boot/compressed/head.S | 23 ++++++++++----------
+ 1 file changed, 12 insertions(+), 11 deletions(-)
 
 diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index cabdd8f4a248..42b8d67beab6 100644
+index 42b8d67beab6..5d712e2c0001 100644
 --- a/arch/arm/boot/compressed/head.S
 +++ b/arch/arm/boot/compressed/head.S
-@@ -287,7 +287,7 @@ not_angel:
- 		 */
- 		mov	r0, pc
- 		cmp	r0, r4
--		ldrcc	r0, LC0+28
-+		ldrcc	r0, .Lheadroom
- 		addcc	r0, r0, pc
- 		cmpcc	r4, r0
+@@ -293,22 +293,20 @@ not_angel:
  		orrcc	r4, r4, #1		@ remember we skipped cache_on
-@@ -664,9 +664,11 @@ LC0:		.word	LC0			@ r1
+ 		blcs	cache_on
+ 
+-restart:	adr	r0, LC0
+-		ldmia	r0, {r1, r2, r3, r6, r11, r12}
+-		ldr	sp, [r0, #24]
++restart:	adr	r0, LC1
++		ldr	sp, [r0]
++		ldr	r6, [r0, #4]
++		add	sp, sp, r0
++		add	r6, r6, r0
+ 
+-		/*
+-		 * We might be running at a different address.  We need
+-		 * to fix up various pointers.
+-		 */
++		adr	r0, LC0
++		ldmia	r0, {r1, r2, r3, r11, r12}
+ 		sub	r0, r0, r1		@ calculate the delta offset
+-		add	r6, r6, r0		@ _edata
+ 
+ 		get_inflated_image_size	r9, r10, lr
+ 
+ #ifndef CONFIG_ZBOOT_ROM
+ 		/* malloc space is above the relocated stack (64k max) */
+-		add	sp, sp, r0
+ 		add	r10, sp, #0x10000
+ #else
+ 		/*
+@@ -660,12 +658,15 @@ not_relocated:	mov	r0, #0
+ LC0:		.word	LC0			@ r1
+ 		.word	__bss_start		@ r2
+ 		.word	_end			@ r3
+-		.word	_edata			@ r6
  		.word	_got_start		@ r11
  		.word	_got_end		@ ip
- 		.word	.L_user_stack_end	@ sp
--		.word	_end - restart + 16384 + 1024*1024
+-		.word	.L_user_stack_end	@ sp
  		.size	LC0, . - LC0
  
-+.Lheadroom:
-+		.word	_end - restart + 16384 + 1024*1024
++		.type	LC1, #object
++LC1:		.word	.L_user_stack_end - LC1	@ sp
++		.word	_edata - LC1		@ r6
++		.size	LC1, . - LC1
 +
- .Linflated_image_size_offset:
- 		.long	(input_data_end - 4) - .
+ .Lheadroom:
+ 		.word	_end - restart + 16384 + 1024*1024
  
 -- 
 2.17.1
