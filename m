@@ -2,103 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33F6F1D9337
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 11:21:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 831391D934C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 19 May 2020 11:26:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E9DqypsWjAJkR+jGT8k7P9cz3SOs7Tzw8vpoTbAlSUc=; b=CxJ/owkuHoQr8W
-	blKPMgML7mH2FQ2ulb99eP5PNJ0aAGR6ryOUqlVoqvfqFiP6PBENaHQg5FqpPRojyVN/pM6sa74wj
-	YDFch15ihPD+p7QGwOZGFDLmsmLz2h3rOm6tV2exn1KQLsD7wEi4Nd4R0bMCtKu01UQT0ZY6lhUqT
-	TbF6ixHgzslV57Ok1azccSeFKIFi8crz0b0zmWP/N2tPyw+CIzAo1RxlgytwaB3OpxiOC7dhhW1HB
-	4Prp1RfBEoE2kb3wp/rfIP0WyNG1iiKtSRnIhakJzq0svZGDjQlAcqCYlCHEMQUqVMhlxd3Z7Q3+C
-	ogYaLoY8sQNTC+T0xglA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wNHXXv4uz7tQX4OJJNfDsbDhAEnLURlLefj5IQctEJg=; b=ABXGVCwMDMLwkNSW6iPwC3vNs
+	x9+B3/gY9qK6axjRTe1tYcvpOaVj1pT3COk1ZkC8mbI/FdUPYcOaAj3RwOmUd1POeBbpKpKizJ8/W
+	Bsos6iJ/jFNlJtPXfOzmJfVqCryRgvpMnXt3oDnu7Jca67EgDNj/9W4U4SCGlrsZ5dF2peMkWp2Qi
+	Migd2+R0PIGjGhJ2Xj24tDgH15quaRCht+ZDmLZuA+IJTTtwDsQdSFFAn/QjIw9C6Z+Zqg4DmOIYY
+	U/Vzjqh9ryUiOO+xS1yp/rrRJCMdc8kEisF2AL6JQsP28lieCHkzKedaUSpysKAC7KXc1Ae8bZDz0
+	Z8835g3cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jayQt-0007SM-8S; Tue, 19 May 2020 09:21:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jayQk-0007Rl-4q
- for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 09:20:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B283E1045;
- Tue, 19 May 2020 02:20:54 -0700 (PDT)
-Received: from [192.168.2.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 747563F305;
- Tue, 19 May 2020 02:20:51 -0700 (PDT)
-Subject: Re: [PATCH v3 01/20] dt-bindings: arm: gic: Allow combining
- arm,gic-400 compatible strings
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-References: <20200513103016.130417-1-andre.przywara@arm.com>
- <20200513103016.130417-2-andre.przywara@arm.com>
- <CAMuHMdXkHF3ioOVzDZQARiO2i1z8rVjdN_Q0VggaVD4Ln7J+Dw@mail.gmail.com>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
- 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
- i4aIXCH3Wv6K
-Organization: ARM Ltd.
-Message-ID: <6e2cc3e9-b14f-2b50-0390-addcc82389e0@arm.com>
-Date: Tue, 19 May 2020 10:19:56 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jayWQ-0002iB-7a; Tue, 19 May 2020 09:26:50 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jayWC-0002h2-22
+ for linux-arm-kernel@lists.infradead.org; Tue, 19 May 2020 09:26:38 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589880396; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=aJ2iFgde8rnDCoyGqYJM6cG8pZxDm5e8UHUvHqksFTA=;
+ b=qWrVIxDz7rW/Dmm7S1wO8Z/VdCMSN+jsodwgzkH9sSjnmcjSYxzajNgjsjphbgWOccj9rcwj
+ srsY+IW/a4XP8YbaqXlxfD31XxmjkRvZXcrIf9yw0uD4EUgJme/xr91L+J3iWSW1fjiCaW2H
+ 8QdMjlaRFd34X3RfcGNsYjIRqyI=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ec3a64a.7ff4b60cdc00-smtp-out-n04;
+ Tue, 19 May 2020 09:26:34 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 87E85C43636; Tue, 19 May 2020 09:26:34 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 9F34BC433F2;
+ Tue, 19 May 2020 09:26:33 +0000 (UTC)
 MIME-Version: 1.0
-In-Reply-To: <CAMuHMdXkHF3ioOVzDZQARiO2i1z8rVjdN_Q0VggaVD4Ln7J+Dw@mail.gmail.com>
-Content-Language: en-US
+Date: Tue, 19 May 2020 14:56:33 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] iomm/arm-smmu: Add stall implementation hook
+In-Reply-To: <20200518154522.GN32394@willie-the-truck>
+References: <20200421202004.11686-1-saiprakash.ranjan@codeaurora.org>
+ <b491e02ad790a437115fdeab6b21bc48@codeaurora.org>
+ <1ced023b-157c-21a0-ac75-1adef7f029f0@arm.com>
+ <20200507125357.GA31783@willie-the-truck>
+ <CAF6AEGuLU+_qP8HNO1s9PTPHqJnCMHzehmcT8NiJhiAwrfSH6w@mail.gmail.com>
+ <CAF6AEGvuHKObTR97XdSXjmjKB+qjQ8N1_wxM=ZU8bEkF=cXp-A@mail.gmail.com>
+ <20200511173008.GA24282@jcrouse1-lnx.qualcomm.com>
+ <20200518154522.GN32394@willie-the-truck>
+Message-ID: <5a0ad639e272026c8be57393937cda22@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_022058_276450_33E653D7 
-X-CRM114-Status: GOOD (  18.33  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200519_022636_977689_6090E097 
+X-CRM114-Status: GOOD (  34.65  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [104.130.122.26 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,70 +96,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Marc Zyngier <maz@kernel.org>,
- Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, "list@263.net:IOMMU DRIVERS , Joerg Roedel
+ <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Clark <robdclark@gmail.com>, Robin Murphy <robin.murphy@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19/05/2020 08:39, Geert Uytterhoeven wrote:
+Hi Will,
 
-Hi Geert,
-
-
-> On Wed, May 13, 2020 at 12:31 PM Andre Przywara <andre.przywara@arm.com> wrote:
->> The arm,gic-400 compatible is probably the best matching string for the
->> GIC in most modern SoCs, but was only introduced later into the kernel.
->> For historic reasons and to keep compatibility, some SoC DTs were thus
->> using a combination of this name and one of the older strings, which
->> currently the binding denies.
->>
->> Add a stanza to the DT binding to allow "arm,gic-400", followed by
->> either "arm,cortex-a15-gic" or "arm,cortex-a7-gic". This fixes binding
->> compliance for quite some SoC .dtsi files in the kernel tree.
->>
->> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+On 2020-05-18 21:15, Will Deacon wrote:
+> On Mon, May 11, 2020 at 11:30:08AM -0600, Jordan Crouse wrote:
+>> On Fri, May 08, 2020 at 08:40:40AM -0700, Rob Clark wrote:
+>> > On Fri, May 8, 2020 at 8:32 AM Rob Clark <robdclark@gmail.com> wrote:
+>> > >
+>> > > On Thu, May 7, 2020 at 5:54 AM Will Deacon <will@kernel.org> wrote:
+>> > > >
+>> > > > On Thu, May 07, 2020 at 11:55:54AM +0100, Robin Murphy wrote:
+>> > > > > On 2020-05-07 11:14 am, Sai Prakash Ranjan wrote:
+>> > > > > > On 2020-04-22 01:50, Sai Prakash Ranjan wrote:
+>> > > > > > > Add stall implementation hook to enable stalling
+>> > > > > > > faults on QCOM platforms which supports it without
+>> > > > > > > causing any kind of hardware mishaps. Without this
+>> > > > > > > on QCOM platforms, GPU faults can cause unrelated
+>> > > > > > > GPU memory accesses to return zeroes. This has the
+>> > > > > > > unfortunate result of command-stream reads from CP
+>> > > > > > > getting invalid data, causing a cascade of fail.
+>> > > > >
+>> > > > > I think this came up before, but something about this rationale doesn't add
+>> > > > > up - we're not *using* stalls at all, we're still terminating faulting
+>> > > > > transactions unconditionally; we're just using CFCFG to terminate them with
+>> > > > > a slight delay, rather than immediately. It's really not clear how or why
+>> > > > > that makes a difference. Is it a GPU bug? Or an SMMU bug? Is this reliable
+>> > > > > (or even a documented workaround for something), or might things start
+>> > > > > blowing up again if any other behaviour subtly changes? I'm not dead set
+>> > > > > against adding this, but I'd *really* like to have a lot more confidence in
+>> > > > > it.
+>> > > >
+>> > > > Rob mentioned something about the "bus returning zeroes" before, but I agree
+>> > > > that we need more information so that we can reason about this and maintain
+>> > > > the code as the driver continues to change. That needs to be a comment in
+>> > > > the driver, and I don't think "but android seems to work" is a good enough
+>> > > > justification. There was some interaction with HUPCF as well.
+>> > >
+>> > > The issue is that there are multiple parallel memory accesses
+>> > > happening at the same time, for example CP (the cmdstream processor)
+>> > > will be reading ahead and setting things up for the next draw or
+>> > > compute grid, in parallel with some memory accesses from the shader
+>> > > which could trigger a fault.  (And with faults triggered by something
+>> > > in the shader, there are *many* shader threads running in parallel so
+>> > > those tend to generate a big number of faults at the same time.)
+>> > >
+>> > > We need either CFCFG or HUPCF, otherwise what I have observed is that
+>> > > while the fault happens, CP's memory access will start returning
+>> > > zero's instead of valid cmdstream data, which triggers a GPU hang.  I
+>> > > can't say whether this is something unique to qcom's implementation of
+>> > > the smmu spec or not.
+>> > >
+>> > > *Often* a fault is the result of the usermode gl/vk/cl driver bug,
+>> > > although I don't think that is an argument against fixing this in the
+>> > > smmu driver.. I've been carrying around a local patch to set HUPCF for
+>> > > *years* because debugging usermode driver issues is so much harder
+>> > > without.  But there are some APIs where faults can be caused by the
+>> > > user's app on top of the usermode driver.
+>> > >
+>> >
+>> > Also, I'll add to that, a big wish of mine is to have stall with the
+>> > ability to resume later from a wq context.  That would enable me to
+>> > hook in the gpu crash dump handling for faults, which would make
+>> > debugging these sorts of issues much easier.  I think I posted a
+>> > prototype of this quite some time back, which would schedule a worker
+>> > on the first fault (since there are cases where you see 1000's of
+>> > faults at once), which grabbed some information about the currently
+>> > executing submit and some gpu registers to indicate *where* in the
+>> > submit (a single submit could have 100's or 1000's of draws), and then
+>> > resumed the iommu cb.
+>> >
+>> > (This would ofc eventually be useful for svm type things.. I expect
+>> > we'll eventually care about that too.)
+>> 
+>> Rob is right about HUPCF. Due to the parallel nature of the command 
+>> processor
+>> there is always a very good chance that a CP access is somewhere in 
+>> the bus so
+>> any pagefault is usually a death sentence. The GPU context bank would 
+>> always
+>> want HUPCF set to 1.
 > 
-> Thanks for your patch, I was just looking into this issue ;-)
+> So this sounds like an erratum to me, and I'm happy to set HUPCF if we
+> detect the broken implementation. However, it will need an entry in
+> Documentation/arm64/silicon-errata.rst and a decent comment in the 
+> driver
+> to explain what we're doing and why.
 > 
->> --- a/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
->> +++ b/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
->> @@ -39,6 +39,12 @@ properties:
->>                - qcom,msm-8660-qgic
->>                - qcom,msm-qgic2
->>
->> +      - items:
->> +          - const: arm,gic-400
->> +          - enum:
->> +             - arm,cortex-a15-gic
->> +             - arm,cortex-a7-gic
->> +
->>        - items:
->>            - const: arm,arm1176jzf-devchip-gic
->>            - const: arm,arm11mp-gic
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/arm/boot/dts/r9a06g032.dtsi#n177
-> has them in the other order.
-> 
-> What do you think is the preferred solution: reverting the order, or dropping
-> one or the other?
 
-Reverting the order would be the right thing. Theoretically this might
-change what the drivers match against, but there should be no difference
-between those strings anyway. And certainly Linux does not care which of
-the many strings it sees.
+AFAIK there is no erratum documented internally for this behaviour and 
+this
+exists from MSM8996 SoC time and errata usually don't survive this long
+across generation of SoCs and there is no point for us in disguising it.
 
-The proper order is not really obvious here, but the cortex-a{15,7}-gic
-names serve as the missing "arm,gic-v2" generic fallback string here, I
-think just for historical reasons.
+Is it OK if we clearly mention it as the "design limitation" or some 
+other
+term which we can agree upon along with the description which Rob and 
+Jordan
+provided for setting HUPCF in the driver when we add the set_hupcf 
+callback?
 
-Cheers,
-Andre.
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
