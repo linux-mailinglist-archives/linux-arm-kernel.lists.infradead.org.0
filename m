@@ -2,38 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 149F91DAFE3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:16:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 357111DAFFA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:21:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K3CSceyCqLL7JFagURPqTDdOOE2VzS1RbxTe8Dcroes=; b=IS5tO24wVtnIBP
-	ydNpoqqJh9En1fm05sfN4JS5NILE+dwxydYJhoWTwfMjboZ8HkkzvXYlDo+hnmruDXY51+Sirflxd
-	idcHEsYqwY8t52s3hU4LFHFnFUdsxQECjkp2wsvtvSSspAHPNK4QwNy0K3M21N9QmjreCVjkHtLYI
-	rcZ3uQJQhe/JOFhIAjYcbIk5CRWLjIVmwEZhPWiWSYtkXgnlhOJAPX7UCyAbm9GE3Tyu4yWji3j2E
-	CaLUnyLYCgVW1kL5R92At39Or+mlxZfXuNzyQGmkFcCOjyblXTWjYkuEGnGQAUTglFne5hAt3uiQ+
-	GdVTBeMFZEf3jUSXUK9A==;
+	List-Owner; bh=K3CSceyCqLL7JFagURPqTDdOOE2VzS1RbxTe8Dcroes=; b=OI349sA+wD5/kJ
+	sg4aLHPY1IyDfnFAwFbbYVKk7ns/rPVP68skg7KN+YsR3yOJnmWQ+Cfczo8Q/mm/JTd/elex5WLfb
+	jIFCH/wwmrDIZTn4w4tiEZTr1n2PDywFCG5uOb7fGCZOmXnooOVU3MgdOSJRxrCPzVFk0uAjOfhb1
+	PMpIzDt61/+JnMgSWInsdcfLnXNvaHE+gt91f2XMUS5N1PJH4b8dyy5lQsG5RUROLs3ggalPZ0cGy
+	VwAxuaqL7xDAG/RCK7Kt2C1zy1mbPI69k9rIZ0aLT7pmldIHcZhEmcf0zOy7PptmnydyseWfE2KUX
+	zCVj0dxd0NJZoaEK0mWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbLla-0000mb-9Z; Wed, 20 May 2020 10:16:02 +0000
+	id 1jbLqm-0004af-Mz; Wed, 20 May 2020 10:21:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbLks-0000NY-Ap; Wed, 20 May 2020 10:15:21 +0000
+ id 1jbLqa-0004a6-Oj; Wed, 20 May 2020 10:21:13 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E04CD207D3;
- Wed, 20 May 2020 10:15:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 568C0207C4;
+ Wed, 20 May 2020 10:21:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589969718;
+ s=default; t=1589970072;
  bh=S7tsdwkiGlZosauRkq6IW1mxdJPbcPef9De8p/Neb20=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=0pCyb1zyk19jmdxxCos7K6R4uS9ZhotAg1FK+1rPLCS327W7CHj4A15YEKyGnwD+F
- Q9mldUZkjoWWMK+BaW0Kmxzgsvl0goWt+sU+iJvaCtfAQAYDith20wuTcSEqFsesNK
- bs1AKPoD5s/CrTs5grp91Qs5pdVw0zxr6gofPOyk=
+ b=2KKDky4YfNsdoMUsOT6q866Gu85DZEO5U2zNBrmYAkybjIIujOMSiuwZb+vnRutu/
+ 60YwDeoKmU7WyRvP7vfVdBynaEy9BgJzTT12+v/auDjVVh8aHC+KBgNvuTgwAZsw4n
+ HYUiiK2wFmUK+NL0nuwYfd+Mo1hVhhRFaFwANN+s=
 MIME-Version: 1.0
 In-Reply-To: <20200518113156.25009-3-matthias.bgg@kernel.org>
 References: <20200518113156.25009-1-matthias.bgg@kernel.org>
@@ -44,11 +44,11 @@ From: Stephen Boyd <sboyd@kernel.org>
 To: Matthias Brugger <matthias.bgg@gmail.com>,
  Michael Turquette <mturquette@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
  matthias.bgg@kernel.org
-Date: Wed, 20 May 2020 03:15:17 -0700
-Message-ID: <158996971719.215346.12802870863066637932@swboyd.mtv.corp.google.com>
+Date: Wed, 20 May 2020 03:21:11 -0700
+Message-ID: <158997007160.215346.10358796743530839745@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_031519_983998_D8146EAA 
+X-CRM114-CacheID: sfid-20200520_032112_824026_E5E69136 
 X-CRM114-Status: UNSURE (   8.97  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
