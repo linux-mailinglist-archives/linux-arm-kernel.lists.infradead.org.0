@@ -2,117 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A736C1DAAC7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 08:41:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01FDC1DAAD9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 08:42:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cVI9DjHhXcFz0z9E/IbS4ohDn/JN6S/MMwnj0T3tLck=; b=TIZT2nn+zqZt4c
-	CebwQU+qr4SiPTJvfPSLboeK0hzxf8vrYrs+P+KvluiBfLOW6sEfREMCPlnP2DlZu0JvmORYwNbRn
-	H07fKELmjk+jlto3jIjeg8Wp0/CYRBCSdnkGfQDdkEaWmOibJ56y4U8kAhDUfs8SRgrgMcHWYHbFi
-	d5S0LF8KejK+zPZJZjbEORVzqs07AYyyPDVy019iamIgwkecL0s1e0xF3z63glQIfGgetuAwJLfP3
-	TpUhDOlC5UBnaBnnBqMTheItROtvgPT5mQ9abL/7CXeSwB7KxQs+vN3z+p6UTBsNe/8VHB85CIM2c
-	HpvRo/U0yoTJqGoxNswQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yaCki/AXzqdoUGM6Or5w6jK8sVyLJhbgS6cXzLmARRI=; b=cJLs7UoMfbn7cS6PrEKJLbrnd
+	04TbNiXkkE28Unw0inVbshCqYC7n+qTX2zY2/3fDI5yCyIqby0/NQiH0v2mSNhoL2mrcg/p1YtTUT
+	e7gOQDqp+cStLvrQiWe5re1di3e6oyhYVHk+3ldbwIDwJSi7bgVgYEaBhUf4ladILp6MDJjBzwjWn
+	+XSSuJd6OedH6j/O9q3fnqVbHGYXmsAI13qJeDZPgkrnRFr2yKsrZVDL8PMhxmJMehSOHcwRPPjO9
+	U92Yr/jVuRrvTFJzlvO7h8k/G1r+Au8dqRZZuYVO90XEU6N675D8IbarOl+QsBuNtP9/HiKO0iDeg
+	JwwAZBy9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbIQ6-0007Ko-JT; Wed, 20 May 2020 06:41:38 +0000
-Received: from mail-vi1eur05on2056.outbound.protection.outlook.com
- ([40.107.21.56] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jbIR4-0007nv-4Y; Wed, 20 May 2020 06:42:38 +0000
+Received: from mga05.intel.com ([192.55.52.43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbIPn-0007Bi-Hu
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 06:41:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=KK0Fx6MJTxdUMk51B+QQi9bTwSxikBDVyUrntsskU4u8k3F1M08kPW43x+z8ghmasDeJPZat9RhF1UIEd+XeoYz1KlhVwmQQyhYhst0Wm/ykUq7tRGmDD4iTJk1mHC9QV9x/Pmu5FQeMi9TkLuES4xT6nN4jswJhrl/WLd/+JMuefFKgSA3LuyWrlGXwSMUbo1o2cSvXGZyO7acUQgpa6uDj1qC30jIzmXqeidbCqpznkvDSbQyH7+JpFibjlU5p/bo1wEH5Fay85Q4vc1hJCRUS1+u71WXYtkZVoro1/2FL/1HXqT4qwK+wV7EDVNQZY6BdYG/TlY3MjEqBrwgy4w==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JTMHKX7ai+SeVlCoUMLA4HsyVUYE3FQ3HqF8Tlf35ro=;
- b=Q6ad3ngrsO49u0K80CWTp2ZqE5IxuEKndLMv7PPlJy6f4wgIwPI+jh/9I8wZHA/5kJaXcVxjn+9PAqrsNxwd9SwBOU6wqpZ099zju6OHf8bLh69ilvLDheQGNteRCuLefICEKS7mmtRxcXaltx3fI63ZNvHhd3Emrhg+teSdK5oVB9CTIBmnTo3hYjwcfIOej+4Q8v/mgkjAMAe1fK6hDySDcFERCYER0rZXsco0ys7NIRgpIIMSbSX3C8B+2dhE9kl7zMQ3MzFV0ePpAmU7klBtMXiZxp14klJkudTEVf3pyIZbXsN1iydsigSnQO/Nil8amBYyt295XKnD0I9Gug==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=JTMHKX7ai+SeVlCoUMLA4HsyVUYE3FQ3HqF8Tlf35ro=;
- b=sJORLtI8+77Pv6N0k/jNwVBMVPdLkJLpcURWBZvdT1BVxqwZMLJI77Rz7t8tPuSvV076y8QoNdXOFDZBs5uz9dM5bu6GRrJlkuD2HeiqIViRavnHpSZTwYkPLpGispHBReMSGD7iXY8WEJTDdTkpOqd0F93HZnzszvW9ZxBZVfw=
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB4120.eurprd04.prod.outlook.com (2603:10a6:209:4b::11) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Wed, 20 May
- 2020 06:41:15 +0000
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3000.034; Wed, 20 May 2020
- 06:41:14 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
- Fabio Estevam <fabio.estevam@nxp.com>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>
-Subject: RE: [PATCH 0/4] arm64: dts: imx8m: dtb aliases update
-Thread-Topic: [PATCH 0/4] arm64: dts: imx8m: dtb aliases update
-Thread-Index: AQHWLkwkW+oc0zbvzkitTZ4UpbqnCKiwhm7g
-Date: Wed, 20 May 2020 06:41:14 +0000
-Message-ID: <AM6PR04MB4966C199450F7EC8665E0C9980B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
-References: <1589940166-736-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1589940166-736-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 016f118e-489b-4a72-df38-08d7fc88cb13
-x-ms-traffictypediagnostic: AM6PR04MB4120:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB41201D0ACE49AF675B83EF2F80B60@AM6PR04MB4120.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:1468;
-x-forefront-prvs: 04097B7F7F
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: EQ6fYvTC8oyLjtnaM+KeR+zygv0YN5AK44m9u1fPkQi7+f+twRbyf3xyYpMonjik8Y6TpbGNGAziSTM45BwGC8N3+RahkN4eujBzvPO2EGQEn4HebMspIGuivVDpps7s/kH+LffIfCc3qVZt+YVKjIikaG5wh+zk5xKsRhBTpnqBfd7B2pSIOQH0jRuLGce3328Xl4W8cZWZTPJeP4grgGiJAE1Ev8E6rtFsoBjKq6rPT+OYlswzHfvqME3UmmlpvVL93qWB3Oee8eeBU/+ccXmNg1HG043uAYgF/oulz0f+4a4u9xidQmzEcDF2nImitqhW85oXUYhX9W6K8gJmksj2kscrECCvDdaWydhWfteed+b97lnpWlCY+TVRPYwN
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(366004)(346002)(396003)(136003)(376002)(39860400002)(33656002)(8936002)(6506007)(15650500001)(186003)(26005)(110136005)(8676002)(316002)(54906003)(86362001)(4326008)(7696005)(66476007)(66556008)(4744005)(66946007)(66446008)(71200400001)(64756008)(52536014)(2906002)(44832011)(478600001)(76116006)(5660300002)(55016002)(9686003)(32563001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: LfIk+R8H98ou9JPNsXgsSQ93mDMM393t+auEWAGLbDPSBxWCL94PoGqx/Ca9pn7AYxcd0HTqPAZNoOFk09A9lm+vqNUe3FB9E6EmU3GIQE+07QF8E/H7I+RHr7cgm5jIlImsLVRjUO8EuR46+OzfBZqLqGn7M3utNHLGXGgb9Vq8hUQ6zVJ1UXS9zQEUlvuKYtJhCdI61rLjcISRYPGI+yhMaeidUjgtm4i5y4qTOoQrbUYjp7jn0diSp6LVPqyBmq5lby06zUkSJKFIu4pAPJPczEVkVDOPc713O6Tf71WYKlA5G/tDuOQi3A2OSQ0W0cNdm4LKKwitnozHRKOJeHEBXMgAgxa6rYwthlHAm8Av5eb106+ee5hXvjsQEksWi40x/LjTU+6594NhA1h22zBkIAjiWHhShjZqyEWGbIsmsSZ1EeepLR9i/d0hWZScOyhAMWb0IsEu1gjSVaZLBFFGKinPyQ2/3agLxg03iyc=
+ id 1jbIQu-0007nK-Dm
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 06:42:30 +0000
+IronPort-SDR: lBTWZy8lO7Jv94STWC2+14K3lmw8x4Fqu3M6nleTABDHZxUoDJG+6MuqTgvBz8rzE2LguKGZm9
+ BvbeZlUj+ing==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 19 May 2020 23:42:27 -0700
+IronPort-SDR: 5wJiWe6pVWB7hyYqiXH2AXwf1QAOQQe/lHI6qJbxXfWjp/3BknyEKxiMDcLSTdLPsWEPoOCHP+
+ EBdQFFjpDghA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,413,1583222400"; d="scan'208";a="282582095"
+Received: from blu2-mobl3.ccr.corp.intel.com (HELO [10.255.28.165])
+ ([10.255.28.165])
+ by orsmga002.jf.intel.com with ESMTP; 19 May 2020 23:42:22 -0700
+Subject: Re: [PATCH v7 04/24] iommu: Add a page fault handler
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
+ linux-mm@kvack.org
+References: <20200519175502.2504091-1-jean-philippe@linaro.org>
+ <20200519175502.2504091-5-jean-philippe@linaro.org>
+From: Lu Baolu <baolu.lu@linux.intel.com>
+Message-ID: <c840d771-188d-9ee5-d117-e4b91d29b329@linux.intel.com>
+Date: Wed, 20 May 2020 14:42:21 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 016f118e-489b-4a72-df38-08d7fc88cb13
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2020 06:41:14.7754 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: xmqhMLpMlxqDPUQxTDeLT2QnaFfPAS7N4Z1UTCWbMzUIoIg9T6kfglDo2Tf2qL22dRDbkjM8y+49BEIFRq+C5A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4120
+In-Reply-To: <20200519175502.2504091-5-jean-philippe@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_234119_606661_87C57986 
-X-CRM114-Status: UNSURE (   7.10  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200519_234228_480882_F625C321 
+X-CRM114-Status: GOOD (  33.57  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.21.56 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.56 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.43 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,34 +75,330 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
+Cc: fenghua.yu@intel.com, kevin.tian@intel.com, jacob.jun.pan@linux.intel.com,
+ jgg@ziepe.ca, catalin.marinas@arm.com, joro@8bytes.org, robin.murphy@arm.com,
+ hch@infradead.org, zhangfei.gao@linaro.org, Jonathan.Cameron@huawei.com,
+ felix.kuehling@amd.com, xuzaibo@huawei.com, will@kernel.org,
+ christian.koenig@amd.com, baolu.lu@linux.intel.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Peng Fan <peng.fan@nxp.com>
-> Sent: Wednesday, May 20, 2020 10:03 AM
+Hi Jean,
+
+On 2020/5/20 1:54, Jean-Philippe Brucker wrote:
+> Some systems allow devices to handle I/O Page Faults in the core mm. For
+> example systems implementing the PCIe PRI extension or Arm SMMU stall
+> model. Infrastructure for reporting these recoverable page faults was
+> added to the IOMMU core by commit 0c830e6b3282 ("iommu: Introduce device
+> fault report API"). Add a page fault handler for host SVA.
 > 
-> Minor patchset to update device tree aliases
+> IOMMU driver can now instantiate several fault workqueues and link them
+> to IOPF-capable devices. Drivers can choose between a single global
+> workqueue, one per IOMMU device, one per low-level fault queue, one per
+> domain, etc.
 > 
-> Peng Fan (4):
->   arm64: dts: imx8mq: Add mmc aliases
->   arm64: dts: imx8mq: Add ethernet alias
->   arm64: dts: imx8mm: sort the aliases
->   arm64: dts: imx8mp: add i2c aliases
+> When it receives a fault event, supposedly in an IRQ handler, the IOMMU
+> driver reports the fault using iommu_report_device_fault(), which calls
+> the registered handler. The page fault handler then calls the mm fault
+> handler, and reports either success or failure with iommu_page_response().
+> When the handler succeeded, the IOMMU retries the access.
+> 
+> The iopf_param pointer could be embedded into iommu_fault_param. But
+> putting iopf_param into the iommu_param structure allows us not to care
+> about ordering between calls to iopf_queue_add_device() and
+> iommu_register_device_fault_handler().
+> 
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+> v6->v7: Fix leak in iopf_queue_discard_partial()
+> ---
+>   drivers/iommu/Kconfig      |   4 +
+>   drivers/iommu/Makefile     |   1 +
+>   include/linux/iommu.h      |  51 +++++
+>   drivers/iommu/io-pgfault.c | 459 +++++++++++++++++++++++++++++++++++++
+>   4 files changed, 515 insertions(+)
+>   create mode 100644 drivers/iommu/io-pgfault.c
+> 
+> diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
+> index d9fa5b410015..15e9dc4e503c 100644
+> --- a/drivers/iommu/Kconfig
+> +++ b/drivers/iommu/Kconfig
+> @@ -107,6 +107,10 @@ config IOMMU_SVA
+>   	bool
+>   	select IOASID
+>   
+> +config IOMMU_PAGE_FAULT
+> +	bool
+> +	select IOMMU_SVA
+> +
+>   config FSL_PAMU
+>   	bool "Freescale IOMMU support"
+>   	depends on PCI
+> diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
+> index 40c800dd4e3e..bf5cb4ee8409 100644
+> --- a/drivers/iommu/Makefile
+> +++ b/drivers/iommu/Makefile
+> @@ -4,6 +4,7 @@ obj-$(CONFIG_IOMMU_API) += iommu-traces.o
+>   obj-$(CONFIG_IOMMU_API) += iommu-sysfs.o
+>   obj-$(CONFIG_IOMMU_DEBUGFS) += iommu-debugfs.o
+>   obj-$(CONFIG_IOMMU_DMA) += dma-iommu.o
+> +obj-$(CONFIG_IOMMU_PAGE_FAULT) += io-pgfault.o
+>   obj-$(CONFIG_IOMMU_IO_PGTABLE) += io-pgtable.o
+>   obj-$(CONFIG_IOMMU_IO_PGTABLE_ARMV7S) += io-pgtable-arm-v7s.o
+>   obj-$(CONFIG_IOMMU_IO_PGTABLE_LPAE) += io-pgtable-arm.o
 
-For this patchset,
+[SNIP]
 
-Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+> +
+> +static enum iommu_page_response_code
+> +iopf_handle_single(struct iopf_fault *iopf)
+> +{
+> +	vm_fault_t ret;
+> +	struct mm_struct *mm;
+> +	struct vm_area_struct *vma;
+> +	unsigned int access_flags = 0;
+> +	unsigned int fault_flags = FAULT_FLAG_REMOTE;
+> +	struct iommu_fault_page_request *prm = &iopf->fault.prm;
+> +	enum iommu_page_response_code status = IOMMU_PAGE_RESP_INVALID;
+> +
+> +	if (!(prm->flags & IOMMU_FAULT_PAGE_REQUEST_PASID_VALID))
+> +		return status;
+> +
+> +	mm = iommu_sva_find(prm->pasid);
+> +	if (IS_ERR_OR_NULL(mm))
+> +		return status;
+> +
+> +	down_read(&mm->mmap_sem);
+> +
+> +	vma = find_extend_vma(mm, prm->addr);
+> +	if (!vma)
+> +		/* Unmapped area */
+> +		goto out_put_mm;
+> +
+> +	if (prm->perm & IOMMU_FAULT_PERM_READ)
+> +		access_flags |= VM_READ;
+> +
+> +	if (prm->perm & IOMMU_FAULT_PERM_WRITE) {
+> +		access_flags |= VM_WRITE;
+> +		fault_flags |= FAULT_FLAG_WRITE;
+> +	}
+> +
+> +	if (prm->perm & IOMMU_FAULT_PERM_EXEC) {
+> +		access_flags |= VM_EXEC;
+> +		fault_flags |= FAULT_FLAG_INSTRUCTION;
+> +	}
+> +
+> +	if (!(prm->perm & IOMMU_FAULT_PERM_PRIV))
+> +		fault_flags |= FAULT_FLAG_USER;
+> +
+> +	if (access_flags & ~vma->vm_flags)
+> +		/* Access fault */
+> +		goto out_put_mm;
+> +
+> +	ret = handle_mm_fault(vma, prm->addr, fault_flags);
+> +	status = ret & VM_FAULT_ERROR ? IOMMU_PAGE_RESP_INVALID :
 
-Regards
-Aisheng
+Do you mind telling why it's IOMMU_PAGE_RESP_INVALID but not
+IOMMU_PAGE_RESP_FAILURE?
+
+> +		IOMMU_PAGE_RESP_SUCCESS;
+> +
+> +out_put_mm:
+> +	up_read(&mm->mmap_sem);
+> +	mmput(mm);
+> +
+> +	return status;
+> +}
+> +
+> +static void iopf_handle_group(struct work_struct *work)
+> +{
+> +	struct iopf_group *group;
+> +	struct iopf_fault *iopf, *next;
+> +	enum iommu_page_response_code status = IOMMU_PAGE_RESP_SUCCESS;
+> +
+> +	group = container_of(work, struct iopf_group, work);
+> +
+> +	list_for_each_entry_safe(iopf, next, &group->faults, list) {
+> +		/*
+> +		 * For the moment, errors are sticky: don't handle subsequent
+> +		 * faults in the group if there is an error.
+> +		 */
+> +		if (status == IOMMU_PAGE_RESP_SUCCESS)
+> +			status = iopf_handle_single(iopf);
+> +
+> +		if (!(iopf->fault.prm.flags &
+> +		      IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE))
+> +			kfree(iopf);
+> +	}
+> +
+> +	iopf_complete_group(group->dev, &group->last_fault, status);
+> +	kfree(group);
+> +}
+> +
+> +/**
+> + * iommu_queue_iopf - IO Page Fault handler
+> + * @evt: fault event
+
+@fault?
+
+> + * @cookie: struct device, passed to iommu_register_device_fault_handler.
+> + *
+> + * Add a fault to the device workqueue, to be handled by mm.
+> + *
+> + * This module doesn't handle PCI PASID Stop Marker; IOMMU drivers must discard
+> + * them before reporting faults. A PASID Stop Marker (LRW = 0b100) doesn't
+> + * expect a response. It may be generated when disabling a PASID (issuing a
+> + * PASID stop request) by some PCI devices.
+> + *
+> + * The PASID stop request is issued by the device driver before unbind(). Once
+> + * it completes, no page request is generated for this PASID anymore and
+> + * outstanding ones have been pushed to the IOMMU (as per PCIe 4.0r1.0 - 6.20.1
+> + * and 10.4.1.2 - Managing PASID TLP Prefix Usage). Some PCI devices will wait
+> + * for all outstanding page requests to come back with a response before
+> + * completing the PASID stop request. Others do not wait for page responses, and
+> + * instead issue this Stop Marker that tells us when the PASID can be
+> + * reallocated.
+> + *
+> + * It is safe to discard the Stop Marker because it is an optimization.
+> + * a. Page requests, which are posted requests, have been flushed to the IOMMU
+> + *    when the stop request completes.
+> + * b. We flush all fault queues on unbind() before freeing the PASID.
+> + *
+> + * So even though the Stop Marker might be issued by the device *after* the stop
+> + * request completes, outstanding faults will have been dealt with by the time
+> + * we free the PASID.
+> + *
+> + * Return: 0 on success and <0 on error.
+> + */
+> +int iommu_queue_iopf(struct iommu_fault *fault, void *cookie)
+> +{
+> +	int ret;
+> +	struct iopf_group *group;
+> +	struct iopf_fault *iopf, *next;
+> +	struct iopf_device_param *iopf_param;
+> +
+> +	struct device *dev = cookie;
+> +	struct dev_iommu *param = dev->iommu;
+> +
+> +	lockdep_assert_held(&param->lock);
+> +
+> +	if (fault->type != IOMMU_FAULT_PAGE_REQ)
+> +		/* Not a recoverable page fault */
+> +		return -EOPNOTSUPP;
+> +
+> +	/*
+> +	 * As long as we're holding param->lock, the queue can't be unlinked
+> +	 * from the device and therefore cannot disappear.
+> +	 */
+> +	iopf_param = param->iopf_param;
+> +	if (!iopf_param)
+> +		return -ENODEV;
+> +
+> +	if (!(fault->prm.flags & IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE)) {
+> +		iopf = kzalloc(sizeof(*iopf), GFP_KERNEL);
+> +		if (!iopf)
+> +			return -ENOMEM;
+> +
+> +		iopf->fault = *fault;
+> +
+> +		/* Non-last request of a group. Postpone until the last one */
+> +		list_add(&iopf->list, &iopf_param->partial);
+> +
+> +		return 0;
+> +	}
+> +
+> +	group = kzalloc(sizeof(*group), GFP_KERNEL);
+> +	if (!group) {
+> +		/*
+> +		 * The caller will send a response to the hardware. But we do
+> +		 * need to clean up before leaving, otherwise partial faults
+> +		 * will be stuck.
+> +		 */
+> +		ret = -ENOMEM;
+> +		goto cleanup_partial;
+> +	}
+> +
+> +	group->dev = dev;
+> +	group->last_fault.fault = *fault;
+> +	INIT_LIST_HEAD(&group->faults);
+> +	list_add(&group->last_fault.list, &group->faults);
+> +	INIT_WORK(&group->work, iopf_handle_group);
+> +
+> +	/* See if we have partial faults for this group */
+> +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, list) {
+> +		if (iopf->fault.prm.grpid == fault->prm.grpid)
+> +			/* Insert *before* the last fault */
+> +			list_move(&iopf->list, &group->faults);
+> +	}
+> +
+> +	queue_work(iopf_param->queue->wq, &group->work);
+> +	return 0;
+> +
+> +cleanup_partial:
+> +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, list) {
+> +		if (iopf->fault.prm.grpid == fault->prm.grpid) {
+> +			list_del(&iopf->list);
+> +			kfree(iopf);
+> +		}
+> +	}
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(iommu_queue_iopf);
+
+[SNIP]
+
+> + 
+> +
+> +/**
+> + * iopf_queue_add_device - Add producer to the fault queue
+> + * @queue: IOPF queue
+> + * @dev: device to add
+> + *
+> + * Return: 0 on success and <0 on error.
+> + */
+> +int iopf_queue_add_device(struct iopf_queue *queue, struct device *dev)
+> +{
+> +	int ret = -EBUSY;
+> +	struct iopf_device_param *iopf_param;
+> +	struct dev_iommu *param = dev->iommu;
+> +
+> +	if (!param)
+> +		return -ENODEV;
+> +
+> +	iopf_param = kzalloc(sizeof(*iopf_param), GFP_KERNEL);
+> +	if (!iopf_param)
+> +		return -ENOMEM;
+> +
+> +	INIT_LIST_HEAD(&iopf_param->partial);
+> +	iopf_param->queue = queue; iopf_param->dev = dev;
+
+Two lines?
+
+> +
+> +	mutex_lock(&queue->lock);
+> +	mutex_lock(&param->lock);
+> +	if (!param->iopf_param) {
+> +		list_add(&iopf_param->queue_list, &queue->devices);
+> +		param->iopf_param = iopf_param;
+> +		ret = 0;
+> +	}
+> +	mutex_unlock(&param->lock);
+> +	mutex_unlock(&queue->lock);
+> +
+> +	if (ret)
+> +		kfree(iopf_param);
+> +
+> +	return ret;
+> +}
+> +EXPORT_SYMBOL_GPL(iopf_queue_add_device);
+> +
+
+[SNIP]
+Best regards,
+baolu
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
