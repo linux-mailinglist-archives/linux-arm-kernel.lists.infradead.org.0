@@ -2,56 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE49A1DB455
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:58:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2024C1DB45A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:59:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+LcgemJkfu0/n16nMGOo6QatvxqoFD2Pi1CkteSdhlc=; b=kNgBX6CncHXZt4
-	izIrH/4h9dB/jQKSwsZC5vWqqvksEOYXB7bdOXUnaob10NIXhRWpNIP+lQIhJtIZ76Zu8HrYb/6TU
-	FHiAkXRD03jTezJsQp1BUNFzdYosLerw5wVdMSR827gwvao1yduI8avMYroNWW9n1aPMzEA51LckN
-	7gWXilchBNvm1urAGTi0XN6RXlc2vKlyCHWZvjI1J4mtYRit1uoHgxAFmrFy52M5i+BeGdY82u4RF
-	Zo6yIbKOfVWF7LKJRSxOlPXtR3/QnUYjLk8kLJV88wl0fM7bIwbxp9teo2V6nVEp3TMoqzD2D5str
-	ujj1AscdZTTuvRxIasGA==;
+	List-Owner; bh=hwod4xhuAMmSRRmnHX/S+U9aQmgZYDX4gR6bKxH/06M=; b=m2N8L1k4tLe7it
+	oTB8byMnDiz5NfmqQo3mUVGNarwPxOHDazcfBE9gJilmX5oFYqrBVFs5zbr02iHRCCnnT8fmDS4ru
+	IQtTuBtVQmRdSYW0ax9D4xcM9PRczHg96afcWPHveF+Cnh4pridklnXqP+N/P6E/Z8oos3e7uA6zm
+	FhYn1soE/wwFozKOH/JRYWDr+MGYVfk/fCYSJPlDxipWv7hre6BQRXCpqVueezf+fTMLR4QrIa5hr
+	QGnul+cbm5RFyHuqzXkgcU2OV2OnzSFdoYgb/uk/zdiFyN+MPFwP7Jv1SZXR1oMGwW3ZcS9gmjrfI
+	W3wshLqpTiYLa7otNkyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbOJ5-0007GJ-0L; Wed, 20 May 2020 12:58:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbOIv-0007FG-3v
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:58:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A917130E;
- Wed, 20 May 2020 05:58:34 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 246EE3F52E;
- Wed, 20 May 2020 05:58:33 -0700 (PDT)
-Date: Wed, 20 May 2020 13:58:23 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Tuan Phan <tuanphan@os.amperecomputing.com>
-Subject: Re: [PATCH v4] ACPI/IORT: Fix PMCG node single ID mapping handling.
-Message-ID: <20200520125813.GA6906@e121166-lin.cambridge.arm.com>
-References: <1589570686-5780-1-git-send-email-tuanphan@os.amperecomputing.com>
+	id 1jbOJo-0007ao-KB; Wed, 20 May 2020 12:59:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbOJd-0007Zi-Ug
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:59:23 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 428642070A;
+ Wed, 20 May 2020 12:59:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589979561;
+ bh=UY6bhyA1qIT24OzeirfJ2m2V4bIa7vSuhBxipVcxHSg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=PQv/vo1vuOh5BN49oSfeBhlvcbtDT/i2W10QY5VDIAdRGhoXfpN3/Z/QUeozn5SD+
+ rzEi1mftpME8HSrsWYMdBHtO+ywFV0pA1oQallMrYtkq4UKSLTdC9feue1eJt4ywVs
+ qENI/Bjv+xJ6dqkzZxsfk4v9OQqOwLRmWnay1Niw=
+Date: Wed, 20 May 2020 13:59:17 +0100
+From: Will Deacon <will@kernel.org>
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Subject: Re: [PATCH] iomm/arm-smmu: Add stall implementation hook
+Message-ID: <20200520125916.GE25815@willie-the-truck>
+References: <b491e02ad790a437115fdeab6b21bc48@codeaurora.org>
+ <1ced023b-157c-21a0-ac75-1adef7f029f0@arm.com>
+ <20200507125357.GA31783@willie-the-truck>
+ <CAF6AEGuLU+_qP8HNO1s9PTPHqJnCMHzehmcT8NiJhiAwrfSH6w@mail.gmail.com>
+ <CAF6AEGvuHKObTR97XdSXjmjKB+qjQ8N1_wxM=ZU8bEkF=cXp-A@mail.gmail.com>
+ <20200511173008.GA24282@jcrouse1-lnx.qualcomm.com>
+ <20200518154522.GN32394@willie-the-truck>
+ <5a0ad639e272026c8be57393937cda22@codeaurora.org>
+ <CAF6AEGuzBtj+srindmOvhaom5BdS2adLaOF=v_MtguMja14V2w@mail.gmail.com>
+ <a801e79a0a75092c28a6646ae7fa5e36@codeaurora.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1589570686-5780-1-git-send-email-tuanphan@os.amperecomputing.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <a801e79a0a75092c28a6646ae7fa5e36@codeaurora.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_055837_200311_2E5F5745 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200520_055922_037643_A5F80718 
+X-CRM114-Status: GOOD (  24.39  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,77 +85,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Leeder <nleeder@codeaurora.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
- linux-acpi@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- patches@amperecomputing.com, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, "list@263.net:IOMMU DRIVERS ,
+ Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Clark <robdclark@gmail.com>, Robin Murphy <robin.murphy@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 12:24:46PM -0700, Tuan Phan wrote:
-> An IORT PMCG node can have no ID mapping if its overflow interrupt is
-> wire based therefore the code that parses the PMCG node can not assume
-> the node will always have a single mapping present at index 0.
+On Wed, May 20, 2020 at 03:02:45PM +0530, Sai Prakash Ranjan wrote:
+> On 2020-05-19 20:41, Rob Clark wrote:
+> > On Tue, May 19, 2020 at 2:26 AM Sai Prakash Ranjan
+> > <saiprakash.ranjan@codeaurora.org> wrote:
+> > > On 2020-05-18 21:15, Will Deacon wrote:
+> > > > So this sounds like an erratum to me, and I'm happy to set HUPCF if we
+> > > > detect the broken implementation. However, it will need an entry in
+> > > > Documentation/arm64/silicon-errata.rst and a decent comment in the
+> > > > driver
+> > > > to explain what we're doing and why.
+> > > >
+> > > 
+> > > AFAIK there is no erratum documented internally for this behaviour and
+> > > this
+> > > exists from MSM8996 SoC time and errata usually don't survive this
+> > > long
+> > > across generation of SoCs and there is no point for us in disguising
+> > > it.
+> > 
+> > possibly longer, qcom_iommu sets CFCFG..
+> > 
 > 
-> Fix iort_get_id_mapping_index() by checking for an overflow interrupt
-> and mapping count.
+> Oh right, I was still in college when those SoCs were released ;)
 > 
-> Fixes: 24e516049360 ("ACPI/IORT: Add support for PMCG").
+> > > Is it OK if we clearly mention it as the "design limitation" or some
+> > > other
+> > > term which we can agree upon along with the description which Rob and
+> > > Jordan
+> > > provided for setting HUPCF in the driver when we add the set_hupcf
+> > > callback?
+> > 
+> > I'm not too picky on what we call it, but afaict it has been this way
+> > since the beginning of time, rather than specific to a certain SoC or
+> > generation of SoCs.  So it doesn't seem like the hw designers consider
+> > it a bug.
+> > 
+> > (I'm not sure what the expected behavior is.. nor if any other SMMU
+> > implementation encounters this sort of situation..)
+> 
+> Yes, that was my point as well that its probably not counted as a bug
+> by the hw designers. So I'm going to post setting HUPCF on QCOM
+> implementation with clear comments based on yours and Jordan's description
+> of this problem, but I wanted to have a way to set this only for GPU context
+> bank and not GMU as Jordan mentioned earlier that GMU doesnt need HUPCF set.
+> I was checking as to how do we map cb to device, if it was possible then we
+> can have
+> a compatibility thing like we did for identity mapping. Any ideas Robin?
 
-Remove these periods in the $SUBJECT and commit references, I
-don't know why you keep adding them.
+Right, see my reply over at:
 
-Anyway - I don't know if it is too late for v5.8 but this patch
-is ready to be merged (minus the nits I have just mentioned).
+https://lore.kernel.org/r/20200520125700.GD25815@willie-the-truck
 
-Lorenzo
+Hopefully something like that can be made to work.
 
-> Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Reviewed-by: Hanjun Guo <guoahanjun@huawei.com>
-> Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
-> ---
-> v1 -> v2:
-> - Use pmcg node to detect wired base overflow interrupt.
-> 
-> v2 -> v3:
-> - Address Hanjun and Robin's comments.
-> 
-> v3 -> v4:
-> - Update the title and description as mentioned by Lorenzo.
-> 
->  drivers/acpi/arm64/iort.c | 5 +++++
->  1 file changed, 5 insertions(+)
-> 
-> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-> index ed3d2d1..12bb70e 100644
-> --- a/drivers/acpi/arm64/iort.c
-> +++ b/drivers/acpi/arm64/iort.c
-> @@ -414,6 +414,7 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
->  static int iort_get_id_mapping_index(struct acpi_iort_node *node)
->  {
->  	struct acpi_iort_smmu_v3 *smmu;
-> +	struct acpi_iort_pmcg *pmcg;
->  
->  	switch (node->type) {
->  	case ACPI_IORT_NODE_SMMU_V3:
-> @@ -441,6 +442,10 @@ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
->  
->  		return smmu->id_mapping_index;
->  	case ACPI_IORT_NODE_PMCG:
-> +		pmcg = (struct acpi_iort_pmcg *)node->node_data;
-> +		if (pmcg->overflow_gsiv || node->mapping_count == 0)
-> +			return -EINVAL;
-> +
->  		return 0;
->  	default:
->  		return -EINVAL;
-> -- 
-> 2.7.4
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
