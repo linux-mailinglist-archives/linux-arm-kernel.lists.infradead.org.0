@@ -2,124 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD49B1DAED9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:32:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0EEF71DAEE2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:33:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z/LqHU9WkD3gXK1+H+NsRTWCcxzkH9xlsKXOTXmzv0Y=; b=CY3u7u7H737FPU
-	o9EEq8Nh60wMbRk7bjXVFJzg4S0oWVwvPmd0/ZyeUwATlBL/zyedqLfYmo4iR+Q0xLdiydt13WUW+
-	QkQa6T9y0IYaInxxut/Oy9nAAaaFDqEAws+/quHaWSCmVgX6UymIIfJ28wkmJiLeXvZWMR2oZIUWD
-	Nf13p5ZQzt7/2+L9L/ljL97AAHjVzAGVe1PIhwL2CkrdarKStMgJVvofK/xwjWh7NIocry3AD13xc
-	ysWi4xNVgjWEO804sVc9JLAOgtKHEkNRNu8owH7xADm13NStwl5I6DKfo3+VtFXB3E6LmSubNzBvh
-	7aZTGuc7V1w4HqSb4ldw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4SjfOkk2W4Ea7KJZVbh9942fRL4SHk7KVkzj9R7u5T8=; b=FV6+ZCyw+L1L+APdFT21G0/fF
+	0Lvw5wiQ50nwonk8AmxGPtwQA/m0eA3e0RtUzIbj4wfY8QIYxHYPhnShVawsnocc1iZbCbF9VLqL5
+	DFZayKhUZNTQjQNHQw3yMvRGwqjmZH5MUxVp7PVZx9KzwEDtRq3uPLo6zYiizZZLrQLDG2Ac6OXtI
+	B3ZcgFMd5TG0XEknCfjy3topF8jyqEiDAJySg21CmPZnVg6QcTKkQqSZLwK32461lsN+KzI1cjDGH
+	zWuSI1EPEgPt85W+HbcMpVRjYS33FAU2kf4ltqfAGOrxYqG/zl1VLJQFoTSOu8uNZdLDS1bZoOCST
+	5PVlzMD/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbL4u-0000LB-Ph; Wed, 20 May 2020 09:31:56 +0000
-Received: from mail-am6eur05on2072.outbound.protection.outlook.com
- ([40.107.22.72] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
+	id 1jbL60-0000nY-Vb; Wed, 20 May 2020 09:33:05 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbL4P-00005m-0D
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:31:33 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=buwQdp6JVSC9E7A4IVzIEXxc5UBKFScuICzA4ZiuPLyfTJxB7druqfg//E/FZIDN8g4dpJ1CFwztGog4Nd9+ikaM4YimubL0U5PLum01AMyN6D4xsMw+DKxqabxtR2l42Q/MV5iHMai7EVadxHe16iy7WBc4Q4pQYdBdvLX7mZY+Onkdt3iJmY9VqtuCAN7q1G3bw6aFHOqwk2yHjiIhd5naIukyo7cLIy+tUt4yVvNlXBUGYAgAANmBJKBFx189BxJ7yuVzyNmp56pHHqrD53zReBq28pC2ir//96WkumoI9Gi9VnCCThyDjrEG4R815T2wvWz7kPwy0bnXNlxZEw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6imZQd5QvjAsK/w75gZaIAn2ZBytQJWptr1GaODbNw4=;
- b=blMevY74mwOFQhn1T6i/JzZ8ROMlvpIKA60kQXoh5pURwOOvASV5JmP9D+2oqnxENySEVP4C32py+Rc1vw3A3/UVdmgD3nkQ0ba/Jd/PnpDndIgpI34nnj3ze/cw4ORsMoC+DD93T1mXgccb7KogflrUAh/sPX8+3WTR+m7wxPkCSjGY3Nq41OG8GTYxAJ1E2bujsoXkUFrzePPJn09kXhXjy9eLW0IA+VvclQbVVvsHLdYGFBBlogce+1lUj2SCyowNnC40oHZOuAjyhh6rmDY40V2sxIG2HUsH+bmz1ll/mkW8siPl9uQjKSYbXtFnhYaGO+PzRGetFGUtsvn+7g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6imZQd5QvjAsK/w75gZaIAn2ZBytQJWptr1GaODbNw4=;
- b=H0fsjJc907yEUqmDryceLjduW1sHgky3FNfOi44xk4kx6+rZ9akJrdKng4hQ2LWzdfWVwHqisKVjoUfuz1ZJcp5lZVPut2QqmlmhrdphmcA86f2VL23sgzpUAkB+6HTRJspVLXn8MDFwM6Z6RSLV3ZFlPAka2LsICafikUCBosc=
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB5861.eurprd04.prod.outlook.com (2603:10a6:20b:a3::13) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.26; Wed, 20 May
- 2020 09:31:22 +0000
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3000.034; Wed, 20 May 2020
- 09:31:22 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "rui.zhang@intel.com"
- <rui.zhang@intel.com>, "daniel.lezcano@linaro.org"
- <daniel.lezcano@linaro.org>, "amit.kucheria@verdurent.com"
- <amit.kucheria@verdurent.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
- <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>, "linux-pm@vger.kernel.org"
- <linux-pm@vger.kernel.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH V3] dt-bindings: thermal: Convert i.MX to json-schema
-Thread-Topic: [PATCH V3] dt-bindings: thermal: Convert i.MX to json-schema
-Thread-Index: AQHWLoBrEdWAFmuPzEipjWXU6EAydqiws/Ng
-Date: Wed, 20 May 2020 09:31:22 +0000
-Message-ID: <AM6PR04MB49663E19585FE55DE39DF46480B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
-References: <1589962619-28256-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1589962619-28256-1-git-send-email-Anson.Huang@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: d930f7bf-2eca-4646-c7e0-08d7fca08f25
-x-ms-traffictypediagnostic: AM6PR04MB5861:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB5861F15B37D835CFA5DC450E80B60@AM6PR04MB5861.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4941;
-x-forefront-prvs: 04097B7F7F
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 6Igwjbn32o8dhos0HF0hKujL/1L0A914cOXWy0aWPHbYcFC5/cK1GR6iAAtZoEKZ0D9XLa6mekoMsldSx2EBV3S1v7RHhtSJx7cG1SpYOBFB4IFJuK4Tk7H5vDHyNc5ygB+GYkdltxmbBq0cO6JgT/HiHBmP9WIMMdgW/kQTGE/DUAQQE697xvKHYb6JCkSGncNM/rZDTp+aO2hIrfGpX4Q2EW9JsJV2Hsrl/jN0CmnsesRAiMidmwgtV3ddjHwQYk2ojW0aJR3rFocZgVrs37YG3GDCVz7NG0lZa09SCUJN0KcIlxF1urlln9tRbNGDkDYGx41u5RrD8LhRqK2VydgAyFOlIk03L/TU/MpasxH6o9YiGHM59iSP0392acq+oLjAoOdjT95qmkzqZ0c+EJaCrs9Y/2w09Iug5lL99hlDb+86RAJNTIO1y19vaar7RCjrN+CWl8jTUo7yMPEG+g1SDSJw6kLoqSqZINfROuA=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(396003)(366004)(39860400002)(346002)(136003)(4326008)(26005)(71200400001)(478600001)(5660300002)(55016002)(186003)(44832011)(7696005)(33656002)(6506007)(7416002)(9686003)(66556008)(86362001)(8936002)(52536014)(2906002)(66476007)(8676002)(66446008)(66946007)(316002)(110136005)(76116006)(64756008)(921003);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: kPdP+wMFDZXeeTR0xlsdib/dQdKfXH2UAQwCOodndKS/YoyedxisWDJQu98w1o2oCz1eROd77w5Q/7PHOhv98/vDjdHbqMqlDSnQodryuMTvXdB9qr6AxN/vcks4vT6TORegQTZ83vh/iyWsGygPFX8K6DQOufAp/9BBPz0NObCL2o19+9kytXTHTb2DIc3nIVb0mxcymVHPUccLR1MIBe+FM2l5AoKWwYBTteeD0FpAV0XWB9GIFSYript7vTYRz6NnpjWK05TifClYPJ1LtLfSm6JqwdnKdgJb1vqdmPTxY4KqknsvHfd9z5VOGiTPIzMBTfPbt1b7XwJ04ZN/8eRfPONq2j1/3yPAxrRru8ZXVosfXGex2ouhpn/Jmezyo2l+9Nmmbw1pcl7F9gRmI+e9bfosCVwBGeeIzAp3JXu52PIx1x/BLZu4I/21taJeJFJLYfF49OlXjIgHA1SbABh94Dv6jxF2PlRolu+cdo3ew2iaIWYgmjrSvW9pgG3H
+ id 1jbL5m-0000mz-3l
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:32:52 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589967170; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=kj7KetK7iFPOosbvpCUKYMpyUHmudAmdvJ6fI1OKUq0=;
+ b=uxWGxM0SJeWMMlmFhGRkOBqlzEanc2IDj2l/tdcjA0jLGPXpQa1LBo9kp7a8O26lK80G8qxh
+ jDH5b7YX968plskewser1daQ4rgYM/WKE8WDcUZ1KdlJOpHOfM+dsC3OjiC+lDMN+A0MCkqD
+ Q4dcXjqHzy8uI+queEcZh1SnoeI=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n05.prod.us-east-1.postgun.com with SMTP id
+ 5ec4f93fc070baad3cdb7107 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 20 May 2020 09:32:47
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id E57A0C433A0; Wed, 20 May 2020 09:32:46 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 87D87C433CA;
+ Wed, 20 May 2020 09:32:45 +0000 (UTC)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d930f7bf-2eca-4646-c7e0-08d7fca08f25
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2020 09:31:22.1360 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Mw+lb+QwqA8fDLFsVMVB8NLKAyaJVeOTGYeX/xRakW3kGCyBtk0dg8JhrqvLCg4Yv9q1OEvV7j96lms2WBQShw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB5861
+Date: Wed, 20 May 2020 15:02:45 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Rob Clark <robdclark@gmail.com>, Will Deacon <will@kernel.org>, Robin
+ Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCH] iomm/arm-smmu: Add stall implementation hook
+In-Reply-To: <CAF6AEGuzBtj+srindmOvhaom5BdS2adLaOF=v_MtguMja14V2w@mail.gmail.com>
+References: <20200421202004.11686-1-saiprakash.ranjan@codeaurora.org>
+ <b491e02ad790a437115fdeab6b21bc48@codeaurora.org>
+ <1ced023b-157c-21a0-ac75-1adef7f029f0@arm.com>
+ <20200507125357.GA31783@willie-the-truck>
+ <CAF6AEGuLU+_qP8HNO1s9PTPHqJnCMHzehmcT8NiJhiAwrfSH6w@mail.gmail.com>
+ <CAF6AEGvuHKObTR97XdSXjmjKB+qjQ8N1_wxM=ZU8bEkF=cXp-A@mail.gmail.com>
+ <20200511173008.GA24282@jcrouse1-lnx.qualcomm.com>
+ <20200518154522.GN32394@willie-the-truck>
+ <5a0ad639e272026c8be57393937cda22@codeaurora.org>
+ <CAF6AEGuzBtj+srindmOvhaom5BdS2adLaOF=v_MtguMja14V2w@mail.gmail.com>
+Message-ID: <a801e79a0a75092c28a6646ae7fa5e36@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_023125_217831_471F5215 
-X-CRM114-Status: GOOD (  15.21  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200520_023251_031998_774ED77D 
+X-CRM114-Status: GOOD (  36.36  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.22.72 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.22.72 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [104.130.122.26 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,137 +101,155 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, "list@263.net:IOMMU DRIVERS , Joerg
+ Roedel <joro@8bytes.org>," <iommu@lists.linux-foundation.org>, "moderated
+ list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson Huang <Anson.Huang@nxp.com>
-> Sent: Wednesday, May 20, 2020 4:17 PM
+On 2020-05-19 20:41, Rob Clark wrote:
+> On Tue, May 19, 2020 at 2:26 AM Sai Prakash Ranjan
+> <saiprakash.ranjan@codeaurora.org> wrote:
+>> 
+>> Hi Will,
+>> 
+>> On 2020-05-18 21:15, Will Deacon wrote:
+>> > On Mon, May 11, 2020 at 11:30:08AM -0600, Jordan Crouse wrote:
+>> >> On Fri, May 08, 2020 at 08:40:40AM -0700, Rob Clark wrote:
+>> >> > On Fri, May 8, 2020 at 8:32 AM Rob Clark <robdclark@gmail.com> wrote:
+>> >> > >
+>> >> > > On Thu, May 7, 2020 at 5:54 AM Will Deacon <will@kernel.org> wrote:
+>> >> > > >
+>> >> > > > On Thu, May 07, 2020 at 11:55:54AM +0100, Robin Murphy wrote:
+>> >> > > > > On 2020-05-07 11:14 am, Sai Prakash Ranjan wrote:
+>> >> > > > > > On 2020-04-22 01:50, Sai Prakash Ranjan wrote:
+>> >> > > > > > > Add stall implementation hook to enable stalling
+>> >> > > > > > > faults on QCOM platforms which supports it without
+>> >> > > > > > > causing any kind of hardware mishaps. Without this
+>> >> > > > > > > on QCOM platforms, GPU faults can cause unrelated
+>> >> > > > > > > GPU memory accesses to return zeroes. This has the
+>> >> > > > > > > unfortunate result of command-stream reads from CP
+>> >> > > > > > > getting invalid data, causing a cascade of fail.
+>> >> > > > >
+>> >> > > > > I think this came up before, but something about this rationale doesn't add
+>> >> > > > > up - we're not *using* stalls at all, we're still terminating faulting
+>> >> > > > > transactions unconditionally; we're just using CFCFG to terminate them with
+>> >> > > > > a slight delay, rather than immediately. It's really not clear how or why
+>> >> > > > > that makes a difference. Is it a GPU bug? Or an SMMU bug? Is this reliable
+>> >> > > > > (or even a documented workaround for something), or might things start
+>> >> > > > > blowing up again if any other behaviour subtly changes? I'm not dead set
+>> >> > > > > against adding this, but I'd *really* like to have a lot more confidence in
+>> >> > > > > it.
+>> >> > > >
+>> >> > > > Rob mentioned something about the "bus returning zeroes" before, but I agree
+>> >> > > > that we need more information so that we can reason about this and maintain
+>> >> > > > the code as the driver continues to change. That needs to be a comment in
+>> >> > > > the driver, and I don't think "but android seems to work" is a good enough
+>> >> > > > justification. There was some interaction with HUPCF as well.
+>> >> > >
+>> >> > > The issue is that there are multiple parallel memory accesses
+>> >> > > happening at the same time, for example CP (the cmdstream processor)
+>> >> > > will be reading ahead and setting things up for the next draw or
+>> >> > > compute grid, in parallel with some memory accesses from the shader
+>> >> > > which could trigger a fault.  (And with faults triggered by something
+>> >> > > in the shader, there are *many* shader threads running in parallel so
+>> >> > > those tend to generate a big number of faults at the same time.)
+>> >> > >
+>> >> > > We need either CFCFG or HUPCF, otherwise what I have observed is that
+>> >> > > while the fault happens, CP's memory access will start returning
+>> >> > > zero's instead of valid cmdstream data, which triggers a GPU hang.  I
+>> >> > > can't say whether this is something unique to qcom's implementation of
+>> >> > > the smmu spec or not.
+>> >> > >
+>> >> > > *Often* a fault is the result of the usermode gl/vk/cl driver bug,
+>> >> > > although I don't think that is an argument against fixing this in the
+>> >> > > smmu driver.. I've been carrying around a local patch to set HUPCF for
+>> >> > > *years* because debugging usermode driver issues is so much harder
+>> >> > > without.  But there are some APIs where faults can be caused by the
+>> >> > > user's app on top of the usermode driver.
+>> >> > >
+>> >> >
+>> >> > Also, I'll add to that, a big wish of mine is to have stall with the
+>> >> > ability to resume later from a wq context.  That would enable me to
+>> >> > hook in the gpu crash dump handling for faults, which would make
+>> >> > debugging these sorts of issues much easier.  I think I posted a
+>> >> > prototype of this quite some time back, which would schedule a worker
+>> >> > on the first fault (since there are cases where you see 1000's of
+>> >> > faults at once), which grabbed some information about the currently
+>> >> > executing submit and some gpu registers to indicate *where* in the
+>> >> > submit (a single submit could have 100's or 1000's of draws), and then
+>> >> > resumed the iommu cb.
+>> >> >
+>> >> > (This would ofc eventually be useful for svm type things.. I expect
+>> >> > we'll eventually care about that too.)
+>> >>
+>> >> Rob is right about HUPCF. Due to the parallel nature of the command
+>> >> processor
+>> >> there is always a very good chance that a CP access is somewhere in
+>> >> the bus so
+>> >> any pagefault is usually a death sentence. The GPU context bank would
+>> >> always
+>> >> want HUPCF set to 1.
+>> >
+>> > So this sounds like an erratum to me, and I'm happy to set HUPCF if we
+>> > detect the broken implementation. However, it will need an entry in
+>> > Documentation/arm64/silicon-errata.rst and a decent comment in the
+>> > driver
+>> > to explain what we're doing and why.
+>> >
+>> 
+>> AFAIK there is no erratum documented internally for this behaviour and
+>> this
+>> exists from MSM8996 SoC time and errata usually don't survive this 
+>> long
+>> across generation of SoCs and there is no point for us in disguising 
+>> it.
 > 
-> Convert the i.MX thermal binding to DT schema format using json-schema
+> possibly longer, qcom_iommu sets CFCFG..
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V2:
-> 	- remove unnecessary property in compatible;
-> 	- add detail description for interrupts;
-> 	- add description for each item of nvmem-cells;
-> 	- add more detail for "fsl,tempmon" description.
 
-[...]
+Oh right, I was still in college when those SoCs were released ;)
 
-> +title: NXP i.MX Thermal Binding
-> +
-> +maintainers:
-> +  - Shawn Guo <shawn.guo@linaro.org>
-> +  - Anson Huang <Anson.Huang@nxp.com>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - fsl,imx6q-tempmon
-> +      - fsl,imx6sx-tempmon
-> +      - fsl,imx7d-tempmon
-> +
-> +  interrupts:
-> +    description: |
-> +      The interrupt output of the controller, i.MX6Q has IRQ_HIGH which
-> +      will be triggered when temperature is higher than high threshold,
-> +      i.MX6SX and i.MX7S/D have two more IRQs than i.MX6Q, one is
-> IRQ_LOW
-> +      and the other is IRQ_PANIC, when temperature is lower than low
-> +      threshold, IRQ_LOW will be triggered, when temperature is higher
-> +      than panic threshold, IRQ_PANIC will be triggered, and system can
-> +      be configured to auto reboot by SRC module for IRQ_PANIC. IRQ_HIGH,
-> +      IRQ_LOW and IRQ_PANIC share same interrupt output of controller.
-> +    maxItems: 1
-> +
-> +  nvmem-cells:
-> +    items:
-> +      - description: Phandle to the calibration data provided by ocotp
-> +      - description: Phandle to the temperature grade provided by ocotp
-> +
-> +  nvmem-cell-names:
-> +    items:
-> +      - const: calib
-> +      - const: temp_grade
-> +
-> +  fsl,tempmon:
-> +    $ref: '/schemas/types.yaml#/definitions/phandle'
-> +    description: Phandle to the temperature sensor register map node.
+>> Is it OK if we clearly mention it as the "design limitation" or some
+>> other
+>> term which we can agree upon along with the description which Rob and
+>> Jordan
+>> provided for setting HUPCF in the driver when we add the set_hupcf
+>> callback?
+> 
+> I'm not too picky on what we call it, but afaict it has been this way
+> since the beginning of time, rather than specific to a certain SoC or
+> generation of SoCs.  So it doesn't seem like the hw designers consider
+> it a bug.
+> 
+> (I'm not sure what the expected behavior is.. nor if any other SMMU
+> implementation encounters this sort of situation..)
+> 
 
-This still looks vauge.
-How about " Phandle to anatop system controller node"?
+Yes, that was my point as well that its probably not counted as a bug
+by the hw designers. So I'm going to post setting HUPCF on QCOM
+implementation with clear comments based on yours and Jordan's 
+description
+of this problem, but I wanted to have a way to set this only for GPU 
+context
+bank and not GMU as Jordan mentioned earlier that GMU doesnt need HUPCF 
+set.
+I was checking as to how do we map cb to device, if it was possible then 
+we can have
+a compatibility thing like we did for identity mapping. Any ideas Robin?
 
-Otherwise, you can add my tag:
-Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+Thanks,
+Sai
 
-Regards
-Aisheng
-
-> +
-> +  fsl,tempmon-data:
-> +    $ref: '/schemas/types.yaml#/definitions/phandle'
-> +    description: |
-> +      Deprecated property, phandle pointer to fuse controller that contains
-> +      TEMPMON calibration data, e.g. OCOTP on imx6q. The details about
-> +      calibration data can be found in SoC Reference Manual.
-> +    deprecated: true
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - interrupts
-> +  - fsl,tempmon
-> +  - nvmem-cells
-> +  - nvmem-cell-names
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx6sx-clock.h>
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +
-> +    efuse@21bc000 {
-> +         #address-cells = <1>;
-> +         #size-cells = <1>;
-> +         compatible = "fsl,imx6sx-ocotp", "syscon";
-> +         reg = <0x021bc000 0x4000>;
-> +         clocks = <&clks IMX6SX_CLK_OCOTP>;
-> +
-> +         tempmon_calib: calib@38 {
-> +             reg = <0x38 4>;
-> +         };
-> +
-> +         tempmon_temp_grade: temp-grade@20 {
-> +             reg = <0x20 4>;
-> +         };
-> +    };
-> +
-> +    anatop@20c8000 {
-> +        compatible = "fsl,imx6q-anatop", "syscon", "simple-mfd";
-> +        reg = <0x020c8000 0x1000>;
-> +        interrupts = <0 49 IRQ_TYPE_LEVEL_HIGH>,
-> +                     <0 54 IRQ_TYPE_LEVEL_HIGH>,
-> +                     <0 127 IRQ_TYPE_LEVEL_HIGH>;
-> +
-> +        tempmon {
-> +             compatible = "fsl,imx6sx-tempmon";
-> +             interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-> +             fsl,tempmon = <&anatop>;
-> +             nvmem-cells = <&tempmon_calib>,
-> <&tempmon_temp_grade>;
-> +             nvmem-cell-names = "calib", "temp_grade";
-> +             clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
-> +        };
-> +    };
-> --
-> 2.7.4
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
