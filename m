@@ -2,69 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B1B01DAB38
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 09:01:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BF091DAB8B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 09:09:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0couDBYkZOovPkpRE8qXqFmfkPJCLXkdGIHIxNMWWhE=; b=u0VLiILhzsFmR2
-	uqy5RMXNxk9J8aFeChxUsBISEWq+ySxq1reLX9ixmmE2iqYjGgRncyccCbcc/dnlKO7OU+5Vz6bdG
-	R2HyFbz/2U6rj2NRVwpXURhYohUTMyvMv4401zOkXtj3M/HikhiJop8MOwaCxR3bFW3cYF2Nbjkvb
-	zccJCFgpCzlMG/05bfdDoiEcn+Au7dlYk5Bu1Gcqd9kF+K0VIxKcBCQPn0TQbI9zJjY29sBRmfH4j
-	MRblxNbFF9mghA8YasWjRwkpycpN3vYOsU2smTScQn8tEh8SQMZ4+2t0WhaQkbeTlbolarw1m9Dn2
-	GdUryfQ2z70vKCWEUCdg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vnAmS9gmon+j0Et6UTaFe9Wa0f0jlbLgcYPN0cnTcn0=; b=EsiRJcmUaAglgBg1xh9brxVrq
+	hl+0XzFEEsRkVm4od74BKBUcfXEIyk0CfG/ugTT3LrzSvG31D1qs9HLY/nJT1KAXOvNGrM7TcKmte
+	U5F0TVuY13RO+NpDmvGZSWbQtZ5orJoJbpQHaLPbBmuhS/QydTT/o/ZbfZlDN8sEyiJNt21fcyVyk
+	Er9HrnzSOb5fwqR54bc2rvc0E6MrKk0HHxvHUHITpgRVmyefAWzGbcvLxTqOGC66aVxlLXbP0EQML
+	sSMacTD1IutXqF6ph/avakZocZYKv2dS7HsdVFy1USeyPhSEb2tCZrpDeWwAyblgdh/dd17CIqJbB
+	srTkb3sGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbIj6-0006TW-B1; Wed, 20 May 2020 07:01:16 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::9])
+	id 1jbIqa-0001pr-7I; Wed, 20 May 2020 07:09:00 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbIiw-0006Sf-3q
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 07:01:08 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589958064;
- s=strato-dkim-0002; d=chronox.de;
- h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=ZXbdSR51vsexYPQyO6+XHaWV+/YRvrsTI2dhYbAFkWE=;
- b=kSiQO8lco+6O8JInmIR1847diWn3w8daT+EijRodtmDgkYlPfDJfj2RiZ/gaY5LBHc
- gl17jXe1ojHO0nbwgh5FccxYqFx5GAd4D9VNnAKiLzBnXeNkDeEdixsB2AiUyvoDZJ2/
- vPdoyXNNWewZd153Kp01rq1qcoD3O36kQBsSgYOI0lgj+P7gbN+bQJhTjic7Z7jQ3lTS
- rlmjqCB2ZfjOqutiSGNwK+c5qr8lG6tx3IVmoDngFJXGMtQ8Z+Ne3J38tRTSdsUeIi8z
- hYw7fgSlqqF7MxOfA0vMHJ9JYvVkDPc6YqV5etzMgv7gygTAi8EH11lAwyop3VOJ7UIs
- ZfiA==
-X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPbI/Sc5g=="
-X-RZG-CLASS-ID: mo00
-Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.7.0 DYNA|AUTH)
- with ESMTPSA id k09005w4K7143HY
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
- (Client did not present a certificate);
- Wed, 20 May 2020 09:01:04 +0200 (CEST)
-From: Stephan Mueller <smueller@chronox.de>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [RFC/RFT PATCH 0/2] crypto: add CTS output IVs for arm64 and
- testmgr
-Date: Wed, 20 May 2020 09:01:03 +0200
-Message-ID: <2010567.jSmZeKYv2B@tauon.chronox.de>
-In-Reply-To: <CAMj1kXF=Duh1AsAQy+aLWMcJPQ4RFL5p9-Mnmn-XAiCkzyGFbg@mail.gmail.com>
-References: <20200519190211.76855-1-ardb@kernel.org>
- <16394356.0UTfFWEGjO@tauon.chronox.de>
- <CAMj1kXF=Duh1AsAQy+aLWMcJPQ4RFL5p9-Mnmn-XAiCkzyGFbg@mail.gmail.com>
+ id 1jbIqS-0001pN-Kx
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 07:08:54 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04K78KmK038619;
+ Wed, 20 May 2020 02:08:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1589958500;
+ bh=qPYNXoOF/fwYqVeXWD0Z1Ftmw4G3+HC0g4koQ1Q19+I=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=uvQZgSjwYJ6NZM9evXUEt64o7V4Gnua8e9KJcUNYHxHtP7H6DIBGRNSyPlnsnzeAr
+ 94nPzRsLH3k25j9VZgNWpXDdaaW0zx0JdHdTPYA2hTosLfawqRjRdkelf3bEX5dK4/
+ 8oPDaxdgxuzVMHbWkg9GqIl9RXrzIhRikgDlhrmQ=
+Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04K78Kwm102923;
+ Wed, 20 May 2020 02:08:20 -0500
+Received: from DLEE114.ent.ti.com (157.170.170.25) by DLEE108.ent.ti.com
+ (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 20
+ May 2020 02:08:20 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE114.ent.ti.com
+ (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Wed, 20 May 2020 02:08:20 -0500
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04K78Iet050567;
+ Wed, 20 May 2020 02:08:19 -0500
+Subject: Re: [PATCH] ARM: OMAP2+: remove unneeded variable "errata" in
+ configure_dma_errata()
+To: Jason Yan <yanaijie@huawei.com>, Russell King - ARM Linux admin
+ <linux@armlinux.org.uk>
+References: <20200506061900.19832-1-yanaijie@huawei.com>
+ <20200506082941.GA1559@shell.armlinux.org.uk>
+ <c24dfb33-bbce-732e-c242-f4f4e6a1e04f@huawei.com>
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+X-Pep-Version: 2.0
+Message-ID: <9da499dc-2450-5f4e-e108-9a8565a10a77@ti.com>
+Date: Wed, 20 May 2020 10:08:54 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <c24dfb33-bbce-732e-c242-f4f4e6a1e04f@huawei.com>
+Content-Type: multipart/mixed; boundary="------------5C2E3DBE93CABD1562BBD020"
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_000106_748556_4333F719 
-X-CRM114-Status: GOOD (  32.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200520_000852_830463_C7157CF0 
+X-CRM114-Status: GOOD (  12.42  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:9 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -72,6 +84,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,174 +96,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eric Biggers <ebiggers@kernel.org>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: tony@atomide.com, linux-omap@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 20. Mai 2020, 08:54:10 CEST schrieb Ard Biesheuvel:
-
-Hi Ard,
-
-> On Wed, 20 May 2020 at 08:47, Stephan Mueller <smueller@chronox.de> wrote:
-> > Am Mittwoch, 20. Mai 2020, 08:40:57 CEST schrieb Ard Biesheuvel:
-> > 
-> > Hi Ard,
-> > 
-> > > On Wed, 20 May 2020 at 08:03, Stephan Mueller <smueller@chronox.de> 
-wrote:
-> > > > Am Dienstag, 19. Mai 2020, 21:02:09 CEST schrieb Ard Biesheuvel:
-> > > > 
-> > > > Hi Ard,
-> > > > 
-> > > > > Stephan reports that the arm64 implementation of cts(cbc(aes))
-> > > > > deviates
-> > > > > from the generic implementation in what it returns as the output IV.
-> > > > > So
-> > > > > fix this, and add some test vectors to catch other non-compliant
-> > > > > implementations.
-> > > > > 
-> > > > > Stephan, could you provide a reference for the NIST validation tool
-> > > > > and
-> > > > > how it flags this behaviour as non-compliant? Thanks.
-> > > > 
-> > > > The test definition that identified the inconsistent behavior is
-> > > > specified
-> > > > with [1]. Note, this testing is intended to become an RFC standard.
-> > > 
-> > > Are you referring to the line
-> > > 
-> > > CT[j] = AES_CBC_CS_ENCRYPT(Key[i], PT[j])
-> > > 
-> > > where the CTS transform is invoked without an IV altogether?
-> > 
-> > Precisely.
-> > 
-> > > That
-> > > simply seems like a bug to me. In an abstract specification like this,
-> > > it would be insane for pseudocode functions to be stateful objects,
-> > > and there is nothing in the pseudocode that explicitly captures the
-> > > 'output IV' of that function call.
-> > 
-> > I think the description may be updated by simply refer to IV[j-1]. Then
-> > you
-> > would not have a stateful operation, but you rest on the IV of the
-> > previous
-> > operation.
-> 
-> But that value is not the value you are using now, right? I suspect
-> that the line
-> 
-> IV[i+1] = MSB(CT[j], IV.length)
-
-Yes, such a line would be needed.
-> 
-> needs to be duplicated in the inner loop for j, although that would
-> require different versions for CS1/2/3
-
-Correct in the sense to specify exactly what the IV after a cipher operation 
-actually is.
-> 
-> > The state of all block chaining modes we currently have is defined with
-> > the
-> > IV. That is the reason why I mentioned it can be implemented stateless
-> > when I am able to get the IV output from the previous operation.
-> 
-> But it is simply the same as the penultimate block of ciphertext. So
-> you can simply capture it after encrypt, or before decrypt. There is
-> really no need to rely on the CTS transformation to pass it back to
-> you via the buffer that is only specified to provide an input to the
-> CTS transform.
-
-Let me recheck that as I am not fully sure on that one. But if it can be 
-handled that way, it would make life easier.
-> 
-> > > > To facilitate that testing, NIST offers an internet service, the ACVP
-> > > > server, that allows obtaining test vectors and uploading responses.
-> > > > You
-> > > > see the large number of concluded testing with [2]. A particular
-> > > > completion of the CTS testing I finished yesterday is given in [3].
-> > > > That
-> > > > particular testing was also performed on an ARM system with CE where
-> > > > the
-> > > > issue was detected.
-> > > > 
-> > > > I am performing the testing with [4] that has an extension to test the
-> > > > kernel crypto API.
-> > > 
-> > > OK. So given that that neither the CTS spec nor this document makes
-> > > any mention of an output IV or what its value should be, my suggestion
-> > > would be to capture the IV directly from the ciphertext, rather than
-> > > relying on some unspecified behavior to give you the right data. Note
-> > > that we have other implementations of cts(cbc(aes)) in the kernel as
-> > > well (h/w accelerated ones) and if there is no specification that
-> > > defines this behavior, you really shouldn't be relying on it.
-> > 
-> > Agreed, but all I need is the IV from the previous round without relying
-> > on
-> > any state.
-> 
-> So just grab it from the ciphertext of the previous round.
-> 
-> > > That 'specification' invokes AES_CBC_CS_ENCRYPT() twice using a
-> > > different prototype, without any mention whatsoever what the implied
-> > > value of IV[] is if it is missing. This is especially problematic
-> > > given that it seems to cover all of CS1/2/3, and the relation between
-> > > next IV and ciphertext is not even the same between those for inputs
-> > > that are a multiple of the blocksize.
-> > 
-> > I will relay that comment back to the authors for update.
-> 
-> Thanks.
-
-Thank you for your ideas!
-> 
-> > > > [1]
-> > > > https://github.com/usnistgov/ACVP/blob/master/artifacts/draft-celi-acv
-> > > > p-b
-> > > > lock-ciph-00.txt#L366
-> > > > 
-> > > > [2]
-> > > > https://csrc.nist.gov/projects/cryptographic-algorithm-validation-prog
-> > > > ram
-> > > > /
-> > > > validation-search?searchMode=validation&family=1&productType=-1&ipp=2
-> > > > 5
-> > > > 
-> > > > [3]
-> > > > https://csrc.nist.gov/projects/cryptographic-algorithm-validation-prog
-> > > > ram
-> > > > / details?validation=32608
-> > > > 
-> > > > [4] https://github.com/smuellerDD/acvpparser
-> > > > 
-> > > > > Cc: Stephan Mueller <smueller@chronox.de>
-> > > > > 
-> > > > > Ard Biesheuvel (2):
-> > > > >   crypto: arm64/aes - align output IV with generic CBC-CTS driver
-> > > > >   crypto: testmgr - add output IVs for AES-CBC with ciphertext
-> > > > >   stealing
-> > > > >  
-> > > > >  arch/arm64/crypto/aes-modes.S |  2 ++
-> > > > >  crypto/testmgr.h              | 12 ++++++++++++
-> > > > >  2 files changed, 14 insertions(+)
-> > > > 
-> > > > Ciao
-> > > > Stephan
-> > 
-> > Ciao
-> > Stephan
+--------------5C2E3DBE93CABD1562BBD020
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
 
-Ciao
-Stephan
 
+On 06/05/2020 11.43, Jason Yan wrote:
+>=20
+>=20
+> =E5=9C=A8 2020/5/6 16:29, Russell King - ARM Linux admin =E5=86=99=E9=81=
+=93:
+>> On Wed, May 06, 2020 at 02:19:00PM +0800, Jason Yan wrote:
+>>> Fix the following coccicheck warning:
+>>>
+>>> arch/arm/mach-omap2/dma.c:82:10-16: Unneeded variable: "errata". Retu=
+rn
+>>> "0" on line 161
+>>
+>> NAK.=C2=A0 Look closer at what the code is doing, thanks.
+>>
+>> This warning is basically incorrect.
+>>
+>=20
+> OK, the macro SET_DMA_ERRATA is using this variable.
 
+How can a patch from you can be trusted if you did not even try to
+compile-test?
+Please try to _test_ your changes before sending, or add a disclaimer
+that it might not even compile.
+
+Thanks,
+- P=C3=A9ter
+
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
+Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
+--------------5C2E3DBE93CABD1562BBD020
+Content-Type: application/pgp-keys; name="pEpkey.asc"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment; filename="pEpkey.asc"
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQENBFki4nsBCAD3BM+Ogt951JlaDloruEjoZk/Z+/37CjP0fY2mqLhBOzkpx95u
+X1Fquf0KfVk+ZzCd25XGOZEtpZNlXfbxRr2iRWPS5RW2FeLYGvg2TTJCpSr+ugKu
+OOec6KECCUotGbGhpYwBrbarJNEwDcAzPK7UJYa1rhWOmkpZJ1hXF1hUghB84q35
+8DmN4sGLcsIbVdRFZ1tWFh4vGBFV9LsoDZIrnnANb6/XMX78s+tr3RG3GZBaFPl8
+jO5IIv0UIGNUKaYlNVFYthjGCzOqtstHchWuK9eQkR7m1+Vc+ezh1qK0VJydIcjn
+OtoMZZL7RAz13LB9vmcJjbQPnI7dJojz/M7zABEBAAG0JlBldGVyIFVqZmFsdXNp
+IDxwZXRlci51amZhbHVzaUB0aS5jb20+iQFOBBMBCAA4FiEE+dBcpRFvJjZw+uta
+LCayis85LN4FAlki4nsCGwMFCwkIBwIGFQgJCgsCBBYCAwECHgECF4AACgkQLCay
+is85LN4QjggAzxxxXqiWpA3vuj9yrlGLft3BeGKWqF8+RzdeRvshtNdpGeIFf+r5
+AJVR71R1w89Qeb4DGXus7qsKiafdFGG7yxbuhw8a5wUm+ZncBXA+ETn3OyVtl8g8
+r/ZcPX420jClBNTVuL0sSnyqDFDrt5f+uAFOIwsnHdpns174Zu9QhgYxdvdZ+jMh
+Psb745O9EVeNvdfUIRdrVjb4IhJKNIzkb0Tulsz5xeCJReUYpxZU1jzEq3YZqIou
++fi+oS4wlJuSoxKKTmIXtSeEy/weStF1XHMo6vLYqzaK4FyIuclqeuYUYSVy2425
+7TMXugaI+O85AEI6KW8MCcu1NucSfAWUabkBDQRZIuJ7AQgAypKq8iIugpHxWA2c
+Ck6MQdPBT6cOEVK0tjeHaHAVOUPiw9Pq+ssMifdIkDdqXNZ3RLH/X2svYvd8c81C
+egqshfB8nkJ5EKmQc9d7s0EwnYT8OwsoVb3c2WXnsdcKEyu2nHgyeJEUpPpMPyLc
++PWhoREifttab4sOPktepdnUbvrDK/gkjHmiG6+L2owSn637N+Apo3/eQuDajfEu
+kybxK19ReRcp6dbqWSBGSeNB32c/zv1ka37bTMNVUY39Rl+/8lA/utLfrMeACHRO
+FGO1BexMASKUdmlB0v9n4BaJFGrAJYAFJBNHLCDemqkU7gjaiimuHSjwuP0Wk7Ct
+KQJfVQARAQABiQE2BBgBCAAgFiEE+dBcpRFvJjZw+utaLCayis85LN4FAlki4nsC
+GwwACgkQLCayis85LN7kCwgAoy9r3ZQfJNOXO1q/YQfpEELHn0p8LpwliSDUS1xL
+sswyxtZS8LlW8PjlTXuBLu38Vfr0vGav7oyV7TkhnKT3oBOLXanyZqwgyZSKNEGB
+PB4v3Fo7YTzpfSofiwuz03uyfjTxiMGjonxSb+YxM7HBHfzjrOKKlg02fK+lWNZo
+m5lXugeWD7U6JJguNdYfr+U4zYIblelUImcIE+wnR0oLzUEVDIWSpVrl/OqS3Rzo
+mw8wBsHksTHrbgUnKL0SCzYc90BTeKbyjEBnVDr+dlfbxRxkB8h9RMPMdjodvXzS
+Gfsa9V/k4XAsh7iX9EUVBbnmjA61ySxU/w98h96jMuteTg=3D=3D
+=3DeQmw
+-----END PGP PUBLIC KEY BLOCK-----
+
+--------------5C2E3DBE93CABD1562BBD020
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--------------5C2E3DBE93CABD1562BBD020--
+
