@@ -2,175 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FABC1DADA3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 10:37:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00B201DADC1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 10:40:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v2S3eiYESyQsfj6uOH3JjRNtaB+5T2VQiddteTtQn5I=; b=ZlIhdpd+2zDKEX
-	Z8j6bscWhmxagQFLq+VYk8C2BxVBc/06BDQ4BAAod3WCYxYBYOSMQrJWmRnJMXQQBmzHBftg4bTxB
-	wQa0PeyjhjIFTO/tD7ki+mjSlfxXZvGjVjLbpsP2zGUOQvnUFX5t8iPP3gJJFe5YWfemXL5Qi2lLA
-	+ialKdIk1widKsUiqLp9MDwaSVL1ZyM1YZI7rhGyJSvNSVr94bra2wxPCq8xPDoyP2IbczTKfs4r7
-	5AJHqAMy/tnCpx0PnXIrYxWZnVdAT8Xbl2sXP5TGoPYaUWHfyabOa/CBYgvyCTiH6qhbwsHohASEG
-	0x8vRv9JNPNM4NSgrcBw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=E143cN1WRLY6pGX9tHFWbKEy5z73jP2eASgY0CfbTC4=; b=b5EqkNtQnd1SSa4UMQxaRhKjs
+	Amrfhev8BbrfRbMvrtZZnNONak4H3Dt+NRR2BYTMAVhvbDOzl6JXGlW/mMPOlDE4OWe8Akbtv/R0b
+	yQpG+Y02hlQBqAeGfT6yF2TMHMj8eCfTSs6CqWX+E94B7Uhg86Pm/vsEfRw882sZnaiqSO0lbim2H
+	AM/dLIYWASwi1du9GDrdTWA1ftiaICoR6mWZ9RiY9lmVZ8OKrXO6hQ8B+14HxC8+NKj7Ur8S6I1xM
+	uQb9nsddblntP2hMjssOlYNQpKlGNSLpxk+1wSjQrJ1IHNw6eZxRmyD6HLWR9EGdjgJJHRPiiSB4k
+	t9GmEzsAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbKDi-00010Q-DL; Wed, 20 May 2020 08:36:58 +0000
-Received: from mail-eopbgr80082.outbound.protection.outlook.com ([40.107.8.82]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1jbKHP-00045S-P1; Wed, 20 May 2020 08:40:47 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbKDX-0000xc-P4
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 08:36:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ws/K1Mgy2TX5V7i9ckSCSCxHeixYiRo6r8zW/0HhFHU=;
- b=y7/pMyAB52ojAH4b39cu4LiwBOvDMsGSZMhyI9B7JoSWw76KyuTTwse8CWYV1xeiS/ssVFhDERdWY5ThM9fF+PZ74WrysNRWTVzNYJjCE9E2E5v33yOAE6g4D4lUt6YIkN2sGgJow/s64ZEL8tIZf/piKDNdyXNFErDnarcUBo8=
-Received: from AM6PR02CA0026.eurprd02.prod.outlook.com (2603:10a6:20b:6e::39)
- by VI1PR08MB3824.eurprd08.prod.outlook.com (2603:10a6:803:bf::27)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Wed, 20 May
- 2020 08:36:41 +0000
-Received: from AM5EUR03FT050.eop-EUR03.prod.protection.outlook.com
- (2603:10a6:20b:6e:cafe::27) by AM6PR02CA0026.outlook.office365.com
- (2603:10a6:20b:6e::39) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.24 via Frontend
- Transport; Wed, 20 May 2020 08:36:41 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
- dmarc=bestguesspass action=none header.from=arm.com;
-Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
- 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
- client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- AM5EUR03FT050.mail.protection.outlook.com (10.152.17.47) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3021.23 via Frontend Transport; Wed, 20 May 2020 08:36:41 +0000
-Received: ("Tessian outbound 952576a3272a:v57");
- Wed, 20 May 2020 08:36:41 +0000
-X-CheckRecipientChecked: true
-X-CR-MTA-CID: 9fc3f7b4ebb99852
-X-CR-MTA-TID: 64aa7808
-Received: from d2f73aaaa061.1
- by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- 0F56CA48-5342-42C3-83A4-1CE18979C012.1; 
- Wed, 20 May 2020 08:36:35 +0000
-Received: from EUR05-VI1-obe.outbound.protection.outlook.com
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id d2f73aaaa061.1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
- Wed, 20 May 2020 08:36:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=b3lMYYpXzGEj4NytLk/OgoxnA8EqYPE5giL1BmSDhHAlq8enl0Wc7sOT7SMG+R+8RLNk95r9ZuT/YNEsF8GgMWf74OvNfPxujL1oWfixlROZNqqBCJcT6bIVrnUSKfw9hESzBk7vlr885VzZJULM6Im9zJyNHMcBNFLrQUZzTZNWPmedavW4vWGwhFBeotOEw/eWLNKXMlttZJs2WbXZE+nLBOMP+Uf87RgEihq0K7gzF6I66c6IpLl4TQdrYXMLx9kOkXwxFObmzIC6RNhsBZ2HDT3eHl094yNDq2xaSLkgiMI/hGP/My4I5Z6X6/AR2Bw7hrnj9MYq6ZxmBp9MEw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ws/K1Mgy2TX5V7i9ckSCSCxHeixYiRo6r8zW/0HhFHU=;
- b=Z34hHWDVj7dVRB+sRvXaPZY2Gz56/ddzzhEnpL+sKSNgEoGi2bPFAnFKpmSft3yK94FuUy31xJ20uVUXrnv3+ixzyyIMdnIakLQ/9L6dXR5IbkIrO4qHIL7KVP3kmMVDOBG/Dx3TAC3AamtRsTA4/Lx6avAcncKeFjjIjjQEKfcVBfKg4fAHZD+xQMlT0ECBvGvhU3J3uRlD5G/RULqkHkNWzDL81A33IEdNezfnvy9aDddHdSIQwi1CS1LF1OqHlZrlkeHWOVn7yPz1rSgmfqLFOFZtV1H6lp+MuXOzj2h/r+FFw2cM9bfXuNmCs3ulVnlMTBgbkOepw62LFh8M5Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ws/K1Mgy2TX5V7i9ckSCSCxHeixYiRo6r8zW/0HhFHU=;
- b=y7/pMyAB52ojAH4b39cu4LiwBOvDMsGSZMhyI9B7JoSWw76KyuTTwse8CWYV1xeiS/ssVFhDERdWY5ThM9fF+PZ74WrysNRWTVzNYJjCE9E2E5v33yOAE6g4D4lUt6YIkN2sGgJow/s64ZEL8tIZf/piKDNdyXNFErDnarcUBo8=
-Authentication-Results-Original: google.com; dkim=none (message not signed)
- header.d=none;google.com; dmarc=none action=none header.from=arm.com;
-Received: from AM6PR08MB3047.eurprd08.prod.outlook.com (2603:10a6:209:4c::23)
- by AM6PR08MB3975.eurprd08.prod.outlook.com (2603:10a6:20b:a7::22)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Wed, 20 May
- 2020 08:36:34 +0000
-Received: from AM6PR08MB3047.eurprd08.prod.outlook.com
- ([fe80::49fd:6ded:4da7:8862]) by AM6PR08MB3047.eurprd08.prod.outlook.com
- ([fe80::49fd:6ded:4da7:8862%7]) with mapi id 15.20.3021.020; Wed, 20 May 2020
- 08:36:34 +0000
-Date: Wed, 20 May 2020 09:36:32 +0100
-From: Szabolcs Nagy <szabolcs.nagy@arm.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH] ARM: pass -msoft-float to gcc earlier
-Message-ID: <20200520083631.GJ27289@arm.com>
-References: <20200519220923.1601303-1-arnd@arndb.de>
- <CAKwvOdmH6bMJHzxSs2mVN=P5BBYjYrDs13-oq-Qq+S4ykHSYvA@mail.gmail.com>
- <CAKwvOd=EphyUWNOZ59FkrfDvDwHHU2yrXW+KML-w_6mHowK=QA@mail.gmail.com>
-Content-Disposition: inline
-In-Reply-To: <CAKwvOd=EphyUWNOZ59FkrfDvDwHHU2yrXW+KML-w_6mHowK=QA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-ClientProxiedBy: CWLP265CA0333.GBRP265.PROD.OUTLOOK.COM
- (2603:10a6:401:57::33) To AM6PR08MB3047.eurprd08.prod.outlook.com
- (2603:10a6:209:4c::23)
+ id 1jbKHH-00044h-3v
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 08:40:40 +0000
+Received: by mail-ed1-x541.google.com with SMTP id e10so2138015edq.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 May 2020 01:40:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=mb7QfRxby7AgnFGtGNkrt8n1Z+I09eWHoPbIYOvFSUE=;
+ b=HN5WshoEENtUHC//XetSGUywgC89HQlw72WmFsFajL0zjP4iecy9anYCQDmaPm9hix
+ KPOSOkCNCc/L0NW4e3jomLfGoetbPVX82wmYqhfZakf5R3eZS4RSh6M7B9yide9u2vif
+ M2/wFct8hwORZ13KWjh/VOKY/BA8qMkKshiqJuETntg2YBxnxnb6kZxS3d50UPg+kRBh
+ lRypteSzxfVmFELrbz0slgBzdOVEjsZAO6nKJ3eebyNbxmDaNxXk6qkGkB4f2vLUWDjw
+ WhF7ATHumIOcOsWLZVaYmCpAu07w43byyjaC7cW20t/B/2VBMV37wNGI9n4pDCg1kKei
+ yVKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=mb7QfRxby7AgnFGtGNkrt8n1Z+I09eWHoPbIYOvFSUE=;
+ b=uLh1zrJUlMoamTKyWdAmpr8hZ+ZzqaQhl7K9u4up5ZV9CytGeZ4n/CricMqIq2qmXu
+ EKGsNr8+lacs+r7pD2qTvx/O9E6zjEZxZc7qD3tGtPDFONrE7N9zbcAcUFuVHpoDk5vy
+ n0zjZpTj3A1+bGuDeSzEGvfwaMBLBasEVmCJLwCBtFaHX4/yq388iADutBEl7hRwaNi8
+ SjmJ4ubZfex6UCBgipjx115vd4vulLqj2MoJzd4rbfH2gQRhn8ugERMB1S4M0mTin0Jw
+ 4ZvQ9MZemDCv6TSpI0hqMC+Xzsw5A32RMOtYqK0tpg0//+XrrKRA2yv6B0ilkJJk221K
+ EnxQ==
+X-Gm-Message-State: AOAM531mm7cdm37BNW3kGMbrwUIbxrBBxHLjOheg4DVIQLscF9tYi/+A
+ 1ZoKkjUQVjZAXTb54HxIGEY=
+X-Google-Smtp-Source: ABdhPJzG8f0TXlz0Nk/rGokoWRdNIDyW+F+nvg3m8ouKjflMeFxwi9VxHDp+21mYUW9jqy10ZbmoTg==
+X-Received: by 2002:a50:d0d7:: with SMTP id g23mr2455355edf.163.1589964037188; 
+ Wed, 20 May 2020 01:40:37 -0700 (PDT)
+Received: from localhost (pd9e51079.dip0.t-ipconnect.de. [217.229.16.121])
+ by smtp.gmail.com with ESMTPSA id dh15sm1196510edb.35.2020.05.20.01.40.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 20 May 2020 01:40:33 -0700 (PDT)
+Date: Wed, 20 May 2020 10:40:32 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: Mian Yousaf Kaukab <ykaukab@suse.de>
+Subject: Re: [PATCH 2/4] dt-bindings: sram: add documentation for
+ reserved-only flag
+Message-ID: <20200520084032.GA2136208@ulmo>
+References: <20200512144803.24344-1-ykaukab@suse.de>
+ <20200512144803.24344-2-ykaukab@suse.de>
+ <52f099e4-5c03-2141-f049-cd3adeb04c5b@wwwdotorg.org>
+ <20200513104127.GA2309@suse.de>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from arm.com (217.140.106.55) by
- CWLP265CA0333.GBRP265.PROD.OUTLOOK.COM (2603:10a6:401:57::33) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3000.25 via Frontend Transport; Wed, 20 May 2020 08:36:33 +0000
-X-Originating-IP: [217.140.106.55]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: e4f74931-6fd4-46cf-ccaa-08d7fc98eb8a
-X-MS-TrafficTypeDiagnostic: AM6PR08MB3975:|VI1PR08MB3824:
-X-Microsoft-Antispam-PRVS: <VI1PR08MB3824C58BC3E886946AF8628AEDB60@VI1PR08MB3824.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-NoDisclaimer: true
-X-MS-Oob-TLC-OOBClassifiers: OLM:8882;OLM:8882;
-X-Forefront-PRVS: 04097B7F7F
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: K6HCjQj5CZzSICNtK2171Mmpz/2IwckVcbso9x6OFHAIxqkrCl6/8Q4bUqDWgJIGi8G0KejCkAUay8aYiHY6qOkfXz8Zk2d/sc9ACmtl3LRZzDGt+pKKTvylPUL2htybbBBebJHmvCzR0i5HUGrWP01QxRWvmx4aqE3hb+lP5+U6vv14UkDOql8j5IQsf0kxyqt4zaQA5qb3HDt8+LlDnnLW2Q3XB3+paOGqk3+8TO6XAuX5L7w1ZD9IQlIeX8F4rK6QWFRec8OuO3HFKPJQPySFH/33pBkF7ArAt16AVzrjMrPRevpV4YorzItkZu8Y7yvXq5DbHQqdMyJPzBobBZlp1HSiOYCPG6XXzI3WCe2ZmgUUpXTdTkT76659eurn4fVFXnhGdEqI7/wC1vS7fw==
-X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255; CTRY:; LANG:en;
- SCL:1; SRV:; IPV:NLI; SFV:NSPM; H:AM6PR08MB3047.eurprd08.prod.outlook.com;
- PTR:; CAT:NONE; SFTY:;
- SFS:(4636009)(136003)(396003)(366004)(346002)(376002)(39860400002)(5660300002)(478600001)(8886007)(36756003)(6916009)(33656002)(966005)(1076003)(8936002)(53546011)(52116002)(4326008)(7696005)(8676002)(66946007)(66476007)(54906003)(2616005)(186003)(956004)(55016002)(16526019)(316002)(44832011)(2906002)(86362001)(26005)(66556008);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: LAzsBcNpp/hqeZteQRqTD5BXFoaleYX0fMwf8WzOXpm+4aDfjWhgNJaRvHLO0bnFL3u00sLxUtMEQ4H+U427RJOePTKF8rlMoApLAd/NEzMsFsAM3ZodqJI1jmhE56NIM6akE9yqXsJXPv01My10ppbTM3k/mael9HdOWJDOGZa1yjTJM1PCqVDc9pRncWImn2RV348TzQnn1PUMApFaT4s5kKTsGpyx885aATo454NWwR5t4OnIxV5su8onRiyp1+qwVSamAZN6mReZALmyMJ2ZNtExCIelSHRjHTq1QA59WH2NMgW9Y7vnu2uD7WPlgrLGS7fssCVJtRS32bheSYoy5Tr6GJwgoy2owOjc2aROoORH3vua77Nw0bgWUjcYuF81sDXbK/rADRXRxKqpmLzvk+wgZIISsWrCN/vPgF7vtbhIcBIH1JQpWH2jmKRER71FMl1nuZ6gHUXiiT9EN8wtj/bBYUhUbM5xDB9iPH+EPup2h2YZZUiSoVpQIvnW
-X-MS-Exchange-Transport-Forked: True
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR08MB3975
-Original-Authentication-Results: google.com; dkim=none (message not signed)
- header.d=none;google.com; dmarc=none action=none header.from=arm.com;
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT050.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; CTRY:IE; LANG:en; SCL:1; SRV:;
- IPV:CAL; SFV:NSPM; H:64aa7808-outbound-1.mta.getcheckrecipient.com;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; CAT:NONE; SFTY:;
- SFS:(4636009)(396003)(39860400002)(346002)(136003)(376002)(46966005)(478600001)(7696005)(55016002)(966005)(44832011)(16526019)(186003)(8676002)(26005)(1076003)(2616005)(70206006)(53546011)(956004)(33656002)(86362001)(5660300002)(8936002)(316002)(70586007)(36756003)(81166007)(4326008)(356005)(8886007)(82310400002)(336012)(2906002)(82740400003)(6862004)(47076004)(36906005)(54906003);
- DIR:OUT; SFP:1101; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 6c1bda35-88a2-442d-53cd-08d7fc98e720
-X-Forefront-PRVS: 04097B7F7F
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: K42vTz03PVsg3XZGriQC1YvSbooy7ln4Ii3jfReIRjlWmfF86CJ+0Akmf7q+d+FxIW7F+0v/gdKmK1ABHKLbc5ydfZLDl/gBmipPJxLffZDhLmqliFhszcIZm87ZsEpyOouH+P0SLxddwYxf99oRs0Q/n5e8P3ALJbIss+KKjC/MBf+yRPSbdvvdMzpU3bYP+pkbRDZViFsd8SMieb21mGSrT4a0obQEzYCqxx7EjXzfK5fc0PGHnB804ky4ZDcW45bfyncpK2d6TeS4BcIX6IxFXoK4FNPuIgvgJK90Y3Gw3AzgaSABkSrX+Z88UYR1VixCYUjQNOc6q5OCS4u9YNl3gE0AXIRHcbnTmYdysO1eq7I1xLikSxL6bb89CZVw9CBEfVLfXpYwDkdT64v1qbUxyc+5VjbOcyjFcPSYGFhbXanD7ZXWtDB/nFchVQnAp9YXi0qEJD5dr420MMp75K4F1nTnG7iEwLxHAn6eqZc=
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 May 2020 08:36:41.2445 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: e4f74931-6fd4-46cf-ccaa-08d7fc98eb8a
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR08MB3824
+In-Reply-To: <20200513104127.GA2309@suse.de>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_013647_879797_C6F61544 
-X-CRM114-Status: GOOD (  22.96  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200520_014039_156127_6CBEF5EB 
+X-CRM114-Status: GOOD (  23.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.8.82 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.8.82 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -182,102 +102,139 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Linus Walleij <linus.walleij@linaro.org>,
- Russell King <linux@armlinux.org.uk>, LKML <linux-kernel@vger.kernel.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, nd@arm.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, arnd@arndb.de,
+ Stephen Warren <swarren@wwwdotorg.org>, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, jonathanh@nvidia.com, talho@nvidia.com,
+ robh+dt@kernel.org, linux-tegra@vger.kernel.org, robin.murphy@arm.com,
+ afaerber@suse.de, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4166868458441880173=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The 05/19/2020 17:38, Nick Desaulniers wrote:
-> sorry, hit tab/enter too soon...
-> 
-> On Tue, May 19, 2020 at 5:37 PM Nick Desaulniers
-> <ndesaulniers@google.com> wrote:
-> >
-> > On Tue, May 19, 2020 at 3:09 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> > >
-> > > Szabolcs Nagy ran into a kernel build failure with a custom gcc
-> > > toochain that sets -mfpu=auto -mfloat-abi=hard:
-> > >
-> > >  /tmp/ccmNdcdf.s:1898: Error: selected processor does not support `cpsid i' in ARM mode
-> > >
-> > > The problem is that $(call cc-option, -march=armv7-a) fails before the
-> > > kernel overrides the gcc options to also pass -msoft-float.
-> >
-> > The call to `$(call cc-option, -march=armv7-a) is th
-> 
-> The call to `$(call cc-option, -march=armv7-a) is the one that fails or...?
 
-the flag -march=armv7-a is invalid if the float abi
-is hard and no fpu is specified (since gcc-8).
+--===============4166868458441880173==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="EVF5PPMfhYS0aIcm"
+Content-Disposition: inline
 
-either an fpu should be specified or -march=armv7-a+fp
-(my toolchain was configured with the latter and it does
-not work if the kernel overrides it with -march=armv7-a)
 
-because of this cc-option failure the kernel goes on to
-pass nonsense flags everywhere (-march=armv5t) and some
-compilation eventually fails with an asm error.
+--EVF5PPMfhYS0aIcm
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> > >
-> > > Move the option to the beginning the Makefile, before we call
-> >
-> > beginning of the
-> >
-> > > cc-option for the first time.
-> > >
-> > > Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
-> > > Link: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=87302
-> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> >
-> > Moving this looks harmless enough, though it's not clear to me how the
-> > failure you're describing would occur.  I don't see calls to as-instr
-> > in arch/arm/Makefile.  Which object is being built before -msoft-float
-> > is being set?
-> 
-> ... ^
-> 
-> >
-> > > ---
-> > >  arch/arm/Makefile | 4 +++-
-> > >  1 file changed, 3 insertions(+), 1 deletion(-)
-> > >
-> > > diff --git a/arch/arm/Makefile b/arch/arm/Makefile
-> > > index 7d5cd0f85461..e428ea6eb0fa 100644
-> > > --- a/arch/arm/Makefile
-> > > +++ b/arch/arm/Makefile
-> > > @@ -16,6 +16,8 @@ LDFLAGS_vmlinux       += --be8
-> > >  KBUILD_LDFLAGS_MODULE  += --be8
-> > >  endif
-> > >
-> > > +KBUILD_CFLAGS  += -msoft-float
-> > > +
-> > >  ifeq ($(CONFIG_ARM_MODULE_PLTS),y)
-> > >  KBUILD_LDS_MODULE      += $(srctree)/arch/arm/kernel/module.lds
-> > >  endif
-> > > @@ -135,7 +137,7 @@ AFLAGS_ISA  :=$(CFLAGS_ISA)
-> > >  endif
-> > >
-> > >  # Need -Uarm for gcc < 3.x
-> > > -KBUILD_CFLAGS  +=$(CFLAGS_ABI) $(CFLAGS_ISA) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -msoft-float -Uarm
-> > > +KBUILD_CFLAGS  +=$(CFLAGS_ABI) $(CFLAGS_ISA) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -Uarm
-> > >  KBUILD_AFLAGS  +=$(CFLAGS_ABI) $(AFLAGS_ISA) $(arch-y) $(tune-y) -include asm/unified.h -msoft-float
-> > >
-> > >  CHECKFLAGS     += -D__arm__
-> > > --
-> > > 2.26.2
-> > >
-> 
-> -- 
-> Thanks,
-> ~Nick Desaulniers
+On Wed, May 13, 2020 at 12:41:27PM +0200, Mian Yousaf Kaukab wrote:
+> On Tue, May 12, 2020 at 01:45:28PM -0600, Stephen Warren wrote:
+> > On 5/12/20 8:48 AM, Mian Yousaf Kaukab wrote:
+> > > Add documentation for the new optional flag added for SRAM driver.
+> >=20
+> > > diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Docum=
+entation/devicetree/bindings/sram/sram.yaml
+> >=20
+> > > +  reserved-only:
+> > > +    description:
+> > > +      The flag indicating, that only SRAM reserved regions have to b=
+e remapped.
+> > > +      remapping type is selected depending upon no-memory-wc as usua=
+l.
+> > > +    type: boolean
+> >=20
+> > This feels a bit like a SW flag rather than a HW description, so I'm not
+> > sure it's appropriate to put it into DT.
+>=20
+> Reserved regions themselves are software descriptions, no? Then we have '=
+pool'
+> flag which is again a software flag and so on. This flag falls into same
+> category and nothing out of ordinary.
+> >=20
+> > Are there any cases where the SW should map all of the SRAM, i.e. where
+> > we wouldn't expect to set reserved-only? [...]
+>=20
+> Yes, here are a few examples:
+> arch/arm/boot/dts/aspeed-g*.dtsi
 
--- 
+Looking at the implementation of the sole user of this, which is in
+drivers/fsi/fsi-master-ast-cf.c, it looks like this really should've
+specified a partition because the driver basically goes on to allocate
+a fixed 4 KiB region of memory anyway.
+
+> arch/arm/boot/dts/at91*.dtsi
+
+While these define SRAM nodes, I don't see them referenced anywhere.
+
+> arch/arm/boot/dts/bcm7445.dtsi
+> Then arch/arm/boot/dts/dra7.dtsi is an example where we should map everyt=
+hing
+> except the reserved region.
+
+The driver currently maps everything, so if this relies on this
+particular reserved region not being mapped then that's already broken
+anyway.
+
+> > [...] I'd expect reserved-only to be
+> > the default, and perhaps only, mode of operation for the SRAM driver.
+>=20
+> It will break compatibility with existing dtbs.
+
+Yes, that's a bit unfortunate. I think this driver may suffer from a
+slightly ambiguous device tree binding and then people just trying to
+fit it to their use-cases.
+
+However, I think we could preserve DTB backwards-compatibility while at
+the same time correcting course and establish some sort of consistency.
+
+Looking at the examples that you've provided and others, there are two
+classes of users: users that don't specify any partitions either use all
+of the available SRAM exclusively or manually allocate some part of it,
+whereas users that have specified partitions all seem to use only the
+defined partitions.
+
+Given that, I think what we could do is check if there are any child
+nodes and if not, keep the existing behaviour of mapping the whole SRAM
+area. For cases where child nodes exist we could decide to go with the
+default that Stephen suggested and only map regions for which a child
+node has been defined.
+
+This should allow both categories of users to work the way that they
+were probably expected to work.
+
+Any thoughts?
+
+Thierry
+
+--EVF5PPMfhYS0aIcm
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl7E7PsACgkQ3SOs138+
+s6HYyxAAkPk+vwNmlH7ETZWk+tDpu9p1jU53hBHo7thEwHCr+xFIaNlJFGmXWpOO
+62hcSRW2fLx8upTQ5D9z+/lB5q9G6Uu1vSWl3fLqDx7EkUBTo5V9llrbjUUmDNXJ
+rkMC3yYYfSPeXcQhkh+INMS3njREgduS3mJff6MbG6P6KTYd/sM67J5QxAX1CD0u
+rYH1mTanQW0CVRwY99yl1vIcYHL+PFNTDkQLt8zG2tvqTWYlHCbkNhHG2cQLFpoI
+wAwxgmnsD3ebq3/5UEH/1ba0x9XaRwMtzj/hNnG1EhqlQlpywfbOofy/xTz4LCgv
+Z1bBt6w2wvtAW665KtBUHPFVVqLdTmEiyAMyDfTcHeDUPuv6KjXTqZcFjTQ6cK/E
+MT0vPgePDZZ1CGqWa4vb6vWpkEvkAiXz5Bj3tZLHVyuKKtzLSjaneURKx8xYe6IH
+vrzQamDlLlooFHHM8vOLTKU0nA3vXgRN9bQZrrn4fZBMa+vUyM69xHuQ+/4l4VJg
+Aa0U0edhlzaX3067VcWJhZc+1VZ4OSLpH/JKEQfl3dPPM04e+yXtYelwpqaUWPwh
+tZ+vY6oS6MefZiXFvsskxbbHwhO71Sq7SCWdNrKE2qw5zFMx9LWskGFXGJehUIoT
+l54CPDD33NfU2N3T0j0Y6Pr5kPjKnaZq8NJQxMYBr3oZJZ/ix7s=
+=r/Os
+-----END PGP SIGNATURE-----
+
+--EVF5PPMfhYS0aIcm--
+
+
+--===============4166868458441880173==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4166868458441880173==--
+
