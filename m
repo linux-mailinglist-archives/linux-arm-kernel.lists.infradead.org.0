@@ -2,85 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 159541DC1EC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 00:13:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38F051DC211
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 00:31:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ckbBat5X7nmprUxs9Tn351IplXM++hPYC1hqc0c91Mg=; b=dSn0k7YgsDMlt/
-	sg9c7xChrr3S1NMBjForF+9axsk5vv3RPUAIPbBpgKjbuB75EgPpS8l3277P7IRYNZ5ClhTiV+YQt
-	lsSmUuUHswFtp6ZbU96U2FK7OfZWR7iQcB24lAT/77d2U1eGjCgOlIDwjXcOHsGdDt+MvgML0SAxf
-	IhcglZibr3ZAyS3XDUFiNWJyYvny0zJz2UOJ0mwZ4+K00kHc6Yw5pstJShMJovzV5BIzS7YfiLV6F
-	ebov3icj0M2PLWXsfJxRAHV+IYyuAqoB7aHhKdULzUeZipx45sVkc7kSvznUDzgxqdZeB4cztAjZZ
-	pct9xxAYVKXa8CXhZgkw==;
+	List-Owner; bh=xmCCdRwNAHJ8NL9OVOgKGlLa7GID1CEtZoARONroDpY=; b=Xo0E/dQZEcxHd4
+	fDrgWGHhhgWlfh9XjiQw6qioAQGvoQFCkOfsWLeDYAoqMiWFFq6lX81IH3JutyhhYWpUDXKMKKZGV
+	dYQPMEKeSb4BpBLRRv5+aQ0ZRJzw5PzZt7jYPkYoHo5QvrVK0iIE/EMGI9fHaaTowuUqrppttedpl
+	y8zdIA9sdUb23MTbexwYp8poT1fICt4tpycRU4E2DRkYsLlETAJDQJyezSmpYjkPwKms7PXde/brJ
+	fUHxjW6MEjM/GBLnLtz5SzSFC2Fewl7C4MCt1DxevnpkkDVyyfVvw2lkksSEcEucrRqZ+h3XghGq+
+	x89zJTjniAHC4eMXpxgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbWxX-0000n5-Fi; Wed, 20 May 2020 22:13:07 +0000
-Received: from mail-io1-f67.google.com ([209.85.166.67])
+	id 1jbXFA-00052x-PJ; Wed, 20 May 2020 22:31:20 +0000
+Received: from mailoutvs62.siol.net ([185.57.226.253] helo=mail.siol.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbWxJ-0000mG-4H
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 22:12:54 +0000
-Received: by mail-io1-f67.google.com with SMTP id c16so5140211iol.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 15:12:51 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=/XCwGl3CcxYLRdci/jrQqyQhX1vNzc/WTIXwP/3z2ks=;
- b=GT6h7kNEgFt6MeVhK7Qn8ixaXtMexXFwTM/ePVJPYdLiIry/QYIdxscFLyXgQQEWFK
- Mirgk9vtWmQibWbHQU0FvtcO0+pU3WHlLXKA8eEiXksM4t1tMP5+4JiFdyeVOBwYi1hG
- i6cKzi+vn6/4tWz0VFe5nlzQS3pcrlODPvAUM2DqTqnpMXU0r0pe6lm8Vl2jsu8NOoHi
- B2D59HAJuB+kR6ZiX+S8qBx3l+eEG93yy5gjYVPvrW6ovcqe9nlrJxY/SAaUpJ07sOXF
- hs3+7BoAxvaOi71Ex9A1qrZojZYOdpfLHiUoC9uXkNyXnzsYfolWjbfKzTmC8L+YafAt
- 7b1Q==
-X-Gm-Message-State: AOAM530bcqISO4+LpNkhF8SrmUVw4hljjd90xC+U6+IVIVBFEuB15d9w
- xVacb3jva9N6Y2TourWOVg==
-X-Google-Smtp-Source: ABdhPJwGQuSwEVeMo+S0Yp+avSAC0hl08uGB13i+IbavwQBYqhKPmzBjVCg7+0XKmioQ+tYLET3S3w==
-X-Received: by 2002:a6b:3708:: with SMTP id e8mr4834928ioa.99.1590012771097;
- Wed, 20 May 2020 15:12:51 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id e13sm1891621ils.27.2020.05.20.15.12.50
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 15:12:50 -0700 (PDT)
-Received: (nullmailer pid 692806 invoked by uid 1000);
- Wed, 20 May 2020 22:12:49 -0000
-Date: Wed, 20 May 2020 16:12:49 -0600
-From: Rob Herring <robh@kernel.org>
-To: Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [PATCH v4 14/14] MAINTAINERS: Add Kishon Vijay Abraham I for TI
- J721E SoC PCIe
-Message-ID: <20200520221249.GA692726@bogus>
-References: <20200506151429.12255-1-kishon@ti.com>
- <20200506151429.12255-15-kishon@ti.com>
+ id 1jbXF0-000528-Lp
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 22:31:12 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTP id 5F0AD521CA5;
+ Thu, 21 May 2020 00:30:58 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
+Received: from mail.siol.net ([127.0.0.1])
+ by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
+ port 10032)
+ with ESMTP id WVPCA-mzMnE8; Thu, 21 May 2020 00:30:58 +0200 (CEST)
+Received: from mail.siol.net (localhost [127.0.0.1])
+ by mail.siol.net (Postfix) with ESMTPS id E1B7A521CA2;
+ Thu, 21 May 2020 00:30:57 +0200 (CEST)
+Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
+ [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
+ by mail.siol.net (Postfix) with ESMTPA id 6D5FC521C9C;
+ Thu, 21 May 2020 00:30:57 +0200 (CEST)
+From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
+To: mripard@kernel.org, paul.kocialkowski@bootlin.com,
+ Nicolas Dufresne <nicolas@ndufresne.ca>
+Subject: Re: [PATCH] media: cedrus: Add support for VP8 decoding
+Date: Thu, 21 May 2020 00:30:56 +0200
+Message-ID: <2875977.BS6FNRR2HQ@jernej-laptop>
+In-Reply-To: <ee0aa12fdf1655c4e563b8fc9753a5ab5e52f4cf.camel@ndufresne.ca>
+References: <20200520210129.132816-1-jernej.skrabec@siol.net>
+ <ee0aa12fdf1655c4e563b8fc9753a5ab5e52f4cf.camel@ndufresne.ca>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200506151429.12255-15-kishon@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_151253_166755_A2DE902F 
-X-CRM114-Status: GOOD (  10.11  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200520_153110_868478_7F9E8CCC 
+X-CRM114-Status: GOOD (  16.45  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.67 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [185.57.226.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,28 +71,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Tom Joseph <tjoseph@cadence.com>,
- Rob Herring <robh+dt@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, wens@csie.org, hverkuil-cisco@xs4all.nl,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 6 May 2020 20:44:29 +0530, Kishon Vijay Abraham I wrote:
-> Add Kishon Vijay Abraham I as MAINTAINER for TI J721E SoC PCIe.
-> 
-> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
-> ---
->  MAINTAINERS | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
+Dne sreda, 20. maj 2020 ob 23:43:40 CEST je Nicolas Dufresne napisal(a):
+> Le mercredi 20 mai 2020 =E0 23:01 +0200, Jernej Skrabec a =E9crit :
+> > VP8 in Cedrus shares same engine as H264.
+> > =
 
-Acked-by: Rob Herring <robh@kernel.org>
+> > Note that it seems necessary to call bitstream parsing functions,
+> > to parse frame header, otherwise decoded image is garbage. This is
+> > contrary to what is driver supposed to do. However, values are not
+> > really used, so this might be acceptable. It's possible that bitstream
+> =
+
+> Have you verified that all values passed through controls are not used
+> ? To remain a stateless driver, there is no requirement for parsed data
+> to be used, the only requirement is that the reference are used.
+> Otherwise doing parallel decoding of two stream of different stream
+> would be broken. Have you verified that parallel decoding is working as
+> expected ?
+
+I'm not sure if you understand what I meant. Although userspace app parses =
+
+frame header and fills all data in VP8 control, driver parses frame header =
+
+again, using HW bitstream parsing functionality in cedrus_read_header(). =
+
+Without that second header parsing in HW, decoded image is garbage. Note th=
+at =
+
+cedrus_read_header() discards all parsed values and relies on those provide=
+d =
+
+in controls.
+
+This parsing doesn't cause any problems with parallel decoding or anything. =
+
+It's done during frame decoding job, so it doesn't affect any state. It's j=
+ust =
+
+that we shouldn't need to parse header in driver because all data is alread=
+y =
+
+provided in controls. It seems that Cedrus core was never tested without th=
+at =
+
+HW frame header parsing. I found out that HEVC and H264 frames can sometime=
+s =
+
+also be wrongly decoded if no bitstream parsing function is triggered in HW =
+
+before final decoding.
+
+I spend a lot of time trying to avoid that header parsing, but I couldn't f=
+ind =
+
+any way around it.
+
+In another words, Cedrus VPU provides two functionalities - HW bitstream =
+
+parsing (to speed up header parsing) and video decoding. One would thought =
+
+that video decoding can be used independently, if all data from header is =
+
+already known, but it can't be.
+
+Best regards,
+Jernej
+
+> =
+
+> > parsing functions set some internal VPU state, which is later necessary
+> > for proper decoding. Biggest suspect is "VP8 probs update" trigger.
+> > =
+
+> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> > ---
+> > =
+
+> >  drivers/staging/media/sunxi/cedrus/Makefile   |   3 +-
+> >  drivers/staging/media/sunxi/cedrus/cedrus.c   |   8 +
+> >  drivers/staging/media/sunxi/cedrus/cedrus.h   |  15 +
+> >  .../staging/media/sunxi/cedrus/cedrus_dec.c   |   5 +
+> >  .../staging/media/sunxi/cedrus/cedrus_hw.c    |   1 +
+> >  .../staging/media/sunxi/cedrus/cedrus_regs.h  |  80 ++
+> >  .../staging/media/sunxi/cedrus/cedrus_video.c |   9 +
+> >  .../staging/media/sunxi/cedrus/cedrus_vp8.c   | 699 ++++++++++++++++++
+> >  8 files changed, 819 insertions(+), 1 deletion(-)
+> >  create mode 100644 drivers/staging/media/sunxi/cedrus/cedrus_vp8.c
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
