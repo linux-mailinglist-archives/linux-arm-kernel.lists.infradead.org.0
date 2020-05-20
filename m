@@ -2,69 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C72791DAAF5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 08:47:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE5E51DAB06
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 08:48:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=awVV//4+Fp3Sep1BMSTwdtyWGxhWbIYMjpNbw7Co1tE=; b=nYCGao5zBKbfFY
-	FNjMSJQ4ZQWtv3I+M1lYBecqnXHDpy5ySA1nQIld82btEesye/Zq06e0BcWHYvAHDDlrI5Qo8Jm6a
-	3nJ9K0iDausLatEXAYfFCY0L2Q5BCLP3LGYO0YW7UStdJJ9IQMpOA3l3y25hmUrseS8mhOiu/fm7s
-	c2kZQ19TsR8VaqCeV5wnt7Gy1VY5+lZVdVQre5qL70fd23Lz6bdC4atC3WPgVSj2/3SThvnvPEYGX
-	hf/1oxslAuGYO4DZ3G2ET/2iA0ZRv+tsgWBbP41pdXGiSVt59anpuxzWaG+m1TRnXFOPfFc9qjNbP
-	cLbsWW3MYVvc8AnUNV0w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=l+PHCba7+ySlF4o0DJzMfUQy27a65aMQPFenlKgUQ1s=; b=qqe
+	6vu3DcrdvBgV9hoKY7KRASPqumvRWe1ea7TtjkvoldgsVoSfm5gYWcmkCXiCVGRodpjp6Zhw/rZFY
+	svtlH8K/+8vfTEGyWmBcyT5bPiUoFZ0bDBY93wZuTMIspv5UtegOH3NCwFnzZAZi+owxI5r6rrmzy
+	MjsgHjl0v6+43kdlryZeKS2pmJVJ130Z+yr+Xj9eI/Buy4Vn1VyQVS9XKeA+cn52DxQ+PBr1k5foC
+	UeH9IFgylUzHpK3zEgiAn2AMk01W36pZ2g8bnoI2zwtfFWTAOnbLzhsnEI5NFFdg2reL/g1oS++1l
+	u6MAicMbSrwdZf9SD82KJCXjLkyBm1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbIW8-0003aE-BK; Wed, 20 May 2020 06:47:52 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::6])
+	id 1jbIWo-0003rb-I6; Wed, 20 May 2020 06:48:34 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbIVw-0003Wv-3c
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 06:47:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589957258;
- s=strato-dkim-0002; d=chronox.de;
- h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=7Bptyy9dxCdFVwdRa4JBhNQsRKOJ/eD+RxAuL10DQGo=;
- b=U3Z/+3sHPB5mo9fbCKj8RlSOjJUbVCElkerVnzC64+zMaCo8mWTjhcT9JU1co8jcZn
- EBLZGnt1AEW6nLORNqtXaHtFKkMowiO9k2VDR7ohpUSxh8AIDeQ/KThbr/Qz2/wr3qf2
- G/MCEf2vKiBRSOkZyNDG3KsOLi9iw3md5cGi4wqJ0bRvNKxk9Kbch+fE2ioOWiL2bWUT
- nCXYVswL5lpwkBqZZcnyhJmD8eOYWdq+CIWsmUxGh3VkFb4SiwZh9AAoPNvgLMwQuzg8
- +owIlClohCsZJ5JtXWK+WsQ4z7O6XX9mhlJbX01A2Yream3UAgjxLdLNpsDZlUxDnusE
- I29A==
-X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPbI/Sc5g=="
-X-RZG-CLASS-ID: mo00
-Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.7.0 DYNA|AUTH)
- with ESMTPSA id k09005w4K6lc3Bz
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
- (Client did not present a certificate);
- Wed, 20 May 2020 08:47:38 +0200 (CEST)
-From: Stephan Mueller <smueller@chronox.de>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [RFC/RFT PATCH 0/2] crypto: add CTS output IVs for arm64 and
- testmgr
-Date: Wed, 20 May 2020 08:47:37 +0200
-Message-ID: <16394356.0UTfFWEGjO@tauon.chronox.de>
-In-Reply-To: <CAMj1kXFDcHncnb=aUkWnX22Co2r4g3DSM+wug0FQ231Gv7J01Q@mail.gmail.com>
-References: <20200519190211.76855-1-ardb@kernel.org>
- <16565072.6IxHkjxkAd@tauon.chronox.de>
- <CAMj1kXFDcHncnb=aUkWnX22Co2r4g3DSM+wug0FQ231Gv7J01Q@mail.gmail.com>
-MIME-Version: 1.0
+ id 1jbIWf-0003qX-Oo; Wed, 20 May 2020 06:48:26 +0000
+Received: by mail-ej1-x643.google.com with SMTP id se13so2027412ejb.9;
+ Tue, 19 May 2020 23:48:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=tTeswJdRafCs9rbWrwY8onvsdFrv8hfLm2G+qfpi0DI=;
+ b=nGd6b7Dmq5fujZcS3MoQfhIQcFbakcZHSlnkHkKOonOhJzlAIQ2EqBFSR3kA9jz6KB
+ bzDKVDex2C2sJ8Mtvle5+hYt82nW1O6fR6uHFL7igg005rcmVQWhZX9wOwhhw40GM2lC
+ oCheyCEbG5K5EK4+9Y+Wdi7YRT9NsPNcTl22+Xg0bSIVuW/ySFzAdMkiCuj/Zmc1tZr9
+ e0RPv0VCcWQfBw7h8bABZnyHYxvLGBCpLpubKm+/b9bNWNgKwtGlbfpXkVYCMjNuA60N
+ JNsy/aWLkK+LlnkWPVNSVosBcT0pszz2Otg4kJIIEn2f501Ja2r2JuR7js38Z04Bx/Ra
+ E6zQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=tTeswJdRafCs9rbWrwY8onvsdFrv8hfLm2G+qfpi0DI=;
+ b=alprmmFFrumKA34yizhmz5wG/arPaIJXzu2YopxSDjsPtwy0sbFhJ0ELrUumnqioYw
+ 2K33Zl+tflbry6z5Y6ae1jK/4sa/R+kcDZ9faGmScVlyReYBAQrm/WscTZD7TOq9vz/7
+ PrrQmq1FVTeqPyyBGPlLcJBRSgRlieUGen3YoNF0ISdNW9fOws/CWW7SbL9Ld0E06mAe
+ UwiQtrQ5aZLBAbQz98BaiWzmJSXm+kl2M+iXUMrt8wEA8H175ose9gy8bVZrRW2RW2jp
+ kM8nXtM5V52FQSiefyplzZY50gNJLYoG9xwxb61aCoH3/acYx9QJ14Hfaqc2nkRkx40W
+ 3vMQ==
+X-Gm-Message-State: AOAM530i57r66WAoys2k+BplzzAq4DlaXV+JP+xKQ76tRCaUtD1wjpxo
+ IGM/R8Yb2PN46/Tg7uV0dBTn/Ok2AlM=
+X-Google-Smtp-Source: ABdhPJyoxv+ytT4N7FAeNxPJ21oQAAVQppQVdoT5uByDY/gnRHN6jAIqKTGnnwy5rtDNXvr3TpEVbA==
+X-Received: by 2002:a17:906:c7d9:: with SMTP id
+ dc25mr2412023ejb.305.1589957304221; 
+ Tue, 19 May 2020 23:48:24 -0700 (PDT)
+Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
+ by smtp.gmail.com with ESMTPSA id t23sm953961edr.71.2020.05.19.23.48.23
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 19 May 2020 23:48:23 -0700 (PDT)
+From: Johan Jonker <jbx6244@gmail.com>
+To: heiko@sntech.de
+Subject: [RFC PATCH] arm64: dts: rockchip: fix dmas dma-names for rk3308 i2s
+ node
+Date: Wed, 20 May 2020 08:48:16 +0200
+Message-Id: <20200520064816.3954-1-jbx6244@gmail.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_234740_736104_B15B8748 
-X-CRM114-Status: GOOD (  25.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200519_234825_806932_A1234473 
+X-CRM114-Status: GOOD (  12.41  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:6 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jbx6244[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jbx6244[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,119 +95,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Eric Biggers <ebiggers@kernel.org>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, robh+dt@kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 20. Mai 2020, 08:40:57 CEST schrieb Ard Biesheuvel:
+One of the current rk3308 'i2s' nodes has a different dma layout
+with only 1 item. Table 9-2 DMAC1 Request Mapping Table shows that
+there 2 dma sources available, so fix the dmas and dma-names
+for the rk3308 'i2s' node.
 
-Hi Ard,
+10 I2S/PCM_2CH_1 tx High level
+11 I2S/PCM_2CH_1 rx High level
 
-> On Wed, 20 May 2020 at 08:03, Stephan Mueller <smueller@chronox.de> wrote:
-> > Am Dienstag, 19. Mai 2020, 21:02:09 CEST schrieb Ard Biesheuvel:
-> > 
-> > Hi Ard,
-> > 
-> > > Stephan reports that the arm64 implementation of cts(cbc(aes)) deviates
-> > > from the generic implementation in what it returns as the output IV. So
-> > > fix this, and add some test vectors to catch other non-compliant
-> > > implementations.
-> > > 
-> > > Stephan, could you provide a reference for the NIST validation tool and
-> > > how it flags this behaviour as non-compliant? Thanks.
-> > 
-> > The test definition that identified the inconsistent behavior is specified
-> > with [1]. Note, this testing is intended to become an RFC standard.
-> 
-> Are you referring to the line
-> 
-> CT[j] = AES_CBC_CS_ENCRYPT(Key[i], PT[j])
-> 
-> where the CTS transform is invoked without an IV altogether?
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3308.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-Precisely.
-
-> That
-> simply seems like a bug to me. In an abstract specification like this,
-> it would be insane for pseudocode functions to be stateful objects,
-> and there is nothing in the pseudocode that explicitly captures the
-> 'output IV' of that function call.
-
-I think the description may be updated by simply refer to IV[j-1]. Then you 
-would not have a stateful operation, but you rest on the IV of the previous 
-operation.
-
-The state of all block chaining modes we currently have is defined with the 
-IV. That is the reason why I mentioned it can be implemented stateless when I 
-am able to get the IV output from the previous operation.
-
-> 
-> > To facilitate that testing, NIST offers an internet service, the ACVP
-> > server, that allows obtaining test vectors and uploading responses. You
-> > see the large number of concluded testing with [2]. A particular
-> > completion of the CTS testing I finished yesterday is given in [3]. That
-> > particular testing was also performed on an ARM system with CE where the
-> > issue was detected.
-> > 
-> > I am performing the testing with [4] that has an extension to test the
-> > kernel crypto API.
-> 
-> OK. So given that that neither the CTS spec nor this document makes
-> any mention of an output IV or what its value should be, my suggestion
-> would be to capture the IV directly from the ciphertext, rather than
-> relying on some unspecified behavior to give you the right data. Note
-> that we have other implementations of cts(cbc(aes)) in the kernel as
-> well (h/w accelerated ones) and if there is no specification that
-> defines this behavior, you really shouldn't be relying on it.
-
-Agreed, but all I need is the IV from the previous round without relying on 
-any state.
-> 
-> 
-> That 'specification' invokes AES_CBC_CS_ENCRYPT() twice using a
-> different prototype, without any mention whatsoever what the implied
-> value of IV[] is if it is missing. This is especially problematic
-> given that it seems to cover all of CS1/2/3, and the relation between
-> next IV and ciphertext is not even the same between those for inputs
-> that are a multiple of the blocksize.
-
-I will relay that comment back to the authors for update.
-> 
-> > [1]
-> > https://github.com/usnistgov/ACVP/blob/master/artifacts/draft-celi-acvp-b
-> > lock-ciph-00.txt#L366
-> > 
-> > [2]
-> > https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program
-> > / validation-search?searchMode=validation&family=1&productType=-1&ipp=25
-> > 
-> > [3]
-> > https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program
-> > / details?validation=32608
-> > 
-> > [4] https://github.com/smuellerDD/acvpparser
-> > 
-> > > Cc: Stephan Mueller <smueller@chronox.de>
-> > > 
-> > > Ard Biesheuvel (2):
-> > >   crypto: arm64/aes - align output IV with generic CBC-CTS driver
-> > >   crypto: testmgr - add output IVs for AES-CBC with ciphertext stealing
-> > >  
-> > >  arch/arm64/crypto/aes-modes.S |  2 ++
-> > >  crypto/testmgr.h              | 12 ++++++++++++
-> > >  2 files changed, 14 insertions(+)
-> > 
-> > Ciao
-> > Stephan
-
-
-Ciao
-Stephan
-
+diff --git a/arch/arm64/boot/dts/rockchip/rk3308.dtsi b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+index ac7f69407..79c1dd1fe 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3308.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3308.dtsi
+@@ -564,8 +564,8 @@
+ 		interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&cru SCLK_I2S1_2CH>, <&cru HCLK_I2S1_2CH>;
+ 		clock-names = "i2s_clk", "i2s_hclk";
+-		dmas = <&dmac1 11>;
+-		dma-names = "rx";
++		dmas = <&dmac1 10>, <&dmac1 11>;
++		dma-names = "tx", "rx";
+ 		resets = <&cru SRST_I2S1_2CH_M>, <&cru SRST_I2S1_2CH_H>;
+ 		reset-names = "reset-m", "reset-h";
+ 		status = "disabled";
+-- 
+2.11.0
 
 
 _______________________________________________
