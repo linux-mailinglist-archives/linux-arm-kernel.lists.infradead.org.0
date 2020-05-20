@@ -2,134 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E47D91DB71C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 16:32:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E40C1DB733
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 16:38:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	References:MIME-Version:Message-ID:In-Reply-To:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ICgoRiSHFwJR6gqHuE4VnOwvZWRVmA6VyKO28PXR+nM=; b=LohAedXRmQ8StviKpcIjtloJ5
-	mHK0iFVCdySKPKX/wQiUo69WiJhfQLKq/x+X06DTL9UPBSdYHc2MTFnVmQWI0Q7sOpdHoVSdcVXbS
-	nTjC/bX9KosYHRw35XsB5L82WpqmvRJc3TYClsVb8yYCfEnVzcKTGUxBjKid4ZV6NYdLYXT8GCiqK
-	FwPzOt9UJuKkoOUL+a0q5arAMgFIWABt5/wnqQxeKNzxMKJgpVP7Xr9Y0WIZymkX20zvA1Hg11JXD
-	PSf69636r/XJWprXhrtWxtqkK7od1Uiv5O2mXNr/u8yiGpNExz2MrmpL6K/8zsu1BQurUv6MDOHtN
-	TtoR91uSA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=a/4kvs537jkj5pGGCQ1DvM0KZiZ6LTPjwDRcZzu8sNg=; b=Fd2VTDWVKSRylY
+	q5d6xUqsgQzJ4zDJ48sHxu3ssEdJN3ddOHQ+aVRKZPApxMh9WmhQEzwUwttEoPo0fx0OcUg989+PU
+	rZLzn4l+gwfBoPDcAsTx5f09kyt0qAmNUkB27oLDylgAoGgTGvWw8YqlHiqliVRcjqlOQ7N6G3jRi
+	fk6tbEIrK6DDygaiTtaM51GMbe4Hly9yAudQmF9uSKJ3T6w/YSiStdApRan02PhNZVjgncvHUK6+X
+	B/ZH3YQ5l+hHEXSoaO04nOrmG8hnlSxTEL1T6nSBIdf2vhWaNjN7hWrBQS1eVLSjlgc4ijzYBg8oA
+	WEtOhQnMxSBLK2+aNoNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbPli-00070F-29; Wed, 20 May 2020 14:32:26 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1jbPr1-0001cK-3a; Wed, 20 May 2020 14:37:55 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbPlX-0006zC-F0
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 14:32:17 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200520143212euoutp0146d8734bdfb0951c00f3a830e80d90be~Qww3ZJoND2147721477euoutp01O;
- Wed, 20 May 2020 14:32:12 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20200520143212euoutp0146d8734bdfb0951c00f3a830e80d90be~Qww3ZJoND2147721477euoutp01O
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1589985132;
- bh=OwUS0cq1oLEsjMCxXLMi+rfk4oqHeZVhLszgl/xO6oE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=S8Cue+VtnXohCYgmbAB3vTJHl8wcHLpHgk0O8deQZZ4s1ao9OTmJsbp6uePrLPa7a
- Jb/bE8pa+/r2QBF1x4yXEy/YA82gFKG2JeX6Kd3E72iCfzSdX3PqvKLuevsWizxy8I
- JN9TRkal0XTHAlTZZx2MOYUqaKWWIL7T4zK8MG0k=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200520143212eucas1p1a5ad990bee7a07434384a79b7ac84891~Qww3FyCvP1912419124eucas1p1J;
- Wed, 20 May 2020 14:32:12 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id 0C.26.61286.C6F35CE5; Wed, 20
- May 2020 15:32:12 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200520143211eucas1p21bd93be5c62726aa715db05bb6e7119b~Qww2ton0l1383613836eucas1p2J;
- Wed, 20 May 2020 14:32:11 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200520143211eusmtrp118b198357d909262b6250f67cd27f0f7~Qww2snWjC2728727287eusmtrp1V;
- Wed, 20 May 2020 14:32:11 +0000 (GMT)
-X-AuditID: cbfec7f2-f0bff7000001ef66-d3-5ec53f6ce3e8
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id B8.C9.07950.B6F35CE5; Wed, 20
- May 2020 15:32:11 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip1.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200520143211eusmtip165dc045c53f2e4711a914c093660cf52~Qww2hq-EB0678406784eusmtip1B;
- Wed, 20 May 2020 14:32:11 +0000 (GMT)
-From: Lukasz Stelmach <l.stelmach@samsung.com>
-To: Stephan Mueller <smueller@chronox.de>
-Subject: Re: [PATCH v2 1/2] hwrng: iproc-rng200 - Set the quality value
-Date: Wed, 20 May 2020 16:31:59 +0200
-In-Reply-To: <2041475.ybOAuNAZB8@tauon.chronox.de> (Stephan Mueller's
- message of "Wed, 20 May 2020 13:53:04 +0200")
-Message-ID: <dleftj4ksa3cf4.fsf%l.stelmach@samsung.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jbPqs-0001bP-5d; Wed, 20 May 2020 14:37:48 +0000
+Received: from mail-qt1-f181.google.com ([209.85.160.181]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1Mwfj0-1irrhs1GqA-00y8Mp; Wed, 20 May 2020 16:37:42 +0200
+Received: by mail-qt1-f181.google.com with SMTP id m44so2670082qtm.8;
+ Wed, 20 May 2020 07:37:41 -0700 (PDT)
+X-Gm-Message-State: AOAM533u3Ysjl1QlUxN3LuaCbJPX6/CSAJfeWYdMp6rOLryNQdfWCH9L
+ M7mGkUQqST+4gAtnQlSvSbyP2l2QthhHKXUxeWU=
+X-Google-Smtp-Source: ABdhPJwK69DLGTQm1ew09Tx3ieAV4bUG76cvGX5A2V+WrnHBW769WJQTOfdTdgV3HOoosoX6NyQXG6Qlso/22NfuIt0=
+X-Received: by 2002:ac8:691:: with SMTP id f17mr5450469qth.204.1589985460744; 
+ Wed, 20 May 2020 07:37:40 -0700 (PDT)
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa1BMYRieb89lT42t01bTq2LMDjMu08Vo+NyZcTnufjAZIotTLu1mdtuI
- H6WwSio1xrZCkcrSxcoiSiKLJktiVrShTLVEcm1ddzuZ8e953+d53u953/kYQlpE+zNblHG8
- SimPkdHupOlOvyUoZmb9utBemxT/yr4jxhd05RQuPVRPYktqMYEd72+LccrpchoftAfizPa3
- BLZYKsTY2P6Uwm22fhF+XJVHY52lRoTzczoonG/KQPhN7kUavz/XgfCRhlISm++mErO8uR+O
- bMTp2xpprq+5WcRd1beKudPGGzRnqh3FGQ2pNHfj+Hkxd7EwkcuoNCAuo7sCceWVT0gu+b6W
- 4j4Zhy/3WO0+bRMfsyWeV4XMWO++2f7xGb29RbaztqWLSELWwDTkxgAbBl+sZjoNuTNStgRB
- 7617g8VnBGU3syih+ITA3N9O/7MkpxhEAlGMoCfvDBKKTgRV9nQiDTEMzQZDaekql8GHHQNP
- tCcHxhLsAwp+HmsiXIQ3Ox8KrEWkC5PsKLAdzqdc2I3VQIvlOHJhCTsJ9iaXDOh92clQ2dUm
- FvpecC+3Y8BLsArItbxDQrqXDLxzRLgyADsHrl+OENreYDdXigUcCA056aQgSYSc7ImuaMCm
- IzDlfScFzVR48cDhzCx24tnwcYGg9gBrj5fwpgdkm44SQlsCB/ZLBd9IKMu8PjjDHw7ZSwZj
- cVDcaxu85j4EWu15IguN0P+3iv6/VfTOsYTzbuVVIUJ7HBQVvCUEPB3Kyj6Q+YgyID9eo1ZE
- 8+rxSn5HsFquUGuU0cEbYxVG5PyxDb/NfVfQl6YNdYhlkGyIhGHr10kpebw6QVGHRjonva44
- 9xD5k8pYJS/zkRR4OmnJJnnCLl4VG6nSxPDqOhTAkDI/yYRT3WulbLQ8jt/G89t51T9WxLj5
- J6GE+tXhjWdbd0clhwVF2g1e6c3mlMzC554eFfebCmKrq0/Ghdb82cp0Lkn8ZWgM950Xop2d
- uX6bbljUiWvL+hboXlGjm301J4Z6xvtUdx9cEfqop2mKpbbGd6HX8jWP+i4tWmqV8UkPzXsW
- z9Vdcmju2iKTvrUX8xNXfqXqnmvCVgVkyUj1Zvn4sYRKLf8LfVnr27kDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrIKsWRmVeSWpSXmKPExsVy+t/xu7rZ9kfjDF7NsLD4O+kYu8XGGetZ
- Ldb2HmWxON+5nNni17sj7BbNi9ezWXS/krHof/ya2eL8+Q3sFpseX2O1uH/vJ5PF5V1z2Cxm
- nN/HZLFg8hNWiwXb+hgtns7czGbxbvUTRoupp9eyWBw/0cnsIOzx+9ckRo9Z98+yeXy6coXJ
- Y+esu+weizftZ/PYdkDVY9OqTjaP/XPXsHtsXlLv0bdlFaNH38sNjB7rt1xl8Wg61c7q8XmT
- XABflJ5NUX5pSapCRn5xia1StKGFkZ6hpYWekYmlnqGxeayVkamSvp1NSmpOZllqkb5dgl7G
- q4832QpuKVUcuPWCuYHxhkwXIyeHhICJRFPzKqYuRi4OIYGljBIXrlwAcjiAElISK+emQ9QI
- S/y51sUGUfOUUWL2jzlgNWwCehJr10aA1IgIaEpcbZ8PVsMssItV4nb3NVaQhLCAu8TCG8tY
- QGwhAUOJs2t72EFsFgFViXsTF4DVcAqUSnz73s4EYvMKmEu0NK1gBrFFBSwltry4zw4RF5Q4
- OfMJ2BxmgWyJr6ufM09gFJiFJDULSWoW0HnMQDet36UPEdaWWLbwNTOEbSuxbt17lgWMrKsY
- RVJLi3PTc4uN9IoTc4tL89L1kvNzNzECk8S2Yz+37GDsehd8iFGAg1GJh5dD4GicEGtiWXFl
- 7iFGFaAxjzasvsAoxZKXn5eqJMK7kB8ozZuSWFmVWpQfX1Sak1p8iNEU6M+JzFKiyfnAxJZX
- Em9oamhuYWlobmxubGahJM7bIXAwRkggPbEkNTs1tSC1CKaPiYNTqoHxGFdo58OHzJLOfzWk
- RWt2bJwZNm+/57k5ETM5uNXVRazcd65iTDbytfePMXsY+Z3LLVrvTkPFVaFtDOu7nZWzmeSe
- 7Vhq5Far1Fdmee9EZrel51R5EZv/XYf6G5Q/BInwrluXIX/+7oS0ozee+D9fMeOSjuSl/zqy
- e37P3N6dP1XMK2FjTJ4SS3FGoqEWc1FxIgB9qUtkNAMAAA==
-X-CMS-MailID: 20200520143211eucas1p21bd93be5c62726aa715db05bb6e7119b
-X-Msg-Generator: CA
-X-RootMTR: 20200520143211eucas1p21bd93be5c62726aa715db05bb6e7119b
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200520143211eucas1p21bd93be5c62726aa715db05bb6e7119b
-References: <2041475.ybOAuNAZB8@tauon.chronox.de>
- <CGME20200520143211eucas1p21bd93be5c62726aa715db05bb6e7119b@eucas1p2.samsung.com>
+References: <20200520112523.30995-1-brgl@bgdev.pl>
+ <20200520112523.30995-7-brgl@bgdev.pl>
+In-Reply-To: <20200520112523.30995-7-brgl@bgdev.pl>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 20 May 2020 16:37:23 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3jhrQ3p1JsqMNMOOnfo9t=rAPWaOAwAdDuFMh7wUtZQw@mail.gmail.com>
+Message-ID: <CAK8P3a3jhrQ3p1JsqMNMOOnfo9t=rAPWaOAwAdDuFMh7wUtZQw@mail.gmail.com>
+Subject: Re: [PATCH v4 06/11] net: ethernet: mtk-eth-mac: new driver
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+X-Provags-ID: V03:K1:E6TTeC8KgvwEnjDY6Tn/2JZiYAKYOduu2VZJdiC85G/5yf+5Ury
+ 77QEQx8kn788ZnAwwQzXxuEG9kfsVbTVwctk9mChvJLVDv+5mACG368SG0s9ckYUt6u5oNt
+ 9gI0uKqt+7Me+VfLqGcTgBx1TeCmbT2Qmao0k9DhIcPRThXJMSKsBVcX2g+JPbUQP7of2Sk
+ 2OESn7ga8xJq22VAbUEng==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:YJclzbeq18g=:wPtb9tSWnDNWBcVd3hqwBG
+ pjPgtlo/JqvgFWmh78eR4HqNpKtRAWmTLscMqwO0Iybko555NF74gFfHUip2gTL0KqCVzF60l
+ pMNWvxg1zKU8yRtXw+ALU2lJNDJS7nG5h0hfZ5/CVDMdCUZdodpBbiEHRRqOYbh7pzGo0786p
+ YxcspzzL2PPn0CVlfQcZ+BZl02Ms3MP2dLaoZZggLlpHumYMVi846OerHnSdp2PpTidawQ6Lc
+ KWOXAguxXmdxl6bcHWeYmm2wNUs5qtcgDbhXHCFxJh9wQJp8hsO433hqn6jmCDQ/roNs0srs7
+ dMtX99P6KKpHFqLvH5i0VFhfNyJM2moDY5IpyWUedE69kabFunWaidu/aGQhtCq0foGSN+Kfv
+ HDt5icBgrIXgS16xxyw/Ntk2v2omoi3k4gsWIuNQ/Xhc+Bm8ZSdN7su0CcPkL0KiW81kDUHWp
+ k0Drfwll9mK9/aYbH3xLTo+5eWgTlZkXyCsZ/IzyNOQDNRHmlsQ1zq6bGWR0JG/Qrl2hDPRV5
+ zcreEobA3T9z2FXzqbjYqBgUhoU64gULUHSALQ+FbwtD9HzhplNcpb/sibsIB0NBxfk2Qwzor
+ lbfs13MtqIvF+7EphMoH/dvegOP2JwLr4KhZddekvZMwOE9OzuOJLZG+1XKT6JB0uIjWydXbW
+ C7pU4KP8sx5XxbzZBkehtg6tYe+6KCTu+2IjVuSbR9c3kjoZCbLls0EVUZ10hYbMawsJ95tdi
+ bPT0f1ggZLYZ+7yek7X2iSbJLbowbfHOm6uO9ujzlkMLlZ+tRaIEtNP69hi6Q9tkSc6gnpmBJ
+ yDnfvKHznLL+EbKCw9jf6ZaK5xbOM5ttaR3MnhQrEwaFJdWISg=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_073215_709630_0E486B8C 
-X-CRM114-Status: GOOD (  26.11  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200520_073746_507261_E1118403 
+X-CRM114-Status: GOOD (  26.93  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.11 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.134 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.134 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,142 +85,249 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Scott Branden <sbranden@broadcom.com>, Matthias Brugger <mbrugger@suse.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Stefan Wahren <wahrenst@gmx.net>, Ray Jui <rjui@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Markus Elfring <elfring@users.sourceforge.net>,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============0605039781379552222=="
+Cc: Edwin Peer <edwin.peer@broadcom.com>, DTML <devicetree@vger.kernel.org>,
+ Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Networking <netdev@vger.kernel.org>, Sean Wang <sean.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Pedro Tsai <pedro.tsai@mediatek.com>, "David S . Miller" <davem@davemloft.net>,
+ Fabien Parent <fparent@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============0605039781379552222==
-Content-Type: multipart/signed; boundary="=-=-="; micalg="pgp-sha256";
-	protocol="application/pgp-signature"
-
---=-=-=
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-It was <2020-05-20 =C5=9Bro 13:53>, when Stephan Mueller wrote:
-> Am Mittwoch, 20. Mai 2020, 12:44:33 CEST schrieb Lukasz Stelmach:
->> It was <2020-05-20 =C5=9Bro 11:18>, when Stephan Mueller wrote:
->>> Am Mittwoch, 20. Mai 2020, 11:10:32 CEST schrieb Lukasz Stelmach:
->>>> It was <2020-05-20 =C5=9Bro 08:23>, when Stephan Mueller wrote:
->>>>> Am Dienstag, 19. Mai 2020, 23:25:51 CEST schrieb =C5=81ukasz Stelmach:
->>>>>
->>>>>> The value was estimaded with ea_iid[1] using on 10485760 bytes
->>>>>> read from the RNG via /dev/hwrng. The min-entropy value
->>>>>> calculated using the most common value estimate (NIST SP
->>>>>> 800-90P[2], section 6.3.1) was 7.964464.
->>>>>=20
->>>>> I am sorry, but I think I did not make myself clear: testing
->>>>> random numbers post-processing with the statistical tools does NOT
->>>>> give any idea about the entropy rate. Thus, all that was
->>>>> calculated is the proper implementation of the post-processing
->>>>> operation and not the actual noise source.
->>>>>=20
->>>>> What needs to happen is that we need access to raw, unconditioned
->>>>> data from the noise source that is analyzed with the statistical
->>>>> methods.
->>>>=20
->>>> I did understand you and I assure you the data I tested were
->>>> obtained directly from RNGs. As I pointed before[1], that is how
->>>> /dev/hwrng works[2].
->>>=20
->>> I understand that /dev/hwrng pulls the data straight from the
->>> hardware. But the data from the hardware usually is not obtained
->>> straight from the noise source.
->>>=20
->>> Typically you have a noise source (e.g. a ring oscillator) whose data
->>> is digitized then fed into a compression function like an LFSR or a
->>> hash. Then a cryptographic operation like a CBC-MAC, hash or even a
->>> DRBG is applied to that data when the caller wants to have random
->>> numbers.
-
-[...]
-
->>> In order to estimate entropy, we need the raw unconditioned data from
->>> the, say, ring oscillator and not from the (cryptographic) output
->>> operation.
->>=20
->> Can you tell, why it matters in this case? If I understand correctly,
->> the quality field describes not the randomness created by the noise
->> generator but the one delivered by the driver to other software
->> components.
+On Wed, May 20, 2020 at 1:25 PM Bartosz Golaszewski <brgl@bgdev.pl> wrote:
 >
-> The quality field is used by add_hwgenerator_randomness to increase
-> the Linux RNG entropy estimator accordingly. This is the issue.
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 >
-> And giving an entropy rate based on post-processed data is
-> meaningless.
+> This adds the driver for the MediaTek Ethernet MAC used on the MT8* SoC
+> family. For now we only support full-duplex.
 >
-> The concern is, for example, that you use a DRBG that you seeded with,
-> say, a zero buffer. You get perfect random data from it that no
-> statistical test can disprove. Yet we know this data stream has zero
-> entropy. Thus, we need to get to the source and assess its entropy.
+> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-Of course, this makes sense.
+Looks much better, thanks for addressing my feedback. A few more things
+about this version:
 
->>> That said, the illustrated example is typical for hardware RNGs. Yet
->>> it is never guaranteed to work that way. Thus, if you can point to
->>> architecture documentation of your specific hardware RNGs showing
->>> that the data read from the hardware is pure unconditioned noise
->>> data, then I have no objections to the patch.
->>=20
->> I can tell for sure that this is the case for exynos-trng[1].
+> ---
+>  drivers/net/ethernet/mediatek/Kconfig       |    6 +
+>  drivers/net/ethernet/mediatek/Makefile      |    1 +
+>  drivers/net/ethernet/mediatek/mtk_eth_mac.c | 1668 +++++++++++++++++++
+>  3 files changed, 1675 insertions(+)
+>  create mode 100644 drivers/net/ethernet/mediatek/mtk_eth_mac.c
 >
-> So you are saying that the output for the exynos-trng is straight from
-> a ring oscillator without any post-processing of any kind?
+> diff --git a/drivers/net/ethernet/mediatek/Kconfig b/drivers/net/ethernet/mediatek/Kconfig
+> index 5079b8090f16..5c3793076765 100644
+> --- a/drivers/net/ethernet/mediatek/Kconfig
+> +++ b/drivers/net/ethernet/mediatek/Kconfig
+> @@ -14,4 +14,10 @@ config NET_MEDIATEK_SOC
+>           This driver supports the gigabit ethernet MACs in the
+>           MediaTek SoC family.
 >
-> If this is the case, I would like to suggest you add that statement to
-> the git commit message with that reference. If so, then I would
-> withdraw my objection.
+> +config NET_MEDIATEK_MAC
+> +       tristate "MediaTek Ethernet MAC support"
+> +       select PHYLIB
+> +       help
+> +         This driver supports the ethernet IP on MediaTek MT85** SoCs.
 
-Done. I will do some reaserch on iproc-rng200 and I will send v3 with
-the altered commit message.
+I just noticed how the naming of NET_MEDIATEK_MAC and NET_MEDIATEK_SOC
+for two different drivers doing the same thing is really confusing.
+
+Maybe someone can come up with a better name, such as one
+based on the soc it first showed up in.
+
+> +       struct mtk_mac_ring_desc *desc = &ring->descs[ring->head];
+> +       unsigned int status;
+> +
+> +       status = desc->status;
+> +
+> +       ring->skbs[ring->head] = desc_data->skb;
+> +       ring->dma_addrs[ring->head] = desc_data->dma_addr;
+> +       desc->data_ptr = desc_data->dma_addr;
+> +
+> +       status |= desc_data->len;
+> +       if (flags)
+> +               status |= flags;
+> +       desc->status = status;
+> +
+> +       /* Flush previous modifications before ownership change. */
+> +       dma_wmb();
+> +       desc->status &= ~MTK_MAC_DESC_BIT_COWN;
+
+You still do the read-modify-write on the word here, which is
+expensive on uncached memory. You have read the value already,
+so better use an assignment rather than &=, or (better)
+READ_ONCE() and WRITE_ONCE() to prevent the compiler
+from adding further accesses.
 
 
-Thank you *very* much for your patience.
-=2D-=20
-=C5=81ukasz Stelmach
-Samsung R&D Institute Poland
-Samsung Electronics
+> +static void mtk_mac_lock(struct mtk_mac_priv *priv)
+> +{
+> +       spin_lock_bh(&priv->lock);
+> +}
+> +
+> +static void mtk_mac_unlock(struct mtk_mac_priv *priv)
+> +{
+> +       spin_unlock_bh(&priv->lock);
+> +}
 
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
+I think open-coding the locks would make this more readable,
+and let you use spin_lock() instead of spin_lock_bh() in
+those functions that are already in softirq context.
 
------BEGIN PGP SIGNATURE-----
+> +static void mtk_mac_intr_enable_tx(struct mtk_mac_priv *priv)
+> +{
+> +       regmap_update_bits(priv->regs, MTK_MAC_REG_INT_MASK,
+> +                          MTK_MAC_BIT_INT_STS_TNTC, 0);
+> +}
+> +static void mtk_mac_intr_enable_rx(struct mtk_mac_priv *priv)
+> +{
+> +       regmap_update_bits(priv->regs, MTK_MAC_REG_INT_MASK,
+> +                          MTK_MAC_BIT_INT_STS_FNRC, 0);
+> +}
 
-iQEzBAEBCAAdFiEEXpuyqjq9kGEVr9UQsK4enJilgBAFAl7FP18ACgkQsK4enJil
-gBCRAgf+J9WxfSzraFFchLmdRn7xYXcLCU8fETKwyjVn8RuVgy2D4/5/wTlZkq4O
-VA3mRSXTQp3fEUycd6boLFiyuv04760MnZqtLeTidosMTYlST38sPfQtCbb5jHlo
-e38K3LRyBwvj63bVcUfNo75peiEd5Xk5xuSKBgi26r/vqjKGgMEUTymrmIdQncgU
-DarqcJ1ZWdaLKKrQdlodneLOD+MhF/hRrFR4DSbM3ncmkrUV3foiVwcmyeo4w2E8
-sULMXa2+j6hbiTSsciB0EJj1WR1nZxUnfXprGjDvVrrzgNwZdTaqc0aAYfohiSvi
-tNmgrCY7BEQpS8o6/rVGQgEEdg/Bmg==
-=5VuY
------END PGP SIGNATURE-----
---=-=-=--
+These imply reading the irq mask register and then writing it again,
+which is much more expensive than just writing it. It's also not
+atomic since the regmap does not use a lock.
 
+I don't think you actually need to enable/disable rx and tx separately,
+but if you do, then writing to the Ack register as I suggested instead
+of updating the mask would let you do this.
 
---===============0605039781379552222==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +/* All processing for TX and RX happens in the napi poll callback. */
+> +static irqreturn_t mtk_mac_handle_irq(int irq, void *data)
+> +{
+> +       struct mtk_mac_priv *priv;
+> +       struct net_device *ndev;
+> +       bool need_napi = false;
+> +       unsigned int status;
+> +
+> +       ndev = data;
+> +       priv = netdev_priv(ndev);
+> +
+> +       if (netif_running(ndev)) {
+> +               status = mtk_mac_intr_read(priv);
+> +
+> +               if (status & MTK_MAC_BIT_INT_STS_TNTC) {
+> +                       mtk_mac_intr_disable_tx(priv);
+> +                       need_napi = true;
+> +               }
+> +
+> +               if (status & MTK_MAC_BIT_INT_STS_FNRC) {
+> +                       mtk_mac_intr_disable_rx(priv);
+> +                       need_napi = true;
+> +               }
+
+I think you mixed up the rx and tx bits here: when you get
+an rx interrupt, that one is already blocked until it gets
+acked and you just need to disable tx until the end of the
+poll function.
+
+However, I suspect that the overhead of turning them off
+is higher than what  you can save, and simply ignoring
+the mask with
+
+if (status & (MTK_MAC_BIT_INT_STS_FNRC | MTK_MAC_BIT_INT_STS_TNTC))
+        napi_schedule(&priv->napi);
+
+would be simpler and faster.
+
+ +               /* One of the counters reached 0x8000000 - update stats and
+> +                * reset all counters.
+> +                */
+> +               if (unlikely(status & MTK_MAC_REG_INT_STS_MIB_CNT_TH)) {
+> +                       mtk_mac_intr_disable_stats(priv);
+> +                       schedule_work(&priv->stats_work);
+> +               }
+> + befor
+> +               mtk_mac_intr_ack_all(priv);
+
+The ack here needs to be dropped, otherwise you can get further
+interrupts before the bottom half has had a chance to run.
+
+You might be lucky because you had already disabled the individual
+bits earlier, but I don't think that was intentional here.
+
+> +static int mtk_mac_netdev_start_xmit(struct sk_buff *skb,
+> +                                    struct net_device *ndev)
+> +{
+> +       struct mtk_mac_priv *priv = netdev_priv(ndev);
+> +       struct mtk_mac_ring *ring = &priv->tx_ring;
+> +       struct device *dev = mtk_mac_get_dev(priv);
+> +       struct mtk_mac_ring_desc_data desc_data;
+> +
+> +       desc_data.dma_addr = mtk_mac_dma_map_tx(priv, skb);
+> +       if (dma_mapping_error(dev, desc_data.dma_addr))
+> +               goto err_drop_packet;
+> +
+> +       desc_data.skb = skb;
+> +       desc_data.len = skb->len;
+> +
+> +       mtk_mac_lock(priv);
+> +
+> +       mtk_mac_ring_push_head_tx(ring, &desc_data);
+> +
+> +       netdev_sent_queue(ndev, skb->len);
+> +
+> +       if (mtk_mac_ring_full(ring))
+> +               netif_stop_queue(ndev);
+> +
+> +       mtk_mac_unlock(priv);
+> +
+> +       mtk_mac_dma_resume_tx(priv);
+
+mtk_mac_dma_resume_tx() is an expensive read-modify-write
+on an mmio register, so it would make sense to defer it based
+on netdev_xmit_more(). (I had missed this in the previous
+review)
+
+> +static void mtk_mac_tx_complete_all(struct mtk_mac_priv *priv)
+> +{
+> +       struct mtk_mac_ring *ring = &priv->tx_ring;
+> +       struct net_device *ndev = priv->ndev;
+> +       int ret, pkts_compl, bytes_compl;
+> +       bool wake = false;
+> +
+> +       mtk_mac_lock(priv);
+> +
+> +       for (pkts_compl = 0, bytes_compl = 0;;
+> +            pkts_compl++, bytes_compl += ret, wake = true) {
+> +               if (!mtk_mac_ring_descs_available(ring))
+> +                       break;
+> +
+> +               ret = mtk_mac_tx_complete_one(priv);
+> +               if (ret < 0)
+> +                       break;
+> +       }
+> +
+> +       netdev_completed_queue(ndev, pkts_compl, bytes_compl);
+> +
+> +       if (wake && netif_queue_stopped(ndev))
+> +               netif_wake_queue(ndev);
+> +
+> +       mtk_mac_intr_enable_tx(priv);
+
+No need to ack the interrupt here if napi is still active. Just
+ack both rx and tx when calling napi_complete().
+
+Some drivers actually use the napi budget for both rx and tx:
+if you have more than 'budget' completed tx frames, return
+early from this function and skip the napi_complete even
+when less than 'budget' rx frames have arrived.
+
+This way you get more fairness between devices and
+can run for longer with irqs disabled as long as either rx
+or tx is busy.
+
+         Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0605039781379552222==--
-
