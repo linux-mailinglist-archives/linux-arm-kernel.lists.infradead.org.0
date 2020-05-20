@@ -2,59 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 945BA1DAEAD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:26:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3340F1DAEC7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:30:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5BSggMqlCppDjB3o/uOyWbxAzSFefgnmIGIiaOiV3gM=; b=BpYuiJPqDRAivj
-	IaX4VkYItrhG8S0bBfT0b347bbTOuvcNJDQPQ6DgG8Ooy8RtFiJKGqN/xBsuzSoBidnpqoVblZRmf
-	dbNgIjHeOZoFZPvZMghSjXs6YDScCP9395B06ua1uZvFqeRBEoGWAh9HZWkyR3zyA2LpmC+AcOf0c
-	/aZ3NJtegCNbpSg+Wpo5S4OAhd1mwPLYvGJMasGSWS7YqhEiYNw2fuRgDswan2L0x38jZYiu4NMz1
-	xr94W3my4dSYykDo4IqR0g2DbvXkvHnEXRBZeJ/QMZSE4sm05rJrDLCXwgX7ll3aq075T6CS8urD4
-	vKClaCqqDWXCd10LfcTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=on965IXYH7hrnhtUFdpnmX60RZ+sHFFNiRgyEk+BNC4=; b=AOuTZnUSZpluGA
+	6gNXFRbB0laJFFFshn3/o3KqunfsADORIv/zmxX79D9l/H3bypl7vLgXmmM6QT2cqUqLV2qWJzzJY
+	i8DUjAlCffENJzT5P9dzKosP4N60SemPGIUe0krvvGZWLY9+hw4J0Tq8Xjv4LL3bTq5CV9wF+PcXn
+	Zre79qNDL3lozlNWMt/j4541pRMpxXJGjjUzr166NY3djlfxwKcwWNiDryxfWi4OLcKcAGW5FVb9b
+	LGu5lWBZ6ox8aearWIG0Fhxogq8UF2L8Y7TPASaPGxZfMBGG4hDgafLZy1L6JPKIvjX7pr6zzB/P0
+	EB4mGQY7MqpAxgUEX1Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbKzN-0004Hc-Ps; Wed, 20 May 2020 09:26:13 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbKzE-0004H8-QQ
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:26:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 89FD030E;
- Wed, 20 May 2020 02:26:03 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 390563F68F;
- Wed, 20 May 2020 02:26:02 -0700 (PDT)
-Date: Wed, 20 May 2020 10:26:00 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v6] arm64: Expose FAR_EL1 tag bits in sigcontext
-Message-ID: <20200520092558.GI5031@arm.com>
-References: <20200508020106.136652-1-pcc@google.com>
- <20200513180914.50892-1-pcc@google.com>
- <20200513202808.GY21779@arm.com>
- <CAMn1gO4V05nD-Tq4dES0QyO73bAT-Nwo1ABnz0nuous8Rq+dGA@mail.gmail.com>
- <20200518095313.GZ21779@arm.com>
- <CAMn1gO4c3-hG_i6ZWsk-+oUGQQBdzFJRMrpehT3OFERF2Z7nrg@mail.gmail.com>
- <20200520085502.GC24293@willie-the-truck>
+	id 1jbL3g-0007Uv-Ty; Wed, 20 May 2020 09:30:40 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbL2s-0004kx-Pw
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:29:52 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jbL2h-0003Wl-CA; Wed, 20 May 2020 11:29:39 +0200
+Received: from ore by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jbL2g-00047l-Kw; Wed, 20 May 2020 11:29:38 +0200
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH v7 0/5] mainline Protonic boards
+Date: Wed, 20 May 2020 11:29:32 +0200
+Message-Id: <20200520092937.15797-1-o.rempel@pengutronix.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200520085502.GC24293@willie-the-truck>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_022604_941709_EFDA0EFA 
-X-CRM114-Status: GOOD (  30.03  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200520_022950_865158_C47B9D68 
+X-CRM114-Status: GOOD (  11.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,89 +65,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, Evgenii Stepanov <eugenis@google.com>,
- Richard Henderson <rth@twiddle.net>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Oleksij Rempel <o.rempel@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 09:55:03AM +0100, Will Deacon wrote:
-> On Tue, May 19, 2020 at 03:00:12PM -0700, Peter Collingbourne wrote:
-> > On Mon, May 18, 2020 at 2:53 AM Dave Martin <Dave.Martin@arm.com> wrote:
-> > > On Thu, May 14, 2020 at 05:58:21PM -0700, Peter Collingbourne wrote:
-> > > > diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-> > > > index baa88dc02e5c..5867f2fdbe64 100644
-> > > > --- a/arch/arm64/kernel/signal.c
-> > > > +++ b/arch/arm64/kernel/signal.c
-> > > > @@ -648,6 +648,7 @@ static int setup_sigframe(struct
-> > > > rt_sigframe_user_layout *user,
-> > > >                 __put_user_error(ESR_MAGIC, &esr_ctx->head.magic, err);
-> > > >                 __put_user_error(sizeof(*esr_ctx), &esr_ctx->head.size, err);
-> > > >                 __put_user_error(current->thread.fault_code,
-> > > > &esr_ctx->esr, err);
-> > > > +               current->thread.fault_code = 0;
-> > >
-> > > Perhaps, but we'd need to be careful.  For example, can we run out of
-> > > user stack before this and deliver a SIGSEGV, but with the old
-> > > fault_code still set?  Then we'd emit the old fault code with the
-> > > new "can't deliver signal" signal, which doesn't make sense.
-> > >
-> > > Stuff may also go wrong with signal prioritisation.
-> > >
-> > > If a higher-priority signal (say SIGINT) comes in after a data abort
-> > > enters the kernel but before the resulting SIGSEGV is dequeued for
-> > > delivery, wouldn't we deliver SIGINT first, with the bogus fault code?
-> > > With your change we'd then have cleared the fault code by the time we
-> > > deliver the SIGSEGV it actually relates to, if I've understood right.
-> > >
-> > > Today, I think we just attach that fault code to every signal that's
-> > > delivered until something overwrites or resets it, which means that
-> > > a signal that needs fault_code gets it, at the expense of attaching
-> > > it to a bunch of other random signals too.
-> > >
-> > >
-> > > Checking the signal number and si_code might help us to know what we
-> > > should be doing with fault_code.  We need to have sure userspace can't
-> > > trick us with a non kernel generated signal here.  It would also be
-> > > necessary to check how PTRACE_SETSIGINFO interacts with this.
-> > 
-> > With these possible interactions in mind I think we should store the
-> > fault code and fault address in kernel_siginfo instead of
-> > thread_struct (and clear these fields when we receive a siginfo from
-> > userspace, i.e. in copy_siginfo_from_user which is used by
-> > ptrace(PTRACE_SETSIGINFO) among other places). That way, the
-> > information is clearly associated with the signal itself and not the
-> > thread, so we don't need to worry about our signal being delivered out
-> > of order.
-> 
-> Hmm, I can't see a way to do that that isn't horribly invasive in the core
-> signal code. Can you?
-> 
-> But generally, I agree: the per-thread handling of fault_address and
-> fault_code appears to be quite broken in the face of signal prioritisation
-> and signals that don't correspond directly to hardware trap. It would be
-> nice to have some tests for this...
-> 
-> If we want to pile on more bodges, perhaps we could stash the signal number
-> to which the fault_{address,code} relate, and then check that at delivery
-> and clear on a match. I hate it.
+changes v7:
+- VT7: reorder node alphabetically
+- VT7: rename "reg_12v_bl: regulator-bl-12v" to "reg_bl_12v0: regulator-bl-12v0"
+- VT7: remove panel and TS nodes. This drivers are currently not
+  mainline.
+- prti6q.dtsi: move reg_1v8 to prti6q.dts
+- prti6q.dtsi: remove pinctrl from the can1 node. It is done on almost
+  every board file.
 
-I agree with Daniel's suggestion in principle, but I was also concerned
-about whether it would be too invasive elsewhere.
+changes v6:
+- move fsl.yaml changes to separate patch
+- remove partitions, they are provided by the bootloader
+- update flash compatible
+- rename can3 to can
+- fix fsl,mode
+- fix interrupt in the wlan node on PRTI6Q
 
-Question though: does the core code take special care to make sure that
-a force_sig cannot be outprioritised by a regular signal?  If so,
-perhaps we get away with it.  I ask this, because the same same issue
-may be hitting other arches otherwise.
+changes v5:
+- PRTI6Q: remove status from the pwm-backlight node
+- drop the vendor-prefixes patch, it is already taken by Rob
+- add Reviewed-by: Rob Herring <robh@kernel.org>
 
-Cheers
----Dave
+changes v4:
+- VT7: fix typo
+
+changes v3:
+- move compatible to the start of node
+- move status to the end
+- use generic names in compatible
+- refactor dts/dtsi
+- use alphabet order for pinctrl and phandels
+- remove unused or currently not supported nodes
+
+changes v2:
+- squash PRTI6Q patches
+
+Oleksij Rempel (5):
+  ARM: dts: add Protonic PRTI6Q board
+  ARM: dts: add Protonic WD2 board
+  ARM: dts: add Protonic VT7 board
+  ARM: dts: add Protonic RVT board
+  dt-bindings: arm: fsl: add different Protonic boards
+
+ .../devicetree/bindings/arm/fsl.yaml          |   4 +
+ arch/arm/boot/dts/Makefile                    |   4 +
+ arch/arm/boot/dts/imx6dl-prtrvt.dts           | 182 ++++++
+ arch/arm/boot/dts/imx6dl-prtvt7.dts           | 472 ++++++++++++++++
+ arch/arm/boot/dts/imx6q-prti6q.dts            | 529 ++++++++++++++++++
+ arch/arm/boot/dts/imx6q-prtwd2.dts            | 188 +++++++
+ arch/arm/boot/dts/imx6qdl-prti6q.dtsi         | 174 ++++++
+ 7 files changed, 1553 insertions(+)
+ create mode 100644 arch/arm/boot/dts/imx6dl-prtrvt.dts
+ create mode 100644 arch/arm/boot/dts/imx6dl-prtvt7.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-prti6q.dts
+ create mode 100644 arch/arm/boot/dts/imx6q-prtwd2.dts
+ create mode 100644 arch/arm/boot/dts/imx6qdl-prti6q.dtsi
+
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
