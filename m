@@ -2,65 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 452B51DB2DA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:15:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27BF91DB309
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:20:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mYGRPtVEDyyu1zuByJjXAahsWh+QQw7YraV0ZpIrroQ=; b=aTv
-	cdn+rfnxKRSe+qEksCeHZ+VhiqDXLThZGck1ae4onGApR58sMVvLbKXGg1OKhMZ5U9KkgNSQm+Ukc
-	UXy8ItMHw0OxigY6waYg1ny/VHALqmQnKJ9KYYjZSLjDrtezDDBTOjAvDVD04tRxALTi96LSp4nba
-	uV3UPTBfFyDfQqf8zvYYE+hOjyXpIHnC5UNNRpeu3UNW5jGrSk+0jppX3ea5uNvhChSRUVKjPvUxZ
-	OCDI5cac8oYkuTAUEzc8zsiYWGZreHeC278Mtww28Nmw3n4o7NOos2Vi6gQql0EFWsY37ZFTg0CeR
-	tJK1YyJP9dfXARp/e15GUTINnhr5Deg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OMlKlexcLDiqPKL6g1x4Ub6v7eqseZj1E9RT+bEKXLQ=; b=j5CGfMl+W4SUPP
+	pqKTIK0o/YFXghn7vWiXGMd0vXcOjxfbQIUampBcCd4lzW47JiSfPMESQVzT+aCByeICSoWLDDM7b
+	mhjzKlYeKUVvyGaTjmLCLHTSf93aCPrlEW6QWHyKrTCIakaij/UPPbWkzn98e1YM/9sqHRai4S013
+	eGZdCZONlUJoZkpXuv9Q4/GFU2I1nkH/5riAs9nv0D4QYZgCM3uMBkX2bQXdOAmGz4E+8aFaw6yTk
+	Nz1XItEvGKBXl6iR0wAiccy1OL2E+NLCs3+Or0Gynz6l7KNKJS8mc/U6VHb2jf3KvRJBt5j2RTFA4
+	8hy04p67R7EvwQG/ELqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbNcl-0002v1-2H; Wed, 20 May 2020 12:15:03 +0000
-Received: from mail.zju.edu.cn ([61.164.42.155] helo=zju.edu.cn)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbNcY-0002ug-7k
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:14:51 +0000
-Received: from localhost.localdomain (unknown [222.205.77.158])
- by mail-app3 (Coremail) with SMTP id cC_KCgBnb4srH8VevXngAA--.58342S4;
- Wed, 20 May 2020 20:14:40 +0800 (CST)
-From: Dinghao Liu <dinghao.liu@zju.edu.cn>
-To: dinghao.liu@zju.edu.cn,
-	kjlu@umn.edu
-Subject: [PATCH] can: xilinx_can: fix runtime pm imbalance on error
-Date: Wed, 20 May 2020 20:14:34 +0800
-Message-Id: <20200520121434.4927-1-dinghao.liu@zju.edu.cn>
-X-Mailer: git-send-email 2.17.1
-X-CM-TRANSID: cC_KCgBnb4srH8VevXngAA--.58342S4
-X-Coremail-Antispam: 1UD129KBjvdXoWrKrWrZF15CFyUGr4xXF1UKFg_yoW3uwb_Gr
- s8ZFs7Xw1Syrnrtw1UCa13ZryS9FWDX3W8XF1FvrWayay7ur4DCrW8ZFnxArs8Xw409F93
- KF9rXFyxArWrZjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
- 9fnUUIcSsGvfJTRUUUbT8Fc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AK
- wVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20x
- vE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4UJVWxJr1l84ACjcxK6I8E
- 87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_GcCE3s1le2I262IYc4CY6c
- 8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_Jrv_
- JF1lYx0Ex4A2jsIE14v26r4j6F4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvY0x0EwI
- xGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2Y2ka0xkIwI1lc2xSY4AK
- 67AK6ryUMxAIw28IcxkI7VAKI48JMxAIw28IcVCjz48v1sIEY20_GFWkJr1UJwCFx2IqxV
- CFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r10
- 6r1rMI8E67AF67kF1VAFwI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxV
- WUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG
- 6rWUJVWrZr1UMIIF0xvEx4A2jsIE14v26r4j6F4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr
- 1j6F4UJbIYCTnIWIevJa73UjIFyTuYvjfUn0eHDUUUU
-X-CM-SenderInfo: qrrzjiaqtzq6lmxovvfxof0/
+	id 1jbNhz-0008UB-FZ; Wed, 20 May 2020 12:20:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbNhq-0008JC-Fd
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:20:19 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9753420657;
+ Wed, 20 May 2020 12:20:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589977217;
+ bh=s1IJDFM69rLSIM89S8He+QNj2aboB3hM+ns5gDOAG2k=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=o0W/0JpWVHm5czQnB+BT23Csnm7/Dn7SlaZePwktrkhrJqyoU0iNzj+zxzvjTU1vu
+ cin/hdP2FmazEg4EVxictLEpaInoidhg90GWZJi5N8eQtqGF5fNmtKSYiSLZfWsloK
+ Dt09g7dP3jm8ZlBq89YAMs3HHVgNZXgvxRDYoFzo=
+Date: Wed, 20 May 2020 13:20:13 +0100
+From: Will Deacon <will@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] arm64/cpufeature: Move BUG_ON() inside get_arm64_ftr_reg()
+Message-ID: <20200520122012.GA25815@willie-the-truck>
+References: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_051450_590874_E55E85BA 
-X-CRM114-Status: GOOD (  10.51  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200520_052018_549156_950FDB95 
+X-CRM114-Status: GOOD (  19.06  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,45 +76,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>,
- linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
- Michal Simek <michal.simek@xilinx.com>, linux-can@vger.kernel.org,
- Marc Kleine-Budde <mkl@pengutronix.de>, linux-arm-kernel@lists.infradead.org,
- Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
- Jakub Kicinski <kuba@kernel.org>, "David S. Miller" <davem@davemloft.net>,
- Wolfgang Grandegger <wg@grandegger.com>
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-pm_runtime_get_sync() increments the runtime PM usage counter even
-the call returns an error code. Thus a pairing decrement is needed
-on the error handling path to keep the counter balanced.
+Hi Anshuman,
 
-Signed-off-by: Dinghao Liu <dinghao.liu@zju.edu.cn>
----
- drivers/net/can/xilinx_can.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On Wed, May 20, 2020 at 06:52:54AM +0530, Anshuman Khandual wrote:
+> There is no way to proceed when requested register could not be searched in
+> arm64_ftr_reg[]. Requesting for a non present register would be an error as
+> well. Hence lets just BUG_ON() when the search fails in get_arm64_ftr_reg()
+> rather than checking for return value and doing the same in some individual
+> callers.
+> 
+> But there are some callers that dont BUG_ON() upon search failure. It adds
+> an argument 'failsafe' that provides required switch between callers based
+> on whether they could proceed or not.
+> 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> 
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+> Applies on next-20200518 that has recent cpufeature changes from Will.
+> 
+>  arch/arm64/kernel/cpufeature.c | 26 +++++++++++++-------------
+>  1 file changed, 13 insertions(+), 13 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index bc5048f152c1..62767cc540c3 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -557,7 +557,7 @@ static int search_cmp_ftr_reg(const void *id, const void *regp)
+>   *         - NULL on failure. It is upto the caller to decide
+>   *	     the impact of a failure.
+>   */
+> -static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
+> +static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id, bool failsafe)
 
-diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.c
-index c1dbab8c896d..a9e8184cc611 100644
---- a/drivers/net/can/xilinx_can.c
-+++ b/drivers/net/can/xilinx_can.c
-@@ -1823,8 +1823,8 @@ static int xcan_probe(struct platform_device *pdev)
- 	return 0;
- 
- err_disableclks:
--	pm_runtime_put(priv->dev);
- err_pmdisable:
-+	pm_runtime_put(priv->dev);
- 	pm_runtime_disable(&pdev->dev);
- err_free:
- 	free_candev(ndev);
--- 
-2.17.1
+Generally, I'm not a big fan of boolean arguments because they are really
+opaque at the callsite. It also seems bogus to me that we don't trust the
+caller to pass a valid sys_id, but we trust it to get "failsafe" right,
+which seems to mean "I promise to check the result isn't NULL before
+dereferencing it."
 
+So I don't see how this patch improves anything. I'd actually be more
+inclined to stick a WARN() in get_arm64_ftr_reg() when it returns NULL and
+have the callers handle NULL by returning early, getting rid of all the
+BUG_ONs in here. Sure, the system might end up in a funny state, but we
+WARN()d about it and tried to keep going (and Linus has some strong opinions
+on this too).
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
