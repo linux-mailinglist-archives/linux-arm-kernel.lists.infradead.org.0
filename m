@@ -2,56 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D37261DB8A2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 17:47:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9EEE1DB8CF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 17:56:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5MJ0OjTZq87PcgaOllykG1wsB1NZ969WqzpA8RuKlL0=; b=qpRQTKce8476at
-	61ssguwjh3xqABepgTRgdbBuQWRFQT9SuzvZXnW/Et1kEBhUg+YP0Wv8IIJ2EmEd1ZnjzZSVQmUEl
-	OXl4EDwUIGre+MR4VlUcN+2lXI78xe+KNyS+9I6GvVzqDh3PWstfnVuy1fohJ3YDd4PyWiBmmff5E
-	Mokn18TiEHLfQdmxPWAqqgwFJjdAoMOK+pqsaGcGlKrlvNXzB5HZuKHQVr/nJonP3RbpgKHtNx86i
-	HWO6PV8HeH/fuyQO2SAC8SB8vyGNU64H/VIU8ZXhvwA6ZugD21MxraNva3X5NuzS9aAsySZqR2pk4
-	8c1Cn22SV6t3wju8bVaw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YI3KJ5zGr4+hKnRMlzqgba0dl0Ysmu9mxFRsuLeFwOU=; b=CNvzO/IRHUII0o
+	LZTfdNyCOmqaiBZF+seaBJFgt3K6ZSxVarDjOxcog1zgApI3/wu+OYw25LDQhjx543O/qbaoMCe2k
+	6Chf7axLwlUiS/oJUrbqo3jbLj0oczh1ATGikCcmYSr5bChmgZXkE+3X7HfdiWUCKN/DuS2otEPvR
+	hKyZUSNaXDaKfJEL1E1bh8SoKFjXrwm4do6A7AKYSACc7CiKnOMy7or7TrLgM8xGttNd6bhFqmRwl
+	QwlgumNUl/pLXLJMUx8HNjWI/2OfUxTBu9tOI/gCXTR6bJbajHh1B0Wj6tQw8YzN2XrFu1bbxpjav
+	xJsVde27XZoxgcR0OlAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbQwK-00066R-HG; Wed, 20 May 2020 15:47:28 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbQw9-00063o-Mq
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 15:47:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 421E3D6E;
- Wed, 20 May 2020 08:47:16 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D5103F305;
- Wed, 20 May 2020 08:47:14 -0700 (PDT)
-Date: Wed, 20 May 2020 16:47:11 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64/cpufeature: Move BUG_ON() inside get_arm64_ftr_reg()
-Message-ID: <20200520154711.GD18302@gaia>
-References: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
- <20200520122012.GA25815@willie-the-truck>
+	id 1jbR5M-0004bO-TN; Wed, 20 May 2020 15:56:48 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbR5F-0004as-Le
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 15:56:42 +0000
+Received: by mail-pl1-x641.google.com with SMTP id q16so1508688plr.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 May 2020 08:56:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=hOwD4KDmO4c54eHC+Ps5e7+C9BlvcIc1+wZ5clo9GBI=;
+ b=el2iAQUkBGchfrlbgxzUCLqjga7+Ob0EEoW20tub+n9btv1zPGHLURO13+XF+P9/HC
+ aN+914Hwt6YrWpA3iI2e+NVuOdYIy1bAs3i2iwIWSVsdz1p3dU0q2VssY5514UEwlTWn
+ VC5OIcKBaQGkQidMaUyPFd7b0i7h/5cs11KjD5FrYuBfHm6IxW1HYgw1vsHTNcGpI1hd
+ uSYsIni/J1PhCfznnYnCMDnkuMLK3cm+SKZLfEu157InBY30/jk8ZHb2e6Va+TRL5GvP
+ zgasJCyxJyAyPYR1usWzAMHCBo0mGgyPdvggYsEV8LCMF1AnwnV/Vub9UAifR1tLLEIn
+ hoPg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=hOwD4KDmO4c54eHC+Ps5e7+C9BlvcIc1+wZ5clo9GBI=;
+ b=TuUCMUhtsu3bCn/nVxbubWvb2LsnKmkl0FrXsTWAtn/Dv6tLsWEhB7o2q7+l+i2IbR
+ jmaDioCLMAbq5cz12zTy1TjDqQhsvri7SvhBQW/Btm19kehJiy9cltyQRj5Vzz454vH2
+ Eqv+7m0rlTSRA8F0uNps9MGNyJS2tJS4FJ20HH9pLnC1xfNm01jfd/lJRJFG4050sxkO
+ InRVh8Jksc3933ZqL/nInf5pvjfRk9debW5tN+IUsgR8jzfTIdX2hyd1g7JFQJv0Va95
+ RUu9J8Bcxnt9mWN3bQDFpibYwITAYB5YZY08sKyRSwHWoR4qNpcoP1tVDk5EQKZ0UDQS
+ kMRg==
+X-Gm-Message-State: AOAM532Efeladn+GeYdPTr8Na5uVHUFg+0B9SU0SpXj0YPIKhjj3MvEQ
+ w/46qDCfZy13A/FhX5TI6w0PYMTu
+X-Google-Smtp-Source: ABdhPJwEo2UcjRjR81rH/5WnV+UzjCPf8Krxexr6Grt7MJHVm0iEcnG4e4+TfhxI6Ptd1DKhH6nU7g==
+X-Received: by 2002:a17:90a:db0c:: with SMTP id
+ g12mr6058124pjv.5.1589990200391; 
+ Wed, 20 May 2020 08:56:40 -0700 (PDT)
+Received: from [10.230.188.43] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id x62sm2450278pfc.46.2020.05.20.08.56.38
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 20 May 2020 08:56:39 -0700 (PDT)
+Subject: Re: [PATCH] ARM: dts: bcm: HR2: Fix PPI interrupt types
+To: Hamish Martin <hamish.martin@alliedtelesis.co.nz>, robh+dt@kernel.org,
+ rjui@broadcom.com, sbranden@broadcom.com
+References: <20200520043042.7281-1-hamish.martin@alliedtelesis.co.nz>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <685f412c-5c52-ef56-bf9d-e42b72b3b993@gmail.com>
+Date: Wed, 20 May 2020 08:56:37 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200520122012.GA25815@willie-the-truck>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200520043042.7281-1-hamish.martin@alliedtelesis.co.nz>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_084717_788499_724DA1AE 
-X-CRM114-Status: GOOD (  22.57  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200520_085641_732983_E1A2F4C6 
+X-CRM114-Status: GOOD (  16.14  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,69 +103,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 01:20:13PM +0100, Will Deacon wrote:
-> On Wed, May 20, 2020 at 06:52:54AM +0530, Anshuman Khandual wrote:
-> > There is no way to proceed when requested register could not be searched in
-> > arm64_ftr_reg[]. Requesting for a non present register would be an error as
-> > well. Hence lets just BUG_ON() when the search fails in get_arm64_ftr_reg()
-> > rather than checking for return value and doing the same in some individual
-> > callers.
-> > 
-> > But there are some callers that dont BUG_ON() upon search failure. It adds
-> > an argument 'failsafe' that provides required switch between callers based
-> > on whether they could proceed or not.
-> > 
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > Cc: Mark Brown <broonie@kernel.org>
-> > Cc: linux-arm-kernel@lists.infradead.org
-> > Cc: linux-kernel@vger.kernel.org
-> > 
-> > Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> > ---
-> > Applies on next-20200518 that has recent cpufeature changes from Will.
-> > 
-> >  arch/arm64/kernel/cpufeature.c | 26 +++++++++++++-------------
-> >  1 file changed, 13 insertions(+), 13 deletions(-)
-> > 
-> > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> > index bc5048f152c1..62767cc540c3 100644
-> > --- a/arch/arm64/kernel/cpufeature.c
-> > +++ b/arch/arm64/kernel/cpufeature.c
-> > @@ -557,7 +557,7 @@ static int search_cmp_ftr_reg(const void *id, const void *regp)
-> >   *         - NULL on failure. It is upto the caller to decide
-> >   *	     the impact of a failure.
-> >   */
-> > -static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
-> > +static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id, bool failsafe)
-> 
-> Generally, I'm not a big fan of boolean arguments because they are really
-> opaque at the callsite. It also seems bogus to me that we don't trust the
-> caller to pass a valid sys_id, but we trust it to get "failsafe" right,
-> which seems to mean "I promise to check the result isn't NULL before
-> dereferencing it."
-> 
-> So I don't see how this patch improves anything. I'd actually be more
-> inclined to stick a WARN() in get_arm64_ftr_reg() when it returns NULL and
-> have the callers handle NULL by returning early, getting rid of all the
-> BUG_ONs in here. Sure, the system might end up in a funny state, but we
-> WARN()d about it and tried to keep going (and Linus has some strong opinions
-> on this too).
 
-Such WARN can be triggered by the user via emulate_sys_reg(), so we
-can't really have it in get_arm64_ftr_reg() without a 'failsafe' option.
+
+On 5/19/2020 9:30 PM, Hamish Martin wrote:
+> These error messages are output when booting on a BCM HR2 system:
+>     GIC: PPI11 is secure or misconfigured
+>     GIC: PPI13 is secure or misconfigured
+> 
+> Per ARM documentation these interrupts are triggered on a rising edge.
+> See ARM Cortex A-9 MPCore Technical Reference Manual, Revision r4p1,
+> Section 3.3.8 Interrupt Configuration Registers.
+> 
+> The same issue was resolved for NSP systems in commit 5f1aa51c7a1e
+> ("ARM: dts: NSP: Fix PPI interrupt types").
+> 
+> Signed-off-by: Hamish Martin <hamish.martin@alliedtelesis.co.nz>
+
+Thanks Hamish, this should also have a:
+
+Fixes: b9099ec754b5 ("ARM: dts: Add Broadcom Hurricane 2 DTS include file")
+
+I will take care of adding it while applying, thanks!
+
+> ---
+>  arch/arm/boot/dts/bcm-hr2.dtsi | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/bcm-hr2.dtsi b/arch/arm/boot/dts/bcm-hr2.dtsi
+> index 6142c672811e..5e5f5ca3c86f 100644
+> --- a/arch/arm/boot/dts/bcm-hr2.dtsi
+> +++ b/arch/arm/boot/dts/bcm-hr2.dtsi
+> @@ -75,7 +75,7 @@ a9pll: arm_clk@0 {
+>  		timer@20200 {
+>  			compatible = "arm,cortex-a9-global-timer";
+>  			reg = <0x20200 0x100>;
+> -			interrupts = <GIC_PPI 11 IRQ_TYPE_LEVEL_HIGH>;
+> +			interrupts = <GIC_PPI 11 IRQ_TYPE_EDGE_RISING>;
+>  			clocks = <&periph_clk>;
+>  		};
+>  
+> @@ -83,7 +83,7 @@ twd-timer@20600 {
+>  			compatible = "arm,cortex-a9-twd-timer";
+>  			reg = <0x20600 0x20>;
+>  			interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(1) |
+> -						  IRQ_TYPE_LEVEL_HIGH)>;
+> +						  IRQ_TYPE_EDGE_RISING)>;
+>  			clocks = <&periph_clk>;
+>  		};
+>  
+> @@ -91,7 +91,7 @@ twd-watchdog@20620 {
+>  			compatible = "arm,cortex-a9-twd-wdt";
+>  			reg = <0x20620 0x20>;
+>  			interrupts = <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(1) |
+> -						  IRQ_TYPE_LEVEL_HIGH)>;
+> +						  IRQ_TYPE_EDGE_RISING)>;
+>  			clocks = <&periph_clk>;
+>  		};
+>  
+> 
 
 -- 
-Catalin
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
