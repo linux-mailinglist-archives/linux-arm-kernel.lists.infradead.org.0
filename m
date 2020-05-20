@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EA651DA6D7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 02:59:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 952C91DA6DF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 03:03:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oixK5gC/OwzA8YsmaGTXGzWG1F43BFRiUcJWaWxHJcI=; b=dtJovweWIhAgIM
-	wlQawrJtuNaRBqxp850gPUNVS49Cz3ZUkuXLTIQGtCH8qfCfCnKgjnTKB0wQ90crPQUvxKexTD4uW
-	agL040rLz3D1aR990YAzzP2UHvDszYJnKS7oY3x6tJBCjwJj8FLy39v4k3SZotsR2GzP0gP/fW9nN
-	vaju7mjmXkpdnd0YydWy74OavUFqiEaswkc8kbFcJqjF01Yd8VgyyCeaIFG/qVlQkK8aJD4LLnjK1
-	PUSWnC2YSDQWRdqGY7Ixp8UqLsF64JLTCA4dGysVjw53657Uvsdb0jd857ycxBTkKm8izGTJPcXL0
-	8eGmU+WbXhu9ArSGd6aA==;
+	List-Owner; bh=YLDjNps+5crQaLJG6J4nAattfLm/N/P9GAyl4ahiGiw=; b=pN4tKQ89215Vjm
+	WctUP9zlxu4hLbsGp1tixn7r93BsIEXzKB4c2CKOa4lt13wWzE/cq6QwYLrQJwYlrx7nYHSVmSx0C
+	VnzCgiPM2Ee2tIsrXa6H3Qdw3hGC9Y/QXFS061u6zO9mzFi7bYBWlcmqw/ZI0GvxPvcOiHGKfp15z
+	HddagwZQZOMISSKDjg+7nmRcflAqznM7Aeoq2HRlnbMKCcO/zpH/BTZPdTm/qHWLROEOhBOoafUgh
+	rOS/IV+gxI3szgG056V1/QMzHs24xrY+tnvCPpS7DMzJcSyeeYC1LgyYpxcMenpBZW51kvKydov9P
+	jseP8Kfwh9Ld3n0GOnxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbD5I-00024G-Kl; Wed, 20 May 2020 00:59:48 +0000
+	id 1jbD8d-0004w7-EE; Wed, 20 May 2020 01:03:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbD59-00023r-3m
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 00:59:40 +0000
-Received: from dragon (unknown [80.251.214.228])
+ id 1jbD8T-0004vT-D5
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 01:03:06 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F1C3520829;
- Wed, 20 May 2020 00:59:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EB6B1207D8;
+ Wed, 20 May 2020 01:03:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589936378;
- bh=MaXxUnsEmP20Yr021WrgjNQVIPR91P6ksN4QtjXTsxI=;
+ s=default; t=1589936585;
+ bh=PnghFW2q0z4J9/+uLRYIWxx0fTo5s2jisGaXp615ofY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dpR8mhfRj8BsEjniQe/TrC8NqmhD9gT6j8pw5vAOYTf9bCHbqSkj6hQ3q+i1lZ/ZW
- +QoVSYnsgnaLsQAwkkjVFwHUAc1mXZ5KBtYC55NJWV6rnDKX7cBmj4uD8YawAhN+Si
- 37xsQMrYCjUbcuzmjV5Y4KfFrhJadmedGh99ebU0=
-Date: Wed, 20 May 2020 08:59:27 +0800
+ b=XtcZPHkUAob0Zyy/LFFTSkGnFY9V8EXP/haMriBYfa1SaR8nzeh8ctPwALmGPeRM/
+ vTZjCd5Kl2RlZ1vCIKDpD/icBra2DBSdaqdpr6xMLW0G95h1lZQxvRVtLtgg0fM3oh
+ +sxonEQmpk2HqdHqZnF9U7ieuaGFYCrkDHfanB9A=
+Date: Wed, 20 May 2020 09:02:55 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH] ARM: dts: imx50: Remove unused iomuxc-gpr node
-Message-ID: <20200520005926.GC11739@dragon>
-References: <20200501203747.14196-1-festevam@gmail.com>
+To: Adam Ford <aford173@gmail.com>
+Subject: Re: [PATCH] arm64: defconfig: Enable some audio drivers on i.MX8M Mini
+Message-ID: <20200520010254.GD11739@dragon>
+References: <20200502125949.194032-1-aford173@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200501203747.14196-1-festevam@gmail.com>
+In-Reply-To: <20200502125949.194032-1-aford173@gmail.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_175939_174835_DF00C014 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200519_180305_461810_C4342687 
+X-CRM114-Status: GOOD (  14.80  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,23 +76,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh+dt@kernel.org, linux-imx@nxp.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Will Deacon <will@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, aford@beaconemedded.com,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 01, 2020 at 05:37:47PM -0300, Fabio Estevam wrote:
-> The iomuxc-gpr node is not used and causes the following dtc
-> warning with W=1:
+On Sat, May 02, 2020 at 07:59:47AM -0500, Adam Ford wrote:
+> The i.MX8M Mini has SAI and micfil support but the drivers
+> are not being loaded.
 > 
-> arch/arm/boot/dts/imx50.dtsi:286.28-289.6: Warning (unique_unit_address): /soc/bus@50000000/iomuxc@53fa8000: duplicate unit-address (also used in node /soc/bus@50000000/iomuxc-gpr@53fa8000)
+> This patch updates the defconfig to add support
+> CONFIG_SND_SOC_FSL_SAI and CONFIG_SND_SOC_FSL_MICFIL to support
+> these drivers.
 > 
-> Remove the node to fix the warning.
+> Signed-off-by: Adam Ford <aford173@gmail.com>
 > 
-> Signed-off-by: Fabio Estevam <festevam@gmail.com>
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 366857dfa9de..4e60e8a98b83 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -638,6 +638,8 @@ CONFIG_SND_HDA_TEGRA=m
+>  CONFIG_SND_HDA_CODEC_HDMI=m
+>  CONFIG_SND_SOC=y
+>  CONFIG_SND_BCM2835_SOC_I2S=m
+> +CONFIG_SND_SOC_FSL_SAI=y
+> +CONFIG_SND_SOC_FSL_MICFIL=y
 
-Applied, thanks.
+Please enable them as 'm'.
+
+Shawn
+
+>  CONFIG_SND_MESON_AXG_SOUND_CARD=m
+>  CONFIG_SND_SOC_SDM845=m
+>  CONFIG_SND_SOC_ROCKCHIP=m
+> -- 
+> 2.25.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
