@@ -2,75 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E5521DB2C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:12:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 452B51DB2DA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:15:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w75HCSQ4re20bKp5jiRl6wESbYJuX4yAA2a5ENEVq7w=; b=nZVXc9EKejCFKe
-	FaibT5lp/ltMByOmXZyRx89r+1RLbzdO6Lu4dT8tJVHiHqL3PhG2sekWf5QC75XL6w8j0O8353IW5
-	yapyd4Yx9PdEO/GU/8mL5xlG78KnPNscT55plB1SSosV1TIwrxJBfrZGQamXxdnYJb6xz86yUYxdr
-	0IlctyZ6wo7ME6aRKurAWYR2RB/5+NMr7xEEwB4rIf0frnOKPchERmDOSKqx7HDgUDYHZNDGK8I9A
-	yMaxdN9L+eClW45GVbh47gB2N9zGDyuk/cyCzG0+NtOQVzQASRdwmpKKhdKBuB1gHOglsz0m0QhQe
-	Pf7l+zLf+KZ8pzQskhkQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mYGRPtVEDyyu1zuByJjXAahsWh+QQw7YraV0ZpIrroQ=; b=aTv
+	cdn+rfnxKRSe+qEksCeHZ+VhiqDXLThZGck1ae4onGApR58sMVvLbKXGg1OKhMZ5U9KkgNSQm+Ukc
+	UXy8ItMHw0OxigY6waYg1ny/VHALqmQnKJ9KYYjZSLjDrtezDDBTOjAvDVD04tRxALTi96LSp4nba
+	uV3UPTBfFyDfQqf8zvYYE+hOjyXpIHnC5UNNRpeu3UNW5jGrSk+0jppX3ea5uNvhChSRUVKjPvUxZ
+	OCDI5cac8oYkuTAUEzc8zsiYWGZreHeC278Mtww28Nmw3n4o7NOos2Vi6gQql0EFWsY37ZFTg0CeR
+	tJK1YyJP9dfXARp/e15GUTINnhr5Deg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbNZg-0001jH-11; Wed, 20 May 2020 12:11:52 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::12])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbNZU-0001hX-1L
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:11:41 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589976698;
- s=strato-dkim-0002; d=chronox.de;
- h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=dxK4Z+9yHO4jSPBzrsgC+jQ7JJM6/ROZjhK04+QSi/s=;
- b=L72MUnMJGFYtao72d82KD8w3lzOPdbioUYLkp8jzq1rkP8LPTPGQINrztVWhbZja3H
- xsIXF4urN/EuL71PRwrVv/nhhPHtui0/ZeekRj1pHSsyWgw9dR3h4dtZMGwq8XxV4RNZ
- 70tM3Sg8+qc/kFulMvXp6GOTCWb164QJOXQwmhlU2tMmRGV7beGTOmhFVXkbAyye0qhL
- wAkcHsG7JP/R+DYkMhCidWduW7NBT6kuIM4bXc5osDvfHX/hAwigeZU1AYg/HwXcpGQK
- wR6Je9UsID12ZjQ75Rj2kl204l1YJLVKlD+Pz7da6a0ZdP7Z9Wt59iEtG7PP7lzPEawY
- tsAA==
-X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPbI/Sc5g=="
-X-RZG-CLASS-ID: mo00
-Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.7.0 DYNA|AUTH)
- with ESMTPSA id k09005w4KCBZ5LX
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
- (Client did not present a certificate);
- Wed, 20 May 2020 14:11:35 +0200 (CEST)
-From: Stephan Mueller <smueller@chronox.de>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v2 1/2] hwrng: iproc-rng200 - Set the quality value
-Date: Wed, 20 May 2020 14:11:34 +0200
-Message-ID: <3322411.JsYv2Y6bm7@tauon.chronox.de>
-In-Reply-To: <CAJKOXPeBkZ3R2wT9-A8LWkFx0W9KY70VW7JNjwp0RMDRc7hkTg@mail.gmail.com>
-References: <15745285.MnsZKaK4VV@tauon.chronox.de>
- <2041475.ybOAuNAZB8@tauon.chronox.de>
- <CAJKOXPeBkZ3R2wT9-A8LWkFx0W9KY70VW7JNjwp0RMDRc7hkTg@mail.gmail.com>
-MIME-Version: 1.0
+	id 1jbNcl-0002v1-2H; Wed, 20 May 2020 12:15:03 +0000
+Received: from mail.zju.edu.cn ([61.164.42.155] helo=zju.edu.cn)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbNcY-0002ug-7k
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:14:51 +0000
+Received: from localhost.localdomain (unknown [222.205.77.158])
+ by mail-app3 (Coremail) with SMTP id cC_KCgBnb4srH8VevXngAA--.58342S4;
+ Wed, 20 May 2020 20:14:40 +0800 (CST)
+From: Dinghao Liu <dinghao.liu@zju.edu.cn>
+To: dinghao.liu@zju.edu.cn,
+	kjlu@umn.edu
+Subject: [PATCH] can: xilinx_can: fix runtime pm imbalance on error
+Date: Wed, 20 May 2020 20:14:34 +0800
+Message-Id: <20200520121434.4927-1-dinghao.liu@zju.edu.cn>
+X-Mailer: git-send-email 2.17.1
+X-CM-TRANSID: cC_KCgBnb4srH8VevXngAA--.58342S4
+X-Coremail-Antispam: 1UD129KBjvdXoWrKrWrZF15CFyUGr4xXF1UKFg_yoW3uwb_Gr
+ s8ZFs7Xw1Syrnrtw1UCa13ZryS9FWDX3W8XF1FvrWayay7ur4DCrW8ZFnxArs8Xw409F93
+ KF9rXFyxArWrZjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUbT8Fc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AK
+ wVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20x
+ vE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4UJVWxJr1l84ACjcxK6I8E
+ 87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_GcCE3s1le2I262IYc4CY6c
+ 8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_Jrv_
+ JF1lYx0Ex4A2jsIE14v26r4j6F4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvY0x0EwI
+ xGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2Y2ka0xkIwI1lc2xSY4AK
+ 67AK6ryUMxAIw28IcxkI7VAKI48JMxAIw28IcVCjz48v1sIEY20_GFWkJr1UJwCFx2IqxV
+ CFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r10
+ 6r1rMI8E67AF67kF1VAFwI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxV
+ WUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG
+ 6rWUJVWrZr1UMIIF0xvEx4A2jsIE14v26r4j6F4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr
+ 1j6F4UJbIYCTnIWIevJa73UjIFyTuYvjfUn0eHDUUUU
+X-CM-SenderInfo: qrrzjiaqtzq6lmxovvfxof0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_051140_663947_865F4AD1 
-X-CRM114-Status: GOOD (  20.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200520_051450_590874_E55E85BA 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:12 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,61 +72,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Matthias Brugger <mbrugger@suse.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matt Mackall <mpm@selenic.com>, Lukasz Stelmach <l.stelmach@samsung.com>,
- Scott Branden <sbranden@broadcom.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Stefan Wahren <wahrenst@gmx.net>, Ray Jui <rjui@broadcom.com>,
- Markus Elfring <elfring@users.sourceforge.net>,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
+Cc: Naga Sureshkumar Relli <naga.sureshkumar.relli@xilinx.com>,
+ linux-kernel@vger.kernel.org, netdev@vger.kernel.org,
+ Michal Simek <michal.simek@xilinx.com>, linux-can@vger.kernel.org,
+ Marc Kleine-Budde <mkl@pengutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ Jakub Kicinski <kuba@kernel.org>, "David S. Miller" <davem@davemloft.net>,
+ Wolfgang Grandegger <wg@grandegger.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Mittwoch, 20. Mai 2020, 14:00:01 CEST schrieb Krzysztof Kozlowski:
+pm_runtime_get_sync() increments the runtime PM usage counter even
+the call returns an error code. Thus a pairing decrement is needed
+on the error handling path to keep the counter balanced.
 
-Hi Krzysztof,
+Signed-off-by: Dinghao Liu <dinghao.liu@zju.edu.cn>
+---
+ drivers/net/can/xilinx_can.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> On Wed, 20 May 2020 at 13:53, Stephan Mueller <smueller@chronox.de> wrote:
-> > > > That said, the illustrated example is typical for hardware RNGs. Yet
-> > > > it is never guaranteed to work that way. Thus, if you can point to
-> > > > architecture documentation of your specific hardware RNGs showing that
-> > > > the data read from the hardware is pure unconditioned noise data, then
-> > > > I have no objections to the patch.
-> > > 
-> > > I can tell for sure that this is the case for exynos-trng[1].
-> > 
-> > So you are saying that the output for the exynos-trng is straight from a
-> > ring oscillator without any post-processing of any kind?
-> 
-> Hi,
-> 
-> I think we will never be able to state this because the manual is
-> quite limited in sharing internals. What the driver does and probably
-> Lukasz wanted to say is that there is "post processing" block and
-> feature which can be disabled. The manual is saying the TRNG block
-> generates random data from thermal noise but not how much in a direct
-> way. There could be some simple post-processing or not (except the one
-> able to on/off). Also manual says this post processing block is there
-> to remove statistical weakness from the TRNG block. To me it does not
-> prove enough that raw data is really raw...
-
-Unterstood, but can't that statement be added to the commit message?
-> 
-> Best regards,
-> Krzysztof
-
-
-Ciao
-Stephan
-
+diff --git a/drivers/net/can/xilinx_can.c b/drivers/net/can/xilinx_can.c
+index c1dbab8c896d..a9e8184cc611 100644
+--- a/drivers/net/can/xilinx_can.c
++++ b/drivers/net/can/xilinx_can.c
+@@ -1823,8 +1823,8 @@ static int xcan_probe(struct platform_device *pdev)
+ 	return 0;
+ 
+ err_disableclks:
+-	pm_runtime_put(priv->dev);
+ err_pmdisable:
++	pm_runtime_put(priv->dev);
+ 	pm_runtime_disable(&pdev->dev);
+ err_free:
+ 	free_candev(ndev);
+-- 
+2.17.1
 
 
 _______________________________________________
