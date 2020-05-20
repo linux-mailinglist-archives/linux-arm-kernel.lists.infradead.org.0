@@ -2,61 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8172F1DAA68
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 08:12:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 793B31DAA54
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 08:03:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=G8f3JAM9dTfoXV+rEmwmj8JaWrf6tQ3ajskej25lWQE=; b=Xto
-	BwPnexlClnYYhUb6BgTI8j/pg8C7vgBvm4RbTUvORnVeLEC6eI3ZTLTTHczi3FE8uuuJz7/kbDN6w
-	8OI9AdTKorDXGft2/BPKYrcH3ThamGPDMyVv9lz4aCOXnJSCT9/agzzGL8gaV5sc6w7eEyecIv1Fz
-	NNSwPztCmlZmyFrxBf6+utCD42ZjKMy6Bfc/E8lqKTcGgyWQBCixPoy+/Jq98/Ud8eQNDSl8dQBVH
-	N8N18AuMnstQ/vs2aIcHZHaZxRAcB/mWIDrL4QjLmogv024z1pCCubU/lvF4Vc2fOSLBgJ5d4cYl+
-	AU7e2P4q9faghgqwje9PY54g40H+4kA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uNsJLsMTW4QstBZmvJoqpL3UMw1cmBGMVc0vgaiIKCY=; b=UxoRlgM7GWlTq1
+	OSnPMZx45/3CSEApyAgEVINse15rmKGSaHxlBLnMoNBzzgjmRaACFRZmBwG/Gon7ImfvRNjkNP/dH
+	ymsibBBTIce3D7ZRyZKq9GC9yKfOGccMIERw89hqu9ISRDiOM4A5GBZD+yMMB26YRxIfSRyMRf/TS
+	IIy/oFw5c9+0+3RV+N352+k01L4vyhZ0iRqrk20lNjpi27Ye1uvDV6BZiGwRlJ6tNlNGDBcnXjeVH
+	1PXg6bQTowxtwM5i8XQWf94l3uZNXjMynCh0UTe/a92h6IkMnBeqpwGg8UxSzGxMUe5eG4c1+JCSa
+	+PL6/fUwUA/X/tmzWGIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbHyA-0004ng-Hm; Wed, 20 May 2020 06:12:46 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jbHpK-0006pZ-VZ; Wed, 20 May 2020 06:03:38 +0000
+Received: from mo6-p00-ob.smtp.rzone.de ([2a01:238:20a:202:5300::10])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbHxz-0004mi-MW
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 06:12:37 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 474652001F9;
- Wed, 20 May 2020 08:12:31 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id C07582001F2;
- Wed, 20 May 2020 08:12:25 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 893BA40299;
- Wed, 20 May 2020 14:12:18 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: rui.zhang@intel.com, daniel.lezcano@linaro.org,
- amit.kucheria@verdurent.com, robh+dt@kernel.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-pm@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V2] dt-bindings: thermal: Convert i.MX to json-schema
-Date: Wed, 20 May 2020 14:02:40 +0800
-Message-Id: <1589954560-10810-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jbHpB-0006oV-5C
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 06:03:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589954605;
+ s=strato-dkim-0002; d=chronox.de;
+ h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=pSXXxnX23N+Cj33l5NV3fLExfRAIBDF1x9HdRtzBo2c=;
+ b=izfGordIG1xgCf+JzhDV47puL6X60pkccRHEjKh2PNLndB7hGFwhPqJnFcDyN9PSxz
+ VVTfl3Djju1Omvj/Y7WQ6Zg2X9tJqGS6AnAl38CsqhSdPaH4pRyjMoXKBjAGVaKpDXyA
+ CqoMu1DcblItgi9c6iuJXGqtjq4eCmWNSf8BpxLbp8vitFQVlEjP18RnIuOf9SfLeEuL
+ U2l8zVTs2t5VnbEfJ6/12AWQYiTlfLB6dt0dm/+ntolBkV8SOAiINWSa0AaSs8f1knoG
+ qVEzjAIKe/1Bb2AdtW1qByk5CELJjj7KKDmeAnF+LbSBUK6KiN13E1aCV97J+H1QMMGx
+ avXg==
+X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPbI/Sc5g=="
+X-RZG-CLASS-ID: mo00
+Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.7.0 DYNA|AUTH)
+ with ESMTPSA id k09005w4K63O2y2
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+ (Client did not present a certificate);
+ Wed, 20 May 2020 08:03:24 +0200 (CEST)
+From: Stephan Mueller <smueller@chronox.de>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [RFC/RFT PATCH 0/2] crypto: add CTS output IVs for arm64 and
+ testmgr
+Date: Wed, 20 May 2020 08:03:23 +0200
+Message-ID: <16565072.6IxHkjxkAd@tauon.chronox.de>
+In-Reply-To: <20200519190211.76855-1-ardb@kernel.org>
+References: <20200519190211.76855-1-ardb@kernel.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_231236_008441_F8330290 
-X-CRM114-Status: GOOD (  13.37  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200519_230329_786383_AAF1C9FB 
+X-CRM114-Status: GOOD (  11.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:238:20a:202:5300:0:0:10 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,202 +81,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: ebiggers@kernel.org, linux-crypto@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX thermal binding to DT schema format using json-schema
+Am Dienstag, 19. Mai 2020, 21:02:09 CEST schrieb Ard Biesheuvel:
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
-Changes since V1:
-	- move tempmon node into its parent node anatop in example;
-	- improve "fsl,tempmon" description.
----
- .../devicetree/bindings/thermal/imx-thermal.txt    |  61 -------------
- .../devicetree/bindings/thermal/imx-thermal.yaml   | 100 +++++++++++++++++++++
- 2 files changed, 100 insertions(+), 61 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/thermal/imx-thermal.txt
- create mode 100644 Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+Hi Ard,
 
-diff --git a/Documentation/devicetree/bindings/thermal/imx-thermal.txt b/Documentation/devicetree/bindings/thermal/imx-thermal.txt
-deleted file mode 100644
-index 823e417..0000000
---- a/Documentation/devicetree/bindings/thermal/imx-thermal.txt
-+++ /dev/null
-@@ -1,61 +0,0 @@
--* Temperature Monitor (TEMPMON) on Freescale i.MX SoCs
--
--Required properties:
--- compatible : must be one of following:
--  - "fsl,imx6q-tempmon" for i.MX6Q,
--  - "fsl,imx6sx-tempmon" for i.MX6SX,
--  - "fsl,imx7d-tempmon" for i.MX7S/D.
--- interrupts : the interrupt output of the controller:
--  i.MX6Q has one IRQ which will be triggered when temperature is higher than high threshold,
--  i.MX6SX and i.MX7S/D have two more IRQs than i.MX6Q, one is IRQ_LOW and the other is IRQ_PANIC,
--  when temperature is below than low threshold, IRQ_LOW will be triggered, when temperature
--  is higher than panic threshold, system will auto reboot by SRC module.
--- fsl,tempmon : phandle pointer to system controller that contains TEMPMON
--  control registers, e.g. ANATOP on imx6q.
--- nvmem-cells: A phandle to the calibration cells provided by ocotp.
--- nvmem-cell-names: Should be "calib", "temp_grade".
--
--Deprecated properties:
--- fsl,tempmon-data : phandle pointer to fuse controller that contains TEMPMON
--  calibration data, e.g. OCOTP on imx6q.  The details about calibration data
--  can be found in SoC Reference Manual.
--
--Direct access to OCOTP via fsl,tempmon-data is incorrect on some newer chips
--because it does not handle OCOTP clock requirements.
--
--Optional properties:
--- clocks : thermal sensor's clock source.
--
--Example:
--ocotp: ocotp@21bc000 {
--	#address-cells = <1>;
--	#size-cells = <1>;
--	compatible = "fsl,imx6sx-ocotp", "syscon";
--	reg = <0x021bc000 0x4000>;
--	clocks = <&clks IMX6SX_CLK_OCOTP>;
--
--	tempmon_calib: calib@38 {
--		reg = <0x38 4>;
--	};
--
--	tempmon_temp_grade: temp-grade@20 {
--		reg = <0x20 4>;
--	};
--};
--
--tempmon: tempmon {
--	compatible = "fsl,imx6sx-tempmon", "fsl,imx6q-tempmon";
--	interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
--	fsl,tempmon = <&anatop>;
--	nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
--	nvmem-cell-names = "calib", "temp_grade";
--	clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
--};
--
--Legacy method (Deprecated):
--tempmon {
--	compatible = "fsl,imx6q-tempmon";
--	fsl,tempmon = <&anatop>;
--	fsl,tempmon-data = <&ocotp>;
--	clocks = <&clks 172>;
--};
-diff --git a/Documentation/devicetree/bindings/thermal/imx-thermal.yaml b/Documentation/devicetree/bindings/thermal/imx-thermal.yaml
-new file mode 100644
-index 0000000..894465e
---- /dev/null
-+++ b/Documentation/devicetree/bindings/thermal/imx-thermal.yaml
-@@ -0,0 +1,100 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/thermal/imx-thermal.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: NXP i.MX Thermal Binding
-+
-+maintainers:
-+  - Shawn Guo <shawn.guo@linaro.org>
-+  - Anson Huang <Anson.Huang@nxp.com>
-+
-+properties:
-+  compatible:
-+    oneOf:
-+      - items:
-+          - enum:
-+              - fsl,imx6q-tempmon
-+              - fsl,imx6sx-tempmon
-+              - fsl,imx7d-tempmon
-+
-+  interrupts:
-+    description: |
-+      The interrupt output of the controller, the IRQ will be triggered
-+      when temperature is higher than high threshold.
-+    maxItems: 1
-+
-+  nvmem-cells:
-+    description: |
-+      Phandle to the calibration cells provided by ocotp for calibration
-+      data and temperature grade.
-+    maxItems: 2
-+
-+  nvmem-cell-names:
-+    maxItems: 2
-+    items:
-+      - const: calib
-+      - const: temp_grade
-+
-+  fsl,tempmon:
-+    $ref: '/schemas/types.yaml#/definitions/phandle'
-+    description: Phandle to the register map node.
-+
-+  fsl,tempmon-data:
-+    $ref: '/schemas/types.yaml#/definitions/phandle'
-+    description: |
-+      Deprecated property, phandle pointer to fuse controller that contains
-+      TEMPMON calibration data, e.g. OCOTP on imx6q. The details about
-+      calibration data can be found in SoC Reference Manual.
-+    deprecated: true
-+
-+  clocks:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - interrupts
-+  - fsl,tempmon
-+  - nvmem-cells
-+  - nvmem-cell-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/imx6sx-clock.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+
-+    efuse@21bc000 {
-+         #address-cells = <1>;
-+         #size-cells = <1>;
-+         compatible = "fsl,imx6sx-ocotp", "syscon";
-+         reg = <0x021bc000 0x4000>;
-+         clocks = <&clks IMX6SX_CLK_OCOTP>;
-+
-+         tempmon_calib: calib@38 {
-+             reg = <0x38 4>;
-+         };
-+
-+         tempmon_temp_grade: temp-grade@20 {
-+             reg = <0x20 4>;
-+         };
-+    };
-+
-+    anatop@20c8000 {
-+        compatible = "fsl,imx6q-anatop", "syscon", "simple-mfd";
-+        reg = <0x020c8000 0x1000>;
-+        interrupts = <0 49 IRQ_TYPE_LEVEL_HIGH>,
-+                     <0 54 IRQ_TYPE_LEVEL_HIGH>,
-+                     <0 127 IRQ_TYPE_LEVEL_HIGH>;
-+
-+        tempmon {
-+             compatible = "fsl,imx6sx-tempmon";
-+             interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-+             fsl,tempmon = <&anatop>;
-+             nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
-+             nvmem-cell-names = "calib", "temp_grade";
-+             clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
-+        };
-+    };
--- 
-2.7.4
+> Stephan reports that the arm64 implementation of cts(cbc(aes)) deviates
+> from the generic implementation in what it returns as the output IV. So
+> fix this, and add some test vectors to catch other non-compliant
+> implementations.
+> 
+> Stephan, could you provide a reference for the NIST validation tool and
+> how it flags this behaviour as non-compliant? Thanks.
+
+The test definition that identified the inconsistent behavior is specified 
+with [1]. Note, this testing is intended to become an RFC standard.
+
+To facilitate that testing, NIST offers an internet service, the ACVP server, 
+that allows obtaining test vectors and uploading responses. You see the large 
+number of concluded testing with [2]. A particular completion of the CTS 
+testing I finished yesterday is given in [3]. That particular testing was also 
+performed on an ARM system with CE where the issue was detected.
+
+I am performing the testing with [4] that has an extension to test the kernel 
+crypto API.
+
+[1] https://github.com/usnistgov/ACVP/blob/master/artifacts/draft-celi-acvp-block-ciph-00.txt#L366
+
+[2] https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/
+validation-search?searchMode=validation&family=1&productType=-1&ipp=25
+
+[3] https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/
+details?validation=32608
+
+[4] https://github.com/smuellerDD/acvpparser
+> 
+> Cc: Stephan Mueller <smueller@chronox.de>
+> 
+> Ard Biesheuvel (2):
+>   crypto: arm64/aes - align output IV with generic CBC-CTS driver
+>   crypto: testmgr - add output IVs for AES-CBC with ciphertext stealing
+> 
+>  arch/arm64/crypto/aes-modes.S |  2 ++
+>  crypto/testmgr.h              | 12 ++++++++++++
+>  2 files changed, 14 insertions(+)
+
+
+Ciao
+Stephan
+
 
 
 _______________________________________________
