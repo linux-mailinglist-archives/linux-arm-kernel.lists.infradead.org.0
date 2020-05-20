@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27BF91DB309
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:20:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F5101DB324
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:25:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OMlKlexcLDiqPKL6g1x4Ub6v7eqseZj1E9RT+bEKXLQ=; b=j5CGfMl+W4SUPP
-	pqKTIK0o/YFXghn7vWiXGMd0vXcOjxfbQIUampBcCd4lzW47JiSfPMESQVzT+aCByeICSoWLDDM7b
-	mhjzKlYeKUVvyGaTjmLCLHTSf93aCPrlEW6QWHyKrTCIakaij/UPPbWkzn98e1YM/9sqHRai4S013
-	eGZdCZONlUJoZkpXuv9Q4/GFU2I1nkH/5riAs9nv0D4QYZgCM3uMBkX2bQXdOAmGz4E+8aFaw6yTk
-	Nz1XItEvGKBXl6iR0wAiccy1OL2E+NLCs3+Or0Gynz6l7KNKJS8mc/U6VHb2jf3KvRJBt5j2RTFA4
-	8hy04p67R7EvwQG/ELqw==;
+	List-Owner; bh=tnJySzDdfIcIYVehsTGkI5Kfy+JrWDvzA2IMfaqXO1A=; b=fEb2JL7UQHwE2a
+	nwIm7BR9GnyU76Nhh3NdlbSKN50Y2CITkuqi9b4qAXtFw8QloyaM6zdJUudCzvYXpcgCxbRn41Ryl
+	ScjDiijKF/FO10HccRlU3AmtCgtOVk0upFiBj41mGZItiBhEP2S4kFBVRmd/36b2MiATeaSetYoDq
+	wz93bKFqSx5ntX2PoMTajrqGTnH7G4GsSgcLWxIFIGRpRXCTBlxSkHPRM9oIMc/LpJH9Gx6fPMCH5
+	RXnQ6vuUOLV/Nry4J/yEr8ltte0IibdMjJSmb1wvbVuKP5sLUB2DdH98xXtEhqGO/EGFL8RbZle2J
+	MDQt6Qm8Y+RiUevwpphw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbNhz-0008UB-FZ; Wed, 20 May 2020 12:20:27 +0000
+	id 1jbNml-0000Z4-6h; Wed, 20 May 2020 12:25:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbNhq-0008JC-Fd
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:20:19 +0000
+ id 1jbNmM-0000YZ-Ad
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:24:59 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9753420657;
- Wed, 20 May 2020 12:20:16 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BEAEE20756;
+ Wed, 20 May 2020 12:24:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589977217;
- bh=s1IJDFM69rLSIM89S8He+QNj2aboB3hM+ns5gDOAG2k=;
+ s=default; t=1589977497;
+ bh=d/z8UA8FFrA6+I5LNQQLsUptQcBDDl+RwCUFWJSU6zw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=o0W/0JpWVHm5czQnB+BT23Csnm7/Dn7SlaZePwktrkhrJqyoU0iNzj+zxzvjTU1vu
- cin/hdP2FmazEg4EVxictLEpaInoidhg90GWZJi5N8eQtqGF5fNmtKSYiSLZfWsloK
- Dt09g7dP3jm8ZlBq89YAMs3HHVgNZXgvxRDYoFzo=
-Date: Wed, 20 May 2020 13:20:13 +0100
+ b=Py3HwqksfPjk89NWRpPwnn8sfAtd0DzcrCytjVZ992kud/N7uojsiaPz/FQw8pqcg
+ P7IcO5Q9CA3iDgpHjnjb9EqpJexvxJi3/5cF0SCESbE0/f9a4x/W7MUV4j3pLoxD1j
+ YvmuYFDD5uJWdtsGKRoueuBp35Dh0IdzQ19NPaH8=
+Date: Wed, 20 May 2020 13:24:53 +0100
 From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH] arm64/cpufeature: Move BUG_ON() inside get_arm64_ftr_reg()
-Message-ID: <20200520122012.GA25815@willie-the-truck>
-References: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH] perf/smmuv3: Allow sharing MMIO registers with the SMMU
+ driver
+Message-ID: <20200520122453.GB25815@willie-the-truck>
+References: <20200421155745.19815-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <20200421155745.19815-1-jean-philippe@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_052018_549156_950FDB95 
-X-CRM114-Status: GOOD (  19.06  )
+X-CRM114-CacheID: sfid-20200520_052458_385168_AF55F04D 
+X-CRM114-Status: GOOD (  14.44  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,64 +77,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, iommu@lists.linux-foundation.org,
+ lorenzo.pieralisi@arm.com, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Anshuman,
-
-On Wed, May 20, 2020 at 06:52:54AM +0530, Anshuman Khandual wrote:
-> There is no way to proceed when requested register could not be searched in
-> arm64_ftr_reg[]. Requesting for a non present register would be an error as
-> well. Hence lets just BUG_ON() when the search fails in get_arm64_ftr_reg()
-> rather than checking for return value and doing the same in some individual
-> callers.
+On Tue, Apr 21, 2020 at 05:57:46PM +0200, Jean-Philippe Brucker wrote:
+> Some Arm SMMUv3 implementations, for example Arm CoreLink MMU-600, embed
+> the PMCG registers into the SMMU MMIO regions. It currently causes probe
+> failure because the PMU and SMMU drivers request overlapping resources.
 > 
-> But there are some callers that dont BUG_ON() upon search failure. It adds
-> an argument 'failsafe' that provides required switch between callers based
-> on whether they could proceed or not.
+> Avoid the conflict by calling devm_ioremap() directly from the PMU
+> driver. We loose some sanity-checking of the memory map provided by
+> firmware, which doesn't seem catastrophic.
 > 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> 
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 > ---
-> Applies on next-20200518 that has recent cpufeature changes from Will.
 > 
->  arch/arm64/kernel/cpufeature.c | 26 +++++++++++++-------------
->  1 file changed, 13 insertions(+), 13 deletions(-)
+> So this is the simplest solution, and I don't think we're missing much
+> by skipping the resource reservation. I've also been exploring a more
+> complex approach [1] which has the SMMU driver perform resource
+> reservation on behalf of the PMU driver, but I'm not sure it's
+> necessary.
 > 
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index bc5048f152c1..62767cc540c3 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -557,7 +557,7 @@ static int search_cmp_ftr_reg(const void *id, const void *regp)
->   *         - NULL on failure. It is upto the caller to decide
->   *	     the impact of a failure.
->   */
-> -static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
-> +static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id, bool failsafe)
+> Please test, I've only tried the RevC FastModel using devicetree so far.
+> 
+> [1] https://jpbrucker.net/git/linux/log/?h=smmu/pmu
+> ---
+>  drivers/perf/arm_smmuv3_pmu.c | 28 +++++++++++++++++++++-------
+>  1 file changed, 21 insertions(+), 7 deletions(-)
 
-Generally, I'm not a big fan of boolean arguments because they are really
-opaque at the callsite. It also seems bogus to me that we don't trust the
-caller to pass a valid sys_id, but we trust it to get "failsafe" right,
-which seems to mean "I promise to check the result isn't NULL before
-dereferencing it."
-
-So I don't see how this patch improves anything. I'd actually be more
-inclined to stick a WARN() in get_arm64_ftr_reg() when it returns NULL and
-have the callers handle NULL by returning early, getting rid of all the
-BUG_ONs in here. Sure, the system might end up in a funny state, but we
-WARN()d about it and tried to keep going (and Linus has some strong opinions
-on this too).
+Is this patch still needed? I can't quite follow from the discussion.
 
 Will
 
