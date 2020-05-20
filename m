@@ -2,64 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38F051DC211
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 00:31:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F13A1DC289
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 00:58:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xmCCdRwNAHJ8NL9OVOgKGlLa7GID1CEtZoARONroDpY=; b=Xo0E/dQZEcxHd4
-	fDrgWGHhhgWlfh9XjiQw6qioAQGvoQFCkOfsWLeDYAoqMiWFFq6lX81IH3JutyhhYWpUDXKMKKZGV
-	dYQPMEKeSb4BpBLRRv5+aQ0ZRJzw5PzZt7jYPkYoHo5QvrVK0iIE/EMGI9fHaaTowuUqrppttedpl
-	y8zdIA9sdUb23MTbexwYp8poT1fICt4tpycRU4E2DRkYsLlETAJDQJyezSmpYjkPwKms7PXde/brJ
-	fUHxjW6MEjM/GBLnLtz5SzSFC2Fewl7C4MCt1DxevnpkkDVyyfVvw2lkksSEcEucrRqZ+h3XghGq+
-	x89zJTjniAHC4eMXpxgw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=hC5mFQX4ECT3mDH3zqnYC4VRR5M5sSMnjonNaqIc9oU=; b=pzl
+	Nu7DITYtmOlfNg+WgQvBLlpUVY55Ox9jFsx6JIUrhI1+B+6uqRWoEEqe1bc8HJELQ6ZctnBdzkkKP
+	LbxfziUX9zEl9lp6NZHVsIxWqbmjB7SS87RU+CpW3cYxWSWMKA+GiBYA6MRURDwkGF68pnqfPzRec
+	LGyrUZzrc41d+J2gHIsrBS4A7lBIeWgkZ566L/SXgJIjhvSEWKrT+3/MG8zDL5Eb5fCrgagEIAYRR
+	QgT0+lG3MKJh23ZTkRe6FzC72n4qXzJiAKjLbgGbAHLAGZJMEkTuh3HQnCyJaIkMxXMrD+Uc4emV3
+	q2MmmaboUToj9r+Y8v0dxAU3ubFHkKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbXFA-00052x-PJ; Wed, 20 May 2020 22:31:20 +0000
-Received: from mailoutvs62.siol.net ([185.57.226.253] helo=mail.siol.net)
+	id 1jbXfa-0002PS-9n; Wed, 20 May 2020 22:58:38 +0000
+Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbXF0-000528-Lp
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 22:31:12 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id 5F0AD521CA5;
- Thu, 21 May 2020 00:30:58 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id WVPCA-mzMnE8; Thu, 21 May 2020 00:30:58 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id E1B7A521CA2;
- Thu, 21 May 2020 00:30:57 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id 6D5FC521C9C;
- Thu, 21 May 2020 00:30:57 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: mripard@kernel.org, paul.kocialkowski@bootlin.com,
- Nicolas Dufresne <nicolas@ndufresne.ca>
-Subject: Re: [PATCH] media: cedrus: Add support for VP8 decoding
-Date: Thu, 21 May 2020 00:30:56 +0200
-Message-ID: <2875977.BS6FNRR2HQ@jernej-laptop>
-In-Reply-To: <ee0aa12fdf1655c4e563b8fc9753a5ab5e52f4cf.camel@ndufresne.ca>
-References: <20200520210129.132816-1-jernej.skrabec@siol.net>
- <ee0aa12fdf1655c4e563b8fc9753a5ab5e52f4cf.camel@ndufresne.ca>
-MIME-Version: 1.0
+ id 1jbXdK-0000vt-Od
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 22:56:48 +0000
+Received: from unknown (HELO ironmsg-SD-alpha.qualcomm.com) ([10.53.140.30])
+ by alexa-out-sd-02.qualcomm.com with ESMTP; 20 May 2020 15:56:06 -0700
+Received: from gurus-linux.qualcomm.com ([10.46.162.81])
+ by ironmsg-SD-alpha.qualcomm.com with ESMTP; 20 May 2020 15:56:06 -0700
+Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
+ id 574F44D8D; Wed, 20 May 2020 15:56:06 -0700 (PDT)
+From: Guru Das Srinagesh <gurus@codeaurora.org>
+To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: [RESEND PATCH v14 00/11] Convert PWM period and duty cycle to u64
+Date: Wed, 20 May 2020 15:55:53 -0700
+Message-Id: <cover.1589330178.git.gurus@codeaurora.org>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_153110_868478_7F9E8CCC 
-X-CRM114-Status: GOOD (  16.45  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200520_155618_861710_1AA3BD0D 
+X-CRM114-Status: GOOD (  16.63  )
+X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.253 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [199.106.114.39 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,103 +61,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, wens@csie.org, hverkuil-cisco@xs4all.nl,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-arm-kernel@lists.infradead.org,
+ Guru Das Srinagesh <gurus@codeaurora.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
+ David Collins <collinsd@codeaurora.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-kernel@vger.kernel.org, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>, Joe Perches <joe@perches.com>,
+ Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
+ Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dne sreda, 20. maj 2020 ob 23:43:40 CEST je Nicolas Dufresne napisal(a):
-> Le mercredi 20 mai 2020 =E0 23:01 +0200, Jernej Skrabec a =E9crit :
-> > VP8 in Cedrus shares same engine as H264.
-> > =
+[REQUEST]
 
-> > Note that it seems necessary to call bitstream parsing functions,
-> > to parse frame header, otherwise decoded image is garbage. This is
-> > contrary to what is driver supposed to do. However, values are not
-> > really used, so this might be acceptable. It's possible that bitstream
-> =
+As the patch series stands currently, only 4 out of 11 patches remain
+unreviewed. All the other patches have either an Acked-by or a Reviewed-by tag.
+Could these remaining patches in the series be reviewed as well?
+  - 04/11
+  - 05/11
+  - 06/11
+  - 11/11
 
-> Have you verified that all values passed through controls are not used
-> ? To remain a stateless driver, there is no requirement for parsed data
-> to be used, the only requirement is that the reference are used.
-> Otherwise doing parallel decoding of two stream of different stream
-> would be broken. Have you verified that parallel decoding is working as
-> expected ?
+[COVER LETTER]
 
-I'm not sure if you understand what I meant. Although userspace app parses =
+Because period and duty cycle are defined in the PWM framework structs as ints
+with units of nanoseconds, the maximum time duration that can be set is limited
+to ~2.147 seconds. Consequently, applications desiring to set greater time
+periods via the PWM framework are not be able to do so - like, for instance,
+causing an LED to blink at an interval of 5 seconds.
 
-frame header and fills all data in VP8 control, driver parses frame header =
+Redefining the period and duty cycle struct members in the core PWM framework
+structs as u64 values will enable larger time durations to be set and solve
+this problem. Such a change to the framework mandates that drivers using these
+struct members (and corresponding helper functions) also be modified correctly
+in order to prevent compilation errors.
 
-again, using HW bitstream parsing functionality in cedrus_read_header(). =
+This patch series introduces the changes to all the drivers first, followed by
+the framework change at the very end so that when the latter is applied, all
+the drivers are in good shape and there are no compilation errors.
 
-Without that second header parsing in HW, decoded image is garbage. Note th=
-at =
+Changes from v13:
+  - Pruned cc-list and added same (reduced) set of reviewers to all patches.
+  - Added Lee Jones' Acked-by to the pwm_bl.c patch.
+  - Added Jani Nikula's Acked-by to intel-panel.c patch.
+  - Added Stephen Boyd's Acked-by to pwm-clk.c patch.
+  - Addressed Geert's review comments in clps711x.c patch.
 
-cedrus_read_header() discards all parsed values and relies on those provide=
-d =
+Changes from v12:
+  - Rebased to tip of for-next
+  - Collected Acked-by for sun4i
+  - Reworked patch for intel-panel.c due to rebase, dropped Jani's Acked-by as
+    a result
 
-in controls.
+Changes from v11:
+  - Rebased to tip of for-next.
+  - Collected "Acked-by:" for v7 (unchanged) of pwm: sifive: [4]
+  - Squished stm32-lp.c change with final patch in series
+  - sun4i: Used nsecs_to_jiffies()
+  - imx27: Added overflow handling logic
+  - clps711x: Corrected the if condition for skipping the division
+  - clk: pwm: Reverted to v8 version, added check to prevent division-by-zero
 
-This parsing doesn't cause any problems with parallel decoding or anything. =
+Changes from v10:
+  - Carefully added back all the "Reviewed-by: " and "Acked-by: " tags received
+    so far that had gotten missed in v9. No other changes.
 
-It's done during frame decoding job, so it doesn't affect any state. It's j=
-ust =
+Changes from v9:
+  - Gathered the received "Reviewed-by: " tag
+  - Added back the clk-pwm.c patch because kbuild test robot complained [3]
+    and addressed received review comments.
+  - clps711x: Addressed review comments.
 
-that we shouldn't need to parse header in driver because all data is alread=
-y =
+Changes from v8:
+  - Gathered all received "Acked-by: " and "Reviewed-by: " tags
+  - Dropped patch to clk-pwm.c for reasons mentiond in [2]
+  - Expanded audience of unreviewed patches
 
-provided in controls. It seems that Cedrus core was never tested without th=
-at =
+Changes from v7:
+  - Changed commit messages of all patches to be brief and to the point.
+  - Added explanation of change in cover letter.
+  - Dropped change to pwm-sti.c as upon review it was unnecessary as struct
+    pwm_capture is not being modified in the PWM core.
 
-HW frame header parsing. I found out that HEVC and H264 frames can sometime=
-s =
+Changes from v6:
+  - Split out the driver changes out into separate patches, one patch per file
+    for ease of reviewing.
 
-also be wrongly decoded if no bitstream parsing function is triggered in HW =
+Changes from v5:
+  - Dropped the conversion of struct pwm_capture to u64 for reasons mentioned
+    in https://www.spinics.net/lists/linux-pwm/msg11541.html
 
-before final decoding.
+Changes from v4:
+  - Split the patch into two: one for changes to the drivers, and the actual
+    switch to u64 for ease of reverting should the need arise.
+  - Re-examined the patch and made the following corrections:
+      * intel_panel.c:
+	DIV64_U64_ROUND_UP -> DIV_ROUND_UP_ULL (as only the numerator would be
+	64-bit in this case).
+      * pwm-sti.c:
+	do_div -> div_u64 (do_div is optimized only for x86 architectures, and
+	div_u64's comment block suggests to use this as much as possible).
 
-I spend a lot of time trying to avoid that header parsing, but I couldn't f=
-ind =
+Changes from v3:
+  - Rebased to current tip of for-next.
 
-any way around it.
+Changes from v2:
+  - Fixed %u -> %llu in a dev_dbg in pwm-stm32-lp.c, thanks to kbuild test robot
+  - Added a couple of fixes to pwm-imx-tpm.c and pwm-sifive.c
 
-In another words, Cedrus VPU provides two functionalities - HW bitstream =
+Changes from v1:
+  - Fixed compilation errors seen when compiling for different archs.
 
-parsing (to speed up header parsing) and video decoding. One would thought =
+v1:
+  - Reworked the change pushed upstream earlier [1] so as to not add an
+    extension to an obsolete API. With this change, pwm_ops->apply() can be
+    used to set pwm_state parameters as usual.
 
-that video decoding can be used independently, if all data from header is =
+[1] https://lore.kernel.org/lkml/20190916140048.GB7488@ulmo/
+[2] https://lore.kernel.org/lkml/20200312190859.GA19605@xxxxxxxxxxxxxx/
+[3] https://www.spinics.net/lists/linux-pwm/msg11906.html
+[4] https://www.spinics.net/lists/linux-pwm/msg11986.html
 
-already known, but it can't be.
+Guru Das Srinagesh (11):
+  drm/i915: Use 64-bit division macro
+  hwmon: pwm-fan: Use 64-bit division macro
+  ir-rx51: Use 64-bit division macro
+  pwm: clps711x: Cast period to u32 before use as divisor
+  pwm: pwm-imx-tpm: Use 64-bit division macro
+  pwm: imx27: Use 64-bit division macro and function
+  pwm: sifive: Use 64-bit division macro
+  pwm: sun4i: Use nsecs_to_jiffies to avoid a division
+  backlight: pwm_bl: Use 64-bit division function
+  clk: pwm: Use 64-bit division function
+  pwm: core: Convert period and duty cycle to u64
 
-Best regards,
-Jernej
+ drivers/clk/clk-pwm.c                      |  7 +++-
+ drivers/gpu/drm/i915/display/intel_panel.c |  2 +-
+ drivers/hwmon/pwm-fan.c                    |  2 +-
+ drivers/media/rc/ir-rx51.c                 |  3 +-
+ drivers/pwm/core.c                         | 14 ++++----
+ drivers/pwm/pwm-clps711x.c                 |  5 ++-
+ drivers/pwm/pwm-imx-tpm.c                  |  2 +-
+ drivers/pwm/pwm-imx27.c                    | 53 +++++++++++++++++++++++++-----
+ drivers/pwm/pwm-sifive.c                   |  2 +-
+ drivers/pwm/pwm-stm32-lp.c                 |  2 +-
+ drivers/pwm/pwm-sun4i.c                    |  2 +-
+ drivers/pwm/sysfs.c                        |  8 ++---
+ drivers/video/backlight/pwm_bl.c           |  3 +-
+ include/linux/pwm.h                        | 12 +++----
+ 14 files changed, 82 insertions(+), 35 deletions(-)
 
-> =
-
-> > parsing functions set some internal VPU state, which is later necessary
-> > for proper decoding. Biggest suspect is "VP8 probs update" trigger.
-> > =
-
-> > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > ---
-> > =
-
-> >  drivers/staging/media/sunxi/cedrus/Makefile   |   3 +-
-> >  drivers/staging/media/sunxi/cedrus/cedrus.c   |   8 +
-> >  drivers/staging/media/sunxi/cedrus/cedrus.h   |  15 +
-> >  .../staging/media/sunxi/cedrus/cedrus_dec.c   |   5 +
-> >  .../staging/media/sunxi/cedrus/cedrus_hw.c    |   1 +
-> >  .../staging/media/sunxi/cedrus/cedrus_regs.h  |  80 ++
-> >  .../staging/media/sunxi/cedrus/cedrus_video.c |   9 +
-> >  .../staging/media/sunxi/cedrus/cedrus_vp8.c   | 699 ++++++++++++++++++
-> >  8 files changed, 819 insertions(+), 1 deletion(-)
-> >  create mode 100644 drivers/staging/media/sunxi/cedrus/cedrus_vp8.c
-
-
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 
 _______________________________________________
