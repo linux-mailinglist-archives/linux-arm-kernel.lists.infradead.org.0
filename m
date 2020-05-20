@@ -2,53 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C83B1DC15E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 23:29:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F1261DC167
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 23:33:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GVPEo2BBynYOlTOlcLJOPwYWqRLsoOlxFAXjcLAcXrA=; b=RKnY7/9p4k0k8c
-	p0Rj1+RBCBu/RV/xV5ox+oSS8ORRdZN8au1JRiYsF6/u5RaABiwkE9D4+DbL8S0/vG8u4bdq6JYjv
-	oGMgVRvPpB/jG0pF2Deu77JF94Ieu5K+gjANWC05UTMgA9AeL1hU9G9hPVu/1wDfZUdPvxPAQ1Vi0
-	1kHpu9lEJ4bSL6RUPyhxc95WRxr7iEtTKDXus6tL8o6AJ/yYgIdUArwu8RqTzfbUrgPkxAu7XhVx6
-	aZzGH5PnebrW/3cqczdZzttx9MDKVKqd2jrTJeINC8lMuYi4FLJKh5ryS3i4FiCUA/T+CbDbmDHKB
-	SaJInqK4tMNKuFKq/8Xw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=vfKPLgbBZdkbgWmtb099JbC3y7iay80eO8QdpP4pqJc=; b=KHu
+	ETAs/TumJB8I3s1gO3cGgGRDu32wvja1aQTfiVWyDSRfPlNwslwj4Ed5rTdy12LF6qzqZDrYCpgsd
+	hNpdUBCSVNh5MPpzlPugCKpdZjrHnAJIeIG2GUZ14ospOnFn5CYJWMjE76slwPS0EsRLCciAXrJxz
+	eCtzXFtlGbdN0EKFKhnFdIbp/KU6a32tjhvJeSD0z3Fle3z4E0naWxoK31rIKhjimYpGUovWY8iQK
+	H8R799skZ1sBJ3hatbZXqwi5ZV5AXc9/Ko1aYfaMAmovXKVR3wmOfmq9hADNyYHxt60Sf57H4qLVP
+	vTM6L9m3dScwKP99qCu0QlyFjbh470w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbWHG-0001Lu-CO; Wed, 20 May 2020 21:29:26 +0000
+	id 1jbWKu-0004GI-KH; Wed, 20 May 2020 21:33:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbWH6-0001Ky-FW
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 21:29:17 +0000
-Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
- [217.169.31.236])
+ id 1jbWKk-0004Fp-DG
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 21:33:04 +0000
+Received: from e123331-lin.nice.arm.com
+ (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 63703207F9;
- Wed, 20 May 2020 21:29:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 82905207F9;
+ Wed, 20 May 2020 21:33:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590010156;
- bh=tNeHg18J8KpIUbnkvwoUOTfv+q14yZF+X4qaszsqdL4=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cuBGoPqfHeYx1FqXipdaSEJ1UDMiiyPZiH2iuG7zGzREsRYHjkswEcFbv78fo9BS/
- Fyc5ytsi8JMe/DclVaIrMRT4ND0qgnWV66V6mV7K1O0G/mzgvfj59V/IRK32zIdvOP
- ZI+bn1f9Q0z9WAvWecyPY697SYlsWEbzUqw7DhfU=
-From: Will Deacon <will@kernel.org>
-To: Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH v4 0/7] firmware: smccc: Add basic SMCCC v1.2 +
- ARCH_SOC_ID support
-Date: Wed, 20 May 2020 22:29:10 +0100
-Message-Id: <158999823818.135150.13263761266508812198.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200518091222.27467-1-sudeep.holla@arm.com>
-References: <20200518091222.27467-1-sudeep.holla@arm.com>
-MIME-Version: 1.0
+ s=default; t=1590010381;
+ bh=lEGVH641CKUJvebvQobI9pOc/m43hhJIu1Jj9AP1Ueg=;
+ h=From:To:Cc:Subject:Date:From;
+ b=15GC8tigoyxpJQpHMpX+pH6fS2ipKa1JQkP+/RHvscumr/tBBl10Vs59ThKeBkIRH
+ GsWyeztMGVgCWtDAI7sK+jNBBFodTohnWrubkM5DCu5/f1HZFODdhztJP2Na7hgOxy
+ 01obYBJgfZgrBbNxzXGEbueZAjTolkEKr5W8HTZw=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-efi@vger.kernel.org
+Subject: [GIT PULL v2] ARM: simplify handover from UEFI to decompressor
+Date: Wed, 20 May 2020 23:32:56 +0200
+Message-Id: <20200520213256.16004-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_142916_542639_4002D561 
-X-CRM114-Status: GOOD (  11.10  )
+X-CRM114-CacheID: sfid-20200520_143302_467609_0AB1F3FD 
+X-CRM114-Status: GOOD (  11.12  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,54 +73,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
- Will Deacon <will@kernel.org>
+Cc: linux+pull@armlinux.org.uk, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 18 May 2020 10:12:15 +0100, Sudeep Holla wrote:
-> This patch series adds support for SMCCCv1.2 ARCH_SOC_ID.
-> This doesn't add other changes added in SMCCC v1.2 yet. They will
-> follow these soon along with its first user SPCI/PSA-FF.
-> 
-> This is tested using upstream TF-A + the patch[3] fixing the original
-> implementation there.
-> 
-> [...]
+Hello Russell,
 
-Applied to arm64 (for-next/smccc), thanks!
+As discussed in the context of Geert's reverted v6 of the DTB memory
+node discovery patch [0], EFI boot is one possible workaround for systems
+where the base of memory is not a round multiple of 128 MB. U-boot today
+supports the bootefi command out of the box, so this does not require any
+special firmware.
 
-[1/7] firmware: smccc: Add HAVE_ARM_SMCCC_DISCOVERY to identify SMCCC v1.1 and above
-      https://git.kernel.org/arm64/c/e5bfb21d98b6
-[2/7] firmware: smccc: Update link to latest SMCCC specification
-      https://git.kernel.org/arm64/c/15c704ab6244
-[3/7] firmware: smccc: Add the definition for SMCCCv1.2 version/error codes
-      https://git.kernel.org/arm64/c/0441bfe7f00a
-[4/7] firmware: smccc: Drop smccc_version enum and use ARM_SMCCC_VERSION_1_x instead
-      https://git.kernel.org/arm64/c/ad5a57dfe434
-[5/7] firmware: smccc: Refactor SMCCC specific bits into separate file
-      https://git.kernel.org/arm64/c/f2ae97062a48
-[6/7] firmware: smccc: Add function to fetch SMCCC version
-      https://git.kernel.org/arm64/c/a4fb17465182
-[7/7] firmware: smccc: Add ARCH_SOC_ID support
-      https://git.kernel.org/arm64/c/ce6488f0ce09
+So please pull the changes below for v5.8
 
-Arnd -- Sudeep's reply to you about the sysfs groups seemed reasonable to me,
-but please shout if you'd rather I dropped this in order to pursue an
-alternative approach.
+[0] https://lore.kernel.org/linux-arm-kernel/20200429082120.16259-1-geert+renesas@glider.be/
 
-Cheers,
--- 
-Will
+The following changes since commit a780e485b5768e78aef087502499714901b68cc4:
 
-https://fixes.arm64.dev
-https://next.arm64.dev
-https://will.arm64.dev
+  ARM: 8971/1: replace the sole use of a symbol with its definition (2020-04-29 13:30:20 +0100)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git tags/efi-arm-no-relocate-for-rmk
+
+for you to fetch changes up to d0f9ca9be11f25ef4151195eab7ea36d136084f6:
+
+  ARM: decompressor: run decompressor in place if loaded via UEFI (2020-05-19 18:23:22 +0200)
+
+----------------------------------------------------------------
+Simplify EFI handover to decompressor
+
+The EFI stub in the ARM kernel runs in the context of the firmware, which
+means it usually runs with the caches and MMU on. Currently, we relocate
+the zImage so it appears in the first 128 MiB, disable the MMU and caches
+and invoke the decompressor via its ordinary entry point. However, since we
+can pass the base of DRAM directly, there is no need to relocate the zImage,
+which also means there is no need to disable and re-enable the caches and
+create new page tables etc.
+
+This also allows systems whose DRAM start address is not a round multiple
+of 128 MB to decompress the kernel proper to the base of memory, ensuring
+that all memory is usable at runtime.
+
+----------------------------------------------------------------
+Ard Biesheuvel (5):
+      ARM: decompressor: move headroom variable out of LC0
+      ARM: decompressor: split off _edata and stack base into separate object
+      ARM: decompressor: defer loading of the contents of the LC0 structure
+      ARM: decompressor: move GOT into .data for EFI enabled builds
+      ARM: decompressor: run decompressor in place if loaded via UEFI
+
+ arch/arm/boot/compressed/head.S           | 79 +++++++++++++------------------
+ arch/arm/boot/compressed/vmlinux.lds.S    |  5 ++
+ drivers/firmware/efi/libstub/arm32-stub.c | 45 +++---------------
+ 3 files changed, 43 insertions(+), 86 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
