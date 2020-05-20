@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 022361DB222
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 13:45:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C4861DB225
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 13:45:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xrm4rtMwu+lG/0PBVFPWT/QeKhVVapSlHO7pUIyq6do=; b=eAUqkOJG7C5sme
-	EZC2o9xb/TGxR4xx+/P6rA72rHuoebuAxCotaK8/wq7h+dQTrPE2zZr3PVMmQGVRb3PALj6QwLtEW
-	1w2IJuOjMKykXLBKRrGerpdlu2ee8anMYhxp8qpxq0W/tUw9O0h1oAhU7bS6mR+4CNRLQAA3WdILU
-	W9gEE2YJvoSY2ZQPiN/npRPquwxuX3OpPjXlcU0ZK4L0DF4g5g3psHS480Pyc+7vaTiTLznRR2Yad
-	Ax/t41BM60br+afR84BB7Eemi1VQZH92gOtib4zdBDESnLTFWoGBGtK5jI69ucPwrEdqQEhULXpf6
-	a/iKE5YaV0WQ2QX+E6aA==;
+	List-Owner; bh=9rZ3vrCxjgbYMAPstWDoamPmVPYFTEoTRRPOSg1rGWQ=; b=Ot0wdZils9/kxu
+	FAdSre8zC7+CHRM4KgAk6UdGJsJnMhVKbWoE6hS7VWH34HfvJeiflnDyroW7bmtqwSKheZCbplhwX
+	B2xm/U6RKJOuQx7PtTBj5tziZG50rXx96ZVbeJforZeQ1obQdAVdjMSGPEF6Edn2sT63+OxNwOOnl
+	f3fwGVQH53A3/HfKm5rbOJS6dERLzvr7Gir+ZfTeijGe0c4K46gFNS/5xa7UhRWd9TeePhgX4ayyS
+	Q9CYle1WakOs5VD2NuEc0YnKCdGIdXE6w26Bps9vei+zZvYmA4RbGxf2UuiYpO9rnqmmmL8fQThKg
+	O+E/HQCO66UxulURbIqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbNA2-0004Uv-4V; Wed, 20 May 2020 11:45:22 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jbNAG-0007C6-Vo; Wed, 20 May 2020 11:45:36 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbN96-0004D2-TA
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 11:44:26 +0000
-Received: by mail-wr1-x441.google.com with SMTP id i15so2775499wrx.10
+ id 1jbN98-0004Dc-8D
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 11:44:27 +0000
+Received: by mail-wm1-x343.google.com with SMTP id m185so2519110wme.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 04:44:24 -0700 (PDT)
+ Wed, 20 May 2020 04:44:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=v4BoYkqJ2NsZ2nSSjChgUqJJCyqhbfFRrbuVJ3n7szg=;
- b=G2HzL5rdxl8gOOIQV4qlZMw3KWQcZxPW/z+oED1akrqOkokebIn2QxctEc0qMGDENR
- fnBBgU7agpoX1odvaMiQMUaCWrKwE3w7DwOPyGoM5q07zcNglYB1JReA7BQ9Lnf7Ho5N
- X+dwG8oPPExdKj/4jVBNByIeraaDXpT0uVTtEvtSUeuC6Pe7J47V/bSYcOkQD87Jaqdo
- gvrlYFLb2bO/N5ysRqcO1/aOVVirM77Zra0to9qgOQxKpGhC/2rl6GcazkmeCMmjTo/U
- ofBPPKGz0CMTClSICNtkP+NiGp4om1xqGgOZGmUe6v7G9i3pjDQcnm4Hty7lEAXw6smR
- 10vA==
+ bh=s+yFWYJIlSICmhm10tVUfzLOMvlRQ6VDJMbx/0w2dnM=;
+ b=ImHanDSkUQSqhGp42aTb+x7qJAMr66nfqn7wTTaj4Ype3UNG1XxA67OwYzfFVoEiVi
+ 2Cd3ffviORbL2JC6fdivACgT3TF74pUaDusmPtFptDDs+EW6IfLW74QwlTRwtAOmSIEI
+ vI/K9DbPatRnvrH40gJWS2TYmpsCoBbttMjLw1cjEcqHX1gAJTPd5aTGPs8u6lAPi0D1
+ 1rlRi+KfXPHbqW9gae/kqktO+ToifJULRt7matlqcxJ5xxJPDSExf2WqJ9hCitnGAfxg
+ NgqRwAqTlNGCIvQCjrUdVBIq1EkFwHMg9ycBMXwm5nUZx/JX9SBsQAcBm6EqSi4P3Tqq
+ 325A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=v4BoYkqJ2NsZ2nSSjChgUqJJCyqhbfFRrbuVJ3n7szg=;
- b=P6ypMBPbY+Xs29W7GSrjdT3unRGndD/u2x9QkkO4LcFJojwdGOGf4sXhloW3RgzYaX
- QGAuWHzexnSjdvcMawlv3Qe64zAWzFOhQuVNzQwsVj71Fcy3IdRF0iMCtdvZ+SR2/R1W
- F9NiAXGZWqKd3oBWH8+SmnyVVGjKqLBxp5ACDt53hxaWqvcLCQ7831AOHLKjN5haCh6W
- BpS3Zwy5W7OjyaPNfFvc5So/cLzHd3xiXum30MJm3VZUWT3ywPPhIduMONHM1R4f7viW
- D6rWpKdTanvwa+sAicmv5ZrkNuqCweXbHG2kVFGglwelCHMNF265T3BOBgQhFTbtcYY7
- wZrA==
-X-Gm-Message-State: AOAM5316k0qO/k9y3PudcKk0+aQQZT/b0esrJSCZakxir467eGQBybsf
- fKAVZYy74v5imWrz7uO/LR+kvA==
-X-Google-Smtp-Source: ABdhPJwCKG6qiFzuF7aH6jSWA6csbzJ8395j7lIhL5oX0eAbSe/2g9fc+9TJo6lUPU9TiTHyfgaB9g==
-X-Received: by 2002:adf:afe9:: with SMTP id y41mr4193800wrd.56.1589975063620; 
- Wed, 20 May 2020 04:44:23 -0700 (PDT)
+ bh=s+yFWYJIlSICmhm10tVUfzLOMvlRQ6VDJMbx/0w2dnM=;
+ b=F3+Dq5rCVZZaKbbHGl8K5AhXTbYxpnyKMWuP7DskLfqc8QT6LdaL0kjydXfz34e2aV
+ fO+UG5RQCyi16OLWuknY8PCv4OkBqd9dzP2i6AAqnnM9W5Nr8KCKmQfLMdGNFGy1wEmM
+ /tI2d83iD5ND9jg0Q9cW2LzolSH0p3hZYbuQnmF017l3jaxgKiPocxUT72aP2s9lF/Ux
+ gfoEC3tOLlKgBkp6JOZUNa6E66IpoP1FaPCQStZr4z6TLjFS/qS6sqAvr9d/+1uCns97
+ ZfEcRUS9QouDFbxpPSpLSIJMxXV8RAUb6JXiY+JTdJ9IjT2JlXHzNqVJF+figy8Qje/8
+ k/NA==
+X-Gm-Message-State: AOAM531wQnO/QoNGxqebpEbShVlH/QdhiWWIir09BBTEPiWvv/JFmaug
+ w0GRJjG08Nvz8dJopH3Nu5RyvA==
+X-Google-Smtp-Source: ABdhPJyqD36jLttUFQawwUQWZOJpwzJpk72boRGPeh2XXTj01fX0PHngOKRIcGKHI7veckBjJ6hjzw==
+X-Received: by 2002:a7b:cbd0:: with SMTP id n16mr4523299wmi.131.1589975065082; 
+ Wed, 20 May 2020 04:44:25 -0700 (PDT)
 Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
  [2.15.156.232])
- by smtp.gmail.com with ESMTPSA id q2sm2530782wrx.60.2020.05.20.04.44.22
+ by smtp.gmail.com with ESMTPSA id q2sm2530782wrx.60.2020.05.20.04.44.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 04:44:23 -0700 (PDT)
+ Wed, 20 May 2020 04:44:24 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Jonathan Corbet <corbet@lwn.net>, "David S . Miller" <davem@davemloft.net>,
  Matthias Brugger <matthias.bgg@gmail.com>, John Crispin <john@phrozen.org>,
@@ -66,25 +66,23 @@ To: Jonathan Corbet <corbet@lwn.net>, "David S . Miller" <davem@davemloft.net>,
  Fabien Parent <fparent@baylibre.com>,
  Heiner Kallweit <hkallweit1@gmail.com>,
  Edwin Peer <edwin.peer@broadcom.com>
-Subject: [PATCH 1/5] Documentation: devres: add a missing section for
- networking helpers
-Date: Wed, 20 May 2020 13:44:11 +0200
-Message-Id: <20200520114415.13041-2-brgl@bgdev.pl>
+Subject: [PATCH 2/5] net: move devres helpers into a separate source file
+Date: Wed, 20 May 2020 13:44:12 +0200
+Message-Id: <20200520114415.13041-3-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200520114415.13041-1-brgl@bgdev.pl>
 References: <20200520114415.13041-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_044424_937471_5D6E82FA 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200520_044426_293981_07AB0E75 
+X-CRM114-Status: GOOD (  16.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -115,29 +113,115 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-Add a new section for networking devres helpers to devres.rst and list
-the two existing devm functions.
+There's currently only a single devres helper in net/ - devm variant
+of alloc_etherdev. Let's move it to net/devres.c with the intention of
+assing a second one: devm_register_netdev(). This new routine will need
+to know the address of the release function of devm_alloc_etherdev() so
+that it can verify (using devres_find()) that the struct net_device
+that's being passed to it is also resource managed.
 
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 ---
- Documentation/driver-api/driver-model/devres.rst | 4 ++++
- 1 file changed, 4 insertions(+)
+ net/Makefile       |  2 +-
+ net/devres.c       | 36 ++++++++++++++++++++++++++++++++++++
+ net/ethernet/eth.c | 28 ----------------------------
+ 3 files changed, 37 insertions(+), 29 deletions(-)
+ create mode 100644 net/devres.c
 
-diff --git a/Documentation/driver-api/driver-model/devres.rst b/Documentation/driver-api/driver-model/devres.rst
-index 46c13780994c..50df28d20fa7 100644
---- a/Documentation/driver-api/driver-model/devres.rst
-+++ b/Documentation/driver-api/driver-model/devres.rst
-@@ -372,6 +372,10 @@ MUX
-   devm_mux_chip_register()
-   devm_mux_control_get()
+diff --git a/net/Makefile b/net/Makefile
+index 07ea48160874..5744bf1997fd 100644
+--- a/net/Makefile
++++ b/net/Makefile
+@@ -6,7 +6,7 @@
+ # Rewritten to use lists instead of if-statements.
+ #
  
-+NET
-+  devm_alloc_etherdev()
-+  devm_alloc_etherdev_mqs()
+-obj-$(CONFIG_NET)		:= socket.o core/
++obj-$(CONFIG_NET)		:= devres.o socket.o core/
+ 
+ tmp-$(CONFIG_COMPAT) 		:= compat.o
+ obj-$(CONFIG_NET)		+= $(tmp-y)
+diff --git a/net/devres.c b/net/devres.c
+new file mode 100644
+index 000000000000..c1465d9f9019
+--- /dev/null
++++ b/net/devres.c
+@@ -0,0 +1,36 @@
++// SPDX-License-Identifier: GPL-2.0-or-later
++/*
++ * This file contains all networking devres helpers.
++ */
 +
- PER-CPU MEM
-   devm_alloc_percpu()
-   devm_free_percpu()
++#include <linux/device.h>
++#include <linux/etherdevice.h>
++#include <linux/netdevice.h>
++
++static void devm_free_netdev(struct device *dev, void *res)
++{
++	free_netdev(*(struct net_device **)res);
++}
++
++struct net_device *devm_alloc_etherdev_mqs(struct device *dev, int sizeof_priv,
++					   unsigned int txqs, unsigned int rxqs)
++{
++	struct net_device **dr;
++	struct net_device *netdev;
++
++	dr = devres_alloc(devm_free_netdev, sizeof(*dr), GFP_KERNEL);
++	if (!dr)
++		return NULL;
++
++	netdev = alloc_etherdev_mqs(sizeof_priv, txqs, rxqs);
++	if (!netdev) {
++		devres_free(dr);
++		return NULL;
++	}
++
++	*dr = netdev;
++	devres_add(dev, dr);
++
++	return netdev;
++}
++EXPORT_SYMBOL(devm_alloc_etherdev_mqs);
+diff --git a/net/ethernet/eth.c b/net/ethernet/eth.c
+index c8b903302ff2..dac65180c4ef 100644
+--- a/net/ethernet/eth.c
++++ b/net/ethernet/eth.c
+@@ -400,34 +400,6 @@ struct net_device *alloc_etherdev_mqs(int sizeof_priv, unsigned int txqs,
+ }
+ EXPORT_SYMBOL(alloc_etherdev_mqs);
+ 
+-static void devm_free_netdev(struct device *dev, void *res)
+-{
+-	free_netdev(*(struct net_device **)res);
+-}
+-
+-struct net_device *devm_alloc_etherdev_mqs(struct device *dev, int sizeof_priv,
+-					   unsigned int txqs, unsigned int rxqs)
+-{
+-	struct net_device **dr;
+-	struct net_device *netdev;
+-
+-	dr = devres_alloc(devm_free_netdev, sizeof(*dr), GFP_KERNEL);
+-	if (!dr)
+-		return NULL;
+-
+-	netdev = alloc_etherdev_mqs(sizeof_priv, txqs, rxqs);
+-	if (!netdev) {
+-		devres_free(dr);
+-		return NULL;
+-	}
+-
+-	*dr = netdev;
+-	devres_add(dev, dr);
+-
+-	return netdev;
+-}
+-EXPORT_SYMBOL(devm_alloc_etherdev_mqs);
+-
+ ssize_t sysfs_format_mac(char *buf, const unsigned char *addr, int len)
+ {
+ 	return scnprintf(buf, PAGE_SIZE, "%*phC\n", len, addr);
 -- 
 2.25.0
 
