@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AAA11DA8B0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 05:43:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5384F1DA8C6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 05:52:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=+Y5Xh1j8BuJyrRhDPg51bhRCFvtuc5x2dCyeeM1y+Vs=; b=rCbwOKJEDQZ/AC
-	TwOVWe5D76zGoJclKxVX+1uKkpCsyQZ7MjtzuaPDhSl0iv2kKSwdEE2OP8YOB55UaHzW8kDdhUiqv
-	JbEknbrT6k4z18I15X8KadTUoWG0Zhp876UToWLhMMJwRuvIQs+h3ci/ytSs/+8TrigC3A0k8U8e3
-	g+EUIbLDuS/TbGC+dFv4w5eB1sm3P6jDg8ABKYms73CL7NvAHCHAe6BbXpBlUGEpXWdugn13y0qcJ
-	9eDyn0gvHmVhNWeuJwyfVt1CDCISO7iBt7vZLO5f0BjXwcKjcaNrQbVnMhUHRCaHtFxzGUmxMXxHY
-	kev9BzVgP0XnBislnmLA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VcDnlcIIAt1nBxrYNPE1W6yr64R6yosyGeqEB9EiV1U=; b=SDEqliZxn9Tp2l
+	1P+WHNlqJRpER09e9utX/7amRooQ9rAKWp6dpslsSa1gQ2I6AzEXcxeEa7ZR4gZrnDR/HJXKvBXBV
+	u8JmpK/+r4CI4ll2WWbs5xyxv/uPXcrqqrwpuAitl72nA9RYuCHxfb5Mu+z07qPH0MA5vacM9rvDO
+	euPS6yiw5pS88MhIu5284iJcKZyFYxoqLnFDgDLMu/yZbzvs+CGqaQqaH1o6RYaFaa6gcfZgLtJhq
+	ZniUdmRqPbgS/M+sg65beycFDf/4wue2gBbwqkQ4PIYYHZz2+8JA5hfH0P8C2crWJXKPrBie5HlA1
+	ru//1cslaIWEBh1Utq1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbFdn-0001OZ-P2; Wed, 20 May 2020 03:43:35 +0000
+	id 1jbFmj-0007fm-0c; Wed, 20 May 2020 03:52:49 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbFdd-0001NJ-Jb; Wed, 20 May 2020 03:43:27 +0000
-X-UUID: cc7dd3d1cd784e40a521d0dae226d53c-20200519
+ id 1jbFlw-0007BO-CP; Wed, 20 May 2020 03:52:01 +0000
+X-UUID: cec7005e3c7d4d5a93efded32353f651-20200519
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=I/ipTuLZZN+lNS6Vkk1QJ+iIXyt0Ii1/ZmMGHZu52U8=; 
- b=Ji6Jjpqh/AjiYHMXsVNFqviXJSSgFlfeSUUm5ekJCvFfISHyVLglPZd3+Ot3Fx0pqttTIWpDXUNCssVJyEOPkxCI0CxQHczDL6rwM+4Cx606OKvhnXNQbLsoWt9V+waQyQqW69MI801hPaSJEEsZIa2RPo0iFTOVsrHvht36lbA=;
-X-UUID: cc7dd3d1cd784e40a521d0dae226d53c-20200519
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=ZgbRcGjPJJgmPKpuDSh4gP4uklsrV+au1aVA6YN00ho=; 
+ b=YjKwp3Gw3OMqKLUzZ4cnhCAeAbQkGaChzvfyNVw2HOjLhCmpfm3lj5W95v1UvqEf3p5m43XQ6iu/cVPvmss60dhVehnfLIqqc3s/HrrLlmrNQyPHH68++XyB7ozOZAMTxm+VzN4bDUTNhGIuE1Jxcit5ENTRTKvKcKpmSawK4vc=;
+X-UUID: cec7005e3c7d4d5a93efded32353f651-20200519
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <andrew-sh.cheng@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 196550989; Tue, 19 May 2020 19:43:21 -0800
+ with ESMTP id 1000337457; Tue, 19 May 2020 19:51:55 -0800
 Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 19 May 2020 20:43:18 -0700
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 19 May 2020 20:43:26 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
  mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 11:43:16 +0800
+ 15.0.1497.2; Wed, 20 May 2020 11:43:25 +0800
 Received: from mtkslt209.mediatek.inc (10.21.15.96) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 20 May 2020 11:43:10 +0800
+ Transport; Wed, 20 May 2020 11:43:24 +0800
 From: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
 To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
  <kyungmin.park@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, "Rob
@@ -50,15 +50,18 @@ To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
  Viresh Kumar <viresh.kumar@linaro.org>, Nishanth Menon <nm@ti.com>, "Stephen
  Boyd" <sboyd@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, Mark Brown
  <broonie@kernel.org>
-Subject: [PATCH 00/12] Add cpufreq and cci devfreq for mt8183, and SVS support
-Date: Wed, 20 May 2020 11:42:55 +0800
-Message-ID: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
+Subject: [PATCH 01/12] OPP: Allow required-opps even if the device doesn't
+ have power-domains
+Date: Wed, 20 May 2020 11:42:56 +0800
+Message-ID: <20200520034307.20435-2-andrew-sh.cheng@mediatek.com>
 X-Mailer: git-send-email 2.12.5
+In-Reply-To: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
+References: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_204325_651518_7152B8D8 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20200519_205200_424034_2684F4C1 
+X-CRM114-Status: GOOD (  13.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,8 +91,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>, srv_heupstream@mediatek.com,
+Cc: devicetree@vger.kernel.org, Saravana
+ Kannan <saravanak@google.com>, srv_heupstream@mediatek.com,
  linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -97,52 +100,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MT8183 supports CPU DVFS and CCI DVFS, and LITTLE cpus and CCI are in the same voltage domain.
-So, this series is to add drivers to handle the voltage coupling between CPU and CCI DVFS.
+From: Saravana Kannan <saravanak@google.com>
 
-For SVS support, need OPP_EVENT_ADJUST_VOLTAGE and corresponding reaction.
+A Device-A can have a (minimum) performance requirement on another
+Device-B to be able to function correctly. This performance requirement
+on Device-B can also change based on the current performance level of
+Device-A.
 
-Change since v5:
-	- Changing dt-binding format to yaml.
-	- Extending current devfreq passive_governor instead of create a new one.
-	- Resend depending patches of Sravana Kannan base on kernel-5.7
+The existing required-opps feature fits well to describe this need. So,
+instead of limiting required-opps to point to only PM-domain devices,
+allow it to point to any device.
 
+Signed-off-by: Saravana Kannan <saravanak@google.com>
+---
+ drivers/opp/core.c |  2 +-
+ drivers/opp/of.c   | 11 -----------
+ 2 files changed, 1 insertion(+), 12 deletions(-)
 
-Andrew-sh.Cheng (6):
-  cpufreq: mediatek: add clock and regulator enable for intermediate
-    clock
-  dt-bindings: devfreq: add compatible for mt8183 cci devfreq
-  devfreq: add mediatek cci devfreq
-  opp: Modify opp API, dev_pm_opp_get_freq(), find freq in opp, even it
-    is disabled
-  cpufreq: mediatek: add opp notification for SVS support
-  devfreq: mediatek: cci devfreq register opp notification for SVS
-    support
-
-Saravana Kannan (6):
-  OPP: Allow required-opps even if the device doesn't have power-domains
-  OPP: Add function to look up required OPP's for a given OPP
-  OPP: Improve required-opps linking
-  PM / devfreq: Cache OPP table reference in devfreq
-  PM / devfreq: Add required OPPs support to passive governor
-  PM / devfreq: Add cpu based scaling support to passive_governor
-
- .../devicetree/bindings/devfreq/mt8183-cci.yaml    |  51 ++++
- drivers/cpufreq/mediatek-cpufreq.c                 | 122 ++++++++-
- drivers/devfreq/Kconfig                            |  12 +
- drivers/devfreq/Makefile                           |   1 +
- drivers/devfreq/devfreq.c                          |   6 +
- drivers/devfreq/governor_passive.c                 | 298 +++++++++++++++++++--
- drivers/devfreq/mt8183-cci-devfreq.c               | 233 ++++++++++++++++
- drivers/opp/core.c                                 |  85 +++++-
- drivers/opp/of.c                                   | 108 ++++----
- drivers/opp/opp.h                                  |   5 +
- include/linux/devfreq.h                            |  42 ++-
- include/linux/pm_opp.h                             |  11 +
- 12 files changed, 874 insertions(+), 100 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/devfreq/mt8183-cci.yaml
- create mode 100644 drivers/devfreq/mt8183-cci-devfreq.c
-
+diff --git a/drivers/opp/core.c b/drivers/opp/core.c
+index ba43e6a3dc0a..51403c1f2481 100644
+--- a/drivers/opp/core.c
++++ b/drivers/opp/core.c
+@@ -755,7 +755,7 @@ static int _set_required_opps(struct device *dev,
+ 		return 0;
+ 
+ 	/* Single genpd case */
+-	if (!genpd_virt_devs) {
++	if (!genpd_virt_devs && required_opp_tables[0]->is_genpd) {
+ 		pstate = likely(opp) ? opp->required_opps[0]->pstate : 0;
+ 		ret = dev_pm_genpd_set_performance_state(dev, pstate);
+ 		if (ret) {
+diff --git a/drivers/opp/of.c b/drivers/opp/of.c
+index 9cd8f0adacae..6d33de668a7b 100644
+--- a/drivers/opp/of.c
++++ b/drivers/opp/of.c
+@@ -195,17 +195,6 @@ static void _opp_table_alloc_required_tables(struct opp_table *opp_table,
+ 
+ 		if (IS_ERR(required_opp_tables[i]))
+ 			goto free_required_tables;
+-
+-		/*
+-		 * We only support genpd's OPPs in the "required-opps" for now,
+-		 * as we don't know how much about other cases. Error out if the
+-		 * required OPP doesn't belong to a genpd.
+-		 */
+-		if (!required_opp_tables[i]->is_genpd) {
+-			dev_err(dev, "required-opp doesn't belong to genpd: %pOF\n",
+-				required_np);
+-			goto free_required_tables;
+-		}
+ 	}
+ 
+ 	goto put_np;
 -- 
 2.12.5
 _______________________________________________
