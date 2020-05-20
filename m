@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CA121DC19F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 23:52:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 947C81DC1A7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 23:54:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BnpJlDDxd7PB+0lEnEB/ewUTtHzN4NFCkziF0B+wy48=; b=sofejSHWy7ywcP
-	jTiZJ4IT7oo+CFA4FLZQSJt1m2/3odtYFTjMDMitqVWBKOA/gI+fX/WooeTQVqLpDL8QbJDuv7q2b
-	ZLgkhDj3FyrNZhojdbJdXwxY/9ee9RKF5+g0jl57qqrEJINUbAzm6AKHpbjfCTATpFrY/8k3tEvhy
-	Z4/+ebDWJNAFERXGDQHmdLFgyZLKOcDkNlHIt1/ILHtVhYcEmhNIsS05w+SYVkrOOVTZtwjcdZsdi
-	3Ocp+pURUzFyZajgulWMiamVAC7DTARqi78xux6vVtuD/AcwOeDsBCmzKreU868hS6fd8aX9ZMM6n
-	LE+K5fhBPBbwV1AMFJVA==;
+	List-Owner; bh=/L504Cul3mY27iMh/SvSnHhpXPxTl05BY4IpCFXplIw=; b=RF/GnMmgROwreH
+	fsFnbRFpf2yryWzDbPxL4jEC3Hwsfw0z65h4MXPx16+V0QMipW4mseIFOq9CeTgjpqpi9+Co2hsfW
+	jIQQ1IOV1PLPKrykhauUPsS5/+M51kh3mQcRxql25u7xh+aBTUs7nLljCvsjjt0n/HeAj66Vek3X2
+	smEIa2yA5HiuQ7Ug1yPFD3FdqL2X9Ew6f8fbjfP//6fHyt9EnVbvDS11mBN3avXd3qtu7aOOc2w93
+	W7EVOwc1w6qxLWpaDbpar7F9azfHPBt7tyxQomJ9hVktZdYFRhBf/e2LbvQy5hZzDOrab5rLo5t1q
+	uObD2rCEUSZwU9PABYJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbWdP-0002XJ-3H; Wed, 20 May 2020 21:52:19 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1jbWfo-0004Un-G4; Wed, 20 May 2020 21:54:48 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbWdF-0002WJ-15
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 21:52:10 +0000
-Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MUok5-1jSUEu2ouP-00Qgvc for <linux-arm-kernel@lists.infradead.org>; Wed,
- 20 May 2020 23:52:05 +0200
-Received: by mail-qk1-f180.google.com with SMTP id b6so5223963qkh.11
+ id 1jbWfe-0004Tw-E9
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 21:54:40 +0000
+Received: from mail-qv1-f47.google.com ([209.85.219.47]) by
+ mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1M8hMt-1jffOi48bR-004lOT for <linux-arm-kernel@lists.infradead.org>; Wed,
+ 20 May 2020 23:54:34 +0200
+Received: by mail-qv1-f47.google.com with SMTP id v15so2141213qvr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 14:52:04 -0700 (PDT)
-X-Gm-Message-State: AOAM532nwJ5S0P92V9ncQRewSC5Rluk+GCLqFygFjK+XTl9oy62TVjhh
- pIWu3pX2Xp7hph+10K3xZANQH7/u7fp1B8oE1vI=
-X-Google-Smtp-Source: ABdhPJxRbi0MiQo5LHl7IsWyHK1uuyEIhLaUVN+AuiR50+YI5y03MH2otO1L7nuScC6ChfjLJivuQ626xbz3vZftMA0=
-X-Received: by 2002:a37:434b:: with SMTP id q72mr7329549qka.352.1590011523351; 
- Wed, 20 May 2020 14:52:03 -0700 (PDT)
+ Wed, 20 May 2020 14:54:33 -0700 (PDT)
+X-Gm-Message-State: AOAM5337mARfs97Yi6atQUT6R1nXnhEEFKHBJJeNlXfcRAIwWbP9gbqY
+ 1E/YNGB+/srWnRpt/Q1NsJT6qMoq2gPqA6PQkzg=
+X-Google-Smtp-Source: ABdhPJxhlqBF6F6xcths8T69XvlyK8bJ9zrIzMxBBqdK7jmppg8Ks49xtrdIsFA0/8gwq5p9lAz9h8OG/cU+A8ZjutQ=
+X-Received: by 2002:a05:6214:905:: with SMTP id
+ dj5mr7068725qvb.222.1590011672567; 
+ Wed, 20 May 2020 14:54:32 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200518091222.27467-1-sudeep.holla@arm.com>
- <20200518091222.27467-8-sudeep.holla@arm.com>
- <CAK8P3a20R+H6m5GZj2_0w3s-xF+J_qSVrQH8EjyQXe6+9WTYxw@mail.gmail.com>
- <20200518115546.GB16262@bogus>
-In-Reply-To: <20200518115546.GB16262@bogus>
+ <158999823818.135150.13263761266508812198.b4-ty@kernel.org>
+In-Reply-To: <158999823818.135150.13263761266508812198.b4-ty@kernel.org>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 20 May 2020 23:51:47 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a3bOEL5wYFc1Fjg1vAT51NumzO0iUSroHQLSUt8WpZL7g@mail.gmail.com>
-Message-ID: <CAK8P3a3bOEL5wYFc1Fjg1vAT51NumzO0iUSroHQLSUt8WpZL7g@mail.gmail.com>
-Subject: Re: [PATCH v4 7/7] firmware: smccc: Add ARCH_SOC_ID support
-To: Sudeep Holla <sudeep.holla@arm.com>
-X-Provags-ID: V03:K1:8SFf20+AzaRTEewL13Pbco8lcCdEmzv+g+dV3KaaTdIxxS0IygT
- tYvhnxvIxyy0oSAzS7wtA34A2nWLWGYerInPl31VXgc8xUuBl1IyfLTQLStF8HLRvemykeM
- s7T8l/M1//s69yCDZ6sDcHkD7iRyzDqmebm1UbESrW10C5TdNCgsmtVf9q6+pQ+D+JvtKg+
- MX/0lF1iQ/lh90j3On2Ww==
+Date: Wed, 20 May 2020 23:54:16 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a0bx2eOFSqM7ihNkJBWU_KKSh0vGJZZdvpkH=1nppingw@mail.gmail.com>
+Message-ID: <CAK8P3a0bx2eOFSqM7ihNkJBWU_KKSh0vGJZZdvpkH=1nppingw@mail.gmail.com>
+Subject: Re: [PATCH v4 0/7] firmware: smccc: Add basic SMCCC v1.2 +
+ ARCH_SOC_ID support
+To: Will Deacon <will@kernel.org>
+X-Provags-ID: V03:K1:I6mMiVe/qTqNwXb2LlSjL7bBYOY3Rfi+h1bBT7La9V3MFG0u7bW
+ ViBMYceHpl2UJqo3ANJ7+PBZ8ZCmuwMv2jGYIJmPz4ffXU1w4aZ63BWWmvnSomDmQ4DbKrl
+ A+g//bQrqGBrGW4WZ9wShnTJnQfaN4jO/4HsUb/fy45d3HpQn4kKmyZk5uq+sG1HMaCpdpd
+ MfoLiYBNZPJglr+lLgEXw==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:AN0jD9qMhKU=:R1Hh1nhygGUYjzcE4ngNiY
- oCfbzX0wD7LMkF2IKVhn3r9/KigEuZU6GFOZhHE3dn5FrJeiaJ7Nvj8g7W3MgAaAK2bHOTj70
- Bk/RRI5a3AxTgJ+lhVEm8XcrzaKeMTrNJvcjMWkT7DEbXgw6cwLzqkiQnkZxWOh8hM8VV+PZU
- sksHDYQscfH1MXfjdOAeI5EoRszHx/cJaT7ClXLPJGBDBl9DV6H6ie/D+P2kKzCIqIDim6LOu
- 20c6g0KNz5/BZSoZ7EWzaSWAm3VOQls5svfrQgX40VuwXl+KrZvo3T9CXWc/gbDZOVG5MTxuI
- TfI8xcPWHUCWIX1uMxYmW90xUettmWRbaWC6g3/iwVBX0olLf6cHsXrU9dI5DdxC85FTQm3Uy
- gww64Gn2Fl7Ok4xyxPK+2yJfWtYUH2XpNE6rHIVHeIfEAnSKWMB6RDpvnJDVPIRb5TjqW0tfG
- qmAAlD32FW0NVFC9788/8JctmHOpodNlYof+02++1yjMcfMlEScuHsQHCtJAsB3lnlXUrqSzA
- vF1n+W02oQHJM5FqOeriITdqKsugfKx4hQlfcB8AA2WVOXfoOx9hDuc4hlNO1jWEMMJniUgxz
- DytqF5s70nCoIOx0oE5F4qrfm5/hnySDZAGXJctMQelsSBm+tE+yO2TuFMSEf1+zeacwFYEkR
- GS3jcfw5rCWFuoEfHtH2jBZ7ENmHXeBMupomw03Z6YW6m/t0odHaRGy7szbSGXx+bd8u9nfKO
- y9pQNOM4iuCkNpOR+slP3CgYXVPIKGcgtGOryELLgxrKShamXmFoLloEXUlH2JoaYEEgAE0Xs
- R8gMx8WH7oVpH+Q+4kBHCVcQVA9hPY6OwH6W0ywiBkYjM7IIHY=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Wg1WjCuVkN4=:qWwcvSZux1I8yYSAFs693l
+ OHFNTWNFZajeEdEAvmFHyR6qW1BPJu2BVY1VLp7PjG73bIK9jOE0P7WMucOXI2uXiJcj7XBqe
+ SySMHKuFAiLUn/8GUIA91C8WRzSvwjLGtStmLjoyybT6ayElWWzLHnQTqjTXqxZ70Q/woUnyX
+ Vu8k3W/KhNlwnxVcyMZ6EvVLI7IEsfutB8FvNJvHpjEHH88Gx1FhSXM+J5HcD39jKAgQ37FrR
+ hsV2LWM+X2ioWH/AtfTf1xLmdgPjeyyiVFvl2N8ll74tWogJgoLwEpUXinS1oIs0ccsJgmaqV
+ RGMfkJWA4heycbBonBBkjC3dOsNkpVSIVWUAcJoLFSAS/YStQIftSV20vPy7U5T6yTL7Xanb5
+ Ti1qxFenHWnyW0w6fXw+J03kiwvD39f4fjeDkAhfYVUWtChLLBodQvxP3Z8VczW9dCz3x4ZUR
+ RSrKj9DgYAfzmfwy3jmxMKkWmSyLabYo0Gdg8tpD9LrTUI1BtsmjiNIGATGz6LtxJS6lcyJ1c
+ plz1paDe+pxbHGe0x2+gPqLhN4/9H/NQAk8msZwcWndEhp6IX7heBOy3aIloahlYq92SF8Edf
+ mevZ0IzEz4mt1BuX19hmOFJfIe7hWLIKuS3y8qXJ2k3NjqUWFfEtY9G2Ef9K5QcGo9xpNuo+6
+ V8Dr6nj0e22MFOxhs9rHVx0Apu/h/oZNRzcZLaKzfc+epxSNjKHzsDaipNdiMIE0O7TYZ7YPd
+ ufqlNYhl7It/8BoXQdnT8lKV/wQ4s+Zmd9Yg9COiugAw2Eda5CAbFL7OHm7aOWJXdWxm3H+FT
+ 0012E7tJDIX3Jtr/gPozXqVIEEt9Dz/wz93geBI0hrTwDf6A8U=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_145209_364081_B88AD1E1 
-X-CRM114-Status: GOOD (  18.53  )
+X-CRM114-CacheID: sfid-20200520_145438_771828_B7E8A5AB 
+X-CRM114-Status: GOOD (  16.14  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.131 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.72.192.74 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,60 +96,55 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
- Will Deacon <will@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 1:55 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
+On Wed, May 20, 2020 at 11:29 PM Will Deacon <will@kernel.org> wrote:
 >
-> On Mon, May 18, 2020 at 11:30:21AM +0200, Arnd Bergmann wrote:
-> > On Mon, May 18, 2020 at 11:12 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+> On Mon, 18 May 2020 10:12:15 +0100, Sudeep Holla wrote:
+> > This patch series adds support for SMCCCv1.2 ARCH_SOC_ID.
+> > This doesn't add other changes added in SMCCC v1.2 yet. They will
+> > follow these soon along with its first user SPCI/PSA-FF.
 > >
-> > > +static ssize_t
-> > > +jep106_cont_bank_code_show(struct device *dev, struct device_attribute *attr,
-> > > +                          char *buf)
-> > > +{
-> > > +       return sprintf(buf, "0x%02x\n", JEP106_BANK_CONT_CODE(soc_id_version));
-> > > +}
-> > > +
-> > > +static DEVICE_ATTR_RO(jep106_cont_bank_code);
-> > > +
-> > > +static ssize_t
-> > > +jep106_identification_code_show(struct device *dev,
-> > > +                               struct device_attribute *attr, char *buf)
-> > > +{
-> > > +       return sprintf(buf, "0x%02x\n", JEP106_ID_CODE(soc_id_version));
-> > > +}
+> > This is tested using upstream TF-A + the patch[3] fixing the original
+> > implementation there.
 > >
-> > I think we should try hard to avoid nonstandard attributes for the soc device.
-> >
+> > [...]
 >
-> I agree with that in general but this is bit different for below mentioned
-> reason.
+> Applied to arm64 (for-next/smccc), thanks!
 >
-> > Did you run into a problem with finding one of the existing attributes
-> > that can be used to hold the fields?
-> >
+> [1/7] firmware: smccc: Add HAVE_ARM_SMCCC_DISCOVERY to identify SMCCC v1.1 and above
+>       https://git.kernel.org/arm64/c/e5bfb21d98b6
+> [2/7] firmware: smccc: Update link to latest SMCCC specification
+>       https://git.kernel.org/arm64/c/15c704ab6244
+> [3/7] firmware: smccc: Add the definition for SMCCCv1.2 version/error codes
+>       https://git.kernel.org/arm64/c/0441bfe7f00a
+> [4/7] firmware: smccc: Drop smccc_version enum and use ARM_SMCCC_VERSION_1_x instead
+>       https://git.kernel.org/arm64/c/ad5a57dfe434
+> [5/7] firmware: smccc: Refactor SMCCC specific bits into separate file
+>       https://git.kernel.org/arm64/c/f2ae97062a48
+> [6/7] firmware: smccc: Add function to fetch SMCCC version
+>       https://git.kernel.org/arm64/c/a4fb17465182
+> [7/7] firmware: smccc: Add ARCH_SOC_ID support
+>       https://git.kernel.org/arm64/c/ce6488f0ce09
 >
-> Not really! The 2 JEP106 codes can be used to derive the manufacturer which
-> could match one of the existing attributes. However doing so might require
-> importing the huge JEP106 list as it needs to be maintained and updated
-> in the kernel. Also that approach will have the compatibility issue and
-> that is the reason for introducing these attributes representing raw
-> values for userspace.
+> Arnd -- Sudeep's reply to you about the sysfs groups seemed reasonable to me,
+> but please shout if you'd rather I dropped this in order to pursue an
+> alternative approach.
 
-I was thinking they codes could just be part of the normal strings rather
-than get translated. Can you give an example what they would look like
-with your current code?
+I missed the reply earlier, thanks for pointing me to it again.
 
-If  you think they should be standard attributes, how about adding them
-to the default list, and hardcoding them in the other soc device drivers
-based on the information we have available there?
+I'm not entirely convinced, but don't revert it for now because of that,
+I assume we can find a solution.
 
-      Arnd
+However, please have a look at the build failure report for patch 5
+and fix it if you can see what went wrong.
+
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
