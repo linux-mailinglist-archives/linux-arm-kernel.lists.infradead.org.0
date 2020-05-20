@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92E521DBA07
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 18:45:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 418BE1DBA0B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 18:46:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ammU5iUbzpWUNKyBxl/w/PvwzNohrcgNFbwaiMQEdAk=; b=ApNPdBqkUCTC/l
-	2HFQ/7gHTDgdz5ooJkqUaVZM8WAhBFQM+/QGrk415PJywGFwSZ0+j67fM2u85T73Pgl+AUv+9uAla
-	WLHb1Ay8lTbiwP0ASywHnj6iwtTzFIhVprkHxiREeacUr8bnART1/A7BlRAas283o1XOHVfQAjo/c
-	3PFN7FR3xYFGS9SUm3/STJY/G2INGjr3Bbc2nkx7ooPme2LoXVDg6yinZsT2Bm5aeNe4kaQ26Pdpu
-	3VoOp3PX+9G2vXNX9iWJCzCnkdPZTG4ucnG5GY/C8aNdMmeied6H3AfaKRp6h4RJYo+NOljDEYD4M
-	bYnVjoKXdtbNX2X4QPqQ==;
+	List-Owner; bh=MOhyRr2wtpxGaOvr9RC2EmWlm+WNDrvLC6xbFReLQrU=; b=VP5K+KTrewO9sw
+	wJIln5ToQlv/ruFYj7GJoRAqLh5jzUe+oewBpgD6vmauHLbnZWoHmTY5sJa77FBzwRFD2Fndscuhf
+	Jr1o7zhoq29e3K1Ty3kWSpqBlOU45Hfl0MdRiwSCEn/Y28wcKEs7NFQ6RPMFEU4YT9N00XzFuvQ3A
+	RAub6AJ85iRgueUn+WRInOXgnylKesUY5GtVJp5LHcyDJlGPJ3iMYuJrF9Z9OZsYaNPvLgt1O3C5L
+	/tF72lKRcnK1yu8bdRY0kvMjG42L3mEqKHjlDdWD3ww0LAZuzI/Q2sZtAhdjxvUR5HH/iRna3gZSw
+	KD3I4zrwlOBPehlWoxgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbRqq-0005cC-9w; Wed, 20 May 2020 16:45:52 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jbRrR-00065k-6n; Wed, 20 May 2020 16:46:29 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbRdz-0004px-6o; Wed, 20 May 2020 16:32:38 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04KGWUft007856;
- Wed, 20 May 2020 11:32:30 -0500
+ id 1jbRe4-0004ts-Dy; Wed, 20 May 2020 16:32:42 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04KGWZf8064345;
+ Wed, 20 May 2020 11:32:35 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589992350;
- bh=5UCOPWk6X92olYrZDfeJHWtjgVM9Dl85CVT55A/y+Lg=;
+ s=ti-com-17Q1; t=1589992355;
+ bh=kv17vzIbbuAt+RZqE4vM8KTFUmvobKYZHpLC7UN2u9I=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=rSF+piWV38w2snBNJI0CY2hz5DWRM6eN8mhLPFNMGZNw+OWNfNIHrtj65GsKi4oPV
- srqlB6hgRiX7fgDDJqxiV2rOqsMcXq80rrIcCr4nTXdQF+Ndk0LMs6Uur9kHQdzoD0
- veMZoxWHDSuPcRVBwMwnMfkCmqCCDQNUnwjlTzrM=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04KGWU8D046934
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 20 May 2020 11:32:30 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ b=xsBDpi6AO8dQSj/DR+hGcqiQ3LorO4By3oB3q3HlP+sNJ3tOCPZQoPhvHBgIug3vX
+ Y8pQvxZXW3zOhjTLPGmxNWesQ2MsY1KSLIYpg4P9af5wjnOwQHaErcZ1Tbt7AhvTVB
+ 9gCb28kSH/+97h4X3rGGeXf7V8tgG4r/ABddPDqs=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04KGWZiB110942;
+ Wed, 20 May 2020 11:32:35 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 20
- May 2020 11:32:29 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ May 2020 11:32:34 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 20 May 2020 11:32:29 -0500
+ Frontend Transport; Wed, 20 May 2020 11:32:34 -0500
 Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04KGUsxh001551;
- Wed, 20 May 2020 11:32:25 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04KGUsxi001551;
+ Wed, 20 May 2020 11:32:30 -0500
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
@@ -59,25 +58,25 @@ To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <linux-mtd@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-mediatek@lists.infradead.org>
-Subject: [PATCH v6 18/19] mtd: spi-nor: spansion: add support for Cypress
- Semper flash
-Date: Wed, 20 May 2020 22:00:52 +0530
-Message-ID: <20200520163053.24357-19-p.yadav@ti.com>
+Subject: [PATCH v6 19/19] mtd: spi-nor: micron-st: allow using MT35XU512ABA in
+ Octal DTR mode
+Date: Wed, 20 May 2020 22:00:53 +0530
+Message-ID: <20200520163053.24357-20-p.yadav@ti.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200520163053.24357-1-p.yadav@ti.com>
 References: <20200520163053.24357-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_093235_355936_337F4DAF 
-X-CRM114-Status: GOOD (  20.97  )
+X-CRM114-CacheID: sfid-20200520_093240_614296_02414EE5 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -107,55 +106,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Cypress Semper flash is an xSPI compliant octal DTR flash. Add
-support for using it in octal DTR mode.
+Since this flash doesn't have a Profile 1.0 table, the Octal DTR
+capabilities are enabled in the post SFDP fixup, along with the 8D-8D-8D
+fast read settings.
 
-The flash by default boots in a hybrid sector mode. But the sector map
-table on the part I had was programmed incorrectly and the SMPT values
-on the flash don't match the public datasheet. Specifically, in some
-places erase type 3 was used instead of 4. In addition, the region sizes
-were incorrect in some places. So, for testing I set CFR3N[3] to enable
-uniform sector sizes. Since the uniform sector mode bit is a
-non-volatile bit, this series does not change it to avoid making any
-permanent changes to the flash configuration. The correct data to
-implement a fixup is not available right now and will be done in a
-follow-up patch if needed.
+Enable Octal DTR mode with 20 dummy cycles to allow running at the
+maximum supported frequency of 200Mhz.
+
+The flash supports the soft reset sequence. So, add the flag in the
+flash's info.
 
 Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 ---
- drivers/mtd/spi-nor/spansion.c | 167 +++++++++++++++++++++++++++++++++
- 1 file changed, 167 insertions(+)
+ drivers/mtd/spi-nor/micron-st.c | 112 +++++++++++++++++++++++++++++++-
+ 1 file changed, 111 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/mtd/spi-nor/spansion.c b/drivers/mtd/spi-nor/spansion.c
-index 88183eba8ac1..e5dc36b70e4e 100644
---- a/drivers/mtd/spi-nor/spansion.c
-+++ b/drivers/mtd/spi-nor/spansion.c
-@@ -8,6 +8,169 @@
+diff --git a/drivers/mtd/spi-nor/micron-st.c b/drivers/mtd/spi-nor/micron-st.c
+index 3dca5b9af3b6..3414c44a5c96 100644
+--- a/drivers/mtd/spi-nor/micron-st.c
++++ b/drivers/mtd/spi-nor/micron-st.c
+@@ -8,10 +8,120 @@
  
  #include "core.h"
  
-+/* For Cypress flash. */
-+#define SPINOR_OP_RD_ANY_REG			0x65	/* Read any register */
-+#define SPINOR_OP_WR_ANY_REG			0x71	/* Write any register */
-+#define SPINOR_REG_CYPRESS_CFR2V		0x00800003
-+#define SPINOR_REG_CYPRESS_CFR2V_MEMLAT_11_24	0xb
-+#define SPINOR_REG_CYPRESS_CFR3V		0x00800004
-+#define SPINOR_REG_CYPRESS_CFR3V_PGSZ		BIT(4) /* Page size. */
-+#define SPINOR_REG_CYPRESS_CFR5V		0x00800006
-+#define SPINOR_REG_CYPRESS_CFR5V_OCT_DTR_EN	0x3
-+#define SPINOR_REG_CYPRESS_CFR5V_OCT_DTR_DS	0
-+#define SPINOR_OP_CYPRESS_RD_FAST		0xee
++#define SPINOR_OP_MT_DTR_RD	0xfd	/* Fast Read opcode in DTR mode */
++#define SPINOR_OP_MT_RD_ANY_REG	0x85	/* Read volatile register */
++#define SPINOR_OP_MT_WR_ANY_REG	0x81	/* Write volatile register */
++#define SPINOR_REG_MT_CFR0V	0x00	/* For setting octal DTR mode */
++#define SPINOR_REG_MT_CFR1V	0x01	/* For setting dummy cycles */
++#define SPINOR_MT_DTR_NO_DQS	0xc7	/* Enable Octal DTR without DQS. */
++#define SPINOR_MT_EXSPI		0xff	/* Enable Extended SPI (default) */
 +
-+/**
-+ * spi_nor_cypress_octal_dtr_enable() - Enable octal DTR on Cypress flashes.
-+ * @nor:		pointer to a 'struct spi_nor'
-+ *
-+ * This also sets the memory access latency cycles to 24 to allow the flash to
-+ * run at up to 200MHz.
-+ *
-+ * Return: 0 on success, -errno otherwise.
-+ */
-+static int spi_nor_cypress_octal_dtr_enable(struct spi_nor *nor, bool enable)
++static int spi_nor_micron_octal_dtr_enable(struct spi_nor *nor, bool enable)
 +{
 +	struct spi_mem_op op;
 +	u8 *buf = nor->bouncebuf;
@@ -167,48 +149,17 @@ index 88183eba8ac1..e5dc36b70e4e 100644
 +	else
 +		addr_width = 4;
 +
-+	if (enable) {
-+		/* Use 24 dummy cycles for memory array reads. */
-+		ret = spi_nor_write_enable(nor);
-+		if (ret)
-+			return ret;
-+
-+		*buf = SPINOR_REG_CYPRESS_CFR2V_MEMLAT_11_24;
-+		op = (struct spi_mem_op)
-+			SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_WR_ANY_REG, 1),
-+				   SPI_MEM_OP_ADDR(addr_width,
-+						   SPINOR_REG_CYPRESS_CFR2V,
-+						   1),
-+				   SPI_MEM_OP_NO_DUMMY,
-+				   SPI_MEM_OP_DATA_OUT(1, buf, 1));
-+		ret = spi_mem_exec_op(nor->spimem, &op);
-+		if (ret) {
-+			dev_warn(nor->dev,
-+				 "failed to set default memory latency value: %d\n",
-+				 ret);
-+			return ret;
-+		}
-+		ret = spi_nor_wait_till_ready(nor);
-+		if (ret)
-+			return ret;
-+
-+		nor->read_dummy = 24;
-+	}
-+
-+	/* Set/unset the octal and DTR enable bits. */
 +	ret = spi_nor_write_enable(nor);
 +	if (ret)
 +		return ret;
 +
 +	if (enable)
-+		*buf = SPINOR_REG_CYPRESS_CFR5V_OCT_DTR_EN;
++		*buf = SPINOR_MT_DTR_NO_DQS;
 +	else
-+		*buf = SPINOR_REG_CYPRESS_CFR5V_OCT_DTR_DS;
++		*buf = SPINOR_MT_EXSPI;
 +	op = (struct spi_mem_op)
-+		SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_WR_ANY_REG, 1),
-+			   SPI_MEM_OP_ADDR(addr_width,
-+					   SPINOR_REG_CYPRESS_CFR5V,
-+					   1),
++		SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_MT_WR_ANY_REG, 1),
++			   SPI_MEM_OP_ADDR(addr_width, SPINOR_REG_MT_CFR0V, 1),
 +			   SPI_MEM_OP_NO_DUMMY,
 +			   SPI_MEM_OP_DATA_OUT(1, buf, 1));
 +
@@ -217,100 +168,85 @@ index 88183eba8ac1..e5dc36b70e4e 100644
 +
 +	ret = spi_mem_exec_op(nor->spimem, &op);
 +	if (ret) {
-+		dev_warn(nor->dev, "Failed to enable octal DTR mode\n");
++		dev_err(nor->dev, "Failed to enable octal DTR mode\n");
 +		return ret;
 +	}
 +
 +	return 0;
 +}
 +
-+static void s28hs512t_default_init(struct spi_nor *nor)
-+{
-+	nor->params->octal_dtr_enable = spi_nor_cypress_octal_dtr_enable;
-+}
-+
-+static void s28hs512t_post_sfdp_fixup(struct spi_nor *nor)
-+{
-+	/*
-+	 * On older versions of the flash the xSPI Profile 1.0 table has the
-+	 * 8D-8D-8D Fast Read opcode as 0x00. But it actually should be 0xEE.
-+	 */
-+	if (nor->params->reads[SNOR_CMD_READ_8_8_8_DTR].opcode == 0)
-+		nor->params->reads[SNOR_CMD_READ_8_8_8_DTR].opcode =
-+			SPINOR_OP_CYPRESS_RD_FAST;
-+
-+	nor->params->hwcaps.mask |= SNOR_HWCAPS_PP_8_8_8_DTR;
-+
-+	/* This flash is also missing the 4-byte Page Program opcode bit. */
-+	spi_nor_set_pp_settings(&nor->params->page_programs[SNOR_CMD_PP],
-+				SPINOR_OP_PP_4B, SNOR_PROTO_1_1_1);
-+	/*
-+	 * Since xSPI Page Program opcode is backward compatible with
-+	 * Legacy SPI, use Legacy SPI opcode there as well.
-+	 */
-+	spi_nor_set_pp_settings(&nor->params->page_programs[SNOR_CMD_PP_8_8_8_DTR],
-+				SPINOR_OP_PP_4B, SNOR_PROTO_8_8_8_DTR);
-+
-+	/*
-+	 * The xSPI Profile 1.0 table advertises the number of additional
-+	 * address bytes needed for Read Status Register command as 0 but the
-+	 * actual value for that is 4.
-+	 */
-+	nor->params->rdsr_addr_nbytes = 4;
-+}
-+
-+static int s28hs512t_post_bfpt_fixup(struct spi_nor *nor,
-+				     const struct sfdp_parameter_header *bfpt_header,
-+				     const struct sfdp_bfpt *bfpt,
-+				     struct spi_nor_flash_parameter *params)
++static int mt35xu512aba_setup(struct spi_nor *nor,
++			      const struct spi_nor_hwcaps *hwcaps)
 +{
 +	struct spi_mem_op op;
 +	u8 *buf = nor->bouncebuf;
 +	u8 addr_width = 3;
 +	int ret;
 +
-+	/*
-+	 * The BFPT table advertises a 512B page size but the page size is
-+	 * actually configurable (with the default being 256B). Read from
-+	 * CFR3V[4] and set the correct size.
-+	 */
++	if (!nor->spimem) {
++		dev_err(nor->dev,
++			"operation not supported for non-spimem drivers\n");
++		return -ENOTSUPP;
++	}
++
++	/* Set dummy cycles for Fast Read to the default of 20. */
++	ret = spi_nor_write_enable(nor);
++	if (ret)
++		return ret;
++
++	*buf = 20;
 +	op = (struct spi_mem_op)
-+		SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_RD_ANY_REG, 1),
-+			   SPI_MEM_OP_ADDR(addr_width, SPINOR_REG_CYPRESS_CFR3V, 1),
++		SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_MT_WR_ANY_REG, 1),
++			   SPI_MEM_OP_ADDR(addr_width, SPINOR_REG_MT_CFR1V, 1),
 +			   SPI_MEM_OP_NO_DUMMY,
-+			   SPI_MEM_OP_DATA_IN(1, buf, 1));
++			   SPI_MEM_OP_DATA_OUT(1, buf, 1));
 +	ret = spi_mem_exec_op(nor->spimem, &op);
 +	if (ret)
 +		return ret;
 +
-+	if (*buf & SPINOR_REG_CYPRESS_CFR3V_PGSZ)
-+		params->page_size = 512;
-+	else
-+		params->page_size = 256;
++	ret = spi_nor_wait_till_ready(nor);
++	if (ret)
++		return ret;
 +
-+	return 0;
++
++	return spi_nor_default_setup(nor, hwcaps);
 +}
 +
-+static struct spi_nor_fixups s28hs512t_fixups = {
-+	.default_init = s28hs512t_default_init,
-+	.post_sfdp = s28hs512t_post_sfdp_fixup,
-+	.post_bfpt = s28hs512t_post_bfpt_fixup,
++static void mt35xu512aba_default_init(struct spi_nor *nor)
++{
++	nor->params->octal_dtr_enable = spi_nor_micron_octal_dtr_enable;
++	nor->params->setup = mt35xu512aba_setup;
++}
++
++static void mt35xu512aba_post_sfdp_fixup(struct spi_nor *nor)
++{
++	/* Set the Fast Read settings. */
++	nor->params->hwcaps.mask |= SNOR_HWCAPS_READ_8_8_8_DTR;
++	spi_nor_set_read_settings(&nor->params->reads[SNOR_CMD_READ_8_8_8_DTR],
++				  0, 20, SPINOR_OP_MT_DTR_RD,
++				  SNOR_PROTO_8_8_8_DTR);
++
++	nor->params->hwcaps.mask |= SNOR_HWCAPS_PP_8_8_8_DTR;
++
++	nor->cmd_ext_type = SPI_NOR_EXT_REPEAT;
++	nor->params->rdsr_dummy = 8;
++	nor->params->rdsr_addr_nbytes = 0;
++}
++
++static struct spi_nor_fixups mt35xu512aba_fixups = {
++	.default_init = mt35xu512aba_default_init,
++	.post_sfdp = mt35xu512aba_post_sfdp_fixup,
 +};
 +
- static const struct flash_info spansion_parts[] = {
- 	/* Spansion/Cypress -- single (large) sector size only, at least
- 	 * for the chips listed here (without boot sectors).
-@@ -72,6 +235,10 @@ static const struct flash_info spansion_parts[] = {
- 	{ "s25fl256l",  INFO(0x016019,      0,  64 * 1024, 512,
- 			     SECT_4K | SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ |
- 			     SPI_NOR_4B_OPCODES) },
-+	{ "s28hs512t",   INFO(0x345b1a,      0, 256 * 1024, 256,
-+			     SECT_4K | SPI_NOR_OCTAL_DTR_READ)
-+		.fixups = &s28hs512t_fixups,
-+	},
- };
- 
- static void spansion_post_sfdp_fixups(struct spi_nor *nor)
+ static const struct flash_info micron_parts[] = {
+ 	{ "mt35xu512aba", INFO(0x2c5b1a, 0, 128 * 1024, 512,
+ 			       SECT_4K | USE_FSR | SPI_NOR_OCTAL_READ |
+-			       SPI_NOR_4B_OPCODES) },
++			       SPI_NOR_4B_OPCODES | SPI_NOR_OCTAL_DTR_READ)
++		.fixups = &mt35xu512aba_fixups},
+ 	{ "mt35xu02g", INFO(0x2c5b1c, 0, 128 * 1024, 2048,
+ 			    SECT_4K | USE_FSR | SPI_NOR_OCTAL_READ |
+ 			    SPI_NOR_4B_OPCODES) },
 -- 
 2.26.2
 
