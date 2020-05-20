@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA7381DA8D1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 05:54:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FC981DA8D4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 05:55:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xcy3lISNimH7ugcoJ9ZIU7HdqruYZUVkDX01LylQHEU=; b=GnjPTF1MOrPR+z
-	DWry9MKJOaEdSU1UoS46ya0MyxtBdzNX9hNraBp6pYrIxqsy/bQP4pnVkEh/dFZVcJmF2H80xyjtL
-	knjUOKHQOmLqVGVj3lJBjf1CS/vnkzPMv4uCUQIJfWyUzkSGxgLBlVZL7O5fx+EBljAg54wqOZIhQ
-	thc8iaUHX6O0z9v5/rfSzKYzG/eOw12OfiwtpKJ8hYtLKX7RufvUWwwe99P6owxWvepNsAUdbHyvD
-	MbgRNIoth7+nBkYZP8+mVgeYfu3a+xxuo6Q7LAExNdl594blyi9zMzB8UcQAL8pqCAG36/yqmOCl7
-	hzKzEw4hgL5iCyu57BMg==;
+	List-Owner; bh=YX1TzGfI86oLPO64Ge7CF9fpDKim6JfwawCr4wgb33k=; b=U6p5FhWXNDXPJH
+	2MnyzolneqTNHpZ8NGPnFN1Xnz2EFokgOCxMv8jJ3+v4oso8tDppEKtrVc23zDZLClb3fCHERZqUM
+	atcJtGP4w6h5/C7bpXR73bAejzYt4mJ058SlPEyklMqwKOPkp7CO1Wzj9UORceDAdvPd93bSdVEby
+	TGz01Nc7DkLNwn2Y2zcp4UyPXDCnGDEV2xPzGxPxqBrKmqyKzHPcIdcAuP55qZTBz35LZo4NwohmW
+	nlnzP5AEfaSY9nrFf3gRRsV3F3kl4O6tWOJTrCHCc4227Yn2ZA8LUemoyvAtRWfkgdimbIGCud0UJ
+	9+SBftT+uJgFsK/E1M/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbFoK-0000bV-Uc; Wed, 20 May 2020 03:54:28 +0000
+	id 1jbFob-0000ue-Gi; Wed, 20 May 2020 03:54:45 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbFnV-00009p-UJ; Wed, 20 May 2020 03:53:39 +0000
-X-UUID: 4b4b6a9f213a4369b74672ca19749080-20200519
+ id 1jbFnV-0000B7-UJ; Wed, 20 May 2020 03:53:41 +0000
+X-UUID: c69949ec9d0d41aa9a665e34fc027210-20200519
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=GblmaRnVRRnu2i+clTMb/gK5lRHsunrgFsWZNi+cP9Q=; 
- b=aBpf8h8M9lvugwEmP0Nb2R3qf/siIU+9QW0qs0zfY4GFt1kWLkqJU1L1gg/InyzLXxTYd41MtCn9SuVJ6VU+8nGT1zj8icVSSfS4ts7fvSnn9bX6X3UAYg3Dt9jM8IlwGllBTtKtomC4iMoUdNsU8+83wVdiaIGi8LZ9FE1JgYc=;
-X-UUID: 4b4b6a9f213a4369b74672ca19749080-20200519
+ bh=1Gp/qFmhgjaSo6Mwzy32d/Mgqew+6DRyo0tnp7ngCag=; 
+ b=a1EX0y5yjdf4Y+PDKyQMtaspLpW2Et5smBqxWU94cKUtNhsgAJLiP96w9BlFraYoAGgtc3RkRHbqtBTQRd0HA/sSguH8hikVkNZmZUVaVnKWppmE707RMpxdmLPGsMSFWze5IbUNBrz+66QM2jsc+nLkWX21yI4TAC2VVLJUu1U=;
+X-UUID: c69949ec9d0d41aa9a665e34fc027210-20200519
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <andrew-sh.cheng@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1013721314; Tue, 19 May 2020 19:53:34 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ with ESMTP id 1952636877; Tue, 19 May 2020 19:53:34 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 19 May 2020 20:43:30 -0700
+ 15.0.1497.2; Tue, 19 May 2020 20:43:31 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 11:43:28 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 20 May 2020 11:43:29 +0800
 Received: from mtkslt209.mediatek.inc (10.21.15.96) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 20 May 2020 11:43:28 +0800
+ Transport; Wed, 20 May 2020 11:43:29 +0800
 From: Andrew-sh.Cheng <andrew-sh.cheng@mediatek.com>
 To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
  <kyungmin.park@samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>, "Rob
@@ -50,17 +50,18 @@ To: MyungJoo Ham <myungjoo.ham@samsung.com>, Kyungmin Park
  Viresh Kumar <viresh.kumar@linaro.org>, Nishanth Menon <nm@ti.com>, "Stephen
  Boyd" <sboyd@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, Mark Brown
  <broonie@kernel.org>
-Subject: [PATCH 04/12] PM / devfreq: Cache OPP table reference in devfreq
-Date: Wed, 20 May 2020 11:42:59 +0800
-Message-ID: <20200520034307.20435-5-andrew-sh.cheng@mediatek.com>
+Subject: [PATCH 05/12] PM / devfreq: Add required OPPs support to passive
+ governor
+Date: Wed, 20 May 2020 11:43:00 +0800
+Message-ID: <20200520034307.20435-6-andrew-sh.cheng@mediatek.com>
 X-Mailer: git-send-email 2.12.5
 In-Reply-To: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
 References: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_205338_085097_3EBBC64D 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20200519_205338_076705_0B24D790 
+X-CRM114-Status: GOOD (  15.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,60 +102,65 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Saravana Kannan <saravanak@google.com>
 
-The OPP table can be used often in devfreq. Trying to get it each time can
-be expensive, so cache it in the devfreq struct.
+Look at the required OPPs of the "parent" device to determine the OPP that
+is required from the slave device managed by the passive governor. This
+allows having mappings between a parent device and a slave device even when
+they don't have the same number of OPPs.
 
 Signed-off-by: Saravana Kannan <saravanak@google.com>
-Reviewed-by: Chanwoo Choi <cw00.choi@samsung.com>
 Acked-by: MyungJoo Ham <myungjoo.ham@samsung.com>
+Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
 ---
- drivers/devfreq/devfreq.c | 6 ++++++
- include/linux/devfreq.h   | 2 ++
- 2 files changed, 8 insertions(+)
+ drivers/devfreq/governor_passive.c | 20 +++++++++++++++-----
+ 1 file changed, 15 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index 6fecd11dafdd..1103a3ae5586 100644
---- a/drivers/devfreq/devfreq.c
-+++ b/drivers/devfreq/devfreq.c
-@@ -719,6 +719,8 @@ static void devfreq_dev_release(struct device *dev)
- 	if (devfreq->profile->exit)
- 		devfreq->profile->exit(devfreq->dev.parent);
+diff --git a/drivers/devfreq/governor_passive.c b/drivers/devfreq/governor_passive.c
+index be6eeab9c814..2d67d6c12dce 100644
+--- a/drivers/devfreq/governor_passive.c
++++ b/drivers/devfreq/governor_passive.c
+@@ -19,7 +19,7 @@ static int devfreq_passive_get_target_freq(struct devfreq *devfreq,
+ 			= (struct devfreq_passive_data *)devfreq->data;
+ 	struct devfreq *parent_devfreq = (struct devfreq *)p_data->parent;
+ 	unsigned long child_freq = ULONG_MAX;
+-	struct dev_pm_opp *opp;
++	struct dev_pm_opp *opp = NULL, *p_opp = NULL;
+ 	int i, count, ret = 0;
  
-+	if (devfreq->opp_table)
-+		dev_pm_opp_put_opp_table(devfreq->opp_table);
- 	mutex_destroy(&devfreq->lock);
- 	kfree(devfreq);
- }
-@@ -797,6 +799,10 @@ struct devfreq *devfreq_add_device(struct device *dev,
+ 	/*
+@@ -56,13 +56,20 @@ static int devfreq_passive_get_target_freq(struct devfreq *devfreq,
+ 	 * list of parent device. Because in this case, *freq is temporary
+ 	 * value which is decided by ondemand governor.
+ 	 */
+-	opp = devfreq_recommended_opp(parent_devfreq->dev.parent, freq, 0);
+-	if (IS_ERR(opp)) {
+-		ret = PTR_ERR(opp);
++	p_opp = devfreq_recommended_opp(parent_devfreq->dev.parent, freq, 0);
++	if (IS_ERR(p_opp)) {
++		ret = PTR_ERR(p_opp);
+ 		goto out;
  	}
  
- 	devfreq->suspend_freq = dev_pm_opp_get_suspend_opp_freq(dev);
-+	devfreq->opp_table = dev_pm_opp_get_opp_table(dev);
-+	if (IS_ERR(devfreq->opp_table))
-+		devfreq->opp_table = NULL;
-+
- 	atomic_set(&devfreq->suspend_count, 0);
+-	dev_pm_opp_put(opp);
++	if (devfreq->opp_table && parent_devfreq->opp_table)
++		opp = dev_pm_opp_xlate_required_opp(parent_devfreq->opp_table,
++						    devfreq->opp_table, p_opp);
++	if (opp) {
++		*freq = dev_pm_opp_get_freq(opp);
++		dev_pm_opp_put(opp);
++		goto out;
++	}
  
- 	dev_set_name(&devfreq->dev, "%s", dev_name(dev));
-diff --git a/include/linux/devfreq.h b/include/linux/devfreq.h
-index 57e871a559a9..a4b19d593151 100644
---- a/include/linux/devfreq.h
-+++ b/include/linux/devfreq.h
-@@ -131,6 +131,7 @@ struct devfreq_stats {
-  * @profile:	device-specific devfreq profile
-  * @governor:	method how to choose frequency based on the usage.
-  * @governor_name:	devfreq governor name for use with this devfreq
-+ * @opp_table:	Reference to OPP table of dev.parent, if one exists.
-  * @nb:		notifier block used to notify devfreq object that it should
-  *		reevaluate operable frequencies. Devfreq users may use
-  *		devfreq.nb to the corresponding register notifier call chain.
-@@ -168,6 +169,7 @@ struct devfreq {
- 	struct devfreq_dev_profile *profile;
- 	const struct devfreq_governor *governor;
- 	char governor_name[DEVFREQ_NAME_LEN];
-+	struct opp_table *opp_table;
- 	struct notifier_block nb;
- 	struct delayed_work work;
+ 	/*
+ 	 * Get the OPP table's index of decided freqeuncy by governor
+@@ -89,6 +96,9 @@ static int devfreq_passive_get_target_freq(struct devfreq *devfreq,
+ 	*freq = child_freq;
+ 
+ out:
++	if (!IS_ERR_OR_NULL(opp))
++		dev_pm_opp_put(p_opp);
++
+ 	return ret;
+ }
  
 -- 
 2.12.5
