@@ -2,70 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56D861DB41F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:50:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D1FA1DB3F5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:44:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QDBY0xXoum/J9bGM18nTcYZdZIWDbr9j6w1ByVrfKIs=; b=QDES0G44ymmAE6
-	wbKhhHKjNW3swmrGhFq+1FkSYGS3zf7PrOJWBBWFKRyY/VtKp8rm6JjQ3VqwrsZhUqTRorZoZwGp2
-	u9d0HT6nLeKHffEgt0k850U0dFpSd+CM1Uj9xfEoFso9uu7YqaTrG0DL/zJ6pnVcJl+qRNJCY/8OC
-	KSWyFPIx1Csm9M8sonjVIEKt7tEVJSvx75GzrhZR/kHE1+w5M+xx1qL7ez9K9t3f+56v693DEuOM0
-	TveiU6ZJ4B50izMMRMo7DRYQBjlvtpMSXDSzjXj9C42gnzG47/QK3yAq6eX3mDkVXWOCn6k8T/kYq
-	UgfTHDx8pY1xkYCHz8Hw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y/HvSjTVQKrvaHzA2CAc5GmunmmsvUPUUrBPJKBw7MM=; b=LLn/nuH8Qk7sIs
+	F0Zt6TBCT0VZmmS3n4f3xQGiiHSuiM4tBY0nd0GUMVER3wOza/uSOYrVBZpOfd7ka0Dz8un5zRCRY
+	7vN9V0WVpBB8p15dcuTOw3NIUInp28MyB02PWoEnmsKLU7hq8GTUu1t6ahD9Mb231kAF6PlAdaF3p
+	y1TF8Z6G+Ddz3k05Om0kf7hAcJeVicHyCNJI8U9SPk8CpfYnN9ckczCU5gaqFnXpcmh+bauUH1uV9
+	DZzm1E6AWIr+bSEwFE/jFjvMZAzlNXqYwif/Mi7zHFpp0Fr987AZDk3Qhi56sKamLF0jn9ahS6OdH
+	l7saLBKZVf9X/xDSEH2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbOAU-0000Nx-B7; Wed, 20 May 2020 12:49:54 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jbO5U-0002wu-D0; Wed, 20 May 2020 12:44:44 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbO7I-0006Uc-C2; Wed, 20 May 2020 12:46:41 +0000
-X-UUID: 0d6c917e855d43a797366c91e36fa95d-20200520
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=qIWtxoGuZ5P6mO49eH/CrXHztmv7j3tYchUpE2BMWOE=; 
- b=HImQAotZvxIugtxKGRZUqyNfAMNzmUGg+kHxsyHV+gJkrfRDukizdLuMP2ssx4ggsY8iB+vCwTWTiu7bnbfUOxEPB1NAStFPDxfpbn0rKnxhLSyTQqIwitFNZCgb+SxG6EDm0xAid5Ntn9E/yrSFMGJS6l8PfqJnM1hKqC9vCOU=;
-X-UUID: 0d6c917e855d43a797366c91e36fa95d-20200520
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 270549559; Wed, 20 May 2020 04:46:33 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 05:39:53 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 20:39:51 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Wed, 20 May 2020 20:39:50 +0800
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
- <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Jonathan Corbet
- <corbet@lwn.net>
-Subject: [PATCH v5 4/4] kasan: update documentation for generic kasan
-Date: Wed, 20 May 2020 20:39:48 +0800
-Message-ID: <20200520123948.4069-1-walter-zh.wu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1jbO5H-0002vs-F4
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:44:37 +0000
+Received: by mail-wr1-x444.google.com with SMTP id r3so1097824wrn.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 May 2020 05:44:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Y40jbkqIfFkUI7ZiRlmLevn335EVOReBHbhD7GbihLE=;
+ b=p4CUdE9pepIc4FjeGaw9rpilpouxhHRYmar9hVV44lZrKVe+1UvqNOkup4LagMa4QY
+ RSw6gueqOVQJLw3Ihf4HjnGEeqYzD16ihtmI8ApVBWKguVmOsC265K7DCs7q+vqeIrq+
+ i4i8JEAY4h3MumABqT9u+m2g7eKxueVgu/DqX/HqbPCE4Fi86oBv7FB2KIANCp4kXlVI
+ JkQ9CXs0K1fF2yEBMU8Lfzp8SkbKKr2TlFvGnz0aPsuaSG1JDeRuAkvscN6I8mzTx1Pd
+ MS3Hp7jFjjGxifFKQRdYDTxDLynvYZ8erE6M/7KCG6b5jjfD+3/kcUU/0mg8OwuNWKDn
+ ZKrA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Y40jbkqIfFkUI7ZiRlmLevn335EVOReBHbhD7GbihLE=;
+ b=aoPExGLguUmLrXzuSsTrGQ3vO+sBcRc9GRbeU7RxpN80mgd1ab9hBDER7AUChKc/zk
+ j91MWHm6Yq1gJ5nEzH9UXRai27Y5zJliXknBXbRL3pH9caE8nIeRVrD2IhDJP7ORNRIi
+ QBAVJXrfzO58DmRJzgw6y8ada0kFEL9n4Y2aUjeBu59z94OjU38J6CJAvHH5BmZdXD4V
+ POiXtPtyicCUFXFPu3LYY3+lhfBphOQMiV6cOY2u6SqM5DvgyHmEudp5R6GwIk5mWHgw
+ H7LCKKrRljaMd5fjCioEV30dXqHw9ZGaozNp/Vj2HwWSAVXtjETF5cD1gJexgHmOrBVY
+ WIjA==
+X-Gm-Message-State: AOAM533EmsJ2hr0Xh4iN1fX8ebD/5oFyD09MWXFJa5btOxoxXTr53ush
+ jfu7udCzN0qC5fQaPArqdet7vQ==
+X-Google-Smtp-Source: ABdhPJxVz5Ef/g7gSSEvpWEQLOSp0LR9XsoCDxDK4+T7RPFKUq8EqywmmWzSB+P43U85QvHoiTf27A==
+X-Received: by 2002:adf:f786:: with SMTP id q6mr3987549wrp.120.1589978663802; 
+ Wed, 20 May 2020 05:44:23 -0700 (PDT)
+Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id q9sm2876323wmb.34.2020.05.20.05.44.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 20 May 2020 05:44:23 -0700 (PDT)
+Date: Wed, 20 May 2020 14:44:13 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] perf/smmuv3: Allow sharing MMIO registers with the SMMU
+ driver
+Message-ID: <20200520124413.GA2512145@myrica>
+References: <20200421155745.19815-1-jean-philippe@linaro.org>
+ <20200520122453.GB25815@willie-the-truck>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 53A25556DB809A33935C8E07C4C4E7616D5CC73601E447850F8F6E6A8049B3E22000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200520122453.GB25815@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_054636_450113_90F93E2F 
-X-CRM114-Status: UNSURE (   7.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200520_054431_510781_80EC8F3C 
+X-CRM114-Status: GOOD (  16.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -73,8 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,43 +98,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>,
- wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
- kasan-dev@googlegroups.com, linux-mm@kvack.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, iommu@lists.linux-foundation.org,
+ lorenzo.pieralisi@arm.com, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Generic KASAN will support to record the last two call_rcu() call stacks
-and print them in KASAN report. So that need to update documentation.
+On Wed, May 20, 2020 at 01:24:53PM +0100, Will Deacon wrote:
+> On Tue, Apr 21, 2020 at 05:57:46PM +0200, Jean-Philippe Brucker wrote:
+> > Some Arm SMMUv3 implementations, for example Arm CoreLink MMU-600, embed
+> > the PMCG registers into the SMMU MMIO regions. It currently causes probe
+> > failure because the PMU and SMMU drivers request overlapping resources.
+> > 
+> > Avoid the conflict by calling devm_ioremap() directly from the PMU
+> > driver. We loose some sanity-checking of the memory map provided by
+> > firmware, which doesn't seem catastrophic.
+> > 
+> > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> > ---
+> > 
+> > So this is the simplest solution, and I don't think we're missing much
+> > by skipping the resource reservation. I've also been exploring a more
+> > complex approach [1] which has the SMMU driver perform resource
+> > reservation on behalf of the PMU driver, but I'm not sure it's
+> > necessary.
+> > 
+> > Please test, I've only tried the RevC FastModel using devicetree so far.
+> > 
+> > [1] https://jpbrucker.net/git/linux/log/?h=smmu/pmu
+> > ---
+> >  drivers/perf/arm_smmuv3_pmu.c | 28 +++++++++++++++++++++-------
+> >  1 file changed, 21 insertions(+), 7 deletions(-)
+> 
+> Is this patch still needed? I can't quite follow from the discussion.
 
-Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
-Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
-Cc: Dmitry Vyukov <dvyukov@google.com>
-Cc: Alexander Potapenko <glider@google.com>
-Cc: Jonathan Corbet <corbet@lwn.net>
----
- Documentation/dev-tools/kasan.rst | 3 +++
- 1 file changed, 3 insertions(+)
+No, it is superseded by "[PATCH v2] iommu/arm-smmu-v3: Don't reserve
+implementation defined register space" that you applied yesterday
+(Thanks!)
 
-diff --git a/Documentation/dev-tools/kasan.rst b/Documentation/dev-tools/kasan.rst
-index c652d740735d..fede42e6536b 100644
---- a/Documentation/dev-tools/kasan.rst
-+++ b/Documentation/dev-tools/kasan.rst
-@@ -193,6 +193,9 @@ function calls GCC directly inserts the code to check the shadow memory.
- This option significantly enlarges kernel but it gives x1.1-x2 performance
- boost over outline instrumented kernel.
- 
-+Generic KASAN prints up to 2 call_rcu() call stacks in reports, the last one
-+and the second to last.
-+
- Software tag-based KASAN
- ~~~~~~~~~~~~~~~~~~~~~~~~
- 
--- 
-2.18.0
+Jean
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
