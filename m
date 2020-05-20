@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C805F1DB3A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:36:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE0261DB3A2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:36:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Agm4y3rfGKW2RlC4WNgpE38V6kohqkxPGY63fgG6Jk=; b=aJ9zyoCogocr6p
-	upi69BvimGJJ0gS/bcTMgF5Fegb1IYxxcOStfrf+p6PvWSIRWE/k22GqiGLOkgzAO3pWZzP7JWPF/
-	vb9CDPWWdD2aVpcXzft1oPPZ/I355vF6rX4RN8rUqugxtJMwL9B+fDARC9FCYPAUnERsR4btPiBwL
-	eZfva1/SpeALUNJWwvjQnTt9v70gbuIZSvJGzKo1Xyn0WGF6TH5O2S0uW2gaZ3fZUnnJfBkaawinq
-	DQ5PUtfK2WoapTVOB3BM+kJSJfUI1jFYB4S+afPSLMYvJmY1UcgB90rfWxfgo08ktP7bGkKdm6q0P
-	Ww5UbKWM856lmyCO5bmg==;
+	List-Owner; bh=WtSCX+/kYAEepqGRtXtF1O3Lxi8kA2CXmnaCx+oSEh8=; b=PlJica2D6o1JYO
+	QYIrIe9CweCfw3RQK98UsdX6BfGC80eLHIFrdF26tDMU33wmOgRaYZdhqm+/nqkiXKXoCCLHcfH4b
+	siApjCgMfqplWNpPs6CQW2mcJzL6pGh3k5H4kDOo7IAZkXJ3fSOpulSlFSO1WVwXYWy6/8qOOghaI
+	G2+LEmNnJ2FNl/G4eHT+Ce3KIeKL6hNRoL+rpxfEOcpiZWRnforlragCLWreQS5+Jb90eeoWK92xN
+	tzIKjTCDgBMBzDSEFK+ANMkZ6HjMtquwg6Pc4IvtYzd57x/hzsLm3scGB7oukxDj4AkZY65ucMv7e
+	gVCsQJv+YLxWYVOQTZiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbNxD-0003hM-Nf; Wed, 20 May 2020 12:36:11 +0000
-Received: from mail-eopbgr50089.outbound.protection.outlook.com ([40.107.5.89]
+	id 1jbNxV-0003uH-H6; Wed, 20 May 2020 12:36:29 +0000
+Received: from mail-eopbgr50073.outbound.protection.outlook.com ([40.107.5.73]
  helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbNvS-0008Vk-JW
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:34:24 +0000
+ id 1jbNvX-00009I-VM
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:34:31 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=RZzzO1zCFrWG/mycdShn7AGvqOKEKc+L4qkIEJr8Vc5APDqWTe25qb9gTGLnGo29/UT0FxBFTwC0C4oLqQkFxR0AJhQ3MJirm/iYRZtRQeG/yNrPEXduy5HA6LpJrNBlJCcBHQnlH5n2SwiD9xiOz8xTpXW3i7skfPYwJ9AIQ2GfhFuAuuQH7iiwPOa3lTHBmLjivf9HPpZrkfnLwFnWDt46UsDS26qIKRLwDJ4X/wL6msZw+LMNmonVQjdkyXrBBM0IBSR10YjXFO+3DhYOSqUEHc0zyzOetB7ar/doH1JPwga/2ywioD+zZdmuFwMBMck1HR7HXax8V1wO0rzgqA==
+ b=QwPecu1/CSKHjCL/JPXVVe/gPlUAPvpX+WOEVunwzvKUHSRdVblqYSl8Gq9aez7af9+vfNzv9sLWPohUCRMf/vV6/P5+KyfcvodbjCd3Z0IdqN7yP9Xjm/H5BQI0LqPkQAZxEgYT2P5X4y1Jlwx1f3NR76VXV1sjF5EWmFqvWq7W0ddXMGhf19+pLr0TFOLWnd3RkKA4mDct8Kwz8XYi/5IHfohn6eo+B7QnD6IHKpqUVqQiqtsliT/7Z3fa5gWLRpOUGOAIobHkK7gZ4rmRfXao/+Thsjt9o7xYQWzfnAJ0ElEjwVyqWcYaeygh7RDYtLISqAEiovx4MuS9iHW2sQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sR1u5QVWcsTcn8Rv9kigsA1HCSXIoglRvxRKA0j3gMQ=;
- b=H12z3EtS5ip/HuZOLOXIFkRnJ0fQo/IcnHqEmYGk02XQ0Gk5XaLcKkFWGtg+Z2t4DVsizg4iRAH93d3Jokd+PLRjAcL0TGzpRfFYVJFGLKM/15LAaTL8iIlaF6uFSZaGVxHvy+dq9rEnmSdGyZnXPGWWKXaThhOgCHvdDsI6nDIW8LrNwu7B2H4mMlPE6yUl/5JgB1AoftBhgDHt2H/XkqQ3XubDRxgpKBd1waBsD3jzeEZRw1T8e6DE0uTg5cErBbeRusQJWJeZf9HYZW0k+OuKXCC4ghHh/fH8X/ZDQxvNH0DS4fdOnHTtah9mBh5Bm/gQ1J3ZrIhx5t5Gfo1ZKw==
+ bh=Bxh5YmZTtwLq8JEI9R2YgVGDoVMYkkcc+uF97ycmWaA=;
+ b=BRxv1wh4jHDFwsuuKnj5S0AsbNJbOuLfX7xoY4Net2CLMHrSmCny7dc172gMi86RhGZaYZ+oi+zR1pVKHX5e2SI3DuX/vK1EfQ+wLKgIV6jNnYE2fv3vIpkR5r1FrWtGr5zXx8DTWPxmEoz4X4jXBp/W5Ck6RFwUoXQfYqCe1nPO3PAS4jnhhi4IxCTBIiJlUKf5T6MV+lIUcMl54od+FTkSQ1FOu1JcJ9M4FLDQb5J68+A5aDkFa+F+C6oc+JH7cdCsQFqaDvGAoZgy70jcJvUI3AUDuiwQW9RO0npudCSH/cJQd5SlKbucWExFY7ZzOBM80c2avJZAp0s0Y1VpLA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sR1u5QVWcsTcn8Rv9kigsA1HCSXIoglRvxRKA0j3gMQ=;
- b=q2YqBeGbaY+xqOOit0F8W8tsoHsvBXm2SSzKiRVmHvOgt0zpuhkxocis1rTN5QrHK+joeQpAt0ODH6WfuSpMX/PBoeqtrQWTy+QlcdJHcuWzVtqHqhTh+qO9QV/gszutw5+AI3ZFIkzSgPd/3KRL3P/UT5ZGtmb4naFJSAY2BU4=
+ bh=Bxh5YmZTtwLq8JEI9R2YgVGDoVMYkkcc+uF97ycmWaA=;
+ b=mwyDgBL0xG3OCzl1kiNoOClMRI8Ok/fbSZstyqgitXQ2oE0nKd9lnJiFUhljflcuGpfem4Ld0vS3aVPItz2TSE86jDTG9Ao/wY7/vgEXyg7aVm/32gWM4k69zRNlU0HO4p+C/l2DKsbjhAwK5I0ftJbZluOJCb2BhcgQFEhFmbc=
 Authentication-Results: arm.com; dkim=none (message not signed)
  header.d=none;arm.com; dmarc=none action=none header.from=nxp.com;
 Received: from AM6PR04MB6630.eurprd04.prod.outlook.com (2603:10a6:20b:f4::33)
  by AM6PR04MB4279.eurprd04.prod.outlook.com (2603:10a6:209:4a::24)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.26; Wed, 20 May
- 2020 12:34:18 +0000
+ 2020 12:34:23 +0000
 Received: from AM6PR04MB6630.eurprd04.prod.outlook.com
  ([fe80::bdbc:dab3:70f7:d5fa]) by AM6PR04MB6630.eurprd04.prod.outlook.com
  ([fe80::bdbc:dab3:70f7:d5fa%6]) with mapi id 15.20.3000.034; Wed, 20 May 2020
- 12:34:18 +0000
+ 12:34:23 +0000
 From: Robin Gong <yibin.gong@nxp.com>
 To: mark.rutland@arm.com, broonie@kernel.org, robh+dt@kernel.org,
  catalin.marinas@arm.com, vkoul@kernel.org, will.deacon@arm.com,
  shawnguo@kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
  martin.fuzzey@flowbird.group, u.kleine-koenig@pengutronix.de,
  dan.j.williams@intel.com
-Subject: [PATCH v8 04/13] dmaengine: imx-sdma: remove duplicated
- sdma_load_context
-Date: Thu, 21 May 2020 04:34:16 +0800
-Message-Id: <1590006865-20900-5-git-send-email-yibin.gong@nxp.com>
+Subject: [PATCH v8 05/13] spi: imx: fallback to PIO if dma setup failure
+Date: Thu, 21 May 2020 04:34:17 +0800
+Message-Id: <1590006865-20900-6-git-send-email-yibin.gong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1590006865-20900-1-git-send-email-yibin.gong@nxp.com>
 References: <1590006865-20900-1-git-send-email-yibin.gong@nxp.com>
@@ -70,46 +69,46 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
  SG2PR03CA0103.apcprd03.prod.outlook.com (2603:1096:4:7c::31) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3021.12 via Frontend Transport; Wed, 20 May 2020 12:34:13 +0000
+ 15.20.3021.12 via Frontend Transport; Wed, 20 May 2020 12:34:18 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: d4ee44ff-a822-4e9b-1a33-08d7fcba1d0e
+X-MS-Office365-Filtering-Correlation-Id: bd178ef5-c5af-45eb-6741-08d7fcba2054
 X-MS-TrafficTypeDiagnostic: AM6PR04MB4279:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR04MB427947F278CD48A9E207733D89B60@AM6PR04MB4279.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1923;
+X-Microsoft-Antispam-PRVS: <AM6PR04MB42797C99BAC273AAF960B6EA89B60@AM6PR04MB4279.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:7691;
 X-Forefront-PRVS: 04097B7F7F
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: D/luG21fZoNddnzmNAwXM9EV1KhUyiy54SrpU+CW0Zglh5VhAzSDvOzixxvgyjBKOKvKAh7/l9hy4sL2UBaH6ZOBMoDI+lMfi4aeAtYl/du1ezTHIEm/BCVnb31rVU17wnJtJba+vbIymv7IjWa8osMkqHXndFT32lI3gP7AL4WgAD3zgYkMkSlFZUn0eWKrkJsEsYG+m5gQ9LT81NfJOMLTbfzocpIsq79Hd2Gg4MdJV9XVNFJD2kqWvaaWfE4jk+aH/onItjqXvnksZZQkzPJ9Rb+Hcut78BUGxYSR6WeRc1VbQwQk9dwKDH6v9CXZUS2nCEFVevjs6KoDmhb4JKwpNu5StMIA5sfu3p3E3xy9v89+EJcJhCVq70el9bqYnndmVdlrx1hr8o67TQPa13+MHiE7B9leiccEa61HDvElZjtqijzWIKqPE5hNRWT11hM2qCClQaovwmSlbi3eLl3HVU5S1udAwjL1PNc/dHY=
+X-Microsoft-Antispam-Message-Info: bkqwRgc9a33GmVXITHnw9tMi2c4HpIW2vG5P8tM2p6HK1qDuCp2JHH7l4ZSHgILWl9Tr2yeUAxrzAE9fC3WKrY+coVSWFRtiAqEREC2rWIRc9CAKb1Z/RzTHzPVuixMa9cVVgv79v5VQc1EPwQYTbvHdk4pLwSDOFsx/4IWbDOUY7u/6tQ6S9P6uchPaNf6gILbzthQ/bNKmP6XNsOcabog9G8pvPDz7yhV6sd69GfWTty8eoFdBR5+/vHa28DSDuCjhRhTmx8Zmco6r3PVXinyn7KSSuFC17XKdyASFVugmFe5/2gW6b+v7cA3WAeNtbT5nNTFSjQP68vf3XTtdO37JuJL16HXD47tz7iK2es0HolAId+M51x8CWB+J4KqRGkNe4jnc4CNqYrdvfLLJrdMd+M0pNvHdmvxhgR4QR8L3MqawClA4jtIXj3iNk15y9tstER0UksMz+nAl3EsjK2zMPbrHSra7aY7y4kVVUuY=
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:AM6PR04MB6630.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(346002)(366004)(376002)(136003)(396003)(39860400002)(6512007)(36756003)(8676002)(52116002)(66946007)(66556008)(7416002)(8936002)(66476007)(86362001)(4744005)(5660300002)(186003)(478600001)(316002)(26005)(6506007)(6486002)(956004)(2616005)(4326008)(2906002)(16526019)(921003);
+ SFS:(4636009)(346002)(366004)(376002)(136003)(396003)(39860400002)(6512007)(36756003)(8676002)(52116002)(66946007)(66556008)(7416002)(8936002)(66476007)(86362001)(5660300002)(186003)(478600001)(316002)(26005)(6506007)(6486002)(956004)(2616005)(4326008)(2906002)(16526019)(921003);
  DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: PzYbJR1FexsoQN89bTub/jf02EEWEDw9Y/S6M1cAIAbzkq9b2SbpBkI2l4LHi8Lc7xcBZxofWEhFwYhQ2gilJqFmRnolk8C8ONR+c4YoJThlDqtBiMFbwpKcLQcluAOnD4wegVBfFcjgHUQibwcw4EObAdURIGb/kjkj42mzSaNPDejq9MuaXaqfSTKMTvigKevjlXU9u8I9B0on+CejWCGvqQrRWf4LJbiv1yAFN+MDwk0YFpxWP9CbuOBdC/JVVPGCWZHG41Rzt7a2+uSBkUKaRLTenrI8jLlRh5MJL9K2M38+2WkRL92xgZfVQyWbXCxhci188z2B4k540u9FE9U67polhCgAZKnWLQ509pXSW8dbmlhZPwksT4yQckMyCXkAUCmG+/ab8ooiPEDZy8vgDUg8kVDebj8FkyOP+MwD41NguqZoEnXX2bQa6folZJIsevtBku4W98MZnT718rEWrr9JbZVRQTbQ8wy88J4=
+X-MS-Exchange-AntiSpam-MessageData: XvOt+uEUIdsND+BanwOZxdoEL01q0ezaNL7upWkhF/iIbZOAQMXN8q06UqmX5iwIbC9e2sDgbWNAAal0gaLKmngt0weEyoxn0ja0MYt/o4d94XTRrPzoEAKieAUDVsQH3lSlH1b7rz7afl0iTy9qAl1mqqHiN8eNCHxBHyzuGAmEyQDM0HjgphYK9UnM0a2y0B1DBxTpkUtkHNuQsVMh56wRb2qzONZkIhV2Mhj3v+Yar61sFt7ylhdspmCkT6QjMLpt34FM+wjWDYbzQw8YKZ2olCKxdGUUGmKbD9dz9uCd9zbZiN68TTRh9vhAL1GHdycogC7VkTmKYIJcQ4ClOzq1CtUYzOkRbLKzMwSFsIXutd/14XfvM2Wqa5DYQcRTK96H+g83/nOWe0/xCHAuNQ740tlLnOptCAJfHYU5vxnVJzF/wwSyedOZwp+FqQWnrNy18Qr7htwJxXNjJqTVA5z4m/93Z/+23YaUSlS0yPI=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d4ee44ff-a822-4e9b-1a33-08d7fcba1d0e
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 May 2020 12:34:18.2092 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: bd178ef5-c5af-45eb-6741-08d7fcba2054
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 May 2020 12:34:23.5112 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 0BrwzB5WYk9wfa9pfaOACwbUxIWxUrzzQ9YsgMfaRrqddxBGyRH2WpyWubqB+37Kfsh4V15DStMzG8emYzpALA==
+X-MS-Exchange-CrossTenant-UserPrincipalName: P7GuEBFvAOzsb9H7wC8bvJP4Gj+Mb+jz5JzfyrhtXpEDlmvhMX4Hx3eSusgNNnbBpq44G9p4yEl+kJ1moUA7Vg==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4279
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_053422_789734_CD902438 
-X-CRM114-Status: GOOD (  10.64  )
+X-CRM114-CacheID: sfid-20200520_053428_038133_AF4E658C 
+X-CRM114-Status: GOOD (  12.91  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.89 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.5.89 listed in wl.mailspike.net]
+ [40.107.5.73 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.5.73 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -140,38 +139,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since sdma_transfer_init() will do sdma_load_context before any
-sdma transfer, no need once more in sdma_config_channel().
+Fallback to PIO in case dma setup failed. For example, sdma firmware not
+updated but ERR009165 workaroud added in kernel.
 
 Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-Acked-by: Vinod Koul <vkoul@kernel.org>
 ---
- drivers/dma/imx-sdma.c | 5 +----
- 1 file changed, 1 insertion(+), 4 deletions(-)
+ drivers/spi/spi-imx.c | 31 +++++++++++++++++++++++++++----
+ 1 file changed, 27 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index b1f61eb..4440ddb 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -1137,7 +1137,6 @@ static void sdma_set_watermarklevel_for_p2p(struct sdma_channel *sdmac)
- static int sdma_config_channel(struct dma_chan *chan)
- {
- 	struct sdma_channel *sdmac = to_sdma_chan(chan);
--	int ret;
- 
- 	sdma_disable_channel(chan);
- 
-@@ -1177,9 +1176,7 @@ static int sdma_config_channel(struct dma_chan *chan)
- 		sdmac->watermark_level = 0; /* FIXME: M3_BASE_ADDRESS */
- 	}
- 
--	ret = sdma_load_context(sdmac);
--
--	return ret;
-+	return 0;
+diff --git a/drivers/spi/spi-imx.c b/drivers/spi/spi-imx.c
+index f4f28a4..b7a85e3 100644
+--- a/drivers/spi/spi-imx.c
++++ b/drivers/spi/spi-imx.c
+@@ -71,6 +71,7 @@ struct spi_imx_devtype_data {
+ 	void (*reset)(struct spi_imx_data *);
+ 	void (*setup_wml)(struct spi_imx_data *);
+ 	void (*disable)(struct spi_imx_data *);
++	void (*disable_dma)(struct spi_imx_data *);
+ 	bool has_dmamode;
+ 	bool has_slavemode;
+ 	unsigned int fifo_size;
+@@ -485,6 +486,11 @@ static void mx51_ecspi_trigger(struct spi_imx_data *spi_imx)
+ 	writel(reg, spi_imx->base + MX51_ECSPI_CTRL);
  }
  
- static int sdma_set_channel_priority(struct sdma_channel *sdmac,
++static void mx51_disable_dma(struct spi_imx_data *spi_imx)
++{
++	writel(0, spi_imx->base + MX51_ECSPI_DMA);
++}
++
+ static void mx51_ecspi_disable(struct spi_imx_data *spi_imx)
+ {
+ 	u32 ctrl;
+@@ -987,6 +993,7 @@ static struct spi_imx_devtype_data imx51_ecspi_devtype_data = {
+ 	.rx_available = mx51_ecspi_rx_available,
+ 	.reset = mx51_ecspi_reset,
+ 	.setup_wml = mx51_setup_wml,
++	.disable_dma = mx51_disable_dma,
+ 	.fifo_size = 64,
+ 	.has_dmamode = true,
+ 	.dynamic_burst = true,
+@@ -1001,6 +1008,7 @@ static struct spi_imx_devtype_data imx53_ecspi_devtype_data = {
+ 	.prepare_transfer = mx51_ecspi_prepare_transfer,
+ 	.trigger = mx51_ecspi_trigger,
+ 	.rx_available = mx51_ecspi_rx_available,
++	.disable_dma = mx51_disable_dma,
+ 	.reset = mx51_ecspi_reset,
+ 	.fifo_size = 64,
+ 	.has_dmamode = true,
+@@ -1385,6 +1393,7 @@ static int spi_imx_dma_transfer(struct spi_imx_data *spi_imx,
+ 				DMA_PREP_INTERRUPT | DMA_CTRL_ACK);
+ 	if (!desc_tx) {
+ 		dmaengine_terminate_all(master->dma_tx);
++		dmaengine_terminate_all(master->dma_rx);
+ 		return -EINVAL;
+ 	}
+ 
+@@ -1498,6 +1507,7 @@ static int spi_imx_transfer(struct spi_device *spi,
+ 				struct spi_transfer *transfer)
+ {
+ 	struct spi_imx_data *spi_imx = spi_master_get_devdata(spi->master);
++	int ret;
+ 
+ 	/* flush rxfifo before transfer */
+ 	while (spi_imx->devtype_data->rx_available(spi_imx))
+@@ -1506,10 +1516,23 @@ static int spi_imx_transfer(struct spi_device *spi,
+ 	if (spi_imx->slave_mode)
+ 		return spi_imx_pio_transfer_slave(spi, transfer);
+ 
+-	if (spi_imx->usedma)
+-		return spi_imx_dma_transfer(spi_imx, transfer);
+-	else
+-		return spi_imx_pio_transfer(spi, transfer);
++	/*
++	 * fallback PIO mode if dma setup error happen, for example sdma
++	 * firmware may not be updated as ERR009165 required.
++	 */
++	if (spi_imx->usedma) {
++		ret = spi_imx_dma_transfer(spi_imx, transfer);
++		if (ret != -EINVAL)
++			return ret;
++
++		spi_imx->devtype_data->disable_dma(spi_imx);
++
++		spi_imx->usedma = false;
++		spi_imx->dynamic_burst = spi_imx->devtype_data->dynamic_burst;
++		dev_dbg(&spi->dev, "Fallback to PIO mode\n");
++	}
++
++	return spi_imx_pio_transfer(spi, transfer);
+ }
+ 
+ static int spi_imx_setup(struct spi_device *spi)
 -- 
 2.7.4
 
