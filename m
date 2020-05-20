@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDE181DBC0F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 19:55:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F3511DBC10
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 19:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dflX2smDnG1JrJQhbzuA+cV8YGpju4VCFhG0vsUZDYQ=; b=lkNtJT2uNZK14L
-	wQq0uzymKebA3qFVsZuVIKU2sccRmCNGzPHz5a1v0iNJmZ+7DxiJy/js+p2BaUdRrlGx/0KNmMOxM
-	7HC3guq5e9jyA0vQLN3pJnDBg3+n4wxnTkdE3p1x1bzZlgmBIxO6BpkjHbGZHyHkohHDv+/WTRACF
-	qCdrTSYgwj0cPepb8P57sVYssYVODQYld6hCCSVoWKPHkZLf8FoU/lP/ZdlXK0NVlXQq5G1oGAuUM
-	/KPj6pjWvQJNNcGcrWh18qonFMlpedUuRdff4DrsnrC6itU8U7eL9p4wm24mLJ/z4medhKx5ySH0h
-	8K8irZpdx12hfGFM6Oxw==;
+	List-Owner; bh=KMHk5CKR0whSxLSZDeYMxF3fepHjPs0swrBnFQwNeM0=; b=M+/jetfdK5zX6t
+	8e39B8jBUfCCiSxdM267YZTJagXbk/d65Tu2G43TYxzrOevKaCzwMaeopt1qKGJdUdnTZowOdXBRg
+	G96pJ5IT8WcIeHOnuFgYnsK8usxPsn9gq4a7MHB5P6/Qe9Rbcg3HDKALBoINBIjs5i3UwZOSPeA+c
+	qEeU4iTT2hdpJl0kSK5k4n6hb4Z8FmUK02ewLFx8PMg0y2ifEeLqrABBUMzi/i9cDMECxfVfbcIxy
+	/gJUSTHv8QVTbGazZV3Ss02b/xSMw2NoNcwWzJ1YNHd8TFvOLgbnH0PKFTOE5xON5hPCGG1kdgdH2
+	a1njlIOGJHa1zmxHdkTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbSwG-0000BQ-TZ; Wed, 20 May 2020 17:55:32 +0000
+	id 1jbSwV-00030a-A8; Wed, 20 May 2020 17:55:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbSvW-0008Kf-8P
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 17:54:47 +0000
+ id 1jbSvZ-0008Mf-4d
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 17:54:50 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AD330207D3;
- Wed, 20 May 2020 17:54:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6973E20823;
+ Wed, 20 May 2020 17:54:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589997286;
- bh=LwxTBNwVwq8v+Z3EBK8Zb+aYAe0AVV8dq4zcV/fvDC8=;
+ s=default; t=1589997288;
+ bh=tSusfwEtnTufQiTMMaZ15xY6HANjfc5RrrUfXAHd4bU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OFq5+gFik+r6kGeqmyDWMKqEgZalTs7c4tPsNNhQaX/MPA8BMIV672M3qkbbA9ZDQ
- 27uhRAS9YPmjakvM6KuqrfY2I4LD9GHc/miBeCKwQtsFFp7gOUwchYkOUzmuSE6foo
- tpr7SsjsgdfdXkm0DB9u1TBpd5zg/WWX5pPxmrwI=
+ b=WzowI8+GqPbs73hL8wdgdaas6aoLB4lvYGw1rWSCDNTR9IC7pFclCVbjgGMKgBAh5
+ uB8VqgZAdfEHAyY7/qcBGKGpkHNPWQ1Y/ve3p3PeYIQ8Vv10LRnYd9/A8NnP+uNj10
+ z/N/0AOm7CzIOSU+1BrQmu7FJsG6OoT+c8Inlxnk=
 From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH V3] arm64/cpufeature: Validate hypervisor capabilities
- during CPU hotplug
-Date: Wed, 20 May 2020 18:54:37 +0100
-Message-Id: <158998676494.231372.15074477766045633803.b4-ty@kernel.org>
+To: Tuan Phan <tuanphan@os.amperecomputing.com>
+Subject: Re: [PATCH v5] ACPI/IORT: Fix PMCG node single ID mapping handling
+Date: Wed, 20 May 2020 18:54:38 +0100
+Message-Id: <158999660879.126681.3746296394205258449.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <1589248647-22925-1-git-send-email-anshuman.khandual@arm.com>
-References: <1589248647-22925-1-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <1589994787-28637-1-git-send-email-tuanphan@os.amperecomputing.com>
+References: <1589994787-28637-1-git-send-email-tuanphan@os.amperecomputing.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_105446_318575_1D8278AB 
-X-CRM114-Status: GOOD (  10.42  )
+X-CRM114-CacheID: sfid-20200520_105449_246477_F4762D55 
+X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,40 +77,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- kvmarm@lists.cs.columbia.edu
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, catalin.marinas@arm.com,
+ Sudeep Holla <sudeep.holla@arm.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+ Hanjun Guo <guohanjun@huawei.com>, patches@amperecomputing.com,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 12 May 2020 07:27:27 +0530, Anshuman Khandual wrote:
-> This validates hypervisor capabilities like VMID width, IPA range for any
-> hot plug CPU against system finalized values. KVM's view of the IPA space
-> is used while allowing a given CPU to come up. While here, it factors out
-> get_vmid_bits() for general use.
+On Wed, 20 May 2020 10:13:07 -0700, Tuan Phan wrote:
+> An IORT PMCG node can have no ID mapping if its overflow interrupt is
+> wire based therefore the code that parses the PMCG node can not assume
+> the node will always have a single mapping present at index 0.
 > 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Marc Zyngier <maz@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: kvmarm@lists.cs.columbia.edu
-> Cc: linux-kernel@vger.kernel.org
+> Fix iort_get_id_mapping_index() by checking for an overflow interrupt
+> and mapping count.
+> 
+> [...]
 
-Applied to arm64 (for-next/cpufeature), thanks!
+Applied to arm64 (for-next/acpi), thanks!
 
-[1/1] arm64/cpufeature: Validate hypervisor capabilities during CPU hotplug
-      https://git.kernel.org/arm64/c/c73433fc630c
-
-But please note that I made some changes to verify_hyp_capabilities() so
-that it's (a) static and (b) uses IS_ENABLED to avoid the dummy function
-definition. I also extended the IS_ENABLED_check so that it doesn't
-conflict with the KVM kconfig changes from Fuad. Please shout if you think
-I'm still missing something.
+[1/1] ACPI/IORT: Fix PMCG node single ID mapping handling
+      https://git.kernel.org/arm64/c/50c8ab8d9fbf
 
 Cheers,
 -- 
