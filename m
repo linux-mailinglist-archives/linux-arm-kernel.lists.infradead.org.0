@@ -2,92 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A84B81DB565
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 15:43:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1565F1DB56E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 15:44:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=N6EOfCwCpCnhzCSqVFqvYjXIwrB5ObAhOAwSw63cktA=; b=dOFW6nGHxfkQjmc7wqPcWuI/E
-	mYlKnbwUAwQDf7I5jvVtEVz1SW0COn/ypBvIhufBtHCGUbDZFRtFG0M9ZWZhEEuL5uXp2+GiwUZXa
-	2PWLVM50AcowAcZF8uOZgAHUteX7QqsxAivozfDTsD8Xncq0A69XwlHltqdd/z5Wa9fGT937smxEo
-	+mtKPxjoU11yEjlCmai0VacBQSqGyIracxZq8eN3L1ym5i5vUzPi24w6m8vIhCfSm7APx+fz7ziCB
-	91zShSSkoZnOgon+eQHHiaIltk7GaJ6OW4MibHKyhdJNybkx4Kenl1Gq4WZqzHSh6OcqSlOX7ehGd
-	Af/JCs3+Q==;
+	 bh=lj6O41Brqv1wT5GYDwGlhiT87W7l8sSfsqzYOG+FOOo=; b=Uy/rvGJib+jp9u3PuknGucPZ2
+	4YGUioHu9ajLb0bksuHmnt4VOtWZEAWybfC02Ns9Greua6A1WKzciC4TIjEa0D8+eb9vknJqGiAic
+	ZgBYkn9RXym+fqovqMTPGFA+f/zG7CvToHwT04ywpYE92XwGEBwoG7XvlA5TpIzUcV4EVk/F0L7sR
+	OqjfYdkGa8YYrTnu+oupWou8ZpfV6ecaBEO8c7HUymBdHLbYRc6xfMGVR3Ltuwx5AbsT3/Cnq8xkS
+	d0n5gShZU4PLnC/QQuMPCrm8MKPs88/nvhCc8O3H5ABVzD0aIqRXO8OF7c/PVDHL+KD5LgevAn2Ui
+	lXIx+T5vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbP0d-0004FG-Qv; Wed, 20 May 2020 13:43:47 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1jbP1L-0004qu-NK; Wed, 20 May 2020 13:44:31 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbP0V-0004E9-FO
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 13:43:40 +0000
-Received: by mail-ed1-x542.google.com with SMTP id b91so3116163edf.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 06:43:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=h59qBA70ccgJYgPSbgtDIOfg5Wc3La436ik9+lkAxFw=;
- b=agrseHPYKmVDUxXLset3XicNJHpIkMFU5OHTpx1lED4Hf4QOMSMea3aSV82pbnvG7Q
- CqVhuRF6wLnSgrRzV5FOIT9Cs1IPxkW9SK4cY2GGO5X2kHbFUg3zcuxI6JQDo5yGEUvS
- D3GYa+YnrmFAVkP0MnnSbB+EETv8axSnqaxcpQaqVfkOQ5kXm4rOWnP/OP1k1Iyz7p9S
- g1dEpajED2IvCQbf2ag0Ar944ycE35c5MQ+c7EvP0He6bkqFPYPgUTsi6XpX+fujJpIr
- 1odOyFpQARRnMOS3K6umhjlo2t3YijnUM+3NrFE1rJo+5IVsDERXQxl4c5Su+MYMMM6p
- Sx0g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=h59qBA70ccgJYgPSbgtDIOfg5Wc3La436ik9+lkAxFw=;
- b=SCL7KGXP/Hq8bEGkifOpIU6kQ66xgyslxtb347/5yNdJtT5HkYHuHA2ugBxEP2leRG
- 8zi0pGTI/+i37+Zee/jw1ECnIiFD0mmLRyh7q/wf0K8g9mVCTo8WmLf3n/uvQdPeU3YT
- +m08GO5YqWHe40NBiNNqUCC6BRCAn5lk/n+2GM2bGkbe3aXDgjKktHk8ezHHEPx56U+l
- gtfUX5DVRf18Gjgoianu8KYxQ1QcEpqPT6NybcL1jPOmt4OC2JVRaiJCRIZJ/cqcjc3e
- iyqOjcNM6yNrYaxvyYQlH7ep7kOM1/wZQ8PD+2jfSZjbuhh7bZcJLQ0mDr/4PMpWQCIz
- 4t5Q==
-X-Gm-Message-State: AOAM5330W/6BMNbp/QWlCfQ0dAysUsl5nAnPjMNg0ahjV3dqiu4vcVa3
- AuXNdKmOZysqouFn8+bK83o=
-X-Google-Smtp-Source: ABdhPJwSlZJ1cQRFJMbMaVagTuIpwp5Vu7wc2K8JIQda40UPgtYN7OkqLV2TEoE5kMSsB+srCeYTZQ==
-X-Received: by 2002:aa7:c3cb:: with SMTP id l11mr3279208edr.364.1589982217868; 
- Wed, 20 May 2020 06:43:37 -0700 (PDT)
-Received: from localhost (pd9e51079.dip0.t-ipconnect.de. [217.229.16.121])
- by smtp.gmail.com with ESMTPSA id y18sm1910144ejb.87.2020.05.20.06.43.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 06:43:36 -0700 (PDT)
-Date: Wed, 20 May 2020 15:43:35 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: arm@kernel.org, soc@kernel.org
-Subject: Re: [GIT PULL 11/11] arm64: tegra: Device tree changes for v5.8-rc1
-Message-ID: <20200520134335.GA2147362@ulmo>
-References: <20200515145311.1580134-1-thierry.reding@gmail.com>
- <20200515145311.1580134-12-thierry.reding@gmail.com>
+ id 1jbP1B-0004m5-6G; Wed, 20 May 2020 13:44:22 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id B59DCAC46;
+ Wed, 20 May 2020 13:44:20 +0000 (UTC)
+Message-ID: <4a49e7724e9a12e4f128a5e9ff4181da7af40bd3.camel@suse.de>
+Subject: Re: [PATCH 14/15] PCI: brcmstb: Set bus max burst side by chip type
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Jim Quinlan <james.quinlan@broadcom.com>
+Date: Wed, 20 May 2020 15:44:16 +0200
+In-Reply-To: <20200519203419.12369-15-james.quinlan@broadcom.com>
+References: <20200519203419.12369-1-james.quinlan@broadcom.com>
+ <20200519203419.12369-15-james.quinlan@broadcom.com>
+User-Agent: Evolution 3.36.2 
 MIME-Version: 1.0
-In-Reply-To: <20200515145311.1580134-12-thierry.reding@gmail.com>
-User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_064339_511497_9EBBF62F 
-X-CRM114-Status: GOOD (  13.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200520_064421_519051_6497316E 
+X-CRM114-Status: GOOD (  19.21  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,97 +62,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jon Hunter <jonathanh@nvidia.com>
-Content-Type: multipart/mixed; boundary="===============2763940002297800491=="
+Cc: Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "open list:PCI NATIVE HOST BRIDGE
+ AND ENDPOINT DRIVERS" <linux-pci@vger.kernel.org>,
+ open list <linux-kernel@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>, "moderated list:BROADCOM
+ BCM2711/BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============8245935513774816399=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2763940002297800491==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="45Z9DzgjV8m4Oswq"
-Content-Disposition: inline
+--===============8245935513774816399==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-67gf22uKBltY92+BH4yY"
 
 
---45Z9DzgjV8m4Oswq
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+--=-67gf22uKBltY92+BH4yY
+Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-On Fri, May 15, 2020 at 04:53:11PM +0200, Thierry Reding wrote:
-> Hi ARM SoC maintainers,
+On Tue, 2020-05-19 at 16:34 -0400, Jim Quinlan wrote:
+> From: Jim Quinlan <jquinlan@broadcom.com>
 >=20
-> The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f31=
-36:
+> The proper value of the parameter SCB_MAX_BURST_SIZE varies
+> per chip.  The 2711 family requires 128B whereas other devices
+> can employ 512.  The assignment is complicated by the fact
+> that the values for this two-bit field have different meanings;
 >=20
->   Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+>   Value   Type_Generic    Type_7278
 >=20
-> are available in the Git repository at:
+>      00       Reserved         128B
+>      01           128B         256B
+>      10           256B         512B
+>      11           512B     Reserved
 >=20
->   git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegr=
-a-for-5.8-arm64-dt
+> Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+> ---
+>  drivers/pci/controller/pcie-brcmstb.c | 18 +++++++++++++++---
+>  1 file changed, 15 insertions(+), 3 deletions(-)
 >=20
-> for you to fetch changes up to 74265112c60be0209817c682ba68661c05da1d38:
->=20
->   arm64: tegra: Enable VI I2C on Jetson Nano (2020-05-15 16:28:58 +0200)
+> diff --git a/drivers/pci/controller/pcie-brcmstb.c
+> b/drivers/pci/controller/pcie-brcmstb.c
+> index 7bf945efd71b..0dfa1bbd9764 100644
+> --- a/drivers/pci/controller/pcie-brcmstb.c
+> +++ b/drivers/pci/controller/pcie-brcmstb.c
+> @@ -53,7 +53,7 @@
+>  #define  PCIE_MISC_MISC_CTRL_SCB_ACCESS_EN_MASK		0x1000
+>  #define  PCIE_MISC_MISC_CTRL_CFG_READ_UR_MODE_MASK	0x2000
+>  #define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_MASK	0x300000
+> -#define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_128		0x0
+> +
+>  #define  PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK		0xf8000000
+>  #define  PCIE_MISC_MISC_CTRL_SCB1_SIZE_MASK		0x07c00000
+>  #define  PCIE_MISC_MISC_CTRL_SCB2_SIZE_MASK		0x0000001f
+> @@ -276,6 +276,7 @@ struct brcm_pcie {
+>  	int			num_memc;
+>  	u64			memc_size[PCIE_BRCM_MAX_MEMC];
+>  	u32			hw_rev;
+> +	const struct of_device_id *of_id;
+>  };
+> =20
+>  /*
+> @@ -841,7 +842,7 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
+>  	int num_out_wins =3D 0;
+>  	u16 nlw, cls, lnksta;
+>  	int i, ret, memc;
+> -	u32 tmp, aspm_support;
+> +	u32 tmp, burst, aspm_support;
+> =20
+>  	/* Reset the bridge */
+>  	brcm_pcie_bridge_sw_init_set(pcie, 1);
+> @@ -857,10 +858,20 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
+>  	/* Wait for SerDes to be stable */
+>  	usleep_range(100, 200);
+> =20
+> +	/*
+> +	 * SCB_MAX_BURST_SIZE is a two bit field.  For GENERIC chips it
+> +	 * is encoded as 0=3D128, 1=3D256, 2=3D512, 3=3DRsvd, for BCM7278 it
+> +	 * is encoded as 0=3DRsvd, 1=3D128, 2=3D256, 3=3D512.
+> +	 */
+> +	if (strcmp(pcie->of_id->compatible, "brcm,bcm2711-pcie") =3D=3D 0)
 
-Hi Arnd, Olof,
+Would it make sense to use pcie->type here? I know GENERIC !=3D BCM2711, bu=
+t we
+could define it and avoid adding redundant info in struct brcm_pcie.
 
-Actually, can you hold off on merging this for a little bit? I'd like to
-send out a v2 of this because I noticed that...
+Regards,
+Nicolas
 
-> Thanks,
-> Thierry
->=20
-> ----------------------------------------------------------------
-> arm64: tegra: Device tree changes for v5.8-rc1
->=20
-> This contains a couple of fixes for minor issues, enables XUDC support
-> on Tegra194, and enables EMC frequency scaling and video capture on
-> Tegra210.
->=20
-> ----------------------------------------------------------------
-> Jon Hunter (2):
->       arm64: tegra: Fix ethernet phy-mode for Jetson Xavier
->       arm64: tegra: Allow the PMIC RTC to wakeup Jetson Xavier
->=20
-> Joseph Lo (1):
->       arm64: tegra: Add external memory controller node for Tegra210
+> +		burst =3D 0x0; /* 128B */
+> +	else
+> +		burst =3D (pcie->type =3D=3D BCM7278) ? 0x3 : 0x2; /* 512 bytes */
+> +
+>  	/* Set SCB_MAX_BURST_SIZE, CFG_READ_UR_MODE, SCB_ACCESS_EN */
+>  	u32p_replace_bits(&tmp, 1, PCIE_MISC_MISC_CTRL_SCB_ACCESS_EN_MASK);
+>  	u32p_replace_bits(&tmp, 1, PCIE_MISC_MISC_CTRL_CFG_READ_UR_MODE_MASK);
+> -	u32p_replace_bits(&tmp, PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_128,
+> +	u32p_replace_bits(&tmp, burst,
+>  			  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_MASK);
+>  	writel(tmp, base + PCIE_MISC_MISC_CTRL);
+> =20
+> @@ -1200,6 +1211,7 @@ static int brcm_pcie_probe(struct platform_device *=
+pdev)
+>  	pcie->reg_offsets =3D data->offsets;
+>  	pcie->reg_field_info =3D data->reg_field_info;
+>  	pcie->type =3D data->type;
+> +	pcie->of_id =3D of_id;
+> =20
+>  	res =3D platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>  	pcie->base =3D devm_ioremap_resource(&pdev->dev, res);
 
-=2E.. this patch contains some leftover changelog notes that I forgot to
-remove.
 
-There's also one fix missing from this that I was meaning to apply for
-v5.8 which will enable suspend/resume on Tegra186.
-
-Thanks,
-Thierry
-
---45Z9DzgjV8m4Oswq
+--=-67gf22uKBltY92+BH4yY
 Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl7FNAMACgkQ3SOs138+
-s6HMZA/+MDhiKjzKLTBXaFCViGhljWnkYbbcdtQ9879RRMEWQr2nvsaDt0gA5cgK
-iPfID6QX2ozJdm3frwXd+fetK9Q7bre/WBR6/mc8YvZ5wywG/AFGbp9u0Wfy5+KG
-6yLJHH56oyxZfl+eiKOkjo95ighOEpN5F2u5UCwDJDxMRSnzk5XjVRIJ+rzQUpMh
-Og5v7iW8HkIf+QGXOFKfj2gXOA4WQODFj+HEQ0NU84vQ0DQMEtcfuR+/zcd0NN17
-qSGwwXqSpOxEcrxo6xL3qmAZR8AQCW/ol1X3tSsFhIkIo/8HMiBcs6Ye+bLdjj6i
-G+HBcW8cOPYep8tpWDZEcYYQot1i9GQ+MSu5Bcf/2Lp3YIXlvUEUG/IGUpnrcUr+
-LDN9bPl2QbUCcBOomlH+JbwoFWzHbqY3vmn0SxokzSiOISzcEPAA1w3BdrNo/9Q8
-p/oPMb5sp/8WaS8VKOrDOSjFAOhT7GIee22DavViP5rOz51GhLdU+QR8JREkYEbU
-AJvNeTtq7bHxp1N4np6T19ecteoYi7GQd0PEp8r/v3lq5IifAV78aqrTN5zVSyfM
-J01Fbe9QylyVAltrfcjG4inIJKMaI6SvVObP9k98oeAG0/eR47yP1ClkA2tCgzBG
-pia81SqLe8vTmEqVjyH042JwIYjZSSpWFO1eWYtH7PaODZnCD1A=
-=AGae
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7FNDAACgkQlfZmHno8
+x/5Lpwf/eAOpwSlhLavh+bn9QboXcCi13EVtwNjwBha1uical8dcFXceMgfJOJVm
+7x35rF6gyugDp+uKGHdsG9q71U/R4VLiwdGJrsCYYgFa+8RALwAXNqefb3kmyFIt
+GSh8WzRkKUSR4/5Py6TfcgxWJ4ATyzSRwXIJ8KTOPEt73GFPgKyQFmfCthpvD8as
+iVdWqU6HmzlhsNPPgH98RCZ7d4lIAlN4VjhayR7A3QO2mBoQqtX3xyBGKM5Wzu9w
+vfRTV1Wnb3nFeK3ly+iGGCUJG1vWtDIWZFNSNHxmjgqKLiS9Lp7HgrWXAOpUZJ/J
+9dDEJKpEi1M3rhu+p8ItSk3hat7sTg==
+=pmwt
 -----END PGP SIGNATURE-----
 
---45Z9DzgjV8m4Oswq--
+--=-67gf22uKBltY92+BH4yY--
 
 
---===============2763940002297800491==
+
+--===============8245935513774816399==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -200,5 +212,6 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2763940002297800491==--
+--===============8245935513774816399==--
+
 
