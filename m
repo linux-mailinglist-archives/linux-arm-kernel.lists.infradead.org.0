@@ -2,60 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A29DF1DAABD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 08:40:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E49771DAAC6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 08:41:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=VuZN2OmeVhi5gAkOBTxOn1dz1+AFs+VnxiPO1SkBqpc=; b=l7/
-	0V6iUiK8EBEHRJoagFEPmxzdV0UcRLWaeAk2LTnr67v1NAnyfoklO4Iay9ibXioFaU1DQOYbdkvRM
-	+zLV7LBfb7WD4aT+aK/7pYz/DxKo29/rpIU4/Dcg+t3bcD+mvbl8DM1GU6etz9CKBR5HMvjw4guQm
-	53PPV839WiXKvEF2Xiuy5SPtDKz37gB5B724O6B+QE2WWbSYKVtbfMGPvuE0Zxy6QuudYpZWhayY+
-	moB1YdtrvP6hY5Jj2/Z/EY4s9xl8iVeTnSo2GBW9Xv7NUKHl1c3preK3B1gCZPlhSsh5svVuZPwPj
-	R5nzV/94iAYMjXhYtdOj0gQ1ndHpQNw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uB3FQM/jfT0VtsMQlzBFu2nKEPoiEsIlBIUYrfwGNqg=; b=rLTwXGHz01ZyxM
+	Xe84u4bkX4tYDB7TSjTZW04O4TNHiDSp46foWPBf4usEk4NAgvoiC4PhQsMnO08hsQBADPSZWqr7v
+	1zyTxM7wPeh4bippBmMYbZsZ5xaTiZAwlLEqE3Ct0aoCEkwrJgxu7ot7qovYoovhoeB/aKy+zzT+Z
+	44/+XI9aIYiR+RCeolIUd1utCbM9JEPeHKDd8+DDvAw74oMNiShdNDUPCgdI96e/sisjUCmILeEwx
+	Eje8iDSYlaMU5ODHFI4110KhJ8UHWXEeCxmGRDgsxtKcxpuEWERWl/9q5zt6AXZL0uirVcnj87gzb
+	9YVShdBBmQqBqalnsaQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbIOp-0006M2-1l; Wed, 20 May 2020 06:40:19 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jbIPq-0007Ao-Cz; Wed, 20 May 2020 06:41:22 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbIOd-0004sj-EF
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 06:40:09 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 446571A02DF;
- Wed, 20 May 2020 08:40:04 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4F71C1A02D9;
- Wed, 20 May 2020 08:40:00 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 181F4402B3;
- Wed, 20 May 2020 14:39:54 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] ARM: dts: imx: Make tempmon node as child of anatop node
-Date: Wed, 20 May 2020 14:30:16 +0800
-Message-Id: <1589956216-22499-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jbIPd-00079I-Vf
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 06:41:13 +0000
+Received: from mail-il1-f179.google.com (mail-il1-f179.google.com
+ [209.85.166.179])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5050320890
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 May 2020 06:41:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589956869;
+ bh=Qgzm5Omvs4oJc9LoBEHGrGceOiNpLpQNzEShzQPpyUs=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=kXcFH8JZtXdzrSYFxNlq8g9LexovFphnhDfbhrBRZnX3bkcK4xRqUTn2lOsBIleGh
+ Z28d21cZdtn/+hjRN8RJHhKYASDR3xfo0/CHr2KLfYLS6g5RTzWUa1pBN3/BGzn6At
+ y86M+Q3NyPJ7dN564oMywZcdcIyKOZ3Hpx8LNSXk=
+Received: by mail-il1-f179.google.com with SMTP id 4so2043456ilg.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 19 May 2020 23:41:09 -0700 (PDT)
+X-Gm-Message-State: AOAM532WooT7U9TQnrJ/dh+E6UYSLQlZCIaoNYd3enLFpT8FqbhQd39z
+ OAC9abj9AQb87g5Jn2odpo/+si34WrI6oqD/0GE=
+X-Google-Smtp-Source: ABdhPJzPt5lSpeelNjVE0xFeQuDqxigtSr4lzGDj5//CymV5Epryg8vWw0JB1CkAYuegIQ6uXoskKTXUFLfeUIgGVXE=
+X-Received: by 2002:a92:bb55:: with SMTP id w82mr2552171ili.211.1589956868672; 
+ Tue, 19 May 2020 23:41:08 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200519190211.76855-1-ardb@kernel.org>
+ <16565072.6IxHkjxkAd@tauon.chronox.de>
+In-Reply-To: <16565072.6IxHkjxkAd@tauon.chronox.de>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Wed, 20 May 2020 08:40:57 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXFDcHncnb=aUkWnX22Co2r4g3DSM+wug0FQ231Gv7J01Q@mail.gmail.com>
+Message-ID: <CAMj1kXFDcHncnb=aUkWnX22Co2r4g3DSM+wug0FQ231Gv7J01Q@mail.gmail.com>
+Subject: Re: [RFC/RFT PATCH 0/2] crypto: add CTS output IVs for arm64 and
+ testmgr
+To: Stephan Mueller <smueller@chronox.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_234007_785163_01B96F73 
-X-CRM114-Status: UNSURE (   8.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200519_234112_490344_8C977B40 
+X-CRM114-Status: GOOD (  20.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,259 +87,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Eric Biggers <ebiggers@kernel.org>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX6/7 SoCs' temperature sensor is inside anatop module from HW
-perspective, so it should be a child node of anatop.
+On Wed, 20 May 2020 at 08:03, Stephan Mueller <smueller@chronox.de> wrote:
+>
+> Am Dienstag, 19. Mai 2020, 21:02:09 CEST schrieb Ard Biesheuvel:
+>
+> Hi Ard,
+>
+> > Stephan reports that the arm64 implementation of cts(cbc(aes)) deviates
+> > from the generic implementation in what it returns as the output IV. So
+> > fix this, and add some test vectors to catch other non-compliant
+> > implementations.
+> >
+> > Stephan, could you provide a reference for the NIST validation tool and
+> > how it flags this behaviour as non-compliant? Thanks.
+>
+> The test definition that identified the inconsistent behavior is specified
+> with [1]. Note, this testing is intended to become an RFC standard.
+>
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
- arch/arm/boot/dts/imx6qdl.dtsi | 22 +++++++++++-----------
- arch/arm/boot/dts/imx6sl.dtsi  | 20 ++++++++++----------
- arch/arm/boot/dts/imx6sll.dtsi | 20 ++++++++++----------
- arch/arm/boot/dts/imx6sx.dtsi  | 20 ++++++++++----------
- arch/arm/boot/dts/imx6ul.dtsi  | 20 ++++++++++----------
- arch/arm/boot/dts/imx7s.dtsi   | 20 ++++++++++----------
- 6 files changed, 61 insertions(+), 61 deletions(-)
+Are you referring to the line
 
-diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-index 39d4afd..43d44d5 100644
---- a/arch/arm/boot/dts/imx6qdl.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl.dtsi
-@@ -69,17 +69,6 @@
- 		};
- 	};
- 
--	tempmon: tempmon {
--		compatible = "fsl,imx6q-tempmon";
--		interrupt-parent = <&gpc>;
--		interrupts = <0 49 IRQ_TYPE_LEVEL_HIGH>;
--		fsl,tempmon = <&anatop>;
--		nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
--		nvmem-cell-names = "calib", "temp_grade";
--		clocks = <&clks IMX6QDL_CLK_PLL3_USB_OTG>;
--		#thermal-sensor-cells = <0>;
--	};
--
- 	ldb: ldb {
- 		#address-cells = <1>;
- 		#size-cells = <0>;
-@@ -795,6 +784,17 @@
- 					anatop-min-voltage = <725000>;
- 					anatop-max-voltage = <1450000>;
- 				};
-+
-+				tempmon: tempmon {
-+					compatible = "fsl,imx6q-tempmon";
-+					interrupt-parent = <&gpc>;
-+					interrupts = <0 49 IRQ_TYPE_LEVEL_HIGH>;
-+					fsl,tempmon = <&anatop>;
-+					nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
-+					nvmem-cell-names = "calib", "temp_grade";
-+					clocks = <&clks IMX6QDL_CLK_PLL3_USB_OTG>;
-+					#thermal-sensor-cells = <0>;
-+				};
- 			};
- 
- 			usbphy1: usbphy@20c9000 {
-diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
-index 911d8cf..d8efc0a 100644
---- a/arch/arm/boot/dts/imx6sl.dtsi
-+++ b/arch/arm/boot/dts/imx6sl.dtsi
-@@ -93,16 +93,6 @@
- 		};
- 	};
- 
--	tempmon: tempmon {
--		compatible = "fsl,imx6q-tempmon";
--		interrupts = <0 49 IRQ_TYPE_LEVEL_HIGH>;
--		interrupt-parent = <&gpc>;
--		fsl,tempmon = <&anatop>;
--		nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
--		nvmem-cell-names = "calib", "temp_grade";
--		clocks = <&clks IMX6SL_CLK_PLL3_USB_OTG>;
--	};
--
- 	pmu {
- 		compatible = "arm,cortex-a9-pmu";
- 		interrupt-parent = <&gpc>;
-@@ -628,6 +618,16 @@
- 					anatop-min-voltage = <725000>;
- 					anatop-max-voltage = <1450000>;
- 				};
-+
-+				tempmon: tempmon {
-+					compatible = "fsl,imx6q-tempmon";
-+					interrupts = <0 49 IRQ_TYPE_LEVEL_HIGH>;
-+					interrupt-parent = <&gpc>;
-+					fsl,tempmon = <&anatop>;
-+					nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
-+					nvmem-cell-names = "calib", "temp_grade";
-+					clocks = <&clks IMX6SL_CLK_PLL3_USB_OTG>;
-+				};
- 			};
- 
- 			usbphy1: usbphy@20c9000 {
-diff --git a/arch/arm/boot/dts/imx6sll.dtsi b/arch/arm/boot/dts/imx6sll.dtsi
-index edd3abb..bf7f048 100644
---- a/arch/arm/boot/dts/imx6sll.dtsi
-+++ b/arch/arm/boot/dts/imx6sll.dtsi
-@@ -105,16 +105,6 @@
- 		clock-output-names = "ipp_di1";
- 	};
- 
--	tempmon: temperature-sensor {
--		compatible = "fsl,imx6sll-tempmon", "fsl,imx6sx-tempmon";
--		interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
--		interrupt-parent = <&gpc>;
--		fsl,tempmon = <&anatop>;
--		nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
--		nvmem-cell-names = "calib", "temp_grade";
--		clocks = <&clks IMX6SLL_CLK_PLL3_USB_OTG>;
--	};
--
- 	soc {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
-@@ -531,6 +521,16 @@
- 					anatop-max-voltage = <3400000>;
- 					anatop-enable-bit = <0>;
- 				};
-+
-+				tempmon: temperature-sensor {
-+					compatible = "fsl,imx6sll-tempmon", "fsl,imx6sx-tempmon";
-+					interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-+					interrupt-parent = <&gpc>;
-+					fsl,tempmon = <&anatop>;
-+					nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
-+					nvmem-cell-names = "calib", "temp_grade";
-+					clocks = <&clks IMX6SLL_CLK_PLL3_USB_OTG>;
-+				};
- 			};
- 
- 			usbphy1: usb-phy@20c9000 {
-diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
-index e031337..8c4473b 100644
---- a/arch/arm/boot/dts/imx6sx.dtsi
-+++ b/arch/arm/boot/dts/imx6sx.dtsi
-@@ -134,16 +134,6 @@
- 		clock-output-names = "anaclk2";
- 	};
- 
--	tempmon: tempmon {
--		compatible = "fsl,imx6sx-tempmon", "fsl,imx6q-tempmon";
--		interrupt-parent = <&gpc>;
--		interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
--		fsl,tempmon = <&anatop>;
--		nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
--		nvmem-cell-names = "calib", "temp_grade";
--		clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
--	};
--
- 	pmu {
- 		compatible = "arm,cortex-a9-pmu";
- 		interrupt-parent = <&gpc>;
-@@ -696,6 +686,16 @@
- 					anatop-min-voltage = <725000>;
- 					anatop-max-voltage = <1450000>;
- 				};
-+
-+				tempmon: tempmon {
-+					compatible = "fsl,imx6sx-tempmon", "fsl,imx6q-tempmon";
-+					interrupt-parent = <&gpc>;
-+					interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-+					fsl,tempmon = <&anatop>;
-+					nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
-+					nvmem-cell-names = "calib", "temp_grade";
-+					clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
-+				};
- 			};
- 
- 			usbphy1: usbphy@20c9000 {
-diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
-index 35e7301..505fd4f 100644
---- a/arch/arm/boot/dts/imx6ul.dtsi
-+++ b/arch/arm/boot/dts/imx6ul.dtsi
-@@ -131,16 +131,6 @@
- 		clock-output-names = "ipp_di1";
- 	};
- 
--	tempmon: tempmon {
--		compatible = "fsl,imx6ul-tempmon", "fsl,imx6sx-tempmon";
--		interrupt-parent = <&gpc>;
--		interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
--		fsl,tempmon = <&anatop>;
--		nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
--		nvmem-cell-names = "calib", "temp_grade";
--		clocks = <&clks IMX6UL_CLK_PLL3_USB_OTG>;
--	};
--
- 	pmu {
- 		compatible = "arm,cortex-a7-pmu";
- 		interrupt-parent = <&gpc>;
-@@ -611,6 +601,16 @@
- 					anatop-min-voltage = <725000>;
- 					anatop-max-voltage = <1450000>;
- 				};
-+
-+				tempmon: tempmon {
-+					compatible = "fsl,imx6ul-tempmon", "fsl,imx6sx-tempmon";
-+					interrupt-parent = <&gpc>;
-+					interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-+					fsl,tempmon = <&anatop>;
-+					nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
-+					nvmem-cell-names = "calib", "temp_grade";
-+					clocks = <&clks IMX6UL_CLK_PLL3_USB_OTG>;
-+				};
- 			};
- 
- 			usbphy1: usbphy@20c9000 {
-diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
-index 8bac491..3904558 100644
---- a/arch/arm/boot/dts/imx7s.dtsi
-+++ b/arch/arm/boot/dts/imx7s.dtsi
-@@ -147,16 +147,6 @@
- 		};
- 	};
- 
--	tempmon: tempmon {
--		compatible = "fsl,imx7d-tempmon";
--		interrupt-parent = <&gpc>;
--		interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
--		fsl,tempmon = <&anatop>;
--		nvmem-cells = <&tempmon_calib>,	<&fuse_grade>;
--		nvmem-cell-names = "calib", "temp_grade";
--		clocks = <&clks IMX7D_PLL_SYS_MAIN_CLK>;
--	};
--
- 	timer {
- 		compatible = "arm,armv7-timer";
- 		interrupt-parent = <&intc>;
-@@ -586,6 +576,16 @@
- 					anatop-max-voltage = <1300000>;
- 					anatop-enable-bit = <0>;
- 				};
-+
-+				tempmon: tempmon {
-+					compatible = "fsl,imx7d-tempmon";
-+					interrupt-parent = <&gpc>;
-+					interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-+					fsl,tempmon = <&anatop>;
-+					nvmem-cells = <&tempmon_calib>,	<&fuse_grade>;
-+					nvmem-cell-names = "calib", "temp_grade";
-+					clocks = <&clks IMX7D_PLL_SYS_MAIN_CLK>;
-+				};
- 			};
- 
- 			snvs: snvs@30370000 {
--- 
-2.7.4
+CT[j] = AES_CBC_CS_ENCRYPT(Key[i], PT[j])
 
+where the CTS transform is invoked without an IV altogether? That
+simply seems like a bug to me. In an abstract specification like this,
+it would be insane for pseudocode functions to be stateful objects,
+and there is nothing in the pseudocode that explicitly captures the
+'output IV' of that function call.
+
+
+> To facilitate that testing, NIST offers an internet service, the ACVP server,
+> that allows obtaining test vectors and uploading responses. You see the large
+> number of concluded testing with [2]. A particular completion of the CTS
+> testing I finished yesterday is given in [3]. That particular testing was also
+> performed on an ARM system with CE where the issue was detected.
+>
+> I am performing the testing with [4] that has an extension to test the kernel
+> crypto API.
+>
+
+OK. So given that that neither the CTS spec nor this document makes
+any mention of an output IV or what its value should be, my suggestion
+would be to capture the IV directly from the ciphertext, rather than
+relying on some unspecified behavior to give you the right data. Note
+that we have other implementations of cts(cbc(aes)) in the kernel as
+well (h/w accelerated ones) and if there is no specification that
+defines this behavior, you really shouldn't be relying on it.
+
+
+That 'specification' invokes AES_CBC_CS_ENCRYPT() twice using a
+different prototype, without any mention whatsoever what the implied
+value of IV[] is if it is missing. This is especially problematic
+given that it seems to cover all of CS1/2/3, and the relation between
+next IV and ciphertext is not even the same between those for inputs
+that are a multiple of the blocksize.
+
+
+> [1] https://github.com/usnistgov/ACVP/blob/master/artifacts/draft-celi-acvp-block-ciph-00.txt#L366
+>
+> [2] https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/
+> validation-search?searchMode=validation&family=1&productType=-1&ipp=25
+>
+> [3] https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/
+> details?validation=32608
+>
+> [4] https://github.com/smuellerDD/acvpparser
+> >
+> > Cc: Stephan Mueller <smueller@chronox.de>
+> >
+> > Ard Biesheuvel (2):
+> >   crypto: arm64/aes - align output IV with generic CBC-CTS driver
+> >   crypto: testmgr - add output IVs for AES-CBC with ciphertext stealing
+> >
+> >  arch/arm64/crypto/aes-modes.S |  2 ++
+> >  crypto/testmgr.h              | 12 ++++++++++++
+> >  2 files changed, 14 insertions(+)
+>
+>
+> Ciao
+> Stephan
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
