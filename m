@@ -2,125 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F18951DAE63
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:11:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06E471DAEA1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:21:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	References:MIME-Version:Message-ID:In-Reply-To:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=V+OZlEY5gaLCMPDbto9SRTgvBJJHTCfi/GlcGU2TUdE=; b=G3BTU5dVb+5UuLVgRxUilHw0S
-	UAv2QwjTVwGgPClbtG2SnjZBxuR3fOUXTwfqd051ki3FrlQGgyaR9hCgOR3A6UiJy/yA74KOR/Zfs
-	+cC1U8yW0MH5HGEJMfmR3kowufC36ruEpQiBuoPsStjSoyqZnF2e3BaXPK9+QTgJO8vlRmAqMl5c6
-	hS3UjyFab1lvlPlkL6onAhWKNU4qqyJD7HOxHYqpG1onRYbmALmnGkt/BYFkvUEnBQTnHgiin8htN
-	Mu215jmYyX/H2n9N85lrwWZ/+wmVqO6Vb575KlAkbgJh4bCqnM+onkFGdW1MJu4F4F6A2XXOu+Xjg
-	HcAS8N86w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sjrPQ4r01G9EFDrEFxocdg8kk8LDr3BWNCqz3m5XT6I=; b=fw5QVKjplhyO6f
+	UnBmfga+HDZiA8cap8s7JjuvpYoUaNbOm2KAEV0bw4EiEKHrxV0G6+B/eVxeUudPYlXqsCKjUN0iS
+	twef0UqvL9kYe7NWrNtvncXu2FGpGDKat8nGNmpU8EGHB9H101yEYHmBNOiYVnfOVwEvQBOcSIuz6
+	Jr7wFf2nVOyKONVKP3jMZ3Yx7GtyQWHE+k2IY2YOyaZ2lhmxzT5d6oiQ8bxdYTEoDWqQsT/ljXQcy
+	AFlkwoqzB+jJudLelbZSMmEp4bI3Yf9eslAnvCD0ROsJKhGXs8NQ2A0jqMtvPT0doMiCl0wgfvrXc
+	DElFBcxIJWy7u9eHlnuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbKkb-00016U-C1; Wed, 20 May 2020 09:10:57 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1jbKv9-00086V-0M; Wed, 20 May 2020 09:21:51 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbKkR-00015U-8d
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:10:49 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200520091044euoutp026770d90a495d56eae89d8f08b9ce172c~QsYLhZv8n3274832748euoutp02l;
- Wed, 20 May 2020 09:10:44 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200520091044euoutp026770d90a495d56eae89d8f08b9ce172c~QsYLhZv8n3274832748euoutp02l
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1589965844;
- bh=Ik7IIZgBVxkfBPHIlJ3FcRHTlQPWyYIvhW9LFSW2QiU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=h9YgwzogO14ift6H3+DtTgO5V8CO8+OX8SUlRjjCXfM1m2p1PTSjccjH8rdEQn9ld
- Yea9ogRG+9ugtkCxPFyxIFWBXRY3sv5+z0Jwf1RigXL0WI6ytNRVrBye5lI6Q3Yowp
- BJSmi/ViPMn+MIYMjjCCTp+UCpFzs2+UD0ye/p4Q=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200520091043eucas1p2feac347997dc632e3b3b5346272c37d8~QsYLO7TWK1590115901eucas1p2_;
- Wed, 20 May 2020 09:10:43 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id 16.61.61286.314F4CE5; Wed, 20
- May 2020 10:10:43 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200520091043eucas1p15ecae108007382a95b01e42241cc7a26~QsYK5aUP42199621996eucas1p18;
- Wed, 20 May 2020 09:10:43 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200520091043eusmtrp2a5bec9df1163088b2990b5c13058c987~QsYK4a7mJ0336803368eusmtrp2f;
- Wed, 20 May 2020 09:10:43 +0000 (GMT)
-X-AuditID: cbfec7f2-f0bff7000001ef66-f1-5ec4f4134ab7
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 73.0B.08375.314F4CE5; Wed, 20
- May 2020 10:10:43 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip2.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200520091043eusmtip22c1a46ce2665b5a87a3ba9c950895c30~QsYKpzAhc3121631216eusmtip2b;
- Wed, 20 May 2020 09:10:43 +0000 (GMT)
-From: Lukasz Stelmach <l.stelmach@samsung.com>
-To: Stephan Mueller <smueller@chronox.de>
-Subject: Re: [PATCH v2 1/2] hwrng: iproc-rng200 - Set the quality value
-Date: Wed, 20 May 2020 11:10:32 +0200
-In-Reply-To: <1748331.j7eDFAdTc1@tauon.chronox.de> (Stephan Mueller's
- message of "Wed, 20 May 2020 08:23:59 +0200")
-Message-ID: <dleftjr1vf2cqf.fsf%l.stelmach@samsung.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jbKuv-000857-6Y; Wed, 20 May 2020 09:21:39 +0000
+X-UUID: c41168c4cd144cbeaf6ed7ee7fbd3205-20200520
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=K8ak0JSXJixdtwvCiossf6ujQlSNi19Cg+Ap0Gxff1k=; 
+ b=jB5Lq1jXLZfuGavlSoFR4egUEO7naGFuPZGbOGKEO9WbQND6w26kXjRDf9s5AjQtEptwyDnEYaAGBdUjpj8CcXtWwj/dk9djZ90cKaKB7ZycW6aY9GKV42aWeydaVqhY4zBxcKEaLht+cqw52fTYiPLsI+XRNRF2tAqiEgz4PGA=;
+X-UUID: c41168c4cd144cbeaf6ed7ee7fbd3205-20200520
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <qii.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 141999083; Wed, 20 May 2020 01:21:25 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 20 May 2020 02:16:02 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Wed, 20 May 2020 17:15:58 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 20 May 2020 17:15:59 +0800
+Message-ID: <1589966065.25512.70.camel@mhfsdcap03>
+Subject: Re: [PATCH v2 2/2] i2c: mediatek: Add i2c ac-timing adjust support
+From: Qii Wang <qii.wang@mediatek.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 20 May 2020 17:14:25 +0800
+In-Reply-To: <CAMuHMdXZTU+4-WyVjvv=i28x+MRVrAdRPM0_ybvkkFuh-ps+eg@mail.gmail.com>
+References: <1589461844-15614-1-git-send-email-qii.wang@mediatek.com>
+ <1589461844-15614-3-git-send-email-qii.wang@mediatek.com>
+ <CAMuHMdXjLakWDDEy=02prC7XjAs_xBnt2mArPFNwyHgUoWw6-g@mail.gmail.com>
+ <1589857073.25512.34.camel@mhfsdcap03>
+ <CAMuHMdXgp85PVteunxrHYcMTqFgQWHmXXCVJM_KX76xkCADMpw@mail.gmail.com>
+ <1589964062.25512.67.camel@mhfsdcap03>
+ <CAMuHMdXZTU+4-WyVjvv=i28x+MRVrAdRPM0_ybvkkFuh-ps+eg@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SbUyTVxTHc/u80tn6UDCedMQsHSZTY8FI9BoVp1ni/bYtyxbjIlrlGRBp
- Ma34ljlwKgyVQoBlUmvAKS8BC1hqo8xR0qEgKN14UYwKibAMqsOkxSBF5vp4NfHb75zz/9/z
- kisyunpeL2ZZ9stWiynbwKtZ763ZwMq46c60ZHu5Ec+X3RLwlbPNHHYV32RxoKiOwZGpTgEf
- v9jM49PBBFwy9pTBgUCLgN1j9zg8OjKrwgNtTh6fDbSrcHX5OIervXaE/65s5fFU4zjCP/e6
- WNzVXcR8GkfmImWIOEbv8iQ0OKgi1x2PBXLR7eOJt2MpcTcU8cR3/rJAWi/lEbunARH7ZAsi
- zZ4hlvzYU8iRsHvJF9rt6g3pcnbWAdmalLpLnXkmMK3aVxV7aK5mmMtHYe0pFCOClAKBohlW
- YZ1Uj6Bv6rtTSB3laQSD7S6BBmEEMzVB9M7xV9cQRwt1CGpCQwwN/kHQe98RtYgiLxnB5dqm
- GOKlZTBUWMUrGkbq4+DVuX5GKcRJW+HCcO2b3qy0FCYqg5zCMVIu3An5VQprpLXw4IRdUHiR
- tA48E6MCzcfC7crxN15GMkNl4BlSGoA0LkLI71PRUT+D/FC3QDkOgl2et5wAr69XqZRBQcqD
- 8rI11HsGgdf5kqWa9fCoL8JT3gydvxdwVK+F4X9jaV8tlHl/YWhaAz8V6Kg6EZpKbrx9RQ/F
- wXpEJQSuDmygpzqJoKDwPF+KPnK8t43jvW0cUQsTPV1zWxJNr4DaC08Zyhuhqek5W424BrRY
- zrWZM2TbKot80GgzmW25lgzjnhyzG0X/bO9/XaFr6EX/bj+SRGRYoEm+8UeajjMdsB02+1Fi
- 9KUnLY1/Ij1rybHIhnhN6YQ/TadJNx0+Iltzdlpzs2WbH30osobFmtW/Tu7QSRmm/fJeWd4n
- W99VVWKMPh/lk7we52+GLSdTTeGvxkYqlnT4lr2+9M3Es5KvN36bEGksTb29cGV44dr5T75P
- /1ytfVjb0/rx8W7NwA+Zk70teSPzvhnnDue25ec0KUkdW09UBGfbEifj67wJLzJejgaPbjIk
- z2Xp8SZt5I4Xf+kzbi++eqz96Afdj+ZJ/2ZPyfqKFANryzStWs5Ybab/AQm9CxG7AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Sa0iTYRTHefZetkmzd1PzYUjUqA8ZTl8v7THUogu9H0pSCSTLWvmi4S62
- dxPtg9kN2ywrQ9CRpZRms3nZTMoia86sLNZFZRU6SkcrQyktMC3aHIHffpz/7xzOgSPAJI2E
- VHBEo2d1GqVKRobgg38HxmLCZp25cZd+haM/1U/4qLO2nUDW8/04chlvYuj3lJOPTl1vJ1Hl
- 1yh0YXwSQy5XBx/ZxkcI5Bmb46G3PVdIVOt6yEMNlycI1NBdBZC3zk6iqdYJgGoGrTgaeGrE
- Nocx87+rAWP2vCSZH0NDPOaeeZTPXLf1kkz3o7WMzWIkmd7623zGfuM4U9VlAUzVlw7AtHcN
- 48zJ5xUEM2NbuTt0rzxFpzXo2VUFWk6fKsuhUbycTkby+MRkOZ2g2L8xPkkWm5aSx6qOFLO6
- 2LSD8oJzrlle0TVxyXyTmygHM6EmIBRAKhG+HhgmTCBEIKGaAPzhPoGZgMAfSOGt+vygEwYX
- Rkxk0PEC6Og/AwIOScmh1ZodcMKpdXC44tqig1E9BPxQOUIEgjBqB2x0N+MBllA0vGP5DgKM
- U2uhr+7roiOkDNDZbMUCLKIU8N3pKn6AI6hk2OXz8IN1MXxWN7E4B6MK4c/Wz9hFQJmXROYl
- kdm/Hubfqb0nNlheD5sbJ7Egp8K2tmm8ARAWEM4aOHW+mqPlnFLNGTT58sNatQ34X6L7yZz9
- LnjTmeUAlADIloniHvTlSghlMVeqdoA1/jGfOlpfASmu0WpYWbjoos+RKxHlKUuPsTrtAZ1B
- xXIOkOS/8xImjTis9T+bRn+ATqIVKJlWJCgSNiBZpOgs9XifhMpX6tlCli1idf/7eAKhtBzs
- qVFt7zn6gKn9eLzx8/JSVVlnrqdl0juZGjudvqlV3DYVM/Jo9ND2QdM3X+Wz8r66im3OuKlv
- C6PO5TDeLVYVRD5MvyHdNe0tO7Tzft+QN8Oe0TS4Int174zwReTVjK0/FZnZ9qiNJRfsxTVb
- kp4aDRs8We9bJJkmY050qTsmcVaGcwVKOhrTccp/YUqeCDQDAAA=
-X-CMS-MailID: 20200520091043eucas1p15ecae108007382a95b01e42241cc7a26
-X-Msg-Generator: CA
-X-RootMTR: 20200520091043eucas1p15ecae108007382a95b01e42241cc7a26
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200520091043eucas1p15ecae108007382a95b01e42241cc7a26
-References: <1748331.j7eDFAdTc1@tauon.chronox.de>
- <CGME20200520091043eucas1p15ecae108007382a95b01e42241cc7a26@eucas1p1.samsung.com>
+X-TM-SNTS-SMTP: D677F009DFC332B6657700B42BB3688C0851682D969FAD19BE398644F5528A602000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_021047_507983_B7106EAF 
-X-CRM114-Status: GOOD (  16.63  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200520_022137_251496_79F6A81D 
+X-CRM114-Status: GOOD (  34.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -128,8 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,95 +89,166 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Scott Branden <sbranden@broadcom.com>, Matthias Brugger <mbrugger@suse.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Stefan Wahren <wahrenst@gmx.net>, Ray Jui <rjui@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Markus Elfring <elfring@users.sourceforge.net>,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============8696394541874848451=="
+Cc: "open list:OPEN FIRMWARE AND FLATTENED
+ DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>, srv_heupstream@mediatek.com,
+ Wolfram Sang <wsa@the-dreams.de>, leilk.liu@mediatek.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-mediatek@lists.infradead.org, Linux
+ I2C <linux-i2c@vger.kernel.org>, Joe Perches <joe@perches.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============8696394541874848451==
-Content-Type: multipart/signed; boundary="=-=-="; micalg="pgp-sha256";
-	protocol="application/pgp-signature"
+Hi Geert,
 
---=-=-=
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
+On Wed, 2020-05-20 at 10:58 +0200, Geert Uytterhoeven wrote:
+> Hi Qii,
+> 
+> On Wed, May 20, 2020 at 10:44 AM Qii Wang <qii.wang@mediatek.com> wrote:
+> > On Tue, 2020-05-19 at 09:14 +0200, Geert Uytterhoeven wrote:
+> > > On Tue, May 19, 2020 at 4:59 AM Qii Wang <qii.wang@mediatek.com> wrote:
+> > > > On Mon, 2020-05-18 at 17:44 +0200, Geert Uytterhoeven wrote:
+> > > > > On Thu, May 14, 2020 at 3:13 PM Qii Wang <qii.wang@mediatek.com> wrote:
+> > > > > > This patch adds a algorithm to calculate some ac-timing parameters
+> > > > > > which can fully meet I2C Spec.
+> > > > > >
+> > > > > > Signed-off-by: Qii Wang <qii.wang@mediatek.com>
+> > > > > > ---
+> > > > > >  drivers/i2c/busses/i2c-mt65xx.c | 328 +++++++++++++++++++++++++++++++++-------
+> > > > > >  1 file changed, 277 insertions(+), 51 deletions(-)
+> > > > > >
+> > > > > > diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
+> > > > > > index 0ca6c38a..7020618 100644
+> > > > > > --- a/drivers/i2c/busses/i2c-mt65xx.c
+> > > > > > +++ b/drivers/i2c/busses/i2c-mt65xx.c
+> > > > >
+> > > > > > +/*
+> > > > > > + * Check and Calculate i2c ac-timing
+> > > > > > + *
+> > > > > > + * Hardware design:
+> > > > > > + * sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src
+> > > > > > + * xxx_cnt_div =  spec->min_xxx_ns / sample_ns
+> > > > > > + *
+> > > > > > + * Sample_ns is rounded down for xxx_cnt_div would be greater
+> > > > > > + * than the smallest spec.
+> > > > > > + * The sda_timing is chosen as the middle value between
+> > > > > > + * the largest and smallest.
+> > > > > > + */
+> > > > > > +static int mtk_i2c_check_ac_timing(struct mtk_i2c *i2c,
+> > > > > > +                                  unsigned int clk_src,
+> > > > > > +                                  unsigned int check_speed,
+> > > > > > +                                  unsigned int step_cnt,
+> > > > > > +                                  unsigned int sample_cnt)
+> > > > > > +{
+> > > > > > +       const struct i2c_spec_values *spec;
+> > > > > > +       unsigned int su_sta_cnt, low_cnt, high_cnt, max_step_cnt;
+> > > > > > +       unsigned int sda_max, sda_min, clk_ns, max_sta_cnt = 0x3f;
+> > > > > > +       long long sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src;
+> > > > >
+> > > > > So sample_ns is a 64-bit value. Is that really needed?
+> > > > >
+> > > >
+> > > > (1000000000 * (sample_cnt + 1)) / clk_src value is a 32-bit, (1000000000
+> > > > * (sample_cnt + 1)) will over 32-bit if sample_cnt is 7.
+> > >
+> > > The intermediate value will indeed not fit in 32-bit.
+> > > But that doesn't mean the end result won't fit in 32-bit.
+> > > As you divide spec->min_low_ns and spec->min_su_dat_ns (which I assume
+> > > are small numbers) by sample_ns below, sample_ns cannot be very large,
+> > > or the quotient will be zero anyway.
+> > > So just doing the multiplication in 64-bit, followed by a 64-by-32
+> > > division is probably fine:
+> > >
+> > >     unsigned int sample_ns = div_u64(1000000000ULL * (sample_cnt + 1), clk_src);
+> > >
+> > > You may want to take precautions for the case where the passed value of
+> > > clk_src is a small number (can that happen?).
+> > >
+> > > BTW, clk_get_rate() returns "unsigned long", while mtk_i2c_set_speed()
+> > > takes an "unsigned int" parent_clk, which may cause future issues.
+> > > You may want to change that to "unsigned long", along the whole
+> > > propagation path, and use div64_ul() instead of div_u64() above.
+> > >
+> >
+> > The return type of div_u64 is u64(unsigned long long), there is a
+> > compulsory type conversion operator. Do you think it is needed?
+> 
+> The result of a 64-by-32 bit division may indeed not fit in 32-bit, so that's
+> why it returns u64.
+> If you know the quotient will always fit, it's fine.
+> 
+> > BTW, we just need to change the type of sample_ns to unsigned int, no
+> > matter which method is used, what is your opinion?
+> 
+> Indeed.
+> 
+> BTW, I just realize
+> 
+>     long long sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src;
+> 
+> wasn't doing what you wanted anyway, as 1000000000 is (implicit) int,
+> and sample_cnt is unsigned int, so the multiplication was done in 32-bit,
+> possible leading to a truncation.  Hence that division was done in 32-bit, too,
+> that's why I didn't notice a call to __udivdi3() in the assembler output here.
+> 
+> So you have to force the multiplication to be done in 64-bit, e.g.
+> by changing the constant to 1000000000ULL, and use div_u64() for
+> the division.
+> 
 
-It was <2020-05-20 =C5=9Bro 08:23>, when Stephan Mueller wrote:
-> Am Dienstag, 19. Mai 2020, 23:25:51 CEST schrieb =C5=81ukasz Stelmach:
->
->> The value was estimaded with ea_iid[1] using on 10485760 bytes read from
->> the RNG via /dev/hwrng. The min-entropy value calculated using the most
->> common value estimate (NIST SP 800-90P[2], section 6.3.1) was 7.964464.
->
-> I am sorry, but I think I did not make myself clear: testing random numbe=
-rs=20
-> post-processing with the statistical tools does NOT give any idea about t=
-he=20
-> entropy rate. Thus, all that was calculated is the proper implementation =
-of=20
-> the post-processing operation and not the actual noise source.
->
-> What needs to happen is that we need access to raw, unconditioned data fr=
-om=20
-> the noise source that is analyzed with the statistical methods.
+ok, I will give a patch with your way, thanks for your opinion.
 
-I did understand you and I assure you the data I tested were obtained
-directly from RNGs. As I pointed before[1], that is how /dev/hwrng
-works[2].
-
-If I am wrong, do show me the code that processes the data from a HW RNG
-before copying them to user provided buffer[3].
-
-[1] https://lkml.org/lkml/2020/5/15/252
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree=
-/Documentation/admin-guide/hw_random.rst?h=3Dv5.6
-[3] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree=
-/drivers/char/hw_random/core.c?h=3Dv5.6#n251
-
-Kind regards,
-=2D-=20
-=C5=81ukasz Stelmach
-Samsung R&D Institute Poland
-Samsung Electronics
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEXpuyqjq9kGEVr9UQsK4enJilgBAFAl7E9AgACgkQsK4enJil
-gBDKOggAoVfZTiIxpvV2zbs8NraxS44nLMlX476LHniFWu6Rurw1WrepnIi5HGp3
-J5YcE/eOtH8dciy9fHz2NFgXG6711U8pgqDV0A31xSPlJj9effjLVEbROl4oDc4Y
-O6Rl6WMjUKnetl/nWNMhi39JuxYZnRPLnnmawxPUPjR7DiO2TxO9yPqBY2verjFp
-AQQWy3/fw1H3mS4sg7eRbN5zZHtmCFQoKvFn5C1xoiMchWu66kERk3vUJtpGw0UV
-d51Ro2X1gBbvV8ZfZkG1jmgI2Q4mL314gfQ0xIogF7HQECELHZ7qKU35tT6LjA3C
-jrAmmuMFHtUEgK9hjq6X4hCon2i8OA==
-=hppL
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============8696394541874848451==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> >
+> > > > I think 1000000000 and clk_src is too big, maybe I can reduce then with
+> > > > be divided all by 1000.
+> > > > example:
+> > > >
+> > > > unsigned int sample_ns;
+> > > > unsigned int clk_src_khz = clk_src / 1000;
+> > >
+> > > That may cause too much loss of precision.
+> > >
+> >
+> > clk_src is more than MHz and less than GHZ for MTK i2c controller, so it
+> > wouldn't cause too much loss of precision.
+> 
+> OK, so that would work, too.
+> 
+> > > >
+> > > > if(clk_src_khz)
+> > > >         sample_ns = (1000000 * (sample_cnt + 1)) / clk_src_khz;
+> > > > else
+> > > >         return -EINVAL;
+> > > >
+> > > > > > +       if (!i2c->dev_comp->timing_adjust)
+> > > > > > +               return 0;
+> > > > > > +
+> > > > > > +       if (i2c->dev_comp->ltiming_adjust)
+> > > > > > +               max_sta_cnt = 0x100;
+> > > > > > +
+> > > > > > +       spec = mtk_i2c_get_spec(check_speed);
+> > > > > > +
+> > > > > > +       if (i2c->dev_comp->ltiming_adjust)
+> > > > > > +               clk_ns = 1000000000 / clk_src;
+> > > > > > +       else
+> > > > > > +               clk_ns = sample_ns / 2;
+> > > > > > +
+> > > > > > +       su_sta_cnt = DIV_ROUND_UP(spec->min_su_sta_ns, clk_ns);
+> > > > > > +       if (su_sta_cnt > max_sta_cnt)
+> > > > > > +               return -1;
+> > > > > > +
+> > > > > > +       low_cnt = DIV_ROUND_UP(spec->min_low_ns, sample_ns);
+> > > > >
+> > > > > So this is a 32-bit by 64-bit division (indeed, not 64-by-32!)
+> 
+> Gr{oetje,eeting}s,
+> 
+>                         Geert
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8696394541874848451==--
-
