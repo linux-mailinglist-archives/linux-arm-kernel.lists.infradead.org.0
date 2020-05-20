@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD2A11DC074
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 22:46:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 051E01DC08B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 22:50:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mhcvj7ArHroLVVko5+4ub7W7jRw0IrdHUk2qYsg86QQ=; b=gXjPbotqVrE49J
-	Rx0mDGcxIOuIv1fhBKOojx30egxpes104rQsfXl860+HaCrrxbsOvZvctwae19sBtZD3oOcVpqUoC
-	DQLQYG5+YcwMUgzEuwhHUHjpWyC38HKZZTNETU8hajcxbtz0HLjplaPI6kiyICUJH5lWzOl8iAXbF
-	DLbwqJgQ7YnvBHfuOPjxmTu5PPuc0zbRyJHzKVt6tTx+kDA+pNhGLrgrjewTEzT4paMJxwnp6oXRx
-	c/2AQyWo9cTrmjh3zzKGPunsCAzIvce8Nv+3XSqdIdzFOZ3YHzPXhRICRAmq58zIROQyV97RVlY3u
-	YSQMvBp/p7doONsPZNnA==;
+	List-Owner; bh=sihExqb8NqLReWvN46DPuJxyNR7zTPouZEDWRmXtuZs=; b=szSh4S3gKl/+85
+	BCN1Ju/FvuEN4dm6b6UwQKX6Nj6mPc+32GG6YBt4OD1ZDjNM+ktu21PmkOCvKvfwp7b7Chb8ocqL3
+	stW4cyJ/zDbcU6mHivzjLBCNjm+w6Ol2uJEi0XdWr0+o0UwfmlJPKeO0ytF8jF6O50Hm4KzUjo1TI
+	0XCoqEpQF1sUrIPbluK54nroTmgh6TgnBExhD4ohHq3Ws9VTh0/4M6rOPg/8CWq75Q1u9ZuCdTzMz
+	/SB37EOYU3YUJX0LLhos9VcCX2u7Q2dpQV5bXqW0Iw1pkuo+oTBDkkl06VRxsQ+BTSzVEbD6g1xo7
+	Aksdvlv4FZpYl5mqWs+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbVbJ-0000PS-6u; Wed, 20 May 2020 20:46:05 +0000
-Received: from mail-il1-f193.google.com ([209.85.166.193])
+	id 1jbVfc-0005fm-KW; Wed, 20 May 2020 20:50:32 +0000
+Received: from mail-io1-f67.google.com ([209.85.166.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbVb9-0000NX-GB
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 20:45:56 +0000
-Received: by mail-il1-f193.google.com with SMTP id c20so4751496ilk.6
+ id 1jbVfT-0005dZ-Fe
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 20:50:24 +0000
+Received: by mail-io1-f67.google.com with SMTP id q8so3514300iow.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 13:45:55 -0700 (PDT)
+ Wed, 20 May 2020 13:50:20 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=PJPc6Xkos1JJWBSfHLuEWUb/ztU6JUGFozPRth5oI/s=;
- b=c2QHA09DYiuZcbuC/rp79loEgJU23CGjUO8XNt69Jfa4CFWrdTHrhrlBMmLTIcf4P9
- vy7Dx2u0iNh+4/uVhgay0StvjrsXyw76ybXxtib06MTQ+soxGedbFnT8ES63CLWFtlvE
- rwLHVpQkS33tiSVsTjkjh3cc7//G4GPDaUf0IASwe/m2ZiFipSfyIbPEinJ+9S3u3DYm
- JeLZ7yH/3W2qVyQ6uPZZAUwXTJWo/Dl7Sl3zZ/3sFPaTmKz2/wEVbgoTWJ+JP+aK2Njj
- YCfNcFaR6syZo4CiYRhk9kJMcRAseOKIsMeKcDBIjl9vWZ4zkyuCQqTDaDd5ZKG2WVDN
- INhA==
-X-Gm-Message-State: AOAM530xZjgt6GtQq9JHf+O9VgOkNv39ef3UbnQFk3vTGROwv4S8lqSD
- IqAyx7/vGztOf86wECgwjg==
-X-Google-Smtp-Source: ABdhPJzA/vi82RIXoD3jiTdlM1ikMFygzPsAvXo0y2Xvb7bHzqzrE2GznTbs47Fup0foDkFLalmioA==
-X-Received: by 2002:a92:8946:: with SMTP id n67mr5278356ild.215.1590007554470; 
- Wed, 20 May 2020 13:45:54 -0700 (PDT)
+ bh=mRSMjgkGeWGBh2qwJHfwL3yydGjx13+/dKpUDO1iMb0=;
+ b=hryCtgZyCAGHiDxQzMqKpS9lh6qHcLwqG0dizGGMyL4IoIR9PBjVmUJCugYadjMpiH
+ C9vxZYDaNVTvu/cwBziJVhYlLmvB1ZiBSyQ9uxX0hYgzzpf4AtOhvYn26TYZVS/2+wck
+ jKPKVj/LTT+P+aB5m26jCOLO/D83WH6Ej1Ts6kG7ZmIm46kQzg/Y5XN2WFdVRHL7RDQX
+ Q/QH0LzpwAsjbus5XjB8y0edZ+9TJ5iQzqeHWTzU8XkDtHCUkX8rfbSh9LMqDiOtHvaw
+ GhuXXSl9MSM2zAXE+aRAB52RLUwHnKdZZmzlzToyrsTVS/2HITuol1yhMkLccvfLuSVm
+ Zxag==
+X-Gm-Message-State: AOAM533J/evED3fGXZfmlU4l9oUEp+sFT300G1FdWe+ehKPD2z0sNNbY
+ 2bJvienixcaqZ4xnv8mEPw==
+X-Google-Smtp-Source: ABdhPJwnwe9ybgq0b3s7dUXq6qN9mChjHs0K0Gg3PfPIRRW3vwKfrh4ExYIFqiRNvifXUYk2fDGxXA==
+X-Received: by 2002:a6b:b38a:: with SMTP id c132mr5082996iof.54.1590007819658; 
+ Wed, 20 May 2020 13:50:19 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id r8sm1531353iob.15.2020.05.20.13.45.53
+ by smtp.gmail.com with ESMTPSA id n22sm748494ioh.46.2020.05.20.13.50.18
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 13:45:54 -0700 (PDT)
-Received: (nullmailer pid 535579 invoked by uid 1000);
- Wed, 20 May 2020 20:45:52 -0000
-Date: Wed, 20 May 2020 14:45:52 -0600
+ Wed, 20 May 2020 13:50:19 -0700 (PDT)
+Received: (nullmailer pid 546373 invoked by uid 1000);
+ Wed, 20 May 2020 20:50:17 -0000
+Date: Wed, 20 May 2020 14:50:17 -0600
 From: Rob Herring <robh@kernel.org>
 To: Xiaowei Bao <xiaowei.bao@nxp.com>
-Subject: Re: [PATCH v6 07/11] PCI: layerscape: Modify the way of getting
- capability with different PEX
-Message-ID: <20200520204552.GA535450@bogus>
+Subject: Re: [PATCH v6 09/11] PCI: layerscape: Add EP mode support for
+ ls1088a and ls2088a
+Message-ID: <20200520205017.GA546312@bogus>
 References: <20200314033038.24844-1-xiaowei.bao@nxp.com>
- <20200314033038.24844-8-xiaowei.bao@nxp.com>
+ <20200314033038.24844-10-xiaowei.bao@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200314033038.24844-8-xiaowei.bao@nxp.com>
+In-Reply-To: <20200314033038.24844-10-xiaowei.bao@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_134555_537225_B526B5B5 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20200520_135023_522312_079F9379 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.193 listed in list.dnswl.org]
+ no trust [209.85.166.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
@@ -78,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.193 listed in wl.mailspike.net]
+ [209.85.166.67 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -93,29 +93,28 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, andrew.murray@arm.com,
- lorenzo.pieralisi@arm.com, roy.zang@nxp.com, gustavo.pimentel@synopsys.com,
+ lorenzo.pieralisi@arm.com, jingoohan1@gmail.com, linux-pci@vger.kernel.org,
  Zhiqiang.Hou@nxp.com, linux-kernel@vger.kernel.org, kishon@ti.com,
- Minghuan.Lian@nxp.com, jingoohan1@gmail.com, robh+dt@kernel.org,
- mingkai.hu@nxp.com, linux-pci@vger.kernel.org, bhelgaas@google.com,
- shawnguo@kernel.org, leoyang.li@nxp.com, linuxppc-dev@lists.ozlabs.org,
+ Minghuan.Lian@nxp.com, robh+dt@kernel.org, mingkai.hu@nxp.com,
+ gustavo.pimentel@synopsys.com, bhelgaas@google.com, shawnguo@kernel.org,
+ roy.zang@nxp.com, linuxppc-dev@lists.ozlabs.org, leoyang.li@nxp.com,
  linux-arm-kernel@lists.infradead.org, amurray@thegoodpenguin.co.uk
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 14 Mar 2020 11:30:34 +0800, Xiaowei Bao wrote:
-> The different PCIe controller in one board may be have different
-> capability of MSI or MSIX, so change the way of getting the MSI
-> capability, make it more flexible.
+On Sat, 14 Mar 2020 11:30:36 +0800, Xiaowei Bao wrote:
+> Add PCIe EP mode support for ls1088a and ls2088a, there are some
+> difference between LS1 and LS2 platform, so refactor the code of
+> the EP driver.
 > 
 > Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 > ---
 > v2:
->  - Remove the repeated assignment code.
+>  - This is a new patch for supporting the ls1088a and ls2088a platform.
 > v3:
->  - Use ep_func msi_cap and msix_cap to decide the msi_capable and
->    msix_capable of pci_epc_features struct.
+>  - Adjust the some struct assignment order in probe function.
 > v4:
 >  - No change.
 > v5:
@@ -123,8 +122,8 @@ On Sat, 14 Mar 2020 11:30:34 +0800, Xiaowei Bao wrote:
 > v6:
 >  - No change.
 > 
->  drivers/pci/controller/dwc/pci-layerscape-ep.c | 31 +++++++++++++++++++-------
->  1 file changed, 23 insertions(+), 8 deletions(-)
+>  drivers/pci/controller/dwc/pci-layerscape-ep.c | 72 +++++++++++++++++++-------
+>  1 file changed, 53 insertions(+), 19 deletions(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
