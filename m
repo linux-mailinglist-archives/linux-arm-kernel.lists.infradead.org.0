@@ -2,76 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DE4E1DB044
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:33:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A1331DB04E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:35:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A5gl2ygmn4azCmIMnUnRKOpDZ/0nWi8Ug8gQIGLUio0=; b=CiEtTo2Qp+AB/b
-	EJMg/QHp5AANbwgEN7N0BBT3k4XGKkTSf/MhSitdhCScQl2g9jzr5MsO7S+VfT+fQcYsfG4rxHRKL
-	zowiKuGlT91+uDTQTDpWbgRVr5z7HEfuCf6MUCXUCcCD9FpN3b0Ax3yUuMqsQdmXO/8MpD93v1BKM
-	TaVzHjfrPB5Mqssk2gTU8JVV11RbiEeg3Kt3HTa0nI2eu/YDFYzgx/yZDrhVdQ2u1CxoupFtrIGKV
-	VXBxZrFqfAXAzQ9MwFw4vF8eIep5GWYchikpC3x9ONY0sN7CNQWGcBow2YJIo70e5dl4Fa6gM0GSi
-	nwQ8NedaQIWGxm9wN2kw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GDzyw2MyUSzSzIHCc4iAaUQHb1W0RZqU9x+r2xcLRU8=; b=JM+JyHrnXuKJlm
+	6Mfe2Rt0OkmPLiacJJAz9CR4L5BixDiiGxyAVw12gYzZcqJ4HQKWZ4h83MKLr4eO2mjVIaVFyulmp
+	xoFww0d+70CG2VvL+oFKLwA/0VbS4ZYED1FXL6ch9odD5ePG/J+RMo5aPxtnr5xybVVk2lRb10XHj
+	OZZA0eOPklb8NAGJXmQEHZ/PKeAECc5jUd1OnoV+VuUPc0sMpOEfKR15s9nnBaUQeMkVIJ2EGAQa2
+	XA/4ZR4dbFDJWx4C/vSX27leSmH8gb8iKjxRYOiSQ25FongtidfjOeMNETBicSOTDHRaXxVXwggG2
+	D5InnxVyHXoneWuOBONA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbM2j-0006Rn-36; Wed, 20 May 2020 10:33:45 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbM2W-0006RC-OX; Wed, 20 May 2020 10:33:34 +0000
-X-UUID: ce87621212f54c26b31cee8ad441231a-20200520
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=HfMRe5GvWTMoSjJho2QVFn7+uU1oZw2rKqKzYM8kbw8=; 
- b=CsYMkHaV/YWUmJ+CGZVffs2aeo35GtyfEDEt0YrxwqU7ePpMqx1rWkKVeZeJogPzMiaLV6OdmQ1p2xKVkMBCsLV+XdY182O+1ovxF5YPemseaj5gAB0o9iHCDb/wytWMr6iicwLEMjNhfdiYgWaQSWJJ+Xu6VxQKTt0m3c0pjvc=;
-X-UUID: ce87621212f54c26b31cee8ad441231a-20200520
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <qii.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1404325998; Wed, 20 May 2020 02:33:31 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 03:33:30 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 18:33:27 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 20 May 2020 18:33:27 +0800
-From: <qii.wang@mediatek.com>
-To: <wsa@the-dreams.de>
-Subject: [next] i2c: mediatek: Use div_u64 for 64-bit division to fix 32-bit
- kernels
-Date: Wed, 20 May 2020 18:31:53 +0800
-Message-ID: <1589970713-19944-1-git-send-email-qii.wang@mediatek.com>
-X-Mailer: git-send-email 1.9.1
+	id 1jbM4a-0000lF-W1; Wed, 20 May 2020 10:35:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbM4R-0000kU-JC
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 10:35:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8E02A31B;
+ Wed, 20 May 2020 03:35:29 -0700 (PDT)
+Received: from localhost.localdomain (unknown [10.169.41.142])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5957E3F68F;
+ Wed, 20 May 2020 03:35:27 -0700 (PDT)
+From: Bin Lu <bin.lu@arm.com>
+To: catalin.marinas@arm.com
+Subject: Re: [PATCH] arm64: Fix PTRACE_SYSEMU semantics
+Date: Wed, 20 May 2020 18:34:20 +0800
+Message-Id: <1589970860-62695-1-git-send-email-bin.lu@arm.com>
+X-Mailer: git-send-email 2.7.4
+In-Reply-To: <20200519120725.GA20313@gaia>
+References: <20200519120725.GA20313@gaia>
+References: <20200515222253.GA38408@juliacomputing.com>
+ <20200518114119.GB32394@willie-the-truck> <20200519120725.GA20313@gaia>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200519120725.GA20313@gaia>
+X-Mutt-References: <20200519120725.GA20313@gaia>
+X-Mutt-Fcc: =ARM/Sent Items
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_033332_804136_7A46C2D6 
-X-CRM114-Status: GOOD (  11.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200520_033531_719161_2BC8BE86 
+X-CRM114-Status: GOOD (  27.91  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,42 +67,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, qii.wang@mediatek.com,
- srv_heupstream@mediatek.com, leilk.liu@mediatek.com,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, oleg@redhat.com, keno@juliacomputing.com,
+ sudeep.holla@arm.com, Bin Lu <Bin.Lu@arm.com>, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Qii Wang <qii.wang@mediatek.com>
+From: Bin Lu <Bin.Lu@arm.com>
 
-Use div_u64 for 64-bit division, and change sample_ns type to
-unsigned int. Otherwise, the module will reference __udivdi3
-under 32-bit kernels, which is not allowed in kernel space.
+On Tue, May 19, 2020 at 01:07:27PM +0100, Catalin Marinas wrote:
+> On Mon, May 18, 2020 at 12:41:20PM +0100, Will Deacon wrote:
+> > On Fri, May 15, 2020 at 06:22:53PM -0400, Keno Fischer wrote:
+> > > Quoth the man page:
+> > > ```
+> > >        If the tracee was restarted by PTRACE_SYSCALL or PTRACE_SYSEMU, the
+> > >        tracee enters syscall-enter-stop just prior to entering any system
+> > >        call (which will not be executed if the restart was using
+> > >        PTRACE_SYSEMU, regardless of any change made to registers at this
+> > >        point or how the tracee is restarted after this stop).
+> > > ```
+> > >
+> > > The parenthetical comment is currently true on x86 and powerpc,
+> > > but not currently true on arm64. arm64 re-checks the _TIF_SYSCALL_EMU
+> > > flag after the syscall entry ptrace stop. However, at this point,
+> > > it reflects which method was used to re-start the syscall
+> > > at the entry stop, rather than the method that was used to reach it.
+> > > Fix that by recording the original flag before performing the ptrace
+> > > stop, bringing the behavior in line with documentation and x86/powerpc.
+> > >
+> > > Signed-off-by: Keno Fischer <keno@juliacomputing.com>
+> > > ---
+> > >  arch/arm64/kernel/ptrace.c | 8 +++++---
+> > >  1 file changed, 5 insertions(+), 3 deletions(-)
+> > >
+> > > diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+> > > index b3d3005d9515..b67b4d14aa17 100644
+> > > --- a/arch/arm64/kernel/ptrace.c
+> > > +++ b/arch/arm64/kernel/ptrace.c
+> > > @@ -1829,10 +1829,12 @@ static void tracehook_report_syscall(struct pt_regs *regs,
+> > >
+> > >  int syscall_trace_enter(struct pt_regs *regs)
+> > >  {
+> > > -	if (test_thread_flag(TIF_SYSCALL_TRACE) ||
+> > > -		test_thread_flag(TIF_SYSCALL_EMU)) {
+> > > +	u32 flags = READ_ONCE(current_thread_info()->flags) &
+> > > +		(_TIF_SYSCALL_EMU | _TIF_SYSCALL_TRACE);
+> > > +
+> > > +	if (flags) {
+> >
+> > nit: but I'd rather the '&' operation was in the conditional so that the
+> > 'flags' variable holds all of the flags.
+> >
+> > With that:
+> >
+> > Acked-by: Will Deacon <will@kernel.org>
+> >
+> > Also needs:
+> >
+> > Cc: <stable@vger.kernel.org>
+> > Fixes: f086f67485c5 ("arm64: ptrace: add support for syscall emulation")
+> >
+> > Catalin -- can you pick this up for 5.7 please, with my 'nit' addressed?
+>
+> I'll queue it with the above addressed. I think flags also needs to be
+> unsigned long rather than u32.
+>
+> However, before sending the pull request, I'd like Sudeep to confirm
+> that it doesn't break his original use-case for this feature.
+>
 
-Signed-off-by: Qii Wang <qii.wang@mediatek.com>
----
- drivers/i2c/busses/i2c-mt65xx.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+Tested-by: Bin Lu <Bin.Lu@arm.com> (for gVisor)
 
-diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
-index 7020618..deef69e 100644
---- a/drivers/i2c/busses/i2c-mt65xx.c
-+++ b/drivers/i2c/busses/i2c-mt65xx.c
-@@ -551,7 +551,8 @@ static int mtk_i2c_check_ac_timing(struct mtk_i2c *i2c,
- 	const struct i2c_spec_values *spec;
- 	unsigned int su_sta_cnt, low_cnt, high_cnt, max_step_cnt;
- 	unsigned int sda_max, sda_min, clk_ns, max_sta_cnt = 0x3f;
--	long long sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src;
-+	unsigned int sample_ns = div_u64(1000000000ULL * (sample_cnt + 1),
-+					 clk_src);
- 
- 	if (!i2c->dev_comp->timing_adjust)
- 		return 0;
--- 
-1.9.1
+I have just tested all gVisor syscall test cases with ptrace(Regs, FPRegs, TLS)
+on Arm64 platform.
+The test results are the same as before there was no patch.
+
+My idea is that this kernel patch has no bad effects on gVisor.
+Linux Kernel version: 5.7.0-rc6+
+gVisor version: release-20200511.0
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
