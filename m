@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 622CB1DB0A9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:52:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F26261DB0AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:53:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a3IqP5gwu600k+EACcIdvpgzQlq+Lpw6IF0BTI4Mrm4=; b=LtRpQTlk668iLW
-	dn7Hw4brh4KE1b6bhvwPYNx3iRL3ieycuZxddazo6xXjabugqbRndR6m0qjQt9UHo+K7S4mAedOHi
-	b3q0EV4tDiRJXepRxjViVNMUP6yGpxbYCzTo0qQzyLF3g1BBl7WZmykl5xXN7R6XE3LY2gF/HH7Af
-	McjJ79a7P1SBCZcrzCETVVe3zfVTxI7TvARZxStXOx36CSpxDEEmVqrszjJNXNF690uLBfyNvZgRE
-	dVi84oDTYYi6QiEA+WBTAjWAgrU6MMZJq+RZXSh8sYHER4sTFFHTLQzmALKfiNVSJA/P6gFyKTfld
-	pxorqkR3zjfPUdY5bOuQ==;
+	List-Owner; bh=YvcfgExQQu1MbNhAOkpVZ7g3MH8N0T7Wy+B7FKz0PTM=; b=geBASorCF1NdgT
+	A+uz6Kz9x6rwoShcY1nrqhYsAFJtYTCE7gq0cF88EMHwWpaDF3CNWleUzgHRQPB1nAcbRJo5Ub67x
+	nwqa2OjTrBSuL3zWygaCjUezoP1tDlL4gsx62A+ENsKUe4ADY3X8lRit/tB49RkFO6qn13ZrCYzWh
+	+GcA9vwdQYyM+APD9hsF7vTvncCu33YiC24vztbHubseDdRvQ0Y/bkIVc30DHuOXBPxbnohsLmrXm
+	H47hYZKFhs/XV+hJGaXhvi3ArlaKLxwktuUB7MDgJvKZmOlrbOJCcPTyxWI1iWZUaI6V8uHYZ8b0K
+	PhxuGZdToQhT0n3lRqjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbML0-0004Qd-MA; Wed, 20 May 2020 10:52:38 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1jbMLl-0004ks-FR; Wed, 20 May 2020 10:53:25 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbMKe-0004Mx-UB; Wed, 20 May 2020 10:52:19 +0000
-Received: by mail-ot1-x341.google.com with SMTP id d26so2068644otc.7;
- Wed, 20 May 2020 03:52:16 -0700 (PDT)
+ id 1jbMLZ-0004kS-E0; Wed, 20 May 2020 10:53:14 +0000
+Received: by mail-ot1-x344.google.com with SMTP id 63so2072979oto.8;
+ Wed, 20 May 2020 03:53:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=hFUeOztHXwIWxr32WwjRl6k43PaGfHZ/FxiAc43beH4=;
- b=h/+e4jR0UxQ2XUyEtRHOoDvqC1nC6MTymVUGht+tsvAJtRI8c3THsTAW1rs6szP3fB
- feKr4cHrAYsq5rirUAJtxusM3nLnsB6O7muGvPANQy5OVZcqTSIWqZNgS642znvPF6sb
- vk3fvAJKN7+7Dz9Y1u0nvKjdXZlep3guAjq9nInLttsVoN1nNm+UjVYERMJUKjtPcuUv
- e2z/miSftq65r+ECEJCfUVID2w5heEmnV3/oJ0dbCUGFU2YrcINEU1ODLcbBqZzPkmcW
- vImcva23Xv2OSRUyhvvETHMNp2qREBbm9vin40CA3UM4v/sO1car+SUL/niDmLqHOSSU
- 4GEA==
+ bh=YYDsvXyN7lKyWvwicAI4oCr345gpOnXVLRGj0aMMolo=;
+ b=qbYaLxLBOhLq5Wzl+yScqKP0rLt0oiZqaE5FvY2agbCmQX7z+gnSlqjpYcKBt/bHe1
+ 2HQQsmn8ghBiES8tmXMO0lNNOshYrsytYoeKzcJ4vawIHe/ptqrQ1KO9Klu3osmn7GQc
+ MLXnyMQ7McQ/mj2+GymxWX3k9uOvU/HcjCt5AGs63VobdHPdssWFptMENdIiMtz5/fmn
+ n7NDxdyRdm7aBQyPg4EuO4WPvtF/FXN1zWIHn14BDXEkvCLiS5dyyy0L91C620XPpWpj
+ YfgLFpUQa4so7KjbaeSpDio0fq/wlFHZ+j667eaANqVRGJRNwDZgD8SD3Hmh+8+r+6hl
+ ZZYw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=hFUeOztHXwIWxr32WwjRl6k43PaGfHZ/FxiAc43beH4=;
- b=SnLItxKiR04o8ULRdxN/9D8CF+fsrxf2xGa1hkVKxV4pbH7FVFlPi8zPne+lC5IVNY
- VkByhHiXVEg1YW4ucUEUpXJOr9Mcz5rqFTImxuuZ3KFONY/9sHJ5gE0o070xtK5/7o5c
- x63cJW1m8Gf/k6xf9Uq6RFpP4EBmXmCJk0MqCDcyFu8bSt5Ct9KSKgY9pQ32WG3ZeY28
- mM7DY8FdLTTFa9YE3pzHqBh5XWsPtZk1bZXBK2COIDyTkQruP/D8hAQmT8N9EbLhF58L
- YMr7YtTG/1PKDs6ZAyQk3eCTXEYY5ckhrJlmKiWfYC/mi9q/wTeEtjtMkaBFAzJUa0Eu
- Gn9A==
-X-Gm-Message-State: AOAM532bCwUAnLdV8fisHTwUyunxkRj4vZUPDie+XzQIQXWSUI1TveX+
- itLyihHLYwP28XcCxvVgyqI=
-X-Google-Smtp-Source: ABdhPJx91HAj4QHi1sZ+aPmfBlYLTyf8vXscMcEfFd2DkHCwaYc0V9Ns/v4tvXwZReaif4LNYHxEQA==
-X-Received: by 2002:a9d:444:: with SMTP id 62mr2577306otc.272.1589971935830;
- Wed, 20 May 2020 03:52:15 -0700 (PDT)
+ bh=YYDsvXyN7lKyWvwicAI4oCr345gpOnXVLRGj0aMMolo=;
+ b=pFgwToL0zlw6A3rEJKD5GR0IvWArxWYJ24LjK0XwApC4ZhFMLJmMLKxVYF0PR+tQe4
+ 13f95DRXAS/5cqVxWniJchwXRwk3jnm6PwozIgjZt9h5A0UG7+y5Z0v3QGZsSYLG9hrP
+ S3wT5eFEzANqGvLASiG0sO2IYA2lw9KyKk6ewSMxI3bY68h6Gv4VjtEEWsYkDhYrk4l+
+ 4D7VLN9c8sx/w7HTrIv/pUNefRHnt0VYulXfiZFjnBiD6vGRpYRHEB8/YGWu/weqxzlJ
+ IKQz6ApSikjJapgv9fXQgvoCYJGKhztbJ/daWCXl4sMpbmBz1mvbVZwcKmzoCD6Iuh7y
+ de+g==
+X-Gm-Message-State: AOAM530z8q/vEYJ6sejVEzqmlKDw0FU+RJZ98v4D5veXY3E8IvkXSR8K
+ y4ZYkYIKTvLcmXBSB6LQNhukmDea
+X-Google-Smtp-Source: ABdhPJwUU/Av89zm/6GN/mCN+QuXxkgRVLWIQ08D6KuPsFs/3d0j6e8GhmXPXWbLZotFinFxpZl2kg==
+X-Received: by 2002:a05:6830:2305:: with SMTP id
+ u5mr2830737ote.29.1589971992848; 
+ Wed, 20 May 2020 03:53:12 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id 15sm644889otj.52.2020.05.20.03.52.12
+ by smtp.gmail.com with ESMTPSA id l204sm688261oia.28.2020.05.20.03.53.09
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 20 May 2020 03:52:15 -0700 (PDT)
-Subject: Re: [PATCH v2 4/4] arm64: dts: mt8173: Fix mmsys node name
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- mark.rutland@arm.com, ck.hu@mediatek.com, sboyd@kernel.org,
- ulrich.hecht+renesas@gmail.com
-References: <20200401201736.2980433-1-enric.balletbo@collabora.com>
- <20200401201736.2980433-4-enric.balletbo@collabora.com>
+ Wed, 20 May 2020 03:53:12 -0700 (PDT)
+Subject: Re: [PATCH 2/4] clk/soc: mediatek: mt6797: Bind clock driver from
+ platform device
+To: Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>, Rob Herring
+ <robh+dt@kernel.org>, matthias.bgg@kernel.org
+References: <20200518113156.25009-1-matthias.bgg@kernel.org>
+ <20200518113156.25009-2-matthias.bgg@kernel.org>
+ <158996970679.215346.601357207492478540@swboyd.mtv.corp.google.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -136,23 +139,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <c4de878a-4505-83e5-ef6f-acfaae960359@gmail.com>
-Date: Wed, 20 May 2020 12:52:11 +0200
+Message-ID: <fbdb07df-9b4c-326a-be0f-cf75eb357449@gmail.com>
+Date: Wed, 20 May 2020 12:53:08 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200401201736.2980433-4-enric.balletbo@collabora.com>
+In-Reply-To: <158996970679.215346.601357207492478540@swboyd.mtv.corp.google.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_035216_971400_92F3B6D1 
-X-CRM114-Status: GOOD (  17.48  )
+X-CRM114-CacheID: sfid-20200520_035313_475334_C30B4F71 
+X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -176,12 +179,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>, drinkcat@chromium.org,
- devicetree@vger.kernel.org, matthias.bgg@kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Matthias Brugger <mbrugger@suse.com>, linux-mediatek@lists.infradead.org,
- hsinyi@chromium.org, Collabora Kernel ML <kernel@collabora.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>, devicetree@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Richard Fontana <rfontana@redhat.com>, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, mtk01761 <wendell.lin@mediatek.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
+ Allison Randal <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -189,40 +192,23 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 01/04/2020 22:17, Enric Balletbo i Serra wrote:
-> Node names are supposed to match the class of the device, mmsys is a
-> system controller (syscon) not a clock controller, so change the node
-> name accordingly.
+On 20/05/2020 12:15, Stephen Boyd wrote:
+> Quoting matthias.bgg@kernel.org (2020-05-18 04:31:54)
+>> From: Matthias Brugger <matthias.bgg@gmail.com>
+>>
+>> The mmsys driver is now the top level entry point for the multimedia
+>> system (mmsys), we bind the clock driver by creating a platform device.
+>> We also bind the MediaTek DRM driver which is not yet implement and
+>> therefor will errror out for now.
+>>
+>> Signed-off-by: Matthias Brugger <matthias.bgg@gmail.com>
+>> ---
 > 
-> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> Reviewed-by: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-> ---
+> Acked-by: Stephen Boyd <sboyd@kernel.org>
+> 
 
-Now queued for v5.7-next/dts64
+Now queued for v5.7-next/soc
 
-Thanks!
-
-
-> 
-> Changes in v2: None
-> 
->  arch/arm64/boot/dts/mediatek/mt8173.dtsi | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> index 8b4e806d5119..a55e8c177832 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
-> @@ -908,7 +908,7 @@ u2port1: usb-phy@11291000 {
->  			};
->  		};
->  
-> -		mmsys: clock-controller@14000000 {
-> +		mmsys: syscon@14000000 {
->  			compatible = "mediatek,mt8173-mmsys", "syscon";
->  			reg = <0 0x14000000 0 0x1000>;
->  			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
