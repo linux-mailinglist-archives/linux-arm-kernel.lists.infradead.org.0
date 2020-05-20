@@ -2,64 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C73D1DB059
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:37:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 668101DB05E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:38:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PUgcxKwGc3ZA/e8CYorVBCiSB1HLhCzjFUlI7PtDpRw=; b=JrADrp1ap+YRZd
-	t56tA+IKF3kbHSFG8QnYF5w9jtoqwBvHofmEtmLyOQFDJy4BuLzv+nwwelhUcr9zzoWsoOdF6FB6a
-	Z3FOS5mn+zCxMa01XEht90C4k0gIoXw01LSNwaDje0fFvUmE9gXd6f1i53Asq4Jrfyq5RUjx2N3kq
-	AantVLt9xWVXA2PPT8MSBjqFXKOJKDdZd360/+1JJ09+6/625J0a9KaRpUOTO/EBfphjqm8pTYv2b
-	rQDhu2TL9l/3vOVYxhIgXuiqA3Gwl2+rrKIQW8szAaklUYsQZ3VRqXBccS477N1MDv7PgERBPEUhQ
-	vxzom34f4JL7KpkRBOHA==;
+	List-Owner; bh=4+WtHROuOX4t+Cp5Bnk1RWF5vMukGlq9AwWa86wueSQ=; b=cL44drdUx/8wjR
+	f4Q5Y/1V1gCpLXcPW4xGqwgRkQwGdu0wEUKTrr11b/uUyRDaXFBZYuKa9wzoytopzHyeY7aVGOoCW
+	3wHkOQbfTxZeENHJRm0ULCUZOYnBLNtpbjtAul6SZdRenq0nQK8JuKfO2fipzirw9U+OCO9z/dM7y
+	1saSp/3I5HdoyZnZx4Ua9ql0211CWxIhl2GjnbN7zFvgkAPJstKTXrRmVX28pCcDGxmN4vvTk6Rd3
+	QzufsmNoAuPcsx13nM3gpDCFNeZXea5SZE2yF7f6O3lGuBBIHPlv8tZ6Ww6N/0kDay0iH+ipovAkj
+	Zd5tNT2/4yzpypVs3ZJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbM6E-00015z-9q; Wed, 20 May 2020 10:37:22 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jbM6i-0001Sw-IX; Wed, 20 May 2020 10:37:52 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbM5d-000137-Kq
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 10:36:46 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 13D95207C4;
- Wed, 20 May 2020 10:36:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589971005;
- bh=ZuYOcvxDsTtKEJBso9cC8rTC6FvzLQzvFBD4wCTB1SE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=yXGeiyTf1weXMsbXJi4/hoLtq4zGzxHr/Y0gl6T9HBIc7SQhxjP4guVt7Bv3La33I
- Zvtxm7ehv7hGgdF8M9g3I2FvRzqOPQ8N3cU98qVeCGPDdB0vKIQqgs33vMNv9kfHUq
- f0tcyZRwBPWeYSpu8PV5CmoUPRvyUDBsF8vO0N54=
-Date: Wed, 20 May 2020 11:36:40 +0100
-From: Will Deacon <will@kernel.org>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH v2 2/2] arm64: vdso: Fix CFI directives in sigreturn
- trampoline
-Message-ID: <20200520103640.GA25539@willie-the-truck>
-References: <20200519162821.16857-1-will@kernel.org>
- <20200519162821.16857-3-will@kernel.org>
- <20200520094212.GK5031@arm.com>
- <20200520095027.GE24293@willie-the-truck>
- <20200520102747.GM5031@arm.com>
+ id 1jbM6W-0001Rs-4e; Wed, 20 May 2020 10:37:42 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04KAbWLQ107478;
+ Wed, 20 May 2020 05:37:32 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1589971052;
+ bh=+KF9k6cB/JfAPmPQy9MafpFdMwFT47tOFEMgTwRcw9M=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=Mc56S6dJwa52OQndl3nGDOF8ZS6pRdbj54zRKH0Qk1G1vNJkapaLZEUp1JxevQGmV
+ RKngxvJDyRnBBS6bG5jWfjHen+AK0SKDiWGSL4ufV6lWPofk9t83hgyhWRYSzhm7JU
+ pCV5jP/4zlTMk2N6hpgLtId95Q8gn6m0trDx3xRw=
+Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04KAbWc3060215
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 20 May 2020 05:37:32 -0500
+Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 20
+ May 2020 05:37:31 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
+ (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Wed, 20 May 2020 05:37:31 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04KAbVvo036664;
+ Wed, 20 May 2020 05:37:31 -0500
+Date: Wed, 20 May 2020 16:07:30 +0530
+From: Pratyush Yadav <p.yadav@ti.com>
+To: <masonccyang@mxic.com.tw>
+Subject: Re: [PATCH v5 09/19] mtd: spi-nor: sfdp: parse xSPI Profile 1.0 table
+Message-ID: <20200520103728.jtbslowdfrv3o5yz@ti.com>
+References: <20200519142642.24131-1-p.yadav@ti.com>
+ <20200519142642.24131-10-p.yadav@ti.com>
+ <OF83616464.480FA751-ON4825856E.002A4483-4825856E.002BE6AF@mxic.com.tw>
+ <20200520085534.yra4f5ww5xs23c4j@ti.com>
+ <OF98344913.4BF4C313-ON4825856E.0032A810-4825856E.00352141@mxic.com.tw>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200520102747.GM5031@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <OF98344913.4BF4C313-ON4825856E.0032A810-4825856E.00352141@mxic.com.tw>
+User-Agent: NeoMutt/20171215
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_033645_724215_C96F58BF 
-X-CRM114-Status: GOOD (  25.97  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200520_033740_282763_4563922F 
+X-CRM114-Status: GOOD (  33.71  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,88 +93,178 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, Mark Brown <broonie@kernel.org>,
- kernel-team@android.com, linux-arm-kernel@lists.infradead.org,
- Daniel Kiss <daniel.kiss@arm.com>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>, juliensu@mxic.com.tw,
+ Richard Weinberger <richard@nod.at>, Mark Brown <broonie@kernel.org>,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ linux-mediatek@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mtd@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 11:27:47AM +0100, Dave Martin wrote:
-> On Wed, May 20, 2020 at 10:50:28AM +0100, Will Deacon wrote:
-> > On Wed, May 20, 2020 at 10:42:13AM +0100, Dave Martin wrote:
-> > > On Tue, May 19, 2020 at 05:28:21PM +0100, Will Deacon wrote:
-> > > > @@ -14,7 +18,34 @@
-> > > >  
-> > > >  	.text
-> > > >  
-> > > > -	nop
-> > > > +/* Ensure that the mysterious NOP can be associated with a function. */
-> > > > +	.cfi_startproc
-> > > > +
-> > > > +/*
-> > > > + * .cfi_signal_frame causes the corresponding Frame Description Entry in the
-> > > > + * .eh_frame section to be annotated as a signal frame. This allows DWARF
-> > > > + * unwinders (e.g. libstdc++) to implement _Unwind_GetIPInfo(), which permits
-> > > > + * unwinding out of the signal trampoline without the need for the mysterious
-> > > > + * NOP.
+On 20/05/20 05:40PM, masonccyang@mxic.com.tw wrote:
+> 
+> Hi Pratyush, 
+>  
+> > > > +/**
+> > > > + * spi_nor_parse_profile1() - parse the xSPI Profile 1.0 table
+> > > > + * @nor:      pointer to a 'struct spi_nor'
+> > > > + * @param_header:   pointer to the 'struct sfdp_parameter_header' 
+> > > describing
+> > > > + *         the 4-Byte Address Instruction Table length and version.
+> > > > + * @params:      pointer to the 'struct spi_nor_flash_parameter' to 
+> be.
+> > > > + *
+> > > > + * Return: 0 on success, -errno otherwise.
 > > > > + */
-> > > > +	.cfi_signal_frame
+> > > > +static int spi_nor_parse_profile1(struct spi_nor *nor,
+> > > > +              const struct sfdp_parameter_header *profile1_header,
+> > > > +              struct spi_nor_flash_parameter *params)
+> > > > +{
+> > > > +   u32 *table, opcode, addr;
+> > > > +   size_t len;
+> > > > +   int ret, i;
 > > > > +
-> > > > +/*
-> > > > + * Tell the unwinder where to locate the frame record linking back to the
-> > > > + * interrupted context.
-> > > > + */
-> > > > +	.cfi_def_cfa    x29, 0
-> > > > +	.cfi_offset     x29, 0 * 8
-> > > > +	.cfi_offset     x29, 1 * 8
+> > > > +   len = profile1_header->length * sizeof(*table);
+> > > > +   table = kmalloc(len, GFP_KERNEL);
+> > > > +   if (!table)
+> > > > +      return -ENOMEM;
+> > > > +
+> > > > +   addr = SFDP_PARAM_HEADER_PTP(profile1_header);
+> > > > +   ret = spi_nor_read_sfdp(nor, addr, len, table);
+> > > > +   if (ret)
+> > > > +      goto out;
+> > > > +
+> > > > +   /* Fix endianness of the table DWORDs. */
+> > > > +   for (i = 0; i < profile1_header->length; i++)
+> > > > +      table[i] = le32_to_cpu(table[i]);
+> > > > +
+> > > > +   /* Get 8D-8D-8D fast read opcode and dummy cycles. */
+> > > > +   opcode = FIELD_GET(PROFILE1_DWORD1_RD_FAST_CMD, table[0]);
+> > > > +
+> > > > +   /*
+> > > > +    * Update the fast read settings. We set the default dummy 
+> cycles to 
+> > > 20
+> > > > +    * here. Flashes can change this value if they need to when 
+> enabling
+> > > > +    * octal mode.
+> > > > +    */
+> > > > + spi_nor_set_read_settings(&params->reads[SNOR_CMD_READ_8_8_8_DTR],
+> > > > +              0, 20, opcode,
+> > > > +              SNOR_PROTO_8_8_8_DTR);
+> > > > +
 > > > 
-> > > We should also give rationale for why we don't describe how to recover
-> > > other regs here.  At a signal, every reg is potentially live with data
-> > > essential to the backtrace, so custom unwind entries further up the
-> > > stack may unwind badly after trying to unwind out of the signal handler.
+> > > 
+> > > I thought we have a agreement that only do parse here, no other read 
+> > > parameters setting.
 > > 
-> > Hmm, I'm not sure I get what you're asking for. We can't recover the other
-> > registers even if we tried, can we? I think the only way to get a reliable
-> > backtrace here is not to clobber the framepointer.
+> > Yes, and I considered it. But it didn't make much sense to me to 
+> > introduce an extra member in struct spi_nor just to make this call in 
+> > some other function later.
+> > 
+> > Why exactly do you think doing this here is bad? The way I see it, we 
+> > avoid carrying around an extra member in spi_nor and this also allows 
+> > flashes to change the read settings easily in a post-sfdp hook. The 
+> > 4bait parsing function does something similar.
 > 
-> A caller somewhere up the stack could have stashed stuff in nonstandard
-> places, with a custom unwind entry that doesn't use x29 in the usual way.
+> I think it's not a question for good or bad. 
 > 
-> If x29 and x30 were stashed in x8 and x9, say, then the unwinder needs
-> to restore x8 and x9 correctly before that frame is reached.  Dwarf
-> unwind tables are expressive enough to describe how to unwind such a
-> frames: the directives work on all the registers, not just x29, lr.
+> 4bait parsing function parse the 4-Byte Address Instruction Table
+> and set up read/pp parameters there for sure.
+> 
+> Here we give the function name spi_nor_parse_profile1() but also 
 
-Understood, I just can't figure out how we could support that even if we
-wanted to. The only evidence we have of those registers is in the
-sigcontext, but that may have been modified by the time we end up in the
-return trampoline. Would we need to push the registers twice (i.e. expand
-the frame record to include the GPRs)? Not saying we should do this, just
-wondering what it would take.
+But the function that parses 4bait table is also called 
+spi_nor_parse_4bait(). 
 
-> For this kind of unwinding scenario to wokr, the userspace environment
-> would need to provide correct unwind info for _everything_ rather than
-> relying on the frame chain on the stack alone, so this scenario isn't
-> applicable to C.
-> 
-> I'm not saying we should try to support this, but a comment to indicate
-> what we are and are not trying to do might be a good idea.
-> 
-> How about something along these lines:
-> 
-> /*
->  * Don't try to provide unwind into for the other regs of the
->  * interrupted context here.  C/C++ based runtimes don't rely on
->  * this for unwinding in practice.  Debuggers need more, but they
->  * already have baked-in knowledge about how to unwind out of
->  * signals.
->  */
+> do others setting that has nothing to do with it, 
 
-I'll fold that in, thanks.
+Why has setting read opcode and dummy cycles got nothing to do with it? 
+The purpose of the Profile 1.0 table is to tell us the Read Fast command 
+and dummy cycles, among other things. I think it _does_ have something 
+to do with it.
 
-Will
+Just like the 4bait table tells us the 4-byte opcodes and we set them up 
+in our data structures, the profile 1.0 table tells us the 8D read 
+opcode and dummy cycles, and we set them up in our data structures.
+
+> it seems not good for SW module design. 
+> oh, it's my humble opinion.
+> 
+> > 
+> > What are the benefits of doing it otherwise?
+> 
+> For other Octal Flash like mx25*
+
+I mean from a design perspective. How does it make the code better, or 
+the job of people who need to read/change it easier?
+
+> > 
+> > Note that I did remove HWCAPS selection from here, which did seem like a 
+> 
+> > sane idea.
+> > 
+> > > Driver should get dummy cycles used for various frequencies 
+> > > from 4th and 5th DWORD of xSPI table.[1]
+> > > 
+> > > [1] 
+> > > 
+> https://patchwork.ozlabs.org/project/linux-mtd/patch/1587451187-6889-3-git-
+> 
+> > send-email-masonccyang@mxic.com.tw/ 
+> > > 
+> > > 
+> > > In addition, 20 dummy cycles is for 200MHz but not for 100MHz, 133MHz 
+> and 
+> > > 166MHz
+> > > in case of read performance concern.
+> > > 
+> > > Given a correct dummy cycles for a specific device. [2] 
+> > > 
+> > > [2] 
+> > > 
+> https://patchwork.ozlabs.org/project/linux-mtd/patch/1587451187-6889-5-git-
+> 
+> > send-email-masonccyang@mxic.com.tw/ 
+> > 
+> > The problem is that we don't know what speed the controller is driving 
+> > the flash at, and whether it is using Data Strobe. BFPT tells us the 
+> > maximum speed of the flash based on if Data Strobe is being used. The 
+> > controller can also drive it slower than the maximum. And it can drive 
+> > it with or without DS.
+> 
+> This is for flash, not every Octal flash could work in 200MHz,
+> The Max operation speeds for other Octal Flash is 100, 133 , or 166MHz.
+> 
+> If a specific Octal Flash could work in 166MHz(Max), and driver setup the
+> correct 16 dummy cycles for it rather than 20 dummy cycles.
+> it's for performance concern.
+
+Agreed. Like I mentioned in the next paragraph, will fix.
+ 
+> > 
+> > So, we have to be conservative and just use the dummy cycles for the 
+> > maximum speed so we can at least make sure the flash works, albeit at 
+> > slightly less efficiency. I hard-coded it to 20 but I suppose we can 
+> > find it out from the Profile 1.0 table and use that (though we'd have to 
+> 
+> > round it to an even value to avoid tripping up controllers). Will fix in 
+> 
+> > next version (or, Tudor if you're fine with fixup! patches, I can send 
+> > that too because I suspect it will be a small change).
+> > 
+
+-- 
+Regards,
+Pratyush Yadav
+Texas Instruments India
 
 _______________________________________________
 linux-arm-kernel mailing list
