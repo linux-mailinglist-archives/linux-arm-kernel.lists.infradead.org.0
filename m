@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85E6C1DBC16
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 19:56:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D40B91DBC1A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 19:57:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fw5qVV272vxBJE0L31osW31EuQ16SJ0oMeCClP5LWT4=; b=V3+oYevAR7Q9M1
-	c8Vq5iig9jloT39RvdqwwbYR1frEee6PKHZFDK9N4roqHBojaiDDOQvhFZNkTzBc2us9xomqbc9CF
-	FdIidh1siQSRMFUpyjcwDs7nkEWr1ZWXVwDqWxC25WOLPX/lztENYA+rFJd9Fwj9YX46zWV6eRd7n
-	bIoPf2lmRiMReu8xphFuEsWVYcIyo/sBIV+K+i6MNjHYl/zscXQUE8A2Kt5EVRX4hBZuzSF6wT+Zv
-	LRT5d/D6s6gE1psLfk1VYileuG/Fu8sSJUh8dl/sORBYT/zPg2CHHgRyEtH7kLPi25Lk2HwYIB1ZJ
-	jMH1enpeF9jtXB7Onefw==;
+	List-Owner; bh=1Wm5aghybQF77mukVdMiaqser4QIYZOAE37apV83qMk=; b=GeBippdtzKpeYp
+	0PhXO5yO9tLnH4IWUTUc0XAirhajpKttKGM8gpHsFEo4IVCbeoUhg7CxuL4Blwj8sBGfkt1ovFotO
+	F6d7sBzH6A48hmJS9yl8MGbx+ZrDRCi3LTfV6+LaITiPeQ8WCMOO4+vhO0YODyRdoRt006JkXPNsn
+	FxEHw5BtZVWZysCS07tZIE0Dhqk8CZgxD4Nk13ASji5eZrSzMM0zxnjNo6uf0dABIcCjdQfp3gCHr
+	ZyQPedQt4790jnAFX5x6MMca4ED4SuKhfE6ByMHvCTw4Jt8SGrLt7SJ6PieoZvYgOLC4BMLHZPm9s
+	+mXlJF5KwiaPZ3rigO6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbSxJ-0003cc-Cr; Wed, 20 May 2020 17:56:37 +0000
+	id 1jbSxr-00046N-7u; Wed, 20 May 2020 17:57:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbSwV-0003Bv-ND
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 17:55:49 +0000
+ id 1jbSwX-0003E1-2S
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 17:55:50 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AB203207D3;
- Wed, 20 May 2020 17:55:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 605C4207D8;
+ Wed, 20 May 2020 17:55:47 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589997347;
- bh=pE3MkVZY471XRFLCctHScbvRxFLwzWHgK4om4WNmEL4=;
+ s=default; t=1589997348;
+ bh=SruxTR6nMHhaDx6eZgigCukwq995Dww7NLTW7ti7KC0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AHe4SmCvguYRi366RAl6CyvVITaWmcBbOWbCL+gpABg99unQaQgA4g0nwFot5npTG
- Xyhxl2YzFVBqYSGHPncd91NrmfN0SZ3NttKF42wVKOk9tKs4yud3x9+OWqRmwVnRbI
- Qs3Nv8T23s9htbdD0sq6kbb8Sscec3DNxlV07fNo=
+ b=WIipLvnD2T0Og4Qns/pRRNf7HJCsIoIhmiNLZgTqER6X29KDbDwuX2Y1kJV4va9cC
+ PPAMjstRWBkI5uauCPBzJkoYZessXDWugNWfbQIaW7eNHYb7+SfTHhs9yAvPiPDabJ
+ +qems5oOuxpWRNYoKgyB/LXEa8+pgflHg6/F/e/A=
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 1/2] arm64: vdso: Don't prefix sigreturn trampoline with a
- BTI C instruction
-Date: Wed, 20 May 2020 18:55:38 +0100
-Message-Id: <20200520175539.28464-2-will@kernel.org>
+Subject: [PATCH v3 2/2] arm64: vdso: Fix CFI directives in sigreturn trampoline
+Date: Wed, 20 May 2020 18:55:39 +0100
+Message-Id: <20200520175539.28464-3-will@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200520175539.28464-1-will@kernel.org>
 References: <20200520175539.28464-1-will@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_105547_800821_F285FB32 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20200520_105549_182440_101F500A 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,136 +79,79 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Will Deacon <will@kernel.org>, Tamas Zsoldos <tamas.zsoldos@arm.com>,
  Mark Brown <broonie@kernel.org>, kernel-team@android.com,
  Dave Martin <dave.martin@arm.com>, Daniel Kiss <daniel.kiss@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For better or worse, GDB relies on the exact instruction sequence in the
-VDSO sigreturn trampoline in order to unwind from signals correctly.
-Commit c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
-unfortunately added a BTI C instruction to the start of __kernel_rt_sigreturn,
-which breaks this check. Thankfully, it's also not required, since the
-trampoline is called from a RET instruction when returning from the signal
-handler
-
-Remove the unnecessary BTI C instruction from __kernel_rt_sigreturn,
-and do the same for the 32-bit VDSO as well for good measure.
-
-Cc: Daniel Kiss <daniel.kiss@arm.com>
-Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>
-Reviewed-by: Dave Martin <dave.martin@arm.com>
-Reviewed-by: Mark Brown <broonie@kernel.org>
-Fixes: c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
-Signed-off-by: Will Deacon <will@kernel.org>
----
- arch/arm64/include/asm/linkage.h     |  6 +++---
- arch/arm64/kernel/vdso/sigreturn.S   | 11 +++++++++--
- arch/arm64/kernel/vdso32/sigreturn.S | 16 ++++++++--------
- 3 files changed, 20 insertions(+), 13 deletions(-)
-
-diff --git a/arch/arm64/include/asm/linkage.h b/arch/arm64/include/asm/linkage.h
-index b5a7998a6b2a..81fefd2a1d02 100644
---- a/arch/arm64/include/asm/linkage.h
-+++ b/arch/arm64/include/asm/linkage.h
-@@ -15,9 +15,9 @@
- #define BTI_J hint 36 ;
- 
- /*
-- * When using in-kernel BTI we need to ensure that assembly functions
-- * have suitable annotations.  Override SYM_FUNC_START to insert a BTI
-- * landing pad at the start of everything.
-+ * When using in-kernel BTI we need to ensure that PCS-conformant assembly
-+ * functions have suitable annotations.  Override SYM_FUNC_START to insert
-+ * a BTI landing pad at the start of everything.
-  */
- #define SYM_FUNC_START(name)				\
- 	SYM_START(name, SYM_L_GLOBAL, SYM_A_ALIGN)	\
-diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
-index 3fb13b81f780..0c921130002a 100644
---- a/arch/arm64/kernel/vdso/sigreturn.S
-+++ b/arch/arm64/kernel/vdso/sigreturn.S
-@@ -15,7 +15,14 @@
- 	.text
- 
- 	nop
--SYM_FUNC_START(__kernel_rt_sigreturn)
-+/*
-+ * GDB relies on being able to identify the sigreturn instruction sequence to
-+ * unwind from signal handlers. We cannot, therefore, use SYM_FUNC_START()
-+ * here, as it will emit a BTI C instruction and break the unwinder. Thankfully,
-+ * this function is only ever called from a RET and so omitting the landing pad
-+ * is perfectly fine.
-+ */
-+SYM_CODE_START(__kernel_rt_sigreturn)
- 	.cfi_startproc
- 	.cfi_signal_frame
- 	.cfi_def_cfa	x29, 0
-@@ -24,6 +31,6 @@ SYM_FUNC_START(__kernel_rt_sigreturn)
- 	mov	x8, #__NR_rt_sigreturn
- 	svc	#0
- 	.cfi_endproc
--SYM_FUNC_END(__kernel_rt_sigreturn)
-+SYM_CODE_END(__kernel_rt_sigreturn)
- 
- emit_aarch64_feature_1_and
-diff --git a/arch/arm64/kernel/vdso32/sigreturn.S b/arch/arm64/kernel/vdso32/sigreturn.S
-index 620524969696..b36d4e2267a3 100644
---- a/arch/arm64/kernel/vdso32/sigreturn.S
-+++ b/arch/arm64/kernel/vdso32/sigreturn.S
-@@ -17,39 +17,39 @@
- 	.save {r0-r15}
- 	.pad #COMPAT_SIGFRAME_REGS_OFFSET
- 	nop
--SYM_FUNC_START(__kernel_sigreturn_arm)
-+SYM_CODE_START(__kernel_sigreturn_arm)
- 	mov r7, #__NR_compat_sigreturn
- 	svc #0
- 	.fnend
--SYM_FUNC_END(__kernel_sigreturn_arm)
-+SYM_CODE_END(__kernel_sigreturn_arm)
- 
- 	.fnstart
- 	.save {r0-r15}
- 	.pad #COMPAT_RT_SIGFRAME_REGS_OFFSET
- 	nop
--SYM_FUNC_START(__kernel_rt_sigreturn_arm)
-+SYM_CODE_START(__kernel_rt_sigreturn_arm)
- 	mov r7, #__NR_compat_rt_sigreturn
- 	svc #0
- 	.fnend
--SYM_FUNC_END(__kernel_rt_sigreturn_arm)
-+SYM_CODE_END(__kernel_rt_sigreturn_arm)
- 
- 	.thumb
- 	.fnstart
- 	.save {r0-r15}
- 	.pad #COMPAT_SIGFRAME_REGS_OFFSET
- 	nop
--SYM_FUNC_START(__kernel_sigreturn_thumb)
-+SYM_CODE_START(__kernel_sigreturn_thumb)
- 	mov r7, #__NR_compat_sigreturn
- 	svc #0
- 	.fnend
--SYM_FUNC_END(__kernel_sigreturn_thumb)
-+SYM_CODE_END(__kernel_sigreturn_thumb)
- 
- 	.fnstart
- 	.save {r0-r15}
- 	.pad #COMPAT_RT_SIGFRAME_REGS_OFFSET
- 	nop
--SYM_FUNC_START(__kernel_rt_sigreturn_thumb)
-+SYM_CODE_START(__kernel_rt_sigreturn_thumb)
- 	mov r7, #__NR_compat_rt_sigreturn
- 	svc #0
- 	.fnend
--SYM_FUNC_END(__kernel_rt_sigreturn_thumb)
-+SYM_CODE_END(__kernel_rt_sigreturn_thumb)
--- 
-2.26.2.761.g0e0b3e54be-goog
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RGFuaWVsIHJlcG9ydHMgdGhhdCB0aGUgLmNmaV9zdGFydHByb2MgaXMgbWlzcGxhY2VkIGZvciB0
+aGUgc2lncmV0dXJuCnRyYW1wb2xpbmUsIHdoaWNoIGNhdXNlcyBMTFZNJ3MgdW53aW5kZXIgdG8g
+bWlzYmVoYXZlOgoKICB8IEkgcnVuIGludG8gdGhpcyB3aXRoIExMVk3igJlzIHVud2luZGVyLgog
+IHwgVGhpcyBjb21iaW5hdGlvbiB3YXMgYWx3YXlzIGJyb2tlbi4KClRoaXMgcHJvbXB0ZWQgRGF2
+ZSB0byBxdWVzdGlvbiBvdXIgdXNlIG9mIENGSSBkaXJlY3RpdmVzIG1vcmUgZ2VuZXJhbGx5LAph
+bmQgSSBlbmRlZCB1cCBnb2luZyBkb3duIGEgcmFiYml0IGhvbGUgdHJ5aW5nIHRvIGZpZ3VyZSBv
+dXQgaG93IHRoaXMKdmVyeSBwb29ybHkgZG9jdW1lbnRlZCBzdHVmZiBnZXRzIHVzZWQuCgpNb3Zl
+IHRoZSBDRkkgZGlyZWN0aXZlcyBzbyB0aGF0IHRoZSAibXlzdGVyaW91cyBOT1AiIGlzIGluY2x1
+ZGVkIGluCnRoZSAuY2ZpX3tzdGFydCxlbmR9cHJvYyBibG9jayBhbmQgYWRkIGEgYnVuY2ggb2Yg
+Y29tbWVudHMgc28gdGhhdCBJCmNhbiBzYXZlIG15c2VsZiBhbm90aGVyIGhlYWRhY2hlIGluIGZ1
+dHVyZS4KCkNjOiBUYW1hcyBac29sZG9zIDx0YW1hcy56c29sZG9zQGFybS5jb20+ClJlcG9ydGVk
+LWJ5OiBEYXZlIE1hcnRpbiA8ZGF2ZS5tYXJ0aW5AYXJtLmNvbT4KUmVwb3J0ZWQtYnk6IERhbmll
+bCBLaXNzIDxkYW5pZWwua2lzc0Bhcm0uY29tPgpTaWduZWQtb2ZmLWJ5OiBXaWxsIERlYWNvbiA8
+d2lsbEBrZXJuZWwub3JnPgotLS0KIGFyY2gvYXJtNjQva2VybmVsL3Zkc28vc2lncmV0dXJuLlMg
+ICB8IDQ0ICsrKysrKysrKysrKysrKysrKysrKysrLS0tLS0KIGFyY2gvYXJtNjQva2VybmVsL3Zk
+c28zMi9zaWdyZXR1cm4uUyB8ICAzICsrCiAyIGZpbGVzIGNoYW5nZWQsIDQwIGluc2VydGlvbnMo
+KyksIDcgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9rZXJuZWwvdmRzby9z
+aWdyZXR1cm4uUyBiL2FyY2gvYXJtNjQva2VybmVsL3Zkc28vc2lncmV0dXJuLlMKaW5kZXggMGM5
+MjExMzAwMDJhLi42MjBhM2VmODM3YjcgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQva2VybmVsL3Zk
+c28vc2lncmV0dXJuLlMKKysrIGIvYXJjaC9hcm02NC9rZXJuZWwvdmRzby9zaWdyZXR1cm4uUwpA
+QCAtMSw3ICsxLDExIEBACiAvKiBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMC1vbmx5
+ICovCiAvKgogICogU2lncmV0dXJuIHRyYW1wb2xpbmUgZm9yIHJldHVybmluZyBmcm9tIGEgc2ln
+bmFsIHdoZW4gdGhlIFNBX1JFU1RPUkVSCi0gKiBmbGFnIGlzIG5vdCBzZXQuCisgKiBmbGFnIGlz
+IG5vdCBzZXQuIEl0IHNlcnZlcyBwcmltYXJpbHkgYXMgYSBoYWxsIG9mIHNoYW1lIGZvciBjcmFw
+cHkKKyAqIHVud2luZGVycyBhbmQgZmVhdHVyZXMgYW4gZXhjaXRpbmcgYnV0IG15c3RlcmlvdXMg
+Tk9QIGluc3RydWN0aW9uLgorICoKKyAqIEl0J3MgYWxzbyBmcmFnaWxlIGFzIGhlbGwsIHNvIHBs
+ZWFzZSB0aGluayB0d2ljZSBiZWZvcmUgY2hhbmdpbmcgYW55dGhpbmcKKyAqIGluIGhlcmUuCiAg
+KgogICogQ29weXJpZ2h0IChDKSAyMDEyIEFSTSBMaW1pdGVkCiAgKgpAQCAtMTQsNyArMTgsMzgg
+QEAKIAogCS50ZXh0CiAKLQlub3AKKy8qIEVuc3VyZSB0aGF0IHRoZSBteXN0ZXJpb3VzIE5PUCBj
+YW4gYmUgYXNzb2NpYXRlZCB3aXRoIGEgZnVuY3Rpb24uICovCisJLmNmaV9zdGFydHByb2MKKwor
+LyoKKyAqIC5jZmlfc2lnbmFsX2ZyYW1lIGNhdXNlcyB0aGUgY29ycmVzcG9uZGluZyBGcmFtZSBE
+ZXNjcmlwdGlvbiBFbnRyeSBpbiB0aGUKKyAqIC5laF9mcmFtZSBzZWN0aW9uIHRvIGJlIGFubm90
+YXRlZCBhcyBhIHNpZ25hbCBmcmFtZS4gVGhpcyBhbGxvd3MgRFdBUkYKKyAqIHVud2luZGVycyAo
+ZS5nLiBsaWJzdGRjKyspIHRvIGltcGxlbWVudCBfVW53aW5kX0dldElQSW5mbygpLCB3aGljaCBw
+ZXJtaXRzCisgKiB1bndpbmRpbmcgb3V0IG9mIHRoZSBzaWduYWwgdHJhbXBvbGluZSB3aXRob3V0
+IHRoZSBuZWVkIGZvciB0aGUgbXlzdGVyaW91cworICogTk9QLgorICovCisJLmNmaV9zaWduYWxf
+ZnJhbWUKKworLyoKKyAqIFRlbGwgdGhlIHVud2luZGVyIHdoZXJlIHRvIGxvY2F0ZSB0aGUgZnJh
+bWUgcmVjb3JkIGxpbmtpbmcgYmFjayB0byB0aGUKKyAqIGludGVycnVwdGVkIGNvbnRleHQuIFdl
+IGRvbid0IHByb3ZpZGUgdW53aW5kIGluZm8gZm9yIHJlZ2lzdGVycyBvdGhlcgorICogdGhhbiB0
+aGUgZnJhbWUgcG9pbnRlciBhbmQgdGhlIGxpbmsgcmVnaXN0ZXIgaGVyZTsgaW4gcHJhY3RpY2Us
+IHRoaXMKKyAqIGlzIHN1ZmZpY2llbnQgZm9yIHVud2luZGluZyBpbiBDL0MrKyBiYXNlZCBydW50
+aW1lcyBhbmQgdGhlIHZhbHVlcyBpbgorICogdGhlIHNpZ2NvbnRleHQgbWF5IGhhdmUgYmVlbiBt
+b2RpZmllZCBieSB0aGlzIHBvaW50IGFueXdheS4gRGVidWdnZXJzCisgKiBhbHJlYWR5IGhhdmUg
+YmFrZWQtaW4gc3RyYXRlZ2llcyBmb3IgYXR0ZW1wdGluZyB0byB1bndpbmQgb3V0IG9mIHNpZ25h
+bHMuCisgKi8KKwkuY2ZpX2RlZl9jZmEgICAgeDI5LCAwCisJLmNmaV9vZmZzZXQgICAgIHgyOSwg
+MCAqIDgKKwkuY2ZpX29mZnNldCAgICAgeDMwLCAxICogOAorCisvKgorICogVGhpcyBteXN0ZXJp
+b3VzIE5PUCBpcyByZXF1aXJlZCBmb3Igc29tZSB1bndpbmRlcnMgKGUuZy4gbGliYysrKSB0aGF0
+CisgKiB1bmNvbmRpdGlvbmFsbHkgc3VidHJhY3Qgb25lIGZyb20gdGhlIHJlc3VsdCBvZiBfVW53
+aW5kX0dldElQKCkgaW4gb3JkZXIgdG8KKyAqIGlkZW50aWZ5IHRoZSBjYWxsaW5nIGZ1bmN0aW9u
+LgorICogSGFjayBib3Jyb3dlZCBmcm9tIGFyY2gvcG93ZXJwYy9rZXJuZWwvdmRzbzY0L3NpZ3Ry
+YW1wLlMuCisgKi8KKwlub3AJLy8gTXlzdGVyaW91cyBOT1AKKwogLyoKICAqIEdEQiByZWxpZXMg
+b24gYmVpbmcgYWJsZSB0byBpZGVudGlmeSB0aGUgc2lncmV0dXJuIGluc3RydWN0aW9uIHNlcXVl
+bmNlIHRvCiAgKiB1bndpbmQgZnJvbSBzaWduYWwgaGFuZGxlcnMuIFdlIGNhbm5vdCwgdGhlcmVm
+b3JlLCB1c2UgU1lNX0ZVTkNfU1RBUlQoKQpAQCAtMjMsMTEgKzU4LDYgQEAKICAqIGlzIHBlcmZl
+Y3RseSBmaW5lLgogICovCiBTWU1fQ09ERV9TVEFSVChfX2tlcm5lbF9ydF9zaWdyZXR1cm4pCi0J
+LmNmaV9zdGFydHByb2MKLQkuY2ZpX3NpZ25hbF9mcmFtZQotCS5jZmlfZGVmX2NmYQl4MjksIDAK
+LQkuY2ZpX29mZnNldAl4MjksIDAgKiA4Ci0JLmNmaV9vZmZzZXQJeDMwLCAxICogOAogCW1vdgl4
+OCwgI19fTlJfcnRfc2lncmV0dXJuCiAJc3ZjCSMwCiAJLmNmaV9lbmRwcm9jCmRpZmYgLS1naXQg
+YS9hcmNoL2FybTY0L2tlcm5lbC92ZHNvMzIvc2lncmV0dXJuLlMgYi9hcmNoL2FybTY0L2tlcm5l
+bC92ZHNvMzIvc2lncmV0dXJuLlMKaW5kZXggYjM2ZDRlMjI2N2EzLi5iMDA5MTA2NGMzZDYgMTAw
+NjQ0Ci0tLSBhL2FyY2gvYXJtNjQva2VybmVsL3Zkc28zMi9zaWdyZXR1cm4uUworKysgYi9hcmNo
+L2FybTY0L2tlcm5lbC92ZHNvMzIvc2lncmV0dXJuLlMKQEAgLTMsNiArMyw5IEBACiAgKiBUaGlz
+IGZpbGUgcHJvdmlkZXMgYm90aCBBMzIgYW5kIFQzMiB2ZXJzaW9ucywgaW4gYWNjb3JkYW5jZSB3
+aXRoIHRoZQogICogYXJtIHNpZ3JldHVybiBjb2RlLgogICoKKyAqIFBsZWFzZSByZWFkIHRoZSBj
+b21tZW50cyBpbiBhcmNoL2FybTY0L2tlcm5lbC92ZHNvL3NpZ3JldHVybi5TIHRvCisgKiB1bmRl
+cnN0YW5kIHNvbWUgb2YgdGhlIGNyYXppbmVzcyBpbiBoZXJlLgorICoKICAqIENvcHlyaWdodCAo
+QykgMjAxOCBBUk0gTGltaXRlZAogICovCiAKLS0gCjIuMjYuMi43NjEuZzBlMGIzZTU0YmUtZ29v
+ZwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
