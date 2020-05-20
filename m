@@ -2,50 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 380B71DB8FD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 18:08:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFF841DB915
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 18:15:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ecn2Cm7dhRUtditldPyrGF2ssOMSdGs7hdOXlSnJOgA=; b=HjTxLgFByATB/e
-	MnflfoPTYFU/EuS9t4qwSV2MvHgqrikn6x1k+nzZA6yADIUnGiXZRYQDsGxgx5ceP6pWBT+OJrOuW
-	bmFrn0BACLW2udSKALQIxV4pbQjmiW1E9falkyxc9CTz0gL5uXGSIedKRgnev2WO6yECiOu3dzM/J
-	VshYsszl5cQTbDh9y40niWwI7lBYcw6zlCQYJ2pd2qboBThrp0Q/hikmaOpg4GQxY/fB/AZmETpA2
-	48A5vXMSE1E7FnTJzhimGEgYwuwQpjfsnOl9iPZaMklbgVqtP8n00zsnMbcMxYmOIzo8fYdPogpAw
-	A4/VzBZ2emJx3Hgn+3Cg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MlWOfTDS+NUSSeXZUOJ5vfkiq4k4hw0ri0k5oUmGMDo=; b=PafLjBVP2fi4cZ
+	vHq34KWhlfkpAJ5rEuLqLYh3fr0WN7OShgkJz/iSdEzreejcaIAUFinpJ1Yrk7+53hXVzc6QQhcT8
+	4Aiu66sOyjxbiDbezJKhzbiqcej7M3e4rs0GNFYLU4kYXTp9EhL9L1egWpsfBps+mXmmY+ByCCV2o
+	79IPbcYW7xumQA8NLz5+O/6Cxw+91KZR2XVdkDkJIbPBSpVWojX0JVtqBMRODczIBI/La0mLS33Wi
+	a0lGLdZxWhYX1r9GZI32UDSXKLw9TX54Lw6cuiCtU3tUw5f1a2/3Lf1c2aoo7LDrZSMkoWfnLLMel
+	NYj4+4LGHgQhSFgKEg/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbRGc-00038A-CE; Wed, 20 May 2020 16:08:26 +0000
-Received: from brightrain.aerifal.cx ([216.12.86.13])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbRGR-00036Z-Du
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 16:08:17 +0000
-Date: Wed, 20 May 2020 12:08:10 -0400
-From: Rich Felker <dalias@libc.org>
-To: Szabolcs Nagy <szabolcs.nagy@arm.com>
-Subject: Re: clock_gettime64 vdso bug on 32-bit arm, rpi-4
-Message-ID: <20200520160810.GM1079@brightrain.aerifal.cx>
-References: <CAK8P3a2Tw2w73ZkK-W6AA9veMK4-miLUx-TL1EuOdP7EdW-AmQ@mail.gmail.com>
- <0c2abcd1-7da8-2559-1e93-4c3bdd38dec1@linaro.org>
- <CAK8P3a3fxs+14ZdCRmt_GwJGv3Aipm1r9sAHH6aVj2UrWBNuQQ@mail.gmail.com>
- <20200520154128.GA24483@arm.com>
+	id 1jbRNI-0000Ze-M6; Wed, 20 May 2020 16:15:20 +0000
+Received: from c-73-157-219-8.hsd1.or.comcast.net ([73.157.219.8]
+ helo=[10.0.0.252])
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbRN6-00083y-Lu; Wed, 20 May 2020 16:15:09 +0000
+Subject: Re: [next] i2c: mediatek: Use div_u64 for 64-bit division to fix
+ 32-bit kernels
+To: qii.wang@mediatek.com, wsa@the-dreams.de
+References: <1589970713-19944-1-git-send-email-qii.wang@mediatek.com>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <c92c499b-825d-bd28-3c0d-e63076cba1b6@infradead.org>
+Date: Wed, 20 May 2020 09:15:03 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200520154128.GA24483@arm.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_090815_670427_7BC163FA 
-X-CRM114-Status: GOOD (  34.90  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+In-Reply-To: <1589970713-19944-1-git-send-email-qii.wang@mediatek.com>
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,104 +46,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nd@arm.com, Arnd Bergmann <arnd@arndb.de>, Stephen Boyd <sboyd@kernel.org>,
- Will Deacon <will@kernel.org>,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Adhemerval Zanella <adhemerval.zanella@linaro.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Jack Schmidt <jack.schmidt@uky.edu>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ leilk.liu@mediatek.com, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 04:41:29PM +0100, Szabolcs Nagy wrote:
-> The 05/19/2020 22:31, Arnd Bergmann wrote:
-> > On Tue, May 19, 2020 at 10:24 PM Adhemerval Zanella
-> > <adhemerval.zanella@linaro.org> wrote:
-> > > On 19/05/2020 16:54, Arnd Bergmann wrote:
-> > > > Jack Schmidt reported a bug for the arm32 clock_gettimeofday64 vdso call last
-> > > > month: https://github.com/richfelker/musl-cross-make/issues/96 and
-> > > > https://github.com/raspberrypi/linux/issues/3579
-> > > >
-> > > > As Will Deacon pointed out, this was never reported on the mailing list,
-> > > > so I'll try to summarize what we know, so this can hopefully be resolved soon.
-> > > >
-> > > > - This happened reproducibly on Linux-5.6 on a 32-bit Raspberry Pi patched
-> > > >    kernel running on a 64-bit Raspberry Pi 4b (bcm2711) when calling
-> > > >    clock_gettime64(CLOCK_REALTIME)
-> > >
-> > > Does it happen with other clocks as well?
-> > 
-> > Unclear.
-> > 
-> > > > - The kernel tree is at https://github.com/raspberrypi/linux/, but I could
-> > > >   see no relevant changes compared to a mainline kernel.
-> > >
-> > > Is this bug reproducible with mainline kernel or mainline kernel can't be
-> > > booted on bcm2711?
-> > 
-> > Mainline linux-5.6 should boot on that machine but might not have
-> > all the other features, so I think users tend to use the raspberry pi
-> > kernel sources for now.
-> > 
-> > > > - From the report, I see that the returned time value is larger than the
-> > > >   expected time, by 3.4 to 14.5 million seconds in four samples, my
-> > > >   guess is that a random number gets added in at some point.
-> > >
-> > > What kind code are you using to reproduce it? It is threaded or issue
-> > > clock_gettime from signal handlers?
-> > 
-> > The reproducer is very simple without threads or signals,
-> > see the start of https://github.com/richfelker/musl-cross-make/issues/96
-> > 
-> > It does rely on calling into the musl wrapper, not the direct vdso
-> > call.
-> > 
-> > > > - From other sources, I found that the Raspberry Pi clocksource runs
-> > > >   at 54 MHz, with a mask value of 0xffffffffffffff. From these numbers
-> > > >   I would expect that reading a completely random hardware register
-> > > >   value would result in an offset up to 1.33 billion seconds, which is
-> > > >   around factor 100 more than the error we see, though similar.
-> > > >
-> > > > - The test case calls the musl clock_gettime() function, which falls back to
-> > > >   the clock_gettime64() syscall on kernels prior to 5.5, or to the 32-bit
-> > > >   clock_gettime() prior to Linux-5.1. As reported in the bug, Linux-4.19 does
-> > > >   not show the bug.
-> > > >
-> > > > - The behavior was not reproduced on the same user space in qemu,
-> > > >   though I cannot tell whether the exact same kernel binary was used.
-> > > >
-> > > > - glibc-2.31 calls the same clock_gettime64() vdso function on arm to
-> > > >   implement clock_gettime(), but earlier versions did not. I have not
-> > > >   seen any reports of this bug, which could be explained by users
-> > > >   generally being on older versions.
-> > > >
-> > > > - As far as I can tell, there are no reports of this bug from other users,
-> > > >   and so far nobody could reproduce it.
+On 5/20/20 3:31 AM, qii.wang@mediatek.com wrote:
+> From: Qii Wang <qii.wang@mediatek.com>
 > 
-> note: i could not reproduce it in qemu-system with these configs:
+> Use div_u64 for 64-bit division, and change sample_ns type to
+> unsigned int. Otherwise, the module will reference __udivdi3
+> under 32-bit kernels, which is not allowed in kernel space.
 > 
-> qemu-system-aarch64 + arm64 kernel + compat vdso
-> qemu-system-aarch64 + kvm accel (on cortex-a72) + 32bit arm kernel
-> qemu-system-arm + cpu max + 32bit arm kernel
-> 
-> so i think it's something specific to that user's setup
-> (maybe rpi hw bug or gcc miscompiled the vdso or something
-> with that particular linux, i built my own linux 5.6 because
-> i did not know the exact kernel version where the bug was seen)
-> 
-> i don't have access to rpi (or other cortex-a53 where i
-> can install my own kernel) so this is as far as i got.
+> Signed-off-by: Qii Wang <qii.wang@mediatek.com>
 
-If we have a binary of the kernel that's known to be failing on the
-hardware, it would be useful to dump its vdso and examine the
-disassembly to see if it was miscompiled.
+Acked-by: Randy Dunlap <rdunlap@infradead.org> # build-tested
 
-Rich
+thanks.
+
+> ---
+>  drivers/i2c/busses/i2c-mt65xx.c | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
+> index 7020618..deef69e 100644
+> --- a/drivers/i2c/busses/i2c-mt65xx.c
+> +++ b/drivers/i2c/busses/i2c-mt65xx.c
+> @@ -551,7 +551,8 @@ static int mtk_i2c_check_ac_timing(struct mtk_i2c *i2c,
+>  	const struct i2c_spec_values *spec;
+>  	unsigned int su_sta_cnt, low_cnt, high_cnt, max_step_cnt;
+>  	unsigned int sda_max, sda_min, clk_ns, max_sta_cnt = 0x3f;
+> -	long long sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src;
+> +	unsigned int sample_ns = div_u64(1000000000ULL * (sample_cnt + 1),
+> +					 clk_src);
+>  
+>  	if (!i2c->dev_comp->timing_adjust)
+>  		return 0;
+> 
+
+
+-- 
+~Randy
 
 _______________________________________________
 linux-arm-kernel mailing list
