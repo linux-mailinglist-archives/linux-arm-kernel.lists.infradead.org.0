@@ -2,87 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00B201DADC1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 10:40:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D43B51DADCC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 10:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=E143cN1WRLY6pGX9tHFWbKEy5z73jP2eASgY0CfbTC4=; b=b5EqkNtQnd1SSa4UMQxaRhKjs
-	Amrfhev8BbrfRbMvrtZZnNONak4H3Dt+NRR2BYTMAVhvbDOzl6JXGlW/mMPOlDE4OWe8Akbtv/R0b
-	yQpG+Y02hlQBqAeGfT6yF2TMHMj8eCfTSs6CqWX+E94B7Uhg86Pm/vsEfRw882sZnaiqSO0lbim2H
-	AM/dLIYWASwi1du9GDrdTWA1ftiaICoR6mWZ9RiY9lmVZ8OKrXO6hQ8B+14HxC8+NKj7Ur8S6I1xM
-	uQb9nsddblntP2hMjssOlYNQpKlGNSLpxk+1wSjQrJ1IHNw6eZxRmyD6HLWR9EGdjgJJHRPiiSB4k
-	t9GmEzsAw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DtwMyU4kMjofO7E1ACgcZ9dklNtkuxJGCCwk6vINqUs=; b=NSbpTLoF3NKlGc
+	PKFVPItYrUk3n99kmT78fe1cjf9TeUFBrNV/WKCnkxV42zpoZZYgV9qeAOlpNuOGkVg/PARPUASvp
+	CMp6K0AS4ahOndASpeWFQdqq5Ifod0wdJY+76wUGSf8dKiCmk+q9scvJCNyxAjHFtJ7eVJUCT6o9K
+	lkdu2/yS5EYO7NOmoLECne4RkMVL+EkNBotz6EyOW9K79sEwUDgDlt486fPi92Wh7Yy3zaPWNM8LD
+	ZXPRn6G3XPRNHc7VBU7n61r5YzUC9UEJhasrzpaWwYFd1gzRvgAeqwlJNs1X9HicLqCvUoj0mnnOZ
+	upchKSwg+TDMWEYydSSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbKHP-00045S-P1; Wed, 20 May 2020 08:40:47 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1jbKKn-0004ZI-02; Wed, 20 May 2020 08:44:17 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbKHH-00044h-3v
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 08:40:40 +0000
-Received: by mail-ed1-x541.google.com with SMTP id e10so2138015edq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 01:40:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=mb7QfRxby7AgnFGtGNkrt8n1Z+I09eWHoPbIYOvFSUE=;
- b=HN5WshoEENtUHC//XetSGUywgC89HQlw72WmFsFajL0zjP4iecy9anYCQDmaPm9hix
- KPOSOkCNCc/L0NW4e3jomLfGoetbPVX82wmYqhfZakf5R3eZS4RSh6M7B9yide9u2vif
- M2/wFct8hwORZ13KWjh/VOKY/BA8qMkKshiqJuETntg2YBxnxnb6kZxS3d50UPg+kRBh
- lRypteSzxfVmFELrbz0slgBzdOVEjsZAO6nKJ3eebyNbxmDaNxXk6qkGkB4f2vLUWDjw
- WhF7ATHumIOcOsWLZVaYmCpAu07w43byyjaC7cW20t/B/2VBMV37wNGI9n4pDCg1kKei
- yVKQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=mb7QfRxby7AgnFGtGNkrt8n1Z+I09eWHoPbIYOvFSUE=;
- b=uLh1zrJUlMoamTKyWdAmpr8hZ+ZzqaQhl7K9u4up5ZV9CytGeZ4n/CricMqIq2qmXu
- EKGsNr8+lacs+r7pD2qTvx/O9E6zjEZxZc7qD3tGtPDFONrE7N9zbcAcUFuVHpoDk5vy
- n0zjZpTj3A1+bGuDeSzEGvfwaMBLBasEVmCJLwCBtFaHX4/yq388iADutBEl7hRwaNi8
- SjmJ4ubZfex6UCBgipjx115vd4vulLqj2MoJzd4rbfH2gQRhn8ugERMB1S4M0mTin0Jw
- 4ZvQ9MZemDCv6TSpI0hqMC+Xzsw5A32RMOtYqK0tpg0//+XrrKRA2yv6B0ilkJJk221K
- EnxQ==
-X-Gm-Message-State: AOAM531mm7cdm37BNW3kGMbrwUIbxrBBxHLjOheg4DVIQLscF9tYi/+A
- 1ZoKkjUQVjZAXTb54HxIGEY=
-X-Google-Smtp-Source: ABdhPJzG8f0TXlz0Nk/rGokoWRdNIDyW+F+nvg3m8ouKjflMeFxwi9VxHDp+21mYUW9jqy10ZbmoTg==
-X-Received: by 2002:a50:d0d7:: with SMTP id g23mr2455355edf.163.1589964037188; 
- Wed, 20 May 2020 01:40:37 -0700 (PDT)
-Received: from localhost (pd9e51079.dip0.t-ipconnect.de. [217.229.16.121])
- by smtp.gmail.com with ESMTPSA id dh15sm1196510edb.35.2020.05.20.01.40.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 01:40:33 -0700 (PDT)
-Date: Wed, 20 May 2020 10:40:32 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Mian Yousaf Kaukab <ykaukab@suse.de>
-Subject: Re: [PATCH 2/4] dt-bindings: sram: add documentation for
- reserved-only flag
-Message-ID: <20200520084032.GA2136208@ulmo>
-References: <20200512144803.24344-1-ykaukab@suse.de>
- <20200512144803.24344-2-ykaukab@suse.de>
- <52f099e4-5c03-2141-f049-cd3adeb04c5b@wwwdotorg.org>
- <20200513104127.GA2309@suse.de>
+ id 1jbKKZ-0004XU-N9; Wed, 20 May 2020 08:44:05 +0000
+X-UUID: d3f0d11871f44e949601b0de0728d015-20200520
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=u0K9CvT5HV61VJXYYwxkYfqIusTCbFNVtZQAS+tl34Q=; 
+ b=luKthv+eR0xrTVxdbHlaDd4k9oQjtvxMr/QNDzQKGBVUKw9IbG4QylxeWXGAnoUEIq/uuYTOjxDKqm+S7hmCBRf1LP5w90XZzJ/qxaky9IISaUKd/S1BYII6L8HUemO/mjkt0y2GYvQKFekhcMC1h6UiyTaAxcoNwHWFRhpoCf4=;
+X-UUID: d3f0d11871f44e949601b0de0728d015-20200520
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <qii.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 864790960; Wed, 20 May 2020 00:43:59 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 20 May 2020 01:43:54 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Wed, 20 May 2020 16:42:35 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 20 May 2020 16:42:34 +0800
+Message-ID: <1589964062.25512.67.camel@mhfsdcap03>
+Subject: Re: [PATCH v2 2/2] i2c: mediatek: Add i2c ac-timing adjust support
+From: Qii Wang <qii.wang@mediatek.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 20 May 2020 16:41:02 +0800
+In-Reply-To: <CAMuHMdXgp85PVteunxrHYcMTqFgQWHmXXCVJM_KX76xkCADMpw@mail.gmail.com>
+References: <1589461844-15614-1-git-send-email-qii.wang@mediatek.com>
+ <1589461844-15614-3-git-send-email-qii.wang@mediatek.com>
+ <CAMuHMdXjLakWDDEy=02prC7XjAs_xBnt2mArPFNwyHgUoWw6-g@mail.gmail.com>
+ <1589857073.25512.34.camel@mhfsdcap03>
+ <CAMuHMdXgp85PVteunxrHYcMTqFgQWHmXXCVJM_KX76xkCADMpw@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20200513104127.GA2309@suse.de>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+X-TM-SNTS-SMTP: 419D878692A456EACB25265C39EB5C4831837D6DCD95B04EF9B86113CAB6032B2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_014039_156127_6CBEF5EB 
-X-CRM114-Status: GOOD (  23.47  )
+X-CRM114-CacheID: sfid-20200520_014403_762923_A44E607F 
+X-CRM114-Status: GOOD (  27.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -91,6 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,139 +87,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, arnd@arndb.de,
- Stephen Warren <swarren@wwwdotorg.org>, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, jonathanh@nvidia.com, talho@nvidia.com,
- robh+dt@kernel.org, linux-tegra@vger.kernel.org, robin.murphy@arm.com,
- afaerber@suse.de, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4166868458441880173=="
+Cc: "open list:OPEN FIRMWARE AND FLATTENED
+ DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>, srv_heupstream@mediatek.com,
+ Wolfram Sang <wsa@the-dreams.de>, leilk.liu@mediatek.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-mediatek@lists.infradead.org, Linux
+ I2C <linux-i2c@vger.kernel.org>, Joe Perches <joe@perches.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Geert,
 
---===============4166868458441880173==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="EVF5PPMfhYS0aIcm"
-Content-Disposition: inline
+On Tue, 2020-05-19 at 09:14 +0200, Geert Uytterhoeven wrote:
+> Hi Qii,
+> 
+> On Tue, May 19, 2020 at 4:59 AM Qii Wang <qii.wang@mediatek.com> wrote:
+> > On Mon, 2020-05-18 at 17:44 +0200, Geert Uytterhoeven wrote:
+> > > On Thu, May 14, 2020 at 3:13 PM Qii Wang <qii.wang@mediatek.com> wrote:
+> > > > This patch adds a algorithm to calculate some ac-timing parameters
+> > > > which can fully meet I2C Spec.
+> > > >
+> > > > Signed-off-by: Qii Wang <qii.wang@mediatek.com>
+> > > > ---
+> > > >  drivers/i2c/busses/i2c-mt65xx.c | 328 +++++++++++++++++++++++++++++++++-------
+> > > >  1 file changed, 277 insertions(+), 51 deletions(-)
+> > > >
+> > > > diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
+> > > > index 0ca6c38a..7020618 100644
+> > > > --- a/drivers/i2c/busses/i2c-mt65xx.c
+> > > > +++ b/drivers/i2c/busses/i2c-mt65xx.c
+> > >
+> > > > +/*
+> > > > + * Check and Calculate i2c ac-timing
+> > > > + *
+> > > > + * Hardware design:
+> > > > + * sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src
+> > > > + * xxx_cnt_div =  spec->min_xxx_ns / sample_ns
+> > > > + *
+> > > > + * Sample_ns is rounded down for xxx_cnt_div would be greater
+> > > > + * than the smallest spec.
+> > > > + * The sda_timing is chosen as the middle value between
+> > > > + * the largest and smallest.
+> > > > + */
+> > > > +static int mtk_i2c_check_ac_timing(struct mtk_i2c *i2c,
+> > > > +                                  unsigned int clk_src,
+> > > > +                                  unsigned int check_speed,
+> > > > +                                  unsigned int step_cnt,
+> > > > +                                  unsigned int sample_cnt)
+> > > > +{
+> > > > +       const struct i2c_spec_values *spec;
+> > > > +       unsigned int su_sta_cnt, low_cnt, high_cnt, max_step_cnt;
+> > > > +       unsigned int sda_max, sda_min, clk_ns, max_sta_cnt = 0x3f;
+> > > > +       long long sample_ns = (1000000000 * (sample_cnt + 1)) / clk_src;
+> > >
+> > > So sample_ns is a 64-bit value. Is that really needed?
+> > >
+> >
+> > (1000000000 * (sample_cnt + 1)) / clk_src value is a 32-bit, (1000000000
+> > * (sample_cnt + 1)) will over 32-bit if sample_cnt is 7.
+> 
+> The intermediate value will indeed not fit in 32-bit.
+> But that doesn't mean the end result won't fit in 32-bit.
+> As you divide spec->min_low_ns and spec->min_su_dat_ns (which I assume
+> are small numbers) by sample_ns below, sample_ns cannot be very large,
+> or the quotient will be zero anyway.
+> So just doing the multiplication in 64-bit, followed by a 64-by-32
+> division is probably fine:
+> 
+>     unsigned int sample_ns = div_u64(1000000000ULL * (sample_cnt + 1), clk_src);
+> 
+> You may want to take precautions for the case where the passed value of
+> clk_src is a small number (can that happen?).
+> 
+> BTW, clk_get_rate() returns "unsigned long", while mtk_i2c_set_speed()
+> takes an "unsigned int" parent_clk, which may cause future issues.
+> You may want to change that to "unsigned long", along the whole
+> propagation path, and use div64_ul() instead of div_u64() above.
+> 
 
+The return type of div_u64 is u64(unsigned long long), there is a
+compulsory type conversion operator. Do you think it is needed?
+BTW, we just need to change the type of sample_ns to unsigned int, no
+matter which method is used, what is your opinion?
 
---EVF5PPMfhYS0aIcm
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> > I think 1000000000 and clk_src is too big, maybe I can reduce then with
+> > be divided all by 1000.
+> > example:
+> >
+> > unsigned int sample_ns;
+> > unsigned int clk_src_khz = clk_src / 1000;
+> 
+> That may cause too much loss of precision.
+> 
 
-On Wed, May 13, 2020 at 12:41:27PM +0200, Mian Yousaf Kaukab wrote:
-> On Tue, May 12, 2020 at 01:45:28PM -0600, Stephen Warren wrote:
-> > On 5/12/20 8:48 AM, Mian Yousaf Kaukab wrote:
-> > > Add documentation for the new optional flag added for SRAM driver.
-> >=20
-> > > diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Docum=
-entation/devicetree/bindings/sram/sram.yaml
-> >=20
-> > > +  reserved-only:
-> > > +    description:
-> > > +      The flag indicating, that only SRAM reserved regions have to b=
-e remapped.
-> > > +      remapping type is selected depending upon no-memory-wc as usua=
-l.
-> > > +    type: boolean
-> >=20
-> > This feels a bit like a SW flag rather than a HW description, so I'm not
-> > sure it's appropriate to put it into DT.
->=20
-> Reserved regions themselves are software descriptions, no? Then we have '=
-pool'
-> flag which is again a software flag and so on. This flag falls into same
-> category and nothing out of ordinary.
-> >=20
-> > Are there any cases where the SW should map all of the SRAM, i.e. where
-> > we wouldn't expect to set reserved-only? [...]
->=20
-> Yes, here are a few examples:
-> arch/arm/boot/dts/aspeed-g*.dtsi
+clk_src is more than MHz and less than GHZ for MTK i2c controller, so it
+wouldn't cause too much loss of precision.
 
-Looking at the implementation of the sole user of this, which is in
-drivers/fsi/fsi-master-ast-cf.c, it looks like this really should've
-specified a partition because the driver basically goes on to allocate
-a fixed 4 KiB region of memory anyway.
-
-> arch/arm/boot/dts/at91*.dtsi
-
-While these define SRAM nodes, I don't see them referenced anywhere.
-
-> arch/arm/boot/dts/bcm7445.dtsi
-> Then arch/arm/boot/dts/dra7.dtsi is an example where we should map everyt=
-hing
-> except the reserved region.
-
-The driver currently maps everything, so if this relies on this
-particular reserved region not being mapped then that's already broken
-anyway.
-
-> > [...] I'd expect reserved-only to be
-> > the default, and perhaps only, mode of operation for the SRAM driver.
->=20
-> It will break compatibility with existing dtbs.
-
-Yes, that's a bit unfortunate. I think this driver may suffer from a
-slightly ambiguous device tree binding and then people just trying to
-fit it to their use-cases.
-
-However, I think we could preserve DTB backwards-compatibility while at
-the same time correcting course and establish some sort of consistency.
-
-Looking at the examples that you've provided and others, there are two
-classes of users: users that don't specify any partitions either use all
-of the available SRAM exclusively or manually allocate some part of it,
-whereas users that have specified partitions all seem to use only the
-defined partitions.
-
-Given that, I think what we could do is check if there are any child
-nodes and if not, keep the existing behaviour of mapping the whole SRAM
-area. For cases where child nodes exist we could decide to go with the
-default that Stephen suggested and only map regions for which a child
-node has been defined.
-
-This should allow both categories of users to work the way that they
-were probably expected to work.
-
-Any thoughts?
-
-Thierry
-
---EVF5PPMfhYS0aIcm
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl7E7PsACgkQ3SOs138+
-s6HYyxAAkPk+vwNmlH7ETZWk+tDpu9p1jU53hBHo7thEwHCr+xFIaNlJFGmXWpOO
-62hcSRW2fLx8upTQ5D9z+/lB5q9G6Uu1vSWl3fLqDx7EkUBTo5V9llrbjUUmDNXJ
-rkMC3yYYfSPeXcQhkh+INMS3njREgduS3mJff6MbG6P6KTYd/sM67J5QxAX1CD0u
-rYH1mTanQW0CVRwY99yl1vIcYHL+PFNTDkQLt8zG2tvqTWYlHCbkNhHG2cQLFpoI
-wAwxgmnsD3ebq3/5UEH/1ba0x9XaRwMtzj/hNnG1EhqlQlpywfbOofy/xTz4LCgv
-Z1bBt6w2wvtAW665KtBUHPFVVqLdTmEiyAMyDfTcHeDUPuv6KjXTqZcFjTQ6cK/E
-MT0vPgePDZZ1CGqWa4vb6vWpkEvkAiXz5Bj3tZLHVyuKKtzLSjaneURKx8xYe6IH
-vrzQamDlLlooFHHM8vOLTKU0nA3vXgRN9bQZrrn4fZBMa+vUyM69xHuQ+/4l4VJg
-Aa0U0edhlzaX3067VcWJhZc+1VZ4OSLpH/JKEQfl3dPPM04e+yXtYelwpqaUWPwh
-tZ+vY6oS6MefZiXFvsskxbbHwhO71Sq7SCWdNrKE2qw5zFMx9LWskGFXGJehUIoT
-l54CPDD33NfU2N3T0j0Y6Pr5kPjKnaZq8NJQxMYBr3oZJZ/ix7s=
-=r/Os
------END PGP SIGNATURE-----
-
---EVF5PPMfhYS0aIcm--
-
-
---===============4166868458441880173==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> >
+> > if(clk_src_khz)
+> >         sample_ns = (1000000 * (sample_cnt + 1)) / clk_src_khz;
+> > else
+> >         return -EINVAL;
+> >
+> > > > +       if (!i2c->dev_comp->timing_adjust)
+> > > > +               return 0;
+> > > > +
+> > > > +       if (i2c->dev_comp->ltiming_adjust)
+> > > > +               max_sta_cnt = 0x100;
+> > > > +
+> > > > +       spec = mtk_i2c_get_spec(check_speed);
+> > > > +
+> > > > +       if (i2c->dev_comp->ltiming_adjust)
+> > > > +               clk_ns = 1000000000 / clk_src;
+> > > > +       else
+> > > > +               clk_ns = sample_ns / 2;
+> > > > +
+> > > > +       su_sta_cnt = DIV_ROUND_UP(spec->min_su_sta_ns, clk_ns);
+> > > > +       if (su_sta_cnt > max_sta_cnt)
+> > > > +               return -1;
+> > > > +
+> > > > +       low_cnt = DIV_ROUND_UP(spec->min_low_ns, sample_ns);
+> > >
+> > > So this is a 32-bit by 64-bit division (indeed, not 64-by-32!)
+> 
+> Gr{oetje,eeting}s,
+> 
+>                         Geert
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4166868458441880173==--
-
