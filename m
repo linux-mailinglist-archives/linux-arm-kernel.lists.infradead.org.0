@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 484B71DA7E6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 04:19:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 687971DA7EB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 04:21:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oG5lm2AKOw0AIT4N0oEuh+B6IcnvFhb6EKcTDkGErro=; b=mkfo9XcS23WhIk
-	pVQUqv1E5mIm9QacGRsRHYjE4fmFGwT8y2Z3wDR1QOmJf4ugsBwKRpttkIGfIxEhdhCSX6ZLOihcf
-	tqDy/5G2MDloUTmv9YDwAiTeaX1IYBojaGMaJ3GipSuRnaYdQsAm6TCgAqDfgfb6Zu4NlRxwAE1wF
-	52YrZMwhWuh+dHdKh1nvEU4df4ti/XZLmt3xgQ2RUV3YpRLZggn0uSz0uv/PUdeMdLiNkZiQczWXM
-	JVSetakTD5ydNQcwLdDKX6+SSP4ybfIhR/L0GsN8oQf+qX2hu3c9pnV6mMPFilFrz91i8Sd1PT6ap
-	97rs9/v1DmCGdIleCwLg==;
+	List-Owner; bh=GaYXETW/tWmQKyiNAWY9PFdQz4W38LNyHugl4GULCeo=; b=E5Ig1VMJCbbJma
+	qMpCOgS06ErA7wq/SnFVbih8xyv7j9YBKx5g0hXo/khs252AsPA78aR5Us9yM+mMLp5O/CWjkwCl8
+	nHuUCJSXyeUGC8B5Xm947Zeo6Ex4ypkI6NdZSMhvmOqucZZwWcytssTKMuhIRr4kAWnvEIDg8J7Yq
+	fIeQlq1+PsStI+FG/5FeUb/7aKP9U9HATbVRhovNr/FCV/B7OB2V1Qf+nvUvAxop25s7sEhNpvaVu
+	jI0psdnIv3ap7NUyXTSIIgG+UcyLYQWyWtLML/W1w5OYpvkt3L3XtQLmAHynl+1g6uZoamdOWT9Ai
+	z6mdGxDK7slH+G9p5hTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbEKh-00056G-Pz; Wed, 20 May 2020 02:19:47 +0000
+	id 1jbEMR-0007s9-96; Wed, 20 May 2020 02:21:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbEKX-00055w-HD
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 02:19:38 +0000
+ id 1jbEMF-0007rC-G0
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 02:21:24 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 94EA72070A;
- Wed, 20 May 2020 02:19:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 77F1E2075F;
+ Wed, 20 May 2020 02:21:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589941177;
- bh=3fXb+EI8ngopPkb4IHKZ5B7gS7wb6BillnmOQicLI1w=;
+ s=default; t=1589941283;
+ bh=mAwTctuHf09OxNHi2gNbrD3yitZssxXU6ldaR1VHUTw=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=NOWsdZKue7cvB+S0VdKBvrMGukCYla71N44Y4qdym1Nvje6ymhLLrT/reGSwoJLFq
- d9mVBvAy6mNdgjaWlzwmaT61Dm0fBKnJMmZKPFgI4/81df79NrFz09hGhlH/qQ8PiL
- JScZprkbKVrZ+UD3iCboLv0HvvM7q5DdWpzbQnTo=
-Date: Wed, 20 May 2020 10:19:32 +0800
+ b=H+t/vJ9r4Rfa+vyqCdkuBONcR2LEcDmnDS+s8/5DkK1HAbvTo8nbX4oRmVxG26VMW
+ sgR3xmNY4y5/0dmHkGdEXC/JWtRJlqQB/DmXbtsTkbqqpBpY+pdTuthH9l4d+e0UMh
+ 7y/30I4GQ+sQ7h8DNyrlUGIs+PfsxgqOCVeYB8Uc=
+Date: Wed, 20 May 2020 10:21:18 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Tim Harvey <tharvey@gateworks.com>
-Subject: Re: [PATCH] ARM: dts: imx6qdl-gw5910: fix wlan regulator
-Message-ID: <20200520021931.GQ11739@dragon>
-References: <1589320954-25219-1-git-send-email-tharvey@gateworks.com>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH 1/2] ARM: dts: imx6qdl: Use nvmem interface to get fuse
+ data
+Message-ID: <20200520022117.GR11739@dragon>
+References: <1589418528-26410-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1589320954-25219-1-git-send-email-tharvey@gateworks.com>
+In-Reply-To: <1589418528-26410-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_191937_588073_D40C4EBA 
-X-CRM114-Status: GOOD (  10.41  )
+X-CRM114-CacheID: sfid-20200519_192123_559849_7241D61F 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,23 +78,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 12, 2020 at 03:02:34PM -0700, Tim Harvey wrote:
-> Connect the wl_reg regulator to usdhc2 such that it can be enabled
-> and disabled as needed. There is no need for this to be always-on.
+On Thu, May 14, 2020 at 09:08:47AM +0800, Anson Huang wrote:
+> Although ocotp clock is always ON for i.MX6QDL, OCOTP can be
+> accessed directly, but since i.MX6QDL nvmem interface is supported,
+> and fsl,tempmon-data is deprecated, use it instead of getting fuse
+> data by reading ocotp directly, this makes all i.MX6 SoCs aligned.
 > 
-> Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
-Applied, thanks.
+Applied both, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
