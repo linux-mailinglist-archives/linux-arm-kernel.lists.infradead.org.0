@@ -2,82 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 069A91DA62F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 02:09:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A64371DA631
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 02:09:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X8VEmI0Wt0GvfFOHphTCUZqmc8avu5WLP8rStKguTt0=; b=KYcIiBd3h0lZbM
-	1FbYNrXe3Ilyd2UsZsDOHbmwIddQ9INyP/sYECGHAIhYeS8ULd70W9F7nAsgPUA+2pszZHBdecK2D
-	eXSFZXtl6HaWlA3NeLcIpWlQGC5Aeuoco6m4c+W0w0QWBHp+8i4xTnB30l+3kqc+KN6nkjkvOhw2Q
-	Dsnm4q4bi9BWWQcBp8WI8g/29MtpFdceTULEkcYh92ap5/txgn98z2hP1jY6Q9ee403e91QBqbQfu
-	wtEcYB9Wdo+4NWUYECZjiU4Fkln37ta2KtLNPI5f9u111l05rb19lGGhRy4Qmljmspnt/JIEkFN2T
-	REzBK/2FKGJSr1edmOmQ==;
+	List-Owner; bh=QvwzsTkE5zsJpuIsLT7jVbCsGOV4Ib/GbJquTgp6Xbo=; b=giWAy/M7dPujLm
+	OPLyAUpYBTKVZTeJSqfkmfFTz7jnSApXV8fNgi2S9lefJ5r2knEnPXXIRrcKebx+4dAu5Bl3yp4Nu
+	URBA69exZA4dWU62erHUx8R9vZzIUjcbVQ/hfi2PgouyAFUcf0SMUYkS3GqtBzja8tafTqKRP6B5r
+	x94Mo1KRfPMfbdKQKqCjsjnyh6sSMkZIYZ6EAbdiEF0mJbN6dOFPrGMdf6IE+ktjLsYfSlpxM7ZGk
+	kbw5hLHjMpr//yIuc5jTUr0WMyiCiq83eJ0ctjTmH5TJx1gsCgp5ZV8acXUqi1Mw47DK7nlQZ4rYk
+	tk9gxz4YeWDAif49SXlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbCId-0001rF-Le; Wed, 20 May 2020 00:09:31 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jbCIr-000295-Ez; Wed, 20 May 2020 00:09:45 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbCH4-0000cP-7M
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 00:07:56 +0000
-Received: by mail-pg1-x543.google.com with SMTP id t11so612402pgg.2
+ id 1jbCH4-0000fJ-VG
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 00:07:57 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id k7so422586pjs.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 17:07:53 -0700 (PDT)
+ Tue, 19 May 2020 17:07:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=nLMfwQbrlF1iv4LcSoROIabrcfKs0/jUzCRJPsjpM/g=;
- b=Gqo34c3m0MlNoFL+YXBmISvMCjL1uAr1dCIk+C2xcHpi/NSgJAkMkbIB54SVo3iPr2
- HaZgzNyTF1lmEeD7MvMTZmyASk+yYU+KRNjjuLz/gkNyajNTTMpy+westprggwgYHgeu
- H18O/XFDeMrrZ83+TekriuOSfUOKTYo0bQjBP5XEEJhAzPLW0eDyNm1lAycXCLgPH4my
- 5OkzNS9XRiDor39MYDWxeHHIJeNebLJIzM8O/UVe8sZHS6hWPl2jBe+/MjLVYqVeFwWD
- C1Qm8oJgZQMAeE32cJMZ0614HbLkp4WCrD4CJKa70EWir5uchhrv0+WONADhNEGNEUXk
- QOog==
+ bh=2OA6qojCM4dL1ZDG6HQpUSV9SSGjjyRfMb9hw1jALO0=;
+ b=WVsgcgCNQtJKJlbMEdp7w81j7Nm4YgeKnV3hBNnr2syOwz5DeApI1RIoXsQ59LoX63
+ UY2V0GnOOpscuwrDUIKdjfOccPjKFYNBrx6WwinSe0uALV9xqI4hb32/gERjn6v03kT9
+ 88RMzTiz2P6Kc5j6b9eSUdiiITnenAyFko0xZuusJ9PKBv+22iSTpQwetNCnQ2mXLQrl
+ gEcW6QAiB8RA+CWjieoN2uYCT65WXXbdXyjnLNVcWQCkulr5kwSMoopJ7fXaQkP4u97h
+ bT2iGKpFMCaPXKBUV7vdESsycvExKYcPZijw21Lp42FW2IB3AC8AfUzMhIdMk7uGC54E
+ TPDA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=nLMfwQbrlF1iv4LcSoROIabrcfKs0/jUzCRJPsjpM/g=;
- b=fIlzFTZgJt+WQ9dkwQ97gFnNywprzphmcvwR7WGJMles1hBpxPG3E3jfdi/+NAatXd
- o3ARHZQH55WsTzydWC5EHClAox80JsIFf1QA4zdbOliILMBgkkXQYaRuz2XZbycN0VDy
- LJ68/S8fSdbPS66GQDp1bY6zrd1W2ZABEP4G4mi89CpYhbdfoN+PVP7AWYntWYfHi7Gm
- U0vOKS8Jb7yaNP9IZW/Psy7zbK9c1eCPbVCH66WCL/Pp+Gvz9tvr9+Cg59JK16nZxm+H
- 85DGfusy67FsRhBUpOchWp2JgOBUveUbqfqLZIglZDSSDNghw0pHb8gqyUj1NgIgawmP
- sEFA==
-X-Gm-Message-State: AOAM531V0WSt8Xkby2YpjW9jMPFekggeoJWd5w+oENYz1XDaVJKWmnAx
- yyhAmzQxvsU+vs0Q+fTYUpLOJQ==
-X-Google-Smtp-Source: ABdhPJzsFZRQ9C+8oILR+S4MtBFIKYd2qCmva0PiBVlgTEiaWCLW5r8plQBhSkfJpMmL9SFle7gCyA==
-X-Received: by 2002:a63:7519:: with SMTP id q25mr1555590pgc.224.1589933272730; 
- Tue, 19 May 2020 17:07:52 -0700 (PDT)
+ bh=2OA6qojCM4dL1ZDG6HQpUSV9SSGjjyRfMb9hw1jALO0=;
+ b=MziqcH2U8bkiMVmLxsMuIZ7mrdZbvpB5FFesr6WUTZcvA3Lbwbt0GLbBQF6LpqBzht
+ v9yWya7gDKX+H5aHaz0rtdr/lM2QHnz7gXBB2oJuP8+fKHIY7gxH/ypuoPYRFCGlapvZ
+ jQXSCPabFYTg3zKqtNGKEEFeCqVXD8/zEA0l8K92wdvT/7Jice4YCO1PsJj7XAJ4NFao
+ HQ3d8n3MiTsRXKpgNMEUGiTGhOvRm/uvC3KXiSavisxtf+hlHBlm1aF6FNLi2jZLYJsg
+ 7HHiSI3hyDpcbSL86VLQh8JteEHq7WDreOJcSSBkaJOWzrHxw39yvIn6H7bMMQG5b/LM
+ Jpug==
+X-Gm-Message-State: AOAM530kl+RaZFGAiLdcxDX6BLItN/65kZ0LSn1jhrj8yu6IzNJ/6l/q
+ +4NDwSz8pp1qhsZRP4q5bi1/eA==
+X-Google-Smtp-Source: ABdhPJwtCswXSbkUSw9C97SOK8vFMtT5eKKDm0rsNrlGrcNSvzzkVB3d8v+6JdpLRZlhXKPaZGOWpg==
+X-Received: by 2002:a17:90a:3201:: with SMTP id
+ k1mr2111805pjb.202.1589933273730; 
+ Tue, 19 May 2020 17:07:53 -0700 (PDT)
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
  [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id go14sm504705pjb.42.2020.05.19.17.07.52
+ by smtp.gmail.com with ESMTPSA id w19sm490543pfc.95.2020.05.19.17.07.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 May 2020 17:07:52 -0700 (PDT)
+ Tue, 19 May 2020 17:07:53 -0700 (PDT)
 From: Kevin Hilman <khilman@baylibre.com>
 To: linux-amlogic@lists.infradead.org,
  Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH 0/2] ARM: dts: meson8b/m2: RGMII improvements
-Date: Tue, 19 May 2020 17:07:46 -0700
-Message-Id: <158993320300.34448.6005768486014716103.b4-ty@baylibre.com>
+Subject: Re: [PATCH for-5.8 v1 1/1] ARM: dts: meson8m2: Use the Meson8m2
+ specific USB2 PHY compatible
+Date: Tue, 19 May 2020 17:07:47 -0700
+Message-Id: <158993320300.34448.17484160743878386596.b4-ty@baylibre.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200512215148.540322-1-martin.blumenstingl@googlemail.com>
-References: <20200512215148.540322-1-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20200515202520.1487514-1-martin.blumenstingl@googlemail.com>
+References: <20200515202520.1487514-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_170754_559204_F2CF828C 
-X-CRM114-Status: GOOD (  15.06  )
+X-CRM114-CacheID: sfid-20200519_170755_275112_D7AF898B 
+X-CRM114-Status: UNSURE (   7.40  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,44 +98,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 12 May 2020 23:51:46 +0200, Martin Blumenstingl wrote:
-> the fist patch in this series connects FCLK_DIV2 to the PRG_ETH
-> "additional" registers for the dwmac Ethernet controller.
-> Now that we know how RGMII and FCLK_DIV2 are connected we can
-> add this dependency to get rid of CLK_IS_CRITICAL for FCLK_DIV2
-> at some point.
-> 
-> The second patch fixes the RX and TX delay. The 4ns TX delay which
-> we have used so far is incorrect and only worked because we were
-> using an unsupported clock divider in the PRG_ETH registers. That
-> divider has been fixed with commit bd6f48546b9c ("net: stmmac:
-> dwmac-meson8b: Fix the RGMII TX delay on Meson8b/8m2 SoCs").
-> Instead of "just" fixing the TX delay we can even do better and
-> switch to phy-mode = "rgmii-id" to let the PHY generate the RX
-> and TX delay. However, previously we didn't know that there was
-> an RX delay applied by the MAC on these boards. Only the additional
-> information from Jianxin in the other series [0] made us aware
-> of this. Without the other series there will be a 4ns RX delay
-> (2ns from the MAC and additional 2ns from the PHY). Due to this
-> dependency I did not add a Fixes tag, because backporting these
-> .dts patches without their runtime dependency will break stable
-> kernels.
-> 
-> [...]
+On Fri, 15 May 2020 22:25:20 +0200, Martin Blumenstingl wrote:
+> Use the Meson8m2 specific USB2 PHY compatible string. The 3.10 vendor
+> kernel has at least one known difference between Meson8 and Meson8m2:
+> Meson8m2 sets the ACA_ENABLE bit while Meson8 doesn't.
 
 Applied, thanks!
 
-[1/2] ARM: dts: meson: Add the Ethernet "timing-adjustment" clock
-      commit: b632506c5af22a9a7c63674fc605d24cf94d585b
-[2/2] ARM: dts: meson: Switch existing boards with RGMII PHY to "rgmii-id"
-      commit: 005231128e9e97461e81fa32421957a7664317ca
+[1/1] ARM: dts: meson8m2: Use the Meson8m2 specific USB2 PHY compatible
+      commit: f5a7382d6f176e29e4fd9d733b93d5b93771a7e4
 
 Best regards,
 -- 
