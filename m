@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A97E1DB550
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 15:40:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A84B81DB565
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 15:43:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=asmxRc8si9Nw6+woXqLLHqlq0K7Di5sF3kHjHucBaHU=; b=q0+hjhFlg5/IWn
-	lPb412ax1L5ABTohBhKrYkcWf9s8mB0XAlVkcMM1fdp06RoAkZRO74d1OUl07liyB11gVEHOf1AsG
-	qs7OyWxO8JE6NSwS1HMlHFtZe9eOfEiQmBYpczslruIHp8oO7BCjIU7vLXTFxJ4kp/7jkhp969+Rl
-	yWvtE0pL7/zR4eL37sAjsI7ThGFbXjVOWdikgUKXxGhJiwC2FYI+fufwXQUjYnqn9d3Me1nrHpmV5
-	m/8xRBT2949FCRxQkzpQCNvtomjsCJ4ON4JJCPRlmHrqDD1a8XJhN6UCSkgRmtETyNfS9nPS+iqXH
-	EqprAqmg1/ANsZjkK59w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=N6EOfCwCpCnhzCSqVFqvYjXIwrB5ObAhOAwSw63cktA=; b=dOFW6nGHxfkQjmc7wqPcWuI/E
+	mYlKnbwUAwQDf7I5jvVtEVz1SW0COn/ypBvIhufBtHCGUbDZFRtFG0M9ZWZhEEuL5uXp2+GiwUZXa
+	2PWLVM50AcowAcZF8uOZgAHUteX7QqsxAivozfDTsD8Xncq0A69XwlHltqdd/z5Wa9fGT937smxEo
+	+mtKPxjoU11yEjlCmai0VacBQSqGyIracxZq8eN3L1ym5i5vUzPi24w6m8vIhCfSm7APx+fz7ziCB
+	91zShSSkoZnOgon+eQHHiaIltk7GaJ6OW4MibHKyhdJNybkx4Kenl1Gq4WZqzHSh6OcqSlOX7ehGd
+	Af/JCs3+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbOxJ-0000Oa-MK; Wed, 20 May 2020 13:40:21 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jbP0d-0004FG-Qv; Wed, 20 May 2020 13:43:47 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbOws-0000Mg-EA
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 13:40:00 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04KDZUki013233; Wed, 20 May 2020 15:39:42 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=Ra6W9fZReLRTQrx+lu7bVII6kYd76LIwYkwWDAY0Cqo=;
- b=L3lFrasvXkvpYdrWyPK63OLsSj360TP3KX1jqMA1OYkfPfFg5x7bT4/Ad0J+1XuhTBY9
- 6WvSEt9LMyK06Yt1nEwXV6AOFuk/fTCRZBgSqdRmC03uPiw2ADxAPEYEQ6njiJAv1fhJ
- V9yBftCK6A1UFE2Pdx5tgFvQTmR9kE0p/nMArswPm2lF6SsF3Bo6/GpffqLXvinxOAfX
- eKIEpVbyAIlCgV1i7CcJMl3KuODXi0sTIeVlCFMVsjfUK367TvdNmWbjKZXvwp/qWHSM
- toBRKt6rM74mhhV51wulH22H22wVznKZyjFqIxjPdOiyOyidIvI7mzmfbKGA3/gKTYbQ WA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3125xy0jfg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 20 May 2020 15:39:42 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 72FE310002A;
- Wed, 20 May 2020 15:39:42 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5B0B32C38AA;
- Wed, 20 May 2020 15:39:42 +0200 (CEST)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE1.st.com (10.75.127.7)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 20 May 2020 15:39:41
- +0200
-From: Erwan Le Ray <erwan.leray@st.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring
- <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@st.com>,
- Sumit Semwal <sumit.semwal@linaro.org>
-Subject: [PATCH 2/2] serial: stm32: Use generic DT binding for announcing
- RTS/CTS lines
-Date: Wed, 20 May 2020 15:39:32 +0200
-Message-ID: <20200520133932.30441-3-erwan.leray@st.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200520133932.30441-1-erwan.leray@st.com>
-References: <20200520133932.30441-1-erwan.leray@st.com>
+ id 1jbP0V-0004E9-FO
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 13:43:40 +0000
+Received: by mail-ed1-x542.google.com with SMTP id b91so3116163edf.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 May 2020 06:43:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=h59qBA70ccgJYgPSbgtDIOfg5Wc3La436ik9+lkAxFw=;
+ b=agrseHPYKmVDUxXLset3XicNJHpIkMFU5OHTpx1lED4Hf4QOMSMea3aSV82pbnvG7Q
+ CqVhuRF6wLnSgrRzV5FOIT9Cs1IPxkW9SK4cY2GGO5X2kHbFUg3zcuxI6JQDo5yGEUvS
+ D3GYa+YnrmFAVkP0MnnSbB+EETv8axSnqaxcpQaqVfkOQ5kXm4rOWnP/OP1k1Iyz7p9S
+ g1dEpajED2IvCQbf2ag0Ar944ycE35c5MQ+c7EvP0He6bkqFPYPgUTsi6XpX+fujJpIr
+ 1odOyFpQARRnMOS3K6umhjlo2t3YijnUM+3NrFE1rJo+5IVsDERXQxl4c5Su+MYMMM6p
+ Sx0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=h59qBA70ccgJYgPSbgtDIOfg5Wc3La436ik9+lkAxFw=;
+ b=SCL7KGXP/Hq8bEGkifOpIU6kQ66xgyslxtb347/5yNdJtT5HkYHuHA2ugBxEP2leRG
+ 8zi0pGTI/+i37+Zee/jw1ECnIiFD0mmLRyh7q/wf0K8g9mVCTo8WmLf3n/uvQdPeU3YT
+ +m08GO5YqWHe40NBiNNqUCC6BRCAn5lk/n+2GM2bGkbe3aXDgjKktHk8ezHHEPx56U+l
+ gtfUX5DVRf18Gjgoianu8KYxQ1QcEpqPT6NybcL1jPOmt4OC2JVRaiJCRIZJ/cqcjc3e
+ iyqOjcNM6yNrYaxvyYQlH7ep7kOM1/wZQ8PD+2jfSZjbuhh7bZcJLQ0mDr/4PMpWQCIz
+ 4t5Q==
+X-Gm-Message-State: AOAM5330W/6BMNbp/QWlCfQ0dAysUsl5nAnPjMNg0ahjV3dqiu4vcVa3
+ AuXNdKmOZysqouFn8+bK83o=
+X-Google-Smtp-Source: ABdhPJwSlZJ1cQRFJMbMaVagTuIpwp5Vu7wc2K8JIQda40UPgtYN7OkqLV2TEoE5kMSsB+srCeYTZQ==
+X-Received: by 2002:aa7:c3cb:: with SMTP id l11mr3279208edr.364.1589982217868; 
+ Wed, 20 May 2020 06:43:37 -0700 (PDT)
+Received: from localhost (pd9e51079.dip0.t-ipconnect.de. [217.229.16.121])
+ by smtp.gmail.com with ESMTPSA id y18sm1910144ejb.87.2020.05.20.06.43.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 20 May 2020 06:43:36 -0700 (PDT)
+Date: Wed, 20 May 2020 15:43:35 +0200
+From: Thierry Reding <thierry.reding@gmail.com>
+To: arm@kernel.org, soc@kernel.org
+Subject: Re: [GIT PULL 11/11] arm64: tegra: Device tree changes for v5.8-rc1
+Message-ID: <20200520134335.GA2147362@ulmo>
+References: <20200515145311.1580134-1-thierry.reding@gmail.com>
+ <20200515145311.1580134-12-thierry.reding@gmail.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG6NODE2.st.com (10.75.127.17) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-20_09:2020-05-20,
- 2020-05-20 signatures=0
+In-Reply-To: <20200515145311.1580134-12-thierry.reding@gmail.com>
+User-Agent: Mutt/1.13.1 (2019-12-14)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_063958_969030_0195C2F8 
-X-CRM114-Status: GOOD (  12.22  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200520_064339_511497_9EBBF62F 
+X-CRM114-Status: GOOD (  13.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [thierry.reding[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,43 +99,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linaro-mm-sig@lists.linaro.org, Erwan Le Ray <erwan.leray@st.com>,
- linux-serial@vger.kernel.org, Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Jon Hunter <jonathanh@nvidia.com>
+Content-Type: multipart/mixed; boundary="===============2763940002297800491=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support of generic DT binding for annoucing RTS/CTS lines. The initial
-binding 'st,hw-flow-control' is not needed anymore since generic binding
-is available, but is kept for backward compatibility.
 
-Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
+--===============2763940002297800491==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="45Z9DzgjV8m4Oswq"
+Content-Disposition: inline
 
-diff --git a/drivers/tty/serial/stm32-usart.c b/drivers/tty/serial/stm32-usart.c
-index 17c2f3276888..9cfcf355567a 100644
---- a/drivers/tty/serial/stm32-usart.c
-+++ b/drivers/tty/serial/stm32-usart.c
-@@ -1033,8 +1033,9 @@ static struct stm32_port *stm32_of_get_stm32_port(struct platform_device *pdev)
- 	if (WARN_ON(id >= STM32_MAX_PORTS))
- 		return NULL;
- 
--	stm32_ports[id].hw_flow_control = of_property_read_bool(np,
--							"st,hw-flow-ctrl");
-+	stm32_ports[id].hw_flow_control =
-+		of_property_read_bool (np, "st,hw-flow-ctrl") /*deprecated*/ ||
-+		of_property_read_bool (np, "uart-has-rtscts");
- 	stm32_ports[id].port.line = id;
- 	stm32_ports[id].cr1_irq = USART_CR1_RXNEIE;
- 	stm32_ports[id].cr3_irq = 0;
--- 
-2.17.1
 
+--45Z9DzgjV8m4Oswq
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, May 15, 2020 at 04:53:11PM +0200, Thierry Reding wrote:
+> Hi ARM SoC maintainers,
+>=20
+> The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f31=
+36:
+>=20
+>   Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+>=20
+> are available in the Git repository at:
+>=20
+>   git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegr=
+a-for-5.8-arm64-dt
+>=20
+> for you to fetch changes up to 74265112c60be0209817c682ba68661c05da1d38:
+>=20
+>   arm64: tegra: Enable VI I2C on Jetson Nano (2020-05-15 16:28:58 +0200)
+
+Hi Arnd, Olof,
+
+Actually, can you hold off on merging this for a little bit? I'd like to
+send out a v2 of this because I noticed that...
+
+> Thanks,
+> Thierry
+>=20
+> ----------------------------------------------------------------
+> arm64: tegra: Device tree changes for v5.8-rc1
+>=20
+> This contains a couple of fixes for minor issues, enables XUDC support
+> on Tegra194, and enables EMC frequency scaling and video capture on
+> Tegra210.
+>=20
+> ----------------------------------------------------------------
+> Jon Hunter (2):
+>       arm64: tegra: Fix ethernet phy-mode for Jetson Xavier
+>       arm64: tegra: Allow the PMIC RTC to wakeup Jetson Xavier
+>=20
+> Joseph Lo (1):
+>       arm64: tegra: Add external memory controller node for Tegra210
+
+=2E.. this patch contains some leftover changelog notes that I forgot to
+remove.
+
+There's also one fix missing from this that I was meaning to apply for
+v5.8 which will enable suspend/resume on Tegra186.
+
+Thanks,
+Thierry
+
+--45Z9DzgjV8m4Oswq
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl7FNAMACgkQ3SOs138+
+s6HMZA/+MDhiKjzKLTBXaFCViGhljWnkYbbcdtQ9879RRMEWQr2nvsaDt0gA5cgK
+iPfID6QX2ozJdm3frwXd+fetK9Q7bre/WBR6/mc8YvZ5wywG/AFGbp9u0Wfy5+KG
+6yLJHH56oyxZfl+eiKOkjo95ighOEpN5F2u5UCwDJDxMRSnzk5XjVRIJ+rzQUpMh
+Og5v7iW8HkIf+QGXOFKfj2gXOA4WQODFj+HEQ0NU84vQ0DQMEtcfuR+/zcd0NN17
+qSGwwXqSpOxEcrxo6xL3qmAZR8AQCW/ol1X3tSsFhIkIo/8HMiBcs6Ye+bLdjj6i
+G+HBcW8cOPYep8tpWDZEcYYQot1i9GQ+MSu5Bcf/2Lp3YIXlvUEUG/IGUpnrcUr+
+LDN9bPl2QbUCcBOomlH+JbwoFWzHbqY3vmn0SxokzSiOISzcEPAA1w3BdrNo/9Q8
+p/oPMb5sp/8WaS8VKOrDOSjFAOhT7GIee22DavViP5rOz51GhLdU+QR8JREkYEbU
+AJvNeTtq7bHxp1N4np6T19ecteoYi7GQd0PEp8r/v3lq5IifAV78aqrTN5zVSyfM
+J01Fbe9QylyVAltrfcjG4inIJKMaI6SvVObP9k98oeAG0/eR47yP1ClkA2tCgzBG
+pia81SqLe8vTmEqVjyH042JwIYjZSSpWFO1eWYtH7PaODZnCD1A=
+=AGae
+-----END PGP SIGNATURE-----
+
+--45Z9DzgjV8m4Oswq--
+
+
+--===============2763940002297800491==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2763940002297800491==--
+
