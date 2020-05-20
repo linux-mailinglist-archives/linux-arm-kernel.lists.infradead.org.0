@@ -2,79 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76DB01DAC45
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 09:34:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C0EA1DAC25
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 09:30:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GBZBKuaK8UmQqpntO7970XaHlA3sTCoP9LW+S4hfp8A=; b=oZtxGsnSQ8izBp
-	UWG5c9i1rIsCjk8ObkHA4F2uD6p8qnclMb5tFE36QwLfDMkkdPmBH3rw6DqLXqU0hOGqQduv20WZL
-	hb8f3Sj/JZ4Sef7JAToL3f+x2GnNUQUsuMo8rxxARq6dBvwYDTDQT2+sSf/D2wAS2bviFoTi/tG0c
-	Igzlvbe/EtN+9cBnVfkpk8/H8B+VOM48O9uj7U4UrgjSl9e9rkeAkLL6Wx5ZQ0qnDAbI+NMZzaI6G
-	+7a1DrnK3UAJiZgeRNqqfQAOqyYs2vs/Ql1FrBZhZidhM8g+iFmKAHldndhuCSxOfAp+xjnfI/6nC
-	IGDALFOHogDSxhW6QW7w==;
+	List-Owner; bh=Hf4m1+3QqBJEMotuitfYtyODllfrvQCpIjfA8WfQZOg=; b=ZPA3Zo6sp+lolF
+	TC3aGSUXNKgaTWplotpW7IZIyISokkDGuaQ70wznQYBs89MMj31ZAY0CKwSLjuXI5J5/OAaPnejoC
+	a6fTw0pLdR+o3HO1+eqNIJab+GnHTIqVt8H0UwIBeMcX1m3RbvIB14o5bAEHr22zAYpEZpEgiBxRX
+	Mu5uw2qo4F6owI1BjFP7u5aJBWT0mDaEbamT9I/Dq0u2/OPJi9kEnOh6CrgUrhsBmXBsuoZ4aO6nT
+	4+aaZGmtnVRbi6LzZ5lweOG6OdANmkxW9jttoDo4/GU8DWZXnF5aYHSsQTFui+HxZJNYZp8aUstik
+	WqfaAJ0/fClnnhgn7efw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbJEq-0002lm-47; Wed, 20 May 2020 07:34:04 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jbJBU-0007oZ-Dv; Wed, 20 May 2020 07:30:36 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbJET-0002Yj-On; Wed, 20 May 2020 07:33:43 +0000
-X-UUID: 7a7cded23036422bbf1ec14a41dae522-20200519
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=x7Ix7wIXALpP6Po6n+AWWCWKLuf6w1Ut3QGKm4+Qrs0=; 
- b=UYcl7bgTL/NsBWttvF9QFjJqD3OpeqXG7MKxvQ0jiRNwzfb3ucqS9ZA26MT5VeAzaWnCGukE344gyp4OucduX0fF5B8migELtKICRDjMkHLLXvtqGkzxfcCt8so8vjsJm2JWCtnbZ9zSXO1CXLt66biAbOXc5EtnWN656nJrPXs=;
-X-UUID: 7a7cded23036422bbf1ec14a41dae522-20200519
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 93966226; Tue, 19 May 2020 23:33:40 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 00:23:35 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 15:23:27 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 20 May 2020 15:23:27 +0800
-Message-ID: <1589959408.7715.7.camel@mtkswgap22>
-Subject: Re: [PATCH v3 5/5] scsi: ufs: Fix possible VCC power drain during
- runtime suspend
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Date: Wed, 20 May 2020 15:23:28 +0800
-In-Reply-To: <6d32fba1-f7c3-f043-42b6-0da065e9795b@codeaurora.org>
-References: <20200516174615.15445-1-stanley.chu@mediatek.com>
- <20200516174615.15445-6-stanley.chu@mediatek.com>
- <6d32fba1-f7c3-f043-42b6-0da065e9795b@codeaurora.org>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jbJB5-0007lp-Vp
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 20 May 2020 07:30:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=In-Reply-To:Content-Transfer-Encoding:
+ Content-Type:MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:
+ Sender:Reply-To:Content-ID:Content-Description;
+ bh=7QnxAPMxYiFYDEhgYWfI0oQ3Qn6LWsicljZhX5L/INw=; b=ZOExHZ77WX7beYViG5D2lNqOhe
+ 6nGLhN5QFV6u8+BvA9Eby+dDoWGDm7sLVyXo9IxSd0vNEIfnD3AhVOMAVhZgTN10XMhtwC9ZQHZPw
+ Xi0cnAY1HT2NyCoFuy3oHwWrQzKyiazIbR8BaVCbPZ0k6fkUTXiuBVkz4la4UTrc/VK8fm/G26B5k
+ OGOjdQhUlg4i1uYwMcVh2h1PO74R9ZF/8i+lF6KDjFg56ureNa5EfEEjux+oQ14uQWpW7u5l8rcab
+ l6XyIZ9yltiOx0oIE4h85J/8irW82CYdyWkssB920Eo5CElmBBl5bN90uk4HIHyoGf3PMh3kl/dsP
+ d3wCALtw==;
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbJB2-0004AF-67
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 07:30:10 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <pza@pengutronix.de>)
+ id 1jbJ8m-0005fd-1O; Wed, 20 May 2020 09:27:48 +0200
+Received: from pza by ptx.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <pza@pengutronix.de>)
+ id 1jbJ8l-00021e-8e; Wed, 20 May 2020 09:27:47 +0200
+Date: Wed, 20 May 2020 09:27:47 +0200
+From: Philipp Zabel <pza@pengutronix.de>
+To: Jim Quinlan <james.quinlan@broadcom.com>
+Subject: Re: [PATCH 07/15] PCI: brcmstb: Add control of rescal reset
+Message-ID: <20200520072747.GB5213@pengutronix.de>
+References: <20200519203419.12369-1-james.quinlan@broadcom.com>
+ <20200519203419.12369-8-james.quinlan@broadcom.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 3B5D2DD1F965F138CE1099F2E31E5F9F6B99042E6C4CAF4988037835AD6A6D8E2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200519203419.12369-8-james.quinlan@broadcom.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:17:38 up 90 days, 14:48, 112 users,  load average: 0.07, 0.35,
+ 0.32
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: pza@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_003341_865656_9BDC2408 
-X-CRM114-Status: GOOD (  26.46  )
-X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+X-CRM114-CacheID: sfid-20200520_083008_389984_A6D11ACB 
+X-CRM114-Status: GOOD (  25.28  )
+X-Spam-Score: -1.9 (-)
+X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
+ Content analysis details:   (-1.9 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,211 +91,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- cang@codeaurora.org, linux-mediatek@lists.infradead.org,
- peter.wang@mediatek.com, alim.akhtar@samsung.com, matthias.bgg@gmail.com,
- bvanassche@acm.org, linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
+ <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Asutosh,
-
-Thanks for your review.
-
-On Tue, 2020-05-19 at 09:27 -0700, Asutosh Das (asd) wrote:
-> Hi Stanley,
-> 
-> On 5/16/2020 10:46 AM, Stanley Chu wrote:
-> > The commit "scsi: ufs: Fix WriteBooster flush during runtime
-> > suspend" promises essential resource, i.e., for UFS devices doing
-> > WriteBooster buffer flush and Auto BKOPs. However if device
-> > finishes its job but not resumed for a very long time, system
-> > will have unnecessary power drain because VCC is still supplied.
-> > 
-> > To fix this, a method to recheck the threshold of keeping VCC
-> > supply is required. However, the threshold recheck needs to
-> > re-activate the link because the decision depends on the device
-> > status.
-> > 
-> > Introduce a delayed work to force runtime resume after a certain
-> > delay during runtime suspend. This makes threshold recheck simpler
-> > which will be done in the next runtime-suspend.
-> > 
-> > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> > ---
-> 
-> Is there a reason to have this code as a separate patch?
-> [1] Commit: "scsi: ufs: Fix WriteBooster flush during runtime suspend" 
-> introduces 'keep_curr_dev_pwr_mode' and the very next change (this one) 
-> removes it.
-> Do you think this change and [1] should be merged?
-
-Yes, these 2 patches shall be merged. I will do it in next version.
-
-> 
-> >   drivers/scsi/ufs/ufs.h    |  1 +
-> >   drivers/scsi/ufs/ufshcd.c | 43 ++++++++++++++++++++++++++++++++++-----
-> >   drivers/scsi/ufs/ufshcd.h |  1 +
-> >   3 files changed, 40 insertions(+), 5 deletions(-)
-> > 
-> > diff --git a/drivers/scsi/ufs/ufs.h b/drivers/scsi/ufs/ufs.h
-> > index db07eedfed96..c70845d41449 100644
-> > --- a/drivers/scsi/ufs/ufs.h
-> > +++ b/drivers/scsi/ufs/ufs.h
-> > @@ -574,6 +574,7 @@ struct ufs_dev_info {
-> >   	u32 d_ext_ufs_feature_sup;
-> >   	u8 b_wb_buffer_type;
-> >   	u32 d_wb_alloc_units;
-> > +	bool b_rpm_dev_flush_capable;
-> >   	u8 b_presrv_uspc_en;
-> >   };
-> >   
-> > diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> > index f4f2c7b5ab0a..a137553f9b41 100644
-> > --- a/drivers/scsi/ufs/ufshcd.c
-> > +++ b/drivers/scsi/ufs/ufshcd.c
-> > @@ -94,6 +94,9 @@
-> >   /* default delay of autosuspend: 2000 ms */
-> >   #define RPM_AUTOSUSPEND_DELAY_MS 2000
-> >   
-> > +/* Default delay of RPM device flush delayed work */
-> > +#define RPM_DEV_FLUSH_RECHECK_WORK_DELAY_MS 5000
-> > +
-> >   /* Default value of wait time before gating device ref clock */
-> >   #define UFSHCD_REF_CLK_GATING_WAIT_US 0xFF /* microsecs */
-> >   
-> > @@ -5310,7 +5313,7 @@ static bool ufshcd_wb_presrv_usrspc_keep_vcc_on(struct ufs_hba *hba,
-> >   	return false;
-> >   }
-> >   
-> > -static bool ufshcd_wb_keep_vcc_on(struct ufs_hba *hba)
-> > +static bool ufshcd_wb_need_flush(struct ufs_hba *hba)
-> >   {
-> >   	int ret;
-> >   	u32 avail_buf;
-> > @@ -5348,6 +5351,21 @@ static bool ufshcd_wb_keep_vcc_on(struct ufs_hba *hba)
-> >   	return ufshcd_wb_presrv_usrspc_keep_vcc_on(hba, avail_buf);
-> >   }
-> >   
-> > +static void ufshcd_rpm_dev_flush_recheck_work(struct work_struct *work)
-> > +{
-> > +	struct ufs_hba *hba = container_of(to_delayed_work(work),
-> > +					   struct ufs_hba,
-> > +					   rpm_dev_flush_recheck_work);
-> > +	/*
-> > +	 * To prevent unnecessary VCC power drain after device finishes
-> > +	 * WriteBooster buffer flush or Auto BKOPs, force runtime resume
-> > +	 * after a certain delay to recheck the threshold by next runtime
-> > +	 * supsend.
-> > +	 */
-> > +	pm_runtime_get_sync(hba->dev);
-> > +	pm_runtime_put_sync(hba->dev);
-> > +}
-> > +
-> >   /**
-> >    * ufshcd_exception_event_handler - handle exceptions raised by device
-> >    * @work: pointer to work data
-> > @@ -8164,7 +8182,6 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
-> >   	enum ufs_pm_level pm_lvl;
-> >   	enum ufs_dev_pwr_mode req_dev_pwr_mode;
-> >   	enum uic_link_state req_link_state;
-> > -	bool keep_curr_dev_pwr_mode = false;
-> >   
-> >   	hba->pm_op_in_progress = 1;
-> >   	if (!ufshcd_is_shutdown_pm(pm_op)) {
-> > @@ -8224,11 +8241,12 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
-> >   		 * Hibern8, keep device power mode as "active power mode"
-> >   		 * and VCC supply.
-> >   		 */
-> > -		keep_curr_dev_pwr_mode = hba->auto_bkops_enabled ||
-> > +		hba->dev_info.b_rpm_dev_flush_capable =
-> > +			hba->auto_bkops_enabled ||
-> >   			(((req_link_state == UIC_LINK_HIBERN8_STATE) ||
-> >   			((req_link_state == UIC_LINK_ACTIVE_STATE) &&
-> >   			ufshcd_is_auto_hibern8_enabled(hba))) &&
-> > -			ufshcd_wb_keep_vcc_on(hba));
-> > +			ufshcd_wb_need_flush(hba));
-> >   	}
-> >   
-> >   	if (req_dev_pwr_mode != hba->curr_dev_pwr_mode) {
-> > @@ -8238,7 +8256,7 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
-> >   			ufshcd_disable_auto_bkops(hba);
-> >   		}
-> >   
-> > -		if (!keep_curr_dev_pwr_mode) {
-> > +		if (!hba->dev_info.b_rpm_dev_flush_capable) {
-> >   			ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
-> >   			if (ret)
-> >   				goto enable_gating;
-> > @@ -8295,9 +8313,16 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
-> >   	if (hba->clk_scaling.is_allowed)
-> >   		ufshcd_resume_clkscaling(hba);
-> >   	hba->clk_gating.is_suspended = false;
-> > +	hba->dev_info.b_rpm_dev_flush_capable = false;
-> >   	ufshcd_release(hba);
-> >   out:
-> > +	if (hba->dev_info.b_rpm_dev_flush_capable) {
-> > +		schedule_delayed_work(&hba->rpm_dev_flush_recheck_work,
-> > +			msecs_to_jiffies(RPM_DEV_FLUSH_RECHECK_WORK_DELAY_MS));
-> > +	}
-> > +
-> >   	hba->pm_op_in_progress = 0;
-> > +
-> Nitpick; newline, perhaps?
-
-Thanks, I Will remove it.
-
-> 
-> >   	if (ret)
-> >   		ufshcd_update_reg_hist(&hba->ufs_stats.suspend_err, (u32)ret);
-> >   	return ret;
-> > @@ -8386,6 +8411,11 @@ static int ufshcd_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
-> >   	/* Enable Auto-Hibernate if configured */
-> >   	ufshcd_auto_hibern8_enable(hba);
-> >   
-> > +	if (hba->dev_info.b_rpm_dev_flush_capable) {
-> > +		hba->dev_info.b_rpm_dev_flush_capable = false;
-> > +		cancel_delayed_work(&hba->rpm_dev_flush_recheck_work);
-> > +	}
-> > +
-> >   	/* Schedule clock gating in case of no access to UFS device yet */
-> >   	ufshcd_release(hba);
-> >   
-> > @@ -8859,6 +8889,9 @@ int ufshcd_init(struct ufs_hba *hba, void __iomem *mmio_base, unsigned int irq)
-> >   						UFS_SLEEP_PWR_MODE,
-> >   						UIC_LINK_HIBERN8_STATE);
-> >   
-> > +	INIT_DELAYED_WORK(&hba->rpm_dev_flush_recheck_work,
-> > +			  ufshcd_rpm_dev_flush_recheck_work);
-> > +
-> >   	/* Set the default auto-hiberate idle timer value to 150 ms */
-> >   	if (ufshcd_is_auto_hibern8_supported(hba) && !hba->ahit) {
-> >   		hba->ahit = FIELD_PREP(UFSHCI_AHIBERN8_TIMER_MASK, 150) |
-> > diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> > index 8db7a6101892..9acd437037e8 100644
-> > --- a/drivers/scsi/ufs/ufshcd.h
-> > +++ b/drivers/scsi/ufs/ufshcd.h
-> > @@ -745,6 +745,7 @@ struct ufs_hba {
-> >   	struct request_queue	*bsg_queue;
-> >   	bool wb_buf_flush_enabled;
-> >   	bool wb_enabled;
-> > +	struct delayed_work rpm_dev_flush_recheck_work;
-> >   };
-> >   
-> >   /* Returns true if clocks can be gated. Otherwise false */
-> > 
-> 
-> 
-
-Thanks,
-Stanley Chu
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgSmltLAoKT24gVHVlLCBNYXkgMTksIDIwMjAgYXQgMDQ6MzQ6MDVQTSAtMDQwMCwgSmltIFF1
+aW5sYW4gd3JvdGU6Cj4gRnJvbTogSmltIFF1aW5sYW4gPGpxdWlubGFuQGJyb2FkY29tLmNvbT4K
+PiAKPiBTb21lIFNUQiBjaGlwcyBoYXZlIGEgc3BlY2lhbCBwdXJwb3NlIHJlc2V0IGNvbnRyb2xs
+ZXIgbmFtZWQKPiBSRVNDQUwgKHJlc2V0IGNhbGlicmF0aW9uKS4gIFRoaXMgY29tbWl0IGFkZHMg
+dGhlIGNvbnRyb2wKPiBvZiBSRVNDQUwgYXMgd2VsbCBhcyB0aGUgYWJpbGl0eSB0byBzdGFydCBh
+bmQgc3RvcCBpdHMKPiBvcGVyYXRpb24gZm9yIFBDSWUgSFcuCj4gCj4gU2lnbmVkLW9mZi1ieTog
+SmltIFF1aW5sYW4gPGpxdWlubGFuQGJyb2FkY29tLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9wY2kv
+Y29udHJvbGxlci9wY2llLWJyY21zdGIuYyB8IDgxICsrKysrKysrKysrKysrKysrKysrKysrKysr
+LQo+ICAxIGZpbGUgY2hhbmdlZCwgODAgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+IAo+
+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaWUtYnJjbXN0Yi5jIGIvZHJp
+dmVycy9wY2kvY29udHJvbGxlci9wY2llLWJyY21zdGIuYwo+IGluZGV4IDJjNDcwMTA0YmEzOC4u
+MDc4N2U4ZjZmN2U1IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1i
+cmNtc3RiLmMKPiArKysgYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaWUtYnJjbXN0Yi5jClsu
+Li5dCj4gQEAgLTExMDAsNiArMTE2NCwyMSBAQCBzdGF0aWMgaW50IGJyY21fcGNpZV9wcm9iZShz
+dHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ICAJCWRldl9lcnIoJnBkZXYtPmRldiwgImNv
+dWxkIG5vdCBlbmFibGUgY2xvY2tcbiIpOwo+ICAJCXJldHVybiByZXQ7Cj4gIAl9Cj4gKwlwY2ll
+LT5yZXNjYWwgPSBkZXZtX3Jlc2V0X2NvbnRyb2xfZ2V0X3NoYXJlZCgmcGRldi0+ZGV2LCAicmVz
+Y2FsIik7Cj4gKwlpZiAoSVNfRVJSKHBjaWUtPnJlc2NhbCkpIHsKPiArCQlpZiAoUFRSX0VSUihw
+Y2llLT5yZXNjYWwpID09IC1FUFJPQkVfREVGRVIpCj4gKwkJCXJldHVybiAtRVBST0JFX0RFRkVS
+Owo+ICsJCXBjaWUtPnJlc2NhbCA9IE5VTEw7CgpUaGlzIGlzIGVmZmVjdGl2ZWx5IGFuIG9wdGlv
+bmFsIHJlc2V0IGNvbnRyb2wsIHNvIGl0IGlzIGJldHRlciB0byB1c2U6CuKGtQoJcGNpZS0+cmVz
+Y2FsID0gZGV2bV9yZXNldF9jb250cm9sX2dldF9vcHRpb25hbF9zaGFyZWQoJnBkZXYtPmRldiwK
+CQkJCQkJCSAgICAgICJyZXNjYWwiKTvihrUKCWlmIChJU19FUlIocGNpZS0+cmVzY2FsKSkKCQly
+ZXR1cm4gUFRSX0VSUihwY2llLT5yZXNjYWwpOwoKPiArCX0gZWxzZSB7Cj4gKwkJcmV0ID0gcmVz
+ZXRfY29udHJvbF9kZWFzc2VydChwY2llLT5yZXNjYWwpOwo+ICsJCWlmIChyZXQpCj4gKwkJCWRl
+dl9lcnIoJnBkZXYtPmRldiwgImZhaWxlZCB0byBkZWFzc2VydCAncmVzY2FsJ1xuIik7Cj4gKwl9
+CgpyZXNldF9jb250cm9sXyogY2FuIGhhbmRsZSByc3RjID09IE5VTEwgcGFyYW1ldGVycyBmb3Ig
+b3B0aW9uYWwgcmVzZXQKY29udHJvbHMsIHNvIHRoaXMgY2FuIGJlIGRvbmUgdW5jb25kaXRpb25h
+bGx5OgoKCXJldCA9IHJlc2V0X2NvbnRyb2xfZGVhc3NlcnQocGNpZS0+cmVzY2FsKTvihrUKCWlm
+IChyZXQp4oa1CgkJZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGRlYXNzZXJ0ICdyZXNj
+YWwnXG4iKTvihrUKCklzIHJlc2NhbCBoYW5kbGVkIGJ5IHRoZSByZXNldC1icmNtc3RiLXJlc2Nh
+bCBkcml2ZXI/IFNpbmNlIHRoYXQgb25seQppbXBsZW1lbnRzIHRoZSAucmVzZXQgb3AsIEkgd291
+bGQgZXhwZWN0IHJlc2V0X2NvbnRyb2xfcmVzZXQoKSBoZXJlLgpPdGhlcndpc2UgdGhpcyBsb29r
+cyBsaWtlIGl0J2QgYmUgbWlzc2luZyBhIHJlc2V0X2NvbnRyb2xfYXNzZXJ0IGluCnJlbW92ZS4K
+CnJlZ2FyZHMKUGhpbGlwcAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
