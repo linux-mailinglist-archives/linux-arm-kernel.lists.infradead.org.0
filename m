@@ -2,51 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E35561DA720
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 03:24:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 406191DA730
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 03:28:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=u5dbj0aGeEWUbHxO/kLToj0Fb1/lwgNeTCuzmiVa7sU=; b=PJj
-	hmgGMjV9WS6IdwnR/0RTDxpQw/cEBhyp1YnqwSUVxI3P5tjWNZB849Qf4jRqR9B0x2PiDWtKtaQo3
-	ux4tmVQyMsgsFin2J7OgQUJUQPgMhykDHP0xyVSCqf1UCWL9YDCIBbDqSCChN4ggnzkdZptBdzvu2
-	Dr4rdDXi3NtHbEmPdVsDRat0JLxwx7GfiDfKa502y3HZxd3lQSqsPGYjpScjRshPyNOAh37a6f8Xm
-	REElQCI0byXs+0ducn8XpAciG3ZOYvyj79hLnOPLj9GJ3ZY6IWLyfDDO/76kMry3nrbM0WYT88uQQ
-	MFYkY8HulGtnYxoim0XZAoaVkRvJFOw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PGHPnmCeznDSt5lRGhkcmeL1mVWNGt9HtDghNJmBsVc=; b=BtKPXa0DD+Lyyb
+	EYrxziXZpJUOp77PpieQBM3D1NnmBWwUtcykR0BHAQbx4QFsryoPsoJqRQAoGD+llKiN35+Yo2Nv+
+	MD0nMqbQQ49p4HL67rNF8EccNENf+rUrX0697SjEx2L4s1cIq0MklH5OtkbmhTp6CzzhcT6XzVfAH
+	Verkzhq+ZTm+KKJysDjpGj3pEpnG+KceeCeO2DgJV17WG/h18NwvdwHC9Q0BzQfsLw2GPazwoV1jv
+	RLQtQw7PGN/cC4rQA2+cR2rgFppxq/B8yXpXeRkt3OVTyvM9dopauxGoKP1ONkZCimxTtQs53pKnQ
+	5GWakZMp+enK82kShp5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbDSY-0000a4-Ad; Wed, 20 May 2020 01:23:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbDSP-0000ZC-QO
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 01:23:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9CE9A31B;
- Tue, 19 May 2020 18:23:39 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.75.101])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9F9473F68F;
- Tue, 19 May 2020 18:23:36 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64/cpufeature: Move BUG_ON() inside get_arm64_ftr_reg()
-Date: Wed, 20 May 2020 06:52:54 +0530
-Message-Id: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jbDWr-0003qw-K2; Wed, 20 May 2020 01:28:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbDWg-0003qJ-SL
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 01:28:08 +0000
+Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C8517207C4;
+ Wed, 20 May 2020 01:28:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589938086;
+ bh=yaMpbg/CqIf6nS95IhGjsX1jBrk4yx1tjQoacauEKM8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=QoUNqcK649U1kMFA8EAx6Mqn6NBCNVbih/trnWoHHfzaGMojBkRiHOmQj3XJ6o8HJ
+ LvOvm0VxpaKwySo3YFYwUUIPTDLMOnaFBVfOyJ+dvQTEze8wbKBZ+DFb3GFNGdDWuT
+ njJJG3akXFzjrqa7jkwBaBIMhSDg7+NXA1cbpURA=
+Date: Wed, 20 May 2020 09:27:59 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: peng.fan@nxp.com
+Subject: Re: [PATCH V3 00/10] clk: imx: fixes and improve for i.MX8M
+Message-ID: <20200520012758.GJ11739@dragon>
+References: <1588830979-11586-1-git-send-email-peng.fan@nxp.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1588830979-11586-1-git-send-email-peng.fan@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_182341_942334_7DA66771 
-X-CRM114-Status: GOOD (  15.07  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200519_182806_938387_7E1C08FE 
+X-CRM114-Status: GOOD (  15.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,125 +76,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>
-MIME-Version: 1.0
+Cc: aisheng.dong@nxp.com, devicetree@vger.kernel.org, abel.vesa@nxp.com,
+ Anson.Huang@nxp.com, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
+ linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
+ festevam@gmail.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no way to proceed when requested register could not be searched in
-arm64_ftr_reg[]. Requesting for a non present register would be an error as
-well. Hence lets just BUG_ON() when the search fails in get_arm64_ftr_reg()
-rather than checking for return value and doing the same in some individual
-callers.
+On Thu, May 07, 2020 at 01:56:09PM +0800, peng.fan@nxp.com wrote:
+> From: Peng Fan <peng.fan@nxp.com>
+> 
+> Patches rebased on for-next
+> 
+> V3:
+>  Add R-b tag for patch 1-6,10
+>  Use clk_mux_ops in patch 7, explain more details in commit log
+>  Boot test on i.MX8MM/N/MQ/P
+> 
+> V2:
+>  Patch 7, drop wait after write, add one line comment for write twice
+> 
+> V1:
+> Patch 1,2 is to fix the lockdep warning reported by Leonard
+> Patch 3 is to fix pll mux bit
+> Patch 4 is align with other i.MX8M using gate
+> Patch 5 is to simplify i.MX8MP clk root using composite
+> 
+> Patch 3~5 is actually https://patchwork.kernel.org/patch/11402761/
+> with a minimal change to patch 5 here.
+> 
+> Patch 6 is to use composite core clk for A53 clk root
+> Patch 7,8,9 is actually to fix CORE/BUS clk slice issue.
+>  This issue is triggerred after we update U-Boot to include
+>  the A53 clk fixes to sources from PLL, not from A53 root clk,
+>  because of the signoff timing is 1GHz. U-Boot set the A53 root
+>  mux to 2, sys pll2 500MHz. Kernel will set the A53 root mux to
+>  4, sys pll1 800MHz, then gate off sys pll2 500MHz. Then kernel
+>  will gate off A53 root because clk_ignore_unsed, A53 directly sources
+>  PLL, so it is ok to gate off A53 root. However when gate off A53
+>  root clk, system hang, because the original mux sys pll2 500MHz
+>  gated off with CLK_OPS_PARENT_ENABLE flag.
+> 
+>  It is lucky that we not met issue for other core/bus clk slice
+>  except A53 ROOT core slice. But it is always triggerred after
+>  U-Boot and Linux both switch to use ARM PLL for A53 core, but
+>  have different mux settings for A53 root clk slice.
+> 
+>  So the three patches is to address this issue.
+> 
+> Patch 10 is make memrepair as critical.
+> 
+> Peng Fan (10):
+>   arm64: dts: imx8m: assign clocks for A53
+>   clk: imx8m: drop clk_hw_set_parent for A53
+>   clk: imx: imx8mp: fix pll mux bit
+>   clk: imx8mp: Define gates for pll1/2 fixed dividers
+>   clk: imx8mp: use imx8m_clk_hw_composite_core to simplify code
+>   clk: imx8m: migrate A53 clk root to use composite core
+>   clk: imx: add mux ops for i.MX8M composite clk
+>   clk: imx: add imx8m_clk_hw_composite_bus
+>   clk: imx: use imx8m_clk_hw_composite_bus for i.MX8M bus clk slice
 
-But there are some callers that dont BUG_ON() upon search failure. It adds
-an argument 'failsafe' that provides required switch between callers based
-on whether they could proceed or not.
+Applied 1 ~ 9, thanks.
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: Mark Brown <broonie@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
-Applies on next-20200518 that has recent cpufeature changes from Will.
-
- arch/arm64/kernel/cpufeature.c | 26 +++++++++++++-------------
- 1 file changed, 13 insertions(+), 13 deletions(-)
-
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index bc5048f152c1..62767cc540c3 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -557,7 +557,7 @@ static int search_cmp_ftr_reg(const void *id, const void *regp)
-  *         - NULL on failure. It is upto the caller to decide
-  *	     the impact of a failure.
-  */
--static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
-+static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id, bool failsafe)
- {
- 	const struct __ftr_reg_entry *ret;
- 
-@@ -568,6 +568,13 @@ static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
- 			search_cmp_ftr_reg);
- 	if (ret)
- 		return ret->reg;
-+	/*
-+	 * This can not really proceed when the search fails.
-+	 * Requesting for a non existent register search will
-+	 * also be an error in itself. Error out when not
-+	 * called with fail safe request.
-+	 */
-+	BUG_ON(!failsafe);
- 	return NULL;
- }
- 
-@@ -630,9 +637,7 @@ static void __init init_cpu_ftr_reg(u32 sys_reg, u64 new)
- 	u64 valid_mask = 0;
- 
- 	const struct arm64_ftr_bits *ftrp;
--	struct arm64_ftr_reg *reg = get_arm64_ftr_reg(sys_reg);
--
--	BUG_ON(!reg);
-+	struct arm64_ftr_reg *reg = get_arm64_ftr_reg(sys_reg, false);
- 
- 	for (ftrp = reg->ftr_bits; ftrp->width; ftrp++) {
- 		u64 ftr_mask = arm64_ftr_mask(ftrp);
-@@ -760,9 +765,8 @@ static void update_cpu_ftr_reg(struct arm64_ftr_reg *reg, u64 new)
- 
- static int check_update_ftr_reg(u32 sys_id, int cpu, u64 val, u64 boot)
- {
--	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
-+	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id, false);
- 
--	BUG_ON(!regp);
- 	update_cpu_ftr_reg(regp, val);
- 	if ((boot & regp->strict_mask) == (val & regp->strict_mask))
- 		return 0;
-@@ -774,10 +778,7 @@ static int check_update_ftr_reg(u32 sys_id, int cpu, u64 val, u64 boot)
- static void relax_cpu_ftr_reg(u32 sys_id, int field)
- {
- 	const struct arm64_ftr_bits *ftrp;
--	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
--
--	if (WARN_ON(!regp))
--		return;
-+	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id, false);
- 
- 	for (ftrp = regp->ftr_bits; ftrp->width; ftrp++) {
- 		if (ftrp->shift == field) {
-@@ -959,10 +960,9 @@ void update_cpu_features(int cpu,
- 
- u64 read_sanitised_ftr_reg(u32 id)
- {
--	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(id);
-+	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(id, false);
- 
- 	/* We shouldn't get a request for an unsupported register */
--	BUG_ON(!regp);
- 	return regp->sys_val;
- }
- 
-@@ -2565,7 +2565,7 @@ static int emulate_sys_reg(u32 id, u64 *valp)
- 	if (sys_reg_CRm(id) == 0)
- 		return emulate_id_reg(id, valp);
- 
--	regp = get_arm64_ftr_reg(id);
-+	regp = get_arm64_ftr_reg(id, true);
- 	if (regp)
- 		*valp = arm64_ftr_reg_user_value(regp);
- 	else
--- 
-2.20.1
-
+>   clk: imx8mp: mark memrepair clock as critical
 
 _______________________________________________
 linux-arm-kernel mailing list
