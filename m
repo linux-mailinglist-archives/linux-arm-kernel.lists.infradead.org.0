@@ -2,72 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9147C1DAF70
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:54:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9736B1DAF9D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:03:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Pz29sin252MaIiJyY9Ufs9HbGCnOO400TMoD9wxxUAY=; b=CS39WtYlNhhKNA
-	yrVbhZSBZkmxefdK9hZOyLvDmYGBp//Y4ImJhwDlr8+YrY+b/jtxj3gHDl1kWl6/Ve/JMnn1VHcL5
-	OkAn82i69QFsaneMY4N+C1xzo9OhVYFbJMgvsp+YviFkLSg0cv978J7OetXgVsBcb1pwsLhGwQ28w
-	34g0UsQZTTBKs2pxMBCJDxOlHI5Hb+7eJMsOu+mjdhlXUFk+hUteAR6dhn9HoPwjqZUWX3NzuDTXc
-	IEJ2NcipAyfXin5Tdrd4/fVqKDMYk/DOfvHJnZKNE3IqNFpJ0ixpn9iRqDumV+WSMjfHcKaKyAJUj
-	Hy6XRBMkA6621bL7OmyQ==;
+	List-Owner; bh=gK8fVDq1ExSl3a4Cg5Dd+OzQ2ZsRqPwWpdFlCJiMYh4=; b=DM9xN0chC/PQcw
+	A5UDEDXe9Ff4kfbaEsWz0jVbNlf+yEMyC4vUV7hRnoch/s6RoanBXA2xSx1F8GhVW6p+F5N2giVG7
+	JOF/T5jt/+c1G2Bg9g/epmCJ1tsep5PR1cMT1J9bN2cpUAn2M3C6ijS7tzOZ4/wYwCOInRItRQNxJ
+	b9OrVLrobtctbz8bysuHAa+ptpiCqIBEL85O47uhY2uTWsmJ8P78TtZKhDUbFQLOfAs9/vf7o29Cy
+	LKuYo40EaLdGrP4V568u4kaCuChNAHYfDdKq8clcSrUXYD4PwBZjYRvzLuBD7Lp7CqkDDt9uv24F1
+	1k3+9swX4Of1RjNPsbIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbLQP-0008Vd-IE; Wed, 20 May 2020 09:54:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbLQF-0008U9-4T
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:54:00 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B23D32070A;
- Wed, 20 May 2020 09:53:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589968438;
- bh=EPruGUnhkwjs9U+ZrfN19PMt1A4JYOvCchb0OZfkwAc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=MJN+I3byBBxVyHjG4JKyYB+K9j77Uu6qIbf4WPpJ+PJtV3ThA21eeyCYTmyoFctKI
- VBUtkHUvwHoMzA9gGEBZi+9ARWwdGelYnM7s4Xlu/AHnIAEeglZHkSVmEgGRT/kPI+
- 6nR1a76Qsu4lUcnP4ed84YlPb0jCnsiipKIZpc9c=
-Date: Wed, 20 May 2020 10:53:54 +0100
-From: Will Deacon <will@kernel.org>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH v2 1/2] arm64: vdso: Don't prefix sigreturn trampoline
- with a BTI C instruction
-Message-ID: <20200520095354.GF24293@willie-the-truck>
-References: <20200519162821.16857-1-will@kernel.org>
- <20200519162821.16857-2-will@kernel.org>
- <20200520093354.GJ5031@arm.com>
+	id 1jbLZp-0007Rt-3g; Wed, 20 May 2020 10:03:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbLZe-0007R8-Qj
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 10:03:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CF56531B;
+ Wed, 20 May 2020 03:03:39 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.114])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A71583F68F;
+ Wed, 20 May 2020 03:03:37 -0700 (PDT)
+Date: Wed, 20 May 2020 11:03:30 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH] arm64: Fix PTRACE_SYSEMU semantics
+Message-ID: <20200520100330.GA25430@bogus>
+References: <20200515222253.GA38408@juliacomputing.com>
+ <20200518114119.GB32394@willie-the-truck>
+ <20200519120725.GA20313@gaia>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200520093354.GJ5031@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200519120725.GA20313@gaia>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_025359_208335_2A9B40C4 
-X-CRM114-Status: GOOD (  21.55  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200520_030342_910953_DC8BB7BA 
+X-CRM114-Status: GOOD (  27.21  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,90 +64,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, Mark Brown <broonie@kernel.org>,
- kernel-team@android.com, linux-arm-kernel@lists.infradead.org,
- Daniel Kiss <daniel.kiss@arm.com>
+Cc: will.deacon@arm.com, linux-kernel@vger.kernel.org, oleg@redhat.com,
+ Keno Fischer <keno@juliacomputing.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 10:33:55AM +0100, Dave Martin wrote:
-> On Tue, May 19, 2020 at 05:28:20PM +0100, Will Deacon wrote:
-> > For better or worse, GDB relies on the exact instruction sequence in the
-> > VDSO sigreturn trampoline in order to unwind from signals correctly.
-> > Commit c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
-> > unfortunately added a BTI C instruction to the start of __kernel_rt_sigreturn,
-> > which breaks this check. Thankfully, it's also not required, since the
-> > trampoline is called from a RET instruction when returning from the signal
-> > handler
-> > 
-> > Remove the unnecessary BTI C instruction from __kernel_rt_sigreturn,
-> > and do the same for the 32-bit VDSO as well for good measure.
-> > 
-> > Cc: Dave Martin <dave.martin@arm.com>
-> > Cc: Mark Brown <broonie@kernel.org>
-> > Cc: Daniel Kiss <daniel.kiss@arm.com>
-> > Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>
-> > Fixes: c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
-> > Signed-off-by: Will Deacon <will@kernel.org>
-> > ---
-> >  arch/arm64/kernel/vdso/sigreturn.S   | 11 +++++++++--
-> >  arch/arm64/kernel/vdso32/sigreturn.S | 16 ++++++++--------
-> >  2 files changed, 17 insertions(+), 10 deletions(-)
-> > 
-> > diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
-> > index 3fb13b81f780..0c921130002a 100644
-> > --- a/arch/arm64/kernel/vdso/sigreturn.S
-> > +++ b/arch/arm64/kernel/vdso/sigreturn.S
-> > @@ -15,7 +15,14 @@
-> >  	.text
-> >  
-> >  	nop
-> > -SYM_FUNC_START(__kernel_rt_sigreturn)
-> > +/*
-> > + * GDB relies on being able to identify the sigreturn instruction sequence to
-> > + * unwind from signal handlers. We cannot, therefore, use SYM_FUNC_START()
-> > + * here, as it will emit a BTI C instruction and break the unwinder. Thankfully,
-> > + * this function is only ever called from a RET and so omitting the landing pad
-> > + * is perfectly fine.
-> > + */
-> 
-> Can we cross-reference or duplicate (perhaps abridged) this comment for
-> vdso32?
+Hi Catalin,
 
-Yes, that's not a bad idea. I'll add a comment to the top of that file.
+On Tue, May 19, 2020 at 01:07:27PM +0100, Catalin Marinas wrote:
+> On Mon, May 18, 2020 at 12:41:20PM +0100, Will Deacon wrote:
+> > On Fri, May 15, 2020 at 06:22:53PM -0400, Keno Fischer wrote:
+> > > Quoth the man page:
+> > > ```
+> > >        If the tracee was restarted by PTRACE_SYSCALL or PTRACE_SYSEMU, the
+> > >        tracee enters syscall-enter-stop just prior to entering any system
+> > >        call (which will not be executed if the restart was using
+> > >        PTRACE_SYSEMU, regardless of any change made to registers at this
+> > >        point or how the tracee is restarted after this stop).
+> > > ```
+> > >
+> > > The parenthetical comment is currently true on x86 and powerpc,
+> > > but not currently true on arm64. arm64 re-checks the _TIF_SYSCALL_EMU
+> > > flag after the syscall entry ptrace stop. However, at this point,
+> > > it reflects which method was used to re-start the syscall
+> > > at the entry stop, rather than the method that was used to reach it.
+> > > Fix that by recording the original flag before performing the ptrace
+> > > stop, bringing the behavior in line with documentation and x86/powerpc.
+> > >
+> > > Signed-off-by: Keno Fischer <keno@juliacomputing.com>
+> > > ---
+> > >  arch/arm64/kernel/ptrace.c | 8 +++++---
+> > >  1 file changed, 5 insertions(+), 3 deletions(-)
+> > >
+> > > diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+> > > index b3d3005d9515..b67b4d14aa17 100644
+> > > --- a/arch/arm64/kernel/ptrace.c
+> > > +++ b/arch/arm64/kernel/ptrace.c
+> > > @@ -1829,10 +1829,12 @@ static void tracehook_report_syscall(struct pt_regs *regs,
+> > >
+> > >  int syscall_trace_enter(struct pt_regs *regs)
+> > >  {
+> > > -	if (test_thread_flag(TIF_SYSCALL_TRACE) ||
+> > > -		test_thread_flag(TIF_SYSCALL_EMU)) {
+> > > +	u32 flags = READ_ONCE(current_thread_info()->flags) &
+> > > +		(_TIF_SYSCALL_EMU | _TIF_SYSCALL_TRACE);
+> > > +
+> > > +	if (flags) {
+> >
+> > nit: but I'd rather the '&' operation was in the conditional so that the
+> > 'flags' variable holds all of the flags.
+> >
+> > With that:
+> >
+> > Acked-by: Will Deacon <will@kernel.org>
+> >
+> > Also needs:
+> >
+> > Cc: <stable@vger.kernel.org>
+> > Fixes: f086f67485c5 ("arm64: ptrace: add support for syscall emulation")
+> >
+> > Catalin -- can you pick this up for 5.7 please, with my 'nit' addressed?
+>
+> I'll queue it with the above addressed. I think flags also needs to be
+> unsigned long rather than u32.
+>
+> However, before sending the pull request, I'd like Sudeep to confirm
+> that it doesn't break his original use-case for this feature.
+>
 
-> Can we also fix the comment by the definition of SYM_FUNC_START()?
+I just tested it with my simple programs I had before. I have also asked
+teams working on gvisor to test. They have tested it and see no
+regression. I will ask them to reply here.
 
-I'll tweak it slightly for v3.
+Tested-by: Sudeep Holla <sudeep.holla@arm.com>
 
-> > diff --git a/arch/arm64/kernel/vdso32/sigreturn.S b/arch/arm64/kernel/vdso32/sigreturn.S
-> > index 620524969696..b36d4e2267a3 100644
-> > --- a/arch/arm64/kernel/vdso32/sigreturn.S
-> > +++ b/arch/arm64/kernel/vdso32/sigreturn.S
-> > @@ -17,39 +17,39 @@
-> >  	.save {r0-r15}
-> >  	.pad #COMPAT_SIGFRAME_REGS_OFFSET
-> >  	nop
-> > -SYM_FUNC_START(__kernel_sigreturn_arm)
-> > +SYM_CODE_START(__kernel_sigreturn_arm)
-> 
-> ...although do we actually need this?  32-bit doesn't have BTI.
-> 
-> But for the reasons given above, this is not a "function" and so
-> SYM_FUNC_START() is trap for future maintenance even if it makes no
-> difference now.
-
-Right, it's just done for consistency on the 32-bit side.
-
-> Either way,
-> 
-> Reviewed-by: Dave Martin <Dave.Martin@arm.com>
-
-Thanks!
-
-Will
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
