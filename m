@@ -2,76 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D9AA1DAF6C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:53:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9147C1DAF70
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:54:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O5PsbNApzuYF1S0ZrhdnVDzz2+yhV+rrOIMgewcyYD0=; b=pjaqcxdjVd5ICb
-	YJNvWZalKFXl8yT0TA7zlJKEYF1PAYKCtZdzSuD3/v3g9FGFNtfXEMXwFer/YbG5nEgPN65Rvg2KB
-	ICKbC7gPCLLovViPhTqgWH1rj4rV5V/FvjWfMmIvuAvqp5vsxBSzSBFmlD7RHZ+uL9dgNjikjMeoF
-	xqaY0JGfvjabhDmdVzblhnxlsyrPLUU1cNE/qA34J+KLcJgzqqoNoW6dN58ATCXaX0O+XU9VZv4Q2
-	1u8T5C4mDHgAr1GBQ9LYRqvG7joy44G66n4Jl39bWZOTPbLwhhEJ3x2dc6U/wEtq+SJD4AOBDiJ15
-	l509Ib/+XPzeBVZt2AGg==;
+	List-Owner; bh=Pz29sin252MaIiJyY9Ufs9HbGCnOO400TMoD9wxxUAY=; b=CS39WtYlNhhKNA
+	yrVbhZSBZkmxefdK9hZOyLvDmYGBp//Y4ImJhwDlr8+YrY+b/jtxj3gHDl1kWl6/Ve/JMnn1VHcL5
+	OkAn82i69QFsaneMY4N+C1xzo9OhVYFbJMgvsp+YviFkLSg0cv978J7OetXgVsBcb1pwsLhGwQ28w
+	34g0UsQZTTBKs2pxMBCJDxOlHI5Hb+7eJMsOu+mjdhlXUFk+hUteAR6dhn9HoPwjqZUWX3NzuDTXc
+	IEJ2NcipAyfXin5Tdrd4/fVqKDMYk/DOfvHJnZKNE3IqNFpJ0ixpn9iRqDumV+WSMjfHcKaKyAJUj
+	Hy6XRBMkA6621bL7OmyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbLPf-00083z-Np; Wed, 20 May 2020 09:53:23 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jbLQP-0008Vd-IE; Wed, 20 May 2020 09:54:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbLOm-0007Ty-Jp
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:52:31 +0000
-Received: by mail-lf1-x143.google.com with SMTP id w15so1887615lfe.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 02:52:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=di+O7XWs9ew3gUtMoYcWmBuPK/6Y39LUbfM4jyNZioU=;
- b=Bkiib2E1jLuFPY15fCRf+7JQdoxbF3iKCIjM6xO2ybauEwrN+kkNn3yF6U0CxGSCBN
- hjF3olr4S0Lahwhh3OEJ9LTMUPWjcsO2ANYLpoZutsEZKIXBsHqHfSR74lDjzEAlpt+j
- FD6vVnnxfGdmNmiD4tr4ZsR5Z1G0q0YmJ5iC9xyF9CQz68orEZAOv3EKOf44ooCxVf1q
- ff4vlvq4tePlbWv75MV1Fvi+YWNf06pYGlcHrBxB25WQiTwPMVuax1CPQ26nIne47ueo
- Jc+jYiybNSMf3Cu2xYWJUtsCeeZcCuztK8FbRU61j1Fdjb2bp8FRnRAK7katn0LhYeNH
- SrAg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=di+O7XWs9ew3gUtMoYcWmBuPK/6Y39LUbfM4jyNZioU=;
- b=KFgWDMu98itUt3eLQD+cH9FGCt0t4OKqChE+LpEP1BdpOTj1ayv97mPZAjwCYwDlf0
- bbAf/kvmZQzE36fErA1MfQPTf6eeHnRJ/PQgVuHueZ6xSQdIO2bTl8xRBSd9WMHgxgje
- GWRCZ/bR5YZij7pNtYS08TVQy+RJXhK9rAS1+/I8gH8SRbsjIs2Qcjz4uGN8+GHY1dFZ
- fUjko6mkXma9mTzyrQRyB2gJQGUz4xkGilLYt6K7UVxprOdZswwrG3XFaMGwsAVWnxor
- KodYY4ceH1AL3ao7eSHuye0xCVNJLcImviDJPwogkqFYPkBg2peB6t80yvq/5qUVtWqz
- JzMw==
-X-Gm-Message-State: AOAM5319q261O+QKTawnYDnhoYHRosOA2CXIXdyXLxCtdMR2ROqdKdz8
- REFGWL58DjLRiCqyrutBopYFC3Q51EDdwJAMZ6KLNQ==
-X-Google-Smtp-Source: ABdhPJw8gIkRM0QVsro6/yY54EJWPqe2jja5SjnIIYgyrem445Og3OnBcxkeEHEefxqJu3koBMNevXAtNiXobO+bSLs=
-X-Received: by 2002:ac2:4567:: with SMTP id k7mr2093376lfm.122.1589968345369; 
- Wed, 20 May 2020 02:52:25 -0700 (PDT)
+ id 1jbLQF-0008U9-4T
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:54:00 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B23D32070A;
+ Wed, 20 May 2020 09:53:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589968438;
+ bh=EPruGUnhkwjs9U+ZrfN19PMt1A4JYOvCchb0OZfkwAc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=MJN+I3byBBxVyHjG4JKyYB+K9j77Uu6qIbf4WPpJ+PJtV3ThA21eeyCYTmyoFctKI
+ VBUtkHUvwHoMzA9gGEBZi+9ARWwdGelYnM7s4Xlu/AHnIAEeglZHkSVmEgGRT/kPI+
+ 6nR1a76Qsu4lUcnP4ed84YlPb0jCnsiipKIZpc9c=
+Date: Wed, 20 May 2020 10:53:54 +0100
+From: Will Deacon <will@kernel.org>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v2 1/2] arm64: vdso: Don't prefix sigreturn trampoline
+ with a BTI C instruction
+Message-ID: <20200520095354.GF24293@willie-the-truck>
+References: <20200519162821.16857-1-will@kernel.org>
+ <20200519162821.16857-2-will@kernel.org>
+ <20200520093354.GJ5031@arm.com>
 MIME-Version: 1.0
-References: <20200519161755.209565-1-maz@kernel.org>
- <20200519161755.209565-7-maz@kernel.org>
-In-Reply-To: <20200519161755.209565-7-maz@kernel.org>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Wed, 20 May 2020 15:22:13 +0530
-Message-ID: <CAFA6WYNfZKpQMTX8qP0eFHwyzJK4HK8z59G3OVLN8h0Uuc7P7w@mail.gmail.com>
-Subject: Re: [PATCH 06/11] irqchip/gic-v3: Configure SGIs as standard
- interrupts
-To: Marc Zyngier <maz@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200520093354.GJ5031@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_025228_700633_86589F44 
-X-CRM114-Status: GOOD (  25.25  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200520_025359_208335_2A9B40C4 
+X-CRM114-Status: GOOD (  21.55  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,235 +79,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, Russell King <linux@arm.linux.org.uk>,
- Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, Mark Brown <broonie@kernel.org>,
+ kernel-team@android.com, linux-arm-kernel@lists.infradead.org,
+ Daniel Kiss <daniel.kiss@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+On Wed, May 20, 2020 at 10:33:55AM +0100, Dave Martin wrote:
+> On Tue, May 19, 2020 at 05:28:20PM +0100, Will Deacon wrote:
+> > For better or worse, GDB relies on the exact instruction sequence in the
+> > VDSO sigreturn trampoline in order to unwind from signals correctly.
+> > Commit c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
+> > unfortunately added a BTI C instruction to the start of __kernel_rt_sigreturn,
+> > which breaks this check. Thankfully, it's also not required, since the
+> > trampoline is called from a RET instruction when returning from the signal
+> > handler
+> > 
+> > Remove the unnecessary BTI C instruction from __kernel_rt_sigreturn,
+> > and do the same for the 32-bit VDSO as well for good measure.
+> > 
+> > Cc: Dave Martin <dave.martin@arm.com>
+> > Cc: Mark Brown <broonie@kernel.org>
+> > Cc: Daniel Kiss <daniel.kiss@arm.com>
+> > Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>
+> > Fixes: c91db232da48 ("arm64: vdso: Convert to modern assembler annotations")
+> > Signed-off-by: Will Deacon <will@kernel.org>
+> > ---
+> >  arch/arm64/kernel/vdso/sigreturn.S   | 11 +++++++++--
+> >  arch/arm64/kernel/vdso32/sigreturn.S | 16 ++++++++--------
+> >  2 files changed, 17 insertions(+), 10 deletions(-)
+> > 
+> > diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
+> > index 3fb13b81f780..0c921130002a 100644
+> > --- a/arch/arm64/kernel/vdso/sigreturn.S
+> > +++ b/arch/arm64/kernel/vdso/sigreturn.S
+> > @@ -15,7 +15,14 @@
+> >  	.text
+> >  
+> >  	nop
+> > -SYM_FUNC_START(__kernel_rt_sigreturn)
+> > +/*
+> > + * GDB relies on being able to identify the sigreturn instruction sequence to
+> > + * unwind from signal handlers. We cannot, therefore, use SYM_FUNC_START()
+> > + * here, as it will emit a BTI C instruction and break the unwinder. Thankfully,
+> > + * this function is only ever called from a RET and so omitting the landing pad
+> > + * is perfectly fine.
+> > + */
+> 
+> Can we cross-reference or duplicate (perhaps abridged) this comment for
+> vdso32?
 
-On Tue, 19 May 2020 at 21:48, Marc Zyngier <maz@kernel.org> wrote:
->
-> Change the way we deal with GICv3 SGIs by turning them into proper
-> IRQs, and calling into the arch code to register the interrupt range
-> instead of a callback.
->
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  drivers/irqchip/irq-gic-v3.c | 91 +++++++++++++++++++++---------------
->  1 file changed, 53 insertions(+), 38 deletions(-)
->
-> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
-> index 23d7c87da407..d57289057b75 100644
-> --- a/drivers/irqchip/irq-gic-v3.c
-> +++ b/drivers/irqchip/irq-gic-v3.c
-> @@ -36,6 +36,9 @@
->  #define FLAGS_WORKAROUND_GICR_WAKER_MSM8996    (1ULL << 0)
->  #define FLAGS_WORKAROUND_CAVIUM_ERRATUM_38539  (1ULL << 1)
->
-> +#define GIC_IRQ_TYPE_PARTITION (GIC_IRQ_TYPE_LPI + 1)
-> +#define GIC_IRQ_TYPE_SGI       (GIC_IRQ_TYPE_LPI + 2)
-> +
->  struct redist_region {
->         void __iomem            *redist_base;
->         phys_addr_t             phys_base;
-> @@ -657,38 +660,14 @@ static asmlinkage void __exception_irq_entry gic_handle_irq(struct pt_regs *regs
->         if ((irqnr >= 1020 && irqnr <= 1023))
->                 return;
->
-> -       /* Treat anything but SGIs in a uniform way */
-> -       if (likely(irqnr > 15)) {
-> -               int err;
-> -
-> -               if (static_branch_likely(&supports_deactivate_key))
-> -                       gic_write_eoir(irqnr);
-> -               else
-> -                       isb();
-> -
-> -               err = handle_domain_irq(gic_data.domain, irqnr, regs);
-> -               if (err) {
-> -                       WARN_ONCE(true, "Unexpected interrupt received!\n");
-> -                       gic_deactivate_unhandled(irqnr);
-> -               }
-> -               return;
-> -       }
-> -       if (irqnr < 16) {
-> +       if (static_branch_likely(&supports_deactivate_key))
->                 gic_write_eoir(irqnr);
-> -               if (static_branch_likely(&supports_deactivate_key))
-> -                       gic_write_dir(irqnr);
-> -#ifdef CONFIG_SMP
-> -               /*
-> -                * Unlike GICv2, we don't need an smp_rmb() here.
-> -                * The control dependency from gic_read_iar to
-> -                * the ISB in gic_write_eoir is enough to ensure
-> -                * that any shared data read by handle_IPI will
-> -                * be read after the ACK.
-> -                */
-> -               handle_IPI(irqnr, regs);
-> -#else
-> -               WARN_ONCE(true, "Unexpected SGI received!\n");
-> -#endif
-> +       else
-> +               isb();
-> +
-> +       if (handle_domain_irq(gic_data.domain, irqnr, regs)) {
-> +               WARN_ONCE(true, "Unexpected interrupt received!\n");
-> +               gic_deactivate_unhandled(irqnr);
->         }
->  }
->
-> @@ -1136,11 +1115,11 @@ static void gic_send_sgi(u64 cluster_id, u16 tlist, unsigned int irq)
->         gic_write_sgi1r(val);
->  }
->
-> -static void gic_raise_softirq(const struct cpumask *mask, unsigned int irq)
-> +static void gic_ipi_send_mask(struct irq_data *d, const struct cpumask *mask)
->  {
->         int cpu;
->
-> -       if (WARN_ON(irq >= 16))
-> +       if (WARN_ON(d->hwirq >= 16))
->                 return;
->
->         /*
-> @@ -1154,7 +1133,7 @@ static void gic_raise_softirq(const struct cpumask *mask, unsigned int irq)
->                 u16 tlist;
->
->                 tlist = gic_compute_target_list(&cpu, mask, cluster_id);
-> -               gic_send_sgi(cluster_id, tlist, irq);
-> +               gic_send_sgi(cluster_id, tlist, d->hwirq);
->         }
->
->         /* Force the above writes to ICC_SGI1R_EL1 to be executed */
-> @@ -1163,10 +1142,36 @@ static void gic_raise_softirq(const struct cpumask *mask, unsigned int irq)
->
->  static void gic_smp_init(void)
->  {
-> -       set_smp_cross_call(gic_raise_softirq);
-> +       struct irq_fwspec sgi_fwspec = {
-> +               .fwnode         = gic_data.fwnode,
-> +       };
-> +       int base_sgi;
-> +
->         cpuhp_setup_state_nocalls(CPUHP_AP_IRQ_GIC_STARTING,
->                                   "irqchip/arm/gicv3:starting",
->                                   gic_starting_cpu, NULL);
-> +
-> +       if (is_of_node(gic_data.fwnode)) {
-> +               /* DT */
-> +               sgi_fwspec.param_count = 3;
-> +               sgi_fwspec.param[0] = GIC_IRQ_TYPE_SGI;
-> +               sgi_fwspec.param[1] = 0;
-> +               sgi_fwspec.param[2] = IRQ_TYPE_EDGE_RISING;
-> +       } else {
-> +               /* ACPI */
-> +               sgi_fwspec.param_count = 2;
-> +               sgi_fwspec.param[0] = 0;
-> +               sgi_fwspec.param[1] = IRQ_TYPE_EDGE_RISING;
-> +       }
-> +
-> +       /* Register all 8 non-secure SGIs */
-> +       base_sgi = __irq_domain_alloc_irqs(gic_data.domain, -1, 8,
-> +                                          NUMA_NO_NODE, &sgi_fwspec,
-> +                                          false, NULL);
-> +       if (WARN_ON(base_sgi <= 0))
-> +               return;
-> +
-> +       set_smp_ipi_range(base_sgi, 8);
->  }
->
->  static int gic_set_affinity(struct irq_data *d, const struct cpumask *mask_val,
-> @@ -1215,6 +1220,7 @@ static int gic_set_affinity(struct irq_data *d, const struct cpumask *mask_val,
->  }
->  #else
->  #define gic_set_affinity       NULL
-> +#define gic_ipi_send_mask      NULL
->  #define gic_smp_init()         do { } while(0)
->  #endif
->
-> @@ -1257,6 +1263,7 @@ static struct irq_chip gic_chip = {
->         .irq_set_irqchip_state  = gic_irq_set_irqchip_state,
->         .irq_nmi_setup          = gic_irq_nmi_setup,
->         .irq_nmi_teardown       = gic_irq_nmi_teardown,
-> +       .ipi_send_mask          = gic_ipi_send_mask,
->         .flags                  = IRQCHIP_SET_TYPE_MASKED |
->                                   IRQCHIP_SKIP_SET_WAKE |
->                                   IRQCHIP_MASK_ON_SUSPEND,
+Yes, that's not a bad idea. I'll add a comment to the top of that file.
 
-It looks like you missed to update "struct irq_chip gic_eoimode1_chip"
-with similar change as follows:
+> Can we also fix the comment by the definition of SYM_FUNC_START()?
 
-diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
-index 2a09634..ceef63b 100644
---- a/drivers/irqchip/irq-gic-v3.c
-+++ b/drivers/irqchip/irq-gic-v3.c
-@@ -1291,6 +1291,7 @@ static struct irq_chip gic_eoimode1_chip = {
-        .irq_set_vcpu_affinity  = gic_irq_set_vcpu_affinity,
-        .irq_nmi_setup          = gic_irq_nmi_setup,
-        .irq_nmi_teardown       = gic_irq_nmi_teardown,
-+       .ipi_send_mask          = gic_ipi_send_mask,
-        .flags                  = IRQCHIP_SET_TYPE_MASKED |
-                                  IRQCHIP_SKIP_SET_WAKE |
-                                  IRQCHIP_MASK_ON_SUSPEND,
+I'll tweak it slightly for v3.
 
-After incorporating this change, your patch-set works fine on my
-Developerbox machine.
+> > diff --git a/arch/arm64/kernel/vdso32/sigreturn.S b/arch/arm64/kernel/vdso32/sigreturn.S
+> > index 620524969696..b36d4e2267a3 100644
+> > --- a/arch/arm64/kernel/vdso32/sigreturn.S
+> > +++ b/arch/arm64/kernel/vdso32/sigreturn.S
+> > @@ -17,39 +17,39 @@
+> >  	.save {r0-r15}
+> >  	.pad #COMPAT_SIGFRAME_REGS_OFFSET
+> >  	nop
+> > -SYM_FUNC_START(__kernel_sigreturn_arm)
+> > +SYM_CODE_START(__kernel_sigreturn_arm)
+> 
+> ...although do we actually need this?  32-bit doesn't have BTI.
+> 
+> But for the reasons given above, this is not a "function" and so
+> SYM_FUNC_START() is trap for future maintenance even if it makes no
+> difference now.
 
--Sumit
+Right, it's just done for consistency on the 32-bit side.
 
-> @@ -1289,6 +1296,13 @@ static int gic_irq_domain_map(struct irq_domain *d, unsigned int irq,
->
->         switch (__get_intid_range(hw)) {
->         case SGI_RANGE:
-> +               irq_set_percpu_devid(irq);
-> +               irq_domain_set_info(d, irq, hw, chip, d->host_data,
-> +                                   handle_percpu_devid_fasteoi_ipi,
-> +                                   NULL, NULL);
-> +               irq_set_status_flags(irq, IRQ_NOAUTOEN);
-> +               break;
-> +
->         case PPI_RANGE:
->         case EPPI_RANGE:
->                 irq_set_percpu_devid(irq);
-> @@ -1319,8 +1333,6 @@ static int gic_irq_domain_map(struct irq_domain *d, unsigned int irq,
->         return 0;
->  }
->
-> -#define GIC_IRQ_TYPE_PARTITION (GIC_IRQ_TYPE_LPI + 1)
-> -
->  static int gic_irq_domain_translate(struct irq_domain *d,
->                                     struct irq_fwspec *fwspec,
->                                     unsigned long *hwirq,
-> @@ -1353,6 +1365,9 @@ static int gic_irq_domain_translate(struct irq_domain *d,
->                         else
->                                 *hwirq += 16;
->                         break;
-> +               case GIC_IRQ_TYPE_SGI:
-> +                       *hwirq = fwspec->param[1];
-> +                       break;
->                 default:
->                         return -EINVAL;
->                 }
-> @@ -1657,9 +1672,9 @@ static int __init gic_init_bases(void __iomem *dist_base,
->
->         gic_update_rdist_properties();
->
-> -       gic_smp_init();
->         gic_dist_init();
->         gic_cpu_init();
-> +       gic_smp_init();
->         gic_cpu_pm_init();
->
->         if (gic_dist_supports_lpis()) {
-> --
-> 2.26.2
->
+> Either way,
+> 
+> Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+
+Thanks!
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
