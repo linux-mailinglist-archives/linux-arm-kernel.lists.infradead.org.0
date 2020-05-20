@@ -2,62 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D3191DAF3D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:49:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAD9E1DAF50
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:50:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qz5A75hrokB9ZewUBLAAiK9zaJd2qU8xMLS7nZuLOTU=; b=rhUC1un1hPv+95
-	5GVGJ6KDrMEiMbE8ea9/XvfilkNHX9q/ru/mwc3It01sebEABE3Z1gXRUQA4JqWKebugT2z233aqF
-	veeiQKrsP2OYGvpJ3h8I8Xcr99ESN4PJQkSUToBmBGYsEz7VLrv939JGrNbW70bBFC8kZMhvJEI/i
-	G+NFYTWuvSiY8ahKqZXDnJRg/1fqF1zPX6DQjaGgKaVvRNhWGU7i907b3eSB6839uOqosvB7Rdjuz
-	OjVx898p8ahw0FpGsWd7TsuMV3FRgakUFvkeiFNOhZKQhQJn/K19FRb27j4uKX2kNWY6pEcuiO+jW
-	5rG5zVNbNl7nMmxqA7Iw==;
+	List-Owner; bh=tcc90tnJ8a6ufHlwK7O0+xZQr8uKQYBP0PCRKd63NuQ=; b=bAzl3WUw7+ehBi
+	xeo9zMw/8dE36XXdCmRMJkeqYiE9tTDdy0+h5Qb//2lzXFYK0I2gxVCzeGIbWgB7IWX/QSZw/Cpxt
+	UhqbvxFlCexqlEpRPv4GsMqhNAQtPlRmU2gjlPVV3pmZTwS5gsRgO8Elizmrf1GSIcnR+JZmTPs12
+	J+I79mslCwQ0HnjJ4aDdZSubz/RQNq3+1HF1psRKRhps4oQBp+oPZOgJdqAARK1uMQiKL8C715kbU
+	eDyDvlxXViE6Bvjz3BLYsfiaJ5MJA99DLKpBkP/22Emo2FmPUZin+52jeBY1PYYWCdF41Mbed+RIJ
+	b2D5kWfNBYYNob+ELMnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbLLT-0003wX-LI; Wed, 20 May 2020 09:49:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbLLF-0003vr-74
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:48:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 35A1630E;
- Wed, 20 May 2020 02:48:48 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 507073F68F;
- Wed, 20 May 2020 02:48:47 -0700 (PDT)
-Date: Wed, 20 May 2020 10:48:45 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH 1/3] arm64: vdso: Don't prefix sigreturn trampoline with
- a BTI C instruction
-Message-ID: <20200520094844.GL5031@arm.com>
-References: <20200519121818.14511-1-will@kernel.org>
- <20200519121818.14511-2-will@kernel.org>
- <20200519123843.GJ4611@sirena.org.uk>
- <20200519132538.GE5031@arm.com>
- <20200519143500.GK4611@sirena.org.uk>
- <20200519145514.GH5031@arm.com>
- <20200519154247.GN4611@sirena.org.uk>
+	id 1jbLN9-0006du-6h; Wed, 20 May 2020 09:50:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbLMw-0006dM-VV
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:50:36 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9C3932070A;
+ Wed, 20 May 2020 09:50:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589968232;
+ bh=53rt/NhFNDY+d2dbfI/806WF/r8+V8zlLTSpUE7ZGk0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ebH3UqRe/uBa1CpuRjBTW1cuS+4Otc+WaT0u3l+J6rnl1zp/cwbwP+mD/xlGtLS6E
+ YRt/6TXOTggME78RdlzpeUK8FbKOxWiGjwzUY9y/LSGJ1xn3IQkuFdajsQ0TMrMpPE
+ O3+foJt3ruV3Gpa7nfz/dnoeXxFkumR5KtXBVS54=
+Date: Wed, 20 May 2020 10:50:28 +0100
+From: Will Deacon <will@kernel.org>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v2 2/2] arm64: vdso: Fix CFI directives in sigreturn
+ trampoline
+Message-ID: <20200520095027.GE24293@willie-the-truck>
+References: <20200519162821.16857-1-will@kernel.org>
+ <20200519162821.16857-3-will@kernel.org>
+ <20200520094212.GK5031@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200519154247.GN4611@sirena.org.uk>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20200520094212.GK5031@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_024849_306867_8F7FBCA3 
-X-CRM114-Status: GOOD (  16.79  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200520_025035_039445_110AA660 
+X-CRM114-Status: GOOD (  16.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,67 +79,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, kernel-team@android.com,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, Mark Brown <broonie@kernel.org>,
+ kernel-team@android.com, linux-arm-kernel@lists.infradead.org,
  Daniel Kiss <daniel.kiss@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 04:42:47PM +0100, Mark Brown wrote:
-> On Tue, May 19, 2020 at 03:55:15PM +0100, Dave Martin wrote:
-> > On Tue, May 19, 2020 at 03:35:00PM +0100, Mark Brown wrote:
-> > > On Tue, May 19, 2020 at 02:25:38PM +0100, Dave Martin wrote:
+On Wed, May 20, 2020 at 10:42:13AM +0100, Dave Martin wrote:
+> On Tue, May 19, 2020 at 05:28:21PM +0100, Will Deacon wrote:
+> > @@ -14,7 +18,34 @@
+> >  
+> >  	.text
+> >  
+> > -	nop
+> > +/* Ensure that the mysterious NOP can be associated with a function. */
+> > +	.cfi_startproc
+> > +
+> > +/*
+> > + * .cfi_signal_frame causes the corresponding Frame Description Entry in the
+> > + * .eh_frame section to be annotated as a signal frame. This allows DWARF
+> > + * unwinders (e.g. libstdc++) to implement _Unwind_GetIPInfo(), which permits
+> > + * unwinding out of the signal trampoline without the need for the mysterious
+> > + * NOP.
+> > + */
+> > +	.cfi_signal_frame
+> > +
+> > +/*
+> > + * Tell the unwinder where to locate the frame record linking back to the
+> > + * interrupted context.
+> > + */
+> > +	.cfi_def_cfa    x29, 0
+> > +	.cfi_offset     x29, 0 * 8
+> > +	.cfi_offset     x29, 1 * 8
 > 
-> > > > Rather, the "ret lr" that jumps here is supposed to be authenticated via
-> > > > pointer auth in the caller.
-> 
-> > > In which case there was an issue anyway...
-> 
-> > What issue?
-> 
-> None, I was confused.
-> 
-> > > > If BTI {nothing} allows this while disallowing all BR/BLR then we could
-> > > > use that (I can't remember what BTI {nothing} is useful for, if anything).
-> 
-> > > > Otherwise, it's less clear what we should have here.
-> 
-> > > I can't remember anything that distinguishes it from an explicit NOP.
-> 
-> > I think it rejects everything other then fallthrough execution
-> > (BTYPE==0, which includes RET).  I might have misunderstood something
-> 
-> Right, but since BTI only generates an exception when BTYPE != 0 I'm
-> having trouble differentiating this from a NOP in practical terms.
+> We should also give rationale for why we don't describe how to recover
+> other regs here.  At a signal, every reg is potentially live with data
+> essential to the backtrace, so custom unwind entries further up the
+> stack may unwind badly after trying to unwind out of the signal handler.
 
-The idea would be that if an attacker could fudge some function pointer
-to point at __kernel_rt_sigreturn, attempting to do a call via that
-pointer would still trigger a BTI trap.
+Hmm, I'm not sure I get what you're asking for. We can't recover the other
+registers even if we tried, can we? I think the only way to get a reliable
+backtrace here is not to clobber the framepointer.
 
-This vulnerability isn't applicable to return addresses, because the
-victim is supposed to sign those before storing them to (attackable)
-memory, and authenticate between loading back from memory and doing the
-RET.  So the victim can defend itself from that scenario.
-
-> 
-> > somewhere, but sort of feels like the right thing here.  I never put a
-> > lot of effort into trying to understand BTI {nothing} though.  It
-> > seemed a weird, possibly useless special case.
-> 
-> That was my read too.
-
-And if the gdb doesn't tolerate modification of the exact insn sequence,
-we can't do it anyway.  I'd really say that's a bug-like rogue heuristic
-in gdb and "not our problem".  But people will moan about regressions
-nonetheless.
-
-I was that interested because of the potential use for BTI {nothing}.
-I'd have to actually try it out to be 100% sure it works anyway.
-
-Cheers
----Dave
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
