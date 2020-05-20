@@ -2,52 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F3511DBC10
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 19:55:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15B581DBC18
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 19:57:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KMHk5CKR0whSxLSZDeYMxF3fepHjPs0swrBnFQwNeM0=; b=M+/jetfdK5zX6t
-	8e39B8jBUfCCiSxdM267YZTJagXbk/d65Tu2G43TYxzrOevKaCzwMaeopt1qKGJdUdnTZowOdXBRg
-	G96pJ5IT8WcIeHOnuFgYnsK8usxPsn9gq4a7MHB5P6/Qe9Rbcg3HDKALBoINBIjs5i3UwZOSPeA+c
-	qEeU4iTT2hdpJl0kSK5k4n6hb4Z8FmUK02ewLFx8PMg0y2ifEeLqrABBUMzi/i9cDMECxfVfbcIxy
-	/gJUSTHv8QVTbGazZV3Ss02b/xSMw2NoNcwWzJ1YNHd8TFvOLgbnH0PKFTOE5xON5hPCGG1kdgdH2
-	a1njlIOGJHa1zmxHdkTw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Q+IFoPMD0Kil+HCEI+IcIK/pwYfQhjFn6SlVqWJ0nMk=; b=GRFjc8oarnXwAv
+	FI9iZPYGCteThTK0kVje5QBGq+zc0epvtDNGON3XmDGLjRtOUbwhQ5/TlNwfuxNkviLaajc6FXGdG
+	Eq/CNk2YXcA9aR+rq9zxgc5LxUvyWErF8vPAEektQP7K6SOGrStjdjxEfG/sm8HXFo78tRyoDKaxR
+	kKAf2pQ7YKnnMw2QFNwHQ/EnbpYc5M8YhXLUTY7Bq6JIeNeFMwqcYT3KUu4Lxl24rH76nfxMQLecC
+	1L+BmXCjc9nQnnedJdDQ6hsBceSDgzmpseAdSAgwE8NLyK5wJ0BNH02GdX2XksPkYJ5gXCnQTuNtr
+	gqEM+clV1iaYjt1629Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbSwV-00030a-A8; Wed, 20 May 2020 17:55:47 +0000
+	id 1jbSxe-0003ni-DB; Wed, 20 May 2020 17:56:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbSvZ-0008Mf-4d
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 17:54:50 +0000
+ id 1jbSwT-0003A9-OH
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 17:55:49 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6973E20823;
- Wed, 20 May 2020 17:54:46 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F401B204EF;
+ Wed, 20 May 2020 17:55:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589997288;
- bh=tSusfwEtnTufQiTMMaZ15xY6HANjfc5RrrUfXAHd4bU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=WzowI8+GqPbs73hL8wdgdaas6aoLB4lvYGw1rWSCDNTR9IC7pFclCVbjgGMKgBAh5
- uB8VqgZAdfEHAyY7/qcBGKGpkHNPWQ1Y/ve3p3PeYIQ8Vv10LRnYd9/A8NnP+uNj10
- z/N/0AOm7CzIOSU+1BrQmu7FJsG6OoT+c8Inlxnk=
+ s=default; t=1589997345;
+ bh=RjcKzlDRRMdelENucMWCiG1gUt0q7bqy6Vpb7eheWMw=;
+ h=From:To:Cc:Subject:Date:From;
+ b=PzAut2nxmQunc0XXHlPEVPPKKIfzpHOYYPRmzJElJu3qOQDHHsEZiRtHXgu12PYwI
+ pKVasRrndBu++RQyvAlP5CJjgrBd1pyae1S7TafC5aDyaZaBW1qgr36uXN8iDJoYTG
+ vNf/ciorw4Tt9bXpP5iAgqmPm9RyuFn40UrRrULY=
 From: Will Deacon <will@kernel.org>
-To: Tuan Phan <tuanphan@os.amperecomputing.com>
-Subject: Re: [PATCH v5] ACPI/IORT: Fix PMCG node single ID mapping handling
-Date: Wed, 20 May 2020 18:54:38 +0100
-Message-Id: <158999660879.126681.3746296394205258449.b4-ty@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v3 0/2] arm64 sigreturn unwinding fixes
+Date: Wed, 20 May 2020 18:55:37 +0100
+Message-Id: <20200520175539.28464-1-will@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <1589994787-28637-1-git-send-email-tuanphan@os.amperecomputing.com>
-References: <1589994787-28637-1-git-send-email-tuanphan@os.amperecomputing.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_105449_246477_F4762D55 
-X-CRM114-Status: UNSURE (   9.61  )
+X-CRM114-CacheID: sfid-20200520_105545_879579_8687C99D 
+X-CRM114-Status: UNSURE (   8.67  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -77,41 +75,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, catalin.marinas@arm.com,
- Sudeep Holla <sudeep.holla@arm.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Robin Murphy <robin.murphy@arm.com>,
- Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
- linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
- Hanjun Guo <guohanjun@huawei.com>, patches@amperecomputing.com,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
+Cc: Will Deacon <will@kernel.org>, Tamas Zsoldos <tamas.zsoldos@arm.com>,
+ Mark Brown <broonie@kernel.org>, kernel-team@android.com,
+ Dave Martin <dave.martin@arm.com>, Daniel Kiss <daniel.kiss@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 20 May 2020 10:13:07 -0700, Tuan Phan wrote:
-> An IORT PMCG node can have no ID mapping if its overflow interrupt is
-> wire based therefore the code that parses the PMCG node can not assume
-> the node will always have a single mapping present at index 0.
-> 
-> Fix iort_get_id_mapping_index() by checking for an overflow interrupt
-> and mapping count.
-> 
-> [...]
+Hi folks,
 
-Applied to arm64 (for-next/acpi), thanks!
+Here is v3 of my attempt at fixing the vdso sigreturn code for unwinders.
+Previous versions are available here:
 
-[1/1] ACPI/IORT: Fix PMCG node single ID mapping handling
-      https://git.kernel.org/arm64/c/50c8ab8d9fbf
+  v1: https://lore.kernel.org/r/20200519121818.14511-1-will@kernel.org
+  v2: https://lore.kernel.org/r/20200519162821.16857-1-will@kernel.org
+
+Changes since v2 include:
+
+  * Fix the .cfi directives to identify the link register correctly
+  * Even more comments
+
+Daniel, please can you give this a spin with the LLVM unwinder? It should work
+this time.
 
 Cheers,
--- 
+
 Will
 
-https://fixes.arm64.dev
-https://next.arm64.dev
-https://will.arm64.dev
+Cc: Dave Martin <dave.martin@arm.com>
+Cc: Tamas Zsoldos <tamas.zsoldos@arm.com> 
+Cc: Daniel Kiss <daniel.kiss@arm.com>
+Cc: Mark Brown <broonie@kernel.org>
+Cc: <kernel-team@android.com>
+
+--->8
+
+Will Deacon (2):
+  arm64: vdso: Don't prefix sigreturn trampoline with a BTI C
+    instruction
+  arm64: vdso: Fix CFI directives in sigreturn trampoline
+
+ arch/arm64/include/asm/linkage.h     |  6 ++--
+ arch/arm64/kernel/vdso/sigreturn.S   | 51 ++++++++++++++++++++++++----
+ arch/arm64/kernel/vdso32/sigreturn.S | 19 ++++++-----
+ 3 files changed, 58 insertions(+), 18 deletions(-)
+
+-- 
+2.26.2.761.g0e0b3e54be-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
