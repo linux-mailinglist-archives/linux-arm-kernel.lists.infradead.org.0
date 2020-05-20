@@ -2,93 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F7581DA78E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 03:53:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B090B1DA7BA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 04:13:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jqq02jfR8ZGyW1wfupg7cVmxlStkrpUyoMb/gTDlYfs=; b=k7wviRc+cjjBXo
-	J3qzVG6gyXdsFbL581EUq+spKgYXbBKM8Ds242czTimwVJV/rBOus5Ff4gGt6VhlNkcwG3S2FHTF5
-	Ssx+FLgHk2FRQdZk/QvCZqiLXeBvYzduxK+zDCCNa2El10IN4bO/NppcH5hdR3AKQnu2kRqvtpTpN
-	iRhhBX4/TAlkA1aoywYQwn7ks9Owm5RHfWIxE0nbbRRC0l/qKO/78P24IS7J1GkxxUho/dDm3BMQo
-	4ha/IpPK2OFN2jsfx4ydPekcPS0XKRWpB+CfZevUAod4uWZhF3+4jB3Wiu/WrRycFgkN86NjDHz61
-	9BuHNJ/vNXD1SWGpfosQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RMJlrwpuDucJxp59kJ1X/jXYFujlRHwpENvoQfghJyU=; b=WCo/EXsSk7zO9B
+	ock2pS6kpA2sSW4o1ChPcwaqb7VEPuaWZKJLVScnhSICKfEVAPkvzKMbgPIZs45ilUbtSF6QEGbZL
+	9RpzGeRTtcv0h5FliLjSChTdRYtnVE7wJddifRasecswn9JogfdIAevqIrF90RBpfF5XYn3Lr0ab/
+	XSPTL8OY0Y25Ehw1hafB8j6eEB6bvmG4McaS+AW+PBk2wizVTf8KatTSJicJJ1usMQlPV1q2Bw58F
+	4yGRfLc+1gfTWUoQlkvwE0NfGcfQcwuAxjMKalhPwbUebm5twZ2oAaScys0NtmdP2JwooU3WJjIsY
+	Tkba/4mNfErjqTX0Nyxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbDvZ-0004Gw-Cq; Wed, 20 May 2020 01:53:49 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jbEE3-0007cs-T1; Wed, 20 May 2020 02:12:55 +0000
+Received: from mail-eopbgr60089.outbound.protection.outlook.com ([40.107.6.89]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbDvN-0004GM-V6
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 01:53:42 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1589939620; h=In-Reply-To: Content-Type: MIME-Version:
- References: Message-ID: Subject: Cc: To: From: Date: Sender;
- bh=bipPZZl6i0uiVygGHlA0ONnrop/ReE+5AmOxNg/wCQ4=;
- b=c8r8iiQknM3boT2CDTE/QGy3J1yol/zi3PZlHycp3ZYLdWU9j7DiWG/uHzgLr4heks9W3Y9I
- G+OP95sheX5dwnqiK956UczzWn3RtipAUo0EWd3NcVf6RNgxF2cq+0PhX6/xTVkSt6xabGx+
- Ln7HxO2IrNQk3bqIer+rNFegex0=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5ec48d9a.7fc19641a0d8-smtp-out-n02;
- Wed, 20 May 2020 01:53:30 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 0711AC43391; Wed, 20 May 2020 01:53:30 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from jcrouse1-lnx.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: jcrouse)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 681B1C433C6;
- Wed, 20 May 2020 01:53:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 681B1C433C6
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=jcrouse@codeaurora.org
-Date: Tue, 19 May 2020 19:53:26 -0600
-From: Jordan Crouse <jcrouse@codeaurora.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v6 2/5] iommu/arm-smmu: Add support for TTBR1
-Message-ID: <20200520015326.GA31730@jcrouse1-lnx.qualcomm.com>
-Mail-Followup-To: Will Deacon <will@kernel.org>,
- iommu@lists.linux-foundation.org, linux-arm-msm@vger.kernel.org,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org,
- Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org
-References: <20200409233350.6343-1-jcrouse@codeaurora.org>
- <20200409233350.6343-3-jcrouse@codeaurora.org>
- <20200518145959.GK32394@willie-the-truck>
+ id 1jbEDu-0007bY-Kb
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 02:12:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=V+KxzhBK9kSFqRzc+syu+R5slMxxnmv9fLmUUQ6qzIrzZ+8pk4RW+jHZhwhnL8P7+Gn7WDVKRVSlBZr/pp5OvXDMDj+f44nj2m9EI+ixPspf/rcVrSFJP9p5Y5ixF8qHiuGvZL4D5dGd6wDla2GeUU8aQRN7D1TxubbUammMMmc7lT5I3TSlUPkSF9dPCO+DGcJAinZdZyyJBEEgvf1zm70RUleieGfNaVnIinGjKQJEzAWTMfqEhvoTs+YiTkwj7TnYRnfZB83C9cE+XMR1wmK9DNIceQ/lhcM2+hp+cRiHp8RjhHCs0mJ8QFRqhQaPgGEgR8BYc1M6Le0rxFJqig==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0RnblXTQDwrw8LX5NWOSDTxGQELjPog/KQM1EDqmLzQ=;
+ b=WoZ2wjBcofuMhTeD2lttzUBDFB0+i26a6qAMbfCn3Qg9GkG/XW3JeA/OGx2+r7EyJJ313866FkC5H2hQdXHYwvzrh4DphtjrDV2V2u1H7v5RV3C2xY4i2SM22bzP7dnK8FQ3ebdngmm9/ZgqwcjS25IaUs4+LVmN8+JTha7H4szoIQDb2HCRv7vfZOyFhB0HfpuNRZp9DLIo7wLie2RPQLg54hOhwS3ePJBlu1nh19ytDJVSqmAVcUsTHXqTIlmWBN26EBVgvpspsEBdX9zq1xmv/lfY6jXrQJGz12YPcL/jmX8ytuCIa/EjzBUgxYynjlzWPvg0yIdousxm4fwMfA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=0RnblXTQDwrw8LX5NWOSDTxGQELjPog/KQM1EDqmLzQ=;
+ b=YjE1Eqv0ZR6yyaA1DvZr9CqmS0NTxu/65MDohTaytp2VxzzB5ali/tEs6PeZgiaF6AZsOKbzLmoDFeRGS5CYqRs8LTQEf+aA0km4zW2dX8gbvfHhZohkyZmTTi9hAiom/Wwcn8lEQOaqmnsZ/EFh5JNt2CyxptnVtpFjICjHsD8=
+Authentication-Results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
+ by DB6PR0402MB2741.eurprd04.prod.outlook.com (2603:10a6:4:98::14)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.26; Wed, 20 May
+ 2020 02:12:41 +0000
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.3021.020; Wed, 20 May 2020
+ 02:12:40 +0000
+From: peng.fan@nxp.com
+To: shawnguo@kernel.org, fabio.estevam@nxp.com, kernel@pengutronix.de,
+ aisheng.dong@nxp.com
+Subject: [PATCH 0/4] arm64: dts: imx8m: dtb aliases update
+Date: Wed, 20 May 2020 10:02:42 +0800
+Message-Id: <1589940166-736-1-git-send-email-peng.fan@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: SG2PR01CA0099.apcprd01.prod.exchangelabs.com
+ (2603:1096:3:15::25) To DB6PR0402MB2760.eurprd04.prod.outlook.com
+ (2603:10a6:4:a1::14)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200518145959.GK32394@willie-the-truck>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from localhost.localdomain (119.31.174.66) by
+ SG2PR01CA0099.apcprd01.prod.exchangelabs.com (2603:1096:3:15::25) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.3021.23 via Frontend
+ Transport; Wed, 20 May 2020 02:12:36 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [119.31.174.66]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 31591d5e-9bcc-403c-505f-08d7fc63460c
+X-MS-TrafficTypeDiagnostic: DB6PR0402MB2741:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <DB6PR0402MB2741C54F5CC80208463F57E788B60@DB6PR0402MB2741.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3826;
+X-Forefront-PRVS: 04097B7F7F
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: SZvIT+cNPamcFxqNAELrAYJVVSZynZbro46VYoG/n3YwHr4PhvoWYkRrEHBzqlr+IIoQfswV4rbfywwUIP9m/MNCuU20XKZ/CgFyndC6FwOwiQyeJst/Mnu7/ALF6xqApnSBI/f+2EGdmLCtI97vMyhP2hEI2csnhdsPM+OL51NVzRjJmKd3zLAyfbFioCLmznO3J1zlSZvyYmN/u6kVRvKMtdrPoi2akquTZSSAIkUX3qb+KSVAf+e1XcvYV/t27NUbqshAtttwMOVaL7JcZqlO9CO85z3oT/1Ud8myQoTH4DBEJEyzgO/ZUQ9cvdsVkwwFf7B5YQtZbZzQnwOVtqI0EETmfKXrZLnMLiCkxeElcaBhwTQTKqLK458ecu/kORnasBYGn4KDY91x6suaXHb04mtkNZkvHcHYDiMZlOjp4M824WLECS2dVnSAiUXzu18v4mruOpW9nq3jXFyD9F08W8fuOH49UYyPVpkB5HVB2rRZ6RO8j0Nunu92PzobjgQ0iv3X7C1e/ivKdxFPCA==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(376002)(346002)(39860400002)(136003)(396003)(36756003)(8676002)(6512007)(86362001)(6666004)(52116002)(9686003)(66946007)(66556008)(66476007)(8936002)(478600001)(316002)(5660300002)(4744005)(15650500001)(26005)(6486002)(69590400007)(6506007)(4326008)(2616005)(956004)(2906002)(186003)(16526019)(32563001);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: tCyhM1K8IvEyQO6y8iZ+emTcKC94L27RbIQfz6fmG/n7F+shXQ+//V/MwjqzqWB7WxnvCiIGIkLnkdahN42afO4OSwcLf9/ULov2yJpyR95hH8xBsvGIAJDRDBM11lBaIYWx6QiXZP20i0or59bn7PzmByQcIdfN+FvvrGnLF7wuqCtQEZCvgxXkO+rY/8texp7fCtci3uN4YEUEKJ1V+iZmpaAHKdnVZ6s6tAPSjLal7emHTQtq0V4KrBYd9Dh4Czswdf7tU7kewGnwpRTA1zY+3VdHIkUyy/vVMC7dVTdzC+aJ5qHfRwPgkaWupb7s/pQnY6XevHi7sxVnh9RYVjRUQLHNB6TxYFjVLuqsFuCwjRyjcYnxOcGRQ9a7nG4x8R1uNroDjXSJ4TAePY1S6dRFGUk8f3iZgfcFlQakP6ZeV7s/Zosh5EDifjXnLSG/67rsD8eV/hK7qDEsHEZMDK6X9xEOhq87meCZp9wbx5Bhwl8tIgZ5RBwkpdFmiy70
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 31591d5e-9bcc-403c-505f-08d7fc63460c
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 May 2020 02:12:40.7386 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: j7/1vRP+eQabKj1pJ/9ZBqoIuhaNxG6MZbc11Vrq8xVzO45nmUlJe8SsYbrzMIk2x8qs3AT3ERkX8p6QTmNJKg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2741
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_185340_331086_E5B97F46 
-X-CRM114-Status: GOOD (  30.16  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200519_191246_722822_F95BF56E 
+X-CRM114-Status: UNSURE (   7.78  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.6.89 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.6.89 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [104.130.122.26 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,124 +127,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Peng Fan <peng.fan@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com, leonard.crestez@nxp.com,
+ daniel.baluta@nxp.com, linux-arm-kernel@lists.infradead.org,
+ l.stach@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 03:59:59PM +0100, Will Deacon wrote:
-> On Thu, Apr 09, 2020 at 05:33:47PM -0600, Jordan Crouse wrote:
-> > Add support to enable TTBR1 if the domain requests it via the
-> > DOMAIN_ATTR_SPLIT_TABLES attribute. If enabled by the hardware
-> > and pagetable configuration the driver will configure the TTBR1 region
-> > and program the domain pagetable on TTBR1. TTBR0 will be disabled.
-> > 
-> > After attaching the device the value of he domain attribute can
-> > be queried to see if the split pagetables were successfully programmed.
-> > The domain geometry will be updated as well so that the caller can
-> > determine the active region for the pagetable that was programmed.
-> > 
-> > Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
-> > ---
-> > 
-> >  drivers/iommu/arm-smmu.c | 48 ++++++++++++++++++++++++++++++++++------
-> >  drivers/iommu/arm-smmu.h | 24 +++++++++++++++-----
-> >  2 files changed, 59 insertions(+), 13 deletions(-)
-> > 
-> > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> > index a6a5796e9c41..db6d503c1673 100644
-> > --- a/drivers/iommu/arm-smmu.c
-> > +++ b/drivers/iommu/arm-smmu.c
-> > @@ -555,11 +555,16 @@ static void arm_smmu_init_context_bank(struct arm_smmu_domain *smmu_domain,
-> >  			cb->ttbr[0] = pgtbl_cfg->arm_v7s_cfg.ttbr;
-> >  			cb->ttbr[1] = 0;
-> >  		} else {
-> > -			cb->ttbr[0] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> > -			cb->ttbr[0] |= FIELD_PREP(ARM_SMMU_TTBRn_ASID,
-> > -						  cfg->asid);
-> > -			cb->ttbr[1] = FIELD_PREP(ARM_SMMU_TTBRn_ASID,
-> > -						 cfg->asid);
-> > +			cb->ttbr[0] = FIELD_PREP(ARM_SMMU_TTBRn_ASID,
-> > +				cfg->asid);
-> > +
-> > +			if (pgtbl_cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1) {
-> > +				cb->ttbr[1] = pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> > +			} else {
-> > +				cb->ttbr[0] |= pgtbl_cfg->arm_lpae_s1_cfg.ttbr;
-> > +				cb->ttbr[1] = FIELD_PREP(ARM_SMMU_TTBRn_ASID,
-> > +							 cfg->asid);
-> > +			}
-> 
-> This looks odd to me. As I mentioned before, the SMMU driver absolutely has
-> to manage the ASID space, so we should be setting it in both TTBRs here.
+From: Peng Fan <peng.fan@nxp.com>
 
-Somebody had suggested a while back to only do TTBR0 but I agree that it makes
-more sense for it to be on both.
+Minor patchset to update device tree aliases
 
-> > diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-> > index 8d1cd54d82a6..5f6d0af7c8c8 100644
-> > --- a/drivers/iommu/arm-smmu.h
-> > +++ b/drivers/iommu/arm-smmu.h
-> > @@ -172,6 +172,7 @@ enum arm_smmu_cbar_type {
-> >  #define ARM_SMMU_TCR_SH0		GENMASK(13, 12)
-> >  #define ARM_SMMU_TCR_ORGN0		GENMASK(11, 10)
-> >  #define ARM_SMMU_TCR_IRGN0		GENMASK(9, 8)
-> > +#define ARM_SMMU_TCR_EPD0		BIT(7)
-> >  #define ARM_SMMU_TCR_T0SZ		GENMASK(5, 0)
-> >  
-> >  #define ARM_SMMU_VTCR_RES1		BIT(31)
-> > @@ -343,16 +344,27 @@ struct arm_smmu_domain {
-> >  	struct mutex			init_mutex; /* Protects smmu pointer */
-> >  	spinlock_t			cb_lock; /* Serialises ATS1* ops and TLB syncs */
-> >  	struct iommu_domain		domain;
-> > +	bool				split_pagetables;
-> >  };
-> >  
-> >  static inline u32 arm_smmu_lpae_tcr(struct io_pgtable_cfg *cfg)
-> >  {
-> > -	return ARM_SMMU_TCR_EPD1 |
-> > -	       FIELD_PREP(ARM_SMMU_TCR_TG0, cfg->arm_lpae_s1_cfg.tcr.tg) |
-> > -	       FIELD_PREP(ARM_SMMU_TCR_SH0, cfg->arm_lpae_s1_cfg.tcr.sh) |
-> > -	       FIELD_PREP(ARM_SMMU_TCR_ORGN0, cfg->arm_lpae_s1_cfg.tcr.orgn) |
-> > -	       FIELD_PREP(ARM_SMMU_TCR_IRGN0, cfg->arm_lpae_s1_cfg.tcr.irgn) |
-> > -	       FIELD_PREP(ARM_SMMU_TCR_T0SZ, cfg->arm_lpae_s1_cfg.tcr.tsz);
-> > +	u32 tcr = FIELD_PREP(ARM_SMMU_TCR_TG0, cfg->arm_lpae_s1_cfg.tcr.tg) |
-> > +		FIELD_PREP(ARM_SMMU_TCR_SH0, cfg->arm_lpae_s1_cfg.tcr.sh) |
-> > +		FIELD_PREP(ARM_SMMU_TCR_ORGN0, cfg->arm_lpae_s1_cfg.tcr.orgn) |
-> > +		FIELD_PREP(ARM_SMMU_TCR_IRGN0, cfg->arm_lpae_s1_cfg.tcr.irgn) |
-> > +		FIELD_PREP(ARM_SMMU_TCR_T0SZ, cfg->arm_lpae_s1_cfg.tcr.tsz);
-> > +
-> > +       /*
-> > +	* When TTBR1 is selected shift the TCR fields by 16 bits and disable
-> > +	* translation in TTBR0
-> > +	*/
-> > +	if (cfg->quirks & IO_PGTABLE_QUIRK_ARM_TTBR1)
-> > +		tcr = (tcr << 16) | ARM_SMMU_TCR_EPD0;
-> 
-> This looks reasonably dodgy to me, as you copy a RESERVED bit into the A1
-> field. Furthermore, for 32-bit context banks you've got the EAE bit to
-> contend with as well.
+Peng Fan (4):
+  arm64: dts: imx8mq: Add mmc aliases
+  arm64: dts: imx8mq: Add ethernet alias
+  arm64: dts: imx8mm: sort the aliases
+  arm64: dts: imx8mp: add i2c aliases
 
-I can swizzle it more if we need to. I think Robin's main objection was that we
-didn't want to construct the whole half of the TCR twice and have a bunch of
-field definitions for the T1 space that are only used in this special case. 
-
-> Perhaps we shouldn't expose DOMAIN_ATTR_SPLIT_TABLES for anything other than
-> the 64-bit page table format.
-
-We kind of enforce that in arm_smmu_init_domain_context [1] by only allowing the
-quirk to be set when cfg->fmt == ARM_SMMU_CTX_FMT_AARCH64 and stage 1. I'm not
-sure if that is formal enough or if we should bake something in to
-io-pgtable-arm to warn against it too.
-
-Jordan
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 16 ++++++++--------
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi |  6 ++++++
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi |  3 +++
+ 3 files changed, 17 insertions(+), 8 deletions(-)
 
 -- 
-The Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
-a Linux Foundation Collaborative Project
+2.16.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
