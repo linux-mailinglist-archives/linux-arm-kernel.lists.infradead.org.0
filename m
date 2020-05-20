@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8134B1DA83D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 04:50:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7B0E1DA840
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 04:53:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9/jWFnch4iXgWpPmhM1ygXwnhFSBheq3dYAxTYV0t9s=; b=Lj6MDdBmGbTNFj
-	nyDg2zQy8/3FmzIOmXDXSAZDXv19016vPjbR9SJFfUST1MCvBbAd9JmHHE8uiycKnhsHy+Tec6SU3
-	9ZNNDFgIRxRQ7ATxyuOHPLv1jsNQ27eUWhfX8LCV2MJsEn43J5j6GQ4tkuQ/lz/a7yprg8a4LfApc
-	og/Kxqc2UbylUjAhZvNJ/qYqic63scoTHvyXQTumKEjQns5bYJkcS+E88RO3LSUwset6bIpY087aK
-	NouZ45EkDUUTnuH2/L8WY1LPh0IPPPS3eGT66Wf11QcODJYDWZ9566lMKH+6IBGyCzkwNS788LLbp
-	vGLIkwR6s31Refym6x4g==;
+	List-Owner; bh=REZh6xHbx1dslmt9cJARSpqkc/8yF+MH34ms0B1/Kn4=; b=Aju47N9yKm5Lq9
+	zU40JqdKptJjeFoGX9F3XhGhMjJfuxBCOkA5V6r3SxHY2VBuSfCZ+MBdvu+NwfpA4e32HtRjRxhQp
+	CwcNbleg7tnRuS6R0W07CQyZ23DDvX82gOztcZ6Sqj85+mYqmn9s0FQloGRoqTVQ5Up9IxI30vovE
+	hyHpjoEZCKVWO+f8ohbF/NIdnAdyRQTVVW/cnH9LUpCkWZDDbTaclwul3QtKYfqppFeFvmdMj5GqN
+	OiuT2UjrV+qsv5wVh20e1bZHn/85ewuN1Znn7I9VyD/pamDthmQuHEX8Q7qyIbyTIMqSjRuVifrwb
+	G201pkkHXLEdHHbOZp8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbEob-0001Jh-6A; Wed, 20 May 2020 02:50:41 +0000
+	id 1jbEqo-0001ii-Kt; Wed, 20 May 2020 02:52:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbEoH-0001DZ-G8
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 02:50:25 +0000
+ id 1jbEqc-0001iM-3u
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 02:52:47 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBE962070A;
- Wed, 20 May 2020 02:50:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8EF3A2070A;
+ Wed, 20 May 2020 02:52:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589943021;
- bh=g9JT21sFXC6+dBAbsovjKENX8bCagZaZhdngsVJcSC8=;
+ s=default; t=1589943165;
+ bh=7N4JAIZvOiJfPBd1SQlUYC1IFT+NKDEVWtcM1h2yEr0=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PSQRZ6mcGgzIjNWlyhCC0n12Cb2NOnwqDBq5GNk5HiIm/xZ3vfNvkZewEeeaEtUd+
- TFw5zkZXBZB/L9OgK92Tf0XjADoUFYk+KXxIq5fiepftgXXzLGB6+qlxpIBYrKJC91
- +uMSReYcSXMnHbCHY8iOAAyXu1vmN9veOh2xZsKg=
-Date: Wed, 20 May 2020 10:50:16 +0800
+ b=QU19nGrQZmqubwxJfN+T+Y0R0/nOlQcJ91q+J8TAqwDjsBST8CiBKWbolk3+UR4oE
+ E+frl6PrI7LeEHssj7fTii/6HMILvTKQRdmWie62SRcGMqmKYY/cDIDIEzzUJ5O6HK
+ w5/yX1Qv/w+hRksuRy7MoedeLyTMjqxTwwTv4sv8=
+Date: Wed, 20 May 2020 10:52:39 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Steffen Trumtrar <s.trumtrar@pengutronix.de>
-Subject: Re: [PATCH] ARM: dts: imx7d-pinfunc: add input mux for ENET2 mdio
-Message-ID: <20200520025016.GT11739@dragon>
-References: <20200515114151.6516-1-s.trumtrar@pengutronix.de>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH] ARM: dts: imx: make src node name generic
+Message-ID: <20200520025239.GU11739@dragon>
+References: <1589805593-14164-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200515114151.6516-1-s.trumtrar@pengutronix.de>
+In-Reply-To: <1589805593-14164-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_195021_940841_A5E42A6A 
-X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-CacheID: sfid-20200519_195246_175396_B1A84726 
+X-CRM114-Status: UNSURE (   7.87  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -77,19 +77,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>
+Cc: devicetree@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, Linux-imx@nxp.com,
+ kernel@pengutronix.de, festevam@gmail.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 01:41:51PM +0200, Steffen Trumtrar wrote:
-> Add the missing input mux for ENET2 mdio. Without this setting, it is not
-> possible to read the MDIO answers back from the PHY.
+On Mon, May 18, 2020 at 08:39:53PM +0800, Anson Huang wrote:
+> Node name should be generic, use "reset-controller" instead of "src" for
+> i.MX6/i.MX7 SoCs src nodes.
 > 
-> Signed-off-by: Steffen Trumtrar <s.trumtrar@pengutronix.de>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 
 Applied, thanks.
 
