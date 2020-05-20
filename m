@@ -2,82 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D1FA1DB3F5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:44:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35C391DB408
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:46:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y/HvSjTVQKrvaHzA2CAc5GmunmmsvUPUUrBPJKBw7MM=; b=LLn/nuH8Qk7sIs
-	F0Zt6TBCT0VZmmS3n4f3xQGiiHSuiM4tBY0nd0GUMVER3wOza/uSOYrVBZpOfd7ka0Dz8un5zRCRY
-	7vN9V0WVpBB8p15dcuTOw3NIUInp28MyB02PWoEnmsKLU7hq8GTUu1t6ahD9Mb231kAF6PlAdaF3p
-	y1TF8Z6G+Ddz3k05Om0kf7hAcJeVicHyCNJI8U9SPk8CpfYnN9ckczCU5gaqFnXpcmh+bauUH1uV9
-	DZzm1E6AWIr+bSEwFE/jFjvMZAzlNXqYwif/Mi7zHFpp0Fr987AZDk3Qhi56sKamLF0jn9ahS6OdH
-	l7saLBKZVf9X/xDSEH2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=iPxUcdrNEf44AZm2U3sFmOVfIF3m8CvlJ3SyJ0SYTQw=; b=UjegO3lJ5ShUV6
+	Cc4uDlX28f2+ebCmFoRcfM3uoG9Gy7Sv37E6CGBlCpG3qrHgYnnn1lkZX3OlQUE0B2ghNQpPLhkcd
+	17SYuzj/D6TpWlddm3IOsn9hItF1KXrqblGKmCHkP1VJptX4eiAcZdCxZ1TVWdOmMCipbSR4N17MX
+	PVr+ZoWJ8OIOljWL04hG5dk5mNqjejF2qnDhFyTSm0lB9Mcb1MS6+1ZV6oIHJfPAUKSuck4A8ZYnu
+	8HXqf8r+kEX7WuRvfaHpKxSi7ERSy+HJTs+d3gWJmXhmek4jl32F6MIQnouVBLjj/3skceOfsZhjH
+	G89/H27buTftpovja+uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbO5U-0002wu-D0; Wed, 20 May 2020 12:44:44 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jbO6y-00064p-Lv; Wed, 20 May 2020 12:46:16 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbO5H-0002vs-F4
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:44:37 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r3so1097824wrn.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 05:44:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=Y40jbkqIfFkUI7ZiRlmLevn335EVOReBHbhD7GbihLE=;
- b=p4CUdE9pepIc4FjeGaw9rpilpouxhHRYmar9hVV44lZrKVe+1UvqNOkup4LagMa4QY
- RSw6gueqOVQJLw3Ihf4HjnGEeqYzD16ihtmI8ApVBWKguVmOsC265K7DCs7q+vqeIrq+
- i4i8JEAY4h3MumABqT9u+m2g7eKxueVgu/DqX/HqbPCE4Fi86oBv7FB2KIANCp4kXlVI
- JkQ9CXs0K1fF2yEBMU8Lfzp8SkbKKr2TlFvGnz0aPsuaSG1JDeRuAkvscN6I8mzTx1Pd
- MS3Hp7jFjjGxifFKQRdYDTxDLynvYZ8erE6M/7KCG6b5jjfD+3/kcUU/0mg8OwuNWKDn
- ZKrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=Y40jbkqIfFkUI7ZiRlmLevn335EVOReBHbhD7GbihLE=;
- b=aoPExGLguUmLrXzuSsTrGQ3vO+sBcRc9GRbeU7RxpN80mgd1ab9hBDER7AUChKc/zk
- j91MWHm6Yq1gJ5nEzH9UXRai27Y5zJliXknBXbRL3pH9caE8nIeRVrD2IhDJP7ORNRIi
- QBAVJXrfzO58DmRJzgw6y8ada0kFEL9n4Y2aUjeBu59z94OjU38J6CJAvHH5BmZdXD4V
- POiXtPtyicCUFXFPu3LYY3+lhfBphOQMiV6cOY2u6SqM5DvgyHmEudp5R6GwIk5mWHgw
- H7LCKKrRljaMd5fjCioEV30dXqHw9ZGaozNp/Vj2HwWSAVXtjETF5cD1gJexgHmOrBVY
- WIjA==
-X-Gm-Message-State: AOAM533EmsJ2hr0Xh4iN1fX8ebD/5oFyD09MWXFJa5btOxoxXTr53ush
- jfu7udCzN0qC5fQaPArqdet7vQ==
-X-Google-Smtp-Source: ABdhPJxVz5Ef/g7gSSEvpWEQLOSp0LR9XsoCDxDK4+T7RPFKUq8EqywmmWzSB+P43U85QvHoiTf27A==
-X-Received: by 2002:adf:f786:: with SMTP id q6mr3987549wrp.120.1589978663802; 
- Wed, 20 May 2020 05:44:23 -0700 (PDT)
-Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
- by smtp.gmail.com with ESMTPSA id q9sm2876323wmb.34.2020.05.20.05.44.22
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 05:44:23 -0700 (PDT)
-Date: Wed, 20 May 2020 14:44:13 +0200
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] perf/smmuv3: Allow sharing MMIO registers with the SMMU
- driver
-Message-ID: <20200520124413.GA2512145@myrica>
-References: <20200421155745.19815-1-jean-philippe@linaro.org>
- <20200520122453.GB25815@willie-the-truck>
+ id 1jbO67-0003F3-Ov
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:45:30 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04KCj0uD006158;
+ Wed, 20 May 2020 07:45:00 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1589978700;
+ bh=8nwhAbh5OTRkKkm30f70KfL0dIF8WSriIhQIaxxmJpc=;
+ h=From:To:CC:Subject:Date;
+ b=c3cWrTEriFZcDIzEnZoHtBYNDTpzG4pcB4hT1aAvivjOmT1CpuXa5nen6Y0x/4lHV
+ jdaXxB8Z2MfdpoqbcPqbbmenJRWIASwvZ7Cfr8K025YOKWy6+aluCLzPy9DT2nMLfu
+ 8/Jdudu8utktIk+0DbDINqQuUoCsXuqpD+SOU574=
+Received: from DFLE111.ent.ti.com (dfle111.ent.ti.com [10.64.6.32])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04KCj0LG048681;
+ Wed, 20 May 2020 07:45:00 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE111.ent.ti.com
+ (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 20
+ May 2020 07:45:00 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Wed, 20 May 2020 07:45:00 -0500
+Received: from lokesh-ssd.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04KCiuvK026764;
+ Wed, 20 May 2020 07:44:57 -0500
+From: Lokesh Vutla <lokeshvutla@ti.com>
+To: Marc Zyngier <maz@kernel.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH 00/12] irqchip: ti,
+ sci-intr/inta: Update the dt bindings to accept different interrupt
+ parents
+Date: Wed, 20 May 2020 18:14:42 +0530
+Message-ID: <20200520124454.10532-1-lokeshvutla@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200520122453.GB25815@willie-the-truck>
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_054431_510781_80EC8F3C 
-X-CRM114-Status: GOOD (  16.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200520_054523_883503_98DB373B 
+X-CRM114-Status: GOOD (  12.92  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,47 +89,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, iommu@lists.linux-foundation.org,
- lorenzo.pieralisi@arm.com, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Nishanth Menon <nm@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>,
+ Device Tree Mailing List <devicetree@vger.kernel.org>,
+ Lokesh Vutla <lokeshvutla@ti.com>, Sekhar Nori <nsekhar@ti.com>,
+ Tero Kristo <t-kristo@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 01:24:53PM +0100, Will Deacon wrote:
-> On Tue, Apr 21, 2020 at 05:57:46PM +0200, Jean-Philippe Brucker wrote:
-> > Some Arm SMMUv3 implementations, for example Arm CoreLink MMU-600, embed
-> > the PMCG registers into the SMMU MMIO regions. It currently causes probe
-> > failure because the PMU and SMMU drivers request overlapping resources.
-> > 
-> > Avoid the conflict by calling devm_ioremap() directly from the PMU
-> > driver. We loose some sanity-checking of the memory map provided by
-> > firmware, which doesn't seem catastrophic.
-> > 
-> > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> > ---
-> > 
-> > So this is the simplest solution, and I don't think we're missing much
-> > by skipping the resource reservation. I've also been exploring a more
-> > complex approach [1] which has the SMMU driver perform resource
-> > reservation on behalf of the PMU driver, but I'm not sure it's
-> > necessary.
-> > 
-> > Please test, I've only tried the RevC FastModel using devicetree so far.
-> > 
-> > [1] https://jpbrucker.net/git/linux/log/?h=smmu/pmu
-> > ---
-> >  drivers/perf/arm_smmuv3_pmu.c | 28 +++++++++++++++++++++-------
-> >  1 file changed, 21 insertions(+), 7 deletions(-)
-> 
-> Is this patch still needed? I can't quite follow from the discussion.
+Hi Marc,
+	This is continuation of the RFC patches[0] regarding the driver
+updates to support for following interrupt parent connection:
+- INTR -> INTR
+- INTA -> GICv3
+The current existing driver assumes that INTR is always connected to
+GICv3 and INTA is always connected to INTR.
 
-No, it is superseded by "[PATCH v2] iommu/arm-smmu-v3: Don't reserve
-implementation defined register space" that you applied yesterday
-(Thanks!)
+As discussed this change breaks the DT backward compatibility but it
+allows to not depend on TISCI firmware properties in DT node. IMHO, this
+will ensure that any future changes will not effect DT properties.
 
-Jean
+[0] https://lore.kernel.org/linux-arm-kernel/20190923042405.26064-1-lokeshvutla@ti.com/
+
+Thanks and regards,
+Lokesh
+
+Lokesh Vutla (12):
+  firmware: ti_sci: Drop the device id to resource type translation
+  firmware: ti_sci: Drop unused structure ti_sci_rm_type_map
+  firmware: ti_sci: Add support for getting resource with subtype
+  dt-bindings: irqchip: ti,sci-intr: Update bindings to drop the usage
+    of gic as parent
+  dt-bindings: irqchip: Convert ti,sci-intr bindings to yaml
+  irqchip/ti-sci-intr: Add support for INTR being a parent to INTR
+  dt-bindings: irqchip: ti,sci-inta: Update docs to support different
+    parent.
+  dt-bindings: irqchip: Convert ti,sci-inta bindings to yaml
+  irqchip/ti-sci-inta: Add support for INTA directly connecting to GIC
+  arm64: dts: k3-j721e: ti-sci-inta/intr: Update to latest bindings
+  arm64: dts: k3-am65: ti-sci-inta/intr: Update to latest bindings
+  arm64: dts: k3-am65: Update the RM resource types
+
+ .../interrupt-controller/ti,sci-inta.txt      |  66 --------
+ .../interrupt-controller/ti,sci-inta.yaml     | 104 ++++++++++++
+ .../interrupt-controller/ti,sci-intr.txt      |  82 ---------
+ .../interrupt-controller/ti,sci-intr.yaml     | 113 +++++++++++++
+ MAINTAINERS                                   |   4 +-
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi      |  34 ++--
+ arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi       |  12 +-
+ arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    |   8 +-
+ .../arm64/boot/dts/ti/k3-am654-base-board.dts |   4 +-
+ .../dts/ti/k3-j721e-common-proc-board.dts     |  10 +-
+ arch/arm64/boot/dts/ti/k3-j721e-main.dtsi     |  41 ++---
+ .../boot/dts/ti/k3-j721e-mcu-wakeup.dtsi      |  12 +-
+ drivers/firmware/ti_sci.c                     | 155 ++++++++----------
+ drivers/irqchip/irq-ti-sci-inta.c             |  90 ++++++++--
+ drivers/irqchip/irq-ti-sci-intr.c             | 150 ++++++++++-------
+ include/linux/soc/ti/ti_sci_protocol.h        |  13 ++
+ 16 files changed, 527 insertions(+), 371 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/interrupt-controller/ti,sci-inta.txt
+ create mode 100644 Documentation/devicetree/bindings/interrupt-controller/ti,sci-inta.yaml
+ delete mode 100644 Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+ create mode 100644 Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.yaml
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
