@@ -2,85 +2,122 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0814B1DC032
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 22:32:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 915A61DB369
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:34:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=of3dRi8KozxWzplT8WuC97KkGzjRLkkWCg3QLfyfJyI=; b=jX6x4kgEfU9fSi
-	/Glu7D6mGgvLPQYMFKpbhsIX1fPT66OKvIxUis440DsDMrng2iekNnL6bBPDLnPjCRPdQcoCfE1KG
-	yIKQ+wcZQkVlijiIa+yONp2iNOi5uPhrR8UN0V2XRZr503ZulpYiQp2ixDoS/oHoB1vrLsD82JRvu
-	74XcrGb3y6YgD1MJqGeKbDtyWYqGBBA+n1idTNHNbQXsSwRQ8oFZz0GiqH0QAtzilXeAehOAjM+ub
-	D7Mw/BFDk/x9Mu1ml8mgfpnGs2M+bdvqj7DMJFj2SvJ0Z2Dx/dg9Pus3n0b+iXyzXUKF5AoL1P3FN
-	nlT0e7grH+vJkLZMFh4Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ga32gk8kELCz4l6p7jE9OIHV4u2cwFcXRzHkVGFIilM=; b=rgK7ahxWO8Z00F
+	dSMzRvwVs+ic5qX5y2M6oynLyy5ILjHDtXvwMQ03olg8ICdtBVY4eiU9hD8/cZc5WpI2GSptMWy0m
+	CUqtxMUluYvz8H++S5AAefb6xl98EbUV5HCElLhokmtWhaFl3CSWQVAwbaH0KIZhx1H61mDkMY6CI
+	1oaSK3Z9x4QhP8Mq5kvGoRS+dfXpkLHiwvqWTR/Uh21XwYB5M1iknEwj1XP5IsYaTnyp3xaNccT+C
+	/Z1dMl1S42Z8UNFfT5xHtf3deZjjjrjW+B3sWOfAjOni29d+MuogIQo1i0Y2bmdW4jEdk1F2vBDQr
+	E4X+bmBkSDHB3IEB5oUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbVOW-0005mH-Bb; Wed, 20 May 2020 20:32:52 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jbNvL-0008Hu-4f; Wed, 20 May 2020 12:34:15 +0000
+Received: from mail-eopbgr50073.outbound.protection.outlook.com ([40.107.5.73]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbVON-0005l8-2w
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 20:32:44 +0000
-Received: by mail-il1-f196.google.com with SMTP id b71so4679302ilg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 13:32:42 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=eYhFWnym18cK56HOIXrwGvpqXxigL2vp9VHbqJW4HIM=;
- b=sNliEmFiT5Id4br8nBoSkH+ApiWy72oFfa6WEZ66Kf0stX3u69yYEhZ0z9LSTwRbrn
- 4ikqkU+Fq/O98VAIm9Hh1dWqoMN8AYghpnzfjGyV1QQWrG4BD07PbY+D/9FG6lslhzR9
- PdpI4bmHDs0fVqjIcCR9lIROFOxHgUBXfvj0xUnMopc67AK9sjQDj2mlQoOPFmPo+6n/
- 0vjOOPTrPfqdwAsSh2Hyhhy9vC/rUuOOFYmaoMo5MtjRofd9JwbUyx7QMUAa5R/6dqLT
- IZ/IMUmTiN6jnv52JJv1Pj8ghNx0Vbdg6KhAe7W0v9pfuvwnr6SSPigVkPAGzjvetA4W
- QALw==
-X-Gm-Message-State: AOAM531pGhMN3oRPWjUWJmeOY3lsHNx6D/Nq/INSXq/mrYvEpt+EcaJR
- r3KPKlFoV9+fV7Ai4KLerw==
-X-Google-Smtp-Source: ABdhPJy5QvUn+VTDpkuNaZg6Rlk1g9vHBNfouawM73Pe8LYk585UL8czp90286VGTKxtQBwZeP8+kg==
-X-Received: by 2002:a92:c7a2:: with SMTP id f2mr5670636ilk.71.1590006761646;
- Wed, 20 May 2020 13:32:41 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id d12sm1884632ill.80.2020.05.20.13.32.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 20 May 2020 13:32:40 -0700 (PDT)
-Received: (nullmailer pid 503923 invoked by uid 1000);
- Wed, 20 May 2020 20:32:39 -0000
-Date: Wed, 20 May 2020 14:32:39 -0600
-From: Rob Herring <robh@kernel.org>
-To: Xiaowei Bao <xiaowei.bao@nxp.com>
-Subject: Re: [PATCH v6 01/11] PCI: designware-ep: Add multiple PFs support
- for DWC
-Message-ID: <20200520203239.GA503864@bogus>
-References: <20200314033038.24844-1-xiaowei.bao@nxp.com>
- <20200314033038.24844-2-xiaowei.bao@nxp.com>
+ id 1jbNv6-0008GZ-TM
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:34:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=NdGJLy3Ag6b/YldzD93N0eAhYtvDaVgT0gEyEQdYimOhQExYrlIk0Lu6Degmeg1cA29TSbs7FtTSapmcZJEfHrdu1d+mvpZKayageGPj8YAYy6QVpzOk/WfUv3DUIubccgNJI1vayGEBPssBUcpxOLu4mkQMNedkcA3RJtQG+yg29g8AJTHzhlQAedlVgOaE2i4RtSczQoSRsXfc8ECodW+N9m8Su+UWy4pSDAL7gaNSmYJbH3K+yw79EqPo9Msux9WhdJLPqF8dv2zHN0xEGRGxeQC0+ZXp+Gp1LEOR8bYWgDNAv5sy4dmK1Z6+pABr10+wdFLWmPIK2edmaIg5rA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=65CWtx/DkzTR/Im+FbLuRd5whJwyj5pCJ2s/b0WeL2A=;
+ b=P78zJmRF/+HgvZHEcaENpJ88v8f5ZP3GhnW6WusjUXAUbhZzC9YN6OnI/tBI1UipcDTMd2P688LwpK5QhaQBGKXLwOj/h1nP68S4rG4UECLNeMomhsd3CwkRH1VUwNZNrw0wUwZgsnaao1OUOEmirA9lmwX36khXbxn2otRvbyuSi9lmbD8uM4f/6zHeRalqGnbb0rPh+u5iA1kjrx9fEI7+YKDuJ+7thzPL8JCGQgblXAAzQp0C/I7mZBSvwSNmTP9n6isTHMsGqa7Q1e5oZk4AE1WqxK8WkAKzaTNZtnnKd9CGDn9pnHmy+M+nOC1tGJFCf4+4ydccgICVNW1Aog==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=65CWtx/DkzTR/Im+FbLuRd5whJwyj5pCJ2s/b0WeL2A=;
+ b=PiZ+4CdqcVdBauityJJexdQArk7VVtziUEkvSX3AJ7DztJM2R3fjSr72zw7yL9A2sBtBNy5z299OyGtyfOUW48kupD0YlJwFGar/O3daEEiaN59NvhLH3wi+ap8sxuI9CNRo/XUBEXYrU+AZbn6wszTj+BFZCWuBMj8W3Qvx/1U=
+Authentication-Results: arm.com; dkim=none (message not signed)
+ header.d=none;arm.com; dmarc=none action=none header.from=nxp.com;
+Received: from AM6PR04MB6630.eurprd04.prod.outlook.com (2603:10a6:20b:f4::33)
+ by AM6PR04MB4279.eurprd04.prod.outlook.com (2603:10a6:209:4a::24)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.26; Wed, 20 May
+ 2020 12:33:56 +0000
+Received: from AM6PR04MB6630.eurprd04.prod.outlook.com
+ ([fe80::bdbc:dab3:70f7:d5fa]) by AM6PR04MB6630.eurprd04.prod.outlook.com
+ ([fe80::bdbc:dab3:70f7:d5fa%6]) with mapi id 15.20.3000.034; Wed, 20 May 2020
+ 12:33:56 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: mark.rutland@arm.com, broonie@kernel.org, robh+dt@kernel.org,
+ catalin.marinas@arm.com, vkoul@kernel.org, will.deacon@arm.com,
+ shawnguo@kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
+ martin.fuzzey@flowbird.group, u.kleine-koenig@pengutronix.de,
+ dan.j.williams@intel.com
+Subject: [PATCH v8 00/13] add ecspi ERR009165 for i.mx6/7 soc family
+Date: Thu, 21 May 2020 04:34:12 +0800
+Message-Id: <1590006865-20900-1-git-send-email-yibin.gong@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: SG2PR03CA0103.apcprd03.prod.outlook.com
+ (2603:1096:4:7c::31) To AM6PR04MB6630.eurprd04.prod.outlook.com
+ (2603:10a6:20b:f4::33)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200314033038.24844-2-xiaowei.bao@nxp.com>
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
+ SG2PR03CA0103.apcprd03.prod.outlook.com (2603:1096:4:7c::31) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.3021.12 via Frontend Transport; Wed, 20 May 2020 12:33:50 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [119.31.174.66]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 2eadbb9b-7dd7-4d4d-7748-08d7fcba0fd7
+X-MS-TrafficTypeDiagnostic: AM6PR04MB4279:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <AM6PR04MB427935E52F7F093E21361D3189B60@AM6PR04MB4279.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:2887;
+X-Forefront-PRVS: 04097B7F7F
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: QCnPku+fRW63QapdWXe66F1JXOcP8V/Aj4gUGPJkxUTotUa8FQS3v8/HzX2/SZ7aGA7DROoHYVHgTH84mf0mp1n85lispXxOzSr7fhmpG4g/6yX5PeEXXLvAY0GAv4DmeDmYGkEF8plwO7iBRGD6M77C4N+SeMvh/FsPo49ktJhFmha7yPvRlmvkDyU1BwR+FXpR/RFaU8VveFny9/q0ucGZl1BEyRuuqFbhER3yL1kAuYqCQZ4n8AGd0uWf9Afx9m/r+ZtfjhF38e0EvUdaHoXR/d+1ziw1oer3lzhsEBsXJiUjxq84IniBPaVGJ4y3LzC0ElBuCALiuLhFlPTGyGweKKRs/t3s+eJnNNV2mfikXEAlMDl7Mo/JrZ4Z5ilrvTjrUNSDQUUInubUFrNrYcdoUiAtMadVIFwb4BmiWaIbwaRcgFrYml9s1xldXJS5pwExNzjLxwyQOJlm9ndADayq2whF1AEWU7xU45trKkMqt0wVhdyrkzFznidQnIVBC3z5R3puDquSG0hrTirwjL+k1XdvJbDMELQKUOLJnNb/lUfJRu6yssDK6pJ2cFBv
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR04MB6630.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(346002)(366004)(376002)(136003)(396003)(39860400002)(6512007)(36756003)(8676002)(6666004)(52116002)(66946007)(66556008)(7416002)(8936002)(66476007)(86362001)(5660300002)(186003)(966005)(478600001)(316002)(26005)(6506007)(6486002)(956004)(2616005)(4326008)(2906002)(16526019)(921003);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: KNGYC87zFD7yBqZWrqu0evE0Rt3BxshuSsy8aMphpgtUYWhG22qOHx9CHzyImEKo/Go+hSO7LLnRpB4+f0+Ns4mE1SJVyZxXCwUR9l4aDO72FxZ3s5lu+0J8f7oWVlr1i+s8TW8k5iyeklJuidvXehzt9L9oEsTCC/cX5t7IjpoCZ6+BxITehRc+ORiv1/DGSxMfVBTnCHF5Tzh4Wy6pHy0CJ6oHSJvhKRmvYb1nE7f8BvH07NiipzD/QVmG0RRt/kKeVI5hfQcENihgp5OMfyLZwN2ATWLw5l3C/r7xyCcKlicDu253hXbePtuS+YAseIrOXmIZfnJxKozlGeHub2Z+ThLz2VXGlHCDqrWD2vgNNnsYvjlxKAK1x4UWcsYdSZV7ZCh0ZAhXfk11W5QM/golXaxiiSj/wo6E0KNjVSJ97JhhJ2BhnTOY90btK5sFa20R+Ua7sSN/w+58JaTWBMfSrK35DE7o8EUN/ikejgA=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2eadbb9b-7dd7-4d4d-7748-08d7fcba0fd7
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 May 2020 12:33:55.9618 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: x0+K1xSgL1QNff+ScmzWkPzjE00+vEKmbGvGKD/NR0qLLU87JsxkAh5aSQe346A6zSF7ffqaYJxvvOocQDzpag==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4279
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_133243_127148_108C5540 
-X-CRM114-Status: GOOD (  11.90  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200520_053402_613061_95F5E06F 
+X-CRM114-Status: GOOD (  13.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [40.107.5.73 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ [40.107.5.73 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,49 +129,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: roy.zang@nxp.com, lorenzo.pieralisi@arm.com, devicetree@vger.kernel.org,
- jingoohan1@gmail.com, Zhiqiang.Hou@nxp.com, linuxppc-dev@lists.ozlabs.org,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
- Minghuan.Lian@nxp.com, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, gustavo.pimentel@synopsys.com,
- bhelgaas@google.com, andrew.murray@arm.com, kishon@ti.com, shawnguo@kernel.org,
- mingkai.hu@nxp.com, amurray@thegoodpenguin.co.uk
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 14 Mar 2020 11:30:28 +0800, Xiaowei Bao wrote:
-> Add multiple PFs support for DWC, due to different PF have different
-> config space, we use func_conf_select callback function to access
-> the different PF's config space, the different chip company need to
-> implement this callback function when use the DWC IP core and intend
-> to support multiple PFs feature.
-> 
-> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-> Acked-by: Gustavo Pimentel <gustavo.pimentel@synopsys.com>
-> ---
-> v2:
->  - Remove duplicate redundant code.
->  - Reimplement the PF config space access way.
-> v3:
->  - Integrate duplicate code for func_select.
->  - Move PCIE_ATU_FUNC_NUM(pf) (pf << 20) to ((pf) << 20).
->  - Add the comments for func_conf_select function.
-> v4:
->  - Correct the commit message.
-> v5:
->  - No change.
-> v6:
->  - No change.
-> 
->  drivers/pci/controller/dwc/pcie-designware-ep.c | 123 ++++++++++++++++--------
->  drivers/pci/controller/dwc/pcie-designware.c    |  59 ++++++++----
->  drivers/pci/controller/dwc/pcie-designware.h    |  18 +++-
->  3 files changed, 142 insertions(+), 58 deletions(-)
-> 
+There is ecspi ERR009165 on i.mx6/7 soc family, which cause FIFO
+transfer to be send twice in DMA mode. Please get more information from:
+https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf. The workaround is adding
+new sdma ram script which works in XCH  mode as PIO inside sdma instead
+of SMC mode, meanwhile, 'TX_THRESHOLD' should be 0. The issue should be
+exist on all legacy i.mx6/7 soc family before i.mx6ul.
+NXP fix this design issue from i.mx6ul, so newer chips including i.mx6ul/
+6ull/6sll do not need this workaroud anymore. All other i.mx6/7/8 chips
+still need this workaroud. This patch set add new 'fsl,imx6ul-ecspi'
+for ecspi driver and 'ecspi_fixed' in sdma driver to choose if need errata
+or not.
+The first two reverted patches should be the same issue, though, it
+seems 'fixed' by changing to other shp script. Hope Sean or Sascha could
+have the chance to test this patch set if could fix their issues.
+Besides, enable sdma support for i.mx8mm/8mq and fix ecspi1 not work
+on i.mx8mm because the event id is zero.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+PS:
+   Please get sdma firmware from below linux-firmware and copy it to your
+local rootfs /lib/firmware/imx/sdma.
+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/imx/sdma
+
+v2:
+  1.Add commit log for reverted patches.
+  2.Add comment for 'ecspi_fixed' in sdma driver.
+  3.Add 'fsl,imx6sll-ecspi' compatible instead of 'fsl,imx6ul-ecspi'
+    rather than remove.
+v3:
+  1.Confirm with design team make sure ERR009165 fixed on i.mx6ul/i.mx6ull
+    /i.mx6sll, not fixed on i.mx8m/8mm and other i.mx6/7 legacy chips.
+    Correct dts related dts patch in v2.
+  2.Clean eratta information in binding doc and new 'tx_glitch_fixed' flag
+    in spi-imx driver to state ERR009165 fixed or not.
+  3.Enlarge burst size to fifo size for tx since tx_wml set to 0 in the
+    errata workaroud, thus improve performance as possible.
+v4:
+  1.Add Ack tag from Mark and Vinod
+  2.Remove checking 'event_id1' zero as 'event_id0'.
+v5:
+  1.Add the last patch for compatible with the current uart driver which
+    using rom script, so both uart ram script and rom script supported
+    in latest firmware, by default uart rom script used. UART driver
+    will be broken without this patch.
+v6:
+  1.Resend after rebase the latest next branch.
+  2.Remove below No.13~No.15 patches of v5 because they were mergered.
+  	ARM: dts: imx6ul: add dma support on ecspi
+  	ARM: dts: imx6sll: correct sdma compatible
+  	arm64: defconfig: Enable SDMA on i.mx8mq/8mm
+  3.Revert "dmaengine: imx-sdma: fix context cache" since
+    'context_loaded' removed.
+v7:
+  1.Put the last patch 13/13 'Revert "dmaengine: imx-sdma: fix context
+    cache"' to the ahead of 03/13 'Revert "dmaengine: imx-sdma: refine
+    to load context only once" so that no building waring during comes out
+    during bisect.
+  2.Address Sascha's comments, including eliminating any i.mx6sx in this
+    series, adding new 'is_imx6ul_ecspi()' instead imx in imx51 and taking
+    care SMC bit for PIO.
+  3.Add back missing 'Reviewed-by' tag on 08/15(v5):09/13(v7)
+   'spi: imx: add new i.mx6ul compatible name in binding doc'
+v8:
+  1.remove 0003-Revert-dmaengine-imx-sdma-fix-context-cache.patch and merge
+    it into 04/13 of v7
+  2.add 0005-spi-imx-fallback-to-PIO-if-dma-setup-failure.patch for no any
+    ecspi function broken even if sdma firmware not updated.
+  3.merge 'tx.dst_maxburst' changes in the two continous patches into one
+    patch to avoid confusion.
+  4.fix typo 'duplicated'.
+
+Robin Gong (13):
+  Revert "ARM: dts: imx6q: Use correct SDMA script for SPI5 core"
+  Revert "ARM: dts: imx6: Use correct SDMA script for SPI cores"
+  Revert "dmaengine: imx-sdma: refine to load context only once"
+  dmaengine: imx-sdma: remove duplicated sdma_load_context
+  spi: imx: fallback to PIO if dma setup failure
+  dmaengine: imx-sdma: add mcu_2_ecspi script
+  spi: imx: fix ERR009165
+  spi: imx: remove ERR009165 workaround on i.mx6ul
+  spi: imx: add new i.mx6ul compatible name in binding doc
+  dmaengine: imx-sdma: remove ERR009165 on i.mx6ul
+  dma: imx-sdma: add i.mx6ul compatible name
+  dmaengine: imx-sdma: fix ecspi1 rx dma not work on i.mx8mm
+  dmaengine: imx-sdma: add uart rom script
+
+ .../devicetree/bindings/dma/fsl-imx-sdma.txt       |  1 +
+ .../devicetree/bindings/spi/fsl-imx-cspi.txt       |  1 +
+ arch/arm/boot/dts/imx6q.dtsi                       |  2 +-
+ arch/arm/boot/dts/imx6qdl.dtsi                     |  8 +-
+ drivers/dma/imx-sdma.c                             | 67 ++++++++++------
+ drivers/spi/spi-imx.c                              | 92 +++++++++++++++++++---
+ include/linux/platform_data/dma-imx-sdma.h         |  8 +-
+ 7 files changed, 135 insertions(+), 44 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
