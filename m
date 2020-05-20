@@ -2,89 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 359571DB2BA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:08:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E5521DB2C9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 14:12:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5kNowsbgZ9NlBdkWPG0MKxnPhDqFwMTbhzsA5n8IUr8=; b=ct8f9DMxCa8wTc
-	+ErFdrNzxWpATOp8VaEKOEn7pDNj3fFCsC6w63UcQnik+CGlc2tmigEtiAEIDBmdT+O9J3qXeqdhN
-	PUYCPUbwyHz13zJv3RKkHMcUqZHgSw1OIV3QwI2bKGEdEbchxE7jGr/dQodI0k6wSTfttOxxUaV3l
-	kmjol2VuvT+RsmcLYy2zDsbRIi3niLgR2Q1pE8k9g0pLLJOU9Pc4z2yykYfdlOg8OYUzNRoa6aa3D
-	y7JGXHHQAD6TtPY05pw0f8BSRXCDrQk0OTOkJZp3kNxlZ39fTcI3c5Bp37mGSymr9CRf6Gtv1v9it
-	v6hC5lCn91dDDv6Mul8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=w75HCSQ4re20bKp5jiRl6wESbYJuX4yAA2a5ENEVq7w=; b=nZVXc9EKejCFKe
+	FaibT5lp/ltMByOmXZyRx89r+1RLbzdO6Lu4dT8tJVHiHqL3PhG2sekWf5QC75XL6w8j0O8353IW5
+	yapyd4Yx9PdEO/GU/8mL5xlG78KnPNscT55plB1SSosV1TIwrxJBfrZGQamXxdnYJb6xz86yUYxdr
+	0IlctyZ6wo7ME6aRKurAWYR2RB/5+NMr7xEEwB4rIf0frnOKPchERmDOSKqx7HDgUDYHZNDGK8I9A
+	yMaxdN9L+eClW45GVbh47gB2N9zGDyuk/cyCzG0+NtOQVzQASRdwmpKKhdKBuB1gHOglsz0m0QhQe
+	Pf7l+zLf+KZ8pzQskhkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbNWK-0006jS-D2; Wed, 20 May 2020 12:08:24 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jbNZg-0001jH-11; Wed, 20 May 2020 12:11:52 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbNWA-0006iW-9k
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:08:15 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04KC89T5192735;
- Wed, 20 May 2020 12:08:11 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=date : from : to : cc
- : subject : message-id : mime-version : content-type; s=corp-2020-01-29;
- bh=pZAPjeoI2xoUqEyaRPjaQ4Ox+SaH6agdK7O7UIhiaI0=;
- b=PmDTRhJ9cWXHzK89OejwhJak/4sjFjjNPeEbxdHQaF7r06QC6pr9WRgN0ilMhw5cJKl2
- wC60n+oE6j4fVtTd4B28Mza+bHvft/nChjJDxJRiXLSaoFmKhAsA7QEEnsgr/5aWvWZE
- ym/RolFsfFkhLrXA4air15JpCoYAxt5xOmMOX1rhoRIBnT57+sKwDOr1fj4vSx8oiDp2
- QyadLQ5QskZLhjnYe2IQMM44OaM8XOZE4QLJG/ae295IHSdjuZBBPS+XZcGTAX2m1XbO
- taErhF5wx5UIDfN6sc5SCuCDDmTRKcL6wFe9XAp+TTXZwUSIileeZzhXn3BlIPjvDx1i aA== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2120.oracle.com with ESMTP id 31501r980m-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 20 May 2020 12:08:11 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04KC3AJ6104590;
- Wed, 20 May 2020 12:08:11 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by userp3020.oracle.com with ESMTP id 31502063tv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Wed, 20 May 2020 12:08:11 +0000
-Received: from abhmp0003.oracle.com (abhmp0003.oracle.com [141.146.116.9])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04KC8AEi017587;
- Wed, 20 May 2020 12:08:10 GMT
-Received: from mwanda (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Wed, 20 May 2020 05:08:09 -0700
-Date: Wed, 20 May 2020 15:08:04 +0300
-From: Dan Carpenter <dan.carpenter@oracle.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH] bus: arm-integrator-lm: Fix an IS_ERR() vs NULL check
-Message-ID: <20200520120804.GI172354@mwanda>
+ id 1jbNZU-0001hX-1L
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 12:11:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589976698;
+ s=strato-dkim-0002; d=chronox.de;
+ h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=dxK4Z+9yHO4jSPBzrsgC+jQ7JJM6/ROZjhK04+QSi/s=;
+ b=L72MUnMJGFYtao72d82KD8w3lzOPdbioUYLkp8jzq1rkP8LPTPGQINrztVWhbZja3H
+ xsIXF4urN/EuL71PRwrVv/nhhPHtui0/ZeekRj1pHSsyWgw9dR3h4dtZMGwq8XxV4RNZ
+ 70tM3Sg8+qc/kFulMvXp6GOTCWb164QJOXQwmhlU2tMmRGV7beGTOmhFVXkbAyye0qhL
+ wAkcHsG7JP/R+DYkMhCidWduW7NBT6kuIM4bXc5osDvfHX/hAwigeZU1AYg/HwXcpGQK
+ wR6Je9UsID12ZjQ75Rj2kl204l1YJLVKlD+Pz7da6a0ZdP7Z9Wt59iEtG7PP7lzPEawY
+ tsAA==
+X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPbI/Sc5g=="
+X-RZG-CLASS-ID: mo00
+Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.7.0 DYNA|AUTH)
+ with ESMTPSA id k09005w4KCBZ5LX
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+ (Client did not present a certificate);
+ Wed, 20 May 2020 14:11:35 +0200 (CEST)
+From: Stephan Mueller <smueller@chronox.de>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH v2 1/2] hwrng: iproc-rng200 - Set the quality value
+Date: Wed, 20 May 2020 14:11:34 +0200
+Message-ID: <3322411.JsYv2Y6bm7@tauon.chronox.de>
+In-Reply-To: <CAJKOXPeBkZ3R2wT9-A8LWkFx0W9KY70VW7JNjwp0RMDRc7hkTg@mail.gmail.com>
+References: <15745285.MnsZKaK4VV@tauon.chronox.de>
+ <2041475.ybOAuNAZB8@tauon.chronox.de>
+ <CAJKOXPeBkZ3R2wT9-A8LWkFx0W9KY70VW7JNjwp0RMDRc7hkTg@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-X-Mailer: git-send-email haha only kidding
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9626
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- mlxscore=0 mlxlogscore=999
- adultscore=0 bulkscore=0 suspectscore=0 phishscore=0 malwarescore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2005200105
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9626
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- lowpriorityscore=0 spamscore=0
- mlxlogscore=999 clxscore=1015 priorityscore=1501 cotscore=-2147483648
- impostorscore=0 bulkscore=0 adultscore=0 malwarescore=0 phishscore=0
- mlxscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2004280000 definitions=main-2005200106
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_050814_478558_E0A6F428 
-X-CRM114-Status: GOOD (  17.61  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200520_051140_663947_865F4AD1 
+X-CRM114-Status: GOOD (  20.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:238:20a:202:5302:0:0:12 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -93,11 +71,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.85 listed in wl.mailspike.net]
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,46 +82,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Matthias Brugger <mbrugger@suse.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matt Mackall <mpm@selenic.com>, Lukasz Stelmach <l.stelmach@samsung.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Kukjin Kim <kgene@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ Stefan Wahren <wahrenst@gmx.net>, Ray Jui <rjui@broadcom.com>,
+ Markus Elfring <elfring@users.sourceforge.net>,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The of_find_matching_node() function returns NULL on error, it never
-returns error pointers.  This doesn't really impact runtime very much
-because if "syscon" is NULL then syscon_node_to_regmap() will return
--EINVAL.  The only runtime difference is that now it returns -ENODEV.
+Am Mittwoch, 20. Mai 2020, 14:00:01 CEST schrieb Krzysztof Kozlowski:
 
-Fixes: ccea5e8a5918 ("bus: Add driver for Integrator/AP logic modules")
-Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
----
-The first patch which added this file doesn't give a good hint what the
-subsystem prefix should be so I just guessed "bus: arm-integrator-lm:".
+Hi Krzysztof,
 
- drivers/bus/arm-integrator-lm.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> On Wed, 20 May 2020 at 13:53, Stephan Mueller <smueller@chronox.de> wrote:
+> > > > That said, the illustrated example is typical for hardware RNGs. Yet
+> > > > it is never guaranteed to work that way. Thus, if you can point to
+> > > > architecture documentation of your specific hardware RNGs showing that
+> > > > the data read from the hardware is pure unconditioned noise data, then
+> > > > I have no objections to the patch.
+> > > 
+> > > I can tell for sure that this is the case for exynos-trng[1].
+> > 
+> > So you are saying that the output for the exynos-trng is straight from a
+> > ring oscillator without any post-processing of any kind?
+> 
+> Hi,
+> 
+> I think we will never be able to state this because the manual is
+> quite limited in sharing internals. What the driver does and probably
+> Lukasz wanted to say is that there is "post processing" block and
+> feature which can be disabled. The manual is saying the TRNG block
+> generates random data from thermal noise but not how much in a direct
+> way. There could be some simple post-processing or not (except the one
+> able to on/off). Also manual says this post processing block is there
+> to remove statistical weakness from the TRNG block. To me it does not
+> prove enough that raw data is really raw...
 
-diff --git a/drivers/bus/arm-integrator-lm.c b/drivers/bus/arm-integrator-lm.c
-index 669ea7e1f92e..845b6c43fef8 100644
---- a/drivers/bus/arm-integrator-lm.c
-+++ b/drivers/bus/arm-integrator-lm.c
-@@ -78,10 +78,10 @@ static int integrator_ap_lm_probe(struct platform_device *pdev)
- 
- 	/* Look up the system controller */
- 	syscon = of_find_matching_node(NULL, integrator_ap_syscon_match);
--	if (IS_ERR(syscon)) {
-+	if (!syscon) {
- 		dev_err(dev,
- 			"could not find Integrator/AP system controller\n");
--		return PTR_ERR(syscon);
-+		return -ENODEV;
- 	}
- 	map = syscon_node_to_regmap(syscon);
- 	if (IS_ERR(map)) {
--- 
-2.26.2
+Unterstood, but can't that statement be added to the commit message?
+> 
+> Best regards,
+> Krzysztof
+
+
+Ciao
+Stephan
+
 
 
 _______________________________________________
