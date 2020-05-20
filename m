@@ -2,66 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8FE181DB0B4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:54:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A0DF1DB0BD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:54:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=70OobRczYifQd65WZU3staAZs9hA2ysgF4TlSTl3Q/w=; b=YRSoOKtMuZFdxJ
-	7K8EuP4yQSbYVs0mN8vdYFh1z53m4QHhJx0PPPAMsGX56fr9RV2DybE5kNQ94ghKBUzqgZ9K5QgFi
-	JOyWAXlFWIt8KZmEBGpoUaniBm5fMMfcmQdS8ntoI9kkC+aHbiHMbc0Avh6tX9leT+qVA2EH8hQg0
-	xge/EPPf0iRcEZNZbX8zO7As58zpfnSLJOrOdbikaPbofPaga1NuAJi8ACBksxWacdioc4FaKCOAG
-	Ahyb5y0DVNSxBqy1T92czMAbNAJOreokGRcTEzcsL1+A52lpSoeI07lk+pDNjgE42Lu9Gfem+ty4H
-	Tt3dla4UO60Zh7tlhIkA==;
+	List-Owner; bh=5wOt9YBzFHAWYmEjdFZLf5A1mAiL5TokM6s1TI1KRMY=; b=aGn0WqljUcVm6n
+	7/LXqehnpN0W2CFGOChLvLYScYyT0vAfD2baWyUVYraid6zIObfZEJSUGpSLN+fhu7UMrb9vEcoOc
+	EMyElqof0P1TM01mym7gYKlpYXRKYNZ4YN8Cy7QC2Nji2FUSugX309PoUIrKvqcAi/duuwe3N1GqV
+	mqUHRnGgbfFKfCV0L613+bJ5TbwKFTNcK3w0xKoqYzNYUsmP7Tw7YGuBK5Z6WAcOn24Ro0fIbT+ce
+	Xi/lFRR3qQlbrD7XBS6UKSHESomT4mkd9z8QY47mkp7B/U3e00Dp3D/yE5glMf1P1BArGBleRjSAS
+	3A9EwsNOGARBh6CTLniA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbMMG-00052g-Rl; Wed, 20 May 2020 10:53:56 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
+	id 1jbMMu-0005Rv-9k; Wed, 20 May 2020 10:54:36 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbMM4-00051j-8i; Wed, 20 May 2020 10:53:45 +0000
-Received: by mail-ot1-x343.google.com with SMTP id o13so2090308otl.5;
- Wed, 20 May 2020 03:53:43 -0700 (PDT)
+ id 1jbMMh-0005RV-ON; Wed, 20 May 2020 10:54:24 +0000
+Received: by mail-ot1-x344.google.com with SMTP id 63so2075111oto.8;
+ Wed, 20 May 2020 03:54:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Uo2IvVF99WCeacc6Vvk0OLPGGgAJAoufosXm9+M1IcI=;
- b=B2uhBzsmyGVsVtF88hh8IoR3qbGAmfEb1EyHXzQ+07LG9CjmeK5aniUJq8r4lDFIZH
- ReDkh0Z/mWbs/4HxADXFn1QfNryJRNNTMf8wR4HPHwQQmG/xxEHxwOXzFfiOpEXNs5tz
- rVUCeYPxYXU5w0aOWGHE81T+G1lTRyYQqiQVjbR0Lg6gPBJQ/CrOCE1nwe6WeN3Q6vwK
- Wp2AV8z1U7VecQXuo6+IFdOCld8OGH3eX4XGdVVWmEpgU/XveXvPsLsLMBCMwpY92Lsy
- ruW/WQ+rMHcWBIGqgAt4vA0iJU4Xm7oUr/8JA39GAsFa/nUCln2E7Fxk9HwwS36jzlBU
- M1KA==
+ bh=nqXCwIldH4FavBD4hykx1Fj0fxifKXNdT/BTK4Kwo7U=;
+ b=X8AEIbJLA3DQIY2HkUAkUgsmWfo6rqFMqRLgjKDaWiVM+UzqRC+Z6Xp+kwXPubaEyo
+ JVvy3wM9oouI9BsPwcP52prWe6PHN+2hEAO+Ai74K48KuEKRORSMGLCq+bySouQ0bSeT
+ LblIHgoIycnEnNztT9f1y5byfGJC4e/ikHzFYQRLowPeRklqdIw6i3U18DUQNDH40WEW
+ CY+mlju/lyBdrUwN0EC09PSg9g+hFh6MjGZaaUmlplvb3b7A2bsMmQ09LsB7gvtSz/XG
+ r8V85gmEDHalvISie4Rijec3w6lMnbFP8rzoxGTT2rfphrJU+h2XF8POod4u8SZP4FFG
+ L3Iw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Uo2IvVF99WCeacc6Vvk0OLPGGgAJAoufosXm9+M1IcI=;
- b=EUP1C6u7zt6a0W7KDctFPvsS4peu/ZQHKn1QtWePkUFYVW/QQY3K5R7qNzwE9k+uC4
- x8vuYQuhP+jxSHTwnE9XrmV6UJTlRq8Wpd3iAMoHjJ+OD649tBs2591S02A/bGZr5xZX
- LjPjUiL5deh7OrBzIYJISbsmLwZEK1BtkAUR470qgB/QRn07RrfCP4EU3lAlkjsbdEyS
- pvARiUxtVt/h0kumy7lEEsfxIHsOeOeiQ5UuafLCxBzJdO9SfI3j8SVRFpXgdoYVL/Ld
- NGGlD7GNhoouVjudvwe132UPL0xP1sddvIbjVrmUz4eodeyNxp3v7W+YZEU2E3RkqGq/
- bVJQ==
-X-Gm-Message-State: AOAM530VT2CyXb46csM/kZkOuINB9QuDgGPZlzXfxtrPpz8/i6M9RcQd
- 5re3t3zWXs3oVSDGNB3Q5vp9LRgc
-X-Google-Smtp-Source: ABdhPJwPQxKPUzMCI/gGmmDXo+bjGOcdHM3EDYwFCekFxABrLQep52XoiwtttDZ8+O9NZ6vCGxAgxQ==
-X-Received: by 2002:a9d:6557:: with SMTP id q23mr2643750otl.93.1589972023011; 
- Wed, 20 May 2020 03:53:43 -0700 (PDT)
+ bh=nqXCwIldH4FavBD4hykx1Fj0fxifKXNdT/BTK4Kwo7U=;
+ b=fHoJ/opvCsU03+2Vrae0wwuOCqw8gCD/43qq7/Pso7XeWL/Cfk6FWTRwiZQwSH1HwZ
+ C4G7nyXVnD3Orvpw6eYYkqCrNLA5RC5/VRhJ1MIzY7st99mHbaf0xFD7pbnFZduhprrq
+ In2Nqk/15lA/D5RdRCu8Dw3o/up+gmV5UM08I/A/F+iZKxNHs8FKAbfkbyAuQQNU0W8r
+ Y3vRh20VuJ0PnPdwVeMRGqJJt7RDdoZ0ihFPkAPBNu4hypthu3wzhU8DY7g0hmgqL/K4
+ dLL0AYeB44P0R2At1VoGNlvDWV5EuzynHDn/cKbSJMCD529ZacX+D4BHgYtZptveBpIf
+ 23vA==
+X-Gm-Message-State: AOAM531NEY2cIcrB5xvMX8HXpC7PIu3gNGll1ClLK05Hur2QTBtlL5Rq
+ u4voAOo4bjof89+lWrJsJdAXns0I
+X-Google-Smtp-Source: ABdhPJxfcLMFpOQOl9GprTyZ1tlz6Lk0/vLJSwLGeeX5CKxL+3yEWsvZXmHiK7XoC4kFsyKfeSiLEw==
+X-Received: by 2002:a9d:2041:: with SMTP id n59mr2525764ota.252.1589972062788; 
+ Wed, 20 May 2020 03:54:22 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id b17sm708792oop.6.2020.05.20.03.53.39
+ by smtp.gmail.com with ESMTPSA id u45sm677233ooi.41.2020.05.20.03.54.19
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 20 May 2020 03:53:42 -0700 (PDT)
-Subject: Re: [PATCH 1/4] clk/soc: mediatek: mt8183: Bind clock driver from
+ Wed, 20 May 2020 03:54:22 -0700 (PDT)
+Subject: Re: [PATCH 3/4] clk/soc: mediatek: mt6779: Bind clock driver from
  platform device
 To: Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>, Rob Herring
  <robh+dt@kernel.org>, matthias.bgg@kernel.org
 References: <20200518113156.25009-1-matthias.bgg@kernel.org>
- <158996969738.215346.5933135216459465754@swboyd.mtv.corp.google.com>
+ <20200518113156.25009-3-matthias.bgg@kernel.org>
+ <158996971719.215346.12802870863066637932@swboyd.mtv.corp.google.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -137,15 +138,15 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <4e163b03-2dac-b731-6302-cac00e82ed5a@gmail.com>
-Date: Wed, 20 May 2020 12:53:38 +0200
+Message-ID: <45fcf31f-918b-fbc6-5c55-5fa74e3a7002@gmail.com>
+Date: Wed, 20 May 2020 12:54:18 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <158996969738.215346.5933135216459465754@swboyd.mtv.corp.google.com>
+In-Reply-To: <158996971719.215346.12802870863066637932@swboyd.mtv.corp.google.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_035344_307095_ED057797 
+X-CRM114-CacheID: sfid-20200520_035423_794533_E92B3522 
 X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -153,7 +154,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -189,8 +190,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 20/05/2020 12:14, Stephen Boyd wrote:
-> Quoting matthias.bgg@kernel.org (2020-05-18 04:31:53)
+On 20/05/2020 12:15, Stephen Boyd wrote:
+> Quoting matthias.bgg@kernel.org (2020-05-18 04:31:55)
 >> From: Matthias Brugger <matthias.bgg@gmail.com>
 >>
 >> The mmsys driver is now the top level entry point for the multimedia
