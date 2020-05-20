@@ -2,69 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 106281DB779
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 16:53:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8E771DB77E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 16:54:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=61xQehW5sl3O+2J3ybV+ZWtNP8XGu65S4VQySgkg9FU=; b=IPNiuzPd+Inz2i
-	/SKFuejD+AQNxfhiWrS/nvbnOB1lBI1eLj6S7bD1+0ULS1y+IgbAEdmhDngKR68d+WoK6l04qQkfl
-	OaRsqAMU39fRiEMh7dvyLabKBcqvUTq+bcA3nY2ZEpLwPqsumo/wPftXtq0s18tQMj92rcWQdA0KY
-	uvbMRL+UHTCmWycBLXlBc/Su0cBmHwff+L9kbINUjSpy4QkZ0YwydKOqg4NCkISdVL2uSfSCybRVN
-	onjBmDihT6UvAC+qOpODbMrnDd2BcCfzj/cPGAWaCJS6PBc6e7Mp9BsfXRcTjIAopegT4F4v0N2Sc
-	P/ISx9TT9mgqBUGqS9YA==;
+	List-Owner; bh=hqnEnvF5XboJaj7NBmrdckCumg8ZHKS+wn1PZJd4J2A=; b=BIfNYAygV7CcSW
+	jikW2bo07l38rLNK1TriwkV6tnIaDjCF9fhd2huzc+v7s/ELXZz/Oa+SdpdnvspMTNl1frbtqFp6l
+	OZ5V7CZCgkGOvKOMO/K/z6uGwWHy8DQOdyJdOGY6OEKk2GMA+Z9Ne/2c7yk0LTcD/KvOi5Om2DFz/
+	wRngbc6YzrDbfIRgn9XXsFzvbUGe7NTI03Rw/4CHW3/Vfc5uFdof6mkw6nR8vuCb383OZZziEwHMv
+	TnmvMk3OHTPnwuV+pj962dPpUFVM1uaF66WUSrWVqreebCfM9tCDlnya/1T1IUOjY3Do9aVY58/Y+
+	AG1AVQecSkHkZlixOwwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbQ67-0004k7-Fd; Wed, 20 May 2020 14:53:31 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jbQ6z-0005oJ-Ep; Wed, 20 May 2020 14:54:25 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbQ5n-0004gc-48; Wed, 20 May 2020 14:53:13 +0000
-Received: by mail-wr1-x444.google.com with SMTP id j5so3486157wrq.2;
- Wed, 20 May 2020 07:53:10 -0700 (PDT)
+ id 1jbQ6k-0005kw-JP; Wed, 20 May 2020 14:54:11 +0000
+Received: by mail-wm1-x343.google.com with SMTP id w64so3175934wmg.4;
+ Wed, 20 May 2020 07:54:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=JGzwPqXojv9fw13Z0eI2DCVgSjIESM0r4G41CMB+UAw=;
- b=DkHKshSSDKSUDlBX016qp1MpkYI8lErnSyhF6JphXV8ogbFfvQq/4urY7h8oHIEOlM
- hfj/DdrNCC2E+GXDDQ/Fu+BqemeRYIiosNCB9RsCBWkz5/CMacmyDXKyn236h4rLyXzW
- 4GqQJoigFoIUjyyxl/dzX4Ctzmzw6QS9fVFqPe5zkdffZ+FwAhmw5MJEXoniO4m9wrtQ
- 0e0gNkqoDIksYY7tarjrgplOLrd+xGUDywxt5wn8yMbokSTHF2iunM3+ALyejn3y7adg
- kXYz1QWOpdLFrAZXFMiXItiK4RnltOskno6rjDBck+e2up717SXgOy/M5c7yyR15FACN
- qjmQ==
+ bh=eVboQ/vbhLQ48NyZbNUxNWK6am4qR68FCbQ1gWq93oo=;
+ b=hcjAoKuYNCz3b/BMtse8aODsCZcTPl8ilKNAVQMg2KTXru9sUyn+ADzewnQyixrjG5
+ bTWCgU0wmDUCuXdDMFxCGBUPlxa20qEeKkTuu7TRuGi+eKwlDbYFi1f2+iVaDgoJsCuo
+ +5q6IW4WyNSfq40rmw4s6MaaDDqYAV4P8cY0ZLxhd2KEcteJ0hw7eFiz5AfTTkhldhsP
+ Y+bOJVT4f/Odp8myDqfwtBa2bEoj/72nHgeAqFGSe1vJxjRW5D1Exvl9BPei7t8rlh1f
+ gSCeodt6cVjtVkMzx7nzgsGj9ADb49ocC7Q3NRHhfJ2i5nnaINkZ2Rp4potcrvyfWvzo
+ 0YNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=JGzwPqXojv9fw13Z0eI2DCVgSjIESM0r4G41CMB+UAw=;
- b=dWfQMuyOE6AwUJx+tQZnlQeJlk/v+kbQI1VimSgU6EyZRdHRcopyCpsSVgIukNUvM0
- NgJCH8Q6p7ziLvvXqHBm/AU0RctCFkdv24h1ou4BcWbGExBV1nE+F1dJPVo+I6mSRKWH
- LJAgn/RmQvfjdK3eeWnHW/pBtwIleVLMM5QVmWlI55GQIzNPdTjmcWKZuUjQHMuxPGpl
- VXWQKnmL/ufl8IYWI5YDVSQXm/pZtQsvxAVpRzaDYBBnjmlY482efLvG3om6KYvEOo2U
- A6hozmQR9llii4lW0b8jBIKZ8mogm8HKqi+ju36FtT8iE5N8fo/ATisgMu+5mPOYtNGM
- XFGQ==
-X-Gm-Message-State: AOAM5317qLYHwt5o3TOZfZyp9iyVbAnc5fh76qp8Goce4jT8+rQ1VF7h
- a814g8+VxkdC5FcL8VoepEE=
-X-Google-Smtp-Source: ABdhPJwuJqO4F7op0lVJ/Dcgt8eFlAaQVQwt973PvJcAo931PD1MMT/upceomSZ/ue6XpUp43sLONA==
-X-Received: by 2002:adf:f4c4:: with SMTP id h4mr4670814wrp.142.1589986389799; 
- Wed, 20 May 2020 07:53:09 -0700 (PDT)
+ bh=eVboQ/vbhLQ48NyZbNUxNWK6am4qR68FCbQ1gWq93oo=;
+ b=ZldOqwXD4PRwZ4GFhYZz0W/J0/ZFEPfns9y8sZql/T+kVLdIfWPB51YjPOQzWn144H
+ t++s+o2fhSAJkovp9Qd7J6WSGkTT4xl67DUneLEnqIowp/Gh8/B1WQJ65paqT+yHDs32
+ kTFV48qBV3fsLgQCx3Oe2B9laMvZZyiXkKhgK6t68Jq9VnySpQLVmAawN05PLPL27ojz
+ oJgk6/4eVW7BbIStRdGNicXJTuXu1h1GQhWJstMHIogI99K+Togtz5yXtqlE4+X4zzXO
+ wJW6Ywk8BeFgQvzoZsSP+G9UzC7UQg925V2qaheVq8QWYgoI8FFApJM97H605ZUKVlt9
+ mobA==
+X-Gm-Message-State: AOAM532OJdK9R6BznAnGLWXcRi4b+nCdCwCNMAMBaHt18v8yvv4RgMTJ
+ GwVhIMiVHVTQ5b9i1tb0FpSZ6XHO
+X-Google-Smtp-Source: ABdhPJxPrwrHkI6ZwMjUmVq2c2tvKeQtjxuidicgri85UBZxYca0OmLPuSuxs/2af7bkhwmNsAPJjA==
+X-Received: by 2002:a1c:7e43:: with SMTP id z64mr4817044wmc.72.1589986448765; 
+ Wed, 20 May 2020 07:54:08 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id l19sm3510030wmj.14.2020.05.20.07.53.08
+ by smtp.gmail.com with ESMTPSA id w18sm3038776wro.33.2020.05.20.07.54.06
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 20 May 2020 07:53:09 -0700 (PDT)
-Subject: Re: [PATCH 00/12] Add cpufreq and cci devfreq for mt8183, and SVS
- support
-To: "andrew-sh.cheng" <andrew-sh.cheng@mediatek.com>,
- Chanwoo Choi <cw00.choi@samsung.com>
-References: <CGME20200520034324epcas1p3affbd24bd1f3fe40d51baade07c1abba@epcas1p3.samsung.com>
- <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
- <d08c0dc0-5573-6ba0-1d9f-18857c7f6fb6@samsung.com>
- <1589953015.8243.2.camel@mtksdaap41>
- <852af745-dfb7-6bb5-da7e-798d166a3370@samsung.com>
- <1589958625.23971.2.camel@mtksdaap41>
+ Wed, 20 May 2020 07:54:07 -0700 (PDT)
+Subject: Re: [PATCH 01/12] OPP: Allow required-opps even if the device doesn't
+ have power-domains
+To: "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, "Rafael J . Wysocki"
+ <rjw@rjwysocki.net>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Nishanth Menon <nm@ti.com>, Stephen Boyd <sboyd@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>
+References: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
+ <20200520034307.20435-2-andrew-sh.cheng@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -140,23 +142,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <6874cc1e-275f-9d17-045b-c717c307da9c@gmail.com>
-Date: Wed, 20 May 2020 16:53:07 +0200
+Message-ID: <b667fff9-50ae-bff2-ae17-1cf0ca1a08a5@gmail.com>
+Date: Wed, 20 May 2020 16:54:06 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1589958625.23971.2.camel@mtksdaap41>
+In-Reply-To: <20200520034307.20435-2-andrew-sh.cheng@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_075311_182115_25FA15B0 
-X-CRM114-Status: GOOD (  18.46  )
+X-CRM114-CacheID: sfid-20200520_075410_640198_5A6C0B78 
+X-CRM114-Status: GOOD (  22.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -180,14 +182,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>,
+Cc: devicetree@vger.kernel.org, Saravana Kannan <saravanak@google.com>,
  srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
- Mark Brown <broonie@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-kernel@vger.kernel.org, Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -195,86 +193,67 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 20/05/2020 09:10, andrew-sh.cheng wrote:
-> On Wed, 2020-05-20 at 15:24 +0900, Chanwoo Choi wrote:
->> Hi,
->>
->> On 5/20/20 2:36 PM, andrew-sh.cheng wrote:
->>> On Wed, 2020-05-20 at 13:10 +0900, Chanwoo Choi wrote:
->>>> Hi Andrew,
->>>>
->>>> Could you explain the base commit of these patches?
->>>> When I tried to apply them to v5.7-rc1 for testing,
->>>> the merge conflict occurs.
->>>>
->>>> Thanks,
->>
->>>> Chanwoo Choi
->>>
->>> Hi Chanwoo Choi,
->>>
->>> My base commit is
->>> commit 8f3d9f354286745c751374f5f1fcafee6b3f3136
->>> Author: Linus Torvalds <torvalds@linux-foundation.org>
->>> Date:   Sun Apr 12 12:35:55 2020 -0700
->>>
->>>     Linux 5.7-rc1
->>>
->>> Could you show me the conflict error?
->>
->>
->> When I tried to apply first patch with 'git am',
->> the merge conflict occurred.
->>
->> git am \[PATCH\ 01_12\]\ OPP\:\ Allow\ required-opps\ even\ if\ the\ device\ doesn\'t\ have\ power-domains.eml
->> Applying: OPP: Allow required-opps even if the device doesn't have power-domains
->> error: patch failed: drivers/opp/core.c:755
->> error: drivers/opp/core.c: patch does not apply
->> error: patch failed: drivers/opp/of.c:195																																																																												
->> error: drivers/opp/of.c: patch does not apply
->> Patch failed at 0001 OPP: Allow required-opps even if the device doesn't have power-domains
->> Use 'git am --show-current-patch' to see the failed patch
->> When you have resolved this problem, run "git am --continue".
->> If you prefer to skip this patch, run "git am --skip" instead.
->> To restore the original branch and stop patching, run "git am --abort".
->>
->> Regards,
->> Chanwoo Choi
+On 20/05/2020 05:42, Andrew-sh.Cheng wrote:
+> From: Saravana Kannan <saravanak@google.com>
 > 
-> Hi Chanwoo,
+> A Device-A can have a (minimum) performance requirement on another
+> Device-B to be able to function correctly. This performance requirement
+> on Device-B can also change based on the current performance level of
+> Device-A.
 > 
-> I just make a new folder to get code and check.
-> Below is my command list.
-> Please help check the different with you.
->   505  repo init -u http://gerrit.mediatek.inc:8080/cros-kernel/manifest
-> -b upstream
->   506  repo sync -j8
->   507  repo start kern-dev --all
->   508   git remote add main
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
->   509  git remote add main
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
->   510  ls
->   511  cd kernel/mediatek/
->   512   git remote add main
-> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
->   513  git fetch main
->   514  git checkout v5.7-rc1
->   515  git am
-> Add-cpufreq-and-cci-devfreq-for-mt8183-and-SVS-support.patch
->   516  history
+> The existing required-opps feature fits well to describe this need. So,
+> instead of limiting required-opps to point to only PM-domain devices,
+> allow it to point to any device.
 > 
+> Signed-off-by: Saravana Kannan <saravanak@google.com>
 
-For reference I just tried with b4.sh [1]:
-# b4.sh am -l -o /tmp -n patch  1589958625.23971.2.camel@mtksdaap41
-# git am -3 -s /tmp/patch.mbx
-
-Applies without conflicts.
+Please check all patches, they are missing your
+Signed-off-by
 
 Regards,
 Matthias
 
-[1] https://git.kernel.org/pub/scm/utils/b4/b4.git
+> ---
+>  drivers/opp/core.c |  2 +-
+>  drivers/opp/of.c   | 11 -----------
+>  2 files changed, 1 insertion(+), 12 deletions(-)
+> 
+> diff --git a/drivers/opp/core.c b/drivers/opp/core.c
+> index ba43e6a3dc0a..51403c1f2481 100644
+> --- a/drivers/opp/core.c
+> +++ b/drivers/opp/core.c
+> @@ -755,7 +755,7 @@ static int _set_required_opps(struct device *dev,
+>  		return 0;
+>  
+>  	/* Single genpd case */
+> -	if (!genpd_virt_devs) {
+> +	if (!genpd_virt_devs && required_opp_tables[0]->is_genpd) {
+>  		pstate = likely(opp) ? opp->required_opps[0]->pstate : 0;
+>  		ret = dev_pm_genpd_set_performance_state(dev, pstate);
+>  		if (ret) {
+> diff --git a/drivers/opp/of.c b/drivers/opp/of.c
+> index 9cd8f0adacae..6d33de668a7b 100644
+> --- a/drivers/opp/of.c
+> +++ b/drivers/opp/of.c
+> @@ -195,17 +195,6 @@ static void _opp_table_alloc_required_tables(struct opp_table *opp_table,
+>  
+>  		if (IS_ERR(required_opp_tables[i]))
+>  			goto free_required_tables;
+> -
+> -		/*
+> -		 * We only support genpd's OPPs in the "required-opps" for now,
+> -		 * as we don't know how much about other cases. Error out if the
+> -		 * required OPP doesn't belong to a genpd.
+> -		 */
+> -		if (!required_opp_tables[i]->is_genpd) {
+> -			dev_err(dev, "required-opp doesn't belong to genpd: %pOF\n",
+> -				required_np);
+> -			goto free_required_tables;
+> -		}
+>  	}
+>  
+>  	goto put_np;
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
