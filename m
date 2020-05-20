@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0E9B1DC283
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 00:57:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 137CA1DC28C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 00:59:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JL5I9lHgbxza6x+uJZKTts9kOYZ0YGDEZ27yyLBeShQ=; b=ancWNsnxwXH/v8PvE3btG7fcmJ
-	IykNDKQJEcz32WseO9IqyyvIIalhWjjA8KPBc68ikHgSsyd87KowwVcNhFnjjoomeFg9kxqiGRmQ6
-	p+NxKLGIxjjC0UejDmhErcaUQ6N5OEMvr9nbku/2i8IZhagV3iTkGMIaHvzW67cFtpOCKTe+msgz8
-	6ROL+6PAKVREoxiF2CYgWdoEPTMhROM1vna1HUCKe41lTxbNMYKRlpWogkf1bHkGTL1setHbBahB5
-	AZnuUxeO27T3XMsVKNQKFT6D8HqRULRD9TXSFpjFLx6sxS0dl4B22dEDPIuijLvHsqRdfnklxfamX
-	QxvECPOg==;
+	bh=7xvAZRup0cxQ5p4FzHzGA9oTRhUyccdco4VwqwYkYlo=; b=Lvzsm6SLX2PiP6hm2BAige8tI6
+	bBAfAXwtu3STybz0FWdkq5fh7TjdB4Vk+OwhbHxc7N1+pUmAsGmepFVEQBNpY4z8JI82CyLcVQTlq
+	HtKrloZLQI7Ifmm0fNJH/pIlPzuBW6grVIHQl3F4OcKO8iTojndpI8Mlx+KZ0n+kTZWQjke8kqVyv
+	5HqUgq/vLt+gkWbmjEX313qg7ktOdA6FU2/LC1XBBqEDIwIuwsReI7MeDqKvnaLlBU9HqtsDoxr5Z
+	40UD2wF//dJi1l6Uj7GtnZFkSFwQKD6X2hfGfUMdFjVWZvhPQbbEdKgheEbJEfHOcbsu8j4R62OBl
+	9+eweSmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbXeB-0001CH-MO; Wed, 20 May 2020 22:57:11 +0000
+	id 1jbXgW-000395-Ve; Wed, 20 May 2020 22:59:36 +0000
 Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbXdF-0000qZ-6f
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 22:56:18 +0000
-Received: from unknown (HELO ironmsg-SD-alpha.qualcomm.com) ([10.53.140.30])
- by alexa-out-sd-02.qualcomm.com with ESMTP; 20 May 2020 15:56:06 -0700
+ id 1jbXdm-0001FN-Sc
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 22:57:05 +0000
+Received: from unknown (HELO ironmsg02-sd.qualcomm.com) ([10.53.140.142])
+ by alexa-out-sd-02.qualcomm.com with ESMTP; 20 May 2020 15:56:07 -0700
 Received: from gurus-linux.qualcomm.com ([10.46.162.81])
- by ironmsg-SD-alpha.qualcomm.com with ESMTP; 20 May 2020 15:56:06 -0700
+ by ironmsg02-sd.qualcomm.com with ESMTP; 20 May 2020 15:56:06 -0700
 Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
- id 7277B4D8D; Wed, 20 May 2020 15:56:06 -0700 (PDT)
+ id 872B04DD3; Wed, 20 May 2020 15:56:06 -0700 (PDT)
 From: Guru Das Srinagesh <gurus@codeaurora.org>
 To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: [RESEND PATCH v14 03/11] ir-rx51: Use 64-bit division macro
-Date: Wed, 20 May 2020 15:55:56 -0700
-Message-Id: <68f17a69e1c818ee80d6c29c852df35a126b47c6.1589330178.git.gurus@codeaurora.org>
+Subject: [RESEND PATCH v14 04/11] pwm: clps711x: Cast period to u32 before use
+ as divisor
+Date: Wed, 20 May 2020 15:55:57 -0700
+Message-Id: <1d6918c3fc2976bdbdb687bf54a2ef09fc1558db.1589330178.git.gurus@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <cover.1589330178.git.gurus@codeaurora.org>
 References: <cover.1589330178.git.gurus@codeaurora.org>
 In-Reply-To: <cover.1589330178.git.gurus@codeaurora.org>
 References: <cover.1589330178.git.gurus@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_155613_280765_F1027686 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20200520_155647_033267_83917850 
+X-CRM114-Status: GOOD (  10.81  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -80,30 +81,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the PWM framework is switching struct pwm_state.period's datatype
-to u64, prepare for this transition by using DIV_ROUND_CLOSEST_ULL to
-handle a 64-bit dividend.
+Since the PWM framework is switching struct pwm_args.period's datatype
+to u64, prepare for this transition by typecasting it to u32.
+
+Also, since the dividend is still a 32-bit number, any divisor greater
+than the numerator will cause the quotient to be zero, so return 0 in
+that case to efficiently skip the division.
 
 Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
-Acked-by: Sean Young <sean@mess.org>
 ---
- drivers/media/rc/ir-rx51.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/pwm/pwm-clps711x.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/media/rc/ir-rx51.c b/drivers/media/rc/ir-rx51.c
-index 8574eda..9a5dfd7 100644
---- a/drivers/media/rc/ir-rx51.c
-+++ b/drivers/media/rc/ir-rx51.c
-@@ -241,7 +241,8 @@ static int ir_rx51_probe(struct platform_device *dev)
- 	}
+diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
+index 924d39a..da771b1 100644
+--- a/drivers/pwm/pwm-clps711x.c
++++ b/drivers/pwm/pwm-clps711x.c
+@@ -43,7 +43,10 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
+ static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
+ {
+ 	/* Duty cycle 0..15 max */
+-	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
++	if (pwm->args.period > (v * 0xf))
++		return 0;
++
++	return DIV_ROUND_CLOSEST(v * 0xf, (u32)pwm->args.period);
+ }
  
- 	/* Use default, in case userspace does not set the carrier */
--	ir_rx51.freq = DIV_ROUND_CLOSEST(pwm_get_period(pwm), NSEC_PER_SEC);
-+	ir_rx51.freq = DIV_ROUND_CLOSEST_ULL(pwm_get_period(pwm),
-+			NSEC_PER_SEC);
- 	pwm_put(pwm);
- 
- 	hrtimer_init(&ir_rx51.timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
+ static int clps711x_pwm_request(struct pwm_chip *chip, struct pwm_device *pwm)
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
