@@ -2,125 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24B281DAEA5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:23:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 945BA1DAEAD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 11:26:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=paZp2oA8pyfqzmEOlwkGt2v2JbbcdnODv8rhImM0bfU=; b=txwucVBX/2/SPF
-	a4xtFC3nkmc+gNXkAkIMqhJn0YRPDV2/njdJaMfCm9nL2xNGykjcSWFklB0gATXaR9Fcye1g1prqF
-	5KyUTr7ifn9c4/rTu2Kn/9PU7i75Jteid6ICMD/FweVW12tPyVf1akQ/iAxukBCQNJg8PXtiDjeSV
-	UmAotGevn3k2N/8j1EGxr/f8TVgP+NLXT8j8qz8MDhjX1sxMXCQmk+rUeIS4zQgFU1LLpGLqjquaa
-	13accNE7JTe2P105FDBYOlEYoug6qiaFtKh+J37P2XNPdQCEeeh4nfxblVfeclCwQeUIxwup+pLy8
-	5MoGwYAdfHixElrALKKw==;
+	List-Owner; bh=5BSggMqlCppDjB3o/uOyWbxAzSFefgnmIGIiaOiV3gM=; b=BpYuiJPqDRAivj
+	IaX4VkYItrhG8S0bBfT0b347bbTOuvcNJDQPQ6DgG8Ooy8RtFiJKGqN/xBsuzSoBidnpqoVblZRmf
+	dbNgIjHeOZoFZPvZMghSjXs6YDScCP9395B06ua1uZvFqeRBEoGWAh9HZWkyR3zyA2LpmC+AcOf0c
+	/aZ3NJtegCNbpSg+Wpo5S4OAhd1mwPLYvGJMasGSWS7YqhEiYNw2fuRgDswan2L0x38jZYiu4NMz1
+	xr94W3my4dSYykDo4IqR0g2DbvXkvHnEXRBZeJ/QMZSE4sm05rJrDLCXwgX7ll3aq075T6CS8urD4
+	vKClaCqqDWXCd10LfcTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbKwI-0008VW-HR; Wed, 20 May 2020 09:23:02 +0000
-Received: from mail-am6eur05on2072.outbound.protection.outlook.com
- ([40.107.22.72] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbKw9-0008Uw-0i
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:22:54 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=JOMEmdfHnlUsZnvKCcHQmNrML8g1cJHxQwSDDzbkArpDpIHniUw3Z7N8bbmla7+gmS21zWpfCzAebzqfGr6dcRJlq1dxPOe+ouJZbMkxIuNXZO5hbV1Sr7jhWvPNb44C836484cqKzYjCueflGX0apxC2izRL+pXvrs0QSBTff4lxJgJR/bbs/VdUPZJ5ZtfiQFS5umx+bAsjadYqBdcRKM4f6iJ6rsi7LZ29qsJvr+v7DDdnw3I+sGYi7SkH1S2LSyzYTtXFwFnMkA8r6Dhcbkj8Qy1xZ/vPjgDPJ9euL5gV4gBeSnkuIhOZhJatdRq1mXKqnQLbfT+omaA1OXN5g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=n0y5MvQVEDiJ7MEMSHn2a09wJC3gJfWvzcrY4rnINjQ=;
- b=fU1S5UhxeXyd/duGImpQRkTvfysJ7UqcG/UuVCkvF+WyI18SZQd++mFyBsvaMWj5MpP/8QcF4sptDdauhBe/66e0vYyPd19mPovc2xaU+imLCiEDfp0Cr87SZgKtioC19yOEPGfX7KF/iXYBWZLR28qGQyiSiXLFnY8E1grRsWtkSXefvveIXbWzKH5ny3y4i1DX7yJG3iCgSrLSGDTjBkMkjWlA4cvq1zuE4edENa2oSw5tFgBcxsZOah9lAohMUDKVZyXxMiT+0IWjklfhcj5KjxvhVMKSp1nAXTpWtNEmQpc+bqwUQzrvfOLDPZCWmxLHredzo8fa5EoWDxqEgQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=n0y5MvQVEDiJ7MEMSHn2a09wJC3gJfWvzcrY4rnINjQ=;
- b=j1ZRFRcyrAZYN6naY2bdBcGS6UmwcXfYjm4aP/ja0uPBAmhTq4dy3A0Ot8pKwGcFNWQ6QC9R325Lq8e5f3BuKr6P/orZflYY2F6zYH0DeP1Hv+VfSzSWN3ohcmBEV1zqDpt3EmWD7C1duX4CtVu25Y6nnL/DeyES9PrlcqPNeds=
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com (2603:10a6:20b:2::14)
- by AM6PR04MB6662.eurprd04.prod.outlook.com (2603:10a6:20b:ff::15) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.20; Wed, 20 May
- 2020 09:22:48 +0000
-Received: from AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d]) by AM6PR04MB4966.eurprd04.prod.outlook.com
- ([fe80::3c6c:a0e9:9a4e:c51d%7]) with mapi id 15.20.3000.034; Wed, 20 May 2020
- 09:22:48 +0000
-From: Aisheng Dong <aisheng.dong@nxp.com>
-To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] ARM: dts: imx: Make tempmon node as child of anatop node
-Thread-Topic: [PATCH] ARM: dts: imx: Make tempmon node as child of anatop node
-Thread-Index: AQHWLnGKahSSyBKEm0SO3VgjiRIl16iwl6BQgAABCwCAAASd8IAAAmqAgAATvdA=
-Date: Wed, 20 May 2020 09:22:48 +0000
-Message-ID: <AM6PR04MB49665F56FA9FD8331F90D5B980B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
-References: <1589956216-22499-1-git-send-email-Anson.Huang@nxp.com>
- <AM6PR04MB49663B517C218072B2845DBF80B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
- <DB3PR0402MB39167A0961963B73758F6CA9F5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <AM6PR04MB496661BDF6B5F966A218092380B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
- <DB3PR0402MB39161EA7B95886D56EB91E8BF5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-In-Reply-To: <DB3PR0402MB39161EA7B95886D56EB91E8BF5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 021d004d-403e-4089-b2fa-08d7fc9f5d00
-x-ms-traffictypediagnostic: AM6PR04MB6662:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB66627920669990E89D2113BA80B60@AM6PR04MB6662.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3383;
-x-forefront-prvs: 04097B7F7F
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: BwJnJbmLSYVbpBwASvSsGEWWDv8Kj+xZyVk5N1Hlt3DPlM623uccc+Kc3bxdKpnT4XNboT7ox+JIy9Hu12bi3//2xBEbEb1wZycYgCJPQvvAzZYHKUzJq4LH+1RDoKDjym5ZbNYhZI85odKOiJMCzC9unxGPKZ7S74qKBH5vDaMR8Z5CS0P3DjhMFHXuAc8jzWoQJh/XdQAkT4lQpLxkNB/nph10007mTU3xkw66fBntMTE5PCVx9xOIIa/6+nwXOiV88YarBSa90X2xe0qwJOJApH2l9Rxlza7/Gg9M6K30Zs7L7Z4DJTPS4+KFOD3e28sNdtHU9RuK/RgDS2wHKotU2UICCij7BTyH5JF2rMTJaqUCxNv0hww0JIFP6shmFgjFDQcS3oYg1Uckgl3NfTxmh8b0lLNIxXEgj9WvK7khB+fuvHPpysfYOyFdWORv
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR04MB4966.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(39860400002)(136003)(396003)(366004)(346002)(64756008)(2906002)(4326008)(8936002)(33656002)(52536014)(66446008)(8676002)(66556008)(66476007)(76116006)(55016002)(44832011)(9686003)(66946007)(6506007)(7696005)(71200400001)(26005)(86362001)(316002)(110136005)(53546011)(186003)(5660300002)(478600001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: NshwA9a/4UpX0obX/bKAVk+jOG6QuWr/QktCNKKaH8KXPpWRiYXTdggMvSfQUEN0L6Hy/xHu2xmDxSrmR3tdGswqiglRMpGYbz5jaT2ypKc6dpEGOquFarOEkKxoAdp8ftlgkltc+UfqjJe+aRRvd7iec5KwoZidAR8t+APPWhs0tSRZYlm3o2cxVEJBTH4jZbvllMcAbS00CPRPxmd9eIT+tIMXJfo4NKxoosKlB+VUjy/F/VFWU1RA5cdDfocjrS15yUcyo1qQoerkQhKKPL63pePGnSE6FPxgVekAPxDaOg/N3vk5TMDq6BwXAtKxcbUnk5LH0f4m6R7GScid4obqOsSMob/XxU2fIQECE1QlpjF80ksxHDBJRiP3+E6iVMn1pbWVy1zq3pGEy1YuDhzO2MaYUjP5/u/E3AJTlh31wOM9zyu3RIkTtZf1xWnsWERXXkYasXLIjXFuhS4JwSzqa2s3Tp7IBthEacty04WmW86N8YEb2Lsz6rGFbiFy
+	id 1jbKzN-0004Hc-Ps; Wed, 20 May 2020 09:26:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbKzE-0004H8-QQ
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 09:26:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 89FD030E;
+ Wed, 20 May 2020 02:26:03 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 390563F68F;
+ Wed, 20 May 2020 02:26:02 -0700 (PDT)
+Date: Wed, 20 May 2020 10:26:00 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v6] arm64: Expose FAR_EL1 tag bits in sigcontext
+Message-ID: <20200520092558.GI5031@arm.com>
+References: <20200508020106.136652-1-pcc@google.com>
+ <20200513180914.50892-1-pcc@google.com>
+ <20200513202808.GY21779@arm.com>
+ <CAMn1gO4V05nD-Tq4dES0QyO73bAT-Nwo1ABnz0nuous8Rq+dGA@mail.gmail.com>
+ <20200518095313.GZ21779@arm.com>
+ <CAMn1gO4c3-hG_i6ZWsk-+oUGQQBdzFJRMrpehT3OFERF2Z7nrg@mail.gmail.com>
+ <20200520085502.GC24293@willie-the-truck>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 021d004d-403e-4089-b2fa-08d7fc9f5d00
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2020 09:22:48.5531 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jIppbuPyuDnSPQaCzN6aikAI/8tvJMG+SSISLt3N+m3vt2bglI/69dJKi0vIWnsalPxkxpKLpEA8KtPpkCw83A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB6662
+Content-Disposition: inline
+In-Reply-To: <20200520085502.GC24293@willie-the-truck>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_022253_134801_DEB9F210 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200520_022604_941709_EFDA0EFA 
+X-CRM114-Status: GOOD (  30.03  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.22.72 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.22.72 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -132,52 +68,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, Evgenii Stepanov <eugenis@google.com>,
+ Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Anson Huang <anson.huang@nxp.com>
-> Sent: Wednesday, May 20, 2020 4:12 PM
-> 
-> > Subject: RE: [PATCH] ARM: dts: imx: Make tempmon node as child of
-> > anatop node
-> >
-> > > From: Anson Huang <anson.huang@nxp.com>
-> > > Sent: Wednesday, May 20, 2020 3:47 PM
+On Wed, May 20, 2020 at 09:55:03AM +0100, Will Deacon wrote:
+> On Tue, May 19, 2020 at 03:00:12PM -0700, Peter Collingbourne wrote:
+> > On Mon, May 18, 2020 at 2:53 AM Dave Martin <Dave.Martin@arm.com> wrote:
+> > > On Thu, May 14, 2020 at 05:58:21PM -0700, Peter Collingbourne wrote:
+> > > > diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
+> > > > index baa88dc02e5c..5867f2fdbe64 100644
+> > > > --- a/arch/arm64/kernel/signal.c
+> > > > +++ b/arch/arm64/kernel/signal.c
+> > > > @@ -648,6 +648,7 @@ static int setup_sigframe(struct
+> > > > rt_sigframe_user_layout *user,
+> > > >                 __put_user_error(ESR_MAGIC, &esr_ctx->head.magic, err);
+> > > >                 __put_user_error(sizeof(*esr_ctx), &esr_ctx->head.size, err);
+> > > >                 __put_user_error(current->thread.fault_code,
+> > > > &esr_ctx->esr, err);
+> > > > +               current->thread.fault_code = 0;
 > > >
-> > > > Subject: RE: [PATCH] ARM: dts: imx: Make tempmon node as child of
-> > > > anatop node
-> > > >
-> > > > > From: Anson Huang <Anson.Huang@nxp.com>
-> > > > > Sent: Wednesday, May 20, 2020 2:30 PM
-> > > > >
-> > > > > i.MX6/7 SoCs' temperature sensor is inside anatop module from HW
-> > > > > perspective, so it should be a child node of anatop.
-> > > > >
-> > > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > >
-> > > > Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-> > > >
-> > > > BTW, I think you also need a binding doc for this change.
+> > > Perhaps, but we'd need to be careful.  For example, can we run out of
+> > > user stack before this and deliver a SIGSEGV, but with the old
+> > > fault_code still set?  Then we'd emit the old fault code with the
+> > > new "can't deliver signal" signal, which doesn't make sense.
 > > >
-> > > The binding doc is the imx-thermal.yaml I sent out, it is suggested
-> > > by Rob to move tempmon into anatop node, that is why I did this
-> > > patch to align with the binding doc.
-> >
-> > That's thermal binding doc.
-> > We need a binding doc to describe the constraints for anatop as well.
+> > > Stuff may also go wrong with signal prioritisation.
+> > >
+> > > If a higher-priority signal (say SIGINT) comes in after a data abort
+> > > enters the kernel but before the resulting SIGSEGV is dequeued for
+> > > delivery, wouldn't we deliver SIGINT first, with the bogus fault code?
+> > > With your change we'd then have cleared the fault code by the time we
+> > > deliver the SIGSEGV it actually relates to, if I've understood right.
+> > >
+> > > Today, I think we just attach that fault code to every signal that's
+> > > delivered until something overwrites or resets it, which means that
+> > > a signal that needs fault_code gets it, at the expense of attaching
+> > > it to a bunch of other random signals too.
+> > >
+> > >
+> > > Checking the signal number and si_code might help us to know what we
+> > > should be doing with fault_code.  We need to have sure userspace can't
+> > > trick us with a non kernel generated signal here.  It would also be
+> > > necessary to check how PTRACE_SETSIGINFO interacts with this.
+> > 
+> > With these possible interactions in mind I think we should store the
+> > fault code and fault address in kernel_siginfo instead of
+> > thread_struct (and clear these fields when we receive a siginfo from
+> > userspace, i.e. in copy_siginfo_from_user which is used by
+> > ptrace(PTRACE_SETSIGINFO) among other places). That way, the
+> > information is clearly associated with the signal itself and not the
+> > thread, so we don't need to worry about our signal being delivered out
+> > of order.
 > 
-> anatop includes PMU, thermal etc., need to think about how to add it and
-> where to put it, will think about it later.
-
-We can combine them into one.
-
-Regards
-Aisheng
+> Hmm, I can't see a way to do that that isn't horribly invasive in the core
+> signal code. Can you?
 > 
-> Anson
+> But generally, I agree: the per-thread handling of fault_address and
+> fault_code appears to be quite broken in the face of signal prioritisation
+> and signals that don't correspond directly to hardware trap. It would be
+> nice to have some tests for this...
+> 
+> If we want to pile on more bodges, perhaps we could stash the signal number
+> to which the fault_{address,code} relate, and then check that at delivery
+> and clear on a match. I hate it.
+
+I agree with Daniel's suggestion in principle, but I was also concerned
+about whether it would be too invasive elsewhere.
+
+Question though: does the core code take special care to make sure that
+a force_sig cannot be outprioritised by a regular signal?  If so,
+perhaps we get away with it.  I ask this, because the same same issue
+may be hitting other arches otherwise.
+
+Cheers
+---Dave
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
