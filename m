@@ -2,86 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB1E11DA62E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 02:09:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 069A91DA62F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 02:09:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lfXlsxxRVas4q4PzIk/d0ygDurpt/jWfQXAp/s3Bmek=; b=b3vPA8kpDIyWAI
-	69nk6Y9lZL7JwK4ycsxFYUeQDbmvZkeRcblOfmU2faawLjCuowATgqb6X89TW/au2KfwPI0YiYfpS
-	0MLLNXWgJgwTcHw8vtcnkFlUFblQuutvg+wtgIf0cVMao0TfH5koq5gUQYRBILgYoNr6Nft5XAz78
-	dBW/JEV1ge2Ms9uBZDbgYYmI8A+4MZx+GPiLM8gAUm9Ss1iV25cw5zoAUCIbQMTN7+P8u9DRz/TxG
-	hrR3AR1fgvLr02J05w98HmcHbqRVGuSV101a01tyPZpQHhXwVvm/rUyMAMaH5Bjo+CdE2YLCOPtKL
-	rERJvNtoRS1rnZe7SNjA==;
+	List-Owner; bh=X8VEmI0Wt0GvfFOHphTCUZqmc8avu5WLP8rStKguTt0=; b=KYcIiBd3h0lZbM
+	1FbYNrXe3Ilyd2UsZsDOHbmwIddQ9INyP/sYECGHAIhYeS8ULd70W9F7nAsgPUA+2pszZHBdecK2D
+	eXSFZXtl6HaWlA3NeLcIpWlQGC5Aeuoco6m4c+W0w0QWBHp+8i4xTnB30l+3kqc+KN6nkjkvOhw2Q
+	Dsnm4q4bi9BWWQcBp8WI8g/29MtpFdceTULEkcYh92ap5/txgn98z2hP1jY6Q9ee403e91QBqbQfu
+	wtEcYB9Wdo+4NWUYECZjiU4Fkln37ta2KtLNPI5f9u111l05rb19lGGhRy4Qmljmspnt/JIEkFN2T
+	REzBK/2FKGJSr1edmOmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbCIL-0001eN-Vk; Wed, 20 May 2020 00:09:13 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jbCId-0001rF-Le; Wed, 20 May 2020 00:09:31 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbCH2-0000VZ-Ie
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 00:07:54 +0000
-Received: by mail-pl1-x644.google.com with SMTP id d3so597028pln.1
+ id 1jbCH4-0000cP-7M
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 00:07:56 +0000
+Received: by mail-pg1-x543.google.com with SMTP id t11so612402pgg.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 19 May 2020 17:07:52 -0700 (PDT)
+ Tue, 19 May 2020 17:07:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:subject:date:message-id:in-reply-to:references:mime-version
- :content-transfer-encoding;
- bh=7E+96xLWXR0/8hTuHXZFZz8+gdr1UiuXEJRZqhXw6X8=;
- b=Un58eWjKctefrHRqJ7dvLIb7h0CPEt1iuXzxR4n6qCP42XpGpHDwdTrRBb8PUXaAQg
- RhZKNOwt+EIDA2KgD0SaK8LdZNQoP5sJrMbj7Y7Zq0E0V78tPE0/lRWWYF5QX2c2bikH
- 1FIhVCjJGAAbPHuYgUelWXSgf4gKjJSGu3XBaBBsjuZi0BuZ9qdywxDNVGK/AYtr/hOH
- uy9nwtgdpyyFM+uk1CRZCJEn59m+0tfqRpdHwerg5gK1G/Vb+oSrlru5xR86WxFzNat7
- XgZ9n1GZAEuOty9dXFkbRVOcYUXb492Fyay+gUFKaQytL0zjwZ3/Wdd+PczxxDQ/0jjL
- 5yFA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=nLMfwQbrlF1iv4LcSoROIabrcfKs0/jUzCRJPsjpM/g=;
+ b=Gqo34c3m0MlNoFL+YXBmISvMCjL1uAr1dCIk+C2xcHpi/NSgJAkMkbIB54SVo3iPr2
+ HaZgzNyTF1lmEeD7MvMTZmyASk+yYU+KRNjjuLz/gkNyajNTTMpy+westprggwgYHgeu
+ H18O/XFDeMrrZ83+TekriuOSfUOKTYo0bQjBP5XEEJhAzPLW0eDyNm1lAycXCLgPH4my
+ 5OkzNS9XRiDor39MYDWxeHHIJeNebLJIzM8O/UVe8sZHS6hWPl2jBe+/MjLVYqVeFwWD
+ C1Qm8oJgZQMAeE32cJMZ0614HbLkp4WCrD4CJKa70EWir5uchhrv0+WONADhNEGNEUXk
+ QOog==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=7E+96xLWXR0/8hTuHXZFZz8+gdr1UiuXEJRZqhXw6X8=;
- b=qKZwZdoUq4D92cTyGD1adHFF2d9lfqNz3WIx0lH8qKAKDvoYXDfylIO4zeY+3LzJ3t
- D+3PxSHp+kH2jKx+CEZsYfbZ6gnvrvUlIAicnxloJmdGLQ/ooXFwBxusLdgmzsu/ndVj
- VRI99IdYDHk/YvXtALcAniLfSjoDTUVrCZ3xVOAN7xei+4ioK052Km0OfsY56gL3DALI
- yLK5+S65ZzAlVoCr65F8ZqSKHNZBKWs8GA01FHtYCkkW2fzrQQ1djjZwtzw6oaZePg/D
- Yr8JNM1lHRcOsO65FNSwsVuaBEt1kALFSRRgnva1ZTiEfM0dTqJ0F+x+NDY1NiNqwruc
- fdPw==
-X-Gm-Message-State: AOAM533AIWcOuAbH2lk+vLED2qoFdmc0DLEdDfu+yFytYrqqC5HINUY0
- nSw04E9Hp41Uk7/3PTG9uPHqnw==
-X-Google-Smtp-Source: ABdhPJwJXapV3XSyLdWBlyJa/j1Qrxy4J3disNJEFzP9hMGHSRWKAhJBD6HgUG+V+BJQnf+U8c014w==
-X-Received: by 2002:a17:90a:2a03:: with SMTP id
- i3mr2158657pjd.29.1589933270413; 
- Tue, 19 May 2020 17:07:50 -0700 (PDT)
+ bh=nLMfwQbrlF1iv4LcSoROIabrcfKs0/jUzCRJPsjpM/g=;
+ b=fIlzFTZgJt+WQ9dkwQ97gFnNywprzphmcvwR7WGJMles1hBpxPG3E3jfdi/+NAatXd
+ o3ARHZQH55WsTzydWC5EHClAox80JsIFf1QA4zdbOliILMBgkkXQYaRuz2XZbycN0VDy
+ LJ68/S8fSdbPS66GQDp1bY6zrd1W2ZABEP4G4mi89CpYhbdfoN+PVP7AWYntWYfHi7Gm
+ U0vOKS8Jb7yaNP9IZW/Psy7zbK9c1eCPbVCH66WCL/Pp+Gvz9tvr9+Cg59JK16nZxm+H
+ 85DGfusy67FsRhBUpOchWp2JgOBUveUbqfqLZIglZDSSDNghw0pHb8gqyUj1NgIgawmP
+ sEFA==
+X-Gm-Message-State: AOAM531V0WSt8Xkby2YpjW9jMPFekggeoJWd5w+oENYz1XDaVJKWmnAx
+ yyhAmzQxvsU+vs0Q+fTYUpLOJQ==
+X-Google-Smtp-Source: ABdhPJzsFZRQ9C+8oILR+S4MtBFIKYd2qCmva0PiBVlgTEiaWCLW5r8plQBhSkfJpMmL9SFle7gCyA==
+X-Received: by 2002:a63:7519:: with SMTP id q25mr1555590pgc.224.1589933272730; 
+ Tue, 19 May 2020 17:07:52 -0700 (PDT)
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
  [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id y13sm501497pfq.107.2020.05.19.17.07.49
+ by smtp.gmail.com with ESMTPSA id go14sm504705pjb.42.2020.05.19.17.07.52
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 19 May 2020 17:07:49 -0700 (PDT)
+ Tue, 19 May 2020 17:07:52 -0700 (PDT)
 From: Kevin Hilman <khilman@baylibre.com>
-To: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Christian Hewitt <christianshewitt@gmail.com>
-Subject: Re: [PATCH v8 0/3] arm64: dts: meson: add dts/bindings for SmartLabs
- SML-5442TW
-Date: Tue, 19 May 2020 17:07:44 -0700
-Message-Id: <158993320300.34448.2467899478322210990.b4-ty@baylibre.com>
+To: linux-amlogic@lists.infradead.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH 0/2] ARM: dts: meson8b/m2: RGMII improvements
+Date: Tue, 19 May 2020 17:07:46 -0700
+Message-Id: <158993320300.34448.6005768486014716103.b4-ty@baylibre.com>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200510124129.31575-1-christianshewitt@gmail.com>
-References: <20200510124129.31575-1-christianshewitt@gmail.com>
+In-Reply-To: <20200512215148.540322-1-martin.blumenstingl@googlemail.com>
+References: <20200512215148.540322-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200519_170752_623027_F092AA9C 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20200519_170754_559204_F2CF828C 
+X-CRM114-Status: GOOD (  15.06  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,29 +95,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: andrew@lunn.ch, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 10 May 2020 12:41:26 +0000, Christian Hewitt wrote:
-> This series adds new bindings and a device-tree file for the Smartlabs
-> SML-5442TW set-top box which is based on the P231 reference design.
+On Tue, 12 May 2020 23:51:46 +0200, Martin Blumenstingl wrote:
+> the fist patch in this series connects FCLK_DIV2 to the PRG_ETH
+> "additional" registers for the dwmac Ethernet controller.
+> Now that we know how RGMII and FCLK_DIV2 are connected we can
+> add this dependency to get rid of CLK_IS_CRITICAL for FCLK_DIV2
+> at some point.
 > 
-> As requested, I have reworked the device-tree on the p23x-q20x dtsi. I
-> have also re-added the BT device with new bindings that have now  been
-> merged in bluetooth-next for inclusion in Linux 5.8. See [1].
+> The second patch fixes the RX and TX delay. The 4ns TX delay which
+> we have used so far is incorrect and only worked because we were
+> using an unsupported clock divider in the PRG_ETH registers. That
+> divider has been fixed with commit bd6f48546b9c ("net: stmmac:
+> dwmac-meson8b: Fix the RGMII TX delay on Meson8b/8m2 SoCs").
+> Instead of "just" fixing the TX delay we can even do better and
+> switch to phy-mode = "rgmii-id" to let the PHY generate the RX
+> and TX delay. However, previously we didn't know that there was
+> an RX delay applied by the MAC on these boards. Only the additional
+> information from Jianxin in the other series [0] made us aware
+> of this. Without the other series there will be a 4ns RX delay
+> (2ns from the MAC and additional 2ns from the PHY). Due to this
+> dependency I did not add a Fixes tag, because backporting these
+> .dts patches without their runtime dependency will break stable
+> kernels.
 > 
 > [...]
 
 Applied, thanks!
 
-[1/3] dt-bindings: add vendor prefix for Smartlabs LLC
-      commit: bc15895e142396fed5ebf1f60139d9ca9a56a4e4
-[2/3] dt-bindings: arm: amlogic: add support for the Smartlabs SML-5442TW
-      commit: 341e85047bdbc0196c91ccb4612ffab87bae9cfe
-[3/3] arm64: dts: meson: add support for the Smartlabs SML-5442TW
-      commit: 1d6ece87b750cf26fed4eb794ea0b2fc7ff2be10
+[1/2] ARM: dts: meson: Add the Ethernet "timing-adjustment" clock
+      commit: b632506c5af22a9a7c63674fc605d24cf94d585b
+[2/2] ARM: dts: meson: Switch existing boards with RGMII PHY to "rgmii-id"
+      commit: 005231128e9e97461e81fa32421957a7664317ca
 
 Best regards,
 -- 
