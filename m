@@ -2,78 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 668101DB05E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:38:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A49FC1DB07B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 12:45:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4+WtHROuOX4t+Cp5Bnk1RWF5vMukGlq9AwWa86wueSQ=; b=cL44drdUx/8wjR
-	f4Q5Y/1V1gCpLXcPW4xGqwgRkQwGdu0wEUKTrr11b/uUyRDaXFBZYuKa9wzoytopzHyeY7aVGOoCW
-	3wHkOQbfTxZeENHJRm0ULCUZOYnBLNtpbjtAul6SZdRenq0nQK8JuKfO2fipzirw9U+OCO9z/dM7y
-	1saSp/3I5HdoyZnZx4Ua9ql0211CWxIhl2GjnbN7zFvgkAPJstKTXrRmVX28pCcDGxmN4vvTk6Rd3
-	QzufsmNoAuPcsx13nM3gpDCFNeZXea5SZE2yF7f6O3lGuBBIHPlv8tZ6Ww6N/0kDay0iH+ipovAkj
-	Zd5tNT2/4yzpypVs3ZJw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	References:MIME-Version:Message-ID:Date:In-Reply-To:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=esb00XWseJ2Oftt86LJNFNwtbWgVa6b2nX75nEbD0hA=; b=k+lt/HVZsffGlsrnliOMYKeGN
+	SSHa8izjOZRx+vW6GAQRnblHv/YhdxqdEqWsdWUngcriDwHZDbPc4sAM6G/bXea6Y04QyTOXR8rZB
+	jbK7d6mYIB8k2HmzhCZ9aq7yxhsmJoHRrIBA4wybEXXUxI8FRT4772uTiAH3LJdpoIEWU4ll8VsiS
+	b3+rwLdFLGbzp+GVRepj5cb+WcS28yh9S5/MpnMdXM4GPwAlYcUnUcb4pDmilvu5EgQ0mb0+sILgd
+	Pwlu9iZUV9IzVGx8DgsxSZZM6Hk79NGNhTHm6KySCByqVa8c9/W1KeKmuiinj2AsnHBUfiDcAtBYs
+	7NmzRvpPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbM6i-0001Sw-IX; Wed, 20 May 2020 10:37:52 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jbMDq-0005t7-Oc; Wed, 20 May 2020 10:45:14 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbM6W-0001Rs-4e; Wed, 20 May 2020 10:37:42 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04KAbWLQ107478;
- Wed, 20 May 2020 05:37:32 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589971052;
- bh=+KF9k6cB/JfAPmPQy9MafpFdMwFT47tOFEMgTwRcw9M=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=Mc56S6dJwa52OQndl3nGDOF8ZS6pRdbj54zRKH0Qk1G1vNJkapaLZEUp1JxevQGmV
- RKngxvJDyRnBBS6bG5jWfjHen+AK0SKDiWGSL4ufV6lWPofk9t83hgyhWRYSzhm7JU
- pCV5jP/4zlTMk2N6hpgLtId95Q8gn6m0trDx3xRw=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04KAbWc3060215
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 20 May 2020 05:37:32 -0500
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 20
- May 2020 05:37:31 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 20 May 2020 05:37:31 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04KAbVvo036664;
- Wed, 20 May 2020 05:37:31 -0500
-Date: Wed, 20 May 2020 16:07:30 +0530
-From: Pratyush Yadav <p.yadav@ti.com>
-To: <masonccyang@mxic.com.tw>
-Subject: Re: [PATCH v5 09/19] mtd: spi-nor: sfdp: parse xSPI Profile 1.0 table
-Message-ID: <20200520103728.jtbslowdfrv3o5yz@ti.com>
-References: <20200519142642.24131-1-p.yadav@ti.com>
- <20200519142642.24131-10-p.yadav@ti.com>
- <OF83616464.480FA751-ON4825856E.002A4483-4825856E.002BE6AF@mxic.com.tw>
- <20200520085534.yra4f5ww5xs23c4j@ti.com>
- <OF98344913.4BF4C313-ON4825856E.0032A810-4825856E.00352141@mxic.com.tw>
+ id 1jbMDV-0005s6-3n
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 10:44:55 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200520104449euoutp015d4f975969ddb3980840e7e9323d320c~QtqVaNobS2434624346euoutp01H;
+ Wed, 20 May 2020 10:44:49 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20200520104449euoutp015d4f975969ddb3980840e7e9323d320c~QtqVaNobS2434624346euoutp01H
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1589971489;
+ bh=6CPRq4ULqK4ssuhc8hx4tHsC9pvXqnG/nhCQu807Mtk=;
+ h=From:To:Cc:Subject:In-Reply-To:Date:References:From;
+ b=lT0Mu8TQU3QCwLx2oV5ASGQJ3uKAscQvHrBQSsj0MR4yRsBXvPJbfWuX43I87MgBk
+ m+sNlwdWS7YwHp+PLLu0XX4l7Te3dJvJAYDwAkgzIfrWT5a9H04jKLQFJkFL/OdiQC
+ QkSn31bItydkK67cFhQmVASPbWJWhjaEqQQ3HTxY=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200520104449eucas1p1f58225b60dd7909e0c145619450697ae~QtqVABDTY1237912379eucas1p19;
+ Wed, 20 May 2020 10:44:49 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id 95.24.60698.12A05CE5; Wed, 20
+ May 2020 11:44:49 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200520104448eucas1p122e9a8ed84d5276a1b796e10ef5e1964~QtqUjLTwx2400824008eucas1p19;
+ Wed, 20 May 2020 10:44:48 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200520104448eusmtrp288e8ca9495b3f2c380cd4d434cf8a5f3~QtqUiYFfW3067630676eusmtrp2T;
+ Wed, 20 May 2020 10:44:48 +0000 (GMT)
+X-AuditID: cbfec7f5-a0fff7000001ed1a-86-5ec50a2171d9
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id D7.F9.08375.02A05CE5; Wed, 20
+ May 2020 11:44:48 +0100 (BST)
+Received: from localhost (unknown [106.120.51.46]) by eusmtip1.samsung.com
+ (KnoxPortal) with ESMTPA id
+ 20200520104448eusmtip17a58f4a9cc7f66dd304079cdd8c37cee~QtqUYUA4n2150821508eusmtip1I;
+ Wed, 20 May 2020 10:44:48 +0000 (GMT)
+From: Lukasz Stelmach <l.stelmach@samsung.com>
+To: Stephan Mueller <smueller@chronox.de>
+Subject: Re: [PATCH v2 1/2] hwrng: iproc-rng200 - Set the quality value
+In-Reply-To: <15745285.MnsZKaK4VV@tauon.chronox.de> (Stephan Mueller's
+ message of "Wed, 20 May 2020 11:18:32 +0200")
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+Date: Wed, 20 May 2020 12:44:33 +0200
+Message-ID: <dleftjh7wa3my6.fsf%l.stelmach@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <OF98344913.4BF4C313-ON4825856E.0032A810-4825856E.00352141@mxic.com.tw>
-User-Agent: NeoMutt/20171215
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Brightmail-Tracker: H4sIAAAAAAAAA02SaUwTURDH87rb7dJYshTUERW1AY0aQcXoMx7RaHSJmEjCBzSxUnUDBFqg
+ BTwTDyKHCGLxoqJUMJSU07VWMF7BAy9Y5DB4olijtIp4JYp4tF1M+PabN/Of+c/k0YSyggqk
+ E3RpnF6nSVJRctJ+56cwa4r8tnr2icxR+LfxjgyfP1knxTX5t0ks5FoIPNh/S4Yzy+sonOec
+ gA+/cRFYEOplmH/zWIp7Xv6U4I7LJRQ+KVyTYHORQ4rN9gKE3xZfoHB/lQPhYw9qSNx8N5dY
+ 5s/+GjQi1tTTQrFfOjslbKPphYwt569TrP1GCMtbcyn2+ulqGXvh3B62wGZFbEFfPWLrbF0k
+ u/9+tpT9yget890gX7yVS0rI4PRhS2Pl8VVl7SjFFbT90vmUvej1uIPIhwZmHvSbh6iDSE4r
+ mUoEfe1HSDH4huDcq4Hh4CuC7C4j+i9pK+GRmLAg4J2CRAzeIcgTPrklNE0xoVBTE+MRBDDT
+ oSu71DuDYFqlMHSqnfAk/JnVcLa7gvSwD5MBQ88+eHk0sxBs73tkHiaZEHj7ZMDLCmYBPBUc
+ EpH94F6xw1tPMFooFj54HQHjoMGa1Ut4TACzEu51Bomu/cHZbJOJPAH+NpZKxJI9UGScL0oP
+ IbCX/CDFmkXwvHWQEmuWwztBLaIvdH/0E6f6gtF+YniQAnKylKIwGGoPXxluEgj5zsrhs7HQ
+ 97jFa0DJZCH4XplaiCabRuxiGrGLyd2VcB+u7nKY+DwTKs66CJGXQG3tJ9KMpFY0lks3aOM4
+ Q7iO2xZq0GgN6bq40C3JWh65f+yDP83fG9C1oc1NiKGRapSiu/GmWinVZBh2aJtQsLtTb31V
+ Gwokdck6ThWgKHzfpFYqtmp27OT0yZv06UmcoQmNp0nVWEV4Wd9GJROnSeMSOS6F0//PSmif
+ wL0IzEfuN+RUJ7jYdsuuSWPW9qyLy4ox2Q6Ydn9OSosK57tuqZ2tUyIS5047Gp8zvtq1bL11
+ TkzRltqo55acxNi2A8URl2Ijj/MKv/U/stOjLzZ2tKWuebhw36Or0asjQqpWqKc6LZoA5/a5
+ YRPTolc1TB/IPbNrZWT5itgbeeN8yZbMBSrSEK+ZM4PQGzT/AH+j0Fi5AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA02SW0iTYRjHe/cdNq3F25z1tkpkWFTWp99M9xoaQURfF0mHG8m0hn5o6DbZ
+ t83qotIubNN0GUEuLcvU0nQ6RcsO5kxnJ2ZmkoVZHig1LIwusuPmCLr78fz/z5//A4+EkF2m
+ FJLDOiNv0GmylHQg+eS3e3hjaGB3SmTXUCT+VdIjxk0XHBSuP9NNYo+lhsBzMw/F+FSlg8YF
+ Uytx8dg0gT2eRjF2jg1SeOTtdxF+0V5G4wue+yJccW6cwhWtRQBPlDbTeKZuHODzT+pJ7O61
+ EFuDuB9zJYCzjzyjudmBARF32z4s5iqdHTTX+mA156y10FxH+U0x13ztBFfUUgu4oslGwDla
+ XpJc3uN8ivvqDNm9eD8TZ9CbjHxohl4wxiuTWKxi2FjMqDbFMmyUOnmzKloZsSUujc86bOYN
+ EVsOMRl1V/tB9nTIkbam7JPg/XIrCJAguAn1lTmBFQRKZLAKoJs/u2krkHgFBbpRnu73BKGf
+ g1baxzI4AZDbbfJZaMig+vpE31gO16GX+ZdpXwwB2yn0pmCQ8glBcAe68qqa9HEANCPL0zGR
+ P0eF8q7bgI+DYSxq+Tgi9jEJV6OJoS/zLIVq9NozLvLzEvSodHw+h4CZ6FvdB8IGoP0/yf6f
+ ZPfWI7ydHO0R/nE4qr4yTfg5HjU0fCYrAFUL5LxJ0KZrBZYRNFrBpEtnUvVaJ/A+RGvP9+Zb
+ oL9pnwtACVAukkbe7UqRURqzcFTrAmHemNHGuj6gIHV6Ha+US20fXSkyaZrm6DHeoD9oMGXx
+ ggtEe+85SyiCU/XeV9MZD7LRrBrHsuoodVQMVi6TnoadB2QwXWPkM3k+mzf82xNJAhQnwaqm
+ uP6uXSZX2ackOVMaP6UgckpSy8y1l17ERe99vnTBtsUxk1mf9zRutazLkZOuDQNtaxZ+yVix
+ PeF4SEt7+EUn3HeiN4bdeel64WxebrG5YdrdE1M42xtlW6vMdSQasneJCn91zP3prAm7d27F
+ +VzHHRVIqAoZLep7Z3QkF5aHKkkhQ8OuJwyC5i8OYmq8MgMAAA==
+X-CMS-MailID: 20200520104448eucas1p122e9a8ed84d5276a1b796e10ef5e1964
+X-Msg-Generator: CA
+X-RootMTR: 20200520104448eucas1p122e9a8ed84d5276a1b796e10ef5e1964
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200520104448eucas1p122e9a8ed84d5276a1b796e10ef5e1964
+References: <15745285.MnsZKaK4VV@tauon.chronox.de>
+ <CGME20200520104448eucas1p122e9a8ed84d5276a1b796e10ef5e1964@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_033740_282763_4563922F 
-X-CRM114-Status: GOOD (  33.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200520_034453_360899_63F246A1 
+X-CRM114-Status: GOOD (  21.37  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.11 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -81,6 +128,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -93,180 +141,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>, juliensu@mxic.com.tw,
- Richard Weinberger <richard@nod.at>, Mark Brown <broonie@kernel.org>,
- Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, Ludovic Desroches <ludovic.desroches@microchip.com>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- linux-mediatek@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mtd@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>, Matthias Brugger <mbrugger@suse.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Kukjin Kim <kgene@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Stefan Wahren <wahrenst@gmx.net>, Ray Jui <rjui@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Markus Elfring <elfring@users.sourceforge.net>,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============2732219845815996210=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 20/05/20 05:40PM, masonccyang@mxic.com.tw wrote:
-> 
-> Hi Pratyush, 
->  
-> > > > +/**
-> > > > + * spi_nor_parse_profile1() - parse the xSPI Profile 1.0 table
-> > > > + * @nor:      pointer to a 'struct spi_nor'
-> > > > + * @param_header:   pointer to the 'struct sfdp_parameter_header' 
-> > > describing
-> > > > + *         the 4-Byte Address Instruction Table length and version.
-> > > > + * @params:      pointer to the 'struct spi_nor_flash_parameter' to 
-> be.
-> > > > + *
-> > > > + * Return: 0 on success, -errno otherwise.
-> > > > + */
-> > > > +static int spi_nor_parse_profile1(struct spi_nor *nor,
-> > > > +              const struct sfdp_parameter_header *profile1_header,
-> > > > +              struct spi_nor_flash_parameter *params)
-> > > > +{
-> > > > +   u32 *table, opcode, addr;
-> > > > +   size_t len;
-> > > > +   int ret, i;
-> > > > +
-> > > > +   len = profile1_header->length * sizeof(*table);
-> > > > +   table = kmalloc(len, GFP_KERNEL);
-> > > > +   if (!table)
-> > > > +      return -ENOMEM;
-> > > > +
-> > > > +   addr = SFDP_PARAM_HEADER_PTP(profile1_header);
-> > > > +   ret = spi_nor_read_sfdp(nor, addr, len, table);
-> > > > +   if (ret)
-> > > > +      goto out;
-> > > > +
-> > > > +   /* Fix endianness of the table DWORDs. */
-> > > > +   for (i = 0; i < profile1_header->length; i++)
-> > > > +      table[i] = le32_to_cpu(table[i]);
-> > > > +
-> > > > +   /* Get 8D-8D-8D fast read opcode and dummy cycles. */
-> > > > +   opcode = FIELD_GET(PROFILE1_DWORD1_RD_FAST_CMD, table[0]);
-> > > > +
-> > > > +   /*
-> > > > +    * Update the fast read settings. We set the default dummy 
-> cycles to 
-> > > 20
-> > > > +    * here. Flashes can change this value if they need to when 
-> enabling
-> > > > +    * octal mode.
-> > > > +    */
-> > > > + spi_nor_set_read_settings(&params->reads[SNOR_CMD_READ_8_8_8_DTR],
-> > > > +              0, 20, opcode,
-> > > > +              SNOR_PROTO_8_8_8_DTR);
-> > > > +
-> > > 
-> > > 
-> > > I thought we have a agreement that only do parse here, no other read 
-> > > parameters setting.
-> > 
-> > Yes, and I considered it. But it didn't make much sense to me to 
-> > introduce an extra member in struct spi_nor just to make this call in 
-> > some other function later.
-> > 
-> > Why exactly do you think doing this here is bad? The way I see it, we 
-> > avoid carrying around an extra member in spi_nor and this also allows 
-> > flashes to change the read settings easily in a post-sfdp hook. The 
-> > 4bait parsing function does something similar.
-> 
-> I think it's not a question for good or bad. 
-> 
-> 4bait parsing function parse the 4-Byte Address Instruction Table
-> and set up read/pp parameters there for sure.
-> 
-> Here we give the function name spi_nor_parse_profile1() but also 
+--===============2732219845815996210==
+Content-Type: multipart/signed; boundary="=-=-="; micalg="pgp-sha256";
+	protocol="application/pgp-signature"
 
-But the function that parses 4bait table is also called 
-spi_nor_parse_4bait(). 
+--=-=-=
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
 
-> do others setting that has nothing to do with it, 
+It was <2020-05-20 =C5=9Bro 11:18>, when Stephan Mueller wrote:
+> Am Mittwoch, 20. Mai 2020, 11:10:32 CEST schrieb Lukasz Stelmach:
+>> It was <2020-05-20 =C5=9Bro 08:23>, when Stephan Mueller wrote:
+>>> Am Dienstag, 19. Mai 2020, 23:25:51 CEST schrieb =C5=81ukasz Stelmach:
+>>>> The value was estimaded with ea_iid[1] using on 10485760 bytes read
+>>>> from the RNG via /dev/hwrng. The min-entropy value calculated using
+>>>> the most common value estimate (NIST SP 800-90P[2], section 6.3.1)
+>>>> was 7.964464.
+>>>=20
+>>> I am sorry, but I think I did not make myself clear: testing random
+>>> numbers post-processing with the statistical tools does NOT give any
+>>> idea about the entropy rate. Thus, all that was calculated is the
+>>> proper implementation of the post-processing operation and not the
+>>> actual noise source.
+>>>=20
+>>> What needs to happen is that we need access to raw, unconditioned
+>>> data from the noise source that is analyzed with the statistical
+>>> methods.
+>>=20
+>> I did understand you and I assure you the data I tested were obtained
+>> directly from RNGs. As I pointed before[1], that is how /dev/hwrng
+>> works[2].
+>
+> I understand that /dev/hwrng pulls the data straight from the
+> hardware. But the data from the hardware usually is not obtained
+> straight from the noise source.
+>
+> Typically you have a noise source (e.g. a ring oscillator) whose data
+> is digitized then fed into a compression function like an LFSR or a
+> hash. Then a cryptographic operation like a CBC-MAC, hash or even a
+> DRBG is applied to that data when the caller wants to have random
+> numbers.
 
-Why has setting read opcode and dummy cycles got nothing to do with it? 
-The purpose of the Profile 1.0 table is to tell us the Read Fast command 
-and dummy cycles, among other things. I think it _does_ have something 
-to do with it.
+I do understand your point (but not entirely, see below). [opinion]
+However, I am really not sure that this is a "typical" setting for a HW
+RNG, at least not among RNGs supported by Linux. Otherwise there would
+be no hw_random framework and no rngd(8) which are suppsed to
+post-process imperfectly random data from HW. [/opinion]
 
-Just like the 4bait table tells us the 4-byte opcodes and we set them up 
-in our data structures, the profile 1.0 table tells us the 8D read 
-opcode and dummy cycles, and we set them up in our data structures.
+> In order to estimate entropy, we need the raw unconditioned data from
+> the, say, ring oscillator and not from the (cryptographic) output
+> operation.
 
-> it seems not good for SW module design. 
-> oh, it's my humble opinion.
-> 
-> > 
-> > What are the benefits of doing it otherwise?
-> 
-> For other Octal Flash like mx25*
+Can you tell, why it matters in this case? If I understand correctly,
+the quality field describes not the randomness created by the noise
+generator but the one delivered by the driver to other software
+components.
 
-I mean from a design perspective. How does it make the code better, or 
-the job of people who need to read/change it easier?
+> That said, the illustrated example is typical for hardware RNGs. Yet
+> it is never guaranteed to work that way. Thus, if you can point to
+> architecture documentation of your specific hardware RNGs showing that
+> the data read from the hardware is pure unconditioned noise data, then
+> I have no objections to the patch.
 
-> > 
-> > Note that I did remove HWCAPS selection from here, which did seem like a 
-> 
-> > sane idea.
-> > 
-> > > Driver should get dummy cycles used for various frequencies 
-> > > from 4th and 5th DWORD of xSPI table.[1]
-> > > 
-> > > [1] 
-> > > 
-> https://patchwork.ozlabs.org/project/linux-mtd/patch/1587451187-6889-3-git-
-> 
-> > send-email-masonccyang@mxic.com.tw/ 
-> > > 
-> > > 
-> > > In addition, 20 dummy cycles is for 200MHz but not for 100MHz, 133MHz 
-> and 
-> > > 166MHz
-> > > in case of read performance concern.
-> > > 
-> > > Given a correct dummy cycles for a specific device. [2] 
-> > > 
-> > > [2] 
-> > > 
-> https://patchwork.ozlabs.org/project/linux-mtd/patch/1587451187-6889-5-git-
-> 
-> > send-email-masonccyang@mxic.com.tw/ 
-> > 
-> > The problem is that we don't know what speed the controller is driving 
-> > the flash at, and whether it is using Data Strobe. BFPT tells us the 
-> > maximum speed of the flash based on if Data Strobe is being used. The 
-> > controller can also drive it slower than the maximum. And it can drive 
-> > it with or without DS.
-> 
-> This is for flash, not every Octal flash could work in 200MHz,
-> The Max operation speeds for other Octal Flash is 100, 133 , or 166MHz.
-> 
-> If a specific Octal Flash could work in 166MHz(Max), and driver setup the
-> correct 16 dummy cycles for it rather than 20 dummy cycles.
-> it's for performance concern.
+I can tell for sure that this is the case for exynos-trng[1]. There is a
+post-processor which I have forgotten about since writing the driver,
+because from the very beginning I didn't intend to use it. I knew there
+is the software framework for post-processing and simply didn't bother.
 
-Agreed. Like I mentioned in the next paragraph, will fix.
- 
-> > 
-> > So, we have to be conservative and just use the dummy cycles for the 
-> > maximum speed so we can at least make sure the flash works, albeit at 
-> > slightly less efficiency. I hard-coded it to 20 but I suppose we can 
-> > find it out from the Profile 1.0 table and use that (though we'd have to 
-> 
-> > round it to an even value to avoid tripping up controllers). Will fix in 
-> 
-> > next version (or, Tudor if you're fine with fixup! patches, I can send 
-> > that too because I suspect it will be a small change).
-> > 
+With regards to iproc-rng200 I cannot be sure.
 
--- 
-Regards,
-Pratyush Yadav
-Texas Instruments India
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree=
+/drivers/char/hw_random/exynos-trng.c?h=3Dv5.6#n100
+
+Kind regards,
+=2D-=20
+=C5=81ukasz Stelmach
+Samsung R&D Institute Poland
+Samsung Electronics
+
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEXpuyqjq9kGEVr9UQsK4enJilgBAFAl7FChEACgkQsK4enJil
+gBCsvQgAhq2NdaCOe4RS5Cfyu6s7rYJIijngIdzcEg3V+VmN2vniWJYNobIUL8S6
+et4cCzQKSbxw/FgDCmZKpffRz7Md+98M4hpkWCfuhqhXj8kXV8e5Oa7QAyMo6H+s
+kpATmCe9Jkbx8K4ufD5bDnON6kv8dP1iJMOdkoiIN7F/HvTbuIgW33XoP+n8IU7o
+QRuNwK+C8IhgOppNU6fPYLUcBVtIvW4wplMc5mEZQNNIsRSPH7pNgK8X6BihA3eR
+j2BsGU3dv7tfVvVTV7EZ/k1lmFWwd3lusLirmrHly9Hodsfj4AWmLRorgnCBCM7D
+gGwIZrzGXyx9M54bg+LoADhurlMakQ==
+=CU9M
+-----END PGP SIGNATURE-----
+--=-=-=--
+
+
+--===============2732219845815996210==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2732219845815996210==--
+
