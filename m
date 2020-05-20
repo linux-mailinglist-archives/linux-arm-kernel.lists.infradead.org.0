@@ -2,124 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA00E1DACF3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 10:11:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1997E1DAD11
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 10:16:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g3y22PBBhEtE5a9fhdLT/Ppiyi7+oUq4Q+Kx0xWW1ns=; b=L4sOH89+hmTpzz
-	QeuxOvC//W0JZPKpf/P8WMI667HdVJBljLnj5ZGwLFS0IiEKdlbPZ2YCox1HWsBehHugU6S89AjQf
-	PjadCbgpFKFOtyc6YD2PJSKwbc3nfZFhMcW3o7ZbD0jO5Uwx3nqzl20TKqcTkNdIX5p//9eDNTPcf
-	gL3YjTOUkP+1YjEEZKtmJMYmi8kpsplMywxdfF/NdzypGc+1lVOnjXhm2YQ8Z1w+T3OYz04YNTAl2
-	/LdzCBuZMLfajxQ973toolDVvoDCPQapMWEcJB9czQHRVCSY3vSeViIrkRTI+Lb/f9oUaUveU7+cK
-	7dn36riNToIoE0WeXJ7g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kAYZ0kJFUCxjSUfgZ3tR3XnP6Ko04qczr5/1p+XtCGI=; b=U7D
+	Oql9tZ40dnsriO00sksha+fHfinGVx+ERWessTQsN7H6PjzQGA5dEgMb7/cwz4Z5mqpxKR/c3xlkL
+	vaZW8GYFLkPf5sE63ZDrUCdXOf9iszosn1Iy0085DEcj0kfYAgdkeioURRWB4fdx0S1Dbr0lAnGsr
+	n1tTszxFrnmabV0OaCNZlL7NbXb1ve2Uqm6wHox9W/P/XACymSI9CQIw6N7PxessHKDAKDgy+OApT
+	egB5polGaalztH09OBZyDkq0MOJfQEnj9bvK11uwf9pJ6MaQIsi8AWKYoh5+b0Og4kJ65R7Iop5Eb
+	aSiYV/RbcLDa3Wn/rbq/Eihf0PBDolQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbJpT-0006FW-3Q; Wed, 20 May 2020 08:11:55 +0000
-Received: from mail-eopbgr10068.outbound.protection.outlook.com ([40.107.1.68]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbJpK-0006CP-ML
- for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 08:11:47 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=a6svDrZITWPy2aleVqJAjG2Mzk0fbEt+MtV9+0DxfuaKymovdZcX0D3L+r5WPVX5870NVqz9k2zvLybF/xb8tEJIrQ7Xi9qI4z1N+ezX29ck0LPVXxTeJWN7UiGYwOFXF7eNHPPCpEmUvm+WkxosgDwYyPYpsqlgUWyezZS9o5STtqas9xFjOapbp+JqNWsqmtrLgg2903YXTLIoapx19C5dix/GBrS+3FRSGAU5BlrwHUY3QuGwToZU4XkHVW5FxcQGNwa37bpr0pv5o1TR+zsKhzxR6p1Ofsz3E+0nCeK7vXbXuDUjax7J4dLX/9cA6r6Xa0RW9aD3enJ4AZrdVA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YJrQbDfNQGzrLyEB8x9OawLS5/sK5dTyCpcvKdeACOQ=;
- b=e+ZWaqdB3GnC1psOgeeTHEqfB/pwgq3v+c8fc0ygQKWNZNNnzr6NIrfbU+VGYYlU9xzY+WyVTkIuw6HRtyjmvmw2/owXj3ow5BNUgDH1DWnvBnI0YPbvNbGpg9Nb/jaC+46TY1JieQolOJWn3dY9Pf9lHiDiaGZKkrX1ZZV8vs+K9Jibi5mAksVzksvCKXzoOW0AjY9FkQcL4sgTcGIbNYrmTy4U/d6t7ATKejiY1mLhBrcC66R2PQVKPzZitJgkJrik2jOF3ahOe5bZ7ZQ9A0PlRMBbfiTnOhBvji5OmGvZ3Dc5c0Nxrt1LU1ONUBzU5Y5SlJ8qyscE/wYXjFB7HQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=YJrQbDfNQGzrLyEB8x9OawLS5/sK5dTyCpcvKdeACOQ=;
- b=GvEyBcpDa/O6fvRpNjs6WMSXEhwvL7ze0l5opiJVrVo8xNfgy9XcXU0K4YINhe626oIvl9VPkLJ68iMbyok3jIT1WP5cO9IIJY6vN5WCzsCzYA/0nTTvmvsvwBxUu6Agn2Di11H9I455ACLMeEpLowrvN6rVJviRVTBzvGbC+tA=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
- by DB3PR0402MB3659.eurprd04.prod.outlook.com (2603:10a6:8:5::32) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.27; Wed, 20 May
- 2020 08:11:42 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3000.034; Wed, 20 May 2020
- 08:11:42 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Aisheng Dong <aisheng.dong@nxp.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
- <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>
-Subject: RE: [PATCH] ARM: dts: imx: Make tempmon node as child of anatop node
-Thread-Topic: [PATCH] ARM: dts: imx: Make tempmon node as child of anatop node
-Thread-Index: AQHWLnGKHrF20oveIESDr3+xecMSEqiwl/QAgAAARbCAAAYAgIAAAQaA
-Date: Wed, 20 May 2020 08:11:41 +0000
-Message-ID: <DB3PR0402MB39161EA7B95886D56EB91E8BF5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1589956216-22499-1-git-send-email-Anson.Huang@nxp.com>
- <AM6PR04MB49663B517C218072B2845DBF80B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
- <DB3PR0402MB39167A0961963B73758F6CA9F5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <AM6PR04MB496661BDF6B5F966A218092380B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
-In-Reply-To: <AM6PR04MB496661BDF6B5F966A218092380B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: nxp.com; dkim=none (message not signed)
- header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [183.192.13.100]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 8d134e61-7e21-4b1e-1f76-08d7fc956df7
-x-ms-traffictypediagnostic: DB3PR0402MB3659:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB365939F4C4628CE94A45790FF5B60@DB3PR0402MB3659.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:2958;
-x-forefront-prvs: 04097B7F7F
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: CVQgYzg3CiV4gPSV4gmhryJPhTZtIgreF67/H3e7zFsrCCYT+lAPqetquu5Ln5B7AM23iG0MtCDL+uEDLaPgrZ8MVQyNpUYRT9kBPfcSzcjS20yw/EZ+h4WjT6Ri25GFtQCJerpw83foe3uXpeuj8IHQV8XeNxCfhymX1wEPBN/HPFbyc7kimOyeckEWiYgPteL0yccPdEcVKnWCbCRRTgvuVwehUYizsjsuoKzdh48ehV3KSzPS3bTzIIspYqy1iSsGr3ofCc+/pEhp3hJ4dttAJg4JB93DhoI6Nw36gRM7B7Mfnu8nAIbkpdZzID2fjvQJeqOdbmtdiyxQOcwCMx7nfEcJl7K20XJiOOtq/cjniWm2ioZI6fM9vCC6YfXovjFQeGUb+Q2KpsgpNdbvAmg+NVdiOL3Id7tdqxs+16G1vmGtrT0Adj1g5Tg5xOgm
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(396003)(346002)(39860400002)(366004)(136003)(53546011)(33656002)(6506007)(7696005)(316002)(186003)(55016002)(2906002)(9686003)(5660300002)(86362001)(66476007)(66556008)(66446008)(64756008)(8936002)(66946007)(110136005)(8676002)(26005)(52536014)(44832011)(76116006)(71200400001)(4326008)(478600001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: cBccdhrJybQg56bDyk8QeBtILkNRBa5m/HMSZ4KFnCCMAHHF08Ao/DXSePrMGfzk6Mvq2bIOvJHmalPtnNx/3ToAKuu5ItDr2M3vW/PNm/2sSRmZvVeiTjL1t4UTHJbWqT8c+wgLD5BBIt+TYQOs7A0wCBJ/7zwUwkpUePTAa3XbTEeByiwUaixNfgouKGyjoN0eqoPKdDO6Qm8BX2b4M7UCBLjWGOwgcn4YjvLl3kCAKt4V6+Rf2ZTap/Z/j15seLlFmEJg9Yt3f9WXIFJwid5DkjEY62B3IcXz+GSj05YRBkD/NQcmJFdfp3gZbhYOiot2Qq8gQ3fK615A2C1EbKrrIPhn3iU+heXeczlIyLHN4xbcAwtOx2SKaaJEEawpNY0u2z3e8Au3zMMnJlAQA2z12+Q13LMOqPaGFb19RgTI81wDfWjftbJkA+d5PFsxxfOwREGMadgb7NHTGCpnoDvqMOZKionulOypiSScsbAoAaTJlV7cTPFMndGfEUlx
-MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8d134e61-7e21-4b1e-1f76-08d7fc956df7
-X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2020 08:11:41.9974 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: bQlPf4V0KdabNljw82DZOv88LzMPxJNoKCOIrXGPH05ykUwquWHJOYPfG+61mx2WbE+2UTQCqjadCWlSCqImBA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3659
+	id 1jbJtK-0003GR-RA; Wed, 20 May 2020 08:15:54 +0000
+Received: from spam.zju.edu.cn ([61.164.42.155] helo=zju.edu.cn)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbJpq-0006iz-My
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 08:12:21 +0000
+Received: from localhost.localdomain (unknown [222.205.77.158])
+ by mail-app3 (Coremail) with SMTP id cC_KCgDX34tP5sReCjffAA--.50969S4;
+ Wed, 20 May 2020 16:12:04 +0800 (CST)
+From: Dinghao Liu <dinghao.liu@zju.edu.cn>
+To: dinghao.liu@zju.edu.cn,
+	kjlu@umn.edu
+Subject: [PATCH] crypto: sun8i-ss - fix runtime pm imbalance on error
+Date: Wed, 20 May 2020 16:11:50 +0800
+Message-Id: <20200520081157.24922-1-dinghao.liu@zju.edu.cn>
+X-Mailer: git-send-email 2.17.1
+X-CM-TRANSID: cC_KCgDX34tP5sReCjffAA--.50969S4
+X-Coremail-Antispam: 1UD129KBjvdXoWrKrW5ZF15Jr17CrWrKFy7trb_yoWfKFX_Cw
+ 4rWr4xJryYg397ur1DXay5ZFW0qFZ5XrWkGa10vFy7Jayj9ws8WFykWrs5u34xJrWUuryq
+ v39FvryxZ34j9jkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUb-kFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AK
+ wVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20x
+ vE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26F4UJVW0owA2z4x0Y4vEx4A2
+ jsIE14v26rxl6s0DM28EF7xvwVC2z280aVCY1x0267AKxVW0oVCq3wAS0I0E0xvYzxvE52
+ x082IY62kv0487Mc02F40EFcxC0VAKzVAqx4xG6I80ewAv7VC0I7IYx2IY67AKxVWUGVWU
+ XwAv7VC2z280aVAFwI0_Jr0_Gr1lOx8S6xCaFVCjc4AY6r1j6r4UM4x0Y48IcxkI7VAKI4
+ 8JM4x0x7Aq67IIx4CEVc8vx2IErcIFxwACI402YVCY1x02628vn2kIc2xKxwCY02Avz4vE
+ 14v_GFyl42xK82IYc2Ij64vIr41l42xK82IY6x8ErcxFaVAv8VW8uw4UJr1UMxC20s026x
+ CaFVCjc4AY6r1j6r4UMI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_
+ JrWlx4CE17CEb7AF67AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r
+ 1j6r1xMIIF0xvE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v20xvaj40_
+ Wr1j6rW3Jr1lIxAIcVC2z280aVAFwI0_Jr0_Gr1lIxAIcVC2z280aVCY1x0267AKxVW8JV
+ W8JrUvcSsGvfC2KfnxnUUI43ZEXa7VUbqQ6JUUUUU==
+X-CM-SenderInfo: qrrzjiaqtzq6lmxovvfxof0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_011146_731059_270A74AB 
-X-CRM114-Status: GOOD (  14.31  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200520_011219_112868_0B319194 
+X-CRM114-Status: GOOD (  10.54  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.1.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.1.68 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,46 +72,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: kbuild test robot Remove unneeded semicolon <lkp@intel.com>,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Julia Lawall <julia.lawall@lip6.fr>, Chen-Yu Tsai <wens@csie.org>,
+ Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
+ Colin Ian King <colin.king@canonical.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
+ Herbert Xu <herbert@gondor.apana.org.au>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+pm_runtime_get_sync() increments the runtime PM usage counter even
+it returns an error code. Thus a pairing decrement is needed on
+the error handling path to keep the counter balanced.
+
+Signed-off-by: Dinghao Liu <dinghao.liu@zju.edu.cn>
+---
+ drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c b/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
+index 6b301afffd11..41841415ead6 100644
+--- a/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
++++ b/drivers/crypto/allwinner/sun8i-ss/sun8i-ss-core.c
+@@ -571,8 +571,10 @@ static int sun8i_ss_probe(struct platform_device *pdev)
+ 		goto error_alg;
+ 
+ 	err = pm_runtime_get_sync(ss->dev);
+-	if (err < 0)
++	if (err < 0) {
++		pm_runtime_put_sync(ss->dev);
+ 		goto error_alg;
++	}
+ 
+ 	v = readl(ss->base + SS_CTL_REG);
+ 	v >>= SS_DIE_ID_SHIFT;
+-- 
+2.17.1
 
 
-> Subject: RE: [PATCH] ARM: dts: imx: Make tempmon node as child of anatop
-> node
-> 
-> > From: Anson Huang <anson.huang@nxp.com>
-> > Sent: Wednesday, May 20, 2020 3:47 PM
-> >
-> > > Subject: RE: [PATCH] ARM: dts: imx: Make tempmon node as child of
-> > > anatop node
-> > >
-> > > > From: Anson Huang <Anson.Huang@nxp.com>
-> > > > Sent: Wednesday, May 20, 2020 2:30 PM
-> > > >
-> > > > i.MX6/7 SoCs' temperature sensor is inside anatop module from HW
-> > > > perspective, so it should be a child node of anatop.
-> > > >
-> > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > >
-> > > Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-> > >
-> > > BTW, I think you also need a binding doc for this change.
-> >
-> > The binding doc is the imx-thermal.yaml I sent out, it is suggested by
-> > Rob to move tempmon into anatop node, that is why I did this patch to
-> > align with the binding doc.
-> 
-> That's thermal binding doc.
-> We need a binding doc to describe the constraints for anatop as well.
-
-anatop includes PMU, thermal etc., need to think about
-how to add it and where to put it, will think about it later.
-
-Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
