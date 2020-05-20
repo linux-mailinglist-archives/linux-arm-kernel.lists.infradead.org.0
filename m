@@ -2,61 +2,125 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DB3D1DACCA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 10:00:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DAAF1DACD6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 20 May 2020 10:04:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:From:Message-ID:MIME-Version:
-	Subject:To:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xT4KkMOzFsiB3tiGKUdwqdEB3uqhjNBzehFOZP+vGuM=; b=KQTCube8tdlDY8
-	nvC/nXIrvEqJ1uvaDGiFaot3BPiDkuxa+f5/2a38WYf9gu00J3GimN0VZkUTKknBB/qewnxGVAZIZ
-	R622ag8YBdsoM5Yg/yA15CqoeJuXZVTICsy64gfCk6sFNN374OKQ8aIHnSwMz5VCW7k0hzDnB0tIL
-	0XyDN1cjp0JdjkdZjRs62MU+phx/X6xU2rqGpQWhiUfh+J4ks2DRJ1Wth4j1iDglLiRre4txp7KiT
-	DG3eCfk9GUtRHcst5+Q7OFieysUtqN/zXHyRM7yHUqvW0q+iXdOCuafPtl6M0DQ3u27qBjhwZE7/h
-	vOoFLinQOqBzom+rslbg==;
+	List-Owner; bh=ct1fsBhn80c2WRB02uVnxQQ/qAC3/z1ge3Un2zxXLGk=; b=pvWiQowxkKLfOZ
+	RI2Bv0dX4WvXew3mF2b0/dZx2tDeQTOf6VVR/zb9EE5aND1oIPAFPLltJ1y3rsY8Xt+XN0oXk0b6l
+	ekKFKydQPyOxEWiJpw1mE5sRJDBl0Gal7QLHBcLK2tGK6l51pEJrxpSTqQfPBvkbTfVs9UcnROkvb
+	QsZdP2jXHiGy4bdYjiPOxoXfHgMYrnl6D7TGA85cBZPeP7ksGzdL099+glrkA3BepGjIV+jZo/hN9
+	Kgg2jEFOhw7vUWRzUAa9/yBI9Sw29icn3dzLbT+POtqTCEGJWrYd9yE+mh8ZWdQ/QJ75wQ/HBR1h6
+	wVDn4xr/zJFiM5UCFFyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbJea-0006tB-03; Wed, 20 May 2020 08:00:40 +0000
-Received: from twhmllg3.macronix.com ([211.75.127.131])
+	id 1jbJi1-0007WJ-F5; Wed, 20 May 2020 08:04:13 +0000
+Received: from mail-eopbgr80085.outbound.protection.outlook.com ([40.107.8.85]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbJdz-00047e-W7; Wed, 20 May 2020 08:00:05 +0000
-Received: from twhfmlp1.macronix.com (twhfmlp1.macronix.com [172.17.20.91])
- by TWHMLLG3.macronix.com with ESMTP id 04K7xUdE096136;
- Wed, 20 May 2020 15:59:30 +0800 (GMT-8)
- (envelope-from masonccyang@mxic.com.tw)
-Received: from MXML06C.mxic.com.tw (mxml06c.mxic.com.tw [172.17.14.55])
- by Forcepoint Email with ESMTP id B9D79C5271EE9FAE1410;
- Wed, 20 May 2020 15:59:30 +0800 (CST)
-In-Reply-To: <20200519142642.24131-10-p.yadav@ti.com>
-References: <20200519142642.24131-1-p.yadav@ti.com>
- <20200519142642.24131-10-p.yadav@ti.com>
-To: "Pratyush Yadav" <p.yadav@ti.com>
-Subject: Re: [PATCH v5 09/19] mtd: spi-nor: sfdp: parse xSPI Profile 1.0 table
+ id 1jbJhq-0007Ve-MW
+ for linux-arm-kernel@lists.infradead.org; Wed, 20 May 2020 08:04:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=LqLs0R8aHFD0Z+Qp2p0lij3Keg0ABREXz/faUS4y9a/WqSXNPfqkc0JILTt3+xKzcr2SK2nMmyHXjbuh4pcbZgOWOj1//T0cGqm/mGFUwtOcPpGppdkXH2AYCto3zZC6rSZ8X16n8tDODrc6pxmbV2Wbynx1i9Yu0pPaPhONcUcGt7qHTXx1FAsiKo+T5Z91JkfY0twdwIoyD+wkj8wvqVk546JNGmuJvAbC2Tb5SWdBzB9UEpGavOD8Tx4uRvhLQHUHLHucr2ZuDjq8nvTfZjtlVqY0f60/I9y/kH+7m4dtPu7X5S2wEIUKF/PEgT8Sp4rurK2C4tt/bhOGKeiMfg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=djm4ykrzIh685Ihgr1jovCY6GBt92z40W4Z1dgXLTA0=;
+ b=DNlatJ/6PlPXvj5dIepaEHBWIAWm/21kxWqtCVTkBHJvxnTOm8dU4qbwhpSAGerrYAbSLnlaK8IhjbvJNFc2nIpKFuaUgAcLCyeMQiXa18h4/AezSa4FC+S1KqSdPgc51N8Im1MiINcAoougymlmR/0AkoF63VrfUOnv3sJbIY1HOTRPECANquBMxufjzH8HWNL85KHUVHFrWI5j+W7PVPQyaWqjkQhOzPa/q5euAQYR0cKkpmaVgabfrhtfDqd7PF7S2ffMJZyDqaZXMzZxGspjBufhbVMRwHqLpRzPxt8IqF017Czy27XkOVy21/hSm76h8pksMjaouf3m2kGyZQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=djm4ykrzIh685Ihgr1jovCY6GBt92z40W4Z1dgXLTA0=;
+ b=ldprSHueqUk82/1HnNWzTkQQfEYCZe+npYvPEqA0IaoQKx6lzNpHvovF7r4ZAcPJt9YY0BENFussw1vNH8SQClsWUidGbntzwHJ6bmKClRMunT667LwogrhbfGvoB2YoXCwDZru57Bf8kkRGpWW0pYfP8jQ1ryUNUsZgVRzIXQ0=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3915.eurprd04.prod.outlook.com (2603:10a6:8:e::30) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.25; Wed, 20 May
+ 2020 08:03:57 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3000.034; Wed, 20 May 2020
+ 08:03:57 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Aisheng Dong <aisheng.dong@nxp.com>, "rui.zhang@intel.com"
+ <rui.zhang@intel.com>, "daniel.lezcano@linaro.org"
+ <daniel.lezcano@linaro.org>, "amit.kucheria@verdurent.com"
+ <amit.kucheria@verdurent.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, "s.hauer@pengutronix.de"
+ <s.hauer@pengutronix.de>, "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>, "linux-pm@vger.kernel.org"
+ <linux-pm@vger.kernel.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH V2] dt-bindings: thermal: Convert i.MX to json-schema
+Thread-Topic: [PATCH V2] dt-bindings: thermal: Convert i.MX to json-schema
+Thread-Index: AQHWLm2mA+HT3r0LW0SOVkVMMBmKlqiwl6oAgAAEz2A=
+Date: Wed, 20 May 2020 08:03:57 +0000
+Message-ID: <DB3PR0402MB3916B45468AD8B69D6F318FDF5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1589954560-10810-1-git-send-email-Anson.Huang@nxp.com>
+ <AM6PR04MB4966F875F2E04D0F6FC3AE3A80B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
+In-Reply-To: <AM6PR04MB4966F875F2E04D0F6FC3AE3A80B60@AM6PR04MB4966.eurprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: nxp.com; dkim=none (message not signed)
+ header.d=none;nxp.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [183.192.13.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 648a8d58-57b9-45a8-d64d-08d7fc945918
+x-ms-traffictypediagnostic: DB3PR0402MB3915:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3915AF9944B3370F89F6DE21F5B60@DB3PR0402MB3915.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:586;
+x-forefront-prvs: 04097B7F7F
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: VaI6P/am5P3RPjFyDIiPyHD9nOBDHcVz7/QXIyzJvCWUXW/FNmndzvYF6k72GN0jVKYen+HepSobEzllurSaAJsbMP9AoFTETNR5vauqYZgCn8Sklkul+P5KegI2Tdj66o1g9rvkrmpnjWVQReDiTGqOZ3UjgJVURi4bpbmlbxk+iRHjM7SbL2fGQfFXAFPGzklYmcFxKnfQv2vgd7bTlfjIMLKYjNze6bE1nLeYKGcFSpXCV2JAtfqNsEpreXWooapGRuHzZw8+zHYeq+4OKR0nYVJf5WBkz1mObkUto4+oDGSS6g9Gj3Mq32ZJnH35BOg9EGuQb1Wo0kkgpA0NI8yEFBX9BvVOIfD8y1Y6EKixrytPyn1IzP1dg4g89tC0hn4wIaleCuBMGaAFfLQrysH2uATNtwg0BUyI0H6DOLmWwLJBLbujCek8QmUc8LuRi8eXbMmt6veX1L08ObPCJsPDwM+EZa2HJRYuBea7s7M=
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(136003)(366004)(39860400002)(346002)(396003)(376002)(7696005)(8676002)(71200400001)(9686003)(55016002)(7416002)(478600001)(86362001)(5660300002)(33656002)(8936002)(52536014)(186003)(44832011)(26005)(2906002)(4326008)(6506007)(316002)(66446008)(66476007)(110136005)(66556008)(64756008)(66946007)(76116006)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: DemBxdYx0BqvVLntZz29OkGFlRBg8OBKp975Gmi0ZVmN56cgL9Ata7dQPrWrCea2m+eaaVplsZ1OktxYNM0wKp6pWcDZfH1z7rpTsfGxslEwdXmjaS9k7GFKDvb4OeqCM9AoXxsq7SKLTFe12BoHZQuBxIEkxTZYJBnLG1TJW9FUN5DpeKfKzqBD7KrHsHtgIjFx7rZwILuYSvZFCAKBDSBsZKUlvTl0xQHtGVqfRIX+wsnbmN1G4Y6KaM8FDN+BDj3WPkDXiaJblPVaZL/dRIHxZcW80XEWXxG+Cs+lqvz6zA977ecpYj5rLjVF8Xo/Dou3USCKt9B8D2TqPebeDUsMxmf6A5gYCABRZ4P22GFvpfiTRUqtfM5tOnFWcm4E+HfYzDs43f+EJKOeFRRV7JtVFUcqCnxxna+/5/HLEo1FW/n2Jc35dpg9Z/II3TFmmBBnJxwEB7tTeZNb39mxIg93ApOVUjHGe2LVzR9se3fbCYS1Ua/kaLBJPyHOOlXJ
 MIME-Version: 1.0
-X-KeepSent: 83616464:480FA751-4825856E:002A4483;
- type=4; name=$KeepSent
-X-Mailer: Lotus Notes Release 8.5.3FP4 SHF90 June 10, 2013
-Message-ID: <OF83616464.480FA751-ON4825856E.002A4483-4825856E.002BE6AF@mxic.com.tw>
-From: masonccyang@mxic.com.tw
-Date: Wed, 20 May 2020 15:59:31 +0800
-X-MIMETrack: Serialize by Router on MXML06C/TAIWAN/MXIC(Release 9.0.1FP10
- HF265|July 25, 2018) at 2020/05/20 PM 03:59:30,
- Serialize complete at 2020/05/20 PM 03:59:30
-X-MAIL: TWHMLLG3.macronix.com 04K7xUdE096136
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 648a8d58-57b9-45a8-d64d-08d7fc945918
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 May 2020 08:03:57.5444 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: tpn6d5SYV1SAfH2TNMmOXfICd44NwKJxhmkGaxaTUYn3lBgGAqImL4dkd4jOVf+G8OzVkD8BfUZUukWR14HkHA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3915
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_010004_287484_6A8D0C85 
-X-CRM114-Status: GOOD (  10.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200520_010402_736547_C13A38A0 
+X-CRM114-Status: GOOD (  13.63  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.75.127.131 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.8.85 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.8.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,144 +132,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>, juliensu@mxic.com.tw,
- Richard Weinberger <richard@nod.at>, Mark Brown <broonie@kernel.org>,
- Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, Ludovic Desroches <ludovic.desroches@microchip.com>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- linux-mediatek@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mtd@lists.infradead.org,
- Pratyush Yadav <p.yadav@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-Hi Pratyush, 
 
-> +/**
-> + * spi_nor_parse_profile1() - parse the xSPI Profile 1.0 table
-> + * @nor:      pointer to a 'struct spi_nor'
-> + * @param_header:   pointer to the 'struct sfdp_parameter_header' 
-describing
-> + *         the 4-Byte Address Instruction Table length and version.
-> + * @params:      pointer to the 'struct spi_nor_flash_parameter' to be.
-> + *
-> + * Return: 0 on success, -errno otherwise.
-> + */
-> +static int spi_nor_parse_profile1(struct spi_nor *nor,
-> +              const struct sfdp_parameter_header *profile1_header,
-> +              struct spi_nor_flash_parameter *params)
-> +{
-> +   u32 *table, opcode, addr;
-> +   size_t len;
-> +   int ret, i;
-> +
-> +   len = profile1_header->length * sizeof(*table);
-> +   table = kmalloc(len, GFP_KERNEL);
-> +   if (!table)
-> +      return -ENOMEM;
-> +
-> +   addr = SFDP_PARAM_HEADER_PTP(profile1_header);
-> +   ret = spi_nor_read_sfdp(nor, addr, len, table);
-> +   if (ret)
-> +      goto out;
-> +
-> +   /* Fix endianness of the table DWORDs. */
-> +   for (i = 0; i < profile1_header->length; i++)
-> +      table[i] = le32_to_cpu(table[i]);
-> +
-> +   /* Get 8D-8D-8D fast read opcode and dummy cycles. */
-> +   opcode = FIELD_GET(PROFILE1_DWORD1_RD_FAST_CMD, table[0]);
-> +
-> +   /*
-> +    * Update the fast read settings. We set the default dummy cycles to 
-20
-> +    * here. Flashes can change this value if they need to when enabling
-> +    * octal mode.
-> +    */
-> +   spi_nor_set_read_settings(&params->reads[SNOR_CMD_READ_8_8_8_DTR],
-> +              0, 20, opcode,
-> +              SNOR_PROTO_8_8_8_DTR);
-> +
+> Subject: RE: [PATCH V2] dt-bindings: thermal: Convert i.MX to json-schema
+> 
+> > From: Anson Huang <Anson.Huang@nxp.com>
+> > Sent: Wednesday, May 20, 2020 2:03 PM
+> >
+> > Convert the i.MX thermal binding to DT schema format using json-schema
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> > Changes since V1:
+> > 	- move tempmon node into its parent node anatop in example;
+> > 	- improve "fsl,tempmon" description.
+> > ---
+> >  .../devicetree/bindings/thermal/imx-thermal.txt    |  61 -------------
+> >  .../devicetree/bindings/thermal/imx-thermal.yaml   | 100
+> 
+> [...]
+> 
+> > +title: NXP i.MX Thermal Binding
+> > +
+> > +maintainers:
+> > +  - Shawn Guo <shawn.guo@linaro.org>
+> > +  - Anson Huang <Anson.Huang@nxp.com>
+> > +
+> > +properties:
+> > +  compatible:
+> > +    oneOf:
+> > +      - items:
+> 
+> Drop Unnecessary properties
 
+Will use enum directly.
 
-I thought we have a agreement that only do parse here, no other read 
-parameters setting.
+> 
+> > +          - enum:
+> > +              - fsl,imx6q-tempmon
+> > +              - fsl,imx6sx-tempmon
+> > +              - fsl,imx7d-tempmon
+> > +
+> > +  interrupts:
+> > +    description: |
+> > +      The interrupt output of the controller, the IRQ will be triggered
+> > +      when temperature is higher than high threshold.
+> > +    maxItems: 1
+> 
+> You'd better explain why interrupts number is changed in the new binding
+> compared to the original one. Probably add in commit message if really
+> needed.
 
-Driver should get dummy cycles used for various frequencies 
-from 4th and 5th DWORD of xSPI table.[1]
- 
-[1] 
-https://patchwork.ozlabs.org/project/linux-mtd/patch/1587451187-6889-3-git-send-email-masonccyang@mxic.com.tw/ 
+There is ONLY 1 interrupt output from temperature to GIC, some platforms like
+i.MX6SX/i.MX7D has 2 more secondary interrupts inside anatop which shares same output
+interrupt to GIC, these 2 interrupts are NOT used for now, so from the high level
+description of the interrupt, should be ONLY 1 interrupt item I think.
 
+> 
+> > +
+> > +  nvmem-cells:
+> > +    description: |
+> > +      Phandle to the calibration cells provided by ocotp for calibration
+> > +      data and temperature grade.
+> 
+> Better describe for each of them as you did for clocks
 
-In addition, 20 dummy cycles is for 200MHz but not for 100MHz, 133MHz and 
-166MHz
-in case of read performance concern.
+Will do in V3.
 
-Given a correct dummy cycles for a specific device. [2] 
+> 
+> > +    maxItems: 2
+> > +
+> > +  nvmem-cell-names:
+> > +    maxItems: 2
+> > +    items:
+> > +      - const: calib
+> > +      - const: temp_grade
+> > +
+> > +  fsl,tempmon:
+> > +    $ref: '/schemas/types.yaml#/definitions/phandle'
+> > +    description: Phandle to the register map node.
+> 
+> What register map? A bit ambiguous..
 
-[2] 
-https://patchwork.ozlabs.org/project/linux-mtd/patch/1587451187-6889-5-git-send-email-masonccyang@mxic.com.tw/ 
+Temperature sensor registers, will add more detail in V3.
 
-
-
-> +   /*
-> +    * Set the Read Status Register dummy cycles and dummy address 
-bytes.
-> +    */
-> +   if (table[0] & PROFILE1_DWORD1_RDSR_DUMMY)
-> +      params->rdsr_dummy = 8;
-> +   else
-> +      params->rdsr_dummy = 4;
-> +
-> +   if (table[0] & PROFILE1_DWORD1_RDSR_ADDR_BYTES)
-> +      params->rdsr_addr_nbytes = 4;
-> +   else
-> +      params->rdsr_addr_nbytes = 0;
-> +
-> +out:
-> +   kfree(table);
-> +   return ret;
-> +}
-> +
-
-thanks & best regards,
-Mason
-
-
-CONFIDENTIALITY NOTE:
-
-This e-mail and any attachments may contain confidential information 
-and/or personal data, which is protected by applicable laws. Please be 
-reminded that duplication, disclosure, distribution, or use of this e-mail 
-(and/or its attachments) or any part thereof is prohibited. If you receive 
-this e-mail in error, please notify us immediately and delete this mail as 
-well as its attachment(s) from your system. In addition, please be 
-informed that collection, processing, and/or use of personal data is 
-prohibited unless expressly permitted by personal data protection laws. 
-Thank you for your attention and cooperation.
-
-Macronix International Co., Ltd.
-
-=====================================================================
-
-
-
-============================================================================
-
-CONFIDENTIALITY NOTE:
-
-This e-mail and any attachments may contain confidential information and/or personal data, which is protected by applicable laws. Please be reminded that duplication, disclosure, distribution, or use of this e-mail (and/or its attachments) or any part thereof is prohibited. If you receive this e-mail in error, please notify us immediately and delete this mail as well as its attachment(s) from your system. In addition, please be informed that collection, processing, and/or use of personal data is prohibited unless expressly permitted by personal data protection laws. Thank you for your attention and cooperation.
-
-Macronix International Co., Ltd.
-
-=====================================================================
-
+Anson
 
 _______________________________________________
 linux-arm-kernel mailing list
