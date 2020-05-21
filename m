@@ -2,50 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93A781DC37D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 02:17:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 55E931DC429
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 02:49:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cVAmg7HRZSe6mzBJa7BSJ1LXYimuaXlL1qbQu1HFHxE=; b=kVOuzSpRWXfQ1/
-	xIK+6WkybSqEkBmDA60vXaTyoKC+01XlBrcWwSrEjRmx6Y2xFXO6UEdBllX3SK+K0x3nS6lxcKE0g
-	8Ci5r/fDtasddx9I9HrZcd3sroIZ+DTb/Xpd/QAO9cWH3H3ZshyoMg2z/l6/uKhXK+92O+TP7zkru
-	VHb249RnPHPize95i6iugknGIg22bDUK1rJsl0WJ49ihUyzN3a2d6Nq7pEs/0R85gySslJp/xsBdH
-	YsFKhNrnzppNZ14xNDNigSnhDeKU//L4Gh73s/Um/x69XI5tgfpgq+T6CuISiXyrBtaqnmlIAEDfS
-	nojBEctOu8w2d9oeFttQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rv25LbEJp3cQEnfIsd4C8jU7PCuGFu7PkCWKlqEB5Kg=; b=r5fFPR95JpQwDq
+	N/BBFW6TAkWYqyUSkJXNZUHAakQKeV3qN7uvH7A6z+GfXgq/h0tlkQnJCuAXMR3I0RZZA5pg8Isgl
+	3zH+EXAMOfQJXM+tpxmVfaCS7q6Oeep8L863v3Q27/1SQlr0xFLVEt3dMLRR9mC5FKpaYjie1ukbf
+	3prQ3Xi0MFM4NNrhGnvJmy7ZzS3GdMg31JXeTxYJFH+u6gKvgckXSKtHbzvUlarOcCamhSNUvtajF
+	HdPDIzWyEhsDGTn2RvutLOGc8CNRJAjxOiDVRsMZ/TFLSiOeMTm4n8CLPRVpYBHQ2CsjR0wg0i3AZ
+	0ZnMoiZ3nrQ6eepdcz+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbYu6-00045r-0g; Thu, 21 May 2020 00:17:42 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbYtu-00044G-5n; Thu, 21 May 2020 00:17:31 +0000
-Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
- helo=phil.lan)
- by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
- (Exim 4.92) (envelope-from <heiko@sntech.de>)
- id 1jbYtq-0005Re-SD; Thu, 21 May 2020 02:17:26 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: Johan Jonker <jbx6244@gmail.com>
-Subject: Re: [PATCH] arm64: dts: rockchip: fix pinctrl-names for gpio-leds
- node on rk3326-odroid-go2
-Date: Thu, 21 May 2020 02:17:25 +0200
-Message-Id: <159002021954.2754417.8270198597807714801.b4-ty@sntech.de>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200519111444.2208-1-jbx6244@gmail.com>
-References: <20200519111444.2208-1-jbx6244@gmail.com>
+	id 1jbZOO-0007Sv-4B; Thu, 21 May 2020 00:49:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbZOG-0007Rk-9w
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 00:48:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 534F6D6E;
+ Wed, 20 May 2020 17:48:47 -0700 (PDT)
+Received: from [10.163.75.69] (unknown [10.163.75.69])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 959693F68F;
+ Wed, 20 May 2020 17:48:45 -0700 (PDT)
+Subject: Re: [PATCH V3] arm64/cpufeature: Validate hypervisor capabilities
+ during CPU hotplug
+To: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+References: <1589248647-22925-1-git-send-email-anshuman.khandual@arm.com>
+ <158998676494.231372.15074477766045633803.b4-ty@kernel.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <e2ccbfdd-85ee-f01c-ce02-462d1a76c273@arm.com>
+Date: Thu, 21 May 2020 06:18:09 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <158998676494.231372.15074477766045633803.b4-ty@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_171730_216786_2DE122EB 
-X-CRM114-Status: GOOD (  10.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200520_174852_465028_AB343C9A 
+X-CRM114-Status: GOOD (  15.28  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -58,28 +65,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, Marc Zyngier <maz@kernel.org>,
+ linux-kernel@vger.kernel.org, kvmarm@lists.cs.columbia.edu
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 19 May 2020 13:14:44 +0200, Johan Jonker wrote:
-> The 'pinctrl-names' property should contain a list of names
-> to the assigned states. The value 'led_pins' in the gpio-leds
-> node on rk3326-odroid-go2 is not a state that is normally used,
-> so change it the common name 'default'.
 
-Applied, thanks!
 
-[1/1] arm64: dts: rockchip: fix pinctrl-names for gpio-leds node on rk3326-odroid-go2
-      commit: b2cb68e864222eb3cc1d7c3c06edc40469699983
+On 05/20/2020 11:24 PM, Will Deacon wrote:
+> On Tue, 12 May 2020 07:27:27 +0530, Anshuman Khandual wrote:
+>> This validates hypervisor capabilities like VMID width, IPA range for any
+>> hot plug CPU against system finalized values. KVM's view of the IPA space
+>> is used while allowing a given CPU to come up. While here, it factors out
+>> get_vmid_bits() for general use.
+>>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Will Deacon <will@kernel.org>
+>> Cc: Marc Zyngier <maz@kernel.org>
+>> Cc: Mark Rutland <mark.rutland@arm.com>
+>> Cc: James Morse <james.morse@arm.com>
+>> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+>> Cc: linux-arm-kernel@lists.infradead.org
+>> Cc: kvmarm@lists.cs.columbia.edu
+>> Cc: linux-kernel@vger.kernel.org
+> 
+> Applied to arm64 (for-next/cpufeature), thanks!
+> 
+> [1/1] arm64/cpufeature: Validate hypervisor capabilities during CPU hotplug
+>       https://git.kernel.org/arm64/c/c73433fc630c
+> 
+> But please note that I made some changes to verify_hyp_capabilities() so
+> that it's (a) static and (b) uses IS_ENABLED to avoid the dummy function
+> definition. I also extended the IS_ENABLED_check so that it doesn't
+> conflict with the KVM kconfig changes from Fuad. Please shout if you think
+> I'm still missing something.
 
-Best regards,
--- 
-Heiko Stuebner <heiko@sntech.de>
+Normally I would have expected get_kvm_ipa_limit() to be unavailable without
+CONFIG_KVM_ARM_HOST, causing a build failure. But it does compile correctly.
+Probably the compiler does not really look for get_kvm_ipa_limit() definition
+after an early check and bailout on !IS_ENABLED(CONFIG_KVM_ARM_HOST).
+
+Nonetheless, changes looks good. Thank you.
+
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
