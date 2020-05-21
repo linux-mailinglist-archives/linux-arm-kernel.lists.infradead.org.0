@@ -2,114 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C0231DCDC2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 15:12:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7D231DCDDF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 15:24:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Cv15eXIqgf0Y9YVUGX27hgUPiZGSyg0AKTpS4I+yDI=; b=HSdq0PaKBltjHS
-	Ji02eXEexj5FKrKpQ4dVUssk2B3potES+JxpX0nI3YtFslzx7/KqXoQfXj93NKazIcn9z4m1gwhsB
-	LLVPseYrfehJ/TEbEnytoynAw5U264JZsfGE9zHZ1nmBSp/TjeeCOgV2VI0o5D8wkITOVZoCYRGPQ
-	7XK1lQIzJhs6UAWca3BCszkm19iehzdH1jBVwAhFsy7B2l/rA3cSnRj3y+sKRmbyzZ4Wkn1FPZ8ii
-	ZRwBK0M76XP5XTCvKmQq5tP90WzeK9kWX9b1LfRFL0FKj0bBQxtvPNF2sK8IvFFCbtjqDLLqJwSJm
-	89wkz5lwWcL3CJrBzDAA==;
+	List-Owner; bh=t6amzSGbZYZfxkgAFBWLtGTSBoArhxOvYluxL5qeeco=; b=r3qa9FA++8Pj6E
+	5U7uIHVR5OEZ320RdhW9xYWM7pnyFploVBIV/fy8Kz2Pl35th8TzJFgBic5LMpdqKQrQtMV15/tb7
+	LIr5BCl8yH4z+Y0W26gFF9Jy6PSpcbCScmUCKnlNNFWJAZfUZgOzKbg7XXOw2klWXUzKB/UEcRCv7
+	eVwqmUFspTLrTekgxF0GXjv7B6zkWftq/qd303DHGClJ1/tkpeyEZlCjlCN0jb1w1/adxdIQTXbBC
+	AAu74lX+6za7d0hvl1Qh7nc8NUvbSc2J4YJX+Q3E7H3ZdKe2PM9nT+RCOYYj/N0/WijX5Bksg3pqh
+	D/8FHQzH7n7TIi83Tj+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbkzn-0000JY-Vt; Thu, 21 May 2020 13:12:23 +0000
-Received: from mail-dm6nam12on2061.outbound.protection.outlook.com
- ([40.107.243.61] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1jblB2-0005tn-JL; Thu, 21 May 2020 13:24:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbkze-0000J3-2F
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 13:12:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=bbhfpv1BPp6WzhmJhaNHy+Fva+V+Sf9mP1pTHZ4iG+RXZkkjVhquOD0eFQwdM4pLNA8nSCBIWIPjOjJXzkzRkKx8Iwa6IyCuGFw0Q4soOJ+4KirmbD226NylNJ8UVEWXFsLlZvnpkIe+Q1gtn4UexTx0HRnOTx8b9jD6wqMnDgelGLWEbN9MrCxhWomAJms+ytc8TW6jiEYE4652ckOPQApTz35cySuJCWXjTC8y5XOPrMR0/aXmhvpfgIbLLLyYtpxGZJ5DsbPQu16Sh/36VYqpED9qZYIUCL3ra9kF7+unhWjGxXy44QbL2Wss/2XlEExOnY8t2NejNX8Las56xA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WSrfZQeHJC6MTcHyapPEVIWBzHYgSc0gYjEbsXoc4aE=;
- b=WSO8XYd8yyFtZUmbu4JdNitdebaTovcC5I9+9y1nN8TU6PuRYAEr4stTitPITB5oXNSvjNzbf2f2o+nR/+3FGf0e/MxubPgTzgYq30HygUCDiAf7k4BPjwr9S4Q7mjesPC7YGmfT/OKRrJFlLNjR+LvlDM/dflKsYv70tI4kTYorwZSazQG5XTXJVgqaoQUa814qRwnkXd129gtvtwZdNynVE+ETD1IvamSoM0mHMcHHdbODIQFwPAVV6p5ke3KRukNZvGw5RpZupCIpxN3nTJ9Bo1KUrKrhrCCQtidxBoRX3hjyQVW6otplf8QeE6Fysmk0TiPjgSHMcYBvhyrqrg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=silabs.com; dmarc=pass action=none header.from=silabs.com;
- dkim=pass header.d=silabs.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=silabs.onmicrosoft.com; s=selector2-silabs-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WSrfZQeHJC6MTcHyapPEVIWBzHYgSc0gYjEbsXoc4aE=;
- b=NZUdmGq0d+Rn4q3MgpuKE+byDuiK6jqbxtEbo5IyTNi9ikzkeuCAAZFZb63gfDFUawTzCX84wxBC4vwHeszQ1kE/DbEJvaKAXBfOq0Y0TnWk6xhY8/OxZ1hdWOIsSYn6/cJBKG/MCFBvfEYtUDyj3hkWPAwpXu6UowdcBQT4lYc=
-Authentication-Results: cerno.tech; dkim=none (message not signed)
- header.d=none;cerno.tech; dmarc=none action=none header.from=silabs.com;
-Received: from MWHPR11MB1775.namprd11.prod.outlook.com (2603:10b6:300:10e::14)
- by MWHPR11MB1632.namprd11.prod.outlook.com (2603:10b6:301:11::11)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Thu, 21 May
- 2020 13:12:09 +0000
-Received: from MWHPR11MB1775.namprd11.prod.outlook.com
- ([fe80::e055:3e6d:ff4:56da]) by MWHPR11MB1775.namprd11.prod.outlook.com
- ([fe80::e055:3e6d:ff4:56da%5]) with mapi id 15.20.3021.020; Thu, 21 May 2020
- 13:12:08 +0000
-From: =?ISO-8859-1?Q?J=E9r=F4me?= Pouiller <jerome.pouiller@silabs.com>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: Possible race while masking IRQ on Allwinner A20
-Date: Thu, 21 May 2020 15:12:01 +0200
-Message-ID: <4228495.4SuWXshX0D@pc-42>
-Organization: Silicon Labs
-In-Reply-To: <20200521072634.6ig7jcuy5tmvmojf@gilmour.lan>
-References: <11042983.UNsANRFJuY@pc-42>
- <20200521072634.6ig7jcuy5tmvmojf@gilmour.lan>
-X-ClientProxiedBy: MR2P264CA0006.FRAP264.PROD.OUTLOOK.COM
- (2603:10a6:500:1::18) To MWHPR11MB1775.namprd11.prod.outlook.com
- (2603:10b6:300:10e::14)
+ id 1jblAv-0005t8-Gh
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 13:23:55 +0000
+Received: from mail-io1-f48.google.com (mail-io1-f48.google.com
+ [209.85.166.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CB9242078B
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 May 2020 13:23:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590067432;
+ bh=RheZr/ACF50PLrTLkwoyqU2PDIsZGaDPXMpYDueZCDU=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=fsUEuLUMqHtuRSm/PyyGYHOzY1/CvCuc1NTmkHUzg5VCgrJTLSjC6XkJMic3/S3U/
+ ZdihNuqxFeF0qLkJ0xxQz0dStFzD4nrNsIi9R0H1hKyGIk9JjHNN+1NOR9nYe2AiyO
+ d47LTKjkWBXyyd6YWUl0f8f65tb1iTVqlrEfPRlw=
+Received: by mail-io1-f48.google.com with SMTP id 79so7412280iou.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 May 2020 06:23:52 -0700 (PDT)
+X-Gm-Message-State: AOAM532sgZn4zQgQegXzmOV5ENBi0lI4LqrBuSSQMv0ol+EgOEY+cFT6
+ zvDndOED0Cgm3W85nK8/3vwCEcR53njZ6wruvRc=
+X-Google-Smtp-Source: ABdhPJwaIQMUfYp1lPhoz8vPxi1MQQFHmLWewLp0OWy6/cyhVbyU0V/aHNV2+SpXxkAeotpL1k1aqpoqE45s6N8cffQ=
+X-Received: by 2002:a05:6638:dc3:: with SMTP id
+ m3mr3675051jaj.98.1590067432179; 
+ Thu, 21 May 2020 06:23:52 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from pc-42.localnet (2a01:cb00:89d9:f400:78be:b52e:82a1:1e54) by
- MR2P264CA0006.FRAP264.PROD.OUTLOOK.COM (2603:10a6:500:1::18) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3021.23 via Frontend Transport; Thu, 21 May 2020 13:12:06 +0000
-X-Originating-IP: [2a01:cb00:89d9:f400:78be:b52e:82a1:1e54]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 5d51a7e3-acc3-4dfc-90f8-08d7fd8890cf
-X-MS-TrafficTypeDiagnostic: MWHPR11MB1632:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <MWHPR11MB1632B0833DF51FED1B53DCD393B70@MWHPR11MB1632.namprd11.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
-X-Forefront-PRVS: 041032FF37
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: KJiQ6htZTzbZmkMSITCEa3YjmfFMTuG5YG1r1Twd7LxX2aVHq2NObotiD3FvrIb51Y3IN6SZMrM5N3/hvI7wLfiQteDB/Eu0Zk7xvOnkRTTcrUCP1G5JIo0U04REocVnLD1flNYZ2ZFgJPxSQiXcxvN9w7e+ArYOOhrthH32mOOmbixlzmZNr9H8EGshuvATQRlARytCD8FOHzPQ30VnTJBnFTHXHNZdXDSNf/FPu+7CCrByNkK8czOaZJKl5zHiowEFH3pBBg8CBzU0LwleW/IZQpH0erJGJCPuzm/LozkUK7ZesduwXmPqfeEGAEvIr9LSsKBaOY99FL8AnRSg5FfUFbMegkSoZYf7KUFTIHkGXR0srSV33WvjVCbErUfg
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MWHPR11MB1775.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(39860400002)(136003)(346002)(396003)(366004)(376002)(6506007)(5660300002)(6916009)(478600001)(36916002)(16526019)(4326008)(52116002)(86362001)(9686003)(6512007)(186003)(6666004)(316002)(54906003)(6486002)(8936002)(33716001)(66946007)(66476007)(8676002)(66556008)(2906002)(39026012);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: pJiVnSHapGLDg4kY7NQ5YW7vaBjckKw2WFwB1RGn2fWB6jxMyq/fiNivrsf5HepUFrsopuuGPn98EOQFVh8ljNpAvf8lpj/33xC33iydn6uzdn+cC6H2p4I4loacly6QAJ1olgxubu2Qt9V8NiPdT7q34R5+fUHefdu+BWoMoTG5MfEGNkbFU/QOVwki/ZWMz0/s6NJKcu9dVHuwlOkGnffFeMEiil3UeCMTHB41K56MkPC1RfxgKy5wkpYzzlnhAWHdDblhLC27Vu0u3+g2ZvFUDkYhbyXF2CBfgQWGzD/iykCCtoTxbP2T0MaVLQwt7+WLvrTFDlTQTVAEe00ca41LMlGloWMgbYwniSvNyEyOjOYrZqCal65zs4Jr2mNzqZ8RAklJOjjJe8Q1yQDeTqomI3zAWx+eV3mxmp7c3ehK4exiHp1QCmJMfnwuLGs7EyPxua2Mo7dUpebJMey1BQCyqzbZAdiK+usaC/PpECfdGr6mjlM7X+yisUkknrHsAFgvDHytpakewrEJ+27Up1M/aj285PfHn30PtXvxZiQ=
-X-OriginatorOrg: silabs.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5d51a7e3-acc3-4dfc-90f8-08d7fd8890cf
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 May 2020 13:12:08.5915 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 54dbd822-5231-4b20-944d-6f4abcd541fb
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: w0fmnYFb3tHMs5TQkaNiSL3S7lTuOMafbsx+WwsAYdtlOFBZn9IBsTzmatVrhbj//zarFe0tyW0zM8VpWgVtHQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1632
+References: <20200519190211.76855-1-ardb@kernel.org>
+ <16394356.0UTfFWEGjO@tauon.chronox.de>
+ <CAMj1kXF=Duh1AsAQy+aLWMcJPQ4RFL5p9-Mnmn-XAiCkzyGFbg@mail.gmail.com>
+ <2010567.jSmZeKYv2B@tauon.chronox.de>
+ <CAMj1kXGNqo=d-hgK=0zBZCoJYgSxxhhm=Jdk2gAGXPo1-KSCgA@mail.gmail.com>
+ <CAOtvUMc8PhToLDVO+Y4NVhVkA6B7yndp3gbaeaQZJtrW_NSzaw@mail.gmail.com>
+In-Reply-To: <CAOtvUMc8PhToLDVO+Y4NVhVkA6B7yndp3gbaeaQZJtrW_NSzaw@mail.gmail.com>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Thu, 21 May 2020 15:23:41 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXFJJcg-YeSw+_FDfyOvjQTJ6w1YyKqWaxCWSjDhRLEDoA@mail.gmail.com>
+Message-ID: <CAMj1kXFJJcg-YeSw+_FDfyOvjQTJ6w1YyKqWaxCWSjDhRLEDoA@mail.gmail.com>
+Subject: Re: [RFC/RFT PATCH 0/2] crypto: add CTS output IVs for arm64 and
+ testmgr
+To: Gilad Ben-Yossef <gilad@benyossef.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_061214_171289_8E57401F 
-X-CRM114-Status: GOOD (  11.11  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200521_062353_591878_4D1B2BAA 
+X-CRM114-Status: GOOD (  21.34  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.243.61 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.243.61 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,51 +92,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Marc Dorval <marc.dorval@silabs.com>,
- Thomas Gleixner <tglx@linutronix.de>, Chen-Yu Tsai <wens@csie.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Stephan Mueller <smueller@chronox.de>, Eric Biggers <ebiggers@kernel.org>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thursday 21 May 2020 09:26:34 CEST Maxime Ripard wrote:
-[...]
-> On Tue, May 19, 2020 at 10:59:26AM +0200, J=E9r=F4me Pouiller wrote:
-[...] =
+On Thu, 21 May 2020 at 15:01, Gilad Ben-Yossef <gilad@benyossef.com> wrote:
+>
+> Hi Ard,
+>
+> Thank you for looping me in.
+>
+> On Wed, May 20, 2020 at 10:09 AM Ard Biesheuvel <ardb@kernel.org> wrote:
+> >
+> > On Wed, 20 May 2020 at 09:01, Stephan Mueller <smueller@chronox.de> wrote:
+> > >
+> > > Am Mittwoch, 20. Mai 2020, 08:54:10 CEST schrieb Ard Biesheuvel:
+> > >
+> > > Hi Ard,
+> > >
+> > > > On Wed, 20 May 2020 at 08:47, Stephan Mueller <smueller@chronox.de> wrote:
+> > ...
+> > > > > The state of all block chaining modes we currently have is defined with
+> > > > > the
+> > > > > IV. That is the reason why I mentioned it can be implemented stateless
+> > > > > when I am able to get the IV output from the previous operation.
+> > > >
+> > > > But it is simply the same as the penultimate block of ciphertext. So
+> > > > you can simply capture it after encrypt, or before decrypt. There is
+> > > > really no need to rely on the CTS transformation to pass it back to
+> > > > you via the buffer that is only specified to provide an input to the
+> > > > CTS transform.
+> > >
+> > > Let me recheck that as I am not fully sure on that one. But if it can be
+> > > handled that way, it would make life easier.
+> >
+> > Please refer to patch 2. The .iv_out test vectors were all simply
+> > copied from the appropriate offset into the associated .ctext member.
+>
+> Not surprisingly since to the best of my understanding this behaviour
+> is not strictly specified, ccree currently fails the IV output check
+> with the 2nd version of the patch.
+>
 
-> > The chip WF200 allows to use a dedicated line for the IRQ (aka
-> > "Out-Of-Band" IRQ). So I have enabled this feature with a edge triggere=
-d =
+That is what I suspected, hence the cc:
 
-> > IRQ. However, I missed some IRQs. Indeed, it seems that Allwinner use a =
+> If I understand you correctly, the expected output IV is simply the
+> next to last block of the ciphertext?
 
-> > 32KHz clock to sample the IRQs. It is not fast enough for us. I think i=
-t =
-
-> > explains why we miss some IRQs (using the attribute "input-debounce"[2]=
-, =
-
-> > I tried to enable the 24Mhz clock, but without success).
-> =
-
-> Without success as in you couldn't make it use the 24MHz clock, or using =
-it
-> didn't change anything?
-
-I didn't make the change myself, but it seems that the board was unable
-to run correctly when the attribute "input-debounce" was used. Since
-"input-debounce" impacts the whole GPIO bank, I think it has impacted
-other devices.
-
-Finally, I didn't spend so much time on this and I don't know if it the
-24Mhz clock has been finally correctly enabled.
-
--- =
-
-J=E9r=F4me Pouiller
-
-
+Yes. But this happens to work for the generic case because the CTS
+driver itself requires the encapsulated CBC mode to return the output
+IV, which is simply passed through back to the caller. CTS mode itself
+does not specify any kind of output IV, so we should not rely on this
+behavior.
 
 _______________________________________________
 linux-arm-kernel mailing list
