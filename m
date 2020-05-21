@@ -2,82 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76E641DC4D0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 03:37:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A6431DC4DF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 03:45:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Iv9X3rRi5K6k9jw0jFf7PFLitZ1DSIgI0z09NIl3dHc=; b=qmjR4ZdF/HOJbw
-	1MLLpPHhylcTdnCiuL8K50QJDjVqZYq7T4WfDr384m+J+rmhYacRy0b0jm9w+QKrNvk/Adazx9A/U
-	nMxejWkMj2vUDgmnTzFrt6mnQTndpJqNiL7jEkHGkxdPKVtfANX1VzRskSL5temWpm9ZpWHPH/x2w
-	IhYO5BeNGcexlBxBt3PVQmBgxdUMJR4O4rrBp3wfMYH06PARxkNFzdFJCvNmXfcj5bUdDNWzKLT+Q
-	ZmMmKzUXiNjgXHToYZQ6d1Yfsem3uQeesZfm7TD+/4ZQfDYz1pKEJsLhNWCOrG4QtO+BQxcknnKNL
-	flay+MiKqd8VZXlM4Plw==;
+	List-Owner; bh=C+J1b8mGvCTPKY6lFBgDWwkxeaBAC3Mg4v7lAvFkbNE=; b=Ij2ZvUk6ptxZaT
+	K1PuKVLe0eIPb1z6tu3YFSD2vmX9sbu2pYzXJpTcfZbhVOXn9itd1kjojZ3+u6nSE7vIoeC/Vse1u
+	5oOH692czVwxQiLeKzFJdcUzw+qt+xs+OEMdV+qNyaf3joySQc2rhyLT+NaQJrpgBUot75Ogxjmvs
+	nxoE8cbnVuJPCq8wCi8508/1oz4YZZgfz1WT7cKJuxH4FnAMK0P5R49epqaYMYgIGQBtNaeRLmiet
+	s31Ykgr/xNXIfSofEZSe1GvE1iEXKdheoESDTlnF8VdWv2GJqS1pmYZ/rc6eztiHvbydspZCKxxlf
+	cfGja6A/7CBaZ98LMNAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jba8z-0006li-Jg; Thu, 21 May 2020 01:37:09 +0000
-Received: from mail-qv1-xf44.google.com ([2607:f8b0:4864:20::f44])
+	id 1jbaHD-0004jj-Q8; Thu, 21 May 2020 01:45:39 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jba8p-0006kc-Jx
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 01:37:01 +0000
-Received: by mail-qv1-xf44.google.com with SMTP id x13so2392413qvr.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 18:36:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oUriGfgjkQX3LYY7wtj+RwTpaaRdDlt+3hTHB1vDTro=;
- b=qUG0/EH6XgLuxNXbQdJGezJbSQnq0Y0S/9ctlrDqDZzBmDJvsxq7FBzhGpk11Ot+cT
- UsLryIJ+nLWIYzsIV6Gu/Gb2PxgGUbjh0zqQVnPG4bzFl45QemjVJQaDawNLUKoLvCC9
- QJ8VqGPOjpv3ayUyQtnOU0LD/9bRdnFGsbRl64BkFPt8mD+QhsPumB/jzYiHyLkVE4B0
- 902XwQS+EUOGGd8kT064L7blhtHZHmZ24U4MraCQJQSV6gr+SfKf9DRh/zaCfYbaRUPl
- uuGzpzGRkVx78pLUo5Smp49BsBnHwC+RAjbVqMp24UtmQT38yD4UGvKQGeuitvt76b7K
- MitQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oUriGfgjkQX3LYY7wtj+RwTpaaRdDlt+3hTHB1vDTro=;
- b=r1MYrhiH0M1A4W9FU1/30h+SG/gvKN5mU0WSuSEEo3r83joPGUfnyEuWfxZpjf6sWO
- Y5Y4jIj4FLr8IULirXu+3dL6p7lRdQZNL/RQi9uwotsk4ihQlTdvefXuiVGG0e/l121X
- bF1f7y0SCjpvRKSqVaC3MAHrsS+6FQJquD5R7wRpZ9RSQ7hvLX3cUdUNiwBSzT0ilY+k
- 2DvovwZViAv82RSyXJ6bP5Y3GtDvgLmAmNH6BGhwi/X9ylRLhxMXrft6pKtYRiXGChhC
- r5frXBPo013rxjuEhxu8nX+kVcBh7A4dw6YSbO0/kiOOl8GOtHZ0LFZ3ySHNBe2RLgy9
- CxcA==
-X-Gm-Message-State: AOAM532igWLNELRikip4igxhLO4DaTaTtawv9mttz4t6Lwqm9/o6UE7t
- 6nWR+ebhWNPXKCwS1aXGxs+czKh/ZzZ22hzE9V2G4Q==
-X-Google-Smtp-Source: ABdhPJy4C/+klK8xF4IEwT19w/09g+zR+6lWSkQvG6oshEgv9u7seIlkLrXJWcxPACRQ5P+F/R97+CzyHpQhoOhPB0E=
-X-Received: by 2002:a0c:ed21:: with SMTP id u1mr7831281qvq.206.1590025015219; 
- Wed, 20 May 2020 18:36:55 -0700 (PDT)
+ id 1jbaH2-0004hk-RJ; Thu, 21 May 2020 01:45:30 +0000
+X-UUID: 84ae4a14d051484eadf97ac89daa56c2-20200520
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=WeCuWHduXwpieDXBHOivIUfYTm2ChJceDlZ+3qOBl/s=; 
+ b=B89GD5Th29HTO/uODVStHjeVXQOi3smb1Nb4562oC/XgS7mQdaSC0Z5BCBy/nQ50xBdMPA1/DAgHJPEUTgP1ahBwIgGZs/fwONwzDCT/uifHJZC7JCf3mp18DpWq8MI5rem56Qoa4YoCHl9Hh71fLfHGGDUSTS5PjrV+k1yXKAA=;
+X-UUID: 84ae4a14d051484eadf97ac89daa56c2-20200520
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 629803253; Wed, 20 May 2020 17:45:25 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 20 May 2020 18:45:21 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 21 May 2020 09:45:21 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 21 May 2020 09:45:21 +0800
+Message-ID: <1590025521.18444.1.camel@mtksdccf07>
+Subject: Re: [PATCH v5 1/4] rcu/kasan: record and print call_rcu() call stack
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Konovalov <andreyknvl@google.com>
+Date: Thu, 21 May 2020 09:45:21 +0800
+In-Reply-To: <CAAeHK+wyg90Tw_Fp+A1vkW3rK+WKwPi_oS4T4SVL-fEYYaU0Lw@mail.gmail.com>
+References: <20200520123434.3888-1-walter-zh.wu@mediatek.com>
+ <CAAeHK+wyg90Tw_Fp+A1vkW3rK+WKwPi_oS4T4SVL-fEYYaU0Lw@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <20200506084039.249977-1-eizan@chromium.org>
- <20200506184018.v2.2.I87cf35a058328c780bd3b8b2191209a5011b7016@changeid>
- <CAFqH_50_Py7Diu5bwmjLBPGiy3F5J5qNGmtrbH7i7aTUaHif9A@mail.gmail.com>
-In-Reply-To: <CAFqH_50_Py7Diu5bwmjLBPGiy3F5J5qNGmtrbH7i7aTUaHif9A@mail.gmail.com>
-From: Eizan Miyamoto <eizan@google.com>
-Date: Thu, 21 May 2020 11:36:43 +1000
-Message-ID: <CAOak1e-U8kxocZWUV=e9zWHzdfLg0=cnvjtX-Wq0G9Cw=Bcq0g@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] [media] mtk-mdp: use pm_runtime in MDP component
- driver
-To: Enric Balletbo Serra <eballetbo@gmail.com>
+X-TM-SNTS-SMTP: 698E2BDDDB02B1C3C7B9511F993D7B398AE80C4A04F86E0740C01786F5C2C95E2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_183659_677772_F6C1B310 
-X-CRM114-Status: GOOD (  32.57  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200520_184528_898074_C324682B 
+X-CRM114-Status: GOOD (  25.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f44 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -86,8 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,229 +84,228 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
- LKML <linux-kernel@vger.kernel.org>, Houlong Wei <houlong.wei@mediatek.com>,
- Eizan Miyamoto <eizan@chromium.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ "Paul E . McKenney" <paulmck@kernel.org>, Linux
+ Memory Management List <linux-mm@kvack.org>,
+ Lai Jiangshan <jiangshanlai@gmail.com>, Josh
+ Triplett <josh@joshtriplett.org>, kasan-dev <kasan-dev@googlegroups.com>,
+ LKML <linux-kernel@vger.kernel.org>, Joel Fernandes <joel@joelfernandes.org>,
+ linux-mediatek@lists.infradead.org, Alexander Potapenko <glider@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Matthias Brugger <matthias.bgg@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 7, 2020 at 3:07 AM Enric Balletbo Serra <eballetbo@gmail.com> wrote:
->
-> Hi Eizan,
->
-> Thank you for the patch.
->
-> Missatge de Eizan Miyamoto <eizan@chromium.org> del dia dc., 6 de maig
-> 2020 a les 10:42:
+> On Wed, May 20, 2020 at 2:34 PM Walter Wu <walter-zh.wu@mediatek.com> wrote:
 > >
-> > Without this change, the MDP components are not fully integrated into
-> > the runtime power management subsystem, and the MDP driver does not
-> > work.
+> > This feature will record the last two call_rcu() call stacks and
+> > prints up to 2 call_rcu() call stacks in KASAN report.
 > >
-> > For each of the component device drivers to be able to call
-> > pm_runtime_get/put_sync() a pointer to the component's device struct
-> > had to be added to struct mtk_mdp_comp, set by mtk_mdp_comp_init().
+> > When call_rcu() is called, we store the call_rcu() call stack into
+> > slub alloc meta-data, so that the KASAN report can print rcu stack.
 > >
-> > Note that the dev argument to mtk_mdp_comp_clock_on/off() has been
-> > removed. Those functions used to be called from the "master" mdp driver
-> > in mtk_mdp_core.c, but the component's device pointer no longer
-> > corresponds to the mdp master device pointer, which is not the right
-> > device to pass to pm_runtime_put/get_sync() which we had to add to get
-> > the driver to work properly.
+> > [1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
+> > [2]https://groups.google.com/forum/#!searchin/kasan-dev/better$20stack$20traces$20for$20rcu%7Csort:date/kasan-dev/KQsjT_88hDE/7rNUZprRBgAJ
 > >
-> > Signed-off-by: Eizan Miyamoto <eizan@chromium.org>
+> > Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> > Suggested-by: Dmitry Vyukov <dvyukov@google.com>
+> > Acked-by: Paul E. McKenney <paulmck@kernel.org>
+> > Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+> > Cc: Dmitry Vyukov <dvyukov@google.com>
+> > Cc: Alexander Potapenko <glider@google.com>
+> > Cc: Andrew Morton <akpm@linux-foundation.org>
+> > Cc: Josh Triplett <josh@joshtriplett.org>
+> > Cc: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+> > Cc: Lai Jiangshan <jiangshanlai@gmail.com>
+> > Cc: Joel Fernandes <joel@joelfernandes.org>
+> > Cc: Andrey Konovalov <andreyknvl@google.com>
 > > ---
+> >  include/linux/kasan.h |  2 ++
+> >  kernel/rcu/tree.c     |  2 ++
+> >  mm/kasan/common.c     |  4 ++--
+> >  mm/kasan/generic.c    | 21 +++++++++++++++++++++
+> >  mm/kasan/kasan.h      | 10 ++++++++++
+> >  mm/kasan/report.c     | 24 ++++++++++++++++++++++++
+> >  6 files changed, 61 insertions(+), 2 deletions(-)
 > >
-> > Changes in v2:
->
-> Ah, I guess this change log corresponds to the first patch.
->
-> > - remove empty mtk_mdp_comp_init
-> > - update documentation for enum mtk_mdp_comp_type
-> > - remove comma after last element of mtk_mdp_comp_driver_dt_match
+> > diff --git a/include/linux/kasan.h b/include/linux/kasan.h
+> > index 31314ca7c635..23b7ee00572d 100644
+> > --- a/include/linux/kasan.h
+> > +++ b/include/linux/kasan.h
+> > @@ -174,11 +174,13 @@ static inline size_t kasan_metadata_size(struct kmem_cache *cache) { return 0; }
 > >
-> >  drivers/media/platform/mtk-mdp/mtk_mdp_comp.c | 22 ++++++++++++++-----
-> >  drivers/media/platform/mtk-mdp/mtk_mdp_comp.h |  6 +++--
-> >  drivers/media/platform/mtk-mdp/mtk_mdp_core.c |  6 ++---
-> >  3 files changed, 23 insertions(+), 11 deletions(-)
+> >  void kasan_cache_shrink(struct kmem_cache *cache);
+> >  void kasan_cache_shutdown(struct kmem_cache *cache);
+> > +void kasan_record_aux_stack(void *ptr);
 > >
-> > diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-> > index 5b4d482df778..228c58f92c8c 100644
-> > --- a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-> > +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-> > @@ -15,6 +15,7 @@
-> >  #include <linux/of_platform.h>
-> >  #include <soc/mediatek/smi.h>
-> >  #include <linux/platform_device.h>
-> > +#include <linux/pm_runtime.h>
+> >  #else /* CONFIG_KASAN_GENERIC */
 > >
-> >  #include "mtk_mdp_comp.h"
-> >  #include "mtk_mdp_core.h"
-> > @@ -53,7 +54,7 @@ static const struct of_device_id mtk_mdp_comp_driver_dt_match[] = {
-> >  };
-> >  MODULE_DEVICE_TABLE(of, mtk_mdp_comp_driver_dt_match);
+> >  static inline void kasan_cache_shrink(struct kmem_cache *cache) {}
+> >  static inline void kasan_cache_shutdown(struct kmem_cache *cache) {}
+> > +static inline void kasan_record_aux_stack(void *ptr) {}
 > >
-> > -void mtk_mdp_comp_clock_on(struct device *dev, struct mtk_mdp_comp *comp)
-> > +void mtk_mdp_comp_clock_on(struct mtk_mdp_comp *comp)
+> >  #endif /* CONFIG_KASAN_GENERIC */
+> >
+> > diff --git a/kernel/rcu/tree.c b/kernel/rcu/tree.c
+> > index 06548e2ebb72..36a4ff7f320b 100644
+> > --- a/kernel/rcu/tree.c
+> > +++ b/kernel/rcu/tree.c
+> > @@ -57,6 +57,7 @@
+> >  #include <linux/slab.h>
+> >  #include <linux/sched/isolation.h>
+> >  #include <linux/sched/clock.h>
+> > +#include <linux/kasan.h>
+> >  #include "../time/tick-internal.h"
+> >
+> >  #include "tree.h"
+> > @@ -2668,6 +2669,7 @@ __call_rcu(struct rcu_head *head, rcu_callback_t func)
+> >         head->func = func;
+> >         head->next = NULL;
+> >         local_irq_save(flags);
+> > +       kasan_record_aux_stack(head);
+> >         rdp = this_cpu_ptr(&rcu_data);
+> >
+> >         /* Add the callback to our list. */
+> > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > index 2906358e42f0..8bc618289bb1 100644
+> > --- a/mm/kasan/common.c
+> > +++ b/mm/kasan/common.c
+> > @@ -41,7 +41,7 @@
+> >  #include "kasan.h"
+> >  #include "../slab.h"
+> >
+> > -static inline depot_stack_handle_t save_stack(gfp_t flags)
+> > +depot_stack_handle_t kasan_save_stack(gfp_t flags)
 > >  {
-> >         int i, err;
+> >         unsigned long entries[KASAN_STACK_DEPTH];
+> >         unsigned int nr_entries;
+> > @@ -54,7 +54,7 @@ static inline depot_stack_handle_t save_stack(gfp_t flags)
+> >  static inline void set_track(struct kasan_track *track, gfp_t flags)
+> >  {
+> >         track->pid = current->pid;
+> > -       track->stack = save_stack(flags);
+> > +       track->stack = kasan_save_stack(flags);
+> >  }
 > >
-> > @@ -62,25 +63,31 @@ void mtk_mdp_comp_clock_on(struct device *dev, struct mtk_mdp_comp *comp)
-> >                 if (err) {
-> >                         enum mtk_mdp_comp_type comp_type =
-> >                                 (enum mtk_mdp_comp_type)
-> > -                               of_device_get_match_data(dev);
-> > -                       dev_err(dev,
-> > +                               of_device_get_match_data(comp->dev);
-> > +                       dev_err(comp->dev,
-> >                                 "failed to get larb, err %d. type:%d\n",
-> >                                 err, comp_type);
-> >                 }
+> >  void kasan_enable_current(void)
+> > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+> > index 56ff8885fe2e..8acf48882ba2 100644
+> > --- a/mm/kasan/generic.c
+> > +++ b/mm/kasan/generic.c
+> > @@ -325,3 +325,24 @@ DEFINE_ASAN_SET_SHADOW(f2);
+> >  DEFINE_ASAN_SET_SHADOW(f3);
+> >  DEFINE_ASAN_SET_SHADOW(f5);
+> >  DEFINE_ASAN_SET_SHADOW(f8);
+> > +
+> > +void kasan_record_aux_stack(void *addr)
+> > +{
+> > +       struct page *page = kasan_addr_to_page(addr);
+> > +       struct kmem_cache *cache;
+> > +       struct kasan_alloc_meta *alloc_info;
+> > +       void *object;
+> > +
+> > +       if (!(page && PageSlab(page)))
+> > +               return;
+> > +
+> > +       cache = page->slab_cache;
+> > +       object = nearest_obj(cache, page, addr);
+> > +       alloc_info = get_alloc_info(cache, object);
+> > +
+> > +       /*
+> > +        * record the last two call_rcu() call stacks.
+> > +        */
+> > +       alloc_info->aux_stack[1] = alloc_info->aux_stack[0];
+> > +       alloc_info->aux_stack[0] = kasan_save_stack(GFP_NOWAIT);
+> > +}
+> > diff --git a/mm/kasan/kasan.h b/mm/kasan/kasan.h
+> > index e8f37199d885..a7391bc83070 100644
+> > --- a/mm/kasan/kasan.h
+> > +++ b/mm/kasan/kasan.h
+> > @@ -104,7 +104,15 @@ struct kasan_track {
+> >
+> >  struct kasan_alloc_meta {
+> >         struct kasan_track alloc_track;
+> > +#ifdef CONFIG_KASAN_GENERIC
+> > +       /*
+> > +        * call_rcu() call stack is stored into struct kasan_alloc_meta.
+> > +        * The free stack is stored into struct kasan_free_meta.
+> > +        */
+> > +       depot_stack_handle_t aux_stack[2];
+> > +#else
+> >         struct kasan_track free_track[KASAN_NR_FREE_STACKS];
+> > +#endif
+> >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> >         u8 free_pointer_tag[KASAN_NR_FREE_STACKS];
+> >         u8 free_track_idx;
+> > @@ -159,6 +167,8 @@ void kasan_report_invalid_free(void *object, unsigned long ip);
+> >
+> >  struct page *kasan_addr_to_page(const void *addr);
+> >
+> > +depot_stack_handle_t kasan_save_stack(gfp_t flags);
+> > +
+> >  #if defined(CONFIG_KASAN_GENERIC) && \
+> >         (defined(CONFIG_SLAB) || defined(CONFIG_SLUB))
+> >  void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache);
+> > diff --git a/mm/kasan/report.c b/mm/kasan/report.c
+> > index 80f23c9da6b0..29a801d5cd74 100644
+> > --- a/mm/kasan/report.c
+> > +++ b/mm/kasan/report.c
+> > @@ -105,6 +105,17 @@ static void end_report(unsigned long *flags)
+> >         kasan_enable_current();
+> >  }
+> >
+> > +#ifdef CONFIG_KASAN_GENERIC
+> > +static void print_stack(depot_stack_handle_t stack)
+> > +{
+> > +       unsigned long *entries;
+> > +       unsigned int nr_entries;
+> > +
+> > +       nr_entries = stack_depot_fetch(stack, &entries);
+> > +       stack_trace_print(entries, nr_entries, 0);
+> > +}
+> > +#endif
+> 
+> The idea of moving it here was to reuse print_stack() in print_track() :)
+> 
+
+Ok. I see. Next patch will fix it.
+
+> > +
+> >  static void print_track(struct kasan_track *track, const char *prefix)
+> >  {
+> >         pr_err("%s by task %u:\n", prefix, track->pid);
+> > @@ -192,6 +203,19 @@ static void describe_object(struct kmem_cache *cache, void *object,
+> >                 free_track = kasan_get_free_track(cache, object, tag);
+> >                 print_track(free_track, "Freed");
+> >                 pr_err("\n");
+> > +
+> > +#ifdef CONFIG_KASAN_GENERIC
+> > +               if (alloc_info->aux_stack[0]) {
+> > +                       pr_err("Last call_rcu():\n");
+> > +                       print_stack(alloc_info->aux_stack[0]);
+> > +                       pr_err("\n");
+> > +               }
+> > +               if (alloc_info->aux_stack[1]) {
+> > +                       pr_err("Second to last call_rcu():\n");
+> > +                       print_stack(alloc_info->aux_stack[1]);
+> > +                       pr_err("\n");
+> > +               }
+> > +#endif
 > >         }
 > >
-> > +       err = pm_runtime_get_sync(comp->dev);
-> > +       if (err < 0)
-> > +               dev_err(comp->dev,
-> > +                       "failed to runtime get, err %d.\n",
-> > +                       err);
->
-> Should you really ignore this error? If that's the case I'd just call
-> pm_runtime_get_sync() without adding the logic to just print an error
-> message.
-
-This is mostly consistent with style elsewhere, e.g., in mtk_mdp_m2m.c
-mtk_mdp_m2m_start_streaming and mtk_mdp_m2m_stop_streaming.
-
->
-> > +
-> >         for (i = 0; i < ARRAY_SIZE(comp->clk); i++) {
-> >                 if (IS_ERR(comp->clk[i]))
-> >                         continue;
-> >                 err = clk_prepare_enable(comp->clk[i]);
-> >                 if (err)
-> > -                       dev_err(dev,
-> > +                       dev_err(comp->dev,
-> >                                 "failed to enable clock, err %d. i:%d\n",
-> >                                 err, i);
->
-> Although ignoring errors seems to be a common pattern in this file and
-> I know you did not introduce this.
-
-Maybe the issue is that since no action is taken, logging at the 'error' log
-level is not the right thing? IOW, should it be changed to an informational
-message instead? Nevertheless, I think we should defer these changes to a
-follow-up patch instead.
-
->
-> >         }
-> >  }
-> >
-> > -void mtk_mdp_comp_clock_off(struct device *dev, struct mtk_mdp_comp *comp)
-> > +void mtk_mdp_comp_clock_off(struct mtk_mdp_comp *comp)
-> >  {
-> >         int i;
-> >
-> > @@ -92,6 +99,8 @@ void mtk_mdp_comp_clock_off(struct device *dev, struct mtk_mdp_comp *comp)
-> >
-> >         if (comp->larb_dev)
-> >                 mtk_smi_larb_put(comp->larb_dev);
-> > +
-> > +       pm_runtime_put_sync(comp->dev);
-> >  }
-> >
-> >  static int mtk_mdp_comp_bind(struct device *dev, struct device *master,
-> > @@ -101,6 +110,7 @@ static int mtk_mdp_comp_bind(struct device *dev, struct device *master,
-> >         struct mtk_mdp_dev *mdp = data;
-> >
-> >         mtk_mdp_register_component(mdp, comp);
-> > +       pm_runtime_enable(dev);
-> >
-> >         return 0;
-> >  }
-> > @@ -111,6 +121,7 @@ static void mtk_mdp_comp_unbind(struct device *dev, struct device *master,
-> >         struct mtk_mdp_dev *mdp = data;
-> >         struct mtk_mdp_comp *comp = dev_get_drvdata(dev);
-> >
-> > +       pm_runtime_disable(dev);
-> >         mtk_mdp_unregister_component(mdp, comp);
-> >  }
-> >
-> > @@ -129,6 +140,7 @@ int mtk_mdp_comp_init(struct mtk_mdp_comp *comp, struct device *dev)
-> >                  (enum mtk_mdp_comp_type)of_device_get_match_data(dev);
-> >
-> >         INIT_LIST_HEAD(&comp->node);
-> > +       comp->dev = dev;
-> >
-> >         for (i = 0; i < ARRAY_SIZE(comp->clk); i++) {
-> >                 comp->clk[i] = of_clk_get(node, i);
-> > diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.h b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.h
-> > index b5a18fe567aa..de158d3712f6 100644
-> > --- a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.h
-> > +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.h
-> > @@ -12,17 +12,19 @@
-> >   * @node:      list node to track sibing MDP components
-> >   * @clk:       clocks required for component
-> >   * @larb_dev:  SMI device required for component
-> > + * @dev:       component's device
-> >   */
-> >  struct mtk_mdp_comp {
-> >         struct list_head        node;
-> >         struct clk              *clk[2];
-> >         struct device           *larb_dev;
-> > +       struct device           *dev;
-> >  };
-> >
-> >  int mtk_mdp_comp_init(struct mtk_mdp_comp *comp, struct device *dev);
-> >
-> > -void mtk_mdp_comp_clock_on(struct device *dev, struct mtk_mdp_comp *comp);
-> > -void mtk_mdp_comp_clock_off(struct device *dev, struct mtk_mdp_comp *comp);
-> > +void mtk_mdp_comp_clock_on(struct mtk_mdp_comp *comp);
-> > +void mtk_mdp_comp_clock_off(struct mtk_mdp_comp *comp);
-> >
-> >  extern struct platform_driver mtk_mdp_component_driver;
-> >
-> > diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> > index 539a7942e3cb..133d107aa4e6 100644
-> > --- a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> > +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> > @@ -52,20 +52,18 @@ MODULE_DEVICE_TABLE(of, mtk_mdp_of_ids);
-> >
-> >  static void mtk_mdp_clock_on(struct mtk_mdp_dev *mdp)
-> >  {
-> > -       struct device *dev = &mdp->pdev->dev;
-> >         struct mtk_mdp_comp *comp_node;
-> >
-> >         list_for_each_entry(comp_node, &mdp->comp_list, node)
-> > -               mtk_mdp_comp_clock_on(dev, comp_node);
-> > +               mtk_mdp_comp_clock_on(comp_node);
-> >  }
-> >
-> >  static void mtk_mdp_clock_off(struct mtk_mdp_dev *mdp)
-> >  {
-> > -       struct device *dev = &mdp->pdev->dev;
-> >         struct mtk_mdp_comp *comp_node;
-> >
-> >         list_for_each_entry(comp_node, &mdp->comp_list, node)
-> > -               mtk_mdp_comp_clock_off(dev, comp_node);
-> > +               mtk_mdp_comp_clock_off(comp_node);
-> >  }
-> >
-> >  static void mtk_mdp_wdt_worker(struct work_struct *work)
+> >         describe_object_addr(cache, object, addr);
 > > --
-> > 2.26.2.526.g744177e7f7-goog
+> > 2.18.0
 > >
-> >
-> > _______________________________________________
-> > Linux-mediatek mailing list
-> > Linux-mediatek@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-mediatek
+> > --
+> > You received this message because you are subscribed to the Google Groups "kasan-dev" group.
+> > To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
+> > To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/20200520123434.3888-1-walter-zh.wu%40mediatek.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
