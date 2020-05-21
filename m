@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B444E1DCDA3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 15:02:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CBC41DCDA4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 15:02:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VlghGShdqUc8NQBBe7RKbSSe7rzjP2vPos5gDygH0Fo=; b=NEsYKCKQxDN4CF
-	OqGO+GCLvfMAYJ7d4jT+tQnCjxY2RvvnyCXc9vuslsCbolQIBrfjIc0SArQOIni3RpI9lW7jIqkPJ
-	0bRHC/5MrkV+0Uz90Xk6a7Mc7azoDT5c0ZPuYcLrKia4+P3+qwx+MzdvslCG0RkmIXnWikvUjb0wa
-	fjrRQmfH0JehAEJt4b0EH3GlYzeir5oeGt0Uu9+ifNNqdIYmxz1JbCOu+JwfgNu2HKMShYn9zbqCl
-	HpBrzfBIfmCkwC9XZKCqKqsAubkI7LEwcPbCOTe50vnBE/Js2dkDJOb+8NNF3diBqSQiV6Qx0ScIf
-	ii0q6dLus7eQomBX1jwg==;
+	List-Owner; bh=hszz4pTou2PvMrn3p1WdvAgGWvglw2gEOyrCSYdoqAk=; b=kJYhrWZy30+9ZL
+	ttf6A5F18iUI4nssA5qf0GbNUzgPCG9rXjYG6DckhY/O9fCR3aF6vsuug9JVpP0vAymhkVBHndcpU
+	1/nlq+pZoPGaxOKs6vKW8jZFlToUwcSRD1ZDrlrh/aANFiz49u4wmR/8AdcMUIMy42JrAJT9EVVRz
+	ScATbHZQVjGLCyBYw90DVk2qPngissDGy3Djl7asaWyTnCBJJez7uMhb+kSroHMj6RzhYovVuXKjt
+	nk4/Z6x55BvWZQri5sMGoyEotumVVcY6lU1SyctsvQMlstDhZtw6QNbhn3YTi8nUlmXlIymwMxiUj
+	5/aXhfONicfGGGZ+rWEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbkpr-0000ms-Jd; Thu, 21 May 2020 13:02:07 +0000
+	id 1jbkqC-0000zj-5u; Thu, 21 May 2020 13:02:28 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbkoJ-00084U-OK
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 13:00:34 +0000
+ id 1jbkoL-00086m-TE
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 13:00:36 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A51F61042;
- Thu, 21 May 2020 06:00:30 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 62CFDD6E;
+ Thu, 21 May 2020 06:00:33 -0700 (PDT)
 Received: from red-moon.arm.com (unknown [10.57.29.145])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D54F3F305;
- Thu, 21 May 2020 06:00:27 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DE3E83F305;
+ Thu, 21 May 2020 06:00:30 -0700 (PDT)
 From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 05/12] ACPI/IORT: Add an input ID to acpi_dma_configure()
-Date: Thu, 21 May 2020 14:00:01 +0100
-Message-Id: <20200521130008.8266-6-lorenzo.pieralisi@arm.com>
+Subject: [PATCH 06/12] of/iommu: Make of_map_rid() PCI agnostic
+Date: Thu, 21 May 2020 14:00:02 +0100
+Message-Id: <20200521130008.8266-7-lorenzo.pieralisi@arm.com>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
 References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_060032_169135_21702457 
-X-CRM114-Status: GOOD (  19.08  )
+X-CRM114-CacheID: sfid-20200521_060034_046020_E4207D32 
+X-CRM114-Status: GOOD (  16.37  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,13 +62,13 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Marc Zyngier <maz@kernel.org>, Makarand Pawagi <makarand.pawagi@nxp.com>,
- linux-pci@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Robin Murphy <robin.murphy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Sudeep Holla <sudeep.holla@arm.com>,
  linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Robin Murphy <robin.murphy@arm.com>,
  Diana Craciun <diana.craciun@oss.nxp.com>,
  Laurentiu Tudor <laurentiu.tudor@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
@@ -76,253 +76,183 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some HW devices are created as child devices of proprietary busses,
-that have a bus specific policy definining how the child devices
-wires representing the devices ID are translated into IOMMU and
-IRQ controllers device IDs.
+There is nothing PCI specific (other than the RID - requester ID)
+in the of_map_rid() implementation, so the same function can be
+reused for input/output IDs mapping for other busses just as well.
 
-Current IORT code provides translations for:
+Rename the RID instances/names to a generic "id" tag and provide
+an of_map_rid() wrapper function so that we can leave the existing
+(and legitimate) callers unchanged.
 
-- PCI devices, where the device ID is well identified at bus level
-  as the requester ID (RID)
-- Platform devices that are endpoint devices where the device ID is
-  retrieved from the ACPI object IORT mappings (Named components single
-  mappings). A platform device is represented in IORT as a named
-  component node
-
-For devices that are child devices of proprietary busses the IORT
-firmware represents the bus node as a named component node in IORT
-and it is up to that named component node to define in/out bus
-specific ID translations for the bus child devices that are
-allocated and created in a bus specific manner.
-
-In order to make IORT ID translations available for proprietary
-bus child devices, the current ACPI (and IORT) code must be
-augmented to provide an additional ID parameter to acpi_dma_configure()
-representing the child devices input ID. This ID is bus specific
-and it is retrieved in bus specific code.
-
-By adding an ID parameter to acpi_dma_configure(), the IORT
-code can map the child device ID to an IOMMU stream id through
-the IORT named component representing the bus in/out ID mappings.
+No functionality change intended.
 
 Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Hanjun Guo <guohanjun@huawei.com>
-Cc: Sudeep Holla <sudeep.holla@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Joerg Roedel <joro@8bytes.org>
 Cc: Robin Murphy <robin.murphy@arm.com>
-Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Cc: Marc Zyngier <maz@kernel.org>
 ---
- drivers/acpi/arm64/iort.c | 59 +++++++++++++++++++++++++++++----------
- drivers/acpi/scan.c       |  8 ++++--
- include/acpi/acpi_bus.h   |  9 ++++--
- include/linux/acpi.h      |  7 +++++
- include/linux/acpi_iort.h |  7 +++--
- 5 files changed, 67 insertions(+), 23 deletions(-)
+ drivers/iommu/of_iommu.c |  2 +-
+ drivers/of/base.c        | 42 ++++++++++++++++++++--------------------
+ include/linux/of.h       | 17 +++++++++++++++-
+ 3 files changed, 38 insertions(+), 23 deletions(-)
 
-diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-index ae9e1089d954..270c1a0cdeff 100644
---- a/drivers/acpi/arm64/iort.c
-+++ b/drivers/acpi/arm64/iort.c
-@@ -1004,19 +1004,54 @@ static void iort_named_component_init(struct device *dev,
- 					   nc->node_flags);
+diff --git a/drivers/iommu/of_iommu.c b/drivers/iommu/of_iommu.c
+index 20738aacac89..ad96b87137d6 100644
+--- a/drivers/iommu/of_iommu.c
++++ b/drivers/iommu/of_iommu.c
+@@ -145,7 +145,7 @@ static int of_fsl_mc_iommu_init(struct fsl_mc_device *mc_dev,
+ 	struct of_phandle_args iommu_spec = { .args_count = 1 };
+ 	int err;
+ 
+-	err = of_map_rid(master_np, mc_dev->icid, "iommu-map",
++	err = of_map_id(master_np, mc_dev->icid, "iommu-map",
+ 			 "iommu-map-mask", &iommu_spec.np,
+ 			 iommu_spec.args);
+ 	if (err)
+diff --git a/drivers/of/base.c b/drivers/of/base.c
+index ae03b1218b06..e000e17bd602 100644
+--- a/drivers/of/base.c
++++ b/drivers/of/base.c
+@@ -2201,15 +2201,15 @@ int of_find_last_cache_level(unsigned int cpu)
  }
  
-+static int iort_nc_iommu_map(struct device *dev, struct acpi_iort_node *node)
-+{
-+	struct acpi_iort_node *parent;
-+	int err = -ENODEV, i = 0;
-+	u32 streamid = 0;
-+
-+	do {
-+
-+		parent = iort_node_map_platform_id(node, &streamid,
-+						   IORT_IOMMU_TYPE,
-+						   i++);
-+
-+		if (parent)
-+			err = iort_iommu_xlate(dev, parent, streamid);
-+	} while (parent && !err);
-+
-+	return err;
-+}
-+
-+static int iort_nc_iommu_map_id(struct device *dev,
-+				struct acpi_iort_node *node,
-+				const u32 *in_id)
-+{
-+	struct acpi_iort_node *parent;
-+	u32 streamid;
-+
-+	parent = iort_node_map_id(node, *in_id, &streamid, IORT_IOMMU_TYPE);
-+	if (parent)
-+		return iort_iommu_xlate(dev, parent, streamid);
-+
-+	return -ENODEV;
-+}
-+
-+
  /**
-- * iort_iommu_configure - Set-up IOMMU configuration for a device.
-+ * iort_iommu_configure_id - Set-up IOMMU configuration for a device.
+- * of_map_rid - Translate a requester ID through a downstream mapping.
++ * of_map_id - Translate a requester ID through a downstream mapping.
+  * @np: root complex device node.
+- * @rid: device requester ID to map.
++ * @id: device ID to map.
+  * @map_name: property name of the map to use.
+  * @map_mask_name: optional property name of the mask to use.
+  * @target: optional pointer to a target device node.
+  * @id_out: optional pointer to receive the translated ID.
   *
-  * @dev: device to configure
-+ * @id_in: optional input id const value pointer
+- * Given a device requester ID, look up the appropriate implementation-defined
++ * Given a device ID, look up the appropriate implementation-defined
+  * platform ID and/or the target device which receives transactions on that
+  * ID, as per the "iommu-map" and "msi-map" bindings. Either of @target or
+  * @id_out may be NULL if only the other is required. If @target points to
+@@ -2219,11 +2219,11 @@ int of_find_last_cache_level(unsigned int cpu)
   *
-  * Returns: iommu_ops pointer on configuration success
-  *          NULL on configuration failure
+  * Return: 0 on success or a standard error code on failure.
   */
--const struct iommu_ops *iort_iommu_configure(struct device *dev)
-+const struct iommu_ops *iort_iommu_configure_id(struct device *dev,
-+						const u32 *id_in)
+-int of_map_rid(struct device_node *np, u32 rid,
++int of_map_id(struct device_node *np, u32 id,
+ 	       const char *map_name, const char *map_mask_name,
+ 	       struct device_node **target, u32 *id_out)
  {
--	struct acpi_iort_node *node, *parent;
-+	struct acpi_iort_node *node;
- 	const struct iommu_ops *ops;
--	u32 streamid = 0;
- 	int err = -ENODEV;
+-	u32 map_mask, masked_rid;
++	u32 map_mask, masked_id;
+ 	int map_len;
+ 	const __be32 *map = NULL;
  
- 	/*
-@@ -1045,21 +1080,13 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev)
- 		if (fwspec && iort_pci_rc_supports_ats(node))
- 			fwspec->flags |= IOMMU_FWSPEC_PCI_RC_ATS;
- 	} else {
--		int i = 0;
--
- 		node = iort_scan_node(ACPI_IORT_NODE_NAMED_COMPONENT,
- 				      iort_match_node_callback, dev);
- 		if (!node)
- 			return NULL;
+@@ -2235,7 +2235,7 @@ int of_map_rid(struct device_node *np, u32 rid,
+ 		if (target)
+ 			return -ENODEV;
+ 		/* Otherwise, no map implies no translation */
+-		*id_out = rid;
++		*id_out = id;
+ 		return 0;
+ 	}
  
--		do {
--			parent = iort_node_map_platform_id(node, &streamid,
--							   IORT_IOMMU_TYPE,
--							   i++);
--
--			if (parent)
--				err = iort_iommu_xlate(dev, parent, streamid);
--		} while (parent && !err);
-+		err = id_in ? iort_nc_iommu_map_id(dev, node, id_in) :
-+			      iort_nc_iommu_map(dev, node);
+@@ -2255,22 +2255,22 @@ int of_map_rid(struct device_node *np, u32 rid,
+ 	if (map_mask_name)
+ 		of_property_read_u32(np, map_mask_name, &map_mask);
  
- 		if (!err)
- 			iort_named_component_init(dev, node);
-@@ -1084,6 +1111,7 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev)
+-	masked_rid = map_mask & rid;
++	masked_id = map_mask & id;
+ 	for ( ; map_len > 0; map_len -= 4 * sizeof(*map), map += 4) {
+ 		struct device_node *phandle_node;
+-		u32 rid_base = be32_to_cpup(map + 0);
++		u32 id_base = be32_to_cpup(map + 0);
+ 		u32 phandle = be32_to_cpup(map + 1);
+ 		u32 out_base = be32_to_cpup(map + 2);
+-		u32 rid_len = be32_to_cpup(map + 3);
++		u32 id_len = be32_to_cpup(map + 3);
  
- 	return ops;
- }
-+
- #else
- static inline const struct iommu_ops *iort_fwspec_iommu_ops(struct device *dev)
- { return NULL; }
-@@ -1092,7 +1120,8 @@ static inline int iort_add_device_replay(const struct iommu_ops *ops,
- { return 0; }
- int iort_iommu_msi_get_resv_regions(struct device *dev, struct list_head *head)
- { return 0; }
--const struct iommu_ops *iort_iommu_configure(struct device *dev)
-+const struct iommu_ops *iort_iommu_configure_id(struct device *dev,
-+						const u32 *input_id)
- { return NULL; }
- #endif
+-		if (rid_base & ~map_mask) {
+-			pr_err("%pOF: Invalid %s translation - %s-mask (0x%x) ignores rid-base (0x%x)\n",
++		if (id_base & ~map_mask) {
++			pr_err("%pOF: Invalid %s translation - %s-mask (0x%x) ignores id-base (0x%x)\n",
+ 				np, map_name, map_name,
+-				map_mask, rid_base);
++				map_mask, id_base);
+ 			return -EFAULT;
+ 		}
  
-diff --git a/drivers/acpi/scan.c b/drivers/acpi/scan.c
-index 6d3448895382..f252d65ee227 100644
---- a/drivers/acpi/scan.c
-+++ b/drivers/acpi/scan.c
-@@ -1448,8 +1448,10 @@ int acpi_dma_get_range(struct device *dev, u64 *dma_addr, u64 *offset,
-  * acpi_dma_configure - Set-up DMA configuration for the device.
-  * @dev: The pointer to the device
-  * @attr: device dma attributes
-+ * @input_id: input device id const value pointer
-  */
--int acpi_dma_configure(struct device *dev, enum dev_dma_attr attr)
-+int acpi_dma_configure_id(struct device *dev, enum dev_dma_attr attr,
-+			  const u32 *input_id)
- {
- 	const struct iommu_ops *iommu;
- 	u64 dma_addr = 0, size = 0;
-@@ -1461,7 +1463,7 @@ int acpi_dma_configure(struct device *dev, enum dev_dma_attr attr)
+-		if (masked_rid < rid_base || masked_rid >= rid_base + rid_len)
++		if (masked_id < id_base || masked_id >= id_base + id_len)
+ 			continue;
  
- 	iort_dma_setup(dev, &dma_addr, &size);
+ 		phandle_node = of_find_node_by_phandle(phandle);
+@@ -2288,20 +2288,20 @@ int of_map_rid(struct device_node *np, u32 rid,
+ 		}
  
--	iommu = iort_iommu_configure(dev);
-+	iommu = iort_iommu_configure_id(dev, input_id);
- 	if (PTR_ERR(iommu) == -EPROBE_DEFER)
- 		return -EPROBE_DEFER;
+ 		if (id_out)
+-			*id_out = masked_rid - rid_base + out_base;
++			*id_out = masked_id - id_base + out_base;
  
-@@ -1470,7 +1472,7 @@ int acpi_dma_configure(struct device *dev, enum dev_dma_attr attr)
+-		pr_debug("%pOF: %s, using mask %08x, rid-base: %08x, out-base: %08x, length: %08x, rid: %08x -> %08x\n",
+-			np, map_name, map_mask, rid_base, out_base,
+-			rid_len, rid, masked_rid - rid_base + out_base);
++		pr_debug("%pOF: %s, using mask %08x, id-base: %08x, out-base: %08x, length: %08x, id: %08x -> %08x\n",
++			np, map_name, map_mask, id_base, out_base,
++			id_len, id, masked_id - id_base + out_base);
+ 		return 0;
+ 	}
  
+-	pr_info("%pOF: no %s translation for rid 0x%x on %pOF\n", np, map_name,
+-		rid, target && *target ? *target : NULL);
++	pr_info("%pOF: no %s translation for id 0x%x on %pOF\n", np, map_name,
++		id, target && *target ? *target : NULL);
+ 
+ 	/* Bypasses translation */
+ 	if (id_out)
+-		*id_out = rid;
++		*id_out = id;
  	return 0;
  }
--EXPORT_SYMBOL_GPL(acpi_dma_configure);
-+EXPORT_SYMBOL_GPL(acpi_dma_configure_id);
+-EXPORT_SYMBOL_GPL(of_map_rid);
++EXPORT_SYMBOL_GPL(of_map_id);
+diff --git a/include/linux/of.h b/include/linux/of.h
+index c669c0a4732f..b7934566a1aa 100644
+--- a/include/linux/of.h
++++ b/include/linux/of.h
+@@ -554,10 +554,18 @@ bool of_console_check(struct device_node *dn, char *name, int index);
  
- static void acpi_init_coherency(struct acpi_device *adev)
- {
-diff --git a/include/acpi/acpi_bus.h b/include/acpi/acpi_bus.h
-index a92bea7184a8..79eb4b9c86f2 100644
---- a/include/acpi/acpi_bus.h
-+++ b/include/acpi/acpi_bus.h
-@@ -587,8 +587,13 @@ bool acpi_dma_supported(struct acpi_device *adev);
- enum dev_dma_attr acpi_get_dma_attr(struct acpi_device *adev);
- int acpi_dma_get_range(struct device *dev, u64 *dma_addr, u64 *offset,
- 		       u64 *size);
--int acpi_dma_configure(struct device *dev, enum dev_dma_attr attr);
--
-+int acpi_dma_configure_id(struct device *dev, enum dev_dma_attr attr,
-+			   const u32 *input_id);
-+static inline int acpi_dma_configure(struct device *dev,
-+				     enum dev_dma_attr attr)
-+{
-+	return acpi_dma_configure_id(dev, attr, NULL);
-+}
- struct acpi_device *acpi_find_child_device(struct acpi_device *parent,
- 					   u64 address, bool check_children);
- int acpi_is_root_bridge(acpi_handle);
-diff --git a/include/linux/acpi.h b/include/linux/acpi.h
-index d661cd0ee64d..6d2c47489d90 100644
---- a/include/linux/acpi.h
-+++ b/include/linux/acpi.h
-@@ -905,6 +905,13 @@ static inline int acpi_dma_configure(struct device *dev,
- 	return 0;
- }
+ extern int of_cpu_node_to_id(struct device_node *np);
  
-+static inline int acpi_dma_configure_id(struct device *dev,
-+					enum dev_dma_attr attr,
-+					const u32 *input_id)
+-int of_map_rid(struct device_node *np, u32 rid,
++int of_map_id(struct device_node *np, u32 id,
+ 	       const char *map_name, const char *map_mask_name,
+ 	       struct device_node **target, u32 *id_out);
+ 
++static inline int of_map_rid(struct device_node *np, u32 rid,
++			     const char *map_name,
++			     const char *map_mask_name,
++			     struct device_node **target, u32 *id_out)
 +{
-+	return 0;
++	return of_map_id(np, rid, map_name, map_mask_name, target, id_out);
 +}
 +
- #define ACPI_PTR(_ptr)	(NULL)
+ #else /* CONFIG_OF */
  
- static inline void acpi_device_set_enumerated(struct acpi_device *adev)
-diff --git a/include/linux/acpi_iort.h b/include/linux/acpi_iort.h
-index 8c71f92b92ef..cb9f079a7358 100644
---- a/include/linux/acpi_iort.h
-+++ b/include/linux/acpi_iort.h
-@@ -39,7 +39,8 @@ void acpi_configure_pmsi_domain(struct device *dev);
- int iort_pmsi_get_dev_id(struct device *dev, u32 *dev_id);
- /* IOMMU interface */
- void iort_dma_setup(struct device *dev, u64 *dma_addr, u64 *size);
--const struct iommu_ops *iort_iommu_configure(struct device *dev);
-+const struct iommu_ops *iort_iommu_configure_id(struct device *dev,
-+						const u32 *id_in);
- int iort_iommu_msi_get_resv_regions(struct device *dev, struct list_head *head);
- #else
- static inline void acpi_iort_init(void) { }
-@@ -56,8 +57,8 @@ static inline void acpi_configure_pmsi_domain(struct device *dev) { }
- /* IOMMU interface */
- static inline void iort_dma_setup(struct device *dev, u64 *dma_addr,
- 				  u64 *size) { }
--static inline const struct iommu_ops *iort_iommu_configure(
--				      struct device *dev)
-+static inline const struct iommu_ops *iort_iommu_configure_id(
-+				      struct device *dev, const u32 *id_in)
- { return NULL; }
- static inline
- int iort_iommu_msi_get_resv_regions(struct device *dev, struct list_head *head)
+ static inline void of_core_init(void)
+@@ -978,6 +986,13 @@ static inline int of_cpu_node_to_id(struct device_node *np)
+ 	return -ENODEV;
+ }
+ 
++static inline int of_map_id(struct device_node *np, u32 id,
++			     const char *map_name, const char *map_mask_name,
++			     struct device_node **target, u32 *id_out)
++{
++	return -EINVAL;
++}
++
+ static inline int of_map_rid(struct device_node *np, u32 rid,
+ 			     const char *map_name, const char *map_mask_name,
+ 			     struct device_node **target, u32 *id_out)
 -- 
 2.26.1
 
