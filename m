@@ -2,59 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 643AA1DC755
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 09:08:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD0B71DC759
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 09:09:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cH844nfVMzHdZoDualeYPuA0M+td5V9aKIHO3axg2CQ=; b=nc1EFk4pCpd4ZQ
-	Be5ibCc5IJcw8Oj6Sk8j5CgW5wGbsSU7BDXTZtPAtnRKIFT4XHqRKDhg5Mt86sopvd+dt8OFg9Cvg
-	gi9LUnHufTFY+7oXd2NBdQgxZJ5CjIoWTaIF3E+y3A9KkM4jUO+w8yIL19CMCLK1+ppsirUG8/KwS
-	LQZ3KKn/Rk8sIvkA6AlOQXIzDoSMmMBIdb9tRJU6HXRu68rJYdZ7ZNmFIhcIY2/FamGA/6c/Ax3nD
-	GeKGdqp8ykp6e0gd8uJO8ctx0cItQPjjtweUQm0UvfIqJI40HPxT7+G5BaATw/LX/9kh+646rCSsg
-	prParlfdsBAcXDgQlEFw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ON4796dIw8Xlsk/3EDqcUZKLOOCv9fKI9UpBjRS+1XE=; b=sTS
+	7nCFEqHborB7yrZVZXZcfoKTNQmQPTzn9U+oLhOhF7wr3UGM7UdvQhop67nPyKoB+P3sSUArYWUQW
+	Y9qxryqwMExomrICEXeYaVhp1Wn/iqoLTxFCcxOjgV0KXjNGbfVwGC+QMf0+ARsb7rKVJEF8F0WmH
+	7TI8x9XvXSu9jR2vd/2hsn+GGN1Tmvw3G5iCpjPtYS1z9NI8pBPzN9t7YK0OlMqh8fSHh+5itK84W
+	W/6hbL38TiosMT8KKVLRZ/rOGJhXhBGREbiEUusLJTkDlEsMKg1hDQcHDwzBJwyhddC2+tcEK+N9s
+	sTmXSlVn4T9TLUMZbtg/rr26EcUFN1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbfJK-00021C-UO; Thu, 21 May 2020 07:08:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1jbfKC-0002Y7-PK; Thu, 21 May 2020 07:09:04 +0000
+Received: from spam.zju.edu.cn ([61.164.42.155] helo=zju.edu.cn)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbfIv-0001qZ-8i
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 07:07:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4DCBD6E;
- Thu, 21 May 2020 00:07:43 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.114])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DAF093F52E;
- Thu, 21 May 2020 00:07:40 -0700 (PDT)
-Date: Thu, 21 May 2020 08:07:38 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v4 7/7] firmware: smccc: Add ARCH_SOC_ID support
-Message-ID: <20200521061228.GA1131@bogus>
-References: <20200518091222.27467-1-sudeep.holla@arm.com>
- <20200518091222.27467-8-sudeep.holla@arm.com>
- <CAK8P3a20R+H6m5GZj2_0w3s-xF+J_qSVrQH8EjyQXe6+9WTYxw@mail.gmail.com>
- <20200518115546.GB16262@bogus>
- <CAK8P3a3bOEL5wYFc1Fjg1vAT51NumzO0iUSroHQLSUt8WpZL7g@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a3bOEL5wYFc1Fjg1vAT51NumzO0iUSroHQLSUt8WpZL7g@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ id 1jbfK4-0002TQ-83
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 07:08:57 +0000
+Received: from localhost.localdomain (unknown [222.205.77.158])
+ by mail-app3 (Coremail) with SMTP id cC_KCgB3P7UAKcZe4sHmAA--.4260S4;
+ Thu, 21 May 2020 15:08:52 +0800 (CST)
+From: Dinghao Liu <dinghao.liu@zju.edu.cn>
+To: dinghao.liu@zju.edu.cn,
+	kjlu@umn.edu
+Subject: [PATCH] i2c: stm32f7: Fix runtime PM imbalance in
+ stm32f7_i2c_unreg_slave
+Date: Thu, 21 May 2020 15:08:47 +0800
+Message-Id: <20200521070847.13957-1-dinghao.liu@zju.edu.cn>
+X-Mailer: git-send-email 2.17.1
+X-CM-TRANSID: cC_KCgB3P7UAKcZe4sHmAA--.4260S4
+X-Coremail-Antispam: 1UD129KBjvdXoWrKrWrZF15CFyUGr4xXF1UKFg_yoWfArc_Gr
+ 1ku3ZrCw1vgFZ5J34UGF98ZryS9r98W348Zw40yFySk34Fvw1DGrWUZr93Cr47XrsrKr12
+ k3WDWF1fArsrCjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUbxAFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AK
+ wVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20x
+ vE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26rxl6s0DM28EF7xvwVC2z280
+ aVAFwI0_GcCE3s1l84ACjcxK6I8E87Iv6xkF7I0E14v26rxl6s0DM2AIxVAIcxkEcVAq07
+ x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj6xIIjxv20xvE14v26r1Y6r17
+ McIj6I8E87Iv67AKxVW8JVWxJwAm72CE4IkC6x0Yz7v_Jr0_Gr1lF7xvr2IYc2Ij64vIr4
+ 1lF7I21c0EjII2zVCS5cI20VAGYxC7MxkIecxEwVAFwVW8CwCF04k20xvY0x0EwIxGrwCF
+ 04k20xvE74AGY7Cv6cx26r4fKr1UJr1l4I8I3I0E4IkC6x0Yz7v_Jr0_Gr1lx2IqxVAqx4
+ xG67AKxVWUJVWUGwC20s026x8GjcxK67AKxVWUGVWUWwC2zVAF1VAY17CE14v26r1q6r43
+ MIIYrxkI7VAKI48JMIIF0xvE2Ix0cI8IcVAFwI0_Jr0_JF4lIxAIcVC0I7IYx2IY6xkF7I
+ 0E14v26r4j6F4UMIIF0xvE42xK8VAvwI8IcIk0rVW3JVWrJr1lIxAIcVC2z280aVAFwI0_
+ Gr0_Cr1lIxAIcVC2z280aVCY1x0267AKxVW8Jr0_Cr1UYxBIdaVFxhVjvjDU0xZFpf9x0J
+ U67KsUUUUU=
+X-CM-SenderInfo: qrrzjiaqtzq6lmxovvfxof0/1tbiAgEHBlZdtOPItAACsg
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_000745_397394_CB5B6023 
-X-CRM114-Status: GOOD (  22.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200521_000856_583508_7570AD13 
+X-CRM114-Status: GOOD (  10.55  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,88 +73,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
- Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Pierre-Yves MORDRET <pierre-yves.mordret@st.com>, linux-i2c@vger.kernel.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 11:51:47PM +0200, Arnd Bergmann wrote:
-> On Mon, May 18, 2020 at 1:55 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > On Mon, May 18, 2020 at 11:30:21AM +0200, Arnd Bergmann wrote:
-> > > On Mon, May 18, 2020 at 11:12 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > >
-> > > > +static ssize_t
-> > > > +jep106_cont_bank_code_show(struct device *dev, struct device_attribute *attr,
-> > > > +                          char *buf)
-> > > > +{
-> > > > +       return sprintf(buf, "0x%02x\n", JEP106_BANK_CONT_CODE(soc_id_version));
-> > > > +}
-> > > > +
-> > > > +static DEVICE_ATTR_RO(jep106_cont_bank_code);
-> > > > +
-> > > > +static ssize_t
-> > > > +jep106_identification_code_show(struct device *dev,
-> > > > +                               struct device_attribute *attr, char *buf)
-> > > > +{
-> > > > +       return sprintf(buf, "0x%02x\n", JEP106_ID_CODE(soc_id_version));
-> > > > +}
-> > >
-> > > I think we should try hard to avoid nonstandard attributes for the soc device.
-> > >
-> >
-> > I agree with that in general but this is bit different for below mentioned
-> > reason.
-> >
-> > > Did you run into a problem with finding one of the existing attributes
-> > > that can be used to hold the fields?
-> > >
-> >
-> > Not really! The 2 JEP106 codes can be used to derive the manufacturer which
-> > could match one of the existing attributes. However doing so might require
-> > importing the huge JEP106 list as it needs to be maintained and updated
-> > in the kernel. Also that approach will have the compatibility issue and
-> > that is the reason for introducing these attributes representing raw
-> > values for userspace.
->
-> I was thinking they codes could just be part of the normal strings rather
-> than get translated. Can you give an example what they would look like
-> with your current code?
->
+pm_runtime_get_sync() increments the runtime PM usage counter even
+the call returns an error code. Thus a pairing decrement is needed
+on the error handling path to keep the counter balanced.
 
-Sure. Couple of example:
-Cont Code   Identifier       Manufacturer
-0		0x1		AMD
-0		0x0e		Freescale (Motorola)
-4		0x3b		ARM
+Signed-off-by: Dinghao Liu <dinghao.liu@zju.edu.cn>
+---
+ drivers/i2c/busses/i2c-stm32f7.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-I initially thought of value like "jep106-0-1" for AMD "jep-4-3b" for
-ARM,..etc for the standard attribute family or machine. But I was not
-convinced fully on that approach as it will be deviation from normal
-values in those attributes. Further this represents the vendor name
-rather than the family or machine.
+diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+index 330ffed011e0..6f5f0fa68385 100644
+--- a/drivers/i2c/busses/i2c-stm32f7.c
++++ b/drivers/i2c/busses/i2c-stm32f7.c
+@@ -1837,8 +1837,10 @@ static int stm32f7_i2c_unreg_slave(struct i2c_client *slave)
+ 	WARN_ON(!i2c_dev->slave[id]);
+ 
+ 	ret = pm_runtime_get_sync(i2c_dev->dev);
+-	if (ret < 0)
++	if (ret < 0) {
++		pm_runtime_put_autosuspend(i2c_dev->dev);
+ 		return ret;
++	}
+ 
+ 	if (id == 0) {
+ 		mask = STM32F7_I2C_OAR1_OA1EN;
+-- 
+2.17.1
 
-> If  you think they should be standard attributes, how about adding them
-> to the default list, and hardcoding them in the other soc device drivers
-> based on the information we have available there?
->
-
-That may be possible, I can take a look at the existing drivers and
-check if that is feasible(which I think should be). Thanks for that
-suggestion.
-
---
-Regards,
-Sudeep
-
-[1] https://github.com/skottler/memtest86/blob/master/jedec_id.h
 
 _______________________________________________
 linux-arm-kernel mailing list
