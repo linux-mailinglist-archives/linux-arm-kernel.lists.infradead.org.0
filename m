@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9217D1DC531
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 04:29:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34BF21DC533
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 04:30:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yqgwsxQQ1875ZlnRip0rHa0m7rQ3VXoqeduQpdIAbus=; b=ZaNHjU6rndmAfR
-	/qm50Guknwu7sI25uPmiMZZq5yEqMvl9n4gOsFzCAgsh+mTkU59MIRYciKhJRtUnNL4/MzTvNzime
-	a1+3oZo9cUm56QNsVhMARfOuttE7025+hqF7h5rr1UyoFAWRpPOUKZNfz+9mQX8AScGv25WefkyOV
-	W9vzUtAGKn+cTCgcOahf+FF8IN8RxsxWLsxkNHcnGwSS9m6qQC0IpG66QR35N5U5wan4mdBYglfwK
-	ICsEd2UvzLuXz9HYGzvzO4G/xBdOG8LSNjLxvWP4EfXBmuse5Ro7FnAg7Hf2doSZKmpIYtTSJQCe6
-	lYI6A20yP6sbfRmvKHqw==;
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
+	:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=JcTczfl3q68UJFlxherYSjyfeu1Zi5yxFxnAwL2j82c=; b=ntYIH1OZrFNq3K
+	TjbAKV8ge484S9S7GoCD7RllYNxRxA5HYhO89inN7yS5+M3SV+QNvpHovf63MZb5+n6lQbYfxqt4t
+	rHzOMox1ka6d4ulWGRLRUCnsL9dTOlJB7KX9altrgps0YFsJ2C1uqpQGz3qAIOqRQcEa2rXz14FKh
+	VQqTqXtrtuUHyjjOExQeC1fyzHSbQWMrMpIcMVS+87YYNrqAg1HpxxyGkm28tP6SjJn2aEM/af2++
+	CsmDgbC4BBRR98DTXe0UMCzR5sE4Mu1WMhp3RyqCGY9pzw03RwcK+u6+sRjDx+QY+21UR4iZIfsjJ
+	uLfuDJvKdcOdrMO/SrMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbaxQ-0003kf-Qq; Thu, 21 May 2020 02:29:16 +0000
-Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
+	id 1jbayV-0005FT-6o; Thu, 21 May 2020 02:30:25 +0000
+Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbaxI-0003ja-BX
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 02:29:09 +0000
-Received: by mail-vk1-xa42.google.com with SMTP id o8so1325599vkd.12
+ id 1jbayC-00045d-O1
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 02:30:06 +0000
+Received: by mail-yb1-xb4a.google.com with SMTP id n7so3772673ybh.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 19:29:00 -0700 (PDT)
+ Wed, 20 May 2020 19:30:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Kqq9nD5oDHucLRSSU1RU5vZGB/pj8xXntJ0sAJIv3cA=;
- b=na4/xlvnbUwhslC6KgAbQi8W0vpMvvs4MvGH83Fgv2W39mdUISpR0XNdBzPsEFDsrR
- wlNDQOg0hXXwgG8qB+VhsVpATIfIb9sW9f9LokQ1hpBClJyRaYyz53t3CbcQ4wjFMRcR
- LUD33rfMgddHHoPs1qO3Ew3V1WQiS/0Kxlp4Icpk08OIXBqu49Qef6Wl6SuguLFkH9xu
- q5I+qMUB5ZyuWWc7c0GvEsHp5h2OcQVW1HQLodngcUsmvEx9ayfG5vAMyYuYIanoB2Ou
- MeuqzDXykMCYn1Fu7Z9le/wdQdO6hZfjEzuUvlXDKlGKZCBB7wio70AoXfEtGzM/+CSm
- PS0w==
+ h=date:in-reply-to:message-id:mime-version:subject:from:to:cc;
+ bh=GmgtVtVgHNPES93BDzXnfSo44X+McssYchIj21dJws8=;
+ b=h/2EFd4AC7sIFTrt1xLkWSxOu3mLfhQQi6p/mm7JYl0UbNIOfRRlgfSo/chRxTrXQm
+ rCDXsYuVP2sDv0ytoFjANMsZq9O0wpW7ARAqVnVjyT7QwDUEoomcvcwvBJKsAAYz6vSt
+ jbjv1ISVSlWmW514/AafL2CTuZEQ02KRhkolt5bw3QyNOjU0EFpaBD/jsUnSVcd/ZA1z
+ vaihwwY5fGbWvFuEj+XqgPfORL0lYLTwqsY6W5ptfhWpOZggCciz9Jq3x6XIalNwiHLq
+ ZiUFgyOXBfMl5Dk2GVY9OSMKw3rFW+XG7Qj7SbJvptXEtTuyVcOpG7JqyiLgm28K86oW
+ 1oDA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Kqq9nD5oDHucLRSSU1RU5vZGB/pj8xXntJ0sAJIv3cA=;
- b=gLLAMNRZEiw/2/zeDrsIFrR21sLrzDwR5QRC0p+WF7+cMivY16ultz2s7mWm/rVqwm
- 4YeLExNo+xxudH3eT5Mi+I7cutmA9jG8Ha7DTMKc5d9A6rfuSIfXjZNcGCO685n4BQ3c
- z+6VvaCrfI7/YvLL/H0GsqGhzxTmWpA6GRTGKueZDtk8OjBMs0qoCFVBAj+3FqLjutw3
- 5+tBKFIl0PLnL/TsMvMomONPOC40K4L41kVvqsdwsY053P9+EEmIgw7jOFui1Pg1HsEG
- GWjYM/4MP97BYn1cuyy0WFaosS8R+8k4VRCqf1PUfl/lIyVoV8y54HNLmuWJbN6565J4
- ZCVQ==
-X-Gm-Message-State: AOAM533LhmKSimgiNej2DI/h74klVXv26Cj99+gxqy82a2m4bkzIj2cr
- SjVnKVvvLkmKPaECOX8ZO1VDjZ4XVx8UMEfX7+PiAxT5
-X-Google-Smtp-Source: ABdhPJwdp5UARJ2fw0dxo/YuRKg6X9FX5YNwbJGGTaGrftOIdyDKLnfr57gJgBsYq/n0VFly3FKHbu44QMxfr0Of3AI=
-X-Received: by 2002:ac5:c92c:: with SMTP id u12mr6208199vkl.93.1590028139033; 
- Wed, 20 May 2020 19:28:59 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200508020106.136652-1-pcc@google.com>
- <20200513180914.50892-1-pcc@google.com>
- <20200513202808.GY21779@arm.com>
- <CAMn1gO4V05nD-Tq4dES0QyO73bAT-Nwo1ABnz0nuous8Rq+dGA@mail.gmail.com>
- <20200518095313.GZ21779@arm.com>
- <CAMn1gO4c3-hG_i6ZWsk-+oUGQQBdzFJRMrpehT3OFERF2Z7nrg@mail.gmail.com>
- <20200520085502.GC24293@willie-the-truck> <20200520092558.GI5031@arm.com>
-In-Reply-To: <20200520092558.GI5031@arm.com>
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version:subject
+ :from:to:cc;
+ bh=GmgtVtVgHNPES93BDzXnfSo44X+McssYchIj21dJws8=;
+ b=V3VpZBv6yMLC4Yy8AeE6X2b+C3IPvT25HRGjSMbD2WECWZTYeCyapUluv7lEfUjb88
+ 1hgOeQDPuPqnld3VY3sLXBlkLeCVfpHvmUzNcufLZcABub2/PnVx1Jbu6VAZ66Ndq+pF
+ gOBn/wRSs8juxNBD1AySYfHovhcUlN6SBRdKZwDJNSICJgklByw+4aGJfMWB0BV7ko+J
+ fx1ZmC2rPw0YLL5rP9jEVBI/Q2VRprZYFpsdDM2EOFA2vz0nP9/YuLyh5ZqyH0bP6S1y
+ LSwng89NOLHfpeu/uWcaDDmdnToytFCRBVzJRl4HP5zPb1e/VEZcYSS9rkk/iq677ZP1
+ LqMA==
+X-Gm-Message-State: AOAM532Bsu7DI5ClVVXpTowivUwryNkPB1oDO2MUVnnyIn8hjxVxky7I
+ BQrWPzqRLhd+ODworRFubaD66K8=
+X-Google-Smtp-Source: ABdhPJzxCJf3CVj584WP3MJVWM/YSQoxqYX5tlLcB2X4htRq9z7LQDbvHH+OFK5EIgRyJNXm10Zhpdc=
+X-Received: by 2002:a25:9304:: with SMTP id f4mr11988662ybo.309.1590028201686; 
+ Wed, 20 May 2020 19:30:01 -0700 (PDT)
+Date: Wed, 20 May 2020 19:29:40 -0700
+In-Reply-To: <CAMn1gO7VWBcbMvqNeyBdfpO71kfhrZbHwkOC0JeSX13_HUMmWA@mail.gmail.com>
+Message-Id: <20200521022943.195898-1-pcc@google.com>
+Mime-Version: 1.0
+X-Mailer: git-send-email 2.26.2.761.g0e0b3e54be-goog
+Subject: [PATCH v6 0/3] arm64: Expose FAR_EL1 tag bits in sigcontext
 From: Peter Collingbourne <pcc@google.com>
-Date: Wed, 20 May 2020 19:28:46 -0700
-Message-ID: <CAMn1gO7VWBcbMvqNeyBdfpO71kfhrZbHwkOC0JeSX13_HUMmWA@mail.gmail.com>
-Subject: Re: [PATCH v6] arm64: Expose FAR_EL1 tag bits in sigcontext
-To: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ Evgenii Stepanov <eugenis@google.com>, Kostya Serebryany <kcc@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, 
+ Dave Martin <Dave.Martin@arm.com>, Will Deacon <will@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, 
+ "Eric W. Biederman" <ebiederm@xmission.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_192908_412351_AE7CDF0B 
-X-CRM114-Status: GOOD (  31.64  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200520_193004_794246_519D0879 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:b4a listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -89,8 +86,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,101 +98,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Eric W. Biederman" <ebiederm@xmission.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Oleg Nesterov <oleg@redhat.com>,
- Kostya Serebryany <kcc@google.com>,
+Cc: Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Evgenii Stepanov <eugenis@google.com>, Richard Henderson <rth@twiddle.net>
+ Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 2:26 AM Dave Martin <Dave.Martin@arm.com> wrote:
->
-> On Wed, May 20, 2020 at 09:55:03AM +0100, Will Deacon wrote:
-> > On Tue, May 19, 2020 at 03:00:12PM -0700, Peter Collingbourne wrote:
-> > > On Mon, May 18, 2020 at 2:53 AM Dave Martin <Dave.Martin@arm.com> wrote:
-> > > > On Thu, May 14, 2020 at 05:58:21PM -0700, Peter Collingbourne wrote:
-> > > > > diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-> > > > > index baa88dc02e5c..5867f2fdbe64 100644
-> > > > > --- a/arch/arm64/kernel/signal.c
-> > > > > +++ b/arch/arm64/kernel/signal.c
-> > > > > @@ -648,6 +648,7 @@ static int setup_sigframe(struct
-> > > > > rt_sigframe_user_layout *user,
-> > > > >                 __put_user_error(ESR_MAGIC, &esr_ctx->head.magic, err);
-> > > > >                 __put_user_error(sizeof(*esr_ctx), &esr_ctx->head.size, err);
-> > > > >                 __put_user_error(current->thread.fault_code,
-> > > > > &esr_ctx->esr, err);
-> > > > > +               current->thread.fault_code = 0;
-> > > >
-> > > > Perhaps, but we'd need to be careful.  For example, can we run out of
-> > > > user stack before this and deliver a SIGSEGV, but with the old
-> > > > fault_code still set?  Then we'd emit the old fault code with the
-> > > > new "can't deliver signal" signal, which doesn't make sense.
-> > > >
-> > > > Stuff may also go wrong with signal prioritisation.
-> > > >
-> > > > If a higher-priority signal (say SIGINT) comes in after a data abort
-> > > > enters the kernel but before the resulting SIGSEGV is dequeued for
-> > > > delivery, wouldn't we deliver SIGINT first, with the bogus fault code?
-> > > > With your change we'd then have cleared the fault code by the time we
-> > > > deliver the SIGSEGV it actually relates to, if I've understood right.
-> > > >
-> > > > Today, I think we just attach that fault code to every signal that's
-> > > > delivered until something overwrites or resets it, which means that
-> > > > a signal that needs fault_code gets it, at the expense of attaching
-> > > > it to a bunch of other random signals too.
-> > > >
-> > > >
-> > > > Checking the signal number and si_code might help us to know what we
-> > > > should be doing with fault_code.  We need to have sure userspace can't
-> > > > trick us with a non kernel generated signal here.  It would also be
-> > > > necessary to check how PTRACE_SETSIGINFO interacts with this.
-> > >
-> > > With these possible interactions in mind I think we should store the
-> > > fault code and fault address in kernel_siginfo instead of
-> > > thread_struct (and clear these fields when we receive a siginfo from
-> > > userspace, i.e. in copy_siginfo_from_user which is used by
-> > > ptrace(PTRACE_SETSIGINFO) among other places). That way, the
-> > > information is clearly associated with the signal itself and not the
-> > > thread, so we don't need to worry about our signal being delivered out
-> > > of order.
-> >
-> > Hmm, I can't see a way to do that that isn't horribly invasive in the core
-> > signal code. Can you?
+The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
+address exposed via siginfo.si_addr and sigcontext.fault_address. However,
+the tag bits may be needed by tools in order to accurately diagnose
+memory errors, such as HWASan [1] or future tools based on the Memory
+Tagging Extension (MTE).
 
-I think I've come up with a way that doesn't seem to be too invasive.
-See patch #1 of the series that I'm about to send out.
+We should not stop clearing these bits in the existing fault address fields,
+because there may be existing userspace applications that are expecting the tag
+bits to be cleared. Instead, create a fault_addr_top_byte_context in sigcontext
+(similar to the existing esr_context), and store the tag bits of FAR_EL1 there.
 
-> > But generally, I agree: the per-thread handling of fault_address and
-> > fault_code appears to be quite broken in the face of signal prioritisation
-> > and signals that don't correspond directly to hardware trap. It would be
-> > nice to have some tests for this...
-> >
-> > If we want to pile on more bodges, perhaps we could stash the signal number
-> > to which the fault_{address,code} relate, and then check that at delivery
-> > and clear on a match. I hate it.
->
-> I agree with Daniel's suggestion in principle, but I was also concerned
-> about whether it would be too invasive elsewhere.
->
-> Question though: does the core code take special care to make sure that
-> a force_sig cannot be outprioritised by a regular signal?  If so,
-> perhaps we get away with it.  I ask this, because the same same issue
-> may be hitting other arches otherwise.
+[1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
 
-Not as far as I can tell. There does appear to be prioritisation for
-synchronous signals [1] but as far as I can tell nothing to
-distinguish one of these signals from one with the same signal number
-sent from userspace (e.g. via kill(2)).
+Peter Collingbourne (3):
+  signal: Allow architectures to store arch-specific data in
+    kernel_siginfo
+  arm64: Move fault address and fault code into kernel_siginfo
+  arm64: Expose FAR_EL1 tag bits in sigcontext
 
-Peter
+ Documentation/arm64/tagged-pointers.rst  |  17 ++--
+ arch/arm64/include/asm/exception.h       |   2 +-
+ arch/arm64/include/asm/processor.h       |   2 -
+ arch/arm64/include/asm/signal.h          |  19 ++++
+ arch/arm64/include/asm/traps.h           |   8 +-
+ arch/arm64/include/uapi/asm/sigcontext.h |  24 +++--
+ arch/arm64/kernel/debug-monitors.c       |   4 +-
+ arch/arm64/kernel/entry-common.c         |   2 -
+ arch/arm64/kernel/probes/uprobes.c       |  18 ++--
+ arch/arm64/kernel/ptrace.c               |   2 +-
+ arch/arm64/kernel/signal.c               |  42 ++++++--
+ arch/arm64/kernel/signal32.c             |  15 ++-
+ arch/arm64/kernel/sys_compat.c           |   9 +-
+ arch/arm64/kernel/traps.c                | 121 +++++++++++++++++++----
+ arch/arm64/mm/fault.c                    | 111 ++++++---------------
+ include/linux/signal.h                   |   2 -
+ include/linux/signal_types.h             |   3 +
+ kernel/signal.c                          |  17 +++-
+ 18 files changed, 259 insertions(+), 159 deletions(-)
+ create mode 100644 arch/arm64/include/asm/signal.h
 
-[1] https://github.com/torvalds/linux/blob/b85051e755b0e9d6dd8f17ef1da083851b83287d/kernel/signal.c#L222
+-- 
+2.26.2.761.g0e0b3e54be-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
