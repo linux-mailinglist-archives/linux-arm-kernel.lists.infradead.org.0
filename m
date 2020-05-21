@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE1ED1DD042
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:41:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E42E51DD062
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:44:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U8BKkBXYAV5M2EETVLaDAch0wacTrYGxNgoWSyWQbUk=; b=f7cvvFgfGFQF9h
-	DVPQ2c95G6zOQT9RlwJJ6XGx5kKwOwcSdwvFAWYhnhS6MpBLEsWwQeJl1BWBeR1klavaP2cNXFHOX
-	gmneoP3NJ06JnmkD5Ce35Z2ehKY/nivzajC/nicbVKbS9nWhfhP0WtuJ0nx8i+DGyPhWGuFCXwrAT
-	YcjHJnupY3gkbSH9AA6r+4gLMVn4MX08Ug2S78FxSbDKH0p55WYYbO3+qIbRLP0OQK57HERJriZKx
-	wWxlyvkkCNR70BCD+lLFlzJRgbiBBEXjZUrtTnJAq1vDMUjEhc67cYSWYnkIjMFBuwBvm31yxynh/
-	b2IdXo4rV9HqyhOGLD9w==;
+	List-Owner; bh=FFXdi18PbbwAhA2PoE7ou04to4JttXmVbjfFFCQuYac=; b=UmcUSROKX8kFV6
+	MPKQU5GIK6AVS1DnRAr+LPcCdZrGjJRRy33ayYePITTlBZV6wYR1hcUVoTc6C1fURwe/LXycjv4z7
+	/5COmdes6GoHoV6E+0JTEwccJb7shNAUDmO1UTzKy1Xvjh7qPhwVCP6jg1K79/xypj8RRFu9efFTw
+	W7EwsGy9m2gPVN6rL9dJh6enVRPuAGFQNITtfwp/AYzwleSto7HQjjo0T+TxfcTEOLvnAGO2uxTPq
+	qLyTUdCFWxTy925tTK65QrB9OLSMPMn5IABuo5uLCitNgDk3XdJ0F2xF2nHrd61+UMbKRLpH2L+Xf
+	/fw4HarQOUnwCirOmssA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbmNq-0001wj-LQ; Thu, 21 May 2020 14:41:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbmNc-0001vA-7v
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:41:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4BC44D6E;
- Thu, 21 May 2020 07:41:01 -0700 (PDT)
-Received: from e110455-lin.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 12AA03F305;
- Thu, 21 May 2020 07:41:01 -0700 (PDT)
-Received: by e110455-lin.cambridge.arm.com (Postfix, from userid 1000)
- id CEAED682B71; Thu, 21 May 2020 15:40:59 +0100 (BST)
-Date: Thu, 21 May 2020 15:40:59 +0100
-From: Liviu Dudau <liviu.dudau@arm.com>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 04/16] arm64: dts: arm: Fix node address fields
-Message-ID: <20200521144059.GZ159988@e110455-lin.cambridge.arm.com>
-References: <20200505165212.76466-1-andre.przywara@arm.com>
- <20200505165212.76466-5-andre.przywara@arm.com>
- <347cdcba-a1cf-d308-1cc2-6c2194f40d19@arm.com>
+	id 1jbmQP-0002R8-EY; Thu, 21 May 2020 14:43:57 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbmQE-0002PV-8s
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:43:47 +0000
+Received: by mail-lj1-x242.google.com with SMTP id w10so8619670ljo.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 May 2020 07:43:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tuQ1zvOklpezgOq1qrrrAXi9Q/2zL0O9meBuAgy373s=;
+ b=hNauZCE4ZyQrnO0nntQayyVk53MtCYFx0x+QupMIZuQorwHuDn4bhd0+45d7gZ6d8m
+ L6FJKZwUbwT0yCAebmlFe/U6MIDVfJOulUCJ9E6SQ5+CZAc5oTbh9r4VX1H+J+9/unKS
+ OtVccceu5GPEqBPyaLM8ED/+C7SRnRPsQL+dDOic0gp0369C/z+gCWjmEsqcMLSXWCyR
+ xny6xU29xdDdJPSNElcbiaSIP3X8p+JpzsMp8hNSzPEJra2Ys18vzOJkZcgtxG4AIRzr
+ r4c9E/zTfdzTR9j8Bx5HE4BOlhs5/j7qSSM0Q7hagrta2JhNIsPXZXw0yNeOAqCIV5hp
+ G74g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tuQ1zvOklpezgOq1qrrrAXi9Q/2zL0O9meBuAgy373s=;
+ b=PunYqTT2RkEEuX9dHkyvMW3BeJvDO0tKeXrLs06WJpjI4x31G/Sg32bXilcB6jUiuc
+ iuBmuMRBAH8FiasiwlTn9DLSjEvpY6iGyzrx6At9nNY07nRbx/oDDwedwkanxeXPuXM5
+ cMdTZ3iz6ZOL2gUofHCs+u2gwutHadMwW2hh0NJOMlBfy/eI0b/I4/Ggk9QIPnKZxxsu
+ C+rAy9GM0jOeYYsvLkR7Ti4A7WAsqmzcHqSs28Elo0HtgGyMOiPx4tfyyVqthT4ToTE1
+ K9SgKbazd+zPrzzdWIxbCvtEQa9CPNxSSpQtzugyzA8WnN0d2AJPWy28OlmEONHA+mCZ
+ 6cXQ==
+X-Gm-Message-State: AOAM531e0gq1GXjjuM+i1KbkNXeinUNDNncMZvoZI817769pSk5a/hjN
+ j/5plgAkuxcOKuqTYFXk4MFBxEwSigauGsb8hls=
+X-Google-Smtp-Source: ABdhPJzExRJlbujUemJvxqwrl+G4Cgtl0pUnc8oJA7iFqXep0LQNN0QQax7qtdllV0ZY5aX2u0RW9gWAArQn88T9G+4=
+X-Received: by 2002:a2e:6c0c:: with SMTP id h12mr5222291ljc.266.1590072223382; 
+ Thu, 21 May 2020 07:43:43 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <347cdcba-a1cf-d308-1cc2-6c2194f40d19@arm.com>
+References: <20200521110910.45518-1-tali.perry1@gmail.com>
+ <20200521110910.45518-3-tali.perry1@gmail.com>
+ <20200521142340.GM1634618@smile.fi.intel.com> <20200521143100.GA16812@ninjato>
+In-Reply-To: <20200521143100.GA16812@ninjato>
+From: Tali Perry <tali.perry1@gmail.com>
+Date: Thu, 21 May 2020 17:45:03 +0300
+Message-ID: <CAHb3i=vcVLWHjdiJoNZQrwJCqzszpOL7e9SAjqObsZCRH4ifwg@mail.gmail.com>
+Subject: Re: [PATCH v12 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
+ driver
+To: Wolfram Sang <wsa@the-dreams.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_074104_370835_C5B7F3EF 
-X-CRM114-Status: GOOD (  20.85  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200521_074346_313867_78C11567 
+X-CRM114-Status: GOOD (  17.87  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [tali.perry1[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [tali.perry1[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,127 +97,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Rob Herring <robh@kernel.org>,
- Andre Przywara <andre.przywara@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree <devicetree@vger.kernel.org>, Tomer Maimon <tmaimon77@gmail.com>,
+ Nancy Yuen <yuenn@google.com>, avifishman70@gmail.com,
+ Patrick Venture <venture@google.com>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Brendan Higgins <brendanhiggins@google.com>, Ofer Yehielli <ofery@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, kfting@nuvoton.com,
+ Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org, Benjamin Fair <benjaminfair@google.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBNYXkgMDUsIDIwMjAgYXQgMDY6MTg6MTlQTSArMDEwMCwgUm9iaW4gTXVycGh5IHdy
-b3RlOgo+IE9uIDIwMjAtMDUtMDUgNTo1MiBwbSwgQW5kcmUgUHJ6eXdhcmEgd3JvdGU6Cj4gPiBU
-aGUgQXJtIEx0ZC4gYm9hcmRzIHdlcmUgdXNpbmcgYW4gb3V0ZGF0ZWQgYWRkcmVzcyBjb252ZW50
-aW9uIGluIHRoZSBEVAo+ID4gbm9kZSBuYW1lcywgYnkgc2VwYXJhdGluZyB0aGUgaGlnaCBmcm9t
-IHRoZSBsb3cgMzItYml0cyBvZiBhbiBhZGRyZXNzIGJ5Cj4gPiBhIGNvbW1hLgo+IAo+IEkgdGhv
-dWdodCB0aGF0IGhpc3RvcmljYWxseSB0aGF0IHdhcyBkZWxpYmVyYXRlLCBzaW5jZSB0aGUgYWN0
-dWFsIHRoaW5nCj4gYmVpbmcgZW5jb2RlZCBpcyA8Y2hpcCBzZWxlY3Q+LDxhZGRyZXNzPiwgcmF0
-aGVyIHRoYW4ganVzdCBjb3NtZXRpY2FsbHkKPiBzcGxpdHRpbmcgYSA2NC1iaXQgYWRkcmVzcyB2
-YWx1ZT8KPiAKPiBPciBtYXliZSBJJ20gdGhpbmtpbmcgdG9vIGZhciBiYWNrIGFuZCB0aGluZ3Mg
-aGF2ZSBhbHJlYWR5IGNoYW5nZWQgaW4gdGhlCj4gbWVhbnRpbWUgOi8KClJvYmluIGlzIHJpZ2h0
-LCBpZiB5b3UgbG9vayBpbiB0aGUgIkFSTSBNb3RoZXJib2FyZCBFeHByZXNzIMK1QVRYIFRlY2hu
-aWNhbApSZWZlcmVuY2UgTWFudWFsIiwgaW4gdGhlIFJTMSBtZW1vcnkgbWFwIChha2EgIkNvcnRl
-eC1BIFNlcmllcyBtZW1vcnkgbWFwIikKdGhlIEV0aGVybmV0IGZvciBleGFtcGxlIGlzIGF0IENT
-MiBvZmZzZXQgMHgwMjAwMDAwMC4gQ1MyIGFyZWEgaXMgYmV0d2VlbgoweDE4MDAwMDAwIGFuZCAw
-eDFjMDAwMDAwLiBTbyBhY3R1YWwgcGh5c2ljYWwgYWRkcmVzcyBmb3IgTEFOOTExOCBpcwoweDFh
-MDAwMDAwLgoKWW91IG1pZ2h0IHdhbnQgdG8gZHJvcCB0aGlzIHBhdGNoIG9yIGNvbnZlcnQgdG8g
-cGh5c2ljYWwgYWRkcmVzc2VzLgoKQmVzdCByZWdhcmRzLApMaXZpdQoKPiAKPiBSb2Jpbi4KPiAK
-PiA+IFJlbW92ZSB0aGUgY29tbWEgZnJvbSB0aGUgbm9kZSBuYW1lIHN1ZmZpeCB0byBiZSBEVCBz
-cGVjIGNvbXBsaWFudC4KPiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogQW5kcmUgUHJ6eXdhcmEgPGFu
-ZHJlLnByenl3YXJhQGFybS5jb20+Cj4gPiAtLS0KPiA+ICAgYXJjaC9hcm0vYm9vdC9kdHMvdmV4
-cHJlc3MtdjJtLXJzMS5kdHNpICAgICAgICAgICAgICB8IDEwICsrKysrLS0tLS0KPiA+ICAgYXJj
-aC9hcm02NC9ib290L2R0cy9hcm0vZm91bmRhdGlvbi12OC5kdHNpICAgICAgICAgICB8ICA0ICsr
-LS0KPiA+ICAgYXJjaC9hcm02NC9ib290L2R0cy9hcm0vanVuby1tb3RoZXJib2FyZC5kdHNpICAg
-ICAgICB8ICA2ICsrKy0tLQo+ID4gICBhcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9ydHNtX3ZlLW1v
-dGhlcmJvYXJkLXJzMi5kdHNpIHwgIDIgKy0KPiA+ICAgYXJjaC9hcm02NC9ib290L2R0cy9hcm0v
-cnRzbV92ZS1tb3RoZXJib2FyZC5kdHNpICAgICB8ICA2ICsrKy0tLQo+ID4gICA1IGZpbGVzIGNo
-YW5nZWQsIDE0IGluc2VydGlvbnMoKyksIDE0IGRlbGV0aW9ucygtKQo+ID4gCj4gPiBkaWZmIC0t
-Z2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvdmV4cHJlc3MtdjJtLXJzMS5kdHNpIGIvYXJjaC9hcm0v
-Ym9vdC9kdHMvdmV4cHJlc3MtdjJtLXJzMS5kdHNpCj4gPiBpbmRleCA1YzE4MzQ4M2VjM2IuLjgw
-MTBjZGNkYjM3YSAxMDA2NDQKPiA+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3ZleHByZXNzLXYy
-bS1yczEuZHRzaQo+ID4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvdmV4cHJlc3MtdjJtLXJzMS5k
-dHNpCj4gPiBAQCAtMzEsNyArMzEsNyBAQAo+ID4gICAJCQkjaW50ZXJydXB0LWNlbGxzID0gPDE+
-Owo+ID4gICAJCQlyYW5nZXM7Cj4gPiAtCQkJbm9yX2ZsYXNoOiBmbGFzaEAwLDAwMDAwMDAwIHsK
-PiA+ICsJCQlub3JfZmxhc2g6IGZsYXNoQDAgewo+ID4gICAJCQkJY29tcGF0aWJsZSA9ICJhcm0s
-dmV4cHJlc3MtZmxhc2giLCAiY2ZpLWZsYXNoIjsKPiA+ICAgCQkJCXJlZyA9IDwwIDB4MDAwMDAw
-MDAgMHgwNDAwMDAwMD4sCj4gPiAgIAkJCQkgICAgICA8NCAweDAwMDAwMDAwIDB4MDQwMDAwMDA+
-Owo+ID4gQEAgLTQxLDEzICs0MSwxMyBAQAo+ID4gICAJCQkJfTsKPiA+ICAgCQkJfTsKPiA+IC0J
-CQlwc3JhbUAxLDAwMDAwMDAwIHsKPiA+ICsJCQlwc3JhbUAxMDAwMDAwMDAgewo+ID4gICAJCQkJ
-Y29tcGF0aWJsZSA9ICJhcm0sdmV4cHJlc3MtcHNyYW0iLCAibXRkLXJhbSI7Cj4gPiAgIAkJCQly
-ZWcgPSA8MSAweDAwMDAwMDAwIDB4MDIwMDAwMDA+Owo+ID4gICAJCQkJYmFuay13aWR0aCA9IDw0
-PjsKPiA+ICAgCQkJfTsKPiA+IC0JCQlldGhlcm5ldEAyLDAyMDAwMDAwIHsKPiA+ICsJCQlldGhl
-cm5ldEAyMDIwMDAwMDAgewo+ID4gICAJCQkJY29tcGF0aWJsZSA9ICJzbXNjLGxhbjkxMTgiLCAi
-c21zYyxsYW45MTE1IjsKPiA+ICAgCQkJCXJlZyA9IDwyIDB4MDIwMDAwMDAgMHgxMDAwMD47Cj4g
-PiAgIAkJCQlpbnRlcnJ1cHRzID0gPDE1PjsKPiA+IEBAIC01OSwxNCArNTksMTQgQEAKPiA+ICAg
-CQkJCXZkZHZhcmlvLXN1cHBseSA9IDwmdjJtX2ZpeGVkXzN2Mz47Cj4gPiAgIAkJCX07Cj4gPiAt
-CQkJdXNiQDIsMDMwMDAwMDAgewo+ID4gKwkJCXVzYkAyMDMwMDAwMDAgewo+ID4gICAJCQkJY29t
-cGF0aWJsZSA9ICJueHAsdXNiLWlzcDE3NjEiOwo+ID4gICAJCQkJcmVnID0gPDIgMHgwMzAwMDAw
-MCAweDIwMDAwPjsKPiA+ICAgCQkJCWludGVycnVwdHMgPSA8MTY+Owo+ID4gICAJCQkJcG9ydDEt
-b3RnOwo+ID4gICAJCQl9Owo+ID4gLQkJCWlvZnBnYUAzLDAwMDAwMDAwIHsKPiA+ICsJCQlpb2Zw
-Z2FAMzAwMDAwMDAwIHsKPiA+ICAgCQkJCWNvbXBhdGlibGUgPSAic2ltcGxlLWJ1cyI7Cj4gPiAg
-IAkJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPiA+ICAgCQkJCSNzaXplLWNlbGxzID0gPDE+Owo+
-ID4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXJtL2ZvdW5kYXRpb24tdjguZHRz
-aSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXJtL2ZvdW5kYXRpb24tdjguZHRzaQo+ID4gaW5kZXgg
-MTJmMDM5ZmEzZGFkLi5lMjZiNDkyNzk1YzUgMTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL2FybTY0L2Jv
-b3QvZHRzL2FybS9mb3VuZGF0aW9uLXY4LmR0c2kKPiA+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9k
-dHMvYXJtL2ZvdW5kYXRpb24tdjguZHRzaQo+ID4gQEAgLTE1MSw3ICsxNTEsNyBAQAo+ID4gICAJ
-CQkJPDAgMCA0MSAmZ2ljIDAgMCBHSUNfU1BJIDQxIElSUV9UWVBFX0xFVkVMX0hJR0g+LAo+ID4g
-ICAJCQkJPDAgMCA0MiAmZ2ljIDAgMCBHSUNfU1BJIDQyIElSUV9UWVBFX0xFVkVMX0hJR0g+Owo+
-ID4gLQkJZXRoZXJuZXRAMiwwMjAwMDAwMCB7Cj4gPiArCQlldGhlcm5ldEAyMDIwMDAwMDAgewo+
-ID4gICAJCQljb21wYXRpYmxlID0gInNtc2MsbGFuOTFjMTExIjsKPiA+ICAgCQkJcmVnID0gPDIg
-MHgwMjAwMDAwMCAweDEwMDAwPjsKPiA+ICAgCQkJaW50ZXJydXB0cyA9IDwxNT47Cj4gPiBAQCAt
-MTc4LDcgKzE3OCw3IEBACj4gPiAgIAkJCWNsb2NrLW91dHB1dC1uYW1lcyA9ICJ2Mm06cmVmY2xr
-MzJraHoiOwo+ID4gICAJCX07Cj4gPiAtCQlpb2ZwZ2FAMywwMDAwMDAwMCB7Cj4gPiArCQlpb2Zw
-Z2FAMzAwMDAwMDAwIHsKPiA+ICAgCQkJY29tcGF0aWJsZSA9ICJzaW1wbGUtYnVzIjsKPiA+ICAg
-CQkJI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4gPiAgIAkJCSNzaXplLWNlbGxzID0gPDE+Owo+ID4g
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXJtL2p1bm8tbW90aGVyYm9hcmQuZHRz
-aSBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXJtL2p1bm8tbW90aGVyYm9hcmQuZHRzaQo+ID4gaW5k
-ZXggZTM5ODNkZWQzYzNjLi5kNWNlZmRkZGUwOGMgMTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL2FybTY0
-L2Jvb3QvZHRzL2FybS9qdW5vLW1vdGhlcmJvYXJkLmR0c2kKPiA+ICsrKyBiL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvYXJtL2p1bm8tbW90aGVyYm9hcmQuZHRzaQo+ID4gQEAgLTEwMyw3ICsxMDMsNyBA
-QAo+ID4gICAJCQkJfTsKPiA+ICAgCQkJfTsKPiA+IC0JCQlmbGFzaEAwLDAwMDAwMDAwIHsKPiA+
-ICsJCQlmbGFzaEAwIHsKPiA+ICAgCQkJCS8qIDIgKiAzMk1pQiBOT1IgRmxhc2ggbWVtb3J5IG1v
-dW50ZWQgb24gQ1MwICovCj4gPiAgIAkJCQljb21wYXRpYmxlID0gImFybSx2ZXhwcmVzcy1mbGFz
-aCIsICJjZmktZmxhc2giOwo+ID4gICAJCQkJcmVnID0gPDAgMHgwMDAwMDAwMCAweDA0MDAwMDAw
-PjsKPiA+IEBAIC0xMjAsNyArMTIwLDcgQEAKPiA+ICAgCQkJCX07Cj4gPiAgIAkJCX07Cj4gPiAt
-CQkJZXRoZXJuZXRAMiwwMDAwMDAwMCB7Cj4gPiArCQkJZXRoZXJuZXRAMjAwMDAwMDAwIHsKPiA+
-ICAgCQkJCWNvbXBhdGlibGUgPSAic21zYyxsYW45MTE4IiwgInNtc2MsbGFuOTExNSI7Cj4gPiAg
-IAkJCQlyZWcgPSA8MiAweDAwMDAwMDAwIDB4MTAwMDA+Owo+ID4gICAJCQkJaW50ZXJydXB0cyA9
-IDwzPjsKPiA+IEBAIC0xMzMsNyArMTMzLDcgQEAKPiA+ICAgCQkJCXZkZHZhcmlvLXN1cHBseSA9
-IDwmbWJfZml4ZWRfM3YzPjsKPiA+ICAgCQkJfTsKPiA+IC0JCQlpb2ZwZ2FAMywwMDAwMDAwMCB7
-Cj4gPiArCQkJaW9mcGdhQDMwMDAwMDAwMCB7Cj4gPiAgIAkJCQljb21wYXRpYmxlID0gInNpbXBs
-ZS1idXMiOwo+ID4gICAJCQkJI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4gPiAgIAkJCQkjc2l6ZS1j
-ZWxscyA9IDwxPjsKPiA+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9ydHNt
-X3ZlLW1vdGhlcmJvYXJkLXJzMi5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9hcm0vcnRzbV92
-ZS1tb3RoZXJib2FyZC1yczIuZHRzaQo+ID4gaW5kZXggNjA3MDNiNTc2M2M2Li4zNTBjYmYxN2U4
-YjQgMTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9ydHNtX3ZlLW1vdGhl
-cmJvYXJkLXJzMi5kdHNpCj4gPiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9ydHNtX3Zl
-LW1vdGhlcmJvYXJkLXJzMi5kdHNpCj4gPiBAQCAtOSw3ICs5LDcgQEAKPiA+ICAgCQltb3RoZXJi
-b2FyZCB7Cj4gPiAgIAkJCWFybSx2Mm0tbWVtb3J5LW1hcCA9ICJyczIiOwo+ID4gLQkJCWlvZnBn
-YUAzLDAwMDAwMDAwIHsKPiA+ICsJCQlpb2ZwZ2FAMzAwMDAwMDAwIHsKPiA+ICAgCQkJCXZpcnRp
-by1wOUAxNDAwMDAgewo+ID4gICAJCQkJCWNvbXBhdGlibGUgPSAidmlydGlvLG1taW8iOwo+ID4g
-ICAJCQkJCXJlZyA9IDwweDE0MDAwMCAweDIwMD47Cj4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02
-NC9ib290L2R0cy9hcm0vcnRzbV92ZS1tb3RoZXJib2FyZC5kdHNpIGIvYXJjaC9hcm02NC9ib290
-L2R0cy9hcm0vcnRzbV92ZS1tb3RoZXJib2FyZC5kdHNpCj4gPiBpbmRleCBlMzMzYzhkMmQwZTQu
-LmQxYmZhNjJjYTA3MyAxMDA2NDQKPiA+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXJtL3J0
-c21fdmUtbW90aGVyYm9hcmQuZHRzaQo+ID4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9hcm0v
-cnRzbV92ZS1tb3RoZXJib2FyZC5kdHNpCj4gPiBAQCAtMTcsMTQgKzE3LDE0IEBACj4gPiAgIAkJ
-CSNpbnRlcnJ1cHQtY2VsbHMgPSA8MT47Cj4gPiAgIAkJCXJhbmdlczsKPiA+IC0JCQlmbGFzaEAw
-LDAwMDAwMDAwIHsKPiA+ICsJCQlmbGFzaEAwIHsKPiA+ICAgCQkJCWNvbXBhdGlibGUgPSAiYXJt
-LHZleHByZXNzLWZsYXNoIiwgImNmaS1mbGFzaCI7Cj4gPiAgIAkJCQlyZWcgPSA8MCAweDAwMDAw
-MDAwIDB4MDQwMDAwMDA+LAo+ID4gICAJCQkJICAgICAgPDQgMHgwMDAwMDAwMCAweDA0MDAwMDAw
-PjsKPiA+ICAgCQkJCWJhbmstd2lkdGggPSA8ND47Cj4gPiAgIAkJCX07Cj4gPiAtCQkJZXRoZXJu
-ZXRAMiwwMjAwMDAwMCB7Cj4gPiArCQkJZXRoZXJuZXRAMjAyMDAwMDAwIHsKPiA+ICAgCQkJCWNv
-bXBhdGlibGUgPSAic21zYyxsYW45MWMxMTEiOwo+ID4gICAJCQkJcmVnID0gPDIgMHgwMjAwMDAw
-MCAweDEwMDAwPjsKPiA+ICAgCQkJCWludGVycnVwdHMgPSA8MTU+Owo+ID4gQEAgLTUxLDcgKzUx
-LDcgQEAKPiA+ICAgCQkJCWNsb2NrLW91dHB1dC1uYW1lcyA9ICJ2Mm06cmVmY2xrMzJraHoiOwo+
-ID4gICAJCQl9Owo+ID4gLQkJCWlvZnBnYUAzLDAwMDAwMDAwIHsKPiA+ICsJCQlpb2ZwZ2FAMzAw
-MDAwMDAwIHsKPiA+ICAgCQkJCWNvbXBhdGlibGUgPSAic2ltcGxlLWJ1cyI7Cj4gPiAgIAkJCQkj
-YWRkcmVzcy1jZWxscyA9IDwxPjsKPiA+ICAgCQkJCSNzaXplLWNlbGxzID0gPDE+Owo+ID4gCgot
-LSAKPT09PT09PT09PT09PT09PT09PT0KfCBJIHdvdWxkIGxpa2UgdG8gfAp8IGZpeCB0aGUgd29y
-bGQsICB8CnwgYnV0IHRoZXkncmUgbm90IHwKfCBnaXZpbmcgbWUgdGhlICAgfAogXCBzb3VyY2Ug
-Y29kZSEgIC8KICAtLS0tLS0tLS0tLS0tLS0KICAgIMKvXF8o44OEKV8vwq8KCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Thu, May 21, 2020 at 5:31 PM Wolfram Sang <wsa@the-dreams.de> wrote:
+>
+> Hi Tali, Andy!
+>
+> On Thu, May 21, 2020 at 05:23:40PM +0300, Andy Shevchenko wrote:
+> > On Thu, May 21, 2020 at 02:09:09PM +0300, Tali Perry wrote:
+> > > Add Nuvoton NPCM BMC I2C controller driver.
+> >
+> > Thanks. My comments below.
+> > After addressing them, FWIW,
+> > Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+>
+> Thanks, Andy, for all the review!
+>
+
+Highly appreciate your time and patience for a newbie :)
+
+> From a glimpse, this looks good to go. I will have a close look later
+> today.
+>
+> > > +#ifdef CONFIG_DEBUG_FS
+> >
+> > Again, why is this here?
+> >
+> > Have you checked debugfs.h for !CONFIG_DEBUG_FS case?
+
+I compiled both options. I removed the ifdef in most places, except in the
+struct itself. Users that don't use the debugfs don't need this in the struct.
+
+>
+> I wondered also about DEBUG_FS entries. I can see their value when
+> developing the driver. But since this is done now, do they really help a
+> user to debug a difficult case? I am not sure, and then I wonder if we
+> should have that code in upstream. I am open for discussion, though.
+
+The user wanted to have health monitor implemented on top of the driver.
+The user has 16 channels connected the multiple devices. All are operated
+using various daemons in the system. Sometimes the slave devices are power down.
+Therefor the user wanted to track the health status of the devices.
+
+>
+> > > +MODULE_VERSION("0.1.3");
+> >
+> > Module version is defined by kernel commit hash. But it's up to you and
+> > subsystem maintainer to decide.
+>
+> Please drop it. I also think commit id's (or even kernel versions) are a
+> more precise description.
+
+will remove.
+
+>
+> Regards,
+>
+>    Wolfram
+>
+
+BR,
+Tali
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
