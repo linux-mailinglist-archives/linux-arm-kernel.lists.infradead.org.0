@@ -2,53 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA8681DCBA7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 13:09:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 922C51DCBE3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 13:11:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Z3+nhhaN6BJUzst2qv9oKG/1UWa3xjbVpBWSStUSqmY=; b=sXs
-	0JxDGT56g1sYGfXSbF/4JaXbM0PwrskxeArK/9eDpwmJcSW+fJShU0ky+pm92EPlFwIaaHPPYJMUO
-	EncOnX8nm3d2XDBftwIfK4PJ5prfFCI+hwI2/qFq03OoA03nE2dQvpal8ooS5PsF0KUk+1eIGHdra
-	ObZqSdp7F24HLDKDZFz2CXt2HxVONuVTlvQB5MSRvNnjTSyIoheoLbrJIP6+Dy2jQAQFc1UpiGHnE
-	8WbD/naKGGm8iNPTcgn7CBm9XwzSAzJ2Z0ql3Xc2vdboTe7aKt/2ubHypevVM07mK96NNM+2B2+lp
-	VdumJbOV3GRJSWMnGXvZ9FJ78k6EHdw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=/wK4SaHi814cTv5LpThMSw4RZy7AQwBxftKIn9xB6oI=; b=MgJbAGpyBU7XdC
+	7g44Xh98/aCkf1WBUabPVybpCTpOUSAovIc00dziveHKEoDC0W099WuvjqRYiJInwQqLH0vJLzadP
+	eAs89nQBUeVk5y6sTFfLlTBCw6P+L77aQ0KTdockEVoOtnMb45+pnPg3BcRQennsax5ZCBMakDm0l
+	HQzh8qNVaIIIOogTMV9YGPa9IHPNF4WgAy/YWGvDWEer+VufmeqZ3b6NWUeHybkzZepkVd0PPkNsu
+	GJgiwkx/boU02Ur4m4H/IBGmm+ljEroclTg7NgPLkMm7G75KcocNrczUcTr/pJuv8BJMFry4XfCBp
+	yEF6OO92rGrGOHD0CHBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbj4N-0001vl-3K; Thu, 21 May 2020 11:08:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbj4D-0001ut-7r
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 11:08:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0DFB030E;
- Thu, 21 May 2020 04:08:48 -0700 (PDT)
-Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CC8703F68F;
- Thu, 21 May 2020 04:08:46 -0700 (PDT)
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Will Deacon <will@kernel.org>,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] firmware: smccc: Fix missing prototype warning for
- arm_smccc_version_init
-Date: Thu, 21 May 2020 12:08:36 +0100
-Message-Id: <20200521110836.57252-1-sudeep.holla@arm.com>
-X-Mailer: git-send-email 2.17.1
+	id 1jbj6O-0005GY-Gl; Thu, 21 May 2020 11:11:04 +0000
+Received: from 212.199.177.27.static.012.net.il ([212.199.177.27]
+ helo=herzl.nuvoton.co.il)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbj5a-0002S9-Uj
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 11:10:16 +0000
+Received: from taln60.nuvoton.co.il (ntil-fw [212.199.177.25])
+ by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id 04LB9XhP018632;
+ Thu, 21 May 2020 14:09:34 +0300
+Received: by taln60.nuvoton.co.il (Postfix, from userid 20088)
+ id CCCD7639C0; Thu, 21 May 2020 14:09:33 +0300 (IDT)
+From: Tali Perry <tali.perry1@gmail.com>
+To: ofery@google.com, brendanhiggins@google.com, avifishman70@gmail.com,
+ tmaimon77@gmail.com, kfting@nuvoton.com, venture@google.com,
+ yuenn@google.com, benjaminfair@google.com, robh+dt@kernel.org,
+ wsa@the-dreams.de, andriy.shevchenko@linux.intel.com
+Subject: [PATCH v12 0/3] i2c: npcm7xx: add NPCM i2c controller driver
+Date: Thu, 21 May 2020 14:09:07 +0300
+Message-Id: <20200521110910.45518-1-tali.perry1@gmail.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_040849_324755_E935ADAD 
-X-CRM114-Status: GOOD (  10.68  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200521_041015_441350_78E75FB3 
+X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 4.9 (++++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (4.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [tali.perry1[at]gmail.com]
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
+ 0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ 2.0 SPOOFED_FREEMAIL       No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,70 +76,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>, Sudeep Holla <sudeep.holla@arm.com>
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, kbuild test robot <lkp@intel.com>,
+ openbmc@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ Tali Perry <tali.perry1@gmail.com>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit f2ae97062a48 ("firmware: smccc: Refactor SMCCC specific bits into
-separate file") introduced the following build warning:
+This patch set adds i2c controller support 
+for the Nuvoton NPCM Baseboard Management Controller (BMC).
 
-drivers/firmware/smccc/smccc.c:14:13: warning: no previous prototype for
-	function 'arm_smccc_version_init' [-Wmissing-prototypes]
- void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit)
-             ^~~~~~~~~~~~~~~~~~~~~~
+NPCM7xx includes 16 I2C controllers. This driver operates the controller.
+This module also includes a slave mode.
 
-Fix the same by adding the missing prototype in arm-smccc.h
-
-Reported-by: kbuild test robot <lkp@intel.com>
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/firmware/psci/psci.c | 1 -
- include/linux/arm-smccc.h    | 3 +++
- 2 files changed, 3 insertions(+), 1 deletion(-)
+v12 -> v11:
+	- Fix according to maintainer comments.
+	- debugfs simplified (usedebugfs_create_u64).
+	- slave read fifo split from master read fifo.
+v11 -> v10:
+	- Fix according to maintainer comments.
+	- Init clk simplified.
+	- Comments in c99
+	- Split master irq function.
+	- debugfs not mandatory.
+	- yaml file fix.
 
-diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
-index 1330a698a178..92013ecc2d9e 100644
---- a/drivers/firmware/psci/psci.c
-+++ b/drivers/firmware/psci/psci.c
-@@ -79,7 +79,6 @@ static u32 psci_function_id[PSCI_FN_MAX];
- 
- static u32 psci_cpu_suspend_feature;
- static bool psci_system_reset2_supported;
--void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit);
- 
- static inline bool psci_has_ext_power_state(void)
- {
-diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index c491d210e3c3..56d6a5c6e353 100644
---- a/include/linux/arm-smccc.h
-+++ b/include/linux/arm-smccc.h
-@@ -5,6 +5,7 @@
- #ifndef __LINUX_ARM_SMCCC_H
- #define __LINUX_ARM_SMCCC_H
- 
-+#include <linux/init.h>
- #include <uapi/linux/const.h>
- 
- /*
-@@ -111,6 +112,8 @@ enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void);
-  */
- u32 arm_smccc_get_version(void);
- 
-+void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit);
-+
- /**
-  * struct arm_smccc_res - Result from SMC/HVC call
-  * @a0-a3 result values from registers 0 to 3
+v10 -> v9:
+	- Fix according to maintainer comments.
+	- binding file changed to yaml format.
+	- Shorten recovery flow.
+	- Add support for health monitoring counters.
 
-base-commit: a4fb17465182c9fc13104e4df04d050892055205
+v9 -> v8:
+	- Fix according to maintainer comments.
+	- Split lines of iowrite..(ioread..) to separate lines.
+	- Use readx_poll_timeout_atomic
+	- resolve various style issues.
+	 
+v8 -> v7:
+	- Split to two commits, one for master, one for slave.
+	- Rename smb to i2c.
+	- Remove global vars.
+
+v7 -> v6:
+	- Rebased on Linux 5.4-rc8  (was Linux 5.4-rc7).
+	- Fix issue found by kbuild test robot (redundant include).
+	- Note: left a warning related to fall through. This fall through is
+	  intentional.
+	
+v6 -> v5:
+	- Update documentation
+
+v5 -> v4:
+	- support recovery
+	- master-slave switch support needed for IPMB
+
+v4 -> v3:
+	- typo on cover letter.
+
+v3 -> v2:
+	- fix dt binding: compatible name: omit "bus"
+
+v2 -> v1:
+	- run check patch in strict mode.
+	- use linux crc.
+	- define regs in constant offset without base.
+	- remove debug prints.
+	- no declarations for local functions.
+	
+v1: initial version
+
+Signed-off-by: Tali Perry <tali.perry1@gmail.com>
+Reported-by: kbuild test robot <lkp@intel.com>
+
+---
+Tali Perry (3):
+  dt-bindings: i2c: npcm7xx: add NPCM I2C controller documentation
+  i2c: npcm7xx: Add Nuvoton NPCM I2C controller driver
+  i2c: npcm7xx: Add support for slave mode for Nuvoton NPCM BMC I2C
+    controller driver.
+
+ .../bindings/i2c/nuvoton,npcm7xx-i2c.yaml     |   62 +
+ drivers/i2c/busses/Kconfig                    |    9 +
+ drivers/i2c/busses/Makefile                   |    1 +
+ drivers/i2c/busses/i2c-npcm7xx.c              | 2426 +++++++++++++++++
+ 4 files changed, 2498 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+ create mode 100644 drivers/i2c/busses/i2c-npcm7xx.c
+
+
+base-commit: b9bbe6ed63b2b9f2c9ee5cbd0f2c946a2723f4ce
 -- 
-2.17.1
+2.22.0
 
 
 _______________________________________________
