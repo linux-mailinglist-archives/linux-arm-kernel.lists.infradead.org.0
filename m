@@ -2,73 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 210501DD032
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:38:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5BF7C1DD035
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:39:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RkyfwHOVoOPSZK4emYueKA+iABOF4blNCw12N/netaU=; b=Zb54ai5Cr0PB4j/uW2V+orc0F
-	Vk41UvS22uBuUzteZFyzLJiGb+l6xaSXV/PtUwN64HhYRpYL2b3YLubdX6p5DpMyYKLtzWZl/DxwM
-	d6Wm6a9zhdnFLzpa/Y0MSgPznFDrrkoFrWAqOEUpgYoXJ4ck6fALTm/8AEiBeT+Dni9171Q8ao7sm
-	2SV5y7jMPAXe1o/cHi8QdwFJb6h9zWqzrb85VzCRh703brIh/ut2B8ejIzP6ghQ1yb09M9oie4Nzt
-	lmKATLDI/CLsOwh5dxEAIjlS0Q4+YPc0eGZo+/TGEAG4LqptSwN0ID4Akqt5GoYDqcwOltYSwDO9T
-	vnQDq1cJw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3lU8liEEdRLRfYtnO0YkyTFHezQocajballD5+UOwvw=; b=q2707sk+ftLrto
+	lyFnUBOTdXUQDIEFnBKQ2xE11wwAN3ElorF3usOo3P8GESgge3Ddxp1c5VTNpnbz7AoyqzzaQ/aSc
+	Dl3jBnnvVJ3gGWUp8W6mO7kuYQ3zJXlPk3Av27sFdujLeMadwEFyhEYs5vTalERj9klZGUo3IQK+B
+	A5wMRfGznHBF9M9SftDc+uNAYv/VG/nGDiKU1cUJArl8dnYGm3lyUN+TjDiAd+yR+rwKifj8Fqz+Q
+	G+A5O7DWi50UGKFiSL8Bs8r7pAKOOrg+xnS+wj39+z+fMc5uO59P2n91NqbqN0/le+gGYVW0XjxQu
+	r9E5jGGXK1e86E+0NjxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbmLT-0007Gi-7c; Thu, 21 May 2020 14:38:51 +0000
+	id 1jbmME-0007fG-Go; Thu, 21 May 2020 14:39:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbmLH-0007Fe-Up
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:38:41 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
+ id 1jbmM3-0007ev-U8
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:39:29 +0000
+Received: from dragon (unknown [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2D32A20671;
- Thu, 21 May 2020 14:38:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9660020671;
+ Thu, 21 May 2020 14:39:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590071917;
- bh=OiPs36foL9u2qM53WH6N6taB239fXx9YwYNRpOR+uc8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=IOEcaexAkIOaBlLyjmM4y4cc/lI+AvTt2XG3MJSe97tPOOBgmi21ZXYe/wbygmmAv
- 5aXAD0JnBq4smiwKKP0tkBFg6mfmBK9KQxomojoIgqFlfdKP3EZ7WzahgMAIQfnPLY
- ixdP2n51XBJE02yNEqT0nnudoDksFaXfwPwqR4lA=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jbmLD-00EFyF-AE; Thu, 21 May 2020 15:38:35 +0100
+ s=default; t=1590071967;
+ bh=LJfKPnC5aOB9d2Qg+2TGMMUcBKRdw6hVYW+KZiMXjZo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=o3DA0Ia0pGQGLsKwUqmOPZdyC10/uEg6Ulz4dLSOab83rKMcYK2q/ua8EUcC/O7Px
+ 7GRtaUFt/6d9xtpl9sSoBZ6kaB6zeUhYDjjzBQeQVG8op3a25D5p6AjaIjdmCo4yu4
+ PsuRfawtfxwrYB7U4e5jYwxSS0GJiyaDGwbBNy6Q=
+Date: Thu, 21 May 2020 22:39:11 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: kbuild test robot <lkp@intel.com>
+Subject: Re: [RFC PATCH shawnguo] clk: imx: imx8m_clk_composite_mux_ops can
+ be static
+Message-ID: <20200521143910.GA24084@dragon>
+References: <202005211954.Rc03oK6u%lkp@intel.com>
+ <20200521110439.GA55876@f61f8b3f25ca>
 MIME-Version: 1.0
-Date: Thu, 21 May 2020 15:38:35 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v7 13/24] iommu/arm-smmu-v3: Enable broadcast TLB
- maintenance
-In-Reply-To: <20200521141730.GJ6608@willie-the-truck>
-References: <20200519175502.2504091-1-jean-philippe@linaro.org>
- <20200519175502.2504091-14-jean-philippe@linaro.org>
- <20200521141730.GJ6608@willie-the-truck>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <0c896ad27b43b2de554cf772f9453d0a@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: will@kernel.org, jean-philippe@linaro.org,
- iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
- linux-mm@kvack.org, joro@8bytes.org, catalin.marinas@arm.com,
- robin.murphy@arm.com, kevin.tian@intel.com, baolu.lu@linux.intel.com,
- Jonathan.Cameron@huawei.com, jacob.jun.pan@linux.intel.com,
- christian.koenig@amd.com, felix.kuehling@amd.com, zhangfei.gao@linaro.org,
- jgg@ziepe.ca, xuzaibo@huawei.com, fenghua.yu@intel.com, hch@infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200521110439.GA55876@f61f8b3f25ca>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_073840_036045_B1708FB6 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20200521_073927_989151_A2E831BD 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -97,55 +78,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, devicetree@vger.kernel.org, jgg@ziepe.ca,
- linux-pci@vger.kernel.org, joro@8bytes.org, Jonathan.Cameron@huawei.com,
- fenghua.yu@intel.com, hch@infradead.org, linux-mm@kvack.org,
- iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
- catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
- robin.murphy@arm.com, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ kbuild-all@lists.01.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-21 15:17, Will Deacon wrote:
-> [+Marc]
+On Thu, May 21, 2020 at 07:04:39PM +0800, kbuild test robot wrote:
 > 
-> On Tue, May 19, 2020 at 07:54:51PM +0200, Jean-Philippe Brucker wrote:
->> The SMMUv3 can handle invalidation targeted at TLB entries with shared
->> ASIDs. If the implementation supports broadcast TLB maintenance, 
->> enable it
->> and keep track of it in a feature bit. The SMMU will then be affected 
->> by
->> inner-shareable TLB invalidations from other agents.
->> 
->> A major side-effect of this change is that stage-2 translation 
->> contexts
->> are now affected by all invalidations by VMID. VMIDs are all shared 
->> and
->> the only ways to prevent over-invalidation, since the stage-2 page 
->> tables
->> are not shared between CPU and SMMU, are to either disable BTM or 
->> allocate
->> different VMIDs. This patch does not address the problem.
+> Fixes: 3f0365dafe32 ("clk: imx: add mux ops for i.MX8M composite clk")
+> Signed-off-by: kbuild test robot <lkp@intel.com>
+> ---
+>  clk-composite-8m.c |    2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> This sounds like a potential performance issue, particularly as we 
-> expose
-> stage-2 contexts via VFIO directly. Maybe we could reserve some portion 
-> of
-> VMID space for the SMMU? Marc, what do you reckon?
+> diff --git a/drivers/clk/imx/clk-composite-8m.c b/drivers/clk/imx/clk-composite-8m.c
+> index 8fa60f22d377f..2d9562ebddc3f 100644
+> --- a/drivers/clk/imx/clk-composite-8m.c
+> +++ b/drivers/clk/imx/clk-composite-8m.c
+> @@ -164,7 +164,7 @@ imx8m_clk_composite_mux_determine_rate(struct clk_hw *hw,
+>  }
+>  
+>  
+> -const struct clk_ops imx8m_clk_composite_mux_ops = {
+> +static const struct clk_ops imx8m_clk_composite_mux_ops = {
 
-Certainly doable when we have 16bits VMIDs. With smaller VMID spaces 
-(like on
-v8.0), this is a bit more difficult (we do have pretty large v8.0 
-systems
-around). How many VMID bits are we talking about?
+Amended the change.  Thanks!
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Shawn
+
+>  	.get_parent = imx8m_clk_composite_mux_get_parent,
+>  	.set_parent = imx8m_clk_composite_mux_set_parent,
+>  	.determine_rate = imx8m_clk_composite_mux_determine_rate,
 
 _______________________________________________
 linux-arm-kernel mailing list
