@@ -2,70 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 303A41DD088
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:54:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CAEB1DD0B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 17:03:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=58sqS11r+oSvrgsDw3l+9eLvR/idImFXl6Rd11nUlBg=; b=MQ88skqJRBp3jg
-	aIU8VRyUdctezNceMzfX2hQUbsnMWpjitYnwXfi27aT8CegoxsJkd2X38Ko0j/c4i6D3s+hJ+5ukN
-	FitlWopL3ZmL/JJq+jbeLc3oK7Xpxb3vV/wQihCTobJwCc9aZPkV/H0/meGyZxkPB4ompWynLsI8g
-	rpyHoZywWB5BsGcahjlJ7CDshiWP4h23jhkwb6xitcaMy6tSrHrLhNXgQ758N0rjsh9XVoTo3DCFJ
-	w+e2JsTx6z4GXE1p+QLcgip5Q8J2BM7Zo5P5yxinNa4aQU/UWNWjob1hMLp/iDG9aGydF8Naj6KgC
-	aezvccthlXQEm4gjPIOA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M6no/s/+WuLV1i7cfgWpYT+UoZHWTwr1k6YGKTyXE6s=; b=ih4Mp7qMNNWlDw
+	QmmeaKyXME02nLa2DQ0qtmcQ1R/KsMsvNVtmZQaoAfhmjatylRbr127GytkRrege+ghw/gt0A7XAZ
+	YWVKZKkrdj1Duo/NCGwC/INuI3duQP5yWmUFpmx5PAzgJ034L6UXfy08Cq3JIoNdZZccKXSZhE9R+
+	Y3J+6oHsfMdkhVFvIqk6Xxijw1iHIRUnjYLtWb30xDzD5Not1cIeC1gS6GOGxMlRYdV+KMJVglkjr
+	3P3sNYshO6GpWPksNVnr5dh+gnr7FFAjDFFI4KU5xEJSO+XFegfUpfJ5YKa3Z7iKvcKuxOxe1ttk9
+	bPIAcGgHClCxh/DRdc8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbma7-0000O7-83; Thu, 21 May 2020 14:53:59 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1jbmje-00079L-5M; Thu, 21 May 2020 15:03:50 +0000
+Received: from mail-vi1eur05on2078.outbound.protection.outlook.com
+ ([40.107.21.78] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbmZx-0000Nh-QD
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:53:51 +0000
-IronPort-SDR: 6QZB6LGzdlwrREhQmgByPxVdR1zWlWvkHWW/CZkMCFZpMgvqW4on1X+xYaTx4JmWpVrFxE5CzE
- t2H5SJ7YP8GQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 21 May 2020 07:53:49 -0700
-IronPort-SDR: CB261a1GJ8FH2/VHlwwKegEMCLgFPSudpuK9cAivmEf2gXDxZY8ZSeaP1UTGCBvzUk02CvmFs8
- cpKaQJw4V22A==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,418,1583222400"; d="scan'208";a="412417898"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by orsmga004.jf.intel.com with ESMTP; 21 May 2020 07:53:44 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jbmZv-0083Dh-LU; Thu, 21 May 2020 17:53:47 +0300
-Date: Thu, 21 May 2020 17:53:47 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Tali Perry <tali.perry1@gmail.com>
-Subject: Re: [PATCH v12 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
- driver
-Message-ID: <20200521145347.GO1634618@smile.fi.intel.com>
-References: <20200521110910.45518-1-tali.perry1@gmail.com>
- <20200521110910.45518-3-tali.perry1@gmail.com>
- <20200521142340.GM1634618@smile.fi.intel.com>
- <20200521143100.GA16812@ninjato>
- <CAHb3i=vcVLWHjdiJoNZQrwJCqzszpOL7e9SAjqObsZCRH4ifwg@mail.gmail.com>
+ id 1jbmjU-00078c-QC
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 15:03:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=TtN6+n/RacHsA9gHu6HuKkZ39BCUIRVNVobuqOFtXmaOx1Rl8aJhD1EU2F+JUl73AAAeHLR/mUzelL3fukFQ58rdD/BjpmOjYw1D9yMsczFleGqAwL/2byLrayQ+4bBUCvclf1XfBaPaYuQI6BPSNh28z5mKlPXC7IeDWVpS6esgVDjYoLvxSKo10t9ctQh+DqV/14T7iZgI0ndy8eH0fOrcXhIU7sllfyDZNDDpocr3pkY/rDQ22X8wiH3mfsjs4DW6H/lxtpb7fGNI2d88JKKXKKWzbYn3CZEVr7XQHxvKwXV88+xrs/W+D3mi973NIo/OUxXJvL6oQRlzU3fL3Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=o6IhSuCxNIUhMJU28fHdUeD3ip3Uj9Qf8OhoJJ2VmZ0=;
+ b=A2pxsRzvYKtEcpsLYa7bOg7JJAhnKFg1HF+T8YKUfKzyqjtOn+9yXSCOA6FL+V6vQy95lGatn3cm6dQzvZ9B7xrX8+ESrQihlUEvWOWNQ2/mEeDpRVbVeq+ahjj1RmhDthyWlU9uy+3J3VDc/BqsyP+lrxUbgZ2QIh2IUSyt1dvNI54xVKUOPLMkk+32iCXkR/MiPEsKVBugUAn2vFQbWJRb5HrNbgshqilK8dekASL/bpLjtn6cu+Xu9fGpsSxqzjgtV57stZB21ozDD4S/IoXMBgc9AYJ4IgxqvTqGFWRyhGnzxZBlpVnPHMjhgUxDyB9aPTAiqF0hk+6lzHMfdw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=o6IhSuCxNIUhMJU28fHdUeD3ip3Uj9Qf8OhoJJ2VmZ0=;
+ b=WE4nGzt/O6zIQb7s8wPKRKlsrnO2qfmwVtx1v41rnO5ff0wtZO9V/RUcIHqx9zp4+VXRixilIFUaEtrW26rI1vd43bxpNCGwrIRI4Fq/WH/7XmGL+5qHF2qK7H6204eOYKDVX0raI4ATaITb8NLeHP5LzdmMYL/Tj3FWK1BJilk=
+Authentication-Results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+Received: from VI1PR0402MB3405.eurprd04.prod.outlook.com (2603:10a6:803:3::26)
+ by VI1PR0402MB3647.eurprd04.prod.outlook.com (2603:10a6:803:1c::23)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.27; Thu, 21 May
+ 2020 15:03:35 +0000
+Received: from VI1PR0402MB3405.eurprd04.prod.outlook.com
+ ([fe80::c7e:c51a:1ea4:968d]) by VI1PR0402MB3405.eurprd04.prod.outlook.com
+ ([fe80::c7e:c51a:1ea4:968d%5]) with mapi id 15.20.3000.022; Thu, 21 May 2020
+ 15:03:35 +0000
+Subject: Re: [PATCH 12/12] bus: fsl-mc: Add ACPI support for fsl-mc
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
+ <20200521130008.8266-13-lorenzo.pieralisi@arm.com>
+From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Message-ID: <3045acd5-0bcf-40c1-e65f-0b740200b2e0@nxp.com>
+Date: Thu, 21 May 2020 18:03:21 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
+In-Reply-To: <20200521130008.8266-13-lorenzo.pieralisi@arm.com>
+Content-Language: en-US
+X-ClientProxiedBy: VI1PR07CA0307.eurprd07.prod.outlook.com
+ (2603:10a6:800:130::35) To VI1PR0402MB3405.eurprd04.prod.outlook.com
+ (2603:10a6:803:3::26)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHb3i=vcVLWHjdiJoNZQrwJCqzszpOL7e9SAjqObsZCRH4ifwg@mail.gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [192.168.43.159] (213.233.104.197) by
+ VI1PR07CA0307.eurprd07.prod.outlook.com (2603:10a6:800:130::35) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.8 via Frontend
+ Transport; Thu, 21 May 2020 15:03:33 +0000
+X-Originating-IP: [213.233.104.197]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: f4cf816b-abaa-473a-42df-08d7fd98226d
+X-MS-TrafficTypeDiagnostic: VI1PR0402MB3647:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0402MB36477425C77CE45473D995FBECB70@VI1PR0402MB3647.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:232;
+X-Forefront-PRVS: 041032FF37
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: ZZeFBiztcbrix8f7bh3QTHWTTTQb5iN5KT4mSsYIs7Yuk2MxlQs15kSldNVh7p4dNCaU7UcyTA81+UC13A6/7y2pu1M2TWEj60mJPqgv0hsKpRHp1/6LG94cZQkqsGea6WlrQqR30CE+xxA/MwREeHkoceOx2OdqoqfGbE8urRkxHbTzIdxxAH3kqwPRU1qTlyyF2gziOhjBh8ouUCS9240G3LY13Q0y/a6HfRH+UkTmkD4Zr3QvSzTgR5agSfXcnh15vBTMkrzgCD+7gSCB3aAXPloK0QxF5SW77eDIwlh9R7bxWUh27sdSgGmksirN7E2YwUSD9YWuF4Ty/9J5GVGx6k0ubAAW8t7hUnHfLdkjyVolKj06k1DI2fdFV+xYixG/TU+XxJbhCJhdlPPK4sJLQwSUiD6ZhidY7+1U/vmLkbKfOSsDxQW7SAkY0XfX7hRha3UN2AuYwyURT9oXIu9tfYLdFRRJ6PmQC5jIDrfGePIOsPQmcZLL6cQ8EHxk
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR0402MB3405.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(396003)(39860400002)(346002)(366004)(136003)(376002)(316002)(16526019)(16576012)(6666004)(956004)(2616005)(6486002)(66946007)(54906003)(86362001)(52116002)(53546011)(66556008)(26005)(31696002)(186003)(5660300002)(7416002)(8936002)(31686004)(66476007)(36756003)(478600001)(30864003)(8676002)(4326008)(2906002)(44832011)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: 7vlpk8gtbVXCisSlz25gm6HEAgUAUSj2qApaDt4IolRe1EVfafuCy71gP2CVIHQQ8rUQ5vORW3ajderxxhnQ2lapdXE54Vo2EirZOJhO+Pp7BsvNFvalXvzLpVkdcOJk2yOFU/Onv36D9K+Vbavyk5j9AsW1V2bw1Wo2vGJR211Hiw0ihktNAWVWhnEnzgirXp5aGXRAfU6XXD1o2GNJ9I1VGLqVJ5cHEsyDmW2rH9/dN5voQIafWa8Crd4aMMLqckMjHqYExVqHP+LTWp8/3abqQjTGIUW28TYdUi73sdEpjx+VRBhqQuAxlyKsPxCFtDtWyf6oIrtU8I0O2SgNZsWdpZGogg7ZZL8xBcHqgg4PsnLXgoWrucdE8Yoz5+JxzeELDkJ+NII2DhQ3jdT2IMf/DTfCeKTaUzIm6eFCOkXCryiyVHzrrTLxJcRPvUIdi8x45q448lGaDU6ApRwDalhoknJHNzMaVXj/02G1/JtBICo+ZFJI836n1FLWWr4Q
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: f4cf816b-abaa-473a-42df-08d7fd98226d
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 May 2020 15:03:35.3681 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: vnXdjIjYwLB3dzcwrglXqVP75MbAKSchgmqUgWRUwV643JoMLkGMPYRNRFPYQcvp04LSe5UaJaUq1w856XcSTg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3647
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_075349_932387_1A061F35 
-X-CRM114-Status: GOOD (  17.76  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200521_080341_056639_0A1F1A2E 
+X-CRM114-Status: GOOD (  27.92  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.21.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.78 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,80 +130,362 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>, Tomer Maimon <tmaimon77@gmail.com>,
- Wolfram Sang <wsa@the-dreams.de>, avifishman70@gmail.com,
- Patrick Venture <venture@google.com>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- Brendan Higgins <brendanhiggins@google.com>, Ofer Yehielli <ofery@google.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, kfting@nuvoton.com,
- Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
- Nancy Yuen <yuenn@google.com>, linux-arm-kernel@lists.infradead.org,
- Benjamin Fair <benjaminfair@google.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-pci@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
+ Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ iommu@lists.linux-foundation.org, linux-acpi@vger.kernel.org,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Diana Craciun <diana.craciun@oss.nxp.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Robin Murphy <robin.murphy@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 05:45:03PM +0300, Tali Perry wrote:
-> On Thu, May 21, 2020 at 5:31 PM Wolfram Sang <wsa@the-dreams.de> wrote:
-> > On Thu, May 21, 2020 at 05:23:40PM +0300, Andy Shevchenko wrote:
-> > > On Thu, May 21, 2020 at 02:09:09PM +0300, Tali Perry wrote:
-> > > > Add Nuvoton NPCM BMC I2C controller driver.
-> > >
-> > > Thanks. My comments below.
-> > > After addressing them, FWIW,
-> > > Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-> >
-> > Thanks, Andy, for all the review!
-> >
-> =
+Hi Lorenzo,
 
-> Highly appreciate your time and patience for a newbie :)
-> =
+On 5/21/2020 4:00 PM, Lorenzo Pieralisi wrote:
+> From: Diana Craciun <diana.craciun@oss.nxp.com>
+> 
+> Add ACPI support in the fsl-mc driver. Driver parses MC DSDT table to
+> extract memory and other resources.
+> 
+> Interrupt (GIC ITS) information is extracted from the MADT table
+> by drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c.
+> 
+> IORT table is parsed to configure DMA.
+> 
+> Signed-off-by: Makarand Pawagi <makarand.pawagi@nxp.com>
+> Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
+> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+> ---
 
-> > From a glimpse, this looks good to go. I will have a close look later
-> > today.
-> >
-> > > > +#ifdef CONFIG_DEBUG_FS
-> > >
-> > > Again, why is this here?
-> > >
-> > > Have you checked debugfs.h for !CONFIG_DEBUG_FS case?
-> =
+The author of this patch should be Makarand. I think I accidentaly broke
+it when we exchanged the patches. Very sorry about it.
 
-> I compiled both options. I removed the ifdef in most places, except in the
-> struct itself. Users that don't use the debugfs don't need this in the st=
-ruct.
-> =
-
-> >
-> > I wondered also about DEBUG_FS entries. I can see their value when
-> > developing the driver. But since this is done now, do they really help a
-> > user to debug a difficult case? I am not sure, and then I wonder if we
-> > should have that code in upstream. I am open for discussion, though.
-> =
-
-> The user wanted to have health monitor implemented on top of the driver.
-> The user has 16 channels connected the multiple devices. All are operated
-> using various daemons in the system. Sometimes the slave devices are powe=
-r down.
-> Therefor the user wanted to track the health status of the devices.
-
-Ah, then there are these options I have in mind (Wolfram, FYI as well!):
-1) push with debugfs as a temporary solution and convert to devlink health =
-protocol [1];
-2) drop it and develop devlink_health solution;
-3) push debugfs and wait if I=B2C will gain devlink health support
-
-[1]: https://www.kernel.org/doc/html/latest/networking/devlink/devlink-heal=
-th.html
-
--- =
-
-With Best Regards,
-Andy Shevchenko
+---
+Best Regards, Laurentiu
 
 
+>  drivers/bus/fsl-mc/fsl-mc-bus.c             | 73 +++++++++++++++-----
+>  drivers/bus/fsl-mc/fsl-mc-msi.c             | 37 +++++-----
+>  drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c | 75 ++++++++++++++++++++-
+>  3 files changed, 150 insertions(+), 35 deletions(-)
+> 
+> diff --git a/drivers/bus/fsl-mc/fsl-mc-bus.c b/drivers/bus/fsl-mc/fsl-mc-bus.c
+> index 824ff77bbe86..324d49d6df89 100644
+> --- a/drivers/bus/fsl-mc/fsl-mc-bus.c
+> +++ b/drivers/bus/fsl-mc/fsl-mc-bus.c
+> @@ -18,6 +18,8 @@
+>  #include <linux/bitops.h>
+>  #include <linux/msi.h>
+>  #include <linux/dma-mapping.h>
+> +#include <linux/acpi.h>
+> +#include <linux/iommu.h>
+>  
+>  #include "fsl-mc-private.h"
+>  
+> @@ -38,6 +40,7 @@ struct fsl_mc {
+>  	struct fsl_mc_device *root_mc_bus_dev;
+>  	u8 num_translation_ranges;
+>  	struct fsl_mc_addr_translation_range *translation_ranges;
+> +	void *fsl_mc_regs;
+>  };
+>  
+>  /**
+> @@ -56,6 +59,10 @@ struct fsl_mc_addr_translation_range {
+>  	phys_addr_t start_phys_addr;
+>  };
+>  
+> +#define FSL_MC_FAPR	0x28
+> +#define MC_FAPR_PL	BIT(18)
+> +#define MC_FAPR_BMT	BIT(17)
+> +
+>  /**
+>   * fsl_mc_bus_match - device to driver matching callback
+>   * @dev: the fsl-mc device to match against
+> @@ -124,7 +131,10 @@ static int fsl_mc_dma_configure(struct device *dev)
+>  	while (dev_is_fsl_mc(dma_dev))
+>  		dma_dev = dma_dev->parent;
+>  
+> -	return of_dma_configure_id(dev, dma_dev->of_node, 0, &input_id);
+> +	if (dev_of_node(dma_dev))
+> +		return of_dma_configure_id(dev, dma_dev->of_node, 0, &input_id);
+> +
+> +	return acpi_dma_configure_id(dev, DEV_DMA_COHERENT, &input_id);
+>  }
+>  
+>  static ssize_t modalias_show(struct device *dev, struct device_attribute *attr,
+> @@ -865,8 +875,11 @@ static int fsl_mc_bus_probe(struct platform_device *pdev)
+>  	struct fsl_mc_io *mc_io = NULL;
+>  	int container_id;
+>  	phys_addr_t mc_portal_phys_addr;
+> -	u32 mc_portal_size;
+> -	struct resource res;
+> +	u32 mc_portal_size, mc_stream_id;
+> +	struct resource *plat_res;
+> +
+> +	if (!iommu_present(&fsl_mc_bus_type))
+> +		return -EPROBE_DEFER;
+>  
+>  	mc = devm_kzalloc(&pdev->dev, sizeof(*mc), GFP_KERNEL);
+>  	if (!mc)
+> @@ -874,19 +887,33 @@ static int fsl_mc_bus_probe(struct platform_device *pdev)
+>  
+>  	platform_set_drvdata(pdev, mc);
+>  
+> +	plat_res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+> +	mc->fsl_mc_regs = devm_ioremap_resource(&pdev->dev, plat_res);
+> +	if (IS_ERR(mc->fsl_mc_regs))
+> +		return PTR_ERR(mc->fsl_mc_regs);
+> +
+> +	if (IS_ENABLED(CONFIG_ACPI) && !dev_of_node(&pdev->dev)) {
+> +		mc_stream_id = readl(mc->fsl_mc_regs + FSL_MC_FAPR);
+> +		/*
+> +		 * HW ORs the PL and BMT bit, places the result in bit 15 of
+> +		 * the StreamID and ORs in the ICID. Calculate it accordingly.
+> +		 */
+> +		mc_stream_id = (mc_stream_id & 0xffff) |
+> +				((mc_stream_id & (MC_FAPR_PL | MC_FAPR_BMT)) ?
+> +					0x4000 : 0);
+> +		error = acpi_dma_configure_id(&pdev->dev, DEV_DMA_COHERENT,
+> +					      &mc_stream_id);
+> +		if (error)
+> +			dev_warn(&pdev->dev, "failed to configure dma: %d.\n",
+> +				 error);
+> +	}
+> +
+>  	/*
+>  	 * Get physical address of MC portal for the root DPRC:
+>  	 */
+> -	error = of_address_to_resource(pdev->dev.of_node, 0, &res);
+> -	if (error < 0) {
+> -		dev_err(&pdev->dev,
+> -			"of_address_to_resource() failed for %pOF\n",
+> -			pdev->dev.of_node);
+> -		return error;
+> -	}
+> -
+> -	mc_portal_phys_addr = res.start;
+> -	mc_portal_size = resource_size(&res);
+> +	plat_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	mc_portal_phys_addr = plat_res->start;
+> +	mc_portal_size = resource_size(plat_res);
+>  	error = fsl_create_mc_io(&pdev->dev, mc_portal_phys_addr,
+>  				 mc_portal_size, NULL,
+>  				 FSL_MC_IO_ATOMIC_CONTEXT_PORTAL, &mc_io);
+> @@ -903,11 +930,13 @@ static int fsl_mc_bus_probe(struct platform_device *pdev)
+>  	dev_info(&pdev->dev, "MC firmware version: %u.%u.%u\n",
+>  		 mc_version.major, mc_version.minor, mc_version.revision);
+>  
+> -	error = get_mc_addr_translation_ranges(&pdev->dev,
+> -					       &mc->translation_ranges,
+> -					       &mc->num_translation_ranges);
+> -	if (error < 0)
+> -		goto error_cleanup_mc_io;
+> +	if (dev_of_node(&pdev->dev)) {
+> +		error = get_mc_addr_translation_ranges(&pdev->dev,
+> +						&mc->translation_ranges,
+> +						&mc->num_translation_ranges);
+> +		if (error < 0)
+> +			goto error_cleanup_mc_io;
+> +	}
+>  
+>  	error = dprc_get_container_id(mc_io, 0, &container_id);
+>  	if (error < 0) {
+> @@ -934,6 +963,7 @@ static int fsl_mc_bus_probe(struct platform_device *pdev)
+>  		goto error_cleanup_mc_io;
+>  
+>  	mc->root_mc_bus_dev = mc_bus_dev;
+> +	mc_bus_dev->dev.fwnode = pdev->dev.fwnode;
+>  	return 0;
+>  
+>  error_cleanup_mc_io:
+> @@ -967,11 +997,18 @@ static const struct of_device_id fsl_mc_bus_match_table[] = {
+>  
+>  MODULE_DEVICE_TABLE(of, fsl_mc_bus_match_table);
+>  
+> +static const struct acpi_device_id fsl_mc_bus_acpi_match_table[] = {
+> +	{"NXP0008", 0 },
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(acpi, fsl_mc_bus_acpi_match_table);
+> +
+>  static struct platform_driver fsl_mc_bus_driver = {
+>  	.driver = {
+>  		   .name = "fsl_mc_bus",
+>  		   .pm = NULL,
+>  		   .of_match_table = fsl_mc_bus_match_table,
+> +		   .acpi_match_table = fsl_mc_bus_acpi_match_table,
+>  		   },
+>  	.probe = fsl_mc_bus_probe,
+>  	.remove = fsl_mc_bus_remove,
+> diff --git a/drivers/bus/fsl-mc/fsl-mc-msi.c b/drivers/bus/fsl-mc/fsl-mc-msi.c
+> index e7bbff445a83..8edadf05cbb7 100644
+> --- a/drivers/bus/fsl-mc/fsl-mc-msi.c
+> +++ b/drivers/bus/fsl-mc/fsl-mc-msi.c
+> @@ -13,6 +13,7 @@
+>  #include <linux/irq.h>
+>  #include <linux/irqdomain.h>
+>  #include <linux/msi.h>
+> +#include <linux/acpi_iort.h>
+>  
+>  #include "fsl-mc-private.h"
+>  
+> @@ -179,25 +180,31 @@ struct irq_domain *fsl_mc_msi_create_irq_domain(struct fwnode_handle *fwnode,
+>  
+>  struct irq_domain *fsl_mc_find_msi_domain(struct device *dev)
+>  {
+> -	struct irq_domain *msi_domain = NULL;
+> +	struct device *root_dprc_dev;
+> +	struct device *bus_dev;
+> +	struct irq_domain *msi_domain;
+>  	struct fsl_mc_device *mc_dev = to_fsl_mc_device(dev);
+>  
+> -	msi_domain = of_msi_map_get_device_domain(dev, mc_dev->icid,
+> +	fsl_mc_get_root_dprc(dev, &root_dprc_dev);
+> +	bus_dev = root_dprc_dev->parent;
+> +
+> +	if (bus_dev->of_node) {
+> +		msi_domain = of_msi_map_get_device_domain(dev,
+> +						  mc_dev->icid,
+>  						  DOMAIN_BUS_FSL_MC_MSI);
+>  
+> -	/*
+> -	 * if the msi-map property is missing assume that all the
+> -	 * child containers inherit the domain from the parent
+> -	 */
+> -	if (!msi_domain) {
+> -		struct device *root_dprc_dev;
+> -		struct device *bus_dev;
+> -
+> -		fsl_mc_get_root_dprc(dev, &root_dprc_dev);
+> -		bus_dev = root_dprc_dev->parent;
+> -		msi_domain = of_msi_get_domain(bus_dev,
+> -					       bus_dev->of_node,
+> -					       DOMAIN_BUS_FSL_MC_MSI);
+> +		/*
+> +		 * if the msi-map property is missing assume that all the
+> +		 * child containers inherit the domain from the parent
+> +		 */
+> +		if (!msi_domain)
+> +
+> +			msi_domain = of_msi_get_domain(bus_dev,
+> +						bus_dev->of_node,
+> +						DOMAIN_BUS_FSL_MC_MSI);
+> +	} else {
+> +		msi_domain = iort_get_device_domain(dev, mc_dev->icid,
+> +						    DOMAIN_BUS_FSL_MC_MSI);
+>  	}
+>  
+>  	return msi_domain;
+> diff --git a/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c b/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c
+> index a5c8d577e424..b8b948fb6b2d 100644
+> --- a/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c
+> +++ b/drivers/irqchip/irq-gic-v3-its-fsl-mc-msi.c
+> @@ -7,6 +7,8 @@
+>   *
+>   */
+>  
+> +#include <linux/acpi.h>
+> +#include <linux/acpi_iort.h>
+>  #include <linux/of_device.h>
+>  #include <linux/of_address.h>
+>  #include <linux/irq.h>
+> @@ -30,7 +32,8 @@ static u32 fsl_mc_msi_domain_get_msi_id(struct irq_domain *domain,
+>  	u32 out_id;
+>  
+>  	of_node = irq_domain_get_of_node(domain);
+> -	out_id = of_msi_map_id(&mc_dev->dev, of_node, mc_dev->icid);
+> +	out_id = of_node ? of_msi_map_id(&mc_dev->dev, of_node, mc_dev->icid) :
+> +			iort_msi_map_id(&mc_dev->dev, mc_dev->icid);
+>  
+>  	return out_id;
+>  }
+> @@ -79,7 +82,67 @@ static const struct of_device_id its_device_id[] = {
+>  	{},
+>  };
+>  
+> -static int __init its_fsl_mc_msi_init(void)
+> +static int __init its_fsl_mc_msi_init_one(struct fwnode_handle *handle,
+> +					  const char *name)
+> +{
+> +	struct irq_domain *parent;
+> +	struct irq_domain *mc_msi_domain;
+> +
+> +	parent = irq_find_matching_fwnode(handle, DOMAIN_BUS_NEXUS);
+> +	if (!parent || !msi_get_domain_info(parent)) {
+> +		pr_err("%s: Unable to locate ITS domain\n", name);
+> +		return -ENXIO;
+> +	}
+> +
+> +	mc_msi_domain = fsl_mc_msi_create_irq_domain(handle,
+> +						&its_fsl_mc_msi_domain_info,
+> +						parent);
+> +	if (!mc_msi_domain)
+> +		pr_err("ACPIF: unable to create fsl-mc domain\n");
+> +
+> +	pr_info("fsl-mc MSI: domain created\n");
+> +
+> +	return 0;
+> +}
+> +
+> +static int __init
+> +its_fsl_mc_msi_parse_madt(union acpi_subtable_headers *header,
+> +			  const unsigned long end)
+> +{
+> +	struct acpi_madt_generic_translator *its_entry;
+> +	struct fwnode_handle *dom_handle;
+> +	const char *node_name;
+> +	int err = -ENXIO;
+> +
+> +	its_entry = (struct acpi_madt_generic_translator *)header;
+> +	node_name = kasprintf(GFP_KERNEL, "ITS@0x%lx",
+> +			      (long)its_entry->base_address);
+> +
+> +	dom_handle = iort_find_domain_token(its_entry->translation_id);
+> +	if (!dom_handle) {
+> +		pr_err("%s: Unable to locate ITS domain handle\n", node_name);
+> +		goto out;
+> +	}
+> +
+> +	err = its_fsl_mc_msi_init_one(dom_handle, node_name);
+> +	if (!err)
+> +		pr_info("fsl-mc MSI: %s domain created\n", node_name);
+> +
+> +out:
+> +	kfree(node_name);
+> +	return err;
+> +}
+> +
+> +
+> +static int __init its_fsl_mc_acpi_msi_init(void)
+> +{
+> +	acpi_table_parse_madt(ACPI_MADT_TYPE_GENERIC_TRANSLATOR,
+> +			      its_fsl_mc_msi_parse_madt, 0);
+> +
+> +	return 0;
+> +}
+> +
+> +static int __init its_fsl_mc_of_msi_init(void)
+>  {
+>  	struct device_node *np;
+>  	struct irq_domain *parent;
+> @@ -113,4 +176,12 @@ static int __init its_fsl_mc_msi_init(void)
+>  	return 0;
+>  }
+>  
+> +static int __init its_fsl_mc_msi_init(void)
+> +{
+> +	its_fsl_mc_of_msi_init();
+> +	its_fsl_mc_acpi_msi_init();
+> +
+> +	return 0;
+> +}
+> +
+>  early_initcall(its_fsl_mc_msi_init);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
