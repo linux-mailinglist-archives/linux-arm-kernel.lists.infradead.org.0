@@ -2,58 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22A4A1DD83C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 22:25:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EEA71DD882
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 22:38:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bYLgoS0JzHYO1+Gj+ForGDYcs4xfwDAH5TT7PX75VzU=; b=RSV/u4LEThMDCJ
-	Jbk0UDw3UQQEt5gmHcDmVsxWoLeRhz0IwsBveJXJU9aM+aLKg2ldmHtVox0IgAli3VuSWQBwQ2h4F
-	n+hvp2RSbN3jOCO6on4ROwJ6HrKcN18wN034l14mSh9SPYBbFBI8A4SF4fGUB9LSnPF2DKJpA6H2P
-	7JeJ0ChomaUvGbAeRX1AxRtZj+2q/TlQJ+BAq+1yJIz89/cwn3nTUR4S1HuR7pQCd+67/ipKf9dWA
-	L650BbaoIhijDjK4IP8gfbfHxcVGNNT+AVpUnDlIwcH4U/Bna2eyDNyRgIeee2ZbIUYz4rXbJmY+m
-	XkJg47FTYByDdeVxXZHg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=eOBo/ydyhANe2N5sg09f+RYa9RW6mdqdpt/2yVEaYEM=; b=gJmF8lOemobB1BeWcH7oqhlxv
+	ifY98D+ewnqAKdYyLQ3IU2Dh+rzllLcUM7jOs5toxd6eHjPaUFurBX/nk+Tf7vwwugJ/t6am23LVd
+	GSzclNq6Uw+7Qabfp9OPIKB9YCbb7RcdfhorlgE4yxeHpGbDqVVr2ZIHJ0/jpEaRF+PZs+HZBu6Co
+	ZrClhkrZyVTTdQrnfy4ApyVE5RXzTcVPq9DWWSR7pzwjRiTGXIVOdBhYmPlWsHjUN4yV7vj7BVGTK
+	EuWZMXgePC+UmtEiccP8Z5S8uAWxkQzMLl8RVNOPxZzZATMHQjHDuxFPCeJGHLdNLLKQjk3laJPH2
+	8pRaE8q5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbrl9-0006AS-69; Thu, 21 May 2020 20:25:43 +0000
-Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbrkv-00069g-CY
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 20:25:30 +0000
-Received: from unknown (HELO ironmsg03-sd.qualcomm.com) ([10.53.140.143])
- by alexa-out-sd-02.qualcomm.com with ESMTP; 21 May 2020 13:25:26 -0700
-Received: from gurus-linux.qualcomm.com ([10.46.162.81])
- by ironmsg03-sd.qualcomm.com with ESMTP; 21 May 2020 13:25:25 -0700
-Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
- id C4B744DDE; Thu, 21 May 2020 13:25:25 -0700 (PDT)
-Date: Thu, 21 May 2020 13:25:25 -0700
-From: Guru Das Srinagesh <gurus@codeaurora.org>
-To: Daniel Thompson <daniel.thompson@linaro.org>
-Subject: Re: [RESEND PATCH v14 04/11] pwm: clps711x: Cast period to u32
- before use as divisor
-Message-ID: <20200521202525.GA24026@codeaurora.org>
-References: <cover.1589330178.git.gurus@codeaurora.org>
- <1d6918c3fc2976bdbdb687bf54a2ef09fc1558db.1589330178.git.gurus@codeaurora.org>
- <20200521101934.j5ivjky4e6byveut@holly.lan>
+	id 1jbrxE-0003yu-4K; Thu, 21 May 2020 20:38:12 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbrx4-0003xu-SD
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 20:38:04 +0000
+Received: from localhost (p5486ce13.dip0.t-ipconnect.de [84.134.206.19])
+ by pokefinder.org (Postfix) with ESMTPSA id 7F7B02C1FCF;
+ Thu, 21 May 2020 22:37:58 +0200 (CEST)
+Date: Thu, 21 May 2020 22:37:58 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: Re: [PATCH v12 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
+ driver
+Message-ID: <20200521203758.GA20150@ninjato>
+References: <20200521110910.45518-1-tali.perry1@gmail.com>
+ <20200521110910.45518-3-tali.perry1@gmail.com>
+ <20200521142340.GM1634618@smile.fi.intel.com>
+ <20200521143100.GA16812@ninjato>
+ <CAHb3i=vcVLWHjdiJoNZQrwJCqzszpOL7e9SAjqObsZCRH4ifwg@mail.gmail.com>
+ <20200521145347.GO1634618@smile.fi.intel.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200521101934.j5ivjky4e6byveut@holly.lan>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <20200521145347.GO1634618@smile.fi.intel.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_132529_452655_1C278698 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20200521_133803_063293_7BA6709C 
+X-CRM114-Status: GOOD (  14.05  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [199.106.114.39 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,61 +62,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-pwm@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, David Collins <collinsd@codeaurora.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Dan Carpenter <dan.carpenter@oracle.com>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Joe Perches <joe@perches.com>,
- Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
- Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tomer Maimon <tmaimon77@gmail.com>, Nancy Yuen <yuenn@google.com>,
+ avifishman70@gmail.com, Patrick Venture <venture@google.com>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ Brendan Higgins <brendanhiggins@google.com>, Ofer Yehielli <ofery@google.com>,
+ Tali Perry <tali.perry1@gmail.com>, kfting@nuvoton.com,
+ Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Benjamin Fair <benjaminfair@google.com>
+Content-Type: multipart/mixed; boundary="===============0746351580110605170=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 11:19:34AM +0100, Daniel Thompson wrote:
-> On Wed, May 20, 2020 at 03:55:57PM -0700, Guru Das Srinagesh wrote:
-> > Since the PWM framework is switching struct pwm_args.period's datatype
-> > to u64, prepare for this transition by typecasting it to u32.
-> > 
-> > Also, since the dividend is still a 32-bit number, any divisor greater
-> > than the numerator will cause the quotient to be zero, so return 0 in
-> > that case to efficiently skip the division.
-> > 
-> > Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
-> > ---
-> >  drivers/pwm/pwm-clps711x.c | 5 ++++-
-> >  1 file changed, 4 insertions(+), 1 deletion(-)
-> > 
-> > diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
-> > index 924d39a..da771b1 100644
-> > --- a/drivers/pwm/pwm-clps711x.c
-> > +++ b/drivers/pwm/pwm-clps711x.c
-> > @@ -43,7 +43,10 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
-> >  static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
-> >  {
-> >  	/* Duty cycle 0..15 max */
-> > -	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
-> > +	if (pwm->args.period > (v * 0xf))
-> > +		return 0;
-> 
-> This doesn't look right to me.
-> 
-> DIV_ROUND_CLOSEST() does rounded division and the short circuit doesn't
-> implement that.
 
-My initial patch [1] was to simply use DIV64_U64_ROUND_CLOSEST(), but I
-got review feedback to add a short-circuit (same thread, [2]). I feel
-like I should skip the short-circuiting and type casting and simply just
-use DIV64_U64_ROUND_CLOSEST() - what do you think?
+--===============0746351580110605170==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="mYCpIKhGyMATD0i+"
+Content-Disposition: inline
 
-[1] https://lore.kernel.org/lkml/587f9ccae68ad7e1ce97fa8da6037292af1a5095.1584473399.git.gurus@codeaurora.org/
-[2] https://lore.kernel.org/lkml/CAK8P3a2Hi_AoRC3g7qKth4e_Y1jZrbBDhWUb3YPZm10FWMu-ig@mail.gmail.com/
+
+--mYCpIKhGyMATD0i+
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+
+> > > I wondered also about DEBUG_FS entries. I can see their value when
+> > > developing the driver. But since this is done now, do they really hel=
+p a
+> > > user to debug a difficult case? I am not sure, and then I wonder if we
+> > > should have that code in upstream. I am open for discussion, though.
+> >=20
+> > The user wanted to have health monitor implemented on top of the driver.
+> > The user has 16 channels connected the multiple devices. All are operat=
+ed
+> > using various daemons in the system. Sometimes the slave devices are po=
+wer down.
+> > Therefor the user wanted to track the health status of the devices.
+>=20
+> Ah, then there are these options I have in mind (Wolfram, FYI as well!):
+> 1) push with debugfs as a temporary solution and convert to devlink healt=
+h protocol [1];
+> 2) drop it and develop devlink_health solution;
+> 3) push debugfs and wait if I=C2=B2C will gain devlink health support
+
+No need for 2). We can push it now and convert it later. That being
+said, I wonder if [1] is suitable for this driver? Things like NACKs and
+timeouts happen regularly on an I2C bus and are not a state of bad
+health.
+
+
+--mYCpIKhGyMATD0i+
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7G5qEACgkQFA3kzBSg
+KbYDmQ/+OTWXWz2QGQFX0uxtaXhfs432/2BO3z/AA7ZJn7t6OCSyyvDL9L26maBs
+Hu/S78wYqdLY6l58jtz8iUHsMwqL+zcQSTjOlo8mqj99T10GpZiwzJlSVB7AxT28
+jmlxqN+z9fNUDQDujV+Y8UVvi7+UZ8Y37nYewtOz3AMskTx90HflDt4OHUBQsG7p
+1bj1wtPmUfOy8su9FZrPN6SdhzO24XXaqVJgNg2FWqiuNoZ6Kdo8ekQAc3bjvNiO
+PbEjpRw9QFE8pY9bWyHHJ7pFfpUvwe1bCXAA+Dj19LY2R+29lOxwaRZ3teTWxhG1
+ArYFtxWrvCwYezyEKZEPozzfOYwd9LZE28c30aDC/8gfeAP1Gz8C9jySYRid6/Zp
+RglnDBJKcR3V71fjLTLIXIkPd7kMbxK9A9MQkwlPeLbqlkiLbZflr9ceusirhxmU
+IP98Ma6w8fob0ntpPGBD0j42rCebhN1d6PG2HHnvbQqj7hpjCUvVNAerGY38enaJ
++kNWO8/Y+Hwry7VLp/l5cQ23BeVJpeh8nGME+t6rJhWIP69oP6GEQNGWdzYCElD5
+X3l4OOSdFAw1ZFjfj0K8wtMEHno/wDglPsrGxjReFI5YCQyKSKi3NtqONSEPiVrn
+40cpX2SNefM4PjPQwRSVKuYNlAvmzo9cQKpkgg2YluT2V+JFJVo=
+=jcCF
+-----END PGP SIGNATURE-----
+
+--mYCpIKhGyMATD0i+--
+
+
+--===============0746351580110605170==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0746351580110605170==--
+
