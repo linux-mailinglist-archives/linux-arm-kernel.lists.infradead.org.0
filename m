@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC5311DCDA0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 15:01:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 936651DCDA2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 15:02:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fe4OVS7FNvBGTwR5T73rMhce0QxdHkDAwq5NeHl+/5o=; b=lNwN+PDTLmtSaK
-	naCNZNdR62YIBSkh7Q0DcxsIFdzDpwQDre6i22s8T5AJH70/KE0k2bbKGbJuw/PtqcHabUK7GHY8x
-	1Xy/xXFzBQ8DgLmu4GuHprYDGtf+S+d5LdfMKM51CTGBRJIjWoPK0xB4sgQrwFHxih8Pt2rXArHBA
-	JqAKufZekfn2TRBgEUvKAsAFMc10tbrQiGXS2NUkgH0DCm9FHUIY+bLeiJVn3nHimyq6PfBNLFV0u
-	Y1oJH4QEqZ1uV+iOY/jzv+hIleeZ2g/Z3fqZRLDRA/EhEedo0w2U+cWfi7QMS5BTwvO+SiukyNWay
-	veyPvFmOkMG0TaVmMSgQ==;
+	List-Owner; bh=1VPZ8uzeK69oxTLMZ31oF4nbFVm12zJ3ZyuKwUZckO4=; b=TXrytkQXDeHU7P
+	oDdaAFvpLFHKZmx89DdS2ZTrJxPVqilSkdz79fD7yKHYBsjY/5fnoHUa/UIFszczW2JtiY9IK8a7K
+	cU/bITCYTA+nu0iGKO+T71EUUqZdeq587X59niEWtuKemcBIohFkIiRzYn5VEzWfM3sOfAdi0GWaw
+	lledB78rF8+lQUQKGprp2ZHXldBkeegL0HH50pkOYlnvhqul3s3yVeRi/D12I37zbAneuyvyGryMe
+	ZgviA/KKodBjieCgySpm7/XHkfJ0ZrXpNNbYG38MSfP4xVgq+rg5XL5OXyElv+rSqykuzKVhEj+Yd
+	ri6d0zvaWwJkwzEF/RzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbkpR-0000Ie-3a; Thu, 21 May 2020 13:01:41 +0000
+	id 1jbkpf-0000bV-2S; Thu, 21 May 2020 13:01:55 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbkoD-0007wM-9s
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 13:00:27 +0000
+ id 1jbkoG-00081J-9c
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 13:00:29 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0FA8A1063;
- Thu, 21 May 2020 06:00:25 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C126CD6E;
+ Thu, 21 May 2020 06:00:27 -0700 (PDT)
 Received: from red-moon.arm.com (unknown [10.57.29.145])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8EAC63F305;
- Thu, 21 May 2020 06:00:22 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4B2EE3F305;
+ Thu, 21 May 2020 06:00:25 -0700 (PDT)
 From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 03/12] ACPI/IORT: Make iort_msi_map_rid() PCI agnostic
-Date: Thu, 21 May 2020 13:59:59 +0100
-Message-Id: <20200521130008.8266-4-lorenzo.pieralisi@arm.com>
+Subject: [PATCH 04/12] ACPI/IORT: Remove useless PCI bus walk
+Date: Thu, 21 May 2020 14:00:00 +0100
+Message-Id: <20200521130008.8266-5-lorenzo.pieralisi@arm.com>
 X-Mailer: git-send-email 2.26.1
 In-Reply-To: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
 References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_060025_464849_FF840609 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20200521_060028_438938_BE73684C 
+X-CRM114-Status: GOOD (  10.22  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -76,10 +76,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is nothing PCI specific in iort_msi_map_rid(). Make it
-a generic function, iort_msi_map_id() and provide a stub
-for iort_msi_map_rid() on top of it to keep current users
-unchanged.
+The PCI bus domain number (used in the iort_match_node_callback() -
+pci_domain_nr() call) is cascaded through the PCI bus hierarchy at PCI
+bus enumeration time, therefore there is no need in iort_find_dev_node()
+to walk the PCI bus upwards to grab the root bus to be passed to
+iort_scan_node(), the device->bus PCI bus pointer will do.
+
+Remove this useless code.
 
 Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Will Deacon <will@kernel.org>
@@ -89,74 +92,24 @@ Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Robin Murphy <robin.murphy@arm.com>
 Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
 ---
- drivers/acpi/arm64/iort.c | 12 ++++++------
- include/linux/acpi_iort.h | 12 ++++++++++--
- 2 files changed, 16 insertions(+), 8 deletions(-)
+ drivers/acpi/arm64/iort.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
 diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-index 8f2a961c1364..f346a785e0b5 100644
+index f346a785e0b5..ae9e1089d954 100644
 --- a/drivers/acpi/arm64/iort.c
 +++ b/drivers/acpi/arm64/iort.c
-@@ -585,22 +585,22 @@ static struct acpi_iort_node *iort_find_dev_node(struct device *dev)
- }
+@@ -575,10 +575,7 @@ static struct acpi_iort_node *iort_find_dev_node(struct device *dev)
+ 				      iort_match_node_callback, dev);
+ 	}
  
- /**
-- * iort_msi_map_rid() - Map a MSI requester ID for a device
-+ * iort_msi_map_id() - Map a MSI input ID for a device
-  * @dev: The device for which the mapping is to be done.
-- * @req_id: The device requester ID.
-+ * @input_id: The device input ID.
-  *
-- * Returns: mapped MSI RID on success, input requester ID otherwise
-+ * Returns: mapped MSI ID on success, input ID otherwise
-  */
--u32 iort_msi_map_rid(struct device *dev, u32 req_id)
-+u32 iort_msi_map_id(struct device *dev, u32 input_id)
- {
- 	struct acpi_iort_node *node;
- 	u32 dev_id;
+-	/* Find a PCI root bus */
+ 	pbus = to_pci_dev(dev)->bus;
+-	while (!pci_is_root_bus(pbus))
+-		pbus = pbus->parent;
  
- 	node = iort_find_dev_node(dev);
- 	if (!node)
--		return req_id;
-+		return input_id;
- 
--	iort_node_map_id(node, req_id, &dev_id, IORT_MSI_TYPE);
-+	iort_node_map_id(node, input_id, &dev_id, IORT_MSI_TYPE);
- 	return dev_id;
- }
- 
-diff --git a/include/linux/acpi_iort.h b/include/linux/acpi_iort.h
-index 08ec6bd2297f..8c71f92b92ef 100644
---- a/include/linux/acpi_iort.h
-+++ b/include/linux/acpi_iort.h
-@@ -28,7 +28,11 @@ void iort_deregister_domain_token(int trans_id);
- struct fwnode_handle *iort_find_domain_token(int trans_id);
- #ifdef CONFIG_ACPI_IORT
- void acpi_iort_init(void);
--u32 iort_msi_map_rid(struct device *dev, u32 req_id);
-+u32 iort_msi_map_id(struct device *dev, u32 id);
-+static inline u32 iort_msi_map_rid(struct device *dev, u32 req_id)
-+{
-+	return iort_msi_map_id(dev, req_id);
-+}
- struct irq_domain *iort_get_device_domain(struct device *dev, u32 id,
- 					  enum irq_domain_bus_token bus_token);
- void acpi_configure_pmsi_domain(struct device *dev);
-@@ -39,8 +43,12 @@ const struct iommu_ops *iort_iommu_configure(struct device *dev);
- int iort_iommu_msi_get_resv_regions(struct device *dev, struct list_head *head);
- #else
- static inline void acpi_iort_init(void) { }
-+static inline u32 iort_msi_map_id(struct device *dev, u32 id)
-+{ return id; }
- static inline u32 iort_msi_map_rid(struct device *dev, u32 req_id)
--{ return req_id; }
-+{
-+	return iort_msi_map_id(dev, req_id);
-+}
- static inline struct irq_domain *iort_get_device_domain(
- 	struct device *dev, u32 id, enum irq_domain_bus_token bus_token)
- { return NULL; }
+ 	return iort_scan_node(ACPI_IORT_NODE_PCI_ROOT_COMPLEX,
+ 			      iort_match_node_callback, &pbus->dev);
 -- 
 2.26.1
 
