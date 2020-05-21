@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 397D81DC35F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 02:10:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B44A1DC36D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 02:11:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6hCgo/IDvHQ5mvWU3XWEfEOWgvy86cddj7mXhacl3fE=; b=SXfyJP/RyeFqh/
-	AfHMOhnO5/QBIX+axSPBmSxyJFsBxeq5tKnCg1Fgdzrqk+8ZeUo1H/fp0LD1n1LYPA5GLBbRwu28M
-	LMTc6mexkLcN33prXFzFXgu+XX0+0Um9TDPHKm9bVa/4iJii+hYo7UeYptGb2iIfOXmsui5es/flC
-	MyKlIKX13AH3S0nsqiJYLqIDmgx8fxR3xqsrinpMSz29qbsKfk7Buz6olZInce6N/MKQOhexa/elx
-	yKjjOSt16YAf9B89qlTscCtLKMBckPplyPcz7RJsz1ZXAzLLG0OzHOXskkNiq5BcqUxZgoFTKjg/3
-	vNZZGURXB8JVADVcm2DA==;
+	List-Owner; bh=3Y9Br0AlJ6lrTQQDeDNdU9lkoLvJjqbWYqXxEsyMTGU=; b=mr90gEnUb9vLKN
+	4hb7F5AgZISNQxHIeuf4CYmQhhzNinpq/Ci90M2pNTuer57B9Wu/aWFbphS6Aw1UC5wtkqZqfVBbG
+	uQQXc6E4IEDXKbERKVvDwoFWRwg98/vemYzmuGumyBSF9zevxUOu7Pl9QrvZ160ocUQ111OagHYsD
+	/Z6ItBxRmi1+u+bxd76o+pM3BluqlaZl//GjTaxrF32QmPeR2ZzBBieX/7aFQip4sSH6ikoJc5UlR
+	VWYNoI3DgwUy3ZMFoZ1y+VwHxgIGLB+dpMkaMwqrezUZ8muOG+KZMD5lMVt1nj417p5Dv30h9jb2d
+	tldTaJuT2WNa4PBBPkaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbYn7-0007PH-FB; Thu, 21 May 2020 00:10:29 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jbYoG-0008Jx-0q; Thu, 21 May 2020 00:11:40 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbYmx-0007NR-52
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 00:10:20 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04L0ADbv039943;
- Wed, 20 May 2020 19:10:13 -0500
+ id 1jbYmx-0007NP-NR
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 00:10:22 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04L0AEkZ119704;
+ Wed, 20 May 2020 19:10:15 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1590019813;
- bh=ST8Yem8ialn5243k7YW5yffQxZOhgWPUoOpWLgWxyRw=;
+ s=ti-com-17Q1; t=1590019815;
+ bh=rZ+8zvFrOMMd6Sfqc+RIPegMwahThkjdiCU2NtPnWxU=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=n5JQIU7UxlsY3NiSOI8nNHRycPR0E7RssEID8o8Vlhkzd2RH0zm+qlXm5YU6NxBZ7
- 2UrA9QiJU5E0sLHe9XF6/tSveVbY0pZW1kfgFhnaSveg9YBwExPch5wfCTMkKtyG/I
- UGsUQILAlsEY4tjmEseKrk0cYOAm7VeY/wLqhM9o=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04L0ADaR053697
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 20 May 2020 19:10:13 -0500
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ b=j5nY4h4lWHas1G60DhhXm7eXxaxT2tX4/ugT5Gj/91kF12ukWKpRIeiqtGN3J5uNX
+ d4NOOgdewVjqRqfbyr2VEzl1ShbBUo6UfJ2tKJcHg9iUdgtHtJAkA/sfVqlTgM1uXx
+ xEuJGx/Opd3ujyTRhxuq5UuCWCINCc9a9GEixhdA=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04L0AEt5070841;
+ Wed, 20 May 2020 19:10:14 -0500
+Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 20
- May 2020 19:10:13 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ May 2020 19:10:14 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 20 May 2020 19:10:13 -0500
+ Frontend Transport; Wed, 20 May 2020 19:10:14 -0500
 Received: from lelv0597.itg.ti.com (lelv0597.itg.ti.com [10.181.64.32])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04L0ADTr065310;
- Wed, 20 May 2020 19:10:13 -0500
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04L0AETl025062;
+ Wed, 20 May 2020 19:10:14 -0500
 Received: from localhost ([10.250.48.148])
- by lelv0597.itg.ti.com (8.14.7/8.14.7) with ESMTP id 04L0ACKH084879;
- Wed, 20 May 2020 19:10:12 -0500
+ by lelv0597.itg.ti.com (8.14.7/8.14.7) with ESMTP id 04L0AEmq084893;
+ Wed, 20 May 2020 19:10:14 -0500
 From: Suman Anna <s-anna@ti.com>
 To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
  <robh+dt@kernel.org>, Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: [PATCH v2 1/4] remoteproc: Introduce rproc_of_parse_firmware() helper
-Date: Wed, 20 May 2020 19:10:03 -0500
-Message-ID: <20200521001006.2725-2-s-anna@ti.com>
+Subject: [PATCH v2 2/4] dt-bindings: remoteproc: Add bindings for C66x DSPs on
+ TI K3 SoCs
+Date: Wed, 20 May 2020 19:10:04 -0500
+Message-ID: <20200521001006.2725-3-s-anna@ti.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200521001006.2725-1-s-anna@ti.com>
 References: <20200521001006.2725-1-s-anna@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_171019_270635_DC14DA5F 
-X-CRM114-Status: GOOD (  13.73  )
+X-CRM114-CacheID: sfid-20200520_171019_856900_C89A86CB 
+X-CRM114-Status: GOOD (  19.45  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -101,67 +101,222 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a new helper function rproc_of_parse_firmware() to the remoteproc
-core that can be used by various remoteproc drivers to look up the
-the "firmware-name" property from a rproc device node. This property
-is already being used by multiple drivers, so this helper can avoid
-repeating equivalent code in remoteproc drivers.
+Some Texas Instruments K3 family of SoCs have one of more Digital Signal
+Processor (DSP) subsystems that are comprised of either a TMS320C66x
+CorePac and/or a next-generation TMS320C71x CorePac processor subsystem.
+Add the device tree bindings document for the C66x DSP devices on these
+SoCs. The added example illustrates the DT nodes for the first C66x DSP
+device present on the K3 J721E family of SoCs.
 
 Signed-off-by: Suman Anna <s-anna@ti.com>
 ---
-v2: New patch
+v2:
+ - Updated the example to include the root-node to fix the bot errors from v1
+ - Added maxItems to resets, mboxes, memory-region, sram properties
+ - Changed the ti,sci-proc-ids $ref to uint-array from uint-matrix
+ - Addressed the minor review comments from Mathieu
+v1: https://patchwork.kernel.org/patch/11458571/
 
- drivers/remoteproc/remoteproc_core.c     | 23 +++++++++++++++++++++++
- drivers/remoteproc/remoteproc_internal.h |  2 ++
- 2 files changed, 25 insertions(+)
+ .../bindings/remoteproc/ti,k3-dsp-rproc.yaml  | 190 ++++++++++++++++++
+ 1 file changed, 190 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml
 
-diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-index 9f04c30c4aaf..c458b218d524 100644
---- a/drivers/remoteproc/remoteproc_core.c
-+++ b/drivers/remoteproc/remoteproc_core.c
-@@ -1034,6 +1034,29 @@ rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, size_t len,
- }
- EXPORT_SYMBOL(rproc_of_resm_mem_entry_init);
- 
-+/**
-+ * rproc_of_parse_firmware() - parse and return the firmware-name
-+ * @dev: pointer on device struct representing a rproc
-+ * @index: index to use for the firmware-name retrieval
-+ * @fw_name: pointer to a character string, in which the firmware
-+ *           name is returned on success and unmodified otherwise.
-+ *
-+ * This is an OF helper function that parses a device's DT node for
-+ * the "firmware-name" property and returns the firmware name pointer
-+ * in @fw_name on success.
-+ *
-+ * Return: 0 on success, or an appropriate failure.
-+ */
-+int rproc_of_parse_firmware(struct device *dev, int index, const char **fw_name)
-+{
-+	int ret;
+diff --git a/Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml b/Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml
+new file mode 100644
+index 000000000000..cdf649655838
+--- /dev/null
++++ b/Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml
+@@ -0,0 +1,190 @@
++# SPDX-License-Identifier: (GPL-2.0-only or BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/remoteproc/ti,k3-dsp-rproc.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+	ret = of_property_read_string_index(dev->of_node, "firmware-name",
-+					    index, fw_name);
-+	return ret ? ret : 0;
-+}
-+EXPORT_SYMBOL(rproc_of_parse_firmware);
++title: TI K3 DSP devices
 +
- /*
-  * A lookup table for resource handlers. The indices are defined in
-  * enum fw_resource_type.
-diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
-index 4ba7cb59d3e8..e5341e91d2fc 100644
---- a/drivers/remoteproc/remoteproc_internal.h
-+++ b/drivers/remoteproc/remoteproc_internal.h
-@@ -28,6 +28,8 @@ struct rproc_debug_trace {
- void rproc_release(struct kref *kref);
- irqreturn_t rproc_vq_interrupt(struct rproc *rproc, int vq_id);
- void rproc_vdev_release(struct kref *ref);
-+int rproc_of_parse_firmware(struct device *dev, int index,
-+			    const char **fw_name);
- 
- /* from remoteproc_virtio.c */
- int rproc_add_virtio_dev(struct rproc_vdev *rvdev, int id);
++maintainers:
++  - Suman Anna <s-anna@ti.com>
++
++description: |
++  The TI K3 family of SoCs usually have one or more TI DSP Core sub-systems
++  that are used to offload some of the processor-intensive tasks or algorithms,
++  for achieving various system level goals.
++
++  These processor sub-systems usually contain additional sub-modules like
++  L1 and/or L2 caches/SRAMs, an Interrupt Controller, an external memory
++  controller, a dedicated local power/sleep controller etc. The DSP processor
++  cores in the K3 SoCs are usually either a TMS320C66x CorePac processor or a
++  TMS320C71x CorePac processor.
++
++  Each DSP Core sub-system is represented as a single DT node. Each node has a
++  number of required or optional properties that enable the OS running on the
++  host processor (Arm CorePac) to perform the device management of the remote
++  processor and to communicate with the remote processor.
++
++properties:
++  compatible:
++    const: ti,j721e-c66-dsp
++    description:
++      Use "ti,j721e-c66-dsp" for C66x DSPs on K3 J721E SoCs
++
++  reg:
++    description: |
++      Should contain an entry for each value in 'reg-names'.
++      Each entry should have the memory region's start address
++      and the size of the region, the representation matching
++      the parent node's '#address-cells' and '#size-cells' values.
++    minItems: 3
++    maxItems: 3
++
++  reg-names:
++    description: |
++      Should contain strings with the names of the specific internal
++      memory regions, and should be defined in this order
++    maxItems: 3
++    items:
++      - const: l2sram
++      - const: l1pram
++      - const: l1dram
++
++  ti,sci:
++    $ref: /schemas/types.yaml#/definitions/phandle
++    description:
++      Should be a phandle to the TI-SCI System Controller node
++
++  ti,sci-dev-id:
++    $ref: /schemas/types.yaml#/definitions/uint32
++    description: |
++      Should contain the TI-SCI device id corresponding to the DSP core.
++      Please refer to the corresponding System Controller documentation
++      for valid values for the DSP cores.
++
++  ti,sci-proc-ids:
++    description: Should contain a single tuple of <proc_id host_id>.
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32-array
++      - maxItems: 1
++        items:
++          items:
++            - description: TI-SCI processor id for the DSP core device
++            - description: TI-SCI host id to which processor control
++                           ownership should be transferred to
++
++  resets:
++    description: |
++      Should contain the phandle to the reset controller node
++      managing the local resets for this device, and a reset
++      specifier. Please refer to the following reset bindings
++      for the reset argument specifier,
++      Documentation/devicetree/bindings/reset/ti,sci-reset.txt
++    maxItems: 1
++
++  firmware-name:
++    description: |
++      Should contain the name of the default firmware image
++      file located on the firmware search path
++
++  mboxes:
++    description: |
++      OMAP Mailbox specifier denoting the sub-mailbox, to be used for
++      communication with the remote processor. This property should match
++      with the sub-mailbox node used in the firmware image. The specifier
++      format is as per the bindings,
++      Documentation/devicetree/bindings/mailbox/omap-mailbox.txt
++    maxItems: 1
++
++  memory-region:
++    minItems: 2
++    maxItems: 8
++    description: |
++      phandle to the reserved memory nodes to be associated with the remoteproc
++      device. There should be at least two reserved memory nodes defined - the
++      first one would be used for dynamic DMA allocations like vrings and vring
++      buffers, and the remaining ones used for the firmware image sections. The
++      reserved memory nodes should be carveout nodes, and should be defined as
++      per the bindings in
++      Documentation/devicetree/bindings/reserved-memory/reserved-memory.txt
++
++# Optional properties:
++# --------------------
++
++  sram:
++    $ref: /schemas/types.yaml#/definitions/phandle-array
++    minItems: 1
++    maxItems: 4
++    description: |
++      phandles to one or more reserved on-chip SRAM regions. The regions
++      should be defined as child nodes of the respective SRAM node, and
++      should be defined as per the generic bindings in,
++      Documentation/devicetree/bindings/sram/sram.yaml
++
++required:
++ - compatible
++ - reg
++ - reg-names
++ - ti,sci
++ - ti,sci-dev-id
++ - ti,sci-proc-ids
++ - resets
++ - firmware-name
++ - mboxes
++ - memory-region
++
++additionalProperties: false
++
++examples:
++  - |
++    / {
++        model = "Texas Instruments K3 J721E SoC";
++        compatible = "ti,j721e";
++        #address-cells = <2>;
++        #size-cells = <2>;
++
++        /* DSP Carveout reserved memory nodes */
++        reserved-memory {
++            #address-cells = <2>;
++            #size-cells = <2>;
++            ranges;
++
++            c66_0_dma_memory_region: c66-dma-memory@a6000000 {
++                compatible = "shared-dma-pool";
++                reg = <0x00 0xa6000000 0x00 0x100000>;
++                no-map;
++            };
++
++            c66_0_memory_region: c66-memory@a6100000 {
++                compatible = "shared-dma-pool";
++                reg = <0x00 0xa6100000 0x00 0xf00000>;
++                no-map;
++            };
++        };
++
++        cbass_main: bus@100000 {
++            compatible = "simple-bus";
++            #address-cells = <2>;
++            #size-cells = <2>;
++            ranges = <0x00 0x00100000 0x00 0x00100000 0x00 0x00020000>, /* ctrl mmr */
++                     <0x4d 0x80800000 0x4d 0x80800000 0x00 0x00800000>, /* C66_0 */
++                     <0x4d 0x81800000 0x4d 0x81800000 0x00 0x00800000>; /* C66_1 */
++
++            /* J721E C66_0 DSP node */
++            c66_0: dsp@4d80800000 {
++                compatible = "ti,j721e-c66-dsp";
++                reg = <0x4d 0x80800000 0x00 0x00048000>,
++                      <0x4d 0x80e00000 0x00 0x00008000>,
++                      <0x4d 0x80f00000 0x00 0x00008000>;
++                reg-names = "l2sram", "l1pram", "l1dram";
++                ti,sci = <&dmsc>;
++                ti,sci-dev-id = <142>;
++                ti,sci-proc-ids = <0x03 0xFF>;
++                resets = <&k3_reset 142 1>;
++                firmware-name = "j7-c66_0-fw";
++                memory-region = <&c66_0_dma_memory_region>,
++                                <&c66_0_memory_region>;
++                mboxes = <&mailbox0_cluster3 &mbox_c66_0>;
++            };
++        };
++    };
 -- 
 2.26.0
 
