@@ -2,93 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 419991DC7F9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 09:48:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 260921DC810
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 09:58:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J3utY9iQhp4fSIUWY2I1FkD5UUz97rS2sslos5FK7zI=; b=U1qtlPOQ8fm62s
-	JTkvORoIdZaBiYkHmlhJB0Ditt/40SUjnKy5VPt+XDNDXpzl1ixr54cvz4aNkH8QAgf2tkvMP6Bwc
-	YZB3lV93wtdY39aXhkjb1f3SMXKMkISQX5+rXHM0O0fVRiqyJ3fVTJLmeBMXBv03wW1xQZ5Hkukcs
-	PJ9lhSpSoX+y4rq7fOwvCicnf7fhNWC0L4fmr/hh5Cxj+vwFc55teQY4NRZk5D5AwAwD+puHfhEhw
-	mRYLnrIDTYxg1+RNyzxcHzJd73HQg5cMZCfwTvsA4/R19GxjaMEZP35xNVW6vqNMP7m22aC1rX5i9
-	o1oUO/Y0444GdN3Pd3TA==;
+	List-Owner; bh=swgKyb3NWb2FjsJBX/ZxQOmJz+R/9ZgGTKma3TF47K0=; b=KZ15K2EPIWciGY
+	QKQjiTV/CVFmLAZxlxbZ1HX/F08vO07lgf8TfprS/cMSoZPLtyuddBQRAt6UVEuDt+PhaB6bnxfD9
+	hmx2FhtezaFRB4XtrOuIDrnxiStNog8yhWOdGsSsN4B22k3/0TJZloFh+FWgjr1T73vXXY2YdCP5i
+	A4smm6EpirOtE4AOl4izOxMB4oqJ7bc5QpSW48u/T0hkSy8DiaFYuznW92p4fTiT0ddjmCF6BAHA1
+	1xVU5YM0RbanAvzxyiUxmTXQwibD5rVI2Xyha7D58pwMbTxG/bYFL98ngD4g03wvF7U0ux3kkm5xk
+	q30cIXNYDKtoXwhU1yyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbfwE-00029v-2q; Thu, 21 May 2020 07:48:22 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1jbg5o-00087v-FB; Thu, 21 May 2020 07:58:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbfw4-00028N-Lg
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 07:48:14 +0000
-Received: from mail-qt1-f182.google.com ([209.85.160.182]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MC2k1-1jlpTJ3NG9-00CR6e for <linux-arm-kernel@lists.infradead.org>; Thu,
- 21 May 2020 09:48:01 +0200
-Received: by mail-qt1-f182.google.com with SMTP id m44so4774336qtm.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 00:48:00 -0700 (PDT)
-X-Gm-Message-State: AOAM530nxk6HAbNXTebbTwK4OiP+JYGPTvkkk/JmRRGbu2yIZssX99HD
- O5RahQ/UykiqudJS+uNS5fAfk+6gEbBTF6qtU88=
-X-Google-Smtp-Source: ABdhPJxsllVPPnQ/Wh5Vjw2Lya2mPuuI1VPenv+J+BRar0/wWQ3ChxOv7xHSpUGvdRoNdnHoPWlhM+ABRapjikubP4w=
-X-Received: by 2002:ac8:518f:: with SMTP id c15mr8985893qtn.142.1590047279711; 
- Thu, 21 May 2020 00:47:59 -0700 (PDT)
+ id 1jbg5f-000871-0l
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 07:58:08 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EAB332065F;
+ Thu, 21 May 2020 07:57:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590047881;
+ bh=4lM/8ShYtWTr1Pw2EKWG6DtgkHZzD7Wz1k87Xzi6HFA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=HY+eX+3wW8axbeDNmoF0xI9NLvnL9Gmq4GjQ8bgzy/k8kxiCQPsggsu9KVYa3Nvr2
+ fy+LEkd1RklhMh/qZbSdi/UVuBG1Mec6Fvwb3lFNtOzQAldPGf0dwr0Mmd13yLLQ2Z
+ MxO3HXq1CgEVUpIjZXlKLJ8YZSMvdMobRHiUkdgo=
+Date: Thu, 21 May 2020 08:57:56 +0100
+From: Will Deacon <will@kernel.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v4 0/7] firmware: smccc: Add basic SMCCC v1.2 +
+ ARCH_SOC_ID support
+Message-ID: <20200521075755.GA4668@willie-the-truck>
+References: <20200518091222.27467-1-sudeep.holla@arm.com>
+ <158999823818.135150.13263761266508812198.b4-ty@kernel.org>
+ <CAK8P3a0bx2eOFSqM7ihNkJBWU_KKSh0vGJZZdvpkH=1nppingw@mail.gmail.com>
+ <20200521070629.GB1131@bogus>
+ <CAK8P3a1h1MR4Mq2sSV_FDUodrfaKRFtyOuOOGPWAbPYbzjc4YQ@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200506235009.25023-3-f.fainelli@gmail.com>
- <20200507072711.GB683243@linux.ibm.com>
- <bc44ed27-7dd7-67b6-93cf-f6f575b59441@gmail.com>
- <a7c86780-d65c-ab7b-ec3c-4029257cee7a@gmail.com>
- <20200518194533.GD1059226@linux.ibm.com>
- <CAK8P3a1hd2uKsncgd=eyY1VHBbB8fPBDCWsyHpHT7q9eJp-URw@mail.gmail.com>
- <20200519144306.GE1059226@linux.ibm.com>
- <20200519150452.GH1551@shell.armlinux.org.uk>
- <20200519152714.GF1059226@linux.ibm.com>
- <CAK8P3a2iZNm310x8g2Zv0TjGJ=Px7hu14i3Ka7GQBZwyKPUesA@mail.gmail.com>
- <20200519165445.GI1551@shell.armlinux.org.uk>
- <CAK8P3a32gDzqLBeBs8CtT9fhRncQNsJ0nrN=2Ws4DAWe3nOCZA@mail.gmail.com>
- <6d7c3b4f-dde2-95a8-8d36-03ba957aa133@gmail.com>
-In-Reply-To: <6d7c3b4f-dde2-95a8-8d36-03ba957aa133@gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 21 May 2020 09:47:43 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a3=haKkZkBPpuRhqfUjEBoyHi4FeS4vSA4Cx6ah_3JABQ@mail.gmail.com>
-Message-ID: <CAK8P3a3=haKkZkBPpuRhqfUjEBoyHi4FeS4vSA4Cx6ah_3JABQ@mail.gmail.com>
-Subject: Re: [PATCH 2/2] ARM: Allow either FLATMEM or SPARSEMEM on the
- multiplatform build
-To: Florian Fainelli <f.fainelli@gmail.com>
-X-Provags-ID: V03:K1:6YdNfHwyBC+kGgBGRZwIHIiIsR6nmqtWxsNuSgrilimerZhPgz3
- 0QVs5K1MuSYwKFokj8bVSC1h4+GWMpF9uwCEDUkyZHhTZVkzWNiyAyADHgta3BEh6I/cZaD
- rvtJilEj6t3ow5rHprWgCWK9K2tSKbJf0mvKbwv4OFtLn1O3Rf/5zy07P3RqB0fy2HGK7F+
- eVgHmZ3L4JG97we6Gzz/Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:yq13xpFhY/I=:LQYLJSxh3Mk0sjOgIUasNt
- VUsQh/rIrpsc/bz9/lMpPa0QlYZdjHnXO3Eg8Lm+Y3IQvvCUnkcPY8w7qxYXk1CiTM0CtEK0f
- 0tpFU36Zx69PzTlaMoIRYXzurbFC9O1BtC5CzZpI3OW/Hq/NLp+VMDzN4X4voIGO3GiDCQkDU
- 97ej9oux41JuHRTT7rkjz7bchwE4abk4dozBzuPir/OQsjgqPCaBumnbdvWGbpSPMYz9JiUz7
- 1/nEuTESUs6Q2CgtPvdO1nC5pkyzn3ooCOKlhxlNHXu/1pFM48EQSL7540gxvQEgPR0BPJry9
- j3T1q5X1qD5UygfYnptdFLucAvpmsxmtjb2rY7Fiy84L/fdKtrujmOzp+s+zFdO/dVOhokUJ+
- TALCPAZZcwNm9E0jFdRCge+tBh/sFCPdtKO9KjlFxiAITIKu4nEmw/eKz17YkTU0UnQWXiKsB
- m9SRk99MjYSJC2OxRAhjH9L5pbk4EAoIoF7uapl5U++8VkDWXy/DV3z8g5ama4F/RviFhd1TJ
- VVscS7Y/LiK/tGu3bq5TzT9OgHWcv1tcVFhDTY2yFHAUivXiC7dBBdCaBJ2teAsK9yk65kQKh
- 7de/MkL5kn2c7Blw/7eO2cHY4rXq5/O1DdUfCNZ52UZPOihsOHrqI/Pqk9mUAEeo5zyF0vOSL
- uKxIQ712cv0o1wpCWBOemnXd4MGEBPVH7q/FOgmDq5FhD/cAQ0n+TVn8bL5pZHjFRTX0edWQR
- M30j1N5PcJl+M4dIS0yvP3oHmQpoceYsgcyCmvvq3gjs2j0G8tNj5eeEIZoB1oL55cnStIa20
- 1cH5r4dNtLUMr7si92WOuhchSkhTZggGRTWLHuDh0KyB6LUdWM=
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a1h1MR4Mq2sSV_FDUodrfaKRFtyOuOOGPWAbPYbzjc4YQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_004813_005876_37E8C603 
-X-CRM114-Status: GOOD (  20.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200521_005807_099490_7D841008 
+X-CRM114-Status: GOOD (  23.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.131 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,64 +81,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
- Kevin Cernekee <cernekee@gmail.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Gregory Fong <gregory.0xf0@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
+ Sudeep Holla <sudeep.holla@arm.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 4:45 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
-> On 5/19/2020 1:42 PM, Arnd Bergmann wrote:
-> > On Tue, May 19, 2020 at 6:54 PM Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
+On Thu, May 21, 2020 at 09:34:10AM +0200, Arnd Bergmann wrote:
+> On Thu, May 21, 2020 at 9:07 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+> > On Wed, May 20, 2020 at 11:54:16PM +0200, Arnd Bergmann wrote:
+> > > On Wed, May 20, 2020 at 11:29 PM Will Deacon <will@kernel.org> wrote:
+> > > > Applied to arm64 (for-next/smccc), thanks!
+> > > >
+> > > > Arnd -- Sudeep's reply to you about the sysfs groups seemed reasonable to me,
+> > > > but please shout if you'd rather I dropped this in order to pursue an
+> > > > alternative approach.
+> > >
+> > > I missed the reply earlier, thanks for pointing me to it again.
+
+D'oh, I took your silence as "no objections". Oh well!
+
+> > > I'm not entirely convinced, but don't revert it for now because of that,
+> > > I assume we can find a solution.
+
+Ok, cheers. It's on a separate branch so it's easy enough to drop if
+necessary (i.e. no reverts needed). Sudeep -- please send any extra patches
+on top of the branch.
+
+> > I liked your idea of making this generic and hardcode values if required
+> > for other drivers. I will take a look at that/
 > >
-> > I checked the datasheet: ep93xx has four chip-selects, each of them
-> > with their own 256MB memory area. Most boards we support use only
-> > the last chipselect, but those that have more than one would waste
-> > up to 2MB per additional memory chip, which is not nice but doesn't
-> > make it a hard requirement as long as the kernel can fit into the first one.
+> > > However, please have a look at the build failure report for patch 5
+> > > and fix it if you can see what went wrong.
+> > >
 > >
-> > However, the chips has a second problem: depending on the
-> > specific memory configuration, only every other 2/4/8MB within
-> > that range may actually be used, so the mem_map[] array would
-> > double its size in practice and (worse) the kernel would likely
-> > not fit into the first section without sparsemem.
-> >
-> > This means we should indeed treat it as a requirement for ep93xx.
->
-> That is already captured with the select ARCH_SPARSEMEM_ENABLE or the
-> ARCH_EP93XX entry.
+> > Any pointers for that failure ? I seem to have missed them. I pushed
+> > branch couple of times to my tree but got build success both times.
+> > Any specific config or compilers ?
+> 
+> See below for the reply from the 0day build bot to your email. It seems it
+> was not sent to the mailing list, but you were on Cc. Looking at it now,
+> the fix should be trivial.
 
-Yes, we just need to keep it that way when ep93xx eventually
-becomes part of the ARCH_MULTI_V4T configuration.
+[...]
 
-> Should we just make it possible for multi platform users to override the
-> memory model in their configuration file and later we just default
-> ARCH_MULTI_V7 to sparsemem?
+> >> drivers/firmware/smccc/smccc.c:14:13: warning: no previous prototype for function 'arm_smccc_version_init' [-Wmissing-prototypes]
+> void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit)
+> ^
+> drivers/firmware/smccc/smccc.c:14:1: note: declare 'static' if the
+> function is not intended to be used outside of this translation unit
+> void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit)
 
-I think there are three steps:
+I saw that when I applied the patches, but since the function is called from
+another compilation unit (psci/psci.o), I just ignored it as we have loads
+of these already and it only screams if you build with W=1.
 
-1. make the memory model user-selectable for all multiplatform kernels
-   to allow sparsemem
-2. change the defconfig files for platforms that would likely benefit
-  (multi_v7_defconfig, exynos_defconfig, imx_v6_v7_defconfig, ...)
-3. change the default for ARCH_MULTI_V7, or alternatively for
-   configurations that include platforms that usually want it.
-
-My preference would be to have the first two in v5.8, but leave
-the third one for a later time, depending on who needs it.
-I notice that the changelog text does not give a particular
-example of platforms with very sparse memory maps. It
-might help to have more background there. Among the platforms
-I see, it seems fairly rare to have any RAM above the 4GB
-boundary on ARMv7 based chips: keystone2, r-car, and
-highbank would be the main examples I can think of, but I
-don't know if they have large holes in the memory map.
-
-       Arnd
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
