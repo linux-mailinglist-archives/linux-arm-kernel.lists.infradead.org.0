@@ -2,52 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BFFA1DCFC2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:31:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 405D31DD027
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:36:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=r6vEsn5sQb8TxtoWuyF5pXQxMVgLTn+QlO1F//PI7qo=; b=Vgip7CWltrzNYTBCy1oSBQKTF
-	7ldOBrMWBr1Q+7M8sUqfg1/Ut8/LRKkyeF1f2ptWk3evtKMigDSuwKNzyI6NVjRQ/Q5xxk223GiQK
-	QCmTJXxzbajdnElCUsh33oOzGxQS+NIvB/zfrcbA98E4yxD+9Pv4WR9xPE1U6VvCbfvYXiF4cNEtV
-	xCye6jNeHgVAcUObkXF6hPM5hSZr1UpqxpJxxHv9LkNSoexqUg1XsqTqMHWfqrMdN+d1cIXDYdJDx
-	J0W9eNCL10p2jA02gLW9wySBwPtdVi47iDqAzfxZJmiDp25xrF6wExEJFbpxZ0J/z5NRYCi0L3/BF
-	KvCP1ksHg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4fhiHCMs7tZ98wpPvCH/V8Yp53BHkhPGk5KloWILQ80=; b=TodHmVQwv5fajN
+	DhbzmRA1kD4jPJQ8nY9cF9+pWuY3G+k8zoRUdZj2u+Ng6wW8glMI6ZC9UO1eZL2zhRj2jUbfPaJeu
+	OJDKLvnwNVeQfue3GMq9KfEJWrwSdLHnXWj2S06MUptTT8YjfWwtJWPD03oRTCiS9YcF8v0NYz63Z
+	5r5rpGUKarD9AarpyGevYHEIiaJYfmW2zJl7q9XYd4yolON6rk4jFeAwDq/URsflvl0cqPxqXy4vi
+	i1Q7Pa40vjrBXkhi7H9377on66cLvN2tc52WPmHfBvidZ4p2DqPSc5+bJst21QHdy3Gxi1VDdk5vL
+	LV4J65NwN381FCkynSzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbmEC-0003MH-AS; Thu, 21 May 2020 14:31:20 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbmE0-0003L0-96
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:31:10 +0000
-Received: from localhost (p5486ce13.dip0.t-ipconnect.de [84.134.206.19])
- by pokefinder.org (Postfix) with ESMTPSA id F01102C1FCF;
- Thu, 21 May 2020 16:31:03 +0200 (CEST)
-Date: Thu, 21 May 2020 16:31:00 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Re: [PATCH v12 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
- driver
-Message-ID: <20200521143100.GA16812@ninjato>
+	id 1jbmJY-0006Y5-Vt; Thu, 21 May 2020 14:36:52 +0000
+Received: from mga11.intel.com ([192.55.52.93])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbmJJ-0006WX-7X
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:36:45 +0000
+IronPort-SDR: 9YJ6ZnpF5W74ChQPCAAwjdwaMkRCW1xKM5jOjhA+IapKeZrb+X8l9xm3j6C0CC1gpPiOV3Z7IJ
+ R5ziNvbdTxow==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 21 May 2020 07:36:36 -0700
+IronPort-SDR: 7b8ROu2A3A9XEgh3Fs2Y+Q285e1ifd91EOCucSW4KwbQ1BCx/+VNxN++j7SoDTWYquT7uYB9YF
+ J8sQKRBNJxAw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,417,1583222400"; d="scan'208";a="343862381"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga001.jf.intel.com with ESMTP; 21 May 2020 07:36:32 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jbmJH-0082yZ-GB; Thu, 21 May 2020 17:36:35 +0300
+Date: Thu, 21 May 2020 17:36:35 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Tali Perry <tali.perry1@gmail.com>
+Subject: Re: [PATCH v12 3/3] i2c: npcm7xx: Add support for slave mode for
+ Nuvoton
+Message-ID: <20200521143635.GN1634618@smile.fi.intel.com>
 References: <20200521110910.45518-1-tali.perry1@gmail.com>
- <20200521110910.45518-3-tali.perry1@gmail.com>
- <20200521142340.GM1634618@smile.fi.intel.com>
+ <20200521110910.45518-4-tali.perry1@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200521142340.GM1634618@smile.fi.intel.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20200521110910.45518-4-tali.perry1@gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_073108_467256_66DD4D93 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200521_073642_914268_1B5BEF16 
+X-CRM114-Status: GOOD (  14.51  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,100 +74,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- tmaimon77@gmail.com, yuenn@google.com, avifishman70@gmail.com,
- venture@google.com, openbmc@lists.ozlabs.org, brendanhiggins@google.com,
- ofery@google.com, Tali Perry <tali.perry1@gmail.com>, kfting@nuvoton.com,
- robh+dt@kernel.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, benjaminfair@google.com
-Content-Type: multipart/mixed; boundary="===============2534616006455913879=="
+Cc: devicetree@vger.kernel.org, tmaimon77@gmail.com, yuenn@google.com,
+ avifishman70@gmail.com, venture@google.com, openbmc@lists.ozlabs.org,
+ wsa@the-dreams.de, brendanhiggins@google.com, ofery@google.com,
+ linux-kernel@vger.kernel.org, kfting@nuvoton.com, robh+dt@kernel.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ benjaminfair@google.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, May 21, 2020 at 02:09:10PM +0300, Tali Perry wrote:
+> Add support for slave mode for Nuvoton
+> NPCM BMC I2C controller driver.
 
---===============2534616006455913879==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="1yeeQ81UyVL57Vl7"
-Content-Disposition: inline
+...
+
+> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
+> +/*
+> + * npcm_i2caddr array:
+> + * The module supports having multiple own slave addresses.
+> + * Since the addr regs are sprinkled all over the address space,
+> + * use this array to get the address or each register.
+> + */
+> +#define I2C_NUM_OWN_ADDR 10
+> +const int  npcm_i2caddr[I2C_NUM_OWN_ADDR] = {NPCM_I2CADDR1, NPCM_I2CADDR2,
+
+Extra spaces.
+On top. please start assignment from the new line.
+
+> +					     NPCM_I2CADDR3, NPCM_I2CADDR4,
+> +					     NPCM_I2CADDR5, NPCM_I2CADDR6,
+> +					     NPCM_I2CADDR7, NPCM_I2CADDR8,
+
+> +					     NPCM_I2CADDR9, NPCM_I2CADDR10};
+
+Split }; to new line and leave comma with the last member.
+
+> +#endif
+
+...
+
+> +static int  npcm_i2c_slave_enable(struct npcm_i2c *bus, enum i2c_addr addr_type,
+> +				  u8 addr, bool enable)
+
+Extra spaces. Check entire patch for that and fix accordingly.
+
+> +#if IS_ENABLED(CONFIG_I2C_SLAVE)
+> +	if (bus->slave)
+
+> +		npcm_i2c_slave_enable(bus, I2C_SLAVE_ADDR1, bus->slave->addr,
+> +				      true);
+
+I would leave this on one line.
+
+> +#endif
+
+...
+
+> +static void npcm_i2c_write_fifo_slave(struct npcm_i2c *bus, u16 max_bytes)
+> +{
+> +	u8 size_free_fifo;
+
++ blank line.
+
+> +	/*
+> +	 * Fill the FIFO, while the FIFO is not full and there are more bytes
+> +	 * to write
+> +	 */
+> +	npcm_i2c_clear_fifo_int(bus);
+> +	npcm_i2c_clear_tx_fifo(bus);
+> +	iowrite8(0, bus->reg + NPCM_I2CTXF_CTL);
+
+> +	size_free_fifo = I2C_HW_FIFO_SIZE - npcm_i2c_fifo_usage(bus);
+
+Dup, move into loop.
+
+> +	while (max_bytes-- && size_free_fifo) {
+> +		if (bus->slv_wr_size > 0) {
+> +			bus->slv_wr_ind = bus->slv_wr_ind % I2C_HW_FIFO_SIZE;
+> +			npcm_i2c_wr_byte(bus, bus->slv_wr_buf[bus->slv_wr_ind]);
+> +			bus->slv_wr_ind++;
+> +			bus->slv_wr_ind = bus->slv_wr_ind % I2C_HW_FIFO_SIZE;
+> +			bus->slv_wr_size--;
+> +			size_free_fifo = I2C_HW_FIFO_SIZE -
+> +					 npcm_i2c_fifo_usage(bus);
+> +		} else {
+> +			break;
+> +		}
+> +	}
+
+	while (...) {
+		if (...)
+			break;
+		...
+	}
+
+> +}
+
+...
+
+> +static int npcm_i2c_slave_get_wr_buf(struct npcm_i2c *bus)
+> +{
+> +	int i;
+
+> +	u8 value = 0;
+
+Redundant assignment.
+
+> +	int ind;
+> +	int ret = bus->slv_wr_ind;
+> +
+> +	/* fill a cyclic buffer */
+> +	for (i = 0; i < I2C_HW_FIFO_SIZE; i++) {
+> +		if (bus->slv_wr_size >= I2C_HW_FIFO_SIZE)
+> +			break;
+> +		i2c_slave_event(bus->slave, I2C_SLAVE_READ_REQUESTED, &value);
+> +		ind = (bus->slv_wr_ind + bus->slv_wr_size) % I2C_HW_FIFO_SIZE;
+> +		bus->slv_wr_buf[ind] = value;
+> +		bus->slv_wr_size++;
+> +		i2c_slave_event(bus->slave, I2C_SLAVE_READ_PROCESSED, &value);
+> +	}
+> +	return I2C_HW_FIFO_SIZE - ret;
+> +}
+
+-- 
+With Best Regards,
+Andy Shevchenko
 
 
---1yeeQ81UyVL57Vl7
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi Tali, Andy!
-
-On Thu, May 21, 2020 at 05:23:40PM +0300, Andy Shevchenko wrote:
-> On Thu, May 21, 2020 at 02:09:09PM +0300, Tali Perry wrote:
-> > Add Nuvoton NPCM BMC I2C controller driver.
->=20
-> Thanks. My comments below.
-> After addressing them, FWIW,
-> Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-
-Thanks, Andy, for all the review!
-
-=46rom a glimpse, this looks good to go. I will have a close look later
-today.
-
-> > +#ifdef CONFIG_DEBUG_FS
->=20
-> Again, why is this here?
->=20
-> Have you checked debugfs.h for !CONFIG_DEBUG_FS case?
-
-I wondered also about DEBUG_FS entries. I can see their value when
-developing the driver. But since this is done now, do they really help a
-user to debug a difficult case? I am not sure, and then I wonder if we
-should have that code in upstream. I am open for discussion, though.
-
-> > +MODULE_VERSION("0.1.3");
->=20
-> Module version is defined by kernel commit hash. But it's up to you and
-> subsystem maintainer to decide.
-
-Please drop it. I also think commit id's (or even kernel versions) are a
-more precise description.
-
-Regards,
-
-   Wolfram
-
-
---1yeeQ81UyVL57Vl7
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7GkKAACgkQFA3kzBSg
-KbZ4kA/+J19dZhaJMmLz3WgryibpVzJTnhheDeduLgYVUvQcBoHj7dvuMF9+RYNM
-R+ClE6BTGWDYBGglNFSSFq/M8TUro7GzIPJw1wzSjLLtxYh13FeFx9FFYX+XS1zO
-oKff+p2gC1XM6RjEsIyTz7+/e0AsUKgCM6ENX4re+BbU/6IHvv2zOOaaVn2oEsoO
-3jQ/V2yV9U1QsFLd/Ev2SnYT4owBZY/CVz93njaUc9/Hfvz5FawH0SD3/GnWh8+K
-3gm7Ry1VoW8oopkXEcquXTBjaLKQPE3/w0cuJHFh4f9PAi1aEYHCfFa6MgC/Z8xg
-Fkhwkxj5m226WUa41Lswib5sdQ/ITRLetMkoM3VTLFKj5x2HmluwSV2Jt6tGFReZ
-K5fP8h8b4/TjEqVILEctTAfW0pEVT+BF0/cg9MiPPlKjNKXdOollLpu6hnaUdUxb
-QYz3ehhDfsD9lKpKFfCTyx1seQ54DwBM/C/w+RAg8ThTWjMHuj2rz872SVC1i+hY
-OCqRzUicn60p0SzZW5rL+kAVEKQkWjuosQ9XyoBMASXZnfWjzhLIFde6Yas6SXHV
-rTKLx5840wEuTVnNKsQ5XoMN0eadd9H0eu4I/XBXoc5ywX5EISq6df4xKfGC0kx6
-VB9hc42qrJ5lmQVOMVQ1bAdFba+mwzLKdCNcC+qHISoNJOctprY=
-=dVRn
------END PGP SIGNATURE-----
-
---1yeeQ81UyVL57Vl7--
-
-
---===============2534616006455913879==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2534616006455913879==--
-
