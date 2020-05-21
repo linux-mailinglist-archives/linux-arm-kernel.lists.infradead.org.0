@@ -2,75 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0931D1DD102
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 17:17:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 564E31DD10D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 17:20:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RI7icI1AdPNnnBTprNXIB+8A9Js7u5EFcXsnBikq8Is=; b=ooqOELBmsx2+Hn
-	i2ll6qDo4jBiISeMThs+Qhn9xCEL4s0JkNd9ySZ7Le9FZMnyMi6iHXBPO/B/STbZaoXW2d4OLnV29
-	nXXkWJqeICyXRHQobwKSB5DayhmFxT9IshK+60KGxluckN7d3BtnqR7EWhLDJXIpS97SXhADobIuM
-	e4pd6MrtsklCWctLsE4AOoxFUHG01+x1FHw16988KoNTwJSoqiqDg+Es2x7nmL+Gg+lKh+6Dtprrq
-	2ITLlZ+WVtQcbPnw3Kj1u+CpiR0Mp2G3qW4HkEksdGnSPt9yAivINtObWsS0+S8VPjQY9qDVCCter
-	VhBiB9FPjVFs7A/pBQyA==;
+	List-Owner; bh=qu5Emx5xp6hnAKt/asuSH7OQeajGu1jzQzCbouOPutI=; b=PWqoHizHr9YHr7
+	kSqZfpzeJ7+W+jGwKFu6r6rNZSCB9WGSxSPhRS5pgesIiPIorMs+tsPXaYoA1FV+OvqvjO4qDraOH
+	pH7G3E7GCo/kZXmSYulfySj2v/VaTOnrXh9CMQeGBoEgScoRpFOHgl+BQMo++eVYjsj3TYzJfhP2H
+	JsO6Etlypg7rN/ZbyQf7PS/XxARUrOCCzLJw8+QB0Cdi7p5uXMKEk6Wy068MtGEgvss4/yr9dREKy
+	eyCVQRFFkUdaoaqBaO8RO/j6KOu7tuDjdd0zmvVi3fZ0vkUlJXhcXGd1JPHyccS/8oObo572mwN2j
+	H4C481gNbTnOJlPH712g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbmwu-0000K8-Pi; Thu, 21 May 2020 15:17:32 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jbmzg-0002km-QN; Thu, 21 May 2020 15:20:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbmw8-0008Ii-5S
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 15:16:46 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04LFGfpH106524;
- Thu, 21 May 2020 10:16:41 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1590074201;
- bh=FLX5BGiA2jzuKm0fysF7agio1KGEJZtEH0AKo+Wdr1Y=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=eJk3qKcMN3dfTb4mMrz5CVeXkKL8CcuoSQLKIBqCn3RKDiReQGk/ckt8d8AcJ8oOG
- mbKrKy0FysIE/VRUWTxtYi8Xc5uE8v3I/m6kzHfK+3VLydKq+qhjlbxrIkitveZkyJ
- 8sDONOA6Xhha8GavDKSakG3o7YOQmL8GGPwBmM7Q=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04LFGf6g035534;
- Thu, 21 May 2020 10:16:41 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Thu, 21
- May 2020 10:16:41 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Thu, 21 May 2020 10:16:41 -0500
-Received: from lelv0597.itg.ti.com (lelv0597.itg.ti.com [10.181.64.32])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04LFGfQH071720;
- Thu, 21 May 2020 10:16:41 -0500
-Received: from localhost ([10.250.48.148])
- by lelv0597.itg.ti.com (8.14.7/8.14.7) with ESMTP id 04LFGfwq076181;
- Thu, 21 May 2020 10:16:41 -0500
-From: Suman Anna <s-anna@ti.com>
-To: Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring
- <robh+dt@kernel.org>, Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: [PATCH v2 2/2] remoteproc/k3-dsp: Add support for C71x DSPs
-Date: Thu, 21 May 2020 10:16:36 -0500
-Message-ID: <20200521151636.28260-3-s-anna@ti.com>
-X-Mailer: git-send-email 2.26.0
-In-Reply-To: <20200521151636.28260-1-s-anna@ti.com>
-References: <20200521151636.28260-1-s-anna@ti.com>
+ id 1jbmzP-0001sk-Eb
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 15:20:09 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id ABAE320826;
+ Thu, 21 May 2020 15:20:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590074407;
+ bh=f1nY7jMdmh7McepRPv1Zarzh/Gloc+JyYZU3lokNqRw=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=S1X0EAO5sYAiIS6QlUdEH52gOZOm948HKqbAmgyDoW3t0QgRZKNjh7F7ocqqR55sS
+ bldU9fFYFue5Ov5s0b/tw80ZCMdwoccF2LmPyw19HXmdsqXnYKe+K1Hx5p0h3VvYpr
+ hxBsW8VxOT+dmePNZna11IYbp9hZMN65jdcmOt+s=
+From: Will Deacon <will@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH V4 00/17] arm64/cpufeature: Introduce ID_PFR2, ID_DFR1,
+ ID_MMFR5 and other changes
+Date: Thu, 21 May 2020 16:19:58 +0100
+Message-Id: <159007243559.201193.1705879548179051424.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <1589881254-10082-1-git-send-email-anshuman.khandual@arm.com>
+References: <1589881254-10082-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_081644_283951_5563C4E5 
-X-CRM114-Status: GOOD (  17.39  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200521_082007_560309_B8A27259 
+X-CRM114-Status: GOOD (  10.73  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,107 +78,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-kernel@vger.kernel.org, maz@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Texas Instrument's K3 J721E SoCs have a newer next-generation
-C71x DSP Subsystem in the MAIN voltage domain in addition to the
-previous generation C66x DSP subsystems. The C71x DSP subsystem is
-based on the TMS320C71x DSP CorePac module. The C71x CPU is a true
-64-bit machine including 64-bit memory addressing and single-cycle
-64-bit base arithmetic operations and supports vector signal processing
-providing a significant lift in DSP processing power over C66x DSPs.
-J721E SoCs use a C711 (a one-core 512-bit vector width CPU core) DSP
-that is cache coherent with the A72 Arm cores.
+On Tue, 19 May 2020 15:10:37 +0530, Anshuman Khandual wrote:
+> This series is primarily motivated from an adhoc list from Mark Rutland
+> during our previous ID_ISAR6 discussion [1]. The current proposal also
+> accommodates some more suggestions from Will and Suzuki.
+> 
+> This series adds missing 32 bit system registers (ID_PFR2, ID_DFR1 and
+> ID_MMFR5), adds missing features bits on all existing system registers
+> (32 and 64 bit) and some other miscellaneous changes. While here it also
+> includes a patch which does macro replacement for various open bits shift
+> encodings for various CPU ID registers. There is a slight re-order of the
+> patches here as compared to the previous version (V1).
+> 
+> [...]
 
-Each subsystem has one or more Fixed/Floating-Point DSP CPUs, with 32 KB
-of L1P Cache, 48 KB of L1D SRAM that can be configured and partitioned as
-either RAM and/or Cache, and 512 KB of L2 SRAM configurable as either RAM
-and/or Cache. The CorePac also includes a Matrix Multiplication Accelerator
-(MMA), a Stream Engine (SE) and a C71x Memory Management Unit (CMMU), an
-Interrupt Controller (INTC) and a Powerdown Management Unit (PMU) modules.
+Applied to arm64 (for-next/cpufeature), thanks!
 
-Update the existing K3 DSP remoteproc driver to add support for this C71x
-DSP subsystem. The firmware loading support is provided by using the newly
-added 64-bit ELF loader support, and is limited to images using only
-external DDR memory at the moment. The L1D and L2 SRAMs are used as scratch
-memory when using as RAMs, and cannot be used for loadable segments. The
-CMMU is also not supported to begin with, and the driver is designed to
-treat the MMU as if it is in bypass mode.
+[01/17] arm64/cpufeature: Add explicit ftr_id_isar0[] for ID_ISAR0 register
+        https://git.kernel.org/arm64/c/2a5bc6c47bc3
+[02/17] arm64/cpufeature: Drop TraceFilt feature exposure from ID_DFR0 register
+        https://git.kernel.org/arm64/c/1ed1b90a0594
+[03/17] arm64/cpufeature: Make doublelock a signed feature in ID_AA64DFR0
+        https://git.kernel.org/arm64/c/e965bcb06256
+[04/17] arm64/cpufeature: Introduce ID_PFR2 CPU register
+        https://git.kernel.org/arm64/c/16824085a7dd
+[05/17] arm64/cpufeature: Introduce ID_DFR1 CPU register
+        https://git.kernel.org/arm64/c/dd35ec070457
+[06/17] arm64/cpufeature: Introduce ID_MMFR5 CPU register
+        https://git.kernel.org/arm64/c/152accf8476f
+[07/17] arm64/cpufeature: Add remaining feature bits in ID_PFR0 register
+        https://git.kernel.org/arm64/c/0ae43a99fe91
+[08/17] arm64/cpufeature: Add remaining feature bits in ID_MMFR4 register
+        https://git.kernel.org/arm64/c/fcd6535322cc
+[09/17] arm64/cpufeature: Add remaining feature bits in ID_AA64ISAR0 register
+        https://git.kernel.org/arm64/c/7cd51a5a84d1
+[10/17] arm64/cpufeature: Add remaining feature bits in ID_AA64PFR0 register
+        https://git.kernel.org/arm64/c/011e5f5bf529
+[11/17] arm64/cpufeature: Add remaining feature bits in ID_AA64PFR1 register
+        https://git.kernel.org/arm64/c/14e270fa5c4c
+[12/17] arm64/cpufeature: Add remaining feature bits in ID_AA64MMFR0 register
+        (no commit info)
+[13/17] arm64/cpufeature: Add remaining feature bits in ID_AA64MMFR1 register
+        (no commit info)
+[14/17] arm64/cpufeature: Add remaining feature bits in ID_AA64MMFR2 register
+        (no commit info)
+[15/17] arm64/cpufeature: Add remaining feature bits in ID_AA64DFR0 register
+        (no commit info)
+[16/17] arm64/cpufeature: Replace all open bits shift encodings with macros
+        (no commit info)
+[17/17] arm64/cpuinfo: Add ID_MMFR4_EL1 into the cpuinfo_arm64 context
+        https://git.kernel.org/arm64/c/858b8a8039d0
 
-Signed-off-by: Suman Anna <s-anna@ti.com>
----
-v2: 
- - k3_dsp_rproc_prepare/unprepare plugged in dynamically based on local reset,
-   C71x doesn't use local resets
- - Dropped the sanity_check ops override, not needed on latest codebase
-v1: https://patchwork.kernel.org/patch/11458595/
+Note that Suzuki had comments on 12-16, so assume you'll respin those (I fixed
+up the trivial comments on earlier patches myself).
 
- drivers/remoteproc/ti_k3_dsp_remoteproc.c | 20 ++++++++++++++++++--
- 1 file changed, 18 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/remoteproc/ti_k3_dsp_remoteproc.c b/drivers/remoteproc/ti_k3_dsp_remoteproc.c
-index 610fbbf85ee6..2dbed316b6ac 100644
---- a/drivers/remoteproc/ti_k3_dsp_remoteproc.c
-+++ b/drivers/remoteproc/ti_k3_dsp_remoteproc.c
-@@ -406,8 +406,6 @@ static void *k3_dsp_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
- }
- 
- static const struct rproc_ops k3_dsp_rproc_ops = {
--	.prepare	= k3_dsp_rproc_prepare,
--	.unprepare	= k3_dsp_rproc_unprepare,
- 	.start		= k3_dsp_rproc_start,
- 	.stop		= k3_dsp_rproc_stop,
- 	.kick		= k3_dsp_rproc_kick,
-@@ -617,6 +615,10 @@ static int k3_dsp_rproc_probe(struct platform_device *pdev)
- 
- 	rproc->has_iommu = false;
- 	rproc->recovery_disabled = true;
-+	if (data->uses_lreset) {
-+		rproc->ops->prepare = k3_dsp_rproc_prepare;
-+		rproc->ops->unprepare = k3_dsp_rproc_unprepare;
-+	}
- 	kproc = rproc->priv;
- 	kproc->rproc = rproc;
- 	kproc->dev = dev;
-@@ -744,6 +746,12 @@ static const struct k3_dsp_mem_data c66_mems[] = {
- 	{ .name = "l1dram", .dev_addr = 0xf00000 },
- };
- 
-+/* C71x cores only have a L1P Cache, there are no L1P SRAMs */
-+static const struct k3_dsp_mem_data c71_mems[] = {
-+	{ .name = "l2sram", .dev_addr = 0x800000 },
-+	{ .name = "l1dram", .dev_addr = 0xe00000 },
-+};
-+
- static const struct k3_dsp_dev_data c66_data = {
- 	.mems = c66_mems,
- 	.num_mems = ARRAY_SIZE(c66_mems),
-@@ -751,8 +759,16 @@ static const struct k3_dsp_dev_data c66_data = {
- 	.uses_lreset = true,
- };
- 
-+static const struct k3_dsp_dev_data c71_data = {
-+	.mems = c71_mems,
-+	.num_mems = ARRAY_SIZE(c71_mems),
-+	.boot_align_addr = SZ_2M,
-+	.uses_lreset = false,
-+};
-+
- static const struct of_device_id k3_dsp_of_match[] = {
- 	{ .compatible = "ti,j721e-c66-dsp", .data = &c66_data, },
-+	{ .compatible = "ti,j721e-c71-dsp", .data = &c71_data, },
- 	{ /* sentinel */ },
- };
- MODULE_DEVICE_TABLE(of, k3_dsp_of_match);
+Cheers,
 -- 
-2.26.0
+Will
 
+https://fixes.arm64.dev
+https://next.arm64.dev
+https://will.arm64.dev
 
 _______________________________________________
 linux-arm-kernel mailing list
