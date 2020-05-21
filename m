@@ -2,114 +2,176 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5490F1DCF0B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:09:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C1F81DCF33
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:10:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ONVK4TJx9FeIEMW4BBhpax0NneXYNQV3atSJT0NSJiY=; b=iL84LLoXsKDQ0T
-	8E04QR2K1A1bmBC4jjGjO1/+L2uwGqFzb8edQ9iWHiKSQiRBVigb0kiS2LkjHIGsCH3lOAXyU7PIb
-	0uZl1mizSfwKnOW2rDuN7sj7w1gSPxuMi4l9HlOE7QzWWsUP/JVJYPsMo5yDPirsjoDEefvS5SR8+
-	xd/eJdxdItdwNl98Cho18iBisXrlajPxVdzMRroCBZrOWWLCNiRZ2qgoGiBzqjl6G9fzr3hHBWyz8
-	Ysh+B6IDeBtjiGrLEQkFyc8njTxjHTVsVQuk6uxrK8hsBZ/oJ/8Bk2WjPUeINL+H6Z5ae7Wm2PkfO
-	AYy438KES/OIy7lwclAg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=CZEGoDoNKXyB31kW3U/GMCJh55D4tjrD1xpqfaN9cYc=; b=NmXhqectjgk2eVrS3jy86pgeDT
+	ZzmQ4AE88xdQ/rOxnA0yeyH/woGu9noTDN3MFuSKoUiAtlHE+dS1wxrS+3vTjow4IDM1bKiuhyVok
+	Uipag2FTJM5Q7VqiQ+EGhhzWm972MS8Iadfq9UX6s2yRzOKopwgptSKh8cEJJIUcc3wKWTZ21t075
+	Vvpwwvt1GX6eJk5qYf6/wrc9pS1vxTAywLff0x48zqBRmsbM7miVFZAiWbUHPccW+ybn5OLllhygl
+	3PZS+CqNQTbL2TRdbWR/EKs9Y8F1gHNyNf9XfdInGTKSht/ZYopydXgwfVMNXNBdVgK631/5GKeVo
+	bCLQkihg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jblsd-0003eR-5n; Thu, 21 May 2020 14:09:03 +0000
-Received: from mail-bn8nam12on2086.outbound.protection.outlook.com
- ([40.107.237.86] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
+	id 1jbltq-00040s-VM; Thu, 21 May 2020 14:10:18 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jblsP-0003dW-8Y
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:08:50 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=TWFL+LuTyLoLTrC35ZEzXZEw0HjZeieByWv7SGV/eifS8cjl7Jic2W0kPonxlKzLlF7g6we6NqeXhf2HO5sWLZ1MNoK6yH+lXVmasDRMlgGXZu+Nz2OIW4p8BygVbQBT4SmwQks/cFxKG3avdcGUQR48GCvULN8GNlCHfVpSHvyfnLFLKKX3TZwgJwAe1HTvChJcRNkI0EHTUNpOPcMuAUP/La899gWAhEWATY6oNrNMDXeFBTYKVGV1Zk64G8/TiFu5+yFLKfTtiMaYi9V+Drppg0FV6aApHtE7PNobN2DjNx3yV8aMADGjTGfBKnGrkW1PU08RGNWekYjY8Sf93g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=usUupoqEBcBYaBy0ThzqUykUqi0j6B5uBU+ylQ+26rs=;
- b=YDajP3cLthmQhppmcPETH5yiF0Ugnj7bcgOrkB1K+o23hXP/qP2jszFJGA7ZOV0QCjVh9WUIgcRSaWZnJuJiMhRF6rPSPakVxgXJjkgtTXOkg53f1L96RlpOIsHO/e6yMd9+4j5TaAEvxLLG3FfYXd+1q3C0NkUTP/dzvltRbJ7BDN5GuocWaeF5oB+yy0AIYQt5oGwluUt18KrMrPSqsrwXOFWHLVJdhUqASq91w9ZBuC9cBYnMA6N9aKi2jnLWCa5rcfK7uLJHqji4CtJXxCQ9A7MbfeX/eRzTNJy0G6L+sxA0y4byWTWTXbCkhX79ykON3vzhURkZJiRc8VItyg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=silabs.com; dmarc=pass action=none header.from=silabs.com;
- dkim=pass header.d=silabs.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=silabs.onmicrosoft.com; s=selector2-silabs-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=usUupoqEBcBYaBy0ThzqUykUqi0j6B5uBU+ylQ+26rs=;
- b=WDShXSR8O7dnmKPP2S4p/RHaEf+L7vsY5l+isgzQuFw18n9M5OdDNerVx75J7cwq4GceZaSvpAh0UWthMCCo7w8f+CJXyjT1xjNUrRPogVAJ7ahkrTsq2vcLOzjxLqxKi6YJwTXfbuRFU712s7kbWTFvurP35s9hLymk2PJjMA4=
-Authentication-Results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=silabs.com;
-Received: from MWHPR11MB1775.namprd11.prod.outlook.com (2603:10b6:300:10e::14)
- by MWHPR11MB1328.namprd11.prod.outlook.com (2603:10b6:300:2b::19)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Thu, 21 May
- 2020 14:08:45 +0000
-Received: from MWHPR11MB1775.namprd11.prod.outlook.com
- ([fe80::e055:3e6d:ff4:56da]) by MWHPR11MB1775.namprd11.prod.outlook.com
- ([fe80::e055:3e6d:ff4:56da%5]) with mapi id 15.20.3021.020; Thu, 21 May 2020
- 14:08:45 +0000
-From: =?ISO-8859-1?Q?J=E9r=F4me?= Pouiller <jerome.pouiller@silabs.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: Possible race while masking IRQ on Allwinner A20
-Date: Thu, 21 May 2020 16:08:38 +0200
-Message-ID: <5660213.hxA4Uj6jp3@pc-42>
-Organization: Silicon Labs
-In-Reply-To: <faca3f8ee1269b70b46a271dbdf00265@kernel.org>
-References: <11042983.UNsANRFJuY@pc-42> <4055631.Zo4jul7Flx@pc-42>
- <faca3f8ee1269b70b46a271dbdf00265@kernel.org>
-X-ClientProxiedBy: MR2P264CA0115.FRAP264.PROD.OUTLOOK.COM
- (2603:10a6:500:33::31) To MWHPR11MB1775.namprd11.prod.outlook.com
- (2603:10b6:300:10e::14)
+ id 1jbltQ-0003zE-F4; Thu, 21 May 2020 14:09:53 +0000
+Received: by mail-wr1-x444.google.com with SMTP id x14so1417082wrp.2;
+ Thu, 21 May 2020 07:09:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=KDX16XCnRl7eQ/dyVs1XNgsl7hOV/GRuFmtxFKaevRA=;
+ b=n6+WXUklmhLvERUIyot3KggnD8v664lwamukbEBFtVRWsB/fkqwjH1W3e47Bv6GtGu
+ a6Y6c7KNuphNp+zC5nNfsT1NOvfemaaRWclLBxBbwLfUR4HR/w+SjuePFHjO84knx14N
+ FsX436A/SkjX143MzZDLfSkxhRsKYXnCmm3tF0UqHw6qzQ4KFdwz5gZbNnxPiScVkFYD
+ 6gYmKfAcI2HjpFsZNvLyygK725nSCbTUP2MhiyunE13uZ0/kHyvW/KO8NNRpWB5kl/lW
+ 7kucSrRH8LlXsnt041/H6slNDRUxGNFqmIqz05McW4crf+AEMuAEOk4KujazFSlsLqkx
+ mC5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:from:autocrypt:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=KDX16XCnRl7eQ/dyVs1XNgsl7hOV/GRuFmtxFKaevRA=;
+ b=jn3Ftr41jPJkPc/xFXv6dM89MZlCBdXyrX3zsMs/p1qB9HGCthspaHEYLw7CHh6Tp1
+ K9wz5NIxgwAx56m8qHqDifenvP2XlGaZJgDwMlA52cnQPmnkXCRYlB5E1MG8vdGjYtzA
+ LLFxRKp4SGwrhFaWs4F1v3/mb6XXJbi0R1jS2mktWX2nAZNo6CJ3RobshBCAxjkjsWow
+ fPwYam6JBqcpYyEJQvWin5oeP6Me0gIwQL+0feEXbEMYcJop1YX3AF1EvOjiu/eljqSH
+ JY7JMrQT/E1vzXrHwjUr5IoKwdytl+cgSXOKcSW09Knlu1iU4rOl8om+cUtj2tucB51U
+ YFbw==
+X-Gm-Message-State: AOAM531Gavy1b3+vnXL5hFGNDXotClym+28fl35cl6vunksix0EIO2R7
+ /InMXQlvqQbmg+ebyuuiMJU=
+X-Google-Smtp-Source: ABdhPJzP1UBaa3gM2Favmpl0ir/se+uD70D5ODl0LMfn/RGc1N/jG/7AM+rQzt4XDOTKsZ1AzhfU2Q==
+X-Received: by 2002:adf:80f0:: with SMTP id 103mr8273768wrl.232.1590070190430; 
+ Thu, 21 May 2020 07:09:50 -0700 (PDT)
+Received: from ziggy.stardust ([213.195.113.243])
+ by smtp.gmail.com with ESMTPSA id r11sm4999027wre.25.2020.05.21.07.09.49
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 21 May 2020 07:09:49 -0700 (PDT)
+Subject: Re: [PATCH v1 2/4] arm: dts: mt7623: add display subsystem related
+ device nodes
+To: Frank Wunderlich <frank-w@public-files.de>, CK Hu <ck.hu@mediatek.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel@ffwll.ch>, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ chunhui dai <chunhui.dai@mediatek.com>, Ryder Lee <ryder.lee@mediatek.com>,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>
+References: <20190416145848.11932-1-frank-w@public-files.de>
+ <20190416145848.11932-3-frank-w@public-files.de>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <84938d21-84bd-a99b-c34a-e850cade7098@gmail.com>
+Date: Thu, 21 May 2020 16:09:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from pc-42.localnet (2a01:cb00:89d9:f400:78be:b52e:82a1:1e54) by
- MR2P264CA0115.FRAP264.PROD.OUTLOOK.COM (2603:10a6:500:33::31) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3021.24 via Frontend Transport; Thu, 21 May 2020 14:08:43 +0000
-X-Originating-IP: [2a01:cb00:89d9:f400:78be:b52e:82a1:1e54]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: d5004d8e-a500-4e63-a393-08d7fd907996
-X-MS-TrafficTypeDiagnostic: MWHPR11MB1328:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <MWHPR11MB1328141527556070DD42EC8993B70@MWHPR11MB1328.namprd11.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
-X-Forefront-PRVS: 041032FF37
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: fnNTQPkjWVNluFjAhbw4VUip25yMt7UjAV5PXkMVBHs38w/26zuZhFSco4L8PrfIeZDsraqZDXSBPHj6jkgjTVyG7az5eUPqsnulVe3Gj5njAOCJ0X9lj4amWbZcQHtoHQQ6ArDtgJXNEH2s02d36/Hg2VTUZY8t9wirYt6iCqEdqd1dy7LG7KgwvPKC26kMcHlFkTwbJRHSodSV62xL4B4OXD4wHiKpd/ZWb9wiSUKRvjVfX0mjWwsivdo9kiPDOE/R6dvx8aNskjyvYZ3mMiIfMRT1py0cUnVPy9RpJVRPrWmUdQMglNAXEWifFOjw8WopKeoVUEV/e9Mco+kRzBTqjESs8fX3m17SHRIFOb17sALZwN1zuxN/WU49WJxR
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MWHPR11MB1775.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(376002)(346002)(39860400002)(136003)(366004)(396003)(52116002)(36916002)(4326008)(6512007)(8676002)(9686003)(2906002)(8936002)(186003)(86362001)(53546011)(6506007)(16526019)(66556008)(316002)(54906003)(66476007)(66946007)(6666004)(33716001)(5660300002)(478600001)(66574014)(6916009)(6486002)(39026012);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: P8QbWHIhlHE+DM34ayrtnwTTf8wD0eLo+yhcSkGPJBE+MNp5lVrutspM5SZU16v3OIJdU34J8uI3zrfhIs2MEISawOSYj7Y6eoNStKr5zIGnDwMUgcICNbcB+/rkwzxo4Laq0euHcxDIRTvJzD9ztMr+jM8c12+aIS0+co3GftE47Yvxk2Cn7OBEkX4ISC0uTwoeCZYldNyVe/sPwMGe8RJy2cqxTnX4DMOLY9zptfpiWYS13n4IA7IfHlKQIJ3Obv2oONq3qykIMtxsZqYTH3GoY+JWgil/WXI8uXYzv6t9DL2jgagsWm1/VVqdJCxE6WzLVwagM9peICanYSczBzdf/UI+bvGxbc2QDkb/sHixFBlBUxCDIOqTdnKpKNCUA8y9UahSq2HFta0FevZmLBdBlUDG80DbVIMHRs3wBymelk1QpxzgdcT2pTis6rh5Ou00zZVTQfml4Jikj57a83wePWhBjUsA1vMHoIpn6wI+er4Yy1TmX80MMpaTVVADR+h0qDjlvupc+fmX/Oy3JK+bEiZFntqqYtoOja7wnbogwr7hb8CwF0TaZnM4Lf77
-X-OriginatorOrg: silabs.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: d5004d8e-a500-4e63-a393-08d7fd907996
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 May 2020 14:08:45.4957 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 54dbd822-5231-4b20-944d-6f4abcd541fb
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: RR+J1Kdely/LfyUbOa+Yj6PnSyDxuo3BOaPydlbb/ShT4DM4nEIx/xo8aDCNtFaRuSwirTN9EH9UM/heEqhQ/A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1328
+In-Reply-To: <20190416145848.11932-3-frank-w@public-files.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_070849_304877_AEAFDBE8 
-X-CRM114-Status: GOOD (  24.38  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200521_070952_524481_153893BA 
+X-CRM114-Status: GOOD (  13.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.237.86 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.237.86 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [matthias.bgg[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,116 +183,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Dorval <marc.dorval@silabs.com>, Chen-Yu Tsai <wens@csie.org>,
- Thomas Gleixner <tglx@linutronix.de>, Maxime Ripard <maxime@cerno.tech>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thursday 21 May 2020 15:39:09 CEST Marc Zyngier wrote:
-> On 2020-05-21 14:28, J=E9r=F4me Pouiller wrote:
-> > On Thursday 21 May 2020 10:02:48 CEST Marc Zyngier wrote:
-> >> On 2020-05-21 08:26, Maxime Ripard wrote:
-> >> > On Tue, May 19, 2020 at 10:59:26AM +0200, J=E9r=F4me Pouiller wrote:
-> > [...]
-> >> >> Nevermind, I tried to use a level triggered IRQ (and my request is =
-on
-> >> >> this part). As you can see in the wfx driver (in  bus_sdio.c and
-> >> >> bh.c), I use a threaded IRQ for that. Unfortunately, I receive some=
- IRQs
-> >> >> twice.
-> >> >> I traced the problem, I get:
-> >> >>
-> >> >>  QSGRenderThread-981   [000] d.h.   247.485524: irq_handler_entry: =
-irq=3D80 name=3Dwfx
-> >> >>  QSGRenderThread-981   [000] d.h.   247.485547: irq_handler_exit: i=
-rq=3D80 ret=3Dhandled
-> >> >>  QSGRenderThread-981   [000] d.h.   247.485600: irq_handler_entry: =
-irq=3D80 name=3Dwfx
-> >> >>  QSGRenderThread-981   [000] d.h.   247.485606: irq_handler_exit: i=
-rq=3D80 ret=3Dhandled
-> >> >>       irq/80-wfx-260   [001] ....   247.485828: io_read32: CONTROL:=
- 0000f046
-> >> >>       irq/80-wfx-260   [001] ....   247.486072: io_read32: CONTROL:=
- 0000f046
-> >> >>     kworker/1:1H-116   [001] ....   247.486214: io_read: QUEUE: 8b =
-00 84 18 00 00 00 00 01 00 15 82 2b 48 01 1e 88 42 30 00 08 6b d7 c3 53 e0 =
-28 80 88 67 32 af ... (192 bytes)
-> >> >>     kworker/1:1H-116   [001] ....   247.493097: io_read: QUEUE: 00 =
-00 00 00 00 00 00 00 06 06 00 6a 3f 95 00 60 00 00 00 00 08 62 00 00 01 00 =
-5e 00 00 07 28 80 ... (192 bytes)
-> >> >>     [...]
-> >> >>
-> >> >> On this trace, we can see:
-> >> >>   - the hard IRQ handler
-> >> >>   - the IRQ acknowledge from the thread irq/80-wfx-260
-> >> >>   - the access to the data from kworker/1:1H-116
-> >> >>
-> >> >> As far as I understand, the first call to the IRQ handler (at
-> >> >> 247.485524) should mask the IRQ 80. So, the second IRQ (at 247.4856=
-00)
-> >> >> should not happen and the thread irq/80 should be triggered only on=
-ce.
-> >> >>
-> >> >> Do you have any idea of what is going wrong with this IRQ?
-> >> >
-> >> > That's pretty weird indeed. My first guess was that you weren't using
-> >> > IRQF_ONESHOT, but it looks like you are. My next lead would be to see
-> >> > if the mask / unmask hooks in the pinctrl driver are properly called
-> >> > (and actually do what they are supposed to do). I'm not sure we have
-> >> > any in-tree user of a threaded IRQ attached to the pinctrl driver, so
-> >> > it might have been broken for quite some time.
-> >>
-> >> What is certainly puzzling is that this driver doesn't seem to use
-> >> threaded IRQs at all. Instead, it uses its own workqueue that seems
-> >> to bypass the core IRQ subsystem altogether. So any guarantee we'd
-> >> expect goes at of the window.
-> >>
-> >> It is also pretty unclear to me how whether the HW supports switch
-> >> from edge to level signalling. The request_irq() call definitely asks
-> >> for edge, and I don't know how you'd instruct the HW to change its
-> >> signalling method (in general, it isn't possible).
-> >
-> > You are talking about the wfx driver? Be sure you read the right
-> > version
-> > of the driver. The ability to use a level-triggered IRQ does not exist
-> > in
-> > the stable tree. You have to check the "staging-next" tree from
-> > Greg[1].
-> =
+Hi Frank,
 
-> Right. It still remains that in this (new) code, the threaded handler
-> seems to kick a workqueue, and returns saying "I'm done". With a level
-> triggered interrupt, this is likely to result in an interrupt storm if
-> nothing masks the interrupt.
+On 16/04/2019 16:58, Frank Wunderlich wrote:
+> From: Ryder Lee <ryder.lee@mediatek.com>
+> 
+> Add display subsystem related device nodes for MT7623.
+> 
+> Cc: CK Hu <ck.hu@mediatek.com>
+> Signed-off-by: chunhui dai <chunhui.dai@mediatek.com>
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> Signed-off-by: Ryder Lee <ryder.lee@mediatek.com>
+> 
+> additional fixes:
+> 
+> [hdmi,dts] fixed dts-warnings
+> author: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> 
+> [dtsi] fix dpi0-node
+> author: Ryder Lee <ryder.lee@mediatek.com>
+> 
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> Tested-by: Frank Wunderlich <frank-w@public-files.de>
+> =2D--
+>  arch/arm/boot/dts/mt7623.dtsi                 | 177 ++++++++++++++++++
+>  arch/arm/boot/dts/mt7623n-bananapi-bpi-r2.dts |  85 +++++++++
+>  arch/arm/boot/dts/mt7623n-rfb-emmc.dts        |  85 +++++++++
+>  3 files changed, 347 insertions(+)
+> 
+[...]
+> 
+> +	display_components: dispsys@14000000 {
+> +		compatible =3D "mediatek,mt7623-mmsys",
+> +			     "mediatek,mt2701-mmsys";
+> +		reg =3D <0 0x14000000 0 0x1000>;
+> +		power-domains =3D <&scpsys MT2701_POWER_DOMAIN_DISP>;
+> +	};
+> +
 
-The core the threaded IRQ handler is in bh.c/wfx_bh_request_rx():
+mmsys problem is fixed now, so feel free to rebase your patches on linux-next or
+my for-next branch and resend.
+Would love to see graphics being supported on the bananapi-r2.
 
-	control_reg_read(wdev, &cur);
-	prev =3D atomic_xchg(&wdev->hif.ctrl_reg, cur);
-	complete(&wdev->hif.ctrl_ready);
-	queue_work(system_highpri_wq, &wdev->hif.bh);
-
-The call to control_reg_read() acknowledge the IRQ (and get the length of
-data to read). After this function, the IRQ line is down (then, indeed the
-read of data is done from a workqueue).
-
-
-Concerning the hard IRQ handler, we use the default IRQ handler, that
-indeed just return IRQ_WAKE_THREAD. Since we also specify IRQF_ONESHOT,
-the IRQ should be masked until the threaded IRQ ends.
-
-
-(You may wonder why the driver does not call wfx_bh_request_rx() from a
-regular IRQ handler. It is because control_reg_read() is not atomic.)
-
--- =
-
-J=E9r=F4me Pouiller
-
-
+Regards,
+Matthias
 
 _______________________________________________
 linux-arm-kernel mailing list
