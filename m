@@ -2,74 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D788D1DD9AB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 23:48:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AAF21DDA10
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 00:17:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ChiaN6wyY0IhsDsxA3BUGPFWwJTGp2pIDaLE1NYinmI=; b=H+4LB2YDsFfrsH
-	boyQHAqS9gvhKUbv+pYRRSC3LpXjl69bxtY9L+KqPbhEDBtAoyD2O3Yv912FysFHYf2hk6YsD6vSe
-	KAq+BDEOXJZd4TN7BMG4EC19cAubyRPGKXMoTNtAndOR3cCrWZeG0dDlSBPHtlsM7kJT7FJu3olYt
-	p1CgB+dzJOUrJhlakTLbKz+oPRj6kay/D1RMcZbIH5zCprT/fj/Q74IerAP7sqh5kfe11stpG+amT
-	debtg8S4AbC/6riBFwUbdvEfbcWyEgWsMc15PyJVJiqrRjHfKCgQ2RTqSHcTGqRHwaTOWqtrNLbg0
-	MPlTyU9IBkwIIt+fvqHg==;
+	List-Owner; bh=cg9fOUkTtxF1U3C8YRtdrW9i3C5Ma5AgrGzYoYw4YFA=; b=JB0bNKO3NS6co4
+	OCkP3TGV29PMGVYqac+z6uJwhATTRm3ixzMWcaTj07V5DhO+FAC5ykZ86YBgG0XEjqnYVr7TKhDq9
+	keY1cArDjkDBFLrxibkMJYokDrp6weGhfK1b/I3irtyHjIskAfg89JXpDugnPQ74z/i450RDYXxGW
+	N51mBSX6PmdttT9B0mzdimmo44CwFkoJIvTaEolvQgwm5MfHzWnK68IwPzCwFvSuUVOOnXoG9JeM4
+	qugxSzHgP06SQtO4RYb8I9WZsnWSzBpEOSWMRocoFudo8CQsUjtGi35kGUmzn93T8LK0HjU8t2XEv
+	YQu7iIlaryqua2GbvUjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbt3P-00044G-FA; Thu, 21 May 2020 21:48:39 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jbtVQ-0005JB-Ua; Thu, 21 May 2020 22:17:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbt3F-00043d-O1
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 21:48:31 +0000
-Received: by mail-wr1-x444.google.com with SMTP id l11so8192174wru.0
+ id 1jbtVD-0005Hz-O1
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 22:17:25 +0000
+Received: from mail-ot1-f54.google.com (mail-ot1-f54.google.com
+ [209.85.210.54])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D570320885
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 14:48:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=1FrDzsjYEcXgrfssVNqqByxFp+Ac+Iq6mZixETRuPi4=;
- b=WmNJz59ItRug2cC5INbpwDKpcDmMtgi6jVU9u719g067ES93QLe8eqTMGzSES6EhYV
- mdMc2M6PGzOF/Q5wqmdP/+0piv/rNvkgZr7PxPh5g3wVI+f0b7hBEdreqS8AJ+DrIblE
- ofDD7ndpAcgLcQ/PBOeUaeUwNJgP5BaLTIZNQ=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=1FrDzsjYEcXgrfssVNqqByxFp+Ac+Iq6mZixETRuPi4=;
- b=S8G15kccFoPQJvLbJeQhqYDjE9vA/X9Klvm1J+FSog5Vm6+h/JrbRusbtSUiVbyE2G
- 2boB+DzgH954sdErrmJZnFoODLBX+x+XuZfUDLd+q4LRyy3W6/jYUrRSrm6fS1DcDcGB
- 3JVFNVUWYH2OkUNUFV/NyER6sngr9hr0fbTdx/+YF0WtyHMVgaF0sdJ3snICBQxyBeQ0
- XJKhau8QL8soBQfnZJw3EzFuPJRYSK3xyPoidYve9wt0xXzGqgkVwc5tYsMjhyrnDrM+
- gnfGnSq8b8pc+fH5tg4tVdL3P/hU3WeVUL3o21W64vw0PLutcMa0sEyvZfTdEbrPCT57
- J3Dw==
-X-Gm-Message-State: AOAM532XAfK1tBQl/xUshda8C+Llzv3T5mav2YZWJfJivwZwGfEitiiA
- jMmX7ddESJyecxCWWm0smKJ9/KRyEPk2KVvGsggQJg==
-X-Google-Smtp-Source: ABdhPJzO8QjCrwiMc96gkFPxC2xNsu+AaIKQ54rCen8kgp3Tra5gNG8QuZwpex0i5HD/wL/RicupKUhSYd6aPhEXMJ8=
-X-Received: by 2002:adf:e688:: with SMTP id r8mr509896wrm.274.1590097708107;
- Thu, 21 May 2020 14:48:28 -0700 (PDT)
+ Thu, 21 May 2020 22:17:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590099441;
+ bh=HzD57J0iAQbzn6CHyO+2aYIounPzkL1CgXVv4jovBaY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=JhsEZkMSqBQ18GZ/4n/TqDTYuYTS3p/cueniQEMWwT2z/Jht5FCksTM+hflro/sPl
+ TNS78nlDgCnqQxXwD2ZUkiYblsiMqjk3WgPE9a3stkz2yNhwSJi8CBQU0js4vbKZvr
+ hdQjdlFYSqVz4t1B0jQk2ktTR/5jbN3EqF3I+c5A=
+Received: by mail-ot1-f54.google.com with SMTP id b18so6806627oti.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 May 2020 15:17:21 -0700 (PDT)
+X-Gm-Message-State: AOAM533oUWpAX3Q2DEcguqjL216xQW63WS0mZi0ptPll6meXPa3brirH
+ XO7EuLC6CxVKfV0Z8dYkED6KGtjEbRk0o0hicg==
+X-Google-Smtp-Source: ABdhPJwboSlobxmdzmVU++jSPITa+kW6o704htikNXq7Hl+hxzjiWIb7wpWvMS/IRKzM3idvSZl4svX87j24gC6Dk9g=
+X-Received: by 2002:a9d:1441:: with SMTP id h59mr8909986oth.192.1590099441037; 
+ Thu, 21 May 2020 15:17:21 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200519203419.12369-1-james.quinlan@broadcom.com>
- <20200519203419.12369-8-james.quinlan@broadcom.com>
- <20200520072747.GB5213@pengutronix.de>
-In-Reply-To: <20200520072747.GB5213@pengutronix.de>
-From: Jim Quinlan <james.quinlan@broadcom.com>
-Date: Thu, 21 May 2020 17:48:15 -0400
-Message-ID: <CA+-6iNxtW66QLrb5BaOOCPJwG-1fShdfZqiLSkKfi6Y669dn5w@mail.gmail.com>
-Subject: Re: [PATCH 07/15] PCI: brcmstb: Add control of rescal reset
-To: Philipp Zabel <pza@pengutronix.de>
+References: <20200506151429.12255-1-kishon@ti.com>
+ <20200506151429.12255-4-kishon@ti.com>
+ <20200520220724.GA636352@bogus> <37d2d6c3-232d-adb8-4e0b-e0c699ec435a@ti.com>
+In-Reply-To: <37d2d6c3-232d-adb8-4e0b-e0c699ec435a@ti.com>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 21 May 2020 16:17:09 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqK8xRTxuJ39yPMzE1JMBrYccXB5QqsSvn7HosvrEQGdWQ@mail.gmail.com>
+Message-ID: <CAL_JsqK8xRTxuJ39yPMzE1JMBrYccXB5QqsSvn7HosvrEQGdWQ@mail.gmail.com>
+Subject: Re: [PATCH v4 03/14] PCI: cadence: Add support to use custom read and
+ write accessors
+To: Kishon Vijay Abraham I <kishon@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_144829_782091_8E3FFFCB 
-X-CRM114-Status: GOOD (  21.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200521_151723_825427_3593B415 
+X-CRM114-Status: GOOD (  27.74  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,67 +88,217 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
- <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tom Joseph <tjoseph@cadence.com>, PCI <linux-pci@vger.kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-omap <linux-omap@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBNYXkgMjAsIDIwMjAgYXQgMzoyNyBBTSBQaGlsaXBwIFphYmVsIDxwemFAcGVuZ3V0
-cm9uaXguZGU+IHdyb3RlOgo+Cj4gSGkgSmltLAo+Cj4gT24gVHVlLCBNYXkgMTksIDIwMjAgYXQg
-MDQ6MzQ6MDVQTSAtMDQwMCwgSmltIFF1aW5sYW4gd3JvdGU6Cj4gPiBGcm9tOiBKaW0gUXVpbmxh
-biA8anF1aW5sYW5AYnJvYWRjb20uY29tPgo+ID4KPiA+IFNvbWUgU1RCIGNoaXBzIGhhdmUgYSBz
-cGVjaWFsIHB1cnBvc2UgcmVzZXQgY29udHJvbGxlciBuYW1lZAo+ID4gUkVTQ0FMIChyZXNldCBj
-YWxpYnJhdGlvbikuICBUaGlzIGNvbW1pdCBhZGRzIHRoZSBjb250cm9sCj4gPiBvZiBSRVNDQUwg
-YXMgd2VsbCBhcyB0aGUgYWJpbGl0eSB0byBzdGFydCBhbmQgc3RvcCBpdHMKPiA+IG9wZXJhdGlv
-biBmb3IgUENJZSBIVy4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBKaW0gUXVpbmxhbiA8anF1aW5s
-YW5AYnJvYWRjb20uY29tPgo+ID4gLS0tCj4gPiAgZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2ll
-LWJyY21zdGIuYyB8IDgxICsrKysrKysrKysrKysrKysrKysrKysrKysrLQo+ID4gIDEgZmlsZSBj
-aGFuZ2VkLCA4MCBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4gPgo+ID4gZGlmZiAtLWdp
-dCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1icmNtc3RiLmMgYi9kcml2ZXJzL3BjaS9j
-b250cm9sbGVyL3BjaWUtYnJjbXN0Yi5jCj4gPiBpbmRleCAyYzQ3MDEwNGJhMzguLjA3ODdlOGY2
-ZjdlNSAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1icmNtc3Ri
-LmMKPiA+ICsrKyBiL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1icmNtc3RiLmMKPiBbLi4u
-XQo+ID4gQEAgLTExMDAsNiArMTE2NCwyMSBAQCBzdGF0aWMgaW50IGJyY21fcGNpZV9wcm9iZShz
-dHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQo+ID4gICAgICAgICAgICAgICBkZXZfZXJyKCZw
-ZGV2LT5kZXYsICJjb3VsZCBub3QgZW5hYmxlIGNsb2NrXG4iKTsKPiA+ICAgICAgICAgICAgICAg
-cmV0dXJuIHJldDsKPiA+ICAgICAgIH0KPiA+ICsgICAgIHBjaWUtPnJlc2NhbCA9IGRldm1fcmVz
-ZXRfY29udHJvbF9nZXRfc2hhcmVkKCZwZGV2LT5kZXYsICJyZXNjYWwiKTsKPiA+ICsgICAgIGlm
-IChJU19FUlIocGNpZS0+cmVzY2FsKSkgewo+ID4gKyAgICAgICAgICAgICBpZiAoUFRSX0VSUihw
-Y2llLT5yZXNjYWwpID09IC1FUFJPQkVfREVGRVIpCj4gPiArICAgICAgICAgICAgICAgICAgICAg
-cmV0dXJuIC1FUFJPQkVfREVGRVI7Cj4gPiArICAgICAgICAgICAgIHBjaWUtPnJlc2NhbCA9IE5V
-TEw7Cj4KPiBUaGlzIGlzIGVmZmVjdGl2ZWx5IGFuIG9wdGlvbmFsIHJlc2V0IGNvbnRyb2wsIHNv
-IGl0IGlzIGJldHRlciB0byB1c2U6Cj4g4oa1Cj4gICAgICAgICBwY2llLT5yZXNjYWwgPSBkZXZt
-X3Jlc2V0X2NvbnRyb2xfZ2V0X29wdGlvbmFsX3NoYXJlZCgmcGRldi0+ZGV2LAo+ICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgInJl
-c2NhbCIpO+KGtQo+ICAgICAgICAgaWYgKElTX0VSUihwY2llLT5yZXNjYWwpKQo+ICAgICAgICAg
-ICAgICAgICByZXR1cm4gUFRSX0VSUihwY2llLT5yZXNjYWwpOwo+Cj4gPiArICAgICB9IGVsc2Ug
-ewo+ID4gKyAgICAgICAgICAgICByZXQgPSByZXNldF9jb250cm9sX2RlYXNzZXJ0KHBjaWUtPnJl
-c2NhbCk7Cj4gPiArICAgICAgICAgICAgIGlmIChyZXQpCj4gPiArICAgICAgICAgICAgICAgICAg
-ICAgZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGRlYXNzZXJ0ICdyZXNjYWwnXG4iKTsK
-PiA+ICsgICAgIH0KPgo+IHJlc2V0X2NvbnRyb2xfKiBjYW4gaGFuZGxlIHJzdGMgPT0gTlVMTCBw
-YXJhbWV0ZXJzIGZvciBvcHRpb25hbCByZXNldAo+IGNvbnRyb2xzLCBzbyB0aGlzIGNhbiBiZSBk
-b25lIHVuY29uZGl0aW9uYWxseToKPgo+ICAgICAgICAgcmV0ID0gcmVzZXRfY29udHJvbF9kZWFz
-c2VydChwY2llLT5yZXNjYWwpO+KGtQo+ICAgICAgICAgaWYgKHJldCnihrUKPiAgICAgICAgICAg
-ICAgICAgZGV2X2VycigmcGRldi0+ZGV2LCAiZmFpbGVkIHRvIGRlYXNzZXJ0ICdyZXNjYWwnXG4i
-KTvihrUKPgo+IElzIHJlc2NhbCBoYW5kbGVkIGJ5IHRoZSByZXNldC1icmNtc3RiLXJlc2NhbCBk
-cml2ZXI/IFNpbmNlIHRoYXQgb25seQo+IGltcGxlbWVudHMgdGhlIC5yZXNldCBvcCwgSSB3b3Vs
-ZCBleHBlY3QgcmVzZXRfY29udHJvbF9yZXNldCgpIGhlcmUuCldoZXJlIGV4YWN0bHk/ICAicmVz
-ZXQuaCIgc2F5cyB0aGF0ICJDYWxsaW5nIHJlc2V0X2NvbnRyb2xfcmVzZSgpdCBpcwpub3QgYWxs
-b3dlZCBvbiBhIHNoYXJlZCByZXNldCBjb250cm9sLiIgc28gSSdtIG5vdCBzdXJlIHdoeSAgeW91
-IHdvdWxkCndhbnQgbWUgdG8gaW52b2tlIGl0Lgo+IE90aGVyd2lzZSB0aGlzIGxvb2tzIGxpa2Ug
-aXQnZCBiZSBtaXNzaW5nIGEgcmVzZXRfY29udHJvbF9hc3NlcnQgaW4KPiByZW1vdmUuCkkgY2Fu
-IGFkZCB0aGlzLgpUaGFua3MsCkppbQo+Cj4gcmVnYXJkcwo+IFBoaWxpcHAKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Thu, May 21, 2020 at 7:33 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
+>
+> Hi Rob,
+>
+> On 5/21/2020 3:37 AM, Rob Herring wrote:
+> > On Wed, May 06, 2020 at 08:44:18PM +0530, Kishon Vijay Abraham I wrote:
+> >> Add support to use custom read and write accessors. Platforms that
+> >> don't support half word or byte access or any other constraint
+> >> while accessing registers can use this feature to populate custom
+> >> read and write accessors. These custom accessors are used for both
+> >> standard register access and configuration space register access of
+> >> the PCIe host bridge.
+> >>
+> >> Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+> >> ---
+> >>  drivers/pci/controller/cadence/pcie-cadence.h | 107 +++++++++++++++---
+> >>  1 file changed, 94 insertions(+), 13 deletions(-)
+> >
+> > Actually, take back my R-by...
+> >
+> >>
+> >> diff --git a/drivers/pci/controller/cadence/pcie-cadence.h b/drivers/pci/controller/cadence/pcie-cadence.h
+> >> index df14ad002fe9..70b6b25153e8 100644
+> >> --- a/drivers/pci/controller/cadence/pcie-cadence.h
+> >> +++ b/drivers/pci/controller/cadence/pcie-cadence.h
+> >> @@ -223,6 +223,11 @@ enum cdns_pcie_msg_routing {
+> >>      MSG_ROUTING_GATHER,
+> >>  };
+> >>
+> >> +struct cdns_pcie_ops {
+> >> +    u32     (*read)(void __iomem *addr, int size);
+> >> +    void    (*write)(void __iomem *addr, int size, u32 value);
+> >> +};
+> >> +
+> >>  /**
+> >>   * struct cdns_pcie - private data for Cadence PCIe controller drivers
+> >>   * @reg_base: IO mapped register base
+> >> @@ -239,7 +244,7 @@ struct cdns_pcie {
+> >>      int                     phy_count;
+> >>      struct phy              **phy;
+> >>      struct device_link      **link;
+> >> -    const struct cdns_pcie_common_ops *ops;
+> >> +    const struct cdns_pcie_ops *ops;
+> >>  };
+> >>
+> >>  /**
+> >> @@ -299,69 +304,145 @@ struct cdns_pcie_ep {
+> >>  /* Register access */
+> >>  static inline void cdns_pcie_writeb(struct cdns_pcie *pcie, u32 reg, u8 value)
+> >>  {
+> >> -    writeb(value, pcie->reg_base + reg);
+> >> +    void __iomem *addr = pcie->reg_base + reg;
+> >> +
+> >> +    if (pcie->ops && pcie->ops->write) {
+> >> +            pcie->ops->write(addr, 0x1, value);
+> >> +            return;
+> >> +    }
+> >> +
+> >> +    writeb(value, addr);
+> >>  }
+> >>
+> >>  static inline void cdns_pcie_writew(struct cdns_pcie *pcie, u32 reg, u16 value)
+> >>  {
+> >> -    writew(value, pcie->reg_base + reg);
+> >> +    void __iomem *addr = pcie->reg_base + reg;
+> >> +
+> >> +    if (pcie->ops && pcie->ops->write) {
+> >> +            pcie->ops->write(addr, 0x2, value);
+> >> +            return;
+> >> +    }
+> >> +
+> >> +    writew(value, addr);
+> >>  }
+> >
+> > cdns_pcie_writeb and cdns_pcie_writew are used, so remove them.
+> >
+> >>
+> >>  static inline void cdns_pcie_writel(struct cdns_pcie *pcie, u32 reg, u32 value)
+> >>  {
+> >> -    writel(value, pcie->reg_base + reg);
+> >> +    void __iomem *addr = pcie->reg_base + reg;
+> >> +
+> >> +    if (pcie->ops && pcie->ops->write) {
+> >> +            pcie->ops->write(addr, 0x4, value);
+> >> +            return;
+> >> +    }
+> >> +
+> >> +    writel(value, addr);
+> >
+> > writel isn't broken for you, so you don't need this either.
+> >
+> >>  }
+> >>
+> >>  static inline u32 cdns_pcie_readl(struct cdns_pcie *pcie, u32 reg)
+> >>  {
+> >> -    return readl(pcie->reg_base + reg);
+> >> +    void __iomem *addr = pcie->reg_base + reg;
+> >> +
+> >> +    if (pcie->ops && pcie->ops->read)
+> >> +            return pcie->ops->read(addr, 0x4);
+> >> +
+> >> +    return readl(addr);
+> >
+> > And neither is readl.
+>
+> Sure, I'll remove all the unused functions and avoid using ops for readl and
+> writel.
+> >
+> >>  }
+> >>
+> >>  /* Root Port register access */
+> >>  static inline void cdns_pcie_rp_writeb(struct cdns_pcie *pcie,
+> >>                                     u32 reg, u8 value)
+> >>  {
+> >> -    writeb(value, pcie->reg_base + CDNS_PCIE_RP_BASE + reg);
+> >> +    void __iomem *addr = pcie->reg_base + CDNS_PCIE_RP_BASE + reg;
+> >> +
+> >> +    if (pcie->ops && pcie->ops->write) {
+> >> +            pcie->ops->write(addr, 0x1, value);
+> >> +            return;
+> >> +    }
+> >> +
+> >> +    writeb(value, addr);
+> >>  }
+> >>
+> >>  static inline void cdns_pcie_rp_writew(struct cdns_pcie *pcie,
+> >>                                     u32 reg, u16 value)
+> >>  {
+> >> -    writew(value, pcie->reg_base + CDNS_PCIE_RP_BASE + reg);
+> >> +    void __iomem *addr = pcie->reg_base + CDNS_PCIE_RP_BASE + reg;
+> >> +
+> >> +    if (pcie->ops && pcie->ops->write) {
+> >> +            pcie->ops->write(addr, 0x2, value);
+> >> +            return;
+> >> +    }
+> >> +
+> >> +    writew(value, addr);
+> >
+> > You removed 2 out of 3 calls to this. I think I'd just make the root
+> > port writes always be 32-bit. It is all just one time init stuff
+> > anyways.
+> >
+> > Either rework the calls to assemble the data into 32-bits or keep these
+> > functions and do the RMW here.
+>
+> The problem with assembling data into 32-bits is we have to read/write with
+> different offsets. We'll give PCI_VENDOR_ID offset for modifying deviceID,
+> PCI_INTERRUPT_LINE for modifying INTERRUPT_PIN which might get non-intuitive.
+> Similarly in endpoint we read and write to MSI_FLAGS (which is at offset 2) we
+> have to directly use MSI capability offset.
+>
+> And doing RMW in the accessors would mean the same RMW op is repeated. So if we
+> just have cdns_pcie_rp_writeb() and cdns_pcie_rp_writew(), the same code will
+> be repeated here twice.
+
+Why repeated? Just copy what the config accessors do:
+
+static inline void cdns_pcie_write_sz(u32 val, void __iomem *addr, int size)
+{
+  u32 tmp, mask, where = (unsigned long)addr & 0x3;
+
+  addr -= where;
+
+  mask = ~(((1 << (size * 8)) - 1) << (where * 8));
+  tmp = readl(addr) & mask;
+  tmp |= val << (where * 8);
+  writel(tmp, addr);
+}
+
+/* Root Port register access */
+static inline void cdns_pcie_rp_writeb(struct cdns_pcie *pcie,
+       u32 reg, u8 value)
+{
+  cdns_pcie_write_sz(value, pcie->reg_base + CDNS_PCIE_RP_BASE + reg, 1);
+}
+
+static inline void cdns_pcie_rp_writew(struct cdns_pcie *pcie,
+       u32 reg, u16 value)
+{
+  cdns_pcie_write_sz(value, pcie->reg_base + CDNS_PCIE_RP_BASE + reg, 2);
+}
+
+>
+> IMHO using ops is a lot cleaner for these cases. IMHO except for removing
+> unused functions and not changing readl/writel, others should use ops.
+
+Trying to read the DW PCI driver I don't agree...
+
+Again, unless doing RMW is fundamentally broken (like it is for config
+space at runtime), then you only want to do it on broken h/w and ops
+would be appropriate. It is all mostly one time setup, so doing a few
+extra reads isn't a big deal. If you really care about speed on that,
+probably should use the _relaxed accessor variants.
+
+I'm being hopeful the Cadence IP doesn't become the mess that DW is.
+
+Rob
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
