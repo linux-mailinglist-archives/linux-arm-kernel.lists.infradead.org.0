@@ -2,54 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8685A1DD963
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 23:22:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 720601DD994
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 23:39:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BhMu8CgrrOKBdBYH02KdUCt9JuE2u9neRRVxcolZGQM=; b=eJBsvihndjbVUe3jlcGWs45jf
-	lryg3iVgcqQAefonxqYyAmlahGOtTx4FhnRbXQ+SJ7BdR/Nq0r9OThAJBp0aLid+YP8UxmRCOOb+0
-	NFPY7iQ6o54cLfwKnU8OstOOBs8/1uVJi/d4psdIg1DHVZWMh5sHlEbqg+uovzqBkHtkKdQlvU7sR
-	3iSm9TySQHCsO3PqurDwtWDbpZ4DEKHI3LreSNDLzL8JSUSSCkekHf8ltlgRtnhO3D3uWU0oPBTvP
-	PQAmKBDRq4RLXsYTnImDWMq5WOs1UfY1lhyPirbcxK+gAP+rL8edDXUw7/+ODv+gSibel/3mxvRr8
-	OmatRFc9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Subject:To:From:
+	Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Lj3BQm8bceRlGqj5mTv9U1C7OhoHtxQWZS+g/rnqsFY=; b=TDV
+	FQTGF8u8jKimm9Xmvgugz1EVq2JmD2SwZAPf/7mT6/LjXhY0L2Au6ji1vZNt2GmveB1Vj7ulpN5O+
+	c5XTCcZ41Avpcd+oLTs4OOpmW6udnuB/nyfKuJtfNPkx6jrg23meL2IIBqPJmjfX8V5TT8vbhhg+g
+	OBILP0OurJ9XeXNH+5rIAEV9gXTvy3GKUueC5wPzOvoai+oROQIco4dm9MjZIg2kjh6dpWrDQi+B0
+	kmKZfC5x+9GP8k3ljaYViXNqNUhscXIv+EZsqMZZ4cTema4Fjj4BiRZy+cMJVTCJwBslGdPR+8o7g
+	+TEN96lzsU0bBD6K4uqrzpJB4FhKnxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbsdc-0004q6-P2; Thu, 21 May 2020 21:22:00 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbsdT-0004pS-Sy
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 21:21:53 +0000
-Received: from localhost (p5486ce13.dip0.t-ipconnect.de [84.134.206.19])
- by pokefinder.org (Postfix) with ESMTPSA id DF02A2C1FCF;
- Thu, 21 May 2020 23:21:49 +0200 (CEST)
-Date: Thu, 21 May 2020 23:21:49 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Re: [PATCH v12 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
- driver
-Message-ID: <20200521212149.GB20150@ninjato>
-References: <20200521110910.45518-1-tali.perry1@gmail.com>
- <20200521110910.45518-3-tali.perry1@gmail.com>
- <20200521142340.GM1634618@smile.fi.intel.com>
- <20200521143100.GA16812@ninjato>
-MIME-Version: 1.0
-In-Reply-To: <20200521143100.GA16812@ninjato>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1jbsuK-0005nL-44; Thu, 21 May 2020 21:39:16 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbsu9-0005jF-4B
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 21:39:07 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 145so4086967pfw.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 May 2020 14:39:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:from:to:cc:subject;
+ bh=YS06TYXbnNyg5eqC9j5pAB5NNZGlsEdzKu+N3IhG1qE=;
+ b=YBG4QKyudc9Cb6TAd84xHdhLiWkzteUpeQIK7uGB5nLP7iGJXJbF0yroONadM1Sm29
+ 8Y34X6CDUCVfMRWRF205BUCGdHwwZXc4VDR9JqHa/YtzhyMdo7rGz9/kUDrlFZPF5D+o
+ m2muXRDZZoZhiUENVoDRv4gxB2YtaeyNOC4CuLcu5xQ/gYF+l3cWGMETF3chYUcwaWcX
+ 3HwUUzOMmKogN/NUFhQ2qLO7s6ceC3wH0JBInadHplzO+CUTahZXb6bNgdMzypZ13m8x
+ huGFTSyonRQPshPkaX/NxYk5PIRqpjkEQnXwLoK1KLr8/o0UYJ3DEIpwo58XWmrMfHli
+ C12Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:from:to:cc:subject;
+ bh=YS06TYXbnNyg5eqC9j5pAB5NNZGlsEdzKu+N3IhG1qE=;
+ b=TODRCRxVvb3nOKXh8FWKQABZETz+vmeexGa91hMWvG3hL64TBpGMsaoRPIWqQ8HP12
+ AShKR/foy+IlYs320eH7T3sWHKeuteJPh5hOeKFai+HznAQhNxScqnOOvBmBnBTSMojh
+ NZaq8eqbRsW2EFMsdf7S57i+ikEGrpnGLi0xemvFk8r4p+hbYHJexLfk7F+KAaX45Inf
+ RxTUvkU5n9SQUZa6TAxVqTsLfEUG8fLM1GuEigogmpMW4H4n88uqGDb/+grpSqsd16pJ
+ PFf6bQV7T2I8ryNqWLLVES6D7eFfqiqTvmKid6jTXbuismpOf/VAVXKJ9seRqQh9jCMl
+ SGsg==
+X-Gm-Message-State: AOAM531OnN3mTzjOsxEcudz05kwcNtGwjALjfzlvlA9Lg9dw59DkVgXq
+ eip4MF0U2fIAqCHOZXhQilLKdw==
+X-Google-Smtp-Source: ABdhPJzBGlvUSK12qblOTddjYFaTYFPNB1B9FYx3SaLPgKldfb3mFVxbTRVb0FsY58KwCvjBd64H9w==
+X-Received: by 2002:a62:3441:: with SMTP id b62mr672687pfa.225.1590097142895; 
+ Thu, 21 May 2020 14:39:02 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id f6sm5407230pfn.189.2020.05.21.14.39.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 May 2020 14:39:02 -0700 (PDT)
+Message-ID: <5ec6f4f6.1c69fb81.3fe34.b693@mx.google.com>
+Date: Thu, 21 May 2020 14:39:01 -0700
+From: Kevin Hilman <khilman@baylibre.com>
+To: soc@kernel.org, arm@kernel.org
+Subject: [GIT PULL 1/4] arm64: defconfig: Amlogic updates for v5.8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_142152_084311_03AFB877 
-X-CRM114-Status: UNSURE (   6.47  )
+X-CRM114-CacheID: sfid-20200521_143905_197547_86F39DBB 
+X-CRM114-Status: UNSURE (   8.23  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,68 +89,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- tmaimon77@gmail.com, yuenn@google.com, avifishman70@gmail.com,
- venture@google.com, openbmc@lists.ozlabs.org, brendanhiggins@google.com,
- ofery@google.com, Tali Perry <tali.perry1@gmail.com>, kfting@nuvoton.com,
- robh+dt@kernel.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, benjaminfair@google.com
-Content-Type: multipart/mixed; boundary="===============3881251421093691188=="
+Cc: linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
---===============3881251421093691188==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="7ZAtKRhVyVSsbBD2"
-Content-Disposition: inline
+  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
 
+are available in the Git repository at:
 
---7ZAtKRhVyVSsbBD2
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+  https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-defconfig
 
+for you to fetch changes up to 38f58fc51d12b25f9aab9afa2e6f58227c950d9e:
 
-> From a glimpse, this looks good to go. I will have a close look later
-> today.
+  arm64: defconfig: enable meson gx audio as module (2020-04-30 07:53:22 -0700)
 
-Phew, this driver is huge. I won't finish my review today, but I am
-working on it and am maybe 2/3 through.
+----------------------------------------------------------------
+arm64: defconfig: Amlogic updates for v5.8
+- enable meson gx audio as module
 
+----------------------------------------------------------------
+Jerome Brunet (1):
+      arm64: defconfig: enable meson gx audio as module
 
---7ZAtKRhVyVSsbBD2
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7G8OkACgkQFA3kzBSg
-KbYcCw/9H7oWUrWBWy5C49NVa1N+n9JHdtx5KFE40DwXAwm2mRCSuoMr1JP9Rq5M
-IFVgQp7Kk1mZ0jDR178dMQSYKuwDuFkOMDrewvQyOGPbGtn38FyInpJ6Te+uVyBS
-HNJMGTluuvvM6840KdZSkRYZ9ynptA/JwSfvKoBk9/UAL6W/4C1LR97a4AEb/JFT
-1To5HWdtArLvqSdfwvAaZyRghNLM2bjrp46NUFsfcXvxbZoiRZJBlmqBPJqkO4sw
-wyVdSW16rdxMrAa6sFlcCjnCCZWusEgf5hdUtm3dRqnELLYH87iLqZpdfpMyOA8E
-YJSLRpRBj2GUlmvG2S2Kd2H03UUyfspn9Qxe5T7MOpYDuoQQoOXrjH88kqTyEVty
-3pkQ0z/oo62JsfgfjJQW5cBxbRhIiwP/rvMai1eXo303chCA2ieP9cT1bPbw8BXY
-uJ3Xl2Botr7hgj7VywLHN6cp4S5m4iWJVbjUZfM2vAmSKTSKvBcIR1mVVzfZgWJD
-vE9PsxfHtt0EOAU8WE9iseFJPOvzK7tuuaibHaD6gVAaNLr0Nv4adcM1MwSCicum
-PqkDvXWuP+n6HdQ9+L/FA63xAtbT5SRQIFYhMBxots9hOYAUxK5gOnoHJYbAqB5R
-TY2mr5I/NekkgzmBbh0ZRWTRdCmgfQCXmzMku6xaM4D57Weuauk=
-=vjY8
------END PGP SIGNATURE-----
-
---7ZAtKRhVyVSsbBD2--
-
-
---===============3881251421093691188==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+ arch/arm64/configs/defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3881251421093691188==--
-
