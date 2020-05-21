@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 922C51DCBE3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 13:11:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E1001DCBD2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 13:10:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/wK4SaHi814cTv5LpThMSw4RZy7AQwBxftKIn9xB6oI=; b=MgJbAGpyBU7XdC
-	7g44Xh98/aCkf1WBUabPVybpCTpOUSAovIc00dziveHKEoDC0W099WuvjqRYiJInwQqLH0vJLzadP
-	eAs89nQBUeVk5y6sTFfLlTBCw6P+L77aQ0KTdockEVoOtnMb45+pnPg3BcRQennsax5ZCBMakDm0l
-	HQzh8qNVaIIIOogTMV9YGPa9IHPNF4WgAy/YWGvDWEer+VufmeqZ3b6NWUeHybkzZepkVd0PPkNsu
-	GJgiwkx/boU02Ur4m4H/IBGmm+ljEroclTg7NgPLkMm7G75KcocNrczUcTr/pJuv8BJMFry4XfCBp
-	yEF6OO92rGrGOHD0CHBg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jSWFahU6xk61wdxuZ6zfiRPVV5+CLDn4QMOPHkcK0uI=; b=gX0CRSo7khdCE9
+	FkNZPchEAs46BMOS93RjUjLEHRWF1UTeI+6Syq6QeiIy/jGPvDzwg+qU2Ij6XtZpvgNg5vc0Fq0D6
+	b0bYtzYncIVGgNr6CWwtzM97j44xAEAo5ViaBfd0zqLaShUSeVPo9CPtKmwzfYLMh9VTg3edmeUYe
+	okwEZy9W51F0t70JkSycPDPmgznfV86iH+qt8Kda7l2gqjquV3i0/zePKdLsTqznX0lCY9+bVGOTq
+	RIP8hq9vYwSou2F6YS/gRzwYQlnBYuXKUpfDj9IXqYeP7GhjsWthoQh1by/Ye4rAaWBnWvx5hzkL5
+	MXYzGv/ocKbF4+eXUdHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbj6O-0005GY-Gl; Thu, 21 May 2020 11:11:04 +0000
+	id 1jbj5n-0002S3-QN; Thu, 21 May 2020 11:10:27 +0000
 Received: from 212.199.177.27.static.012.net.il ([212.199.177.27]
  helo=herzl.nuvoton.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbj5a-0002S9-Uj
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 11:10:16 +0000
+ id 1jbj5V-0002Q2-LD
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 11:10:11 +0000
 Received: from taln60.nuvoton.co.il (ntil-fw [212.199.177.25])
- by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id 04LB9XhP018632;
+ by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id 04LB9Xbb018633;
  Thu, 21 May 2020 14:09:34 +0300
 Received: by taln60.nuvoton.co.il (Postfix, from userid 20088)
- id CCCD7639C0; Thu, 21 May 2020 14:09:33 +0300 (IDT)
+ id DCCE26032E; Thu, 21 May 2020 14:09:33 +0300 (IDT)
 From: Tali Perry <tali.perry1@gmail.com>
 To: ofery@google.com, brendanhiggins@google.com, avifishman70@gmail.com,
  tmaimon77@gmail.com, kfting@nuvoton.com, venture@google.com,
  yuenn@google.com, benjaminfair@google.com, robh+dt@kernel.org,
  wsa@the-dreams.de, andriy.shevchenko@linux.intel.com
-Subject: [PATCH v12 0/3] i2c: npcm7xx: add NPCM i2c controller driver
-Date: Thu, 21 May 2020 14:09:07 +0300
-Message-Id: <20200521110910.45518-1-tali.perry1@gmail.com>
+Subject: [PATCH v12 1/3] dt-bindings: i2c: npcm7xx: add NPCM I2C controller
+Date: Thu, 21 May 2020 14:09:08 +0300
+Message-Id: <20200521110910.45518-2-tali.perry1@gmail.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20200521110910.45518-1-tali.perry1@gmail.com>
+References: <20200521110910.45518-1-tali.perry1@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_041015_441350_78E75FB3 
-X-CRM114-Status: UNSURE (   9.10  )
+X-CRM114-CacheID: sfid-20200521_041010_091157_F5B5AEA7 
+X-CRM114-Status: UNSURE (   9.18  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 4.9 (++++)
+X-Spam-Score: 3.0 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (4.9 points)
+ Content analysis details:   (3.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 TVD_RCVD_IP            Message was received from an IP address
@@ -64,7 +66,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
  list
  0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
- 2.0 SPOOFED_FREEMAIL       No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,99 +77,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kbuild test robot <lkp@intel.com>,
- openbmc@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- Tali Perry <tali.perry1@gmail.com>, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, openbmc@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, Tali Perry <tali.perry1@gmail.com>,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch set adds i2c controller support 
-for the Nuvoton NPCM Baseboard Management Controller (BMC).
-
-NPCM7xx includes 16 I2C controllers. This driver operates the controller.
-This module also includes a slave mode.
-
----
-v12 -> v11:
-	- Fix according to maintainer comments.
-	- debugfs simplified (usedebugfs_create_u64).
-	- slave read fifo split from master read fifo.
-v11 -> v10:
-	- Fix according to maintainer comments.
-	- Init clk simplified.
-	- Comments in c99
-	- Split master irq function.
-	- debugfs not mandatory.
-	- yaml file fix.
-
-v10 -> v9:
-	- Fix according to maintainer comments.
-	- binding file changed to yaml format.
-	- Shorten recovery flow.
-	- Add support for health monitoring counters.
-
-v9 -> v8:
-	- Fix according to maintainer comments.
-	- Split lines of iowrite..(ioread..) to separate lines.
-	- Use readx_poll_timeout_atomic
-	- resolve various style issues.
-	 
-v8 -> v7:
-	- Split to two commits, one for master, one for slave.
-	- Rename smb to i2c.
-	- Remove global vars.
-
-v7 -> v6:
-	- Rebased on Linux 5.4-rc8  (was Linux 5.4-rc7).
-	- Fix issue found by kbuild test robot (redundant include).
-	- Note: left a warning related to fall through. This fall through is
-	  intentional.
-	
-v6 -> v5:
-	- Update documentation
-
-v5 -> v4:
-	- support recovery
-	- master-slave switch support needed for IPMB
-
-v4 -> v3:
-	- typo on cover letter.
-
-v3 -> v2:
-	- fix dt binding: compatible name: omit "bus"
-
-v2 -> v1:
-	- run check patch in strict mode.
-	- use linux crc.
-	- define regs in constant offset without base.
-	- remove debug prints.
-	- no declarations for local functions.
-	
-v1: initial version
+Added device tree binding documentation for Nuvoton BMC
+NPCM I2C controller.
 
 Signed-off-by: Tali Perry <tali.perry1@gmail.com>
-Reported-by: kbuild test robot <lkp@intel.com>
-
 ---
-Tali Perry (3):
-  dt-bindings: i2c: npcm7xx: add NPCM I2C controller documentation
-  i2c: npcm7xx: Add Nuvoton NPCM I2C controller driver
-  i2c: npcm7xx: Add support for slave mode for Nuvoton NPCM BMC I2C
-    controller driver.
-
- .../bindings/i2c/nuvoton,npcm7xx-i2c.yaml     |   62 +
- drivers/i2c/busses/Kconfig                    |    9 +
- drivers/i2c/busses/Makefile                   |    1 +
- drivers/i2c/busses/i2c-npcm7xx.c              | 2426 +++++++++++++++++
- 4 files changed, 2498 insertions(+)
+ .../bindings/i2c/nuvoton,npcm7xx-i2c.yaml     | 62 +++++++++++++++++++
+ 1 file changed, 62 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
- create mode 100644 drivers/i2c/busses/i2c-npcm7xx.c
 
-
-base-commit: b9bbe6ed63b2b9f2c9ee5cbd0f2c946a2723f4ce
+diff --git a/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml b/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+new file mode 100644
+index 000000000000..fb4293f11461
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+@@ -0,0 +1,62 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i2c/nuvoton,npcm7xx-i2c.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: nuvoton NPCM7XX I2C Controller Device Tree Bindings
++
++description: |
++  The NPCM750x includes sixteen I2C bus controllers. All Controllers support
++  both master and slave mode. Each controller can switch between master and slave
++  at run time (i.e. IPMB mode). Each controller has two 16 byte HW FIFO for TX and
++  RX.
++
++maintainers:
++  - Tali Perry <tali.perry1@gmail.com>
++
++properties:
++  compatible:
++    enum:
++      - nuvoton,npcm7xx-i2c
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++    description: Reference clock for the I2C bus
++
++  bus-frequency:
++    description: Desired I2C bus clock frequency in Hz. If not specified,
++                 the default 100 kHz frequency will be used.
++                 possible values are 100000, 400000 and 1000000.
++    default: 100000
++    enum: [100000, 400000, 1000000]
++
++required:
++  - compatible
++  - reg
++  - interrupts
++
++allOf:
++  - $ref: /schemas/i2c/i2c-controller.yaml#
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    i2c0: i2c@80000 {
++        compatible = "nuvoton,npcm750-i2c";
++        reg = <0x80000 0x1000>;
++        clocks = <&clk NPCM7XX_CLK_APB2>;
++        bus-frequency = <100000>;
++        interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
++        pinctrl-names = "default";
++        pinctrl-0 = <&smb0_pins>;
++    };
++
++...
 -- 
 2.22.0
 
