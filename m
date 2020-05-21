@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F05B51DCC78
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 13:57:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3EB31DCC8B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 14:03:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fVKO11LoMOhNpKJ9MSoJ3xopPHKzzsa+Z78YwIfVA1U=; b=EhjVW/NItIjxqq
-	9qKOIT4KzP8giIh3Hn8tr2sQFK5bcE9DAnvpEnq8xqd333jcfzC/0v9Kx7s3QOzUuvREY9t3YR46e
-	qXKK1Uk8D+5m8yqm0MkyMvlrpYZtcFNhTnMTS2uyr+oLm0DAF4qiK8Dve+DaS1HjWmoLplex+7qdA
-	tQE4ElWmgyS7LwrI7o3N+SFiBPLxiLfxRI2MmKxGqvrTiOROFOXdI+pGbsXS2NaiiIOGTbyrCFHAF
-	6/I7D3y9xBQAgxwJgZWD8Tz2YEGctJoZZY9+tA+1JKPnTRwzqcRpbku985k9TnNItdq7yAFNwyju+
-	uyiD/cVaPDuF+ASvUg5A==;
+	List-Owner; bh=2WVTVYF9kXJel1yskFVSvrFSnMIhXwNiF2gCo9fVDgg=; b=mWqbhr15zgCrJ2
+	yjdItxZVICx/Zd9eGb/ZKsuHlSiTXniiohse4rIc9IiKmJ5jywvwKbkAHc6dAJEvjkZP8sfdLqO/Z
+	Sc+q4RHnEGY3HN4p76ANIDJgJYYCBlqIkYmWrSwp/iOpLQ6A4kJHF64CKhALRFUbzE6/1Mx5T2Ky2
+	TGFtiYNwBl9+zARGf9K6e9aaDHjk9O3dRkULrDNt+sCBOaN93Brzh8neb3nwnRU7RBugeqT9ctZzO
+	wYxLG7lilGX+Z+0TnrdBj1jZVmcaa1POCDDLYN+LxsoVLxonMq+WasSb5/dwIwv2IxyUW6LFd99B0
+	8zE5ZBGYLonqCJqxsWdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbjoo-0000MR-Al; Thu, 21 May 2020 11:56:58 +0000
+	id 1jbjv7-0003e4-D6; Thu, 21 May 2020 12:03:29 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbjoe-0000Li-6T
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 11:56:50 +0000
+ id 1jbjux-0003dP-RP
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 12:03:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=quMBNPN5Tp49fo/5cBfmhrGCcTfHCCpSeERvGXDp7hQ=; b=0bQAlB/cwU03IAtfbt9ghqL3e
- 5S8U9BZ85Kv9BhXanRkt4ObkATMkaor9lN62C5Vj6MDXjrBzlBP/KosPuenNvsXh9DIj+oAZmqGcJ
- 12xIVvVKQu5yYE1KJSKPEYO9ax/ilpNbmTs6BYcbXSQN1ZKsLYNF8MLtn4tG3lrz6lFVm8jdnhQwZ
- vSjRRu0oOEYm0Aj+ACqLJbeKAPp/XAUin5fMext2KxGq4qA5AA1A2EpBsbti3sh6RBP9r/d8FVWnQ
- Sk2mlrRwk5v+4doyKeQxz5uWTr3elMbYRSQPk9gSWoobimir9iX4/nYSJT1oFAvc1vAN80gpY6xyN
- sSwpmFLAA==;
+ bh=DugcN9tbDgtWy6KtRQBnM72cC+bpgx46fZD/tUG5gjo=; b=wjIqw2NwPqWPl/iYizsOTBh5I
+ TylaQFSATiDKxa+X1/RBTAw6MqthIF6DClJTXNAeaV+B1qWCrXC5AffDlFH20OQR3gU0t3K1D4+wp
+ CHjjP2KygVSWFfnsrno3kTOZPN+D5WyNvIwo8uHvqiRxKynf5SrYf6kGznhoKFA11znDGYTu0/alC
+ xh9pPdR70cc88zSR6tOlbOYJmElxSpd0+7PNckslXuPADih1qxML7i5Qz6NwsFsJjQcJTz2At7QFb
+ WqPknIA9eomKOrH6qfQ/v/Uf4VWqJQl/6QSfrFwhoiBjbjB8VqYh0Rgo62cS0WNSvbLWStXOxVNZb
+ XMAHs86KA==;
 Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:35048)
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:43122)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1jbjoX-0002MA-4z; Thu, 21 May 2020 12:56:41 +0100
+ id 1jbjuo-0002NN-2P; Thu, 21 May 2020 13:03:10 +0100
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jbjoV-0000Ap-3s; Thu, 21 May 2020 12:56:39 +0100
-Date: Thu, 21 May 2020 12:56:39 +0100
+ id 1jbjum-0000BN-GM; Thu, 21 May 2020 13:03:08 +0100
+Date: Thu, 21 May 2020 13:03:08 +0100
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2] ARM: mm: make act_mm() respect THREAD_SIZE
-Message-ID: <20200521115639.GQ1551@shell.armlinux.org.uk>
-References: <20200515124808.213538-1-linus.walleij@linaro.org>
+To: Mike Rapoport <rppt@linux.ibm.com>
+Subject: Re: [PATCH 0/2] ARM: Allow either FLATMEM or SPARSEMEM on the
+ multiplatform build
+Message-ID: <20200521120308.GR1551@shell.armlinux.org.uk>
+References: <20200521081825.1348844-1-rppt@linux.ibm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200515124808.213538-1-linus.walleij@linaro.org>
+In-Reply-To: <20200521081825.1348844-1-rppt@linux.ibm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_045648_237157_5859FC77 
-X-CRM114-Status: GOOD (  18.14  )
+X-CRM114-CacheID: sfid-20200521_050319_886846_487CAB66 
+X-CRM114-Status: GOOD (  16.57  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -86,73 +87,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, Ard Biesheuvel <ardb@kernel.org>,
+Cc: Florian Fainelli <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+ Stephen Boyd <sboyd@kernel.org>, Kevin Cernekee <cernekee@gmail.com>,
+ Doug Berger <opendmb@gmail.com>, Gregory Fong <gregory.0xf0@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 02:48:08PM +0200, Linus Walleij wrote:
-> Recent work with KASan exposed the folling hard-coded bitmask
-> in arch/arm/mm/proc-macros.S:
+On Thu, May 21, 2020 at 11:18:23AM +0300, Mike Rapoport wrote:
+> (resendig for the correct address and with mailing list cc'ed, sorry for
+> the noise)
 > 
->   bic     \rd, sp, #8128
->   bic     \rd, \rd, #63
+> Hi,
 > 
-> This forms the bitmask 0x1FFF that is coinciding with
-> (PAGE_SIZE << THREAD_SIZE_ORDER) - 1, this code was assuming
-> that THREAD_SIZE is always 8K (8192).
+> Following the discussion at [1], I'm resending the patches that enable
+> memory model selection in menuconfig and such.
 > 
-> As KASan was increasing THREAD_SIZE_ORDER to 2, I ran into
-> this bug.
+> These patches do not change the way the configuration is generated from the
+> defconfigs and they do not change explicit selection of SPARSEMEM for
+> platforms that have "select ARCH_ENABLE_SPARSEMEM".
 > 
-> Fix it by this little oneline suggested by Ard:
+> The mere change is that when a user runs an interactive configuration they
+> will be allowed to select between FLATMEM and SPARSMEM, which is not the
+> case today.
 > 
->   bic     \rd, sp, #(THREAD_SIZE - 1) & ~63
+> There is indeed some awkwardness in, e.g. removal of
+> ARCH_SPARSEMEM_DEFAULT, but this is what memory model selection logic in
+> mm/Kconfig imposes.
 > 
-> Where THREAD_SIZE is defined using THREAD_SIZE_ORDER.
+> For example, below is the diffs of the configurations generated with
+> 'make rpc_defconfig' and 'make defconfig':
 > 
-> We have to also include <linux/const.h> since the THREAD_SIZE
-> expands to use the _AC() macro.
+> $ diff -s old/rpc_defconfig new/rpc_defconfig
+> Files old/rpc_defconfig and new/rpc_defconfig are identical
 > 
-> Cc: Ard Biesheuvel <ardb@kernel.org>
-> Cc: Florian Fainelli <f.fainelli@gmail.com>
-> Suggested-by: Ard Biesheuvel <ardb@kernel.org>
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-> ---
-> ChangeLog v1->v2:
-> - Change from using THREAD_SIZE_ORDER with a hardcoded
->   page size constant to just using THREAD_SIZE - 1
->   for the mask.
-> ---
->  arch/arm/mm/proc-macros.S | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
-> index 5461d589a1e2..60ac7c5999a9 100644
-> --- a/arch/arm/mm/proc-macros.S
-> +++ b/arch/arm/mm/proc-macros.S
-> @@ -5,6 +5,7 @@
->   *  VMA_VM_FLAGS
->   *  VM_EXEC
->   */
-> +#include <linux/const.h>
->  #include <asm/asm-offsets.h>
->  #include <asm/thread_info.h>
->  
-> @@ -30,7 +31,7 @@
->   * act_mm - get current->active_mm
->   */
->  	.macro	act_mm, rd
-> -	bic	\rd, sp, #8128
-> +	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
->  	bic	\rd, \rd, #63
+> $ diff -u old/defconfig new/defconfig
+> --- old/defconfig	2020-05-20 17:51:01.832649705 +0300
+> +++ new/defconfig	2020-05-20 18:15:21.084385880 +0300
+> @@ -674,6 +674,9 @@
+>  CONFIG_AEABI=y
+>  # CONFIG_OABI_COMPAT is not set
+>  CONFIG_ARCH_HAS_HOLES_MEMORYMODEL=y
+> +CONFIG_ARCH_SELECT_MEMORY_MODEL=y
+> +CONFIG_ARCH_FLATMEM_ENABLE=y
+> +CONFIG_ARCH_SPARSEMEM_ENABLE=y
+>  CONFIG_HAVE_ARCH_PFN_VALID=y
+>  CONFIG_HIGHMEM=y
+>  CONFIG_HIGHPTE=y
+> @@ -1061,6 +1064,9 @@
+>  #
+>  # Memory Management options
+>  #
+> +CONFIG_SELECT_MEMORY_MODEL=y
+> +CONFIG_FLATMEM_MANUAL=y
+> +# CONFIG_SPARSEMEM_MANUAL is not set
+>  CONFIG_FLATMEM=y
+>  CONFIG_FLAT_NODE_MEM_MAP=y
+>  CONFIG_ARCH_KEEP_MEMBLOCK=y
 
-We have a get_thread_info macro in asm/assembler that performs the same
-task.  Maybe this should be converted to use that, and maybe the macro
-should be updated to use bic, since this seems to be acceptable for
-Thumb and is one instruction shorter.
+Right, but the question is whether we want to offer flatmem for rpc.
+It isn't allowed today, and so far no one has said why it's a
+desirable change to make.
 
 -- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
