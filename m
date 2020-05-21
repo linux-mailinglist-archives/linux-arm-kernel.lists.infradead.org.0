@@ -2,68 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A47FF1DC4EA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 03:50:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9217D1DC531
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 04:29:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TdU8l/B/v8OV8JquWiz72aqR6ED78v2OisJJneES5Yo=; b=No6/koTbUVtHok
-	SctI2Gyztgyi1Ea+VW2TRYY1iPcLPV+KiseNljQ9zqMRVVk3xfd2A3X42o8Xn7n/KnZkJYjk3Q7H9
-	geUtuv35Yw0dBZPxBULpWYS061cZRNG4xF472vJPtFEsAKa6Km6bBpp1HEyQgahuHT7oBcopFpxWx
-	L36ZYb1nTjP2kwubtr4wpYYikleslEUF52P+5gz21lIBKypEP7EkccJ1cj7zbq0nFwKyi89R6qE6O
-	44aq1cMNQ+iry1+1r3E3bsyw9VDvn9yA2DZLxcdZ0kS9HEJpESfPYSc9/8/b71APJxDKJdUhIuB3b
-	NsnaCCHCOCl3Pv8sIKNA==;
+	List-Owner; bh=yqgwsxQQ1875ZlnRip0rHa0m7rQ3VXoqeduQpdIAbus=; b=ZaNHjU6rndmAfR
+	/qm50Guknwu7sI25uPmiMZZq5yEqMvl9n4gOsFzCAgsh+mTkU59MIRYciKhJRtUnNL4/MzTvNzime
+	a1+3oZo9cUm56QNsVhMARfOuttE7025+hqF7h5rr1UyoFAWRpPOUKZNfz+9mQX8AScGv25WefkyOV
+	W9vzUtAGKn+cTCgcOahf+FF8IN8RxsxWLsxkNHcnGwSS9m6qQC0IpG66QR35N5U5wan4mdBYglfwK
+	ICsEd2UvzLuXz9HYGzvzO4G/xBdOG8LSNjLxvWP4EfXBmuse5Ro7FnAg7Hf2doSZKmpIYtTSJQCe6
+	lYI6A20yP6sbfRmvKHqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbaM6-0007ca-DH; Thu, 21 May 2020 01:50:42 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jbaxQ-0003kf-Qq; Thu, 21 May 2020 02:29:16 +0000
+Received: from mail-vk1-xa42.google.com ([2607:f8b0:4864:20::a42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbaLw-0007c1-0H; Thu, 21 May 2020 01:50:33 +0000
-X-UUID: 2a7d3d6f708242ef832624eae674aa38-20200520
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=iA3rm6tm1TCbtJYi3Z4bsuX93wDGi5lZZQ8BBM1TLr4=; 
- b=ThZVrXEX0fa53G2rS34K2Fa8DaXcIoQB6srBKTr+lR1DkRftl73LO5tTQk3QHEXIaGAtbjw3KHPI8CsflqErN+jz+WAg4wNPTQW5swfh/TI3P5pLeROi3NwBh8SODirjd0Q8ktGR/hpJUOIHREnPA/CoMYzhivgxUgOlaNyl3eQ=;
-X-UUID: 2a7d3d6f708242ef832624eae674aa38-20200520
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <andrew-sh.cheng@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 423449908; Wed, 20 May 2020 17:50:30 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 20 May 2020 18:50:26 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 21 May 2020 09:50:27 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 21 May 2020 09:50:27 +0800
-Message-ID: <1590025827.17518.2.camel@mtksdaap41>
-Subject: Re: [PATCH 01/12] OPP: Allow required-opps even if the device
- doesn't have power-domains
-From: andrew-sh.cheng <andrew-sh.cheng@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Thu, 21 May 2020 09:50:27 +0800
-In-Reply-To: <b667fff9-50ae-bff2-ae17-1cf0ca1a08a5@gmail.com>
-References: <20200520034307.20435-1-andrew-sh.cheng@mediatek.com>
- <20200520034307.20435-2-andrew-sh.cheng@mediatek.com>
- <b667fff9-50ae-bff2-ae17-1cf0ca1a08a5@gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jbaxI-0003ja-BX
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 02:29:09 +0000
+Received: by mail-vk1-xa42.google.com with SMTP id o8so1325599vkd.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 20 May 2020 19:29:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Kqq9nD5oDHucLRSSU1RU5vZGB/pj8xXntJ0sAJIv3cA=;
+ b=na4/xlvnbUwhslC6KgAbQi8W0vpMvvs4MvGH83Fgv2W39mdUISpR0XNdBzPsEFDsrR
+ wlNDQOg0hXXwgG8qB+VhsVpATIfIb9sW9f9LokQ1hpBClJyRaYyz53t3CbcQ4wjFMRcR
+ LUD33rfMgddHHoPs1qO3Ew3V1WQiS/0Kxlp4Icpk08OIXBqu49Qef6Wl6SuguLFkH9xu
+ q5I+qMUB5ZyuWWc7c0GvEsHp5h2OcQVW1HQLodngcUsmvEx9ayfG5vAMyYuYIanoB2Ou
+ MeuqzDXykMCYn1Fu7Z9le/wdQdO6hZfjEzuUvlXDKlGKZCBB7wio70AoXfEtGzM/+CSm
+ PS0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Kqq9nD5oDHucLRSSU1RU5vZGB/pj8xXntJ0sAJIv3cA=;
+ b=gLLAMNRZEiw/2/zeDrsIFrR21sLrzDwR5QRC0p+WF7+cMivY16ultz2s7mWm/rVqwm
+ 4YeLExNo+xxudH3eT5Mi+I7cutmA9jG8Ha7DTMKc5d9A6rfuSIfXjZNcGCO685n4BQ3c
+ z+6VvaCrfI7/YvLL/H0GsqGhzxTmWpA6GRTGKueZDtk8OjBMs0qoCFVBAj+3FqLjutw3
+ 5+tBKFIl0PLnL/TsMvMomONPOC40K4L41kVvqsdwsY053P9+EEmIgw7jOFui1Pg1HsEG
+ GWjYM/4MP97BYn1cuyy0WFaosS8R+8k4VRCqf1PUfl/lIyVoV8y54HNLmuWJbN6565J4
+ ZCVQ==
+X-Gm-Message-State: AOAM533LhmKSimgiNej2DI/h74klVXv26Cj99+gxqy82a2m4bkzIj2cr
+ SjVnKVvvLkmKPaECOX8ZO1VDjZ4XVx8UMEfX7+PiAxT5
+X-Google-Smtp-Source: ABdhPJwdp5UARJ2fw0dxo/YuRKg6X9FX5YNwbJGGTaGrftOIdyDKLnfr57gJgBsYq/n0VFly3FKHbu44QMxfr0Of3AI=
+X-Received: by 2002:ac5:c92c:: with SMTP id u12mr6208199vkl.93.1590028139033; 
+ Wed, 20 May 2020 19:28:59 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20200508020106.136652-1-pcc@google.com>
+ <20200513180914.50892-1-pcc@google.com>
+ <20200513202808.GY21779@arm.com>
+ <CAMn1gO4V05nD-Tq4dES0QyO73bAT-Nwo1ABnz0nuous8Rq+dGA@mail.gmail.com>
+ <20200518095313.GZ21779@arm.com>
+ <CAMn1gO4c3-hG_i6ZWsk-+oUGQQBdzFJRMrpehT3OFERF2Z7nrg@mail.gmail.com>
+ <20200520085502.GC24293@willie-the-truck> <20200520092558.GI5031@arm.com>
+In-Reply-To: <20200520092558.GI5031@arm.com>
+From: Peter Collingbourne <pcc@google.com>
+Date: Wed, 20 May 2020 19:28:46 -0700
+Message-ID: <CAMn1gO7VWBcbMvqNeyBdfpO71kfhrZbHwkOC0JeSX13_HUMmWA@mail.gmail.com>
+Subject: Re: [PATCH v6] arm64: Expose FAR_EL1 tag bits in sigcontext
+To: Dave Martin <Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_185032_052795_DA19B040 
-X-CRM114-Status: GOOD (  21.07  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200520_192908_412351_AE7CDF0B 
+X-CRM114-Status: GOOD (  31.64  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:a42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -72,8 +89,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,95 +102,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nishanth Menon <nm@ti.com>, Saravana
- Kannan <saravanak@google.com>, srv_heupstream@mediatek.com,
- linux-pm@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Mark Brown <broonie@kernel.org>,
- "Rafael J
- . Wysocki" <rjw@rjwysocki.net>, Liam Girdwood <lgirdwood@gmail.com>, Rob
- Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
- Chanwoo Choi <cw00.choi@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>,
- MyungJoo Ham <myungjoo.ham@samsung.com>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Cc: "Eric W. Biederman" <ebiederm@xmission.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Oleg Nesterov <oleg@redhat.com>,
+ Kostya Serebryany <kcc@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Evgenii Stepanov <eugenis@google.com>, Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2020-05-20 at 16:54 +0200, Matthias Brugger wrote:
-> 
-> On 20/05/2020 05:42, Andrew-sh.Cheng wrote:
-> > From: Saravana Kannan <saravanak@google.com>
-> > 
-> > A Device-A can have a (minimum) performance requirement on another
-> > Device-B to be able to function correctly. This performance requirement
-> > on Device-B can also change based on the current performance level of
-> > Device-A.
-> > 
-> > The existing required-opps feature fits well to describe this need. So,
-> > instead of limiting required-opps to point to only PM-domain devices,
-> > allow it to point to any device.
-> > 
-> > Signed-off-by: Saravana Kannan <saravanak@google.com>
-> 
-> Please check all patches, they are missing your
-> Signed-off-by
-> 
-> Regards,
-> Matthias
+On Wed, May 20, 2020 at 2:26 AM Dave Martin <Dave.Martin@arm.com> wrote:
+>
+> On Wed, May 20, 2020 at 09:55:03AM +0100, Will Deacon wrote:
+> > On Tue, May 19, 2020 at 03:00:12PM -0700, Peter Collingbourne wrote:
+> > > On Mon, May 18, 2020 at 2:53 AM Dave Martin <Dave.Martin@arm.com> wrote:
+> > > > On Thu, May 14, 2020 at 05:58:21PM -0700, Peter Collingbourne wrote:
+> > > > > diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
+> > > > > index baa88dc02e5c..5867f2fdbe64 100644
+> > > > > --- a/arch/arm64/kernel/signal.c
+> > > > > +++ b/arch/arm64/kernel/signal.c
+> > > > > @@ -648,6 +648,7 @@ static int setup_sigframe(struct
+> > > > > rt_sigframe_user_layout *user,
+> > > > >                 __put_user_error(ESR_MAGIC, &esr_ctx->head.magic, err);
+> > > > >                 __put_user_error(sizeof(*esr_ctx), &esr_ctx->head.size, err);
+> > > > >                 __put_user_error(current->thread.fault_code,
+> > > > > &esr_ctx->esr, err);
+> > > > > +               current->thread.fault_code = 0;
+> > > >
+> > > > Perhaps, but we'd need to be careful.  For example, can we run out of
+> > > > user stack before this and deliver a SIGSEGV, but with the old
+> > > > fault_code still set?  Then we'd emit the old fault code with the
+> > > > new "can't deliver signal" signal, which doesn't make sense.
+> > > >
+> > > > Stuff may also go wrong with signal prioritisation.
+> > > >
+> > > > If a higher-priority signal (say SIGINT) comes in after a data abort
+> > > > enters the kernel but before the resulting SIGSEGV is dequeued for
+> > > > delivery, wouldn't we deliver SIGINT first, with the bogus fault code?
+> > > > With your change we'd then have cleared the fault code by the time we
+> > > > deliver the SIGSEGV it actually relates to, if I've understood right.
+> > > >
+> > > > Today, I think we just attach that fault code to every signal that's
+> > > > delivered until something overwrites or resets it, which means that
+> > > > a signal that needs fault_code gets it, at the expense of attaching
+> > > > it to a bunch of other random signals too.
+> > > >
+> > > >
+> > > > Checking the signal number and si_code might help us to know what we
+> > > > should be doing with fault_code.  We need to have sure userspace can't
+> > > > trick us with a non kernel generated signal here.  It would also be
+> > > > necessary to check how PTRACE_SETSIGINFO interacts with this.
+> > >
+> > > With these possible interactions in mind I think we should store the
+> > > fault code and fault address in kernel_siginfo instead of
+> > > thread_struct (and clear these fields when we receive a siginfo from
+> > > userspace, i.e. in copy_siginfo_from_user which is used by
+> > > ptrace(PTRACE_SETSIGINFO) among other places). That way, the
+> > > information is clearly associated with the signal itself and not the
+> > > thread, so we don't need to worry about our signal being delivered out
+> > > of order.
+> >
+> > Hmm, I can't see a way to do that that isn't horribly invasive in the core
+> > signal code. Can you?
 
-Hi Matthias,
+I think I've come up with a way that doesn't seem to be too invasive.
+See patch #1 of the series that I'm about to send out.
 
-I modify patch [6/12] to meet kernel-5.7 data structure and add
-signed-off.
-For [1/12] to [5/12], I didn't modify them.
-Should I also add signed-off ?
+> > But generally, I agree: the per-thread handling of fault_address and
+> > fault_code appears to be quite broken in the face of signal prioritisation
+> > and signals that don't correspond directly to hardware trap. It would be
+> > nice to have some tests for this...
+> >
+> > If we want to pile on more bodges, perhaps we could stash the signal number
+> > to which the fault_{address,code} relate, and then check that at delivery
+> > and clear on a match. I hate it.
+>
+> I agree with Daniel's suggestion in principle, but I was also concerned
+> about whether it would be too invasive elsewhere.
+>
+> Question though: does the core code take special care to make sure that
+> a force_sig cannot be outprioritised by a regular signal?  If so,
+> perhaps we get away with it.  I ask this, because the same same issue
+> may be hitting other arches otherwise.
 
-BR,
-Andrew-sh.Cheng
-> 
-> > ---
-> >  drivers/opp/core.c |  2 +-
-> >  drivers/opp/of.c   | 11 -----------
-> >  2 files changed, 1 insertion(+), 12 deletions(-)
-> > 
-> > diff --git a/drivers/opp/core.c b/drivers/opp/core.c
-> > index ba43e6a3dc0a..51403c1f2481 100644
-> > --- a/drivers/opp/core.c
-> > +++ b/drivers/opp/core.c
-> > @@ -755,7 +755,7 @@ static int _set_required_opps(struct device *dev,
-> >  		return 0;
-> >  
-> >  	/* Single genpd case */
-> > -	if (!genpd_virt_devs) {
-> > +	if (!genpd_virt_devs && required_opp_tables[0]->is_genpd) {
-> >  		pstate = likely(opp) ? opp->required_opps[0]->pstate : 0;
-> >  		ret = dev_pm_genpd_set_performance_state(dev, pstate);
-> >  		if (ret) {
-> > diff --git a/drivers/opp/of.c b/drivers/opp/of.c
-> > index 9cd8f0adacae..6d33de668a7b 100644
-> > --- a/drivers/opp/of.c
-> > +++ b/drivers/opp/of.c
-> > @@ -195,17 +195,6 @@ static void _opp_table_alloc_required_tables(struct opp_table *opp_table,
-> >  
-> >  		if (IS_ERR(required_opp_tables[i]))
-> >  			goto free_required_tables;
-> > -
-> > -		/*
-> > -		 * We only support genpd's OPPs in the "required-opps" for now,
-> > -		 * as we don't know how much about other cases. Error out if the
-> > -		 * required OPP doesn't belong to a genpd.
-> > -		 */
-> > -		if (!required_opp_tables[i]->is_genpd) {
-> > -			dev_err(dev, "required-opp doesn't belong to genpd: %pOF\n",
-> > -				required_np);
-> > -			goto free_required_tables;
-> > -		}
-> >  	}
-> >  
-> >  	goto put_np;
-> > 
+Not as far as I can tell. There does appear to be prioritisation for
+synchronous signals [1] but as far as I can tell nothing to
+distinguish one of these signals from one with the same signal number
+sent from userspace (e.g. via kill(2)).
+
+Peter
+
+[1] https://github.com/torvalds/linux/blob/b85051e755b0e9d6dd8f17ef1da083851b83287d/kernel/signal.c#L222
 
 _______________________________________________
 linux-arm-kernel mailing list
