@@ -2,66 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13FAC1DC56D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 05:01:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE0D41DC582
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 05:13:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jrSkCmyZZiMtbw3CfubxhaBslAeood9mDwjXDRzSR1k=; b=lvDqmdZOSy8opQ
-	owUZY9u+tOcQ6IdZPWu5YuXOqxc5PLV5kBZeBhE6C96av5QVOKJHtYrNP/3YP/3lcYikRAbSht5vv
-	XuA0rSX70Rg1o/qyTRJhAcZOPRrDx+kbUYOFUxjSVXoteeS5qzhL6l/8G+f3LTizhmMpYYjDPz5st
-	zxrzLUx/eAmuzZ88+BZXahqiTMHLCH3V55DPjxI21/2PJEp5XvHkO8BEELzaLkU4OBjv3a3fBOuwi
-	QY5pd1ilrovNQnUUaTHw6Fy2pzSUxKycRvo0pIJUqEcj+QyGuK98QhkwCXPyE6XFjDI7Vfhh6j7qO
-	Gn4Pfxm7EzDtz87T/5WA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6o+ZRe9aJiEu1z7noiaB1SHl3Q7lXVEvHh922oQG/U0=; b=VHtV1zj0fNyx45
+	+3NIFCeJrTqpB+9q0nNr+LcW1qJbGQHH/BaaLF+7AM7ep4Po+TqBgEBmEsoF7INUjTYycLKwdyTpY
+	5JBwuXwqUdaF0v8lE/6XO5sUWTYKiSJX47nypYHzSnlvaQnFqbBxVdFp/XhvUw/IskeJ8Vlj2m+p/
+	Z7eD6g6UOPz+S3QL2dcQDXxHXSxKGXCBeuxnFxVyjAmDtjHgjuraX3xgs8lUI89IYgNPBqnjozwdr
+	tLmg2yj8wC1+vEgq79+1ZNNLImBhxE4FyMJ3wIbRruwAr2tspgR2kjg03fy5rKbmOyE0OaPcZaCdH
+	dLxf/C5nmHq1F3TbVHLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbbSY-00086Y-6L; Thu, 21 May 2020 03:01:26 +0000
-Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbbSP-00085H-OO; Thu, 21 May 2020 03:01:20 +0000
-Received: from dggemi406-hub.china.huawei.com (unknown [172.30.72.55])
- by Forcepoint Email with ESMTP id 7E246397595705ECA5FA;
- Thu, 21 May 2020 11:01:04 +0800 (CST)
-Received: from DGGEMI525-MBS.china.huawei.com ([169.254.6.191]) by
- dggemi406-hub.china.huawei.com ([10.3.17.144]) with mapi id 14.03.0487.000;
- Thu, 21 May 2020 11:00:57 +0800
-From: "Song Bao Hua (Barry Song)" <song.bao.hua@hisilicon.com>
-To: Alexandru Elisei <alexandru.elisei@arm.com>, Mark Rutland
- <mark.rutland@arm.com>, Lecopzer Chen <lecopzer@gmail.com>
-Subject: RE: [PATCH 0/3] arm64: perf: Add support for Perf NMI interrupts
-Thread-Topic: [PATCH 0/3] arm64: perf: Add support for Perf NMI interrupts
-Thread-Index: AQHWK4CVzuSk3r9OTUuU9MOLmvQA7qis0jIAgAALFQCAAEh6AIAACRWAgAMXfYCAAZjBIA==
-Date: Thu, 21 May 2020 03:00:57 +0000
-Message-ID: <B926444035E5E2439431908E3842AFD24B2728@DGGEMI525-MBS.china.huawei.com>
-References: <20200516124857.75004-1-lecopzer@gmail.com>
- <CAFA6WYNwp+_ENiS8QDao5+RXyt5ofJZyq6c5CKG_d0CNEmBNYg@mail.gmail.com>
- <CANr2M19unLW8n0P2DiOYEZ=GZcaD-L2ygPht_5HNtNZ6e4h6xQ@mail.gmail.com>
- <20200518104524.GA1224@C02TD0UTHF1T.local>
- <a9002b5e-aec5-b6e0-7174-87b93351d60c@arm.com>
- <8a1022c0-da2b-c83d-81cd-44b11149496b@arm.com>
-In-Reply-To: <8a1022c0-da2b-c83d-81cd-44b11149496b@arm.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.126.200.188]
+	id 1jbbe8-000619-MV; Thu, 21 May 2020 03:13:24 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbbdy-00060X-SG
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 03:13:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B45230E;
+ Wed, 20 May 2020 20:13:13 -0700 (PDT)
+Received: from [10.163.75.69] (unknown [10.163.75.69])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 944B03F52E;
+ Wed, 20 May 2020 20:13:11 -0700 (PDT)
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] arm64/cpufeature: Move BUG_ON() inside get_arm64_ftr_reg()
+To: Will Deacon <will@kernel.org>
+References: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
+ <20200520122012.GA25815@willie-the-truck>
+Message-ID: <7bb0b88a-d551-463c-b777-68fb1c7f3c2c@arm.com>
+Date: Thu, 21 May 2020 08:42:35 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+In-Reply-To: <20200520122012.GA25815@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_200118_129847_1CF49CB1 
-X-CRM114-Status: GOOD (  28.69  )
+X-CRM114-CacheID: sfid-20200520_201315_002070_B5BC5A1F 
+X-CRM114-Status: GOOD (  22.09  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.255 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,112 +64,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sumit Garg <sumit.garg@linaro.org>,
- Jian-Lin Chen <lecopzer.chen@mediatek.com>, Will Deacon <will@kernel.org>,
- "alexander.shishkin@linux.intel.com" <alexander.shishkin@linux.intel.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "yj.chiang@mediatek.com" <yj.chiang@mediatek.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "acme@kernel.org" <acme@kernel.org>, Linuxarm <linuxarm@huawei.com>, Peter
- Zijlstra <peterz@infradead.org>, "mingo@redhat.com" <mingo@redhat.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "namhyung@kernel.org" <namhyung@kernel.org>,
- "jolsa@redhat.com" <jolsa@redhat.com>,
- "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogbGludXgtYXJtLWtlcm5l
-bCBbbWFpbHRvOmxpbnV4LWFybS1rZXJuZWwtYm91bmNlc0BsaXN0cy5pbmZyYWRlYWQub3JnXQ0K
-PiBPbiBCZWhhbGYgT2YgQWxleGFuZHJ1IEVsaXNlaQ0KPiBTZW50OiBXZWRuZXNkYXksIE1heSAy
-MCwgMjAyMCAxMDozMSBQTT4gDQo+IEhpLA0KPiANCj4gT24gNS8xOC8yMCAxMjoxNyBQTSwgQWxl
-eGFuZHJ1IEVsaXNlaSB3cm90ZToNCj4gPiBIaSwNCj4gPg0KPiA+IE9uIDUvMTgvMjAgMTE6NDUg
-QU0sIE1hcmsgUnV0bGFuZCB3cm90ZToNCj4gPj4gSGkgYWxsLA0KPiA+Pg0KPiA+PiBPbiBNb24s
-IE1heSAxOCwgMjAyMCBhdCAwMjoyNjowMFBNICswODAwLCBMZWNvcHplciBDaGVuIHdyb3RlOg0K
-PiA+Pj4gSEkgU3VtaXQsDQo+ID4+Pg0KPiA+Pj4gVGhhbmtzIGZvciB5b3VyIGluZm9ybWF0aW9u
-Lg0KPiA+Pj4NCj4gPj4+IEkndmUgYWxyZWFkeSBpbXBsZW1lbnRlZCBJUEkgKHNhbWUgYXMgeW91
-IGRpZCBbMV0sIGxpdHRsZSBkaWZmZXJlbmNlDQo+ID4+PiBpbiBkZXRhaWwpLCBoYXJkbG9ja3Vw
-IGRldGVjdG9yIGFuZCBwZXJmIGluIGxhc3QgeWVhcigyMDE5KSBmb3INCj4gPj4+IGRlYnVnZ2Fi
-aWxpdHkuDQo+ID4+PiBBbmQgbm93IHdlIHRlbmQgdG8gdXBzdHJlYW0gdG8gcmVkdWNlIGtlcm5l
-bCBtYWludGFpbmluZyBlZmZvcnQuDQo+ID4+PiBJJ20gZ2xhZCBpZiBzb21lb25lIGluIEFSTSBj
-YW4gZG8gdGhpcyB3b3JrIDopDQo+ID4+Pg0KPiA+Pj4gSGkgSnVsaWVuLA0KPiA+Pj4NCj4gPj4+
-IERvZXMgYW55IEFybSBtYWludGFpbmVycyBjYW4gcHJvY2VlZCB0aGlzIGFjdGlvbj8NCj4gPj4g
-QWxleGFuZHJ1IChDYydkKSBoYXMgYmVlbiByZWJhc2luZyBhbmQgcmV3b3JraW5nIEp1bGllbidz
-IHBhdGNoZXMsDQo+ID4+IHdoaWNoIGlzIG15IHByZWZlcnJlZCBhcHByb2FjaC4NCj4gPj4NCj4g
-Pj4gSSB1bmRlcnN0YW5kIHRoYXQncyBub3QgcXVpdGUgcmVhZHkgZm9yIHBvc3Rpbmcgc2luY2Ug
-aGUncw0KPiA+PiBpbnZlc3RpZ2F0aW5nIHNvbWUgb2YgdGhlIG5hc3RpZXIgc3VidGxldGllcyAo
-ZS5nLiBtdXR1YWwgZXhjbHVzaW9uDQo+ID4+IHdpdGggdGhlIE5NSSksIGJ1dCBtYXliZSB3ZSBj
-YW4gcHV0IHRoZSB3b3JrLWluLXByb2dyZXNzIHBhdGNoZXMNCj4gPj4gc29tZXdoZXJlIGluIHRo
-ZSBtZWFuIHRpbWUuDQo+ID4+DQo+ID4+IEFsZXhhbmRydSwgZG8geW91IGhhdmUgYW4gaWRlYSBv
-ZiB3aGF0IG5lZWRzIHRvIGJlIGRvbmUsIGFuZC9vciB3aGVuDQo+ID4+IHlvdSBleHBlY3QgeW91
-IGNvdWxkIHBvc3QgdGhhdD8NCj4gPiBJJ20gY3VycmVudGx5IHdvcmtpbmcgb24gcmViYXNpbmcg
-dGhlIHBhdGNoZXMgb24gdG9wIG9mIDUuNy1yYzUsIHdoZW4NCj4gPiBJIGhhdmUgc29tZXRoaW5n
-IHVzYWJsZSBJJ2xsIHBvc3QgYSBsaW5rIChzaG91bGQgYmUgYSBjb3VwbGUgb2YgZGF5cykuDQo+
-ID4gQWZ0ZXIgdGhhdCBJIHdpbGwgYWRkcmVzcyB0aGUgcmV2aWV3IGNvbW1lbnRzLCBhbmQgSSBw
-bGFuIHRvIGRvIGENCj4gPiB0aG9yb3VnaCB0ZXN0aW5nIGJlY2F1c2UgSSdtIG5vdCAxMDAlIGNv
-bmZpZGVudCB0aGF0IHNvbWUgb2YgdGhlDQo+ID4gYXNzdW1wdGlvbnMgYXJvdW5kIHRoZSBsb2Nr
-cyB0aGF0IHdlcmUgcmVtb3ZlZCBhcmUgY29ycmVjdC4gTXkgZ3Vlc3MgaXMNCj4gdGhpcyB3aWxs
-IHRha2UgYSBmZXcgd2Vla3MuDQo+IA0KPiBQdXNoZWQgYSBXSVAgYnJhbmNoIG9uIGxpbnV4LWFy
-bS5vcmcgWzFdOg0KPiANCj4gZ2l0IGNsb25lIC1iIFdJUC1wbXUtbm1pIGdpdDovL2xpbnV4LWFy
-bS5vcmcvbGludXgtYWUNCj4gDQo+IFByYWN0aWNhbGx5IHVudGVzdGVkLCBJIG9ubHkgZGlkIHBl
-cmYgcmVjb3JkIG9uIGEgZGVmY29uZmlnIGtlcm5lbCBydW5uaW5nIG9uIHRoZQ0KPiBtb2RlbC4N
-Cj4gDQo+IFsxXQ0KPiBodHRwOi8vd3d3LmxpbnV4LWFybS5vcmcvZ2l0P3A9bGludXgtYWUuZ2l0
-O2E9c2hvcnRsb2c7aD1yZWZzL2hlYWRzL1dJUC1wbQ0KPiB1LW5taQ0KDQpGb3J0dW5hdGVseSwg
-aXQgZG9lcyB3b3JrLiBJIHVzZWQgdGhpcyB0cmVlIHRvIHBlcmYgYW5ub3RhdGUgYXJtX3NtbXVf
-Y21kcV9pc3N1ZV9jbWRsaXN0KCkgd2hpY2gNCmlzIGNvbXBsZXRlbHkgZGlzYWJsaW5nIElSUS4g
-THVja2lseSwgaXQgcmVwb3J0cyBjb3JyZWN0IGRhdGEuIEJlZm9yZSB0aGF0LCBpdCByZXBvcnRl
-ZCBhbGwgdGltZSB3YXMgc3BlbnQgYnkNCnRoZSBjb2RlIHdoaWNoIGVuYWJsZWQgSVJRIC4NCg0K
-DQpCYXJyeQ0KDQo+IA0KPiBUaGFua3MsDQo+IEFsZXgNCj4gPg0KPiA+IFRoYW5rcywNCj4gPiBB
-bGV4DQo+ID4+IFRoYW5rcywNCj4gPj4gTWFyay4NCj4gPj4NCj4gPj4+IFRoaXMgaXMgcmVhbGx5
-IHVzZWZ1bCBpbiBkZWJ1Z2dpbmcuDQo+ID4+PiBUaGFuayB5b3UhIQ0KPiA+Pj4NCj4gPj4+DQo+
-ID4+Pg0KPiA+Pj4gWzFdIGh0dHBzOi8vbGttbC5vcmcvbGttbC8yMDIwLzQvMjQvMzI4DQo+ID4+
-Pg0KPiA+Pj4NCj4gPj4+IExlY29wemVyDQo+ID4+Pg0KPiA+Pj4gU3VtaXQgR2FyZyA8c3VtaXQu
-Z2FyZ0BsaW5hcm8ub3JnPiDmlrwgMjAyMOW5tDXmnIgxOOaXpSDpgLHkuIAg5LiL5Y2IDQo+IDE6
-NDblr6vpgZPvvJoNCj4gPj4+PiArIEp1bGllbg0KPiA+Pj4+DQo+ID4+Pj4gSGkgTGVjb3B6ZXIs
-DQo+ID4+Pj4NCj4gPj4+PiBPbiBTYXQsIDE2IE1heSAyMDIwIGF0IDE4OjIwLCBMZWNvcHplciBD
-aGVuIDxsZWNvcHplckBnbWFpbC5jb20+DQo+IHdyb3RlOg0KPiA+Pj4+PiBUaGVzZSBzZXJpZXMg
-aW1wbGVtZW50IFBlcmYgTk1JIGZ1bnh0aW9uYWxpdHkgYW5kIGRlcGVuZHMgb24NCj4gPj4+Pj4g
-UHNldWRvIE5NSSBbMV0gd2hpY2ggaGFzIGJlZW4gdXBzdHJlYW1lZC4NCj4gPj4+Pj4NCj4gPj4+
-Pj4gSW4gYXJtNjQgd2l0aCBHSUN2MywgUHNldWRvIE5NSSB3YXMgaW1wbGVtZW50ZWQgZm9yIE5N
-SS1saWtlDQo+IGludGVycnV0cy4NCj4gPj4+Pj4gVGhhdCBjYW4gYmUgZXh0ZW5kZWQgdG8gUGVy
-ZiBOTUkgd2hpY2ggaXMgdGhlIHByZXJlcXVpc2l0ZSBmb3INCj4gPj4+Pj4gaGFyZC1sb2NrdXAg
-ZGV0ZWN0b3Igd2hpY2ggaGFkIGFscmVhZHkgYSBzdGFuZGFyZCBpbnRlcmZhY2UgaW5zaWRlDQo+
-IExpbnV4Lg0KPiA+Pj4+Pg0KPiA+Pj4+PiBUaHVzIHRoZSBmaXJzdCBzdGVwIHdlIG5lZWQgdG8g
-aW1wbGVtZW50IHBlcmYgTk1JIGludGVyZmFjZSBhbmQNCj4gPj4+Pj4gbWFrZSBzdXJlIGl0IHdv
-cmtzIGZpbmUuDQo+ID4+Pj4+DQo+ID4+Pj4gVGhpcyBpcyBzb21ldGhpbmcgdGhhdCBpcyBhbHJl
-YWR5IGltcGxlbWVudGVkIHZpYSBKdWxpZW4ncw0KPiA+Pj4+IHBhdGNoLXNldCBbMV0uIEl0cyB2
-NCBoYXMgYmVlbiBmbG9hdGluZyBzaW5jZSBKdWx5LCAyMDE5IGFuZCBJDQo+ID4+Pj4gY291bGRu
-J3QgZmluZCBhbnkgbWFqb3IgYmxvY2tpbmcgY29tbWVudHMgYnV0IG5vdCBzdXJlIHdoeSB0aGlu
-Z3MNCj4gPj4+PiBoYXZlbid0IHByb2dyZXNzZWQgZnVydGhlci4NCj4gPj4+Pg0KPiA+Pj4+IE1h
-eWJlIEp1bGllbiBvciBBcm0gbWFpbnRhaW5lcnMgY2FuIHByb3ZpZGUgdXBkYXRlcyBvbiBleGlz
-dGluZw0KPiA+Pj4+IHBhdGNoLXNldCBbMV0gYW5kIGhvdyB3ZSBzaG91bGQgcHJvY2VlZCBmdXJ0
-aGVyIHdpdGggdGhpcw0KPiA+Pj4+IGludGVyZXN0aW5nIGZlYXR1cmUuDQo+ID4+Pj4NCj4gPj4+
-PiBBbmQgcmVnYXJkaW5nIGhhcmQtbG9ja3VwIGRldGVjdGlvbiwgSSBoYXZlIGJlZW4gYWJsZSB0
-byBlbmFibGUgaXQNCj4gPj4+PiBiYXNlZCBvbiBwZXJmIE5NSSBldmVudHMgdXNpbmcgSnVsaWVu
-J3MgcGVyZiBwYXRjaC1zZXQgWzFdLiBIYXZlIGENCj4gPj4+PiBsb29rIGF0IHRoZSBwYXRjaCBo
-ZXJlIFsyXS4NCj4gPj4+Pg0KPiA+Pj4+IFsxXSBodHRwczovL3BhdGNod29yay5rZXJuZWwub3Jn
-L2NvdmVyLzExMDQ3NDA3Lw0KPiA+Pj4+IFsyXQ0KPiA+Pj4+IGh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL3BpcGVybWFpbC9saW51eC1hcm0ta2VybmVsLzIwMjAtTWF5LzczMjINCj4gPj4+PiAy
-Ny5odG1sDQo+ID4+Pj4NCj4gPj4+PiAtU3VtaXQNCj4gPj4+Pg0KPiA+Pj4+PiBQZXJmIE5NSSBo
-YXMgYmVlbiB0ZXN0IGJ5IGRkIGlmPS9kZXYvdXJhbmRvbSBvZj0vZGV2L251bGwgbGlrZSB0aGUN
-Cj4gPj4+Pj4gbGluayBbMl0gZGlkLg0KPiA+Pj4+Pg0KPiA+Pj4+PiBbMV0gaHR0cHM6Ly9sa21s
-Lm9yZy9sa21sLzIwMTkvMS8zMS81MzUNCj4gPj4+Pj4gWzJdIGh0dHBzOi8vd3d3LmxpbmFyby5v
-cmcvYmxvZy9kZWJ1Z2dpbmctYXJtLWtlcm5lbHMtdXNpbmctbm1pZmlxDQo+ID4+Pj4+DQo+ID4+
-Pj4+DQo+ID4+Pj4+IExlY29wemVyIENoZW4gKDMpOg0KPiA+Pj4+PiAgIGFybV9wbXU6IEFkZCBz
-dXBwb3J0IGZvciBwZXJmIE5NSSBpbnRlcnJ1cHRzIHJlZ2lzdHJhdGlvbg0KPiA+Pj4+PiAgIGFy
-bTY0OiBwZXJmOiBTdXBwb3J0IE5NSSBjb250ZXh0IGZvciBwZXJmIGV2ZW50IElTUg0KPiA+Pj4+
-PiAgIGFybTY0OiBLY29uZmlnOiBBZGQgc3VwcG9ydCBmb3IgdGhlIFBlcmYgTk1JDQo+ID4+Pj4+
-DQo+ID4+Pj4+ICBhcmNoL2FybTY0L0tjb25maWcgICAgICAgICAgICAgfCAxMCArKysrKysrDQo+
-ID4+Pj4+ICBhcmNoL2FybTY0L2tlcm5lbC9wZXJmX2V2ZW50LmMgfCAzNiArKysrKysrKysrKysr
-KysrKystLS0tLS0NCj4gPj4+Pj4gIGRyaXZlcnMvcGVyZi9hcm1fcG11LmMgICAgICAgICB8IDUx
-DQo+ICsrKysrKysrKysrKysrKysrKysrKysrKysrKysrKy0tLS0NCj4gPj4+Pj4gIGluY2x1ZGUv
-bGludXgvcGVyZi9hcm1fcG11LmggICB8ICA2ICsrKysNCj4gPj4+Pj4gIDQgZmlsZXMgY2hhbmdl
-ZCwgODggaW5zZXJ0aW9ucygrKSwgMTUgZGVsZXRpb25zKC0pDQo+ID4+Pj4+DQo+ID4+Pj4+IC0t
-DQo+ID4+Pj4+IDIuMjUuMQ0KDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+
+On 05/20/2020 05:50 PM, Will Deacon wrote:
+> Hi Anshuman,
+> 
+> On Wed, May 20, 2020 at 06:52:54AM +0530, Anshuman Khandual wrote:
+>> There is no way to proceed when requested register could not be searched in
+>> arm64_ftr_reg[]. Requesting for a non present register would be an error as
+>> well. Hence lets just BUG_ON() when the search fails in get_arm64_ftr_reg()
+>> rather than checking for return value and doing the same in some individual
+>> callers.
+>>
+>> But there are some callers that dont BUG_ON() upon search failure. It adds
+>> an argument 'failsafe' that provides required switch between callers based
+>> on whether they could proceed or not.
+>>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Will Deacon <will@kernel.org>
+>> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+>> Cc: Mark Brown <broonie@kernel.org>
+>> Cc: linux-arm-kernel@lists.infradead.org
+>> Cc: linux-kernel@vger.kernel.org
+>>
+>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>> ---
+>> Applies on next-20200518 that has recent cpufeature changes from Will.
+>>
+>>  arch/arm64/kernel/cpufeature.c | 26 +++++++++++++-------------
+>>  1 file changed, 13 insertions(+), 13 deletions(-)
+>>
+>> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+>> index bc5048f152c1..62767cc540c3 100644
+>> --- a/arch/arm64/kernel/cpufeature.c
+>> +++ b/arch/arm64/kernel/cpufeature.c
+>> @@ -557,7 +557,7 @@ static int search_cmp_ftr_reg(const void *id, const void *regp)
+>>   *         - NULL on failure. It is upto the caller to decide
+>>   *	     the impact of a failure.
+>>   */
+>> -static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
+>> +static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id, bool failsafe)
+> 
+> Generally, I'm not a big fan of boolean arguments because they are really
+> opaque at the callsite. It also seems bogus to me that we don't trust the
+
+If preferred, we could replace with an enum variable here with some
+more context e.g
+
+enum ftr_reg_search {
+	FTR_REG_SEARCH_SAFE,
+	FTR_REG_SEARCH_UNSAFE,
+};
+
+> caller to pass a valid sys_id, but we trust it to get "failsafe" right,
+
+If we really trust the callers, then why BUG_ON() checks are present in
+the first place. Because it is always prudent to protect against the
+unexpected.
+
+> which seems to mean "I promise to check the result isn't NULL before
+> dereferencing it."
+
+Not sure I got this. Do you mean all the present BUG_ON() are trying to
+check that returned arm64_ftr_reg is valid before dereferencing it ? If
+there is real trust on the callers that a non present sys_id will never
+get requested, then all present BUG_ON() instances should never be there.
+
+Either we trust the callers - drop all BUG_ON() and WARN_ON() instances
+or we dont - consolidate BUG_ON() and WARN_ON() instances appropriately.
+
+> 
+> So I don't see how this patch improves anything. I'd actually be more
+
+It consolidates multiple BUG_ON() in various callers which are not really
+required. Code consolidation and reduction especially BUG_ON() instances,
+is invariably a good thing.
+
+> inclined to stick a WARN() in get_arm64_ftr_reg() when it returns NULL and
+
+AFAICS in emulate_sys_reg() where the user can send non-present sys_id
+registers that eventually gets emulated, should not expect an WARN_ON()
+as it did not do anything wrong.
+
+> have the callers handle NULL by returning early, getting rid of all the
+> BUG_ONs in here. Sure, the system might end up in a funny state, but we
+> WARN()d about it and tried to keep going (and Linus has some strong opinions
+> on this too).
+
+Sure, we could go with an WARN_ON() instead, if acceptable and preferred.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
