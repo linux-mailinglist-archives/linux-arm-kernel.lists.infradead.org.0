@@ -2,60 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6ED5A1DC9DE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 11:20:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BA191DC9EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 11:23:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XTmV9Npht/NwG2aweWnMYi84K2YoeVsfNssh0Qj2IlI=; b=HkXEtyy/MxkViV
-	EO1eKCVxSbmF/3cfSNJgV3j1qZ+FWSWpvYKmkGTxwuQQ/I5rx3Og50R1Tq62wIQhQwDYYTCrGCYDT
-	3EAb1KtypgW17EQAZFdvbl2vRwUXos0o1cRXDaBTWhim/jiGQdhileOGzu5UhDXDtDGK1ehFy1/fZ
-	PXPN1aAkv7mLv0hqupY3WkahNKrjZITOcNoubir9plcg6OW0Ez2vcYV3vLhB4gpakTKGinW+6efSZ
-	AFYmgFzcN3s4wR9EyOL630Iqm7vLXe/4hDLFBczMFkNgTRN/uCfxK5KOipGoAKMZNvIXc8yxebVgb
-	gRdYSUtyqSLdbMOEwoBg==;
+	List-Owner; bh=9HvJ6dMqd+MB98bh89OmqIJ3J/ycvUbWDnlv2pZ+UBY=; b=ivPnmQIZRk3V32
+	4FVKIqYJf0UvVSeYwz/rt1Y8h9VcaplgcAh7u/WLwxodw4zNCS+Kq4pO/9pvqy3+2MrAgmth3MtPu
+	LqPRDXOIDlHQfzqssYtv+KNbyYzaTgm5xu6n0SYUl2EKslcgCAZUAg5r9AHu+3c3TvOOrwqgiZOYt
+	k+D+Jzjlx9pN+/cD4Qak/gCRqxCpq+pFg/zR3r6XbMzBRidxlDfJsGmjTRTIITsQ285pdCuo0neq6
+	b1SE7XWz9TmyCPx7tO35RnITqfS1HuoknKBqjKWeuftDenZ5Pg5V5ePuEUcnSCJu60mTpGouvjaLO
+	cxeR1dARTiVU5vk22IEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbhNF-0005ud-Nx; Thu, 21 May 2020 09:20:21 +0000
+	id 1jbhQN-0000Qt-31; Thu, 21 May 2020 09:23:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbhKj-00045g-1W
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 09:17:46 +0000
+ id 1jbhQ5-0000PQ-G1; Thu, 21 May 2020 09:23:18 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 76A19206BE;
- Thu, 21 May 2020 09:17:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9997A2072C;
+ Thu, 21 May 2020 09:23:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590052664;
- bh=lrCsi5PPelpIf3uelRQPGB1wFFjJDgGZhs/G1Te3fZM=;
+ s=default; t=1590052997;
+ bh=37Qx3oxaJAYRWohGHUkEGO6YOTHJz1lmfbAnHjSkp5I=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=DIlBfpyARv0vGa3tJkUPcxfnPdKc50TPwojk12d275MhOI1sRQ9w98/1yEf93mcvb
- fGzQMuJ4Yp96h/zonve+e907nxQne9iJCritIncVwG1NiNbA1b2Esh/dQWRpsOXRVg
- jffBqfWUGRvQ/Fh2FpTfyCE3CYN/FfRqGeJ2pHgM=
-Date: Thu, 21 May 2020 10:17:39 +0100
+ b=ioeYo7XFA87XTNXeQJEAty+eG2jS18ifXdr8sw2BZATw6FFGqv7auONLr2w6jCf8p
+ WJrLNS43HJQh32kBnAxJ0ASpl1SCv7WL1k4Y6KY6xZj5Bw503cpJ/R8E/l6MPbJPYq
+ Lq0gYjh6jUQ5U1HhwjgeljGUM8l/uEoQIlNgfOCE=
+Date: Thu, 21 May 2020 10:23:12 +0100
 From: Will Deacon <will@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH v4 0/7] firmware: smccc: Add basic SMCCC v1.2 +
- ARCH_SOC_ID support
-Message-ID: <20200521091736.GA5091@willie-the-truck>
-References: <20200518091222.27467-1-sudeep.holla@arm.com>
- <158999823818.135150.13263761266508812198.b4-ty@kernel.org>
- <CAK8P3a0bx2eOFSqM7ihNkJBWU_KKSh0vGJZZdvpkH=1nppingw@mail.gmail.com>
- <20200521070629.GB1131@bogus>
- <CAK8P3a1h1MR4Mq2sSV_FDUodrfaKRFtyOuOOGPWAbPYbzjc4YQ@mail.gmail.com>
- <20200521075755.GA4668@willie-the-truck>
- <20200521081055.GD1131@bogus>
- <CAK8P3a3dV0B26XE3oFQGTFf8EWV0AHoLudNtpSSB_t+pCfkOkQ@mail.gmail.com>
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200521092311.GB5091@willie-the-truck>
+References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
+ <20200518155545.GO32394@willie-the-truck>
+ <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAK8P3a3dV0B26XE3oFQGTFf8EWV0AHoLudNtpSSB_t+pCfkOkQ@mail.gmail.com>
+In-Reply-To: <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_021745_159342_EEE9EC5D 
-X-CRM114-Status: GOOD (  22.24  )
+X-CRM114-CacheID: sfid-20200521_022317_555813_68309CBF 
+X-CRM114-Status: GOOD (  14.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,69 +77,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
- Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 11:06:23AM +0200, Arnd Bergmann wrote:
-> On Thu, May 21, 2020 at 10:11 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > Indeed, it is also last patch in the series. However if Arnd is happy
-> > with the sysfs names, we can move to generic code later without breaking
-> > anything.
-> >
-> > We need not revert or drop it now. I will leave that to you or Arnd to
-> > decide. Just that it may be too late to get acks for all the soc sysfs
-> > drivers in time for v5.8
-> >
-> > I am fine if you want to drop the last patch.
-> 
-> Ok, let's drop that patch then and make sure we do something that
-> everyone is happy with later on. I'm already in favor of adding
-> a more reliable soc_device instance based on this, but we need to
-> be sure we don't screw up the contents of the attributes when we
-> can't change them later.
-> 
-> > > > >> drivers/firmware/smccc/smccc.c:14:13: warning: no previous prototype for function 'arm_smccc_version_init' [-Wmissing-prototypes]
-> > > > void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit)
-> > > > ^
-> > > > drivers/firmware/smccc/smccc.c:14:1: note: declare 'static' if the
-> > > > function is not intended to be used outside of this translation unit
-> > > > void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit)
+On Tue, May 19, 2020 at 08:24:21AM +0530, Prabhakar Kushwaha wrote:
+> On Mon, May 18, 2020 at 9:25 PM Will Deacon <will@kernel.org> wrote:
+> > On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
+> > > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+> > >       return 0;
+> > >  }
 > > >
-> > > I saw that when I applied the patches, but since the function is called from
-> > > another compilation unit (psci/psci.o), I just ignored it as we have loads
-> > > of these already and it only screams if you build with W=1.
-> > >
+> > > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
+> > > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
+> > > +{
+> > > +     struct arm_smmu_strtab_cfg rdcfg;
+> > > +
+> > > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
+> > > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
+> > > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
+> > > +
+> > > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
+> > > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
+> > > +
+> > > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
+> > > +
+> 
+> this need a fix. It should be memcpy.
+> 
+> > > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
 > >
-> > /me confused. Do you need the fix for this warning or you are happy to ignore?
+> > Sorry, but this is unacceptable. These things were allocated by the DMA API
+> > so you can't just memcpy them around and hope for the best.
+> >
 > 
-> I want a fix for that, as I hope we can eventually turn this warning on by
-> default and stop playing whack-a-mole when they come up. Most of these
-> warnings are harmless, but occasionally the prototypes don't match exactly
-> and cause real bugs depending on the configuration, and ensuring both
-> sides include a common header file is an easy way to make it work
-> more reliably.
+> I was referring copy_context_table() in drivers/iommu/intel-iommu.c.
+> here i see usage of memremap and memcpy to copy older iommu table.
+> did I take wrong reference?
 > 
-> Note that the warning should come up for either W=1 or C=1, and I also
-> think that
-> new code should generally be written sparse-clean and have no warnings with
-> 'make C=1' as a rule.
+> What kind of issue you are foreseeing in using memcpy(). May be we can
+> try to find a solution.
 
-Fair enough. Is anybody working on a tree-wide sweep for this, like we've
-done for other things such as zero-length arrays? If so, I can start
-enforcing this in the arch code as well (I haven't been so far, even though
-I do run sparse on every commit).
-
-Anyway, I've dropped the last patch from the branch, and we can put a fix
-for the missing prototype on top.
+Well the thing might not be cache-coherent to start with...
 
 Will
 
