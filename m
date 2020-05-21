@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 721E41DD654
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 20:52:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FDE51DD658
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 20:53:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yidE+k/FINvkHNvyqN1CtObPU8mHhmHmYFuhRPUrhEk=; b=AEd5fleVmfrbMT
-	1jpHIhlseu1XUQa51wuJ5dCWgxOw9rXu60bCwDxNoFFwA70twxh1RJ50OxGd4zSdlhsE3s3cruVq1
-	S2nmoCNcMok6eVYx5+tWxl7KUj8h/3gmbE1JRPy57E8NtKh0sTB934y7zGXDQbQB51+iak8R7eziL
-	fmDE/+6u8snuxGZfDDBVrnBwwHVoBCOiqtvd1byNmXzawq8m7oVK94sDu9V7o6cyEdV/34uI+xEOH
-	wMwxqmBaCeQGLeEMVL5OG9BMpZnHuX4d9gHwfITz9d7DkvB9VRO8HkH+/zlxXCNx+p0D1JQx0aV0d
-	Gm+kGkzSP5FF6Ij8pxAA==;
+	List-Owner; bh=DvVf4Kc+z+CSojWI2GSltzRLE9F0jgC2SJlCox06rP0=; b=MNmNK2WjY3B6po
+	xkR59l83+w/V9OIW299dvEyeXVd9gwXLZGjJ7SORDfRj0WwRH8O05i1Y4vjDI4dlClJRhfsJIEiPW
+	IT+WeyduYLU/f4wbJ8tRr6APuFAPgkb3oYSQH7hZqnttzbyzb3ZV232ZqYGRwKEmYySOG49OtmCBq
+	0Umwz6PmcEOeyg/U7LZP8DA5ywlTqIg6wSQADOZkPvGT3VslG7pq/Xug2NH2yigmrhAnjW0d6cG2u
+	tFrmrF/NtSnYSfOUeLEKFdlnZ7xo3CAhEcLsarTaaPGhzqPwNpT5OIZbeno4j3PKdEuhSdYkEC3Ni
+	WYAzB6gXgLazHIV1setQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbqJB-0002kv-EZ; Thu, 21 May 2020 18:52:45 +0000
+	id 1jbqJR-0002tU-MJ; Thu, 21 May 2020 18:53:01 +0000
 Received: from smtp05.smtpout.orange.fr ([80.12.242.127]
  helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbqJ0-0002jM-LO
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 18:52:36 +0000
+ id 1jbqJ1-0002jN-H2
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 18:52:37 +0000
 Received: from belgarion.home ([86.210.245.36]) by mwinf5d28 with ME
- id hWsG220030nqnCN03WsWKT; Thu, 21 May 2020 20:52:31 +0200
+ id hWsG220030nqnCN03WsXKi; Thu, 21 May 2020 20:52:32 +0200
 X-ME-Helo: belgarion.home
 X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
-X-ME-Date: Thu, 21 May 2020 20:52:31 +0200
+X-ME-Date: Thu, 21 May 2020 20:52:32 +0200
 X-ME-IP: 86.210.245.36
 From: Robert Jarzmik <robert.jarzmik@free.fr>
 To: Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
@@ -36,16 +36,16 @@ To: Daniel Mack <daniel@zonque.org>, Haojian Zhuang <haojian.zhuang@gmail.com>,
  Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
  Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>,
  soc@kernel.org
-Subject: [PATCH v3 2/3] MAINTAINERS: pxa: remove Compulab arm/pxa support
-Date: Thu, 21 May 2020 20:51:38 +0200
-Message-Id: <20200521185140.27276-2-robert.jarzmik@free.fr>
+Subject: [PATCH v3 3/3] ASoC: pxa: remove Compulab pxa2xx boards
+Date: Thu, 21 May 2020 20:51:39 +0200
+Message-Id: <20200521185140.27276-3-robert.jarzmik@free.fr>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200521185140.27276-1-robert.jarzmik@free.fr>
 References: <20200521185140.27276-1-robert.jarzmik@free.fr>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_115234_991952_EF0BF8D2 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20200521_115235_853927_3C51B17F 
+X-CRM114-Status: GOOD (  12.64  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -78,32 +78,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These boards support is removed from the kernel, so remove the
-MAINTAINERS entry for them.
+As these boards have been removed from the pxa tree, amend accordingly
+the sound subsystem.
 
 Signed-off-by: Robert Jarzmik <robert.jarzmik@free.fr>
 Acked-by: Mike Rapoport <rppt@kernel.org>
 Acked-by: Arnd Bergmann <arnd@arndb.de>
 ---
- MAINTAINERS | 5 -----
- 1 file changed, 5 deletions(-)
+ sound/soc/pxa/Kconfig | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 091ec22c1a23..ad58388fa822 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1684,11 +1684,6 @@ S:	Maintained
- T:	git git://git.armlinux.org.uk/~rmk/linux-arm.git clkdev
- F:	drivers/clk/clkdev.c
+diff --git a/sound/soc/pxa/Kconfig b/sound/soc/pxa/Kconfig
+index d4c0f580a565..fb2d5ab02b0d 100644
+--- a/sound/soc/pxa/Kconfig
++++ b/sound/soc/pxa/Kconfig
+@@ -128,9 +128,8 @@ config SND_PXA2XX_SOC_E800
+ 	  Toshiba e800 PDA
  
--ARM/COMPULAB CM-X270/EM-X270 and CM-X300 MACHINE SUPPORT
--M:	Mike Rapoport <mike@compulab.co.il>
--L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
--S:	Maintained
--
- ARM/CONEXANT DIGICOLOR MACHINE SUPPORT
- M:	Baruch Siach <baruch@tkos.co.il>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ config SND_PXA2XX_SOC_EM_X270
+-	tristate "SoC Audio support for CompuLab EM-x270, eXeda and CM-X300"
+-	depends on SND_PXA2XX_SOC && (MACH_EM_X270 || MACH_EXEDA || \
+-			MACH_CM_X300)
++	tristate "SoC Audio support for CompuLab CM-X300"
++	depends on SND_PXA2XX_SOC && MACH_CM_X300
+ 	depends on AC97_BUS=n
+ 	select REGMAP
+ 	select AC97_BUS_NEW
 -- 
 2.26.2
 
