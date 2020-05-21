@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFF461DDAC7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 01:11:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B74781DDADB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 01:18:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ugbL+pmBK1jN1mu8wEsgzey9Sov4f7wzh7MBIffAICo=; b=l/tP1u6/+OB1Sq
-	jfbFTTYMZVvT2YCriolVPxXz/DFNAL8ohawGkXLoc4gXbisC/ObGNksO9kSPfTNjXm8FqhJR6uWZ1
-	tOEcxn4rg5qqxWLhffkB5j1dC5PrbsDDVQxYnJUsN/8GPEMjZZyUkgg83lDd06ueBi3YWsokiA/zW
-	IX+ymmShaebK7dcxIbAtco80QWsKuTkWzmtoslsUqfYGRuAdk6Ss00gMSgI6ESxsCw/SdnsUYIlj2
-	z0LWjaq0fq4gNg2dls053JpaD5lbClV9bH49FJpXL1WOg2lrlh/au8p6d6j4voTti1I9hKbXlAmO+
-	rMbw80aHXsaRTXi1xzFA==;
+	List-Owner; bh=zgYR4h81Yp9NpqPG5ZUe/2Sc8EzEjG5NnecMBlsM8cc=; b=gJPpwvAp5GRpFM
+	Aw4hVr9G34P5a+myqHlM+mqyVhcta8di7JiXklV87hkEjcHxXp9fyTn0v04RkSLsSTfyiT7zgJUTS
+	n0/yWt5h6KZrWd9k5Nno88VM+b/pL+EuGgU2++e7VBNyR9zqIV5fFpPQJx48Hon1/kzMHQLVkJlza
+	gpdE70ylmtGf+GuB41VxJa6ut+MMgwjmLm/4p25IEXX6dZTUk3w1WrIH2UxhkfU63p/ViWTytfc1E
+	xIuEd1JEskWKowR04bEQp2mECA/ThA4W9hc5t4oMD0J0FWK8Yddaz3XNTt01QcxY5JlpTGl9lUQOT
+	NEFL33pkj0xWsqFkNsvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbuLH-0005du-JA; Thu, 21 May 2020 23:11:11 +0000
+	id 1jbuRq-0000O4-8w; Thu, 21 May 2020 23:17:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbuL7-0005dE-4i
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 23:11:04 +0000
-Received: from mail-oi1-f170.google.com (mail-oi1-f170.google.com
- [209.85.167.170])
+ id 1jbuRh-0000NG-7m
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 23:17:50 +0000
+Received: from mail-ot1-f48.google.com (mail-ot1-f48.google.com
+ [209.85.210.48])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE75220885
+ by mail.kernel.org (Postfix) with ESMTPSA id 711E32151B
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 23:11:00 +0000 (UTC)
+ Thu, 21 May 2020 23:17:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590102660;
- bh=wnVJsMcdVukL+7XmCXsH+1qcmY1rqDsn5grM0oKG+Vg=;
+ s=default; t=1590103068;
+ bh=EyK2DMGY1yaM+F8516LQrBIpk2NNn0s0Z37DLtuZPEA=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=b50y5T4/xOs+s5TZp/SGmlaI5l765m7i1wx22uNGLyBKIBzdh+5hpkyDWuuwfftfw
- ZMVAwk/zlo8GumNufVyNpb4usNPG//XsYyyQXbgxHwdmLqfTUQP35eVkbpBQ8lm1Eo
- mVRPCZQ5iXEuAXf0diEbUoBLJVSOffrww0tgviDU=
-Received: by mail-oi1-f170.google.com with SMTP id 23so6503172oiq.8
+ b=CLhLY45tfjDzW/4QzoCLzjzXDitprZjeX6jCl/TTiDNf1smTgNixutkYBE1Ltk7N+
+ bGuj4VCEQRCeGfsupUKY8MgwYvf2v3r3ry5ehzBBz2Vd9XnvyT50v3+/1fYDziASsk
+ an0rGuPaYsEVmZTE5CauU7LzvZWPFnLZ8bU6LsLs=
+Received: by mail-ot1-f48.google.com with SMTP id v17so6943657ote.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 16:11:00 -0700 (PDT)
-X-Gm-Message-State: AOAM532FuJ5dzFjlHV4C+EiPIwK7+YpO3ledrjYiaxQbgwd+XVJmgBYx
- bIEpAlr0/q3cqQzI/NxSZTeUZQ7oK2s6B1HskA==
-X-Google-Smtp-Source: ABdhPJyY199Y85sucuTO5/BYg8SBRhUI/9X/7ZmJwp5eotefflL8Rgk71V55e2sEv0jRnuhZ/fAClQc1SjSy9dm5eSY=
-X-Received: by 2002:aca:f084:: with SMTP id o126mr744784oih.106.1590102659988; 
- Thu, 21 May 2020 16:10:59 -0700 (PDT)
+ Thu, 21 May 2020 16:17:48 -0700 (PDT)
+X-Gm-Message-State: AOAM531dcBcIlNg8J7uujzHrl0Fo3+rT2jvQnjBty4V2e8G1AJwqD+Y0
+ BndsggQlxQsfBEbInlmIKRqmNsNRKvWXgzwPZg==
+X-Google-Smtp-Source: ABdhPJxVgcCXhuH2DfTXSUau1TIQTXIwHoWhmRU4UZnxmjy/ftT6A+o4gIk78ZAgFUEU2gCUM+w/Etpe/R6HZFsyFVk=
+X-Received: by 2002:a05:6830:18d9:: with SMTP id
+ v25mr8467347ote.107.1590103067633; 
+ Thu, 21 May 2020 16:17:47 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
- <20200521130008.8266-10-lorenzo.pieralisi@arm.com>
-In-Reply-To: <20200521130008.8266-10-lorenzo.pieralisi@arm.com>
+ <20200521130008.8266-11-lorenzo.pieralisi@arm.com>
+In-Reply-To: <20200521130008.8266-11-lorenzo.pieralisi@arm.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 21 May 2020 17:10:49 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+h18gH2D3B-OZku6ACCgonPUJcUnrN8a5=jApsXHdB5Q@mail.gmail.com>
-Message-ID: <CAL_Jsq+h18gH2D3B-OZku6ACCgonPUJcUnrN8a5=jApsXHdB5Q@mail.gmail.com>
-Subject: Re: [PATCH 09/12] dt-bindings: arm: fsl: Add msi-map device-tree
- binding for fsl-mc bus
+Date: Thu, 21 May 2020 17:17:27 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqLTBxX_3KjiEqMfw0qMaTmj_DdPD3j-yMUvrvONPBSvjg@mail.gmail.com>
+Message-ID: <CAL_JsqLTBxX_3KjiEqMfw0qMaTmj_DdPD3j-yMUvrvONPBSvjg@mail.gmail.com>
+Subject: Re: [PATCH 10/12] of/irq: Make of_msi_map_rid() PCI bus agnostic
 To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_161101_225095_3AEFB1E4 
-X-CRM114-Status: GOOD (  21.26  )
+X-CRM114-CacheID: sfid-20200521_161749_321955_3C622B49 
+X-CRM114-Status: GOOD (  21.77  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,13 +87,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will@kernel.org>, Diana Craciun <diana.craciun@oss.nxp.com>,
- PCI <linux-pci@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Sudeep Holla <sudeep.holla@arm.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+Cc: devicetree@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Diana Craciun <diana.craciun@oss.nxp.com>, Marc Zyngier <maz@kernel.org>,
+ Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  Makarand Pawagi <makarand.pawagi@nxp.com>, linux-acpi@vger.kernel.org,
- Linux IOMMU <iommu@lists.linux-foundation.org>, Marc Zyngier <maz@kernel.org>,
- Hanjun Guo <guohanjun@huawei.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Linux IOMMU <iommu@lists.linux-foundation.org>,
+ PCI <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
  Robin Murphy <robin.murphy@arm.com>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>,
@@ -106,97 +107,134 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Thu, May 21, 2020 at 7:00 AM Lorenzo Pieralisi
 <lorenzo.pieralisi@arm.com> wrote:
 >
-> From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+> There is nothing PCI bus specific in the of_msi_map_rid()
+> implementation other than the requester ID tag for the input
+> ID space. Rename requester ID to a more generic ID so that
+> the translation code can be used by all busses that require
+> input/output ID translations.
 >
-> The existing bindings cannot be used to specify the relationship
-> between fsl-mc devices and GIC ITSes.
+> Leave a wrapper function of_msi_map_rid() in place to keep
+> existing PCI code mapping requester ID syntactically unchanged.
 >
-> Add a generic binding for mapping fsl-mc devices to GIC ITSes, using
-> msi-map property.
+> No functional change intended.
 >
-> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+> Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 > Cc: Rob Herring <robh+dt@kernel.org>
+> Cc: Marc Zyngier <maz@kernel.org>
 > ---
->  .../devicetree/bindings/misc/fsl,qoriq-mc.txt | 30 +++++++++++++++++--
->  1 file changed, 27 insertions(+), 3 deletions(-)
+>  drivers/of/irq.c       | 28 ++++++++++++++--------------
+>  include/linux/of_irq.h | 14 ++++++++++++--
+>  2 files changed, 26 insertions(+), 16 deletions(-)
 >
-> diff --git a/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt b/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
-> index 9134e9bcca56..b0813b2d0493 100644
-> --- a/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
-> +++ b/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
-> @@ -18,9 +18,9 @@ same hardware "isolation context" and a 10-bit value called an ICID
->  the requester.
+> diff --git a/drivers/of/irq.c b/drivers/of/irq.c
+> index 48a40326984f..25d17b8a1a1a 100644
+> --- a/drivers/of/irq.c
+> +++ b/drivers/of/irq.c
+> @@ -576,43 +576,43 @@ void __init of_irq_init(const struct of_device_id *matches)
+>         }
+>  }
 >
->  The generic 'iommus' property is insufficient to describe the relationship
-> -between ICIDs and IOMMUs, so an iommu-map property is used to define
-> -the set of possible ICIDs under a root DPRC and how they map to
-> -an IOMMU.
-> +between ICIDs and IOMMUs, so the iommu-map and msi-map properties are used
-> +to define the set of possible ICIDs under a root DPRC and how they map to
-> +an IOMMU and a GIC ITS respectively.
+> -static u32 __of_msi_map_rid(struct device *dev, struct device_node **np,
+> -                           u32 rid_in)
+> +static u32 __of_msi_map_id(struct device *dev, struct device_node **np,
+> +                           u32 id_in)
+>  {
+>         struct device *parent_dev;
+> -       u32 rid_out = rid_in;
+> +       u32 id_out = id_in;
 >
->  For generic IOMMU bindings, see
->  Documentation/devicetree/bindings/iommu/iommu.txt.
-> @@ -28,6 +28,9 @@ Documentation/devicetree/bindings/iommu/iommu.txt.
->  For arm-smmu binding, see:
->  Documentation/devicetree/bindings/iommu/arm,smmu.yaml.
+>         /*
+>          * Walk up the device parent links looking for one with a
+>          * "msi-map" property.
+>          */
+>         for (parent_dev = dev; parent_dev; parent_dev = parent_dev->parent)
+> -               if (!of_map_rid(parent_dev->of_node, rid_in, "msi-map",
+> -                               "msi-map-mask", np, &rid_out))
+> +               if (!of_map_id(parent_dev->of_node, id_in, "msi-map",
+> +                               "msi-map-mask", np, &id_out))
+>                         break;
+> -       return rid_out;
+> +       return id_out;
+>  }
 >
-> +For GICv3 and GIC ITS bindings, see:
-> +Documentation/devicetree/bindings/interrupt-controller/arm,gic-v3.yaml.
-> +
->  Required properties:
+>  /**
+> - * of_msi_map_rid - Map a MSI requester ID for a device.
+> + * of_msi_map_id - Map a MSI ID for a device.
+>   * @dev: device for which the mapping is to be done.
+>   * @msi_np: device node of the expected msi controller.
+> - * @rid_in: unmapped MSI requester ID for the device.
+> + * @id_in: unmapped MSI ID for the device.
+>   *
+>   * Walk up the device hierarchy looking for devices with a "msi-map"
+> - * property.  If found, apply the mapping to @rid_in.
+> + * property.  If found, apply the mapping to @id_in.
+>   *
+> - * Returns the mapped MSI requester ID.
+> + * Returns the mapped MSI ID.
+>   */
+> -u32 of_msi_map_rid(struct device *dev, struct device_node *msi_np, u32 rid_in)
+> +u32 of_msi_map_id(struct device *dev, struct device_node *msi_np, u32 id_in)
+>  {
+> -       return __of_msi_map_rid(dev, &msi_np, rid_in);
+> +       return __of_msi_map_id(dev, &msi_np, id_in);
+>  }
 >
->      - compatible
-> @@ -119,6 +122,15 @@ Optional properties:
->    associated with the listed IOMMU, with the iommu-specifier
->    (i - icid-base + iommu-base).
+>  /**
+>   * of_msi_map_get_device_domain - Use msi-map to find the relevant MSI domain
+>   * @dev: device for which the mapping is to be done.
+> - * @rid: Requester ID for the device.
+> + * @id: Device ID.
+>   * @bus_token: Bus token
+>   *
+>   * Walk up the device hierarchy looking for devices with a "msi-map"
+> @@ -625,7 +625,7 @@ struct irq_domain *of_msi_map_get_device_domain(struct device *dev, u32 id,
+>  {
+>         struct device_node *np = NULL;
 >
-> +- msi-map: Maps an ICID to a GIC ITS and associated iommu-specifier
-> +  data.
-> +
-> +  The property is an arbitrary number of tuples of
-> +  (icid-base,iommu,iommu-base,length).
+> -       __of_msi_map_rid(dev, &np, id);
+> +       __of_msi_map_id(dev, &np, id);
+>         return irq_find_matching_host(np, bus_token);
+>  }
+>
+> diff --git a/include/linux/of_irq.h b/include/linux/of_irq.h
+> index 7142a3722758..cf9cb1e545ce 100644
+> --- a/include/linux/of_irq.h
+> +++ b/include/linux/of_irq.h
+> @@ -55,7 +55,12 @@ extern struct irq_domain *of_msi_map_get_device_domain(struct device *dev,
+>                                                         u32 id,
+>                                                         u32 bus_token);
+>  extern void of_msi_configure(struct device *dev, struct device_node *np);
+> -u32 of_msi_map_rid(struct device *dev, struct device_node *msi_np, u32 rid_in);
+> +u32 of_msi_map_id(struct device *dev, struct device_node *msi_np, u32 id_in);
+> +static inline u32 of_msi_map_rid(struct device *dev,
+> +                                struct device_node *msi_np, u32 rid_in)
+> +{
+> +       return of_msi_map_id(dev, msi_np, rid_in);
+> +}
+>  #else
+>  static inline int of_irq_count(struct device_node *dev)
+>  {
+> @@ -93,10 +98,15 @@ static inline struct irq_domain *of_msi_map_get_device_domain(struct device *dev
+>  static inline void of_msi_configure(struct device *dev, struct device_node *np)
+>  {
+>  }
+> +static inline u32 of_msi_map_id(struct device *dev,
+> +                                struct device_node *msi_np, u32 id_in)
+> +{
+> +       return id_in;
+> +}
+>  static inline u32 of_msi_map_rid(struct device *dev,
+>                                  struct device_node *msi_np, u32 rid_in)
 
-I'm confused because the example has GIC ITS phandle, not an IOMMU.
+Move this out of the ifdef and you only need it declared once.
 
-What is an iommu-base?
+But again, I think I'd just kill of_msi_map_rid.
 
-> +
-> +  Any ICID in the interval [icid-base, icid-base + length) is
-> +  associated with the listed GIC ITS, with the iommu-specifier
-> +  (i - icid-base + iommu-base).
->  Example:
->
->          smmu: iommu@5000000 {
-> @@ -128,6 +140,16 @@ Example:
->                 ...
->          };
->
-> +       gic: interrupt-controller@6000000 {
-> +               compatible = "arm,gic-v3";
-> +               ...
-> +               its: gic-its@6020000 {
-> +                       compatible = "arm,gic-v3-its";
-> +                       msi-controller;
-> +                       ...
-> +               };
-> +       };
-> +
->          fsl_mc: fsl-mc@80c000000 {
->                  compatible = "fsl,qoriq-mc";
->                  reg = <0x00000008 0x0c000000 0 0x40>,    /* MC portal base */
-> @@ -135,6 +157,8 @@ Example:
->                  msi-parent = <&its>;
->                  /* define map for ICIDs 23-64 */
->                  iommu-map = <23 &smmu 23 41>;
-> +                /* define msi map for ICIDs 23-64 */
-> +                msi-map = <23 &its 23 41>;
-
-Seeing 23 twice is odd. The numbers to the right of 'its' should be an
-ITS number space.
-
->                  #address-cells = <3>;
->                  #size-cells = <1>;
+>  {
+> -       return rid_in;
+> +       return of_msi_map_id(dev, msi_np, rid_in);
+>  }
+>  #endif
 >
 > --
 > 2.26.1
