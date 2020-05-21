@@ -2,79 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C2C31DD127
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 17:23:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22C4F1DD1ED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 17:33:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t1d5VB0xiTURbxKAthLxJvLRhvgy7LgwSiHxGWQL5Bw=; b=qBzBz3spxaXvqN
-	R7WN7IWupvDJItmMBBUh1SunKN9RW305IER2POiRtu+7CjR97bFxEl1zZY1iXJKtFgeu8UJryzO6J
-	kXzveu69Pm7CcYuZdpnyn/zBvLDFkjX+bhNUhMniqLoLS8gRCVWyBJWxqHsG2lq7J1PhEbZOXtIm8
-	678oGxYuFgwxays0jrTyIUfEwCpGmBGYB/PNGo23umk3gjuN1RL7GXNERa9WH6Hj8fnrZkjbKKA3l
-	YwGmcm/fBns/hm6k6wNq39ltB/4z5yjmq8mKXsoXC4Hvk1uU0Z9EEhzW1Lq572+4XB8UcRoTltgPS
-	HJcrEjzWKHcoViFwlf8A==;
+	List-Owner; bh=GA+9bguRsWUUR21VrDr7SohX6wSIZRT3jjwghjAQGCU=; b=NWZPmCDGYEyXgz
+	+t1Ny59FF6gKLppO7gRQr4RBSOukIDRKYAexd2awRQ+B76iuz9BT2fFrC/8/LDFxOT3kLbS8V5S1b
+	x48pVTbeQcXv++iLt+U0l3ojcjBCfSos2bC+SEEIKJ61KAvgBlIKzzZe6s1VQceWyFLkXWUXzW+Mm
+	JowSUqqUCINIy/utKX2bhyC82dP3IkJcMF4yWsCi9Ba8NnMgkJNUKeG1e4xNOmMOXRj3ipLIfb7vf
+	KvbRHh+ZWZ1YLoqeTJ6NwXWW2le/e6d1cUy8p9wGhSqf3yyuhu7mnhSemSqpULVDZUV9h+bWPXB+Z
+	WBiBHmygRxEt2LIwvNnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbn2P-0003xy-QO; Thu, 21 May 2020 15:23:13 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jbnC6-0002rD-Ms; Thu, 21 May 2020 15:33:14 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbn2B-0003vA-Ae
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 15:23:00 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z4so5895818wmi.2
+ id 1jbnBu-0002of-Cp
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 15:33:05 +0000
+Received: by mail-wm1-x344.google.com with SMTP id u12so1994825wmd.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 08:22:56 -0700 (PDT)
+ Thu, 21 May 2020 08:33:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=BAKLcpITx/3kGgWTBYxDEZTohF/5xKJj7rJDCLE80Zo=;
- b=jO1m0/v5PI18i/EX4FCyeJ0cr5KPOWycKpGnRQGN0bSwCpxt8XWGDKkwubaWb0doVL
- QFggHPhQuapuwFk2GcAO/sFU/5KXmx6tmurSe+maOk6IxIvLE1mzL7tSB5gKF1y76rqk
- 6N5xVsZYZakqqegyFos4roVrtKTae2J8IVQO8=
+ bh=a+XGEo7RdRLWXaBT5I1D5SW4Aa/jygWE9YUzvCS9gvI=;
+ b=C6QnsephZ4AXYbZbM1y/Cghfe4u+luUWsgG6OhW+RMXWdsfoZHD3nxlNwa1hYOht3T
+ WTfDVrMB9YUP/UOKUCF8OVzgeCtW2v5g8iWYm18a9M2nlHg/NnB8Ir6MPtJ5w+UhTuNZ
+ xvN1sB6mgklbOCg7LJog22flxrih0eY9gDBhU=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=BAKLcpITx/3kGgWTBYxDEZTohF/5xKJj7rJDCLE80Zo=;
- b=Y/HjfCsTwmYuZ5Nhx6bpClYTQLU6mjKXCzOuxkrphUv92v2M1aTM/RKAcitfgA0uVt
- hEqFsQpyIFHt2Ll762pDqU1KpwgejEXitfh1aDmQlfvQIZh3mM/g0m/rkECWLlNHqDKk
- aFWMTFmt8bO9Kbw0bdKSva+F6XH1aW1V5s1tL2AQaX/dmA0epa2egjvGz6qXkYOEqUor
- UrKLCBsjadgC5PWKqJfjeGDeUvtXjyjJrzb518CpKxe735bl3fWB4RnZW6YUWZ0ewVyy
- 62T0S7EdpmyGX9rR5PBfkhNo4vsFatqButF7oZAFtReD1ebFFD661J1PgocfHA0S9taP
- kZbA==
-X-Gm-Message-State: AOAM5306tKDBF5Qo55C+v0hXfw0Iack3XUivjefw475naJ0r5kKTEk3r
- QwiRz1FC/GBGOs2VVxJWX0HCJA==
-X-Google-Smtp-Source: ABdhPJwMue+mt+thE6n7MP8xM0aOjfshOU4d1sP9ElGBs9Eu1VhZydaalBi9QV0v2+BvJeu8Riv4sg==
-X-Received: by 2002:a1c:a74a:: with SMTP id q71mr9177584wme.23.1590074575192; 
- Thu, 21 May 2020 08:22:55 -0700 (PDT)
+ bh=a+XGEo7RdRLWXaBT5I1D5SW4Aa/jygWE9YUzvCS9gvI=;
+ b=hZlg1HpP3awB5sQCH6Iha2cXFJVMBPqZjnQQoOLFOkz4AlHVx1N7vNIF8m/ibRlP6Z
+ eRuePI6QxN5lLbykltHUDv0nzgln5244Rv6SphFQUCA90gpga/UE9lEvagU+P6NefhMP
+ Y3MU4UwIqLuSvlfBA9gYVzKnoc6vy4wtmuwMdGLkJLHmvTGY7rK2X/45nZafY3kIdRcO
+ ulp9BO+wDbEJPWLxSHQLOmCbBB6DAAu9tBH96feeYtr0Ei7QjwkExuMSV68zkfHd25ip
+ Qi1PsVQ5Jha2nJ9JzAoDUyKXXLbmGRF93dQ97hy3dEXiyhskrTY47AEBCY2YYbXKBngi
+ ybtg==
+X-Gm-Message-State: AOAM533kn1pPHXJqpziYwdIXfjFGo518R5QxaAoexcB7X8mWRHpb93iX
+ nsksvwURO/Vl2tBlt/gDltiPpA==
+X-Google-Smtp-Source: ABdhPJx2S+yj9zmPBMi83WiNn64bblaOIC/n37oVO4cTDq4iHNfMT2oRcmN73GTSL9Yc4JsMWCaKAA==
+X-Received: by 2002:a7b:c4cc:: with SMTP id g12mr9202139wmk.168.1590075179928; 
+ Thu, 21 May 2020 08:32:59 -0700 (PDT)
 Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
  [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id j190sm7073152wmb.33.2020.05.21.08.22.54
+ by smtp.gmail.com with ESMTPSA id i11sm7245926wrc.35.2020.05.21.08.32.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 May 2020 08:22:54 -0700 (PDT)
-Date: Thu, 21 May 2020 15:22:53 +0000
+ Thu, 21 May 2020 08:32:59 -0700 (PDT)
+Date: Thu, 21 May 2020 15:32:57 +0000
 From: Tomasz Figa <tfiga@chromium.org>
 To: Xia Jiang <xia.jiang@mediatek.com>
-Subject: Re: [PATCH v8 05/14] media: platform: Improve power on and power off
- flow
-Message-ID: <20200521152253.GE209565@chromium.org>
+Subject: Re: [PATCH v8 06/14] media: platform: Improve the implementation of
+ the system PM ops
+Message-ID: <20200521153257.GF209565@chromium.org>
 References: <20200403094033.8288-1-xia.jiang@mediatek.com>
- <20200403094033.8288-6-xia.jiang@mediatek.com>
+ <20200403094033.8288-7-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200403094033.8288-6-xia.jiang@mediatek.com>
+In-Reply-To: <20200403094033.8288-7-xia.jiang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_082259_375608_1A56C29B 
-X-CRM114-Status: GOOD (  18.69  )
+X-CRM114-CacheID: sfid-20200521_083302_429807_6986C2EC 
+X-CRM114-Status: GOOD (  19.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -113,96 +113,88 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Xia,
 
-On Fri, Apr 03, 2020 at 05:40:24PM +0800, Xia Jiang wrote:
-> Call pm_runtime_get_sync() before starting a frame and then
-> pm_runtime_put() after completing it. This can save power for the time
-> between processing two frames.
+On Fri, Apr 03, 2020 at 05:40:25PM +0800, Xia Jiang wrote:
+> Cancel reset hw operation in suspend and resume function because this
+> will be done in device_run().
+
+This and...
+
+> Add spin_lock and unlock operation in irq and resume function to make
+> sure that the current frame is processed completely before suspend.
+
+...this are two separate changes. Please split.
+
 > 
 > Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
 > ---
->  .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 27 +++++--------------
->  1 file changed, 6 insertions(+), 21 deletions(-)
+>  drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 11 +++++++++--
+>  1 file changed, 9 insertions(+), 2 deletions(-)
 > 
-
-Thank you for the patch. Please see my comments inline.
-
 > diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-> index a536fa95b3d6..dd5cadd101ef 100644
+> index dd5cadd101ef..2fa3711fdc9b 100644
 > --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
 > +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-> @@ -710,23 +710,6 @@ static struct vb2_v4l2_buffer *mtk_jpeg_buf_remove(struct mtk_jpeg_ctx *ctx,
->  		return v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
->  }
+> @@ -911,6 +911,8 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
+>  	u32 dec_ret;
+>  	int i;
 >  
-> -static int mtk_jpeg_start_streaming(struct vb2_queue *q, unsigned int count)
-> -{
-> -	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-> -	struct vb2_v4l2_buffer *vb;
-> -	int ret = 0;
-> -
-> -	ret = pm_runtime_get_sync(ctx->jpeg->dev);
-> -	if (ret < 0)
-> -		goto err;
-> -
-> -	return 0;
-> -err:
-> -	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
-> -		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_QUEUED);
-> -	return ret;
-> -}
-> -
->  static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
->  {
->  	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-> @@ -751,8 +734,6 @@ static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
->  
->  	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
->  		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-> -
-> -	pm_runtime_put_sync(ctx->jpeg->dev);
->  }
->  
->  static const struct vb2_ops mtk_jpeg_qops = {
-> @@ -761,7 +742,6 @@ static const struct vb2_ops mtk_jpeg_qops = {
->  	.buf_queue          = mtk_jpeg_buf_queue,
->  	.wait_prepare       = vb2_ops_wait_prepare,
->  	.wait_finish        = vb2_ops_wait_finish,
-> -	.start_streaming    = mtk_jpeg_start_streaming,
->  	.stop_streaming     = mtk_jpeg_stop_streaming,
->  };
->  
-> @@ -812,7 +792,7 @@ static void mtk_jpeg_device_run(void *priv)
->  	struct mtk_jpeg_src_buf *jpeg_src_buf;
->  	struct mtk_jpeg_bs bs;
->  	struct mtk_jpeg_fb fb;
-> -	int i;
-> +	int i, ret;
->  
->  	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
->  	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> @@ -832,6 +812,10 @@ static void mtk_jpeg_device_run(void *priv)
->  		return;
->  	}
->  
-> +	ret = pm_runtime_get_sync(jpeg->dev);
-> +	if (ret < 0)
-> +		goto dec_end;
+> +	spin_lock(&jpeg->hw_lock);
 > +
->  	mtk_jpeg_set_dec_src(ctx, &src_buf->vb2_buf, &bs);
->  	if (mtk_jpeg_set_dec_dst(ctx, &jpeg_src_buf->dec_param, &dst_buf->vb2_buf, &fb))
->  		goto dec_end;
-> @@ -957,6 +941,7 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
+
+nit: For consistency, it is recommended to always use the same, i.e. the
+strongest, spin_(un)lock_ primitives when operating on the same spinlock.
+In this case it would be the irqsave(restore) variants.
+
+>  	dec_ret = mtk_jpeg_dec_get_int_status(jpeg->dec_reg_base);
+>  	dec_irq_ret = mtk_jpeg_dec_enum_result(dec_ret);
+>  	ctx = v4l2_m2m_get_curr_priv(jpeg->m2m_dev);
+> @@ -941,6 +943,7 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
 >  	v4l2_m2m_buf_done(src_buf, buf_state);
 >  	v4l2_m2m_buf_done(dst_buf, buf_state);
 >  	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-> +	pm_runtime_put_sync(ctx->jpeg->dev);
+> +	spin_unlock(&jpeg->hw_lock);
+>  	pm_runtime_put_sync(ctx->jpeg->dev);
+>  	return IRQ_HANDLED;
+>  }
+> @@ -1191,7 +1194,6 @@ static __maybe_unused int mtk_jpeg_pm_suspend(struct device *dev)
+>  {
+>  	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
+>  
+> -	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
+>  	mtk_jpeg_clk_off(jpeg);
+>  
+>  	return 0;
+> @@ -1202,19 +1204,24 @@ static __maybe_unused int mtk_jpeg_pm_resume(struct device *dev)
+>  	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
+>  
+>  	mtk_jpeg_clk_on(jpeg);
+> -	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
+>  
+>  	return 0;
+>  }
+>  
+>  static __maybe_unused int mtk_jpeg_suspend(struct device *dev)
+>  {
+> +	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
+> +	unsigned long flags;
+>  	int ret;
+>  
+>  	if (pm_runtime_suspended(dev))
+>  		return 0;
+>  
+> +	spin_lock_irqsave(&jpeg->hw_lock, flags);
 
-The _sync variant explicitly waits until the asynchronous PM operation
-completes. This is usually undesired, because the CPU stays blocked for
-no good reason. In this context it is actually a bug, because this is an
-interrupt handler and it's not allowed to sleep. I wonder why this
-actually didn't crash in your testing. Please change to the regular
-pm_runtime_put().
+What does this spinlock protect us from? I can see that it would prevent
+the interrupt handler from being called, but is it okay to suspend the
+system without handling the interrupt?
+
+> +
+>  	ret = mtk_jpeg_pm_suspend(dev);
+> +
+
+Looking at the implementation of mtk_jpeg_pm_suspend(), all it does is
+disabling the clock. How do we make sure that there is no frame currently
+being processed by the hardware?
 
 Best regards,
 Tomasz
