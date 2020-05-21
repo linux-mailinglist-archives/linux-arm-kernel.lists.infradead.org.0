@@ -2,80 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21ACD1DD75D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 21:36:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 077781DD780
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 21:43:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4ZNKJ1dC1Hj0aGSzOGdSYDQjnX1+fENyUlLLvhdu2uo=; b=bGrRhm3gNw6Lhp
-	Ot49+eSUPRNuXaBloZh8UcVMPq73vZ362D0bsWhanc+/j27Fvoy/cwmmMbE3SIrWiEg3cEybb2YLZ
-	SiMyp0jFN/ZL3eext/ySBrJkmJ+5LIlgBThpli7F8qCn+FeVvrSWZ7FBCHl4ARMqOrM0RR2TLS1MB
-	Clyzubt9AM5ZRgl6Y7Was50ZL2EpGW4t9CqVD/cOMCIPIKLrrXKBQ7e6Yw8F+tSdhLA3t9ZGHaDlX
-	efMIkwTWCvjWqvyTXCNEgqlYjA88Pa9iJnv1+4kxnghDhV670AFOMWh3dPDBwxhVCyEX+vR0ZoWfe
-	l3Ix41AFMWr95wEjYI7A==;
+	List-Owner; bh=T3qdo/dBf3PgUqGJ3oCoUs6iZ9SlN9mdfNe2RMxJ6Ac=; b=nUw5dqct+nZXLW
+	zNCW04ltft0pxWd/DAvRIbgy2LuUd3r/eOPQ1EQs5WhzQn6n2r1eZA+sZYZG5m7PGjN+XQU1Ot+I6
+	U6v8EqDT0GQrzoHbbEELMb63AO7RgujcLpj7fI8MtuMEekxbnHsAPSaOFkWMBd5ozv9fs2PfAj5Dt
+	mJf2zonxjpJm/rz7M1/HBUxyaOT+X3oUtWAgwUVTlPGpVVehvvZGXT+Y0aqiT7RV6j6v96AKBRQ7D
+	Gkn6Iw2mprsBvvtjyHuTMEA9BP3HqEXAIZd7Jr8QtM+pow4k2dojqgtRCCMfFMgjkioqJSrSXtiC9
+	yp204AIE8wwgwwGQcEXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbqz4-0007P3-RT; Thu, 21 May 2020 19:36:02 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jbr5m-0002yD-Q3; Thu, 21 May 2020 19:42:58 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbqyW-00079S-Sc
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 19:35:30 +0000
-Received: by mail-wr1-x442.google.com with SMTP id l18so7815009wrn.6
+ id 1jbr5Q-0002uf-1X
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 19:42:39 +0000
+Received: by mail-pl1-x641.google.com with SMTP id t16so3299962plo.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 12:35:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ Thu, 21 May 2020 12:42:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=0PiSvAPliSpHmXCPHW82OGwvgeGu3nV4fisqX0ukMVE=;
- b=Mn2izAUaruoDbLEVtEGYwGj8L0xkVVzhfObauat4/vcNCP+EPMEoexK54nlo2t3NO0
- LTIUQPGxAXNwtxA3U2FY3JUp36JClziXCcHERZ6A90YjM36CtMX2opVFVkMQ4L3e/C1r
- 9uUYpJi87nLJ5Do9/kd318Qkzfn2oKXsfkMJQ=
+ bh=BXYPauGkNWtPwKYwGGvUTVu/KGcI14RapTxg+fHwXY4=;
+ b=se3vu6erp2PBFC3GeiZK3pujHsPbv1+Tub7hi+r+f1Cu3Y6qod1+7C7rJZAl2ylOrO
+ xe7x3AdAvBRwQZ+ViBf3KRKqKxm5/pfNZdBUCB+/cZixrse5Nrq3v5eAScYCzQNG0wzd
+ bXws+6xkLfsjR+OPSM1Tezns0jGTj/TOo5PXDTpWjhjk72I2AHEzDy4zLLAQRg0+QW+d
+ mWWYanxQ9LMvTj1CgdOsvNvsfhKpKSWJR4cuW1nWvYDuqsA5AQAaaRqI3ucSL53IB6V+
+ x3ZOhZYpuxq0n4GGBJrYgVWsiorHx0X17eXWKyYOZtnXT4u7BGIxnD5cbxsAHeNBchtF
+ OXqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=0PiSvAPliSpHmXCPHW82OGwvgeGu3nV4fisqX0ukMVE=;
- b=QsrT5a928eEUxv2fTpQoc1AQRUCCGsZOCbEb7bHY1c0B8eXHkrQ4ah2KshP5lbImTo
- fN9HQGDzkPG70Phyffm+DFFtqEh8GK7h66uxjqCuFIblnuZIKdX6oDBYA76l/4eO75Ch
- k/0xjvfVb3ESrlx56LiGjNiWkqgApAK4ebgTtp23443QmFVpR92zYjGFqrgxm78dCZ4j
- 4YuICgmYcdTQQWc2IFG8wkTtTySBnJTNpA6GsEJwZWeZfce4cstm878dkKFcBlN9V5QW
- Dsr/ZoNXQlU2eNL0tW0SOBXJfIwck32I+7a+gZv3tPBA1Xu47Hm7b72PvMbRKjrCUXBA
- 6I7A==
-X-Gm-Message-State: AOAM533tkWh+E1sU1v6F1teEa9gRUVTMB/fyjWtPsLD8vS4IX1RoSgqt
- mnpkLyvgZVVFcx0x/I4w+d9xXw==
-X-Google-Smtp-Source: ABdhPJwRx3aYOU3qs7IEJXRm00NEpqShHLzsIlN+v+IXDKvfgZ02NPQmcQhc20kurysHzVjxZtUHQg==
-X-Received: by 2002:adf:d0cb:: with SMTP id z11mr182088wrh.116.1590089727185; 
- Thu, 21 May 2020 12:35:27 -0700 (PDT)
-Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
- [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id d126sm7967920wmd.32.2020.05.21.12.35.26
+ bh=BXYPauGkNWtPwKYwGGvUTVu/KGcI14RapTxg+fHwXY4=;
+ b=RbfmlXTfrmozLyFZo0FvvZ8csqWa0u7aUbQfM5/Mu2WL8ttdbLU8w9qQqtxps2i8ba
+ tPZ5fIJQYfpwnj2XrfS0qj/BxwhCBI2wJMQe5GzCI8Al0YHGFPizP9VME65cdpr2to3v
+ eU+GttHgNgrkm0wM+m5I6BkEu5/ufX/BRhBraHuMv5huWTg+Qqn18GY8x3u4Hvh0CAzm
+ ZcmYjq5/G/0PQ1cSxbQA8aeacn69vAKYj/kWITSyTRkjnB4pcxzW1j+pPpqkCDeda9u9
+ j3XWa92xJ0Om/QOJAteBx8aTET47qgBe/87d7aXUQZVni1T4TJV+w1m/dI0wwnNP8QFa
+ 53ug==
+X-Gm-Message-State: AOAM531T+bcWQnLLq5RdQPIzYzkCrIdG5qigAadtPm9NUnCv59Lt17SF
+ 9SDrx+phn0DxSUGrSwCX7EGBgg==
+X-Google-Smtp-Source: ABdhPJxk6/AaRmSF7oCKZdzRq5JtighkgWW5LdhwQ4PD4zRb+L/JtxeyuIelMKGLsyYWPBn0ErhdvA==
+X-Received: by 2002:a17:90a:248a:: with SMTP id
+ i10mr157777pje.174.1590090155010; 
+ Thu, 21 May 2020 12:42:35 -0700 (PDT)
+Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id n21sm5065359pjo.25.2020.05.21.12.42.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 May 2020 12:35:26 -0700 (PDT)
-Date: Thu, 21 May 2020 19:35:25 +0000
-From: Tomasz Figa <tfiga@chromium.org>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [V8, 1/2] media: dt-bindings: media: i2c: Document OV02A10
- bindings
-Message-ID: <20200521193525.GB14214@chromium.org>
-References: <20200509080627.23222-1-dongchun.zhu@mediatek.com>
- <20200509080627.23222-2-dongchun.zhu@mediatek.com>
- <20200511160207.GA32476@bogus>
+ Thu, 21 May 2020 12:42:34 -0700 (PDT)
+Date: Thu, 21 May 2020 12:41:16 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Suman Anna <s-anna@ti.com>
+Subject: Re: [PATCH 2/4] remoteproc: introduce version element into resource
+ type field
+Message-ID: <20200521194116.GP408178@builder.lan>
+References: <20200325204701.16862-1-s-anna@ti.com>
+ <20200325204701.16862-3-s-anna@ti.com>
+ <20200521175421.GI408178@builder.lan>
+ <b338480e-c586-f988-f5b6-784551b7beb6@ti.com>
+ <20200521192146.GO408178@builder.lan>
+ <57ae5678-fd0a-07a8-6165-a2cf7ccdef88@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200511160207.GA32476@bogus>
+In-Reply-To: <57ae5678-fd0a-07a8-6165-a2cf7ccdef88@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_123528_954771_AE6F1E6A 
-X-CRM114-Status: GOOD (  18.06  )
+X-CRM114-CacheID: sfid-20200521_124236_180125_F458AFDF 
+X-CRM114-Status: GOOD (  23.51  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -86,7 +93,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,112 +104,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
- linus.walleij@linaro.org, shengnan.wang@mediatek.com, louis.kuo@mediatek.com,
- bgolaszewski@baylibre.com, sj.huang@mediatek.com, drinkcat@chromium.org,
- linux-mediatek@lists.infradead.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Loic Pallardy <loic.pallardy@st.com>, Lokesh Vutla <lokeshvutla@ti.com>,
+ linux-remoteproc@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ linux-kernel@vger.kernel.org, Clement Leger <cleger@kalray.eu>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+On Thu 21 May 12:29 PDT 2020, Suman Anna wrote:
 
-On Mon, May 11, 2020 at 11:02:07AM -0500, Rob Herring wrote:
-> On Sat, May 09, 2020 at 04:06:26PM +0800, Dongchun Zhu wrote:
-> > Add DT bindings documentation for Omnivision OV02A10 image sensor.
+> On 5/21/20 2:21 PM, Bjorn Andersson wrote:
+> > On Thu 21 May 12:06 PDT 2020, Suman Anna wrote:
 > > 
-> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > ---
-> >  .../bindings/media/i2c/ovti,ov02a10.yaml           | 184 +++++++++++++++++++++
-> >  MAINTAINERS                                        |   7 +
-> >  2 files changed, 191 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> > > Hi Bjorn,
+> > > 
+> > > On 5/21/20 12:54 PM, Bjorn Andersson wrote:
+> > > > On Wed 25 Mar 13:46 PDT 2020, Suman Anna wrote:
+> > > > 
+> > > > > The current remoteproc core has supported only 32-bit remote
+> > > > > processors and as such some of the current resource structures
+> > > > > may not scale well for 64-bit remote processors, and would
+> > > > > require new versions of resource types. Each resource is currently
+> > > > > identified by a 32-bit type field. Introduce the concept of version
+> > > > > for these resource types by overloading this 32-bit type field
+> > > > > into two 16-bit version and type fields with the existing resources
+> > > > > behaving as version 0 thereby providing backward compatibility.
+> > > > > 
+> > > > > The version field is passed as an additional argument to each of
+> > > > > the handler functions, and all the existing handlers are updated
+> > > > > accordingly. Each specific handler will be updated on a need basis
+> > > > > when a new version of the resource type is added.
+> > > > > 
+> > > > 
+> > > > I really would prefer that we add additional types for the new
+> > > > structures, neither side will be compatible with new versions without
+> > > > enhancements to their respective implementations anyways.
+> > > 
+> > > OK.
+> > > 
+> > > > 
+> > > > > An alternate way would be to introduce the new types as completely
+> > > > > new resource types which would require additional customization of
+> > > > > the resource handlers based on the 32-bit or 64-bit mode of a remote
+> > > > > processor, and introduction of an additional mode flag to the rproc
+> > > > > structure.
+> > > > > 
+> > > > 
+> > > > What would this "mode" indicate? If it's version 0 or 1?
+> > > 
+> > > No, for indicating if the remoteproc is 32-bit or 64-bit and adjust the
+> > > loading handlers if the resource types need to be segregated accordingly.
+> > > 
 > > 
-> > diff --git a/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > new file mode 100644
-> > index 0000000..5468d1b
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > @@ -0,0 +1,184 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +# Copyright (c) 2020 MediaTek Inc.
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/media/i2c/ovti,ov02a10.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Omnivision OV02A10 CMOS Sensor Device Tree Bindings
-> > +
-> > +maintainers:
-> > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > +
-> > +description: |-
-> > +  The Omnivision OV02A10 is a low-cost, high performance, 1/5-inch, 2 megapixel
-> > +  image sensor, which is the latest production derived from Omnivision's CMOS
-> > +  image sensor technology. Ihis chip supports high frame rate speeds up to 30fps
-> > +  @ 1600x1200 (UXGA) resolution transferred over a 1-lane MIPI interface. The
-> > +  sensor output is available via CSI-2 serial data output.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: ovti,ov02a10
-> > +
-> > +  reg:
-> > +    description: I2C device address
+> > Sorry, I think I'm misunderstanding something. Wouldn't your 64-bit
+> > remote processor need different firmware from your 32-bit processor
+> > anyways, if you want to support the wider resource? And you would pack
+> > your firmware with the appropriate resource types?
 > 
-> Drop this. Nothing specific to this device.
+> Yes, that's correct.
 > 
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    items:
-> > +      - description: top mux camtg clock
-> > +      - description: devider clock
+> > 
+> > Afaict the bit width of your remote processor, busses or memory is
+> > unrelated to the choice of number of bits used to express things in the
+> > resource table.
 > 
-> typo
+> I would have to add the new resource type to the loading_handlers right, so
+> it is a question of whether we want to impose any restrictions in remoteproc
+> core or not from supporting a certain resource type (eg: I don't expect
+> RSC_TRACE entries on 64-bit processors).
 > 
-> > +
-> > +  clock-names:
-> > +    items:
-> > +      - const: eclk
-> > +      - const: freq_mux
-> > +
-> > +  clock-frequency:
-> > +    description:
-> > +      Frequency of the eclk clock in Hertz.
-> > +
-> > +  dovdd-supply:
-> > +    description:
-> > +      Definition of the regulator used as interface power supply.
-> > +
-> > +  avdd-supply:
-> > +    description:
-> > +      Definition of the regulator used as analog power supply.
-> > +
-> > +  dvdd-supply:
-> > +    description:
-> > +      Definition of the regulator used as digital power supply.
-> > +
-> > +  powerdown-gpios:
-> > +    maxItems: 1
-> > +
-> > +  reset-gpios:
-> > +    maxItems: 1
 
-I asked a question about defining GPIO polarities some time ago, but I
-guess it slipped through.
+Right, but either you add support for new resource types to the
+loading_handlers, or you add the version checks within each handler,
+either way you will have to do some work to be compatible with new
+versions.
 
-The chip documentation calls the reset pin as "RST_PAD (low level
-reset)". Where should the inversion be handled, in the driver or here,
-by having the DT include a necessary flag in the specifier?
+Regarding what resources would be fit for a 64-bit processor probably
+relates to many things, in particular the question of what we actually
+mean when we say that a coprocessor is 64-bit. So I don't really see a
+need for the remoteproc core to prevent someone to design their
+system/firmware to have a 64-bit CPU being passed 32-bit addresses.
 
-Best regards,
-Tomasz
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
