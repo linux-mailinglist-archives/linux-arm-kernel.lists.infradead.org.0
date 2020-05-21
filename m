@@ -2,64 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74BA11DCD22
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 14:41:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41A7B1DCD49
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 14:52:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3CgNZf/xyADtOb5AHykH6HKIqERpBU2oGOb2q9k5XEg=; b=FEZbIEUWD2B1nr
-	944ll6HlnmgJKk8rGV/jmQQwQCOeoVNSAZU48e62XH9NywlzDY23Y35hE0v9XxkCbVI8crL00v24J
-	DYhVGyqpnHqmQ5B4VQxpWADvRldylZUpiuzPut4Hw5iSt02HYfWuwjHvaeEeSiMdYH5mCR192W8sx
-	vplt6UKYDI2IH1xWG6rc0XCCCXvZ37Hvnhodo8bip6zJLEk70lE7ZKBzeSmEUtks82J7I8zkIVB3N
-	V66qd7LztVt6nTyFt2sydfPMyRdR4lMoIchHF69uiVa+g/HvhIZ9wGzJl6QCfiRGU1nBQctSKO1vM
-	M6eumn00ivzPDZ31rPxQ==;
+	List-Owner; bh=kcrbbUkSLdH4yMxuTZyt5BtN/BA88Cpj2mRKH6KAhSM=; b=kUg9J46tsZVgAP
+	EHGDX25cn6oIefUPuupSEC/oxbgrd1/Bck+iB4Iq+aJPLdxa3zlXHO6Jf2Cm41Tc09Evu464msZKS
+	bsmCHEhcNjftsPwxSJPEAph2shmW/IfaIKdfWod/KMhbNTFL2wBbuWEKLd2aGL6ESRoNIObn7BOOm
+	Oa5CL3Tlm4rGRZT3zTkEButUfmpLzSCsapF48mt8pl61O4/AEbN9/qG97oGcMHmMKdHCwuNgIwFsw
+	AzeSDoUUeA4n38Y6cpoEDPpMKGy5qza3PUeTJAzenUUZ6yiaYMb2Kl4EbUZvATcX7/LxNyYAhGoqW
+	yaecpUjOBWSyQo5agAAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbkW8-00041h-Eq; Thu, 21 May 2020 12:41:44 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jbkg3-0001oK-Pf; Thu, 21 May 2020 12:51:59 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbkVu-0003zb-0R; Thu, 21 May 2020 12:41:31 +0000
-Received: by mail-wm1-x343.google.com with SMTP id g14so2173216wme.1;
- Thu, 21 May 2020 05:41:27 -0700 (PDT)
+ id 1jbkfs-0001mx-VE; Thu, 21 May 2020 12:51:50 +0000
+Received: by mail-oi1-x241.google.com with SMTP id i22so6075463oik.10;
+ Thu, 21 May 2020 05:51:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=ZCurGGibwCh7XdxYSjx5vU1gvo5ZaSz6gI8M6+Td/gk=;
- b=MHkFysy9XCj8j8jFISAZgF6ThZMSSOf3rv9YYCVWnKelCG4abGZ183kq44kgxL8cZF
- /IWTRHb0Q6hUanFdmDCUhLUImJB6Wgx0raoTmy5RL3GYLioo0eYUpKMOE6VIyeJ7OyOa
- 7xotMpYQthz9zi5CVXY7aGGUi5HIOuTZPX4brdgBJvtEm9FAV9F3ux+bR3RYGmc6j8wX
- jAZpQxqW1HtCpLogxXCo4AKF51jImJLAY1v9AvZOC9s5prZBSychS3c0FybKFO5g/pxh
- NITK86y//ys9w/1PMtVGGMnD2EudbZgvEEbwl7TcRAL9ZiCmYUKhF2TDnXnh/jIM01DJ
- 5KfA==
+ bh=qLuVzhQoipCcsY5OVXL5w5W+iLwoTuDr8wB7OrtDnIU=;
+ b=c0ZMhM2e7lLZd+6r786V3jii+9O1/rtiZGtcxSgE7uTrQX2XpHhJ4Vk1nzmPJ1c2nV
+ XzXgvjwUUNl4sppl2snQ0XCU97PQ7L6y1Ro7gfaxg+lIfbRnPXjq9GGxLd4EGz4zLT0L
+ 1Q7TktzYkC4jePB3MLtg99WPeTumE870V3zsHvED8zkHWIeHZO1N9JUrbuwONc2h7KOs
+ J63XT9zT9dIXzJC4xVnggvxiCCBGO21k2lZaBYgahUXMX4gtvqQayzBGq0zdNCsfQRQc
+ A2M9Ez7lQJzoNvGdfgzqZ2F1RgxzwRMKGorC8WgB2Q7kLROyov9HoA89N5a7nWjBkZiv
+ qG2A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=ZCurGGibwCh7XdxYSjx5vU1gvo5ZaSz6gI8M6+Td/gk=;
- b=nd8fIipcxXRbbmFx6/3hqbVIxiKBpYVW1QqFxa+ErZBOZB+f1TAUlAOqKuBtiwk1eI
- s74lZlUbaKAQpczcwX5TeiGxDJQL7vujb76T0xKGPl6XMTCeSb1gaAYMs8hiNIAXEKQ2
- uyxJ+YpPkyRv+9Pbb+Bj/AuMh0cUM2rCl1fX/pDzqogjT2mEiEtwd2SjVYaZjxmiXUF5
- Xd/b3SwZ20DgLdZRwJ9LzxSB3jDEhPIGqViWg9Gy9dPPQlR/jIrff30e0SQ65Fr5N33X
- JLiKfzCkTV1qpS4mxo2eO+EOjS5+mKgpQTXJHeoAkPzBirR0D4lXvRm8l8HBGibrFs7V
- dkEQ==
-X-Gm-Message-State: AOAM530hP+u0kW69sZS9BMFQ4dvcgmd+2X/VcnKVNRsUjkqXQrCP84mL
- Ks9CgJT8HOpVCEHHzMoVHOS6e5nn
-X-Google-Smtp-Source: ABdhPJyvF9L10kZVYg8zqoYE9VslMq9gJ6PaLkV9Z3dMdzcmv4hVHOJAG+HvMX4W7KmEJFfRSSJbAw==
-X-Received: by 2002:a1c:a793:: with SMTP id q141mr8526068wme.135.1590064886643; 
- Thu, 21 May 2020 05:41:26 -0700 (PDT)
+ bh=qLuVzhQoipCcsY5OVXL5w5W+iLwoTuDr8wB7OrtDnIU=;
+ b=cmLHp2TOcJUM7Xw7Zyibvge9kpIGCkDtVvlfliAl/KVioR7QdTqJz4ko97Iiv0M8Qp
+ jc+RxpDzL1v7rwXcwVYL3ulvU+R4Avw85ubgjWtpH/fbHc+HPveVzI4nrf+iDplpL30s
+ Kky4VPWAMYTKRZPyRkKp6SdxpxUVKLqMQAE1HWeiY0DCKsV7Stf03UVUi+LCjHTxfaRk
+ TifzHn78hn3B0MvnybABM/8/QVWAyaWzBcMybDMzGvJYitfFVE2D2bFhpvmZ6caDlabU
+ Ue1ypH8nyybwcz+h1Emjmj7rkPeQYvcPT4Qmly4Kj5m+yVkckvVYQVg0BHEQqBnagg9S
+ W1YQ==
+X-Gm-Message-State: AOAM5309Ur0aG2+8TJowiSvMKUHsy+WiKb+uC/0isQt2C5jGUZMxdKgZ
+ C+jTsan895m9llG8L5/f+h8oArOR
+X-Google-Smtp-Source: ABdhPJwycbXJ7a1GVFm21iQVUqJTwOdMUxm3MLy4Ar/1ZXckuERNJluIHe6o21lEEVLEjXW4vLRYBQ==
+X-Received: by 2002:a05:6808:282:: with SMTP id
+ z2mr6060826oic.101.1590065507488; 
+ Thu, 21 May 2020 05:51:47 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id v205sm6410254wmg.11.2020.05.21.05.41.25
+ by smtp.gmail.com with ESMTPSA id h189sm1644387oif.10.2020.05.21.05.51.44
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 21 May 2020 05:41:25 -0700 (PDT)
-Subject: Re: [PATCH v3 0/7] add support USB for MT8183
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-References: <1567150854-30033-1-git-send-email-chunfeng.yun@mediatek.com>
- <1567562067.7317.52.camel@mhfsdcap03>
+ Thu, 21 May 2020 05:51:46 -0700 (PDT)
+Subject: Re: [v4,0/7] Add Mediatek thermal dirver and dtsi
+To: Michael Kao <michael.kao@mediatek.com>, Zhang Rui <rui.zhang@intel.com>,
+ Eduardo Valentin <edubezval@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ hsinyi@chromium.org, linux-pm@vger.kernel.org, srv_heupstream@mediatek.com
+References: <20200323121537.22697-1-michael.kao@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -135,23 +138,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <2e98982b-ab8a-9fa9-0903-881ebce916a5@gmail.com>
-Date: Thu, 21 May 2020 14:41:24 +0200
+Message-ID: <7e205390-c7a7-b8c9-3ba2-344a04dc6696@gmail.com>
+Date: Thu, 21 May 2020 14:51:42 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1567562067.7317.52.camel@mhfsdcap03>
+In-Reply-To: <20200323121537.22697-1-michael.kao@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_054130_052921_3D3F933E 
-X-CRM114-Status: GOOD (  18.82  )
+X-CRM114-CacheID: sfid-20200521_055149_007538_E7C794B4 
+X-CRM114-Status: GOOD (  19.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -175,79 +178,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Mathias Nyman <mathias.nyman@intel.com>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chungfeng,
+Hi Michael,
 
-On 04/09/2019 03:54, Chunfeng Yun wrote:
-> Hi Greg,
+On 23/03/2020 13:15, Michael Kao wrote:
+> This patchset supports for MT8183 chip to mtk_thermal.c.
+> Add thermal zone of all the thermal sensor in SoC for
+> another get temperatrue. They don't need to thermal throttle.
+> And we bind coolers for thermal zone nodes of cpu_thermal.
 > 
+> Rebase to kernel-5.6-rc1.
 > 
->   Please don't try to pick up this series, the dependent ones are still
-> under public review, I'll fix build warning and send out new version
-> after the dependent ones are applied
->   Sorry for inconvenience
+> Update content:
 > 
+> [1/7]
+>     - Squash thermal zone settings in the dtsi from [v3,5/8]
+>       arm64: dts: mt8183: Increase polling frequency for CPU thermal zone
+> 
+>     - Remove the property of interrupts and mediatek,hw-reset-temp
+> 
+> [2/7]
+>     - Correct commit message
+> 
+> [4/7]
+>     - Change the target temperature to the 80C and change the commit message
+> 
+> [6/7]
+>     - Adjust newline alignment
+> 
+>     - Fix the judgement on the return value of registering thermal zone
+> 
+> This patch series base on these patches [1].
+> 
+> [v7,3/3] PM / AVS: SVS: Introduce SVS engine (https://patchwork.kernel.org/patch/11439829/)
+> 
+> Matthias Kaehlcke (1):
+>   arm64: dts: mt8183: Configure CPU cooling
+> 
+> Michael Kao (6):
+>   arm64: dts: mt8183: add thermal zone node
+>   arm64: dts: mt8183: add dynamic power coefficients
+>   arm64: dts: mt8183: Add #cooling-cells to CPU nodes
+>   thermal: mediatek: mt8183: fix bank number settings
 
-I think the pmic driver is upstream now and show up in linux-next soon.
-
-I propose to rebase the series and send it again.
+Do I understand correctly that we need to fix the bank number before we can add
+the device tree changes. And that the last two patches are enhancements for the
+driver but needed to get a working version?
 
 Regards,
 Matthias
 
-> Thanks
+>   thermal: mediatek: add another get_temp ops for thermal sensors
+>   thermal: mediatek: use spinlock to protect PTPCORESEL
 > 
-> On Fri, 2019-08-30 at 15:40 +0800, Chunfeng Yun wrote:
->> This series support USB DRD controller and enable it's remote
->> wakeup functoin for MT8183, they depend on the following
->> series patches:
->>
->> 1. this series add support MT6358 PMIC
->>   [v5,01/10] mfd: mt6397: clean up code
->>   https://patchwork.kernel.org/patch/11110487/
->>
->> 2. this series add support pericfg syscon
->>   [v2,1/2] dt-bindings: clock: mediatek: add pericfg for MT8183
->>   https://patchwork.kernel.org/patch/11118183/
->>
->> 3. add property mediatek,discth for tphy
->>   [06/11] phy: phy-mtk-tphy: add a property for disconnect threshold
->>   https://patchwork.kernel.org/patch/11110695/
->>
->> v3 changes:
->>   1. changes micros define
->>   2. remove #reset-cell
->>   3. update dependent series
->>
->> v2 changes:
->>   add patch [7/7]
->>
->> Chunfeng Yun (7):
->>   dt-bindings: usb: mtu3: support USB wakeup for MT8183
->>   dt-bindings: usb: mtk-xhci: support USB wakeup for MT8183
->>   usb: mtu3: support ip-sleep wakeup for MT8183
->>   usb: mtk-xhci: support ip-sleep wakeup for MT8183
->>   arm64: dts: mt8183: add usb and phy nodes
->>   arm64: dts: mt8183: enable USB remote wakeup
->>   arm64: dts: mt8183: tune disconnect threshold of u2phy
->>
->>  .../bindings/usb/mediatek,mtk-xhci.txt        |  1 +
->>  .../devicetree/bindings/usb/mediatek,mtu3.txt |  1 +
->>  arch/arm64/boot/dts/mediatek/mt8183-evb.dts   | 23 +++++++
->>  arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 63 +++++++++++++++++++
->>  drivers/usb/host/xhci-mtk.c                   | 14 ++++-
->>  drivers/usb/mtu3/mtu3_host.c                  | 14 ++++-
->>  6 files changed, 114 insertions(+), 2 deletions(-)
->>
-> 
+>  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 156 +++++++++++++++++++++++
+>  drivers/thermal/mtk_thermal.c            |  88 +++++++++++--
+>  2 files changed, 231 insertions(+), 13 deletions(-)
 > 
 
 _______________________________________________
