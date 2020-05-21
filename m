@@ -2,170 +2,171 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A95D1DCA52
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 11:39:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B20451DCA7D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 11:53:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BPQfftj7MpgS/V8D0X398Z5rA7SElbDzgRyxC10ZTNw=; b=jHfHxkuEY7plW5
-	LHLdiRvdp0Ufc9w+Of02tI6BR/Xul/UUDJPapIz2Cic9b0FjqrR74ltItNEdJg2n+dpsgPpP+y44v
-	0wuiBrQbTlkJhHO/SpbUPwbJ0byAUiLVI3ySZfkkMA9lzBgUQB/MCjcp3nPgf3hXWr4uPl4nrQ9is
-	SjA1RBLISgsC2yd4KvJ2Nd8Ubm8Dj4Qf9I68V+EAN8c0vbGw1fNbaWrH976eza9P/t+qdhF5/y0IH
-	QJp9nR3lmay7blMOnm5QoH3H/pSPabEmVr7opSMxk+kMb8lF5TZdGssTQQR6J3SrIr6E4/To2ih1x
-	9o3XEGHbbPUAcpgU4StA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BQym2yHmJjy3eZMnY6VuXHJCyP8aIIdnKQZwhx2PB9k=; b=Mb5HNNc1JvLeTQ
+	KeUBuY/8opauVSCyO9DtUEfJuD4XAG1PvflVr84GBEevCbcLo0kqnX57LEdk0Yg8nDfLgJh9gZcrk
+	C2MJQUuCGL5axht+SUd5nNUhlPnGPSelFCYItnuyxn+ju0HwBbnT6pmYX5O4Z1HttHX7yp3d3ri1N
+	Vp4JI+cGVi/yzpIxB5mKbdc+gt8rZkxDT8Z7GjgTRtmypeKoG18W+AkNrW2HEewX7upazgvTtvGsh
+	LYP+GDweMdoJY+BXR+VqQ1uPAWAWhNaVevS217OVZuibwSJ8sVc0LY1xONnINgybo4+5APcfBXWiO
+	/YEje4Ly1vkgwnvpewxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbhfo-0004RR-FI; Thu, 21 May 2020 09:39:32 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jbhtH-0004Yj-NS; Thu, 21 May 2020 09:53:27 +0000
+Received: from mail-eopbgr30078.outbound.protection.outlook.com ([40.107.3.78]
+ helo=EUR03-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbhf8-00049D-M7; Thu, 21 May 2020 09:38:52 +0000
-Received: by mail-wr1-x442.google.com with SMTP id e16so5983296wra.7;
- Thu, 21 May 2020 02:38:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=C7yQ0ptbZU7KZnOlxUVIZpP6EXczodGdgmJQdoW6NPg=;
- b=Il4rxdZqAwPWu6MpGCvSdPJVldDI6qGUzV6YCpjPoUJrx7WxA3Pzo/Wr4kPFUs1YhR
- Pxj4L1WPVzDewsAGX7Pajd0O01+mPpE1TJwS/dsVDmi2YAEa1dlfDmmUMKt4YSY3WEev
- HoTiyrI3NoCRPNacN/4N0s0BdmAsl6zVqCcCVK5eqgt6toJScP9jk/5Hlqw0Wtk+M6Ka
- yFTdipAeXr2c9mX4zPJxfQw59ei69d9gYzIpSDhKa9H2LYJDr98nES87qAsAQ5TOe4Jo
- jR23AWof40JfaSgxxpYl0u44fiPt2lr+wPxrqsTB9Diw60zQYujua5RDmRWcAGOKZ2OM
- h2VQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=C7yQ0ptbZU7KZnOlxUVIZpP6EXczodGdgmJQdoW6NPg=;
- b=YKiS7TE5h/gqmU/GVHO9k1N4L8MjLiECkflNrX73UsdYzqUEEtjxQxZ2/t4Bwn1Q0S
- U6WE8p+W47Z1pftL6FHMK57FwfT5AnTxWbDrRpI9ECVfSL/XaYCVJmgZyceq4uaeOavM
- 1hB3Loolxmj83XOvGCMm5Dv41jdbNabfMUIGbyGpN7Srg+lgzML7K8TZ7AIwpvsWuTEx
- /oV0tKua12j7ynn4q1F2xMhS+46cR2+shsmfUJ8W68R2yUtXyg2KDDpqySIKI5tmkylc
- E45b8cPDlMaa9FqKtnec7GH1t25Bh0UZRO8g4+40w/i9Tw0hNpUsXANy18HcaXOnMAia
- utAQ==
-X-Gm-Message-State: AOAM530L2i3Tyk349AAMMDP7M+gFglSMUM4V/fWc5oTr8+nJZ0NsEE7c
- o7QNfkgmigFsAoyV0UTHlqg=
-X-Google-Smtp-Source: ABdhPJyN6sxJp3xEIh+JPBeCNNk7peJGmsQowVToar1yZ794e2EOEDpZLrKi9XY9ErENsvv14XbzAA==
-X-Received: by 2002:adf:f4d0:: with SMTP id h16mr315735wrp.230.1590053928141; 
- Thu, 21 May 2020 02:38:48 -0700 (PDT)
-Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id z7sm5818784wrl.88.2020.05.21.02.38.46
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 21 May 2020 02:38:47 -0700 (PDT)
-Subject: Re: [PATCH v13 5/6] rtc: mt6397: Add support for the MediaTek MT6358
- RTC
-To: Lee Jones <lee.jones@linaro.org>
-References: <1587438012-24832-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1587438012-24832-6-git-send-email-hsin-hsiung.wang@mediatek.com>
- <27c107b3-6ea8-e6f9-697c-7c3c4479008c@gmail.com>
- <20200521074718.GN271301@dell>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <e3e29827-002d-0013-b0a0-675673afbac7@gmail.com>
-Date: Thu, 21 May 2020 11:38:46 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200521074718.GN271301@dell>
+ id 1jbht8-0004YJ-AI
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 09:53:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=elJWv9W9SXN9FOfDIB5vqiUxNtWHs3XS6T7LPBzxp0c=;
+ b=nvXFhvJvCvzKfT+NHNP6T68no3VP6ZloWcrV+pOSuwA7aZL+KYXv//94EPLgYPw77JMRkN14gKVM1QCFsuQDyQqqoXw9zmmytFF4TdS8n2d2WlZODgOKoLSGPGkm96lRYi76ihCnf828WfSsA+ranKJx5Ggo9f26xNrBFGtqY5Q=
+Received: from AM6P195CA0090.EURP195.PROD.OUTLOOK.COM (2603:10a6:209:86::31)
+ by VI1PR0801MB1678.eurprd08.prod.outlook.com (2603:10a6:800:51::23) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Thu, 21 May
+ 2020 09:53:13 +0000
+Received: from VE1EUR03FT059.eop-EUR03.prod.protection.outlook.com
+ (2603:10a6:209:86:cafe::a6) by AM6P195CA0090.outlook.office365.com
+ (2603:10a6:209:86::31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23 via Frontend
+ Transport; Thu, 21 May 2020 09:53:13 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 63.35.35.123)
+ smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
+ verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
+ dmarc=bestguesspass action=none header.from=arm.com;
+Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
+ 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
+ client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
+Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
+ VE1EUR03FT059.mail.protection.outlook.com (10.152.19.60) with
+ Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3021.23 via Frontend Transport; Thu, 21 May 2020 09:53:13 +0000
+Received: ("Tessian outbound 14e212f6ce41:v57");
+ Thu, 21 May 2020 09:53:13 +0000
+X-CheckRecipientChecked: true
+X-CR-MTA-CID: 81e833b47f1966e9
+X-CR-MTA-TID: 64aa7808
+Received: from 79fd790d7951.1
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com id
+ 4D8A41B5-0FC9-4C71-A37F-DBA688D2E89D.1; 
+ Thu, 21 May 2020 09:53:07 +0000
+Received: from EUR05-DB8-obe.outbound.protection.outlook.com
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 79fd790d7951.1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+ Thu, 21 May 2020 09:53:07 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PIzmoCVjmJbgE5VbacUh7j3rdPHeIrHTNDmKieO3Ryi8ZLdc35JO3/FC7HMHZW8l2XsghUTXwxcRiqeLXVeXJl+2rRlR/TT/usbNUFze8MzRZBsOVdK99BBDwtRhQlrYATZNnyom6ZTTU9nHdOa7iGH1FJTGpkWPk3sqA6ccHg2Nb/klF/MtTLcHARkGg3c7JDLkhcy1PttxjL+7pNR0t30GHj9A5TNE5fMe3i6NhZYtRKbFNdh2smf+M1mu+/68afLyGRZi38Boj9uNhpIZMJLBqFojRZEm+gPETeV+Opa5aZ36DzMycGv9kU99ZcuVemebptbIx1cxJNx3NU7qqQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=elJWv9W9SXN9FOfDIB5vqiUxNtWHs3XS6T7LPBzxp0c=;
+ b=H3S4ZYKqE0aRZTo3xu/eFBLnlBUm0Xr7aT4pZroxHwcnDUKzq963GhwpZsV7zlShYr8vzUONm4nolv4ZgIiEF/oxCgPkT4dFUfcfcnkDtsrZ/u99L5j/Eae2m2YzpDzSlqaNAi89azHMOcJ1nUc+5MsIjt8tjWvgtoQ/AebcLYGUQnFRSwK063lgOS/38K8WSedBTU5ENTDIiFN/eO6EU+sZ97YmHLLIUzlMPKREFKvlPGRSnWdcx4/ZkzCnUHut4kcq+e4H6Vwu339wggZ8K4IbwrbvWsyLmRG2qXvFDlo0ob5Pt3ySkO9E4TgvDry+tLjPACNZH+6pN0kfAizQoA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
+ header.d=arm.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=elJWv9W9SXN9FOfDIB5vqiUxNtWHs3XS6T7LPBzxp0c=;
+ b=nvXFhvJvCvzKfT+NHNP6T68no3VP6ZloWcrV+pOSuwA7aZL+KYXv//94EPLgYPw77JMRkN14gKVM1QCFsuQDyQqqoXw9zmmytFF4TdS8n2d2WlZODgOKoLSGPGkm96lRYi76ihCnf828WfSsA+ranKJx5Ggo9f26xNrBFGtqY5Q=
+Received: from DB8PR08MB5259.eurprd08.prod.outlook.com (2603:10a6:10:bf::13)
+ by DB7SPR01MB0021.eurprd08.prod.outlook.com (2603:10a6:10:54::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.24; Thu, 21 May
+ 2020 09:53:06 +0000
+Received: from DB8PR08MB5259.eurprd08.prod.outlook.com
+ ([fe80::2007:5b72:7c24:6aa6]) by DB8PR08MB5259.eurprd08.prod.outlook.com
+ ([fe80::2007:5b72:7c24:6aa6%4]) with mapi id 15.20.3000.034; Thu, 21 May 2020
+ 09:53:06 +0000
+From: Daniel Kiss <Daniel.Kiss@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v3 0/2] arm64 sigreturn unwinding fixes
+Thread-Topic: [PATCH v3 0/2] arm64 sigreturn unwinding fixes
+Thread-Index: AQHWLs/q+xvcbV1xb0SmC4b7uP/0L6iyTaAA
+Date: Thu, 21 May 2020 09:53:06 +0000
+Message-ID: <6FA38993-9FB1-4935-BB44-B3F42BC8C6CD@arm.com>
+References: <20200520175539.28464-1-will@kernel.org>
+In-Reply-To: <20200520175539.28464-1-will@kernel.org>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Apple Mail (2.3608.80.23.2.2)
+Authentication-Results-Original: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=arm.com;
+x-originating-ip: [2001:4c4c:1b20:6f00:58f8:a998:501e:41d9]
+x-ms-publictraffictype: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 8640ab05-073d-40f9-56b9-08d7fd6cc6f6
+x-ms-traffictypediagnostic: DB7SPR01MB0021:|VI1PR0801MB1678:
+x-ms-exchange-transport-forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0801MB1678A5A289118F6A6590CA1BECB70@VI1PR0801MB1678.eurprd08.prod.outlook.com>
+x-checkrecipientrouted: true
+nodisclaimer: true
+x-ms-oob-tlc-oobclassifiers: OLM:1388;OLM:1388;
+x-forefront-prvs: 041032FF37
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: nrlD+ZrGm5GX9R8pLmBt33f8CzdM4Nfpwc7XTl8tWU1fJ0pQr4DZ8MgVcdjFQRWkY/yhq+Jlv8oBfpIfvu3lfsU78FKSU2wLRuaaqIItoR67AfMaV1gYDldrBojzKaySVBKnUvbg8MWq8gl8J1QMvAuyeXmn7n6kwQRPzH7JK/6sUIrPJcPN3qWKd84aVdNvf5hLKyy7JHd4eiR5NKoa2EvX1R5rwFANK4YNzPRlR9STaNEqkkAWkZ3Chc4JnVIsyVi6pBfYL1wrm56p8Xtt/GkogL9Ufa8u2gfNeoXPFarIJwhpt59ghvzNzD2MxaRf9brF0RJRkYeIa/kv6wcjZv+5uOqL961UcDqBl5kFtJjXd7Di3Mt3PuiVDsCkJv1NMf2Nt2rtfZnWbQZ++RheOA==
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255; CTRY:; LANG:en;
+ SCL:1; SRV:; IPV:NLI; SFV:NSPM; H:DB8PR08MB5259.eurprd08.prod.outlook.com;
+ PTR:; CAT:NONE; SFTY:;
+ SFS:(4636009)(376002)(346002)(396003)(136003)(39860400002)(366004)(6486002)(33656002)(8936002)(86362001)(54906003)(316002)(6506007)(53546011)(8676002)(186003)(5660300002)(6512007)(91956017)(6916009)(36756003)(2616005)(4326008)(966005)(64756008)(76116006)(66946007)(2906002)(66476007)(66556008)(478600001)(71200400001)(66446008);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: xrZDZUm6gaauaB03VKTH8WaSKLZfj+ACvR452V9rfVMlrot8oWjwBj8gNjpx3iBF0IxCHfaKU5iGcw++Wh0byg1CwqQRESEVfIg0L7v569JooaUCZaN31DAlbuAXcsQnGZJeD8jZCpmndcjKCZZxENr2eCp1H9eF1mUFWGwdHAXIas/xiiZmz1i9o4tB3L7gJdCJQxpTqmp9qVBnU3LPyWciNTnrEjA3aW7Btm+M1j1vfcReuf9SC2JiAbtOHp4Bo/99MITySM/twXCZRiYKx2N6+44UWWQdq39mPD5PUbLZ2S3GXNC9ZIoKLyugQWD0SWqnBzfWz8yMqGYmNQZ6kHAJ1GmL9ZiSH4XUZuajX7c+t+Ng1YY//yQgfkZJa5BCi7XWphaz+TP3/kB+pAIEJ2kNYptSFqEtnQaM/HFCh4V7xITyDmLga5mYyFuWM3XaGbWpK4MzYtmVVixi9kZ7tbefyCPIXQfRBfHI5td5LUdqp2/aPsQqvEnNTbWwDhHxWcn6zFOuNOfP7stUdna1wlevhCefsaQ9ogQlzPQAEp/jtNTTjLOTZZ00ryL8DdQi
+Content-ID: <1BCD75C526F1394085674F3EB70EFD21@eurprd08.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7SPR01MB0021
+Original-Authentication-Results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=arm.com;
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: VE1EUR03FT059.eop-EUR03.prod.protection.outlook.com
+X-Forefront-Antispam-Report: CIP:63.35.35.123; CTRY:IE; LANG:en; SCL:1; SRV:;
+ IPV:CAL; SFV:NSPM; H:64aa7808-outbound-1.mta.getcheckrecipient.com;
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; CAT:NONE; SFTY:;
+ SFS:(4636009)(396003)(346002)(136003)(376002)(39860400002)(46966005)(478600001)(2616005)(6512007)(6486002)(966005)(26005)(186003)(53546011)(33656002)(6506007)(86362001)(70206006)(8676002)(82310400002)(70586007)(54906003)(5660300002)(36756003)(4326008)(81166007)(356005)(336012)(82740400003)(2906002)(36906005)(8936002)(47076004)(6862004)(107886003)(316002);
+ DIR:OUT; SFP:1101; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: 03a34fcb-c2c8-4b59-5cdf-08d7fd6cc31c
+X-Forefront-PRVS: 041032FF37
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: SxFz7Bf0PKijy1XlLZRxJzPyXunarKHxDBjDMwR0GF5G4q1ew3Suecm5Nl7ge7Rki+vSdGqIINqLG7rcvZ6yvBcUN/7oxJGwo9HLbf7BIFFw6c1w8aNkaiek0G/AQnLnKd3h7bH3ZD6qlqScBn2npcS5am+MLHaMYhvG+kBksjsjkZLnD0UzVoUaPX9ZOQrKwwr9bH+tXmUmQhwnQscaFW8mLCB3YKg77iyaBvdCd9vo02aNgNojBCbSXAWutM8eJ1fklnMwrPxd/D4Eg6ZJOxyleRKiXne6u5hjPm7Y/6iSY5FZYcTZV5MnJITs5P0LY+JG0fjZ1aC23i1+YQxm7pGRk+80ntYeW/aYZ00Ckg9Rg2Gl/oDt1dIezXqvY7txkYVCuTdnVXKkJPs5UfMwJCZUH8kJVVTdNq9jvRwwT33y9Ejr/dxNTpUJvvzMYq/7uKVXmQJtPgBLnYnuHLuNHrHZvS4fbI2wDzO+FpvmbD4=
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 May 2020 09:53:13.1543 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8640ab05-073d-40f9-56b9-08d7fd6cc6f6
+X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
+ Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0801MB1678
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_023850_763796_2135820A 
-X-CRM114-Status: GOOD (  13.21  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200521_025318_430074_24E8678F 
+X-CRM114-Status: GOOD (  10.48  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.3.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.3.78 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -177,55 +178,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, Frank Wunderlich <frank-w@public-files.de>,
- Josef Friedl <josef.friedl@speed.at>, Ran Bi <ran.bi@mediatek.com>,
- Sean Wang <sean.wang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
- linux-kernel@vger.kernel.org, Richard Fontana <rfontana@redhat.com>,
- devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- Eddie Huang <eddie.huang@mediatek.com>,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+Cc: Tamas Zsoldos <Tamas.Zsoldos@arm.com>, Mark Brown <broonie@kernel.org>,
+ "kernel-team@android.com" <kernel-team@android.com>,
+ Dave P Martin <Dave.Martin@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Will,
 
+Works okay, LGTM.
 
-On 21/05/2020 09:47, Lee Jones wrote:
-> On Sat, 16 May 2020, Matthias Brugger wrote:
+Thanks for the patch.
+
+Cheers,
+Daniel
+
+> On 20 May 2020, at 19:55, Will Deacon <will@kernel.org> wrote:
 > 
->> Hi Lee,
->>
->> On 21/04/2020 05:00, Hsin-Hsiung Wang wrote:
->>> From: Ran Bi <ran.bi@mediatek.com>
->>>
->>> This add support for the MediaTek MT6358 RTC. Driver using
->>> compatible data to store different RTC_WRTGR address offset.
->>> This replace RTC_WRTGR to RTC_WRTGR_MT6323 in mt6323-poweroff
->>> driver which only needed by armv7 CPU without ATF.
->>>
->>> Signed-off-by: Ran Bi <ran.bi@mediatek.com>
->>> Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
->>> Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
->>> Acked-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
->>> Acked-by: Sebastian Reichel <sre@kernel.org>
->>> Reviewed-by: Yingjoe Chen <yingjoe.chen@mediatek.com>
->>
->> We have Acked-by from rtc and reset drivers maintainers. Are you OK to take them
->> through your mfd branch?
->>
->> Are you planning to queue them for v5.8?
->>
->> Just asking because if so I'd queue patch 6 through my tree.
+> Hi folks,
 > 
-> Yes, please take patch 6.
+> Here is v3 of my attempt at fixing the vdso sigreturn code for unwinders.
+> Previous versions are available here:
+> 
+>  v1: https://lore.kernel.org/r/20200519121818.14511-1-will@kernel.org
+>  v2: https://lore.kernel.org/r/20200519162821.16857-1-will@kernel.org
+> 
+> Changes since v2 include:
+> 
+>  * Fix the .cfi directives to identify the link register correctly
+>  * Even more comments
+> 
+> Daniel, please can you give this a spin with the LLVM unwinder? It should work
+> this time.
+> 
+> Cheers,
+> 
+> Will
+> 
+> Cc: Dave Martin <dave.martin@arm.com>
+> Cc: Tamas Zsoldos <tamas.zsoldos@arm.com> 
+> Cc: Daniel Kiss <daniel.kiss@arm.com>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: <kernel-team@android.com>
+> 
+> --->8
+> 
+> Will Deacon (2):
+>  arm64: vdso: Don't prefix sigreturn trampoline with a BTI C
+>    instruction
+>  arm64: vdso: Fix CFI directives in sigreturn trampoline
+> 
+> arch/arm64/include/asm/linkage.h     |  6 ++--
+> arch/arm64/kernel/vdso/sigreturn.S   | 51 ++++++++++++++++++++++++----
+> arch/arm64/kernel/vdso32/sigreturn.S | 19 ++++++-----
+> 3 files changed, 58 insertions(+), 18 deletions(-)
+> 
+> -- 
+> 2.26.2.761.g0e0b3e54be-goog
 > 
 
-Thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
