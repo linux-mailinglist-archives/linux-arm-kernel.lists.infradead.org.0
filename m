@@ -2,55 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC0D31DCEAF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 15:56:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C7261DCED2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:00:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fbImpM1KV6N7PvhI+QVrGyCxPvx9NON5ubx3JqnVUFE=; b=JQDu3nl1PCY8Zx
-	F70U/5AqVbSmyJkkgMQFXsMfYjKKb9TF+PX/kKScZnTum2kCkT3A8FYhBTaL2A4SodR7BbgSjvMYh
-	vndmhsRW8iiJ5krfVpcQ2FnAHyEpmyy1ZLKhE8PM782xPUpa2u8QP0P5s5mkZVoZ0s4lwWdkquS/O
-	77z7nQSDwDldnw+YkYO41GPxFRfxKphld9MjsGL6rjmaiyG1kc1bHsNYKChCwqd9nTTw/vAXkvFNC
-	anBQaD9891b601r5+jS0Xi3tD8/ju22He0yGdu/Spx5igczPAzXSRxkBxoVQ75m/Txe9MogP4RWMB
-	8p0cWIQrqw/e+ZLDz0XA==;
+	List-Owner; bh=LD7x1IPNLTVSVWg6Qc4g5Vo0TRNPtWfMM3GP3FP1vcA=; b=i4m1tA8W1ZOjH0
+	tzDm3jdeksMi4aW0Hxlfy6AWxzR1vPEtT2atkuNZ5GySRfWZp+q1vSdXKfZjT2L6KoKjUYuZF6HX1
+	W7hlA24uCOVTdPfis/2e80GaTR8TgCTQLxdN4VmPn/FXCfyRaf07Bp71B+Dp8zqa2CXOCl+CtdUeI
+	qBso1O40E/s6dxrlw8sSmn7hUq8uNoowI+UuIj7RvDx8Z9wn+1ZibzHxYirohPkHXR5T4YZxgq1r8
+	irdw0J+pXHEEw6xIz8sUPmYEadSBXAlcgn5lqsh4xl4Jh3l+twzgz04lOwjFXMhlz4QtrqyEgEBjs
+	9F1MUwqJZULTAYwKXLoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jblgK-0004LB-Ny; Thu, 21 May 2020 13:56:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jblg3-0004KC-9y
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 13:56:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5CBCD6E;
- Thu, 21 May 2020 06:56:02 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.114])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A43143F305;
- Thu, 21 May 2020 06:56:00 -0700 (PDT)
-Date: Thu, 21 May 2020 14:55:57 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Tuan Phan <tuanphan@os.amperecomputing.com>
-Subject: Re: [PATCH v2] perf: arm_dsu: Support DSU ACPI devices.
-Message-ID: <20200521135557.GB12282@bogus>
-References: <1589229160-18558-1-git-send-email-tuanphan@os.amperecomputing.com>
+	id 1jbljp-0004wR-If; Thu, 21 May 2020 13:59:57 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jblja-0004v3-8s
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 13:59:43 +0000
+Received: by mail-wr1-x441.google.com with SMTP id e1so6763407wrt.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 May 2020 06:59:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=fd27zalAyz5wmnk1UFuL/3CVJVB2Mbru00pqm3YvwKU=;
+ b=TZEsQQmRmAtlsPZ6hEPx1lfN+WVfX9faQiHdd1FC5rdGKNoEokI5y6RqM2R5AunejI
+ u538EoIRYq37DBlxBdB5BCNFnYNB9Adj3e0xFr5JZI02zmw4mzuluXYm9cnjbvpKyKgs
+ AgA/U/12lSi6ar8khG8bQKCe9ydhwDp5gYliM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=fd27zalAyz5wmnk1UFuL/3CVJVB2Mbru00pqm3YvwKU=;
+ b=kCltfItWlsnL+Y/Z7sAZKFIIzpmbMvdCR5hI7CbGCNt6Rk4Ey9cJch5NIHFObq9L+5
+ /CDoz/xQZqKoAkRNaoDDNhZrEUHkPnFxzdlqOHPOD2ECo4/KRzuK4bQI8wnWTVjUMfiY
+ DIvNFGbVTBpvdLupyGOjNK+FbBltXaDoFVB7kJNNBdMD6I52FMTk3yEmN53pzvh6yFFp
+ /45LcM196xm1nVHnJrVzaP81I6samop59NzXkPTltU4mxTp1RgLg+SYkeRbHcxLyj6RO
+ cpHEGgBKaZS4KTyXcNh4VeDcA3KNlD9RKKkFPypNMkD84skcGQ5i2XBrYPNTh+sDN75W
+ 01/g==
+X-Gm-Message-State: AOAM531h96d8kYUBQLc64Hy2e/OKJ4EgGPLBFhJJTTscuj8b5duWClge
+ zBphbfxJEkCrTHHiynpnADoliQ==
+X-Google-Smtp-Source: ABdhPJzYH1Ehd7L4WwVhzu2u//nGcgv2AbmGEgmxLvE9GqtTmu1vDDGQKL8r/UbPrLf9oXWCdRfLAA==
+X-Received: by 2002:a5d:68cb:: with SMTP id p11mr8426488wrw.349.1590069580276; 
+ Thu, 21 May 2020 06:59:40 -0700 (PDT)
+Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
+ [35.190.215.205])
+ by smtp.gmail.com with ESMTPSA id c17sm6505348wrn.59.2020.05.21.06.59.39
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 21 May 2020 06:59:39 -0700 (PDT)
+Date: Thu, 21 May 2020 13:59:37 +0000
+From: Tomasz Figa <tfiga@chromium.org>
+To: Xia Jiang <xia.jiang@mediatek.com>
+Subject: Re: [PATCH v8 04/14] media: platform: Change the fixed device node
+ number to unfixed value
+Message-ID: <20200521135937.GD209565@chromium.org>
+References: <20200403094033.8288-1-xia.jiang@mediatek.com>
+ <20200403094033.8288-5-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1589229160-18558-1-git-send-email-tuanphan@os.amperecomputing.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200403094033.8288-5-xia.jiang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_065603_397166_30D49ED7 
-X-CRM114-Status: GOOD (  18.12  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200521_065942_338422_AEE22179 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,102 +98,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-kernel@vger.kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, patches@amperecomputing.com,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: drinkcat@chromium.org, devicetree@vger.kernel.org, mojahsu@chromium.org,
+ srv_heupstream@mediatek.com, Rick Chang <rick.chang@mediatek.com>,
+ senozhatsky@chromium.org, linux-kernel@vger.kernel.org,
+ maoguang.meng@mediatek.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ sj.huang@mediatek.com, Rob Herring <robh+dt@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-mediatek@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 01:32:40PM -0700, Tuan Phan wrote:
-> Add ACPI node probing device support. Each DSU ACPI node
-> defines a "cpus" package with a per cpu MPIDR element.
-> 
-> Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
-> ---
-> Changes in v2:
-> - Removed IRQF_SHARED.
-> - Fixed ACPI runtime detection.
-> 
-> The ACPI binding spec for DSU ACPI node is under beta and located
-> in ARM server group under project "ACPI on ARM".
-> 
->  drivers/perf/arm_dsu_pmu.c | 71 ++++++++++++++++++++++++++++++++++++++++------
->  1 file changed, 63 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/perf/arm_dsu_pmu.c b/drivers/perf/arm_dsu_pmu.c
-> index 70968c8..784d177 100644
-> --- a/drivers/perf/arm_dsu_pmu.c
-> +++ b/drivers/perf/arm_dsu_pmu.c
-> @@ -11,6 +11,7 @@
->  #define DRVNAME		PMUNAME "_pmu"
->  #define pr_fmt(fmt)	DRVNAME ": " fmt
->  
-> +#include <linux/acpi.h>
->  #include <linux/bitmap.h>
->  #include <linux/bitops.h>
->  #include <linux/bug.h>
-> @@ -603,18 +604,21 @@ static struct dsu_pmu *dsu_pmu_alloc(struct platform_device *pdev)
->  }
->  
->  /**
-> - * dsu_pmu_dt_get_cpus: Get the list of CPUs in the cluster.
-> + * dsu_pmu_dt_get_cpus: Get the list of CPUs in the cluster
-> + * from device tree.
->   */
-> -static int dsu_pmu_dt_get_cpus(struct device_node *dev, cpumask_t *mask)
-> +static int dsu_pmu_dt_get_cpus(struct platform_device *pdev)
->  {
->  	int i = 0, n, cpu;
->  	struct device_node *cpu_node;
-> +	struct dsu_pmu *dsu_pmu =
-> +		(struct dsu_pmu *) platform_get_drvdata(pdev);
->  
-> -	n = of_count_phandle_with_args(dev, "cpus", NULL);
-> +	n = of_count_phandle_with_args(pdev->dev.of_node, "cpus", NULL);
->  	if (n <= 0)
->  		return -ENODEV;
->  	for (; i < n; i++) {
-> -		cpu_node = of_parse_phandle(dev, "cpus", i);
-> +		cpu_node = of_parse_phandle(pdev->dev.of_node, "cpus", i);
->  		if (!cpu_node)
->  			break;
->  		cpu = of_cpu_node_to_id(cpu_node);
-> @@ -626,11 +630,54 @@ static int dsu_pmu_dt_get_cpus(struct device_node *dev, cpumask_t *mask)
->  		 */
->  		if (cpu < 0)
->  			continue;
-> -		cpumask_set_cpu(cpu, mask);
-> +		cpumask_set_cpu(cpu, &dsu_pmu->associated_cpus);
->  	}
->  	return 0;
->  }
->  
-> +/**
-> + * dsu_pmu_acpi_get_cpus: Get the list of CPUs in the cluster
-> + * from ACPI.
-> + */
-> +static int dsu_pmu_acpi_get_cpus(struct platform_device *pdev)
-> +{
-> +	int i, cpu, ret;
-> +	const union acpi_object *obj;
-> +	struct acpi_device *adev = ACPI_COMPANION(&pdev->dev);
-> +	struct dsu_pmu *dsu_pmu =
-> +		(struct dsu_pmu *) platform_get_drvdata(pdev);
-> +
-> +	ret = acpi_dev_get_property(adev, "cpus", ACPI_TYPE_PACKAGE, &obj);
+Hi Xia,
 
-I don't see any property "cpus" in the document:
-DEN 0093 A (Generic ACPI for Arm Components 1.0) [1]
+On Fri, Apr 03, 2020 at 05:40:23PM +0800, Xia Jiang wrote:
+> Change device node number from 3 to -1 because that the driver will
+> also support jpeg encoder.
+> 
 
-Is there any newer updates that I need to look at ?
+Thanks for the patch. The change is correct, but I think the commit
+message doesn't really explain the real reason for it. Perhaps something
+like
 
--- 
-Regards,
-Sudeep
+"The driver can be instantiated multiple times, e.g. for a decoder and
+an encoder. Moreover, other drivers could coexist on the same system.
+This makes the static video node number assignment pointless, so switch
+to automatic assignment instead."
 
-[1] https://static.docs.arm.com/den0093/a/DEN0093_ACPI_Arm_Components_1.0.pdf
+WDYT?
+
+Best regards,
+Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
