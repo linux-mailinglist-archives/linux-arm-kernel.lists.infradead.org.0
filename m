@@ -2,93 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87B711DC7F4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 09:47:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 419991DC7F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 09:48:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/rydkF4dJLp9TtcxJIqrbF2yrcgF/ukAPeVSGJm3i8k=; b=dJMrSq9JX6KNYN
-	qRmLjuXeF4Tcr4gyjUOd3+aYBB7dcYxZ8/giv5Ug1ZP9Qwn/Nnn5UUz0bm8mffSJ8U3c0y1gZDOwE
-	0hlqTjTjy/xbgVKkgR8LRj2sb/txjJrHSzu4KF7S0xEw43pQ3pBbA0+uVlnR3gD5NBwV1EQrfDDOO
-	6/iVIw02rb7KgMp+qFJGTXTp86wJ7m2Iu0PLP6ORG0Zet3Hl17rjElvvEWwLvui8f1TyrsME4fs2V
-	0Ocrp3qvOppvOr2pUsA3nhb5Xourbq7innnaEBTJ99X5u9O8sYFJtZC0Dw//5JQx9fCGeWg83YCFs
-	5rTRP6h3OBodVE38MSrA==;
+	List-Owner; bh=J3utY9iQhp4fSIUWY2I1FkD5UUz97rS2sslos5FK7zI=; b=U1qtlPOQ8fm62s
+	JTkvORoIdZaBiYkHmlhJB0Ditt/40SUjnKy5VPt+XDNDXpzl1ixr54cvz4aNkH8QAgf2tkvMP6Bwc
+	YZB3lV93wtdY39aXhkjb1f3SMXKMkISQX5+rXHM0O0fVRiqyJ3fVTJLmeBMXBv03wW1xQZ5Hkukcs
+	PJ9lhSpSoX+y4rq7fOwvCicnf7fhNWC0L4fmr/hh5Cxj+vwFc55teQY4NRZk5D5AwAwD+puHfhEhw
+	mRYLnrIDTYxg1+RNyzxcHzJd73HQg5cMZCfwTvsA4/R19GxjaMEZP35xNVW6vqNMP7m22aC1rX5i9
+	o1oUO/Y0444GdN3Pd3TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbfvb-0001r8-Sd; Thu, 21 May 2020 07:47:43 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jbfwE-00029v-2q; Thu, 21 May 2020 07:48:22 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbfvQ-0001pd-OZ
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 07:47:34 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x14so305419wrp.2
+ id 1jbfw4-00028N-Lg
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 07:48:14 +0000
+Received: from mail-qt1-f182.google.com ([209.85.160.182]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MC2k1-1jlpTJ3NG9-00CR6e for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 21 May 2020 09:48:01 +0200
+Received: by mail-qt1-f182.google.com with SMTP id m44so4774336qtm.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 00:47:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=scVYFjBGBAzKQ/hMy8PhK3pElGqsrP2y83QVfuiAxH4=;
- b=vqpwnjz86M45u3Gnp4IxKufT5KEo7fxf+vl36qzM3nHslyhDCEJIEgQAXKyrOkPOzr
- sxkJdaadCkojgsCryJFV/NsqAGAwrjmBPRNvm9KBnA7Rh2O1j/zY5DwTpPhcFG/rXfkM
- 6S23fM0SLLJ7TiHNbL0XWiLK7+upJ5+t62Ye2cO2Wkc0mHW9D9DAJ/WC/rz68M4FmrLX
- k27QqVbp3qP4CmlFWSn5xCNh4GWwvUfMdUElIrpD+rHd5Pa/4AMCOHm/zmAtjuENvG0C
- TUv6XE2S4gfjQ9slqcNHl1ztwdytcQWprTsMRJNpfjLkzetO4LLbY5K/5RpxkGAy8lfS
- nK7Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=scVYFjBGBAzKQ/hMy8PhK3pElGqsrP2y83QVfuiAxH4=;
- b=soQb6s56Ckhj3SpQIDl/EXYLo9d0oUH/4TSDMlu74XvPfwbko64vJKYjJPZ5Qlucz+
- e7waWhHUsRnNzfjzXmtVdo82CSV1NklkiqegValfLkAu877+WXPZfnZcXzg8P+WLQ6VA
- OUsR2LQydIp4PmLZkWAw9dPO/hKS3jClFf6Y5fG6oWR6A/Mb0+m/4mUxdgVJjN/jeFOA
- 1T1bEFR2DsZ09J7NOzX2zK7ywy6jQS4o+wFEXIVULiWPI8lV9V4ksBQpZpdsqDCxGZfS
- Ypae2t+XpKeyFdggzwERekro/dyjs0rYOAN5NyPUuxgV2xfT9au5vpB6WEIBITRYfo6x
- lckw==
-X-Gm-Message-State: AOAM531RFNW3Tvzoo4ZuCR4HHJ58BaV4YOI2wbRYdXgcwf+ATtP/jM0r
- TPrmtirJLgwq6klHtGDM9pNedQ==
-X-Google-Smtp-Source: ABdhPJxcZ6ZWteBLNFuVjrXs9CMtGph22AZeEwlyAM3AdFye7vHS83vjlNDUgEYM0NT1woW4CXf4Zg==
-X-Received: by 2002:adf:9010:: with SMTP id h16mr7329094wrh.412.1590047241123; 
- Thu, 21 May 2020 00:47:21 -0700 (PDT)
-Received: from dell ([95.149.164.102])
- by smtp.gmail.com with ESMTPSA id h20sm5542798wma.6.2020.05.21.00.47.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 May 2020 00:47:20 -0700 (PDT)
-Date: Thu, 21 May 2020 08:47:18 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: Re: [PATCH v13 5/6] rtc: mt6397: Add support for the MediaTek MT6358
- RTC
-Message-ID: <20200521074718.GN271301@dell>
-References: <1587438012-24832-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1587438012-24832-6-git-send-email-hsin-hsiung.wang@mediatek.com>
- <27c107b3-6ea8-e6f9-697c-7c3c4479008c@gmail.com>
+ Thu, 21 May 2020 00:48:00 -0700 (PDT)
+X-Gm-Message-State: AOAM530nxk6HAbNXTebbTwK4OiP+JYGPTvkkk/JmRRGbu2yIZssX99HD
+ O5RahQ/UykiqudJS+uNS5fAfk+6gEbBTF6qtU88=
+X-Google-Smtp-Source: ABdhPJxsllVPPnQ/Wh5Vjw2Lya2mPuuI1VPenv+J+BRar0/wWQ3ChxOv7xHSpUGvdRoNdnHoPWlhM+ABRapjikubP4w=
+X-Received: by 2002:ac8:518f:: with SMTP id c15mr8985893qtn.142.1590047279711; 
+ Thu, 21 May 2020 00:47:59 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <27c107b3-6ea8-e6f9-697c-7c3c4479008c@gmail.com>
+References: <20200506235009.25023-3-f.fainelli@gmail.com>
+ <20200507072711.GB683243@linux.ibm.com>
+ <bc44ed27-7dd7-67b6-93cf-f6f575b59441@gmail.com>
+ <a7c86780-d65c-ab7b-ec3c-4029257cee7a@gmail.com>
+ <20200518194533.GD1059226@linux.ibm.com>
+ <CAK8P3a1hd2uKsncgd=eyY1VHBbB8fPBDCWsyHpHT7q9eJp-URw@mail.gmail.com>
+ <20200519144306.GE1059226@linux.ibm.com>
+ <20200519150452.GH1551@shell.armlinux.org.uk>
+ <20200519152714.GF1059226@linux.ibm.com>
+ <CAK8P3a2iZNm310x8g2Zv0TjGJ=Px7hu14i3Ka7GQBZwyKPUesA@mail.gmail.com>
+ <20200519165445.GI1551@shell.armlinux.org.uk>
+ <CAK8P3a32gDzqLBeBs8CtT9fhRncQNsJ0nrN=2Ws4DAWe3nOCZA@mail.gmail.com>
+ <6d7c3b4f-dde2-95a8-8d36-03ba957aa133@gmail.com>
+In-Reply-To: <6d7c3b4f-dde2-95a8-8d36-03ba957aa133@gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 21 May 2020 09:47:43 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3=haKkZkBPpuRhqfUjEBoyHi4FeS4vSA4Cx6ah_3JABQ@mail.gmail.com>
+Message-ID: <CAK8P3a3=haKkZkBPpuRhqfUjEBoyHi4FeS4vSA4Cx6ah_3JABQ@mail.gmail.com>
+Subject: Re: [PATCH 2/2] ARM: Allow either FLATMEM or SPARSEMEM on the
+ multiplatform build
+To: Florian Fainelli <f.fainelli@gmail.com>
+X-Provags-ID: V03:K1:6YdNfHwyBC+kGgBGRZwIHIiIsR6nmqtWxsNuSgrilimerZhPgz3
+ 0QVs5K1MuSYwKFokj8bVSC1h4+GWMpF9uwCEDUkyZHhTZVkzWNiyAyADHgta3BEh6I/cZaD
+ rvtJilEj6t3ow5rHprWgCWK9K2tSKbJf0mvKbwv4OFtLn1O3Rf/5zy07P3RqB0fy2HGK7F+
+ eVgHmZ3L4JG97we6Gzz/Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:yq13xpFhY/I=:LQYLJSxh3Mk0sjOgIUasNt
+ VUsQh/rIrpsc/bz9/lMpPa0QlYZdjHnXO3Eg8Lm+Y3IQvvCUnkcPY8w7qxYXk1CiTM0CtEK0f
+ 0tpFU36Zx69PzTlaMoIRYXzurbFC9O1BtC5CzZpI3OW/Hq/NLp+VMDzN4X4voIGO3GiDCQkDU
+ 97ej9oux41JuHRTT7rkjz7bchwE4abk4dozBzuPir/OQsjgqPCaBumnbdvWGbpSPMYz9JiUz7
+ 1/nEuTESUs6Q2CgtPvdO1nC5pkyzn3ooCOKlhxlNHXu/1pFM48EQSL7540gxvQEgPR0BPJry9
+ j3T1q5X1qD5UygfYnptdFLucAvpmsxmtjb2rY7Fiy84L/fdKtrujmOzp+s+zFdO/dVOhokUJ+
+ TALCPAZZcwNm9E0jFdRCge+tBh/sFCPdtKO9KjlFxiAITIKu4nEmw/eKz17YkTU0UnQWXiKsB
+ m9SRk99MjYSJC2OxRAhjH9L5pbk4EAoIoF7uapl5U++8VkDWXy/DV3z8g5ama4F/RviFhd1TJ
+ VVscS7Y/LiK/tGu3bq5TzT9OgHWcv1tcVFhDTY2yFHAUivXiC7dBBdCaBJ2teAsK9yk65kQKh
+ 7de/MkL5kn2c7Blw/7eO2cHY4rXq5/O1DdUfCNZ52UZPOihsOHrqI/Pqk9mUAEeo5zyF0vOSL
+ uKxIQ712cv0o1wpCWBOemnXd4MGEBPVH7q/FOgmDq5FhD/cAQ0n+TVn8bL5pZHjFRTX0edWQR
+ M30j1N5PcJl+M4dIS0yvP3oHmQpoceYsgcyCmvvq3gjs2j0G8tNj5eeEIZoB1oL55cnStIa20
+ 1cH5r4dNtLUMr7si92WOuhchSkhTZggGRTWLHuDh0KyB6LUdWM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_004732_802653_0FAFB8C2 
-X-CRM114-Status: GOOD (  13.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200521_004813_005876_37E8C603 
+X-CRM114-Status: GOOD (  20.75  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [212.227.126.131 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.131 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,43 +100,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, Frank Wunderlich <frank-w@public-files.de>,
- Josef Friedl <josef.friedl@speed.at>, Ran Bi <ran.bi@mediatek.com>,
- Sean Wang <sean.wang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
- linux-kernel@vger.kernel.org, Richard Fontana <rfontana@redhat.com>,
- devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-pm@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- Eddie Huang <eddie.huang@mediatek.com>,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Doug Berger <opendmb@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ Kevin Cernekee <cernekee@gmail.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Mike Rapoport <rppt@linux.ibm.com>, Gregory Fong <gregory.0xf0@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU2F0LCAxNiBNYXkgMjAyMCwgTWF0dGhpYXMgQnJ1Z2dlciB3cm90ZToKCj4gSGkgTGVlLAo+
-IAo+IE9uIDIxLzA0LzIwMjAgMDU6MDAsIEhzaW4tSHNpdW5nIFdhbmcgd3JvdGU6Cj4gPiBGcm9t
-OiBSYW4gQmkgPHJhbi5iaUBtZWRpYXRlay5jb20+Cj4gPiAKPiA+IFRoaXMgYWRkIHN1cHBvcnQg
-Zm9yIHRoZSBNZWRpYVRlayBNVDYzNTggUlRDLiBEcml2ZXIgdXNpbmcKPiA+IGNvbXBhdGlibGUg
-ZGF0YSB0byBzdG9yZSBkaWZmZXJlbnQgUlRDX1dSVEdSIGFkZHJlc3Mgb2Zmc2V0Lgo+ID4gVGhp
-cyByZXBsYWNlIFJUQ19XUlRHUiB0byBSVENfV1JUR1JfTVQ2MzIzIGluIG10NjMyMy1wb3dlcm9m
-Zgo+ID4gZHJpdmVyIHdoaWNoIG9ubHkgbmVlZGVkIGJ5IGFybXY3IENQVSB3aXRob3V0IEFURi4K
-PiA+IAo+ID4gU2lnbmVkLW9mZi1ieTogUmFuIEJpIDxyYW4uYmlAbWVkaWF0ZWsuY29tPgo+ID4g
-U2lnbmVkLW9mZi1ieTogSHNpbi1Ic2l1bmcgV2FuZyA8aHNpbi1oc2l1bmcud2FuZ0BtZWRpYXRl
-ay5jb20+Cj4gPiBSZXZpZXdlZC1ieTogTmljb2xhcyBCb2ljaGF0IDxkcmlua2NhdEBjaHJvbWl1
-bS5vcmc+Cj4gPiBBY2tlZC1ieTogQWxleGFuZHJlIEJlbGxvbmkgPGFsZXhhbmRyZS5iZWxsb25p
-QGJvb3RsaW4uY29tPgo+ID4gQWNrZWQtYnk6IFNlYmFzdGlhbiBSZWljaGVsIDxzcmVAa2VybmVs
-Lm9yZz4KPiA+IFJldmlld2VkLWJ5OiBZaW5nam9lIENoZW4gPHlpbmdqb2UuY2hlbkBtZWRpYXRl
-ay5jb20+Cj4gCj4gV2UgaGF2ZSBBY2tlZC1ieSBmcm9tIHJ0YyBhbmQgcmVzZXQgZHJpdmVycyBt
-YWludGFpbmVycy4gQXJlIHlvdSBPSyB0byB0YWtlIHRoZW0KPiB0aHJvdWdoIHlvdXIgbWZkIGJy
-YW5jaD8KPiAKPiBBcmUgeW91IHBsYW5uaW5nIHRvIHF1ZXVlIHRoZW0gZm9yIHY1Ljg/Cj4gCj4g
-SnVzdCBhc2tpbmcgYmVjYXVzZSBpZiBzbyBJJ2QgcXVldWUgcGF0Y2ggNiB0aHJvdWdoIG15IHRy
-ZWUuCgpZZXMsIHBsZWFzZSB0YWtlIHBhdGNoIDYuCgotLSAKTGVlIEpvbmVzIFvmnY7nkLzmlq9d
-CkxpbmFybyBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5hcm8ub3JnIOKUgiBPcGVuIHNvdXJj
-ZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFybzogRmFjZWJvb2sgfCBUd2l0dGVy
-IHwgQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+On Thu, May 21, 2020 at 4:45 AM Florian Fainelli <f.fainelli@gmail.com> wrote:
+> On 5/19/2020 1:42 PM, Arnd Bergmann wrote:
+> > On Tue, May 19, 2020 at 6:54 PM Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
+> >
+> > I checked the datasheet: ep93xx has four chip-selects, each of them
+> > with their own 256MB memory area. Most boards we support use only
+> > the last chipselect, but those that have more than one would waste
+> > up to 2MB per additional memory chip, which is not nice but doesn't
+> > make it a hard requirement as long as the kernel can fit into the first one.
+> >
+> > However, the chips has a second problem: depending on the
+> > specific memory configuration, only every other 2/4/8MB within
+> > that range may actually be used, so the mem_map[] array would
+> > double its size in practice and (worse) the kernel would likely
+> > not fit into the first section without sparsemem.
+> >
+> > This means we should indeed treat it as a requirement for ep93xx.
+>
+> That is already captured with the select ARCH_SPARSEMEM_ENABLE or the
+> ARCH_EP93XX entry.
+
+Yes, we just need to keep it that way when ep93xx eventually
+becomes part of the ARCH_MULTI_V4T configuration.
+
+> Should we just make it possible for multi platform users to override the
+> memory model in their configuration file and later we just default
+> ARCH_MULTI_V7 to sparsemem?
+
+I think there are three steps:
+
+1. make the memory model user-selectable for all multiplatform kernels
+   to allow sparsemem
+2. change the defconfig files for platforms that would likely benefit
+  (multi_v7_defconfig, exynos_defconfig, imx_v6_v7_defconfig, ...)
+3. change the default for ARCH_MULTI_V7, or alternatively for
+   configurations that include platforms that usually want it.
+
+My preference would be to have the first two in v5.8, but leave
+the third one for a later time, depending on who needs it.
+I notice that the changelog text does not give a particular
+example of platforms with very sparse memory maps. It
+might help to have more background there. Among the platforms
+I see, it seems fairly rare to have any RAM above the 4GB
+boundary on ARMv7 based chips: keystone2, r-car, and
+highbank would be the main examples I can think of, but I
+don't know if they have large holes in the memory map.
+
+       Arnd
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
