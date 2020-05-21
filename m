@@ -2,78 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09BA41DD5F8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 20:28:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 076911DD610
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 20:36:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hZLheTpxAG3NyEreyFoFXMeW0t48N/YCuz4NkqT2eZA=; b=lyArcpngnFLOuz
-	cjupLLOkFAVxcV/URqC23apQMpYeeascqDvvRARXrNzOdXDQL+DFkzA7bVM95Nq+LH2A2goCklEJ+
-	NO68cjWbNp2fu/yqCVLpFi3Co/LIOpJsZfiIXg0nXMS3TNvgFIS3JD/4ji3sG7R5JNJR/IUnzg86s
-	8tZjDnxWs7QEQrX+M3hXi0NzUkzqgKjU6jfde2yHoUIjrgL7HBFoXpZ7bueygLHfhqXf7RQ1InHHJ
-	YDwGdjdUYjoeRT3+ghGdHgxo5E42wjiOn+GEu44QYZPENKtBvEqhzFgOPkFO7r+Xh8NB3eO2Nam47
-	5bFr4+yAbLXCuh1TOAyQ==;
+	List-Owner; bh=HxPjxRnwqR/qpE+R/5+HGShCPaCb6VOkOwHcavudNes=; b=OvWVJiKlkM12m/
+	/gSqTKQUi9NImEFc70LCi20xWH/p6KFXO7j07Lv9wCrJdBLnlr03jTRcHsA6dLKwKNqYLiWgqRhU1
+	sOaXxnA4pDteHmEd+MjcG0ApFb/XtVW+eovxe2ZzqxkH5sjUtrDiWCddQTvFx/lu0oIK9+JjI5ojh
+	zJOUlA21viDqwLYiCxRtKlDXSw0Qk/aQkEoSKl8KAzyvRU6csaagrWyUMDMimw+Zhx51GHqw+vEWV
+	D5mn0pBubWJSkdIHfOCcTb+QUIrlH98WS45kZfFoJq9/GIpChVOUUzdCq99iMVocwloW1LNde9vBp
+	QaXNn6rdDBbo28aPg7zQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbpvu-0004J5-L0; Thu, 21 May 2020 18:28:42 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jbq31-0001a8-Fh; Thu, 21 May 2020 18:36:03 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbpvi-0004HS-Be
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 18:28:33 +0000
-Received: by mail-wr1-x442.google.com with SMTP id e16so7612777wra.7
+ id 1jbq2q-0001Zo-37
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 18:35:55 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id a5so3532548pjh.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 11:28:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ Thu, 21 May 2020 11:35:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=w/qbchDuhEuOkRwhtx2G1Azv0aEnUNwdBxIWmgtktpE=;
- b=EEITU+Uu4ELDJtCJzXV4CZbSdqi7fwj9HmJ8jS+2nbB+RfFx2LiG8PpOIMB+TuKZx4
- HgCGtwXLn94zvfEz4GWWjEjzTh1GUZtyMqMKi6nzD2jOfgjR+cUBvSRkfze6nvln5uTu
- G1Pc7AYGJ2a/+5vX7yMpVIaYTk/jXVJWNmt/s=
+ bh=ig7zxfhUSkqB05IYxSIrq507uXmPNpuFK2Y+gliQt9A=;
+ b=F7lfzNAs9oOD0a7DSu1haQi/iNqO2IWEkYl9YfI0piAkQFfDHJfQLpExOiafPgtX9Y
+ 231oF8BM0E9aL58559ZYPUL7S1bqhjnSpGsp7CviU3eKjlLYRwi61Zj3VryLdQjiVu6U
+ 6vFSdBDgF2zQVcaP/9rh4mJ2zpuQK++ySaO+w+ZQJ2cmLozrgBPSOlMzgLmry0bOq1tT
+ inmSXRl641NQgmP7enG0o5XQsNkD4X3BErxmCrpzjFaNptJq0npcjMfkIotm8Q5vJRg8
+ iSY+cpa2zwd2mslzf1gwfigWj53DlSuYasQzrqxzqyd4D+4U0XSHq9AuDmy8v5yI1F5T
+ Tuow==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=w/qbchDuhEuOkRwhtx2G1Azv0aEnUNwdBxIWmgtktpE=;
- b=tX8OwRGkCtxq6jlShd/UVto/+pUAKbQLt2iA9AFo6dlu83rv7Ob8iCy0XuZ+OkfL9w
- OrnL1lPoZVMnqOU2wcxVYSrCbNcZk0oqYI0JkHPuS2cXG55CwmI7rmM/3fUYMpNxd2Mu
- pBkIYMSLw89tv5/Mt/mErVD4NLB7g3q7iTQ7Xk34j7ytvrSKLp/Vfrg11XEuFtPWQHP1
- 32eqO/O5ruofm+61dHh6kjpi4b70cmf7zvZ4qlGuwTisOYA4NP+t1MV/VakMUE4wu6bH
- hbvssl21YqskBV4Gyf9wHSrDpr7FPglZssfZFP0fCNYlPRw3M4qirQ3CIuIRNAdzU0PX
- OR2w==
-X-Gm-Message-State: AOAM530dc/1qFEjm+lTVfm7UYW+OZlu9oQx3mru/iopAfxrkogGihdPk
- tBz0GX1EGBuAqbkTsKgzUhXb6A==
-X-Google-Smtp-Source: ABdhPJxWxx3F0TvQ/vps/qPJIinaVNRTDtXCMwHqbRkk5VBMQpxwfHhta19fJRC6306Yfg7uCH1k+g==
-X-Received: by 2002:a5d:4c4f:: with SMTP id n15mr10347202wrt.249.1590085708170; 
- Thu, 21 May 2020 11:28:28 -0700 (PDT)
-Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
- [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id n9sm6967152wrv.43.2020.05.21.11.28.26
+ bh=ig7zxfhUSkqB05IYxSIrq507uXmPNpuFK2Y+gliQt9A=;
+ b=jJcSGmyt6ncS+EeEyGx2J8ryS/cFMPBokTqBLpZHWCly+pJAB8Hl6nndE5gfXW2SYk
+ njGfM0giLUjTcCYzSlefw/YvjGb/8OWGtF6+pSHNrDSYZfNvPtqLpnfdolW9TNh85s9a
+ wt+arNrJAigyavJNP8dFS9LNQeihaLeNv8eGS/jwqk5Qxkk9P6Rnhaeh+CKjK2EJ3XSL
+ 8DdEO2mw8oYqyxORvQ1cFuYbKs5sizUWblJ/yefnWELP1+Qr2lMy2jG7KgLDxAr7Njyn
+ mreMDoXyhNS3xnFX5aE6jtX6LLhespvP+dGwWVsyEu4XhNPdAfufqmAjsDAnovBhGK8b
+ 4+nw==
+X-Gm-Message-State: AOAM531qno3Oa72CRol366YkwGNFdAeGvO6q95DF8qysZFj/ndJ27pqX
+ 6/YQzT42hsgblh/s0VOSTWtxLg==
+X-Google-Smtp-Source: ABdhPJyuXJgWTHo3Sjv7mxYYbipM7XN8nG5MLmgZQd5Nyoj38+aT/ytfgypMqB3JTsL7ZFcXqrEhAg==
+X-Received: by 2002:a17:90a:a608:: with SMTP id
+ c8mr12715239pjq.90.1590086150818; 
+ Thu, 21 May 2020 11:35:50 -0700 (PDT)
+Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id k24sm5077523pfk.134.2020.05.21.11.35.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 May 2020 11:28:27 -0700 (PDT)
-Date: Thu, 21 May 2020 18:28:25 +0000
-From: Tomasz Figa <tfiga@chromium.org>
-To: Jerry-ch Chen <Jerry-Ch.chen@mediatek.com>
-Subject: Re: [RFC PATCH V4 4/4] platform: mtk-isp: Add Mediatek FD driver
-Message-ID: <20200521182825.GA249683@chromium.org>
-References: <20191204124732.10932-1-Jerry-Ch.chen@mediatek.com>
- <20191204124732.10932-5-Jerry-Ch.chen@mediatek.com>
+ Thu, 21 May 2020 11:35:49 -0700 (PDT)
+Date: Thu, 21 May 2020 11:34:32 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Suman Anna <s-anna@ti.com>
+Subject: Re: [PATCH v2 3/4] remoteproc/k3-dsp: Add a remoteproc driver of K3
+ C66x DSPs
+Message-ID: <20200521183432.GK408178@builder.lan>
+References: <20200521001006.2725-1-s-anna@ti.com>
+ <20200521001006.2725-4-s-anna@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191204124732.10932-5-Jerry-Ch.chen@mediatek.com>
+In-Reply-To: <20200521001006.2725-4-s-anna@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_112830_425854_86359F24 
-X-CRM114-Status: GOOD (  30.13  )
+X-CRM114-CacheID: sfid-20200521_113552_203459_F8FDE413 
+X-CRM114-Status: GOOD (  34.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -84,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,672 +100,820 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com,
- laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
- zwisler@chromium.org, srv_heupstream@mediatek.com, christie.yu@mediatek.com,
- jungo.lin@mediatek.com, sj.huang@mediatek.com, yuzhao@chromium.org,
- hans.verkuil@cisco.com, pihsun@chromium.org, frederic.chen@mediatek.com,
- matthias.bgg@gmail.com, linux-mediatek@lists.infradead.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Lokesh Vutla <lokeshvutla@ti.com>, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jerry,
+On Wed 20 May 17:10 PDT 2020, Suman Anna wrote:
 
-On Wed, Dec 04, 2019 at 08:47:32PM +0800, Jerry-ch Chen wrote:
-> From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> The Texas Instrument's K3 J721E SoCs have two C66x DSP Subsystems in MAIN
+> voltage domain that are based on the TI's standard TMS320C66x DSP CorePac
+> module. Each subsystem has a Fixed/Floating-Point DSP CPU, with 32 KB each
+> of L1P & L1D SRAMs that can be configured and partitioned as either RAM
+> and/or Cache, and 288 KB of L2 SRAM with 256 KB of memory configurable as
+> either RAM and/or Cache. The CorePac also includes an Internal DMA (IDMA),
+> External Memory Controller (EMC), Extended Memory Controller (XMC) with a
+> Region Address Translator (RAT) unit for 32-bit to 48-bit address
+> extension/translations, an Interrupt Controller (INTC) and a Powerdown
+> Controller (PDC).
 > 
-> This patch adds the driver of Face Detection (FD) unit in
-> Mediatek camera system, providing face detection function.
+> A new remoteproc module is added to perform the device management of
+> these DSP devices. The support is limited to images using only external
+> DDR memory at the moment, the loading support to internal memories and
+> any on-chip RAM memories will be added in a subsequent patch. RAT support
+> is also left for a future patch, and as such the reserved memory carveout
+> regions are all expected to be using memory regions within the first 2 GB.
+> Error Recovery and Power Management features are not currently supported.
 > 
-> The mtk-isp directory will contain drivers for multiple IP
-> blocks found in Mediatek ISP system. It will include ISP Pass 1
-> driver (CAM), sensor interface driver, DIP driver and face
-> detection driver.
+> The C66x remote processors do not have an MMU, and so require fixed memory
+> carveout regions matching the firmware image addresses. Support for this
+> is provided by mandating multiple memory regions to be attached to the
+> remoteproc device. The first memory region will be used to serve as the
+> DMA pool for all dynamic allocations like the vrings and vring buffers.
+> The remaining memory regions are mapped into the kernel at device probe
+> time, and are used to provide address translations for firmware image
+> segments without the need for any RSC_CARVEOUT entries. Any firmware
+> image using memory outside of the supplied reserved memory carveout
+> regions will be errored out.
 > 
-> Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> The driver uses various TI-SCI interfaces to talk to the System Controller
+> (DMSC) for managing configuration, power and reset management of these
+> cores. IPC between the A72 cores and the DSP cores is supported through
+> the virtio rpmsg stack using shared memory and OMAP Mailboxes.
+> 
+
+There's room for more devm_ usage, but this looks good to me.
+
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+Regards,
+Bjorn
+
+> Signed-off-by: Suman Anna <s-anna@ti.com>
 > ---
->  drivers/media/platform/Kconfig                |    2 +
->  drivers/media/platform/Makefile               |    2 +
->  drivers/media/platform/mtk-isp/fd/Kconfig     |   19 +
->  drivers/media/platform/mtk-isp/fd/Makefile    |    5 +
->  drivers/media/platform/mtk-isp/fd/mtk_fd.h    |  149 ++
->  drivers/media/platform/mtk-isp/fd/mtk_fd_40.c | 1279 +++++++++++++++++
->  include/uapi/linux/v4l2-controls.h            |    4 +
->  include/uapi/linux/videodev2.h                |    3 +
->  8 files changed, 1463 insertions(+)
->  create mode 100644 drivers/media/platform/mtk-isp/fd/Kconfig
->  create mode 100644 drivers/media/platform/mtk-isp/fd/Makefile
->  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd.h
->  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd_40.c
+> v2:
+>  - Dropped the pm_runtime usage
+>  - Replaced the private k3_dsp_rproc_get_firmware() with the newly introduced
+>    rproc_of_parse_firmware()
+>  - Addressed other minor comments from Mathieu - Revised help on Kconfig, reordered
+>    header files, whitespace indentation fixes, remove the stale memset comment on
+>    internal memories, renamed struct k3_dsp_rproc_mem to struct k3_dsp_mem.
+> v1: https://patchwork.kernel.org/patch/11458577/
 > 
-
-Thank you for the patch. Please see my comments inline. Really sorry for
-the much delayed review.
-
-[snip]
-> +config VIDEO_MEDIATEK_FD
-> +	tristate "Mediatek face detection processing function"
-> +	depends on VIDEO_V4L2
-> +	depends on ARCH_MEDIATEK
-> +	select VIDEOBUF2_DMA_CONTIG
-> +	select VIDEOBUF2_CORE
-> +	select VIDEOBUF2_V4L2
-> +	select VIDEOBUF2_MEMOPS
-> +	select MEDIA_CONTROLLER
-> +	select MTK_SCP
-> +
-> +	default n
+>  drivers/remoteproc/Kconfig                |  13 +
+>  drivers/remoteproc/Makefile               |   1 +
+>  drivers/remoteproc/ti_k3_dsp_remoteproc.c | 701 ++++++++++++++++++++++
+>  3 files changed, 715 insertions(+)
+>  create mode 100644 drivers/remoteproc/ti_k3_dsp_remoteproc.c
+> 
+> diff --git a/drivers/remoteproc/Kconfig b/drivers/remoteproc/Kconfig
+> index 2c9fb870a276..ef787774b52b 100644
+> --- a/drivers/remoteproc/Kconfig
+> +++ b/drivers/remoteproc/Kconfig
+> @@ -265,6 +265,19 @@ config TI_K3_R5_REMOTEPROC
+>  	  It's safe to say N here if you're not interested in utilizing
+>  	  a slave processor
+>  
+> +config TI_K3_DSP_REMOTEPROC
+> +	tristate "TI K3 DSP remoteproc support"
+> +	depends on ARCH_K3
+> +	select MAILBOX
+> +	select OMAP2PLUS_MBOX
 > +	help
-> +		Support the Face Detection (FD) feature in the Mediatek
-> +		mt8183 Soc.
-
-MT8183?
-
+> +	  Say m here to support TI's C66x and C71x DSP remote processor
+> +	  subsystems on various TI K3 family of SoCs through the remote
+> +	  processor framework.
 > +
-> +		FD driver is a V4L2 memory-to-memory device driver which
-> +		provides hardware accelerated face detection function,
-> +		it can detect different sizes of faces in a raw image.
-
-A YUV image I guess?
-
-[snip]
-> diff --git a/drivers/media/platform/mtk-isp/fd/mtk_fd.h b/drivers/media/platform/mtk-isp/fd/mtk_fd.h
+> +	  It's safe to say N here if you're not interested in utilizing
+> +	  the DSP slave processors.
+> +
+>  endif # REMOTEPROC
+>  
+>  endmenu
+> diff --git a/drivers/remoteproc/Makefile b/drivers/remoteproc/Makefile
+> index ea0c6812e4fc..9f87d222744c 100644
+> --- a/drivers/remoteproc/Makefile
+> +++ b/drivers/remoteproc/Makefile
+> @@ -31,3 +31,4 @@ obj-$(CONFIG_ST_REMOTEPROC)		+= st_remoteproc.o
+>  obj-$(CONFIG_ST_SLIM_REMOTEPROC)	+= st_slim_rproc.o
+>  obj-$(CONFIG_STM32_RPROC)		+= stm32_rproc.o
+>  obj-$(CONFIG_TI_K3_R5_REMOTEPROC)	+= ti_k3_r5_remoteproc.o
+> +obj-$(CONFIG_TI_K3_DSP_REMOTEPROC)	+= ti_k3_dsp_remoteproc.o
+> diff --git a/drivers/remoteproc/ti_k3_dsp_remoteproc.c b/drivers/remoteproc/ti_k3_dsp_remoteproc.c
 > new file mode 100644
-> index 000000000000..d85bdcb70d6d
+> index 000000000000..e4036f5992fe
 > --- /dev/null
-> +++ b/drivers/media/platform/mtk-isp/fd/mtk_fd.h
-> @@ -0,0 +1,149 @@
-> +/* SPDX-License-Identifier: GPL-2.0 */
-> +//
-> +// Copyright (c) 2018 MediaTek Inc.
+> +++ b/drivers/remoteproc/ti_k3_dsp_remoteproc.c
+> @@ -0,0 +1,701 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * TI K3 DSP Remote Processor(s) driver
+> + *
+> + * Copyright (C) 2018-2020 Texas Instruments Incorporated - http://www.ti.com/
+> + *	Suman Anna <s-anna@ti.com>
+> + */
 > +
-> +#ifndef __MTK_FD_HW_H__
-> +#define __MTK_FD_HW_H__
-> +
-> +#include <linux/completion.h>
 > +#include <linux/io.h>
-> +#include <linux/types.h>
+> +#include <linux/mailbox_client.h>
+> +#include <linux/module.h>
+> +#include <linux/of_device.h>
+> +#include <linux/of_reserved_mem.h>
+> +#include <linux/omap-mailbox.h>
 > +#include <linux/platform_device.h>
-> +#include <media/v4l2-ctrls.h>
-> +#include <media/v4l2-device.h>
-> +#include <media/videobuf2-v4l2.h>
+> +#include <linux/remoteproc.h>
+> +#include <linux/reset.h>
+> +#include <linux/soc/ti/ti_sci_protocol.h>
 > +
-> +#define MTK_FD_OUTPUT_MIN_WIDTH			26U
-> +#define MTK_FD_OUTPUT_MIN_HEIGHT		26U
-> +#define MTK_FD_OUTPUT_MAX_WIDTH			640U
-> +#define MTK_FD_OUTPUT_MAX_HEIGHT		480U
+> +#include "omap_remoteproc.h"
+> +#include "remoteproc_internal.h"
+> +#include "ti_sci_proc.h"
 > +
-> +#define MTK_FD_HW_FMT_VYUY			2
-> +#define MTK_FD_HW_FMT_UYVY			3
-> +#define MTK_FD_HW_FMT_YVYU			4
-> +#define MTK_FD_HW_FMT_YUYV			5
-> +#define MTK_FD_HW_FMT_YVU_2P			6
-> +#define MTK_FD_HW_FMT_YUV_2P			7
-> +#define MTK_FD_HW_FMT_UNKNOWN			8
-
-What is an unknown format?
-
+> +#define KEYSTONE_RPROC_LOCAL_ADDRESS_MASK	(SZ_16M - 1)
 > +
-> +#define MTK_FD_IPI_CMD_INIT			0
-> +#define MTK_FD_IPI_CMD_INIT_ACK			1
-> +#define MTK_FD_IPI_CMD_ENQUEUE			2
-> +#define MTK_FD_IPI_CMD_ENQ_ACK			3
-> +#define MTK_FD_IPI_CMD_EXIT			4
-> +#define MTK_FD_IPI_CMD_EXIT_ACK			5
-> +#define MTK_FD_IPI_CMD_RESET			6
-> +#define MTK_FD_IPI_CMD_RESET_ACK		7
-> +
-> +#define MTK_FD_REG_OFFSET_HW_ENABLE		0x4
-> +#define MTK_FD_REG_OFFSET_INT_EN		0x15c
-> +#define MTK_FD_REG_OFFSET_INT_VAL		0x168
-> +#define MTK_FD_REG_OFFSET_RESULT		0x178
-> +
-> +#define MTK_FD_SET_HW_ENABLE			0x111
-> +#define MTK_FD_RS_BUF_SIZE			2289664
-> +#define MTK_FD_HW_WORK_BUF_SIZE			0x100000
-
-How about using the SZ_1M?
-
-> +#define MTK_FD_MAX_SPEEDUP			7
-> +#define MTK_FD_MAX_RESULT_NUM			1026
-
-Perhaps NUM_RESULTS?
-
-> +
-> +/* Max scale size counts */
-> +#define MTK_FD_SCALE_ARR_NUM			15
-
-Perhaps NUM_SCALE_SIZES?
-
-> +
-> +#define MTK_FD_HW_TIMEOUT			1000
-
-What's the unit?
-
-> +
-> +enum face_angle {
-> +	MTK_FD_FACE_FRONT,
-> +	MTK_FD_FACE_RIGHT_50,
-> +	MTK_FD_FACE_LEFT_50,
-> +	MTK_FD_FACE_RIGHT_90,
-> +	MTK_FD_FACE_LEFT_90,
-> +	MTK_FD_FACE_ANGLE_NUM,
-> +};
-
-This enum seems to define values for the V4L2_CID_MTK_FD_DETECT_POSE
-control. Considering that this is an enumeration and the values are
-actually integers (-90, -50, 0, 50, 90), perhaps this should be an
-INTEGER_MENU control instead?
-
-> +
-> +struct fd_buffer {
-> +	__u32 scp_addr;	/* used by SCP */
-> +	__u32 dma_addr;	/* used by DMA HW */
-> +} __packed;
-> +
-> +struct fd_face_result {
-> +	char data[16];
+> +/**
+> + * struct k3_dsp_mem - internal memory structure
+> + * @cpu_addr: MPU virtual address of the memory region
+> + * @bus_addr: Bus address used to access the memory region
+> + * @dev_addr: Device address of the memory region from DSP view
+> + * @size: Size of the memory region
+> + */
+> +struct k3_dsp_mem {
+> +	void __iomem *cpu_addr;
+> +	phys_addr_t bus_addr;
+> +	u32 dev_addr;
+> +	size_t size;
 > +};
 > +
-> +struct fd_user_output {
-> +	struct fd_face_result results[MTK_FD_MAX_RESULT_NUM];
-> +	__u16 number;
-
-Is this perhaps the number of results? If so, would num_results be a better
-name?
-
+> +/**
+> + * struct k3_dsp_mem_data - memory definitions for a DSP
+> + * @name: name for this memory entry
+> + * @dev_addr: device address for the memory entry
+> + */
+> +struct k3_dsp_mem_data {
+> +	const char *name;
+> +	const u32 dev_addr;
 > +};
-
-Since this struct is the meta buffer format, it is a part of the userspace
-interface and should be defined in a header under include/uapi/linux/.
-
 > +
-> +struct user_param {
-> +	u8 fd_speedup;
-> +	u8 fd_extra_model;
-> +	u8 scale_img_num;
-> +	u8 src_img_fmt;
-> +	__u16 scale_img_width[MTK_FD_SCALE_ARR_NUM];
-> +	__u16 scale_img_height[MTK_FD_SCALE_ARR_NUM];
-> +	__u16 face_directions[MTK_FD_FACE_ANGLE_NUM];
-
-Is this a user-facing definition or an interface between the kernel driver
-and firmware? If the latter, the __ types shouldn't be used.
-
-> +} __packed;
+> +/**
+> + * struct k3_dsp_dev_data - device data structure for a DSP
+> + * @mems: pointer to memory definitions for a DSP
+> + * @num_mems: number of memory regions in @mems
+> + * @boot_align_addr: boot vector address alignment granularity
+> + * @uses_lreset: flag to denote the need for local reset management
+> + */
+> +struct k3_dsp_dev_data {
+> +	const struct k3_dsp_mem_data *mems;
+> +	u32 num_mems;
+> +	u32 boot_align_addr;
+> +	bool uses_lreset;
+> +};
 > +
-> +struct fd_init_param {
-> +	struct fd_buffer fd_manager;
-> +	__u32 rs_dma_addr;
-
-Ditto.
-
-> +} __packed;
+> +/**
+> + * struct k3_dsp_rproc - k3 DSP remote processor driver structure
+> + * @dev: cached device pointer
+> + * @rproc: remoteproc device handle
+> + * @mem: internal memory regions data
+> + * @num_mems: number of internal memory regions
+> + * @rmem: reserved memory regions data
+> + * @num_rmems: number of reserved memory regions
+> + * @reset: reset control handle
+> + * @data: pointer to DSP-specific device data
+> + * @tsp: TI-SCI processor control handle
+> + * @ti_sci: TI-SCI handle
+> + * @ti_sci_id: TI-SCI device identifier
+> + * @mbox: mailbox channel handle
+> + * @client: mailbox client to request the mailbox channel
+> + */
+> +struct k3_dsp_rproc {
+> +	struct device *dev;
+> +	struct rproc *rproc;
+> +	struct k3_dsp_mem *mem;
+> +	int num_mems;
+> +	struct k3_dsp_mem *rmem;
+> +	int num_rmems;
+> +	struct reset_control *reset;
+> +	const struct k3_dsp_dev_data *data;
+> +	struct ti_sci_proc *tsp;
+> +	const struct ti_sci_handle *ti_sci;
+> +	u32 ti_sci_id;
+> +	struct mbox_chan *mbox;
+> +	struct mbox_client client;
+> +};
 > +
-> +struct fd_enq_param {
-> +	__u64 output_vaddr;
-
-Ditto.
-
-> +	struct fd_buffer src_img[2];
-> +	struct fd_buffer user_result;
-> +	struct user_param user_param;
-> +} __packed;
-> +
-> +struct fd_ack_param {
-> +	__u32 ret_code;
-> +	__u32 ret_msg;
-
-Ditto.
-
-> +} __packed;
-[snip]
-> +/*  */
-
-Was there supposed to be a comment here? :)
-
-> +static int mtk_fd_hw_alloc_rs_dma_addr(struct mtk_fd_dev *fd)
+> +/**
+> + * k3_dsp_rproc_mbox_callback() - inbound mailbox message handler
+> + * @client: mailbox client pointer used for requesting the mailbox channel
+> + * @data: mailbox payload
+> + *
+> + * This handler is invoked by the OMAP mailbox driver whenever a mailbox
+> + * message is received. Usually, the mailbox payload simply contains
+> + * the index of the virtqueue that is kicked by the remote processor,
+> + * and we let remoteproc core handle it.
+> + *
+> + * In addition to virtqueue indices, we also have some out-of-band values
+> + * that indicate different events. Those values are deliberately very
+> + * large so they don't coincide with virtqueue indices.
+> + */
+> +static void k3_dsp_rproc_mbox_callback(struct mbox_client *client, void *data)
 > +{
-> +	struct device *dev = fd->dev;
-> +	void *va;
-> +	dma_addr_t dma_handle;
+> +	struct k3_dsp_rproc *kproc = container_of(client, struct k3_dsp_rproc,
+> +						  client);
+> +	struct device *dev = kproc->rproc->dev.parent;
+> +	const char *name = kproc->rproc->name;
+> +	u32 msg = omap_mbox_message(data);
 > +
-> +	va = dma_alloc_coherent(dev, MTK_FD_RS_BUF_SIZE, &dma_handle,
-> +				GFP_KERNEL);
-> +	if (!va) {
-> +		dev_err(dev, "dma_alloc null va\n");
-
-No need to print errors for memory allocation failures, because one will be
-printed automatically.
-
-[snip]
-> +static int mtk_fd_hw_connect(struct mtk_fd_dev *fd)
+> +	dev_dbg(dev, "mbox msg: 0x%x\n", msg);
+> +
+> +	switch (msg) {
+> +	case RP_MBOX_CRASH:
+> +		/*
+> +		 * remoteproc detected an exception, but error recovery is not
+> +		 * supported. So, just log this for now
+> +		 */
+> +		dev_err(dev, "K3 DSP rproc %s crashed\n", name);
+> +		break;
+> +	case RP_MBOX_ECHO_REPLY:
+> +		dev_info(dev, "received echo reply from %s\n", name);
+> +		break;
+> +	default:
+> +		/* silently handle all other valid messages */
+> +		if (msg >= RP_MBOX_READY && msg < RP_MBOX_END_MSG)
+> +			return;
+> +		if (msg > kproc->rproc->max_notifyid) {
+> +			dev_dbg(dev, "dropping unknown message 0x%x", msg);
+> +			return;
+> +		}
+> +		/* msg contains the index of the triggered vring */
+> +		if (rproc_vq_interrupt(kproc->rproc, msg) == IRQ_NONE)
+> +			dev_dbg(dev, "no message was found in vqid %d\n", msg);
+> +	}
+> +}
+> +
+> +/*
+> + * Kick the remote processor to notify about pending unprocessed messages.
+> + * The vqid usage is not used and is inconsequential, as the kick is performed
+> + * through a simulated GPIO (a bit in an IPC interrupt-triggering register),
+> + * the remote processor is expected to process both its Tx and Rx virtqueues.
+> + */
+> +static void k3_dsp_rproc_kick(struct rproc *rproc, int vqid)
 > +{
+> +	struct k3_dsp_rproc *kproc = rproc->priv;
+> +	struct device *dev = rproc->dev.parent;
+> +	mbox_msg_t msg = (mbox_msg_t)vqid;
 > +	int ret;
 > +
-> +	ret = rproc_boot(fd->rproc_handle);
+> +	/* send the index of the triggered virtqueue in the mailbox payload */
+> +	ret = mbox_send_message(kproc->mbox, (void *)msg);
+> +	if (ret < 0)
+> +		dev_err(dev, "failed to send mailbox message, status = %d\n",
+> +			ret);
+> +}
 > +
-
-nit: Unnecessary blank line.
-
-[snip]
-> +static int mtk_fd_vb2_queue_setup(struct vb2_queue *vq,
-> +				  unsigned int *num_buffers,
-> +				  unsigned int *num_planes,
-> +				  unsigned int sizes[],
-> +				  struct device *alloc_devs[])
+> +/* Put the DSP processor into reset */
+> +static int k3_dsp_rproc_reset(struct k3_dsp_rproc *kproc)
 > +{
-> +	struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-> +	unsigned int size[2];
-> +	unsigned int plane;
+> +	struct device *dev = kproc->dev;
+> +	int ret;
 > +
-> +	switch (vq->type) {
-> +	case V4L2_BUF_TYPE_META_CAPTURE:
-> +		size[0] = ctx->dst_fmt.buffersize;
-> +		break;
-> +	case V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE:
-> +		size[0] = ctx->src_fmt.plane_fmt[0].sizeimage;
-> +		if (*num_planes == 2)
-> +			size[1] = ctx->src_fmt.plane_fmt[1].sizeimage;
-> +		break;
+> +	ret = reset_control_assert(kproc->reset);
+> +	if (ret) {
+> +		dev_err(dev, "local-reset assert failed, ret = %d\n", ret);
+> +		return ret;
 > +	}
-
-Is this code above needed? The code below sets sizes[] and it uses a for loop,
-without opencoded assignment for the second plane.
-
 > +
-> +	if (*num_planes > 2)
-> +		return -EINVAL;
-> +	if (*num_planes == 0) {
-> +		if (vq->type == V4L2_BUF_TYPE_META_CAPTURE) {
-> +			sizes[0] = ctx->dst_fmt.buffersize;
-> +			*num_planes = 1;
-> +			return 0;
+> +	ret = kproc->ti_sci->ops.dev_ops.put_device(kproc->ti_sci,
+> +						    kproc->ti_sci_id);
+> +	if (ret) {
+> +		dev_err(dev, "module-reset assert failed, ret = %d\n", ret);
+> +		if (reset_control_deassert(kproc->reset))
+> +			dev_warn(dev, "local-reset deassert back failed\n");
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+> +/* Release the DSP processor from reset */
+> +static int k3_dsp_rproc_release(struct k3_dsp_rproc *kproc)
+> +{
+> +	struct device *dev = kproc->dev;
+> +	int ret;
+> +
+> +	ret = kproc->ti_sci->ops.dev_ops.get_device(kproc->ti_sci,
+> +						    kproc->ti_sci_id);
+> +	if (ret) {
+> +		dev_err(dev, "module-reset deassert failed, ret = %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = reset_control_deassert(kproc->reset);
+> +	if (ret) {
+> +		dev_err(dev, "local-reset deassert failed, ret = %d\n", ret);
+> +		if (kproc->ti_sci->ops.dev_ops.put_device(kproc->ti_sci,
+> +							  kproc->ti_sci_id))
+> +			dev_warn(dev, "module-reset assert back failed\n");
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+> +/*
+> + * Power up the DSP remote processor.
+> + *
+> + * This function will be invoked only after the firmware for this rproc
+> + * was loaded, parsed successfully, and all of its resource requirements
+> + * were met.
+> + */
+> +static int k3_dsp_rproc_start(struct rproc *rproc)
+> +{
+> +	struct k3_dsp_rproc *kproc = rproc->priv;
+> +	struct mbox_client *client = &kproc->client;
+> +	struct device *dev = kproc->dev;
+> +	u32 boot_addr;
+> +	int ret;
+> +
+> +	client->dev = dev;
+> +	client->tx_done = NULL;
+> +	client->rx_callback = k3_dsp_rproc_mbox_callback;
+> +	client->tx_block = false;
+> +	client->knows_txdone = false;
+> +
+> +	kproc->mbox = mbox_request_channel(client, 0);
+> +	if (IS_ERR(kproc->mbox)) {
+> +		ret = -EBUSY;
+> +		dev_err(dev, "mbox_request_channel failed: %ld\n",
+> +			PTR_ERR(kproc->mbox));
+> +		return ret;
+> +	}
+> +
+> +	/*
+> +	 * Ping the remote processor, this is only for sanity-sake for now;
+> +	 * there is no functional effect whatsoever.
+> +	 *
+> +	 * Note that the reply will _not_ arrive immediately: this message
+> +	 * will wait in the mailbox fifo until the remote processor is booted.
+> +	 */
+> +	ret = mbox_send_message(kproc->mbox, (void *)RP_MBOX_ECHO_REQUEST);
+> +	if (ret < 0) {
+> +		dev_err(dev, "mbox_send_message failed: %d\n", ret);
+> +		goto put_mbox;
+> +	}
+> +
+> +	boot_addr = rproc->bootaddr;
+> +	if (boot_addr & (kproc->data->boot_align_addr - 1)) {
+> +		dev_err(dev, "invalid boot address 0x%x, must be aligned on a 0x%x boundary\n",
+> +			boot_addr, kproc->data->boot_align_addr);
+> +		ret = -EINVAL;
+> +		goto put_mbox;
+> +	}
+> +
+> +	dev_err(dev, "booting DSP core using boot addr = 0x%x\n", boot_addr);
+> +	ret = ti_sci_proc_set_config(kproc->tsp, boot_addr, 0, 0);
+> +	if (ret)
+> +		goto put_mbox;
+> +
+> +	ret = k3_dsp_rproc_release(kproc);
+> +	if (ret)
+> +		goto put_mbox;
+> +
+> +	return 0;
+> +
+> +put_mbox:
+> +	mbox_free_channel(kproc->mbox);
+> +	return ret;
+> +}
+> +
+> +/*
+> + * Stop the DSP remote processor.
+> + *
+> + * This function puts the DSP processor into reset, and finishes processing
+> + * of any pending messages.
+> + */
+> +static int k3_dsp_rproc_stop(struct rproc *rproc)
+> +{
+> +	struct k3_dsp_rproc *kproc = rproc->priv;
+> +
+> +	mbox_free_channel(kproc->mbox);
+> +
+> +	k3_dsp_rproc_reset(kproc);
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * Custom function to translate a DSP device address (internal RAMs only) to a
+> + * kernel virtual address.  The DSPs can access their RAMs at either an internal
+> + * address visible only from a DSP, or at the SoC-level bus address. Both these
+> + * addresses need to be looked through for translation. The translated addresses
+> + * can be used either by the remoteproc core for loading (when using kernel
+> + * remoteproc loader), or by any rpmsg bus drivers.
+> + */
+> +static void *k3_dsp_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
+> +{
+> +	struct k3_dsp_rproc *kproc = rproc->priv;
+> +	void __iomem *va = NULL;
+> +	phys_addr_t bus_addr;
+> +	u32 dev_addr, offset;
+> +	size_t size;
+> +	int i;
+> +
+> +	if (len == 0)
+> +		return NULL;
+> +
+> +	for (i = 0; i < kproc->num_mems; i++) {
+> +		bus_addr = kproc->mem[i].bus_addr;
+> +		dev_addr = kproc->mem[i].dev_addr;
+> +		size = kproc->mem[i].size;
+> +
+> +		if (da < KEYSTONE_RPROC_LOCAL_ADDRESS_MASK) {
+> +			/* handle DSP-view addresses */
+> +			if (da >= dev_addr &&
+> +			    ((da + len) <= (dev_addr + size))) {
+> +				offset = da - dev_addr;
+> +				va = kproc->mem[i].cpu_addr + offset;
+> +				return (__force void *)va;
+> +			}
+> +		} else {
+> +			/* handle SoC-view addresses */
+> +			if (da >= bus_addr &&
+> +			    (da + len) <= (bus_addr + size)) {
+> +				offset = da - bus_addr;
+> +				va = kproc->mem[i].cpu_addr + offset;
+> +				return (__force void *)va;
+> +			}
 > +		}
-> +
-> +		*num_planes = ctx->src_fmt.num_planes;
-> +		for (plane = 0; plane < *num_planes; plane++)
-> +			sizes[plane] = ctx->src_fmt.plane_fmt[plane].sizeimage;
-> +		return 0;
 > +	}
 > +
-> +	for (plane = 0; plane < *num_planes; plane++) {
-> +		if (sizes[plane] < size[plane])
-> +			return -EINVAL;
-> +	}
-> +	return 0;
-> +}
-[snip]
-> +static int mtk_fd_enum_fmt_out_mp(struct file *file, void *fh,
-> +				  struct v4l2_fmtdesc *f)
-> +{
-> +	if (f->index >= NUM_FORMATS)
-
-Please use ARRAY_SIZE().
-
-> +		return -EINVAL;
+> +	/* handle static DDR reserved memory regions */
+> +	for (i = 0; i < kproc->num_rmems; i++) {
+> +		dev_addr = kproc->rmem[i].dev_addr;
+> +		size = kproc->rmem[i].size;
 > +
-> +	f->pixelformat = mtk_fd_img_fmts[f->index].pixelformat;
-> +	return 0;
-> +}
-> +
-> +static void mtk_fd_fill_pixfmt_mp(struct v4l2_pix_format_mplane *dfmt,
-> +				  const struct v4l2_pix_format_mplane *sfmt)
-> +{
-> +	dfmt->field = V4L2_FIELD_NONE;
-> +	dfmt->colorspace = V4L2_COLORSPACE_BT2020;
-> +	dfmt->num_planes = sfmt->num_planes;
-> +	dfmt->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
-> +	dfmt->quantization = V4L2_QUANTIZATION_DEFAULT;
-> +	dfmt->xfer_func =
-> +		V4L2_MAP_XFER_FUNC_DEFAULT(dfmt->colorspace);
-> +
-> +	/* Keep user setting as possible */
-> +	dfmt->width = clamp(dfmt->width,
-> +			    MTK_FD_OUTPUT_MIN_WIDTH,
-> +			    MTK_FD_OUTPUT_MAX_WIDTH);
-> +	dfmt->height = clamp(dfmt->height,
-> +			     MTK_FD_OUTPUT_MIN_HEIGHT,
-> +			     MTK_FD_OUTPUT_MAX_HEIGHT);
-> +
-> +	if (sfmt->num_planes == 2) {
-> +		/* NV16M and NV61M has 1 byte per pixel */
-> +		dfmt->plane_fmt[0].bytesperline = dfmt->width;
-> +		dfmt->plane_fmt[1].bytesperline = dfmt->width;
-> +	} else {
-> +		/* 2 bytes per pixel */
-> +		dfmt->plane_fmt[0].bytesperline = dfmt->width * 2;
-> +	}
-> +
-> +	dfmt->plane_fmt[0].sizeimage =
-> +		dfmt->height * dfmt->plane_fmt[0].bytesperline;
-
-Could some of the code above be replaced with v4l2_fill_pixfmt_mp()?
-
-> +}
-> +
-> +static const struct v4l2_pix_format_mplane *mtk_fd_find_fmt(u32 format)
-> +{
-> +	unsigned int i;
-> +	const struct v4l2_pix_format_mplane *dev_fmt;
-> +
-> +	for (i = 0; i < NUM_FORMATS; i++) {
-
-Please use ARRAY_SIZE rather than a custom macro.
-
-> +		dev_fmt = &mtk_fd_img_fmts[i];
-> +		if (dev_fmt->pixelformat == format)
-> +			return dev_fmt;
+> +		if (da >= dev_addr && ((da + len) <= (dev_addr + size))) {
+> +			offset = da - dev_addr;
+> +			va = kproc->rmem[i].cpu_addr + offset;
+> +			return (__force void *)va;
+> +		}
 > +	}
 > +
 > +	return NULL;
 > +}
 > +
-> +static int mtk_fd_try_fmt_out_mp(struct file *file,
-> +				 void *fh,
-> +				 struct v4l2_format *f)
-> +{
-> +	struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
-> +	const struct v4l2_pix_format_mplane *fmt;
+> +static const struct rproc_ops k3_dsp_rproc_ops = {
+> +	.start		= k3_dsp_rproc_start,
+> +	.stop		= k3_dsp_rproc_stop,
+> +	.kick		= k3_dsp_rproc_kick,
+> +	.da_to_va	= k3_dsp_rproc_da_to_va,
+> +};
 > +
-> +	fmt = mtk_fd_find_fmt(pix_mp->pixelformat);
-> +	if (!fmt)
-> +		fmt = &mtk_fd_img_fmts[0];	/* Get default img fmt */
-
-nit: Please move the comment to a separate line and add braces.
-
-> +
-> +	mtk_fd_fill_pixfmt_mp(pix_mp, fmt);
-> +	return 0;
-> +}
-[snip]
-> +static unsigned int get_fd_img_fmt(unsigned int fourcc)
+> +static int k3_dsp_rproc_of_get_memories(struct platform_device *pdev,
+> +					struct k3_dsp_rproc *kproc)
 > +{
-> +	switch (fourcc) {
-> +	case V4L2_PIX_FMT_VYUY:
-> +		return MTK_FD_HW_FMT_VYUY;
-> +	case V4L2_PIX_FMT_YUYV:
-> +		return MTK_FD_HW_FMT_YUYV;
-> +	case V4L2_PIX_FMT_YVYU:
-> +		return MTK_FD_HW_FMT_YVYU;
-> +	case V4L2_PIX_FMT_UYVY:
-> +		return MTK_FD_HW_FMT_UYVY;
-> +	case V4L2_PIX_FMT_NV16M:
-> +		return MTK_FD_HW_FMT_YUV_2P;
-> +	case V4L2_PIX_FMT_NV61M:
-> +		return MTK_FD_HW_FMT_YVU_2P;
-> +	default:
-> +		return MTK_FD_HW_FMT_UNKNOWN;
-
-If we want to be paranoid, we can just add a WARN here and return 0.
-Shouldn't be a need to define an unknown format.
-
-[snip]
-> +static void mtk_fd_fill_user_param(struct user_param *user_param,
-> +				   struct v4l2_ctrl_handler *hdl)
-> +{
-> +	struct v4l2_ctrl *ctrl;
+> +	const struct k3_dsp_dev_data *data = kproc->data;
+> +	struct device *dev = &pdev->dev;
+> +	struct resource *res;
+> +	int num_mems = 0;
 > +	int i;
 > +
-> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_SCALE_DOWN_IMG_WIDTH);
-> +	if (ctrl)
-> +		for (i = 0; i < ctrl->elems; i++)
-> +			user_param->scale_img_width[i] = ctrl->p_new.p_u16[i];
-> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_SCALE_DOWN_IMG_HEIGHT);
-> +	if (ctrl)
-> +		for (i = 0; i < ctrl->elems; i++)
-> +			user_param->scale_img_height[i] = ctrl->p_new.p_u16[i];
-> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_SCALE_IMG_NUM);
-> +	if (ctrl)
-> +		user_param->scale_img_num = ctrl->val;
+> +	num_mems = kproc->data->num_mems;
+> +	kproc->mem = devm_kcalloc(kproc->dev, num_mems,
+> +				  sizeof(*kproc->mem), GFP_KERNEL);
+> +	if (!kproc->mem)
+> +		return -ENOMEM;
 > +
-
-nit: Either separate the code dealing with all controls from each other, or
-none.
-
-> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_DETECT_POSE);
-> +	if (ctrl)
-> +		for (i = 0; i < ctrl->elems; i++)
-> +			user_param->face_directions[i] = ctrl->p_new.p_u16[i];
-> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_DETECT_SPEED);
-> +	if (ctrl)
-> +		user_param->fd_speedup = ctrl->val;
-> +	ctrl = v4l2_ctrl_find(hdl, V4L2_CID_MTK_FD_DETECTION_MODEL);
-> +	if (ctrl)
-> +		user_param->fd_extra_model = ctrl->val;
-> +}
+> +	for (i = 0; i < num_mems; i++) {
+> +		res = platform_get_resource_byname(pdev, IORESOURCE_MEM,
+> +						   data->mems[i].name);
+> +		if (!res) {
+> +			dev_err(dev, "found no memory resource for %s\n",
+> +				data->mems[i].name);
+> +			return -EINVAL;
+> +		}
+> +		if (!devm_request_mem_region(dev, res->start,
+> +					     resource_size(res),
+> +					     dev_name(dev))) {
+> +			dev_err(dev, "could not request %s region for resource\n",
+> +				data->mems[i].name);
+> +			return -EBUSY;
+> +		}
 > +
-> +static void mtk_fd_device_run(void *priv)
-> +{
-> +	struct mtk_fd_ctx *ctx = priv;
-> +	struct mtk_fd_dev *fd = ctx->fd_dev;
-> +	struct vb2_v4l2_buffer *src_buf, *dst_buf;
-> +	struct fd_enq_param fd_param;
-> +	void *plane_vaddr;
+> +		kproc->mem[i].cpu_addr = devm_ioremap_wc(dev, res->start,
+> +							 resource_size(res));
+> +		if (IS_ERR(kproc->mem[i].cpu_addr)) {
+> +			dev_err(dev, "failed to map %s memory\n",
+> +				data->mems[i].name);
+> +			return PTR_ERR(kproc->mem[i].cpu_addr);
+> +		}
+> +		kproc->mem[i].bus_addr = res->start;
+> +		kproc->mem[i].dev_addr = data->mems[i].dev_addr;
+> +		kproc->mem[i].size = resource_size(res);
 > +
-> +	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
-> +	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> +
-> +	fd_param.src_img[0].dma_addr =
-> +		vb2_dma_contig_plane_dma_addr(&src_buf->vb2_buf, 0);
-> +	fd_param.user_result.dma_addr =
-> +		vb2_dma_contig_plane_dma_addr(&dst_buf->vb2_buf, 0);
-> +	plane_vaddr = vb2_plane_vaddr(&dst_buf->vb2_buf, 0);
-> +	fd_param.output_vaddr = (u64)(unsigned long)plane_vaddr;
-
-Why is the vaddr needed here? Specfically, it could pose a security problem
-if CPU virtual addresses are exchanged with firmware.
-
-> +	fd_param.user_param.src_img_fmt =
-> +		get_fd_img_fmt(ctx->src_fmt.pixelformat);
-> +	if (ctx->src_fmt.num_planes == 2)
-> +		fd_param.src_img[1].dma_addr =
-> +			vb2_dma_contig_plane_dma_addr(&src_buf->vb2_buf, 1);
-
-nit: Could this be moved above, to be just below src_img[0] initialization,
-for readability reasons?
-
-> +	mtk_fd_fill_user_param(&fd_param.user_param, &ctx->hdl);
-> +
-> +	/* Complete request controls if any */
-> +	v4l2_ctrl_request_complete(src_buf->vb2_buf.req_obj.req, &ctx->hdl);
-> +
-> +	fd->output = plane_vaddr;
-> +	mtk_fd_hw_job_exec(fd, &fd_param);
-> +}
-> +
-> +static struct v4l2_m2m_ops fd_m2m_ops = {
-> +	.device_run = mtk_fd_device_run,
-> +};
-> +
-> +static const struct media_device_ops fd_m2m_media_ops = {
-> +	.req_validate	= vb2_request_validate,
-> +	.req_queue	= v4l2_m2m_request_queue,
-> +};
-> +
-> +static int mtk_fd_video_device_register(struct mtk_fd_dev *fd)
-> +{
-> +	struct video_device *vfd = &fd->vfd;
-> +	struct v4l2_m2m_dev *m2m_dev = fd->m2m_dev;
-> +	struct device *dev = fd->dev;
-> +	int ret;
-> +
-> +	vfd->fops = &fd_video_fops;
-> +	vfd->release = video_device_release;
-> +	vfd->lock = &fd->vfd_lock;
-> +	vfd->v4l2_dev = &fd->v4l2_dev;
-> +	vfd->vfl_dir = VFL_DIR_M2M;
-> +	vfd->device_caps = V4L2_CAP_STREAMING | V4L2_CAP_VIDEO_OUTPUT_MPLANE |
-> +		V4L2_CAP_META_CAPTURE;
-> +	vfd->ioctl_ops = &mtk_fd_v4l2_video_out_ioctl_ops;
-> +
-> +	strscpy(vfd->name, dev_driver_string(dev), sizeof(vfd->name));
-> +
-> +	video_set_drvdata(vfd, fd);
-> +
-> +	ret = video_register_device(vfd, VFL_TYPE_GRABBER, 0);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to register video device\n");
-> +		goto err_free_dev;
+> +		dev_dbg(dev, "memory %8s: bus addr %pa size 0x%zx va %pK da 0x%x\n",
+> +			data->mems[i].name, &kproc->mem[i].bus_addr,
+> +			kproc->mem[i].size, kproc->mem[i].cpu_addr,
+> +			kproc->mem[i].dev_addr);
 > +	}
+> +	kproc->num_mems = num_mems;
 > +
-> +	ret = v4l2_m2m_register_media_controller(m2m_dev, vfd,
-> +					     MEDIA_ENT_F_PROC_VIDEO_STATISTICS);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to init mem2mem media controller\n");
-> +		goto err_unreg_video;
-> +	}
 > +	return 0;
-> +
-> +err_unreg_video:
-> +	video_unregister_device(vfd);
-> +err_free_dev:
-> +	video_device_release(vfd);
-> +	return ret;
 > +}
 > +
-> +static int mtk_fd_dev_v4l2_init(struct mtk_fd_dev *fd)
+> +static int k3_dsp_reserved_mem_init(struct k3_dsp_rproc *kproc)
 > +{
-> +	struct media_device *mdev = &fd->mdev;
-> +	struct device *dev = fd->dev;
-> +	int ret;
+> +	struct device *dev = kproc->dev;
+> +	struct device_node *np = dev->of_node;
+> +	struct device_node *rmem_np;
+> +	struct reserved_mem *rmem;
+> +	int num_rmems;
+> +	int ret, i;
 > +
-> +	ret = v4l2_device_register(dev, &fd->v4l2_dev);
+> +	num_rmems = of_property_count_elems_of_size(np, "memory-region",
+> +						    sizeof(phandle));
+> +	if (num_rmems <= 0) {
+> +		dev_err(dev, "device does not reserved memory regions, ret = %d\n",
+> +			num_rmems);
+> +		return -EINVAL;
+> +	}
+> +	if (num_rmems < 2) {
+> +		dev_err(dev, "device needs atleast two memory regions to be defined, num = %d\n",
+> +			num_rmems);
+> +		return -EINVAL;
+> +	}
+> +
+> +	/* use reserved memory region 0 for vring DMA allocations */
+> +	ret = of_reserved_mem_device_init_by_idx(dev, np, 0);
 > +	if (ret) {
-> +		dev_err(dev, "Failed to register v4l2 device\n");
+> +		dev_err(dev, "device cannot initialize DMA pool, ret = %d\n",
+> +			ret);
 > +		return ret;
 > +	}
 > +
-> +	fd->m2m_dev = v4l2_m2m_init(&fd_m2m_ops);
-> +	if (IS_ERR(fd->m2m_dev)) {
-> +		dev_err(dev, "Failed to init mem2mem device\n");
-> +		ret = PTR_ERR(fd->m2m_dev);
-> +		goto err_unreg_v4l2_dev;
+> +	num_rmems--;
+> +	kproc->rmem = kcalloc(num_rmems, sizeof(*kproc->rmem), GFP_KERNEL);
+> +	if (!kproc->rmem) {
+> +		ret = -ENOMEM;
+> +		goto release_rmem;
 > +	}
 > +
-> +	mdev->dev = dev;
-> +	strscpy(mdev->model, dev_driver_string(dev), sizeof(mdev->model));
-> +	snprintf(mdev->bus_info, sizeof(mdev->bus_info),
-> +		 "platform:%s", dev_name(dev));
-> +	media_device_init(mdev);
-> +	mdev->ops = &fd_m2m_media_ops;
-> +	fd->v4l2_dev.mdev = mdev;
+> +	/* use remaining reserved memory regions for static carveouts */
+> +	for (i = 0; i < num_rmems; i++) {
+> +		rmem_np = of_parse_phandle(np, "memory-region", i + 1);
+> +		if (!rmem_np) {
+> +			ret = -EINVAL;
+> +			goto unmap_rmem;
+> +		}
 > +
-> +	ret = mtk_fd_video_device_register(fd);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to register video device\n");
-> +		goto err_cleanup_mdev;
-> +	}
+> +		rmem = of_reserved_mem_lookup(rmem_np);
+> +		if (!rmem) {
+> +			of_node_put(rmem_np);
+> +			ret = -EINVAL;
+> +			goto unmap_rmem;
+> +		}
+> +		of_node_put(rmem_np);
 > +
-> +	ret = media_device_register(mdev);
-> +	if (ret) {
-> +		dev_err(dev, "Failed to register mem2mem media device\n");
-> +		goto err_unreg_vdev;
+> +		kproc->rmem[i].bus_addr = rmem->base;
+> +		/* 64-bit address regions currently not supported */
+> +		kproc->rmem[i].dev_addr = (u32)rmem->base;
+> +		kproc->rmem[i].size = rmem->size;
+> +		kproc->rmem[i].cpu_addr = ioremap_wc(rmem->base, rmem->size);
+> +		if (!kproc->rmem[i].cpu_addr) {
+> +			dev_err(dev, "failed to map reserved memory#%d at %pa of size %pa\n",
+> +				i + 1, &rmem->base, &rmem->size);
+> +			ret = -ENOMEM;
+> +			goto unmap_rmem;
+> +		}
+> +
+> +		dev_dbg(dev, "reserved memory%d: bus addr %pa size 0x%zx va %pK da 0x%x\n",
+> +			i + 1, &kproc->rmem[i].bus_addr,
+> +			kproc->rmem[i].size, kproc->rmem[i].cpu_addr,
+> +			kproc->rmem[i].dev_addr);
 > +	}
+> +	kproc->num_rmems = num_rmems;
 > +
 > +	return 0;
 > +
-> +err_unreg_vdev:
-> +	v4l2_m2m_unregister_media_controller(fd->m2m_dev);
-> +	video_unregister_device(&fd->vfd);
-> +	video_device_release(&fd->vfd);
-
-This is inconsistent with the registration, which registers all of these in
-a function. Perhaps it would be worth to move this cleanup to a
-mtk_fd_video_device_unregister() function?
-
-> +err_cleanup_mdev:
-> +	media_device_cleanup(mdev);
-> +	v4l2_m2m_release(fd->m2m_dev);
-> +err_unreg_v4l2_dev:
-> +	v4l2_device_unregister(&fd->v4l2_dev);
+> +unmap_rmem:
+> +	for (i--; i >= 0; i--) {
+> +		if (kproc->rmem[i].cpu_addr)
+> +			iounmap(kproc->rmem[i].cpu_addr);
+> +	}
+> +	kfree(kproc->rmem);
+> +release_rmem:
+> +	of_reserved_mem_device_release(kproc->dev);
 > +	return ret;
 > +}
 > +
-> +static void mtk_fd_dev_v4l2_release(struct mtk_fd_dev *fd)
+> +static void k3_dsp_reserved_mem_exit(struct k3_dsp_rproc *kproc)
 > +{
-> +	v4l2_m2m_unregister_media_controller(fd->m2m_dev);
-> +	video_unregister_device(&fd->vfd);
-> +	video_device_release(&fd->vfd);
-> +	media_device_cleanup(&fd->mdev);
-> +	v4l2_m2m_release(fd->m2m_dev);
-> +	v4l2_device_unregister(&fd->v4l2_dev);
+> +	int i;
+> +
+> +	for (i = 0; i < kproc->num_rmems; i++)
+> +		iounmap(kproc->rmem[i].cpu_addr);
+> +	kfree(kproc->rmem);
+> +
+> +	of_reserved_mem_device_release(kproc->dev);
 > +}
 > +
-> +static irqreturn_t mtk_fd_irq(int irq, void *data)
+> +static
+> +struct ti_sci_proc *k3_dsp_rproc_of_get_tsp(struct device *dev,
+> +					    const struct ti_sci_handle *sci)
 > +{
-> +	struct mtk_fd_dev *fd = (struct mtk_fd_dev *)data;
+> +	struct ti_sci_proc *tsp;
+> +	u32 temp[2];
+> +	int ret;
 > +
-> +	/* must read this register otherwise HW will keep sending irq */
-> +	readl(fd->fd_base + MTK_FD_REG_OFFSET_INT_VAL);
-> +	fd->output->number = readl(fd->fd_base + MTK_FD_REG_OFFSET_RESULT);
-> +	dev_dbg(fd->dev, "mtk_fd_face_num:%d\n", fd->output->number);
+> +	ret = of_property_read_u32_array(dev->of_node, "ti,sci-proc-ids",
+> +					 temp, 2);
+> +	if (ret < 0)
+> +		return ERR_PTR(ret);
 > +
-> +	mtk_fd_hw_done(fd, VB2_BUF_STATE_DONE);
-> +	return IRQ_HANDLED;
+> +	tsp = kzalloc(sizeof(*tsp), GFP_KERNEL);
+> +	if (!tsp)
+> +		return ERR_PTR(-ENOMEM);
+> +
+> +	tsp->dev = dev;
+> +	tsp->sci = sci;
+> +	tsp->ops = &sci->ops.proc_ops;
+> +	tsp->proc_id = temp[0];
+> +	tsp->host_id = temp[1];
+> +
+> +	return tsp;
 > +}
 > +
-> +static int mtk_fd_hw_get_scp_mem(struct mtk_fd_dev *fd)
+> +static int k3_dsp_rproc_probe(struct platform_device *pdev)
 > +{
-> +	struct device *dev = fd->dev;
-> +	dma_addr_t addr;
-> +	void *ptr;
-> +	u32 ret;
+> +	struct device *dev = &pdev->dev;
+> +	struct device_node *np = dev->of_node;
+> +	const struct k3_dsp_dev_data *data;
+> +	struct k3_dsp_rproc *kproc;
+> +	struct rproc *rproc;
+> +	const char *fw_name;
+> +	int ret = 0;
+> +	int ret1;
 > +
-> +	/*
-> +	 * Allocate coherent reserved memory for SCP firmware usage.
-> +	 * The size of SCP composer's memory is fixed to 0x100000
-> +	 * for the requirement of firmware.
-> +	 */
-> +	ptr = dma_alloc_coherent(&fd->scp_pdev->dev,
-> +				 MTK_FD_HW_WORK_BUF_SIZE, &addr, GFP_KERNEL);
-> +	if (!ptr)
+> +	data = of_device_get_match_data(dev);
+> +	if (!data)
+> +		return -ENODEV;
+> +
+> +	ret = rproc_of_parse_firmware(dev, 0, &fw_name);
+> +	if (ret) {
+> +		dev_err(dev, "failed to parse firmware-name property, ret = %d\n",
+> +			ret);
+> +		return ret;
+> +	}
+> +
+> +	rproc = rproc_alloc(dev, dev_name(dev), &k3_dsp_rproc_ops, fw_name,
+> +			    sizeof(*kproc));
+> +	if (!rproc)
 > +		return -ENOMEM;
 > +
-> +	fd->scp_mem.scp_addr = addr;
-> +	fd->scp_mem_virt_addr = ptr;
-> +	dev_info(dev, "scp addr:%pad va:%pK\n", &addr, ptr);
-
-These addresses are nothing a user should be concerned about, so please
-don't use the _info level here. If you think this is an important debugging
-information, please make it dev_dbg(). Otherwise, please just remove.
-
+> +	rproc->has_iommu = false;
+> +	rproc->recovery_disabled = true;
+> +	kproc = rproc->priv;
+> +	kproc->rproc = rproc;
+> +	kproc->dev = dev;
+> +	kproc->data = data;
 > +
-> +	/*
-> +	 * This reserved memory is also be used by FD HW.
-> +	 * Need to get iova address for FD DMA.
-> +	 */
-> +	addr = dma_map_resource(dev, addr, MTK_FD_HW_WORK_BUF_SIZE,
-> +				DMA_TO_DEVICE, DMA_ATTR_SKIP_CPU_SYNC);
-
-Note that the second argument to dma_map_resource() is phys_addr_t, but the
-code above passes a DMA address. This works only by luck, because both
-physical and SCP DMA address space have the same addresses. To be fully
-correct, dma_map_single() needs to be used, with the kernel virtual address
-passed to it, but currently it doesn't handle the memory from a reserved
-pool. Thus, we can only keep the hack as is, but please add a comment
-explaining it, e.g.
-
-/*
- * FIXME: Assume SCP DMA and physical addresses are the same until
- * dma_map_single() is fixed to handle reserved memory allocations.
- */
-
-> +	if (dma_mapping_error(dev, addr)) {
-> +		dev_err(dev, "Failed to map scp iova\n");
-> +		ret = -ENOMEM;
-> +		goto fail_free_mem;
+> +	kproc->ti_sci = ti_sci_get_by_phandle(np, "ti,sci");
+> +	if (IS_ERR(kproc->ti_sci)) {
+> +		ret = PTR_ERR(kproc->ti_sci);
+> +		if (ret != -EPROBE_DEFER) {
+> +			dev_err(dev, "failed to get ti-sci handle, ret = %d\n",
+> +				ret);
+> +		}
+> +		kproc->ti_sci = NULL;
+> +		goto free_rproc;
 > +	}
-> +	fd->scp_mem.dma_addr = addr;
-> +	dev_info(dev, "scp iova addr:%pad\n", &addr);
-
-Ditto.
-
-Best regards,
-Tomasz
+> +
+> +	ret = of_property_read_u32(np, "ti,sci-dev-id", &kproc->ti_sci_id);
+> +	if (ret) {
+> +		dev_err(dev, "missing 'ti,sci-dev-id' property\n");
+> +		goto put_sci;
+> +	}
+> +
+> +	kproc->reset = devm_reset_control_get_exclusive(dev, NULL);
+> +	if (IS_ERR(kproc->reset)) {
+> +		ret = PTR_ERR(kproc->reset);
+> +		dev_err(dev, "failed to get reset, status = %d\n", ret);
+> +		goto put_sci;
+> +	}
+> +
+> +	kproc->tsp = k3_dsp_rproc_of_get_tsp(dev, kproc->ti_sci);
+> +	if (IS_ERR(kproc->tsp)) {
+> +		dev_err(dev, "failed to construct ti-sci proc control, ret = %d\n",
+> +			ret);
+> +		ret = PTR_ERR(kproc->tsp);
+> +		goto put_sci;
+> +	}
+> +
+> +	ret = ti_sci_proc_request(kproc->tsp);
+> +	if (ret < 0) {
+> +		dev_err(dev, "ti_sci_proc_request failed, ret = %d\n", ret);
+> +		goto free_tsp;
+> +	}
+> +
+> +	ret = k3_dsp_rproc_of_get_memories(pdev, kproc);
+> +	if (ret)
+> +		goto release_tsp;
+> +
+> +	ret = k3_dsp_reserved_mem_init(kproc);
+> +	if (ret) {
+> +		dev_err(dev, "reserved memory init failed, ret = %d\n", ret);
+> +		goto release_tsp;
+> +	}
+> +
+> +	ret = rproc_add(rproc);
+> +	if (ret) {
+> +		dev_err(dev, "failed to add register device with remoteproc core, status = %d\n",
+> +			ret);
+> +		goto release_mem;
+> +	}
+> +
+> +	platform_set_drvdata(pdev, kproc);
+> +
+> +	return 0;
+> +
+> +release_mem:
+> +	k3_dsp_reserved_mem_exit(kproc);
+> +release_tsp:
+> +	ret1 = ti_sci_proc_release(kproc->tsp);
+> +	if (ret1)
+> +		dev_err(dev, "failed to release proc, ret = %d\n", ret1);
+> +free_tsp:
+> +	kfree(kproc->tsp);
+> +put_sci:
+> +	ret1 = ti_sci_put_handle(kproc->ti_sci);
+> +	if (ret1)
+> +		dev_err(dev, "failed to put ti_sci handle, ret = %d\n", ret1);
+> +free_rproc:
+> +	rproc_free(rproc);
+> +	return ret;
+> +}
+> +
+> +static int k3_dsp_rproc_remove(struct platform_device *pdev)
+> +{
+> +	struct k3_dsp_rproc *kproc = platform_get_drvdata(pdev);
+> +	struct device *dev = &pdev->dev;
+> +	int ret;
+> +
+> +	rproc_del(kproc->rproc);
+> +
+> +	ret = ti_sci_proc_release(kproc->tsp);
+> +	if (ret)
+> +		dev_err(dev, "failed to release proc, ret = %d\n", ret);
+> +
+> +	kfree(kproc->tsp);
+> +
+> +	ret = ti_sci_put_handle(kproc->ti_sci);
+> +	if (ret)
+> +		dev_err(dev, "failed to put ti_sci handle, ret = %d\n", ret);
+> +
+> +	k3_dsp_reserved_mem_exit(kproc);
+> +	rproc_free(kproc->rproc);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct k3_dsp_mem_data c66_mems[] = {
+> +	{ .name = "l2sram", .dev_addr = 0x800000 },
+> +	{ .name = "l1pram", .dev_addr = 0xe00000 },
+> +	{ .name = "l1dram", .dev_addr = 0xf00000 },
+> +};
+> +
+> +static const struct k3_dsp_dev_data c66_data = {
+> +	.mems = c66_mems,
+> +	.num_mems = ARRAY_SIZE(c66_mems),
+> +	.boot_align_addr = SZ_1K,
+> +	.uses_lreset = true,
+> +};
+> +
+> +static const struct of_device_id k3_dsp_of_match[] = {
+> +	{ .compatible = "ti,j721e-c66-dsp", .data = &c66_data, },
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, k3_dsp_of_match);
+> +
+> +static struct platform_driver k3_dsp_rproc_driver = {
+> +	.probe	= k3_dsp_rproc_probe,
+> +	.remove	= k3_dsp_rproc_remove,
+> +	.driver	= {
+> +		.name = "k3-dsp-rproc",
+> +		.of_match_table = k3_dsp_of_match,
+> +	},
+> +};
+> +
+> +module_platform_driver(k3_dsp_rproc_driver);
+> +
+> +MODULE_AUTHOR("Suman Anna <s-anna@ti.com>");
+> +MODULE_LICENSE("GPL v2");
+> +MODULE_DESCRIPTION("TI K3 DSP Remoteproc driver");
+> -- 
+> 2.26.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
