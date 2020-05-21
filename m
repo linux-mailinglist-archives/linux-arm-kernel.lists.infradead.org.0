@@ -2,69 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 366631DCED7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:01:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8FB61DCEDD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:03:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=z9xtjVsAgRGWo8JjNblAQAvHgxBTLIE0ABX5z4LL1WA=; b=tKdiljQOZlGIHf9k1wC+/nG7p
-	7159+caMa+WjgUwpt4U9L1fFOvlAINtMYglg+maz/nldjr9w7dxKQgwih957IVogNPiSeDJ66q49+
-	Q86FVjY1gVeLuVoSRr5Zv0gYgyZCBmVmCOSna+zfFKWLx65QRNaALttqQQO/bUrMa0X78Tx5LdzVk
-	0N2p4UxltbVRMxcRQXF/21IoFUALemQuAkCz1bUE5eeDYkaRy1IhYuZ8Aw8igmo9GYhI0gZEKrghu
-	i1rvHyBeNW9m0JnQmXlyEZDSTy9AcpUzjB0pdLpsTlbCytN8rfDKwYLETX0EwRZQAMwcF+outeG4m
-	mUOJ+i2Ew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Yh/O5aMVaGHN/jEFBU7zXTKBmrUOW+txDY6YFnmNa0E=; b=KD6avi4UzDmcARC40KkJoyuobF
+	UDCtiW1k41uOuLKjjTcRWeUldHGB15Wcg75db7bJqe22qIL1nm9D0pP+gUn90OGtwGH2njY1SbXOp
+	awygfWATOTESGizDMGbk4IuSiq5p3Exq5Zv67R8ZbTYKDBSxKfoje+FKLrIG8V7UDGUskEd1phh90
+	fGybbmIuBiO2e8iRhvaBnDLqh+u9YRIoxVBi9EwuNPMYGzjGmjwi1AyH3o1BcVx+AqSBPlkW9/qFh
+	d22jLRik8ZGwHeLmiApSfYG/yba742+sfRpDRwugX5GMOx0aloHasx83foB6wSJwpH1OdqEKZJ/jl
+	z8XNBBoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbllQ-0007fp-PT; Thu, 21 May 2020 14:01:36 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbllF-0007f5-7P
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:01:26 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 3CC2F38420F11539B82D;
- Thu, 21 May 2020 15:01:14 +0100 (IST)
-Received: from [127.0.0.1] (10.47.6.132) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Thu, 21 May
- 2020 15:01:13 +0100
-Subject: Re: [PATCH V1 RESEND 1/3] perf/imx_ddr: Add system PMU identifier for
- userspace
-To: Will Deacon <will@kernel.org>, Rob Herring <robh@kernel.org>
-References: <20200512073115.14177-1-qiangqing.zhang@nxp.com>
- <20200512073115.14177-2-qiangqing.zhang@nxp.com>
- <20200519185125.GB453195@bogus> <20200520073304.GA23534@willie-the-truck>
- <CAL_JsqJfQ0PFy5mmwSG4aM91ghq5xiAEPR2YZOymws+BfGa+uA@mail.gmail.com>
- <20200521130415.GB5949@willie-the-truck>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <c3be06c5-781f-384f-768b-d809da99b7e0@huawei.com>
-Date: Thu, 21 May 2020 15:00:13 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+	id 1jblnc-00082O-QD; Thu, 21 May 2020 14:03:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jblnS-00081S-AR
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:03:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 935A4D6E;
+ Thu, 21 May 2020 07:03:37 -0700 (PDT)
+Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3F97D3F305;
+ Thu, 21 May 2020 07:03:36 -0700 (PDT)
+References: <20200519161755.209565-1-maz@kernel.org>
+ <20200519161755.209565-4-maz@kernel.org>
+User-agent: mu4e 0.9.17; emacs 26.3
+From: Valentin Schneider <valentin.schneider@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 03/11] arm64: Allow IPIs to be handled as normal interrupts
+In-reply-to: <20200519161755.209565-4-maz@kernel.org>
+Date: Thu, 21 May 2020 15:03:29 +0100
+Message-ID: <jhjlfllxu4u.mognet@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200521130415.GB5949@willie-the-truck>
-Content-Language: en-US
-X-Originating-IP: [10.47.6.132]
-X-ClientProxiedBy: lhreml715-chm.china.huawei.com (10.201.108.66) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_070125_411774_4B1E18EC 
-X-CRM114-Status: GOOD (  14.52  )
+X-CRM114-CacheID: sfid-20200521_070342_402890_FAA21A1B 
+X-CRM114-Status: GOOD (  18.49  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [185.176.76.210 listed in wl.mailspike.net]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,65 +63,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Joakim Zhang <qiangqing.zhang@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM
- ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
+Cc: Sumit Garg <sumit.garg@linaro.org>, kernel-team@android.com,
+ Russell King <linux@arm.linux.org.uk>, Jason Cooper <jason@lakedaemon.net>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/05/2020 14:04, Will Deacon wrote:
-> On Wed, May 20, 2020 at 09:23:41AM -0600, Rob Herring wrote:
->> On Wed, May 20, 2020 at 1:33 AM Will Deacon <will@kernel.org> wrote:
->>>
->>> On Tue, May 19, 2020 at 12:51:25PM -0600, Rob Herring wrote:
->>>> On Tue, May 12, 2020 at 03:31:13PM +0800, Joakim Zhang wrote:
->>>>> +static ssize_t ddr_perf_identifier_show(struct device *dev,
->>>>> +                                   struct device_attribute *attr,
->>>>> +                                   char *page)
->>>>> +{
->>>>> +   struct ddr_pmu *pmu = dev_get_drvdata(dev);
->>>>> +
->>>>> +   return sprintf(page, "%s\n", pmu->devtype_data->identifier);
->>>>
->>>> Why do we need yet another way to identify the SoC from userspace?
->>>
->>> I also really dislike this. What's the preferred way to identify the SoC
->>> from userspace?
->>
->> /proc/cpuinfo? ;)
-> 
-> The *SoC*!
-> 
->> For an non-firmware specific case, I'd say soc_device should be. I'd
->> guess ACPI systems don't use it and for them it's dmidecode typically.
->> The other problem I have with soc_device is it is optional.
-> 
 
-Hi Will,
+On 19/05/20 17:17, Marc Zyngier wrote:
+> In order to deal with IPIs as normal interrupts, let's add
+> a new way to register them with the architecture code.
+>
+> set_smp_ipi_range() takes a range of interrupts, and allows
+> the arch code to request them as if the were normal interrupts.
+                                      ^^^
+                                  s/the/they/
 
-> John -- what do you think about using soc_device to expose this information,
-> with ACPI systems using DMI data instead?
+> A standard handler is then called by the core IRQ code to deal
+> with the IPI.
+>
+> This means that we don't need to call irq_enter/irq_exit, and
+> that we don't need to deal with set_irq_regs either. So let's
+> move the dispatcher into its own function, and leave handle_IPI()
+> as a compatibility function.
+>
+> On the sending side, let's make use of ipi_send_mask, which
+> already exists for this purpose.
+>
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  arch/arm64/Kconfig           |  1 +
+>  arch/arm64/include/asm/smp.h |  5 ++
+>  arch/arm64/kernel/smp.c      | 92 +++++++++++++++++++++++++++++++-----
+>  3 files changed, 86 insertions(+), 12 deletions(-)
+>
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index 061f60fe452f..93ba0025e7b9 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -247,6 +254,8 @@ asmlinkage notrace void secondary_start_kernel(void)
+>        */
+>       notify_cpu_starting(cpu);
+>
+> +	ipi_setup(cpu);
+> +
+>       store_cpu_topology(cpu);
+>       numa_add_cpu(cpu);
+>
+> @@ -374,6 +383,8 @@ void cpu_die(void)
+>
+>       local_daif_mask();
+>
+> +	ipi_teardown(cpu);
+> +
 
-Generally I don't think that DMI is reliable, and I saw this as the 
-least preferred choice. I'm looking at the sysfs DMI info for my dev 
-board, and I don't even see anything like a SoC identifier.
+Would it make sense to move it up to say __cpu_disable()? I'm thinking it
+would make sense to bunch this up with the toggling of the cpu_online_mask
+bit, and FWIW it'd match with the comment atop the cpuhp callsite.
 
-As for the event_source device sysfs identifier file, it would not 
-always contain effectively the same as the SoC ID.
+Once the CPU is set as offline, all it has left to do is to go die in
+do_idle(), so AFAICT we can do that IPI teardown anywhere inbetween.
 
-Certain PMUs which I'm interested in plan to have probe-able 
-identification info available in future.
-
-Thanks,
-John
-
-
-
+>       /* Tell __cpu_die() that this CPU is now safe to dispose of */
+>       (void)cpu_report_death();
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
