@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 485831DCD13
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 14:39:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74BA11DCD22
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 14:41:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pVKQt9bIcYjErDagkUmkqZPbcSBnejv13Wrti/4YmDs=; b=JRRmH19LUVIoMK
-	bKaSkB6xAGD1gZRgHQj0JSucXFho4TTa/ZEkePXwhNG3mxDp9Tn8BiJVBsFOF9L3rVS+NZRAkl0qP
-	kUBuPwF4HjnrVEIVBqi8p000WYGJ/uKmHhoghXo6asLPP07VzTyswVxzxnjEGmSXReGZg26FoPkMA
-	NaZ8dau7S0FOzgIiK6L9lZ5CjTFUWLv3MGl5OHY/qzee80fHnFsLq3n8OCG8r4GDcWw4O11fp/Zh3
-	4KUMaoIGnrMR2xOjdHdtss3RRR3vclHT3J12pSTLPWMNjlbRhUvK0Z/2LSudnn8e9HHxco+rr++Uk
-	l82GHj0xjcD3k0ETRgyA==;
+	List-Owner; bh=3CgNZf/xyADtOb5AHykH6HKIqERpBU2oGOb2q9k5XEg=; b=FEZbIEUWD2B1nr
+	944ll6HlnmgJKk8rGV/jmQQwQCOeoVNSAZU48e62XH9NywlzDY23Y35hE0v9XxkCbVI8crL00v24J
+	DYhVGyqpnHqmQ5B4VQxpWADvRldylZUpiuzPut4Hw5iSt02HYfWuwjHvaeEeSiMdYH5mCR192W8sx
+	vplt6UKYDI2IH1xWG6rc0XCCCXvZ37Hvnhodo8bip6zJLEk70lE7ZKBzeSmEUtks82J7I8zkIVB3N
+	V66qd7LztVt6nTyFt2sydfPMyRdR4lMoIchHF69uiVa+g/HvhIZ9wGzJl6QCfiRGU1nBQctSKO1vM
+	M6eumn00ivzPDZ31rPxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbkTX-0000Su-TT; Thu, 21 May 2020 12:39:03 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jbkW8-00041h-Eq; Thu, 21 May 2020 12:41:44 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbkTK-0000Re-K6; Thu, 21 May 2020 12:38:53 +0000
-Received: by mail-wr1-x442.google.com with SMTP id k13so6539434wrx.3;
- Thu, 21 May 2020 05:38:49 -0700 (PDT)
+ id 1jbkVu-0003zb-0R; Thu, 21 May 2020 12:41:31 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g14so2173216wme.1;
+ Thu, 21 May 2020 05:41:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Wg960/8TG4/2NnV0yKvPjeVHHCG/osN3Tk0sd2xaefc=;
- b=ElgflZggUqOOfvL5ZV9FRMxr1Gzn9XJoJxXyPLKwOAHaO4JSg0hb/P4/nvNMCfD6Pl
- KNWmtgHxHu1S17apakB0k9AS7GnC+GsQzeY67Xn6QLey1GaMXkJZqFx1lKWWCxQSeCtQ
- Wdl+poEH2PZyjw2JpOnV8VLClI721vqCINjyvzuQQmNQ4F5kF1MZwmPRUQCEAQTxWhXP
- YMjdSzSbdJSgrID3Urj/9jmHU2063VO6+YDUv4uAzwvjz7KeBl7dTQB5dUMVdq9+28hp
- kmEJ+lA1MhHK2JyxvzyLeVZOhFQqoiLB63FTqlvqS9VUKFgNyYSTAS4MuxoVNaC1ExHx
- 0Rtg==
+ bh=ZCurGGibwCh7XdxYSjx5vU1gvo5ZaSz6gI8M6+Td/gk=;
+ b=MHkFysy9XCj8j8jFISAZgF6ThZMSSOf3rv9YYCVWnKelCG4abGZ183kq44kgxL8cZF
+ /IWTRHb0Q6hUanFdmDCUhLUImJB6Wgx0raoTmy5RL3GYLioo0eYUpKMOE6VIyeJ7OyOa
+ 7xotMpYQthz9zi5CVXY7aGGUi5HIOuTZPX4brdgBJvtEm9FAV9F3ux+bR3RYGmc6j8wX
+ jAZpQxqW1HtCpLogxXCo4AKF51jImJLAY1v9AvZOC9s5prZBSychS3c0FybKFO5g/pxh
+ NITK86y//ys9w/1PMtVGGMnD2EudbZgvEEbwl7TcRAL9ZiCmYUKhF2TDnXnh/jIM01DJ
+ 5KfA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Wg960/8TG4/2NnV0yKvPjeVHHCG/osN3Tk0sd2xaefc=;
- b=jDr2TRvIeL1m1rIDqLreI8k126ksJRXYv7gSSXBT2nV9FNgRFFVnpAMwVRaRRmzK0F
- mYL19Ev3k3IqtEcCxg4auxNFkGJKIkzJhcU2d0377i69pwlXs6fVpk4JhsoDx65EDRVa
- qRT+V35bZS2ic/nJRK7Ck8gndJtotE4Wo8iCasKo25FXbC1eELKMVcefm4dCi44aPksj
- lTaJxpIRfc4SFHqFwakb9H35I5THRF9wRTQO0jnohDJzYA80wFe5Ayazb/ev97R2LHmG
- nqzMZRzY3cW1nQVUNcrDLZIwsPHJpB5SPSIP/VVId9K3BZfYxzAjE/FCZUztmY9mx4t7
- cx/A==
-X-Gm-Message-State: AOAM533KR2VjY+ALArfUG+58af9eHD/lYfJmz460++UcRKczMOWJnSI5
- Ov7sA4feZhnL5/WVpyE3qj8cxqch
-X-Google-Smtp-Source: ABdhPJxZMJI8Ufy3tbaPn8Yq8YiSKcfNCZ7UDwG+WL1J36RgXa8ysq8x0D9mHGYEKZL9BFsCVLWe8g==
-X-Received: by 2002:adf:fb08:: with SMTP id c8mr8455804wrr.421.1590064728745; 
- Thu, 21 May 2020 05:38:48 -0700 (PDT)
+ bh=ZCurGGibwCh7XdxYSjx5vU1gvo5ZaSz6gI8M6+Td/gk=;
+ b=nd8fIipcxXRbbmFx6/3hqbVIxiKBpYVW1QqFxa+ErZBOZB+f1TAUlAOqKuBtiwk1eI
+ s74lZlUbaKAQpczcwX5TeiGxDJQL7vujb76T0xKGPl6XMTCeSb1gaAYMs8hiNIAXEKQ2
+ uyxJ+YpPkyRv+9Pbb+Bj/AuMh0cUM2rCl1fX/pDzqogjT2mEiEtwd2SjVYaZjxmiXUF5
+ Xd/b3SwZ20DgLdZRwJ9LzxSB3jDEhPIGqViWg9Gy9dPPQlR/jIrff30e0SQ65Fr5N33X
+ JLiKfzCkTV1qpS4mxo2eO+EOjS5+mKgpQTXJHeoAkPzBirR0D4lXvRm8l8HBGibrFs7V
+ dkEQ==
+X-Gm-Message-State: AOAM530hP+u0kW69sZS9BMFQ4dvcgmd+2X/VcnKVNRsUjkqXQrCP84mL
+ Ks9CgJT8HOpVCEHHzMoVHOS6e5nn
+X-Google-Smtp-Source: ABdhPJyvF9L10kZVYg8zqoYE9VslMq9gJ6PaLkV9Z3dMdzcmv4hVHOJAG+HvMX4W7KmEJFfRSSJbAw==
+X-Received: by 2002:a1c:a793:: with SMTP id q141mr8526068wme.135.1590064886643; 
+ Thu, 21 May 2020 05:41:26 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id z12sm6921636wmc.6.2020.05.21.05.38.47
+ by smtp.gmail.com with ESMTPSA id v205sm6410254wmg.11.2020.05.21.05.41.25
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 21 May 2020 05:38:47 -0700 (PDT)
-Subject: Re: [PATCH 1/3] arm64: dts: mt8183: Add gce setting in display node
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-References: <20200214044954.16923-1-bibby.hsieh@mediatek.com>
- <2369225e-2a92-c493-d089-e03f792df8cf@gmail.com>
- <77a11bb2-83a1-07b8-e949-eb9e5b37549d@gmail.com>
- <1590058033.29894.2.camel@mtksdaap41>
+ Thu, 21 May 2020 05:41:25 -0700 (PDT)
+Subject: Re: [PATCH v3 0/7] add support USB for MT8183
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <1567150854-30033-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1567562067.7317.52.camel@mhfsdcap03>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -136,23 +135,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <64adcf54-1fab-2228-4a16-463cdb5e9e36@gmail.com>
-Date: Thu, 21 May 2020 14:38:46 +0200
+Message-ID: <2e98982b-ab8a-9fa9-0903-881ebce916a5@gmail.com>
+Date: Thu, 21 May 2020 14:41:24 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1590058033.29894.2.camel@mtksdaap41>
+In-Reply-To: <1567562067.7317.52.camel@mhfsdcap03>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_053851_383848_90B1F750 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20200521_054130_052921_3D3F933E 
+X-CRM114-Status: GOOD (  18.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -176,187 +175,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
- srv_heupstream@mediatek.com, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, tfiga@chromium.org,
- CK Hu <ck.hu@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
- linux-mediatek@lists.infradead.org, Philipp Zabel <p.zabel@pengutronix.de>,
- YT Shen <yt.shen@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Mathias Nyman <mathias.nyman@intel.com>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Chungfeng,
 
-
-On 21/05/2020 12:47, Bibby Hsieh wrote:
-> On Thu, 2020-05-21 at 12:10 +0200, Matthias Brugger wrote:
->> On 14/02/2020 11:06, Matthias Brugger wrote:
->>>
->>>
->>> On 14/02/2020 05:49, Bibby Hsieh wrote:
->>>> In order to use GCE function, we need add some information
->>>> into display node (mboxes, mediatek,gce-client-reg, mediatek,gce-events).
->>>>
->>>> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
->>>> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
->>>> ---
->>>
->>> For the next time please provide some context on which patches this are based
->>> on. Bet below the '---' with a link.
->>>
->>> For this time, on which patch/series is this based? :)
->>
->> Bibby can you please help and rebase the patch against my for-next branch [1].
->> I'm then happy to queue it. Not sure if we can make it for v5.8 as we are really
->> late, but we could try :)
+On 04/09/2019 03:54, Chunfeng Yun wrote:
+> Hi Greg,
 > 
-> Hi, Matthias,
 > 
-> NP, but this patch[1] is depends on another patch [2].
-> Should I rebase them together into your for-next branch?
+>   Please don't try to pick up this series, the dependent ones are still
+> under public review, I'll fix build warning and send out new version
+> after the dependent ones are applied
+>   Sorry for inconvenience
 > 
 
-I see and [2] one depends on the scpsys driver.
-Then maybe better wait until we have the scpsys driver accepted.
+I think the pmic driver is upstream now and show up in linux-next soon.
+
+I propose to rebase the series and send it again.
 
 Regards,
 Matthias
 
-
-> [1] https://patchwork.kernel.org/patch/11385863/
-> [2] https://patchwork.kernel.org/patch/11316277/
+> Thanks
 > 
-> Bibby
+> On Fri, 2019-08-30 at 15:40 +0800, Chunfeng Yun wrote:
+>> This series support USB DRD controller and enable it's remote
+>> wakeup functoin for MT8183, they depend on the following
+>> series patches:
+>>
+>> 1. this series add support MT6358 PMIC
+>>   [v5,01/10] mfd: mt6397: clean up code
+>>   https://patchwork.kernel.org/patch/11110487/
+>>
+>> 2. this series add support pericfg syscon
+>>   [v2,1/2] dt-bindings: clock: mediatek: add pericfg for MT8183
+>>   https://patchwork.kernel.org/patch/11118183/
+>>
+>> 3. add property mediatek,discth for tphy
+>>   [06/11] phy: phy-mtk-tphy: add a property for disconnect threshold
+>>   https://patchwork.kernel.org/patch/11110695/
+>>
+>> v3 changes:
+>>   1. changes micros define
+>>   2. remove #reset-cell
+>>   3. update dependent series
+>>
+>> v2 changes:
+>>   add patch [7/7]
+>>
+>> Chunfeng Yun (7):
+>>   dt-bindings: usb: mtu3: support USB wakeup for MT8183
+>>   dt-bindings: usb: mtk-xhci: support USB wakeup for MT8183
+>>   usb: mtu3: support ip-sleep wakeup for MT8183
+>>   usb: mtk-xhci: support ip-sleep wakeup for MT8183
+>>   arm64: dts: mt8183: add usb and phy nodes
+>>   arm64: dts: mt8183: enable USB remote wakeup
+>>   arm64: dts: mt8183: tune disconnect threshold of u2phy
+>>
+>>  .../bindings/usb/mediatek,mtk-xhci.txt        |  1 +
+>>  .../devicetree/bindings/usb/mediatek,mtu3.txt |  1 +
+>>  arch/arm64/boot/dts/mediatek/mt8183-evb.dts   | 23 +++++++
+>>  arch/arm64/boot/dts/mediatek/mt8183.dtsi      | 63 +++++++++++++++++++
+>>  drivers/usb/host/xhci-mtk.c                   | 14 ++++-
+>>  drivers/usb/mtu3/mtu3_host.c                  | 14 ++++-
+>>  6 files changed, 114 insertions(+), 2 deletions(-)
+>>
 > 
->>
->> Thanks!
->> Matthias
->>
->> [1]
->> https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git/log/?h=for-next
->>
->>>
->>> Thanks,
->>> Matthias
->>>
->>>>  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 16 ++++++++++++++++
->>>>  1 file changed, 16 insertions(+)
->>>>
->>>> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
->>>> index be4428c92f35..8b522b039a37 100644
->>>> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
->>>> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
->>>> @@ -9,6 +9,7 @@
->>>>  #include <dt-bindings/interrupt-controller/arm-gic.h>
->>>>  #include <dt-bindings/interrupt-controller/irq.h>
->>>>  #include <dt-bindings/power/mt8183-power.h>
->>>> +#include <dt-bindings/gce/mt8183-gce.h>
->>>>  #include "mt8183-pinfunc.h"
->>>>  
->>>>  / {
->>>> @@ -664,6 +665,9 @@
->>>>  			reg = <0 0x14000000 0 0x1000>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			#clock-cells = <1>;
->>>> +			mboxes = <&gce 0 CMDQ_THR_PRIO_HIGHEST>,
->>>> +				 <&gce 1 CMDQ_THR_PRIO_HIGHEST>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
->>>>  		};
->>>>  
->>>>  		ovl0: ovl@14008000 {
->>>> @@ -672,6 +676,7 @@
->>>>  			interrupts = <GIC_SPI 225 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_OVL0>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x8000 0x1000>;
->>>>  		};
->>>>  
->>>>  		ovl_2l0: ovl@14009000 {
->>>> @@ -680,6 +685,7 @@
->>>>  			interrupts = <GIC_SPI 226 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_OVL0_2L>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x9000 0x1000>;
->>>>  		};
->>>>  
->>>>  		ovl_2l1: ovl@1400a000 {
->>>> @@ -688,6 +694,7 @@
->>>>  			interrupts = <GIC_SPI 227 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_OVL1_2L>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xa000 0x1000>;
->>>>  		};
->>>>  
->>>>  		rdma0: rdma@1400b000 {
->>>> @@ -697,6 +704,7 @@
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_RDMA0>;
->>>>  			mediatek,rdma_fifo_size = <5120>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xb000 0x1000>;
->>>>  		};
->>>>  
->>>>  		rdma1: rdma@1400c000 {
->>>> @@ -706,6 +714,7 @@
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_RDMA1>;
->>>>  			mediatek,rdma_fifo_size = <2048>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xc000 0x1000>;
->>>>  		};
->>>>  
->>>>  		color0: color@1400e000 {
->>>> @@ -715,6 +724,7 @@
->>>>  			interrupts = <GIC_SPI 231 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_COLOR0>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xe000 0x1000>;
->>>>  		};
->>>>  
->>>>  		ccorr0: ccorr@1400f000 {
->>>> @@ -723,6 +733,7 @@
->>>>  			interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_CCORR0>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0xf000 0x1000>;
->>>>  		};
->>>>  
->>>>  		aal0: aal@14010000 {
->>>> @@ -732,6 +743,7 @@
->>>>  			interrupts = <GIC_SPI 233 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_AAL0>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0 0x1000>;
->>>>  		};
->>>>  
->>>>  		gamma0: gamma@14011000 {
->>>> @@ -741,6 +753,7 @@
->>>>  			interrupts = <GIC_SPI 234 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_GAMMA0>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x1000 0x1000>;
->>>>  		};
->>>>  
->>>>  		dither0: dither@14012000 {
->>>> @@ -749,6 +762,7 @@
->>>>  			interrupts = <GIC_SPI 235 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>>  			clocks = <&mmsys CLK_MM_DISP_DITHER0>;
->>>> +			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x2000 0x1000>;
->>>>  		};
->>>>  
->>>>  		mutex: mutex@14016000 {
->>>> @@ -756,6 +770,8 @@
->>>>  			reg = <0 0x14016000 0 0x1000>;
->>>>  			interrupts = <GIC_SPI 217 IRQ_TYPE_LEVEL_LOW>;
->>>>  			power-domains = <&scpsys MT8183_POWER_DOMAIN_DISP>;
->>>> +			mediatek,gce-events = <CMDQ_EVENT_MUTEX_STREAM_DONE0>,
->>>> +					      <CMDQ_EVENT_MUTEX_STREAM_DONE1>;
->>>>  		};
->>>>  
->>>>  		smi_common: smi@14019000 {
->>>>
->>
 > 
 
 _______________________________________________
