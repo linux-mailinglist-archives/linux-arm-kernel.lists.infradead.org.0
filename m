@@ -2,99 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFAEC1DD8AA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 22:49:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8685A1DD963
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 23:22:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sli2z5EZLksb+p/e11f60mY7SHfkIAdJfmbaQ70LVL0=; b=r46kt2WON5Y/Ot
-	h0dygJNLGdjdBCud9N/VCXmWLATKU4/TJPAVbeXMJYI4O1xb7L8A0Hut5btbho459mY6qTmJKYpKf
-	FSxQHCMQEmIiKvjzGp5S3SbPqFZfC4sPqT5qCDdTbW2ShmYtMO0UTwARj4Mge7oIZ8l09hCq4xMTT
-	yfnbiOVrXRQ7yv6Whg2YvMpd2ifscqccH7YI9TOuuEwIavryaOd/oqQtAgaijaSYH8Lp0jcKgDUMx
-	SKpKYNR+p/vsQTchLC4xY6siy55xGKny54wSdGz4ckRe+pMhGrXnzbz1B6bSnPvG+9qS2ueqMcNYB
-	pEYXWoGD53WsXLBG8AZw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BhMu8CgrrOKBdBYH02KdUCt9JuE2u9neRRVxcolZGQM=; b=eJBsvihndjbVUe3jlcGWs45jf
+	lryg3iVgcqQAefonxqYyAmlahGOtTx4FhnRbXQ+SJ7BdR/Nq0r9OThAJBp0aLid+YP8UxmRCOOb+0
+	NFPY7iQ6o54cLfwKnU8OstOOBs8/1uVJi/d4psdIg1DHVZWMh5sHlEbqg+uovzqBkHtkKdQlvU7sR
+	3iSm9TySQHCsO3PqurDwtWDbpZ4DEKHI3LreSNDLzL8JSUSSCkekHf8ltlgRtnhO3D3uWU0oPBTvP
+	PQAmKBDRq4RLXsYTnImDWMq5WOs1UfY1lhyPirbcxK+gAP+rL8edDXUw7/+ODv+gSibel/3mxvRr8
+	OmatRFc9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbs7c-0001nM-Fl; Thu, 21 May 2020 20:48:56 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbs7S-0001mu-F9
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 20:48:48 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id y13so4877373vsk.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 13:48:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=p3xW00WwjvWAE0e/7nAQkUdfg8TW9JJHt59aPfFAWV0=;
- b=OTbSU55IHoOEAjq8VYgVf5X5BibXnK/GM2FKKWLrUZwSSchRJ+t+tYmPMz1dtB0Gsw
- eUtvkcffoA5ISJ/tWavNj/gu49n/FiVynk4Kp/0FLpy0BAPC7PCSxeud0G9qaiW2rAMb
- Mg8zsD/Zh8vDU/jBCejDrw9TGstN/gE4ZML8Rvn7ozbd9BbrAJAn4OF1ioI5J1RcKk8b
- PuBeVJlVv0ZW8U3IpSJca6xPbnZWs/ct7HkPQAq2UCHRPlkFBd97/yhTY7Yp/fwiCq/b
- 3sbma3Aupr2Z4iZl46K+NQfyyaaxa402DD7H748gPgPaHPZlSogW4TfKb8iUs7qvY1ku
- 3t+A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=p3xW00WwjvWAE0e/7nAQkUdfg8TW9JJHt59aPfFAWV0=;
- b=noylBhvUKecGFixkYOjcuuqN9+z2EKCmYpapEX0AMelSfdWnGGKT98+lCnmMf5r1FJ
- XedwUSMdBBaEq4nBrto3v7pDUn3wYyKrAzJYkYDPHuhFGDXLrmQptoXBq/wDGVAsxDCg
- ChKPF46mhwVUvqcnDJD5zNEwsSCJN4E0Rg6vc/5lwzJWRS2ri16P6BP/sbCqWlOFKZmH
- 7KIqT3wDPdHigZZ3IYFloNEHfcH/FrOWGZc0sDS7OEFAzBkIk1v/f1qRWQGd/fAM9ARB
- pd9rKRmrMwF9xQskcyMr5Sap2jjZ0kXOgT+OvbvHSg/OehOyb4/mN9cjFkwsuEsvoPb1
- ddqQ==
-X-Gm-Message-State: AOAM531z+eES507MRV1wdLk9QFpGfe9OECnJicyGUzkFv7PuM7DP+uPJ
- Uhp5RjlKbgJH2bqJCDEUDo400c3Ip/4ONGMRcTLJdQ==
-X-Google-Smtp-Source: ABdhPJzIyWCsLJkisZerG1fXep4TEAoNG/35nPSCKsA5M+QVFVExr0B0BT3hnUf+3Qf2Kjl1taNTQrfEjTA/KZKuEns=
-X-Received: by 2002:a67:d981:: with SMTP id u1mr8728499vsj.240.1590094121699; 
- Thu, 21 May 2020 13:48:41 -0700 (PDT)
+	id 1jbsdc-0004q6-P2; Thu, 21 May 2020 21:22:00 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbsdT-0004pS-Sy
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 21:21:53 +0000
+Received: from localhost (p5486ce13.dip0.t-ipconnect.de [84.134.206.19])
+ by pokefinder.org (Postfix) with ESMTPSA id DF02A2C1FCF;
+ Thu, 21 May 2020 23:21:49 +0200 (CEST)
+Date: Thu, 21 May 2020 23:21:49 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: Re: [PATCH v12 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
+ driver
+Message-ID: <20200521212149.GB20150@ninjato>
+References: <20200521110910.45518-1-tali.perry1@gmail.com>
+ <20200521110910.45518-3-tali.perry1@gmail.com>
+ <20200521142340.GM1634618@smile.fi.intel.com>
+ <20200521143100.GA16812@ninjato>
 MIME-Version: 1.0
-References: <20200508020106.136652-1-pcc@google.com>
- <20200513180914.50892-1-pcc@google.com>
- <20200513202808.GY21779@arm.com>
- <CAMn1gO4V05nD-Tq4dES0QyO73bAT-Nwo1ABnz0nuous8Rq+dGA@mail.gmail.com>
- <20200518095313.GZ21779@arm.com>
- <CAMn1gO4c3-hG_i6ZWsk-+oUGQQBdzFJRMrpehT3OFERF2Z7nrg@mail.gmail.com>
- <20200520085502.GC24293@willie-the-truck> <20200520092558.GI5031@arm.com>
- <CAMn1gO7VWBcbMvqNeyBdfpO71kfhrZbHwkOC0JeSX13_HUMmWA@mail.gmail.com>
- <87zha1ea98.fsf@x220.int.ebiederm.org>
- <CAMn1gO6cgcP0O85BA_ire9j1L5zvN4i2JFRXO7R=MScXbmWG1g@mail.gmail.com>
- <874ks9drb6.fsf@x220.int.ebiederm.org>
-In-Reply-To: <874ks9drb6.fsf@x220.int.ebiederm.org>
-From: Peter Collingbourne <pcc@google.com>
-Date: Thu, 21 May 2020 13:48:29 -0700
-Message-ID: <CAMn1gO6POg4+aX0TNRW5ybOx+BNYbMr_ABHkGFj1hkJLOpx9jQ@mail.gmail.com>
-Subject: Re: [PATCH v6] arm64: Expose FAR_EL1 tag bits in sigcontext
-To: "Eric W. Biederman" <ebiederm@xmission.com>
+In-Reply-To: <20200521143100.GA16812@ninjato>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_134846_534081_DF0B51D5 
-X-CRM114-Status: GOOD (  56.84  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200521_142152_084311_03AFB877 
+X-CRM114-Status: UNSURE (   6.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,245 +61,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Oleg Nesterov <oleg@redhat.com>,
- Kostya Serebryany <kcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, Evgenii Stepanov <eugenis@google.com>,
- Richard Henderson <rth@twiddle.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ tmaimon77@gmail.com, yuenn@google.com, avifishman70@gmail.com,
+ venture@google.com, openbmc@lists.ozlabs.org, brendanhiggins@google.com,
+ ofery@google.com, Tali Perry <tali.perry1@gmail.com>, kfting@nuvoton.com,
+ robh+dt@kernel.org, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, benjaminfair@google.com
+Content-Type: multipart/mixed; boundary="===============3881251421093691188=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 12:28 PM Eric W. Biederman
-<ebiederm@xmission.com> wrote:
->
-> Peter Collingbourne <pcc@google.com> writes:
->
-> > On Thu, May 21, 2020 at 5:39 AM Eric W. Biederman <ebiederm@xmission.com> wrote:
-> >>
-> >> Peter Collingbourne <pcc@google.com> writes:
-> >>
-> >> > On Wed, May 20, 2020 at 2:26 AM Dave Martin <Dave.Martin@arm.com> wrote:
-> >> >>
-> >> >> On Wed, May 20, 2020 at 09:55:03AM +0100, Will Deacon wrote:
-> >> >> > On Tue, May 19, 2020 at 03:00:12PM -0700, Peter Collingbourne wrote:
-> >> >> > > On Mon, May 18, 2020 at 2:53 AM Dave Martin <Dave.Martin@arm.com> wrote:
-> >> >> > > > On Thu, May 14, 2020 at 05:58:21PM -0700, Peter Collingbourne wrote:
-> >> >> > > > > diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-> >> >> > > > > index baa88dc02e5c..5867f2fdbe64 100644
-> >> >> > > > > --- a/arch/arm64/kernel/signal.c
-> >> >> > > > > +++ b/arch/arm64/kernel/signal.c
-> >> >> > > > > @@ -648,6 +648,7 @@ static int setup_sigframe(struct
-> >> >> > > > > rt_sigframe_user_layout *user,
-> >> >> > > > >                 __put_user_error(ESR_MAGIC, &esr_ctx->head.magic, err);
-> >> >> > > > >                 __put_user_error(sizeof(*esr_ctx), &esr_ctx->head.size, err);
-> >> >> > > > >                 __put_user_error(current->thread.fault_code,
-> >> >> > > > > &esr_ctx->esr, err);
-> >> >> > > > > +               current->thread.fault_code = 0;
-> >> >> > > >
-> >> >> > > > Perhaps, but we'd need to be careful.  For example, can we run out of
-> >> >> > > > user stack before this and deliver a SIGSEGV, but with the old
-> >> >> > > > fault_code still set?  Then we'd emit the old fault code with the
-> >> >> > > > new "can't deliver signal" signal, which doesn't make sense.
-> >> >> > > >
-> >> >> > > > Stuff may also go wrong with signal prioritisation.
-> >> >> > > >
-> >> >> > > > If a higher-priority signal (say SIGINT) comes in after a data abort
-> >> >> > > > enters the kernel but before the resulting SIGSEGV is dequeued for
-> >> >> > > > delivery, wouldn't we deliver SIGINT first, with the bogus fault code?
-> >> >> > > > With your change we'd then have cleared the fault code by the time we
-> >> >> > > > deliver the SIGSEGV it actually relates to, if I've understood right.
-> >> >> > > >
-> >> >> > > > Today, I think we just attach that fault code to every signal that's
-> >> >> > > > delivered until something overwrites or resets it, which means that
-> >> >> > > > a signal that needs fault_code gets it, at the expense of attaching
-> >> >> > > > it to a bunch of other random signals too.
-> >> >> > > >
-> >> >> > > >
-> >> >> > > > Checking the signal number and si_code might help us to know what we
-> >> >> > > > should be doing with fault_code.  We need to have sure userspace can't
-> >> >> > > > trick us with a non kernel generated signal here.  It would also be
-> >> >> > > > necessary to check how PTRACE_SETSIGINFO interacts with this.
-> >> >> > >
-> >> >> > > With these possible interactions in mind I think we should store the
-> >> >> > > fault code and fault address in kernel_siginfo instead of
-> >> >> > > thread_struct (and clear these fields when we receive a siginfo from
-> >> >> > > userspace, i.e. in copy_siginfo_from_user which is used by
-> >> >> > > ptrace(PTRACE_SETSIGINFO) among other places). That way, the
-> >> >> > > information is clearly associated with the signal itself and not the
-> >> >> > > thread, so we don't need to worry about our signal being delivered out
-> >> >> > > of order.
-> >> >> >
-> >> >> > Hmm, I can't see a way to do that that isn't horribly invasive in the core
-> >> >> > signal code. Can you?
-> >> >
-> >> > I think I've come up with a way that doesn't seem to be too invasive.
-> >> > See patch #1 of the series that I'm about to send out.
-> >> >
-> >> >> > But generally, I agree: the per-thread handling of fault_address and
-> >> >> > fault_code appears to be quite broken in the face of signal prioritisation
-> >> >> > and signals that don't correspond directly to hardware trap. It would be
-> >> >> > nice to have some tests for this...
-> >> >> >
-> >> >> > If we want to pile on more bodges, perhaps we could stash the signal number
-> >> >> > to which the fault_{address,code} relate, and then check that at delivery
-> >> >> > and clear on a match. I hate it.
-> >> >>
-> >> >> I agree with Daniel's suggestion in principle, but I was also concerned
-> >> >> about whether it would be too invasive elsewhere.
-> >> >>
-> >> >> Question though: does the core code take special care to make sure that
-> >> >> a force_sig cannot be outprioritised by a regular signal?  If so,
-> >> >> perhaps we get away with it.  I ask this, because the same same issue
-> >> >> may be hitting other arches otherwise.
-> >> >
-> >> > Not as far as I can tell. There does appear to be prioritisation for
-> >> > synchronous signals [1] but as far as I can tell nothing to
-> >> > distinguish one of these signals from one with the same signal number
-> >> > sent from userspace (e.g. via kill(2)).
-> >>
-> >> The si_code will differ between signals generated between userspace
-> >> and signals generated by the kernel.
-> >>
-> >> We do allow a little bit of ptrace and sending to yourself to spoof
-> >> kernel generated signals, for reasons of debugging and process migration
-> >> where an existing process needs to be reconstructed.  But the defenses
-> >> should be strong enough you can assume that we reliably distinguish
-> >> between a signal from userspace and a signal from the kernel.
-> >
-> > So check for SIGBUS || SIGSEGV and one of the below si_codes, and only
-> > add the context in that case? Seems fragile to me, but I suppose I
-> > could live with it.
-> >
-> >> I don't fully follow what you are doing but this feels like the
-> >> kind of case where a new si_code has been defined as well as additional
-> >> fields in siginfo.
-> >
-> > There is no new si_code for this, the information will be exposed for
-> > several existing si_code types (BUS_ADRERR, BUS_ADRALN, BUS_MCEERR_AR,
-> > SEGV_ACCERR, SEGV_MAPERR), and possibly others in the future
-> > (particularly SEGV_MTESERR, which is part of the proposed MTE patch
-> > set). Note that we already have a union field for BUS_MCEERR_AR, and
-> > we may want to expose it for the other si_codes that already have
-> > union fields as well.
-> >
-> > That being said, taking a closer look at siginfo, I think we are in
-> > luck and we might be able to make this work in a reasonable way by
-> > reusing padding (see below).
-> >
-> >> In your patchset I really hate that you were going back to
-> >> force_sig_info, and filling out struct siginfo by hand.  That is an
-> >> error prone pattern, and I have fixed enough bugs in the kernel to prove
-> >> that.
-> >
-> > To be fair, most of the callers are in helper functions that take
-> > explicit parameters similar to force_sig_fault et al, and the SIGILL
-> > one could easily be made that way as well.
-> >
-> >> I take exception to the idea that including the full address might break
-> >> userspace.  That means typically means someone has been too lazy to look
-> >> and see what userspace is doing.  When that userspace that might break
-> >> is the same userspace you are changing the kernel to serve that makes me
-> >> nervous.  AKA the userspace that cares about this signal and how it is
-> >> represented in siginfo.
-> >
-> > It's not a matter of being lazy. This behaviour isn't just an accident
-> > but has been explicitly documented for years (see the
-> > tagged-pointers.rst file that I changed: "Non-zero tags are not
-> > preserved when delivering signals."), so users can reasonably rely on
-> > it. Furthermore we simply don't have visibility into the majority of
-> > userspace. For example, there are a lot of closed source Android apps
-> > out there, and who knows what signal handlers they're installing and
-> > how they're making use of the si_addr field on e.g. SEGV_MAPERR. We
-> > can't just change the documented semantics under their feet.
-> >
-> > It's also not the same userspace either. The userspace that's
-> > initially going to be consuming the new fields is in a part of the
-> > Android system that handles and reports crashes, and that's something
-> > that we control unlike all the apps.
-> >
-> > Finally, the userspace may need to know whether the tag bits were
-> > actually zero or whether they were just unavailable, otherwise
-> > userspace could for example produce a misleading crash report. Simply
-> > having the kernel set the top bits of si_addr wouldn't accomplish that
-> > due to the kernel's previous behaviour, hence the mask to let
-> > userspace know which bits are accurate.
-> >
-> >> A fix of one instance of SIGILL should not be included with a patch that
-> >> does something else, and really should come before everything else if
-> >> possible.
-> >
-> > Fair point. I can see if I can split that part out.
-> >
-> >> If this information really belongs in struct siginfo (as it sounds like)
-> >> please actually put the information in siginfo, and let userspace look
-> >> in siginfo to find it.  struct siginfo is a union with plenty of space,
-> >> and plenty of si_codes.
-> >>
-> >> If this applies to multiple cases then it might be trickier but please
-> >> dig into the details, don't toss things into sigcontext just because
-> >> you can't figure out a clean design for reporting this.
-> >
-> > If we wanted this in siginfo, one idea that I had was to revert commit
-> > b68a68d3dcc15ebbf23cbe91af1abf57591bd96b and add unsigned char fields
-> > _addr_top_byte and _addr_top_byte_mask in the padding between
-> > _addr_lsb and the union (with comments on all the fields of course to
-> > say when they are filled in). I think that would work since we are
-> > already clearing padding in siginfo, one nice property of the new
-> > fields is that the zero values are correct in the case where the
-> > information isn't being exposed (so old kernels would already have the
-> > correct behaviour). That would only work on certain architectures
-> > (i.e. at least alignof(void*) >= 4) so I suppose it could have an
-> > #ifdef __aarch64__ around it.
->
-> Perhaps add a 4th padding member to the union inside of _sigfault, that
-> adds something like 4 unsigned long's worth of data, and then have your
-> fields after the union.
 
-Maybe. I guess we could always add another union after my fields if we
-end up needing another union member that is larger than the 4 unsigned
-longs, which would be ugly but at least it would work. Reusing the
-padding would avoid that but maybe it's not that likely that we'll
-need that much.
+--===============3881251421093691188==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="7ZAtKRhVyVSsbBD2"
+Content-Disposition: inline
 
-> Is it quite a bit of work to gather that information from the
-> instructions that faulted?  I am just checking that this work is really
-> makes sense.
 
-I think so. At a glance there are hundreds of load and store
-instructions on arm64 and we would need to know how to disassemble all
-of them and recompute the si_addr from scratch (since the tag bits
-could come from any of the registers used to compute the address). And
-we really don't want to be doing this tricky stuff in a signal handler
-where we've just crashed.
+--7ZAtKRhVyVSsbBD2
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> What I really don't understand is how well this problem generalizes to
-> other architectures to tell if this is something other people need to
-> solve at some point as well.
 
-An architecture with a feature similar to ARM's TBI or MTE may need
-something like this as well, depending on whether they decide to
-expose the tag bits in si_addr from the start (and if the feature is
-similar to TBI it certainly seems like a reasonable choice to follow
-arm64 for compatibility reasons). I would imagine that the main thing
-that could vary between architectures is the number of bits involved,
-which suggests making the fields arch-specific (or making them larger,
-but that may be wasteful).
+> From a glimpse, this looks good to go. I will have a close look later
+> today.
 
-The only other architecture that I'm aware of with such a feature is
-SPARC (whose ADI is similar to MTE). The documentation [1] seems to
-suggest that the tag bits are available in si_addr but isn't very
-specific.
+Phew, this driver is huge. I won't finish my review today, but I am
+working on it and am maybe 2/3 through.
 
-Peter
 
-[1] https://www.kernel.org/doc/Documentation/sparc/adi.rst
+--7ZAtKRhVyVSsbBD2
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7G8OkACgkQFA3kzBSg
+KbYcCw/9H7oWUrWBWy5C49NVa1N+n9JHdtx5KFE40DwXAwm2mRCSuoMr1JP9Rq5M
+IFVgQp7Kk1mZ0jDR178dMQSYKuwDuFkOMDrewvQyOGPbGtn38FyInpJ6Te+uVyBS
+HNJMGTluuvvM6840KdZSkRYZ9ynptA/JwSfvKoBk9/UAL6W/4C1LR97a4AEb/JFT
+1To5HWdtArLvqSdfwvAaZyRghNLM2bjrp46NUFsfcXvxbZoiRZJBlmqBPJqkO4sw
+wyVdSW16rdxMrAa6sFlcCjnCCZWusEgf5hdUtm3dRqnELLYH87iLqZpdfpMyOA8E
+YJSLRpRBj2GUlmvG2S2Kd2H03UUyfspn9Qxe5T7MOpYDuoQQoOXrjH88kqTyEVty
+3pkQ0z/oo62JsfgfjJQW5cBxbRhIiwP/rvMai1eXo303chCA2ieP9cT1bPbw8BXY
+uJ3Xl2Botr7hgj7VywLHN6cp4S5m4iWJVbjUZfM2vAmSKTSKvBcIR1mVVzfZgWJD
+vE9PsxfHtt0EOAU8WE9iseFJPOvzK7tuuaibHaD6gVAaNLr0Nv4adcM1MwSCicum
+PqkDvXWuP+n6HdQ9+L/FA63xAtbT5SRQIFYhMBxots9hOYAUxK5gOnoHJYbAqB5R
+TY2mr5I/NekkgzmBbh0ZRWTRdCmgfQCXmzMku6xaM4D57Weuauk=
+=vjY8
+-----END PGP SIGNATURE-----
+
+--7ZAtKRhVyVSsbBD2--
+
+
+--===============3881251421093691188==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3881251421093691188==--
+
