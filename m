@@ -2,73 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D56201DD5DB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 20:19:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B1831DD5E6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 20:23:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CV+l0aQMADM7rnp/7HoymFYZQ64j2i4Ce9wSVXsphyc=; b=peclEdhT8TnmIE
-	oQluJWW4+YD9gEdg2nvKT7qdBBqxd6E9rMZaMb/4A6AAZcdofJ87rhB9/SFoh+5VfncAWdlu6tu0g
-	sToT/ElC8gNGi0nETaPVmzl8YE8jBLsvLfDMEYUIwCsJEepV6/YKYZBSMirsH/hI7S8A9N2v4ayqO
-	Xg2RTLmtGEe0tm4UMP3xGR0nBLegjNotar3PdunD1BqALClup/CpCV+UwcvYduLWR0WmJGdlvIvQl
-	c8cjZ08QwFH7w5khx7LF8OUzjSIAAyf7DpVueoN93/a2nhj7ZHuVNMQTCzHjt4+Oj8X6THM5H1qDL
-	RVsT0feluId7l6USI+uw==;
+	List-Owner; bh=HbiKHAgJaeMmwiSVykA0hSehE4SHSqg1ozkDLBcrcxs=; b=s8kbLgcuXd3QNn
+	xkA1HhfdeauxQ3ZWNQ3CvtzH7K0/0J2SbR+9lo/iPlrk2PsJXnjZz7gFCJF77Yqu8E5e39okxRI0m
+	gnhRvdJwftTr8Cb5Cq0ZfWaqBWLfnKj/NwzIg3iQa916vtIiMK3m5hK40BPQoScIV0723QHHlxtX7
+	5owJi27mGYC1S9KEJn6Cn9HssheTzme2BNhw+5VdnyTg6lWaNdzjFrbk1Mpat5hluERfJvvjnmLnz
+	RdpFTah1lcV+a3FMW4WcexE1StGdG88+r5i8k7u5QSOm5hS+EKXAzWY7fkgONYq63Vww1/I1vHYAl
+	w8j2fP13/dBTvNhfLzCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbpn4-0006Am-Uk; Thu, 21 May 2020 18:19:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jbpqc-0000fy-Tj; Thu, 21 May 2020 18:23:14 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbpmw-0006A7-VY
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 18:19:28 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 52A4E20738;
- Thu, 21 May 2020 18:19:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590085166;
- bh=N5CsmBgzgRJ1qoSjQJyCqgE9IOj3hAVxpxWnjwMHcOw=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Sid+RAofpJhvVSePV8bzGp+OZMlEJfxE7e+9xOWfDmVLegyKQnOgPc3nSTCPsC5hP
- cA1F18rZmRreoph12CkIhK+B3aUHnjMRyG2RXLt2QMgmjtjzVIok24QNlTbalhEa/0
- Yn+IsceiGCdvPfkRTpU8D7Sf3FEzdiKaCkv9zVdc=
-Date: Thu, 21 May 2020 19:19:21 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
-Subject: Re: [PATCH v2 3/8] iio: at91_adc: pass ref to IIO device via param
- for int function
-Message-ID: <20200521191921.11473cba@archlinux>
-In-Reply-To: <99993df0dce7f7561e9659985265d6c1f5839208.camel@analog.com>
-References: <20200514131710.84201-1-alexandru.ardelean@analog.com>
- <20200514131710.84201-4-alexandru.ardelean@analog.com>
- <20200516181749.243c9515@archlinux>
- <99993df0dce7f7561e9659985265d6c1f5839208.camel@analog.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jbpqS-0000ej-T0; Thu, 21 May 2020 18:23:07 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 6C8F62A366B;
+ Thu, 21 May 2020 19:23:01 +0100 (BST)
+Date: Thu, 21 May 2020 20:22:56 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Pratyush Yadav <p.yadav@ti.com>
+Subject: Re: [PATCH v6 04/19] spi: spi-mem: allow specifying a command's
+ extension
+Message-ID: <20200521202256.5816eb32@collabora.com>
+In-Reply-To: <20200520163053.24357-5-p.yadav@ti.com>
+References: <20200520163053.24357-1-p.yadav@ti.com>
+ <20200520163053.24357-5-p.yadav@ti.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_111927_053777_65E214CE 
-X-CRM114-Status: GOOD (  29.94  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200521_112305_068070_E4F64303 
+X-CRM114-Status: GOOD (  20.52  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,111 +61,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "ak@it-klinger.de" <ak@it-klinger.de>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "eugen.hristev@microchip.com" <eugen.hristev@microchip.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Mark Brown <broonie@kernel.org>, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 18 May 2020 08:32:11 +0000
-"Ardelean, Alexandru" <alexandru.Ardelean@analog.com> wrote:
+On Wed, 20 May 2020 22:00:38 +0530
+Pratyush Yadav <p.yadav@ti.com> wrote:
 
-> On Sat, 2020-05-16 at 18:17 +0100, Jonathan Cameron wrote:
-> > [External]
-> > 
-> > On Thu, 14 May 2020 16:17:05 +0300
-> > Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
-> >   
-> > > Since there will be some changes to how iio_priv_to_dev() is implemented,
-> > > it could be that the helper becomes a bit slower, as it will be hidden away
-> > > in the IIO core.
-> > > 
-> > > For this driver, the IIO device can be passed directly as a parameter to
-> > > the at91_ts_sample() function, thus making it immune to the change of
-> > > iio_priv_to_dev().
-> > > The function gets called in an interrupt context.
-> > > 
-> > > Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>  
-> > I wonder. Should we just pass the struct device?  It's only used for
-> > error printing I think, so we could make that explicit.  
+> In xSPI mode, flashes expect 2-byte opcodes. The second byte is called
+> the "command extension". There can be 3 types of extensions in xSPI:
+> repeat, invert, and hex. When the extension type is "repeat", the same
+> opcode is sent twice. When it is "invert", the second byte is the
+> inverse of the opcode. When it is "hex" an additional opcode byte based
+> is sent with the command whose value can be anything.
 > 
-> I was also thinking that for this series, [for some drivers] it would make sense
-> to put a reference to indio_dev on the state-struct; and just return it.
-> I'll see about it.
-> I am feeling that sometimes these IIO core cleanups end up being more than I
-> want to do. But I'll try to see about it. Maybe I can make time or delegate some
-> of this.
-
-Absolutely understood.  No problem if you don't have time / energy to
-do this stuff.  I very much appreciate it when you do, but I know how
-unrewarding it can be!
-
+> So, make opcode a 16-bit value and add a 'nbytes', similar to how
+> multiple address widths are handled.
 > 
-> My personal interest with them, is to reduce my complaints during reviews.
-> People starting to write IIO drivers: well, I can see their frustration [on
-> their faces] when I complain that they shouldn't use something, and they copied
-> it from somewhere.
+> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+> ---
+>  include/linux/spi/spi-mem.h | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
 > 
+> diff --git a/include/linux/spi/spi-mem.h b/include/linux/spi/spi-mem.h
+> index e3dcb956bf61..731bb64c6ba6 100644
+> --- a/include/linux/spi/spi-mem.h
+> +++ b/include/linux/spi/spi-mem.h
+> @@ -69,6 +69,8 @@ enum spi_mem_data_dir {
+>  
+>  /**
+>   * struct spi_mem_op - describes a SPI memory operation
+> + * @cmd.nbytes: number of opcode bytes (only 1 or 2 are valid). The opcode is
+> + *		sent MSB-first.
+>   * @cmd.buswidth: number of IO lines used to transmit the command
+>   * @cmd.opcode: operation opcode
+>   * @cmd.dtr: whether the command opcode should be sent in DTR mode or not
+> @@ -94,9 +96,10 @@ enum spi_mem_data_dir {
+>   */
+>  struct spi_mem_op {
+>  	struct {
+> +		u8 nbytes;
+>  		u8 buswidth;
+>  		u8 dtr : 1;
+> -		u8 opcode;
+> +		u16 opcode;
+>  	} cmd;
+>  
+>  	struct {
 
-That's more or less the only reason I write IIO patches currently!
-Though I get to mostly avoid seeing the faces of those who fall
-into the traps of old code we should have tidied up years ago :(
-Not gotten near any of new hardware pile of IIO hardware in a long time.
-Plenty of other new hardware, but not IIO stuff!
+As mentioned in one of my previous review, you should patch the mxic
+driver before extending the opcode field:
 
-Jonathan
-
-> 
-> > 
-> > I'm not that bothered either way though.
-> > 
-> > Jonathan
-> >   
-> > > ---
-> > >  drivers/iio/adc/at91_adc.c | 5 ++---
-> > >  1 file changed, 2 insertions(+), 3 deletions(-)
-> > > 
-> > > diff --git a/drivers/iio/adc/at91_adc.c b/drivers/iio/adc/at91_adc.c
-> > > index 0368b6dc6d60..5999defe47cd 100644
-> > > --- a/drivers/iio/adc/at91_adc.c
-> > > +++ b/drivers/iio/adc/at91_adc.c
-> > > @@ -287,13 +287,12 @@ static void handle_adc_eoc_trigger(int irq, struct
-> > > iio_dev *idev)
-> > >  	}
-> > >  }
-> > >  
-> > > -static int at91_ts_sample(struct at91_adc_state *st)
-> > > +static int at91_ts_sample(struct iio_dev *idev, struct at91_adc_state *st)
-> > >  {
-> > >  	unsigned int xscale, yscale, reg, z1, z2;
-> > >  	unsigned int x, y, pres, xpos, ypos;
-> > >  	unsigned int rxp = 1;
-> > >  	unsigned int factor = 1000;
-> > > -	struct iio_dev *idev = iio_priv_to_dev(st);
-> > >  
-> > >  	unsigned int xyz_mask_bits = st->res;
-> > >  	unsigned int xyz_mask = (1 << xyz_mask_bits) - 1;
-> > > @@ -449,7 +448,7 @@ static irqreturn_t at91_adc_9x5_interrupt(int irq, void
-> > > *private)
-> > >  
-> > >  		if (status & AT91_ADC_ISR_PENS) {
-> > >  			/* validate data by pen contact */
-> > > -			at91_ts_sample(st);
-> > > +			at91_ts_sample(idev, st);
-> > >  		} else {
-> > >  			/* triggered by event that is no pen contact, just read
-> > >  			 * them to clean the interrupt and discard all.  
-
+--->8---
+diff --git a/drivers/spi/spi-mxic.c b/drivers/spi/spi-mxic.c
+index 69491f3a515d..c3f4136a7c1d 100644
+--- a/drivers/spi/spi-mxic.c
++++ b/drivers/spi/spi-mxic.c
+@@ -356,6 +356,7 @@ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
+        int nio = 1, i, ret;
+        u32 ss_ctrl;
+        u8 addr[8];
++       u8 cmd[2];
+ 
+        ret = mxic_spi_set_freq(mxic, mem->spi->max_speed_hz);
+        if (ret)
+@@ -393,7 +394,10 @@ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
+        writel(readl(mxic->regs + HC_CFG) | HC_CFG_MAN_CS_ASSERT,
+               mxic->regs + HC_CFG);
+ 
+-       ret = mxic_spi_data_xfer(mxic, &op->cmd.opcode, NULL, 1);
++       for (i = 0; i < op->cmd.nbytes; i++)
++               cmd[i] = op->cmd.opcode >> (8 * (op->cmd.nbytes - i - 1));
++
++       ret = mxic_spi_data_xfer(mxic, cmd, NULL, op->cmd.nbytes);
+        if (ret)
+                goto out;
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
