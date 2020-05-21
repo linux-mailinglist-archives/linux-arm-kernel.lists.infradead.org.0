@@ -2,70 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BA191DC9EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 11:23:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8296F1DC9F7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 11:25:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Date:From:Message-ID:MIME-Version:
+	Subject:To:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9HvJ6dMqd+MB98bh89OmqIJ3J/ycvUbWDnlv2pZ+UBY=; b=ivPnmQIZRk3V32
-	4FVKIqYJf0UvVSeYwz/rt1Y8h9VcaplgcAh7u/WLwxodw4zNCS+Kq4pO/9pvqy3+2MrAgmth3MtPu
-	LqPRDXOIDlHQfzqssYtv+KNbyYzaTgm5xu6n0SYUl2EKslcgCAZUAg5r9AHu+3c3TvOOrwqgiZOYt
-	k+D+Jzjlx9pN+/cD4Qak/gCRqxCpq+pFg/zR3r6XbMzBRidxlDfJsGmjTRTIITsQ285pdCuo0neq6
-	b1SE7XWz9TmyCPx7tO35RnITqfS1HuoknKBqjKWeuftDenZ5Pg5V5ePuEUcnSCJu60mTpGouvjaLO
-	cxeR1dARTiVU5vk22IEg==;
+	List-Owner; bh=CaHnGOSS2X7loQcRfTgJXfNrUC7jtH280mSDctuKIOI=; b=AK0+r5WmmRSeYt
+	XPMHLUzSm9T/jkA+YPGJWusoP0jVfxozqnB+NCvcW2gV8BtPQqsnDo3sE2gBUfLjN+CRrr9RcLHLP
+	1cW6T3qMwvHDys91kXRf3H5A0SEqJuHbArbECYXCLdjNEQRSqvWo/7674oICgoMLgCjW9zaq66V5j
+	nMxpKmdSh8xaWIZF36cIo9BGZ4gC6DkItJ9T1gYjWrw5NE4vS7bEnCtEncAtARNKSMsB4wzwJJ/o6
+	fsO7MOYfjRY0ShQTHy3gsI7aJOqbCSpLKGgG8Muh/+b4kUE77auYKY/r7swnD7on04QpJhXu7H+s0
+	8EKobMDE0PgsWrFI9f1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbhQN-0000Qt-31; Thu, 21 May 2020 09:23:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jbhRu-00013D-0h; Thu, 21 May 2020 09:25:10 +0000
+Received: from twhmllg3.macronix.com ([122.147.135.201])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbhQ5-0000PQ-G1; Thu, 21 May 2020 09:23:18 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9997A2072C;
- Thu, 21 May 2020 09:23:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590052997;
- bh=37Qx3oxaJAYRWohGHUkEGO6YOTHJz1lmfbAnHjSkp5I=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ioeYo7XFA87XTNXeQJEAty+eG2jS18ifXdr8sw2BZATw6FFGqv7auONLr2w6jCf8p
- WJrLNS43HJQh32kBnAxJ0ASpl1SCv7WL1k4Y6KY6xZj5Bw503cpJ/R8E/l6MPbJPYq
- Lq0gYjh6jUQ5U1HhwjgeljGUM8l/uEoQIlNgfOCE=
-Date: Thu, 21 May 2020 10:23:12 +0100
-From: Will Deacon <will@kernel.org>
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-Message-ID: <20200521092311.GB5091@willie-the-truck>
-References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
- <20200518155545.GO32394@willie-the-truck>
- <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
+ id 1jbhRM-0000q7-6h; Thu, 21 May 2020 09:24:37 +0000
+Received: from twhfmlp1.macronix.com (twhfmlp1.macronix.com [172.17.20.91])
+ by TWHMLLG3.macronix.com with ESMTP id 04L9O5xV009999;
+ Thu, 21 May 2020 17:24:05 +0800 (GMT-8)
+ (envelope-from masonccyang@mxic.com.tw)
+Received: from MXML06C.mxic.com.tw (mxml06c.macronix.com [172.17.14.55])
+ by Forcepoint Email with ESMTP id 625C4A326BAAEB7806BC;
+ Thu, 21 May 2020 17:24:06 +0800 (CST)
+In-Reply-To: <20200519142642.24131-6-p.yadav@ti.com>
+References: <20200519142642.24131-1-p.yadav@ti.com>
+ <20200519142642.24131-6-p.yadav@ti.com>
+To: "Pratyush Yadav" <p.yadav@ti.com>
+Subject: Re: [PATCH v5 05/19] mtd: spi-nor: add support for DTR protocol
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-KeepSent: 6C754784:29BF11CD-4825856F:0032D83F;
+ type=4; name=$KeepSent
+X-Mailer: Lotus Notes Release 8.5.3FP4 SHF90 June 10, 2013
+Message-ID: <OF6C754784.29BF11CD-ON4825856F.0032D83F-4825856F.0033A4F1@mxic.com.tw>
+From: masonccyang@mxic.com.tw
+Date: Thu, 21 May 2020 17:24:05 +0800
+X-MIMETrack: Serialize by Router on MXML06C/TAIWAN/MXIC(Release 9.0.1FP10
+ HF265|July 25, 2018) at 2020/05/21 PM 05:24:06,
+ Serialize complete at 2020/05/21 PM 05:24:06
+X-MAIL: TWHMLLG3.macronix.com 04L9O5xV009999
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_022317_555813_68309CBF 
-X-CRM114-Status: GOOD (  14.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200521_022436_538545_1B74C6FF 
+X-CRM114-Status: UNSURE (   5.58  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [122.147.135.201 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,57 +69,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
- Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, Mark Brown <broonie@kernel.org>,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ linux-mediatek@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mtd@lists.infradead.org,
+ Pratyush Yadav <p.yadav@ti.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 08:24:21AM +0530, Prabhakar Kushwaha wrote:
-> On Mon, May 18, 2020 at 9:25 PM Will Deacon <will@kernel.org> wrote:
-> > On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
-> > > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> > >       return 0;
-> > >  }
-> > >
-> > > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
-> > > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
-> > > +{
-> > > +     struct arm_smmu_strtab_cfg rdcfg;
-> > > +
-> > > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
-> > > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
-> > > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
-> > > +
-> > > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
-> > > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
-> > > +
-> > > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
-> > > +
-> 
-> this need a fix. It should be memcpy.
-> 
-> > > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
-> >
-> > Sorry, but this is unacceptable. These things were allocated by the DMA API
-> > so you can't just memcpy them around and hope for the best.
-> >
-> 
-> I was referring copy_context_table() in drivers/iommu/intel-iommu.c.
-> here i see usage of memremap and memcpy to copy older iommu table.
-> did I take wrong reference?
-> 
-> What kind of issue you are foreseeing in using memcpy(). May be we can
-> try to find a solution.
 
-Well the thing might not be cache-coherent to start with...
+Hi Pratyush,
 
-Will
+
+> @@ -311,6 +313,7 @@ struct flash_info {
+>                  * BP3 is bit 6 of status register.
+>                  * Must be used with SPI_NOR_4BIT_BP.
+>                  */
+> +#define SPI_NOR_OCTAL_DTR_READ   BIT(19) /* Flash supports octal DTR 
+Read. */
+
+#define SPI_NOR_OCTAL_DTR_RDWR  BIT(19) /* Support Octal DTR Read & Write 
+*/
+
+more precisely and clearly ?
+
+thanks,
+Mason
+
+CONFIDENTIALITY NOTE:
+
+This e-mail and any attachments may contain confidential information 
+and/or personal data, which is protected by applicable laws. Please be 
+reminded that duplication, disclosure, distribution, or use of this e-mail 
+(and/or its attachments) or any part thereof is prohibited. If you receive 
+this e-mail in error, please notify us immediately and delete this mail as 
+well as its attachment(s) from your system. In addition, please be 
+informed that collection, processing, and/or use of personal data is 
+prohibited unless expressly permitted by personal data protection laws. 
+Thank you for your attention and cooperation.
+
+Macronix International Co., Ltd.
+
+=====================================================================
+
+
+
+============================================================================
+
+CONFIDENTIALITY NOTE:
+
+This e-mail and any attachments may contain confidential information and/or personal data, which is protected by applicable laws. Please be reminded that duplication, disclosure, distribution, or use of this e-mail (and/or its attachments) or any part thereof is prohibited. If you receive this e-mail in error, please notify us immediately and delete this mail as well as its attachment(s) from your system. In addition, please be informed that collection, processing, and/or use of personal data is prohibited unless expressly permitted by personal data protection laws. Thank you for your attention and cooperation.
+
+Macronix International Co., Ltd.
+
+=====================================================================
+
 
 _______________________________________________
 linux-arm-kernel mailing list
