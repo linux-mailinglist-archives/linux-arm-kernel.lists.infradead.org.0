@@ -2,84 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29C081DC536
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 04:31:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 864111DC556
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 04:45:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
-	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qp+LZq4RU9BXZ7Ft8RJdjmUkSTRNCZYDp0PKa0BjeKQ=; b=Pp0kcp8uV9AiiT
-	M+rSy+BiblFBvhkjiLrwJQ9jiI2TNvnmpH0c/p5aBYwEUg9qErG9LXhKsVFPo0cW5cNTfJmHZZWAc
-	86720nQaK+Hp2JEO5hnAihDpySeeZEpA03DMqJmtrhoxQfPl2YL5ZUR9I7Fx/AvyauoBlSCFht0bD
-	ETtMPFNVnheyTM/ibE1KuwspL9hvJnpA6KlG/m0YXDXnKk8TE6jwupz33CCqH3l2XNHYu1MAXAZsi
-	Kd+ctAMW85WahXiFmL8fqXVVG7aW9hZmSoJDLLgMQHnwRO2hJinYhMM29zfFXX8TaWaivs9WMI/uO
-	JNGN7SD4k3ULAw/TVYhA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JjcD+BpQQ+O76Rfy4lX7UNls+b6LbUz8tyOVTebTTn4=; b=gTAoPToxSdsAed
+	NWLIR9TMi2nNzgfIAQ1C7d3ou6SujzabdbrPX30NSmFJlWBnmECv5wCuLVFyG/JoCuWHToDIzCfmO
+	6886NZdEz/g/LnHEMXUlTLACyzCyHfDmiu1O0jc0Jt5HMaEYZpQTY1f8/2g0bLZg01KnZ+ijz5ejq
+	dNG1RQi3+4On7BOYebt5wLW1NyVpJtv9kxyRRnd6cdaaleMXcFRKZNtkM463pxpv9hHTl0hLGI7IV
+	Yg4rVVNocv40IrzCizUxe8Nof+zZz/h0wvFsau0/9/w3C4bP5aqAwhK4ASAe5lQNI0pZ4Zfj02Fyg
+	rwhdQUX4XYVWraXRNO+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbazd-00077w-9K; Thu, 21 May 2020 02:31:33 +0000
-Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
+	id 1jbbDK-0007gJ-AZ; Thu, 21 May 2020 02:45:42 +0000
+Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbayQ-0006Yp-Vd
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 02:30:25 +0000
-Received: by mail-yb1-xb4a.google.com with SMTP id 186so3815075ybq.1
+ id 1jbbDA-0007fo-TB
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 02:45:34 +0000
+Received: by mail-ej1-x642.google.com with SMTP id e2so6988616eje.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 20 May 2020 19:30:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=VerQNHnEqtJVKigraWJilWCIs/X7yGTgZ4CjLx6EUiA=;
- b=ILPr+2ow7Am9c/dDPEcG+hIDoJIZnc13SGumXz/UTVwds909QX8skXaXTO+gOJPzp5
- KHOBzvFUAAyXoePlBtydeWQ7734bxHIM/NMWz89D0qB+tuYQXNKJiK5ZvcDB4Ck8Q4E1
- 3PaZmcJ8nTtbvA4+Yx+mG3VcE2VUF//Csc1uJDYGamfJAlxHd2k/kHmzhHs3bGcWRgF9
- UlVHg+IOR5ntqGSOAcsLYlg5MrJ0oJhQdbdJVpyP0Lf2Tm4gM+m7/lcQYiaDymRfsWPQ
- oqHsqJyjbPzSgn4+WalOj9IjR6CBwrBbowXYukKs1WFX2gUCtdYxLad+P8jkbtd4dKbG
- VBjQ==
+ Wed, 20 May 2020 19:45:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=xOJ53LG8zD7rjN8rxu4xNXRA2mNXITnOD0rXjoMaA5k=;
+ b=vS67ayA1z9mud5JdV1ldCbVLYGQv071qUzrGCm9vNkL/qiYTamrN1dMq/xWra8GG7U
+ MYH2zKx0kHeaEZCdoKR2OvreK4zzO7dtH2RsdaBtlrmgSs8ewTmk+WdCvbkYhdJ9b9sg
+ KD7GJo5EvEc0FhkNEbATvC/cbng9s/c9VbPan9OBAQA0JCCA3+RIgtpMylsRd0nY6/CS
+ awvcrp0161AzDj7p/ocZWrcgQJZGwKmonD0w4b45t9KUyp2nVCmmHRffpTZBb1i9qp7y
+ JhW57oHJ2Q13hDSyQ1/JgkHZCmx+eK3kGwjlKeGJTLpPPDJ2vM54BU9Ap1HREF0u9SWC
+ Ul/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:in-reply-to:message-id:mime-version
- :references:subject:from:to:cc;
- bh=VerQNHnEqtJVKigraWJilWCIs/X7yGTgZ4CjLx6EUiA=;
- b=JyT0IbLU5KJlW3vVa33WRQzSsj5b3BvWKqPV0hX4ce6NEwUCkuRWJ7rYxYrn6PR404
- 2QFMedtjK3oVlmu95aT0m6HkA//jQEEjFSMTWWCmKZj4NP1nDZcSTdhHQqTmsu48qozA
- lZWDUZlE8oYKZXmMp+gRFa9q0ckfiuEaNH5Nk4j/YLuzMxs4I47x/bKo345/RAz/7Azu
- uxuMeC7/ypSld15HF5UJiEFPEG5XzlNdGILZT8uOxH65Caz/6ZhCzaaZY3OP0sH54IlR
- J325Xo4jpaMi1NnjvXJuVXJECCmb1M1928CVa+svilQB03nJXRI9ARXwSyviSnh9ahuv
- pM2A==
-X-Gm-Message-State: AOAM532g/9BfRfSMslSMVrGFkD36Bg70Qzadz96JpeP7NBdpj/syHQe7
- pFsA9IWIOVAEwYfr9lWNb5Rmqcs=
-X-Google-Smtp-Source: ABdhPJxtr8JN0VMtyuuIIgjXTLckPxQ1zHPAeM5ael24OSCU+XacK4C5YuZiKncWDDlY0EKdG/DK+Fw=
-X-Received: by 2002:a25:9805:: with SMTP id a5mr6842626ybo.26.1590028217101;
- Wed, 20 May 2020 19:30:17 -0700 (PDT)
-Date: Wed, 20 May 2020 19:29:43 -0700
-In-Reply-To: <20200521022943.195898-1-pcc@google.com>
-Message-Id: <20200521022943.195898-4-pcc@google.com>
-Mime-Version: 1.0
-References: <20200521022943.195898-1-pcc@google.com>
-X-Mailer: git-send-email 2.26.2.761.g0e0b3e54be-goog
-Subject: [PATCH v6 3/3] arm64: Expose FAR_EL1 tag bits in sigcontext
-From: Peter Collingbourne <pcc@google.com>
-To: Catalin Marinas <catalin.marinas@arm.com>,
- Evgenii Stepanov <eugenis@google.com>, Kostya Serebryany <kcc@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, 
- Dave Martin <Dave.Martin@arm.com>, Will Deacon <will@kernel.org>,
- Oleg Nesterov <oleg@redhat.com>, 
- "Eric W. Biederman" <ebiederm@xmission.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=xOJ53LG8zD7rjN8rxu4xNXRA2mNXITnOD0rXjoMaA5k=;
+ b=XkKgxlDdv3bTbMKAXWEmZUqmFr05koSr6NBQto3cX50BgD6PJu14+8C3rQvqkFF+96
+ R/xtcEBcQGbExIW5ZbQFOMPbxc9TpgRkaBhg553KBk4vdRUrsLWxGIBw8BghYqw0/C26
+ 9gtejZGwoB4XBL3SWhpCs/GYJcnrjnbJkNkLur/Ufat+1j/VsWKGmCF324See5fWX8M1
+ aOs3ngG0xZh34/IahHe2C6W+2kP/F8A5En1FyR9lBMCrMziXgf9kb05RZNNqm7UFPgAG
+ EjflSlaLUhuAcC06AfYH9VvCSbRzf704tr6VosMEt/8Mq3rOYIUlw4LwK2YcmIan4pOo
+ Vasg==
+X-Gm-Message-State: AOAM5336rBd0j7UKMMdgX8ibC2GYOi9ROlTJXeXEmlOgUzxszIQYBZ5t
+ Z1BH73RBIW2u/grRw37fzpI=
+X-Google-Smtp-Source: ABdhPJy06nrHA0h0cM+wj/67jYrFMykPmMOE4p8imo6Hd0tZy9Vuzj2ZZ0HiQQyLZGoShDZ3GwNVuA==
+X-Received: by 2002:a17:906:bce6:: with SMTP id
+ op6mr1628937ejb.337.1590029131313; 
+ Wed, 20 May 2020 19:45:31 -0700 (PDT)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ u26sm3375221eje.35.2020.05.20.19.45.28
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 20 May 2020 19:45:30 -0700 (PDT)
+Subject: Re: [PATCH 2/2] ARM: Allow either FLATMEM or SPARSEMEM on the
+ multiplatform build
+To: Arnd Bergmann <arnd@arndb.de>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20200506235009.25023-3-f.fainelli@gmail.com>
+ <20200507072711.GB683243@linux.ibm.com>
+ <bc44ed27-7dd7-67b6-93cf-f6f575b59441@gmail.com>
+ <a7c86780-d65c-ab7b-ec3c-4029257cee7a@gmail.com>
+ <20200518194533.GD1059226@linux.ibm.com>
+ <CAK8P3a1hd2uKsncgd=eyY1VHBbB8fPBDCWsyHpHT7q9eJp-URw@mail.gmail.com>
+ <20200519144306.GE1059226@linux.ibm.com>
+ <20200519150452.GH1551@shell.armlinux.org.uk>
+ <20200519152714.GF1059226@linux.ibm.com>
+ <CAK8P3a2iZNm310x8g2Zv0TjGJ=Px7hu14i3Ka7GQBZwyKPUesA@mail.gmail.com>
+ <20200519165445.GI1551@shell.armlinux.org.uk>
+ <CAK8P3a32gDzqLBeBs8CtT9fhRncQNsJ0nrN=2Ws4DAWe3nOCZA@mail.gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <6d7c3b4f-dde2-95a8-8d36-03ba957aa133@gmail.com>
+Date: Wed, 20 May 2020 19:45:27 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.8.0
+MIME-Version: 1.0
+In-Reply-To: <CAK8P3a32gDzqLBeBs8CtT9fhRncQNsJ0nrN=2Ws4DAWe3nOCZA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_193019_536797_6D793E48 
-X-CRM114-Status: GOOD (  23.48  )
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20200520_194532_958515_F639C71D 
+X-CRM114-Status: GOOD (  19.52  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b4a listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,7 +105,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,339 +116,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Richard Henderson <rth@twiddle.net>
+Cc: Doug Berger <opendmb@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ Kevin Cernekee <cernekee@gmail.com>, Mike Rapoport <rppt@linux.ibm.com>,
+ Gregory Fong <gregory.0xf0@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
-address exposed via siginfo.si_addr and sigcontext.fault_address. However,
-the tag bits may be needed by tools in order to accurately diagnose
-memory errors, such as HWASan [1] or future tools based on the Memory
-Tagging Extension (MTE).
 
-We should not stop clearing these bits in the existing fault address fields,
-because there may be existing userspace applications that are expecting the tag
-bits to be cleared. Instead, create a fault_addr_top_byte_context in sigcontext
-(similar to the existing esr_context), and store the tag bits of FAR_EL1 there.
 
-[1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+On 5/19/2020 1:42 PM, Arnd Bergmann wrote:
+> On Tue, May 19, 2020 at 6:54 PM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
+>> On Tue, May 19, 2020 at 05:32:52PM +0200, Arnd Bergmann wrote:
+>>> On Tue, May 19, 2020 at 5:27 PM Mike Rapoport <rppt@linux.ibm.com> wrote:
+>>>> On Tue, May 19, 2020 at 04:04:52PM +0100, Russell King - ARM Linux admin wrote:
+>>>>> There are cases where the reason to use sparsemem is not an optional
+>>>>> one but is out of necessity - they require the page array to be split
+>>>>> up in order to boot successfully.
+>>>>>
+>>>>> With that in mind, flatmem becomes an "optimisation" over sparsemem.
+>>>>
+>>>> At the moment, there are three platforms that enable SPARSEMEM: ARCH_EP93XX,
+>>>> ARCH_RPC and ARCH_SA1100. All the rest have FLATMEM implcitly selected.
+>>>>
+>>>> I do not intend to change that, I am only going add an ability to select
+>>>> the memory model for ARCH_MULTIPLATFORM.
+>>>>
+>>>> I'll respin the series on the list before adding the patches to the
+>>>> patch system.
+>>>
+>>> I think we'll make EP93xx part of multiplatform at some point, IIRC
+>>> only the missing clock driver is stopping us at the moment, and I already
+>>> discussed with Linus Walleij how that can be done.
+>>>
+>>> My guess is that ep93xx is one platform on which sparsemem is
+>>> just an optimization to reduce the initial memory consumption, but
+>>> we should verify that when we get there.
+>>
+>> When you have a platform where the memory is segmented into separate
+>> blocks widely spaced, sparsemem is not an optimisation.  For example,
+>> If you have four blocks spaced across 1GB, that requires about
+>> 256Ki struct page's.  Assuming 32 byte struct page, that requires 8MiB
+>> of contiguous memory.
+> 
+> I checked the datasheet: ep93xx has four chip-selects, each of them
+> with their own 256MB memory area. Most boards we support use only
+> the last chipselect, but those that have more than one would waste
+> up to 2MB per additional memory chip, which is not nice but doesn't
+> make it a hard requirement as long as the kernel can fit into the first one.
+> 
+> However, the chips has a second problem: depending on the
+> specific memory configuration, only every other 2/4/8MB within
+> that range may actually be used, so the mem_map[] array would
+> double its size in practice and (worse) the kernel would likely
+> not fit into the first section without sparsemem.
+> 
+> This means we should indeed treat it as a requirement for ep93xx.
 
-Signed-off-by: Peter Collingbourne <pcc@google.com>
----
-v6:
-- move fault address and fault code into the kernel_siginfo data structure
-- split the patch in three since it was getting large and now has
-  generic and arch-specific parts
+That is already captured with the select ARCH_SPARSEMEM_ENABLE or the
+ARCH_EP93XX entry.
 
-v5:
-- add padding to fault_addr_top_byte_context in order to ensure the correct
-  size and preserve sp alignment
-
-v4:
-- expose only the tag bits in the context instead of the entire FAR_EL1
-- remove mention of the new context from the sigcontext.__reserved[] note
-
-v3:
-- add documentation to tagged-pointers.rst
-- update comments in sigcontext.h
-
-v2:
-- revert changes to hw_breakpoint.c
-- rename set_thread_esr to set_thread_far_esr
-
- Documentation/arm64/tagged-pointers.rst  | 17 ++++++++++------
- arch/arm64/include/asm/signal.h          |  3 +++
- arch/arm64/include/asm/traps.h           |  4 ++--
- arch/arm64/include/uapi/asm/sigcontext.h | 24 +++++++++++++++++------
- arch/arm64/kernel/debug-monitors.c       |  2 +-
- arch/arm64/kernel/ptrace.c               |  2 +-
- arch/arm64/kernel/signal.c               | 25 ++++++++++++++++++++++++
- arch/arm64/kernel/traps.c                | 10 ++++++----
- arch/arm64/mm/fault.c                    |  8 ++++----
- 9 files changed, 71 insertions(+), 24 deletions(-)
-
-diff --git a/Documentation/arm64/tagged-pointers.rst b/Documentation/arm64/tagged-pointers.rst
-index eab4323609b9..c6e9592a9dea 100644
---- a/Documentation/arm64/tagged-pointers.rst
-+++ b/Documentation/arm64/tagged-pointers.rst
-@@ -53,12 +53,17 @@ visibility.
- Preserving tags
- ---------------
- 
--Non-zero tags are not preserved when delivering signals. This means that
--signal handlers in applications making use of tags cannot rely on the
--tag information for user virtual addresses being maintained for fields
--inside siginfo_t. One exception to this rule is for signals raised in
--response to watchpoint debug exceptions, where the tag information will
--be preserved.
-+Non-zero tags are not preserved in the fault address fields
-+siginfo.si_addr or sigcontext.fault_address when delivering
-+signals. This means that signal handlers in applications making use
-+of tags cannot rely on the tag information for user virtual addresses
-+being maintained in these fields. One exception to this rule is for
-+signals raised in response to watchpoint debug exceptions, where the
-+tag information will be preserved.
-+
-+The fault address tag is preserved in the fault_addr_top_byte field of
-+the signal frame record fault_addr_top_byte_context, which is present
-+for signals raised in response to data aborts and instruction aborts.
- 
- The architecture prevents the use of a tagged PC, so the upper byte will
- be set to a sign-extension of bit 55 on exception return.
-diff --git a/arch/arm64/include/asm/signal.h b/arch/arm64/include/asm/signal.h
-index f5c001b0a125..c80eb3b3ea40 100644
---- a/arch/arm64/include/asm/signal.h
-+++ b/arch/arm64/include/asm/signal.h
-@@ -9,6 +9,9 @@ struct arch_private_siginfo {
- 	/* FAR_EL1 value */
- 	unsigned long fault_address;
- 
-+	/* Mask of defined bits in the top byte of FAR_EL1 */
-+	unsigned char fault_address_top_byte_mask;
-+
- 	/* Sanitized ESR_EL1 value, or FSR/syscall number in compat mode */
- 	unsigned long error_code;
- };
-diff --git a/arch/arm64/include/asm/traps.h b/arch/arm64/include/asm/traps.h
-index 5ed5be5347e6..981b930b1e6f 100644
---- a/arch/arm64/include/asm/traps.h
-+++ b/arch/arm64/include/asm/traps.h
-@@ -27,8 +27,8 @@ void unregister_undef_hook(struct undef_hook *hook);
- void force_signal_inject(int signal, int code, unsigned long address);
- void arm64_notify_segfault(unsigned long addr);
- void arm64_force_sig_fault(int signo, int code, void __user *addr,
--			   unsigned long far, unsigned long esr,
--			   const char *str);
-+			   unsigned long far, unsigned char far_tb_mask,
-+			   unsigned long esr, const char *str);
- void arm64_force_sig_mceerr(int code, void __user *addr, short lsb,
- 			    unsigned long far, unsigned long esr,
- 			    const char *str);
-diff --git a/arch/arm64/include/uapi/asm/sigcontext.h b/arch/arm64/include/uapi/asm/sigcontext.h
-index 8b0ebce92427..6ce5e1bb7efd 100644
---- a/arch/arm64/include/uapi/asm/sigcontext.h
-+++ b/arch/arm64/include/uapi/asm/sigcontext.h
-@@ -44,11 +44,12 @@ struct sigcontext {
-  *
-  *	0x210		fpsimd_context
-  *	 0x10		esr_context
-+ *	 0x10		fault_addr_top_byte_context
-  *	0x8a0		sve_context (vl <= 64) (optional)
-  *	 0x20		extra_context (optional)
-  *	 0x10		terminator (null _aarch64_ctx)
-  *
-- *	0x510		(reserved for future allocation)
-+ *	0x500		(reserved for future allocation)
-  *
-  * New records that can exceed this space need to be opt-in for userspace, so
-  * that an expanded signal frame is not generated unexpectedly.  The mechanism
-@@ -94,17 +95,28 @@ struct esr_context {
- 	__u64 esr;
- };
- 
-+/* Top byte of fault address (normally not exposed via si_addr) */
-+#define FAULT_ADDR_TOP_BYTE_MAGIC	0x46544201
-+
-+struct fault_addr_top_byte_context {
-+	struct _aarch64_ctx head;
-+	__u8 flags;
-+	__u8 fault_addr_top_byte;
-+	__u8 fault_addr_top_byte_mask;
-+	__u8 __reserved[5];
-+};
-+
- /*
-  * extra_context: describes extra space in the signal frame for
-  * additional structures that don't fit in sigcontext.__reserved[].
-  *
-  * Note:
-  *
-- * 1) fpsimd_context, esr_context and extra_context must be placed in
-- * sigcontext.__reserved[] if present.  They cannot be placed in the
-- * extra space.  Any other record can be placed either in the extra
-- * space or in sigcontext.__reserved[], unless otherwise specified in
-- * this file.
-+ * 1) fpsimd_context, esr_context, fault_addr_top_byte_context and
-+ * extra_context must be placed in sigcontext.__reserved[] if present.
-+ * They cannot be placed in the extra space.  Any other record can be
-+ * placed either in the extra space or in sigcontext.__reserved[],
-+ * unless otherwise specified in this file.
-  *
-  * 2) There must not be more than one extra_context.
-  *
-diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-index 498e6393b2ca..575a907cd4fc 100644
---- a/arch/arm64/kernel/debug-monitors.c
-+++ b/arch/arm64/kernel/debug-monitors.c
-@@ -232,7 +232,7 @@ static void send_user_sigtrap(int si_code)
- 		local_irq_enable();
- 
- 	arm64_force_sig_fault(SIGTRAP, si_code,
--			      (void __user *)instruction_pointer(regs), 0, 0,
-+			      (void __user *)instruction_pointer(regs), 0, 0, 0,
- 			      "User debug trap");
- }
- 
-diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
-index 51bb8bcaf24b..9b20284df88b 100644
---- a/arch/arm64/kernel/ptrace.c
-+++ b/arch/arm64/kernel/ptrace.c
-@@ -198,7 +198,7 @@ static void ptrace_hbptriggered(struct perf_event *bp,
- 	}
- #endif
- 	arm64_force_sig_fault(SIGTRAP, TRAP_HWBKPT,
--			      (void __user *)(bkpt->trigger), 0, 0,
-+			      (void __user *)(bkpt->trigger), 0, 0, 0,
- 			      desc);
- }
- 
-diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-index 10d7e9832a89..f6783de54412 100644
---- a/arch/arm64/kernel/signal.c
-+++ b/arch/arm64/kernel/signal.c
-@@ -55,6 +55,7 @@ struct rt_sigframe_user_layout {
- 
- 	unsigned long fpsimd_offset;
- 	unsigned long esr_offset;
-+	unsigned long ftb_offset;
- 	unsigned long sve_offset;
- 	unsigned long extra_offset;
- 	unsigned long end_offset;
-@@ -383,6 +384,7 @@ static int parse_user_sigframe(struct user_ctxs *user,
- 			break;
- 
- 		case ESR_MAGIC:
-+		case FAULT_ADDR_TOP_BYTE_MAGIC:
- 			/* ignore */
- 			break;
- 
-@@ -582,6 +584,14 @@ static int setup_sigframe_layout(struct rt_sigframe_user_layout *user,
- 				     sizeof(struct esr_context));
- 		if (err)
- 			return err;
-+        }
-+
-+        if (add_all || info->arch.fault_address_top_byte_mask) {
-+		err = sigframe_alloc(
-+			user, &user->ftb_offset,
-+			sizeof(struct fault_addr_top_byte_context));
-+		if (err)
-+			return err;
- 	}
- 
- 	if (system_supports_sve()) {
-@@ -644,6 +654,21 @@ static int setup_sigframe(struct rt_sigframe_user_layout *user,
- 		__put_user_error(info->arch.error_code, &esr_ctx->esr, err);
- 	}
- 
-+	if (err == 0 && user->ftb_offset) {
-+		struct fault_addr_top_byte_context __user *ftb_ctx =
-+			apply_user_offset(user, user->ftb_offset);
-+
-+		__put_user_error(FAULT_ADDR_TOP_BYTE_MAGIC,
-+				 &ftb_ctx->head.magic, err);
-+		__put_user_error(sizeof(*ftb_ctx), &ftb_ctx->head.size, err);
-+		__put_user_error(0, &ftb_ctx->flags, err);
-+		__put_user_error((info->arch.fault_address >> 56) &
-+					 info->arch.fault_address_top_byte_mask,
-+				 &ftb_ctx->fault_addr_top_byte, err);
-+		__put_user_error(info->arch.fault_address_top_byte_mask,
-+				 &ftb_ctx->fault_addr_top_byte_mask, err);
-+	}
-+
- 	/* Scalable Vector Extension state, if present */
- 	if (system_supports_sve() && err == 0 && user->sve_offset) {
- 		struct sve_context __user *sve_ctx =
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index 4545fe067ea9..8154f2562f74 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -295,8 +295,8 @@ static unsigned long esr_to_error_code(unsigned long esr, unsigned long far)
- }
- 
- void arm64_force_sig_fault(int signo, int code, void __user *addr,
--			   unsigned long far, unsigned long esr,
--			   const char *str)
-+			   unsigned long far, unsigned char far_tb_mask,
-+			   unsigned long esr, const char *str)
- {
- 	arm64_show_signal(signo, esr, str);
- 	if (signo == SIGKILL) {
-@@ -309,6 +309,7 @@ void arm64_force_sig_fault(int signo, int code, void __user *addr,
- 		info.si_code = code;
- 		info.si_addr = addr;
- 		info.arch.fault_address = far;
-+		info.arch.fault_address_top_byte_mask = far_tb_mask;
- 		info.arch.error_code = esr_to_error_code(esr, far);
- 		force_sig_info(&info);
- 	}
-@@ -329,6 +330,7 @@ void arm64_force_sig_mceerr(int code, void __user *addr, short lsb,
- 	info.si_addr = addr;
- 	info.si_addr_lsb = lsb;
- 	info.arch.fault_address = far;
-+	info.arch.fault_address_top_byte_mask = 0xff;
- 	info.arch.error_code = esr_to_error_code(esr, far);
- 	force_sig_info(&info);
- }
-@@ -346,7 +348,7 @@ void arm64_notify_die(const char *str, struct pt_regs *regs,
- {
- 	if (user_mode(regs)) {
- 		WARN_ON(regs != current_pt_regs());
--		arm64_force_sig_fault(signo, sicode, addr, 0, esr, str);
-+		arm64_force_sig_fault(signo, sicode, addr, 0, 0, esr, str);
- 	} else {
- 		die(str, regs, esr);
- 	}
-@@ -893,7 +895,7 @@ void bad_el0_sync(struct pt_regs *regs, int reason, unsigned int esr)
- {
- 	void __user *pc = (void __user *)instruction_pointer(regs);
- 
--	arm64_force_sig_fault(SIGILL, ILL_ILLOPC, pc, 0, esr,
-+	arm64_force_sig_fault(SIGILL, ILL_ILLOPC, pc, 0, 0, esr,
- 			      "Bad EL0 synchronous exception");
- }
- 
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index a7bada1392b3..1ba95f308c10 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -332,7 +332,7 @@ static void do_bad_area(unsigned long far, unsigned int esr,
- 	if (user_mode(regs)) {
- 		const struct fault_info *inf = esr_to_fault_info(esr);
- 		arm64_force_sig_fault(inf->sig, inf->code, (void __user *)addr,
--				      far, esr, inf->name);
-+				      far, 0xff, esr, inf->name);
- 	} else {
- 		__do_kernel_fault(addr, esr, regs);
- 	}
-@@ -520,8 +520,8 @@ static int __kprobes do_page_fault(unsigned long far, unsigned int esr,
- 		 * We had some memory, but were unable to successfully fix up
- 		 * this page fault.
- 		 */
--		arm64_force_sig_fault(SIGBUS, BUS_ADRERR, (void __user *)addr, far, esr,
--				      inf->name);
-+		arm64_force_sig_fault(SIGBUS, BUS_ADRERR, (void __user *)addr,
-+				      far, 0xff, esr, inf->name);
- 	} else if (fault & (VM_FAULT_HWPOISON_LARGE | VM_FAULT_HWPOISON)) {
- 		unsigned int lsb;
- 
-@@ -538,7 +538,7 @@ static int __kprobes do_page_fault(unsigned long far, unsigned int esr,
- 		 */
- 		arm64_force_sig_fault(SIGSEGV,
- 				      fault == VM_FAULT_BADACCESS ? SEGV_ACCERR : SEGV_MAPERR,
--				      (void __user *)addr, far, esr,
-+				      (void __user *)addr, far, 0xff, esr,
- 				      inf->name);
- 	}
- 
+Should we just make it possible for multi platform users to override the
+memory model in their configuration file and later we just default
+ARCH_MULTI_V7 to sparsemem?
 -- 
-2.26.2.761.g0e0b3e54be-goog
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
