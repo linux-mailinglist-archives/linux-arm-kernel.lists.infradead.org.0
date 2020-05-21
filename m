@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 833401DD79E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 21:51:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 558DF1DD7A2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 21:52:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lHClsCmlw6ZcDKD/1/vGpOyEDfzTDYxoFZ1pG+oq/cU=; b=qp0PUXBTQoagxX
-	jzoCERtdlcRZfa4BIwq4iLhp+enWKJV5JntoejUh7HaUBzlIOPJzrYqCDLWQIQ6vBZMpAd7k0USyf
-	BTLIwxgW6btd3nIsoTwQhUxH1q3yEkmio1hyO80xm3KHGxOa6XHnwMzX7CT0H4A7dSWyPvdOlesBn
-	poxsEGE3Cm1UUgQKN2SnmqEjOjr9zaIKX79qm7qNBCpep897FG/zLETUidyooocGIbBWjfEVqz8IO
-	ly9BcEf6zwRHrAkLojWpFazHbPK2mK/uzdIss+B0WYau2er8MpD7JKgv3gLO/cblc8r82+5+OsI5s
-	4mLLIiOguDNa0x0ixu7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=GoVDQ/RPUqZ6vBpXUlv85LBMrjeAR4nw+sqKQj4k+7E=; b=oea1vfe9BNThga3FliqfVtfB/
+	iuHEdVKqhWi+Le+9cG0gW6UAJmwQRAI1UmY++Xo91zoi+VKpBNQOvxmjlL6ooCYx0IcuZbTNxPHa2
+	jOsiRmHMF6G1bj9Ms351uA2AfXfJTqJsucVl4Dsvo/ok4E5ZjAONb7bX5HPEcqboyh5YWYhwIQCp9
+	lgN+ZQchcGuVGKZhPQeW3RfnqF2syHdWPFCq8J8fMR50e0XWme9g335aw18RyIwgi7MudmWKxPrHP
+	dHwHjOMuDk1DlY3ri0fptETYlI70jzI0ZGe3rOV1Mlkdn7iO7Gogp+Un9OHyb0Gq1rOlTdkKXqUks
+	lgVhSQwdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbrE4-0000Po-Ai; Thu, 21 May 2020 19:51:32 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jbrEw-0000hu-Oj; Thu, 21 May 2020 19:52:26 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbrDp-0000OU-0L
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 19:51:18 +0000
-Received: by mail-wm1-x344.google.com with SMTP id z72so7651034wmc.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 12:51:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=tXiGWKxcizAmUcdGxFZhb+iX29hlTYX+Cl65ro07vic=;
- b=WlJYgMh2SdntlWU1WmKTcOAUOtNmQQX82qgtvK/ur05z3QNM7ar9ikuGofVXnWdDN2
- Ip0SOpGKW/PABRn2oLdfqaToVDfZIf7yAVkTSZcKhzt2mRSXTiEBjBAAzM2PvSOggdjG
- 09Z1GBJekUw4uHrAtRQ24UxLs820MmR7LJ12I=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=tXiGWKxcizAmUcdGxFZhb+iX29hlTYX+Cl65ro07vic=;
- b=dlyi0/PT0VgFmte+yy/fyW4A6c8rOqoDrERdWudZcxYLM3u+A1L4LDVEuXEg6XpfAc
- L2wAm3CcCVwMBoJuyv29U42DOLdBXOop6gntusZT2PjpvIhLJJV5uoY2d28bL64Gg22A
- rCjhnIOfe44d+kXqeYqiwQREdG04iwRzQCws/uEQOEFtOvOVX6O4iLBbaacu3ecu4Fvj
- U2EYTU1K8YU8EkkRpmAC93NxuYRXbdClizp1MHbOOJjwkaspValqZO4AN2t4HHqSiP7k
- toyfifG+UmDVFYRhDRc6aEKIIaUgghL9/pPvlctVxsqwZGi4mhFk8z+rC/YORNssYzy8
- C6xA==
-X-Gm-Message-State: AOAM530xUTALsXcYUapn5iMpUQItrFxzb/F4gMHf8e4xbGIgY1eBzSmo
- TB1NwxGY3WHnR2L4swNTVNphUA==
-X-Google-Smtp-Source: ABdhPJyjsZ7hK797EjzOKDGLVownHQy9DW40gXOy+PcukZTeX7rDoXWOyimJaOKk0Tu8BtHYy6tpuQ==
-X-Received: by 2002:a1c:5541:: with SMTP id j62mr9574864wmb.64.1590090675360; 
- Thu, 21 May 2020 12:51:15 -0700 (PDT)
-Received: from chromium.org (205.215.190.35.bc.googleusercontent.com.
- [35.190.215.205])
- by smtp.gmail.com with ESMTPSA id 1sm7775934wmz.13.2020.05.21.12.51.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 May 2020 12:51:14 -0700 (PDT)
-Date: Thu, 21 May 2020 19:51:13 +0000
-From: Tomasz Figa <tfiga@chromium.org>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V6, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
-Message-ID: <20200521195113.GC14214@chromium.org>
-References: <20200518132731.20855-1-dongchun.zhu@mediatek.com>
- <20200518132731.20855-3-dongchun.zhu@mediatek.com>
+ id 1jbrEm-0000hQ-Js
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 19:52:18 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04LJq3rW081620;
+ Thu, 21 May 2020 14:52:03 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1590090723;
+ bh=Vb/5S9ewFa3yrp3KZRQqIR2YgutT5LYsiuL4DYpKPE8=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=I/yi5K88+YAIrR3aTAnM80hh9e++JV72R6OISQRJNEQCWBfbw7PKgAtAHkIXQvRCp
+ qZZB7bqz9rN1+fjlAUn+EhskN+VDNzUJLTOFFIN52UU9RykxYqzdtofgrtslyqafPE
+ gfx874K5k8FDDS6F0Fa8SMP5KCsG9Me/zQrx+lcQ=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04LJq35u024370
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 21 May 2020 14:52:03 -0500
+Received: from DLEE100.ent.ti.com (157.170.170.30) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Thu, 21
+ May 2020 14:52:03 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Thu, 21 May 2020 14:52:03 -0500
+Received: from [10.250.48.148] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04LJq3Sc036393;
+ Thu, 21 May 2020 14:52:03 -0500
+Subject: Re: [PATCH 2/4] remoteproc: introduce version element into resource
+ type field
+To: Bjorn Andersson <bjorn.andersson@linaro.org>
+References: <20200325204701.16862-1-s-anna@ti.com>
+ <20200325204701.16862-3-s-anna@ti.com> <20200521175421.GI408178@builder.lan>
+ <b338480e-c586-f988-f5b6-784551b7beb6@ti.com>
+ <20200521192146.GO408178@builder.lan>
+ <57ae5678-fd0a-07a8-6165-a2cf7ccdef88@ti.com>
+ <20200521194116.GP408178@builder.lan>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <5529e8ff-b5ed-9dd6-e7f6-55a00225c2b9@ti.com>
+Date: Thu, 21 May 2020 14:52:02 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200518132731.20855-3-dongchun.zhu@mediatek.com>
+In-Reply-To: <20200521194116.GP408178@builder.lan>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_125117_062887_D79B0703 
-X-CRM114-Status: GOOD (  20.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200521_125216_729879_C2DD1176 
+X-CRM114-Status: GOOD (  17.85  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,227 +97,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, drinkcat@chromium.org,
- andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, linus.walleij@linaro.org,
- shengnan.wang@mediatek.com, louis.kuo@mediatek.com, bgolaszewski@baylibre.com,
- sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
- sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Loic Pallardy <loic.pallardy@st.com>, Lokesh Vutla <lokeshvutla@ti.com>,
+ linux-remoteproc@vger.kernel.org, Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ linux-kernel@vger.kernel.org, Clement Leger <cleger@kalray.eu>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dongchun, Sakari,
-
-On Mon, May 18, 2020 at 09:27:31PM +0800, Dongchun Zhu wrote:
-> Add a V4L2 sub-device driver for DW9768 voice coil motor, providing
-> control to set the desired focus via IIC serial interface.
+On 5/21/20 2:41 PM, Bjorn Andersson wrote:
+> On Thu 21 May 12:29 PDT 2020, Suman Anna wrote:
 > 
-> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> ---
->  MAINTAINERS                |   1 +
->  drivers/media/i2c/Kconfig  |  13 ++
->  drivers/media/i2c/Makefile |   1 +
->  drivers/media/i2c/dw9768.c | 515 +++++++++++++++++++++++++++++++++++++++++++++
->  4 files changed, 530 insertions(+)
->  create mode 100644 drivers/media/i2c/dw9768.c
-[snip]
-> +/*
-> + * DW9768_AAC_PRESC_REG & DW9768_AAC_TIME_REG determine VCM operation time.
-> + * If DW9768_AAC_PRESC_REG is 0x41, and DW9768_AAC_TIME_REG is 0x39, VCM mode
-> + * would be AAC3, Operation Time would be 0.70xTvib, that is 8.40ms.
-> + */
-> +#define DW9768_MOVE_DELAY_US			8400
-> +#define DW9768_STABLE_TIME_US			20000
+>> On 5/21/20 2:21 PM, Bjorn Andersson wrote:
+>>> On Thu 21 May 12:06 PDT 2020, Suman Anna wrote:
+>>>
+>>>> Hi Bjorn,
+>>>>
+>>>> On 5/21/20 12:54 PM, Bjorn Andersson wrote:
+>>>>> On Wed 25 Mar 13:46 PDT 2020, Suman Anna wrote:
+>>>>>
+>>>>>> The current remoteproc core has supported only 32-bit remote
+>>>>>> processors and as such some of the current resource structures
+>>>>>> may not scale well for 64-bit remote processors, and would
+>>>>>> require new versions of resource types. Each resource is currently
+>>>>>> identified by a 32-bit type field. Introduce the concept of version
+>>>>>> for these resource types by overloading this 32-bit type field
+>>>>>> into two 16-bit version and type fields with the existing resources
+>>>>>> behaving as version 0 thereby providing backward compatibility.
+>>>>>>
+>>>>>> The version field is passed as an additional argument to each of
+>>>>>> the handler functions, and all the existing handlers are updated
+>>>>>> accordingly. Each specific handler will be updated on a need basis
+>>>>>> when a new version of the resource type is added.
+>>>>>>
+>>>>>
+>>>>> I really would prefer that we add additional types for the new
+>>>>> structures, neither side will be compatible with new versions without
+>>>>> enhancements to their respective implementations anyways.
+>>>>
+>>>> OK.
+>>>>
+>>>>>
+>>>>>> An alternate way would be to introduce the new types as completely
+>>>>>> new resource types which would require additional customization of
+>>>>>> the resource handlers based on the 32-bit or 64-bit mode of a remote
+>>>>>> processor, and introduction of an additional mode flag to the rproc
+>>>>>> structure.
+>>>>>>
+>>>>>
+>>>>> What would this "mode" indicate? If it's version 0 or 1?
+>>>>
+>>>> No, for indicating if the remoteproc is 32-bit or 64-bit and adjust the
+>>>> loading handlers if the resource types need to be segregated accordingly.
+>>>>
+>>>
+>>> Sorry, I think I'm misunderstanding something. Wouldn't your 64-bit
+>>> remote processor need different firmware from your 32-bit processor
+>>> anyways, if you want to support the wider resource? And you would pack
+>>> your firmware with the appropriate resource types?
+>>
+>> Yes, that's correct.
+>>
+>>>
+>>> Afaict the bit width of your remote processor, busses or memory is
+>>> unrelated to the choice of number of bits used to express things in the
+>>> resource table.
+>>
+>> I would have to add the new resource type to the loading_handlers right, so
+>> it is a question of whether we want to impose any restrictions in remoteproc
+>> core or not from supporting a certain resource type (eg: I don't expect
+>> RSC_TRACE entries on 64-bit processors).
+>>
+> 
+> Right, but either you add support for new resource types to the
+> loading_handlers, or you add the version checks within each handler,
+> either way you will have to do some work to be compatible with new
+> versions.
+> 
+> Regarding what resources would be fit for a 64-bit processor probably
+> relates to many things, in particular the question of what we actually
+> mean when we say that a coprocessor is 64-bit. So I don't really see a
+> need for the remoteproc core to prevent someone to design their
+> system/firmware to have a 64-bit CPU being passed 32-bit addresses.
 
-These times are only valid with the specific settings mentioned in the
-comment. If one sets different settings in DT, the driver would apply
-incorrect delays. Rather than hardcoded, they should be computed based
-on the configured values.
+OK. In general, I have seen firmware developers get confused w.r.t the 
+resource types, that's why I was inclined to go with the restrictive 
+checking. Anyway, will rework the support as per the comments.
 
-That said, I wonder if we're not digging too deep now. Sakari, do you
-think we could take a step back, remove the optional DT properties and
-just support the fixed values for now, so that we can get a basic driver
-upstream first without doubling the effort?
+regards
+Suman
 
-> +
-> +static const char * const dw9768_supply_names[] = {
-> +	"vin",	/* I2C I/O interface power */
-> +	"vdd",	/* VCM power */
-> +};
-> +
-> +/* dw9768 device structure */
-> +struct dw9768 {
-> +	struct regulator_bulk_data supplies[ARRAY_SIZE(dw9768_supply_names)];
-> +	struct v4l2_ctrl_handler ctrls;
-> +	struct v4l2_ctrl	*focus;
-> +	struct v4l2_subdev	sd;
-> +
-> +	u32			aac_mode;
-> +	u32			aac_timing;
-> +	u32			clock_dividing_rate;
-> +	bool			aac_mode_control_enable;
-> +	bool			aact_cnt_select_enable;
-> +	bool			clock_dividing_rate_select_enable;
 
-nit: Separate types from names with just 1 space.
-
-> +};
-> +
-> +static inline struct dw9768 *sd_to_dw9768(struct v4l2_subdev *subdev)
-> +{
-> +	return container_of(subdev, struct dw9768, sd);
-> +}
-> +
-> +struct regval_list {
-> +	u8 reg_num;
-> +	u8 value;
-> +};
-> +
-> +static int dw9768_read_smbus(struct dw9768 *dw9768, unsigned char reg,
-> +			     unsigned char *val)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
-> +	int ret;
-> +
-> +	ret = i2c_smbus_read_byte_data(client, reg);
-> +
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	*val = (unsigned char)ret;
-> +
-> +	return 0;
-> +}
-
-Why do we need this function? Couldn't we just call
-i2c_smbus_read_byte_data() directly?
-
-[snip]
-> +static int dw9768_probe(struct i2c_client *client)
-> +{
-> +	struct device *dev = &client->dev;
-> +	struct dw9768 *dw9768;
-> +	unsigned int aac_mode_select;
-> +	unsigned int aac_timing_select;
-> +	unsigned int clock_dividing_rate_select;
-> +	unsigned int i;
-> +	int ret;
-> +
-> +	dw9768 = devm_kzalloc(dev, sizeof(*dw9768), GFP_KERNEL);
-> +	if (!dw9768)
-> +		return -ENOMEM;
-> +
-> +	v4l2_i2c_subdev_init(&dw9768->sd, client, &dw9768_ops);
-> +	dw9768->aac_mode_control_enable = false;
-> +	dw9768->aact_cnt_select_enable = false;
-> +	dw9768->clock_dividing_rate_select_enable = false;
-
-devm_kzalloc() initializes the memory to zero, so no need to set anything
-to false explicitly.
-
-> +
-> +	/* Optional indication of AAC mode select */
-> +	ret = fwnode_property_read_u32(dev_fwnode(dev), "dongwoon,aac-mode",
-> +				       &aac_mode_select);
-> +
-> +	if (!ret) {
-> +		dw9768->aac_mode_control_enable = true;
-> +		dw9768->aac_mode = aac_mode_select;
-
-How about making aac_mode a signed int and assigning -1 by
-default? Then we don't need two separate fields in the struct.
-
-> +	}
-> +
-> +	/* Optional indication of VCM internal clock dividing rate select */
-> +	ret = fwnode_property_read_u32(dev_fwnode(dev),
-> +				       "dongwoon,clock-dividing-rate",
-> +				       &clock_dividing_rate_select);
-> +
-> +	if (!ret) {
-> +		dw9768->clock_dividing_rate_select_enable = true;
-> +		dw9768->clock_dividing_rate = clock_dividing_rate_select;
-
-Ditto.
-
-> +	}
-> +
-> +	/* Optional indication of AAC Timing */
-> +	ret = fwnode_property_read_u32(dev_fwnode(dev), "dongwoon,aac-timing",
-> +				       &aac_timing_select);
-> +
-> +	if (!ret) {
-> +		dw9768->aact_cnt_select_enable = true;
-> +		dw9768->aac_timing = aac_timing_select;
-
-Ditto.
-
-> +	}
-> +
-> +	for (i = 0; i < ARRAY_SIZE(dw9768_supply_names); i++)
-> +		dw9768->supplies[i].supply = dw9768_supply_names[i];
-> +
-> +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(dw9768_supply_names),
-> +				      dw9768->supplies);
-> +	if (ret) {
-> +		dev_err(dev, "failed to get regulators\n");
-> +		return ret;
-> +	}
-> +
-> +	ret = dw9768_init_controls(dw9768);
-> +	if (ret)
-> +		goto entity_cleanup;
-> +
-> +	dw9768->sd.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
-> +	dw9768->sd.internal_ops = &dw9768_int_ops;
-> +
-> +	ret = media_entity_pads_init(&dw9768->sd.entity, 0, NULL);
-> +	if (ret < 0)
-> +		goto entity_cleanup;
-> +
-> +	dw9768->sd.entity.function = MEDIA_ENT_F_LENS;
-> +
-> +	pm_runtime_enable(dev);
-> +	if (!pm_runtime_enabled(dev)) {
-> +		ret = dw9768_runtime_resume(dev);
-> +		if (ret < 0) {
-> +			dev_err(dev, "failed to power on: %d\n", ret);
-> +			goto entity_cleanup;
-> +		}
-> +	}
-> +
-> +	ret = v4l2_async_register_subdev(&dw9768->sd);
-> +	if (ret < 0)
-> +		goto entity_cleanup;
-> +
-> +	return 0;
-> +
-> +entity_cleanup:
-
-Need to power off if the code above powered on.
-
-> +	v4l2_ctrl_handler_free(&dw9768->ctrls);
-> +	media_entity_cleanup(&dw9768->sd.entity);
-> +	return ret;
-> +}
-> +
-> +static int dw9768_remove(struct i2c_client *client)
-> +{
-> +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> +	struct dw9768 *dw9768 = sd_to_dw9768(sd);
-> +
-> +	pm_runtime_disable(&client->dev);
-
-First the device must be unregistered from the userspace. Otherwise there
-is a race condition that risks the userspace accessing the device while the
-deinitialization is happening.
-
-Best regards,
-Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
