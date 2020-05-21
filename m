@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C42DF1DCF57
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:17:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D40351DCF5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:17:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ykfN19HZiDPmUNe+x7qY+Jsfnfm7GCH/OlFS4sry5CQ=; b=ndna8c/qpaXo60
-	PtxtkzIGao95zLxKUcsZdfCNWuaL9mG1zPhx5i9+UDynPzj4dn7FE64koLCkDZcnEQT0F/DQAnjCd
-	++a8d8Fy4mz6WSV/uHGnBY9JpAKH+eD4GG7XHbHxZr/aQpJHsE93JzppTI3KizZagsMjI3kRrjRNS
-	NwT31RwgncMZEKB6ae4Pvd/pD9vAFxe+saZJGCxJ5LtKKI+YCFudqwvLfknhhud8XdN0h9hO61e5t
-	2kCNC74I5OH4MXVCMB5uAoqGTdOqc3J8ecZSa1SOj+xC80hn0o4icK5LJb1H/c62SdVKNBX0WiB9C
-	pplGEj5iK/poaL/Ye7Cg==;
+	List-Owner; bh=LgPwF5AR18R2QNIz5xr7aob1udo5uODANhubjXXZTlQ=; b=m8YFyBKk/Ohcdk
+	eKOdCcrWKw1UCnqkOQS5yUi7NwDdakunMfKrS6tB47bl6Iogkjro1vt+eJJiX3NZvajDNPCd/0lLC
+	Acpd9JGnJzvZfbHTMLTAwQuRA15Nmdz4p7x1UUteTqxrPxn/N3eyTJbXFYj5QVGTRyYXbgJOYbmi2
+	YJSx5ZJWc653KXaQib9sc03iSIRu0WGJmzcGkLJXoNbNoUurDkzOrTH654rwZZaCZjgUIebM5vzUi
+	My/XuwjWf3gFcx5aEall3bvz11kN44Svq2kEh53lK0b3RcJZHBidTgU5m58j4oKEsQI2V64/ks96M
+	BGjdG7FxBYTVEN4wklRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbm0H-0001IA-4v; Thu, 21 May 2020 14:16:57 +0000
+	id 1jbm0X-0001UO-4X; Thu, 21 May 2020 14:17:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbm07-0001Gt-64
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:16:48 +0000
+ id 1jbm0J-0001Rq-4k
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:17:00 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3CAC020721;
- Thu, 21 May 2020 14:16:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AC33920721;
+ Thu, 21 May 2020 14:16:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590070606;
- bh=J12/yI4JkwQoq0ZSsn8yVG8aHccxtJvArFtbGq3PfLc=;
+ s=default; t=1590070618;
+ bh=YEpYYTkp5Epc3I02PSQwVAAWySjqR5HmPWamm+n+yqk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=iLRAgstVdYm1eiYPWiirwh1nShyQnHb3MswJtEKjwgAgUxm1QVDn5HxOYZ69IgQ9O
- +bdDwuNQWPqhCTAcnwC/oKn7WosmzTgtEnBMm154hZhbBmPdVk0+3b4h92ALYIFy4S
- VN3+rF0oD3wb2KHpTYm7ICypRf6sf4/Xdzh9FkDw=
-Date: Thu, 21 May 2020 15:16:39 +0100
+ b=emfD5+Td4JkWFa9nx6iu3NhZWqXHy0Cul4uBIz9eMW1m5pPlTHa3MQ1L5tweReNSI
+ +nzqkI81I9u0yvHl2QuuuCSWQWBHWnNeJWjSyn9PN2T9MFAPEf2DHjH906FGfDBG7N
+ BL2C2n3EL7yfzDXZBJ3cF8uo2pvDC11Gd/AuJzgo=
+Date: Thu, 21 May 2020 15:16:52 +0100
 From: Will Deacon <will@kernel.org>
 To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v7 07/24] iommu/io-pgtable-arm: Move some definitions to
- a header
-Message-ID: <20200521141638.GF6608@willie-the-truck>
+Subject: Re: [PATCH v7 12/24] iommu/arm-smmu-v3: Add support for VHE
+Message-ID: <20200521141652.GG6608@willie-the-truck>
 References: <20200519175502.2504091-1-jean-philippe@linaro.org>
- <20200519175502.2504091-8-jean-philippe@linaro.org>
+ <20200519175502.2504091-13-jean-philippe@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200519175502.2504091-8-jean-philippe@linaro.org>
+In-Reply-To: <20200519175502.2504091-13-jean-philippe@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_071647_244183_A5D91B11 
-X-CRM114-Status: GOOD (  10.07  )
+X-CRM114-CacheID: sfid-20200521_071659_212240_867EC16A 
+X-CRM114-Status: GOOD (  14.82  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,17 +89,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 19, 2020 at 07:54:45PM +0200, Jean-Philippe Brucker wrote:
-> Extract some of the most generic TCR defines, so they can be reused by
-> the page table sharing code.
+On Tue, May 19, 2020 at 07:54:50PM +0200, Jean-Philippe Brucker wrote:
+> ARMv8.1 extensions added Virtualization Host Extensions (VHE), which allow
+> to run a host kernel at EL2. When using normal DMA, Device and CPU address
+> spaces are dissociated, and do not need to implement the same
+> capabilities, so VHE hasn't been used in the SMMU until now.
+> 
+> With shared address spaces however, ASIDs are shared between MMU and SMMU,
+> and broadcast TLB invalidations issued by a CPU are taken into account by
+> the SMMU. TLB entries on both sides need to have identical exception level
+> in order to be cleared with a single invalidation.
+> 
+> When the CPU is using VHE, enable VHE in the SMMU for all STEs. Normal DMA
+> mappings will need to use TLBI_EL2 commands instead of TLBI_NH, but
+> shouldn't be otherwise affected by this change.
 > 
 > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 > ---
->  drivers/iommu/io-pgtable-arm.h | 30 ++++++++++++++++++++++++++++++
->  drivers/iommu/io-pgtable-arm.c | 27 ++-------------------------
->  MAINTAINERS                    |  3 +--
->  3 files changed, 33 insertions(+), 27 deletions(-)
->  create mode 100644 drivers/iommu/io-pgtable-arm.h
+>  drivers/iommu/arm-smmu-v3.c | 31 ++++++++++++++++++++++++++-----
+>  1 file changed, 26 insertions(+), 5 deletions(-)
 
 Acked-by: Will Deacon <will@kernel.org>
 
