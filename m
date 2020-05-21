@@ -2,59 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCFF41DD819
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 22:17:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22A4A1DD83C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 22:25:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R0m/x7lYKgzA04R3z+ejv5zUkNHhJ07yvN/FEh87m4Q=; b=Z65UfQ5qKol8Bd
-	gI8bublinleZwR9UUA0glH9I7OBxCBeYTuxn3y09aobWtBHCFC83VOLlsc94KM+miEDKy3QeuMopY
-	d0pcDOuuFLzXhfXqU30+3UfLN/mZQwPFh841jp2ssJjw8hIdTRuAY6eywXsB55x1CQTBoGGjMuH0o
-	8nwdonOlrcMD/yR77vbMKUGsY8NaQ8EFAwFoOliBATs9aNAPWWgDmlpURJPRWSX9mRDijRiMm5r6J
-	RnVzTJ54RhNamt166Fp3uu2tJlAx3tdiXGz/yFrku4kD/y07aqgaCnNcKEeQ93yoMrcG7NvMfpBJW
-	G5DHKFmD0MJr19tpysHw==;
+	List-Owner; bh=bYLgoS0JzHYO1+Gj+ForGDYcs4xfwDAH5TT7PX75VzU=; b=RSV/u4LEThMDCJ
+	Jbk0UDw3UQQEt5gmHcDmVsxWoLeRhz0IwsBveJXJU9aM+aLKg2ldmHtVox0IgAli3VuSWQBwQ2h4F
+	n+hvp2RSbN3jOCO6on4ROwJ6HrKcN18wN034l14mSh9SPYBbFBI8A4SF4fGUB9LSnPF2DKJpA6H2P
+	7JeJ0ChomaUvGbAeRX1AxRtZj+2q/TlQJ+BAq+1yJIz89/cwn3nTUR4S1HuR7pQCd+67/ipKf9dWA
+	L650BbaoIhijDjK4IP8gfbfHxcVGNNT+AVpUnDlIwcH4U/Bna2eyDNyRgIeee2ZbIUYz4rXbJmY+m
+	XkJg47FTYByDdeVxXZHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbrcx-0008SP-R1; Thu, 21 May 2020 20:17:15 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jbrl9-0006AS-69; Thu, 21 May 2020 20:25:43 +0000
+Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbrcm-0008Ra-Dp; Thu, 21 May 2020 20:17:06 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id D0AD82A0667;
- Thu, 21 May 2020 21:17:01 +0100 (BST)
-Date: Thu, 21 May 2020 22:16:58 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Pratyush Yadav <p.yadav@ti.com>
-Subject: Re: [PATCH v6 04/19] spi: spi-mem: allow specifying a command's
- extension
-Message-ID: <20200521221658.037b802b@collabora.com>
-In-Reply-To: <20200521200313.bnil6a4u3dhiizr4@ti.com>
-References: <20200520163053.24357-1-p.yadav@ti.com>
- <20200520163053.24357-5-p.yadav@ti.com>
- <20200521202256.5816eb32@collabora.com>
- <20200521194129.3lqdormmcs4zadh2@ti.com>
- <20200521200313.bnil6a4u3dhiizr4@ti.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1jbrkv-00069g-CY
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 20:25:30 +0000
+Received: from unknown (HELO ironmsg03-sd.qualcomm.com) ([10.53.140.143])
+ by alexa-out-sd-02.qualcomm.com with ESMTP; 21 May 2020 13:25:26 -0700
+Received: from gurus-linux.qualcomm.com ([10.46.162.81])
+ by ironmsg03-sd.qualcomm.com with ESMTP; 21 May 2020 13:25:25 -0700
+Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
+ id C4B744DDE; Thu, 21 May 2020 13:25:25 -0700 (PDT)
+Date: Thu, 21 May 2020 13:25:25 -0700
+From: Guru Das Srinagesh <gurus@codeaurora.org>
+To: Daniel Thompson <daniel.thompson@linaro.org>
+Subject: Re: [RESEND PATCH v14 04/11] pwm: clps711x: Cast period to u32
+ before use as divisor
+Message-ID: <20200521202525.GA24026@codeaurora.org>
+References: <cover.1589330178.git.gurus@codeaurora.org>
+ <1d6918c3fc2976bdbdb687bf54a2ef09fc1558db.1589330178.git.gurus@codeaurora.org>
+ <20200521101934.j5ivjky4e6byveut@holly.lan>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200521101934.j5ivjky4e6byveut@holly.lan>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_131704_601700_2B3FF85A 
-X-CRM114-Status: GOOD (  25.32  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200521_132529_452655_1C278698 
+X-CRM114-Status: GOOD (  16.86  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [199.106.114.39 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,112 +65,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>,
- Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>, linux-mtd@lists.infradead.org,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-pwm@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, David Collins <collinsd@codeaurora.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Joe Perches <joe@perches.com>,
+ Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
+ Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 22 May 2020 01:33:15 +0530
-Pratyush Yadav <p.yadav@ti.com> wrote:
-
-> On 22/05/20 01:11AM, Pratyush Yadav wrote:
-> > On 21/05/20 08:22PM, Boris Brezillon wrote:  
-> > > On Wed, 20 May 2020 22:00:38 +0530
-> > > Pratyush Yadav <p.yadav@ti.com> wrote:
-> > >   
-> > > > In xSPI mode, flashes expect 2-byte opcodes. The second byte is called
-> > > > the "command extension". There can be 3 types of extensions in xSPI:
-> > > > repeat, invert, and hex. When the extension type is "repeat", the same
-> > > > opcode is sent twice. When it is "invert", the second byte is the
-> > > > inverse of the opcode. When it is "hex" an additional opcode byte based
-> > > > is sent with the command whose value can be anything.
-> > > > 
-> > > > So, make opcode a 16-bit value and add a 'nbytes', similar to how
-> > > > multiple address widths are handled.
-> > > > 
-> > > > Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
-> > > > ---
-> > > >  include/linux/spi/spi-mem.h | 5 ++++-
-> > > >  1 file changed, 4 insertions(+), 1 deletion(-)
-> > > > 
-> > > > diff --git a/include/linux/spi/spi-mem.h b/include/linux/spi/spi-mem.h
-> > > > index e3dcb956bf61..731bb64c6ba6 100644
-> > > > --- a/include/linux/spi/spi-mem.h
-> > > > +++ b/include/linux/spi/spi-mem.h
-> > > > @@ -69,6 +69,8 @@ enum spi_mem_data_dir {
-> > > >  
-> > > >  /**
-> > > >   * struct spi_mem_op - describes a SPI memory operation
-> > > > + * @cmd.nbytes: number of opcode bytes (only 1 or 2 are valid). The opcode is
-> > > > + *		sent MSB-first.
-> > > >   * @cmd.buswidth: number of IO lines used to transmit the command
-> > > >   * @cmd.opcode: operation opcode
-> > > >   * @cmd.dtr: whether the command opcode should be sent in DTR mode or not
-> > > > @@ -94,9 +96,10 @@ enum spi_mem_data_dir {
-> > > >   */
-> > > >  struct spi_mem_op {
-> > > >  	struct {
-> > > > +		u8 nbytes;
-> > > >  		u8 buswidth;
-> > > >  		u8 dtr : 1;
-> > > > -		u8 opcode;
-> > > > +		u16 opcode;
-> > > >  	} cmd;
-> > > >  
-> > > >  	struct {  
-> > > 
-> > > As mentioned in one of my previous review, you should patch the mxic
-> > > driver before extending the opcode field:  
+On Thu, May 21, 2020 at 11:19:34AM +0100, Daniel Thompson wrote:
+> On Wed, May 20, 2020 at 03:55:57PM -0700, Guru Das Srinagesh wrote:
+> > Since the PWM framework is switching struct pwm_args.period's datatype
+> > to u64, prepare for this transition by typecasting it to u32.
 > > 
-> > IIUC, this patchset doesn't break original functionality of the driver. 
-> > It will work like before with 1-byte opcodes. So I don't think it is the 
-> > responsibility of this patchset to enhance the driver. It didn't work 
-> > before with 2-byte opcodes, it won't work now. IMO this should be a 
-> > separate, independent change.  
+> > Also, since the dividend is still a 32-bit number, any divisor greater
+> > than the numerator will cause the quotient to be zero, so return 0 in
+> > that case to efficiently skip the division.
+> > 
+> > Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
+> > ---
+> >  drivers/pwm/pwm-clps711x.c | 5 ++++-
+> >  1 file changed, 4 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
+> > index 924d39a..da771b1 100644
+> > --- a/drivers/pwm/pwm-clps711x.c
+> > +++ b/drivers/pwm/pwm-clps711x.c
+> > @@ -43,7 +43,10 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
+> >  static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
+> >  {
+> >  	/* Duty cycle 0..15 max */
+> > -	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
+> > +	if (pwm->args.period > (v * 0xf))
+> > +		return 0;
 > 
-> Scratch that. Big/little endian issue. If you'd drop your Signed-off-by, 
-> I'll write the commit message and patch it in.
-
-Just add a Suggested-by, that should be fine.
-
->   
-> > > --->8---  
-> > > diff --git a/drivers/spi/spi-mxic.c b/drivers/spi/spi-mxic.c
-> > > index 69491f3a515d..c3f4136a7c1d 100644
-> > > --- a/drivers/spi/spi-mxic.c
-> > > +++ b/drivers/spi/spi-mxic.c
-> > > @@ -356,6 +356,7 @@ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
-> > >         int nio = 1, i, ret;
-> > >         u32 ss_ctrl;
-> > >         u8 addr[8];
-> > > +       u8 cmd[2];
-> > >  
-> > >         ret = mxic_spi_set_freq(mxic, mem->spi->max_speed_hz);
-> > >         if (ret)
-> > > @@ -393,7 +394,10 @@ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
-> > >         writel(readl(mxic->regs + HC_CFG) | HC_CFG_MAN_CS_ASSERT,
-> > >                mxic->regs + HC_CFG);
-> > >  
-> > > -       ret = mxic_spi_data_xfer(mxic, &op->cmd.opcode, NULL, 1);
-> > > +       for (i = 0; i < op->cmd.nbytes; i++)
-> > > +               cmd[i] = op->cmd.opcode >> (8 * (op->cmd.nbytes - i - 1));
-> > > +
-> > > +       ret = mxic_spi_data_xfer(mxic, cmd, NULL, op->cmd.nbytes);
-> > >         if (ret)
-> > >                 goto out;
-> > >    
+> This doesn't look right to me.
 > 
+> DIV_ROUND_CLOSEST() does rounded division and the short circuit doesn't
+> implement that.
 
+My initial patch [1] was to simply use DIV64_U64_ROUND_CLOSEST(), but I
+got review feedback to add a short-circuit (same thread, [2]). I feel
+like I should skip the short-circuiting and type casting and simply just
+use DIV64_U64_ROUND_CLOSEST() - what do you think?
+
+[1] https://lore.kernel.org/lkml/587f9ccae68ad7e1ce97fa8da6037292af1a5095.1584473399.git.gurus@codeaurora.org/
+[2] https://lore.kernel.org/lkml/CAK8P3a2Hi_AoRC3g7qKth4e_Y1jZrbBDhWUb3YPZm10FWMu-ig@mail.gmail.com/
 
 _______________________________________________
 linux-arm-kernel mailing list
