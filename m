@@ -2,70 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B74781DDADB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 01:18:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A75C61DDB02
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 01:32:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zgYR4h81Yp9NpqPG5ZUe/2Sc8EzEjG5NnecMBlsM8cc=; b=gJPpwvAp5GRpFM
-	Aw4hVr9G34P5a+myqHlM+mqyVhcta8di7JiXklV87hkEjcHxXp9fyTn0v04RkSLsSTfyiT7zgJUTS
-	n0/yWt5h6KZrWd9k5Nno88VM+b/pL+EuGgU2++e7VBNyR9zqIV5fFpPQJx48Hon1/kzMHQLVkJlza
-	gpdE70ylmtGf+GuB41VxJa6ut+MMgwjmLm/4p25IEXX6dZTUk3w1WrIH2UxhkfU63p/ViWTytfc1E
-	xIuEd1JEskWKowR04bEQp2mECA/ThA4W9hc5t4oMD0J0FWK8Yddaz3XNTt01QcxY5JlpTGl9lUQOT
-	NEFL33pkj0xWsqFkNsvA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+c/p3PU/jDUCv1o493mEKrXmkPzIx8SBMDRTaoYLFBg=; b=VkL5m71XUWLZ3+
+	Az3JDQJJxdWjruk3srlLQBNEyAU7eV7bnRDdl7PaAGmtTIB0do0RlmClMTvWlWJ4pdor6rHsCAxTG
+	7eVqviYwVp9bkBBHbsY48d8GJf8dNBnClEH8ubNdlVo2vH+kBl8iMFxwzPEc1+FiPufUiQ5NhUo2t
+	8vpyRGFSHKiEah21dMotQp4HpE42si6oQFbzPxTLOgJ8j5VUrfR4pQjKofg9Wq0AWZ6ms0sKL4Nlk
+	HlvSriWY3uatURlxJcSuAa1wAysU2BJ/s34Xl/YL0K80qQE7Hsf5FZbpw4OWPj5h7GJ86W1sQ2Vd/
+	vYvjOK431BzrGdM6eaeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbuRq-0000O4-8w; Thu, 21 May 2020 23:17:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jbufM-0000gR-LY; Thu, 21 May 2020 23:31:56 +0000
+Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbuRh-0000NG-7m
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 23:17:50 +0000
-Received: from mail-ot1-f48.google.com (mail-ot1-f48.google.com
- [209.85.210.48])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 711E32151B
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 23:17:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590103068;
- bh=EyK2DMGY1yaM+F8516LQrBIpk2NNn0s0Z37DLtuZPEA=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=CLhLY45tfjDzW/4QzoCLzjzXDitprZjeX6jCl/TTiDNf1smTgNixutkYBE1Ltk7N+
- bGuj4VCEQRCeGfsupUKY8MgwYvf2v3r3ry5ehzBBz2Vd9XnvyT50v3+/1fYDziASsk
- an0rGuPaYsEVmZTE5CauU7LzvZWPFnLZ8bU6LsLs=
-Received: by mail-ot1-f48.google.com with SMTP id v17so6943657ote.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 16:17:48 -0700 (PDT)
-X-Gm-Message-State: AOAM531dcBcIlNg8J7uujzHrl0Fo3+rT2jvQnjBty4V2e8G1AJwqD+Y0
- BndsggQlxQsfBEbInlmIKRqmNsNRKvWXgzwPZg==
-X-Google-Smtp-Source: ABdhPJxVgcCXhuH2DfTXSUau1TIQTXIwHoWhmRU4UZnxmjy/ftT6A+o4gIk78ZAgFUEU2gCUM+w/Etpe/R6HZFsyFVk=
-X-Received: by 2002:a05:6830:18d9:: with SMTP id
- v25mr8467347ote.107.1590103067633; 
- Thu, 21 May 2020 16:17:47 -0700 (PDT)
+ id 1jbues-0000T5-2Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 23:31:27 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5ec70efc0000>; Thu, 21 May 2020 16:30:04 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Thu, 21 May 2020 16:31:23 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Thu, 21 May 2020 16:31:23 -0700
+Received: from HQMAIL111.nvidia.com (172.20.187.18) by HQMAIL109.nvidia.com
+ (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 21 May
+ 2020 23:31:23 +0000
+Received: from hqnvemgw03.nvidia.com (10.124.88.68) by HQMAIL111.nvidia.com
+ (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Thu, 21 May 2020 23:31:23 +0000
+Received: from vdumpa-ubuntu.nvidia.com (Not Verified[172.17.173.140]) by
+ hqnvemgw03.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5ec70f4b0000>; Thu, 21 May 2020 16:31:23 -0700
+From: Krishna Reddy <vdumpa@nvidia.com>
+To: 
+Subject: [PATCH v5 0/5] Nvidia Arm SMMUv2 Implementation
+Date: Thu, 21 May 2020 16:31:02 -0700
+Message-ID: <20200521233107.11968-1-vdumpa@nvidia.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
- <20200521130008.8266-11-lorenzo.pieralisi@arm.com>
-In-Reply-To: <20200521130008.8266-11-lorenzo.pieralisi@arm.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 21 May 2020 17:17:27 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLTBxX_3KjiEqMfw0qMaTmj_DdPD3j-yMUvrvONPBSvjg@mail.gmail.com>
-Message-ID: <CAL_JsqLTBxX_3KjiEqMfw0qMaTmj_DdPD3j-yMUvrvONPBSvjg@mail.gmail.com>
-Subject: Re: [PATCH 10/12] of/irq: Make of_msi_map_rid() PCI bus agnostic
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+X-NVConfidentiality: public
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1590103804; bh=M6pyOSXeBOTReqc8kunREzZAoNiV34NpWkSM15LmbZE=;
+ h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
+ MIME-Version:X-NVConfidentiality:Content-Transfer-Encoding:
+ Content-Type;
+ b=aKVeXdDGaA5yxJZ9pHolRgPOdSbkNSWg3kK+lUBbUZhQQ8Vb9s4KmPGN9/eDyh2pn
+ fwDfQe0yzIv0NLTsZykdKRyWp7YXPKDD9rb2BCOeMz9ZQU95HlzqW4bBv4MjjCZQeY
+ 1AuoNyiplaMpTgMHcLGdmQIvZwp06S12ZAgkh7foMDbF0n+bKbFY049vuCdHxdDUiB
+ Zm9ouLoxsGAurFj20nn9lIZ8ObBzDoZ115+7yTax6wXfbLZ9ooXQHifZuFA3OCdySY
+ Rl4b0eFi+F6pYDD4heoETKWAe46D4SFwnqLowoCothFcJbF/1ZXSonGYkjp6ZaQQRr
+ KB17wiPqbDPFg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_161749_321955_3C622B49 
-X-CRM114-Status: GOOD (  21.77  )
+X-CRM114-CacheID: sfid-20200521_163126_121881_499C6C88 
+X-CRM114-Status: UNSURE (   7.12  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [216.228.121.64 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -87,158 +91,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Diana Craciun <diana.craciun@oss.nxp.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, linux-acpi@vger.kernel.org,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- PCI <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: snikam@nvidia.com, mperttunen@nvidia.com, bhuntsman@nvidia.com,
+ will@kernel.org, joro@8bytes.org, linux-kernel@vger.kernel.org,
+ praithatha@nvidia.com, talho@nvidia.com, iommu@lists.linux-foundation.org,
+ nicolinc@nvidia.com, linux-tegra@vger.kernel.org, yhsu@nvidia.com,
+ treding@nvidia.com, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org,
+ bbiswas@nvidia.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 7:00 AM Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> There is nothing PCI bus specific in the of_msi_map_rid()
-> implementation other than the requester ID tag for the input
-> ID space. Rename requester ID to a more generic ID so that
-> the translation code can be used by all busses that require
-> input/output ID translations.
->
-> Leave a wrapper function of_msi_map_rid() in place to keep
-> existing PCI code mapping requester ID syntactically unchanged.
->
-> No functional change intended.
->
-> Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: Marc Zyngier <maz@kernel.org>
-> ---
->  drivers/of/irq.c       | 28 ++++++++++++++--------------
->  include/linux/of_irq.h | 14 ++++++++++++--
->  2 files changed, 26 insertions(+), 16 deletions(-)
->
-> diff --git a/drivers/of/irq.c b/drivers/of/irq.c
-> index 48a40326984f..25d17b8a1a1a 100644
-> --- a/drivers/of/irq.c
-> +++ b/drivers/of/irq.c
-> @@ -576,43 +576,43 @@ void __init of_irq_init(const struct of_device_id *matches)
->         }
->  }
->
-> -static u32 __of_msi_map_rid(struct device *dev, struct device_node **np,
-> -                           u32 rid_in)
-> +static u32 __of_msi_map_id(struct device *dev, struct device_node **np,
-> +                           u32 id_in)
->  {
->         struct device *parent_dev;
-> -       u32 rid_out = rid_in;
-> +       u32 id_out = id_in;
->
->         /*
->          * Walk up the device parent links looking for one with a
->          * "msi-map" property.
->          */
->         for (parent_dev = dev; parent_dev; parent_dev = parent_dev->parent)
-> -               if (!of_map_rid(parent_dev->of_node, rid_in, "msi-map",
-> -                               "msi-map-mask", np, &rid_out))
-> +               if (!of_map_id(parent_dev->of_node, id_in, "msi-map",
-> +                               "msi-map-mask", np, &id_out))
->                         break;
-> -       return rid_out;
-> +       return id_out;
->  }
->
->  /**
-> - * of_msi_map_rid - Map a MSI requester ID for a device.
-> + * of_msi_map_id - Map a MSI ID for a device.
->   * @dev: device for which the mapping is to be done.
->   * @msi_np: device node of the expected msi controller.
-> - * @rid_in: unmapped MSI requester ID for the device.
-> + * @id_in: unmapped MSI ID for the device.
->   *
->   * Walk up the device hierarchy looking for devices with a "msi-map"
-> - * property.  If found, apply the mapping to @rid_in.
-> + * property.  If found, apply the mapping to @id_in.
->   *
-> - * Returns the mapped MSI requester ID.
-> + * Returns the mapped MSI ID.
->   */
-> -u32 of_msi_map_rid(struct device *dev, struct device_node *msi_np, u32 rid_in)
-> +u32 of_msi_map_id(struct device *dev, struct device_node *msi_np, u32 id_in)
->  {
-> -       return __of_msi_map_rid(dev, &msi_np, rid_in);
-> +       return __of_msi_map_id(dev, &msi_np, id_in);
->  }
->
->  /**
->   * of_msi_map_get_device_domain - Use msi-map to find the relevant MSI domain
->   * @dev: device for which the mapping is to be done.
-> - * @rid: Requester ID for the device.
-> + * @id: Device ID.
->   * @bus_token: Bus token
->   *
->   * Walk up the device hierarchy looking for devices with a "msi-map"
-> @@ -625,7 +625,7 @@ struct irq_domain *of_msi_map_get_device_domain(struct device *dev, u32 id,
->  {
->         struct device_node *np = NULL;
->
-> -       __of_msi_map_rid(dev, &np, id);
-> +       __of_msi_map_id(dev, &np, id);
->         return irq_find_matching_host(np, bus_token);
->  }
->
-> diff --git a/include/linux/of_irq.h b/include/linux/of_irq.h
-> index 7142a3722758..cf9cb1e545ce 100644
-> --- a/include/linux/of_irq.h
-> +++ b/include/linux/of_irq.h
-> @@ -55,7 +55,12 @@ extern struct irq_domain *of_msi_map_get_device_domain(struct device *dev,
->                                                         u32 id,
->                                                         u32 bus_token);
->  extern void of_msi_configure(struct device *dev, struct device_node *np);
-> -u32 of_msi_map_rid(struct device *dev, struct device_node *msi_np, u32 rid_in);
-> +u32 of_msi_map_id(struct device *dev, struct device_node *msi_np, u32 id_in);
-> +static inline u32 of_msi_map_rid(struct device *dev,
-> +                                struct device_node *msi_np, u32 rid_in)
-> +{
-> +       return of_msi_map_id(dev, msi_np, rid_in);
-> +}
->  #else
->  static inline int of_irq_count(struct device_node *dev)
->  {
-> @@ -93,10 +98,15 @@ static inline struct irq_domain *of_msi_map_get_device_domain(struct device *dev
->  static inline void of_msi_configure(struct device *dev, struct device_node *np)
->  {
->  }
-> +static inline u32 of_msi_map_id(struct device *dev,
-> +                                struct device_node *msi_np, u32 id_in)
-> +{
-> +       return id_in;
-> +}
->  static inline u32 of_msi_map_rid(struct device *dev,
->                                  struct device_node *msi_np, u32 rid_in)
+Changes in v5:
+Rebased on top of git://git.kernel.org/pub/scm/linux/kernel/git/joro/iommu.git next
 
-Move this out of the ifdef and you only need it declared once.
+v4 - https://lkml.org/lkml/2019/10/30/1054
+v3 - https://lkml.org/lkml/2019/10/18/1601
+v2 - https://lkml.org/lkml/2019/9/2/980
+v1 - https://lkml.org/lkml/2019/8/29/1588
 
-But again, I think I'd just kill of_msi_map_rid.
+Krishna Reddy (5):
+  iommu/arm-smmu: add NVIDIA implementation for dual ARM MMU-500 usage
+  dt-bindings: arm-smmu: Add binding for Tegra194 SMMU
+  iommu/arm-smmu: Add global/context fault implementation hooks
+  arm64: tegra: Add DT node for T194 SMMU
+  arm64: tegra: enable SMMU for SDHCI and EQOS on T194
 
->  {
-> -       return rid_in;
-> +       return of_msi_map_id(dev, msi_np, rid_in);
->  }
->  #endif
->
-> --
-> 2.26.1
->
+ .../devicetree/bindings/iommu/arm,smmu.yaml   |   5 +
+ MAINTAINERS                                   |   2 +
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi      |  81 ++++++
+ drivers/iommu/Makefile                        |   2 +-
+ drivers/iommu/arm-smmu-impl.c                 |   3 +
+ drivers/iommu/arm-smmu-nvidia.c               | 261 ++++++++++++++++++
+ drivers/iommu/arm-smmu.c                      |  11 +-
+ drivers/iommu/arm-smmu.h                      |   4 +
+ 8 files changed, 366 insertions(+), 3 deletions(-)
+ create mode 100644 drivers/iommu/arm-smmu-nvidia.c
+
+
+base-commit: 365f8d504da50feaebf826d180113529c9383670
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
