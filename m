@@ -2,92 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95E241DCAE3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 12:20:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F2DB1DCAEC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 12:22:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l2Emr4EWdNvWMGQIUj5BBz1dVKFDC6RzErb9l8fpfrM=; b=nW5rZ+DjYmWmgO
-	g2xy7gfImACjsRl0QyktpwmPuNu22+8iWBOx6iC11WPzBrdNNLgzde2vH6TdZWk5h8Wh7+fVOHG+a
-	V2aMTzvqqq8QJ37s4+LiS9BqV4TgOEBJ7Xkps/QgEHqYMnuoR870C3+Hic4RCv6BEM5/bsLTNo1yq
-	eYH5tNwy4BduWUhVYDv1yZW1zpKS7zjTAYCXfodiKb/UNUPQ/5Tgaqkk4Y24NzomgJBr7Fcg7r/el
-	3yFblzqBvkTO8U6zdZFqLcPS6n7GDID+3APxO3kF0I5r2RrzQYn5Ew21Q82bNDeBwLgLbJORTNE1Z
-	tjsY5D/ba8mj6nt5efog==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=TKwl5NiNGKoUcYQkzMiC6RjfgqsOvcm+Oj9t3fN1dHs=; b=XvE
+	izFJjYgFmyk1oFhcYPmiQddsZBy1KyrJynY5dTv3S4jll+bBCzFIXMNxFJk46jcJH8Rqnv0Xa84qf
+	DuEuSPosvEfMiQfiOWQVTIOouItHRJX6jGSD86zHYYqK6bs7pgyfy4+olGmmQMlFOX+RVqLid1rcQ
+	zKwnXTItr7LMjfBAgwT2O+7BfLgVVc4+rMOXrIPW41G5IrpeXLht0I+cmVuyZd7JFnn0KS/XXpV9B
+	P7OF/xpdjd9Heole1ruFeKq5fwICi/BorjAm/WZJsA29uO9+/GL2pIA6G+9paBZSI/Mc+oEXCBjC7
+	b9LpkTcGuES8oFQRMuPS4Y5PozYXjAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbiIr-0003z8-6I; Thu, 21 May 2020 10:19:53 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbiId-0003yL-Qg
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 10:19:42 +0000
-Received: by mail-wr1-x442.google.com with SMTP id l11so6157503wru.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 03:19:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=3soTLfyyUCy3fHQF1Qq2HbNRuRlLZGtCqlLrm7bKL0k=;
- b=iLefinM5WVMUYeWn89hjMmw6P3rJcMvMcXGCYe/sPgv01lWlMMB6pDIB7tTH5QdpRI
- J/wIHKRyTUiez45dT4rX+OBVoYtcQQpgm7r0oTowL2cwl2a8tyLfUBgdrchiF1JegdUC
- YA7oaI86mntloZ/obWxbf9I3aZTSG6xz1WTi4w5++XKbIBVVGmJHg9e+RQV4z1MTwZ2W
- qHbGdTUTZHwlOrigGy25G6d+X6N/lGlufcaLIyrCbHRV+66izSyZ+Gg08QmXz03eW6LK
- ysjJrOAJIR1Yhr3JDE9XVyyIQNpNUk6UhbAnuQATqftrKL4zpiKpAQXoMxry6OlhUtqY
- Fmfg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=3soTLfyyUCy3fHQF1Qq2HbNRuRlLZGtCqlLrm7bKL0k=;
- b=EWcENOMAvURWkN+FJsEyfQ5lh2dL4Ylvg63tm2Bb5rsLUMkZ5ssc0dg/Sm6Gx4Yes6
- xuTlooHNtarPiqLYCXJITqXQJ4uM8EGdrBzDC5wD3xLVpI4VE0E1GPBxoVuuqEfX7BQ8
- IlsJU1zai5j47+n/gluIZ3ikiYqgKhMJqF+8tl9Pn+BdaAburF1JbXZI+Sgd+ADNaAaT
- tBj1XXjEC5ycy0wPjPhycZRxvVn+pKf2TrchFXWwBLVusYKyrkGD/PNEfxNgtOA9EzSc
- zXyVvhWpWgDG7nV7h6VBTrbisiUpY4ombhojo3ihxcPEQ/EhoQ8iKyJjnl4Bbpt2Z/td
- CF3Q==
-X-Gm-Message-State: AOAM530dqk/sOkS1aq4+h0+7QUJhuQqJi7rwQBOVNTp+/JELm9TiOamm
- MgPjdnBLae342G29SJYvn/w8Xg==
-X-Google-Smtp-Source: ABdhPJxJaiGlRiaRseMV6CWsbw437c84sE7FLFpur3F+323zkr+qz4VJbqsUD3MeZIdVLu0xE6coNw==
-X-Received: by 2002:adf:dc86:: with SMTP id r6mr7594889wrj.45.1590056377059;
- Thu, 21 May 2020 03:19:37 -0700 (PDT)
-Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
- [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id v126sm6842237wma.9.2020.05.21.03.19.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 21 May 2020 03:19:36 -0700 (PDT)
-Date: Thu, 21 May 2020 11:19:34 +0100
-From: Daniel Thompson <daniel.thompson@linaro.org>
-To: Guru Das Srinagesh <gurus@codeaurora.org>
-Subject: Re: [RESEND PATCH v14 04/11] pwm: clps711x: Cast period to u32
- before use as divisor
-Message-ID: <20200521101934.j5ivjky4e6byveut@holly.lan>
-References: <cover.1589330178.git.gurus@codeaurora.org>
- <1d6918c3fc2976bdbdb687bf54a2ef09fc1558db.1589330178.git.gurus@codeaurora.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1d6918c3fc2976bdbdb687bf54a2ef09fc1558db.1589330178.git.gurus@codeaurora.org>
+	id 1jbiLU-0006kg-EM; Thu, 21 May 2020 10:22:36 +0000
+Received: from mail.zju.edu.cn ([61.164.42.155] helo=zju.edu.cn)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbiLJ-0006jf-P4
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 10:22:27 +0000
+Received: from localhost.localdomain (unknown [222.205.77.158])
+ by mail-app3 (Coremail) with SMTP id cC_KCgDX34tOVsZePhnoAA--.5452S4;
+ Thu, 21 May 2020 18:22:10 +0800 (CST)
+From: Dinghao Liu <dinghao.liu@zju.edu.cn>
+To: dinghao.liu@zju.edu.cn,
+	kjlu@umn.edu
+Subject: [PATCH] media: fimc-capture: Fix runtime PM imbalance on error
+Date: Thu, 21 May 2020 18:22:04 +0800
+Message-Id: <20200521102205.16604-1-dinghao.liu@zju.edu.cn>
+X-Mailer: git-send-email 2.17.1
+X-CM-TRANSID: cC_KCgDX34tOVsZePhnoAA--.5452S4
+X-Coremail-Antispam: 1UD129KBjvdXoWrKrW7ZFW3Gr18JF1xWF4UArb_yoWDJFg_GF
+ 90qF47Xrn8Gws0qr1jkFn8uryIyFZ5Xwn5Wa4SqF9xt390yF4Dtr4Ivr98Zw1xXa12yFy7
+ trZ8WF17ur9rCjkaLaAFLSUrUUUUUb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUb-kFc2x0x2IEx4CE42xK8VAvwI8IcIk0rVWrJVCq3wAFIxvE14AK
+ wVWUJVWUGwA2ocxC64kIII0Yj41l84x0c7CEw4AK67xGY2AK021l84ACjcxK6xIIjxv20x
+ vE14v26w1j6s0DM28EF7xvwVC0I7IYx2IY6xkF7I0E14v26r4UJVWxJr1l84ACjcxK6I8E
+ 87Iv67AKxVW0oVCq3wA2z4x0Y4vEx4A2jsIEc7CjxVAFwI0_GcCE3s1le2I262IYc4CY6c
+ 8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E2Ix0cI8IcVAFwI0_JrI_
+ JrylYx0Ex4A2jsIE14v26r4j6F4UMcvjeVCFs4IE7xkEbVWUJVW8JwACjcxG0xvY0x0EwI
+ xGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2Y2ka0xkIwI1lc2xSY4AK
+ 67AK6r4DMxAIw28IcxkI7VAKI48JMxAIw28IcVCjz48v1sIEY20_GFWkJr1UJwCFx2IqxV
+ CFs4IE7xkEbVWUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r10
+ 6r1rMI8E67AF67kF1VAFwI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxV
+ WUJVWUCwCI42IY6xIIjxv20xvEc7CjxVAFwI0_Gr0_Cr1lIxAIcVCF04k26cxKx2IYs7xG
+ 6Fyj6rWUJwCI42IY6I8E87Iv67AKxVW8JVWxJwCI42IY6I8E87Iv6xkF7I0E14v26r4UJV
+ WxJrUvcSsGvfC2KfnxnUUI43ZEXa7VUbHa0JUUUUU==
+X-CM-SenderInfo: qrrzjiaqtzq6lmxovvfxof0/1tbiAgEHBlZdtOPItAAnsF
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_031941_395956_812A3F82 
-X-CRM114-Status: GOOD (  17.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200521_032226_129823_519FF340 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,63 +72,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-pwm@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, David Collins <collinsd@codeaurora.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Dan Carpenter <dan.carpenter@oracle.com>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Joe Perches <joe@perches.com>,
- Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
- Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
+Cc: linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 03:55:57PM -0700, Guru Das Srinagesh wrote:
-> Since the PWM framework is switching struct pwm_args.period's datatype
-> to u64, prepare for this transition by typecasting it to u32.
-> 
-> Also, since the dividend is still a 32-bit number, any divisor greater
-> than the numerator will cause the quotient to be zero, so return 0 in
-> that case to efficiently skip the division.
-> 
-> Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
-> ---
->  drivers/pwm/pwm-clps711x.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
-> index 924d39a..da771b1 100644
-> --- a/drivers/pwm/pwm-clps711x.c
-> +++ b/drivers/pwm/pwm-clps711x.c
-> @@ -43,7 +43,10 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
->  static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
->  {
->  	/* Duty cycle 0..15 max */
-> -	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
-> +	if (pwm->args.period > (v * 0xf))
-> +		return 0;
+pm_runtime_get_sync() increments the runtime PM usage counter even
+when it returns an error code. Thus a pairing decrement is needed on
+the error handling path to keep the counter balanced.
 
-This doesn't look right to me.
+Signed-off-by: Dinghao Liu <dinghao.liu@zju.edu.cn>
+---
+ drivers/media/platform/exynos4-is/fimc-capture.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-DIV_ROUND_CLOSEST() does rounded division and the short circuit doesn't
-implement that.
+diff --git a/drivers/media/platform/exynos4-is/fimc-capture.c b/drivers/media/platform/exynos4-is/fimc-capture.c
+index 705f182330ca..dd33b888971f 100644
+--- a/drivers/media/platform/exynos4-is/fimc-capture.c
++++ b/drivers/media/platform/exynos4-is/fimc-capture.c
+@@ -478,8 +478,10 @@ static int fimc_capture_open(struct file *file)
+ 
+ 	set_bit(ST_CAPT_BUSY, &fimc->state);
+ 	ret = pm_runtime_get_sync(&fimc->pdev->dev);
+-	if (ret < 0)
++	if (ret < 0) {
++		pm_runtime_put_sync(&fimc->pdev->dev);
+ 		goto unlock;
++	}
+ 
+ 	ret = v4l2_fh_open(file);
+ 	if (ret) {
+-- 
+2.17.1
 
-
-Daniel.
-
-> +
-> +	return DIV_ROUND_CLOSEST(v * 0xf, (u32)pwm->args.period);
->  }
->  
->  static int clps711x_pwm_request(struct pwm_chip *chip, struct pwm_device *pwm)
-> -- 
-> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-> a Linux Foundation Collaborative Project
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
