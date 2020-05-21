@@ -2,56 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17E221DD308
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 18:22:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A0DA71DD32E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 18:40:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F5MAZ3c3axgN1DrtueqKS25wkLVbMSs1WOXj6Xbi68Q=; b=nCnMzbBwc6mjsl
-	eTTtTEBQdhsIY59s+8f/9VlFOSbaDdjEhnngteIhN/Cerq5796my7ELS60/+HmOg9SiYXPs/E3AXg
-	XWWoOMgVAX5KqM1siGHPZoGIGuWX4PunEVaDcWgJndxO/OJ+xvQ6kmqsr+VzMYBa8xAmOPhKXccbj
-	FHzSuXUiIZ+qx4ywZeC7J0KP13SRtBlh9z4XltW4+uxc3UElNcGrYRFeFx11s2YU8AQXBUBw1dD8x
-	bBnWykv57rbJdxKYtPloN/cUvWPx71RVAyPZayRrKd5lYKNyrxdAXB59xQcZvE2EmNypXD3VBginT
-	LR4z6r63bKWLugXFBNeQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=uuipLTKLlsp84RHOHfCtCPwHHLnWjEAysQqijDTJzqc=; b=ZO6Z6nym+bCyEy5MI/Z6RUHPZ
+	QYDCaSWB+lIWptDaVARU4SG/rRA4jho49bu8bvvlPLNs9R3BjMpAf0kDlF1W20XfHSYX4U9th+7b/
+	OsuJYk5NxILEu0NKtC9fxf+VkOabjVQsIUT83twBnxa8KZ9Xl8f4p5VymTkOgI8YxBvOZpiiXD41g
+	xXnBn2dn//Fp6NXGw4U0wkIS8R1MOXfZL5boJlMoo/Ii8pI3DfE9QzsSXtNOv8CxFJlzxCAX/y8CZ
+	Ne6qhZ7YrAzqX/f0RKyCHOjp2PeA5X6v7jGnsryd2mYMp2CH7xVSFX81XZn8Vg0dfkKLrkXSVvoMk
+	xAkEOg+cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbnxn-0002ZJ-4j; Thu, 21 May 2020 16:22:31 +0000
+	id 1jboF1-00030q-5Q; Thu, 21 May 2020 16:40:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbnxc-0002Yh-7A
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 16:22:21 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7586E20748;
- Thu, 21 May 2020 16:22:18 +0000 (UTC)
+ id 1jboEi-0002lo-PX; Thu, 21 May 2020 16:40:01 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C3B5D2072C;
+ Thu, 21 May 2020 16:39:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590078139;
- bh=5WuN5J6JrrL0Ru1Jeq5Ugd2Xq4HNCOyuxSZAqZ9/hJ4=;
+ s=default; t=1590079200;
+ bh=AfI9fmUuFN9xXeTYe0PWSZoP2kgFN0oEZnj47UWorQk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=gTs5YccrNnx7oMz2b9CUi2XjtNt1vO4YfZvow8YVbqCY8nR5T0dOo2tDlQ2ApwHTJ
- ICYraVFGWQO4IbdRvn9DPI5exaKFpwsq2vu9Fjw46Rwd0vatycQJgF1ofc3kpom1D7
- j4vqjgcvEJD3qNHpgWksTasFY55N2TOrPt+Xccnc=
-Date: Thu, 21 May 2020 17:22:15 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH] arm64/cpufeature: Move BUG_ON() inside get_arm64_ftr_reg()
-Message-ID: <20200521162212.GK6608@willie-the-truck>
-References: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
- <20200520122012.GA25815@willie-the-truck>
- <20200520154711.GD18302@gaia>
- <20200520173953.GA27629@willie-the-truck>
- <cdea1cc5-41be-c125-d4d1-f63ff1989ec6@arm.com>
+ b=PxuSU3uZYzpRLRdfe6Rz7HLoMY3bYg9op1wwP4N0PdBGZPEFoO/2RdlRUJkMufXCN
+ k+uSn09pgwURuO7SDRb3U6qQ8aMF1Yb9d5sweGPvl86oLvc98dLElPyf6p82Wjnwr/
+ do5Lo8UULK6bwoTOnwcV2rAUBlsuroCTbYwvqnMk=
+Date: Thu, 21 May 2020 17:39:57 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Pratyush Yadav <p.yadav@ti.com>
+Subject: Re: [PATCH v6 00/19] mtd: spi-nor: add xSPI Octal DTR support
+Message-ID: <20200521163957.GG4770@sirena.org.uk>
+References: <20200520163053.24357-1-p.yadav@ti.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cdea1cc5-41be-c125-d4d1-f63ff1989ec6@arm.com>
+In-Reply-To: <20200520163053.24357-1-p.yadav@ti.com>
+X-Cookie: Keep your laws off my body!
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_092220_295689_7A201C88 
-X-CRM114-Status: GOOD (  22.78  )
+X-CRM114-CacheID: sfid-20200521_094000_852959_5B0C03B2 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,90 +75,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6823539095071756863=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 08:45:38AM +0530, Anshuman Khandual wrote:
-> 
-> 
-> On 05/20/2020 11:09 PM, Will Deacon wrote:
-> > On Wed, May 20, 2020 at 04:47:11PM +0100, Catalin Marinas wrote:
-> >> On Wed, May 20, 2020 at 01:20:13PM +0100, Will Deacon wrote:
-> >>> On Wed, May 20, 2020 at 06:52:54AM +0530, Anshuman Khandual wrote:
-> >>>> There is no way to proceed when requested register could not be searched in
-> >>>> arm64_ftr_reg[]. Requesting for a non present register would be an error as
-> >>>> well. Hence lets just BUG_ON() when the search fails in get_arm64_ftr_reg()
-> >>>> rather than checking for return value and doing the same in some individual
-> >>>> callers.
-> >>>>
-> >>>> But there are some callers that dont BUG_ON() upon search failure. It adds
-> >>>> an argument 'failsafe' that provides required switch between callers based
-> >>>> on whether they could proceed or not.
-> >>>>
-> >>>> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> >>>> Cc: Will Deacon <will@kernel.org>
-> >>>> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> >>>> Cc: Mark Brown <broonie@kernel.org>
-> >>>> Cc: linux-arm-kernel@lists.infradead.org
-> >>>> Cc: linux-kernel@vger.kernel.org
-> >>>>
-> >>>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> >>>> ---
-> >>>> Applies on next-20200518 that has recent cpufeature changes from Will.
-> >>>>
-> >>>>  arch/arm64/kernel/cpufeature.c | 26 +++++++++++++-------------
-> >>>>  1 file changed, 13 insertions(+), 13 deletions(-)
-> >>>>
-> >>>> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> >>>> index bc5048f152c1..62767cc540c3 100644
-> >>>> --- a/arch/arm64/kernel/cpufeature.c
-> >>>> +++ b/arch/arm64/kernel/cpufeature.c
-> >>>> @@ -557,7 +557,7 @@ static int search_cmp_ftr_reg(const void *id, const void *regp)
-> >>>>   *         - NULL on failure. It is upto the caller to decide
-> >>>>   *	     the impact of a failure.
-> >>>>   */
-> >>>> -static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
-> >>>> +static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id, bool failsafe)
-> >>>
-> >>> Generally, I'm not a big fan of boolean arguments because they are really
-> >>> opaque at the callsite. It also seems bogus to me that we don't trust the
-> >>> caller to pass a valid sys_id, but we trust it to get "failsafe" right,
-> >>> which seems to mean "I promise to check the result isn't NULL before
-> >>> dereferencing it."
-> >>>
-> >>> So I don't see how this patch improves anything. I'd actually be more
-> >>> inclined to stick a WARN() in get_arm64_ftr_reg() when it returns NULL and
-> >>> have the callers handle NULL by returning early, getting rid of all the
-> >>> BUG_ONs in here. Sure, the system might end up in a funny state, but we
-> >>> WARN()d about it and tried to keep going (and Linus has some strong opinions
-> >>> on this too).
-> >>
-> >> Such WARN can be triggered by the user via emulate_sys_reg(), so we
-> >> can't really have it in get_arm64_ftr_reg() without a 'failsafe' option.
-> > 
-> > Ah yes, that would be bad. In which case, I don't think the existing code
-> > should change.
-> 
-> The existing code has BUG_ON() in three different callers doing exactly the
-> same thing that can easily be taken care in get_arm64_ftr_reg() itself. As
-> mentioned before an enum variable (as preferred - over a bool) can still
-> preserve the existing behavior for emulate_sys_reg().
-> 
-> IMHO these are very good reasons for us to change the code which will make
-> it cleaner while also removing three redundant BUG_ON() instances. Hence I
-> will request you to please reconsider this proposal.
 
-Hmm, then how about trying my proposal with the WARN_ON(), but having a
-get_arm64_ftr_reg_nowarn() variant for the user emulation case?
+--===============6823539095071756863==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="TdkiTnkLhLQllcMS"
+Content-Disposition: inline
 
-Will
+
+--TdkiTnkLhLQllcMS
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, May 20, 2020 at 10:00:34PM +0530, Pratyush Yadav wrote:
+> Hi,
+>=20
+> This series adds support for octal DTR flashes in the spi-nor framework,
+> and then adds hooks for the Cypress Semper and Mircom Xcella flashes to
+> allow running them in octal DTR mode. This series assumes that the flash
+> is handed to the kernel in Legacy SPI mode.
+
+Are people happy with the SPI bits of this from a MTD point of view?  I
+don't have any concerns and could apply them on a branch even if more
+revisions are needed for the MTD side.
+
+--TdkiTnkLhLQllcMS
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7Grt0ACgkQJNaLcl1U
+h9D1OQgAhiDwTKnfU5U/brtlpuvixDO+Q0C2aTYod9BlC6/J0LiO/hDJeEvk37Pr
+hAyYy3T36TEfkovmaLsQTTthWIkmvU+GhZhOmBUpGTPsINXBUDCM5oIV7D8k7axY
+okkAhFALSCWJk9KSkaYyQAKXH1JdAAh+3kodj4zU+jGaa9NOpsjJmIapIQ+9/iTn
+48Rn8Du87lLkYGQkA13k7sdi4sghM/8Nx3fvjPgEG9K65J+DE2nds2v5mrD0HPDx
+G+4+54Z0N9/QT4ZVebUEb4fMuBRlB0tpMnaQhd/ll/VJ7XNppMBtKhlMeV7TUF/+
+z9wWlZEKa3CYCCbQdluJq1GlHlhAIg==
+=fkrh
+-----END PGP SIGNATURE-----
+
+--TdkiTnkLhLQllcMS--
+
+
+--===============6823539095071756863==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6823539095071756863==--
+
