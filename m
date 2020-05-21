@@ -2,99 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B3061DC863
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 10:19:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 395101DC86A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 10:21:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ouU6A6LRpDYVCx4qmUZTKIMAG9ijE40siA2Ra+as4Jk=; b=BLei2slDzr7jy9
-	w2ezgzjBeCP+SRfn9F+4Q31Im/k7uk0JFCEKrtKixesswkuwVKKvTJ06ITWQ8hu5XXmVVUioQZrNS
-	R+HWn3o35PTeBgsa525mzy/jOcJLXOfDMMQyydkH+1iZPGSjbu0KtdNkf36opV7q1mGbo1LTU5Plh
-	yg9AlbD4112L2zTlZwn00AbfgPKZyXPxRLK2jpBBQohNqCccWVObmEI/29tpOutMM748NGUtZ06z1
-	U2QuA4qduRt+4D2r+7ezZoHYYf2OmO6mGl/pQKKKmkBJATbuGkXk/ixU5Fll6H/X0z/nMTpDV20cL
-	OT2Sq7D3NsjMoKexYFdA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ahh1og3/v459LE+YlGnGPRwKvtLhA1KkgTPFl4mrZYA=; b=SRIA2gKYDkiO6w
+	6/GHTQ4DEU5l9fXDSM/f/YlXxDo86XXNYA8cqgRfpR0E54LLWBpm7SyWGbqusEXOvQBemaDivxztb
+	e3wdIlK/V0tKvYTv/OSOeBVkxKCZw4pk/WfX+NDQRAZa8kobyt7rclsIC5wU1oOT9/HJXjZ+Ad+H3
+	Z1fMIfi/KZmqbMxUGtanSsruyRBpkocJEVy7J2HWgRrClQ7TjrHuseLrXTHSLXapd90VsWVHMxqsO
+	lm8OtjuNlMr/zZuQSwnycRLfgutDnkPtt+Xfvwt4QPtr39sHwhprFQjXztyoKBY4iaO0sfH/Eq4Xc
+	M8RTgu42ETtV7Comxx2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbgPt-0004bu-0l; Thu, 21 May 2020 08:19:01 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1jbgRm-0007Vw-2G; Thu, 21 May 2020 08:20:58 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbgPf-0004aj-9d
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 08:18:49 +0000
-Received: from pps.filterd (m0098414.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04L83K0d021397; Thu, 21 May 2020 04:18:33 -0400
+ id 1jbgRc-0004ah-2v
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 08:20:50 +0000
+Received: from pps.filterd (m0098409.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04L843Lb074793; Thu, 21 May 2020 04:18:36 -0400
 Received: from pps.reinject (localhost [127.0.0.1])
- by mx0b-001b2d01.pphosted.com with ESMTP id 312cakpsj6-1
+ by mx0a-001b2d01.pphosted.com with ESMTP id 315gwbrj2e-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 21 May 2020 04:18:33 -0400
-Received: from m0098414.ppops.net (m0098414.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 04L83HnB021120;
- Thu, 21 May 2020 04:18:32 -0400
-Received: from ppma02fra.de.ibm.com (47.49.7a9f.ip4.static.sl-reverse.com
- [159.122.73.71])
- by mx0b-001b2d01.pphosted.com with ESMTP id 312cakpsha-1
+ Thu, 21 May 2020 04:18:36 -0400
+Received: from m0098409.ppops.net (m0098409.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 04L85WVo084826;
+ Thu, 21 May 2020 04:18:35 -0400
+Received: from ppma05fra.de.ibm.com (6c.4a.5195.ip4.static.sl-reverse.com
+ [149.81.74.108])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 315gwbrj1b-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 21 May 2020 04:18:32 -0400
-Received: from pps.filterd (ppma02fra.de.ibm.com [127.0.0.1])
- by ppma02fra.de.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 04L8HCpw027290;
- Thu, 21 May 2020 08:18:30 GMT
-Received: from b06cxnps4076.portsmouth.uk.ibm.com
- (d06relay13.portsmouth.uk.ibm.com [9.149.109.198])
- by ppma02fra.de.ibm.com with ESMTP id 313x2j26pg-1
+ Thu, 21 May 2020 04:18:35 -0400
+Received: from pps.filterd (ppma05fra.de.ibm.com [127.0.0.1])
+ by ppma05fra.de.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 04L8Hfba001227;
+ Thu, 21 May 2020 08:18:33 GMT
+Received: from b06cxnps3074.portsmouth.uk.ibm.com
+ (d06relay09.portsmouth.uk.ibm.com [9.149.109.194])
+ by ppma05fra.de.ibm.com with ESMTP id 313x4xj54p-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 21 May 2020 08:18:30 +0000
-Received: from d06av26.portsmouth.uk.ibm.com (d06av26.portsmouth.uk.ibm.com
- [9.149.105.62])
- by b06cxnps4076.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 04L8ISeX48693444
+ Thu, 21 May 2020 08:18:33 +0000
+Received: from d06av21.portsmouth.uk.ibm.com (d06av21.portsmouth.uk.ibm.com
+ [9.149.105.232])
+ by b06cxnps3074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 04L8IV8237027878
  (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 21 May 2020 08:18:28 GMT
-Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 600BEAE045;
- Thu, 21 May 2020 08:18:28 +0000 (GMT)
-Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 71890AE053;
- Thu, 21 May 2020 08:18:26 +0000 (GMT)
+ Thu, 21 May 2020 08:18:31 GMT
+Received: from d06av21.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 1D4F05204E;
+ Thu, 21 May 2020 08:18:31 +0000 (GMT)
 Received: from hump (unknown [9.148.206.2])
- by d06av26.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Thu, 21 May 2020 08:18:26 +0000 (GMT)
-Received: by hump (sSMTP sendmail emulation); Thu, 21 May 2020 11:18:25 +0300
+ by d06av21.portsmouth.uk.ibm.com (Postfix) with ESMTPS id 3B7E552052;
+ Thu, 21 May 2020 08:18:29 +0000 (GMT)
+Received: by hump (sSMTP sendmail emulation); Thu, 21 May 2020 11:18:28 +0300
 From: Mike Rapoport <rppt@linux.ibm.com>
 To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: [PATCH 0/2] ARM: Allow either FLATMEM or SPARSEMEM on the
- multiplatform build
-Date: Thu, 21 May 2020 11:18:23 +0300
-Message-Id: <20200521081825.1348844-1-rppt@linux.ibm.com>
+Subject: [PATCH 1/2] ARM: Remove redundant ARCH_SPARSEMEM_DEFAULT setting
+Date: Thu, 21 May 2020 11:18:24 +0300
+Message-Id: <20200521081825.1348844-2-rppt@linux.ibm.com>
 X-Mailer: git-send-email 2.25.2
+In-Reply-To: <20200521081825.1348844-1-rppt@linux.ibm.com>
+References: <20200521081825.1348844-1-rppt@linux.ibm.com>
 MIME-Version: 1.0
 X-TM-AS-GCONF: 00
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
  definitions=2020-05-21_04:2020-05-20,
  2020-05-21 signatures=0
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxscore=0 suspectscore=0
- bulkscore=0 mlxlogscore=916 adultscore=0 clxscore=1015 impostorscore=0
- lowpriorityscore=0 cotscore=-2147483648 phishscore=0 malwarescore=0
- priorityscore=1501 spamscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2005210057
+ mlxscore=0 adultscore=0
+ clxscore=1015 malwarescore=0 impostorscore=0 lowpriorityscore=0
+ cotscore=-2147483648 suspectscore=0 spamscore=0 priorityscore=1501
+ phishscore=0 mlxlogscore=908 bulkscore=0 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2005210057
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_011847_451635_51DF3668 
-X-CRM114-Status: GOOD (  15.55  )
+X-CRM114-CacheID: sfid-20200521_012049_358231_4AC5BDAD 
+X-CRM114-Status: GOOD (  15.33  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.158.5 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [148.163.156.1 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,67 +113,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-(resendig for the correct address and with mailing list cc'ed, sorry for
-the noise)
+From: Kevin Cernekee <cernekee@gmail.com>
 
-Hi,
+If ARCH_SPARSEMEM_ENABLE=y and ARCH_{FLATMEM,DISCONTIGMEM}_ENABLE=n,
+then the logic in mm/Kconfig already makes CONFIG_SPARSEMEM the only
+choice.  This is true for all of the existing ARM users of
+ARCH_SPARSEMEM_ENABLE.
 
-Following the discussion at [1], I'm resending the patches that enable
-memory model selection in menuconfig and such.
+Forcing ARCH_SPARSEMEM_DEFAULT=y if ARCH_SPARSEMEM_ENABLE=y prevents
+us from ever defaulting to FLATMEM, so we should remove this setting.
 
-These patches do not change the way the configuration is generated from the
-defconfigs and they do not change explicit selection of SPARSEMEM for
-platforms that have "select ARCH_ENABLE_SPARSEMEM".
+Link: https://lkml.org/lkml/2015/6/4/757
+Signed-off-by: Kevin Cernekee <cernekee@gmail.com>
+Tested-by: Stephen Boyd <sboyd@codeaurora.org>
+Acked-by: Arnd Bergmann <arnd@arndb.de>
+Signed-off-by: Gregory Fong <gregory.0xf0@gmail.com>
+Signed-off-by: Doug Berger <opendmb@gmail.com>
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ arch/arm/Kconfig | 3 ---
+ 1 file changed, 3 deletions(-)
 
-The mere change is that when a user runs an interactive configuration they
-will be allowed to select between FLATMEM and SPARSMEM, which is not the
-case today.
-
-There is indeed some awkwardness in, e.g. removal of
-ARCH_SPARSEMEM_DEFAULT, but this is what memory model selection logic in
-mm/Kconfig imposes.
-
-For example, below is the diffs of the configurations generated with
-'make rpc_defconfig' and 'make defconfig':
-
-$ diff -s old/rpc_defconfig new/rpc_defconfig
-Files old/rpc_defconfig and new/rpc_defconfig are identical
-
-$ diff -u old/defconfig new/defconfig
---- old/defconfig	2020-05-20 17:51:01.832649705 +0300
-+++ new/defconfig	2020-05-20 18:15:21.084385880 +0300
-@@ -674,6 +674,9 @@
- CONFIG_AEABI=y
- # CONFIG_OABI_COMPAT is not set
- CONFIG_ARCH_HAS_HOLES_MEMORYMODEL=y
-+CONFIG_ARCH_SELECT_MEMORY_MODEL=y
-+CONFIG_ARCH_FLATMEM_ENABLE=y
-+CONFIG_ARCH_SPARSEMEM_ENABLE=y
- CONFIG_HAVE_ARCH_PFN_VALID=y
- CONFIG_HIGHMEM=y
- CONFIG_HIGHPTE=y
-@@ -1061,6 +1064,9 @@
- #
- # Memory Management options
- #
-+CONFIG_SELECT_MEMORY_MODEL=y
-+CONFIG_FLATMEM_MANUAL=y
-+# CONFIG_SPARSEMEM_MANUAL is not set
- CONFIG_FLATMEM=y
- CONFIG_FLAT_NODE_MEM_MAP=y
- CONFIG_ARCH_KEEP_MEMBLOCK=y
-
-[1] https://lore.kernel.org/linux-arm-kernel/20200506235009.25023-1-f.fainelli@gmail.com
-
-Gregory Fong (1):
-  ARM: Allow either FLATMEM or SPARSEMEM on the multiplatform build
-
-Kevin Cernekee (1):
-  ARM: Remove redundant ARCH_SPARSEMEM_DEFAULT setting
-
- arch/arm/Kconfig | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
-
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index c88a48d622fc..604caf652e2a 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -1519,9 +1519,6 @@ config ARCH_SPARSEMEM_ENABLE
+ 	bool
+ 	select SPARSEMEM_STATIC
+ 
+-config ARCH_SPARSEMEM_DEFAULT
+-	def_bool ARCH_SPARSEMEM_ENABLE
+-
+ config HAVE_ARCH_PFN_VALID
+ 	def_bool ARCH_HAS_HOLES_MEMORYMODEL || !SPARSEMEM
+ 
 -- 
 2.26.2
 
