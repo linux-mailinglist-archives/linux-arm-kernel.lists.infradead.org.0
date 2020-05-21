@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CC941DCAC9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 12:14:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D21921DCAD2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 12:16:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zXg/r/Wxl3OvHFOkgomcZgHcil/sHcqk7cmz12e5jBI=; b=c3ilAnLps/8Tfs
-	y2kEAB51u7Pwq3lFqRw0A33K0cVKe46My0GXcLdQEW1crUjFkZjAhbqBFNodiZtkxGEIUi62MxJPG
-	80RGiDLBIhHN3QSLZeS2B7K8yv4fwNOMSttOU6fHdIhWfIyZ0+jkz0VYzralHwwYjlO1guiqsBX3W
-	WW2wOWjH6p870tp66IZof92w5sU9fOSM/XlLaZafZKpPgl/mkTPiQbbOVahXpKjUg0Jp1BwIZM4hc
-	JGrJ9xgmCu75kgACjJJlT3vFFy2IoZWUC9vR5B6GQ4obLijw2N25c3TXZSBDBt3nyj7qmMsgTgXGI
-	rTRpv7IBmnwZV1HX5axA==;
+	List-Owner; bh=Q0vvbJqFtp0cTk/qpKK+SZ9qx3f9c0EJcaoOQYzW7eY=; b=g4cVZoskpxJSrQ
+	u++bMm4of4LpAzxPhGzs+olLxfr6k9tf2N1Dz3R7rowHwoDDWXxsObirrUqN8h6L/hXbTdXTtfFY6
+	2rZABEfpuL/PeP3HprMD2/1dt/1uS47Jc9z1YzOaciBCy9zGrlshfy4FQELALuZzQlJxYXqZlBX7D
+	QJFh3t0ResNxjLdlNa9yzC+sq/iKcl7S8GXrA6LqOXbOzBxl2IANAQLWOvqpl/ROicVTF2zEweVq8
+	jErtF425Aqstn/qs9vbLO+jfSyLsAfQBHwh7o+W3jmqBenjJHXzBm0QaQX+GKkaRQVFd/oRlyeGRZ
+	lsNdv7mucO/T8CapFrcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbiDz-0008SC-1B; Thu, 21 May 2020 10:14:51 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jbiFp-00030z-B2; Thu, 21 May 2020 10:16:45 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbiDq-0008Ra-SO
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 10:14:44 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 081862072C;
- Thu, 21 May 2020 10:14:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590056082;
- bh=D9Q72b7qUgPDDR206w4ichbVQq6A8rfnDC2+Hv+edCc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Dmg4JoXUCdd6Bq6CUMCM52AvT1HD5NxqVWfhuQQk2ejzC7BcgrwdvasbhSGDNmfAH
- r2Q6jEgv9Oyah98CWOOxvb63BYPLCyuBkEGCMeck/m5YEIPxKwbTNNoz6O5ZO/p5BV
- Dj7TuRATLbQXuL+HfJ62WO6JZTYSfOMB6SU8uOUo=
-Date: Thu, 21 May 2020 11:14:38 +0100
-From: Will Deacon <will@kernel.org>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH v4 0/7] firmware: smccc: Add basic SMCCC v1.2 +
- ARCH_SOC_ID support
-Message-ID: <20200521101437.GB5360@willie-the-truck>
-References: <20200518091222.27467-1-sudeep.holla@arm.com>
- <158999823818.135150.13263761266508812198.b4-ty@kernel.org>
- <CAK8P3a0bx2eOFSqM7ihNkJBWU_KKSh0vGJZZdvpkH=1nppingw@mail.gmail.com>
- <20200521070629.GB1131@bogus>
- <CAK8P3a1h1MR4Mq2sSV_FDUodrfaKRFtyOuOOGPWAbPYbzjc4YQ@mail.gmail.com>
- <20200521075755.GA4668@willie-the-truck>
- <20200521081055.GD1131@bogus>
- <CAK8P3a3dV0B26XE3oFQGTFf8EWV0AHoLudNtpSSB_t+pCfkOkQ@mail.gmail.com>
- <20200521091736.GA5091@willie-the-truck>
- <20200521092627.GB6425@bogus>
+ id 1jbiFa-00030E-Fy
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 10:16:32 +0000
+Received: from mail-qk1-f174.google.com ([209.85.222.174]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1My3Mv-1iqCOa0y7z-00zUIU for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 21 May 2020 12:16:27 +0200
+Received: by mail-qk1-f174.google.com with SMTP id n11so1173010qkn.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 May 2020 03:16:26 -0700 (PDT)
+X-Gm-Message-State: AOAM530OVm8I3z1DVytz6M6wfWUTY9WgpzS85P4yj+3BCt2Krj/yCznH
+ h1FwGPPdB/08wdCEaW5et2e5k77KR+0GDdQxAhA=
+X-Google-Smtp-Source: ABdhPJzG0yZLoO02lBv/GjHkHvx0xY0LzpxpTesxhUjbNmnX8hm9pN92rchECm8L89+atAf/Z7jq0U8pXKnfGDJcMoo=
+X-Received: by 2002:a37:434b:: with SMTP id q72mr9600780qka.352.1590056185859; 
+ Thu, 21 May 2020 03:16:25 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200521092627.GB6425@bogus>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200513125532.24585-1-lars.povlsen@microchip.com>
+In-Reply-To: <20200513125532.24585-1-lars.povlsen@microchip.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 21 May 2020 12:16:09 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a0wYbVcerL9OEfAs+jJ-9xR7ryZwmsvi4Kt4yXOHaNefw@mail.gmail.com>
+Message-ID: <CAK8P3a0wYbVcerL9OEfAs+jJ-9xR7ryZwmsvi4Kt4yXOHaNefw@mail.gmail.com>
+Subject: Re: [PATCH 00/14] Adding support for Microchip Sparx5 SoC
+To: Lars Povlsen <lars.povlsen@microchip.com>
+X-Provags-ID: V03:K1:TbhkU7YG3uae6bAf1Od/EfHlAuKX3qlDz3Hy5UlQ3YDnfAmsqyK
+ jzJpzKbuMQZ2iXZpVtJnlRbxHJJTqjTewaTBvEk3yfONd2ssthL82v9yr13SmaA6bAQWqre
+ 9Z9ZOEu+n6zpimDPi5K0Xn0xKowBPgQpFVWQYxFkvBnwUekjVRQ1zsJcLKMtFt/9YV+s64m
+ SYFEGc7MgJHr0Vwl4yDUg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:3cpIkkOx5TU=:AHcvmDGL2aIobIbI/D/szs
+ R54RVKHGz0i9CNffa0Sd0vXROvf/g6D1+f+Fn5LGKGeBvOQSwS/LE/fME0pOPtCSBdLzZfmdJ
+ kNEa5uqh+3TYSunAeueEu/EVaX/AbgEx58gBKnsy67G6JY9ImTdh0PEmUqzAxoPb0IJFYQGxh
+ j5ZJ9vrdH2QWg6gn0yUdG3lD65LL6AoFKtT0JrBjuiSqkxrs0ULE3jGaK6NmkiIXTiJg/v7Kb
+ +OerxnUtka71enuNhseH4Kq7MdIVhuL/1lAlHV7zP+pa9uh5WUNTKNZZzQIlbIy6hJjls5bHC
+ m0NeJNb2UGyKrZjlwoSvUkxXIzBIKfB2whIU9dYCQNrUiwChQp7wtc9TBptrJgPs9LJXR13ft
+ +ykB5A6swoNnbNoLn7hefyZmg2r3xIPpKW4lPd+aL+OxTGeUjOwdbLkrlLFc971j9Si6r97xa
+ F/qHTzGSmqIqo2Hg6KmCLW8ZA3RMPfuC7o8Bx6bbTbMuNleJ0mkeu7MEWt/V/pf05YWkmrT1F
+ JI/6gvyluekmTPINcb27TTTo9VN/cf6klQmAUm5vQI8xrVOKr2kKIsL+h7rfgKblWN8ZMpK8L
+ WyautU2EDYYfedqBtr8ieBq3DmHIfDxXSctaORBwQ48IcbduV8vhTpi/FXWAF1XrgqdgbtWec
+ JXrtCiIXysPw0d3SZpjJeL3UJ8wBgfZSqi770vRl14RtNJHojFXBUpD2kDLfyvVvSo2bhTeA6
+ 7u56zI204fLPtgLyBcNz1HZLjy/nt/qHENWDYQVtW10kFr62d1HNQkr8nhRhf1OK9Our31aAC
+ 8mrHJUyXAm99g1nzW/M2TZGZGRm8lg6DKGRxgAAnZKuRoGNKec=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_031442_937978_71F41F83 
-X-CRM114-Status: GOOD (  21.29  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200521_031630_823664_4498CBCC 
+X-CRM114-Status: GOOD (  17.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.72.192.74 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,57 +88,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Arnd Bergmann <arnd@arndb.de>,
- Catalin Marinas <catalin.marinas@arm.com>,
+Cc: DTML <devicetree@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Steen Hegelund <Steen.Hegelund@microchip.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ Michael Turquette <mturquette@baylibre.com>, SoC Team <soc@kernel.org>,
+ Olof Johansson <olof@lixom.net>, Linus Walleij <linus.walleij@linaro.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 10:26:27AM +0100, Sudeep Holla wrote:
-> On Thu, May 21, 2020 at 10:17:39AM +0100, Will Deacon wrote:
-> > On Thu, May 21, 2020 at 11:06:23AM +0200, Arnd Bergmann wrote:
-> > > On Thu, May 21, 2020 at 10:11 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > > > /me confused. Do you need the fix for this warning or you are happy to ignore?
-> > > 
-> > > I want a fix for that, as I hope we can eventually turn this warning on by
-> > > default and stop playing whack-a-mole when they come up. Most of these
-> > > warnings are harmless, but occasionally the prototypes don't match exactly
-> > > and cause real bugs depending on the configuration, and ensuring both
-> > > sides include a common header file is an easy way to make it work
-> > > more reliably.
-> > > 
-> > > Note that the warning should come up for either W=1 or C=1, and I also
-> > > think that
-> > > new code should generally be written sparse-clean and have no warnings with
-> > > 'make C=1' as a rule.
-> > 
-> > Fair enough. Is anybody working on a tree-wide sweep for this, like we've
-> > done for other things such as zero-length arrays? If so, I can start
-> > enforcing this in the arch code as well (I haven't been so far, even though
-> > I do run sparse on every commit).
-> > 
-> > Anyway, I've dropped the last patch from the branch, and we can put a fix
-> > for the missing prototype on top.
-> > 
-> 
-> Thanks Will, sorry for the trouble. Though I can send the fix for the
-> missing prototype right away, I would like to get my clang setup working
-> as an opportunity. clang-8 that I have is failing vanilla v5.7-rc6
-> when expanding arm_smccc_1_1_*
+On Wed, May 13, 2020 at 2:55 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
+>
+> This patch series adds support for Microchip Sparx5 SoC, the CPU
+> system of a advanced, TSN capable gigabit switch. The CPU is an armv8
+> x 2 CPU core (A53).
+>
+> Although this is an ARM core, it shares some peripherals with the
+> Microsemi Ocelot SoC.
+>
+> This is the first official revision of the series.
 
-No trouble at all, really. I also saw this from Nathan the other day, which
-may help you get up and running with clang:
+I see you sent multiple series to soc@kernel.org for review. This is the
+correct address for getting the initial soc support merged, but as the patches
+are still being reviewed by subsystem maintainers, please leave it off
+for now, until you are confident that they are ready to get merged for the
+following merge window and have received the appropriate Acks.
 
-https://lore.kernel.org/r/20200520024736.GA854786@ubuntu-s3-xlarge-x86
+For each subsystem, there is generally the choice between merging
+code through the subsystem maintainer tree, or through the soc tree
+on an initial submission, as going through multiple trees is particularly
+hard to do for the devicetree files.
 
-(but I haven't tried it myself, as I'm just using the Android binary)
+For the moment, I have marked all sparx5 patches as "Not Applicable"
+in patchwork at https://patchwork.kernel.org/project/linux-soc/list/
+as it is still unclear who is merging which parts, and they are under
+active review, but please do send them again after the review is
+complete.
 
-Will
+If you have a lot of patches, sending pull requests is sometimes easier,
+but it also takes a bit of practice to know how exactly to structure
+those. Let me know if you have questions about them. You an also
+contact me and most of the other maintainers on IRC using the
+#armlinux channel on irc.freenode.net.
+
+Sorry for not having been able to review the patches myself yet, I
+hope to get to that soon.
+
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
