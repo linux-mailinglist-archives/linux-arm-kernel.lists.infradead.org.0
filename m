@@ -2,70 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B89AD1DCB9D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 13:05:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA8681DCBA7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 13:09:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OFOob3JIi+HjZ6KOSFiaSSeo0aK+xonTB4Ua2zqIXBA=; b=lVUrxzIqiEdKDi
-	4E0PqlMsTh4nA5VF74mmHI4PYl9Pli5aKX0dnM5mTM/6lnaGO2Jlpub6l+UnwsMAHqUa2XRGA88WV
-	Aw6ouH/CwqaUiBFa/xlkfm7MC8SsO/Tl3B1QuIAfUo6fslG7wKOyTBKmLsV930a0T9DQ7XudtNNY6
-	zH+jE8hUP0F0V7idR6CtTWtQNFDiTyZx9IjudZhUAFVaCREcD6YxU66B6l7M/RuYhCsNruUIj+xvm
-	BJxkCcUQ25LJavgcBW62VDjX4LgKZxo59Z1DxlpcbfHyP1QXkqQkEBDbo/fetuh9p2mmybUlRoR8S
-	+tBXAULu3fSg5Xez9yRA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Z3+nhhaN6BJUzst2qv9oKG/1UWa3xjbVpBWSStUSqmY=; b=sXs
+	0JxDGT56g1sYGfXSbF/4JaXbM0PwrskxeArK/9eDpwmJcSW+fJShU0ky+pm92EPlFwIaaHPPYJMUO
+	EncOnX8nm3d2XDBftwIfK4PJ5prfFCI+hwI2/qFq03OoA03nE2dQvpal8ooS5PsF0KUk+1eIGHdra
+	ObZqSdp7F24HLDKDZFz2CXt2HxVONuVTlvQB5MSRvNnjTSyIoheoLbrJIP6+Dy2jQAQFc1UpiGHnE
+	8WbD/naKGGm8iNPTcgn7CBm9XwzSAzJ2Z0ql3Xc2vdboTe7aKt/2ubHypevVM07mK96NNM+2B2+lp
+	VdumJbOV3GRJSWMnGXvZ9FJ78k6EHdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbj1A-0001Uy-3u; Thu, 21 May 2020 11:05:40 +0000
-Received: from mga09.intel.com ([134.134.136.24])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbj11-0001UP-Lp
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 11:05:32 +0000
-IronPort-SDR: hGRLG8aWrdrbkxZtwgCb8BftqOXAUJzjwLaPYDC9oRytCbfnoHsXnjqRQZODwxmSMFEvryS28q
- 24JqJ1AQKZXw==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 21 May 2020 04:05:30 -0700
-IronPort-SDR: w6ex6S5mus95JXDP7tKDjzG9Zphf6feFiBeRQb/5ef/2aF+miMWEZV2K9XHKHlD9ln5MKJtxrb
- ML3YzHUOAB1Q==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,417,1583222400"; d="scan'208";a="309003364"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by FMSMGA003.fm.intel.com with ESMTP; 21 May 2020 04:05:29 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jbj0y-0009h4-9S; Thu, 21 May 2020 19:05:28 +0800
-Date: Thu, 21 May 2020 19:04:39 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: [RFC PATCH shawnguo] clk: imx: imx8m_clk_composite_mux_ops can be
- static
-Message-ID: <20200521110439.GA55876@f61f8b3f25ca>
-References: <202005211954.Rc03oK6u%lkp@intel.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <202005211954.Rc03oK6u%lkp@intel.com>
-X-Patchwork-Hint: ignore
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1jbj4N-0001vl-3K; Thu, 21 May 2020 11:08:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jbj4D-0001ut-7r
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 11:08:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0DFB030E;
+ Thu, 21 May 2020 04:08:48 -0700 (PDT)
+Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CC8703F68F;
+ Thu, 21 May 2020 04:08:46 -0700 (PDT)
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Will Deacon <will@kernel.org>,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] firmware: smccc: Fix missing prototype warning for
+ arm_smccc_version_init
+Date: Thu, 21 May 2020 12:08:36 +0100
+Message-Id: <20200521110836.57252-1-sudeep.holla@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_040531_752573_1F28AE92 
-X-CRM114-Status: GOOD (  13.38  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200521_040849_324755_E935ADAD 
+X-CRM114-Status: GOOD (  10.68  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,33 +60,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- kbuild-all@lists.01.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Arnd Bergmann <arnd@arndb.de>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Steven Price <steven.price@arm.com>, Sudeep Holla <sudeep.holla@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Commit f2ae97062a48 ("firmware: smccc: Refactor SMCCC specific bits into
+separate file") introduced the following build warning:
 
-Fixes: 3f0365dafe32 ("clk: imx: add mux ops for i.MX8M composite clk")
-Signed-off-by: kbuild test robot <lkp@intel.com>
+drivers/firmware/smccc/smccc.c:14:13: warning: no previous prototype for
+	function 'arm_smccc_version_init' [-Wmissing-prototypes]
+ void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit)
+             ^~~~~~~~~~~~~~~~~~~~~~
+
+Fix the same by adding the missing prototype in arm-smccc.h
+
+Reported-by: kbuild test robot <lkp@intel.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- clk-composite-8m.c |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/firmware/psci/psci.c | 1 -
+ include/linux/arm-smccc.h    | 3 +++
+ 2 files changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/clk/imx/clk-composite-8m.c b/drivers/clk/imx/clk-composite-8m.c
-index 8fa60f22d377f..2d9562ebddc3f 100644
---- a/drivers/clk/imx/clk-composite-8m.c
-+++ b/drivers/clk/imx/clk-composite-8m.c
-@@ -164,7 +164,7 @@ imx8m_clk_composite_mux_determine_rate(struct clk_hw *hw,
- }
+diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+index 1330a698a178..92013ecc2d9e 100644
+--- a/drivers/firmware/psci/psci.c
++++ b/drivers/firmware/psci/psci.c
+@@ -79,7 +79,6 @@ static u32 psci_function_id[PSCI_FN_MAX];
  
+ static u32 psci_cpu_suspend_feature;
+ static bool psci_system_reset2_supported;
+-void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit);
  
--const struct clk_ops imx8m_clk_composite_mux_ops = {
-+static const struct clk_ops imx8m_clk_composite_mux_ops = {
- 	.get_parent = imx8m_clk_composite_mux_get_parent,
- 	.set_parent = imx8m_clk_composite_mux_set_parent,
- 	.determine_rate = imx8m_clk_composite_mux_determine_rate,
+ static inline bool psci_has_ext_power_state(void)
+ {
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index c491d210e3c3..56d6a5c6e353 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -5,6 +5,7 @@
+ #ifndef __LINUX_ARM_SMCCC_H
+ #define __LINUX_ARM_SMCCC_H
+ 
++#include <linux/init.h>
+ #include <uapi/linux/const.h>
+ 
+ /*
+@@ -111,6 +112,8 @@ enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void);
+  */
+ u32 arm_smccc_get_version(void);
+ 
++void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit);
++
+ /**
+  * struct arm_smccc_res - Result from SMC/HVC call
+  * @a0-a3 result values from registers 0 to 3
+
+base-commit: a4fb17465182c9fc13104e4df04d050892055205
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
