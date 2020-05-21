@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF4EA1DCEDE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:04:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D07E1DCEE4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 16:05:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=uAHK/X8MDOqzhg+ZgWR7CWCj8VuJizKwXia02AGVO3o=; b=dCyis5ODcoLotRFUNqdQOeT7M9
-	nd630tFuPYxgjUVjjrMr08XaZ5GeWnX6f+7a7Hx8TZVnyysaFCBdzHSlil7NLrWLAYnJS059N5o2Q
-	tQpED+b5dWP24eh1h4yVQDHVO1qazeJ5U3Vjvmxavk4AE5aXSybT7YUbrAf7X5vu4869DIgmbG5E0
-	OnMYEsyEwO/9tTHVyH0H0e0R4QUto4wQtC6NJNNEqfBiaRcypki6hg8hS5H+Wq0x7NtNQIsHWKh6w
-	rmxKFXWkoRj2Zd6/0d1vZxAFaDuzc8wNtaobAhB24QClw9MDXfy1Np2W3HoOX8dHfmkrOlm/db+h+
-	QDlDrJHg==;
+	bh=rJwXeiHOjVGbSYMopejIaeC40/rX7J19ZBJCucy09xs=; b=Zju74k+XoVFr6DAamqYEMNLpd+
+	uuL4PVooiN4AkMTF4OJ0855dLzAIjH7PJpWcDdksrpzVE6ywu2QOUrj8vryq5VYee06l8pycrejrU
+	296OVWsCiGf4S/uJ7yV8CTqLSC3YDnYSoSr5nLjQicSK6vVBUbphHotntD3+IPgSO8YiL7k8Dq26r
+	7wJfA/+V+h1iApvJuZNJBXb8eta2yuWbdE911jBEjB4R0daHJuj66aM+u8/rRHuf63vZ6z1JGgqyE
+	e56XNB+/0XXlzfz2WvexTaIYNT8wVrvOim/eOU9+fbjhJ3cxu8YAr8G/RKwgOdeK3RsIsqOumYLr7
+	oi/Qodiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jblnw-0008Fg-Dm; Thu, 21 May 2020 14:04:12 +0000
+	id 1jblp0-000087-Px; Thu, 21 May 2020 14:05:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jblne-0008CV-8p
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:03:55 +0000
+ id 1jblog-00006m-Oy
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 14:05:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9BDD0D6E;
- Thu, 21 May 2020 07:03:52 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 218FAD6E;
+ Thu, 21 May 2020 07:04:58 -0700 (PDT)
 Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 48DC43F305;
- Thu, 21 May 2020 07:03:51 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C67353F305;
+ Thu, 21 May 2020 07:04:56 -0700 (PDT)
 References: <20200519161755.209565-1-maz@kernel.org>
- <20200519161755.209565-5-maz@kernel.org>
- <20200519222447.GJ1551@shell.armlinux.org.uk>
+ <20200519161755.209565-7-maz@kernel.org>
 User-agent: mu4e 0.9.17; emacs 26.3
 From: Valentin Schneider <valentin.schneider@arm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH 04/11] ARM: Allow IPIs to be handled as normal interrupts
-In-reply-to: <20200519222447.GJ1551@shell.armlinux.org.uk>
-Date: Thu, 21 May 2020 15:03:49 +0100
-Message-ID: <jhjk115xu4a.mognet@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 06/11] irqchip/gic-v3: Configure SGIs as standard
+ interrupts
+In-reply-to: <20200519161755.209565-7-maz@kernel.org>
+Date: Thu, 21 May 2020 15:04:54 +0100
+Message-ID: <jhjimgpxu2h.mognet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_070354_362347_96E0658C 
-X-CRM114-Status: GOOD (  15.04  )
+X-CRM114-CacheID: sfid-20200521_070458_853428_F28FA70B 
+X-CRM114-Status: GOOD (  18.00  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,8 +65,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sumit Garg <sumit.garg@linaro.org>, kernel-team@android.com,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
- linux-kernel@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <linux@arm.linux.org.uk>, Jason Cooper <jason@lakedaemon.net>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
  Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -75,42 +75,85 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On 19/05/20 23:24, Russell King - ARM Linux admin wrote:
-> On Tue, May 19, 2020 at 05:17:48PM +0100, Marc Zyngier wrote:
->> In order to deal with IPIs as normal interrupts, let's add
->> a new way to register them with the architecture code.
->>
->> set_smp_ipi_range() takes a range of interrupts, and allows
->> the arch code to request them as if the were normal interrupts.
->> A standard handler is then called by the core IRQ code to deal
->> with the IPI.
->>
->> This means that we don't need to call irq_enter/irq_exit, and
->> that we don't need to deal with set_irq_regs either. So let's
->> move the dispatcher into its own function, and leave handle_IPI()
->> as a compatibility function.
->>
->> On the sending side, let's make use of ipi_send_mask, which
->> already exists for this purpose.
+On 19/05/20 17:17, Marc Zyngier wrote:
+> Change the way we deal with GICv3 SGIs by turning them into proper
+> IRQs, and calling into the arch code to register the interrupt range
+> instead of a callback.
 >
-> You say nothing about the nesting of irq_enter() and irq_exit()
-> for scheduler_ipi().
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  drivers/irqchip/irq-gic-v3.c | 91 +++++++++++++++++++++---------------
+>  1 file changed, 53 insertions(+), 38 deletions(-)
 >
-> Given that lockdep introduced the requirement that hard IRQs can't
-> be nested, are we sure that calling irq_exit() twice is safe?
+> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
+> index 23d7c87da407..d57289057b75 100644
+> --- a/drivers/irqchip/irq-gic-v3.c
+> +++ b/drivers/irqchip/irq-gic-v3.c
+> @@ -1163,10 +1142,36 @@ static void gic_raise_softirq(const struct cpumask *mask, unsigned int irq)
 >
-> Looking at irqtime_account_irq(), it seems that will cause double-
-> accounting of in-interrupt time, since we will increment
-> irq_start_time by just over twice the the period spent handling
-> the IPI.
->
-> I think the rest of irq_exit() should be safe, but still, this
-> behaviour should be documented at the very least, if not avoided.
->
+>  static void gic_smp_init(void)
+>  {
+> -	set_smp_cross_call(gic_raise_softirq);
+> +	struct irq_fwspec sgi_fwspec = {
+> +		.fwnode		= gic_data.fwnode,
+> +	};
+> +	int base_sgi;
+> +
+>       cpuhp_setup_state_nocalls(CPUHP_AP_IRQ_GIC_STARTING,
+>                                 "irqchip/arm/gicv3:starting",
+>                                 gic_starting_cpu, NULL);
+> +
+> +	if (is_of_node(gic_data.fwnode)) {
+> +		/* DT */
+> +		sgi_fwspec.param_count = 3;
+> +		sgi_fwspec.param[0] = GIC_IRQ_TYPE_SGI;
+> +		sgi_fwspec.param[1] = 0;
+> +		sgi_fwspec.param[2] = IRQ_TYPE_EDGE_RISING;
+> +	} else {
+> +		/* ACPI */
+> +		sgi_fwspec.param_count = 2;
+> +		sgi_fwspec.param[0] = 0;
+> +		sgi_fwspec.param[1] = IRQ_TYPE_EDGE_RISING;
+> +	}
+> +
+> +	/* Register all 8 non-secure SGIs */
+> +	base_sgi = __irq_domain_alloc_irqs(gic_data.domain, -1, 8,
+> +					   NUMA_NO_NODE, &sgi_fwspec,
+> +					   false, NULL);
 
-x86 does the same (though IIUC only when tracing reschedule IPI's), and
-MIPS has the same issue as it also uses generic IRQ IPI's - so although
-it's not ideal, I think we can live with it.
+So IIUC using irq_reserve_ipi() would require us to have a separate IPI
+domain, so instead here we can use a fwspec + the 'regular' GIC domain.
+
+One thing I see is that by not going through irq_reserve_ipi(), we don't set
+data->common->ipi_offset. I think this is all kzalloc'd, and we want an
+offset of 0 so it all works out, but this feels somewhat fragile.
+
+> +	if (WARN_ON(base_sgi <= 0))
+> +		return;
+> +
+> +	set_smp_ipi_range(base_sgi, 8);
+>  }
+>
+>  static int gic_set_affinity(struct irq_data *d, const struct cpumask *mask_val,
+> @@ -1289,6 +1296,13 @@ static int gic_irq_domain_map(struct irq_domain *d, unsigned int irq,
+>
+>       switch (__get_intid_range(hw)) {
+>       case SGI_RANGE:
+> +		irq_set_percpu_devid(irq);
+> +		irq_domain_set_info(d, irq, hw, chip, d->host_data,
+> +				    handle_percpu_devid_fasteoi_ipi,
+> +				    NULL, NULL);
+> +		irq_set_status_flags(irq, IRQ_NOAUTOEN);
+
+FWIW IRQ_NOAUTOEN is already set by irq_set_percpu_devid_flags(), so that's
+not required. I know we do that for (E)PPIs, I think I already have a small
+patch stashed somewhere regarding that.
+
+> +		break;
+> +
+>       case PPI_RANGE:
+>       case EPPI_RANGE:
+>               irq_set_percpu_devid(irq);
 
 _______________________________________________
 linux-arm-kernel mailing list
