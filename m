@@ -2,99 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4B781DC791
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 09:27:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D174E1DC7C5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 21 May 2020 09:34:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xI6ENgRXTc+nAgXg+AhduGtOMXqy8hB7TcYpKDg2+34=; b=mY0NOUtl2qIsMyMaOcCQwQVzr
-	rY+bokv7Tzpw6RackoqV/iYLNmSNSkOvyOHwayXDI1jSO9Nx+vU07IBmbKj3LYjoCuhkuyEVacwqJ
-	lIMm/n2hnffiJngzPxKRE6IugVrL10my8y0ykGeZ+KZRTOdSwQbplT/Bk+lfTrtAeHSC1N89cvCzl
-	h1pSdx/tRuNemjDD51FSXtjH1Un7ou1dS0Iu4A+DIv/+z971kav0muEfp6HjNm2swT6lIHH0fR+k5
-	iiUnCbfzB3hE0xotu/dBF427TQVVvPqt783Q47ctn+s3RmKCZLVbv3kV8Jdw/8AS06p00+TGyQ392
-	KclcolE7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NZ9a5Zv3uHrXdenFUBgObtYZ/H0wfmB/wQAmkjtyIu8=; b=tXl9ha5jXks1tF
+	jF+bu35sIVxuEzRBazgLpB0zQ1rhYU/sHZNGlds9PBxbCigQ2h3wAR9wHEWvBRXEyX0lU1ucU9Ygl
+	lQ3SMumB0JWSczRsqq67cRobeotkZ8dVEFLGXD9e0qPtfci5GOWcwVfSrE6ACTcN8HuLRwn53IWa1
+	TPVBFySEwR0jPPK+Y1v67FGB4KD6sCEbVaJw/F4e7kY+AHbsOh2yOjSvGQQM82Gcdts2oVfSQnAS0
+	NEIPuBV9Ue4H7kpHdP2Ic3abjWCuPE9ZIZO9RioQZolDunPeg+NGqyUCGhTfdEw5azyFFVRDENmoq
+	15ACwKzCO/L/XODWXtIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbfbl-00067W-EC; Thu, 21 May 2020 07:27:13 +0000
-Received: from out1-smtp.messagingengine.com ([66.111.4.25])
+	id 1jbfj0-00013U-Le; Thu, 21 May 2020 07:34:42 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbfbM-0005nP-Ig
- for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 07:26:50 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 332B15C00B6;
- Thu, 21 May 2020 03:26:37 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 21 May 2020 03:26:37 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=dJT+KWYcMv/G5Sm0/52tWPXUHYu
- Atj8/WjQOBOEtXmU=; b=mTzRsI1zPniBfEgNmlcWaXrAoSSyTryrPIfNgGtuxDX
- oVMNcGU1NhQJ7o+kZUKcbnWCapbKMwN0OEux4g/pOF39m/IDPAplAvXgxvlpu6ke
- /lWQ/FfhNqcH+Km4aEw7ZGTvmojAzrOuq+IrRDfHQoHrfE8+MQdgDpUI2/0oH4Go
- KSKQOb7XIz5DFDeNL++Ye0dg+7ddXeulPN1iw59tDI8j0oMo4N3R56F71cs1Rczx
- oIr35kupumOW0KB9All5+cv7axfLGrHk/hJTc6DlZnOHUNhu+KpMPrEsOviN2mYy
- bgXJB2auIdrLC/qCVxdLZwGMM9+uLYwattpvHg6AIVg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=dJT+KW
- YcMv/G5Sm0/52tWPXUHYuAtj8/WjQOBOEtXmU=; b=QTj28Sv2BmsgqNxNsOpqm0
- /gGyMUgtQhyqQ2z0uqAMQvLJH3suNUbRBh/4BQQGv/41vDE5aPEdzJBs5R2EhSgm
- VWEZrwNmdXM8vcnHAZWASCN9Gm/m0TplX63j7YRFvgX4dNrCF+ObD0ADihioBjnw
- HEXilDiCfxREgretnqrLqu2Fhov3Fe2g/tAJfByo+b+K0z0TI5wXDYEopwDy3azO
- C5+BqBCaRr6Q6iox3jj0NjPIaQh8/rZm6YIHGiVuFmQ8vwg33teqxa9qEFQskwdE
- BYZey8gJnUM806vw5TjlBOeKFf9L5R/VKB8qfQIFRdsSclpEuW2Tm+LYmfWBWKRQ
- ==
-X-ME-Sender: <xms:LC3GXiKzAMjDNAtuCfL9TtKMuFHWY4ukVvApaMJLdysg-NW4zQp2Fg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddutddguddujecutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
- enucfjughrpeffhffvuffkfhggtggujgesghdtreertddtudenucfhrhhomhepofgrgihi
- mhgvucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrg
- htthgvrhhnpeduvdduhfekkeehgffftefflefgffdtheffudffgeevteffheeuiedvvdej
- vdfgveenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtne
- curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:LC3GXqLtirCcmTfUpmXlwlzsOqwpLppjEuOHdVR1M_Lq6d4WAOMY6w>
- <xmx:LC3GXisSX4EWgMmh0xqMPZ7XJwAnLozYzZi6pCp88wVwc1FiVdLxGA>
- <xmx:LC3GXnbKVM5FXFDjlsQutPqD8l1QDTcTb8oyDz61m-VM25YfgQzG6A>
- <xmx:LS3GXonG5bj65oRiY0aY72i4a7UdzZh-yBgZdQYDen2JW3ceAPp2LQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 59FC33280059;
- Thu, 21 May 2020 03:26:36 -0400 (EDT)
-Date: Thu, 21 May 2020 09:26:34 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: =?utf-8?B?SsOpcsO0bWU=?= Pouiller <jerome.pouiller@silabs.com>
-Subject: Re: Possible race while masking IRQ on Allwinner A20
-Message-ID: <20200521072634.6ig7jcuy5tmvmojf@gilmour.lan>
-References: <11042983.UNsANRFJuY@pc-42>
+ id 1jbfis-00012d-0y
+ for linux-arm-kernel@lists.infradead.org; Thu, 21 May 2020 07:34:36 +0000
+Received: from mail-qt1-f175.google.com ([209.85.160.175]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MlNYj-1jCjqJ41W9-00llYo for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 21 May 2020 09:34:27 +0200
+Received: by mail-qt1-f175.google.com with SMTP id m44so4753706qtm.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 21 May 2020 00:34:26 -0700 (PDT)
+X-Gm-Message-State: AOAM532EbaGeC7FD3Y9jXxi5FE7uGh4AdFQ7m2Z4SIeCGaGetZpLXhWg
+ Oh442OoLbpPYIyokFeqjtBin8j0hPWiWqZGk6WU=
+X-Google-Smtp-Source: ABdhPJxnsPk1WNTtsvf8fhSOyGmjCrOWIuCaXauuuKsPPLG9MR6ID63YO2HcldF53ySp52GBmUg8rx4fvtvFEUEOuDo=
+X-Received: by 2002:ac8:6a09:: with SMTP id t9mr9261420qtr.7.1590046465853;
+ Thu, 21 May 2020 00:34:25 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <11042983.UNsANRFJuY@pc-42>
+References: <20200518091222.27467-1-sudeep.holla@arm.com>
+ <158999823818.135150.13263761266508812198.b4-ty@kernel.org>
+ <CAK8P3a0bx2eOFSqM7ihNkJBWU_KKSh0vGJZZdvpkH=1nppingw@mail.gmail.com>
+ <20200521070629.GB1131@bogus>
+In-Reply-To: <20200521070629.GB1131@bogus>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 21 May 2020 09:34:10 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1h1MR4Mq2sSV_FDUodrfaKRFtyOuOOGPWAbPYbzjc4YQ@mail.gmail.com>
+Message-ID: <CAK8P3a1h1MR4Mq2sSV_FDUodrfaKRFtyOuOOGPWAbPYbzjc4YQ@mail.gmail.com>
+Subject: Re: [PATCH v4 0/7] firmware: smccc: Add basic SMCCC v1.2 +
+ ARCH_SOC_ID support
+To: Sudeep Holla <sudeep.holla@arm.com>
+X-Provags-ID: V03:K1:w5UK2zutPpFbPwvtCbx8aqt1wrPyeDVTRsYrf4dti7rIZP76rce
+ O+/JDUMhGelytAQ3K4SRbpUD8hOgqJO7huDgOfRw79WehLpjLs7K1qx/6dTIbjhVPwXIRfR
+ MMrQXI1pGNBQH5NMExx9U7U2boUuPSzIr9ypoM51OcWn+Xjhl9Hm2jCCVcv6RXs/ydIGNPF
+ NrekTHXOPdnaO9PNe8nwg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:nlj9NbVo1OY=:EIKTN4EHjuY1AWBIrFPkFo
+ tzRhvd1FC6Hfhkd03UGfnX8qwXl7AiVJwjnOgHqLH7RxNgvPhoAxd5sBkLTQ2G33UGuWkpWFn
+ sVoQue9vh4rL/5krwjwWRN9iz3PDU+6jcTiONA/tojKTvmE6LpWaIK2ryYvveAtl9BiFZA9Ft
+ UEzKMbA8TReZfAGN8ZlWw122GtzeJJkuOmp0SbpQyaicqqWtz8SykZ1nEsAhl/1Am1Fy+h31D
+ Y5+9VH3XLMUx+1byrMsTcKDw3prQ/zFb4gtYjbhsQBs21ZSA+XmUerdv+fEHDEx4NfI7xeXn9
+ /XVLSh+WyqlLOqtCvYKETN+33sbK5bVt+0ULyrt15Pft1i4HgaGMxVdzp2GIdrQcY7vdVucTy
+ +gF6moAoVE11pnSr2nxDUjczOjK3Kf/2Qag+/UwsW+60JNClz3cIdzCUWwBN4eUIXya4INqm5
+ bULajJbqOsSnMsOq0c0r++eqzP2F3L+F9+mcOIBUhwUWqeY3mk0ufCx3ClI+5GYEoOswdrdnD
+ Adyi4R05UkXj+mmmLJ+VuEZjun/TJudNHNGLWEP/0mX7O+a/3CM0UohTf8XmNV2P9nmoFGe2p
+ Y7P4HfRtYO16s4DCY8TV2daPZhlGQ9rZdYdWS5u3DZHFgJMyk1TUI9kLfTAu0UrGy68VZbDFb
+ yiYRBE9O4rRRuXaLJFHh+GER00btHGNpum/33IQceeCnftv3zt9ezDHCVjlQly8rlMaB3hPyo
+ vPz/A9V86JVseLRfiK6/a589PqMfKF2e9ykEBcL14xRn64LoFpvpkKTyYHmOI8znNkHKGjkWv
+ TtAomRkzbq6FEY5as+UgaoxubqLYlc+nmtxe2D7T+SWGnGSNcc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_002648_965533_DBD7AF79 
-X-CRM114-Status: GOOD (  22.04  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200521_003434_357521_AF82BD90 
+X-CRM114-Status: GOOD (  29.98  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.25 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.25 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.133 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,131 +91,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Marc Dorval <marc.dorval@silabs.com>,
- Thomas Gleixner <tglx@linutronix.de>, Chen-Yu Tsai <wens@csie.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7112641474409469265=="
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, May 21, 2020 at 9:07 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> On Wed, May 20, 2020 at 11:54:16PM +0200, Arnd Bergmann wrote:
+> > On Wed, May 20, 2020 at 11:29 PM Will Deacon <will@kernel.org> wrote:
+> > >
+> > > On Mon, 18 May 2020 10:12:15 +0100, Sudeep Holla wrote:
+> > > > This patch series adds support for SMCCCv1.2 ARCH_SOC_ID.
+> > > > This doesn't add other changes added in SMCCC v1.2 yet. They will
+> > > > follow these soon along with its first user SPCI/PSA-FF.
+> > > >
+> > > > This is tested using upstream TF-A + the patch[3] fixing the original
+> > > > implementation there.
+> > > >
+> > > > [...]
+> > >
+> > > Applied to arm64 (for-next/smccc), thanks!
+> > >
+> > > [1/7] firmware: smccc: Add HAVE_ARM_SMCCC_DISCOVERY to identify SMCCC v1.1 and above
+> > >       https://git.kernel.org/arm64/c/e5bfb21d98b6
+> > > [2/7] firmware: smccc: Update link to latest SMCCC specification
+> > >       https://git.kernel.org/arm64/c/15c704ab6244
+> > > [3/7] firmware: smccc: Add the definition for SMCCCv1.2 version/error codes
+> > >       https://git.kernel.org/arm64/c/0441bfe7f00a
+> > > [4/7] firmware: smccc: Drop smccc_version enum and use ARM_SMCCC_VERSION_1_x instead
+> > >       https://git.kernel.org/arm64/c/ad5a57dfe434
+> > > [5/7] firmware: smccc: Refactor SMCCC specific bits into separate file
+> > >       https://git.kernel.org/arm64/c/f2ae97062a48
+> > > [6/7] firmware: smccc: Add function to fetch SMCCC version
+> > >       https://git.kernel.org/arm64/c/a4fb17465182
+> > > [7/7] firmware: smccc: Add ARCH_SOC_ID support
+> > >       https://git.kernel.org/arm64/c/ce6488f0ce09
+> > >
+> > > Arnd -- Sudeep's reply to you about the sysfs groups seemed reasonable to me,
+> > > but please shout if you'd rather I dropped this in order to pursue an
+> > > alternative approach.
+> >
+> > I missed the reply earlier, thanks for pointing me to it again.
+> >
+> > I'm not entirely convinced, but don't revert it for now because of that,
+> > I assume we can find a solution.
+> >
+>
+> I liked your idea of making this generic and hardcode values if required
+> for other drivers. I will take a look at that/
+>
+> > However, please have a look at the build failure report for patch 5
+> > and fix it if you can see what went wrong.
+> >
+>
+> Any pointers for that failure ? I seem to have missed them. I pushed
+> branch couple of times to my tree but got build success both times.
+> Any specific config or compilers ?
 
---===============7112641474409469265==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="2hpla6dmmi5ct33b"
-Content-Disposition: inline
+See below for the reply from the 0day build bot to your email. It seems it
+was not sent to the mailing list, but you were on Cc. Looking at it now,
+the fix should be trivial.
 
+    Arnd
 
---2hpla6dmmi5ct33b
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+8<---
+I love your patch! Perhaps something to improve:
 
-Hi!
+[auto build test WARNING on soc/for-next]
+[also build test WARNING on arm64/for-next/core linus/master v5.7-rc6
+next-20200519]
+[if your patch is applied to the wrong git tree, please drop us a note to help
+improve the system. BTW, we also suggest to use '--base' option to specify the
+base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
 
-Adding Thomas and Marc in Cc.
+url:    https://github.com/0day-ci/linux/commits/Sudeep-Holla/firmware-smccc-Add-basic-SMCCC-v1-2-ARCH_SOC_ID-support/20200518-171401
+base:   https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git for-next
+config: arm64-randconfig-r026-20200519 (attached as .config)
+compiler: clang version 11.0.0 (https://github.com/llvm/llvm-project
+135b877874fae96b4372c8a3fbfaa8ff44ff86e3)
+reproduce:
+        wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross
+-O ~/bin/make.cross
+        chmod +x ~/bin/make.cross
+        # install arm64 cross compiling tool for clang build
+        # apt-get install binutils-aarch64-linux-gnu
+        # save the attached .config to linux build tree
+        COMPILER_INSTALL_PATH=$HOME/0day COMPILER=clang make.cross ARCH=arm64
 
-On Tue, May 19, 2020 at 10:59:26AM +0200, J=E9r=F4me Pouiller wrote:
-> I have some trouble with integration of the wfx driver[1] on Allwinner
-> A20 platform.
->=20
-> The chip WF200 is connected to the SDIO bus. At the beginning, I tried=20
-> to use the IRQ provided by the SDIO bus. However, I have noticed I=20
-> received some IRQs twice. Since the IRQ line is multiplexed with the=20
-> data line, it is not very clear if it is a bug, or if the SDIO device=20
-> has to support that.
->=20
-> The chip WF200 allows to use a dedicated line for the IRQ (aka
-> "Out-Of-Band" IRQ). So I have enabled this feature with a edge triggered=
-=20
-> IRQ. However, I missed some IRQs. Indeed, it seems that Allwinner use a=
-=20
-> 32KHz clock to sample the IRQs. It is not fast enough for us. I think it=
-=20
-> explains why we miss some IRQs (using the attribute "input-debounce"[2],=
-=20
-> I tried to enable the 24Mhz clock, but without success).
+If you fix the issue, kindly add following tag as appropriate
+Reported-by: kbuild test robot <lkp@intel.com>
 
-Without success as in you couldn't make it use the 24MHz clock, or using it
-didn't change anything?
+All warnings (new ones prefixed by >>, old ones prefixed by <<):
 
-But yeah, missing an edge interrupt is bound to happen at some point, and a
-level interrupt is going to be more reliable (especially if you can't recov=
-er
-=66rom a missed interrupt).
+>> drivers/firmware/smccc/smccc.c:14:13: warning: no previous prototype for function 'arm_smccc_version_init' [-Wmissing-prototypes]
+void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit)
+^
+drivers/firmware/smccc/smccc.c:14:1: note: declare 'static' if the
+function is not intended to be used outside of this translation unit
+void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit)
+^
+static
+1 warning generated.
 
-> Nevermind, I tried to use a level triggered IRQ (and my request is on=20
-> this part). As you can see in the wfx driver (in  bus_sdio.c and bh.c),=
-=20
-> I use a threaded IRQ for that. Unfortunately, I receive some IRQs twice.=
-=20
-> I traced the problem, I get:
->=20
->  QSGRenderThread-981   [000] d.h.   247.485524: irq_handler_entry: irq=3D=
-80 name=3Dwfx
->  QSGRenderThread-981   [000] d.h.   247.485547: irq_handler_exit: irq=3D8=
-0 ret=3Dhandled
->  QSGRenderThread-981   [000] d.h.   247.485600: irq_handler_entry: irq=3D=
-80 name=3Dwfx
->  QSGRenderThread-981   [000] d.h.   247.485606: irq_handler_exit: irq=3D8=
-0 ret=3Dhandled
->       irq/80-wfx-260   [001] ....   247.485828: io_read32: CONTROL: 0000f=
-046
->       irq/80-wfx-260   [001] ....   247.486072: io_read32: CONTROL: 0000f=
-046
->     kworker/1:1H-116   [001] ....   247.486214: io_read: QUEUE: 8b 00 84 =
-18 00 00 00 00 01 00 15 82 2b 48 01 1e 88 42 30 00 08 6b d7 c3 53 e0 28 80 =
-88 67 32 af ... (192 bytes)
->     kworker/1:1H-116   [001] ....   247.493097: io_read: QUEUE: 00 00 00 =
-00 00 00 00 00 06 06 00 6a 3f 95 00 60 00 00 00 00 08 62 00 00 01 00 5e 00 =
-00 07 28 80 ... (192 bytes)
->     [...]
->=20
-> On this trace, we can see:
->   - the hard IRQ handler
->   - the IRQ acknowledge from the thread irq/80-wfx-260
->   - the access to the data from kworker/1:1H-116
->=20
-> As far as I understand, the first call to the IRQ handler (at=20
-> 247.485524) should mask the IRQ 80. So, the second IRQ (at 247.485600)=20
-> should not happen and the thread irq/80 should be triggered only once.
->=20
-> Do you have any idea of what is going wrong with this IRQ?
+vim +/arm_smccc_version_init +14 drivers/firmware/smccc/smccc.c
 
-That's pretty weird indeed. My first guess was that you weren't using
-IRQF_ONESHOT, but it looks like you are. My next lead would be to see if the
-mask / unmask hooks in the pinctrl driver are properly called (and actually=
- do
-what they are supposed to do). I'm not sure we have any in-tree user of a
-threaded IRQ attached to the pinctrl driver, so it might have been broken f=
-or
-quite some time.
-
-Maxime
-
---2hpla6dmmi5ct33b
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXsYtKgAKCRDj7w1vZxhR
-xdqIAQDPodiDt+Ei5GIW188vQPVfyBl/ky3W8mvnctKqTv7NqwD9H/bdVlCpF9Ff
-LBmSdDEtlt/IgiiDUGKKgdG5b7bL9AM=
-=MIk2
------END PGP SIGNATURE-----
-
---2hpla6dmmi5ct33b--
-
-
---===============7112641474409469265==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+    13
+  > 14 void __init arm_smccc_version_init(u32 version, enum
+arm_smccc_conduit conduit)
+    15 {
+    16 smccc_version = version;
+    17 smccc_conduit = conduit;
+    18 }
+    19
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7112641474409469265==--
-
