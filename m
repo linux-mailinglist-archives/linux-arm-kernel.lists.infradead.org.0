@@ -2,60 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19D641DE76E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:58:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C3131DE77C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:59:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ix1dHrReNpJBKGPkdHvbm43QTeG4PThJHVLhy8jOyvI=; b=RplZKpu7tffhG8anExu6uBkFu
-	vdu8WWK/fnOpU9s8sQiZVFM9qV1S3lAg7DOsgplx6z7q7+hIAhYyx2GlX0LAtefV8PVRpjzJ1iuAQ
-	4pulQClmHkiF5VHMOC93h0Nrcv6yxOb1gbOJitj27kJm+bzEU3uV3Ds9RMn9ozWRf/D2uR/GL0TJ3
-	9t8/FFmdTVnooxDfF0J2MYD1mbrsGg0W2Uydl501NLRiYATTcMyNREArfb8VontH3JLvGtrCkYUur
-	7DEbTJ75YOZtPOrYyiSjMvJaLXye15qEdes1/E2RJ88vwZ2Nav0Jp1VbmVtseKK80W3bUNgKd7kMJ
-	eaaRQzPwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1AWzYACY2ucEF5x4LOaJwGmxf12mXddHIQo4qpXhsm0=; b=pi5sMhwupbwpth
+	thEYn2lMzemxb9eKIqcsEYixHua1NOy7jc45B4ylkua66wozken4vOoip5175ADOvrFN5tK24ev9a
+	+xj2yDQOf6ht2O1XkFgDeTI75Gs146rwp6yyOAmakLOm9CteNljZ9lX0wvYIfuMzuRIA2RIsr/SGf
+	KMJL8QWwapmpCxoil9cS+FTbZALvkyMbApjyf+7Rfh8nk31t5G1aDR/13jsYGb5TGujm8AK0+YmWz
+	5FIl4/2IeSM5s+J/+6hmnBx8ly+GYReU8iWag0CAMP+FsBKjw0Jx4YnC0g+CeAGMG5ck1ryDC/7VY
+	tFRC8VPH28orKp4If3nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc7G1-0001CD-Oq; Fri, 22 May 2020 12:58:37 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc7Fs-0001B2-LL; Fri, 22 May 2020 12:58:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 07F76D6E;
- Fri, 22 May 2020 05:58:26 -0700 (PDT)
-Received: from [10.37.12.7] (unknown [10.37.12.7])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1D8533F68F;
- Fri, 22 May 2020 05:58:13 -0700 (PDT)
-Subject: Re: [PATCH v7 00/15] Add support for devices in the Energy Model
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org, 
- linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- dri-devel@lists.freedesktop.org, linux-omap@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
- linux-imx@nxp.com
-References: <20200511111912.3001-1-lukasz.luba@arm.com>
- <abff69b6-b033-18e2-f380-ceccb42c6b01@linaro.org>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <3f6652a5-ad9b-15cb-08a8-160becd3f912@arm.com>
-Date: Fri, 22 May 2020 13:58:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jc7H9-0001YN-LY; Fri, 22 May 2020 12:59:47 +0000
+Received: from mail2-relais-roc.national.inria.fr ([192.134.164.83])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jc7Gt-0001WL-Sj; Fri, 22 May 2020 12:59:36 +0000
+X-IronPort-AV: E=Sophos;i="5.73,421,1583190000"; d="scan'208";a="450910885"
+Received: from abo-173-121-68.mrs.modulonet.fr (HELO hadrien) ([85.68.121.173])
+ by mail2-relais-roc.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 22 May 2020 14:59:22 +0200
+Date: Fri, 22 May 2020 14:59:22 +0200 (CEST)
+From: Julia Lawall <julia.lawall@inria.fr>
+X-X-Sender: jll@hadrien
+To: kbuild-all@lists.01.org, "Andrew-sh.Cheng" <andrew-sh.cheng@mediatek.com>, 
+ MyungJoo Ham <myungjoo.ham@samsung.com>, 
+ Kyungmin Park <kyungmin.park@samsung.com>, 
+ Chanwoo Choi <cw00.choi@samsung.com>, Rob Herring <robh+dt@kernel.org>, 
+ Mark Rutland <mark.rutland@arm.com>, 
+ Matthias Brugger <matthias.bgg@gmail.com>, 
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, 
+ Viresh Kumar <viresh.kumar@linaro.org>, Nishanth Menon <nm@ti.com>, 
+ Stephen Boyd <sboyd@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>, 
+ Mark Brown <broonie@kernel.org>, devicetree@vger.kernel.org, 
+ "Andrew-sh . Cheng" <andrew-sh.cheng@mediatek.com>, 
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org, 
+ linux-kernel@vger.kernel.org, Saravana Kannan <skannan@codeaurora.org>, 
+ linux-mediatek@lists.infradead.org, Sibi Sankar <sibis@codeaurora.org>, 
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH] PM / devfreq: fix odd_ptr_err.cocci warnings
+In-Reply-To: <20200521160908.GA88022@052716d1a29e>
+Message-ID: <alpine.DEB.2.21.2005221458020.2442@hadrien>
+References: <202005220024.mccUgEgn%lkp@intel.com>
+ <20200521160908.GA88022@052716d1a29e>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <abff69b6-b033-18e2-f380-ceccb42c6b01@linaro.org>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_055828_741150_4CEDD92E 
-X-CRM114-Status: GOOD (  17.21  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200522_055932_200776_68F07398 
+X-CRM114-Status: GOOD (  17.52  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.134.164.83 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [192.134.164.83 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,71 +77,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
- viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
- bsegall@google.com, festevam@gmail.com, mka@chromium.org, robh@kernel.org,
- amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com, khilman@kernel.org,
- steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com, mgorman@suse.de,
- rui.zhang@intel.com, alyssa.rosenzweig@collabora.com, orjan.eide@arm.com,
- daniel@ffwll.ch, b.zolnierkie@samsung.com, s.hauer@pengutronix.de,
- rostedt@goodmis.org, matthias.bgg@gmail.com, Dietmar.Eggemann@arm.com,
- airlied@linux.ie, tomeu.vizoso@collabora.com, qperret@google.com,
- sboyd@kernel.org, rdunlap@infradead.org, rjw@rjwysocki.net, agross@kernel.org,
- kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
- shawnguo@kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Daniel,
+Hello,
 
-On 5/22/20 11:43 AM, Daniel Lezcano wrote:
-> 
-> Hi Lukasz,
-> 
-> On 11/05/2020 13:18, Lukasz Luba wrote:
->> Hi all,
->>
->> This patch set introduces support for devices in the Energy Model (EM)
->> framework. It will unify the power model for thermal subsystem. It will
->> make simpler to add support for new devices willing to use more
->> advanced features (like Intelligent Power Allocation). Now it should
->> require less knowledge and effort for driver developer to add e.g.
->> GPU driver with simple energy model. A more sophisticated energy model
->> in the thermal framework is also possible, driver needs to provide
->> a dedicated callback function. More information can be found in the
->> updated documentation file.
->>
->> First 7 patches are refactoring Energy Model framework to add support
->> of other devices that CPUs. They change:
->> - naming convention from 'capacity' to 'performance' state,
->> - API arguments adding device pointer and not rely only on cpumask,
->> - change naming when 'cpu' was used, now it's a 'device'
->> - internal structure to maintain registered devices
->> - update users to the new API
->> Patch 8 updates OPP framework helper function to be more generic, not
->> CPU specific.
->> Patches 9-14 change devfreq cooling, dropping part of old power model and
->> adding registration with Energy Model via exported GPL function.
->> The last path is a simple change for Panfrost GPU driver.
->>
->> The patch set is based on linux-next tag next-20200508.
-> 
-> Do you think it is possible to respin against linux-pm next ?
+This provides a patch, but it doesn't look like the right one.  It looks
+like the if test should be testing opp_table,
 
-Yes, I will do it and send the v8.
+julia
 
-> 
-> I wanted to try the series but I'm getting non trivial conflicts with
-> the devfreq_cooling changes
-> 
-> 
+On Fri, 22 May 2020, kbuild test robot wrote:
 
-Let me take care of this.
-
-Regards,
-Lukasz
+> From: kbuild test robot <lkp@intel.com>
+>
+> drivers/devfreq/governor_passive.c:336:7-13: inconsistent IS_ERR and PTR_ERR on line 337.
+>
+>  PTR_ERR should access the value just tested by IS_ERR
+>
+> Semantic patch information:
+>  There can be false positives in the patch case, where it is the call to
+>  IS_ERR that is wrong.
+>
+> Generated by: scripts/coccinelle/tests/odd_ptr_err.cocci
+>
+> CC: Saravana Kannan <skannan@codeaurora.org>
+> Signed-off-by: kbuild test robot <lkp@intel.com>
+> ---
+>
+> url:    https://github.com/0day-ci/linux/commits/Andrew-sh-Cheng/Add-cpufreq-and-cci-devfreq-for-mt8183-and-SVS-support/20200520-222709
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/rafael/linux-pm.git linux-next
+> :::::: branch date: 26 hours ago
+> :::::: commit date: 26 hours ago
+>
+> Please take the patch only if it's a positive warning. Thanks!
+>
+>  governor_passive.c |    2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> --- a/drivers/devfreq/governor_passive.c
+> +++ b/drivers/devfreq/governor_passive.c
+> @@ -334,7 +334,7 @@ static int cpufreq_passive_register(stru
+>
+>  			opp_table = dev_pm_opp_get_opp_table(cpu_dev);
+>  			if (IS_ERR(devfreq->opp_table)) {
+> -				ret = PTR_ERR(opp_table);
+> +				ret = PTR_ERR(devfreq->opp_table);
+>  				goto out;
+>  			}
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
