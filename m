@@ -2,61 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA9D31DE187
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 10:07:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA0581DE18D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 10:08:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=eO4JsqtITqQqzBInUpTHXSIzAoUMHG3RpIbIVnDLqzM=; b=LPgfEMZXsk0Q52iLLQGs2VK3Y
-	U369ZJoB3aSdjxQ0L9UvGkPm6NScgm58WNoZujKJ3IzWp6ncJ35FFDKaWqbtv6OWvEKrEcK+4Thoq
-	JlXzSoRAnAMABEBfxsi4yC3H91Hg0rDfRstHGnJ3VqWVHf1/0dY9dA7a+ae4J1IDQsDq5ypMbloc+
-	9xzSbiChMmUW0rfsoUdj1Vy22nbA80XadXVgZxBWGm3UPFvqUufXd5hKClLGUaL3aeK+3GW1XhhY9
-	zDmGRk9JY6hlb3I7ulZhVpEHDlWmb8eVyJ90WmrSS6HfiQXeK/NDGCz4lJyoL0r4bfEz9A9IILHUr
-	JU8hwPYIg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ctAdvJyTIWChwChunEz0SIFsPvJDehH/6QuGGK96S4M=; b=NFqi8rGt9heLVk
+	0PMh71O68HqwVtAUUH3m1Vrpq0M/Ao8i7itjKvRBYYw7sQdCuItK4J7Tr/jmrPniqRkw0s2B8qSxX
+	gGvuWsj9dQ1mLTtZXZ2wb/vm2tROmk40qI6n+bhgJAjgQpMP3rLfwi5gl5I9RfC1kVy8RiPoqRfeW
+	P4D6ZOJhkWfDbiOaQW08/tasw4BA9jRUQeCdSFGmp0dE7SpfnRlLhyTcHqystzcEsaA7APHIBlfwQ
+	IVvRMdJSCdxSuYYFOMGIE9ylt/F9iciO1eh5g4tzDrdBihOOQE164fAT7dJ6jnCu6pb0oWrkC8MGQ
+	BNY9w4G3LdFXLg2luiMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc2ia-0008TB-Iw; Fri, 22 May 2020 08:07:48 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jc2jX-0000J9-5c; Fri, 22 May 2020 08:08:47 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc2iR-0008RB-2R
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 08:07:41 +0000
-Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 03A2323164A41ED81F03;
- Fri, 22 May 2020 16:07:20 +0800 (CST)
-Received: from [127.0.0.1] (10.166.213.93) by DGGEMS408-HUB.china.huawei.com
- (10.3.19.208) with Microsoft SMTP Server id 14.3.487.0; Fri, 22 May 2020
- 16:07:15 +0800
-Subject: Re: arm64/acpi: NULL dereference reports from UBSAN at boot
-To: Will Deacon <will@kernel.org>, <lorenzo.pieralisi@arm.com>
-References: <20200521100952.GA5360@willie-the-truck>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <ad521a36-c080-f761-e91b-dc38b8af08ee@huawei.com>
-Date: Fri, 22 May 2020 16:07:14 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jc2jN-0000I8-45
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 08:08:38 +0000
+Received: from mail-qk1-f169.google.com ([209.85.222.169]) by
+ mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1Mrggc-1jErZz3Fhc-00nhN3 for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 22 May 2020 10:08:31 +0200
+Received: by mail-qk1-f169.google.com with SMTP id y22so9950549qki.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 May 2020 01:08:31 -0700 (PDT)
+X-Gm-Message-State: AOAM533BhTXqtVppsrhwjy0FZU7ySIYZpKDcVw+os4qIAJn8rrnvpEhZ
+ h/e12hUMSvyM59QncHMkarZl6TnX2yJhPY6t5lo=
+X-Google-Smtp-Source: ABdhPJxvCN5ckqOsRHgJtAQbB9IOx9DfaplnfBWTHN4WldKZGpHGw1jQyX3CgSCcu6TNJ4bB5ueanJiINGKzx+D9eUA=
+X-Received: by 2002:a37:434b:: with SMTP id q72mr14547426qka.352.1590134910369; 
+ Fri, 22 May 2020 01:08:30 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200521100952.GA5360@willie-the-truck>
-Content-Language: en-GB
-X-Originating-IP: [10.166.213.93]
-X-CFilter-Loop: Reflected
+References: <20200522160313.09cb2b7e@canb.auug.org.au>
+In-Reply-To: <20200522160313.09cb2b7e@canb.auug.org.au>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 22 May 2020 10:08:14 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1H43KuLbQ0mPNjSCoWbqT2P_kx93zsdYtQXv2nw2WdvQ@mail.gmail.com>
+Message-ID: <CAK8P3a1H43KuLbQ0mPNjSCoWbqT2P_kx93zsdYtQXv2nw2WdvQ@mail.gmail.com>
+Subject: Re: linux-next: manual merge of the devicetree tree with the arm-soc
+ tree
+To: Stephen Rothwell <sfr@canb.auug.org.au>
+X-Provags-ID: V03:K1:rfjxHqMOK0bf1no3nhcdFfm4pqY+D/VGXc4SZggFyLmgeKYfwVg
+ mdF55mTH90lKmw0Fis/QOyyD9moHhN7zJOWuPeVB8Tu4B/ukTPIyRLzf58RTju07aSx0CQC
+ UDrZcQJAscjaJ8+lwUh5jNRHJzalYNPIwweW+WloAkB2tclC7cEoJZn166utcR7FXemhSit
+ nXDw4Gt36+sOlK54mcahg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:Q3hLBZ/fr/Y=:4LSz/vRqwGvLBd10DM7TUM
+ sWiVKv/L7mLn1CgYzyB6zYg4z73MV17A1H/5nXqAPrlnsw5rFYa7HzW9v2J03JwY3vRGkpiDn
+ 9WXdk/e3VN+jddXMlDLCdCvEDE0mGaFyhwtbeqMjmdt1/sCOSn4gUZ3DL2jR7b3Em2Rxa1yYC
+ NNrk8CEaYu1ymXKofDzKFzdhIL9Z45aULs8DoIhhsbMS2aZ2CWG3wwY+JcQ95wO+y9bCmEK61
+ ARCwOxIOoXzNZdkJQEf6d7F0east7oA3o353FMaGzqKv+uiKjUyXiilIzyIG7gtktQgP1Xvku
+ A3Y7ZjScXl/oe0pk4Xlcjz3zy11NFiqVtG3Wb7hCh+ry+2L2nQHT5JI0qUg7ePAw3S3BhHafr
+ Hd3HqCvLa1lMkipY1M8H6v+MpoVkcznzNCz8dw17hQfIolk+CDqAvM4u/bmt6vxo25764/4py
+ 60k0/gD5K58TqeqV238j1nKOHbj0SnAHgqR7/VoSymyIquMmCIToHe1E/O0u+6MND6ECTV6u7
+ ZMBYm4Y6c7VxAX4okyvEJTywHX4Ixwz7yFt3iPhHQ926Hmw9ZkjIiDEA9aU6u6d/RcY9vT+ou
+ 0n8xT0ADtP6XwfhGtZNp0k4McMm32GoVtkmDHlWvzg7SHFc2xvWXqqI8sRjmIaiPXeStNTF1D
+ +ZYQF0m78QmIkl/DZaMzPegiVyEqTARlS2hU6L7j6slxxlujcvskHCxzSkIcc3ZRcq5Rv9nTH
+ G2bk0s7UHaffAixNwGLcDrnt/V9CpjtstmyTGG7lyCcomq92qi5YPhj2/WQYNmeXudb7LeJIJ
+ 21AmcRpcxFFwQjweuWgqjK44qAmIp5jH6bL/fqkrVRhO7lSB7k=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_010739_276555_E7D591C6 
-X-CRM114-Status: GOOD (  13.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200522_010837_459067_C7E413A4 
+X-CRM114-Status: GOOD (  11.53  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.32 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.13 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,104 +88,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Rob Herring <robherring2@gmail.com>, Olof Johansson <olof@lixom.net>,
+ ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
+On Fri, May 22, 2020 at 8:03 AM Stephen Rothwell <sfr@canb.auug.org.au> wrote:
+> I fixed it up (see below) and can carry the fix as necessary. This
+> is now fixed as far as linux-next is concerned, but any non trivial
+> conflicts should be mentioned to your upstream maintainer when your tree
+> is submitted for merging.  You may also want to consider cooperating
+> with the maintainer of the conflicting tree to minimise any particularly
+> complex conflicts.
+>
+> diff --cc Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+> index 10a7f0752281,113f93b9ae55..000000000000
+> --- a/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+> +++ b/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+> @@@ -51,9 -51,8 +51,9 @@@ properties
+>         - description: LD20 SoC boards
+>           items:
+>             - enum:
+> -             - socionext,uniphier-ld20-akebi96
+> -             - socionext,uniphier-ld20-global
+> -             - socionext,uniphier-ld20-ref
+> ++              - socionext,uniphier-ld20-akebi96
+> +               - socionext,uniphier-ld20-global
+> +               - socionext,uniphier-ld20-ref
+>             - const: socionext,uniphier-ld20
+>         - description: PXs3 SoC boards
+>           items:
 
-On 2020/5/21 18:09, Will Deacon wrote:
-> Hi folks,
-> 
-> I just tried booting the arm64 for-kernelci branch under QEMU (version
-> 4.2.50 (v4.2.0-779-g4354edb6dcc7)) with UBSAN enabled, and I see a couple
-> of NULL pointer dereferences reported at boot. I think they're both GIC
-> related (log below). I don't see a panic with UBSAN disabled, so something's
-> fishy here.
-> 
-> Please can you take a look when you get a chance? I haven't had time to see
-> if this is a regression or not, but I don't think it's particularly serious
-> as I have all sorts of horrible stuff enabled in my .config, since I'm
-> trying to chase down another bug:
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/plain/arch/arm64/configs/fuzzing.config?h=fuzzing/arm64-kernelci-20200519&id=c149cf6a51aa4f72d53fc681c6661094e93ef660
-> 
-> (on top of defconfig)
-> 
-> CONFIG_FAIL_PAGE_ALLOC may be to blame.
+Ok, thanks! I think can let Linus handle this in the merge window.
 
-I enabled UBSAN and CONFIG_FAIL_PAGE_ALLOC on top of defconfig,
-testing against the for-kernelci branch on the D06 board, I
-can see some UBSAN warnings from megaraid_sas driver [0], but not
-from any other subsystem including ACPI, I will try all your
-configs above to see if I can get more warnings.
-
-Thanks
-Hanjun
-
-[0]:
-[   18.244272] 
-================================================================================
-[   18.252673] UBSAN: array-index-out-of-bounds in 
-drivers/scsi/megaraid/megaraid_sas_fp.c:104:32
-[   18.261244] index 1 is out of range for type 'MR_LD_SPAN_MAP [1]'
-[   18.267313] CPU: 0 PID: 656 Comm: kworker/0:1 Not tainted 
-5.7.0-rc6-1-14703-gf4582661223d-dirty #20
-[   18.276314] Hardware name: Huawei TaiShan 2280 V2/BC82AMDC, BIOS 
-2280-V2 CS V3.B210.01 03/12/2020
-[   18.285151] Workqueue: events work_for_cpu_fn
-[   18.289488] Call trace:
-[   18.291925]  dump_backtrace+0x0/0x248
-[   18.295572]  show_stack+0x18/0x28
-[   18.298873]  dump_stack+0xc0/0x10c
-[   18.302261]  ubsan_epilogue+0x10/0x58
-[   18.305905]  __ubsan_handle_out_of_bounds+0x8c/0xa8
-[   18.310763]  mr_update_load_balance_params+0x118/0x120
-[   18.315877]  MR_ValidateMapInfo+0x300/0xb00
-[   18.320040]  megasas_get_map_info+0x134/0x1f8
-[   18.324377]  megasas_init_adapter_fusion+0xba8/0x10a0
-[   18.329403]  megasas_probe_one+0x6e0/0x1b70
-[   18.333569]  local_pci_probe+0x40/0xb0
-[   18.337299]  work_for_cpu_fn+0x1c/0x30
-[   18.341031]  process_one_work+0x1f8/0x378
-[   18.345022]  worker_thread+0x21c/0x4c0
-[   18.348753]  kthread+0x150/0x158
-[   18.351967]  ret_from_fork+0x10/0x18
-[   18.355529] 
-================================================================================
-
-[   18.592274] 
-================================================================================
-[   18.600672] UBSAN: array-index-out-of-bounds in 
-drivers/scsi/megaraid/megaraid_sas_fp.c:141:9
-[   18.609155] index 1 is out of range for type 'MR_LD_SPAN_MAP [1]'
-[   18.615221] CPU: 0 PID: 656 Comm: kworker/0:1 Not tainted 
-5.7.0-rc6-1-14703-gf4582661223d-dirty #20
-[   18.624222] Hardware name: Huawei TaiShan 2280 V2/BC82AMDC, BIOS 
-2280-V2 CS V3.B210.01 03/12/2020
-[   18.633050] Workqueue: events work_for_cpu_fn
-[   18.637387] Call trace:
-[   18.639822]  dump_backtrace+0x0/0x248
-[   18.643467]  show_stack+0x18/0x28
-[   18.646767]  dump_stack+0xc0/0x10c
-[   18.650152]  ubsan_epilogue+0x10/0x58
-[   18.653796]  __ubsan_handle_out_of_bounds+0x8c/0xa8
-[   18.658652]  MR_GetLDTgtId+0x58/0x60
-[   18.662211]  megasas_sync_map_info+0xd0/0x1c0
-[   18.666547]  megasas_init_adapter_fusion+0xd60/0x10a0
-[   18.671574]  megasas_probe_one+0x6e0/0x1b70
-[   18.675736]  local_pci_probe+0x40/0xb0
-[   18.679466]  work_for_cpu_fn+0x1c/0x30
-[   18.683197]  process_one_work+0x1f8/0x378
-[   18.687188]  worker_thread+0x21c/0x4c0
-[   18.690920]  kthread+0x150/0x158
-[   18.694123]  ret_from_fork+0x10/0x18
-[   18.697683] 
-================================================================================
-
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
