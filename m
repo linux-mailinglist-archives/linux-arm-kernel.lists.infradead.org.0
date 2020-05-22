@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B30D21DE463
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:27:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6A3F1DE469
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:28:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MOhyRr2wtpxGaOvr9RC2EmWlm+WNDrvLC6xbFReLQrU=; b=VZcbVxAc2iUM5Q
-	HrEYG27nvNx5FzpgatUgqPsaaVqgCjUjktcznZ6fVO94RtdC0ZLl+2tyOrIKBYncVqdy5m6+i/4RT
-	TWgT/8owke2i/xiDUJpcNnCtntsWSDkT2y4FmSYhkauRYf+shhSZEy5I8JJp//eom4D2cFDS6WXbn
-	Z12odrtFFfQaBmqRvkhFU7LAhgUbUIS3egpsiRzQ8mUF37SLRnLMMQ/lQhosXWZdlQs5//T3G3CqI
-	bd8sE88D5r6x2WUC/DvjmqC3RI7bVL7KDpshYs1g5geSXOrYZMktmCWAHkde6xSbwE49GYZOTByyw
-	UQ6d1bgnMprZKC577NAg==;
+	List-Owner; bh=M5s3vnQRgd1xl52RYtOmUhk/6FtheLoO088+xHW0FoQ=; b=lhctG+EqnuFFJE
+	SBdInwHGBH+s9A3fX2w+zpG0VnMvnZtIeMqGsOqirMYDsCLJrtSaRKxJurIxmyih6Y7UtpR5BQzLd
+	CuG6UZeozdaE1CnC9dV6XggDqK+bb1PQKPcq2eG8R8Zsq3McnpbBrJOqh7+rs9iK3cWSKa9BZt+bX
+	/T/QluYDHNPVS2JVbMz9156+LFhKHeJyoohOecrA581P8zcOvpcri2Qp6OB7eTirqr1BUWzIFI6IG
+	O0Gb7MFvWpoIZsQgoKMpbrCEN13vi8RZyIq9I7Mu0+ycvAN/pfg49UMjGiFqP4GW7+8JAwYdIkdNi
+	2pqNCAGtcCSXwMsfP6OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc4tp-00040j-C0; Fri, 22 May 2020 10:27:33 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jc4uq-0005Ln-Ux; Fri, 22 May 2020 10:28:36 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc4hd-0003HK-73; Fri, 22 May 2020 10:15:01 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04MAEpxP038217;
- Fri, 22 May 2020 05:14:51 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1590142491;
- bh=kv17vzIbbuAt+RZqE4vM8KTFUmvobKYZHpLC7UN2u9I=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=yaNghssBKoyiPS+3VDUUXhe9z4XAYpcKuofnDrJER8fQy2bnr1VXg+jvpCafgml3J
- F9Hqo3NEJpVVqDsnhxF8B6KayoSP5qpaZBiDtbw1xmmwgwlzYLNttOcAhT7I7taD0C
- 8sbVIHW6UERBIk+XusWKlUaccn6sZiSah2A3uzoo=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04MAEp20034534
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 22 May 2020 05:14:51 -0500
-Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 22
- May 2020 05:14:51 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 22 May 2020 05:14:51 -0500
-Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04MAD1aL041179;
- Fri, 22 May 2020 05:14:46 -0500
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
- <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
- Raghavendra <vigneshr@ti.com>, Mark Brown <broonie@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>, Ludovic Desroches
- <ludovic.desroches@microchip.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- <linux-mtd@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>
-Subject: [PATCH v7 20/20] mtd: spi-nor: micron-st: allow using MT35XU512ABA in
- Octal DTR mode
-Date: Fri, 22 May 2020 15:43:01 +0530
-Message-ID: <20200522101301.26909-21-p.yadav@ti.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200522101301.26909-1-p.yadav@ti.com>
-References: <20200522101301.26909-1-p.yadav@ti.com>
+ id 1jc4ki-0007ui-I3
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 10:18:10 +0000
+Received: by mail-wr1-x443.google.com with SMTP id s8so9601356wrt.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 May 2020 03:18:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=rDNDKX0HkLYt94EgaC8KrXxbFTf0b5UZDhkhcEUmDsA=;
+ b=WVJ//CKH4dmTBE0aqIBZXt0aAGFbLb2/HSsz+TTszSD504939LXSss4CoipdpB/CaP
+ UYEC49gciPAa156HBkX3vD6agGFcawT7wJGuqinqgdldtVpJcnYlHy8kYO+4r5wUGW4N
+ dybibnHmXgJPE6Yx//FGirSeVMwet4YQ4pqdD8PfOkmlAM9lkmxvRxK8W5pq10wP/QdV
+ nPZKGtAyqCQjPtUOqPpWTpK7PWQ7g8PDTvbQ9eAr9/mGFFzSg02tY1TfCtIKZQykmP7N
+ B8ikx09FYbHX1EDesimTPNwCJGF8URn5yiI0zH0eo0dpPE+4HsehFV61iZGVMleox6n1
+ gTbw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=rDNDKX0HkLYt94EgaC8KrXxbFTf0b5UZDhkhcEUmDsA=;
+ b=gNbi7jENxI4clI2r5ELhSV9Q2t66YnrSDdbXbu14O/MWFz/DSZRwpCBToSy8Hwnky1
+ BBxSd9iNGEpgaHAwSurVaesYP/8TMJQuGlcaRPntARbjcfP+oqdR/RRsDr9zT0ts/jZE
+ JNWQJv5TlrltGYeBwxYZpUI6sRFburuyfYH2F7L1fbQCMD+5TveKwIa/8ldXeGcOj0Aj
+ OfSAYRIO06PYkZ9AfVPq+lT9NagQce8696o9PbpNwJvFop26PY1QnNmUlZBKnekmRdPN
+ o/LRtsIulR00sOa/I9rI0yenHtp4KaRF8jwVjAL9ek7p7WNDuCG+xo9UGO/rksVUByHn
+ y19g==
+X-Gm-Message-State: AOAM531z63+yX0yt2w////84cCy3Cz+vQxwh/8ra6NWC9M2P4y9fFaoF
+ WC14ito3BfOlvUzoyhAforYSzA==
+X-Google-Smtp-Source: ABdhPJzB2HI5kI/EmFJDdYOUgVosMpdPIKY9IaspD/NoZu4lv6KFYPamr6Pcq0PBpjpQXhtZ+2g/kQ==
+X-Received: by 2002:a5d:66c5:: with SMTP id k5mr2740621wrw.17.1590142686217;
+ Fri, 22 May 2020 03:18:06 -0700 (PDT)
+Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id d126sm9765981wmd.32.2020.05.22.03.18.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 22 May 2020 03:18:05 -0700 (PDT)
+Date: Fri, 22 May 2020 12:17:55 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH v7 13/24] iommu/arm-smmu-v3: Enable broadcast TLB
+ maintenance
+Message-ID: <20200522101755.GA3453945@myrica>
+References: <20200519175502.2504091-1-jean-philippe@linaro.org>
+ <20200519175502.2504091-14-jean-philippe@linaro.org>
+ <20200521141730.GJ6608@willie-the-truck>
+ <0c896ad27b43b2de554cf772f9453d0a@kernel.org>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <0c896ad27b43b2de554cf772f9453d0a@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_031457_566117_BD23E9F6 
-X-CRM114-Status: GOOD (  13.62  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200522_031808_657794_FC420275 
+X-CRM114-Status: GOOD (  22.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -87,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,158 +100,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mason Yang <masonccyang@mxic.com.tw>,
- Boris Brezillon <boris.brezillon@collabora.com>, Sekhar Nori <nsekhar@ti.com>,
- Pratyush Yadav <p.yadav@ti.com>
+Cc: devicetree@vger.kernel.org, kevin.tian@intel.com,
+ jacob.jun.pan@linux.intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
+ joro@8bytes.org, Jonathan.Cameron@huawei.com, robin.murphy@arm.com,
+ fenghua.yu@intel.com, hch@infradead.org, linux-mm@kvack.org,
+ iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
+ eric.auger@redhat.com, catalin.marinas@arm.com, felix.kuehling@amd.com,
+ xuzaibo@huawei.com, Will Deacon <will@kernel.org>, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since this flash doesn't have a Profile 1.0 table, the Octal DTR
-capabilities are enabled in the post SFDP fixup, along with the 8D-8D-8D
-fast read settings.
+[+Eric]
 
-Enable Octal DTR mode with 20 dummy cycles to allow running at the
-maximum supported frequency of 200Mhz.
+On Thu, May 21, 2020 at 03:38:35PM +0100, Marc Zyngier wrote:
+> On 2020-05-21 15:17, Will Deacon wrote:
+> > [+Marc]
+> > 
+> > On Tue, May 19, 2020 at 07:54:51PM +0200, Jean-Philippe Brucker wrote:
+> > > The SMMUv3 can handle invalidation targeted at TLB entries with shared
+> > > ASIDs. If the implementation supports broadcast TLB maintenance,
+> > > enable it
+> > > and keep track of it in a feature bit. The SMMU will then be
+> > > affected by
+> > > inner-shareable TLB invalidations from other agents.
+> > > 
+> > > A major side-effect of this change is that stage-2 translation
+> > > contexts
+> > > are now affected by all invalidations by VMID. VMIDs are all shared
+> > > and
+> > > the only ways to prevent over-invalidation, since the stage-2 page
+> > > tables
+> > > are not shared between CPU and SMMU, are to either disable BTM or
+> > > allocate
+> > > different VMIDs. This patch does not address the problem.
+> > 
+> > This sounds like a potential performance issue, particularly as we
+> > expose
+> > stage-2 contexts via VFIO directly.
 
-The flash supports the soft reset sequence. So, add the flag in the
-flash's info.
+Yes it's certainly going to affect SMMU performance, though I haven't
+measured it. QEMU and kvmtool currently use stage-1 translations instead
+of stage-2, so it won't be a problem until they start using nested
+translation (and unless the SMMU only supports stage-2).
 
-Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
----
- drivers/mtd/spi-nor/micron-st.c | 112 +++++++++++++++++++++++++++++++-
- 1 file changed, 111 insertions(+), 1 deletion(-)
+In the coming month I'd like to have a look at coordinating VMID
+allocation between KVM and SMMU, for guest SVA. If the guest wants to
+share page tables with the SMMU, the SMMU has to use the same VMIDs as the
+VM to receive broadcast TLBI.
 
-diff --git a/drivers/mtd/spi-nor/micron-st.c b/drivers/mtd/spi-nor/micron-st.c
-index 3dca5b9af3b6..3414c44a5c96 100644
---- a/drivers/mtd/spi-nor/micron-st.c
-+++ b/drivers/mtd/spi-nor/micron-st.c
-@@ -8,10 +8,120 @@
- 
- #include "core.h"
- 
-+#define SPINOR_OP_MT_DTR_RD	0xfd	/* Fast Read opcode in DTR mode */
-+#define SPINOR_OP_MT_RD_ANY_REG	0x85	/* Read volatile register */
-+#define SPINOR_OP_MT_WR_ANY_REG	0x81	/* Write volatile register */
-+#define SPINOR_REG_MT_CFR0V	0x00	/* For setting octal DTR mode */
-+#define SPINOR_REG_MT_CFR1V	0x01	/* For setting dummy cycles */
-+#define SPINOR_MT_DTR_NO_DQS	0xc7	/* Enable Octal DTR without DQS. */
-+#define SPINOR_MT_EXSPI		0xff	/* Enable Extended SPI (default) */
-+
-+static int spi_nor_micron_octal_dtr_enable(struct spi_nor *nor, bool enable)
-+{
-+	struct spi_mem_op op;
-+	u8 *buf = nor->bouncebuf;
-+	u8 addr_width;
-+	int ret;
-+
-+	if (enable)
-+		addr_width = 3;
-+	else
-+		addr_width = 4;
-+
-+	ret = spi_nor_write_enable(nor);
-+	if (ret)
-+		return ret;
-+
-+	if (enable)
-+		*buf = SPINOR_MT_DTR_NO_DQS;
-+	else
-+		*buf = SPINOR_MT_EXSPI;
-+	op = (struct spi_mem_op)
-+		SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_MT_WR_ANY_REG, 1),
-+			   SPI_MEM_OP_ADDR(addr_width, SPINOR_REG_MT_CFR0V, 1),
-+			   SPI_MEM_OP_NO_DUMMY,
-+			   SPI_MEM_OP_DATA_OUT(1, buf, 1));
-+
-+	if (!enable)
-+		spi_nor_spimem_setup_op(nor, &op, SNOR_PROTO_8_8_8_DTR);
-+
-+	ret = spi_mem_exec_op(nor->spimem, &op);
-+	if (ret) {
-+		dev_err(nor->dev, "Failed to enable octal DTR mode\n");
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int mt35xu512aba_setup(struct spi_nor *nor,
-+			      const struct spi_nor_hwcaps *hwcaps)
-+{
-+	struct spi_mem_op op;
-+	u8 *buf = nor->bouncebuf;
-+	u8 addr_width = 3;
-+	int ret;
-+
-+	if (!nor->spimem) {
-+		dev_err(nor->dev,
-+			"operation not supported for non-spimem drivers\n");
-+		return -ENOTSUPP;
-+	}
-+
-+	/* Set dummy cycles for Fast Read to the default of 20. */
-+	ret = spi_nor_write_enable(nor);
-+	if (ret)
-+		return ret;
-+
-+	*buf = 20;
-+	op = (struct spi_mem_op)
-+		SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_MT_WR_ANY_REG, 1),
-+			   SPI_MEM_OP_ADDR(addr_width, SPINOR_REG_MT_CFR1V, 1),
-+			   SPI_MEM_OP_NO_DUMMY,
-+			   SPI_MEM_OP_DATA_OUT(1, buf, 1));
-+	ret = spi_mem_exec_op(nor->spimem, &op);
-+	if (ret)
-+		return ret;
-+
-+	ret = spi_nor_wait_till_ready(nor);
-+	if (ret)
-+		return ret;
-+
-+
-+	return spi_nor_default_setup(nor, hwcaps);
-+}
-+
-+static void mt35xu512aba_default_init(struct spi_nor *nor)
-+{
-+	nor->params->octal_dtr_enable = spi_nor_micron_octal_dtr_enable;
-+	nor->params->setup = mt35xu512aba_setup;
-+}
-+
-+static void mt35xu512aba_post_sfdp_fixup(struct spi_nor *nor)
-+{
-+	/* Set the Fast Read settings. */
-+	nor->params->hwcaps.mask |= SNOR_HWCAPS_READ_8_8_8_DTR;
-+	spi_nor_set_read_settings(&nor->params->reads[SNOR_CMD_READ_8_8_8_DTR],
-+				  0, 20, SPINOR_OP_MT_DTR_RD,
-+				  SNOR_PROTO_8_8_8_DTR);
-+
-+	nor->params->hwcaps.mask |= SNOR_HWCAPS_PP_8_8_8_DTR;
-+
-+	nor->cmd_ext_type = SPI_NOR_EXT_REPEAT;
-+	nor->params->rdsr_dummy = 8;
-+	nor->params->rdsr_addr_nbytes = 0;
-+}
-+
-+static struct spi_nor_fixups mt35xu512aba_fixups = {
-+	.default_init = mt35xu512aba_default_init,
-+	.post_sfdp = mt35xu512aba_post_sfdp_fixup,
-+};
-+
- static const struct flash_info micron_parts[] = {
- 	{ "mt35xu512aba", INFO(0x2c5b1a, 0, 128 * 1024, 512,
- 			       SECT_4K | USE_FSR | SPI_NOR_OCTAL_READ |
--			       SPI_NOR_4B_OPCODES) },
-+			       SPI_NOR_4B_OPCODES | SPI_NOR_OCTAL_DTR_READ)
-+		.fixups = &mt35xu512aba_fixups},
- 	{ "mt35xu02g", INFO(0x2c5b1c, 0, 128 * 1024, 2048,
- 			    SECT_4K | USE_FSR | SPI_NOR_OCTAL_READ |
- 			    SPI_NOR_4B_OPCODES) },
--- 
-2.26.2
+Similarly to patch 06 ("arm64: mm: Pin down ASIDs for sharing mm with
+devices") the SMMU would request a VMID allocated by KVM, when setting up
+a nesting VFIO container. One major downside is that the VMID is pinned
+and cannot be recycled on rollover while it's being used for DMA.
 
+I wonder if we could use this even when page tables aren't shared between
+CPU and SMMU, to avoid splitting the VMID space.
+
+> > Maybe we could reserve some portion
+> > of
+> > VMID space for the SMMU? Marc, what do you reckon?
+> 
+> Certainly doable when we have 16bits VMIDs. With smaller VMID spaces (like
+> on
+> v8.0), this is a bit more difficult (we do have pretty large v8.0 systems
+> around).
+
+It's only an issue if those systems have an SMMUv3 supporting DVM. With
+any luck that doesn't exist?
+
+> How many VMID bits are we talking about?
+
+That's anyone's guess... One passed-through device per VM would halve the
+VMID space. But the SMMU allocates one VMID for each device assigned to a
+guest, not one per VM (well one per domain, or VFIO container, but I think
+it boils down to one per device with QEMU). So with SR-IOV for example it
+should be pretty easy to reach 256 VMIDs in the SMMU.
+
+Thanks,
+Jean
 
 _______________________________________________
 linux-arm-kernel mailing list
