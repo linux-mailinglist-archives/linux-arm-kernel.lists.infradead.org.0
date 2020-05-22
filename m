@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 125DE1DE439
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:23:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9948D1DE441
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:24:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yn/U3ISScoEH9MGZ7hbpIEqb3Byiuuiuq/b5v9azGjc=; b=Mx/RrNJ48ZSnzB
-	0wytHWbErF9qPIeV6ohlPx0Vyrg0WKxisG0Coj7Af8sBvs1YUYYT/Vlldc6L01xO2/iKEETraKH6t
-	R5YFchOICU9Si3gaqquTDNCGOlKY8qAn8nm0Vb2EISfVQ6UC+eyfAYlzSYc94Z59p9yM9x9mILEyq
-	vPk3Dr6QhSBAyQwf+7plAuOvzSX3Tzd2HcRtQ83qbY69oGq9kP6V0UXQ+QsG4w4Wg9O2aI0i/VY6i
-	n5wYLcb3lEqEvjrxJf2tqKA0YMSxXxEh6bDcOd1xf8krsykr6nTR674kJeedhXr1E26m2AJKpE4iy
-	HAksmVRN4ZOHjq36I5pw==;
+	List-Owner; bh=RlZQbiwFQRfgHYstU2ACckvGrCXjp4KT809BjmNp7Rs=; b=rk6z2lBZXGNKWQ
+	NAfMLICugOFLoBFzPN7khW7QOH45Ussox7KiaFeKE83gUHBfCoD2lAWMZptK705H1oygICxqLsQQ3
+	7I0JSxGGUKfGYZvk7GHCQJAghWT+yTII80YNPX5aeuskgtAFI1BMWUPUlGPBRi636U17XBFfcFrb9
+	Quqjm1ASQ9z3KOoj1PL+2hlb+QCZCRfbwlMhKNQP0m2my3JU0/b5rIGMDNrZawtT925uIJRNsp5+m
+	0p4LQ9fAb5Bs2X/euBF7RhI4NfrmwKQj4IIl33/uLUKc2x1uRna/Wl1AwHWGpglePxp/YzRVtF6dG
+	G//I+1a3QnFEcwETvbdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc4pr-0006RX-AJ; Fri, 22 May 2020 10:23:27 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jc4qQ-0006wE-4n; Fri, 22 May 2020 10:24:02 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc4h7-0002qS-CY; Fri, 22 May 2020 10:14:26 +0000
+ id 1jc4hC-0002ub-DE; Fri, 22 May 2020 10:14:31 +0000
 Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04MAEK0R013908;
- Fri, 22 May 2020 05:14:20 -0500
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04MAEP8G009165;
+ Fri, 22 May 2020 05:14:25 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1590142460;
- bh=vZHWXLCtyhdJG9oIb95lQ7NP/FmYNPGx8pS+OBRUJx0=;
+ s=ti-com-17Q1; t=1590142465;
+ bh=JF+D0P9IlTXPAfVYCw880QogymYkRdaUdIkcXPWXVR0=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=ImacqQJIcU53gTKLLMzF4oq6EYuqls8Rr1AKW0IHJomq5GbTJhb01CHobGwz8jYYY
- Pho5HXG1Ouvu7aXq9BFNseI5+TgeTpBCOl+dCeF1XuRn9uOwkrKZEdboNMo1nPss7z
- VmkaZHqRiHhMKTXjQCq8xBq3VFQTUVIUUV1jEKg0=
-Received: from DLEE108.ent.ti.com (dlee108.ent.ti.com [157.170.170.38])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04MAEK8I049952;
- Fri, 22 May 2020 05:14:20 -0500
-Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE108.ent.ti.com
- (157.170.170.38) with Microsoft SMTP Server (version=TLS1_2,
+ b=KBM95l4YHTN+GSrGV7hGpioTAS9sR4/Pude9r+AfdwGYzCCgV6bRqK6kGrPQY425z
+ DEfWg5J8DwUtlwY4K+Y/G9JFfpBWqR4TYvCQd/7T1t7T8vkcd6uO3853vmDWgK1jTa
+ rQ/LGuQ0UPSALrVTfkXjwF92FeYXOWjwGJ9pqlyQ=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04MAEPg4050019;
+ Fri, 22 May 2020 05:14:25 -0500
+Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 22
- May 2020 05:14:20 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE106.ent.ti.com
- (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ May 2020 05:14:25 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 22 May 2020 05:14:19 -0500
+ Frontend Transport; Fri, 22 May 2020 05:14:25 -0500
 Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04MAD1aF041179;
- Fri, 22 May 2020 05:14:15 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04MAD1aG041179;
+ Fri, 22 May 2020 05:14:20 -0500
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
@@ -58,25 +58,25 @@ To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <linux-mtd@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-mediatek@lists.infradead.org>
-Subject: [PATCH v7 14/20] mtd: spi-nor: sfdp: do not make invalid quad enable
- fatal
-Date: Fri, 22 May 2020 15:42:55 +0530
-Message-ID: <20200522101301.26909-15-p.yadav@ti.com>
+Subject: [PATCH v7 15/20] mtd: spi-nor: sfdp: detect Soft Reset sequence
+ support from BFPT
+Date: Fri, 22 May 2020 15:42:56 +0530
+Message-ID: <20200522101301.26909-16-p.yadav@ti.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200522101301.26909-1-p.yadav@ti.com>
 References: <20200522101301.26909-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_031425_546089_5D0C2A81 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200522_031430_560836_C8F37647 
+X-CRM114-Status: GOOD (  11.45  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,46 +106,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Micron MT35XU512ABA flash does not support the quad enable bit. But
-instead of programming the Quad Enable Require field to 000b ("Device
-does not have a QE bit"), it is programmed to 111b ("Reserved").
-
-While this is technically incorrect, it is not reason enough to abort
-BFPT parsing. Instead, continue BFPT parsing assuming there is no quad
-enable bit present.
+A Soft Reset sequence will return the flash to Power-on-Reset (POR)
+state. It consists of two commands: Soft Reset Enable and Soft Reset.
+Find out if the sequence is supported from BFPT DWORD 16.
 
 Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 ---
- drivers/mtd/spi-nor/sfdp.c | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
+ drivers/mtd/spi-nor/core.h | 1 +
+ drivers/mtd/spi-nor/sfdp.c | 4 ++++
+ drivers/mtd/spi-nor/sfdp.h | 2 ++
+ 3 files changed, 7 insertions(+)
 
+diff --git a/drivers/mtd/spi-nor/core.h b/drivers/mtd/spi-nor/core.h
+index 6338d32a0d77..79ce952c0539 100644
+--- a/drivers/mtd/spi-nor/core.h
++++ b/drivers/mtd/spi-nor/core.h
+@@ -26,6 +26,7 @@ enum spi_nor_option_flags {
+ 	SNOR_F_HAS_SR_TB_BIT6	= BIT(11),
+ 	SNOR_F_HAS_4BIT_BP      = BIT(12),
+ 	SNOR_F_HAS_SR_BP3_BIT6  = BIT(13),
++	SNOR_F_SOFT_RESET	= BIT(14),
+ };
+ 
+ struct spi_nor_read_command {
 diff --git a/drivers/mtd/spi-nor/sfdp.c b/drivers/mtd/spi-nor/sfdp.c
-index 052cabb52df9..9fd3d8d9a127 100644
+index 9fd3d8d9a127..11109969dc3a 100644
 --- a/drivers/mtd/spi-nor/sfdp.c
 +++ b/drivers/mtd/spi-nor/sfdp.c
-@@ -576,10 +576,6 @@ static int spi_nor_parse_bfpt(struct spi_nor *nor,
- 
- 	/* Quad Enable Requirements. */
- 	switch (bfpt.dwords[BFPT_DWORD(15)] & BFPT_DWORD15_QER_MASK) {
--	case BFPT_DWORD15_QER_NONE:
--		params->quad_enable = NULL;
--		break;
--
- 	case BFPT_DWORD15_QER_SR2_BIT1_BUGGY:
- 		/*
- 		 * Writing only one byte to the Status Register has the
-@@ -616,8 +612,10 @@ static int spi_nor_parse_bfpt(struct spi_nor *nor,
- 		params->quad_enable = spi_nor_sr2_bit1_quad_enable;
+@@ -618,6 +618,10 @@ static int spi_nor_parse_bfpt(struct spi_nor *nor,
  		break;
- 
-+	case BFPT_DWORD15_QER_NONE:
- 	default:
--		return -EINVAL;
-+		params->quad_enable = NULL;
-+		break;
  	}
  
++	/* Soft Reset support. */
++	if (bfpt.dwords[BFPT_DWORD(16)] & BFPT_DWORD16_SOFT_RST)
++		nor->flags |= SNOR_F_SOFT_RESET;
++
  	/* Stop here if JESD216 rev B. */
+ 	if (bfpt_header->length == BFPT_DWORD_MAX_JESD216B)
+ 		return spi_nor_post_bfpt_fixups(nor, bfpt_header, &bfpt,
+diff --git a/drivers/mtd/spi-nor/sfdp.h b/drivers/mtd/spi-nor/sfdp.h
+index e15e30796d62..d1d43ee09a0a 100644
+--- a/drivers/mtd/spi-nor/sfdp.h
++++ b/drivers/mtd/spi-nor/sfdp.h
+@@ -84,6 +84,8 @@ struct sfdp_bfpt {
+ #define BFPT_DWORD15_QER_SR2_BIT1_NO_RD		(0x4UL << 20)
+ #define BFPT_DWORD15_QER_SR2_BIT1		(0x5UL << 20) /* Spansion */
+ 
++#define BFPT_DWORD16_SOFT_RST			BIT(12)
++
+ #define BFPT_DWORD18_CMD_EXT_MASK		GENMASK(30, 29)
+ #define BFPT_DWORD18_CMD_EXT_REP		(0x0UL << 29) /* Repeat */
+ #define BFPT_DWORD18_CMD_EXT_INV		(0x1UL << 29) /* Invert */
 -- 
 2.26.2
 
