@@ -2,56 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C39F71DEA23
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:53:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B05CB1DEA25
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:53:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lkq84kq/TByoYJyDGwoEl/tCMccreM3Plu7dfGEwp5Q=; b=HyjxFv7HB3nq2+
-	18l90fpnHGFT7vrsbhzgrWYf7juLw2lkt0Zezhq12KIhxjTqbMPHO/Ny1oDi0E/Y4/E0gVg1Fynsb
-	yVEkcvLBWtNbgANTf8NalLWf0ODmc90xW0642KVsW/rmvT4MjdzMGncVI73JJz4lhU9uJkxuRXcJO
-	PdzkXbl9U65W+jydYAoQGbXHZDAx/6QqYgncjA8d7Crl3YzdPVfXlSgHtHonw4LpztTNubyFwNGQa
-	QeTMtPLipJ+wCvDPxFcWjPtL4io+r24lD1JN+5JnWTxa168CzQlygnVSsog9b8/W8/dkZ52R3/kmU
-	yZk5bG6RouOyFtJQZ7tw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5fPnopsbY9qqLsi8UEvBAC5tm38HRL/CjbwdURZwSUk=; b=YeqMiWMXJi1nhF
+	FSX8iTAVLFzBqwcVEDWAc0mlrYsQEHuKBPP/gl1JOmLs9xWwTXvrYuBCG/isfeX4iEymcfVFrUZO3
+	Lf+arjhSbQ/ebf04CYe4B2IM/kro384UYB+AeIcXa9tPI4IYmfml8wCRcLK6NhSm6J4qz0jWg0Ajx
+	QksXjtDtfpG58n2pRN4KjWVBWevCT/pGH56tjIYF+NfDBHr7E/5rybPHxkv9nEWLOiixFqF64E3so
+	Qu4jjoFKPxrEqX++iuLOgUdPF3llS8Lcuag8gX2B5vZtTuJxcq1shGk8zC50o0bmhSwOUaMBVisTi
+	ZAmDUyhe2Yc2DtVQ00BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc93I-0004Bt-6I; Fri, 22 May 2020 14:53:36 +0000
+	id 1jc93a-0004RT-OF; Fri, 22 May 2020 14:53:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc901-0007TO-0N
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 14:50:15 +0000
+ id 1jc90Z-0001lF-Q6; Fri, 22 May 2020 14:50:50 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AE4B92245D;
- Fri, 22 May 2020 14:50:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0E05221D6C;
+ Fri, 22 May 2020 14:50:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590159012;
- bh=BYyPzYkx4ERUweSk9BWxGWyjc7yozBVun6QzBUsgIKA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EBAoQ5ccC+pfpDBZhy71LJSQBFNfUlwi1/tQ1973v5AITP7blSjw3z7w7hQEsKXbH
- 9AlRGvMVoXP9Jo2WLtCvy1HTE5rDloQaKlpQCsYPNw9AMaOyZ9CsKKN3LzzYzrsPVe
- pPu5kHG1PAUb6/y9cq2bKTNWIqVfDEAijh8IDG4g=
+ s=default; t=1590159046;
+ bh=rgoYLS+WMEIn3HQPScbZElKfuAs0VrEeOrN4VJIZ2TQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=1GwWNDEa+PXZEA8rxoz6UFVC7r5nQEAr68p6bEY7+jjUNXtW35QwZhmh7G1VOCa2u
+ 8aY3v6EMSUefPZLOxyT9H5tAYdU038/IjW0IxUYWOqOUty3OXNO+7h0c+5dyloekMJ
+ lEEi5qncWOvjMLdMWJ6yb0cdlYUtti3dnXbAgUCs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 11/41] ARM: dts: omap4-droid4: Fix occasional lost
- wakeirq for uart1
-Date: Fri, 22 May 2020 10:49:28 -0400
-Message-Id: <20200522144959.434379-11-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 01/32] ARM: dts: rockchip: fix phy nodename for
+ rk3228-evb
+Date: Fri, 22 May 2020 10:50:13 -0400
+Message-Id: <20200522145044.434677-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200522144959.434379-1-sashal@kernel.org>
-References: <20200522144959.434379-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_075013_170615_73403240 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20200522_075047_879109_F5B01B9D 
+X-CRM114-Status: GOOD (  11.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,72 +77,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: maemo-leste@lists.dyne.org, Sasha Levin <sashal@kernel.org>,
- devicetree@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
- Merlijn Wajer <merlijn@wizzup.org>, Sebastian Reichel <sre@kernel.org>,
- Pavel Machek <pavel@ucw.cz>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Tony Lindgren <tony@atomide.com>
+From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit 738b150ecefbffb6e55cfa8a3b66a844f777d8fb ]
+[ Upstream commit 287e0d538fcec2f6e8eb1e565bf0749f3b90186d ]
 
-Looks like using the UART CTS pin does not always trigger for a wake-up
-when the SoC is idle.
+A test with the command below gives for example this error:
 
-This is probably because the modem first uses gpio_149 to signal the SoC
-that data will be sent, and the CTS will only get used later when the
-data transfer is starting.
+arch/arm/boot/dts/rk3228-evb.dt.yaml: phy@0:
+'#phy-cells' is a required property
 
-Let's fix the issue by configuring the gpio_149 pad as the wakeirq for
-UART. We have gpio_149 managed by the USB PHY for powering up the right
-USB mode, and after that, the gpio gets recycled as the modem wake-up
-pin. If needeed, the USB PHY can also later on be configured to use
-gpio_149 pad as the wakeirq as a shared irq.
+The phy nodename is normally used by a phy-handle.
+This node is however compatible with
+"ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
+which is just been added to 'ethernet-phy.yaml'.
+So change nodename to 'ethernet-phy' for which '#phy-cells'
+is not a required property
 
-Let's also configure the missing properties for uart-has-rtscts and
-current-speed for the modem port while at it. We already configure the
-hardware flow control pins with uart1_pins pinctrl setting.
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
+phy/phy-provider.yaml
 
-Cc: maemo-leste@lists.dyne.org
-Cc: Merlijn Wajer <merlijn@wizzup.org>
-Cc: Pavel Machek <pavel@ucw.cz>
-Cc: Sebastian Reichel <sre@kernel.org>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Link: https://lore.kernel.org/r/20200416170321.4216-1-jbx6244@gmail.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/motorola-mapphone-common.dtsi | 10 +++++++---
- 1 file changed, 7 insertions(+), 3 deletions(-)
+ arch/arm/boot/dts/rk3228-evb.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/motorola-mapphone-common.dtsi b/arch/arm/boot/dts/motorola-mapphone-common.dtsi
-index 01ea9a1e2c86..06fbffa81636 100644
---- a/arch/arm/boot/dts/motorola-mapphone-common.dtsi
-+++ b/arch/arm/boot/dts/motorola-mapphone-common.dtsi
-@@ -723,14 +723,18 @@
- };
+diff --git a/arch/arm/boot/dts/rk3228-evb.dts b/arch/arm/boot/dts/rk3228-evb.dts
+index 5670b33fd1bd..aed879db6c15 100644
+--- a/arch/arm/boot/dts/rk3228-evb.dts
++++ b/arch/arm/boot/dts/rk3228-evb.dts
+@@ -46,7 +46,7 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
  
- /*
-- * As uart1 is wired to mdm6600 with rts and cts, we can use the cts pin for
-- * uart1 wakeirq.
-+ * The uart1 port is wired to mdm6600 with rts and cts. The modem uses gpio_149
-+ * for wake-up events for both the USB PHY and the UART. We can use gpio_149
-+ * pad as the shared wakeirq for the UART rather than the RX or CTS pad as we
-+ * have gpio_149 trigger before the UART transfer starts.
-  */
- &uart1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&uart1_pins>;
- 	interrupts-extended = <&wakeupgen GIC_SPI 72 IRQ_TYPE_LEVEL_HIGH
--			       &omap4_pmx_core 0xfc>;
-+			       &omap4_pmx_core 0x110>;
-+	uart-has-rtscts;
-+	current-speed = <115200>;
- };
- 
- &uart3 {
+-		phy: phy@0 {
++		phy: ethernet-phy@0 {
+ 			compatible = "ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22";
+ 			reg = <0>;
+ 			clocks = <&cru SCLK_MAC_PHY>;
 -- 
 2.25.1
 
