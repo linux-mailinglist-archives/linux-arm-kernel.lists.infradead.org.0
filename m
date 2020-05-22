@@ -2,92 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B881C1DDD0B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 04:14:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 325B01DDD1A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 04:27:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xw3+BdvUWC1rNTevMw3rw88Ma1JidkrDu9UQnFnvTFE=; b=PGXG4BtEgTMmtyu0keSzFCspR
-	9a4jH/VW4MzOIFUrikkoGlDelNzm57v2oczdchPOGDDCvrUuHhaCF7mENsiXnQIVfaHD7W28XQLfb
-	ZLzadQrT39XVHRMIOqbBQGaRNFOM1lLq91Vaz3QJA8d2aKAZwr5LLXWM5hcwTalI0RREiZTGKhC5c
-	tv+7WoJaMIBIp6cLYhLvNXe75zuAUZKRp3+q0lqVLbVonDK11sWCreSoP1EHCTk4SN859jJ88rtDP
-	Zvr7j2F9H8IcrQj+5cKpAWU6+ELB+RLrf6oHFt7SkDbg/RFahjvJKTfPFJYkfh+euhBwQQrivmfon
-	C1cnn+LuQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dvmvgpg9Wsh7p9yTJOnw6ngjfxRVlIarUq+DNIlQy6s=; b=Jwv+D7ZgpAh7MY
+	bLHZP4YdgSclyd66G1777WJjmVRxlstCyaag9u8a5Z7+rDPrwLg7p5TLKxvjDPJf8XNdXSXGlgoOj
+	jH/cWOVLIGvNffXFVhf6T00ZJawqrbulNB8vrjw4/41FhGyqtbPrI+/bFOq5x/8R5POaYkc9fu3fk
+	pUHz8F97DuK2tfmf4nNUDLWsNnc3+8u8SRWwKb9FvieNPHXEm4JDErxTNlJN9S76aCN/653N2qu0R
+	gonlLlyMZrX/RmrJ/ENqVyK2kOGq8Tf53utXQQPdsH61HwdQpaFa2kUhr77tqOIR3krdzpxOa04TO
+	PaIHWc4jcfQIaOXyFMsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbxC7-0007Zp-Bz; Fri, 22 May 2020 02:13:55 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jbxOv-0007ev-25; Fri, 22 May 2020 02:27:09 +0000
+Received: from mail-am6eur05on2086.outbound.protection.outlook.com
+ ([40.107.22.86] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbxBy-0007Z2-6A
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 02:13:47 +0000
-Received: by mail-pf1-x444.google.com with SMTP id n18so4460132pfa.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 21 May 2020 19:13:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=HANfjGaXtL4q1FSiLdXuotCYBYmAdZjgvWQJr0H9YMg=;
- b=lelQxwbz5KvLR8BmclI8jocAnat7kuQ1eoRzL4S3qO9Am83e3fverb4PWKqs6DEOyV
- NCdrcMPKKWM2WpSrCYZ8JIgZVhlby1jGUdTgnc5paxcSO+yOhjHZ0waaLltp5qtM79Ir
- 7cVjPp9/qLsXl1tg2uYAOzrV72+cuggHGqg4L3wQxpNUiWn39K2jb05JVfUJ+E/EZ+ad
- tnxMBzEG/SPmbLbYrXFMbKdRrE9cidfG4wyUFnoPSK0Eyss0/H/7RVn/PUEBUQJcz/Ti
- /GBlephoJpBLfGqCBvjK2aMoFrvN0D/c7fg7WlMhF+ZE3/QFFcrN31nexgxv+NnNa+Mo
- Qptg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=HANfjGaXtL4q1FSiLdXuotCYBYmAdZjgvWQJr0H9YMg=;
- b=HLgtAilvelo/jHuVOqd8m63m5iJYKIk+l8blmTDrJxamZI5BuXeb4k/C4U3SV/EdzR
- u1KpXWfuq8zbt183heCQL1cSCHgsavWk+rU6nUX+Qs3MOY9kc3lKeWiorsGHRCu7m84H
- QuF/+cTmgeuJKKos7hEkK7t3KZW392bGmQ/M48MXInT1nKnSqd23dg39g8/Ko5h/+tb6
- xy+s7+/1oP8Moi0+9foCRgihrHm8G5KSU0QaP4K34DudoFrOP4cXcok1bb+Sf6sHDzfI
- dwZLBhEj7lU5dsRvJvCUkieVN7SQyPVFgOXmA/WqdIe6q04iy1gboHI/NQfg9DIM7jLh
- WZtA==
-X-Gm-Message-State: AOAM531xvgk5oC5KCZRvHzGejsXawfIk5CqlvcUPOJoLFLmv0SVnEXea
- CDRn8rd6fn4xg6WzAAPpNOFrTW5SQVI=
-X-Google-Smtp-Source: ABdhPJxh64wrCE5tLGl7klLmD3mr5bD+4uqj8uhZIjERdP/SqzgqKR0fB/XxlGgIJJR01XokaX+kyA==
-X-Received: by 2002:a63:c58:: with SMTP id 24mr11923950pgm.246.1590113623304; 
- Thu, 21 May 2020 19:13:43 -0700 (PDT)
-Received: from [10.191.1.102] ([45.135.186.71])
- by smtp.gmail.com with ESMTPSA id y5sm5043843pge.50.2020.05.21.19.13.32
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 21 May 2020 19:13:42 -0700 (PDT)
-Subject: Re: [PATCH 0/2] Let pci_fixup_final access iommu_fwnode
-To: Joerg Roedel <joro@8bytes.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Hanjun Guo <guohanjun@huawei.com>, Sudeep Holla <sudeep.holla@arm.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, Len Brown <lenb@kernel.org>,
- jean-philippe <jean-philippe@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Herbert Xu <herbert@gondor.apana.org.au>, kenneth-lee-2012@foxmail.com,
- Wangzhou <wangzhou1@hisilicon.com>
-References: <1589256511-12446-1-git-send-email-zhangfei.gao@linaro.org>
-From: Zhangfei Gao <zhangfei.gao@linaro.org>
-Message-ID: <631857df-8e70-88e3-9959-1a750faf4f85@linaro.org>
-Date: Fri, 22 May 2020 10:13:11 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <1589256511-12446-1-git-send-email-zhangfei.gao@linaro.org>
+ id 1jbxOj-0007e0-95
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 02:27:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jusOtUTWZ3QJXbRBH/PnDD3BjZQgDuGHzPIu+v6JNgCFavRYSpQm2tbtw2QUDz7pEHU3f/2trf+f/yUTnluthvHhUwjdCctYZyip/0tXSLpvnyQ12azMYvlFMgs46SO5rXEigSQR/YiuRkiPElDgXOJue+BLCz/BvQ0irVm61s7c12bpEZxx8QvI1IEo1b+EZyWY26u8+hY0s9PNolHspibloglYjuv41kqKPbzzZfihitbc5aWE5gEc17tZXHxsGrUlglDrckm2CiMhOzyiRLsWAJRyqIBWeHu0z1IPitKBCYqb/eLoOf1NkA0yay8HHahvuOIoK4NvardwB36tmw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uTBg3aDNI0TSldielWxWe9MzhxO6B0rW5MAUcitFCKo=;
+ b=cS7/ZDSmKNtanVVE9u7zPqz1T3A/93rEUmcc6XCwqNMxRrZBTBRDCelWiYinzCok9vZt0SspSfePOTvFdOqwu8JWEuRxl8iThuxtoAjHyQJ1efCABA5WsmW1FRHr76KLrB/bt/BCvgS2VRBPffQ6cPkUv0Uqw+VdrCpJLDHHp7gLUo7Pcj5FI97nwDaA4ngWIupjFT28o9sbLjOymUdSHDJY/ttiulBXmk+VzEuQGPh8bBZP/qYKKns24fwoxzw9WRlQqTgAeLYyrhkn/erxkLIsR5jgk1oSRwPIrChANT68AG6iGU4e0A9PrH5zD2DHAiVpj6QP3hAPA/Vb/XbD/Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=uTBg3aDNI0TSldielWxWe9MzhxO6B0rW5MAUcitFCKo=;
+ b=KN5yg70M9UnEflU8AfdQTBnZHmpQfvNaDCbJKwSeKknpZ8uImx+tUzXEb7ZztNozk/0hllMYgGNjJkL+q7K7mRwfTw+eLG5hhloq/uVRrJJuMa7I3e1YgpBg1V5dryu8VwY0ZoUfkGWacFcLiV8y6SeR+px7yuHjAtpT0SNj9OY=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
+ by VE1PR04MB6493.eurprd04.prod.outlook.com (2603:10a6:803:11f::11)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.27; Fri, 22 May
+ 2020 02:26:53 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3021.020; Fri, 22 May 2020
+ 02:26:52 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: RE: [PATCH v2 2/2] arm64: dts: imx8mn-ddr4-evk: correct ldo1/ldo2
+ voltage range
+Thread-Topic: [PATCH v2 2/2] arm64: dts: imx8mn-ddr4-evk: correct ldo1/ldo2
+ voltage range
+Thread-Index: AQHWLzeGwEoS7avMqUe1/PurAPoV06izVHOAgAANc/A=
+Date: Fri, 22 May 2020 02:26:52 +0000
+Message-ID: <VE1PR04MB66388D5243509C8EBF4DE9EB89B40@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <1590070674-23027-1-git-send-email-yibin.gong@nxp.com>
+ <1590070674-23027-2-git-send-email-yibin.gong@nxp.com>
+ <CAOMZO5AsCREw1OT5zzFH+pC6uyw+MOSKJFZ3_-HvDva65A2cKQ@mail.gmail.com>
+In-Reply-To: <CAOMZO5AsCREw1OT5zzFH+pC6uyw+MOSKJFZ3_-HvDva65A2cKQ@mail.gmail.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: fb35a2d2-ee19-4e85-65e3-08d7fdf79717
+x-ms-traffictypediagnostic: VE1PR04MB6493:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB6493257F8CDB03F4A73C686389B40@VE1PR04MB6493.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-forefront-prvs: 04111BAC64
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 9/vZ6cvNJi4aZKN4LDFvXl9QvBhYVGj5R45InKqe8xFVQkx92lRbvYyRaSnkl1PAGYKOb8mvPuV0C3w1kPWf8fEfGf8kiJOm7+550hibwck1yGb63/3F7b6JXPOkSiUztgOy3txpr92MmJIAQhL8L7JR1CNgdW5/NPdfvZWCtTod8jjZfUxte3ot/aKKvPvvLRMhTVuckTBkmtxcESJ5OzzrWcvwIxPuGHCKLS4aFdqy5d6pff8lka+BaCYg9YSMOnUgf5ZRAqjJborTa8Dhvv4xlGx8r+AFEYa2Knoi/GRqJtyjnJxALfXjfNWVfTFEBWaHB2nFE2qxqZl7Yv0Fph2VRSGgtK/ASpoiinq7tWStZ1Fd6vBcEe4RR4b4FsI8
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(376002)(39860400002)(136003)(366004)(396003)(346002)(53546011)(86362001)(4326008)(6916009)(8676002)(8936002)(478600001)(186003)(26005)(6506007)(54906003)(33656002)(55016002)(9686003)(2906002)(316002)(52536014)(5660300002)(7696005)(4744005)(66446008)(66556008)(71200400001)(66946007)(76116006)(66476007)(64756008)(32563001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: WYQtOONKgXBSLaWBXRNSKPEdEFaF9Xm/nFMpukHCLO3PB2mcPRNl01rvpbjxp0CnR+m2CNb3GHIlmTdW0xZ0tIdEu7XdBRJByQRq7R1JgLOgjONNzXX6Xsmecs3oEqF+y29Li/I72utfh0E1CcCH8WzIW7Rmi8YFCasjhxe9Q3T7QaAOli4Wcyx9o/97Phny3Xn1FXa48sc4LWnHeoJiJeqVY7JfSc1HWELdBmQXnRfxWx9mPlg3L/8+D86jyNvIcSRx1pbLTsXs+15hBSYFpLwnY8jrInvaLMG0/sHM1q+uUAeEXfPvr+YogahWFsM1wAuVPalaR7RMQAb8vVzCQa8lCZKSJPQyazs2jC0HnIlpJKOzsIuYleRH0QqIKKReRrN5w2mXKajBJTnx5KB9AudXOiRz7zSsezrF1hbDNU3Oll4v9++Cj6BnWJtvNPDnB8X3quglt4zK+vo14bJ5KufiKrvHGzb+AQCu0RI2zgo=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fb35a2d2-ee19-4e85-65e3-08d7fdf79717
+X-MS-Exchange-CrossTenant-originalarrivaltime: 22 May 2020 02:26:52.8587 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: paRbwBOgiqHZ9ulUj4ryT6eZd1/+pj3ZhyyoGYBhFBvtaAIWyLIxcyTEsMCf/HQWdBXOKNBW+78AwCPzVgf7zA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6493
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_191346_260620_A8A16478 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200521_192657_473846_BC5BD148 
+X-CRM114-Status: GOOD (  11.80  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.22.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.22.86 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -106,46 +125,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-acpi@vger.kernel.org, iommu@lists.linux-foundation.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-crypto@vger.kernel.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "open list:OPEN
+ FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>, Anson Huang <anson.huang@nxp.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIEpvZXJnCgpPbiAyMDIwLzUvMTIg5LiL5Y2IMTI6MDgsIFpoYW5nZmVpIEdhbyB3cm90ZToK
-PiBTb21lIHBsYXRmb3JtIGRldmljZXMgYXBwZWFyIGFzIFBDSSBidXQgYXJlCj4gYWN0dWFsbHkg
-b24gdGhlIEFNQkEgYnVzLCBhbmQgdGhleSBuZWVkIGZpeHVwIGluCj4gZHJpdmVycy9wY2kvcXVp
-cmtzLmMgaGFuZGxpbmcgaW9tbXVfZndub2RlLgo+IFNvIGNhbGxpbmcgcGNpX2ZpeHVwX2ZpbmFs
-IGFmdGVyIGlvbW11X2Z3bm9kZSBpcyBhbGxvY2F0ZWQuCj4KPiBGb3IgZXhhbXBsZToKPiBIaXNp
-bGljb24gcGxhdGZvcm0gZGV2aWNlIG5lZWQgZml4dXAgaW4KPiBkcml2ZXJzL3BjaS9xdWlya3Mu
-Ywo+Cj4gK3N0YXRpYyB2b2lkIHF1aXJrX2h1YXdlaV9wY2llX3N2YShzdHJ1Y3QgcGNpX2RldiAq
-cGRldikKPiArewo+ICsJc3RydWN0IGlvbW11X2Z3c3BlYyAqZndzcGVjOwo+ICsKPiArCXBkZXYt
-PmVldGxwX3ByZWZpeF9wYXRoID0gMTsKPiArCWZ3c3BlYyA9IGRldl9pb21tdV9md3NwZWNfZ2V0
-KCZwZGV2LT5kZXYpOwo+ICsJaWYgKGZ3c3BlYykKPiArCQlmd3NwZWMtPmNhbl9zdGFsbCA9IDE7
-Cj4gK30KPiArCj4gK0RFQ0xBUkVfUENJX0ZJWFVQX0ZJTkFMKFBDSV9WRU5ET1JfSURfSFVBV0VJ
-LCAweGEyNTAsIHF1aXJrX2h1YXdlaV9wY2llX3N2YSk7Cj4gK0RFQ0xBUkVfUENJX0ZJWFVQX0ZJ
-TkFMKFBDSV9WRU5ET1JfSURfSFVBV0VJLCAweGEyNTEsIHF1aXJrX2h1YXdlaV9wY2llX3N2YSk7
-Cj4gICAKPgo+IFpoYW5nZmVpIEdhbyAoMik6Cj4gICAgaW9tbXUvb2Y6IExldCBwY2lfZml4dXBf
-ZmluYWwgYWNjZXNzIGlvbW11X2Z3bm9kZQo+ICAgIEFDUEkvSU9SVDogTGV0IHBjaV9maXh1cF9m
-aW5hbCBhY2Nlc3MgaW9tbXVfZndub2RlCj4KPiAgIGRyaXZlcnMvYWNwaS9hcm02NC9pb3J0LmMg
-fCAxICsKPiAgIGRyaXZlcnMvaW9tbXUvb2ZfaW9tbXUuYyAgfCAxICsKPiAgIDIgZmlsZXMgY2hh
-bmdlZCwgMiBpbnNlcnRpb25zKCspCj4KV291bGQgeW91IG1pbmQgZ2l2ZSBhbnkgc3VnZ2VzdGlv
-bj8KCldlIG5lZWQgYWNjZXNzIGZ3c3BlYy0+Y2FuX3N0YWxsIGRlc2NyaWJpbmcgdGhlIHBsYXRm
-b3JtIGRldmljZSAoYSBmYWtlIApwY2llKSBjYW4gc3VwcG9ydCBzdGFsbCBmZWF0dXJlLgpjYW5f
-c3RhbGwgd2lsbCBiZSB1c2VkIGFybV9zbW11X2FkZF9kZXZpY2UgWzFdLgpBbmQgc3RhbGwgaXMg
-bm90IGEgcGNpIGZlYXR1cmUsIHNvIG5vIHN1Y2ggbWVtYmVyIGluIHN0cnVjdCBwY2lfZGV2LgoK
-aW9tbXVfZndub2RlIGlzIGFsbG9jYXRlZCBpbiBpb21tdV9md3NwZWNfaW5pdCwgZnJvbSBvZl9w
-Y2lfaW9tbXVfaW5pdCAKb3IgaW9ydF9wY2lfaW9tbXVfaW5pdC4KVGhlIHBjaV9maXh1cF9kZXZp
-Y2UocGNpX2ZpeHVwX2ZpbmFsLCBkZXYpIGluIHBjaV9idXNfYWRkX2RldmljZSBpcyB0b28gCmVh
-cmx5IHRoYXTCoCBpb21tdV9md25vZGUKaXMgbm90IGFsbG9jYXRlZC4KVGhlIHBjaV9maXh1cF9k
-ZXZpY2UocGNpX2ZpeHVwX2VuYWJsZSwgZGV2KSBpbiBkb19wY2lfZW5hYmxlX2RldmljZSBpcyAK
-dG9vIGxhdGUgYWZ0ZXIKCmFybV9zbW11X2FkZF9kZXZpY2UuCgoKU28gdGhlIGlkZWEgaGVyZSBp
-cyBjYWxsaW5nIHBjaV9maXh1cF9kZXZpY2UocGNpX2ZpeHVwX2ZpbmFsKSBhZnRlcgpvZl9wY2lf
-aW9tbXVfaW5pdCBhbmQgaW9ydF9wY2lfaW9tbXVfaW5pdCwgd2hlcmUgaW9tbXVfZndub2RlIGlz
-IGFsbG9jYXRlZC4KCgoKWzFdIGh0dHBzOi8vd3d3LnNwaW5pY3MubmV0L2xpc3RzL2xpbnV4LXBj
-aS9tc2c5NDU1OS5odG1sCgpUaGFua3MKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
-a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
-bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 2020/05/22 Fabio Estevam <festevam@gmail.com> wrote:
+> Hi Robin,
+> 
+> On Thu, May 21, 2020 at 3:17 AM Robin Gong <yibin.gong@nxp.com> wrote:
+> >
+> > Correct ldo1 voltage range from wrong high group(3.0v~3.3v) to low
+> > group
+> 
+> Please use capital letter V for Volt.
+> 
+> > (1.6v~1.9v) because the ldo1 should be 1.8v. Actually, two voltage
+> > groups have been supported at bd718x7-regulator driver, hence, just
+> > corrrect the voltage range to 1.6v~3.3v. For ldo2@0.8v, correct voltage range
+> too.
+> > Otherwise, ldo1 would be kept @3.0v and ldo2@0.9v which violate
+> > i.mx8mn datasheet as the below warning log in kernel:
+> >
+> > [    0.995524] LDO1: Bringing 1800000uV into 3000000-3000000uV
+> > [    0.999196] LDO2: Bringing 800000uV into 900000-900000uV
+> >
+> > Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> 
+> You should add a Fixes tag and Cc stable on this one.
+Okay, will address your comments in v3, thanks.
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
