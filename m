@@ -2,81 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E39541DE46B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:29:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 429BC1DE46C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:29:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5mWDDqMH6ITzmpANTqRL26Qtku99PcQNSubuT3Q6ZuI=; b=Njg
-	XZImquEo1igtwcuge41aZkK3H/ZdoHRT82mukp/HJRwzYcqTPxypN7FEFe0h5GeHGeZK1ePKiQ7et
-	L2Ky2iYejnXD7C9HgQ+rLk9pLKoAisTXanuNTWrpD97q/P6JC1fDa3MZ1jfuqCHqh2Qw33Rcu9Co2
-	p0PMrNg0LOe8SDzKbZ49smkp/bT/qRQ1E7ahihyT9S3U9WGf/bqccF8JyAGkM2YceCLeJCi4fBL0q
-	hT6eMlH9pqf6XfNGj7Yh776V7TulDldkFeTQEl+2hYm9CtRafGdkfrNCcKU1Qb0+HhaJL+zho5pVC
-	DDm71wSZDw2MC4XgdbbLexjjYOWD+zw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=A0UuMV4fnFiC3WPpori9u+P5/COSTvvaBYF8BY4Ubu0=; b=Em70AaeZ/mNIdv
+	C9slyU+3jCr7hhU8y9SetK85RXRsg0vO1a2ufaKGH9rva3rd1Lc99uCdh3aVdDkaCUuTnr1P1K1yt
+	RwRkaIbVPQi1FBEqX/AnylMyviGLrzoO7/CmIkweOiRd1f4Nj8xWKmUPMY+F9KTr9flkkL4T7144L
+	MXd1fM5moysLPwuniJM48T9xwfxrHVuF1fjGQQnjB5R/hht9TGn0lxIFO8H1cKOuetXr9dWx9hRSi
+	9Rrr3q0H5OwsnF/0fB6pjG1ADU0NJHHi8T1ZNGBeFESNssv9He1gRmMnILoiQspUGgOExL30ngtTC
+	0mHJ1LsKijkCREbrKYvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc4vS-0005nf-65; Fri, 22 May 2020 10:29:14 +0000
-Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
+	id 1jc4vh-00064x-71; Fri, 22 May 2020 10:29:29 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc4oA-0004y3-1P
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 10:21:45 +0000
-Received: by mail-ej1-x643.google.com with SMTP id l21so12393877eji.4
+ id 1jc4r9-0007tD-SD
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 10:24:49 +0000
+Received: by mail-lf1-x143.google.com with SMTP id e125so6244397lfd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 03:21:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=POPglGew/cq7Fh3lzWt5jzw//XiaJ0U+eE6M/nZ46PE=;
- b=HXkbxbAPPaOIi1vBFvOH0rF0y8ltpzsJ/lBiWigcsLc9jSNJndrYz3imJ+LSJL6TPj
- 6BjbTD11XqeL9eI1U6RSrVx814wygYKfxwjGuoUB3N7Lo+eNl/Lv0LVa9VrkldxGt46P
- SADCzcTA0SWD0LdfbkzfEhpJijvRD4NnXeTUEl2wy1e5D6jscDDPunPCAycUv49S1SYU
- 57PS86PXDUMDBOiTv0qn8ZBm3sVXP4tHMxm169LpNK3REJjw5G7jUFhmjV1BHVCuYYHk
- t4zPhz/c2OxgU3Gh5anI8kpNd5q2kVrJ11h1ROko9U+eknJRsORi3W0cVbGT1Ig2sJLK
- 9v0g==
+ Fri, 22 May 2020 03:24:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=fKfCBTr3t9MLCQ0J7OL7a+qWvpib5l9QLHxm5yO1R5w=;
+ b=DLPAj5CqPOJrt06enKB1ajI2NDFv9SufvT/yTgLAfjpMrZr6oFlggLT8lcqC29rl9t
+ GZUftu34UAAOMb7Rg8sQqIRMQW86faW04AVGbmaN+KNh+aHKolxikQ3th4gwg6fAX5cp
+ 4JSk2b201knvWxlgX9KV57jVas0yhJVfYR/1H1HrbrSScxOCbvx+WBZ2XWJAzrSiQxHC
+ qG6ALBdMJSMtjAP59+7gOVZSwtKNFqbI3aEXEOT9urqfWaAOcOuTs9NUVhgUp0awvr2n
+ LtS3rbyGNcMspVITcsFZLgoRx41zfo6QMAZSgygb3FZ8xDvdfCbbTEx0LrZJmn8DUYjU
+ t0yQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=POPglGew/cq7Fh3lzWt5jzw//XiaJ0U+eE6M/nZ46PE=;
- b=jwW9Wdb9VN8kz6lvayQqGN3uuweCLaMOhL7OScUZgAy3bq8dW2QJ2JzwcWB5tNEfWV
- HDXix+zAw2lHrmM0RBBlUpX8PfmPc5klsgZ4LsUsYP5Q/yEAJ93SanP9mo0e7mMszYpo
- 7b7f/ROXps/aEA+aHhtjln8zJVEYBHARXoY3sgNwx0Gf9veFXOvlnla/D18wsvyroYr8
- HTIjPqjvo27ePuIGq7v/frJrjs+UJF/8LLdy+e43Gk0U5TQBFPSTTtXoc3bRopQdLvyO
- nxATEVVvLr01FRW6pykuxW8G4zDs4amdDGAHh7ItyF8ec8NmSwCFakKVnSeD89NFDSwG
- Tsxw==
-X-Gm-Message-State: AOAM531K5wTAqasfUOd44WMhCHk65ONrqWrd6Pq90m/KAiOHLIfn8zI9
- 2TF5Z4VksEfEIID5QKF6Rh8yuaAYnB73Ng==
-X-Google-Smtp-Source: ABdhPJxusO2sj7i9AzZa/+pdI1I/q3pAWDlBSWuq0T4Sjds7K6f87kmGOQXdGisF58+e3ee9GgKRkA==
-X-Received: by 2002:a17:906:278e:: with SMTP id
- j14mr7264295ejc.270.1590142898982; 
- Fri, 22 May 2020 03:21:38 -0700 (PDT)
-Received: from localhost.localdomain (212-5-158-12.ip.btc-net.bg.
- [212.5.158.12])
- by smtp.gmail.com with ESMTPSA id z14sm7472532ejd.37.2020.05.22.03.21.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 May 2020 03:21:38 -0700 (PDT)
-From: Stanimir Varbanov <stanimir.varbanov@linaro.org>
-To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-msm@vger.kernel.org
-Subject: [PATCH] arm64: defconfig: Enable SDM845 video clock controller
-Date: Fri, 22 May 2020 13:21:09 +0300
-Message-Id: <20200522102109.3607-1-stanimir.varbanov@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fKfCBTr3t9MLCQ0J7OL7a+qWvpib5l9QLHxm5yO1R5w=;
+ b=VjDx9VRmMjuWwsZNmbqCefOUZY/krkt17UkOdBTNPIRrFf5prgkaRPgsyrF8Y8XpiJ
+ PwOCe9fgbXDID+WZAZHCqMjwEIXOWyCs61cfs0x/9Ad/E86E34PvrFigq0anw3LirmCx
+ LXstDJWrl6MsNkn5pHJETnjcjp5NCgCXpSm6GxynexNVW/DCsdAAH/vPPFUaQ9GgGh7r
+ oexaQXAJI7VYvlwo6aY/BQvR6E7A21NbXclzAV8crZLqi2WJiy2hmwc2nRVZE5LmS9zi
+ JhUQK+ABjaBeYZKcuMkfNDSEu/FU0oTieXaDimpLOsxiyjLI+TYHXUfoc5kLW9AXqm4F
+ Fdbg==
+X-Gm-Message-State: AOAM5339jzXW2tuRovvDLVr4YmvW+YWSLX4A6om+E7gbKKcrTuDfwDmE
+ yw8zwOFOS+A5fMZZGBabA8zqfGrKC2CzHtjr5Ao=
+X-Google-Smtp-Source: ABdhPJzAE9qHyplI74KdB5AD6oGUghscmd0IOe8zTZzcr+h2CPvEAwzkjjnL5jblpWGxXa2/Me9+fgzuIQyHXzThdww=
+X-Received: by 2002:a19:6141:: with SMTP id m1mr7281542lfk.7.1590143085555;
+ Fri, 22 May 2020 03:24:45 -0700 (PDT)
+MIME-Version: 1.0
+References: <1590144291-18526-1-git-send-email-yibin.gong@nxp.com>
+In-Reply-To: <1590144291-18526-1-git-send-email-yibin.gong@nxp.com>
+From: Fabio Estevam <festevam@gmail.com>
+Date: Fri, 22 May 2020 07:24:33 -0300
+Message-ID: <CAOMZO5AgAYgxb9djwGXdpMme4aREYiGPXVa=x0Hb5vo-KJGrug@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] arm64: dts: imx8mm-evk: correct ldo1/ldo2 voltage
+ range
+To: Robin Gong <yibin.gong@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_032142_101978_1645AF8E 
-X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-CacheID: sfid-20200522_032447_926139_DD8E635E 
+X-CRM114-Status: UNSURE (   9.00  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.3 (+)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [212.5.158.12 listed in dnsbl.sorbs.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [festevam[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,40 +94,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Anson Huang <Anson.Huang@nxp.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Stanimir Varbanov <stanimir.varbanov@linaro.org>, Li Yang <leoyang.li@nxp.com>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Will Deacon <will@kernel.org>
-MIME-Version: 1.0
+Cc: Dong Aisheng <aisheng.dong@nxp.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Peng Fan <peng.fan@nxp.com>,
+ Yongcai Huang <anson.huang@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable the build of sdm845 video clock controller by default.
+On Thu, May 21, 2020 at 11:44 PM Robin Gong <yibin.gong@nxp.com> wrote:
+>
+> Correct ldo1 voltage range from wrong high group(3.0V~3.3V) to low group
+> (1.6V~1.9V) because the ldo1 should be 1.8V. Actually, two voltage groups
+> have been supported at bd718x7-regulator driver, hence, just corrrect the
+> voltage range to 1.6V~3.3V. For ldo2@0.8V, correct voltage range too.
+> Otherwise, ldo1 would be kept @3.0V and ldo2@0.9V which violate i.mx8mm
+> datasheet as the below warning log in kernel:
+>
+> [    0.995524] LDO1: Bringing 1800000uV into 3000000-3000000uV
+> [    0.999196] LDO2: Bringing 800000uV into 900000-900000uV
+>
+> Fixes: 78cc25fa265d ("arm64: dts: imx8mm-evk: Add BD71847 PMIC")
+> Cc: stable@vger.kernel.org
+> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
 
-Signed-off-by: Stanimir Varbanov <stanimir.varbanov@linaro.org>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 03d0189f7d68..4eb7e35d2d7d 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -806,6 +806,7 @@ CONFIG_MSM_GCC_8998=y
- CONFIG_QCS_GCC_404=y
- CONFIG_SDM_GCC_845=y
- CONFIG_SDM_GPUCC_845=y
-+CONFIG_SDM_VIDEOCC_845=y
- CONFIG_SDM_DISPCC_845=y
- CONFIG_SM_GCC_8150=y
- CONFIG_QCOM_HFPLL=y
--- 
-2.17.1
-
+Reviewed-by: Fabio Estevam <festevam@gmail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
