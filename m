@@ -2,75 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37D4B1DE7C9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 15:13:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB7491DE7D6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 15:15:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=jEVO0auqAEK56W3uy2uMjoH+PXmKnbBXn9Gx2+FT8fY=; b=Tml42JfUaCvQVR6k31bZpinaJ
-	uv+SeM3LCGERKAdkhSWNrHaut8FVq8vL6v+hIcyJxjqsgOq7KHOKus06nmj7OQ9T3mZma/w+Fe3Bl
-	uUgI+EuQJSizK93/yH3H6WUugbLioN5G2x5ZpCUWqjybjaqirkRGXuAhlhuQOlMDSfhGGJYbiNDig
-	OSidVSskJgQk8YyvB3w/gYB/oAoDB8mey0E+PXczdQRgPNpOyrFAsxWNHU+D+nYz7+isdPFmeQeB3
-	HtfhgdcOU7XXtR8N43NSKawWEX1wDJdu8gVP8Qv4Zz0vw49k9y6LjNS59wZM4zVo+FITqtuZFoX8/
-	zHlOkrnNA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u97Krx3kjdLw+uZGUf68flCN4uX+nLsZAZOj4P8PuA8=; b=p8oHm1Fonam6SF
+	Vck9gFZH4PiafFWV5HozkwtWpoLcx4F5QUmrS6ktl8umG4VQap+YWKiXAjpfP4YvlhFBINWfw/Gox
+	un+Z/muytQHp48E6NLhM99Kv+xlRdfexQslOYkgff/JyNitJeNXz8i/Yn8rWLtiOlMuno0OUYuXg6
+	V55XE40Ja6SLDgMmbHD8WuFBBr/1nvkszfDgjYn5aZPdlluYIEojaPBY1zhv5rCUCw6Dmtp75zp5m
+	dos/Wc3/lTNVPJktx8NGy2NXG7XntiJYVSYbTEo3yjrWXXdmqKVD57YQTnXVuo8yfpFe1kTaAD+fN
+	CVYU090XgLctFmDYPBxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc7Tu-0003sk-Id; Fri, 22 May 2020 13:12:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jc7WP-0006lG-DY; Fri, 22 May 2020 13:15:33 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc7Ti-0003s1-4x
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 13:12:48 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B4C7E206B6;
- Fri, 22 May 2020 13:12:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590153165;
- bh=eJKC82/JdUZHlra7wt2AcwBxZx0GOUHbM5qLt27y8DM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=f5GKNdFgRnnBIO23cQpX5VzjxVD3vjqLDm5zKWQYH9PGzsWz88uDSXU4smxDdAEXw
- DuNIoPjen0K7HCQd+h/fexnZt0GCdHeqg99S0u9/zoItXB2B9XKxiQ9/4fuSQ5PaaE
- bXVA5rstzRikNPoIOt1rnpDxZXLvYgs5dXdkH0XQ=
-Date: Fri, 22 May 2020 14:12:42 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Shengjiu Wang <shengjiu.wang@gmail.com>
-Subject: Re: [PATCH] ASoC: fsl: imx-pcm-dma: Don't request dma channel in probe
-Message-ID: <20200522131242.GI5801@sirena.org.uk>
-References: <1589881301-4143-1-git-send-email-shengjiu.wang@nxp.com>
- <0866cd8cdb0c22f0b2a6814c4dafa29202aad5f3.camel@pengutronix.de>
- <CAA+D8APhHvA39wmCayeCsAEKmOJ0n7qOQiT1tZmFHr4+yASgTw@mail.gmail.com>
- <53258cd99caaf1199036737f8fad6cc097939567.camel@pengutronix.de>
- <CAA+D8APAMRwtVneqFsuBgAhozmQo3R0AQi0bVdUCQO4Af4xVfw@mail.gmail.com>
- <20200520123850.GE4823@sirena.org.uk>
- <CAA+D8AOiVVi3B4dzU8r=rCMz=6w9R=wxBkzAQ=0=RAQLKCWy8Q@mail.gmail.com>
+ id 1jc7Vx-0004lQ-R3; Fri, 22 May 2020 13:15:07 +0000
+Received: from mail-qk1-f182.google.com ([209.85.222.182]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MhFpq-1j6cVg2JxC-00eOwl; Fri, 22 May 2020 15:15:02 +0200
+Received: by mail-qk1-f182.google.com with SMTP id n11so5122876qkn.8;
+ Fri, 22 May 2020 06:15:01 -0700 (PDT)
+X-Gm-Message-State: AOAM533R2HMgj8gHr+krUmkbjGV9D57GCLtPmX46gQ2NwaJwyRJ1IxDD
+ euzi/Hp+hQ8FcFSQd8SU6agOcaHq9UkSuHngx/E=
+X-Google-Smtp-Source: ABdhPJwad6aR4OIQn9sPWHlEXbdp9EOZA/9E2re31lr7EzXs2vTnnoYH10aXj71UgIgOAP2gGEvuTwixXPgmJrhwiik=
+X-Received: by 2002:a37:434b:: with SMTP id q72mr15720320qka.352.1590153300062; 
+ Fri, 22 May 2020 06:15:00 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAA+D8AOiVVi3B4dzU8r=rCMz=6w9R=wxBkzAQ=0=RAQLKCWy8Q@mail.gmail.com>
-X-Cookie: C for yourself.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200520102125.8934-1-robert.jarzmik@free.fr>
+ <CAK8P3a2+auSWBROZR-hobM_qSWtKiG1DRYP3Y7uvbCy_ZLy+gg@mail.gmail.com>
+ <20200521071213.GI1118872@kernel.org>
+ <CAK8P3a2XdG_u6_o2NbQDTb5dbdzByBkUXZNM6nZ3wz0c-LFT5w@mail.gmail.com>
+ <20200521190158.GL1118872@kernel.org> <20200521211016.3ad62148@collabora.com>
+ <20200522131818.3adbac78@xps13>
+In-Reply-To: <20200522131818.3adbac78@xps13>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 22 May 2020 15:14:43 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a2Z-UxktGn+_aBVaaBTStT7f177V2ED2RfVCQS8QDBamg@mail.gmail.com>
+Message-ID: <CAK8P3a2Z-UxktGn+_aBVaaBTStT7f177V2ED2RfVCQS8QDBamg@mail.gmail.com>
+Subject: Re: [PATCH v2 1/3] ARM: pxa: remove Compulab pxa2xx boards
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+X-Provags-ID: V03:K1:zv2T4X0YGQ3J9I0psbzm8Td6P7xwoYpeEgXP/nlQCGn1rQIvdX1
+ HsvCKwP1zq+CLkHv8LxjNkvoxg9jJNe91PTdL7223O4KDWYv2HZRwdDYx72t2JfNvW1+5sw
+ rvMgqW14udf1bDNqfl5lBe9+59jdmj8NpcIcxjABensERmC+Xru6Lb2WzAFIx9Rmia4Lcyu
+ aMqhl2vnNmwNhv6DqCJZg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:nNeVsf8VIdE=:Uz11jb+g9vtm6COuAFc2aA
+ vz7hXF2rdZBp5eD7ld7zNVqGJN6+XYvVlrHnyj66qBrbIO59iD3xaEXzcmyY79R6ZNZ4YK0Hb
+ NIU0qofmY1FF+RAnMTd04IX0sGnWpsiOgtl7jjRxmJkNBPIONR+B5lMH1qSY+9dEgKhNdcgT2
+ nuS3Scp+ullAdWR7OGXplThpWS0j0W5HK3B/TTG4Bvgi6pFf7Bafk8Kxk4JjF/RLb1gXOl9ew
+ o8UFefNkoiZomfkqGUxn43NtmL49BylPFDWWAT1XEr6vPM2P+ktF6kbOiXBd35CCDv7SWPxBS
+ KDfmlz2cYc+9n8efZ+IjlX1mqMdnORe4NP+oqVHJZRUpP+HwNyGzBtXCK3Bv1UWSixi7Qc+Iq
+ 02pi24cYHwgygzbjYCGaHsbvJ9ZShF610AKj7xeTF9sOx7bAKU1LWCg/Ye6+DL0usNjU/uXdB
+ Q3lJrFCJf8udKp8EVuMIzCRCMhYwt+FTv8c8vabNycIcNdjpwG0P/ec1i9FqxW/Oofv7r69Yk
+ QHYwFYJ41FSH0d9bWn8MiC3nIjBwsM/Fzbb7Q9Fe2deypvXUmjU777LM4dHS4Pk/tmPXihO5y
+ 4bUO1lsETqKkC0GFP7Q683rRcwq89OrwU3Ij5YNXlp6JsnyZLlpiuyepDaCHl+Ygu5EXbNYCJ
+ y24e/NitMmrMoMOxtqug78lPt/QIwt74S+p4yIMiLsEocpjJviLBg93yWxWbXJJV8zhntCrVz
+ HCnYEJzxYBok0QBfs/Q9kmAvYmw2Op18ov9zj7yPWEifJPmQpvcr/ehUpo0wsCSgvcbZaVEX8
+ oa5c+r/jybVl6Ts4x+x28rvJEfO7g46j89hwq/FT4k20+ytbsc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_061246_205645_7E0EEFDD 
-X-CRM114-Status: GOOD (  11.42  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200522_061506_185392_A7377BA6 
+X-CRM114-Status: GOOD (  25.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.135 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,80 +89,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sumit Semwal <sumit.semwal@linaro.org>, linaro-mm-sig@lists.linaro.org,
- Linux-ALSA <alsa-devel@alsa-project.org>, linuxppc-dev@lists.ozlabs.org,
- linux-kernel <linux-kernel@vger.kernel.org>, Timur Tabi <timur@kernel.org>,
- Xiubo Li <Xiubo.Lee@gmail.com>, shawnguo@kernel.org,
- Shengjiu Wang <shengjiu.wang@nxp.com>, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, dri-devel@lists.freedesktop.org,
- perex@perex.cz, Nicolin Chen <nicoleotsuka@gmail.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, linux-media@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, s.hauer@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: multipart/mixed; boundary="===============1100341279628680602=="
+Cc: linux-mtd <linux-mtd@lists.infradead.org>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Mike Rapoport <rppt@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, May 22, 2020 at 1:18 PM Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+> Boris Brezillon <boris.brezillon@collabora.com> wrote on Thu, 21 May
+> 2020 21:10:16 +0200:
+>
+> > On Thu, 21 May 2020 22:01:58 +0300
+> > Mike Rapoport <rppt@kernel.org> wrote:
+> >
+> > > On Thu, May 21, 2020 at 09:26:10AM +0200, Arnd Bergmann wrote:
+> > > > On Thu, May 21, 2020 at 9:12 AM Mike Rapoport <rppt@kernel.org> wrote:
+> > > > >
+> > > > > On Wed, May 20, 2020 at 05:21:51PM +0200, Arnd Bergmann wrote:
+> > > > > > On Wed, May 20, 2020 at 12:21 PM Robert Jarzmik <robert.jarzmik@free.fr> wrote:
+> > > > > > >
+> > > > > > > As these boards have no more users nor testers, and patching them has
+> > > > > > > become a burden, be that because of the PCI part or the MTD NAND
+> > > > > > > support, let's remove them.
+> > > > > > >
+> > > > > > > The cm-x300 will for now remain and represent Compulab boards at its
+> > > > > > > best in the PXA department.
+> > > > >
+> > > > > I think this series missed the cm-x270 NAND driver, so this could be
+> > > > > PATCH 4/3 (not even compile tested).
+> > > > >
+> > > > > From 56a11987f82ef8b32b25dfc17b849f9bbbf03e4d Mon Sep 17 00:00:00 2001
+> > > > > From: Mike Rapoport <rppt@linux.ibm.com>
+> > > > > Date: Thu, 21 May 2020 10:09:47 +0300
+> > > > > Subject: [PATCH] mtd: rawnand: remove CM-X270 NAND driver
+> > > > >
+> > > > > The cm-x270 board have been removed and theres is no point to keep this
+> > > > > driver.
+> > > > >
+> > > > > Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> > > >
+> > > > Thanks! Removing that driver was actually how the discussion started,
+> > > > so we definitely want to do that. Boris earlier patch "mtd: rawnand: Get
+> > > > rid of the cmx270 driver" did it by changing the board file, now your
+> > > > patch is the right thing to do, and we should remember to do the same
+> > > > for mbxfb.
+> > >
+> > > Arnd, will you pick this to the SoC tree or should I resend?
+> >
+> > Actually I sent a v2 removing only the MTD driver. You should probably
+> > sync with Miquel to make sure the same patch is not applied twice.
+>
+> Actually I was about the merge this patch in the MTD tree because I
+> have a big cleanup series which depends on it. Arnd could you confirm
+> that it's okay for you?
 
---===============1100341279628680602==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="3U8TY7m7wOx7RL1F"
-Content-Disposition: inline
+Yes, that sounds good. I assume the patch is basically identical to the one
+that Mike just sent, right? If there are changes to arch/arm, I guess those can
+be dropped now as I'm merging Robert's patches to remove those board
+files.
 
-
---3U8TY7m7wOx7RL1F
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, May 21, 2020 at 07:30:04PM +0800, Shengjiu Wang wrote:
-> On Wed, May 20, 2020 at 8:38 PM Mark Brown <broonie@kernel.org> wrote:
-
-> > Other drivers having problems means those drivers should be fixed, not
-> > that we should copy the problems.  In the case of the PXA driver that's
-> > very old code which predates deferred probe by I'd guess a decade.
-
-> Thanks.
-
-> For the FE-BE case, do you have any suggestion for how fix it?
-
-> With DMA1->ASRC->DMA2->ESAI case, the DMA1->ASRC->DMA2
-> is in FE,  ESAI is in BE.  When ESAI drvier probe,  DMA3 channel is
-> created with ESAI's "dma:tx" (DMA3 channel
-> is not used in this FE-BE case).    When FE-BE startup, DMA2
-> channel is created, it needs the ESAI's "dma:tx", so the warning
-> comes out.
-
-Not really TBH, this seems like another one of those csaes where DPCM is
-creaking at the seams :/
-
---3U8TY7m7wOx7RL1F
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7Hz8kACgkQJNaLcl1U
-h9DJFQf+KOiSW3M/3ZDsfcMnTGh5HgNgjzZUpEU5f1ZyNw/EXh1ViAvYDpkQp2Er
-kpo1Tgzodk1pkqsn1sWa5yWP+0c6LboBqkCq+02NHr3Kjyw3dQ6uV4ObJH35s/d1
-39jbo9WIGQVqo8IOFdGhjpP4q72Vwxz1ki5asUYV3e1IO8aEowWvvbpnSIRlyuvH
-rXKaqX6fYMsrMzXOhUx7afrt0n6HR/eBg/XkyIsnhXvvPpmxEAySIyKPOGGrftBM
-rNmOV/XPKbLQXFzjWbK+3ChCcp6ETGTyUyHP25Dm+qXnIyvI6D1ssajhiZHN02RB
-EdzpF/hkR+YLYUFNuN3fRvDOjQZT1A==
-=fSbG
------END PGP SIGNATURE-----
-
---3U8TY7m7wOx7RL1F--
-
-
---===============1100341279628680602==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1100341279628680602==--
-
