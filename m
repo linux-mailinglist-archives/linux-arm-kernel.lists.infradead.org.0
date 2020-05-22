@@ -2,66 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E98481DDFA3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 08:03:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 159871DDFA4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 08:03:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=vFNOOP9NlPy+JCpq8PMeGSA6uGK/T8Bjmj080/CFcys=; b=kq2
-	AloLXQoJs9E4XtZIy657CY2zLSpc9aDPssZR0AiLtGp2U0kY0fdpKuSRnaXtxEZ2yZgzmkKDsUjkJ
-	U4bp/GevEhPJakOo3mtUFGsbAp0RT3ex8uqqq8Vp88t+d5iCX3u7O/cW5EskHXxAkc8euyK2wENGu
-	R1OPs7M3utSlfq9fsOXtEj4OJB0aXeZIma++X/sARaehQzCizlAxFc4iC8HacgD5XSYkBMduXkMv8
-	lh7P4UQu52zGb1ujSXgig09m7UuXOVRCUDjYbjqkGp3Hw1PMPWse36trkQ+mws+u2uQYoHNecUld4
-	3yvg0ScrDtP+FnByWf1GMUPdvsdxWuA==;
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=qv46ycZ7qv6q/OldzZ81ajTE1ujnh/WuoM1Kf8dt3nY=; b=C0AaxnW1DxEBYPudPWog+YAL/
+	g5mLdn3zbcqg/Vw9lotxeqr1z0bE7h2hr4uz0vbzLTjjPfAAGYA2vLTFA4krkKUYlH4XvUBjqDKfc
+	N7NSmSC2IgbI8Lg2I+ut2uH8PsOQ9aSUuxSbG5raZ+DaJDi+M872FT7A2RhuWPYyxFi/aGPxMogma
+	DNg7qes0kspcfWeyZMhkF3lIoeH6Ors2uucs194JKAyobpkNyVZJ3nRTQNKY2n9kA2FuqkpIua+o1
+	qKPpxJl199uxV4yooT0tI8w+XHWReY8fwns8meYvMsRvEYmoMPbemrgHX88TDU48OkH5qc8IeUnRx
+	5qMwcYZdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc0mH-0004aO-4I; Fri, 22 May 2020 06:03:29 +0000
-Received: from ozlabs.org ([2401:3900:2:1::2])
+	id 1jc0mY-0004oM-OA; Fri, 22 May 2020 06:03:46 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc0m7-0004ZX-7g
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 06:03:20 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 49Swry50w4z9sRW;
- Fri, 22 May 2020 16:03:14 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1590127396;
- bh=5xtALOvjXPu9+VIHx+DjHhfQ7lMYUJslakvA9myhjeE=;
- h=Date:From:To:Cc:Subject:From;
- b=iglyGk6+nnULH/rR4mLcFQxPazAC5WdSixdnMzqsGe89Y0ZA7Jj0rcIf4HZurYoGi
- X9+Qo+G+KF8Meg9LMc8CzHTFhEmx8xTWbZZyBWL9TIBhSk+z1dGbANcOWM72jP+Ja5
- dKo1aOL9SIGg4HU5kvStKezaXbeSsLeYJpbksZ2OkJq5gSVcD8FhxBBuvz8shjSgD+
- pxrwfyKTzwpyClCvt58Uk1EK/G6TsHiyBM//WT7h+0Bocc4MftL6SH+eyoPmYgF1yL
- 3ENIKCN4g3Beckqlsn/vMBl8vyHiN/bk/fvqEnvi6uIg0W+v/s0vi1XC86UglSUZfF
- th9yVpCkgnc4g==
-Date: Fri, 22 May 2020 16:03:13 +1000
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: Rob Herring <robherring2@gmail.com>, Olof Johansson <olof@lixom.net>,
- Arnd Bergmann <arnd@arndb.de>, ARM <linux-arm-kernel@lists.infradead.org>
-Subject: linux-next: manual merge of the devicetree tree with the arm-soc tree
-Message-ID: <20200522160313.09cb2b7e@canb.auug.org.au>
+ id 1jc0mL-0004kk-St
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 06:03:35 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jc0mA-0001ss-IU; Fri, 22 May 2020 08:03:22 +0200
+Received: from ore by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ore@pengutronix.de>)
+ id 1jc0m9-0001bD-HH; Fri, 22 May 2020 08:03:21 +0200
+Date: Fri, 22 May 2020 08:03:21 +0200
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+To: robh@kernel.org
+Subject: Re: [PATCH v8 5/5] dt-bindings: arm: fsl: add different Protonic
+ boards
+Message-ID: <20200522060321.j73heuzhughmrvrw@pengutronix.de>
+References: <20200520154116.12909-1-o.rempel@pengutronix.de>
+ <20200520154116.12909-6-o.rempel@pengutronix.de>
+ <20200521200002.GA2800876@bogus>
 MIME-Version: 1.0
+In-Reply-To: <20200521200002.GA2800876@bogus>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 08:01:27 up 188 days, 21:20, 178 users,  load average: 0.24, 0.14,
+ 0.04
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ore@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_230319_434453_ACA0401B 
-X-CRM114-Status: UNSURE (   7.44  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200521_230333_926600_F2B9B089 
+X-CRM114-Status: GOOD (  14.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,87 +76,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
- Linux Next Mailing List <linux-next@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>
-Content-Type: multipart/mixed; boundary="===============7761969180776003975=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7033439321916223899=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============7761969180776003975==
-Content-Type: multipart/signed; boundary="Sig_/QbwZfQx2./5yGC/hXftR2Wc";
- protocol="application/pgp-signature"; micalg=pgp-sha256
 
---Sig_/QbwZfQx2./5yGC/hXftR2Wc
-Content-Type: text/plain; charset=US-ASCII
+--===============7033439321916223899==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="bqrs4b63lj2fy3tv"
+Content-Disposition: inline
+
+
+--bqrs4b63lj2fy3tv
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Hi all,
+On Thu, May 21, 2020 at 02:00:02PM -0600, robh@kernel.org wrote:
+> On Wed, 20 May 2020 17:41:16 +0200, Oleksij Rempel wrote:
+> > Add Protonic PRTI6Q, WD2, RVT, VT7 boards.
+> >=20
+> > Signed-off-by: Oleksij Rempel <o.rempel@pengutronix.de>
+> > ---
+> >  Documentation/devicetree/bindings/arm/fsl.yaml | 4 ++++
+> >  1 file changed, 4 insertions(+)
+> >=20
+>=20
+>=20
+> Please add Acked-by/Reviewed-by tags when posting new versions. However,
+> there's no need to repost patches *only* to add the tags. The upstream
+> maintainer will do that for acks received on the version they apply.
+>=20
+> If a tag was not added on purpose, please state why and what changed.
 
-Today's linux-next merge of the devicetree tree got a conflict in:
+Sorry, there is no special reason. I just missed it.
 
-  Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
-
-between commit:
-
-  82ab9b6705bd ("dt-bindings: arm: Add Akebi96 board support")
-
-from the arm-soc tree and commit:
-
-  9f60a65bc5e6 ("dt-bindings: Clean-up schema indentation formatting")
-
-from the devicetree tree.
-
-I fixed it up (see below) and can carry the fix as necessary. This
-is now fixed as far as linux-next is concerned, but any non trivial
-conflicts should be mentioned to your upstream maintainer when your tree
-is submitted for merging.  You may also want to consider cooperating
-with the maintainer of the conflicting tree to minimise any particularly
-complex conflicts.
-
+Regards,
+Oleksij
 --=20
-Cheers,
-Stephen Rothwell
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
-diff --cc Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
-index 10a7f0752281,113f93b9ae55..000000000000
---- a/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
-+++ b/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
-@@@ -51,9 -51,8 +51,9 @@@ properties
-        - description: LD20 SoC boards
-          items:
-            - enum:
--             - socionext,uniphier-ld20-akebi96
--             - socionext,uniphier-ld20-global
--             - socionext,uniphier-ld20-ref
-++              - socionext,uniphier-ld20-akebi96
-+               - socionext,uniphier-ld20-global
-+               - socionext,uniphier-ld20-ref
-            - const: socionext,uniphier-ld20
-        - description: PXs3 SoC boards
-          items:
-
---Sig_/QbwZfQx2./5yGC/hXftR2Wc
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
+--bqrs4b63lj2fy3tv
+Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl7HayIACgkQAVBC80lX
-0Gw6BwgAhFvWcg5SSYtJw1YMJsT40nojg/Dlx0xpMSOVTN1daICIyOsaWdFUm2hV
-A9mVMv+b1kQ4kgwStXr7hA5qyC0MYrWLMDbK8VY47N+/F6BLjEqLnJMAUUQQmraW
-l2bllFGdlzv74Yknu1uCUmkDVgBx17WzTPrmMbxvjDwg+MmBGC65L/tWZw4lJHtx
-2xMAYHfdgeTZxpRZnUZjG3v9i1GwGbgGCwvsTQh9hVWHBO1qo4fJ5F+Qah0d76Ql
-3i7b7IRZAVFUSz5YPzcPUdmJDy8Dyn1mgrOKi0kMuiqUJa2XOvLw/oJP2njoi8V8
-kh+cv2C2DdkhA7n8gc+4Hq1Rn1axOw==
-=Ow6Q
+iQIzBAABCAAdFiEERBNZvwSgvmcMY/T74omh9DUaUbMFAl7HayEACgkQ4omh9DUa
+UbMcmg//c0+BK3cTveZkOGqDqq4z9leCABwaeqO9pETzG5eMyjwl8c/AktiGc43O
+BVAx2ejlrRPSOfH9Y6NtMd3qkF563mqYfK+L9OWmhvnk6pfN9rgnxNxNE8ZBqT3+
+AwjaOBVD6+YhzOxFk/pywM4E96ER5h4A3PB6lYoQo88nzTSfv3aSxzwh5IzyISOL
+oAZYO+cs+XDi5Snj1r2gfjuFIRoHbc8dTX1v3m3nefkKdHI3pDPgB7AckE9OtPEW
+io/87X3WevPbd7JqEBWqR5LoB+SLse8DTAqNwwZSV+W5GeNAWFY/tnHz5wJPy68c
+nYtJN6hMjZ5o9pVLFtYpVhM1MVJOJ/nCC3DtKO6vDU4RN+yulgtXEWPC4sXYaB7P
+6qmaCnQ0s+cFkEPCexG/6NpBAgexFd4OtHwZpvDUW9IMRK8ln5YIn4PC2YsNBJuh
+gC9Is07Q6JvdggqSa+QqZBNMow/gpZpNaTRVI6w/Xg7oQv9nVAEQuipCH291nt0F
+NNKGSzMYwCh7nMAdvOAlV0xpx/ruPrJG9C2PpJwQtyPFBUj2BOjdgsm56pW1qN7M
+be4HakGTav/oiuwqz0v+D3q/UvnHyi8NKWw5akhBk8dYWcFdkjo90Yv4YIHLNE/w
+pWluoSaAUk4orYOZpEZ48sB5e18uuKCIX388QTf3WLgm0Zo8bIE=
+=EHZY
 -----END PGP SIGNATURE-----
 
---Sig_/QbwZfQx2./5yGC/hXftR2Wc--
+--bqrs4b63lj2fy3tv--
 
 
---===============7761969180776003975==
+--===============7033439321916223899==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -164,5 +159,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============7761969180776003975==--
+--===============7033439321916223899==--
 
