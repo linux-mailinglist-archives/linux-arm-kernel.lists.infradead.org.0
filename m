@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B4E61DE65C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:10:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 450941DE666
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:11:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iM3Zm8glxE4bblqcaI7r1ZbalC0TuFSR+CpGNulMooc=; b=jtNobghK7dRLJA
-	JpY9vpRp2vdvpwwZC4AQblt0vuolp98giPh+qB84GdZPwZxkaXgpZf1meOZ/Pf80rlFUzm8nUswMV
-	3zztMBj5FbQT0B2YHG/b2trrJ+70SuCwS/EZ1fwekjOKIVuD/iWX4RM2pskoidSpt7h2wamjD37jV
-	BnVUYcLMXxYDAE/evlHq5FTCnhSKwJeNaDPfjO41vXj/LoxXq318ATOQs//yj+hsAyEa3FHNs8pYA
-	x5344gGJmcuvAQUpoVpJwdt8HDK6q+Yo3fKxtJP6+vQZnLCVlsb63xnoQruv1bDsMRxdQRjk5zTwC
-	1W4X9rRXjxwlAVr8ncTw==;
+	List-Owner; bh=NRYfErnj+6e0GEtFD/S+zJZjAEqSvJxvQidgs+lgO2U=; b=TNUkrzWgg6ZOzV
+	Ft4aKoEz90rgO0mt6JVr65gvN6qaqqJHCiMDjT55+GmVa//1EBQNjUYe2IjWPHLkjKlzY6bd3OlGw
+	Aov6p8QJ64yKqp70n/4E/GDD3ODwIJpFA6cWOw4tdBKUBjImyFQwtyaD0v9Vxcv3QUvp4fQc5Do4W
+	9yd4bP7Tlhkma15obB77e77TmqEoFd3olt2WnJaoUgznrNzlk4MMCb+dJpucW12xpmfYsCNl++ZRl
+	K5+IqOVMwFFkE7U81kklekP4crzYPBoGjfW9AbHt8hcbcU/Jxd4IAfHrx2yHrpVh3SP40INLDfQ6A
+	JBBwXJdTKSujUefRdAHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc6VY-00072o-Cz; Fri, 22 May 2020 12:10:36 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jc6W8-0000ZB-5O; Fri, 22 May 2020 12:11:13 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc6Sc-0003SM-Ve
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 12:07:41 +0000
-Received: by mail-wr1-x441.google.com with SMTP id g12so8731684wrw.1
+ id 1jc6Se-0003Uz-6X
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 12:07:42 +0000
+Received: by mail-wm1-x341.google.com with SMTP id v19so2636687wmj.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 05:07:34 -0700 (PDT)
+ Fri, 22 May 2020 05:07:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=1qePp19LiRiOBXtccpgQ+eI6GUOhz0auoBWQ11adkXY=;
- b=VhVGCTS4grQt6k3HIErrSSbtbGv1Wb2NV++azMsGdLYYMvxxpy9bDLN55ZLzINOV9k
- FA4B2MGWBaHYAgatvgf2dGYKrGO8xWsZ4QKI9fTkogQYBe2HwRX4p37rG6SYWT43qr9m
- rzKobBuagWzGznsZIFsj05iy4OgSMBAR8TGedQokwHS8EPC5GmcC3wXUr9VaTZVsqePl
- FEcg341dLTGcYR88SzS5d1jPHMbs60ufBgTrfl+nqj5vy+SytnzIR3P34AHGt0pyfmvL
- djl2y9/l9gHpLihRw3dgb1o44HKCoGq741hEmx2t9uXgkpbm6wlqvo9SaJ7s0OIIeCWx
- mAIQ==
+ bh=KiLRpfO6b7G+PZFXWrA65hqZV6E46x1U4Qg5U0775pc=;
+ b=DVsXn2eYoFofqn541LZ4MfkWal+3Vy9fBdI9yAspaG2zAyqASOY0tqc4Nv4/+Bi62Z
+ tUfQjSY+FHNzvALMKzVBCmTkLM740jnrTT30ToZZZzw5iGAWEdQKVrwkIiexpGELhLeO
+ zrU088OFMx4gG4ErEwJxSrWOubMuE+9AUwAWJEOXRKSN2g6OXzZp/iTxw8DRAJlYedqz
+ ngTmIuwLXT5hVEDSTz+QlHrw5qnO6fDzlZdtpPnREpOR9PzLcfhal6JyMl/WxmqcCCde
+ fOpT0KAuZcee9ng8kIq8noqAJrKMD/yd0N+cE/pHu7NboS6Ct6ENqOoOjSo3cOcQ3Qx1
+ gWXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=1qePp19LiRiOBXtccpgQ+eI6GUOhz0auoBWQ11adkXY=;
- b=dFCEn7HFuveZpFoCxPASHcU1Vdm3u3L1ow46LUxfvQMHD1D2Lev5ZhS6lx//IJxm5Z
- C1HHhJvPtxW8PoMp9QsuSVyY8U8cMavjZKFySHJmN0QZ7sVizSWHtZKgxMtlPZb91MeW
- GWp5YIiDgkR/ZDaSbfSb2Xu3NhDlxejYcvJLlQrLS140F8TjvXdW1VUz8ooK6fXVh1X8
- ejb7wClL83hVhQicjIjOn3BDIcoMmyH82EwONXhOR1qsuwmQprGrvcwdv5JVNkJLQNyE
- doCALt2OcQH1kyV7Vf21E4IgL7wz+MVi/orNwfmXfOaWjteLty0wTanG92EwsIEP7Mg0
- 1dlQ==
-X-Gm-Message-State: AOAM533qhSb65lD+WSmYZOdm6xo8qhY/XkVy7fJh3mqHtrUzuI5N9Cl6
- yu2ssB6jU+iN6C7mfx2HjNaKhQ==
-X-Google-Smtp-Source: ABdhPJzG2w/6WApFpPLpfPz5eZ2F69IZCZdA6mR68/WmlVPBV46pTlpI4dGghrWp/qiA5FGADLqR8Q==
-X-Received: by 2002:a5d:4f0d:: with SMTP id c13mr3365938wru.357.1590149253506; 
- Fri, 22 May 2020 05:07:33 -0700 (PDT)
+ bh=KiLRpfO6b7G+PZFXWrA65hqZV6E46x1U4Qg5U0775pc=;
+ b=jykFPbK9jaNbC87/QSNjEkS40bde512sM5bd0IBjqM/+xQwEi2UQgiAZ1b5n0dqXQP
+ PugE71b/ENGH01O7C+ViXvrRpYe2vbnecwh5lI5q7f1ePXjbMV0fjRsqAQ2vhgHs8HMW
+ OgGUEsRaiKHfnyqHcH0ntPzwFmx6CxBleTwaMyKVsHZ44qYAU8xHlfk73zzFjaa9xmRx
+ /imdLmwO8/7NMDbLKm2S3DqOYZTVRb6Jt0NrLaPkgPGiiytDRLxYtEEiTSilWVb8VP1z
+ QJV4OWE8aTsacWDcVJODTxTw7Sq6XflRmlSVcLuG3bDGXNBYOzm0HRyBsyRsAiZo3ry1
+ tKaA==
+X-Gm-Message-State: AOAM532m2uAB7fQROxrffn2lv8SYC6dw0YzGhkzIQgm2z2M+TYQecLhy
+ VSHCo2c21cFGR4kHnXnzO98iWQ==
+X-Google-Smtp-Source: ABdhPJy2dPeRTy6mlLX5UEd/lcC8TWwiaJ2T7GRkUXTF72jg1Gp3bgoI92xKzRbwpRCpK5LJsVLcOg==
+X-Received: by 2002:a7b:c767:: with SMTP id x7mr13670227wmk.181.1590149254930; 
+ Fri, 22 May 2020 05:07:34 -0700 (PDT)
 Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
  [2.15.156.232])
- by smtp.gmail.com with ESMTPSA id f128sm9946233wme.1.2020.05.22.05.07.32
+ by smtp.gmail.com with ESMTPSA id f128sm9946233wme.1.2020.05.22.05.07.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 May 2020 05:07:33 -0700 (PDT)
+ Fri, 22 May 2020 05:07:34 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Rob Herring <robh+dt@kernel.org>, "David S . Miller" <davem@davemloft.net>,
  Matthias Brugger <matthias.bgg@gmail.com>, John Crispin <john@phrozen.org>,
@@ -66,24 +66,24 @@ To: Rob Herring <robh+dt@kernel.org>, "David S . Miller" <davem@davemloft.net>,
  Fabien Parent <fparent@baylibre.com>,
  Heiner Kallweit <hkallweit1@gmail.com>,
  Edwin Peer <edwin.peer@broadcom.com>
-Subject: [PATCH v5 09/11] ARM64: dts: mediatek: add an alias for ethernet0 for
- pumpkin boards
-Date: Fri, 22 May 2020 14:06:58 +0200
-Message-Id: <20200522120700.838-10-brgl@bgdev.pl>
+Subject: [PATCH v5 10/11] ARM64: dts: mediatek: add ethernet pins for pumpkin
+ boards
+Date: Fri, 22 May 2020 14:06:59 +0200
+Message-Id: <20200522120700.838-11-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200522120700.838-1-brgl@bgdev.pl>
 References: <20200522120700.838-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_050735_273959_E6963B44 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20200522_050736_281290_3C6EBEA4 
+X-CRM114-Status: GOOD (  10.00  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -114,26 +114,37 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-Add the ethernet0 alias for ethernet so that u-boot can find this node
-and fill in the MAC address.
+Setup the pin control for the Ethernet MAC.
 
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 ---
- arch/arm64/boot/dts/mediatek/pumpkin-common.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/mediatek/pumpkin-common.dtsi | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/mediatek/pumpkin-common.dtsi b/arch/arm64/boot/dts/mediatek/pumpkin-common.dtsi
-index a31093d7142b..97d9b000c37e 100644
+index 97d9b000c37e..4b1d5f69aba6 100644
 --- a/arch/arm64/boot/dts/mediatek/pumpkin-common.dtsi
 +++ b/arch/arm64/boot/dts/mediatek/pumpkin-common.dtsi
-@@ -9,6 +9,7 @@
- / {
- 	aliases {
- 		serial0 = &uart0;
-+		ethernet0 = &ethernet;
+@@ -219,4 +219,19 @@ gpio_mux_int_n_pin {
+ 			bias-pull-up;
+ 		};
  	};
- 
- 	chosen {
++
++	ethernet_pins_default: ethernet {
++		pins_ethernet {
++			pinmux = <MT8516_PIN_0_EINT0__FUNC_EXT_TXD0>,
++				 <MT8516_PIN_1_EINT1__FUNC_EXT_TXD1>,
++				 <MT8516_PIN_5_EINT5__FUNC_EXT_RXER>,
++				 <MT8516_PIN_6_EINT6__FUNC_EXT_RXC>,
++				 <MT8516_PIN_7_EINT7__FUNC_EXT_RXDV>,
++				 <MT8516_PIN_8_EINT8__FUNC_EXT_RXD0>,
++				 <MT8516_PIN_9_EINT9__FUNC_EXT_RXD1>,
++				 <MT8516_PIN_12_EINT12__FUNC_EXT_TXEN>,
++				 <MT8516_PIN_38_MRG_DI__FUNC_EXT_MDIO>,
++				 <MT8516_PIN_39_MRG_DO__FUNC_EXT_MDC>;
++		};
++	};
+ };
 -- 
 2.25.0
 
