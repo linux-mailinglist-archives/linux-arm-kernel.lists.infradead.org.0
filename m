@@ -2,80 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15B581DED98
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 18:45:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B023E1DEDB9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 18:54:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0j5Wc0PbkQD+cqerjsbRSkxek6TGuIq0FpnpV9yu4wo=; b=MBCCQ7VLCytzZg
-	tT/7gVvcF14StD0KktmqvvyJ8RFIY56jjMxf0H+kR3HHA/m7MItU8nGs6/l1V/g/VMZTsjDSJa9pf
-	Hqot/GHw/tCSKGKArjuQs+A+9gigTeksLEXmpJtl3yxV1TcBDNlbgCoRaFNs5f/sl0L3+utq5QkaX
-	3ZjzaUeXBX5hOdFxW2HB7wsosOIlQYLuc53DZiE7zqjg0mdTMyXH2F8woVCb5Z7EhS5s7U9IUyc0A
-	+69m4lPTIQGVS3DX6N/vO+vfQyPM6M9fbvyiwXoTpQJkCKYSd3Nn35vmg4aQxX901PquiNPAeAVlk
-	pCSPoXGlKT6iJ7mHiyHg==;
+	List-Owner; bh=5cFp5rShqBvQL06hstjooyAIWk6vcBWfsWHJGC2RSio=; b=f2mN4g/JBJZS7e
+	CP3B7Yntic8V61DCHBdnE/bpjGKdZg9ITAzh2D8ha5q/nb6VenAX9BNBxAPQOeznllfdWy7/EpnJp
+	hx0UdVQcHDuzTciUy2hSStdwN8dsdm8t8I+DL4UN3gwZUnTFWISYJzYqxPOtV9koXzn7kmCQaLMw6
+	6rYUyk56HuJ9tzkalC5ezul+ys+5EGB20zkAk27MqKqibhtp1zJwaHnyL77V5SUZnrxrohcs4w3ZL
+	+nd2Nmm1U6GL4KKoYCp4sMsEKLZmU9pUqqJTLHmy1FcFndLaecyHXrycFoWtTFSiXUgUW25DZPn6p
+	lm/Ls7ha38zjNv/AE06w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcAnm-0002LN-Gp; Fri, 22 May 2020 16:45:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcAne-0002KZ-6e
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 16:45:35 +0000
-Received: from mail-oi1-f179.google.com (mail-oi1-f179.google.com
- [209.85.167.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CB11420738
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 16:45:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590165933;
- bh=gWcAx6dytA0EAxqcY3HTX1YnP6kIv4ty1exXdCROqww=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=tGki03yjNbya2Lh/bCN9h0iri/nzH+Vq4KqH3d9PtZz1S0Agw4aarziU175F+WuYY
- gI+uyvvHJRZg/Yw410lxNK6x004ZGodzg1huJUcmElYKAaTxMIy+T6DRQANn0wZluY
- LqHXKHCeIKAn7ZWwsLaqgyF096FGeQWKEXA9fu9Y=
-Received: by mail-oi1-f179.google.com with SMTP id d191so9798807oib.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 09:45:33 -0700 (PDT)
-X-Gm-Message-State: AOAM530v3Z8LJe51ySlOtPOd1uwGVn+515bOeJOZvZylVgnPwbkxXhV1
- TJZmzxniZGGmeNqSaJQsWdAfl82CE9aG5u6yEw==
-X-Google-Smtp-Source: ABdhPJyOIimoTTwn+DzTuswuMPzoMXeeAcfiCDmfEtU2Ls/bR0MREniW3isAwKRLWPh6rvnW8cASk2bhta+/P+05dzU=
-X-Received: by 2002:aca:f084:: with SMTP id o126mr3346182oih.106.1590165933079; 
- Fri, 22 May 2020 09:45:33 -0700 (PDT)
+	id 1jcAwQ-0005xi-Qo; Fri, 22 May 2020 16:54:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jcAwI-0005wg-0L
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 16:54:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B3C3D55D;
+ Fri, 22 May 2020 09:54:27 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.95])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EB58D3F305;
+ Fri, 22 May 2020 09:54:24 -0700 (PDT)
+Date: Fri, 22 May 2020 17:54:22 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 2/2] firmware: smccc: Add ARCH_SOC_ID support
+Message-ID: <20200522165422.GA18810@bogus>
+References: <20200522124951.35776-1-sudeep.holla@arm.com>
+ <20200522124951.35776-3-sudeep.holla@arm.com>
+ <CAK8P3a1t6BrB_Gti138VDRbmaiR_TjwR9d6qMstLBFDWxZ1kjQ@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200506151429.12255-1-kishon@ti.com>
- <20200506151429.12255-8-kishon@ti.com>
- <20200520213434.GA583923@bogus> <3f9cf6e5-94f8-4c54-aaee-c181b0e79f1f@ti.com>
-In-Reply-To: <3f9cf6e5-94f8-4c54-aaee-c181b0e79f1f@ti.com>
-From: Rob Herring <robh@kernel.org>
-Date: Fri, 22 May 2020 10:45:21 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+qcgKvauJ-GjsnmmpmRusyEJ6pRDpBOQKOadig4XfsxQ@mail.gmail.com>
-Message-ID: <CAL_Jsq+qcgKvauJ-GjsnmmpmRusyEJ6pRDpBOQKOadig4XfsxQ@mail.gmail.com>
-Subject: Re: [PATCH v4 07/14] PCI: cadence: Add new *ops* for CPU addr fixup
-To: Kishon Vijay Abraham I <kishon@ti.com>
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a1t6BrB_Gti138VDRbmaiR_TjwR9d6qMstLBFDWxZ1kjQ@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_094534_283288_233F59E8 
-X-CRM114-Status: GOOD (  24.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200522_095430_134652_2D794C30 
+X-CRM114-Status: GOOD (  25.49  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,87 +64,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Francois Ozog <francois.ozog@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Jose.Marinho@arm.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>, PCI <linux-pci@vger.kernel.org>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-omap <linux-omap@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+ harb@amperecomputing.com, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 5:35 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
+(+ Jose (SMCCC Spec author))
+
+On Fri, May 22, 2020 at 04:46:12PM +0200, Arnd Bergmann wrote:
+> On Fri, May 22, 2020 at 2:50 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
+> > +
+> > +       soc_id_rev = res.a0;
+> > +
+> > +       soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
+> > +       if (!soc_dev_attr)
+> > +               return -ENOMEM;
+> > +
+> > +       sprintf(soc_id_str, "0x%04x", IMP_DEF_SOC_ID(soc_id_version));
+> > +       sprintf(soc_id_rev_str, "0x%08x", soc_id_rev);
+> > +       sprintf(soc_id_jep106_id_str, "0x%02x%02x",
+> > +               JEP106_BANK_CONT_CODE(soc_id_version),
+> > +               JEP106_ID_CODE(soc_id_version));
+> > +
+> > +       soc_dev_attr->soc_id = soc_id_str;
+> > +       soc_dev_attr->revision = soc_id_rev_str;
+> > +       soc_dev_attr->jep106_id = soc_id_jep106_id_str;
 >
-> Hi Rob,
+> Ok, let me try to understand how this maps the 64-bit ID into the
+> six strings in user space:
 >
-> On 5/21/2020 3:04 AM, Rob Herring wrote:
-> > On Wed, May 06, 2020 at 08:44:22PM +0530, Kishon Vijay Abraham I wrote:
-> >> Cadence driver uses "mem" memory resource to obtain the offset of
-> >> configuration space address region, memory space address region and
-> >> message space address region. The obtained offset is used to program
-> >> the Address Translation Unit (ATU). However certain platforms like TI's
-> >> J721E SoC require the absolute address to be programmed in the ATU and not
-> >> just the offset.
-> >
-> > Once again, Cadence host binding is broken (or at least the example is).
-> > The 'mem' region shouldn't even exist. It is overlapping the config
-> > space and 'ranges':
-> >
-> >             reg = <0x0 0xfb000000  0x0 0x01000000>,
-> >                   <0x0 0x41000000  0x0 0x00001000>,
-> >                   <0x0 0x40000000  0x0 0x04000000>;
-> >             reg-names = "reg", "cfg", "mem";
-> >
-> >             ranges = <0x02000000 0x0 0x42000000  0x0 0x42000000  0x0 0x1000000>,
-> >                      <0x01000000 0x0 0x43000000  0x0 0x43000000  0x0 0x0010000>;
-> >
-> >
-> > 16M of registers looks a bit odd. I guess it doesn't matter
-> > unless you have a 32-bit platform and care about your virtual
-> > space. Probably should have been 3 regions for LM, RP, and AT looking
-> > at the driver.
+> For a chip that identifies as
 >
-> The "mem" region in never ioremapped. However $patch removes requiring to add
-> "mem" memory resource.
-
-I was referring to ioremapping 'reg' region.
-
-> >
-> > Whatever outbound address translation you need should be based on
-> > 'ranges'.
+> JEP106_BANK_CONT_CODE = 12
+> JEP106_ID_CODE = 34
+> IMP_DEF_SOC_ID = 5678
+> soc_id_rev = 9abcdef0
 >
-> You mean we don't need to add "new *ops* for CPU addr fixup"?. The issue is
-> ranges provides CPU address and PCI address. The CPU will access whatever is
-> populated in ranges to access the PCI bus. However while programming the ATU,
-> we cannot use the CPU address provided in ranges directly (in some platforms)
-> because the controller does not see the full address and only the lower 28bits.
-
-Okay, that is clearer as to what the difference is. I think this
-should be 2 patches. One dropping 'mem' usage and using a mask and the
-2nd making the mask per platform.
-
-Really, the parent node of the PCI controller should probably have
-'ranges' and you could extract a mask from that. Looks like that is
-what you had for DRA7... I'm not sure if ABI stability is important
-for the Cadence platform. I'd assume that's just some IP eval system
-and probably not?
-
-Why do you need an ops here? All you need is a mask value.
-
-> This similar restriction was there with Designware (mostly an integration
-> issue) and we used *ops* to fixup the address that has to be programmed in ATU.
-> The Designware initially used a wrapper so that ranges property can be directly
-> used [1]. However this approach was later removed in [2]
+> the normal sysfs attributes contain these strings:
 >
-> [1] -> https://lore.kernel.org/patchwork/patch/468523/
-> [2] -> https://lkml.org/lkml/2015/10/16/232
+> machine = ""
+> family = ""
+> revision = "0x9abcdef0
+> serial_number = ""
+> soc_id = "0x5678"
+>
+> and the new attribute is
+>
+> jep106_identification_code = "0x1234"
+>
+> This still looks like a rather poorly designed interface to me, with a
+> number of downsides:
+>
+> - Nothing in those strings identifies the numbers as using jep106
+>   numbers rather than some something else that might use strings
+>   with hexadecimal numbers.
+>
 
-So while you had the data for a mask in DT, the driver now hardcodes it?
+Not sure if I understand your concerns completely here.
 
-Rob
+Anyways I wanted to clarify that the jep106 encoding is applicable only
+for manufacturer's id and not for SoC ID or revision. Not sure if that
+changes anything about your concerns.
+
+> - I think we should have something unique in "family" just because
+>   existing scripts can use that as the primary indentifier
+>
+
+I agree with your idea of combining attributes, not sure exactly which
+ones yet.
+
+> - It seems odd that there is no way to read the serial number through
+>   the same interface and publish it the usual way.
+
+Valid concern and I will pass this to interface authors.
+
+>   Francois Ozog
+>   recently asked for a generic way to find out a serial number for
+>   inventory management, and this would be the obvious place to have it.
+
+Agreed, but not sure what author(s) have to say. I have cc-ed one of them.
+
+>   It can of course be added later when the next revision of the spec
+>   is there, it just seems like a surprising omission.
+>
+
+Yes, definitely. Good to get feedback.
+
+> How about making the contents:
+>
+> machine = "" /* could be a future addition, but board specific */
+> family = "jep106:1234"
+
+But this just indicates manufacturer id and nothing related to SoC family.
+If it is jep106:043b, all it indicates is Arm Ltd and assigning it to
+family doesn't sound right to me.
+
+I had requests for both of the above during the design of interface but
+I was told vendors were happy with the interface. I will let the authors
+speak about that.
+
+> revision = "0x9abcdef0
+> serial_number = "0xfedcba987654321" /* to be implemented later */
+
+Sure.
+
+> soc_id = "jep106:1234:5678" /* duplicates family but makes it unique*/
+
+Not sure again.
+>
+> That would work without any new properties, dropping the other patch,
+> and be easier to use for identification from user space.
+>
+
+OK, I agree on ease part. But for me, we don't have any property in the
+list to indicate the vendor/manufacturer's name. I don't see issue adding
+one, name can be fixed as jep106_identification_code is too specific.
+
+How about manufacturer with the value in the format "jep106:1234" if
+it is not normal string but jep106 encoding.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
