@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B5FE1DE72A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:50:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F7581DE727
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:50:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+0JqX4kjUDfzvYRYqLCUMR+dQNLFlF0sZri5UOd9kaA=; b=mQVXZCCL2C+ax3
-	XMBXPNZ9pwUHXy3Uig9tIfusB+aGhC2g5HopHLoOUZW44fKLpIqiCEipGwaN4BJ9Gd8Yeut9m/49S
-	yUQy+LsxdMlBGpTYgYxPO49I3da7pHpOT4NpXSJHkO4MZIH33A2GeEZ7mTxJJ5WUtJc9AX6vpPIUe
-	rK3k6aVfnJ3jJ08h/bBfPfrP8uSzKDj2FNyyXolDScSorOg8qMLyRxGUD/VGYZVQEhrA3q6oixvIW
-	ygFk7UV+kRNz4gsPsJgs7HzZ6xd70h6dLIg4FCrYuR0c6Q0yUfEIHkeXbfeOjbB9TdJr9YRDaWr9J
-	YEvSIU6cU3NS0LFMyaSw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=20henpIrczGkCafNS35i+Ebd5KiGAfZzh/MNYQ6PxYE=; b=A+XZ/EPdDf9pl+2BaTH/kNcMII
+	8d7gXCaqvoBB9FtsMEYOqYE5iriHfQ9DLhq7e0jzYioNr5mdqNSYtqkrQE39hzNw1MvJsBKNukZmu
+	d4zaMnB4yVOJJKy08InZRk2gwGmVrdaTEXou5eR/SIljPMwOhaIMxBIDIYPNQ6lJlJyYIo3LHzLZR
+	KLPzMmCg86XoRALffzgp0phetXj/8l/qXTk4oxwJPNTU4bCpvYb129kYasaZ21hctRLEiOZHMmKLw
+	ibJ5XP8MH5bhgHIWWkp+SjUTTgXLxxnt+h10xC43FeNuSyxzDDvTc8h7ECI0Sbzd+x4bFnmVej36X
+	hzLHYZ3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc78Q-0005D2-NU; Fri, 22 May 2020 12:50:46 +0000
+	id 1jc78E-00050F-EW; Fri, 22 May 2020 12:50:34 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc77l-0002hx-6M
+ id 1jc77k-0002un-F9
  for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 12:50:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4C0461063;
- Fri, 22 May 2020 05:50:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B4231106F;
+ Fri, 22 May 2020 05:50:03 -0700 (PDT)
 Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 16E1C3F68F;
- Fri, 22 May 2020 05:50:00 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 7F6563F68F;
+ Fri, 22 May 2020 05:50:02 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/2] base: soc: Add JEDEC JEP106 manufacturer's identification
- code attribute
-Date: Fri, 22 May 2020 13:49:50 +0100
-Message-Id: <20200522124951.35776-2-sudeep.holla@arm.com>
+Subject: [PATCH 2/2] firmware: smccc: Add ARCH_SOC_ID support
+Date: Fri, 22 May 2020 13:49:51 +0100
+Message-Id: <20200522124951.35776-3-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200522124951.35776-1-sudeep.holla@arm.com>
 References: <20200522124951.35776-1-sudeep.holla@arm.com>
-MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_055005_348172_34D1D548 
-X-CRM114-Status: GOOD (  15.35  )
+X-CRM114-CacheID: sfid-20200522_055004_600876_F5C852D8 
+X-CRM114-Status: GOOD (  16.61  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,94 +66,195 @@ Cc: Mark Rutland <mark.rutland@arm.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
  harb@amperecomputing.com, Sudeep Holla <sudeep.holla@arm.com>,
  Will Deacon <will@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U01DQ0MgdjEuMiBhZGRzIGEgbmV3IG9wdGlvbmFsIGZ1bmN0aW9uIFNNQ0NDX0FSQ0hfU09DX0lE
-IHRvIG9idGFpbiBhClNpUCBkZWZpbmVkIFNvQyBpZGVudGlmaWNhdGlvbiB2YWx1ZS4gSW5kZWVk
-IG9mIG1ha2luZyBpdCBjdXN0b20KYXR0cmlidXRlLCBsZXQgdXMgYWRkIHRoZSBzYW1lIGFzIGdl
-bmVyaWMgYXR0cmlidXRlIHRvIHNvY19kZXZpY2UuCgpUaGVyZSBhcmUgdmFyaW91cyB3YXlzIGlu
-IHdoaWNoIGl0IGNhbiBiZSByZXByZXNlbnRlZCBpbiBzaG9ydGVuZWQgZm9ybQpmb3IgZWZmaWNp
-ZW5jeSBhbmQgZWFzZSBvZiBwYXJzaW5nIGZvciB1c2Vyc3BhY2UuIFRoZSBjaG9zZW4gZm9ybSBp
-cwpkZXNjcmliZWQgaW4gdGhlIEFCSSBkb2N1bWVudC4KClNpZ25lZC1vZmYtYnk6IFN1ZGVlcCBI
-b2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+Ci0tLQogRG9jdW1lbnRhdGlvbi9BQkkvdGVzdGlu
-Zy9zeXNmcy1kZXZpY2VzLXNvYyB8IDMxICsrKysrKysrKysrKysrKysrKysrKwogZHJpdmVycy9i
-YXNlL3NvYy5jICAgICAgICAgICAgICAgICAgICAgICAgICB8IDEyICsrKysrKysrCiBpbmNsdWRl
-L2xpbnV4L3N5c19zb2MuaCAgICAgICAgICAgICAgICAgICAgIHwgIDEgKwogMyBmaWxlcyBjaGFu
-Z2VkLCA0NCBpbnNlcnRpb25zKCspCgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9BQkkvdGVz
-dGluZy9zeXNmcy1kZXZpY2VzLXNvYyBiL0RvY3VtZW50YXRpb24vQUJJL3Rlc3Rpbmcvc3lzZnMt
-ZGV2aWNlcy1zb2MKaW5kZXggYmEzYTNmYWMwZWUxLi5mZDQ0YzliMWUwOWEgMTAwNjQ0Ci0tLSBh
-L0RvY3VtZW50YXRpb24vQUJJL3Rlc3Rpbmcvc3lzZnMtZGV2aWNlcy1zb2MKKysrIGIvRG9jdW1l
-bnRhdGlvbi9BQkkvdGVzdGluZy9zeXNmcy1kZXZpY2VzLXNvYwpAQCAtNTQsNiArNTQsMzcgQEAg
-Y29udGFjdDoJTGVlIEpvbmVzIDxsZWUuam9uZXNAbGluYXJvLm9yZz4KIAkJUmVhZC1vbmx5IGF0
-dHJpYnV0ZSBzdXBwb3J0ZWQgU1QtRXJpY3Nzb24ncyBzaWxpY29uLiBDb250YWlucyB0aGUKIAkJ
-dGhlIHByb2Nlc3MgYnkgd2hpY2ggdGhlIHNpbGljb24gY2hpcCB3YXMgbWFudWZhY3R1cmVkLgog
-CitXaGF0OgkJL3N5cy9kZXZpY2VzL3NvY1gvamVwMTA2X2lkZW50aWZpY2F0aW9uX2NvZGUKK0Rh
-dGU6CQlKdW5lIDIwMjAKK0NvbnRhY3Q6CVN1ZGVlcCBIb2xsYSA8c3VkZWVwLmhvbGxhQGFybS5j
-b20+CitEZXNjcmlwdGlvbjoKKwkJUmVhZC1vbmx5IGF0dHJpYnV0ZSBzdXBwb3J0ZWQgb24gbWFu
-eSBvZiBBUk0gYmFzZWQgc2lsaWNvbgorCQl3aXRoIFNNQ0NDIHYxLjIrIGNvbXBsaWFudCBmaXJt
-d2FyZS4gQ29udGFpbnMgdGhlIEpFREVDCisJCUpFUDEwNiBtYW51ZmFjdHVyZXLigJlzIGlkZW50
-aWZpY2F0aW9uIGNvZGUuCisKKwkJVGhpcyBtYW51ZmFjdHVyZXLigJlzIGlkZW50aWZpY2F0aW9u
-IGNvZGUgaXMgZGVmaW5lZCBieSBvbmUKKwkJb3IgbW9yZSBlaWdodCAoOCkgYml0IGZpZWxkcywg
-ZWFjaCBjb25zaXN0aW5nIG9mIHNldmVuICg3KQorCQlkYXRhIGJpdHMgcGx1cyBvbmUgKDEpIG9k
-ZCBwYXJpdHkgYml0LiBJdCBpcyBhIHNpbmdsZSBmaWVsZCwKKwkJbGltaXRpbmcgdGhlIHBvc3Np
-YmxlIG51bWJlciBvZiB2ZW5kb3JzIHRvIDEyNi4gVG8gZXhwYW5kCisJCXRoZSBtYXhpbXVtIG51
-bWJlciBvZiBpZGVudGlmaWNhdGlvbiBjb2RlcywgYSBjb250aW51YXRpb24KKwkJc2NoZW1lIGhh
-cyBiZWVuIGRlZmluZWQuCisKKwkJVGhlIHNwZWNpZmllZCBtZWNoYW5pc20gaXMgdGhhdCBhbiBp
-ZGVudGl0eSBjb2RlIG9mIDB4N0YKKwkJcmVwcmVzZW50cyB0aGUgImNvbnRpbnVhdGlvbiBjb2Rl
-IiBhbmQgaW1wbGllcyB0aGUgcHJlc2VuY2UKKwkJb2YgYW4gYWRkaXRpb25hbCBpZGVudGl0eSBj
-b2RlIGZpZWxkLCBhbmQgdGhpcyBtZWNoYW5pc20KKwkJbWF5IGJlIGV4dGVuZGVkIHRvIG11bHRp
-cGxlIGNvbnRpbnVhdGlvbiBjb2RlcyBmb2xsb3dlZAorCQlieSB0aGUgbWFudWZhY3R1cmVyJ3Mg
-aWRlbnRpdHkgY29kZS4KKworCQlGb3IgZXhhbXBsZSwgQVJNIGhhcyBpZGVudGl0eSBjb2RlIDB4
-N0YgMHg3RiAweDdGIDB4N0YgMHgzQiwKKwkJd2hpY2ggaXMgY29kZSAweDNCIG9uIHRoZSBmaWZ0
-aCAncGFnZScuIFRoaXMgY2FuIGJlIHNob3J0ZW5lZAorCQlhcyBKRVAxMDYgaWRlbnRpdHkgY29k
-ZSBvZiAweDNCIGFuZCBhIGNvbnRpbnVhdGlvbiBjb2RlIG9mCisJCTB4NCB0byByZXByZXNlbnQg
-dGhlIGZvdXIgY29udGludWF0aW9uIGNvZGVzIHByZWNlZGluZyB0aGUKKwkJaWRlbnRpdHkgY29k
-ZS4KKworCQlUaGlzIHByb3BlcnR5IHJlcHJlc2VudHMgaXQgaW4gdGhlIHNob3J0ZW5lZCBmb3Jt
-OgorCQk4LWJpdCBjb250aW51YXRpb24gY29kZSBmb2xsb3dlZCBieSA4IGJpdCBpZGVudGl0eSBj
-b2RlCisJCXdpdGhvdXQgdGhlIHBhcml0eSBiaXQuCisKIFdoYXQ6CQkvc3lzL2J1cy9zb2MKIERh
-dGU6CQlKYW51YXJ5IDIwMTIKIGNvbnRhY3Q6CUxlZSBKb25lcyA8bGVlLmpvbmVzQGxpbmFyby5v
-cmc+CmRpZmYgLS1naXQgYS9kcml2ZXJzL2Jhc2Uvc29jLmMgYi9kcml2ZXJzL2Jhc2Uvc29jLmMK
-aW5kZXggNGFmMTFhNDIzNDc1Li40NGRjNzU3YWFkZjQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvYmFz
-ZS9zb2MuYworKysgYi9kcml2ZXJzL2Jhc2Uvc29jLmMKQEAgLTM2LDYgKzM2LDcgQEAgc3RhdGlj
-IERFVklDRV9BVFRSKGZhbWlseSwgICBTX0lSVUdPLCBzb2NfaW5mb19nZXQsICBOVUxMKTsKIHN0
-YXRpYyBERVZJQ0VfQVRUUihzZXJpYWxfbnVtYmVyLCBTX0lSVUdPLCBzb2NfaW5mb19nZXQsICBO
-VUxMKTsKIHN0YXRpYyBERVZJQ0VfQVRUUihzb2NfaWQsICAgU19JUlVHTywgc29jX2luZm9fZ2V0
-LCAgTlVMTCk7CiBzdGF0aWMgREVWSUNFX0FUVFIocmV2aXNpb24sIFNfSVJVR08sIHNvY19pbmZv
-X2dldCwgIE5VTEwpOworc3RhdGljIERFVklDRV9BVFRSKGplcDEwNl9pZGVudGlmaWNhdGlvbl9j
-b2RlLCBTX0lSVUdPLCBzb2NfaW5mb19nZXQsICBOVUxMKTsKIAogc3RydWN0IGRldmljZSAqc29j
-X2RldmljZV90b19kZXZpY2Uoc3RydWN0IHNvY19kZXZpY2UgKnNvY19kZXYpCiB7CkBAIC02NCw2
-ICs2NSw5IEBAIHN0YXRpYyB1bW9kZV90IHNvY19hdHRyaWJ1dGVfbW9kZShzdHJ1Y3Qga29iamVj
-dCAqa29iaiwKIAlpZiAoKGF0dHIgPT0gJmRldl9hdHRyX3NvY19pZC5hdHRyKQogCSAgICAmJiAo
-c29jX2Rldi0+YXR0ci0+c29jX2lkICE9IE5VTEwpKQogCQlyZXR1cm4gYXR0ci0+bW9kZTsKKwlp
-ZiAoKGF0dHIgPT0gJmRldl9hdHRyX2plcDEwNl9pZGVudGlmaWNhdGlvbl9jb2RlLmF0dHIpCisJ
-ICAgICYmIChzb2NfZGV2LT5hdHRyLT5qZXAxMDZfaWQgIT0gTlVMTCkpCisJCXJldHVybiBhdHRy
-LT5tb2RlOwogCiAJLyogVW5rbm93biBvciB1bmZpbGxlZCBhdHRyaWJ1dGUuICovCiAJcmV0dXJu
-IDA7CkBAIC04NSw2ICs4OSw4IEBAIHN0YXRpYyBzc2l6ZV90IHNvY19pbmZvX2dldChzdHJ1Y3Qg
-ZGV2aWNlICpkZXYsCiAJCXJldHVybiBzcHJpbnRmKGJ1ZiwgIiVzXG4iLCBzb2NfZGV2LT5hdHRy
-LT5zZXJpYWxfbnVtYmVyKTsKIAlpZiAoYXR0ciA9PSAmZGV2X2F0dHJfc29jX2lkKQogCQlyZXR1
-cm4gc3ByaW50ZihidWYsICIlc1xuIiwgc29jX2Rldi0+YXR0ci0+c29jX2lkKTsKKwlpZiAoYXR0
-ciA9PSAmZGV2X2F0dHJfamVwMTA2X2lkZW50aWZpY2F0aW9uX2NvZGUpCisJCXJldHVybiBzcHJp
-bnRmKGJ1ZiwgIiVzXG4iLCBzb2NfZGV2LT5hdHRyLT5qZXAxMDZfaWQpOwogCiAJcmV0dXJuIC1F
-SU5WQUw7CiAKQEAgLTk2LDYgKzEwMiw3IEBAIHN0YXRpYyBzdHJ1Y3QgYXR0cmlidXRlICpzb2Nf
-YXR0cltdID0gewogCSZkZXZfYXR0cl9zZXJpYWxfbnVtYmVyLmF0dHIsCiAJJmRldl9hdHRyX3Nv
-Y19pZC5hdHRyLAogCSZkZXZfYXR0cl9yZXZpc2lvbi5hdHRyLAorCSZkZXZfYXR0cl9qZXAxMDZf
-aWRlbnRpZmljYXRpb25fY29kZS5hdHRyLAogCU5VTEwsCiB9OwogCkBAIC0yMTQsNiArMjIxLDEx
-IEBAIHN0YXRpYyBpbnQgc29jX2RldmljZV9tYXRjaF9hdHRyKGNvbnN0IHN0cnVjdCBzb2NfZGV2
-aWNlX2F0dHJpYnV0ZSAqYXR0ciwKIAkgICAgKCFhdHRyLT5zb2NfaWQgfHwgIWdsb2JfbWF0Y2go
-bWF0Y2gtPnNvY19pZCwgYXR0ci0+c29jX2lkKSkpCiAJCXJldHVybiAwOwogCisJaWYgKG1hdGNo
-LT5qZXAxMDZfaWQgJiYKKwkgICAgKCFhdHRyLT5qZXAxMDZfaWQgfHwKKwkgICAgICFnbG9iX21h
-dGNoKG1hdGNoLT5qZXAxMDZfaWQsIGF0dHItPmplcDEwNl9pZCkpKQorCQlyZXR1cm4gMDsKKwog
-CXJldHVybiAxOwogfQogCmRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L3N5c19zb2MuaCBiL2lu
-Y2x1ZGUvbGludXgvc3lzX3NvYy5oCmluZGV4IGQ5YjNjZjBmNDEwYy4uMzk0ZmE3MGFlMTZmIDEw
-MDY0NAotLS0gYS9pbmNsdWRlL2xpbnV4L3N5c19zb2MuaAorKysgYi9pbmNsdWRlL2xpbnV4L3N5
-c19zb2MuaApAQCAtMTQsNiArMTQsNyBAQCBzdHJ1Y3Qgc29jX2RldmljZV9hdHRyaWJ1dGUgewog
-CWNvbnN0IGNoYXIgKnJldmlzaW9uOwogCWNvbnN0IGNoYXIgKnNlcmlhbF9udW1iZXI7CiAJY29u
-c3QgY2hhciAqc29jX2lkOworCWNvbnN0IGNoYXIgKmplcDEwNl9pZDsKIAljb25zdCB2b2lkICpk
-YXRhOwogCWNvbnN0IHN0cnVjdCBhdHRyaWJ1dGVfZ3JvdXAgKmN1c3RvbV9hdHRyX2dyb3VwOwog
-fTsKLS0gCjIuMTcuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2xpbnV4LWFybS1rZXJuZWwK
+SMCCC v1.2 adds a new optional function SMCCC_ARCH_SOC_ID to obtain a
+SiP defined SoC identification value. Add support for the same.
+
+Also using the SoC bus infrastructure, let us expose the platform
+specific SoC atrributes under sysfs.
+
+Reviewed-by: Steven Price <steven.price@arm.com>
+Acked-by: Etienne Carriere <etienne.carriere@st.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+---
+ drivers/firmware/smccc/Kconfig  |   9 +++
+ drivers/firmware/smccc/Makefile |   1 +
+ drivers/firmware/smccc/soc_id.c | 113 ++++++++++++++++++++++++++++++++
+ include/linux/arm-smccc.h       |   5 ++
+ 4 files changed, 128 insertions(+)
+ create mode 100644 drivers/firmware/smccc/soc_id.c
+
+diff --git a/drivers/firmware/smccc/Kconfig b/drivers/firmware/smccc/Kconfig
+index 27b675d76235..15e7466179a6 100644
+--- a/drivers/firmware/smccc/Kconfig
++++ b/drivers/firmware/smccc/Kconfig
+@@ -14,3 +14,12 @@ config HAVE_ARM_SMCCC_DISCOVERY
+ 	 to add SMCCC discovery mechanism though the PSCI firmware
+ 	 implementation of PSCI_FEATURES(SMCCC_VERSION) which returns
+ 	 success on firmware compliant to SMCCC v1.1 and above.
++
++config ARM_SMCCC_SOC_ID
++	bool "SoC bus device for the ARM SMCCC SOC_ID"
++	depends on HAVE_ARM_SMCCC_DISCOVERY
++	default y
++	select SOC_BUS
++	help
++	  Include support for the SoC bus on the ARM SMCCC firmware based
++	  platforms providing some sysfs information about the SoC variant.
+diff --git a/drivers/firmware/smccc/Makefile b/drivers/firmware/smccc/Makefile
+index 6f369fe3f0b9..72ab84042832 100644
+--- a/drivers/firmware/smccc/Makefile
++++ b/drivers/firmware/smccc/Makefile
+@@ -1,3 +1,4 @@
+ # SPDX-License-Identifier: GPL-2.0
+ #
+ obj-$(CONFIG_HAVE_ARM_SMCCC_DISCOVERY)	+= smccc.o
++obj-$(CONFIG_ARM_SMCCC_SOC_ID)	+= soc_id.o
+diff --git a/drivers/firmware/smccc/soc_id.c b/drivers/firmware/smccc/soc_id.c
+new file mode 100644
+index 000000000000..437175a589e2
+--- /dev/null
++++ b/drivers/firmware/smccc/soc_id.c
+@@ -0,0 +1,113 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright 2020 Arm Limited
++ */
++
++#define pr_fmt(fmt) "SMCCC: SOC_ID: " fmt
++
++#include <linux/arm-smccc.h>
++#include <linux/bitfield.h>
++#include <linux/device.h>
++#include <linux/module.h>
++#include <linux/kernel.h>
++#include <linux/slab.h>
++#include <linux/sys_soc.h>
++
++#define SMCCC_SOC_ID_JEP106_BANK_IDX_MASK	GENMASK(30, 24)
++/*
++ * As per the SMC Calling Convention specification v1.2 (ARM DEN 0028C)
++ * Section 7.4 SMCCC_ARCH_SOC_ID bits[23:16] are JEP-106 identification
++ * code with parity bit for the SiP. We can drop the parity bit.
++ */
++#define SMCCC_SOC_ID_JEP106_ID_CODE_MASK	GENMASK(22, 16)
++#define SMCCC_SOC_ID_IMP_DEF_SOC_ID_MASK	GENMASK(15, 0)
++
++#define JEP106_BANK_CONT_CODE(x)	\
++	(u8)(FIELD_GET(SMCCC_SOC_ID_JEP106_BANK_IDX_MASK, (x)))
++#define JEP106_ID_CODE(x)	\
++	(u8)(FIELD_GET(SMCCC_SOC_ID_JEP106_ID_CODE_MASK, (x)))
++#define IMP_DEF_SOC_ID(x)	\
++	(u16)(FIELD_GET(SMCCC_SOC_ID_IMP_DEF_SOC_ID_MASK, (x)))
++
++static struct soc_device *soc_dev;
++static struct soc_device_attribute *soc_dev_attr;
++
++static int __init smccc_soc_init(void)
++{
++	struct arm_smccc_res res;
++	int soc_id_rev, soc_id_version;
++	static char soc_id_str[8], soc_id_rev_str[12];
++	static char soc_id_jep106_id_str[8];
++
++	if (arm_smccc_get_version() < ARM_SMCCC_VERSION_1_2)
++		return 0;
++
++	if (arm_smccc_1_1_get_conduit() == SMCCC_CONDUIT_NONE) {
++		pr_err("%s: invalid SMCCC conduit\n", __func__);
++		return -EOPNOTSUPP;
++	}
++
++	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
++			     ARM_SMCCC_ARCH_SOC_ID, &res);
++
++	if (res.a0 == SMCCC_RET_NOT_SUPPORTED) {
++		pr_info("ARCH_SOC_ID not implemented, skipping ....\n");
++		return 0;
++	}
++
++	if ((int)res.a0 < 0) {
++		pr_info("ARCH_FEATURES(ARCH_SOC_ID) returned error: %lx\n",
++			res.a0);
++		return -EINVAL;
++	}
++
++        arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_SOC_ID, 0, &res);
++        if ((int)res.a0 < 0) {
++                pr_err("ARCH_SOC_ID(0) returned error: %lx\n", res.a0);
++                return -EINVAL;
++        }
++
++	soc_id_version = res.a0;
++
++        arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_SOC_ID, 1, &res);
++        if ((int)res.a0 < 0) {
++                pr_err("ARCH_SOC_ID(1) returned error: %lx\n", res.a0);
++                return -EINVAL;
++        }
++
++	soc_id_rev = res.a0;
++
++	soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
++	if (!soc_dev_attr)
++		return -ENOMEM;
++
++	sprintf(soc_id_str, "0x%04x", IMP_DEF_SOC_ID(soc_id_version));
++	sprintf(soc_id_rev_str, "0x%08x", soc_id_rev);
++	sprintf(soc_id_jep106_id_str, "0x%02x%02x",
++		JEP106_BANK_CONT_CODE(soc_id_version),
++		JEP106_ID_CODE(soc_id_version));
++
++	soc_dev_attr->soc_id = soc_id_str;
++	soc_dev_attr->revision = soc_id_rev_str;
++	soc_dev_attr->jep106_id = soc_id_jep106_id_str;
++
++	soc_dev = soc_device_register(soc_dev_attr);
++	if (IS_ERR(soc_dev)) {
++		kfree(soc_dev_attr);
++		return PTR_ERR(soc_dev);
++	}
++
++	pr_info("ID = %s Revision = %s\n", soc_dev_attr->soc_id,
++		soc_dev_attr->revision);
++
++	return 0;
++}
++module_init(smccc_soc_init);
++
++static void __exit smccc_soc_exit(void)
++{
++	if (soc_dev)
++		soc_device_unregister(soc_dev);
++	kfree(soc_dev_attr);
++}
++module_exit(smccc_soc_exit);
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 56d6a5c6e353..8254e11ea857 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -71,6 +71,11 @@
+ 			   ARM_SMCCC_SMC_32,				\
+ 			   0, 1)
+ 
++#define ARM_SMCCC_ARCH_SOC_ID						\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   0, 2)
++
+ #define ARM_SMCCC_ARCH_WORKAROUND_1					\
+ 	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
+ 			   ARM_SMCCC_SMC_32,				\
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
