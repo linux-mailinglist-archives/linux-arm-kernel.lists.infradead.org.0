@@ -2,162 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A1901DEC27
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 17:38:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 467101DEC2E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 17:39:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ioknd/NKf3fscEeGyFDnlNdQBRh2T8lqUeuXj46d54w=; b=Zc+w2vRxHbsFtn
-	UcngtbLAV8IPFKE0cACJdYEiRisnBzBS7MWcV26Wzt8i+n9FZV0X0/oIQ4axpljkFauXR++tMk6iV
-	fYlh9OtCdorE+gaju5VNh/iGflbz7uoZEfHa4GKNfwd5psh6vXGjH6HI7TtgkcsKJOIr6xrB28l46
-	5UytUK6u/ELMJVG+1ghI7unsJycsvOCjNGx2gh3S7ZnWgy42KKlOvIA+XsAhiJcOdEzFmLTPDVdxi
-	uuA/ferDLLXuf0VX6mV0xU2Gvg9X2D+lf5ckKKVvPFl916oVKD4QvSwtoxCduT5h10tvD3UDlCYyr
-	aPakSvGljkYBLAcfi0Gg==;
+	List-Owner; bh=aw3oDn8u+poZ97bZsDipPdP2XWZgkGcRDAUYOgbJ8cM=; b=gqrsFfbL3Tiw/T
+	nNsVJu7pqvbP4HOCsXg7UK4aS+P6GRawemjiFqdz015myJ+nu3hv18f//8Za70v3xRJUVlonVJJH4
+	g8MJwjjREvhQcqGvAjZDDppVIVnIqplbUcXRzu54ZeIq5AhzIr7te8p2sohUrZ9mqPUVV2tfWpIqD
+	Wp8VqRNqoZTyVUQeXUI7+2V9gLExDtZgYZuKiyX4E9s0l1JG8wX1CMY9Tci1p0qhtDswqHEG1itYK
+	ie7JvA9Au8zu3LwQARoBpEt1qO7YKy9lPpRR4IspE+bqZBt6kGgEXgcAwGRUUB508WfEqX8ReO8pP
+	jMdKZ4dQGi5TKLcDgUsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc9kq-0007uW-NO; Fri, 22 May 2020 15:38:36 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jc9lL-0008Fg-0P; Fri, 22 May 2020 15:39:07 +0000
+Received: from mail-vi1eur05on2043.outbound.protection.outlook.com
+ ([40.107.21.43] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc9kc-0007tf-F6; Fri, 22 May 2020 15:38:24 +0000
-Received: by mail-wr1-x444.google.com with SMTP id l11so10637314wru.0;
- Fri, 22 May 2020 08:38:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=En8ZDEzcLbAeuTI5D0xEPaBrQHbpj1ERdOhqo1dr+r8=;
- b=Maet0jYB2Ziw+jAZixcFkMD7SlYDYi10f7LbCxcQyEVpW73PX3rTAtRn9pY/ATGuND
- CZrOiwD1w72ZEVA9FI1UMMz76MCqIEQb2creMzRyVznwM2DHdZoNFy+AmoZjtbcknaJJ
- YGQvBCyzQcwhaiPDnBXL2r4OvbcdmGZ5+sx2vTCn1xEVGpEZC2SVV1LS+BHkWqLMssIy
- a8Kq6NlUsYCHJvx7Yqf0YU9XjCgMlPLlUGcg65jKkrMcBcWHlxUiPTFFPYCORQvfULL6
- Cy/VVf/61vU5AwFmjfvoLollxiAObPQQRHIykOUM4RuTlofc+p6XRn9DwBcgEKDjA05c
- IemA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=En8ZDEzcLbAeuTI5D0xEPaBrQHbpj1ERdOhqo1dr+r8=;
- b=YFDLiQ5/kdeVwuO/4g7uPgrBAgpe7Xa0waKOwCu34Cha9SwzmPwQa8TjRATuE2VoKp
- FN+JvsnhQ7HXIu6C8dZC22juN0y1rOci0C40RW0pepAo/c+l8Ivc+mBkAmpbrHzx1/ZK
- Xa4pAWaxCMP9dkn2nef2kM5H/GHDgRFBwdu6M2Em71qE4s0n0GBdBrB2eU7/86b9PxQg
- DX8WVzA1PGg6fdkfYGKJqSzH2M/BJMI3biHnLvRig5EHMoyIz2Do45/rXRebyl1knnfl
- CYgq1io2rh69v9e6X81CwTPCYVI6E7QipAqZYKHuWOJImsfAZ4KTTc9OngGYfXQivkp6
- BNvQ==
-X-Gm-Message-State: AOAM533TCGXvDOXwJIH/d/Qp747UIoXJR7hVzv7tYUfah72QrsBxeiJx
- jsxmFQnuhRbzC3J2X7kfx+gFIZzrg6g=
-X-Google-Smtp-Source: ABdhPJx0CsXJEAx4ihSfjjcd18gWgluoE61/HcXLEiO24nOqUV2+UgcKmG9ekSVcZvUpfCDm8TEn8Q==
-X-Received: by 2002:adf:f783:: with SMTP id q3mr3829441wrp.348.1590161900546; 
- Fri, 22 May 2020 08:38:20 -0700 (PDT)
-Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id e21sm9658808wme.34.2020.05.22.08.38.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 22 May 2020 08:38:19 -0700 (PDT)
-Subject: Re: [PATCH v8 3/3] PM / AVS: SVS: Introduce SVS engine
-To: Roger Lu <roger.lu@mediatek.com>,
- Enric Balletbo Serra <eballetbo@gmail.com>
-References: <20200518092403.22647-1-roger.lu@mediatek.com>
- <20200518092403.22647-4-roger.lu@mediatek.com>
- <CAFqH_527ZJEmsvrk-n-uNSc+Bx87ZVppn=rNKDWPGYUuf+gvPA@mail.gmail.com>
- <1590140434.4392.22.camel@mtksdaap41>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <3b810588-ac4a-7fec-2163-38555dd83928@gmail.com>
-Date: Fri, 22 May 2020 17:38:18 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <1590140434.4392.22.camel@mtksdaap41>
+ id 1jc9l5-0008Aj-4y
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 15:38:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QNo6KPnzAMvN7zazUAjYj6PzjceNwOkWiS0Svzveuj5m+nnCTuSP27KDmU0ZfGJtCN/DkQMFw+lL+jcJKEFO3ToWirR5dNTGbiTkXRecjtSfrkTtlnb44C8T9WoALEwEQck3TK88GQvopwTZ1d67XGZeiO/KzUmLzMJBMAhn9Za6aZ94A1c3eEBA3dpdoo0fHjHrSD5PY3tkPbLk7Rp8Z1i2MdJjTS+9CM/vnhYiJCl5ppR3w1aBuuvP7rQpu5kBd/upg8sHe9Z8FqKjhKISl8KmzYnOnxu/RcGxouBwplObJ8eGRouUqTFzYDvjF236COyFB770+8aXztGACkoyMg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=++5RDkQGvKFaD7ymimtcrLCqvOJxSh/XBsqCdIiV2vE=;
+ b=iPuM/CPZj4pMavVi2J1vpz8ZepQeGPBcF/Impp5Nt+sz2csFqbQWQORqgOzZCo59RudR/KYtpkhbZUkOPmJ+BZ+qHgIWPGtEla5ceo6FWeKXYApxtNc+dTMdLBcfhc/yraSKMz08yIfA3YMzVqOyIL9wb2czqfOFFMbF0/i0cagmepGs95MM8gWlkikAenvjEc8856WrJdFsjGpol7HuaVR8kTJK5T4dNWR8p8+6Gl2z5ytuK4H5Io7CADDichzWdvmajK7TzdJy6VA4pH8WyzaZoEyRx6ukqW2WdyR8lAQrx0DMW68tSLJhuMxWfCcVqkwsVUfiGit4vhPOpuIknA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=++5RDkQGvKFaD7ymimtcrLCqvOJxSh/XBsqCdIiV2vE=;
+ b=JV2wlbqAjh8mGd4KX+KmhYvYUSZKZKBkSDZTCxfuAheiGMZ9tguapXkDHpG3YFZZGRsCdyrcN/riSaB47qf/d1Y5PWOIHb6O0TJ4Mp1/tbKwly11PJVPLK1lXeQRmgbL6C+8idy76efD1EO+PrlSFbcujxY6iZ/TsSRabDnTq30=
+Authentication-Results: lists.infradead.org; dkim=none (message not signed)
+ header.d=none;lists.infradead.org; dmarc=none action=none
+ header.from=nxp.com;
+Received: from VI1PR0402MB3405.eurprd04.prod.outlook.com (2603:10a6:803:3::26)
+ by VI1PR0402MB3904.eurprd04.prod.outlook.com (2603:10a6:803:17::32)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.24; Fri, 22 May
+ 2020 15:38:44 +0000
+Received: from VI1PR0402MB3405.eurprd04.prod.outlook.com
+ ([fe80::b97a:64f0:3ab5:d7fa]) by VI1PR0402MB3405.eurprd04.prod.outlook.com
+ ([fe80::b97a:64f0:3ab5:d7fa%5]) with mapi id 15.20.3021.027; Fri, 22 May 2020
+ 15:38:44 +0000
+Subject: Re: [PATCH 09/12] dt-bindings: arm: fsl: Add msi-map device-tree
+ binding for fsl-mc bus
+To: Rob Herring <robh+dt@kernel.org>, Robin Murphy <robin.murphy@arm.com>
+References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
+ <20200521130008.8266-10-lorenzo.pieralisi@arm.com>
+ <CAL_Jsq+h18gH2D3B-OZku6ACCgonPUJcUnrN8a5=jApsXHdB5Q@mail.gmail.com>
+ <abca6ecb-5d93-832f-ff7c-de53bb6203f3@arm.com>
+ <CAL_JsqKVyqc9QZhGD7FeNLpJ=x3oLzmY0zADBa+6ZaE46dN39w@mail.gmail.com>
+From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Message-ID: <73494357-9fd2-97d5-f139-d2353b14b83d@nxp.com>
+Date: Fri, 22 May 2020 18:38:30 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
+In-Reply-To: <CAL_JsqKVyqc9QZhGD7FeNLpJ=x3oLzmY0zADBa+6ZaE46dN39w@mail.gmail.com>
 Content-Language: en-US
+X-ClientProxiedBy: VI1PR0901CA0089.eurprd09.prod.outlook.com
+ (2603:10a6:800:7e::15) To VI1PR0402MB3405.eurprd04.prod.outlook.com
+ (2603:10a6:803:3::26)
+MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [192.168.1.104] (188.25.97.237) by
+ VI1PR0901CA0089.eurprd09.prod.outlook.com (2603:10a6:800:7e::15) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23 via Frontend
+ Transport; Fri, 22 May 2020 15:38:43 +0000
+X-Originating-IP: [188.25.97.237]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 30766822-adb5-49f5-b93e-08d7fe6635af
+X-MS-TrafficTypeDiagnostic: VI1PR0402MB3904:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VI1PR0402MB39045664A9DCDCF312E75605ECB40@VI1PR0402MB3904.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
+X-Forefront-PRVS: 04111BAC64
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: bQe9LqykGMF2pPGiLRDOEKO4YD95ynna/A9KqBf4FOC8F6rebf/QHwEyQ/tRX54orSmAbCqF+COyRuy8PLX6FaDW7Hgc7LjhYTtVvU2WhKQIbOzdAkAH4g2Fgu3bpqLSGFu72DukaX5oo8SGXm01t6onf1wtidmVvb5ud4Tdx1/QgH1DF3DDimz2Ctxoy7NRIJV0kKcZJsb/yerbUHeGj+691Lk5t8BHIyVwX2ZzrpoNmINlrS6fIxouGiUi3U+GKDTT9Vnz+Xz0UhNR1OkqH5OhuEIgoTrITQoEvMnWZIarcA8GVMhZDqSArJr1OvmG0Oqf2dGmYDpLT+xCDVORTGV9W3vo+xIdlOPOxKGzChf8HEIROkqb78mY7bsVZld6
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VI1PR0402MB3405.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(346002)(136003)(366004)(396003)(39860400002)(376002)(44832011)(8936002)(26005)(36756003)(16526019)(8676002)(6666004)(66556008)(186003)(5660300002)(52116002)(86362001)(53546011)(66476007)(66946007)(7416002)(6486002)(2616005)(110136005)(2906002)(316002)(956004)(54906003)(31686004)(478600001)(31696002)(16576012)(4326008)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: tg34IxtE9eTVSFcOUNkpKVCY9gYCWEKfgRYLsFB+4OLEhmoIThxdLG69LylFzlVH7SdJXsbMWpIHkS4YlzR+8sMQjS5LFNX1KSaJEJxoZEshjW9/V8FyQjrqa8YUI9WE9qYzxZdVjC3GcCtFl8QgcvcQ4b/rF/Qp6/WL21X+qC1was04Ha+PuaQEvO5V0RuHCHk8bAJKaU4UI3T+5K9D7vmXDlRBpWPSqtmi2pCHtXx7EV2gpTMjeMt+aHoebULCoAT+D/H74SfvSaip0EmUz/OHHHnHEyYy1kT8+IMzZ2fPBPuQWUbBMzk4WguNYNL6brAXirWGNbp9AObLITHCo6IUCv059AhfxLOSPEdf1EyedyNyqQPyH2Pab8Y8/+fI8aDgepx8lCyOEubvrO/mjPLYU50AWRb9Y3KhWmLipw6QZdkmboKD3ds2VhvDVYUZwcECnSG6Os41YGHXgRHV6FPCz4DqT5wrR5oGgljYPVg=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 30766822-adb5-49f5-b93e-08d7fe6635af
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 May 2020 15:38:43.9221 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: JjK1jzb5YdvqvSM5fosmGyeHv4N0bsvZ+s2RCnCrxL9d+d1/NW2edR2JctjADBgUwH3vmRedhTVTKQY+tt/KRA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3904
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_083822_508077_FC9A6AEE 
-X-CRM114-Status: GOOD (  27.39  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200522_083851_217591_D98F8C2D 
+X-CRM114-Status: GOOD (  21.61  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.21.43 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.43 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -166,6 +122,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -177,546 +134,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
- Nishanth Menon <nm@ti.com>, Kevin Hilman <khilman@kernel.org>,
- Stephen Boyd <sboyd@kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
- Angus Lin <Angus.Lin@mediatek.com>, Xiaoqing Liu <Xiaoqing.Liu@mediatek.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Fan Chen <fan.chen@mediatek.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- HenryC Chen <HenryC.Chen@mediatek.com>,
- Charles Yang <Charles.Yang@mediatek.com>, YT Lee <yt.lee@mediatek.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will@kernel.org>, PCI <linux-pci@vger.kernel.org>,
+ Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, linux-acpi@vger.kernel.org,
+ Linux IOMMU <iommu@lists.linux-foundation.org>, Marc Zyngier <maz@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Diana Craciun <diana.craciun@oss.nxp.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 22/05/2020 11:40, Roger Lu wrote:
-> 
-> Hi Enric,
-> 
-> On Tue, 2020-05-19 at 17:30 +0200, Enric Balletbo Serra wrote:
->> Hi Roger,
+On 5/22/2020 5:02 PM, Rob Herring wrote:
+> On Fri, May 22, 2020 at 3:42 AM Robin Murphy <robin.murphy@arm.com> wrote:
 >>
->> Thank you for your patch. I have the feeling that this driver is
->> complex and difficult to follow and I am wondering if it wouldn't be
->> better if you can send a version that simply adds basic functionality
->> for now. Some comments below.
-> 
-> Thanks for the advices. I'll submit SVS v9 with basic functionality
-> patch + step by step functionalities' patches. 
-> 
->>
->> Missatge de Roger Lu <roger.lu@mediatek.com> del dia dl., 18 de maig
->> 2020 a les 11:25:
+>> On 2020-05-22 00:10, Rob Herring wrote:
+>>> On Thu, May 21, 2020 at 7:00 AM Lorenzo Pieralisi
+>>> <lorenzo.pieralisi@arm.com> wrote:
+>>>>
+>>>> From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+>>>>
+>>>> The existing bindings cannot be used to specify the relationship
+>>>> between fsl-mc devices and GIC ITSes.
+>>>>
+>>>> Add a generic binding for mapping fsl-mc devices to GIC ITSes, using
+>>>> msi-map property.
+>>>>
+>>>> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+>>>> Cc: Rob Herring <robh+dt@kernel.org>
+>>>> ---
+>>>>   .../devicetree/bindings/misc/fsl,qoriq-mc.txt | 30 +++++++++++++++++--
+>>>>   1 file changed, 27 insertions(+), 3 deletions(-)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt b/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
+>>>> index 9134e9bcca56..b0813b2d0493 100644
+>>>> --- a/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
+>>>> +++ b/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
+>>>> @@ -18,9 +18,9 @@ same hardware "isolation context" and a 10-bit value called an ICID
+>>>>   the requester.
+>>>>
+>>>>   The generic 'iommus' property is insufficient to describe the relationship
+>>>> -between ICIDs and IOMMUs, so an iommu-map property is used to define
+>>>> -the set of possible ICIDs under a root DPRC and how they map to
+>>>> -an IOMMU.
+>>>> +between ICIDs and IOMMUs, so the iommu-map and msi-map properties are used
+>>>> +to define the set of possible ICIDs under a root DPRC and how they map to
+>>>> +an IOMMU and a GIC ITS respectively.
+>>>>
+>>>>   For generic IOMMU bindings, see
+>>>>   Documentation/devicetree/bindings/iommu/iommu.txt.
+>>>> @@ -28,6 +28,9 @@ Documentation/devicetree/bindings/iommu/iommu.txt.
+>>>>   For arm-smmu binding, see:
+>>>>   Documentation/devicetree/bindings/iommu/arm,smmu.yaml.
+>>>>
+>>>> +For GICv3 and GIC ITS bindings, see:
+>>>> +Documentation/devicetree/bindings/interrupt-controller/arm,gic-v3.yaml.
+>>>> +
+>>>>   Required properties:
+>>>>
+>>>>       - compatible
+>>>> @@ -119,6 +122,15 @@ Optional properties:
+>>>>     associated with the listed IOMMU, with the iommu-specifier
+>>>>     (i - icid-base + iommu-base).
+>>>>
+>>>> +- msi-map: Maps an ICID to a GIC ITS and associated iommu-specifier
+>>>> +  data.
+>>>> +
+>>>> +  The property is an arbitrary number of tuples of
+>>>> +  (icid-base,iommu,iommu-base,length).
 >>>
->>> The SVS (Smart Voltage Scaling) engine is a piece
->>> of hardware which is used to calculate optimized
->>> voltage values of several power domains,
->>> e.g. CPU/GPU/CCI, according to chip process corner,
->>> temperatures, and other factors. Then DVFS driver
->>> could apply those optimized voltage values to reduce
->>> power consumption.
+>>> I'm confused because the example has GIC ITS phandle, not an IOMMU.
 >>>
->>> Signed-off-by: Roger Lu <roger.lu@mediatek.com>
->>> ---
->>>  drivers/power/avs/Kconfig     |   10 +
->>>  drivers/power/avs/Makefile    |    1 +
->>>  drivers/power/avs/mtk_svs.c   | 2119 +++++++++++++++++++++++++++++++++
->>>  include/linux/power/mtk_svs.h |   23 +
->>>  4 files changed, 2153 insertions(+)
->>>  create mode 100644 drivers/power/avs/mtk_svs.c
->>>  create mode 100644 include/linux/power/mtk_svs.h
+>>> What is an iommu-base?
+>>
+>> Right, I was already halfway through writing a reply to say that all the
+>> copy-pasted "iommu" references here should be using the terminology from
+>> the pci-msi.txt binding instead.
+>>
+>>>> +
+>>>> +  Any ICID in the interval [icid-base, icid-base + length) is
+>>>> +  associated with the listed GIC ITS, with the iommu-specifier
+>>>> +  (i - icid-base + iommu-base).
+>>>>   Example:
+>>>>
+>>>>           smmu: iommu@5000000 {
+>>>> @@ -128,6 +140,16 @@ Example:
+>>>>                  ...
+>>>>           };
+>>>>
+>>>> +       gic: interrupt-controller@6000000 {
+>>>> +               compatible = "arm,gic-v3";
+>>>> +               ...
+>>>> +               its: gic-its@6020000 {
+>>>> +                       compatible = "arm,gic-v3-its";
+>>>> +                       msi-controller;
+>>>> +                       ...
+>>>> +               };
+>>>> +       };
+>>>> +
+>>>>           fsl_mc: fsl-mc@80c000000 {
+>>>>                   compatible = "fsl,qoriq-mc";
+>>>>                   reg = <0x00000008 0x0c000000 0 0x40>,    /* MC portal base */
+>>>> @@ -135,6 +157,8 @@ Example:
+>>>>                   msi-parent = <&its>;
+>>
+>> Side note: is it right to keep msi-parent here? It rather implies that
+>> the MC itself has a 'native' Device ID rather than an ICID, which I
+>> believe is not strictly true. Plus it's extra-confusing that it doesn't
+>> specify an ID either way, since that makes it look like the legacy PCI
+>> case that gets treated implicitly as an identity msi-map, which makes no
+>> sense at all to combine with an actual msi-map.
+> 
+> No, it doesn't make sense from a binding perspective.
+> 
+>>
+>>>>                   /* define map for ICIDs 23-64 */
+>>>>                   iommu-map = <23 &smmu 23 41>;
+>>>> +                /* define msi map for ICIDs 23-64 */
+>>>> +                msi-map = <23 &its 23 41>;
 >>>
->>> diff --git a/drivers/power/avs/Kconfig b/drivers/power/avs/Kconfig
->>> index cdb4237bfd02..67089ac6040e 100644
->>> --- a/drivers/power/avs/Kconfig
->>> +++ b/drivers/power/avs/Kconfig
->>> @@ -35,3 +35,13 @@ config ROCKCHIP_IODOMAIN
->>>           Say y here to enable support io domains on Rockchip SoCs. It is
->>>           necessary for the io domain setting of the SoC to match the
->>>           voltage supplied by the regulators.
->>> +
->>> +config MTK_SVS
->>> +       bool "MediaTek Smart Voltage Scaling(SVS)"
+>>> Seeing 23 twice is odd. The numbers to the right of 'its' should be an
+>>> ITS number space.
 >>
->> Can't be this a module? Why? In such case, you should use tristate option
+>> On about 99% of systems the values in the SMMU Stream ID and ITS Device
+>> ID spaces are going to be the same. Nobody's going to bother carrying
+>> *two* sets of sideband data across the interconnect if they don't have to ;)
 > 
-> Generally, MTK_SVS is needed in MTK SoC(mt81xx) products. So, we don't provide
-> module option in config. If, somehow, SVS isn't needed, we suggest
-> CONFIG_MTK_SVS=n to be set.
+> I'm referring to the 23 on the left and right, not between the msi and
+> iommu. If the left and right are the same, then what are we remapping
+> exactly?
 > 
 
-The question here is if it needs to be probed before we probe the modules. If
-not, we should add a Kconfig option for MT81xx SoCs to select MTK_SVS.
+I also insisted a lot on keeping things simple and don't do any kind of
+translation but Robin convinced me that this is not such a great idea.
+The truth is that the hardware can be configured in such a way that the
+assumption that icid -> streamid mapping is 1:1 no longer holds.
+It just happens that we currently setup the hw to have 1:1 mappings.
 
->>
->>> +       depends on POWER_AVS && MTK_EFUSE && NVMEM
->>> +       help
->>> +         The SVS engine is a piece of hardware which is used to calculate
->>> +         optimized voltage values of several power domains, e.g.
->>> +         CPU clusters/GPU/CCI, according to chip process corner, temperatures,
->>> +         and other factors. Then DVFS driver could apply those optimized voltage
->>> +         values to reduce power consumption.
->>> diff --git a/drivers/power/avs/Makefile b/drivers/power/avs/Makefile
->>> index 9007d05853e2..231adf078582 100644
->>> --- a/drivers/power/avs/Makefile
->>> +++ b/drivers/power/avs/Makefile
->>> @@ -2,3 +2,4 @@
->>>  obj-$(CONFIG_POWER_AVS_OMAP)           += smartreflex.o
->>>  obj-$(CONFIG_QCOM_CPR)                 += qcom-cpr.o
->>>  obj-$(CONFIG_ROCKCHIP_IODOMAIN)                += rockchip-io-domain.o
->>> +obj-$(CONFIG_MTK_SVS)                  += mtk_svs.o
->>
->> Will this driver be SoC specific or the idea is to support different
->> SoCs? If the answer to the first question is yes, please name the file
->> with the SoC prefix (i.e mt8183_svs). However, If the answer to the
->> second question is yes, make sure you prefix common
->> functions/structs/defines with a generic prefix mtk_svs but use the
->> SoC prefix for the ones you expect will be different between SoC, i.e
->> mt8183_svs_. This helps the readability of the driver. Also, try to
->> avoid too generic names.
-> 
-> MTK_SVS is designed for supporting different MTK SoCs.Therefore, the answer is second
-> question and thanks for the heads-up.
-> 
->>
->>> diff --git a/drivers/power/avs/mtk_svs.c b/drivers/power/avs/mtk_svs.c
->>> new file mode 100644
->>> index 000000000000..a4083b3ef175
->>> --- /dev/null
->>> +++ b/drivers/power/avs/mtk_svs.c
->>> @@ -0,0 +1,2119 @@
->>> +// SPDX-License-Identifier: GPL-2.0
->>
->> I suspect you want this only GPLv2 compliant. Use GPL-2.0-only
-> 
-> OK. I'll use GPL-2.0-only.Thanks.
-> 
->>
->>> +/*
->>> + * Copyright (C) 2020 MediaTek Inc.
->>> + */
->>> +
->>> +#define pr_fmt(fmt)    "[mtk_svs] " fmt
->>
->> I don't see any reason to use pr_fmt in this driver. Use dev_*
->> functions instead and remove the above.
-> 
-> Ok. I will remove it. Thanks.
-> 
->>
->>> +
->>> +#include <linux/bits.h>
->>> +#include <linux/clk.h>
->>> +#include <linux/completion.h>
->>> +#include <linux/init.h>
->>> +#include <linux/interrupt.h>
->>> +#include <linux/kernel.h>
->>> +#include <linux/kthread.h>
->>> +#include <linux/module.h>
->>> +#include <linux/mutex.h>
->>> +#include <linux/nvmem-consumer.h>
->>> +#include <linux/of_address.h>
->>> +#include <linux/of_irq.h>
->>> +#include <linux/of_platform.h>
->>> +#include <linux/platform_device.h>
->>> +#include <linux/pm_domain.h>
->>> +#include <linux/pm_opp.h>
->>> +#include <linux/pm_qos.h>
->>> +#include <linux/pm_runtime.h>
->>> +#include <linux/power/mtk_svs.h>
->>> +#include <linux/proc_fs.h>
->>> +#include <linux/regulator/consumer.h>
->>> +#include <linux/reset.h>
->>> +#include <linux/seq_file.h>
->>> +#include <linux/slab.h>
->>> +#include <linux/spinlock.h>
->>> +#include <linux/thermal.h>
->>> +#include <linux/uaccess.h>
->>> +
->>> +/* svs 1-line sw id */
->>> +#define SVS_CPU_LITTLE                 BIT(0)
->>> +#define SVS_CPU_BIG                    BIT(1)
->>> +#define SVS_CCI                                BIT(2)
->>> +#define SVS_GPU                                BIT(3)
->>> +
->>> +/* svs bank mode support */
->>> +#define SVSB_MODE_ALL_DISABLE          (0)
->>
->> nit: SVS_BMODE_?
-> 
-> Oh. If we add bank wording like SVS_Bxxx, it might cause some confusion when B combines
-> with other words. So, I'll keep SVSB for SVS Bank representation.
-> E.g: SVS_BDC_SIGNED_BIT might lead to be explained differently ("SVS bank + DC_SIGNED_BIT" or "SVS + BDC_SIGNED_BIT")
->      - "SVS bank + DC_SIGNED_BIT" is what we want for naming SVS_BDC_SIGNED_BIT but it might be misunderstood.
-> 
->>
->>> +#define SVSB_MODE_INIT01               BIT(1)
->>> +#define SVSB_MODE_INIT02               BIT(2)
->>> +#define SVSB_MODE_MON                  BIT(3)
->>> +
->>> +/* svs bank init01 condition */
->>> +#define SVSB_INIT01_VOLT_IGNORE                BIT(1)
->>> +#define SVSB_INIT01_VOLT_INC_ONLY      BIT(2)
->>> +
->>> +/* svs bank common setting */
->>> +#define HIGH_TEMP_MAX                  (U32_MAX)
->>
->> nit: SVS_*
-> 
-> ok. I will add SVS or SVSB when it refers to SVS BANK.
-> 
->>
->>> +#define RUNCONFIG_DEFAULT              (0x80000000)
->>
->> Btw, there is any public datasheet where I can see those addresses and
->> registers and bit fields?
-> 
-> Excuse us, there is no public datasheet. We can reply it on patchwork. Thanks.
-> 
->>
->>> +#define DC_SIGNED_BIT                  (0x8000)
->>> +#define INTEN_INIT0x                   (0x00005f01)
->>> +#define INTEN_MONVOPEN                 (0x00ff0000)
->>> +#define SVSEN_OFF                      (0x0)
->>> +#define SVSEN_MASK                     (0x7)
->>> +#define SVSEN_INIT01                   (0x1)
->>> +#define SVSEN_INIT02                   (0x5)
->>> +#define SVSEN_MON                      (0x2)
->>> +#define INTSTS_MONVOP                  (0x00ff0000)
->>> +#define INTSTS_COMPLETE                        (0x1)
->>> +#define INTSTS_CLEAN                   (0x00ffffff)
->>> +
->>> +#define proc_fops_rw(name) \
->>> +       static int name ## _proc_open(struct inode *inode,      \
->>> +                                     struct file *file)        \
->>> +       {                                                       \
->>> +               return single_open(file, name ## _proc_show,    \
->>> +                                  PDE_DATA(inode));            \
->>> +       }                                                       \
->>> +       static const struct proc_ops name ## _proc_fops = {     \
->>> +               .proc_open      = name ## _proc_open,           \
->>> +               .proc_read      = seq_read,                     \
->>> +               .proc_lseek     = seq_lseek,                    \
->>> +               .proc_release   = single_release,               \
->>> +               .proc_write     = name ## _proc_write,          \
->>> +       }
->>> +
->>> +#define proc_fops_ro(name) \
->>> +       static int name ## _proc_open(struct inode *inode,      \
->>> +                                     struct file *file)        \
->>> +       {                                                       \
->>> +               return single_open(file, name ## _proc_show,    \
->>> +                                  PDE_DATA(inode));            \
->>> +       }                                                       \
->>> +       static const struct proc_ops name ## _proc_fops = {     \
->>> +               .proc_open      = name ## _proc_open,           \
->>> +               .proc_read      = seq_read,                     \
->>> +               .proc_lseek     = seq_lseek,                    \
->>> +               .proc_release   = single_release,               \
->>> +       }
->>> +
->>> +#define proc_entry(name)       {__stringify(name), &name ## _proc_fops}
->>> +
->>
->> /proc is usually the old way of exporting files to userspace, so
->> unless you have a really good reason use sysfs instead, or even
->> better, if it is only for debug purposes use debugfs. Also, you should
->> document the entries in Documentation.
-> 
-> Ok. I'll change it to debugfs and could you give us an example about entries in documentation?
-> We can follow them. Thanks.
-> 
->>
->>> +static DEFINE_SPINLOCK(mtk_svs_lock);
->>> +struct mtk_svs;
->>> +
->>> +enum svsb_phase {
->>
->> nit: mtk_svs_bphase?
-> 
-> ditto
-> 
->>
->>> +       SVSB_PHASE_INIT01 = 0,
->>
->> nit: SVS_BPHASE_?
-> 
-> ditto
-> 
->>
->>> +       SVSB_PHASE_INIT02,
->>> +       SVSB_PHASE_MON,
->>> +       SVSB_PHASE_ERROR,
->>> +};
->>> +
->>> +enum reg_index {
->>
->> nit: svs_reg_index?
-> 
-> OK. Thanks.
-> 
->>
->>> +       TEMPMONCTL0 = 0,
->>> +       TEMPMONCTL1,
->>> +       TEMPMONCTL2,
->>> +       TEMPMONINT,
->>> +       TEMPMONINTSTS,
->>> +       TEMPMONIDET0,
->>> +       TEMPMONIDET1,
->>> +       TEMPMONIDET2,
->>> +       TEMPH2NTHRE,
->>> +       TEMPHTHRE,
->>> +       TEMPCTHRE,
->>> +       TEMPOFFSETH,
->>> +       TEMPOFFSETL,
->>> +       TEMPMSRCTL0,
->>> +       TEMPMSRCTL1,
->>> +       TEMPAHBPOLL,
->>> +       TEMPAHBTO,
->>> +       TEMPADCPNP0,
->>> +       TEMPADCPNP1,
->>> +       TEMPADCPNP2,
->>> +       TEMPADCMUX,
->>> +       TEMPADCEXT,
->>> +       TEMPADCEXT1,
->>> +       TEMPADCEN,
->>> +       TEMPPNPMUXADDR,
->>> +       TEMPADCMUXADDR,
->>> +       TEMPADCEXTADDR,
->>> +       TEMPADCEXT1ADDR,
->>> +       TEMPADCENADDR,
->>> +       TEMPADCVALIDADDR,
->>> +       TEMPADCVOLTADDR,
->>> +       TEMPRDCTRL,
->>> +       TEMPADCVALIDMASK,
->>> +       TEMPADCVOLTAGESHIFT,
->>> +       TEMPADCWRITECTRL,
->>> +       TEMPMSR0,
->>> +       TEMPMSR1,
->>> +       TEMPMSR2,
->>> +       TEMPADCHADDR,
->>> +       TEMPIMMD0,
->>> +       TEMPIMMD1,
->>> +       TEMPIMMD2,
->>> +       TEMPMONIDET3,
->>> +       TEMPADCPNP3,
->>> +       TEMPMSR3,
->>> +       TEMPIMMD3,
->>> +       TEMPPROTCTL,
->>> +       TEMPPROTTA,
->>> +       TEMPPROTTB,
->>> +       TEMPPROTTC,
->>> +       TEMPSPARE0,
->>> +       TEMPSPARE1,
->>> +       TEMPSPARE2,
->>> +       TEMPSPARE3,
->>> +       TEMPMSR0_1,
->>> +       TEMPMSR1_1,
->>> +       TEMPMSR2_1,
->>> +       TEMPMSR3_1,
->>> +       DESCHAR,
->>> +       TEMPCHAR,
->>> +       DETCHAR,
->>> +       AGECHAR,
->>> +       DCCONFIG,
->>> +       AGECONFIG,
->>> +       FREQPCT30,
->>> +       FREQPCT74,
->>> +       LIMITVALS,
->>> +       VBOOT,
->>> +       DETWINDOW,
->>> +       CONFIG,
->>> +       TSCALCS,
->>> +       RUNCONFIG,
->>> +       SVSEN,
->>> +       INIT2VALS,
->>> +       DCVALUES,
->>> +       AGEVALUES,
->>> +       VOP30,
->>> +       VOP74,
->>> +       TEMP,
->>> +       INTSTS,
->>> +       INTSTSRAW,
->>> +       INTEN,
->>> +       CHKINT,
->>> +       CHKSHIFT,
->>> +       STATUS,
->>> +       VDESIGN30,
->>> +       VDESIGN74,
->>> +       DVT30,
->>> +       DVT74,
->>> +       AGECOUNT,
->>> +       SMSTATE0,
->>> +       SMSTATE1,
->>> +       CTL0,
->>> +       DESDETSEC,
->>> +       TEMPAGESEC,
->>> +       CTRLSPARE0,
->>> +       CTRLSPARE1,
->>> +       CTRLSPARE2,
->>> +       CTRLSPARE3,
->>> +       CORESEL,
->>> +       THERMINTST,
->>> +       INTST,
->>> +       THSTAGE0ST,
->>> +       THSTAGE1ST,
->>> +       THSTAGE2ST,
->>> +       THAHBST0,
->>> +       THAHBST1,
->>> +       SPARE0,
->>> +       SPARE1,
->>> +       SPARE2,
->>> +       SPARE3,
->>> +       THSLPEVEB,
->>> +       reg_num,
->>> +};
->>> +
->>> +static const u32 svs_regs_v2[] = {
->>
->> Is this SoC specific or shared between SoCs?
-> 
-> Shared between SoCs. Some SVS in MTK SoCs use v2 register map.
-> 
+P.S. No idea why, but somehow I got dropped from the thread. Weird.
 
-And which silicon uses v1 then? Is v2 a MediaTek internal naming you want to keep?
-
->>
->>> +       [TEMPMONCTL0]           = 0x000,
->>> +       [TEMPMONCTL1]           = 0x004,
->>> +       [TEMPMONCTL2]           = 0x008,
->>> +       [TEMPMONINT]            = 0x00c,
->>> +       [TEMPMONINTSTS]         = 0x010,
->>> +       [TEMPMONIDET0]          = 0x014,
->>> +       [TEMPMONIDET1]          = 0x018,
->>> +       [TEMPMONIDET2]          = 0x01c,
->>> +       [TEMPH2NTHRE]           = 0x024,
->>> +       [TEMPHTHRE]             = 0x028,
->>> +       [TEMPCTHRE]             = 0x02c,
->>> +       [TEMPOFFSETH]           = 0x030,
->>> +       [TEMPOFFSETL]           = 0x034,
->>> +       [TEMPMSRCTL0]           = 0x038,
->>> +       [TEMPMSRCTL1]           = 0x03c,
->>> +       [TEMPAHBPOLL]           = 0x040,
->>> +       [TEMPAHBTO]             = 0x044,
->>> +       [TEMPADCPNP0]           = 0x048,
->>> +       [TEMPADCPNP1]           = 0x04c,
->>> +       [TEMPADCPNP2]           = 0x050,
->>> +       [TEMPADCMUX]            = 0x054,
->>> +       [TEMPADCEXT]            = 0x058,
->>> +       [TEMPADCEXT1]           = 0x05c,
->>> +       [TEMPADCEN]             = 0x060,
->>> +       [TEMPPNPMUXADDR]        = 0x064,
->>> +       [TEMPADCMUXADDR]        = 0x068,
->>> +       [TEMPADCEXTADDR]        = 0x06c,
->>> +       [TEMPADCEXT1ADDR]       = 0x070,
->>> +       [TEMPADCENADDR]         = 0x074,
->>> +       [TEMPADCVALIDADDR]      = 0x078,
->>> +       [TEMPADCVOLTADDR]       = 0x07c,
->>> +       [TEMPRDCTRL]            = 0x080,
->>> +       [TEMPADCVALIDMASK]      = 0x084,
->>> +       [TEMPADCVOLTAGESHIFT]   = 0x088,
->>> +       [TEMPADCWRITECTRL]      = 0x08c,
->>> +       [TEMPMSR0]              = 0x090,
->>> +       [TEMPMSR1]              = 0x094,
->>> +       [TEMPMSR2]              = 0x098,
->>> +       [TEMPADCHADDR]          = 0x09c,
->>> +       [TEMPIMMD0]             = 0x0a0,
->>> +       [TEMPIMMD1]             = 0x0a4,
->>> +       [TEMPIMMD2]             = 0x0a8,
->>> +       [TEMPMONIDET3]          = 0x0b0,
->>> +       [TEMPADCPNP3]           = 0x0b4,
->>> +       [TEMPMSR3]              = 0x0b8,
->>> +       [TEMPIMMD3]             = 0x0bc,
->>> +       [TEMPPROTCTL]           = 0x0c0,
->>> +       [TEMPPROTTA]            = 0x0c4,
->>> +       [TEMPPROTTB]            = 0x0c8,
->>> +       [TEMPPROTTC]            = 0x0cc,
->>> +       [TEMPSPARE0]            = 0x0f0,
->>> +       [TEMPSPARE1]            = 0x0f4,
->>> +       [TEMPSPARE2]            = 0x0f8,
->>> +       [TEMPSPARE3]            = 0x0fc,
->>> +       [TEMPMSR0_1]            = 0x190,
->>> +       [TEMPMSR1_1]            = 0x194,
->>> +       [TEMPMSR2_1]            = 0x198,
->>> +       [TEMPMSR3_1]            = 0x1b8,
->>> +       [DESCHAR]               = 0xc00,
->>> +       [TEMPCHAR]              = 0xc04,
->>> +       [DETCHAR]               = 0xc08,
->>> +       [AGECHAR]               = 0xc0c,
->>> +       [DCCONFIG]              = 0xc10,
->>> +       [AGECONFIG]             = 0xc14,
->>> +       [FREQPCT30]             = 0xc18,
->>> +       [FREQPCT74]             = 0xc1c,
->>> +       [LIMITVALS]             = 0xc20,
->>> +       [VBOOT]                 = 0xc24,
->>> +       [DETWINDOW]             = 0xc28,
->>> +       [CONFIG]                = 0xc2c,
->>> +       [TSCALCS]               = 0xc30,
->>> +       [RUNCONFIG]             = 0xc34,
->>> +       [SVSEN]                 = 0xc38,
->>> +       [INIT2VALS]             = 0xc3c,
->>> +       [DCVALUES]              = 0xc40,
->>> +       [AGEVALUES]             = 0xc44,
->>> +       [VOP30]                 = 0xc48,
->>> +       [VOP74]                 = 0xc4c,
->>> +       [TEMP]                  = 0xc50,
->>> +       [INTSTS]                = 0xc54,
->>> +       [INTSTSRAW]             = 0xc58,
->>> +       [INTEN]                 = 0xc5c,
->>> +       [CHKINT]                = 0xc60,
->>> +       [CHKSHIFT]              = 0xc64,
->>> +       [STATUS]                = 0xc68,
->>> +       [VDESIGN30]             = 0xc6c,
->>> +       [VDESIGN74]             = 0xc70,
->>> +       [DVT30]                 = 0xc74,
->>> +       [DVT74]                 = 0xc78,
->>> +       [AGECOUNT]              = 0xc7c,
->>> +       [SMSTATE0]              = 0xc80,
->>> +       [SMSTATE1]              = 0xc84,
->>> +       [CTL0]                  = 0xc88,
->>> +       [DESDETSEC]             = 0xce0,
->>> +       [TEMPAGESEC]            = 0xce4,
->>> +       [CTRLSPARE0]            = 0xcf0,
->>> +       [CTRLSPARE1]            = 0xcf4,
->>> +       [CTRLSPARE2]            = 0xcf8,
->>> +       [CTRLSPARE3]            = 0xcfc,
->>> +       [CORESEL]               = 0xf00,
->>> +       [THERMINTST]            = 0xf04,
->>> +       [INTST]                 = 0xf08,
->>> +       [THSTAGE0ST]            = 0xf0c,
->>> +       [THSTAGE1ST]            = 0xf10,
->>> +       [THSTAGE2ST]            = 0xf14,
->>> +       [THAHBST0]              = 0xf18,
->>> +       [THAHBST1]              = 0xf1c,
->>> +       [SPARE0]                = 0xf20,
->>> +       [SPARE1]                = 0xf24,
->>> +       [SPARE2]                = 0xf28,
->>> +       [SPARE3]                = 0xf2c,
->>> +       [THSLPEVEB]             = 0xf30,
->>> +};
->>> +
->>> +struct thermal_parameter {
->>
->> In general, not only in this struct, would be good have some
->> documentation to have a better undestanding of the fields. That makes
->> the job of the reviewer a bit easier.
-> 
-> Ok. Could you share a documentation example to us? We'll share the
-> information as much as we can. Thanks a lot.
-> 
-
-you should find that in all drivers, eg:
-https://elixir.bootlin.com/linux/latest/source/drivers/soc/mediatek/mtk-scpsys.c#L111
-
-
-Regards,
-Matthias
+---
+Best Regards, Laurentiu
 
 _______________________________________________
 linux-arm-kernel mailing list
