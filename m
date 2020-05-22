@@ -2,87 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05DC31DF107
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 23:24:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E37831DF10A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 23:25:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zrh3CLkI0rQXmeSsiR9DDZ2K1mnzfAB9roG4WNlkWiA=; b=jG+eVE5FD7PhF5
-	D7aA1+mRsvVVPfae8NbNQJfYyoE5fhV+5vlveSfaKpx3pcJL0xPoL5bCz7U8WTjXQ9kpTo4JhvBfd
-	TJ92ubHs7PUdF3cferWME/3t/kNwhFqrDNoOJv5DNXVbgqUPEpCp+GUABFNtrALiXZPf8pFSHnPBy
-	PmMqO6M44uvG08RdVcEzg+KPjFLJeR/xp3CuvAmaNHCGGj6Q9GfrdwLFfUqLgX3VrZq23QEL+7ZM+
-	U48125rdVKyLA1xE5WnmKlhGMz2YilLe+MeUxYCH3bZwBKm0lhjwQIthMs/v3SBJimkzSNeRJKWYm
-	6nWyg0IKUWWZN/sBdu4w==;
+	List-Owner; bh=1a3rKzfhCsVe6VYu3yAAOg8sR/HTK6nHyTxao1MRcjo=; b=g9mSF964J+k3gI
+	TQX5KsC5r2ih0Qerd+UzK+d3x7Scxr7qlWskqTPc+WgwYmNfXggZLQB4qBj1KCamuqkc9EHCnR/7p
+	QGBzSufYNA+IdGh4VSGEIHNthTLn1xawOUzQhrdZ7o0EVeFjAwIItXJujPV7HjvqpBXn5q64rzFUg
+	TB6Z/m1EQMWGhsiK3A9va3fSYq735PLp7Eqg/MPPsTH5xYdxtt6IA/OaDk8Y25k2ZZimRh2jY98ku
+	Mm3gQV1t9yy8lo118Kr3f2UZ8fx+o/bKXlQMm5WmIOLcocGDdYBb0YGTHSjX5QyALyGk9++aj2rTc
+	wTmPlFbOJFqpdQMOA8jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcF9S-0004kw-Bc; Fri, 22 May 2020 21:24:22 +0000
-Received: from mail-il1-f193.google.com ([209.85.166.193])
+	id 1jcFAN-0005G4-H9; Fri, 22 May 2020 21:25:19 +0000
+Received: from mout.kundenserver.de ([217.72.192.74])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcF9H-0004kG-3p
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 21:24:12 +0000
-Received: by mail-il1-f193.google.com with SMTP id j2so12149933ilr.5
+ id 1jcF9y-0005FV-SF
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 21:24:56 +0000
+Received: from mail-qv1-f49.google.com ([209.85.219.49]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1N4yyQ-1ivSEK2vbQ-010uXp for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 22 May 2020 23:24:52 +0200
+Received: by mail-qv1-f49.google.com with SMTP id l3so5409868qvo.7
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 14:24:10 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=5YCi9Dp13bDOmLIrC4hBxAOPuLUqxhaS10/WtAvU6TE=;
- b=MePJCuzYw+6braPCeia+/hrarPUNf258T80k1drbDxq9TGm9a/B58MrvZBNHFIoyib
- WI7+akCVjmcBkBq1lyAVkJRdl50ePYOIUhH5TfgHBj2hyEMe21pYuTTkfMN/d/oxNTRD
- q6bc/wpAmNJEYJQ7WmAhJgGKoFX513PRt2JU5hYYqk5XD2p9iJ52i3QM1aUnyDs6fzJ2
- 2FjcFPFj03rqMZbDcIT1FJwheMngQYfidbhRXHm5JV8Tiv2gljdpY0RoeYiE5URsgLoV
- quvwREpktYhIBBwwUykZiHmWd6QTlbXM8NoSMv+0Ke2a7LUqt7FcX0i6BO6/mJPBzh7z
- 2qkw==
-X-Gm-Message-State: AOAM530fOr10/9aOc5Pmfi0EM5RE2yCpNu494F7G67wuZvy652cAqnIy
- /fxAfw+cVAG6ieJGEUyzBXUJNtndMGA=
-X-Google-Smtp-Source: ABdhPJz7mdjhiMNX503v7xd3CJOLapOtrRwMpd87BdmF0PJlFGBtd2F/66rE2g32cWjcWpTFamGQhg==
-X-Received: by 2002:a92:98ca:: with SMTP id a71mr8198982ill.178.1590182650014; 
- Fri, 22 May 2020 14:24:10 -0700 (PDT)
-Received: from mail-il1-f173.google.com (mail-il1-f173.google.com.
- [209.85.166.173])
- by smtp.gmail.com with ESMTPSA id f9sm5339317ile.39.2020.05.22.14.24.09
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 22 May 2020 14:24:09 -0700 (PDT)
-Received: by mail-il1-f173.google.com with SMTP id 17so12146887ilj.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 14:24:09 -0700 (PDT)
-X-Received: by 2002:a92:c401:: with SMTP id e1mr15870971ilp.134.1590182649355; 
- Fri, 22 May 2020 14:24:09 -0700 (PDT)
+ Fri, 22 May 2020 14:24:52 -0700 (PDT)
+X-Gm-Message-State: AOAM531RpnnHJhtLdE3nzpFxi/sicYbY6pq2cQaTJfxqrdztjYqaaS7i
+ WWS8aH7YWsY46AfcseEr79FaydU6bjKpY4/8Yyg=
+X-Google-Smtp-Source: ABdhPJyAzA5FWT+7ggHkGIJVW5G625DLGMQ+xLbcYfsvKmg5QVb1RfOKC7fxaBxax93WGvQZ7iy0FhEnP6ORQ5y2MIM=
+X-Received: by 2002:a05:6214:3f0:: with SMTP id
+ cf16mr5926205qvb.4.1590182691491; 
+ Fri, 22 May 2020 14:24:51 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200518221904.GA22274@embeddedor>
-In-Reply-To: <20200518221904.GA22274@embeddedor>
-From: Li Yang <leoyang.li@nxp.com>
-Date: Fri, 22 May 2020 16:23:46 -0500
-X-Gmail-Original-Message-ID: <CADRPPNST6qhAHAEKXAnnJhQhoyb=r5O5YVs2KJW5qNgOjanu-Q@mail.gmail.com>
-Message-ID: <CADRPPNST6qhAHAEKXAnnJhQhoyb=r5O5YVs2KJW5qNgOjanu-Q@mail.gmail.com>
-Subject: Re: [PATCH] soc: fsl: qe: Replace one-element array and use
- struct_size() helper
-To: "Gustavo A. R. Silva" <gustavoars@kernel.org>
+References: <5ec7b744.ZcxrA/L/3+XSTqYO%lkp@intel.com>
+ <5c53e7b7-4caa-06b9-8a9f-b3a29f008bb7@gmail.com>
+In-Reply-To: <5c53e7b7-4caa-06b9-8a9f-b3a29f008bb7@gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 22 May 2020 23:24:35 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a2kz3ej1Kko6uBd5BxYW2CqN+X3kUJ2nDydbUg8Aqfx1w@mail.gmail.com>
+Message-ID: <CAK8P3a2kz3ej1Kko6uBd5BxYW2CqN+X3kUJ2nDydbUg8Aqfx1w@mail.gmail.com>
+Subject: Re: [soc:mediatek/dt] BUILD REGRESSION
+ 189881af810d452b592ee958db43eb4c57df9803
+To: Matthias Brugger <matthias.bgg@gmail.com>
+X-Provags-ID: V03:K1:gd/pI96YzXeYDrQvOGj8YMl3wEfo5CFRQIRIyfcELWXrogQTQNN
+ T1F9CMPamVx4nrPxBXg0laMJdyYPNJ0fd8B+f87p6aK/p2EaxMpE3EKJJgre3lPPYKDvVT3
+ 0jekA+DEw8UcYTkze5X8VhtJPwnCYOznjO9qz4KkG3ANr5sFlXc055rI0OzBdm6YV7Qd+Zm
+ httMzfAZMRK32WoSrZz+g==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:y70RMSeMf9M=:bgKMU+H/ooaxxAbjItNGjm
+ Rga8QMHv2awzJ4ffR+GtLLHG1+OuVNpS5WCaaJHi0IwG9tg4NBET75U6TCSd7zc8FFBCxLO5R
+ XJrZ3m+pq8xv7afIOczQor9cul63tOg/xPEXcMp1Pcm0SqW2vzTLZ4RCDlNnQQV/QVMYQyx5n
+ vnyOzBNWIDCSOSeNFHKPjgXTxyUji+DMXByciF1ZNGMuE+hAZxBHGpGhqjYEmts0ZVwjQPMQv
+ syijGXeRfhx5dw4crs49X7gAvYZAYeLoGBnoJNiQyakMBqFepEiEkdBMDW/MWysJijI04hokG
+ pMZtQ4DE1UITK0FajxdO9n/AB0Syjt9DP4ex/rDD2vZBL2+1qG3dtmlxvv55Uv2agF6SjUxVg
+ dHdUYBZejOrHz5hP7l3aoHIsNafYUJDbexzKC/CL2Y86wmBpcDQawzGR8dwdZZI3seGEMB/n/
+ REULTavcZWmusm63FHjV27PP17gnbIFku5zSXjDdBa/j+5BYSRM4Ckmw4Y8RTjhU2kvbbiTLU
+ mGkTg5uDiKTsHSOa3FA5o4AjhieyHLfF7hjAQJakUXQCgb+okJd0639AFzHt5Khom8wL30x1t
+ TFuFpHSGfS2/Q7ghyekhHeq5I4TaJB8B0raafjM19hoLtZPn04d4m2NFS6j/coxfWu1ZOUYdD
+ DL0sKxl54RThxP/qrJ4xak/whIjfZcqbCxFedcmYOJSLdTqSYqvgw1eaKlTV5WVdOBVFX56Ca
+ ZKfCjWsT8KTme/73731Qvx2u8Lx6UXkdEVtiTuy8RcFtMQxYwyykvyCKus6tqGY61opSBNM6H
+ 4Lu+UVe8E3L2TT9e40DLpCkp1u2dktAYI5/rihtD2Txq2Lp3+M=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_142411_154948_5C5F0643 
-X-CRM114-Status: GOOD (  15.49  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200522_142455_216368_A7B5E849 
+X-CRM114-Status: GOOD (  13.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.193 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [pku.leo[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ no trust [217.72.192.74 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [217.72.192.74 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,68 +91,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>,
- "Gustavo A. R. Silva" <gustavo@embeddedor.com>,
- lkml <linux-kernel@vger.kernel.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Qiang Zhao <qiang.zhao@nxp.com>
+Cc: DTML <devicetree@vger.kernel.org>, arm-soc <arm@kernel.org>,
+ kbuild test robot <lkp@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 18, 2020 at 5:16 PM Gustavo A. R. Silva
-<gustavoars@kernel.org> wrote:
+On Fri, May 22, 2020 at 10:54 PM Matthias Brugger
+<matthias.bgg@gmail.com> wrote:
 >
-> The current codebase makes use of one-element arrays in the following
-> form:
+> Hi all,
+> Hi Arnd and Olof,
 >
-> struct something {
->     int length;
->     u8 data[1];
-> };
+> On 22/05/2020 13:28, kbuild test robot wrote:
+> > tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  mediatek/dt
+> > branch HEAD: 189881af810d452b592ee958db43eb4c57df9803  arm: dts: mt2701: Add usb2 device nodes
+> >
+> > Error/Warning in current branch:
+> >
+> > ERROR: Input tree has errors, aborting (use -f to force output)
+> >
+> > Error/Warning ids grouped by kconfigs:
+> >
+> > recent_errors
+> > `-- arm-randconfig-r035-20200520
+> >     `-- ERROR:Input-tree-has-errors-aborting-(use-f-to-force-output)
 >
-> struct something *instance;
->
-> instance = kmalloc(sizeof(*instance) + size, GFP_KERNEL);
-> instance->length = size;
-> memcpy(instance->data, source, size);
->
-> but the preferred mechanism to declare variable-length types such as
-> these ones is a flexible array member[1][2], introduced in C99:
->
-> struct foo {
->         int stuff;
->         struct boo array[];
-> };
->
-> By making use of the mechanism above, we will get a compiler warning
-> in case the flexible array does not occur last in the structure, which
-> will help us prevent some kind of undefined behavior bugs from being
-> inadvertently introduced[3] to the codebase from now on. So, replace
-> the one-element array with a flexible-array member.
->
-> Also, make use of the new struct_size() helper to properly calculate the
-> size of struct qe_firmware.
->
-> This issue was found with the help of Coccinelle and, audited and fixed
-> _manually_.
->
-> [1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
-> [2] https://github.com/KSPP/linux/issues/21
-> [3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
->
-> Signed-off-by: Gustavo A. R. Silva <gustavoars@kernel.org>
-> ---
->  drivers/soc/fsl/qe/qe.c | 4 ++--
->  include/soc/fsl/qe/qe.h | 2 +-
->  2 files changed, 3 insertions(+), 3 deletions(-)
+> Can you please explain me how to reproduce this. I'm not able to deduce that
+> form this email. I can then look into this and how to fix it. Although up to now
+> I don't understand where the relation with my dts32 changes is.
 
-Applied for next.  Thanks.
+I don't see it either here, adding the devicetree list, in case anyone has more
+information.
 
-Regards,
-Leo
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
