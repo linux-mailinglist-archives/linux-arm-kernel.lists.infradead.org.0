@@ -2,80 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE9541DEF0C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 20:18:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 543D91DEF1B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 20:23:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Ene2UOGMB7DYG3uVFNHfu79/dHQuC2g8k5Xya0UamE=; b=APSBDSOCoM7u2X
-	6k+vmm7JD7sDFeufz4uQ1KiQyvKrvyQhFS+22cwwLC6AqTmW095An2hGYws5iBaiZKiCjRo3wFX/1
-	lHimc0pgpQpuR6XYP0iw3e8KyzW7/gwxfvhS6N5R1MsrDYEmw4OCGCizA+3byYPy07stZrfgkpf0p
-	UaIMeGOELqzPtawtybp+gyxVCkqVNJGKRoZW8b4FTKNiVMYnboIdAIxR5Eg2iZK1dSazSpnX8pM83
-	4ZlQRuK2jXAgPSs4vzAN9LiPVNgZxlAlI4k+uEo3LCVjQXRqJAy5+Djh+AguRXX+SDfm0z39eRaLw
-	o9Sn9c1rx7m9B0CO4ggw==;
+	List-Owner; bh=W/fhKBtfGh38kowK9m88Ry01fK8sy9XA5a7KdIhTEss=; b=gxxEoIYBCtic0r
+	DvZOGm7XJLNs2BsRZl0M9Vu3Gpefy8gOFIryK1UXfmsyGO4LcBiT5fc/GGQ6HLagp9266w66mFrfd
+	99jfCYqG5mk7F2B+hxMqqh/R4tYFwRMwqB8hXLAhRkTTPEVz2p0S32ZXFZv8YA2IrLYQvPfalG76h
+	t+PK9wkihJvjEkVOFgN4lsyfwBQBYXrJ1Un2bjJgeW3i4zIIFOAtQgmoaKj91M6f4IgkFJ2JuV0GO
+	wFjtjSPFby8qwmY2v60/JoPEQO9YhQyfv81mDavHpC+TtDJ5Plv9qxY4sFgx0hNNa7WN3qzrRZT09
+	FeL0d7lt4u2KNcAYdJ4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcCFQ-0001J5-LN; Fri, 22 May 2020 18:18:20 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1jcCKb-0004lc-Bj; Fri, 22 May 2020 18:23:41 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcCFH-0001Ib-4C
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 18:18:12 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id o26so6540669vsr.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 11:18:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=PwXQ16I6Cp2tgFwIySqzt/G64hlPbh8xuNdm4rchjh4=;
- b=t/xBBcZ6O5/2xUet4xFV+IUG27uwEk7PUYFcckf192Tp2MyuY8B0DXdr96rOA13B0j
- /U0mcz2QsJq6wEyD+jG/VLOxi1JxIAjvbLaLGK3hfLWFMtNaGFdEnyhbRN5Yewnf7qHy
- maVP/Xh2HPoAegbriQFlRSP4oSIY4+Z01Hsoq3UPyKO9nSsuQT2/14nHEUAOqqUNglGu
- TQqf3dJf+wgdtg7oGqztDuNqFoXnub8XqcMVClftHonMR76pAFMJY2OI/kOnQFeLQvSZ
- UKIqM8eDIePrh+GAK4WtRGHgFV+7/ChPCy05Mz5s1SjfdyrKdgQzYx9n66CVjZzlduCW
- kRlw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=PwXQ16I6Cp2tgFwIySqzt/G64hlPbh8xuNdm4rchjh4=;
- b=oEllXAwelLxzANyGM4EBc7LpZ3A7hXUy8OEISxcpETJvktX6Kj4ls5U0AXPWox+lh9
- qLkSBiNMR7MuZK+KZk9GubvG8JaXTt8GlVTErGZe7kURBMVUK8FPw4ZPlh5ZSJtW4Sur
- Lh1i0CLlQC7+dJeQp018F2YMxRhgOa3jiI+h6jmko/nad9XctzbU/K0Cw+NHC2pRdcO2
- v0ORH3R35B1H3dTesr42HXtlArdcGs15D6mAGfaFL7L6in/bfl0JcSdd2fpxu7Kh3k/l
- KfF5faeEixEXpYTBRDWnljdUjL9KBwQhGYu2S7w0mKrqi79KQ2RjqvLdFLoK625Tuxs7
- lU3Q==
-X-Gm-Message-State: AOAM531mHpvFFOS8GSaF0wN4h6sqctnzt9VfYLCnUp80HAJ6QUlOGWP1
- RyQuBLHp0jxhQcGyahXw59ux4daaDo1xnJ86YZs=
-X-Google-Smtp-Source: ABdhPJwVcoOuyG4xj6v7doBPjWJI5CgDAYK+frvnQUSyH9g309h6bcUom+gOtv4klrPgAnir7w1wtRTnZaAYYLLrXeE=
-X-Received: by 2002:a67:71c2:: with SMTP id
- m185mr12122722vsc.186.1590171488867; 
- Fri, 22 May 2020 11:18:08 -0700 (PDT)
+ id 1jcCKB-0004bp-JJ; Fri, 22 May 2020 18:23:16 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04MIN774009732;
+ Fri, 22 May 2020 13:23:07 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1590171787;
+ bh=7meOCcO9PMV0pe9bY/23KTU7Rz1Q8mk5VlyvR5wCnuc=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=pTQvFN0STMEPQPpZPpmVYr4o6kbNIsw7va17SVHSEGB2jijhOpPHCBpQpble/dVXz
+ Ari1n8V9ilSNJt5irlpBbGjzlhlf9kaKRbj5xfz2Ov7Np+v2ZqFyS30huXNNr5zCtN
+ qJgFGGdnVwiKmkOD1iz8fjnw6u4VW1554DId/mNw=
+Received: from DFLE108.ent.ti.com (dfle108.ent.ti.com [10.64.6.29])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04MIN73n079237
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 22 May 2020 13:23:07 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE108.ent.ti.com
+ (10.64.6.29) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 22
+ May 2020 13:23:07 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Fri, 22 May 2020 13:23:06 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04MIN6kR049061;
+ Fri, 22 May 2020 13:23:06 -0500
+Date: Fri, 22 May 2020 23:53:05 +0530
+From: Pratyush Yadav <p.yadav@ti.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: Re: [PATCH v6 04/19] spi: spi-mem: allow specifying a command's
+ extension
+Message-ID: <20200522182257.wneqsmfm22farzus@ti.com>
+References: <20200520163053.24357-1-p.yadav@ti.com>
+ <20200520163053.24357-5-p.yadav@ti.com>
+ <20200521202256.5816eb32@collabora.com>
 MIME-Version: 1.0
-References: <20200522135246.10134-1-tzimmermann@suse.de>
- <20200522135246.10134-2-tzimmermann@suse.de>
- <20200522174835.GA1087580@ravnborg.org>
-In-Reply-To: <20200522174835.GA1087580@ravnborg.org>
-From: Emil Velikov <emil.l.velikov@gmail.com>
-Date: Fri, 22 May 2020 19:15:10 +0100
-Message-ID: <CACvgo53YDOD1t4KYOWKiO-q8T639jNbMrZuyTXcbe1FBAfxP+Q@mail.gmail.com>
-Subject: Re: [PATCH 01/21] drm/cma-helper: Rework DRM_GEM_CMA_VMAP_DRIVER_OPS
- macro
-To: Sam Ravnborg <sam@ravnborg.org>
+Content-Disposition: inline
+In-Reply-To: <20200521202256.5816eb32@collabora.com>
+User-Agent: NeoMutt/20171215
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_111811_186616_5FC3E458 
-X-CRM114-Status: GOOD (  17.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200522_112315_735525_C06E233E 
+X-CRM114-Status: GOOD (  15.35  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [emil.l.velikov[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,6 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,81 +92,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-aspeed@lists.ozlabs.org,
- Neil Armstrong <narmstrong@baylibre.com>, Dave Airlie <airlied@linux.ie>,
- Liviu Dudau <liviu.dudau@arm.com>,
- ML dri-devel <dri-devel@lists.freedesktop.org>,
- Paul Cercueil <paul@crapouillou.net>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Mihail Atanassov <mihail.atanassov@arm.com>,
- =?UTF-8?B?TWFyZWsgVmHFoXV0?= <marex@denx.de>, khilman@baylibre.com,
- Alexey Brodkin <abrodkin@synopsys.com>,
- Xinwei Kong <kong.kongxinwei@hisilicon.com>,
- Xinliang Liu <xinliang.liu@linaro.org>, ludovic.desroches@microchip.com,
- Tomi Valkeinen <tomi.valkeinen@ti.com>,
- "james qian wang \(Arm Technology China\)" <james.qian.wang@arm.com>,
- NXP Linux Team <linux-imx@nxp.com>, joel@jms.id.au,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Chen Feng <puck.chen@hisilicon.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Alison Wang <alison.wang@nxp.com>, Jyri Sarha <jsarha@ti.com>,
- Chen-Yu Tsai <wens@csie.org>, Vincent Abriou <vincent.abriou@st.com>,
- Sascha Hauer <kernel@pengutronix.de>,
- LAKML <linux-arm-kernel@lists.infradead.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, bbrezillon@kernel.org,
- andrew@aj.id.au, Philippe Cornu <philippe.cornu@st.com>,
- Yannick Fertre <yannick.fertre@st.com>,
- Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
- Thomas Zimmermann <tzimmermann@suse.de>, Rongrong Zou <zourongrong@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Mark Brown <broonie@kernel.org>, linux-mtd@lists.infradead.org,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 22 May 2020 at 18:48, Sam Ravnborg <sam@ravnborg.org> wrote:
->
-> Hi Thomas.
->
-> On Fri, May 22, 2020 at 03:52:26PM +0200, Thomas Zimmermann wrote:
-> > Rename the macro to DRM_GEM_CMA_DRIVER_OPS to align with SHMEM
-> > helpers.
-> This part is fine, I like that the naming is somehow consistent.
->
-> > An internal version is provided for drivers that override
-> > the default .dumb_create callback. Adapt drivers to the changes.
-> I loathe anything named __foo or __FOO. This __ signals to me
-> that the author was clueless in naming - or some sort.
-> I know that __ is used in some lib headers - but thats not the case
-> here.
->
-> But I love that we have a variant that takes a create function.
-> So we do not have to escape from the nice macro.
-> The macro is another way to tell me as rewiewer that this
-> drivers uses all the default helpers for this.
->
-Fwiw I share the sentiment, although I fear we're a little late. __
-prefixed functions are widely common in core drm and it's helpers.
+Hi Boris,
 
->
-> So critizising the name I better suggest something that
-> I personally like better:
->
-> DRM_GEM_CMA_DRIVER_OPS_CREATE()
->
-> It would look like this:
->         /* GEM Operations */
-> -       DRM_GEM_CMA_VMAP_DRIVER_OPS,
-> -       .dumb_create            = drm_sun4i_gem_dumb_create,
-> +       DRM_GEM_CMA_DRIVER_OPS_CREATE(drm_sun4i_gem_dumb_create),
->
->
->
-> Please fix zte/zx_drm_drv.c which also uses DRM_GEM_CMA_VMAP_DRIVER_OPS.
->
-Isn't DRM_GEM_CMA_VMAP_DRIVER_OPS introduced to zte with the last
-patch in the series?
+On 21/05/20 08:22PM, Boris Brezillon wrote:
+> On Wed, 20 May 2020 22:00:38 +0530
+> Pratyush Yadav <p.yadav@ti.com> wrote:
+> 
+> As mentioned in one of my previous review, you should patch the mxic
+> driver before extending the opcode field:
+> 
+> --->8---
+> diff --git a/drivers/spi/spi-mxic.c b/drivers/spi/spi-mxic.c
+> index 69491f3a515d..c3f4136a7c1d 100644
+> --- a/drivers/spi/spi-mxic.c
+> +++ b/drivers/spi/spi-mxic.c
+> @@ -356,6 +356,7 @@ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
+>         int nio = 1, i, ret;
+>         u32 ss_ctrl;
+>         u8 addr[8];
+> +       u8 cmd[2];
 
--Emil
+Regarding your comment about bisect-ability, how about I change this to:
+  
+  u8 cmd[sizeof(op->cmd.opcode)];
+
+and put this patch before the change to 2-byte opcodes. This should also 
+make it resistent to further changes in opcode size. Does that sound 
+like a sane idea?
+  
+>         ret = mxic_spi_set_freq(mxic, mem->spi->max_speed_hz);
+>         if (ret)
+> @@ -393,7 +394,10 @@ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
+>         writel(readl(mxic->regs + HC_CFG) | HC_CFG_MAN_CS_ASSERT,
+>                mxic->regs + HC_CFG);
+>  
+> -       ret = mxic_spi_data_xfer(mxic, &op->cmd.opcode, NULL, 1);
+> +       for (i = 0; i < op->cmd.nbytes; i++)
+> +               cmd[i] = op->cmd.opcode >> (8 * (op->cmd.nbytes - i - 1));
+> +
+> +       ret = mxic_spi_data_xfer(mxic, cmd, NULL, op->cmd.nbytes);
+>         if (ret)
+>                 goto out;
+>  
+
+-- 
+Regards,
+Pratyush Yadav
+Texas Instruments India
 
 _______________________________________________
 linux-arm-kernel mailing list
