@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B30D41DEACC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:56:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C704A1DEACE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:56:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kJeWwSw0xNdZm8EK4pTTn/qGQW/mrMCKVSdl3Tn1AWk=; b=uzArgkv2R+Blmu
-	h01CmyAk6aiV4rWszniGrFpFs1YxM7WAjiaH0eQUMhEkMvTLkOAJV47ZRfwAonREsKrPWhAWu16W1
-	cP4GgVz73PpTVuxx1HL+BSkUE/a3B7gB6VI+qbMjFfavW6FD+M6GmQr+pXanXTaG/guQzBSn2bYU2
-	xLfUHY1U3cz0udDcYr4KFCUZ6Ld5FbZsY8VxefONSxybTSKIZq+IBe0VLvzkr/MG83cnmCKsm0Q/c
-	hrwGwk4WUHcOZBYEwiLA3IgG66auOa0nhRybhAa5AtRBfCpafmdq7drCFTEQJKDAMQ9knVMySFq+b
-	2Y9jGIWxwkdqsR0EKvLA==;
+	List-Owner; bh=OenLh/lD+nU7Gom7rTIYyR2vUhpvcqoHtLvE7uBjiAM=; b=kp96h+buLdPyGY
+	zy8fFpmmidWE47GNEHvXz2eLQ5m/Oob256hx9MOy7VLLlMe5FFB18h7pEIUdcFqAtnghtml3H/VNP
+	agndZt0GwqHyJ25gAwW4UmcKLvlEEHdQoiw2INgvmjML7qVwRfhODrq+NRcrFWve8NPh2DpeN6kEU
+	ZfB/R09HER2VbuAGeO1XGrNU7qX6xL/SDscb88TBMqltQusdAv2cpvL034uJnBcu5pbIXU496nr+w
+	3O61J0fljuANdezr4mO4WhWoxE38VaEJgeAq7srIEqyyCSj4wN321VtkUve2S7asIJCFk5GftTCOA
+	69HCgmBZdJHZjA3p902w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc96H-0001G7-CT; Fri, 22 May 2020 14:56:41 +0000
+	id 1jc96U-0001aP-UN; Fri, 22 May 2020 14:56:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc91B-0002TA-MV; Fri, 22 May 2020 14:51:27 +0000
+ id 1jc91C-0002UV-WA; Fri, 22 May 2020 14:51:29 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A78642240A;
- Fri, 22 May 2020 14:51:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DB3FF22259;
+ Fri, 22 May 2020 14:51:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590159084;
- bh=ItKeQkSoQTVnFcBr+f9ZOmDE3R/JRfrPNEmeZ6RfQyw=;
+ s=default; t=1590159085;
+ bh=6hL+ivj3rYrMJO2OGFWOhbOEztvulwmcwF/BhZn/yPE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=d8mDBYenZTmdFAyZo78z+Ki287IyGz6u34SEBomKYT7Ath8O9OIBp6/iBiMZIIbiq
- QxOiF9aMLbAL8Zjn2KGqyF7H0VpohO5xxItYl7DWuCGVuTf06TCfMoI9RISpUrgI2b
- CySA4MSAbjWDEsWmzjo6swJuLm6bGd0zqZkE045s=
+ b=GArSbYIAfV/M24NCNJ0JAw0oemJAgo1mn0N4GzfLEASl5YFZIPNMlm/48um4EqSGM
+ fBt64unnwArnjyXI/D6AXbtYF4CZfVIP/qkMejwxG6fsrgNGxECCGBr3h3AmXV2XcY
+ 5I/L0MeUB5voE0CoEG0MHemhJu4QcQqsAHHK9sNw=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 03/19] arm64: dts: rockchip: swap interrupts
- interrupt-names rk3399 gpu node
-Date: Fri, 22 May 2020 10:51:04 -0400
-Message-Id: <20200522145120.434921-3-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 04/19] ARM: dts: rockchip: swap clock-names of
+ gpu nodes
+Date: Fri, 22 May 2020 10:51:05 -0400
+Message-Id: <20200522145120.434921-4-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200522145120.434921-1-sashal@kernel.org>
 References: <20200522145120.434921-1-sashal@kernel.org>
@@ -49,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_075125_805936_BF54B68A 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200522_075127_236568_68E692C2 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,45 +89,63 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit c604fd810bda667bdc20b2c041917baa7803e0fb ]
+[ Upstream commit b14f3898d2c25a9b47a61fb879d0b1f3af92c59b ]
 
-Dts files with Rockchip rk3399 'gpu' nodes were manually verified.
-In order to automate this process arm,mali-midgard.txt
+Dts files with Rockchip 'gpu' nodes were manually verified.
+In order to automate this process arm,mali-utgard.txt
 has been converted to yaml. In the new setup dtbs_check with
-arm,mali-midgard.yaml expects interrupts and interrupt-names values
-in the same order. Fix this for rk3399.
-
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/gpu/
-arm,mali-midgard.yaml
+arm,mali-utgard.yaml expects clock-names values
+in the same order, so fix that.
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200425143837.18706-1-jbx6244@gmail.com
+Link: https://lore.kernel.org/r/20200425192500.1808-1-jbx6244@gmail.com
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/rk3036.dtsi | 2 +-
+ arch/arm/boot/dts/rk322x.dtsi | 2 +-
+ arch/arm/boot/dts/rk3xxx.dtsi | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index 451f00a631c4..f14e8c5c41ac 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1817,10 +1817,10 @@
- 	gpu: gpu@ff9a0000 {
- 		compatible = "rockchip,rk3399-mali", "arm,mali-t860";
- 		reg = <0x0 0xff9a0000 0x0 0x10000>;
--		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>,
--			     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
--			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>;
--		interrupt-names = "gpu", "job", "mmu";
-+		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "job", "mmu", "gpu";
- 		clocks = <&cru ACLK_GPU>;
- 		power-domains = <&power RK3399_PD_GPU>;
+diff --git a/arch/arm/boot/dts/rk3036.dtsi b/arch/arm/boot/dts/rk3036.dtsi
+index d560fc4051c5..db612271371b 100644
+--- a/arch/arm/boot/dts/rk3036.dtsi
++++ b/arch/arm/boot/dts/rk3036.dtsi
+@@ -128,7 +128,7 @@
+ 		assigned-clocks = <&cru SCLK_GPU>;
+ 		assigned-clock-rates = <100000000>;
+ 		clocks = <&cru SCLK_GPU>, <&cru SCLK_GPU>;
+-		clock-names = "core", "bus";
++		clock-names = "bus", "core";
+ 		resets = <&cru SRST_GPU>;
  		status = "disabled";
+ 	};
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index cd8f2a3b0e91..bada942ef38d 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -539,7 +539,7 @@
+ 				  "pp1",
+ 				  "ppmmu1";
+ 		clocks = <&cru ACLK_GPU>, <&cru ACLK_GPU>;
+-		clock-names = "core", "bus";
++		clock-names = "bus", "core";
+ 		resets = <&cru SRST_GPU_A>;
+ 		status = "disabled";
+ 	};
+diff --git a/arch/arm/boot/dts/rk3xxx.dtsi b/arch/arm/boot/dts/rk3xxx.dtsi
+index d752dc611fd7..86a0d98d28ff 100644
+--- a/arch/arm/boot/dts/rk3xxx.dtsi
++++ b/arch/arm/boot/dts/rk3xxx.dtsi
+@@ -84,7 +84,7 @@
+ 		compatible = "arm,mali-400";
+ 		reg = <0x10090000 0x10000>;
+ 		clocks = <&cru ACLK_GPU>, <&cru ACLK_GPU>;
+-		clock-names = "core", "bus";
++		clock-names = "bus", "core";
+ 		assigned-clocks = <&cru ACLK_GPU>;
+ 		assigned-clock-rates = <100000000>;
+ 		resets = <&cru SRST_GPU>;
 -- 
 2.25.1
 
