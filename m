@@ -2,57 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E61891DE539
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 13:18:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E76B51DE541
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 13:21:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c5Rk6B3lrX466OXsMlXdH0VR25uQ2/KzXoEOBHBrQx8=; b=d/IiryH2MvijiG
-	j+edmgaUQGKD1H/9wwFlhKtZbr+vtONVQm9zWdX4XtebjMR1gWxzETf61ML1ChyZoz+bSnlTajRQk
-	mbGm/L4kktLgw/VYBnyr1lhWLzc3lOagDCdDAWiCsQ8GnGpVUG9elkKGfbSO1DLVFeswEn/eEg9Go
-	cUw0aVwHJ0zgCeFGfaVzxzoGCXaWJfLuBmX8yJlq5irNrFeZHcugnQznPRXq5RZICcjLk8WGiLJ1u
-	Am61yfufwdxKkx1vmmwtZkGvEf3jD7JjuV+q92DFzZeOVJjdA408yQT6kGcx1KltIMGsXII5g/ien
-	uATcb+QCA3aonc4mEeFA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oWb6B7OsYvEEC8KTK6/WjkBfd6Ye9wXOhFzyV01shl4=; b=risYt7uC/xoNjI
+	PX0De/mQN0s7N59tUESzzbu4k4bTsHdH1JkvqE02IUspn2nutrNmUSK4cp/Jba5csp37rVIOFhMNk
+	xrq3NlCAx0Ct4ioYx21oRNH2/7rxNGapwPoYHMQzoPupJqqKgihBMXaOdQmhneODgmEhiOlf6dSbj
+	jh6WiYUH9C3LlVKeVHcaXusdCXabwAPC9DyaGpmNPuxybTbPi2YjANNMa+GDtc/eE3t3LINybFj9M
+	VzstdSYpWvgjfzEoavXrOyu9zGTihS1Aed2EPS0G8O2Ms7yjYD72H7d1yAXBqhmemiL+w4cj40lTI
+	r5HfKzgsNwAP27iO5PjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc5hG-0005KB-Lf; Fri, 22 May 2020 11:18:38 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1jc5k0-0008Jk-V0; Fri, 22 May 2020 11:21:28 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc5h3-0005JP-G9; Fri, 22 May 2020 11:18:27 +0000
-Received: from xps13 (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 70860200002;
- Fri, 22 May 2020 11:18:19 +0000 (UTC)
-Date: Fri, 22 May 2020 13:18:18 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Subject: Re: [PATCH v2 1/3] ARM: pxa: remove Compulab pxa2xx boards
-Message-ID: <20200522131818.3adbac78@xps13>
-In-Reply-To: <20200521211016.3ad62148@collabora.com>
-References: <20200520102125.8934-1-robert.jarzmik@free.fr>
- <CAK8P3a2+auSWBROZR-hobM_qSWtKiG1DRYP3Y7uvbCy_ZLy+gg@mail.gmail.com>
- <20200521071213.GI1118872@kernel.org>
- <CAK8P3a2XdG_u6_o2NbQDTb5dbdzByBkUXZNM6nZ3wz0c-LFT5w@mail.gmail.com>
- <20200521190158.GL1118872@kernel.org>
- <20200521211016.3ad62148@collabora.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jc5jr-0008JO-2y
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 11:21:20 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id z15so2190185pjb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 May 2020 04:21:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=kernelci-org.20150623.gappssmtp.com; s=20150623;
+ h=message-id:date:mime-version:content-transfer-encoding:subject:to
+ :from; bh=0tY84DfRTRtfABHCPtFyUeu1KqbmqKjPRk6x1IAI5io=;
+ b=afKBH6HzinNYNMxKNDrPHXY1S+C9RWuBvJUcH9Z1i1j+3qkZqu3rnAqcM7N8wBE0an
+ FT8DTYNicK3zpWnTDYhSVtGnhtL7NmnkESHZjA2FMtXFIh/P4a0XSMlHC+UAJ+QTOG22
+ Dn4BpJLsdeqRhKzv4YBb4QtTcCIqM/uNOrp1TLWVUgakEWxpRD6QkdX2kwLgnyhJw84O
+ Zl20WORBxWh9h4ur2uXFGFdxONQbpunMPkc1IoKyvxlvywpdnLTq5fBeEZ5FdfpZCRCC
+ e3ISBDWeQ2Uekyfsr0Gk18fhcXzI2UpXaumD2ImiJssXjBubOIaAE7NpDLkeoxQT0hDd
+ O5AQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:mime-version
+ :content-transfer-encoding:subject:to:from;
+ bh=0tY84DfRTRtfABHCPtFyUeu1KqbmqKjPRk6x1IAI5io=;
+ b=KGVtMH1bftAFh27Z6ZBf/krVaZPLZ2telm/PdA15KS3S/WRr0c3USwvDV0/jw12jd4
+ igIPPHlSL9oBaUWjdjs8NgjLwHP+J8nXz34tEPNcwC8ql+i+rb5HgdguXgCBO+1hoCpt
+ RRGTXrgXoku8lYP3/3X3coVz+9FirrTo5X8EbdAO1xEfggHtBqfNi7ZJ54xYV/htMqp3
+ tVCZPKWB5t3Ht+CkHEO5khQpAVHaeOz20Ee0Dq4MJIB/s4+hAUEdiUPdhxwm78ylv9sv
+ NNnGu4nlr5bLY+IEcC1mnPex5ZFnsYwjI20nlmFvHOTXIEB6FQARU95RFce1OsdjC7gu
+ E1sA==
+X-Gm-Message-State: AOAM530nbgHYye/z+Pz4Yy5oGDCOMWeluE30qnbN7aFasdRPesRNf7md
+ uKV3jVamahQnmtdXPP9mtd88ow==
+X-Google-Smtp-Source: ABdhPJybhraCaP5vOUZvcirtYezJV9gSdnJHFkn+AeL11v6JEGQDRpjOBknuXHcg2T30TELVALOdgg==
+X-Received: by 2002:a17:902:ec01:: with SMTP id
+ l1mr6353435pld.130.1590146476473; 
+ Fri, 22 May 2020 04:21:16 -0700 (PDT)
+Received: from kernelci-production.internal.cloudapp.net ([52.250.1.28])
+ by smtp.gmail.com with ESMTPSA id a6sm6772568pfa.111.2020.05.22.04.21.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 22 May 2020 04:21:15 -0700 (PDT)
+Message-ID: <5ec7b5ab.1c69fb81.da2f5.01cf@mx.google.com>
+Date: Fri, 22 May 2020 04:21:15 -0700 (PDT)
 MIME-Version: 1.0
+X-Kernelci-Tree: arm64
+X-Kernelci-Kernel: v5.7-rc6-152-gf4582661223d
+X-Kernelci-Report-Type: boot
+X-Kernelci-Branch: for-kernelci
+Subject: arm64/for-kernelci boot: 23 boots: 0 failed,
+ 23 passed (v5.7-rc6-152-gf4582661223d)
+To: will@kernel.org, catalin.marinas@arm.com,
+ linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
+From: "kernelci.org bot" <bot@kernelci.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_041825_672038_7ECABF68 
-X-CRM114-Status: GOOD (  19.87  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200522_042119_130085_AF11729A 
+X-CRM114-Status: UNSURE (   4.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,53 +97,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-mtd <linux-mtd@lists.infradead.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Arnd Bergmann <arnd@arndb.de>,
- Mike Rapoport <rppt@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8sCgpCb3JpcyBCcmV6aWxsb24gPGJvcmlzLmJyZXppbGxvbkBjb2xsYWJvcmEuY29tPiB3
-cm90ZSBvbiBUaHUsIDIxIE1heQoyMDIwIDIxOjEwOjE2ICswMjAwOgoKPiBPbiBUaHUsIDIxIE1h
-eSAyMDIwIDIyOjAxOjU4ICswMzAwCj4gTWlrZSBSYXBvcG9ydCA8cnBwdEBrZXJuZWwub3JnPiB3
-cm90ZToKPiAKPiA+IE9uIFRodSwgTWF5IDIxLCAyMDIwIGF0IDA5OjI2OjEwQU0gKzAyMDAsIEFy
-bmQgQmVyZ21hbm4gd3JvdGU6ICAKPiA+ID4gT24gVGh1LCBNYXkgMjEsIDIwMjAgYXQgOToxMiBB
-TSBNaWtlIFJhcG9wb3J0IDxycHB0QGtlcm5lbC5vcmc+IHdyb3RlOiAgICAKPiA+ID4gPgo+ID4g
-PiA+IE9uIFdlZCwgTWF5IDIwLCAyMDIwIGF0IDA1OjIxOjUxUE0gKzAyMDAsIEFybmQgQmVyZ21h
-bm4gd3JvdGU6ICAgIAo+ID4gPiA+ID4gT24gV2VkLCBNYXkgMjAsIDIwMjAgYXQgMTI6MjEgUE0g
-Um9iZXJ0IEphcnptaWsgPHJvYmVydC5qYXJ6bWlrQGZyZWUuZnI+IHdyb3RlOiAgICAKPiA+ID4g
-PiA+ID4KPiA+ID4gPiA+ID4gQXMgdGhlc2UgYm9hcmRzIGhhdmUgbm8gbW9yZSB1c2VycyBub3Ig
-dGVzdGVycywgYW5kIHBhdGNoaW5nIHRoZW0gaGFzCj4gPiA+ID4gPiA+IGJlY29tZSBhIGJ1cmRl
-biwgYmUgdGhhdCBiZWNhdXNlIG9mIHRoZSBQQ0kgcGFydCBvciB0aGUgTVREIE5BTkQKPiA+ID4g
-PiA+ID4gc3VwcG9ydCwgbGV0J3MgcmVtb3ZlIHRoZW0uCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+
-IFRoZSBjbS14MzAwIHdpbGwgZm9yIG5vdyByZW1haW4gYW5kIHJlcHJlc2VudCBDb21wdWxhYiBi
-b2FyZHMgYXQgaXRzCj4gPiA+ID4gPiA+IGJlc3QgaW4gdGhlIFBYQSBkZXBhcnRtZW50LiAgICAK
-PiA+ID4gPgo+ID4gPiA+IEkgdGhpbmsgdGhpcyBzZXJpZXMgbWlzc2VkIHRoZSBjbS14MjcwIE5B
-TkQgZHJpdmVyLCBzbyB0aGlzIGNvdWxkIGJlCj4gPiA+ID4gUEFUQ0ggNC8zIChub3QgZXZlbiBj
-b21waWxlIHRlc3RlZCkuCj4gPiA+ID4KPiA+ID4gPiBGcm9tIDU2YTExOTg3ZjgyZWY4YjMyYjI1
-ZGZjMTdiODQ5ZjliYmJmMDNlNGQgTW9uIFNlcCAxNyAwMDowMDowMCAyMDAxCj4gPiA+ID4gRnJv
-bTogTWlrZSBSYXBvcG9ydCA8cnBwdEBsaW51eC5pYm0uY29tPgo+ID4gPiA+IERhdGU6IFRodSwg
-MjEgTWF5IDIwMjAgMTA6MDk6NDcgKzAzMDAKPiA+ID4gPiBTdWJqZWN0OiBbUEFUQ0hdIG10ZDog
-cmF3bmFuZDogcmVtb3ZlIENNLVgyNzAgTkFORCBkcml2ZXIKPiA+ID4gPgo+ID4gPiA+IFRoZSBj
-bS14MjcwIGJvYXJkIGhhdmUgYmVlbiByZW1vdmVkIGFuZCB0aGVyZXMgaXMgbm8gcG9pbnQgdG8g
-a2VlcCB0aGlzCj4gPiA+ID4gZHJpdmVyLgo+ID4gPiA+Cj4gPiA+ID4gU2lnbmVkLW9mZi1ieTog
-TWlrZSBSYXBvcG9ydCA8cnBwdEBsaW51eC5pYm0uY29tPiAgICAKPiA+ID4gCj4gPiA+IFRoYW5r
-cyEgUmVtb3ZpbmcgdGhhdCBkcml2ZXIgd2FzIGFjdHVhbGx5IGhvdyB0aGUgZGlzY3Vzc2lvbiBz
-dGFydGVkLAo+ID4gPiBzbyB3ZSBkZWZpbml0ZWx5IHdhbnQgdG8gZG8gdGhhdC4gQm9yaXMgZWFy
-bGllciBwYXRjaCAibXRkOiByYXduYW5kOiBHZXQKPiA+ID4gcmlkIG9mIHRoZSBjbXgyNzAgZHJp
-dmVyIiBkaWQgaXQgYnkgY2hhbmdpbmcgdGhlIGJvYXJkIGZpbGUsIG5vdyB5b3VyCj4gPiA+IHBh
-dGNoIGlzIHRoZSByaWdodCB0aGluZyB0byBkbywgYW5kIHdlIHNob3VsZCByZW1lbWJlciB0byBk
-byB0aGUgc2FtZQo+ID4gPiBmb3IgbWJ4ZmIuICAgIAo+ID4gCj4gPiBBcm5kLCB3aWxsIHlvdSBw
-aWNrIHRoaXMgdG8gdGhlIFNvQyB0cmVlIG9yIHNob3VsZCBJIHJlc2VuZD8gIAo+IAo+IEFjdHVh
-bGx5IEkgc2VudCBhIHYyIHJlbW92aW5nIG9ubHkgdGhlIE1URCBkcml2ZXIuIFlvdSBzaG91bGQg
-cHJvYmFibHkKPiBzeW5jIHdpdGggTWlxdWVsIHRvIG1ha2Ugc3VyZSB0aGUgc2FtZSBwYXRjaCBp
-cyBub3QgYXBwbGllZCB0d2ljZS4KCkFjdHVhbGx5IEkgd2FzIGFib3V0IHRoZSBtZXJnZSB0aGlz
-IHBhdGNoIGluIHRoZSBNVEQgdHJlZSBiZWNhdXNlIEkKaGF2ZSBhIGJpZyBjbGVhbnVwIHNlcmll
-cyB3aGljaCBkZXBlbmRzIG9uIGl0LiBBcm5kIGNvdWxkIHlvdSBjb25maXJtCnRoYXQgaXQncyBv
-a2F5IGZvciB5b3U/CgoKVGhhbmtzLApNaXF1w6hsCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+******************************************
+* WARNING: Boot tests are now deprecated *
+******************************************
+
+As kernelci.org is expanding its functional testing capabilities, the concept
+of boot testing is now deprecated.  Boot results are scheduled to be dropped on
+*5th June 2020*.  The full schedule for boot tests deprecation is available on
+this GitHub issue: https://github.com/kernelci/kernelci-backend/issues/238
+
+The new equivalent is the *baseline* test suite which also runs sanity checks
+using dmesg and bootrr: https://github.com/kernelci/bootrr
+
+See the *baseline results for this kernel revision* on this page:
+https://kernelci.org/test/job/arm64/branch/for-kernelci/kernel/v5.7-rc6-152-gf4582661223d/plan/baseline/
+
+-------------------------------------------------------------------------------
+
+arm64/for-kernelci boot: 23 boots: 0 failed, 23 passed (v5.7-rc6-152-gf4582661223d)
+
+Full Boot Summary: https://kernelci.org/boot/all/job/arm64/branch/for-kernelci/kernel/v5.7-rc6-152-gf4582661223d/
+Full Build Summary: https://kernelci.org/build/arm64/branch/for-kernelci/kernel/v5.7-rc6-152-gf4582661223d/
+
+Tree: arm64
+Branch: for-kernelci
+Git Describe: v5.7-rc6-152-gf4582661223d
+Git Commit: f4582661223ddb7725bb2aa5a211c7e25a05816f
+Git URL: https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+Tested: 22 unique boards, 7 SoC families, 1 build out of 3
+
+---
+For more info write to <info@kernelci.org>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
