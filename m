@@ -2,80 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9523D1DE6AF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:19:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0E501DE6DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:27:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XMFNBcLUnMXt5x34/JvbB8vNTPDt9Wp0FZ3tiv7wMgg=; b=JF9F+0qhcpresn
-	GpzPpQMat+9lvtQkEIk44leVPJpJDIXrDOWKlBkMu7N+5vsT9Px/vk+lAvnT/CHJAPrHu+Wd4a365
-	67Vy39nQeu7ywTwCf5bC1EmMmbc4cL/Qs+pj00cx0L/YNAwJMGpr+u231Ti92hnA2MUG6y/QYzoy9
-	klt/hSAexK42NAIsmCYO/AwPFxRtZUgB/3FVuWC4l3SbcrjjKWdAKnBoYyUj9unZObxfUvL090na9
-	OgfmlszuxyFhT3nlPnAe4dT9U4zONir0b86eoZUYbxrIt9B8RA2tMLpuq5JibmK4ludrLgH+FfTMT
-	iKdxPC+l5OcLU8nBzhVQ==;
+	List-Owner; bh=8zxonqBvJt90yy724k0ZWcrG8zVzB6rEZyvgCM1haIc=; b=qc4LqxHm3kwT7R
+	vhWRMWDTxjs1lJP+WftIbpOqyNkJ+qo2Wm9o0YPD/DelEMIRNR0R2XrHS3HNdR78B+8cX+gFhGXAX
+	NL6Q0CQS8OSLp4ZDY2/Q+SM3rbs6Njy1GisYZo02pR9/y/oFpoMQPfwXxHGOATWVcwH2QXKeWZ1Fp
+	aEUkT8C/hpyemvjyIKdd9Ajr2DOqYZlhASAKqz42I1Akp35H95jy69OcLMhLAHFJayhu09NrUaWJ3
+	B4AxGhDtSxHUnI9XtnJCefctr2XkIH/h+0uSeNYLQJKGQhlrSwh4H4O334fbkKgkAF7nzuATJd81f
+	/2EsWhLDKfKvvAt+Yt3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc6dz-0008Bj-RP; Fri, 22 May 2020 12:19:19 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jc6m5-0006Yu-O4; Fri, 22 May 2020 12:27:41 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc6dE-0007gF-Mt; Fri, 22 May 2020 12:18:34 +0000
-X-UUID: 0948415ff9674799b7280c12784eabc1-20200522
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=ckHEM7GVI4e4nimxXTABhbmcvCORVQbBj1jfInkgoAg=; 
- b=n81B/JDEMXzSi0diDNXDhCFgfIYXJp3X+8YMHa2xMVSdwxEmbSUOkp0CBaez8Ex/nmQBnNcjWMNjqyb9+b5pNfOCmGZ3GMVCxjXbL9NqcBeQisT1cOATNBKlF2exr9PJfrZ9/BjoNceCbHvtX4g56CdpXG9Lq9CBTZUNuwf4TOo=;
-X-UUID: 0948415ff9674799b7280c12784eabc1-20200522
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1295323001; Fri, 22 May 2020 04:18:17 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 22 May 2020 05:18:24 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 22 May 2020 20:18:15 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Fri, 22 May 2020 20:18:15 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v1 3/3] scsi: ufs-mediatek: Introduce low-power mode for
- device power supply
-Date: Fri, 22 May 2020 20:18:14 +0800
-Message-ID: <20200522121814.9100-4-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200522121814.9100-1-stanley.chu@mediatek.com>
-References: <20200522121814.9100-1-stanley.chu@mediatek.com>
+ id 1jc6lu-0006YM-V7
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 12:27:32 +0000
+IronPort-SDR: 64FyP7OYcpqahe+m8b+Ak3cseQ+m0ZqqOHQnfed6Cv068Gn2iE8EjVu1VGlO/RbxqxjL64MS0+
+ RhUagdpEzBow==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 22 May 2020 05:27:29 -0700
+IronPort-SDR: NWN5dJDnXUsXQ04oQAKBsYU5gIqJK6FUXRe2aHRdhrhd52IyQKR9HNREhdbx+cfpvDIsKi3bIJ
+ boHtr1ha77rA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,421,1583222400"; d="scan'208";a="265415473"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga003.jf.intel.com with ESMTP; 22 May 2020 05:27:17 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jc6lh-008EFe-DI; Fri, 22 May 2020 15:27:17 +0300
+Date: Fri, 22 May 2020 15:27:17 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Tali Perry <tali.perry1@gmail.com>
+Subject: Re: [PATCH v13 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
+ driver
+Message-ID: <20200522122717.GB1634618@smile.fi.intel.com>
+References: <20200522113312.181413-1-tali.perry1@gmail.com>
+ <20200522113312.181413-3-tali.perry1@gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200522113312.181413-3-tali.perry1@gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_051832_875661_0A4DD7BA 
-X-CRM114-Status: UNSURE (   9.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200522_052731_007109_8F86B2F4 
+X-CRM114-Status: GOOD (  11.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,82 +74,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: pengshun.zhao@mediatek.com, Stanley Chu <stanley.chu@mediatek.com>,
- bvanassche@acm.org, andy.teng@mediatek.com, cc.chou@mediatek.com,
- chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, beanhuo@micron.com, chaotian.jing@mediatek.com,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
+Cc: devicetree@vger.kernel.org, tmaimon77@gmail.com, yuenn@google.com,
+ avifishman70@gmail.com, venture@google.com, openbmc@lists.ozlabs.org,
+ wsa@the-dreams.de, brendanhiggins@google.com, ofery@google.com,
+ linux-kernel@vger.kernel.org, kfting@nuvoton.com, robh+dt@kernel.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ benjaminfair@google.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allow device power supply to enter low-power mode if device will
-do nothing to save more power.
+On Fri, May 22, 2020 at 02:33:11PM +0300, Tali Perry wrote:
+> Add Nuvoton NPCM BMC I2C controller driver.
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Pengshun Zhao <pengshun.zhao@mediatek.com>
----
- drivers/scsi/ufs/ufs-mediatek.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+I thought we are waiting for Wolfram finishing his review...
 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 3c85f5e97dea..5f41b7b7db8f 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -12,6 +12,7 @@
- #include <linux/of_address.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/regulator/consumer.h>
- #include <linux/soc/mediatek/mtk_sip_svc.h>
- 
- #include "ufshcd.h"
-@@ -521,6 +522,19 @@ static int ufs_mtk_link_set_lpm(struct ufs_hba *hba)
- 	return 0;
- }
- 
-+static void ufs_mtk_vreg_set_lpm(struct ufs_hba *hba, bool lpm)
-+{
-+	if (!hba->vreg_info.vccq2)
-+		return;
-+
-+	if (lpm & !hba->vreg_info.vcc->enabled)
-+		regulator_set_mode(hba->vreg_info.vccq2->reg,
-+				   REGULATOR_MODE_IDLE);
-+	else if (!lpm)
-+		regulator_set_mode(hba->vreg_info.vccq2->reg,
-+				   REGULATOR_MODE_NORMAL);
-+}
-+
- static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- {
- 	int err;
-@@ -537,6 +551,12 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 			ufshcd_set_link_off(hba);
- 			return -EAGAIN;
- 		}
-+		/*
-+		 * Make sure no error will be returned to prevent
-+		 * ufshcd_suspend() re-enabling regulators while vreg is still
-+		 * in low-power mode.
-+		 */
-+		ufs_mtk_vreg_set_lpm(hba, true);
- 	}
- 
- 	if (!ufshcd_is_link_active(hba))
-@@ -554,6 +574,7 @@ static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 		phy_power_on(host->mphy);
- 
- 	if (ufshcd_is_link_hibern8(hba)) {
-+		ufs_mtk_vreg_set_lpm(hba, false);
- 		err = ufs_mtk_link_set_hpm(hba);
- 		if (err) {
- 			err = ufshcd_link_recovery(hba);
+
+In any case see couple of comments below.
+
+...
+
+
+> +#ifdef CONFIG_DEBUG_FS
+
+Now, do we need the rest of DEBUG_FS guards?
+
+> +	if (status) {
+> +		if (bus->rec_fail_cnt == ULLONG_MAX) {
+> +			dev_dbg(bus->dev, "rec_fail_cnt reach max, reset to 0");
+
+> +			bus->rec_fail_cnt = 0;
+
+It's redundant, since we will anyway roll over when incrementing.
+https://stackoverflow.com/q/18195715/2511795
+
+> +		}
+> +		bus->rec_fail_cnt++;
+> +	} else {
+> +		if (bus->rec_succ_cnt == ULLONG_MAX) {
+> +			dev_dbg(bus->dev, "rec_succ_cnt reach max, reset to 0");
+
+> +			bus->rec_succ_cnt = 0;
+
+Ditto.
+
+> +		}
+> +		bus->rec_succ_cnt++;
+> +	}
+> +#endif
+
+...
+
+> +static int npcm_i2c_remove_bus(struct platform_device *pdev)
+> +{
+> +	unsigned long lock_flags;
+> +	struct npcm_i2c *bus = platform_get_drvdata(pdev);
+> +
+> +	spin_lock_irqsave(&bus->lock, lock_flags);
+> +	npcm_i2c_disable(bus);
+> +	spin_unlock_irqrestore(&bus->lock, lock_flags);
+> +	i2c_del_adapter(&bus->adap);
+
+> +	debugfs_remove_recursive(bus->debugfs);
+
+This should be in reversed order, i.e. you inited last in ->probe(), thus
+should remove first in ->remove().
+
+> +	return 0;
+> +}
+
+...
+
+> +static int __init npcm_i2c_init(void)
+> +{
+> +	struct dentry *dir;
+> +
+> +	dir = debugfs_create_dir("i2c", NULL);
+
+> +	if (IS_ERR_OR_NULL(dir))
+
+IS_ERR() is redundant. And NULL already being checked inside i2c_init_debugfs()
+or how do you call it?
+
+> +		return 0;
+> +
+> +	npcm_i2c_debugfs_dir = dir;
+> +	return 0;
+> +}
+> +
+> +static void __exit npcm_i2c_exit(void)
+> +{
+> +	debugfs_remove_recursive(npcm_i2c_debugfs_dir);
+> +}
+
+> +
+> +module_init(npcm_i2c_init);
+> +module_exit(npcm_i2c_exit);
+
+Slightly better to attach to the respective function, like other macros above
+do.
+
 -- 
-2.18.0
+With Best Regards,
+Andy Shevchenko
+
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
