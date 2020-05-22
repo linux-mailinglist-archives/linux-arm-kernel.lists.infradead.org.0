@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45B561DE655
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:09:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 572321DE656
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 14:09:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xVtqHxRgphgKmhems7mArdA6PBQNGonXBe8eGaKk564=; b=Tqt1GmBWgM+7aN
-	VN3NT4FZSg9ghAmwMzAqzzZm83qI8MlCLC0eYNnftj/6bqy08M/X/+8LRg1WBUDCx05+2PMz0M0tc
-	2jdflg5HebfEOcn0Tb0/NfAEERVvWRbPeuWisTZAGl+8T7zByEQyjcp7AHRtRd+0xmtUS06vAjriV
-	remSXsPGoCCIrMBfpfMWMmQdhC1HUjIbFL/BB9LigIog/Snd0NQ5y0EV6HG4CmqzS6kJ2D0+MCq8k
-	cJn3eiBL0Oh9V3nIZqgxeXWWsB0gQdynjR681tfnAvRYuLWijWEKNsoaeSE9fOIa/1tsXxNMtrF/6
-	Fs+CGeh83dibs3lq93aQ==;
+	List-Owner; bh=uRfMkMsXZDOv6nx6m5nTPcaMcAPHUfaDNPhR82holhU=; b=aAyX3/r1Q+4KIO
+	0WPhfycpAcReEYIVR3IfDmW5vrxhDweHdnHYUCOYBOKJZfosUd4Ln2PvKFIH8Ki7RL6J6OGz7UeFj
+	5APuBE4uFD/pU0pkNkyVYZTagy0lGtOccWpepbnZy+qox8cracNGKGl0Fi2c34Qfcj3A3tzYAMB3I
+	H6NKO22NTB291DjHsakBrZ8g274owLcrJcauWbzBIBkOm8VaIAG+JBXcNzZSUUSz7Yll6EVjPDum9
+	A4lJ47X8Ze/kWs3YPMzxdX5ol0iM/58ut22RZHt8AbiqmR2iKzf2xd2iAS0+B8wX1zvaBoTUgBMYB
+	In7T0prd0srbq1Gh7ibg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc6UT-0004wN-Ic; Fri, 22 May 2020 12:09:29 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jc6Uk-0005H3-L7; Fri, 22 May 2020 12:09:46 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc6SW-0003JF-Bs
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 12:07:30 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u1so8429586wmn.3
+ id 1jc6SX-0003La-0w
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 12:07:31 +0000
+Received: by mail-wm1-x341.google.com with SMTP id h4so8418346wmb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 05:07:27 -0700 (PDT)
+ Fri, 22 May 2020 05:07:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=hGk6SHkwZ0/IFFGnE1iOAP01F59WjRCQF/3H+v3exE4=;
- b=BJ3OIkLmKDJd8mJGXMOAEO0RYtZ+BzOIsHcG2UTpazbPreZ6uDY2fuZCBNsWnHPZjT
- xuescNUhGBE8SFaTTfNfcabLq8y2VIiMaEMMogTnG1fWAg7mF5jI42aIffPUTPA+iePW
- H1+GJn6TtGrfuwlTv2N2j+z+8FJe8t5Tkty0XiPLO8fEfBDLOX5xVk8vM2bkcyuYUIiG
- 6s5XAFWCd8aPysT8MuuczJuWiSYnGUnSFXTw1UdujFdRbRa6bEVoWEbUCrd77lm4pXBG
- BJzOUC0xV1s37znu6SdHGwFgX+Imn6MDlvjRUTS+1uVNKUo0q6QE4VM7f6spU26/iS3X
- hWww==
+ bh=75HMiSxkO2iGkQyQ4GVIN4XRI1pdsKTRs1XUFo380Tg=;
+ b=I7AimdvAZOh1g/UByPwXTG3z06QWyuPRsDF0Y6Dye4Brq8bAXcTR36UrTTrcFRmV0z
+ ApTCDxKUugYCbGqBd6jh4pdAjVZB5LNOe18if99Ec/1JIe97HNEOCfXfXu10oJmV6OmW
+ 9t9TvWm6ZFXkqUfNvBW38GHqf+KiIY4Ck6Bq5FNSeB4KhtkBbVYBv+DU7/Q4cvNK6bT2
+ boLjHlkp7E1pzNHDzgB/i418XwGyHKXG/cG9h7nTX2pmZoouvxti476UwfnpJePKI4ng
+ bURCFe9jqs2O8IdxAxqztdqMugBYRUqdY248cJi+D+VgWvkQ0FT0ORMOETRpJjaJitXR
+ 6orA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=hGk6SHkwZ0/IFFGnE1iOAP01F59WjRCQF/3H+v3exE4=;
- b=MEt/UaqLclXz3eC2u2FwOo8pMHemTt8a44kGu9zo8k4PF551HD9K52qI7bkVwwuGkR
- cs7fcops4kyEIIcBPvzfxRpze92j4cL8OndyO5GFgSAXKHog0IuWWoPmPkFXb4EfwSJh
- gk1YkSwwQb141QvtVhYGspzlAVKx8dJHF1RCMeRA5xqwU/BldTeTmmhi5n3lxWzIx1us
- 3PtkSRB2lUEkH2zwN7CGVd8aN2r3bldo0d77cbgh+kHy22i8J1yzV0VLPNXA24itVtp8
- MegGzMrL7krtrywVsqbnAdnE4Sn/9yQ91gDdAMoBoiNCC2FZKf6OS2a0j6fBMLKeiiPs
- tgvA==
-X-Gm-Message-State: AOAM530/50CfYEkDFmhGNI9F7CHXhCXt71qt2ICei2IFoboJ3dhNENXx
- 1JHYib9lD6TGBSi7Q0NMtrI4aw==
-X-Google-Smtp-Source: ABdhPJzPM9n4wz+olrOocFVpzas4NvH7xuF1o9DtfGChG8Sh1pIB0aDKJyKMN7cmRko0riD9kvETNg==
-X-Received: by 2002:a05:600c:2146:: with SMTP id
- v6mr13654376wml.142.1590149246036; 
- Fri, 22 May 2020 05:07:26 -0700 (PDT)
+ bh=75HMiSxkO2iGkQyQ4GVIN4XRI1pdsKTRs1XUFo380Tg=;
+ b=CeFfUjxL3HgcNr+VyBWtwHcdbt7Jfhx7AegOQ0WegllXFnBbRCF3sFWAc3iXIzwf6m
+ 35qzHWZMeldCcb0PGwfQ3mDQbzcnso5kWtlEgXw7P48Qh432+hR87pAjRez32oM7lOk6
+ KuuKoRziVBN73jMszhhVuBVFxzHbrcepmY2YRBu86QjywUfsO409UyXpCmbZpxVxRvXw
+ SInqpQb2d15UGySbYrvlcHGpcfyTZle331UKDyK8JlmJt6qRfcQnVrVANtmTTYrIwd0z
+ jNx02tnu0MqdNFmkHW+M5t9fW5krXJxoy9p5ahfNrNQsYJJJDQaIekU7lYeJpPGRuwi+
+ bMGA==
+X-Gm-Message-State: AOAM530mnlh6boD0+VRNzTrX3FaDGxvQ+k2gFf1h6a6PKicuuNpCq7zU
+ XNe1wrPzF14bIoRbQfSDenWodfe2owE=
+X-Google-Smtp-Source: ABdhPJwEi7VyHt7K7+omiVssnygbzQxiUSCPmAIEWo/ISCAmaztuxM/ZHSeqf8g+5/jkvW5bZaKWMg==
+X-Received: by 2002:a1c:e188:: with SMTP id
+ y130mr14051662wmg.105.1590149247468; 
+ Fri, 22 May 2020 05:07:27 -0700 (PDT)
 Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
  [2.15.156.232])
- by smtp.gmail.com with ESMTPSA id f128sm9946233wme.1.2020.05.22.05.07.24
+ by smtp.gmail.com with ESMTPSA id f128sm9946233wme.1.2020.05.22.05.07.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 May 2020 05:07:25 -0700 (PDT)
+ Fri, 22 May 2020 05:07:26 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Rob Herring <robh+dt@kernel.org>, "David S . Miller" <davem@davemloft.net>,
  Matthias Brugger <matthias.bgg@gmail.com>, John Crispin <john@phrozen.org>,
@@ -67,23 +67,24 @@ To: Rob Herring <robh+dt@kernel.org>, "David S . Miller" <davem@davemloft.net>,
  Fabien Parent <fparent@baylibre.com>,
  Heiner Kallweit <hkallweit1@gmail.com>,
  Edwin Peer <edwin.peer@broadcom.com>
-Subject: [PATCH v5 04/11] net: ethernet: mediatek: rename Kconfig prompt
-Date: Fri, 22 May 2020 14:06:53 +0200
-Message-Id: <20200522120700.838-5-brgl@bgdev.pl>
+Subject: [PATCH v5 05/11] net: ethernet: mediatek: remove unnecessary spaces
+ from Makefile
+Date: Fri, 22 May 2020 14:06:54 +0200
+Message-Id: <20200522120700.838-6-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200522120700.838-1-brgl@bgdev.pl>
 References: <20200522120700.838-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_050728_456145_A76FD0AF 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20200522_050729_106354_621F8E20 
+X-CRM114-Status: GOOD (  11.55  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -114,26 +115,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-We'll soon by adding a second MediaTek Ethernet driver so modify the
-Kconfig prompt.
+The Makefile formatting in the kernel tree usually doesn't use tabs,
+so remove them before we add a second driver.
 
 Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 ---
- drivers/net/ethernet/mediatek/Kconfig | 2 +-
+ drivers/net/ethernet/mediatek/Makefile | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/mediatek/Kconfig b/drivers/net/ethernet/mediatek/Kconfig
-index 4968352ba188..5079b8090f16 100644
---- a/drivers/net/ethernet/mediatek/Kconfig
-+++ b/drivers/net/ethernet/mediatek/Kconfig
-@@ -1,6 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0-only
- config NET_VENDOR_MEDIATEK
--	bool "MediaTek ethernet driver"
-+	bool "MediaTek devices"
- 	depends on ARCH_MEDIATEK || SOC_MT7621 || SOC_MT7620
- 	---help---
- 	  If you have a Mediatek SoC with ethernet, say Y.
+diff --git a/drivers/net/ethernet/mediatek/Makefile b/drivers/net/ethernet/mediatek/Makefile
+index 2d8362f9341b..3362fb7ef859 100644
+--- a/drivers/net/ethernet/mediatek/Makefile
++++ b/drivers/net/ethernet/mediatek/Makefile
+@@ -3,5 +3,5 @@
+ # Makefile for the Mediatek SoCs built-in ethernet macs
+ #
+ 
+-obj-$(CONFIG_NET_MEDIATEK_SOC)                 += mtk_eth.o
++obj-$(CONFIG_NET_MEDIATEK_SOC) += mtk_eth.o
+ mtk_eth-y := mtk_eth_soc.o mtk_sgmii.o mtk_eth_path.o
 -- 
 2.25.0
 
