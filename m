@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B5881DEB02
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:58:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52B091DEB05
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:58:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EKV6D+9nnaYGG8/he7nn24wHqtbYYTebqzsogdOvu7w=; b=cV+PF2Ws3m8gSf
-	u80r3QtSO8OhQPB6Hp2Mg6t3G3Exoq1LWuUYAbX3dTpYanGeEnuKfe+bOad9naeuXSnnPMnq3drKf
-	nof3A9pEhhXG1Wx4SswvcMuHEQVjVr12dTTUgmAr/j4MTiZG1kB6etk6tmZh0z086cpfyndmxvDp1
-	A6ojIs8aLZQ3A3QCTJDw58HEgh/NDr7VRYxlJ7zgmqhaCezCIqN8/PtEPzi3Rxl1nCQoz/n3y4rRo
-	inmYmI+Cr63NxvM46GUgjVC/UL9NSpLkhieyAa8OWw/f3vCYNOjGDPS4DHUTeyYAEHRSJR/JYtaUT
-	AWSFg40T0CAm4uTeFoRw==;
+	List-Owner; bh=SYyj3myIOYmEBlfjEuWbUMnEKLKzPGE74Pb8TmONPGo=; b=C4D+Nz+QucYZzT
+	CGs+2XOaXsJmRmzRwzMOawCiYv03m4MC7BJ7CvDFPhI1mULAV97HpDinHYAmKci45FcQW1K12mACm
+	kaVmKmHQttzR/kIwWsKJNpxOwlmYSy1Xa65JQhoRdJvvXezDW9qzGDsn70L4z7sQ6/6oY6atzXsyd
+	m+0OSUQ6k2mkc/zQPOO8jGrQB0zYPV7SkkWuo8IZsRw0RZW7hGjBSEx33l4QZNmk2+A2SG7Icj2DP
+	63LSWWfy88qEzohpJleOaUymzyaXMz4ljMJbjUhkX+MESsh9y3z4kmW6lZNEX//4vJLWKeMwfxc3C
+	qrt31oHPD75SKWG9+3lA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc97k-0002mf-My; Fri, 22 May 2020 14:58:12 +0000
+	id 1jc97z-00037w-R5; Fri, 22 May 2020 14:58:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc91V-0002wV-Oj; Fri, 22 May 2020 14:51:47 +0000
+ id 1jc91W-0002xw-PP; Fri, 22 May 2020 14:51:49 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 75FA722225;
- Fri, 22 May 2020 14:51:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9C40F221FF;
+ Fri, 22 May 2020 14:51:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590159105;
- bh=g09hXy47/1XVzK6Vin5sJf0cHvyIpJ2DR/LHGM3UeX8=;
+ s=default; t=1590159106;
+ bh=yYeTSMmM5FxusSZEIdctCarTpv7x8v6BuKfesZquWXk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=G58REJ4sGIliU7PYgiXSMNLUUeg4LDRbfIycpXLLYRIUIG5tLHSfrHAcwHF0WabOg
- lE+bB9gvpJ6qSJT5uqVEBqi/4nsS8b/sofmtzLr2SvDFyTpSWHoA4ugFERekNlY7dj
- 1M3vSQ3QsXy4BxVclq4JQehfskeDw+MTSKNq17NY=
+ b=RSFBWj5n7NUse2P9yTYHDuAevJuQmk2CgpTCajjS87J78YT3MfBkG3VLGoN5PEUxq
+ 2sizEvXbaCcmO8MY/LKc4UfwgzgHl+hIwg5jv0pPiYEneiQPuDKGXEXVMRXUaD1bSZ
+ yGRdqElRvIxLd4CXT6ceqoq0LOZP55Vs+40Yjodc=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 02/13] arm64: dts: rockchip: swap interrupts
- interrupt-names rk3399 gpu node
-Date: Fri, 22 May 2020 10:51:31 -0400
-Message-Id: <20200522145142.435086-2-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.14 03/13] ARM: dts: rockchip: fix pinctrl sub
+ nodename for spi in rk322x.dtsi
+Date: Fri, 22 May 2020 10:51:32 -0400
+Message-Id: <20200522145142.435086-3-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200522145142.435086-1-sashal@kernel.org>
 References: <20200522145142.435086-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_075145_966213_0E834F1F 
-X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-CacheID: sfid-20200522_075147_423558_89E323B8 
+X-CRM114-Status: UNSURE (   9.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -90,45 +90,57 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit c604fd810bda667bdc20b2c041917baa7803e0fb ]
+[ Upstream commit 855bdca1781c79eb661f89c8944c4a719ce720e8 ]
 
-Dts files with Rockchip rk3399 'gpu' nodes were manually verified.
-In order to automate this process arm,mali-midgard.txt
-has been converted to yaml. In the new setup dtbs_check with
-arm,mali-midgard.yaml expects interrupts and interrupt-names values
-in the same order. Fix this for rk3399.
+A test with the command below gives these errors:
 
-make ARCH=arm64 dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/gpu/
-arm,mali-midgard.yaml
+arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-0:
+'#address-cells' is a required property
+arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-1:
+'#address-cells' is a required property
+arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-0:
+'#address-cells' is a required property
+arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-1:
+'#address-cells' is a required property
+
+The $nodename pattern for spi nodes is
+"^spi(@.*|-[0-9a-f])*$". To prevent warnings rename
+'spi-0' and 'spi-1' pinctrl sub nodenames to
+'spi0' and 'spi1' in 'rk322x.dtsi'.
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=Documentation/devicetree/bindings/spi/spi-controller.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200425143837.18706-1-jbx6244@gmail.com
+Link: https://lore.kernel.org/r/20200424123923.8192-1-jbx6244@gmail.com
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/rockchip/rk3399.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/rk322x.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399.dtsi b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-index ff8df7fd44a7..b63d9653ff55 100644
---- a/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3399.dtsi
-@@ -1691,10 +1691,10 @@
- 	gpu: gpu@ff9a0000 {
- 		compatible = "rockchip,rk3399-mali", "arm,mali-t860";
- 		reg = <0x0 0xff9a0000 0x0 0x10000>;
--		interrupts = <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>,
--			     <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
--			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>;
--		interrupt-names = "gpu", "job", "mmu";
-+		interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "job", "mmu", "gpu";
- 		clocks = <&cru ACLK_GPU>;
- 		power-domains = <&power RK3399_PD_GPU>;
- 		status = "disabled";
+diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
+index f59f7cc62be6..0c60dbc4b46a 100644
+--- a/arch/arm/boot/dts/rk322x.dtsi
++++ b/arch/arm/boot/dts/rk322x.dtsi
+@@ -950,7 +950,7 @@
+ 			};
+ 		};
+ 
+-		spi-0 {
++		spi0 {
+ 			spi0_clk: spi0-clk {
+ 				rockchip,pins = <0 9 RK_FUNC_2 &pcfg_pull_up>;
+ 			};
+@@ -968,7 +968,7 @@
+ 			};
+ 		};
+ 
+-		spi-1 {
++		spi1 {
+ 			spi1_clk: spi1-clk {
+ 				rockchip,pins = <0 23 RK_FUNC_2 &pcfg_pull_up>;
+ 			};
 -- 
 2.25.1
 
