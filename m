@@ -2,89 +2,161 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A34AB1DEC1A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 17:37:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A1901DEC27
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 17:38:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WPo75P+ZNLCPSzmGxG4yvWI9hSP2Xw2K6vBgZJfutiE=; b=Z9VkaTdk9ihrfM
-	p7nl7qzZ1vuBTXGNczzwLPznc+6qZmVjND8GqvUUTEC1NR9uesE/0rhuKun/ODHoqZ4AyoS0Fc+kh
-	v0/a+8RaP7bQOUyVRDke/DUPez1wLvAxPo7SHdwNK9Q0UagIX8HQdmEzY28PG1kPhSN1w2wdHo+yU
-	DiAMm2ZnngMOd804ShdjTPWnM1YdkG579v6fWPOu2374b1hdB85TFGvOBzWVpDCxWUHeghqQwc7Ja
-	GGyQO671+FlJgJPPbDSneOHEXARsTW0Fo1LQ5ZM1Fj3/KmLpzd1kANiP77iqMd53xoAbMjkKCRYiK
-	RxwqfkolffupJZ7t7w6A==;
+	List-Owner; bh=Ioknd/NKf3fscEeGyFDnlNdQBRh2T8lqUeuXj46d54w=; b=Zc+w2vRxHbsFtn
+	UcngtbLAV8IPFKE0cACJdYEiRisnBzBS7MWcV26Wzt8i+n9FZV0X0/oIQ4axpljkFauXR++tMk6iV
+	fYlh9OtCdorE+gaju5VNh/iGflbz7uoZEfHa4GKNfwd5psh6vXGjH6HI7TtgkcsKJOIr6xrB28l46
+	5UytUK6u/ELMJVG+1ghI7unsJycsvOCjNGx2gh3S7ZnWgy42KKlOvIA+XsAhiJcOdEzFmLTPDVdxi
+	uuA/ferDLLXuf0VX6mV0xU2Gvg9X2D+lf5ckKKVvPFl916oVKD4QvSwtoxCduT5h10tvD3UDlCYyr
+	aPakSvGljkYBLAcfi0Gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc9ju-0007IC-70; Fri, 22 May 2020 15:37:38 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jc9kq-0007uW-NO; Fri, 22 May 2020 15:38:36 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc9j6-0006jO-KG
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 15:36:54 +0000
-Received: by mail-wm1-x343.google.com with SMTP id v19so3244289wmj.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 08:36:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
+ id 1jc9kc-0007tf-F6; Fri, 22 May 2020 15:38:24 +0000
+Received: by mail-wr1-x444.google.com with SMTP id l11so10637314wru.0;
+ Fri, 22 May 2020 08:38:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=qO//5STrxgCU0oKi08sL7FpWxjHQ0iLeOfPsLNCOOZ8=;
- b=X4mrlj2e0WLmcGe/Ul79eRybo7mfJ/zxXq3t98QPMOzuRrsCG1ErAiK5oRaplnTt/N
- NkqskvRtT/mvacSW80iJRo0WfcusZWQTYCRG8TfxDfPWmaVhSadqf/xR371SrYkZN5vE
- B2F3gLC2M5zEsFtS2KK52DicNOVGvFFL6dJp+F3PUPi1bnJNYA1Bxfqdn2CjmB93Kn0t
- olyDt7OUcrTj0Onr9GqFPtAPWTLF40VCyRzqSWbCTKpkqCmkbu7jbHLsUJMdMhlJFZi1
- 5a4fSy+nSmJVL/UQ/H+Ch5lp8wjo0J6ttaahWUUNBKeMa8ZVV5+R1MK/4M2wxOSUsV5Y
- K6Cw==
+ bh=En8ZDEzcLbAeuTI5D0xEPaBrQHbpj1ERdOhqo1dr+r8=;
+ b=Maet0jYB2Ziw+jAZixcFkMD7SlYDYi10f7LbCxcQyEVpW73PX3rTAtRn9pY/ATGuND
+ CZrOiwD1w72ZEVA9FI1UMMz76MCqIEQb2creMzRyVznwM2DHdZoNFy+AmoZjtbcknaJJ
+ YGQvBCyzQcwhaiPDnBXL2r4OvbcdmGZ5+sx2vTCn1xEVGpEZC2SVV1LS+BHkWqLMssIy
+ a8Kq6NlUsYCHJvx7Yqf0YU9XjCgMlPLlUGcg65jKkrMcBcWHlxUiPTFFPYCORQvfULL6
+ Cy/VVf/61vU5AwFmjfvoLollxiAObPQQRHIykOUM4RuTlofc+p6XRn9DwBcgEKDjA05c
+ IemA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=qO//5STrxgCU0oKi08sL7FpWxjHQ0iLeOfPsLNCOOZ8=;
- b=evWb59ai+rsTWpQIV+479j5//ScSD2XzZZpEzt+rx7Q76Mw3p/pKMsuScoyOPqjyp/
- rWmjyxqnV2lP6M+koM3TZMBBi+FFTkNSiBHVWO4QY6S5GYZliM5e5M2wD3JkqCUrGM/v
- qE5PMMxYImRP3oibK+vhGVEZYNxkIzqRJoYbMCjany3LqFPuyn8FzBkIlm1Zon+IrKxF
- owhDkeCFNHBG7cv09ktSPQp0ZrAagW5ONpg7STSpcO92gtj9Nkq6Q3+PHRKR/xMDDZ63
- tcidsEgVrBxzkQ5s8og606xuAyIC1Iso+5S5FnYcZyafiTtNXL18DY4M7y5mpc1ctmvZ
- COJw==
-X-Gm-Message-State: AOAM533DOfssvyDc4phhHdqnLoIHekJeIlpxxmJcTqQw4kGYOeQw5+Ii
- GI8yPIdKE8YsimvPWf7FHZPPpA==
-X-Google-Smtp-Source: ABdhPJw+HNRTr+VjCPf0xBBfdVoukyQWtW53930UGkPXuO6c31SE4S/MMuWxdD4uhCH7Xi53i4AiRQ==
-X-Received: by 2002:a1c:6706:: with SMTP id b6mr13779520wmc.54.1590161806908; 
- Fri, 22 May 2020 08:36:46 -0700 (PDT)
-Received: from ?IPv6:2a01:e34:ed2f:f020:a82f:eaec:3c49:875a?
- ([2a01:e34:ed2f:f020:a82f:eaec:3c49:875a])
- by smtp.googlemail.com with ESMTPSA id s19sm6109825wmj.21.2020.05.22.08.36.45
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=En8ZDEzcLbAeuTI5D0xEPaBrQHbpj1ERdOhqo1dr+r8=;
+ b=YFDLiQ5/kdeVwuO/4g7uPgrBAgpe7Xa0waKOwCu34Cha9SwzmPwQa8TjRATuE2VoKp
+ FN+JvsnhQ7HXIu6C8dZC22juN0y1rOci0C40RW0pepAo/c+l8Ivc+mBkAmpbrHzx1/ZK
+ Xa4pAWaxCMP9dkn2nef2kM5H/GHDgRFBwdu6M2Em71qE4s0n0GBdBrB2eU7/86b9PxQg
+ DX8WVzA1PGg6fdkfYGKJqSzH2M/BJMI3biHnLvRig5EHMoyIz2Do45/rXRebyl1knnfl
+ CYgq1io2rh69v9e6X81CwTPCYVI6E7QipAqZYKHuWOJImsfAZ4KTTc9OngGYfXQivkp6
+ BNvQ==
+X-Gm-Message-State: AOAM533TCGXvDOXwJIH/d/Qp747UIoXJR7hVzv7tYUfah72QrsBxeiJx
+ jsxmFQnuhRbzC3J2X7kfx+gFIZzrg6g=
+X-Google-Smtp-Source: ABdhPJx0CsXJEAx4ihSfjjcd18gWgluoE61/HcXLEiO24nOqUV2+UgcKmG9ekSVcZvUpfCDm8TEn8Q==
+X-Received: by 2002:adf:f783:: with SMTP id q3mr3829441wrp.348.1590161900546; 
+ Fri, 22 May 2020 08:38:20 -0700 (PDT)
+Received: from ziggy.stardust ([213.195.113.243])
+ by smtp.gmail.com with ESMTPSA id e21sm9658808wme.34.2020.05.22.08.38.18
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 22 May 2020 08:36:46 -0700 (PDT)
-Subject: Re: [v4,7/7] thermal: mediatek: use spinlock to protect PTPCORESEL
-To: Michael Kao <michael.kao@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
- Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, hsinyi@chromium.org,
- linux-pm@vger.kernel.org, srv_heupstream@mediatek.com
-References: <20200323121537.22697-1-michael.kao@mediatek.com>
- <20200323121537.22697-8-michael.kao@mediatek.com>
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-Message-ID: <1afbf412-fbeb-8abe-66d8-bd7ac4e9dd83@linaro.org>
-Date: Fri, 22 May 2020 17:36:45 +0200
+ Fri, 22 May 2020 08:38:19 -0700 (PDT)
+Subject: Re: [PATCH v8 3/3] PM / AVS: SVS: Introduce SVS engine
+To: Roger Lu <roger.lu@mediatek.com>,
+ Enric Balletbo Serra <eballetbo@gmail.com>
+References: <20200518092403.22647-1-roger.lu@mediatek.com>
+ <20200518092403.22647-4-roger.lu@mediatek.com>
+ <CAFqH_527ZJEmsvrk-n-uNSc+Bx87ZVppn=rNKDWPGYUuf+gvPA@mail.gmail.com>
+ <1590140434.4392.22.camel@mtksdaap41>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <3b810588-ac4a-7fec-2163-38555dd83928@gmail.com>
+Date: Fri, 22 May 2020 17:38:18 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200323121537.22697-8-michael.kao@mediatek.com>
+In-Reply-To: <1590140434.4392.22.camel@mtksdaap41>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_083648_717951_0482322A 
-X-CRM114-Status: GOOD (  19.30  )
+X-CRM114-CacheID: sfid-20200522_083822_508077_FC9A6AEE 
+X-CRM114-Status: GOOD (  27.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [matthias.bgg[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -105,51 +177,548 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
+ Nishanth Menon <nm@ti.com>, Kevin Hilman <khilman@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
+ Angus Lin <Angus.Lin@mediatek.com>, Xiaoqing Liu <Xiaoqing.Liu@mediatek.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Fan Chen <fan.chen@mediatek.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ HenryC Chen <HenryC.Chen@mediatek.com>,
+ Charles Yang <Charles.Yang@mediatek.com>, YT Lee <yt.lee@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjMvMDMvMjAyMCAxMzoxNSwgTWljaGFlbCBLYW8gd3JvdGU6Cj4gRnJvbTogIm1pY2hhZWwu
-a2FvIiA8bWljaGFlbC5rYW9AbWVkaWF0ZWsuY29tPgo+IAo+IFRoZSBkcml2ZXIgb2YgdGhlcm1h
-bCBhbmQgc3ZzIHdpbGwgdXNlIHRoZQo+IHNhbWUgcmVnaXN0ZXIgZm9yIHRoZSBwcm9qZWN0IHdo
-aWNoIHNob3VsZCBzZWxlY3QKPiBiYW5rIGJlZm9yZSByZWFkaW5nIHNlbnNvciB2YWx1ZS4KCkhl
-cmUgdGhlcmUgaXMgYSBkZXNpZ24gcHJvYmxlbSBBRkFJQ1QuIFRoZSBzZW5zb3Igc2hvdWxkIG5v
-dCBiZSB1c2luZwpleHRlcm5hbCBsb2Nrcy4KCgoKPiBTaWduZWQtb2ZmLWJ5OiBNaWNoYWVsIEth
-byA8bWljaGFlbC5rYW9AbWVkaWF0ZWsuY29tPgo+IC0tLQo+ICBkcml2ZXJzL3RoZXJtYWwvbXRr
-X3RoZXJtYWwuYyB8IDkgKysrKy0tLS0tCj4gIDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMo
-KyksIDUgZGVsZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdGhlcm1hbC9tdGtf
-dGhlcm1hbC5jIGIvZHJpdmVycy90aGVybWFsL210a190aGVybWFsLmMKPiBpbmRleCA5ZWFjYTQz
-MjkyMGUuLjU5NGFkNGYwZjhjZCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3RoZXJtYWwvbXRrX3Ro
-ZXJtYWwuYwo+ICsrKyBiL2RyaXZlcnMvdGhlcm1hbC9tdGtfdGhlcm1hbC5jCj4gQEAgLTIyLDYg
-KzIyLDcgQEAKPiAgI2luY2x1ZGUgPGxpbnV4L3RoZXJtYWwuaD4KPiAgI2luY2x1ZGUgPGxpbnV4
-L3Jlc2V0Lmg+Cj4gICNpbmNsdWRlIDxsaW51eC90eXBlcy5oPgo+ICsjaW5jbHVkZSA8bGludXgv
-cG93ZXIvbXRrX3N2cy5oPgo+ICAKPiAgLyogQVVYQURDIFJlZ2lzdGVycyAqLwo+ICAjZGVmaW5l
-IEFVWEFEQ19DT04xX1NFVF9WCTB4MDA4Cj4gQEAgLTI2Miw3ICsyNjMsNyBAQCBzdHJ1Y3QgbXRr
-X3RoZXJtYWwgewo+ICAJc3RydWN0IGNsayAqY2xrX3BlcmlfdGhlcm07Cj4gIAlzdHJ1Y3QgY2xr
-ICpjbGtfYXV4YWRjOwo+ICAJLyogbG9jazogZm9yIGdldHRpbmcgYW5kIHB1dHRpbmcgYmFua3Mg
-Ki8KPiAtCXN0cnVjdCBtdXRleCBsb2NrOwo+ICsJdW5zaWduZWQgbG9uZyBmbGFnczsKPiAgCj4g
-IAkvKiBDYWxpYnJhdGlvbiB2YWx1ZXMgKi8KPiAgCXMzMiBhZGNfZ2U7Cj4gQEAgLTU2MSw3ICs1
-NjIsNyBAQCBzdGF0aWMgdm9pZCBtdGtfdGhlcm1hbF9nZXRfYmFuayhzdHJ1Y3QgbXRrX3RoZXJt
-YWxfYmFuayAqYmFuaykKPiAgCXUzMiB2YWw7Cj4gIAo+ICAJaWYgKG10LT5jb25mLT5uZWVkX3N3
-aXRjaF9iYW5rKSB7Cj4gLQkJbXV0ZXhfbG9jaygmbXQtPmxvY2spOwo+ICsJCW10LT5mbGFncyA9
-IGNsYWltX210a19zdnNfbG9jaygpOwo+ICAKPiAgCQl2YWwgPSByZWFkbChtdC0+dGhlcm1hbF9i
-YXNlICsgUFRQQ09SRVNFTCk7Cj4gIAkJdmFsICY9IH4weGY7Cj4gQEAgLTU4MSw3ICs1ODIsNyBA
-QCBzdGF0aWMgdm9pZCBtdGtfdGhlcm1hbF9wdXRfYmFuayhzdHJ1Y3QgbXRrX3RoZXJtYWxfYmFu
-ayAqYmFuaykKPiAgCXN0cnVjdCBtdGtfdGhlcm1hbCAqbXQgPSBiYW5rLT5tdDsKPiAgCj4gIAlp
-ZiAobXQtPmNvbmYtPm5lZWRfc3dpdGNoX2JhbmspCj4gLQkJbXV0ZXhfdW5sb2NrKCZtdC0+bG9j
-ayk7Cj4gKwkJcmVsZWFzZV9tdGtfc3ZzX2xvY2sobXQtPmZsYWdzKTsKPiAgfQo+ICAKPiAgLyoq
-Cj4gQEAgLTkzOCw4ICs5MzksNiBAQCBzdGF0aWMgaW50IG10a190aGVybWFsX3Byb2JlKHN0cnVj
-dCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gIAlpZiAocmV0KQo+ICAJCXJldHVybiByZXQ7Cj4g
-IAo+IC0JbXV0ZXhfaW5pdCgmbXQtPmxvY2spOwo+IC0KPiAgCW10LT5kZXYgPSAmcGRldi0+ZGV2
-Owo+ICAKPiAgCWF1eGFkYyA9IG9mX3BhcnNlX3BoYW5kbGUobnAsICJtZWRpYXRlayxhdXhhZGMi
-LCAwKTsKPiAKCgotLSAKPGh0dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9w
-ZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8v
-d3d3LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVy
-LmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFy
-by1ibG9nLz4gQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtYXJtLWtlcm5lbAo=
+
+
+On 22/05/2020 11:40, Roger Lu wrote:
+> 
+> Hi Enric,
+> 
+> On Tue, 2020-05-19 at 17:30 +0200, Enric Balletbo Serra wrote:
+>> Hi Roger,
+>>
+>> Thank you for your patch. I have the feeling that this driver is
+>> complex and difficult to follow and I am wondering if it wouldn't be
+>> better if you can send a version that simply adds basic functionality
+>> for now. Some comments below.
+> 
+> Thanks for the advices. I'll submit SVS v9 with basic functionality
+> patch + step by step functionalities' patches. 
+> 
+>>
+>> Missatge de Roger Lu <roger.lu@mediatek.com> del dia dl., 18 de maig
+>> 2020 a les 11:25:
+>>>
+>>> The SVS (Smart Voltage Scaling) engine is a piece
+>>> of hardware which is used to calculate optimized
+>>> voltage values of several power domains,
+>>> e.g. CPU/GPU/CCI, according to chip process corner,
+>>> temperatures, and other factors. Then DVFS driver
+>>> could apply those optimized voltage values to reduce
+>>> power consumption.
+>>>
+>>> Signed-off-by: Roger Lu <roger.lu@mediatek.com>
+>>> ---
+>>>  drivers/power/avs/Kconfig     |   10 +
+>>>  drivers/power/avs/Makefile    |    1 +
+>>>  drivers/power/avs/mtk_svs.c   | 2119 +++++++++++++++++++++++++++++++++
+>>>  include/linux/power/mtk_svs.h |   23 +
+>>>  4 files changed, 2153 insertions(+)
+>>>  create mode 100644 drivers/power/avs/mtk_svs.c
+>>>  create mode 100644 include/linux/power/mtk_svs.h
+>>>
+>>> diff --git a/drivers/power/avs/Kconfig b/drivers/power/avs/Kconfig
+>>> index cdb4237bfd02..67089ac6040e 100644
+>>> --- a/drivers/power/avs/Kconfig
+>>> +++ b/drivers/power/avs/Kconfig
+>>> @@ -35,3 +35,13 @@ config ROCKCHIP_IODOMAIN
+>>>           Say y here to enable support io domains on Rockchip SoCs. It is
+>>>           necessary for the io domain setting of the SoC to match the
+>>>           voltage supplied by the regulators.
+>>> +
+>>> +config MTK_SVS
+>>> +       bool "MediaTek Smart Voltage Scaling(SVS)"
+>>
+>> Can't be this a module? Why? In such case, you should use tristate option
+> 
+> Generally, MTK_SVS is needed in MTK SoC(mt81xx) products. So, we don't provide
+> module option in config. If, somehow, SVS isn't needed, we suggest
+> CONFIG_MTK_SVS=n to be set.
+> 
+
+The question here is if it needs to be probed before we probe the modules. If
+not, we should add a Kconfig option for MT81xx SoCs to select MTK_SVS.
+
+>>
+>>> +       depends on POWER_AVS && MTK_EFUSE && NVMEM
+>>> +       help
+>>> +         The SVS engine is a piece of hardware which is used to calculate
+>>> +         optimized voltage values of several power domains, e.g.
+>>> +         CPU clusters/GPU/CCI, according to chip process corner, temperatures,
+>>> +         and other factors. Then DVFS driver could apply those optimized voltage
+>>> +         values to reduce power consumption.
+>>> diff --git a/drivers/power/avs/Makefile b/drivers/power/avs/Makefile
+>>> index 9007d05853e2..231adf078582 100644
+>>> --- a/drivers/power/avs/Makefile
+>>> +++ b/drivers/power/avs/Makefile
+>>> @@ -2,3 +2,4 @@
+>>>  obj-$(CONFIG_POWER_AVS_OMAP)           += smartreflex.o
+>>>  obj-$(CONFIG_QCOM_CPR)                 += qcom-cpr.o
+>>>  obj-$(CONFIG_ROCKCHIP_IODOMAIN)                += rockchip-io-domain.o
+>>> +obj-$(CONFIG_MTK_SVS)                  += mtk_svs.o
+>>
+>> Will this driver be SoC specific or the idea is to support different
+>> SoCs? If the answer to the first question is yes, please name the file
+>> with the SoC prefix (i.e mt8183_svs). However, If the answer to the
+>> second question is yes, make sure you prefix common
+>> functions/structs/defines with a generic prefix mtk_svs but use the
+>> SoC prefix for the ones you expect will be different between SoC, i.e
+>> mt8183_svs_. This helps the readability of the driver. Also, try to
+>> avoid too generic names.
+> 
+> MTK_SVS is designed for supporting different MTK SoCs.Therefore, the answer is second
+> question and thanks for the heads-up.
+> 
+>>
+>>> diff --git a/drivers/power/avs/mtk_svs.c b/drivers/power/avs/mtk_svs.c
+>>> new file mode 100644
+>>> index 000000000000..a4083b3ef175
+>>> --- /dev/null
+>>> +++ b/drivers/power/avs/mtk_svs.c
+>>> @@ -0,0 +1,2119 @@
+>>> +// SPDX-License-Identifier: GPL-2.0
+>>
+>> I suspect you want this only GPLv2 compliant. Use GPL-2.0-only
+> 
+> OK. I'll use GPL-2.0-only.Thanks.
+> 
+>>
+>>> +/*
+>>> + * Copyright (C) 2020 MediaTek Inc.
+>>> + */
+>>> +
+>>> +#define pr_fmt(fmt)    "[mtk_svs] " fmt
+>>
+>> I don't see any reason to use pr_fmt in this driver. Use dev_*
+>> functions instead and remove the above.
+> 
+> Ok. I will remove it. Thanks.
+> 
+>>
+>>> +
+>>> +#include <linux/bits.h>
+>>> +#include <linux/clk.h>
+>>> +#include <linux/completion.h>
+>>> +#include <linux/init.h>
+>>> +#include <linux/interrupt.h>
+>>> +#include <linux/kernel.h>
+>>> +#include <linux/kthread.h>
+>>> +#include <linux/module.h>
+>>> +#include <linux/mutex.h>
+>>> +#include <linux/nvmem-consumer.h>
+>>> +#include <linux/of_address.h>
+>>> +#include <linux/of_irq.h>
+>>> +#include <linux/of_platform.h>
+>>> +#include <linux/platform_device.h>
+>>> +#include <linux/pm_domain.h>
+>>> +#include <linux/pm_opp.h>
+>>> +#include <linux/pm_qos.h>
+>>> +#include <linux/pm_runtime.h>
+>>> +#include <linux/power/mtk_svs.h>
+>>> +#include <linux/proc_fs.h>
+>>> +#include <linux/regulator/consumer.h>
+>>> +#include <linux/reset.h>
+>>> +#include <linux/seq_file.h>
+>>> +#include <linux/slab.h>
+>>> +#include <linux/spinlock.h>
+>>> +#include <linux/thermal.h>
+>>> +#include <linux/uaccess.h>
+>>> +
+>>> +/* svs 1-line sw id */
+>>> +#define SVS_CPU_LITTLE                 BIT(0)
+>>> +#define SVS_CPU_BIG                    BIT(1)
+>>> +#define SVS_CCI                                BIT(2)
+>>> +#define SVS_GPU                                BIT(3)
+>>> +
+>>> +/* svs bank mode support */
+>>> +#define SVSB_MODE_ALL_DISABLE          (0)
+>>
+>> nit: SVS_BMODE_?
+> 
+> Oh. If we add bank wording like SVS_Bxxx, it might cause some confusion when B combines
+> with other words. So, I'll keep SVSB for SVS Bank representation.
+> E.g: SVS_BDC_SIGNED_BIT might lead to be explained differently ("SVS bank + DC_SIGNED_BIT" or "SVS + BDC_SIGNED_BIT")
+>      - "SVS bank + DC_SIGNED_BIT" is what we want for naming SVS_BDC_SIGNED_BIT but it might be misunderstood.
+> 
+>>
+>>> +#define SVSB_MODE_INIT01               BIT(1)
+>>> +#define SVSB_MODE_INIT02               BIT(2)
+>>> +#define SVSB_MODE_MON                  BIT(3)
+>>> +
+>>> +/* svs bank init01 condition */
+>>> +#define SVSB_INIT01_VOLT_IGNORE                BIT(1)
+>>> +#define SVSB_INIT01_VOLT_INC_ONLY      BIT(2)
+>>> +
+>>> +/* svs bank common setting */
+>>> +#define HIGH_TEMP_MAX                  (U32_MAX)
+>>
+>> nit: SVS_*
+> 
+> ok. I will add SVS or SVSB when it refers to SVS BANK.
+> 
+>>
+>>> +#define RUNCONFIG_DEFAULT              (0x80000000)
+>>
+>> Btw, there is any public datasheet where I can see those addresses and
+>> registers and bit fields?
+> 
+> Excuse us, there is no public datasheet. We can reply it on patchwork. Thanks.
+> 
+>>
+>>> +#define DC_SIGNED_BIT                  (0x8000)
+>>> +#define INTEN_INIT0x                   (0x00005f01)
+>>> +#define INTEN_MONVOPEN                 (0x00ff0000)
+>>> +#define SVSEN_OFF                      (0x0)
+>>> +#define SVSEN_MASK                     (0x7)
+>>> +#define SVSEN_INIT01                   (0x1)
+>>> +#define SVSEN_INIT02                   (0x5)
+>>> +#define SVSEN_MON                      (0x2)
+>>> +#define INTSTS_MONVOP                  (0x00ff0000)
+>>> +#define INTSTS_COMPLETE                        (0x1)
+>>> +#define INTSTS_CLEAN                   (0x00ffffff)
+>>> +
+>>> +#define proc_fops_rw(name) \
+>>> +       static int name ## _proc_open(struct inode *inode,      \
+>>> +                                     struct file *file)        \
+>>> +       {                                                       \
+>>> +               return single_open(file, name ## _proc_show,    \
+>>> +                                  PDE_DATA(inode));            \
+>>> +       }                                                       \
+>>> +       static const struct proc_ops name ## _proc_fops = {     \
+>>> +               .proc_open      = name ## _proc_open,           \
+>>> +               .proc_read      = seq_read,                     \
+>>> +               .proc_lseek     = seq_lseek,                    \
+>>> +               .proc_release   = single_release,               \
+>>> +               .proc_write     = name ## _proc_write,          \
+>>> +       }
+>>> +
+>>> +#define proc_fops_ro(name) \
+>>> +       static int name ## _proc_open(struct inode *inode,      \
+>>> +                                     struct file *file)        \
+>>> +       {                                                       \
+>>> +               return single_open(file, name ## _proc_show,    \
+>>> +                                  PDE_DATA(inode));            \
+>>> +       }                                                       \
+>>> +       static const struct proc_ops name ## _proc_fops = {     \
+>>> +               .proc_open      = name ## _proc_open,           \
+>>> +               .proc_read      = seq_read,                     \
+>>> +               .proc_lseek     = seq_lseek,                    \
+>>> +               .proc_release   = single_release,               \
+>>> +       }
+>>> +
+>>> +#define proc_entry(name)       {__stringify(name), &name ## _proc_fops}
+>>> +
+>>
+>> /proc is usually the old way of exporting files to userspace, so
+>> unless you have a really good reason use sysfs instead, or even
+>> better, if it is only for debug purposes use debugfs. Also, you should
+>> document the entries in Documentation.
+> 
+> Ok. I'll change it to debugfs and could you give us an example about entries in documentation?
+> We can follow them. Thanks.
+> 
+>>
+>>> +static DEFINE_SPINLOCK(mtk_svs_lock);
+>>> +struct mtk_svs;
+>>> +
+>>> +enum svsb_phase {
+>>
+>> nit: mtk_svs_bphase?
+> 
+> ditto
+> 
+>>
+>>> +       SVSB_PHASE_INIT01 = 0,
+>>
+>> nit: SVS_BPHASE_?
+> 
+> ditto
+> 
+>>
+>>> +       SVSB_PHASE_INIT02,
+>>> +       SVSB_PHASE_MON,
+>>> +       SVSB_PHASE_ERROR,
+>>> +};
+>>> +
+>>> +enum reg_index {
+>>
+>> nit: svs_reg_index?
+> 
+> OK. Thanks.
+> 
+>>
+>>> +       TEMPMONCTL0 = 0,
+>>> +       TEMPMONCTL1,
+>>> +       TEMPMONCTL2,
+>>> +       TEMPMONINT,
+>>> +       TEMPMONINTSTS,
+>>> +       TEMPMONIDET0,
+>>> +       TEMPMONIDET1,
+>>> +       TEMPMONIDET2,
+>>> +       TEMPH2NTHRE,
+>>> +       TEMPHTHRE,
+>>> +       TEMPCTHRE,
+>>> +       TEMPOFFSETH,
+>>> +       TEMPOFFSETL,
+>>> +       TEMPMSRCTL0,
+>>> +       TEMPMSRCTL1,
+>>> +       TEMPAHBPOLL,
+>>> +       TEMPAHBTO,
+>>> +       TEMPADCPNP0,
+>>> +       TEMPADCPNP1,
+>>> +       TEMPADCPNP2,
+>>> +       TEMPADCMUX,
+>>> +       TEMPADCEXT,
+>>> +       TEMPADCEXT1,
+>>> +       TEMPADCEN,
+>>> +       TEMPPNPMUXADDR,
+>>> +       TEMPADCMUXADDR,
+>>> +       TEMPADCEXTADDR,
+>>> +       TEMPADCEXT1ADDR,
+>>> +       TEMPADCENADDR,
+>>> +       TEMPADCVALIDADDR,
+>>> +       TEMPADCVOLTADDR,
+>>> +       TEMPRDCTRL,
+>>> +       TEMPADCVALIDMASK,
+>>> +       TEMPADCVOLTAGESHIFT,
+>>> +       TEMPADCWRITECTRL,
+>>> +       TEMPMSR0,
+>>> +       TEMPMSR1,
+>>> +       TEMPMSR2,
+>>> +       TEMPADCHADDR,
+>>> +       TEMPIMMD0,
+>>> +       TEMPIMMD1,
+>>> +       TEMPIMMD2,
+>>> +       TEMPMONIDET3,
+>>> +       TEMPADCPNP3,
+>>> +       TEMPMSR3,
+>>> +       TEMPIMMD3,
+>>> +       TEMPPROTCTL,
+>>> +       TEMPPROTTA,
+>>> +       TEMPPROTTB,
+>>> +       TEMPPROTTC,
+>>> +       TEMPSPARE0,
+>>> +       TEMPSPARE1,
+>>> +       TEMPSPARE2,
+>>> +       TEMPSPARE3,
+>>> +       TEMPMSR0_1,
+>>> +       TEMPMSR1_1,
+>>> +       TEMPMSR2_1,
+>>> +       TEMPMSR3_1,
+>>> +       DESCHAR,
+>>> +       TEMPCHAR,
+>>> +       DETCHAR,
+>>> +       AGECHAR,
+>>> +       DCCONFIG,
+>>> +       AGECONFIG,
+>>> +       FREQPCT30,
+>>> +       FREQPCT74,
+>>> +       LIMITVALS,
+>>> +       VBOOT,
+>>> +       DETWINDOW,
+>>> +       CONFIG,
+>>> +       TSCALCS,
+>>> +       RUNCONFIG,
+>>> +       SVSEN,
+>>> +       INIT2VALS,
+>>> +       DCVALUES,
+>>> +       AGEVALUES,
+>>> +       VOP30,
+>>> +       VOP74,
+>>> +       TEMP,
+>>> +       INTSTS,
+>>> +       INTSTSRAW,
+>>> +       INTEN,
+>>> +       CHKINT,
+>>> +       CHKSHIFT,
+>>> +       STATUS,
+>>> +       VDESIGN30,
+>>> +       VDESIGN74,
+>>> +       DVT30,
+>>> +       DVT74,
+>>> +       AGECOUNT,
+>>> +       SMSTATE0,
+>>> +       SMSTATE1,
+>>> +       CTL0,
+>>> +       DESDETSEC,
+>>> +       TEMPAGESEC,
+>>> +       CTRLSPARE0,
+>>> +       CTRLSPARE1,
+>>> +       CTRLSPARE2,
+>>> +       CTRLSPARE3,
+>>> +       CORESEL,
+>>> +       THERMINTST,
+>>> +       INTST,
+>>> +       THSTAGE0ST,
+>>> +       THSTAGE1ST,
+>>> +       THSTAGE2ST,
+>>> +       THAHBST0,
+>>> +       THAHBST1,
+>>> +       SPARE0,
+>>> +       SPARE1,
+>>> +       SPARE2,
+>>> +       SPARE3,
+>>> +       THSLPEVEB,
+>>> +       reg_num,
+>>> +};
+>>> +
+>>> +static const u32 svs_regs_v2[] = {
+>>
+>> Is this SoC specific or shared between SoCs?
+> 
+> Shared between SoCs. Some SVS in MTK SoCs use v2 register map.
+> 
+
+And which silicon uses v1 then? Is v2 a MediaTek internal naming you want to keep?
+
+>>
+>>> +       [TEMPMONCTL0]           = 0x000,
+>>> +       [TEMPMONCTL1]           = 0x004,
+>>> +       [TEMPMONCTL2]           = 0x008,
+>>> +       [TEMPMONINT]            = 0x00c,
+>>> +       [TEMPMONINTSTS]         = 0x010,
+>>> +       [TEMPMONIDET0]          = 0x014,
+>>> +       [TEMPMONIDET1]          = 0x018,
+>>> +       [TEMPMONIDET2]          = 0x01c,
+>>> +       [TEMPH2NTHRE]           = 0x024,
+>>> +       [TEMPHTHRE]             = 0x028,
+>>> +       [TEMPCTHRE]             = 0x02c,
+>>> +       [TEMPOFFSETH]           = 0x030,
+>>> +       [TEMPOFFSETL]           = 0x034,
+>>> +       [TEMPMSRCTL0]           = 0x038,
+>>> +       [TEMPMSRCTL1]           = 0x03c,
+>>> +       [TEMPAHBPOLL]           = 0x040,
+>>> +       [TEMPAHBTO]             = 0x044,
+>>> +       [TEMPADCPNP0]           = 0x048,
+>>> +       [TEMPADCPNP1]           = 0x04c,
+>>> +       [TEMPADCPNP2]           = 0x050,
+>>> +       [TEMPADCMUX]            = 0x054,
+>>> +       [TEMPADCEXT]            = 0x058,
+>>> +       [TEMPADCEXT1]           = 0x05c,
+>>> +       [TEMPADCEN]             = 0x060,
+>>> +       [TEMPPNPMUXADDR]        = 0x064,
+>>> +       [TEMPADCMUXADDR]        = 0x068,
+>>> +       [TEMPADCEXTADDR]        = 0x06c,
+>>> +       [TEMPADCEXT1ADDR]       = 0x070,
+>>> +       [TEMPADCENADDR]         = 0x074,
+>>> +       [TEMPADCVALIDADDR]      = 0x078,
+>>> +       [TEMPADCVOLTADDR]       = 0x07c,
+>>> +       [TEMPRDCTRL]            = 0x080,
+>>> +       [TEMPADCVALIDMASK]      = 0x084,
+>>> +       [TEMPADCVOLTAGESHIFT]   = 0x088,
+>>> +       [TEMPADCWRITECTRL]      = 0x08c,
+>>> +       [TEMPMSR0]              = 0x090,
+>>> +       [TEMPMSR1]              = 0x094,
+>>> +       [TEMPMSR2]              = 0x098,
+>>> +       [TEMPADCHADDR]          = 0x09c,
+>>> +       [TEMPIMMD0]             = 0x0a0,
+>>> +       [TEMPIMMD1]             = 0x0a4,
+>>> +       [TEMPIMMD2]             = 0x0a8,
+>>> +       [TEMPMONIDET3]          = 0x0b0,
+>>> +       [TEMPADCPNP3]           = 0x0b4,
+>>> +       [TEMPMSR3]              = 0x0b8,
+>>> +       [TEMPIMMD3]             = 0x0bc,
+>>> +       [TEMPPROTCTL]           = 0x0c0,
+>>> +       [TEMPPROTTA]            = 0x0c4,
+>>> +       [TEMPPROTTB]            = 0x0c8,
+>>> +       [TEMPPROTTC]            = 0x0cc,
+>>> +       [TEMPSPARE0]            = 0x0f0,
+>>> +       [TEMPSPARE1]            = 0x0f4,
+>>> +       [TEMPSPARE2]            = 0x0f8,
+>>> +       [TEMPSPARE3]            = 0x0fc,
+>>> +       [TEMPMSR0_1]            = 0x190,
+>>> +       [TEMPMSR1_1]            = 0x194,
+>>> +       [TEMPMSR2_1]            = 0x198,
+>>> +       [TEMPMSR3_1]            = 0x1b8,
+>>> +       [DESCHAR]               = 0xc00,
+>>> +       [TEMPCHAR]              = 0xc04,
+>>> +       [DETCHAR]               = 0xc08,
+>>> +       [AGECHAR]               = 0xc0c,
+>>> +       [DCCONFIG]              = 0xc10,
+>>> +       [AGECONFIG]             = 0xc14,
+>>> +       [FREQPCT30]             = 0xc18,
+>>> +       [FREQPCT74]             = 0xc1c,
+>>> +       [LIMITVALS]             = 0xc20,
+>>> +       [VBOOT]                 = 0xc24,
+>>> +       [DETWINDOW]             = 0xc28,
+>>> +       [CONFIG]                = 0xc2c,
+>>> +       [TSCALCS]               = 0xc30,
+>>> +       [RUNCONFIG]             = 0xc34,
+>>> +       [SVSEN]                 = 0xc38,
+>>> +       [INIT2VALS]             = 0xc3c,
+>>> +       [DCVALUES]              = 0xc40,
+>>> +       [AGEVALUES]             = 0xc44,
+>>> +       [VOP30]                 = 0xc48,
+>>> +       [VOP74]                 = 0xc4c,
+>>> +       [TEMP]                  = 0xc50,
+>>> +       [INTSTS]                = 0xc54,
+>>> +       [INTSTSRAW]             = 0xc58,
+>>> +       [INTEN]                 = 0xc5c,
+>>> +       [CHKINT]                = 0xc60,
+>>> +       [CHKSHIFT]              = 0xc64,
+>>> +       [STATUS]                = 0xc68,
+>>> +       [VDESIGN30]             = 0xc6c,
+>>> +       [VDESIGN74]             = 0xc70,
+>>> +       [DVT30]                 = 0xc74,
+>>> +       [DVT74]                 = 0xc78,
+>>> +       [AGECOUNT]              = 0xc7c,
+>>> +       [SMSTATE0]              = 0xc80,
+>>> +       [SMSTATE1]              = 0xc84,
+>>> +       [CTL0]                  = 0xc88,
+>>> +       [DESDETSEC]             = 0xce0,
+>>> +       [TEMPAGESEC]            = 0xce4,
+>>> +       [CTRLSPARE0]            = 0xcf0,
+>>> +       [CTRLSPARE1]            = 0xcf4,
+>>> +       [CTRLSPARE2]            = 0xcf8,
+>>> +       [CTRLSPARE3]            = 0xcfc,
+>>> +       [CORESEL]               = 0xf00,
+>>> +       [THERMINTST]            = 0xf04,
+>>> +       [INTST]                 = 0xf08,
+>>> +       [THSTAGE0ST]            = 0xf0c,
+>>> +       [THSTAGE1ST]            = 0xf10,
+>>> +       [THSTAGE2ST]            = 0xf14,
+>>> +       [THAHBST0]              = 0xf18,
+>>> +       [THAHBST1]              = 0xf1c,
+>>> +       [SPARE0]                = 0xf20,
+>>> +       [SPARE1]                = 0xf24,
+>>> +       [SPARE2]                = 0xf28,
+>>> +       [SPARE3]                = 0xf2c,
+>>> +       [THSLPEVEB]             = 0xf30,
+>>> +};
+>>> +
+>>> +struct thermal_parameter {
+>>
+>> In general, not only in this struct, would be good have some
+>> documentation to have a better undestanding of the fields. That makes
+>> the job of the reviewer a bit easier.
+> 
+> Ok. Could you share a documentation example to us? We'll share the
+> information as much as we can. Thanks a lot.
+> 
+
+you should find that in all drivers, eg:
+https://elixir.bootlin.com/linux/latest/source/drivers/soc/mediatek/mtk-scpsys.c#L111
+
+
+Regards,
+Matthias
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
