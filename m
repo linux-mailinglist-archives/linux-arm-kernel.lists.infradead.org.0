@@ -2,92 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43B9B1DE8F6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:29:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2A621DE913
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:34:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FcZo/ZDotBydoJUL4sW6XpJJFK0bN+NyGtasZLAAnW8=; b=mvtbSQBIs7cQVY
-	A5OHKvgliaVquli040VSwmxu6QE0iL64yCNo4Dg9nnpgfFRap8m7g4YYMw7GCfnpaQ9XDMweBXW0w
-	pjMUZZhVc3lYutw5pbqb5A9jvLWLTorjmlbSGo6A//BJMfrBGHO2qER3PkIKfZxaIJW367NICMA3i
-	+woYPhbAxT65lIHD5Fu90ShWai3LZ6IgrhMfZ84y7yx7Wh5OVAplybuExYgIHgEtGG4kA3nHHdHrX
-	LI0Yus4Mri0EK3tAAQzbJglYVEpgEVP4UgIPSIpRi0nrkG80BmP8tzcPKPn8QPevheewkNoF2ceHN
-	wlddo+yJwo6cN53yCxgw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EJVbUegNexiFjnyznVnWyx6zShxMQr3tEuApYsOaKMc=; b=KIo1dJ0WvpNNDOtRnpFWCPsDh
+	jr9V6ohHKBD0DuCqKOBzPOtjULe9E5k088PmLkDz9xyA62W/F3WOX8utF8oSQF42RfbbBJfuWhznS
+	HGRcmdBB2tmn7UyLLLi2qWHWpIq9aq8KRPgeM5FkI98kx7e1+DJl9GmDHFjibKhREEnPX2UrWbkGC
+	9TWnYHitEsizjL+C5dVv8vLgJ0NmJAMhTzsceWZXSE87bQ/8CSNKtpQ9XpQYLCE9UY48C9UUIGmIR
+	8QD2ZrvHIJOVt71o4HSj96tuPPHGFxZdZCWYxAF2ZnrlG7PCCy7WXp3Ap/jo/OB4s6vHdYTxkXEys
+	pFBPuyFSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc8gB-0000Zi-Dx; Fri, 22 May 2020 14:29:43 +0000
-Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc8fT-0000Bn-Qb
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 14:29:01 +0000
-Received: by mail-ej1-x632.google.com with SMTP id j21so13295074ejy.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 07:28:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=9yhDyyGIK852ZcV9cF3CJIrqL1AAvlaguqb4kRBecU0=;
- b=tsapIh29wQPr65wVhWHMcEL9iTrKSePjEa3828dghEM1UPB43L/NM8JY0fRbqfRjeo
- 63sYE+9tcxkUBOO7NjFIAbvRRBa4WPQiz17JRj++8oV7iXLZrS91HJ46CJ33VfqoefAi
- qADPb2wfO6qANRH3pwSI2FB7Y8YcU37X8UbWUwO92ogusUOkImnrh2RXuDLI5FBjl4sY
- ERNYuloCP/RPy4FYvq2LLa6pdstEtsMWhuTgsLcfN1eSlllgM8tuPWdRzq7Ckssr36YA
- nr8Qoij+364igxpNz6+BtR2tQ2QNNJkkUTa+L4GpppZvSjY8q8sRggK2++aOFD4t6jqP
- jZ7Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=9yhDyyGIK852ZcV9cF3CJIrqL1AAvlaguqb4kRBecU0=;
- b=j3ifXAD8WilWG707LDCxwZ1+vDHRHG/8C90Oz9b2NScGly3Ul/apyV1IP0fzlU73XG
- +3fKgEKU7IeIdAw3rHY/cJRKm1NhVesE7MZ8dZ8RnUJVkY0/5Y4/XAx7g5qYg08MhLWG
- 9nRQtHoavNXGhRo4LVyGWiIrZ5Ed6VfJSPXagKlxLXZx/DJTaLc94EU9TpkleXiphuCJ
- 9RvhGWCv+k1owpwaf5FKTjHHPZe5hJx5beC3kZ29UhKpwZd8n4zkLlr54URJEslDLbUh
- hRZ/cqOSKzLGnvy70LKFb4VVzvIVF3Uf1FsQ3c6w/BHYED3Rgd4naORR5TwZWr4BxDXO
- SQyg==
-X-Gm-Message-State: AOAM532iTzOy/phrhjY//GlTzDkq7QNu2oVfmSUlPgObWGOdYFAgsWFU
- s91hBCtj3DN4/z2s5/n0Wt8=
-X-Google-Smtp-Source: ABdhPJyI67fZVtsaB0pNl/umXx3NPSZKJsGS6VM5z5c9WsRc3vS4rXJtCSMRHpmN/iiyngYCVm3EwA==
-X-Received: by 2002:a17:906:407:: with SMTP id d7mr8278768eja.46.1590157738306; 
- Fri, 22 May 2020 07:28:58 -0700 (PDT)
-Received: from localhost (pd9e51079.dip0.t-ipconnect.de. [217.229.16.121])
- by smtp.gmail.com with ESMTPSA id x1sm7996111ejn.57.2020.05.22.07.28.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 May 2020 07:28:54 -0700 (PDT)
-From: Thierry Reding <thierry.reding@gmail.com>
-To: arm@kernel.org,
-	soc@kernel.org
-Subject: [GIT PULL v2 11/11] arm64: tegra: Device tree changes for v5.8-rc1
-Date: Fri, 22 May 2020 16:28:46 +0200
-Message-Id: <20200522142846.2376224-3-thierry.reding@gmail.com>
-X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200515145311.1580134-12-thierry.reding@gmail.com>
-References: <20200515145311.1580134-12-thierry.reding@gmail.com>
+	id 1jc8l1-0003dJ-UD; Fri, 22 May 2020 14:34:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jc8ks-0003cX-5U
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 14:34:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5AEA0D6E;
+ Fri, 22 May 2020 07:34:31 -0700 (PDT)
+Received: from [10.57.2.168] (unknown [10.57.2.168])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 26E7D3F68F;
+ Fri, 22 May 2020 07:34:29 -0700 (PDT)
+Subject: Re: [PATCH 09/12] dt-bindings: arm: fsl: Add msi-map device-tree
+ binding for fsl-mc bus
+To: Rob Herring <robh+dt@kernel.org>,
+ Diana Craciun OSS <diana.craciun@oss.nxp.com>
+References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
+ <20200521130008.8266-10-lorenzo.pieralisi@arm.com>
+ <CAL_Jsq+h18gH2D3B-OZku6ACCgonPUJcUnrN8a5=jApsXHdB5Q@mail.gmail.com>
+ <abca6ecb-5d93-832f-ff7c-de53bb6203f3@arm.com>
+ <ee7a5c04-814e-215f-ec74-52c2f3b881d0@oss.nxp.com>
+ <CAL_JsqKf+cq9Nhs+M8ihC-Ls24YH-WEofW8H4kkFPWMhZw=unA@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <7f8d00ae-b225-a58d-8a11-e8c68edc877b@arm.com>
+Date: Fri, 22 May 2020 15:34:27 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <CAL_JsqKf+cq9Nhs+M8ihC-Ls24YH-WEofW8H4kkFPWMhZw=unA@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_072859_884916_D5D657E7 
-X-CRM114-Status: GOOD (  14.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200522_073434_297335_64AEE2CC 
+X-CRM114-Status: GOOD (  23.23  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:632 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,83 +70,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ PCI <linux-pci@vger.kernel.org>, Hanjun Guo <guohanjun@huawei.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, linux-acpi@vger.kernel.org,
+ Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM SoC maintainers,
+On 2020-05-22 15:08, Rob Herring wrote:
+> On Fri, May 22, 2020 at 3:57 AM Diana Craciun OSS
+> <diana.craciun@oss.nxp.com> wrote:
+>>
+>> On 5/22/2020 12:42 PM, Robin Murphy wrote:
+>>> On 2020-05-22 00:10, Rob Herring wrote:
+>>>> On Thu, May 21, 2020 at 7:00 AM Lorenzo Pieralisi
+>>>> <lorenzo.pieralisi@arm.com> wrote:
+>>>>>
+>>>>> From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+>>>>>
+>>>>> The existing bindings cannot be used to specify the relationship
+>>>>> between fsl-mc devices and GIC ITSes.
+>>>>>
+>>>>> Add a generic binding for mapping fsl-mc devices to GIC ITSes, using
+>>>>> msi-map property.
+>>>>>
+>>>>> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
+>>>>> Cc: Rob Herring <robh+dt@kernel.org>
+>>>>> ---
+>>>>>    .../devicetree/bindings/misc/fsl,qoriq-mc.txt | 30
+>>>>> +++++++++++++++++--
+>>>>>    1 file changed, 27 insertions(+), 3 deletions(-)
+>>>>>
+>>>>> diff --git a/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
+>>>>> b/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
+>>>>> index 9134e9bcca56..b0813b2d0493 100644
+>>>>> --- a/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
+>>>>> +++ b/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
+>>>>> @@ -18,9 +18,9 @@ same hardware "isolation context" and a 10-bit
+>>>>> value called an ICID
+>>>>>    the requester.
+>>>>>
+>>>>>    The generic 'iommus' property is insufficient to describe the
+>>>>> relationship
+>>>>> -between ICIDs and IOMMUs, so an iommu-map property is used to define
+>>>>> -the set of possible ICIDs under a root DPRC and how they map to
+>>>>> -an IOMMU.
+>>>>> +between ICIDs and IOMMUs, so the iommu-map and msi-map properties
+>>>>> are used
+>>>>> +to define the set of possible ICIDs under a root DPRC and how they
+>>>>> map to
+>>>>> +an IOMMU and a GIC ITS respectively.
+>>>>>
+>>>>>    For generic IOMMU bindings, see
+>>>>>    Documentation/devicetree/bindings/iommu/iommu.txt.
+>>>>> @@ -28,6 +28,9 @@ Documentation/devicetree/bindings/iommu/iommu.txt.
+>>>>>    For arm-smmu binding, see:
+>>>>>    Documentation/devicetree/bindings/iommu/arm,smmu.yaml.
+>>>>>
+>>>>> +For GICv3 and GIC ITS bindings, see:
+>>>>> +Documentation/devicetree/bindings/interrupt-controller/arm,gic-v3.yaml.
+>>>>>
+>>>>> +
+>>>>>    Required properties:
+>>>>>
+>>>>>        - compatible
+>>>>> @@ -119,6 +122,15 @@ Optional properties:
+>>>>>      associated with the listed IOMMU, with the iommu-specifier
+>>>>>      (i - icid-base + iommu-base).
+>>>>>
+>>>>> +- msi-map: Maps an ICID to a GIC ITS and associated iommu-specifier
+>>>>> +  data.
+>>>>> +
+>>>>> +  The property is an arbitrary number of tuples of
+>>>>> +  (icid-base,iommu,iommu-base,length).
+>>>>
+>>>> I'm confused because the example has GIC ITS phandle, not an IOMMU.
+>>>>
+>>>> What is an iommu-base?
+>>>
+>>> Right, I was already halfway through writing a reply to say that all
+>>> the copy-pasted "iommu" references here should be using the
+>>> terminology from the pci-msi.txt binding instead.
+>>
+>> Right, will change it.
+>>
+>>>
+>>>>> +
+>>>>> +  Any ICID in the interval [icid-base, icid-base + length) is
+>>>>> +  associated with the listed GIC ITS, with the iommu-specifier
+>>>>> +  (i - icid-base + iommu-base).
+>>>>>    Example:
+>>>>>
+>>>>>            smmu: iommu@5000000 {
+>>>>> @@ -128,6 +140,16 @@ Example:
+>>>>>                   ...
+>>>>>            };
+>>>>>
+>>>>> +       gic: interrupt-controller@6000000 {
+>>>>> +               compatible = "arm,gic-v3";
+>>>>> +               ...
+>>>>> +               its: gic-its@6020000 {
+>>>>> +                       compatible = "arm,gic-v3-its";
+>>>>> +                       msi-controller;
+>>>>> +                       ...
+>>>>> +               };
+>>>>> +       };
+>>>>> +
+>>>>>            fsl_mc: fsl-mc@80c000000 {
+>>>>>                    compatible = "fsl,qoriq-mc";
+>>>>>                    reg = <0x00000008 0x0c000000 0 0x40>,    /* MC
+>>>>> portal base */
+>>>>> @@ -135,6 +157,8 @@ Example:
+>>>>>                    msi-parent = <&its>;
+>>>
+>>> Side note: is it right to keep msi-parent here? It rather implies that
+>>> the MC itself has a 'native' Device ID rather than an ICID, which I
+>>> believe is not strictly true. Plus it's extra-confusing that it
+>>> doesn't specify an ID either way, since that makes it look like the
+>>> legacy PCI case that gets treated implicitly as an identity msi-map,
+>>> which makes no sense at all to combine with an actual msi-map.
+>>
+>> Before adding msi-map, the fsl-mc code assumed that ICID and streamID
+>> are equal and used msi-parent just to get the reference to the ITS node.
+>> Removing msi-parent will break the backward compatibility of the already
+>> existing systems. Maybe we should mention that this is legacy and not to
+>> be used for newer device trees.
+> 
+> If ids are 1:1, then the DT should use msi-parent. If there is
+> remapping, then use msi-map. A given system should use one or the
+> other. I suppose if some ids are 1:1 and the msi-map was added to add
+> additional support for ids not 1:1, then you could end up with both.
+> That's fine in dts files, but examples should reflect the 'right' way.
 
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+Is that defined anywhere? The generic MSI binding just has some weaselly 
+wording about buses:
 
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+"When #msi-cells is non-zero, busses with an msi-parent will require 
+additional properties to describe the relationship between devices on 
+the bus and the set of MSIs they can potentially generate."
 
-are available in the Git repository at:
+which appears at odds with its own definition of msi-parent as including 
+an msi-specifier (or at best very unclear about what value that 
+specifier should take in this case).
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.8-arm64-dt-v2
+The PCI MSI binding goes even further and specifically reserves 
+msi-parent for cases where there is no sideband data. As far as I'm 
+aware, the fact that the ITS driver implements a bodge for the "empty 
+msi-parent even though #msi-cells > 0" case is merely a compatibility 
+thing for old DTs from before this was really thought through, not an 
+officially-specified behaviour.
 
-for you to fetch changes up to 358a6777f5dd293bc3c075af6fc8c0dd18774c96:
-
-  arm64: tegra: Make the RTC a wakeup source on Jetson Nano and TX1 (2020-05-22 14:56:54 +0200)
-
-This is a slightly rebased version of the prior pull request which has
-the commit log cleaned up as I mentioned earlier. I've also included a
-patch to enable resume from suspend via the PMIC on Jetson TX1 and
-Jetson Nano, which will help us to test suspend/resume in our test
-system in a unified way.
-
-Thanks,
-Thierry
-
-----------------------------------------------------------------
-arm64: tegra: Device tree changes for v5.8-rc1
-
-This contains a couple of fixes for minor issues, enables XUDC support
-on Tegra194, and enables EMC frequency scaling and video capture on
-Tegra210.
-
-----------------------------------------------------------------
-Jon Hunter (3):
-      arm64: tegra: Fix ethernet phy-mode for Jetson Xavier
-      arm64: tegra: Allow the PMIC RTC to wakeup Jetson Xavier
-      arm64: tegra: Make the RTC a wakeup source on Jetson Nano and TX1
-
-Joseph Lo (1):
-      arm64: tegra: Add external memory controller node for Tegra210
-
-Nagarjuna Kristam (1):
-      arm64: tegra: Add XUDC node on Tegra194
-
-Rob Herring (1):
-      arm64: tegra: Kill off "simple-panel" compatibles
-
-Sowjanya Komatineni (4):
-      dt-bindings: clock: tegra: Add clock ID for CSI TPG clock
-      arm64: tegra: Fix SOR powergate clocks and reset
-      arm64: tegra: Add reset-cells to memory controller
-      arm64: tegra: Add Tegra VI CSI support in device tree
-
-Thierry Reding (4):
-      Merge branch 'for-5.8/dt-bindings' into for-5.8/arm64/dt
-      arm64: tegra: Hook up EMC cooling device
-      arm64: tegra: Enable VI I2C on Jetson Nano
-      arm64: tegra: Make the RTC a wakeup source on Jetson TX2
-
-Vidya Sagar (1):
-      arm64: tegra: Fix flag for 64-bit resources in 'ranges' property
-
- arch/arm64/boot/dts/nvidia/tegra132-norrin.dts     |  2 +-
- arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi     |  3 +-
- arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi     |  5 +-
- arch/arm64/boot/dts/nvidia/tegra194.dtsi           | 30 ++++++--
- arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi     |  3 +-
- arch/arm64/boot/dts/nvidia/tegra210-p2597.dtsi     | 10 +++
- arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts |  7 +-
- arch/arm64/boot/dts/nvidia/tegra210.dtsi           | 89 ++++++++++++++++++++--
- include/dt-bindings/clock/tegra210-car.h           |  2 +-
- 9 files changed, 131 insertions(+), 20 deletions(-)
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
