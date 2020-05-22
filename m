@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BD641DE9AB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:50:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDC131DE9BD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:50:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=hqv9lxByk5GC9LAdHICRB2TmcIvg+rwr7yyRNuAg/qw=; b=kVhoAsPaumNLVF
-	d5upBTAYuEW+DiO27NLF/vE3eJW27/F1FwLbJJT1FOcHqD9VHjATXvEVRoWEB2MF84saivpJl6Vtb
-	JgksLfU/qVSSuWqxdbRtny7ZV1VjwhJa9SvsVRYYmaPyU9aiiRIJR8dCobm05h5i834cZA35xKcX9
-	sjVEXi3dcwnxblG1p9CNsxfMJ95P+UPEi9IDBT2CPKdhgzGcYIdw2gJwI6jPu/7SKQn9MApwBPOzS
-	mXR1b3dAH0GDVyJDlPo0OBcGKKK49aFb/Y3nHWn8xarmocQySQIPxU7lCg+m5l33sCzDuNDQT8Iyj
-	VeSDlfwlGhuG7eVKFAKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5fPnopsbY9qqLsi8UEvBAC5tm38HRL/CjbwdURZwSUk=; b=iWlny9QjNcPelO
+	Zk1zEPz3KTil53qJ0xgqNnQsxKM4x5Nd/5YU0ZzFRK4fqIafv+pKmniq2itLBz76ffzMaPirXpcAx
+	4bUxZcsZd9xXiWanjXLDifVQK8pDVqIOgcI2Qw1XPqk4OeSuwI8FgkOt9+68L0HxLxFjxePMn0eOD
+	gP0hh2KuzI+pQjOtPsr82jUfwNTL0I5mcRjKQmzUYao5sNvkz9qPun2Akm8vuvdyER7AhmBQiwPD1
+	/wx3B/pV+FWovgwTDN8unhm6vpdY3AyquPrQNKrDQhotTt8OdsXupaxd96KgAdjc5GEHrGi+kLcpE
+	uPnVz5/LaQ4PQm2P41PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc905-0007KQ-1U; Fri, 22 May 2020 14:50:17 +0000
+	id 1jc90U-0007Wx-P4; Fri, 22 May 2020 14:50:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc8zp-0007Ht-Ej
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 14:50:03 +0000
+ id 1jc8zq-0007JB-KL; Fri, 22 May 2020 14:50:04 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4AB662053B;
- Fri, 22 May 2020 14:50:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7A33F223BF;
+ Fri, 22 May 2020 14:50:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590159001;
- bh=MkYOQ9+RbrcnOGTMiYU7PEOR/hcCmNziLlgrtAlOs/c=;
- h=From:To:Cc:Subject:Date:From;
- b=bOuWo2VVrfoSDcNXaumGB0CuX5jHJhZN+8hyIEROB/cTiXcNpP5FGvmb8ZY46eM0J
- iJQLxc3Yb9IV1K31UufPA9lBqz8XVLvNrONKCGt4LnMGp8K/1aqBjdUuHF3DRNOgN7
- j1oyUGKxokOrUbUfpbfueE7/QENXUAO3YZFXfiVw=
+ s=default; t=1590159002;
+ bh=rgoYLS+WMEIn3HQPScbZElKfuAs0VrEeOrN4VJIZ2TQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=v2I/TURVKgjaSjaDotYEy+FK0CPE59uxC4zc9inBzApj2zvn+mUwXzzILgsz0sECA
+ GF9JZK4Cs2mOZ5j9MBNnyl1HgR32dlfXpAqxMRSCQ7RI+q6NFwQJeWwFrcWCKIPava
+ MoH7x1zU8LI6PeCLANJ2P/AYU2zkJyjjrJw5pj/Y=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 01/41] arm64: dts: qcom: db820c: fix audio
- configuration
-Date: Fri, 22 May 2020 10:49:18 -0400
-Message-Id: <20200522144959.434379-1-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 02/41] ARM: dts: rockchip: fix phy nodename for
+ rk3228-evb
+Date: Fri, 22 May 2020 10:49:19 -0400
+Message-Id: <20200522144959.434379-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200522144959.434379-1-sashal@kernel.org>
+References: <20200522144959.434379-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_075001_520254_CFEFCC97 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20200522_075002_692653_BFB471EE 
+X-CRM114-Status: GOOD (  12.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,81 +80,54 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Vinod Koul <vkoul@kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+ Heiko Stuebner <heiko@sntech.de>, linux-rockchip@lists.infradead.org,
+ Johan Jonker <jbx6244@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit 7710f80ecd9c74544a22557ab581cf603e713f51 ]
+[ Upstream commit 287e0d538fcec2f6e8eb1e565bf0749f3b90186d ]
 
-After patch f864edff110d ("ASoC: qdsp6: q6routing: remove default routing")
-and 9b60441692d9 ("ASoC: qdsp6: q6asm-dai: only enable dais from device tree")
-asm dais and routing needs to be properly specified at device tree level.
+A test with the command below gives for example this error:
 
-This patch fixes this.
+arch/arm/boot/dts/rk3228-evb.dt.yaml: phy@0:
+'#phy-cells' is a required property
 
-Tested-by: Vinod Koul <vkoul@kernel.org>
-Reviewed-by: Vinod Koul <vkoul@kernel.org>
-Signed-off-by: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
-Link: https://lore.kernel.org/r/20200422101922.8894-1-srinivas.kandagatla@linaro.org
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+The phy nodename is normally used by a phy-handle.
+This node is however compatible with
+"ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
+which is just been added to 'ethernet-phy.yaml'.
+So change nodename to 'ethernet-phy' for which '#phy-cells'
+is not a required property
+
+make ARCH=arm dtbs_check
+DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
+phy/phy-provider.yaml
+
+Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Link: https://lore.kernel.org/r/20200416170321.4216-1-jbx6244@gmail.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi | 19 ++++++++++++++++++-
- arch/arm64/boot/dts/qcom/msm8996.dtsi        |  2 ++
- 2 files changed, 20 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/rk3228-evb.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi b/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi
-index a85b85d85a5f..3c7c9b52623c 100644
---- a/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi
-+++ b/arch/arm64/boot/dts/qcom/apq8096-db820c.dtsi
-@@ -908,10 +908,27 @@
- 	status = "okay";
- };
+diff --git a/arch/arm/boot/dts/rk3228-evb.dts b/arch/arm/boot/dts/rk3228-evb.dts
+index 5670b33fd1bd..aed879db6c15 100644
+--- a/arch/arm/boot/dts/rk3228-evb.dts
++++ b/arch/arm/boot/dts/rk3228-evb.dts
+@@ -46,7 +46,7 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
  
-+&q6asmdai {
-+	dai@0 {
-+		reg = <0>;
-+	};
-+
-+	dai@1 {
-+		reg = <1>;
-+	};
-+
-+	dai@2 {
-+		reg = <2>;
-+	};
-+};
-+
- &sound {
- 	compatible = "qcom,apq8096-sndcard";
- 	model = "DB820c";
--	audio-routing =	"RX_BIAS", "MCLK";
-+	audio-routing =	"RX_BIAS", "MCLK",
-+		"MM_DL1",  "MultiMedia1 Playback",
-+		"MM_DL2",  "MultiMedia2 Playback",
-+		"MultiMedia3 Capture", "MM_UL3";
- 
- 	mm1-dai-link {
- 		link-name = "MultiMedia1";
-diff --git a/arch/arm64/boot/dts/qcom/msm8996.dtsi b/arch/arm64/boot/dts/qcom/msm8996.dtsi
-index 7ae082ea14ea..f925a6c7d293 100644
---- a/arch/arm64/boot/dts/qcom/msm8996.dtsi
-+++ b/arch/arm64/boot/dts/qcom/msm8996.dtsi
-@@ -2053,6 +2053,8 @@
- 						reg = <APR_SVC_ASM>;
- 						q6asmdai: dais {
- 							compatible = "qcom,q6asm-dais";
-+							#address-cells = <1>;
-+							#size-cells = <0>;
- 							#sound-dai-cells = <1>;
- 							iommus = <&lpass_q6_smmu 1>;
- 						};
+-		phy: phy@0 {
++		phy: ethernet-phy@0 {
+ 			compatible = "ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22";
+ 			reg = <0>;
+ 			clocks = <&cru SCLK_MAC_PHY>;
 -- 
 2.25.1
 
