@@ -2,80 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFB9A1DF294
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 00:55:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DF5E1DF2A3
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 01:02:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4P2ZzFCPWTCh+a7pqAwGoop7q03Y2Zgc3WAG+5Dy5Gs=; b=t1Fkvqy/SEf4IB
-	h77uVO4DIS4ay9npA4R3giGljz87Zv0m9CvFZpFyQFUmhPvhtL3QbUIFI4ERbwEH7/QTKUQ8m0R20
-	O801SVEZCBOTuCpVWIxZ1fde22f38GWG4nrG4JYm8D3xu9zo+qd4CeNp4LUdjTF0JKejpFg+IVcHk
-	oPQV5XNr7P2EhLbOnjOsQ+FM+95BqeUxhfGTs1hYNnrxz6SGVJsCWxSTaf/qmEaR1hBSL+2QDwRiq
-	ybJ7RaMda7F2jti4yjHSvza3c6U93JJUWOQmAS7492qy5h6XGm0YmNMb6r/hkP0zwecbICmOIxis4
-	rZOXw6fDhhkuY8y6pfLg==;
+	List-Owner; bh=v3u13S6+YP6ZhdDHAvqGL2bijYQhvDFNqFPXPS6qV8s=; b=u+R2oTmbnhfyyM
+	qhpgMeU8U8btKP+zDjWvEBo7LA7YoS8f9h7Osj3JAxlT0wqLan0nH7gEjphTuZxYm5TBlbqfca/h5
+	fplNRhntzCxk92Zo8h6NgiCZg6bLhqO2dxGPu49ZZYl/ZkUX0srRlAld1UD7sywDpTMJJdIW5hnxo
+	IXphlSrPIcape75PAPywpZZmOVa1klyh3boDn3LW+dJqeX3gdCZ7+SYjHXLSHoYBsgcfxub2FQIdh
+	F00UnaH9VO1+MinVwEDgWJTOhbU6vAZ/CkUsK45WccnanTFztWT3q1bpDAn5TwNvV9oGTWDCOqs1b
+	xMqhhj7eYCIuVyCjzoFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcGZZ-000207-4F; Fri, 22 May 2020 22:55:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jcGgG-0007re-SN; Fri, 22 May 2020 23:02:20 +0000
+Received: from mail-il1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcGRy-0001eb-UZ
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 22:47:36 +0000
-Received: from mail-oo1-f54.google.com (mail-oo1-f54.google.com
- [209.85.161.54])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 61982206B6
+ id 1jcGg8-0007qw-6H
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 23:02:13 +0000
+Received: by mail-il1-f194.google.com with SMTP id r2so1202934ila.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 22:47:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590187653;
- bh=5hfFawpXKpCIutTjpG9U4GCILvuIjBPoHRWtulw0l8c=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=JuwbAV7rthezSwZ6bubdRj8+FUWIO64x4TTlohWp7xFl/QLYqMtzV6y+BqfagCib8
- 4pbFX2FRyQsWb8qmmtUEgdsAmiWs7cOJkvOrt02J+a9viVUk/kQ7QAvXJKWO74muv8
- N3ENYsEw/WqnBRjs1DK91rQaiAN+qPgPxbia76FM=
-Received: by mail-oo1-f54.google.com with SMTP id s139so2499024oos.1
+ Fri, 22 May 2020 16:02:12 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=C/nTM//7FB1PAbN/moZIfyohRFuX/F3Z6XuMSd7PjCw=;
+ b=iy+yMOHmRDKOeWz4XIxYLvkpf2mYhHcOxyfPkcoB8NakhILS6zxRSBIRweX09Qb507
+ 51hxrMr6Gt99DzFIxRQNDSsNsyj5XqRlB5/DBIvOcadyuTaYdjHZ9CbxomTNY7wT3/rZ
+ 4R3tjkcELa2DX3XGHgW7fa0VwL0ElFumXRY3nPP6XsRidArzusmqXeQekr2APeq1o0ry
+ 47JwxrlMPv62yb1pChHgjFArPS3wg3KoaMYYN7yO0ssOnESyeUyX3Ulu5G8o2HxUflBl
+ fZ/yY3Omg5/TZxMoxECmjUx7IVFM4Rt2uVmBb5AxLy5W4H9MnjWjkBfgdig1W9Rqmdqr
+ ak3A==
+X-Gm-Message-State: AOAM531fN0oC6Gdx0uomJv5ETd2PiTDEOAXvnF0ZYcVRGKd6FWMBVuev
+ 09wMCRVUL17Ey2xbhhNV0I/uxuHm70A=
+X-Google-Smtp-Source: ABdhPJzoPFWV8Y7d8dlBAhGGkLO0pkX8TIlYps6khkIHZNwhqgGqrsNI62Q07kvLaTdu/5VR+86JPw==
+X-Received: by 2002:a92:aa5d:: with SMTP id j90mr15735720ili.145.1590188531025; 
+ Fri, 22 May 2020 16:02:11 -0700 (PDT)
+Received: from mail-il1-f175.google.com (mail-il1-f175.google.com.
+ [209.85.166.175])
+ by smtp.gmail.com with ESMTPSA id h11sm5485424ili.26.2020.05.22.16.02.09
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 22 May 2020 16:02:10 -0700 (PDT)
+Received: by mail-il1-f175.google.com with SMTP id 17so12415240ilj.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 15:47:33 -0700 (PDT)
-X-Gm-Message-State: AOAM532aSzAgf7w8GGNvPqqx5kDFUtdSbtN97DO/tqV5/7tlle6MFDw4
- aU69KsluHvNUBDMxxsEuCXdKGktgwrgsijEpUQ==
-X-Google-Smtp-Source: ABdhPJxaHHJNI0SXO4KjlnRK9YfXoFEB9IMHVZp7IAtsCVAsNspsWHvXuCKHPqC0HjG6YargWTUGM/jccxuGbhpguqs=
-X-Received: by 2002:a4a:3790:: with SMTP id r138mr4741311oor.81.1590187652677; 
- Fri, 22 May 2020 15:47:32 -0700 (PDT)
+ Fri, 22 May 2020 16:02:09 -0700 (PDT)
+X-Received: by 2002:a92:5cc1:: with SMTP id d62mr15036209ilg.95.1590188529711; 
+ Fri, 22 May 2020 16:02:09 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200522113312.181413-1-tali.perry1@gmail.com>
- <20200522113312.181413-2-tali.perry1@gmail.com>
- <20200522224217.GA847856@bogus>
-In-Reply-To: <20200522224217.GA847856@bogus>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 22 May 2020 16:47:21 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLKaWkSs8vMB4+kBL+AzAU6A4KCVJRNFtvmYfATKR1H=w@mail.gmail.com>
-Message-ID: <CAL_JsqLKaWkSs8vMB4+kBL+AzAU6A4KCVJRNFtvmYfATKR1H=w@mail.gmail.com>
-Subject: Re: [PATCH v13 1/3] dt-bindings: i2c: npcm7xx: add NPCM I2C controller
-To: Tali Perry <tali.perry1@gmail.com>
+References: <20200327161349.284679-1-colin.king@canonical.com>
+In-Reply-To: <20200327161349.284679-1-colin.king@canonical.com>
+From: Li Yang <leoyang.li@nxp.com>
+Date: Fri, 22 May 2020 18:01:44 -0500
+X-Gmail-Original-Message-ID: <CADRPPNQ4KrnSsG2PxgXxe-+c5DQsUNQjw3f9Xq-kxP3+xAaQcQ@mail.gmail.com>
+Message-ID: <CADRPPNQ4KrnSsG2PxgXxe-+c5DQsUNQjw3f9Xq-kxP3+xAaQcQ@mail.gmail.com>
+Subject: Re: [PATCH] soc: fsl: qe: clean up an indentation issue
+To: Colin King <colin.king@canonical.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_154735_068686_BE766645 
-X-CRM114-Status: GOOD (  14.69  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200522_160212_230997_15D32C98 
+X-CRM114-Status: GOOD (  12.83  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.194 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [pku.leo[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.194 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,60 +93,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Benjamin Fair <benjaminfair@google.com>,
- kfting@nuvoton.com, Avi Fishman <avifishman70@gmail.com>,
- Patrick Venture <venture@google.com>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>, Wolfram Sang <wsa@the-dreams.de>,
- Brendan Higgins <brendanhiggins@google.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ofer Yehielli <ofery@google.com>, Nancy Yuen <yuenn@google.com>,
- Linux I2C <linux-i2c@vger.kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+Cc: kernel-janitors@vger.kernel.org,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
+ lkml <linux-kernel@vger.kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Tomer Maimon <tmaimon77@gmail.com>
+ <linux-arm-kernel@lists.infradead.org>, Qiang Zhao <qiang.zhao@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 22, 2020 at 4:42 PM Rob Herring <robh@kernel.org> wrote:
+On Fri, Mar 27, 2020 at 11:15 AM Colin King <colin.king@canonical.com> wrote:
 >
-> On Fri, 22 May 2020 14:33:10 +0300, Tali Perry wrote:
-> > Added device tree binding documentation for Nuvoton BMC
-> > NPCM I2C controller.
-> >
-> > Signed-off-by: Tali Perry <tali.perry1@gmail.com>
-> > ---
-> >  .../bindings/i2c/nuvoton,npcm7xx-i2c.yaml     | 60 +++++++++++++++++++
-> >  1 file changed, 60 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
-> >
+> From: Colin Ian King <colin.king@canonical.com>
 >
+> There is a statement that not indented correctly, remove the
+> extraneous space.
 >
-> My bot found errors running 'make dt_binding_check' on your patch:
->
-> Error: Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.example.dts:22.28-29 syntax error
-> FATAL ERROR: Unable to parse input tree
-> scripts/Makefile.lib:312: recipe for target 'Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.example.dt.yaml' failed
-> make[1]: *** [Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.example.dt.yaml] Error 1
-> make[1]: *** Waiting for unfinished jobs....
-> Makefile:1300: recipe for target 'dt_binding_check' failed
-> make: *** [dt_binding_check] Error 2
->
-> See https://patchwork.ozlabs.org/patch/1296162
->
-> If you already ran 'make dt_binding_check' and didn't see the above
-> error(s), then make sure dt-schema is up to date:
->
-> pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
->
-> Please check and re-submit.
+> Signed-off-by: Colin Ian King <colin.king@canonical.com>
 
-Why do you keep sending new versions with the same problem? It won't
-get reviewed until this is fixed. This isn't a free automated service
-to throw things at to see if they work. I have to review the failures.
+Applied for next.  Thanks.
 
-Rob
+> ---
+>  drivers/soc/fsl/qe/ucc.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/drivers/soc/fsl/qe/ucc.c b/drivers/soc/fsl/qe/ucc.c
+> index d6c93970df4d..cac0fb7693a0 100644
+> --- a/drivers/soc/fsl/qe/ucc.c
+> +++ b/drivers/soc/fsl/qe/ucc.c
+> @@ -519,7 +519,7 @@ int ucc_set_tdm_rxtx_clk(u32 tdm_num, enum qe_clock clock,
+>         int clock_bits;
+>         u32 shift;
+>         struct qe_mux __iomem *qe_mux_reg;
+> -        __be32 __iomem *cmxs1cr;
+> +       __be32 __iomem *cmxs1cr;
+>
+>         qe_mux_reg = &qe_immr->qmx;
+>
+> --
+> 2.25.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
