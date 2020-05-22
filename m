@@ -2,85 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE6161DDE7A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 05:59:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08E0D1DDEA6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 06:15:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ypwEhyggzKNpy0iJx/OTgABoRZcbTu0/Xubm6MLRFPk=; b=N7lph1KBU1q7mW/+ySaA5uNhu
-	+qk6UqvgRBBhT8GrwIuXy911ENLPMu+/ASBQY5C05jkZlWNfVNa7kH62oPJckrveQKIXVtNU6VOtz
-	FzyhqdzlaC9xFvEUt6RUWCQgLeEpAYIc30QxROyia+gFzjcktGhWT5Svkkxe2osGJmpb+Sg5u8DoJ
-	PkOZ1YJDJGaXDesAzP8TosAl9+DbNs2GNeFK9Ttu34trFc11YDs6SfK0Ku0tlqLl1bJPygHH9/179
-	Oy+YQOCTYqv8YBGOGeanfTFgDla/keylWYoeu8d4z5yat4Z4GShQg9Yv1iNOFnKm6bSRahPbFg0i/
-	BxLH2mu9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TOpkihbyGX24S34bFEqE29QkyAWsLJcIbN3Hpj43pyY=; b=XwvVK6LZjBCsH9
+	QcKzVA8BBBZCCasTdWAtfTpu8kATPLKbbV4s+5IrOR/AvAu9pGItjqb1m/b3btsuBs0dU8gFrlTzK
+	ow1UcC/JDr8VZM6/I+/g3TTq6Z4QRuc62ciYpFxNKrT0z2rPcM0FEJ5ftAZ3bHE4Xi37UbdcDRvuH
+	gXh/O9YeDd91XJfQ266pweyYa7uMT/usVWdCLwkXucWGs9Gjxgej89FqtRpUVVIs3eqNwvVS/ouxD
+	YMwqAUmkepWG90ZB/l0Qn3xS5yHob3+BTRNJXc49EI9AKm6V8XcBhBYcD48+GTz6iqnkRwbkIci7q
+	5zXGm1KqPDyYDRN0oBAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbypg-0006uh-S0; Fri, 22 May 2020 03:58:52 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jbz5V-00084y-QE; Fri, 22 May 2020 04:15:13 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbypR-0006su-AE; Fri, 22 May 2020 03:58:38 +0000
-Received: by mail-pg1-x543.google.com with SMTP id s10so4387281pgm.0;
- Thu, 21 May 2020 20:58:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:subject:to:cc:references:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding;
- bh=GTCRS5itnhr1mF/qxix34YoD9buZ+IJ+Kp8+rInUWII=;
- b=vDaWIoTIRHXzzZ3IA67i/cjCOtcGp88y+O8jyIDLaixqV8pz490fe22V8IP7iTQfe1
- YwtcB0HXkIAL18fDGByNvpebTUqZeqxG3FlwKcZJ1Rym7igoGACDWDHdcDBYqJJuNLOI
- oZn65R21HDSkTDywMd4YyKKdZqHI8Xl/970SsXN17v9J/1Kg2jzRKPsMbuWWObylBAmc
- W9QoRKVSiHMEi/BkfW/W7rWjSbhmbs/f0NpoEeE3KtEJmsy2KSw3a6vcQ/BGxaFPyVrb
- 3deUq6U9z9ks+56TV3IJRzy8XC0zMZTSeUpI7Sk5rvdeo5JtniS9vK2H1HU2EfckOjdn
- AIWA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:subject:to:cc:references:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding;
- bh=GTCRS5itnhr1mF/qxix34YoD9buZ+IJ+Kp8+rInUWII=;
- b=OXD92NT8Mn7gIvSRMHWt0CTV/ZAuUrIFKPH3uFCVIiOPWsbdW6wDXV3s6VzQy+6sxY
- rO1KkYgH+RixQP+VKjnlGaIxMLaGyrG/C0PXXp7bMnkACAwaDh5vstzsO9jV3VwVQ6K1
- GFNkRffEwbXj6UigyyqfR8+ZTsv04TVuYhi3psLg5CluApKkhAaWIj/omh2PjrA8Q+W8
- +bCFqR17lr0+Mrq6gD80iUDzPZ2ajYY3hAcfkdw43/1x0ZxnBa3f/xuCR7L99F3TQV41
- KEfHQdMTJr1UZmzFn3gZLc9Co9oSHYga+lyDzIJlfV7EYHocKmjFI0tJq9BcO7UPCTqn
- cgvg==
-X-Gm-Message-State: AOAM531p2Ebn9cIBQpQd2yri/XFD6y1WjmZA9/25uxm5zMspZUwV6ql9
- tGtabGaFspoABlY9z2c2KMI=
-X-Google-Smtp-Source: ABdhPJx/4KdYW3Afcw6UEXV6omcwrg39GzRW/S4XSWQxqsjDVfrymkFMOI5pi2hIOfpxCf9XMGqlMg==
-X-Received: by 2002:a63:7453:: with SMTP id e19mr4549034pgn.139.1590119915296; 
- Thu, 21 May 2020 20:58:35 -0700 (PDT)
-Received: from [0.0.0.0] ([45.76.223.48])
- by smtp.gmail.com with ESMTPSA id o25sm4993865pgn.84.2020.05.21.20.58.10
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 21 May 2020 20:58:34 -0700 (PDT)
-From: Jia He <jiakernel2@gmail.com>
-Subject: Re: [PATCH V3 0/3] arm64: Enable vmemmap mapping from device memory
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-References: <1585631387-18819-1-git-send-email-anshuman.khandual@arm.com>
-Message-ID: <4853d33f-d524-8209-4f8d-c26ee1eaa85b@gmail.com>
-Date: Fri, 22 May 2020 11:58:06 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jbz56-00083w-Tw; Fri, 22 May 2020 04:14:50 +0000
+X-UUID: bffa981ddf484da5875e694cfccca6ab-20200521
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=9XJQWMeNbLuOVbhCAds/pojuKuqDmIStgg9SQ2imLs0=; 
+ b=lsyu9iSHqhCqTfTLZVYCFHQT4UtdqwGUITHf2PHVkTlEGpYZXANvoGJdt/zXfvpm68LZtaMWmdsUxWfeG0avijUwgOrOLQcJDGomoATbrS2ZIz5XjW6MvjMZaVOTAuPjegthzF5eJs96y3M3gdFJVieTRzHHaO1wNhSngaU6ZL4=;
+X-UUID: bffa981ddf484da5875e694cfccca6ab-20200521
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <michael.kao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1860508371; Thu, 21 May 2020 20:14:33 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 21 May 2020 21:07:39 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 22 May 2020 12:07:37 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 22 May 2020 12:07:37 +0800
+Message-ID: <1590120458.22249.24.camel@mtksdccf07>
+Subject: Re: [v4,0/7] Add Mediatek thermal dirver and dtsi
+From: Michael Kao <michael.kao@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Fri, 22 May 2020 12:07:38 +0800
+In-Reply-To: <7e205390-c7a7-b8c9-3ba2-344a04dc6696@gmail.com>
+References: <20200323121537.22697-1-michael.kao@mediatek.com>
+ <7e205390-c7a7-b8c9-3ba2-344a04dc6696@gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <1585631387-18819-1-git-send-email-anshuman.khandual@arm.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_205837_378148_F0A8E075 
-X-CRM114-Status: GOOD (  18.36  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200521_211448_973704_BD3AAC30 
+X-CRM114-Status: GOOD (  17.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jiakernel2[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jiakernel2[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -88,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,154 +83,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
- Thomas Gleixner <tglx@linutronix.de>, David Hildenbrand <david@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@samba.org>,
- linux-ia64@vger.kernel.org, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, jgg@mellanox.com, aneesh.kumar@linux.ibm.com,
- x86@kernel.org, "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
- Mike Rapoport <rppt@linux.ibm.com>, Kaly Xin <Kaly.Xin@arm.com>,
- Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Fenghua Yu <fenghua.yu@intel.com>, rcampbell@nvidia.com,
- Pavel Tatashin <pasha.tatashin@soleen.com>, jglisse@redhat.com,
- Andy Lutomirski <luto@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Michael Ellerman <mpe@ellerman.id.au>,
- Andrew Morton <akpm@linux-foundation.org>, robin.murphy@arm.com,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+On Thu, 2020-05-21 at 14:51 +0200, Matthias Brugger wrote:
+> Hi Michael,
+> 
+> On 23/03/2020 13:15, Michael Kao wrote:
+> > This patchset supports for MT8183 chip to mtk_thermal.c.
+> > Add thermal zone of all the thermal sensor in SoC for
+> > another get temperatrue. They don't need to thermal throttle.
+> > And we bind coolers for thermal zone nodes of cpu_thermal.
+> > 
+> > Rebase to kernel-5.6-rc1.
+> > 
+> > Update content:
+> > 
+> > [1/7]
+> >     - Squash thermal zone settings in the dtsi from [v3,5/8]
+> >       arm64: dts: mt8183: Increase polling frequency for CPU thermal zone
+> > 
+> >     - Remove the property of interrupts and mediatek,hw-reset-temp
+> > 
+> > [2/7]
+> >     - Correct commit message
+> > 
+> > [4/7]
+> >     - Change the target temperature to the 80C and change the commit message
+> > 
+> > [6/7]
+> >     - Adjust newline alignment
+> > 
+> >     - Fix the judgement on the return value of registering thermal zone
+> > 
+> > This patch series base on these patches [1].
+> > 
+> > [v7,3/3] PM / AVS: SVS: Introduce SVS engine (https://patchwork.kernel.org/patch/11439829/)
+> > 
+> > Matthias Kaehlcke (1):
+> >   arm64: dts: mt8183: Configure CPU cooling
+> > 
+> > Michael Kao (6):
+> >   arm64: dts: mt8183: add thermal zone node
+> >   arm64: dts: mt8183: add dynamic power coefficients
+> >   arm64: dts: mt8183: Add #cooling-cells to CPU nodes
+> >   thermal: mediatek: mt8183: fix bank number settings
+> 
+> Do I understand correctly that we need to fix the bank number before we can add
+> the device tree changes. And that the last two patches are enhancements for the
+> driver but needed to get a working version?
+> 
+> Regards,
+> Matthias
 
-On 2020/3/31 13:09, Anshuman Khandual wrote:
-> This series enables vmemmap backing memory allocation from device memory
-> ranges on arm64. But before that, it enables vmemmap_populate_basepages()
-> and vmemmap_alloc_block_buf() to accommodate struct vmem_altmap based
-> alocation requests.
+Hi Matthias,
 
-I verified no obvious regression after this patch series.
+There is one bank setting of mt8183 config.
+If the device tree merged first. I worry that it will crash when the
+thermal zone read temperature.
+It will access the invalid index of bank.
+So please add the patch "fix bank number settings "
+first.222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
 
-Host: ThunderX2(armv8a server), kernel v5.4
-
-qemu:v3.1, -M virt \
-
--object 
-memory-backend-file,id=mem1,share=on,mem-path=/tmp2/nvdimm.img,size=4G,align=2M \
-
--device nvdimm,id=nvdimm1,memdev=mem1,label-size=2M
-
-Guest: kernel v5.7.0-rc5 with this patch series.
-
-Tested case:
-
-- 4K PAGESIZE, boot, mount w/ -o dax, mount w/o -o dax, basic io
-
-- 64K PAGESIZE,boot, mount w/ -o dax, mount w/o -o dax, basic io
-
-Not tested:
-
-- 16K pagesize due to my hardware limiation(can't run 16K pgsz kernel)
-
-- hot-add/remove nvdimm device from qemu due to no fully support on arm64 qemu yet
-
-- Host nvdimm device hotplug
-
-Hence from above result,
-
-Tested-by: Jia He <justin.he@arm.com>
-
-> This series applies after latest (v14) arm64 memory hot remove series
-> (https://lkml.org/lkml/2020/3/3/1746) on Linux 5.6.
->
-> Pending Question:
->
-> altmap_alloc_block_buf() does not have any other remaining users in the
-> tree after this change. Should it be converted into a static function and
-> it's declaration be dropped from the header (include/linux/mm.h). Avoided
-> doing so because I was not sure if there are any off-tree users or not.
->
-> Changes in V3:
->
-> - Dropped comment from free_hotplug_page_range() per Robin
-> - Modified comment in unmap_hotplug_range() per Robin
-> - Enabled altmap support in vmemmap_alloc_block_buf() per Robin
->
-> Changes in V2: (https://lkml.org/lkml/2020/3/4/475)
->
-> - Rebased on latest hot-remove series (v14) adding P4D page table support
->
-> Changes in V1: (https://lkml.org/lkml/2020/1/23/12)
->
-> - Added an WARN_ON() in unmap_hotplug_range() when altmap is
->    provided without the page table backing memory being freed
->
-> Changes in RFC V2: (https://lkml.org/lkml/2019/10/21/11)
->
-> - Changed the commit message on 1/2 patch per Will
-> - Changed the commit message on 2/2 patch as well
-> - Rebased on arm64 memory hot remove series (v10)
->
-> RFC V1: (https://lkml.org/lkml/2019/6/28/32)
->
-> Cc: Catalin Marinas<catalin.marinas@arm.com>
-> Cc: Will Deacon<will@kernel.org>
-> Cc: Mark Rutland<mark.rutland@arm.com>
-> Cc: Paul Walmsley<paul.walmsley@sifive.com>
-> Cc: Palmer Dabbelt<palmer@dabbelt.com>
-> Cc: Tony Luck<tony.luck@intel.com>
-> Cc: Fenghua Yu<fenghua.yu@intel.com>
-> Cc: Dave Hansen<dave.hansen@linux.intel.com>
-> Cc: Andy Lutomirski<luto@kernel.org>
-> Cc: Peter Zijlstra<peterz@infradead.org>
-> Cc: Thomas Gleixner<tglx@linutronix.de>
-> Cc: Ingo Molnar<mingo@redhat.com>
-> Cc: David Hildenbrand<david@redhat.com>
-> Cc: Mike Rapoport<rppt@linux.ibm.com>
-> Cc: Michal Hocko<mhocko@suse.com>
-> Cc: "Matthew Wilcox (Oracle)"<willy@infradead.org>
-> Cc: "Kirill A. Shutemov"<kirill.shutemov@linux.intel.com>
-> Cc: Andrew Morton<akpm@linux-foundation.org>
-> Cc: Dan Williams<dan.j.williams@intel.com>
-> Cc: Pavel Tatashin<pasha.tatashin@soleen.com>
-> Cc: Benjamin Herrenschmidt<benh@kernel.crashing.org>
-> Cc: Paul Mackerras<paulus@samba.org>
-> Cc: Michael Ellerman<mpe@ellerman.id.au>
-> Cc:linux-arm-kernel@lists.infradead.org
-> Cc:linux-ia64@vger.kernel.org
-> Cc:linux-riscv@lists.infradead.org
-> Cc:x86@kernel.org
-> Cc:linuxppc-dev@lists.ozlabs.org
-> Cc:linux-mm@kvack.org
-> Cc:linux-kernel@vger.kernel.org
->
-> Anshuman Khandual (3):
->    mm/sparsemem: Enable vmem_altmap support in vmemmap_populate_basepages()
->    mm/sparsemem: Enable vmem_altmap support in vmemmap_alloc_block_buf()
->    arm64/mm: Enable vmem_altmap support for vmemmap mappings
->
->   arch/arm64/mm/mmu.c       | 59 ++++++++++++++++++++++++++-------------
->   arch/ia64/mm/discontig.c  |  2 +-
->   arch/powerpc/mm/init_64.c | 10 +++----
->   arch/riscv/mm/init.c      |  2 +-
->   arch/x86/mm/init_64.c     | 12 ++++----
->   include/linux/mm.h        |  8 ++++--
->   mm/sparse-vmemmap.c       | 38 ++++++++++++++++++++-----
->   7 files changed, 87 insertions(+), 44 deletions(-)
->
--- 
-
----
-Cheers,
-Justin (Jia He)
-
+> 
+> >   thermal: mediatek: add another get_temp ops for thermal sensors
+> >   thermal: mediatek: use spinlock to protect PTPCORESEL
+> > 
+> >  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 156 +++++++++++++++++++++++
+> >  drivers/thermal/mtk_thermal.c            |  88 +++++++++++--
+> >  2 files changed, 231 insertions(+), 13 deletions(-)
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
