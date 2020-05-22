@@ -2,61 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76A491DDE4E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 05:48:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE6161DDE7A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 05:59:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2BxHn4jfuH20MA6r2ceblvTbc07hY7vG0r1flmu5su4=; b=R53uK39+1NfyH2
-	XdHtZQKVkFQNW6aTv/bYUEOSDLQpcyxL+CpB/S2DrMRF+aSWWvXCONICbZM1H5RjcHi2oGsT8r8uL
-	anblWCH/fco/7IezWhFxGvWoUaqchoMNYSh8wNnf6eNbJfvyfykUUKyT2uovuKxEUbNydDBiFvB8O
-	wTYKiCZF5vh26S+f/EZesFqzTKxulXFRvOVfH1OYhumQFz3owKs/LgdK5SBMTLQZr0sHHvw/y5whh
-	Ly7C3Jb1elZIi9tHkJJcZW2WYPBQe+J630XQ2qxt1goC+9Ba1ly2Sn6ODZsCgoMzv31fR4/VPudCa
-	O5Vx3JG174UJWVltY8Gw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ypwEhyggzKNpy0iJx/OTgABoRZcbTu0/Xubm6MLRFPk=; b=N7lph1KBU1q7mW/+ySaA5uNhu
+	+qk6UqvgRBBhT8GrwIuXy911ENLPMu+/ASBQY5C05jkZlWNfVNa7kH62oPJckrveQKIXVtNU6VOtz
+	FzyhqdzlaC9xFvEUt6RUWCQgLeEpAYIc30QxROyia+gFzjcktGhWT5Svkkxe2osGJmpb+Sg5u8DoJ
+	PkOZ1YJDJGaXDesAzP8TosAl9+DbNs2GNeFK9Ttu34trFc11YDs6SfK0Ku0tlqLl1bJPygHH9/179
+	Oy+YQOCTYqv8YBGOGeanfTFgDla/keylWYoeu8d4z5yat4Z4GShQg9Yv1iNOFnKm6bSRahPbFg0i/
+	BxLH2mu9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbyfY-0000jt-0k; Fri, 22 May 2020 03:48:24 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jbypg-0006uh-S0; Fri, 22 May 2020 03:58:52 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbyfM-0000hX-Fb; Fri, 22 May 2020 03:48:13 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 3F11374CB98CDB456CAC;
- Fri, 22 May 2020 11:48:01 +0800 (CST)
-Received: from localhost (10.166.215.154) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0; Fri, 22 May 2020
- 11:47:53 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <nbd@nbd.name>, <lorenzo.bianconi83@gmail.com>, <ryder.lee@mediatek.com>, 
- <kvalo@codeaurora.org>, <davem@davemloft.net>, <kuba@kernel.org>,
- <matthias.bgg@gmail.com>, <shayne.chen@mediatek.com>,
- <chih-min.chen@mediatek.com>, <yf.luo@mediatek.com>,
- <yiwei.chung@mediatek.com>
-Subject: [PATCH -next] mt76: mt7915: Fix build error
-Date: Fri, 22 May 2020 11:45:33 +0800
-Message-ID: <20200522034533.61716-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+ id 1jbypR-0006su-AE; Fri, 22 May 2020 03:58:38 +0000
+Received: by mail-pg1-x543.google.com with SMTP id s10so4387281pgm.0;
+ Thu, 21 May 2020 20:58:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:subject:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding;
+ bh=GTCRS5itnhr1mF/qxix34YoD9buZ+IJ+Kp8+rInUWII=;
+ b=vDaWIoTIRHXzzZ3IA67i/cjCOtcGp88y+O8jyIDLaixqV8pz490fe22V8IP7iTQfe1
+ YwtcB0HXkIAL18fDGByNvpebTUqZeqxG3FlwKcZJ1Rym7igoGACDWDHdcDBYqJJuNLOI
+ oZn65R21HDSkTDywMd4YyKKdZqHI8Xl/970SsXN17v9J/1Kg2jzRKPsMbuWWObylBAmc
+ W9QoRKVSiHMEi/BkfW/W7rWjSbhmbs/f0NpoEeE3KtEJmsy2KSw3a6vcQ/BGxaFPyVrb
+ 3deUq6U9z9ks+56TV3IJRzy8XC0zMZTSeUpI7Sk5rvdeo5JtniS9vK2H1HU2EfckOjdn
+ AIWA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:subject:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding;
+ bh=GTCRS5itnhr1mF/qxix34YoD9buZ+IJ+Kp8+rInUWII=;
+ b=OXD92NT8Mn7gIvSRMHWt0CTV/ZAuUrIFKPH3uFCVIiOPWsbdW6wDXV3s6VzQy+6sxY
+ rO1KkYgH+RixQP+VKjnlGaIxMLaGyrG/C0PXXp7bMnkACAwaDh5vstzsO9jV3VwVQ6K1
+ GFNkRffEwbXj6UigyyqfR8+ZTsv04TVuYhi3psLg5CluApKkhAaWIj/omh2PjrA8Q+W8
+ +bCFqR17lr0+Mrq6gD80iUDzPZ2ajYY3hAcfkdw43/1x0ZxnBa3f/xuCR7L99F3TQV41
+ KEfHQdMTJr1UZmzFn3gZLc9Co9oSHYga+lyDzIJlfV7EYHocKmjFI0tJq9BcO7UPCTqn
+ cgvg==
+X-Gm-Message-State: AOAM531p2Ebn9cIBQpQd2yri/XFD6y1WjmZA9/25uxm5zMspZUwV6ql9
+ tGtabGaFspoABlY9z2c2KMI=
+X-Google-Smtp-Source: ABdhPJx/4KdYW3Afcw6UEXV6omcwrg39GzRW/S4XSWQxqsjDVfrymkFMOI5pi2hIOfpxCf9XMGqlMg==
+X-Received: by 2002:a63:7453:: with SMTP id e19mr4549034pgn.139.1590119915296; 
+ Thu, 21 May 2020 20:58:35 -0700 (PDT)
+Received: from [0.0.0.0] ([45.76.223.48])
+ by smtp.gmail.com with ESMTPSA id o25sm4993865pgn.84.2020.05.21.20.58.10
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 21 May 2020 20:58:34 -0700 (PDT)
+From: Jia He <jiakernel2@gmail.com>
+Subject: Re: [PATCH V3 0/3] arm64: Enable vmemmap mapping from device memory
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
+References: <1585631387-18819-1-git-send-email-anshuman.khandual@arm.com>
+Message-ID: <4853d33f-d524-8209-4f8d-c26ee1eaa85b@gmail.com>
+Date: Fri, 22 May 2020 11:58:06 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-Originating-IP: [10.166.215.154]
-X-CFilter-Loop: Reflected
+In-Reply-To: <1585631387-18819-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_204812_684050_0070759A 
-X-CRM114-Status: UNSURE (   6.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200521_205837_378148_F0A8E075 
+X-CRM114-Status: GOOD (  18.36  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.35 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jiakernel2[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [jiakernel2[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,56 +99,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-wireless@vger.kernel.org, netdev@vger.kernel.org,
- YueHaibing <yuehaibing@huawei.com>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Michal Hocko <mhocko@suse.com>,
+ Thomas Gleixner <tglx@linutronix.de>, David Hildenbrand <david@redhat.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dave Hansen <dave.hansen@linux.intel.com>, Paul Mackerras <paulus@samba.org>,
+ linux-ia64@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, jgg@mellanox.com, aneesh.kumar@linux.ibm.com,
+ x86@kernel.org, "Matthew Wilcox \(Oracle\)" <willy@infradead.org>,
+ Mike Rapoport <rppt@linux.ibm.com>, Kaly Xin <Kaly.Xin@arm.com>,
+ Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Fenghua Yu <fenghua.yu@intel.com>, rcampbell@nvidia.com,
+ Pavel Tatashin <pasha.tatashin@soleen.com>, jglisse@redhat.com,
+ Andy Lutomirski <luto@kernel.org>, Paul Walmsley <paul.walmsley@sifive.com>,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org,
+ Tony Luck <tony.luck@intel.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Andrew Morton <akpm@linux-foundation.org>, robin.murphy@arm.com,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SW4gZmlsZSBpbmNsdWRlZCBmcm9tIC4vaW5jbHVkZS9saW51eC9maXJtd2FyZS5oOjY6MCwKICAg
-ICAgICAgICAgICAgICBmcm9tIGRyaXZlcnMvbmV0L3dpcmVsZXNzL21lZGlhdGVrL210NzYvbXQ3
-OTE1L21jdS5jOjQ6CkluIGZ1bmN0aW9uIOKAmF9fbXQ3OTE1X21jdV9tc2dfc2VuZOKAmSwKICAg
-IGlubGluZWQgZnJvbSDigJhtdDc5MTVfbWN1X3NlbmRfbWVzc2FnZeKAmSBhdCBkcml2ZXJzL25l
-dC93aXJlbGVzcy9tZWRpYXRlay9tdDc2L210NzkxNS9tY3UuYzozNzA6NjoKLi9pbmNsdWRlL2xp
-bnV4L2NvbXBpbGVyLmg6Mzk2OjM4OiBlcnJvcjogY2FsbCB0byDigJhfX2NvbXBpbGV0aW1lX2Fz
-c2VydF81NDXigJkgZGVjbGFyZWQgd2l0aCBhdHRyaWJ1dGUgZXJyb3I6IEJVSUxEX0JVR19PTiBm
-YWlsZWQ6IGNtZCA9PSBNQ1VfRVhUX0NNRF9FRlVTRV9BQ0NFU1MgJiYgbWN1X3R4ZC0+c2V0X3F1
-ZXJ5ICE9IE1DVV9RX1FVRVJZCiAgX2NvbXBpbGV0aW1lX2Fzc2VydChjb25kaXRpb24sIG1zZywg
-X19jb21waWxldGltZV9hc3NlcnRfLCBfX0NPVU5URVJfXykKICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICBeCi4vaW5jbHVkZS9saW51eC9jb21waWxlci5oOjM3Nzo0OiBub3Rl
-OiBpbiBkZWZpbml0aW9uIG9mIG1hY3JvIOKAmF9fY29tcGlsZXRpbWVfYXNzZXJ04oCZCiAgICBw
-cmVmaXggIyMgc3VmZml4KCk7ICAgIFwKICAgIF5+fn5+fgouL2luY2x1ZGUvbGludXgvY29tcGls
-ZXIuaDozOTY6Mjogbm90ZTogaW4gZXhwYW5zaW9uIG9mIG1hY3JvIOKAmF9jb21waWxldGltZV9h
-c3NlcnTigJkKICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNvbmRpdGlvbiwgbXNnLCBfX2NvbXBpbGV0
-aW1lX2Fzc2VydF8sIF9fQ09VTlRFUl9fKQogIF5+fn5+fn5+fn5+fn5+fn5+fn4KLi9pbmNsdWRl
-L2xpbnV4L2J1aWxkX2J1Zy5oOjM5OjM3OiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8g4oCY
-Y29tcGlsZXRpbWVfYXNzZXJ04oCZCiAjZGVmaW5lIEJVSUxEX0JVR19PTl9NU0coY29uZCwgbXNn
-KSBjb21waWxldGltZV9hc3NlcnQoIShjb25kKSwgbXNnKQogICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+fn5+Ci4vaW5jbHVkZS9saW51eC9idWlsZF9i
-dWcuaDo1MDoyOiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8g4oCYQlVJTERfQlVHX09OX01T
-R+KAmQogIEJVSUxEX0JVR19PTl9NU0coY29uZGl0aW9uLCAiQlVJTERfQlVHX09OIGZhaWxlZDog
-IiAjY29uZGl0aW9uKQogIF5+fn5+fn5+fn5+fn5+fn4KZHJpdmVycy9uZXQvd2lyZWxlc3MvbWVk
-aWF0ZWsvbXQ3Ni9tdDc5MTUvbWN1LmM6MjgwOjI6IG5vdGU6IGluIGV4cGFuc2lvbiBvZiBtYWNy
-byDigJhCVUlMRF9CVUdfT07igJkKICBCVUlMRF9CVUdfT04oY21kID09IE1DVV9FWFRfQ01EX0VG
-VVNFX0FDQ0VTUyAmJgogIF5+fn5+fn5+fn5+fgoKQlVJTERfQlVHX09OIGlzIG1lYW5pbmdsZXNz
-IGhlcmUsIGNoYW5nIGl0IHRvIFdBUk5fT04uCgpGaXhlczogZTU3Yjc5MDE0NjlmICgibXQ3Njog
-YWRkIG1hYzgwMjExIGRyaXZlciBmb3IgTVQ3OTE1IFBDSWUtYmFzZWQgY2hpcHNldHMiKQpTaWdu
-ZWQtb2ZmLWJ5OiBZdWVIYWliaW5nIDx5dWVoYWliaW5nQGh1YXdlaS5jb20+Ci0tLQogZHJpdmVy
-cy9uZXQvd2lyZWxlc3MvbWVkaWF0ZWsvbXQ3Ni9tdDc5MTUvbWN1LmMgfCA0ICsrLS0KIDEgZmls
-ZSBjaGFuZ2VkLCAyIGluc2VydGlvbnMoKyksIDIgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEv
-ZHJpdmVycy9uZXQvd2lyZWxlc3MvbWVkaWF0ZWsvbXQ3Ni9tdDc5MTUvbWN1LmMgYi9kcml2ZXJz
-L25ldC93aXJlbGVzcy9tZWRpYXRlay9tdDc2L210NzkxNS9tY3UuYwppbmRleCBmMDBhZDJiNjY3
-NjEuLjk5ZWVlYTQyNDc4ZiAxMDA2NDQKLS0tIGEvZHJpdmVycy9uZXQvd2lyZWxlc3MvbWVkaWF0
-ZWsvbXQ3Ni9tdDc5MTUvbWN1LmMKKysrIGIvZHJpdmVycy9uZXQvd2lyZWxlc3MvbWVkaWF0ZWsv
-bXQ3Ni9tdDc5MTUvbWN1LmMKQEAgLTI3Nyw4ICsyNzcsOCBAQCBzdGF0aWMgaW50IF9fbXQ3OTE1
-X21jdV9tc2dfc2VuZChzdHJ1Y3QgbXQ3OTE1X2RldiAqZGV2LCBzdHJ1Y3Qgc2tfYnVmZiAqc2ti
-LAogCX0KIAogCW1jdV90eGQtPnMyZF9pbmRleCA9IE1DVV9TMkRfSDJOOwotCUJVSUxEX0JVR19P
-TihjbWQgPT0gTUNVX0VYVF9DTURfRUZVU0VfQUNDRVNTICYmCi0JCSAgICAgbWN1X3R4ZC0+c2V0
-X3F1ZXJ5ICE9IE1DVV9RX1FVRVJZKTsKKwlXQVJOX09OKGNtZCA9PSBNQ1VfRVhUX0NNRF9FRlVT
-RV9BQ0NFU1MgJiYKKwkJbWN1X3R4ZC0+c2V0X3F1ZXJ5ICE9IE1DVV9RX1FVRVJZKTsKIAogZXhp
-dDoKIAlpZiAod2FpdF9zZXEpCi0tIAoyLjE3LjEKCgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi
+
+On 2020/3/31 13:09, Anshuman Khandual wrote:
+> This series enables vmemmap backing memory allocation from device memory
+> ranges on arm64. But before that, it enables vmemmap_populate_basepages()
+> and vmemmap_alloc_block_buf() to accommodate struct vmem_altmap based
+> alocation requests.
+
+I verified no obvious regression after this patch series.
+
+Host: ThunderX2(armv8a server), kernel v5.4
+
+qemu:v3.1, -M virt \
+
+-object 
+memory-backend-file,id=mem1,share=on,mem-path=/tmp2/nvdimm.img,size=4G,align=2M \
+
+-device nvdimm,id=nvdimm1,memdev=mem1,label-size=2M
+
+Guest: kernel v5.7.0-rc5 with this patch series.
+
+Tested case:
+
+- 4K PAGESIZE, boot, mount w/ -o dax, mount w/o -o dax, basic io
+
+- 64K PAGESIZE,boot, mount w/ -o dax, mount w/o -o dax, basic io
+
+Not tested:
+
+- 16K pagesize due to my hardware limiation(can't run 16K pgsz kernel)
+
+- hot-add/remove nvdimm device from qemu due to no fully support on arm64 qemu yet
+
+- Host nvdimm device hotplug
+
+Hence from above result,
+
+Tested-by: Jia He <justin.he@arm.com>
+
+> This series applies after latest (v14) arm64 memory hot remove series
+> (https://lkml.org/lkml/2020/3/3/1746) on Linux 5.6.
+>
+> Pending Question:
+>
+> altmap_alloc_block_buf() does not have any other remaining users in the
+> tree after this change. Should it be converted into a static function and
+> it's declaration be dropped from the header (include/linux/mm.h). Avoided
+> doing so because I was not sure if there are any off-tree users or not.
+>
+> Changes in V3:
+>
+> - Dropped comment from free_hotplug_page_range() per Robin
+> - Modified comment in unmap_hotplug_range() per Robin
+> - Enabled altmap support in vmemmap_alloc_block_buf() per Robin
+>
+> Changes in V2: (https://lkml.org/lkml/2020/3/4/475)
+>
+> - Rebased on latest hot-remove series (v14) adding P4D page table support
+>
+> Changes in V1: (https://lkml.org/lkml/2020/1/23/12)
+>
+> - Added an WARN_ON() in unmap_hotplug_range() when altmap is
+>    provided without the page table backing memory being freed
+>
+> Changes in RFC V2: (https://lkml.org/lkml/2019/10/21/11)
+>
+> - Changed the commit message on 1/2 patch per Will
+> - Changed the commit message on 2/2 patch as well
+> - Rebased on arm64 memory hot remove series (v10)
+>
+> RFC V1: (https://lkml.org/lkml/2019/6/28/32)
+>
+> Cc: Catalin Marinas<catalin.marinas@arm.com>
+> Cc: Will Deacon<will@kernel.org>
+> Cc: Mark Rutland<mark.rutland@arm.com>
+> Cc: Paul Walmsley<paul.walmsley@sifive.com>
+> Cc: Palmer Dabbelt<palmer@dabbelt.com>
+> Cc: Tony Luck<tony.luck@intel.com>
+> Cc: Fenghua Yu<fenghua.yu@intel.com>
+> Cc: Dave Hansen<dave.hansen@linux.intel.com>
+> Cc: Andy Lutomirski<luto@kernel.org>
+> Cc: Peter Zijlstra<peterz@infradead.org>
+> Cc: Thomas Gleixner<tglx@linutronix.de>
+> Cc: Ingo Molnar<mingo@redhat.com>
+> Cc: David Hildenbrand<david@redhat.com>
+> Cc: Mike Rapoport<rppt@linux.ibm.com>
+> Cc: Michal Hocko<mhocko@suse.com>
+> Cc: "Matthew Wilcox (Oracle)"<willy@infradead.org>
+> Cc: "Kirill A. Shutemov"<kirill.shutemov@linux.intel.com>
+> Cc: Andrew Morton<akpm@linux-foundation.org>
+> Cc: Dan Williams<dan.j.williams@intel.com>
+> Cc: Pavel Tatashin<pasha.tatashin@soleen.com>
+> Cc: Benjamin Herrenschmidt<benh@kernel.crashing.org>
+> Cc: Paul Mackerras<paulus@samba.org>
+> Cc: Michael Ellerman<mpe@ellerman.id.au>
+> Cc:linux-arm-kernel@lists.infradead.org
+> Cc:linux-ia64@vger.kernel.org
+> Cc:linux-riscv@lists.infradead.org
+> Cc:x86@kernel.org
+> Cc:linuxppc-dev@lists.ozlabs.org
+> Cc:linux-mm@kvack.org
+> Cc:linux-kernel@vger.kernel.org
+>
+> Anshuman Khandual (3):
+>    mm/sparsemem: Enable vmem_altmap support in vmemmap_populate_basepages()
+>    mm/sparsemem: Enable vmem_altmap support in vmemmap_alloc_block_buf()
+>    arm64/mm: Enable vmem_altmap support for vmemmap mappings
+>
+>   arch/arm64/mm/mmu.c       | 59 ++++++++++++++++++++++++++-------------
+>   arch/ia64/mm/discontig.c  |  2 +-
+>   arch/powerpc/mm/init_64.c | 10 +++----
+>   arch/riscv/mm/init.c      |  2 +-
+>   arch/x86/mm/init_64.c     | 12 ++++----
+>   include/linux/mm.h        |  8 ++++--
+>   mm/sparse-vmemmap.c       | 38 ++++++++++++++++++++-----
+>   7 files changed, 87 insertions(+), 44 deletions(-)
+>
+-- 
+
+---
+Cheers,
+Justin (Jia He)
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
