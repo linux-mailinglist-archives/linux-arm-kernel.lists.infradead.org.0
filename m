@@ -2,67 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B3AF1DE356
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 11:38:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA8F61DE342
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 11:37:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=isPayLKHgAnDEcfEvtk0orGKPPIXsG/2Hh7Q/NAQFok=; b=EFeb03bKX+qopz
-	3IZeIlgzljY4decC7JuIqGMG1w+Jaj3vMXG2ES9IR5YJC9zNZbz9rJuE2QUvALtjDxEL6ecV0JqCa
-	q/h4BqQ79AEuiJtirYUideS8vIuZsv37MIaj86l349gUJg2akEaCigO5w1li/ve97Rkfl3EHpByj/
-	ydK5S0tQzElI/qXojB/zkLchIOmwdWG0ZKUA4P5DmcvFmrq2YXxsX/Rkla24g2BnCHEWRLf7NBtVl
-	y/FTTfU3x1sXHIi5PJ9MW7dRH7+Az5iMs0B4bAor3XtaNhVI/pyggjLjh8KQ+lmOwLuuiF0hNpdiF
-	KuR7qLf7+nuAAeynnHVw==;
+	List-Owner; bh=XxmKolRbIJ8vqAv6VmdnDQZvY4JfXS8OT1DQcUOgQv4=; b=ub7yAxMlj2p4Ac
+	QRM+T2OFJ1iaFyuDOWbtcdVuElh2YLUlh8MMVoVny4HNeUwkO0YhFyXM/vi7Mz0WjnPbLLFq1/0e2
+	U/5ew8tkWrCQC55nM+6TsfFsYP0RyPQIigMR+ERu9w7TvXOt0xRw1WAago1JjAkyhOe5L0xDJ2u+c
+	9qM0+DG8j+Gjjqx6y4Ut7RfnIsascWS0XsFxwuH0TbWyDf8OrMrKK8b8bCYGcX2pfkUpNV3RGXtyV
+	X1Prcxej4cQ/HEYVj2yaMnFmZUXgmxACdeE7e9GT1cW/dBe6T8ACjE/wSANlYFWE92Lku2TGvuz0g
+	031czbJQjt2nG5SR1kYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc487-0004aT-G8; Fri, 22 May 2020 09:38:15 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jc47m-0004MT-Db; Fri, 22 May 2020 09:37:54 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc47f-0004M9-FE; Fri, 22 May 2020 09:37:49 +0000
-X-UUID: 378d75413cd44fa5a6f6a3187e34db12-20200522
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=hepUThaabfGUaHmDa2AneBNj6YVAHDrku45pJkqhJeQ=; 
- b=dmWushCpg647SzPfU4TDBhnnynHvSymCQQWl8GrvjhLPRZ7ulZUayXryH9l+Ipaa30MJ71ypsFqPoYKa+oFRE/tZHPFh+xJM68UHK4DhHFDo3bkcm7JQafK+wVNBCFjCPxgYA0gFkqkNMpuhb2X+4NZG6KKjmOyg7kmlxr8D994=;
-X-UUID: 378d75413cd44fa5a6f6a3187e34db12-20200522
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 513997193; Fri, 22 May 2020 01:37:25 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 22 May 2020 02:27:38 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Fri, 22 May 2020 17:27:36 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 22 May 2020 17:27:34 +0800
-Message-ID: <1590139561.8804.390.camel@mhfsdcap03>
-Subject: Re: [V6, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Fri, 22 May 2020 17:26:01 +0800
-In-Reply-To: <20200521195113.GC14214@chromium.org>
-References: <20200518132731.20855-1-dongchun.zhu@mediatek.com>
- <20200518132731.20855-3-dongchun.zhu@mediatek.com>
- <20200521195113.GC14214@chromium.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jc47b-0004Li-2U
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 09:37:44 +0000
+Received: by mail-wr1-x443.google.com with SMTP id c3so5267970wru.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 May 2020 02:37:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=+JaGmfrUHhcQkFEPqWe0bVFYz2Arc5TLSoXsPeih+bY=;
+ b=NDE9gcYyqD5IEt9rXJkmi/wEyz9UCuTNGRlh7pxa3vfQZLtnrb0Yh6gbJ7K6nO2Kbz
+ c8NLy66N6aIhVAMZ2J3zCgJdhK7UhUWk9L5TDQgwBIqSRGfqXc4vnv0QPE17Mbq7BJHA
+ JSgLgqn/MxflMn9nvVXvv6xtxhn7uGAXsmEXNSqaSte/pQtBqJWAexAp4asgLGlwA8++
+ SWWkv9B8ybyPTREFSvSpyERKSYj7WfhANiXUaEx0o6zPF+PPc+pcLDQa8r2+SDEfMUPL
+ sTvz5RTqFljDfVi1YilfsOw8kY0yIwFeJ1KuotodP28/DK7TfAaYGU70lvBCsraWTuUP
+ 3/7A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=+JaGmfrUHhcQkFEPqWe0bVFYz2Arc5TLSoXsPeih+bY=;
+ b=WL3Zd3kvEdyQpcFYZeVcpl7CK1lEF5424zdXgacx89UIA/OIOjvvOnkmhySLCk85q6
+ Q9kmaQ8p9VZUCXO0AzNVKa0SirKDeVPIVgXHmPec4SMW8aRjEJAFRqt/g06YQP/WAeou
+ KrZRELoo5RrMD6aTcdZ4+W8MCVYg9JqmHR83QF7KcHxL6pP3i9C+hfzQjaYwaLSZV8v1
+ rg5GPzt204By1c2p5dK/qEPHt7hHc0cWXllQkKxLx3oHn+iFpyJaoyxoUq7xkpi9bCQR
+ cJsm4lCWzr4SQvsVkagTR14GqtspybihiHRzRszZ/h4hWn93mFcilzlcrNIX8A/wGqwv
+ QnCw==
+X-Gm-Message-State: AOAM532JFSa7o4Xuw5xbUdlcVDWxWXd8zOPL2waUx3d0q3M75v82o6+T
+ 2oDZhp4b6M17uRe6kZX5qFZdAw==
+X-Google-Smtp-Source: ABdhPJzoncU+lNgmINUvGoMOt+KFP+k6Tci7J6tYcLGnKlR7Ymv0eheScbKLeM/5XEl62TSRKym5IQ==
+X-Received: by 2002:a5d:4cd1:: with SMTP id c17mr870054wrt.199.1590140261310; 
+ Fri, 22 May 2020 02:37:41 -0700 (PDT)
+Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
+ [86.9.19.6])
+ by smtp.gmail.com with ESMTPSA id c140sm9479234wmd.18.2020.05.22.02.37.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 22 May 2020 02:37:40 -0700 (PDT)
+Date: Fri, 22 May 2020 10:37:38 +0100
+From: Daniel Thompson <daniel.thompson@linaro.org>
+To: Guru Das Srinagesh <gurus@codeaurora.org>
+Subject: Re: [RESEND PATCH v14 04/11] pwm: clps711x: Cast period to u32
+ before use as divisor
+Message-ID: <20200522093738.cko5rj4wrxfd4hxu@holly.lan>
+References: <cover.1589330178.git.gurus@codeaurora.org>
+ <1d6918c3fc2976bdbdb687bf54a2ef09fc1558db.1589330178.git.gurus@codeaurora.org>
+ <20200521101934.j5ivjky4e6byveut@holly.lan>
+ <20200521202525.GA24026@codeaurora.org>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: C375D294F8C3D466CDBF9572F1CDB2C97B12F5CF0762092D09378AB0F1CADBCA2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200521202525.GA24026@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_023747_557658_773EB2C0 
-X-CRM114-Status: GOOD (  22.73  )
+X-CRM114-CacheID: sfid-20200522_023743_147944_BC0AC765 
+X-CRM114-Status: GOOD (  18.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -72,8 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,270 +101,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, drinkcat@chromium.org,
- andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, linus.walleij@linaro.org,
- shengnan.wang@mediatek.com, louis.kuo@mediatek.com, bgolaszewski@baylibre.com,
- sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
- dongchun.zhu@mediatek.com, sakari.ailus@linux.intel.com,
- matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-pwm@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, David Collins <collinsd@codeaurora.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Joe Perches <joe@perches.com>,
+ Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
+ Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz,
-
-Thanks for the review. My replies are as below.
-
-On Thu, 2020-05-21 at 19:51 +0000, Tomasz Figa wrote:
-> Hi Dongchun, Sakari,
-> 
-> On Mon, May 18, 2020 at 09:27:31PM +0800, Dongchun Zhu wrote:
-> > Add a V4L2 sub-device driver for DW9768 voice coil motor, providing
-> > control to set the desired focus via IIC serial interface.
+On Thu, May 21, 2020 at 01:25:25PM -0700, Guru Das Srinagesh wrote:
+> On Thu, May 21, 2020 at 11:19:34AM +0100, Daniel Thompson wrote:
+> > On Wed, May 20, 2020 at 03:55:57PM -0700, Guru Das Srinagesh wrote:
+> > > Since the PWM framework is switching struct pwm_args.period's datatype
+> > > to u64, prepare for this transition by typecasting it to u32.
+> > > 
+> > > Also, since the dividend is still a 32-bit number, any divisor greater
+> > > than the numerator will cause the quotient to be zero, so return 0 in
+> > > that case to efficiently skip the division.
+> > > 
+> > > Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
+> > > ---
+> > >  drivers/pwm/pwm-clps711x.c | 5 ++++-
+> > >  1 file changed, 4 insertions(+), 1 deletion(-)> > > 
+> > > diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
+> > > index 924d39a..da771b1 100644
+> > > --- a/drivers/pwm/pwm-clps711x.c
+> > > +++ b/drivers/pwm/pwm-clps711x.c
+> > > @@ -43,7 +43,10 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
+> > >  static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
+> > >  {
+> > >  	/* Duty cycle 0..15 max */
+> > > -	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
+> > > +	if (pwm->args.period > (v * 0xf))
+> > > +		return 0;
 > > 
-> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > ---
-> >  MAINTAINERS                |   1 +
-> >  drivers/media/i2c/Kconfig  |  13 ++
-> >  drivers/media/i2c/Makefile |   1 +
-> >  drivers/media/i2c/dw9768.c | 515 +++++++++++++++++++++++++++++++++++++++++++++
-> >  4 files changed, 530 insertions(+)
-> >  create mode 100644 drivers/media/i2c/dw9768.c
-> [snip]
-> > +/*
-> > + * DW9768_AAC_PRESC_REG & DW9768_AAC_TIME_REG determine VCM operation time.
-> > + * If DW9768_AAC_PRESC_REG is 0x41, and DW9768_AAC_TIME_REG is 0x39, VCM mode
-> > + * would be AAC3, Operation Time would be 0.70xTvib, that is 8.40ms.
-> > + */
-> > +#define DW9768_MOVE_DELAY_US			8400
-> > +#define DW9768_STABLE_TIME_US			20000
+> > This doesn't look right to me.
+> > 
+> > DIV_ROUND_CLOSEST() does rounded division and the short circuit doesn't
+> > implement that.
 > 
-> These times are only valid with the specific settings mentioned in the
-> comment. If one sets different settings in DT, the driver would apply
-> incorrect delays. Rather than hardcoded, they should be computed based
-> on the configured values.
-> 
-> That said, I wonder if we're not digging too deep now. Sakari, do you
-> think we could take a step back, remove the optional DT properties and
-> just support the fixed values for now, so that we can get a basic driver
-> upstream first without doubling the effort?
-> 
+> My initial patch [1] was to simply use DIV64_U64_ROUND_CLOSEST(), but I
+> got review feedback to add a short-circuit (same thread, [2]). I feel
+> like I should skip the short-circuiting and type casting and simply just
+> use DIV64_U64_ROUND_CLOSEST() - what do you think?
 
-Thanks for the reminder.
-Yes, here DW9768_MOVE_DELAY_US actually represents Operation Time,
-which is dependent upon board-specific settings that defined in DT.
-For instance, for one given board, if aac-mode is 2, aac-timing is 0x39,
-clock-presc is 1, then Operation Time would be 0.70*(6.3ms+57*0.1ms)*1 =
-8.4ms.
+A trivial review of pwm-clps711x.c suggests that the period is always
+32-bit anyway so why not just throw away the short circuit entirely and
+replace with a comment saying that CLPS711X has a hard coded period
+that is always >1000000000 ?
 
-> > +
-> > +static const char * const dw9768_supply_names[] = {
-> > +	"vin",	/* I2C I/O interface power */
-> > +	"vdd",	/* VCM power */
-> > +};
-> > +
-> > +/* dw9768 device structure */
-> > +struct dw9768 {
-> > +	struct regulator_bulk_data supplies[ARRAY_SIZE(dw9768_supply_names)];
-> > +	struct v4l2_ctrl_handler ctrls;
-> > +	struct v4l2_ctrl	*focus;
-> > +	struct v4l2_subdev	sd;
-> > +
-> > +	u32			aac_mode;
-> > +	u32			aac_timing;
-> > +	u32			clock_dividing_rate;
-> > +	bool			aac_mode_control_enable;
-> > +	bool			aact_cnt_select_enable;
-> > +	bool			clock_dividing_rate_select_enable;
-> 
-> nit: Separate types from names with just 1 space.
-> 
 
-Fixed in next release.
-
-> > +};
-> > +
-> > +static inline struct dw9768 *sd_to_dw9768(struct v4l2_subdev *subdev)
-> > +{
-> > +	return container_of(subdev, struct dw9768, sd);
-> > +}
-> > +
-> > +struct regval_list {
-> > +	u8 reg_num;
-> > +	u8 value;
-> > +};
-> > +
-> > +static int dw9768_read_smbus(struct dw9768 *dw9768, unsigned char reg,
-> > +			     unsigned char *val)
-> > +{
-> > +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
-> > +	int ret;
-> > +
-> > +	ret = i2c_smbus_read_byte_data(client, reg);
-> > +
-> > +	if (ret < 0)
-> > +		return ret;
-> > +
-> > +	*val = (unsigned char)ret;
-> > +
-> > +	return 0;
-> > +}
-> 
-> Why do we need this function? Couldn't we just call
-> i2c_smbus_read_byte_data() directly?
-> 
-
-Fixed in next release.
-
-> [snip]
-> > +static int dw9768_probe(struct i2c_client *client)
-> > +{
-> > +	struct device *dev = &client->dev;
-> > +	struct dw9768 *dw9768;
-> > +	unsigned int aac_mode_select;
-> > +	unsigned int aac_timing_select;
-> > +	unsigned int clock_dividing_rate_select;
-> > +	unsigned int i;
-> > +	int ret;
-> > +
-> > +	dw9768 = devm_kzalloc(dev, sizeof(*dw9768), GFP_KERNEL);
-> > +	if (!dw9768)
-> > +		return -ENOMEM;
-> > +
-> > +	v4l2_i2c_subdev_init(&dw9768->sd, client, &dw9768_ops);
-> > +	dw9768->aac_mode_control_enable = false;
-> > +	dw9768->aact_cnt_select_enable = false;
-> > +	dw9768->clock_dividing_rate_select_enable = false;
-> 
-> devm_kzalloc() initializes the memory to zero, so no need to set anything
-> to false explicitly.
-> 
-
-Thanks for the reminder.
-Yes, these parameters shall not be needed to initialized as zeros.
-
-> > +
-> > +	/* Optional indication of AAC mode select */
-> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "dongwoon,aac-mode",
-> > +				       &aac_mode_select);
-> > +
-> > +	if (!ret) {
-> > +		dw9768->aac_mode_control_enable = true;
-> > +		dw9768->aac_mode = aac_mode_select;
-> 
-> How about making aac_mode a signed int and assigning -1 by
-> default? Then we don't need two separate fields in the struct.
-> 
-
-Good idea.
-
-> > +	}
-> > +
-> > +	/* Optional indication of VCM internal clock dividing rate select */
-> > +	ret = fwnode_property_read_u32(dev_fwnode(dev),
-> > +				       "dongwoon,clock-dividing-rate",
-> > +				       &clock_dividing_rate_select);
-> > +
-> > +	if (!ret) {
-> > +		dw9768->clock_dividing_rate_select_enable = true;
-> > +		dw9768->clock_dividing_rate = clock_dividing_rate_select;
-> 
-> Ditto.
-> 
-
-Got it.
-
-> > +	}
-> > +
-> > +	/* Optional indication of AAC Timing */
-> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "dongwoon,aac-timing",
-> > +				       &aac_timing_select);
-> > +
-> > +	if (!ret) {
-> > +		dw9768->aact_cnt_select_enable = true;
-> > +		dw9768->aac_timing = aac_timing_select;
-> 
-> Ditto.
-> 
-
-Got it.
-
-> > +	}
-> > +
-> > +	for (i = 0; i < ARRAY_SIZE(dw9768_supply_names); i++)
-> > +		dw9768->supplies[i].supply = dw9768_supply_names[i];
-> > +
-> > +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(dw9768_supply_names),
-> > +				      dw9768->supplies);
-> > +	if (ret) {
-> > +		dev_err(dev, "failed to get regulators\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = dw9768_init_controls(dw9768);
-> > +	if (ret)
-> > +		goto entity_cleanup;
-> > +
-> > +	dw9768->sd.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
-> > +	dw9768->sd.internal_ops = &dw9768_int_ops;
-> > +
-> > +	ret = media_entity_pads_init(&dw9768->sd.entity, 0, NULL);
-> > +	if (ret < 0)
-> > +		goto entity_cleanup;
-> > +
-> > +	dw9768->sd.entity.function = MEDIA_ENT_F_LENS;
-> > +
-> > +	pm_runtime_enable(dev);
-> > +	if (!pm_runtime_enabled(dev)) {
-> > +		ret = dw9768_runtime_resume(dev);
-> > +		if (ret < 0) {
-> > +			dev_err(dev, "failed to power on: %d\n", ret);
-> > +			goto entity_cleanup;
-> > +		}
-> > +	}
-> > +
-> > +	ret = v4l2_async_register_subdev(&dw9768->sd);
-> > +	if (ret < 0)
-> > +		goto entity_cleanup;
-> > +
-> > +	return 0;
-> > +
-> > +entity_cleanup:
-> 
-> Need to power off if the code above powered on.
-> 
-
-Thanks for the reminder.
-If there is something wrong with runtime PM, actuator is to be powered
-on via dw9768_runtime_resume() API.
-When actuator sub-device is powered on completely and async registered
-successfully, we shall power off it afterwards.
-
-> > +	v4l2_ctrl_handler_free(&dw9768->ctrls);
-> > +	media_entity_cleanup(&dw9768->sd.entity);
-> > +	return ret;
-> > +}
-> > +
-> > +static int dw9768_remove(struct i2c_client *client)
-> > +{
-> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> > +	struct dw9768 *dw9768 = sd_to_dw9768(sd);
-> > +
-> > +	pm_runtime_disable(&client->dev);
-> 
-> First the device must be unregistered from the userspace. Otherwise there
-> is a race condition that risks the userspace accessing the device while the
-> deinitialization is happening.
-> 
-
-Fixed in next release by adjusting the sequence of unregistering and
-runtime PM disable.
-
-> Best regards,
-> Tomasz
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
