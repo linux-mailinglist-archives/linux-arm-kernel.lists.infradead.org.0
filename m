@@ -2,62 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2A621DE913
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:34:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B9581DE979
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:47:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EJVbUegNexiFjnyznVnWyx6zShxMQr3tEuApYsOaKMc=; b=KIo1dJ0WvpNNDOtRnpFWCPsDh
-	jr9V6ohHKBD0DuCqKOBzPOtjULe9E5k088PmLkDz9xyA62W/F3WOX8utF8oSQF42RfbbBJfuWhznS
-	HGRcmdBB2tmn7UyLLLi2qWHWpIq9aq8KRPgeM5FkI98kx7e1+DJl9GmDHFjibKhREEnPX2UrWbkGC
-	9TWnYHitEsizjL+C5dVv8vLgJ0NmJAMhTzsceWZXSE87bQ/8CSNKtpQ9XpQYLCE9UY48C9UUIGmIR
-	8QD2ZrvHIJOVt71o4HSj96tuPPHGFxZdZCWYxAF2ZnrlG7PCCy7WXp3Ap/jo/OB4s6vHdYTxkXEys
-	pFBPuyFSQ==;
+	 bh=KS6PDFTmu8IWcEtDPIScyvO6ipWq0hr7f2RQFPMIxyc=; b=GFdLmRsZqfTDc66M85lBN/wgo
+	izoZmMAtOrDJmn56Fpn6UScYBj+ATZ88yyR7yBsPHRN8JkzW5EGVSzgWImezQ5ZubKLf+ealIM4Ig
+	H1qu0ubFZjVu86qn571SN9bUoTfOuIh2bDFnMYfSypo8o4RxlZ1TOd1GSd6Za2vlnXdV+pBgZvkwH
+	5C+O9mAg76VTfUWYThklVqJz/Zo/N5NrpRiHxzgwucp7/4P41pPmAI5mxhBlpGaoGwH2jGLHtIRZo
+	uAx50Y5AAe+MBasKRYHBshRZo7nNLG7Rycuf3EOHtO/zOR/V9D7kDfE78PmbsDLspxUenIKOaY1PL
+	q2nP0e3kQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc8l1-0003dJ-UD; Fri, 22 May 2020 14:34:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1jc8xE-0004x7-8t; Fri, 22 May 2020 14:47:20 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc8ks-0003cX-5U
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 14:34:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5AEA0D6E;
- Fri, 22 May 2020 07:34:31 -0700 (PDT)
-Received: from [10.57.2.168] (unknown [10.57.2.168])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 26E7D3F68F;
- Fri, 22 May 2020 07:34:29 -0700 (PDT)
-Subject: Re: [PATCH 09/12] dt-bindings: arm: fsl: Add msi-map device-tree
- binding for fsl-mc bus
-To: Rob Herring <robh+dt@kernel.org>,
- Diana Craciun OSS <diana.craciun@oss.nxp.com>
-References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
- <20200521130008.8266-10-lorenzo.pieralisi@arm.com>
- <CAL_Jsq+h18gH2D3B-OZku6ACCgonPUJcUnrN8a5=jApsXHdB5Q@mail.gmail.com>
- <abca6ecb-5d93-832f-ff7c-de53bb6203f3@arm.com>
- <ee7a5c04-814e-215f-ec74-52c2f3b881d0@oss.nxp.com>
- <CAL_JsqKf+cq9Nhs+M8ihC-Ls24YH-WEofW8H4kkFPWMhZw=unA@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <7f8d00ae-b225-a58d-8a11-e8c68edc877b@arm.com>
-Date: Fri, 22 May 2020 15:34:27 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jc8vo-0003kw-Al
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 14:45:55 +0000
+Received: from localhost (p5486cea4.dip0.t-ipconnect.de [84.134.206.164])
+ by pokefinder.org (Postfix) with ESMTPSA id 5782F2C203F;
+ Fri, 22 May 2020 16:45:48 +0200 (CEST)
+Date: Fri, 22 May 2020 16:45:47 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Tali Perry <tali.perry1@gmail.com>
+Subject: Re: [PATCH v12 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
+ driver
+Message-ID: <20200522144547.GC5670@ninjato>
+References: <20200521110910.45518-1-tali.perry1@gmail.com>
+ <20200521110910.45518-3-tali.perry1@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqKf+cq9Nhs+M8ihC-Ls24YH-WEofW8H4kkFPWMhZw=unA@mail.gmail.com>
-Content-Language: en-GB
+In-Reply-To: <20200521110910.45518-3-tali.perry1@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_073434_297335_64AEE2CC 
-X-CRM114-Status: GOOD (  23.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200522_074552_687618_9A0735A7 
+X-CRM114-Status: GOOD (  24.15  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -70,166 +58,552 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
- PCI <linux-pci@vger.kernel.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, linux-acpi@vger.kernel.org,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Will Deacon <will@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree@vger.kernel.org, tmaimon77@gmail.com, yuenn@google.com,
+ avifishman70@gmail.com, venture@google.com, openbmc@lists.ozlabs.org,
+ brendanhiggins@google.com, ofery@google.com, linux-kernel@vger.kernel.org,
+ kfting@nuvoton.com, robh+dt@kernel.org, linux-i2c@vger.kernel.org,
+ andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org,
+ benjaminfair@google.com
+Content-Type: multipart/mixed; boundary="===============7917247156267768695=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-22 15:08, Rob Herring wrote:
-> On Fri, May 22, 2020 at 3:57 AM Diana Craciun OSS
-> <diana.craciun@oss.nxp.com> wrote:
->>
->> On 5/22/2020 12:42 PM, Robin Murphy wrote:
->>> On 2020-05-22 00:10, Rob Herring wrote:
->>>> On Thu, May 21, 2020 at 7:00 AM Lorenzo Pieralisi
->>>> <lorenzo.pieralisi@arm.com> wrote:
->>>>>
->>>>> From: Laurentiu Tudor <laurentiu.tudor@nxp.com>
->>>>>
->>>>> The existing bindings cannot be used to specify the relationship
->>>>> between fsl-mc devices and GIC ITSes.
->>>>>
->>>>> Add a generic binding for mapping fsl-mc devices to GIC ITSes, using
->>>>> msi-map property.
->>>>>
->>>>> Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
->>>>> Cc: Rob Herring <robh+dt@kernel.org>
->>>>> ---
->>>>>    .../devicetree/bindings/misc/fsl,qoriq-mc.txt | 30
->>>>> +++++++++++++++++--
->>>>>    1 file changed, 27 insertions(+), 3 deletions(-)
->>>>>
->>>>> diff --git a/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
->>>>> b/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
->>>>> index 9134e9bcca56..b0813b2d0493 100644
->>>>> --- a/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
->>>>> +++ b/Documentation/devicetree/bindings/misc/fsl,qoriq-mc.txt
->>>>> @@ -18,9 +18,9 @@ same hardware "isolation context" and a 10-bit
->>>>> value called an ICID
->>>>>    the requester.
->>>>>
->>>>>    The generic 'iommus' property is insufficient to describe the
->>>>> relationship
->>>>> -between ICIDs and IOMMUs, so an iommu-map property is used to define
->>>>> -the set of possible ICIDs under a root DPRC and how they map to
->>>>> -an IOMMU.
->>>>> +between ICIDs and IOMMUs, so the iommu-map and msi-map properties
->>>>> are used
->>>>> +to define the set of possible ICIDs under a root DPRC and how they
->>>>> map to
->>>>> +an IOMMU and a GIC ITS respectively.
->>>>>
->>>>>    For generic IOMMU bindings, see
->>>>>    Documentation/devicetree/bindings/iommu/iommu.txt.
->>>>> @@ -28,6 +28,9 @@ Documentation/devicetree/bindings/iommu/iommu.txt.
->>>>>    For arm-smmu binding, see:
->>>>>    Documentation/devicetree/bindings/iommu/arm,smmu.yaml.
->>>>>
->>>>> +For GICv3 and GIC ITS bindings, see:
->>>>> +Documentation/devicetree/bindings/interrupt-controller/arm,gic-v3.yaml.
->>>>>
->>>>> +
->>>>>    Required properties:
->>>>>
->>>>>        - compatible
->>>>> @@ -119,6 +122,15 @@ Optional properties:
->>>>>      associated with the listed IOMMU, with the iommu-specifier
->>>>>      (i - icid-base + iommu-base).
->>>>>
->>>>> +- msi-map: Maps an ICID to a GIC ITS and associated iommu-specifier
->>>>> +  data.
->>>>> +
->>>>> +  The property is an arbitrary number of tuples of
->>>>> +  (icid-base,iommu,iommu-base,length).
->>>>
->>>> I'm confused because the example has GIC ITS phandle, not an IOMMU.
->>>>
->>>> What is an iommu-base?
->>>
->>> Right, I was already halfway through writing a reply to say that all
->>> the copy-pasted "iommu" references here should be using the
->>> terminology from the pci-msi.txt binding instead.
->>
->> Right, will change it.
->>
->>>
->>>>> +
->>>>> +  Any ICID in the interval [icid-base, icid-base + length) is
->>>>> +  associated with the listed GIC ITS, with the iommu-specifier
->>>>> +  (i - icid-base + iommu-base).
->>>>>    Example:
->>>>>
->>>>>            smmu: iommu@5000000 {
->>>>> @@ -128,6 +140,16 @@ Example:
->>>>>                   ...
->>>>>            };
->>>>>
->>>>> +       gic: interrupt-controller@6000000 {
->>>>> +               compatible = "arm,gic-v3";
->>>>> +               ...
->>>>> +               its: gic-its@6020000 {
->>>>> +                       compatible = "arm,gic-v3-its";
->>>>> +                       msi-controller;
->>>>> +                       ...
->>>>> +               };
->>>>> +       };
->>>>> +
->>>>>            fsl_mc: fsl-mc@80c000000 {
->>>>>                    compatible = "fsl,qoriq-mc";
->>>>>                    reg = <0x00000008 0x0c000000 0 0x40>,    /* MC
->>>>> portal base */
->>>>> @@ -135,6 +157,8 @@ Example:
->>>>>                    msi-parent = <&its>;
->>>
->>> Side note: is it right to keep msi-parent here? It rather implies that
->>> the MC itself has a 'native' Device ID rather than an ICID, which I
->>> believe is not strictly true. Plus it's extra-confusing that it
->>> doesn't specify an ID either way, since that makes it look like the
->>> legacy PCI case that gets treated implicitly as an identity msi-map,
->>> which makes no sense at all to combine with an actual msi-map.
->>
->> Before adding msi-map, the fsl-mc code assumed that ICID and streamID
->> are equal and used msi-parent just to get the reference to the ITS node.
->> Removing msi-parent will break the backward compatibility of the already
->> existing systems. Maybe we should mention that this is legacy and not to
->> be used for newer device trees.
-> 
-> If ids are 1:1, then the DT should use msi-parent. If there is
-> remapping, then use msi-map. A given system should use one or the
-> other. I suppose if some ids are 1:1 and the msi-map was added to add
-> additional support for ids not 1:1, then you could end up with both.
-> That's fine in dts files, but examples should reflect the 'right' way.
 
-Is that defined anywhere? The generic MSI binding just has some weaselly 
-wording about buses:
+--===============7917247156267768695==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="VywGB/WGlW4DM4P8"
+Content-Disposition: inline
 
-"When #msi-cells is non-zero, busses with an msi-parent will require 
-additional properties to describe the relationship between devices on 
-the bus and the set of MSIs they can potentially generate."
 
-which appears at odds with its own definition of msi-parent as including 
-an msi-specifier (or at best very unclear about what value that 
-specifier should take in this case).
+--VywGB/WGlW4DM4P8
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-The PCI MSI binding goes even further and specifically reserves 
-msi-parent for cases where there is no sideband data. As far as I'm 
-aware, the fact that the ITS driver implements a bodge for the "empty 
-msi-parent even though #msi-cells > 0" case is merely a compatibility 
-thing for old DTs from before this was really thought through, not an 
-officially-specified behaviour.
+On Thu, May 21, 2020 at 02:09:09PM +0300, Tali Perry wrote:
+> Add Nuvoton NPCM BMC I2C controller driver.
+>=20
+> Signed-off-by: Tali Perry <tali.perry1@gmail.com>
 
-Robin.
+This is a very complex driver, so I can really comment only about high
+level things. Thank you very much for keeping at it!
+
+My code checkers say:
+
+CHECKPATCH:
+CHECK: usleep_range is preferred over udelay; see Documentation/timers/time=
+rs-howto.rst
+#1210: FILE: drivers/i2c/busses/i2c-npcm7xx.c:1161:
++			udelay(200);
+
+(a few of them)
+
+GCC:
+  CC      drivers/i2c/busses/i2c-npcm7xx.o
+drivers/i2c/busses/i2c-npcm7xx.c: In function =E2=80=98npcm_i2c_reset=E2=80=
+=99:
+drivers/i2c/busses/i2c-npcm7xx.c:521:5: warning: variable =E2=80=98i2cctl2=
+=E2=80=99 set but not used [-Wunused-but-set-variable]
+
+
+> +/* Status of one I2C module */
+> +struct npcm_i2c {
+> +	struct i2c_adapter adap;
+> +	struct device *dev;
+> +	unsigned char __iomem *reg;
+> +	spinlock_t lock;   /* IRQ synchronization */
+> +	struct completion cmd_complete;
+> +	int irq;
+> +	int cmd_err;
+> +	struct i2c_msg *msgs;
+> +	int msgs_num;
+> +	int num;
+> +	u32 apb_clk;
+> +	struct i2c_bus_recovery_info rinfo;
+> +	enum i2c_state state;
+> +	enum i2c_oper operation;
+> +	enum i2c_mode master_or_slave;
+> +	enum i2c_state_ind stop_ind;
+> +	u8 dest_addr;
+> +	u8 *rd_buf;
+> +	u16 rd_size;
+> +	u16 rd_ind;
+> +	u8 *wr_buf;
+> +	u16 wr_size;
+> +	u16 wr_ind;
+> +	bool fifo_use;
+> +	u16 PEC_mask; /* PEC bit mask per slave address */
+> +	bool PEC_use;
+> +	bool read_block_use;
+> +	u8 int_cnt;
+
+What is this for? It is written to but never read.
+
+> +	u32 clk_period_us;
+
+Not used? Seems this struct could need some cleaning up.
+
+> +	unsigned long int_time_stamp;
+> +	unsigned long bus_freq; /* in kHz */
+> +	u32 xmits;
+> +#ifdef CONFIG_DEBUG_FS
+> +	struct dentry *debugfs; /* debugfs device directory */
+> +	u64 ber_cnt;
+> +	u64 rec_succ_cnt;
+> +	u64 rec_fail_cnt;
+> +	u64 nack_cnt;
+> +	u64 timeout_cnt;
+> +#endif
+> +};
+> +
+
+=2E..
+
+> +static inline u16 npcm_i2c_get_index(struct npcm_i2c *bus)
+> +{
+> +	if (bus->operation =3D=3D I2C_READ_OPER)
+> +		return bus->rd_ind;
+> +	if (bus->operation =3D=3D I2C_WRITE_OPER)
+> +		return bus->wr_ind;
+> +	return 0;
+
+I2C_NO_OPER?
+
+=2E..
+
+> +/* recovery using bit banging functionality of the module */
+> +static int npcm_i2c_recovery_init(struct i2c_adapter *_adap)
+> +{
+> +	struct npcm_i2c *bus =3D container_of(_adap, struct npcm_i2c, adap);
+> +	struct i2c_bus_recovery_info *rinfo =3D &bus->rinfo;
+> +
+> +	rinfo->recover_bus =3D npcm_i2c_recovery_tgclk;
+> +	rinfo->prepare_recovery =3D NULL;
+> +	rinfo->unprepare_recovery =3D NULL;
+> +	rinfo->set_scl =3D NULL;
+> +	rinfo->set_sda =3D NULL;
+
+'bus' is kzalloced, so no need for these NULLs.
+
+What I wonder more, though, is if you can't populate {set|get}_{scl|sda}
+and use the internal i2c_generic_scl_recovery()? Are there any issues
+with it?
+
+> +
+> +	dev_dbg(bus->dev, "init i2c recovery using TGCLK\n");
+
+There is no error path here, so I think this message is not useful.
+Means also this function could be 'void'.
+
+> +
+> +	rinfo->get_scl =3D npcm_i2c_get_SCL;
+> +	rinfo->get_sda =3D npcm_i2c_get_SDA;
+
+Not needed when you have a custom function.
+
+> +
+> +	_adap->bus_recovery_info =3D rinfo;
+> +
+> +	return 0;
+> +}
+> +
+
+=2E..
+
+> +static int npcm_i2c_master_xfer(struct i2c_adapter *adap, struct i2c_msg=
+ *msgs,
+> +				int num)
+> +{
+> +	struct npcm_i2c *bus =3D container_of(adap, struct npcm_i2c, adap);
+> +	struct i2c_msg *msg0, *msg1;
+> +	unsigned long time_left, flags;
+> +	u16 nwrite, nread;
+> +	u8 *write_data, *read_data;
+> +	u8 slave_addr;
+> +	int timeout;
+> +	int ret =3D 0;
+> +	bool read_block =3D false;
+> +	bool read_PEC =3D false;
+> +	u8 bus_busy;
+> +	unsigned long timeout_usec;
+> +
+> +	if (bus->state =3D=3D I2C_DISABLE) {
+> +		dev_err(bus->dev, "I2C%d module is disabled", bus->num);
+> +		return -EINVAL;
+> +	}
+> +
+> +	if (num > 2 || num < 1) {
+> +		dev_err(bus->dev, "I2C cmd not supported num of msgs=3D%d", num);
+> +		return -EINVAL;
+> +	}
+
+Since you have an 'i2c_adapter_quirks' struct filled, the core will
+I2C check that for you.
+
+> +
+> +	msg0 =3D &msgs[0];
+> +	slave_addr =3D msg0->addr;
+> +	if (msg0->flags & I2C_M_RD) { /* read */
+> +		if (num =3D=3D 2) {
+> +			dev_err(bus->dev, "num=3D2 but 1st msg rd instead of wr");
+> +			return -EINVAL;
+
+Ditto.
+
+> +		}
+> +		nwrite =3D 0;
+> +		write_data =3D NULL;
+> +		read_data =3D msg0->buf;
+> +		if (msg0->flags & I2C_M_RECV_LEN) {
+> +			nread =3D 1;
+> +			read_block =3D true;
+> +			if (msg0->flags & I2C_CLIENT_PEC)
+> +				read_PEC =3D true;
+> +		} else {
+> +			nread =3D msg0->len;
+> +		}
+> +	} else { /* write */
+> +		nwrite =3D msg0->len;
+> +		write_data =3D msg0->buf;
+> +		nread =3D 0;
+> +		read_data =3D NULL;
+> +		if (num =3D=3D 2) {
+> +			msg1 =3D &msgs[1];
+> +			read_data =3D msg1->buf;
+> +			if (slave_addr !=3D msg1->addr) {
+> +				dev_err(bus->dev,
+> +					"SA=3D=3D%02x but msg1->addr=3D=3D%02x\n",
+> +				       slave_addr, msg1->addr);
+> +				return -EINVAL;
+
+Ditto.
+
+> +			}
+> +			if ((msg1->flags & I2C_M_RD) =3D=3D 0) {
+> +				dev_err(bus->dev,
+> +					"num =3D 2 but both msg are write.\n");
+> +				return -EINVAL;
+> +			}
+
+Ditto.
+
+> +			if (msg1->flags & I2C_M_RECV_LEN) {
+> +				nread =3D 1;
+> +				read_block =3D true;
+> +				if (msg1->flags & I2C_CLIENT_PEC)
+> +					read_PEC =3D true;
+> +			} else {
+> +				nread =3D msg1->len;
+> +				read_block =3D false;
+> +			}
+> +		}
+> +	}
+> +
+> +	/* Adaptive TimeOut: astimated time in usec  + 100% margin */
+> +	timeout_usec =3D (2 * 10000 / bus->bus_freq) * (2 + nread + nwrite);
+> +	timeout =3D max(msecs_to_jiffies(35), usecs_to_jiffies(timeout_usec));
+> +	if (nwrite >=3D 32 * 1024 ||  nread >=3D 32 * 1024) {
+> +		dev_err(bus->dev, "i2c%d buffer too big\n", bus->num);
+> +		return -EINVAL;
+> +	}
+
+Ditto.
+
+> +
+> +	time_left =3D jiffies + msecs_to_jiffies(DEFAULT_STALL_COUNT) + 1;
+> +	do {
+> +		/*
+> +		 * we must clear slave address immediately when the bus is not
+> +		 * busy, so we spinlock it, but we don't keep the lock for the
+> +		 * entire while since it is too long.
+> +		 */
+> +		spin_lock_irqsave(&bus->lock, flags);
+> +		bus_busy =3D ioread8(bus->reg + NPCM_I2CCST) & NPCM_I2CCST_BB;
+> +		spin_unlock_irqrestore(&bus->lock, flags);
+> +
+> +	} while (time_is_after_jiffies(time_left) && bus_busy);
+> +
+> +	if (bus_busy) {
+> +		iowrite8(NPCM_I2CCST_BB, bus->reg + NPCM_I2CCST);
+> +		npcm_i2c_reset(bus);
+> +		i2c_recover_bus(adap);
+> +		return -EAGAIN;
+> +	}
+> +
+> +	npcm_i2c_init_params(bus);
+> +	bus->dest_addr =3D slave_addr;
+> +	bus->msgs =3D msgs;
+> +	bus->msgs_num =3D num;
+> +	bus->cmd_err =3D 0;
+> +	bus->read_block_use =3D read_block;
+> +
+> +	reinit_completion(&bus->cmd_complete);
+> +	if (!npcm_i2c_master_start_xmit(bus, slave_addr, nwrite, nread,
+> +					write_data, read_data, read_PEC,
+> +					read_block))
+> +		ret =3D -EBUSY;
+> +
+> +	if (ret !=3D -EBUSY) {
+> +		time_left =3D wait_for_completion_timeout(&bus->cmd_complete,
+> +							timeout);
+> +
+> +		if (time_left =3D=3D 0) {
+> +#ifdef CONFIG_DEBUG_FS
+> +			if (bus->timeout_cnt =3D=3D ULLONG_MAX) {
+> +				dev_dbg(bus->dev,
+> +					"timeout_cnt reach max, reset to 0");
+> +				bus->timeout_cnt =3D 0;
+> +			}
+> +			bus->timeout_cnt++;
+> +#endif
+> +			if (bus->master_or_slave =3D=3D I2C_MASTER) {
+> +				i2c_recover_bus(adap);
+> +				bus->cmd_err =3D -EIO;
+> +				bus->state =3D I2C_IDLE;
+> +			}
+> +		}
+> +	}
+> +	ret =3D bus->cmd_err;
+> +
+> +	/* if there was BER, check if need to recover the bus: */
+> +	if (bus->cmd_err =3D=3D -EAGAIN)
+> +		ret =3D i2c_recover_bus(adap);
+> +
+> +	return bus->cmd_err;
+> +}
+> +
+> +static u32 npcm_i2c_functionality(struct i2c_adapter *adap)
+> +{
+> +	return I2C_FUNC_I2C |
+> +	       I2C_FUNC_SMBUS_EMUL |
+> +	       I2C_FUNC_SMBUS_BLOCK_DATA |
+> +	       I2C_FUNC_SMBUS_PEC |
+> +	       I2C_FUNC_SLAVE;
+> +}
+> +
+> +static const struct i2c_adapter_quirks npcm_i2c_quirks =3D {
+> +	.max_read_len =3D 32768,
+> +	.max_write_len =3D 32768,
+
+These limits are for simple reads/writes with num_msgs =3D=3D 1. If you have
+limits also for num_msgs =3D=3D 2, then you also need to fill
+'max_comb_1st_msg_len' and 'max_comb_2nd_msg_len'. (Because for some HW
+these are different values then)
+
+> +	.max_num_msgs =3D 2,
+
+You can drop this because I2C_AQ_COMB_WRITE_THEN_READ implies it.
+
+> +	.flags =3D I2C_AQ_COMB_WRITE_THEN_READ,
+> +};
+> +
+> +static const struct i2c_algorithm npcm_i2c_algo =3D {
+> +	.master_xfer =3D npcm_i2c_master_xfer,
+> +	.functionality =3D npcm_i2c_functionality,
+> +};
+> +
+> +#ifdef CONFIG_DEBUG_FS
+> +/* i2c debugfs directory: used to keep health monitor of i2c devices */
+> +static struct dentry *npcm_i2c_debugfs_dir;
+> +
+> +static void i2c_init_debugfs(struct platform_device *pdev, struct npcm_i=
+2c *bus)
+> +{
+> +	struct dentry *d;
+> +
+> +	if (!npcm_i2c_debugfs_dir)
+> +		return;
+> +
+> +	d =3D debugfs_create_dir(dev_name(&pdev->dev), npcm_i2c_debugfs_dir);
+> +	if (IS_ERR_OR_NULL(d))
+> +		return;
+> +
+> +	debugfs_create_u64("ber_cnt", 0444, d, &bus->ber_cnt);
+> +	debugfs_create_u64("nack_cnt", 0444, d, &bus->nack_cnt);
+> +	debugfs_create_u64("rec_succ_cnt", 0444, d, &bus->rec_succ_cnt);
+> +	debugfs_create_u64("rec_fail_cnt", 0444, d, &bus->rec_fail_cnt);
+> +	debugfs_create_u64("timeout_cnt", 0444, d, &bus->timeout_cnt);
+> +
+> +	bus->debugfs =3D d;
+> +}
+> +#else
+> +static void i2c_init_debugfs(struct platform_device *pdev, struct npcm_i=
+2c *bus)
+> +{
+> +}
+> +#endif
+> +
+> +static int  npcm_i2c_probe_bus(struct platform_device *pdev)
+> +{
+> +	struct npcm_i2c *bus;
+> +	struct i2c_adapter *adap;
+> +	struct clk *i2c_clk;
+> +	static struct regmap *gcr_regmap;
+> +	static struct regmap *clk_regmap;
+> +	int ret;
+> +	int num;
+> +
+> +	bus =3D devm_kzalloc(&pdev->dev, sizeof(*bus), GFP_KERNEL);
+> +	if (!bus)
+> +		return -ENOMEM;
+> +
+> +	bus->dev =3D &pdev->dev;
+> +
+> +	num =3D of_alias_get_id(pdev->dev.of_node, "i2c");
+> +	bus->num =3D num;
+
+Why not assigning it directly and save the 'num' variable?
+
+> +	/* core clk must be acquired to calculate module timing settings */
+> +	i2c_clk =3D devm_clk_get(&pdev->dev, NULL);
+> +	if (IS_ERR(i2c_clk))
+> +		return PTR_ERR(i2c_clk);
+> +	bus->apb_clk =3D clk_get_rate(i2c_clk);
+> +
+> +	gcr_regmap =3D syscon_regmap_lookup_by_compatible("nuvoton,npcm750-gcr"=
+);
+> +	if (IS_ERR(gcr_regmap))
+> +		return IS_ERR(gcr_regmap);
+> +	regmap_write(gcr_regmap, NPCM_I2CSEGCTL, NPCM_I2CSEGCTL_INIT_VAL);
+> +
+> +	clk_regmap =3D syscon_regmap_lookup_by_compatible("nuvoton,npcm750-clk"=
+);
+> +	if (IS_ERR(clk_regmap))
+> +		return IS_ERR(clk_regmap);
+> +
+> +	bus->reg =3D devm_platform_ioremap_resource(pdev, 0);
+> +	if (IS_ERR(bus->reg))
+> +		return PTR_ERR((bus)->reg);
+> +
+> +	spin_lock_init(&bus->lock);
+> +	init_completion(&bus->cmd_complete);
+> +
+> +	adap =3D &bus->adap;
+> +	adap->owner =3D THIS_MODULE;
+> +	adap->class =3D I2C_CLASS_HWMON | I2C_CLASS_SPD | I2C_CLIENT_SLAVE;
+
+Since you have a DT compatible, you won't need classes. Just drop them.
+
+> +	adap->retries =3D 3;
+> +	adap->timeout =3D HZ;
+> +	adap->algo =3D &npcm_i2c_algo;
+> +	adap->quirks =3D &npcm_i2c_quirks;
+> +	adap->algo_data =3D bus;
+> +	adap->dev.parent =3D &pdev->dev;
+> +	adap->dev.of_node =3D pdev->dev.of_node;
+> +	adap->nr =3D pdev->id;
+> +
+> +	bus->irq =3D platform_get_irq(pdev, 0);
+> +	if (bus->irq < 0)
+> +		return bus->irq;
+> +
+> +	ret =3D devm_request_irq(bus->dev, bus->irq, npcm_i2c_bus_irq, 0,
+> +			       dev_name(bus->dev), bus);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret =3D __npcm_i2c_init(bus, pdev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret =3D npcm_i2c_recovery_init(adap);
+> +	if (ret)
+> +		return ret;
+> +
+> +	i2c_set_adapdata(adap, bus);
+> +
+> +	snprintf(bus->adap.name, sizeof(bus->adap.name), "Nuvoton i2c");
+
+Maybe you want to add something more specific in case you have multiple
+instances of this driver at runtime.
+
+> +	ret =3D i2c_add_numbered_adapter(&bus->adap);
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "failed to add numbered adapter %d\n", ret);
+
+The I2C core will print warnings for you.
+
+> +		return ret;
+> +	}
+> +	platform_set_drvdata(pdev, bus);
+> +
+> +	i2c_init_debugfs(pdev, bus);
+> +	return 0;
+> +}
+> +
+=2E..
+
+> +#ifdef CONFIG_DEBUG_FS
+> +static int __init npcm_i2c_init(void)
+> +{
+> +	struct dentry *dir;
+> +
+> +	dir =3D debugfs_create_dir("i2c", NULL);
+
+Okay, the GPIO fault injector could also need such a directory. I will
+add this to the core. And then send an incremental patch for your
+driver.
+
+> +	if (IS_ERR_OR_NULL(dir))
+> +		return 0;
+> +
+> +	npcm_i2c_debugfs_dir =3D dir;
+> +	return 0;
+> +}
+> +
+> +static void __exit npcm_i2c_exit(void)
+> +{
+> +	debugfs_remove_recursive(npcm_i2c_debugfs_dir);
+> +}
+> +
+> +module_init(npcm_i2c_init);
+> +module_exit(npcm_i2c_exit);
+> +#endif
+> +
+> +MODULE_AUTHOR("Avi Fishman <avi.fishman@gmail.com>");
+> +MODULE_AUTHOR("Tali Perry <tali.perry@nuvoton.com>");
+> +MODULE_AUTHOR("Tyrone Ting <kfting@nuvoton.com>");
+> +MODULE_DESCRIPTION("Nuvoton I2C Bus Driver");
+> +MODULE_LICENSE("GPL v2");
+> +MODULE_VERSION("0.1.3");
+> +
+> --=20
+> 2.22.0
+>=20
+
+--VywGB/WGlW4DM4P8
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7H5ZsACgkQFA3kzBSg
+KbYYzxAArYDTWVR+oZ+l1dhxJBLJLmCepSv9CsFM5joWcoJ60BB1C9CeSEMf3Krx
+IJl+sEUGkfVFg1BDFfylkmDeh1V0YP5JFp1IUZzbygLhhpsj38Pvq2x/b8AoiDXo
+q1csn0t1anZZRXAPsn+MDabG8gjyE4vrBneM02Qh68zlb9WSqa60Orb47vuyn0mj
+6IHeqWNRRXjHeDxLkKNV+5QSDRhPT/V0ycMKQO2vUSGWPR+vMcrbPwArmKLswCIQ
+9HCNnT+a5quFzwQ8YHldvIf+RSNEkfC0XMh30HYJ0C/1KIq1ncY3mEILXBKT+ON9
+FjV9ctTn/3efCLb4kzLm5+aauUabyR6+4/0zTBQSUIuUbCor3a8d3UU4iVEJ8C0o
+hLOLLxTgyrAsxUeG7aev9dZ82oxcV7pCAzSftZSm68rpCxdimOc6pjuo21JhSJVg
+/doUgpTCwi+lZNmq96zql9Pe9Mj7fhBSslN4WRYLitX5UmleptzloDa+p/m5NGyf
+FNQlihEUJOX5CST9zwfUipMjQuRF2upcfLbLTrZ5lgLa4o6+OPPtVQqxfPK/5K3B
+2b+HtZvJqotnYk1TQzf1yjalxwOxYFV4syhmUtv682PVGhxfpYIloG8FZmQaaTz2
+gWhbly8lQf/wrQVwk3AP1XdW2qob4fpltJhexLUVLGm6Kkbbaoc=
+=ZHqW
+-----END PGP SIGNATURE-----
+
+--VywGB/WGlW4DM4P8--
+
+
+--===============7917247156267768695==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7917247156267768695==--
+
