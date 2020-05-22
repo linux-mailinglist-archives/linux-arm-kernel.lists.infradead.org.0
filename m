@@ -2,103 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A6251DE304
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 11:26:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B3AF1DE356
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 11:38:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J4WYPpC592UrP7lJnCkJ4kO2pszOzx7tHel/UPCqaXs=; b=BQB8xEbRGCFVlz
-	LYgeCRC8cpOsmmyjEIzy7OpwwbATCNOUS8lcrH3phGVc2EoxdkDR99NnzrZQUF2+iv3k2Gvv69xFu
-	qHK0YqsdszJjG3vaGVeCplJ/tW53X1+T0j6xqe/LfsolTMlZoO412QkAVS+NVvEkJPufWJrTI7XJK
-	wYvgQ0llr1usLu9EahctJqEDsJ9QwXtmWt6oTsnRQLzb8kkYHK2R23g6+EM9k+E5sQAQ6ghpbD6i1
-	sE+hJVxgAPgEkatEG8u1SrauOyffwf1U5E6fFcIESYoyrUJzQuo4A80IgC0zpi0zLwZfLr7ZYHwDu
-	KnjMOFFlRGV7/2FL79sg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=isPayLKHgAnDEcfEvtk0orGKPPIXsG/2Hh7Q/NAQFok=; b=EFeb03bKX+qopz
+	3IZeIlgzljY4decC7JuIqGMG1w+Jaj3vMXG2ES9IR5YJC9zNZbz9rJuE2QUvALtjDxEL6ecV0JqCa
+	q/h4BqQ79AEuiJtirYUideS8vIuZsv37MIaj86l349gUJg2akEaCigO5w1li/ve97Rkfl3EHpByj/
+	ydK5S0tQzElI/qXojB/zkLchIOmwdWG0ZKUA4P5DmcvFmrq2YXxsX/Rkla24g2BnCHEWRLf7NBtVl
+	y/FTTfU3x1sXHIi5PJ9MW7dRH7+Az5iMs0B4bAor3XtaNhVI/pyggjLjh8KQ+lmOwLuuiF0hNpdiF
+	KuR7qLf7+nuAAeynnHVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc3wj-0006fA-DQ; Fri, 22 May 2020 09:26:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc3wZ-0006eH-QO
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 09:26:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85F8B31B;
- Fri, 22 May 2020 02:26:17 -0700 (PDT)
-Received: from [192.168.2.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 78A0B3F305;
- Fri, 22 May 2020 02:26:16 -0700 (PDT)
-Subject: Re: [PATCH 04/16] arm64: dts: arm: Fix node address fields
-To: Liviu Dudau <liviu.dudau@arm.com>, Robin Murphy <robin.murphy@arm.com>
-References: <20200505165212.76466-1-andre.przywara@arm.com>
- <20200505165212.76466-5-andre.przywara@arm.com>
- <347cdcba-a1cf-d308-1cc2-6c2194f40d19@arm.com>
- <20200521144059.GZ159988@e110455-lin.cambridge.arm.com>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
- xsFNBFNPCKMBEAC+6GVcuP9ri8r+gg2fHZDedOmFRZPtcrMMF2Cx6KrTUT0YEISsqPoJTKld
- tPfEG0KnRL9CWvftyHseWTnU2Gi7hKNwhRkC0oBL5Er2hhNpoi8x4VcsxQ6bHG5/dA7ctvL6
- kYvKAZw4X2Y3GTbAZIOLf+leNPiF9175S8pvqMPi0qu67RWZD5H/uT/TfLpvmmOlRzNiXMBm
- kGvewkBpL3R2clHquv7pB6KLoY3uvjFhZfEedqSqTwBVu/JVZZO7tvYCJPfyY5JG9+BjPmr+
- REe2gS6w/4DJ4D8oMWKoY3r6ZpHx3YS2hWZFUYiCYovPxfj5+bOr78sg3JleEd0OB0yYtzTT
- esiNlQpCo0oOevwHR+jUiaZevM4xCyt23L2G+euzdRsUZcK/M6qYf41Dy6Afqa+PxgMEiDto
- ITEH3Dv+zfzwdeqCuNU0VOGrQZs/vrKOUmU/QDlYL7G8OIg5Ekheq4N+Ay+3EYCROXkstQnf
- YYxRn5F1oeVeqoh1LgGH7YN9H9LeIajwBD8OgiZDVsmb67DdF6EQtklH0ycBcVodG1zTCfqM
- AavYMfhldNMBg4vaLh0cJ/3ZXZNIyDlV372GmxSJJiidxDm7E1PkgdfCnHk+pD8YeITmSNyb
- 7qeU08Hqqh4ui8SSeUp7+yie9zBhJB5vVBJoO5D0MikZAODIDwARAQABzS1BbmRyZSBQcnp5
- d2FyYSAoQVJNKSA8YW5kcmUucHJ6eXdhcmFAYXJtLmNvbT7CwXsEEwECACUCGwMGCwkIBwMC
- BhUIAgkKCwQWAgMBAh4BAheABQJTWSV8AhkBAAoJEAL1yD+ydue63REP/1tPqTo/f6StS00g
- NTUpjgVqxgsPWYWwSLkgkaUZn2z9Edv86BLpqTY8OBQZ19EUwfNehcnvR+Olw+7wxNnatyxo
- D2FG0paTia1SjxaJ8Nx3e85jy6l7N2AQrTCFCtFN9lp8Pc0LVBpSbjmP+Peh5Mi7gtCBNkpz
- KShEaJE25a/+rnIrIXzJHrsbC2GwcssAF3bd03iU41J1gMTalB6HCtQUwgqSsbG8MsR/IwHW
- XruOnVp0GQRJwlw07e9T3PKTLj3LWsAPe0LHm5W1Q+euoCLsZfYwr7phQ19HAxSCu8hzp43u
- zSw0+sEQsO+9wz2nGDgQCGepCcJR1lygVn2zwRTQKbq7Hjs+IWZ0gN2nDajScuR1RsxTE4WR
- lj0+Ne6VrAmPiW6QqRhliDO+e82riI75ywSWrJb9TQw0+UkIQ2DlNr0u0TwCUTcQNN6aKnru
- ouVt3qoRlcD5MuRhLH+ttAcmNITMg7GQ6RQajWrSKuKFrt6iuDbjgO2cnaTrLbNBBKPTG4oF
- D6kX8Zea0KvVBagBsaC1CDTDQQMxYBPDBSlqYCb/b2x7KHTvTAHUBSsBRL6MKz8wwruDodTM
- 4E4ToV9URl4aE/msBZ4GLTtEmUHBh4/AYwk6ACYByYKyx5r3PDG0iHnJ8bV0OeyQ9ujfgBBP
- B2t4oASNnIOeGEEcQ2rjzsFNBFNPCKMBEACm7Xqafb1Dp1nDl06aw/3O9ixWsGMv1Uhfd2B6
- it6wh1HDCn9HpekgouR2HLMvdd3Y//GG89irEasjzENZPsK82PS0bvkxxIHRFm0pikF4ljIb
- 6tca2sxFr/H7CCtWYZjZzPgnOPtnagN0qVVyEM7L5f7KjGb1/o5EDkVR2SVSSjrlmNdTL2Rd
- zaPqrBoxuR/y/n856deWqS1ZssOpqwKhxT1IVlF6S47CjFJ3+fiHNjkljLfxzDyQXwXCNoZn
- BKcW9PvAMf6W1DGASoXtsMg4HHzZ5fW+vnjzvWiC4pXrcP7Ivfxx5pB+nGiOfOY+/VSUlW/9
- GdzPlOIc1bGyKc6tGREH5lErmeoJZ5k7E9cMJx+xzuDItvnZbf6RuH5fg3QsljQy8jLlr4S6
- 8YwxlObySJ5K+suPRzZOG2+kq77RJVqAgZXp3Zdvdaov4a5J3H8pxzjj0yZ2JZlndM4X7Msr
- P5tfxy1WvV4Km6QeFAsjcF5gM+wWl+mf2qrlp3dRwniG1vkLsnQugQ4oNUrx0ahwOSm9p6kM
- CIiTITo+W7O9KEE9XCb4vV0ejmLlgdDV8ASVUekeTJkmRIBnz0fa4pa1vbtZoi6/LlIdAEEt
- PY6p3hgkLLtr2GRodOW/Y3vPRd9+rJHq/tLIfwc58ZhQKmRcgrhtlnuTGTmyUqGSiMNfpwAR
- AQABwsFfBBgBAgAJBQJTTwijAhsMAAoJEAL1yD+ydue64BgP/33QKczgAvSdj9XTC14wZCGE
- U8ygZwkkyNf021iNMj+o0dpLU48PIhHIMTXlM2aiiZlPWgKVlDRjlYuc9EZqGgbOOuR/pNYA
- JX9vaqszyE34JzXBL9DBKUuAui8z8GcxRcz49/xtzzP0kH3OQbBIqZWuMRxKEpRptRT0wzBL
- O31ygf4FRxs68jvPCuZjTGKELIo656/Hmk17cmjoBAJK7JHfqdGkDXk5tneeHCkB411p9WJU
- vMO2EqsHjobjuFm89hI0pSxlUoiTL0Nuk9Edemjw70W4anGNyaQtBq+qu1RdjUPBvoJec7y/
- EXJtoGxq9Y+tmm22xwApSiIOyMwUi9A1iLjQLmngLeUdsHyrEWTbEYHd2sAM2sqKoZRyBDSv
- ejRvZD6zwkY/9nRqXt02H1quVOP42xlkwOQU6gxm93o/bxd7S5tEA359Sli5gZRaucpNQkwd
- KLQdCvFdksD270r4jU/rwR2R/Ubi+txfy0dk2wGBjl1xpSf0Lbl/KMR5TQntELfLR4etizLq
- Xpd2byn96Ivi8C8u9zJruXTueHH8vt7gJ1oax3yKRGU5o2eipCRiKZ0s/T7fvkdq+8beg9ku
- fDO4SAgJMIl6H5awliCY2zQvLHysS/Wb8QuB09hmhLZ4AifdHyF1J5qeePEhgTA+BaUbiUZf
- i4aIXCH3Wv6K
-Organization: ARM Ltd.
-Message-ID: <6d6262f3-fd76-4ebc-fc1a-2743a885d4a9@arm.com>
-Date: Fri, 22 May 2020 10:25:24 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jc487-0004aT-G8; Fri, 22 May 2020 09:38:15 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jc47f-0004M9-FE; Fri, 22 May 2020 09:37:49 +0000
+X-UUID: 378d75413cd44fa5a6f6a3187e34db12-20200522
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=hepUThaabfGUaHmDa2AneBNj6YVAHDrku45pJkqhJeQ=; 
+ b=dmWushCpg647SzPfU4TDBhnnynHvSymCQQWl8GrvjhLPRZ7ulZUayXryH9l+Ipaa30MJ71ypsFqPoYKa+oFRE/tZHPFh+xJM68UHK4DhHFDo3bkcm7JQafK+wVNBCFjCPxgYA0gFkqkNMpuhb2X+4NZG6KKjmOyg7kmlxr8D994=;
+X-UUID: 378d75413cd44fa5a6f6a3187e34db12-20200522
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 513997193; Fri, 22 May 2020 01:37:25 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 22 May 2020 02:27:38 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Fri, 22 May 2020 17:27:36 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 22 May 2020 17:27:34 +0800
+Message-ID: <1590139561.8804.390.camel@mhfsdcap03>
+Subject: Re: [V6, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Fri, 22 May 2020 17:26:01 +0800
+In-Reply-To: <20200521195113.GC14214@chromium.org>
+References: <20200518132731.20855-1-dongchun.zhu@mediatek.com>
+ <20200518132731.20855-3-dongchun.zhu@mediatek.com>
+ <20200521195113.GC14214@chromium.org>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20200521144059.GZ159988@e110455-lin.cambridge.arm.com>
-Content-Language: en-US
+X-TM-SNTS-SMTP: C375D294F8C3D466CDBF9572F1CDB2C97B12F5CF0762092D09378AB0F1CADBCA2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_022619_943486_E7F81E7D 
-X-CRM114-Status: GOOD (  20.37  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200522_023747_557658_773EB2C0 
+X-CRM114-Status: GOOD (  22.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,133 +85,272 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, devicetree@vger.kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, drinkcat@chromium.org,
+ andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, louis.kuo@mediatek.com, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ dongchun.zhu@mediatek.com, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjEvMDUvMjAyMCAxNTo0MCwgTGl2aXUgRHVkYXUgd3JvdGU6CgpIaSwKCj4gT24gVHVlLCBN
-YXkgMDUsIDIwMjAgYXQgMDY6MTg6MTlQTSArMDEwMCwgUm9iaW4gTXVycGh5IHdyb3RlOgo+PiBP
-biAyMDIwLTA1LTA1IDU6NTIgcG0sIEFuZHJlIFByenl3YXJhIHdyb3RlOgo+Pj4gVGhlIEFybSBM
-dGQuIGJvYXJkcyB3ZXJlIHVzaW5nIGFuIG91dGRhdGVkIGFkZHJlc3MgY29udmVudGlvbiBpbiB0
-aGUgRFQKPj4+IG5vZGUgbmFtZXMsIGJ5IHNlcGFyYXRpbmcgdGhlIGhpZ2ggZnJvbSB0aGUgbG93
-IDMyLWJpdHMgb2YgYW4gYWRkcmVzcyBieQo+Pj4gYSBjb21tYS4KPj4KPj4gSSB0aG91Z2h0IHRo
-YXQgaGlzdG9yaWNhbGx5IHRoYXQgd2FzIGRlbGliZXJhdGUsIHNpbmNlIHRoZSBhY3R1YWwgdGhp
-bmcKPj4gYmVpbmcgZW5jb2RlZCBpcyA8Y2hpcCBzZWxlY3Q+LDxhZGRyZXNzPiwgcmF0aGVyIHRo
-YW4ganVzdCBjb3NtZXRpY2FsbHkKPj4gc3BsaXR0aW5nIGEgNjQtYml0IGFkZHJlc3MgdmFsdWU/
-Cj4+Cj4+IE9yIG1heWJlIEknbSB0aGlua2luZyB0b28gZmFyIGJhY2sgYW5kIHRoaW5ncyBoYXZl
-IGFscmVhZHkgY2hhbmdlZCBpbiB0aGUKPj4gbWVhbnRpbWUgOi8KPiAKPiBSb2JpbiBpcyByaWdo
-dCwgaWYgeW91IGxvb2sgaW4gdGhlICJBUk0gTW90aGVyYm9hcmQgRXhwcmVzcyDCtUFUWCBUZWNo
-bmljYWwKPiBSZWZlcmVuY2UgTWFudWFsIiwgaW4gdGhlIFJTMSBtZW1vcnkgbWFwIChha2EgIkNv
-cnRleC1BIFNlcmllcyBtZW1vcnkgbWFwIikKPiB0aGUgRXRoZXJuZXQgZm9yIGV4YW1wbGUgaXMg
-YXQgQ1MyIG9mZnNldCAweDAyMDAwMDAwLiBDUzIgYXJlYSBpcyBiZXR3ZWVuCj4gMHgxODAwMDAw
-MCBhbmQgMHgxYzAwMDAwMC4gU28gYWN0dWFsIHBoeXNpY2FsIGFkZHJlc3MgZm9yIExBTjkxMTgg
-aXMKPiAweDFhMDAwMDAwLgo+IAo+IFlvdSBtaWdodCB3YW50IHRvIGRyb3AgdGhpcyBwYXRjaCBv
-ciBjb252ZXJ0IHRvIHBoeXNpY2FsIGFkZHJlc3Nlcy4KCldlbGwsIHRoaXMgcGF0Y2ggaXMgcHVy
-ZWx5IGNvc21ldGljYWxseSwgYmVjYXVzZSBpdCBqdXN0IGNoYW5nZXMgdGhlCm5vZGUgbmFtZXMs
-IHdoaWNoIGhhdmUgbm8gcGFydGljdWxhciBtZWFuaW5nLiBCdXQgdGhlIHJlZ2V4cCBpbgpkdC1z
-Y2hlbWEgZm9yIHNpbXBsZS1idXMgZGVuaWVzIGNvbW1hcyBhZnRlciB0aGUgJ0AnIHNpZ24sIHNv
-IHdlIGdldCBhCndhcm5pbmcuCgpUaGUgcXVlc3Rpb24gd2hldGhlciB3ZSBhY3R1YWxseSBuZWVk
-IHRvIG1vZGVsIHRoZSBjaGlwIHNlbGVjdCBsaW5lcyBpbgp0aGUgRFQgaXMgc2VwYXJhdGU6IHdl
-IGNvdWxkIG9mIGNvdXJzZSBqdXN0IHVzZSBhbiBlbXB0eSByYW5nZXM7CnByb3BlcnR5IGhlcmUs
-IGJ1dCB0aGF0IHdvdWxkIGJlIGFuIGV4dHJhIHBhdGNoLgoKSWYgcGVvcGxlIHNlZSBzb21lIHZh
-bHVlIGluIHRoaXMsIEkgY2FuIHN1cmVseSBwb3N0IHNvbWV0aGluZy4KCkNoZWVycywKQW5kcmUu
-Cgo+PiBSb2Jpbi4KPj4KPj4+IFJlbW92ZSB0aGUgY29tbWEgZnJvbSB0aGUgbm9kZSBuYW1lIHN1
-ZmZpeCB0byBiZSBEVCBzcGVjIGNvbXBsaWFudC4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBBbmRy
-ZSBQcnp5d2FyYSA8YW5kcmUucHJ6eXdhcmFAYXJtLmNvbT4KPj4+IC0tLQo+Pj4gICBhcmNoL2Fy
-bS9ib290L2R0cy92ZXhwcmVzcy12Mm0tcnMxLmR0c2kgICAgICAgICAgICAgIHwgMTAgKysrKyst
-LS0tLQo+Pj4gICBhcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9mb3VuZGF0aW9uLXY4LmR0c2kgICAg
-ICAgICAgIHwgIDQgKystLQo+Pj4gICBhcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9qdW5vLW1vdGhl
-cmJvYXJkLmR0c2kgICAgICAgIHwgIDYgKysrLS0tCj4+PiAgIGFyY2gvYXJtNjQvYm9vdC9kdHMv
-YXJtL3J0c21fdmUtbW90aGVyYm9hcmQtcnMyLmR0c2kgfCAgMiArLQo+Pj4gICBhcmNoL2FybTY0
-L2Jvb3QvZHRzL2FybS9ydHNtX3ZlLW1vdGhlcmJvYXJkLmR0c2kgICAgIHwgIDYgKysrLS0tCj4+
-PiAgIDUgZmlsZXMgY2hhbmdlZCwgMTQgaW5zZXJ0aW9ucygrKSwgMTQgZGVsZXRpb25zKC0pCj4+
-Pgo+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3ZleHByZXNzLXYybS1yczEuZHRz
-aSBiL2FyY2gvYXJtL2Jvb3QvZHRzL3ZleHByZXNzLXYybS1yczEuZHRzaQo+Pj4gaW5kZXggNWMx
-ODM0ODNlYzNiLi44MDEwY2RjZGIzN2EgMTAwNjQ0Cj4+PiAtLS0gYS9hcmNoL2FybS9ib290L2R0
-cy92ZXhwcmVzcy12Mm0tcnMxLmR0c2kKPj4+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3ZleHBy
-ZXNzLXYybS1yczEuZHRzaQo+Pj4gQEAgLTMxLDcgKzMxLDcgQEAKPj4+ICAgCQkJI2ludGVycnVw
-dC1jZWxscyA9IDwxPjsKPj4+ICAgCQkJcmFuZ2VzOwo+Pj4gLQkJCW5vcl9mbGFzaDogZmxhc2hA
-MCwwMDAwMDAwMCB7Cj4+PiArCQkJbm9yX2ZsYXNoOiBmbGFzaEAwIHsKPj4+ICAgCQkJCWNvbXBh
-dGlibGUgPSAiYXJtLHZleHByZXNzLWZsYXNoIiwgImNmaS1mbGFzaCI7Cj4+PiAgIAkJCQlyZWcg
-PSA8MCAweDAwMDAwMDAwIDB4MDQwMDAwMDA+LAo+Pj4gICAJCQkJICAgICAgPDQgMHgwMDAwMDAw
-MCAweDA0MDAwMDAwPjsKPj4+IEBAIC00MSwxMyArNDEsMTMgQEAKPj4+ICAgCQkJCX07Cj4+PiAg
-IAkJCX07Cj4+PiAtCQkJcHNyYW1AMSwwMDAwMDAwMCB7Cj4+PiArCQkJcHNyYW1AMTAwMDAwMDAw
-IHsKPj4+ICAgCQkJCWNvbXBhdGlibGUgPSAiYXJtLHZleHByZXNzLXBzcmFtIiwgIm10ZC1yYW0i
-Owo+Pj4gICAJCQkJcmVnID0gPDEgMHgwMDAwMDAwMCAweDAyMDAwMDAwPjsKPj4+ICAgCQkJCWJh
-bmstd2lkdGggPSA8ND47Cj4+PiAgIAkJCX07Cj4+PiAtCQkJZXRoZXJuZXRAMiwwMjAwMDAwMCB7
-Cj4+PiArCQkJZXRoZXJuZXRAMjAyMDAwMDAwIHsKPj4+ICAgCQkJCWNvbXBhdGlibGUgPSAic21z
-YyxsYW45MTE4IiwgInNtc2MsbGFuOTExNSI7Cj4+PiAgIAkJCQlyZWcgPSA8MiAweDAyMDAwMDAw
-IDB4MTAwMDA+Owo+Pj4gICAJCQkJaW50ZXJydXB0cyA9IDwxNT47Cj4+PiBAQCAtNTksMTQgKzU5
-LDE0IEBACj4+PiAgIAkJCQl2ZGR2YXJpby1zdXBwbHkgPSA8JnYybV9maXhlZF8zdjM+Owo+Pj4g
-ICAJCQl9Owo+Pj4gLQkJCXVzYkAyLDAzMDAwMDAwIHsKPj4+ICsJCQl1c2JAMjAzMDAwMDAwIHsK
-Pj4+ICAgCQkJCWNvbXBhdGlibGUgPSAibnhwLHVzYi1pc3AxNzYxIjsKPj4+ICAgCQkJCXJlZyA9
-IDwyIDB4MDMwMDAwMDAgMHgyMDAwMD47Cj4+PiAgIAkJCQlpbnRlcnJ1cHRzID0gPDE2PjsKPj4+
-ICAgCQkJCXBvcnQxLW90ZzsKPj4+ICAgCQkJfTsKPj4+IC0JCQlpb2ZwZ2FAMywwMDAwMDAwMCB7
-Cj4+PiArCQkJaW9mcGdhQDMwMDAwMDAwMCB7Cj4+PiAgIAkJCQljb21wYXRpYmxlID0gInNpbXBs
-ZS1idXMiOwo+Pj4gICAJCQkJI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4+PiAgIAkJCQkjc2l6ZS1j
-ZWxscyA9IDwxPjsKPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9mb3Vu
-ZGF0aW9uLXY4LmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9mb3VuZGF0aW9uLXY4LmR0
-c2kKPj4+IGluZGV4IDEyZjAzOWZhM2RhZC4uZTI2YjQ5Mjc5NWM1IDEwMDY0NAo+Pj4gLS0tIGEv
-YXJjaC9hcm02NC9ib290L2R0cy9hcm0vZm91bmRhdGlvbi12OC5kdHNpCj4+PiArKysgYi9hcmNo
-L2FybTY0L2Jvb3QvZHRzL2FybS9mb3VuZGF0aW9uLXY4LmR0c2kKPj4+IEBAIC0xNTEsNyArMTUx
-LDcgQEAKPj4+ICAgCQkJCTwwIDAgNDEgJmdpYyAwIDAgR0lDX1NQSSA0MSBJUlFfVFlQRV9MRVZF
-TF9ISUdIPiwKPj4+ICAgCQkJCTwwIDAgNDIgJmdpYyAwIDAgR0lDX1NQSSA0MiBJUlFfVFlQRV9M
-RVZFTF9ISUdIPjsKPj4+IC0JCWV0aGVybmV0QDIsMDIwMDAwMDAgewo+Pj4gKwkJZXRoZXJuZXRA
-MjAyMDAwMDAwIHsKPj4+ICAgCQkJY29tcGF0aWJsZSA9ICJzbXNjLGxhbjkxYzExMSI7Cj4+PiAg
-IAkJCXJlZyA9IDwyIDB4MDIwMDAwMDAgMHgxMDAwMD47Cj4+PiAgIAkJCWludGVycnVwdHMgPSA8
-MTU+Owo+Pj4gQEAgLTE3OCw3ICsxNzgsNyBAQAo+Pj4gICAJCQljbG9jay1vdXRwdXQtbmFtZXMg
-PSAidjJtOnJlZmNsazMya2h6IjsKPj4+ICAgCQl9Owo+Pj4gLQkJaW9mcGdhQDMsMDAwMDAwMDAg
-ewo+Pj4gKwkJaW9mcGdhQDMwMDAwMDAwMCB7Cj4+PiAgIAkJCWNvbXBhdGlibGUgPSAic2ltcGxl
-LWJ1cyI7Cj4+PiAgIAkJCSNhZGRyZXNzLWNlbGxzID0gPDE+Owo+Pj4gICAJCQkjc2l6ZS1jZWxs
-cyA9IDwxPjsKPj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9qdW5vLW1v
-dGhlcmJvYXJkLmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9qdW5vLW1vdGhlcmJvYXJk
-LmR0c2kKPj4+IGluZGV4IGUzOTgzZGVkM2MzYy4uZDVjZWZkZGRlMDhjIDEwMDY0NAo+Pj4gLS0t
-IGEvYXJjaC9hcm02NC9ib290L2R0cy9hcm0vanVuby1tb3RoZXJib2FyZC5kdHNpCj4+PiArKysg
-Yi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9qdW5vLW1vdGhlcmJvYXJkLmR0c2kKPj4+IEBAIC0x
-MDMsNyArMTAzLDcgQEAKPj4+ICAgCQkJCX07Cj4+PiAgIAkJCX07Cj4+PiAtCQkJZmxhc2hAMCww
-MDAwMDAwMCB7Cj4+PiArCQkJZmxhc2hAMCB7Cj4+PiAgIAkJCQkvKiAyICogMzJNaUIgTk9SIEZs
-YXNoIG1lbW9yeSBtb3VudGVkIG9uIENTMCAqLwo+Pj4gICAJCQkJY29tcGF0aWJsZSA9ICJhcm0s
-dmV4cHJlc3MtZmxhc2giLCAiY2ZpLWZsYXNoIjsKPj4+ICAgCQkJCXJlZyA9IDwwIDB4MDAwMDAw
-MDAgMHgwNDAwMDAwMD47Cj4+PiBAQCAtMTIwLDcgKzEyMCw3IEBACj4+PiAgIAkJCQl9Owo+Pj4g
-ICAJCQl9Owo+Pj4gLQkJCWV0aGVybmV0QDIsMDAwMDAwMDAgewo+Pj4gKwkJCWV0aGVybmV0QDIw
-MDAwMDAwMCB7Cj4+PiAgIAkJCQljb21wYXRpYmxlID0gInNtc2MsbGFuOTExOCIsICJzbXNjLGxh
-bjkxMTUiOwo+Pj4gICAJCQkJcmVnID0gPDIgMHgwMDAwMDAwMCAweDEwMDAwPjsKPj4+ICAgCQkJ
-CWludGVycnVwdHMgPSA8Mz47Cj4+PiBAQCAtMTMzLDcgKzEzMyw3IEBACj4+PiAgIAkJCQl2ZGR2
-YXJpby1zdXBwbHkgPSA8Jm1iX2ZpeGVkXzN2Mz47Cj4+PiAgIAkJCX07Cj4+PiAtCQkJaW9mcGdh
-QDMsMDAwMDAwMDAgewo+Pj4gKwkJCWlvZnBnYUAzMDAwMDAwMDAgewo+Pj4gICAJCQkJY29tcGF0
-aWJsZSA9ICJzaW1wbGUtYnVzIjsKPj4+ICAgCQkJCSNhZGRyZXNzLWNlbGxzID0gPDE+Owo+Pj4g
-ICAJCQkJI3NpemUtY2VsbHMgPSA8MT47Cj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290
-L2R0cy9hcm0vcnRzbV92ZS1tb3RoZXJib2FyZC1yczIuZHRzaSBiL2FyY2gvYXJtNjQvYm9vdC9k
-dHMvYXJtL3J0c21fdmUtbW90aGVyYm9hcmQtcnMyLmR0c2kKPj4+IGluZGV4IDYwNzAzYjU3NjNj
-Ni4uMzUwY2JmMTdlOGI0IDEwMDY0NAo+Pj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9hcm0v
-cnRzbV92ZS1tb3RoZXJib2FyZC1yczIuZHRzaQo+Pj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0
-cy9hcm0vcnRzbV92ZS1tb3RoZXJib2FyZC1yczIuZHRzaQo+Pj4gQEAgLTksNyArOSw3IEBACj4+
-PiAgIAkJbW90aGVyYm9hcmQgewo+Pj4gICAJCQlhcm0sdjJtLW1lbW9yeS1tYXAgPSAicnMyIjsK
-Pj4+IC0JCQlpb2ZwZ2FAMywwMDAwMDAwMCB7Cj4+PiArCQkJaW9mcGdhQDMwMDAwMDAwMCB7Cj4+
-PiAgIAkJCQl2aXJ0aW8tcDlAMTQwMDAwIHsKPj4+ICAgCQkJCQljb21wYXRpYmxlID0gInZpcnRp
-byxtbWlvIjsKPj4+ICAgCQkJCQlyZWcgPSA8MHgxNDAwMDAgMHgyMDA+Owo+Pj4gZGlmZiAtLWdp
-dCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXJtL3J0c21fdmUtbW90aGVyYm9hcmQuZHRzaSBiL2Fy
-Y2gvYXJtNjQvYm9vdC9kdHMvYXJtL3J0c21fdmUtbW90aGVyYm9hcmQuZHRzaQo+Pj4gaW5kZXgg
-ZTMzM2M4ZDJkMGU0Li5kMWJmYTYyY2EwNzMgMTAwNjQ0Cj4+PiAtLS0gYS9hcmNoL2FybTY0L2Jv
-b3QvZHRzL2FybS9ydHNtX3ZlLW1vdGhlcmJvYXJkLmR0c2kKPj4+ICsrKyBiL2FyY2gvYXJtNjQv
-Ym9vdC9kdHMvYXJtL3J0c21fdmUtbW90aGVyYm9hcmQuZHRzaQo+Pj4gQEAgLTE3LDE0ICsxNywx
-NCBAQAo+Pj4gICAJCQkjaW50ZXJydXB0LWNlbGxzID0gPDE+Owo+Pj4gICAJCQlyYW5nZXM7Cj4+
-PiAtCQkJZmxhc2hAMCwwMDAwMDAwMCB7Cj4+PiArCQkJZmxhc2hAMCB7Cj4+PiAgIAkJCQljb21w
-YXRpYmxlID0gImFybSx2ZXhwcmVzcy1mbGFzaCIsICJjZmktZmxhc2giOwo+Pj4gICAJCQkJcmVn
-ID0gPDAgMHgwMDAwMDAwMCAweDA0MDAwMDAwPiwKPj4+ICAgCQkJCSAgICAgIDw0IDB4MDAwMDAw
-MDAgMHgwNDAwMDAwMD47Cj4+PiAgIAkJCQliYW5rLXdpZHRoID0gPDQ+Owo+Pj4gICAJCQl9Owo+
-Pj4gLQkJCWV0aGVybmV0QDIsMDIwMDAwMDAgewo+Pj4gKwkJCWV0aGVybmV0QDIwMjAwMDAwMCB7
-Cj4+PiAgIAkJCQljb21wYXRpYmxlID0gInNtc2MsbGFuOTFjMTExIjsKPj4+ICAgCQkJCXJlZyA9
-IDwyIDB4MDIwMDAwMDAgMHgxMDAwMD47Cj4+PiAgIAkJCQlpbnRlcnJ1cHRzID0gPDE1PjsKPj4+
-IEBAIC01MSw3ICs1MSw3IEBACj4+PiAgIAkJCQljbG9jay1vdXRwdXQtbmFtZXMgPSAidjJtOnJl
-ZmNsazMya2h6IjsKPj4+ICAgCQkJfTsKPj4+IC0JCQlpb2ZwZ2FAMywwMDAwMDAwMCB7Cj4+PiAr
-CQkJaW9mcGdhQDMwMDAwMDAwMCB7Cj4+PiAgIAkJCQljb21wYXRpYmxlID0gInNpbXBsZS1idXMi
-Owo+Pj4gICAJCQkJI2FkZHJlc3MtY2VsbHMgPSA8MT47Cj4+PiAgIAkJCQkjc2l6ZS1jZWxscyA9
-IDwxPjsKPj4+Cj4gCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Tomasz,
+
+Thanks for the review. My replies are as below.
+
+On Thu, 2020-05-21 at 19:51 +0000, Tomasz Figa wrote:
+> Hi Dongchun, Sakari,
+> 
+> On Mon, May 18, 2020 at 09:27:31PM +0800, Dongchun Zhu wrote:
+> > Add a V4L2 sub-device driver for DW9768 voice coil motor, providing
+> > control to set the desired focus via IIC serial interface.
+> > 
+> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > ---
+> >  MAINTAINERS                |   1 +
+> >  drivers/media/i2c/Kconfig  |  13 ++
+> >  drivers/media/i2c/Makefile |   1 +
+> >  drivers/media/i2c/dw9768.c | 515 +++++++++++++++++++++++++++++++++++++++++++++
+> >  4 files changed, 530 insertions(+)
+> >  create mode 100644 drivers/media/i2c/dw9768.c
+> [snip]
+> > +/*
+> > + * DW9768_AAC_PRESC_REG & DW9768_AAC_TIME_REG determine VCM operation time.
+> > + * If DW9768_AAC_PRESC_REG is 0x41, and DW9768_AAC_TIME_REG is 0x39, VCM mode
+> > + * would be AAC3, Operation Time would be 0.70xTvib, that is 8.40ms.
+> > + */
+> > +#define DW9768_MOVE_DELAY_US			8400
+> > +#define DW9768_STABLE_TIME_US			20000
+> 
+> These times are only valid with the specific settings mentioned in the
+> comment. If one sets different settings in DT, the driver would apply
+> incorrect delays. Rather than hardcoded, they should be computed based
+> on the configured values.
+> 
+> That said, I wonder if we're not digging too deep now. Sakari, do you
+> think we could take a step back, remove the optional DT properties and
+> just support the fixed values for now, so that we can get a basic driver
+> upstream first without doubling the effort?
+> 
+
+Thanks for the reminder.
+Yes, here DW9768_MOVE_DELAY_US actually represents Operation Time,
+which is dependent upon board-specific settings that defined in DT.
+For instance, for one given board, if aac-mode is 2, aac-timing is 0x39,
+clock-presc is 1, then Operation Time would be 0.70*(6.3ms+57*0.1ms)*1 =
+8.4ms.
+
+> > +
+> > +static const char * const dw9768_supply_names[] = {
+> > +	"vin",	/* I2C I/O interface power */
+> > +	"vdd",	/* VCM power */
+> > +};
+> > +
+> > +/* dw9768 device structure */
+> > +struct dw9768 {
+> > +	struct regulator_bulk_data supplies[ARRAY_SIZE(dw9768_supply_names)];
+> > +	struct v4l2_ctrl_handler ctrls;
+> > +	struct v4l2_ctrl	*focus;
+> > +	struct v4l2_subdev	sd;
+> > +
+> > +	u32			aac_mode;
+> > +	u32			aac_timing;
+> > +	u32			clock_dividing_rate;
+> > +	bool			aac_mode_control_enable;
+> > +	bool			aact_cnt_select_enable;
+> > +	bool			clock_dividing_rate_select_enable;
+> 
+> nit: Separate types from names with just 1 space.
+> 
+
+Fixed in next release.
+
+> > +};
+> > +
+> > +static inline struct dw9768 *sd_to_dw9768(struct v4l2_subdev *subdev)
+> > +{
+> > +	return container_of(subdev, struct dw9768, sd);
+> > +}
+> > +
+> > +struct regval_list {
+> > +	u8 reg_num;
+> > +	u8 value;
+> > +};
+> > +
+> > +static int dw9768_read_smbus(struct dw9768 *dw9768, unsigned char reg,
+> > +			     unsigned char *val)
+> > +{
+> > +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
+> > +	int ret;
+> > +
+> > +	ret = i2c_smbus_read_byte_data(client, reg);
+> > +
+> > +	if (ret < 0)
+> > +		return ret;
+> > +
+> > +	*val = (unsigned char)ret;
+> > +
+> > +	return 0;
+> > +}
+> 
+> Why do we need this function? Couldn't we just call
+> i2c_smbus_read_byte_data() directly?
+> 
+
+Fixed in next release.
+
+> [snip]
+> > +static int dw9768_probe(struct i2c_client *client)
+> > +{
+> > +	struct device *dev = &client->dev;
+> > +	struct dw9768 *dw9768;
+> > +	unsigned int aac_mode_select;
+> > +	unsigned int aac_timing_select;
+> > +	unsigned int clock_dividing_rate_select;
+> > +	unsigned int i;
+> > +	int ret;
+> > +
+> > +	dw9768 = devm_kzalloc(dev, sizeof(*dw9768), GFP_KERNEL);
+> > +	if (!dw9768)
+> > +		return -ENOMEM;
+> > +
+> > +	v4l2_i2c_subdev_init(&dw9768->sd, client, &dw9768_ops);
+> > +	dw9768->aac_mode_control_enable = false;
+> > +	dw9768->aact_cnt_select_enable = false;
+> > +	dw9768->clock_dividing_rate_select_enable = false;
+> 
+> devm_kzalloc() initializes the memory to zero, so no need to set anything
+> to false explicitly.
+> 
+
+Thanks for the reminder.
+Yes, these parameters shall not be needed to initialized as zeros.
+
+> > +
+> > +	/* Optional indication of AAC mode select */
+> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "dongwoon,aac-mode",
+> > +				       &aac_mode_select);
+> > +
+> > +	if (!ret) {
+> > +		dw9768->aac_mode_control_enable = true;
+> > +		dw9768->aac_mode = aac_mode_select;
+> 
+> How about making aac_mode a signed int and assigning -1 by
+> default? Then we don't need two separate fields in the struct.
+> 
+
+Good idea.
+
+> > +	}
+> > +
+> > +	/* Optional indication of VCM internal clock dividing rate select */
+> > +	ret = fwnode_property_read_u32(dev_fwnode(dev),
+> > +				       "dongwoon,clock-dividing-rate",
+> > +				       &clock_dividing_rate_select);
+> > +
+> > +	if (!ret) {
+> > +		dw9768->clock_dividing_rate_select_enable = true;
+> > +		dw9768->clock_dividing_rate = clock_dividing_rate_select;
+> 
+> Ditto.
+> 
+
+Got it.
+
+> > +	}
+> > +
+> > +	/* Optional indication of AAC Timing */
+> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "dongwoon,aac-timing",
+> > +				       &aac_timing_select);
+> > +
+> > +	if (!ret) {
+> > +		dw9768->aact_cnt_select_enable = true;
+> > +		dw9768->aac_timing = aac_timing_select;
+> 
+> Ditto.
+> 
+
+Got it.
+
+> > +	}
+> > +
+> > +	for (i = 0; i < ARRAY_SIZE(dw9768_supply_names); i++)
+> > +		dw9768->supplies[i].supply = dw9768_supply_names[i];
+> > +
+> > +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(dw9768_supply_names),
+> > +				      dw9768->supplies);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to get regulators\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	ret = dw9768_init_controls(dw9768);
+> > +	if (ret)
+> > +		goto entity_cleanup;
+> > +
+> > +	dw9768->sd.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
+> > +	dw9768->sd.internal_ops = &dw9768_int_ops;
+> > +
+> > +	ret = media_entity_pads_init(&dw9768->sd.entity, 0, NULL);
+> > +	if (ret < 0)
+> > +		goto entity_cleanup;
+> > +
+> > +	dw9768->sd.entity.function = MEDIA_ENT_F_LENS;
+> > +
+> > +	pm_runtime_enable(dev);
+> > +	if (!pm_runtime_enabled(dev)) {
+> > +		ret = dw9768_runtime_resume(dev);
+> > +		if (ret < 0) {
+> > +			dev_err(dev, "failed to power on: %d\n", ret);
+> > +			goto entity_cleanup;
+> > +		}
+> > +	}
+> > +
+> > +	ret = v4l2_async_register_subdev(&dw9768->sd);
+> > +	if (ret < 0)
+> > +		goto entity_cleanup;
+> > +
+> > +	return 0;
+> > +
+> > +entity_cleanup:
+> 
+> Need to power off if the code above powered on.
+> 
+
+Thanks for the reminder.
+If there is something wrong with runtime PM, actuator is to be powered
+on via dw9768_runtime_resume() API.
+When actuator sub-device is powered on completely and async registered
+successfully, we shall power off it afterwards.
+
+> > +	v4l2_ctrl_handler_free(&dw9768->ctrls);
+> > +	media_entity_cleanup(&dw9768->sd.entity);
+> > +	return ret;
+> > +}
+> > +
+> > +static int dw9768_remove(struct i2c_client *client)
+> > +{
+> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
+> > +	struct dw9768 *dw9768 = sd_to_dw9768(sd);
+> > +
+> > +	pm_runtime_disable(&client->dev);
+> 
+> First the device must be unregistered from the userspace. Otherwise there
+> is a race condition that risks the userspace accessing the device while the
+> deinitialization is happening.
+> 
+
+Fixed in next release by adjusting the sequence of unregistering and
+runtime PM disable.
+
+> Best regards,
+> Tomasz
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
