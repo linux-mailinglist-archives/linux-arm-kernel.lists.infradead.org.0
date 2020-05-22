@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE2B51DE8F4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:29:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43B9B1DE8F6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:29:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PmLc3209/29hZ85dbsgxVJpzZkiHii+wYVw0wkIOXN0=; b=LebfpMF2FvQ6VU
-	lAlXa48tIfvwrgOQ3ZJAs6lvPnYS9x/vqTYgqb9StobLQzgn3M8lRSg8Jl/+etNBEY8mwtYoL0NBH
-	vSijIQPL6tLSMte8xutKloECbiOqqWN52VqjQDscsJumNKnYsnS7lziryKo202FHWxSBeg3ew0gfY
-	P4Rc/x1Z5MVscmEylcKyedcPAEN4eCNHpsdRCWR3YLwe91EsUek2Sd4bQXyrbQjFPOOpvl0XEnH0m
-	y4grfVSKF2zUaQ/byPVEj8g/eiWszUNJBf5db0bc2cauNuYULC5WABuCVj1nT8lTii5aKYSMR7r+o
-	qoUMvRcgGcq6ec+zttbQ==;
+	List-Owner; bh=FcZo/ZDotBydoJUL4sW6XpJJFK0bN+NyGtasZLAAnW8=; b=mvtbSQBIs7cQVY
+	A5OHKvgliaVquli040VSwmxu6QE0iL64yCNo4Dg9nnpgfFRap8m7g4YYMw7GCfnpaQ9XDMweBXW0w
+	pjMUZZhVc3lYutw5pbqb5A9jvLWLTorjmlbSGo6A//BJMfrBGHO2qER3PkIKfZxaIJW367NICMA3i
+	+woYPhbAxT65lIHD5Fu90ShWai3LZ6IgrhMfZ84y7yx7Wh5OVAplybuExYgIHgEtGG4kA3nHHdHrX
+	LI0Yus4Mri0EK3tAAQzbJglYVEpgEVP4UgIPSIpRi0nrkG80BmP8tzcPKPn8QPevheewkNoF2ceHN
+	wlddo+yJwo6cN53yCxgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc8fw-0000La-Kr; Fri, 22 May 2020 14:29:28 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1jc8gB-0000Zi-Dx; Fri, 22 May 2020 14:29:43 +0000
+Received: from mail-ej1-x632.google.com ([2a00:1450:4864:20::632])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc8fQ-00009n-6G
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 14:28:57 +0000
-Received: by mail-ed1-x541.google.com with SMTP id k19so9402501edv.9
+ id 1jc8fT-0000Bn-Qb
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 14:29:01 +0000
+Received: by mail-ej1-x632.google.com with SMTP id j21so13295074ejy.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 07:28:55 -0700 (PDT)
+ Fri, 22 May 2020 07:28:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=WI4+/uH938EIDn69nDQS6vmjp90OmdUCi8WdIQDbQo0=;
- b=vdqSIsZIFtJtuZIAM4bIPwpqWIqdva/j/NLNJ87Kk6jfrjJKLGfmmJFbO6aUs5zxUM
- iPatkRMHPgcKePxrjW4pgYiNO2Lc+4ZkMmuczfSeWosrV8g3Tf97FwOEX8OaUsvYnaeq
- 0YgkgXltn+KVFP+AMhRcCQoYDZbnIAgRfDo0rVqY0ZAVg63ja0tqXL6+IQyJLHPLpizY
- DuNwDVge7Ha59fuMTZOuRYq6AVlmJP53lXuddoQSaKo+3SYpGblv32nrwKuTH72Ke1Rv
- EhyU3tquIEs4PecoTM+GoAm57mWOJ9bCqJ+D7BKNXmROoIeD8fmGwtegtpL+k73BpIcv
- KPIg==
+ bh=9yhDyyGIK852ZcV9cF3CJIrqL1AAvlaguqb4kRBecU0=;
+ b=tsapIh29wQPr65wVhWHMcEL9iTrKSePjEa3828dghEM1UPB43L/NM8JY0fRbqfRjeo
+ 63sYE+9tcxkUBOO7NjFIAbvRRBa4WPQiz17JRj++8oV7iXLZrS91HJ46CJ33VfqoefAi
+ qADPb2wfO6qANRH3pwSI2FB7Y8YcU37X8UbWUwO92ogusUOkImnrh2RXuDLI5FBjl4sY
+ ERNYuloCP/RPy4FYvq2LLa6pdstEtsMWhuTgsLcfN1eSlllgM8tuPWdRzq7Ckssr36YA
+ nr8Qoij+364igxpNz6+BtR2tQ2QNNJkkUTa+L4GpppZvSjY8q8sRggK2++aOFD4t6jqP
+ jZ7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=WI4+/uH938EIDn69nDQS6vmjp90OmdUCi8WdIQDbQo0=;
- b=NXoVluqmuAuXYzYzXDzxa0I9h7SSz754/2svsfU6A6Kz0k9tOGHH35SEPE0d6Ol8xi
- v+e9TInBhUUnPBqMXzpIqxNb4Qz3hWcpLGD5hx31JLebJIF8I5J4kcGTQxhn3BC8KpYd
- zuMk6tRZOVdxW0eSEQyqRv+lsc/pggURjeOJ4zYEeyZCHsuCUPNw3czlk4SDhu6K+2J1
- iqlP/cq27gUui+d26Iqb6IbeBCbSWjlsqE27ZY6bIlMkhXhm1ty0kO/f4pHbCedWZ5kV
- qTlsm5KfH+V72Xb8pz/37WXCHILqJpjZAYSP8VzfoQ3jZ1DBsPhRC/SKCx7bJwLJmKo/
- LaGg==
-X-Gm-Message-State: AOAM533y1QLaTFSOhfZ2YhtyzFG7HlDPDWzuaXg6lg9Gh9t0oXiiHLOU
- 8Dm5/USaiy0pKSUebXFzXl4=
-X-Google-Smtp-Source: ABdhPJx/BfuIcHzgOQ4mWrsqkbb6uvS3caDGtihgw2Om1uuNNfC3hPSGjG+mAUQWd8EGgBR+Ohzk5w==
-X-Received: by 2002:a50:f40d:: with SMTP id r13mr3015576edm.93.1590157733924; 
- Fri, 22 May 2020 07:28:53 -0700 (PDT)
+ bh=9yhDyyGIK852ZcV9cF3CJIrqL1AAvlaguqb4kRBecU0=;
+ b=j3ifXAD8WilWG707LDCxwZ1+vDHRHG/8C90Oz9b2NScGly3Ul/apyV1IP0fzlU73XG
+ +3fKgEKU7IeIdAw3rHY/cJRKm1NhVesE7MZ8dZ8RnUJVkY0/5Y4/XAx7g5qYg08MhLWG
+ 9nRQtHoavNXGhRo4LVyGWiIrZ5Ed6VfJSPXagKlxLXZx/DJTaLc94EU9TpkleXiphuCJ
+ 9RvhGWCv+k1owpwaf5FKTjHHPZe5hJx5beC3kZ29UhKpwZd8n4zkLlr54URJEslDLbUh
+ hRZ/cqOSKzLGnvy70LKFb4VVzvIVF3Uf1FsQ3c6w/BHYED3Rgd4naORR5TwZWr4BxDXO
+ SQyg==
+X-Gm-Message-State: AOAM532iTzOy/phrhjY//GlTzDkq7QNu2oVfmSUlPgObWGOdYFAgsWFU
+ s91hBCtj3DN4/z2s5/n0Wt8=
+X-Google-Smtp-Source: ABdhPJyI67fZVtsaB0pNl/umXx3NPSZKJsGS6VM5z5c9WsRc3vS4rXJtCSMRHpmN/iiyngYCVm3EwA==
+X-Received: by 2002:a17:906:407:: with SMTP id d7mr8278768eja.46.1590157738306; 
+ Fri, 22 May 2020 07:28:58 -0700 (PDT)
 Received: from localhost (pd9e51079.dip0.t-ipconnect.de. [217.229.16.121])
- by smtp.gmail.com with ESMTPSA id mb1sm8492656ejb.109.2020.05.22.07.28.52
+ by smtp.gmail.com with ESMTPSA id x1sm7996111ejn.57.2020.05.22.07.28.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 22 May 2020 07:28:52 -0700 (PDT)
+ Fri, 22 May 2020 07:28:54 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL v2 08/11] soc/tegra: Changes for v5.8-rc1
-Date: Fri, 22 May 2020 16:28:45 +0200
-Message-Id: <20200522142846.2376224-2-thierry.reding@gmail.com>
+Subject: [GIT PULL v2 11/11] arm64: tegra: Device tree changes for v5.8-rc1
+Date: Fri, 22 May 2020 16:28:46 +0200
+Message-Id: <20200522142846.2376224-3-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
-In-Reply-To: <20200515145311.1580134-9-thierry.reding@gmail.com>
-References: <20200515145311.1580134-9-thierry.reding@gmail.com>
+In-Reply-To: <20200515145311.1580134-12-thierry.reding@gmail.com>
+References: <20200515145311.1580134-12-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_072856_233278_09D05F1C 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20200522_072859_884916_D5D657E7 
+X-CRM114-Status: GOOD (  14.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:632 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [thierry.reding[at]gmail.com]
@@ -114,51 +114,68 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.8-soc-v2
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.8-arm64-dt-v2
 
-for you to fetch changes up to df701a76a6419e66b566457a5b3fcdd314e48fd9:
+for you to fetch changes up to 358a6777f5dd293bc3c075af6fc8c0dd18774c96:
 
-  soc/tegra: pmc: Enable PMIC wake event on Tegra210 (2020-05-22 14:55:54 +0200)
+  arm64: tegra: Make the RTC a wakeup source on Jetson Nano and TX1 (2020-05-22 14:56:54 +0200)
 
-On top of the previous pull request this contains a missing patch to
-enable resume from suspend by the PMIC, like we already do an Tegra186
-and Tegra194.
+This is a slightly rebased version of the prior pull request which has
+the commit log cleaned up as I mentioned earlier. I've also included a
+patch to enable resume from suspend via the PMIC on Jetson TX1 and
+Jetson Nano, which will help us to test suspend/resume in our test
+system in a unified way.
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-soc/tegra: Changes for v5.8-rc1
+arm64: tegra: Device tree changes for v5.8-rc1
 
-Enables Tegra210, Tegra186 and Tegra194 to be woken from suspend by the
-PMIC and exports a bit more information about SoCs via sysfs.
+This contains a couple of fixes for minor issues, enables XUDC support
+on Tegra194, and enables EMC frequency scaling and video capture on
+Tegra210.
 
 ----------------------------------------------------------------
-Arnd Bergmann (1):
-      soc: tegra: Fix tegra_pmc_get_suspend_mode definition
+Jon Hunter (3):
+      arm64: tegra: Fix ethernet phy-mode for Jetson Xavier
+      arm64: tegra: Allow the PMIC RTC to wakeup Jetson Xavier
+      arm64: tegra: Make the RTC a wakeup source on Jetson Nano and TX1
 
-Corentin Labbe (1):
-      soc/tegra: pmc: Select GENERIC_PINCONF
+Joseph Lo (1):
+      arm64: tegra: Add external memory controller node for Tegra210
 
-Jon Hunter (5):
-      soc/tegra: fuse: Add custom SoC attributes
-      soc/tegra: fuse: Trivial clean-up of tegra_init_revision()
-      soc/tegra: fuse: Update the SoC revision attribute to display a name
-      soc/tegra: pmc: Enable PMIC wake event on Tegra194
-      soc/tegra: pmc: Enable PMIC wake event on Tegra210
+Nagarjuna Kristam (1):
+      arm64: tegra: Add XUDC node on Tegra194
 
-Thierry Reding (1):
-      soc/tegra: pmc: Enable PMIC wake event on Tegra186
+Rob Herring (1):
+      arm64: tegra: Kill off "simple-panel" compatibles
 
- drivers/soc/tegra/Kconfig              |  1 +
- drivers/soc/tegra/fuse/fuse-tegra.c    | 57 +++++++++++++++++++++++++++++++++-
- drivers/soc/tegra/fuse/fuse-tegra20.c  |  1 +
- drivers/soc/tegra/fuse/fuse-tegra30.c  |  6 ++++
- drivers/soc/tegra/fuse/fuse.h          |  8 +++++
- drivers/soc/tegra/fuse/tegra-apbmisc.c | 32 +++++++++++--------
- drivers/soc/tegra/pmc.c                |  3 ++
- include/soc/tegra/pmc.h                | 15 +++++----
- 8 files changed, 103 insertions(+), 20 deletions(-)
+Sowjanya Komatineni (4):
+      dt-bindings: clock: tegra: Add clock ID for CSI TPG clock
+      arm64: tegra: Fix SOR powergate clocks and reset
+      arm64: tegra: Add reset-cells to memory controller
+      arm64: tegra: Add Tegra VI CSI support in device tree
+
+Thierry Reding (4):
+      Merge branch 'for-5.8/dt-bindings' into for-5.8/arm64/dt
+      arm64: tegra: Hook up EMC cooling device
+      arm64: tegra: Enable VI I2C on Jetson Nano
+      arm64: tegra: Make the RTC a wakeup source on Jetson TX2
+
+Vidya Sagar (1):
+      arm64: tegra: Fix flag for 64-bit resources in 'ranges' property
+
+ arch/arm64/boot/dts/nvidia/tegra132-norrin.dts     |  2 +-
+ arch/arm64/boot/dts/nvidia/tegra186-p3310.dtsi     |  3 +-
+ arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi     |  5 +-
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi           | 30 ++++++--
+ arch/arm64/boot/dts/nvidia/tegra210-p2180.dtsi     |  3 +-
+ arch/arm64/boot/dts/nvidia/tegra210-p2597.dtsi     | 10 +++
+ arch/arm64/boot/dts/nvidia/tegra210-p3450-0000.dts |  7 +-
+ arch/arm64/boot/dts/nvidia/tegra210.dtsi           | 89 ++++++++++++++++++++--
+ include/dt-bindings/clock/tegra210-car.h           |  2 +-
+ 9 files changed, 131 insertions(+), 20 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
