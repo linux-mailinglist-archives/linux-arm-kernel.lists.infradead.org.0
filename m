@@ -2,42 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43DD91DEB79
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 17:08:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57D481DEB80
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 17:09:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sLt6utn1NVbMzVpuswqbJU/3Srry3YKggUwIehX2hvw=; b=V2WjV/UffUmD64NtlmCBxDKFf
-	UerOXQjYErWGSw5+CMsx7/ogqxGYdMXFd9Z0TelSEMT5YAeuX1na1Npe6T3fxsRhzJyRuZ+v60sL/
-	s26KgQ/B3zXpv7lD3xokLocTugNUCNgrRd/SERL95bUMbTboKvU9Rnr0mzrf/EwQeUeQHh3zE84QP
-	aMiheJvg230zTGICeG+2PHW0uAL2bFuUuEC7pCNxaKvPnwPg9Mv8Elv4jBDuhhLyxy+u14MJwpGAh
-	FsuhnEXltUC3S5822xO44DoOR8wV3QWlXLL+usFoTynfVp1aHOoXvqb9fjBDUFrbYSzqYvU5MN1XR
-	JvkyED+Yg==;
+	 bh=Aj8GoYbEiSoFQ38FGHYnA4cLZPzkuAWUYSy1u77eHaw=; b=F3+Et6rbVtAAIHTcIzc4BRqyv
+	Iq7sx3Xq2b7xClN5eDtGK+oDaNq2XNZjQCYOSeegs2Hc5dHLDQa2i0byBlsT8YXTt1CwZL9mIGaLw
+	g7q385pgDDsnv77e4nU2Y4uzoD8PgIuNX4NmMG5eruMGOk6TVTFJChLEr+ygya+YAf3af4+eHFwkG
+	iI8Q0qfvcUfdZfRhoyK5jlRzPR3VFQ/R7GUyLzO+v8kjKCcTyOtBw1fUdA6ovm9seuNaQLbJoVgpn
+	45kKjXvdF3/ZxRWp40uWnBuHb+/0NL/VAUNs1roPyULAhCM1UMi7KnvMZzo+wtx6ngYFNKOAmh7SP
+	rBvJGRrrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc9H8-0002iG-TN; Fri, 22 May 2020 15:07:54 +0000
+	id 1jc9IZ-00032H-9z; Fri, 22 May 2020 15:09:23 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc9Gu-0002hi-1w
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 15:07:41 +0000
+ id 1jc9IP-00031q-S0
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 15:09:15 +0000
 Received: from localhost (p5486cea4.dip0.t-ipconnect.de [84.134.206.164])
- by pokefinder.org (Postfix) with ESMTPSA id 5B27A2C2071;
- Fri, 22 May 2020 17:07:39 +0200 (CEST)
-Date: Fri, 22 May 2020 17:07:39 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id 356FF2C2072;
+ Fri, 22 May 2020 17:09:13 +0200 (CEST)
+Date: Fri, 22 May 2020 17:09:12 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
 To: Tang Bin <tangbin@cmss.chinamobile.com>
-Subject: Re: [PATCH] i2c: drivers: Avoid unnecessary check in efm32_i2c_probe()
-Message-ID: <20200522150738.GH5670@ninjato>
-References: <20200415140640.19948-1-tangbin@cmss.chinamobile.com>
+Subject: Re: [PATCH] i2c: drivers: Omit superfluous error message in
+ efm32_i2c_probe()
+Message-ID: <20200522150912.GI5670@ninjato>
+References: <20200415135734.14660-1-tangbin@cmss.chinamobile.com>
+ <20200522150418.GG5670@ninjato>
 MIME-Version: 1.0
-In-Reply-To: <20200415140640.19948-1-tangbin@cmss.chinamobile.com>
+In-Reply-To: <20200522150418.GG5670@ninjato>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_080740_238720_99C3C680 
-X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-CacheID: sfid-20200522_080914_052585_953F9F58 
+X-CRM114-Status: UNSURE (   9.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -61,59 +63,64 @@ Cc: linux-kernel@vger.kernel.org,
  Shengju Zhang <zhangshengju@cmss.chinamobile.com>, o.rempel@pengutronix.de,
  linux-i2c@vger.kernel.org, u.kleine-koenig@pengutronix.de, ardb@kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============9081482514842259487=="
+Content-Type: multipart/mixed; boundary="===============1464050322199195328=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============9081482514842259487==
+--===============1464050322199195328==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="pfTAc8Cvt8L6I27a"
+	protocol="application/pgp-signature"; boundary="U3s59FfKcByyGl+j"
 Content-Disposition: inline
 
 
---pfTAc8Cvt8L6I27a
+--U3s59FfKcByyGl+j
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Apr 15, 2020 at 10:06:40PM +0800, Tang Bin wrote:
-> The function efm32_i2c_probe() is only called with an
-> openfirmware platform device.Therefore there is no need
-> to check that it has an openfirmware node.
+On Fri, May 22, 2020 at 05:04:18PM +0200, Wolfram Sang wrote:
+> On Wed, Apr 15, 2020 at 09:57:34PM +0800, Tang Bin wrote:
+> > In the function efm32_i2c_probe(),when get irq failed,the function
+> > platform_get_irq() logs an error message,so remove redundant message
+> > here.
+> >=20
+> > Signed-off-by: Tang Bin <tangbin@cmss.chinamobile.com>
+> > Signed-off-by: Shengju Zhang <zhangshengju@cmss.chinamobile.com>
 >=20
-> Signed-off-by: Tang Bin <tangbin@cmss.chinamobile.com>
-> Signed-off-by: Shengju Zhang <zhangshengju@cmss.chinamobile.com>
+> Applied to for-next, thanks! Please fix the issues Uwe mentioned next
+> time.
 
-Applied to for-next, thanks! I agree the driver will need additions for
-non-DT platforms anyhow, so greeting with an OOPS is kinda suitable, too
-;)
+And try to match the subject line for the subsystem, i.e. for I2C:
+
+"i2c: <drivername>: <topic>"
 
 
---pfTAc8Cvt8L6I27a
+
+--U3s59FfKcByyGl+j
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7H6roACgkQFA3kzBSg
-KbYkIw/7BqnJb/EWR5Blh3d4vpx3rtS8kwGxEIY4UbtTq1uWotMuzrDKdwyDMIXV
-i6nooV/NJ0Eib6pVtQQLz6VVquUA1s0SVHR6vwN2CTZIZIHtntwHUflDkE7ViR1M
-o7eGs9UUmEUvedljeQFcl+t5Qbx54i5kHSqP6x1KoHJJCQzmz8f6dAfSVR82B859
-byP1J7Nb8TzilTSKdfl3eV0jXomazoHUvxYUvIeM8t9Lm8GL6k/6NMIWKXfGQiff
-55kuYKhRaFfX+A5ZigPA4gmvP4hdGAomLr0aQePMwlQljWUoJVvyLF5olRONAhB9
-TkMUsC6xLbOh10hfknqsdJD1krFHvX+AM8EpsZ6E0dnsGxq4Ns2JTSod5rs8S0Qq
-dGf4pb62qWAy7xY/Gc6wrxwG+mdniZMXxCtw9arDdgRTebm3+bBVSNB7V4LrC88w
-hLsjWC/X3KGvXWOiNx3hVLn/+sXzZum2vk/M0UMW3mItW9yozI0z+BxT8Rcqd/7+
-iHcxarj8nHn2TYnqoN6lRe1mliqkPA3OmTUvgRQF99W+0xFhD9h7sVEr+Ri3gJfw
-+arI0O1tKeTidUDXLazDPM94NQR4wLaBmee/Q8kUKCoIbYeYpSU3AKQlZHJkrSpQ
-FKFgszHQaQS2aCh27SDp0/cvSlrQwokVi5S2ri5lZc4XLylgltw=
-=JDIx
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7H6xgACgkQFA3kzBSg
+KbbqGQ/+KB+H2gA8bZHYDnkY6baFlP30t3IjDi5MZ1h92dmiMkEP85LNhMtjkln1
+CIoRFWQZhpBh3cri2EVA++O7efFqakLSPhfQdlKuWkwE9aLEkAR1d6sbxGOeR875
+GjgFVDR4oqKNkDYRSCSl6ZQM+V7XJ5nerFxuWgdHqr6R4jmQaOH/xQhSiKvtunQz
+wm5dJcm5BbK4IQJKpApHEDBvCeVUJ0BMqYJbiVIdioEHXObjMyh8vZTAEbH+lo+b
+qXzirZiB/fAqHgzkFXxVp01JGfF+v/zGFgmja35pPtc3XTcf3NCzREE1cn2s1lOm
+ww5yU8TJcGnXuVsGDG4DgHOPrkNY30WYiMriYCRGKUqjTpH2SmlKJ0+rZ9tjdJeb
+QQ4BX1wEu8kjHXpeqGzZS09nNWqyeEvhExUeOoguqUvfj8mT5SdAdO/eGQOHmHGR
+D7hg5whcmmibAZH6aAc3SE8s/1NCjW63bj4aLB9uCI3yvS7dJAhtAE2zw5ZLfGK6
+WHG9kNeFHWmhezSfnIkKiUEF+twl4waatI0MhLa+HSTHsXjf85rDLY0VUqPGk94Y
+U8LgIbMEeEhFsPWuaazPXXfNSz4fSLZ9TZ96djloAdRDqn/phKXqFYBxxUpX66Lz
+xL/JxiU/HUp9EkCTXh1ytpvi32pTsSKvOLiEbzhzWr6Nbx9ta1o=
+=ivLg
 -----END PGP SIGNATURE-----
 
---pfTAc8Cvt8L6I27a--
+--U3s59FfKcByyGl+j--
 
 
---===============9081482514842259487==
+--===============1464050322199195328==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -124,5 +131,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============9081482514842259487==--
+--===============1464050322199195328==--
 
