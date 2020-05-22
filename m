@@ -2,56 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8F7D1DEC8D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 17:54:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 731431DEC90
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 17:55:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dWFxiMtEYgWJjB3f1KtztffyvRzy6q+zx9YXeaDfTps=; b=DCX422mNwKGVF0
-	XgNGPjUihxQ9ubtyuvGfPCRdgnN47MSgpZG9GwDDLEuiM6DCqqLSFW9GGdBhZxRq//4Go/0zEpD4N
-	YzD0LtLwPoZY1AFxMYe2XKMhUj9/nn2Xpi7yt7LkT2rBqOSSil3ICbKyFjUQ8lw/VSL5thoTDGhGQ
-	8aYYNffdx28PGIh3I0u6+OjdNX7Qy/wl5A3sZArhnXAJ4rfugjmHm3U3/Re7v/GpyqoSnTAMOdbTg
-	tK4RFn83F+QHb5uLC+L6tcNJWGL3UNFJipFfhrGk//kErPAPSq0zby/Wzipf4mEMlkGQ1gZ6HjW1w
-	l0T4gKeesK4h2jQeELjA==;
+	List-Owner; bh=MvM/qgVuJEQ8YLFgtTMZFjESmgLbSTAoQFdgTISNp+U=; b=ILkerLjAEq3pQM
+	Pw+oFtRyKf6fTTM/lJuZ0QotigVsS2IRtEQYHLzOpo2VI2nMW6Hr3fXRiY2oVj30KVlberqjusW1k
+	tXKdEP9JfIqqZns0tVwNnrWH4jHP+egEZ/RK2U1d1kNvZUgxWSM7rlIpuWP1id27Csqejc1WQMn6d
+	fJKRPbl98f9iDYmfEeL2FZgySLFzrt/abG6dGpmBJxPgBNtyOrBlBFuGJCbvGCbpzSCT6MtUeA1tc
+	0Ek3smuCgJLeIobcVtk6SJVPG2Ofzrs6NpDyRYujr3Hy12EwQaIBbEocqd94n5UemNp30h7B7tBSz
+	OtkMeBObvdaoiNhdAUKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcA0V-0001uO-4c; Fri, 22 May 2020 15:54:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcA0I-0001sw-MV; Fri, 22 May 2020 15:54:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 54FBC55D;
- Fri, 22 May 2020 08:54:33 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 815553F305;
- Fri, 22 May 2020 08:54:29 -0700 (PDT)
-Date: Fri, 22 May 2020 16:54:27 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 09/29] arm64: use asm-generic/cacheflush.h
-Message-ID: <20200522155426.GI26492@gaia>
-References: <20200515143646.3857579-1-hch@lst.de>
- <20200515143646.3857579-10-hch@lst.de>
+	id 1jcA12-0002Aa-Eb; Fri, 22 May 2020 15:55:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jcA0O-0001xO-De
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 15:54:41 +0000
+Received: from mail-oi1-f176.google.com (mail-oi1-f176.google.com
+ [209.85.167.176])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7599A20663
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 May 2020 15:54:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590162879;
+ bh=wGRZvt3Z+867keqt3QAT0Chc0raT1nG9Wgs/nGQRLbY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=n/tqVDm2zEEQ4mU7pMZXNvqNl/+Y8L81dHXFkDfcoI4SgD9+fXk86fQkSXltNzcNk
+ B+hEJas5BrQkR05xveBENPvtkW8Vgasbvs5S7fZw37eVL4MaZRqM3KXMXDZ7hqr4Vy
+ n9WATdimBm1rfvbvcAe1tYeVUt6edphAX4TkYLsg=
+Received: by mail-oi1-f176.google.com with SMTP id d191so9655082oib.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 22 May 2020 08:54:39 -0700 (PDT)
+X-Gm-Message-State: AOAM532IHRzeJ4QhApFCBuqdu9Ri8T1HHNRjJhfkqrPU7qra7In9x7il
+ R9CTa+cJ4mvqSI7fTGJzz7Ak0AoMxywlrOmcCQ==
+X-Google-Smtp-Source: ABdhPJzQ8I+vECFyhVYyk2x4i27BUXmDXS2vlHoGkAessFkDVhzp1YCya/jmMWgspVusAE/rNHggVAYEsM+awFHIX9U=
+X-Received: by 2002:a05:6808:7cb:: with SMTP id
+ f11mr3196684oij.152.1590162878837; 
+ Fri, 22 May 2020 08:54:38 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200515143646.3857579-10-hch@lst.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200522033631.32574-1-kishon@ti.com>
+ <20200522033631.32574-4-kishon@ti.com>
+In-Reply-To: <20200522033631.32574-4-kishon@ti.com>
+From: Rob Herring <robh@kernel.org>
+Date: Fri, 22 May 2020 09:54:27 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJjXUUgTbSAi83w4Eie-sVTrkLLMGh_PRQsd8k2vuua4Q@mail.gmail.com>
+Message-ID: <CAL_JsqJjXUUgTbSAi83w4Eie-sVTrkLLMGh_PRQsd8k2vuua4Q@mail.gmail.com>
+Subject: Re: [PATCH v5 03/14] PCI: cadence: Convert all r/w accessors to
+ perform only 32-bit accesses
+To: Kishon Vijay Abraham I <kishon@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_085434_777651_77A43BF7 
-X-CRM114-Status: UNSURE (   7.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200522_085440_513959_3E46C1A9 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,30 +88,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Roman Zippel <zippel@linux-m68k.org>, linux-mips@vger.kernel.org,
- linux-mm@kvack.org, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
- linux-xtensa@linux-xtensa.org, Arnd Bergmann <arnd@arndb.de>,
- Jessica Yu <jeyu@kernel.org>, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-kernel@vger.kernel.org, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, PCI <linux-pci@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tom Joseph <tjoseph@cadence.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-omap <linux-omap@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 04:36:26PM +0200, Christoph Hellwig wrote:
-> ARM64 needs almost no cache flushing routines of its own.  Rely on
-> asm-generic/cacheflush.h for the defaults.
-> 
-> Signed-off-by: Christoph Hellwig <hch@lst.de>
+On Thu, May 21, 2020 at 9:37 PM Kishon Vijay Abraham I <kishon@ti.com> wrote:
+>
+> Certain platforms like TI's J721E using Cadence PCIe IP can perform only
+> 32-bit accesses for reading or writing to Cadence registers. Convert all
+> read and write accesses to 32-bit in Cadence PCIe driver in preparation
+> for adding PCIe support in TI's J721E SoC.
 
-Acked-by: Catalin Marinas <catalin.marinas@arm.com>
+Looking more closely I don't think cdns_pcie_ep_assert_intx is okay
+with this and never can be given the PCI_COMMAND and PCI_STATUS
+registers are in the same word (IIRC, that's the main reason 32-bit
+config space accesses are broken). So this isn't going to work at
+least for EP accesses. And maybe you need a custom .raise_irq() hook
+to minimize any problems (such as making the RMW atomic at least from
+the endpoint's perspective).
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
