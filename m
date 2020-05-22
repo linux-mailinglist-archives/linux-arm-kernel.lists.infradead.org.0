@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 429BC1DE46C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:29:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64D5F1DE46E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:29:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A0UuMV4fnFiC3WPpori9u+P5/COSTvvaBYF8BY4Ubu0=; b=Em70AaeZ/mNIdv
-	C9slyU+3jCr7hhU8y9SetK85RXRsg0vO1a2ufaKGH9rva3rd1Lc99uCdh3aVdDkaCUuTnr1P1K1yt
-	RwRkaIbVPQi1FBEqX/AnylMyviGLrzoO7/CmIkweOiRd1f4Nj8xWKmUPMY+F9KTr9flkkL4T7144L
-	MXd1fM5moysLPwuniJM48T9xwfxrHVuF1fjGQQnjB5R/hht9TGn0lxIFO8H1cKOuetXr9dWx9hRSi
-	9Rrr3q0H5OwsnF/0fB6pjG1ADU0NJHHi8T1ZNGBeFESNssv9He1gRmMnILoiQspUGgOExL30ngtTC
-	0mHJ1LsKijkCREbrKYvQ==;
+	List-Owner; bh=tw6so9jgLo1u8ZpzXvPDWX8MWDaBYIdiSs1+5ECEGeo=; b=lVSs36qLLyQpvT
+	Z76S1l5v/xzfLbSCK+B4jrlrRZkQEhLZ8VIwjWGHRKg1U07mIKHECb4XzBNE+G85rbYd8V2B9Tc6C
+	4XZTPA/G/3UEcrISyZecPQsOPUSYIGvAcdRRiFRIT8eueKwcSRGV3ikUZa0Ef0bhIV39lhKv7DiT1
+	czXlv2AT6wlaA79HCNGKc45TXrStsViaa2DKzPC+OideOuH4ZxA3W4XEa5mJZG9EYc4SLYTv7U+XP
+	CCoJZ5ZIlvzpyP0/HIUcIQf9nVWlzkAMJiGhb6clLUAb6tJ6w+UPZZ8TEZOb1Z5C1NA6tjlxB06cO
+	iOx3AHg8HrQ6ihCl87+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc4vh-00064x-71; Fri, 22 May 2020 10:29:29 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jc4vx-0006Gh-VA; Fri, 22 May 2020 10:29:45 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc4r9-0007tD-SD
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 10:24:49 +0000
-Received: by mail-lf1-x143.google.com with SMTP id e125so6244397lfd.1
+ id 1jc4rZ-0001AT-Up
+ for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 10:25:16 +0000
+Received: by mail-lj1-x242.google.com with SMTP id q2so11948772ljm.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 22 May 2020 03:24:47 -0700 (PDT)
+ Fri, 22 May 2020 03:25:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=fKfCBTr3t9MLCQ0J7OL7a+qWvpib5l9QLHxm5yO1R5w=;
- b=DLPAj5CqPOJrt06enKB1ajI2NDFv9SufvT/yTgLAfjpMrZr6oFlggLT8lcqC29rl9t
- GZUftu34UAAOMb7Rg8sQqIRMQW86faW04AVGbmaN+KNh+aHKolxikQ3th4gwg6fAX5cp
- 4JSk2b201knvWxlgX9KV57jVas0yhJVfYR/1H1HrbrSScxOCbvx+WBZ2XWJAzrSiQxHC
- qG6ALBdMJSMtjAP59+7gOVZSwtKNFqbI3aEXEOT9urqfWaAOcOuTs9NUVhgUp0awvr2n
- LtS3rbyGNcMspVITcsFZLgoRx41zfo6QMAZSgygb3FZ8xDvdfCbbTEx0LrZJmn8DUYjU
- t0yQ==
+ :cc; bh=QFKhlqVsnkCrxGWdbHIjo8dNnb/R1dHUqeBwV1cH3to=;
+ b=TiKDItijeKH7AVGFffJI0WsNtOyRdNrgnSponqh9Hcj2fCrZRYs3B3Bdd2HlOg05Tx
+ 5qBXUFdajt8aoufhAXUacFaUH8FaSbAn26Hepd2hgOspoIzlvqskSQ5nCankhINkProQ
+ 2IGTwUr2VJjMHOLKq5GNkCJtC6bP9Tn+lHwi/ASvaboNZux3vduuFMqPInP3WsjtGrSs
+ kHe+idR/q5hkP6P0eh5Fuk1GSDmF4RrrF57r9OoBGsKjO28YnX+WR8qcLCDzTjLEFfm8
+ rxcgnte9/6zmd6WFQqpEOJBfqtC7qreSOtEvPez59qKolI25kHr0oET1mD+x4vS8f2Ht
+ NxRg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=fKfCBTr3t9MLCQ0J7OL7a+qWvpib5l9QLHxm5yO1R5w=;
- b=VjDx9VRmMjuWwsZNmbqCefOUZY/krkt17UkOdBTNPIRrFf5prgkaRPgsyrF8Y8XpiJ
- PwOCe9fgbXDID+WZAZHCqMjwEIXOWyCs61cfs0x/9Ad/E86E34PvrFigq0anw3LirmCx
- LXstDJWrl6MsNkn5pHJETnjcjp5NCgCXpSm6GxynexNVW/DCsdAAH/vPPFUaQ9GgGh7r
- oexaQXAJI7VYvlwo6aY/BQvR6E7A21NbXclzAV8crZLqi2WJiy2hmwc2nRVZE5LmS9zi
- JhUQK+ABjaBeYZKcuMkfNDSEu/FU0oTieXaDimpLOsxiyjLI+TYHXUfoc5kLW9AXqm4F
- Fdbg==
-X-Gm-Message-State: AOAM5339jzXW2tuRovvDLVr4YmvW+YWSLX4A6om+E7gbKKcrTuDfwDmE
- yw8zwOFOS+A5fMZZGBabA8zqfGrKC2CzHtjr5Ao=
-X-Google-Smtp-Source: ABdhPJzAE9qHyplI74KdB5AD6oGUghscmd0IOe8zTZzcr+h2CPvEAwzkjjnL5jblpWGxXa2/Me9+fgzuIQyHXzThdww=
-X-Received: by 2002:a19:6141:: with SMTP id m1mr7281542lfk.7.1590143085555;
- Fri, 22 May 2020 03:24:45 -0700 (PDT)
+ bh=QFKhlqVsnkCrxGWdbHIjo8dNnb/R1dHUqeBwV1cH3to=;
+ b=Jq7SV6evPdrkAC/PtvSUuJ+F+QxKoXL2M3xSoqiVxY4XpJ25i8RVlZg/HmuvsfjFkY
+ 5tAs0toEfHMd6m3VYvz+UaV6NWX3akpqLKRTMC7zJUSilhrIyh1EkUHgfhrF/O3vazBW
+ VT8ndn5z8+RXY2flqdKeyB2vmWqMSrw3YvO4lqfXcBV9ACDc2FDoFjfbhQLHL0/+5val
+ PyoyKXD0cMUObKqcz2FZOQdGDy3QzVtJXTGQF9PnGiumvcG6ehKOY0PW0hXOV005w8il
+ GC5CsrIi9FdKAiYPBaUPtSApQTgcsNMxv75j92bRrP5AraIBRfyGCPSakcEsqYXiCL+2
+ T/Xg==
+X-Gm-Message-State: AOAM5327sSsZhvlnsQdMoClC+AgOo1cJjo1Ta5wqMAABYn9q96Km/z4G
+ HKZB2sVDTKCh7W/FGQK0RFwAC17wTWxRPBICpFY=
+X-Google-Smtp-Source: ABdhPJzgtITNAmGF4FXDUvVXgptvmZlGGf0/KQTzAC02eg1W4hBckNpsHF3Pn/RNqPoMOseHlfs4TSbPN2lmM9PcjH4=
+X-Received: by 2002:a2e:b4f3:: with SMTP id s19mr795267ljm.218.1590143111779; 
+ Fri, 22 May 2020 03:25:11 -0700 (PDT)
 MIME-Version: 1.0
 References: <1590144291-18526-1-git-send-email-yibin.gong@nxp.com>
-In-Reply-To: <1590144291-18526-1-git-send-email-yibin.gong@nxp.com>
+ <1590144291-18526-2-git-send-email-yibin.gong@nxp.com>
+In-Reply-To: <1590144291-18526-2-git-send-email-yibin.gong@nxp.com>
 From: Fabio Estevam <festevam@gmail.com>
-Date: Fri, 22 May 2020 07:24:33 -0300
-Message-ID: <CAOMZO5AgAYgxb9djwGXdpMme4aREYiGPXVa=x0Hb5vo-KJGrug@mail.gmail.com>
-Subject: Re: [PATCH v3 1/2] arm64: dts: imx8mm-evk: correct ldo1/ldo2 voltage
- range
+Date: Fri, 22 May 2020 07:24:59 -0300
+Message-ID: <CAOMZO5Aiw+3N_o5+1g4nWWgsDQ5Yhdenumn04OhG6BwBy99EZg@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] arm64: dts: imx8mn-ddr4-evk: correct ldo1/ldo2
+ voltage range
 To: Robin Gong <yibin.gong@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_032447_926139_DD8E635E 
-X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-CacheID: sfid-20200522_032514_022906_A6A92389 
+X-CRM114-Status: UNSURE (   8.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,7 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [festevam[at]gmail.com]
@@ -114,13 +115,13 @@ On Thu, May 21, 2020 at 11:44 PM Robin Gong <yibin.gong@nxp.com> wrote:
 > (1.6V~1.9V) because the ldo1 should be 1.8V. Actually, two voltage groups
 > have been supported at bd718x7-regulator driver, hence, just corrrect the
 > voltage range to 1.6V~3.3V. For ldo2@0.8V, correct voltage range too.
-> Otherwise, ldo1 would be kept @3.0V and ldo2@0.9V which violate i.mx8mm
+> Otherwise, ldo1 would be kept @3.0V and ldo2@0.9V which violate i.mx8mn
 > datasheet as the below warning log in kernel:
 >
 > [    0.995524] LDO1: Bringing 1800000uV into 3000000-3000000uV
 > [    0.999196] LDO2: Bringing 800000uV into 900000-900000uV
 >
-> Fixes: 78cc25fa265d ("arm64: dts: imx8mm-evk: Add BD71847 PMIC")
+> Fixes: 3e44dd09736d ("arm64: dts: imx8mn-ddr4-evk: Add rohm,bd71847 PMIC support")
 > Cc: stable@vger.kernel.org
 > Signed-off-by: Robin Gong <yibin.gong@nxp.com>
 > Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
