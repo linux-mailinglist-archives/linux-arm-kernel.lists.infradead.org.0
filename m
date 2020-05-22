@@ -2,56 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50C9B1DEA6B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:55:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B4FD1DEA75
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 16:56:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0vAi6saxfuHaKHpSwdUhsgN5erqL0NLkuc9WPGIjzcE=; b=F2ept9SwA3aHkH
-	78kRa6Z5AXrLwlO00gC+qRaDkLc/BomRnBDXCx1yp8+3dd0G3yUvAl+hXg7VMOC0s4SdGAvFY3ITj
-	U8AbYiLETHdonEyw6DCNbNq0qnbfoaYAvTVK1lq6cVFTYd4VYGZqK+0dRD5VcSbZULtzdykh7qm7m
-	H9p2e28ppmkQJAiWma+cuB8mWHTx2GcOCuPdv0yBgMS4FfMkl+LkH6aPP54a3mbKsg3FOjK9b5Jpx
-	lxOFFV1YyP/kjeFaknFe/N3kdG6diLUHjVZ7V58NZFlj4fmmVyRSbgcn8TSRNAMM8FBFIPu481TG0
-	VO2cQXIH5Tx6eYZYyHXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5fPnopsbY9qqLsi8UEvBAC5tm38HRL/CjbwdURZwSUk=; b=Yx2h9+O3MT4WEg
+	onSCWd19KSW03S7q5St0oekcR7huctEbSDjbj8e/WLG626X22aVv3H7RCAHFpxXL5Uylb7I8Hpg87
+	M8LDYMUq2f/EWhL7+TPZ5iO9rZX7xSsV/s7Hed7JQ4pIGjVoYLd4EpCIJn/lr5PC3vd134YdUbiCN
+	W7qHBag+qUuP8agSNiAFGFmie5uCBbmRM9qkbrpL6izrDYp67opsvZIQS16ClpII+7Z9h2aH2Kgky
+	+4hTNNvurg8nLr1ym+4QerLsNRSWvGMWoDZS3sBKQSXcKManbJcZFZadh9WdVJHRO1dSeILVw8SkB
+	PNW0ROspzuXrZwOwAD6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc94f-0005h1-D4; Fri, 22 May 2020 14:55:01 +0000
+	id 1jc95i-0000gE-2P; Fri, 22 May 2020 14:56:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc90f-0001qW-DZ; Fri, 22 May 2020 14:50:55 +0000
+ id 1jc919-0002Rc-Tw; Fri, 22 May 2020 14:51:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E0C63222E7;
- Fri, 22 May 2020 14:50:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5BD8422256;
+ Fri, 22 May 2020 14:51:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590159052;
- bh=w2pSz6sSKuZ1uwjqUAGFQHWs2ZIfFkdSdsug/JB3dAU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=aKKidpoPysim0EJe4Yrbk8TyVRcWAVlRsiXPNZFdyuLoPPJriw5b31sSTCcpwuYc3
- GaHG5Fbb2rCnLNMeeHEVHXY2ELEFc8jE9CaTd3RQuarQKDwrcWgqODNgRcfCdtmKPY
- 1rfy+d54ge4PKyM9idv1pK7D3jDWxDIl1XnCwSiw=
+ s=default; t=1590159082;
+ bh=rgoYLS+WMEIn3HQPScbZElKfuAs0VrEeOrN4VJIZ2TQ=;
+ h=From:To:Cc:Subject:Date:From;
+ b=ngckiuZVIwXXtf1HJK7uYSt3h1dbuQx+KUcLR4wsjec/CFex0JD1u69FUPmxLUnqQ
+ YhXki5UUZvRzdR+VrWF2Sx/OEZwWrmX9p6ChVRrGvGdaIradmJhQINYXFy/HnSXRFB
+ yUUFwu/YYZKj9/wZ6Tf6Sx+wDDUsQZzumPNsuekA=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 06/32] ARM: dts: rockchip: fix pinctrl sub
- nodename for spi in rk322x.dtsi
-Date: Fri, 22 May 2020 10:50:18 -0400
-Message-Id: <20200522145044.434677-6-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 01/19] ARM: dts: rockchip: fix phy nodename for
+ rk3228-evb
+Date: Fri, 22 May 2020 10:51:02 -0400
+Message-Id: <20200522145120.434921-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200522145044.434677-1-sashal@kernel.org>
-References: <20200522145044.434677-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_075053_487031_F5A0F824 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200522_075124_116808_1EB781D6 
+X-CRM114-Status: GOOD (  11.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,57 +87,45 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Johan Jonker <jbx6244@gmail.com>
 
-[ Upstream commit 855bdca1781c79eb661f89c8944c4a719ce720e8 ]
+[ Upstream commit 287e0d538fcec2f6e8eb1e565bf0749f3b90186d ]
 
-A test with the command below gives these errors:
+A test with the command below gives for example this error:
 
-arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-0:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-evb.dt.yaml: spi-1:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-0:
-'#address-cells' is a required property
-arch/arm/boot/dts/rk3229-xms6.dt.yaml: spi-1:
-'#address-cells' is a required property
+arch/arm/boot/dts/rk3228-evb.dt.yaml: phy@0:
+'#phy-cells' is a required property
 
-The $nodename pattern for spi nodes is
-"^spi(@.*|-[0-9a-f])*$". To prevent warnings rename
-'spi-0' and 'spi-1' pinctrl sub nodenames to
-'spi0' and 'spi1' in 'rk322x.dtsi'.
+The phy nodename is normally used by a phy-handle.
+This node is however compatible with
+"ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22"
+which is just been added to 'ethernet-phy.yaml'.
+So change nodename to 'ethernet-phy' for which '#phy-cells'
+is not a required property
 
 make ARCH=arm dtbs_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/spi/spi-controller.yaml
+DT_SCHEMA_FILES=~/.local/lib/python3.5/site-packages/dtschema/schemas/
+phy/phy-provider.yaml
 
 Signed-off-by: Johan Jonker <jbx6244@gmail.com>
-Link: https://lore.kernel.org/r/20200424123923.8192-1-jbx6244@gmail.com
 Signed-off-by: Heiko Stuebner <heiko@sntech.de>
+Link: https://lore.kernel.org/r/20200416170321.4216-1-jbx6244@gmail.com
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/rk322x.dtsi | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/rk3228-evb.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/rk322x.dtsi b/arch/arm/boot/dts/rk322x.dtsi
-index c60784f3aa75..6bb78b19c555 100644
---- a/arch/arm/boot/dts/rk322x.dtsi
-+++ b/arch/arm/boot/dts/rk322x.dtsi
-@@ -1033,7 +1033,7 @@
- 			};
- 		};
+diff --git a/arch/arm/boot/dts/rk3228-evb.dts b/arch/arm/boot/dts/rk3228-evb.dts
+index 5670b33fd1bd..aed879db6c15 100644
+--- a/arch/arm/boot/dts/rk3228-evb.dts
++++ b/arch/arm/boot/dts/rk3228-evb.dts
+@@ -46,7 +46,7 @@
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
  
--		spi-0 {
-+		spi0 {
- 			spi0_clk: spi0-clk {
- 				rockchip,pins = <0 RK_PB1 2 &pcfg_pull_up>;
- 			};
-@@ -1051,7 +1051,7 @@
- 			};
- 		};
- 
--		spi-1 {
-+		spi1 {
- 			spi1_clk: spi1-clk {
- 				rockchip,pins = <0 RK_PC7 2 &pcfg_pull_up>;
- 			};
+-		phy: phy@0 {
++		phy: ethernet-phy@0 {
+ 			compatible = "ethernet-phy-id1234.d400", "ethernet-phy-ieee802.3-c22";
+ 			reg = <0>;
+ 			clocks = <&cru SCLK_MAC_PHY>;
 -- 
 2.25.1
 
