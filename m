@@ -2,115 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACBB61DE408
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:16:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F19A81DE40B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 22 May 2020 12:17:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GO/ruFfZmv3HpARAkelfWpJwPEVsE8IQZG4ArKkiy1U=; b=LpyVrIiD0mLb+H
-	36cFUufKdwTwfxonYhgKiyknjqX1SQ4UuxYf6yOtA3Vky51F9xHm5eWoJYe1PKgWjbfqQv1YqkTL3
-	gIoM6tadipQUTP9sF5sjL8iGuONzD6OXu//6hAwuuvJIsNwKD0ODiaxKAp6jlZCyjoscLJlMS6IA/
-	vLsmq1nmMpLa80qexkad39Drdt/7lH/zLyH5z+zpq4oDqDPRED5h9Dgs1Q1zYo/+4nIMPXHNamAp9
-	+hrA4TL2kjzho2zGUOiC+lSHdJMDZyhcxC2gqiBn9pOqR0VyTWCFIZpyqzgj9Q9yrLDYrtv664wva
-	VePGUvm/rVzOj8RLedAQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Tl3+aCNtrY4E4qtoGAfKXn+nmDWSuqQVGLJeobjYUq8=; b=FKyU2eb8Trd6S+
+	rgmiMivh2Q/0Duk4q3fbI6vdDY7cjupR5SbRoyPbLVgXH5BghQlt7E/d1ijZZQVud9bZZIRTl1zku
+	M3dtpxImrDbT3ikfEmNbGRLl2LamL4fcJkmd0RpjV7G0rjDx83VNvZyCtboq7udmS1cgBhlbe8/n1
+	wzrMc9+7TxoGn43owx0gC6lMWDcq7L2+9l35BJWa914XyLhBgm4OIoHXLqH9LHqist07hsg7Ir9yD
+	kYyH1Zp13LPOmKMYy+lAxr8tXsR2ALVkbcAdTIzcDJdhZ5KxnqI3FKAaUW9NtnkLXGpqKFju+gnC+
+	r8axGQdyHh0/bFXrAvjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc4jG-0006fO-T9; Fri, 22 May 2020 10:16:38 +0000
-Received: from mail-dm6nam12on2081.outbound.protection.outlook.com
- ([40.107.243.81] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1jc4k4-00079l-Hu; Fri, 22 May 2020 10:17:28 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc4ge-0002Sd-3X
- for linux-arm-kernel@lists.infradead.org; Fri, 22 May 2020 10:13:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=OgK5/HfNibtMQzBGs1ukSDOWwPGds9RFNKkU0YHUaHG+JYeUCKtPHGTH/EMmIJAfGm3a08MJksn6lVx2fbxRe/iy4FMkyUZbKS/Nvh8gby55O/n1ov2bwxOe2ZNG61zgi6H7/y+t54e/66A2JT7NT4wpgqC3EmpURAWQRdkL5h0G/9saepMD+mGaeoaLBuBG0zDUO/ok3hBKrUV0dub1hOyytOsK4NOsF/IIfQerj0EgRT85KTUccoX5lpyQ7aQCPpEL8AM4ujQhtLcuXfrWbdqy/i4xfcnZj2ZQCJy1MDOPQ5m80aMx0ofn3H4exXOpjL3RQ9emS8jIrmDACf18KA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mTKtN9Ug6mmfRFpD6K6zDwDVkPakQr9Of6JoGRC6fO8=;
- b=jJuIcSetadZ1P2tDo+Hy6FspuaqUna5Y6BALaWglttu71838O0dX0v2lC/saOt1La8zvQ5vybb/k4pUyJkGpBAC8KVeMT4NwEjWWnymhD/SI8U2KA0+Hq0ryLGcfrDF+J944UrGweC4vjnA0P8En/X7WVej1WGCG7uNK8dr2/7UC9v4UlLUEqVH4N2uzazFPfLto4nKzCuAiMBHhcBKVNIVRKhXT5fZ6ZA9kaxTFj2zEfZMDFMn1fuR60FvnrvqRTdLovpFExrN6jyeMDWv+aHeSAgdxu/fNNiyq2Qiy5iWg8Gz9aLvuY2AdEUPUqITG3jzOO+IlphqY4ibSaNK2gQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synaptics.com; dmarc=pass action=none
- header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=mTKtN9Ug6mmfRFpD6K6zDwDVkPakQr9Of6JoGRC6fO8=;
- b=NOGVi4rTKieF8MK8vorTuBpF5o0HTDf8h+5FjRBwijdnLuREBPLHCCCs1o1jG/ltxkvTMKPog0kbD1YK46Sip6VfHGr3rJUdwA5kTz1opjxGkhlEhOjGGMxMXiKDFwuKOm2JXyF3yH8ZswfNNyp6jq/YpkWenmAH5Ipn5GYADCg=
-Authentication-Results: glider.be; dkim=none (message not signed)
- header.d=none;glider.be; dmarc=none action=none header.from=synaptics.com;
-Received: from BYAPR03MB3573.namprd03.prod.outlook.com (2603:10b6:a02:ae::15)
- by BYAPR03MB3750.namprd03.prod.outlook.com (2603:10b6:a03:6f::15)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.20; Fri, 22 May
- 2020 10:13:51 +0000
-Received: from BYAPR03MB3573.namprd03.prod.outlook.com
- ([fe80::d1ae:8ea7:ea:8998]) by BYAPR03MB3573.namprd03.prod.outlook.com
- ([fe80::d1ae:8ea7:ea:8998%7]) with mapi id 15.20.3021.026; Fri, 22 May 2020
- 10:13:50 +0000
-Date: Fri, 22 May 2020 18:12:30 +0800
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH v2 06/15] ARM: berlin: Drop unneeded select of HAVE_SMP
-Message-ID: <20200522181118.36de5dd9@xhacker.debian>
-In-Reply-To: <20200505150722.1575-7-geert+renesas@glider.be>
-References: <20200505150722.1575-1-geert+renesas@glider.be>
- <20200505150722.1575-7-geert+renesas@glider.be>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-X-ClientProxiedBy: TY2PR04CA0012.apcprd04.prod.outlook.com
- (2603:1096:404:f6::24) To BYAPR03MB3573.namprd03.prod.outlook.com
- (2603:10b6:a02:ae::15)
+ id 1jc4gY-0002Kr-6c; Fri, 22 May 2020 10:13:56 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04MADjOX037981;
+ Fri, 22 May 2020 05:13:45 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1590142425;
+ bh=Y7BdeNVokOKyLBDDNcrtZpTZIwA7YFtbGgHwOD1vs1Y=;
+ h=From:To:CC:Subject:Date;
+ b=MoxJr2anMlRX9AUPVoGJh1v1SXKnfdA/JQBayItyqag6DfwmIWmk6HiHgvn9pKKZ/
+ wAhii26MmP8watgt76FkpOly6IcQ+SD38xTkpBvKsbAGdSH7d4QE+XW97LoO+BiZo0
+ 8brHTvbdsJG00ba9EGuOudRCS4GMgxvLFiVhjVx0=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04MADjPs032714
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 22 May 2020 05:13:45 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 22
+ May 2020 05:13:07 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Fri, 22 May 2020 05:13:07 -0500
+Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04MAD1a1041179;
+ Fri, 22 May 2020 05:13:02 -0500
+From: Pratyush Yadav <p.yadav@ti.com>
+To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
+ <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
+ Raghavendra <vigneshr@ti.com>, Mark Brown <broonie@kernel.org>,
+ Nicolas Ferre <nicolas.ferre@microchip.com>, Alexandre Belloni
+ <alexandre.belloni@bootlin.com>, Ludovic Desroches
+ <ludovic.desroches@microchip.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ <linux-mtd@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>
+Subject: [PATCH v7 00/20] mtd: spi-nor: add xSPI Octal DTR support
+Date: Fri, 22 May 2020 15:42:41 +0530
+Message-ID: <20200522101301.26909-1-p.yadav@ti.com>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from xhacker.debian (124.74.246.114) by
- TY2PR04CA0012.apcprd04.prod.outlook.com (2603:1096:404:f6::24) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3021.23 via Frontend Transport; Fri, 22 May 2020 10:13:48 +0000
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-X-Originating-IP: [124.74.246.114]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 31eda608-cc58-4b15-336b-08d7fe38d2b2
-X-MS-TrafficTypeDiagnostic: BYAPR03MB3750:
-X-Microsoft-Antispam-PRVS: <BYAPR03MB3750577EEDA0E9CB8B07C537EDB40@BYAPR03MB3750.namprd03.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
-X-Forefront-PRVS: 04111BAC64
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 5LviJ8V6PWnVhZAnMiDAB83WgUzIrxhu5UZV5bnjX9UYtEygsWMPYUEoV5jkT21v+SCYKEV4CLdiBFkID0l4Id/Zd7FnpCDDEp/UO+n2bQboWyNeDth+F2jiV6/DMETKA/JmGrTRvXrGMlJCJ3NVA9G7VTIbuLa+dMBNgwOiY47KiPOi/GSU3zWv02k7cPeeC4p2hOqgJS/qjh8PsNYcsv2Cbc/X/v3ilxHNXWTmUGYvZX73ZgFjGDyOE8zpV/vszZfec+QggUm8R+2qLaWBl7VxxgdKB1dKojPanGpJlrwtstbHDvauBYhHUAvW8zzkHD7LbzDGCIv21Z+A66pnQxYjryl2NOK7DgNUWorcW1oYeGhDFlNkO4aaR7QZjSvszSyXuLTglF54zZq6eC051F/g3tu06Vc8gVKjUjuQ414NTdhs6zYw2YdHITR31I76
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:BYAPR03MB3573.namprd03.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(39860400002)(396003)(366004)(136003)(376002)(346002)(316002)(7696005)(55016002)(956004)(52116002)(54906003)(6666004)(6506007)(9686003)(5660300002)(2906002)(8676002)(86362001)(8936002)(478600001)(66476007)(66946007)(186003)(66556008)(26005)(1076003)(4326008)(16526019);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: LvspS/C47dCAFz9y1RYWt4dT1m7xN4O+SAJSojAW2GSEazrDsdVhLtVDTr5yopoCEfxze7GBWI6YfKVlXFHOOSQm2z5SYNEVT2iDXWmvkJK3QXxcKUtyHr5BtC5zEBW4KaFFpk52GXyHhyKu9fiYmq6kWg482BrxgXwdaK4bMO+FBDttGPD0rk6NF4LAXO9gNAi6ZKNAwNzSn3I/Grqji0vtT8eQ8qWaamB4JqTkYhYqe6EBxJe4VdIqUnbIIDD/UYVniINiiB4oGicQJWpSQZ568f2crjnqBIMPaXGoGSBkoJpcyhVKYGFwTWm8yY65cewB5OozjQjg8hnU42DEASp7lkypEQn9IhcIMNTBKlyx1ZFS7YtIYPar4Q4hPcRzeF9oEyEB+JgVwNnYjzS8aXBkD7sbNG5W6s5weO7tcvjMbV0pqE0TTWtvcMfKLL7kLiSv4oGdaMH4YZ3mzCRK/hmhZcmznQz/FXGN2Eeqruk=
-X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 31eda608-cc58-4b15-336b-08d7fe38d2b2
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 May 2020 10:13:50.5190 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 335d1fbc-2124-4173-9863-17e7051a2a0e
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: m1XsDOkAFXXwU9VvEnLOqyTMTJT6G/dC3G83N2gKAzmNqZY93db2l5MN+4ckBqoGWj6jCzaUlWBv4UMoRIfO0A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB3750
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_031356_258160_AB29726F 
-X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200522_031350_525658_5E8D42BA 
+X-CRM114-Status: GOOD (  19.86  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.243.81 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.243.81 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -122,65 +96,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>,
- linux-kernel@vger.kernel.org, soc@kernel.org, Olof Johansson <olof@lixom.net>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Mason Yang <masonccyang@mxic.com.tw>,
+ Boris Brezillon <boris.brezillon@collabora.com>, Sekhar Nori <nsekhar@ti.com>,
+ Pratyush Yadav <p.yadav@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd, Kevin, Olof,
+Hi,
 
-On Tue,  5 May 2020 17:07:13 +0200 Geert Uytterhoeven wrote:
+This series adds support for octal DTR flashes in the spi-nor framework,
+and then adds hooks for the Cypress Semper and Mircom Xcella flashes to
+allow running them in octal DTR mode. This series assumes that the flash
+is handed to the kernel in Legacy SPI mode.
 
-> 
-> 
-> Support for Marvell Berlin SoCs depends on ARCH_MULTI_V7.
-> As the latter selects HAVE_SMP, there is no need for MACH_BERLIN_BG2 to
-> select HAVE_SMP.
-> 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> Cc: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-> Cc: Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-> Acked-by: Arnd Bergmann <arnd@arndb.de>
+Tested on TI J721e EVM with 1-bit ECC on the Cypress flash.
 
-The patch looks good to me. I want to know what will be the mainline
-path of this series. SoC maintainers take it then send A PR to arm-soc?
-Or each SoC maintainers ack it, arm-soc will take the whole series?
-If later, then
+Changes in v7:
+- Reject ops with more than 1 command byte in
+  spi_mem_default_supports_op().
 
-Acked-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+- Reject ops with more than 1 command byte in atmel and mtk controllers.
 
+- Reject ops with 0 command bytes in spi_mem_check_op().
 
-This is the first time I see a series touch different SoC platforms.
+- Set cmd.nbytes to 1 when using SPI_MEM_OP_CMD().
 
-Thanks in advance,
-Jisheng
+- Avoid endianness problems in spi-mxic.
 
-> ---
-> v2:
->   - Add Acked-by.
-> ---
->  arch/arm/mach-berlin/Kconfig | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/arch/arm/mach-berlin/Kconfig b/arch/arm/mach-berlin/Kconfig
-> index 5b1f61fd78780300..01861fa72c9714b7 100644
-> --- a/arch/arm/mach-berlin/Kconfig
-> +++ b/arch/arm/mach-berlin/Kconfig
-> @@ -19,7 +19,6 @@ config MACH_BERLIN_BG2
->         select CPU_PJ4B
->         select HAVE_ARM_SCU if SMP
->         select HAVE_ARM_TWD if SMP
-> -       select HAVE_SMP
->         select PINCTRL_BERLIN_BG2
-> 
->  config MACH_BERLIN_BG2CD
-> --
-> 2.17.1
-> 
+Changes in v6:
+- Instead of hard-coding 8D-8D-8D Fast Read dummy cycles to 20, find
+  them out from the Profile 1.0 table.
+
+Changes in v5:
+- Do not enable stateful X-X-X modes if the reset line is broken.
+
+- Instead of setting SNOR_READ_HWCAPS_8_8_8_DTR from Profile 1.0 table
+  parsing, do it in spi_nor_info_init_params() instead based on the
+  SPI_NOR_OCTAL_DTR_READ flag instead.
+
+- Set SNOR_HWCAPS_PP_8_8_8_DTR in s28hs post_sfdp hook since this
+  capability is no longer set in Profile 1.0 parsing.
+
+- Instead of just checking for spi_nor_get_protocol_width() in
+  spi_nor_octal_dtr_enable(), make sure the protocol is
+  SNOR_PROTO_8_8_8_DTR since get_protocol_width() only cares about data
+  width.
+
+- Drop flag SPI_NOR_SOFT_RESET. Instead, discover soft reset capability
+  via BFPT.
+
+- Do not make an invalid Quad Enable BFPT field a fatal error. Silently
+  ignore it by assuming no quad enable bit is present.
+
+- Set dummy cycles for Cypress Semper flash to 24 instead of 20. This
+  allows for 200MHz operation in 8D mode compared to the 166MHz with 20.
+
+- Rename spi_nor_cypress_octal_enable() to
+  spi_nor_cypress_octal_dtr_enable().
+
+- Update spi-mtk-nor.c to reject DTR ops since it doesn't call
+  spi_mem_default_supports_op().
+
+Changes in v4:
+- Refactor the series to use the new spi-nor framework with the
+  manufacturer-specific bits separated from the core.
+
+- Add support for Micron MT35XU512ABA.
+
+- Use cmd.nbytes as the criteria of whether the data phase exists or not
+  instead of cmd.buf.in || cmd.buf.out in spi_nor_spimem_setup_op().
+
+- Update Read FSR to use the same dummy cycles and address width as Read
+  SR.
+
+- Fix BFPT parsing stopping too early for JESD216 rev B flashes.
+
+- Use 2 byte reads for Read SR and FSR commands in DTR mode.
+
+Changes in v3:
+- Drop the DT properties "spi-rx-dtr" and "spi-tx-dtr". Instead, if
+  later a need is felt to disable DTR in case someone has a board with
+  Octal DTR capable flash but does not support DTR transactions for some
+  reason, a property like "spi-no-dtr" can be added.
+
+- Remove mode bits SPI_RX_DTR and SPI_TX_DTR.
+
+- Remove the Cadence Quadspi controller patch to un-block this series. I
+  will submit it as a separate patch.
+
+- Rebase on latest 'master' and fix merge conflicts.
+
+- Update read and write dirmap templates to use DTR.
+
+- Rename 'is_dtr' to 'dtr'.
+
+- Make 'dtr' a bitfield.
+
+- Reject DTR ops in spi_mem_default_supports_op().
+
+- Update atmel-quadspi to reject DTR ops. All other controller drivers
+  call spi_mem_default_supports_op() so they will automatically reject
+  DTR ops.
+
+- Add support for both enabling and disabling DTR modes.
+
+- Perform a Software Reset on flashes that support it when shutting
+  down.
+
+- Disable Octal DTR mode on suspend, and re-enable it on resume.
+
+- Drop enum 'spi_mem_cmd_ext' and make command opcode u16 instead.
+  Update spi-nor to use the 2-byte command instead of the command
+  extension. Since we still need a "extension type", mode that enum to
+  spi-nor and name it 'spi_nor_cmd_ext'.
+
+- Default variable address width to 3 to fix SMPT parsing.
+
+- Drop non-volatile change to uniform sector mode and rely on parsing
+  SMPT.
+
+Changes in v2:
+- Add DT properties "spi-rx-dtr" and "spi-tx-dtr" to allow expressing
+  DTR capabilities.
+
+- Set the mode bits SPI_RX_DTR and SPI_TX_DTR when we discover the DT
+  properties "spi-rx-dtr" and spi-tx-dtr".
+
+- spi_nor_cypress_octal_enable() was updating nor->params.read[] with
+  the intention of setting the correct number of dummy cycles. But this
+  function is called _after_ selecting the read so setting
+  nor->params.read[] will have no effect. So, update nor->read_dummy
+  directly.
+
+- Fix spi_nor_spimem_check_readop() and spi_nor_spimem_check_pp()
+  passing nor->read_proto and nor->write_proto to
+  spi_nor_spimem_setup_op() instead of read->proto and pp->proto
+  respectively.
+
+- Move the call to cqspi_setup_opcode_ext() inside cqspi_enable_dtr().
+  This avoids repeating the 'if (f_pdata->is_dtr)
+  cqspi_setup_opcode_ext()...` snippet multiple times.
+
+- Call the default 'supports_op()' from cqspi_supports_mem_op(). This
+  makes sure the buswidth requirements are also enforced along with the
+  DTR requirements.
+
+- Drop the 'is_dtr' argument from spi_check_dtr_req(). We only call it
+  when a phase is DTR so it is redundant.
+
+Pratyush Yadav (20):
+  spi: spi-mem: allow specifying whether an op is DTR or not
+  spi: spi-mem: allow specifying a command's extension
+  spi: atmel-quadspi: reject DTR ops
+  spi: spi-mtk-nor: reject DTR ops
+  spi: mxic: Avoid endianness problems with 2-byte opcodes
+  mtd: spi-nor: add support for DTR protocol
+  mtd: spi-nor: sfdp: default to addr_width of 3 for configurable widths
+  mtd: spi-nor: sfdp: prepare BFPT parsing for JESD216 rev D
+  mtd: spi-nor: sfdp: get command opcode extension type from BFPT
+  mtd: spi-nor: sfdp: parse xSPI Profile 1.0 table
+  mtd: spi-nor: core: use dummy cycle and address width info from SFDP
+  mtd: spi-nor: core: do 2 byte reads for SR and FSR in DTR mode
+  mtd: spi-nor: core: enable octal DTR mode when possible
+  mtd: spi-nor: sfdp: do not make invalid quad enable fatal
+  mtd: spi-nor: sfdp: detect Soft Reset sequence support from BFPT
+  mtd: spi-nor: core: perform a Soft Reset on shutdown
+  mtd: spi-nor: core: disable Octal DTR mode on suspend.
+  mtd: spi-nor: core: expose spi_nor_default_setup() in core.h
+  mtd: spi-nor: spansion: add support for Cypress Semper flash
+  mtd: spi-nor: micron-st: allow using MT35XU512ABA in Octal DTR mode
+
+ drivers/mtd/spi-nor/core.c      | 446 +++++++++++++++++++++++++++-----
+ drivers/mtd/spi-nor/core.h      |  22 ++
+ drivers/mtd/spi-nor/micron-st.c | 112 +++++++-
+ drivers/mtd/spi-nor/sfdp.c      | 143 +++++++++-
+ drivers/mtd/spi-nor/sfdp.h      |  13 +-
+ drivers/mtd/spi-nor/spansion.c  | 167 ++++++++++++
+ drivers/spi/atmel-quadspi.c     |   6 +
+ drivers/spi/spi-mem.c           |   8 +-
+ drivers/spi/spi-mtk-nor.c       |   6 +
+ drivers/spi/spi-mxic.c          |   6 +-
+ include/linux/mtd/spi-nor.h     |  53 +++-
+ include/linux/spi/spi-mem.h     |  14 +-
+ 12 files changed, 902 insertions(+), 94 deletions(-)
+
+--
+2.26.2
 
 
 _______________________________________________
