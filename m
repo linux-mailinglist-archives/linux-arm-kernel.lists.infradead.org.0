@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 934721DFB15
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 23:03:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 316EB1DFB1B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 23:09:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
 	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=A5RXjn2XI0ArzWnYfnd4FQQcdUMtDdAo8KGvU8NnSbE=; b=boRiH/Acb7PSjX
-	E3AnPYML+WX/OkPmuRMoYrVDxOgC0p3c11TEk57mRDRSoTaOcc/ffcXLsImgf3aRBEPXdbM5cEqiR
-	Ur99GN9JPvmg43Sd7U6w2f5ivMOda8ypJudqYHIF9DXeS4PR7iW3Idldbe6Cxu2GmMM7LOylaLApU
-	ODCUiLVZ+O1ITPIphj8V74LdqzTEucLlFCLapFqkF+tfDBAhXSMtrpFOIjZx7yb5wwl1DdmXPHqFo
-	HdgP7GZEzpEnsWXIoHgfbGVkAI3LN1CtBtPWLpoQiK9x1xTTTGx1fIrz2mxpUdWP9v+2zkZSF4wQm
-	Pqi3/HzEP/NbgRrm903Q==;
+	List-Owner; bh=yDBHqY0iLJskAgZKcF9ELvpn5D7qBMB4sJ2WCvHLGKE=; b=EPZOQmQ+l1YeAX
+	cRA5SUeO+xKXlsIugAX6elYkLqU9n9HHfL9XV6x/AiuPzCC4S5s2xDeLyiUFwX8QEGnA7vpgAJTJ6
+	+4ajmA9SQMM9AMCVAvNt72NHLQcIYrChEhTx7O1ryAmO12ugahORlYYr35BU+z6TdFDpPvylZ1lUI
+	BGwJFfWdvFjo+HlSk1bRXCQq/RfpGb6BCg8+kyX++pm+kdussJuC2v0Cc+tOUVD2dpUlCzN2pyrFW
+	Tq0oZMiZVw33qM1depJ91pI+MQoLhyusCpJZzBUb7Vc/h3bPXs+oznjuW4cLV93PykG11nyC6krCp
+	lmAqBx4h9h/lFh7SMiXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcbJ9-0002WE-Kv; Sat, 23 May 2020 21:03:51 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jcbOk-0005yH-7u; Sat, 23 May 2020 21:09:38 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcbIy-0002Uu-N3; Sat, 23 May 2020 21:03:42 +0000
-Received: by mail-wm1-x342.google.com with SMTP id r9so1609166wmh.2;
- Sat, 23 May 2020 14:03:39 -0700 (PDT)
+ id 1jcbOZ-0005xS-3A; Sat, 23 May 2020 21:09:28 +0000
+Received: by mail-wr1-x443.google.com with SMTP id e1so13688415wrt.5;
+ Sat, 23 May 2020 14:09:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:from:subject:autocrypt:message-id:date:user-agent
+ h=to:from:subject:autocrypt:cc:message-id:date:user-agent
  :mime-version:content-language:content-transfer-encoding;
- bh=sy722Yc9RDBr6edku7U3y+0kpiQBYkyUkOlvzghnUKg=;
- b=tCwL8J1H8/bGUbccXq/9xPztnl1jZaR6azv2VonyN2js3GPsmsyQ/dOXIVa9Y03Pq0
- Aaj2zhSe+J1iP4OLOTBvQID/0LE+kcjSEBD34trDKfOiVB/hO+EZltd/TF/4lX5xABLT
- 4wvLAnqYWjiM1l3u9UXx7KPl8U9MXLXFToS6axD+QpTuUXz6rowOH0PdX0C++Ystv+Dz
- DIsvQGDGkzyb3BmOu4rI9/Q1xG50lSmF9na2ap/WyyPA0lflccjJSJ+DbXhzLib059+8
- GD/ezRt0+1/gT0xXOxyr1Oktg69c1uAujscFLog8dphj1CKK5cMGqC3IunTH+vdBPl1F
- YDHg==
+ bh=MpCaprtbaXXxdqt/FH0fc1Fe540fL9Ym8T8xlLJRlHc=;
+ b=CB4CjhTeIFv+fMHds3vpI4vmIMeGMV7AYAcn817miAbgnVXgv/XYuoZVxGOK76JiVx
+ tSxdACPKyQ2Gq7bRIlB7K5pDDDGkmAjNlDnLbsNnDa/bgiFdOi7KctfGz6a6xFSwVodu
+ 38UiY8fQA/axNLFi9BbjSCHBk0hG33+scLfsN5+LQZ+5PcAiiAXz8ZdbIm4VE0iTAHKT
+ piaGGxcWM9DpLrVN82cPNPZe6DXLIJdBgF6NX+feEjzjlJ9fFcOUj9CJujQRLUgGTUaM
+ jLGkNz2aouLdQmbnRqoUPZfdm4gR415Hxtb5cFPXpU7gr5rQZbTSRYHk1xRJg1YOiqys
+ xOgg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:from:subject:autocrypt:message-id:date
+ h=x-gm-message-state:to:from:subject:autocrypt:cc:message-id:date
  :user-agent:mime-version:content-language:content-transfer-encoding;
- bh=sy722Yc9RDBr6edku7U3y+0kpiQBYkyUkOlvzghnUKg=;
- b=RuSO5BbqPx5yrsEfjL/qZ+WfvuR+zVuw9XdzXf/nmOddypyuUZFIXhOcwXmltWqnJG
- K5/02PbmEb2LImUsSLr7gLPTnld1IOIhSi34FcxJ/5nBoI44ga14jVvAByZPOPWFziWM
- sBp3PLQhQ6heOEAdNEpRN0mja/BIFCmYJPVt5nDjajuSLBefAcm77IjYum5ym29lUcaA
- nDv6/nvpgycpiheJX1sFVROzK5ThEyXJGN8C4VunpvFvkKi+aJTBmclJd+eSmWt5bFXp
- SvxnnIaKH6izY9uAeX+26q/81keNTNMMrYIdQ3p94r/MH3OPp/Q7FgrTzDP/LPt5WUCr
- jvbg==
-X-Gm-Message-State: AOAM530omz5y6wtkPvXtqmM+nmVjuviZ2q53k5bzlMuIE73CGDgf7hQo
- QBjCuzbpevaEb8RjIw6Wo/c=
-X-Google-Smtp-Source: ABdhPJzUrSauyzFPKecuICALbq4ToWBXaXfQ/+xSlEkzTROPjOrX4po/upDzWOUXaXZF95StmgMLmA==
-X-Received: by 2002:a05:600c:d0:: with SMTP id
- u16mr6192506wmm.124.1590267818097; 
- Sat, 23 May 2020 14:03:38 -0700 (PDT)
+ bh=MpCaprtbaXXxdqt/FH0fc1Fe540fL9Ym8T8xlLJRlHc=;
+ b=blBVsobeVwEgP12Oj2k5nvp77S5KekUJaxdEBT+heOyygH7et9kMTxWNKhR0S9Q5vu
+ 5EoZZfIH7S9UBYyDfr+heX2EMV3dm87+hPdlD/SY/O2jgJb6opfv5WijCfWzcWq2CbAk
+ KdsuBoE4bGy8zrxjpmwqMjPlbRj34AQYudyzRk95/slr57nVDIzFGHJ3Dwbfj9NuLUAD
+ RjshzdHEF7Ggmr1XLxZLXud02r0SBDm7XTZGSRrOCwH+Fmg9Qlzkux5KaEfr7d/SKthZ
+ 6q/c+HbkbHBa3qId2nCAnWcvCBBqpvwb6bPseufUOMDsifCF70HXY9xxjEAQe+NYDYqy
+ pKVg==
+X-Gm-Message-State: AOAM533DIuRtzeF8IK4fspxslMSI0gu0zEIQOqI19loY2EUnRMOR4zhQ
+ joy5jPq2EjA+rtRqdLw0wQ4=
+X-Google-Smtp-Source: ABdhPJyHt1EOl/YbPDcKFRITjZQd1ZqD64ncprFa2LP/DNsfA/mNgd8THDYfZUJ3n5+MiiWUHQ3XPw==
+X-Received: by 2002:adf:a55c:: with SMTP id j28mr5034043wrb.369.1590268165481; 
+ Sat, 23 May 2020 14:09:25 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id d4sm12801753wre.22.2020.05.23.14.03.36
+ by smtp.gmail.com with ESMTPSA id 1sm13738179wmz.13.2020.05.23.14.09.24
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 23 May 2020 14:03:37 -0700 (PDT)
+ Sat, 23 May 2020 14:09:24 -0700 (PDT)
 To: arm-soc <arm@kernel.org>, SoC Team <soc@kernel.org>
 From: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [GIT PULL] arm64: DT updates for v5.8 (2nd round)
+Subject: [GIT PULL] drivers: soc: mediatek: updates for v5.8 (2nd round)
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
  fL3eT7ZsYV5nur7zctmJ+vbszoOASXUpfq8M+S5hU2w7sBaVk5rpH9yW8CUWz2+ZpQXPJcFa
@@ -132,22 +131,22 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <7c9f85c7-5b13-38e3-7a1f-a3cd6461b095@gmail.com>
-Date: Sat, 23 May 2020 23:03:35 +0200
+Message-ID: <d2eb19f4-589a-89c1-02ad-9f19a6cfb09a@gmail.com>
+Date: Sat, 23 May 2020 23:09:24 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_140340_752869_70A38E60 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20200523_140927_153922_B0607930 
+X-CRM114-Status: GOOD (  16.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -171,86 +170,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jjian Zhou <jjian.zhou@mediatek.com>, Biao Huang <biao.huang@mediatek.com>,
- Long Cheng <long.cheng@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+Cc: Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-mediatek@lists.infradead.org>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "matthias.bgg@kernel.org" <matthias.bgg@kernel.org>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+ "matthias.bgg@kernel.org" <matthias.bgg@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Olof and Arnd,
+Hi Arnd,
+Hi Olof,
 
-This is the second round of DTS updates for arm64 based SoCs from MediaTek.
+Please have a look on the following patches for the SoC drivers from MediaTek.
+Basically it's the conversion of the missing drivers to the new mmsys approach I
+mentioned in the first pull request [1]. This request is based on this first
+pull request. With this new patches we finish the transition of all clock
+drivers to be probed via the mmsys SoC driver. This will allow us to enable DRM
+support on them (e.g. for mt7623 aka BananaPi-R2 there are some patches which
+need to be rebased).
 
-It's based on the first pull request I send on 16th of May [1].
-Please have a look and apply :)
+Please have a look and pull :)
 
 Regards,
 Matthias
 
 [1]
-https://lore.kernel.org/linux-mediatek/2794a8db-c14f-ac34-9e28-9f3700db6c4c@gmail.com/
+https://lore.kernel.org/linux-mediatek/2cf27d33-59c6-023b-9993-57a2639824ea@gmail.com/
 
 ---
-The following changes since commit f0e5405b9ebf084c34c41f5d38a0013bee166f4d:
+The following changes since commit 154910f886762a2817ddddad7fc6fed8c23b4ad1:
 
-  arm64: dts: mt8173: Add capacity-dmips-mhz attributes (2020-05-16 18:36:40 +0200)
+  ARM: mediatek: Replace <linux/clk-provider.h> by <linux/of_clk.h> (2020-05-15
+17:19:41 +0200)
 
 are available in the Git repository at:
 
   https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git/
-tags/v5.7-next-dts64.2
+tags/v5.7-next-soc.2
 
-for you to fetch changes up to 21eb9ec7c3e6f5c6ddae2e19768fd7eab2cd3b63:
+for you to fetch changes up to 32956dda97577f0960eb3d9d9aff7338d0cf4cc4:
 
-  arm: dts: mt2712: add uart APDMA to device tree (2020-05-23 21:03:13 +0200)
-
-----------------------------------------------------------------
-mt8183:
-- add PMIC mt6358
-- add MMC node
-
-mt2712:
-- enable APDMA for the uart node
-- add ethernet gmac node
-
-mmsys:
-- change node name to syscon as mmsys no longer represents only clocks
-  but also the DRM subsystem
+  clk/soc: mediatek: mt6779: Bind clock driver from platform device (2020-05-20
+12:49:35 +0200)
 
 ----------------------------------------------------------------
-Biao Huang (1):
-      arm64: dts: mt2712: add ethernet device node
+- make mmsys kconfig entry to depend on ARCH_MEDIATEK instead of a specific SoC
+- move clock driver to bind against the new mmsys driver
+  (mt2712, mt2701, mt8183, mt6797 and mt6779)
 
-Enric Balletbo i Serra (1):
-      arm64: dts: mt8173: Fix mmsys node name
+----------------------------------------------------------------
+Enric Balletbo i Serra (3):
+      soc: mediatek: Enable mmsys driver by default if Mediatek arch is selected
+      clk / soc: mediatek: Bind clock and gpu driver for mt2712
+      clk / soc: mediatek: Bind clock and gpu driver for mt2701
 
-Hsin-Hsiung Wang (1):
-      arm64: dts: mt6358: add PMIC MT6358 related nodes
+Matthias Brugger (3):
+      clk/soc: mediatek: mt8183: Bind clock driver from platform device
+      clk/soc: mediatek: mt6797: Bind clock driver from platform device
+      clk/soc: mediatek: mt6779: Bind clock driver from platform device
 
-Long Cheng (1):
-      arm: dts: mt2712: add uart APDMA to device tree
-
-Matthias Brugger (1):
-      arm64: dts: mt6797: Fix mmsys node name
-
-jjian zhou (1):
-      arm64: dts: mt8183: add mmc node
-
- arch/arm64/boot/dts/mediatek/mt2712-evb.dts |  74 ++++++
- arch/arm64/boot/dts/mediatek/mt2712e.dtsi   | 116 +++++++++
- arch/arm64/boot/dts/mediatek/mt6358.dtsi    | 358 ++++++++++++++++++++++++++++
- arch/arm64/boot/dts/mediatek/mt6797.dtsi    |   2 +-
- arch/arm64/boot/dts/mediatek/mt8173.dtsi    |   2 +-
- arch/arm64/boot/dts/mediatek/mt8183-evb.dts | 147 ++++++++++++
- arch/arm64/boot/dts/mediatek/mt8183.dtsi    |  24 ++
- 7 files changed, 721 insertions(+), 2 deletions(-)
- create mode 100644 arch/arm64/boot/dts/mediatek/mt6358.dtsi
+ drivers/clk/mediatek/clk-mt2701-mm.c |  9 ++------
+ drivers/clk/mediatek/clk-mt2712-mm.c |  9 ++------
+ drivers/clk/mediatek/clk-mt6779-mm.c |  9 ++------
+ drivers/clk/mediatek/clk-mt6797-mm.c |  9 ++------
+ drivers/clk/mediatek/clk-mt8183-mm.c |  9 ++------
+ drivers/soc/mediatek/Kconfig         |  3 +--
+ drivers/soc/mediatek/mtk-mmsys.c     | 40 ++++++++++++++++++++++++++++++++++++
+ 7 files changed, 51 insertions(+), 37 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
