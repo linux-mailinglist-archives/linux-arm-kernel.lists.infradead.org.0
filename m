@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0CF71DF87F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 19:10:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E32111DF87E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 19:10:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Pi6kV8GVPRHU6A4/ffOWs/8oi46igtdxgkoqxKxYb5E=; b=JwkmN0jBZ3vj3HALlAa/zqpimv
-	HDO+PtlCQRbRwlRHBi0xQzCtLgLuOOxLb+P46J3ICRWDpMs0rQDAAp+jjPrCFvov0xZx4YHTcpMhX
-	sZfmZds+K6J9z773Ti1LVTLr1o1kAM7NIdtwtliy1S4M5twiG/I0DtBdWyPXGO1A9eodmimQeJisd
-	JeX2RA39WALS+zLZcpAUST6d+bhA7EFPQmdboJ+Xb5bGXycrjzixIqxgoTuVcjlNQscOfZ++03VGu
-	k5HtzcAkRpF+gz7YhEHU3A4Ng4ImfSsc7bv+5CcKAttN0xs9nvVqBdG0GpqiqJrv81t3VHiou37YC
-	kiQO3L0Q==;
+	bh=S8PjQzKVGDT+4Fb+r2J02Jzwdg2LtW/XghpHHS7CO/8=; b=gI+8tZ1AIdppFfq5j38IHOg8nq
+	g+fviL2hXOHfVKVPCeLF84z+GaVvAwi3JS4atccVfPaEqP1xkgagSp9lvPZC5BowdkmkbuXXLVmzm
+	CP+9ceDGj0wuuEFsgTSuSjWl6DBg94PDacw72q06ZJDOov3JEfDiHouUBWI6lN3vO8yuf6RzWrhT/
+	hZ3idwtF/3bzra6+lc4NBsVlQIiixN+pxcGJF7lt8cGEaqWYtkSaWqg22rxq2ZsQR3zh1fwTy8A9b
+	qhqx+hcIgDkyXrPaqbVmL+ivICqFuqZd0JgwtfI+9TaI+jGK39UZii4iD4CHryDFZZKPSj+D8e6dn
+	9wa8k1gA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcXfN-0007eZ-He; Sat, 23 May 2020 17:10:33 +0000
+	id 1jcXf9-00053A-8i; Sat, 23 May 2020 17:10:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcXe6-0004FG-Nc
+ id 1jcXe6-0004FH-Nj
  for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 17:09:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 09C5CD6E;
- Sat, 23 May 2020 10:09:08 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 247AC106F;
+ Sat, 23 May 2020 10:09:09 -0700 (PDT)
 Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 24F553F305;
- Sat, 23 May 2020 10:09:07 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3DEC83F305;
+ Sat, 23 May 2020 10:09:08 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-kernel@vger.kernel.org,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/8] soc: realview: Switch to use DEVICE_ATTR_RO()
-Date: Sat, 23 May 2020 18:08:52 +0100
-Message-Id: <20200523170859.50003-2-sudeep.holla@arm.com>
+Subject: [PATCH 2/8] soc: realview: Use custom soc attribute group instead of
+ device_create_file
+Date: Sat, 23 May 2020 18:08:53 +0100
+Message-Id: <20200523170859.50003-3-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200523170859.50003-1-sudeep.holla@arm.com>
 References: <20200523170859.50003-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_100914_874625_5FCB8F40 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200523_100914_873522_1F461398 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,92 +72,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move device attributes to DEVICE_ATTR_RO() as that would make things
-a lot more "obvious" what is happening over the existing __ATTR usage.
+Commit c31e73121f4c ("base: soc: Handle custom soc information sysfs
+entries") introduced custom soc attribute group in soc_device_attribute
+structure but there are no users treewide. While trying to understand
+the motivation and tried to use it, it was found lot of existing custom
+attributes can moved to use it instead of device_create_file.
+
+Though most of these never remove/cleanup the custom attribute as they
+never call soc_device_unregister, using these custom attribute group
+eliminate the need for any cleanup as the driver infrastructure will
+take care of that.
+
+Let us remove device_create_file and start using the custom attribute
+group in soc_device_attribute.
 
 Cc: Linus Walleij <linus.walleij@linaro.org>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- drivers/soc/versatile/soc-realview.c | 40 +++++++++++-----------------
- 1 file changed, 16 insertions(+), 24 deletions(-)
+ drivers/soc/versatile/soc-realview.c | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/soc/versatile/soc-realview.c b/drivers/soc/versatile/soc-realview.c
-index 9471353dd8c3..cb3bcb7dd824 100644
+index cb3bcb7dd824..c6876d232d8f 100644
 --- a/drivers/soc/versatile/soc-realview.c
 +++ b/drivers/soc/versatile/soc-realview.c
-@@ -39,45 +39,37 @@ static const char *realview_arch_str(u32 id)
- 	}
- }
+@@ -71,6 +71,16 @@ build_show(struct device *dev, struct device_attribute *attr, char *buf)
  
--static ssize_t realview_get_manf(struct device *dev,
--			      struct device_attribute *attr,
--			      char *buf)
-+static ssize_t
-+manufacturer_show(struct device *dev, struct device_attribute *attr, char *buf)
- {
- 	return sprintf(buf, "%02x\n", realview_coreid >> 24);
- }
+ static DEVICE_ATTR_RO(build);
  
--static struct device_attribute realview_manf_attr =
--	__ATTR(manufacturer,  S_IRUGO, realview_get_manf,  NULL);
-+static DEVICE_ATTR_RO(manufacturer);
- 
--static ssize_t realview_get_board(struct device *dev,
--			      struct device_attribute *attr,
--			      char *buf)
-+static ssize_t
-+board_show(struct device *dev, struct device_attribute *attr, char *buf)
- {
- 	return sprintf(buf, "HBI-%03x\n", ((realview_coreid >> 16) & 0xfff));
- }
- 
--static struct device_attribute realview_board_attr =
--	__ATTR(board,  S_IRUGO, realview_get_board,  NULL);
-+static DEVICE_ATTR_RO(board);
- 
--static ssize_t realview_get_arch(struct device *dev,
--			      struct device_attribute *attr,
--			      char *buf)
-+static ssize_t
-+fpga_show(struct device *dev, struct device_attribute *attr, char *buf)
- {
- 	return sprintf(buf, "%s\n", realview_arch_str(realview_coreid));
- }
- 
--static struct device_attribute realview_arch_attr =
--	__ATTR(fpga,  S_IRUGO, realview_get_arch,  NULL);
-+static DEVICE_ATTR_RO(fpga);
- 
--static ssize_t realview_get_build(struct device *dev,
--			       struct device_attribute *attr,
--			       char *buf)
-+static ssize_t
-+build_show(struct device *dev, struct device_attribute *attr, char *buf)
- {
- 	return sprintf(buf, "%02x\n", (realview_coreid & 0xFF));
- }
- 
--static struct device_attribute realview_build_attr =
--	__ATTR(build,  S_IRUGO, realview_get_build,  NULL);
-+static DEVICE_ATTR_RO(build);
- 
++static struct attribute *realview_attrs[] = {
++	&dev_attr_manufacturer.attr,
++	&dev_attr_board.attr,
++	&dev_attr_fpga.attr,
++	&dev_attr_build.attr,
++	NULL
++};
++
++ATTRIBUTE_GROUPS(realview);
++
  static int realview_soc_probe(struct platform_device *pdev)
  {
-@@ -112,10 +104,10 @@ static int realview_soc_probe(struct platform_device *pdev)
+ 	struct regmap *syscon_regmap;
+@@ -94,6 +104,7 @@ static int realview_soc_probe(struct platform_device *pdev)
+ 
+ 	soc_dev_attr->machine = "RealView";
+ 	soc_dev_attr->family = "Versatile";
++	soc_dev_attr->custom_attr_group = realview_groups[0];
+ 	soc_dev = soc_device_register(soc_dev_attr);
+ 	if (IS_ERR(soc_dev)) {
+ 		kfree(soc_dev_attr);
+@@ -104,11 +115,6 @@ static int realview_soc_probe(struct platform_device *pdev)
  	if (ret)
  		return -ENODEV;
  
--	device_create_file(soc_device_to_device(soc_dev), &realview_manf_attr);
--	device_create_file(soc_device_to_device(soc_dev), &realview_board_attr);
--	device_create_file(soc_device_to_device(soc_dev), &realview_arch_attr);
--	device_create_file(soc_device_to_device(soc_dev), &realview_build_attr);
-+	device_create_file(soc_device_to_device(soc_dev), &dev_attr_manufacturer);
-+	device_create_file(soc_device_to_device(soc_dev), &dev_attr_board);
-+	device_create_file(soc_device_to_device(soc_dev), &dev_attr_fpga);
-+	device_create_file(soc_device_to_device(soc_dev), &dev_attr_build);
- 
+-	device_create_file(soc_device_to_device(soc_dev), &dev_attr_manufacturer);
+-	device_create_file(soc_device_to_device(soc_dev), &dev_attr_board);
+-	device_create_file(soc_device_to_device(soc_dev), &dev_attr_fpga);
+-	device_create_file(soc_device_to_device(soc_dev), &dev_attr_build);
+-
  	dev_info(&pdev->dev, "RealView Syscon Core ID: 0x%08x, HBI-%03x\n",
  		 realview_coreid,
+ 		 ((realview_coreid >> 16) & 0xfff));
 -- 
 2.17.1
 
