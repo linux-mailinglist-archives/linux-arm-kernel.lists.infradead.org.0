@@ -2,71 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EA981DF463
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 05:27:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 667001DF47F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 06:09:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=XwnzA/9oi042VW1sBXMa/7ZNy6kZ9TsItXP6IoGx+Dw=; b=pi2zB9an8R3r4eB5LTuwTBx80R
-	Wd/gxZRwDaTVcptpMGQjwu5DUAePIxYT8Dp/nmLgYiIHnOHxhF2fZ8JHMeBzLD9eGVKe8JPAlHdKQ
-	fF6n95vk/wrioXl9KMySqwTcZWcnkNncXAWalpKQWeerEhaAINrsZKeBL8bOKegP0uB5OK/BZeC2U
-	UzWoZVgZ5A1bZr06/R3QcSRuCrKxKI+VIGxklyPzGMJVisHQk980G73WmiOaXTS5ikWFDcJYuetQV
-	J7JxrqJgc0r4fR27PAr6LzMBPmwTKzK+3VJL9X8pjG/oEzUS8sOvoRZh7AFlI+uAFFcGJz/FaPfOH
-	nmnE5qfA==;
+	bh=KKg6nxEWWVM1DW0DrQUlfk/KS+QN0fY6/zn0fGyiVog=; b=LTcBJgcfeS9It4J1CSif8GEDI9
+	Qf+cQ+WqoSk2Swo11qyy6A3N9O5UWmNYiDZ/09u9DIVHMN0FN3gsRMUWQ802cKWq/aU96Pqkn/glG
+	9VNWl8TxZoRA1nmqsy8R5pKJr8i6PxP0UzRUQkbvM3KBAnFURFMIKKeqJUALZHEtDa15FJETf6+XX
+	awT8r8k6FhARhMQs/1zWwbwLTYuWioW4KrmJWABgUqX/ZrdaOjSxswRyxw6GtuPBjs6ywpadZPBjD
+	5axh092UkIF0qZXBkLriSVWW1D33xjv2+9vJ4vaXwVFDWniCSlzqFgK14179WlpbEq5rn263FYnC5
+	UYPknLtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcKoW-0001wb-7G; Sat, 23 May 2020 03:27:08 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jcLTI-0008S4-Ij; Sat, 23 May 2020 04:09:16 +0000
+Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcKn0-0000pn-I5
- for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 03:25:35 +0000
-Received: from localhost.localdomain (80.251.214.228.16clouds.com
- [80.251.214.228])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9ED88207F9;
- Sat, 23 May 2020 03:25:32 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590204334;
- bh=y3zY9Oq6PihXsEzJGDsQ9Zh9SdcheJcvQMAXNtaIdWA=;
- h=From:List-Id:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pS6WmitEKqwNvPQbf8q9upppltL/ZiYHRSol+WuKgi1Lbj6r0cVG4Xpzvf/nfWwS0
- bb4j2hOo8MI276qnRoviFoPzps58D/7x79tzbF6Byi6CA63aWQMPNt6731d3Ngvx99
- BMAIcZpO2ZMp+7D8CZKNi+l19w5Z3pUaL+3wC+/4=
-From: Shawn Guo <shawnguo@kernel.org>
-To: soc@kernel.org,
-	arm@kernel.org
-Subject: [GIT PULL 6/6] i.MX defconfig update for 5.8
-Date: Sat, 23 May 2020 11:25:16 +0800
-Message-Id: <20200523032516.11016-6-shawnguo@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200523032516.11016-1-shawnguo@kernel.org>
-References: <20200523032516.11016-1-shawnguo@kernel.org>
+ id 1jcLTA-0008RR-KD
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 04:09:10 +0000
+Received: from pps.filterd (m0098399.ppops.net [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04N42942159920; Sat, 23 May 2020 00:08:31 -0400
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 3160mk2mpc-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sat, 23 May 2020 00:08:30 -0400
+Received: from m0098399.ppops.net (m0098399.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 04N48U8L175628;
+ Sat, 23 May 2020 00:08:30 -0400
+Received: from ppma02wdc.us.ibm.com (aa.5b.37a9.ip4.static.sl-reverse.com
+ [169.55.91.170])
+ by mx0a-001b2d01.pphosted.com with ESMTP id 3160mk2mnw-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sat, 23 May 2020 00:08:30 -0400
+Received: from pps.filterd (ppma02wdc.us.ibm.com [127.0.0.1])
+ by ppma02wdc.us.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 04N45RWH012073;
+ Sat, 23 May 2020 04:08:28 GMT
+Received: from b01cxnp22036.gho.pok.ibm.com (b01cxnp22036.gho.pok.ibm.com
+ [9.57.198.26]) by ppma02wdc.us.ibm.com with ESMTP id 316uf9084h-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Sat, 23 May 2020 04:08:28 +0000
+Received: from b01ledav006.gho.pok.ibm.com (b01ledav006.gho.pok.ibm.com
+ [9.57.199.111])
+ by b01cxnp22036.gho.pok.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 04N48SdY14025224
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Sat, 23 May 2020 04:08:28 GMT
+Received: from b01ledav006.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 536E2AC05B;
+ Sat, 23 May 2020 04:08:28 +0000 (GMT)
+Received: from b01ledav006.gho.pok.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id B1ABCAC059;
+ Sat, 23 May 2020 04:08:17 +0000 (GMT)
+Received: from morokweng.localdomain (unknown [9.163.49.7])
+ by b01ledav006.gho.pok.ibm.com (Postfix) with ESMTPS;
+ Sat, 23 May 2020 04:08:17 +0000 (GMT)
+References: <20200504203829.6330-1-prsriva@linux.microsoft.com>
+ <20200505095620.GA82424@C02TD0UTHF1T.local>
+ <e8c7d74e-74bf-caa3-452d-23faa649e825@linux.microsoft.com>
+ <20200512230509.GA2654@bogus>
+ <7701df90-a68b-b710-4279-9d64e45ee792@linux.microsoft.com>
+User-agent: mu4e 1.2.0; emacs 26.3
+From: Thiago Jung Bauermann <bauerman@linux.ibm.com>
+To: Prakhar Srivastava <prsriva@linux.microsoft.com>
+Subject: Re: [RFC][PATCH 0/2] Add support for using reserved memory for ima
+ buffer pass
+In-reply-to: <7701df90-a68b-b710-4279-9d64e45ee792@linux.microsoft.com>
+Date: Sat, 23 May 2020 01:08:13 -0300
+Message-ID: <87v9knpa36.fsf@morokweng.localdomain>
+MIME-Version: 1.0
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-22_12:2020-05-22,
+ 2020-05-22 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ lowpriorityscore=0
+ adultscore=0 bulkscore=0 spamscore=0 priorityscore=1501 mlxlogscore=999
+ suspectscore=0 cotscore=-2147483648 impostorscore=0 phishscore=0
+ mlxscore=0 malwarescore=0 clxscore=1011 classifier=spam adjust=0
+ reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2005230027
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_202534_617390_C68963EF 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200522_210908_668911_6459E707 
+X-CRM114-Status: GOOD (  19.31  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.156.1 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [148.163.156.1 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,43 +111,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Guo <shawnguo@kernel.org>, Stefan Agner <stefan@agner.ch>,
- Li Yang <leoyang.li@nxp.com>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, kstewart@linuxfoundation.org,
+ gregkh@linuxfoundation.org, benh@kernel.crashing.org, bhsharma@redhat.com,
+ tao.li@vivo.com, zohar@linux.ibm.com, paulus@samba.org,
+ vincenzo.frascino@arm.com, will@kernel.org, Rob Herring <robh@kernel.org>,
+ nramas@linux.microsoft.com, frowand.list@gmail.com, masahiroy@kernel.org,
+ jmorris@namei.org, takahiro.akashi@linaro.org,
+ linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com,
+ serge@hallyn.com, devicetree@vger.kernel.org, pasha.tatashin@soleen.com,
+ hsinyi@chromium.org, tusharsu@linux.microsoft.com, tglx@linutronix.de,
+ allison@lohutok.net, christophe.leroy@c-s.fr, mbrugger@suse.com,
+ balajib@linux.microsoft.com, dmitry.kasatkin@gmail.com,
+ linux-kernel@vger.kernel.org, linux-security-module@vger.kernel.org,
+ james.morse@arm.com, mpe@ellerman.id.au, linux-integrity@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+Hello Prakhar,
 
-are available in the Git repository at:
+Prakhar Srivastava <prsriva@linux.microsoft.com> writes:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/imx-defconfig-5.8
+> On 5/12/20 4:05 PM, Rob Herring wrote:
+>> On Wed, May 06, 2020 at 10:50:04PM -0700, Prakhar Srivastava wrote:
+>>> Hi Mark,
+>>
+>> Please don't top post.
+>>
+>>> This patch set currently only address the Pure DT implementation.
+>>> EFI and ACPI implementations will be posted in subsequent patchsets.
+>>>
+>>> The logs are intended to be carried over the kexec and once read the
+>>> logs are no longer needed and in prior conversation with James(
+>>> https://lore.kernel.org/linux-arm-kernel/0053eb68-0905-4679-c97a-00c5cb6f1abb@arm.com/)
+>>> the apporach of using a chosen node doesn't
+>>> support the case.
+>>>
+>>> The DT entries make the reservation permanent and thus doesnt need kernel
+>>> segments to be used for this, however using a chosen-node with
+>>> reserved memory only changes the node information but memory still is
+>>> reserved via reserved-memory section.
+>>
+>> I think Mark's point was whether it needs to be permanent. We don't
+>> hardcode the initrd address for example.
+>>
+> Thankyou for clarifying my misunderstanding, i am modelling this keeping to the
+> TPM log implementation that uses a reserved memory. I will rev up the version
+> with chosen-node support.
+> That will make the memory reservation free after use.
 
-for you to fetch changes up to 5b4bf802427e3f49b9bca5e02ec7154e4d3d63ad:
+Nice. Do you intend to use the same property that powerpc uses
+(linux,ima-kexec-buffer)?
 
-  ARM: imx_v6_v7_defconfig: extend RN5T618 PMIC family support (2020-05-20 09:29:07 +0800)
+>>> On 5/5/20 2:59 AM, Mark Rutland wrote:
+>>>> Hi Prakhar,
+>>>>
+>>>> On Mon, May 04, 2020 at 01:38:27PM -0700, Prakhar Srivastava wrote:
+>>>>> IMA during kexec(kexec file load) verifies the kernel signature and measures
+>>
+>> What's IMAIMA is a LSM attempting to detect if files have been accidentally or
+> maliciously altered, both remotely and locally, it can also be used
+> to appraise a file's measurement against a "good" value stored as an extended
+> attribute, and enforce local file integrity.
+>
+> IMA also validates and measures the signers of the kernel and initrd
+> during kexec. The measurements are extended to PCR 10(configurable) and the logs
+> stored in memory, however once kexec'd the logs are lost. Kexec is used as
+> secondary boot loader in may use cases and loosing the signer
+> creates a security hole.
+>
+> This patch is an implementation to carry over the logs and making it
+> possible to remotely validate the signers of the kernel and initrd. Such a
+> support exits only in powerpc.
+> This patch makes the carry over of logs architecture independent and puts the
+> complexity in a driver.
 
-----------------------------------------------------------------
-i.MX defconfig update for 5.8:
+If I'm not mistaken, the code at arch/powerpc/kexec/ima.c isn't actually
+powerpc-specific. It could be moved to an arch-independent directory and
+used by any other architecture which supports device trees.
 
-- Enable RTC and ADC support of RN5T618 PMIC in imx_v6_v7_defconfig.
-- Enable i.MX8DXL pinctrl driver support in arm64 defconfig.
+I think that's the simplest way forward. And to be honest I'm still
+trying to understand why you didn't take that approach. Did you try it
+and hit some obstacle or noticed a disadvantage for your use case?
 
-----------------------------------------------------------------
-Andreas Kemnade (1):
-      ARM: imx_v6_v7_defconfig: extend RN5T618 PMIC family support
-
-Anson Huang (1):
-      arm64: defconfig: Enable CONFIG_PINCTRL_IMX8DXL by default
-
- arch/arm/configs/imx_v6_v7_defconfig | 2 ++
- arch/arm64/configs/defconfig         | 1 +
- 2 files changed, 3 insertions(+)
+--
+Thiago Jung Bauermann
+IBM Linux Technology Center
 
 _______________________________________________
 linux-arm-kernel mailing list
