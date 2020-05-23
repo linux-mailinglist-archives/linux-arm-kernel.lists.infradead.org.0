@@ -2,54 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC18E1DF887
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 19:11:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CA871DF888
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 19:12:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Bktdd899HU9R/NZ6AWGbwaTWfMahR0/Sb+BwbW6QIxU=; b=ZvCNhVaWJjzlyjwyym6AHww9eF
-	U7stTAIJo+lcKeGy5I55tST3LhCMraTPN9Rbc6bdBYMqY/ONK035H8DXnaz+derArPvxv+wQ51Tec
-	r7uHpmIz8/el4cc3/hrP3oe1mCl/r2cprfNzxQLV9kBrogwla80Jmr5KGo/f7P9aGo3f0xV/zBVKY
-	bvvalhMZCzp7P+YjM5UQUsXWYfVq7rtHGnwDhuQ2+G8klJRF1M/qXLQKAQIfPtTRN25VhaI0atuCs
-	vR1ENimxBzicKWM2q2guxWxtNTpLyuAUTqK2m08KDnfb09lPfNjmYvdcQgak8QA9IUdyp9MMPqwXh
-	pADST4Kw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=drTYP0UvL3o6ofCH0ZkgIQ8wWXbVjd/7DaW/M1WGZ7s=; b=QNSJFtXYPmNvbY
+	EskTglagCaDtusOnIuqYXpe/fvI2Vn3iUm6DSzf7fVfx2EVX6SwMPqxle7KIfYJjvmpT0P7FiUWT/
+	+eyjBGxJzh4vNoGGU4zQuPKIoKc0nQiqVzVpqbMC2H3ekuwlgHKn7dNQqLtSqfcpe5pfFvG+SjmT1
+	ZYIXh13qU1v1gOwWJ6vXSXI8igUqGjHtHw9YjIeLyGxmE9lxBVd2femzxs6f0y8sd74WGEkqgIzX8
+	dCQ958DsW/2P1qbBlVKnw6hBA6C9Jcq0vwzHWRy4eL5gc83/6WBziIFcg72Tmz8ud/8amqGxL0VFq
+	427XY2zj9Fo+TtNusbaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcXgY-0000I5-Av; Sat, 23 May 2020 17:11:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcXe8-0004Xp-Ux
- for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 17:09:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EE7B21FB;
- Sat, 23 May 2020 10:09:15 -0700 (PDT)
-Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EF7C63F305;
- Sat, 23 May 2020 10:09:14 -0700 (PDT)
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 8/8] ARM: OMAP2: Use custom soc attribute group instead of
- device_create_file
-Date: Sat, 23 May 2020 18:08:59 +0100
-Message-Id: <20200523170859.50003-9-sudeep.holla@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200523170859.50003-1-sudeep.holla@arm.com>
-References: <20200523170859.50003-1-sudeep.holla@arm.com>
+	id 1jcXh4-0000i9-7r; Sat, 23 May 2020 17:12:18 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jcXgl-0000gf-6A
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 17:12:01 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jcXgR-0007uE-FA; Sat, 23 May 2020 19:11:39 +0200
+Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <ukl@pengutronix.de>)
+ id 1jcXgG-0004qV-BC; Sat, 23 May 2020 19:11:28 +0200
+Date: Sat, 23 May 2020 19:11:28 +0200
+From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
+To: Yangtao Li <tiny.windzz@gmail.com>
+Subject: Re: [PATCH 01/32] pwm: sun4i: convert to
+ devm_platform_ioremap_resource
+Message-ID: <20200523171128.suii6ixbb5kpem34@pengutronix.de>
+References: <20191229080610.7597-1-tiny.windzz@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20191229080610.7597-1-tiny.windzz@gmail.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: ukl@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_100917_067406_835F3A68 
-X-CRM114-Status: GOOD (  12.13  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200523_101159_222847_A78B1505 
+X-CRM114-Status: UNSURE (   6.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,76 +69,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-omap@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Sudeep Holla <sudeep.holla@arm.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alexandre.belloni@bootlin.com, heiko@sntech.de,
+ linux-kernel@vger.kernel.org, linux-tegra@vger.kernel.org,
+ thierry.reding@gmail.com, linux-riscv@lists.infradead.org, festevam@gmail.com,
+ f.fainelli@gmail.com, shc_work@mail.ru, khilman@baylibre.com, wens@csie.org,
+ jonathanh@nvidia.com, linux-rockchip@lists.infradead.org,
+ ludovic.desroches@microchip.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-imx@nxp.com, slemieux.tyco@gmail.com, linux-pwm@vger.kernel.org,
+ rjui@broadcom.com, s.hauer@pengutronix.de, mripard@kernel.org, vz@mleia.com,
+ linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
+ paul.walmsley@sifive.com, matthias.bgg@gmail.com,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ sbranden@broadcom.com, linux@prisktech.co.nz, palmer@dabbelt.com,
+ kernel@pengutronix.de, shawnguo@kernel.org, claudiu.beznea@microchip.com,
+ nsaenzjulienne@suse.de
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit c31e73121f4c ("base: soc: Handle custom soc information sysfs
-entries") introduced custom soc attribute group in soc_device_attribute
-structure but there are no users treewide. While trying to understand
-the motivation and tried to use it, it was found lot of existing custom
-attributes can moved to use it instead of device_create_file.
+On Sun, Dec 29, 2019 at 08:05:39AM +0000, Yangtao Li wrote:
+> Use devm_platform_ioremap_resource() to simplify code.
+> =
 
-Though most of these never remove/cleanup the custom attribute as they
-never call soc_device_unregister, using these custom attribute group
-eliminate the need for any cleanup as the driver infrastructure will
-take care of that.
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
 
-Let us remove device_create_file and start using the custom attribute
-group in soc_device_attribute.
+Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
 
-Cc: Tony Lindgren <tony@atomide.com>
-Cc: linux-omap@vger.kernel.org
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
----
- arch/arm/mach-omap2/id.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/mach-omap2/id.c b/arch/arm/mach-omap2/id.c
-index 37ac2d103548..1d119b974f5f 100644
---- a/arch/arm/mach-omap2/id.c
-+++ b/arch/arm/mach-omap2/id.c
-@@ -783,9 +783,15 @@ type_show(struct device *dev, struct device_attribute *attr, char *buf)
- 
- static DEVICE_ATTR_RO(type);
- 
-+static struct attribute *omap_soc_attrs[] = {
-+	&dev_attr_type.attr,
-+	NULL
-+};
-+
-+ATTRIBUTE_GROUPS(omap_soc);
-+
- void __init omap_soc_device_init(void)
- {
--	struct device *parent;
- 	struct soc_device *soc_dev;
- 	struct soc_device_attribute *soc_dev_attr;
- 
-@@ -796,14 +802,12 @@ void __init omap_soc_device_init(void)
- 	soc_dev_attr->machine  = soc_name;
- 	soc_dev_attr->family   = omap_get_family();
- 	soc_dev_attr->revision = soc_rev;
-+	soc_dev_attr->custom_attr_group = omap_soc_groups[0];
- 
- 	soc_dev = soc_device_register(soc_dev_attr);
- 	if (IS_ERR(soc_dev)) {
- 		kfree(soc_dev_attr);
- 		return;
- 	}
--
--	parent = soc_device_to_device(soc_dev);
--	device_create_file(parent, &dev_attr_type);
- }
- #endif /* CONFIG_SOC_BUS */
--- 
-2.17.1
+-- =
 
+Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
+Industrial Linux Solutions                 | https://www.pengutronix.de/ |
 
 _______________________________________________
 linux-arm-kernel mailing list
