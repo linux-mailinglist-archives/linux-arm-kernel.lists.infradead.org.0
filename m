@@ -2,78 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DF621DF82F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 18:22:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12BD81DF86B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 19:08:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GFYrAahhGLuOGDkVNul0mS0V4jt4VSWOlyEg/fcL80k=; b=sOgqFtxBxAaLhl
-	AxStlkop+JlNmkeo3IU4k9f3/9DRW7FJZCm00BxX+g31gbx3T6x5strfUCOo+1m0vC9qD2advzXrv
-	OeGV5J8PLXg7Vmy7QauKhJPQqMduq3wR02UMyaceuP1rGLKJ05zq21kkxz3uD7ba95MB0PE0hwMDO
-	wYUQhec1XvrzqFUDlbd+P1KPHKSKiWa+69i2V6+xHeBumrn5RtYhT/0tMT+zbQeybDdQHkQM4zSBf
-	NM7WT2XhVdj5tvqhBXuZSix2PbXL88SN6VEiraLHYQ5HtpWrejkiGQQOZsy6SoT3upIAVIS6P1u+n
-	LWv561w5STy5+6+iAXQA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Tznm6U1kkwkKydwAidJ0rkSeC0Rzxwq0/Wr4yw4aiIg=; b=XKjXz3VvD4KrHL
+	GGtlp5wn6h4r7Qdh41Xh0b9HADZrKR0PWXkgKuzw8JYl/C6V/062eplKLLaU2higazkjpstanjHmG
+	6p5eFrETR6kj7g6mXOUWJGfVW/uedkRGhpIwhpIlVIxgwBw0zoFUfK3TEfdy77K7NqyiUthilJ8sA
+	mB3lX7z7F9BgUXsQumZpC7A9stDry4JOrgc569iEa/85BQiQ5xx7LoT2W2m8hUtkD9Je7UNmoNvm4
+	QAhFmsRTXWypNLDIhygWvRSwb5+Xl+FdEoagjOsgNmOcnWO9+TflsJ3unfsv+hTLPboYAUoTzN1RB
+	C6+U4BRN4uUlNXqMVbkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcWuo-0003ko-NL; Sat, 23 May 2020 16:22:26 +0000
-Received: from merlin.infradead.org ([205.233.59.134])
+	id 1jcXdE-0003uG-Lx; Sat, 23 May 2020 17:08:20 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcWui-0003kQ-NY
- for linux-arm-kernel@bombadil.infradead.org; Sat, 23 May 2020 16:22:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=fu7pGxmRPuEJakihyT9mCWhaF05NZbrel26NVUGhM1E=; b=141KRctNVJm+YS7i/Z5pqEmRox
- dRgyz0UWafPobfP7X5pjWlCoo6EaPS0qNarw8wGJwA9nsgY2vUsIBDGC9LKDnB9Jpmm/x1N3h2loh
- ZjgLNLDc0EAkjAwj12TblJQa+v0iNTH6a2GHqU6wcgZ7DAF60I+BenV968hfrjYdQsh7dJS3TvXk3
- nRHZIa607LGYGgLT/2bq8pcqR0GAfVHVcBGjhVaqEFJT1RlGXtDMwZhVZRXdXge44IAMZ23cWVPcM
- PXgEN6LOlimyM6DgWNHdVx8++0gEyNDrMpLi0HMqHySSOVMBTfto9/HON915/NfqQR6e955Z5Oepe
- VJOExhqA==;
-Received: from mga01.intel.com ([192.55.52.88])
- by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcWuY-0002fm-AD
- for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 16:22:12 +0000
-IronPort-SDR: hv2Uwbb5IfQUzzBw7xhwMYtaqwoaR3X52zObGqJsp4RNs8JQZE8b1RKEgE6w3xfKpjCxpcHG8v
- 7mki57Jg+lsA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 23 May 2020 09:21:06 -0700
-IronPort-SDR: 11cmhiEBih5YPblK2s8qCsxaTz1HsvIemGAMgu+M+UMuM0aDvmyzl/ceq75EtG2eFPfXnjKo9g
- DRYD2gk1zbAw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,426,1583222400"; d="scan'208";a="254658074"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga007.jf.intel.com with ESMTP; 23 May 2020 09:21:04 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jcWtT-000DH7-Tl; Sun, 24 May 2020 00:21:03 +0800
-Date: Sun, 24 May 2020 00:20:19 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: [soc:for-next] BUILD SUCCESS b2ebaf9d51a286731b18d1db0f1333afa9ede86f
-Message-ID: <5ec94d43.RkLe4LdSaZzFHzU5%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1jcXd7-0003tX-TP
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 17:08:15 +0000
+Received: by mail-wr1-x444.google.com with SMTP id s8so13329821wrt.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 23 May 2020 10:08:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=iWQIftxz3JeSaFEWyWP77ojPUmj1NWrh+y4jjgLcyKs=;
+ b=X6NFJSfvxhSBC8xSxM9yjKJkz2nxTH5gH4dXKNaCutG6fFfS/wfMvMydQ0q8/tNa6d
+ pE5sP+aF8/3zkwmun4En6jlpuqANyDKlYREYvDb9mcQegZeO2TXg1cMLEINOOvBU6a9W
+ FEwJbvhQmkCgd8pblNm7rrth/+DqAeINXltC0GKMusdgqlu8z+Wq6ls47VxLwHwxFEQx
+ tl16N9XGrdP9thrZ2fi8Bak+/cK/eYuaOYU0oQtc9DdaYbrasOSRNWvpZkF12HgNS1pc
+ E/HoKao6xztJdQJT231Bm6RLIZh6nC9m1LBsI4EN7Y55MWGloYoDx862cSyBH37SgRwR
+ Aoeg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=iWQIftxz3JeSaFEWyWP77ojPUmj1NWrh+y4jjgLcyKs=;
+ b=stXPmSobMYAUOkwdmzgyjpybxOzJI7dND+34RRs4oe/g/uHX8u5IQTXfTOyCSQ91i8
+ y/AdRkeMSRJak5Wt5+qTr+n5FExqiVFFIMBTQYxy9Th7/58wHwOma5+HaZIjVXiLsvgc
+ rUrOxdWGV0j4n3iFdhWldBHftuXmtLgEVYJ1nD5+s4ni37YpiWaCDPgVm3hwaWmDov0s
+ gvWrq1NUWpT0BJHkC4kHXUzacg3b5XihJGxkoNTfsRMhGewpvJ8L31+1UJHbbuWueCQa
+ K7Qm6I1r7WjEiLVsAOtpXUghOYzAuH0eSc+Dws/kU9GPnCKApQoWgyP5UtqHGs8FApsW
+ U4dA==
+X-Gm-Message-State: AOAM532ck2bI0XCMD3DmLxjRYB/jcVDQ0PSWedwZVH1g84bkcVGlzwvs
+ 15pqm3a9U5qzlYwpexsLxwuVig==
+X-Google-Smtp-Source: ABdhPJzi3zszxm/Xbxerc+UfbB5JYNQ3nEwV6m60j+HLsiFl+k0r3Alw3K6KWTZtS6WdRmhanRvhCw==
+X-Received: by 2002:adf:9447:: with SMTP id 65mr8138681wrq.331.1590253689843; 
+ Sat, 23 May 2020 10:08:09 -0700 (PDT)
+Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
+ [86.9.19.6])
+ by smtp.gmail.com with ESMTPSA id 88sm12485764wrq.77.2020.05.23.10.08.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 23 May 2020 10:08:08 -0700 (PDT)
+Date: Sat, 23 May 2020 18:08:06 +0100
+From: Daniel Thompson <daniel.thompson@linaro.org>
+To: Guru Das Srinagesh <gurus@codeaurora.org>
+Subject: Re: [RESEND PATCH v14 04/11] pwm: clps711x: Cast period to u32
+ before use as divisor
+Message-ID: <20200523170806.kzqcqzp2rtoqkqk4@holly.lan>
+References: <cover.1589330178.git.gurus@codeaurora.org>
+ <1d6918c3fc2976bdbdb687bf54a2ef09fc1558db.1589330178.git.gurus@codeaurora.org>
+ <20200521101934.j5ivjky4e6byveut@holly.lan>
+ <20200521202525.GA24026@codeaurora.org>
+ <20200522093738.cko5rj4wrxfd4hxu@holly.lan>
+ <20200522231904.GB2873@codeaurora.org>
 MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -3.2 (---)
-X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
- Content analysis details:   (-3.2 points)
+Content-Disposition: inline
+In-Reply-To: <20200522231904.GB2873@codeaurora.org>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200523_100813_982756_B0C9DF24 
+X-CRM114-Status: GOOD (  26.46  )
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.8 LONGWORDS              Long string of long words
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,137 +103,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-pwm@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, David Collins <collinsd@codeaurora.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Joe Perches <joe@perches.com>,
+ Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
+ Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  for-next
-branch HEAD: b2ebaf9d51a286731b18d1db0f1333afa9ede86f  Merge branch 'arm/fixes' into for-next
+On Fri, May 22, 2020 at 04:19:04PM -0700, Guru Das Srinagesh wrote:
+> On Fri, May 22, 2020 at 10:37:38AM +0100, Daniel Thompson wrote:
+> > On Thu, May 21, 2020 at 01:25:25PM -0700, Guru Das Srinagesh wrote:
+> > > On Thu, May 21, 2020 at 11:19:34AM +0100, Daniel Thompson wrote:
+> > > > On Wed, May 20, 2020 at 03:55:57PM -0700, Guru Das Srinagesh wrote:
+> > > > > Since the PWM framework is switching struct pwm_args.period's datatype
+> > > > > to u64, prepare for this transition by typecasting it to u32.
+> > > > > 
+> > > > > Also, since the dividend is still a 32-bit number, any divisor greater
+> > > > > than the numerator will cause the quotient to be zero, so return 0 in
+> > > > > that case to efficiently skip the division.
+> > > > > 
+> > > > > Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
+> > > > > ---
+> > > > >  drivers/pwm/pwm-clps711x.c | 5 ++++-
+> > > > >  1 file changed, 4 insertions(+), 1 deletion(-)> > > 
+> > > > > diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
+> > > > > index 924d39a..da771b1 100644
+> > > > > --- a/drivers/pwm/pwm-clps711x.c
+> > > > > +++ b/drivers/pwm/pwm-clps711x.c
+> > > > > @@ -43,7 +43,10 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
+> > > > >  static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
+> > > > >  {
+> > > > >  	/* Duty cycle 0..15 max */
+> > > > > -	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
+> > > > > +	if (pwm->args.period > (v * 0xf))
+> > > > > +		return 0;
+> > > > 
+> > > > This doesn't look right to me.
+> > > > 
+> > > > DIV_ROUND_CLOSEST() does rounded division and the short circuit doesn't
+> > > > implement that.
+> > > 
+> > > My initial patch [1] was to simply use DIV64_U64_ROUND_CLOSEST(), but I
+> > > got review feedback to add a short-circuit (same thread, [2]). I feel
+> > > like I should skip the short-circuiting and type casting and simply just
+> > > use DIV64_U64_ROUND_CLOSEST() - what do you think?
+> > 
+> > A trivial review of pwm-clps711x.c suggests that the period is always
+> > 32-bit anyway so why not just throw away the short circuit entirely and
+> > replace with a comment saying that CLPS711X has a hard coded period
+> > that is always >1000000000 ?
+> 
+> Sorry, I don't follow the significance of 1000000000 - could you please
+> explain?
 
-elapsed time: 2170m
+One of the questions you are asked (by Arnd) was whether the period
+could ever be larger than UINT_MAX. I think you gave the wrong answer
+to that question when you said the divisor could be 64-bit. For this
+driver I don't see how the period could ever be larger than 1000000000
+(a number that is approximately 4x smaller than UINT_MAX).
+ 
 
-configs tested: 110
-configs skipped: 1
+> Just to clarify, what I was saying in my previous email was the
+> following: I think it might be simpler to just throw away the short
+> circuit and just do:
+> 
+> 	s/DIV_ROUND_CLOSEST/DIV64_U64_ROUND_CLOSEST
+> 
+> like in another patch in this series [1]. That should handle the
+> rounding properly as per design. Is that okay?
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+The short circuit must go because it is broken and we wouldn't want
+that code copied somewhere where the code would actually be reachable.
+Personally I don't much care which macro you use although given the
+divisor cannot be greater then UINT_MAX I guess DIV_ROUND_CLOSEST
+is marginally better.
 
-arm64                            allyesconfig
-arm64                               defconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-arm                                 defconfig
-arm                              allyesconfig
-arm                              allmodconfig
-arm                               allnoconfig
-sparc                            allyesconfig
-mips                             allyesconfig
-m68k                             allyesconfig
-i386                              allnoconfig
-i386                             allyesconfig
-i386                                defconfig
-i386                              debian-10.3
-ia64                             allmodconfig
-ia64                                defconfig
-ia64                              allnoconfig
-ia64                             allyesconfig
-m68k                             allmodconfig
-m68k                              allnoconfig
-m68k                           sun3_defconfig
-m68k                                defconfig
-nios2                               defconfig
-nios2                            allyesconfig
-openrisc                            defconfig
-c6x                              allyesconfig
-c6x                               allnoconfig
-openrisc                         allyesconfig
-nds32                               defconfig
-nds32                             allnoconfig
-csky                             allyesconfig
-csky                                defconfig
-alpha                               defconfig
-alpha                            allyesconfig
-xtensa                           allyesconfig
-h8300                            allyesconfig
-h8300                            allmodconfig
-xtensa                              defconfig
-arc                                 defconfig
-arc                              allyesconfig
-sh                               allmodconfig
-sh                                allnoconfig
-microblaze                        allnoconfig
-mips                              allnoconfig
-mips                             allmodconfig
-parisc                            allnoconfig
-parisc                              defconfig
-parisc                           allyesconfig
-parisc                           allmodconfig
-powerpc                             defconfig
-powerpc                          allyesconfig
-powerpc                          rhel-kconfig
-powerpc                          allmodconfig
-powerpc                           allnoconfig
-i386                 randconfig-a001-20200521
-i386                 randconfig-a004-20200521
-i386                 randconfig-a006-20200521
-i386                 randconfig-a003-20200521
-i386                 randconfig-a002-20200521
-i386                 randconfig-a005-20200521
-x86_64               randconfig-a015-20200522
-x86_64               randconfig-a013-20200522
-x86_64               randconfig-a016-20200522
-x86_64               randconfig-a012-20200522
-x86_64               randconfig-a014-20200522
-x86_64               randconfig-a011-20200522
-x86_64               randconfig-a002-20200521
-x86_64               randconfig-a006-20200521
-x86_64               randconfig-a005-20200521
-x86_64               randconfig-a004-20200521
-x86_64               randconfig-a003-20200521
-x86_64               randconfig-a001-20200521
-i386                 randconfig-a013-20200522
-i386                 randconfig-a012-20200522
-i386                 randconfig-a015-20200522
-i386                 randconfig-a011-20200522
-i386                 randconfig-a016-20200522
-i386                 randconfig-a014-20200522
-i386                 randconfig-a013-20200521
-i386                 randconfig-a012-20200521
-i386                 randconfig-a015-20200521
-i386                 randconfig-a011-20200521
-i386                 randconfig-a016-20200521
-i386                 randconfig-a014-20200521
-riscv                            allyesconfig
-riscv                             allnoconfig
-riscv                               defconfig
-riscv                            allmodconfig
-s390                             allyesconfig
-s390                              allnoconfig
-s390                             allmodconfig
-s390                                defconfig
-x86_64                              defconfig
-sparc                               defconfig
-sparc64                             defconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                          allmodconfig
-um                                allnoconfig
-um                               allyesconfig
-um                                  defconfig
-um                               allmodconfig
-x86_64                                   rhel
-x86_64                               rhel-7.6
-x86_64                    rhel-7.6-kselftests
-x86_64                         rhel-7.2-clear
-x86_64                                    lkp
-x86_64                              fedora-25
-x86_64                                  kexec
 
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
