@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B1E61DF91E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 19:23:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E538C1DF925
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 19:23:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1eh3ct2mEYPxSC6yaOuT25GDUjTEp/B7bPsYYoQy0v4=; b=TAlmmzFYQ/ED7s
-	pS2I0RxfFdEkTdu79+3fI93S8HMvmqJlqS/hXnbFI4zyykZEZoxDu+PF1Oz2xEj+SGLEi4uHtteKe
-	56fKRT47cbhq+7F6/qgMd7toPmyLuMnLFmajGJaV7t4m5uuLs/JBmpIMelxNr2RHZ/GgwJfMuqdMA
-	/NVaws4geyuq+tH5ce7rpl796rXZjNWOLZO9nf+ddX7mHU2y6idpYZYEZEyDXjwNSW7mq+0XnHorJ
-	8tYu6Ki7it6cxgX7HM63nBAYXMKgEh8jC4HQlM03HclkiBI2aMBEgQqH/2CJOU2oOjlGmD76ETZuo
-	sFYE/W2vEL3zao8t9znw==;
+	List-Owner; bh=eYdEuabdGISa09f4dRhjr5aI3605Ae6qh6UnGl3sdqs=; b=JIox9hPvEjvsTh
+	XfgU4NiPinOW8spY0XNEolK3V3MjshBLHH9Ks8ZASeTQH+0qmgzWaQOecDQ4lBRdjH4YfS8gK2ktp
+	YXTuG/DWuV4EZGUDJUNea0nZz4tCqUWy6S0mo9yNIyoICXMcBJOrptLVdrf5uzuVzKeFslA0cUr1i
+	o03nWAuO8hwprmSD7BVAKZT6aTrVqtnRLsaBMyl4WusGO2h/fubNGOWJhPxQa5AcnLTHJWOLeG/4M
+	fWc7Tm+zTHPv0oFctUk9j5J2/3BdDX80TGfXUxsMEyAYMS2zx9WHamHwXd8uN0yMTrU0phQa8sh1Z
+	kAzQfh/lW4OQeKOIKDgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcXrZ-0004SM-JQ; Sat, 23 May 2020 17:23:09 +0000
+	id 1jcXrx-0004vX-Cb; Sat, 23 May 2020 17:23:33 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcXqr-0003xS-41
- for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 17:22:26 +0000
+ id 1jcXr4-0004C7-EE
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 17:22:39 +0000
 Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <ukl@pengutronix.de>)
- id 1jcXqb-0001ku-4A; Sat, 23 May 2020 19:22:09 +0200
+ id 1jcXqr-0001pY-Oc; Sat, 23 May 2020 19:22:25 +0200
 Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
  (envelope-from <ukl@pengutronix.de>)
- id 1jcXqa-00057K-9j; Sat, 23 May 2020 19:22:08 +0200
-Date: Sat, 23 May 2020 19:22:08 +0200
+ id 1jcXqr-00057S-5L; Sat, 23 May 2020 19:22:25 +0200
+Date: Sat, 23 May 2020 19:22:25 +0200
 From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
 To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH 20/32] pwm: imx: convert to devm_platform_ioremap_resource
-Message-ID: <20200523172208.3ob7pdxsjmxnebva@pengutronix.de>
+Subject: Re: [PATCH 18/32] pwm: tiehrpwm: convert to
+ devm_platform_ioremap_resource
+Message-ID: <20200523172225.6e6zzssw7ne7mlv7@pengutronix.de>
 References: <20191229080610.7597-1-tiny.windzz@gmail.com>
- <20191229080610.7597-20-tiny.windzz@gmail.com>
+ <20191229080610.7597-18-tiny.windzz@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20191229080610.7597-20-tiny.windzz@gmail.com>
+In-Reply-To: <20191229080610.7597-18-tiny.windzz@gmail.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
 X-SA-Exim-Mail-From: ukl@pengutronix.de
@@ -48,7 +49,7 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_102225_263275_23881CA0 
+X-CRM114-CacheID: sfid-20200523_102238_518689_45D5E3D2 
 X-CRM114-Status: UNSURE (   6.48  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
@@ -90,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hello,
 
-On Sun, Dec 29, 2019 at 08:05:58AM +0000, Yangtao Li wrote:
+On Sun, Dec 29, 2019 at 08:05:56AM +0000, Yangtao Li wrote:
 > Use devm_platform_ioremap_resource() to simplify code.
 > =
 
