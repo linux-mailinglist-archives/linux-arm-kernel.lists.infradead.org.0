@@ -2,62 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A0C11DF9B8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 19:44:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 502331DFA5A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 20:47:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZgspQx3l6/bIUcDFIsK776g8Ipt8KQOQCjkQ0cObqUM=; b=SZQQW//2/oSTOz
-	kGrkSkHDUBFyOWqez8tr1HuvcMedPoFzF3YlzSLhFcwoN09kQh7vF696IPxRQ7C3lZDJt1xtoS+fp
-	c+8EwQ1Hd6cS0TcXeQAwVm674cCvv9eCFDtjzK7QpWAGZQ34NkFOMELg7CZ/BItnDsHv5jGelAV/w
-	aP6bvNqx3XzD2XIKqzESeMKdHXh3XUOhWonD96wENMavxuUeSJSTKsjIHCXt4TzgM6HHuI68fQGeC
-	q9EHD9hntEsfDDgMkLIQ9q/IRXsC8hcg9DEOZIrX0rgVtEFnuYL9Xg8GrroY9QJFq1ZbNcU1VVAKc
-	VS922GgVJV8rlBihCkIg==;
+	List-Owner; bh=R+Uz+FK70oB/KFfiq/n8aRelfSDe80Kad0U9+Ude9a0=; b=J47U8rDNJH057M
+	UnW+7JzqpxhgpjkR8e2yFjmp1EiZ4MtDrwLx3Cm5MEbEUroAdTdoUfBzcrY8nm1YZwx9OJXuuRZSZ
+	33ONdyga1/6LEllZ10fRkNu3A8wHL85X+xyNbz6zbbQdYzgD78TureJXeIoxlst5ZNIJUyAgdE5Pp
+	AFgVsc9gXWWP0ZEjVLo4zGUZt9UlOm13T2oqu3tznALwdSGpZQstjk/jynFPH8/CnQOKFUqQSJL/V
+	DZu12smc3SjJKaFcM4Pmpz+xvK7SQ6Z8bLXvDJTgNDy/XMeDrtKvdQmVoUvUnvIijXtHgOVKUuXLH
+	qc1BU1YAgN2cOV3guE5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcYCH-00062e-9y; Sat, 23 May 2020 17:44:33 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jcZAg-00040Y-JW; Sat, 23 May 2020 18:46:58 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcYC4-000623-Cj
- for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 17:44:21 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1jcYBo-0004nX-LL; Sat, 23 May 2020 19:44:04 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1jcYBl-0005dS-0l; Sat, 23 May 2020 19:44:01 +0200
-Date: Sat, 23 May 2020 19:44:00 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Yangtao Li <tiny.windzz@gmail.com>, thierry.reding@gmail.com
-Subject: Re: [PATCH 30/32] pwm: hibvt: do some cleanup
-Message-ID: <20200523174400.tzptmraqyn3uqrvf@pengutronix.de>
-References: <20191229080610.7597-1-tiny.windzz@gmail.com>
- <20191229080610.7597-30-tiny.windzz@gmail.com>
- <20200220204152.p6rublsssifvvnvk@pengutronix.de>
+ id 1jcZAW-0003zj-Ln
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 18:46:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1590259593;
+ s=strato-dkim-0002; d=chronox.de;
+ h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=EG0M3Hyxz4BV7j1+OKdBXWmu8BWCl4V9Gc3tOojvV2Y=;
+ b=hTaMye3N+yvi7vgEFCCukb5mUQK/ZPTAg483iz9g5a5PnEXUoz+feQYOsYzmjLuKF0
+ xiHMCKi76+XxkCbhy8n7IHYeFHJVoV2bMZBB2JiIU/crKnuLGSelO0P4SPCu7kSP6ARb
+ QrkIINmb+57bwK6EDC5gPCILjGVfqJkpH9X0s826Tqm1AusWaw07UU1E8a6prwFaxaEI
+ 7PLB6k+46cqhOJ1NhiHf0N64WyZaGbPaVs9509Mo8ZV5Ev5cVLPEktFj4DWEYOrtD7Kt
+ GkV0NCIEJR4Cn14m+2lLb0K5sco/vd/NoUxK8S/dp2e/f35LgZCNs47xUzMVjsp+x7A0
+ Vojg==
+X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPbJ/SdwHc="
+X-RZG-CLASS-ID: mo00
+Received: from positron.chronox.de by smtp.strato.de (RZmta 46.7.0 DYNA|AUTH)
+ with ESMTPSA id k09005w4NIkQI1J
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+ (Client did not present a certificate);
+ Sat, 23 May 2020 20:46:26 +0200 (CEST)
+From: Stephan =?ISO-8859-1?Q?M=FCller?= <smueller@chronox.de>
+To: Stefan Wahren <stefan.wahren@i2se.com>,
+ Lukasz Stelmach <l.stelmach@samsung.com>
+Subject: Re: [PATCH v2 1/2] hwrng: iproc-rng200 - Set the quality value
+Date: Sat, 23 May 2020 20:46:26 +0200
+Message-ID: <3080190.aeNJFYEL58@positron.chronox.de>
+In-Reply-To: <dleftjftbtyubp.fsf%l.stelmach@samsung.com>
+References: <573b2eff-3c74-90e9-50fa-644264d0a0e5@i2se.com>
+ <CGME20200521191415eucas1p2d112a86171b23dcf255e7da53a56f4f3@eucas1p2.samsung.com>
+ <dleftjftbtyubp.fsf%l.stelmach@samsung.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200220204152.p6rublsssifvvnvk@pengutronix.de>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_104420_430983_5142099B 
-X-CRM114-Status: GOOD (  10.71  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200523_114649_304171_FE95307E 
+X-CRM114-Status: GOOD (  20.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:238:20a:202:5302:0:0:3 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,71 +83,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, heiko@sntech.de,
- linux-kernel@vger.kernel.org, linux-tegra@vger.kernel.org,
- linux-riscv@lists.infradead.org, festevam@gmail.com, f.fainelli@gmail.com,
- shc_work@mail.ru, khilman@baylibre.com, wens@csie.org, jonathanh@nvidia.com,
- linux-rockchip@lists.infradead.org, ludovic.desroches@microchip.com,
- bcm-kernel-feedback-list@broadcom.com, linux-imx@nxp.com,
- slemieux.tyco@gmail.com, linux-pwm@vger.kernel.org, rjui@broadcom.com,
- s.hauer@pengutronix.de, mripard@kernel.org, vz@mleia.com,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- paul.walmsley@sifive.com, matthias.bgg@gmail.com,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- sbranden@broadcom.com, linux@prisktech.co.nz, palmer@dabbelt.com,
- kernel@pengutronix.de, shawnguo@kernel.org, claudiu.beznea@microchip.com,
- nsaenzjulienne@suse.de
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>, Matthias Brugger <mbrugger@suse.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Kukjin Kim <kgene@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ linux-crypto@vger.kernel.org, Ray Jui <rjui@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Markus Elfring <elfring@users.sourceforge.net>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Feb 20, 2020 at 09:41:52PM +0100, Uwe Kleine-K=F6nig wrote:
-> On Sun, Dec 29, 2019 at 08:06:08AM +0000, Yangtao Li wrote:
-> > Use devm_platform_ioremap_resource() to simplify code.
-> > 'i' and 'ret' are variables of the same type and there is no
-> > need to use two lines.
-> =
-
-> I think I wouldn't have merged these two lines, but I don't feel strong
-> here. The other 31 patches are clean replacements.
-> =
-
-> But I also don't think respining just for this minor thing is worth the
-> effort, so:
-> =
-
-> Acked-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-> =
-
-> for the whole series. (Not sure it is sensible to ack each patch
-> individually, @Thierry, tell me if this simplifies things for you.)
-
-I took a deeper look now and added Reviewed-by for all other patches to
-ease application. So doing the same here:
-
-Reviewed-by: Uwe Kleine-K=F6nig <u.kleine-koenig@pengutronix.de>
-
-FTR: I'd do the following now:
-
-	for patch in 1216003 1216065 1216063 1216005 1216062 1216061 1216059 12160=
-57 1216054 1216056 1216051 1216050 1216048 1216010 1216044 1216046 1216042 =
-1216041 1216036 1216037 1216034 1216032 1216030 1216013 1216029 1216025 121=
-6026 1216024 1216015 1216021 1216017 1216019; do
-
-		pwclient git-am -m -s $patch && pwclient update -s "Accepted" -c "$(git r=
-ev-parse HEAD)" $patch || break
-	done
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | https://www.pengutronix.de/ |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW0gRG9ubmVyc3RhZywgMjEuIE1haSAyMDIwLCAyMToxNDowMiBDRVNUIHNjaHJpZWIgTHVrYXN6
+IFN0ZWxtYWNoOgoKSGkgTHVrYXN6LAoKPiBJdCB3YXMgPDIwMjAtMDUtMjEgY3p3IDEzOjAwPiwg
+d2hlbiBTdGVmYW4gV2FocmVuIHdyb3RlOgo+ID4gSGkgTHVrYXN6LAo+ID4gCj4gPiBBbSAxOS4w
+NS4yMCB1bSAyMzoyNSBzY2hyaWViIMWBdWthc3ogU3RlbG1hY2g6Cj4gPj4gVGhlIHZhbHVlIHdh
+cyBlc3RpbWFkZWQgd2l0aCBlYV9paWRbMV0gdXNpbmcgb24gMTA0ODU3NjAgYnl0ZXMgcmVhZCBm
+cm9tCj4gPj4gdGhlIFJORyB2aWEgL2Rldi9od3JuZy4gVGhlIG1pbi1lbnRyb3B5IHZhbHVlIGNh
+bGN1bGF0ZWQgdXNpbmcgdGhlIG1vc3QKPiA+PiBjb21tb24gdmFsdWUgZXN0aW1hdGUgKE5JU1Qg
+U1AgODAwLTkwUFsyXSwgc2VjdGlvbiA2LjMuMSkgd2FzIDcuOTY0NDY0Lgo+ID4gCj4gPiBjb3Vs
+ZCB5b3UgcGxlYXNlIG1lbnRpb24gaW4gdGhlIGNvbW1pdCB0aGUgdXNlZCBoYXJkd2FyZQo+ID4g
+aW1wbGVtZW50YXRpb24ocykgb2YgaXByb2Mtcm5nMjAwIHRvIGdldCB0aGlzIHF1YWxpdHk/Cj4g
+PiAKPiA+IEFGQUlLIHRoZXJlIGlzIHN0aWxsIG5vIHB1YmxpYyByZWdpc3RlciBkZXNjcmlwdGlv
+biBhdCBsZWFzdCBmb3IgdGhlCj4gPiBiY20yNzExLiBTbyBpcyBpdCBzYWZlIHRvIGFzc3VtZSB0
+aGF0IHRoZSBzdWdnZXN0ZWQgcXVhbGl0eSBhcHBsaWVzIHRvCj4gPiBhbGwgcG9zc2libGUgY29u
+ZmlndXJhdGlvbnM/Cj4gCj4gSSd2ZSBsZWFybnQgdGhhdCB0aGVyZSBpcyBhIHBvc3QtcHJvY2Vz
+c2luZyB1bml0IGluIFJORzIwMCB0aGF0IHRlc3RzCj4gdGhlIG91dHB1dCBvZiB0aGUgbm9pc2Ug
+Z2VuZXJhdG9yIGFuZCBmaWxscyBGSUZPIG9ubHkgd2l0aCBkYXRhIHRoYXQKPiBwYXNzZXMgRklQ
+UyB0ZXN0cy4gVW5saWtlIHNpbW1pbGFyIHVuaXQgaW4gRXh5bm9zLCBpdCBjYW5ub3QgYmUgZGlz
+YWJsZWQKPiBvciBieXBhc3NlZC4gVGhlcmVmb3JlLCBhZnRlciBTdGVwaGFuIE11ZWxsZXIncyB0
+aG9yb3VnaCBleHBsYW5hdGlvbnMgSQo+IGFtIGNvbnNpZGVyaW5nIGRyb3BwaW5nIHRoaXMgcGF0
+Y2ggaW4gdjMuCgpJZiB5b3Ugd291bGQgYmUgbW9yZSBjbGVhciB3aGF0IHRoYXQgRklQUyB0ZXN0
+IGlzIGFsbCBhYm91dCwgd2UgbWF5IGJlIGFibGUgdG8gCmlkZW50aWZ5IHdoZXRoZXIgaXQgYWZm
+ZWN0cyB0aGUgZW50cm9weSBiZWhhdmlvciBvciBub3QuIEUuZy4gaWYgaXQgaXMgdGhlIApTUDgw
+MC05MEIgaGVhbHRoIHRlc3QgZm9sbG93aW5nIFNQODgwLTkwQiBzZWN0aW9uIDQuNCwgdGhpcyBk
+b2VzIG5vdCBhZmZlY3QgCmVudHJvcHkgYW5kIHlvdSBjb3VsZCBhcHBseSB5b3VyIGNhbGN1bGF0
+aW9uLgo+IAo+IEhvd2V2ZXIsIEkgc3RpbCBhbSBzdGlsbCBub3QgMTAwJSBjb252aW5jZWQgdGhh
+dCBpdCBpcyBpbXBvc3NpYmxlIHRvCj4gYXNzaWduIHRoZSBxdWFsaXR5IGEgcmVhc29uYWJsZSBu
+b24temVybyB2YWx1ZSBpbiBzdWNoIGNhc2UuCj4gCj4gPiBUaGFua3MKPiA+IFN0ZWZhbgo+ID4g
+Cj4gPj4gWzFdCj4gPj4gaHR0cHM6Ly9wcm90ZWN0Mi5maXJlZXllLmNvbS91cmw/az1kYTQ3MzVi
+Mi04N2Q5OWIyOC1kYTQ2YmVmZC0wY2M0N2EzMzZmCj4gPj4gYWUtZTFjMjEwODBiYzZhYjFlNCZx
+PTEmdT1odHRwcyUzQSUyRiUyRmdpdGh1Yi5jb20lMkZ1c25pc3Rnb3YlMkZTUDgwMC05MAo+ID4+
+IEJfRW50cm9weUFzc2Vzc21lbnQgWzJdCj4gPj4gaHR0cHM6Ly9jc3JjLm5pc3QuZ292L3B1Ymxp
+Y2F0aW9ucy9kZXRhaWwvc3AvODAwLTkwYi9maW5hbAo+ID4+IAo+ID4+IFNpZ25lZC1vZmYtYnk6
+IMWBdWthc3ogU3RlbG1hY2ggPGwuc3RlbG1hY2hAc2Ftc3VuZy5jb20+Cj4gPj4gLS0tCj4gPj4g
+Cj4gPj4gIGRyaXZlcnMvY2hhci9od19yYW5kb20vaXByb2Mtcm5nMjAwLmMgfCAxICsKPiA+PiAg
+MSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCj4gPj4gCj4gPj4gZGlmZiAtLWdpdCBhL2Ry
+aXZlcnMvY2hhci9od19yYW5kb20vaXByb2Mtcm5nMjAwLmMKPiA+PiBiL2RyaXZlcnMvY2hhci9o
+d19yYW5kb20vaXByb2Mtcm5nMjAwLmMgaW5kZXggMzJkOWZlNjFhMjI1Li45NTY2OWVjZTA1MGYK
+PiA+PiAxMDA2NDQKPiA+PiAtLS0gYS9kcml2ZXJzL2NoYXIvaHdfcmFuZG9tL2lwcm9jLXJuZzIw
+MC5jCj4gPj4gKysrIGIvZHJpdmVycy9jaGFyL2h3X3JhbmRvbS9pcHJvYy1ybmcyMDAuYwo+ID4+
+IEBAIC0xOTksNiArMTk5LDcgQEAgc3RhdGljIGludCBpcHJvY19ybmcyMDBfcHJvYmUoc3RydWN0
+IHBsYXRmb3JtX2RldmljZQo+ID4+ICpwZGV2KT4+IAo+ID4+ICAJcHJpdi0+cm5nLnJlYWQgPSBp
+cHJvY19ybmcyMDBfcmVhZCwKPiA+PiAgCXByaXYtPnJuZy5pbml0ID0gaXByb2Nfcm5nMjAwX2lu
+aXQsCj4gPj4gIAlwcml2LT5ybmcuY2xlYW51cCA9IGlwcm9jX3JuZzIwMF9jbGVhbnVwLAo+ID4+
+IAo+ID4+ICsJcHJpdi0+cm5nLnF1YWxpdHkgPSAxMDAwLAo+ID4+IAo+ID4+ICAJLyogUmVnaXN0
+ZXIgZHJpdmVyICovCj4gPj4gIAlyZXQgPSBkZXZtX2h3cm5nX3JlZ2lzdGVyKGRldiwgJnByaXYt
+PnJuZyk7CgoKQ2lhbwpTdGVwaGFuCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1r
+ZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWls
+bWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
