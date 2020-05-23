@@ -2,97 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82A051DF76B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 15:14:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 221641DF76C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 23 May 2020 15:15:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O/+Iu0mmbq5FzoRB5swVNBq3zKPNWdxO1lyz1ICSNZc=; b=etp3/9V2K+fXif
-	iXZuLPfF0OFS8ky4S/1pCNpBXJTihSCMR8W044/EXHTm5P+6cSf48MSfKw7bsglb5ExdPudvOydwO
-	ruKdvbr2XcYSKtT8Q2VGSfSY1qJuKPDAN27HNzJZ4iGqgONsJ02KD7X2+KNPEEZ6hUP7OSW2hV1gH
-	1MNJlegasSu5KU2GY6MNbVe87olpSjLD39rbvGdUj1rLmidjM/gdBIsc6riwG+bnY2OBZKMQepUQe
-	01R7XYtv5/Z46TtuZiKtRVB9OWroQE615bc6eRyvmpt5zGLoAjv+X54tLdhCzEpCVEZN1RffLSwMr
-	zW/YNa11l93/JAhrSAnA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n2MUiTsPDRopw8DKlSJMnRPT4N9moTlOYvN3RmVk3B4=; b=RlpYDj6IxyeBKj
+	/eUVugYF6x2lfW7FkVEw+2+65j46FJ0UnBdA4EPgCl7r2VGVdR2rTyhj07H1Hh5w1wNxC83W6+wmV
+	LJNUfNteo27N8oDbEQN1D0f+S6AvKEx80PKAFTI4o1N9y5dewRbTK8HSr9OlOY2FAGUovx7Lx/3K4
+	1l2WDLsEx2hq+5OUFdJmIAMLdTmKNKQkvR9uPG5qpp1PyEGRGffeToftCn/ZIhVc+rwKb4XgFf/MY
+	ru3siYZ6dYQanN1XBYjq6/o1xOd6YJbhLs9uO7rYLRyuUih2pXMwoykpYhBfxYCl+vOp75jF/Ka+V
+	CYZu0jt84fK33BEuxBQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcTz7-0002de-MD; Sat, 23 May 2020 13:14:41 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jcTzV-0002uB-8m; Sat, 23 May 2020 13:15:05 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcTyv-0002cC-Q7; Sat, 23 May 2020 13:14:31 +0000
-Received: by mail-wm1-x341.google.com with SMTP id u13so2516476wml.1;
- Sat, 23 May 2020 06:14:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=8LGo7kypX/UuiVS5X2JtFQ0JunA+QZt3vaFNvgvumNU=;
- b=gLm0wTbvAO45hZ2XesfzpTYLf2INXCegMtldROnBej+YMsA5hq5Qva0/c5u9XRoNfD
- 2KP/Pu3p+OAXOdee9bB9unMBWRVIheR8b9dYAg5ncfqwXiJrkWGOEhPuapE4gmRIDeNn
- RNMV6rh9yvyTu7CCrYZzFJ/iVXM2VBsHVAiqPoHJNUQzdq11GxG7hyvjbCxHQz85s7xd
- NVX4QsVYkYcrX7MBIlJRZeDwX6MFL4FnJJxhmA2zaaQZHxdVCcvqwG7aTTh6fajXvJVB
- uUt1ErAwinoImb+4eA2YEKk4Nj7PfNayxWo1G9TSFyLJmH/QJgdTNjP7QpuVXk8aly+p
- rA8w==
+ id 1jcTz9-0002nj-S1
+ for linux-arm-kernel@lists.infradead.org; Sat, 23 May 2020 13:14:46 +0000
+Received: by mail-io1-xd42.google.com with SMTP id r2so4132815ioo.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 23 May 2020 06:14:41 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=Qqk95wVsZmzmcuIGFt4zOLnbm5tsZjHScQ5kWL0ptlo=;
+ b=Up30C1YRhvWB57ye1T2UrlkPecgpMbEt23MMyafxVtj4AWCFG/FP7d50A6YnKzg9yp
+ G2totyxkDwGSHGb7MyOfkpg+yi5yX1RK12jEKRrBkpHP6ZfWVKTJC9sYB2brG+MairoD
+ nVu7qav8lKDiem0EWG8cq+eNzX0PIUp92pXJJ05sgDL2eFgGXNL7w4o15p6olun3W+Xq
+ AWP/WTLrrm5Q2J98rGCkDUk465WESwOxdkOm+R3HSYg8UezUHHjE5f7UmhvYqSJEI9jC
+ dDMgCm+myuFjb6RIyGffd1PFIclibonFoPKs1bF6NUkiv9nFwsu5JVO3a0xShNsc/Nwh
+ 1GHw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=8LGo7kypX/UuiVS5X2JtFQ0JunA+QZt3vaFNvgvumNU=;
- b=TIFiGl1vcvdqoAivIhndYOVdhPzvR/253sem1YVacbWa97bGBH1SA3hi/+RnOXghzq
- OgJsOTUy9Brh3yFu/BGdYfwf5mFSjZsXBd+XWCUHMJ1BXJLfy04H3XFUe53et4Et6hhy
- Ozvwid92GkIy9jtCLhGKvNlUUiLOPc+mJbLDrPMDye493Oupxg21tUzX08AiGeJ6mp65
- JKnmyjIV+ApWJ2G1C8+UlT/9J6kJtby/Mq0OLKpoHbSbxuvcx++xKrIGi7xBE9Ski/gM
- hjKFtVkEwJLSGTN1R2ZnIGGNobwjZZHiOFOSYEtj3V3RQWmAX/WpbKRN9iRESANES5RE
- Jjeg==
-X-Gm-Message-State: AOAM532dW6CP+c2RQnq6kJnq9rz5nniXFW1a+XEALhk/cpYQl1hO6GXl
- v1EqQEeYPSsV3Xx/61R9iXM=
-X-Google-Smtp-Source: ABdhPJxn+IxcTwwADZNrv5cvugkYcBEcPWXDlnjrtAyFx9W55umV1V9VFywTsf2mzefrH5OFGaF3Ug==
-X-Received: by 2002:a05:600c:2043:: with SMTP id
- p3mr16862280wmg.187.1590239665539; 
- Sat, 23 May 2020 06:14:25 -0700 (PDT)
-Received: from linux-gy6r.site ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id y207sm13594800wmd.7.2020.05.23.06.14.23
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 23 May 2020 06:14:24 -0700 (PDT)
-Subject: Re: [PATCH v5 00/11] mediatek: add support for MediaTek Ethernet MAC
-To: David Miller <davem@davemloft.net>
-References: <20200522120700.838-1-brgl@bgdev.pl>
- <20200522.142031.1631406151370247419.davem@davemloft.net>
- <1f941213-7ca2-c138-3530-85c34ebf0d53@gmail.com>
- <20200522.143656.1986528672037093503.davem@davemloft.net>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-X-Pep-Version: 2.0
-Message-ID: <4a95de78-05fe-eec6-e09b-1b907287a8af@gmail.com>
-Date: Sat, 23 May 2020 15:14:23 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=Qqk95wVsZmzmcuIGFt4zOLnbm5tsZjHScQ5kWL0ptlo=;
+ b=e2Pj4GzBDStbnM1Tv3bPo8Ur6DZgA4Ydixt43SPsJdXNDUcUmkDzZe/+69Cinwd6pQ
+ YykgC3Yv5HvdGpAIvy3Q5HzFfuXtofCIoE7lsz6T6gsCQJhX6LsaTA8try7jQgwNvupc
+ cFkCUvNc4564qgfWDZLG3F+k1oOOy0ppGzWm7dclBR+i1Ay+awmp7tDuXN9Q+EoSLhMK
+ BVjiaEoFExwxtYTxYotdaxlXrwgTHvCnlB9XXRTy9lRdlTQQCHn/F5bEabXLTiTRISZB
+ o46qZs6KUfrHEq0v/fjm5alZQ7a3IEpuMn8btAKQLCupQh2otSribhspn1ZhOzSmar+0
+ FEnA==
+X-Gm-Message-State: AOAM531VGGojRoHjIdBtWTpvzL0X7AGkE0a5u89l8z0XItMItdTztqDP
+ IcWyTz3DeiisIlnC3USY4rHfEEueq+DPQ7lsfmOoEw==
+X-Google-Smtp-Source: ABdhPJy3r7ROG2Dd7iXkJwzhgssNgb6WC0TdCHVJoxGhMF/mvblnvGscUx3CvN8/kuZuYuZPjaHAQSC9J4+TMor5GdA=
+X-Received: by 2002:a05:6638:b:: with SMTP id
+ z11mr1909060jao.114.1590239680686; 
+ Sat, 23 May 2020 06:14:40 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200522.143656.1986528672037093503.davem@davemloft.net>
-Content-Language: en-US
+References: <20200520114415.13041-1-brgl@bgdev.pl>
+ <20200522.153653.998395486877096103.davem@davemloft.net>
+In-Reply-To: <20200522.153653.998395486877096103.davem@davemloft.net>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Sat, 23 May 2020 15:14:29 +0200
+Message-ID: <CAMRc=MdQo1faFjUzS0z5VmihZ3dfiuHiXozxQUkOhAi1n5tkcQ@mail.gmail.com>
+Subject: Re: [PATCH 0/5] net: provide a devres variant of register_netdev()
+To: David Miller <davem@davemloft.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200523_061429_845988_952093AF 
-X-CRM114-Status: GOOD (  15.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200523_061443_984394_C8FB960E 
+X-CRM114-Status: GOOD (  10.49  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [matthias.bgg[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,66 +90,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: edwin.peer@broadcom.com, devicetree@vger.kernel.org,
- stephane.leprovost@mediatek.com, arnd@arndb.de, bgolaszewski@baylibre.com,
- netdev@vger.kernel.org, brgl@bgdev.pl, sean.wang@mediatek.com,
- linux-kernel@vger.kernel.org, pedro.tsai@mediatek.com, fparent@baylibre.com,
- robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
- andrew.perepech@mediatek.com, john@phrozen.org, kuba@kernel.org,
- Mark-MC.Lee@mediatek.com, linux-arm-kernel@lists.infradead.org,
- hkallweit1@gmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Edwin Peer <edwin.peer@broadcom.com>,
+ devicetree <devicetree@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Arnd Bergmann <arnd@arndb.de>, Jonathan Corbet <corbet@lwn.net>,
+ netdev <netdev@vger.kernel.org>, Sean Wang <sean.wang@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Fabien Parent <fparent@baylibre.com>, Pedro Tsai <pedro.tsai@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 5/22/20 11:36 PM, David Miller wrote:
-> From: Matthias Brugger <matthias.bgg@gmail.com>
-> Date: Fri, 22 May 2020 23:31:50 +0200
-> 
->>
->>
->> On 22/05/2020 23:20, David Miller wrote:
->>> From: Bartosz Golaszewski <brgl@bgdev.pl>
->>> Date: Fri, 22 May 2020 14:06:49 +0200
->>>
->>>> This series adds support for the STAR Ethernet Controller present on MediaTeK
->>>> SoCs from the MT8* family.
->>>
->>> Series applied to net-next, thank you.
->>>
->>
->> If you say "series applied" do you mean you also applied the device tree parts?
->> These should go through my branch, because there could be conflicts if there are
->> other device tree patches from other series, not related with network, touching
->> the same files.
-> 
-> It's starting to get rediculous and tedious to manage the DT changes
-> when they are tied to new networking drivers and such.
-> 
-> And in any event, it is the patch series submitter's responsibility to
-> sort these issues out, separate the patches based upon target tree, and
-> clearly indicate this in the introductory posting and Subject lines.
-> 
-
-My experience in with other subsystems is that the DTS changes which
-enables de device are part of the series.
-They are normally prefixed with "arm64: dts:" or "ARM: dts:" for 32 bit
-SoCs. That also normally the way I detect patches which should through
-my tree.
-
-Anyway I'll try to remember submitters in the future to send DTS patches
-for network devices as separate series. That makes my life a bit more
-complicated as I afterwards have to find the related DTS series to the
-driver you accepted, but I'll try.
-
-Regards,
-Matthias
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+c29iLiwgMjMgbWFqIDIwMjAgbyAwMDozNiBEYXZpZCBNaWxsZXIgPGRhdmVtQGRhdmVtbG9mdC5u
+ZXQ+IG5hcGlzYcWCKGEpOgo+Cj4gRnJvbTogQmFydG9zeiBHb2xhc3pld3NraSA8YnJnbEBiZ2Rl
+di5wbD4KPiBEYXRlOiBXZWQsIDIwIE1heSAyMDIwIDEzOjQ0OjEwICswMjAwCj4KPiA+ICAgbmV0
+OiBldGhlcm5ldDogbXRrX2V0aF9tYWM6IHVzZSBkZXZtX3JlZ2lzdGVyX25ldGRldigpCj4KPiBU
+aGlzIHBhdGNoIGRvZXNuJ3QgYXBwbHkgdG8gbmV0LW5leHQuCj4KPiBOZWl0aGVyIHRoZSBzb3Vy
+Y2UgZmlsZSBkcml2ZXJzL25ldC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfZXRoX21hYy5jLAo+IG5v
+ciB0aGUgZnVuY3Rpb24gbXRrX21hY19wcm9iZSgpIGV2ZW4gZXhpc3QgaW4gdGhlIG5ldC1uZXh0
+IEdJVAo+IHRyZWUuCgpJbmRlZWQuIFRoZSBkcml2ZXIgZ290IHJlbmFtZWQgaW4gdjUuIEkgZGlk
+bid0IHJlc2VuZCBhIG5ldyB2ZXJzaW9uIG9mCnRoaXMgc2VyaWVzIGJlY2F1c2UgSSB0aG91Z2h0
+IHRoZXJlIHdvdWxkIGJlIGEgZGlzY3Vzc2lvbiBhYm91dCBpdHMKdXNlZnVsbmVzcy4gSSdsbCBz
+ZW5kIGEgcmViYXNlZCB2ZXJzaW9uIHRoZW4uCgpCYXJ0b3N6CgpfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
+dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
+ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
