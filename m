@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5FED1E0291
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 24 May 2020 21:31:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B4E51E0293
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 24 May 2020 21:32:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gJCvsBjJV4xc6tmMdjzm5P9gx+2j6D6w7sSyLf08Qkw=; b=EiYQYXR4qHnGLrqk8Lj58i0lER
-	la9a6vU/qwsIabjfpAtzdQlecqPEPPQFhMY3mRNov3KBmtDaSYSUKawaO491IUdFD9yjpSbnm2JXn
-	/1kUG5ub28BzjZj9OQnuax/YF5WkkIKIISk0wZr48cLX2PbCVimlqbs0IQKIZc6uERkw5xGS8PkJe
-	wDVokyJ+TVQwf/5zrMSP0iV9CKm6b/oDCtjwjEwvol+PIKKDMmY2DSQYUUGvq1I1gPowVwjCNVXyY
-	PYZB8FvitlXEnwM8lbaRAjg5Y6nMicyBCD+lLK2Ih7i6ITyB0rZli/PLSx4JsZXWBDBZsUfTnHso8
-	5Qwson+A==;
+	bh=Q+omGaXe/Uw33Ogtz7Q2/M24N8V0LIx/Uf2M+Bp8UQA=; b=tEGpLy6E60d4adI+37pypRVEDN
+	J6lZoL2IWfrIVJSp+7XUCm5mGl2D5doQxyPU2Hdu1UKfr+qvIcljSQDIvTORiHUNj5KPWpo1EX4Wz
+	5sHLYFXsOfpJ1ZmApbSY+a9vvuC8hDcwKBQ4u3iT02WHHrsBz0ruaDjnP6duJZYg/1scn2kThPASG
+	utVFkCgYBsFPbBDi9gB585NZ1eo44Wq7sGUneipzAcG+gAfPqdu8hk3REx54NKaT1gwoosVvBzmvW
+	9Q/mQ0/A2/VJi83w17yktOKQYjMkItn3vvFsq21S305NfRk0chbureGPKgf8UNvg75d25JN4rZVCn
+	5FeJw7Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcwLG-0004nB-Uo; Sun, 24 May 2020 19:31:26 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jcwM6-0005QV-2J; Sun, 24 May 2020 19:32:18 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcwFu-0006Rz-CI
- for linux-arm-kernel@lists.infradead.org; Sun, 24 May 2020 19:25:56 +0000
-Received: by mail-lj1-x241.google.com with SMTP id c11so16390059ljn.2
+ id 1jcwFw-0006TP-JH
+ for linux-arm-kernel@lists.infradead.org; Sun, 24 May 2020 19:26:00 +0000
+Received: by mail-lf1-x143.google.com with SMTP id e125so9393470lfd.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 24 May 2020 12:25:54 -0700 (PDT)
+ Sun, 24 May 2020 12:25:56 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ArHIpbhBZ4QboXR1B47LETKKz8hPypHrPsMnuHhW5Pc=;
- b=oBFl+FYPXCF2nyxMWUbG5bRYxOeXrnLcwNIOcNbWk5ote7fWi1iuH6oIHUNBiMytjf
- Lqb144emRs2uKuETQJHJ2h+qwGb7j3Gs0fzmlSKrXbKmxGi192Z4hTbMU+tvRx/lPlhm
- rI8UWpO2x/VZpLDOCAmwB7vORkosPtFSeqPZ2rlL8PF69L4lyvn5HN8oNKWKDtvNiqVU
- ZzhJphVkNtcB1hPa5X1uOcsystaTuCU3yCmwTvETURKyYsb0vkCWjVXhaUH7Hy1rb9GD
- zr4SsTBhTokVxMCiUD/3pdlEeaXfxxjUuJTamP1EG8nr00iS/PgVG6DaIaQD8gV3kGjo
- Qi5Q==
+ bh=5XttF+gsxtE2Nh/RT1QjWbgSDPDgIMs0jLXUksIU0jw=;
+ b=Q9zdV7gO/MYu3S00/kxokO6oD2tR0Kw1o4ENGUPMf/DwqEdKXQtIfXMkXjWFVa2JWt
+ jIRsVs3gIH9SwWWfHwoL+KwCRVD4xDYZK0cwCMCmy+t0JOGfE+Xc+dZE03N8lut5sz2W
+ qQbKlEL8CGXjD2iudWs2dSowjnDDAaSxLb3joGbQiq+sY49Xo/F1fVPpClEZ07Ox5cI1
+ zlF+AwGVs5d9V2hEtk9DV51aPBoYSMkcxHaLTReRDTVa5BeVFiv5qP3Miej0vCt1uTwA
+ gFt9geoJAfS8I979RxuhEtBr9fn0QHv43JLpSFojnSofo0nJrCyV2i+44pa5glYnzy4J
+ rlfQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ArHIpbhBZ4QboXR1B47LETKKz8hPypHrPsMnuHhW5Pc=;
- b=lPl6fZh9wqjL4e+3MJebtnocTuWJIVLiVkLuPomho7KjNtY4AnWpUBC1HZ5nImwiDE
- viJLDtbS/zq2eC1/Vj3dO9o+XTIhTJkUcPMohmTyGePhHiSP8H+CiZgT4KhFerpVjjpb
- p6x3NP3bEsFz2VQsNhEpvQnCeIcKoCavdbxAe5n5xUW/imcbcYQy6F4geMLQ/KfWgQAM
- RJVcFXKlsnFPDcU88bESNWDSvhzVDKjOY42QtYtxfmhb+/CPUX13TAQKOhGm0IT4dW8Q
- 22Hmftwmho+HAPKvgY7Yvb3XFoAmlm5J1zyacWU1FYAI+AJAM9VTC/xnc8WF40BwlIGd
- leuQ==
-X-Gm-Message-State: AOAM533nd/BHN8LiRlOOKVqTj6HRehp6fbfeE60tbBIpsDEKfLihHTvS
- V8p6uhRrQzns9YRstf0oEaiaqQ==
-X-Google-Smtp-Source: ABdhPJxyBtmtLkqVgMFpLolLOPlu5o8eTu0WHSm7CDTFILzmDEAVdYLLTsHq30+ePOwEbD75fjQSVA==
-X-Received: by 2002:a2e:8008:: with SMTP id j8mr12789036ljg.72.1590348352874; 
- Sun, 24 May 2020 12:25:52 -0700 (PDT)
+ bh=5XttF+gsxtE2Nh/RT1QjWbgSDPDgIMs0jLXUksIU0jw=;
+ b=cdXu8sbZ84MiVadoNjOvSgpvPBeqq+ORx9MykndSpSS1t09XnVsKF1b2euXj3r796A
+ PaTsXqJDm4rS8RNeHOO/L7QRQlhnxpUha3aPNkSH5frM5Rcx3ji1u26C8fSgYOu0K1pn
+ U4J+h1fUqLIWErQTmqLmVjAyaugkvBh2DKjPNb06j0oxYqFaRxfer4UmLBT9SYhLW0qA
+ OpW9O5giX/RXd8LPY2Rmpy4VfMivFqS9tlxB3nbAaB4ZIBThAXaw4wrGcnS8VihDGaE0
+ +pDnAiTPLiYEW6C+RpJr8TmWbE9FQr2Ekg0/FaG6b38hoY2jRnFrq4GQYNyye1fJQOru
+ 2SGA==
+X-Gm-Message-State: AOAM532Rr4AAGtMlgOo67jRzcULkEnrJMEOfnZm78MEKf1mmkVcSXhxK
+ 40k4JyV5+E/Scas4ohzthOAGsw==
+X-Google-Smtp-Source: ABdhPJwN7XnAuNpoLsBpve9Y4DsBJwSK4bv4ADy1BFqTyLwbNZ2j2wh6a12hUzBuYEe9s7X+cCSCmw==
+X-Received: by 2002:a05:6512:533:: with SMTP id
+ o19mr8600990lfc.6.1590348354921; 
+ Sun, 24 May 2020 12:25:54 -0700 (PDT)
 Received: from localhost.localdomain (37-144-159-139.broadband.corbina.ru.
  [37.144.159.139])
- by smtp.googlemail.com with ESMTPSA id v10sm3878137lja.23.2020.05.24.12.25.51
+ by smtp.googlemail.com with ESMTPSA id v10sm3878137lja.23.2020.05.24.12.25.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 24 May 2020 12:25:52 -0700 (PDT)
+ Sun, 24 May 2020 12:25:54 -0700 (PDT)
 From: Andrey Konovalov <andrey.konovalov@linaro.org>
 To: mchehab@kernel.org, sakari.ailus@iki.fi, manivannan.sadhasivam@linaro.org
-Subject: [PATCH v3 08/10] media: i2c: imx290: Add support to enumerate all
- frame sizes
-Date: Sun, 24 May 2020 22:25:03 +0300
-Message-Id: <20200524192505.20682-9-andrey.konovalov@linaro.org>
+Subject: [PATCH v3 09/10] media: i2c: imx290: Move the settle time delay out
+ of loop
+Date: Sun, 24 May 2020 22:25:04 +0300
+Message-Id: <20200524192505.20682-10-andrey.konovalov@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200524192505.20682-1-andrey.konovalov@linaro.org>
 References: <20200524192505.20682-1-andrey.konovalov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_122554_487299_0F1F1B85 
-X-CRM114-Status: GOOD (  11.48  )
+X-CRM114-CacheID: sfid-20200524_122557_906736_A96C2FDC 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,53 +110,35 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
-Add support to enumerate all frame sizes supported by IMX290. This is
-required for using with userspace tools such as libcamera.
+The 10ms settle time is needed only at the end of all consecutive
+register writes. So move the delay to outside of the for loop of
+imx290_set_register_array().
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Signed-off-by: Andrey Konovalov <andrey.konovalov@linaro.org>
 ---
- drivers/media/i2c/imx290.c | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+ drivers/media/i2c/imx290.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
-index 6e70ff22bc5f..88850f3b1427 100644
+index 88850f3b1427..ee5c95cf64f3 100644
 --- a/drivers/media/i2c/imx290.c
 +++ b/drivers/media/i2c/imx290.c
-@@ -471,6 +471,25 @@ static int imx290_enum_mbus_code(struct v4l2_subdev *sd,
+@@ -347,11 +347,11 @@ static int imx290_set_register_array(struct imx290 *imx290,
+ 		ret = imx290_write_reg(imx290, settings->reg, settings->val);
+ 		if (ret < 0)
+ 			return ret;
+-
+-		/* Settle time is 10ms for all registers */
+-		msleep(10);
+ 	}
+ 
++	/* Provide 10ms settle time */
++	msleep(10);
++
  	return 0;
  }
  
-+static int imx290_enum_frame_size(struct v4l2_subdev *subdev,
-+				  struct v4l2_subdev_pad_config *cfg,
-+				  struct v4l2_subdev_frame_size_enum *fse)
-+{
-+	if ((fse->code != imx290_formats[0].code) &&
-+	    (fse->code != imx290_formats[1].code))
-+		return -EINVAL;
-+
-+	if (fse->index >= ARRAY_SIZE(imx290_modes))
-+		return -EINVAL;
-+
-+	fse->min_width = imx290_modes[fse->index].width;
-+	fse->max_width = imx290_modes[fse->index].width;
-+	fse->min_height = imx290_modes[fse->index].height;
-+	fse->max_height = imx290_modes[fse->index].height;
-+
-+	return 0;
-+}
-+
- static int imx290_get_fmt(struct v4l2_subdev *sd,
- 			  struct v4l2_subdev_pad_config *cfg,
- 			  struct v4l2_subdev_format *fmt)
-@@ -850,6 +869,7 @@ static const struct v4l2_subdev_video_ops imx290_video_ops = {
- static const struct v4l2_subdev_pad_ops imx290_pad_ops = {
- 	.init_cfg = imx290_entity_init_cfg,
- 	.enum_mbus_code = imx290_enum_mbus_code,
-+	.enum_frame_size = imx290_enum_frame_size,
- 	.get_fmt = imx290_get_fmt,
- 	.set_fmt = imx290_set_fmt,
- };
 -- 
 2.17.1
 
