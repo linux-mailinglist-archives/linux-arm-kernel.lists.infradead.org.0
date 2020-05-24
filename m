@@ -2,83 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D75921DFE1B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 24 May 2020 12:01:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 163FB1DFE7E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 24 May 2020 13:15:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xa8YDxw0beHSpYmgMKfYXgM0kBvMI9h+3LrSxhvC3d8=; b=BySaBa8cvQ8dxO
-	4kfcenP+vong6ztgI7Sv3FvMO/CvUegv/AVtRbKU1h/deQec/MtJRzyFADHEmn/zbtgnBnbRrOr/i
-	zWxVTg14UDvt1qQqYh9jgZNuF6s3Mva9n9wYUJDBIcVdKK6W9uhN0zCQDf44SwpQAmM5wGWpiZrMS
-	tK0r6HSE3HBANanbDgT9Q8a2tpV8Dx2fJq6wYlytjcTznS+p4N54IbGrIq3iK+lkt7FKgFnurrmfr
-	KOGN90esilA9DPKO+wa2o7qJsb2xdQkZvRWHxBV1eUQZoWuQRt8W2MNPlnTBDIAuh576DMSmhqsxO
-	moCzQu5GvJeqXw9/46NA==;
+	List-Owner; bh=anRrQM0r4Ck5L058eO0gIpwl/O3PNLPNylTj9V7/sbY=; b=YZ0Rd0/E3tU6uf
+	BhuGlTW2DdQaGklY97a3oIeS1nnLpvaOIibAe1XtYrhKRTY7osLVuTB9KQkGoFsXFUeSedcYyUoLy
+	gZBn86Awe+rcJDhhISnd2PpmXek3SlJCJ2ReOeCfkvNS8qo9JdnPCduBgJOeGfCE5sCNm9vzZLYdy
+	impVX2Ji8gmOeem+zM8oVTGsy6jXr88G400Z4CMYAnaOhT3pFohmSmfuD4RCU5ngbNPv6SofEvZIo
+	ISwg/H5KCuJpAhECOBQLYPA33C3jWVO18hNxlcfnfmCtfEZJwzwQoAJndgxbp07VB1kwIWEzBGa2q
+	u4983+jXY8xdoqfr7Lmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcnRu-0005PU-0d; Sun, 24 May 2020 10:01:42 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1jcobA-0006tC-Mp; Sun, 24 May 2020 11:15:20 +0000
+Received: from mout.kundenserver.de ([217.72.192.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcnRl-0005Oy-JZ
- for linux-arm-kernel@lists.infradead.org; Sun, 24 May 2020 10:01:35 +0000
-Received: by mail-oi1-x243.google.com with SMTP id m67so3263673oif.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 24 May 2020 03:01:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oTajmnohfywFupxs957CWHHjqHcvTI6e5RfNGOZbkGc=;
- b=YhvL8fVdrbh3XfLrAXLRTb2lrsFdJKPZBC6VFogb/a+IDT4r6kXTNEpClNwyN8xzoX
- PovzcKVQCCTTp5jpI9t388nRIm2CpbShnPhMKTsl833/Zg4Q1qitewLWEkU2FdyShT0z
- QvgtbKq2j46QJSYyUHZ80XmbHJUMjmUBIqLlI=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oTajmnohfywFupxs957CWHHjqHcvTI6e5RfNGOZbkGc=;
- b=GdN5ERY05NrTtQQveJGZmvyx89F74LgRM5GaBRb0Z/UxxFy93q0iiX1jZrjYVuB6zC
- cFGIy9/pa2EUxxmLk4Q2g0nxONMR7YPH/+e8nwXVV2mUqZ7ga9r/Ieve3nY3lFTgL69J
- 3BE9a9hNBRj0yphkFfC+QhmtSGniiqL+HaBOxCiNoZgcamTIaJAc31yDo2j1QukuHDij
- ELdmghXWXLOLUFLQkK90fHJzWNRJNP56ciMLTNbqy4ziFJSnqhkXKjzdaKtBp4sxDSEo
- Gx6Qyl03vhTeihKzmoj39P+32QWMlvpglq/RDDFdl9A3BUHgzmdW87R9OSQgmf0noNvH
- O/rg==
-X-Gm-Message-State: AOAM531ttOYXxo0CKRj5OMJQ9iegREhzVjrq7S9qMTQmoSS9kZMxbNsg
- CCmrsOrJiHAaMv9Lp3mwjtyTCGwu+54uLjgrXlzf4w==
-X-Google-Smtp-Source: ABdhPJyYQjQntruCcmBuzCOoJjVws8Uf/VrPmrDFHKD1uZxz3ratl/o/oUQNoQUQQuBO/mmCLqEaCqSuIRxVr4LZk2s=
-X-Received: by 2002:aca:4b91:: with SMTP id y139mr7314961oia.128.1590314491735; 
- Sun, 24 May 2020 03:01:31 -0700 (PDT)
+ id 1jcob1-0006aC-WF; Sun, 24 May 2020 11:15:13 +0000
+Received: from mail-qt1-f179.google.com ([209.85.160.179]) by
+ mrelayeu.kundenserver.de (mreue109 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1M8hMt-1jhTI50ukD-004lWv; Sun, 24 May 2020 13:15:08 +0200
+Received: by mail-qt1-f179.google.com with SMTP id i68so11943918qtb.5;
+ Sun, 24 May 2020 04:15:06 -0700 (PDT)
+X-Gm-Message-State: AOAM5337r+6za4+acDcyV6GkdfmfOlyby2f1MyX9mdYqNKRvFr+qJb/8
+ rxA7ExBtttPcK/T/sqPs1Tjg8R2BxR8dMLC721Y=
+X-Google-Smtp-Source: ABdhPJzLa7acitFD9xvGhwFgsyhGkTphi6Wcqu/pQU40QEW+DA8DKggWRsmYhNkmqGbzLOwBirNaXJMcJ7YBNL4WB6M=
+X-Received: by 2002:ac8:474f:: with SMTP id k15mr15122856qtp.18.1590318905777; 
+ Sun, 24 May 2020 04:15:05 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200430161438.17640-1-alpernebiyasak@gmail.com>
- <20200430161438.17640-2-alpernebiyasak@gmail.com>
- <20200513053529.GL413@jagdpanzerIV.localdomain>
-In-Reply-To: <20200513053529.GL413@jagdpanzerIV.localdomain>
-From: Daniel Vetter <daniel.vetter@ffwll.ch>
-Date: Sun, 24 May 2020 12:01:20 +0200
-Message-ID: <CAKMK7uHO43-O+bPkJMhuv5HNh-PS7+wm6==n-7VQfRu2zq8xvQ@mail.gmail.com>
-Subject: Re: [RFC PATCH v2 1/3] printk: Add function to set console to
- preferred console's driver
-To: Sergey Senozhatsky <sergey.senozhatsky@gmail.com>
+References: <000000000000861e3305a65e9d74@google.com>
+ <768166145.263589.1590307748272.JavaMail.zimbra@nod.at>
+In-Reply-To: <768166145.263589.1590307748272.JavaMail.zimbra@nod.at>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Sun, 24 May 2020 13:14:49 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1VwDCAbzVXomsqOON+xyKC6XNNzpjEh9rgXJ9Dgb4V-Q@mail.gmail.com>
+Message-ID: <CAK8P3a1VwDCAbzVXomsqOON+xyKC6XNNzpjEh9rgXJ9Dgb4V-Q@mail.gmail.com>
+Subject: Re: KASAN: use-after-free Read in uif_close
+To: Richard Weinberger <richard@nod.at>
+X-Provags-ID: V03:K1:pW1vfKGRlZrm4awWFpAEBl/OGCkyFXSZd78iQSqoRPSl5gqUqRO
+ rwgCNgG2fkZjJ7R+4hyqXBmkOImPgGdLdeTx/AWIK/QrZMDuFqzmiCqyPsVMBr9jkcJQGEO
+ G+30GizSkm3f2NnTpWft/lFBbOnniXLbrkfR+cCrOtg7DIM+xvrzuwHik91okmE1A3Qrrwz
+ NH+bcw8g+HzAJMExBcXJQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:DmYyPC00jBc=:eGTBACFuLzq4uLk4m4pLom
+ GWmuNidw8uiflxisMbKQ3L+5lPYuQ7353E3r6wsdm4RyW2mBKfQYOc5ksutJ08WHU7pGQ8dpU
+ 8nLK4123v2VGL13IRJOKRgSOnSN/5TcY8Gb2CHiQ9c6IP4XIq1UQamN7IvoeppXDkXAkXt6dP
+ pRUzmGw/BFPLgTpBpzPcNuVThBqHYdmd56BDx79spxcV/VKNhEhMX+W+2QFiPq33GC1Aj4Wzy
+ 0zsHjgw6mCgrb+NenMBOdc3ctKz0BlD8Lmc9g0/Vbc7fP5DQQZOesu7CUUdmh7W+Aax4qCREW
+ 3NI0Ubot0DaKJoXcc4uwv1MrH7Mv6Qr9eR10pWPS7e0VUfVTs4c/lMYo5VFhN+lwt1zh3dlh0
+ aFeCPvW1H3vCvzLOHbky5VLu8/TvRQ0r1+Ny4L+m3SBAq2CkaR3xAL0jfpUBOWQAqEIKHltx2
+ T19XA7jcaIy7xGUONV3a3gmyxYuaaLIQQm1OAV8h5BT0QkEgJZ7/5fjmY3LP078d1oTkRFHnU
+ oADOVqf1gNc9aluYfbhnPX1MIfBBQ80jp2e9xwmZCHBeuxZ4B6C9acUuVwleWLmfSj4wZTBt8
+ qht4k6GTspRiwF8H7TGkcAxMpwy4hGYK3rQO4dzhdTy5eoxcCIOdp6kB1DDoNZ2NKRMHIC59M
+ tthnpM6KouFIfuKttatqLdwFiOmnXZKmhGz+v8zqHb+sHABhyplU5BCzwXuIJjaqOe5Mstx/N
+ /zVPptoB31sVmbu3/YlghGq50EO6q6UZPL0bdZx+pB+S+2L5px3yuJaoGYrKT1TBUN6NsFZCe
+ wQyhwxLKOMmTivkUBFnRFOZa7R8378WbmWnvOhde/+xyDAsTOs=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_030133_645075_E60D4092 
-X-CRM114-Status: GOOD (  14.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200524_041512_330334_5ED1B5C5 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.75 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.72.192.75 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,72 +85,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>, Arvind Sankar <nivedita@alum.mit.edu>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+Cc: syzbot <syzbot+0ce97ea45b008ba3b8bd@syzkaller.appspotmail.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>, festevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ syzkaller-bugs <syzkaller-bugs@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Oleksij Rempel <linux@rempel-privat.de>,
+ linux-mtd <linux-mtd@lists.infradead.org>, linux-imx <linux-imx@nxp.com>,
+ kernel <kernel@pengutronix.de>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>,
- Alper Nebi Yasak <alpernebiyasak@gmail.com>, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>, Andrew Morton <akpm@linux-foundation.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Feng Tang <feng.tang@intel.com>, "David S. Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ shawnguo <shawnguo@kernel.org>, daniel baluta <daniel.baluta@nxp.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 7:35 AM Sergey Senozhatsky
-<sergey.senozhatsky@gmail.com> wrote:
->
-> On (20/04/30 19:14), Alper Nebi Yasak wrote:
-> [..]
-> > +int update_console_to_preferred(void)
-> > +{
-> > +     struct console_cmdline *c = NULL;
-> > +     struct console *con = NULL;
-> > +     struct console *tmp = NULL;
-> > +
-> > +     if (preferred_console >= 0)
-> > +             c = &console_cmdline[preferred_console];
-> > +
-> > +     if (!c || !c->name[0])
-> > +             return 0;
-> > +
-> > +     for_each_console(con) {
-> > +             if (!con->next || !(con->next->flags & CON_ENABLED))
-> > +                     continue;
-> > +             if (strcmp(c->name, con->next->name) != 0)
-> > +                     continue;
->
-> This matches the consoles by exact name. Consoles can have aliases,
-> but matching by alias is rather complex and it has some side effects.
->
-> Let me Cc more people on this. VT has a console takeover logic,
-> I wonder if we can extend the takeover code somehow.
->
-> Daniel, any thoughts?
-
-Apologies for late reply, but nope, no thoughts. I have some ideas for
-the locking in the console subsystem, but that's just to untangle it
-from gpu drivers as much as possible. Otherwise I'm trying to stay
-away from it as far as I can :-)
-
-Cheers, Daniel
-
->
-> https://lore.kernel.org/lkml/20200430161438.17640-1-alpernebiyasak@gmail.com
->
->         -ss
-
-
-
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-+41 (0) 79 365 57 48 - http://blog.ffwll.ch
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCBNYXkgMjQsIDIwMjAgYXQgMTA6MDkgQU0gUmljaGFyZCBXZWluYmVyZ2VyIDxyaWNo
+YXJkQG5vZC5hdD4gd3JvdGU6Cj4KPiAtLS0tLSBVcnNwcsO8bmdsaWNoZSBNYWlsIC0tLS0tCj4g
+PiBWb246ICJzeXpib3QiIDxzeXpib3QrMGNlOTdlYTQ1YjAwOGJhM2I4YmRAc3l6a2FsbGVyLmFw
+cHNwb3RtYWlsLmNvbT4KPiA+IEFuOiAiQXJuZCBCZXJnbWFubiIgPGFybmRAYXJuZGIuZGU+LCAi
+ZGFuaWVsIGJhbHV0YSIgPGRhbmllbC5iYWx1dGFAbnhwLmNvbT4sICJmZXN0ZXZhbSIgPGZlc3Rl
+dmFtQGdtYWlsLmNvbT4sICJHcmVnCj4gPiBLcm9haC1IYXJ0bWFuIiA8Z3JlZ2toQGxpbnV4Zm91
+bmRhdGlvbi5vcmc+LCAia2VybmVsIiA8a2VybmVsQHBlbmd1dHJvbml4LmRlPiwgImxpbnV4LWFy
+bS1rZXJuZWwiCj4gPiA8bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnPiwgImxp
+bnV4LWlteCIgPGxpbnV4LWlteEBueHAuY29tPiwgImxpbnV4LWtlcm5lbCIgPGxpbnV4LWtlcm5l
+bEB2Z2VyLmtlcm5lbC5vcmc+LAo+ID4gImxpbnV4LW10ZCIgPGxpbnV4LW10ZEBsaXN0cy5pbmZy
+YWRlYWQub3JnPiwgbGludXhAcmVtcGVsLXByaXZhdC5kZSwgIk1pcXVlbCBSYXluYWwiIDxtaXF1
+ZWwucmF5bmFsQGJvb3RsaW4uY29tPiwKPiA+ICJyaWNoYXJkIiA8cmljaGFyZEBub2QuYXQ+LCAi
+U2FzY2hhIEhhdWVyIiA8cy5oYXVlckBwZW5ndXRyb25peC5kZT4sICJzaGF3bmd1byIgPHNoYXdu
+Z3VvQGtlcm5lbC5vcmc+LAo+ID4gc3l6a2FsbGVyLWJ1Z3NAZ29vZ2xlZ3JvdXBzLmNvbSwgIlZp
+Z25lc2ggUmFnaGF2ZW5kcmEiIDx2aWduZXNockB0aS5jb20+Cj4gPiBHZXNlbmRldDogU29ubnRh
+ZywgMjQuIE1haSAyMDIwIDA4OjAzOjAzCj4gPiBCZXRyZWZmOiBSZTogS0FTQU46IHVzZS1hZnRl
+ci1mcmVlIFJlYWQgaW4gdWlmX2Nsb3NlCj4KPiA+IHN5emJvdCBoYXMgYmlzZWN0ZWQgdGhpcyBi
+dWcgdG86Cj4gPgo+ID4gY29tbWl0IDMyZWM3ODNhZTE5ZDQ4MDg0Yjg5M2NjNTQ3NDdmZWQzN2Iw
+N2ViMGMKPiA+IEF1dGhvcjogQXJuZCBCZXJnbWFubiA8YXJuZEBhcm5kYi5kZT4KPiA+IERhdGU6
+ICAgV2VkIEFwciA4IDE5OjAyOjU3IDIwMjAgKzAwMDAKPiA+Cj4gPiAgICBmaXJtd2FyZTogaW14
+OiBmaXggY29tcGlsZS10ZXN0aW5nCj4KPiBIbW0sIGZyb20gYSBxdWljayBjaGVjayBJIGRvbid0
+IHNlZSBob3cgdGhpcyBpcyByZWxhdGVkLgo+IEFybmQ/CgpJIHN1cHBvc2UgdGhpcyB3YXMgYSBy
+YW5kY29uZmlnIGJ1aWxkIGZvciBhIGNvbmZpZ3VyYXRpb24gdGhhdCBkaWQgbm90IGJ1aWxkCnVu
+dGlsIEkgZml4ZWQgdGhlIGJ1aWxkIHN0YWdlLCBhbmQgdGhlbiBpdCBmYWlsZWQgYXQgcnVudGlt
+ZSwgc28gdGhlIGJ1ZyB3b3VsZApoYXZlIGJlZW4gaW4gZWFybGllciByZWxlYXNlcyBhcyB3ZWxs
+LCBpdCB3YXMganVzdCBub3Qgb2JzZXJ2ZWQuCgogICAgIEFybmQKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
