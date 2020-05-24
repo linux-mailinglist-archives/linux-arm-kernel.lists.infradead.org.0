@@ -2,54 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A480B1E02B4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 24 May 2020 22:18:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C0CF1E02C3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 24 May 2020 22:34:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dy7CqxFAjAIH86GxJ340LXRuGburPOEf/17S5Nhtiac=; b=e0y0xw6Tit66E8
-	xZ7rMfDv8Wl5o/mvofLoqiSWLLgKF+Fh7wrc9Qj/GnvaZT0lihc4z4kRhtXPV+MqL8a/LMg07B+pj
-	7PjY+MYmfju2kfjz3XC6sMTHtJGE84I3GgnntPtNuQjFaDiTIlbWALSFrFcagMxgZqVhO9u0X+ZfP
-	qHhkM4nwbaApw5TCgEvWR0KGUOneES+w+7w92sgKzWvm/8AMvF397Pv0vqJA0y0TShMUkgSnXudhm
-	lhGWFwevMXwwdI6hA8RGeXk/uZXk4a9hWmAPzDUOR2k6XE/SD/wGIorz4so4GGo0y5RnOWXMe4N4D
-	0hQF9OFhBMbVKCVde7kQ==;
+	List-Owner; bh=SQGNUwnLd8bYdceEGSw9jj7rtVU3RAyap4Ox5tdjTtA=; b=q2+CktSDZfR3Z4
+	q3AsJL3SlWMqJD/Gt+D7cXcuJUgoSicjv3c6lHOcmIA1qZiKAc1SemYkxqn5F82WEP7BDMa23wcyT
+	4m8R4sK3ZcqFbrRHqpvR0+xhzhdyjtScFjRWNDQ1y9yqGD1ItNTTjjtem5XdP+PlU1rTItzThLGut
+	W3Q0Rko14vAU2eaByBInX0W5KfvRlpqrsrzWsVOtyd996Xs4/6bbsd2iK/Tt/LPNubilOl9Xm0kIt
+	qKl4d9QAF5q0+3Po2Kze2wlh60a9GlV8Re5CSMtWstOUKRGVUfQ0btNCcyP4aF/AF8CqI3NUf5h0d
+	U5KEVRgrnZOSxNU6OpGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcx4W-00006g-5d; Sun, 24 May 2020 20:18:12 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jcxJp-0000dl-NW; Sun, 24 May 2020 20:34:01 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcx4O-00005z-AY; Sun, 24 May 2020 20:18:05 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:b93f:9fae:b276:a89a])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 2A9BD26107D;
- Sun, 24 May 2020 21:18:02 +0100 (BST)
-Date: Sun, 24 May 2020 22:17:58 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Pratyush Yadav <p.yadav@ti.com>
-Subject: Re: [PATCH v8 02/19] spi: spi-mem: allow specifying a command's
- extension
-Message-ID: <20200524221758.7c30f336@collabora.com>
-In-Reply-To: <20200522224042.29970-3-p.yadav@ti.com>
-References: <20200522224042.29970-1-p.yadav@ti.com>
- <20200522224042.29970-3-p.yadav@ti.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1jcxJh-0000dJ-Mx; Sun, 24 May 2020 20:33:54 +0000
+IronPort-SDR: MXlUsN45YX5w7/DWhd7wLz5Z596ipRFk+BF+hLtwQ+dRWG4UVwa0epoje4mb0V2zJFKmmDVlJY
+ aIBOPip/bq0g==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 24 May 2020 13:33:50 -0700
+IronPort-SDR: hGO7Y3wYazKbBMeBckgS76jnZK8vgx3/d2+Tum7KpIZBE7Os41Bbvt3Qwb/u2VDS+n2UM4fhvq
+ Z18P3EudgMLg==
+X-IronPort-AV: E=Sophos;i="5.73,430,1583222400"; d="scan'208";a="254745249"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by fmsmga007-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 24 May 2020 13:33:46 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 554C820736; Sun, 24 May 2020 23:33:44 +0300 (EEST)
+Date: Sun, 24 May 2020 23:33:44 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Subject: Re: [V8, 1/2] media: dt-bindings: media: i2c: Document OV02A10
+ bindings
+Message-ID: <20200524203344.GB7618@paasikivi.fi.intel.com>
+References: <20200509080627.23222-1-dongchun.zhu@mediatek.com>
+ <20200509080627.23222-2-dongchun.zhu@mediatek.com>
+ <20200511160207.GA32476@bogus>
+ <1589251221.8804.289.camel@mhfsdcap03>
+ <CAAFQd5DgrDwPEpdN9ErJWsHbMDpo2s_u3pwsqtpNwVk4g3_CdQ@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAAFQd5DgrDwPEpdN9ErJWsHbMDpo2s_u3pwsqtpNwVk4g3_CdQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_131804_493015_B8CF42F1 
-X-CRM114-Status: GOOD (  13.70  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200524_133353_762774_00298EB2 
+X-CRM114-Status: GOOD (  17.19  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,89 +75,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>,
- Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
- Michal Simek <michal.simek@xilinx.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>, linux-mtd@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- linux-spi@vger.kernel.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ linux-devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Shengnan Wang =?utf-8?B?KOeOi+Wco+eUtyk=?= <shengnan.wang@mediatek.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Sj Huang <sj.huang@mediatek.com>, Nicolas Boichat <drinkcat@chromium.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>, Louis Kuo <louis.kuo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 23 May 2020 04:10:25 +0530
-Pratyush Yadav <p.yadav@ti.com> wrote:
+On Thu, May 21, 2020 at 08:59:56PM +0200, Tomasz Figa wrote:
+> Hi Dongchun, Rob,
+> 
+> On Tue, May 12, 2020 at 4:41 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
+> >
+> > Hi Rob,
+> >
+> > Thanks for the review.
+> >
+> > On Mon, 2020-05-11 at 11:02 -0500, Rob Herring wrote:
+> > > On Sat, May 09, 2020 at 04:06:26PM +0800, Dongchun Zhu wrote:
+> [snip]
+> > > > +            port {
+> > > > +                wcam_out: endpoint {
+> > > > +                    remote-endpoint = <&mipi_in_wcam>;
+> > > > +                    data-lanes = <1>;
+> > >
+> > > This doesn't match the schema which says this should be 4 entries.
+> > >
+> >
+> > Property "data-lanes" shows the number of lanes that sensor supports.
+> > If this property is omitted, four-lane operation is assumed.
+> > For OV02A10, it is one-lane operation, so the property is supposed to be
+> > set to <1>.
+> >
+> 
+> To clarify on this, the ov02a10 sensor supports only 1 lane. It's not
+> a driver limitation.
 
-> diff --git a/drivers/spi/spi-mxic.c b/drivers/spi/spi-mxic.c
-> index 69491f3a515d..4e4292f0ee1d 100644
-> --- a/drivers/spi/spi-mxic.c
-> +++ b/drivers/spi/spi-mxic.c
-> @@ -356,6 +356,7 @@ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
->  	int nio = 1, i, ret;
->  	u32 ss_ctrl;
->  	u8 addr[8];
-> +	u8 opcode = op->cmd.opcode & 0xff;
+If there's nothing to configure there, then the property should be omitted.
+I understood the sensor supported one to four lanes...
 
-You don't need the '& 0xff' here, the cast to an u8 will truncate the
-value anyway.
-
->  
->  	ret = mxic_spi_set_freq(mxic, mem->spi->max_speed_hz);
->  	if (ret)
-> @@ -393,7 +394,7 @@ static int mxic_spi_mem_exec_op(struct spi_mem *mem,
->  	writel(readl(mxic->regs + HC_CFG) | HC_CFG_MAN_CS_ASSERT,
->  	       mxic->regs + HC_CFG);
->  
-> -	ret = mxic_spi_data_xfer(mxic, &op->cmd.opcode, NULL, 1);
-> +	ret = mxic_spi_data_xfer(mxic, &opcode, NULL, 1);
->  	if (ret)
->  		goto out;
->  
-> diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-> index 17641157354d..41389856e14a 100644
-> --- a/drivers/spi/spi-zynq-qspi.c
-> +++ b/drivers/spi/spi-zynq-qspi.c
-> @@ -527,20 +527,21 @@ static int zynq_qspi_exec_mem_op(struct spi_mem *mem,
->  	struct zynq_qspi *xqspi = spi_controller_get_devdata(mem->spi->master);
->  	int err = 0, i;
->  	u8 *tmpbuf;
-> +	u8 opcode = op->cmd.opcode & 0xff;
->  
-
-Ditto.
-
->  	dev_dbg(xqspi->dev, "cmd:%#x mode:%d.%d.%d.%d\n",
-> -		op->cmd.opcode, op->cmd.buswidth, op->addr.buswidth,
-> +		opcode, op->cmd.buswidth, op->addr.buswidth,
->  		op->dummy.buswidth, op->data.buswidth);
->  
->  	zynq_qspi_chipselect(mem->spi, true);
->  	zynq_qspi_config_op(xqspi, mem->spi);
->  
-> -	if (op->cmd.opcode) {
-> +	if (opcode) {
-
-Unrelated to this patch, but this test is wrong. I don't see why we
-couldn't have a '0' opcode. The test should be dropped or done on the
-new op->cmd.nbytes field.
-
->  		reinit_completion(&xqspi->data_completion);
-> -		xqspi->txbuf = (u8 *)&op->cmd.opcode;
-> +		xqspi->txbuf = &opcode;
->  		xqspi->rxbuf = NULL;
-> -		xqspi->tx_bytes = sizeof(op->cmd.opcode);
-> -		xqspi->rx_bytes = sizeof(op->cmd.opcode);
-> +		xqspi->tx_bytes = op->cmd.nbytes;
-> +		xqspi->rx_bytes = op->cmd.nbytes;
->  		zynq_qspi_write_op(xqspi, ZYNQ_QSPI_FIFO_DEPTH, true);
->  		zynq_qspi_write(xqspi, ZYNQ_QSPI_IEN_OFFSET,
->  				ZYNQ_QSPI_IXR_RXTX_MASK);
+-- 
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
