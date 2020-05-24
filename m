@@ -2,68 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C0CF1E02C3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 24 May 2020 22:34:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4F641E02C8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 24 May 2020 22:38:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SQGNUwnLd8bYdceEGSw9jj7rtVU3RAyap4Ox5tdjTtA=; b=q2+CktSDZfR3Z4
-	q3AsJL3SlWMqJD/Gt+D7cXcuJUgoSicjv3c6lHOcmIA1qZiKAc1SemYkxqn5F82WEP7BDMa23wcyT
-	4m8R4sK3ZcqFbrRHqpvR0+xhzhdyjtScFjRWNDQ1y9yqGD1ItNTTjjtem5XdP+PlU1rTItzThLGut
-	W3Q0Rko14vAU2eaByBInX0W5KfvRlpqrsrzWsVOtyd996Xs4/6bbsd2iK/Tt/LPNubilOl9Xm0kIt
-	qKl4d9QAF5q0+3Po2Kze2wlh60a9GlV8Re5CSMtWstOUKRGVUfQ0btNCcyP4aF/AF8CqI3NUf5h0d
-	U5KEVRgrnZOSxNU6OpGA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=D+BNu7aVyZF1nh20QGeEmh18I59VinWOW58SSBP+Jm8=; b=DwvaVQF3cxcfvl
+	bUXt+6xbmlMU0bjWSGR+z/p3yLxZzwaTcbSIkQa/7ithdXhtqrmA7fGIOqqbScIoARncqM5erqpTn
+	Hnf8t+dra7lcZurF7RmLho9+q97bIv7FA94t1kb8Q1i1S9LebrmChps/DsdgNEbCkjF0xfHyg2YvM
+	0TUQ9evzQorMeZ163dND8IGJGGFuc4JGIizdIDgC0rMA/Y99Gd+i3n4fwaF4yfqL5+nKEHL/ooQ4Z
+	0yZaaxOOnpLBjwo6j8qPZm/7hqKPEdZPAgpbBk5lHHE40zk1zvw19uJ8w/+fbNlX60yjiOQP5UktZ
+	stmIJ2m6+iT2KVA15r4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcxJp-0000dl-NW; Sun, 24 May 2020 20:34:01 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1jcxO6-0003pF-TA; Sun, 24 May 2020 20:38:26 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcxJh-0000dJ-Mx; Sun, 24 May 2020 20:33:54 +0000
-IronPort-SDR: MXlUsN45YX5w7/DWhd7wLz5Z596ipRFk+BF+hLtwQ+dRWG4UVwa0epoje4mb0V2zJFKmmDVlJY
- aIBOPip/bq0g==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 24 May 2020 13:33:50 -0700
-IronPort-SDR: hGO7Y3wYazKbBMeBckgS76jnZK8vgx3/d2+Tum7KpIZBE7Os41Bbvt3Qwb/u2VDS+n2UM4fhvq
- Z18P3EudgMLg==
-X-IronPort-AV: E=Sophos;i="5.73,430,1583222400"; d="scan'208";a="254745249"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by fmsmga007-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 24 May 2020 13:33:46 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 554C820736; Sun, 24 May 2020 23:33:44 +0300 (EEST)
-Date: Sun, 24 May 2020 23:33:44 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Subject: Re: [V8, 1/2] media: dt-bindings: media: i2c: Document OV02A10
- bindings
-Message-ID: <20200524203344.GB7618@paasikivi.fi.intel.com>
-References: <20200509080627.23222-1-dongchun.zhu@mediatek.com>
- <20200509080627.23222-2-dongchun.zhu@mediatek.com>
- <20200511160207.GA32476@bogus>
- <1589251221.8804.289.camel@mhfsdcap03>
- <CAAFQd5DgrDwPEpdN9ErJWsHbMDpo2s_u3pwsqtpNwVk4g3_CdQ@mail.gmail.com>
+ id 1jcxNu-0003nN-S9
+ for linux-arm-kernel@lists.infradead.org; Sun, 24 May 2020 20:38:16 +0000
+Received: by mail-wr1-x444.google.com with SMTP id c3so11103762wru.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 24 May 2020 13:38:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/icmu0sjsSTHpyf6lrSka7+R9RIlcL1gU1t218+MYBM=;
+ b=e6Fq6vsjf4t4jy+DaVJnSHTTaqqyxnb7Pq7KX5+Y2OwDgD+Ch6oNVQjovcO7nSIkH8
+ A1tQvVJEqsNXaFb+ipwz12RCGoUudR51JKUus17d1pBUUFfv7H4Pm28K4n4uXp/OFUvJ
+ BtxDWPyBODDDOMzTcqjXCzAc16/w8SuJjJP3t+txIT6BvCf1jQ4XA9N28LlrhHcGXh1s
+ 4Uer04M1QSY8myVeN0d6wgwTlpI89OehSU2sodg2qwQ7+X4zWXcWKNh6gk83ET5ddqs7
+ KO9Wc/fim9DHk4reJP/xp05194oN7roCYH+y3ax/sw9ph8tw1I6gCtrNilX75h1JdmCl
+ Tl4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/icmu0sjsSTHpyf6lrSka7+R9RIlcL1gU1t218+MYBM=;
+ b=npXJBUpvkQQQ/d7P+IhQbyoprZF6FN5I3rNZyL7zY0zgnqMqbMwbdHt3u4NgDC+AX4
+ cGlaHjpU6M/Qt4SxchCIEeP4pcD+tQKrqI6AtOOCYMA77K73eWH6P1GSAkDPk07VoFV1
+ ZgUZYmFMiSU2FNjcEX2yc4q1znkqhyIm66gbsfE8RtNydvvpMIFhu98nw9CmlH4gjjR2
+ 8EnvnXmmAshFLqL14/On5fHfwa8UZqrMgH7Bp09MmJZZ6BnsyU+lEV0Oj0F2huZSffea
+ 1F/26hk/YJhM0q+Xv+DndGAVxJWALeK7/2JezXPzH+mESHFbpBmGfdC5wuJ5l0vbK8nJ
+ G0VA==
+X-Gm-Message-State: AOAM532VN209HcbQOkrQYJRNw6Hl3v92lSo5ivltXfwYP24SpeOySKjF
+ AP7fOviBhtlWYeYsfVBmX5c=
+X-Google-Smtp-Source: ABdhPJxFp54aa1cG/F6uB6xVzrumpvlwSN9vfDlDYgfnh0rSsjgLO82lhCwPvNEFOnE7HBPEozIpfw==
+X-Received: by 2002:a5d:5682:: with SMTP id f2mr11727231wrv.382.1590352692636; 
+ Sun, 24 May 2020 13:38:12 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id s5sm348887wme.37.2020.05.24.13.38.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 24 May 2020 13:38:12 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: soc@kernel.org
+Subject: [GIT PULL 1/1] Broadcom devicetree fixes for 5.7 (part 2, v2)
+Date: Sun, 24 May 2020 13:37:14 -0700
+Message-Id: <20200524203714.17035-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAAFQd5DgrDwPEpdN9ErJWsHbMDpo2s_u3pwsqtpNwVk4g3_CdQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_133353_762774_00298EB2 
-X-CRM114-Status: GOOD (  17.19  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200524_133814_927246_7C07892B 
+X-CRM114-Status: GOOD (  10.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,62 +96,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Shengnan Wang =?utf-8?B?KOeOi+Wco+eUtyk=?= <shengnan.wang@mediatek.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Nicolas Boichat <drinkcat@chromium.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>, Louis Kuo <louis.kuo@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ Hamish Martin <hamish.martin@alliedtelesis.co.nz>,
+ Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
+ =?UTF-8?q?Vincent=20Stehl=C3=A9?= <vincent.stehle@laposte.net>,
+ bcm-kernel-feedback-list@broadcom.com, olof@lixom.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 08:59:56PM +0200, Tomasz Figa wrote:
-> Hi Dongchun, Rob,
-> 
-> On Tue, May 12, 2020 at 4:41 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> >
-> > Hi Rob,
-> >
-> > Thanks for the review.
-> >
-> > On Mon, 2020-05-11 at 11:02 -0500, Rob Herring wrote:
-> > > On Sat, May 09, 2020 at 04:06:26PM +0800, Dongchun Zhu wrote:
-> [snip]
-> > > > +            port {
-> > > > +                wcam_out: endpoint {
-> > > > +                    remote-endpoint = <&mipi_in_wcam>;
-> > > > +                    data-lanes = <1>;
-> > >
-> > > This doesn't match the schema which says this should be 4 entries.
-> > >
-> >
-> > Property "data-lanes" shows the number of lanes that sensor supports.
-> > If this property is omitted, four-lane operation is assumed.
-> > For OV02A10, it is one-lane operation, so the property is supposed to be
-> > set to <1>.
-> >
-> 
-> To clarify on this, the ov02a10 sensor supports only 1 lane. It's not
-> a driver limitation.
-
-If there's nothing to configure there, then the property should be omitted.
-I understood the sensor supported one to four lanes...
-
--- 
-Sakari Ailus
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGZvbGxvd2luZyBjaGFuZ2VzIHNpbmNlIGNvbW1pdCBiOWJiZTZlZDYzYjJiOWYyYzllZTVj
+YmQwZjJjOTQ2YTI3MjNmNGNlOgoKICBMaW51eCA1LjctcmM2ICgyMDIwLTA1LTE3IDE2OjQ4OjM3
+IC0wNzAwKQoKYXJlIGF2YWlsYWJsZSBpbiB0aGUgR2l0IHJlcG9zaXRvcnkgYXQ6CgogIGh0dHBz
+Oi8vZ2l0aHViLmNvbS9Ccm9hZGNvbS9zdGJsaW51eC5naXQgdGFncy9hcm0tc29jL2Zvci01Ljcv
+ZGV2aWNldHJlZS1maXhlcy1wYXJ0Mi12MgoKZm9yIHlvdSB0byBmZXRjaCBjaGFuZ2VzIHVwIHRv
+IGJlMGVjMDYwYjU0ZjA0ODFmYjk1ZDU5MDg2YzE0ODRhOTQ5YzkwM2M6CgogIEFSTTogZHRzOiBi
+Y206IEhSMjogRml4IFBQSSBpbnRlcnJ1cHQgdHlwZXMgKDIwMjAtMDUtMjAgMTc6MTU6MTYgLTA3
+MDApCgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tClRoaXMgcHVsbCByZXF1ZXN0IGNvbnRhaW5zIEJyb2FkY29tIEFSTS1iYXNl
+ZCBTb0NzIERldmljZSBUcmVlIGZpeGVzIGZvcgo1LjcsIHBsZWFzZSBwdWxsIHRoZSBmb2xsb3dp
+bmc6CgotIFZpbmNlbnQgZml4ZXMgdGhlIHBvbGFyaXR5IG9mIHRoZSBBQ1QgTEVEIG9uIHRoZSBS
+YXNwYmVycnkgUGkgWmVybyBXCiAgYm9hcmQKCi0gSGFtaXNoIGZpeGVzIHRoZSBBUk0gUFBJIGlu
+dGVycnVwdHMgc2Vuc2l0aXZ5IGZvciB0aGUgSHVycmljYW5lIDIKICBTb0NzCgotLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkhh
+bWlzaCBNYXJ0aW4gKDEpOgogICAgICBBUk06IGR0czogYmNtOiBIUjI6IEZpeCBQUEkgaW50ZXJy
+dXB0IHR5cGVzCgpWaW5jZW50IFN0ZWhsw6kgKDEpOgogICAgICBBUk06IGR0czogYmNtMjgzNS1y
+cGktemVyby13OiBGaXggbGVkIHBvbGFyaXR5CgogYXJjaC9hcm0vYm9vdC9kdHMvYmNtLWhyMi5k
+dHNpICAgICAgICAgICB8IDYgKysrLS0tCiBhcmNoL2FybS9ib290L2R0cy9iY20yODM1LXJwaS16
+ZXJvLXcuZHRzIHwgMiArLQogMiBmaWxlcyBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKyksIDQgZGVs
+ZXRpb25zKC0pCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
+ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
+aW51eC1hcm0ta2VybmVsCg==
