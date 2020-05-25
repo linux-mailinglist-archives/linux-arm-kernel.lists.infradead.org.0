@@ -2,79 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D46491E0C3E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 12:54:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C6E91E0C6C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 13:05:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7ORSuvidG7ojTa8BZ1CIkOtrGcFrGYZsV2J1VeXMKVA=; b=EVZQJe5oYN7XOl
-	6Z5IR607y6yqOeb1GEvk0WwDdk6n5hDJKK8Sm4c3aFgwrpvjUw0iG7f0qvvugRny7Tt0UAsn6qoap
-	PV3ckmO7odRWcujhY1XnFbEJduv9K5SD29AJVhcMXdhsExuOkNIh9czJuS8HPufrAWwDfYa1srZeq
-	fyD2P10ASzH0JC0wSiarZd9aY6MlLuIYliyvmxZ29nGBQntuPjr9IxlLigteAjgT6PlVcOuj92YL7
-	2nHihiXRgzT9cNM0avZf8iiQv7L9qvHgkadcqKvDOevDKj9WUej4RdU0KSXq1s0WM5r9GXqClso5F
-	yOF9O4J/FrY7T15vAnig==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zpBoDbd3fufJBVWAYcgnxfx/fxHwI8//cMd14/rEJ6Q=; b=RLB+Ychtod3vL2
+	mq0hO1dxbm7X94pyfHQxI4hIGY9oLXJa0+7EGf3elpJPMWnhveFotpPjR6K4h3iQ+HsqOB05sNYIf
+	jDpC2nfGB8AUd0+PvFVE4H6wk1iNRo76TNyF6jg5G+RE2n2wA6t/iAvPXsQk4TMN9ufv100KvF8pb
+	0Ln975fy7hEpeZYOdtxaC/Cq7a2oizOdkYnTZZR6QIT5bRD6iaNWUhUX0MbiCkaQjAGFuyvzw3er3
+	vsWkCB7i60DIvGJprF2UpbCpENMiXM5mVHfSNJjW9m1ruXPn1ZYE/FLheBcJtmQ0qvDU//CcuUP9l
+	gOL/+mytIMpW2jy8QzJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdAjz-0001Px-DC; Mon, 25 May 2020 10:53:55 +0000
-Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
+	id 1jdAur-0007pe-HO; Mon, 25 May 2020 11:05:09 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdAjo-0001Pc-Tb
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 10:53:46 +0000
-Received: from pps.filterd (m0167088.ppops.net [127.0.0.1])
- by mx0a-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04PAj2pn015856; Mon, 25 May 2020 06:53:41 -0400
-Received: from nwd2mta4.analog.com ([137.71.173.58])
- by mx0a-00128a01.pphosted.com with ESMTP id 316wp7xe8m-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 25 May 2020 06:53:41 -0400
-Received: from ASHBMBX8.ad.analog.com (ashbmbx8.ad.analog.com [10.64.17.5])
- by nwd2mta4.analog.com (8.14.7/8.14.7) with ESMTP id 04PAreJX032357
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=FAIL); 
- Mon, 25 May 2020 06:53:40 -0400
-Received: from ASHBMBX8.ad.analog.com (10.64.17.5) by ASHBMBX8.ad.analog.com
- (10.64.17.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1779.2; Mon, 25 May
- 2020 06:53:39 -0400
-Received: from zeus.spd.analog.com (10.64.82.11) by ASHBMBX8.ad.analog.com
- (10.64.17.5) with Microsoft SMTP Server id 15.1.1779.2 via Frontend
- Transport; Mon, 25 May 2020 06:53:38 -0400
-Received: from saturn.ad.analog.com ([10.48.65.112])
- by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 04PAralr015786;
- Mon, 25 May 2020 06:53:36 -0400
-From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-To: <linux-iio@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-Subject: [PATCH] iio: at91-sama5d2_adc: remove usage of iio_priv_to_dev()
- helper
-Date: Mon, 25 May 2020 13:53:41 +0300
-Message-ID: <20200525105341.137945-1-alexandru.ardelean@analog.com>
-X-Mailer: git-send-email 2.25.1
+ id 1jdAub-0007oa-2p
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 11:04:55 +0000
+Received: by mail-wr1-x443.google.com with SMTP id x14so11337495wrp.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 25 May 2020 04:04:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=mdW5TPC5pBwP0jwDwntViUNqGTKeQcBSi1CWOKkv90w=;
+ b=xC4PyPOpMkD3gjHORr1MlsIaPoaoO3wxo7sLYizRTeva0cpblXPG3DxEkmPibw0pwZ
+ RYhWtDKVifwl9eqTL0qayhhWFNcOarYklj0GaInqJob9rDfi8aJDVhT2fa9yWDFeKZry
+ zrUXCOFEBzZTCx6Yd5R9FmkNzuyw2JWyK5SNiXb0MagQ8+MhTrKDX/k/u2XH2a8W3kaP
+ ceIc1BJZoD0IjpJaf5YB7JQtzm7SY+30PEocdbxSSrIyV7F9/hweqITPLFBFbVubAqp5
+ nn0cGCvZWmXdGWKuNT5KfZXJvIc3m0f488iAUVxhuTctIKgGerteTRLuPw69doFs3rW0
+ XB5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=mdW5TPC5pBwP0jwDwntViUNqGTKeQcBSi1CWOKkv90w=;
+ b=FobmsRz3DK980yiy3eb7wWmCO65ZdJmOF10Hfo2GSieXwx7en8Mg5Yo8t1GuFSra4C
+ 2XIbQQzOyBAKDLepCQnlep0SZ4K5g+4xLZnYOKDS23isgjumvgtyf+EukxeCvnlxaSWF
+ u10jmbjU8Eb3+1jT43pQpDsLI9Jgl7Z3IUa812JQ08fBkxkMbrsVcBdegMnxuMPyAj+P
+ XoYHdxcFH0btClUCa2Tf2zKsHJO7zXFqp/yDbR4NTiZOdwGUy+Uk4UheOOHJIV04mq2y
+ 4v5gviDg6BzFKEuJjyJbMUXEWxBOBJVaKNbKJ84kVptv6dmrl9iWw+MbW2OFXUld1gHh
+ gxcg==
+X-Gm-Message-State: AOAM532JV1/VJbPZ0+1MY9tUabaqGUbIiE4Cv3j7T4qcyuzYVdZWLPf/
+ qIHMi47VYeJi7Xy6+wjM/MHaFw==
+X-Google-Smtp-Source: ABdhPJyfOYYJksdGU00xJHoz0dGb6Rf2rEJX7JV0GT0hLF7DPKsW04VY3gPpZ4LP6LDZUIHOVMIqwg==
+X-Received: by 2002:a5d:4b45:: with SMTP id w5mr15497931wrs.358.1590404690512; 
+ Mon, 25 May 2020 04:04:50 -0700 (PDT)
+Received: from ?IPv6:2a01:e34:ed2f:f020:f5b2:610d:e426:c0dd?
+ ([2a01:e34:ed2f:f020:f5b2:610d:e426:c0dd])
+ by smtp.googlemail.com with ESMTPSA id b185sm437997wmd.3.2020.05.25.04.04.49
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 25 May 2020 04:04:49 -0700 (PDT)
+Subject: Re: [PATCH] thermal: imx8mm: Add get_trend ops
+To: Anson Huang <anson.huang@nxp.com>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+References: <1589338689-15700-1-git-send-email-Anson.Huang@nxp.com>
+ <fccf4197-d0ca-f313-8f70-000ef4731033@linaro.org>
+ <DB3PR0402MB3916B6D11328A036BD479D39F5B50@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <6a4d31e4-8a24-2e9f-aa49-bec8258ead4c@linaro.org>
+ <DB3PR0402MB39167D71ED6979FC33D3747DF5B20@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39162E6A876BA54A80B0DCE2F5B30@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Message-ID: <dadf94db-8aa5-d1a7-5818-c56032a44ea4@linaro.org>
+Date: Mon, 25 May 2020 13:04:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-ADIRoutedOnPrem: True
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-25_05:2020-05-25,
- 2020-05-25 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 bulkscore=0
- phishscore=0 adultscore=0 mlxlogscore=999 impostorscore=0 clxscore=1015
- malwarescore=0 mlxscore=0 lowpriorityscore=0 cotscore=-2147483648
- spamscore=0 priorityscore=1501 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2005250084
+In-Reply-To: <DB3PR0402MB39162E6A876BA54A80B0DCE2F5B30@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_035344_960521_BA6C3D0C 
-X-CRM114-Status: GOOD (  17.25  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200525_040453_251391_A2B5CF31 
+X-CRM114-Status: GOOD (  23.14  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.135.77 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,174 +115,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
- eugen.hristev@microchip.com,
- Alexandru Ardelean <alexandru.ardelean@analog.com>, jic23@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: dl-linux-imx <linux-imx@nxp.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We may want to get rid of the iio_priv_to_dev() helper. The reason is that
-we will hide some of the members of the iio_dev structure (to prevent
-drivers from accessing them directly), and that will also mean hiding the
-implementation of the iio_priv_to_dev() helper inside the IIO core.
-
-Hiding the implementation of iio_priv_to_dev() implies that some fast-paths
-may not be fast anymore, so a general idea is to try to get rid of the
-iio_priv_to_dev() altogether.
-The iio_priv() helper won't be affected by the rework, as the iio_dev
-struct will keep a reference to the private information.
-
-For this driver, not using iio_priv_to_dev(), means reworking some paths to
-pass the iio device and using iio_priv() to access the private information,
-and also keeping a reference to the iio device for some quirky paths.
-
-One [quirky] path is the at91_adc_workq_handler() which requires the IIO
-device & the state struct to push to buffers.
-Since this requires the back-ref to the IIO device, the
-at91_adc_touch_pos() also uses it. This simplifies the patch a bit. The
-information required in this function is mostly for debugging purposes.
-Replacing it with a reference to the IIO device would have been a slightly
-bigger change, which may not be worth it (for just the debugging purpose
-and given that we need the back-ref to the IIO device anyway).
-
-Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
----
- drivers/iio/adc/at91-sama5d2_adc.c | 30 +++++++++++++++++-------------
- 1 file changed, 17 insertions(+), 13 deletions(-)
-
-diff --git a/drivers/iio/adc/at91-sama5d2_adc.c b/drivers/iio/adc/at91-sama5d2_adc.c
-index 9abbbdcc7420..7bce18444430 100644
---- a/drivers/iio/adc/at91-sama5d2_adc.c
-+++ b/drivers/iio/adc/at91-sama5d2_adc.c
-@@ -402,6 +402,7 @@ struct at91_adc_state {
- 	wait_queue_head_t		wq_data_available;
- 	struct at91_adc_dma		dma_st;
- 	struct at91_adc_touch		touch_st;
-+	struct iio_dev			*indio_dev;
- 	u16				buffer[AT91_BUFFER_MAX_HWORDS];
- 	/*
- 	 * lock to prevent concurrent 'single conversion' requests through
-@@ -642,13 +643,13 @@ static u16 at91_adc_touch_pos(struct at91_adc_state *st, int reg)
- 	/* first half of register is the x or y, second half is the scale */
- 	val = at91_adc_readl(st, reg);
- 	if (!val)
--		dev_dbg(&iio_priv_to_dev(st)->dev, "pos is 0\n");
-+		dev_dbg(&st->indio_dev->dev, "pos is 0\n");
- 
- 	pos = val & AT91_SAMA5D2_XYZ_MASK;
- 	result = (pos << AT91_SAMA5D2_MAX_POS_BITS) - pos;
- 	scale = (val >> 16) & AT91_SAMA5D2_XYZ_MASK;
- 	if (scale == 0) {
--		dev_err(&iio_priv_to_dev(st)->dev, "scale is 0\n");
-+		dev_err(&st->indio_dev->dev, "scale is 0\n");
- 		return 0;
- 	}
- 	result /= scale;
-@@ -1204,9 +1205,9 @@ static unsigned at91_adc_startup_time(unsigned startup_time_min,
- 	return i;
- }
- 
--static void at91_adc_setup_samp_freq(struct at91_adc_state *st, unsigned freq)
-+static void at91_adc_setup_samp_freq(struct iio_dev *indio_dev, unsigned freq)
- {
--	struct iio_dev *indio_dev = iio_priv_to_dev(st);
-+	struct at91_adc_state *st = iio_priv(indio_dev);
- 	unsigned f_per, prescal, startup, mr;
- 
- 	f_per = clk_get_rate(st->per_clk);
-@@ -1275,9 +1276,9 @@ static void at91_adc_pen_detect_interrupt(struct at91_adc_state *st)
- 	st->touch_st.touching = true;
- }
- 
--static void at91_adc_no_pen_detect_interrupt(struct at91_adc_state *st)
-+static void at91_adc_no_pen_detect_interrupt(struct iio_dev *indio_dev)
- {
--	struct iio_dev *indio_dev = iio_priv_to_dev(st);
-+	struct at91_adc_state *st = iio_priv(indio_dev);
- 
- 	at91_adc_writel(st, AT91_SAMA5D2_TRGR,
- 			AT91_SAMA5D2_TRGR_TRGMOD_NO_TRIGGER);
-@@ -1297,7 +1298,7 @@ static void at91_adc_workq_handler(struct work_struct *workq)
- 					struct at91_adc_touch, workq);
- 	struct at91_adc_state *st = container_of(touch_st,
- 					struct at91_adc_state, touch_st);
--	struct iio_dev *indio_dev = iio_priv_to_dev(st);
-+	struct iio_dev *indio_dev = st->indio_dev;
- 
- 	iio_push_to_buffers(indio_dev, st->buffer);
- }
-@@ -1318,7 +1319,7 @@ static irqreturn_t at91_adc_interrupt(int irq, void *private)
- 		at91_adc_pen_detect_interrupt(st);
- 	} else if ((status & AT91_SAMA5D2_IER_NOPEN)) {
- 		/* nopen detected IRQ */
--		at91_adc_no_pen_detect_interrupt(st);
-+		at91_adc_no_pen_detect_interrupt(indio);
- 	} else if ((status & AT91_SAMA5D2_ISR_PENS) &&
- 		   ((status & rdy_mask) == rdy_mask)) {
- 		/* periodic trigger IRQ - during pen sense */
-@@ -1486,7 +1487,7 @@ static int at91_adc_write_raw(struct iio_dev *indio_dev,
- 		    val > st->soc_info.max_sample_rate)
- 			return -EINVAL;
- 
--		at91_adc_setup_samp_freq(st, val);
-+		at91_adc_setup_samp_freq(indio_dev, val);
- 		return 0;
- 	default:
- 		return -EINVAL;
-@@ -1624,8 +1625,10 @@ static int at91_adc_update_scan_mode(struct iio_dev *indio_dev,
- 	return 0;
- }
- 
--static void at91_adc_hw_init(struct at91_adc_state *st)
-+static void at91_adc_hw_init(struct iio_dev *indio_dev)
- {
-+	struct at91_adc_state *st = iio_priv(indio_dev);
-+
- 	at91_adc_writel(st, AT91_SAMA5D2_CR, AT91_SAMA5D2_CR_SWRST);
- 	at91_adc_writel(st, AT91_SAMA5D2_IDR, 0xffffffff);
- 	/*
-@@ -1635,7 +1638,7 @@ static void at91_adc_hw_init(struct at91_adc_state *st)
- 	at91_adc_writel(st, AT91_SAMA5D2_MR,
- 			AT91_SAMA5D2_MR_TRANSFER(2) | AT91_SAMA5D2_MR_ANACH);
- 
--	at91_adc_setup_samp_freq(st, st->soc_info.min_sample_rate);
-+	at91_adc_setup_samp_freq(indio_dev, st->soc_info.min_sample_rate);
- 
- 	/* configure extended mode register */
- 	at91_adc_config_emr(st);
-@@ -1718,6 +1721,7 @@ static int at91_adc_probe(struct platform_device *pdev)
- 	indio_dev->num_channels = ARRAY_SIZE(at91_adc_channels);
- 
- 	st = iio_priv(indio_dev);
-+	st->indio_dev = indio_dev;
- 
- 	bitmap_set(&st->touch_st.channels_bitmask,
- 		   AT91_SAMA5D2_TOUCH_X_CHAN_IDX, 1);
-@@ -1829,7 +1833,7 @@ static int at91_adc_probe(struct platform_device *pdev)
- 		goto vref_disable;
- 	}
- 
--	at91_adc_hw_init(st);
-+	at91_adc_hw_init(indio_dev);
- 
- 	ret = clk_prepare_enable(st->per_clk);
- 	if (ret)
-@@ -1945,7 +1949,7 @@ static __maybe_unused int at91_adc_resume(struct device *dev)
- 	if (ret)
- 		goto vref_disable_resume;
- 
--	at91_adc_hw_init(st);
-+	at91_adc_hw_init(indio_dev);
- 
- 	/* reconfiguring trigger hardware state */
- 	if (!iio_buffer_enabled(indio_dev))
--- 
-2.25.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjUvMDUvMjAyMCAwNDo0NiwgQW5zb24gSHVhbmcgd3JvdGU6Cj4gSGksIERhbmllbAoKWyAu
+Li4gXQoKPiBJIHRyaWVkIG1vZGlmeWluZyB0aGUgbWluL21heCB0byAnMicgaW4gY29vbGluZyBt
+YXAsIGl0IHdvcmtzIHRoYXQKPiB3aGVuZXZlciBjb29saW5nIGFjdGlvbiBpcyBuZWVkZWQsIHRo
+ZSBtYXggY29vbGluZyBhY3Rpb24gd2lsbCBiZQo+IGFwcGxpZWQuIEJ1dCBJIGFsc28gbm90aWNl
+ZCBzb21lIGJlaGF2aW9ycyB3aGljaCBOT1QgYXMgZXhwZWN0ZWQ6Cj4gCj4gMS4gdG8gZWFzeSB0
+aGUgdGVzdCwgSSBlbmFibGUgdGhlICIgQ09ORklHX1RIRVJNQUxfV1JJVEFCTEVfVFJJUFMiLAo+
+IGFuZCBqdXN0IG1vZGlmeSB0aGUgcGFzc2l2ZSB0cmlwIHRocmVzaG9sZCB0byB0cmlnZ2VyIHRo
+ZSBjb29saW5nCj4gYWN0aW9uLCB0aGlzIGlzIG11Y2ggbW9yZSBlYXN5IHRoZW4gcHV0dGluZyB0
+aGUgYm9hcmQgaW50byBhbiBvdmVuIHRvCj4gaW5jcmVhc2UgdGhlIFNvQyB0ZW1wZXJhdHVyZSBv
+ciBydW5uaW5nIG1hbnkgaGlnaCBsb2FkaW5nIHRlc3QgdG8KPiBpbmNyZWFzZSB0aGUgdGVtcGVy
+YXR1cmUsIGJ1dCB3aGVuIEkgbW9kaWZ5IHRoZSBwYXNzaXZlIHRyaXAKPiB0aHJlc2hvbGQgdG8g
+YmUgbG93ZXIgdGhhbiBjdXJyZW50IHRlbXBlcmF0dXJlLCB0aGUgY29vbGluZyBhY3Rpb24gaXMK
+PiBOT1QgdHJpZ2dlcmVkIGltbWVkaWF0ZWx5LCBpdCBpcyBiZWNhdXNlIHRoZSBkZWZhdWx0IHN0
+ZXBfd2lzZQo+IGdvdmVybm9yIHdpbGwgTk9UIHRyaWdnZXIgdGhlIGNvb2xpbmcgYWN0aW9uIHdo
+ZW4gdGhlIHRyZW5kIGlzCj4gVEhFUk1BTF9UUkVORF9TVEFCTEUuIEJ1dCB3aGF0IGV4cGVjdGVk
+IGlzLCB3aGVuIHRoZSB0ZW1wZXJhdHVyZSBpcwo+IGV4Y2VlZCB0aGUgcGFzc2l2ZSB0cmlwIHRo
+cmVzaG9sZCwgdGhlIGNvb2xpbmcgYWN0aW9uIGNhbiBiZSAKPiB0cmlnZ2VyZWQgaW1tZWRpYXRl
+bHkgbm8gbWF0dGVyIHRoZSB0cmVuZCBpcyBzdGFibGUgb3IgcmFpc2luZy4KCllvdSBhcmUgcmln
+aHQsIHdoYXQgaXMgZXhwZWN0ZWQgaXMsIHdoZW4gdGhlIHRlbXBlcmF0dXJlIGV4Y2VlZHMgdGhl
+CnBhc3NpdmUgdHJpcCB0aHJlc2hvbGQsIGEgY29vbGluZyBhY3Rpb24gaGFwcGVucywgdGhlIHRy
+ZW5kIGlzIHJhaXNpbmcKaW4gdGhpcyBjYXNlLgoKQnV0IGluIHlvdXIgdGVzdCwgaXQgaXMgbm90
+IHdoYXQgaXMgaGFwcGVuaW5nOiB0aGUgdHJpcCBwb2ludCBpcwpjaGFuZ2luZywgbm90IHRoZSB0
+ZW1wZXJhdHVyZS4KClByb2JhYmx5LCB0aGUgY3B1ZnJlcSBkcml2ZXIgaXMgYXQgaXRzIGxvd2Vz
+dCBPUFAsIHNvIHRoZXJlIGlzIG5vIHJvb20KZm9yIG1vcmUgY29vbGluZyBlZmZlY3Qgd2hlbiBj
+aGFuZ2luZyB0aGUgdHJpcCBwb2ludC4KCklNTywgdGhlIHRlc3QgaXMgbm90IHJpZ2h0IGFzIHRo
+ZSB0cmlwIHBvaW50IGlzIGRlY3JlYXNlZCB0byBhCnRlbXBlcmF0dXJlIHdoZXJlIGFjdHVhbGx5
+IHRoZSBTb0MgaXMgbm90IGhvdC4KCklmIHlvdSB3YW50IHRvIHRlc3QgaXQgZWFzaWx5LCBJIHJl
+Y29tbWVuZCB0byB1c2UgZGhyeXN0b25lLCBzb21ldGhpbmcgbGlrZToKCiBkaHJ5c3RvbmUgLXQg
+NiAtbCAxMDAwMAoKVGhhdCB3aWxsIG1ha2UgeW91ciBib2FyZCB0byBoZWF0IGltbWVkaWF0ZWx5
+LgoKPiBUaGF0Cj4gbWVhbnMgd2UgaGF2ZSB0byBpbXBsZW1lbnQgb3VyIG93biAuZ2V0X3RyZW5k
+IGNhbGxiYWNrPwoKRnJvbSBteSBQT1YgaXQgbXVzdCBkaXNhcHBlYXIsIGJlY2F1c2UgaXQgaGFz
+IGxpdHRsZSBtZWFuaW5nLiBUaGUKZ292ZXJub3IgaXMgdGhlIG9uZSB3aGljaCBzaG91bGQgYmUg
+ZGVhbGluZyB3aXRoIHRoYXQgYW5kIGNhbGwgdGhlCmNvcnJlc3BvbmRpbmcgY29vbGluZyBpbmRl
+eC4KCj4gMi4gTm8gbWFyZ2luIGZvciByZWxlYXNpbmcgdGhlIGNvb2xpbmcgYWN0aW9uLCBmb3Ig
+ZXhhbXBsZSwgaWYKPiBjb29saW5nIGFjdGlvbiBpcyB0cmlnZ2VyZWQsIHdoZW4gdGhlIHRlbXBl
+cmF0dXJlIGRyb3BzIGJlbG93IHRoZQo+IHBhc3NpdmUgdHJpcCB0aHJlc2hvbGQsIHRoZSBjb29s
+aW5nIGFjdGlvbiB3aWxsIGJlIGNhbmNlbGxlZAo+IGltbWVkaWF0ZWx5LCBpZiBTb0Mga2VlcHMg
+cnVubmluZyBhdCBmdWxsIHBlcmZvcm1hbmNlLCB0aGUKPiB0ZW1wZXJhdHVyZSB3aWxsIGluY3Jl
+YXNlIHZlcnkgc29vbiwgd2hpY2ggbWF5IGNhdXNlIHRoZSBTb0Mga2VlcAo+IHRyaWdnZXJpbmcv
+Y2FuY2VsbGluZyB0aGUgY29vbGluZyBhY3Rpb24gYXJvdW5kIHRoZSBwYXNzaXZlIHRyaXAKPiB0
+aHJlc2hvbGQuIElmIHRoZXJlIGlzIGEgbWFyZ2luLCB0aGUgc2l0dWF0aW9uIHdpbGwgYmUgbXVj
+aCBiZXR0ZXIuCj4gCj4gRG8geW91IGhhdmUgYW55IGlkZWEvY29tbWVudCBhYm91dCB0aGVtPwoK
+WWVzLCB0aGF0IGlzIGEgZ29vZCBwb2ludC4gVGhlIGh5c3RlcmVzaXMgaXMgc3VwcG9zZWQgdG8g
+ZG8gdGhhdC4gVGhlcmUKaXMgYSB3b3JrIGRvbmUgYnkgQW5kcnplaiBQaWV0cmFzaWV3aWN6IHRv
+IGRpc2FibGUgLyBlbmFibGUgdGhlIHRoZXJtYWwKem9uZXMgWzFdLiBJIHRoaW5rIHdlIHNob3Vs
+ZCBiZSBhYmxlIHRvIGZpeCB0aGF0IGFmdGVyIHRoZSBjaGFuZ2VzIGFyZSBkb25lLgoKICAtLSBE
+YW5pZWwKClsxXSBodHRwczovL3d3dy5zcGluaWNzLm5ldC9saXN0cy9uZXRkZXYvbXNnNjQ0NzYy
+Lmh0bWwKCgotLSAKPGh0dHA6Ly93d3cubGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4g
+c291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3
+LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5hcm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNv
+bS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIgfAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1i
+bG9nLz4gQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
+bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
+bGludXgtYXJtLWtlcm5lbAo=
