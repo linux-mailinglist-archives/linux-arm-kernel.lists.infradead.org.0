@@ -2,111 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 529E41E1241
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 18:00:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A0281E124C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 18:02:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dVAs0FykXY8mvx2MSjTiRKve1JFmP6w1BV+NTWamVjM=; b=HAdIDosnjqLekP
-	sltlZLDghEwGbWTVZkeQaOVOEzjb7fNYiexrLXxee/BwxnrKOpcO+5tE3skSAG2UEcK8mjC8HGl/5
-	++4p7BMTPlI0lXK6XHZfhN3pBvNEsZRA+tsZliSbeZmrnDhqZ04N8One8yui0EKuXfnd295EIgHJ2
-	Q2WUHMbpXanpWxrnOgyUESotbsq83fABEkdqoqq4Mc/x/zSV3ALiRCfMk67hZV3hbbx7/VTPl7dsJ
-	ceo/BKm/7NgEqrqtcX1s9SlYhy42mojQyKdEvqjyX/EZuyJcp5F1Vscqm2m0e+7L27tdf1dhLep1r
-	lWDOX47QVkhykL04ZDDA==;
+	List-Owner; bh=yj4z5byFY1muR7ohYDk2qPaa/w+McbC7tYezbUQtdFQ=; b=sJPRhwhO7RkK98
+	tggjr6mzBg+YTO6FDbZIxVX/DMFrZz9+GiCJOVbP9ABE0lRQm6m6xheIBkRMTXtN9FW3Dcpm7qzF2
+	v0kr/EfRa9wv8bwAh+hsK08Q5BpFae0juYz7yieYVndnISbitg3zKUTmago8WAXCK9FrTHHv9uQHq
+	U9HHrP0kEkfFtQq16Dm4OwgrCU/nLIEfNMGF6CL/InVgELXGhvU+pTTtoVSf36IImBuruEfbi66Hd
+	Q/GygQ9Bh2bp3I8dmRvdxy1xXBQnP2i6Ko9g++FCXYAgyMMRAtWWNsgCCDct+Jof/my5IuVmT8rmp
+	Gr+kczkF0swGdHjwhKgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdFWt-0001AT-LE; Mon, 25 May 2020 16:00:43 +0000
-Received: from mail-db8eur05on2084.outbound.protection.outlook.com
- ([40.107.20.84] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jdFYH-0001Tt-TA; Mon, 25 May 2020 16:02:09 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdFWl-00019n-9T
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 16:00:36 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nf0c50jJ64JtKUZ85BvubDTcqQYeRySMICxigk9MqgfyQ1qIvY6fAyKSK2GyLJowfZZ0amFUKFihn3u3WDstX6P4L+sM9hp8dkhyPfQrFwKHUlFfY7RmQEo7aVbDUY+7gpH1KdoeXPYsiapN3xOxiCofjNbL0X/XSz1UtRQ2fbg5+jVeMElo9uAPePh6Zy/VbeWRFTt2SFlh2oEpp39K6vcZGUk3K8HeKQvuMQU72O4EytfnPXZei0hzthcrMXmlawAryXaDASASh1+YN/Ag6+BhYRz9XBccuwBMVSug+Dg0UfuBmTCJSDah7CeRVP2L2CSNKhuWHCFNo7FpHqxgJA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EwpWzuWDO2JqAqxNvR3b7fQrPelHxaVQmTTfQMkojVQ=;
- b=JP6xmOokv0oWO3LDzOpml3caWujN9r1AsaqoP1Y2sYU1TCUTbACVmfux1DU8UpFXn81hUe35avvzwKqt+XFt4thUMnucPXzzTb1QEhUNY4obAMVOfidnr/72jR9U7Qg3oX6+/glYAUFOdEba3aeBznHoCkH/DcqV1sm4cIEjIF1l/iWAWUgOKPT2VXEBbVuVaK7DPOULcJGhW/HCuiXk6UCNrAI6Q/6uz/mW0htfrpKLv6opvsWz6MbzQzTk4c96cdkYZClJUIYsULJiZPymuwpJddq9dYZzEjfksNjnD3FTzF6GbYs5k+MCGH9ChT0sCKa49L+4sYogG34uMR7TGw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EwpWzuWDO2JqAqxNvR3b7fQrPelHxaVQmTTfQMkojVQ=;
- b=BrOsot1bMbgbxH+oTG/gmfGrV8sU6+lmG0SQ5sm5asCwGC9qdD2877/Y+COHx8CzD6vPXsG1EALB3uknisfb88k1FCnBFIK7qVIMaYnio57wKTenaCTLfRPCKAYS2tqPVJxi2xmLiP3mbS+CrO5FCrvppVx8pc0JdX1DHxBPcF0=
-Received: from AM6PR0402MB3607.eurprd04.prod.outlook.com
- (2603:10a6:209:12::18) by AM6PR0402MB3334.eurprd04.prod.outlook.com
- (2603:10a6:209:c::29) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.27; Mon, 25 May
- 2020 16:00:30 +0000
-Received: from AM6PR0402MB3607.eurprd04.prod.outlook.com
- ([fe80::35f8:f020:9b47:9aa1]) by AM6PR0402MB3607.eurprd04.prod.outlook.com
- ([fe80::35f8:f020:9b47:9aa1%7]) with mapi id 15.20.3021.029; Mon, 25 May 2020
- 16:00:30 +0000
-From: Andy Duan <fugang.duan@nxp.com>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: RE: [EXT] Re: [PATCH] stmmac: platform: add "snps,dwmac-5.10a" IP
- compatible string
-Thread-Topic: [EXT] Re: [PATCH] stmmac: platform: add "snps,dwmac-5.10a" IP
- compatible string
-Thread-Index: AQHWMm5I28u/w5jSek2LIR4rTdAvVqi417cAgAAZW7A=
-Date: Mon, 25 May 2020 16:00:29 +0000
-Message-ID: <AM6PR0402MB3607312E97B14B09C398B586FFB30@AM6PR0402MB3607.eurprd04.prod.outlook.com>
-References: <1590394945-5571-1-git-send-email-fugang.duan@nxp.com>
- <20200525141048.GF752669@lunn.ch>
-In-Reply-To: <20200525141048.GF752669@lunn.ch>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: lunn.ch; dkim=none (message not signed)
- header.d=none;lunn.ch; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.68]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 3e80690e-5ee4-47e3-512c-08d800c4bf94
-x-ms-traffictypediagnostic: AM6PR0402MB3334:
-x-microsoft-antispam-prvs: <AM6PR0402MB3334C20C5CCF4CFC8523E6D8FFB30@AM6PR0402MB3334.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 0414DF926F
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: wz9m80zqy9kkryVwCpZ+PXuZmXnIpCQ1uEyHy7ZlgnDoCL72QVuVQVG+SpVv8yAQNF3rx5iXJ13rzd2IbylOGkt04L0v6LQgKEwFy/G0ZKCAqrWnqFOlYuaYJih1vG6yidMd1i6+ZH7qv4oS2vdRsM4+wmSD/soLsZVV7xCmM3N4lcuI7B+nla9sEaI1F3MGepMzsbtYkHBgvNIjVOp8/h00pM+Sdmy8Qx5N/m0sM+oQjgQuaT+o8ZAh3dcTb42TZk3vc0Sod6x0fwbkU+6BLnk2e0einRoCjCDog6XK7zIFOwwgqCBIRHE50V8JAk2HdF1ZhCWpSUZkJDWomNHjl3dKtqgXDZtaisL9bZP2w3SVEREc8oqDY0zY6OQXcfer
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR0402MB3607.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(396003)(39860400002)(366004)(346002)(136003)(376002)(86362001)(2906002)(33656002)(5660300002)(66946007)(7416002)(55016002)(66476007)(6916009)(9686003)(4326008)(76116006)(66556008)(66446008)(478600001)(64756008)(52536014)(4744005)(8676002)(6506007)(71200400001)(316002)(7696005)(8936002)(54906003)(186003)(26005)(142933001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: se1QmsgsGxxX1y5j2ZHdmb3E5UoSNcdwHq/b/jQupy/LJxbPowJJcispexzcZAOzh46N+Rm8LdRhw7CNx9C3F4ff68XmglGsffi/DXDNLUA5wllH7qUN7RAz5iaJjvdnChmDQa1Dk/n7go49GfJDPOTBLxfNl6ejeohKxaBdUmg+9EJ+wU+xiNxIV1416awZrOD2FDR+CtLMOtGrjBgbg3UYxur4tBmPi7SfVWZ4JdQJ0OGegduqWfzEFL3DemMcP4IKesNtoOruNhyAlXdhz/zT9D77oF03FJDi+mxxXH4lBIgCbDAUNTgWy9CFFQGAwI3CiipJvp9P5LxNxp/9XXCyyA9BPI5epcZBy8W2ZJRsuDg6hmuJgE/BS55Q1sO2eXlBwCaOliC2TFw/hOmiRHe5/imcaaazeqkRZMInDsiNwKS11JBIJGvt1t7IK65vCCGTgXlw+AB3RH7Fgk9WExKy02eeWrci/pkMfGJVH1a4GjphMG4k3Kr8nH3CopTq
-x-ms-exchange-transport-forked: True
+ id 1jdFY8-0001T9-Bn
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 16:02:01 +0000
+Received: by mail-il1-x143.google.com with SMTP id j2so17720643ilr.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 25 May 2020 09:01:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ndTklb7/SAZk4bUIoOKID+ziy4QQzei1SxmS+QITaNQ=;
+ b=Okfa0myw3gWvHcsvCG+LrNu8vo8bECwM1NcFblymMQAiGT7+y9eHEr8NC5z6+N8JzK
+ mzlw3h7rltmPg5jkXMl04Me9kIbZlJYjsG8Urh65mRdyktu03LLIpv77czeeIpVw8Sru
+ x6DqR6REiEic6JH/kXXTOsijnyICa34jR95UnPtu86+3N8w52mTLttUjUQRtPFCY/AZA
+ vG6P/pea15LJdJxDU3EvCTPMiuu5DCbxndnPe4cnBnNZF2ZxKEZ4qbok33u/ix0NGgf/
+ NluPSBy63jZnk1Nbp5nADhjP36FybTKqPGJNjjHqjN3ow+fOetbQDP+cAHrBoMqBGVCR
+ wFmg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ndTklb7/SAZk4bUIoOKID+ziy4QQzei1SxmS+QITaNQ=;
+ b=aGrNTWIK0FjqET4ou6R/+6Q8Jw5Q+MVlFGezP7wNceZqGda0b4W1VBGAX0W5C5B0/Z
+ qgP9n35awZ1voKXvnlTj6tDuhIlzHckf9ee9Zf8PmJBogVkpqmqkW187NNlVgj/kOFuG
+ aYndsgate3aZAsn0WnJA3nqhq0ZF/DGK7v++stQPkqzRkY8ecaIVuSELWdAs3wObatLJ
+ qAfRuQM20fZ0jIda3By6cktKX/h6W7Z2GkhnLGqbaorP/Q/RNcLVSemzgaOc/+6AKRo8
+ X0s6QXK6T/wou8/hj0r6C5ZTlLE/m/wYHDsLouU6wmOCIPJSF09s/DtyKKsABVoQZNgU
+ Y+qA==
+X-Gm-Message-State: AOAM531LZDo+lrAnMo9YXhOkYMBRbV8aMbkeW1fIykaCmB8JHAeTehYX
+ FhihP1ZjKFfVYkWaLE72kr2/Ypl5J6mh25bAVaDTxQ==
+X-Google-Smtp-Source: ABdhPJzdCyCnVR8DkEpN7qEDDAtmWOw4EM3xPxchVD4sgi/TBYuoYYkIjzb27DvgzVuornpYLqRjO0idnxc4E75ZQnI=
+X-Received: by 2002:a92:89cf:: with SMTP id w76mr24457702ilk.57.1590422517999; 
+ Mon, 25 May 2020 09:01:57 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 3e80690e-5ee4-47e3-512c-08d800c4bf94
-X-MS-Exchange-CrossTenant-originalarrivaltime: 25 May 2020 16:00:29.9674 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: MaUKH/033bPtS/kvylfVl7quoHN53lxZV2LywUzar3ML0QaoYFWJlFe8tSG8IntYU9j6tGi6JKgJO17oN4+rnw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3334
+References: <cover.1590171891.git.saiprakash.ranjan@codeaurora.org>
+ <ccfe8a5ede0523436508e31085322ccdab8f972a.1590171891.git.saiprakash.ranjan@codeaurora.org>
+In-Reply-To: <ccfe8a5ede0523436508e31085322ccdab8f972a.1590171891.git.saiprakash.ranjan@codeaurora.org>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Mon, 25 May 2020 10:01:47 -0600
+Message-ID: <CANLsYkwhjbyspLjbnp4XYCcRNFUkBs46QjWYBTza1scGDtNSmQ@mail.gmail.com>
+Subject: Re: [PATCHv3 2/2] dt-bindings: arm: coresight: Add optional property
+ to replicators
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_090035_332321_8A7D0628 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200525_090200_472294_E184BDD4 
+X-CRM114-Status: GOOD (  14.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.20.84 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.84 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -125,36 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "p.zabel@pengutronix.de" <p.zabel@pengutronix.de>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "joabreu@synopsys.com" <joabreu@synopsys.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "kuba@kernel.org" <kuba@kernel.org>,
- "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
- "davem@davemloft.net" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andrew Lunn <andrew@lunn.ch> Sent: Monday, May 25, 2020 10:11 PM
-> On Mon, May 25, 2020 at 04:22:25PM +0800, Fugang Duan wrote:
-> > Add "snps,dwmac-5.10a" compatible string for 5.10a version that can
-> > avoid to define some plat data in glue layer.
-> 
-> Documentation/devicetree/bindings/net/snps,dwmac.yaml ?
-> 
->       Andrew
+On Fri, 22 May 2020 at 12:37, Sai Prakash Ranjan
+<saiprakash.ranjan@codeaurora.org> wrote:
+>
+> Add an optional boolean property "qcom,replicator-loses-context" to
+> identify replicators which loses context when AMBA clocks are removed
+> in certain configurable replicator designs.
+>
+> Reviewed-by: Mike Leach <mike.leach@linaro.org>
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> ---
+>  Documentation/devicetree/bindings/arm/coresight.txt | 6 ++++++
+>  1 file changed, 6 insertions(+)
+>
+> diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
+> index 846f6daae71b..b598a5f0037d 100644
+> --- a/Documentation/devicetree/bindings/arm/coresight.txt
+> +++ b/Documentation/devicetree/bindings/arm/coresight.txt
+> @@ -121,6 +121,12 @@ its hardware characteristcs.
+>         * interrupts : Exactly one SPI may be listed for reporting the address
+>           error
+>
+> +* Optional property for configurable replicators:
+> +
+> +       * qcom,replicator-loses-context: boolean. Indicates that the replicator
+> +         will lose register context when AMBA clock is removed which is observed
+> +         in some replicator designs.
 
-Here, we don't want to use generic driver "dwmac-generic.c" for 5.10a version
-since it requires platform specific code to be functional, like the we implement
-glue layer driver "dwmac-imx.c" to support 5.10a on i.MX platform.
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-So I think it doesn't require to add the compatible string into dwmac.yaml. 
+> +
+>  Graph bindings for Coresight
+>  -------------------------------
+>
+> --
+> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
+> of Code Aurora Forum, hosted by The Linux Foundation
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
