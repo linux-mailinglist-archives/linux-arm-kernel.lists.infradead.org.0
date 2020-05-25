@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7349C1E05A5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 05:48:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EA9A51E05A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 05:48:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yD0zA3TXFE+6CURpBFmM7RSXuc7+AZWvDvmf8kSvMVg=; b=i9VFTZvxOUCqQQEM2aaxgyevkc
-	njoSqEwhJvq09n68DJFCwn3N5fqqj1Jq6qgoFAsHGNh/Nk4g7/oB53Wqo33RZ7WhYQKVq8zlJVcJF
-	R5B+xTHd6EM+q4p2gnbJfCmROjVDEK1HHgeBggPwxahcrIcpSyJSG6MsY0J2wMuYVvc+O1qQ26y7b
-	svfJC9KKRe//eHhJ5AWYEk36xJGCRFfe5m2iSseE+WcSZsBcEj7/Cf2eD91vazwr2Ad9f/AdOYf7F
-	OLMveZvWEbLW+vVHnDiH59t3/nhIUY1jt6UqYKdMrkde6IpH3nZL5knSFexQB84SBQrmVByqT1QTz
-	408g2arg==;
+	bh=XGTO5smc+bbVITgsSplooC0+Gx0kiZRP3Xjiyxsuags=; b=EeBpkpCr8FRs2+FHqaZ5eBkcQC
+	47C37MvIDECVyL+FinpGIbgfQZ7fe94OU+OKdw09XDSlkIZ/wokUME+OeawAPstjhGUPu3nZ/uLdM
+	THf7x4cd9+fSX5rAwn9WkMsf7hsMIBHD+0SCTwlfN9VXlUyr8k6mFdVrIjrx+St1CvAywae4MFhKB
+	uTknKdMAOLy1+qKmhLYH7nxNuwfs5H6q9hMgilsMJv1oK6F6k2v27lDE9bPme8ZAFSeq+3MrUfIOB
+	WHqm9tvXnp7TAdZYa+Ggdgh8f2isx2LSBkdhrBNTYyWKYQXoEtntgKMucbFOfKRYcDvyCvYx5QMvu
+	0RNHpK8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd45u-0000m0-Rf; Mon, 25 May 2020 03:48:06 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jd469-00010N-Eh; Mon, 25 May 2020 03:48:21 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd448-0007yR-J5
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 03:46:22 +0000
-Received: by mail-pl1-x644.google.com with SMTP id t16so6992761plo.7
+ id 1jd44C-000812-QY
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 03:46:25 +0000
+Received: by mail-pf1-x443.google.com with SMTP id z64so3766730pfb.1
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 24 May 2020 20:46:16 -0700 (PDT)
+ Sun, 24 May 2020 20:46:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=iDnn3wwO4wgWkpXGhO1cGw9dx9qYzbrC+ZSQIhZHNL0=;
- b=hqbOEvcw06OY6j3P7+bFBZ29tnRr4/lpC0xWTFSN6coegVRH2XXkL7urt589wLipMm
- 9D4u54qRumndh0M+ynNLd96aBTpv7rGuosIsdqoKe0oUl09oonBhHmQ1tftXIdKCUrUz
- 62r7TG3KJrQ+tAgIfJKzURWIhVbz3VKiSMY190B0+LyG9PDnt4kDrs+bB0/LzLq85dl6
- eLEf/b6pdIViPbDiIwS4nvh52jdOXsvOuRIF7ZiN1248VZHInm9Kr77/fyKcA8+RxAmt
- IjL7mUnnYCgtdrfKHGl1cPKuM7VATRS76PKlRBtTlSy6+tg0eHO+u+JUHIYmKJU4dsHO
- JjUA==
+ bh=Eu+Ho/X9r7MZN52F/RomcQQtgjiQ+X/m9AkGhdRXtC0=;
+ b=hlbOLQ3Eyjn+XvXsI6V94Sxye1id84iasnp0uBZIRnBKOkbSU9yUbIlq41keOh/DjV
+ M1Ji6ztXni7ait2BVtg15UvWVCX+vU/nFT3K1YarMdgZiYIY/cRoUv0KGgjbkRIZqvSB
+ 63nHgdS7zUi+wtwJ8SqLo93B3tzLNNoTRj10+QAlVcCSbgjVGTKNRaeGDJTUQETf2BP+
+ Lb7gvSbVZhR3G2KTWG73ysbzCiM2NYHYNaz7/L9i2dmlI2vdR+kVt1h9n0FOY+BSUkvc
+ d1dqmHCCPP2l9PLtyGm+TcQLTBVFtA8k/HtwXqlArTw8rogH5EMBjOPtBKe3H89ggCO1
+ zIlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=iDnn3wwO4wgWkpXGhO1cGw9dx9qYzbrC+ZSQIhZHNL0=;
- b=hrbDnPFhtLHxY9vNNuLKmAaLqnxIFlz1C4gXnj7xjhHHuciwXWQBBxx77DhfUudGiJ
- xgrOoGzanlL2vBfE+d6X47pIad7q+q8EOyK1a/NtQch3CdGLhDo3MSehKn6oUqWWJyLb
- EX8YE3HUrV5NseHbyb97GNstecdLY6cy7GLz9njPr1zhiNhMfwFXIav5jVXELBT2Hgh9
- sxWmOtCMPVZgQ7Lm3xkHmc0oVTu6LqJp2OmYpV+++NKsnAv5+0Sj0GkEeq00Hf1vweIK
- pKyX1QqbrwFPpRYf/aOW3fP2aQ8OlGI+mgcjGfJuRBupjin0Btn+68rlsgNrPf9Kc/sB
- gtJQ==
-X-Gm-Message-State: AOAM532rOlCLab4zQVbMaOJNEZJKIkdX/lvhQQtEdDjLpcoMAEq7NGSD
- vq9ynn7WdZS74oSYOXppbXc=
-X-Google-Smtp-Source: ABdhPJzOrloW/eMzu31HMmNOhDwme/dtL8g4+OfgiK8OjPyb12J5sr16DZd4Hwdw4Wh811wotDAc6Q==
-X-Received: by 2002:a17:90a:985:: with SMTP id 5mr17795701pjo.23.1590378375787; 
- Sun, 24 May 2020 20:46:15 -0700 (PDT)
+ bh=Eu+Ho/X9r7MZN52F/RomcQQtgjiQ+X/m9AkGhdRXtC0=;
+ b=ltGXZkjtzHWTBDu4IFQtB4zv3zBHXiPVffsJOcqx9kEPagygx8ivN95XB6NhhBaVFM
+ p6lL27iuBVjezfd/5TWkKIstYky5+tae4E/420qNNpWdFhgjd049Ikq6wZ/vMTX+eE6n
+ BDY8JC0Pqepfs9+qPLzw2pVVX8KdtcwuUNh9s37iy7hFYUskCKC+Po8yIHPAhJxSaA6c
+ q8fUY4tc/VVOVgrK2TwvW/fNM4ft8QzUoALMIiCZYPjNddyAAr/0l7IYVZxcuI1nPEO0
+ avORUUWQCf63iAcNZIDVIRPdb/95tdm9gzc9tOcpmkqalE1W79IB1U7XDyLVfKC615Lz
+ 8I+A==
+X-Gm-Message-State: AOAM532yXPVggMb7+vT8HJ9WF04ykrX7W4yVEILUIhvaOeXhrOwJFAGB
+ zgPFe11dHqTL8R55c4ONEL0=
+X-Google-Smtp-Source: ABdhPJyCVTbNtcFfst1GMI7OlJFQdpx2wRpgu5bLKCThc6j672Jh+qV5W3K7wBvjbpx99E6OdCvgoA==
+X-Received: by 2002:a62:8888:: with SMTP id
+ l130mr14964445pfd.140.1590378378954; 
+ Sun, 24 May 2020 20:46:18 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.191.44])
- by smtp.gmail.com with ESMTPSA id i98sm12152831pje.37.2020.05.24.20.46.12
+ by smtp.gmail.com with ESMTPSA id i98sm12152831pje.37.2020.05.24.20.46.16
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 24 May 2020 20:46:15 -0700 (PDT)
+ Sun, 24 May 2020 20:46:18 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: linus.walleij@linaro.org,
 	broonie@kernel.org
-Subject: [PATCH v5 7/8] spi: stm32: Add 'SPI_SIMPLEX_RX',
- 'SPI_3WIRE_RX' support for stm32f4
-Date: Mon, 25 May 2020 11:45:47 +0800
-Message-Id: <1590378348-8115-8-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v5 8/8] spi: flags 'SPI_CONTROLLER_MUST_RX' and
+ 'SPI_CONTROLLER_MUST_TX' can't be coexit with 'SPI_3WIRE' mode
+Date: Mon, 25 May 2020 11:45:48 +0800
+Message-Id: <1590378348-8115-9-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
 References: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_204617_446573_BBFC4A6E 
-X-CRM114-Status: GOOD (  16.91  )
+X-CRM114-CacheID: sfid-20200524_204621_048474_ACCFE3F3 
+X-CRM114-Status: GOOD (  12.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -111,119 +112,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: dillon min <dillon.minfei@gmail.com>
 
-in l3gd20 driver startup, there is a setup failed error return from
-stm32 spi driver
+since chip spi driver need get the transfer direction by 'tx_buf' and
+'rx_buf' of 'struct spi_transfer' in 'SPI_3WIRE' mode.
 
-     "
-     [    2.687630] st-gyro-spi spi0.0: supply vdd not found, using dummy
-     regulator
-     [    2.696869] st-gyro-spi spi0.0: supply vddio not found, using dummy
-     regulator
-     [    2.706707] spi_stm32 40015000.spi: SPI transfer setup failed
-     [    2.713741] st-gyro-spi spi0.0: SPI transfer failed: -22
-     [    2.721096] spi_master spi0: failed to transfer one message from queue
-     [    2.729268] iio iio:device0: failed to read Who-Am-I register.
-     [    2.737504] st-gyro-spi: probe of spi0.0 failed with error -22
-     "
-
-after debug into spi-stm32 driver, st-gyro-spi split two steps to read
-l3gd20 id
-
-first: send command to l3gd20 with read id command in tx_buf, rx_buf
-is null.
-second: read id with tx_buf is null, rx_buf not null.
-
-so, for second step, stm32 driver recongise this process as 'SPI_SIMPLE_RX'
-from stm32_spi_communication_type(), but there is no related process for this
-type in stm32f4_spi_set_mode(), then we get error from
-stm32_spi_transfer_one_setup().
-
-we can use two method to fix this bug.
-1, use stm32 spi's "In unidirectional receive-only mode (BIDIMODE=0 and
-RXONLY=1)". but as our code running in sdram, the read latency is too large
-to get so many receive overrun error in interrupts handler.
-
-2, use stm32 spi's "In full-duplex (BIDIMODE=0 and RXONLY=0)", as tx_buf is
-null, so add flag 'SPI_MASTER_MUST_TX' to spi master.
-
-Change since V4:
-1 remove dummy data sent out by stm32 spi driver
-2 add flag 'SPI_MASTER_MUST_TX' to spi master
+so, we need bypass 'SPI_CONTROLLER_MUST_RX' and 'SPI_CONTROLLER_MUST_TX'
+feature in 'SPI_3WIRE' mode
 
 Signed-off-by: dillon min <dillon.minfei@gmail.com>
 ---
+ drivers/spi/spi.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-Hi Mark,
-
-This changes add 'SPI_MASTER_MUST_TX' for stm32 spi controller
-
-thanks.
-
-
- drivers/spi/spi-stm32.c | 19 +++++++++++++++----
- 1 file changed, 15 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/spi/spi-stm32.c b/drivers/spi/spi-stm32.c
-index 44ac6eb3..4c643df 100644
---- a/drivers/spi/spi-stm32.c
-+++ b/drivers/spi/spi-stm32.c
-@@ -811,7 +811,9 @@ static irqreturn_t stm32f4_spi_irq_event(int irq, void *dev_id)
- 		mask |= STM32F4_SPI_SR_TXE;
- 	}
+diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
+index c92c894..f884411 100644
+--- a/drivers/spi/spi.c
++++ b/drivers/spi/spi.c
+@@ -1023,7 +1023,8 @@ static int spi_map_msg(struct spi_controller *ctlr, struct spi_message *msg)
+ 	void *tmp;
+ 	unsigned int max_tx, max_rx;
  
--	if (!spi->cur_usedma && spi->cur_comm == SPI_FULL_DUPLEX) {
-+	if (!spi->cur_usedma && (spi->cur_comm == SPI_FULL_DUPLEX ||
-+				spi->cur_comm == SPI_SIMPLEX_RX ||
-+				spi->cur_comm == SPI_3WIRE_RX)) {
- 		/* TXE flag is set and is handled when RXNE flag occurs */
- 		sr &= ~STM32F4_SPI_SR_TXE;
- 		mask |= STM32F4_SPI_SR_RXNE | STM32F4_SPI_SR_OVR;
-@@ -850,7 +852,7 @@ static irqreturn_t stm32f4_spi_irq_event(int irq, void *dev_id)
- 		stm32f4_spi_read_rx(spi);
- 		if (spi->rx_len == 0)
- 			end = true;
--		else /* Load data for discontinuous mode */
-+		else if (spi->tx_buf)/* Load data for discontinuous mode */
- 			stm32f4_spi_write_tx(spi);
- 	}
+-	if (ctlr->flags & (SPI_CONTROLLER_MUST_RX | SPI_CONTROLLER_MUST_TX)) {
++	if ((ctlr->flags & (SPI_CONTROLLER_MUST_RX | SPI_CONTROLLER_MUST_TX))
++		&& !(msg->spi->mode & SPI_3WIRE)) {
+ 		max_tx = 0;
+ 		max_rx = 0;
  
-@@ -1151,7 +1153,9 @@ static int stm32f4_spi_transfer_one_irq(struct stm32_spi *spi)
- 	/* Enable the interrupts relative to the current communication mode */
- 	if (spi->cur_comm == SPI_SIMPLEX_TX || spi->cur_comm == SPI_3WIRE_TX) {
- 		cr2 |= STM32F4_SPI_CR2_TXEIE;
--	} else if (spi->cur_comm == SPI_FULL_DUPLEX) {
-+	} else if (spi->cur_comm == SPI_FULL_DUPLEX ||
-+				spi->cur_comm == SPI_SIMPLEX_RX ||
-+				spi->cur_comm == SPI_3WIRE_RX) {
- 		/* In transmit-only mode, the OVR flag is set in the SR register
- 		 * since the received data are never read. Therefore set OVR
- 		 * interrupt only when rx buffer is available.
-@@ -1462,10 +1466,16 @@ static int stm32f4_spi_set_mode(struct stm32_spi *spi, unsigned int comm_type)
- 		stm32_spi_set_bits(spi, STM32F4_SPI_CR1,
- 					STM32F4_SPI_CR1_BIDIMODE |
- 					STM32F4_SPI_CR1_BIDIOE);
--	} else if (comm_type == SPI_FULL_DUPLEX) {
-+	} else if (comm_type == SPI_FULL_DUPLEX ||
-+				comm_type == SPI_SIMPLEX_RX) {
- 		stm32_spi_clr_bits(spi, STM32F4_SPI_CR1,
- 					STM32F4_SPI_CR1_BIDIMODE |
- 					STM32F4_SPI_CR1_BIDIOE);
-+	} else if (comm_type == SPI_3WIRE_RX) {
-+		stm32_spi_set_bits(spi, STM32F4_SPI_CR1,
-+					STM32F4_SPI_CR1_BIDIMODE);
-+		stm32_spi_clr_bits(spi, STM32F4_SPI_CR1,
-+					STM32F4_SPI_CR1_BIDIOE);
- 	} else {
- 		return -EINVAL;
- 	}
-@@ -1906,6 +1916,7 @@ static int stm32_spi_probe(struct platform_device *pdev)
- 	master->prepare_message = stm32_spi_prepare_msg;
- 	master->transfer_one = stm32_spi_transfer_one;
- 	master->unprepare_message = stm32_spi_unprepare_msg;
-+	master->flags = SPI_MASTER_MUST_TX;
- 
- 	spi->dma_tx = dma_request_chan(spi->dev, "tx");
- 	if (IS_ERR(spi->dma_tx)) {
 -- 
 2.7.4
 
