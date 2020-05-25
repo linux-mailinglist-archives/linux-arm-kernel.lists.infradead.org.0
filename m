@@ -2,72 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25B531E175C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 23:50:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 781151E175D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 23:50:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=goC8mVuw9mswIWehtVyA6o2JTDCBoiXA2ycxtCeXYu0=; b=T9GP8xbQuvwpud
-	aACcfWrOGWi0y5NFrfGY/ScuBVpfgaqX9vjqepJ7b+91SwzB50BKf3e5Bc6wXM9jhkEBluu2vxXW2
-	R8lRBB3kdpN0LFifsjaf/f0GpxS8naoXl0wYFCf73a/a8Tr3pSaW02AWTxyaeeAf8VMW3/VYeGOb8
-	afrTzYdbrKxK9tn4DWoXAdck5tnVmbeGfYmOUB5UbWQxYXi+W4FGce3PxbRIw+StyLg46pSJzXkKd
-	5KUec8/jOUf8zfBAGwDt6UYvpGLTu+mSzlUOuTw4GumI4bk+IMakB2w1LScax5uO3+cwKZtrZi9jg
-	iyYGd/zze+aUnuRB58pw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AvF7UbX6tNOGneS2QKiL3Xr9H4V83K62m7gkw1xUbTg=; b=gkmjLrR07gkBJC
+	qw9AXm/q4UHo/zJd+ywHwdBEUof3d9vm8QfG0+tfcowgEObUSzmeU7mh+AzvZ+B3WByttyX07JO4A
+	dIT3LDRSdBnwU00DIdthfyNCPqpp9rIC0T/ARrJA+V58R4lfNI7WISeoqSkJE3hklJfEkkxQ20Ys5
+	GQhHvdrjNv1LSqpbseKZ1EiEBeUD+KDmVjqMMOa4ueFvgUA7a1AyM7f7USbmdYwzVgoZ2CrP8d1GJ
+	zKWZBoMDfhtrbaTy3YnNy2R/q6gLFdvlAOdRfqSfeclaHG/sGQeTsQzCQxrM1Umjn31Iy3OBi3/sF
+	Zr/SCvekOYALMQJRUhkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdKzI-0000OI-QO; Mon, 25 May 2020 21:50:24 +0000
+	id 1jdKzX-0000W8-Us; Mon, 25 May 2020 21:50:39 +0000
 Received: from mail-lj1-f195.google.com ([209.85.208.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdKzA-0000NH-EQ
+ id 1jdKzA-0000NG-EJ
  for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 21:50:17 +0000
-Received: by mail-lj1-f195.google.com with SMTP id v16so22192684ljc.8
+Received: by mail-lj1-f195.google.com with SMTP id l15so21809342lje.9
  for <linux-arm-kernel@lists.infradead.org>;
  Mon, 25 May 2020 14:50:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=SN+dpM083Q42WyxXGNQ6xV5UDjJbvXB3xjH8Bfi3+R4=;
- b=iNPRVl1+0sXuFo5rG2XVtbvjpacafwwSP9/HHJnuwh78ckDWfgnyiZtoN8D79+H04L
- lBo4mzux5NhMOXTMZ9+0mZQmU9FkdFhKDbiFSjXWOLq2XZ22HfmikY7OK67WjWgsCiwU
- erBDnzlqYd1nNgSOwSkIYkhZNU2H1nK+/g3awgjOMwWcK7HAABBFoAuC/sJwItRZT0su
- 7z0d+hgxWhI4j4Oop9DWoPFXeNjrW3W9TW0vKmpx8sxH0ffJiSLgLTj4RI9/Xa6V8xHY
- centR91Xm2qya/eiDtv8aPXy6SDfJVJL1x3liEYifA7kaPMKwjufG6g0jxoe2XQp4Ifb
- 006A==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=iEiJkh8NOisGzIdjA2H8Ok8XHFo6aNWnpKwvRPxnlbI=;
+ b=F0Dm69MdRLl1SxBsFc77E4osmjMTyNBL9fquMX9me9JytXqkrntX0IB1ESMq2khzr5
+ yLJvt9nWa+eIDZ6fzdHAf82L5UJYn06C4sRahqCU0cBjfLoCgHmNaxq0KFTJFaRCvXhc
+ Ftu6ItywBCl7PQFZY6hSErjbpHd5VzG+rqhCvHoAHTZ7BarMhuHbAH4mXP8hZ4WgYUZW
+ 2VgnUpRQ+CXevOpYJQNKZiTj+SRdLTbMIa8E98zZl0B6You97hjFSK3purxPAfsjk5b0
+ qrLy3Fs+ur2e3NrQEFbAmjpBlKFq1GiP59sap03Fh4plngauYBQh0O0lzlGnB4lwMdw3
+ vavA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=SN+dpM083Q42WyxXGNQ6xV5UDjJbvXB3xjH8Bfi3+R4=;
- b=WxrPKubKYk4MCYwHbo5y6505hfAIBohK1GrJ8cIsmdwPe1aVmie64qJ3rXt/w2c356
- +DzZ9fVCvfkDANnjsAkDjnNlP7hcTUPqqikUsl6Jz6yz5xN82w4y1eNLgtWaB5mY+fIv
- mvqpLeZqO4jvik9YSWroaisqqjtPPKxY+KR8CcgN3X9uUhgCrg9VruMUp4POgPgYjR82
- glMxMtkKooDLqdsGwORjTBFBAJTt1z7zQWDcekCGKHKwl9GpTU12x9pNgsIKLZNjhSFP
- wRNSwhCoPdcqCOPJkb2kizG9bukKJMi1ALbF1P1BYc8JuaNATf2IvxaAvZaAz3NjNvwk
- zkvg==
-X-Gm-Message-State: AOAM532OHdGXsvMS44VVGD3eUQKXezxZ83W+smjSsBkC2/Ld8KEHwdSH
- WhFiNrIXNOUJV7FZvwbSgZA=
-X-Google-Smtp-Source: ABdhPJxnTbunGio3cdXh+qjthmCHup2QsAXievRHBLyH46bK73IEPo4+D9loPtgYWGKOYBGDBCRTMw==
-X-Received: by 2002:a2e:a318:: with SMTP id l24mr13657060lje.45.1590443407765; 
- Mon, 25 May 2020 14:50:07 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=iEiJkh8NOisGzIdjA2H8Ok8XHFo6aNWnpKwvRPxnlbI=;
+ b=oY0OCVwopUDPQSDIG2Cb03N7EkEBwsNgyi/0rh1cYh2+Mwj0yviYI31PKAcUnNu5kX
+ Llm9/HCPRrfSEPajvtkWOAjQdvdvZggyrIBa/ks92zgXjcHR8L+Hxh13c0gvA8DkmcWr
+ AqHINMtYgojetxoEEqcwZcowuhnUcn6kEQ2zg4iNvqPhYhESs+PuohalK5pwbNSLIImB
+ A1o4wuVsvkwfOkCV3Uh4cjG0rtk0+DMUxojatLCtysOpZuojcQRA0gWxLZBU2E+jr4HV
+ YtoVhxHhe1vXhOLfw5cWD0CvcNvROQcA/xffz0IczWvJZuIlAEZ4nfxEQBwcqoXtFxh4
+ 3L5Q==
+X-Gm-Message-State: AOAM533tq2PmCCFkb4o3D2zxoPXrLEAqWvD+VbUuT5Dn+DP9CGwJKO7+
+ Rh+scRS5rAc4kEBeY+78O80=
+X-Google-Smtp-Source: ABdhPJyP8HJlSTai+vcBxS4V7LXTWrEOfp1rNKWJ8hrEnvT9KdNn/GE2gqtjW3JuXID/TJTQaI/afw==
+X-Received: by 2002:a2e:8e28:: with SMTP id r8mr13086965ljk.460.1590443409926; 
+ Mon, 25 May 2020 14:50:09 -0700 (PDT)
 Received: from localhost.localdomain (h-158-174-22-22.NA.cust.bahnhof.se.
  [158.174.22.22])
- by smtp.gmail.com with ESMTPSA id e21sm3893338ljj.86.2020.05.25.14.50.06
+ by smtp.gmail.com with ESMTPSA id e21sm3893338ljj.86.2020.05.25.14.50.08
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 25 May 2020 14:50:07 -0700 (PDT)
+ Mon, 25 May 2020 14:50:09 -0700 (PDT)
 From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
 To: Joerg Roedel <joro@8bytes.org>
-Subject: [PATCH 0/2] drivers/iommu: Constify structs
-Date: Mon, 25 May 2020 23:49:56 +0200
-Message-Id: <20200525214958.30015-1-rikard.falkeborn@gmail.com>
+Subject: [PATCH 2/2] iommu/sun50i: Constify sun50i_iommu_ops
+Date: Mon, 25 May 2020 23:49:58 +0200
+Message-Id: <20200525214958.30015-3-rikard.falkeborn@gmail.com>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200525214958.30015-1-rikard.falkeborn@gmail.com>
+References: <20200525214958.30015-1-rikard.falkeborn@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_145016_486961_D56F0749 
-X-CRM114-Status: UNSURE (   8.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200525_145016_487206_09369F8D 
+X-CRM114-Status: GOOD (  13.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -99,29 +100,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wei Liu <wei.liu@kernel.org>, Stephen Hemminger <sthemmin@microsoft.com>,
- linux-hyperv@vger.kernel.org, Haiyang Zhang <haiyangz@microsoft.com>,
- linux-kernel@vger.kernel.org, Rikard Falkeborn <rikard.falkeborn@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, iommu@lists.linux-foundation.org,
- Maxime Ripard <mripard@kernel.org>, "K. Y. Srinivasan" <kys@microsoft.com>,
+Cc: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Rikard Falkeborn <rikard.falkeborn@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Constify some structs with function pointers to allow the compiler to
-put them in read-only memory. There is not dependency between the
-patches.
+The struct sun50i_iommu_ops is not modified and can be made const to
+allow the compiler to put it in read-only memory.
 
-Rikard Falkeborn (2):
-  iommu/hyper-v: Constify hyperv_ir_domain_ops
-  iommu/sun50i: Constify sun50i_iommu_ops
+Before:
+   text    data     bss     dec     hex filename
+  14358    2501      64   16923    421b drivers/iommu/sun50i-iommu.o
 
- drivers/iommu/hyperv-iommu.c | 2 +-
+After:
+   text    data     bss     dec     hex filename
+  14726    2117      64   16907    420b drivers/iommu/sun50i-iommu.o
+
+Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+---
  drivers/iommu/sun50i-iommu.c | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
+diff --git a/drivers/iommu/sun50i-iommu.c b/drivers/iommu/sun50i-iommu.c
+index 1fa09ddcebd4..fce605e96aa2 100644
+--- a/drivers/iommu/sun50i-iommu.c
++++ b/drivers/iommu/sun50i-iommu.c
+@@ -771,7 +771,7 @@ static int sun50i_iommu_of_xlate(struct device *dev,
+ 	return iommu_fwspec_add_ids(dev, &id, 1);
+ }
+ 
+-static struct iommu_ops sun50i_iommu_ops = {
++static const struct iommu_ops sun50i_iommu_ops = {
+ 	.pgsize_bitmap	= SZ_4K,
+ 	.attach_dev	= sun50i_iommu_attach_device,
+ 	.detach_dev	= sun50i_iommu_detach_device,
 -- 
 2.26.2
 
