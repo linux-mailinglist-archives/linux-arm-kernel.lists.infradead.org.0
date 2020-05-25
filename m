@@ -2,90 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A10D01E06CC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 08:16:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45C981E06DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 08:27:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XXTo1Hf1QlqJ+ffyXH5jK6eUJxft+esNg6JUrQbSt6g=; b=LGWKa5NNAB5/lB
-	5pSCYQ6slYAbgB/VWMaqChyLywDOSAB8t3p19r3ObfaM+5Jtvi0PgF7ECdffNuf1kEPGaRPZCj7BQ
-	JimioWuWZuAdgpfGq/Pe9mnt1dzAV4aJCaudpB2Nx2F8k9SpTYYwlGBRrwHr07UF8zLunO/s/1FvG
-	xW0yqmrgt/H1BChTQPGa5SsnCyTDYs9SEBKZfNYjvTuN/PBW+OB+xwI4U5Mo2SBogVgM8ktXRBxpM
-	N+YCtfjrgKvuVFTSscQOukzNdxx+0lrD79zkFf7HZyFI3nYXHcXYrReWN0UG2TOW2obphIy3u/Mdc
-	mjb5tnTCxYHTbclxdYPg==;
+	List-Owner; bh=6akOBveDWULt92Sx6GyV2J7+9wgm/Dvc1w140ls/Djg=; b=TKZY/+ds1w7UPH
+	Pq6OujtErevhjpY/t7GuAXtnJ9kMxxBydzQV5DBZVW5mZIkMAbDtYSS+UVV1yIAoU+eA+K3XiF+BR
+	QuoejbqrFJWTCYGVzEvbZKR5Bgyyo3g0dJSXGdWj5Yw+HZyOmPAChqFoYkfLWNM4ggEtWb9rfBPxk
+	pE23cuIcZrFMjuiQLBFmiO68z6oGBnObnlq7IZsdgIEuSU0uqfXkmcqvZizGKaLwTTkPrzD4kabee
+	DrosCVgWu5FejhyIi8s7MqAZh4C3rky89WO5xj38oDyy8iO3AskrorNlj9yTx0mxyz64ViDJDiB1N
+	A4OGav4FswbsvbGWZp8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd6Pd-0004iR-Rf; Mon, 25 May 2020 06:16:37 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jd6aK-0002tU-2A; Mon, 25 May 2020 06:27:40 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd6PT-0004ho-PZ
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 06:16:28 +0000
-Received: by mail-pg1-x544.google.com with SMTP id s10so8285584pgm.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 24 May 2020 23:16:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=b96SL8+sRaQd4BNuO23oq4bmCu1x+cpwG9cm6rdCDA0=;
- b=viFVpiWHuDc+z9efiUkJdmh0VIDdJhkAiST+Q8beFUNnLgWtubZLHcJRe/qLLGg8Ip
- oTS8O5XPHQs5ZVa21IJrk9t5LGs94tYmAROm9iFn1gJg9EDp/ugeFILzwEj705KEvBGw
- b6JOOJ8Nw5uv/ziocgKDzhB84SwhMNSQMNaUAF+Ud1gvxPqt/eCPKpnOQcblDZXukU0k
- +YBUM4j7kZBcaRI3PmXwDJ1y1cgi3Lpe6Krsm8Hb3yurUa3b1ux8WWYM8OKxnhdxfQ25
- h3j2njsqK4+wVLtpj54w7bo2yq5Pakh/CDS4wsnvE8rqEgH2ggXaQJ6GUB5Z+zZZcTX0
- lA8w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=b96SL8+sRaQd4BNuO23oq4bmCu1x+cpwG9cm6rdCDA0=;
- b=EWlOhWEg/6JbBoJCbtRSzEcowszx/DznoUs3Vcz0bBxuk84eCHzXsFxoAosE9IDHeY
- /8P3NPiCsdU7cZ6b6qhQyOT1CV9G8zbAc0J2nrsbgPkTOV1gXPJlRVSZhvYK+/AgOcX4
- hB83aNOxzUQdFsVz8NnMHip4yHoWSGqhvMjs5cvszr+dopAsFrRubvXIcJo4t/BbeIs4
- mthauMYIUxBOExDNnLYI//TlqQoy7vg7qq+yJfKb6An3DrHp1NonoqWg/qjYjqpap7eo
- Ght5778gk8w3KTIk3rYhMTaQ6f0RbvPD7KkcG4f93PuSCAS/zwk3IeK0BEPrnM/igBCY
- 4YwQ==
-X-Gm-Message-State: AOAM533BbUfNyePlaoRztESLPr1LGberlqqbgaklgg8WGzI1m1AaNKJq
- vPzxDNhel5HvIke+caWpn58V82cTBpop/Q==
-X-Google-Smtp-Source: ABdhPJxgBcGXY7WW27C6rn95w54bsP+6x+NYWWLJeYwxugt6XN3ID/4qT8FuaL3vxAeluC7dMnrvaA==
-X-Received: by 2002:aa7:84c6:: with SMTP id x6mr15776442pfn.46.1590387386501; 
- Sun, 24 May 2020 23:16:26 -0700 (PDT)
-Received: from localhost (c-73-241-114-122.hsd1.ca.comcast.net.
- [73.241.114.122])
- by smtp.gmail.com with ESMTPSA id v1sm12380566pjn.9.2020.05.24.23.16.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 24 May 2020 23:16:25 -0700 (PDT)
-Date: Sun, 24 May 2020 23:16:22 -0700
-From: Richard Cochran <richardcochran@gmail.com>
-To: Jianyong Wu <Jianyong.Wu@arm.com>
-Subject: Re: [RFC PATCH v12 10/11] arm64: add mechanism to let user choose
- which counter to return
-Message-ID: <20200525061622.GA13679@localhost>
-References: <20200522083724.38182-1-jianyong.wu@arm.com>
- <20200522083724.38182-11-jianyong.wu@arm.com>
- <20200524021106.GC335@localhost>
- <HE1PR0802MB25552E7C792D3BB9CBE2D2C7F4B30@HE1PR0802MB2555.eurprd08.prod.outlook.com>
+ id 1jd6a4-0002sD-Rm; Mon, 25 May 2020 06:27:26 +0000
+X-UUID: c1652ce0a9c0403ba4ca3c6ac127711a-20200524
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=P1I8TepixZCqsFw/5SDkpIp4t3EBgZjjh17TkYpSIn0=; 
+ b=O46lawTeob/nLYdbqT5TlZGztNQNKqS0Nyyrh1WRftTrCWvWvBl3ZjxTqKnHeTtHe7ZyjScxXunVYnttekCchCl3OsTbqDyHn3b9oPelNaQGp7L4hM4TVdu3+KTJnCVy58RpIiTrwHjPEhOiAeYnekxPqmbn9AKeL7Ol/E1LV3U=;
+X-UUID: c1652ce0a9c0403ba4ca3c6ac127711a-20200524
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1870454957; Sun, 24 May 2020 22:27:22 -0800
+Received: from MTKMBS32DR.mediatek.inc (172.27.6.104) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 24 May 2020 23:24:09 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS32DR.mediatek.inc
+ (172.27.6.104) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Mon, 25 May 2020 14:24:04 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 25 May 2020 14:24:04 +0800
+Message-ID: <1590387743.13912.11.camel@mhfsdcap03>
+Subject: Re: [PATCH v3 4/7] iommu/mediatek: Move inv_sel_reg into the plat_data
+From: Yong Wu <yong.wu@mediatek.com>
+To: Chao Hao <chao.hao@mediatek.com>
+Date: Mon, 25 May 2020 14:22:23 +0800
+In-Reply-To: <20200509083654.5178-5-chao.hao@mediatek.com>
+References: <20200509083654.5178-1-chao.hao@mediatek.com>
+ <20200509083654.5178-5-chao.hao@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <HE1PR0802MB25552E7C792D3BB9CBE2D2C7F4B30@HE1PR0802MB2555.eurprd08.prod.outlook.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-TM-SNTS-SMTP: 92AFEB32F57DC18BC921CA743F7ED817C952B9384976B2765F29D5F4525EE1A02000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_231627_828434_289E3ECA 
-X-CRM114-Status: UNSURE (   9.58  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200524_232724_905728_64D0910B 
+X-CRM114-Status: GOOD (  15.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [richardcochran[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,38 +84,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <Mark.Rutland@arm.com>, Justin He <Justin.He@arm.com>,
- Wei Chen <Wei.Chen@arm.com>, "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
- Suzuki Poulose <Suzuki.Poulose@arm.com>, "maz@kernel.org" <maz@kernel.org>,
- Steve Capper <Steve.Capper@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
- Steven Price <Steven.Price@arm.com>, Kaly Xin <Kaly.Xin@arm.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "john.stultz@linaro.org" <john.stultz@linaro.org>,
- "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
- "pbonzini@redhat.com" <pbonzini@redhat.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>, nd <nd@arm.com>,
- "will@kernel.org" <will@kernel.org>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, FY Yang <fy.yang@mediatek.com>,
+ wsd_upstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Jun Yan <jun.yan@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 25, 2020 at 04:50:28AM +0000, Jianyong Wu wrote:
-> How about adding an extra argument in struct ptp_clock_info to serve as a flag, then we can control this flag using IOCTL to determine the counter type.
+On Sat, 2020-05-09 at 16:36 +0800, Chao Hao wrote:
+> For mt6779, MMU_INVLDT_SEL register's offset is changed from
 
-no, No, NO!
+At this patch, the register is still called by "MMU_INV_SEL".
 
-> > From your description, this "flag" really should be a module parameter.
-> Maybe use flag as a module parameter is a better way.
+> 0x38 to 0x2c, so we can put inv_sel_reg in the plat_data to
+> use it.
+> In addition, we renamed it to REG_MMU_INV_SEL_GEN1 and use it
+> before mt6779.
+> 
+> Signed-off-by: Chao Hao <chao.hao@mediatek.com>
+> ---
+>  drivers/iommu/mtk_iommu.c | 9 ++++++---
+>  drivers/iommu/mtk_iommu.h | 1 +
+>  2 files changed, 7 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> index 9ede327a418d..d73de987f8be 100644
+> --- a/drivers/iommu/mtk_iommu.c
+> +++ b/drivers/iommu/mtk_iommu.c
+> @@ -37,7 +37,7 @@
+>  #define REG_MMU_INVLD_START_A			0x024
+>  #define REG_MMU_INVLD_END_A			0x028
+>  
+> -#define REG_MMU_INV_SEL				0x038
+> +#define REG_MMU_INV_SEL_GEN1			0x038
+>  #define F_INVLD_EN0				BIT(0)
+>  #define F_INVLD_EN1				BIT(1)
+>  
+> @@ -167,7 +167,7 @@ static void mtk_iommu_tlb_flush_all(void *cookie)
+>  
+>  	for_each_m4u(data) {
+>  		writel_relaxed(F_INVLD_EN1 | F_INVLD_EN0,
+> -			       data->base + REG_MMU_INV_SEL);
+> +			       data->base + data->plat_data->inv_sel_reg);
+>  		writel_relaxed(F_ALL_INVLD, data->base + REG_MMU_INVALIDATE);
+>  		wmb(); /* Make sure the tlb flush all done */
+>  	}
+> @@ -184,7 +184,7 @@ static void mtk_iommu_tlb_flush_range_sync(unsigned long iova, size_t size,
+>  	for_each_m4u(data) {
+>  		spin_lock_irqsave(&data->tlb_lock, flags);
+>  		writel_relaxed(F_INVLD_EN1 | F_INVLD_EN0,
+> -			       data->base + REG_MMU_INV_SEL);
+> +			       data->base + data->plat_data->inv_sel_reg);
+>  
+>  		writel_relaxed(iova, data->base + REG_MMU_INVLD_START_A);
+>  		writel_relaxed(iova + size - 1,
+> @@ -784,6 +784,7 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+>  	.has_4gb_mode = true,
+>  	.has_bclk     = true,
+>  	.has_vld_pa_rng   = true,
+> +	.inv_sel_reg = REG_MMU_INV_SEL_GEN1,
 
-Yes.
+nitpick: align '=' with the next line.
 
-Thanks,
-Richard
+>  	.larbid_remap = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9},
+>  };
+>  
+> @@ -792,12 +793,14 @@ static const struct mtk_iommu_plat_data mt8173_data = {
+>  	.has_4gb_mode = true,
+>  	.has_bclk     = true,
+>  	.reset_axi    = true,
+> +	.inv_sel_reg = REG_MMU_INV_SEL_GEN1,
+
+align '='
+
+>  	.larbid_remap = {0, 1, 2, 3, 4, 5}, /* Linear mapping. */
+>  };
+>  
+>  static const struct mtk_iommu_plat_data mt8183_data = {
+>  	.m4u_plat     = M4U_MT8183,
+>  	.reset_axi    = true,
+> +	.inv_sel_reg = REG_MMU_INV_SEL_GEN1,
+>  	.larbid_remap = {0, 4, 5, 6, 7, 2, 3, 1},
+>  };
+>  
+> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+> index d711ac630037..afd7a2de5c1e 100644
+> --- a/drivers/iommu/mtk_iommu.h
+> +++ b/drivers/iommu/mtk_iommu.h
+> @@ -43,6 +43,7 @@ struct mtk_iommu_plat_data {
+>  	bool		    has_misc_ctrl;
+>  	bool                has_vld_pa_rng;
+>  	bool                reset_axi;
+> +	u32                 inv_sel_reg;
+>  	unsigned char       larbid_remap[MTK_LARB_NR_MAX];
+>  };
+>  
 
 _______________________________________________
 linux-arm-kernel mailing list
