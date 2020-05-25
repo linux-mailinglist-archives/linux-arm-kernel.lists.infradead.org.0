@@ -2,101 +2,170 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFF701E046E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 03:31:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87A311E0476
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 03:38:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tTPTNG8A8RQaNo98XQk/cevP5kfN1shhAuJynfEn0ek=; b=L0alTd6IISO6eq
-	EHz/gBbAh1aletMkXbgbCcyQSmkGtALdN/598JrXvcPogYQWkl4GxrUhiFHmavyY029mywE31P5Kl
-	emuxeGFmBclENDKXEsQQqwiAehnTZKQdVxihM+jXu4sUQaLMSVpATrrdEQ0v9BU/ktYUC1ZA2rpCu
-	7tr/F8MXgueXz+UkERSSsV3eUowXhdc8py89AzdephwA5ZHcxIntoJEj7nFvTEhU6+L+AA0MzWj/P
-	SpTHAw0uPtuWOTMj67qyw26kYjLfdMfQcrk9j2AUog7hRyeVZSWRaHzFr80w5v7wnby+N3DcYiIjr
-	EAF+dc+kpSKTIHCUW5dQ==;
+	List-Owner; bh=chTSXrj43bwaTMQOJNDpVGI6CuBXyMTG/3vMkR7bjy0=; b=KyAo98Vo5NwiPH
+	y2iHWeHNTXCJPlO0DUy8f0x4DsnE+iJ8IgVSAgykv5AF9K1jo39Tajz+o47xUhPnKcnBOJMn+3/Z8
+	0RA66QeMUcLRZNnR5zmSdsgDwVXuMV8WcSsAITIPizBpjueV/SMHF4qYmVwF1RrSmhldnU0hPhrxx
+	w6+4J9Knnf9uLPOx9LiYSzJE4cxgiOArELzceDYw2SIuUOEcV5eO6SPdU+XWYUyY5nomUYFm6/U0K
+	3hdLIVfR5Dq4XnhTMAzUlLElVs1lAOQawwEXDKeJJ3EUuj2BMQfB7RmLvimM2rO81aIYzzVps6Xad
+	cAcDmaqVeUByLEL2BRKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd1xs-0007oe-Do; Mon, 25 May 2020 01:31:40 +0000
-Received: from gateway30.websitewelcome.com ([192.185.152.11])
+	id 1jd24R-0002Ob-Qs; Mon, 25 May 2020 01:38:27 +0000
+Received: from mail-eopbgr80077.outbound.protection.outlook.com ([40.107.8.77]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd1x6-0007Mz-FA
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 01:30:54 +0000
-Received: from cm12.websitewelcome.com (cm12.websitewelcome.com [100.42.49.8])
- by gateway30.websitewelcome.com (Postfix) with ESMTP id E53DD3ED1
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 24 May 2020 20:30:51 -0500 (CDT)
-Received: from br164.hostgator.com.br ([192.185.176.180]) by cmsmtp with SMTP
- id d1x5jqK9J1s2xd1x5jKrZM; Sun, 24 May 2020 20:30:51 -0500
-X-Authority-Reason: nr=8
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=castello.eng.br; s=default; h=Content-Transfer-Encoding:Content-Type:
- MIME-Version:References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=GGgwQdUzcMvoWgVO5XpDUhAIz3Dc4bq2gIMPXKAwu6Q=; b=oSd547Lp5+yjbuv5glgUXMfsHW
- imgAgCdvx+URlUr80e/AdzA9ScPC63TS0p4b1buTdpekBz8Qd8aoNztQ64oPsWob8rnW93C4Q8coF
- fy2APo1zMgXnyawFDQT5srjpnKWTRxPOWPzaDH4p2elIRcQ8GPITr7ibVKsjB6G0XOdNQSPdX7LnD
- dTsLoZYu/AticXVmQ0l+aFjBE8pH4vgsLCYz/bnUhBIgIGmYn9fYXMWvS7X/TdS54srKXXPa+C0If
- WRAaybkajm9EmWbSfE3Lnkl/XlhacM4iEqnO34PbREIdKU0yw2bx7oKBhf0yoHgXFLFGBExWCNunZ
- W30bZQ1w==;
-Received: from [191.31.196.240] (port=34284 helo=castello.castello)
- by br164.hostgator.com.br with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <matheus@castello.eng.br>)
- id 1jd1x5-004Dik-CJ; Sun, 24 May 2020 22:30:51 -0300
-From: Matheus Castello <matheus@castello.eng.br>
-To: afaerber@suse.de, manivannan.sadhasivam@linaro.org, mark.rutland@arm.com,
- robh+dt@kernel.org
-Subject: [PATCH v5 3/3] ARM: dts: Add Caninos Loucos Labrador
-Date: Sun, 24 May 2020 22:30:08 -0300
-Message-Id: <20200525013008.108750-4-matheus@castello.eng.br>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200525013008.108750-1-matheus@castello.eng.br>
-References: <20200525013008.108750-1-matheus@castello.eng.br>
+ id 1jd24E-0002NU-6x
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 01:38:16 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xKpqPWiXwX1s9oHxaslGI9pPpxzD4WzD+JjXBLEXAPk=;
+ b=mPlvlPpsypkcTTy3bE5rLRARa6PKR2zVzdFADqh58TmohK8o9DcaXE1kyN5ZvVFWfieg39PiyRIyCSxMO21gf+bav+Kx+MXWqUa1ja7UUP31rXAxqhZ5X7ZtokpAsH1sfkYO5s58Jhqg+J4bKeu49/z/iJd4ZVowfFYs8dj58YA=
+Received: from AM4PR0101CA0068.eurprd01.prod.exchangelabs.com
+ (2603:10a6:200:41::36) by AM0PR08MB4418.eurprd08.prod.outlook.com
+ (2603:10a6:208:146::15) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.27; Mon, 25 May
+ 2020 01:38:07 +0000
+Received: from AM5EUR03FT033.eop-EUR03.prod.protection.outlook.com
+ (2603:10a6:200:41:cafe::86) by AM4PR0101CA0068.outlook.office365.com
+ (2603:10a6:200:41::36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23 via Frontend
+ Transport; Mon, 25 May 2020 01:38:07 +0000
+X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 63.35.35.123)
+ smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
+ verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
+ dmarc=bestguesspass action=none header.from=arm.com;
+Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
+ 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
+ client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
+Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
+ AM5EUR03FT033.mail.protection.outlook.com (10.152.16.99) with
+ Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3021.23 via Frontend Transport; Mon, 25 May 2020 01:38:07 +0000
+Received: ("Tessian outbound 14e212f6ce41:v57");
+ Mon, 25 May 2020 01:38:06 +0000
+X-CR-MTA-TID: 64aa7808
+Received: from c2b5a79ceaa6.3
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com id
+ 693EC451-4575-4919-98F1-8F17DF37F683.1; 
+ Mon, 25 May 2020 01:38:01 +0000
+Received: from EUR05-VI1-obe.outbound.protection.outlook.com
+ by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id c2b5a79ceaa6.3
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
+ Mon, 25 May 2020 01:38:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=h6jCtbtPIBNyIY40zKtu/lhZsWJPyOGCDI2BTGWq75zPYGVrsU+sVv62vf2lnJW/PgT5yjTN/8fERaLFo8G9noE5D5rmPKCoWCe3EaRmS03RQ2A/rMsAKf2BRkVLieuEAa6TrYFxGkdHlhQlcNKS+XH4wrHuuEow3B40Wl2QsFLZkpgwj7ZdXwJHOKcWrlxfupENOg+30X4qaioBKyiYiesf4moouRQkeaNolZvI0p+7sETVuILxbi0aOT5KdxpnIWhB34HJvLBG3Z0mn7tvdpCEf5IZJFUHnZJxu+fYbVxXMFQrXNpC2yBs5wTC2Fz76Oo9Zc2jo9UsQmTx6Vybww==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xKpqPWiXwX1s9oHxaslGI9pPpxzD4WzD+JjXBLEXAPk=;
+ b=hmih+ze/ueyMQMevSSm2Sd41Ujcu4RjeiWJt0hEmZRZcvLihyN61eXROvx+PSCY1gZZdIcby6FYDKmhICCf48PNSryvHk67zDuYskxm5jtmEJS+xRPXtesZIY2jCHqlTES7jmke7leYyC9RYCoFaEnyd9pb755hhll/6nXaml5Wi/vE6QUJ0xHDcvHpCcc+3U1ZzmB9O4dwdESmQijdFmOxuUzdMtSONjryYfMllN57vsln1gpQEvVnI1anHNoCkTHOTzKvoRwOKKObbDep/q7up+fHQDjCpY52MdQpSHkdS3xydDtm+177aUfAxQs7Ppl7Ic04SWtywhZxqfJW7ag==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
+ header.d=arm.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
+ s=selector2-armh-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xKpqPWiXwX1s9oHxaslGI9pPpxzD4WzD+JjXBLEXAPk=;
+ b=mPlvlPpsypkcTTy3bE5rLRARa6PKR2zVzdFADqh58TmohK8o9DcaXE1kyN5ZvVFWfieg39PiyRIyCSxMO21gf+bav+Kx+MXWqUa1ja7UUP31rXAxqhZ5X7ZtokpAsH1sfkYO5s58Jhqg+J4bKeu49/z/iJd4ZVowfFYs8dj58YA=
+Received: from HE1PR0802MB2555.eurprd08.prod.outlook.com (2603:10a6:3:e0::7)
+ by HE1PR0802MB2571.eurprd08.prod.outlook.com (2603:10a6:3:e2::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Mon, 25 May
+ 2020 01:37:56 +0000
+Received: from HE1PR0802MB2555.eurprd08.prod.outlook.com
+ ([fe80::b1eb:9515:4851:8be]) by HE1PR0802MB2555.eurprd08.prod.outlook.com
+ ([fe80::b1eb:9515:4851:8be%6]) with mapi id 15.20.3021.029; Mon, 25 May 2020
+ 01:37:56 +0000
+From: Jianyong Wu <Jianyong.Wu@arm.com>
+To: Sudeep Holla <Sudeep.Holla@arm.com>
+Subject: RE: [RFC PATCH v12 03/11] psci: export smccc conduit get helper.
+Thread-Topic: [RFC PATCH v12 03/11] psci: export smccc conduit get helper.
+Thread-Index: AQHWMBRUBAdOXBezXUymOTKynRIElai0FQYAgAP0TiA=
+Date: Mon, 25 May 2020 01:37:56 +0000
+Message-ID: <HE1PR0802MB255537CD21C5E7F7F4A899A2F4B30@HE1PR0802MB2555.eurprd08.prod.outlook.com>
+References: <20200522083724.38182-1-jianyong.wu@arm.com>
+ <20200522083724.38182-4-jianyong.wu@arm.com> <20200522131206.GA15171@bogus>
+In-Reply-To: <20200522131206.GA15171@bogus>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ts-tracking-id: aa67b612-5610-41a8-b27b-75dee5aeebf7.1
+x-checkrecipientchecked: true
+Authentication-Results-Original: arm.com; dkim=none (message not signed)
+ header.d=none;arm.com; dmarc=none action=none header.from=arm.com;
+x-originating-ip: [203.126.0.111]
+x-ms-publictraffictype: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 1b55dae7-8e27-47f1-015e-08d8004c466e
+x-ms-traffictypediagnostic: HE1PR0802MB2571:|AM0PR08MB4418:
+x-ms-exchange-transport-forked: True
+X-Microsoft-Antispam-PRVS: <AM0PR08MB4418F30A992471AC5076B55BF4B30@AM0PR08MB4418.eurprd08.prod.outlook.com>
+x-checkrecipientrouted: true
+nodisclaimer: true
+x-ms-oob-tlc-oobclassifiers: OLM:8882;OLM:8882;
+x-forefront-prvs: 0414DF926F
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Untrusted: BCL:0;
+X-Microsoft-Antispam-Message-Info-Original: He+6Q0V00nxFHrY1xEK0fd8S4PAkqovfrtOloOzV0luMwAELHPf4X6nPfCL9SVzUvdWgvdb3vNTOJzHLHDYwSnKaJKTiwCVVdSZXmo5Dvkrq4sWWXuEyFRxchgXXJLAIojvYiq4EgqSOL8wm+IBhmhyJCj/6adMhpou3Ku2qoLMsoYVRZYD3zav/TiLqwvvn3E5ts/0f8tIjuGPIRVAIFbeAVX0G3OFwDbHRXiBBK48+mGhZV6Mbx6cGH1rZv+k8rcH3k+4sR1IqhPEzeRtnEOrueuuwy/UAObe4RZ0J92RMqA2zxNCZ7V89+poUATqhYs7GWwdO6kzKo8zO+vIrbH1+WCVOunexMFwIx9SFwXOHghxtL1K7LPjvGkHk4uxKAdovr28V3XJ4n3wLuSc7rg==
+X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255; CTRY:; LANG:en;
+ SCL:1; SRV:; IPV:NLI; SFV:NSPM; H:HE1PR0802MB2555.eurprd08.prod.outlook.com;
+ PTR:; CAT:NONE; SFTY:;
+ SFS:(4636009)(136003)(39850400004)(376002)(396003)(366004)(346002)(66946007)(7696005)(186003)(4326008)(6862004)(316002)(26005)(71200400001)(966005)(478600001)(6506007)(66556008)(76116006)(64756008)(66476007)(53546011)(66446008)(2906002)(6636002)(8676002)(52536014)(5660300002)(33656002)(8936002)(86362001)(7416002)(55016002)(9686003)(54906003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: IX4exGaJJO0u81zqwTPgVsxsRWpw8zIg7OH2kYV02gHPbNmdRp3/+eqer3cVv0ux1Eyha29s+giRxo2AFA0b2ZkslOygM0Exu+8Mf5om+aREiwzzOm8cUvo9TUeoHbQpQ66TKV5wIG51/bABpbI6TT1cOiwts28uKhc2yRICVUJRhru7K7kYBMYuhsMnFtVFkB+m7zWcFI9rKZdgdY+kHiFN6J9U00OQkhXCjEyRZoCalO5EqD5eOtYNvwchRDBUT1zjMOh0Sids2Dbbun6oqA2lGM/HxZp2umqKimwxJhS2ITT+jcFzoHQs2ng7B84RXI+FMwPjFhVaat0LFVcLlSCdeUCkGjto1cXsYmWXTdD63/z1nqdizl7psZ95qoJhG+yCb57QEzn7dGFqiIK/PS9IWduFADyMuboLdgGvmvaM1VdtPtjcS2qH17LRnSuIbLGK7K/EMQ5rwl76LcQhJwY6KjGXrVYPXGvjtHWzrpw=
 MIME-Version: 1.0
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - br164.hostgator.com.br
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - castello.eng.br
-X-BWhitelist: no
-X-Source-IP: 191.31.196.240
-X-Source-L: No
-X-Exim-ID: 1jd1x5-004Dik-CJ
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: (castello.castello) [191.31.196.240]:34284
-X-Source-Auth: matheus@castello.eng.br
-X-Email-Count: 39
-X-Source-Cap: Y2FzdGUyNDg7Y2FzdGUyNDg7YnIxNjQuaG9zdGdhdG9yLmNvbS5icg==
-X-Local-Domain: yes
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0802MB2571
+Original-Authentication-Results: arm.com; dkim=none (message not signed)
+ header.d=none;arm.com; dmarc=none action=none header.from=arm.com;
+X-EOPAttributedMessage: 0
+X-MS-Exchange-Transport-CrossTenantHeadersStripped: AM5EUR03FT033.eop-EUR03.prod.protection.outlook.com
+X-Forefront-Antispam-Report: CIP:63.35.35.123; CTRY:IE; LANG:en; SCL:1; SRV:;
+ IPV:CAL; SFV:NSPM; H:64aa7808-outbound-1.mta.getcheckrecipient.com;
+ PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; CAT:NONE; SFTY:;
+ SFS:(4636009)(39850400004)(136003)(376002)(396003)(346002)(46966005)(5660300002)(82740400003)(6862004)(7696005)(55016002)(81166007)(316002)(356005)(478600001)(9686003)(70586007)(36906005)(86362001)(8676002)(47076004)(70206006)(54906003)(82310400002)(52536014)(26005)(6636002)(186003)(336012)(33656002)(53546011)(6506007)(966005)(4326008)(2906002)(8936002);
+ DIR:OUT; SFP:1101; 
+X-MS-Office365-Filtering-Correlation-Id-Prvs: d651fffb-09ca-4a5c-058f-08d8004c4036
+X-Forefront-PRVS: 0414DF926F
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: WzAo3kgUI5z6wzNYqgQeAZ0MHU35McL3AJsO4Lgf5GuRBOyk2tn1FIJijyoP/VVWie49Sm06lcfd1oO3jr0YGHz9hAi7TZ890ooX7JTyIUc2pnacxzeo5J1ZkDAV9BlCAOJNhdFmgGXPYkipZSZ9dlO7GGsKsHG+N98hT1gYlzpP6kepbVaKDBdkEW1StmcGAsQSyogXLcPbPEqcVvYDd3ItUFh9Lcji4AvN5vSfN81ELPRIobyro0C5eSinEwM1b5fISpt7ud3cFptmPktI1kMI9gwyO8OtJrJU4jyI+GMFlmPyyELKSx+HSpz1e/sOnqflGs8PpQARhQfPXklzP/kVwfyvc0klDf2gZVBm7CsM5WncZBZWcmfR5hfle1H2g+PG6kDJbIvrQ3YGouIlzJLTMhsh0V5/VbxQdgX+jQP18cF/U9s1/dgtp940OV7X2/UNCSctYFW4e0i/YwUCOQ0Y63A4n2sv/pZC8sviU9c=
+X-OriginatorOrg: arm.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2020 01:38:07.1444 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1b55dae7-8e27-47f1-015e-08d8004c466e
+X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
+ Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR08MB4418
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_183052_696686_0A618859 
-X-CRM114-Status: UNSURE (   9.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200524_183814_315359_8B4E84D2 
+X-CRM114-Status: GOOD (  14.41  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.152.11 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.8.77 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [192.185.152.11 listed in wl.mailspike.net]
+ [40.107.8.77 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,60 +177,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Matheus Castello <matheus@castello.eng.br>,
- linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
- igor.lima@lsitec.org.br, edgar.righi@lsitec.org.br,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ "will@kernel.org" <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ Justin He <Justin.He@arm.com>, Wei Chen <Wei.Chen@arm.com>,
+ "maz@kernel.org" <maz@kernel.org>, Steven Price <Steven.Price@arm.com>,
+ Kaly Xin <Kaly.Xin@arm.com>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ "richardcochran@gmail.com" <richardcochran@gmail.com>,
+ "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
+ "john.stultz@linaro.org" <john.stultz@linaro.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, nd <nd@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Steve Capper <Steve.Capper@arm.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
+ Sudeep Holla <Sudeep.Holla@arm.com>,
+ "pbonzini@redhat.com" <pbonzini@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkIERldmljZSBUcmVlcyBmb3IgQ2FuaW5vcyBMb3Vjb3MgTGFicmFkb3IgQ29NIGFuZCBiYXNl
-IGJvYXJkLgpCYXNlZCBvbiB0aGUgd29yayBvZiBBbmRyZWFzIEbDpHJiZXIgb24gTGVtYWtlciBH
-dWl0YXIgZGV2aWNlIHRyZWUuCgpTaWduZWQtb2ZmLWJ5OiBNYXRoZXVzIENhc3RlbGxvIDxtYXRo
-ZXVzQGNhc3RlbGxvLmVuZy5icj4KUmV2aWV3ZWQtYnk6IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8
-bWFuaXZhbm5hbi5zYWRoYXNpdmFtQGxpbmFyby5vcmc+ClJldmlld2VkLWJ5OiBBbmRyZWFzIEbD
-pHJiZXIgPGFmYWVyYmVyQHN1c2UuZGU+Ci0tLQogYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUg
-ICAgICAgICAgICAgICAgICAgIHwgIDEgKwogLi4uL2FybS9ib290L2R0cy9vd2wtczUwMC1sYWJy
-YWRvci1iYXNlLW0uZHRzIHwgMzQgKysrKysrKysrKysrKysrKysrKwogYXJjaC9hcm0vYm9vdC9k
-dHMvb3dsLXM1MDAtbGFicmFkb3ItdjIuZHRzaSAgIHwgMjIgKysrKysrKysrKysrCiAzIGZpbGVz
-IGNoYW5nZWQsIDU3IGluc2VydGlvbnMoKykKIGNyZWF0ZSBtb2RlIDEwMDY0NCBhcmNoL2FybS9i
-b290L2R0cy9vd2wtczUwMC1sYWJyYWRvci1iYXNlLW0uZHRzCiBjcmVhdGUgbW9kZSAxMDA2NDQg
-YXJjaC9hcm0vYm9vdC9kdHMvb3dsLXM1MDAtbGFicmFkb3ItdjIuZHRzaQoKZGlmZiAtLWdpdCBh
-L2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlIGIvYXJjaC9hcm0vYm9vdC9kdHMvTWFrZWZpbGUK
-aW5kZXggZThkZDk5MjAxMzk3Li4wZjhjMWYyNTU1NzQgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtL2Jv
-b3QvZHRzL01ha2VmaWxlCisrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL01ha2VmaWxlCkBAIC04NTYs
-NiArODU2LDcgQEAgZHRiLSQoQ09ORklHX0FSQ0hfT1JJT041WCkgKz0gXAogZHRiLSQoQ09ORklH
-X0FSQ0hfQUNUSU9OUykgKz0gXAogCW93bC1zNTAwLWN1YmllYm9hcmQ2LmR0YiBcCiAJb3dsLXM1
-MDAtZ3VpdGFyLWJiLXJldi1iLmR0YiBcCisJb3dsLXM1MDAtbGFicmFkb3ItYmFzZS1tLmR0YiBc
-CiAJb3dsLXM1MDAtc3Bhcmt5LmR0YgogZHRiLSQoQ09ORklHX0FSQ0hfUFJJTUEyKSArPSBcCiAJ
-cHJpbWEyLWV2Yi5kdGIKZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL293bC1zNTAwLWxh
-YnJhZG9yLWJhc2UtbS5kdHMgYi9hcmNoL2FybS9ib290L2R0cy9vd2wtczUwMC1sYWJyYWRvci1i
-YXNlLW0uZHRzCm5ldyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4IDAwMDAwMDAwMDAwMC4uMDQ0NTY4
-ZmVjMjVlCi0tLSAvZGV2L251bGwKKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvb3dsLXM1MDAtbGFi
-cmFkb3ItYmFzZS1tLmR0cwpAQCAtMCwwICsxLDM0IEBACisvLyBTUERYLUxpY2Vuc2UtSWRlbnRp
-ZmllcjogKEdQTC0yLjArIE9SIE1JVCkKKy8qCisgKiBDYW5pbm9zIExhYnJhZG9yIEJhc2UgQm9h
-cmQKKyAqCisgKiBDb3B5cmlnaHQgKGMpIDIwMTktMjAyMCBNYXRoZXVzIENhc3RlbGxvCisgKi8K
-KworL2R0cy12MS87CisKKyNpbmNsdWRlICJvd2wtczUwMC1sYWJyYWRvci12Mi5kdHNpIgorCisv
-IHsKKwltb2RlbCA9ICJDYW5pbm9zIExhYnJhZG9yIEJhc2UtTSB2MS4wYSI7CisJY29tcGF0aWJs
-ZSA9ICJjYW5pbm9zLGxhYnJhZG9yLWJhc2UtbSIsICJhY3Rpb25zLHM1MDAiOworCisJYWxpYXNl
-cyB7CisJCXNlcmlhbDMgPSAmdWFydDM7CisJfTsKKworCWNob3NlbiB7CisJCXN0ZG91dC1wYXRo
-ID0gInNlcmlhbDM6MTE1MjAwbjgiOworCX07CisKKwl1YXJ0M19jbGs6IHVhcnQzLWNsayB7CisJ
-CWNvbXBhdGlibGUgPSAiZml4ZWQtY2xvY2siOworCQljbG9jay1mcmVxdWVuY3kgPSA8OTIxNjAw
-PjsKKwkJI2Nsb2NrLWNlbGxzID0gPDA+OworCX07Cit9OworCismdWFydDMgeworCXN0YXR1cyA9
-ICJva2F5IjsKKwljbG9ja3MgPSA8JnVhcnQzX2Nsaz47Cit9OwpkaWZmIC0tZ2l0IGEvYXJjaC9h
-cm0vYm9vdC9kdHMvb3dsLXM1MDAtbGFicmFkb3ItdjIuZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRz
-L293bC1zNTAwLWxhYnJhZG9yLXYyLmR0c2kKbmV3IGZpbGUgbW9kZSAxMDA2NDQKaW5kZXggMDAw
-MDAwMDAwMDAwLi44ODNmZjJmOTg4NmQKLS0tIC9kZXYvbnVsbAorKysgYi9hcmNoL2FybS9ib290
-L2R0cy9vd2wtczUwMC1sYWJyYWRvci12Mi5kdHNpCkBAIC0wLDAgKzEsMjIgQEAKKy8vIFNQRFgt
-TGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMCsgT1IgTUlUKQorLyoKKyAqIENhbmlub3MgTGFi
-cmFkb3IgU29NIFYyCisgKgorICogQ29weXJpZ2h0IChjKSAyMDE5LTIwMjAgTWF0aGV1cyBDYXN0
-ZWxsbworICovCisKKyNpbmNsdWRlICJvd2wtczUwMC5kdHNpIgorCisvIHsKKwltb2RlbCA9ICJD
-YW5pbm9zIExhYnJhZG9yIENvcmUgVjIuMSI7CisJY29tcGF0aWJsZSA9ICJjYW5pbm9zLGxhYnJh
-ZG9yLXYyIiwgImFjdGlvbnMsczUwMCI7CisKKwltZW1vcnlAMCB7CisJCWRldmljZV90eXBlID0g
-Im1lbW9yeSI7CisJCXJlZyA9IDwweDAgMHg4MDAwMDAwMD47CisJfTsKK307CisKKyZ0aW1lciB7
-CisJY2xvY2tzID0gPCZob3NjPjsKK307Ci0tCjIuMjYuMgoKCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
-CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
-ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi Sudeep,
+
+> -----Original Message-----
+> From: Sudeep Holla <sudeep.holla@arm.com>
+> Sent: Friday, May 22, 2020 9:12 PM
+> To: Jianyong Wu <Jianyong.Wu@arm.com>
+> Cc: netdev@vger.kernel.org; yangbo.lu@nxp.com; john.stultz@linaro.org;
+> tglx@linutronix.de; pbonzini@redhat.com; sean.j.christopherson@intel.com;
+> maz@kernel.org; richardcochran@gmail.com; Mark Rutland
+> <Mark.Rutland@arm.com>; will@kernel.org; Suzuki Poulose
+> <Suzuki.Poulose@arm.com>; Steven Price <Steven.Price@arm.com>; Justin
+> He <Justin.He@arm.com>; Wei Chen <Wei.Chen@arm.com>;
+> kvm@vger.kernel.org; Steve Capper <Steve.Capper@arm.com>; linux-
+> kernel@vger.kernel.org; Kaly Xin <Kaly.Xin@arm.com>; nd <nd@arm.com>;
+> Sudeep Holla <Sudeep.Holla@arm.com>; kvmarm@lists.cs.columbia.edu;
+> linux-arm-kernel@lists.infradead.org
+> Subject: Re: [RFC PATCH v12 03/11] psci: export smccc conduit get helper.
+> 
+> On Fri, May 22, 2020 at 04:37:16PM +0800, Jianyong Wu wrote:
+> > Export arm_smccc_1_1_get_conduit then modules can use smccc helper
+> > which adopts it.
+> >
+> > Acked-by: Mark Rutland <mark.rutland@arm.com>
+> > Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+> > ---
+> >  drivers/firmware/psci/psci.c | 1 +
+> >  1 file changed, 1 insertion(+)
+> >
+> > diff --git a/drivers/firmware/psci/psci.c
+> > b/drivers/firmware/psci/psci.c index 2937d44b5df4..fd3c88f21b6a 100644
+> > --- a/drivers/firmware/psci/psci.c
+> > +++ b/drivers/firmware/psci/psci.c
+> > @@ -64,6 +64,7 @@ enum arm_smccc_conduit
+> > arm_smccc_1_1_get_conduit(void)
+> >
+> >  	return psci_ops.conduit;
+> >  }
+> > +EXPORT_SYMBOL(arm_smccc_1_1_get_conduit);
+> >
+> 
+> I have moved this into drivers/firmware/smccc/smccc.c [1] Please update
+> this accordingly.
+
+Ok, I will remove this patch next version.
+> 
+> Also this series is floating on the list for a while now, it is time to drop "RFC"
+> unless anyone has strong objection to the idea here.
+Yeah.
+> 
+Thanks
+Jianyong 
+> --
+> Regards,
+> Sudeep
+> 
+> [1] https://git.kernel.org/arm64/c/f2ae97062a48
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
