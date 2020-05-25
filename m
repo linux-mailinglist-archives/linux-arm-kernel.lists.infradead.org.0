@@ -2,91 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 581361E0E0D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:02:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86A231E0E11
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:04:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=G+uKHXsdnx1zBm+v9QMAds+x8GCQJqMogaqZCD80UNE=; b=C4qk1ulb6e1KFin4hyG96dJE5
-	4mnhvuUX42dqll1fvleV6MzfHmhApV5N0TovVeJoQeWokmGfZzYv+/FQpbe7GwTTRBppDu8vAfg7y
-	RZkViPIKutUBh1r15aog+bxVb7uzbIPga9ug1XX08FLwSGGKj6esu6zlK9kvs707dxeidyW+JwliN
-	nBDqbLZ8NMcVAz76JcuJUah3QbOywgSn+E4mLfOmOJpiyy1pmqe86AJl8rj+tYUW1QADXRa2N5gOc
-	BTXE2fFWT1s9yQ1O8evdiSQrHhZt1Senq+0sPCy1mEslDHohmaV8vX9TgP3RJvuMNPh80urQ9BYGr
-	s8PYKlvew==;
+	 bh=XFGiNadG83CUhuC5/6dUhRGjgnPBqZMxUOqGduSLBj8=; b=BwfahsC6iYh8R4OTnSkpLGIDV
+	sodAM5g5i56IbodckeiUBLZmvf2Fj9qXlpqSTqK4BJl42oVVAL8RvpddomBrfRsSAiBxi+szmRj8l
+	LqdS+9MjX27BGK+rTIbgfXjkFbzGg/65qMRBUbpzUOWmixw9Cvh4F9qZTcr3AphirKMWgUrrB4DfT
+	gBbsAPT0o0PSQ8Z5JlnjtfyDKcw3LyIOrjwZre1G9W/pKlugyNsyReK7zXjpte+Vtsc7RVe0FIZJU
+	fTvaKTolrAHhtccnDfmsaat6DnDavAK8bgz6ZQ7q5B0hN1zDfIkT87k/gRM3N84tGhB1fAvKdSy97
+	BskxKzyRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdBoP-0000VH-LL; Mon, 25 May 2020 12:02:33 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jdBpq-0000oa-Ft; Mon, 25 May 2020 12:04:02 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdBoF-0000Ue-4c
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:02:24 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04PC1l3a014940; Mon, 25 May 2020 14:02:17 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=NHdYW8W6oNyWhanxcn5zOEFS7q4y89Am/D6CopAhYmk=;
- b=JFtKKQUi4O4ROFbxxgyrzAtHbjcjpobtM/X/o4qJvqQNoGZrI3B1R4YdxRN5rsCHNp4h
- ERSmkBOPeo1NNjEjKZc0joDUrYCzjg7bhBpwKJdKlXUBMK/1/8cG//nTQkmnzOoB2W7V
- z4yTvGj8ELzXL+G6Ad5vDH0nM5GBsBIUf7JByITbQ1tFLG6Z0jZBmmNSNWaTHJay1CvM
- K6vrXg8PJLBwt7sYvpEJpkMBbzB6ngS5sfeL/LbWIFp4FgaKcKBwsrFQPxDfwHCQdfYO
- u3IeViB6T+C5CewptLsukpF8wCn11zBDrdmUHh0n87+5yp68jw01hics9UlBCDLoYy26 pw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 316rya28ch-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 25 May 2020 14:02:17 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 99413100034;
- Mon, 25 May 2020 14:02:16 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 8B9DB21F673;
- Mon, 25 May 2020 14:02:16 +0200 (CEST)
-Received: from lmecxl0995.lme.st.com (10.75.127.45) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Mon, 25 May
- 2020 14:02:15 +0200
-Subject: Re: [PATCH 0/3] STMFX power related fixes
-To: Lee Jones <lee.jones@linaro.org>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Alexandre Torgue <alexandre.torgue@st.com>
-References: <20200422090833.9743-1-amelie.delaunay@st.com>
-From: Amelie DELAUNAY <amelie.delaunay@st.com>
-Message-ID: <f5b3df45-a01a-7cb6-c158-e6edc0117f0f@st.com>
-Date: Mon, 25 May 2020 14:02:15 +0200
+ id 1jdBpd-0000nw-Ir
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:03:51 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 985C4AEAF;
+ Mon, 25 May 2020 12:03:46 +0000 (UTC)
+Subject: Re: [PATCH 01/21] drm/cma-helper: Rework DRM_GEM_CMA_VMAP_DRIVER_OPS
+ macro
+To: Sam Ravnborg <sam@ravnborg.org>
+References: <20200522135246.10134-1-tzimmermann@suse.de>
+ <20200522135246.10134-2-tzimmermann@suse.de>
+ <20200522174835.GA1087580@ravnborg.org>
+From: Thomas Zimmermann <tzimmermann@suse.de>
+Autocrypt: addr=tzimmermann@suse.de; keydata=
+ mQENBFs50uABCADEHPidWt974CaxBVbrIBwqcq/WURinJ3+2WlIrKWspiP83vfZKaXhFYsdg
+ XH47fDVbPPj+d6tQrw5lPQCyqjwrCPYnq3WlIBnGPJ4/jreTL6V+qfKRDlGLWFjZcsrPJGE0
+ BeB5BbqP5erN1qylK9i3gPoQjXGhpBpQYwRrEyQyjuvk+Ev0K1Jc5tVDeJAuau3TGNgah4Yc
+ hdHm3bkPjz9EErV85RwvImQ1dptvx6s7xzwXTgGAsaYZsL8WCwDaTuqFa1d1jjlaxg6+tZsB
+ 9GluwvIhSezPgnEmimZDkGnZRRSFiGP8yjqTjjWuf0bSj5rUnTGiyLyRZRNGcXmu6hjlABEB
+ AAG0J1Rob21hcyBaaW1tZXJtYW5uIDx0emltbWVybWFubkBzdXNlLmRlPokBVAQTAQgAPhYh
+ BHIX+6yM6c9jRKFo5WgNwR1TC3ojBQJbOdLgAhsDBQkDwmcABQsJCAcCBhUKCQgLAgQWAgMB
+ Ah4BAheAAAoJEGgNwR1TC3ojR80H/jH+vYavwQ+TvO8ksXL9JQWc3IFSiGpuSVXLCdg62AmR
+ irxW+qCwNncNQyb9rd30gzdectSkPWL3KSqEResBe24IbA5/jSkPweJasgXtfhuyoeCJ6PXo
+ clQQGKIoFIAEv1s8l0ggPZswvCinegl1diyJXUXmdEJRTWYAtxn/atut1o6Giv6D2qmYbXN7
+ mneMC5MzlLaJKUtoH7U/IjVw1sx2qtxAZGKVm4RZxPnMCp9E1MAr5t4dP5gJCIiqsdrVqI6i
+ KupZstMxstPU//azmz7ZWWxT0JzgJqZSvPYx/SATeexTYBP47YFyri4jnsty2ErS91E6H8os
+ Bv6pnSn7eAq5AQ0EWznS4AEIAMYmP4M/V+T5RY5at/g7rUdNsLhWv1APYrh9RQefODYHrNRH
+ UE9eosYbT6XMryR9hT8XlGOYRwKWwiQBoWSDiTMo/Xi29jUnn4BXfI2px2DTXwc22LKtLAgT
+ RjP+qbU63Y0xnQN29UGDbYgyyK51DW3H0If2a3JNsheAAK+Xc9baj0LGIc8T9uiEWHBnCH+R
+ dhgATnWWGKdDegUR5BkDfDg5O/FISymJBHx2Dyoklv5g4BzkgqTqwmaYzsl8UxZKvbaxq0zb
+ ehDda8lvhFXodNFMAgTLJlLuDYOGLK2AwbrS3Sp0AEbkpdJBb44qVlGm5bApZouHeJ/+n+7r
+ 12+lqdsAEQEAAYkBPAQYAQgAJhYhBHIX+6yM6c9jRKFo5WgNwR1TC3ojBQJbOdLgAhsMBQkD
+ wmcAAAoJEGgNwR1TC3ojpfcIAInwP5OlcEKokTnHCiDTz4Ony4GnHRP2fXATQZCKxmu4AJY2
+ h9ifw9Nf2TjCZ6AMvC3thAN0rFDj55N9l4s1CpaDo4J+0fkrHuyNacnT206CeJV1E7NYntxU
+ n+LSiRrOdywn6erjxRi9EYTVLCHcDhBEjKmFZfg4AM4GZMWX1lg0+eHbd5oL1as28WvvI/uI
+ aMyV8RbyXot1r/8QLlWldU3NrTF5p7TMU2y3ZH2mf5suSKHAMtbE4jKJ8ZHFOo3GhLgjVrBW
+ HE9JXO08xKkgD+w6v83+nomsEuf6C6LYrqY/tsZvyEX6zN8CtirPdPWu/VXNRYAl/lat7lSI
+ 3H26qrE=
+Message-ID: <b6f36f00-b68f-b111-5bcd-55c2658b1f27@suse.de>
+Date: Mon, 25 May 2020 14:03:39 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200422090833.9743-1-amelie.delaunay@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-05-25_07:2020-05-25,
- 2020-05-25 signatures=0
+In-Reply-To: <20200522174835.GA1087580@ravnborg.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_050223_457696_C99E36AD 
-X-CRM114-Status: GOOD (  13.33  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200525_050349_912798_4A291C24 
+X-CRM114-Status: GOOD (  30.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,37 +91,415 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: alexandre.belloni@bootlin.com, linux-aspeed@lists.ozlabs.org,
+ narmstrong@baylibre.com, airlied@linux.ie, liviu.dudau@arm.com,
+ dri-devel@lists.freedesktop.org, paul@crapouillou.net,
+ laurent.pinchart@ideasonboard.com, mihail.atanassov@arm.com, marex@denx.de,
+ khilman@baylibre.com, abrodkin@synopsys.com, kong.kongxinwei@hisilicon.com,
+ xinliang.liu@linaro.org, ludovic.desroches@microchip.com,
+ tomi.valkeinen@ti.com, james.qian.wang@arm.com, linux-imx@nxp.com,
+ joel@jms.id.au, alexandre.torgue@st.com, puck.chen@hisilicon.com,
+ s.hauer@pengutronix.de, alison.wang@nxp.com, jsarha@ti.com, wens@csie.org,
+ vincent.abriou@st.com, linux-arm-kernel@lists.infradead.org,
+ mcoquelin.stm32@gmail.com, bbrezillon@kernel.org, andrew@aj.id.au,
+ philippe.cornu@st.com, yannick.fertre@st.com,
+ kieran.bingham+renesas@ideasonboard.com, kernel@pengutronix.de,
+ zourongrong@gmail.com, shawnguo@kernel.org
+Content-Type: multipart/mixed; boundary="===============3199418722353155028=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============3199418722353155028==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="y014uW9UbPDmqu8s94d3p41U8GRgJuOFE"
 
-Gentle reminder regarding this series sent one month ago.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--y014uW9UbPDmqu8s94d3p41U8GRgJuOFE
+Content-Type: multipart/mixed; boundary="jZqnVpoS59Du5V7y6CaDLyno36mnruRCw";
+ protected-headers="v1"
+From: Thomas Zimmermann <tzimmermann@suse.de>
+To: Sam Ravnborg <sam@ravnborg.org>
+Cc: alexandre.belloni@bootlin.com, linux-aspeed@lists.ozlabs.org,
+ narmstrong@baylibre.com, airlied@linux.ie, liviu.dudau@arm.com,
+ philippe.cornu@st.com, paul@crapouillou.net,
+ laurent.pinchart@ideasonboard.com, mihail.atanassov@arm.com,
+ alexandre.torgue@st.com, marex@denx.de, khilman@baylibre.com,
+ abrodkin@synopsys.com, ludovic.desroches@microchip.com,
+ xinliang.liu@linaro.org, kong.kongxinwei@hisilicon.com,
+ tomi.valkeinen@ti.com, james.qian.wang@arm.com, joel@jms.id.au,
+ linux-imx@nxp.com, puck.chen@hisilicon.com, s.hauer@pengutronix.de,
+ alison.wang@nxp.com, jsarha@ti.com, wens@csie.org, vincent.abriou@st.com,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ mcoquelin.stm32@gmail.com, bbrezillon@kernel.org, andrew@aj.id.au,
+ dri-devel@lists.freedesktop.org, nicolas.ferre@microchip.com,
+ yannick.fertre@st.com, kieran.bingham+renesas@ideasonboard.com,
+ zourongrong@gmail.com, shawnguo@kernel.org
+Message-ID: <b6f36f00-b68f-b111-5bcd-55c2658b1f27@suse.de>
+Subject: Re: [PATCH 01/21] drm/cma-helper: Rework DRM_GEM_CMA_VMAP_DRIVER_OPS
+ macro
+References: <20200522135246.10134-1-tzimmermann@suse.de>
+ <20200522135246.10134-2-tzimmermann@suse.de>
+ <20200522174835.GA1087580@ravnborg.org>
+In-Reply-To: <20200522174835.GA1087580@ravnborg.org>
 
-Regards,
-Amelie
+--jZqnVpoS59Du5V7y6CaDLyno36mnruRCw
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-On 4/22/20 11:08 AM, Amelie Delaunay wrote:
-> With suspend/resume tests on STM32MP157C-EV1 board, on which STMFX is used by
-> several devices, some errors could occurred: -6 when trying to restore STMFX
-> registers, spurious interrupts after disabling supply...
-> This patchset fixes all these issues and cleans IRQ init error path.
-> 
-> Amelie Delaunay (3):
->    mfd: stmfx: reset chip on resume as supply was disabled
->    mfd: stmfx: fix stmfx_irq_init error path
->    mfd: stmfx: disable irq in suspend to avoid spurious interrupt
-> 
->   drivers/mfd/stmfx.c       | 22 ++++++++++++++++++++--
->   include/linux/mfd/stmfx.h |  1 +
->   2 files changed, 21 insertions(+), 2 deletions(-)
-> 
+Hi Sam
+
+Am 22.05.20 um 19:48 schrieb Sam Ravnborg:
+> Hi Thomas.
+>=20
+> On Fri, May 22, 2020 at 03:52:26PM +0200, Thomas Zimmermann wrote:
+>> Rename the macro to DRM_GEM_CMA_DRIVER_OPS to align with SHMEM
+>> helpers.
+> This part is fine, I like that the naming is somehow consistent.
+>=20
+>> An internal version is provided for drivers that override
+>> the default .dumb_create callback. Adapt drivers to the changes.
+> I loathe anything named __foo or __FOO. This __ signals to me
+> that the author was clueless in naming - or some sort.
+> I know that __ is used in some lib headers - but thats not the case
+> here.
+
+I agree with your comment and I've been trying to find a better name
+before posting the patchset. I considered something like
+DRM_GEM_CMA_DRIVER_OPS_INTERNAL(), but wasn't happy with that either. In
+the end, I uses the double underscore to push driver authors towards the
+other macro. This one's only for the special case of settings a separate
+implementation for .dumb_create().
+
+>=20
+> But I love that we have a variant that takes a create function.
+> So we do not have to escape from the nice macro.
+> The macro is another way to tell me as rewiewer that this
+> drivers uses all the default helpers for this.
+>=20
+>=20
+> So critizising the name I better suggest something that
+> I personally like better:
+>=20
+> DRM_GEM_CMA_DRIVER_OPS_CREATE()
+
+Can we at least use DRM_GEM_CMA_DRIVER_OPS_WITH_DUMB_CREATE ? Because
+there's also gem_object_create.
+
+I'll update the patches accordingly.
+
+I noticed that most of the affected drivers do some kind of alignment
+calculation in their dumb_create code. IMHO in the long run, we should
+move such calculations into the default implementation and put the
+control paramters into struct drm_mode_config.
+
+Best regards
+Thomas
+
+>=20
+> It would look like this:
+> 	/* GEM Operations */
+> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+> -	.dumb_create            =3D drm_sun4i_gem_dumb_create,
+> +	DRM_GEM_CMA_DRIVER_OPS_CREATE(drm_sun4i_gem_dumb_create),
+>=20
+>=20
+>=20
+> Please fix zte/zx_drm_drv.c which also uses DRM_GEM_CMA_VMAP_DRIVER_OPS=
+=2E
+>=20
+>=20
+> The naming is a bikeshedding topic that we may not agree on, soo..
+>=20
+> With zte fixed the patch is:
+> Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
+>=20
+> 	Sam
+>=20
+>=20
+>>
+>> Signed-off-by: Thomas Zimmermann <tzimmermann@suse.de>
+>> ---
+>>  drivers/gpu/drm/drm_gem_cma_helper.c |  2 +-
+>>  drivers/gpu/drm/sun4i/sun4i_drv.c    |  3 +--
+>>  drivers/gpu/drm/tidss/tidss_drv.c    |  2 +-
+>>  drivers/gpu/drm/tiny/hx8357d.c       |  2 +-
+>>  drivers/gpu/drm/tiny/ili9225.c       |  2 +-
+>>  drivers/gpu/drm/tiny/ili9341.c       |  2 +-
+>>  drivers/gpu/drm/tiny/ili9486.c       |  2 +-
+>>  drivers/gpu/drm/tiny/mi0283qt.c      |  2 +-
+>>  drivers/gpu/drm/tiny/repaper.c       |  2 +-
+>>  drivers/gpu/drm/tiny/st7586.c        |  2 +-
+>>  drivers/gpu/drm/tiny/st7735r.c       |  2 +-
+>>  include/drm/drm_gem_cma_helper.h     | 24 ++++++++++++++++++++----
+>>  12 files changed, 31 insertions(+), 16 deletions(-)
+>>
+>> diff --git a/drivers/gpu/drm/drm_gem_cma_helper.c b/drivers/gpu/drm/dr=
+m_gem_cma_helper.c
+>> index 12e98fb28229d..6fa4d2f2e3987 100644
+>> --- a/drivers/gpu/drm/drm_gem_cma_helper.c
+>> +++ b/drivers/gpu/drm/drm_gem_cma_helper.c
+>> @@ -620,7 +620,7 @@ EXPORT_SYMBOL(drm_cma_gem_create_object_default_fu=
+ncs);
+>>   * address set. This address is released when the object is freed.
+>>   *
+>>   * This function can be used as the &drm_driver.gem_prime_import_sg_t=
+able
+>> - * callback. The DRM_GEM_CMA_VMAP_DRIVER_OPS() macro provides a short=
+cut to set
+>> + * callback. The &DRM_GEM_CMA_DRIVER_OPS macro provides a shortcut to=
+ set
+>>   * the necessary DRM driver operations.
+>>   *
+>>   * Returns:
+>> diff --git a/drivers/gpu/drm/sun4i/sun4i_drv.c b/drivers/gpu/drm/sun4i=
+/sun4i_drv.c
+>> index 328272ff77d84..012855fd89c24 100644
+>> --- a/drivers/gpu/drm/sun4i/sun4i_drv.c
+>> +++ b/drivers/gpu/drm/sun4i/sun4i_drv.c
+>> @@ -52,8 +52,7 @@ static struct drm_driver sun4i_drv_driver =3D {
+>>  	.minor			=3D 0,
+>> =20
+>>  	/* GEM Operations */
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> -	.dumb_create		=3D drm_sun4i_gem_dumb_create,
+>> +	__DRM_GEM_CMA_DRIVER_OPS(drm_sun4i_gem_dumb_create),
+>>  };
+>> =20
+>>  static int sun4i_drv_bind(struct device *dev)
+>> diff --git a/drivers/gpu/drm/tidss/tidss_drv.c b/drivers/gpu/drm/tidss=
+/tidss_drv.c
+>> index 99edc66ebdef2..1753cdc74ebda 100644
+>> --- a/drivers/gpu/drm/tidss/tidss_drv.c
+>> +++ b/drivers/gpu/drm/tidss/tidss_drv.c
+>> @@ -112,7 +112,7 @@ static struct drm_driver tidss_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &tidss_fops,
+>>  	.release		=3D tidss_release,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.name			=3D "tidss",
+>>  	.desc			=3D "TI Keystone DSS",
+>>  	.date			=3D "20180215",
+>> diff --git a/drivers/gpu/drm/tiny/hx8357d.c b/drivers/gpu/drm/tiny/hx8=
+357d.c
+>> index b4bc358a3269a..592da71d7ca70 100644
+>> --- a/drivers/gpu/drm/tiny/hx8357d.c
+>> +++ b/drivers/gpu/drm/tiny/hx8357d.c
+>> @@ -196,7 +196,7 @@ DEFINE_DRM_GEM_CMA_FOPS(hx8357d_fops);
+>>  static struct drm_driver hx8357d_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &hx8357d_fops,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.debugfs_init		=3D mipi_dbi_debugfs_init,
+>>  	.name			=3D "hx8357d",
+>>  	.desc			=3D "HX8357D",
+>> diff --git a/drivers/gpu/drm/tiny/ili9225.c b/drivers/gpu/drm/tiny/ili=
+9225.c
+>> index d1a5ab6747d5c..368ff6c8a1efb 100644
+>> --- a/drivers/gpu/drm/tiny/ili9225.c
+>> +++ b/drivers/gpu/drm/tiny/ili9225.c
+>> @@ -346,7 +346,7 @@ DEFINE_DRM_GEM_CMA_FOPS(ili9225_fops);
+>>  static struct drm_driver ili9225_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &ili9225_fops,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.name			=3D "ili9225",
+>>  	.desc			=3D "Ilitek ILI9225",
+>>  	.date			=3D "20171106",
+>> diff --git a/drivers/gpu/drm/tiny/ili9341.c b/drivers/gpu/drm/tiny/ili=
+9341.c
+>> index bb819f45a5d3b..e1b9043ef7a0a 100644
+>> --- a/drivers/gpu/drm/tiny/ili9341.c
+>> +++ b/drivers/gpu/drm/tiny/ili9341.c
+>> @@ -152,7 +152,7 @@ DEFINE_DRM_GEM_CMA_FOPS(ili9341_fops);
+>>  static struct drm_driver ili9341_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &ili9341_fops,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.debugfs_init		=3D mipi_dbi_debugfs_init,
+>>  	.name			=3D "ili9341",
+>>  	.desc			=3D "Ilitek ILI9341",
+>> diff --git a/drivers/gpu/drm/tiny/ili9486.c b/drivers/gpu/drm/tiny/ili=
+9486.c
+>> index 2702ea557d297..90a17f40fdf0c 100644
+>> --- a/drivers/gpu/drm/tiny/ili9486.c
+>> +++ b/drivers/gpu/drm/tiny/ili9486.c
+>> @@ -165,7 +165,7 @@ DEFINE_DRM_GEM_CMA_FOPS(ili9486_fops);
+>>  static struct drm_driver ili9486_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &ili9486_fops,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.debugfs_init		=3D mipi_dbi_debugfs_init,
+>>  	.name			=3D "ili9486",
+>>  	.desc			=3D "Ilitek ILI9486",
+>> diff --git a/drivers/gpu/drm/tiny/mi0283qt.c b/drivers/gpu/drm/tiny/mi=
+0283qt.c
+>> index 08ac549ab0f7f..6624c2098fba2 100644
+>> --- a/drivers/gpu/drm/tiny/mi0283qt.c
+>> +++ b/drivers/gpu/drm/tiny/mi0283qt.c
+>> @@ -156,7 +156,7 @@ DEFINE_DRM_GEM_CMA_FOPS(mi0283qt_fops);
+>>  static struct drm_driver mi0283qt_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &mi0283qt_fops,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.debugfs_init		=3D mipi_dbi_debugfs_init,
+>>  	.name			=3D "mi0283qt",
+>>  	.desc			=3D "Multi-Inno MI0283QT",
+>> diff --git a/drivers/gpu/drm/tiny/repaper.c b/drivers/gpu/drm/tiny/rep=
+aper.c
+>> index 1c0e7169545b4..877dcece25828 100644
+>> --- a/drivers/gpu/drm/tiny/repaper.c
+>> +++ b/drivers/gpu/drm/tiny/repaper.c
+>> @@ -946,7 +946,7 @@ DEFINE_DRM_GEM_CMA_FOPS(repaper_fops);
+>>  static struct drm_driver repaper_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &repaper_fops,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.name			=3D "repaper",
+>>  	.desc			=3D "Pervasive Displays RePaper e-ink panels",
+>>  	.date			=3D "20170405",
+>> diff --git a/drivers/gpu/drm/tiny/st7586.c b/drivers/gpu/drm/tiny/st75=
+86.c
+>> index 2a1fae422f7a2..ec84bdc51f60d 100644
+>> --- a/drivers/gpu/drm/tiny/st7586.c
+>> +++ b/drivers/gpu/drm/tiny/st7586.c
+>> @@ -285,7 +285,7 @@ DEFINE_DRM_GEM_CMA_FOPS(st7586_fops);
+>>  static struct drm_driver st7586_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &st7586_fops,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.debugfs_init		=3D mipi_dbi_debugfs_init,
+>>  	.name			=3D "st7586",
+>>  	.desc			=3D "Sitronix ST7586",
+>> diff --git a/drivers/gpu/drm/tiny/st7735r.c b/drivers/gpu/drm/tiny/st7=
+735r.c
+>> index 0af1b15efdf8a..cfd4933f3b30c 100644
+>> --- a/drivers/gpu/drm/tiny/st7735r.c
+>> +++ b/drivers/gpu/drm/tiny/st7735r.c
+>> @@ -157,7 +157,7 @@ DEFINE_DRM_GEM_CMA_FOPS(st7735r_fops);
+>>  static struct drm_driver st7735r_driver =3D {
+>>  	.driver_features	=3D DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
+>>  	.fops			=3D &st7735r_fops,
+>> -	DRM_GEM_CMA_VMAP_DRIVER_OPS,
+>> +	DRM_GEM_CMA_DRIVER_OPS,
+>>  	.debugfs_init		=3D mipi_dbi_debugfs_init,
+>>  	.name			=3D "st7735r",
+>>  	.desc			=3D "Sitronix ST7735R",
+>> diff --git a/include/drm/drm_gem_cma_helper.h b/include/drm/drm_gem_cm=
+a_helper.h
+>> index 947ac95eb24a9..917d42603db06 100644
+>> --- a/include/drm/drm_gem_cma_helper.h
+>> +++ b/include/drm/drm_gem_cma_helper.h
+>> @@ -110,21 +110,37 @@ struct drm_gem_object *
+>>  drm_cma_gem_create_object_default_funcs(struct drm_device *dev, size_=
+t size);
+>> =20
+>>  /**
+>> - * DRM_GEM_CMA_VMAP_DRIVER_OPS - CMA GEM driver operations ensuring a=
+ virtual
+>> - *                               address on the buffer
+>> + * __DRM_GEM_CMA_DRIVER_OPS - CMA GEM driver operations ensuring a
+>> + *                            virtual address on the buffer
+>> + * @__dumb_create: callback function for .dumb_create
+>>   *
+>>   * This macro provides a shortcut for setting the default GEM operati=
+ons in the
+>>   * &drm_driver structure for drivers that need the virtual address al=
+so on
+>>   * imported buffers.
+>> + *
+>> + * This macro is a variant of DRM_GEM_CMA_DRIVER_OPS for drivers that=
+
+>> + * override the default implementation of .dumb_create. Use
+>> + * DRM_GEM_CMA_DRIVER_OPS if possible.
+>>   */
+>> -#define DRM_GEM_CMA_VMAP_DRIVER_OPS \
+>> +#define __DRM_GEM_CMA_DRIVER_OPS(__dumb_create) \
+>>  	.gem_create_object	=3D drm_cma_gem_create_object_default_funcs, \
+>> -	.dumb_create		=3D drm_gem_cma_dumb_create, \
+>> +	.dumb_create		=3D (__dumb_create), \
+>>  	.prime_handle_to_fd	=3D drm_gem_prime_handle_to_fd, \
+>>  	.prime_fd_to_handle	=3D drm_gem_prime_fd_to_handle, \
+>>  	.gem_prime_import_sg_table =3D drm_gem_cma_prime_import_sg_table_vma=
+p, \
+>>  	.gem_prime_mmap		=3D drm_gem_prime_mmap
+>> =20
+>> +/**
+>> + * DRM_GEM_CMA_DRIVER_OPS - CMA GEM driver operations ensuring a virt=
+ual
+>> + *                          address on the buffer
+>> + *
+>> + * This macro provides a shortcut for setting the default GEM operati=
+ons in the
+>> + * &drm_driver structure for drivers that need the virtual address al=
+so on
+>> + * imported buffers.
+>> + */
+>> +#define DRM_GEM_CMA_DRIVER_OPS \
+>> +	__DRM_GEM_CMA_DRIVER_OPS(drm_gem_cma_dumb_create)
+>> +
+>>  struct drm_gem_object *
+>>  drm_gem_cma_prime_import_sg_table_vmap(struct drm_device *drm,
+>>  				       struct dma_buf_attachment *attach,
+>> --=20
+>> 2.26.2
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+>=20
+
+--=20
+Thomas Zimmermann
+Graphics Driver Developer
+SUSE Software Solutions Germany GmbH
+Maxfeldstr. 5, 90409 N=C3=BCrnberg, Germany
+(HRB 36809, AG N=C3=BCrnberg)
+Gesch=C3=A4ftsf=C3=BChrer: Felix Imend=C3=B6rffer
+
+
+--jZqnVpoS59Du5V7y6CaDLyno36mnruRCw--
+
+--y014uW9UbPDmqu8s94d3p41U8GRgJuOFE
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEchf7rIzpz2NEoWjlaA3BHVMLeiMFAl7LtBsACgkQaA3BHVML
+eiOmfAf/cY0lo/8aC/nwYB5FIN7qnqju9DjPBeIIWdyz1VELT6BHX/kLYmhxaSx6
+rhgY+r+zzofU1y62c2h5vrhVD7yN6JDM0b98JdIINIe6hgv/9EgmbtGidVBSXHRZ
+jHomh2KRfgxbyjQ74SBdxp7y6HbNsth6x1P7bOQHtjmF26tXuW9dqLPTP9V6/uKN
+/SjoNUVD6ndKYUiWOV3CwE5UaqGL7YcW3mly2JS5W33S/RvzFmrcL9wsecB0gUfs
+YEA7IQhBH3WToemvEcoPkwphfjxZZA0Z5kvW/YZGb7CFYZnz9Un19Yo3lXr7lxt8
+QzPXc9oA2PsGi2R4/Z96qpZRhXi8dg==
+=a+xm
+-----END PGP SIGNATURE-----
+
+--y014uW9UbPDmqu8s94d3p41U8GRgJuOFE--
+
+
+--===============3199418722353155028==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3199418722353155028==--
+
