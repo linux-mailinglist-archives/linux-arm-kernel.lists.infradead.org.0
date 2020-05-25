@@ -2,105 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 206D01E0E8E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:39:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2751D1E0E95
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:40:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fbphV6JMwQ+oDNCXht9HR80/LPmwxi4f7ovKgFKE8vs=; b=ahr9b9+NnjLP7hVBBNUkaa+s0
-	Aq8OskXujutwdzyWYtts9wgb9GFWHnGhfJH1guiszd+dt85tkX06k2AbSr4dpQ5j2cIjj4nX1LPxM
-	+ARrgr7vL+09Cn7fVuamAthrOs7jiJlTSCk3A4jOn9kmenQLMvxkPHjO5glhyeYQDVN2HLKItFagz
-	scuODAjPEg/YuT2l5QsPE8b2XHNBGUxBps7Ws2gQszwORfCaklvwlO1/EAwgPBBFWJNHqG2NIHzOO
-	2CE6KVgPLPJ6vdfPVYF1pp+/fvEFP/SDf1h34Me2l74wbWJLHH7IsXWO7ppwU+bwD9mGXnYsed/NC
-	AyKA/0qew==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B8YI5HAUqfrQAwfYNyaS9Yy0waH8GnRxQVVg/NchwG0=; b=Gl1dwr1QP1CQ7j
+	YTvWM25RHKiK8i2ChD5gbwpdcjq2MEDB9VNGY34Skc14Vn2xTMSvhvCPJpEjKFQZYWo0GDZbGk518
+	UydH0IKi5tnxEeSXaBwYB04rnctIAl+pU1cb5jhd0LaFrVy+S19W7yQKQg94u9+NI1tQ6uIvyf0Jh
+	7qia+7i6eGmZ5hT2EQZTTPpac58yzmn34NpVHdCxipfs4fhBCJml/PiA6cnLqslj1kshd+biQCSYs
+	pVSZEdeszcrp6gLsabQNWzNsd8V4iLRW/tzeBAgNJY9byp0mheVOaOnVx1L8W0Rt5Uh3jy7jrhT+U
+	MMjxz48RLFu1FzjZzF5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdCNZ-00078O-Uy; Mon, 25 May 2020 12:38:53 +0000
-Received: from gateway30.websitewelcome.com ([192.185.152.11])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdCNQ-00077X-O4
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:38:46 +0000
-Received: from cm11.websitewelcome.com (cm11.websitewelcome.com [100.42.49.5])
- by gateway30.websitewelcome.com (Postfix) with ESMTP id C594E4265
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 May 2020 07:38:40 -0500 (CDT)
-Received: from br164.hostgator.com.br ([192.185.176.180]) by cmsmtp with SMTP
- id dCNMjAb9SSl8qdCNMjQz8y; Mon, 25 May 2020 07:38:40 -0500
-X-Authority-Reason: nr=8
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=castello.eng.br; s=default; h=Content-Transfer-Encoding:Content-Type:
- In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
- :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2TljW7JsW+WCZFc/vJnuFILXikxQwHFnuGlW+UY2ObY=; b=jaAKaoE9zh9aAvTL7GhKDpQNfZ
- eCkF23JYStQG4EZq2qZzqP49go5dOw9ojs1PsnVGvyLai1KxDT0AnuEHSZvt78SEUFG+kIeKJSNGm
- AywzfK60JlfYclTVBVEX/O13c507O3NL15Y4kkECBAyR+/rsBt1CgI57jNHVHol3waSbwKkicclDh
- byKVOqwGT+T5D2Qi2dW56i2rq6Kd1g6EeQeS1wQYX/6LduDjKI08Rzu3w48VIyPCsL2C2on24UlnZ
- s55pwtE+N4dhLk3lwOZ7O+IOUvl34wTmWtY9SGSZjZpgXHK0NySh8NAyoOr5hA3zZNwtRX/8W6zbv
- BnZy0WJg==;
-Received: from [191.31.196.240] (port=53056 helo=[192.168.15.5])
- by br164.hostgator.com.br with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <matheus@castello.eng.br>)
- id 1jdCNM-002LnX-Dr; Mon, 25 May 2020 09:38:40 -0300
-Subject: Re: [PATCH v5 2/3] dt-bindings: arm: actions: Document Caninos Loucos
- Labrador
-To: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>,
- manivannan.sadhasivam@linaro.org, robh+dt@kernel.org
-References: <20200525013008.108750-1-matheus@castello.eng.br>
- <20200525013008.108750-3-matheus@castello.eng.br>
- <8fc7b0d0-6516-ecd4-ce9c-a63a3cba7e9a@suse.de>
-From: Matheus Castello <matheus@castello.eng.br>
-Message-ID: <752b0710-ba99-ef19-d3c2-78cca5c6bdf2@castello.eng.br>
-Date: Mon, 25 May 2020 09:38:36 -0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+	id 1jdCOp-0007TY-Q5; Mon, 25 May 2020 12:40:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdCOU-0007Sd-In
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:39:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B57DF31B;
+ Mon, 25 May 2020 05:39:47 -0700 (PDT)
+Received: from [10.163.77.62] (unknown [10.163.77.62])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8B1F43F52E;
+ Mon, 25 May 2020 05:39:45 -0700 (PDT)
+Subject: Re: [PATCH V4 00/17] arm64/cpufeature: Introduce ID_PFR2, ID_DFR1,
+ ID_MMFR5 and other changes
+To: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+References: <1589881254-10082-1-git-send-email-anshuman.khandual@arm.com>
+ <159007243559.201193.1705879548179051424.b4-ty@kernel.org>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <15a06377-4f65-3154-3a5f-bd393e22614f@arm.com>
+Date: Mon, 25 May 2020 18:09:05 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <8fc7b0d0-6516-ecd4-ce9c-a63a3cba7e9a@suse.de>
-Content-Language: pt-BR
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - br164.hostgator.com.br
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - castello.eng.br
-X-BWhitelist: no
-X-Source-IP: 191.31.196.240
-X-Source-L: No
-X-Exim-ID: 1jdCNM-002LnX-Dr
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: ([192.168.15.5]) [191.31.196.240]:53056
-X-Source-Auth: matheus@castello.eng.br
-X-Email-Count: 8
-X-Source-Cap: Y2FzdGUyNDg7Y2FzdGUyNDg7YnIxNjQuaG9zdGdhdG9yLmNvbS5icg==
-X-Local-Domain: yes
+In-Reply-To: <159007243559.201193.1705879548179051424.b4-ty@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_053844_871901_0BDF4BEE 
-X-CRM114-Status: GOOD (  11.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200525_053950_709592_793F9621 
+X-CRM114-Status: GOOD (  14.19  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.185.152.11 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [192.185.152.11 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,48 +65,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Rob Herring <robh@kernel.org>, linux-actions@lists.infradead.org,
- linux-kernel@vger.kernel.org, igor.lima@lsitec.org.br,
- edgar.righi@lsitec.org.br, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: catalin.marinas@arm.com, kvmarm@lists.cs.columbia.edu,
+ linux-kernel@vger.kernel.org, maz@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgQW5kcmVhcywKCkVtIDUvMjUvMjAgNzo0MSBBTSwgQW5kcmVhcyBGw6RyYmVyIGVzY3JldmV1
-Ogo+IEhpLAo+IAo+IEFtIDI1LjA1LjIwIHVtIDAzOjMwIHNjaHJpZWIgTWF0aGV1cyBDYXN0ZWxs
-bzoKPj4gVXBkYXRlIHRoZSBkb2N1bWVudGF0aW9uIHRvIGFkZCB0aGUgQ2FuaW5vcyBMb3Vjb3Mg
-TGFicmFkb3IuIExhYnJhZG9yCj4+IHByb2plY3QgY29uc2lzdHMgb2YgYSBjb21wdXRlciBvbiBt
-b2R1bGUgYmFzZWQgb24gdGhlIEFjdGlvbnMgU2VtaSBTNTAwCj4+IHByb2Nlc3NvciBhbmQgdGhl
-IExhYnJhZG9yIGJhc2UgYm9hcmQuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IE1hdGhldXMgQ2FzdGVs
-bG8gPG1hdGhldXNAY2FzdGVsbG8uZW5nLmJyPgo+PiBBY2tlZC1ieTogUm9iIEhlcnJpbmcgPHJv
-YmhAa2VybmVsLm9yZz4KPj4gLS0tCj4+IMKgIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
-aW5ncy9hcm0vYWN0aW9ucy55YW1sIHwgNSArKysrKwo+PiDCoCAxIGZpbGUgY2hhbmdlZCwgNSBp
-bnNlcnRpb25zKCspCj4+Cj4+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
-YmluZGluZ3MvYXJtL2FjdGlvbnMueWFtbCAKPj4gYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUv
-YmluZGluZ3MvYXJtL2FjdGlvbnMueWFtbAo+PiBpbmRleCBhY2UzZmRhYTgzOTYuLjIxODdlMWM1
-YmM3MyAxMDA2NDQKPj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Fy
-bS9hY3Rpb25zLnlhbWwKPj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L2FybS9hY3Rpb25zLnlhbWwKPj4gQEAgLTE5LDYgKzE5LDExIEBAIHByb3BlcnRpZXM6Cj4+IMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIGFsbG8sc3Bhcmt5ICMgQWxsby5jb20gU3Bh
-cmt5Cj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIGN1YmlldGVjaCxjdWJpZWJv
-YXJkNiAjIEN1YmlldGVjaCBDdWJpZUJvYXJkNgo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0g
-Y29uc3Q6IGFjdGlvbnMsczUwMAo+PiArwqDCoMKgwqDCoCAtIGl0ZW1zOgo+PiArwqDCoMKgwqDC
-oMKgwqDCoMKgIC0gZW51bToKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gY2FuaW5v
-cyxsYWJyYWRvci12MiAjIExhYnJhZG9yIENvcmUgdjIKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgIC0gY2FuaW5vcyxsYWJyYWRvci1iYXNlLW0gIyBMYWJyYWRvciBCYXNlIEJvYXJkIE0g
-djEKPiAKPiBUaGlzIGVudW0gc3RpbGwgc3RyaWtlcyBtZSBhcyB3cm9uZywgaXQgbWVhbnMgZWl0
-aGVyLW9yLiAoV2FzIHBsYW5uaW5nIAo+IHRvIGxvb2sgaW50byBpdCBteXNlbGYsIGJ1dCBubyB0
-aW1lIHlldC4uLikgY2FuaW5vcyxsYWJyYWRvci12MiBzaG91bGQgCj4gYmUgYSBjb25zdCBvbmUg
-bGV2ZWwgZG93bjogYm9hcmQsIFNvTSwgU29DIGZyb20gbW9zdCBzcGVjaWZpYyB0byBtb3N0IAo+
-IGdlbmVyaWMuIENvbXBhcmUgR3VpdGFyIGJlbG93LgoKSSBnb3QgaXQsIEkgYWdyZWUgbWFrZSBz
-ZW5zZSwgSSB3aWxsIHNlbmQgdGhlIHY2LgoKPiAKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoCAtIGNv
-bnN0OiBhY3Rpb25zLHM1MDAKPj4gwqDCoMKgwqDCoMKgwqAgLSBpdGVtczoKPj4gwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoCAtIGVudW06Cj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAt
-IGxlbWFrZXIsZ3VpdGFyLWJiLXJldi1iICMgTGVNYWtlciBHdWl0YXIgQmFzZSBCb2FyZCAKPj4g
-cmV2LiBCCj4gCj4gUmVnYXJkcywKPiBBbmRyZWFzCj4gCgpCZXN0IFJlZ2FyZHMsCk1hdGhldXMg
-Q2FzdGVsbG8KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+
+
+On 05/21/2020 08:49 PM, Will Deacon wrote:
+> On Tue, 19 May 2020 15:10:37 +0530, Anshuman Khandual wrote:
+>> This series is primarily motivated from an adhoc list from Mark Rutland
+>> during our previous ID_ISAR6 discussion [1]. The current proposal also
+>> accommodates some more suggestions from Will and Suzuki.
+>>
+>> This series adds missing 32 bit system registers (ID_PFR2, ID_DFR1 and
+>> ID_MMFR5), adds missing features bits on all existing system registers
+>> (32 and 64 bit) and some other miscellaneous changes. While here it also
+>> includes a patch which does macro replacement for various open bits shift
+>> encodings for various CPU ID registers. There is a slight re-order of the
+>> patches here as compared to the previous version (V1).
+>>
+>> [...]
+> 
+> Applied to arm64 (for-next/cpufeature), thanks!
+> 
+> [01/17] arm64/cpufeature: Add explicit ftr_id_isar0[] for ID_ISAR0 register
+>         https://git.kernel.org/arm64/c/2a5bc6c47bc3
+> [02/17] arm64/cpufeature: Drop TraceFilt feature exposure from ID_DFR0 register
+>         https://git.kernel.org/arm64/c/1ed1b90a0594
+> [03/17] arm64/cpufeature: Make doublelock a signed feature in ID_AA64DFR0
+>         https://git.kernel.org/arm64/c/e965bcb06256
+> [04/17] arm64/cpufeature: Introduce ID_PFR2 CPU register
+>         https://git.kernel.org/arm64/c/16824085a7dd
+> [05/17] arm64/cpufeature: Introduce ID_DFR1 CPU register
+>         https://git.kernel.org/arm64/c/dd35ec070457
+> [06/17] arm64/cpufeature: Introduce ID_MMFR5 CPU register
+>         https://git.kernel.org/arm64/c/152accf8476f
+> [07/17] arm64/cpufeature: Add remaining feature bits in ID_PFR0 register
+>         https://git.kernel.org/arm64/c/0ae43a99fe91
+> [08/17] arm64/cpufeature: Add remaining feature bits in ID_MMFR4 register
+>         https://git.kernel.org/arm64/c/fcd6535322cc
+> [09/17] arm64/cpufeature: Add remaining feature bits in ID_AA64ISAR0 register
+>         https://git.kernel.org/arm64/c/7cd51a5a84d1
+> [10/17] arm64/cpufeature: Add remaining feature bits in ID_AA64PFR0 register
+>         https://git.kernel.org/arm64/c/011e5f5bf529
+> [11/17] arm64/cpufeature: Add remaining feature bits in ID_AA64PFR1 register
+>         https://git.kernel.org/arm64/c/14e270fa5c4c
+> [12/17] arm64/cpufeature: Add remaining feature bits in ID_AA64MMFR0 register
+>         (no commit info)
+> [13/17] arm64/cpufeature: Add remaining feature bits in ID_AA64MMFR1 register
+>         (no commit info)
+> [14/17] arm64/cpufeature: Add remaining feature bits in ID_AA64MMFR2 register
+>         (no commit info)
+> [15/17] arm64/cpufeature: Add remaining feature bits in ID_AA64DFR0 register
+>         (no commit info)
+> [16/17] arm64/cpufeature: Replace all open bits shift encodings with macros
+>         (no commit info)
+> [17/17] arm64/cpuinfo: Add ID_MMFR4_EL1 into the cpuinfo_arm64 context
+>         https://git.kernel.org/arm64/c/858b8a8039d0
+> 
+> Note that Suzuki had comments on 12-16, so assume you'll respin those (I fixed
+> up the trivial comments on earlier patches myself).
+[PATCH 15/17] might need some more investigation and rework. Hence planning to
+defer that for later and respin the remaining patches (12, 13, 14, 16) for now.
+
+- Anshuman
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
