@@ -2,91 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09A5D1E0BED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 12:38:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B47A1E0C24
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 12:49:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kgNxQ1AnI0/MekIUkHeU5awofvne+ewyDslbBSr4zmI=; b=GK8mbKrC6hAZzs
-	nxKfSqhUb1xdloji3VACcSoW+v5ujpoT/pm+3uC+uVSqjAwAHpDxywjp8TI/oHcuaELudmuX12Vs+
-	nf0ZuOvpsLSSg5DLBz4AMkZYifIVH91D0HPWa2KKNx51pj61Ba+xdGJTZaX/XEP7s+joIu1NEcqXb
-	gZ4yEiOnLTBIoYo+uxHrXpX2YSNb1FQRREHrr8hukREdiIyxYRcNBHIwgr0Wr9vfFCY04E3SHaWQI
-	Cd32kq/Pl+v8y49IJOzvuEVHQCK76fVrtNw8F7boWWQ8FTKQjoJ1ym1DCSRaiWEjBkW/sjSjyvRwD
-	WiMeNcC32rM1/6XqWIXQ==;
+	List-Owner; bh=tnR3vCUXAzdDFBaL3I1UqsM7hC4y4kBPfS9TNzupePc=; b=C3uBziWzXZs+in
+	98jXRx9lxBmSowCWVeVx2/VYoD3z9C7A9e+MvUysjIO/H+LcABRAQ5Q2B4MpdebnY/WynTyQz6R76
+	Y5HfWhdlnS6ghi5PxZMEmHbXGnxvY+p/qloEVdOKiOhptJ++Scq7SN1eRATqSlMFF3eAOaMTp+38h
+	crnE5FIZlR5zif59yOK+ryD9Hy7K4OUYqP01QUrE9HCXOYNVOOuO/q2oDb/TH9uhPRH6GaTQcMN38
+	HJxsPaNal90BwzPHMgLWTYMiB4REhRC2CTwqOQwjPOteDBs4O5R5Rt6NYAsvAvTwCwpP81AoHIsZa
+	6+unAEQIRMAgdkovlY6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdAUZ-0007Bt-7K; Mon, 25 May 2020 10:37:59 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jdAfq-0006gq-KZ; Mon, 25 May 2020 10:49:38 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdAUG-0007AI-4b
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 10:37:43 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1590403062; h=Content-Transfer-Encoding: Content-Type:
- MIME-Version: Message-ID: In-Reply-To: Date: References: Subject: Cc:
- To: From: Sender; bh=Xa+V2K2B+f2/pjJ0gvv7y9F+pJuL30zRLv90omb/sWY=;
- b=ABRXn8xlXjDuzRmm1OXSprLlc/3dVU2ULUPgOwUnQuEd4NLWz0fMaGl9apZUlcv3WwHt/+q9
- D+B2SkfBzCVve3OM2ixh1aJ0cnNhscTLenpdEJZ+hUWdLr9q2jbAEpZpsU9K4PRnntCKb8yt
- +33w9uYUqpEDcjElqSBdkTQCc+k=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n05.prod.us-east-1.postgun.com with SMTP id
- 5ecb9fde8075f6e58c928fa1 (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Mon, 25 May 2020 10:37:18
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 2E5F3C4339C; Mon, 25 May 2020 10:37:17 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: kvalo)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 7DCD1C433C9;
- Mon, 25 May 2020 10:37:12 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 7DCD1C433C9
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
-From: Kalle Valo <kvalo@codeaurora.org>
-To: Yuehaibing <yuehaibing@huawei.com>
-Subject: Re: [PATCH -next] mt76: mt7915: Fix build error
-References: <20200522034533.61716-1-yuehaibing@huawei.com>
- <87a720b7p7.fsf@codeaurora.org>
- <cf5a8e36-2fc6-3f3a-823f-a2fac6c11d30@huawei.com>
-Date: Mon, 25 May 2020 13:37:10 +0300
-In-Reply-To: <cf5a8e36-2fc6-3f3a-823f-a2fac6c11d30@huawei.com>
- (yuehaibing@huawei.com's message of "Fri, 22 May 2020 19:34:28 +0800")
-Message-ID: <87k1109u7d.fsf@codeaurora.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+ id 1jdAfM-0006SK-0X; Mon, 25 May 2020 10:49:09 +0000
+X-UUID: 287278e0d6c2438bb106d2f51e8fdd5d-20200525
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=hP4MHL5rKzsU6+cwtk/2ybNDnctT2+yEC11C/Esk5/o=; 
+ b=TFV31XXk0/x4ej3Ymtimxwcrrma9XVcGvxZz7avtFxr2/iH2tEeES+QIuID+MfsKKeiNzCmLdv5KLmXSNa/sCoWuR0hWAM/0de5El/Gpr/QlfSjJImfN/eGlNB8NexisAOeNIxltC0n1gsAvJx0rdeiI0YToMZEalf8Med1Sv+w=;
+X-UUID: 287278e0d6c2438bb106d2f51e8fdd5d-20200525
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <dennis-yc.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 914228624; Mon, 25 May 2020 02:49:03 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 25 May 2020 03:38:58 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 25 May 2020 18:38:42 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 25 May 2020 18:38:44 +0800
+Message-ID: <1590403125.11988.5.camel@mtkswgap22>
+Subject: Re: [PATCH v5 09/13] soc: mediatek: cmdq: add write_s value function
+From: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Mon, 25 May 2020 18:38:45 +0800
+In-Reply-To: <68535bf6-9824-5077-4811-374c893cdc03@gmail.com>
+References: <1583664775-19382-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1583664775-19382-10-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <f9fd9ea8-f706-ed4a-4c83-c53ad092035c@gmail.com>
+ <1590341462.31286.19.camel@mtkswgap22>
+ <eb604637-28f0-fa8f-ce4b-3e87f6c944ad@gmail.com>
+ <1590373621.31522.7.camel@mtkswgap22>
+ <68535bf6-9824-5077-4811-374c893cdc03@gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 7C8ADAEBEC808D17B27E76EFF3A38C58E804BDAD7674469778D687D1892779672000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_033742_213162_E0F1123D 
-X-CRM114-Status: GOOD (  12.41  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200525_034908_073383_1613415C 
+X-CRM114-Status: GOOD (  22.72  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,59 +89,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ryder.lee@mediatek.com, linux-wireless@vger.kernel.org, yf.luo@mediatek.com,
- chih-min.chen@mediatek.com, linux-kernel@vger.kernel.org,
- matthias.bgg@gmail.com, yiwei.chung@mediatek.com,
- linux-mediatek@lists.infradead.org, netdev@vger.kernel.org,
- lorenzo.bianconi83@gmail.com, kuba@kernel.org, shayne.chen@mediatek.com,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org, nbd@nbd.name
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, wsd_upstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ HS Liao <hs.liao@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Daniel Vetter <daniel@ffwll.ch>, CK Hu <ck.hu@mediatek.com>,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-WXVlaGFpYmluZyA8eXVlaGFpYmluZ0BodWF3ZWkuY29tPiB3cml0ZXM6Cgo+IE9uIDIwMjAvNS8y
-MiAxODoxMSwgS2FsbGUgVmFsbyB3cm90ZToKPj4gWXVlSGFpYmluZyA8eXVlaGFpYmluZ0BodWF3
-ZWkuY29tPiB3cml0ZXM6Cj4+IAo+Pj4gSW4gZmlsZSBpbmNsdWRlZCBmcm9tIC4vaW5jbHVkZS9s
-aW51eC9maXJtd2FyZS5oOjY6MCwKPj4+ICAgICAgICAgICAgICAgICAgZnJvbSBkcml2ZXJzL25l
-dC93aXJlbGVzcy9tZWRpYXRlay9tdDc2L210NzkxNS9tY3UuYzo0Ogo+Pj4gSW4gZnVuY3Rpb24g
-4oCYX19tdDc5MTVfbWN1X21zZ19zZW5k4oCZLAo+Pj4gICAgIGlubGluZWQgZnJvbSDigJhtdDc5
-MTVfbWN1X3NlbmRfbWVzc2FnZeKAmSBhdCBkcml2ZXJzL25ldC93aXJlbGVzcy9tZWRpYXRlay9t
-dDc2L210NzkxNS9tY3UuYzozNzA6NjoKPj4+IC4vaW5jbHVkZS9saW51eC9jb21waWxlci5oOjM5
-NjozODogZXJyb3I6IGNhbGwgdG8g4oCYX19jb21waWxldGltZV9hc3NlcnRfNTQ14oCZIGRlY2xh
-cmVkIHdpdGggYXR0cmlidXRlIGVycm9yOiBCVUlMRF9CVUdfT04gZmFpbGVkOiBjbWQgPT0gTUNV
-X0VYVF9DTURfRUZVU0VfQUNDRVNTICYmIG1jdV90eGQtPnNldF9xdWVyeSAhPSBNQ1VfUV9RVUVS
-WQo+Pj4gICBfY29tcGlsZXRpbWVfYXNzZXJ0KGNvbmRpdGlvbiwgbXNnLCBfX2NvbXBpbGV0aW1l
-X2Fzc2VydF8sIF9fQ09VTlRFUl9fKQo+Pj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICBeCj4+PiAuL2luY2x1ZGUvbGludXgvY29tcGlsZXIuaDozNzc6NDogbm90ZTogaW4g
-ZGVmaW5pdGlvbiBvZiBtYWNybyDigJhfX2NvbXBpbGV0aW1lX2Fzc2VydOKAmQo+Pj4gICAgIHBy
-ZWZpeCAjIyBzdWZmaXgoKTsgICAgXAo+Pj4gICAgIF5+fn5+fgo+Pj4gLi9pbmNsdWRlL2xpbnV4
-L2NvbXBpbGVyLmg6Mzk2OjI6IG5vdGU6IGluIGV4cGFuc2lvbiBvZiBtYWNybyDigJhfY29tcGls
-ZXRpbWVfYXNzZXJ04oCZCj4+PiAgIF9jb21waWxldGltZV9hc3NlcnQoY29uZGl0aW9uLCBtc2cs
-IF9fY29tcGlsZXRpbWVfYXNzZXJ0XywgX19DT1VOVEVSX18pCj4+PiAgIF5+fn5+fn5+fn5+fn5+
-fn5+fn4KPj4+IC4vaW5jbHVkZS9saW51eC9idWlsZF9idWcuaDozOTozNzogbm90ZTogaW4gZXhw
-YW5zaW9uIG9mIG1hY3JvIOKAmGNvbXBpbGV0aW1lX2Fzc2VydOKAmQo+Pj4gICNkZWZpbmUgQlVJ
-TERfQlVHX09OX01TRyhjb25kLCBtc2cpIGNvbXBpbGV0aW1lX2Fzc2VydCghKGNvbmQpLCBtc2cp
-Cj4+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn5+fn5+fn5+fn5+
-fn5+Cj4+PiAuL2luY2x1ZGUvbGludXgvYnVpbGRfYnVnLmg6NTA6Mjogbm90ZTogaW4gZXhwYW5z
-aW9uIG9mIG1hY3JvIOKAmEJVSUxEX0JVR19PTl9NU0figJkKPj4+ICAgQlVJTERfQlVHX09OX01T
-Ryhjb25kaXRpb24sICJCVUlMRF9CVUdfT04gZmFpbGVkOiAiICNjb25kaXRpb24pCj4+PiAgIF5+
-fn5+fn5+fn5+fn5+fn4KPj4+IGRyaXZlcnMvbmV0L3dpcmVsZXNzL21lZGlhdGVrL210NzYvbXQ3
-OTE1L21jdS5jOjI4MDoyOiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8g4oCYQlVJTERfQlVH
-X09O4oCZCj4+PiAgIEJVSUxEX0JVR19PTihjbWQgPT0gTUNVX0VYVF9DTURfRUZVU0VfQUNDRVNT
-ICYmCj4+PiAgIF5+fn5+fn5+fn5+fgo+Pj4KPj4+IEJVSUxEX0JVR19PTiBpcyBtZWFuaW5nbGVz
-cyBoZXJlLCBjaGFuZyBpdCB0byBXQVJOX09OLgo+Pj4KPj4+IEZpeGVzOiBlNTdiNzkwMTQ2OWYg
-KCJtdDc2OiBhZGQgbWFjODAyMTEgZHJpdmVyIGZvciBNVDc5MTUgUENJZS1iYXNlZCBjaGlwc2V0
-cyIpCj4+PiBTaWduZWQtb2ZmLWJ5OiBZdWVIYWliaW5nIDx5dWVoYWliaW5nQGh1YXdlaS5jb20+
-Cj4+IAo+PiBJJ20gY3VyaW91cyB3aHkgSSBkb24ndCBzZWUgdGhpcyBidWlsZCBlcnJvcj8gSSB3
-YXMgYWJvdXQgdG8gc2VuZCBhIHB1bGwKPj4gcmVxdWVzdCB0byBEYXZlLCBzaG91bGQgSSBob2xk
-IG9mZiB0aGUgcHVsbCByZXF1ZXN0IGR1ZSB0byB0aGlzIHByb2JsZW0/Cj4KPiBUaGUgY29uZmln
-IGlzIGF0dGFjaGVkCj4KPiBnY2MgdmVyc2lvbiA3LjUuMCAoVWJ1bnR1IDcuNS4wLTN1YnVudHUx
-fjE4LjA0KQoKVGhhbmtzLCBJIHdhcyBhYmxlIHRvIHJlcHJvZHVjZSB0aGUgZXJyb3Igd2l0aCBn
-Y2MtMTAgdXNpbmcgeW91ciBjb25maWcKYnV0IGRpZG4ndCBoYXZlIHRpbWUgdG8gaW52ZXN0aWdh
-dGUgd2hhdCB3YXMgZGlmZmVyZW50IGluIG15IGNvbmZpZyBhbmQKd2h5IEkgZGlkbid0IHNlZSBp
-dC4KCi0tIApodHRwczovL3dpcmVsZXNzLndpa2kua2VybmVsLm9yZy9lbi9kZXZlbG9wZXJzL2Rv
-Y3VtZW50YXRpb24vc3VibWl0dGluZ3BhdGNoZXMKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+On Mon, 2020-05-25 at 10:39 +0200, Matthias Brugger wrote:
+> 
+> On 25/05/2020 04:27, Dennis-YC Hsieh wrote:
+> > 
+> > On Sun, 2020-05-24 at 20:13 +0200, Matthias Brugger wrote:
+> >>
+> >> On 24/05/2020 19:31, Dennis-YC Hsieh wrote:
+> >>> Hi Matthias,
+> >>>
+> >>> Thanks for your comment.
+> >>>
+> >>> On Sat, 2020-05-16 at 20:20 +0200, Matthias Brugger wrote:
+> >>>>
+> >>>> On 08/03/2020 11:52, Dennis YC Hsieh wrote:
+> >>>>> add write_s function in cmdq helper functions which
+> >>>>> writes a constant value to address with large dma
+> >>>>> access support.
+> >>>>>
+> >>>>> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+> >>>>> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> >>>>> ---
+> >>>>>  drivers/soc/mediatek/mtk-cmdq-helper.c | 26 ++++++++++++++++++++++++++
+> >>>>>  include/linux/soc/mediatek/mtk-cmdq.h  | 14 ++++++++++++++
+> >>>>>  2 files changed, 40 insertions(+)
+> >>>>>
+> >>>>> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> >>>>> index 03c129230cd7..a9ebbabb7439 100644
+> >>>>> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> >>>>> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> >>>>> @@ -269,6 +269,32 @@ int cmdq_pkt_write_s(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
+> >>>>>  }
+> >>>>>  EXPORT_SYMBOL(cmdq_pkt_write_s);
+> >>>>>  
+> >>>>> +int cmdq_pkt_write_s_value(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
+> >>>>> +			   u16 addr_low, u32 value, u32 mask)
+> >>>>> +{
+> >>>>> +	struct cmdq_instruction inst = { {0} };
+> >>>>> +	int err;
+> >>>>> +
+> >>>>> +	if (mask != U32_MAX) {
+> >>>>> +		inst.op = CMDQ_CODE_MASK;
+> >>>>> +		inst.mask = ~mask;
+> >>>>> +		err = cmdq_pkt_append_command(pkt, inst);
+> >>>>> +		if (err < 0)
+> >>>>> +			return err;
+> >>>>> +
+> >>>>> +		inst.op = CMDQ_CODE_WRITE_S_MASK;
+> >>>>> +	} else {
+> >>>>> +		inst.op = CMDQ_CODE_WRITE_S;
+> >>>>> +	}
+> >>>>> +
+> >>>>> +	inst.sop = high_addr_reg_idx;
+> >>>>
+> >>>> Writing u16 value in a 5 bit wide variable?
+> >>>
+> >>> We need only 5 bits in this case. I'll change high_addr_reg_idx
+> >>> parameter to u8.
+> >>>
+> >>
+> >> Ok, please make sure to mask the value, so that it's explicit in the code that
+> >> we only use the lowest 5 bits of high_addr_reg_idx.
+> > 
+> > Is it necessary to mask the value?
+> > Since sop already defined as "u8 sop:5;", I thought it is explicit that
+> > only use 5 bits and compiler should do the rest jobs.
+> 
+> Yes but it makes the code more explicit if we have a
+> inst.sop = high_addr_reg_idx & 0x1f;
+> 
+> What do you think?
+
+The value assign to sop will restrict by hardware spec. Clients call
+this function will define constant value and use it as parameter. So I
+think we don't worry about client call this api with wrong value.
+
+
+Regards,
+Dennis
+
+> 
+> Regards,
+> Matthias
+> 
+> > 
+> > 
+> > Regards,
+> > Dennis
+> > 
+> >>
+> >> Regards,
+> >> Matthias
+> >>
+> >>>>
+> >>>>> +	inst.offset = addr_low;
+> >>>>> +	inst.value = value;
+> >>>>> +
+> >>>>> +	return cmdq_pkt_append_command(pkt, inst);
+> >>>>> +}
+> >>>>> +EXPORT_SYMBOL(cmdq_pkt_write_s_value);
+> >>>>> +
+> >>>>>  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
+> >>>>>  {
+> >>>>>  	struct cmdq_instruction inst = { {0} };
+> >>>>> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> >>>>> index 01b4184af310..fec292aac83c 100644
+> >>>>> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> >>>>> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> >>>>> @@ -135,6 +135,20 @@ int cmdq_pkt_read_s(struct cmdq_pkt *pkt, u16 high_addr_reg_idx, u16 addr_low,
+> >>>>>  int cmdq_pkt_write_s(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
+> >>>>>  		     u16 addr_low, u16 src_reg_idx, u32 mask);
+> >>>>>  
+> >>>>> +/**
+> >>>>> + * cmdq_pkt_write_s_value() - append write_s command with mask to the CMDQ
+> >>>>> + *			      packet which write value to a physical address
+> >>>>> + * @pkt:	the CMDQ packet
+> >>>>> + * @high_addr_reg_idx:	internal regisger ID which contains high address of pa
+> >>>>
+> >>>> register
+> >>>
+> >>> will fix
+> >>>
+> >>>
+> >>> Regards,
+> >>> Dennis
+> >>>
+> >>>>
+> >>>>> + * @addr_low:	low address of pa
+> >>>>> + * @value:	the specified target value
+> >>>>> + * @mask:	the specified target mask
+> >>>>> + *
+> >>>>> + * Return: 0 for success; else the error code is returned
+> >>>>> + */
+> >>>>> +int cmdq_pkt_write_s_value(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
+> >>>>> +			   u16 addr_low, u32 value, u32 mask);
+> >>>>> +
+> >>>>>  /**
+> >>>>>   * cmdq_pkt_wfe() - append wait for event command to the CMDQ packet
+> >>>>>   * @pkt:	the CMDQ packet
+> >>>>>
+> >>>
+> > 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
