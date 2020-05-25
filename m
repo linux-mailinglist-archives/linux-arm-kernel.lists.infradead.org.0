@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DEF51E0ECE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:55:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EFD31E0EC9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:54:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S2jXn+PB6jk0Ks1je0iDhZMNHSBlp3WsKhUImukFD+g=; b=SFq1tqKzxIWo6g
-	ECjbgFOD24CocauOOqHDgfXB8cbWpgltwxvt+VnZ1ELcusBglkyRBstrmB30sekf47ovifpB1xccK
-	XwBPsdTzsWJpskRXFAOMJ/BsW9ta51qrlHQwri2mNJirG078d71/4EOxR+OHrI+MlC4zrNieRCYK/
-	4YWoZtjd1pY+iqNBjVC/RfZ/5QWZQE5WZVDHHOiUrm6pfVbh5lyf10J3UNjGN4u+dx2qcU8eH8+iP
-	wDpVS2xRhFsoTlMenXK8yn5iB1QcZuZNLOE4rhGr7t8y2m346ja9A3kYGfd6FoU0DnWB9CLejf7wL
-	M//143KKpuk0HnRUjkvg==;
+	List-Owner; bh=mx5F20uOiNZz59aKrSnDES+ly+B8FXFh2VKzU+vXNpc=; b=edp0urChQK/YJR
+	V1UHFd9a7Yj867E9qF2qXHIxM2SvrBfKKR4GEfL+PoXZUGsCfuf/HCVMbdcD0eiBZ67SXZvA5MUFR
+	MQC4JrxkQiPGPKxOhIz18tkYA5vIbvwbBR1cTEO3588fKk7zKVdYEBXBMnj1EhzoSBezYabY81MZX
+	XJaacyYzi+nAVnU+GsfyTxLV73a/NG5YkGf8SvlXOsHgq7iJ6yGxdvIcuNNVA+N9kwrbrKQVxLsSs
+	IiQ9GiY34IPgiM522Zmd2/EPhOWvHkyYxtqFGeP7RKhlXIV30onC80h6BXvj1s2VQuRm80tLpLH4n
+	mVYXtjyjCA6aPYJppj7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdCdX-0001Nq-Fq; Mon, 25 May 2020 12:55:23 +0000
+	id 1jdCcu-0000sq-Sc; Mon, 25 May 2020 12:54:44 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdCbo-0008PD-C9
+ id 1jdCbo-0008P8-Bx
  for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:53:39 +0000
 Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 66F1D9D730E6B751C158;
+ by Forcepoint Email with ESMTP id 3852C99BF514DEC7A57B;
  Mon, 25 May 2020 20:53:32 +0800 (CST)
 Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
  DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
- 14.3.487.0; Mon, 25 May 2020 20:53:22 +0800
+ 14.3.487.0; Mon, 25 May 2020 20:53:23 +0800
 From: Zhenyu Ye <yezhenyu2@huawei.com>
 To: <catalin.marinas@arm.com>, <peterz@infradead.org>, <mark.rutland@arm.com>, 
  <will@kernel.org>, <aneesh.kumar@linux.ibm.com>,
@@ -37,9 +37,9 @@ To: <catalin.marinas@arm.com>, <peterz@infradead.org>, <mark.rutland@arm.com>,
  <maz@kernel.org>, <suzuki.poulose@arm.com>, <tglx@linutronix.de>,
  <yuzhao@google.com>, <Dave.Martin@arm.com>, <steven.price@arm.com>,
  <broonie@kernel.org>, <guohanjun@huawei.com>
-Subject: [PATCH v3 3/6] arm64: Add tlbi_user_level TLB invalidation helper
-Date: Mon, 25 May 2020 20:52:57 +0800
-Message-ID: <20200525125300.794-4-yezhenyu2@huawei.com>
+Subject: [PATCH v3 4/6] tlb: mmu_gather: add tlb_flush_*_range APIs
+Date: Mon, 25 May 2020 20:52:58 +0800
+Message-ID: <20200525125300.794-5-yezhenyu2@huawei.com>
 X-Mailer: git-send-email 2.22.0.windows.1
 In-Reply-To: <20200525125300.794-1-yezhenyu2@huawei.com>
 References: <20200525125300.794-1-yezhenyu2@huawei.com>
@@ -47,8 +47,9 @@ MIME-Version: 1.0
 X-Originating-IP: [10.173.220.25]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_055337_025565_0CEF67F4 
-X-CRM114-Status: GOOD (  11.58  )
+X-CRM114-CacheID: sfid-20200525_055337_082470_FEC4EF6A 
+X-CRM114-Status: UNSURE (   9.05  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -82,53 +83,137 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a level-hinted parameter to __tlbi_user, which only gets used
-if ARMv8.4-TTL gets detected.
+From: "Peter Zijlstra (Intel)" <peterz@infradead.org>
 
-ARMv8.4-TTL provides the TTL field in tlbi instruction to indicate
-the level of translation table walk holding the leaf entry for the
-address that is being invalidated.
+tlb_flush_{pte|pmd|pud|p4d}_range() adjust the tlb->start and
+tlb->end, then set corresponding cleared_*.
 
-This patch set the default level value to 0.
-
+Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
 Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
+Acked-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/include/asm/tlbflush.h | 14 ++++++++++----
- 1 file changed, 10 insertions(+), 4 deletions(-)
+ include/asm-generic/tlb.h | 55 ++++++++++++++++++++++++++++-----------
+ 1 file changed, 40 insertions(+), 15 deletions(-)
 
-diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
-index 8adbd6fd8489..969dcf88e2a9 100644
---- a/arch/arm64/include/asm/tlbflush.h
-+++ b/arch/arm64/include/asm/tlbflush.h
-@@ -88,6 +88,12 @@
- 	__tlbi(op,  arg);					\
- } while (0)
+diff --git a/include/asm-generic/tlb.h b/include/asm-generic/tlb.h
+index 3f1649a8cf55..ef75ec86f865 100644
+--- a/include/asm-generic/tlb.h
++++ b/include/asm-generic/tlb.h
+@@ -512,6 +512,38 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+ }
+ #endif
  
-+#define __tlbi_user_level(op, arg, level) do {				\
-+	if (arm64_kernel_unmapped_at_el0())				\
-+		__tlbi_level(op, (arg | USER_ASID_FLAG), level);	\
-+} while (0)
++/*
++ * tlb_flush_{pte|pmd|pud|p4d}_range() adjust the tlb->start and tlb->end,
++ * and set corresponding cleared_*.
++ */
++static inline void tlb_flush_pte_range(struct mmu_gather *tlb,
++				     unsigned long address, unsigned long size)
++{
++	__tlb_adjust_range(tlb, address, size);
++	tlb->cleared_ptes = 1;
++}
 +
++static inline void tlb_flush_pmd_range(struct mmu_gather *tlb,
++				     unsigned long address, unsigned long size)
++{
++	__tlb_adjust_range(tlb, address, size);
++	tlb->cleared_pmds = 1;
++}
 +
- /*
-  *	TLB Invalidation
-  *	================
-@@ -230,11 +236,11 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
- 	dsb(ishst);
- 	for (addr = start; addr < end; addr += stride) {
- 		if (last_level) {
--			__tlbi(vale1is, addr);
--			__tlbi_user(vale1is, addr);
-+			__tlbi_level(vale1is, addr, 0);
-+			__tlbi_user_level(vale1is, addr, 0);
- 		} else {
--			__tlbi(vae1is, addr);
--			__tlbi_user(vae1is, addr);
-+			__tlbi_level(vae1is, addr, 0);
-+			__tlbi_user_level(vae1is, addr, 0);
- 		}
- 	}
- 	dsb(ish);
++static inline void tlb_flush_pud_range(struct mmu_gather *tlb,
++				     unsigned long address, unsigned long size)
++{
++	__tlb_adjust_range(tlb, address, size);
++	tlb->cleared_puds = 1;
++}
++
++static inline void tlb_flush_p4d_range(struct mmu_gather *tlb,
++				     unsigned long address, unsigned long size)
++{
++	__tlb_adjust_range(tlb, address, size);
++	tlb->cleared_p4ds = 1;
++}
++
+ #ifndef __tlb_remove_tlb_entry
+ #define __tlb_remove_tlb_entry(tlb, ptep, address) do { } while (0)
+ #endif
+@@ -525,19 +557,17 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+  */
+ #define tlb_remove_tlb_entry(tlb, ptep, address)		\
+ 	do {							\
+-		__tlb_adjust_range(tlb, address, PAGE_SIZE);	\
+-		tlb->cleared_ptes = 1;				\
++		tlb_flush_pte_range(tlb, address, PAGE_SIZE);	\
+ 		__tlb_remove_tlb_entry(tlb, ptep, address);	\
+ 	} while (0)
+ 
+ #define tlb_remove_huge_tlb_entry(h, tlb, ptep, address)	\
+ 	do {							\
+ 		unsigned long _sz = huge_page_size(h);		\
+-		__tlb_adjust_range(tlb, address, _sz);		\
+ 		if (_sz == PMD_SIZE)				\
+-			tlb->cleared_pmds = 1;			\
++			tlb_flush_pmd_range(tlb, address, _sz);	\
+ 		else if (_sz == PUD_SIZE)			\
+-			tlb->cleared_puds = 1;			\
++			tlb_flush_pud_range(tlb, address, _sz);	\
+ 		__tlb_remove_tlb_entry(tlb, ptep, address);	\
+ 	} while (0)
+ 
+@@ -551,8 +581,7 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+ 
+ #define tlb_remove_pmd_tlb_entry(tlb, pmdp, address)			\
+ 	do {								\
+-		__tlb_adjust_range(tlb, address, HPAGE_PMD_SIZE);	\
+-		tlb->cleared_pmds = 1;					\
++		tlb_flush_pmd_range(tlb, address, HPAGE_PMD_SIZE);	\
+ 		__tlb_remove_pmd_tlb_entry(tlb, pmdp, address);		\
+ 	} while (0)
+ 
+@@ -566,8 +595,7 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+ 
+ #define tlb_remove_pud_tlb_entry(tlb, pudp, address)			\
+ 	do {								\
+-		__tlb_adjust_range(tlb, address, HPAGE_PUD_SIZE);	\
+-		tlb->cleared_puds = 1;					\
++		tlb_flush_pud_range(tlb, address, HPAGE_PUD_SIZE);	\
+ 		__tlb_remove_pud_tlb_entry(tlb, pudp, address);		\
+ 	} while (0)
+ 
+@@ -592,9 +620,8 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+ #ifndef pte_free_tlb
+ #define pte_free_tlb(tlb, ptep, address)			\
+ 	do {							\
+-		__tlb_adjust_range(tlb, address, PAGE_SIZE);	\
++		tlb_flush_pmd_range(tlb, address, PAGE_SIZE);	\
+ 		tlb->freed_tables = 1;				\
+-		tlb->cleared_pmds = 1;				\
+ 		__pte_free_tlb(tlb, ptep, address);		\
+ 	} while (0)
+ #endif
+@@ -602,9 +629,8 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+ #ifndef pmd_free_tlb
+ #define pmd_free_tlb(tlb, pmdp, address)			\
+ 	do {							\
+-		__tlb_adjust_range(tlb, address, PAGE_SIZE);	\
++		tlb_flush_pud_range(tlb, address, PAGE_SIZE);	\
+ 		tlb->freed_tables = 1;				\
+-		tlb->cleared_puds = 1;				\
+ 		__pmd_free_tlb(tlb, pmdp, address);		\
+ 	} while (0)
+ #endif
+@@ -612,9 +638,8 @@ static inline void tlb_end_vma(struct mmu_gather *tlb, struct vm_area_struct *vm
+ #ifndef pud_free_tlb
+ #define pud_free_tlb(tlb, pudp, address)			\
+ 	do {							\
+-		__tlb_adjust_range(tlb, address, PAGE_SIZE);	\
++		tlb_flush_p4d_range(tlb, address, PAGE_SIZE);	\
+ 		tlb->freed_tables = 1;				\
+-		tlb->cleared_p4ds = 1;				\
+ 		__pud_free_tlb(tlb, pudp, address);		\
+ 	} while (0)
+ #endif
 -- 
 2.19.1
 
