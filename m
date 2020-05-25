@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 836F81E0B22
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 11:57:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61ACA1E0B24
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 11:58:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qNaN/sCTrXmBwmRGJYdpUs33ltVDTWqtdWOQ73ITjQY=; b=BM8E1IX2NG44OL
-	j+CCrD3reTVQEg1d91vztQd2l8sRqT028/soKhnAEdYoG4uJHo4eSfNbg5eWJ7i9rPpYuLYsxSxIv
-	UEM8Qk4vhE2L7H8JZsPP25JHrVSJGitUfpNZNdIL0ckobmpc88XODmpyVhLuZ9gPQ+lnXgfv+6SQS
-	dbJ0wyKn5QbCQ4UV83GUOGzToAciZYlHirTWZNOXmpPNIRikq5Qo6aB4piiEwD9dp6eOQxLKHdbKY
-	Y38e7je93lq45C1S9f+Tkt8ziQFztEq5RUkyIHUB1K2x0Wz02bKnoi0E/D+GRaJGtrgvhn7wOBE3U
-	yriRViuwxllm0PO5+zag==;
+	List-Owner; bh=F+q45l/LqkHATWzfmxd6/xM5liop5L1+J8w0Tt2CR1I=; b=M60+9/qjxWcuCU
+	E2rP1/BjP6fDEEeo4N4zd6v2uEe1VA19goSKqANI2Yd1FtnZ7SxQW9xMR2gLnoAg8hXOoGfZyyuHF
+	9KnmBjvQ95mKbT0CtxE4RZ2MP/CkDVYurwKiD1J0wE8tuseoeoj+FhFUQ8JQf0rsJ7iIGURENbYQX
+	+6W1SBKimW4RRElJofjyzGfZbg7L8eLkqwWj2CM2CL4yOps+UkoXkyv/j5z+uVcTRJBOOHhSrkZYe
+	rlAkmuDbQFOA+630Nvj4XBGYWCNmZIyJjy2U8fiDjCkcRbFFfPTEgogIkwKcjy9YodAE8G1vNzNZm
+	NXF0jIPJIgFmwh6MQt5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd9rZ-0004lr-5M; Mon, 25 May 2020 09:57:41 +0000
-Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+	id 1jd9ro-00051N-Sy; Mon, 25 May 2020 09:57:56 +0000
+Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd9qp-0004Ii-73
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 09:56:56 +0000
-Received: by mail-qk1-x742.google.com with SMTP id 205so3868354qkg.3
+ id 1jd9r0-0004So-Ex
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 09:57:12 +0000
+Received: by mail-qv1-xf42.google.com with SMTP id v15so7815204qvr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 May 2020 02:56:54 -0700 (PDT)
+ Mon, 25 May 2020 02:57:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=W3OPQj+6MaWJ3brcNW2aa4WZVKniXvFNcmel059rH8E=;
- b=Jy+KUYg4h6yqEgXZCmyC1r7hZaPjIJ5NbD8kOSB7ANDSGTcv/cxI7IqondbwUcYIx4
- YDawj4yAqtGCTp0JhlLeUar5y5gF5ERMxMtMxT9kSvZxxMG4qNqP+DMsADzyMxnVKbjp
- Qp5JMPqDS0aZAK6jAL+ldHNC8V3WS0Ap82mFULselou6eQNZR6sUCTVknKoKe+7skkSe
- dQeDlVCIHtIQn2PZEtJqdGm5TlcgmE0EGSNqzldorS8mctTWozaYEL/goXdYZEUy6XHq
- b1ZewotnWXEtHoJ8G6kTfaYc7CdNtQvcQjiQnRuegORWPKpgBsNANNWjDA7f82Y4NWg5
- MWzw==
+ :cc; bh=lXJcON4uIxpNxBwaXZsOO47XJesOn1/BpUPO8EArG+w=;
+ b=qvMmSe1XAwiiXDHUShXrjRlC8kHXfgYHjV+edzVEs9diOiTb51gVIu8DIFR7Kl1EEw
+ 5Y6sFR/4qt/etZj+zXMQpnJBCOEpUeTwjkyvlO8aenAuL6yYXWj5/o20G1wXUq4flko1
+ 0Adu+aOLsPFZhSXfJTg9dh9NB1pX3j29lBaIeuFGFuoJIBmUZdgqF8H4jTnEgquDqytC
+ ME1ipTZN5l8O/AB/Fdssqx02XGyIdC7XSoDAlDbHzQ/3e7envCluBo7IUnF4+C/82B+t
+ JcEk4VlBKK5Unrbf4qGqJeVpeleWSKtRNitNo1bP6Ul6mHjKPR/3XdUzUOIYp4Q/Az14
+ 0fTA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=W3OPQj+6MaWJ3brcNW2aa4WZVKniXvFNcmel059rH8E=;
- b=WpGD11045RcKHZtAV0zT3LW58mtAPSDtD929+ayvLYZIDPxSSVK3LXagorupvHd8ZM
- NfKtLmlQ5r5DEWuc4Rb18mWmIQ6AfxQZYSG03G5olsAcnWB0p0IknvNsYitXRweiqj/7
- fn7QYtMUT0d3BYnQhSZwQVd4Y2EAMCmZVisEbWREmVB7KaxFkjb4UHcfaEC32mFXuHRS
- k52j+I0sDxRAD8hWizOVs48ILXrjoPutpQY39fs4KnkJHK4tj4Rnmoiqaxr5VYGQMmMP
- 3nAT7RAypEWEQn8fuklWKRQpU6M89oISuUyoZOT/SmAPJ4t6zJZiyIzodn/8jkvSlzG3
- 90hg==
-X-Gm-Message-State: AOAM530DSkgPEtqbDXAJ9jOCeykGBIXTR5W1YwFFJLagIDEvmShdEncv
- nJc/zKZrlbBZ49AcYU9I70rjSAmgguzuAQeFu2IRv7eBv34=
-X-Google-Smtp-Source: ABdhPJxqSbuF0F9MjNbi/qpdSowpX/KR1shgHH8LS5OI24MEwe9xv7ADZ1UvXqDFHd6kocEjU/m+KLakA52EHSzuhyQ=
-X-Received: by 2002:a05:620a:786:: with SMTP id
- 6mr1210763qka.407.1590400613522; 
- Mon, 25 May 2020 02:56:53 -0700 (PDT)
+ bh=lXJcON4uIxpNxBwaXZsOO47XJesOn1/BpUPO8EArG+w=;
+ b=oO5gD3jHNmJ6Ap6zjw7GTavX1JlPaTvQblMC42xA2MQkl+X1mTOnVfkWkpY0RjsLf5
+ v0wMJQ1G0dsUY5cK2IiGgjIy4ejCbnk4rsSNPIOoVrUh048fe6163vgnNoEM3CiIm03b
+ 5DkWzXbDlyjjRSu7PVDba58N5/cnND2wNdCQfbh1Q4J82LoLS4iTbvtefoYIOdRCoG47
+ ZOkKkOXVj7xhdvhNlrZJC7swjG4xVlq+7LgCb9Yii5/vhKNl57cZm2W3zV2UMo3G50bI
+ yxkIJK4rTl7yJBn7haMxi5K/1EWDI72xxLKhTuTdMgkf1Tfl7dEIGgYt4RtLdOrQsp6L
+ 2foQ==
+X-Gm-Message-State: AOAM530a+HgMEqLXHpDmWSWqCdTTlth78ffzFSNEmbG3Ee6NdHz9qP5N
+ a/6a8kh1U8tffy306eSomGdveJPyS3/s2YVDNbFF5Q==
+X-Google-Smtp-Source: ABdhPJwu98seAlM8B/W6iEB7Cgc17dFjE0Ji2BN+7kajKF3ry3QeBw893G/4FHc1aJT4/bDywXnEMDItzUTJpwb33p8=
+X-Received: by 2002:a05:6214:15ce:: with SMTP id
+ p14mr15030956qvz.159.1590400624833; 
+ Mon, 25 May 2020 02:57:04 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200522020151.23405-1-walter-zh.wu@mediatek.com>
-In-Reply-To: <20200522020151.23405-1-walter-zh.wu@mediatek.com>
+References: <20200522020212.23460-1-walter-zh.wu@mediatek.com>
+In-Reply-To: <20200522020212.23460-1-walter-zh.wu@mediatek.com>
 From: Dmitry Vyukov <dvyukov@google.com>
-Date: Mon, 25 May 2020 11:56:42 +0200
-Message-ID: <CACT4Y+axrVeCwdEg_yWH57jF7gcKT429J4wVwsNGPuARcPMiLg@mail.gmail.com>
-Subject: Re: [PATCH v6 3/4] kasan: add tests for call_rcu stack recording
+Date: Mon, 25 May 2020 11:56:53 +0200
+Message-ID: <CACT4Y+agmL5ZOWmNBJyLSTuhy7ekp4HTafABUsqqP+XFd7ErKw@mail.gmail.com>
+Subject: Re: [PATCH v6 4/4] kasan: update documentation for generic kasan
 To: Walter Wu <walter-zh.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_025655_266010_A3A2317B 
-X-CRM114-Status: GOOD (  20.35  )
+X-CRM114-CacheID: sfid-20200525_025706_568892_A1A41905 
+X-CRM114-Status: GOOD (  19.12  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f42 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -97,11 +97,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+Cc: wsd_upstream <wsd_upstream@mediatek.com>, Jonathan Corbet <corbet@lwn.net>,
  linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
  kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
  Alexander Potapenko <glider@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
  Andrey Ryabinin <aryabinin@virtuozzo.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -111,8 +110,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, May 22, 2020 at 4:02 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
 >
-> Test call_rcu() call stack recording and verify whether it correctly
-> is printed in KASAN report.
+> Generic KASAN will support to record the last two call_rcu() call stacks
+> and print them in KASAN report. So that need to update documentation.
 
 Reviewed-and-tested-by: Dmitry Vyukov <dvyukov@google.com>
 
@@ -120,58 +119,24 @@ Reviewed-and-tested-by: Dmitry Vyukov <dvyukov@google.com>
 > Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
 > Cc: Dmitry Vyukov <dvyukov@google.com>
 > Cc: Alexander Potapenko <glider@google.com>
-> Cc: Matthias Brugger <matthias.bgg@gmail.com>
+> Cc: Jonathan Corbet <corbet@lwn.net>
 > ---
->  lib/test_kasan.c | 30 ++++++++++++++++++++++++++++++
->  1 file changed, 30 insertions(+)
+>  Documentation/dev-tools/kasan.rst | 3 +++
+>  1 file changed, 3 insertions(+)
 >
-> diff --git a/lib/test_kasan.c b/lib/test_kasan.c
-> index e3087d90e00d..6e5fb05d42d8 100644
-> --- a/lib/test_kasan.c
-> +++ b/lib/test_kasan.c
-> @@ -792,6 +792,35 @@ static noinline void __init vmalloc_oob(void)
->  static void __init vmalloc_oob(void) {}
->  #endif
+> diff --git a/Documentation/dev-tools/kasan.rst b/Documentation/dev-tools/kasan.rst
+> index c652d740735d..fede42e6536b 100644
+> --- a/Documentation/dev-tools/kasan.rst
+> +++ b/Documentation/dev-tools/kasan.rst
+> @@ -193,6 +193,9 @@ function calls GCC directly inserts the code to check the shadow memory.
+>  This option significantly enlarges kernel but it gives x1.1-x2 performance
+>  boost over outline instrumented kernel.
 >
-> +static struct kasan_rcu_info {
-> +       int i;
-> +       struct rcu_head rcu;
-> +} *global_ptr;
+> +Generic KASAN prints up to 2 call_rcu() call stacks in reports, the last one
+> +and the second to last.
 > +
-> +static noinline void __init kasan_rcu_reclaim(struct rcu_head *rp)
-> +{
-> +       struct kasan_rcu_info *fp = container_of(rp,
-> +                                               struct kasan_rcu_info, rcu);
-> +
-> +       kfree(fp);
-> +       fp->i = 1;
-> +}
-> +
-> +static noinline void __init kasan_rcu_uaf(void)
-> +{
-> +       struct kasan_rcu_info *ptr;
-> +
-> +       pr_info("use-after-free in kasan_rcu_reclaim\n");
-> +       ptr = kmalloc(sizeof(struct kasan_rcu_info), GFP_KERNEL);
-> +       if (!ptr) {
-> +               pr_err("Allocation failed\n");
-> +               return;
-> +       }
-> +
-> +       global_ptr = rcu_dereference_protected(ptr, NULL);
-> +       call_rcu(&global_ptr->rcu, kasan_rcu_reclaim);
-> +}
-> +
->  static int __init kmalloc_tests_init(void)
->  {
->         /*
-> @@ -839,6 +868,7 @@ static int __init kmalloc_tests_init(void)
->         kasan_bitops();
->         kmalloc_double_kzfree();
->         vmalloc_oob();
-> +       kasan_rcu_uaf();
->
->         kasan_restore_multi_shot(multishot);
+>  Software tag-based KASAN
+>  ~~~~~~~~~~~~~~~~~~~~~~~~
 >
 > --
 > 2.18.0
@@ -179,7 +144,7 @@ Reviewed-and-tested-by: Dmitry Vyukov <dvyukov@google.com>
 > --
 > You received this message because you are subscribed to the Google Groups "kasan-dev" group.
 > To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
-> To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/20200522020151.23405-1-walter-zh.wu%40mediatek.com.
+> To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/20200522020212.23460-1-walter-zh.wu%40mediatek.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
