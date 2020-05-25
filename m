@@ -2,138 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1338E1E073A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 08:45:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63E0F1E0770
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 09:02:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zR9FyzKseU/Wd0BIyJ+dmF4SEfj3lGfxBR8MAjALft8=; b=mPfBBN98crfVYp
-	MDwYm9HTYrSEChGlE4yiskdnWAgTBef2gHE8rh5eHNycmtTfJsFdNvhk/hANqq9fp8LihxZRQCPXB
-	NiPOQRsXwFFMd7jpWFAkOuTPlyEBOP9qOBRRQI7rg3N5EMmkV0b+SQPgJPP5/H4GZgECTcf9FNG1O
-	fsvW3zM0o4t2gXdGxIADX/s4PJduhyVa28UAwgiaDfvYVsL2KW71ppM59IMPSN27o7u6Jzg/9F43Q
-	7RO+PrxogmhkygdQkzcGUV4Uxe9HQx1FTn23y2hxI69I6o3LghctrF78ALwmnvgrFpwPbNQm59LU3
-	hWWPE+cmOQYs8NpWfWvQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G61n+Rh/k8VonGNczWtgdbRdwALZ72WKIEz0hQ8WpgA=; b=JJjGmfW6t71x36
+	BAzFn3L33CdZV9RjQpgLKhQrE6xHaQLRnVY7yBr+PGBzfKfiGI5XZZxA/86C9mAXy3T/qY2Ao5Unz
+	6iYetAeA9T/Sver4pLM1P97Il6i4F38xCEAWx8vyLlAiGxAOH2pT7L0/0ZMbPULRvY1/TiOlbcocz
+	hBTo6l00Q1ivXC9JxKec1enbSU/Yxj08a3jiFqNbdhW4FrkzzyACr/Vf7VIsyqQ9HYn8B8NisQ6s+
+	DpsXTY1Qg7hGdtSaO9CR07CE/kX5KORrqm26/IF+BktqtcQuEdntTT3Ptq8PXj5ST4aWjCifRIw8O
+	nNdZ0oDqN0l2vk2kwTSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd6rQ-0004MG-VB; Mon, 25 May 2020 06:45:20 +0000
-Received: from mail-eopbgr760077.outbound.protection.outlook.com
- ([40.107.76.77] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
+	id 1jd78A-0000gI-1V; Mon, 25 May 2020 07:02:38 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd6r4-0004Ky-5P
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 06:44:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=aRL117bu27YJidwGXnhPCeUyxBWCWsChcHV6JxToDk6csOXbSHnnDWfoKUtM1MRN5h6JtCAgdEaQSO6vzTK9UU1Fgf9hqSeM5fAiTnMjIInv8/K/muM3PYJvhvLSBXQAPi+RjRVoMuCM53vGd359p/wqJb/VbAsMAp1nFjER5GZNmOdopoOelmaiO+5MgA8W5KZeiXYeJCy1mwxtcBmoakkoJCTPD6nKblHRmg+iop9v6mYPNEfr8AE9PTQCnuBqa4K6TIdL1saQ49ZI6GiupCHZlMl67EGWH4iJAmIcGpceJGFOKktrDQand5T8rQ8EA9/2mnxXMUsVFDHNjzP9hw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RAcSx7O8+89HmzhAJ8rABfIEy8zJ5prhPISvQZykXQw=;
- b=d8vxKa6yCEEnM1Ai17bcZj60LQt3A4tFpom2d7sE8n2h8BwPGaxr5UBmed5N2UsxdYQ3R3hCnRcSGsQ1QSmdSBuWkyJk9gyq3bJr6Uc/fqkACr+vgZo7Lz9Lwv4pjEmR9Onhuuhum/KmIs1P9bPmlVPUw17w/l09RzTO7oSsfOUpdSGFUQdb5nIZuTFKex5Nye7uJxTn2XHa8Lwc8+MJQOyaKuz+5dgAnZytqgwCkOb6cq7pOjqbmNihhNudQ0YSDL/Qq9w4olzGeo3cvmDBnfFQtdKW8/JIUSgGTy1qN/1H1wV4yvmMO9q7PAf/SrUrcJ6HQumtitDilcq9Xkqhdw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RAcSx7O8+89HmzhAJ8rABfIEy8zJ5prhPISvQZykXQw=;
- b=fon9mJXj0f+0zQJw0SLNKA/+Aa8wtkOth+B+0p62LuezMYZNKO1ZdP2goEsFxCctndMTMNN2w94wlq4Wk1V6OEaesiux6Lr7gySEq/1/Kcj5DxEEBFOZ3YMghJqiWpHDAxCP1/xUQ9HN8GT1h6zdsZbXy2maVmDjuDlyxooe0V8=
-Received: from CY4PR2201CA0024.namprd22.prod.outlook.com
- (2603:10b6:910:5f::34) by SN4PR0201MB3472.namprd02.prod.outlook.com
- (2603:10b6:803:48::19) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Mon, 25 May
- 2020 06:44:56 +0000
-Received: from CY1NAM02FT062.eop-nam02.prod.protection.outlook.com
- (2603:10b6:910:5f:cafe::e0) by CY4PR2201CA0024.outlook.office365.com
- (2603:10b6:910:5f::34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23 via Frontend
- Transport; Mon, 25 May 2020 06:44:56 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- CY1NAM02FT062.mail.protection.outlook.com (10.152.75.60) with Microsoft SMTP
- Server id 15.20.3021.23 via Frontend Transport; Mon, 25 May 2020 06:44:56
- +0000
-Received: from [149.199.38.66] (port=54642 helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jd6qU-0003lc-Kf; Sun, 24 May 2020 23:44:22 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1jd6r1-0006OS-QH; Sun, 24 May 2020 23:44:55 -0700
-Received: from xsj-pvapsmtp01 (xsj-smtp.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 04P6iniX012453; 
- Sun, 24 May 2020 23:44:49 -0700
-Received: from [172.30.17.109] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1jd6qv-0006OA-41; Sun, 24 May 2020 23:44:49 -0700
-Subject: Re: [PATCH 15/15] PCI: xilinx: Use pci_host_probe() to register host
-To: Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20200522234832.954484-1-robh@kernel.org>
- <20200522234832.954484-16-robh@kernel.org>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <c037bebc-2a86-0064-25e8-6983258291b8@xilinx.com>
-Date: Mon, 25 May 2020 08:44:46 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jd77w-0000ef-Q8; Mon, 25 May 2020 07:02:26 +0000
+X-UUID: 0fe773d6d1834d44953150348d1d89de-20200524
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=6DRd72G/04IUjrJWtULzvnV0W9JE0UNqefujrxFZ1Cs=; 
+ b=T+CF0gcW69FpB3EUJ+ZZsxGNexcpDgDR2KK43WcVin6T7+MdynsBt/Xa1EXS1Glr0Vqk9HyimI/PlwhFzATiAm7P/iZWlv4YolAkfERqqES/rT9Hshk23orYLET5/llrXCaNJstV2mxp9h/xI+O8p3pAHEHM8vPQOxIYw+1jTE8=;
+X-UUID: 0fe773d6d1834d44953150348d1d89de-20200524
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <yong.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 770796664; Sun, 24 May 2020 23:02:23 -0800
+Received: from MTKMBS32DR.mediatek.inc (172.27.6.104) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 24 May 2020 23:56:16 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS32DR.mediatek.inc
+ (172.27.6.104) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Mon, 25 May 2020 14:56:13 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 25 May 2020 14:56:13 +0800
+Message-ID: <1590389672.13912.26.camel@mhfsdcap03>
+Subject: Re: [PATCH v3 7/7] iommu/mediatek: Add mt6779 basic support
+From: Yong Wu <yong.wu@mediatek.com>
+To: Chao Hao <chao.hao@mediatek.com>
+Date: Mon, 25 May 2020 14:54:32 +0800
+In-Reply-To: <20200509083654.5178-8-chao.hao@mediatek.com>
+References: <20200509083654.5178-1-chao.hao@mediatek.com>
+ <20200509083654.5178-8-chao.hao@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20200522234832.954484-16-robh@kernel.org>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
- SFTY:;
- SFS:(376002)(136003)(39850400004)(346002)(396003)(46966005)(54906003)(70206006)(70586007)(107886003)(478600001)(4326008)(8936002)(8676002)(47076004)(110136005)(316002)(31686004)(82740400003)(2616005)(2906002)(356005)(31696002)(9786002)(81166007)(336012)(6666004)(44832011)(26005)(36756003)(82310400002)(426003)(5660300002)(186003)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 93516d4c-8a37-4cc5-3c31-08d8007722fb
-X-MS-TrafficTypeDiagnostic: SN4PR0201MB3472:
-X-LD-Processed: 657af505-d5df-48d0-8300-c31994686c5c,ExtAddr
-X-Microsoft-Antispam-PRVS: <SN4PR0201MB347297BCF6A5402D46C1AC4AC6B30@SN4PR0201MB3472.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:3968;
-X-Forefront-PRVS: 0414DF926F
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Na1N7f55aEK2Hza4eYNj6bvHHCBusWvq4JLrxml5lTHXMnkj3Vjx2E1PlG9EHGwlpUd90GSrAdOoNz9fC3yusXP9Xjwcu99OTHTmECTw8XwGrt2JZwVl6CND0uGH7Weis2G4rKlFtwJ7q5hq5VVak09oRVe5uZsKENuiIPA8C3UkzXhLiaJYgphw/M4RelP42mUoLAGOjLFkfTMhgyTOMLgLwiQTOG14ywoh1ALNWD8r+4cahXJPKODLBJyZoo/K2cJgRBxKsNm9VbjR+0Aj+YAk3om7meTsnfwEGYpRZL2B39cVvK/MjnOmr236JfiX4u7zkXiW/cI5p/WuYCCLeGdGvoBEF7v7uxOb8Mov+d/x0YQTbaIFQvueylO4W1URyYzfGhdtEtOYmJUROU0rQW3vYZUpqxpRcqGyUwftlgtrUdjaJ//1aU11s56BelzH
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2020 06:44:56.0843 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 93516d4c-8a37-4cc5-3c31-08d8007722fb
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN4PR0201MB3472
+X-TM-SNTS-SMTP: D84AC03253283C703994F8FF4CE4C4A6A591C83D422D4AD6387936229962A63F2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_234458_209818_D28BD3DA 
-X-CRM114-Status: GOOD (  16.85  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200525_000224_856944_433AD340 
+X-CRM114-Status: GOOD (  17.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.76.77 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.76.77 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,66 +84,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, linux-pci@vger.kernel.org,
- Bharat Kumar Gogada <bharatku@xilinx.com>,
- Michal Simek <michal.simek@xilinx.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, FY Yang <fy.yang@mediatek.com>,
+ wsd_upstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Jun Yan <jun.yan@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23. 05. 20 1:48, Rob Herring wrote:
-> The xilinx host driver does the same host registration and bus scanning
-> calls as pci_host_probe, so let's use it instead.
+On Sat, 2020-05-09 at 16:36 +0800, Chao Hao wrote:
+> 1. Start from mt6779, INVLDT_SEL move to offset=0x2c, so we add
+>    REG_MMU_INV_SEL_GEN2 definition and mt6779 uses it.
+> 2. Change PROTECT_PA_ALIGN from 128 byte to 256 byte.
+> 3. For REG_MMU_CTRL_REG register, we only need to change bit[2:0],
+>    others bits keep default value, ex: enable victim tlb.
+> 4. Add mt6779_data to support mm_iommu HW init.
 > 
-> The only difference is pci_assign_unassigned_bus_resources() was called
-> instead of pci_bus_size_bridges() and pci_bus_assign_resources(). This
-> should be the same.
-> 
-> Cc: Michal Simek <michal.simek@xilinx.com>
-> Signed-off-by: Rob Herring <robh@kernel.org>
+> Signed-off-by: Chao Hao <chao.hao@mediatek.com>
 > ---
->  drivers/pci/controller/pcie-xilinx.c | 13 +------------
->  1 file changed, 1 insertion(+), 12 deletions(-)
+>  drivers/iommu/mtk_iommu.c | 18 +++++++++++++++---
+>  drivers/iommu/mtk_iommu.h |  1 +
+>  2 files changed, 16 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/pci/controller/pcie-xilinx.c b/drivers/pci/controller/pcie-xilinx.c
-> index 98e55297815b..05547497f391 100644
-> --- a/drivers/pci/controller/pcie-xilinx.c
-> +++ b/drivers/pci/controller/pcie-xilinx.c
-> @@ -616,7 +616,6 @@ static int xilinx_pcie_probe(struct platform_device *pdev)
->  {
->  	struct device *dev = &pdev->dev;
->  	struct xilinx_pcie_port *port;
-> -	struct pci_bus *bus, *child;
->  	struct pci_host_bridge *bridge;
->  	int err;
+> diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+> index dc9ae944e712..34c4ffb77c73 100644
+> --- a/drivers/iommu/mtk_iommu.c
+> +++ b/drivers/iommu/mtk_iommu.c
+> @@ -37,6 +37,7 @@
+>  #define REG_MMU_INVLD_START_A			0x024
+>  #define REG_MMU_INVLD_END_A			0x028
 >  
-> @@ -663,17 +662,7 @@ static int xilinx_pcie_probe(struct platform_device *pdev)
->  	xilinx_pcie_msi_chip.dev = dev;
->  	bridge->msi = &xilinx_pcie_msi_chip;
->  #endif
-> -	err = pci_scan_root_bus_bridge(bridge);
-> -	if (err < 0)
-> -		return err;
-> -
-> -	bus = bridge->bus;
-> -
-> -	pci_assign_unassigned_bus_resources(bus);
-> -	list_for_each_entry(child, &bus->children, node)
-> -		pcie_bus_configure_settings(child);
-> -	pci_bus_add_devices(bus);
-> -	return 0;
-> +	return pci_host_probe(bridge);
->  }
+> +#define REG_MMU_INV_SEL_GEN2			0x02c
+>  #define REG_MMU_INV_SEL_GEN1			0x038
+
+Normally the register name comes from the CODA. In the lasted CODA,
+this is called "MMU_INVLDT_SEL". But it's same with the previous 0x38
+totally. Using _GEN1, _GEN2 is ok for me. Please add its coda name in
+the comment. like:
+
+#define REG_MMU_INV_SEL_GEN2		0x02c /* MMU_INVLDT_SEL */
+
+>  #define F_INVLD_EN0				BIT(0)
+>  #define F_INVLD_EN1				BIT(1)
+> @@ -97,7 +98,7 @@
+>  #define F_MMU_INT_ID_LARB_ID(a)			(((a) >> 7) & 0x7)
+>  #define F_MMU_INT_ID_PORT_ID(a)			(((a) >> 2) & 0x1f)
 >  
->  static const struct of_device_id xilinx_pcie_of_match[] = {
-> 
+> -#define MTK_PROTECT_PA_ALIGN			128
+> +#define MTK_PROTECT_PA_ALIGN			256
+>  
+>  /*
+>   * Get the local arbiter ID and the portid within the larb arbiter
+> @@ -554,11 +555,12 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
+>  		return ret;
+>  	}
+>  
+> +	regval = readl_relaxed(data->base + REG_MMU_CTRL_REG);
+>  	if (data->plat_data->m4u_plat == M4U_MT8173)
+> -		regval = F_MMU_PREFETCH_RT_REPLACE_MOD |
+> +		regval |= F_MMU_PREFETCH_RT_REPLACE_MOD |
 
+The default value is not ok for mt8173(Its bit9 is in_order_write_en, we
+could not use its default 1'b1). thus, Don't touch this line.
 
-Bharat: Please review.
+>  			 F_MMU_TF_PROT_TO_PROGRAM_ADDR_MT8173;
+>  	else
+> -		regval = F_MMU_TF_PROT_TO_PROGRAM_ADDR;
+> +		regval |= F_MMU_TF_PROT_TO_PROGRAM_ADDR;
+>  	writel_relaxed(regval, data->base + REG_MMU_CTRL_REG);
+>  
+>  	regval = F_L2_MULIT_HIT_EN |
+> @@ -804,6 +806,15 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+>  	.larbid_remap = {{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}},
+>  };
+>  
+> +static const struct mtk_iommu_plat_data mt6779_data = {
+> +	.m4u_plat = M4U_MT6779,
+> +	.larbid_remap = {{0}, {1}, {2}, {3}, {5}, {7, 8}, {10}, {9}},
+> +	.has_sub_comm = true,
+> +	.has_wr_len = true,
+> +	.has_misc_ctrl = true,
+> +	.inv_sel_reg = REG_MMU_INV_SEL_GEN2,
 
-Thanks,
-Michal
+align '=' a bit.
+
+> +};
+> +
+>  static const struct mtk_iommu_plat_data mt8173_data = {
+>  	.m4u_plat     = M4U_MT8173,
+>  	.has_4gb_mode = true,
+> @@ -822,6 +833,7 @@ static const struct mtk_iommu_plat_data mt8183_data = {
+>  
+>  static const struct of_device_id mtk_iommu_of_ids[] = {
+>  	{ .compatible = "mediatek,mt2712-m4u", .data = &mt2712_data},
+> +	{ .compatible = "mediatek,mt6779-m4u", .data = &mt6779_data},
+>  	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
+>  	{ .compatible = "mediatek,mt8183-m4u", .data = &mt8183_data},
+>  	{}
+> diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+> index 9971cedd72ea..fb79e710c8d9 100644
+> --- a/drivers/iommu/mtk_iommu.h
+> +++ b/drivers/iommu/mtk_iommu.h
+> @@ -31,6 +31,7 @@ struct mtk_iommu_suspend_reg {
+>  enum mtk_iommu_plat {
+>  	M4U_MT2701,
+>  	M4U_MT2712,
+> +	M4U_MT6779,
+>  	M4U_MT8173,
+>  	M4U_MT8183,
+>  };
 
 _______________________________________________
 linux-arm-kernel mailing list
