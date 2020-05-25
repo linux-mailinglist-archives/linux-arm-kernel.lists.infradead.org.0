@@ -2,76 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F22621E0BB7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 12:21:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 910C11E0BC4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 12:25:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZJA+Nx7BpvljfhjtxZ0byfZ5EZLykdR3ZgHLDzeAmHk=; b=b2Loj8R0+zowxIlqZB0NXlG/s
-	YtqaxO27VPoVNdCJ4VseVCSxUAhk6kSML8MfLcIbZaIldNmPMIkjwnon6VGK9TtW8pbhs2x1XOV62
-	05Hxbtzwf6aSH3fM31eXKgo8YQgngGZu0BkokPUgLRWGChn11pf90gbEWnImMNoetjD+Vq7ihHOk3
-	1UGdfIMFQglNdtR7/lOMayLFksWibeL4GU5xuu71ehCdPwNvvrnaam9Qono1QfRi0zwMlAH8GqOOB
-	MDZ09h/nL+bdfrp1v/fpUEy304YNrwqGWfd8Pq0NvauOu6y/dWYxHOdpU8lBSBbwluQhsOMkVSGjL
-	sx/9aGdlQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mbjh5huJN9VUhXH+uELxOQV2K8Y7a6wnfPtB4v3IGV8=; b=aARn9YOzRqyT6c
+	2pPw+4C3lSe/5KmOiX4PhXCTtEeMEbDuOlNzNARmqjhpjq0EaNskERUxebpH2LmgOoj6jyipUerOd
+	RYpzP4ZvoccHdseFM7hlrDsyuJG8OnX3cONeVz2lacmuRnwCFxB6yeIGG0FshGKIcD+QSr7ppb5XN
+	ypG4O98cJHLXTYvUILD0RNJgqraHSiS+rF568+CNuSzjFwADSTUaJMDrWY2BT8wpdks1IHLulGXbY
+	D6jDHj/+1PMzEOSsU46liwd9K1xrzuMotMSdAeFkV2l0fHg222mdHp2bo4Pwfl9WVsrHg66KQVGHZ
+	nYk8FZZktypOv58ojnSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdAEa-0003QE-Dr; Mon, 25 May 2020 10:21:28 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jdAId-0006Dr-H9; Mon, 25 May 2020 10:25:39 +0000
+Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdADs-0002tu-7v
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 10:20:48 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id B2E8E224C1;
- Mon, 25 May 2020 12:20:25 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1590402035;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=DaBHew0vxxdSiEHFxN0/9/jK/7HdYOSYbRfKY5g0cf4=;
- b=ea1g/amuAFXkMGyk8b01UJ7SrnTfSaaC0mLpqaKs3JWGpnTuJMhPFxCjrOrj5hGTBW8g1t
- mYu/alo7xbuCw9vBpCPuDGeqDHA+jdYpRLceu125oZwEWGtTah1zfrAEd2LfXjKMyULS3n
- 5CBwJkAWm0vxbZD5i+M/5MsdB4Z8DEI=
+ id 1jdAIQ-0005FS-8J
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 10:25:28 +0000
+Received: from pps.filterd (m0167089.ppops.net [127.0.0.1])
+ by mx0a-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04PANZsc030566; Mon, 25 May 2020 06:25:22 -0400
+Received: from nwd2mta3.analog.com ([137.71.173.56])
+ by mx0a-00128a01.pphosted.com with ESMTP id 3170r5x3md-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 25 May 2020 06:25:22 -0400
+Received: from SCSQMBX10.ad.analog.com (scsqmbx10.ad.analog.com [10.77.17.5])
+ by nwd2mta3.analog.com (8.14.7/8.14.7) with ESMTP id 04PAPKVD001109
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128
+ verify=FAIL); Mon, 25 May 2020 06:25:20 -0400
+Received: from SCSQCASHYB6.ad.analog.com (10.77.17.132) by
+ SCSQMBX10.ad.analog.com (10.77.17.5) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Mon, 25 May 2020 03:25:18 -0700
+Received: from SCSQMBX11.ad.analog.com (10.77.17.10) by
+ SCSQCASHYB6.ad.analog.com (10.77.17.132) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1779.2; Mon, 25 May 2020 03:25:08 -0700
+Received: from zeus.spd.analog.com (10.64.82.11) by SCSQMBX11.ad.analog.com
+ (10.77.17.10) with Microsoft SMTP Server id 15.1.1779.2 via Frontend
+ Transport; Mon, 25 May 2020 03:25:18 -0700
+Received: from saturn.ad.analog.com ([10.48.65.112])
+ by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 04PAPEd4014621;
+ Mon, 25 May 2020 06:25:14 -0400
+From: Alexandru Ardelean <alexandru.ardelean@analog.com>
+To: <linux-iio@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH] iio: at91_adc: remove usage of iio_priv_to_dev() helper
+Date: Mon, 25 May 2020 13:25:13 +0300
+Message-ID: <20200525102513.130664-1-alexandru.ardelean@analog.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Date: Mon, 25 May 2020 12:20:25 +0200
-From: Michael Walle <michael@walle.cc>
-To: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: Re: [PATCH v3 10/16] gpio: add a reusable generic gpio_chip using
- regmap
-In-Reply-To: <CAMpxmJXctc5cbrjSeJxa7DfmjiVsbyhqAbEKt-gtayKhQj0Cnw@mail.gmail.com>
-References: <20200423174543.17161-1-michael@walle.cc>
- <20200423174543.17161-11-michael@walle.cc>
- <CAMpxmJV3XTOxuoKeV-z2d75qWqHkgvV9419tfe3idDeKwoeoLA@mail.gmail.com>
- <75bff2917be1badd36af9f980cf59d2c@walle.cc>
- <CAMpxmJXctc5cbrjSeJxa7DfmjiVsbyhqAbEKt-gtayKhQj0Cnw@mail.gmail.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <951244aab2ff553a463f7431ba09bf27@walle.cc>
-X-Sender: michael@walle.cc
+X-ADIRoutedOnPrem: True
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-25_04:2020-05-25,
+ 2020-05-25 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ mlxlogscore=999 mlxscore=0
+ malwarescore=0 spamscore=0 clxscore=1015 cotscore=-2147483648 adultscore=0
+ lowpriorityscore=0 bulkscore=0 priorityscore=1501 impostorscore=0
+ phishscore=0 suspectscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2004280000 definitions=main-2005250080
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_032044_583277_5FA45EED 
-X-CRM114-Status: GOOD (  18.64  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200525_032526_325588_CE5BFA3B 
+X-CRM114-Status: GOOD (  14.87  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.135.77 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,91 +89,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Marc Zyngier <maz@kernel.org>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>,
- LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
- linux-gpio <linux-gpio@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
+ jic23@kernel.org, Alexandru Ardelean <alexandru.ardelean@analog.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gMjAyMC0wNS0yNSAxMTowNSwgc2NocmllYiBCYXJ0b3N6IEdvbGFzemV3c2tpOgo+IHd0Liwg
-MTIgbWFqIDIwMjAgbyAxNjo0MSBNaWNoYWVsIFdhbGxlIDxtaWNoYWVsQHdhbGxlLmNjPiBuYXBp
-c2HFgihhKToKPj4gCj4+ID4+ICsKPj4gPj4gK01PRFVMRV9BVVRIT1IoIk1pY2hhZWwgV2FsbGUg
-PG1pY2hhZWxAd2FsbGUuY2M+Iik7Cj4+ID4+ICtNT0RVTEVfREVTQ1JJUFRJT04oIkdQSU8gZ2Vu
-ZXJpYyByZWdtYXAgZHJpdmVyIGNvcmUiKTsKPj4gPj4gK01PRFVMRV9MSUNFTlNFKCJHUEwiKTsK
-Pj4gPj4gZGlmZiAtLWdpdCBhL2luY2x1ZGUvbGludXgvZ3Bpby1yZWdtYXAuaCBiL2luY2x1ZGUv
-bGludXgvZ3Bpby1yZWdtYXAuaAo+PiA+PiBuZXcgZmlsZSBtb2RlIDEwMDY0NAo+PiA+PiBpbmRl
-eCAwMDAwMDAwMDAwMDAuLmE4NjhjYmNkZTZlOQo+PiA+PiAtLS0gL2Rldi9udWxsCj4+ID4+ICsr
-KyBiL2luY2x1ZGUvbGludXgvZ3Bpby1yZWdtYXAuaAo+PiA+PiBAQCAtMCwwICsxLDY5IEBACj4+
-ID4+ICsvKiBTUERYLUxpY2Vuc2UtSWRlbnRpZmllcjogR1BMLTIuMC1vbmx5ICovCj4+ID4+ICsK
-Pj4gPj4gKyNpZm5kZWYgX0xJTlVYX0dQSU9fUkVHTUFQX0gKPj4gPj4gKyNkZWZpbmUgX0xJTlVY
-X0dQSU9fUkVHTUFQX0gKPj4gPj4gKwo+PiA+PiArc3RydWN0IGdwaW9fcmVnbWFwOwo+PiA+PiAr
-Cj4+ID4+ICsjZGVmaW5lIEdQSU9fUkVHTUFQX0FERFJfWkVSTyAoKHVuc2lnbmVkIGxvbmcpKC0x
-KSkKPj4gPj4gKyNkZWZpbmUgR1BJT19SRUdNQVBfQUREUihhZGRyKSAoKGFkZHIpID8gOiBHUElP
-X1JFR01BUF9BRERSX1pFUk8pCj4+ID4+ICsKPj4gPgo+PiA+IFdoYXQgaWYgdGhlIGFkZHIgaXMg
-YWN0dWFsbHkgMD8KPj4gCj4+IFRoZW4gdGhlIGRyaXZlciBoYXMgdG8gc2V0IEdQSU9fUkVHTUFQ
-X0FERFJfWkVSTyBvciB1c2UgdGhlIAo+PiBjb252ZW5pZW5jZQo+PiBtYWNybyBHUElPX1JFR01B
-UF9BRERSLgo+PiAKPj4gU28geW91IGNhbiBoYXZlCj4+IAo+PiAgICBzdHJ1Y3QgZ3Bpb19yZWdt
-YXBfY29uZmlnIGNvbmZpZyA9IHsgMCB9Owo+PiAgICBjb25maWcucmVnX2RhdF9iYXNlID0gMHgx
-MDsKPj4gICAgY29uZmlnLnJlZ19kaXJfb3V0X2Jhc2UgPSAweDIwOwo+PiAKPj4gb3IKPj4gCj4+
-ICAgIGNvbmZpZy5yZWdfZGF0X2Jhc2UgPSBHUElPX1JFR01BUF9BRERSX1pFUk87Cj4+IAo+PiBv
-ciBpZiB5b3UgY2FuJ3QgYmUgc3VyZSBpZiB0aGUgUkhTIHZhbHVlIG1pZ2h0IGJlIHplcm86Cj4+
-IAo+PiAgICBjb25maWcucmVnX2RhdF9iYXNlID0gR1BJT19SRUdNQVBfQUREUihyZWcpOwo+PiAK
-Pj4gCj4+ID4gTWF5YmUgZHJvcCBHUElPX1JFR01BUF9BRERSIGFuZCByZXF1aXJlIHVzZXJzIHRv
-IHNldCB1bnVzZWQgcmVnaXN0ZXJzCj4+ID4gdG8gR1BJT19SRUdNQVBfQUREUl9aRVJPPwo+PiAK
-Pj4gVGhhdHMgYmFkIGJlY2F1c2U6Cj4+ICAgKiB5b3UnZCBoYXZlIHRvIHNldCBwbGVudHkgb2Yg
-dW51c2VkIGJhc2UgcmVnaXN0ZXJzIGZvciBhIHNpbXBsZSAKPj4gZHJpdmVyCj4+ICAgKiBpZiB0
-aGVyZSB3aWxsIGJlIGFkZGl0aW9uYWwgcHJvcGVydGllcyBpbiB0aGUgZnV0dXJlLCB5b3UgaGF2
-ZSB0bwo+PiB0b3VjaAo+PiAgICAgYWxsIG90aGVyIGRyaXZlcnMsIGJlY2F1c2UgdGhleSBhcmUg
-aW5pdGlhbGl6ZWQgYXMgMCAoaWUuIHZhbGlkIAo+PiByZWcKPj4gMCkuCj4+IAo+PiA+PiArLyoq
-Cj4+ID4+ICsgKiBzdHJ1Y3QgZ3Bpb19yZWdtYXBfY29uZmlnIC0gRGVzY3JpcHRpb24gb2YgYSBn
-ZW5lcmljIHJlZ21hcAo+PiA+PiBncGlvX2NoaXAuCj4+ID4+ICsgKgo+PiA+PiArICogQHBhcmVu
-dDogICAgICAgICAgICBUaGUgcGFyZW50IGRldmljZQo+PiA+PiArICogQHJlZ21hcDogICAgICAg
-ICAgICBUaGUgcmVnbWFwIHVzZWQgdG8gYWNjZXNzIHRoZSByZWdpc3RlcnMKPj4gPj4gKyAqICAg
-ICAgICAgICAgICAgICAgICAgZ2l2ZW4sIHRoZSBuYW1lIG9mIHRoZSBkZXZpY2UgaXMgdXNlZAo+
-PiA+PiArICogQGxhYmVsOiAgICAgICAgICAgICAoT3B0aW9uYWwpIERlc2NyaXB0aXZlIG5hbWUg
-Zm9yIEdQSU8KPj4gPj4gY29udHJvbGxlci4KPj4gPj4gKyAqICAgICAgICAgICAgICAgICAgICAg
-SWYgbm90IGdpdmVuLCB0aGUgbmFtZSBvZiB0aGUgZGV2aWNlIGlzIHVzZWQuCj4+ID4+ICsgKiBA
-bmdwaW86ICAgICAgICAgICAgIE51bWJlciBvZiBHUElPcwo+PiA+PiArICogQHJlZ19kYXRfYmFz
-ZTogICAgICAoT3B0aW9uYWwpIChpbikgcmVnaXN0ZXIgYmFzZSBhZGRyZXNzCj4+ID4+ICsgKiBA
-cmVnX3NldF9iYXNlOiAgICAgIChPcHRpb25hbCkgc2V0IHJlZ2lzdGVyIGJhc2UgYWRkcmVzcwo+
-PiA+PiArICogQHJlZ19jbHJfYmFzZTogICAgICAoT3B0aW9uYWwpIGNsZWFyIHJlZ2lzdGVyIGJh
-c2UgYWRkcmVzcwo+PiA+PiArICogQHJlZ19kaXJfaW5fYmFzZTogICAoT3B0aW9uYWwpIG91dCBz
-ZXR0aW5nIHJlZ2lzdGVyIGJhc2UgYWRkcmVzcwo+PiA+PiArICogQHJlZ19kaXJfb3V0X2Jhc2U6
-ICAoT3B0aW9uYWwpIGluIHNldHRpbmcgcmVnaXN0ZXIgYmFzZSBhZGRyZXNzCj4+ID4KPj4gPiBU
-aGUgdHdvIGFib3ZlIGFyZSBpbnZlcnRlZCBJIHRoaW5rPwo+PiBnb29kIGNhdGNoLgo+PiAKPj4g
-PiBBbHNvOiB3aHkgdGhlIGxpbWl0YXRpb24gb2Ygb25seSBzdXBwb3J0aW5nIG9uZSBhdCBhIHRp
-bWU/Cj4+IAo+PiB0aGV5IHNob3VsZCBiZSBleGNsdXNpdmUsIGVpdGhlciB5b3UgaGF2ZSBhIHJl
-Z2lzdGVyIHdoZXJlIHlvdSBzZXQgdGhlCj4+IG91dHB1dCBiaXRzIHRvIG9uZSwgb3IgdGhlIGlu
-cHV0IGJpdHMuIE1heWJlIHRoaXMgbmVlZCBhIGJpdCBtb3JlCj4+IGNvbnRleHQKPj4gYWJvdmUu
-IGluIGdwaW8tbW1pby5jIHlvdSBjYW4gc2V0IGJvdGggYW5kIGJvdGggYXJlIHVzZWQgaW4KPj4g
-c2V0X2RpcmVjdGlvbigpLCBidXQgb25seSBvbmUgaXMgcmVhZCBpbiBnZXRfZGlyZWN0aW9uKCku
-Cj4+IAo+PiBUaGF0IGJlaW5nIHNhaWQsIEkgaGF2ZSBubyBzdHJvbmcgb3BpbmlvbiB3ZXRoZXIg
-dGhleSBzaG91bGQgYmUKPj4gZXhjbHVzaXZlCj4+IG9yIG5vdCwgYmVzaWRlcyB0aGUgc3ltbWV0
-cnkgb2Ygc2V0Xy9nZXRfZGlyZWN0aW9uKCkuCj4+IAo+PiAtbWljaGFlbAo+PiAKPiAKPiBTb3Jy
-eSBmb3IgdGhlIGxhdGUgcmVzcG9uc2UsIHlvdXIgY29tbWVudHMgbWFrZSBzZW5zZSB0byBtZS4g
-QXJlIHlvdQo+IGdvaW5nIHRvIHN1Ym1pdCBhIHY0IGJlZm9yZSB0aGUgdjUuOCBtZXJnZSB3aW5k
-b3c/CgpJJ20gY3VycmVudGx5IHN0dWNrIHdpdGggaG93IHRvIGhhbmRsZSB0aGUgTUZEIHBhcnQu
-IEllLiBSb2IgZG9lc24ndApzZWVtIHRvIGxpa2UgdGhlIGxvZ2ljaWFsIGRldmljZSBudW1iZXJp
-bmcgLSBvciBhdCBsZWFzdCB0aGVyZSB3YXNuJ3QKYW4gYW5zd2VyIHRvIHRoYXQgb25lIGFueW1v
-cmUsIHNlZSBwYXRjaCA1LzE2LgoKSWYgeW91IGxpa2UgSSBjb3VsZCBzdWJtaXQgdGhpcyBwYXRj
-aCBvbiBpdHMgb3duLiBCdXQgdGhlbiB0aGVyZQp3b3VsZG4ndCBiZSBhIHVzZXIgZm9yIGl0LgoK
-LW1pY2hhZWwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+We may want to get rid of the iio_priv_to_dev() helper. The reason is that
+we will hide some of the members of the iio_dev structure (to prevent
+drivers from accessing them directly), and that will also mean hiding the
+implementation of the iio_priv_to_dev() helper inside the IIO core.
+
+Hiding the implementation of iio_priv_to_dev() implies that some fast-paths
+may not be fast anymore, so a general idea is to try to get rid of the
+iio_priv_to_dev() altogether.
+The iio_priv() helper won't be affected by the rework, as the iio_dev
+struct will keep a reference to the private information.
+
+For this driver, not using iio_priv_to_dev(), means reworking some paths to
+pass the iio device and using iio_priv() to access the private information.
+
+Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
+---
+ drivers/iio/adc/at91_adc.c | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/iio/adc/at91_adc.c b/drivers/iio/adc/at91_adc.c
+index 0368b6dc6d60..896af58e88bc 100644
+--- a/drivers/iio/adc/at91_adc.c
++++ b/drivers/iio/adc/at91_adc.c
+@@ -287,13 +287,13 @@ static void handle_adc_eoc_trigger(int irq, struct iio_dev *idev)
+ 	}
+ }
+ 
+-static int at91_ts_sample(struct at91_adc_state *st)
++static int at91_ts_sample(struct iio_dev *idev)
+ {
++	struct at91_adc_state *st = iio_priv(idev);
+ 	unsigned int xscale, yscale, reg, z1, z2;
+ 	unsigned int x, y, pres, xpos, ypos;
+ 	unsigned int rxp = 1;
+ 	unsigned int factor = 1000;
+-	struct iio_dev *idev = iio_priv_to_dev(st);
+ 
+ 	unsigned int xyz_mask_bits = st->res;
+ 	unsigned int xyz_mask = (1 << xyz_mask_bits) - 1;
+@@ -449,7 +449,7 @@ static irqreturn_t at91_adc_9x5_interrupt(int irq, void *private)
+ 
+ 		if (status & AT91_ADC_ISR_PENS) {
+ 			/* validate data by pen contact */
+-			at91_ts_sample(st);
++			at91_ts_sample(idev);
+ 		} else {
+ 			/* triggered by event that is no pen contact, just read
+ 			 * them to clean the interrupt and discard all.
+@@ -737,10 +737,10 @@ static int at91_adc_read_raw(struct iio_dev *idev,
+ 	return -EINVAL;
+ }
+ 
+-static int at91_adc_of_get_resolution(struct at91_adc_state *st,
++static int at91_adc_of_get_resolution(struct iio_dev *idev,
+ 				      struct platform_device *pdev)
+ {
+-	struct iio_dev *idev = iio_priv_to_dev(st);
++	struct at91_adc_state *st = iio_priv(idev);
+ 	struct device_node *np = pdev->dev.of_node;
+ 	int count, i, ret = 0;
+ 	char *res_name, *s;
+@@ -866,10 +866,10 @@ static int at91_adc_probe_dt_ts(struct device_node *node,
+ 	}
+ }
+ 
+-static int at91_adc_probe_dt(struct at91_adc_state *st,
++static int at91_adc_probe_dt(struct iio_dev *idev,
+ 			     struct platform_device *pdev)
+ {
+-	struct iio_dev *idev = iio_priv_to_dev(st);
++	struct at91_adc_state *st = iio_priv(idev);
+ 	struct device_node *node = pdev->dev.of_node;
+ 	struct device_node *trig_node;
+ 	int i = 0, ret;
+@@ -910,7 +910,7 @@ static int at91_adc_probe_dt(struct at91_adc_state *st,
+ 	}
+ 	st->vref_mv = prop;
+ 
+-	ret = at91_adc_of_get_resolution(st, pdev);
++	ret = at91_adc_of_get_resolution(idev, pdev);
+ 	if (ret)
+ 		goto error_ret;
+ 
+@@ -1010,9 +1010,9 @@ static void atmel_ts_close(struct input_dev *dev)
+ 		at91_adc_writel(st, AT91_ADC_IDR, AT91RL_ADC_IER_PEN);
+ }
+ 
+-static int at91_ts_hw_init(struct at91_adc_state *st, u32 adc_clk_khz)
++static int at91_ts_hw_init(struct iio_dev *idev, u32 adc_clk_khz)
+ {
+-	struct iio_dev *idev = iio_priv_to_dev(st);
++	struct at91_adc_state *st = iio_priv(idev);
+ 	u32 reg = 0;
+ 	u32 tssctim = 0;
+ 	int i = 0;
+@@ -1085,11 +1085,11 @@ static int at91_ts_hw_init(struct at91_adc_state *st, u32 adc_clk_khz)
+ 	return 0;
+ }
+ 
+-static int at91_ts_register(struct at91_adc_state *st,
++static int at91_ts_register(struct iio_dev *idev,
+ 		struct platform_device *pdev)
+ {
++	struct at91_adc_state *st = iio_priv(idev);
+ 	struct input_dev *input;
+-	struct iio_dev *idev = iio_priv_to_dev(st);
+ 	int ret;
+ 
+ 	input = input_allocate_device();
+@@ -1161,7 +1161,7 @@ static int at91_adc_probe(struct platform_device *pdev)
+ 	st = iio_priv(idev);
+ 
+ 	if (pdev->dev.of_node)
+-		ret = at91_adc_probe_dt(st, pdev);
++		ret = at91_adc_probe_dt(idev, pdev);
+ 	else
+ 		ret = at91_adc_probe_pdata(st, pdev);
+ 
+@@ -1301,11 +1301,11 @@ static int at91_adc_probe(struct platform_device *pdev)
+ 			goto error_disable_adc_clk;
+ 		}
+ 	} else {
+-		ret = at91_ts_register(st, pdev);
++		ret = at91_ts_register(idev, pdev);
+ 		if (ret)
+ 			goto error_disable_adc_clk;
+ 
+-		at91_ts_hw_init(st, adc_clk_khz);
++		at91_ts_hw_init(idev, adc_clk_khz);
+ 	}
+ 
+ 	ret = iio_device_register(idev);
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
