@@ -2,54 +2,171 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32DC61E0911
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 10:40:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8C971E0917
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 10:40:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TxSaCqRcqCzNHEY7+kjwTbcahISlUDZIQlVobJNL0TA=; b=hCxjz4dVUSEqgE
-	gqFUzsMf9MIrjoLnxKgerDzjduj7Q3/mINAQEzlsnQr11VVhGcM588zW3Dm+xxpXFCCXx47F7GUyS
-	T+blY9CW1ln3N9TLpiHYoQOBHPtbhgJJWOCfaiCp05iAELW/TrRWZS7Mq96oceAI+r2W453Id77CP
-	F9QbZggbmCNr/IJFY7ar9LnfUkUQX9/9jL2S07XXhN/SohDAZsP6iHsfI9moCGgInKrmF1sZnV4rA
-	Ser+fxQMieWFBlUxBhyD1NWshq7scU3ylhE8asNJso+ob5Z9G7llWlbXlE5+iDCFtUeC8E5vMXEyH
-	c4y28NzKx7/ZGWCvmXmA==;
+	List-Owner; bh=CKydlBLnedvPGvV7rp+unS5YT8cXuoPCYr3VwgsefHo=; b=W9nBM5uFiHGNiv
+	mkRPlcy0vNub2oHRo8eu+MHchEDd3tBFYBr1cnbqocyvDx6aVT6eCOlYBObkfKHd5wAgkQXdic906
+	dQ25dGz41+yhdu6KY/2l/oq0jlrYhM4FAP3gSD6ZmO+G7bFeipKEEtfKBBS4mOtJiFuBQuTYI8z5T
+	jPMmrWn91e+xbLhiQVKUsCzHQt97m+6+PQoEgmxATF+cLQu5SxtdrbQrNSS0vtelj4YvneDEyts/3
+	mX6Bzd/gCQckc4GoIALpoLHfl+lFqKmAorHqC8He6v8h/dQiSr+sZuc/OUi99i25BOGcyfJaLBIo/
+	0REuNKceXHmEmafufnkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd8eJ-0005ao-9N; Mon, 25 May 2020 08:39:55 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jd8eu-0007S4-0s; Mon, 25 May 2020 08:40:32 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd8dw-0005Sp-Gv; Mon, 25 May 2020 08:39:35 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: gtucker) with ESMTPSA id 6E3DF2A0379
-Subject: Re: next/master bisection: baseline.login on meson-sm1-sei610
-To: Felipe Balbi <balbi@kernel.org>, Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <5ec9617c.1c69fb81.b979a.bf47@mx.google.com>
-From: Guillaume Tucker <guillaume.tucker@collabora.com>
-Message-ID: <ffe2c64c-62ed-9b59-3754-7ede0f0203be@collabora.com>
-Date: Mon, 25 May 2020 09:39:26 +0100
+ id 1jd8eL-0005no-HH; Mon, 25 May 2020 08:40:10 +0000
+Received: by mail-wm1-x342.google.com with SMTP id f5so7688771wmh.2;
+ Mon, 25 May 2020 01:39:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=FgCVbDd/rHUj4UYDvQc/HOrenT5Dxta9RUiD0g0ktS0=;
+ b=q2ulrqsDhdwpio/ci2FTD77FCrElQXRl/p50G+vjeAt4xxu4YTFhB0zxbZHSoh1ymG
+ YzB0GgEIQgiZYw2MhOk1EzAEBJe43sMr6+HuEGqdXhdrFyCpcbkCVMVMIYRajOvANT1T
+ GIgGVVTWbsjYGAutf1Y+5HjFFi3A+PZJ24uAb59L483PrmQuExVXkzWY6tMT4G2yhcQ3
+ JjBgEvG1u/lYzzWG4ZcLz34lXGyMFyThvdxblYQkqKl5npPLSGKBReQ9u+JKd3+UGAZm
+ SnJsqY2sCews9tNbVLvFDckHJdLoSDgDZ19WMrR9jK2qWiqk0uyyHRD5p2CYlsCAjBqG
+ PDVQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=FgCVbDd/rHUj4UYDvQc/HOrenT5Dxta9RUiD0g0ktS0=;
+ b=Rz/FWdiodzOTAvVB61Ra0e0uy3U/8Zrb1qjaq/1EBvc3CaBRBenkwGoqYbpS8p6lrO
+ MkzQ3y3suEvilbLCpJTEfTGQUusADIsIVHkBbfXYoDxd9KC+xUMvt9kBIGimdWb1v4tk
+ Rh3PxjI5qU8/qo53D/61yR5VRANJ+hprPXXw41XS+6Ty9IRa2U5UP5lFx7fvHBn5k+mV
+ 1/qY+q/Fc7GNAuk+ELd1NDIAjGb4n+25qqUE32Vnsg9QV+gL0wgA4KBMNtPLr6kmuOxq
+ mC11OMWYgrdPyrJ6QN+Tay2hoBaZ1ZISC7Yar8Wh09RlpvcgncRZy8yn20MDyDM57qTq
+ 9QUw==
+X-Gm-Message-State: AOAM531kc1YpCI9ZbY0LPk6a9v08ON+K7TZo3VdVBbO+XHtq/pS59ZMm
+ AfaKTbuzD9dnTAVgE788qlU=
+X-Google-Smtp-Source: ABdhPJziZNMsGJHaqi+mGUla1Vkrz+NpPEesiM4d39ge5LQpr0zcMFCCsLjsSQB3yHOh+XZx7sO1Wg==
+X-Received: by 2002:a1c:80d4:: with SMTP id b203mr4017283wmd.138.1590395995882; 
+ Mon, 25 May 2020 01:39:55 -0700 (PDT)
+Received: from ziggy.stardust ([213.195.113.243])
+ by smtp.gmail.com with ESMTPSA id t129sm19803531wmg.27.2020.05.25.01.39.54
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 25 May 2020 01:39:55 -0700 (PDT)
+Subject: Re: [PATCH v5 09/13] soc: mediatek: cmdq: add write_s value function
+To: Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>
+References: <1583664775-19382-1-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <1583664775-19382-10-git-send-email-dennis-yc.hsieh@mediatek.com>
+ <f9fd9ea8-f706-ed4a-4c83-c53ad092035c@gmail.com>
+ <1590341462.31286.19.camel@mtkswgap22>
+ <eb604637-28f0-fa8f-ce4b-3e87f6c944ad@gmail.com>
+ <1590373621.31522.7.camel@mtkswgap22>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <68535bf6-9824-5077-4811-374c893cdc03@gmail.com>
+Date: Mon, 25 May 2020 10:39:54 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <5ec9617c.1c69fb81.b979a.bf47@mx.google.com>
+In-Reply-To: <1590373621.31522.7.camel@mtkswgap22>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_013932_827019_135510EC 
-X-CRM114-Status: GOOD (  23.89  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200525_013957_608815_8ADC75F4 
+X-CRM114-Status: GOOD (  22.58  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [matthias.bgg[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,456 +178,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernelci-results@groups.io, Kevin Hilman <khilman@baylibre.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-next@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, wsd_upstream@mediatek.com,
+ David Airlie <airlied@linux.ie>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ HS Liao <hs.liao@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Houlong Wei <houlong.wei@mediatek.com>,
+ Daniel Vetter <daniel@ffwll.ch>, CK Hu <ck.hu@mediatek.com>,
+ Bibby Hsieh <bibby.hsieh@mediatek.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Please see the bisection report below about a kernel Oops.
-
-Reports aren't automatically sent to the public while we're
-trialing new bisection features on kernelci.org but this one
-looks valid.
-
-Guillaume
 
 
-On 23/05/2020 18:46, kernelci.org bot wrote:
-> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-> * This automated bisection report was sent to you on the basis  *
-> * that you may be involved with the breaking commit it has      *
-> * found.  No manual investigation has been done to verify it,   *
-> * and the root cause of the problem may be somewhere else.      *
-> *                                                               *
-> * If you do send a fix, please include this trailer:            *
-> *   Reported-by: "kernelci.org bot" <bot@kernelci.org>          *
-> *                                                               *
-> * Hope this helps!                                              *
-> * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+On 25/05/2020 04:27, Dennis-YC Hsieh wrote:
 > 
-> next/master bisection: baseline.login on meson-sm1-sei610
+> On Sun, 2020-05-24 at 20:13 +0200, Matthias Brugger wrote:
+>>
+>> On 24/05/2020 19:31, Dennis-YC Hsieh wrote:
+>>> Hi Matthias,
+>>>
+>>> Thanks for your comment.
+>>>
+>>> On Sat, 2020-05-16 at 20:20 +0200, Matthias Brugger wrote:
+>>>>
+>>>> On 08/03/2020 11:52, Dennis YC Hsieh wrote:
+>>>>> add write_s function in cmdq helper functions which
+>>>>> writes a constant value to address with large dma
+>>>>> access support.
+>>>>>
+>>>>> Signed-off-by: Dennis YC Hsieh <dennis-yc.hsieh@mediatek.com>
+>>>>> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+>>>>> ---
+>>>>>  drivers/soc/mediatek/mtk-cmdq-helper.c | 26 ++++++++++++++++++++++++++
+>>>>>  include/linux/soc/mediatek/mtk-cmdq.h  | 14 ++++++++++++++
+>>>>>  2 files changed, 40 insertions(+)
+>>>>>
+>>>>> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+>>>>> index 03c129230cd7..a9ebbabb7439 100644
+>>>>> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+>>>>> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+>>>>> @@ -269,6 +269,32 @@ int cmdq_pkt_write_s(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
+>>>>>  }
+>>>>>  EXPORT_SYMBOL(cmdq_pkt_write_s);
+>>>>>  
+>>>>> +int cmdq_pkt_write_s_value(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
+>>>>> +			   u16 addr_low, u32 value, u32 mask)
+>>>>> +{
+>>>>> +	struct cmdq_instruction inst = { {0} };
+>>>>> +	int err;
+>>>>> +
+>>>>> +	if (mask != U32_MAX) {
+>>>>> +		inst.op = CMDQ_CODE_MASK;
+>>>>> +		inst.mask = ~mask;
+>>>>> +		err = cmdq_pkt_append_command(pkt, inst);
+>>>>> +		if (err < 0)
+>>>>> +			return err;
+>>>>> +
+>>>>> +		inst.op = CMDQ_CODE_WRITE_S_MASK;
+>>>>> +	} else {
+>>>>> +		inst.op = CMDQ_CODE_WRITE_S;
+>>>>> +	}
+>>>>> +
+>>>>> +	inst.sop = high_addr_reg_idx;
+>>>>
+>>>> Writing u16 value in a 5 bit wide variable?
+>>>
+>>> We need only 5 bits in this case. I'll change high_addr_reg_idx
+>>> parameter to u8.
+>>>
+>>
+>> Ok, please make sure to mask the value, so that it's explicit in the code that
+>> we only use the lowest 5 bits of high_addr_reg_idx.
 > 
-> Summary:
->   Start:      c11d28ab4a691 Add linux-next specific files for 20200522
->   Plain log:  https://storage.kernelci.org/next/master/next-20200522/arm64/defconfig/gcc-8/lab-baylibre/baseline-meson-sm1-sei610.txt
->   HTML log:   https://storage.kernelci.org/next/master/next-20200522/arm64/defconfig/gcc-8/lab-baylibre/baseline-meson-sm1-sei610.html
->   Result:     013af227f58a9 usb: dwc3: meson-g12a: handle the phy and glue registers separately
-> 
-> Checks:
->   revert:     PASS
->   verify:     PASS
-> 
-> Parameters:
->   Tree:       next
->   URL:        https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
->   Branch:     master
->   Target:     meson-sm1-sei610
->   CPU arch:   arm64
->   Lab:        lab-baylibre
->   Compiler:   gcc-8
->   Config:     defconfig
->   Test case:  baseline.login
-> 
-> Breaking commit found:
-> 
-> -------------------------------------------------------------------------------
-> commit 013af227f58a97ffc61b99301f8f4448dc7e7f55
-> Author: Neil Armstrong <narmstrong@baylibre.com>
-> Date:   Thu Mar 26 14:44:55 2020 +0100
-> 
->     usb: dwc3: meson-g12a: handle the phy and glue registers separately
->     
->     On the Amlogic GXL/GXM SoCs, only the USB control registers are available,
->     the PHY mode being handled in the PHY registers.
->     
->     Thus, handle the PHY mode registers in separate regmaps and prepare
->     support for Amlogic GXL/GXM SoCs by moving the regmap setup in a callback
->     set in the SoC match data.
->     
->     Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
->     Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
->     Signed-off-by: Felipe Balbi <balbi@kernel.org>
-> 
-> diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
-> index f49c9e2665376..d7eff4d7c5fe6 100644
-> --- a/drivers/usb/dwc3/dwc3-meson-g12a.c
-> +++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
-> @@ -30,7 +30,7 @@
->  #include <linux/usb/role.h>
->  #include <linux/regulator/consumer.h>
->  
-> -/* USB2 Ports Control Registers */
-> +/* USB2 Ports Control Registers, offsets are per-port */
->  
->  #define U2P_REG_SIZE						0x20
->  
-> @@ -50,14 +50,16 @@
->  
->  /* USB Glue Control Registers */
->  
-> -#define USB_R0							0x80
-> +#define G12A_GLUE_OFFSET					0x80
-> +
-> +#define USB_R0							0x00
->  	#define USB_R0_P30_LANE0_TX2RX_LOOPBACK			BIT(17)
->  	#define USB_R0_P30_LANE0_EXT_PCLK_REQ			BIT(18)
->  	#define USB_R0_P30_PCS_RX_LOS_MASK_VAL_MASK		GENMASK(28, 19)
->  	#define USB_R0_U2D_SS_SCALEDOWN_MODE_MASK		GENMASK(30, 29)
->  	#define USB_R0_U2D_ACT					BIT(31)
->  
-> -#define USB_R1							0x84
-> +#define USB_R1							0x04
->  	#define USB_R1_U3H_BIGENDIAN_GS				BIT(0)
->  	#define USB_R1_U3H_PME_ENABLE				BIT(1)
->  	#define USB_R1_U3H_HUB_PORT_OVERCURRENT_MASK		GENMASK(4, 2)
-> @@ -69,23 +71,23 @@
->  	#define USB_R1_U3H_FLADJ_30MHZ_REG_MASK			GENMASK(24, 19)
->  	#define USB_R1_P30_PCS_TX_SWING_FULL_MASK		GENMASK(31, 25)
->  
-> -#define USB_R2							0x88
-> +#define USB_R2							0x08
->  	#define USB_R2_P30_PCS_TX_DEEMPH_3P5DB_MASK		GENMASK(25, 20)
->  	#define USB_R2_P30_PCS_TX_DEEMPH_6DB_MASK		GENMASK(31, 26)
->  
-> -#define USB_R3							0x8c
-> +#define USB_R3							0x0c
->  	#define USB_R3_P30_SSC_ENABLE				BIT(0)
->  	#define USB_R3_P30_SSC_RANGE_MASK			GENMASK(3, 1)
->  	#define USB_R3_P30_SSC_REF_CLK_SEL_MASK			GENMASK(12, 4)
->  	#define USB_R3_P30_REF_SSP_EN				BIT(13)
->  
-> -#define USB_R4							0x90
-> +#define USB_R4							0x10
->  	#define USB_R4_P21_PORT_RESET_0				BIT(0)
->  	#define USB_R4_P21_SLEEP_M0				BIT(1)
->  	#define USB_R4_MEM_PD_MASK				GENMASK(3, 2)
->  	#define USB_R4_P21_ONLY					BIT(4)
->  
-> -#define USB_R5							0x94
-> +#define USB_R5							0x14
->  	#define USB_R5_ID_DIG_SYNC				BIT(0)
->  	#define USB_R5_ID_DIG_REG				BIT(1)
->  	#define USB_R5_ID_DIG_CFG_MASK				GENMASK(3, 2)
-> @@ -125,20 +127,27 @@ static const char *meson_a1_phy_names[] = {
->  	"usb2-phy0", "usb2-phy1"
->  };
->  
-> +struct dwc3_meson_g12a;
-> +
->  struct dwc3_meson_g12a_drvdata {
->  	bool otg_switch_supported;
->  	struct clk_bulk_data *clks;
->  	int num_clks;
->  	const char **phy_names;
->  	int num_phys;
-> +	int (*setup_regmaps)(struct dwc3_meson_g12a *priv, void __iomem *base);
->  };
->  
-> +static int dwc3_meson_g12a_setup_regmaps(struct dwc3_meson_g12a *priv,
-> +					 void __iomem *base);
-> +
->  static struct dwc3_meson_g12a_drvdata g12a_drvdata = {
->  	.otg_switch_supported = true,
->  	.clks = meson_g12a_clocks,
->  	.num_clks = ARRAY_SIZE(meson_g12a_clocks),
->  	.phy_names = meson_g12a_phy_names,
->  	.num_phys = ARRAY_SIZE(meson_g12a_phy_names),
-> +	.setup_regmaps = dwc3_meson_g12a_setup_regmaps,
->  };
->  
->  static struct dwc3_meson_g12a_drvdata a1_drvdata = {
-> @@ -147,11 +156,13 @@ static struct dwc3_meson_g12a_drvdata a1_drvdata = {
->  	.num_clks = ARRAY_SIZE(meson_a1_clocks),
->  	.phy_names = meson_a1_phy_names,
->  	.num_phys = ARRAY_SIZE(meson_a1_phy_names),
-> +	.setup_regmaps = dwc3_meson_g12a_setup_regmaps,
->  };
->  
->  struct dwc3_meson_g12a {
->  	struct device		*dev;
-> -	struct regmap		*regmap;
-> +	struct regmap		*u2p_regmap[PHY_COUNT];
-> +	struct regmap		*usb_glue_regmap;
->  	struct reset_control	*reset;
->  	struct phy		*phys[PHY_COUNT];
->  	enum usb_dr_mode	otg_mode;
-> @@ -168,11 +179,11 @@ static void dwc3_meson_g12a_usb2_set_mode(struct dwc3_meson_g12a *priv,
->  					  int i, enum phy_mode mode)
->  {
->  	if (mode == PHY_MODE_USB_HOST)
-> -		regmap_update_bits(priv->regmap, U2P_R0 + (U2P_REG_SIZE * i),
-> +		regmap_update_bits(priv->u2p_regmap[i], U2P_R0,
->  				U2P_R0_HOST_DEVICE,
->  				U2P_R0_HOST_DEVICE);
->  	else
-> -		regmap_update_bits(priv->regmap, U2P_R0 + (U2P_REG_SIZE * i),
-> +		regmap_update_bits(priv->u2p_regmap[i], U2P_R0,
->  				U2P_R0_HOST_DEVICE, 0);
->  }
->  
-> @@ -192,13 +203,12 @@ static int dwc3_meson_g12a_usb2_init(struct dwc3_meson_g12a *priv)
->  		if (!strstr(priv->drvdata->phy_names[i], "usb2"))
->  			continue;
->  
-> -		regmap_update_bits(priv->regmap, U2P_R0 + (U2P_REG_SIZE * i),
-> +		regmap_update_bits(priv->u2p_regmap[i], U2P_R0,
->  				   U2P_R0_POWER_ON_RESET,
->  				   U2P_R0_POWER_ON_RESET);
->  
->  		if (priv->drvdata->otg_switch_supported && i == USB2_OTG_PHY) {
-> -			regmap_update_bits(priv->regmap,
-> -				U2P_R0 + (U2P_REG_SIZE * i),
-> +			regmap_update_bits(priv->u2p_regmap[i], U2P_R0,
->  				U2P_R0_ID_PULLUP | U2P_R0_DRV_VBUS,
->  				U2P_R0_ID_PULLUP | U2P_R0_DRV_VBUS);
->  
-> @@ -208,7 +218,7 @@ static int dwc3_meson_g12a_usb2_init(struct dwc3_meson_g12a *priv)
->  			dwc3_meson_g12a_usb2_set_mode(priv, i,
->  						      PHY_MODE_USB_HOST);
->  
-> -		regmap_update_bits(priv->regmap, U2P_R0 + (U2P_REG_SIZE * i),
-> +		regmap_update_bits(priv->u2p_regmap[i], U2P_R0,
->  				   U2P_R0_POWER_ON_RESET, 0);
->  	}
->  
-> @@ -217,7 +227,7 @@ static int dwc3_meson_g12a_usb2_init(struct dwc3_meson_g12a *priv)
->  
->  static void dwc3_meson_g12a_usb3_init(struct dwc3_meson_g12a *priv)
->  {
-> -	regmap_update_bits(priv->regmap, USB_R3,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R3,
->  			USB_R3_P30_SSC_RANGE_MASK |
->  			USB_R3_P30_REF_SSP_EN,
->  			USB_R3_P30_SSC_ENABLE |
-> @@ -225,21 +235,21 @@ static void dwc3_meson_g12a_usb3_init(struct dwc3_meson_g12a *priv)
->  			USB_R3_P30_REF_SSP_EN);
->  	udelay(2);
->  
-> -	regmap_update_bits(priv->regmap, USB_R2,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R2,
->  			USB_R2_P30_PCS_TX_DEEMPH_3P5DB_MASK,
->  			FIELD_PREP(USB_R2_P30_PCS_TX_DEEMPH_3P5DB_MASK, 0x15));
->  
-> -	regmap_update_bits(priv->regmap, USB_R2,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R2,
->  			USB_R2_P30_PCS_TX_DEEMPH_6DB_MASK,
->  			FIELD_PREP(USB_R2_P30_PCS_TX_DEEMPH_6DB_MASK, 0x20));
->  
->  	udelay(2);
->  
-> -	regmap_update_bits(priv->regmap, USB_R1,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R1,
->  			USB_R1_U3H_HOST_PORT_POWER_CONTROL_PRESENT,
->  			USB_R1_U3H_HOST_PORT_POWER_CONTROL_PRESENT);
->  
-> -	regmap_update_bits(priv->regmap, USB_R1,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R1,
->  			USB_R1_P30_PCS_TX_SWING_FULL_MASK,
->  			FIELD_PREP(USB_R1_P30_PCS_TX_SWING_FULL_MASK, 127));
->  }
-> @@ -247,16 +257,16 @@ static void dwc3_meson_g12a_usb3_init(struct dwc3_meson_g12a *priv)
->  static void dwc3_meson_g12a_usb_otg_apply_mode(struct dwc3_meson_g12a *priv)
->  {
->  	if (priv->otg_phy_mode == PHY_MODE_USB_DEVICE) {
-> -		regmap_update_bits(priv->regmap, USB_R0,
-> +		regmap_update_bits(priv->usb_glue_regmap, USB_R0,
->  				USB_R0_U2D_ACT, USB_R0_U2D_ACT);
-> -		regmap_update_bits(priv->regmap, USB_R0,
-> +		regmap_update_bits(priv->usb_glue_regmap, USB_R0,
->  				USB_R0_U2D_SS_SCALEDOWN_MODE_MASK, 0);
-> -		regmap_update_bits(priv->regmap, USB_R4,
-> +		regmap_update_bits(priv->usb_glue_regmap, USB_R4,
->  				USB_R4_P21_SLEEP_M0, USB_R4_P21_SLEEP_M0);
->  	} else {
-> -		regmap_update_bits(priv->regmap, USB_R0,
-> +		regmap_update_bits(priv->usb_glue_regmap, USB_R0,
->  				USB_R0_U2D_ACT, 0);
-> -		regmap_update_bits(priv->regmap, USB_R4,
-> +		regmap_update_bits(priv->usb_glue_regmap, USB_R4,
->  				USB_R4_P21_SLEEP_M0, 0);
->  	}
->  }
-> @@ -269,17 +279,17 @@ static int dwc3_meson_g12a_usb_init(struct dwc3_meson_g12a *priv)
->  	if (ret)
->  		return ret;
->  
-> -	regmap_update_bits(priv->regmap, USB_R1,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R1,
->  			USB_R1_U3H_FLADJ_30MHZ_REG_MASK,
->  			FIELD_PREP(USB_R1_U3H_FLADJ_30MHZ_REG_MASK, 0x20));
->  
-> -	regmap_update_bits(priv->regmap, USB_R5,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R5,
->  			USB_R5_ID_DIG_EN_0,
->  			USB_R5_ID_DIG_EN_0);
-> -	regmap_update_bits(priv->regmap, USB_R5,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R5,
->  			USB_R5_ID_DIG_EN_1,
->  			USB_R5_ID_DIG_EN_1);
-> -	regmap_update_bits(priv->regmap, USB_R5,
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R5,
->  			USB_R5_ID_DIG_TH_MASK,
->  			FIELD_PREP(USB_R5_ID_DIG_TH_MASK, 0xff));
->  
-> @@ -292,7 +302,8 @@ static int dwc3_meson_g12a_usb_init(struct dwc3_meson_g12a *priv)
->  	return 0;
->  }
->  
-> -static const struct regmap_config phy_meson_g12a_usb3_regmap_conf = {
-> +static const struct regmap_config phy_meson_g12a_usb_glue_regmap_conf = {
-> +	.name = "usb-glue",
->  	.reg_bits = 8,
->  	.val_bits = 32,
->  	.reg_stride = 4,
-> @@ -329,7 +340,7 @@ static enum phy_mode dwc3_meson_g12a_get_id(struct dwc3_meson_g12a *priv)
->  {
->  	u32 reg;
->  
-> -	regmap_read(priv->regmap, USB_R5, &reg);
-> +	regmap_read(priv->usb_glue_regmap, USB_R5, &reg);
->  
->  	if (reg & (USB_R5_ID_DIG_SYNC | USB_R5_ID_DIG_REG))
->  		return PHY_MODE_USB_DEVICE;
-> @@ -405,7 +416,8 @@ static irqreturn_t dwc3_meson_g12a_irq_thread(int irq, void *data)
->  			dev_warn(priv->dev, "Failed to switch OTG mode\n");
->  	}
->  
-> -	regmap_update_bits(priv->regmap, USB_R5, USB_R5_ID_DIG_IRQ, 0);
-> +	regmap_update_bits(priv->usb_glue_regmap, USB_R5,
-> +			   USB_R5_ID_DIG_IRQ, 0);
->  
->  	return IRQ_HANDLED;
->  }
-> @@ -440,7 +452,7 @@ static int dwc3_meson_g12a_otg_init(struct platform_device *pdev,
->  
->  	if (priv->otg_mode == USB_DR_MODE_OTG) {
->  		/* Ack irq before registering */
-> -		regmap_update_bits(priv->regmap, USB_R5,
-> +		regmap_update_bits(priv->usb_glue_regmap, USB_R5,
->  				   USB_R5_ID_DIG_IRQ, 0);
->  
->  		irq = platform_get_irq(pdev, 0);
-> @@ -476,6 +488,41 @@ static int dwc3_meson_g12a_otg_init(struct platform_device *pdev,
->  	return 0;
->  }
->  
-> +static int dwc3_meson_g12a_setup_regmaps(struct dwc3_meson_g12a *priv,
-> +					 void __iomem *base)
-> +{
-> +	int i;
-> +
-> +	priv->usb_glue_regmap = devm_regmap_init_mmio(priv->dev,
-> +					base + G12A_GLUE_OFFSET,
-> +					&phy_meson_g12a_usb_glue_regmap_conf);
-> +	if (IS_ERR(priv->usb_glue_regmap))
-> +		return PTR_ERR(priv->usb_glue_regmap);
-> +
-> +	/* Create a regmap for each USB2 PHY control register set */
-> +	for (i = 0; i < priv->usb2_ports; i++) {
-> +		struct regmap_config u2p_regmap_config = {
-> +			.reg_bits = 8,
-> +			.val_bits = 32,
-> +			.reg_stride = 4,
-> +			.max_register = U2P_R1,
-> +		};
-> +
-> +		u2p_regmap_config.name = devm_kasprintf(priv->dev, GFP_KERNEL,
-> +							"u2p-%d", i);
-> +		if (!u2p_regmap_config.name)
-> +			return -ENOMEM;
-> +
-> +		priv->u2p_regmap[i] = devm_regmap_init_mmio(priv->dev,
-> +						base + (i * U2P_REG_SIZE),
-> +						&u2p_regmap_config);
-> +		if (IS_ERR(priv->u2p_regmap[i]))
-> +			return PTR_ERR(priv->u2p_regmap[i]);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
->  static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->  {
->  	struct dwc3_meson_g12a	*priv;
-> @@ -492,10 +539,12 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->  	if (IS_ERR(base))
->  		return PTR_ERR(base);
->  
-> -	priv->regmap = devm_regmap_init_mmio(dev, base,
-> -					     &phy_meson_g12a_usb3_regmap_conf);
-> -	if (IS_ERR(priv->regmap))
-> -		return PTR_ERR(priv->regmap);
-> +	priv->drvdata = of_device_get_match_data(&pdev->dev);
-> +
-> +	priv->dev = dev;
-> +	ret = priv->drvdata->setup_regmaps(priv, base);
-> +	if (ret)
-> +		return ret;
->  
->  	priv->vbus = devm_regulator_get_optional(dev, "vbus");
->  	if (IS_ERR(priv->vbus)) {
-> @@ -504,8 +553,6 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->  		priv->vbus = NULL;
->  	}
->  
-> -	priv->drvdata = of_device_get_match_data(&pdev->dev);
-> -
->  	ret = devm_clk_bulk_get(dev,
->  				priv->drvdata->num_clks,
->  				priv->drvdata->clks);
-> @@ -518,7 +565,6 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->  		return ret;
->  
->  	platform_set_drvdata(pdev, priv);
-> -	priv->dev = dev;
->  
->  	priv->reset = devm_reset_control_get(dev, NULL);
->  	if (IS_ERR(priv->reset)) {
-> -------------------------------------------------------------------------------
-> 
-> 
-> Git bisection log:
-> 
-> -------------------------------------------------------------------------------
-> git bisect start
-> # good: [051143e1602d90ea71887d92363edd539d411de5] Merge tag 'apparmor-pr-2020-05-21' of git://git.kernel.org/pub/scm/linux/kernel/git/jj/linux-apparmor
-> git bisect good 051143e1602d90ea71887d92363edd539d411de5
-> # bad: [c11d28ab4a691736e30b49813fb801847bd44e83] Add linux-next specific files for 20200522
-> git bisect bad c11d28ab4a691736e30b49813fb801847bd44e83
-> # good: [df7926cf2d7421586d4a2e2641206a59303b6ed0] Merge remote-tracking branch 'crypto/master'
-> git bisect good df7926cf2d7421586d4a2e2641206a59303b6ed0
-> # good: [22f04c4413814d3b42424eb7b088022ba2ed53ee] next-20200518/tip
-> git bisect good 22f04c4413814d3b42424eb7b088022ba2ed53ee
-> # bad: [82ca9f0ddfe370eae76d35e1972ac8267e4808ed] Merge remote-tracking branch 'staging/staging-next'
-> git bisect bad 82ca9f0ddfe370eae76d35e1972ac8267e4808ed
-> # bad: [1237e48654fb052ad365f22bf5b1fdc21d8fc2bd] Merge remote-tracking branch 'phy-next/next'
-> git bisect bad 1237e48654fb052ad365f22bf5b1fdc21d8fc2bd
-> # good: [4aee12750ad1a94d0a9f029ab2b3232538c81769] Merge remote-tracking branch 'kvm/linux-next'
-> git bisect good 4aee12750ad1a94d0a9f029ab2b3232538c81769
-> # good: [8579b345bb924fecc6b8c75e55aee8569d2b5eae] Merge remote-tracking branch 'usb/usb-next'
-> git bisect good 8579b345bb924fecc6b8c75e55aee8569d2b5eae
-> # bad: [ec948d2c4511002b8511451e8f318603453eb0b8] usb: dwc3: gadget: Handle XferComplete for streams
-> git bisect bad ec948d2c4511002b8511451e8f318603453eb0b8
-> # bad: [32e51c59a00c8cef62cb8e5b846dafb3d94d58ab] usb: cdns3: change dev_info to dev_dbg for debug message
-> git bisect bad 32e51c59a00c8cef62cb8e5b846dafb3d94d58ab
-> # good: [8f385b67555415cb01079a8ad3b1e16010c5005b] dt-bindings: usb: amlogic,meson-g12a-usb-ctrl: add the Amlogic GXL and GXM Families USB Glue Bindings
-> git bisect good 8f385b67555415cb01079a8ad3b1e16010c5005b
-> # bad: [9bc3395c24962e8c8e4f590ca2740c56e4a7a4fe] usb: dwc3: gadget: Store resource index of start cmd
-> git bisect bad 9bc3395c24962e8c8e4f590ca2740c56e4a7a4fe
-> # bad: [8f5bc1ec770c2bdc8c604ba4119a77d81d8f3529] usb: dwc3: meson-g12a: check return of dwc3_meson_g12a_usb_init
-> git bisect bad 8f5bc1ec770c2bdc8c604ba4119a77d81d8f3529
-> # bad: [013af227f58a97ffc61b99301f8f4448dc7e7f55] usb: dwc3: meson-g12a: handle the phy and glue registers separately
-> git bisect bad 013af227f58a97ffc61b99301f8f4448dc7e7f55
-> # good: [5174564cb9156a7c7b4d94a64c1cafdfd9a20403] usb: dwc3: meson-g12a: specify phy names in soc data
-> git bisect good 5174564cb9156a7c7b4d94a64c1cafdfd9a20403
-> # first bad commit: [013af227f58a97ffc61b99301f8f4448dc7e7f55] usb: dwc3: meson-g12a: handle the phy and glue registers separately
-> -------------------------------------------------------------------------------
-> 
+> Is it necessary to mask the value?
+> Since sop already defined as "u8 sop:5;", I thought it is explicit that
+> only use 5 bits and compiler should do the rest jobs.
 
+Yes but it makes the code more explicit if we have a
+inst.sop = high_addr_reg_idx & 0x1f;
+
+What do you think?
+
+Regards,
+Matthias
+
+> 
+> 
+> Regards,
+> Dennis
+> 
+>>
+>> Regards,
+>> Matthias
+>>
+>>>>
+>>>>> +	inst.offset = addr_low;
+>>>>> +	inst.value = value;
+>>>>> +
+>>>>> +	return cmdq_pkt_append_command(pkt, inst);
+>>>>> +}
+>>>>> +EXPORT_SYMBOL(cmdq_pkt_write_s_value);
+>>>>> +
+>>>>>  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
+>>>>>  {
+>>>>>  	struct cmdq_instruction inst = { {0} };
+>>>>> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+>>>>> index 01b4184af310..fec292aac83c 100644
+>>>>> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+>>>>> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+>>>>> @@ -135,6 +135,20 @@ int cmdq_pkt_read_s(struct cmdq_pkt *pkt, u16 high_addr_reg_idx, u16 addr_low,
+>>>>>  int cmdq_pkt_write_s(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
+>>>>>  		     u16 addr_low, u16 src_reg_idx, u32 mask);
+>>>>>  
+>>>>> +/**
+>>>>> + * cmdq_pkt_write_s_value() - append write_s command with mask to the CMDQ
+>>>>> + *			      packet which write value to a physical address
+>>>>> + * @pkt:	the CMDQ packet
+>>>>> + * @high_addr_reg_idx:	internal regisger ID which contains high address of pa
+>>>>
+>>>> register
+>>>
+>>> will fix
+>>>
+>>>
+>>> Regards,
+>>> Dennis
+>>>
+>>>>
+>>>>> + * @addr_low:	low address of pa
+>>>>> + * @value:	the specified target value
+>>>>> + * @mask:	the specified target mask
+>>>>> + *
+>>>>> + * Return: 0 for success; else the error code is returned
+>>>>> + */
+>>>>> +int cmdq_pkt_write_s_value(struct cmdq_pkt *pkt, u16 high_addr_reg_idx,
+>>>>> +			   u16 addr_low, u32 value, u32 mask);
+>>>>> +
+>>>>>  /**
+>>>>>   * cmdq_pkt_wfe() - append wait for event command to the CMDQ packet
+>>>>>   * @pkt:	the CMDQ packet
+>>>>>
+>>>
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
