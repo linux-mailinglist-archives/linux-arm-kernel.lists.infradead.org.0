@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 833461E0A53
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 11:24:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0A9061E0A62
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 11:26:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1TMACuYUGHHD0AdwaNJBZD4ySbmdbIOsXu9AgZe9a0g=; b=FXvm/Bbgj4Wo2U
-	7wn3JtpPFAuIRUBvvxbTqwtrZExmsi2vMQ+Dh14bt85g87GA4+UTUKhpg4REGruEVjMMUsXkFuALd
-	g9aRc4H03gkFL9cRidkMRXgpgPPv+DNYzd0WUxwovU0tjpVZ1tGA6NAgRfPCHtCDRpInpRpG4O9Yf
-	N6eI641WUYZuuGnaxtbMjm6WuHV49rqtGC/OGM2EgkSeQsTjX3m0eWXsT3mYPgpbQbdapmihlBsnl
-	PzKceiHiuhjf70BA33Ym3EeeYQ+cIFC7eEhDd1yOEY6rfXQV0V4G1STOb1yuuTUCMyByml3UoKmJo
-	kwjCO3fjaAck9fF63unQ==;
+	List-Owner; bh=en3B4iF+4W9kVpS1JPClmhGXSIUvrC4xOWkhfVSxMYs=; b=MMwWRSsqu+nZ0P
+	3/JMTFBpWb2INspRDr7n64/y+TE5CfbZ6Orn1HVwxdjiU1xcR7rOegIV0trddcgThBfdzeq3UEsmc
+	gnOTMybxXXWcuMeg026bahRBGiP5xZs2fRtDF9+PHTylL6jbZ2MTmBKVKJlWFv/PavbDOOSeAslmG
+	exhtAsbWAzMfGOKAbb0qGhdiJfg1v3zLnlqayIAFOWF1jpASt6HL2oBRPduUHikYzb4wZuVBgABVi
+	sF5CKel9q1W0w5cXoKaZ6IYdAKQYvVsQZN+L/ugoFxpTEUeqI5VkZq7nc6nXGbCED4ux/PI4tMFib
+	t4gW1k5rF13G3yUNId9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd9Kr-0006SL-Pw; Mon, 25 May 2020 09:23:53 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jd9NH-0002NC-Kq; Mon, 25 May 2020 09:26:23 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd9E9-0007EW-Pi; Mon, 25 May 2020 09:17:00 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04P9GqTc105362;
- Mon, 25 May 2020 04:16:52 -0500
+ id 1jd9EE-0007Hk-LT; Mon, 25 May 2020 09:17:04 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04P9GvIU069096;
+ Mon, 25 May 2020 04:16:57 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1590398212;
- bh=c7C3r3QF/TMH/epmeuxUZDNfTYW7xsLdZE5YulWo4ZQ=;
+ s=ti-com-17Q1; t=1590398217;
+ bh=IaOq1DZIFb0ZXk7jE3XNt8/zfIsBjFRDz0kUbFwztL0=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=cNF/lXeq34ay/S7wLZJv8rzbuUT39HDcOhoYJdlLF8FisRCdw+oP+kyUoN9rxZ73g
- 9X/5ytiSBZ2QRhxEYxnAshYu7QMDcyVZhkfpqAxyCmZ58jOdR+obYoUIthz/QnU0U0
- Mb3cp4R1QxMWYr7im7Ep5Zh57SgKX1bEWSJMC2sQ=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04P9Gqxl098695
+ b=jDNcP+WFg7cvZMzR0bfBwwCUb5LbrPfVF27NgkdZGRfzpVYz7hdovmXbycNgy9K+3
+ eJ3T2eIuCZbTZm4IgBm9m3x0ZCMEhvggX2pIcGlN1VQMgDzPaT9kHHHfqMvKjr7GME
+ /xYxI9d6nAHjQ5FXd2bJaiv8Lf5JXYUVIjaN+vQI=
+Received: from DFLE110.ent.ti.com (dfle110.ent.ti.com [10.64.6.31])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04P9Gv5J013473
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 25 May 2020 04:16:52 -0500
-Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ Mon, 25 May 2020 04:16:57 -0500
+Received: from DFLE110.ent.ti.com (10.64.6.31) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 25
- May 2020 04:16:51 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ May 2020 04:16:57 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE110.ent.ti.com
+ (10.64.6.31) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 25 May 2020 04:16:51 -0500
+ Frontend Transport; Mon, 25 May 2020 04:16:57 -0500
 Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04P9FjAB034800;
- Mon, 25 May 2020 04:16:46 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04P9FjAC034800;
+ Mon, 25 May 2020 04:16:52 -0500
 From: Pratyush Yadav <p.yadav@ti.com>
 To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
@@ -60,25 +60,25 @@ To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
  <linux-mtd@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
  <linux-mediatek@lists.infradead.org>
-Subject: [PATCH v9 11/19] mtd: spi-nor: core: do 2 byte reads for SR and FSR
- in DTR mode
-Date: Mon, 25 May 2020 14:45:36 +0530
-Message-ID: <20200525091544.17270-12-p.yadav@ti.com>
+Subject: [PATCH v9 12/19] mtd: spi-nor: core: enable octal DTR mode when
+ possible
+Date: Mon, 25 May 2020 14:45:37 +0530
+Message-ID: <20200525091544.17270-13-p.yadav@ti.com>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200525091544.17270-1-p.yadav@ti.com>
 References: <20200525091544.17270-1-p.yadav@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_021657_984152_D1F9FE16 
-X-CRM114-Status: GOOD (  11.80  )
+X-CRM114-CacheID: sfid-20200525_021702_814792_956C6109 
+X-CRM114-Status: GOOD (  14.00  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -108,62 +108,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some controllers, like the cadence qspi controller, have trouble reading
-only 1 byte in DTR mode. So, do 2 byte reads for SR and FSR commands in
-DTR mode, and then discard the second byte.
+Allow flashes to specify a hook to enable octal DTR mode. Use this hook
+whenever possible to get optimal transfer speeds.
 
 Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
 ---
- drivers/mtd/spi-nor/core.c | 15 +++++++++++++--
- 1 file changed, 13 insertions(+), 2 deletions(-)
+ drivers/mtd/spi-nor/core.c | 35 +++++++++++++++++++++++++++++++++++
+ drivers/mtd/spi-nor/core.h |  2 ++
+ 2 files changed, 37 insertions(+)
 
 diff --git a/drivers/mtd/spi-nor/core.c b/drivers/mtd/spi-nor/core.c
-index 2ad248140b6c..5cb7e391cd29 100644
+index 5cb7e391cd29..a94376344be5 100644
 --- a/drivers/mtd/spi-nor/core.c
 +++ b/drivers/mtd/spi-nor/core.c
-@@ -350,7 +350,7 @@ int spi_nor_write_disable(struct spi_nor *nor)
-  * spi_nor_read_sr() - Read the Status Register.
-  * @nor:	pointer to 'struct spi_nor'.
-  * @sr:		pointer to a DMA-able buffer where the value of the
-- *              Status Register will be written.
-+ *              Status Register will be written. Should be at least 2 bytes.
-  *
-  * Return: 0 on success, -errno otherwise.
-  */
-@@ -371,6 +371,11 @@ static int spi_nor_read_sr(struct spi_nor *nor, u8 *sr)
- 			op.addr.nbytes = addr_bytes;
- 			op.addr.val = 0;
- 			op.dummy.nbytes = dummy;
-+			/*
-+			 * We don't want to read only one byte in DTR mode. So,
-+			 * read 2 and then discard the second byte.
-+			 */
-+			op.data.nbytes = 2;
- 		}
+@@ -3097,6 +3097,35 @@ static int spi_nor_init_params(struct spi_nor *nor)
+ 	return 0;
+ }
  
- 		spi_nor_spimem_setup_op(nor, &op, nor->reg_proto);
-@@ -394,7 +399,8 @@ static int spi_nor_read_sr(struct spi_nor *nor, u8 *sr)
-  * spi_nor_read_fsr() - Read the Flag Status Register.
-  * @nor:	pointer to 'struct spi_nor'
-  * @fsr:	pointer to a DMA-able buffer where the value of the
-- *              Flag Status Register will be written.
-+ *              Flag Status Register will be written. Should be at least 2
-+ *              bytes.
-  *
-  * Return: 0 on success, -errno otherwise.
-  */
-@@ -415,6 +421,11 @@ static int spi_nor_read_fsr(struct spi_nor *nor, u8 *fsr)
- 			op.addr.nbytes = addr_bytes;
- 			op.addr.val = 0;
- 			op.dummy.nbytes = dummy;
-+			/*
-+			 * We don't want to read only one byte in DTR mode. So,
-+			 * read 2 and then discard the second byte.
-+			 */
-+			op.data.nbytes = 2;
- 		}
++/** spi_nor_octal_dtr_enable() - enable Octal DTR I/O if needed
++ * @nor:                 pointer to a 'struct spi_nor'
++ * @enable:              whether to enable or disable Octal DTR
++ *
++ * Return: 0 on success, -errno otherwise.
++ */
++static int spi_nor_octal_dtr_enable(struct spi_nor *nor, bool enable)
++{
++	int ret;
++
++	if (!nor->params->octal_dtr_enable)
++		return 0;
++
++	if (!(nor->read_proto == SNOR_PROTO_8_8_8_DTR &&
++	      nor->write_proto == SNOR_PROTO_8_8_8_DTR))
++		return 0;
++
++	ret = nor->params->octal_dtr_enable(nor, enable);
++	if (ret)
++		return ret;
++
++	if (enable)
++		nor->reg_proto = SNOR_PROTO_8_8_8_DTR;
++	else
++		nor->reg_proto = SNOR_PROTO_1_1_1;
++
++	return 0;
++}
++
+ /**
+  * spi_nor_quad_enable() - enable Quad I/O if needed.
+  * @nor:                pointer to a 'struct spi_nor'
+@@ -3136,6 +3165,12 @@ static int spi_nor_init(struct spi_nor *nor)
+ {
+ 	int err;
  
- 		spi_nor_spimem_setup_op(nor, &op, nor->reg_proto);
++	err = spi_nor_octal_dtr_enable(nor, true);
++	if (err) {
++		dev_dbg(nor->dev, "octal mode not supported\n");
++		return err;
++	}
++
+ 	err = spi_nor_quad_enable(nor);
+ 	if (err) {
+ 		dev_dbg(nor->dev, "quad mode not supported\n");
+diff --git a/drivers/mtd/spi-nor/core.h b/drivers/mtd/spi-nor/core.h
+index 7e6df8322da0..6338d32a0d77 100644
+--- a/drivers/mtd/spi-nor/core.h
++++ b/drivers/mtd/spi-nor/core.h
+@@ -203,6 +203,7 @@ struct spi_nor_locking_ops {
+  *                      higher index in the array, the higher priority.
+  * @erase_map:		the erase map parsed from the SFDP Sector Map Parameter
+  *                      Table.
++ * @octal_dtr_enable:	enables SPI NOR octal DTR mode.
+  * @quad_enable:	enables SPI NOR quad mode.
+  * @set_4byte_addr_mode: puts the SPI NOR in 4 byte addressing mode.
+  * @convert_addr:	converts an absolute address into something the flash
+@@ -226,6 +227,7 @@ struct spi_nor_flash_parameter {
+ 
+ 	struct spi_nor_erase_map        erase_map;
+ 
++	int (*octal_dtr_enable)(struct spi_nor *nor, bool enable);
+ 	int (*quad_enable)(struct spi_nor *nor);
+ 	int (*set_4byte_addr_mode)(struct spi_nor *nor, bool enable);
+ 	u32 (*convert_addr)(struct spi_nor *nor, u32 addr);
 -- 
 2.26.2
 
