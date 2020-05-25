@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 084B11E0A85
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 11:30:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E9C301E0A21
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 11:19:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MOhyRr2wtpxGaOvr9RC2EmWlm+WNDrvLC6xbFReLQrU=; b=DTKZ5GnD9WxiNg
-	nSXWNmWmVzucd/fYfwiSVyE6v8XBXWrH3Tlwm5laDWUMZvjX4ol46Xa1FVFHVglxZO0PNenEX9lO0
-	XJu5Mk8BJMQFkSy7dwiQlIRpSUMHLeyBgrLzGJC6R8Qw1hJGcg2RQD2XaNxaz6OAiKLARJiCIjfX5
-	83+zN01tsaD/pFhbspJ4jXyWFoJqod60Df2MvGX/G5cUUrJ2PoLUeLhvjsfdr5CPVDFL5Pk2X3G98
-	a39M/IlaGPXav4RDS+LAhzVGSHGeZe5jaMd4pu1xpBBRQWEScvd4A1lP9F2IcHvnuhn4M+qQPbTJs
-	IcIbJ/MVGDPPZ7f6599w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JvlCNhejrEyelscYP15g8475tf8urnZbmA6q9UVQR+8=; b=QJ9w39ipccvVlV
+	omBupErIzpDYKjxZHpXXSj9KYD7iC3DOD3uNKtB5ROgD84XYObRND8ZqFs79QfZ9fGJ6jMhsA2ONb
+	9LK6wXt6w+D2QVtBTW8Tdkuy3CsLfWj6LU0E7gmvu0k0Lck8qsVWSFu7SEmCSkZUAzKFL5/dv8aw1
+	7kloa+pfF1VIqwIDq468ykCUS2d4M2YiRMm6RT05VNmajt5+fAMdhLlwfI/JBqbMQT25Bs9evhxCO
+	CkuCYfVIf21LayNnRsY1AtbWcbbt1HZZrLX4kVSkiccXFKVRGxZFL6igHY8shhtQjblFCpQYAXIk0
+	TeOaUm61JgEMllZh0NJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd9Ql-0005iB-MJ; Mon, 25 May 2020 09:29:59 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jd9Gp-0000be-0K; Mon, 25 May 2020 09:19:43 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd9Es-0007pz-5m; Mon, 25 May 2020 09:17:45 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04P9Haqw105511;
- Mon, 25 May 2020 04:17:36 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1590398256;
- bh=kv17vzIbbuAt+RZqE4vM8KTFUmvobKYZHpLC7UN2u9I=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=x6tI04WzgtLYhTQyqhGSEXh+744E0tOHwz0+j4vnpuIBJ6eV7XsLVLmvn/zBrkfjr
- ethf+ZrcN9WDF7ZhF1U5Akt4tqExdTNdlgmPTUHdlk40q9JEjXk3F9xruPjmaDbn09
- IOy5uJOVvnODVfDHgCdENvxzDVDS/LwEW0Nuu4p8=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04P9HaCa014396
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 25 May 2020 04:17:36 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 25
- May 2020 04:17:35 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 25 May 2020 04:17:35 -0500
-Received: from pratyush-OptiPlex-790.dhcp.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04P9FjAJ034800;
- Mon, 25 May 2020 04:17:30 -0500
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Tudor Ambarus <tudor.ambarus@microchip.com>, Miquel Raynal
- <miquel.raynal@bootlin.com>, Richard Weinberger <richard@nod.at>, Vignesh
- Raghavendra <vigneshr@ti.com>, Mark Brown <broonie@kernel.org>,
- Nicolas Ferre <nicolas.ferre@microchip.com>, Alexandre Belloni
- <alexandre.belloni@bootlin.com>, Ludovic Desroches
- <ludovic.desroches@microchip.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Michal Simek <michal.simek@xilinx.com>,
- <linux-mtd@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
- <linux-spi@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>
-Subject: [PATCH v9 19/19] mtd: spi-nor: micron-st: allow using MT35XU512ABA in
- Octal DTR mode
-Date: Mon, 25 May 2020 14:45:44 +0530
-Message-ID: <20200525091544.17270-20-p.yadav@ti.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200525091544.17270-1-p.yadav@ti.com>
-References: <20200525091544.17270-1-p.yadav@ti.com>
+ id 1jd9Ds-00071w-TP
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 09:16:42 +0000
+Received: by mail-lj1-x244.google.com with SMTP id z13so10299254ljn.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 25 May 2020 02:16:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ohEJwhoqSwZ76s6YgACOOHyVU8iazLwMXXUTCVY9Yu8=;
+ b=quNFZC8NDA5oaB6UM9SKg2UILfRuOrVeNF0W5cgFZBSHZCLv3KdoNZHSOjvQW2Ebv8
+ 5QG/RdByzTk0usDPlVN6Em3PvUILKbbJLcIcMfCKKiH0eKL7gky+WSmEo/vYSJnA/1uw
+ MdZv9m+A04sp+hNQNpZskmE/SUXmkVG7mJX7eSi81BU88IrJL41tKVPm4RtDku1c6rXG
+ FWm3kf8SW/64UrSXp79Sc1X557ACrh1WRmVC0HbLCaJQPzy7MGjFDySdtwKaRU7EJSNc
+ goHb3RwF9PI7MtCpo17RBRy1wQ42DiAzpmLboRrE7B8f4+doK7NToHyR8l3s2Pa658yF
+ jxFw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ohEJwhoqSwZ76s6YgACOOHyVU8iazLwMXXUTCVY9Yu8=;
+ b=octibyeUk6qpuJA71jZkyUsajkWo2IHhFZ2MNQRTih44oTvtI+GkuUey0s/hNuxPLP
+ vyjYkFAjn3chRFrggnMXGKBDYmNrqHTGYOYI8pFkgerJnBwkStw9q5tZyaoT4kLNUzI+
+ eaw8vYLI/p5RP7Nqdw+j10LtBRI8LiOmdjw+zhL8WgJYQ3ptDEJhheVTX/yUo452xqgj
+ nPm3UA+htR2MaBuYqzpVIerYTWKOT21oA+3Ala/VJzSoOFQB9myhXZcGVpPI//6gl+HP
+ xfz6Fi2uSds90KwWblryt3BJiszikBha9w6PY9UNkQnSqdFNmCT31NivLV45jflYjUhH
+ uWCw==
+X-Gm-Message-State: AOAM531hFCJFCRkX/bPEnlK3MyIplwtL0mzxSC/zuY1zShWZHzV3r38g
+ f0zaQk2b/oXRP6Fh2R85PXzGznpMcKQ=
+X-Google-Smtp-Source: ABdhPJyKPynsW+auiuviSIK2CbOKzmm5iV5WSMfZPFAjiaxfCjE7pejLzaeunA8woUd0pURHn1KDrg==
+X-Received: by 2002:a2e:a318:: with SMTP id l24mr12276427lje.45.1590398199304; 
+ Mon, 25 May 2020 02:16:39 -0700 (PDT)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id c20sm3998328lfb.33.2020.05.25.02.16.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 25 May 2020 02:16:38 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: arm@kernel.org,
+	soc@kernel.org
+Subject: [PATCH] bus: arm-integrator-lm: Fix return value check in
+ integrator_ap_lm_probe()
+Date: Mon, 25 May 2020 11:16:34 +0200
+Message-Id: <20200525091634.8274-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.25.4
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_021742_329144_E11CEB48 
-X-CRM114-Status: GOOD (  13.81  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200525_021641_014698_25B50541 
+X-CRM114-Status: GOOD (  12.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -88,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,157 +96,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mason Yang <masonccyang@mxic.com.tw>,
- Boris Brezillon <boris.brezillon@collabora.com>, Sekhar Nori <nsekhar@ti.com>,
- Pratyush Yadav <p.yadav@ti.com>
+Cc: Hulk Robot <hulkci@huawei.com>, Linus Walleij <linus.walleij@linaro.org>,
+ Wei Yongjun <weiyongjun1@huawei.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since this flash doesn't have a Profile 1.0 table, the Octal DTR
-capabilities are enabled in the post SFDP fixup, along with the 8D-8D-8D
-fast read settings.
+From: Wei Yongjun <weiyongjun1@huawei.com>
 
-Enable Octal DTR mode with 20 dummy cycles to allow running at the
-maximum supported frequency of 200Mhz.
+In case of error, the function of_find_matching_node() returns NULL
+pointer not ERR_PTR(). The IS_ERR() test in the return value check
+should be replaced with NULL test.
 
-The flash supports the soft reset sequence. So, add the flag in the
-flash's info.
-
-Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
+Fixes: ccea5e8a5918 ("bus: Add driver for Integrator/AP logic modules")
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+Link: https://lore.kernel.org/r/20200520032150.165388-1-weiyongjun1@huawei.com
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- drivers/mtd/spi-nor/micron-st.c | 112 +++++++++++++++++++++++++++++++-
- 1 file changed, 111 insertions(+), 1 deletion(-)
+Hi SoC guys, please apply this patch directly for v5.8
+wherever the other Versatile stuff was applied, thanks!
+---
+ drivers/bus/arm-integrator-lm.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/mtd/spi-nor/micron-st.c b/drivers/mtd/spi-nor/micron-st.c
-index 3dca5b9af3b6..3414c44a5c96 100644
---- a/drivers/mtd/spi-nor/micron-st.c
-+++ b/drivers/mtd/spi-nor/micron-st.c
-@@ -8,10 +8,120 @@
+diff --git a/drivers/bus/arm-integrator-lm.c b/drivers/bus/arm-integrator-lm.c
+index 669ea7e1f92e..845b6c43fef8 100644
+--- a/drivers/bus/arm-integrator-lm.c
++++ b/drivers/bus/arm-integrator-lm.c
+@@ -78,10 +78,10 @@ static int integrator_ap_lm_probe(struct platform_device *pdev)
  
- #include "core.h"
- 
-+#define SPINOR_OP_MT_DTR_RD	0xfd	/* Fast Read opcode in DTR mode */
-+#define SPINOR_OP_MT_RD_ANY_REG	0x85	/* Read volatile register */
-+#define SPINOR_OP_MT_WR_ANY_REG	0x81	/* Write volatile register */
-+#define SPINOR_REG_MT_CFR0V	0x00	/* For setting octal DTR mode */
-+#define SPINOR_REG_MT_CFR1V	0x01	/* For setting dummy cycles */
-+#define SPINOR_MT_DTR_NO_DQS	0xc7	/* Enable Octal DTR without DQS. */
-+#define SPINOR_MT_EXSPI		0xff	/* Enable Extended SPI (default) */
-+
-+static int spi_nor_micron_octal_dtr_enable(struct spi_nor *nor, bool enable)
-+{
-+	struct spi_mem_op op;
-+	u8 *buf = nor->bouncebuf;
-+	u8 addr_width;
-+	int ret;
-+
-+	if (enable)
-+		addr_width = 3;
-+	else
-+		addr_width = 4;
-+
-+	ret = spi_nor_write_enable(nor);
-+	if (ret)
-+		return ret;
-+
-+	if (enable)
-+		*buf = SPINOR_MT_DTR_NO_DQS;
-+	else
-+		*buf = SPINOR_MT_EXSPI;
-+	op = (struct spi_mem_op)
-+		SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_MT_WR_ANY_REG, 1),
-+			   SPI_MEM_OP_ADDR(addr_width, SPINOR_REG_MT_CFR0V, 1),
-+			   SPI_MEM_OP_NO_DUMMY,
-+			   SPI_MEM_OP_DATA_OUT(1, buf, 1));
-+
-+	if (!enable)
-+		spi_nor_spimem_setup_op(nor, &op, SNOR_PROTO_8_8_8_DTR);
-+
-+	ret = spi_mem_exec_op(nor->spimem, &op);
-+	if (ret) {
-+		dev_err(nor->dev, "Failed to enable octal DTR mode\n");
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static int mt35xu512aba_setup(struct spi_nor *nor,
-+			      const struct spi_nor_hwcaps *hwcaps)
-+{
-+	struct spi_mem_op op;
-+	u8 *buf = nor->bouncebuf;
-+	u8 addr_width = 3;
-+	int ret;
-+
-+	if (!nor->spimem) {
-+		dev_err(nor->dev,
-+			"operation not supported for non-spimem drivers\n");
-+		return -ENOTSUPP;
-+	}
-+
-+	/* Set dummy cycles for Fast Read to the default of 20. */
-+	ret = spi_nor_write_enable(nor);
-+	if (ret)
-+		return ret;
-+
-+	*buf = 20;
-+	op = (struct spi_mem_op)
-+		SPI_MEM_OP(SPI_MEM_OP_CMD(SPINOR_OP_MT_WR_ANY_REG, 1),
-+			   SPI_MEM_OP_ADDR(addr_width, SPINOR_REG_MT_CFR1V, 1),
-+			   SPI_MEM_OP_NO_DUMMY,
-+			   SPI_MEM_OP_DATA_OUT(1, buf, 1));
-+	ret = spi_mem_exec_op(nor->spimem, &op);
-+	if (ret)
-+		return ret;
-+
-+	ret = spi_nor_wait_till_ready(nor);
-+	if (ret)
-+		return ret;
-+
-+
-+	return spi_nor_default_setup(nor, hwcaps);
-+}
-+
-+static void mt35xu512aba_default_init(struct spi_nor *nor)
-+{
-+	nor->params->octal_dtr_enable = spi_nor_micron_octal_dtr_enable;
-+	nor->params->setup = mt35xu512aba_setup;
-+}
-+
-+static void mt35xu512aba_post_sfdp_fixup(struct spi_nor *nor)
-+{
-+	/* Set the Fast Read settings. */
-+	nor->params->hwcaps.mask |= SNOR_HWCAPS_READ_8_8_8_DTR;
-+	spi_nor_set_read_settings(&nor->params->reads[SNOR_CMD_READ_8_8_8_DTR],
-+				  0, 20, SPINOR_OP_MT_DTR_RD,
-+				  SNOR_PROTO_8_8_8_DTR);
-+
-+	nor->params->hwcaps.mask |= SNOR_HWCAPS_PP_8_8_8_DTR;
-+
-+	nor->cmd_ext_type = SPI_NOR_EXT_REPEAT;
-+	nor->params->rdsr_dummy = 8;
-+	nor->params->rdsr_addr_nbytes = 0;
-+}
-+
-+static struct spi_nor_fixups mt35xu512aba_fixups = {
-+	.default_init = mt35xu512aba_default_init,
-+	.post_sfdp = mt35xu512aba_post_sfdp_fixup,
-+};
-+
- static const struct flash_info micron_parts[] = {
- 	{ "mt35xu512aba", INFO(0x2c5b1a, 0, 128 * 1024, 512,
- 			       SECT_4K | USE_FSR | SPI_NOR_OCTAL_READ |
--			       SPI_NOR_4B_OPCODES) },
-+			       SPI_NOR_4B_OPCODES | SPI_NOR_OCTAL_DTR_READ)
-+		.fixups = &mt35xu512aba_fixups},
- 	{ "mt35xu02g", INFO(0x2c5b1c, 0, 128 * 1024, 2048,
- 			    SECT_4K | USE_FSR | SPI_NOR_OCTAL_READ |
- 			    SPI_NOR_4B_OPCODES) },
+ 	/* Look up the system controller */
+ 	syscon = of_find_matching_node(NULL, integrator_ap_syscon_match);
+-	if (IS_ERR(syscon)) {
++	if (!syscon) {
+ 		dev_err(dev,
+ 			"could not find Integrator/AP system controller\n");
+-		return PTR_ERR(syscon);
++		return -ENODEV;
+ 	}
+ 	map = syscon_node_to_regmap(syscon);
+ 	if (IS_ERR(map)) {
 -- 
-2.26.2
+2.25.4
 
 
 _______________________________________________
