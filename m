@@ -2,83 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DECC71E10AE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 16:39:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DB791E1141
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 17:06:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=zcKKF3uPfSF5iwN4ZC/Z4UwGP5U6z1wd+3H2juUzcEg=; b=cOeT0aeTa9cda0vz7o7OMN6h5B
-	pIbkSGJcR6T2J71WjBvMzkG10gxbqzgcfXd2WlUUhTQOthkYZbxiqYrjPu4DKNoaAl901m8RfokNc
-	L8FAf2RmwMRAniWKPCydqIazdMhGFsNqWOKw0CvU1ZJ31Ar5VH3Axz6ojdLBvvjcykr0PitBc7usQ
-	1RYzY7z0a0vbYbf8/kMuag8xflEBch8orTBl27WZnXx0rseVDd5y6aVuulqxG2CZWn9YXicBQ7KBa
-	JeEI/OKFk3pBlzIXs5NBnFqQ16sH9s4emsUJ/zcwPh0VcdDu6E7WM+h97SsaOEGGxCJK3bH1XLJE3
-	b2nCzAvw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=joSwOK/VZW9umdt7oR8b3WOZR+Y2PNKYR3X4zvML1Aw=; b=ua8MEp4wKSifHc
+	gzSAvEhlxX275ZCPUDzrEXPnzgZpI/zcXR2V0DfRCTIRm1XccBp0/fXxJGfq7QXJVg8CVHrXNwLR0
+	wWa80xwYQzcIK2zNiD739Jb8BZTi2yVYgIIq5yVowczoCxLqiUjw4kAUGp+BOkm9Ulc5a9rZYM8Ci
+	12E3CgUpTbrW6qpdG/Y5AmdsUZp5u8CCB0PAgZYPGJ938YyU05JEqUURIqhf5gWHBq41+CxDXx0vA
+	XOvMEsd4nsU4F+IBvYuP/waWQ7xPUzz5DzZdY52ZQuVpc9TgB8YK5LcxNc0iAZldH5kiB1chkug+e
+	PbEzUkHjNfCZ36rh4XzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdEFw-0008VV-2u; Mon, 25 May 2020 14:39:08 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1jdEfm-0001z9-Ot; Mon, 25 May 2020 15:05:50 +0000
+Received: from mail-vi1eur05on2078.outbound.protection.outlook.com
+ ([40.107.21.78] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdEFl-0008Sh-8w
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 14:38:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1590417537; x=1621953537;
- h=references:from:to:cc:subject:in-reply-to:date:
- message-id:mime-version;
- bh=S99rpstexzLZC2qjsjZJhCbIgtSPGJorenKaanjakaE=;
- b=pT4+h8fCaIn96oklBnQTxFWI/OHuOUFUc+pPvkE3Ke3mn6clzggjOsf8
- 7vPKANeLlkhnPSdmO5aSdGIKmBBEJQv78jGCZKZLVAZwaC1cpyo0sRlVW
- XUNoAqJRHUl0gfH4YoIYEL2J0OWYxim+S2q5DXXuNraDkwv+pFWGiuAZm
- 1F6l/Wl4Qyg/oaK6Ouq0/myKH0Ng0criMb+bthTz5qswhXTGWbRghLEzd
- Qc5c2NywQXj5ViYRrFpzJ/RMz91kJwqLFm7rAGCatDLn2gXvJrCEjQydK
- xnyxTzPr8Oj3EBjNt5b0VY52ADIpmuv58+y8W7ZzNHMZHSRR7+e7KlOid g==;
-IronPort-SDR: LwW1A8ByBD+yBQ/Mc7nwGC0gUUpS4Zyp18/VCWuBjvzcMjQ/rEekYWeunGRQeW5G0mAYzSZEqO
- /cjuIUTRDbGV75TNsQADzOHlMoauPmPg373Goh/msbCft2ZFui8BtaWTiair59yBATkZ9D3CI8
- LfWxNnNy0wiUWuCaLU/H/or2Jyq2G0YBCoGNhILyKx3hl7ugIYuiRPwKmM1ilZjskJ5JQ8hBYU
- fgYi0kGYXyr6/pN0fcvJzfUQwCj8Nlu4Ei4Dw5gp2HLmBFNhjfq+xGKbHlnlBWjHt0mol8W3IJ
- L78=
-X-IronPort-AV: E=Sophos;i="5.73,433,1583218800"; d="scan'208";a="74411981"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 25 May 2020 07:38:56 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 25 May 2020 07:38:58 -0700
-Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Mon, 25 May 2020 07:38:49 -0700
-References: <20200513141134.25819-1-lars.povlsen@microchip.com>
- <20200513141134.25819-2-lars.povlsen@microchip.com>
- <CACRpkdZa7OM3bqB+zRprEQ3M4m9hG3uPCoYxrdH_O=oxD8zi8Q@mail.gmail.com>
- <87pnb1nf2j.fsf@soft-dev15.microsemi.net>
- <CACRpkdYesD9sRQZXQNEaBY2Ouu3bjKKGWpRtU-Lpa4AcjyPwXw@mail.gmail.com>
-From: Lars Povlsen <lars.povlsen@microchip.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 1/3] dt-bindings: pinctrl: Add bindings for mscc,
- ocelot-sgpio
-In-Reply-To: <CACRpkdYesD9sRQZXQNEaBY2Ouu3bjKKGWpRtU-Lpa4AcjyPwXw@mail.gmail.com>
-Date: Mon, 25 May 2020 16:38:52 +0200
-Message-ID: <87r1v8oz9f.fsf@soft-dev15.microsemi.net>
+ id 1jdEfe-0001yW-99
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 15:05:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Vw2oI8vVqYkroFrLTNOByJpTPTXw9ka75Zu6yl7TeX6NwMpTuVMmgM0QwSNjUDTUTMCSBZvekRAnKyscJXkxF1S/4A3q3TWTleNAkAyVsDf8G8egeTaJsdBgEpCvQTmikzE92Ken9aVNDFhZeCnTSYjJvpS7D1n/RPRV2C+rPsNArOeRjzTtswg+KYVFQXbw52LyOBkRYy3+Pk1NOXcxsUTF7w4jYECXSOo8WjjNydRcaWIbNTK2zPT9kFlvvE64zaPmjJn9pXOm0cXpB+oAvd4gtP5UUKh3/Xsmpn1y8VdZ98lqIB2NJZPUdQGLHx912uaiwNjppm32Q2EbJq9wpA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zmlqqsdEPrfiX8FYkwjFbIC27l/QSxWL9ZgWk7aG2O4=;
+ b=Xch9pkbcWNfLLJiyFl1ZylPm2YKJ/iJy5lEiDyNFblR77Gxp5SU1uZSDQfwJIoCCnw3aOgqvC86YxGwB04eGIFCwy8OzQKIZrmlq1O/iMgm2hfhCef9kZvawQSMT9Iav5HFX3Encvo68eXBjv2TrNYzxiSNNVtzIX7Y8uBlRk1UZmRtUanhryaWHVe/jLl1ihHa9uVftsquya7S+k9J0A0d/dvbwkteaMKvBt7wkriAhRuRiv8HJchSqhXOWQpNlaR3iZiTp9HymLVxyNGuNerphnpgsyM6WuOy+yhyj4zBhwJlpn9bXXQn0cKnxODrCNCs6optC4NuQVo105NWvog==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=zmlqqsdEPrfiX8FYkwjFbIC27l/QSxWL9ZgWk7aG2O4=;
+ b=KjeVsADqHMJ+3fZbI+plpQx1awVk+d8NBmkX22HZazAMnUXG7oBHyj1KLzWSjeSGuVMmiDyiDqRLNiH7IdTgP2Jq9e5Gd2G4+TnsZnmgxUhVHNldtCZcxXmkblEV29zqeMkjdyPNQh0+hR6wCmaoZlj4vL5xk1X6t+PBKMcL1r4=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3836.eurprd04.prod.outlook.com (2603:10a6:8:f::11) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Mon, 25 May
+ 2020 15:05:38 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.3021.029; Mon, 25 May 2020
+ 15:05:38 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>, "rui.zhang@intel.com"
+ <rui.zhang@intel.com>, "amit.kucheria@verdurent.com"
+ <amit.kucheria@verdurent.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "kernel@pengutronix.de"
+ <kernel@pengutronix.de>, "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH] thermal: imx8mm: Add get_trend ops
+Thread-Topic: [PATCH] thermal: imx8mm: Add get_trend ops
+Thread-Index: AQHWKNOp8EPkl0qqRkG+GoQWiQOYA6i0bHgAgABvx3CAAM7gAIAAy+LwgAGwT5CAAI+kAIAAQRqA
+Date: Mon, 25 May 2020 15:05:38 +0000
+Message-ID: <DB3PR0402MB391695A412B26134060D1D1BF5B30@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1589338689-15700-1-git-send-email-Anson.Huang@nxp.com>
+ <fccf4197-d0ca-f313-8f70-000ef4731033@linaro.org>
+ <DB3PR0402MB3916B6D11328A036BD479D39F5B50@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <6a4d31e4-8a24-2e9f-aa49-bec8258ead4c@linaro.org>
+ <DB3PR0402MB39167D71ED6979FC33D3747DF5B20@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39162E6A876BA54A80B0DCE2F5B30@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <dadf94db-8aa5-d1a7-5818-c56032a44ea4@linaro.org>
+In-Reply-To: <dadf94db-8aa5-d1a7-5818-c56032a44ea4@linaro.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: linaro.org; dkim=none (message not signed)
+ header.d=none;linaro.org; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [183.192.13.100]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 41fe8431-20c7-45ce-51d0-08d800bd15a9
+x-ms-traffictypediagnostic: DB3PR0402MB3836:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB38361B07C1F6D27EB11A5FEBF5B30@DB3PR0402MB3836.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0414DF926F
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: MJpWMjmsyP1McZYkupRPAqduE//Y2gnv3JXcsUnyUBLTRogFqjBJxx61ZFetwL3Nxzv+MY+bwjPQMumjUcn3lqGRgG9gorCapxWYbX9fOdViiRda5+n9RtF0XcgRi73Qz4Zvphx1Pylsobj+fkoxLOw/BVlF6ffwdFP/fLRClQeAJa3oFM6e/fr9rRwnaSJd/rS2s7ejWL0buU0IOuZ36T7HaPR0fG35zHqJaQvFm2nKUx4zGyATlFjmQC5GhuxNpfjduywSf1VchSjS/M3WNIRdXLJID2N+b9YkzkbtM3qG+jEmgQRHQQD3gFqROuVXp54ICXtWbA7f8hJLxVQbTD7/c9kiaCAMIHxs1m2MKai9L5D83op6YmOMBDe0FhSo0dsJ0ohArlxRxjWpfG9Z2A==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(136003)(376002)(396003)(366004)(346002)(39860400002)(66946007)(186003)(4326008)(478600001)(26005)(7696005)(316002)(6506007)(53546011)(66446008)(66556008)(76116006)(64756008)(71200400001)(2906002)(66476007)(8676002)(52536014)(5660300002)(33656002)(7416002)(86362001)(55016002)(8936002)(9686003)(44832011)(110136005)(32563001)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: QP7ctTnYcyTgcMU7PWHq8ollHnjIzSTmuQU4oEx/6ykdXgka3MdIfEK1rHq0lV/X3ATr1fNbSBaVBR2fTrdrFSEDkWX9BJcIu1ZVZZQmxl/dPzdjXxUvo3wC5xocV8jIIBUX40cduh7R6Zf61S9lSW1r6/XR33coi96KarOOAVzjakTfQ4fpsLufeVPH6PYg71Sda+kQD5WHdIOSblrHGHe/9zYhB4FohXV3WalCJcUv30ubVbxI4hPBsFfPghI/zAQG1tbPCLlZmW5B5lktmHn0OgxUvYhvtoCyLCCjEJ9OxGqJ6KerCVqigIY1DIv0pml0SOJwWqUQURqNFEf2xwv3LKIpYF3VIhQabtFw+k3VH2UBHmopQFhoJjoKNl9YPismLjbptqH6ZyI6ytJ2+tTh7fc/QZjV7YW3g9uhuaffxYh2D7rAi9WNaT8pKidlXnEGnq0lxMx5A5EhXIZ1RCC8VtDjrVw60QzC5bcs7j4Pm1wfeos2EQeZhMw7/1At
 MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 41fe8431-20c7-45ce-51d0-08d800bd15a9
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 May 2020 15:05:38.3333 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: fbKtxaUjhzWt2XMVgBfRp5v5ZpvKAltsFYT7e8bACIHXuHIXFtKLVwR3gYheynm8prAPETMp9xa42Ckb0H13DQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3836
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_073857_363637_8B8335EF 
-X-CRM114-Status: GOOD (  18.12  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200525_080542_423461_237E20F1 
+X-CRM114-Status: GOOD (  25.73  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.78 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.21.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,121 +135,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE
- TREE BINDINGS" <devicetree@vger.kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- SoC Team <soc@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Lars Povlsen <lars.povlsen@microchip.com>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi, Daniel
 
-Linus Walleij writes:
+> Subject: Re: [PATCH] thermal: imx8mm: Add get_trend ops
+> 
+> On 25/05/2020 04:46, Anson Huang wrote:
+> > Hi, Daniel
+> 
+> [ ... ]
+> 
+> > I tried modifying the min/max to '2' in cooling map, it works that
+> > whenever cooling action is needed, the max cooling action will be
+> > applied. But I also noticed some behaviors which NOT as expected:
+> >
+> > 1. to easy the test, I enable the " CONFIG_THERMAL_WRITABLE_TRIPS",
+> > and just modify the passive trip threshold to trigger the cooling
+> > action, this is much more easy then putting the board into an oven to
+> > increase the SoC temperature or running many high loading test to
+> > increase the temperature, but when I modify the passive trip threshold
+> > to be lower than current temperature, the cooling action is NOT
+> > triggered immediately, it is because the default step_wise governor
+> > will NOT trigger the cooling action when the trend is
+> > THERMAL_TREND_STABLE. But what expected is, when the temperature is
+> > exceed the passive trip threshold, the cooling action can be triggered
+> > immediately no matter the trend is stable or raising.
+> 
+> You are right, what is expected is, when the temperature exceeds the passive
+> trip threshold, a cooling action happens, the trend is raising in this case.
+> 
+> But in your test, it is not what is happening: the trip point is changing, not the
+> temperature.
+> 
+> Probably, the cpufreq driver is at its lowest OPP, so there is no room for more
+> cooling effect when changing the trip point.
+> 
+> IMO, the test is not right as the trip point is decreased to a temperature where
+> actually the SoC is not hot.
+> 
+> If you want to test it easily, I recommend to use dhrystone, something like:
+> 
+>  dhrystone -t 6 -l 10000
+> 
+> That will make your board to heat immediately.
 
-> On Mon, May 18, 2020 at 10:50 PM Lars Povlsen
-> <lars.povlsen@microchip.com> wrote:
->> Linus Walleij writes:
->>
->> > On Wed, May 13, 2020 at 4:11 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
->> >
->> >> This adds DT bindings for the Microsemi SGPIO controller, bindings
->> >> mscc,ocelot-sgpio and mscc,luton-sgpio.
->> >>
->> >> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
->> >> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
->> >
->> >> +  microchip,sgpio-ports:
->> >> +    description: This is a 32-bit bitmask, configuring whether a
->> >> +      particular port in the controller is enabled or not. This allows
->> >> +      unused ports to be removed from the bitstream and reduce latency.
->> >> +    $ref: "/schemas/types.yaml#/definitions/uint32"
->> >
->> > I don't know about this.
->> >
->> > You are saying this pin controller can have up to 32 GPIO "ports"
->> > (also known as banks).
->> >
->> > Why can't you just represent each such port as a separate GPIO
->> > node:
->> >
->> > pinctrl@nnn {
->> >     gpio@0 {
->> >         ....
->> >     };
->> >     gpio@1 {
->> >         ....
->> >     };
->> >     ....
->> >     gpio@31 {
->> >         ....
->> >     };
->> > };
->> >
->> > Then if some of them are unused just set it to status = "disabled";
->> >
->> > This also makes your Linux driver simpler because each GPIO port
->> > just becomes a set of 32bit registers and you can use
->> > select GPIO_GENERIC and bgpio_init() and save a whole
->> > slew of standard stock code.
->> >
->>
->> Linus, thank you for your input.
->>
->> The controller handles an array of 32*n signals, where n >= 1 && n <=
->> 4.
->>
->> The problem with the above approach is that the ports are disabled
->> *port*-wise - so they remove all (upto) 4 bits. That would be across the
->> banks.
->>
->> You could of course have the "implied" semantics that a disabled port at
->> any bit position disabled all (bit positions for the same port).
->
-> I don't understand this, you would have to elaborate...
->
-> In any case microchip,sgpio-ports is probably not the right thing,
-> use ngpios which is documented and just divide by 32 to get the
-> number of ports I think? But that is just in case they get
-> enabled strictly in sequence, otherwise you'd need a custom
-> property.
->
+Thanks, I understand. To aligned with the formal test method, I will inform our test
+team to update the test case to meet the requirement.
 
-Hi Linus,
+> 
+> > That
+> > means we have to implement our own .get_trend callback?
+> 
+> From my POV it must disappear, because it has little meaning. The governor is
+> the one which should be dealing with that and call the corresponding cooling
+> index.
 
-Yes, the problem is they're not in sequence. F.ex. you could have ports
-0,1 enabled, skip 2,3,4 and have 5,6,7 enabled.
+OK, I will use common .get_trend() implementation.
 
-In the data stream you would then have:
+> 
+> > 2. No margin for releasing the cooling action, for example, if cooling
+> > action is triggered, when the temperature drops below the passive trip
+> > threshold, the cooling action will be cancelled immediately, if SoC
+> > keeps running at full performance, the temperature will increase very
+> > soon, which may cause the SoC keep triggering/cancelling the cooling
+> > action around the passive trip threshold. If there is a margin, the
+> > situation will be much better.
+> >
+> > Do you have any idea/comment about them?
+> 
+> Yes, that is a good point. The hysteresis is supposed to do that. There is a work
+> done by Andrzej Pietrasiewicz to disable / enable the thermal zones [1]. I think
+> we should be able to fix that after the changes are done.
 
-p0.0 p0.1 p0.2 p0.3
-p1.0 p1.1 p1.2 p1.3
-p5.0 p5.1 p5.2 p5.3
-p6.0 p6.1 p6.2 p6.3
-p7.0 p7.1 p7.2 p7.3
+OK, then I will wait for this change. So to apply MAX cooling action immediately,
+all expected changes for i.MX platforms are to assign min/max cooling index in
+DT cooling map, I will summit a patch set then.
 
-I will mull about this and try to come up with something better and more
-understandable.
-
-Luckily, this is not gating for integrating sparx5, so its possible
-we'll just skip the SGPIO driver for now.
-
-I'll provide an update as soon as possible.
-
----Lars
-
-> Yours,
-> Linus Walleij
-
--- 
-Lars Povlsen,
-Microchip
-
+Thanks,
+Anson.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
