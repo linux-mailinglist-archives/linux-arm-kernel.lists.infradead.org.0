@@ -2,65 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBA2A1E1208
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 17:47:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE02C1E1203
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 17:45:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date
-	:Message-ID:From:References:To:Subject:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rHbpwEE5P/ju00DyidWyR/7RNU1BMFPDt56NolkXj5s=; b=qpa0xIJc1U4q5/
-	U332l/W+kio89ATRj2GDxpoX1IDppwnPc8LXwDHe7ooNownn4O7iH5MtI9dEReMfeDofpWkFhgS56
-	uXT9hyCpA/0Jr6kor5sC05SpnmQ2bhb/I+OzABLG4FwJOiEmELfH9InqcU6xDd4CcyF8IQf8c/79m
-	SeWfDuBZMb329hN95bxaTBIZg3FvKanzwkJ19haSXc5U4ccH51FupW5XuzY20WO+8+lNrOclDboEl
-	9mX9NCUY3jzFsgy1CySo6vdybo/iVdwsJ7EErSs7kdWgx+GeL7uWGmwRYX/zsOLHQtnPJGM0ATG61
-	nsmWelBsPe+NB5Slip5Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=pGBZb4U++fBDyrIcic2xvzbX9U+H4IMpCj8k8/w3T/c=; b=T4bDeNZQhM1QQuVyeX0yg1Z8i
+	Th+pVqEYzbSYazSXs51Ps4H2V6ewuV7KQ9kFrpNqNxmttR0xj70c+u9K3aiyBheLy2JccK/soT94h
+	nr0Z0jXmidsKTUXGNs3r1Un77q2IqfrliBOX8knY0mNXxTgn0Q8wL1A/EyAplwA3Lx7Xald/z9tDg
+	boGYSIsX/NWP/j82yJ3dUITMTQrYSginHgykLVe5Chd4rhXmVf53dBHWP3R8r73NpQoG5WVOMh3ED
+	xpju9YDhGmyYaGvP/7mbXbJOQKw3an+p2NyS6M9jDCaSU4nXcPhSIL5oodl4SyN808ofjDBV+iQq1
+	LbHK3tDyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdFK0-0000kN-BH; Mon, 25 May 2020 15:47:24 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jdFHz-0006NB-T1; Mon, 25 May 2020 15:45:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdFJp-0000ja-FQ
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 15:47:16 +0000
-Received: from [192.168.0.20]
- (cpc89242-aztw30-2-0-cust488.18-1.cable.virginm.net [86.31.129.233])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 5E379562;
- Mon, 25 May 2020 17:38:44 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1590421126;
- bh=CH7bO9h+bXgSIApeNO1CojJAmdxpKZhJjd8+hwnYzd8=;
- h=Reply-To:Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=utZPS/L9k+UGhCThI3kWJUjSf4F+c1Fex7fvUJ/hoJUEPfjvrtm3lG4z8MuYcGIcK
- 8cKm2UVTJ3v5S0JX+ToiHOrGHD9WdgSZUUJFG0DU/KhnUqTZ3C7mjmrv4XwMa9EmAf
- +1FqsIdSv9X4nKQVubvYiPgPdJP0b6hza+2kLqQ0=
-Subject: Re: [PATCH 15/21] drm/rcar-du: Use GEM CMA object functions
-To: Thomas Zimmermann <tzimmermann@suse.de>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-References: <20200522135246.10134-1-tzimmermann@suse.de>
- <20200522135246.10134-16-tzimmermann@suse.de>
- <20200522201240.GE5824@pendragon.ideasonboard.com>
- <816a8a0e-bb98-ea6c-5016-94b18e045fb5@suse.de>
-From: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
-Organization: Ideas on Board
-Message-ID: <50d76988-f627-037d-a8bc-d18f6662c981@ideasonboard.com>
-Date: Mon, 25 May 2020 16:38:41 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jdFHc-0006Ml-5d
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 15:44:57 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A22992071C;
+ Mon, 25 May 2020 15:44:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590421495;
+ bh=r8OCSimYRde1NwHA/0Q7MB3/3zxYFYjrUXrzd9tKjr8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=jaImQu0pAsogF1OmK8r3Cbbzn3J1P85LmElRGOIs0VgCmyozC8RrwHIJ+DIMyUnqi
+ NK2HPQuQAhIlUiOnqaBmX54A14oy1kBZO0SYrzxnu7F/qhagrMQENb5MLd6dYplEBc
+ L86U2sMjEGtzOnzFmM953wVFfjZpoYxQR8Q8TczU=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jdFHZ-00FCGg-VI; Mon, 25 May 2020 16:44:54 +0100
 MIME-Version: 1.0
-In-Reply-To: <816a8a0e-bb98-ea6c-5016-94b18e045fb5@suse.de>
-Content-Language: en-GB
+Date: Mon, 25 May 2020 16:44:53 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Keqian Zhu <zhukeqian1@huawei.com>
+Subject: Re: [RFC PATCH 0/7] kvm: arm64: Support stage2 hardware DBM
+In-Reply-To: <20200525112406.28224-1-zhukeqian1@huawei.com>
+References: <20200525112406.28224-1-zhukeqian1@huawei.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <4b8a939172395bf38e581634abecf925@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: zhukeqian1@huawei.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org, catalin.marinas@arm.com, james.morse@arm.com,
+ will@kernel.org, suzuki.poulose@arm.com, sean.j.christopherson@intel.com,
+ julien.thierry.kdev@gmail.com, broonie@kernel.org, tglx@linutronix.de,
+ akpm@linux-foundation.org, alexios.zavras@intel.com,
+ wanghaibin.wang@huawei.com, zhengxiang9@huawei.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_084713_666292_9486BE97 
-X-CRM114-Status: GOOD (  22.48  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200525_084456_251679_0262CED3 
+X-CRM114-Status: GOOD (  20.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -68,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,135 +93,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: kieran.bingham+renesas@ideasonboard.com
-Cc: alexandre.belloni@bootlin.com, linux-aspeed@lists.ozlabs.org,
- narmstrong@baylibre.com, airlied@linux.ie, liviu.dudau@arm.com,
- dri-devel@lists.freedesktop.org, paul@crapouillou.net,
- mihail.atanassov@arm.com, sam@ravnborg.org, marex@denx.de,
- khilman@baylibre.com, abrodkin@synopsys.com, kong.kongxinwei@hisilicon.com,
- xinliang.liu@linaro.org, ludovic.desroches@microchip.com,
- tomi.valkeinen@ti.com, james.qian.wang@arm.com, joel@jms.id.au,
- linux-imx@nxp.com, alexandre.torgue@st.com, puck.chen@hisilicon.com,
- s.hauer@pengutronix.de, alison.wang@nxp.com, jsarha@ti.com, wens@csie.org,
- vincent.abriou@st.com, linux-arm-kernel@lists.infradead.org,
- mcoquelin.stm32@gmail.com, bbrezillon@kernel.org, andrew@aj.id.au,
- philippe.cornu@st.com, yannick.fertre@st.com, kernel@pengutronix.de,
- zourongrong@gmail.com, shawnguo@kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Andrew Morton <akpm@linux-foundation.org>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, zhengxiang9@huawei.com,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, wanghaibin.wang@huawei.com,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/05/2020 13:49, Thomas Zimmermann wrote:
-> Hi
+On 2020-05-25 12:23, Keqian Zhu wrote:
+> This patch series add support for stage2 hardware DBM, and it is only
+> used for dirty log for now.
 > 
-> Am 22.05.20 um 22:12 schrieb Laurent Pinchart:
->> Hi Thomas,
->>
->> Thank you for the patch.
->>
->> On Fri, May 22, 2020 at 03:52:40PM +0200, Thomas Zimmermann wrote:
->>> The rcar-du driver uses the default implementation for CMA functions;
->>> except for the .dumb_create callback. The __DRM_GEM_CMA_DRIVER_OPS macro
->>> now sets these defaults and .dumb_create in struct drm_driver. All
->>> remaining operations are provided by CMA GEM object functions.
->>>
->>> Signed-off-by: Thomas Zimmermann <tzimmermann@suse.de>
->>> ---
->>>  drivers/gpu/drm/rcar-du/rcar_du_drv.c | 11 +----------
->>>  1 file changed, 1 insertion(+), 10 deletions(-)
->>>
->>> diff --git a/drivers/gpu/drm/rcar-du/rcar_du_drv.c b/drivers/gpu/drm/rcar-du/rcar_du_drv.c
->>> index 3e67cf70f0402..3728038cec1d1 100644
->>> --- a/drivers/gpu/drm/rcar-du/rcar_du_drv.c
->>> +++ b/drivers/gpu/drm/rcar-du/rcar_du_drv.c
->>> @@ -476,16 +476,7 @@ DEFINE_DRM_GEM_CMA_FOPS(rcar_du_fops);
->>>  
->>>  static struct drm_driver rcar_du_driver = {
->>>  	.driver_features	= DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
->>> -	.gem_free_object_unlocked = drm_gem_cma_free_object,
->>> -	.gem_vm_ops		= &drm_gem_cma_vm_ops,
->>> -	.prime_handle_to_fd	= drm_gem_prime_handle_to_fd,
->>> -	.prime_fd_to_handle	= drm_gem_prime_fd_to_handle,
->>> -	.gem_prime_get_sg_table	= drm_gem_cma_prime_get_sg_table,
->>> -	.gem_prime_import_sg_table = drm_gem_cma_prime_import_sg_table,
->>> -	.gem_prime_vmap		= drm_gem_cma_prime_vmap,
->>> -	.gem_prime_vunmap	= drm_gem_cma_prime_vunmap,
->>> -	.gem_prime_mmap		= drm_gem_cma_prime_mmap,
->>> -	.dumb_create		= rcar_du_dumb_create,
->>> +	__DRM_GEM_CMA_DRIVER_OPS(rcar_du_dumb_create),
->>
->> Your __DRM_GEM_CMA_DRIVER_OPS is defined as
->>
->> #define __DRM_GEM_CMA_DRIVER_OPS(__dumb_create) \
->>         .gem_create_object      = drm_cma_gem_create_object_default_funcs, \
->>         .dumb_create            = (__dumb_create), \
->>         .prime_handle_to_fd     = drm_gem_prime_handle_to_fd, \
->>         .prime_fd_to_handle     = drm_gem_prime_fd_to_handle, \
->>         .gem_prime_import_sg_table = drm_gem_cma_prime_import_sg_table_vmap, \
->>         .gem_prime_mmap         = drm_gem_prime_mmap
->>
->> The patch thus introduces several changes:
->>
->> - drm_gem_cma_prime_import_sg_table_vmap() is used instead of
->>   drm_gem_cma_prime_import_sg_table() combined with .gem_prime_vmap()
->>   and .gem_prime_vunmap(). I believe that's fine, but splitting that
->>   change in a separate commit, or at the very least explaining it in
->>   details in the commit message, would make review easier.
->>
->> - .gem_create_object() is now set. That seems to be OK, but I'm not sure
->>   to grasp all the implications. This should also be explained in the
->>   commit message, and ideally split to a separate patch.
+> It works well under some migration test cases, including VM with 4K
+> pages or 2M THP. I checked the SHA256 hash digest of all memory and
+> they keep same for source VM and destination VM, which means no dirty
+> pages is missed under hardware DBM.
 > 
-> That's relevant during object creation and sets the object functions.
-> See one of my other replies for how this can go away after all CMA
-> drivers have been updated to GEM object functions.
+> However, there are some known issues not solved.
 > 
+> 1. Some mechanisms that rely on "write permission fault" become 
+> invalid,
+>    such as kvm_set_pfn_dirty and "mmap page sharing".
 > 
->>
->> - drm_gem_cma_prime_mmap() is replaced with drm_gem_prime_mmap(). Same
->>   comments :-)
-> 
-> I relied on the aspeed driver to be correct. After Sam's comment on
-> that, I read the code once again several times. The original
-> implementation clears VM_PFNMAP. And I cannot find that code any longer.
-> Going back to the original function might be better.
-> 
-> 
->>
->> This patch hides way too many changes in what is documented as just
->> innocent refactoring. It seems other drivers are affected too.
-> 
-> Could you test the patchset? I don't have the HW.
+>    kvm_set_pfn_dirty is called in user_mem_abort when guest issues 
+> write
+>    fault. This guarantees physical page will not be dropped directly 
+> when
+>    host kernel recycle memory. After using hardware dirty management, 
+> we
+>    have no chance to call kvm_set_pfn_dirty.
 
-Digging out the branch you provided elsewhere in this thread:
+Then you will end-up with memory corruption under memory pressure.
+This also breaks things like CoW, which we depend on.
 
->>> Could you boot-test with the patchset applied?
->>
->> Yes, if you have a git branch I can just build and boot I can
->> do it quickly!
->
-> Fantastic! It's the cma-objfuncs branch of
->
-> https://gitlab.freedesktop.org/tzimmermann/linux.git
-
-I have successfully run our display tests with your patches here on an
-R-Car H3 Salvator-XS(-es2).
-
-Tested-by: Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>
-
-
-
-> Best regards
-> Thomas
 > 
->>
->>>  	.fops			= &rcar_du_fops,
->>>  	.name			= "rcar-du",
->>>  	.desc			= "Renesas R-Car Display Unit",
->>
+>    For "mmap page sharing" mechanism, host kernel will allocate a new
+>    physical page when guest writes a page that is shared with other 
+> page
+>    table entries. After using hardware dirty management, we have no 
+> chance
+>    to do this too.
 > 
+>    I need to do some survey on how stage1 hardware DBM solve these 
+> problems.
+>    It helps if anyone can figure it out.
+> 
+> 2. Page Table Modification Races: Though I have found and solved some 
+> data
+>    races when kernel changes page table entries, I still doubt that 
+> there
+>    are data races I am not aware of. It's great if anyone can figure 
+> them out.
+> 
+> 3. Performance: Under Kunpeng 920 platform, for every 64GB memory, KVM
+>    consumes about 40ms to traverse all PTEs to collect dirty log. It 
+> will
+>    cause unbearable downtime for migration if memory size is too big. I 
+> will
+>    try to solve this problem in Patch v1.
 
+This, in my opinion, is why Stage-2 DBM is fairly useless.
+ From a performance perspective, this is the worse possible
+situation. You end up continuously scanning page tables, at
+an arbitrary rate, without a way to evaluate the fault rate.
+
+One thing S2-DBM would be useful for is SVA, where a device
+write would mark the S2 PTs dirty as they are shared between
+CPU and SMMU. Another thing is SPE, which is essentially a DMA
+agent using the CPU's PTs.
+
+But on its own, and just to log the dirty pages, S2-DBM is
+pretty rubbish. I wish arm64 had something like Intel's PML,
+which looks far more interesting for the purpose of tracking
+accesses.
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
