@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB4A31E05DE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 06:14:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28DE11E05DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 06:13:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RO7p9efHgSdoewUsz076gm7npdA7c+wMBD44qJt2Jlc=; b=JuX5hDmeIzd8SF
-	wrVm7e09H2KsEc9KXrYv3IP8NGdixxvX25UTJbEXr0kOOlh4pmAbnXZpu5OGU3cwHukakQQSZ+IXE
-	Pde05QblsmsIHafhYHqayvxgyd8HB6zP8i0C+6r36ZliJT6Un7EW0E03ZZpoGgC94/+U8wy3tPqtD
-	1mJ2b0KT/XNaonJuZfo0kAh5uNlVY2T5zJ7QGkQQAx2peC2LRzYCz+THsij7amgB98QRWgCzpq7Wm
-	mket9b2vcvsGk15m7ac7G+kWEFuEGLOza4Azsj1/ihbYqZbBaZP4Cpngwo74XMuQMA+m/O8Ad7/vw
-	UFUgWcaM7x6e6vHofpJA==;
+	List-Owner; bh=DgHx5qU/YxLwtM/o2mYgopeVPAssmY6PJaMpe8W1zIQ=; b=jHlhuEB5g+Jmxj
+	TDsZmeiUDiWqvKliqcn3islUySYXvBzCdDk15MULLyVHSfduRry0okI+55sAMl3qfnkZFxJd3+I/k
+	6+TYc7XOreBDHnGl3l5mW6xrYifdtc9ZlB40C+mK5EMGc31EA61Th+zccCvlWO6Vy3ggGUR70CnjA
+	GT7QjvdSki4XytC8SnIiRCC6ChiCRzxoyOvWwHyFkNrzZhayXAEUDmUSel1Gaa2qxlGnNov87vpHF
+	2J/k/fHztyauC70HyiMyre33gPMH7RZCKW+XlS3tt/NmScJa2n2LelD8h6VGiKSjhyI35edoX5w0C
+	8rwKoiUucjBrWShP/wRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd4Uw-0000l9-Oi; Mon, 25 May 2020 04:13:58 +0000
+	id 1jd4Ud-0000UY-W5; Mon, 25 May 2020 04:13:40 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd4Tf-00008f-LC
+ id 1jd4Tg-00008y-6l
  for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 04:12:42 +0000
 Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
- by mailnew.nyi.internal (Postfix) with ESMTP id 1645558008B;
+ by mailnew.nyi.internal (Postfix) with ESMTP id 9DA91580090;
  Mon, 25 May 2020 00:12:39 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
  by compute3.internal (MEProxy); Mon, 25 May 2020 00:12:39 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=Xrn0lUcE0vYS+
- TYAfF+PxgGbwGOEAVyhKE+EutZlw7o=; b=jeyPm6p1W2pH0ex81eyyNM8nrghkZ
- BOsNNl3zRKwTqY5tyKPNdVw+Wa/X3aDbfIqzGiQO+oDMOIes0aDwY306W//4QklT
- 5GGuj4qFjCrdPQXiGZqiC61uthi8AHmSQOwhbP0juuxgbGrr6XXf5k69m4Qc8KYy
- VQ5/UPbW8nTuYZc4QchEc1JcM6fqHCohD+vWVEwE93AU2wmny+zdjYrrsbDhokU2
- JXF97UgIe/paAHnEkTAWp1j8LOhbKSRKEkWt+wHeFYB9t7Sy2AY0+TyAU8Gc2zrk
- uAKc6UnnXKsZJYl13j8XjSe7Aud6olpGqo/yB1n4K9atkhW3+DCbSG6ug==
+ :mime-version:content-transfer-encoding; s=fm2; bh=KItE/umB2E4IQ
+ 3k9ieRZkw7YzrbUp3ZSlvt5X/bA8qs=; b=nFR0dsScrHADLEKAwtEfNHfHDq8BL
+ b16/ceAicmrWBhOOl/qc8+BAKoC8flNG6l4T7BcQfox6HLU27VCI88BdhY0Iwkcr
+ qYKHG3bUcjfC+TtjH9ADJjKHUcx3hglZ1fpFxgdpF/6OBGDbTKhQvW+9xvOfP58K
+ 4j+oCtlaS0lEVsLyRUUz+AQN4i66J+jyeUe3jCoeRQx9qapu1btJEqLAL3fpPm+H
+ 7uUoqMaRAwpvErXwZw95IAkMtwRznbfT16/UNBjBMoUr64TR+uhKu+7Nhua/mFBZ
+ XEImZCqrdEoC4LuAg/pilk0qQgt/PWjzA00J0F72L+oa+uOWiwVbbptjA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=Xrn0lUcE0vYS+TYAfF+PxgGbwGOEAVyhKE+EutZlw7o=; b=P8gT7tWR
- c4T+vsC7CKDXzdIOAPZbP4ghGdnxHldTkdxiVfTyXBS6cmpYLDr4TtloEUhqE3eP
- rP9J9dwD9k+cG6iOP5XbvMzFf2E6wVxkx0rMaSmY3ihRMChHpOXOJ60f6khfzJs4
- 1kI5A8jFWR278ZvokgCDe3HgtOtHMOyDWqhn5hk5rSGABz4GAiYCuzUkkIOWOtAB
- YLIeEyAcM+bFMKp4KcitRwPpLwNS2s8XNCzuCHDgsaQQYE40T0kuRQSeM6R4gLhZ
- at/bcF7MUn2LRW+WubthlUOmGR/bWsZ1iXwe90xAQG1acDPIcotO9ZyYVg2jjySO
- Byj+o/CAJc984Q==
-X-ME-Sender: <xms:tkXLXmsFYa9LdwjxfgZJUzpFeHy_g5rWskP95FNTA8nd9N3bdbRB2g>
+ fm2; bh=KItE/umB2E4IQ3k9ieRZkw7YzrbUp3ZSlvt5X/bA8qs=; b=aIJaD5gu
+ /uwn6ZB0pYKyP1MvFzOkgzxcKqKarzxYp1ywQH2oDrZWEioLt2kDaEIStaLQBbbW
+ bfBv6ynRTcUP9IlU7IfFZ30XYaeG6u0aL5QHxyAXvMnj+XiNF2DBYepfd1tSQPLm
+ bYTGozXrjklSB4Vi/z0DS+6Al8KrwTBbeoY5TwgHGL43YxJaqt0tZsSuLiOnTPRT
+ 4YkE795boUlFjzaiaFN+vpzYPsKLY8YlmoO0w4OOdl+zA9Gw+C/TKWXn4qS23C4F
+ J7Fpbc4Nz8lIfXY7sfPCcsnX251IGhYFsUYr2fF0vqAetIqjK27Kw1h4ZZjI6fqa
+ vEg4c0cGzs+1hw==
+X-ME-Sender: <xms:t0XLXqB4kNvDLbXD6CoTnJo3rbHanhdxoZfjNpR2oqkChAhHGPKxBA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudduledgjeelucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,15 +56,15 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudduledgjeelucetufdoteggod
  lhcujfholhhlrghnugcuoehsrghmuhgvlhesshhhohhllhgrnhgurdhorhhgqeenucggtf
  frrghtthgvrhhnpeduhfejfedvhffgfeehtefghfeiiefgfeehgfdvvdevfeegjeehjedv
  gfejheeuieenucfkphepjedtrddufeehrddugeekrdduhedunecuvehluhhsthgvrhfuih
- iivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghn
+ iivgepvdenucfrrghrrghmpehmrghilhhfrhhomhepshgrmhhuvghlsehshhholhhlrghn
  ugdrohhrgh
-X-ME-Proxy: <xmx:tkXLXreMx-f7YZt1b40PvqrDXoAx_eMUSEUIYV5cCc-7MdO81uOgNw>
- <xmx:tkXLXhysd1qx5L8kOsQMdb1LUUIxL2xUhaVh92-zaRhvomfOwz0b4g>
- <xmx:tkXLXhPcSEBhKptNu_Vs-TcMCuSvc4BnNqCOSzrvumrMSowR5DNHvQ>
- <xmx:t0XLXn2W8IWg1qdsAjAwH9dpgO_lypih_umdBgog4B9S2kzjhoEeZw>
+X-ME-Proxy: <xmx:t0XLXkg4WYQveJ-QjGazGnb36PfgTrmerVESIkLppO6YuR7uhJ9O8g>
+ <xmx:t0XLXtn-TcwRIPF3L-7-mF8Ck42KGPowql0HFsGbD2YJGvUtiSQWWQ>
+ <xmx:t0XLXozkG3P_62II_i5rM6duqUW_vv6PDE3PWj0cbp8GQtnYhz8JSw>
+ <xmx:t0XLXkJTrxjE5KfFT-IihcBEkX0V2X005LHg3SZUD8i35WBj_--Fnw>
 Received: from titanium.stl.sholland.net
  (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
- by mail.messagingengine.com (Postfix) with ESMTPA id 5F2E9306653A;
+ by mail.messagingengine.com (Postfix) with ESMTPA id E7E523066544;
  Mon, 25 May 2020 00:12:38 -0400 (EDT)
 From: Samuel Holland <samuel@sholland.org>
 To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
@@ -72,16 +72,16 @@ To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Russell King <linux@armlinux.org.uk>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-Subject: [PATCH v2 2/9] irqchip/sun6i-r: Add wakeup support
-Date: Sun, 24 May 2020 23:12:55 -0500
-Message-Id: <20200525041302.51213-3-samuel@sholland.org>
+Subject: [PATCH v2 3/9] dt-bindings: irq: Add a compatible for the H3 R_INTC
+Date: Sun, 24 May 2020 23:12:56 -0500
+Message-Id: <20200525041302.51213-4-samuel@sholland.org>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200525041302.51213-1-samuel@sholland.org>
 References: <20200525041302.51213-1-samuel@sholland.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_211239_824753_0029029B 
-X-CRM114-Status: GOOD (  13.92  )
+X-CRM114-CacheID: sfid-20200524_211240_391996_36B492E5 
+X-CRM114-Status: GOOD (  11.35  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -120,132 +120,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Maintain a mask of wake-enabled IRQs, and enable them in hardware
-during the syscore phase of suspend. The restore the original mask
-of enabled IRQs (just the NMI) during resume.
-
-This serves two purposes. First, it lets power management firmware
-running on the ARISC coprocessor know which wakeup sources Linux wants
-to have enabled. That way, it can avoid turning them off when it shuts
-down the remainder of the clock tree. Second, it preconfigures the
-coprocessor's interrupt controller, so the firmware's wakeup logic
-is as simple as waiting for an interrupt to arrive.
+The Allwinner H3 SoC contains an R_INTC that is, as far as we know,
+compatible with the R_INTC present in other sun8i/sun50i SoCs starting
+with the A31. Since the R_INTC hardware is undocumented, introduce a new
+compatible for the R_INTC variant in this SoC, in case there turns out
+to be some difference.
 
 Signed-off-by: Samuel Holland <samuel@sholland.org>
 ---
- drivers/irqchip/irq-sun6i-r.c | 51 +++++++++++++++++++++++++++++++++++
- 1 file changed, 51 insertions(+)
+ .../allwinner,sun7i-a20-sc-nmi.yaml                  | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/irqchip/irq-sun6i-r.c b/drivers/irqchip/irq-sun6i-r.c
-index f8bfa5515f20..a5deea92057f 100644
---- a/drivers/irqchip/irq-sun6i-r.c
-+++ b/drivers/irqchip/irq-sun6i-r.c
-@@ -3,12 +3,14 @@
- // Allwinner A31 and newer SoCs R_INTC driver
- //
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
+index cf09055da78b..973fe5d17af0 100644
+--- a/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
++++ b/Documentation/devicetree/bindings/interrupt-controller/allwinner,sun7i-a20-sc-nmi.yaml
+@@ -26,15 +26,13 @@ properties:
+       - const: allwinner,sun6i-a31-sc-nmi
+         deprecated: true
+       - const: allwinner,sun7i-a20-sc-nmi
+-      - items:
+-        - const: allwinner,sun8i-a83t-r-intc
+-        - const: allwinner,sun6i-a31-r-intc
+       - const: allwinner,sun9i-a80-sc-nmi
+       - items:
+-        - const: allwinner,sun50i-a64-r-intc
+-        - const: allwinner,sun6i-a31-r-intc
+-      - items:
+-        - const: allwinner,sun50i-h6-r-intc
++        - enum:
++          - allwinner,sun8i-a83t-r-intc
++          - allwinner,sun8i-h3-r-intc
++          - allwinner,sun50i-a64-r-intc
++          - allwinner,sun50i-h6-r-intc
+         - const: allwinner,sun6i-a31-r-intc
  
-+#include <linux/atomic.h>
- #include <linux/irq.h>
- #include <linux/irqchip.h>
- #include <linux/irqdomain.h>
- #include <linux/of.h>
- #include <linux/of_address.h>
- #include <linux/of_irq.h>
-+#include <linux/syscore_ops.h>
- 
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- 
-@@ -24,6 +26,9 @@
- static void __iomem *base;
- static irq_hw_number_t parent_offset;
- static u32 parent_type;
-+#ifdef CONFIG_PM_SLEEP
-+static atomic_t wake_mask;
-+#endif
- 
- static struct irq_chip sun6i_r_intc_edge;
- static struct irq_chip sun6i_r_intc_level;
-@@ -106,6 +111,20 @@ static int sun6i_r_intc_irq_set_type(struct irq_data *data, unsigned int type)
- 	return irq_chip_set_type_parent(data, type);
- }
- 
-+#ifdef CONFIG_PM_SLEEP
-+static int sun6i_r_intc_irq_set_wake(struct irq_data *data, unsigned int on)
-+{
-+	if (on)
-+		atomic_or(BIT(data->hwirq), &wake_mask);
-+	else
-+		atomic_andnot(BIT(data->hwirq), &wake_mask);
-+
-+	return 0;
-+}
-+#else
-+#define sun6i_r_intc_irq_set_wake NULL
-+#endif
-+
- static struct irq_chip sun6i_r_intc_edge = {
- 	.name			= "sun6i-r-intc",
- 	.irq_ack		= sun6i_r_intc_irq_ack,
-@@ -116,6 +135,7 @@ static struct irq_chip sun6i_r_intc_edge = {
- 	.irq_set_type		= sun6i_r_intc_irq_set_type,
- 	.irq_get_irqchip_state	= irq_chip_get_parent_state,
- 	.irq_set_irqchip_state	= irq_chip_set_parent_state,
-+	.irq_set_wake		= sun6i_r_intc_irq_set_wake,
- 	.irq_set_vcpu_affinity	= irq_chip_set_vcpu_affinity_parent,
- 	.flags			= IRQCHIP_SET_TYPE_MASKED,
- };
-@@ -129,6 +149,7 @@ static struct irq_chip sun6i_r_intc_level = {
- 	.irq_set_type		= sun6i_r_intc_irq_set_type,
- 	.irq_get_irqchip_state	= irq_chip_get_parent_state,
- 	.irq_set_irqchip_state	= irq_chip_set_parent_state,
-+	.irq_set_wake		= sun6i_r_intc_irq_set_wake,
- 	.irq_set_vcpu_affinity	= irq_chip_set_vcpu_affinity_parent,
- 	.flags			= IRQCHIP_SET_TYPE_MASKED |
- 				  IRQCHIP_EOI_THREADED,
-@@ -170,6 +191,34 @@ static const struct irq_domain_ops sun6i_r_intc_domain_ops = {
- 	.free		= irq_domain_free_irqs_common,
- };
- 
-+#ifdef CONFIG_PM_SLEEP
-+static int sun6i_r_intc_suspend(void)
-+{
-+	/* All wake IRQs are enabled during system sleep. */
-+	writel_relaxed(atomic_read(&wake_mask), base + SUN6I_R_INTC_ENABLE);
-+
-+	return 0;
-+}
-+
-+static void sun6i_r_intc_resume(void)
-+{
-+	/* Only the NMI is relevant during normal operation. */
-+	writel_relaxed(NMI_HWIRQ_BIT, base + SUN6I_R_INTC_ENABLE);
-+}
-+
-+static struct syscore_ops sun6i_r_intc_syscore_ops = {
-+	.suspend	= sun6i_r_intc_suspend,
-+	.resume		= sun6i_r_intc_resume,
-+};
-+
-+static void sun6i_r_intc_syscore_init(void)
-+{
-+	register_syscore_ops(&sun6i_r_intc_syscore_ops);
-+}
-+#else
-+static inline void sun6i_r_intc_syscore_init(void) {}
-+#endif
-+
- static int __init sun6i_r_intc_init(struct device_node *node,
- 				    struct device_node *parent)
- {
-@@ -211,6 +260,8 @@ static int __init sun6i_r_intc_init(struct device_node *node,
- 	writel_relaxed(NMI_HWIRQ_BIT, base + SUN6I_R_INTC_PENDING);
- 	writel_relaxed(NMI_HWIRQ_BIT, base + SUN6I_R_INTC_ENABLE);
- 
-+	sun6i_r_intc_syscore_init();
-+
- 	return 0;
- }
- IRQCHIP_DECLARE(sun6i_r_intc, "allwinner,sun6i-a31-r-intc", sun6i_r_intc_init);
+   reg:
 -- 
 2.24.1
 
