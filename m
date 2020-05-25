@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51CE61E0568
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 05:42:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8F9D1E0569
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 05:43:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,77 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=k7Fy8Fgl76aYCdH5wCmthAdoqwdK0uls1gOO0HDRadA=; b=OsjSpXTh2JxIhrPix2AmLpGyPo
-	OmAM1rRte3NY1tvF/ahPJgi3E25NpotfiMEz+I7CrncituEqwlmo1B95oX7eW5QVmwJj9rAJE1kR6
-	Mmvl1wM2UhqfbaNqUR55etmp0RqwDPWuLXFYKcHUD/Ft24zRtri91F4MeuSxR1iuu8EgrwFISvHYI
-	dMnc52nFWT8QM6puXQSXcgJackuvH/yBDAhb1g+fTvDv78lZ/61ClTmnyK2yHG7dyKBxMMAwxZMCP
-	qk3CWdOIWjhyuF41aTl0ZzRetALQGaQX0X9Beok6qAvGDX4ntzgOTH5ySlxvzaIjdv4xce4jdEPaQ
-	FLT7ZIwA==;
+	bh=4C87YMfTm0wAGgBjtnNm8iRLztceaoH9aZfarVWFWks=; b=Yw5/KmzIy5Mivrx63/vbT++NuM
+	X7P7eHZnJ7QNtKuKTYauPLV/RIwHe8UbvrsT4w1MudobQbEt9sh5LMjJI+9FD1AK8+ua78OOYGocE
+	qYhu1Mwzrvpx1gqbZJ+GRi0i6cog4kfzQlnnRP5MdEvTf6gvSFETYztxH/G4+Mzmlh/K0PEu3aCPS
+	77z8T5X412kKkdGwcKXL1KjdduUzjhgXX9hkIp0kH4GPwD+nPwrzRSTHeDw+2Y0TnXT8ttgmfKl9U
+	ArUGCiMUEya3Huaj2s58wVxWM7YnabrgWSpN1YGGJTB2TQBZWK4cJRhO14k1UKIv11577ENkMksWk
+	d/UhFbrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd40h-0003Jt-7h; Mon, 25 May 2020 03:42:43 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jd40z-0003X7-QW; Mon, 25 May 2020 03:43:01 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd3zW-0002bm-D3
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 03:41:32 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 145so8256665pfw.13
+ id 1jd3zb-0002fc-CU
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 03:41:37 +0000
+Received: by mail-pl1-x642.google.com with SMTP id k22so6987450pls.10
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 24 May 2020 20:41:30 -0700 (PDT)
+ Sun, 24 May 2020 20:41:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=MtXq2QWDOoN0CBKSeH60c2tJASyOu/uu0I8Lzq6RPtM=;
- b=Uu0Me0dGDuqxYix7sKTmgNEVZhxag/XQKpN534oTVw9rKWGtvA9xHjsL1UJK9EHqtM
- nTKC1y2cevDfXsqAT0EYJvl8CF73OhyMOohDURns9BNuV5Rc9adO0KEa3uwcxCsnP/mx
- EyB5Hjqc6Sa+myM+jtbKMHbS9WzPPlgjS8Oe581UgE7bvXzAOGSNdHyPXhR1AGfwYaOc
- rPtop39Crps4TEq4vIoNsfU2i/khaZbcUJIm28SNH/z0XB7uXoNdttEsUFzSmFjnhCKB
- mdAoD+tHQiD5gk3Qoo7RpLrnvHVJ/+WPuPEmDrEWFXf7JwJSPVcW1ggvNyeKJeJY1grf
- FTXA==
+ bh=JHR9IFaRgCyJGWikuHqyC0B14pMQIGmyd5Kpq3MNpmQ=;
+ b=b9x/beh8V8+Wi3TKqrBgqD2YLsbTxg11tUo1GMv4hQuU9CXkFipOzeKKw1ZhH558DJ
+ r3oDIli3++aJuKFgOZhAMmIPgFHizDXljnjeuUsvEF9PQy3XdYGIYSNIkKY+vG+nZnUC
+ S17nYhtoQLypMlGwlOfC4yczd2ZcZeMhwYt5FPiTVMn0/n7muwoxYy7K5NrlRNkjOZoA
+ uYMMg1PRq7PQOTUKTlhGadlAru4Ngw2QUZcJmDsrxr/wcYKPqhI3yGp1of9jxHDiSs73
+ YsOHksI+ec5abVm67ec+Wz5N7W8PH9R8LQQhLaETnupDLM+bilLEXZ1lUOV5xhLPeWvu
+ MVZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=MtXq2QWDOoN0CBKSeH60c2tJASyOu/uu0I8Lzq6RPtM=;
- b=EDbv218tFs2AH/ApfSsjEoPqpFfrIznWSwjoC/5Urt1sFyJFp60OV0lY7WysXsebRh
- JGZ/L25mMIvvDsMlnhUBAuv0E5X17T5DgEup9c9vj1qo/XEwd54aR5cWiElagpRHMdOR
- WggSCPVHrM27BJbSlU/2cOZhOxsFFT4SEJuSWIWTyM2a3PYdsfS/4PUOU4oEoZiXI2XN
- lnXOaBFFDOFlUoruRew90WFtm+y+iVhwMUPixKySjIGRgGwabcH2mlyX6DSl5eYL7OiL
- pxN5xyLdJWbSt3Upr3qGyXRjwX6dwIssOE9tfKzlPCpZbF+M1Y+y9vq9f3tQChydbmMv
- DBYg==
-X-Gm-Message-State: AOAM533h6UK7p399+K95SvJd1UH3LFWZ3EYTeLovsjVNLZDYxSdl7MwB
- CHsffVGi6eLWm1z76mlFZGM=
-X-Google-Smtp-Source: ABdhPJxXQqJcbq5UIqIaFFaMYgZDDnOf9VW5SW6flIYRe44Lc/7NrxypHleIUL/neqr4Ngl52ftzNQ==
-X-Received: by 2002:a63:3e4b:: with SMTP id l72mr23931653pga.312.1590378089383; 
- Sun, 24 May 2020 20:41:29 -0700 (PDT)
+ bh=JHR9IFaRgCyJGWikuHqyC0B14pMQIGmyd5Kpq3MNpmQ=;
+ b=Dm1+34ekU2MOQ1ETGnzVYQcDI9G/up0MQBWmuSU0VWF9HrTmX1Y7QnXnSIA81yeg5s
+ Glr/+ojuxCK/Mir6BZFbQ5foSQd5Cp5JEqt7a+94mlkFzgRO3Pi7ozNXVqK2b0nVg6lL
+ vqcdWxQwu1FCX7IB17lGTD2Ed5Ss37YRjcps0vTTy8klwnLZSTvbRRzsR+IBkKeUSUkZ
+ HrO40P0MD/UWkI7HeGEFaYIkkUHre2K1BLWY6mM69gi0ZUghOjRPEE3exhOv/iOeEJwm
+ 9a39vgm7ASCf2C5qmDJSsez2CbqvmqZp+Es5ZbD8GR+EaE/jxzTKDjm5sjqWbi0TnF4W
+ 3B+w==
+X-Gm-Message-State: AOAM533vb5DQ4QFj2LQfJwBWT97YLu8oYLDbQ7h76tsAkANPVIrxR7Ff
+ NyXQHlF7QzhOxxALex5+2b4=
+X-Google-Smtp-Source: ABdhPJwFd19cwDs3kghDA6cyFKAQQDyzxswSNn1g5n0asibuokVH+325D0MWIcoam+IOMZD80TfYMg==
+X-Received: by 2002:a17:902:bc82:: with SMTP id
+ bb2mr5540650plb.107.1590378094241; 
+ Sun, 24 May 2020 20:41:34 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.191.44])
- by smtp.gmail.com with ESMTPSA id 7sm11981695pfc.203.2020.05.24.20.41.24
+ by smtp.gmail.com with ESMTPSA id 7sm11981695pfc.203.2020.05.24.20.41.29
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 24 May 2020 20:41:29 -0700 (PDT)
+ Sun, 24 May 2020 20:41:33 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: robh+dt@kernel.org, p.zabel@pengutronix.de, mcoquelin.stm32@gmail.com,
  alexandre.torgue@st.com, thierry.reding@gmail.com, sam@ravnborg.org,
  airlied@linux.ie, daniel@ffwll.ch, mturquette@baylibre.com,
  sboyd@kernel.org
-Subject: [PATCH v5 4/8] dt-bindings: display: panel: Add ilitek ili9341 panel
- bindings
-Date: Mon, 25 May 2020 11:40:58 +0800
-Message-Id: <1590378062-7965-5-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v5 5/8] clk: stm32: Fix stm32f429's ltdc driver hang in set
+ clock rate,
+ fix duplicated ltdc clock register to 'clk_core' case ltdc's clock turn off by
+ clk_disable_unused()
+Date: Mon, 25 May 2020 11:40:59 +0800
+Message-Id: <1590378062-7965-6-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1590378062-7965-1-git-send-email-dillon.minfei@gmail.com>
 References: <broonie@kernel.org>
  <1590378062-7965-1-git-send-email-dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_204130_460499_27CBB4F3 
-X-CRM114-Status: GOOD (  12.24  )
+X-CRM114-CacheID: sfid-20200524_204135_486859_363CAB56 
+X-CRM114-Status: GOOD (  12.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,89 +117,59 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: dillon min <dillon.minfei@gmail.com>
 
-Add documentation for "ilitek,ili9341" panel.
+ltdc set clock rate crashed
+   'post_div_data[]''s pll_num is PLL_I2S, PLL_SAI (number is 1,2). but,
+    as pll_num is offset of 'clks[]' input to clk_register_pll_div(), which
+    is FCLK, CLK_LSI, defined in 'include/dt-bindings/clock/stm32fx-clock.h'
+    so, this is a null object at the register time.
+    then, in ltdc's clock is_enabled(), enable(), will call to_clk_gate().
+    will return a null object, cause kernel crashed.
+    need change pll_num to PLL_VCO_I2S, PLL_VCO_SAI for 'post_div_data[]'
+
+ duplicated ltdc clock
+   'stm32f429_gates[]' has a member 'ltdc' register to 'clk_core', but no
+    upper driver use it, ltdc driver use the lcd-tft defined in
+   'stm32f429_aux_clk[]'. after system startup, as stm32f429_gates[]'s ltdc
+    enable_count is zero, so turn off by clk_disable_unused()
+
+Changes since V3:
+1 drop last wrong changes about 'CLK_IGNORE_UNUSED' patch
+2 fix PLL_SAI mismatch with PLL_VCO_SAI
 
 Signed-off-by: dillon min <dillon.minfei@gmail.com>
 ---
- .../bindings/display/panel/ilitek,ili9341.yaml     | 69 ++++++++++++++++++++++
- 1 file changed, 69 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
+ drivers/clk/clk-stm32f4.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-new file mode 100644
-index 0000000..2172f88
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-@@ -0,0 +1,69 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/panel/ilitek,ili9341.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Ilitek-9341 Display Panel
-+
-+maintainers:
-+  - Dillon Min <dillon.minfei@gmail.com>
-+
-+description: |
-+  Ilitek ILI9341 TFT panel driver with SPI control bus
-+  This is a driver for 320x240 TFT panels, accepting a rgb input
-+  streams with 16 bits or 18 bits.
-+
-+allOf:
-+  - $ref: panel-common.yaml#
-+
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          # ili9341 240*320 Color on stm32f429-disco board
-+        - st,sf-tc240t-9370-t
-+      - const: ilitek,ili9341
-+
-+  reg: true
-+
-+  dc-gpios:
-+    maxItems: 1
-+    description: Display data/command selection (D/CX)
-+
-+  spi-3wire: true
-+
-+  spi-max-frequency:
-+    const: 10000000
-+
-+  port: true
-+
-+additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - dc-gpios
-+  - port
-+
-+examples:
-+  - |+
-+    spi {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        panel: display@0 {
-+                 compatible = "st,sf-tc240t-9370-t",
-+                              "ilitek,ili9341";
-+                 reg = <0>;
-+                 spi-3wire;
-+                 spi-max-frequency = <10000000>;
-+                 dc-gpios = <&gpiod 13 0>;
-+                 port {
-+                         panel_in: endpoint {
-+                           remote-endpoint = <&display_out>;
-+                      };
-+                 };
-+             };
-+        };
-+...
-+
+diff --git a/drivers/clk/clk-stm32f4.c b/drivers/clk/clk-stm32f4.c
+index 18117ce..fa62e99 100644
+--- a/drivers/clk/clk-stm32f4.c
++++ b/drivers/clk/clk-stm32f4.c
+@@ -129,7 +129,6 @@ static const struct stm32f4_gate_data stm32f429_gates[] __initconst = {
+ 	{ STM32F4_RCC_APB2ENR, 20,	"spi5",		"apb2_div" },
+ 	{ STM32F4_RCC_APB2ENR, 21,	"spi6",		"apb2_div" },
+ 	{ STM32F4_RCC_APB2ENR, 22,	"sai1",		"apb2_div" },
+-	{ STM32F4_RCC_APB2ENR, 26,	"ltdc",		"apb2_div" },
+ };
+ 
+ static const struct stm32f4_gate_data stm32f469_gates[] __initconst = {
+@@ -557,13 +556,13 @@ static const struct clk_div_table post_divr_table[] = {
+ 
+ #define MAX_POST_DIV 3
+ static const struct stm32f4_pll_post_div_data  post_div_data[MAX_POST_DIV] = {
+-	{ CLK_I2SQ_PDIV, PLL_I2S, "plli2s-q-div", "plli2s-q",
++	{ CLK_I2SQ_PDIV, PLL_VCO_I2S, "plli2s-q-div", "plli2s-q",
+ 		CLK_SET_RATE_PARENT, STM32F4_RCC_DCKCFGR, 0, 5, 0, NULL},
+ 
+-	{ CLK_SAIQ_PDIV, PLL_SAI, "pllsai-q-div", "pllsai-q",
++	{ CLK_SAIQ_PDIV, PLL_VCO_SAI, "pllsai-q-div", "pllsai-q",
+ 		CLK_SET_RATE_PARENT, STM32F4_RCC_DCKCFGR, 8, 5, 0, NULL },
+ 
+-	{ NO_IDX, PLL_SAI, "pllsai-r-div", "pllsai-r", CLK_SET_RATE_PARENT,
++	{ NO_IDX, PLL_VCO_SAI, "pllsai-r-div", "pllsai-r", CLK_SET_RATE_PARENT,
+ 		STM32F4_RCC_DCKCFGR, 16, 2, 0, post_divr_table },
+ };
+ 
 -- 
 2.7.4
 
