@@ -2,82 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0822C1E1078
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 16:27:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DB641E1090
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 16:30:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BIPbIWv2IflDqOmD4xmKh9NENBYaj8pzwGiUnE5wae0=; b=nxKECGwLN0UAU6i8VECDGoomUM
-	k51+CPF3CMotBn9vMizsAfGD1KYzk0IN+q7e7bstWeLlDNpCA5f7CqN1/iBmAMbjtWSbGwI6GAGf0
-	hD9KaAptqyZ9YcVHvDDWoMzfsBYcRmHYGFmXHzdGmTXXrevT+wgcpuyN5viRYkcDMSOFtPWlWVjcI
-	gSEMrbLuXNKZll3FvDO68zTLUxoKapFIOEsXWZjCfxEJMUneG7JM0xUmp5Y+8SB54LZUqlz7wU0EI
-	AFkYWAhGWLJuHYMGcgavVa+aF7qPNT7OIp0i4vN8xKpt3XWV7JPkZkRQI5Z57AJNFAxPgOC8bYped
-	qhjSyj3Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=jH7VcGPPMDOne/RUGwamdmnEpLlYwJmEnYbk9GInzJ8=; b=VrV
+	LmSeeTrYA+VtwhqVgtnHk8CRqNUyg6T/Qg7XjElcbMxOhb4VKoAbqwNrMJpDPz8jcQ9kDZe3rX9ko
+	jGElp8gc/0mXYvFkawdLKvcmQ/LiwFPKWCxaIgV6vD0KMFujI9cAEJJ+PflfT6KzjumKbjcv7ScO1
+	EkUpRFMiCG2dZSJdJWx7OtlhVrk3jHUdCAcVjCVpb0MRddp0rR8dLTzLwa3dSsSSkhCmIcgnDbdup
+	yc1yIkOv9tWai9o/iM00rTkqdbVSmbZvLR4/tcKLwP8tTiadBOE5XLvp5oZr4XvXpGqyq4Zpz5BZt
+	y+lPbk9BHihvCjSsAmA2X+a5ds5dqDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdE4V-0002De-15; Mon, 25 May 2020 14:27:19 +0000
-Received: from esa4.microchip.iphmx.com ([68.232.154.123])
+	id 1jdE7Q-0004fP-49; Mon, 25 May 2020 14:30:20 +0000
+Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdE4J-0002CR-Ek
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 14:27:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1590416827; x=1621952827;
- h=references:from:to:cc:subject:in-reply-to:date:
- message-id:mime-version;
- bh=GFYGDQDidiAIsf6A9qkRWMwevlywavapMyZL4vq1R3o=;
- b=zc71N2lReX+mUV6dFDPIQEA8bQ9Ad+eGsvkFDELeXt3b5KJsuIjdBh4l
- B9RKX3NQjd0+w1v14QP29/j4+03+4kQYWkVU+s6eJpBy9x+k8PQqiO1RB
- IPnxhj7zZP06YbVbmXxRFzTwNLep81gbTfPTEmEol3uaXRBcuP/6L5AF7
- 74ugcRwxEVQf7Gkojsh+y/jUndDqL5UIEiYVqzCSBOg7HvQ6DUkJviBz4
- N7ELtielbq0DyP4aYr4oC5JGVxVzj6YfcswOVMA6xoGIsqLMpjBDtGWAG
- CWbpOmcbqcCyAnbP1MZUa1SLgMKqXhTnI8ybTxRMpfUo6GgrpToJ2kNAv w==;
-IronPort-SDR: b2/4aXB09gGz4fU4ObByebBRtITl0q6dSxd9wzWdo7W8teK24GN3lCnoNM/H11S0qrmP3OYiyy
- b4+L8Z5qmZn8+jxryZ21rB3zJdnAHRZcsjA/tbRDvxAVwDtAKj/U5BlVt5Gxe5Bee1EdrygqN9
- JvnbXgC2QAM2vJwDviz4VRAl7bfYsUzXKqcmy9WvWo98gaHAjpFlMTVWLfs7oERoQcRaau9cFi
- /DxZBpY3JL7k02ALG+WCyBO7hh8rS4qULchSdVOmSZ4pkNXZzaEwTURAIDq1vljsMZnhjcBIBx
- aEY=
-X-IronPort-AV: E=Sophos;i="5.73,433,1583218800"; d="scan'208";a="74410943"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 25 May 2020 07:27:03 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 25 May 2020 07:27:02 -0700
-Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Mon, 25 May 2020 07:27:00 -0700
-References: <20200513133122.25121-1-lars.povlsen@microchip.com>
- <20200513133122.25121-3-lars.povlsen@microchip.com>
- <6398c7a6-ce5e-1df6-d5a6-08664a7fc123@intel.com>
- <87v9ktoc0h.fsf@soft-dev15.microsemi.net>
- <87wo56q2o3.fsf@soft-dev15.microsemi.net>
- <abbd2306-55ed-014c-4b06-a5cb3f34796f@intel.com>
-From: Lars Povlsen <lars.povlsen@microchip.com>
-To: Adrian Hunter <adrian.hunter@intel.com>
-Subject: Re: [PATCH 2/3] sdhci: sparx5: Add Sparx5 SoC eMMC driver
-In-Reply-To: <abbd2306-55ed-014c-4b06-a5cb3f34796f@intel.com>
-Date: Mon, 25 May 2020 16:26:59 +0200
-Message-ID: <87sgfoozt8.fsf@soft-dev15.microsemi.net>
-MIME-Version: 1.0
+ id 1jdE7C-0002st-T5; Mon, 25 May 2020 14:30:08 +0000
+Received: by mail-ej1-x642.google.com with SMTP id x1so20649003ejd.8;
+ Mon, 25 May 2020 07:30:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=yMh1OLCPJYxMT3dRwDh/Pc1pXHaCVXG/hZf91AhdVB4=;
+ b=BOeyv6u90esY242TIOVf8kZuHxZc7IiQ4MFI+Zqvwnzes9+xpAj9hLrHuSa2uyOBDF
+ Or68NuUhIgoEg6nrhjh+IEbnG9Whd1p5tJqEWeNdAT0ST3Osy+qsjbWYmUd9upYS+BdI
+ 2qgI30mwbvOogfXDlMdztExw+nMndzWJd43DYd3kfgXSNP3MnD7GjZ0Xy8FkjRu7QqWk
+ VUSXBMCyKF/d2KTbv5eA+/8WowJnlaEfolsh1wtKblHmFhkOjXyGM9Yf7P7h8hbeuACF
+ hyKMECLKRaGsrNpU3R2oAklEG3KJhKdUdgKPm1XyKHn81exBNgBWveq1bY0yPJAdBZfJ
+ PuyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=yMh1OLCPJYxMT3dRwDh/Pc1pXHaCVXG/hZf91AhdVB4=;
+ b=pm+Ikicefb+HKc7jmOpYgWNL0xebyRVu8/qHrHFf+D1Hg7jsEyD+/L/eJ52x7E7Eo6
+ ibbGwiJNT5M16Wr1UleU7lB14YUPhNNRf9+i8VY9bbNhQWei0CBQALjQC1InD58EJ5Da
+ WC6Xzwpf0mRUl03nr5JNU7OzGmuaxxRK5oW0hwUmZ0wOrNXWDxxrIGFWS4HWLajW8257
+ TOEJK+FYF3sOaSAUfPOU+G9xCKkd7piCMePaSDuN6LCs3FtwXA0tHMTZH+ufcY0VKNnU
+ erbwKjjjyLXDt30wNq9O5FCItjW0+OHhp6irX0FL6P517e23EdL7vczVzLRfxurzl2mO
+ G5iQ==
+X-Gm-Message-State: AOAM531G9CXqhIxQX2njnAVrobSBlhovqWKPOW30uKvn42SfoXX9lefv
+ bNLYEjvPPIlcTZOHF5DFZPQ=
+X-Google-Smtp-Source: ABdhPJwpDfwq3VxDQ5PqHUh5/tPRWT5lYSDfIlEbnN3rH0SxoiirUlcrfg9jhMOb+eHRznUbsJQX/A==
+X-Received: by 2002:a17:906:c7cc:: with SMTP id
+ dc12mr19635108ejb.263.1590417002325; 
+ Mon, 25 May 2020 07:30:02 -0700 (PDT)
+Received: from felia.fritz.box ([2001:16b8:2dfa:6900:4b6:3b49:50f6:6c03])
+ by smtp.gmail.com with ESMTPSA id f10sm16642978edt.69.2020.05.25.07.30.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 25 May 2020 07:30:01 -0700 (PDT)
+From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Subject: [PATCH SECOND RESEND] MAINTAINERS: adjust entries to moving CEC
+ platform drivers
+Date: Mon, 25 May 2020 16:29:46 +0200
+Message-Id: <20200525142946.8268-1-lukas.bulwahn@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_072707_610838_1F5EBB58 
-X-CRM114-Status: GOOD (  18.61  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200525_073006_968419_C7EB28DD 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.154.123 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [lukas.bulwahn[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,103 +94,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Microchip Linux Driver
- Support <UNGLinuxDriver@microchip.com>, SoC Team <soc@kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Lars Povlsen <lars.povlsen@microchip.com>
+Cc: Neil Armstrong <narmstrong@baylibre.com>, kernel-janitors@vger.kernel.org,
+ Ettore Chimenti <ek5.chimenti@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Guenter Roeck <groeck@chromium.org>, linux-stm32@st-md-mailman.stormreply.com,
+ Marek Szyprowski <m.szyprowski@samsung.com>, linux-samsung-soc@vger.kernel.org,
+ Kevin Hilman <khilman@baylibre.com>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
+ Lukas Bulwahn <lukas.bulwahn@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ Benson Leung <bleung@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Joe Perches <joe@perches.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Commit 4be5e8648b0c ("media: move CEC platform drivers to a separate
+directory") moved various files into a new directory structure, but did
+not adjust the entries in MAINTAINERS.
 
-Adrian Hunter writes:
+Since then, ./scripts/get_maintainer.pl --self-test=patterns complains:
 
-> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
->
-> On 20/05/20 2:14 pm, Lars Povlsen wrote:
->>
->> Lars Povlsen writes:
->>
->>> Adrian Hunter writes:
->>>
->>>> On 13/05/20 4:31 pm, Lars Povlsen wrote:
->>>>> This adds the eMMC driver for the Sparx5 SoC. It is based upon the
->>>>> designware IP, but requires some extra initialization and quirks.
->>>>>
->>>>> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
->>>>> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
->>>>> ---
->> {Snip]
->>>>> +};
->>>>> +
->>>>> +static const struct sdhci_pltfm_data sdhci_sparx5_pdata = {
->>>>> +     .quirks  = 0,
->>>>> +     .quirks2 = SDHCI_QUIRK2_HOST_NO_CMD23 | /* Card quirk */
->>>>
->>>> If this is a card quirk then it should be in drivers/mmc/core/quirks.h not here.
->>>
->>
->> Adrian, I had a go at changing the controller quirk to a card quirk.
->>
->> Unfortunately, SDHCI_QUIRK2_HOST_NO_CMD23 does not directly translate to
->> MMC_QUIRK_BLK_NO_CMD23, as for 'do_rel_wr' in mmc_blk_rw_rq_prep(), it
->> will *still* use MMC_SET_BLOCK_COUNT (cmd23), causing the issue.
->>
->> We are using a ISSI "IS004G" device, and so I have gone through the
->> motions of adding it to quirks.h. The comment before the list of devices
->> using MMC_QUIRK_BLK_NO_CMD23 suggest working around a performance issue,
->> which is not exactly the issue I'm seeing. I'm seeing combinations of
->> CMD_TOUT_ERR, DATA_CRC_ERR and DATA_END_BIT_ERR whenever a cmd23 is
->> issued.
->>
->> I have not been able to test the controller with another eMMC device
->> yet, but I expect its not the controller at fault.
->>
->> So, I'm a little bit in doubt of how to proceed - either keep the quirk
->> as a controller quirk - or make a *new* card quirk (with
->> SDHCI_QUIRK2_HOST_NO_CMD23 semantics)?
->>
->> Anybody else have had experience with ISSI eMMC devices?
->>
->> I have also tried to use DT sdhci-caps-mask, but MMC_CAP_CMD23 is not
->> read from the controller just (unconditionally) set in sdhci.c - so that
->> doesn't fly either.
->>
->> Any suggestions?
->
-> It is up to you.  In the future, you may want to distinguish devices that
-> have this problem from ones that do not.
->
-> If you are not sure it is the ISSI eMMC, and maybe not the host controller,
-> then might it be the board?  Perhaps make SDHCI_QUIRK2_HOST_NO_CMD23
-> conditional on the particular compatibility string?
->
-> At a minimum, change the "/* Card quirk */" comment to a fuller explanation.
->
+  warning: no file matches F: drivers/media/platform/s5p-cec/
+  warning: no file matches F: drivers/media/platform/tegra-cec/
+  warning: no file matches F: drivers/media/platform/cec-gpio/
+  warning: no file matches F: drivers/media/platform/meson/ao-cec-g12a.c
+  warning: no file matches F: drivers/media/platform/meson/ao-cec.c
+  warning: no file matches F: drivers/media/platform/seco-cec/seco-cec.c
+  warning: no file matches F: drivers/media/platform/seco-cec/seco-cec.h
+  warning: no file matches F: drivers/media/platform/sti/cec/
 
-Adrian, I'm getting a board ready with another eMMC device, and we're
-also trying to contact ISSI for info.
+Update the MAINTAINERS entries to the new file locations.
 
-My hope is to at least verify whether this is a controller or a card
-issue one way or the other. Then, I'll choose an appropriate solution
-for it.
+Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+---
+Mauro, please pick this non-urgent minor clean-up patch on top of the
+CEC platform driver moves.
+ 
+applies cleanly on next-20200417, next-20200505 and still on next-20200525
+for this second resend.
 
-Thank you for your advice so far.
+v1 send here:
+https://lore.kernel.org/lkml/20200418093630.6149-1-lukas.bulwahn@gmail.com/
 
----Lars
+v1 first resend here:
+https://lore.kernel.org/lkml/20200506050744.4779-1-lukas.bulwahn@gmail.com/
 
->>
->>> Yes, its supposedly a card quirk. I'll see to use the card quirks
->>> methods in place.
->>>
->>
+ MAINTAINERS | 14 ++++++--------
+ 1 file changed, 6 insertions(+), 8 deletions(-)
 
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 7a442b48f24b..bf5cb149101b 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2403,7 +2403,7 @@ L:	linux-samsung-soc@vger.kernel.org (moderated for non-subscribers)
+ L:	linux-media@vger.kernel.org
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/media/s5p-cec.txt
+-F:	drivers/media/platform/s5p-cec/
++F:	drivers/media/cec/platform/s5p/
+ 
+ ARM/SAMSUNG S5P SERIES JPEG CODEC SUPPORT
+ M:	Andrzej Pietrasiewicz <andrzejtp2010@gmail.com>
+@@ -2548,7 +2548,7 @@ L:	linux-tegra@vger.kernel.org
+ L:	linux-media@vger.kernel.org
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/media/tegra-cec.txt
+-F:	drivers/media/platform/tegra-cec/
++F:	drivers/media/cec/platform/tegra/
+ 
+ ARM/TETON BGA MACHINE SUPPORT
+ M:	"Mark F. Brown" <mark.brown314@gmail.com>
+@@ -3969,7 +3969,7 @@ S:	Supported
+ W:	http://linuxtv.org
+ T:	git git://linuxtv.org/media_tree.git
+ F:	Documentation/devicetree/bindings/media/cec-gpio.txt
+-F:	drivers/media/platform/cec-gpio/
++F:	drivers/media/cec/platform/cec-gpio/
+ 
+ CELL BROADBAND ENGINE ARCHITECTURE
+ M:	Arnd Bergmann <arnd@arndb.de>
+@@ -11146,8 +11146,7 @@ S:	Supported
+ W:	http://linux-meson.com/
+ T:	git git://linuxtv.org/media_tree.git
+ F:	Documentation/devicetree/bindings/media/amlogic,meson-gx-ao-cec.yaml
+-F:	drivers/media/platform/meson/ao-cec-g12a.c
+-F:	drivers/media/platform/meson/ao-cec.c
++F:	drivers/media/cec/platform/meson/
+ 
+ MESON NAND CONTROLLER DRIVER FOR AMLOGIC SOCS
+ M:	Liang Yang <liang.yang@amlogic.com>
+@@ -15212,8 +15211,7 @@ F:	drivers/mmc/host/sdricoh_cs.c
+ SECO BOARDS CEC DRIVER
+ M:	Ettore Chimenti <ek5.chimenti@gmail.com>
+ S:	Maintained
+-F:	drivers/media/platform/seco-cec/seco-cec.c
+-F:	drivers/media/platform/seco-cec/seco-cec.h
++F:	drivers/media/cec/platform/seco/
+ 
+ SECURE COMPUTING
+ M:	Kees Cook <keescook@chromium.org>
+@@ -16249,7 +16247,7 @@ STI CEC DRIVER
+ M:	Benjamin Gaignard <benjamin.gaignard@linaro.org>
+ S:	Maintained
+ F:	Documentation/devicetree/bindings/media/stih-cec.txt
+-F:	drivers/media/platform/sti/cec/
++F:	drivers/media/cec/platform/sti/
+ 
+ STK1160 USB VIDEO CAPTURE DRIVER
+ M:	Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
 -- 
-Lars Povlsen,
-Microchip
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
