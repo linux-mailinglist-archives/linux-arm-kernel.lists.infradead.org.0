@@ -2,111 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E28121E08AE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 10:23:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0802C1E089B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 10:18:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NXV+ivJ4TXByoLP1MelWqhYdiSj5Q+oZeis56V9AmTY=; b=p+i8y6FxF/piib
-	v0k4k7BW/OreWE+5zc5tsgevXKAtSzdgydZLtx93BvMCnQey/Q7viQSGo3gRQJKWW/eX+BaL6UuXl
-	HeFNsV/nnPUvR0vmNB9gACoZg7ZHSuyKBAsZeZX8kGA3ZVJ7ud6s/dWWQsz7+Jp0CuctjZRmqXBUa
-	8tWm1EYYPU3Z/p1G+257nUVe7Xokbbb7VV0cSrJZQLnfbHgM5ly1u5/xrN5qis/vJmwxOm5Idj6Nn
-	Yc+90j8bggwN8otkF6/0qbg8zjUDIIDkNkNyeWynrx5sqVuhStZ4uYY2NyV4mmJs8sxP0XCMJ9Yo5
-	gVunnJj+WchBpyJECk7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FkBXJxYe/svx9jwqn7tSFB42YUgN0hnlP2lRSUfrtYs=; b=Jo2AusMsXoatE4tEjD3wZ0pZ2
+	0oqW05H3Rrg6KPt2uWXzPAG9Wj2tbl7mKTccY/U9FP5FPjswgAfis/fT3i5M/AjsUIm4vTTUL/USL
+	Y8d8UJ6KHCYZC4Ttzb8ymvagi9X4pPDM6nAfpiQih2vmx7mErN8g07so74gL/cnGcbjit2WrSmESp
+	hjRsx4ewLsTrMrBpCKj9YXEPt6XCi9p1NHvd1V8Wkv39DPDH1BNb57olUYn01q1e8Sog6mrgYTKt3
+	1+lYf0yDvjipZg9jrZTuNX5tYxhQJ6JhSovwqW5+lN31vb1IxnujweiXAlaLW0oNgWZT+Baz4WpP4
+	WC8OV7BvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd8O9-0000pi-L1; Mon, 25 May 2020 08:23:13 +0000
-Received: from mail-eopbgr10041.outbound.protection.outlook.com ([40.107.1.41]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1jd8Jm-0006Bb-5v; Mon, 25 May 2020 08:18:42 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd8O0-0000pO-53
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 08:23:05 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Gub2bRJTiLGZVdeybT1xheSoQFX7CFdX8kw78PCpCqvscl14CaFphsFDblxXn++OkW2I9V1NXAcrlkaGLumxaD0hVtf8ooIDBVr9FOhL+HdIZ2lVXEnYk0mFk27xjMxslGarTVgRW5YVGLGNivCh3RJFtHEG2cEFAjGLbbeFyPongtrr6i8VrljKiKThlokhaDUxq5fPyx+H0q0nDpYbbqDm/Fm1PkCM6UoWsX7coDb8TV85lhBtNJoLFKBNHpVAVzJuFjPzPr1/osLqsfsrVFobT9/qaKAazxg17kmyxgY8QWqJe2PxE1Q8n+cCTvyUO7ekkujsAfQA8a/zNORNjQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=aMjqADPXcr7gZ911ODQ9t2r94LjENwwbABkPzilulFs=;
- b=g3X4vOq3j41zbSMe3GPmGG8edV3XMCe/oxnINaHQB86idPDfKPVSURsSRo2W6nv43V5uKBrw6nK5b2Et3nxH26algOLN1feNNaoyW92uBMutsTev5zJq/sT0hT3sK/zRZWeYYpI4c3jrc9B1JQWdDGqY0k92Ic73cPSUfloRo+tFgeW96GjrPS/AANi1PhhvG+3sj5bFZmPxvfVGsyO4SzmUw/lfsMzJ3C8XzxLK4njyZpRP4TW+AZhEaA6ZwCkeFJNY+HvF/B+U9+6tZ6XeBbwG82g/2bV6DxHDDq6MbFrFR8dh9OCp5pJgTUyRzJ67R5UJYEEnvF3ngYwDqAS9dg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=aMjqADPXcr7gZ911ODQ9t2r94LjENwwbABkPzilulFs=;
- b=lXVPzHScFlCmgGi7cpm/rJksWCgsFeaGqn7B1bam6lgGhPIOQ/KjSxg5k+/ZCttoXPIMP636yeuF01Iq4JwPB1Uv+5lbQs1nANp7/FAhjBT9WN0CquJ5Yx6Tr823Q0iRMqCnxq6d9TaBp9Su4Bx6h3sKz+28YpaHkoDEg6Kn1n8=
-Authentication-Results: st.com; dkim=none (message not signed)
- header.d=none;st.com; dmarc=none action=none header.from=nxp.com;
-Received: from AM6PR0402MB3607.eurprd04.prod.outlook.com
- (2603:10a6:209:12::18) by AM6PR0402MB3717.eurprd04.prod.outlook.com
- (2603:10a6:209:25::16) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.24; Mon, 25 May
- 2020 08:23:00 +0000
-Received: from AM6PR0402MB3607.eurprd04.prod.outlook.com
- ([fe80::35f8:f020:9b47:9aa1]) by AM6PR0402MB3607.eurprd04.prod.outlook.com
- ([fe80::35f8:f020:9b47:9aa1%7]) with mapi id 15.20.3021.029; Mon, 25 May 2020
- 08:23:00 +0000
-From: Fugang Duan <fugang.duan@nxp.com>
-To: peppe.cavallaro@st.com, alexandre.torgue@st.com, joabreu@synopsys.com,
- kuba@kernel.org, davem@davemloft.net
-Subject: [PATCH net 1/1] net: stmmac: enable timestamp snapshot for required
- PTP packets in dwmac v5.10a
-Date: Mon, 25 May 2020 16:18:14 +0800
-Message-Id: <1590394694-5505-1-git-send-email-fugang.duan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-ClientProxiedBy: SG2PR06CA0222.apcprd06.prod.outlook.com
- (2603:1096:4:68::30) To AM6PR0402MB3607.eurprd04.prod.outlook.com
- (2603:10a6:209:12::18)
+ id 1jd8JZ-00069j-C5
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 08:18:32 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1590394709; x=1621930709;
+ h=subject:from:to:cc:references:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=6Y1kKLNvw5tHAyMcE8lhbasGho0U1mzPQDK1AoxNCKM=;
+ b=vphPBmkCkrSXRGqFg501njy+9EP2UsvngKSZ0XcMKX1F3wFtINfrdQSx
+ xgcW7DNFYDyixTKui94fksg45x12xxjgmcXmEpckji5Azx51JkVp7CsGa
+ h1og+pNBtnoaXj8OWcI1dv+/FFvRqJSp7kFfzXuXUdO3A6KGwD1NtkCc5
+ 0yCc/VjJ2npNoEo79VoWacFFe7h/h0uRFg9O3FerTjj6Z2GsgvcOaA/qZ
+ GMiUGM2M+r1MCY0z58s42ZrcuhRek6pHaRk5C4vOzFGItKmhQX7GDZbJg
+ +Tm3m3MOJ5OIHzWIaJ4Gufg2jFT9Npk9V00da0FwoI3Dm6pK60/p7PSyl w==;
+IronPort-SDR: QCE16gf6KIchmmRAPv5H+Yck0P/9pBdRqngXm6N5t+pR/zMqFjatY9X2LyUdUM8avC4nnNnReC
+ J3xZ4DE7o6c47z45PfCz796HoKAHI7VtDBivaOUBKiaWKQEy8mgMj18/WUm+vgTZEkDOY9vcX3
+ 731ASHcxE0A3er6HmVuSAdHSUdcWbmhxJTiELkep/wDIMKkvh8ZD2pQkzKSagAiveCkzVJqNB3
+ 3HVKCHkZB0oo/lKT7m/x0n+hCBru1RT3k5jqlNU3q+NoDzTVTYXqDAoOq+D0H9LJJQYf7NLm0Z
+ OAw=
+X-IronPort-AV: E=Sophos;i="5.73,432,1583218800"; d="scan'208";a="13411380"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 25 May 2020 01:18:23 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 25 May 2020 01:18:24 -0700
+Received: from [10.205.29.90] (10.10.115.15) by chn-vm-ex01.mchp-main.com
+ (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Mon, 25 May 2020 01:18:12 -0700
+Subject: Re: [PATCH v4 1/5] net: macb: fix wakeup test in runtime
+ suspend/resume routines
+From: Nicolas Ferre <nicolas.ferre@microchip.com>
+To: Jakub Kicinski <kuba@kernel.org>, <netdev@vger.kernel.org>, "David S.
+ Miller" <davem@davemloft.net>, <f.fainelli@gmail.com>, "Russell King - ARM
+ Linux admin" <linux@armlinux.org.uk>
+References: <cover.1588763703.git.nicolas.ferre@microchip.com>
+ <dc30ff1d17cb5a75ddd10966eab001f67ac744ef.1588763703.git.nicolas.ferre@microchip.com>
+ <20200506131843.22cf1dab@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <347c9a4f-8a01-a931-c9d5-536339337f8a@microchip.com>
+Organization: microchip
+Message-ID: <e43e7ed6-c78a-7995-3f46-0bdbf32f361c@microchip.com>
+Date: Mon, 25 May 2020 10:18:16 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from b38611.ap.freescale.net (119.31.174.66) by
- SG2PR06CA0222.apcprd06.prod.outlook.com (2603:1096:4:68::30) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3021.26 via Frontend Transport; Mon, 25 May 2020 08:22:57 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: acd30223-2c72-4985-4f5b-08d80084d637
-X-MS-TrafficTypeDiagnostic: AM6PR0402MB3717:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM6PR0402MB37178487311C1EEA739EC3CBFFB30@AM6PR0402MB3717.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:7219;
-X-Forefront-PRVS: 0414DF926F
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 1O0gNFqrjVOtvHxMKEqo+ocXtffqiOXe5cemxPEW4lGv5K5wIiMcHYYrwrwXVLlF69X8qImlFKqu05w0cHTlzxGmN9WV7X4qyS2oLfMXkpqraduj/D0JcNjVJzEfwPnbofysQxqW/oC0ls5XSAHzEnmfkDSUiwmqjF8EO0UzlhJHOVbkHN+pJPtPLdmGRN6LlpWvA3JJJHJc0SbIXhLTY458yfZ5APwlo9r6nZ2dYL4enZNeJrIGmLEVnRRsOZ5x6AXzg3P22C/fHFmtqWohk6nGf5jRa1QIvwXXY1uedhn/8B8ydJK5kbELWFsZqBrI
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR0402MB3607.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(396003)(346002)(366004)(39860400002)(136003)(2616005)(44832011)(956004)(66946007)(66556008)(66476007)(36756003)(4326008)(316002)(8936002)(52116002)(478600001)(8676002)(186003)(16526019)(2906002)(86362001)(6506007)(7416002)(6512007)(26005)(6486002)(5660300002)(6666004);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: Fcy6VjNhsQmcNvtat6vkGEDOnNrVOlFMJqd6qv4vKbxDSKdQrC8BLilhYj8GntNgYQvPnPplfBRNCRD6/7jfeJXaiF4GXGeson7eQL+Pdk8Tg9UfFK9Qh1fvS3A6lpZEpA9wCf8OVXyt5lbrIHgMMGm7rCWxbvEdkDVAchSczZ+0qQIAvqjCwMn/A57fG9muX++urxkzpmLnGaf3oXscXeoi74tB2giNMsiwnnmTghAFSFvqacymXF2AEYelwN8KKqlzvomyV0suxAclqzmYz+lK4Ri0aDpbdWc5+7T1mI+jvEeOdarqfCdFr88iL8Hv5NqfVXhog8UgGApTNGRMIu+6E6tTaEi93ft/73jU6hagZ/LkXELvxe172HtpWRtTWlWOqO4a0f8pSsYMVXP87ji34MZpdq4uLtsQ4OHf9Cf0j9jVZz5zRrXuoztd21nqq2qR0gqjiMFMwriLPYOP/EykDhV9gTpDktM7fphFkEPfIn3U7bAIFoBp4GBpw87V
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: acd30223-2c72-4985-4f5b-08d80084d637
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2020 08:23:00.5845 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: oTIsOyFDtdJKLqbQWUvXf6lwJ0v8YB8kLBbLR6JzV6uEmyFcERZf/JWXGuCIOWIqc//OVqbruL6j951dCv6ZCw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR0402MB3717
+In-Reply-To: <347c9a4f-8a01-a931-c9d5-536339337f8a@microchip.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_012304_193821_F2E6EA45 
-X-CRM114-Status: GOOD (  10.86  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200525_011829_462401_911935C3 
+X-CRM114-Status: GOOD (  17.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.1.41 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.1.41 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -114,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,54 +100,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: fugang.duan@nxp.com, mcoquelin.stm32@gmail.com, netdev@vger.kernel.org,
- p.zabel@pengutronix.de, linux-stm32@st-md-mailman.stormreply.com,
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ antoine.tenart@bootlin.com, linux-kernel@vger.kernel.org,
+ harini.katakam@xilinx.com, Claudiu Beznea <claudiu.beznea@microchip.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rm9yIHJ4IGZpbHRlciAnSFdUU1RBTVBfRklMVEVSX1BUUF9WMl9FVkVOVCcsIGl0IHNob3VsZCBi
-ZQpQVFAgdjIvODAyLkFTMSwgYW55IGxheWVyLCBhbnkga2luZCBvZiBldmVudCBwYWNrZXQsIGJ1
-dCBIVyBvbmx5CnRha2UgdGltZXN0YW1wIHNuYXBzaG90IGZvciBiZWxvdyBQVFAgbWVzc2FnZTog
-c3luYywgUGRlbGF5X3JlcSwKUGRlbGF5X3Jlc3AuCgpUaGVuIGl0IGNhdXNlcyBiZWxvdyBpc3N1
-ZSB3aGVuIHRlc3QgRTJFIGNhc2U6CnB0cDRsWzI0NzkuNTM0XTogcG9ydCAxOiByZWNlaXZlZCBE
-RUxBWV9SRVEgd2l0aG91dCB0aW1lc3RhbXAKcHRwNGxbMjQ4MS40MjNdOiBwb3J0IDE6IHJlY2Vp
-dmVkIERFTEFZX1JFUSB3aXRob3V0IHRpbWVzdGFtcApwdHA0bFsyNDgxLjc1OF06IHBvcnQgMTog
-cmVjZWl2ZWQgREVMQVlfUkVRIHdpdGhvdXQgdGltZXN0YW1wCnB0cDRsWzI0ODMuNTI0XTogcG9y
-dCAxOiByZWNlaXZlZCBERUxBWV9SRVEgd2l0aG91dCB0aW1lc3RhbXAKcHRwNGxbMjQ4NC4yMzNd
-OiBwb3J0IDE6IHJlY2VpdmVkIERFTEFZX1JFUSB3aXRob3V0IHRpbWVzdGFtcApwdHA0bFsyNDg1
-Ljc1MF06IHBvcnQgMTogcmVjZWl2ZWQgREVMQVlfUkVRIHdpdGhvdXQgdGltZXN0YW1wCnB0cDRs
-WzI0ODYuODg4XTogcG9ydCAxOiByZWNlaXZlZCBERUxBWV9SRVEgd2l0aG91dCB0aW1lc3RhbXAK
-cHRwNGxbMjQ4Ny4yNjVdOiBwb3J0IDE6IHJlY2VpdmVkIERFTEFZX1JFUSB3aXRob3V0IHRpbWVz
-dGFtcApwdHA0bFsyNDg3LjMxNl06IHBvcnQgMTogcmVjZWl2ZWQgREVMQVlfUkVRIHdpdGhvdXQg
-dGltZXN0YW1wCgpUaW1lc3RhbXAgc25hcHNob3QgZGVwZW5kZW5jeSBvbiByZWdpc3RlciBiaXRz
-IGluIHJlY2VpdmVkIHBhdGg6ClNOQVBUWVBTRUwgVFNNU1RSRU5BIFRTRVZOVEVOQSAJUFRQX01l
-c3NhZ2VzCjAxICAgICAgICAgeCAgICAgICAgIDAgICAgICAgICAgU1lOQywgRm9sbG93X1VwLCBE
-ZWxheV9SZXEsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRGVsYXlfUmVzcCwgUGRl
-bGF5X1JlcSwgUGRlbGF5X1Jlc3AsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgUGRl
-bGF5X1Jlc3BfRm9sbG93X1VwCjAxICAgICAgICAgMCAgICAgICAgIDEgICAgICAgICAgU1lOQywg
-UGRlbGF5X1JlcSwgUGRlbGF5X1Jlc3AKCkZvciBkd21hYyB2NS4xMGEsIGVuYWJsaW5nIGFsbCBl
-dmVudHMgYnkgc2V0dGluZyByZWdpc3RlcgpEV0NfRVFPU19USU1FX1NUQU1QSU5HW1NOQVBUWVBT
-RUxdIHRvIDLigJliMDEsIGNsZWFyaW5nIGJpdCBbVFNFVk5URU5BXQp0byAw4oCZYjAsIHdoaWNo
-IGNhbiBzdXBwb3J0IGFsbCByZXF1aXJlZCBldmVudHMuCgpTaWduZWQtb2ZmLWJ5OiBGdWdhbmcg
-RHVhbiA8ZnVnYW5nLmR1YW5AbnhwLmNvbT4KLS0tCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1p
-Y3JvL3N0bW1hYy9zdG1tYWNfbWFpbi5jIHwgMyArKy0KIDEgZmlsZSBjaGFuZ2VkLCAyIGluc2Vy
-dGlvbnMoKyksIDEgZGVsZXRpb24oLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL25ldC9ldGhlcm5l
-dC9zdG1pY3JvL3N0bW1hYy9zdG1tYWNfbWFpbi5jIGIvZHJpdmVycy9uZXQvZXRoZXJuZXQvc3Rt
-aWNyby9zdG1tYWMvc3RtbWFjX21haW4uYwppbmRleCBiNmY5MmM3Li43MzY3N2MzIDEwMDY0NAot
-LS0gYS9kcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9zdG1tYWNfbWFpbi5jCisr
-KyBiL2RyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19tYWluLmMKQEAg
-LTYzMCw3ICs2MzAsOCBAQCBzdGF0aWMgaW50IHN0bW1hY19od3RzdGFtcF9zZXQoc3RydWN0IG5l
-dF9kZXZpY2UgKmRldiwgc3RydWN0IGlmcmVxICppZnIpCiAJCQljb25maWcucnhfZmlsdGVyID0g
-SFdUU1RBTVBfRklMVEVSX1BUUF9WMl9FVkVOVDsKIAkJCXB0cF92MiA9IFBUUF9UQ1JfVFNWRVIy
-RU5BOwogCQkJc25hcF90eXBlX3NlbCA9IFBUUF9UQ1JfU05BUFRZUFNFTF8xOwotCQkJdHNfZXZl
-bnRfZW4gPSBQVFBfVENSX1RTRVZOVEVOQTsKKwkJCWlmIChwcml2LT5zeW5vcHN5c19pZCAhPSBE
-V01BQ19DT1JFXzVfMTApCisJCQkJdHNfZXZlbnRfZW4gPSBQVFBfVENSX1RTRVZOVEVOQTsKIAkJ
-CXB0cF9vdmVyX2lwdjRfdWRwID0gUFRQX1RDUl9UU0lQVjRFTkE7CiAJCQlwdHBfb3Zlcl9pcHY2
-X3VkcCA9IFBUUF9UQ1JfVFNJUFY2RU5BOwogCQkJcHRwX292ZXJfZXRoZXJuZXQgPSBQVFBfVENS
-X1RTSVBFTkE7Ci0tIAoyLjcuNAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 07/05/2020 at 12:03, Nicolas Ferre wrote:
+> On 06/05/2020 at 22:18, Jakub Kicinski wrote:
+>> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+>>
+>> On Wed, 6 May 2020 13:37:37 +0200 nicolas.ferre@microchip.com wrote:
+>>> From: Nicolas Ferre <nicolas.ferre@microchip.com>
+>>>
+>>> Use the proper struct device pointer to check if the wakeup flag
+>>> and wakeup source are positioned.
+>>> Use the one passed by function call which is equivalent to
+>>> &bp->dev->dev.parent.
+>>>
+>>> It's preventing the trigger of a spurious interrupt in case the
+>>> Wake-on-Lan feature is used.
+>>>
+>>> Fixes: bc1109d04c39 ("net: macb: Add pm runtime support")
+>>
+>>           Fixes tag: Fixes: bc1109d04c39 ("net: macb: Add pm runtime support")
+>>           Has these problem(s):
+>>                   - Target SHA1 does not exist
+> 
+> Indeed, it's:
+> Fixes: d54f89af6cc4 ("net: macb: Add pm runtime support")
+> 
+> David: do I have to respin or you can modify it?
+
+David, all, I'm about to resend this series (alternative to "ping"), 
+however:
+
+1/ Now that it's late in the cycle, I'd like that you tell me if I 
+rebase on net-next because it isn't not sensible to queue such (non 
+urgeent) changes at rc7
+
+2/ I didn't get answers from Russell and can't tell if there's a better 
+way of handling underlying phylink error of phylink_ethtool_set_wol() in 
+patch 3/5
+
+Best regards,
+   Nicolas
+
+>>> Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+>>> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+>>> Cc: Claudiu Beznea <claudiu.beznea@microchip.com>
+>>> Cc: Harini Katakam <harini.katakam@xilinx.com>
+>>> ---
+>>>    drivers/net/ethernet/cadence/macb_main.c | 4 ++--
+>>>    1 file changed, 2 insertions(+), 2 deletions(-)
+>>>
+>>> diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
+>>> index 36290a8e2a84..d11fae37d46b 100644
+>>> --- a/drivers/net/ethernet/cadence/macb_main.c
+>>> +++ b/drivers/net/ethernet/cadence/macb_main.c
+>>> @@ -4616,7 +4616,7 @@ static int __maybe_unused macb_runtime_suspend(struct device *dev)
+>>>         struct net_device *netdev = dev_get_drvdata(dev);
+>>>         struct macb *bp = netdev_priv(netdev);
+>>>
+>>> -     if (!(device_may_wakeup(&bp->dev->dev))) {
+>>> +     if (!(device_may_wakeup(dev))) {
+>>>                 clk_disable_unprepare(bp->tx_clk);
+>>>                 clk_disable_unprepare(bp->hclk);
+>>>                 clk_disable_unprepare(bp->pclk);
+>>> @@ -4632,7 +4632,7 @@ static int __maybe_unused macb_runtime_resume(struct device *dev)
+>>>         struct net_device *netdev = dev_get_drvdata(dev);
+>>>         struct macb *bp = netdev_priv(netdev);
+>>>
+>>> -     if (!(device_may_wakeup(&bp->dev->dev))) {
+>>> +     if (!(device_may_wakeup(dev))) {
+>>>                 clk_prepare_enable(bp->pclk);
+>>>                 clk_prepare_enable(bp->hclk);
+>>>                 clk_prepare_enable(bp->tx_clk);
+>>
+> 
+> 
+
+
+-- 
+Nicolas Ferre
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
