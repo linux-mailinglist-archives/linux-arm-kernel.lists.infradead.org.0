@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AC0E1E0D97
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 13:45:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 485A01E0D98
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 13:46:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ERtTTBriS6BXbItgIL+sd9zjZjU10+jFw3EWNCSEn+k=; b=QiRbOWbQhnaPwM
-	I/J6foh83gG8gkyz918/McCrhP4sfCjXMUUzc8imwiIfKZ3J9uaXlRDb5Ps+jbJlCxruyy/k/cpgZ
-	uNaTm8s0DXMlnV7nwi1U1qswKMdlYAR4lxQcEBbE36G2jvl9x3vBkbeaqVhBBKi/Unic4yqRgYy9E
-	JZwPUDHb/4ScqhD3XcKiA/RCXUbpH/2fLr8P1OnkgzB00bQVsWbr6ZgeCXr19oaf8RsAG2g85vW8M
-	IZOfvzVPaTi4bB+L/6biQy3EJcDDtVWkBW77Jj/c2dvYeABWJGChYULVvArT8NyGHzhH87KFJyz5d
-	1g0maA71SGKLvGD3TzZg==;
+	List-Owner; bh=q68Y8MFLMz0ItoUfyeejA0rr+f18GpUGeon0sKwu3f8=; b=H3m9MVllEfW4Se
+	5UM3K65FLKjYSF9/iZk7yDFT2eoiYpQHKqR8bjDxGEiMmp3n+6a0Gl830/xWFOoLuDNLW6frALqWb
+	J1JfGFPkOb9b7RQfPc20XIka7Vr4jl1P2JwB+MMUpv0BfaVIsJNktKgp6G1EmSVWDWrdXTaJIeswI
+	OMuEXMtuYRpOwUUmSWzs5AzJY4xKULShBJJ2Mkh5OMVShfo0QBI6+vI00oper2u/yBxPAeSh5dVlp
+	KlenaUA01gLaL3Dv0l3p/frJ6jgIPR2eSEa9CJD/yyek266iGMpfAN9O2U1xJyXtRh7YmvAqXMYDY
+	j+85j//6vVQkZSb3gLPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdBYI-0004cf-Hp; Mon, 25 May 2020 11:45:54 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jdBYQ-0004tD-Kl; Mon, 25 May 2020 11:46:02 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdBXq-0004TP-Ks
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 11:45:28 +0000
-Received: by mail-lj1-x241.google.com with SMTP id k5so20395739lji.11
+ id 1jdBY6-0004hv-IO
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 11:45:44 +0000
+Received: by mail-lj1-x243.google.com with SMTP id z18so20379655lji.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 May 2020 04:45:25 -0700 (PDT)
+ Mon, 25 May 2020 04:45:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NtZVEMzdq38fu53lZDWzc8NBLCjAY5aGK/W4AvmImNs=;
- b=af45aeWHxzz993GasxJ2DfBZasYWxwmTraiJoDa1HtjC3H6cGOoc5djQcGZWp9j4hA
- a/iuVLiJp66aBK3hh8y4MxJNezOdhe01gGy/45Z2i6q7few2H3GBY3tnmcLrWfnUsyAj
- Hcl4cHaKt0ENhoc1YgRIw5gRA6qs5UtxluRbnaegqVPQ5IuEAQOZmahjqWKar9NkL4p5
- Z5Ux+5Sxd1ABeVqvEtzAhK+BS874PGhMOGm3ERC444bvO7ahff/poQUda55cWsFB48SZ
- cePiHFj6PcHe70HeknCWC5xjEt3puYRpHJWplNCXR9sXYSyH1eDODeekPFYRJLCZHOyn
- 6YhA==
+ :cc; bh=bWYfxIAWJy3heGwDbod2HfNErYY2yOdF0+bL0dgrzOk=;
+ b=ZGX/K/ApUSKg8rZuZKsuLGDrw3GNIs+G+ygQ5FYxc+f7sdmr6BxHPxN0JBA4xJ4kZX
+ fsO+UZPl02rsYbv0Us+s2H+Mg1QHvlXzLhlMSbef8ICm8jdk7PRAc9Zj2ZRZhAJPbd7R
+ V2VUKRCs5dKzZKNG1N/cRFLVjTWhH0cxM4jqyhNOXgmpc1BF1R3B6KCHUsLzwvy+o0j+
+ sMKKS6i6LBRgYYrDOZpwXc18rqSl3VzFKa/qXE1p6fmvRTbr7DZcN9l+usBvUFUEB2rx
+ omrSIACxU0AMJLlSA8O+9sQxDj/yJ/aD2UF6vHu1pteXHE1gO4igJpa6y7K7i5OSXpNU
+ fPoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=NtZVEMzdq38fu53lZDWzc8NBLCjAY5aGK/W4AvmImNs=;
- b=RvK/FhaoBsSnMmHDifvRbp9a6YcWWfJU/R9gSgWpW55ssMsU5xlDXImbMTrOLukFHm
- XyrCr0tRoRHc2+Qad0ATRpiLmcS17g+/8xm2yyC5jicNaPdMq8bxtIOhwbAAyqWRfrzj
- kQaM0+BINkyT29MzQPQuVppwRe4sopIZLAer+MDU+n2JJgVzXdtPgQw1Z8kok/Ok/Q+J
- 7Y8ojdTA385i+vIE6L8sl0UsGBdCJ90DIO1XAnKCyeQ2QlwZAxcwJ4/WCE0HQDLLjl9F
- PBUumCvPfeuC9BUgPIRpO/tGPDtZqo7d5CONULm8HUgDztEg5ICpe/I+wEugLlsWfg1n
- E7tg==
-X-Gm-Message-State: AOAM532QoFwwZtPnqFKBmvuX4NKkdX1gjh9CuMmGky4/0h7DsQDnXWSM
- Er8aVruUdDegcn6zQFlaawabXCl3xkBUT9fRtbzhGM2UeSE=
-X-Google-Smtp-Source: ABdhPJxhvU1HCj31oOWfftM9cD+lFUmkL14Hjg1dfXYGtguHDYzH8w3FOiQ8yj1s+WPLO2gWt/U+JdwJVsZw7ohD1BM=
-X-Received: by 2002:a2e:3818:: with SMTP id f24mr10564628lja.338.1590407124209; 
- Mon, 25 May 2020 04:45:24 -0700 (PDT)
+ bh=bWYfxIAWJy3heGwDbod2HfNErYY2yOdF0+bL0dgrzOk=;
+ b=gjNMY0c1+veHwB+nFlUwEbxsYeYVZ/kKSxRD9bk+teZwuAWHmWmOtvn+yspO+dIpIA
+ 7akcc6UJzu595kB5ySX/cL8oufVehF6SS0LLsEJhSnXurjqggEvEx9YQ04fwh2Y70Ahy
+ OY1H5ykdVxz79+O1+/whk/00xB8WxY+oupsRVJHyTbcTL/9GydjZmuJjK7m2MWJGXJrb
+ GgDjTdZDAiT3/CJs2Ks63elcaklRHj2wV8W6x7IZKF9eidjyhfPvX+DiE4MKRder2cNm
+ ZMLkzfvfIzKeiHtCYmeWzbq9WhnW7fk81OOnFG4gnn/g15GIyxYjtEowe3cPuc3PJ+ct
+ CLqQ==
+X-Gm-Message-State: AOAM531gy2n7SY/J6IyZqUxFLk54iNHhVq6XInNY5OihqxhTk3HgcXrM
+ f3NUOMea+6CvK3CdD56jCFgXo0YOlUA3zisLPW3cmlkiQr8=
+X-Google-Smtp-Source: ABdhPJw8cSdCakQSy2dqjj6yyyZN64NworOexXRkNzpRiGe3QJZW72eboLCSuHgq9tN2jx02+4qrZc6d73S0DPYFHwg=
+X-Received: by 2002:a2e:8703:: with SMTP id m3mr14359579lji.286.1590407140649; 
+ Mon, 25 May 2020 04:45:40 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200523170859.50003-1-sudeep.holla@arm.com>
- <20200523170859.50003-3-sudeep.holla@arm.com>
-In-Reply-To: <20200523170859.50003-3-sudeep.holla@arm.com>
+ <20200523170859.50003-4-sudeep.holla@arm.com>
+In-Reply-To: <20200523170859.50003-4-sudeep.holla@arm.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 25 May 2020 13:45:13 +0200
-Message-ID: <CACRpkdbye2akEc+bm_Ox92N_bJbH5uh3rnGEpD0UZHu23kLB8w@mail.gmail.com>
-Subject: Re: [PATCH 2/8] soc: realview: Use custom soc attribute group instead
- of device_create_file
+Date: Mon, 25 May 2020 13:45:29 +0200
+Message-ID: <CACRpkdadgix8LTvKY41NM5mjVa+YUXkwVcurYn6PnCLTZBnfEg@mail.gmail.com>
+Subject: Re: [PATCH 3/8] soc: integrator: Switch to use DEVICE_ATTR_RO()
 To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_044526_754979_9BAE41F3 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200525_044542_761818_78C8CD42 
+X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,19 +103,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Sat, May 23, 2020 at 7:09 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
 
-> Commit c31e73121f4c ("base: soc: Handle custom soc information sysfs
-> entries") introduced custom soc attribute group in soc_device_attribute
-> structure but there are no users treewide. While trying to understand
-> the motivation and tried to use it, it was found lot of existing custom
-> attributes can moved to use it instead of device_create_file.
->
-> Though most of these never remove/cleanup the custom attribute as they
-> never call soc_device_unregister, using these custom attribute group
-> eliminate the need for any cleanup as the driver infrastructure will
-> take care of that.
->
-> Let us remove device_create_file and start using the custom attribute
-> group in soc_device_attribute.
+> Move device attributes to DEVICE_ATTR_RO() as that would make things
+> a lot more "obvious" what is happening over the existing __ATTR usage.
 >
 > Cc: Linus Walleij <linus.walleij@linaro.org>
 > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
