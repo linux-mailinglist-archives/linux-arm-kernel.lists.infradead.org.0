@@ -2,65 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6021B1E0ECF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:55:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1297F1E0EEB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 15:00:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KR8H8HcItdqOlBaEV+alEetHEBXdqyW1D60NHHl4SH0=; b=ZPt3VCkeNu7qW1
-	FyyY41JnIeJ3ReQDFcPznn2HhbvjChkYgIDQrHL0FjcP4QDwy+G8AGHdv1zbt2uE+eYmj/Zq7UNTP
-	6ccHyhZ1eHDnZpOZ2rX9FIrKg0UPZ8YjoAZc70I5mGJJfXWadFvrTNa62ktTA8F7I4UkMriR8L7Qy
-	fnmKUr8hSu+5RyJS9GZYg+NhC0bNZwuGKLSkMaxGDqwyMoeL9QS2CtJD8HCsjN//NIxGG0mjc8Qkn
-	5CZasMdqVaK35C2PGMAs1MtBDr2IUfKzCWD7m9DKHrhDnrbL50BbfySSOQsmhAw9sapdpuix23Irh
-	4txn7NkboXfqelDAu9JQ==;
+	List-Owner; bh=NqgBLKxdR+7F0FhsZeHoFnSig0iv1RRg3mrqKG1KP1U=; b=L5HnwUYCahLQMN
+	Xr990DFlgSrDxFgQN+eDznqYgEpmdVua4WjPKuxfqA5Z1/3QTafqik8K5l9mEBBOjLiEi+YTCbwyV
+	/ITXzEbxPqJJhQaVwdjkRpCiR2dXgNNWF9BdWOTk6j3HpDgDOTSYudYkt1ADJLudL0pApCyFPjCO5
+	In6nNZdt1MmvWbZZNOCoOrltlWeCbfoXhxI2j1/nqfFSOHi/yjDYVBF/juTrbSm8ZbD/pnwFmVbfw
+	zgCzytKcNCo0rP71u1Pz0RXQgMO+ClnJeO4mSQ56LChRbPPwkOnur5qHuPEVn+Wl80SZCEynHHRz8
+	R2GFKjOEVxxr6omVKfyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdCdn-00042X-5q; Mon, 25 May 2020 12:55:39 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jdChz-0004p2-PY; Mon, 25 May 2020 12:59:59 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdCbo-0008PC-Bv
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:53:39 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 4EE1DCC49B74EAAA338E;
- Mon, 25 May 2020 20:53:32 +0800 (CST)
-Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
- DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
- 14.3.487.0; Mon, 25 May 2020 20:53:25 +0800
-From: Zhenyu Ye <yezhenyu2@huawei.com>
-To: <catalin.marinas@arm.com>, <peterz@infradead.org>, <mark.rutland@arm.com>, 
- <will@kernel.org>, <aneesh.kumar@linux.ibm.com>,
- <akpm@linux-foundation.org>, 
- <npiggin@gmail.com>, <arnd@arndb.de>, <rostedt@goodmis.org>,
- <maz@kernel.org>, <suzuki.poulose@arm.com>, <tglx@linutronix.de>,
- <yuzhao@google.com>, <Dave.Martin@arm.com>, <steven.price@arm.com>,
- <broonie@kernel.org>, <guohanjun@huawei.com>
-Subject: [PATCH v3 6/6] arm64: tlb: Set the TTL field in flush_tlb_range
-Date: Mon, 25 May 2020 20:53:00 +0800
-Message-ID: <20200525125300.794-7-yezhenyu2@huawei.com>
-X-Mailer: git-send-email 2.22.0.windows.1
-In-Reply-To: <20200525125300.794-1-yezhenyu2@huawei.com>
-References: <20200525125300.794-1-yezhenyu2@huawei.com>
+ id 1jdCho-0004og-Vp
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:59:50 +0000
+Received: by mail-lf1-x142.google.com with SMTP id x27so10460213lfg.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 25 May 2020 05:59:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=EXtqB8Wun/tgjNkBpbPrNbEYBqWbgFsLrLS2OmL1m/M=;
+ b=JqXkjdW/TwAhV/+ZstLcQDiGkcnh2vaThxK4UuXw1ZT4EbewRbqEMxF8cLo9srENSG
+ y2bzMe8eVT4GRDrV5lIfGsLezcWERXdbNA0we0XcZSk7s/wgI/0Bg36o+Q5s+WrQwFnR
+ 9Ezeei8Zk5ZuBxczU7luJMzFJL4NWTdRSEvpgnxSVbeH3cK/DSXlN9Tdbn/KKHl0ElRF
+ 1c79At+nt2Qv3ftKSagmriY4yHRJuT3SfL5MLqCGu+N67fiYVIz6F+xk123QNykV4Ed1
+ Wi4Uy6bedneHNi7QQrkTEzS6GmgrbN7iai2K6CwtEDX6745b9xMfceJdYvhJEE/s2F96
+ nJvw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=EXtqB8Wun/tgjNkBpbPrNbEYBqWbgFsLrLS2OmL1m/M=;
+ b=JwcI3sdGEzX0v1w+YyEMsWrO/tf9LI2AxT3D1RdXwKWIAGbdfzu/Vs0d18cLCGdOrS
+ 5/Yv8iVqtBPLqDVQFWDJa4stUSIdlSD3pUGrYS8oTM5wB+Ypd2BtV+ckm/9Ttv1Gq8Sz
+ caABXkcWeUI/rB3Vr/Ju1bmc9kIY1/74zq55EMiYF9SPMnmNusR4nLh8JvjCbVUzqjue
+ f6JYAI45rW4RSGapsKNaY9gel4KnbUEU4b7X+WqIGbVA9A/idD8+qjpuwe7pC5zQPIZe
+ qWIplS3LXXNUlCY9XuYDZ0mG2TmKQ5wNrvvCW3Wf0/NblSc6iEq4qxyuQxP33nHhj2eI
+ tfWw==
+X-Gm-Message-State: AOAM530fi3nNgyqUyhpfvywDiEe7J22C6i1LJkY0Td/7SlfUwlrrlkQn
+ TSQJ0/4nOiQxPdbfbvClX078wEZdmfu3+JXK5B7Y9b5R
+X-Google-Smtp-Source: ABdhPJxD2+KgVOK9WTwoquq8HqW2c21+zgJ2wXOdh5XtNRaWnyUiVdw++6s8JUaftb7+v3ytf4RuSWtwx/6fIhWUhyk=
+X-Received: by 2002:ac2:5a07:: with SMTP id q7mr14490822lfn.77.1590411586745; 
+ Mon, 25 May 2020 05:59:46 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.173.220.25]
-X-CFilter-Loop: Reflected
+References: <20200423174543.17161-1-michael@walle.cc>
+ <20200423174543.17161-11-michael@walle.cc>
+ <CAMpxmJV3XTOxuoKeV-z2d75qWqHkgvV9419tfe3idDeKwoeoLA@mail.gmail.com>
+ <75bff2917be1badd36af9f980cf59d2c@walle.cc>
+ <CAMpxmJXctc5cbrjSeJxa7DfmjiVsbyhqAbEKt-gtayKhQj0Cnw@mail.gmail.com>
+ <951244aab2ff553a463f7431ba09bf27@walle.cc>
+In-Reply-To: <951244aab2ff553a463f7431ba09bf27@walle.cc>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 25 May 2020 14:59:36 +0200
+Message-ID: <CACRpkdZYEZk7o+Y2-AqnHGsY8N7KGGmPGSuSS=H7YY8VLZ3jZw@mail.gmail.com>
+Subject: Re: [PATCH v3 10/16] gpio: add a reusable generic gpio_chip using
+ regmap
+To: Michael Walle <michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_055336_589991_C3E82B12 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200525_055949_028121_F2585580 
+X-CRM114-Status: GOOD (  10.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.35 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,122 +96,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, yezhenyu2@huawei.com,
- linux-kernel@vger.kernel.org, xiexiangyou@huawei.com,
- zhangshaokun@hisilicon.com, linux-mm@kvack.org, arm@kernel.org,
- prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ Lee Jones <lee.jones@linaro.org>, Jason Cooper <jason@lakedaemon.net>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Marc Zyngier <maz@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>,
+ linux-devicetree <devicetree@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>,
+ LINUXWATCHDOG <linux-watchdog@vger.kernel.org>,
+ linux-gpio <linux-gpio@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch uses the cleared_* in struct mmu_gather to set the
-TTL field in flush_tlb_range().
+On Mon, May 25, 2020 at 12:20 PM Michael Walle <michael@walle.cc> wrote:
 
-Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
----
- arch/arm64/include/asm/tlb.h      | 29 ++++++++++++++++++++++++++++-
- arch/arm64/include/asm/tlbflush.h | 14 ++++++++------
- 2 files changed, 36 insertions(+), 7 deletions(-)
+> If you like I could submit this patch on its own. But then there
+> wouldn't be a user for it.
 
-diff --git a/arch/arm64/include/asm/tlb.h b/arch/arm64/include/asm/tlb.h
-index b76df828e6b7..61c97d3b58c7 100644
---- a/arch/arm64/include/asm/tlb.h
-+++ b/arch/arm64/include/asm/tlb.h
-@@ -21,11 +21,37 @@ static void tlb_flush(struct mmu_gather *tlb);
- 
- #include <asm-generic/tlb.h>
- 
-+/*
-+ * get the tlbi levels in arm64.  Default value is 0 if more than one
-+ * of cleared_* is set or neither is set.
-+ * Arm64 doesn't support p4ds now.
-+ */
-+static inline int tlb_get_level(struct mmu_gather *tlb)
-+{
-+	if (tlb->cleared_ptes && !(tlb->cleared_pmds ||
-+				   tlb->cleared_puds ||
-+				   tlb->cleared_p4ds))
-+		return 3;
-+
-+	if (tlb->cleared_pmds && !(tlb->cleared_ptes ||
-+				   tlb->cleared_puds ||
-+				   tlb->cleared_p4ds))
-+		return 2;
-+
-+	if (tlb->cleared_puds && !(tlb->cleared_ptes ||
-+				   tlb->cleared_pmds ||
-+				   tlb->cleared_p4ds))
-+		return 1;
-+
-+	return 0;
-+}
-+
- static inline void tlb_flush(struct mmu_gather *tlb)
- {
- 	struct vm_area_struct vma = TLB_FLUSH_VMA(tlb->mm, 0);
- 	bool last_level = !tlb->freed_tables;
- 	unsigned long stride = tlb_get_unmap_size(tlb);
-+	int tlb_level = tlb_get_level(tlb);
- 
- 	/*
- 	 * If we're tearing down the address space then we only care about
-@@ -38,7 +64,8 @@ static inline void tlb_flush(struct mmu_gather *tlb)
- 		return;
- 	}
- 
--	__flush_tlb_range(&vma, tlb->start, tlb->end, stride, last_level);
-+	__flush_tlb_range(&vma, tlb->start, tlb->end, stride,
-+			  last_level, tlb_level);
- }
- 
- static inline void __pte_free_tlb(struct mmu_gather *tlb, pgtable_t pte,
-diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
-index 969dcf88e2a9..ba2f6b544cb7 100644
---- a/arch/arm64/include/asm/tlbflush.h
-+++ b/arch/arm64/include/asm/tlbflush.h
-@@ -214,7 +214,8 @@ static inline void flush_tlb_page(struct vm_area_struct *vma,
- 
- static inline void __flush_tlb_range(struct vm_area_struct *vma,
- 				     unsigned long start, unsigned long end,
--				     unsigned long stride, bool last_level)
-+				     unsigned long stride, bool last_level,
-+				     int tlb_level)
- {
- 	unsigned long asid = ASID(vma->vm_mm);
- 	unsigned long addr;
-@@ -236,11 +237,11 @@ static inline void __flush_tlb_range(struct vm_area_struct *vma,
- 	dsb(ishst);
- 	for (addr = start; addr < end; addr += stride) {
- 		if (last_level) {
--			__tlbi_level(vale1is, addr, 0);
--			__tlbi_user_level(vale1is, addr, 0);
-+			__tlbi_level(vale1is, addr, tlb_level);
-+			__tlbi_user_level(vale1is, addr, tlb_level);
- 		} else {
--			__tlbi_level(vae1is, addr, 0);
--			__tlbi_user_level(vae1is, addr, 0);
-+			__tlbi_level(vae1is, addr, tlb_level);
-+			__tlbi_user_level(vae1is, addr, tlb_level);
- 		}
- 	}
- 	dsb(ish);
-@@ -252,8 +253,9 @@ static inline void flush_tlb_range(struct vm_area_struct *vma,
- 	/*
- 	 * We cannot use leaf-only invalidation here, since we may be invalidating
- 	 * table entries as part of collapsing hugepages or moving page tables.
-+	 * Set the tlb_level to 0 because we can not get enough information here.
- 	 */
--	__flush_tlb_range(vma, start, end, PAGE_SIZE, false);
-+	__flush_tlb_range(vma, start, end, PAGE_SIZE, false, 0);
- }
- 
- static inline void flush_tlb_kernel_range(unsigned long start, unsigned long end)
--- 
-2.19.1
+I'm pretty much fine with that, we do merge code that has no
+users if we anticipate they will be around the corner.
 
-
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
