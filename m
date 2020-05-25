@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A5D71E0737
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 08:44:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1338E1E073A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 08:45:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IX7J05Wro4gKQZwIoWejHRs9K5njJA5kEAXwARzxUSw=; b=QUKeMzjRaRvKmZ
-	DYErSlUgI/5lom9WecDRquyr8t4tLcMgMxwFal09hghlf3fw/WO+FfMBl4ynoglbcocq03DnO38xg
-	qvGElDGcWndtU+iboQDuCbYQdMq8y7wjt7ZuXGzNnfjv5+F8df/pvBdCWrrE/5lEkCwv/vazAx0VN
-	qZA3vNckWbtwarD/ZzONdLdLTu7YZRvG8OKdZNIWm1vqeKuaRjU+wKR9JSdHyoYFnw0e5qpu39zUj
-	fW8g4QX45mky5N2AvoAcZE61/2ltlRqxX/tDRnuHzm55ioy12KxrV/+p7SIPFTH5rA/yBeu347+DI
-	9h2ifXjFpND/yyeWCtNQ==;
+	List-Owner; bh=zR9FyzKseU/Wd0BIyJ+dmF4SEfj3lGfxBR8MAjALft8=; b=mPfBBN98crfVYp
+	MDwYm9HTYrSEChGlE4yiskdnWAgTBef2gHE8rh5eHNycmtTfJsFdNvhk/hANqq9fp8LihxZRQCPXB
+	NiPOQRsXwFFMd7jpWFAkOuTPlyEBOP9qOBRRQI7rg3N5EMmkV0b+SQPgJPP5/H4GZgECTcf9FNG1O
+	fsvW3zM0o4t2gXdGxIADX/s4PJduhyVa28UAwgiaDfvYVsL2KW71ppM59IMPSN27o7u6Jzg/9F43Q
+	7RO+PrxogmhkygdQkzcGUV4Uxe9HQx1FTn23y2hxI69I6o3LghctrF78ALwmnvgrFpwPbNQm59LU3
+	hWWPE+cmOQYs8NpWfWvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd6qw-00047h-B2; Mon, 25 May 2020 06:44:50 +0000
-Received: from mail-dm6nam11on2063.outbound.protection.outlook.com
- ([40.107.223.63] helo=NAM11-DM6-obe.outbound.protection.outlook.com)
+	id 1jd6rQ-0004MG-VB; Mon, 25 May 2020 06:45:20 +0000
+Received: from mail-eopbgr760077.outbound.protection.outlook.com
+ ([40.107.76.77] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd6qm-000478-BZ
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 06:44:41 +0000
+ id 1jd6r4-0004Ky-5P
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 06:44:59 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DhkhhRqA1WQTVDFB6WSoAQne/GUpYUDNS8fdle8s4+4SJf4/v8fxcF7JQejPPezwGBaUHvwulwNgfh3ZzK60NW6bda/tOOWJAV8SDTwBeFYzkT6L/SG4OrQNuv1BZkoJK3RdEx8Mke8Pr+Q9bxddOm+EcCZkTSdnjMXShNMMCGRs2SlIEJJSLInogWDLKTztkItwkapTLrBxDKRH6HwfZJ7Hvp7kv7e2E8uoL+WtCZQSDlQQLNkISL2kmph8q0gVpq1s5qaVgn1p6SYH40DDfY1bGSF+tw/FY3+0Qhy/z5p9bwQJ+hH7YmcmzcssDrUEB++pMM/uT/yJHArmFMwiqg==
+ b=aRL117bu27YJidwGXnhPCeUyxBWCWsChcHV6JxToDk6csOXbSHnnDWfoKUtM1MRN5h6JtCAgdEaQSO6vzTK9UU1Fgf9hqSeM5fAiTnMjIInv8/K/muM3PYJvhvLSBXQAPi+RjRVoMuCM53vGd359p/wqJb/VbAsMAp1nFjER5GZNmOdopoOelmaiO+5MgA8W5KZeiXYeJCy1mwxtcBmoakkoJCTPD6nKblHRmg+iop9v6mYPNEfr8AE9PTQCnuBqa4K6TIdL1saQ49ZI6GiupCHZlMl67EGWH4iJAmIcGpceJGFOKktrDQand5T8rQ8EA9/2mnxXMUsVFDHNjzP9hw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uvDsdbt/k4qQA2FsJjdceLnkBst5NRqNBOzIpXVe8a0=;
- b=MiDpMa9U3jbW1kAnM1qFXv45PyotT1zsbMPpX4EriLk8BNsfszucg1NU86n2mjWECIb3d+xTxjDpnCLiwmRRfFcOatHzbLDWDYw222LkqlA+UqKPEMxUugNAzwKnG8ZkP6xMP+7EufrT15hGCET/09AXGARnrtwbqXmkFgPRh4r1J4wbTq87GVjPiC3DOk4/aszPNnkvwbeiVGDo06ReCVbiBwSizfcs7HPUGKpvbGJ/ZXtgIAMdkZmlyER3CRWq3C2R90rt1Gfjfrgka4F9i8dQJo2OvapAix9YeGxaRcPAjhZw4M2JRH+moZMC1BowK7clkwuHSRWKZr7f92kPEQ==
+ bh=RAcSx7O8+89HmzhAJ8rABfIEy8zJ5prhPISvQZykXQw=;
+ b=d8vxKa6yCEEnM1Ai17bcZj60LQt3A4tFpom2d7sE8n2h8BwPGaxr5UBmed5N2UsxdYQ3R3hCnRcSGsQ1QSmdSBuWkyJk9gyq3bJr6Uc/fqkACr+vgZo7Lz9Lwv4pjEmR9Onhuuhum/KmIs1P9bPmlVPUw17w/l09RzTO7oSsfOUpdSGFUQdb5nIZuTFKex5Nye7uJxTn2XHa8Lwc8+MJQOyaKuz+5dgAnZytqgwCkOb6cq7pOjqbmNihhNudQ0YSDL/Qq9w4olzGeo3cvmDBnfFQtdKW8/JIUSgGTy1qN/1H1wV4yvmMO9q7PAf/SrUrcJ6HQumtitDilcq9Xkqhdw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=kernel.org smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
@@ -38,18 +38,18 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uvDsdbt/k4qQA2FsJjdceLnkBst5NRqNBOzIpXVe8a0=;
- b=ZS6FLHAHGzmrR6t3nKsWLaSXujMLb1og7eEU3WRul/ZyE3rCWLKCMwgh9yAF0zKpffx8NjxLndj/bCX9a/tiPL7R0bewkwotg8ODOn2+WBOTAQ9pUDtAtnoPjAeCu6on+REyaD2N1+6S4pa4JxQkKH3aDNttYpqVX+HKJd2TJII=
-Received: from SN4PR0501CA0107.namprd05.prod.outlook.com
- (2603:10b6:803:42::24) by BYAPR02MB5381.namprd02.prod.outlook.com
- (2603:10b6:a03:a1::23) with Microsoft SMTP Server (version=TLS1_2,
+ bh=RAcSx7O8+89HmzhAJ8rABfIEy8zJ5prhPISvQZykXQw=;
+ b=fon9mJXj0f+0zQJw0SLNKA/+Aa8wtkOth+B+0p62LuezMYZNKO1ZdP2goEsFxCctndMTMNN2w94wlq4Wk1V6OEaesiux6Lr7gySEq/1/Kcj5DxEEBFOZ3YMghJqiWpHDAxCP1/xUQ9HN8GT1h6zdsZbXy2maVmDjuDlyxooe0V8=
+Received: from CY4PR2201CA0024.namprd22.prod.outlook.com
+ (2603:10b6:910:5f::34) by SN4PR0201MB3472.namprd02.prod.outlook.com
+ (2603:10b6:803:48::19) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Mon, 25 May
- 2020 06:44:36 +0000
-Received: from SN1NAM02FT008.eop-nam02.prod.protection.outlook.com
- (2603:10b6:803:42:cafe::3d) by SN4PR0501CA0107.outlook.office365.com
- (2603:10b6:803:42::24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.9 via Frontend
- Transport; Mon, 25 May 2020 06:44:36 +0000
+ 2020 06:44:56 +0000
+Received: from CY1NAM02FT062.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:910:5f:cafe::e0) by CY4PR2201CA0024.outlook.office365.com
+ (2603:10b6:910:5f::34) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23 via Frontend
+ Transport; Mon, 25 May 2020 06:44:56 +0000
 X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
  smtp.mailfrom=xilinx.com; kernel.org; dkim=none (message not signed)
  header.d=none;kernel.org; dmarc=bestguesspass action=none
@@ -58,36 +58,35 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT008.mail.protection.outlook.com (10.152.72.119) with Microsoft SMTP
- Server id 15.20.3021.23 via Frontend Transport; Mon, 25 May 2020 06:44:36
+ CY1NAM02FT062.mail.protection.outlook.com (10.152.75.60) with Microsoft SMTP
+ Server id 15.20.3021.23 via Frontend Transport; Mon, 25 May 2020 06:44:56
  +0000
-Received: from [149.199.38.66] (port=54569 helo=xsj-pvapsmtp01)
+Received: from [149.199.38.66] (port=54642 helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
  (envelope-from <michal.simek@xilinx.com>)
- id 1jd6qA-0003lJ-DG; Sun, 24 May 2020 23:44:02 -0700
+ id 1jd6qU-0003lc-Kf; Sun, 24 May 2020 23:44:22 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <michal.simek@xilinx.com>)
- id 1jd6qh-0006Nf-Iv; Sun, 24 May 2020 23:44:35 -0700
-Received: from xsj-pvapsmtp01 (mailhub.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 04P6iXO1029510; 
- Sun, 24 May 2020 23:44:34 -0700
+ id 1jd6r1-0006OS-QH; Sun, 24 May 2020 23:44:55 -0700
+Received: from xsj-pvapsmtp01 (xsj-smtp.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 04P6iniX012453; 
+ Sun, 24 May 2020 23:44:49 -0700
 Received: from [172.30.17.109] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <michals@xilinx.com>)
- id 1jd6qf-0006NP-NN; Sun, 24 May 2020 23:44:33 -0700
-Subject: Re: [PATCH 14/15] PCI: xilinx-nwl: Use pci_host_probe() to register
- host
+ id 1jd6qv-0006OA-41; Sun, 24 May 2020 23:44:49 -0700
+Subject: Re: [PATCH 15/15] PCI: xilinx: Use pci_host_probe() to register host
 To: Rob Herring <robh@kernel.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 References: <20200522234832.954484-1-robh@kernel.org>
- <20200522234832.954484-15-robh@kernel.org>
+ <20200522234832.954484-16-robh@kernel.org>
 From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <2fb27897-a715-520a-16e6-5c22bae96855@xilinx.com>
-Date: Mon, 25 May 2020 08:44:31 +0200
+Message-ID: <c037bebc-2a86-0064-25e8-6983258291b8@xilinx.com>
+Date: Mon, 25 May 2020 08:44:46 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200522234832.954484-15-robh@kernel.org>
+In-Reply-To: <20200522234832.954484-16-robh@kernel.org>
 Content-Language: en-US
 X-RCIS-Action: ALLOW
 X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
@@ -97,41 +96,41 @@ X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
  SFTY:;
- SFS:(376002)(396003)(346002)(39850400004)(136003)(46966005)(36756003)(26005)(81166007)(82310400002)(356005)(31696002)(47076004)(2906002)(70206006)(4326008)(70586007)(44832011)(186003)(8676002)(478600001)(54906003)(31686004)(2616005)(110136005)(336012)(426003)(9786002)(316002)(8936002)(82740400003)(5660300002)(107886003)(43740500002);
+ SFS:(376002)(136003)(39850400004)(346002)(396003)(46966005)(54906003)(70206006)(70586007)(107886003)(478600001)(4326008)(8936002)(8676002)(47076004)(110136005)(316002)(31686004)(82740400003)(2616005)(2906002)(356005)(31696002)(9786002)(81166007)(336012)(6666004)(44832011)(26005)(36756003)(82310400002)(426003)(5660300002)(186003)(43740500002);
  DIR:OUT; SFP:1101; 
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 9f60c49f-9060-4d6a-e744-08d80077170b
-X-MS-TrafficTypeDiagnostic: BYAPR02MB5381:
+X-MS-Office365-Filtering-Correlation-Id: 93516d4c-8a37-4cc5-3c31-08d8007722fb
+X-MS-TrafficTypeDiagnostic: SN4PR0201MB3472:
 X-LD-Processed: 657af505-d5df-48d0-8300-c31994686c5c,ExtAddr
-X-Microsoft-Antispam-PRVS: <BYAPR02MB5381FD81CB9F10EEE48FA294C6B30@BYAPR02MB5381.namprd02.prod.outlook.com>
+X-Microsoft-Antispam-PRVS: <SN4PR0201MB347297BCF6A5402D46C1AC4AC6B30@SN4PR0201MB3472.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
 X-MS-Oob-TLC-OOBClassifiers: OLM:3968;
 X-Forefront-PRVS: 0414DF926F
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 4AcheypOKm28CWznaq3tvuphkmF5+UHqc5EdOigm6BsphxSDa/XvvcL728TgpZh5dowMnKE+wbY8vY5Vd60ymYP+mY+THpwl3Al0Ua4/1X8Y61kLo0dIxy2NGKZ+8ACKLD22e5oOsqwtQAdWOaYalKNd2kbEZKap0rA3kLv+PMZcaR2LdqPWaSbI3s7kFW2N/ZVtd4i0CJAmHZ2m/4wG169p9IJ6oCGGXL+bFvFa/wBnJyUzii40Xv60ncTQvl3XEnbUy5l0B4MzOdmLZ7um0X0d70d/nM3fwemjRgR1hRpKfUiLfDuw7gNZ8EFfS1rkD9jZco8ZZiXZgtDxFcF9yCctoFSmdvH9ptzqCrmCuAwWicje67eGQvY02VUZ9IrnRkL6ZE+2lnygV2WKas47VuidMPKSlHSDmst1QouKBi6+T9A921FrPC/io/2wbsOe
+X-Microsoft-Antispam-Message-Info: Na1N7f55aEK2Hza4eYNj6bvHHCBusWvq4JLrxml5lTHXMnkj3Vjx2E1PlG9EHGwlpUd90GSrAdOoNz9fC3yusXP9Xjwcu99OTHTmECTw8XwGrt2JZwVl6CND0uGH7Weis2G4rKlFtwJ7q5hq5VVak09oRVe5uZsKENuiIPA8C3UkzXhLiaJYgphw/M4RelP42mUoLAGOjLFkfTMhgyTOMLgLwiQTOG14ywoh1ALNWD8r+4cahXJPKODLBJyZoo/K2cJgRBxKsNm9VbjR+0Aj+YAk3om7meTsnfwEGYpRZL2B39cVvK/MjnOmr236JfiX4u7zkXiW/cI5p/WuYCCLeGdGvoBEF7v7uxOb8Mov+d/x0YQTbaIFQvueylO4W1URyYzfGhdtEtOYmJUROU0rQW3vYZUpqxpRcqGyUwftlgtrUdjaJ//1aU11s56BelzH
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2020 06:44:36.0619 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9f60c49f-9060-4d6a-e744-08d80077170b
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2020 06:44:56.0843 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 93516d4c-8a37-4cc5-3c31-08d8007722fb
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5381
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN4PR0201MB3472
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_234440_399696_203F1B7B 
-X-CRM114-Status: GOOD (  16.91  )
+X-CRM114-CacheID: sfid-20200524_234458_209818_D28BD3DA 
+X-CRM114-Status: GOOD (  16.85  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.223.63 listed in list.dnswl.org]
+ no trust [40.107.76.77 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.76.77 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.223.63 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -155,7 +154,7 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 23. 05. 20 1:48, Rob Herring wrote:
-> The xilinx-nwl host driver does the same host registration and bus scanning
+> The xilinx host driver does the same host registration and bus scanning
 > calls as pci_host_probe, so let's use it instead.
 > 
 > The only difference is pci_assign_unassigned_bus_resources() was called
@@ -165,28 +164,27 @@ On 23. 05. 20 1:48, Rob Herring wrote:
 > Cc: Michal Simek <michal.simek@xilinx.com>
 > Signed-off-by: Rob Herring <robh@kernel.org>
 > ---
->  drivers/pci/controller/pcie-xilinx-nwl.c | 14 +-------------
->  1 file changed, 1 insertion(+), 13 deletions(-)
+>  drivers/pci/controller/pcie-xilinx.c | 13 +------------
+>  1 file changed, 1 insertion(+), 12 deletions(-)
 > 
-> diff --git a/drivers/pci/controller/pcie-xilinx-nwl.c b/drivers/pci/controller/pcie-xilinx-nwl.c
-> index 9bd1427f2fd6..32a0b08d6da5 100644
-> --- a/drivers/pci/controller/pcie-xilinx-nwl.c
-> +++ b/drivers/pci/controller/pcie-xilinx-nwl.c
-> @@ -817,8 +817,6 @@ static int nwl_pcie_probe(struct platform_device *pdev)
+> diff --git a/drivers/pci/controller/pcie-xilinx.c b/drivers/pci/controller/pcie-xilinx.c
+> index 98e55297815b..05547497f391 100644
+> --- a/drivers/pci/controller/pcie-xilinx.c
+> +++ b/drivers/pci/controller/pcie-xilinx.c
+> @@ -616,7 +616,6 @@ static int xilinx_pcie_probe(struct platform_device *pdev)
 >  {
 >  	struct device *dev = &pdev->dev;
->  	struct nwl_pcie *pcie;
-> -	struct pci_bus *bus;
-> -	struct pci_bus *child;
+>  	struct xilinx_pcie_port *port;
+> -	struct pci_bus *bus, *child;
 >  	struct pci_host_bridge *bridge;
 >  	int err;
 >  
-> @@ -871,17 +869,7 @@ static int nwl_pcie_probe(struct platform_device *pdev)
->  		}
->  	}
->  
+> @@ -663,17 +662,7 @@ static int xilinx_pcie_probe(struct platform_device *pdev)
+>  	xilinx_pcie_msi_chip.dev = dev;
+>  	bridge->msi = &xilinx_pcie_msi_chip;
+>  #endif
 > -	err = pci_scan_root_bus_bridge(bridge);
-> -	if (err)
+> -	if (err < 0)
 > -		return err;
 > -
 > -	bus = bridge->bus;
@@ -199,8 +197,9 @@ On 23. 05. 20 1:48, Rob Herring wrote:
 > +	return pci_host_probe(bridge);
 >  }
 >  
->  static struct platform_driver nwl_pcie_driver = {
+>  static const struct of_device_id xilinx_pcie_of_match[] = {
 > 
+
 
 Bharat: Please review.
 
