@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E275E1E055C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 05:41:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE3471E0566
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 05:42:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=i7TTMLRfbBYEM6AbcUrSTztJsIkUpNl37e88utGSYBw=; b=ts0kZ2iS7opv46c2hzkcV1F4wY
-	WufBR8zn5feNCCawHprsfZCBR6P54IEVeEnYsbttCzLFkA5Ra9RTGZRaTD7BJfHCPC6G8itPKJ8p7
-	n5elv7Dm4l8xkvgD4g6gSf2vZo8uLdupA69O3zQg3yi99pCdGwVuZjZi1vcWkGLa4eymo0OLgxfXQ
-	PM12SNTSfFaGFcnuxb9ORjo2ceFnoixODWYBGnsQS7Fw+4Uk0uJR3/ab+zAUEqDCbe7nTZDqU8m+G
-	eh7armMk4ag7QvxXrtsn1zDmy6eRW2eY1WKg7qQitkX1QzGRInWPlX0J0a9O9e5lWkMhZbRBZKdnU
-	yJ+iDftw==;
+	bh=lkNyKnFJzHUz5F1z8QdiQsa4UxnW5VXRgAVJaNYJoSw=; b=QKJMLQP3mqvzZ9H2OUk3x/0E3v
+	/LD3IknJvCoZgz50NamrZAmH9kTxiOqyZpe7Z+6pT/u2iWAJhKuednIh2ZGwYsxkWtknllsna6YTY
+	TZph3ZbPkUNTs6QOhdQ9TXjnsaZ7i1e7/0mSk++94ulSdHOZaRYXNw+hfCfRItuBpSLzSgt2Fp2w5
+	aup8yJUGciEY/gBcs+QqSYfQbJbnYSVO8XPyMbxTrNLZ5c9ljGUhRfGiqERxZaFsq+st+agsNVP/0
+	h60crsORli1jgCVpf7XIEmzpxnjXOm0P0B8aBn+AUiRAa7wFnimkHbJT0oOqouyZRmqEnDJc6CD+D
+	nYOuZtzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd3zr-0002Xz-QD; Mon, 25 May 2020 03:41:51 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jd40D-0002sQ-0w; Mon, 25 May 2020 03:42:13 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd3zH-0002NB-Hz
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 03:41:16 +0000
-Received: by mail-pf1-x441.google.com with SMTP id v63so8268162pfb.10
+ id 1jd3zM-0002QQ-HG
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 03:41:21 +0000
+Received: by mail-pf1-x442.google.com with SMTP id x13so8258847pfn.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 24 May 2020 20:41:15 -0700 (PDT)
+ Sun, 24 May 2020 20:41:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=STuSyGO/SfkcGFSauy0QHw5IqCNUH9D9huZMTiB2y2k=;
- b=fkNPpMGzjaKpCW8iTYQCQix1C73P0vGeCYEgEBtczSwFoYfS6ni4XDVWMbiLhqvrO+
- YQj1kVsq45Hc7FyzZIQdm03WipH/XllIaDcseSWpV/0g8Dh5ICZ411BaDbDHMWQSa4/f
- 0SZsJz3GhwaxVeJopKZG7Wr9Udxdp7O5jxlUFebkd5DVx+GUCmFSnusnoEtRoAeJoN6b
- 1PPD3ek7v1TS/KhPcSh6Cd8UCWgt+Ml2QlTTMP/Zn+LAFKaiE7+6Z+D7BUwhr9wPfmmB
- v51sXUdOj/KwHwZ+bMdKThHsEWDk4MrX533ednxTMem3JkkuUJgODw6aLxV/+tjZJPAV
- 3poA==
+ bh=GfRuA4swEZrmalrNdqlTpHmV2cl0sSIm4Vls/KHgpHc=;
+ b=C9orZv3PrRkWTbASRFpQKn/pleNM+1/3gOo/xuhZgznu3IcNilHc8Su+UwIakTsz91
+ 2TvBCU3YPoy26Rygihm6Kv//TnN5XpTwHgMb1v9w9qqjX+9pMWW7XAs52DrPEwF8Bkeu
+ yjvHuH9XryCRAy7Peupmnit1pJb152K2dP2h4x9tJ2AdIJ8YNBRU/uR6DIt1sf/8cf88
+ FKExZpKs3E7RbDcnnETBi7n6p7o8Z3Lbtn4hListwo6bga+Fve2TqicJXlXRk1S3QQa+
+ j6HmYfu6d8de1hUQqAt9hV5p7d3NxTSbq7/PObDmhPaR+sfq8yYSOtEuxHpRKzOFnNaA
+ OliA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=STuSyGO/SfkcGFSauy0QHw5IqCNUH9D9huZMTiB2y2k=;
- b=WaEYL5eH6mHqri/bbI6XXqSAUBCGBF7+o6QJVKMRP9og87sunRgymLNIP3NQ+fUgfV
- cvZa3ylWoCnOiseASSvqcentBgL+E11fhPuxS0+12wlmWPUv+gY/MXHJTH7H0so5hXoF
- kVyvUOP8cMezSU7XhRVAk7uS5cYeIGDSxKRF814a90hJTmS85syyeN8MYrKZ7UrmvQ5+
- Zv0giMhn+zRpDVc9vQKwjVJF7rEMJhECBulUisb/s49tntQmSYP+JXVR90ySm8mzm9wO
- 4RrRjas/q/68xUC4LkZtjOYLksdEuAkMOBf/kHKlds1mjlR+NYCP37yMlO/hmK2e7ZLu
- uc9A==
-X-Gm-Message-State: AOAM531+ldg+clwZUXY2UeAFLYeHz0NhmwVXT2VRGCHMzRQ68iwl38uE
- FvJcJaifaR5L310b5YqBuUM=
-X-Google-Smtp-Source: ABdhPJweb2OFp89IGu0IqbpvrgVH1AIHqBr5JqD5/OxEMbC2D64IA8gZsH2OyXyZNWnB5ONkhP2T9g==
-X-Received: by 2002:a62:1407:: with SMTP id 7mr15471826pfu.103.1590378074875; 
- Sun, 24 May 2020 20:41:14 -0700 (PDT)
+ bh=GfRuA4swEZrmalrNdqlTpHmV2cl0sSIm4Vls/KHgpHc=;
+ b=GmAhluB5qxMOq9rjeBZiG8++nznMHRRsjORuHkc/qeLyRLjju9/xFfmzdv8QmG8OQT
+ Q/npIw9b4P2FKF/weJeKk/ZCgTLnKSEVqQwa+5Aqi8YlQ7AynLY5f+P5T7bEJeqV/3NQ
+ /thyT+YDgUyVy2mudtgfLHi6W17l+DfSWTqgieyFNASKG0HhY2of7jvE/JIrXjWf9XzM
+ LepYc/5PkHqQt62YIS13a1HLlcQM7RIRvXvtoFjL0LvDaH9o0rR1YwbQ2qeoMNeQz6BO
+ xmm1ck+kCFNUPLN9JxDZqRLawO2tm6DxrZh6diNy+zV+AkVBlRWuZjimkkCnIrWG0UT6
+ sCvQ==
+X-Gm-Message-State: AOAM530DUWwvn9wPvLCO4H9z3yTaP7bB8fDTjAZCH4Y1PRS62/QfUP6n
+ QgsTUjLXbIUqBO2KSWvbWRs=
+X-Google-Smtp-Source: ABdhPJwZVNeV1TiCvPHkvUvPVOepOvPhrNG0Ft1VtsDR5LnWGFigufMKLUYsbcoR+dlKrZVzLGK6lg==
+X-Received: by 2002:aa7:84c6:: with SMTP id x6mr15337738pfn.46.1590378079666; 
+ Sun, 24 May 2020 20:41:19 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.191.44])
- by smtp.gmail.com with ESMTPSA id 7sm11981695pfc.203.2020.05.24.20.41.10
+ by smtp.gmail.com with ESMTPSA id 7sm11981695pfc.203.2020.05.24.20.41.15
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 24 May 2020 20:41:14 -0700 (PDT)
+ Sun, 24 May 2020 20:41:19 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: robh+dt@kernel.org, p.zabel@pengutronix.de, mcoquelin.stm32@gmail.com,
  alexandre.torgue@st.com, thierry.reding@gmail.com, sam@ravnborg.org,
  airlied@linux.ie, daniel@ffwll.ch, mturquette@baylibre.com,
  sboyd@kernel.org
-Subject: [PATCH v5 1/8] ARM: dts: stm32: Add dma config for spi5
-Date: Mon, 25 May 2020 11:40:55 +0800
-Message-Id: <1590378062-7965-2-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v5 2/8] ARM: dts: stm32: Add pin map for ltdc & spi5 on
+ stm32f429-disco board
+Date: Mon, 25 May 2020 11:40:56 +0800
+Message-Id: <1590378062-7965-3-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1590378062-7965-1-git-send-email-dillon.minfei@gmail.com>
 References: <broonie@kernel.org>
  <1590378062-7965-1-git-send-email-dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_204115_587767_62162E6F 
-X-CRM114-Status: GOOD (  11.70  )
+X-CRM114-CacheID: sfid-20200524_204120_604631_DFD3D734 
+X-CRM114-Status: GOOD (  11.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -113,28 +114,92 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: dillon min <dillon.minfei@gmail.com>
 
-Enable spi5's dma configuration. for graphics data output to
-ilitek ili9341 panel via mipi dbi interface
+This patch adds the pin configuration for ltdc and spi5 controller
+on stm32f429-disco board.
 
 Signed-off-by: dillon min <dillon.minfei@gmail.com>
 ---
- arch/arm/boot/dts/stm32f429.dtsi | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm/boot/dts/stm32f4-pinctrl.dtsi | 67 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 67 insertions(+)
 
-diff --git a/arch/arm/boot/dts/stm32f429.dtsi b/arch/arm/boot/dts/stm32f429.dtsi
-index d777069..5820b11 100644
---- a/arch/arm/boot/dts/stm32f429.dtsi
-+++ b/arch/arm/boot/dts/stm32f429.dtsi
-@@ -660,6 +660,9 @@
- 			reg = <0x40015000 0x400>;
- 			interrupts = <85>;
- 			clocks = <&rcc 0 STM32F4_APB2_CLOCK(SPI5)>;
-+			dmas = <&dma2 3 2 0x400 0x0>,
-+				<&dma2 4 2 0x400 0x0>;
-+			dma-names = "rx", "tx";
- 			status = "disabled";
- 		};
+diff --git a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+index 392fa14..0eb107f 100644
+--- a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+@@ -316,6 +316,73 @@
+ 				};
+ 			};
  
++			ltdc_pins_f429_disco: ltdc-1 {
++				pins {
++					pinmux = <STM32_PINMUX('C', 6,  AF14)>,
++						/* LCD_HSYNC */
++						 <STM32_PINMUX('A', 4,  AF14)>,
++						 /* LCD_VSYNC */
++						 <STM32_PINMUX('G', 7,  AF14)>,
++						 /* LCD_CLK */
++						 <STM32_PINMUX('C', 10, AF14)>,
++						 /* LCD_R2 */
++						 <STM32_PINMUX('B', 0,  AF9)>,
++						 /* LCD_R3 */
++						 <STM32_PINMUX('A', 11, AF14)>,
++						 /* LCD_R4 */
++						 <STM32_PINMUX('A', 12, AF14)>,
++						 /* LCD_R5 */
++						 <STM32_PINMUX('B', 1,  AF9)>,
++						 /* LCD_R6*/
++						 <STM32_PINMUX('G', 6,  AF14)>,
++						 /* LCD_R7 */
++						 <STM32_PINMUX('A', 6,  AF14)>,
++						 /* LCD_G2 */
++						 <STM32_PINMUX('G', 10, AF9)>,
++						 /* LCD_G3 */
++						 <STM32_PINMUX('B', 10, AF14)>,
++						 /* LCD_G4 */
++						 <STM32_PINMUX('D', 6,  AF14)>,
++						 /* LCD_B2 */
++						 <STM32_PINMUX('G', 11, AF14)>,
++						 /* LCD_B3*/
++						 <STM32_PINMUX('B', 11, AF14)>,
++						 /* LCD_G5 */
++						 <STM32_PINMUX('C', 7,  AF14)>,
++						 /* LCD_G6 */
++						 <STM32_PINMUX('D', 3,  AF14)>,
++						 /* LCD_G7 */
++						 <STM32_PINMUX('G', 12, AF9)>,
++						 /* LCD_B4 */
++						 <STM32_PINMUX('A', 3,  AF14)>,
++						 /* LCD_B5 */
++						 <STM32_PINMUX('B', 8,  AF14)>,
++						 /* LCD_B6 */
++						 <STM32_PINMUX('B', 9,  AF14)>,
++						 /* LCD_B7 */
++						 <STM32_PINMUX('F', 10, AF14)>;
++						 /* LCD_DE */
++					slew-rate = <2>;
++				};
++			};
++
++			spi5_pins: spi5-0 {
++				pins1 {
++					pinmux = <STM32_PINMUX('F', 7, AF5)>,
++						/* SPI5_CLK */
++						 <STM32_PINMUX('F', 9, AF5)>;
++						/* SPI5_MOSI */
++					bias-disable;
++					drive-push-pull;
++					slew-rate = <0>;
++				};
++				pins2 {
++					pinmux = <STM32_PINMUX('F', 8, AF5)>;
++						/* SPI5_MISO */
++					bias-disable;
++				};
++			};
++
+ 			dcmi_pins: dcmi-0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('A', 4, AF13)>, /* DCMI_HSYNC */
 -- 
 2.7.4
 
