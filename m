@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71E111E05A3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 05:47:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F39C1E05A4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 05:48:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=k7Fy8Fgl76aYCdH5wCmthAdoqwdK0uls1gOO0HDRadA=; b=Z1JxFgCDb39dYiwWuPLnjmQgJV
-	ZRzlV0P4VsTRcID2NTlJyzYBj2bLxHV7KDBo4THN2JuaZASmJRtmSosAzHUzrGhdHH7Br3Yws9O2X
-	q/9MxEnapq/YAyOWCWLFi5xy+DRSOQOthu0mAJ/kscYAotfEJjBM3k3fSgDtHNDXyvspDHcXH/RIN
-	BnguLKqH9PXKbNXUnPxfXvhTQsm1Q4prXvvcRttoP5nEBACqOZ3AQSQj0amCjXf2/vMhInISjvH/b
-	LpPo6L2sWSkmnfWNfJmqcvRMX6qWLPE/Rzr2BiR6UOen4gQTULaJTA4E9xWOZjTwWcqYlWTRRdmUM
-	CB5SzYUQ==;
+	bh=4C87YMfTm0wAGgBjtnNm8iRLztceaoH9aZfarVWFWks=; b=Mp+9yIPmYY77BV1j2uxbARrMby
+	pZZwNZiop0n2z/2jCjUxg3VDAsrigHecry5M4VmvtE6+1anUU1McsK36KtYnkDKwcbF9O6OtVYcXe
+	xHlvZpuZHH29lWTfs2WBT4b1PrUwVCw9aDx8NdQkMoZxFk1ANiGBnD9gpyYaqPwuOWs4FpAjJxPlD
+	S3U4indhElTIqsoSgy9j0azNeqMbLTclj+3IgMfehp1trLlYxnuRbqM0RA+pJbn2KiblaJ1uiJQ/Y
+	tWqtwxDqBm/KLDNpfiMvHhpiXvFm9VYeVmeIvEocV23+4A8lkev/gqpOdO1YjCt9V02HMjof+E3WN
+	DExgCw9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd45Q-0000Hh-8w; Mon, 25 May 2020 03:47:36 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jd45f-0000Z7-T1; Mon, 25 May 2020 03:47:51 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd440-0007hr-2D
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 03:46:09 +0000
-Received: by mail-pl1-x641.google.com with SMTP id d3so7004954pln.1
+ id 1jd442-0007kg-AJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 03:46:12 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id s69so8003427pjb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 24 May 2020 20:46:07 -0700 (PDT)
+ Sun, 24 May 2020 20:46:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=MtXq2QWDOoN0CBKSeH60c2tJASyOu/uu0I8Lzq6RPtM=;
- b=t69eC63CQ3k49aGU3xG+GnDCSEwR8kciBL/7nzuvl4/Hr4BNqc0Xp/LycSexKIk+8E
- PEAfeaojlOH40hTE2AyxHJHR2M3OnFED1+0JZout9ewf5RUKoWTX/t2x53xyYrcW5mEQ
- L7hYdHMpqxAZ1wKEQu/hbdvy6yMjlHrujxhr2y0Kb++fp7OvXNYOhTDFYlglDHSWulbB
- uPRrUm5v8woAFi/QV5azhaf5iSzN/xF/CXzSucTIFbjpTxrua6a433t5smWG3+L9IlRV
- ZkNlLTvAt20pTLM7XvA+JchlbYc5lJUB0OlDcGbQKbqcKTxVjeCFHux0CTzXhxjgjF6Y
- 6SLw==
+ bh=JHR9IFaRgCyJGWikuHqyC0B14pMQIGmyd5Kpq3MNpmQ=;
+ b=iz2EkdIG3/RqK9gUgyu2o4iN9HPdnIvCoCCpRwW1qd5e35SloeuFv6L7XUj7ZqqeJ6
+ LbwKTi9GRKHJAmDxNPDCYbEVK+Cv7kWHyh8u5lMY0tI51s9VfTd18qBXSS92X6tsnmRL
+ Ppxpi6MgO7teWvlPFFCP63GE0Q/Dczn6Nx+7aLgPTZbMf0kIDhuBySchsNpEPFczpMh2
+ sKLt8SAA+J4iPs0wJvkisXGwQsHT9bjt3lVkkwiM1j9yd1hodeT/KTmC1AUXCwWM8xNQ
+ XOL1owO12FeMDYfvUdazAEO3Ui07kMiVFywcUOFm2ywnReuW/5bz/8VWNVqY9FJRI/lM
+ 3nxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=MtXq2QWDOoN0CBKSeH60c2tJASyOu/uu0I8Lzq6RPtM=;
- b=Vl2swase0RJiYP3b1VZu+/4YynO4AdTZGfWmljCru9/duqyx+XvJ4da2LDOVZ1ctiE
- WkuxC5HXtTjc96sYnLBppb0gqph/3PJR9zJqIIv07Y0lWVsU4HSxpzqwECoIPaUax6+k
- nSn3ITtphlDC/tFXr3Vk4C65vQdHm29CIqHTNTu5UcTnPIJqvmMmp/SkuFuGa4drLCV0
- Ww9rwJwBHMRkSYh5jzrFXU9xaKAfTm11LMPoGM47R94RvH8/vzY0skI9pviRZBGojfNw
- SKb4eKIQC7m/c1VPimVGoY5k0M6xMsGaNbc2lyj9SSX0BOYZodzkI09iz+6Yl2o4qwDN
- jbGA==
-X-Gm-Message-State: AOAM532FZx0x9j8kaj49NiOlFDQB5fY0u1Roi2nxVLzMiiZCPGDQ90Tr
- QI7Hj5h6DeFRYNZdTREKO32C0OBPkDI=
-X-Google-Smtp-Source: ABdhPJwrhZdi0No4rbZQHie06zCoV3F1MKhumkDGsoHpu8RyD5ewUfXxcEcGR091fQ5c1lz2G7uDpA==
-X-Received: by 2002:a17:902:262:: with SMTP id
- 89mr24238893plc.251.1590378365956; 
- Sun, 24 May 2020 20:46:05 -0700 (PDT)
+ bh=JHR9IFaRgCyJGWikuHqyC0B14pMQIGmyd5Kpq3MNpmQ=;
+ b=KjGWVmFaOqF+gLZ09uBuFwwYvgd5fjXFGriDlzK2DWminxOp007fgiobFTKeTXL2/A
+ EHNk8LBnZGFB1TZbSBEyNeFfjxwBlnU25leMvxoMqWIpdxTWsELPbxkqXw0wVNlOhy1X
+ ici73pIqwQ38RKjmwjDu1fdBMvI6iVPCg6UI1TBjF8qqmI3xRFZbYeUEaX4EZmzwp6EI
+ m0xbCCNojwjuoN7L6PUTqYbMGlk9RVJv4jAc1ZL8qa8+uNkjeqofWBK1Cui5PY74GV7D
+ yY/xiyOXzdWB3imEuv4KD2KyY8wuGKnj+vQn3/b0DRlkKPWvdXSPtydHtJ3uI57EZKzb
+ JZIg==
+X-Gm-Message-State: AOAM531cjz0IAjMBwnGkSjGfeB+2h9N+y0YlHYIMvld+y8+xDlpyS2CB
+ eaOzXf59k74dg5avJidFSFC0Ph+SQXw=
+X-Google-Smtp-Source: ABdhPJzJrYHR/plluRNQNEeUqmbEYzI4Fk9f2Ze1yZ1DdZkWDcFo8tEe3yRHg3Z/d/BuOqTZ+HFmaA==
+X-Received: by 2002:a17:90a:c385:: with SMTP id
+ h5mr18680382pjt.147.1590378369159; 
+ Sun, 24 May 2020 20:46:09 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.191.44])
- by smtp.gmail.com with ESMTPSA id i98sm12152831pje.37.2020.05.24.20.46.03
+ by smtp.gmail.com with ESMTPSA id i98sm12152831pje.37.2020.05.24.20.46.06
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 24 May 2020 20:46:05 -0700 (PDT)
+ Sun, 24 May 2020 20:46:08 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: linus.walleij@linaro.org,
 	broonie@kernel.org
-Subject: [PATCH v5 4/8] dt-bindings: display: panel: Add ilitek ili9341 panel
- bindings
-Date: Mon, 25 May 2020 11:45:44 +0800
-Message-Id: <1590378348-8115-5-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v5 5/8] clk: stm32: Fix stm32f429's ltdc driver hang in set
+ clock rate,
+ fix duplicated ltdc clock register to 'clk_core' case ltdc's clock turn off by
+ clk_disable_unused()
+Date: Mon, 25 May 2020 11:45:45 +0800
+Message-Id: <1590378348-8115-6-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
 References: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200524_204608_143212_C4957281 
-X-CRM114-Status: GOOD (  12.56  )
+X-CRM114-CacheID: sfid-20200524_204610_481572_D6E7AE33 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -112,89 +114,59 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: dillon min <dillon.minfei@gmail.com>
 
-Add documentation for "ilitek,ili9341" panel.
+ltdc set clock rate crashed
+   'post_div_data[]''s pll_num is PLL_I2S, PLL_SAI (number is 1,2). but,
+    as pll_num is offset of 'clks[]' input to clk_register_pll_div(), which
+    is FCLK, CLK_LSI, defined in 'include/dt-bindings/clock/stm32fx-clock.h'
+    so, this is a null object at the register time.
+    then, in ltdc's clock is_enabled(), enable(), will call to_clk_gate().
+    will return a null object, cause kernel crashed.
+    need change pll_num to PLL_VCO_I2S, PLL_VCO_SAI for 'post_div_data[]'
+
+ duplicated ltdc clock
+   'stm32f429_gates[]' has a member 'ltdc' register to 'clk_core', but no
+    upper driver use it, ltdc driver use the lcd-tft defined in
+   'stm32f429_aux_clk[]'. after system startup, as stm32f429_gates[]'s ltdc
+    enable_count is zero, so turn off by clk_disable_unused()
+
+Changes since V3:
+1 drop last wrong changes about 'CLK_IGNORE_UNUSED' patch
+2 fix PLL_SAI mismatch with PLL_VCO_SAI
 
 Signed-off-by: dillon min <dillon.minfei@gmail.com>
 ---
- .../bindings/display/panel/ilitek,ili9341.yaml     | 69 ++++++++++++++++++++++
- 1 file changed, 69 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
+ drivers/clk/clk-stm32f4.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-new file mode 100644
-index 0000000..2172f88
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-@@ -0,0 +1,69 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/panel/ilitek,ili9341.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Ilitek-9341 Display Panel
-+
-+maintainers:
-+  - Dillon Min <dillon.minfei@gmail.com>
-+
-+description: |
-+  Ilitek ILI9341 TFT panel driver with SPI control bus
-+  This is a driver for 320x240 TFT panels, accepting a rgb input
-+  streams with 16 bits or 18 bits.
-+
-+allOf:
-+  - $ref: panel-common.yaml#
-+
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          # ili9341 240*320 Color on stm32f429-disco board
-+        - st,sf-tc240t-9370-t
-+      - const: ilitek,ili9341
-+
-+  reg: true
-+
-+  dc-gpios:
-+    maxItems: 1
-+    description: Display data/command selection (D/CX)
-+
-+  spi-3wire: true
-+
-+  spi-max-frequency:
-+    const: 10000000
-+
-+  port: true
-+
-+additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - dc-gpios
-+  - port
-+
-+examples:
-+  - |+
-+    spi {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        panel: display@0 {
-+                 compatible = "st,sf-tc240t-9370-t",
-+                              "ilitek,ili9341";
-+                 reg = <0>;
-+                 spi-3wire;
-+                 spi-max-frequency = <10000000>;
-+                 dc-gpios = <&gpiod 13 0>;
-+                 port {
-+                         panel_in: endpoint {
-+                           remote-endpoint = <&display_out>;
-+                      };
-+                 };
-+             };
-+        };
-+...
-+
+diff --git a/drivers/clk/clk-stm32f4.c b/drivers/clk/clk-stm32f4.c
+index 18117ce..fa62e99 100644
+--- a/drivers/clk/clk-stm32f4.c
++++ b/drivers/clk/clk-stm32f4.c
+@@ -129,7 +129,6 @@ static const struct stm32f4_gate_data stm32f429_gates[] __initconst = {
+ 	{ STM32F4_RCC_APB2ENR, 20,	"spi5",		"apb2_div" },
+ 	{ STM32F4_RCC_APB2ENR, 21,	"spi6",		"apb2_div" },
+ 	{ STM32F4_RCC_APB2ENR, 22,	"sai1",		"apb2_div" },
+-	{ STM32F4_RCC_APB2ENR, 26,	"ltdc",		"apb2_div" },
+ };
+ 
+ static const struct stm32f4_gate_data stm32f469_gates[] __initconst = {
+@@ -557,13 +556,13 @@ static const struct clk_div_table post_divr_table[] = {
+ 
+ #define MAX_POST_DIV 3
+ static const struct stm32f4_pll_post_div_data  post_div_data[MAX_POST_DIV] = {
+-	{ CLK_I2SQ_PDIV, PLL_I2S, "plli2s-q-div", "plli2s-q",
++	{ CLK_I2SQ_PDIV, PLL_VCO_I2S, "plli2s-q-div", "plli2s-q",
+ 		CLK_SET_RATE_PARENT, STM32F4_RCC_DCKCFGR, 0, 5, 0, NULL},
+ 
+-	{ CLK_SAIQ_PDIV, PLL_SAI, "pllsai-q-div", "pllsai-q",
++	{ CLK_SAIQ_PDIV, PLL_VCO_SAI, "pllsai-q-div", "pllsai-q",
+ 		CLK_SET_RATE_PARENT, STM32F4_RCC_DCKCFGR, 8, 5, 0, NULL },
+ 
+-	{ NO_IDX, PLL_SAI, "pllsai-r-div", "pllsai-r", CLK_SET_RATE_PARENT,
++	{ NO_IDX, PLL_VCO_SAI, "pllsai-r-div", "pllsai-r", CLK_SET_RATE_PARENT,
+ 		STM32F4_RCC_DCKCFGR, 16, 2, 0, post_divr_table },
+ };
+ 
 -- 
 2.7.4
 
