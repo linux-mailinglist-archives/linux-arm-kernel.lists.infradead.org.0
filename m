@@ -2,67 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 581521E0D8E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 13:43:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9D4E1E0D93
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 13:45:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cbsiOHgQXjLEtH/uCsdNDZGhpHouO8kuEsVZ6wKBJPI=; b=kHTBcVKz6MVNrm0DKl629mO5V
-	R7SZYUFhpJ0//T4ioM1+vk7SbqbkTbaPal3WQ0mRSWIkfK9by2KJPImbqHAdDZqoqCMo5PqJMcZdh
-	4fRRL/TXOAZMCS6QQ7CV9SriVWpSQzF4yBnGmYnx4gi49WM1gTrfFAfq0xDCH8PyHfs8rw0Hay3Wy
-	WGjCVzLe1s19fYCcYWGEDOe3M9j6CF5GKnLRi7BgorGVbt77S55xuINDUf2uVxCMIOwuN/PFk1EfP
-	O74jcIp/cp5n+o66ew2T8KxynNDOtcKvw4BpXZcciD2wHvPwNFVdpp3oEubZCxHDGEtClKE1KLEkl
-	WoSIjUSvg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=q68Y8MFLMz0ItoUfyeejA0rr+f18GpUGeon0sKwu3f8=; b=FWvs8tRjJH2Ov+
+	UOvTdaKTEr2J2JKRUFkqZvOcZIj78ZdNKKHfYoCTCx/2ROkrYRaUaPcG+x4tpHURzsQ17g+AF1g7K
+	QvkjkLuO0hdqH4vTcvFVUaHZkSIne+ln3lcE4YyCTfw4WxyuKw7AJ6p+PJZ1969FhHoCClaksHihk
+	2da6riYqyaokVmoJAVhAPLsJ2iULfTK30VP+rk5cdb6o4i6BA/ixGSZV1D+F44sl2k2N0sKRProW2
+	2dmVi+6D3oOiRvY7DWGjapbMo4iy/OdZvt5qC3HEuAxs7eSuuvEzACFaUEcPD5HdbZoLj+2Bd4MJ9
+	J6fTLGNaTqsbJOyjrAEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdBWK-0001as-5v; Mon, 25 May 2020 11:43:52 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jdBXm-0004IB-63; Mon, 25 May 2020 11:45:22 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdBW7-0001a7-W5
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 11:43:41 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 36CE020723;
- Mon, 25 May 2020 11:43:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590407018;
- bh=ohGuMmEbw6jcckmjGuy7SWze+kKppKGgRxKK0h8JEr0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KM80Gu8HAcmZ1l6c68I4DnrdiD57M88zpiXWycjvRd03XGvrbG2HqVCawIo5VHm3F
- HJEWyIi+trARwAOz28eZPsmxmVUJW4EKfcNfq4Cq0gz0TOCHmckoj6KzZVgbzVQc1z
- SfCVNxC1mpxzGiTSEs5yrLbejv0JMu2jkSzODsaQ=
-Date: Mon, 25 May 2020 12:43:36 +0100
-From: Mark Brown <broonie@kernel.org>
-To: dillon min <dillon.minfei@gmail.com>
-Subject: Re: [PATCH v4 3/8] spi: stm32: Add 'SPI_SIMPLEX_RX', 'SPI_3WIRE_RX'
- support for stm32f4
-Message-ID: <20200525114336.GD4544@sirena.org.uk>
-References: <1589800165-3271-1-git-send-email-dillon.minfei@gmail.com>
- <1589800165-3271-4-git-send-email-dillon.minfei@gmail.com>
- <20200522113634.GE5801@sirena.org.uk>
- <CAL9mu0LAnT+AfjpGs0O-MD2HYrpnQRmrj6qXtJQrJi9kbQLPUw@mail.gmail.com>
- <CAL9mu0JZ4Qy+m2oF9TSTRqA_mM0J89huCt3t_Gs7qHa=3LxhBw@mail.gmail.com>
- <20200522162901.GP5801@sirena.org.uk>
- <CAL9mu0+E5R0mDUW3f+aKpfE_457VimS-ow2z_xVOmCfCAMnKuA@mail.gmail.com>
+ id 1jdBXZ-0003Cp-Ec
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 11:45:10 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 82so10374623lfh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 25 May 2020 04:45:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=bWYfxIAWJy3heGwDbod2HfNErYY2yOdF0+bL0dgrzOk=;
+ b=cGvQN129jZ03uNW9j+qvcX5jWlaAZ8AAzHOCfHxJTwvDjBuCB1OKZ8aidES7+y1FR7
+ gaRIB5wbOwxz0WcvkiNdMvNcp4RWIfM8L6nuFRsN8GM5hgK5GNj0bZeiopR+21N8XIp7
+ iXYdae1wOjFJXBmrSu6MYQh4vx5kseSvORdwT62G2VH838nh3AxAuraffLkLl2nBdE9E
+ wgfWBIm8zPbKBIWEk8sJfhlg5wTSsHHuZ6PbEPdG5tKEj4HV+wWHCwerT3L4I33gbmUm
+ qBXO9Uv40r4m8Mg1l1d7deYJMVg6yi4y/znpWijaCP7BvzsyLn9nwknen5BaSGd8sVg3
+ MkkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=bWYfxIAWJy3heGwDbod2HfNErYY2yOdF0+bL0dgrzOk=;
+ b=AkrsftezFbkTzEE/4/ZRAOTQfh5SkGwM0ZgQfILw5uUPRECCHgtgV/oFymE/FLEK9q
+ lfAd9FRvX1HwFfMLa98WEzoYAaa09xLXWdWH2tdkKivoXQLVfxwGyDR3rk0/QY0wH50k
+ S4iWO1Hxq1xJcbZAqluYSim4GDqovN0toJveD0ksbEyqIADuH7oyEjqRtYqfbIbSnDUs
+ qfk10wu9yG8LEsZ+9R49poPs5Kn4jx5d838s9UOxg8oJ6sulcDv7lAfArAQJYsaucsZt
+ HFbfsSivpyIkSNr8GRhH40KsFYVrVXXXQZozTHHN3oM1Td7/YYK7WENJSEFSFzBg9i49
+ ej9w==
+X-Gm-Message-State: AOAM530CzlPuoVIZpR6QFItIHlcUo5lbxM6SaeO1idC8255cYfvxMU5w
+ bNZbHcAoiDrtRz7MyegHVxwcUlCfDdMoR3huh0RgOQ==
+X-Google-Smtp-Source: ABdhPJzusZSjGYrEnidjjwfBSedPoPmO8dGLBM9cFYuYbatE3hBg4B6svhZ1k3sgXNKUJ+IluzbUuOsq5IvXBPu1/V0=
+X-Received: by 2002:ac2:5a07:: with SMTP id q7mr14346771lfn.77.1590407107211; 
+ Mon, 25 May 2020 04:45:07 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAL9mu0+E5R0mDUW3f+aKpfE_457VimS-ow2z_xVOmCfCAMnKuA@mail.gmail.com>
-X-Cookie: Help a swallow land at Capistrano.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200523170859.50003-1-sudeep.holla@arm.com>
+ <20200523170859.50003-2-sudeep.holla@arm.com>
+In-Reply-To: <20200523170859.50003-2-sudeep.holla@arm.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Mon, 25 May 2020 13:44:56 +0200
+Message-ID: <CACRpkdb251_0RoALAV+TFXcXPMZojKuJkZWm-67=Y7fNEB+=HA@mail.gmail.com>
+Subject: Re: [PATCH 1/8] soc: realview: Switch to use DEVICE_ATTR_RO()
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_044340_051191_151C2B9F 
-X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-CacheID: sfid-20200525_044509_506980_48CAF8DC 
+X-CRM114-Status: UNSURE (   8.04  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -72,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,76 +92,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, p.zabel@pengutronix.de,
- Dave Airlie <airlied@linux.ie>, Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>, linux-kernel@vger.kernel.org,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- linux-spi@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, thierry.reding@gmail.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Sam Ravnborg <sam@ravnborg.org>, linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alexandre Torgue <alexandre.torgue@st.com>
-Content-Type: multipart/mixed; boundary="===============6965359951415998607=="
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Arnd Bergmann <arnd@arndb.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sat, May 23, 2020 at 7:09 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
 
---===============6965359951415998607==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="fXStkuK2IQBfcDe+"
-Content-Disposition: inline
+> Move device attributes to DEVICE_ATTR_RO() as that would make things
+> a lot more "obvious" what is happening over the existing __ATTR usage.
+>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 
---fXStkuK2IQBfcDe+
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Sat, May 23, 2020 at 09:35:06AM +0800, dillon min wrote:
-
-> -       if (ctlr->flags & (SPI_CONTROLLER_MUST_RX | SPI_CONTROLLER_MUST_TX)) {
-> +       if ((ctlr->flags & (SPI_CONTROLLER_MUST_RX | SPI_CONTROLLER_MUST_TX)) &&
-> +               !(msg->spi->mode & SPI_3WIRE)) {
->                 max_tx = 0;
->                 max_rx = 0;
-
-> for my board, lcd panel ilitek ill9341 use 3wire mode, gyro l3gd20 use
-> simplex rx mode.
-> it's has benefits to l3gd20, no impact to ili9341.
-
-> if it's fine to spi-core, i will include it to my next submits.
-
-Yes, looks reasonable.
-
---fXStkuK2IQBfcDe+
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7Lr2cACgkQJNaLcl1U
-h9Czfgf5AZokYX+RDns/ATZTiNwwtWO8zgdUKtvU2B95mvVnSoH/+u22jEMjyBEV
-VTql9iv86CkoWuw8ClYb6Ii3VcZhJlMJjs6f6TPlihKzhOKSAvVrUwf0GXQlWaS5
-+uyF6imcop10LBRU7tKfWP+LpK90XFTt8wGtpnHqquhnlvs4zDEFu/Yvp91raDXu
-FfWKf+2Aqu7xuWMGdHJjF/SiRINbFZVw70Rv9GM06ywcTkThXhrKpn5z4fCdWlEQ
-iDy1RvrcqNwjm9MtAgYmwoOF/NVEcZaygAE11tHi6JOjrXYW+29jJRQDn4N06CZZ
-tIaKNPu+scagmjfGwKU2PSW4mVUAuA==
-=Yagp
------END PGP SIGNATURE-----
-
---fXStkuK2IQBfcDe+--
-
-
---===============6965359951415998607==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6965359951415998607==--
-
