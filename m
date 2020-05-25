@@ -2,88 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22E741E1319
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 18:58:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBFF31E1378
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 19:36:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=89oKSBvfUMUzXGbEkr7JIo0ZCbS0Y7s/ngo0zQg6nJM=; b=gX6REdraew7LZW
-	tQ0hA4AM19qYo8pZVuolaX2B604E/OQj8f2vom5QRN5/D0a3VuTdwM2pGPJ4RQEp7SOToIUwrCqLp
-	Gg2Sy/6BVyuZpHrFhgmvU2mEFScpcIYwRjcB4YX/+JadtlBtwScCjAzEH6/fBj5SJHhu8Xa8FntN0
-	pmlzu9Eaog3zu4E/di4TjWldreCZffp9cq1ZMAiegawqpX4ObvbzpmgMnTjLL6dWZVrPHCpaBOt5z
-	m8AC/A4seTqH4FP5V1/bOQaCxBKY56cjO4AvAiiVPIHAnG9nh+ESHRO2LKFfQrCg0DVH7QOAy5Lft
-	UB7L6kqMm8sAdCZm538g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SOaz7XATvzfgMko5NpJJJoE28MwiQtBL24wRP+xrh6A=; b=N7KgmoO/zgIPQOxqJ7MDP7rkP
+	WApnSv8Hx3K6v0OMMV77eAhvdrGEo4FLRBsIElD/RNissaSoDUy6pBqqZSYK/EUB4S7H37MptLTSG
+	SGZM3JTzlVczLVLYJ7SjgKpePFylGBaNr84pSElOzSoDEJrxGZWv8MOHeRzM+QZunIZJyxAstFRtF
+	rK2oInDfFxjvQ1pNrtgbKCyH2dODEmrZRKLpUXHfmbcy3Dv6PYeBtNfEz8778h3hThLRqN3aDgl54
+	O8D41B8V810cDhIF3f28A+RfXJmIwgnyNpcu59s8J+pVqh5cfhFPyaY+TW6xt0HFm1u7s6gyc7K+8
+	RgmM//njw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdGR5-0002NC-MZ; Mon, 25 May 2020 16:58:47 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jdH1l-00085H-N2; Mon, 25 May 2020 17:36:41 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdGQu-0002Me-8r; Mon, 25 May 2020 16:58:37 +0000
-Received: by mail-pf1-x443.google.com with SMTP id v2so3940783pfv.7;
- Mon, 25 May 2020 09:58:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=aPMULKZDeq0BX+s9zNJj5lw/mRPJ8V62Bi00UZ2hLPQ=;
- b=JNQq63iU315TudbF0LDZbx0/ESdXGRQ+JL6Q8ov8UoVeiVwyyIzm0oBHPCwmXZzuvs
- xnf7opyTEzKm/Ipk769HDtPHEhmuPMBMiFybuXo2NewIjgQbZ2tUv2JRc43WWqYc3yZ9
- xJ3nkjKYoQFJgR7tVH4OJthhyecWG5WTE9Wkuf9TRujPbxby4YVsPnrYsnNVtlMyqeAM
- HEuiuXFX4Ezr6HR6tyzTDaNauY4TjnrvnoG/BEfOTgglxrJgVUDSP+Bc2+Xf9UcjgcAU
- vKZaPSahzBHFnvb/FO6EtDJHqAyKBvuTicmJl4bBYl1OxTuZtbXJVmPZNzBrLshZbfPN
- KopQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=aPMULKZDeq0BX+s9zNJj5lw/mRPJ8V62Bi00UZ2hLPQ=;
- b=HzBsignjAzdXvvxrKhyNzk6Qma9np3Nud4lfABHR2Ct+aKwwF8+fY7j/hwiCSYo7nI
- y9BnJ56xnfzhHgQtomjWgcYcnkoLbn97/QiuiTVuJ2ivS2rspvY/Su+KG4vtChq58OHg
- rmRXDNPd+aTh51Y9yCnlTms40C26gQlrs/GgPdsfWjmcwQiH03qKtLd+AsIxlBtRs1cA
- iaN2yGwyuEHp3KzosQAnzx7/R3/B+KfGfjNfho785vonwaRCYY8OfsD3YkA+IlUrITbO
- LCNErGQ2XkQHRfz/qeM3x85ygFbdzSUY6C/rqGhM3cfuT8zGw4SUoasqvbULERrWwkNi
- qB6A==
-X-Gm-Message-State: AOAM53073ZRQ+1pxfmVjhtWUF9mgFO6yyhFjLmDhdAbwiCHb4orVczLp
- jMP5rttUt6PJQ9oenrv7OCQ=
-X-Google-Smtp-Source: ABdhPJyamdUHEpVQmhep6MniCPNxtcfAdKYfTqv1tOet1bkSJFZ/NVZIoCCC18ASwCtIF3W4ZjUrBg==
-X-Received: by 2002:a63:5116:: with SMTP id f22mr16311686pgb.100.1590425915574; 
- Mon, 25 May 2020 09:58:35 -0700 (PDT)
-Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id e21sm11825840pga.71.2020.05.25.09.58.33
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 25 May 2020 09:58:34 -0700 (PDT)
-Subject: Re: [PATCH 07/15] PCI: brcmstb: Add control of rescal reset
-To: Jim Quinlan <james.quinlan@broadcom.com>,
- Philipp Zabel <pza@pengutronix.de>
-References: <20200519203419.12369-1-james.quinlan@broadcom.com>
- <20200519203419.12369-8-james.quinlan@broadcom.com>
- <20200520072747.GB5213@pengutronix.de>
- <CA+-6iNxtW66QLrb5BaOOCPJwG-1fShdfZqiLSkKfi6Y669dn5w@mail.gmail.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <c76cc2e6-fcc5-5d42-5ff1-770a99cb9b13@gmail.com>
-Date: Mon, 25 May 2020 09:58:33 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.8.1
+ id 1jdH1e-00084Z-23
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 17:36:36 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id DDEC922F2E;
+ Mon, 25 May 2020 19:36:27 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1590428188;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=tccD7vzIYEWi1bFmktWHDapg7/kSp29lv3VkLLvN1aI=;
+ b=f6dMxTFgq0dv3WcoUWQY3lGpKEI1zRaAo5vQ4eXD9W5/1IcgsbkQs2IprvSdGhntzf7+3s
+ VjDUBiP0Ohl+I7F/gjvbCkc+SOXy34S18pA/Vg+5sV+GUZVZ6tYqTNQJ4NOoGbVDgMncOV
+ VXE73fAV7Jnjk0n8FxO++uqxK4wM9EM=
 MIME-Version: 1.0
-In-Reply-To: <CA+-6iNxtW66QLrb5BaOOCPJwG-1fShdfZqiLSkKfi6Y669dn5w@mail.gmail.com>
-Content-Language: en-US
+Date: Mon, 25 May 2020 19:36:27 +0200
+From: Michael Walle <michael@walle.cc>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH v3 03/16] mfd: mfd-core: match device tree node against
+ reg property
+In-Reply-To: <20200515102848.GH271301@dell>
+References: <20200423174543.17161-1-michael@walle.cc>
+ <20200423174543.17161-4-michael@walle.cc>
+ <67e90dafd67c285158c2c6f67f92edb7@walle.cc> <20200515102848.GH271301@dell>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <159e68b4ce53630ef906b2fcbca925bd@walle.cc>
+X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_095836_347323_F2D144C2 
-X-CRM114-Status: GOOD (  17.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200525_103634_393923_0C946A2C 
+X-CRM114-Status: GOOD (  27.39  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -92,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,74 +83,204 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
- <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-watchdog@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, Jason Cooper <jason@lakedaemon.net>,
+ linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Mark Brown <broonie@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiA1LzIxLzIwMjAgMjo0OCBQTSwgSmltIFF1aW5sYW4gd3JvdGU6Cj4gT24gV2VkLCBNYXkg
-MjAsIDIwMjAgYXQgMzoyNyBBTSBQaGlsaXBwIFphYmVsIDxwemFAcGVuZ3V0cm9uaXguZGU+IHdy
-b3RlOgo+Pgo+PiBIaSBKaW0sCj4+Cj4+IE9uIFR1ZSwgTWF5IDE5LCAyMDIwIGF0IDA0OjM0OjA1
-UE0gLTA0MDAsIEppbSBRdWlubGFuIHdyb3RlOgo+Pj4gRnJvbTogSmltIFF1aW5sYW4gPGpxdWlu
-bGFuQGJyb2FkY29tLmNvbT4KPj4+Cj4+PiBTb21lIFNUQiBjaGlwcyBoYXZlIGEgc3BlY2lhbCBw
-dXJwb3NlIHJlc2V0IGNvbnRyb2xsZXIgbmFtZWQKPj4+IFJFU0NBTCAocmVzZXQgY2FsaWJyYXRp
-b24pLiAgVGhpcyBjb21taXQgYWRkcyB0aGUgY29udHJvbAo+Pj4gb2YgUkVTQ0FMIGFzIHdlbGwg
-YXMgdGhlIGFiaWxpdHkgdG8gc3RhcnQgYW5kIHN0b3AgaXRzCj4+PiBvcGVyYXRpb24gZm9yIFBD
-SWUgSFcuCj4+Pgo+Pj4gU2lnbmVkLW9mZi1ieTogSmltIFF1aW5sYW4gPGpxdWlubGFuQGJyb2Fk
-Y29tLmNvbT4KPj4+IC0tLQo+Pj4gIGRyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpZS1icmNtc3Ri
-LmMgfCA4MSArKysrKysrKysrKysrKysrKysrKysrKysrKy0KPj4+ICAxIGZpbGUgY2hhbmdlZCwg
-ODAgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQo+Pj4KPj4+IGRpZmYgLS1naXQgYS9kcml2
-ZXJzL3BjaS9jb250cm9sbGVyL3BjaWUtYnJjbXN0Yi5jIGIvZHJpdmVycy9wY2kvY29udHJvbGxl
-ci9wY2llLWJyY21zdGIuYwo+Pj4gaW5kZXggMmM0NzAxMDRiYTM4Li4wNzg3ZThmNmY3ZTUgMTAw
-NjQ0Cj4+PiAtLS0gYS9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaWUtYnJjbXN0Yi5jCj4+PiAr
-KysgYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL3BjaWUtYnJjbXN0Yi5jCj4+IFsuLi5dCj4+PiBA
-QCAtMTEwMCw2ICsxMTY0LDIxIEBAIHN0YXRpYyBpbnQgYnJjbV9wY2llX3Byb2JlKHN0cnVjdCBw
-bGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4+PiAgICAgICAgICAgICAgIGRldl9lcnIoJnBkZXYtPmRl
-diwgImNvdWxkIG5vdCBlbmFibGUgY2xvY2tcbiIpOwo+Pj4gICAgICAgICAgICAgICByZXR1cm4g
-cmV0Owo+Pj4gICAgICAgfQo+Pj4gKyAgICAgcGNpZS0+cmVzY2FsID0gZGV2bV9yZXNldF9jb250
-cm9sX2dldF9zaGFyZWQoJnBkZXYtPmRldiwgInJlc2NhbCIpOwo+Pj4gKyAgICAgaWYgKElTX0VS
-UihwY2llLT5yZXNjYWwpKSB7Cj4+PiArICAgICAgICAgICAgIGlmIChQVFJfRVJSKHBjaWUtPnJl
-c2NhbCkgPT0gLUVQUk9CRV9ERUZFUikKPj4+ICsgICAgICAgICAgICAgICAgICAgICByZXR1cm4g
-LUVQUk9CRV9ERUZFUjsKPj4+ICsgICAgICAgICAgICAgcGNpZS0+cmVzY2FsID0gTlVMTDsKPj4K
-Pj4gVGhpcyBpcyBlZmZlY3RpdmVseSBhbiBvcHRpb25hbCByZXNldCBjb250cm9sLCBzbyBpdCBp
-cyBiZXR0ZXIgdG8gdXNlOgo+PiDihrUKPj4gICAgICAgICBwY2llLT5yZXNjYWwgPSBkZXZtX3Jl
-c2V0X2NvbnRyb2xfZ2V0X29wdGlvbmFsX3NoYXJlZCgmcGRldi0+ZGV2LAo+PiAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICJyZXNj
-YWwiKTvihrUKPj4gICAgICAgICBpZiAoSVNfRVJSKHBjaWUtPnJlc2NhbCkpCj4+ICAgICAgICAg
-ICAgICAgICByZXR1cm4gUFRSX0VSUihwY2llLT5yZXNjYWwpOwo+Pgo+Pj4gKyAgICAgfSBlbHNl
-IHsKPj4+ICsgICAgICAgICAgICAgcmV0ID0gcmVzZXRfY29udHJvbF9kZWFzc2VydChwY2llLT5y
-ZXNjYWwpOwo+Pj4gKyAgICAgICAgICAgICBpZiAocmV0KQo+Pj4gKyAgICAgICAgICAgICAgICAg
-ICAgIGRldl9lcnIoJnBkZXYtPmRldiwgImZhaWxlZCB0byBkZWFzc2VydCAncmVzY2FsJ1xuIik7
-Cj4+PiArICAgICB9Cj4+Cj4+IHJlc2V0X2NvbnRyb2xfKiBjYW4gaGFuZGxlIHJzdGMgPT0gTlVM
-TCBwYXJhbWV0ZXJzIGZvciBvcHRpb25hbCByZXNldAo+PiBjb250cm9scywgc28gdGhpcyBjYW4g
-YmUgZG9uZSB1bmNvbmRpdGlvbmFsbHk6Cj4+Cj4+ICAgICAgICAgcmV0ID0gcmVzZXRfY29udHJv
-bF9kZWFzc2VydChwY2llLT5yZXNjYWwpO+KGtQo+PiAgICAgICAgIGlmIChyZXQp4oa1Cj4+ICAg
-ICAgICAgICAgICAgICBkZXZfZXJyKCZwZGV2LT5kZXYsICJmYWlsZWQgdG8gZGVhc3NlcnQgJ3Jl
-c2NhbCdcbiIpO+KGtQo+Pgo+PiBJcyByZXNjYWwgaGFuZGxlZCBieSB0aGUgcmVzZXQtYnJjbXN0
-Yi1yZXNjYWwgZHJpdmVyPyBTaW5jZSB0aGF0IG9ubHkKPj4gaW1wbGVtZW50cyB0aGUgLnJlc2V0
-IG9wLCBJIHdvdWxkIGV4cGVjdCByZXNldF9jb250cm9sX3Jlc2V0KCkgaGVyZS4KPiBXaGVyZSBl
-eGFjdGx5PyAgInJlc2V0LmgiIHNheXMgdGhhdCAiQ2FsbGluZyByZXNldF9jb250cm9sX3Jlc2Uo
-KXQgaXMKPiBub3QgYWxsb3dlZCBvbiBhIHNoYXJlZCByZXNldCBjb250cm9sLiIgc28gSSdtIG5v
-dCBzdXJlIHdoeSAgeW91IHdvdWxkCj4gd2FudCBtZSB0byBpbnZva2UgaXQuCgpZZXMgdGhpcyBp
-cyBoYW5kbGVkIGJ5IGRyaXZlcnMvcmVzZXQvcmVzZXQtYnJjbXN0Yi1yZXNjYWwuYyB3aGljaCBv
-bmx5CmltcGxlbWVudHMgYSAucmVzZXQoKSBjYWxsYmFjaywgd2hhdCB3b3VsZCBiZSB0aGUgYXBw
-cm9wcmlhdGUgQVBJIHVzYWdlCmhlcmUgZ2l2ZW4gdGhhdCB0aGlzIGlzIGEgc2hhcmVkIHJlc2V0
-IGJldHdlZW4gQUhDSSBhbmQgUENJZSwgc2hvdWxkCmRyaXZlcnMvcmVzZXQvcmVzZXQtYnJjbXN0
-Yi1yZXNjYWwuYyBub3QgaW1wbGVtZW50IGEgLnJlc2V0KCkgY2FsbGJhY2sKYW5kIC5hc3NlcnQo
-KSBjYWxsYmFjayBpbnN0ZWFkPwoKPj4gT3RoZXJ3aXNlIHRoaXMgbG9va3MgbGlrZSBpdCdkIGJl
-IG1pc3NpbmcgYSByZXNldF9jb250cm9sX2Fzc2VydCBpbgo+PiByZW1vdmUuCj4gSSBjYW4gYWRk
-IHRoaXMuCj4gVGhhbmtzLAo+IEppbQo+Pgo+PiByZWdhcmRzCj4+IFBoaWxpcHAKCi0tIApGbG9y
-aWFuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+Am 2020-05-15 12:28, schrieb Lee Jones:
+> On Thu, 30 Apr 2020, Michael Walle wrote:
+> 
+>> Hi Lee,
+>> 
+>> Am 2020-04-23 19:45, schrieb Michael Walle:
+>> > There might be multiple children with the device tree compatible, for
+>> > example if a MFD has multiple instances of the same function. In this
+>> > case only the first is matched and the other children get a wrong
+>> > of_node reference.
+>> > Add a new option to match also against the unit address of the child
+>> > node. Additonally, a new helper OF_MFD_CELL_REG is added.
+>> 
+>> 
+>> Do you think this is feasible? I guess this is the biggest uncertainty
+>> for me at the moment in this patch series.
+> 
+> I think it sounds fine in principle.  So long as it doesn't change the
+> existing behaviour when of_reg isn't set.
+> 
+>> > Signed-off-by: Michael Walle <michael@walle.cc>
+>> > ---
+>> >  drivers/mfd/mfd-core.c   | 29 ++++++++++++++++++++---------
+>> >  include/linux/mfd/core.h | 26 ++++++++++++++++++++------
+>> >  2 files changed, 40 insertions(+), 15 deletions(-)
+>> >
+>> > diff --git a/drivers/mfd/mfd-core.c b/drivers/mfd/mfd-core.c
+>> > index e735565969b3..4ecb376338f7 100644
+>> > --- a/drivers/mfd/mfd-core.c
+>> > +++ b/drivers/mfd/mfd-core.c
+>> > @@ -117,6 +117,7 @@ static int mfd_add_device(struct device *parent, int
+>> > id,
+>> >  	struct device_node *np = NULL;
+>> >  	int ret = -ENOMEM;
+>> >  	int platform_id;
+>> > +	u32 of_reg;
+>> >  	int r;
+>> >
+>> >  	if (id == PLATFORM_DEVID_AUTO)
+>> > @@ -151,16 +152,26 @@ static int mfd_add_device(struct device *parent,
+>> > int id,
+>> >
+>> >  	if (parent->of_node && cell->of_compatible) {
+>> >  		for_each_child_of_node(parent->of_node, np) {
+>> > -			if (of_device_is_compatible(np, cell->of_compatible)) {
+>> > -				if (!of_device_is_available(np)) {
+>> > -					/* Ignore disabled devices error free */
+>> > -					ret = 0;
+>> > -					goto fail_alias;
+>> > -				}
+>> > -				pdev->dev.of_node = np;
+>> > -				pdev->dev.fwnode = &np->fwnode;
+>> > -				break;
+>> > +			if (!of_device_is_compatible(np, cell->of_compatible))
+>> > +				continue;
+>> > +
+>> > +			/* also match the unit address if set */
+> 
+> Please use correct grammar in comments (leaving off the full-stop).
+> 
+>> > +			if (cell->of_reg & MFD_OF_REG_VALID) {
+>> > +				if (of_property_read_u32(np, "reg", &of_reg))
+>> > +					continue;
+>> > +				if ((cell->of_reg & MFD_OF_REG_MASK) != of_reg)
+>> > +					continue;
+>> >  			}
+>> > +
+>> > +			if (!of_device_is_available(np)) {
+>> > +				/* Ignore disabled devices error free */
+>> > +				ret = 0;
+>> > +				goto fail_alias;
+>> > +			}
+>> > +
+>> > +			pdev->dev.of_node = np;
+>> > +			pdev->dev.fwnode = &np->fwnode;
+>> > +			break;
+>> >  		}
+>> >  	}
+>> >
+>> > diff --git a/include/linux/mfd/core.h b/include/linux/mfd/core.h
+>> > index d01d1299e49d..c2c0ad6b14f3 100644
+>> > --- a/include/linux/mfd/core.h
+>> > +++ b/include/linux/mfd/core.h
+>> > @@ -13,8 +13,11 @@
+>> >  #include <linux/platform_device.h>
+>> >
+>> >  #define MFD_RES_SIZE(arr) (sizeof(arr) / sizeof(struct resource))
+>> > +#define MFD_OF_REG_VALID	BIT(31)
+> 
+> What about 64bit platforms?
+
+The idea was to have this as a logical number. I.e. for now you may only
+have one subdevice per unique compatible string. In fact, if you have a
+look at the ab8500.c, there are multiple "stericsson,ab8500-pwm"
+subdevices. But there is only one DT node for all three of it. I guess
+this works as long as you don't use phandles to reference the pwm node
+in the device tree. Or you don't want to use device tree properties
+per subdevice (for example the "timeout-sec" of a watchdog device).
+
+So to circumvent this, I thought of having the unit-address (and thus
+the "reg" property) to differentiate between multiple subdevices. Now
+there is one special case for me: this board management controller
+might be upgradable and it might change internally. Thus I came up
+with that logical numbering of subdevices. Rob doesn't seem to be a
+fan of that, though. Therefore, having bit 31 as a valid indicator
+leaves you with 2^31 logical devices, which should be enough ;)
+
+Rob proposed to have the internal offset as the unit-address. But
+in that case I can also use devm_of_platform_populate() and don't
+need the OF_MFD_CELL_REG; I'd just parse the reg offset in each
+individual subdevice driver. But like I said, I wanted to keep the
+internal offsets out of the device tree.
+
+-michael
+
+> 
+>> > +#define MFD_OF_REG_MASK		GENMASK(30, 0)
+>> >
+>> > -#define MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat,
+>> > _match)\
+>> > +#define MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat,	\
+>> > +		     _of_reg, _match)					\
+>> >  	{								\
+>> >  		.name = (_name),					\
+>> >  		.resources = (_res),					\
+>> > @@ -22,24 +25,32 @@
+>> >  		.platform_data = (_pdata),				\
+>> >  		.pdata_size = (_pdsize),				\
+>> >  		.of_compatible = (_compat),				\
+>> > +		.of_reg = (_of_reg),					\
+>> >  		.acpi_match = (_match),					\
+>> >  		.id = (_id),						\
+>> >  	}
+>> >
+>> > +#define OF_MFD_CELL_REG(_name, _res, _pdata, _pdsize, _id, _compat,	\
+>> > +			_of_reg)					\
+>> > +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat,	\
+>> > +		     ((_of_reg) | MFD_OF_REG_VALID), NULL)		\
+>> > +
+>> >  #define OF_MFD_CELL(_name, _res, _pdata, _pdsize,_id, _compat)		\
+>> > -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat, NULL)	\
+>> > +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, _compat,	\
+>> > +		     0, NULL)						\
+>> >
+>> >  #define ACPI_MFD_CELL(_name, _res, _pdata, _pdsize, _id, _match)	\
+>> > -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, _match)	\
+>> > +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, 0,	\
+>> > +		     _match)						\
+>> >
+>> >  #define MFD_CELL_BASIC(_name, _res, _pdata, _pdsize, _id)		\
+>> > -	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, NULL)	\
+>> > +	MFD_CELL_ALL(_name, _res, _pdata, _pdsize, _id, NULL, 0, NULL) \
+>> >
+>> >  #define MFD_CELL_RES(_name, _res)					\
+>> > -	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, NULL)		\
+>> > +	MFD_CELL_ALL(_name, _res, NULL, 0, 0, NULL, 0, NULL)		\
+>> >
+>> >  #define MFD_CELL_NAME(_name)						\
+>> > -	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, NULL)		\
+>> > +	MFD_CELL_ALL(_name, NULL, NULL, 0, 0, NULL, 0, NULL)		\
+>> >
+>> >  struct irq_domain;
+>> >  struct property_entry;
+>> > @@ -78,6 +89,9 @@ struct mfd_cell {
+>> >  	 */
+>> >  	const char		*of_compatible;
+>> >
+>> > +	/* matching the reg property if set */
+> 
+> Proper grammar please.
+> 
+> "OF unit address for device matching"
+> 
+>> > +	unsigned int		of_reg;
+>> > +
+>> >  	/* Matches ACPI */
+>> >  	const struct mfd_cell_acpi_match	*acpi_match;
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
