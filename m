@@ -2,85 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6CB01E08C8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 10:27:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 906831E08DB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 10:32:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1wXuQH36MaiaXMQvWoTV1ddVz+2P/zR30oV4pftRydA=; b=qShiHC4infPNlZ
-	oM/3/UWyO6qrPqo4GiK/T0SHM7SuYkA4awexsIezFzVP8xKGsDKkfUzo53ekIqqwpNO89Cdd0uQYC
-	C03ov0XtoSAmudDjI9CJueg3uY6B2/6Ra+IIgMUiYhR1d90FkfUmci4WnRfDpfDMaK+z8Jlmy283+
-	fwq7AKZhTI7fLVogLP0wFuVCxw981wpNk2/wsel/E/3KgMZl57HbdeANr0k6H8Xu4rYy5YoCyi/KI
-	VWUW8Tg4u3u0roJ5xajdwLNnNFrSZ62LLf7qe3/+lk9Mp/J2pnoFioMIEgOwrNGGmkjvIQWwfzaK6
-	JPXdeXqx7MQkzh8SSroQ==;
+	List-Owner; bh=2Zf2UAiTD2lAEKGZ1Ba6IBLVLFgka3yvl3Q5M98VeIc=; b=MET1vSGfp7in1Z
+	hUyyabTDmZdSxtPoiYHK+VoEnIi3KU9yHRpncJq85zwGmIlP+4/UnCCKi76gzHBdcrb1DkDK0KSoP
+	NDAlJHYKWxuuovcXiSv52IVbxvqea7l4Vp3+i+4mkSIURN+4mbsAInvaXMRmCwG0Y5vFPOpVBZV5i
+	zSWUIJVNNtVb/8NG0Ky6cgpsFZ3p6JMuI5COfJtyxpFTKkmEXC93B+2nbVGJMMaphXYbRdYOCpwWK
+	wxyU2gcJIlS2uuZqperAFE+T9gAgxWarl00bO0umSn4nRt4QI0t280kidEPvr74w1J5NetWDCi7Wk
+	/xlttfFqjHZd3Z/xNeWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jd8Rp-0004gV-72; Mon, 25 May 2020 08:27:01 +0000
-Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
+	id 1jd8Wc-0000Se-Lq; Mon, 25 May 2020 08:31:58 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jd8Re-0004g6-2R
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 08:26:51 +0000
-Received: from pps.filterd (m0167088.ppops.net [127.0.0.1])
- by mx0a-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04P8PFpa020002; Mon, 25 May 2020 04:26:48 -0400
-Received: from nwd2mta3.analog.com ([137.71.173.56])
- by mx0a-00128a01.pphosted.com with ESMTP id 316wp7x507-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 25 May 2020 04:26:48 -0400
-Received: from ASHBMBX8.ad.analog.com (ashbmbx8.ad.analog.com [10.64.17.5])
- by nwd2mta3.analog.com (8.14.7/8.14.7) with ESMTP id 04P8QlC5047948
- (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=FAIL); 
- Mon, 25 May 2020 04:26:47 -0400
-Received: from ASHBCASHYB5.ad.analog.com (10.64.17.133) by
- ASHBMBX8.ad.analog.com (10.64.17.5) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Mon, 25 May 2020 04:26:46 -0400
-Received: from ASHBMBX8.ad.analog.com (10.64.17.5) by
- ASHBCASHYB5.ad.analog.com (10.64.17.133) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1779.2; Mon, 25 May 2020 04:26:45 -0400
-Received: from zeus.spd.analog.com (10.64.82.11) by ASHBMBX8.ad.analog.com
- (10.64.17.5) with Microsoft SMTP Server id 15.1.1779.2 via Frontend
- Transport; Mon, 25 May 2020 04:26:45 -0400
-Received: from saturn.ad.analog.com ([10.48.65.112])
- by zeus.spd.analog.com (8.15.1/8.15.1) with ESMTP id 04P8QhCH008659;
- Mon, 25 May 2020 04:26:44 -0400
-From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-To: <linux-iio@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v2] iio: stm32-dfsdm-adc: remove usage of iio_priv_to_dev()
- helper
-Date: Mon, 25 May 2020 11:26:48 +0300
-Message-ID: <20200525082648.39656-1-alexandru.ardelean@analog.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200522130804.631508-1-alexandru.ardelean@analog.com>
-References: <20200522130804.631508-1-alexandru.ardelean@analog.com>
+ id 1jd8WP-0000NH-R3
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 08:31:48 +0000
+Received: by mail-ot1-f68.google.com with SMTP id d26so13275820otc.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 25 May 2020 01:31:42 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=BOHOgMSOtvrMttT8QDeSyXiqFQqVxvPloVdz2ZAYSg4=;
+ b=NfdfvrhGPlQSUCNB/4Vypb6ywDgti6DA31TQi2c14yKQbYlgQw2gBeJjbj2iuLpFA+
+ 2niSwb5nXr0muX1B5O30UM3DNLcR5QgVXP6inud2tTKPJ9dpCGTiiV5duYPJ+orfxJ54
+ 2Ft9qwz3pA5os61zk8yJaBsZNOnRFWGE9eCuvodMg09DH6tU8SKggEt7THm/6lFX4qks
+ A6OhOORpUSqu7if+Q3DUastCxCaOn/83nXZEOPIO3xDWrtXk3yExN3UT5/nV/JRhojAI
+ 2V9TdRq5EsyUumeEV5KPL9rE/CwLVHW4ut6o1ws8GXGB6YoON5QbpR9VMXTh1h4yqSCm
+ Dd5w==
+X-Gm-Message-State: AOAM532csnj0k4B5RbKCctU8kdDnCZvQUdPKiVCfeFrGolBZVHKSyVJF
+ jyM59Pp5WGgPls0lsZ7ZMWhlTdVFq6FMSzC6A8I=
+X-Google-Smtp-Source: ABdhPJyoT2hc9i8qo+WU54flh8sYdL01Pv0pgeI/xRdS+cr2nb+efcfjcYB89kxAekLWsC0yEbwE9MWXQt9HqgEGxdM=
+X-Received: by 2002:a9d:564:: with SMTP id 91mr20466217otw.250.1590395500493; 
+ Mon, 25 May 2020 01:31:40 -0700 (PDT)
 MIME-Version: 1.0
-X-ADIRoutedOnPrem: True
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-25_03:2020-05-22,
- 2020-05-25 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- suspectscore=0 bulkscore=0
- phishscore=0 adultscore=0 mlxlogscore=999 impostorscore=0 clxscore=1015
- malwarescore=0 mlxscore=0 lowpriorityscore=0 cotscore=-2147483648
- spamscore=0 priorityscore=1501 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2005250066
+References: <20200522234832.954484-1-robh@kernel.org>
+ <20200522234832.954484-13-robh@kernel.org>
+In-Reply-To: <20200522234832.954484-13-robh@kernel.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 25 May 2020 10:31:29 +0200
+Message-ID: <CAMuHMdX1QCfcxPzpTOEJXYfeAo3=LzuEQxCNFn9VQJa8hN4QxQ@mail.gmail.com>
+Subject: Re: [PATCH 12/15] PCI: rcar: Use pci_host_probe() to register host
+To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_012650_128352_90C314A5 
-X-CRM114-Status: GOOD (  15.87  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200525_013145_890000_BC108CCB 
+X-CRM114-Status: GOOD (  10.34  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.135.77 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,269 +83,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandru Ardelean <alexandru.ardelean@analog.com>, alexandre.torgue@st.com,
- mcoquelin.stm32@gmail.com
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ linux-pci <linux-pci@vger.kernel.org>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We may want to get rid of the iio_priv_to_dev() helper. The reason is that
-we will hide some of the members of the iio_dev structure (to prevent
-drivers from accessing them directly), and that will also mean hiding the
-implementation of the iio_priv_to_dev() helper inside the IIO core.
+Hi Rob,
 
-Hiding the implementation of iio_priv_to_dev() implies that some fast-paths
-may not be fast anymore, so a general idea is to try to get rid of the
-iio_priv_to_dev() altogether.
-The iio_priv() helper won't be affected by the rework, as the iio_dev
-struct will keep a reference to the private information.
+On Sat, May 23, 2020 at 1:50 AM Rob Herring <robh@kernel.org> wrote:
+> The rcar host driver does the same host registration and bus scanning
+> calls as pci_host_probe, so let's use it instead.
+>
+> Cc: Marek Vasut <marek.vasut+renesas@gmail.com>
+> Cc: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
+> Cc: linux-renesas-soc@vger.kernel.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
 
-For this driver, not using iio_priv_to_dev(), means reworking some paths to
-pass the iio device and using iio_priv() to access the private information.
+Thanks for your patch!
 
-Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
----
+Note that this does have 2 side effects: the "linux,pci-probe-only" DT
+property and the "pcie_scan_all" kernel command line option are now taken
+into account.
 
-Changelog v1 -> v2:
-* changed some paths to pass a reference to ref to iio device and access
-  private state-struct via iio_priv()
+Regardless:
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
- drivers/iio/adc/stm32-dfsdm-adc.c | 65 ++++++++++++++++---------------
- 1 file changed, 33 insertions(+), 32 deletions(-)
+Gr{oetje,eeting}s,
 
-diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
-index 76a60d93fe23..03dfc0b6ba98 100644
---- a/drivers/iio/adc/stm32-dfsdm-adc.c
-+++ b/drivers/iio/adc/stm32-dfsdm-adc.c
-@@ -330,9 +330,9 @@ static int stm32_dfsdm_compute_all_osrs(struct iio_dev *indio_dev,
- 	return 0;
- }
- 
--static int stm32_dfsdm_start_channel(struct stm32_dfsdm_adc *adc)
-+static int stm32_dfsdm_start_channel(struct iio_dev *indio_dev)
- {
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	struct regmap *regmap = adc->dfsdm->regmap;
- 	const struct iio_chan_spec *chan;
- 	unsigned int bit;
-@@ -350,9 +350,9 @@ static int stm32_dfsdm_start_channel(struct stm32_dfsdm_adc *adc)
- 	return 0;
- }
- 
--static void stm32_dfsdm_stop_channel(struct stm32_dfsdm_adc *adc)
-+static void stm32_dfsdm_stop_channel(struct iio_dev *indio_dev)
- {
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	struct regmap *regmap = adc->dfsdm->regmap;
- 	const struct iio_chan_spec *chan;
- 	unsigned int bit;
-@@ -418,11 +418,11 @@ static void stm32_dfsdm_stop_filter(struct stm32_dfsdm *dfsdm,
- 			   DFSDM_CR1_DFEN_MASK, DFSDM_CR1_DFEN(0));
- }
- 
--static int stm32_dfsdm_filter_set_trig(struct stm32_dfsdm_adc *adc,
-+static int stm32_dfsdm_filter_set_trig(struct iio_dev *indio_dev,
- 				       unsigned int fl_id,
- 				       struct iio_trigger *trig)
- {
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	struct regmap *regmap = adc->dfsdm->regmap;
- 	u32 jextsel = 0, jexten = STM32_DFSDM_JEXTEN_DISABLED;
- 	int ret;
-@@ -447,11 +447,11 @@ static int stm32_dfsdm_filter_set_trig(struct stm32_dfsdm_adc *adc,
- 	return 0;
- }
- 
--static int stm32_dfsdm_channels_configure(struct stm32_dfsdm_adc *adc,
-+static int stm32_dfsdm_channels_configure(struct iio_dev *indio_dev,
- 					  unsigned int fl_id,
- 					  struct iio_trigger *trig)
- {
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	struct regmap *regmap = adc->dfsdm->regmap;
- 	struct stm32_dfsdm_filter *fl = &adc->dfsdm->fl_list[fl_id];
- 	struct stm32_dfsdm_filter_osr *flo = &fl->flo[0];
-@@ -491,11 +491,11 @@ static int stm32_dfsdm_channels_configure(struct stm32_dfsdm_adc *adc,
- 	return 0;
- }
- 
--static int stm32_dfsdm_filter_configure(struct stm32_dfsdm_adc *adc,
-+static int stm32_dfsdm_filter_configure(struct iio_dev *indio_dev,
- 					unsigned int fl_id,
- 					struct iio_trigger *trig)
- {
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	struct regmap *regmap = adc->dfsdm->regmap;
- 	struct stm32_dfsdm_filter *fl = &adc->dfsdm->fl_list[fl_id];
- 	struct stm32_dfsdm_filter_osr *flo = &fl->flo[fl->fast];
-@@ -521,7 +521,7 @@ static int stm32_dfsdm_filter_configure(struct stm32_dfsdm_adc *adc,
- 	if (ret)
- 		return ret;
- 
--	ret = stm32_dfsdm_filter_set_trig(adc, fl_id, trig);
-+	ret = stm32_dfsdm_filter_set_trig(indio_dev, fl_id, trig);
- 	if (ret)
- 		return ret;
- 
-@@ -729,21 +729,22 @@ static ssize_t dfsdm_adc_audio_set_spiclk(struct iio_dev *indio_dev,
- 	return len;
- }
- 
--static int stm32_dfsdm_start_conv(struct stm32_dfsdm_adc *adc,
-+static int stm32_dfsdm_start_conv(struct iio_dev *indio_dev,
- 				  struct iio_trigger *trig)
- {
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	struct regmap *regmap = adc->dfsdm->regmap;
- 	int ret;
- 
--	ret = stm32_dfsdm_channels_configure(adc, adc->fl_id, trig);
-+	ret = stm32_dfsdm_channels_configure(indio_dev, adc->fl_id, trig);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = stm32_dfsdm_start_channel(adc);
-+	ret = stm32_dfsdm_start_channel(indio_dev);
- 	if (ret < 0)
- 		return ret;
- 
--	ret = stm32_dfsdm_filter_configure(adc, adc->fl_id, trig);
-+	ret = stm32_dfsdm_filter_configure(indio_dev, adc->fl_id, trig);
- 	if (ret < 0)
- 		goto stop_channels;
- 
-@@ -757,13 +758,14 @@ static int stm32_dfsdm_start_conv(struct stm32_dfsdm_adc *adc,
- 	regmap_update_bits(regmap, DFSDM_CR1(adc->fl_id),
- 			   DFSDM_CR1_CFG_MASK, 0);
- stop_channels:
--	stm32_dfsdm_stop_channel(adc);
-+	stm32_dfsdm_stop_channel(indio_dev);
- 
- 	return ret;
- }
- 
--static void stm32_dfsdm_stop_conv(struct stm32_dfsdm_adc *adc)
-+static void stm32_dfsdm_stop_conv(struct iio_dev *indio_dev)
- {
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	struct regmap *regmap = adc->dfsdm->regmap;
- 
- 	stm32_dfsdm_stop_filter(adc->dfsdm, adc->fl_id);
-@@ -771,7 +773,7 @@ static void stm32_dfsdm_stop_conv(struct stm32_dfsdm_adc *adc)
- 	regmap_update_bits(regmap, DFSDM_CR1(adc->fl_id),
- 			   DFSDM_CR1_CFG_MASK, 0);
- 
--	stm32_dfsdm_stop_channel(adc);
-+	stm32_dfsdm_stop_channel(indio_dev);
- }
- 
- static int stm32_dfsdm_set_watermark(struct iio_dev *indio_dev,
-@@ -1017,7 +1019,7 @@ static int __stm32_dfsdm_postenable(struct iio_dev *indio_dev)
- 		goto stop_dfsdm;
- 	}
- 
--	ret = stm32_dfsdm_start_conv(adc, indio_dev->trig);
-+	ret = stm32_dfsdm_start_conv(indio_dev, indio_dev->trig);
- 	if (ret) {
- 		dev_err(&indio_dev->dev, "Can't start conversion\n");
- 		goto err_stop_dma;
-@@ -1063,7 +1065,7 @@ static void __stm32_dfsdm_predisable(struct iio_dev *indio_dev)
- {
- 	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 
--	stm32_dfsdm_stop_conv(adc);
-+	stm32_dfsdm_stop_conv(indio_dev);
- 
- 	stm32_dfsdm_adc_dma_stop(indio_dev);
- 
-@@ -1159,7 +1161,7 @@ static int stm32_dfsdm_single_conv(struct iio_dev *indio_dev,
- 
- 	adc->nconv = 1;
- 	adc->smask = BIT(chan->scan_index);
--	ret = stm32_dfsdm_start_conv(adc, NULL);
-+	ret = stm32_dfsdm_start_conv(indio_dev, NULL);
- 	if (ret < 0) {
- 		regmap_update_bits(adc->dfsdm->regmap, DFSDM_CR2(adc->fl_id),
- 				   DFSDM_CR2_REOCIE_MASK, DFSDM_CR2_REOCIE(0));
-@@ -1180,7 +1182,7 @@ static int stm32_dfsdm_single_conv(struct iio_dev *indio_dev,
- 	else
- 		ret = IIO_VAL_INT;
- 
--	stm32_dfsdm_stop_conv(adc);
-+	stm32_dfsdm_stop_conv(indio_dev);
- 
- 	stm32_dfsdm_process_data(adc, res);
- 
-@@ -1313,8 +1315,8 @@ static const struct iio_info stm32_dfsdm_info_adc = {
- 
- static irqreturn_t stm32_dfsdm_irq(int irq, void *arg)
- {
--	struct stm32_dfsdm_adc *adc = arg;
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct iio_dev *indio_dev = arg;
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	struct regmap *regmap = adc->dfsdm->regmap;
- 	unsigned int status, int_en;
- 
-@@ -1574,7 +1576,7 @@ static int stm32_dfsdm_adc_probe(struct platform_device *pdev)
- 	iio->dev.of_node = np;
- 	iio->modes = INDIO_DIRECT_MODE;
- 
--	platform_set_drvdata(pdev, adc);
-+	platform_set_drvdata(pdev, iio);
- 
- 	ret = of_property_read_u32(dev->of_node, "reg", &adc->fl_id);
- 	if (ret != 0 || adc->fl_id >= adc->dfsdm->num_fls) {
-@@ -1603,7 +1605,7 @@ static int stm32_dfsdm_adc_probe(struct platform_device *pdev)
- 		return irq;
- 
- 	ret = devm_request_irq(dev, irq, stm32_dfsdm_irq,
--			       0, pdev->name, adc);
-+			       0, pdev->name, iio);
- 	if (ret < 0) {
- 		dev_err(dev, "Failed to request IRQ\n");
- 		return ret;
-@@ -1650,8 +1652,8 @@ static int stm32_dfsdm_adc_probe(struct platform_device *pdev)
- 
- static int stm32_dfsdm_adc_remove(struct platform_device *pdev)
- {
--	struct stm32_dfsdm_adc *adc = platform_get_drvdata(pdev);
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 
- 	if (adc->dev_data->type == DFSDM_AUDIO)
- 		of_platform_depopulate(&pdev->dev);
-@@ -1663,8 +1665,7 @@ static int stm32_dfsdm_adc_remove(struct platform_device *pdev)
- 
- static int __maybe_unused stm32_dfsdm_adc_suspend(struct device *dev)
- {
--	struct stm32_dfsdm_adc *adc = dev_get_drvdata(dev);
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct iio_dev *indio_dev = dev_get_drvdata(dev);
- 
- 	if (iio_buffer_enabled(indio_dev))
- 		__stm32_dfsdm_predisable(indio_dev);
-@@ -1674,8 +1675,8 @@ static int __maybe_unused stm32_dfsdm_adc_suspend(struct device *dev)
- 
- static int __maybe_unused stm32_dfsdm_adc_resume(struct device *dev)
- {
--	struct stm32_dfsdm_adc *adc = dev_get_drvdata(dev);
--	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-+	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-+	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
- 	const struct iio_chan_spec *chan;
- 	struct stm32_dfsdm_channel *ch;
- 	int i, ret;
+                        Geert
+
 -- 
-2.25.1
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
