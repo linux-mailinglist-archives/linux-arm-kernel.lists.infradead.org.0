@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E62A1E0E4A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:20:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB7091E0E5A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 25 May 2020 14:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XQbVl49DFzUuTnEWzA3mJ4jJD+Bs5UVZDhpe0NevS50=; b=Wyblm03ndcmiPD
-	2bTleIDdheRb6Kpw1QcWTWXT/xiZyUcAPDw0v7qTg7CFhwnZ0t1l/7HqscWbIPJBu6GtLHR77/Q1j
-	Vw6JqtKzZzB3P8LkEBDK00F00TRA13n+cq687NDID9PRU10+7iF9FuVnqoHJYJ4tF9TrsMPXU3X33
-	PWbc4mZNKVDocME2Im9GnUCOeYYfmaahIfiHx3bYRhdl0mVq07VVHkPvKFCySi51QsCjkLqTZvvFQ
-	EBSuxkrxzNAvBDFvAT1GLMvRv652k72x/pKmdbZaZ6VPIftGFPjfdNZbnJHWy3w4ftIprw/55N3h3
-	6CWrrDF/jS4RohfJNvcg==;
+	List-Owner; bh=sWjbZuQ1iEzSH45UiPo854qNzPLBPPlnRSqPYFy0j/g=; b=DFH1ZuiusV+S7Z
+	CiqCYhKSLc64tw11+3JjhHzeQPec1EQyECKrggPVUI23LWxL6PCC4ElbuUGx3dAT2FntMzJqQxrat
+	MW0pTcPhhqK5HiB16BIzWsT6yHpCFe7JJ5cUZbmxSQG0hHpALUv/GJHubmu6WVj/LCFH5FRUbgZUV
+	4DYaQBmk60yMKr77Y9ypTR2ZL/PvmxxT9as7rEFaP7GEHt6SiDdrXtAKGTS0PB1fIo0pPo/0RwTEJ
+	E7DuUzK1OaWrEgSLuAelCfcL/QSDDYmEvgd2/Fqql34llmXggfLyFsJEyDHy6VYOvA8h/8PTDeopV
+	rwEqojAVhahW4R+DUC6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdC64-00057R-Rr; Mon, 25 May 2020 12:20:48 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jdC9H-0005pC-Bc; Mon, 25 May 2020 12:24:07 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdC5s-000577-Cd
- for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:20:37 +0000
-Received: by mail-lf1-x141.google.com with SMTP id a4so10382932lfh.12
+ id 1jdC96-0005o5-DC
+ for linux-arm-kernel@lists.infradead.org; Mon, 25 May 2020 12:23:59 +0000
+Received: by mail-lj1-x244.google.com with SMTP id w10so20603890ljo.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 25 May 2020 05:20:36 -0700 (PDT)
+ Mon, 25 May 2020 05:23:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2uL/BTgbcmhuM5YoKw/xsIFunhmdvIl/vJd/r4JhQGI=;
- b=s27kr2eqyPVVUBlXSvFGIQr/trFb1G9zTpaZkf+2EZG3Hx2n20tojKndnRmHxnFm5B
- ASp5qUZUcNhgDtSz05MKDEc0AhNM7RX+XqKC4RcH+dueKzNuzdA9UUtfJm3QObywiyNn
- gLyUfwWbN87noM3TipQ1xxzLT/qC8suP8C2ItO0uKVBLZF7gkDhYZYdyWaPhGsZlURx5
- dC7jiymi5TrHLn3WrjWoWbTG/vN0K0XXq9T9jya4WAVmkhAW4KU3DPDDLxbaJk+51A8y
- NPUY8Y3/kWXC5iqcAEtXLI21yhLyJybrVzQtHPxoRDO5FDHaT8xNMF10qM6k/sr2ih0m
- THuA==
+ :cc; bh=1neDSVvo2exAwO7XG1Q7asHC8C/uLbtbXAanu+QhUvY=;
+ b=mHchiWv9d+bl7TypEyswUYJoJBznRNEzkaqNXJ6yZYcwVhCmDlHeQE5uaH/HclG1/A
+ Bx4Cg9tDzYVicfaKmVDBhYVOUgLefRTuPj7YFVjqzZ8YnTP/1LLLJTykYqXl+FHN2pZL
+ g8xP1m6SXMaHEiGtmqiEB2IP7G+kpZcs9VS8hZv85N+n3X6CdpddRhU6y1nCKsAQzFCY
+ 4rfmeLIz/oOwhxkepv8pd1oS85BdwpikntEpMCfo0gVE3d09pfC4AhwFL/nAFV+L4+Zb
+ mwcQqn4CqSg3gj+nOH2kk2AibQMFcCPYOzlGhx/9SXJpErxweRkVif+GCa4LGQO8gvT9
+ 9trw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=2uL/BTgbcmhuM5YoKw/xsIFunhmdvIl/vJd/r4JhQGI=;
- b=T9K+BiD0GtXFVycDFojXzPT5kh4pZWWn+5+Ix7MVcD9A+DTSk2rNBYrqaZMjlAKnFO
- VcEU4GFSnDvlGDDBtV3+mvXZZ1+vC3VuAiYJ6qn6pL6EA5lyCcjsX76XSCX+fW38MuZS
- it3h1p/qq/XgpEdB9NDJUsesy/jcpjTj3r07h1P9W/0YwHWApVN59oYzIbdKWKPRbgcH
- lEdiIelG0EKTo0005X2PwH3HctmjrafMeXYec8RM0fzCZ47EsqMD18Tfv3pj5xn293Cl
- MMrcri223515aZPVKbB2v3Q7V2TZsTAMfdC3iaUFRWOA4XylBLL2TR+EF/JAOa7hc3sW
- 8sgw==
-X-Gm-Message-State: AOAM533ppEVt8U3rPSbsm/isUnM0C3n9NfjSUtxE5YoHcA+FYQWseUks
- 5VFKpI8fTgxIkthgezW105pEQxZIaU+jo64WylAc0A==
-X-Google-Smtp-Source: ABdhPJzzn4cmibq9OV9VwB1X2PlikxB9SvAFGTTF5EB8YLtQ3tUTqPOcsUIpd9PFnnM7N1+NhdQzLiY+0rFB4yQUkHM=
-X-Received: by 2002:ac2:5473:: with SMTP id e19mr14251823lfn.21.1590409234803; 
- Mon, 25 May 2020 05:20:34 -0700 (PDT)
+ bh=1neDSVvo2exAwO7XG1Q7asHC8C/uLbtbXAanu+QhUvY=;
+ b=JcJMtUcVmQWd/l1KKbEsSRq+JlUw0mVOFIIhLUQOqTYxpBZiMcICoKkYmDG4RnxUZo
+ EWlbSh7CQ41/+dWKPekcTflS1/sCIz8jXey0vlwwl5mXrWF+J+fBYW1Fsju24ztPWTSh
+ zN0qv6aprTycM1gPMb2fhjOjIHJCIStq3rr72oiNI+mvCGNXS0SPHC98zrH8oski+4Tg
+ Pfyg+5vAgglc48EKJqecTuLFP12RHN3jcdR6qAPg3mX4D7Rj+UAXz1SB7YmdwPf1pa3C
+ SJUmhhY+1xUmTIQyaath/o/p3emdZSbcnDByVtaMO0ubzBmgqtbl5+kOJ9qJ80RswOAS
+ Dg0A==
+X-Gm-Message-State: AOAM531sbg9uRWUEouP2CLysqhK/vN7Oicd+sDirxS/38qihOWy6yFq8
+ lBQfF2b8qMR+KdxOSo4laQrLE/jZQCZ9nxzGNg+90A==
+X-Google-Smtp-Source: ABdhPJyf5wZA8Fh7xQjtaNnLLHBTpAkEbLAQIKhyb7JglaMhaJDSU7UOMtER0/cndL74Gsc/vcIt53XFGmKsX5AJ0t0=
+X-Received: by 2002:a2e:711c:: with SMTP id m28mr13451102ljc.104.1590409434478; 
+ Mon, 25 May 2020 05:23:54 -0700 (PDT)
 MIME-Version: 1.0
 References: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
- <1590378348-8115-5-git-send-email-dillon.minfei@gmail.com>
-In-Reply-To: <1590378348-8115-5-git-send-email-dillon.minfei@gmail.com>
+ <1590378348-8115-7-git-send-email-dillon.minfei@gmail.com>
+In-Reply-To: <1590378348-8115-7-git-send-email-dillon.minfei@gmail.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Mon, 25 May 2020 14:20:23 +0200
-Message-ID: <CACRpkdb=+T0jSzBkrViHnuXGNhD4F3d_VX1t-hkqMG0CSdDhnQ@mail.gmail.com>
-Subject: Re: [PATCH v5 4/8] dt-bindings: display: panel: Add ilitek ili9341
- panel bindings
+Date: Mon, 25 May 2020 14:23:43 +0200
+Message-ID: <CACRpkda26eQZGMfbq-FL9X532mK=Z87GotjYMu2MWNGgNohp7A@mail.gmail.com>
+Subject: Re: [PATCH v5 6/8] drm/panel: Add ilitek ili9341 panel driver
 To: dillon min <dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_052036_497524_23DED90E 
-X-CRM114-Status: UNSURE (   8.19  )
+X-CRM114-CacheID: sfid-20200525_052357_838574_4BA08E22 
+X-CRM114-Status: UNSURE (   9.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -109,7 +108,17 @@ On Mon, May 25, 2020 at 5:46 AM <dillon.minfei@gmail.com> wrote:
 
 > From: dillon min <dillon.minfei@gmail.com>
 >
-> Add documentation for "ilitek,ili9341" panel.
+>     This driver combine tiny/ili9341.c mipi_dbi_interface driver
+>     with mipi_dpi_interface driver, can support ili9341 with serial
+>     mode or parallel rgb interface mode by register configuration.
+>
+> Changes since V3:
+>
+>     accoding to Linus Walleij's suggestion.
+>     1 add more comments to driver.
+>     2 reduce magic number usage in the driver.
+>     3 move panel configuration from common place to system configuration.
+>     4 reuse MIPI_DCS_* as more as possible.
 >
 > Signed-off-by: dillon min <dillon.minfei@gmail.com>
 
