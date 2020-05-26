@@ -2,73 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 157371E2524
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 17:13:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 817D71E2531
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 17:17:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vC7T4XP8KmMJMHN6XglgyE301rSTO3PsIEYyn2DfZ/E=; b=UHjvYfvv1zIKde
-	O2ZwurZrFd/c8rzaHu14o4B5gmJm/QaDlxd4kc7mEaKvf7QrXwTUdrTvOc7zl2Obfa/T2TGqTTVwW
-	EjejenuU+0FMEbTzf1ZAQ6jMArf0JZcNGtKnuSJlJTI2K9yOORO9Tjeet3hGdmAb8wdPPvzTtTYFO
-	WjfBNs1qOCQE34bOobjPh4j2Tn2gZgJi9Rvo24dFW8AaIM6tl2xN/kqJaW3qRldS4babrxHd9NyFo
-	GAZoJQHosBp6t8vkmapOchoNv/2ioIsClHMSN2tMPTCtrbF5G5c2UrbCEdjkRKZi0GDWENb79zmJE
-	ysy92vDTvAlPpU6DUcDg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=t/ugHG5EHiJNs4rUPqVASMPfc3kLmpuxoB4ZslUz5h4=; b=BMlDIurS9jiuXm
+	RI9DPCu1SAg5WN3bTFpxXTpDL2jrBFzKrhtC+MYpJoM49ILscCTtwN2xpPmupl4EqlRHQIpE6hdGx
+	QNoCEryCLUhlPSDPY/AnQpi+Q2669N5NjILlxElMISLENMNugqKY7CS5U9xOexewj6/zjvMRrZbYI
+	v1K7TySB/p2hMsLrZLwhOWp6Sn+4zn+I3gf/b0qKDOEioXVEpt1vyYGOAlciKurcIoCWrMqnrD2Co
+	8yU8xLQwUUZXubCg6cYkpawrG2gbeRl/hKhjv6aHAnw6pBDvpDOKXIXdb/CvL0qhWvu3z9gPp2JyO
+	meX+5KKlIbHYFFQs+IHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdbGX-0005ZO-Pd; Tue, 26 May 2020 15:13:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jdbKG-0000JJ-UA; Tue, 26 May 2020 15:17:08 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdbGL-0005Yu-SF
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 15:13:07 +0000
-Received: from mail-oi1-f179.google.com (mail-oi1-f179.google.com
- [209.85.167.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CFFF92086A
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 15:13:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590505984;
- bh=mLAN8D6oIJoa3xggwgfTsbQUrUGKyiAShX7jqMOfqpQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=TwwVC+24PxfZ9n8pI3uZo1gP7BUT14m+GVWVUjEuzJ19b989LBWKZjSDjv/kPV1ex
- L6uQJSmJPjTj8IXOAE5zqwykadOzOqlPyc4fH9x/KqRNyGBVD62xdvunQ1MvXvKizj
- 2XBl6a+OPGFq6NlEgOuIG4xeKo2Nm0kKRMRoalz8=
-Received: by mail-oi1-f179.google.com with SMTP id y85so18861877oie.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 08:13:04 -0700 (PDT)
-X-Gm-Message-State: AOAM532iLhfXkZNrT4QkMqRKnvpb/nok0J6zilAWn9xmMqosN8KrEPAq
- zcHiyx6/2I9BBEW6Urz4JAFSCOSPwmRKox90Kw==
-X-Google-Smtp-Source: ABdhPJxnWdsB33/h+eNDJFncCR1n3OmMuD+wbzq8824aW+7RwYNdy8Fq+5CjchUFaYrWK3vesXy9roYP9HkRJfjTDcY=
-X-Received: by 2002:aca:f084:: with SMTP id
- o126mr14928427oih.106.1590505984103; 
- Tue, 26 May 2020 08:13:04 -0700 (PDT)
+ id 1jdbJo-0000AO-Tq
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 15:16:43 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04QFBuJc017743; Tue, 26 May 2020 17:16:26 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=799GJcMpL2LNU/Tm5lFInudYnzHhcFshxvnKZptqkbM=;
+ b=oxdsZGrxKp0SO7XEMvJ8Yvlq8g0WKFQAg87HbE/QqERMb5eh488/eNTbrNOOUJLEXHYL
+ sw1sp0a1SkfYe/2vG7UEfAZwPaOSFyhjaLCrJ/T2TqkEBt2g73TRIOK2N9Kiyf22HbaV
+ rdLb35QPuV6UkPY/VkTxVMU1XuqBZxKObokv3xdNIS397Fr5O1KTaArl1Sjk2FF3Ps3D
+ zYFGs7PvV58mjc9MePvXw8mgt3OOa09IZcFzTcUV+1HC37y2coTiqNppxUf+O9/lwQxg
+ KGvlbBjS3ZaVbrTI+GIXwn3gJPR1G+AYDrdFUyGKxVsROhOKVMR6mPSJsjg5MRvsK3Qj Dw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 316rya8feu-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 26 May 2020 17:16:26 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4E8E010002A;
+ Tue, 26 May 2020 17:16:25 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 312E02C1D9F;
+ Tue, 26 May 2020 17:16:25 +0200 (CEST)
+Received: from localhost (10.75.127.49) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 26 May 2020 17:16:24
+ +0200
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <rjw@rjwysocki.net>, <viresh.kumar@linaro.org>, <hugues.fruchet@st.com>,
+ <mchehab@kernel.org>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>, <pavel@ucw.cz>, <len.brown@intel.com>,
+ <valentin.schneider@arm.com>, <vincent.guittot@linaro.org>
+Subject: [RFC RESEND 0/3] Introduce cpufreq minimum load QoS
+Date: Tue, 26 May 2020 17:16:16 +0200
+Message-ID: <20200526151619.8779-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-References: <20200522033631.32574-1-kishon@ti.com>
- <20200522033631.32574-4-kishon@ti.com>
- <CAL_JsqJjXUUgTbSAi83w4Eie-sVTrkLLMGh_PRQsd8k2vuua4Q@mail.gmail.com>
- <df29309d-8401-4040-eb1e-90bb3af93a82@ti.com>
-In-Reply-To: <df29309d-8401-4040-eb1e-90bb3af93a82@ti.com>
-From: Rob Herring <robh@kernel.org>
-Date: Tue, 26 May 2020 09:12:52 -0600
-X-Gmail-Original-Message-ID: <CAL_JsqLy9T8O81stSW8RHpsUXFFjon80VG9-Jgync1eVR4iTew@mail.gmail.com>
-Message-ID: <CAL_JsqLy9T8O81stSW8RHpsUXFFjon80VG9-Jgync1eVR4iTew@mail.gmail.com>
-Subject: Re: [PATCH v5 03/14] PCI: cadence: Convert all r/w accessors to
- perform only 32-bit accesses
-To: Kishon Vijay Abraham I <kishon@ti.com>
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG2NODE1.st.com (10.75.127.4) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-05-26_02:2020-05-26,
+ 2020-05-26 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_081305_953381_60F83CFF 
-X-CRM114-Status: GOOD (  19.22  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200526_081641_422925_345AE0D8 
+X-CRM114-Status: GOOD (  11.83  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,57 +95,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, PCI <linux-pci@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-omap <linux-omap@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 24, 2020 at 9:30 PM Kishon Vijay Abraham I <kishon@ti.com> wrote:
->
-> Hi Rob,
->
-> On 5/22/2020 9:24 PM, Rob Herring wrote:
-> > On Thu, May 21, 2020 at 9:37 PM Kishon Vijay Abraham I <kishon@ti.com> wrote:
-> >>
-> >> Certain platforms like TI's J721E using Cadence PCIe IP can perform only
-> >> 32-bit accesses for reading or writing to Cadence registers. Convert all
-> >> read and write accesses to 32-bit in Cadence PCIe driver in preparation
-> >> for adding PCIe support in TI's J721E SoC.
-> >
-> > Looking more closely I don't think cdns_pcie_ep_assert_intx is okay
-> > with this and never can be given the PCI_COMMAND and PCI_STATUS
-> > registers are in the same word (IIRC, that's the main reason 32-bit
-> > config space accesses are broken). So this isn't going to work at
->
-> right, PCI_STATUS has write '1' to clear bits and there's a chance that it
-> could be reset while raising legacy interrupt. While this cannot be avoided for
-> TI's J721E, other platforms doesn't have to have this limitation.
-> > least for EP accesses. And maybe you need a custom .raise_irq() hook
-> > to minimize any problems (such as making the RMW atomic at least from
-> > the endpoint's perspective).
->
-> This is to make sure EP doesn't update in-consistent state when RC is updating
-> the PCI_STATUS register? Since this involves two different systems, how do we
-> make this atomic?
+A first round [1] of discussions and suggestions have already be done on 
+this series but without found a solution to the problem. I resend it to
+progress on this topic.
 
-You can't make it atomic WRT both systems, but is there locking around
-each RMW? Specifically, are preemption and interrupts disabled to
-ensure time between a read and write are minimized? You wouldn't want
-interrupts disabled during the delay too though (i.e. around
-.raise_irq()).
+When start streaming from the sensor the CPU load could remain very low 
+because almost all the capture pipeline is done in hardware (i.e. without 
+using the CPU) and let believe to cpufreq governor that it could use lower 
+frequencies. If the governor decides to use a too low frequency that 
+becomes a problem when we need to acknowledge the interrupt during the 
+blanking time.
+The delay to ack the interrupt and perform all the other actions before
+the next frame is very short and doesn't allow to the cpufreq governor to
+provide the required burst of power. That led to drop the half of the frames.
 
-BTW, I've asked this question before, but aren't PCI legacy interrupts
-level triggered? If so, isn't generating a pulse wrong?
+To avoid this problem, DCMI driver informs the cpufreq governors by adding
+a cpufreq minimum load QoS resquest.
 
-Rob
+Benjamin 
+
+[1] https://lkml.org/lkml/2020/4/24/360
+
+Benjamin Gaignard (3):
+  PM: QoS: Introduce cpufreq minimum load QoS
+  cpufreq: governor: Use minimum load QoS
+  media: stm32-dcmi: Inform cpufreq governors about cpu load needs
+
+ drivers/cpufreq/cpufreq_governor.c        |   5 +
+ drivers/media/platform/stm32/stm32-dcmi.c |   8 ++
+ include/linux/pm_qos.h                    |  12 ++
+ kernel/power/qos.c                        | 213 ++++++++++++++++++++++++++++++
+ 4 files changed, 238 insertions(+)
+
+-- 
+2.15.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
