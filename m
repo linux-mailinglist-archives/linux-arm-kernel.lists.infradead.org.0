@@ -2,70 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C8601E27C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 18:57:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00B6A1E27DF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 19:04:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
+	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=utvPJTlrzYdvBG/Owu3Dv9rJTY0b3yEqHJt1ZWyAs/g=; b=DZkfCGWiO6hp5y
-	k8tQJEpXAYPl4ObyvEypKpuKxgc5tUfozNFlgL5kKPsszZ4y86N4bdfIvbzswErUVVkp/FUvY0zKg
-	MbDpjsLI+0Fm7UlfYUtifSy/gIAu3rFG+dYy0Us6+ZJ8/mc1Q5P9Ee4ysKdwoOjHY4gJVzbCLWUBd
-	JaIK1vAWxItpu5rxNurw9BKCX7LYoyogwmQFN6a4aSGxYA+ca3LW/qe7BJ3fIJO8ORG0oPiOOC6J+
-	QcLjuH4UH/Jm18avSlm+adBMvKrMQie3R9OQJVGq7RXWDmp7BipfXFHCoH9ojQuqH8bvWG0ElkDnI
-	4HZnNgmPmAZQnPj9Sm8Q==;
+	List-Owner; bh=IDnV/WpJsM/NDYmrBkbjDqMLtKmYCuzYsAKPyLVIeus=; b=LPWZHf/SkiGB3E
+	u9PKauJQky5+ixem8aSDdjlzNy+yo+DIQlu2By3nBF+K0TZFaUvXXgQu1lGT5BAperKveW4DDsyfA
+	JSdS2E/O6P3MRWQe/nSclW0IKjkzGSqJU6u3UHnBuSkbSapp3TGoVvXBrb0pzSWBTokJbpJfY1xe0
+	237cepnr7w7r0OusvxcYOs/6VFkSMGX8VLJAbqPKuVADmGZupNdxjnbQJvImKIzJXSztBD4cdn+pC
+	srnU7jsPfYqJ0uHJIHotYDG/X4Nhqw0L2hc5AIx4MA6xLtxJ9IKVn+B6Tzdr0YNn/3RLAaz1P9r2C
+	xSS+VNkth6E4LYlguCjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdct9-0000EQ-CV; Tue, 26 May 2020 16:57:15 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1jdczZ-0003NG-8p; Tue, 26 May 2020 17:03:53 +0000
+Received: from mail-qt1-x849.google.com ([2607:f8b0:4864:20::849])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdcsx-0000DB-Jl
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 16:57:04 +0000
-IronPort-SDR: cYqxLtg0+Ybt0ep6K1ralW4tmjpysQtqXKlE1g7pWDnR8W4Y+n7LufPmy1f8M73MdY7BVAEuw4
- VgIb10bGpACg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 26 May 2020 09:57:02 -0700
-IronPort-SDR: Er2zNXmgAzjRa4OAXcIq2b/xKyApj7yAEdoa4+gewOIBv7hNZ1+ASgdTNPQGRDP2fUT7g6IaUD
- cmfxEw6lq4OA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,437,1583222400"; d="scan'208";a="301780640"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga002.fm.intel.com with ESMTP; 26 May 2020 09:56:59 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jdcsv-0092P9-QH; Tue, 26 May 2020 19:57:01 +0300
-Date: Tue, 26 May 2020 19:57:01 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-Subject: Re: [PATCH v4 3/3] serial: 8250_dw: Fix common clocks usage race
- condition
-Message-ID: <20200526165701.GX1634618@smile.fi.intel.com>
-References: <20200526160316.26136-1-Sergey.Semin@baikalelectronics.ru>
- <20200526160316.26136-4-Sergey.Semin@baikalelectronics.ru>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200526160316.26136-4-Sergey.Semin@baikalelectronics.ru>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+ id 1jdczP-0003MC-Et
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 17:03:44 +0000
+Received: by mail-qt1-x849.google.com with SMTP id f1so9059580qti.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 10:03:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:in-reply-to:message-id:mime-version:references:subject:from:to
+ :cc; bh=sjeGTWCrYFBnhNd6ar8naLJbL00oyzfJjyGq2z7zCYM=;
+ b=G3Ey5fIQCWCFoypqGjbc2hk0avGWOqqDQnE2vUlBSYrDxioSYd9RPDbUGiFhB77PIN
+ t+bk5WIVhdyU8FJH9aiOs73NxtjgI+3wtHQnXsuM3wdeAu77xwHxUSxumpOj8O14fgfy
+ 8jW+5J/XMnS2ZgzOMAq3BWRdqi5ycT6TQHGdbkjPI5e1qOkHWej+Dqtuc+OcJ4S+VyTW
+ /P0fQDdmQy9GZ/f6TowlDBdeaICe19n/rU+f6YBtumPcQK+Ymby8ubZcvjaN28KtZfmQ
+ Hvb70ZKZPHQQL8hxKBnkd9/8/zCXb9x8NcKbZ8RfVWoQLuRhkpnxq8UQeWD4JWAO/2p3
+ Uy0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:in-reply-to:message-id:mime-version
+ :references:subject:from:to:cc;
+ bh=sjeGTWCrYFBnhNd6ar8naLJbL00oyzfJjyGq2z7zCYM=;
+ b=RAEo0LiLkHBPD05prVa7+qxAGr2OijZClmw94asGwkqRr/7ZgHMUe9uT6hdXufoWDj
+ EXm8RwEE0aCuE7O1o/VnYxTDY0Fwnb5wWomCUdRDPzhxoa+CDGiF/o72hCZWtPPmU8N6
+ s0EmzO0c5E2uG14555S7Z1l4N0t1pm/NRFwp5/Us4nDZ0bh93vfDUC+7vkbhDTeonM9H
+ DrAbUo1hBSSnOn+OA+d6SF890sjAyzydzEYYlmx57A4ZCfA4uIURfqdg/S/RHauojxfh
+ HbkzunboJ4KgouLoNU6EPmy2UAcCSBNWUup09UrTe2wc1YxK0jxiu8nyuXex+Q34Lsnc
+ cK8A==
+X-Gm-Message-State: AOAM53083XsY7t1UxMsEVYeM63m6UStXhjRE/GIYdBekRLVClzKDodAE
+ dRZPqvb5J76aN58egehiR8nwlxIpziXVGMjxRE4=
+X-Google-Smtp-Source: ABdhPJwQhZ8w5Vcn+j5tdQBJJGLG61l6jPuEHHQhcKItCdsS2S47GmgllZZ+b0oAtAbsKy4FDWj0huk5A5roJS6EAjM=
+X-Received: by 2002:a05:6214:10e4:: with SMTP id
+ q4mr2609572qvt.83.1590512619406; 
+ Tue, 26 May 2020 10:03:39 -0700 (PDT)
+Date: Tue, 26 May 2020 10:03:16 -0700
+In-Reply-To: <CAK7LNASkcLx-K+W1va9WxfxZ=7H-w65QbyBt=88dzK1NrrM_PQ@mail.gmail.com>
+Message-Id: <20200526170321.137238-1-ndesaulniers@google.com>
+Mime-Version: 1.0
+References: <CAK7LNASkcLx-K+W1va9WxfxZ=7H-w65QbyBt=88dzK1NrrM_PQ@mail.gmail.com>
+X-Mailer: git-send-email 2.27.0.rc0.183.gde8f92d652-goog
+Subject: [PATCH v4] Makefile: support compressed debug info
+From: Nick Desaulniers <ndesaulniers@google.com>
+To: Masahiro Yamada <masahiroy@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_095703_690293_FE4BC6C4 
-X-CRM114-Status: GOOD (  23.44  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200526_100343_499738_0DCF3B6F 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:849 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,133 +95,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- linux-kernel@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Russell King <linux@armlinux.org.uk>, Serge Semin <fancer.lancer@gmail.com>,
- Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
- Maxime Ripard <mripard@kernel.org>, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>, linux-mips@vger.kernel.org,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Nick Clifton <nickc@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Naohiro Aota <naohiro.aota@wdc.com>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Fangrui Song <maskray@google.com>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ linux-kbuild@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ clang-built-linux@googlegroups.com,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Sedat Dilek <sedat.dilek@gmail.com>, David Blaikie <blaikie@google.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Michal Marek <michal.lkml@markovi.net>, Randy Dunlap <rdunlap@infradead.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Changbin Du <changbin.du@intel.com>, Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 07:03:16PM +0300, Serge Semin wrote:
-> The race condition may happen if the UART reference clock is shared with
-> some other device (on Baikal-T1 SoC it's another DW UART port). In this
-> case if that device changes the clock rate while serial console is using
-> it the DW 8250 UART port might not only end up with an invalid uartclk
-> value saved, but may also experience a distorted output data since
-> baud-clock could have been changed. In order to fix this lets at least
-> try to adjust the 8250 port setting like UART clock rate in case if the
-> reference clock rate change is discovered. The driver will call the new
-> method to update 8250 UART port clock rate settings. It's done by means of
-> the clock event notifier registered at the port startup and unregistered
-> in the shutdown callback method.
-> 
-> Note 1. In order to avoid deadlocks we had to execute the UART port update
-> method in a dedicated deferred work. This is due to (in my opinion
-> redundant) the clock update implemented in the dw8250_set_termios()
-> method.
-> Note 2. Before the ref clock is manually changed by the custom
-> set_termios() function we swap the port uartclk value with new rate
-> adjusted to be suitable for the requested baud. It is necessary in
-> order to effectively disable a functionality of the ref clock events
-> handler for the current UART port, since uartclk update will be done
-> a bit further in the generic serial8250_do_set_termios() function.
+As debug information gets larger and larger, it helps significantly save
+the size of vmlinux images to compress the information in the debug
+information sections. Note: this debug info is typically split off from
+the final compressed kernel image, which is why vmlinux is what's used
+in conjunction with GDB. Minimizing the debug info size should have no
+impact on boot times, or final compressed kernel image size.
 
-...
+All of the debug sections will have a `C` flag set.
+$ readelf -S <object file>
 
-> +static void dw8250_clk_work_cb(struct work_struct *work)
-> +{
-> +	struct dw8250_data *d = work_to_dw8250_data(work);
-> +	struct uart_8250_port *up;
-> +	unsigned long rate;
-> +
-> +	rate = clk_get_rate(d->clk);
+$ bloaty vmlinux.gcc75.compressed.dwarf4 -- \
+    vmlinux.gcc75.uncompressed.dwarf4
 
-> +	if (rate) {
+    FILE SIZE        VM SIZE
+ --------------  --------------
+  +0.0%     +18  [ = ]       0    [Unmapped]
+ -73.3%  -114Ki  [ = ]       0    .debug_aranges
+ -76.2% -2.01Mi  [ = ]       0    .debug_frame
+ -73.6% -2.89Mi  [ = ]       0    .debug_str
+ -80.7% -4.66Mi  [ = ]       0    .debug_abbrev
+ -82.9% -4.88Mi  [ = ]       0    .debug_ranges
+ -70.5% -9.04Mi  [ = ]       0    .debug_line
+ -79.3% -10.9Mi  [ = ]       0    .debug_loc
+ -39.5% -88.6Mi  [ = ]       0    .debug_info
+ -18.2%  -123Mi  [ = ]       0    TOTAL
 
-	if (rate <= 0)
-		return;
+$ bloaty vmlinux.clang11.compressed.dwarf4 -- \
+    vmlinux.clang11.uncompressed.dwarf4
 
-?
+    FILE SIZE        VM SIZE
+ --------------  --------------
+  +0.0%     +23  [ = ]       0    [Unmapped]
+ -65.6%    -871  [ = ]       0    .debug_aranges
+ -77.4% -1.84Mi  [ = ]       0    .debug_frame
+ -82.9% -2.33Mi  [ = ]       0    .debug_abbrev
+ -73.1% -2.43Mi  [ = ]       0    .debug_str
+ -84.8% -3.07Mi  [ = ]       0    .debug_ranges
+ -65.9% -8.62Mi  [ = ]       0    .debug_line
+ -86.2% -40.0Mi  [ = ]       0    .debug_loc
+ -42.0% -64.1Mi  [ = ]       0    .debug_info
+ -22.1%  -122Mi  [ = ]       0    TOTAL
 
-> +		up = serial8250_get_port(d->data.line);
-> +
-> +		serial8250_update_uartclk(&up->port, rate);
-> +	}
-> +}
+For x86_64 defconfig + LLVM=1 (before):
+Elapsed (wall clock) time (h:mm:ss or m:ss): 3:22.03
+Maximum resident set size (kbytes): 43856
 
-...
+For x86_64 defconfig + LLVM=1 (after):
+Elapsed (wall clock) time (h:mm:ss or m:ss): 3:32.52
+Maximum resident set size (kbytes): 1566776
 
-> +static int dw8250_startup(struct uart_port *p)
-> +{
-> +	struct dw8250_data *d = to_dw8250_data(p->private_data);
-> +	int ret;
-> +
-> +	/*
-> +	 * Some platforms may provide a reference clock shared between several
-> +	 * devices. In this case before using the serial port first we have to
-> +	 * make sure that any clock state change is known to the UART port at
-> +	 * least post factum.
-> +	 */
+Thanks to:
+Nick Clifton helped us to provide the minimal binutils version.
+Sedat Dilet found an increase in size of debug .deb package.
 
-> +	if (d->clk) {
+Cc: Nick Clifton <nickc@redhat.com>
+Cc: Sedat Dilek <sedat.dilek@gmail.com>
+Suggested-by: David Blaikie <blaikie@google.com>
+Reviewed-by: Fangrui Song <maskray@google.com>
+Tested-by: Sedat Dilek <sedat.dilek@gmail.com>
+Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
+---
+Changes V3 -> V4:
+* Add thanks line to commit message as per Masahiro.
+* Swap Sugguested-by to Cc for two lines in commit message, as per
+  Masahiro.
 
-Do you need this?
+Changes V2 -> V3:
+* Fix blaikie@'s email addr.
+* Fix Fangrui's Reviewed-by tag as per Masahiro.
+* Fix help text as per Masahiro.
+* Fix -Wa$(comma)foo as per Masahiro.
 
-> +		ret = clk_notifier_register(d->clk, &d->clk_notifier);
+Changes V1 -> V2:
+* rebase on linux-next.
+* Add assembler flags as per Fangrui.
+* Add note about KDEB_COMPRESS+scripts/package/builddeb
+  as per Sedat and Masahiro.
+* Add note about bintutils version requirements as per Nick C.
+* Add note about measured increased build time and max RSS.
 
-Okay, seems clk_notifier_register() and its counterpart should be fixed for
-optional clocks.
+ Makefile                          |  6 ++++++
+ arch/arm64/kernel/vdso32/Makefile |  2 +-
+ lib/Kconfig.debug                 | 17 +++++++++++++++++
+ 3 files changed, 24 insertions(+), 1 deletion(-)
 
-> +		if (ret)
-> +			dev_warn(p->dev, "Failed to set the clock notifier\n");
-
-So, what does this warning mean on the platforms which does not need notifier
-at all (i.o.w. all but baikal)?
-
-> +		/*
-> +		 * Get current reference clock rate to make sure the UART port
-> +		 * is equipped with an up-to-date value before it's started up.
-> +		 */
-
-Why? We call ->set_termios() for it, no?
-
-> +		p->uartclk = clk_get_rate(d->clk);
-> +		if (!p->uartclk) {
-> +			dev_err(p->dev, "Clock rate not defined\n");
-> +			return -EINVAL;
-> +		}
-> +	}
-> +
-> +	return serial8250_do_startup(p);
-> +}
-> +
-> +static void dw8250_shutdown(struct uart_port *p)
-> +{
-> +	struct dw8250_data *d = to_dw8250_data(p->private_data);
-> +
-> +	serial8250_do_shutdown(p);
-> +
-
-> +	if (d->clk) {
-
-Ditto.
-
-> +		clk_notifier_unregister(d->clk, &d->clk_notifier);
-> +
-> +		flush_work(&d->clk_work);
-> +	}
-> +}
-
+diff --git a/Makefile b/Makefile
+index 71687bfe1cd9..be8835296754 100644
+--- a/Makefile
++++ b/Makefile
+@@ -822,6 +822,12 @@ DEBUG_CFLAGS	+= $(call cc-option, -femit-struct-debug-baseonly) \
+ 		   $(call cc-option,-fno-var-tracking)
+ endif
+ 
++ifdef CONFIG_DEBUG_INFO_COMPRESSED
++DEBUG_CFLAGS	+= -gz=zlib
++KBUILD_AFLAGS	+= -Wa,--compress-debug-sections=zlib
++KBUILD_LDFLAGS	+= --compress-debug-sections=zlib
++endif
++
+ KBUILD_CFLAGS += $(DEBUG_CFLAGS)
+ export DEBUG_CFLAGS
+ 
+diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
+index 3964738ebbde..5fd7792d03fc 100644
+--- a/arch/arm64/kernel/vdso32/Makefile
++++ b/arch/arm64/kernel/vdso32/Makefile
+@@ -135,7 +135,7 @@ c-obj-vdso-gettimeofday := vgettimeofday.o
+ asm-obj-vdso := sigreturn.o
+ 
+ ifneq ($(c-gettimeofday-y),)
+-VDSO_CFLAGS_gettimeofday_o += -include $(c-gettimeofday-y)
++VDSO_CFLAGS_gettimeofday_o += -include $(c-gettimeofday-y) -marm
+ endif
+ 
+ VDSO_CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
+diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
+index b8f023e054b9..7fc82dcf814b 100644
+--- a/lib/Kconfig.debug
++++ b/lib/Kconfig.debug
+@@ -225,6 +225,23 @@ config DEBUG_INFO_REDUCED
+ 	  DEBUG_INFO build and compile times are reduced too.
+ 	  Only works with newer gcc versions.
+ 
++config DEBUG_INFO_COMPRESSED
++	bool "Compressed debugging information"
++	depends on DEBUG_INFO
++	depends on $(cc-option,-gz=zlib)
++	depends on $(as-option,-Wa$(comma)--compress-debug-sections=zlib)
++	depends on $(ld-option,--compress-debug-sections=zlib)
++	help
++	  Compress the debug information using zlib.  Requires GCC 5.0+ or Clang
++	  5.0+, binutils 2.26+, and zlib.
++
++	  Users of dpkg-deb via scripts/package/builddeb may find an increase in
++	  size of their debug .deb packages with this config set, due to the
++	  debug info being compressed with zlib, then the object files being
++	  recompressed with a different compression scheme. But this is still
++	  preferable to setting $KDEB_COMPRESS to "none" which would be even
++	  larger.
++
+ config DEBUG_INFO_SPLIT
+ 	bool "Produce split debuginfo in .dwo files"
+ 	depends on DEBUG_INFO
 -- 
-With Best Regards,
-Andy Shevchenko
-
+2.27.0.rc0.183.gde8f92d652-goog
 
 
 _______________________________________________
