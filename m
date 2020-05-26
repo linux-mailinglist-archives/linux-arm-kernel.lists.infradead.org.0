@@ -2,67 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78C9F1E1935
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 03:51:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96B471E193E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 03:59:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IUHExYk18snkGoGRi3gkDXrX/oCOzt4gHiVHS7S0i34=; b=Egb3cLuJx6k18J
-	bym9BM+CUxnEv7eim89ZCn2xS5YJwPv6B1J/Rh41UmQonOP3mX0vThD2sliCoqAbTIsggmE2apld1
-	g3134C31K0Uid4Ud5scO70S7ewXPUEaFNNK5NdJvPYZh6lB6PILZtRY17kRAtYQsI2bKBKVH+15gM
-	IpRBXxxZfeHOJbhar1E1VU/IK5CUppb5hcQVjz+gqV14oTl/WtqDTrN5+E/ZKuMGj9jNrTE8huf3d
-	+doJh0NqUVo1mcwKpnwtCsXJlcbjmNn6Q0fAj+nMiZOmIqT7iNULwooftbom8zylkKOKOfv+d1Mc3
-	afSiuQWmnBCqN0TPjjdA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mmRDY3TOpqwE+DYEj/wntKqLYyw4Y6QAjS17dNFs2IY=; b=JPvPPdXidot5Ne
+	cE8twoWTbIHK2XhYnsmnxo+MJfClI1H2Xt1S6APMluH/lHS6E30j4YjoPWImaR4gD0UtcHCVT9KVY
+	Gy7pueJ9ImAKm2PbN8iWut/yi+PBYjs0bb63jpvdMzuj869na52YkJePOhp1eFCB5haSn8F0TnNCE
+	LG9wAvoKQIw3yDrLTA9KvvaaXAk28AwVfa7ceNan4Ziu6ytrxb1eoFBkI7LGwnYFlnPGRp9JJHbMO
+	fZ1X952ejiITzQ3kPwOpSZPDtF+FWIDEJ8ozVah2X7mo/mXp9zBYu8n36hIcGFbGoSK6knGjs8oo1
+	n7aoJw5giWdYroAs7KLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdOkY-0003pt-Dy; Tue, 26 May 2020 01:51:26 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jdOrv-000763-5c; Tue, 26 May 2020 01:59:03 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdOkO-0003p7-5O
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 01:51:17 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 8F070562;
- Tue, 26 May 2020 03:51:12 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1590457872;
- bh=9X9ArXnx8hFwWFeqCnT63615tcvexXkgxNm5baZhsOY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=si2Eq1aDVjEOeRiTZkSK9iRelsaJrjXihUJ27gi4ri/xg4vfftP92kyqaGk9uXlQY
- sRslg/6UT6dhzU5n3SugpoH6S7codUzF9f59XFlBSvpJkqoy4ovVDN4tCmQZZuffoh
- VFjtY/BePPnOotg86agq1q9OAc4jwrIya4Bdglo0=
-Date: Tue, 26 May 2020 04:50:59 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Thomas Zimmermann <tzimmermann@suse.de>
-Subject: Re: [PATCH 15/21] drm/rcar-du: Use GEM CMA object functions
-Message-ID: <20200526015059.GC6179@pendragon.ideasonboard.com>
-References: <20200522135246.10134-1-tzimmermann@suse.de>
- <20200522135246.10134-16-tzimmermann@suse.de>
- <20200522201240.GE5824@pendragon.ideasonboard.com>
- <816a8a0e-bb98-ea6c-5016-94b18e045fb5@suse.de>
+ id 1jdOrl-00075Y-Ra
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 01:58:55 +0000
+IronPort-SDR: tcmtjIw19SqeIa1RDSD+zx1ZyTdV4W1HvrTh0ndqTLWs5LTtiDrwJwFyq8M3LasGTl1PF7I60u
+ K40ywmg5hveg==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 25 May 2020 18:58:51 -0700
+IronPort-SDR: p/q+dpMHVuqn9TbukmF2Z6edCvTVkwMERWZymjgopiQhkSVC5M1BFaKFJcGymrQWKVReO48SFD
+ kEzzx9zUuRBg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,435,1583222400"; d="scan'208";a="468190044"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga006.fm.intel.com with ESMTP; 25 May 2020 18:58:50 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jdOre-0009rG-BD; Tue, 26 May 2020 09:58:46 +0800
+Date: Tue, 26 May 2020 09:58:20 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Kevin Hilman <khilman@baylibre.com>
+Subject: [soc:amlogic/ee-power-control] BUILD SUCCESS
+ 53773f2dfd9c847304b184d5617e36aeafdf5d87
+Message-ID: <5ecc77bc.hXoJXzNqvLhTdat6%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <816a8a0e-bb98-ea6c-5016-94b18e045fb5@suse.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_185116_356436_0585D85F 
-X-CRM114-Status: GOOD (  23.15  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200525_185853_907803_F1085C12 
+X-CRM114-Status: UNSURE (   7.16  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
+ 1.8 LONGWORDS              Long string of long words
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,112 +72,210 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-aspeed@lists.ozlabs.org,
- narmstrong@baylibre.com, airlied@linux.ie, liviu.dudau@arm.com,
- dri-devel@lists.freedesktop.org, paul@crapouillou.net,
- mihail.atanassov@arm.com, sam@ravnborg.org, marex@denx.de,
- khilman@baylibre.com, abrodkin@synopsys.com, kong.kongxinwei@hisilicon.com,
- xinliang.liu@linaro.org, ludovic.desroches@microchip.com,
- tomi.valkeinen@ti.com, james.qian.wang@arm.com, joel@jms.id.au,
- linux-imx@nxp.com, alexandre.torgue@st.com, puck.chen@hisilicon.com,
- s.hauer@pengutronix.de, alison.wang@nxp.com, jsarha@ti.com, wens@csie.org,
- vincent.abriou@st.com, linux-arm-kernel@lists.infradead.org,
- mcoquelin.stm32@gmail.com, bbrezillon@kernel.org, andrew@aj.id.au,
- philippe.cornu@st.com, yannick.fertre@st.com,
- kieran.bingham+renesas@ideasonboard.com, kernel@pengutronix.de,
- zourongrong@gmail.com, shawnguo@kernel.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Thomas,
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  amlogic/ee-power-control
+branch HEAD: 53773f2dfd9c847304b184d5617e36aeafdf5d87  soc: amlogic: meson-ee-pwrc: add support for the Meson GX SoCs
 
-On Mon, May 25, 2020 at 02:49:46PM +0200, Thomas Zimmermann wrote:
-> Am 22.05.20 um 22:12 schrieb Laurent Pinchart:
-> > On Fri, May 22, 2020 at 03:52:40PM +0200, Thomas Zimmermann wrote:
-> >> The rcar-du driver uses the default implementation for CMA functions;
-> >> except for the .dumb_create callback. The __DRM_GEM_CMA_DRIVER_OPS macro
-> >> now sets these defaults and .dumb_create in struct drm_driver. All
-> >> remaining operations are provided by CMA GEM object functions.
-> >>
-> >> Signed-off-by: Thomas Zimmermann <tzimmermann@suse.de>
-> >> ---
-> >>  drivers/gpu/drm/rcar-du/rcar_du_drv.c | 11 +----------
-> >>  1 file changed, 1 insertion(+), 10 deletions(-)
-> >>
-> >> diff --git a/drivers/gpu/drm/rcar-du/rcar_du_drv.c b/drivers/gpu/drm/rcar-du/rcar_du_drv.c
-> >> index 3e67cf70f0402..3728038cec1d1 100644
-> >> --- a/drivers/gpu/drm/rcar-du/rcar_du_drv.c
-> >> +++ b/drivers/gpu/drm/rcar-du/rcar_du_drv.c
-> >> @@ -476,16 +476,7 @@ DEFINE_DRM_GEM_CMA_FOPS(rcar_du_fops);
-> >>  
-> >>  static struct drm_driver rcar_du_driver = {
-> >>  	.driver_features	= DRIVER_GEM | DRIVER_MODESET | DRIVER_ATOMIC,
-> >> -	.gem_free_object_unlocked = drm_gem_cma_free_object,
-> >> -	.gem_vm_ops		= &drm_gem_cma_vm_ops,
-> >> -	.prime_handle_to_fd	= drm_gem_prime_handle_to_fd,
-> >> -	.prime_fd_to_handle	= drm_gem_prime_fd_to_handle,
-> >> -	.gem_prime_get_sg_table	= drm_gem_cma_prime_get_sg_table,
-> >> -	.gem_prime_import_sg_table = drm_gem_cma_prime_import_sg_table,
-> >> -	.gem_prime_vmap		= drm_gem_cma_prime_vmap,
-> >> -	.gem_prime_vunmap	= drm_gem_cma_prime_vunmap,
-> >> -	.gem_prime_mmap		= drm_gem_cma_prime_mmap,
-> >> -	.dumb_create		= rcar_du_dumb_create,
-> >> +	__DRM_GEM_CMA_DRIVER_OPS(rcar_du_dumb_create),
-> > 
-> > Your __DRM_GEM_CMA_DRIVER_OPS is defined as
-> > 
-> > #define __DRM_GEM_CMA_DRIVER_OPS(__dumb_create) \
-> >         .gem_create_object      = drm_cma_gem_create_object_default_funcs, \
-> >         .dumb_create            = (__dumb_create), \
-> >         .prime_handle_to_fd     = drm_gem_prime_handle_to_fd, \
-> >         .prime_fd_to_handle     = drm_gem_prime_fd_to_handle, \
-> >         .gem_prime_import_sg_table = drm_gem_cma_prime_import_sg_table_vmap, \
-> >         .gem_prime_mmap         = drm_gem_prime_mmap
-> > 
-> > The patch thus introduces several changes:
-> > 
-> > - drm_gem_cma_prime_import_sg_table_vmap() is used instead of
-> >   drm_gem_cma_prime_import_sg_table() combined with .gem_prime_vmap()
-> >   and .gem_prime_vunmap(). I believe that's fine, but splitting that
-> >   change in a separate commit, or at the very least explaining it in
-> >   details in the commit message, would make review easier.
-> > 
-> > - .gem_create_object() is now set. That seems to be OK, but I'm not sure
-> >   to grasp all the implications. This should also be explained in the
-> >   commit message, and ideally split to a separate patch.
-> 
-> That's relevant during object creation and sets the object functions.
-> See one of my other replies for how this can go away after all CMA
-> drivers have been updated to GEM object functions.
+elapsed time: 8684m
 
-I don't dispute that's fine, but I think it should really be explained
-in the commit message, and ideally split to a separate patch.
+configs tested: 183
+configs skipped: 2
 
-> > - drm_gem_cma_prime_mmap() is replaced with drm_gem_prime_mmap(). Same
-> >   comments :-)
-> 
-> I relied on the aspeed driver to be correct. After Sam's comment on
-> that, I read the code once again several times. The original
-> implementation clears VM_PFNMAP. And I cannot find that code any longer.
-> Going back to the original function might be better.
-> 
-> > This patch hides way too many changes in what is documented as just
-> > innocent refactoring. It seems other drivers are affected too.
-> 
-> Could you test the patchset? I don't have the HW.
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
-Kieran has beaten me to it :-)
+arm                                 defconfig
+arm                              allyesconfig
+arm                              allmodconfig
+arm                               allnoconfig
+arm64                            allyesconfig
+arm64                               defconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+mips                             allyesconfig
+m68k                             allyesconfig
+sparc                            allyesconfig
+arm                     davinci_all_defconfig
+mips                         db1xxx_defconfig
+c6x                                 defconfig
+arm64                            alldefconfig
+sh                           sh2007_defconfig
+sh                          sdk7786_defconfig
+arm                           u8500_defconfig
+parisc                generic-32bit_defconfig
+sparc64                          allyesconfig
+mips                          lasat_defconfig
+h8300                       h8s-sim_defconfig
+m68k                       m5208evb_defconfig
+sh                         ecovec24_defconfig
+sh                           se7721_defconfig
+mips                   sb1250_swarm_defconfig
+powerpc                         ps3_defconfig
+sh                          r7780mp_defconfig
+arm                           sama5_defconfig
+sh                           se7712_defconfig
+arm                          iop32x_defconfig
+i386                              allnoconfig
+i386                             allyesconfig
+i386                                defconfig
+i386                              debian-10.3
+ia64                             allmodconfig
+ia64                                defconfig
+ia64                              allnoconfig
+ia64                             allyesconfig
+m68k                             allmodconfig
+m68k                              allnoconfig
+m68k                           sun3_defconfig
+m68k                                defconfig
+nios2                               defconfig
+nios2                            allyesconfig
+openrisc                            defconfig
+c6x                              allyesconfig
+c6x                               allnoconfig
+openrisc                         allyesconfig
+nds32                               defconfig
+nds32                             allnoconfig
+csky                             allyesconfig
+csky                                defconfig
+alpha                               defconfig
+alpha                            allyesconfig
+xtensa                           allyesconfig
+h8300                            allyesconfig
+h8300                            allmodconfig
+xtensa                              defconfig
+arc                                 defconfig
+arc                              allyesconfig
+sh                               allmodconfig
+sh                                allnoconfig
+microblaze                        allnoconfig
+mips                              allnoconfig
+mips                             allmodconfig
+parisc                            allnoconfig
+parisc                              defconfig
+parisc                           allyesconfig
+parisc                           allmodconfig
+powerpc                          allyesconfig
+powerpc                          rhel-kconfig
+powerpc                          allmodconfig
+powerpc                           allnoconfig
+powerpc                             defconfig
+i386                 randconfig-a001-20200521
+i386                 randconfig-a004-20200521
+i386                 randconfig-a006-20200521
+i386                 randconfig-a003-20200521
+i386                 randconfig-a002-20200521
+i386                 randconfig-a005-20200521
+i386                 randconfig-a001-20200520
+i386                 randconfig-a004-20200520
+i386                 randconfig-a006-20200520
+i386                 randconfig-a003-20200520
+i386                 randconfig-a002-20200520
+i386                 randconfig-a005-20200520
+i386                 randconfig-a006-20200519
+i386                 randconfig-a005-20200519
+i386                 randconfig-a001-20200519
+i386                 randconfig-a003-20200519
+i386                 randconfig-a004-20200519
+i386                 randconfig-a002-20200519
+i386                 randconfig-a001-20200524
+i386                 randconfig-a004-20200524
+i386                 randconfig-a006-20200524
+i386                 randconfig-a003-20200524
+i386                 randconfig-a002-20200524
+i386                 randconfig-a005-20200524
+x86_64               randconfig-a003-20200519
+x86_64               randconfig-a005-20200519
+x86_64               randconfig-a004-20200519
+x86_64               randconfig-a006-20200519
+x86_64               randconfig-a002-20200519
+x86_64               randconfig-a001-20200519
+x86_64               randconfig-a013-20200520
+x86_64               randconfig-a015-20200520
+x86_64               randconfig-a016-20200520
+x86_64               randconfig-a012-20200520
+x86_64               randconfig-a014-20200520
+x86_64               randconfig-a011-20200520
+x86_64               randconfig-a013-20200524
+x86_64               randconfig-a015-20200524
+x86_64               randconfig-a016-20200524
+x86_64               randconfig-a012-20200524
+x86_64               randconfig-a014-20200524
+x86_64               randconfig-a011-20200524
+x86_64               randconfig-a015-20200522
+x86_64               randconfig-a013-20200522
+x86_64               randconfig-a016-20200522
+x86_64               randconfig-a012-20200522
+x86_64               randconfig-a014-20200522
+x86_64               randconfig-a011-20200522
+x86_64               randconfig-a002-20200521
+x86_64               randconfig-a006-20200521
+x86_64               randconfig-a005-20200521
+x86_64               randconfig-a004-20200521
+x86_64               randconfig-a003-20200521
+x86_64               randconfig-a001-20200521
+i386                 randconfig-a013-20200520
+i386                 randconfig-a012-20200520
+i386                 randconfig-a015-20200520
+i386                 randconfig-a011-20200520
+i386                 randconfig-a016-20200520
+i386                 randconfig-a014-20200520
+i386                 randconfig-a013-20200522
+i386                 randconfig-a012-20200522
+i386                 randconfig-a015-20200522
+i386                 randconfig-a011-20200522
+i386                 randconfig-a016-20200522
+i386                 randconfig-a014-20200522
+i386                 randconfig-a012-20200519
+i386                 randconfig-a014-20200519
+i386                 randconfig-a016-20200519
+i386                 randconfig-a011-20200519
+i386                 randconfig-a015-20200519
+i386                 randconfig-a013-20200519
+i386                 randconfig-a013-20200521
+i386                 randconfig-a012-20200521
+i386                 randconfig-a015-20200521
+i386                 randconfig-a011-20200521
+i386                 randconfig-a016-20200521
+i386                 randconfig-a014-20200521
+i386                 randconfig-a013-20200524
+i386                 randconfig-a015-20200524
+i386                 randconfig-a012-20200524
+i386                 randconfig-a011-20200524
+i386                 randconfig-a016-20200524
+i386                 randconfig-a014-20200524
+riscv                            allyesconfig
+riscv                             allnoconfig
+riscv                               defconfig
+riscv                            allmodconfig
+s390                             allyesconfig
+s390                              allnoconfig
+s390                             allmodconfig
+s390                                defconfig
+x86_64                              defconfig
+sparc                               defconfig
+sparc64                             defconfig
+sparc64                           allnoconfig
+sparc64                          allmodconfig
+um                                allnoconfig
+um                                  defconfig
+um                               allyesconfig
+um                               allmodconfig
+x86_64                                   rhel
+x86_64                               rhel-7.6
+x86_64                    rhel-7.6-kselftests
+x86_64                         rhel-7.2-clear
+x86_64                                    lkp
+x86_64                              fedora-25
+x86_64                                  kexec
 
-> >>  	.fops			= &rcar_du_fops,
-> >>  	.name			= "rcar-du",
-> >>  	.desc			= "Renesas R-Car Display Unit",
-
--- 
-Regards,
-
-Laurent Pinchart
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
