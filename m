@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20AB71E32F3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 00:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 878FA1E32F4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 00:52:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SWKmyILUO8pPqF8/cbtNWp4bIwtVOO1DHFWh/Mbg2qc=; b=btuD4NaBpaSiWQ
-	PbLoCRKqnQtZP9ezlEgulbH/rVq0TKGZ2X8Ct3+c6T8tSXKg6i4cIVFCOc11+NHL+yXx+ftZC4csz
-	66BgsOQhUKTJc5vItKyhJiS5tNF5efEmqy7Am7SKqv0QwoDsKUgzmzi4lJAUVnLnZB8pXAKIwqyH+
-	0HNEf+SV+BsGUuKn/nr175xFax/dRer25aEfFFKtjhhyjFzfHpgq0MgGAN1+lVBaOMtDCD8IJUSU8
-	O2oBV9/lYdhD1pRWIFlfB+l+NCzkuYpuD0tHsORmWJOxyZ4wSIyzYOF8CMwpWIGxEYe9zY8uaEy6W
-	eIuBwZ7LQjd8BJVS2Q7w==;
+	List-Owner; bh=oq4ybHLyY+FvP99oOTwzV7RUj+Aa6AawmlyovqXW+mA=; b=h6ZhJXyyVYwBK/
+	s4foZ7znfd+OmFTSEul/W3PVhOpNx233gwV+new/E2HuS6oeP7y5DDvdV/kePjRtgiAUEd7ykbRQi
+	U7DqpoJFtrh2ABrGvHd4cr97OyGUMw4uBUR8biRO66by0aaE8ngaTubxEjRLEzWRqgwtrAIfhlP8K
+	d/VDrsE90mnVk+MJciJKlJ1u7AmIqusnzQ1jbEv2BdE/AXc+mFwlk9i2JztyIjBk9GWQzzcF00Hlv
+	QvTavqrn8DEtXZT6LE/6oeOHy5f0bC1+AwAdlWN9JJyKjZEWpmjDJypshWXAE020dVUBLiNR/QU+2
+	mjiqpXzL39fjr4HfrzKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdiPS-0004W6-Ct; Tue, 26 May 2020 22:50:58 +0000
-Received: from mail-il1-f195.google.com ([209.85.166.195])
+	id 1jdiQR-0004ps-6K; Tue, 26 May 2020 22:51:59 +0000
+Received: from mail-io1-f67.google.com ([209.85.166.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdiPI-0004Mz-W5
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 22:50:50 +0000
-Received: by mail-il1-f195.google.com with SMTP id v11so4808060ilh.1
+ id 1jdiQD-0004p5-F2
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 22:51:47 +0000
+Received: by mail-io1-f67.google.com with SMTP id k18so23980219ion.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 15:50:48 -0700 (PDT)
+ Tue, 26 May 2020 15:51:45 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=OK9x5VtJCjk7ns+n8rJJ2eqoCOZIYQWVhZELo9bv0M0=;
- b=UY69ORgY18FkJRVw6qnVcjCYnppUHhzr9PL0C5MG4jrDArKOudnJb5D8wqsYlNYqlz
- 7YnGyIyGdCiqU4pgNU7JLHbn8Koct59Emo0VD3J+nc66NPiJBTOrwcrH3xDnDjSDVoeY
- hHrqPQbUmHDWgrO5ofX8vRhOIcyvPWZo4LqhzeBf2RJmAmWPnBsWqHxz/BrbhYbod4MP
- tWIT2h6WnQBtVHAeV7P6JsR5RmLXatmb3CLh8yRCSrepc6gmwXtsryc6jc6yHHFGchsv
- psBF7acW7TZUpaQEjDU+T6kaeXGlNmbqaFmOhHQ6RS6MaHeMZPU8RrUxlfjEe/OPFzI8
- jtlw==
-X-Gm-Message-State: AOAM532dLKfOg6M6LwT5aCZv4pe3f1Bx6ZCNpc/VLgzsHWET2aunN488
- KHSCL4TBVH81aprOFmWuJg==
-X-Google-Smtp-Source: ABdhPJztTmAtLvK+aSkJiWcjWBiMfCXKr7NUWfYDNNlMqP/XiIh8cqEiim/xZKuMj+BxyZrpFjDSLA==
-X-Received: by 2002:a92:5ec1:: with SMTP id f62mr3408821ilg.80.1590533448280; 
- Tue, 26 May 2020 15:50:48 -0700 (PDT)
+ bh=b//O80efuR9XCAH6meLDCFiWRVl9cYjfSg/OL1ItrFE=;
+ b=dWmVGffQSoeACKXElq78Q2CeJvTvS+fN59+73lFC5Iv7tXBIyA7AU7KIjacBsr9eRv
+ mNoc+Mi+0DMGN0TRB2jCUE+VBudpfgxzwE9UdKf3mXwpLh76tJrNO3dcVD0mR78y+GCR
+ PML031cMVTXVREjJjnveNqIRm6OVTXJKUBlfqzJL6S2rqVqO+FLBXqRF6qXJp4U6GV3n
+ V5nP1XHaXzR7syaG9TcO/as5wiodHdRx+V9XzaJnzTsgP/96WtZ+UH3VvcWjhuvY9I9q
+ vtfGGVl97bVcuRsah/2BkO0FSJgR1r6j54ghdGv82T3MUM+ref4e4MMN8zfqynUM9TM4
+ wg9w==
+X-Gm-Message-State: AOAM5315KSGd0Ivycymvj17V8gptns65JBbmlF+ajETqcJjPllBvwCbk
+ VqpBuxJ+By0PVAkj+9wUfw==
+X-Google-Smtp-Source: ABdhPJyzPZNiAEIXvFn8cBENJZbF+cuL2BgGEDt1Uc90DnYvpmSvolGQ6Om+x4XqHV+RQZDT2HHctg==
+X-Received: by 2002:a05:6638:44e:: with SMTP id
+ r14mr3241032jap.53.1590533503186; 
+ Tue, 26 May 2020 15:51:43 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id k18sm477196ioj.54.2020.05.26.15.50.47
+ by smtp.gmail.com with ESMTPSA id p75sm524459ilb.23.2020.05.26.15.51.42
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 15:50:47 -0700 (PDT)
-Received: (nullmailer pid 534722 invoked by uid 1000);
- Tue, 26 May 2020 22:50:46 -0000
-Date: Tue, 26 May 2020 16:50:46 -0600
+ Tue, 26 May 2020 15:51:42 -0700 (PDT)
+Received: (nullmailer pid 536270 invoked by uid 1000);
+ Tue, 26 May 2020 22:51:41 -0000
+Date: Tue, 26 May 2020 16:51:41 -0600
 From: Rob Herring <robh@kernel.org>
 To: Kamel Bouhara <kamel.bouhara@bootlin.com>
-Subject: Re: [PATCH v5 3/5] dt-bindings: microchip: atmel, at91rm9200-tcb:
- add sama5d2 compatible
-Message-ID: <20200526225046.GA534667@bogus>
+Subject: Re: [PATCH v5 4/5] dt-bindings: counter: microchip-tcb-capture counter
+Message-ID: <20200526225141.GA536209@bogus>
 References: <20200519083716.938384-1-kamel.bouhara@bootlin.com>
- <20200519083716.938384-4-kamel.bouhara@bootlin.com>
+ <20200519083716.938384-5-kamel.bouhara@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200519083716.938384-4-kamel.bouhara@bootlin.com>
+In-Reply-To: <20200519083716.938384-5-kamel.bouhara@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_155049_035853_BC15B999 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20200526_155145_922523_37BD1464 
+X-CRM114-Status: GOOD (  10.88  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.195 listed in list.dnswl.org]
+ no trust [209.85.166.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -78,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.195 listed in wl.mailspike.net]
+ [209.85.166.67 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,17 +104,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 19 May 2020 10:37:14 +0200, Kamel Bouhara wrote:
-> From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+On Tue, 19 May 2020 10:37:15 +0200, Kamel Bouhara wrote:
+> Describe the devicetree binding for the Microchip TCB module.
+> Each counter blocks exposes three independent counters.
 > 
-> The sama5d2 TC block TIMER_CLOCK1 is different from the at91sam9x5 one.
-> Instead of being MCK / 2, it is the TCB GCLK.
+> However, when configured in quadrature decoder, both channel <0> and <1>
+> are required for speed/position and rotation capture (yet only the
+> position is captured).
 > 
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
 > ---
->  .../soc/microchip/atmel,at91rm9200-tcb.yaml   | 36 +++++++++++++++----
->  1 file changed, 30 insertions(+), 6 deletions(-)
+>  .../soc/microchip/atmel,at91rm9200-tcb.yaml   | 32 +++++++++++++++++--
+>  1 file changed, 29 insertions(+), 3 deletions(-)
 > 
 
 Reviewed-by: Rob Herring <robh@kernel.org>
