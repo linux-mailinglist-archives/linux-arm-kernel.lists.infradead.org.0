@@ -2,84 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C60E1E25EA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 17:47:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84F541E25F9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 17:50:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fqS+JSVfuYRAtzcKPxYspCfdKou2coXpqmNbgz6rwF8=; b=pjXANLF9B7R3LY
-	6Pn5sJdj24OI/eX/tvB4rMenDiHlHETsrIQAQWVYGoHQYYKYiiyvy1EsX+NFu/9ArDbv13h2qCN2x
-	gP0/sFgZ2FPTcieChOmWatdYZLtpyKncgWy6FxGRn9qez0BWDuM+rwDiIRU/bhBW2Bcue6o1uz/iF
-	BHRHYUhf/2vglcKoduIxGUNBBjVnQO7NurB08VDoJZ4t0214NVWoMyevT9Tn+YOOuwYSQGM88LQIq
-	rcaaY0IdQuAO4HRM5kK65SnhRzIfdcXa/5mUphdMCUK12Pj8EgWfmttODon5X69mKFv8l5rMajt2n
-	+xqPOAOcE5hh8q55wOeA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lm8N0oxtC6vuD3BDp4UMtQR/W1dDHycYoPIXP6NjVJY=; b=WhMDL92kc1jood
+	xDbfT26tYnfNpB841zzKSVZWQlAfi+I5xCt4EhfV2qMr0DNDNSA349vjtHxDZ4j19hq933uSMuwnX
+	9gWaQP/4oHuL+D2p++TNkK6j8v6ExP5COa2ALajBc6yhkYoxH5AIUfRoxiyg3nhwNGmuxgZIiwE4d
+	j1OYqy6mVwhJoojBvDKCn6FTBaxnCjBLFyXII55DKYwhkCl2quG6iJqBpxI8G+8XYJiHA7RsnVw13
+	I0ledRyaolqa7beke9W6BFk7+iUp5EXY1nXHR+KfPe+CQP4SVX1XKXTfIU7JuW0QOWwIOnrvB2U/3
+	nQ6LP/58+8Wm0x6dW9Tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdbnF-0003MK-MV; Tue, 26 May 2020 15:47:05 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jdbqS-00068o-Kn; Tue, 26 May 2020 15:50:24 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdbn3-0003LR-LT
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 15:46:56 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04QFc07m031285; Tue, 26 May 2020 17:46:45 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=b4wjkm6Iy2b2Lpx8W3eFEs6QIfIzRY7QOu/YTAOG5RA=;
- b=M9QJgbKVx5NiL1aLnuBuNOQYcTiRnBZCjSPwdlyDWxqhCBIileZ0yicHoeWDopWPCbtq
- +HdwPUcvogz8DKoUiMPlasibINLFgL0lRZ0mYFIRfSGiV4nb18RX22mYtoadiAA0uqgM
- X/lve2MVKCx7y/L6wKzfrvT/SsW2AgJFHqPd7swybFvHQKDXKv2JGWIxMr1SbqR3mWQ6
- Wumwg+h8orYs2n5Um+ciHX9DQlx+4xqxj2KSakfbTBW8E5y2YX4Egm8RbH5YLvFDJHGv
- KMyO8kiA44cxe+l178n43BuQpwEhj1YBdCwzMEyl2OYmSK2dmeKK700d1f9vlRA1NIfW VQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 316sa20jss-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 26 May 2020 17:46:45 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 08D80100034;
- Tue, 26 May 2020 17:46:43 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id DAF162B7630;
- Tue, 26 May 2020 17:46:43 +0200 (CEST)
-Received: from [10.211.14.197] (10.75.127.47) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 26 May
- 2020 17:46:42 +0200
-Subject: Re: [PATCH v3] iio: stm32-adc: remove usage of iio_priv_to_dev()
- helper
-To: Alexandru Ardelean <alexandru.ardelean@analog.com>,
- <linux-iio@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-References: <20200525090720.72696-1-alexandru.ardelean@analog.com>
- <20200526134448.7328-1-alexandru.ardelean@analog.com>
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-Message-ID: <cc5dc422-d1a6-ab95-a1c3-a8e0b38a145a@st.com>
-Date: Tue, 26 May 2020 17:46:41 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jdbqJ-00068I-O7
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 15:50:17 +0000
+Received: from mail-ot1-f51.google.com (mail-ot1-f51.google.com
+ [209.85.210.51])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 32B56207FB
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 15:50:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590508215;
+ bh=n9OM2fFSf16C1I2b0d7pMlEO5gt8rUveka5ZBWsVLKg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=2FhOafBucGNwl+pSFTBvtxIsVpQx+bpBff0YXT6n7Rma5X8IYNpOt4W+CU4mSBkxu
+ d5GbrmX6AxLQmawQNKLMXk5i/0SDlcuRQdetZ6LkCFfQMjL6HwWViVAyv9N1X/hoiV
+ aw9eXn+xu0fwItal3fevZR9MAfvkNh12Lz2LfpGk=
+Received: by mail-ot1-f51.google.com with SMTP id 69so16688123otv.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 08:50:15 -0700 (PDT)
+X-Gm-Message-State: AOAM5300RAdgN78yy2E3rC4KX2rgqACdqEWnpKQomS5VnbBdF2Lg4GlP
+ 5UKben7MBdSkUJludsw0yGC23KIfEePwekvegA==
+X-Google-Smtp-Source: ABdhPJwAp7On1Gynih3RH+9t/TRqpx2YKtctrng2hJWHE/pPchcJNoyQ8L1Q44zI4Uqfdk/rQ3mZnFPxBrfD02PzMms=
+X-Received: by 2002:a05:6830:3104:: with SMTP id
+ b4mr1361062ots.192.1590508214285; 
+ Tue, 26 May 2020 08:50:14 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200526134448.7328-1-alexandru.ardelean@analog.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-05-26_02:2020-05-26,
- 2020-05-26 signatures=0
+References: <20200513103016.130417-1-andre.przywara@arm.com>
+ <20200513103016.130417-2-andre.przywara@arm.com>
+ <CAMuHMdXkHF3ioOVzDZQARiO2i1z8rVjdN_Q0VggaVD4Ln7J+Dw@mail.gmail.com>
+ <6e2cc3e9-b14f-2b50-0390-addcc82389e0@arm.com>
+In-Reply-To: <6e2cc3e9-b14f-2b50-0390-addcc82389e0@arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Tue, 26 May 2020 09:49:38 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqJpe_EMC4cqXVtxY9XVrVfqDNU3=-1_47wmirFLtA1Lcg@mail.gmail.com>
+Message-ID: <CAL_JsqJpe_EMC4cqXVtxY9XVrVfqDNU3=-1_47wmirFLtA1Lcg@mail.gmail.com>
+Subject: Re: [PATCH v3 01/20] dt-bindings: arm: gic: Allow combining
+ arm,gic-400 compatible strings
+To: =?UTF-8?Q?Andr=C3=A9_Przywara?= <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_084654_146758_5820E353 
-X-CRM114-Status: GOOD (  27.83  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200526_085015_826191_5405F859 
+X-CRM114-Status: GOOD (  20.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,421 +90,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: olivier.moysan@st.com, mcoquelin.stm32@gmail.com, jic23@kernel.org,
- alexandre.torgue@st.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Liviu Dudau <liviu.dudau@arm.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/26/20 3:44 PM, Alexandru Ardelean wrote:
-> We may want to get rid of the iio_priv_to_dev() helper. The reason is that
-> we will hide some of the members of the iio_dev structure (to prevent
-> drivers from accessing them directly), and that will also mean hiding the
-> implementation of the iio_priv_to_dev() helper inside the IIO core.
-> 
-> Hiding the implementation of iio_priv_to_dev() implies that some fast-paths
-> may not be fast anymore, so a general idea is to try to get rid of the
-> iio_priv_to_dev() altogether.
-> The iio_priv() helper won't be affected by the rework, as the iio_dev
-> struct will keep a reference to the private information.
-> 
-> For this driver, not using iio_priv_to_dev(), means reworking some paths to
-> pass the iio device and using iio_priv() to access the private information.
-> 
-> Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-> ---
-> 
-> Changelog v2 -> v3:
-> - update doc-strings; warnings show-up during build with W=1 arg
-> 
-> Changelog v1 -> v2:
-> - converted to pass reference to IIO device in function hooks (vs
->   reference
->   to adc private data)
-> 
->  drivers/iio/adc/stm32-adc.c | 118 +++++++++++++++++++-----------------
->  1 file changed, 63 insertions(+), 55 deletions(-)
-
-Hi Alexandru,
-
-Acked-by: Fabrice Gasnier <fabrice.gasnier@st.com>
-
-Thanks,
-Fabrice
-
-> 
-> diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
-> index ae622ee6d08c..1dd97ec5571c 100644
-> --- a/drivers/iio/adc/stm32-adc.c
-> +++ b/drivers/iio/adc/stm32-adc.c
-> @@ -162,10 +162,10 @@ struct stm32_adc_cfg {
->  	struct stm32_adc_trig_info	*trigs;
->  	bool clk_required;
->  	bool has_vregready;
-> -	int (*prepare)(struct stm32_adc *);
-> -	void (*start_conv)(struct stm32_adc *, bool dma);
-> -	void (*stop_conv)(struct stm32_adc *);
-> -	void (*unprepare)(struct stm32_adc *);
-> +	int (*prepare)(struct iio_dev *);
-> +	void (*start_conv)(struct iio_dev *, bool dma);
-> +	void (*stop_conv)(struct iio_dev *);
-> +	void (*unprepare)(struct iio_dev *);
->  	const unsigned int *smp_cycles;
->  };
->  
-> @@ -538,10 +538,11 @@ static void stm32_adc_set_res(struct stm32_adc *adc)
->  
->  static int stm32_adc_hw_stop(struct device *dev)
->  {
-> -	struct stm32_adc *adc = dev_get_drvdata(dev);
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  
->  	if (adc->cfg->unprepare)
-> -		adc->cfg->unprepare(adc);
-> +		adc->cfg->unprepare(indio_dev);
->  
->  	if (adc->clk)
->  		clk_disable_unprepare(adc->clk);
-> @@ -551,7 +552,8 @@ static int stm32_adc_hw_stop(struct device *dev)
->  
->  static int stm32_adc_hw_start(struct device *dev)
->  {
-> -	struct stm32_adc *adc = dev_get_drvdata(dev);
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int ret;
->  
->  	if (adc->clk) {
-> @@ -563,7 +565,7 @@ static int stm32_adc_hw_start(struct device *dev)
->  	stm32_adc_set_res(adc);
->  
->  	if (adc->cfg->prepare) {
-> -		ret = adc->cfg->prepare(adc);
-> +		ret = adc->cfg->prepare(indio_dev);
->  		if (ret)
->  			goto err_clk_dis;
->  	}
-> @@ -579,7 +581,7 @@ static int stm32_adc_hw_start(struct device *dev)
->  
->  /**
->   * stm32f4_adc_start_conv() - Start conversions for regular channels.
-> - * @adc: stm32 adc instance
-> + * @indio_dev: IIO device instance
->   * @dma: use dma to transfer conversion result
->   *
->   * Start conversions for regular channels.
-> @@ -587,8 +589,10 @@ static int stm32_adc_hw_start(struct device *dev)
->   * conversions, in IIO buffer modes. Otherwise, use ADC interrupt with direct
->   * DR read instead (e.g. read_raw, or triggered buffer mode without DMA).
->   */
-> -static void stm32f4_adc_start_conv(struct stm32_adc *adc, bool dma)
-> +static void stm32f4_adc_start_conv(struct iio_dev *indio_dev, bool dma)
->  {
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
-> +
->  	stm32_adc_set_bits(adc, STM32F4_ADC_CR1, STM32F4_SCAN);
->  
->  	if (dma)
-> @@ -605,8 +609,10 @@ static void stm32f4_adc_start_conv(struct stm32_adc *adc, bool dma)
->  		stm32_adc_set_bits(adc, STM32F4_ADC_CR2, STM32F4_SWSTART);
->  }
->  
-> -static void stm32f4_adc_stop_conv(struct stm32_adc *adc)
-> +static void stm32f4_adc_stop_conv(struct iio_dev *indio_dev)
->  {
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
-> +
->  	stm32_adc_clr_bits(adc, STM32F4_ADC_CR2, STM32F4_EXTEN_MASK);
->  	stm32_adc_clr_bits(adc, STM32F4_ADC_SR, STM32F4_STRT);
->  
-> @@ -615,8 +621,9 @@ static void stm32f4_adc_stop_conv(struct stm32_adc *adc)
->  			   STM32F4_ADON | STM32F4_DMA | STM32F4_DDS);
->  }
->  
-> -static void stm32h7_adc_start_conv(struct stm32_adc *adc, bool dma)
-> +static void stm32h7_adc_start_conv(struct iio_dev *indio_dev, bool dma)
->  {
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	enum stm32h7_adc_dmngt dmngt;
->  	unsigned long flags;
->  	u32 val;
-> @@ -635,9 +642,9 @@ static void stm32h7_adc_start_conv(struct stm32_adc *adc, bool dma)
->  	stm32_adc_set_bits(adc, STM32H7_ADC_CR, STM32H7_ADSTART);
->  }
->  
-> -static void stm32h7_adc_stop_conv(struct stm32_adc *adc)
-> +static void stm32h7_adc_stop_conv(struct iio_dev *indio_dev)
->  {
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int ret;
->  	u32 val;
->  
-> @@ -652,9 +659,9 @@ static void stm32h7_adc_stop_conv(struct stm32_adc *adc)
->  	stm32_adc_clr_bits(adc, STM32H7_ADC_CFGR, STM32H7_DMNGT_MASK);
->  }
->  
-> -static int stm32h7_adc_exit_pwr_down(struct stm32_adc *adc)
-> +static int stm32h7_adc_exit_pwr_down(struct iio_dev *indio_dev)
->  {
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int ret;
->  	u32 val;
->  
-> @@ -690,9 +697,9 @@ static void stm32h7_adc_enter_pwr_down(struct stm32_adc *adc)
->  	stm32_adc_set_bits(adc, STM32H7_ADC_CR, STM32H7_DEEPPWD);
->  }
->  
-> -static int stm32h7_adc_enable(struct stm32_adc *adc)
-> +static int stm32h7_adc_enable(struct iio_dev *indio_dev)
->  {
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int ret;
->  	u32 val;
->  
-> @@ -713,9 +720,9 @@ static int stm32h7_adc_enable(struct stm32_adc *adc)
->  	return ret;
->  }
->  
-> -static void stm32h7_adc_disable(struct stm32_adc *adc)
-> +static void stm32h7_adc_disable(struct iio_dev *indio_dev)
->  {
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int ret;
->  	u32 val;
->  
-> @@ -730,12 +737,12 @@ static void stm32h7_adc_disable(struct stm32_adc *adc)
->  
->  /**
->   * stm32h7_adc_read_selfcalib() - read calibration shadow regs, save result
-> - * @adc: stm32 adc instance
-> + * @indio_dev: IIO device instance
->   * Note: Must be called once ADC is enabled, so LINCALRDYW[1..6] are writable
->   */
-> -static int stm32h7_adc_read_selfcalib(struct stm32_adc *adc)
-> +static int stm32h7_adc_read_selfcalib(struct iio_dev *indio_dev)
->  {
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int i, ret;
->  	u32 lincalrdyw_mask, val;
->  
-> @@ -774,12 +781,12 @@ static int stm32h7_adc_read_selfcalib(struct stm32_adc *adc)
->  
->  /**
->   * stm32h7_adc_restore_selfcalib() - Restore saved self-calibration result
-> - * @adc: stm32 adc instance
-> + * @indio_dev: IIO device instance
->   * Note: ADC must be enabled, with no on-going conversions.
->   */
-> -static int stm32h7_adc_restore_selfcalib(struct stm32_adc *adc)
-> +static int stm32h7_adc_restore_selfcalib(struct iio_dev *indio_dev)
->  {
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int i, ret;
->  	u32 lincalrdyw_mask, val;
->  
-> @@ -847,12 +854,12 @@ static int stm32h7_adc_restore_selfcalib(struct stm32_adc *adc)
->  
->  /**
->   * stm32h7_adc_selfcalib() - Procedure to calibrate ADC
-> - * @adc: stm32 adc instance
-> + * @indio_dev: IIO device instance
->   * Note: Must be called once ADC is out of power down.
->   */
-> -static int stm32h7_adc_selfcalib(struct stm32_adc *adc)
-> +static int stm32h7_adc_selfcalib(struct iio_dev *indio_dev)
->  {
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int ret;
->  	u32 val;
->  
-> @@ -903,7 +910,7 @@ static int stm32h7_adc_selfcalib(struct stm32_adc *adc)
->  
->  /**
->   * stm32h7_adc_prepare() - Leave power down mode to enable ADC.
-> - * @adc: stm32 adc instance
-> + * @indio_dev: IIO device instance
->   * Leave power down mode.
->   * Configure channels as single ended or differential before enabling ADC.
->   * Enable ADC.
-> @@ -912,30 +919,31 @@ static int stm32h7_adc_selfcalib(struct stm32_adc *adc)
->   * - Only one input is selected for single ended (e.g. 'vinp')
->   * - Two inputs are selected for differential channels (e.g. 'vinp' & 'vinn')
->   */
-> -static int stm32h7_adc_prepare(struct stm32_adc *adc)
-> +static int stm32h7_adc_prepare(struct iio_dev *indio_dev)
->  {
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	int calib, ret;
->  
-> -	ret = stm32h7_adc_exit_pwr_down(adc);
-> +	ret = stm32h7_adc_exit_pwr_down(indio_dev);
->  	if (ret)
->  		return ret;
->  
-> -	ret = stm32h7_adc_selfcalib(adc);
-> +	ret = stm32h7_adc_selfcalib(indio_dev);
->  	if (ret < 0)
->  		goto pwr_dwn;
->  	calib = ret;
->  
->  	stm32_adc_writel(adc, STM32H7_ADC_DIFSEL, adc->difsel);
->  
-> -	ret = stm32h7_adc_enable(adc);
-> +	ret = stm32h7_adc_enable(indio_dev);
->  	if (ret)
->  		goto pwr_dwn;
->  
->  	/* Either restore or read calibration result for future reference */
->  	if (calib)
-> -		ret = stm32h7_adc_restore_selfcalib(adc);
-> +		ret = stm32h7_adc_restore_selfcalib(indio_dev);
->  	else
-> -		ret = stm32h7_adc_read_selfcalib(adc);
-> +		ret = stm32h7_adc_read_selfcalib(indio_dev);
->  	if (ret)
->  		goto disable;
->  
-> @@ -944,16 +952,18 @@ static int stm32h7_adc_prepare(struct stm32_adc *adc)
->  	return 0;
->  
->  disable:
-> -	stm32h7_adc_disable(adc);
-> +	stm32h7_adc_disable(indio_dev);
->  pwr_dwn:
->  	stm32h7_adc_enter_pwr_down(adc);
->  
->  	return ret;
->  }
->  
-> -static void stm32h7_adc_unprepare(struct stm32_adc *adc)
-> +static void stm32h7_adc_unprepare(struct iio_dev *indio_dev)
->  {
-> -	stm32h7_adc_disable(adc);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
-> +
-> +	stm32h7_adc_disable(indio_dev);
->  	stm32h7_adc_enter_pwr_down(adc);
->  }
->  
-> @@ -1160,7 +1170,7 @@ static int stm32_adc_single_conv(struct iio_dev *indio_dev,
->  
->  	stm32_adc_conv_irq_enable(adc);
->  
-> -	adc->cfg->start_conv(adc, false);
-> +	adc->cfg->start_conv(indio_dev, false);
->  
->  	timeout = wait_for_completion_interruptible_timeout(
->  					&adc->completion, STM32_ADC_TIMEOUT);
-> @@ -1173,7 +1183,7 @@ static int stm32_adc_single_conv(struct iio_dev *indio_dev,
->  		ret = IIO_VAL_INT;
->  	}
->  
-> -	adc->cfg->stop_conv(adc);
-> +	adc->cfg->stop_conv(indio_dev);
->  
->  	stm32_adc_conv_irq_disable(adc);
->  
-> @@ -1227,8 +1237,8 @@ static int stm32_adc_read_raw(struct iio_dev *indio_dev,
->  
->  static irqreturn_t stm32_adc_threaded_isr(int irq, void *data)
->  {
-> -	struct stm32_adc *adc = data;
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct iio_dev *indio_dev = data;
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	const struct stm32_adc_regspec *regs = adc->cfg->regs;
->  	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
->  
-> @@ -1240,8 +1250,8 @@ static irqreturn_t stm32_adc_threaded_isr(int irq, void *data)
->  
->  static irqreturn_t stm32_adc_isr(int irq, void *data)
->  {
-> -	struct stm32_adc *adc = data;
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct iio_dev *indio_dev = data;
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  	const struct stm32_adc_regspec *regs = adc->cfg->regs;
->  	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
->  
-> @@ -1514,7 +1524,7 @@ static int __stm32_adc_buffer_postenable(struct iio_dev *indio_dev)
->  	if (!adc->dma_chan)
->  		stm32_adc_conv_irq_enable(adc);
->  
-> -	adc->cfg->start_conv(adc, !!adc->dma_chan);
-> +	adc->cfg->start_conv(indio_dev, !!adc->dma_chan);
->  
->  	return 0;
->  
-> @@ -1547,7 +1557,7 @@ static void __stm32_adc_buffer_predisable(struct iio_dev *indio_dev)
->  	struct stm32_adc *adc = iio_priv(indio_dev);
->  	struct device *dev = indio_dev->dev.parent;
->  
-> -	adc->cfg->stop_conv(adc);
-> +	adc->cfg->stop_conv(indio_dev);
->  	if (!adc->dma_chan)
->  		stm32_adc_conv_irq_disable(adc);
->  
-> @@ -1891,7 +1901,7 @@ static int stm32_adc_probe(struct platform_device *pdev)
->  	indio_dev->info = &stm32_adc_iio_info;
->  	indio_dev->modes = INDIO_DIRECT_MODE | INDIO_HARDWARE_TRIGGERED;
->  
-> -	platform_set_drvdata(pdev, adc);
-> +	platform_set_drvdata(pdev, indio_dev);
->  
->  	ret = of_property_read_u32(pdev->dev.of_node, "reg", &adc->offset);
->  	if (ret != 0) {
-> @@ -1905,7 +1915,7 @@ static int stm32_adc_probe(struct platform_device *pdev)
->  
->  	ret = devm_request_threaded_irq(&pdev->dev, adc->irq, stm32_adc_isr,
->  					stm32_adc_threaded_isr,
-> -					0, pdev->name, adc);
-> +					0, pdev->name, indio_dev);
->  	if (ret) {
->  		dev_err(&pdev->dev, "failed to request IRQ\n");
->  		return ret;
-> @@ -1989,8 +1999,8 @@ static int stm32_adc_probe(struct platform_device *pdev)
->  
->  static int stm32_adc_remove(struct platform_device *pdev)
->  {
-> -	struct stm32_adc *adc = platform_get_drvdata(pdev);
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
-> +	struct stm32_adc *adc = iio_priv(indio_dev);
->  
->  	pm_runtime_get_sync(&pdev->dev);
->  	iio_device_unregister(indio_dev);
-> @@ -2012,8 +2022,7 @@ static int stm32_adc_remove(struct platform_device *pdev)
->  #if defined(CONFIG_PM_SLEEP)
->  static int stm32_adc_suspend(struct device *dev)
->  {
-> -	struct stm32_adc *adc = dev_get_drvdata(dev);
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
->  
->  	if (iio_buffer_enabled(indio_dev))
->  		__stm32_adc_buffer_predisable(indio_dev);
-> @@ -2023,8 +2032,7 @@ static int stm32_adc_suspend(struct device *dev)
->  
->  static int stm32_adc_resume(struct device *dev)
->  {
-> -	struct stm32_adc *adc = dev_get_drvdata(dev);
-> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
->  	int ret;
->  
->  	ret = pm_runtime_force_resume(dev);
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBNYXkgMTksIDIwMjAgYXQgMzoyMCBBTSBBbmRyw6kgUHJ6eXdhcmEgPGFuZHJlLnBy
+enl3YXJhQGFybS5jb20+IHdyb3RlOgo+Cj4gT24gMTkvMDUvMjAyMCAwODozOSwgR2VlcnQgVXl0
+dGVyaG9ldmVuIHdyb3RlOgo+Cj4gSGkgR2VlcnQsCj4KPgo+ID4gT24gV2VkLCBNYXkgMTMsIDIw
+MjAgYXQgMTI6MzEgUE0gQW5kcmUgUHJ6eXdhcmEgPGFuZHJlLnByenl3YXJhQGFybS5jb20+IHdy
+b3RlOgo+ID4+IFRoZSBhcm0sZ2ljLTQwMCBjb21wYXRpYmxlIGlzIHByb2JhYmx5IHRoZSBiZXN0
+IG1hdGNoaW5nIHN0cmluZyBmb3IgdGhlCj4gPj4gR0lDIGluIG1vc3QgbW9kZXJuIFNvQ3MsIGJ1
+dCB3YXMgb25seSBpbnRyb2R1Y2VkIGxhdGVyIGludG8gdGhlIGtlcm5lbC4KPiA+PiBGb3IgaGlz
+dG9yaWMgcmVhc29ucyBhbmQgdG8ga2VlcCBjb21wYXRpYmlsaXR5LCBzb21lIFNvQyBEVHMgd2Vy
+ZSB0aHVzCj4gPj4gdXNpbmcgYSBjb21iaW5hdGlvbiBvZiB0aGlzIG5hbWUgYW5kIG9uZSBvZiB0
+aGUgb2xkZXIgc3RyaW5ncywgd2hpY2gKPiA+PiBjdXJyZW50bHkgdGhlIGJpbmRpbmcgZGVuaWVz
+Lgo+ID4+Cj4gPj4gQWRkIGEgc3RhbnphIHRvIHRoZSBEVCBiaW5kaW5nIHRvIGFsbG93ICJhcm0s
+Z2ljLTQwMCIsIGZvbGxvd2VkIGJ5Cj4gPj4gZWl0aGVyICJhcm0sY29ydGV4LWExNS1naWMiIG9y
+ICJhcm0sY29ydGV4LWE3LWdpYyIuIFRoaXMgZml4ZXMgYmluZGluZwo+ID4+IGNvbXBsaWFuY2Ug
+Zm9yIHF1aXRlIHNvbWUgU29DIC5kdHNpIGZpbGVzIGluIHRoZSBrZXJuZWwgdHJlZS4KPiA+Pgo+
+ID4+IFNpZ25lZC1vZmYtYnk6IEFuZHJlIFByenl3YXJhIDxhbmRyZS5wcnp5d2FyYUBhcm0uY29t
+Pgo+ID4KPiA+IFRoYW5rcyBmb3IgeW91ciBwYXRjaCwgSSB3YXMganVzdCBsb29raW5nIGludG8g
+dGhpcyBpc3N1ZSA7LSkKPiA+Cj4gPj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2Jp
+bmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL2FybSxnaWMueWFtbAo+ID4+ICsrKyBiL0RvY3Vt
+ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9hcm0sZ2lj
+LnlhbWwKPiA+PiBAQCAtMzksNiArMzksMTIgQEAgcHJvcGVydGllczoKPiA+PiAgICAgICAgICAg
+ICAgICAtIHFjb20sbXNtLTg2NjAtcWdpYwo+ID4+ICAgICAgICAgICAgICAgIC0gcWNvbSxtc20t
+cWdpYzIKPiA+Pgo+ID4+ICsgICAgICAtIGl0ZW1zOgo+ID4+ICsgICAgICAgICAgLSBjb25zdDog
+YXJtLGdpYy00MDAKPiA+PiArICAgICAgICAgIC0gZW51bToKPiA+PiArICAgICAgICAgICAgIC0g
+YXJtLGNvcnRleC1hMTUtZ2ljCj4gPj4gKyAgICAgICAgICAgICAtIGFybSxjb3J0ZXgtYTctZ2lj
+Cj4gPj4gKwo+ID4+ICAgICAgICAtIGl0ZW1zOgo+ID4+ICAgICAgICAgICAgLSBjb25zdDogYXJt
+LGFybTExNzZqemYtZGV2Y2hpcC1naWMKPiA+PiAgICAgICAgICAgIC0gY29uc3Q6IGFybSxhcm0x
+MW1wLWdpYwo+ID4KPiA+IGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJu
+ZWwvZ2l0L3RvcnZhbGRzL2xpbnV4LmdpdC90cmVlL2FyY2gvYXJtL2Jvb3QvZHRzL3I5YTA2ZzAz
+Mi5kdHNpI24xNzcKPiA+IGhhcyB0aGVtIGluIHRoZSBvdGhlciBvcmRlci4KPiA+Cj4gPiBXaGF0
+IGRvIHlvdSB0aGluayBpcyB0aGUgcHJlZmVycmVkIHNvbHV0aW9uOiByZXZlcnRpbmcgdGhlIG9y
+ZGVyLCBvciBkcm9wcGluZwo+ID4gb25lIG9yIHRoZSBvdGhlcj8KPgo+IFJldmVydGluZyB0aGUg
+b3JkZXIgd291bGQgYmUgdGhlIHJpZ2h0IHRoaW5nLiBUaGVvcmV0aWNhbGx5IHRoaXMgbWlnaHQK
+PiBjaGFuZ2Ugd2hhdCB0aGUgZHJpdmVycyBtYXRjaCBhZ2FpbnN0LCBidXQgdGhlcmUgc2hvdWxk
+IGJlIG5vIGRpZmZlcmVuY2UKPiBiZXR3ZWVuIHRob3NlIHN0cmluZ3MgYW55d2F5LiBBbmQgY2Vy
+dGFpbmx5IExpbnV4IGRvZXMgbm90IGNhcmUgd2hpY2ggb2YKPiB0aGUgbWFueSBzdHJpbmdzIGl0
+IHNlZXMuCj4KPiBUaGUgcHJvcGVyIG9yZGVyIGlzIG5vdCByZWFsbHkgb2J2aW91cyBoZXJlLCBi
+dXQgdGhlIGNvcnRleC1hezE1LDd9LWdpYwo+IG5hbWVzIHNlcnZlIGFzIHRoZSBtaXNzaW5nICJh
+cm0sZ2ljLXYyIiBnZW5lcmljIGZhbGxiYWNrIHN0cmluZyBoZXJlLCBJCj4gdGhpbmsganVzdCBm
+b3IgaGlzdG9yaWNhbCByZWFzb25zLgoKUmVhbGx5LCB0aGV5IHByb2JhYmx5IHNob3VsZCBoYXZl
+IGJlZW4gbXV0dWFsbHkgZXhjbHVzaXZlIGdpdmVuIGFuCmltcGxlbWVudGF0aW9uIGhhcyBvbmUg
+b3IgdGhlIG90aGVyLiBTaW5jZSB3ZSBoYXZlIGJvdGgsIHRoZSBvcmRlciBpbgp0aGUgc2NoZW1h
+IGlzIGNvcnJlY3QgZ2l2ZW4gZ2ljLTQwMCBpcyBhIHN1cGVyc2V0IChtdWx0aS1jbHVzdGVyKSBh
+bmQKdGhlIGNvbXBhdGlibGUgY2FtZSBsYXRlciBpbiB0aW1lLgoKUm9iCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
