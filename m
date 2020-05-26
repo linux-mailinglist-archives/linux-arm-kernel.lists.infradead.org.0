@@ -2,135 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EC311E1BB0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 09:01:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E9341E1BB5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 09:02:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j0rAgNCL+zZnc8FYlYz+Acgv31z+P5Oc/By8q2ZTEDc=; b=S2FAQJyMd0miDK
-	5Xih7qx41EQLWENb5LpwoGdlWJSDaRcJJ780jN3TPyBQ6lAf0+moB9BuFDQpTHNs917gbloYJ96iH
-	8za3pdu9tCfCZeROptMahm5K9l6GeIwB/WJEIDH8D8R1AROJincm2mLdtrUoW+bVPM/2hz+7SgpyT
-	nLmzGgIT3XLTLDvlrvWMhCU10L9NcJkQaQiF/PxUUXAu/8MJjqlP37JX946BD5DivdO7exsCJRjz9
-	ncZBonqJga8tqQaZZpqk7GtR3YVrOOXh63C4/DyXkVaUMaOZOqIU9N0j+9x6F9vNXw8a/xw6GKkCo
-	LbanJTZgNVUkzi2Xd/xg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=UwOHqZ7BjzrEYRM2cdGjbsT5nVOk0xYPO5Wo7g6Jzpo=; b=nWKMBuakZJZGP5OMlycnoMpi7
+	ETv17epcgy5ri258QgVy7hIGdJ6gaXSJqw3r6W7uIYPo0zkPnEp9huKXRb5Y5pLXwGNErV85dQq1b
+	t05fjpUHZr+PlPj9/lMBn5Dk8GkxQ5lepUPVBU0yEJG4Lz9XyNe5XOQsp2roH/2pdUM4/t2YlM0bs
+	u76VxBAjdHsiC+faPK19IX2luLkCgq3flAjyJtfeE9TxoL7yiwtYdBcKGCbsi9vpW4vOgmH6lvIjb
+	9eE9/6kxBI/zC/k2Fu150Xm2Reu8g/qUCam8EPMZ8OAA89KiM1TyiX2BsYfqTwNBF9aDn75FjwHiZ
+	aMOX2rzJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdTae-0006My-6O; Tue, 26 May 2020 07:01:32 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1jdTbd-00072J-Rm; Tue, 26 May 2020 07:02:33 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdTaQ-0006Li-V3
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 07:01:21 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200526070114euoutp028951cc936fd6d469ec13481cc327a89d~Sge1CENqi2030920309euoutp02G
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 07:01:14 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200526070114euoutp028951cc936fd6d469ec13481cc327a89d~Sge1CENqi2030920309euoutp02G
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1590476474;
- bh=TExFOZKUdc91DA/GbHMHDJO6iJStmTQq07gI/F9otJQ=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=ngREkd6gYrNAjBeNsyQH+DEaEujwBqRY1BL4RCR5KQabW63nPllJUW5xg2Cm9yukH
- Vy9VGD3Xh4W753TQvCp/d4oiqMfMaG7vJC2xdhhFEdeDdvUqaoP+corfxWVEu8ZshP
- q/7zeiWI6qywQ2FJzxPS29eE2qhyf6orMDFwzing=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200526070114eucas1p1b21e7d81a2b80bed13fce326d04b8fa4~Sge0v3Mwc0579305793eucas1p1C;
- Tue, 26 May 2020 07:01:14 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id AD.1F.60698.9BEBCCE5; Tue, 26
- May 2020 08:01:14 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200526070113eucas1p1257c0e7ff6b0c11799b9e597c5f6b003~Sge0Z0u0a0565905659eucas1p1d;
- Tue, 26 May 2020 07:01:13 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200526070113eusmtrp14496b0af1b30c286212fd7472a072830~Sge0ZHP8Z3257232572eusmtrp1h;
- Tue, 26 May 2020 07:01:13 +0000 (GMT)
-X-AuditID: cbfec7f5-a29ff7000001ed1a-e1-5eccbeb959b9
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id C7.69.07950.9BEBCCE5; Tue, 26
- May 2020 08:01:13 +0100 (BST)
-Received: from [106.210.88.143] (unknown [106.210.88.143]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20200526070113eusmtip1691e79cbdd9856fa111356479cb767ac~Sgez0JoOV0550105501eusmtip1H;
- Tue, 26 May 2020 07:01:13 +0000 (GMT)
-Subject: Re: [PATCH v5 00/38] DRM: fix struct sg_table nents vs. orig_nents
- misuse
-To: Christoph Hellwig <hch@lst.de>
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-Message-ID: <83d04017-c6f2-d714-963c-ffa9c7248790@samsung.com>
-Date: Tue, 26 May 2020 09:01:15 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jdTbI-00070y-Eh
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 07:02:25 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1590476537; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=bxN1ySkS5OLFnpjDUyutSFYIlYJ92O/h8wsCXEUhy+Y=;
+ b=wb7zlsGOCA7ybNDg6Dgob+o9oh0k/GifBo5yZhNHvVml+E4MSBiVhBiU1XgMz+hkqKPWNJaW
+ /W2vZ7PwNS2WfMSsC/9Kfozfpu/BlXskC3T3w+NWnTYm4B28fsTDfsTifOvjIEI/ZlEDs9vU
+ +KVYivew3mKMPpBg1qB0mKeV4KM=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n05.prod.us-east-1.postgun.com with SMTP id
+ 5eccbedcea0dfa490e60a2e7 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 26 May 2020 07:01:48
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 5E0A4C43391; Tue, 26 May 2020 07:01:47 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id E5A78C433C6;
+ Tue, 26 May 2020 07:01:46 +0000 (UTC)
 MIME-Version: 1.0
-In-Reply-To: <20200513134741.GA12712@lst.de>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SbUhTYRTHee69m9fR5HEaHrQMFkkv9iIJXTLUXqj7qYQiyHB1czet3Izd
- 1AwqsZBaK62BbkvKrDBtak6ZZmSk6LI5WxmRFpmpH7LESh2YoW27Wn77/8/5nfN/Djw0qXgl
- CaePaU/xOi2XoZTKKHvH1Ku1zS1dqg3VHHO1u5Ng6ky1EmbWfp1k3k6OSZnKh+0EU/Ysjpl4
- O0AwtsF3EqanuVTKPP8xJEmUsdZbVsQ+9ZRRbKPns4Ttv+Ig2Pp759kPM4Mka3xfgdgnvXlS
- 9lpDFWLHbZFJsmTZFjWfcSyb162PPyxLt1jxyWnJ6Ut9diIPfaP0KJAGHAvWi79IPZLRCvwA
- wY/CwjkzgaDW2Un6KAUeR+D4Gj0/Me16TIlQBQJ3x6c5M4agZvK6fyIE74Pi3krCp0OxEoZH
- XMgHkbibAEvhG3+4FMeAflQv9Wk5joex4WH/MIVXQFvedz+zGKeA8249Eplg6DQP+euBOBo8
- A3a/JvEyaBwtJUUdBn1DtwlfGOAvAVAydd/boL1mBzj7BfGEEBhxNASIegk4jQZK5C8gGOiu
- DhCNAUFPvgmJVBx87P4t9S0i8SqobV4vlrfCz4ZGQtwfBO9Hg8U3BMENe8lcrBwuFShEOgos
- jpp/sc/db8gipLQsuMyy4BrLgmss/3PLEFWFwvgsQZPGCxu1fM46gdMIWdq0damZGhvyfjPn
- jGOyCbX8OdKKMI2Ui+SM1alSSLhsIVfTioAmlaHybS5vSa7mcs/wusxDuqwMXmhFETSlDJNv
- LP+aosBp3Cn+BM+f5HXzXYIODM9DBVG6Vm2Ku8wUvelG4vLX5qpqvGvyAOMxqe+Y25wq487N
- bZeTV9Ln7qtzMq11hqby40F3PB+Mla4Id+RUfLsGjl61vdi+xtx78/isfk95Js51nz5YMpJg
- NOyVh49YVna15T9KYvicsQvcUlVuf2rDKPHCHbv77Mvqfen7ixKKlZSQzsWsJnUC9xfB9hoZ
- YgMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrEIsWRmVeSWpSXmKPExsVy+t/xu7o7952JM1j2Ud2i99xJJouNM9az
- WvzfNpHZ4srX92wWK1cfZbJYsN/a4suVh0wWmx5fY7W4vGsOm8XBD09YHbg81sxbw+ix99sC
- Fo/t3x6wetzvPs7ksXlJvcftf4+ZPSbfWM7osftmA5tH35ZVjB6fN8kFcEXp2RTll5akKmTk
- F5fYKkUbWhjpGVpa6BmZWOoZGpvHWhmZKunb2aSk5mSWpRbp2yXoZcxaI1Dwm7Wi49Y2pgbG
- 1yxdjJwcEgImEr/P7gSzhQSWMkr8naQIEZeRODmtgRXCFpb4c62LrYuRC6jmLaPE6W17mUAS
- wgIhEtNurgSzRQSUJJ6+OssIUsQscIFJ4sbOo8wQUzcxSux8A2azCRhKdL0FmcTJwStgJ/H+
- 6VOwOIuAqsThhjdgV4gKxEqsvtbKCFEjKHFy5hOwOKeAjsS3h9vAbGYBM4l5mx8yQ9jyEtvf
- zoGyxSVuPZnPNIFRaBaS9llIWmYhaZmFpGUBI8sqRpHU0uLc9NxiI73ixNzi0rx0veT83E2M
- wPjdduznlh2MXe+CDzEKcDAq8fBarDkdJ8SaWFZcmXuIUYKDWUmE1+ksUIg3JbGyKrUoP76o
- NCe1+BCjKdBzE5mlRJPzgaklryTe0NTQ3MLS0NzY3NjMQkmct0PgYIyQQHpiSWp2ampBahFM
- HxMHp1QDo9Y28WDXjQIHpyo7aEYfe1b3X8TZf+5vg+BdtzeVPEm93d2xVT3/i3MW60MD1gJL
- y6r2n8ed5pvcK36tc+J/095ty1L5/rQ8z5n00H/ryz9qB+TvJeVtD/vJe34hj1FTSEGhEXc4
- Yyxj6J7zuz1MN9f8ZNLhP3WNd2GNv2zN4XM/XUqDBKv6lFiKMxINtZiLihMBzmXRsPUCAAA=
-X-CMS-MailID: 20200526070113eucas1p1257c0e7ff6b0c11799b9e597c5f6b003
-X-Msg-Generator: CA
-X-RootMTR: 20200513132127eucas1p23f6be10bbd627e69e36d2451068b3204
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200513132127eucas1p23f6be10bbd627e69e36d2451068b3204
-References: <CGME20200513132127eucas1p23f6be10bbd627e69e36d2451068b3204@eucas1p2.samsung.com>
- <20200513132114.6046-1-m.szyprowski@samsung.com>
- <20200513134741.GA12712@lst.de>
+Date: Tue, 26 May 2020 12:31:46 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
+Subject: Re: [PATCHv3 0/2] Add support for replicators which loses context on
+ clock removal
+In-Reply-To: <20200525161553.GA31527@xps15>
+References: <cover.1590171891.git.saiprakash.ranjan@codeaurora.org>
+ <20200525161553.GA31527@xps15>
+Message-ID: <8b3592edb443a091891d00e0fa32debc@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_000119_310083_27D8C8AE 
-X-CRM114-Status: GOOD (  12.27  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200526_000219_557686_4336601C 
+X-CRM114-Status: GOOD (  12.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.27 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -142,40 +94,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linaro-mm-sig@lists.linaro.org,
- iommu@lists.linux-foundation.org, Daniel Vetter <daniel@ffwll.ch>,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree-owner@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+Hi Mathieu,
 
-On 13.05.2020 15:47, Christoph Hellwig wrote:
-> I've pushed out a branch with the first three patches here:
->
->     git://git.infradead.org/users/hch/dma-mapping.git dma-sg_table-helper
->
-> Gitweb:
->
->     http://git.infradead.org/users/hch/dma-mapping.git/shortlog/refs/heads/dma-sg_table-helper
->
-> and merged it into the dma-mapping for-next tree.  Unless someone shouts
-> the branch should be considered immutable in 24 hours.
+On 2020-05-25 21:45, Mathieu Poirier wrote:
+> Hi Sai,
+> 
+> On Sat, May 23, 2020 at 12:06:50AM +0530, Sai Prakash Ranjan wrote:
+>> This series is mainly to add support for replicators
+>> which lose context on removing AMBA clock like on SC7180
+>> SoC where replicator in AOSS domain loses context.
+>> 
+> 
+> I am good with this set but need a reviewed-by on the DT binding before 
+> I can
+> add it to my tree.  The same goes for your other set[1].
+> 
 
-David & Daniel: could you merge all the DRM related changes on top of 
-the provided branch? Merging those changes separately would take a lots 
-of time because of the dependencies on the sgtable helpers and changes 
-in the DRM core.
+Sure, let's wait for an ack from Rob and thanks for the reviews.
 
-Best regards
+Thanks,
+Sai
+
 -- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
-
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
