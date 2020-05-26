@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 064ED1E26BB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 18:19:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 093421E26BC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 18:19:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gmPdLBhRbCEvR+Mh2t5AwCo3Pwpv6OqMw28PHQvHpEo=; b=rdnlwlYScSvnM8
-	mFaMf6oIcF6uSdYWWD+JMD1aYNOfFzTelFVgRe2RP0rx3EXrIxJXvC0mXMb4ABXBJWACniZ/LXgrj
-	ofWB0/mEa9J2blnANAJYPOMcYitKTy5msX7hUWnt5uyMAp+Aot95RmX/E9KTeswPduDUokWv/m2Vy
-	Tu3rSqIUmSocorZ7jOtZy1/9h/dskcM1sBvTNWLpXmngIQNCOxIHgixBAMzcgALcSuDRPMTRSyA2f
-	QPWCwiF0VxC/hZdONKkTRafJHRFusUg+sPOBm6hnjIu4MZG//Stg1YJn3jazNpgd5ssUWu6HfLRVq
-	nsAZYap/gVxsk2GqtGMA==;
+	List-Owner; bh=ydQgxt+4te55eNJezqsCQFS+vU0LAyKIx6RsBQ/hU8g=; b=SaVFKq3tz9qe4e
+	kEEJAzn0dGpdifixDVkZAa4ZfK4RBG7N7f/RI+jM4S4GPwptmaoRdAVWLhMkEgRg0TkzYjdlaW8Nm
+	yQFXbuEN6mMRlw9hYb3tdgEKazuiysia+ynS+/+5kjkZW13MNWs8PrR0h/60nzRmN757fCK0EJOTL
+	5dPsMZdpW79Flygvx6B5wIAH3JCTIn7VD8DNOdIMtTeqkrOGNdUK+7Uv31iOlrdkte268H9gnXf7m
+	WeG2zFFEN+i7fa6H1PKWbWErsgBBxy+LwflgcCHB/eV8DOyXLRp6qEtNADCrDFCQM8N3daTdHNaKH
+	SDZE9irEtF2jFAzftPZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdcIg-0008Mx-Qw; Tue, 26 May 2020 16:19:34 +0000
+	id 1jdcIv-00009C-JY; Tue, 26 May 2020 16:19:49 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdcIJ-0008K9-UK
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 16:19:13 +0000
+ id 1jdcIN-0008Mc-5D
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 16:19:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6946330E;
- Tue, 26 May 2020 09:19:11 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4AAC755D;
+ Tue, 26 May 2020 09:19:13 -0700 (PDT)
 Received: from merodach.members.linode.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6250A3F52E;
- Tue, 26 May 2020 09:19:10 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5F2473F52E;
+ Tue, 26 May 2020 09:19:12 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
 To: kvmarm@lists.cs.columbia.edu,
 	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/3] KVM: arm64: Stop writing aarch32's CSSELR into ACTLR
-Date: Tue, 26 May 2020 16:18:32 +0000
-Message-Id: <20200526161834.29165-2-james.morse@arm.com>
+Subject: [PATCH 2/3] KVM: arm64: Stop save/restoring ACTLR_EL1
+Date: Tue, 26 May 2020 16:18:33 +0000
+Message-Id: <20200526161834.29165-3-james.morse@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200526161834.29165-1-james.morse@arm.com>
 References: <20200526161834.29165-1-james.morse@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_091912_025142_9243FAA6 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20200526_091915_239497_ED784F3F 
+X-CRM114-Status: UNSURE (   9.25  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -63,80 +64,71 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Marc Zyngier <maz@kernel.org>, James Morse <james.morse@arm.com>,
- stable@vger.kernel.org, Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
  Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-aarch32 has pairs of registers to access the high and low parts of 64bit
-registers. KVM has a union of 64bit sys_regs[] and 32bit copro[]. The
-32bit accessors read the high or low part of the 64bit sys_reg[] value
-through the union.
+KVM sets HCR_EL2.TACR (which it calls HCR_TAC) via HCR_GUEST_FLAGS.
+This means ACTLR* accesses from the guest are always trapped, and
+always return the value in the sys_regs array.
 
-Both sys_reg_descs[] and cp15_regs[] list access_csselr() as the accessor
-for CSSELR{,_EL1}. access_csselr() is only aware of the 64bit sys_regs[],
-and expects r->reg to be 'CSSELR_EL1' in the enum, index 2 of the 64bit
-array.
+The guest can't change the value of these registers, so we are
+save restoring the reset value, which came from the host.
 
-cp15_regs[] uses the 32bit copro[] alias of sys_regs[]. Here CSSELR is
-c0_CSSELR which is the same location in sys_reg[]. r->reg is 'c0_CSSELR',
-index 4 in the 32bit array.
+Stop save/restoring this register.
 
-access_csselr() uses the 32bit r->reg value to access the 64bit array,
-so reads and write the wrong value. sys_regs[4], is ACTLR_EL1, which
-is subsequently save/restored when we enter the guest.
+This also stops this register being affected by sysregs_loaded_on_cpu,
+so we can provide 32 bit accessors that always use the in-memory copy.
 
-ACTLR_EL1 is supposed to be read-only for the guest. This register
-only affects execution at EL1, and the host's value is restored before
-we return to host EL1.
-
-Rename access_csselr() to access_csselr_el1(), to indicate it expects
-the 64bit register index, and pass it CSSELR_EL1 from cp15_regs[].
-
-Cc: stable@vger.kernel.org
 Signed-off-by: James Morse <james.morse@arm.com>
-----
-Providing access_csselr_cp15() wouldn't work as with VHE CSSELR_EL1 is
-loaded on the CPU while this code runs. access_csselr_cp15() would have
-to map it back the 64bit resgister to use vcpu_write_sys_reg(). We may
-as well do it in the table.
+---
+ arch/arm64/kvm/hyp/sysreg-sr.c | 2 --
+ arch/arm64/kvm/sys_regs.c      | 2 --
+ 2 files changed, 4 deletions(-)
 
- arch/arm64/kvm/sys_regs.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
+diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
+index 75b1925763f1..57116cf3a1a5 100644
+--- a/arch/arm64/kvm/hyp/sysreg-sr.c
++++ b/arch/arm64/kvm/hyp/sysreg-sr.c
+@@ -44,7 +44,6 @@ static void __hyp_text __sysreg_save_el1_state(struct kvm_cpu_context *ctxt)
+ {
+ 	ctxt->sys_regs[CSSELR_EL1]	= read_sysreg(csselr_el1);
+ 	ctxt->sys_regs[SCTLR_EL1]	= read_sysreg_el1(SYS_SCTLR);
+-	ctxt->sys_regs[ACTLR_EL1]	= read_sysreg(actlr_el1);
+ 	ctxt->sys_regs[CPACR_EL1]	= read_sysreg_el1(SYS_CPACR);
+ 	ctxt->sys_regs[TTBR0_EL1]	= read_sysreg_el1(SYS_TTBR0);
+ 	ctxt->sys_regs[TTBR1_EL1]	= read_sysreg_el1(SYS_TTBR1);
+@@ -133,7 +132,6 @@ static void __hyp_text __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
+ 		isb();
+ 	}
+ 
+-	write_sysreg(ctxt->sys_regs[ACTLR_EL1],		actlr_el1);
+ 	write_sysreg_el1(ctxt->sys_regs[CPACR_EL1],	SYS_CPACR);
+ 	write_sysreg_el1(ctxt->sys_regs[TTBR0_EL1],	SYS_TTBR0);
+ 	write_sysreg_el1(ctxt->sys_regs[TTBR1_EL1],	SYS_TTBR1);
 diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index 51db934702b6..2eda539f3281 100644
+index 2eda539f3281..aae58513025c 100644
 --- a/arch/arm64/kvm/sys_regs.c
 +++ b/arch/arm64/kvm/sys_regs.c
-@@ -1302,7 +1302,7 @@ static bool access_clidr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
- 	return true;
- }
- 
--static bool access_csselr(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
-+static bool access_csselr_el1(struct kvm_vcpu *vcpu, struct sys_reg_params *p,
- 			  const struct sys_reg_desc *r)
- {
- 	if (p->is_write)
-@@ -1566,7 +1566,7 @@ static const struct sys_reg_desc sys_reg_descs[] = {
- 
- 	{ SYS_DESC(SYS_CCSIDR_EL1), access_ccsidr },
- 	{ SYS_DESC(SYS_CLIDR_EL1), access_clidr },
--	{ SYS_DESC(SYS_CSSELR_EL1), access_csselr, reset_unknown, CSSELR_EL1 },
-+	{ SYS_DESC(SYS_CSSELR_EL1), access_csselr_el1, reset_unknown, CSSELR_EL1 },
- 	{ SYS_DESC(SYS_CTR_EL0), access_ctr },
- 
- 	{ SYS_DESC(SYS_PMCR_EL0), access_pmcr, reset_pmcr, PMCR_EL0 },
-@@ -2060,7 +2060,7 @@ static const struct sys_reg_desc cp15_regs[] = {
- 
- 	{ Op1(1), CRn( 0), CRm( 0), Op2(0), access_ccsidr },
- 	{ Op1(1), CRn( 0), CRm( 0), Op2(1), access_clidr },
--	{ Op1(2), CRn( 0), CRm( 0), Op2(0), access_csselr, NULL, c0_CSSELR },
-+	{ Op1(2), CRn( 0), CRm( 0), Op2(0), access_csselr_el1, NULL, CSSELR_EL1 },
- };
- 
- static const struct sys_reg_desc cp15_64_regs[] = {
+@@ -81,7 +81,6 @@ u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
+ 	switch (reg) {
+ 	case CSSELR_EL1:	return read_sysreg_s(SYS_CSSELR_EL1);
+ 	case SCTLR_EL1:		return read_sysreg_s(SYS_SCTLR_EL12);
+-	case ACTLR_EL1:		return read_sysreg_s(SYS_ACTLR_EL1);
+ 	case CPACR_EL1:		return read_sysreg_s(SYS_CPACR_EL12);
+ 	case TTBR0_EL1:		return read_sysreg_s(SYS_TTBR0_EL12);
+ 	case TTBR1_EL1:		return read_sysreg_s(SYS_TTBR1_EL12);
+@@ -124,7 +123,6 @@ void vcpu_write_sys_reg(struct kvm_vcpu *vcpu, u64 val, int reg)
+ 	switch (reg) {
+ 	case CSSELR_EL1:	write_sysreg_s(val, SYS_CSSELR_EL1);	return;
+ 	case SCTLR_EL1:		write_sysreg_s(val, SYS_SCTLR_EL12);	return;
+-	case ACTLR_EL1:		write_sysreg_s(val, SYS_ACTLR_EL1);	return;
+ 	case CPACR_EL1:		write_sysreg_s(val, SYS_CPACR_EL12);	return;
+ 	case TTBR0_EL1:		write_sysreg_s(val, SYS_TTBR0_EL12);	return;
+ 	case TTBR1_EL1:		write_sysreg_s(val, SYS_TTBR1_EL12);	return;
 -- 
 2.20.1
 
