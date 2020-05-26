@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E36101E248B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 16:53:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A008B1E24A3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 16:57:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RIiJKJi222wLB3JMgb1V5msxpybcV6RJv/MCEDX70fc=; b=DeHM3Sp8soPi04
-	Ahe27l7AeicC0zHQfJRVnY4qbKUqZKpwAlBpZg40ocby0nD6yY1FkADOSxuaEj0UB674taYTE9wm2
-	iGrsYl1hGK0YT2QSQA1ghekBf9QRf4m4dvaS2tkrYbanYDic80smxA86jRfSG6jI8im693xxnssMy
-	3vBnmTX3QQ9t2Rk59bBrywXF9lSnekDMCx+oup0l+MEEZWDdKDkU5YYTV9jCPIWqIZuhPtdRCzFdv
-	KWLZSIW/BTfJsxg/Q71FNOcpUZPhiQDDn2LeH4c+NKDvBg3sLSqhgbUSAjNglm22Pbd4P6mhxdzvN
-	zPg0TULrJ8aLtNFxCJnw==;
+	List-Owner; bh=vInXch7Ftefc12Qz4xfn2fCIq0MJk6ejleLwzrRp8kM=; b=Gs0/f/pNrHcY+R
+	ebQvkuSBzWrQOJoOCSWBg2pN4O3oBL4ZZGHcxiBrQae5Qv8EAFaqdgHs4EbqE6Yd7DBiKEcaLlIf4
+	7Phz+hqU+JoBUqn0wwRS63uW8iestotKcKlT3mv+V/a4OfooGRcHJI1tMzKRiIOTVFs2lptb5ZO1y
+	06lyH3DGI4ORBeWxNw/KnFnqs+I5rqLeALxCxxUJkuKYOnpjh4ZLndMiEX8r5aduK+EP7Xeftj39m
+	mOQpt2RxmUgpghJ2YjxbaOSksLnjnYLJOuRqRa7rEwOmGLaLR36tYP9njVlU/7JxBKOJfF7ilKPE6
+	n4hhxltms8sRoHQoo5mw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdawx-0000mt-63; Tue, 26 May 2020 14:53:03 +0000
+	id 1jdb0o-0004Cl-5c; Tue, 26 May 2020 14:57:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdawl-0000mR-OI
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 14:52:53 +0000
+ id 1jdb0d-0004C0-4y
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 14:56:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D055F30E;
- Tue, 26 May 2020 07:52:50 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8692E30E;
+ Tue, 26 May 2020 07:56:50 -0700 (PDT)
 Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8BE253F7C3;
- Tue, 26 May 2020 07:52:47 -0700 (PDT)
-Date: Tue, 26 May 2020 15:52:45 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B73B3F52E;
+ Tue, 26 May 2020 07:56:47 -0700 (PDT)
+Date: Tue, 26 May 2020 15:56:45 +0100
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: Zhenyu Ye <yezhenyu2@huawei.com>
-Subject: Re: [PATCH v2 5/6] mm: tlb: Provide flush_*_tlb_range wrappers
-Message-ID: <20200526145244.GG17051@gaia>
+Subject: Re: [PATCH v2 6/6] arm64: tlb: Set the TTL field in flush_tlb_range
+Message-ID: <20200526145644.GH17051@gaia>
 References: <20200423135656.2712-1-yezhenyu2@huawei.com>
- <20200423135656.2712-6-yezhenyu2@huawei.com>
- <20200522154254.GD26492@gaia>
- <ddba6d98-29b5-0748-ba74-ec022f509270@huawei.com>
+ <20200423135656.2712-7-yezhenyu2@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <ddba6d98-29b5-0748-ba74-ec022f509270@huawei.com>
+In-Reply-To: <20200423135656.2712-7-yezhenyu2@huawei.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_075251_882477_003B7A6F 
-X-CRM114-Status: GOOD (  16.72  )
-X-Spam-Score: -1.1 (-)
+X-CRM114-CacheID: sfid-20200526_075651_240959_F88262E8 
+X-CRM114-Status: UNSURE (   8.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-1.1 points)
+ Content analysis details:   (-0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
@@ -56,6 +55,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.7 SUBJ_OBFU_PUNCT_FEW    Possible punctuation-obfuscated Subject:
+ header
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,75 +82,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 25, 2020 at 03:19:42PM +0800, Zhenyu Ye wrote:
-> On 2020/5/22 23:42, Catalin Marinas wrote:
-> > On Thu, Apr 23, 2020 at 09:56:55PM +0800, Zhenyu Ye wrote:
-> >> diff --git a/mm/pgtable-generic.c b/mm/pgtable-generic.c
-> >> index 3d7c01e76efc..3eff199d3507 100644
-> >> --- a/mm/pgtable-generic.c
-> >> +++ b/mm/pgtable-generic.c
-> >> @@ -101,6 +101,28 @@ pte_t ptep_clear_flush(struct vm_area_struct *vma, unsigned long address,
-> >>  
-> >>  #ifdef CONFIG_TRANSPARENT_HUGEPAGE
-> >>  
-> >> +#ifndef __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
-> >> +
-> >> +#define FLUSH_Pxx_TLB_RANGE(_pxx)					\
-> >> +void flush_##_pxx##_tlb_range(struct vm_area_struct *vma,		\
-> >> +			      unsigned long addr, unsigned long end)	\
-> >> +{									\
-> >> +		struct mmu_gather tlb;					\
-> >> +									\
-> >> +		tlb_gather_mmu(&tlb, vma->vm_mm, addr, end);		\
-> >> +		tlb_start_vma(&tlb, vma);				\
-> >> +		tlb_flush_##_pxx##_range(&tlb, addr, end - addr);	\
-> >> +		tlb_end_vma(&tlb, vma);					\
-> >> +		tlb_finish_mmu(&tlb, addr, end);			\
-> >> +}
-> > 
-> > I may have confused myself (flush_p??_tlb_* vs. tlb_flush_p??_*) but do
-> > actually need this whole tlb_gather thing here? IIUC (by grep'ing),
-> > flush_p?d_tlb_range() is only called on huge pages, so we should know
-> > the level already.
+On Thu, Apr 23, 2020 at 09:56:56PM +0800, Zhenyu Ye wrote:
+> This patch uses the cleared_* in struct mmu_gather to set the
+> TTL field in flush_tlb_range().
 > 
-> tlb_flush_##_pxx##_range() is used to set tlb->cleared_*,
-> flush_##_pxx##_tlb_range() will actually flush the TLB entry.
-> 
-> In arch64, tlb_flush_p?d_range() is defined as:
-> 
-> 	#define flush_pmd_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
-> 	#define flush_pud_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
+> Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
 
-Currently, flush_p??_tlb_range() are generic and defined as above. I
-think in the generic code they can remain an alias for
-flush_tlb_range().
-
-On arm64, we can redefine them as:
-
-#define flush_pte_tlb_range(vma, addr, end)	__flush_tlb_range(vma, addr, end, 3)
-#define flush_pmd_tlb_range(vma, addr, end)	__flush_tlb_range(vma, addr, end, 2)
-#define flush_pud_tlb_range(vma, addr, end)	__flush_tlb_range(vma, addr, end, 1)
-#define flush_p4d_tlb_range(vma, addr, end)	__flush_tlb_range(vma, addr, end, 0)
-
-(unless the compiler optimises away all the mmu_gather stuff in your
-macro above but they don't look trivial to me)
-
-Also, I don't see the new flush_pte_* and flush_p4d_* macros used
-anywhere and I don't think they are needed. The pte equivalent is
-flush_tlb_page() (we need to make sure it's not used on a pmd in the
-hugetlb context).
-
-> So even if we know the level here, we can not pass the value to tlbi
-> instructions (flush_tlb_range() is a common kernel interface and retro-fit it
-> needs lots of changes), according to Peter's suggestion, I finally decide to
-> pass the value of TTL by the tlb_gather_* frame.[1]
-
-My comment was about the generic implementation using mmu_gather as you
-are proposing. We don't need to change the flush_tlb_range() interface,
-nor do we need to rewrite flush_p??_tlb_range().
-
--- 
-Catalin
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
