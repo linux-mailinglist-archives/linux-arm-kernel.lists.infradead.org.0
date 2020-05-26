@@ -2,100 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78B111E2119
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:42:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E26421E2129
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:46:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=whILfGSd3RVRhbSu7/fkRH773ZORfmdsuln4mbuSZ/w=; b=B1upKxBG21xa2F
-	oRH9AIlqQW1lGDnphWo90RQbXuNaZLn37hKZiJcWeYv677NyJks8RhqmbJ/DnsD4x8AjZh/YRY4Bg
-	+BRn26u0HDtbUm72oVDAtq9Oht8RDG2NMFhSdZ+ujOHpYBi0gi6wp8A+WZU3qKBwiAW2DwM2KK22Z
-	Ey1ZIV/giy8i9ik0pdbYP2J/+89WkebWx3EsIrNgJ7DMTE9l7ch9FkZKcOSRR/DskKi9D7FCzVCTc
-	M95hoqUpKzyFqn5sspUd+MILytbxZYgwjr4/t3GvEfTaIW/b+4VIT/ruvT9QhQY4BYWAiR5SwabZ8
-	48nI7/DGgkX0TJqZeySw==;
+	List-Owner; bh=geVtwRPN/GCyJUOYhiCrP6isHWZhUJNWLuN+2hZu7jE=; b=p0MvAnfeb5LNHi
+	C6/9RzYD3qf3V9jQotiEKQhWs/X0K87DUj4hCKs7ZzmqqJ+qPHBE1PZZyOohW1CQjYqWy4qHFqFJL
+	wgvtZhRxVgAeaYi+hnkXUNOed4OJpH7fPMxN/eZiZbS8YTfP6rwEd/QF2qM2ULrV4kS41rd0im+IS
+	42eeCYZZ5AuD2jjIBBkil0QX3lQtPDgUj0XGut0VO2HVbMuqo5UiQT79YMjlgb/YzoNMTwQSdvQsf
+	YCh0OjOOuza6SgC5Wa7+O7wdaJxnGru3lJkoeYqAvy/3gufhdK2cUb0Ek1KYIP43G7ylRXKCxUqJD
+	KwMvqTL348tcmCoF7uXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdXyu-0006J2-9Z; Tue, 26 May 2020 11:42:52 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1jdY2e-0000kM-ID; Tue, 26 May 2020 11:46:44 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdXyf-0006IS-87
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:42:38 +0000
-Received: from pps.filterd (m0098396.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04QBYTJZ045717; Tue, 26 May 2020 07:42:25 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 316x5davng-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 26 May 2020 07:42:25 -0400
-Received: from m0098396.ppops.net (m0098396.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 04QBYW5W046032;
- Tue, 26 May 2020 07:42:24 -0400
-Received: from ppma04fra.de.ibm.com (6a.4a.5195.ip4.static.sl-reverse.com
- [149.81.74.106])
- by mx0a-001b2d01.pphosted.com with ESMTP id 316x5davmc-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 26 May 2020 07:42:24 -0400
-Received: from pps.filterd (ppma04fra.de.ibm.com [127.0.0.1])
- by ppma04fra.de.ibm.com (8.16.0.42/8.16.0.42) with SMTP id 04QBc5ZF023825;
- Tue, 26 May 2020 11:42:21 GMT
-Received: from b06cxnps3075.portsmouth.uk.ibm.com
- (d06relay10.portsmouth.uk.ibm.com [9.149.109.195])
- by ppma04fra.de.ibm.com with ESMTP id 316uf8abbm-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 26 May 2020 11:42:21 +0000
-Received: from d06av26.portsmouth.uk.ibm.com (d06av26.portsmouth.uk.ibm.com
- [9.149.105.62])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 04QBgJ4n38535240
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 26 May 2020 11:42:19 GMT
-Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 1EC32AE04D;
- Tue, 26 May 2020 11:42:19 +0000 (GMT)
-Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 32725AE045;
- Tue, 26 May 2020 11:42:18 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.200.96])
- by d06av26.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Tue, 26 May 2020 11:42:18 +0000 (GMT)
-Date: Tue, 26 May 2020 14:42:16 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ id 1jdY2U-0000jj-NN
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:46:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Dxo7p/GPn1Y54UFA5tirQOD60zgRrsj0y8qHprGhGnA=; b=u/rIaYAMQiH5TxrOjEB1XXGdo
+ 2MB8V4EIIzu5oa//eeTZnHQ//K17bzY52AKf6kYnADA1QXtBXznUy8aplP0Mz/fnvSuJKQH3rClNE
+ /zmdep+Cthsh+J8/EePnFIUnBjpyuC1pfk1QywDhZqzalDQmYFig9adSRvlJ5oKbpePVL4MK9BIKl
+ V1PRWCw9QYWD1fov8T4ZLTPTi4U2Dy8RPkMTJtpsBdBtQDyVxWBH5sV2DPy/4/27Sm36kNxPJMUjg
+ qS9Xla45ZvmJGNmHSz1HvB9PVWNuiqQS/mTWSGUG1a9mB0uBGn6ZROFgey+opBHDPQ/LQvFjHhDye
+ 0UbUl31Kw==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:37198)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jdY2N-0007hr-20; Tue, 26 May 2020 12:46:27 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jdY2L-0005Ll-Vn; Tue, 26 May 2020 12:46:26 +0100
+Date: Tue, 26 May 2020 12:46:25 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Mike Rapoport <rppt@linux.ibm.com>
 Subject: Re: [PATCH 0/2] ARM: Allow either FLATMEM or SPARSEMEM on the
  multiplatform build
-Message-ID: <20200526114216.GI13212@linux.ibm.com>
+Message-ID: <20200526114625.GX1551@shell.armlinux.org.uk>
 References: <20200521081825.1348844-1-rppt@linux.ibm.com>
  <20200526111804.GW1551@shell.armlinux.org.uk>
+ <20200526114216.GI13212@linux.ibm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200526111804.GW1551@shell.armlinux.org.uk>
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-05-26_02:2020-05-26,
- 2020-05-26 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 adultscore=0
- mlxscore=0 lowpriorityscore=0 bulkscore=0 priorityscore=1501
- suspectscore=0 phishscore=0 spamscore=0 mlxlogscore=999 malwarescore=0
- clxscore=1015 cotscore=-2147483648 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2005260087
+In-Reply-To: <20200526114216.GI13212@linux.ibm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_044237_289574_CC8BC969 
-X-CRM114-Status: GOOD (  15.43  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200526_044634_759712_7BCF6F41 
+X-CRM114-Status: GOOD (  13.86  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.156.1 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,30 +98,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 12:18:04PM +0100, Russell King - ARM Linux admin wrote:
-> On Thu, May 21, 2020 at 11:18:23AM +0300, Mike Rapoport wrote:
-> > (resendig for the correct address and with mailing list cc'ed, sorry for
-> > the noise)
+On Tue, May 26, 2020 at 02:42:16PM +0300, Mike Rapoport wrote:
+> On Tue, May 26, 2020 at 12:18:04PM +0100, Russell King - ARM Linux admin wrote:
+> > On Thu, May 21, 2020 at 11:18:23AM +0300, Mike Rapoport wrote:
+> > > (resendig for the correct address and with mailing list cc'ed, sorry for
+> > > the noise)
+> > 
+> > There are two patches in the patch system, submitted within minutes
+> > of each other, with the same summary "Allow either FLATMEM or
+> > SPARSEMEM on the multiplatform build" but the patch and commit messages
+> > are different.  I guess the summary for one of the patches is wrong?
 > 
-> There are two patches in the patch system, submitted within minutes
-> of each other, with the same summary "Allow either FLATMEM or
-> SPARSEMEM on the multiplatform build" but the patch and commit messages
-> are different.  I guess the summary for one of the patches is wrong?
+> Oops, my mistake.
+> 
+> The patch 8979/1 should have "ARM: Remove redundant
+> ARCH_SPARSEMEM_DEFAULT setting" in its subject.
 
-Oops, my mistake.
-
-The patch 8979/1 should have "ARM: Remove redundant
-ARCH_SPARSEMEM_DEFAULT setting" in its subject.
-
-Sorry.
-
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
+Thanks; updated the database with that.
 
 -- 
-Sincerely yours,
-Mike.
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
