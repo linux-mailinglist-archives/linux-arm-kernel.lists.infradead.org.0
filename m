@@ -2,92 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CE771E1F55
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 12:06:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86CD81E1F68
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 12:10:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=WnjCWyYf5fji9GyGxV0BxCt9+E419qT/jJPQR6fzweU=; b=k7VefD+D5SGsCzxafNgGkZEyn
-	6JL66Ep7Si8ai4mbI9859IXgDLt1UiT34hlNdm1JdsesaKVnS1scltsVPTG/ACTSuaFS1dSOmSTua
-	Z0dBB5GLmZWyVLZvoDrkRU0on4STuPd07eIS/pxzI6ceETa5tn2y5CJpo0/bchG0RUAfrNGGQc3fN
-	2i/6rVwCaecF+/eIyKxxs2n3AfIbxtBM4YVNYzWUbXt1MUKSQjjyfgrhPdNkEqDsEPgOwK9hpPFJg
-	nLr3FlfboROmKifYzJUI/8/PlvF9V+i5JrrIAaKTbaT6fDODS7D+ddFBrWQ7Ig5xR/FpziH5si59L
-	CfsePw7wQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JdaEidLjC/0EE7vpiMU44pLQW+I4S7QVsFCgVIi5Tco=; b=j35evyqCprjFyD
+	v6+YmicC42x3STDJ4yZUnY5sCQNxK0HqWF0V1OIECcRko+wda1ZYVPp/2FvWp0/Fwa8YlPDYoM5SL
+	apKSE/hAvI4jMNG9meZ9hoSksIYUu3U5aLlnkxbp0QgBzKfnLBFKGbrHZ9nO/zEgu4UQRPDv2fnpo
+	E8ds6+vnSbmeLGuNy92Ci5h4v0OXIaUnHcovG7mlyF0QpdRnorRAZ6yQ004s2q+09N+n/bLMqzl0k
+	rNhfkYrB2BrgBkQ5utJaZtAw36/86y6+uqB+M8NEjlrwxJgeNzUVocBmnrbMEPBwXN0rM2qOBh0xt
+	s8Lx9Yb++POk0GPx0JYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdWU1-0008L0-W0; Tue, 26 May 2020 10:06:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdWTs-0008KP-Bd
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 10:06:45 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 19D322073B;
- Tue, 26 May 2020 10:06:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590487603;
- bh=B4uPhDHjSVrp5Z1BTqTDVVNDXQrB8e6lZd/oVVso0Vc=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=DVxmcYvh133LIfkvYu6hpKkcHDal8m+FWme32nz9ggBejva328OorzmHpE1v7Wor8
- x445J6QxV0qJ7YqJNwwszFbC3aOKhs5EEaQ1AJmS4F4Db11GQD/rlOZsgvSpqdf49e
- TJR1zhlzCrvkWOqJqnHlC1sMcFXf07k64X4A3qlc=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jdWTp-00FLzx-Fx; Tue, 26 May 2020 11:06:41 +0100
+	id 1jdWXf-0002s5-A5; Tue, 26 May 2020 10:10:39 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdWXU-0002rR-PN
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 10:10:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F6941FB;
+ Tue, 26 May 2020 03:10:26 -0700 (PDT)
+Received: from bogus (unknown [10.37.8.209])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 56E413F52E;
+ Tue, 26 May 2020 03:10:22 -0700 (PDT)
+Date: Tue, 26 May 2020 11:10:19 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Jianyong Wu <Jianyong.Wu@arm.com>
+Subject: Re: [RFC PATCH v12 03/11] psci: export smccc conduit get helper.
+Message-ID: <20200526101019.GB11414@bogus>
+References: <20200522083724.38182-1-jianyong.wu@arm.com>
+ <20200522083724.38182-4-jianyong.wu@arm.com>
+ <20200522131206.GA15171@bogus>
+ <HE1PR0802MB255537CD21C5E7F7F4A899A2F4B30@HE1PR0802MB2555.eurprd08.prod.outlook.com>
 MIME-Version: 1.0
-Date: Tue, 26 May 2020 11:06:41 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Zhenyu Ye <yezhenyu2@huawei.com>
-Subject: Re: [PATCH v3 1/6] arm64: Detect the ARMv8.4 TTL feature
-In-Reply-To: <050b7ee6-c7aa-5d61-4dff-4792a411464e@huawei.com>
-References: <20200525125300.794-1-yezhenyu2@huawei.com>
- <20200525125300.794-2-yezhenyu2@huawei.com>
- <c6b6eb07-2606-9fc0-280a-e53b81a6491c@arm.com>
- <050b7ee6-c7aa-5d61-4dff-4792a411464e@huawei.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <872737c7e0690df3f42103365c651ad4@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: yezhenyu2@huawei.com, anshuman.khandual@arm.com,
- catalin.marinas@arm.com, peterz@infradead.org, mark.rutland@arm.com,
- will@kernel.org, aneesh.kumar@linux.ibm.com, akpm@linux-foundation.org,
- npiggin@gmail.com, arnd@arndb.de, rostedt@goodmis.org, suzuki.poulose@arm.com,
- tglx@linutronix.de, yuzhao@google.com, Dave.Martin@arm.com,
- steven.price@arm.com, broonie@kernel.org, guohanjun@huawei.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arch@vger.kernel.org, linux-mm@kvack.org, arm@kernel.org,
- xiexiangyou@huawei.com, prime.zeng@hisilicon.com, zhangshaokun@hisilicon.com,
- kuhn.chenqun@huawei.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <HE1PR0802MB255537CD21C5E7F7F4A899A2F4B30@HE1PR0802MB2555.eurprd08.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_030644_436295_8011424B 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200526_031028_909913_EFBEF57A 
+X-CRM114-Status: GOOD (  16.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,54 +65,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- linux-mm@kvack.org, guohanjun@huawei.com, will@kernel.org,
- linux-arch@vger.kernel.org, yuzhao@google.com, aneesh.kumar@linux.ibm.com,
- suzuki.poulose@arm.com, steven.price@arm.com, arm@kernel.org,
- Dave.Martin@arm.com, arnd@arndb.de,
- Anshuman Khandual <anshuman.khandual@arm.com>, npiggin@gmail.com,
- zhangshaokun@hisilicon.com, broonie@kernel.org, rostedt@goodmis.org,
- prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org, xiexiangyou@huawei.com,
- linux-kernel@vger.kernel.org, akpm@linux-foundation.org
+Cc: Mark Rutland <Mark.Rutland@arm.com>,
+ "kvm@vger.kernel.org" <kvm@vger.kernel.org>,
+ "will@kernel.org" <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ Justin He <Justin.He@arm.com>, Wei Chen <Wei.Chen@arm.com>,
+ "maz@kernel.org" <maz@kernel.org>, Steven Price <Steven.Price@arm.com>,
+ Kaly Xin <Kaly.Xin@arm.com>, Suzuki Poulose <Suzuki.Poulose@arm.com>,
+ "richardcochran@gmail.com" <richardcochran@gmail.com>,
+ "yangbo.lu@nxp.com" <yangbo.lu@nxp.com>,
+ "john.stultz@linaro.org" <john.stultz@linaro.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>, nd <nd@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Steve Capper <Steve.Capper@arm.com>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "sean.j.christopherson@intel.com" <sean.j.christopherson@intel.com>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ "pbonzini@redhat.com" <pbonzini@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-26 07:40, Zhenyu Ye wrote:
-> Hi Anshuman,
+On Mon, May 25, 2020 at 01:37:56AM +0000, Jianyong Wu wrote:
+> Hi Sudeep,
 > 
-> On 2020/5/26 10:39, Anshuman Khandual wrote:
->> This patch (https://patchwork.kernel.org/patch/11557359/) is adding 
->> some
->> more ID_AA64MMFR2 features including the TTL. I am going to respin 
->> parts
->> of the V4 series patches along with the above mentioned patch. So 
->> please
->> rebase this series accordingly, probably on latest next.
-
-No. Please.
-
->> 
+> > -----Original Message-----
+> > From: Sudeep Holla <sudeep.holla@arm.com>
+> > Sent: Friday, May 22, 2020 9:12 PM
+> > To: Jianyong Wu <Jianyong.Wu@arm.com>
+> > Cc: netdev@vger.kernel.org; yangbo.lu@nxp.com; john.stultz@linaro.org;
+> > tglx@linutronix.de; pbonzini@redhat.com; sean.j.christopherson@intel.com;
+> > maz@kernel.org; richardcochran@gmail.com; Mark Rutland
+> > <Mark.Rutland@arm.com>; will@kernel.org; Suzuki Poulose
+> > <Suzuki.Poulose@arm.com>; Steven Price <Steven.Price@arm.com>; Justin
+> > He <Justin.He@arm.com>; Wei Chen <Wei.Chen@arm.com>;
+> > kvm@vger.kernel.org; Steve Capper <Steve.Capper@arm.com>; linux-
+> > kernel@vger.kernel.org; Kaly Xin <Kaly.Xin@arm.com>; nd <nd@arm.com>;
+> > Sudeep Holla <Sudeep.Holla@arm.com>; kvmarm@lists.cs.columbia.edu;
+> > linux-arm-kernel@lists.infradead.org
+> > Subject: Re: [RFC PATCH v12 03/11] psci: export smccc conduit get helper.
+> > 
+> > On Fri, May 22, 2020 at 04:37:16PM +0800, Jianyong Wu wrote:
+> > > Export arm_smccc_1_1_get_conduit then modules can use smccc helper
+> > > which adopts it.
+> > >
+> > > Acked-by: Mark Rutland <mark.rutland@arm.com>
+> > > Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+> > > ---
+> > >  drivers/firmware/psci/psci.c | 1 +
+> > >  1 file changed, 1 insertion(+)
+> > >
+> > > diff --git a/drivers/firmware/psci/psci.c
+> > > b/drivers/firmware/psci/psci.c index 2937d44b5df4..fd3c88f21b6a 100644
+> > > --- a/drivers/firmware/psci/psci.c
+> > > +++ b/drivers/firmware/psci/psci.c
+> > > @@ -64,6 +64,7 @@ enum arm_smccc_conduit
+> > > arm_smccc_1_1_get_conduit(void)
+> > >
+> > >  	return psci_ops.conduit;
+> > >  }
+> > > +EXPORT_SYMBOL(arm_smccc_1_1_get_conduit);
+> > >
+> > 
+> > I have moved this into drivers/firmware/smccc/smccc.c [1] Please update
+> > this accordingly.
 > 
-> I noticed that some patches of your series have been merged into arm64
-> tree (for-next/cpufeature), such as TLB range, but this one not. Why?
-> 
-> BTW, this patch is provided by Marc in his NV series [1], maybe you
-> should also let him know.
-> 
-> I will rebase my series after your patch is merged.
+> Ok, I will remove this patch next version.
 
-Please don't rebase on -next. That's the worse thing to do. Always base
-your series on a well known -rc, and stick to that. Maintainers can
-always do the rebase and resolve conflicts.
+You may need it still, just that this patch won't apply as the function
+is moved to a new file.
 
-Thanks,
-
-         M.
 -- 
-Jazz is not dead. It just smells funny...
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
