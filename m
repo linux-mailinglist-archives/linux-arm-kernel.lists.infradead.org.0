@@ -2,86 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F6971E22CC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 15:13:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B7101E22D7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 15:21:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Bm4oPxz2OyDak5PlRZ5IYqmqaeeNQgvca7fHdsF6H30=; b=mrlXD8FB50Fn5z
-	eAdCsTpEbtU6wT9deZ+brfunFwsPsg+u1ndOM8WorPcROQRpYCJESBG1PSsUSn8lVMjkcUjYRpWGU
-	pg25QZN/lXQ2Q3LayIeqElsvSGsBG5ojLeSkAZSCgL/twadLDQ+FLMUx2gydSXIFkTZjFdsO+60G1
-	NPAhdOPYI9VZe8FBuCNmMdso2IlNOwFUbBxv6GvWR/18ILNSXumBu3E/XSkTjsGFQf/jBCGcQZ2td
-	0qQNB74qHhmiIAcOpsb9Ip0aERgvKSV1nYkPSOUTAg/8aCYPGVbPtiP2SHsaeGXsoTEjMdAuaJA43
-	uz1D3+uo7gN1gM9aWgXA==;
+	List-Owner; bh=B9UIsVNBzphNekyL9TWFUuzbYLzWZOjaiunFjvavn30=; b=do6T7rEZgAWgr5
+	68uV2lKkgiYy9IZH/In5biyqd7w+YqK7rBaPCo0r6dPz4MQ9PoS20eAmgCCU9nyIuc/rOhGhA2eeR
+	czVhA49MxkoG9yiem/aKiyXq2RwMUzfqe0x2zxtnCDUQssq5a737No+RNUW4QRVmEZ8cTOmSkwnm9
+	MqskiHSeiGx4pSewWIOlRYH1RydfABcSwdXxdNSJAWzeM1yD4dUH2lM6X8puUg+3nZBl9sMksCWNG
+	HbF1FGjAhyIp+2+HevKYUs9eImhdGddcEhphfeuC9tyJKaUDkFfJXNmZsxNLzqh1JgD7CdpC4GP2e
+	RJopa+prJqs7bLXI0BkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdZOP-0001pT-VL; Tue, 26 May 2020 13:13:17 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jdZWE-0007Oe-CD; Tue, 26 May 2020 13:21:22 +0000
+Received: from conuserg-10.nifty.com ([210.131.2.77])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdZOF-0001oa-OM
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 13:13:09 +0000
-Received: by mail-lf1-x143.google.com with SMTP id c21so12282815lfb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 06:13:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
- bh=ephXh0Ws1vURS05DtHce4Quc+oR69mUIgptnvs16X8Y=;
- b=jEA8gNdvAp3D9dKLQEp9DZLm40+NpEOW7y8uZvLh+BBMAcCwnzYhWjzJeSnuec+YZT
- AhFOjrUBrKElgJx8HIAxjPqTKPswQjBiphJD75YykqKli8Bgw7YDfJdTM9cxh7hudrYJ
- NSs0Tp4EWIfU4ugQXYz3I+ySjLx47qgQR7XKa7y1E/30m0lyuZG3p9P1jAEQDdUDgwEC
- tO0i1Ws5P9nODmjlibYciJ0A+K3YbwsdcpLUGlkXhWf6iKgpRUbLVZXpFbMoQgCHEgGz
- 4dzPNha4SLQvxy2SytgG2C9emeUmq54LLNS9jPY6nBXugEJhj74HvZWZ+4MawN2F4CrZ
- 5MNg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition;
- bh=ephXh0Ws1vURS05DtHce4Quc+oR69mUIgptnvs16X8Y=;
- b=M6Dyz/Kri9iBejv90aODYQ5E4rJ65qoX/aKON1dO+K4Mb5HwgWMpV8Ot2/0Rn1vEm5
- aw1YiDaRy8IP8f9zsvA0EyCJTB1YUW+Yf3Gd/lEeQkJ/aGG2Cc0cqF34YeSFyMRJED6U
- r2vHlEBKmbUlHrW9yXX9oLw4Np0NM1FPXmcbckf8LfiOmo8PHO/ffZ11BQwAIXg7Uemm
- sPeCS6rEeghXKoDn2Zq6/pkGaOFGugai+M2u/2aV4kQv8ZAvArdLIBl/sZ0EyQcgSBjU
- wHwtmc+JclPw8/nAT6/fLWG5c/ng/A0cpxeZU/doUJzcGoCIwDl4mZ9as7PSJ2z/s9Kx
- diOg==
-X-Gm-Message-State: AOAM531nmfsVodMkfmafgO9gVcQh1Eqrj8XFbxUf9k1OgQ6y6bIy5kDW
- wyHDRMGkquGiMMFSkiq7PlHBLQ==
-X-Google-Smtp-Source: ABdhPJyXJJ3riQvr5hQMbP/Mq5TfkYaYDNtogu+2req5gEPqavseH0MGWZYipsgXfPkNKPdEkVm74w==
-X-Received: by 2002:a19:c751:: with SMTP id x78mr521867lff.82.1590498782293;
- Tue, 26 May 2020 06:13:02 -0700 (PDT)
-Received: from jade (h-249-223.A175.priv.bahnhof.se. [98.128.249.223])
- by smtp.gmail.com with ESMTPSA id f18sm4952339lfh.49.2020.05.26.06.13.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 06:13:01 -0700 (PDT)
-Date: Tue, 26 May 2020 15:12:59 +0200
-From: Jens Wiklander <jens.wiklander@linaro.org>
-To: arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL] tee subsystem pin_user_pages for v5.8
-Message-ID: <20200526131259.GA97001@jade>
+ id 1jdZW5-0007Nw-Ct
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 13:21:15 +0000
+Received: from oscar.flets-west.jp (softbank126090202047.bbtec.net
+ [126.90.202.47]) (authenticated)
+ by conuserg-10.nifty.com with ESMTP id 04QDKoZa004724;
+ Tue, 26 May 2020 22:20:51 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-10.nifty.com 04QDKoZa004724
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1590499252;
+ bh=obb2n8kjtEQ2zCZI5gbwOsMihSFwQFDcm79n56a85H8=;
+ h=From:To:Cc:Subject:Date:From;
+ b=bqJSmPDJUkObDgEYZa4nT5OCk2gFkTJkHlDwNALQ1WQamQUQN9ao4xJHBwBGedKOo
+ i4wvpdNVRi65OyHW88oAnV2+pKDRdcmvopsPXhYD/HyXV/0myMNX7xDgXaVZt3xGIK
+ +Pseh2POVwToAgGuLSw7bX6U7jPzVLDA43l7dPAw4ZGHvbPFRztLM5uJW4efULPwKi
+ gAcfqu4FQjq089c+CzNR6rZSKuih3mbYDQV1KhlCK8fP7jbpKlDt4CDPIJi3HC3y58
+ shIwSbUwykOHl5cgbOa2GboKHTS+gtAjQUmzwOs3do9ufDlx8XhUZHzba3SdvGoHEp
+ 2cZ/Mr1IAd1Pg==
+X-Nifty-SrcIP: [126.90.202.47]
+From: Masahiro Yamada <masahiroy@kernel.org>
+To: patches@arm.linux.org.uk
+Subject: [PATCH] ARM: add arch/arm/Kbuild
+Date: Tue, 26 May 2020 22:20:31 +0900
+Message-Id: <20200526132032.400264-1-masahiroy@kernel.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_061307_795085_C6BCE510 
-X-CRM114-Status: GOOD (  10.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200526_062113_758406_B3562E00 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ no trust [210.131.2.77 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,43 +73,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tee-dev@lists.linaro.org, John Hubbard <jhubbard@nvidia.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Arnd Bergmann <arnd@arndb.de>, Christian Lamparter <chunkeey@gmail.com>,
+ Marc Zyngier <maz@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
+ Nathan Huckleberry <nhuck15@gmail.com>,
+ Nathan Chancellor <natechancellor@gmail.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello arm-soc maintainers,
+Use the standard obj-y form to specify the sub-directories under
+arch/arm/. No functional change intended.
 
-Please pull this small patch converting the tee subsystem to use
-pin_user_pages() instead of get_user_pages().
+Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+---
 
-Thanks,
-Jens
+KernelVersion: v5.7-rc1
 
-The following changes since commit ae83d0b416db002fe95601e7f97f64b59514d936:
+ arch/arm/Kbuild   | 11 +++++++++++
+ arch/arm/Makefile | 12 +-----------
+ 2 files changed, 12 insertions(+), 11 deletions(-)
+ create mode 100644 arch/arm/Kbuild
 
-  Linux 5.7-rc2 (2020-04-19 14:35:30 -0700)
+diff --git a/arch/arm/Kbuild b/arch/arm/Kbuild
+new file mode 100644
+index 000000000000..5208f7061524
+--- /dev/null
++++ b/arch/arm/Kbuild
+@@ -0,0 +1,11 @@
++# SPDX-License-Identifier: GPL-2.0-only
++obj-$(CONFIG_FPE_NWFPE)		+= nwfpe/
++# Put arch/arm/fastfpe/ to use this.
++obj-$(CONFIG_FPE_FASTFPE)	+= $(patsubst $(srctree)/$(src)/%,%,$(wildcard $(srctree)/$(src)/fastfpe/))
++obj-$(CONFIG_VFP)		+= vfp/
++obj-$(CONFIG_XEN)		+= xen/
++obj-$(CONFIG_VDSO)		+= vdso/
++obj-y				+= kernel/ mm/ common/
++obj-y				+= probes/
++obj-y				+= net/
++obj-y				+= crypto/
+diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+index cd28211f1418..5f617fb1782e 100644
+--- a/arch/arm/Makefile
++++ b/arch/arm/Makefile
+@@ -272,18 +272,8 @@ endif
+ 
+ export	TEXT_OFFSET GZFLAGS MMUEXT
+ 
+-core-$(CONFIG_FPE_NWFPE)	+= arch/arm/nwfpe/
+-# Put arch/arm/fastfpe/ to use this.
+-core-$(CONFIG_FPE_FASTFPE)	+= $(patsubst $(srctree)/%,%,$(wildcard $(srctree)/arch/arm/fastfpe/))
+-core-$(CONFIG_VFP)		+= arch/arm/vfp/
+-core-$(CONFIG_XEN)		+= arch/arm/xen/
+-core-$(CONFIG_VDSO)		+= arch/arm/vdso/
+-
++core-y				+= arch/arm/
+ # If we have a machine-specific directory, then include it in the build.
+-core-y				+= arch/arm/kernel/ arch/arm/mm/ arch/arm/common/
+-core-y				+= arch/arm/probes/
+-core-y				+= arch/arm/net/
+-core-y				+= arch/arm/crypto/
+ core-y				+= $(machdirs) $(platdirs)
+ 
+ # For cleaning
+-- 
+2.25.1
 
-are available in the Git repository at:
-
-  git://git.linaro.org:/people/jens.wiklander/linux-tee.git tags/tee-pin-user-pages-for-5.8
-
-for you to fetch changes up to 37f6b4d5f47b600ec4ab6682c005a44a1bfca530:
-
-  tee: convert get_user_pages() --> pin_user_pages() (2020-05-26 10:42:41 +0200)
-
-----------------------------------------------------------------
-Converts tee subsystem to use pin_user_pages() instead of get_user_pages()
-
-----------------------------------------------------------------
-John Hubbard (1):
-      tee: convert get_user_pages() --> pin_user_pages()
-
- drivers/tee/tee_shm.c | 12 +++---------
- 1 file changed, 3 insertions(+), 9 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
