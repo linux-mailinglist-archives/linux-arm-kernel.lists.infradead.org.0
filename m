@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A9E41E1AC5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 07:45:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 627381E1AEB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 08:00:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=44ztDmxgofwZP8bVVoO/OYlvk6CC9U6q72XAEhn6d3I=; b=HB2F3uDAHvhVBD
-	cE6kdT0oDM0CBQoxfm62IvlSQXsZ7xagEc94IG8iQPKbOrVihsq1EKbHvHv3EPYldmHxw3RHkpTfF
-	IWZzRUHogcvxL0lourKBczsjjoI45aSs3Um1CluweBDTw+F0W05Y7dyObkGs4ZaIxEVYXkTXDl+uT
-	Rk6BfoXnLgj5nmsfgVuKEsUf+mWtIhljNPccozpFpAEQuJ18u+Rj3UY2Gwu5MfNAzYaX+k9hYykAs
-	VBEGPLiUZzzgmND/doVXRlhtRyxi9fkG5sfr+LTOYfJNiG1zf9w/p21dg7tKrQ70160rZKWosI+38
-	CQ3v4IxfSPOgUP2nkjhw==;
+	List-Owner; bh=qgqX5++XBM8qQNiDiACLOaWXCkVzDFY7vefj9s/FbJQ=; b=gYki/B81wT6bpS
+	q58DV6WBOAxp+ZBFcHgqMgo4JCvSsKMoDrN5VTrQDT2SPwaGZMSlneUVNucKGgEv+W0L+fhFRDmbu
+	jaBuJ6p3WmlxWClIqOO9MIaTjenOs3d3Q9jJ4O/Y7G7YY8ktwC1OnYmme3OA0zbdhVf2r9sklCYyb
+	LbX7YIrX9A3zvYk5z0lMZ+iUA73wY4Xx43wwdy9072z534e6nRFtpBI0yFMN7KKkfloIEMhdj767O
+	3ho22ihJ1Rn/BeQCTax6MyYIoilcZx9J7mAWImhUrM1j6N9U8T4ZXV/NiLRP83XjzLffCkB95VF/U
+	dYifdZ+ZEiD/7gRUNE8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdSOX-0000lQ-NQ; Tue, 26 May 2020 05:44:57 +0000
-Received: from bilbo.ozlabs.org ([203.11.71.1] helo=ozlabs.org)
+	id 1jdSd4-0001C1-NK; Tue, 26 May 2020 05:59:58 +0000
+Received: from ozlabs.org ([2401:3900:2:1::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdSOP-0000kP-36
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 05:44:50 +0000
+ id 1jdScd-00011G-Sh
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 05:59:33 +0000
 Received: by ozlabs.org (Postfix, from userid 1003)
- id 49WNFb23Kfz9sRY; Tue, 26 May 2020 15:44:35 +1000 (AEST)
+ id 49WNZn11tSz9sRY; Tue, 26 May 2020 15:59:29 +1000 (AEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ozlabs.org; s=201707;
- t=1590471875; bh=j0PNgC0xr6mRDHCZ2htDfbQsT0XH5gFzuCdilAoQCBw=;
+ t=1590472769; bh=UvsMjZEYjC+bU7cDuBcQ49xsO8s4tc7S4Vm5YquVl3s=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=H05nUKbvRSIH+7O5N9VUsnkHeRklB48VujBczf2Xtd7k/msK8glVNwOfwKFhBxaM2
- RMEhFP3061zuW6+4Tyn4tcDNAEbnpgE5y/GbpnLgkqD9inO7dRTJ8JdJazRZlG5By1
- dDTw25f7q0+rjMvV86X6zTMCLnL9GISRBtWJGAOBofFztGdhMaHaSDnzVJeKDOeTRr
- P/gT1fm1rSHSwWvDzu+Yy/x7JV3Y4U7YJfxqHFYoVKLC8zIAnftSk9Bv7oB4+ke1/z
- t+6gHdzDMsO3E/gW5yqaeDf4mGpMKKUTqOEkTCh4o4CEB+cdOrXQUL3itzvvSsvIix
- ogkCA1YC4CmqQ==
-Date: Tue, 26 May 2020 14:36:56 +1000
+ b=dr7/DCW1ueRx4rYAQYErFOviGddLWKlo5BpU5HFciy9CJet5sWJEf2BjRFaWIfdr8
+ exnM7o9NB/Edk/VdBss9/EVVuN4f8bDfV11zfFBbmNSYetArbeqDrPhOe9n7g0jy2w
+ jPlaaGtU/Bys9q0B1FhwBdGuQzbxpZlMef7Omzw1nQCaKfe0sUl0HzmqRRaLXCiNsq
+ 9mwubjD8MVwaThkdXmLYOSbANn8EQAl66FmLO02dquKK/12GEHaZ8qqqsY5MwEIHvQ
+ CTVrP2oC3cIqV5tanqXHRykuANp24K+isJl9f5Ks+0pA8PSIeFjFgqi3fPTEglfkPk
+ PJf2vvuHBAlag==
+Date: Tue, 26 May 2020 15:49:50 +1000
 From: Paul Mackerras <paulus@ozlabs.org>
 To: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-Subject: Re: [PATCH v4 3/7] KVM: PPC: Remove redundant kvm_run from vcpu_arch
-Message-ID: <20200526043656.GA282305@thinks.paulus.ozlabs.org>
+Subject: Re: [PATCH v4 4/7] KVM: PPC: clean up redundant 'kvm_run' parameters
+Message-ID: <20200526054950.GC282305@thinks.paulus.ozlabs.org>
 References: <20200427043514.16144-1-tianjia.zhang@linux.alibaba.com>
- <20200427043514.16144-4-tianjia.zhang@linux.alibaba.com>
+ <20200427043514.16144-5-tianjia.zhang@linux.alibaba.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200427043514.16144-4-tianjia.zhang@linux.alibaba.com>
+In-Reply-To: <20200427043514.16144-5-tianjia.zhang@linux.alibaba.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_224449_293213_5ADA6474 
-X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-CacheID: sfid-20200525_225932_081139_9264A492 
+X-CRM114-Status: UNSURE (   6.54  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -90,17 +90,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 27, 2020 at 12:35:10PM +0800, Tianjia Zhang wrote:
-> The 'kvm_run' field already exists in the 'vcpu' structure, which
-> is the same structure as the 'kvm_run' in the 'vcpu_arch' and
-> should be deleted.
+On Mon, Apr 27, 2020 at 12:35:11PM +0800, Tianjia Zhang wrote:
+> In the current kvm version, 'kvm_run' has been included in the 'kvm_vcpu'
+> structure. For historical reasons, many kvm-related function parameters
+> retain the 'kvm_run' and 'kvm_vcpu' parameters at the same time. This
+> patch does a unified cleanup of these remaining redundant parameters.
 > 
 > Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
 
-This looks fine.
-
-I assume each architecture sub-maintainer is taking the relevant
-patches from this series via their tree - is that right?
+This looks OK, though possibly a little larger than it needs to be
+because of variable name changes (kvm_run -> run) that aren't strictly
+necessary.
 
 Reviewed-by: Paul Mackerras <paulus@ozlabs.org>
 
