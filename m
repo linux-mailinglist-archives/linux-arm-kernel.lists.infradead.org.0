@@ -2,81 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3EBB1E1C7F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 09:47:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEE901E1C99
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 09:56:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=atZGy2pULALG1FQsLbKsdZDBqJFn44b6vp1mvU5QH8w=; b=VClODwOJ2XpWGW
-	L7tPOOGvV+MrVfaFdMwFIjTD1saWiK/3XnNigTGrv5dUce3TW5ZDUKl+BuCiJ72/CE9Udqqz4+6pp
-	zF0mNixeuTT7H8kuBB1Wg5u233gUA8eeYtn/G43ztA0tQ0YH6dP5/AnmZS7idH8DbX6kFGPO8uGqN
-	omenpLJ8s2+tnyn8hQJjJK8GfnG8QLw1uvEfFVefslWkYrz8Ik9rxY3upk9Ccr6qg7LWXfeHGZCIW
-	R8criqYgGkFNJi21SZd4hD6CJqY1m1Pl4fHpaFa0S/WydBCh2GFKnXsS5xt/k4eAjInkQUkHh3CVh
-	SvQjpfKw7ObWDMvYPSgA==;
+	List-Owner; bh=3qEdDsel+BsJBVWEB9Em3O2ljfxZYMGGSZo97zMjssE=; b=ai7ZUKux6C5j1V
+	jfKKX1ofefWKZYW5O/5yFUJvEZARzuwDB2Ri10HGXfz0sWpposOIhBbQCWoTKHQQ2KjHDPUOZC0Gw
+	svvJXAmh9765MmuOTVXmJKd4pDqemG8Yg2G1jk4NOVgN13RGuRjvZ5SyllJm9h+jaHpnY0jIewIMD
+	YBBNDc7HtHU5M8hPOzN3C8zTsSnCbTicJTT7TWra4CLlH1Cy+Bs7O4PkMDy/svQDDQqE1cYXgYZKw
+	ZALvmb++uJLxhZV93hunUmO386wS1Ba/9U6RgdopVmc0p21nAWDMZmo9+OCKbcu9yxI86Rufh1l/O
+	uFxbPOzLghUr9tur5ARQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdUIY-0001pF-SF; Tue, 26 May 2020 07:46:54 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jdUSC-0007lG-1C; Tue, 26 May 2020 07:56:52 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdUIQ-0001oY-5T
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 07:46:47 +0000
-Received: by mail-pg1-x541.google.com with SMTP id m1so3366163pgk.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 00:46:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9hP2gJKDW99uKK2ci16iXnlfh+TatIfa89bbfH5MoI4=;
- b=IhzaWHQ1IZn6kk5fS4iMMRliwb3dMakoIny3kYQoKhPJfWBCrUDuqY1zF35nu+X3uM
- IIMZHSik2wI24wf1Rbv55Zfau50NYOZqwT5E3HJ44qFUyMAbvbwjtiMrX7FzQXecd9kx
- lGIyMAkM6o6NpxpWeGv6qArvRioOMHh8MYr9HAxc+AY0J3ndgjB/AAgwouQuApmwW/2x
- 0i5kA8i2KdLS9Cry6afAJIVKO38W+8pxUNG0/aCJmn9FuhIrJGeaz0t9TNXu05wmWp60
- LvOyWZwuhdmVr8GBpjVVjopbyWV+x35/HsE+p0t5/nrUupNP/bELGe190S/g6BN5d+FF
- rd4A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9hP2gJKDW99uKK2ci16iXnlfh+TatIfa89bbfH5MoI4=;
- b=Sv87qodn0p1YgcgEupCHy2MLS2YyRUcbY7Q4Ke4mZrl7kt74pIAofvW6eNTLFX+oEU
- EX9GDkgKX9w5lLZ+jt5ziZmc8VeGLARxkW06Fx1FxU0hZ+QA8NshXLWVAWQ0Yy7BqQhx
- hsczMlaW+0wzgT9KSEcYmNsdN0v4Z2RlWWJXRleRbGIEPcx8Ylh23ZxhAd+zYCsK1H2z
- pL7GvDL4x46Gqch17E7p2mISXpVihNdzmDu6KJCxmy33qj1vOm6WyFAtzj9zQj7xtQh5
- yXe0osMjbS6IiOrpKxY4wOclz6+FUgHR1rsqhb0QN+9QeLHS+pZ1+ZDvFy2NSQMnvovj
- TlCw==
-X-Gm-Message-State: AOAM531JCohhapVFefLLGz96e/Pcyu/har3ZWy4X3dOgv2hOuCEXMSdy
- 5pdYsYybMCdTw8inj7jVX7DlS3xwlGnAShMkskg=
-X-Google-Smtp-Source: ABdhPJyxzAObFo2fGXgOG0DTaZEGiMDEiM/XhPzUWJLhBUpA9j5+1D9nbFN8JF/guHMeGKz5o2jOHBt1rP1W7jAGnnM=
-X-Received: by 2002:aa7:99c8:: with SMTP id v8mr17942364pfi.36.1590479205218; 
- Tue, 26 May 2020 00:46:45 -0700 (PDT)
+ id 1jdUS3-0007k6-A3
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 07:56:44 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id E90A95C0058;
+ Tue, 26 May 2020 03:56:37 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 26 May 2020 03:56:37 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:content-transfer-encoding:in-reply-to; s=fm2; bh=Z
+ u9qqU+I+thjV7ih0gjMq+r1LnUk7vFMdi7Yew8UXJA=; b=xneF9++arCV/I77rR
+ 8tDgoctxQlEU8NQEX4Ez381uoRVlHrFxRnwUQt6j/dmP6Tz8QrKj9xh5oi+qGkf7
+ 7CLIYDqQ50alvXSblYSOK35/JoV/lycqKEVACaq07FM1XhYkpvld9OKDf/T/nPIX
+ oMstbQijFskdWwMkeXr/L2Fnmx/NYkholzSYmB/zk3JRxq7ZopMK+ZAuxGOx9sg8
+ mCq6aiv4ZETpLj26t5tOZPj5jQii2pHk7fvadHK1pjYXIK78++k/8Tt+BbMH++3h
+ 7EErQaTF1K5uUuSQwYOnu2tyg9OvX8rmlI8SaZrEx1Slq9L911h5oOyeS1SglYLp
+ fVUzQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; bh=Zu9qqU+I+thjV7ih0gjMq+r1LnUk7vFMdi7Yew8UX
+ JA=; b=p0cu4g70VqbywSbgNEoJJGrVh0fks3lfYnbqF9+Dt5jSYkkdic/bllsTh
+ O77J/jq4X9lj2+sAWxFz++C7TzM2ywsTdVLknidD6RSBd1EpubjQWs3WLfG+Z3sm
+ 1uPZ0UDxrl9ndLRGaUxZ9lIRmtBR7jWDaUnO95RPsbBhVgo/3BKz/A9/MJH3imaG
+ fmPXLLginST6wZlqGI1y9Ip4j96L2TPbclo22ejhobOsAGAW9xGlzdqn5We3osZ6
+ GTOOr4sFK35zy3jbiTbFHO5hwrAbhp/2Ida66TJgNMpP9x4I8iIHiAoelkRHfJVc
+ yxlj9AyEOox/5lmzjM4IVsdnB96qA==
+X-ME-Sender: <xms:scvMXtW6yirSIt1uH7W78oOy4M0e6wqkOFer8qkJJ2MiaZMPRuFJ2A>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvuddguddvvdcutefuodetggdotefrod
+ ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+ necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+ enucfjughrpeffhffvuffkfhggtggugfgjsehtqhertddttddvnecuhfhrohhmpeforgig
+ ihhmvgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrf
+ grthhtvghrnhepgfejtedtjefggfffvdetuedthedtheegheeuteekfeeghfdtteejkeel
+ udegvddunecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptd
+ enucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:scvMXtkGf5broUr6pAbTdzLfNgFpIixxtsz-1ba5es1lu3Sy8OiVXA>
+ <xmx:scvMXpY4qalIlkQ9EWDOhnvEhEoTtynFhThong14ufMKt6lp0SZrYA>
+ <xmx:scvMXgVID8mORfqJf9rT0xHxW6GJ7TqUIm3trViClXYj0w8pmMOhJQ>
+ <xmx:tcvMXsyv-p5n67fNuL0DwsQ7uh4PB8z8SzI0caVkb1jgVU5OHgqEQA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id E28AD328005E;
+ Tue, 26 May 2020 03:56:32 -0400 (EDT)
+Date: Tue, 26 May 2020 09:56:30 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Rikard Falkeborn <rikard.falkeborn@gmail.com>
+Subject: Re: [PATCH 2/2] iommu/sun50i: Constify sun50i_iommu_ops
+Message-ID: <20200526075630.wjevamadh5mcnleb@gilmour.lan>
+References: <20200525214958.30015-1-rikard.falkeborn@gmail.com>
+ <20200525214958.30015-3-rikard.falkeborn@gmail.com>
 MIME-Version: 1.0
-References: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
- <1590378348-8115-7-git-send-email-dillon.minfei@gmail.com>
-In-Reply-To: <1590378348-8115-7-git-send-email-dillon.minfei@gmail.com>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Tue, 26 May 2020 10:46:33 +0300
-Message-ID: <CAHp75VebSZa6mwAETnM0t42RQCp4iM6_SNjmy3TB48ixsGKV8g@mail.gmail.com>
-Subject: Re: [PATCH v5 6/8] drm/panel: Add ilitek ili9341 panel driver
-To: dillon.minfei@gmail.com,
- =?UTF-8?Q?Noralf_Tr=C3=B8nnes?= <noralf@tronnes.org>
+Content-Disposition: inline
+In-Reply-To: <20200525214958.30015-3-rikard.falkeborn@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_004646_208367_8F2E6B87 
-X-CRM114-Status: UNSURE (   8.21  )
+X-CRM114-CacheID: sfid-20200526_005643_488736_F8505979 
+X-CRM114-Status: UNSURE (   6.86  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,6 +98,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,34 +110,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-spi <linux-spi@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Joerg Roedel <joro@8bytes.org>, Chen-Yu Tsai <wens@csie.org>,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 25, 2020 at 6:46 AM <dillon.minfei@gmail.com> wrote:
->
-> From: dillon min <dillon.minfei@gmail.com>
->
->     This driver combine tiny/ili9341.c mipi_dbi_interface driver
->     with mipi_dpi_interface driver, can support ili9341 with serial
->     mode or parallel rgb interface mode by register configuration.
+On Mon, May 25, 2020 at 11:49:58PM +0200, Rikard Falkeborn wrote:
+> The struct sun50i_iommu_ops is not modified and can be made const to
+> allow the compiler to put it in read-only memory.
+> 
+> Before:
+>    text    data     bss     dec     hex filename
+>   14358    2501      64   16923    421b drivers/iommu/sun50i-iommu.o
+> 
+> After:
+>    text    data     bss     dec     hex filename
+>   14726    2117      64   16907    420b drivers/iommu/sun50i-iommu.o
+> 
+> Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
 
-Noralf told once that this driver should be unified with mi0283qt.c.
+Acked-by: Maxime Ripard <mripard@kernel.org>
 
-So, what should we do here?
-
--- 
-With Best Regards,
-Andy Shevchenko
+Thanks!
+Maxime
 
 _______________________________________________
 linux-arm-kernel mailing list
