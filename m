@@ -2,96 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FA881E1E83
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 11:27:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B77841E1EAE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 11:35:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=I0Bt+hFMQZT6wN7KdeYF9nODmrUaGCnKyAxcrmlLvdg=; b=XxaoX4OTkz82mfxvV2MWgOW7d
-	Hs8tapU8ZzHQmNpNftmyWhyUijuEpAtNlgmYltKbD0OJwND+66KSTMNO9kdHh6UDdpD3nYKCfSi3l
-	Q0X5nKQh3950CBiAbB9XmEgrFKCLUMaSmWcKgrPQxBb5ziIk191GSYBJceqtBwBsIhD5ka3oOhdyK
-	0jdDjJKRbyw08EBsPx8fCIApq0rroEla6jAn4ZVsz5ugAiy/h9lUANdLMW/1tjEVepePJK/wNqV8b
-	xFymL1OSy0jMtGCm7TX+mFbMijgt75Wj8Y4FAs9hD/Lx7lQjMFBWpJCvfbcuhD7BbMdJhn/OQfrtA
-	hi1EyOEZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T81MLdEmqexxcbsLljRbCGT1j5ORwxIel+/iMk3wjjY=; b=d84NQO4AvuRZL+
+	2d3WD1vmzjJnPYOOE6MYrWpso4I7YslbiOTvemZpj/3lVWQlW44sK8Se7+Ym9Jc1haoR8HYjkMJzF
+	s61lKJAU8l4cGftaJGBv7+e6XqB9HwTge1vr8PcsrzT/9GBe7zNogbamgBi/0KaCSHVEAujzTAfcY
+	eWAd+sE5Hz84o5mdWPLKo6sY6zw+BDyaqpswrYkj5sBuTOnKrKHe4LVGfZr/6Sl/mB64TSMOjqMc0
+	clNVe4huVi6P0fFcqNA3iG2HpG0G/ELaNu8Da3CZ6lROBeUpYZqNfmwliDYNj7JBOvGF40nBiaMbG
+	Ig7jSE6FloMrC3F528xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdVrw-0005PK-G9; Tue, 26 May 2020 09:27:32 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jdVzX-0001jq-I1; Tue, 26 May 2020 09:35:23 +0000
+Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdVrm-0005Oc-SX
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 09:27:24 +0000
-Received: by mail-lf1-x144.google.com with SMTP id d7so736240lfi.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 02:27:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=YWAzRC5vWFaerT+PrxcgDVCznHprBq1vLeMtOT5UI3Y=;
- b=AYUR1ofTIxp3pqwzqQ1seObOtjzronTTrGCkzzAsp0YMandNUBwAyUhWkyE/bTjIRk
- yeIe1ufA2NWyTU/ILAeqSUIWE2a7mwbLGAFIBKm8UZLENyRshx0lRL8p41Mqwv9l9aae
- 6/5SLqVFyXjcuN3p0MHiZ0QLet6LWlJjWlfXnxeQCXXzJaiPbDXvfyGXozxEYPLbck8Y
- Wzy9E6s0TFRq0IT0bhz2OFIOHK+dg2mqcGXs34gHvxtjpVERFeO8SR0llmtjzWoAMiOI
- 9xbkeWfhkPS9OpExAq9tjhoWoxYKHookPLBG50lUGMWqIG0wUhzhtyhv6GA+USMql8vQ
- b3Fg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=YWAzRC5vWFaerT+PrxcgDVCznHprBq1vLeMtOT5UI3Y=;
- b=PO8tdn1Gj0u2Bf2qaMcyjmlSdr+4+oFwC//WzkF4porNBA1hVDmrQqkC0coDhxfnWV
- boel3+gpSCxoofcm5xPTha0c9qXs5CHvcTfvpVAi4xNrtfAx0h9r7/as9yBe/eyG3/Tn
- TSyCQGx2GNWYdGO/1PlbBotjloW6ZIXqVjx02H4bF45t5yN/W84XOWfJpOzDIk9GsbC/
- kEKBRyzmZI4isQlaVOmdsf9AIuxLNwul7HIHs6IMVcd+0GX+/DKfPScfo+yOncB8AJEt
- 0NyRxrD91SOuGRaGcpd78/Hd6/lwwa9E5wMs8/VgBytRBl1KK6leee11IbDXjdZet8Gm
- JVjQ==
-X-Gm-Message-State: AOAM531EiaMoinGkUBCYetndAoTlY2Hmh8pClt/hLShXb5TZRi7mtfG3
- egMPP84+oMCoIG9cEBqR4mjY+A==
-X-Google-Smtp-Source: ABdhPJzZUg1AeY4ObpOP45wzM2E/oF0RXCpzj6bu00nxqPnJ9qOQUO8OvvuUXVdVxVqN6Sf5gmINyA==
-X-Received: by 2002:a19:7714:: with SMTP id s20mr58762lfc.161.1590485240999;
- Tue, 26 May 2020 02:27:20 -0700 (PDT)
-Received: from [192.168.118.216] (37-144-159-139.broadband.corbina.ru.
- [37.144.159.139])
- by smtp.gmail.com with ESMTPSA id z16sm2694573lji.44.2020.05.26.02.27.19
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 26 May 2020 02:27:20 -0700 (PDT)
-Subject: Re: [PATCH v3 05/10] media: i2c: imx290: Add configurable link
- frequency and pixel rate
-To: Sakari Ailus <sakari.ailus@iki.fi>
-References: <20200524192505.20682-1-andrey.konovalov@linaro.org>
- <20200524192505.20682-6-andrey.konovalov@linaro.org>
- <20200526091234.GH8214@valkosipuli.retiisi.org.uk>
-From: Andrey Konovalov <andrey.konovalov@linaro.org>
-Message-ID: <91992bdb-deb1-0355-e61f-78c38a68f6d1@linaro.org>
-Date: Tue, 26 May 2020 12:27:17 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jdVy0-0000iu-4S
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 09:33:50 +0000
+IronPort-SDR: wQn73Nnn1OxwIdgGF+1uvhlnXUUpJnVSs7aTC1KLJ5WBo70ix9onASp6x7Gw7flsbwaGMaxEsT
+ DCYzRY5ut27A==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 26 May 2020 02:33:47 -0700
+IronPort-SDR: d8DkXYdwb+F5Mc6MKpPBn/UME0xfizCgT+YlAnLMw4QEfSGehZ2hHGC0tgB9AQwx+hoKklg+yi
+ 9nw/M6GKzssw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,436,1583222400"; d="scan'208";a="256411805"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by fmsmga008.fm.intel.com with ESMTP; 26 May 2020 02:33:45 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jdVxx-000BCm-45; Tue, 26 May 2020 17:33:45 +0800
+Date: Tue, 26 May 2020 17:32:52 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [soc:mediatek/soc-2] BUILD SUCCESS
+ 32956dda97577f0960eb3d9d9aff7338d0cf4cc4
+Message-ID: <5ecce244.RQatBqjc+Y3TJtHT%lkp@intel.com>
+User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
-In-Reply-To: <20200526091234.GH8214@valkosipuli.retiisi.org.uk>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_022722_923422_39D7F064 
-X-CRM114-Status: GOOD (  24.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200526_023348_243286_7850856F 
+X-CRM114-Status: UNSURE (   7.06  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.100 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 1.8 LONGWORDS              Long string of long words
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,261 +72,211 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- manivannan.sadhasivam@linaro.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  mediatek/soc-2
+branch HEAD: 32956dda97577f0960eb3d9d9aff7338d0cf4cc4  clk/soc: mediatek: mt6779: Bind clock driver from platform device
 
-Thank you for the review!
+elapsed time: 8540m
 
-On 26.05.2020 12:12, Sakari Ailus wrote:
-> Hi Andrey,
-> 
-> On Sun, May 24, 2020 at 10:25:00PM +0300, Andrey Konovalov wrote:
->> From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
->>
->> IMX290 operates with multiple link frequency and pixel rate combinations.
->> The initial driver used a single setting for both but since we now have
->> the lane count support in place, let's add configurable link frequency
->> and pixel rate.
->>
->> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
->> Signed-off-by: Andrey Konovalov <andrey.konovalov@linaro.org>
->> ---
->>   drivers/media/i2c/imx290.c | 100 ++++++++++++++++++++++++-------------
->>   1 file changed, 66 insertions(+), 34 deletions(-)
->>
->> diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
->> index a361c9ac8bd5..e800557cf423 100644
->> --- a/drivers/media/i2c/imx290.c
->> +++ b/drivers/media/i2c/imx290.c
->> @@ -38,8 +38,6 @@
->>   #define IMX290_HMAX_2_720 0x19C8
->>   #define IMX290_HMAX_4_720 0x0CE4
->>   
->> -#define IMX290_DEFAULT_LINK_FREQ 445500000
->> -
->>   static const char * const imx290_supply_name[] = {
->>   	"vdda",
->>   	"vddd",
->> @@ -56,8 +54,6 @@ struct imx290_regval {
->>   struct imx290_mode {
->>   	u32 width;
->>   	u32 height;
->> -	u32 pixel_rate;
->> -	u32 link_freq_index;
->>   
->>   	const struct imx290_regval *data;
->>   	u32 data_size;
->> @@ -248,8 +244,13 @@ static const struct imx290_regval imx290_10bit_settings[] = {
->>   };
->>   
->>   /* supported link frequencies */
->> -static const s64 imx290_link_freq[] = {
->> -	IMX290_DEFAULT_LINK_FREQ,
->> +static const s64 imx290_link_freq_2lanes[] = {
->> +	891000000, /* 1920x1080 -  2 lane */
->> +	594000000, /* 1280x720  -  2 lane */
->> +};
->> +static const s64 imx290_link_freq_4lanes[] = {
->> +	445500000, /* 1920x1080 -  4 lane */
->> +	297000000, /* 1280x720  -  4 lane */
->>   };
->>   
->>   /* Mode configs */
->> @@ -259,16 +260,12 @@ static const struct imx290_mode imx290_modes[] = {
->>   		.height = 1080,
->>   		.data = imx290_1080p_settings,
->>   		.data_size = ARRAY_SIZE(imx290_1080p_settings),
->> -		.pixel_rate = 178200000,
->> -		.link_freq_index = 0,
->>   	},
->>   	{
->>   		.width = 1280,
->>   		.height = 720,
->>   		.data = imx290_720p_settings,
->>   		.data_size = ARRAY_SIZE(imx290_720p_settings),
->> -		.pixel_rate = 178200000,
->> -		.link_freq_index = 0,
->>   	},
->>   };
->>   
->> @@ -442,6 +439,32 @@ static int imx290_get_fmt(struct v4l2_subdev *sd,
->>   	return 0;
->>   }
->>   
->> +static u8 imx290_get_link_freq_index(struct imx290 *imx290)
->> +{
->> +	const struct imx290_mode *cur_mode = imx290->current_mode;
->> +
->> +	return (cur_mode->width == 1920) ? 0 : 1;
-> 
-> Could you use (imx290->current_mode - imx290_modes) / sizeof(*imx290_modes)
-> or something like that? It'd have fewer chances of breaking if new modes
-> are added.
-> 
->> +}
->> +
->> +static s64 imx290_get_link_freq(struct imx290 *imx290)
->> +{
->> +	u8 index = imx290_get_link_freq_index(imx290);
->> +
->> +	if (imx290->nlanes == 4)
->> +		return imx290_link_freq_4lanes[index];
->> +	else
->> +		return imx290_link_freq_2lanes[index];
-> 
-> Or even better: store the link frequencies to the modes themselves. They
-> are a property of the modes after all.
+configs tested: 184
+configs skipped: 2
 
-Then we will get two sets (for 2 lanes and for 4 lanes) of two modes (1080p and 720p), right?
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
->> +}
->> +
->> +static u64 imx290_calc_pixel_rate(struct imx290 *imx290)
->> +{
->> +	s64 link_freq = imx290_get_link_freq(imx290);
->> +	u8 nlanes = imx290->nlanes;
->> +
->> +	/* pixel rate = link_freq * 2 * nr_of_lanes / bits_per_sample */
->> +	return (link_freq * 2 * nlanes / 10);
->> +}
->> +
->>   static int imx290_set_fmt(struct v4l2_subdev *sd,
->>   			  struct v4l2_subdev_pad_config *cfg,
->>   		      struct v4l2_subdev_format *fmt)
->> @@ -475,10 +498,14 @@ static int imx290_set_fmt(struct v4l2_subdev *sd,
->>   		format = v4l2_subdev_get_try_format(sd, cfg, fmt->pad);
->>   	} else {
->>   		format = &imx290->current_format;
->> -		__v4l2_ctrl_s_ctrl(imx290->link_freq, mode->link_freq_index);
->> -		__v4l2_ctrl_s_ctrl_int64(imx290->pixel_rate, mode->pixel_rate);
->> -
->>   		imx290->current_mode = mode;
->> +
->> +		if (imx290->link_freq)
->> +			__v4l2_ctrl_s_ctrl(imx290->link_freq,
->> +					   imx290_get_link_freq_index(imx290));
->> +		if (imx290->pixel_rate)
->> +			__v4l2_ctrl_s_ctrl_int64(imx290->pixel_rate,
->> +						 imx290_calc_pixel_rate(imx290));
->>   	}
->>   
->>   	*format = fmt->format;
->> @@ -502,12 +529,11 @@ static int imx290_entity_init_cfg(struct v4l2_subdev *subdev,
->>   	return 0;
->>   }
->>   
->> -static int imx290_write_current_format(struct imx290 *imx290,
->> -				       struct v4l2_mbus_framefmt *format)
->> +static int imx290_write_current_format(struct imx290 *imx290)
->>   {
->>   	int ret;
->>   
->> -	switch (format->code) {
->> +	switch (imx290->current_format.code) {
->>   	case MEDIA_BUS_FMT_SRGGB10_1X10:
->>   		ret = imx290_set_register_array(imx290, imx290_10bit_settings,
->>   						ARRAY_SIZE(
->> @@ -558,8 +584,8 @@ static int imx290_start_streaming(struct imx290 *imx290)
->>   		return ret;
->>   	}
->>   
->> -	/* Set current frame format */
->> -	ret = imx290_write_current_format(imx290, &imx290->current_format);
->> +	/* Apply the register values related to current frame format */
->> +	ret = imx290_write_current_format(imx290);
->>   	if (ret < 0) {
->>   		dev_err(imx290->dev, "Could not set frame format\n");
->>   		return ret;
->> @@ -821,12 +847,6 @@ static int imx290_probe(struct i2c_client *client)
->>   		goto free_err;
->>   	}
->>   
->> -	if (imx290->ep.link_frequencies[0] != IMX290_DEFAULT_LINK_FREQ) {
-> 
-> This check needs to be modified to correspond to the driver's new
-> capabilities, not removed.
+arm                                 defconfig
+arm                              allyesconfig
+arm                              allmodconfig
+arm                               allnoconfig
+arm64                            allyesconfig
+arm64                               defconfig
+arm64                            allmodconfig
+arm64                             allnoconfig
+m68k                             allyesconfig
+sparc                            allyesconfig
+mips                             allyesconfig
+arm                     davinci_all_defconfig
+mips                         db1xxx_defconfig
+c6x                                 defconfig
+arm64                            alldefconfig
+sh                           sh2007_defconfig
+sh                           se7722_defconfig
+arc                        vdk_hs38_defconfig
+arm                          gemini_defconfig
+sh                          sdk7786_defconfig
+h8300                               defconfig
+powerpc                      ppc64e_defconfig
+powerpc                         ps3_defconfig
+sh                          r7780mp_defconfig
+arm                           sama5_defconfig
+sh                           se7712_defconfig
+arm                          iop32x_defconfig
+arm                        multi_v5_defconfig
+xtensa                           alldefconfig
+arm                       spear13xx_defconfig
+sh                   rts7751r2dplus_defconfig
+i386                              allnoconfig
+i386                             allyesconfig
+i386                                defconfig
+i386                              debian-10.3
+ia64                             allmodconfig
+ia64                                defconfig
+ia64                              allnoconfig
+ia64                             allyesconfig
+m68k                             allmodconfig
+m68k                              allnoconfig
+m68k                           sun3_defconfig
+m68k                                defconfig
+nios2                               defconfig
+nios2                            allyesconfig
+openrisc                            defconfig
+c6x                              allyesconfig
+c6x                               allnoconfig
+openrisc                         allyesconfig
+nds32                               defconfig
+nds32                             allnoconfig
+csky                             allyesconfig
+csky                                defconfig
+alpha                               defconfig
+alpha                            allyesconfig
+xtensa                           allyesconfig
+h8300                            allyesconfig
+h8300                            allmodconfig
+xtensa                              defconfig
+arc                                 defconfig
+sh                               allmodconfig
+sh                                allnoconfig
+microblaze                        allnoconfig
+arc                              allyesconfig
+mips                              allnoconfig
+mips                             allmodconfig
+parisc                            allnoconfig
+parisc                              defconfig
+parisc                           allyesconfig
+parisc                           allmodconfig
+powerpc                          allyesconfig
+powerpc                          rhel-kconfig
+powerpc                          allmodconfig
+powerpc                           allnoconfig
+powerpc                             defconfig
+i386                 randconfig-a001-20200521
+i386                 randconfig-a004-20200521
+i386                 randconfig-a006-20200521
+i386                 randconfig-a003-20200521
+i386                 randconfig-a002-20200521
+i386                 randconfig-a005-20200521
+i386                 randconfig-a001-20200520
+i386                 randconfig-a004-20200520
+i386                 randconfig-a006-20200520
+i386                 randconfig-a003-20200520
+i386                 randconfig-a002-20200520
+i386                 randconfig-a005-20200520
+i386                 randconfig-a001-20200526
+i386                 randconfig-a004-20200526
+i386                 randconfig-a003-20200526
+i386                 randconfig-a002-20200526
+i386                 randconfig-a005-20200526
+i386                 randconfig-a006-20200526
+i386                 randconfig-a001-20200524
+i386                 randconfig-a004-20200524
+i386                 randconfig-a006-20200524
+i386                 randconfig-a003-20200524
+i386                 randconfig-a002-20200524
+i386                 randconfig-a005-20200524
+x86_64               randconfig-a013-20200520
+x86_64               randconfig-a015-20200520
+x86_64               randconfig-a016-20200520
+x86_64               randconfig-a012-20200520
+x86_64               randconfig-a014-20200520
+x86_64               randconfig-a011-20200520
+x86_64               randconfig-a013-20200524
+x86_64               randconfig-a015-20200524
+x86_64               randconfig-a016-20200524
+x86_64               randconfig-a012-20200524
+x86_64               randconfig-a014-20200524
+x86_64               randconfig-a011-20200524
+x86_64               randconfig-a015-20200526
+x86_64               randconfig-a013-20200526
+x86_64               randconfig-a016-20200526
+x86_64               randconfig-a012-20200526
+x86_64               randconfig-a014-20200526
+x86_64               randconfig-a011-20200526
+x86_64               randconfig-a015-20200522
+x86_64               randconfig-a013-20200522
+x86_64               randconfig-a016-20200522
+x86_64               randconfig-a012-20200522
+x86_64               randconfig-a014-20200522
+x86_64               randconfig-a011-20200522
+x86_64               randconfig-a002-20200521
+x86_64               randconfig-a006-20200521
+x86_64               randconfig-a005-20200521
+x86_64               randconfig-a004-20200521
+x86_64               randconfig-a003-20200521
+x86_64               randconfig-a001-20200521
+i386                 randconfig-a013-20200520
+i386                 randconfig-a012-20200520
+i386                 randconfig-a015-20200520
+i386                 randconfig-a011-20200520
+i386                 randconfig-a016-20200520
+i386                 randconfig-a014-20200520
+i386                 randconfig-a013-20200522
+i386                 randconfig-a012-20200522
+i386                 randconfig-a015-20200522
+i386                 randconfig-a011-20200522
+i386                 randconfig-a016-20200522
+i386                 randconfig-a014-20200522
+i386                 randconfig-a013-20200526
+i386                 randconfig-a015-20200526
+i386                 randconfig-a012-20200526
+i386                 randconfig-a011-20200526
+i386                 randconfig-a016-20200526
+i386                 randconfig-a014-20200526
+i386                 randconfig-a013-20200521
+i386                 randconfig-a015-20200521
+i386                 randconfig-a011-20200521
+i386                 randconfig-a014-20200521
+i386                 randconfig-a012-20200521
+i386                 randconfig-a016-20200521
+i386                 randconfig-a013-20200524
+i386                 randconfig-a015-20200524
+i386                 randconfig-a012-20200524
+i386                 randconfig-a011-20200524
+i386                 randconfig-a016-20200524
+i386                 randconfig-a014-20200524
+riscv                            allyesconfig
+riscv                             allnoconfig
+riscv                               defconfig
+riscv                            allmodconfig
+s390                             allyesconfig
+s390                              allnoconfig
+s390                             allmodconfig
+s390                                defconfig
+x86_64                              defconfig
+sparc                               defconfig
+sparc64                             defconfig
+sparc64                           allnoconfig
+sparc64                          allyesconfig
+sparc64                          allmodconfig
+um                                allnoconfig
+um                                  defconfig
+um                               allmodconfig
+um                               allyesconfig
+x86_64                                   rhel
+x86_64                               rhel-7.6
+x86_64                    rhel-7.6-kselftests
+x86_64                         rhel-7.2-clear
+x86_64                                    lkp
+x86_64                              fedora-25
+x86_64                                  kexec
 
-Agreed.
-Do I understand correct that as the driver uses two link frequencies
-for a given number of lanes now, it must check that *the both* frequencies
-(for the given number of lanes) are listed in the device tree node?
-
-Thanks,
-Andrey
-
->> -		dev_err(dev, "Unsupported link frequency\n");
->> -		ret = -EINVAL;
->> -		goto free_err;
->> -	}
->> -
->>   	/* Only CSI2 is supported for now */
->>   	if (imx290->ep.bus_type != V4L2_MBUS_CSI2_DPHY) {
->>   		dev_err(dev, "Unsupported bus type, should be CSI2\n");
->> @@ -879,23 +899,38 @@ static int imx290_probe(struct i2c_client *client)
->>   
->>   	mutex_init(&imx290->lock);
->>   
->> +	/*
->> +	 * Initialize the frame format. In particular, imx290->current_mode
->> +	 * and imx290->bpp are set to defaults: imx290_calc_pixel_rate() call
->> +	 * below relies on these fields.
->> +	 */
->> +	imx290_entity_init_cfg(&imx290->sd, NULL);
->> +
->>   	v4l2_ctrl_handler_init(&imx290->ctrls, 3);
->>   
->>   	v4l2_ctrl_new_std(&imx290->ctrls, &imx290_ctrl_ops,
->>   			  V4L2_CID_GAIN, 0, 72, 1, 0);
->> -	imx290->link_freq =
->> -		v4l2_ctrl_new_int_menu(&imx290->ctrls,
->> -				       &imx290_ctrl_ops,
->> -				       V4L2_CID_LINK_FREQ,
->> -				       ARRAY_SIZE(imx290_link_freq) - 1,
->> -				       0, imx290_link_freq);
->> +	if (imx290->nlanes == 4)
->> +		imx290->link_freq =
->> +			v4l2_ctrl_new_int_menu(&imx290->ctrls,
->> +					       &imx290_ctrl_ops,
->> +					       V4L2_CID_LINK_FREQ,
->> +					       ARRAY_SIZE(imx290_link_freq_4lanes) - 1,
->> +					       0, imx290_link_freq_4lanes);
->> +	else
->> +		imx290->link_freq =
->> +			v4l2_ctrl_new_int_menu(&imx290->ctrls,
->> +					       &imx290_ctrl_ops,
->> +					       V4L2_CID_LINK_FREQ,
->> +					       ARRAY_SIZE(imx290_link_freq_2lanes) - 1,
->> +					       0, imx290_link_freq_2lanes);
->>   	if (imx290->link_freq)
->>   		imx290->link_freq->flags |= V4L2_CTRL_FLAG_READ_ONLY;
->>   
->>   	imx290->pixel_rate = v4l2_ctrl_new_std(&imx290->ctrls, &imx290_ctrl_ops,
->>   					       V4L2_CID_PIXEL_RATE, 1,
->>   					       INT_MAX, 1,
->> -					       imx290_modes[0].pixel_rate);
->> +					       imx290_calc_pixel_rate(imx290));
->>   
->>   	imx290->sd.ctrl_handler = &imx290->ctrls;
->>   
->> @@ -919,9 +954,6 @@ static int imx290_probe(struct i2c_client *client)
->>   		goto free_ctrl;
->>   	}
->>   
->> -	/* Initialize the frame format (this also sets imx290->current_mode) */
->> -	imx290_entity_init_cfg(&imx290->sd, NULL);
->> -
->>   	ret = v4l2_async_register_subdev(&imx290->sd);
->>   	if (ret < 0) {
->>   		dev_err(dev, "Could not register v4l2 device\n");
-> 
+---
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
