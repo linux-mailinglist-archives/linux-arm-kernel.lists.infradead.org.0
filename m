@@ -2,35 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33FF51E2466
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 16:47:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C0DC1E245C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 16:45:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2KpkuqhKu3ubFuwt0eY7Sgz0hwGXRi5yLK0g6Fkhpc0=; b=o96/AFrkutUBq5
-	UTPKAt/tPEZpthAq6AnS9k2ldyPR0RRxy35lGod5SXiirC5xtbEF2X6xvijPs3NbE7n9Jf7BbBLnm
-	UPhNOphBCsCLS5cyv1liI1Fq7Qi4o70IOab5iJhwjMuVTcnTUiej3vREq2acJLFsAwJ9491UqF2W+
-	oqSNLi/5Qo4SS43q7SKc8z2JYB6UiPa7RgaYdGBssaxD9532xrP45i1ngxWY8j+GluW7vHyxfUjbR
-	eayOnOUtn4t8wZAs2CPJkg6cg9RcJwOWuMENt1y3Ak9sbQk7r25A8Od0PHcW24q78HjSlKv5Js+4L
-	285OzpU8vbSqLCaZxfNw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=f4X4SpF6KVX6dw1jo3PHdyw5w2JFLdXIWd17WofjuKA=; b=XQuOnqCVN3JJ36GqscdJClzzZ
+	j5xgjPNGzHpD5IZ4v7wJcHcYcPj4FKylraPzoTiVk5ZB5gU13S+6pEy0A08o5/7hJ59rrUKdezTeh
+	por+FOE5w9wkkIPwq4S389bdRuLtv5iRAGhT56tRtR/7X6ggkPy5ifvnOWvI4989nLscNid/lOUZF
+	Qw5iF31YEw5wFoSNdjdxaiW8CWICwsnYxPNfqTUe1ms6ryD6FotPXHu2JL8V/0TfBPYyKOEmf5S8c
+	JEMneIkNAJ0FAS7F/GbZRy9SgKvbpfXJT+0BYSl7KJlQYUW53yDzhnZw9I892NRoiWT0DsY1Gqasd
+	XC/cjJEOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdar2-0005Ya-L1; Tue, 26 May 2020 14:46:56 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jdaqq-0005YE-Ty; Tue, 26 May 2020 14:46:44 +0000
-Date: Tue, 26 May 2020 07:46:44 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: Zhangfei Gao <zhangfei.gao@linaro.org>
-Subject: Re: [PATCH 1/2] PCI: Introduce PCI_FIXUP_IOMMU
-Message-ID: <20200526144644.GA20784@infradead.org>
-References: <1590493749-13823-1-git-send-email-zhangfei.gao@linaro.org>
- <1590493749-13823-2-git-send-email-zhangfei.gao@linaro.org>
+	id 1jdap7-0002Z6-SW; Tue, 26 May 2020 14:44:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdaox-0002YC-48
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 14:44:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 22F471FB;
+ Tue, 26 May 2020 07:44:45 -0700 (PDT)
+Received: from [10.37.8.5] (unknown [10.37.8.5])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DA3613F305;
+ Tue, 26 May 2020 07:44:43 -0700 (PDT)
+Subject: Re: [PATCH v4 1/5] coresight: Fix comment in main header file.
+To: mike.leach@linaro.org, linux-arm-kernel@lists.infradead.org,
+ coresight@lists.linaro.org, mathieu.poirier@linaro.org
+References: <20200526104642.9526-1-mike.leach@linaro.org>
+ <20200526104642.9526-2-mike.leach@linaro.org>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <9e55a8e1-27aa-b88b-d833-49b1a479c3d1@arm.com>
+Date: Tue, 26 May 2020 15:49:33 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1590493749-13823-2-git-send-email-zhangfei.gao@linaro.org>
+In-Reply-To: <20200526104642.9526-2-mike.leach@linaro.org>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200526_074447_207313_C007C40E 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -42,31 +65,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe <jean-philippe@linaro.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- linux-pci@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, linux-acpi@vger.kernel.org,
- Wangzhou <wangzhou1@hisilicon.com>, linux-crypto@vger.kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- kenneth-lee-2012@foxmail.com, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: acme@kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 07:49:08PM +0800, Zhangfei Gao wrote:
-> Some platform devices appear as PCI but are actually on the AMBA bus,
-> and they need fixup in drivers/pci/quirks.c handling iommu_fwnode.
-> Here introducing PCI_FIXUP_IOMMU, which is called after iommu_fwnode
-> is allocated, instead of reusing PCI_FIXUP_FINAL since it will slow
-> down iommu probing as all devices in fixup final list will be
-> reprocessed.
+On 05/26/2020 11:46 AM, Mike Leach wrote:
+> Comment for an elemnt in the coresight_device structure appears to have
+> been corrupted & makes no sense. Fix this before making further changes.
+> 
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> ---
 
-Who is going to use this?  I don't see a single user in the series.
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
