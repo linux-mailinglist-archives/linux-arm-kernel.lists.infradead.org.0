@@ -2,65 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96B471E193E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 03:59:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B6981E1949
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 04:09:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mmRDY3TOpqwE+DYEj/wntKqLYyw4Y6QAjS17dNFs2IY=; b=JPvPPdXidot5Ne
-	cE8twoWTbIHK2XhYnsmnxo+MJfClI1H2Xt1S6APMluH/lHS6E30j4YjoPWImaR4gD0UtcHCVT9KVY
-	Gy7pueJ9ImAKm2PbN8iWut/yi+PBYjs0bb63jpvdMzuj869na52YkJePOhp1eFCB5haSn8F0TnNCE
-	LG9wAvoKQIw3yDrLTA9KvvaaXAk28AwVfa7ceNan4Ziu6ytrxb1eoFBkI7LGwnYFlnPGRp9JJHbMO
-	fZ1X952ejiITzQ3kPwOpSZPDtF+FWIDEJ8ozVah2X7mo/mXp9zBYu8n36hIcGFbGoSK6knGjs8oo1
-	n7aoJw5giWdYroAs7KLg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QSnAdqjW5gpD1s7dZvE2vWrj1UzWTw6xFNALLk966ok=; b=qSIaxXDav9eJ4w
+	8xXt6hveYiDgotH6NhgmQMjBm5rq4POMdJsvjNh5aqdnBASSnuUcA9JWU78Z2I4/hWivYObfnaYkZ
+	YpkArn2EY5ZdeAYn0yfB8UHuCPvspoHotoDW63/bYKtCtbhF3YH9JtfAbyAPRCsS1Ul134gTJgz6b
+	ub+vNTML27AxsMFAwdlcbD2FwJQ0/cSrqxZuogUzvq3NQNka4yrcSs1zd/+BJrUJDgetWZU8Miy5O
+	u54Gs6sZrMT2haopncjBDR7hgCecmXjnG9h4jxgQyLTPRxkqfRjQY6oDVr+lPrDTmjeIvSZD7TAbJ
+	A3lE7KHrn92UIaztfmbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdOrv-000763-5c; Tue, 26 May 2020 01:59:03 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1jdP1z-0004Ma-LQ; Tue, 26 May 2020 02:09:27 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdOrl-00075Y-Ra
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 01:58:55 +0000
-IronPort-SDR: tcmtjIw19SqeIa1RDSD+zx1ZyTdV4W1HvrTh0ndqTLWs5LTtiDrwJwFyq8M3LasGTl1PF7I60u
- K40ywmg5hveg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 25 May 2020 18:58:51 -0700
-IronPort-SDR: p/q+dpMHVuqn9TbukmF2Z6edCvTVkwMERWZymjgopiQhkSVC5M1BFaKFJcGymrQWKVReO48SFD
- kEzzx9zUuRBg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,435,1583222400"; d="scan'208";a="468190044"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga006.fm.intel.com with ESMTP; 25 May 2020 18:58:50 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jdOre-0009rG-BD; Tue, 26 May 2020 09:58:46 +0800
-Date: Tue, 26 May 2020 09:58:20 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Kevin Hilman <khilman@baylibre.com>
-Subject: [soc:amlogic/ee-power-control] BUILD SUCCESS
- 53773f2dfd9c847304b184d5617e36aeafdf5d87
-Message-ID: <5ecc77bc.hXoJXzNqvLhTdat6%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1jdP1p-0004LB-QK
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 02:09:19 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id F30B0F64F7B95E6413C3;
+ Tue, 26 May 2020 10:09:10 +0800 (CST)
+Received: from [10.173.221.230] (10.173.221.230) by
+ DGGEMS412-HUB.china.huawei.com (10.3.19.212) with Microsoft SMTP Server id
+ 14.3.487.0; Tue, 26 May 2020 10:09:04 +0800
+Subject: Re: [RFC PATCH 0/7] kvm: arm64: Support stage2 hardware DBM
+To: Marc Zyngier <maz@kernel.org>
+References: <20200525112406.28224-1-zhukeqian1@huawei.com>
+ <4b8a939172395bf38e581634abecf925@kernel.org>
+From: zhukeqian <zhukeqian1@huawei.com>
+Message-ID: <66deb797-726f-242b-82fb-0ddee975ef15@huawei.com>
+Date: Tue, 26 May 2020 10:08:52 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
+In-Reply-To: <4b8a939172395bf38e581634abecf925@kernel.org>
+X-Originating-IP: [10.173.221.230]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200525_185853_907803_F1085C12 
-X-CRM114-Status: UNSURE (   7.16  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20200525_190918_023075_54BA2A47 
+X-CRM114-Status: GOOD (  18.62  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
- 1.8 LONGWORDS              Long string of long words
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.35 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,210 +68,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Andrew Morton <akpm@linux-foundation.org>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org, Sean
+ Christopherson <sean.j.christopherson@intel.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, zhengxiang9@huawei.com,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, wanghaibin.wang@huawei.com,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  amlogic/ee-power-control
-branch HEAD: 53773f2dfd9c847304b184d5617e36aeafdf5d87  soc: amlogic: meson-ee-pwrc: add support for the Meson GX SoCs
+Hi Marc,
 
-elapsed time: 8684m
+On 2020/5/25 23:44, Marc Zyngier wrote:
+> On 2020-05-25 12:23, Keqian Zhu wrote:
+>> This patch series add support for stage2 hardware DBM, and it is only
+>> used for dirty log for now.
+>>
+>> It works well under some migration test cases, including VM with 4K
+>> pages or 2M THP. I checked the SHA256 hash digest of all memory and
+>> they keep same for source VM and destination VM, which means no dirty
+>> pages is missed under hardware DBM.
+>>
+>> However, there are some known issues not solved.
+>>
+>> 1. Some mechanisms that rely on "write permission fault" become invalid,
+>>    such as kvm_set_pfn_dirty and "mmap page sharing".
+>>
+>>    kvm_set_pfn_dirty is called in user_mem_abort when guest issues write
+>>    fault. This guarantees physical page will not be dropped directly when
+>>    host kernel recycle memory. After using hardware dirty management, we
+>>    have no chance to call kvm_set_pfn_dirty.
+> 
+> Then you will end-up with memory corruption under memory pressure.
+> This also breaks things like CoW, which we depend on.
+>
+Yes, these problems looks knotty. But I think x86 PML support will face these
+problems too. I believe there must be some methods to solve them.
+>>
+>>    For "mmap page sharing" mechanism, host kernel will allocate a new
+>>    physical page when guest writes a page that is shared with other page
+>>    table entries. After using hardware dirty management, we have no chance
+>>    to do this too.
+>>
+>>    I need to do some survey on how stage1 hardware DBM solve these problems.
+>>    It helps if anyone can figure it out.
+>>
+>> 2. Page Table Modification Races: Though I have found and solved some data
+>>    races when kernel changes page table entries, I still doubt that there
+>>    are data races I am not aware of. It's great if anyone can figure them out.
+>>
+>> 3. Performance: Under Kunpeng 920 platform, for every 64GB memory, KVM
+>>    consumes about 40ms to traverse all PTEs to collect dirty log. It will
+>>    cause unbearable downtime for migration if memory size is too big. I will
+>>    try to solve this problem in Patch v1.
+> 
+> This, in my opinion, is why Stage-2 DBM is fairly useless.
+> From a performance perspective, this is the worse possible
+> situation. You end up continuously scanning page tables, at
+> an arbitrary rate, without a way to evaluate the fault rate.
+> 
+> One thing S2-DBM would be useful for is SVA, where a device
+> write would mark the S2 PTs dirty as they are shared between
+> CPU and SMMU. Another thing is SPE, which is essentially a DMA
+> agent using the CPU's PTs.
+> 
+> But on its own, and just to log the dirty pages, S2-DBM is
+> pretty rubbish. I wish arm64 had something like Intel's PML,
+> which looks far more interesting for the purpose of tracking
+> accesses.
 
-configs tested: 183
-configs skipped: 2
+Sure, PML is a better solution on hardware management of dirty state.
+However, compared to optimizing hardware, optimizing software is with
+shorter cycle time.
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+Here I have an optimization in mind to solve it. Scanning page tables
+can be done parallel, which can greatly reduce time consumption. For there
+is no communication between parallel CPUs, we can achieve high speedup
+ratio.
 
-arm                                 defconfig
-arm                              allyesconfig
-arm                              allmodconfig
-arm                               allnoconfig
-arm64                            allyesconfig
-arm64                               defconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-mips                             allyesconfig
-m68k                             allyesconfig
-sparc                            allyesconfig
-arm                     davinci_all_defconfig
-mips                         db1xxx_defconfig
-c6x                                 defconfig
-arm64                            alldefconfig
-sh                           sh2007_defconfig
-sh                          sdk7786_defconfig
-arm                           u8500_defconfig
-parisc                generic-32bit_defconfig
-sparc64                          allyesconfig
-mips                          lasat_defconfig
-h8300                       h8s-sim_defconfig
-m68k                       m5208evb_defconfig
-sh                         ecovec24_defconfig
-sh                           se7721_defconfig
-mips                   sb1250_swarm_defconfig
-powerpc                         ps3_defconfig
-sh                          r7780mp_defconfig
-arm                           sama5_defconfig
-sh                           se7712_defconfig
-arm                          iop32x_defconfig
-i386                              allnoconfig
-i386                             allyesconfig
-i386                                defconfig
-i386                              debian-10.3
-ia64                             allmodconfig
-ia64                                defconfig
-ia64                              allnoconfig
-ia64                             allyesconfig
-m68k                             allmodconfig
-m68k                              allnoconfig
-m68k                           sun3_defconfig
-m68k                                defconfig
-nios2                               defconfig
-nios2                            allyesconfig
-openrisc                            defconfig
-c6x                              allyesconfig
-c6x                               allnoconfig
-openrisc                         allyesconfig
-nds32                               defconfig
-nds32                             allnoconfig
-csky                             allyesconfig
-csky                                defconfig
-alpha                               defconfig
-alpha                            allyesconfig
-xtensa                           allyesconfig
-h8300                            allyesconfig
-h8300                            allmodconfig
-xtensa                              defconfig
-arc                                 defconfig
-arc                              allyesconfig
-sh                               allmodconfig
-sh                                allnoconfig
-microblaze                        allnoconfig
-mips                              allnoconfig
-mips                             allmodconfig
-parisc                            allnoconfig
-parisc                              defconfig
-parisc                           allyesconfig
-parisc                           allmodconfig
-powerpc                          allyesconfig
-powerpc                          rhel-kconfig
-powerpc                          allmodconfig
-powerpc                           allnoconfig
-powerpc                             defconfig
-i386                 randconfig-a001-20200521
-i386                 randconfig-a004-20200521
-i386                 randconfig-a006-20200521
-i386                 randconfig-a003-20200521
-i386                 randconfig-a002-20200521
-i386                 randconfig-a005-20200521
-i386                 randconfig-a001-20200520
-i386                 randconfig-a004-20200520
-i386                 randconfig-a006-20200520
-i386                 randconfig-a003-20200520
-i386                 randconfig-a002-20200520
-i386                 randconfig-a005-20200520
-i386                 randconfig-a006-20200519
-i386                 randconfig-a005-20200519
-i386                 randconfig-a001-20200519
-i386                 randconfig-a003-20200519
-i386                 randconfig-a004-20200519
-i386                 randconfig-a002-20200519
-i386                 randconfig-a001-20200524
-i386                 randconfig-a004-20200524
-i386                 randconfig-a006-20200524
-i386                 randconfig-a003-20200524
-i386                 randconfig-a002-20200524
-i386                 randconfig-a005-20200524
-x86_64               randconfig-a003-20200519
-x86_64               randconfig-a005-20200519
-x86_64               randconfig-a004-20200519
-x86_64               randconfig-a006-20200519
-x86_64               randconfig-a002-20200519
-x86_64               randconfig-a001-20200519
-x86_64               randconfig-a013-20200520
-x86_64               randconfig-a015-20200520
-x86_64               randconfig-a016-20200520
-x86_64               randconfig-a012-20200520
-x86_64               randconfig-a014-20200520
-x86_64               randconfig-a011-20200520
-x86_64               randconfig-a013-20200524
-x86_64               randconfig-a015-20200524
-x86_64               randconfig-a016-20200524
-x86_64               randconfig-a012-20200524
-x86_64               randconfig-a014-20200524
-x86_64               randconfig-a011-20200524
-x86_64               randconfig-a015-20200522
-x86_64               randconfig-a013-20200522
-x86_64               randconfig-a016-20200522
-x86_64               randconfig-a012-20200522
-x86_64               randconfig-a014-20200522
-x86_64               randconfig-a011-20200522
-x86_64               randconfig-a002-20200521
-x86_64               randconfig-a006-20200521
-x86_64               randconfig-a005-20200521
-x86_64               randconfig-a004-20200521
-x86_64               randconfig-a003-20200521
-x86_64               randconfig-a001-20200521
-i386                 randconfig-a013-20200520
-i386                 randconfig-a012-20200520
-i386                 randconfig-a015-20200520
-i386                 randconfig-a011-20200520
-i386                 randconfig-a016-20200520
-i386                 randconfig-a014-20200520
-i386                 randconfig-a013-20200522
-i386                 randconfig-a012-20200522
-i386                 randconfig-a015-20200522
-i386                 randconfig-a011-20200522
-i386                 randconfig-a016-20200522
-i386                 randconfig-a014-20200522
-i386                 randconfig-a012-20200519
-i386                 randconfig-a014-20200519
-i386                 randconfig-a016-20200519
-i386                 randconfig-a011-20200519
-i386                 randconfig-a015-20200519
-i386                 randconfig-a013-20200519
-i386                 randconfig-a013-20200521
-i386                 randconfig-a012-20200521
-i386                 randconfig-a015-20200521
-i386                 randconfig-a011-20200521
-i386                 randconfig-a016-20200521
-i386                 randconfig-a014-20200521
-i386                 randconfig-a013-20200524
-i386                 randconfig-a015-20200524
-i386                 randconfig-a012-20200524
-i386                 randconfig-a011-20200524
-i386                 randconfig-a016-20200524
-i386                 randconfig-a014-20200524
-riscv                            allyesconfig
-riscv                             allnoconfig
-riscv                               defconfig
-riscv                            allmodconfig
-s390                             allyesconfig
-s390                              allnoconfig
-s390                             allmodconfig
-s390                                defconfig
-x86_64                              defconfig
-sparc                               defconfig
-sparc64                             defconfig
-sparc64                           allnoconfig
-sparc64                          allmodconfig
-um                                allnoconfig
-um                                  defconfig
-um                               allyesconfig
-um                               allmodconfig
-x86_64                                   rhel
-x86_64                               rhel-7.6
-x86_64                    rhel-7.6-kselftests
-x86_64                         rhel-7.2-clear
-x86_64                                    lkp
-x86_64                              fedora-25
-x86_64                                  kexec
 
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+> 
+> Thanks,
+> 
+>         M.
+Thanks,
+Keqian
 
 _______________________________________________
 linux-arm-kernel mailing list
