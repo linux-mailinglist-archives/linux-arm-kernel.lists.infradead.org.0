@@ -2,85 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECC671E28D7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 19:31:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 260731E2930
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 19:38:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:Mime-Version:Message-Id
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WCG/zAGfvFYCekW8DUoO7A4Y1hbGfOMBgQEbDSi2x1I=; b=MQ/37Xxccd3dVJ
-	pZjuqHbPNLDPoCoWr/WxUc8DnH5klRVQ9VzgmG8QUXB8hCZMB3p8JSYoj7kIHVlawg5h3TMthBm/1
-	v8q8BKa3fGxNbTBSl7/VIc5cQRKqk8mUTCTRu3OSE4PyAwS4DCWydprqJbEJm+Rt+flWTdes9p51q
-	789SB8urRJXUrEXFeAuDUaQA0xtnAautkAyIQ7uPN2vURwRJTzlSBeS8vcM1KP2nEq0yYQRMZQ3Rf
-	OamI/wQjzRyjLsEDwt+4RUWO3j9iVrW1JU7qb3JDZduxq8ZFhS4l+aUgBqjkmPv8WTciVsJPuAi83
-	MtFYGj/injfYWem/Qhfg==;
+	List-Owner; bh=BqB5LTjlSpYdr3J0x+SY2uLmrvIv3RnlUzwdL8j53bM=; b=OgBN0h2QMEDjFA
+	WFo9BTNiP6SNgHLTx+2vMTj8dzWESpdI0PID7b18XA1lg7gNq1e1S2JyixHC3itb50RZL95wXr5Rc
+	ac+BfzlTIfcF+rIgRJOuHND56Jabd1DWWI16QU+z0hk8N15az0bFGheDj1agQK7JLwQHVJP77Aj6Y
+	DY18+90hdcA92UN3vIYFggnyXXCmQj31hhVZ2AStPeMOOvozjpqCZt5SllmlUlvq3cF9VhNRRHPiM
+	0AFnDbL100eifYRiZEJ7KqcU3O4iQXuyWo7g/yrnuzBqoHqPTRwyohgU6FCxpq5ViW/VeQ6tBBp8j
+	TatHWbONOMeLWa98hoPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jddQR-00053Z-5j; Tue, 26 May 2020 17:31:39 +0000
-Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
+	id 1jddWz-0002hY-Tk; Tue, 26 May 2020 17:38:25 +0000
+Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jddQI-00052s-AR
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 17:31:31 +0000
-Received: by mail-yb1-xb4a.google.com with SMTP id e14so21259755ybh.16
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 10:31:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:message-id:mime-version:subject:from:to:cc;
- bh=KoFGqqU+J4KGd+h8gI8dCMTc7LV+YyRpHvvUmsT31Ks=;
- b=VYy4cIlP+hhv8YRSkFRmXPacxvn/fphatpnJHvQJcUDopkMHzjvMEVgmbi883wi+4u
- saQWPREkP+6SHn2z8P4PgrRxB5qYKdnbuGvGfau1oo9kpTzkMqCd/eJMs6OcKXGKRsn0
- 9mAvbxLzQHEfHa2grvlfEgxvmwGxDVcrsq1kxELoJ6V2FOqncQfkPqltlxrARAr/0w0R
- F0iNuxwwQOBS1/mLXkAXbZgyrzF71moh6lhgXPSg6rXyuFI2Nu+uzg/bYoFIJz+BFIlQ
- 6Gli5zS5TILjU+FrQ7uMAbacqUQ2ojKJfigmyxdtYuOX4di6w+UGpmrVLp7BgJW2ABki
- 804g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:message-id:mime-version:subject:from:to:cc;
- bh=KoFGqqU+J4KGd+h8gI8dCMTc7LV+YyRpHvvUmsT31Ks=;
- b=gXT7cFhCMh9EGuWB+R1ewHEqjShZvAyoZN7THMU+dyX6LwcaGcBQhzhBD2j4HdGrx7
- Vg4VxDwsmymMPZ4LGAKp5bIqfGyH1zG6Z7+EVnDaFkjYD8Ql7GvlYxjaF7HxGrGcG+/E
- uxHQx+GY7IMwzu364avGC+hUcRIXnZ/hV3zPjuoxIasxW47qcrStjFt7vQuXx7efdxr/
- pYo8GDyQvU8uZQwyQIv3dj9IynUiqesRHT0tMdI0HlGXIfj7jNCoCxjCHKxEOk+VY+Va
- TYFEZ5YosjE2YG+QvEwg7360w105LEqn5EoQEoDVfbJBRILTpSQxnNtSYMnv9Kv4gffe
- jNwg==
-X-Gm-Message-State: AOAM530piJJTdQIkMGMs1wWwTrorT4fxAg7mbm8DJpiZS0BJf8zCt29M
- BszQxHXgArubNtPvlu5LC43Tn4bSt/IQW6NRXu4=
-X-Google-Smtp-Source: ABdhPJy4OvFsDSVA1K5rC0fp9UoOPwc7MTN3yrtauZDF/HHmGAky8cEISS73DZlnG5wfH1U/lI1diXeR+n60OKcrVpI=
-X-Received: by 2002:a25:ec3:: with SMTP id 186mr3473690ybo.475.1590514288160; 
- Tue, 26 May 2020 10:31:28 -0700 (PDT)
-Date: Tue, 26 May 2020 10:31:14 -0700
-Message-Id: <20200526173117.155339-1-ndesaulniers@google.com>
-Mime-Version: 1.0
-X-Mailer: git-send-email 2.27.0.rc0.183.gde8f92d652-goog
-Subject: [PATCH] arm64: vdso32: force vdso32 to be compiled as -marm
-From: Nick Desaulniers <ndesaulniers@google.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+ id 1jddU2-0008Ff-7g
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 17:35:24 +0000
+Received: from unknown (HELO ironmsg02-sd.qualcomm.com) ([10.53.140.142])
+ by alexa-out-sd-01.qualcomm.com with ESMTP; 26 May 2020 10:35:14 -0700
+Received: from gurus-linux.qualcomm.com ([10.46.162.81])
+ by ironmsg02-sd.qualcomm.com with ESMTP; 26 May 2020 10:35:13 -0700
+Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
+ id 21B674C99; Tue, 26 May 2020 10:35:13 -0700 (PDT)
+From: Guru Das Srinagesh <gurus@codeaurora.org>
+To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
+ =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: [PATCH v15 00/11] Convert PWM period and duty cycle to u64
+Date: Tue, 26 May 2020 10:35:00 -0700
+Message-Id: <cover.1590514331.git.gurus@codeaurora.org>
+X-Mailer: git-send-email 1.9.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_103130_376652_6D5CE88F 
-X-CRM114-Status: UNSURE (   9.93  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -7.7 (-------)
+X-CRM114-CacheID: sfid-20200526_103522_417404_3E24EC40 
+X-CRM114-Status: GOOD (  17.46  )
+X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-7.7 points)
+ Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b4a listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [199.106.114.38 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,52 +62,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
- Masahiro Yamada <masahiroy@kernel.org>,
- Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
- Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org,
+ Guru Das Srinagesh <gurus@codeaurora.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
+ David Collins <collinsd@codeaurora.org>, Stephen Boyd <sboyd@kernel.org>,
+ linux-kernel@vger.kernel.org, Geert Uytterhoeven <geert@linux-m68k.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>, Joe Perches <joe@perches.com>,
+ Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
+ Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Custom toolchains that modify the default target to -mthumb cannot
-compile the arm64 compat vdso32, as
-arch/arm64/include/asm/vdso/compat_gettimeofday.h
-contains assembly that's invalid in -mthumb.  Force the use of -marm,
-always.
+Because period and duty cycle are defined in the PWM framework structs as ints
+with units of nanoseconds, the maximum time duration that can be set is limited
+to ~2.147 seconds. Consequently, applications desiring to set greater time
+periods via the PWM framework are not be able to do so - like, for instance,
+causing an LED to blink at an interval of 5 seconds.
 
-Link: https://bugs.chromium.org/p/chromium/issues/detail?id=1084372
-Cc: Stephen Boyd <swboyd@google.com>
-Reported-by: Luis Lozano <llozano@google.com>
-Tested-by: Manoj Gupta <manojgupta@google.com>
-Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
----
-Surgeon General's Warning: changing the compiler defaults is not
-recommended and can lead to spooky bugs that are hard to reproduce
-upstream.
+Redefining the period and duty cycle struct members in the core PWM framework
+structs as u64 values will enable larger time durations to be set and solve
+this problem. Such a change to the framework mandates that drivers using these
+struct members (and corresponding helper functions) also be modified correctly
+in order to prevent compilation errors.
 
- arch/arm64/kernel/vdso32/Makefile | 2 ++
- 1 file changed, 2 insertions(+)
+This patch series introduces the changes to all the drivers first, followed by
+the framework change at the very end so that when the latter is applied, all
+the drivers are in good shape and there are no compilation errors.
 
-diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
-index 3964738ebbde..c449a293d81e 100644
---- a/arch/arm64/kernel/vdso32/Makefile
-+++ b/arch/arm64/kernel/vdso32/Makefile
-@@ -104,6 +104,8 @@ VDSO_CFLAGS += -D__uint128_t='void*'
- # (on GCC 4.8 or older, there is unfortunately no way to silence this warning)
- VDSO_CFLAGS += $(call cc32-disable-warning,shift-count-overflow)
- VDSO_CFLAGS += -Wno-int-to-pointer-cast
-+# Force vdso to be compiled in ARM mode, not THUMB.
-+VDSO_CFLAGS += -marm
- 
- VDSO_AFLAGS := $(VDSO_CAFLAGS)
- VDSO_AFLAGS += -D__ASSEMBLY__
+Changes from v14:
+  - Collected Uwe's Acked-by for the pwm core patch.
+  - Addressed comments in pwm-clps711x.c.
+
+Changes from v13:
+  - Pruned cc-list and added same (reduced) set of reviewers to all patches.
+  - Added Lee Jones' Acked-by to the pwm_bl.c patch.
+  - Added Jani Nikula's Acked-by to intel-panel.c patch.
+  - Added Stephen Boyd's Acked-by to pwm-clk.c patch.
+  - Addressed Geert's review comments in clps711x.c patch.
+
+Changes from v12:
+  - Rebased to tip of for-next
+  - Collected Acked-by for sun4i
+  - Reworked patch for intel-panel.c due to rebase, dropped Jani's Acked-by as
+    a result
+
+Changes from v11:
+  - Rebased to tip of for-next.
+  - Collected "Acked-by:" for v7 (unchanged) of pwm: sifive: [4]
+  - Squished stm32-lp.c change with final patch in series
+  - sun4i: Used nsecs_to_jiffies()
+  - imx27: Added overflow handling logic
+  - clps711x: Corrected the if condition for skipping the division
+  - clk: pwm: Reverted to v8 version, added check to prevent division-by-zero
+
+Changes from v10:
+  - Carefully added back all the "Reviewed-by: " and "Acked-by: " tags received
+    so far that had gotten missed in v9. No other changes.
+
+Changes from v9:
+  - Gathered the received "Reviewed-by: " tag
+  - Added back the clk-pwm.c patch because kbuild test robot complained [3]
+    and addressed received review comments.
+  - clps711x: Addressed review comments.
+
+Changes from v8:
+  - Gathered all received "Acked-by: " and "Reviewed-by: " tags
+  - Dropped patch to clk-pwm.c for reasons mentiond in [2]
+  - Expanded audience of unreviewed patches
+
+Changes from v7:
+  - Changed commit messages of all patches to be brief and to the point.
+  - Added explanation of change in cover letter.
+  - Dropped change to pwm-sti.c as upon review it was unnecessary as struct
+    pwm_capture is not being modified in the PWM core.
+
+Changes from v6:
+  - Split out the driver changes out into separate patches, one patch per file
+    for ease of reviewing.
+
+Changes from v5:
+  - Dropped the conversion of struct pwm_capture to u64 for reasons mentioned
+    in https://www.spinics.net/lists/linux-pwm/msg11541.html
+
+Changes from v4:
+  - Split the patch into two: one for changes to the drivers, and the actual
+    switch to u64 for ease of reverting should the need arise.
+  - Re-examined the patch and made the following corrections:
+      * intel_panel.c:
+	DIV64_U64_ROUND_UP -> DIV_ROUND_UP_ULL (as only the numerator would be
+	64-bit in this case).
+      * pwm-sti.c:
+	do_div -> div_u64 (do_div is optimized only for x86 architectures, and
+	div_u64's comment block suggests to use this as much as possible).
+
+Changes from v3:
+  - Rebased to current tip of for-next.
+
+Changes from v2:
+  - Fixed %u -> %llu in a dev_dbg in pwm-stm32-lp.c, thanks to kbuild test robot
+  - Added a couple of fixes to pwm-imx-tpm.c and pwm-sifive.c
+
+Changes from v1:
+  - Fixed compilation errors seen when compiling for different archs.
+
+v1:
+  - Reworked the change pushed upstream earlier [1] so as to not add an
+    extension to an obsolete API. With this change, pwm_ops->apply() can be
+    used to set pwm_state parameters as usual.
+
+[1] https://lore.kernel.org/lkml/20190916140048.GB7488@ulmo/
+[2] https://lore.kernel.org/lkml/20200312190859.GA19605@xxxxxxxxxxxxxx/
+[3] https://www.spinics.net/lists/linux-pwm/msg11906.html
+[4] https://www.spinics.net/lists/linux-pwm/msg11986.html
+
+Guru Das Srinagesh (11):
+  drm/i915: Use 64-bit division macro
+  hwmon: pwm-fan: Use 64-bit division macro
+  ir-rx51: Use 64-bit division macro
+  pwm: clps711x: Use 64-bit division macro
+  pwm: pwm-imx-tpm: Use 64-bit division macro
+  pwm: imx27: Use 64-bit division macro and function
+  pwm: sifive: Use 64-bit division macro
+  pwm: sun4i: Use nsecs_to_jiffies to avoid a division
+  backlight: pwm_bl: Use 64-bit division function
+  clk: pwm: Use 64-bit division function
+  pwm: core: Convert period and duty cycle to u64
+
+ drivers/clk/clk-pwm.c                      |  7 +++-
+ drivers/gpu/drm/i915/display/intel_panel.c |  2 +-
+ drivers/hwmon/pwm-fan.c                    |  2 +-
+ drivers/media/rc/ir-rx51.c                 |  3 +-
+ drivers/pwm/core.c                         | 14 ++++----
+ drivers/pwm/pwm-clps711x.c                 |  2 +-
+ drivers/pwm/pwm-imx-tpm.c                  |  2 +-
+ drivers/pwm/pwm-imx27.c                    | 53 +++++++++++++++++++++++++-----
+ drivers/pwm/pwm-sifive.c                   |  2 +-
+ drivers/pwm/pwm-stm32-lp.c                 |  2 +-
+ drivers/pwm/pwm-sun4i.c                    |  2 +-
+ drivers/pwm/sysfs.c                        |  8 ++---
+ drivers/video/backlight/pwm_bl.c           |  3 +-
+ include/linux/pwm.h                        | 12 +++----
+ 14 files changed, 79 insertions(+), 35 deletions(-)
+
 -- 
-2.27.0.rc0.183.gde8f92d652-goog
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 
 _______________________________________________
