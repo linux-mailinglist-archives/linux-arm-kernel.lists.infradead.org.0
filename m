@@ -2,67 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F42F1E257C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 17:30:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EBC11E25CB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 17:42:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sVy9y3ILAj5cnEsQMI9XB4WVBeARvL1Ac1kdnY9D3ow=; b=ZcG35QPotpeXnX
-	xEexFbA4ruXhpcRDKn5+dEcfInVAc2f3k76E+1iiPBhZdEmvpMUY5pBioslcOZ+fBW54htgCjSgiD
-	tkc5Ibf7JrL7txcgHfyinM7Ajqd/MM3rj6h4vMIkQKNGHnWIWuNU4v35MivD7cZxV4ClmUB0Mkvat
-	qDLmyul5Tanb2p1KxXm48IST51NPQQ3lGnJgn0C5bXrmQ5CY3fpqr+Hmm70sAllf30FjgE1Zq57EQ
-	LE47zHIx8NKgUDUD5q+vxyjHd2RzlujHRdEJMndT0aQQHkLBedEUAH6EguML9hw1eQHoyA+M4aAsB
-	aWtgf6Yfykt9dML/Y4Aw==;
+	List-Owner; bh=VhSVfCeOGzvaDluDRwk7llXs+dUImU8awJpw09mrKJE=; b=jdgaUxQ+srVEOd
+	cNZoiGBhejvIiB55AHIDIkAR5p5cZExcykDiAAQAnvDbuuHaDhOnW2JB33rH84bqWxE4/9LCBxUA3
+	xFFuH0YV8WS8mVo7nGRRExU+juRXrcKLrzJ31NLfNohmBLh+n9kNElGiPuCxgRyJ6Selt+zHUYbsG
+	K8gb6mD0QZdq2lh9vGmyQwyhZTzixw14OTHWFBnD9F5NuGD14Y/LYTbpsutuKOTVaCGMEUNwgcAmG
+	pyEIz6MscCn+7OvbZUm7razQu7lygqmFt1m0c/tE5WiLd71dzL+KO8mtsQyx2LbDmn4MfEjLSXqN5
+	J64TBhbi45O4att+Cxtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdbX5-0007x9-Gg; Tue, 26 May 2020 15:30:23 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jdbir-000818-8Z; Tue, 26 May 2020 15:42:33 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdbWi-0007gM-GX; Tue, 26 May 2020 15:30:01 +0000
-Received: by mail-wr1-x443.google.com with SMTP id q11so8670224wrp.3;
- Tue, 26 May 2020 08:30:00 -0700 (PDT)
+ id 1jdbij-0007zv-P2; Tue, 26 May 2020 15:42:27 +0000
+Received: by mail-wr1-x442.google.com with SMTP id x14so15484053wrp.2;
+ Tue, 26 May 2020 08:42:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=5BPymIBZxiXUqqTT3U9Z1NeZW1/IDkJhQmzDdmvJt0I=;
- b=BoN2nxXuqeOcT3KmiqCiW7UQMyQSLNw99rEXvwyx+Zod2+GM4/HoJCCD953KdicI8j
- JOizdLhJDvy/zf1N9Nht7gLUTjU0OjsTX3ksW45NoczGgL/032dd0KCIeugh/hI9hLYP
- mwJlY7z/3LRvEVs7ea0bIRxAXX6aJqBcZ0hlk2anJe64b2YXTZaHDi1dQ1i65wSBrbAn
- iqRxtQcSvlEpP8XvIm1UZvXN/mM3eZsSBrLF5JWbd4vevPZkS/zWq0qMTfNXdmhy4gem
- xPaBHYZ8DAsCf2OT8/LpDmOvw6R65etEt8OFHKae6IMLZ1eMeiYIRsnn5aoa3TkIYxSg
- jB1Q==
+ bh=mLYpZKE4jabO9zWMlQFoEompJyehkcr1AllizRVE+IQ=;
+ b=LtXM4mdP2ZKLGqMh4qUNR7dFHZhddpEOr7qW+0lQzAK5yQ/5FxEOOI+j6P/X14y72E
+ swfYej7OjkMG5fKEG+AmpugB6VuKpROwuim0c8A0EqUZfx+xLPOHUkKod8bG15mdaQji
+ wyU8ZP/LCuT6nmLiIG3FqMu9Ls9sRGu7xcKIywm4q1KJXjJqVRcdm+EdXMTSA2MLhb3S
+ vd1kkBhIsrCEM5KQ/1ddOHGVMUIDglZ0qkFZjyXNrTvdWpZbNVEHoM2tx8oZq+5JuPfv
+ AKbs7BzNz7OeDVQ+slHm9NCjmw8nJKoQDr9EecFCcmZS7kMV0R8P7PT8OlwpCwrRgGBn
+ KNOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=5BPymIBZxiXUqqTT3U9Z1NeZW1/IDkJhQmzDdmvJt0I=;
- b=p5igDtjvlSHCE4IMFAZfh1NRADVNBihFJ0tLCfQqW7hzKo7ojSDE+L7D4stFn+iAMD
- Pzgu4jYTpcq9KQPX2LvuZUrf6+c4l8UOjeeuqQ5TGkO/6DKZu3MFUSXDiZ0UpXbl7Cc3
- xvGGcB84FpFSMAsQvFPaA7GtC0Fg37Ky3iSc7zqzu6ZuNFaim7sg5Uhq3sN9WNXj82fH
- eGrp42VlnEj9/og7taDAFX10ThAe9HVz7Sc9YflbxPwOMvqzNhi4IKBbasRv29pP+WbI
- 58NXMmiSgR5KHmYxkm9ski/CfZKtmjChm6cr0cj+KcStrbOQ+Le3ue+5k/wJgPrhhVm2
- n5/Q==
-X-Gm-Message-State: AOAM530+Z6tLYexdsJgbI4KJLUVMkTB551LodoONDunZxJewn9kn4Z8J
- URPip01XNerBqtL2CEyACylDfvoT
-X-Google-Smtp-Source: ABdhPJyHaM3mUoTord+k9hozkTkhWW6QO/90O4G2+ygztlGLXkjqJSf8bitdmX7pYqgCRTttGThsDg==
-X-Received: by 2002:adf:a407:: with SMTP id d7mr11389219wra.368.1590506998679; 
- Tue, 26 May 2020 08:29:58 -0700 (PDT)
+ bh=mLYpZKE4jabO9zWMlQFoEompJyehkcr1AllizRVE+IQ=;
+ b=T7q8F03VnXvH4JtmjttvbrohMOw5nLB0D0eyhwX3rCNjpkhPMQD/R70o6eZCazJp9e
+ Vqw6Ntgk0BJy/h9Xe8YVs5j7oVRpRVlC/92xU8y/8V2BjKY0eZHLhmoEELGW5FWI3q35
+ z/xFGuQB5pSWMI3+l8olJlt4tZFHj/gTHaOJ6i06MtCae5zt1Us6F5Z0UlyjEwPEh3JR
+ YtPUHUfgRF3Wmsa2VTSYv9qYoJZw12kVxkOeMwKLsyneAuqrJLftUE2ESAWbC28YQDae
+ kxVVbapVolSbvZMIuaNds7CfH1UsdBC3ec8wlhncFDbY2af/k7EzigviTT79IiuI/eXy
+ EDOw==
+X-Gm-Message-State: AOAM530soMnxPHnNKod7Bt+fGMWTYPr8hMAtpCBL6MUEM2zQFkAe7+Sr
+ IEAUgIKfa+sChKarXg63AoT5KseE
+X-Google-Smtp-Source: ABdhPJyG8LnmCSsSqcNHlbRZpB7won0vnrnNmgK/8dNSTbH22b0HWm2/et7yqj5UJohmDiPp+B3muw==
+X-Received: by 2002:a5d:4bcb:: with SMTP id l11mr1506355wrt.363.1590507744135; 
+ Tue, 26 May 2020 08:42:24 -0700 (PDT)
 Received: from ziggy.stardust ([213.195.113.243])
- by smtp.gmail.com with ESMTPSA id n19sm4290wmi.33.2020.05.26.08.29.57
+ by smtp.gmail.com with ESMTPSA id v2sm245205wrn.21.2020.05.26.08.42.22
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 26 May 2020 08:29:58 -0700 (PDT)
-Subject: Re: [PATCH v8 3/3] PM / AVS: SVS: Introduce SVS engine
-To: Roger Lu <roger.lu@mediatek.com>
-References: <20200518092403.22647-1-roger.lu@mediatek.com>
- <20200518092403.22647-4-roger.lu@mediatek.com>
- <CAFqH_527ZJEmsvrk-n-uNSc+Bx87ZVppn=rNKDWPGYUuf+gvPA@mail.gmail.com>
- <1590140434.4392.22.camel@mtksdaap41>
- <3b810588-ac4a-7fec-2163-38555dd83928@gmail.com>
- <1590484328.4392.44.camel@mtksdaap41>
+ Tue, 26 May 2020 08:42:23 -0700 (PDT)
+Subject: Re: [PATCH v1] clk: mediatek: assign the initial value to
+ clk_init_data of mtk_mux
+To: Weiyi Lu <weiyi.lu@mediatek.com>
+References: <1590388889-28382-1-git-send-email-weiyi.lu@mediatek.com>
+ <1abb3571-75ad-10d8-ff62-17be270b5b71@gmail.com>
+ <1590460982.28324.17.camel@mtksdaap41>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -138,23 +136,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  jzi+DzD9cvj2K6eD5j5kcKJJQactXqfJvF1Eb+OnxlB1BCLE8D1rNkPO5O742Mq3MgDmq19l
  +abzEL6QDAAxn9md8KwrA3RtucNh87cHlDXfUBKa7SRvBjTczDg+HEPNk2u3hrz1j3l2rliQ
  y1UfYx7Vk/TrdwUIJgKS8QAr8Lw9WuvY2hSqL9vEjx8VAkPWNWPwrQ==
-Message-ID: <2566c070-1f7c-6c28-81ed-fd3edbc865cc@gmail.com>
-Date: Tue, 26 May 2020 17:29:56 +0200
+Message-ID: <8aa4acd2-dcc3-1eb8-e16f-b4e987808602@gmail.com>
+Date: Tue, 26 May 2020 17:42:22 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1590484328.4392.44.camel@mtksdaap41>
+In-Reply-To: <1590460982.28324.17.camel@mtksdaap41>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_083000_551212_389C951B 
-X-CRM114-Status: GOOD (  22.00  )
+X-CRM114-CacheID: sfid-20200526_084225_832232_7699EA89 
+X-CRM114-Status: GOOD (  22.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -178,118 +176,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@google.com>,
- Nishanth Menon <nm@ti.com>, Kevin Hilman <khilman@kernel.org>,
- Enric Balletbo Serra <eballetbo@gmail.com>,
- Linux PM list <linux-pm@vger.kernel.org>, Angus Lin <Angus.Lin@mediatek.com>,
- Xiaoqing Liu <Xiaoqing.Liu@mediatek.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- HenryC Chen <HenryC.Chen@mediatek.com>,
- Charles Yang <Charles.Yang@mediatek.com>, YT Lee <yt.lee@mediatek.com>,
- Fan Chen <fan.chen@mediatek.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: James Liao <jamesjj.liao@mediatek.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com,
+ Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Owen Chen <owen.chen@mediatek.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Weiyi,
 
-
-On 26/05/2020 11:12, Roger Lu wrote:
-> Hi Matthias,
-> 
-> Thanks for the feedback.
-> 
-> On Fri, 2020-05-22 at 17:38 +0200, Matthias Brugger wrote:
+On 26/05/2020 04:43, Weiyi Lu wrote:
+> On Mon, 2020-05-25 at 11:08 +0200, Matthias Brugger wrote:
 >>
->> On 22/05/2020 11:40, Roger Lu wrote:
->>>
->>> Hi Enric,
->>>
->>> On Tue, 2020-05-19 at 17:30 +0200, Enric Balletbo Serra wrote:
->>>> Hi Roger,
->>>>
->>>> Thank you for your patch. I have the feeling that this driver is
->>>> complex and difficult to follow and I am wondering if it wouldn't be
->>>> better if you can send a version that simply adds basic functionality
->>>> for now. Some comments below.
->>>
->>> Thanks for the advices. I'll submit SVS v9 with basic functionality
->>> patch + step by step functionalities' patches. 
->>>
->>>>
->>>> Missatge de Roger Lu <roger.lu@mediatek.com> del dia dl., 18 de maig
->>>> 2020 a les 11:25:
->>>>>
->>>>> The SVS (Smart Voltage Scaling) engine is a piece
->>>>> of hardware which is used to calculate optimized
->>>>> voltage values of several power domains,
->>>>> e.g. CPU/GPU/CCI, according to chip process corner,
->>>>> temperatures, and other factors. Then DVFS driver
->>>>> could apply those optimized voltage values to reduce
->>>>> power consumption.
->>>>>
->>>>> Signed-off-by: Roger Lu <roger.lu@mediatek.com>
->>>>> ---
->>>>>  drivers/power/avs/Kconfig     |   10 +
->>>>>  drivers/power/avs/Makefile    |    1 +
->>>>>  drivers/power/avs/mtk_svs.c   | 2119 +++++++++++++++++++++++++++++++++
->>>>>  include/linux/power/mtk_svs.h |   23 +
->>>>>  4 files changed, 2153 insertions(+)
->>>>>  create mode 100644 drivers/power/avs/mtk_svs.c
->>>>>  create mode 100644 include/linux/power/mtk_svs.h
->>>>>
->>>>> diff --git a/drivers/power/avs/Kconfig b/drivers/power/avs/Kconfig
->>>>> index cdb4237bfd02..67089ac6040e 100644
->>>>> --- a/drivers/power/avs/Kconfig
->>>>> +++ b/drivers/power/avs/Kconfig
->>>>> @@ -35,3 +35,13 @@ config ROCKCHIP_IODOMAIN
->>>>>           Say y here to enable support io domains on Rockchip SoCs. It is
->>>>>           necessary for the io domain setting of the SoC to match the
->>>>>           voltage supplied by the regulators.
->>>>> +
->>>>> +config MTK_SVS
->>>>> +       bool "MediaTek Smart Voltage Scaling(SVS)"
->>>>
->>>> Can't be this a module? Why? In such case, you should use tristate option
->>>
->>> Generally, MTK_SVS is needed in MTK SoC(mt81xx) products. So, we don't provide
->>> module option in config. If, somehow, SVS isn't needed, we suggest
->>> CONFIG_MTK_SVS=n to be set.
+>> On 25/05/2020 08:41, Weiyi Lu wrote:
+>>> It'd be dangerous when struct clk_core have new memebers.
+>>> Add the missing initial value to clk_init_data.
 >>>
 >>
->> The question here is if it needs to be probed before we probe the modules. If
->> not, we should add a Kconfig option for MT81xx SoCs to select MTK_SVS.
-> 
-> Excuse me to make you confuse. MT81xx SoCs is the subset MTK ICs that
-> will use CONFIG_MTK_SVS. In other words, CONFIG_MTK_SVS will be used
-> with other MTK ICs as well. So, MTK_SVS is the general naming for MTK IC
-> to enable SVS power feature. Anyway, back to Enric's question, I'll make
-> MTK_SVS become a tristate feature in the next patch. Thanks.
-> 
+>> Sorry I don't really understand this commit message, can please explain.
+>> In any case if this is a problem, then we probably we should fix it for all drivers.
+>> Apart from drivers/clk/mediatek/clk-cpumux.c
 >>
-[...]
->>>>> +
->>>>> +static const u32 svs_regs_v2[] = {
->>>>
->>>> Is this SoC specific or shared between SoCs?
->>>
->>> Shared between SoCs. Some SVS in MTK SoCs use v2 register map.
->>>
->>
->> And which silicon uses v1 then? Is v2 a MediaTek internal naming you want to keep?
 > 
-> 1. MT8173 IC uses v1 register map. 
-> 2. Yes, I'll keep v2 postfix.
+> Actually, we were looking into an android kernel patch "ANDROID: GKI:
+> clk: Add support for voltage voting" [1]
+> 
+> In this patch, there adds a new member struct clk_vdd_class	*vdd_class;
+> in struct clk_init_data and struct clk_core
+> 
+> And then in clk_register(...)
+> core->vdd_class = hw->init->vdd_class;
+> 
+> In many clock APIs, it will check the core->vdd_class to select the
+> correct control flow.
+> So, if we don't assign an initial value to clk_init_data of mtk_mux
+> clock type, something might go wrong. And assigning an initial value
+> might be the easiest and good way to avoid such problem if any new clock
+> support added in the future.
 > 
 
-Sounds good, thanks for clarification.
+Thanks for your explanation. You mean that as clk_init_data is on the stack it
+can have random values, and would lead to the fact that vdd_class is interpreted
+as allocated although it should be NULL.
+
+Sounds reasonable to me. You might want to resend with a better commit message.
+Feel free to add my
+
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 
 Regards,
 Matthias
+
+> [1] https://android-review.googlesource.com/c/kernel/common/+/1278046
+> 
+>> It's a widely used pattern:
+>> $ git grep "struct clk_init_data init;"| wc -l
+>> 235
+>>
+>> Regards,
+>> Matthias
+>>
+>>> Fixes: a3ae549917f1 ("clk: mediatek: Add new clkmux register API")
+>>> Cc: <stable@vger.kernel.org>
+>>> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+>>> ---
+>>>  drivers/clk/mediatek/clk-mux.c | 2 +-
+>>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>>
+>>> diff --git a/drivers/clk/mediatek/clk-mux.c b/drivers/clk/mediatek/clk-mux.c
+>>> index 76f9cd0..14e127e 100644
+>>> --- a/drivers/clk/mediatek/clk-mux.c
+>>> +++ b/drivers/clk/mediatek/clk-mux.c
+>>> @@ -160,7 +160,7 @@ struct clk *mtk_clk_register_mux(const struct mtk_mux *mux,
+>>>  				 spinlock_t *lock)
+>>>  {
+>>>  	struct mtk_clk_mux *clk_mux;
+>>> -	struct clk_init_data init;
+>>> +	struct clk_init_data init = {};
+>>>  	struct clk *clk;
+>>>  
+>>>  	clk_mux = kzalloc(sizeof(*clk_mux), GFP_KERNEL);
+>>>
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
