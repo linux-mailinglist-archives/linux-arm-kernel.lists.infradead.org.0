@@ -2,72 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16BB31E298A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 20:03:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D74D01E2991
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 20:03:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jgKrKWGdF6ao/vdaw5Q5Pxl0fWrFMpLZFVxz/Gazwno=; b=qNPqZOAS/dOACf
-	wq364S7TCsbtjbGeeBp04Bdu9NiDuckMr6BzsN6+LCJ353pFtgeHRX1zLbld1HFkI3mXo+5UhDdTi
-	siqy4cM4NpvFPiUWYkh0P7PP5gItHHeWFUx/VX1+dJY0rOMs7BULLddrSMHiWHpYDjvdxS4DHciqp
-	QYB3H6nSYAtQctalwxUg0RR0O+u1Lcjea1OYyzGUZcqBRwV35VVUlv4lgkK58rmP/pN6zJziedtoK
-	B/MZGBG2MMpFwrs9lmZm1ZT9Ez8OSKfigdMWAHJmgceT2Y1ZXH7zr3mMsky6Hg4h2bhH+fUZvRrCC
-	2nX87ry9oIrZEbNXXobg==;
+	List-Owner; bh=zvl+hIWO+RpK09Y0fczPR7IckgjM3lM5qRNbeYdWR7I=; b=mifbE8rszEGRoQ
+	k+00LZ3L6FkjOn0YAprgVlJjrTkD4djRInMgZ9R2r1j2T0kOnSYS83BelL0AiBSaMkNkNuV86Ccnl
+	jrb/yLq+KbX82nXP2CeAv9Gn6X4VFIZzmh3CHx6853LH0xHCEKWNPPxy0boxFJNQxSq25Gz8uOM94
+	j4WQC1/MgNsbenhf2Qu6a8zJ8clSXT8mUXV4Vg+fg3T+kDXOagXF4jxdPnSinLVW6vlbr7anIgutP
+	8qFkNmo8BcsW21dGpjt1ixjxCqT6IzlFd4Mqk+FnJU5YbfnR6ROHOqs6JusXeYWqZWnq+W3mjLSGF
+	kiX+8ymctcHt7uN4FH5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jddul-0001ch-7r; Tue, 26 May 2020 18:02:59 +0000
-Received: from mail-il1-f194.google.com ([209.85.166.194])
+	id 1jddvO-0001tv-TM; Tue, 26 May 2020 18:03:38 +0000
+Received: from mail-il1-f195.google.com ([209.85.166.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jddua-0001bJ-Sc; Tue, 26 May 2020 18:02:50 +0000
-Received: by mail-il1-f194.google.com with SMTP id q18so283348ilm.5;
- Tue, 26 May 2020 11:02:45 -0700 (PDT)
+ id 1jddvA-0001sW-2G; Tue, 26 May 2020 18:03:25 +0000
+Received: by mail-il1-f195.google.com with SMTP id 18so21451353iln.9;
+ Tue, 26 May 2020 11:03:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=YebaOmD7Ju0D8dp8+Jh6rQ27XVMpKBTe+xY/yyi+R5c=;
- b=NNA7vXlIxRNPOK/CkGKLWYvzhWEXMn5KyFTPbk3rnc2cxKEeixOp5U8r1Hz3ZJEsyC
- 56xq/W7KwQEYSInvwZfzWmL7LutqXWuXuJM325lStnq3r6dzaU5vG1vH+tMWolTOHWTD
- iVyVHBE+6dD7Pc8fFB9K1e18K79GJLDmmyY87OLD+QuytygGtp61ljnx8jkHBQ6/Z1Hb
- 7u67+xf0fUSlE8lrp7hPvEy8ZGy2YLcbix1TvF+jnzp2UyJeFWrVMqs6EX2ovmoRMYzo
- lpyKC4DHuA5bJiUEJELa4NnyiU8ZJcqND8IkfOR0+WZbYTrNy4RzX4NOgS2bN7OamERw
- It3w==
-X-Gm-Message-State: AOAM531OBciPIp4wBoiKNHrpNpkM5NB8UT+K26O/3mHBjE+XzUy+hk1G
- HCCbHe881vi4xFAlftwfcA==
-X-Google-Smtp-Source: ABdhPJzHpsHTbs1kNcS5W7S2W7j2Tz56qjTVrOe7LVapF32Ul2j79RUmxJxaOWK3AAyJg24lmEWqow==
-X-Received: by 2002:a92:ce8e:: with SMTP id r14mr2366787ilo.265.1590516164859; 
- Tue, 26 May 2020 11:02:44 -0700 (PDT)
+ bh=udyKIAgzUuMLjrt7p/tKMSuE96YEp3YyGPeKVs0pC30=;
+ b=IvIe5A3k4WfzsVb6xYpBZAT0WRCC6OTdYOXYS96gzTCAJKcVqB03O2FZeXJRN/Ec5Z
+ 88SyHOl24lW1L/5sAYXbWuJnRk+HwB5KUELISjk9j8mIIf/reurTYsK1wPmrQE632BmS
+ Pm2cFpUpjwZGjvhLAw1r98Srv4ofbiG9OshydxoszKFUFwd6M70XlZQN/paaL8hGZBpj
+ kLFloYpM2lyMONDEnn2J5WLpaEqwaorjxrglBw4sVr4fm136bKw21RdGhxelBcZVzSWy
+ s/wH2XE0hEtE+/uHj2lhZUTOQCq58lCuO4kBx6o7gFXvZxO+H5XRKJUM8FXX/FoNki9p
+ UmlQ==
+X-Gm-Message-State: AOAM531uOagWpogKlVpYteu2Njhe0IxlvQ2zvRC0F4SYVm4e4btLLqhx
+ agr2r5CAC1+NO9L4FNuJag==
+X-Google-Smtp-Source: ABdhPJz49fxHgfKUlXk9bT+7PEkcHyxo07cWGJ72t5O8q64FjmH/+SLrhIzcouiT9jARc7MEOifDQA==
+X-Received: by 2002:a92:3d8b:: with SMTP id k11mr785485ilf.122.1590516203049; 
+ Tue, 26 May 2020 11:03:23 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id j90sm339624ilg.70.2020.05.26.11.02.43
+ by smtp.gmail.com with ESMTPSA id 4sm337307ilc.34.2020.05.26.11.03.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 11:02:44 -0700 (PDT)
-Received: (nullmailer pid 76101 invoked by uid 1000);
- Tue, 26 May 2020 18:02:43 -0000
-Date: Tue, 26 May 2020 12:02:43 -0600
+ Tue, 26 May 2020 11:03:22 -0700 (PDT)
+Received: (nullmailer pid 77730 invoked by uid 1000);
+ Tue, 26 May 2020 18:03:21 -0000
+Date: Tue, 26 May 2020 12:03:21 -0600
 From: Rob Herring <robh@kernel.org>
 To: Weiyi Lu <weiyi.lu@mediatek.com>
-Subject: Re: [PATCH v15 01/11] dt-bindings: mediatek: Add property to mt8183
- smi-common
-Message-ID: <20200526180243.GA75958@bogus>
+Subject: Re: [PATCH v15 02/11] dt-bindings: soc: Add MT8183 power dt-bindings
+Message-ID: <20200526180321.GA77691@bogus>
 References: <1590051985-29149-1-git-send-email-weiyi.lu@mediatek.com>
- <1590051985-29149-2-git-send-email-weiyi.lu@mediatek.com>
+ <1590051985-29149-3-git-send-email-weiyi.lu@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1590051985-29149-2-git-send-email-weiyi.lu@mediatek.com>
+In-Reply-To: <1590051985-29149-3-git-send-email-weiyi.lu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_110248_920940_F25CE81E 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200526_110324_099490_E797E191 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.194 listed in list.dnswl.org]
+ no trust [209.85.166.195 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -77,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.194 listed in wl.mailspike.net]
+ [209.85.166.195 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,16 +101,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 21 May 2020 17:06:14 +0800, Weiyi Lu wrote:
-> For scpsys driver using regmap based syscon driver API.
+On Thu, 21 May 2020 17:06:15 +0800, Weiyi Lu wrote:
+> Add power dt-bindings of MT8183 and introduces "BASIC" and
+> "SUBSYS" clock types in binding document.
+> The "BASIC" type is compatible to the original power control with
+> clock name [a-z]+[0-9]*, e.g. mm, vpu1.
+> The "SUBSYS" type is used for bus protection control with clock
+> name [a-z]+-[0-9]+, e.g. isp-0, cam-1.
+> And add an optional "mediatek,smi" property for phandle to smi-common
+> node.
 > 
 > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
 > ---
->  .../devicetree/bindings/memory-controllers/mediatek,smi-common.txt      | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
+>  .../devicetree/bindings/soc/mediatek/scpsys.txt    | 21 ++++++++++++++---
+>  include/dt-bindings/power/mt8183-power.h           | 26 ++++++++++++++++++++++
+>  2 files changed, 44 insertions(+), 3 deletions(-)
+>  create mode 100644 include/dt-bindings/power/mt8183-power.h
 > 
 
-Acked-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
