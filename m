@@ -2,74 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 546FA1E20C3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:18:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4274D1E20D1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:22:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wVpipR/w7uhs7M1IYwsvN5e6SX0iVnik8iRpnFhPmgo=; b=FWFcnwV82h8Y/2
-	UwCkNrm8p47TlAeFsdxMYiqsTbkTFMKbyJSh1HsKzMybRvaCzpNARXSb1thAN+X3omQSEDy/NuGaq
-	3s9/ThnAAgrHnix9kZHNpIdsLkHTkH/DA4qYW4nssyaNIjVbz6j3DfIkGELjH3l7lCAeaf6j+3fyu
-	bTLbZX1f5YbjqUplRK/E84tduQOsyVOgWw7x0mY2zkGn2uesWNC7gvGHwoyF8GS0UqjY054Of5bVs
-	knE+R28dEkNFBOQ5G20gi5W4jgV1IVcJF/xgp31YMKpG51M2+N8CGMUOxwnOdBzeSs5kLf4UO8Ut3
-	A4Up/pjfZGQ+DOuSRU4g==;
+	List-Owner; bh=SC+tl5B+H51HWZVk6Norc5Q+HlsLmemDEQ9XNluVdPs=; b=FBQpBJPZeBznnl
+	WcEY2HaDidDHA4d1SwFD405baLl72DP/b4qCezYWCAZyp7Anl5wycunF1hlsMx8FFsuto4e0wJGAw
+	38u7FgDm/w8ivuYsSYn/3Hq+sHQ0adOB1q/1EcTGfnjzpzSTDPU5jLDZqqAgteI9f955pnQ2nr9Za
+	EkimovUIus4l7lUmY9uK97drbOj0Ap4/o33M1pi3/kXXv0mYkt5Is/gh7aG0OwUBZ9t6UCDIDa8Xp
+	2EHF8s8f5nAZY+QMwq57A+eaQf3q6/Imn+8qihY2oYskPC5GudWyRKjRKxZGWgPocSy8DDK+2mcUo
+	I1mvhcVDuNpQ2cb9Sz+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdXbO-00075Y-3y; Tue, 26 May 2020 11:18:34 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jdXfR-0001kP-3d; Tue, 26 May 2020 11:22:45 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdXbC-000753-FA
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:18:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=6lrYl9/AU8kf7BRAZiJ/WNqQg6FKld5XALj2ECqgZuw=; b=rED9Tc5F37lwlh299LaxhwxP2
- gYlULzxMgyNUKMLcKieq642d/0UJYHt0TDwOoOzC8bHgaSBbUACgTqS3xKFSQqo56krETi0ecku7m
- rMWXbiaXAAaKWLYgWp88x9YrPcnRS3/AJEkaZIsxWnmo/P3zRaIW9z8shm+2CEvWa3EhC4+ZJ3h4F
- /T875qRa0uHpQM60MkHtZNSpsT6jjl2f3Eyq1s5g6trDMglKrmlWZy8vI8gaRlGWHToXSBbyHjqRf
- Bl5Yr/yHN75kUzxOPltfQfNqWV43WpoQ5Ln/yUVyRgNLyJUlIZoZ136vQcrM0WeXaBMV5t29em6zh
- 84V0aL79g==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:34742)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jdXax-0007ec-OX; Tue, 26 May 2020 12:18:07 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jdXau-0005KU-Ur; Tue, 26 May 2020 12:18:04 +0100
-Date: Tue, 26 May 2020 12:18:04 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Mike Rapoport <rppt@linux.ibm.com>
-Subject: Re: [PATCH 0/2] ARM: Allow either FLATMEM or SPARSEMEM on the
- multiplatform build
-Message-ID: <20200526111804.GW1551@shell.armlinux.org.uk>
-References: <20200521081825.1348844-1-rppt@linux.ibm.com>
+ id 1jdXfC-0001jj-O3
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:22:32 +0000
+Received: by mail-lj1-x244.google.com with SMTP id a25so12356962ljp.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 04:22:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zJxI8q9GaxwusSxiN1TRl1t50DLCSayUphT+bXOuVqA=;
+ b=M/bNMMikN5rlMrwQqf4wuwwbofYB2P7B1TVibatvt8DV12qC0t3WfTLDIKYPPVaVAr
+ A/f3VdlkZ0uoLoIgysMyIpfF1UG/ANS6qt1mUuG29T5Cl6mAeNoOyvzUKOdJJ8uA7giL
+ qD7sfjXYbwg4iSJN5ZIRmUBWa2wlbl+Ugvxjeg5ss11qHAsmn25CwI7z6ncTNoh9NJiX
+ 0sxAbxzSMgfnDrVk5m4SNa5jHt3jgGyiccSWLvURNhA4j4SyZORWhck4vjMgfFGv2a5b
+ rPWOMAmALGAVvuNt8rbuXWXGHACZGW4c1S+jz+mgm5NHSXQm2562P12Dnu85ptTxZS39
+ 9eag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zJxI8q9GaxwusSxiN1TRl1t50DLCSayUphT+bXOuVqA=;
+ b=iuii7HE3GRO+lN27sTze5Cv6jYsT0L+KVSu0nOdg5MQICqvQkwMEgVkJDLJE3eb7Vo
+ hnwpJK2t2N6XrJLx8yV0k8OmTBbTehc+Jx0cX5v26wZCbc9O82r7FIERjzQGdeJ/Cewi
+ UNlsIPCM07PpnUzpXkId/XKHP6JuliOw2SJWMD2gUd8w3vkiOgREvNwP5lMM/98jl2yF
+ vSFLNOcxbJ1o0SjI/1abD1idLD/gIMwLtD+CFMcr2F+cVdPycARXRGs+6FprvyM4+vfn
+ YV1yD6C58XFVdx++Tg2FCJQk67GACcp2yKr79cTStYoZT3MUKQUBNdrlb+wisOAN6S8s
+ SQ9w==
+X-Gm-Message-State: AOAM532xL4fygXhB+oBiN39ufmtKSkWvrgSky7R+Y7I5miXUexiu10IR
+ oPI7+9WXMfz6sKMd8oeNEGPCXFyPjO7QQhy3Yx3QIA==
+X-Google-Smtp-Source: ABdhPJzdhwywLZUu1iioOyV4RjM5M1Epk+nZBmMIV652Jit18mFH9boEqTDc5xdPxLb/F7xuG/+hRyaxUu9GK3c0+oc=
+X-Received: by 2002:a2e:711c:: with SMTP id m28mr384158ljc.104.1590492148520; 
+ Tue, 26 May 2020 04:22:28 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200521081825.1348844-1-rppt@linux.ibm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200513212451.1919013-1-megous@megous.com>
+ <20200513212451.1919013-3-megous@megous.com>
+In-Reply-To: <20200513212451.1919013-3-megous@megous.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 26 May 2020 13:22:17 +0200
+Message-ID: <CACRpkdbb0Y32EG=tEx208eUh_CJndvnQGQvAnF_mG29Hd9-2Jg@mail.gmail.com>
+Subject: Re: [PATCH v3 2/5] dt-bindings: panel: Add binding for Xingbangda
+ XBD599 panel
+To: Ondrej Jirman <megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_041822_505055_F0B45D02 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200526_042230_784475_87FBCAB6 
+X-CRM114-Status: GOOD (  10.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -88,27 +92,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- Stephen Boyd <sboyd@kernel.org>, Kevin Cernekee <cernekee@gmail.com>,
- Doug Berger <opendmb@gmail.com>, Gregory Fong <gregory.0xf0@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Samuel Holland <samuel@sholland.org>,
+ David Airlie <airlied@linux.ie>, Bhushan Shah <bshah@kde.org>,
+ Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Martijn Braam <martijn@brixit.nl>, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Sam Ravnborg <sam@ravnborg.org>,
+ Luca Weiss <luca@z3ntu.xyz>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Icenowy Zheng <icenowy@aosc.io>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 11:18:23AM +0300, Mike Rapoport wrote:
-> (resendig for the correct address and with mailing list cc'ed, sorry for
-> the noise)
+On Wed, May 13, 2020 at 11:24 PM Ondrej Jirman <megous@megous.com> wrote:
 
-There are two patches in the patch system, submitted within minutes
-of each other, with the same summary "Allow either FLATMEM or
-SPARSEMEM on the multiplatform build" but the patch and commit messages
-are different.  I guess the summary for one of the patches is wrong?
+> From: Icenowy Zheng <icenowy@aosc.io>
+>
+> Xingbangda XBD599 is a 5.99" 720x1440 MIPI-DSI LCD panel. It is based on
+> Sitronix ST7703 LCD controller.
+>
+> Add its device tree binding.
+>
+> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
