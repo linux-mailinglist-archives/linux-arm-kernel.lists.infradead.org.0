@@ -2,83 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 042361E1CB5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 09:59:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D3AA1E1D67
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 10:34:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GG1cDFWxsEVYDLghOudykH0jzz8zmADnCIU93L1iy3Y=; b=ncFK/t5xusOsvM
-	l71+3nxPmyYF8zfqts6vQgXyst7zxL2UKLRfvOU6oC69yLRmz6KF94gJ2ZjONCeSnC0R75LPEyYii
-	QWMUq0mMLcrWhqlxceI/hblwPd0X1Xi4BtGaQWjS9zHZN7cvNWkY0CopEQ1/OJJqSQD4/EcClATmW
-	a1TITdpcMY1UJJC4wnWz0nwrtOD96x1S7SHEHkFmT2l6PdU3auY8/Bj+cdzcnYSzV7YPrAsvG7oCe
-	zHAN+DEe4ZyHjjbEzJ3r+maagDvQ34H75XeFA6V1TCHiX8WzJ33DJFJIVXVlQWNhHbKc8chZDh/mc
-	nDVdQzGRdgYK1YgCtYvA==;
+	List-Owner; bh=aLV5PpnzpHGA78las8cfgqcYpc0L+ZrradOrgJaLyrQ=; b=i7DW8JR2M1KOBz
+	16TBFG4fnPXD3eJTCiAaM7tdlEu4/3BQHiWOwGz+ZvrKCqls1FZXq0CpXmGfn+HifwkyAIs1jDhrc
+	yM38Zxb2JnVWR6F6b/cu1V9M1lfWTVwTi1A9YUsNr5tVri/Vqpo4vYkOnXUf6hIXHHT+7zDYkcLaO
+	Pv+C3skfiZ6KX0zi+fR3CGQQj6ptm9ZPUg/VyroWJ+a+VofItqsKDjoOA0MIDAzVlmKptwAwRLcBI
+	+IFym8++hTy9ZACJTErI3YUxwRMn0B0B0zz1Bw/1n4/HDWwGHRNH6Ayu6NeKqWn+ndFim6eNy/tD1
+	A43OkQkmgbpHxIE+INIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdUUV-0000AB-FU; Tue, 26 May 2020 07:59:15 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jdV2Q-0003Lq-HE; Tue, 26 May 2020 08:34:18 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdUUL-00009Z-K6
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 07:59:06 +0000
-Received: by mail-wr1-x441.google.com with SMTP id l11so19476653wru.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 00:59:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=zYdjgpNGKkhHUaPVM1/nhRkNBCVbxfKW4NHkKWtwJ2Y=;
- b=n/dXU9fyQ+2u0G9SXzRKn0Sd6pJTChNHgO3T/qJJlCgWgMb4CS573tIEQx+xoycpt5
- ZH5fEO/STnba6a5noZgK+uleLYZg24fRK4RpI+M93bAfb7iWvfyTECnKeAx3Hs1Nyy8z
- 3k6qYlbQlDVjbj7whcev/TQosfr+iCL0jQikOosi/J4RO2+fyTg6NguWXboOJsI/tsAm
- 8p2GrWuV0sCQbUNji569BEikqLrJI2tJSONaEZf5CDhmIWZwRenMEDB1rC10eiprVUO7
- djKXcWdnhf+v+kzsegrbQjmBD4aVi//DZxmrvgOt1Z4TYdJ9h3i+v/dLSIU26jWEA2gk
- sp8Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=zYdjgpNGKkhHUaPVM1/nhRkNBCVbxfKW4NHkKWtwJ2Y=;
- b=GyJ7gHFcBP4FTFcJXI6nMznBqBh1uKW+VMGWKRibslAfK7vjMYKPv0KkdyrBw6TlLT
- p2fS6CimjnR8cNNW/bxNS/vi02OyI7bwloup8SRiGC4WlxX4FL7dfnrUmKoawVyKWjjv
- rzJUvDmN21rzpKJZqNpyCmlzrO48mDibGK8Fv4Qyk99OU7srsS7H8R7PnPGvZjJA9H18
- t/ohFx/lYn9ukr857OGidhnD24cg7vITUSb1ZXEGZg6VaHwgyZqIc5CAFJhRAEnZlOw9
- OsRZV1fn0/wCdJ9IsWg+DVl4vDxke8/Hc88DdkwNALsRhtTJcVpougghGFkn/vUugdTi
- wqlA==
-X-Gm-Message-State: AOAM530jR6KJbJHffrlfLeFIntsLte9zn45WKZ9ZTH0U0q/JavLGL75C
- uD8KrUDkFn08bKGMRSMdBZzcJg==
-X-Google-Smtp-Source: ABdhPJzjh8siprJLpdOwjtzMP60lf7tTZJoWmJAVMzTka0tpDJqO/GhIRtY1OB3npRBX5C5TYEDnUw==
-X-Received: by 2002:adf:a51c:: with SMTP id i28mr1970108wrb.78.1590479943335; 
- Tue, 26 May 2020 00:59:03 -0700 (PDT)
-Received: from dell ([95.149.164.102])
- by smtp.gmail.com with ESMTPSA id d6sm22344913wrj.90.2020.05.26.00.59.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 00:59:02 -0700 (PDT)
-Date: Tue, 26 May 2020 08:59:01 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Amelie Delaunay <amelie.delaunay@st.com>
-Subject: Re: [PATCH 3/3] mfd: stmfx: disable irq in suspend to avoid spurious
- interrupt
-Message-ID: <20200526075901.GG3628@dell>
-References: <20200422090833.9743-1-amelie.delaunay@st.com>
- <20200422090833.9743-4-amelie.delaunay@st.com>
+ id 1jdV2H-0003Ji-Bc
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 08:34:11 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04Q8W2Kg031881; Tue, 26 May 2020 10:34:03 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=date : from : to : cc :
+ subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=STMicroelectronics;
+ bh=yYl7Q366t3wZdeT76gK6DolbnJ3PwezvlVa6m3FkDpQ=;
+ b=P36yH9zYjirIl4Biz2lMPmtVJE18A0S4HPyvfBZfeoXnNCWdio7rZ53MIu+yq2voOYZw
+ Ca186l1OP+6shHNyXcxEB6SUfHhwI9YLq/ZXu//ji2WFjuFFfwGnzoOjphA0QX9g7ifZ
+ 6wYhrP2xzb3XI6AoOygPfT2/z0EyO+BDIpcyPk+1n6duOVcxbBtkeZ8UdfKEphhuwBij
+ ZIyg0uGSU00QuCxX2NUPdLWep3cw1xqlH3OLaZKsFI+6mOEJbOYggFgYVacxHvBgUedR
+ q4sV3L9AYofZuUef9udwp0HCyS9rvLEf7tfXnRPE3EEdAi49XknmsrwuVdssiv/bgQN8 LQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 316skw6hv7-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 26 May 2020 10:34:03 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 31FC410002A;
+ Tue, 26 May 2020 10:34:02 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 203162BE22E;
+ Tue, 26 May 2020 10:34:02 +0200 (CEST)
+Received: from gnbcxd0016.gnb.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 26 May
+ 2020 10:34:01 +0200
+Date: Tue, 26 May 2020 10:34:00 +0200
+From: Alain Volmat <alain.volmat@st.com>
+To: Dinghao Liu <dinghao.liu@zju.edu.cn>
+Subject: Re: [PATCH] i2c: stm32f7: Fix runtime PM imbalance in
+ stm32f7_i2c_reg_slave
+Message-ID: <20200526083400.GC10725@gnbcxd0016.gnb.st.com>
+Mail-Followup-To: Dinghao Liu <dinghao.liu@zju.edu.cn>, kjlu@umn.edu,
+ Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-i2c@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+References: <20200521070507.13015-1-dinghao.liu@zju.edu.cn>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200422090833.9743-4-amelie.delaunay@st.com>
+In-Reply-To: <20200521070507.13015-1-dinghao.liu@zju.edu.cn>
+X-Disclaimer: ce message est personnel / this message is private
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG1NODE2.st.com (10.75.127.2) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-05-25_12:2020-05-25,
+ 2020-05-25 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_005905_661113_620ABD5F 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200526_013409_842784_5DC9AAA4 
+X-CRM114-Status: GOOD (  18.42  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,27 +102,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Alexandre Torgue <alexandre.torgue@st.com>, kjlu@umn.edu,
+ linux-kernel@vger.kernel.org, Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
+ linux-i2c@vger.kernel.org, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAyMiBBcHIgMjAyMCwgQW1lbGllIERlbGF1bmF5IHdyb3RlOgoKPiBXaGVuIFNUTUZY
-IHN1cHBseSBpcyBzdG9wcGVkLCBzcHVyaW91cyBpbnRlcnJ1cHQgY2FuIG9jY3VyLiBUbyBhdm9p
-ZCB0aGF0LAo+IGRpc2FibGUgdGhlIGludGVycnVwdCBpbiBzdXNwZW5kIGJlZm9yZSBkaXNhYmxp
-bmcgdGhlIHJlZ3VsYXRvciBhbmQKPiByZS1lbmFibGUgaXQgYXQgdGhlIGVuZCBvZiByZXN1bWUu
-Cj4gCj4gRml4ZXM6IDA2MjUyYWRlOTE1NiAoIm1mZDogQWRkIFNUIE11bHRpLUZ1bmN0aW9uIGVY
-cGFuZGVyIChTVE1GWCkgY29yZSBkcml2ZXIiKQo+IFNpZ25lZC1vZmYtYnk6IEFtZWxpZSBEZWxh
-dW5heSA8YW1lbGllLmRlbGF1bmF5QHN0LmNvbT4KPiAtLS0KPiAgZHJpdmVycy9tZmQvc3RtZngu
-YyAgICAgICB8IDYgKysrKysrCj4gIGluY2x1ZGUvbGludXgvbWZkL3N0bWZ4LmggfCAxICsKPiAg
-MiBmaWxlcyBjaGFuZ2VkLCA3IGluc2VydGlvbnMoKykKCkFwcGxpZWQsIHRoYW5rcy4KCi0tIApM
-ZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBMZWFkCkxpbmFy
-by5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xsb3cgTGluYXJv
-OiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Dinghao,
+
+Thanks for the patch. Indeed, this should be fixed.
+
+Overall, there are several other calls to pm_runtime_get_sync within this
+driver, would you like to fix them all at once ?
+
+On Thu, May 21, 2020 at 03:05:07PM +0800, Dinghao Liu wrote:
+> pm_runtime_get_sync() increments the runtime PM usage counter even
+> the call returns an error code. Thus a pairing decrement is needed
+> on the error handling path to keep the counter balanced.
+> 
+> Signed-off-by: Dinghao Liu <dinghao.liu@zju.edu.cn>
+> ---
+>  drivers/i2c/busses/i2c-stm32f7.c | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+> index 330ffed011e0..602cf35649c8 100644
+> --- a/drivers/i2c/busses/i2c-stm32f7.c
+> +++ b/drivers/i2c/busses/i2c-stm32f7.c
+> @@ -1767,8 +1767,10 @@ static int stm32f7_i2c_reg_slave(struct i2c_client *slave)
+>  		return ret;
+>  
+>  	ret = pm_runtime_get_sync(dev);
+> -	if (ret < 0)
+> +	if (ret < 0) {
+> +		pm_runtime_put_autosuspend(dev);
+
+Considering that if we fail here there is a very good chance that this is due
+to the resume failing, pm_runtime_put_noidle would probably make more sense
+since pm_runtime_put_autosuspend will most probably fail as well.
+
+>  		return ret;
+> +	}
+>  
+>  	if (!stm32f7_i2c_is_slave_registered(i2c_dev))
+>  		stm32f7_i2c_enable_wakeup(i2c_dev, true);
+> -- 
+> 2.17.1
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
