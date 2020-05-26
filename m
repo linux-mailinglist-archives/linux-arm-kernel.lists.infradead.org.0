@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B22D1E2009
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 12:47:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8C3C1E200A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 12:47:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=KqjGNk8QUpehlV/xv6H3ibY26p2tRgK/z098f5G74qA=; b=r1r
-	hUVncs2gk+85JCbpb4KUOlvsBhLFSyrrkvkiZhShcqYuHeVjXQPskjvt7tWbbtvm/KJZOKjs/7TTv
-	YvYeXK4WBgoDUR4yh9WLBDZXJK0mrmeLr/eEt5QDyjjXHDv4hDve0lyz//fvcjFBUUw0F11FIcvyw
-	7gl3jxMBLg/VVfNzTGhdhz81NbcxVJF60gdmgljBfCchAVvKAjJD3UTLc1cpSs5Vtcdg+mMNYU/ug
-	K0PE+uUpTVdPpo/1KkzTKwBVV+hrkm9dciZm6j9PtwglhMtlEOYeITEIdTa/Aq4/BHgiNhK1R2dm+
-	9NDYoc4RusK7L8MI533w58UXBetpz/Q==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=r0MlAOa6KS047CLw2mrST82/KDIWsaAGySMHye8hoVc=; b=tiyK0GhaS9sXXNgXWiu5uTKXUZ
+	B+JedF4ywwd04/Yq/PK3BsoBywBAnLqeVaK9ZAR4ez3gt87Z2SPGYBzJ/CAsg5neEiadJ6J3LTWV5
+	zh6f2FsQC26aJi/i42O5k1+6uF4hDBXDiVPrAWDKoKM6KhdoI7NQNLTneacyUotDH9V+inhClTL/6
+	8Wb0XdbZKFIQFE8ITnsOFKPDvW0UPiXQRrjK70ISt1kjMxb159cwiOAT/zPDTEBpVt9Vw4plI2f7j
+	q6eKokFnKR7xHyoU0+wfkaM+i2hs/5aYNZrbfeDoJ1sKuugU/1xoFDSL4iWZw9kCmUMpp8NW4pvHh
+	eqwo3h1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdX6t-0001rB-HX; Tue, 26 May 2020 10:47:03 +0000
-Received: from mail-wm1-x335.google.com ([2a00:1450:4864:20::335])
+	id 1jdX7D-00021R-I1; Tue, 26 May 2020 10:47:23 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdX6h-0001py-CV
+ id 1jdX6i-0001q0-AP
  for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 10:46:53 +0000
-Received: by mail-wm1-x335.google.com with SMTP id r9so2667542wmh.2
+Received: by mail-wr1-x442.google.com with SMTP id r7so3226324wro.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 03:46:50 -0700 (PDT)
+ Tue, 26 May 2020 03:46:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=xtTP13EAR8qA3JpqgH7NgOrGcYs1srhjI6MA7UaS9xQ=;
- b=i8lRWC1AnC8fKiPGCDX5uT6YJXsrut4SK/nLuQ4w2YXeSbeBfLHmbDTwT1h1UjdCjJ
- MFJPqjQYfR2E7Y9iB2s2DfiTLosX95WePGmU7Qr6y8ulizlzaVhe4M5qw2QXYmwZh4YL
- +aUueuHmWMM50YtHXH9Zw2Q4PknMhNNtiGASFhx/UwT9GmHpAGndDp4v8wgKyy7B2ErM
- twIAG74qS6jIsU8h2EPmClhGW8oAAO+pgGS6mT6RBUh5/9fPYHsT82J+IKget9Edtyxk
- CQJEHj3au0klzyQb0zqCXkp4eyA379heSPWH/wAzyh5NgjiY06vhwcjpDc+H2+R866nV
- 8fTA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=FgO6AdP43Um2PGzv5S5Pfi8oIKzNumXYXeRwuAF9in4=;
+ b=Jj93FwV5ywea0S8lQEL+hiTtDlb/eLep4niAG6flvp89Zuw/bp2jcQFCbE+QLYTMrG
+ q/XsCFXN3LNdwe9EAQ5VP+glqqrce+cjcS2cQO2R2zP++cJsudNO/CC9gVRWT868A1hf
+ KEBfyAY6VdxyQgAWicuOMx8RlJl5oApMFP0zVLelCfAfXOV9cc02UZoXlLxTLmUSsxfK
+ YzMAGJ4lGm1gFzuKQKeCX4r/S+wyDpgzqfS1u0VcLdcfH+AG3fkz4Uu5VCbHjpxhPHe/
+ nG1GV6IansVFQKhj+i/z0/nhtNTgd7Jqp7dM8+PhK6RpYXNB4RQ31JJxQp1W1KlocfEa
+ cM/w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=xtTP13EAR8qA3JpqgH7NgOrGcYs1srhjI6MA7UaS9xQ=;
- b=lp7Uet+WUIAHwCxLd1VQLowNFai5vkEnUkso1EeXW9m7FowHhT33w7WkRrtpfesC29
- takW8Jm5bDY83c5WLwtc+ghi3uOO4T1Ikj4Oz86plHubs1a184HhVvZ3ps8GbrTHpCug
- SPXWGqZxU37qKdwzxamLw39Jf9HZ8DZEJ+XtGhJRJ1k23fBLSWpAQYcBc7Oo6H0Th2c6
- kAbukY5d3NSA0Z3/YN22Utw3exl+9rw3+XMC2ZgJ3oq1Oiduv96Ex9fuj1Kqt3cv1x8n
- gBN5LTnW+1cEqTnBgbuwZxEQ9mLcPyT2UuDyNubeoNiNeA5qXZOntpQGxjb8r6z50PI4
- OlDg==
-X-Gm-Message-State: AOAM533+02HucOn0G9EwdivlzyWhH+lSpgpNpc41uHTAX2FYgbsUtX1+
- 1Al4EOkyvRsduO9JcCdNw/gdNNRwVVo=
-X-Google-Smtp-Source: ABdhPJyYq0w0TjKNgBu1unTpnpKoQwiT395sAbKFB8FgK4ZC44DZypzmch0TIMb8loj5CmR7MObCmg==
-X-Received: by 2002:a1c:117:: with SMTP id 23mr884439wmb.90.1590490008825;
- Tue, 26 May 2020 03:46:48 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=FgO6AdP43Um2PGzv5S5Pfi8oIKzNumXYXeRwuAF9in4=;
+ b=He6MjYNivOgo1knTgoJ+KAb8ki//goTiJoIZSi0Pwqrt/F3XoF1l3ZIYunn6MYBqgx
+ rSHWh3aq8Wfl8S5SGriU/ad6GR8FdRnhkps7hcLi0Y11M0NTrPrg+dRYzgu6Q/NqAI2H
+ cwzuuVzx2O15O+612w0acJeUmyBX7pX0csWahtJ6a8++5gTIRvTKO3Aerkka5pMOx1oq
+ 18zB93K7LfIGjw12o1BOw0PaRkgikRR4KTqLuxhi1yiGRRnOx/vie9zlhNdcxSaJYNrq
+ h7uJHK9nHy6SWnwEHn+fRUr5s7gu7O7bConm18phgTmM3p91qPc8YmN+wiSLko3QFIJF
+ QtRg==
+X-Gm-Message-State: AOAM532Z1N2wTXHx0hyurQdEDcKsTu6LNxW1pteXG7ywT8ZFerkvG/Yi
+ IKPGRLQyOCmbD2kZZbtLr9+h+MHwsTo=
+X-Google-Smtp-Source: ABdhPJyT6zCbwVCsSmwHdU12WYd+YqWO8s90+X8f3a2fGotcE1+8vWQLTvnoXXVD4YwXsrfUR23KRg==
+X-Received: by 2002:adf:eb47:: with SMTP id u7mr19363635wrn.14.1590490010085; 
+ Tue, 26 May 2020 03:46:50 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6801:1801:8bee:312:6092:58f2])
- by smtp.gmail.com with ESMTPSA id u3sm393441wmg.38.2020.05.26.03.46.47
+ by smtp.gmail.com with ESMTPSA id u3sm393441wmg.38.2020.05.26.03.46.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 03:46:47 -0700 (PDT)
+ Tue, 26 May 2020 03:46:49 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
 To: linux-arm-kernel@lists.infradead.org, coresight@lists.linaro.org,
  mathieu.poirier@linaro.org
-Subject: [PATCH v4 0/5] Update CoreSight infrastructure to select a default
- sink.
-Date: Tue, 26 May 2020 11:46:37 +0100
-Message-Id: <20200526104642.9526-1-mike.leach@linaro.org>
+Subject: [PATCH v4 1/5] coresight: Fix comment in main header file.
+Date: Tue, 26 May 2020 11:46:38 +0100
+Message-Id: <20200526104642.9526-2-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200526104642.9526-1-mike.leach@linaro.org>
+References: <20200526104642.9526-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_034652_428020_0E4E4D04 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200526_034652_427823_F3E249F2 
+X-CRM114-Status: GOOD (  12.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:335 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -101,58 +103,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset provides a proposed infrastructure to allow for the automatic
-selection of a sink during CoreSight tracing operations.
+Comment for an elemnt in the coresight_device structure appears to have
+been corrupted & makes no sense. Fix this before making further changes.
 
-Currently starting tracing using perf requires a sink selection on the
-command line:-
+Signed-off-by: Mike Leach <mike.leach@linaro.org>
+---
+ include/linux/coresight.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-sudo ./perf record -e cs_etm/@tmc_etr0/ --per-thread uname -a
-
-After this set (and the follow-up perf change set) the infrastructure will
-be able to select a default sink:-
-
-sudo ./perf record -e cs_etm// --per-thread uname -a
-
-This matches with the default operation provided with perf and intelpt.
-
-Where no sink is specified at the start of a trace session, the CoreSight
-system will walk the connection graph from the source ETM, to find a
-suitable sink using the first encountered highest priority device.
-
-The CoreSight infrastructure is updated to define sink sub_types to
-differentiate between sinks with built in buffers (ETB / ETF) - BUFFER
-type, and those that use system memory (ETR) - SYSMEM - types.
-
-SYSMEM types are considered higher priority.
-
-When two sinks are found of equal priority, then the closest sink to the
-source in terms of connection nodes is chosen.
-
-The automatic sink selection will also operate if an ETM is enabled using
-sysfs commands, and no sink is currently enabled.
-
-Applies to Linux coresight/next branch
-
-Changes since v3:
-1) Removed RFC designation and distributed to wider audience.
-2) Split set into CoreSight driver code (this set), and perf user runtime set.
-3) Minor cosmetic changes.
-
-Mike Leach (5):
-  coresight: Fix comment in main header file.
-  coresight: Add default sink selection to CoreSight base
-  coresight: tmc: Update sink types for default selection.
-  coresight: etm: perf: Add default sink selection to etm perf
-  coresight: sysfs: Allow select default sink on source enable.
-
- .../hwtracing/coresight/coresight-etm-perf.c  |  17 +-
- drivers/hwtracing/coresight/coresight-priv.h  |   2 +
- drivers/hwtracing/coresight/coresight-tmc.c   |   3 +-
- drivers/hwtracing/coresight/coresight.c       | 147 +++++++++++++++++-
- include/linux/coresight.h                     |   6 +-
- 5 files changed, 168 insertions(+), 7 deletions(-)
-
+diff --git a/include/linux/coresight.h b/include/linux/coresight.h
+index e3e9f0e3a878..84dc695e87d4 100644
+--- a/include/linux/coresight.h
++++ b/include/linux/coresight.h
+@@ -179,7 +179,8 @@ struct coresight_sysfs_link {
+  * @enable:	'true' if component is currently part of an active path.
+  * @activated:	'true' only if a _sink_ has been activated.  A sink can be
+  *		activated but not yet enabled.  Enabling for a _sink_
+- *		appens when a source has been selected for that it.
++ *		happens when a source has been selected and a path is enabled
++ *		from source to that sink.
+  * @ea:		Device attribute for sink representation under PMU directory.
+  * @ect_dev:	Associated cross trigger device. Not part of the trace data
+  *		path or connections.
 -- 
 2.17.1
 
