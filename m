@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04BE11E213B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:49:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DA591E2199
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 14:07:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qbzIEyrXeb5802HkgoaQ5Z0cnPqT4WmdhsPJPvbTnDM=; b=lsgOl1xh9uU+zT
-	RY4wwz/mpLQMUb3wBWmFza3n5wM5xvY0EBXmjj++bpdSJvB+3zNwEyoQVP7GGwMYjozl+rVbSAtqt
-	oB9ee7qw86gfomKRMpxNwBjvTupF6R/9izQZaLw7e2tweZGxan60kiSqOXACs5CyhFWWf8s9X+r5E
-	75quosuTup6eRAj7YcjKRnLqPc1LDnVnjlxXJY7JS27PVbi7OIuD4t/QW6A7NRTGEk7OtYGG3rIXk
-	Wlea3IptFvWvWJWvdTeMjEpAA16FYPE6ufQcV89MD7h1xYhRidScPiuFHwMJ4xfwqGQS9rHynA/Kj
-	O5mn5SuBRe++L2OHGs4A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=95pBi3zfQKp0gfB8tan5SDoykFovrabeTY2pLnUbL9A=; b=qN1myYocGfai1sV1ICSf6UYly
+	S3DVMAwSp6YDRH2M/9oQsvY1m0TlKbN4gVaHKX5M+Ys6sHPAUjgurkkDBMKubKBIzhtMH+pRRGeXE
+	ftrenYDocijntmcV5QKvQgJrhy5Gwnh21EZIdpMf07SIcYfCFXj4A2RDaPmOOtmOtDh9c3chnHsTl
+	vvGpIjBBWo6D84jjk7USgMbu1O+1WbSeDDIox+a9kYq7BMXFXYw9qM0k+LRWCD+s7Fuu1kZtW5n/j
+	taQrY73q0chbC4VRWuQ78B8/snt+1PJ0fD7MXnXMgjGhC+7YamDelD8GWHQRUtHyu13aJmtnYgv0S
+	Ir4xYD7XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdY5a-0001AH-Sg; Tue, 26 May 2020 11:49:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdY5O-000198-VM
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:49:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 16B8630E;
- Tue, 26 May 2020 04:49:32 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B510E3F6C4;
- Tue, 26 May 2020 04:49:29 -0700 (PDT)
-Date: Tue, 26 May 2020 12:49:27 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Keqian Zhu <zhukeqian1@huawei.com>
-Subject: Re: [RFC PATCH 2/7] KVM: arm64: Set DBM bit of PTEs if hw DBM enabled
-Message-ID: <20200526114926.GD17051@gaia>
-References: <20200525112406.28224-1-zhukeqian1@huawei.com>
- <20200525112406.28224-3-zhukeqian1@huawei.com>
+	id 1jdYN3-0004nC-53; Tue, 26 May 2020 12:07:49 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdYMn-0004mm-1T
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 12:07:34 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id 5so1268757pjd.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 05:07:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=fpsA7Nq2nxropNth7zUzBAVP9PJ+/EXl3l54pU3n9ZM=;
+ b=J+ir68uaqgnC0bpUtYh7gEhKg91ecOFPaqozofq5uKsLc7Q5y3iFeqMqCZAJviMx+s
+ 5ig+pjzGqwz+mFaduqg65bildjvb3DkPZio13iXEBv0mAnfqdngUZrwP8cIh8JeTUCVJ
+ gmFnjjcFBD8aNXil24SDu+Jkirv39gmumTTyj55+HgtSDlf8tVbBjh7E552efJG/Wjo8
+ EJDaQDAdQwq7KwVsaMRKey6Y7TjZsMZCOt/LAThI6/92Dp0fkT6otf1CI6seawSCUyPt
+ WoWoRsARBzdoihaCWqPAXG3jCyZxwI+pM2gsZxtGTudpYt/c710Xf3GM28FbeauVBfE6
+ ryPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=fpsA7Nq2nxropNth7zUzBAVP9PJ+/EXl3l54pU3n9ZM=;
+ b=DV1RLI247Ny6rlCREHHziHgDVb0SkPKuF6Cl1ERpee04Gs3+ZTKTXcR+1gr2ng7Uyd
+ qGjeLIsH+b0aPQc4RWHjh4xY/WGgsHTTUpWGts3++lufery6A3ZF+LQQT+axPwKEXPa3
+ K3jM8DWqs50ndqgnah8sW28nvC/10GciQz7zp/0Aal1mwAKpUL9GOp1YWuDTLORyxMR+
+ nv5+l9dNIJxQ9NleDiI5LoUY4JWqeHqw0HFpJPNGTgn2q5ltXTA6BS/rVbUoy2KQCjAt
+ 9NZREr5s18T4XNNAOR1yAYUp875ZiUKyYCERFuhygrdnGxXfKnLMv5i0p0x1Z/umaSVM
+ 2ODw==
+X-Gm-Message-State: AOAM5312wYCjNT0SCIvyBZYKtcxlNvq30yzMgir/eyw1NNUJBKOiQoUn
+ Rwn5cuFME7044Z3tBsGewpIEoOEck3/wvw==
+X-Google-Smtp-Source: ABdhPJwJC/VIL8ph3znchjMxyQibr056u3YncVEhb6v6BwGdiIO+FoFmlj/9d7sAY/kJdEg5hx2xFg==
+X-Received: by 2002:a17:902:6b02:: with SMTP id o2mr822931plk.25.1590494851770; 
+ Tue, 26 May 2020 05:07:31 -0700 (PDT)
+Received: from [10.74.2.18] ([45.135.186.9])
+ by smtp.gmail.com with ESMTPSA id x132sm15300133pfd.214.2020.05.26.05.07.12
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 26 May 2020 05:07:30 -0700 (PDT)
+Subject: Re: [PATCH 0/2] Let pci_fixup_final access iommu_fwnode
+To: Joerg Roedel <joro@8bytes.org>
+References: <1589256511-12446-1-git-send-email-zhangfei.gao@linaro.org>
+ <20200525134318.GB5221@8bytes.org>
+From: Zhangfei Gao <zhangfei.gao@linaro.org>
+Message-ID: <7c6e9389-c34a-4d30-bc8d-572c41572d15@linaro.org>
+Date: Tue, 26 May 2020 20:07:01 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200525112406.28224-3-zhukeqian1@huawei.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200525134318.GB5221@8bytes.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_044935_096664_CAFFA42E 
-X-CRM114-Status: GOOD (  16.30  )
-X-Spam-Score: -1.1 (-)
+X-CRM114-CacheID: sfid-20200526_050733_082597_46BA9E78 
+X-CRM114-Status: GOOD (  14.45  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-1.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,96 +100,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Morton <akpm@linux-foundation.org>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- linux-kernel@vger.kernel.org,
- Sean Christopherson <sean.j.christopherson@intel.com>,
- Peng Liang <liangpeng10@huawei.com>, Alexios Zavras <alexios.zavras@intel.com>,
- zhengxiang9@huawei.com, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, wanghaibin.wang@huawei.com,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: jean-philippe <jean-philippe@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ linux-acpi@vger.kernel.org, Wangzhou <wangzhou1@hisilicon.com>,
+ linux-crypto@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ kenneth-lee-2012@foxmail.com, linux-arm-kernel@lists.infradead.org,
+ Len Brown <lenb@kernel.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 25, 2020 at 07:24:01PM +0800, Keqian Zhu wrote:
-> diff --git a/arch/arm64/include/asm/pgtable-prot.h b/arch/arm64/include/asm/pgtable-prot.h
-> index 1305e28225fc..f9910ba2afd8 100644
-> --- a/arch/arm64/include/asm/pgtable-prot.h
-> +++ b/arch/arm64/include/asm/pgtable-prot.h
-> @@ -79,6 +79,7 @@ extern bool arm64_use_ng_mappings;
->  	})
->  
->  #define PAGE_S2			__pgprot(_PROT_DEFAULT | PAGE_S2_MEMATTR(NORMAL) | PTE_S2_RDONLY | PAGE_S2_XN)
-> +#define PAGE_S2_DBM		__pgprot(_PROT_DEFAULT | PAGE_S2_MEMATTR(NORMAL) | PTE_S2_RDONLY | PAGE_S2_XN | PTE_DBM)
-
-You don't need a new page permission (see below).
-
->  #define PAGE_S2_DEVICE		__pgprot(_PROT_DEFAULT | PAGE_S2_MEMATTR(DEVICE_nGnRE) | PTE_S2_RDONLY | PTE_S2_XN)
->  
->  #define PAGE_NONE		__pgprot(((_PAGE_DEFAULT) & ~PTE_VALID) | PTE_PROT_NONE | PTE_RDONLY | PTE_NG | PTE_PXN | PTE_UXN)
-> diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-> index e3b9ee268823..dc97988eb2e0 100644
-> --- a/virt/kvm/arm/mmu.c
-> +++ b/virt/kvm/arm/mmu.c
-> @@ -1426,6 +1426,10 @@ static void stage2_wp_ptes(pmd_t *pmd, phys_addr_t addr, phys_addr_t end)
->  	pte = pte_offset_kernel(pmd, addr);
->  	do {
->  		if (!pte_none(*pte)) {
-> +#ifdef CONFIG_ARM64_HW_AFDBM
-> +			if (kvm_hw_dbm_enabled() && !kvm_s2pte_dbm(pte))
-> +				kvm_set_s2pte_dbm(pte);
-> +#endif
->  			if (!kvm_s2pte_readonly(pte))
->  				kvm_set_s2pte_readonly(pte);
->  		}
-
-Setting the DBM bit is equivalent to marking the page writable. The
-actual writable pte bit (S2AP[1] or HAP[2] as we call them in Linux for
-legacy reasons) tells you whether the page has been dirtied but it is
-still writable if you set DBM. Doing this in stage2_wp_ptes()
-practically means that you no longer have read-only pages at S2. There
-are several good reasons why you don't want to break this. For example,
-the S2 pte may already be read-only for other reasons (CoW).
-
-I think you should only set the DBM bit if the pte was previously
-writable. In addition, any permission change to the S2 pte must take
-into account the DBM bit and clear it while transferring the dirty
-status to the underlying page. I'm not deeply familiar with all these
-callbacks into KVM but two such paths are kvm_unmap_hva_range() and the
-kvm_mmu_notifier_change_pte().
-
-
-> @@ -1827,7 +1831,15 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
->  
->  		ret = stage2_set_pmd_huge(kvm, memcache, fault_ipa, &new_pmd);
->  	} else {
-> -		pte_t new_pte = kvm_pfn_pte(pfn, mem_type);
-> +		pte_t new_pte;
-> +
-> +#ifdef CONFIG_ARM64_HW_AFDBM
-> +		if (kvm_hw_dbm_enabled() &&
-> +		    pgprot_val(mem_type) == pgprot_val(PAGE_S2)) {
-> +			mem_type = PAGE_S2_DBM;
-> +		}
-> +#endif
-> +		new_pte = kvm_pfn_pte(pfn, mem_type);
->  
->  		if (writable) {
->  			new_pte = kvm_s2pte_mkwrite(new_pte);
-
-That's wrong here. Basically for any fault you get, you just turn the S2
-page writable. The point of DBM is that you don't get write faults at
-all if you have a writable page. So, as I said above, only set the DBM
-bit if you stored a writable S2 pte (kvm_s2pte_mkwrite()).
-
--- 
-Catalin
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAyMDIwLzUvMjUg5LiL5Y2IOTo0MywgSm9lcmcgUm9lZGVsIHdyb3RlOgo+IE9uIFR1ZSwg
+TWF5IDEyLCAyMDIwIGF0IDEyOjA4OjI5UE0gKzA4MDAsIFpoYW5nZmVpIEdhbyB3cm90ZToKPj4g
+U29tZSBwbGF0Zm9ybSBkZXZpY2VzIGFwcGVhciBhcyBQQ0kgYnV0IGFyZQo+PiBhY3R1YWxseSBv
+biB0aGUgQU1CQSBidXMsIGFuZCB0aGV5IG5lZWQgZml4dXAgaW4KPj4gZHJpdmVycy9wY2kvcXVp
+cmtzLmMgaGFuZGxpbmcgaW9tbXVfZndub2RlLgo+PiBTbyBjYWxsaW5nIHBjaV9maXh1cF9maW5h
+bCBhZnRlciBpb21tdV9md25vZGUgaXMgYWxsb2NhdGVkLgo+Pgo+PiBGb3IgZXhhbXBsZToKPj4g
+SGlzaWxpY29uIHBsYXRmb3JtIGRldmljZSBuZWVkIGZpeHVwIGluCj4+IGRyaXZlcnMvcGNpL3F1
+aXJrcy5jCj4+Cj4+ICtzdGF0aWMgdm9pZCBxdWlya19odWF3ZWlfcGNpZV9zdmEoc3RydWN0IHBj
+aV9kZXYgKnBkZXYpCj4+ICt7Cj4+ICsJc3RydWN0IGlvbW11X2Z3c3BlYyAqZndzcGVjOwo+PiAr
+Cj4+ICsJcGRldi0+ZWV0bHBfcHJlZml4X3BhdGggPSAxOwo+PiArCWZ3c3BlYyA9IGRldl9pb21t
+dV9md3NwZWNfZ2V0KCZwZGV2LT5kZXYpOwo+PiArCWlmIChmd3NwZWMpCj4+ICsJCWZ3c3BlYy0+
+Y2FuX3N0YWxsID0gMTsKPj4gK30KPj4gKwo+PiArREVDTEFSRV9QQ0lfRklYVVBfRklOQUwoUENJ
+X1ZFTkRPUl9JRF9IVUFXRUksIDB4YTI1MCwgcXVpcmtfaHVhd2VpX3BjaWVfc3ZhKTsKPj4gK0RF
+Q0xBUkVfUENJX0ZJWFVQX0ZJTkFMKFBDSV9WRU5ET1JfSURfSFVBV0VJLCAweGEyNTEsIHF1aXJr
+X2h1YXdlaV9wY2llX3N2YSk7Cj4gSSBkb24ndCB0aGluayBpdCBpcyBhIGdyZWF0IGlkZWEgdG8g
+aG9vayB0aGlzIGludG8gUENJX0ZJWFVQX0ZJTkFMLiBUaGUKPiBmaXh1cCBsaXN0IG5lZWRzIHRv
+IGJlIHByb2Nlc3NlZCBmb3IgZXZlcnkgZGV2aWNlLCB3aGljaCB3aWxsIHNsb3cgZG93bgo+IHBy
+b2JpbmcuCj4KPiBTbyBlaXRoZXIgd2UgaW50cm9kdWNlIHNvbWV0aGluZyBsaWtlIFBDSV9GSVhV
+UF9JT01NVSwgaWYgdGhpcyBpcwo+IGVudGlyZWx5IFBDSSBzcGVjaWZpYy4gSWYgaXQgbmVlZHMg
+dG8gYmUgZ2VuZXJpYyB3ZSBuZWVkIHNvbWUgZml4dXAKPiBpbmZyYXN0cnVjdHVyZSBpbiB0aGUg
+SU9NTVUgY29kZSBpdHNlbGYuCgpUaGFua3MgSm9lcmcgZm9yIHRoZSBnb29kIHN1Z2dlc3Rpb24u
+CkkgYW0gdHJ5aW5nIHRvIGludHJvZHVjZSBQQ0lfRklYVVBfSU9NTVUgaW4KaHR0cHM6Ly9sa21s
+Lm9yZy9sa21sLzIwMjAvNS8yNi8zNjYKClRoYW5rcwoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
