@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAFAE1E270A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 18:30:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3A1E1E2710
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 18:31:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kFBwyoFSBA2SEk++l/NbpIQag2mf2sYpfB+MFYFpvDk=; b=ApzaxiKC0NEapo
-	vSyoFSqwKrqLsdxYb4MVDvmNx0GlkYRBkqiK3VSmTCNxfeQ7GP5YlOf6q/FjqWIuogVnz5j/R0kBC
-	alAf939PiCDXIJnAdwTh36ZA7H9rq32JSoMZRTdmvEGKqyvYzEGygWAVcKLbqJDUccjsqSrjQjqx8
-	+xWjwnyOK039wL1sIiGqybQuV/+r80LNN39NP1QUjQsX8e5LgQj3dMoIRyLc4vzEta0DpS3SjEHsk
-	eIuFsPgkIyeWaJejPvJkosLa2ea1MhFTFFccxTa5UMG4nuNXJjevkDCR/Y/e93n6Y8aJMZqLIroei
-	65RJAmma4ow4aPBT9dOg==;
+	List-Owner; bh=hqmZDRq4w8kf5criWsohDNX/HjT37y07uzRpy7Tb1Do=; b=MJYR0PiRIR/OEw
+	VxZuJ3WhnB+OUrStqpoo/PIl+SgjVvZj6Y1F0WOKGfU5muXxOvtIhxzY1IbOdIL79pX5doCigJbsl
+	2AVX1Xl151PtjHgUEuJtkxYdsVuEP9cEcBpaBqXfLnQ6qsuNOF5/kGCnGi9kZXsN/GZHTUEdWUazx
+	RHm6SkG6zC8Q/R9Vkr2FArr8fVvKzgNHFMxyj8znNQENZNV2Oi6hrrPannyMR/kxly9HJA+RLDJru
+	WdzDMiJd2e/7CEjXkjlVPl0Pznk3ANoeE8KLuyLlO6/zT/GkcDRmmaZU+eg8DrEyKWke8QLHDyVEs
+	xvGvXTFpaq836RbEiDhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdcTQ-0001ZR-0r; Tue, 26 May 2020 16:30:40 +0000
+	id 1jdcTg-0001og-SX; Tue, 26 May 2020 16:30:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdcSq-0007Sr-EO
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 16:30:06 +0000
+ id 1jdcT1-0000eS-9q
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 16:30:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 94F1F30E;
- Tue, 26 May 2020 09:30:02 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7189330E;
+ Tue, 26 May 2020 09:30:14 -0700 (PDT)
 Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5C5E93F52E;
- Tue, 26 May 2020 09:30:00 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C27C33F52E;
+ Tue, 26 May 2020 09:30:11 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 21/26] KVM: arm64: Move SP_EL1 to the system register array
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+Subject: Re: [PATCH 22/26] KVM: arm64: Disintegrate SPSR array
+To: Marc Zyngier <maz@kernel.org>
 References: <20200422120050.3693593-1-maz@kernel.org>
- <20200422120050.3693593-22-maz@kernel.org>
-Message-ID: <ab3e3016-9d7c-8e6d-3e83-f2994907d0e6@arm.com>
-Date: Tue, 26 May 2020 17:29:59 +0100
+ <20200422120050.3693593-23-maz@kernel.org>
+Message-ID: <24debc78-9de6-ac97-afbc-dbe366164e5e@arm.com>
+Date: Tue, 26 May 2020 17:30:10 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200422120050.3693593-22-maz@kernel.org>
+In-Reply-To: <20200422120050.3693593-23-maz@kernel.org>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_093004_727861_1CCD97FB 
-X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-CacheID: sfid-20200526_093015_516380_2A2F96D9 
+X-CRM114-Status: UNSURE (   9.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -66,16 +65,16 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- George Cherian <gcherian@marvell.com>,
+ Jintack Lim <jintack@cs.columbia.edu>, Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Will Deacon <will@kernel.org>, George Cherian <gcherian@marvell.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
  "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Alexandru Elisei <alexandru.elisei@arm.com>,
- Jintack Lim <jintack@cs.columbia.edu>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+ Alexandru Elisei <alexandru.elisei@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -84,8 +83,9 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Marc,
 
 On 22/04/2020 13:00, Marc Zyngier wrote:
-> SP_EL1 being a VNCR-capable register with ARMv8.4-NV, move it to the
-> system register array and update the accessors.
+> As we're about to move SPSR_EL1 into the VNCR page, we need to
+> disassociate it from the rest of the 32bit cruft. Let's break
+> the array into individual fields.
 
 Reviewed-by: James Morse <james.morse@arm.com>
 
