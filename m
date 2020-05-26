@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB6BB1E2F76
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 21:54:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE5391E2F7B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 21:55:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IZQ5KX+9HmQDHGkdmRBX7liMf7/IOTt/6C3s0b6CuqQ=; b=iWvvC/vA7gwu8R
-	O62dNfqaVWqa91eMco2tS9HqhxBv6WsYGQbsCqSiJaxXDy7T9B3LcYIFWo5l/EQAZr0nNX0FQmuBg
-	ram27s/AGJE+DiDnFPnPjNzZfQZm1cz4PJlRbdjSZi9lZt31CH1uWPLGklf5e/XjVdQpAxb6U4JtD
-	OfdxtUyRxHYWZjKIcKN/FkFkLXd6tsU+J6Rt/lkaswk7OF61uEgwna8aca9zmlpublIguV/cCMClW
-	+vDWyB90aUGzjqXKLJ09X7zQZAo8DwEwXWDBCYv12nmxYVo2DTSqBndunOpq+Ts4eKQmEqncB8crZ
-	z4v+aMR3A22pQHC88g3g==;
+	List-Owner; bh=a74beiMRGPvuj9ZUu4yE/pQdLmmJWtfGYBkhzNEyJK0=; b=CSKWhjBEpTJq73
+	dKEJB5N+X7wlaKaelIq7hFgEfyFwvnRwMhS9Lu69VlgXfvx7/nd0G/gSohvC6r82g85yjE57qcLqw
+	Cc/jNN+2t+mqohrEc/yw7t5BcT5HJ0J/T7XtGHIYs0adz3WVgSSZsRhZahM9T2JX6lXX6U4sEwLzf
+	uA1Ri1ifwN3rJP5gefs4iEbscrXE1uLlCK8OF8c9qbAGz9SA6VTA6kKBSblCcbF0sntn72S8ehFP7
+	o4irOM0FXobL2ODW/qe9iU5dApGCExg8KCi5gY9p8/sCQxx6BWMUwPkiEvOkElPhZS0t0QCvg6cJf
+	AshyTMF2RtKvlGuXsVdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdfem-00042h-57; Tue, 26 May 2020 19:54:36 +0000
+	id 1jdffA-0004IN-BN; Tue, 26 May 2020 19:55:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdfea-00041x-Rp
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 19:54:26 +0000
+ id 1jdfeu-0004Gz-R5
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 19:54:47 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBC37207CB;
- Tue, 26 May 2020 19:54:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 27A05207CB;
+ Tue, 26 May 2020 19:54:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590522864;
- bh=O7cesvgSXf5oQ4fsUxRGrM5IceW++SEodbszIMRcYp8=;
+ s=default; t=1590522884;
+ bh=uA+azEhnDDU5ByOCPfCgT3WAmDMhWM5iuWOCxhtXg/I=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=yCRCJqZz1tS/Y0lnOFa/VijoyCHziu5CacMPkJVBM5D5dUWOaIqlU17z11e9MivSR
- QigvKWbzk/C9pvNt3Wp59L2KU46UlCFGPwzf3tU3R32OMASlwFbvEiNKc7lZsDAKxF
- 3T6gXLbRJUSoBBkE5daxWb0C6X9bzyaUkYrL9C4E=
-Date: Tue, 26 May 2020 20:54:19 +0100
+ b=w919gwaNrFBgzpclO1zprNKacyC5iCCfoMaFtfyfOzOXB4bIKoDDbPiHUyf/Kstun
+ r2vYrlHJ8CzEXTYhQ0HAff2bOkcmA7m7CExyoqN6bf652Wa0r6qyBYc3NKZsAe4KBd
+ 7ou7uA7xoQbNaSiyMKjH8B/Vp3GJr/rzn3NdP9Y0=
+Date: Tue, 26 May 2020 20:54:39 +0100
 From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH][V3] arm64: perf: Get the wrong PC value in REGS_ABI_32
- mode
-Message-ID: <20200526195419.GB2206@willie-the-truck>
-References: <1589165527-188401-1-git-send-email-jiping.ma2@windriver.com>
- <20200526102611.GA1363@C02TD0UTHF1T.local>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v7 0/3] perf arm-spe: Add support for synthetic events
+Message-ID: <20200526195438.GC2206@willie-the-truck>
+References: <20200504115625.12589-1-leo.yan@linaro.org>
+ <20200522030919.GE32389@leoy-ThinkPad-X240s>
+ <20200526102602.GA27166@willie-the-truck>
+ <20200526104337.GA7154@leoy-ThinkPad-X240s>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200526102611.GA1363@C02TD0UTHF1T.local>
+In-Reply-To: <20200526104337.GA7154@leoy-ThinkPad-X240s>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_125424_985251_B8D4D4EC 
-X-CRM114-Status: GOOD (  20.11  )
+X-CRM114-CacheID: sfid-20200526_125444_906655_B25A18B9 
+X-CRM114-Status: GOOD (  25.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,55 +79,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jiping Ma <jiping.ma2@windriver.com>, zhe.he@windriver.com,
- bruce.ashfield@gmail.com, yue.tao@windriver.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, paul.gortmaker@windriver.com,
- catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Al Grant <al.grant@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, James Clark <james.clark@arm.com>,
+ Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 11:26:11AM +0100, Mark Rutland wrote:
-> On Mon, May 11, 2020 at 10:52:07AM +0800, Jiping Ma wrote:
-> > Modified the patch subject and the change description.
+On Tue, May 26, 2020 at 06:43:37PM +0800, Leo Yan wrote:
+> On Tue, May 26, 2020 at 11:26:03AM +0100, Will Deacon wrote:
+> > On Fri, May 22, 2020 at 11:09:19AM +0800, Leo Yan wrote:
+> > > On Mon, May 04, 2020 at 07:56:22PM +0800, Leo Yan wrote:
+> > > > This patch set is to support synthetic events with enabling Arm SPE
+> > > > decoder.  Since before Xiaojun Tan (Hisilicon) and James Clark (Arm)
+> > > > have contributed much for this task, so this patch set is based on their
+> > > > privous work and polish for the version 7.
+> > > > 
+> > > > The main work in this version is to polished the core patch "perf
+> > > > arm-spe: Support synthetic events", e.g. rewrite the code to calculate
+> > > > ip, packet generation for multiple types (L1 data cache, Last level
+> > > > cache, TLB, remote access, etc).  It also heavily refactors code for
+> > > > data structure and program flow, which removed unused fields in
+> > > > structure and polished the program flow to achieve neat code as
+> > > > possible.
+> > > > 
+> > > > This patch set has been checked with checkpatch.pl, though it leaves
+> > > > several warnings, but these warnings are delibarately kept after
+> > > > reviewing.  Some warnings ask to add maintainer (so far it's not
+> > > > necessary), and some warnings complaint for patch 02 "perf auxtrace:
+> > > > Add four itrace options" for the text format, since need to keep the
+> > > > consistency with the same code format in the source code, this is why
+> > > > this patch doesn't get rid of checkpatch warnings.
+> > > 
+> > > Gentle ping ...
+> > > 
+> > > It would be appreciate if can get some review for this patch set.
 > > 
-> > PC value is get from regs[15] in REGS_ABI_32 mode, but correct PC
-> > is regs->pc(regs[PERF_REG_ARM64_PC]) in arm64 kernel, which caused
-> > that perf can not parser the backtrace of app with dwarf mode in the 
-> > 32bit system and 64bit kernel.
-> > 
-> > Signed-off-by: Jiping Ma <jiping.ma2@windriver.com>
+> > I was hoping that James Clark would have a look, since he was the last
+> > person to go near the userspace side of SPE.
 > 
-> Thanks for this.
+> Yes, I have offline synced with James and James has verified this
+> patch set at his side.
 > 
-> 
-> > ---
-> >  arch/arm64/kernel/perf_regs.c | 4 ++++
-> >  1 file changed, 4 insertions(+)
-> > 
-> > diff --git a/arch/arm64/kernel/perf_regs.c b/arch/arm64/kernel/perf_regs.c
-> > index 0bbac61..0ef2880 100644
-> > --- a/arch/arm64/kernel/perf_regs.c
-> > +++ b/arch/arm64/kernel/perf_regs.c
-> > @@ -32,6 +32,10 @@ u64 perf_reg_value(struct pt_regs *regs, int idx)
-> >  	if ((u32)idx == PERF_REG_ARM64_PC)
-> >  		return regs->pc;
-> >  
-> > +	if (perf_reg_abi(current) == PERF_SAMPLE_REGS_ABI_32
-> > +		&& idx == 15)
-> > +		return regs->pc;
-> 
-> I think there are some more issues here, and we may need a more
-> substantial rework. For a compat thread, we always expose
-> PERF_SAMPLE_REGS_ABI_32 via per_reg_abi(), but for some reason
-> perf_reg_value() also munges the compat SP/LR into their ARM64
-> equivalents, which don't exist in the 32-bit sample ABI. We also don't
-> zero the regs that don't exist in 32-bit (including the aliasing PC).
+> I don't want to rush to ask Arnaldo to merge patches, so just
+> want to get wider reviewing if possible; otherwise, I will rebase this
+> patch set and resend to ML.
 
-I think this was for the case where you have a 64-bit perf profiling a
-32-bit task, and it was passing the registers off to libunwind. Won't that
-break if we follow your suggestion?
+One thing that might be useful is if James could offer his Tested-by or
+Acked-by on the public mailing list. Neither Arnaldo nor I have details
+about your offline sync!
 
 Will
 
