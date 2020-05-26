@@ -2,82 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FD961E27E9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 19:06:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFFCE1E27FA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 19:10:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w22NvVn9uXWxt/ofGYLomM3iNSPUqFTUgYvNtDkCDUM=; b=LfT8fgfBc1xwLN
-	gssBaX6DLSsHtDbV9VRLJPxYObO2+3y50jlgwF2wT0TLZqC6u9K8vn9g38lbeyyORBb1HDcEuuc5p
-	tVHZmR3uUyEIV5r0+9SyNvWCVDga5gvMUJ5pgFvF40ZAINWhusBVnFAjam8W6Kr1hjHNpAqYNKygX
-	11MyQ2s6FMWbCwqmR8aeEod+Y8PkuwWUvurCf1OXPxajv3PDUO7MnYtSHKY26d+5jKP+acTOxbXs4
-	zS8FfyWe5ysDo7QweUiRbkNk/tvHCc3SbCBp7xmweeHzK9w1BvIbBd7tNFxU9J9wyYFC7Qw64BBud
-	4CwJ7i6XSqOuM8VikHWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PRowYO9P+6jgoLYKDswElRYjveBpoIkH1iwhf9JP+2c=; b=MHq3E4ARme9IrW
+	eiiO2JQtn9yWgAj5LGWQy0Pj88Uf3DvUqwjiDumRChlZglKtd2KXW8GqZytAEdDQwUU02G7ovP9Y2
+	PnaJIkuATA9n3I1B1tgFYrjmBvpXsMOZuyZ9QaOWNaXEyXJZWRd2wynarWxL+R7TScjlIqYtlAFeC
+	JL+rS31LPuUexm5RLBFQ0dDwYXy6pK9Jpnf/74zxBHyVBlB9WqA45FJ71ownO5L905XqNARKTUlGM
+	vzTBywUmjSh3smyUNruyp00q3k7O59co56Wu/C4Zdscpy/lEUwBoCU5VRgnFmeJNR9V4worGYRjIG
+	4mU96W4y6C4R5gzqQ7JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdd2N-0006AJ-Ud; Tue, 26 May 2020 17:06:47 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jdd5R-0006hx-ME; Tue, 26 May 2020 17:09:57 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdd2E-00069I-BQ
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 17:06:39 +0000
-Received: by mail-pl1-x644.google.com with SMTP id t16so8914800plo.7
+ id 1jdd5H-0006hD-OA
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 17:09:49 +0000
+Received: by mail-il1-x144.google.com with SMTP id 18so21253705iln.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 10:06:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=yb9QT1BIGxbozBy7yF1mKLzqcCaPwhboIB/ytOSzJpQ=;
- b=UdZGabkJVa0wzWxrWfharb1kxzKGM4Y463N+PFR8wMMgcgEjj6hTFDfGbnZRum1uh1
- tmAKWcBu+ylRfRSkQ+4Xx717XgyVabh4nDigz2ez38ANaT0cLrO2nqyr0H+ZUlYxHdlY
- X8kTbaA+yRWLtdRPdVS3ogoEGYlyImGKxHc5oiCyRuWQe2QwSLQ6Op7tpFQJapMIJqss
- nuDmpF7KnKG8sw8qAJTw04wb3H3Wg8wbpwBhtS5BhahWQdRSNG3nXd3k1L4uCyFinrS1
- ay4UfHI4OU4HFnlGruXsqbDPbtp6Gr0WH9lL8TpJur7i1hbTqFoPaR2daJ6zn6ZxydOi
- f91A==
+ Tue, 26 May 2020 10:09:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=qDMtsfOhm3VjziHJE2E1cNppZGDhVrk8ubukeyWGRX4=;
+ b=g3wcKRmbalgUtm11bVdHv8qL3LYhdL0QrZ0Tw1Vt7ECNYVsx3ibiBCGgGZjBTZ10Ut
+ lseDTXK5zhZ0LR7F+V13fcBLCQjJX0R/054ayq1e0/Ao2kuTUi46uynzW69NKJJ8VbMj
+ G/OMrFZnIm1yvnBYotaJfZ6fa/nyXwn1oR+DoexzlWBsBLjNrCSL2Z02AVObFJWWmOcX
+ AFKwxV6TggtmLne1nHIzFnFzDVNGbWuvI2sla/LQidclclbb8k/v2wCfcpYwLcbpCG9I
+ JVB+4GPEhuHmtKOW3ZpCS7XK6Zag9f5TgIogyl/NKcn60z+oRWid+995AOdeFDtAK3wz
+ 5OFQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yb9QT1BIGxbozBy7yF1mKLzqcCaPwhboIB/ytOSzJpQ=;
- b=oG4k5PNY6ysbbtwpOnB13kbCz8CGQuLWFZca627GgBssyW2Ny+4f0roZfDjb+ygFtR
- HOheDNfmMclWYQJd8WqquBFkz7XhwRyAyCD8FfKFzYj2dUv7aN4ge1epIi2Y98P6MFLz
- Hiu8ag5gyyCTxNbwYHonNTAjdhq7FrpjWr17wcRCjgyOsdIZoVHH5MWkucMlZQvIC+8l
- 9Vye437ZLRMcw2s8chpcqSHEXeiiMe3yUt+s7+pBNa3epUJEJoNKljOGYHIs1kVQIrGd
- yoZaUhX9dd30Pn2it6/y6C5IJyD8ugyd2SBBiRD85YNZhzIUTHH6ANue0AZqc4ku41QM
- WYtg==
-X-Gm-Message-State: AOAM530A3N0dhamD4uQNxgMGtE9WFSHSiPc725uppIb91+cFt5xSlmKX
- cvUMmEeirsNEU9o7NF2Kgxsblxp22pIC/Xxri6sXIg==
-X-Google-Smtp-Source: ABdhPJzy7oPT9Vxg1G984MIMfYj6SSHBB82uHALxBcM7F41GuoDw5r4z/56EdMdBL4gN2tY4GLHbs33jdrPBZ7Xd+Qo=
-X-Received: by 2002:a17:902:341:: with SMTP id
- 59mr1859397pld.119.1590512792072; 
- Tue, 26 May 2020 10:06:32 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=qDMtsfOhm3VjziHJE2E1cNppZGDhVrk8ubukeyWGRX4=;
+ b=j8C7WZRvaKsCGqXHTMon2sDh42ZEav4wtTL0/ncMqfprCOrkMchsZ0MIj4jQdheVYo
+ h/UxD91pjkYBXdKzXGDFsZQX4m/j/LkxkzuhqeFlHvpzWfYKy2Iy1bKK+4/QwIu7ziW2
+ IpCjFGcN+gFOKIWeNc+tEORzd5RrOY+JdsxIaozXTBRYmqsNODTWkedbludOZ3gb0bGU
+ mrtJ1dy6J2avMoDIBewPrjAwUzgThTZol4itZVG/63Kn2035RcFWikzdcNOvYr9Vocab
+ TZbd+Mi7QjQSAjqqBek2xmRmT5s1Xf9E8anWnAWH1JQUD3DvQmkGDiKOzcUTr5dqeaox
+ pUzA==
+X-Gm-Message-State: AOAM53183022yiHfWpfrecm+v7jWgyvf+yzQMBmRu1K+sZwlAQcw+Xyi
+ ACumnXYZwo/IqMU6RTnmY5/QIRV1K8g=
+X-Google-Smtp-Source: ABdhPJyiCTc5LxB7MGg1Mg2Z3LpRLDDmxxNgMXldniIQX8H7iq3tA9+sDdWDd7TrmiAT4bYBQZlC3A==
+X-Received: by 2002:a92:c704:: with SMTP id a4mr2119077ilp.163.1590512985746; 
+ Tue, 26 May 2020 10:09:45 -0700 (PDT)
+Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
+ [73.37.219.234])
+ by smtp.gmail.com with ESMTPSA id j17sm244116ilq.79.2020.05.26.10.09.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 26 May 2020 10:09:45 -0700 (PDT)
+From: Adam Ford <aford173@gmail.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: dts: imx8mm-beacon: Fix voltages on LDO1 and LDO2
+Date: Tue, 26 May 2020 12:09:39 -0500
+Message-Id: <20200526170939.104111-1-aford173@gmail.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-References: <CAK7LNASkcLx-K+W1va9WxfxZ=7H-w65QbyBt=88dzK1NrrM_PQ@mail.gmail.com>
- <20200526170321.137238-1-ndesaulniers@google.com>
-In-Reply-To: <20200526170321.137238-1-ndesaulniers@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Tue, 26 May 2020 10:06:20 -0700
-Message-ID: <CAKwvOdng2mUJv=tdjwu8XUTckM0EZaSBpcZ_eTL-T0sTTzd_+A@mail.gmail.com>
-Subject: Re: [PATCH v4] Makefile: support compressed debug info
-To: Masahiro Yamada <masahiroy@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_100638_396584_CD86834D 
-X-CRM114-Status: GOOD (  22.04  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200526_100948_024032_D8E0E6D5 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [aford173[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [aford173[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -85,8 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,186 +100,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naohiro Aota <naohiro.aota@wdc.com>,
- Stephen Rothwell <sfr@canb.auug.org.au>,
- Michal Marek <michal.lkml@markovi.net>, Nick Clifton <nickc@redhat.com>,
- Fangrui Song <maskray@google.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Randy Dunlap <rdunlap@infradead.org>, LKML <linux-kernel@vger.kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Changbin Du <changbin.du@intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Sedat Dilek <sedat.dilek@gmail.com>, David Blaikie <blaikie@google.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, Fabio Estevam <festevam@gmail.com>,
+ Adam Ford <aford173@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ aford@beaconembedded.com, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 10:03 AM Nick Desaulniers
-<ndesaulniers@google.com> wrote:
->
-> As debug information gets larger and larger, it helps significantly save
-> the size of vmlinux images to compress the information in the debug
-> information sections. Note: this debug info is typically split off from
-> the final compressed kernel image, which is why vmlinux is what's used
-> in conjunction with GDB. Minimizing the debug info size should have no
-> impact on boot times, or final compressed kernel image size.
->
-> All of the debug sections will have a `C` flag set.
-> $ readelf -S <object file>
->
-> $ bloaty vmlinux.gcc75.compressed.dwarf4 -- \
->     vmlinux.gcc75.uncompressed.dwarf4
->
->     FILE SIZE        VM SIZE
->  --------------  --------------
->   +0.0%     +18  [ = ]       0    [Unmapped]
->  -73.3%  -114Ki  [ = ]       0    .debug_aranges
->  -76.2% -2.01Mi  [ = ]       0    .debug_frame
->  -73.6% -2.89Mi  [ = ]       0    .debug_str
->  -80.7% -4.66Mi  [ = ]       0    .debug_abbrev
->  -82.9% -4.88Mi  [ = ]       0    .debug_ranges
->  -70.5% -9.04Mi  [ = ]       0    .debug_line
->  -79.3% -10.9Mi  [ = ]       0    .debug_loc
->  -39.5% -88.6Mi  [ = ]       0    .debug_info
->  -18.2%  -123Mi  [ = ]       0    TOTAL
->
-> $ bloaty vmlinux.clang11.compressed.dwarf4 -- \
->     vmlinux.clang11.uncompressed.dwarf4
->
->     FILE SIZE        VM SIZE
->  --------------  --------------
->   +0.0%     +23  [ = ]       0    [Unmapped]
->  -65.6%    -871  [ = ]       0    .debug_aranges
->  -77.4% -1.84Mi  [ = ]       0    .debug_frame
->  -82.9% -2.33Mi  [ = ]       0    .debug_abbrev
->  -73.1% -2.43Mi  [ = ]       0    .debug_str
->  -84.8% -3.07Mi  [ = ]       0    .debug_ranges
->  -65.9% -8.62Mi  [ = ]       0    .debug_line
->  -86.2% -40.0Mi  [ = ]       0    .debug_loc
->  -42.0% -64.1Mi  [ = ]       0    .debug_info
->  -22.1%  -122Mi  [ = ]       0    TOTAL
->
-> For x86_64 defconfig + LLVM=1 (before):
-> Elapsed (wall clock) time (h:mm:ss or m:ss): 3:22.03
-> Maximum resident set size (kbytes): 43856
->
-> For x86_64 defconfig + LLVM=1 (after):
-> Elapsed (wall clock) time (h:mm:ss or m:ss): 3:32.52
-> Maximum resident set size (kbytes): 1566776
->
-> Thanks to:
-> Nick Clifton helped us to provide the minimal binutils version.
-> Sedat Dilet found an increase in size of debug .deb package.
->
-> Cc: Nick Clifton <nickc@redhat.com>
-> Cc: Sedat Dilek <sedat.dilek@gmail.com>
-> Suggested-by: David Blaikie <blaikie@google.com>
-> Reviewed-by: Fangrui Song <maskray@google.com>
-> Tested-by: Sedat Dilek <sedat.dilek@gmail.com>
-> Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
-> ---
-> Changes V3 -> V4:
-> * Add thanks line to commit message as per Masahiro.
-> * Swap Sugguested-by to Cc for two lines in commit message, as per
->   Masahiro.
->
-> Changes V2 -> V3:
-> * Fix blaikie@'s email addr.
-> * Fix Fangrui's Reviewed-by tag as per Masahiro.
-> * Fix help text as per Masahiro.
-> * Fix -Wa$(comma)foo as per Masahiro.
->
-> Changes V1 -> V2:
-> * rebase on linux-next.
-> * Add assembler flags as per Fangrui.
-> * Add note about KDEB_COMPRESS+scripts/package/builddeb
->   as per Sedat and Masahiro.
-> * Add note about bintutils version requirements as per Nick C.
-> * Add note about measured increased build time and max RSS.
->
->  Makefile                          |  6 ++++++
->  arch/arm64/kernel/vdso32/Makefile |  2 +-
+LDO1 and LDO2 settings are wrong and case the voltage to go above the
+maximum level of 2.15V permitted by the SoC to 3.0V.
 
-Sorry, I was wondering why Will and TGLX got cc'ed. My tree was dirty
-when I amended ... was carrying another patch to send, please
-disregard v4, and sorry for the noise.
+This patch is based on work done on the i.MX8M Mini-EVK which utilizes
+the same fix.
 
->  lib/Kconfig.debug                 | 17 +++++++++++++++++
->  3 files changed, 24 insertions(+), 1 deletion(-)
->
-> diff --git a/Makefile b/Makefile
-> index 71687bfe1cd9..be8835296754 100644
-> --- a/Makefile
-> +++ b/Makefile
-> @@ -822,6 +822,12 @@ DEBUG_CFLAGS       += $(call cc-option, -femit-struct-debug-baseonly) \
->                    $(call cc-option,-fno-var-tracking)
->  endif
->
-> +ifdef CONFIG_DEBUG_INFO_COMPRESSED
-> +DEBUG_CFLAGS   += -gz=zlib
-> +KBUILD_AFLAGS  += -Wa,--compress-debug-sections=zlib
-> +KBUILD_LDFLAGS += --compress-debug-sections=zlib
-> +endif
-> +
->  KBUILD_CFLAGS += $(DEBUG_CFLAGS)
->  export DEBUG_CFLAGS
->
-> diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
-> index 3964738ebbde..5fd7792d03fc 100644
-> --- a/arch/arm64/kernel/vdso32/Makefile
-> +++ b/arch/arm64/kernel/vdso32/Makefile
-> @@ -135,7 +135,7 @@ c-obj-vdso-gettimeofday := vgettimeofday.o
->  asm-obj-vdso := sigreturn.o
->
->  ifneq ($(c-gettimeofday-y),)
-> -VDSO_CFLAGS_gettimeofday_o += -include $(c-gettimeofday-y)
-> +VDSO_CFLAGS_gettimeofday_o += -include $(c-gettimeofday-y) -marm
->  endif
->
->  VDSO_CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
-> diff --git a/lib/Kconfig.debug b/lib/Kconfig.debug
-> index b8f023e054b9..7fc82dcf814b 100644
-> --- a/lib/Kconfig.debug
-> +++ b/lib/Kconfig.debug
-> @@ -225,6 +225,23 @@ config DEBUG_INFO_REDUCED
->           DEBUG_INFO build and compile times are reduced too.
->           Only works with newer gcc versions.
->
-> +config DEBUG_INFO_COMPRESSED
-> +       bool "Compressed debugging information"
-> +       depends on DEBUG_INFO
-> +       depends on $(cc-option,-gz=zlib)
-> +       depends on $(as-option,-Wa$(comma)--compress-debug-sections=zlib)
-> +       depends on $(ld-option,--compress-debug-sections=zlib)
-> +       help
-> +         Compress the debug information using zlib.  Requires GCC 5.0+ or Clang
-> +         5.0+, binutils 2.26+, and zlib.
-> +
-> +         Users of dpkg-deb via scripts/package/builddeb may find an increase in
-> +         size of their debug .deb packages with this config set, due to the
-> +         debug info being compressed with zlib, then the object files being
-> +         recompressed with a different compression scheme. But this is still
-> +         preferable to setting $KDEB_COMPRESS to "none" which would be even
-> +         larger.
-> +
->  config DEBUG_INFO_SPLIT
->         bool "Produce split debuginfo in .dwo files"
->         depends on DEBUG_INFO
-> --
-> 2.27.0.rc0.183.gde8f92d652-goog
->
+Fixes: 593816fa2f35 ("arm64: dts: imx: Add Beacon i.MX8m-Mini development kit")
 
+Signed-off-by: Adam Ford <aford173@gmail.com>
 
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-beacon-som.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-beacon-som.dtsi
+index fb0137a8611c..94911b1707ef 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-beacon-som.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm-beacon-som.dtsi
+@@ -136,7 +136,7 @@
+ 
+ 			ldo1_reg: LDO1 {
+ 				regulator-name = "LDO1";
+-				regulator-min-microvolt = <3000000>;
++				regulator-min-microvolt = <1600000>;
+ 				regulator-max-microvolt = <3300000>;
+ 				regulator-boot-on;
+ 				regulator-always-on;
+@@ -144,7 +144,7 @@
+ 
+ 			ldo2_reg: LDO2 {
+ 				regulator-name = "LDO2";
+-				regulator-min-microvolt = <900000>;
++				regulator-min-microvolt = <800000>;
+ 				regulator-max-microvolt = <900000>;
+ 				regulator-boot-on;
+ 				regulator-always-on;
 -- 
-Thanks,
-~Nick Desaulniers
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
