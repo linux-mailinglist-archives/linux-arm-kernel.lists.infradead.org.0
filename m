@@ -2,87 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E9341E1BB5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 09:02:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E86AA1E1BD3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 09:04:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UwOHqZ7BjzrEYRM2cdGjbsT5nVOk0xYPO5Wo7g6Jzpo=; b=nWKMBuakZJZGP5OMlycnoMpi7
-	ETv17epcgy5ri258QgVy7hIGdJ6gaXSJqw3r6W7uIYPo0zkPnEp9huKXRb5Y5pLXwGNErV85dQq1b
-	t05fjpUHZr+PlPj9/lMBn5Dk8GkxQ5lepUPVBU0yEJG4Lz9XyNe5XOQsp2roH/2pdUM4/t2YlM0bs
-	u76VxBAjdHsiC+faPK19IX2luLkCgq3flAjyJtfeE9TxoL7yiwtYdBcKGCbsi9vpW4vOgmH6lvIjb
-	9eE9/6kxBI/zC/k2Fu150Xm2Reu8g/qUCam8EPMZ8OAA89KiM1TyiX2BsYfqTwNBF9aDn75FjwHiZ
-	aMOX2rzJQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RWob1MaMCQZ8jDoKXvmIduhEw0TCbCfOFUOjylgwoMw=; b=Pu0NUorCn7rTkG
+	3u2sVK1Ufq7/f6OF24wWYEGA84eTAinrG5N2ssVIAMyqOwke0iUAxcpshS5huvTh8jkHdxQqRBjfj
+	QBasGhvPNORDUich6IawFZHTRelVCmIFzNnn++xnYq3GYnCCDgJxf9qIY5Y4v4TPyAzvTDmACphcC
+	v22G0xbsOt4YYfNQFU5ifnvncUGrIlQUzCn/yyCBWhhH/b6jj+OU24AxpYvDkVb4zot2n4lSIOOmb
+	WeTnq6hQpFf4gtrsHnDDdl0z86ex6KU+1rVBmtDp5Bchbos9frOMJg/3dUZB+EmTZ0oH/sBRYgmXZ
+	8mDtYZsv+w618uiCEpPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdTbd-00072J-Rm; Tue, 26 May 2020 07:02:33 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jdTcy-0008LJ-1y; Tue, 26 May 2020 07:03:56 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdTbI-00070y-Eh
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 07:02:25 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1590476537; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=bxN1ySkS5OLFnpjDUyutSFYIlYJ92O/h8wsCXEUhy+Y=;
- b=wb7zlsGOCA7ybNDg6Dgob+o9oh0k/GifBo5yZhNHvVml+E4MSBiVhBiU1XgMz+hkqKPWNJaW
- /W2vZ7PwNS2WfMSsC/9Kfozfpu/BlXskC3T3w+NWnTYm4B28fsTDfsTifOvjIEI/ZlEDs9vU
- +KVYivew3mKMPpBg1qB0mKeV4KM=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n05.prod.us-east-1.postgun.com with SMTP id
- 5eccbedcea0dfa490e60a2e7 (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 26 May 2020 07:01:48
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 5E0A4C43391; Tue, 26 May 2020 07:01:47 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id E5A78C433C6;
- Tue, 26 May 2020 07:01:46 +0000 (UTC)
+ id 1jdTcS-0007sA-Iu
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 07:03:30 +0000
+Received: by mail-oi1-f195.google.com with SMTP id x23so17822365oic.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 00:03:24 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=eylea4IzybGIW6tKiP757miyZUnIcYAn0TGjr5EpQeg=;
+ b=n2EFuWKwHNDXtPRjt9a8mS3OFx845pgKrcPADWfUVLjkaUkbYiyY4MI3H57PJmzjZ9
+ 3g/QLamepBn0JihvYzHRygQsZ9QKZKWt1/9wH+OOIRj0OlMabkbjbSwt3o4CAYnGyB36
+ Jel+1jYk2EcsR2UoyeB1yEDjdQnmpV5UOdyFjYW53ZECxK11nWMznJRbgF7xavN72tQg
+ BqvcAjD2ajimArN0DtuoYD3CElbZWoKMQDT/AMp6WVK5q2+aq3zbIX+vc4d6Dk5PFX31
+ aCZ0CwET+hGIQLQxFIOOBGC0adMScu4YYqx4+uS3MZXdnomRE5ZZj4xfXz2qDB8qcvjJ
+ yqcQ==
+X-Gm-Message-State: AOAM530sWdD6RnXTjicms8Fcces/xasqAgAakMbVmsKHTiVhacDqc1nE
+ mZHsZjF/jj2TtyjHSoiZ3C4xvZ+mnZlOXwzFfI8=
+X-Google-Smtp-Source: ABdhPJwoTDU5wULf7eq9/btuEuJSHCIUmidUX0Z2hIGssT3qq1UQVdPUrc1BWTuhuTqVAkLXFujdyBtKyRuneHegSIQ=
+X-Received: by 2002:aca:210a:: with SMTP id 10mr12785206oiz.153.1590476601417; 
+ Tue, 26 May 2020 00:03:21 -0700 (PDT)
 MIME-Version: 1.0
-Date: Tue, 26 May 2020 12:31:46 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>,
- devicetree@vger.kernel.org, Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCHv3 0/2] Add support for replicators which loses context on
- clock removal
-In-Reply-To: <20200525161553.GA31527@xps15>
-References: <cover.1590171891.git.saiprakash.ranjan@codeaurora.org>
- <20200525161553.GA31527@xps15>
-Message-ID: <8b3592edb443a091891d00e0fa32debc@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+References: <20200511110611.3142-1-ricardo.canuelo@collabora.com>
+ <20200511110611.3142-7-ricardo.canuelo@collabora.com>
+ <20200514015412.GF7425@pendragon.ideasonboard.com>
+ <20200514093617.dwhmqaasc3z5ixy6@rcn-XPS-13-9360>
+ <20200514152239.GG5955@pendragon.ideasonboard.com>
+ <20200525074335.grnjvdjnipq5g3kf@rcn-XPS-13-9360>
+ <20200526014444.GB6179@pendragon.ideasonboard.com>
+In-Reply-To: <20200526014444.GB6179@pendragon.ideasonboard.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 26 May 2020 09:03:09 +0200
+Message-ID: <CAMuHMdXinhY13us9rt9h7EvrT_8zhnQg6tmOBtA0nEQ=1G1O7Q@mail.gmail.com>
+Subject: Re: [PATCH v2 6/6] dt-bindings: drm: bridge: adi, adv7511.txt: convert
+ to yaml
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_000219_557686_4336601C 
-X-CRM114-Status: GOOD (  12.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200526_000324_629245_6D27EA1A 
+X-CRM114-Status: GOOD (  16.64  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,42 +88,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree-owner@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Wei Xu <xuwei5@hisilicon.com>, Rob Herring <robh+dt@kernel.org>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ =?UTF-8?Q?Ricardo_Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
-
-On 2020-05-25 21:45, Mathieu Poirier wrote:
-> Hi Sai,
-> 
-> On Sat, May 23, 2020 at 12:06:50AM +0530, Sai Prakash Ranjan wrote:
->> This series is mainly to add support for replicators
->> which lose context on removing AMBA clock like on SC7180
->> SoC where replicator in AOSS domain loses context.
->> 
-> 
-> I am good with this set but need a reviewed-by on the DT binding before 
-> I can
-> add it to my tree.  The same goes for your other set[1].
-> 
-
-Sure, let's wait for an ack from Rob and thanks for the reviews.
-
-Thanks,
-Sai
-
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTGF1cmVudCwKCk9uIFR1ZSwgTWF5IDI2LCAyMDIwIGF0IDM6NDQgQU0gTGF1cmVudCBQaW5j
+aGFydAo8bGF1cmVudC5waW5jaGFydEBpZGVhc29uYm9hcmQuY29tPiB3cm90ZToKPiBPbiBNb24s
+IE1heSAyNSwgMjAyMCBhdCAwOTo0MzozNUFNICswMjAwLCBSaWNhcmRvIENhw7F1ZWxvIHdyb3Rl
+Ogo+ID4gT24ganVlIDE0LTA1LTIwMjAgMTg6MjI6MzksIExhdXJlbnQgUGluY2hhcnQgd3JvdGU6
+Cj4gPiA+ID4gSWYgd2Ugd2FudCB0byBiZSBtb3JlIHN0cmljdCBhbmQgcmVxdWlyZSB0aGUgZGVm
+aW5pdGlvbiBvZiBhbGwgdGhlCj4gPiA+ID4gc3VwcGxpZXMsIHRoZXJlIHdpbGwgYmUgbWFueSBt
+b3JlIERUcyBjaGFuZ2VzIGluIHRoZSBzZXJpZXMsIGFuZCBJJ20gbm90Cj4gPiA+ID4gc3VyZSBJ
+J2xsIGJlIGFibGUgdG8gZG8gdGhhdCBpbiBhIHJlYXNvbmFibGUgYW1vdW50IG9mIHRpbWUuIEkn
+bSBsb29raW5nCj4gPiA+ID4gYXQgdGhlbSBhbmQgaXQncyBub3QgYWx3YXlzIGNsZWFyIHdoaWNo
+IHJlZ3VsYXRvcnMgdG8gdXNlIG9yIGlmIHRoZXkgYXJlCj4gPiA+ID4gZXZlbiBkZWZpbmVkLgo+
+ID4gPgo+ID4gPiBXZSBjYW4gZGVjb3VwbGUgdGhlIHR3byB0aG91Z2ggKEkgdGhpbmspLiBUaGUg
+YmluZGluZ3Mgc2hvdWxkIHJlZmxlY3QKPiA+ID4gd2hhdCB3ZSBjb25zaWRlciByaWdodCwgYW5k
+IHRoZSBkdHMgZmlsZXMgY291bGQgYmUgZml4ZWQgb24gdG9wLgo+ID4KPiA+IERvIHlvdSBoYXZl
+IGEgc3VnZ2VzdGlvbiBvbiBob3cgdG8gZG8gdGhpcz8gSWYgd2UgZGVjb3VwbGUgdGhlIHR3bwo+
+ID4gdGFza3MgbW9zdCBvZiB0aGUgd29yayB3b3VsZCBiZSBzZWFyY2hpbmcgZm9yIERUcyB0byBm
+aXggYW5kIGZpbmRpbmcgYQo+ID4gd2F5IHRvIGZpeCBlYWNoIG9uZSBvZiB0aGVtLCBhbmQgdW5s
+ZXNzIEkgZG8gdGhpcyBfYmVmb3JlXyB0aGUgYmluZGluZwo+ID4gY29udmVyc2lvbiBJJ2xsIGdl
+dCBhIGxvdCBvZiBkdGJzX2NoZWNrIGVycm9ycy4KPgo+IFJvYiBzaG91bGQgYW5zd2VyIHRoaXMg
+cXVlc3Rpb24gYXMgaXQgd2lsbCBiZSBoaXMgZGVjaXNpb24sIGJ1dCBJJ3ZlCj4gcGVyc29uYWxs
+eSBuZXZlciBjb25zaWRlcmVkIG5vbi1jb21wbGlhbnQgRFQgc291cmNlcyB0byBiZSBhbiBvYnN0
+YWNsZQo+IHRvIGJpbmRpbmdzIGNvbnZlcnNpb24gdG8gWUFNTC4gVGhlIERUIHNvdXJjZXMgc2hv
+dWxkIGJlIGZpeGVkLCBidXQgSQo+IGRvbid0IHNlZSBpdCBhcyBhIHByZXJlcXVpc2l0ZSAoYWx0
+aG91Z2ggaXQncyBhIGdvb2QgcHJhY3RpY2UpLgoKSSBkbyBteSBiZXN0IHRvIGF2b2lkIGludHJv
+ZHVjaW5nIHJlZ3Jlc3Npb25zIHdoZW4gdGhlIGJpbmRpbmcgY29udmVyc2lvbnMKZ28gdXBzdHJl
+YW0uCgpGVFIsIGhlbmNlIHBhdGNoZXMgMS0zIGFyZSBhbHJlYWR5IGluIHY1LjctcmM3LgoKR3J7
+b2V0amUsZWV0aW5nfXMsCgogICAgICAgICAgICAgICAgICAgICAgICBHZWVydAoKLS0gCkdlZXJ0
+IFV5dHRlcmhvZXZlbiAtLSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2Vl
+cnRAbGludXgtbTY4ay5vcmcKCkluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmlj
+YWwgcGVvcGxlLCBJIGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2luZyB0
+byBqb3VybmFsaXN0cyBJIGp1c3Qgc2F5ICJwcm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlrZSB0
+aGF0LgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
