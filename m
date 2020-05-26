@@ -2,63 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8ED5F1E2B61
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 21:05:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19B7F1E2C52
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 21:14:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=LnT+tTNMKi7nm4SPDxIDDwljdMyxbr8R5fU4wBMX6DI=; b=SRKaG96O7bHE5R
-	efLGLn07koAXK+huXBXcgLXtv4vApEkc8qvkSJSsGJVcqZEmdAyelwKHMwVjqAF6miswzsylVVRBK
-	WHD/Q83yZqDPrtcit0qCOt7RWvxIvDzkiOH8BsyiRsyGnSTbKuUJzu40Mpgd993fDA3g9JDOV+fyA
-	DlDQKkkIrFLHEVk5Evx4ho250V2sh1WywfZgzMyCr+agZXcmApD9A6nD7AjTVNbVZ2pHAmtYoBUZo
-	K9SlgGrAeKqbB90Ufq6qzzs96NC4O29jqdINs20ZsCLx2L2wXz3fGPqOPJk0cqkK6jbKFq5/UvQSI
-	ILqtBNPaglTLvke1Zi5A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9dEl8MihcAOoWIRfR6FYBFx7xGTejK5jdzXv4QcBhZ0=; b=Kqe
+	JXc04BIBxhCoydSguOSe3v0CwrgAbBJcU5X7FpaIFvYLOu/8ZeQ96PAsq2n8BEP9gE/wTgWy/sCXb
+	/kll8RPfYXJdRLu6sDJ2shglzgPbfQiK306JSTmc0GaXtvHdp2m3w8lAr0qKQK9BX06c69ILOTBs4
+	66LCbkpRYALjiuBHm+tDZZX3ONErZYe5PaHxGe5W4+L4A7F1Vo0/s11iI46OTjVJou9mm3H5h/VFh
+	H8nkc9PQTdowRwn3dMApGt7iu80A6d+QSUoAHw0vSEDPcUPiKr0SYxOAfH3jLpwZl32/PsYggLyTD
+	cQIjCyRS8hY1noCXUqkpaeb8DiUI55g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdet4-0005ge-5H; Tue, 26 May 2020 19:05:18 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1jdf1U-0003F1-Lt; Tue, 26 May 2020 19:14:00 +0000
+Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdesl-0005UN-Py
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 19:05:01 +0000
-IronPort-SDR: a+9WufrVbzCDL9Jpjrd6u14JvmwlYLYnw1kPyIrbrNToNQJvm9RNiXk/HQ+YKkYf9tOYZxytn5
- 6ubncVrOuoSg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga003.fm.intel.com ([10.253.24.29])
- by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 26 May 2020 12:04:56 -0700
-IronPort-SDR: s3G3FxvQ0ajGlqKDQq7ksNhGhpFaOwtrkguR8zd0Ggz08pEHCM4UoiHP2Bb1fZBxi+tq1ZLba8
- x1i9mFjZ2WOA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,437,1583222400"; d="scan'208";a="310341156"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by FMSMGA003.fm.intel.com with ESMTP; 26 May 2020 12:04:54 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jdesg-0006yk-8K; Wed, 27 May 2020 03:04:54 +0800
-Date: Wed, 27 May 2020 03:04:45 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: [soc:arm/soc] BUILD SUCCESS 9d281a4f6fd61341da2fd08bf0b9449ed72b40e3
-Message-ID: <5ecd684d.SJn6oZmRvN/yeK0G%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
-MIME-Version: 1.0
+ id 1jdf0s-00033o-Ib; Tue, 26 May 2020 19:13:25 +0000
+Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
+ [10.75.242.48])
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 3A98130D62B;
+ Tue, 26 May 2020 12:13:16 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 3A98130D62B
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
+ s=dkimrelay; t=1590520396;
+ bh=+b41cKto7oBml6gbt0P3Uc1iMp9Snf8kHAJBk8ILXSc=;
+ h=From:To:Cc:Subject:Date:From;
+ b=kMVkvfh2RF6stG81DoEIP5rW2Bb1X314UrWcAaVH2vesNfHDGDr6KhshbNA46ZHix
+ 7ZwntfMj7r7NDOxK4+O77jSehqnV1xcgzxPORE2AO6ggOOFgMQnDPaBIK+8fl7+mZP
+ rhW1OIwreN8UcomYfGhgxrbXcaiUc4E8Vm+33GjA=
+Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
+ [10.28.16.211])
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 6F1C914008B;
+ Tue, 26 May 2020 12:13:13 -0700 (PDT)
+From: Jim Quinlan <james.quinlan@broadcom.com>
+To: linux-pci@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com
+Subject: [PATCH v2 00/14] PCI: brcmstb: enable PCIe for STB chips
+Date: Tue, 26 May 2020 15:12:39 -0400
+Message-Id: <20200526191303.1492-1-james.quinlan@broadcom.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_120459_888975_6889112B 
-X-CRM114-Status: UNSURE (   6.54  )
+X-CRM114-CacheID: sfid-20200526_121322_958755_D1F66C04 
+X-CRM114-Status: UNSURE (   9.16  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
+ medium trust [192.19.229.170 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,408 +78,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Ulf Hansson <ulf.hansson@linaro.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ "open list:LIBATA SUBSYSTEM Serial and Parallel ATA drivers"
+ <linux-ide@vger.kernel.org>, Julien Grall <julien.grall@arm.com>,
+ Rob Herring <robh@kernel.org>, Stefano Stabellini <sstabellini@kernel.org>,
+ Saravana Kannan <saravanak@google.com>,
+ "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
+ Alan Stern <stern@rowland.harvard.edu>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE"
+ <devicetree@vger.kernel.org>, Corey Minyard <minyard@acm.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Mark Brown <broonie@kernel.org>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Dan Williams <dan.j.williams@intel.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Oliver Neukum <oneukum@suse.com>, open list <linux-kernel@vger.kernel.org>,
+ Wolfram Sang <wsa@kernel.org>,
+ "open list:DMA MAPPING HELPERS" <iommu@lists.linux-foundation.org>,
+ "open list:USB SUBSYSTEM" <linux-usb@vger.kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  arm/soc
-branch HEAD: 9d281a4f6fd61341da2fd08bf0b9449ed72b40e3  ARM: socfpga: Drop unneeded select of PCI_DOMAINS_GENERIC
+v2:
+Commit: "device core: Add ability to handle multiple dma offsets"
+  o Added helper func attach_dma_pfn_offset_map() in address.c (Chistoph)
+  o Helpers funcs added to __phys_to_dma() & __dma_to_phys() (Christoph)
+  o Added warning when multiple offsets are needed and !DMA_PFN_OFFSET_MAP
+  o dev->dma_pfn_map => dev->dma_pfn_offset_map
+  o s/frm/from/ for dma_pfn_offset_frm_{phys,dma}_addr() (Christoph)
+  o In device.h: s/const void */const struct dma_pfn_offset_region */
+  o removed 'unlikely' from unlikely(dev->dma_pfn_offset_map) since
+    guarded by CONFIG_DMA_PFN_OFFSET_MAP (Christoph)
+  o Since dev->dma_pfn_offset is copied in usb/core/{usb,message}.c, now
+    dev->dma_pfn_offset_map is copied as well.
+  o Merged two of the DMA commits into one (Christoph).
 
-elapsed time: 15615m
+Commit "arm: dma-mapping: Invoke dma offset func if needed":
+  o Use helper functions instead of #if CONFIG_DMA_PFN_OFFSET
 
-configs tested: 381
-configs skipped: 24
+Other commits' changes:
+  o Removed need for carrying of_id var in priv (Nicolas)
+  o Commit message rewordings (Bjorn)
+  o Commit log messages filled to 75 chars (Bjorn)
+  o devm_reset_control_get_shared())
+    => devm_reset_control_get_optional_shared (Philipp)
+  o Add call to reset_control_assert() in PCIe remove routines (Philipp)
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+v1:
+This patchset expands the usefulness of the Broadcom Settop Box PCIe
+controller by building upon the PCIe driver used currently by the
+Raspbery Pi.  Other forms of this patchset were submitted by me years
+ago and not accepted; the major sticking point was the code required
+for the DMA remapping needed for the PCIe driver to work [1].
 
-arm                                 defconfig
-arm                              allyesconfig
-arm                              allmodconfig
-arm                               allnoconfig
-arm64                            allyesconfig
-arm64                               defconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-mips                             allyesconfig
-m68k                             allyesconfig
-sparc                            allyesconfig
-sh                             sh03_defconfig
-arm                         vf610m4_defconfig
-h8300                               defconfig
-m68k                          hp300_defconfig
-powerpc                     pq2fads_defconfig
-parisc                           alldefconfig
-sh                   sh7770_generic_defconfig
-arm                        mvebu_v7_defconfig
-arm                            u300_defconfig
-arm                           u8500_defconfig
-arm                           spitz_defconfig
-microblaze                          defconfig
-mips                  cavium_octeon_defconfig
-powerpc64                        alldefconfig
-arm                      integrator_defconfig
-arc                     nsimosci_hs_defconfig
-s390                                defconfig
-arm                         at91_dt_defconfig
-sh                          sdk7786_defconfig
-powerpc                    gamecube_defconfig
-ia64                         bigsur_defconfig
-sh                        sh7757lcr_defconfig
-powerpc                     mpc5200_defconfig
-arm                        clps711x_defconfig
-mips                           xway_defconfig
-mips                        maltaup_defconfig
-arm                            hisi_defconfig
-um                                  defconfig
-arm                     davinci_all_defconfig
-sh                          r7780mp_defconfig
-arm                           sunxi_defconfig
-arm                            mmp2_defconfig
-mips                     loongson1c_defconfig
-arm                          ep93xx_defconfig
-arc                        nsimosci_defconfig
-um                                allnoconfig
-sh                   secureedge5410_defconfig
-sh                        apsh4ad0a_defconfig
-powerpc                          allmodconfig
-s390                          debug_defconfig
-sh                         ap325rxa_defconfig
-c6x                                 defconfig
-h8300                    h8300h-sim_defconfig
-arc                      axs103_smp_defconfig
-mips                        qi_lb60_defconfig
-openrisc                    or1ksim_defconfig
-sh                          lboxre2_defconfig
-powerpc                      chrp32_defconfig
-sh                          polaris_defconfig
-c6x                        evmc6457_defconfig
-arm                           corgi_defconfig
-mips                     cu1000-neo_defconfig
-arm                          ixp4xx_defconfig
-arm                            mps2_defconfig
-sh                         microdev_defconfig
-mips                              allnoconfig
-arm                          exynos_defconfig
-mips                         db1xxx_defconfig
-arm64                            alldefconfig
-sh                           sh2007_defconfig
-arm                         lpc32xx_defconfig
-mips                 decstation_r4k_defconfig
-m68k                        stmark2_defconfig
-arm                           sama5_defconfig
-arm                        realview_defconfig
-arm                       spear13xx_defconfig
-xtensa                         virt_defconfig
-mips                malta_qemu_32r6_defconfig
-powerpc                      pmac32_defconfig
-arm                         shannon_defconfig
-riscv                    nommu_k210_defconfig
-powerpc                      ppc64e_defconfig
-parisc                generic-32bit_defconfig
-arc                              alldefconfig
-sh                     sh7710voipgw_defconfig
-arm                            pleb_defconfig
-h8300                            alldefconfig
-microblaze                      mmu_defconfig
-powerpc                      ppc44x_defconfig
-c6x                        evmc6678_defconfig
-parisc                              defconfig
-mips                         tb0219_defconfig
-s390                             allyesconfig
-arm                           omap1_defconfig
-arm                         lubbock_defconfig
-arm                          badge4_defconfig
-sh                           se7705_defconfig
-sh                           se7724_defconfig
-powerpc                          g5_defconfig
-arm                           tegra_defconfig
-powerpc                         ps3_defconfig
-arm                         bcm2835_defconfig
-arm                         hackkit_defconfig
-mips                            e55_defconfig
-sh                                allnoconfig
-mips                          malta_defconfig
-arm                         assabet_defconfig
-m68k                                defconfig
-arm                           h3600_defconfig
-ia64                              allnoconfig
-mips                      loongson3_defconfig
-sh                           se7722_defconfig
-arc                        vdk_hs38_defconfig
-arm                          gemini_defconfig
-sparc64                          allyesconfig
-mips                          lasat_defconfig
-mips                         tb0287_defconfig
-powerpc                      mgcoge_defconfig
-um                           x86_64_defconfig
-powerpc                  storcenter_defconfig
-sh                            shmin_defconfig
-arm                              zx_defconfig
-i386                              allnoconfig
-sparc64                             defconfig
-arm                        keystone_defconfig
-m68k                        m5272c3_defconfig
-parisc                           allyesconfig
-mips                     decstation_defconfig
-arm                          iop32x_defconfig
-mips                       lemote2f_defconfig
-m68k                            q40_defconfig
-powerpc                 mpc8272_ads_defconfig
-mips                           ip32_defconfig
-arm                         orion5x_defconfig
-powerpc                             defconfig
-arm                         lpc18xx_defconfig
-arm                       cns3420vb_defconfig
-riscv                    nommu_virt_defconfig
-microblaze                    nommu_defconfig
-arm                        shmobile_defconfig
-arm                          pcm027_defconfig
-powerpc                       ppc64_defconfig
-h8300                       h8s-sim_defconfig
-m68k                       m5208evb_defconfig
-sh                         ecovec24_defconfig
-sh                           se7721_defconfig
-mips                   sb1250_swarm_defconfig
-sh                           se7712_defconfig
-powerpc                    amigaone_defconfig
-mips                           mtx1_defconfig
-parisc                generic-64bit_defconfig
-c6x                         dsk6455_defconfig
-arm                         s3c6400_defconfig
-arm                        mvebu_v5_defconfig
-arc                        nsim_700_defconfig
-parisc                            allnoconfig
-mips                    maltaup_xpa_defconfig
-arm                         axm55xx_defconfig
-m68k                        m5307c3_defconfig
-mips                        nlm_xlr_defconfig
-sh                            migor_defconfig
-powerpc                     mpc512x_defconfig
-nds32                               defconfig
-arm                          moxart_defconfig
-um                               allyesconfig
-mips                          rb532_defconfig
-arm                          imote2_defconfig
-i386                             allyesconfig
-i386                                defconfig
-i386                              debian-10.3
-ia64                             allmodconfig
-ia64                                defconfig
-ia64                             allyesconfig
-m68k                             allmodconfig
-m68k                              allnoconfig
-m68k                           sun3_defconfig
-nios2                               defconfig
-nios2                            allyesconfig
-openrisc                            defconfig
-c6x                              allyesconfig
-c6x                               allnoconfig
-openrisc                         allyesconfig
-nds32                             allnoconfig
-csky                             allyesconfig
-csky                                defconfig
-alpha                               defconfig
-alpha                            allyesconfig
-xtensa                           allyesconfig
-h8300                            allyesconfig
-h8300                            allmodconfig
-xtensa                              defconfig
-arc                                 defconfig
-arc                              allyesconfig
-sh                               allmodconfig
-microblaze                        allnoconfig
-mips                             allmodconfig
-parisc                           allmodconfig
-powerpc                          allyesconfig
-powerpc                          rhel-kconfig
-powerpc                           allnoconfig
-x86_64               randconfig-a005-20200517
-x86_64               randconfig-a003-20200517
-x86_64               randconfig-a006-20200517
-x86_64               randconfig-a004-20200517
-x86_64               randconfig-a001-20200517
-x86_64               randconfig-a002-20200517
-i386                 randconfig-a006-20200518
-i386                 randconfig-a005-20200518
-i386                 randconfig-a001-20200518
-i386                 randconfig-a003-20200518
-i386                 randconfig-a004-20200518
-i386                 randconfig-a002-20200518
-i386                 randconfig-a006-20200519
-i386                 randconfig-a005-20200519
-i386                 randconfig-a001-20200519
-i386                 randconfig-a003-20200519
-i386                 randconfig-a004-20200519
-i386                 randconfig-a002-20200519
-i386                 randconfig-a001-20200521
-i386                 randconfig-a004-20200521
-i386                 randconfig-a006-20200521
-i386                 randconfig-a003-20200521
-i386                 randconfig-a002-20200521
-i386                 randconfig-a005-20200521
-i386                 randconfig-a006-20200515
-i386                 randconfig-a005-20200515
-i386                 randconfig-a003-20200515
-i386                 randconfig-a001-20200515
-i386                 randconfig-a004-20200515
-i386                 randconfig-a002-20200515
-i386                 randconfig-a006-20200517
-i386                 randconfig-a005-20200517
-i386                 randconfig-a003-20200517
-i386                 randconfig-a001-20200517
-i386                 randconfig-a004-20200517
-i386                 randconfig-a002-20200517
-i386                 randconfig-a001-20200520
-i386                 randconfig-a004-20200520
-i386                 randconfig-a006-20200520
-i386                 randconfig-a003-20200520
-i386                 randconfig-a002-20200520
-i386                 randconfig-a005-20200520
-i386                 randconfig-a001-20200526
-i386                 randconfig-a004-20200526
-i386                 randconfig-a003-20200526
-i386                 randconfig-a002-20200526
-i386                 randconfig-a005-20200526
-i386                 randconfig-a006-20200526
-i386                 randconfig-a006-20200516
-i386                 randconfig-a005-20200516
-i386                 randconfig-a003-20200516
-i386                 randconfig-a001-20200516
-i386                 randconfig-a004-20200516
-i386                 randconfig-a002-20200516
-i386                 randconfig-a001-20200524
-i386                 randconfig-a004-20200524
-i386                 randconfig-a006-20200524
-i386                 randconfig-a003-20200524
-i386                 randconfig-a002-20200524
-i386                 randconfig-a005-20200524
-x86_64               randconfig-a005-20200515
-x86_64               randconfig-a003-20200515
-x86_64               randconfig-a006-20200515
-x86_64               randconfig-a004-20200515
-x86_64               randconfig-a001-20200515
-x86_64               randconfig-a002-20200515
-x86_64               randconfig-a003-20200519
-x86_64               randconfig-a005-20200519
-x86_64               randconfig-a004-20200519
-x86_64               randconfig-a006-20200519
-x86_64               randconfig-a002-20200519
-x86_64               randconfig-a001-20200519
-x86_64               randconfig-a016-20200518
-x86_64               randconfig-a012-20200518
-x86_64               randconfig-a015-20200518
-x86_64               randconfig-a013-20200518
-x86_64               randconfig-a011-20200518
-x86_64               randconfig-a014-20200518
-x86_64               randconfig-a013-20200520
-x86_64               randconfig-a015-20200520
-x86_64               randconfig-a016-20200520
-x86_64               randconfig-a012-20200520
-x86_64               randconfig-a014-20200520
-x86_64               randconfig-a011-20200520
-x86_64               randconfig-a015-20200526
-x86_64               randconfig-a013-20200526
-x86_64               randconfig-a016-20200526
-x86_64               randconfig-a012-20200526
-x86_64               randconfig-a014-20200526
-x86_64               randconfig-a011-20200526
-x86_64               randconfig-a013-20200524
-x86_64               randconfig-a015-20200524
-x86_64               randconfig-a016-20200524
-x86_64               randconfig-a012-20200524
-x86_64               randconfig-a014-20200524
-x86_64               randconfig-a011-20200524
-x86_64               randconfig-a015-20200522
-x86_64               randconfig-a013-20200522
-x86_64               randconfig-a016-20200522
-x86_64               randconfig-a012-20200522
-x86_64               randconfig-a014-20200522
-x86_64               randconfig-a011-20200522
-x86_64               randconfig-a002-20200521
-x86_64               randconfig-a006-20200521
-x86_64               randconfig-a005-20200521
-x86_64               randconfig-a004-20200521
-x86_64               randconfig-a003-20200521
-x86_64               randconfig-a001-20200521
-i386                 randconfig-a012-20200515
-i386                 randconfig-a016-20200515
-i386                 randconfig-a014-20200515
-i386                 randconfig-a011-20200515
-i386                 randconfig-a013-20200515
-i386                 randconfig-a015-20200515
-i386                 randconfig-a012-20200517
-i386                 randconfig-a016-20200517
-i386                 randconfig-a014-20200517
-i386                 randconfig-a011-20200517
-i386                 randconfig-a013-20200517
-i386                 randconfig-a015-20200517
-i386                 randconfig-a012-20200518
-i386                 randconfig-a014-20200518
-i386                 randconfig-a016-20200518
-i386                 randconfig-a011-20200518
-i386                 randconfig-a015-20200518
-i386                 randconfig-a013-20200518
-i386                 randconfig-a013-20200520
-i386                 randconfig-a012-20200520
-i386                 randconfig-a015-20200520
-i386                 randconfig-a011-20200520
-i386                 randconfig-a016-20200520
-i386                 randconfig-a014-20200520
-i386                 randconfig-a013-20200522
-i386                 randconfig-a012-20200522
-i386                 randconfig-a015-20200522
-i386                 randconfig-a011-20200522
-i386                 randconfig-a016-20200522
-i386                 randconfig-a014-20200522
-i386                 randconfig-a012-20200519
-i386                 randconfig-a014-20200519
-i386                 randconfig-a016-20200519
-i386                 randconfig-a011-20200519
-i386                 randconfig-a015-20200519
-i386                 randconfig-a013-20200519
-i386                 randconfig-a013-20200526
-i386                 randconfig-a015-20200526
-i386                 randconfig-a012-20200526
-i386                 randconfig-a011-20200526
-i386                 randconfig-a016-20200526
-i386                 randconfig-a014-20200526
-i386                 randconfig-a013-20200521
-i386                 randconfig-a012-20200521
-i386                 randconfig-a015-20200521
-i386                 randconfig-a011-20200521
-i386                 randconfig-a016-20200521
-i386                 randconfig-a014-20200521
-i386                 randconfig-a013-20200524
-i386                 randconfig-a015-20200524
-i386                 randconfig-a012-20200524
-i386                 randconfig-a011-20200524
-i386                 randconfig-a016-20200524
-i386                 randconfig-a014-20200524
-riscv                            allyesconfig
-riscv                             allnoconfig
-riscv                               defconfig
-riscv                            allmodconfig
-s390                              allnoconfig
-s390                             allmodconfig
-x86_64                              defconfig
-sparc                               defconfig
-sparc64                           allnoconfig
-sparc64                          allmodconfig
-um                               allmodconfig
-x86_64                    rhel-7.6-kselftests
-x86_64                                   rhel
-x86_64                               rhel-7.6
-x86_64                         rhel-7.2-clear
-x86_64                                    lkp
-x86_64                              fedora-25
-x86_64                                  kexec
+There have been many changes to the DMA and OF subsystems since that
+time, making a cleaner and less intrusive patchset possible.  This
+patchset implements a generalization of "dev->dma_pfn_offset", except
+that instead of a single scalar offset it provides for multiple
+offsets via a function which depends upon the "dma-ranges" property of
+the PCIe host controller.  This is required for proper functionality
+of the BrcmSTB PCIe controller and possibly some other devices.
 
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+[1] https://lore.kernel.org/linux-arm-kernel/1516058925-46522-5-git-send-email-jim2101024@gmail.com/
+
+Jim Quinlan (14):
+  PCI: brcmstb: PCIE_BRCMSTB depends on ARCH_BRCMSTB
+  ata: ahci_brcm: Fix use of BCM7216 reset controller
+  dt-bindings: PCI: Add bindings for more Brcmstb chips
+  PCI: brcmstb: Add bcm7278 reigister info
+  PCI: brcmstb: Add suspend and resume pm_ops
+  PCI: brcmstb: Add bcm7278 PERST support
+  PCI: brcmstb: Add control of rescal reset
+  of: Include a dev param in of_dma_get_range()
+  device core: Add ability to handle multiple dma offsets
+  arm: dma-mapping: Invoke dma offset func if needed
+  PCI: brcmstb: Set internal memory viewport sizes
+  PCI: brcmstb: Accommodate MSI for older chips
+  PCI: brcmstb: Set bus max burst size by chip type
+  PCI: brcmstb: Add bcm7211, bcm7216, bcm7445, bcm7278 to match list
+
+ .../bindings/pci/brcm,stb-pcie.yaml           |  40 +-
+ arch/arm/include/asm/dma-mapping.h            |  13 +-
+ drivers/ata/ahci_brcm.c                       |  14 +-
+ drivers/of/address.c                          |  69 ++-
+ drivers/of/device.c                           |   2 +-
+ drivers/of/of_private.h                       |   8 +-
+ drivers/pci/controller/Kconfig                |   3 +-
+ drivers/pci/controller/pcie-brcmstb.c         | 408 +++++++++++++++---
+ drivers/usb/core/message.c                    |   3 +
+ drivers/usb/core/usb.c                        |   3 +
+ include/linux/device.h                        |  10 +-
+ include/linux/dma-direct.h                    |  10 +-
+ include/linux/dma-mapping.h                   |  46 ++
+ kernel/dma/Kconfig                            |  13 +
+ 14 files changed, 559 insertions(+), 83 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
