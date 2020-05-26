@@ -2,86 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 757391E2062
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:04:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E36631E20B6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:13:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sxeWdyhbV4CdUG0UNSoEJwRe6sz1FQlL525p7sWjuCw=; b=V2kncY5eGpbCCm
-	YFhN8oeR3iAwUdDw4KA2n3ygLHC+S5CgmJHlYAoG6fu5rroBUXzHwrz9hQZUMYtezU+9BFVTAgGsb
-	jPeh51quglWepiI9ogu/EyVtc8Pm86PD2d+5+J1AnsdIwUzbS8RIdUPjsaT/UKneAxcQrLBxiyI7r
-	vkYWsT7IGPdzfUoQ33FU05ILUvOYNxz/+MVgihgpL6sSV0coWfz+Wk8R2kYRumzKhqcw+AOZnvRCK
-	CvP5niRL8bjr/vWjsZZ5XeMGX0I5ZdRJDwfTcGsiEbChF1oq7fMx+JZWqZ0WP/0HfOpEL2oCRMlBD
-	tuHWN5Y68ORGW5mLWK2g==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oUXB1qbejDShS5TjDzFVftK846gMbr6MmcSsyaPEDTI=; b=tdV2dg/1UAU1Vf
+	bzGMAJy5mxDoO6ggqLCWkPeKOhoVmx8maNkzFAHuzN5CLMJ69dO40DR+g0lBtabTBz7AQLPXKZtWH
+	/QAr4pc2PqH/8hHb/9VPcFPuwLnY43+d2zSevpC+Kwo4Q5ZjM8rzpJBVLzgjQp0WSeK+n8rdyZEyp
+	670YXYYIse82DeiMHDbJLpxqJQH9L7ZBJuU6HaNHrRIjgLztlr5GusvkHQ+IwFVBfDX6d9kUbphMB
+	Ieuuwfs5hPrg/kqi/AQqV+J1MRwHcPxvnjiJu1ApJ1t7qsqJmOqF4b5woEGZE3c1VUwwAg4+7UeIK
+	FmzsVQ8MlzzDN5JXTskQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdXNI-0004Pk-Hf; Tue, 26 May 2020 11:04:00 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jdXVx-0003pT-Ck; Tue, 26 May 2020 11:12:57 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdXN7-0004OF-89
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:03:50 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u13so2716508wml.1
+ id 1jdXVn-0003oq-9O
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:12:48 +0000
+Received: from mail-io1-f48.google.com (mail-io1-f48.google.com
+ [209.85.166.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EB7D220899
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 04:03:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WNmMCHQhQQzWJi0EZ9sZ2eNrgpixzlI5wsbtnbpPOeQ=;
- b=W8H3MQBsUXQUTKWEZv7Q4Wk5HwDwJdE5VIPVKx+zWM7nL/hLhk8fUgVZoZNICPIvG0
- 1zoT0s+z/2Uv5zk25wqMi7ut5qOG+bwb93BOIqTvneSorUvGx/1fr4EsD7ZLWH6ZYPrz
- W+Z5ITMvhz3cPFDKQ6h7AU2ur68mjrW9SdlT7nW34AgQX712TTPrfUe9ZKbVpLEBaaDY
- i8ycYtToxxp1HYjSM45zR2OTK5bVlhZ7+DDBMndag9ROlbixbMr2v4u7ADw9zMFby959
- DE2F9pb9UXKhPQY4TGyfX/g/IgP17wjspC8azvkAo3B2XRw9fGf2qbJcb1ywsootcNWv
- O4AA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WNmMCHQhQQzWJi0EZ9sZ2eNrgpixzlI5wsbtnbpPOeQ=;
- b=WZy4wY4cFz1H9T+zmG1N4ZKTLlrOZso62dTUGknaVd5MP163PQ70buC2/EwOP9PWn0
- g+nil1x2wvzUrGjeapaNEUWEsgQLXLhdqbYEp0ocHhhyUfxT9xGFIMuzzXNq3PQ0x2Hk
- j8uAPbO5VV6jd384RZ3cirDuzHUSVv4m6v+Gg26jlsDKKVWUQkzem6R8YOLnhqXKppgS
- tDbpvoxZZ/KaGTgXoUFiPGx/QiR9hHB2QMrooF1Jsd+CgXAPFq9rHt3A6shMizaBc/Zz
- fqgA9xiyelzN4HsU31mCePhy82wQkXzHcUaZ+b1nIyTYhjsjSCjVCmwjpi7mY38WljAw
- 5U3g==
-X-Gm-Message-State: AOAM532H34HtOsXJXhScgTHr1ivwpVNLa6U7ITtJJRHt2jCQfykuNCM7
- snOqNR15MbD9+BwofFzfa4M=
-X-Google-Smtp-Source: ABdhPJy1dn8nJ7EBF1K3qfcolfl264laLlQTJniTWhVfeQbgu6WJ9Veq4i5pRVpVi/dlQexl8ZDiDA==
-X-Received: by 2002:a05:600c:2041:: with SMTP id
- p1mr960165wmg.152.1590491026217; 
- Tue, 26 May 2020 04:03:46 -0700 (PDT)
-Received: from skynet.lan (172.red-88-15-120.dynamicip.rima-tde.net.
- [88.15.120.172])
- by smtp.gmail.com with ESMTPSA id l204sm11196246wmf.19.2020.05.26.04.03.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 04:03:45 -0700 (PDT)
-From: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
-To: tsbogend@alpha.franken.de, f.fainelli@gmail.com, jonas.gorski@gmail.com,
- bcm-kernel-feedback-list@broadcom.com, linux-mips@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] MIPS: BCM63xx: fix 6328 boot selection bit
-Date: Tue, 26 May 2020 13:03:24 +0200
-Message-Id: <20200526110324.1324754-1-noltari@gmail.com>
-X-Mailer: git-send-email 2.26.2
+ Tue, 26 May 2020 11:12:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590491565;
+ bh=w3m3BiqegA/c+AK0c9B3Lz04RjxLTZODaFVIMVf+TVY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=hU0oETOXSYMagC2q8kNXSo8qLzsqGsFQQdGVNPQhS6mftnrvRezldE1Xh+J67hDgK
+ RYvOpeSd+apIGzRu6s39QRRzuZ55JKA3YZIpuVUDhJwUfamZsDoKINrI7UjEqcCqnK
+ uSs1GA4XDfFvFA/hOyvbn1GW8b5AbbCBbZKPIErk=
+Received: by mail-io1-f48.google.com with SMTP id p20so8049883iop.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 04:12:44 -0700 (PDT)
+X-Gm-Message-State: AOAM531FaleneYUi7AFlie1QMT9TdW8Blo6hHDTvWFOFhHw6ToTcidqU
+ Aqvr2BwzJWtp+Mort6VxeH3Y1O+jwA0e/P1Y5IA=
+X-Google-Smtp-Source: ABdhPJy4K/V9tFR2GK96RiXGHjIJJ56IY7i7ivtw4AS3QQiZ4is+DnyTxH8db+0ZS9QH8rim5quPD2MhJStgltaiIgM=
+X-Received: by 2002:a5d:9b8a:: with SMTP id r10mr16755157iom.171.1590491564286; 
+ Tue, 26 May 2020 04:12:44 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200515093613.18691-1-ardb@kernel.org>
+ <CAJZ5v0guHdbZTsU5e7KDAHDy9Gnh67JwtSSCeDaK8mUwAk1d3g@mail.gmail.com>
+In-Reply-To: <CAJZ5v0guHdbZTsU5e7KDAHDy9Gnh67JwtSSCeDaK8mUwAk1d3g@mail.gmail.com>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Tue, 26 May 2020 13:12:33 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXFVYOoX=pe9uVY-j_o8YhhE_Fef6q6jc8S9nzBLYSBb=g@mail.gmail.com>
+Message-ID: <CAMj1kXFVYOoX=pe9uVY-j_o8YhhE_Fef6q6jc8S9nzBLYSBb=g@mail.gmail.com>
+Subject: Re: [PATCH] ACPI: GED: add support for _Exx / _Lxx handler methods
+To: "Rafael J. Wysocki" <rafael@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_040349_295520_505ACFAA 
-X-CRM114-Status: GOOD (  10.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200526_041247_366894_99CB92E1 
+X-CRM114-Status: GOOD (  22.31  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [noltari[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -89,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,30 +86,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stable <stable@vger.kernel.org>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, Len Brown <lenb@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TUlTQ19TVFJBUF9CVVNfQk9PVF9TRUxfU0hJRlQgaXMgMTggYWNjb3JkaW5nIHRvIEJyb2FkY29t
-J3MgR1BMIHNvdXJjZSBjb2RlLgoKU2lnbmVkLW9mZi1ieTogw4FsdmFybyBGZXJuw6FuZGV6IFJv
-amFzIDxub2x0YXJpQGdtYWlsLmNvbT4KLS0tCiBhcmNoL21pcHMvaW5jbHVkZS9hc20vbWFjaC1i
-Y202M3h4L2JjbTYzeHhfcmVncy5oIHwgNCArKy0tCiAxIGZpbGUgY2hhbmdlZCwgMiBpbnNlcnRp
-b25zKCspLCAyIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2FyY2gvbWlwcy9pbmNsdWRlL2Fz
-bS9tYWNoLWJjbTYzeHgvYmNtNjN4eF9yZWdzLmggYi9hcmNoL21pcHMvaW5jbHVkZS9hc20vbWFj
-aC1iY202M3h4L2JjbTYzeHhfcmVncy5oCmluZGV4IGJjMzQ0NGNkNGVmMi4uOWNlYjVlNzI4ODlm
-IDEwMDY0NAotLS0gYS9hcmNoL21pcHMvaW5jbHVkZS9hc20vbWFjaC1iY202M3h4L2JjbTYzeHhf
-cmVncy5oCisrKyBiL2FyY2gvbWlwcy9pbmNsdWRlL2FzbS9tYWNoLWJjbTYzeHgvYmNtNjN4eF9y
-ZWdzLmgKQEAgLTEzNjcsOCArMTM2Nyw4IEBACiAjZGVmaW5lIE1JU0NfU1RSQVBCVVNfNjMyOF9S
-RUcJCTB4MjQwCiAjZGVmaW5lIFNUUkFQQlVTXzYzMjhfRkNWT19TSElGVAk3CiAjZGVmaW5lIFNU
-UkFQQlVTXzYzMjhfRkNWT19NQVNLCQkoMHgxZiA8PCBTVFJBUEJVU182MzI4X0ZDVk9fU0hJRlQp
-Ci0jZGVmaW5lIFNUUkFQQlVTXzYzMjhfQk9PVF9TRUxfU0VSSUFMCSgxIDw8IDI4KQotI2RlZmlu
-ZSBTVFJBUEJVU182MzI4X0JPT1RfU0VMX05BTkQJKDAgPDwgMjgpCisjZGVmaW5lIFNUUkFQQlVT
-XzYzMjhfQk9PVF9TRUxfU0VSSUFMCSgxIDw8IDE4KQorI2RlZmluZSBTVFJBUEJVU182MzI4X0JP
-T1RfU0VMX05BTkQJKDAgPDwgMTgpCiAKIC8qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioq
-KioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqCiAgKiBfUkVHIHJlbGF0
-aXZlIHRvIFJTRVRfUENJRQotLSAKMi4yNi4yCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hello Rafael,
+
+I spotted an issue with this patch. Please see below.
+
+
+On Fri, 15 May 2020 at 18:32, Rafael J. Wysocki <rafael@kernel.org> wrote:
+>
+> On Fri, May 15, 2020 at 11:37 AM Ard Biesheuvel <ardb@kernel.org> wrote:
+> >
+> > Per the ACPI spec, interrupts in the range [0, 255] may be handled
+> > in AML using individual methods whose naming is based on the format
+> > _Exx or _Lxx, where xx is the hex representation of the interrupt
+> > index.
+> >
+> > Add support for this missing feature to our ACPI GED driver.
+> >
+> > Cc: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+> > Cc: Len Brown <lenb@kernel.org>
+> > Cc: linux-acpi@vger.kernel.org
+> > Cc: <stable@vger.kernel.org> # v4.9+
+> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > ---
+> >  drivers/acpi/evged.c | 22 +++++++++++++++++---
+> >  1 file changed, 19 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/acpi/evged.c b/drivers/acpi/evged.c
+> > index aba0d0027586..6d7a522952bf 100644
+> > --- a/drivers/acpi/evged.c
+> > +++ b/drivers/acpi/evged.c
+> > @@ -79,6 +79,8 @@ static acpi_status acpi_ged_request_interrupt(struct acpi_resource *ares,
+> >         struct resource r;
+> >         struct acpi_resource_irq *p = &ares->data.irq;
+> >         struct acpi_resource_extended_irq *pext = &ares->data.extended_irq;
+> > +       char ev_name[5];
+> > +       u8 trigger;
+> >
+> >         if (ares->type == ACPI_RESOURCE_TYPE_END_TAG)
+> >                 return AE_OK;
+> > @@ -87,14 +89,28 @@ static acpi_status acpi_ged_request_interrupt(struct acpi_resource *ares,
+> >                 dev_err(dev, "unable to parse IRQ resource\n");
+> >                 return AE_ERROR;
+> >         }
+> > -       if (ares->type == ACPI_RESOURCE_TYPE_IRQ)
+> > +       if (ares->type == ACPI_RESOURCE_TYPE_IRQ) {
+> >                 gsi = p->interrupts[0];
+> > -       else
+> > +               trigger = p->triggering;
+> > +       } else {
+> >                 gsi = pext->interrupts[0];
+> > +               trigger = p->triggering;
+
+This should be 'pext->triggering' instead.
+
+In practice, it doesn't matter, since p and pext point to the same
+union, and the 'triggering' field happens to be at the same offset.
+But it should still be fixed, of course.
+
+Would you prefer a followup patch? Or can you fix it locally?
+
+
+> > +       }
+> >
+> >         irq = r.start;
+> >
+> > -       if (ACPI_FAILURE(acpi_get_handle(handle, "_EVT", &evt_handle))) {
+> > +       switch (gsi) {
+> > +       case 0 ... 255:
+> > +               sprintf(ev_name, "_%c%02hhX",
+> > +                       trigger == ACPI_EDGE_SENSITIVE ? 'E' : 'L', gsi);
+> > +
+> > +               if (ACPI_SUCCESS(acpi_get_handle(handle, ev_name, &evt_handle)))
+> > +                       break;
+> > +               /* fall through */
+> > +       default:
+> > +               if (ACPI_SUCCESS(acpi_get_handle(handle, "_EVT", &evt_handle)))
+> > +                       break;
+> > +
+> >                 dev_err(dev, "cannot locate _EVT method\n");
+> >                 return AE_ERROR;
+> >         }
+> > --
+>
+> Applied as 5.8 material, thanks!
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
