@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C50D31E26F6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 18:29:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F4F91E2701
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 18:30:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rbi3r6M656+gBVZll3ELj0GfilcMTo4aJX96EcuX2Ak=; b=lNw//dy6b4Dv+e
-	MZ6/9c9ZFg6AjYkGUC4hDOM6APau7JgE4y/RAd8DMOziENECj/NvDiGZbqfkCMCitP7VZUuZP/s/v
-	0EPUPMharIYe5PDpM94kwqrek8/dVuXT+/i9h4t9Y6v/LlkFx9FBM45DNFL524PE3h118CHp7fGeR
-	77NGHLe6ivoG9pCOIdbYBaWN+sJ/GFUwcZYH61YEr4XMS+4YrwXmXt+m5pIdfFaPYrE8aDYZmN+OJ
-	8yhQqx6VclxO+n+9qPeYO8FlqIQcAFAHliuhCuQLSWxmhEwR68DHINA0n0tbUCZOcgJm+iLK8OGyL
-	3/Qp1GBurrFGArFQHcMQ==;
+	List-Owner; bh=AQR6x2T3PGEh5Ge7lHkZHNxkHZDwJ3rvOXqOdgDp7eU=; b=cqpV/1IkjD4+ti
+	1bTDIYlYUGz1V5IdqcV6I0SCFU4B/s3SiTGtTL/a/t6Xxg6c674vB5UIwsaj0Iyi4eIQZhQ7rVvSC
+	FpTxbo+z8gQLC7R1729tkZWj460zRz/JC6N91fxHHEXNdnS9Dyh4vff5hgnfEnJR0m6DTNbU6OOFX
+	68QnJmrbf+i0q5Viewz5RoRv7OxdP7erO4uS/kO4dnOG0b+kyoiHZf+n9gGao73wy9DJqa5JhMNWI
+	w2ig2FZ5ww3jT7VKYpeGR4SM1okh4Q3JQzY39Yhwq0AJV2lElxefoJswMEmMVIhxxGVfHgirq/ACl
+	l8EojL+PyPbtLAf2Wmww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdcSD-0006gV-JI; Tue, 26 May 2020 16:29:25 +0000
+	id 1jdcSg-0007Ai-RE; Tue, 26 May 2020 16:29:54 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdcS1-0006eg-5A
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 16:29:14 +0000
+ id 1jdcSX-00076n-BG
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 16:29:46 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8095B30E;
- Tue, 26 May 2020 09:29:12 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C352B30E;
+ Tue, 26 May 2020 09:29:44 -0700 (PDT)
 Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8EFF93F52E;
- Tue, 26 May 2020 09:29:10 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C53183F52E;
+ Tue, 26 May 2020 09:29:42 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 11/26] KVM: arm64: Add missing reset handlers for PMU
- emulation
+Subject: Re: [PATCH 19/26] KVM: arm64: Make struct kvm_regs userspace-only
 To: Marc Zyngier <maz@kernel.org>
 References: <20200422120050.3693593-1-maz@kernel.org>
- <20200422120050.3693593-12-maz@kernel.org>
-Message-ID: <51a1bb5b-fd7f-eb0e-8efe-0b1952a7fffd@arm.com>
-Date: Tue, 26 May 2020 17:29:09 +0100
+ <20200422120050.3693593-20-maz@kernel.org>
+Message-ID: <0a38305f-77f8-11b0-cb74-2bec07ce0a0a@arm.com>
+Date: Tue, 26 May 2020 17:29:41 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200422120050.3693593-12-maz@kernel.org>
+In-Reply-To: <20200422120050.3693593-20-maz@kernel.org>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_092913_315624_B3314D3C 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20200526_092945_437350_A973D910 
+X-CRM114-Status: GOOD (  15.91  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,12 +82,43 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Marc,
 
 On 22/04/2020 13:00, Marc Zyngier wrote:
-> As we're about to become a bit more harsh when it comes to the lack of
-> reset callbacks, let's add the missing PMU reset handlers. Note that
-> these only cover *CLR registers that were always covered by their *SET
-> counterpart, so there is no semantic change here.
+> struct kvm_regs is used by userspace to indicate which register gets
+> accessed by the {GET,SET}_ONE_REG API. But as we're about to refactor
+> the layout of the in-kernel register structures, we need the kernel to
+> move away from it.
+> 
+> Let's make kvm_regs userspace only, and let the kernel map it to its own
+> internal representation.
 
+> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> index 23ebe51410f06..9fec9231b63e2 100644
+> --- a/arch/arm64/kvm/guest.c
+> +++ b/arch/arm64/kvm/guest.c
+> @@ -102,6 +102,55 @@ static int core_reg_size_from_offset(const struct kvm_vcpu *vcpu, u64 off)
+>  	return size;
+>  }
+>  
+> +static void *core_reg_addr(struct kvm_vcpu *vcpu, const struct kvm_one_reg *reg)
+> +{
+> +	u64 off = core_reg_offset_from_id(reg->id);
+> +
+> +	switch (off) {
+
+> +	default:
+> +		return NULL;
+
+Doesn't this switch statement catch an out of range offset, and a misaligned offset?
+
+... We still test for those explicitly in the caller. Better safe than implicit?
+
+
+> +	}
+> +}
+
+With the reset thing reported by Zenghui and Zengtao on the previous patch fixed:
 Reviewed-by: James Morse <james.morse@arm.com>
+
+(otherwise struct kvm_regs isn't userspace-only!)
 
 
 Thanks,
