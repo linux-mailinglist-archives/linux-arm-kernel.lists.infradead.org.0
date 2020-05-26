@@ -2,62 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3C5D1E2FE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 22:22:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8120B1E3005
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 22:30:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PzUVSUBcHTfFoWDTNJQ1eMSO/nd1+hVLBw0jIiAdrwY=; b=n4OBH/Ccquys9p
-	gXv32XaaYd1dH7N0RO4DlMQnUv9++q1OBsqTkTLf2qC9mLj+TT6Xa/JeKi3tHTgXkedxPsbFWkZD2
-	VwRUnRXtzAQ1CbprIPRPDee1LQV9VOfhoM9TUf2ZyHJswVHvL3UtKAeWLAYquB+SqoITEQaz3yunr
-	k405iMsFc179P+Zt6m05WenC+/Hp1b6n2NkhEuWXJPa/4HpTdEmRvtC0Vnc42Zt8efCLvrhUnfgru
-	WJvrpHlE9+Xz7SPOHRC5ZvYXw0dMn/o5Op2mJmjBdgks6ENB/1IOFr29X3N22mHZQK5BQgx696qur
-	isoUx5c3I1xTUL2dz6Xg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hHqG8wMnY6TDTh4phZKz2jswzV8SpBuXV1sTpxZVju4=; b=GoGmjSYS6sNxPU
+	eM4Fds0ZseeSJ2ga9EAFxMZ9uVUk6SLkKrOcYSCDDop/aJVxsrvoxwNSAB91pyXoqXjr1/S/3TNx1
+	NT6yXzR6OlVH1E8AyIDDk7yHYKHwL9DgvRrKbcwGLAxijrDYLid8EmVWJ4KVTDUGJCobdoWfdZ+o9
+	ZxWlEeYvIagxqxc58DIAvoGPXXGqc+8Oe6nhI1JxTm5d13EvRXSnVsr3I0A6nUPNAdhf3Tb5tL0LA
+	7hfT5dzZixgHWtTVDVTVHMwTbSXO5PifTWSZI+Oz4kbSroSgbhed++J70k8U0JZOfNKOrvyklpsbf
+	Ccz2CYuJUbL8rocZd2fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdg5U-0001u1-Lp; Tue, 26 May 2020 20:22:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jdgDk-0007hr-74; Tue, 26 May 2020 20:30:44 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdg5K-0001tK-Cr
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 20:22:04 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B7945207D8;
- Tue, 26 May 2020 20:22:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590524522;
- bh=nqEQAKe1E02EN8Nj+D8tTjNZWIBlnWbZha/PR+697TY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=W6NNzQlrklzzDSURv+i0A0/DJQCLA2gJcnFHYjDcxivIImAite7Y8Jqcsh2Lc9ust
- IE8ABMrPoL1vEEWDrMXExFBkqQBy7TluD4WiVrLvWgV60Mucrf5dmERtWu104Oglgf
- PSfaoBByOs8cF59IyvmtiHtAfDoVUmUFoJHoq3yU=
-Date: Tue, 26 May 2020 21:21:57 +0100
-From: Will Deacon <will@kernel.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: arm64/acpi: NULL dereference reports from UBSAN at boot
-Message-ID: <20200526202157.GE2206@willie-the-truck>
-References: <20200521100952.GA5360@willie-the-truck>
- <20200521173738.GA29590@e121166-lin.cambridge.arm.com>
+ id 1jdgDE-0006TJ-UR; Tue, 26 May 2020 20:30:14 +0000
+Received: by mail-ej1-x643.google.com with SMTP id h21so25267730ejq.5;
+ Tue, 26 May 2020 13:30:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=googlemail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=BS3gmgrNZrm2hux2kw4Gbzw+57Hl3YkxBqJ2R++uXCI=;
+ b=r4XgU/IHeIoBI5OZ3olD5EbIcyRjAdqgO/+YRdPtOaCBv4j6Gxd2LwK5NJDWEcB9K6
+ vRJ9Eupq+UblOGSrPMH9XyH60cEtJegWSpZE0bcGRFfIU4sIWX/aIW7ZilHW+aahd81Q
+ N7C7FGEp7o8RzXe01Lj372FSwt6O7bpBFkItV1AB/o7VN5NHQMfKDId1oKpnxNLO5Qbd
+ whV5DLqWTuhIbjDiN9HkKYDqxghk3V4w+q6G2r9Oz6exuMv5njdsDraYR6EilKiL7m1G
+ /lN49juqSg8mij/VsmISVxlaHeonpyhTUGc9LLFuKUplPBC+WVsGVbzXXdbZA2d+cpba
+ j9FA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=BS3gmgrNZrm2hux2kw4Gbzw+57Hl3YkxBqJ2R++uXCI=;
+ b=D8LgVDMdhMthpDBrte1+JRN5ShjtGwPD2powEFBAsaq5fg3GbmSFDoJisqXJoc4nzI
+ +V22zSGgwe8G53GfuNQPB1KT/0hX/xfzdhBdjf/EDi8CCTZ5DpRn+5lqA9UpBbwTW9PN
+ l03t07t8rN6FwPp5vDEBfUdCOq1b9A5BIQS07jYTsXsvUX0nxcCWEfs7hndDt8gKQiHs
+ 8w3UQGXgDjVtm2Mo4GlQtiJLYNNnxJEhnn9iHiZsRWskdQOCI8RYjYb9uLK4uqPZTsIZ
+ U0MNEhETogjCvzngVlDExlK3DqEJ/pnJ20HaVR/qzPLxjJrA+bnwE/g5smYzEM1FRW1d
+ 40vA==
+X-Gm-Message-State: AOAM532gpHlQYqrcbnMU7tTH2tLGS3XWFGfPrDidpjrtW+Je3T9HMSf4
+ U9tULveQasQQkf4FPi7KfOM=
+X-Google-Smtp-Source: ABdhPJwesYpdqbXffVEfuArKTeB8fbq82Mn88IJ+AIOM3WfF0QObdfPu/3ksWvttav2D8RnkKlaSfQ==
+X-Received: by 2002:a17:906:1f09:: with SMTP id
+ w9mr2655211ejj.486.1590525007118; 
+ Tue, 26 May 2020 13:30:07 -0700 (PDT)
+Received: from localhost.localdomain
+ (p200300f137189200428d5cfffeb99db8.dip0.t-ipconnect.de.
+ [2003:f1:3718:9200:428d:5cff:feb9:9db8])
+ by smtp.googlemail.com with ESMTPSA id ce16sm735517ejb.76.2020.05.26.13.30.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 26 May 2020 13:30:06 -0700 (PDT)
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+To: balbi@kernel.org, gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, narmstrong@baylibre.com
+Subject: [PATCH for-5.8 0/2] dwc3: meson-g12a: two fixes for v5.8
+Date: Tue, 26 May 2020 22:29:41 +0200
+Message-Id: <20200526202943.715220-1-martin.blumenstingl@googlemail.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200521173738.GA29590@e121166-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_132202_458096_EC5E88EB 
-X-CRM114-Status: GOOD (  13.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200526_133013_001049_0D0AF628 
+X-CRM114-Status: GOOD (  10.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [martin.blumenstingl[at]googlemail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -65,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,66 +99,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, rjw@rjwysocki.net, ndesaulniers@google.com,
- linux-kernel@vger.kernel.org, guohanjun@huawei.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ hanjie.lin@amlogic.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, yue.wang@amlogic.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Lorenzo, Hanjun, [+Nick]
+I discovered the problem addressed by the first patch while I was
+investigating a Kernel CI regression: [0]
+It is unrelated to that regression but should still be fixed.
 
-On Thu, May 21, 2020 at 06:37:38PM +0100, Lorenzo Pieralisi wrote:
-> On Thu, May 21, 2020 at 11:09:53AM +0100, Will Deacon wrote:
-> > Hi folks,
-> > 
-> > I just tried booting the arm64 for-kernelci branch under QEMU (version
-> > 4.2.50 (v4.2.0-779-g4354edb6dcc7)) with UBSAN enabled, and I see a
-> > couple of NULL pointer dereferences reported at boot. I think they're
-> > both GIC related (log below). I don't see a panic with UBSAN disabled,
-> > so something's fishy here.
-> 
-> May I ask you the QEMU command line please - just to make sure I can
-> replicate it.
+The second patch adresses the actual regression. Testing was focussed
+on GXL and GXM for the previous patches. Unfortunately one of them
+regresses USB on G12A, G12B, SM1 and A1 SoCs.
 
-As it turns out, I'm only able to reproduce this when building with Clang,
-but I don't know whether that's because GCC is missing something of Clang
-is signalling a false positive. You also don't need all of those whacky
-fuzzing options enabled.
+Please queue these for v5.8 so we don't end up with broken USB on
+some boards.
 
-Anyway, to reproduce:
 
- $ git checkout for-next/kernelci
- $ make ARCH=arm64  CC=clang CROSS_COMPILE=aarch64-linux-gnu- defconfig
- <then do a menuconfig and enable UBSAN>
- $ make ARCH=arm64  CC=clang CROSS_COMPILE=aarch64-linux-gnu- Image
+[0] https://lore.kernel.org/linux-usb/ffe2c64c-62ed-9b59-3754-7ede0f0203be@collabora.com/T/#u
 
-I throw that at QEMU using:
 
-qemu-system-aarch64 -M virt -machine virtualization=true \
-	-machine virt,gic-version=3 \
-	-cpu max,sve=off -smp 2 -m 4096 \
-	-drive if=pflash,format=raw,file=efi.img,readonly \
-	-drive if=pflash,format=raw,file=varstore.img \
-	-drive if=virtio,format=raw,file=disk.img \
-	-device virtio-scsi-pci,id=scsi0 \
-	-device virtio-rng-pci \
-	-device virtio-net-pci,netdev=net0 \
-	-netdev user,id=net0,hostfwd=tcp::8222-:22 \
-	-nographic \
-	-kernel ~/work/linux/arch/arm64/boot/Image \
-	-append "earlycon root=/dev/vda2"
+Martin Blumenstingl (2):
+  usb: dwc3: meson-g12a: fix error path when fetching the reset line
+    fails
+  usb: dwc3: meson-g12a: fix USB2 PHY initialization on G12A and A1 SoCs
 
-I built QEMU a while ago according to:
+ drivers/usb/dwc3/dwc3-meson-g12a.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-https://mirrors.edge.kernel.org/pub/linux/kernel/people/will/docs/qemu/qemu-arm64-howto.html
+-- 
+2.26.2
 
-and its version 4.2.50 (v4.2.0-779-g4354edb6dcc7).
-
-My clang is version 11.0.1.
-
-Will
 
 _______________________________________________
 linux-arm-kernel mailing list
