@@ -2,56 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D506A1E29DC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 20:14:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CAF011E2A0D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 20:29:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uV6J1J/hVtJscLdAV4sRZnXsZ4NS02Zp2Q8xfvkZvgY=; b=WV6adzFVjIeAah
-	Dd22r5NB3gbhEcb+hbHKFpolMzEMddtMkDQTw/DLdpa1yUtOUCBCCwTJhRw3T0yGY/5vRW8YEGDWt
-	H6qHTB+j2jodqk15FcOdynhAEWcHVtlYq+ZpU05ujdxOEWohNSb1xxDjmPq0qnXlRoMMbV6dgUZKz
-	CRc5qkjjyQzxGJcYmhxgN3dflOgIkXBJnBG20c7Y2uopwTocRIjnQTufP9XW+iTlXywONPD79QGHb
-	2awblvv/RtSw0+W1gxfzA5akuD0nuhPu6MnknEH8ROzQa9O4cPcYkXfoyIdPV7BhpovA7jyCJfo2l
-	mDQCbDMt/SXJ7qVfNfYQ==;
+	List-Owner; bh=/q3H5XjmpUa6yQZG736/dp16L95JmLey/Kyj4MPuh5k=; b=JkggqzI8DfZQPn
+	y5N7xpHum37L+Yg52tTYcbQrB0346Iea3vaKIP4YDx5S5ftIc2OuhPGc2SguXgXhRF1ryuRfXruuW
+	5oi1SA10+qV8vrfcQLQhsWI+rv2sTQXB1uNurELjGaK630e7hMsOIN+3wVtDv37ptFTnwtRTDqjXF
+	1zMFBqtNfvTwxK8DXswAaOoPqoTiUqHXqGRC4Rhtqn1v/ZKp6tHUdacqXekuJ0ohlW388BZhQY81Q
+	expj4abZ78hKtEDLaHq2wgTEGZqKpsac8ZQ6CyYYjghS3yGJyPo0RaTz1TBPky1H9jj4AqTyXiFOD
+	BKn+0sm5GbRk8IBKY0RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jde5Q-0000W8-OT; Tue, 26 May 2020 18:14:00 +0000
-Received: from mail.baikalelectronics.com ([87.245.175.226]
- helo=mail.baikalelectronics.ru)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jde4M-0008CU-1g
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 18:12:56 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mail.baikalelectronics.ru (Postfix) with ESMTP id 5EA46803086B;
- Tue, 26 May 2020 18:12:53 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at baikalelectronics.ru
-Received: from mail.baikalelectronics.ru ([127.0.0.1])
- by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id E_0CESn5Z1k4; Tue, 26 May 2020 21:12:52 +0300 (MSK)
-From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Jiri Slaby <jslaby@suse.com>, Andy Shevchenko
- <andriy.shevchenko@linux.intel.com>
-Subject: [PATCH v5 3/3] serial: 8250_dw: Fix common clocks usage race condition
-Date: Tue, 26 May 2020 21:12:26 +0300
-Message-ID: <20200526181227.1889-4-Sergey.Semin@baikalelectronics.ru>
-In-Reply-To: <20200526181227.1889-1-Sergey.Semin@baikalelectronics.ru>
-References: <20200526181227.1889-1-Sergey.Semin@baikalelectronics.ru>
+	id 1jdeJz-0000tu-1T; Tue, 26 May 2020 18:29:03 +0000
+Received: from mail-il1-f194.google.com ([209.85.166.194])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdeJm-0000sZ-DB; Tue, 26 May 2020 18:28:52 +0000
+Received: by mail-il1-f194.google.com with SMTP id r2so10316344ila.4;
+ Tue, 26 May 2020 11:28:50 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=8G/Js8g5idRPMRWdzi17/octVu1NTNo+9WkwNwKfGQg=;
+ b=hkyHnNvnwAh4MCZluUX+3AlbWSkAODLE+CuDnZ/CPrXj6BSU7YvUy9YHShxVh0Dqr9
+ yCwCKAveTbJ25MLAGHQ3YKtApv7B1CM0VpPF3vmA7v3TpfdfGoEq5+GGgIl19UCn5LQ2
+ tkP4G222q70e/uE0cxLMdtBnor4Wlne7WisXFlRz5Za3aU5zTN20vgMoJCgD2zL/16Nc
+ gosxKPUfMsnPgb9wfyA+mZdXoI2Zg9KZN4mZPK+yP+MCA5AP1r5U7gmalzGLRHCSvr3l
+ AghYNUqRclPtxzT/GkCORlpFLsEcUkhCR9/qYZu2acZgQ68qfHSlw/s7mpsoavySvy6r
+ d8vw==
+X-Gm-Message-State: AOAM530FFRr79bQgibjvj0QM124uWCG8gEQurfUSNeakRwKaHesc+lMt
+ NS7JCTvlvkuE8SMQeIvPEg==
+X-Google-Smtp-Source: ABdhPJzdDSCsKm+b69so9ArYKwXlWLBU/YAO20Z2v1p7Om5xOYhZPKKMyvSOleIImXZeOuuZ5F/yTg==
+X-Received: by 2002:a92:9899:: with SMTP id a25mr2343958ill.151.1590517729468; 
+ Tue, 26 May 2020 11:28:49 -0700 (PDT)
+Received: from xps15 ([64.188.179.252])
+ by smtp.gmail.com with ESMTPSA id o70sm351829ilb.86.2020.05.26.11.28.47
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 26 May 2020 11:28:48 -0700 (PDT)
+Received: (nullmailer pid 129592 invoked by uid 1000);
+ Tue, 26 May 2020 18:28:47 -0000
+Date: Tue, 26 May 2020 12:28:47 -0600
+From: Rob Herring <robh@kernel.org>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Subject: Re: [V9, 1/2] media: dt-bindings: media: i2c: Document OV02A10
+ bindings
+Message-ID: <20200526182847.GA92449@bogus>
+References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
+ <20200523084103.31276-2-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
-X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
+Content-Disposition: inline
+In-Reply-To: <20200523084103.31276-2-dongchun.zhu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_111254_448264_E69AD86E 
-X-CRM114-Status: GOOD (  24.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200526_112850_448556_5DE289D3 
+X-CRM114-Status: GOOD (  19.50  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.194 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,245 +90,236 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Maxime Ripard <mripard@kernel.org>,
- Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
- Serge Semin <Sergey.Semin@baikalelectronics.ru>,
- Serge Semin <fancer.lancer@gmail.com>, linux-serial@vger.kernel.org,
- linux-mips@vger.kernel.org, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ andriy.shevchenko@linux.intel.com, louis.kuo@mediatek.com,
+ srv_heupstream@mediatek.com, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, drinkcat@chromium.org,
+ linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The race condition may happen if the UART reference clock is shared with
-some other device (on Baikal-T1 SoC it's another DW UART port). In this
-case if that device changes the clock rate while serial console is using
-it the DW 8250 UART port might not only end up with an invalid uartclk
-value saved, but may also experience a distorted output data since
-baud-clock could have been changed. In order to fix this lets at least
-try to adjust the 8250 port setting like UART clock rate in case if the
-reference clock rate change is discovered. The driver will call the new
-method to update 8250 UART port clock rate settings. It's done by means of
-the clock event notifier registered at the port startup and unregistered
-in the shutdown callback method.
+On Sat, May 23, 2020 at 04:41:02PM +0800, Dongchun Zhu wrote:
+> Add DT bindings documentation for Omnivision OV02A10 image sensor.
+> 
+> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> ---
+>  .../bindings/media/i2c/ovti,ov02a10.yaml           | 172 +++++++++++++++++++++
+>  MAINTAINERS                                        |   7 +
+>  2 files changed, 179 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> new file mode 100644
+> index 0000000..56f31b5
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> @@ -0,0 +1,172 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +# Copyright (c) 2020 MediaTek Inc.
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/i2c/ovti,ov02a10.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Omnivision OV02A10 CMOS Sensor Device Tree Bindings
+> +
+> +maintainers:
+> +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
+> +
+> +description: |-
+> +  The Omnivision OV02A10 is a low-cost, high performance, 1/5-inch, 2 megapixel
+> +  image sensor, which is the latest production derived from Omnivision's CMOS
+> +  image sensor technology. Ihis chip supports high frame rate speeds up to 30fps
+> +  @ 1600x1200 (UXGA) resolution transferred over a 1-lane MIPI interface. The
+> +  sensor output is available via CSI-2 serial data output.
+> +
+> +properties:
+> +  compatible:
+> +    const: ovti,ov02a10
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: top mux camtg clock
+> +      - description: divider clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: eclk
+> +      - const: freq_mux
+> +
+> +  clock-frequency:
+> +    description:
+> +      Frequency of the eclk clock in Hertz.
+> +
+> +  dovdd-supply:
+> +    description:
+> +      Definition of the regulator used as Digital I/O voltage supply.
+> +
+> +  avdd-supply:
+> +    description:
+> +      Definition of the regulator used as Analog voltage supply.
+> +
+> +  dvdd-supply:
+> +    description:
+> +      Definition of the regulator used as Digital core voltage supply.
+> +
+> +  powerdown-gpios:
+> +    description:
+> +      Must be the device tree identifier of the GPIO connected to the
+> +      PD_PAD pin. This pin is used to place the OV02A10 into Standby mode
+> +      or Shutdown mode. As the line is active low, it should be
+> +      marked GPIO_ACTIVE_LOW.
 
-Note 1. In order to avoid deadlocks we had to execute the UART port update
-method in a dedicated deferred work. This is due to (in my opinion
-redundant) the clock update implemented in the dw8250_set_termios()
-method.
-Note 2. Before the ref clock is manually changed by the custom
-set_termios() function we swap the port uartclk value with new rate
-adjusted to be suitable for the requested baud. It is necessary in
-order to effectively disable a functionality of the ref clock events
-handler for the current UART port, since uartclk update will be done
-a bit further in the generic serial8250_do_set_termios() function.
+Need to define how many GPIOs ('maxItems: 1')
 
-Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
-Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-Cc: Arnd Bergmann <arnd@arndb.de>
-Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Cc: Maxime Ripard <mripard@kernel.org>
-Cc: Will Deacon <will@kernel.org>
-Cc: Russell King <linux@armlinux.org.uk>
-Cc: linux-mips@vger.kernel.org
-Cc: linux-arm-kernel@lists.infradead.org
+> +
+> +  reset-gpios:
+> +    description:
+> +      Must be the device tree identifier of the GPIO connected to the
+> +      RST_PD pin. If specified, it will be asserted during driver probe.
+> +      As the line is active high, it should be marked GPIO_ACTIVE_HIGH.
 
----
+Here too.
 
-Changelog v2:
-- Move exclusive ref clock lock/unlock precudures to the 8250 port
-  startup/shutdown methods.
-- The changelog message has also been slightly modified due to the
-  alteration.
-- Remove Alexey' SoB tag.
-- Cc someone from ARM who might be concerned regarding this change.
-- Cc someone from Clocks Framework to get their comments on this patch.
+> +
+> +  rotation:
+> +    description:
+> +      Definition of the sensor's placement.
+> +    allOf:
+> +      - $ref: "/schemas/types.yaml#/definitions/uint32"
+> +      - enum:
+> +          - 0    # Sensor Mounted Upright
+> +          - 180  # Sensor Mounted Upside Down
+> +        default: 0
+> +
+> +  ovti,mipi-tx-speed:
+> +    description:
+> +      Indication of MIPI transmission speed select, which is to control D-PHY
+> +      timing setting by adjusting MIPI clock voltage to improve the clock
+> +      driver capability.
+> +    allOf:
+> +      - $ref: "/schemas/types.yaml#/definitions/uint32"
+> +      - enum:
+> +          - 0    #  20MHz -  30MHz
+> +          - 1    #  30MHz -  50MHz
+> +          - 2    #  50MHz -  75MHz
+> +          - 3    #  75MHz - 100MHz
+> +          - 4    # 100MHz - 130MHz
+> +        default: 3
+> +
+> +  # See ../video-interfaces.txt for details
+> +  port:
+> +    type: object
+> +    additionalProperties: false
 
-Changelog v3:
-- Refactor the original patch to adjust the UART port divisor instead of
-  requesting an exclusive ref clock utilization.
+Should have a description of what data the port has.
 
-Changelog v5:
-- Refactor dw8250_clk_work_cb() function cheking the clk_get_rate()
-  return value for being erroneous and exit if it is.
-- Don't update p->uartclk on the port startup. It will be updated later in
-  the same procedure at the set_termios() function being invoked by the
-  serial_core anyway.
----
- drivers/tty/serial/8250/8250_dw.c | 105 +++++++++++++++++++++++++++++-
- 1 file changed, 102 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/tty/serial/8250/8250_dw.c b/drivers/tty/serial/8250/8250_dw.c
-index 12866083731d..fa59c026270f 100644
---- a/drivers/tty/serial/8250/8250_dw.c
-+++ b/drivers/tty/serial/8250/8250_dw.c
-@@ -19,6 +19,8 @@
- #include <linux/of_irq.h>
- #include <linux/of_platform.h>
- #include <linux/platform_device.h>
-+#include <linux/workqueue.h>
-+#include <linux/notifier.h>
- #include <linux/slab.h>
- #include <linux/acpi.h>
- #include <linux/clk.h>
-@@ -43,6 +45,8 @@ struct dw8250_data {
- 	int			msr_mask_off;
- 	struct clk		*clk;
- 	struct clk		*pclk;
-+	struct notifier_block	clk_notifier;
-+	struct work_struct	clk_work;
- 	struct reset_control	*rst;
- 
- 	unsigned int		skip_autocfg:1;
-@@ -54,6 +58,16 @@ static inline struct dw8250_data *to_dw8250_data(struct dw8250_port_data *data)
- 	return container_of(data, struct dw8250_data, data);
- }
- 
-+static inline struct dw8250_data *clk_to_dw8250_data(struct notifier_block *nb)
-+{
-+	return container_of(nb, struct dw8250_data, clk_notifier);
-+}
-+
-+static inline struct dw8250_data *work_to_dw8250_data(struct work_struct *work)
-+{
-+	return container_of(work, struct dw8250_data, clk_work);
-+}
-+
- static inline int dw8250_modify_msr(struct uart_port *p, int offset, int value)
- {
- 	struct dw8250_data *d = to_dw8250_data(p->private_data);
-@@ -260,6 +274,46 @@ static int dw8250_handle_irq(struct uart_port *p)
- 	return 0;
- }
- 
-+static void dw8250_clk_work_cb(struct work_struct *work)
-+{
-+	struct dw8250_data *d = work_to_dw8250_data(work);
-+	struct uart_8250_port *up;
-+	unsigned long rate;
-+
-+	rate = clk_get_rate(d->clk);
-+	if (rate <= 0)
-+		return;
-+
-+	up = serial8250_get_port(d->data.line);
-+
-+	serial8250_update_uartclk(&up->port, rate);
-+}
-+
-+static int dw8250_clk_notifier_cb(struct notifier_block *nb,
-+				  unsigned long event, void *data)
-+{
-+	struct dw8250_data *d = clk_to_dw8250_data(nb);
-+
-+	/*
-+	 * We have no choice but to defer the uartclk update due to two
-+	 * deadlocks. First one is caused by a recursive mutex lock which
-+	 * happens when clk_set_rate() is called from dw8250_set_termios().
-+	 * Second deadlock is more tricky and is caused by an inverted order of
-+	 * the clk and tty-port mutexes lock. It happens if clock rate change
-+	 * is requested asynchronously while set_termios() is executed between
-+	 * tty-port mutex lock and clk_set_rate() function invocation and
-+	 * vise-versa. Anyway if we didn't have the reference clock alteration
-+	 * in the dw8250_set_termios() method we wouldn't have needed this
-+	 * deferred event handling complication.
-+	 */
-+	if (event == POST_RATE_CHANGE) {
-+		queue_work(system_unbound_wq, &d->clk_work);
-+		return NOTIFY_OK;
-+	}
-+
-+	return NOTIFY_DONE;
-+}
-+
- static void
- dw8250_do_pm(struct uart_port *port, unsigned int state, unsigned int old)
- {
-@@ -283,9 +337,16 @@ static void dw8250_set_termios(struct uart_port *p, struct ktermios *termios,
- 	clk_disable_unprepare(d->clk);
- 	rate = clk_round_rate(d->clk, baud * 16);
- 	if (rate > 0) {
--		ret = clk_set_rate(d->clk, rate);
--		if (!ret)
--			p->uartclk = rate;
-+		/*
-+		 * Premilinary set the uartclk to the new clock rate so the
-+		 * clock update event handler caused by the clk_set_rate()
-+		 * calling wouldn't actually update the UART divisor since
-+		 * we about to do this anyway.
-+		 */
-+		swap(p->uartclk, rate);
-+		ret = clk_set_rate(d->clk, p->uartclk);
-+		if (ret)
-+			swap(p->uartclk, rate);
- 	}
- 	clk_prepare_enable(d->clk);
- 
-@@ -312,6 +373,39 @@ static void dw8250_set_ldisc(struct uart_port *p, struct ktermios *termios)
- 	serial8250_do_set_ldisc(p, termios);
- }
- 
-+static int dw8250_startup(struct uart_port *p)
-+{
-+	struct dw8250_data *d = to_dw8250_data(p->private_data);
-+	int ret;
-+
-+	/*
-+	 * Some platforms may provide a reference clock shared between several
-+	 * devices. In this case before using the serial port first we have to
-+	 * make sure that any clock state change is known to the UART port at
-+	 * least post factum.
-+	 */
-+	if (d->clk) {
-+		ret = clk_notifier_register(d->clk, &d->clk_notifier);
-+		if (ret)
-+			dev_warn(p->dev, "Failed to set the clock notifier\n");
-+	}
-+
-+	return serial8250_do_startup(p);
-+}
-+
-+static void dw8250_shutdown(struct uart_port *p)
-+{
-+	struct dw8250_data *d = to_dw8250_data(p->private_data);
-+
-+	serial8250_do_shutdown(p);
-+
-+	if (d->clk) {
-+		clk_notifier_unregister(d->clk, &d->clk_notifier);
-+
-+		flush_work(&d->clk_work);
-+	}
-+}
-+
- /*
-  * dw8250_fallback_dma_filter will prevent the UART from getting just any free
-  * channel on platforms that have DMA engines, but don't have any channels
-@@ -407,6 +501,8 @@ static int dw8250_probe(struct platform_device *pdev)
- 	p->serial_out	= dw8250_serial_out;
- 	p->set_ldisc	= dw8250_set_ldisc;
- 	p->set_termios	= dw8250_set_termios;
-+	p->startup	= dw8250_startup;
-+	p->shutdown	= dw8250_shutdown;
- 
- 	p->membase = devm_ioremap(dev, regs->start, resource_size(regs));
- 	if (!p->membase)
-@@ -468,6 +564,9 @@ static int dw8250_probe(struct platform_device *pdev)
- 	if (IS_ERR(data->clk))
- 		return PTR_ERR(data->clk);
- 
-+	INIT_WORK(&data->clk_work, dw8250_clk_work_cb);
-+	data->clk_notifier.notifier_call = dw8250_clk_notifier_cb;
-+
- 	err = clk_prepare_enable(data->clk);
- 	if (err)
- 		dev_warn(dev, "could not enable optional baudclk: %d\n", err);
--- 
-2.26.2
-
+> +
+> +    properties:
+> +      endpoint:
+> +        type: object
+> +        additionalProperties: false
+> +
+> +        properties:
+> +          data-lanes:
+> +            maxItems: 1
+> +
+> +          link-frequencies: true
+> +          remote-endpoint: true
+> +
+> +        required:
+> +          - data-lanes
+> +          - link-frequencies
+> +          - remote-endpoint
+> +
+> +    required:
+> +      - endpoint
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - clocks
+> +  - clock-names
+> +  - clock-frequency
+> +  - dovdd-supply
+> +  - avdd-supply
+> +  - dvdd-supply
+> +  - powerdown-gpios
+> +  - reset-gpios
+> +  - port
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +
+> +    #include <dt-bindings/clock/mt8183-clk.h>
+> +    #include <dt-bindings/gpio/gpio.h>
+> +
+> +    i2c {
+> +        #address-cells = <1>;
+> +        #size-cells = <0>;
+> +
+> +        ov02a10: camera-sensor@3d {
+> +            compatible = "ovti,ov02a10";
+> +            reg = <0x3d>;
+> +            pinctrl-names = "default";
+> +            pinctrl-0 = <&clk_24m_cam>;
+> +
+> +            clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
+> +                     <&topckgen CLK_TOP_UNIVP_192M_D8>;
+> +            clock-names = "eclk", "freq_mux";
+> +            clock-frequency = <24000000>;
+> +
+> +            rotation = <180>;
+> +            ovti,mipi-tx-speed = <4>;
+> +
+> +            dovdd-supply = <&mt6358_vcamio_reg>;
+> +            avdd-supply = <&mt6358_vcama1_reg>;
+> +            dvdd-supply = <&mt6358_vcn18_reg>;
+> +
+> +            powerdown-gpios = <&pio 107 GPIO_ACTIVE_LOW>;
+> +            reset-gpios = <&pio 109 GPIO_ACTIVE_HIGH>;
+> +
+> +            port {
+> +                wcam_out: endpoint {
+> +                    data-lanes = <1>;
+> +                    link-frequencies = /bits/ 64 <390000000>;
+> +                    remote-endpoint = <&mipi_in_wcam>;
+> +                };
+> +            };
+> +        };
+> +    };
+> +
+> +...
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index e64e5db..63a2335 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -12389,6 +12389,13 @@ M:	Harald Welte <laforge@gnumonks.org>
+>  S:	Maintained
+>  F:	drivers/char/pcmcia/cm4040_cs.*
+>  
+> +OMNIVISION OV02A10 SENSOR DRIVER
+> +M:	Dongchun Zhu <dongchun.zhu@mediatek.com>
+> +L:	linux-media@vger.kernel.org
+> +S:	Maintained
+> +T:	git git://linuxtv.org/media_tree.git
+> +F:	Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> +
+>  OMNIVISION OV13858 SENSOR DRIVER
+>  M:	Sakari Ailus <sakari.ailus@linux.intel.com>
+>  L:	linux-media@vger.kernel.org
+> -- 
+> 2.9.2
 
 _______________________________________________
 linux-arm-kernel mailing list
