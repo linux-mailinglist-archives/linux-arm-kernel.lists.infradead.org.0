@@ -2,69 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16D291E1FDA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 12:38:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7415B1E1FED
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 12:40:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RY6uUHFzqzbTjIqnD7sSLJ//nYILAuPHovL8YVvpjvQ=; b=jUsVUbiXIs9rG/
-	v/IZMDZ32zaRp4kt1qTq9vH9I2Q3AXXnWw3FAl+wn+KsGVEFlhazR7MxlesgzCu/VEXd3PxKZ3ByZ
-	tDuyO3oVs97hCEJRme1IdD2wPD5S3XGiyJu0L1GNTZ0SKMV9gF+//oBdux4EUASVRVErmQlKsd5e6
-	dRwecUyaUMooK5Xnep/BgJ1pvyfX+hwGgii7y4MQ4uWlCj7/jVag9xzAcRt4AQhem663JPWzeXOo/
-	LYlAT7Hx3Cs3C4W8OHwTpgyeP/0NPvcjPaMF9HBj3lbsjW32EgvVJs9G5EdOkYQ8LZtr9YYyI2+it
-	zLdVjv5ubqQLrfjeuDSg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4uBFEGTtVgytfEUwzYUa3JVj5jhw8EICQbw2KKhpm+M=; b=kgBMjgdIHNPsdU
+	yo8ySySMUMat0QF49gQ5gATl8FD9xTYZxCdg6QkyqkB4v8KN5XpTDEXJ4+Fd8/SQIVdBM/72IOB3C
+	Qtvj2OJbEG+k5ZFo1K0CV+a/UFLTNK+k7ruFOAHK968n/m3qBsE4oZo5NS7tqeKGmJAvD9rWmyPYH
+	8oHZjmbl2yEOa31yesZ2MFykQO4fjhTV+I5EDxrugX+0meEKN0X8g4skQVDfpN42zQGEk1/uZt28u
+	rf5Sk03WhDTh3lHp8vcl5TFKYIsmHzLY1y1gZA6xf+hAi2XEn1EoFTqr57e9Ti5ccw6whjWNdtlOQ
+	+pJ6/lMu9jOg+0u/yvnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdWyP-0002ez-Pu; Tue, 26 May 2020 10:38:17 +0000
-Received: from smtp.domeneshop.no ([2a01:5b40:0:3005::1])
+	id 1jdX03-0003DI-9X; Tue, 26 May 2020 10:39:59 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdWyF-0002eP-9f
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 10:38:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=tronnes.org
- ; s=ds201912;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=DcCPTegeL4/9yo2vCU/JGoVKdudEoFYRZ1hgMcX0JO0=; b=qhIXUq65KKmkwLWRnRnI9CLOIS
- rD3r9RUkwcBrzCVqh8UlmI4LPMGuYe0mhot5T8qAOpfEpmpCQmJt5AMH+nKfagIPpkJRMleng1mxz
- OyTK+NFKACihHd75NOPNlfEPWMGrMNPGsC1CL0dV/C0BrRk4VRNMqcAb0Anc8TK6hbWNnDiue89PQ
- VT5+lRx38B/PrsaAuVranD0BLfTnG7SmrJxOOM7zDIHSsL7XlSdPJ4LJ5kMngek2ugR4+s3p7omsh
- BmQoIVwFO4bL2f0m9dY/lEGh6ygghp/tRCaOp54B/zfoU6JcRyRvvI0pYLHODI1ez2TMXOONr8GyV
- fwZhjEgQ==;
-Received: from 211.81-166-168.customer.lyse.net ([81.166.168.211]:58843
- helo=[192.168.10.61])
- by smtp.domeneshop.no with esmtpsa (TLS1.3:ECDHE_RSA_AES_128_GCM_SHA256:128)
- (Exim 4.92) (envelope-from <noralf@tronnes.org>)
- id 1jdWyA-00012X-Db; Tue, 26 May 2020 12:38:02 +0200
-Subject: Re: [PATCH v5 6/8] drm/panel: Add ilitek ili9341 panel driver
-To: dillon min <dillon.minfei@gmail.com>,
- Andy Shevchenko <andy.shevchenko@gmail.com>
-References: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
- <1590378348-8115-7-git-send-email-dillon.minfei@gmail.com>
- <CAHp75VebSZa6mwAETnM0t42RQCp4iM6_SNjmy3TB48ixsGKV8g@mail.gmail.com>
- <CAL9mu0+jmcivC6zAXxK0-oXy3n44pAU1QGD7BDq=CT2D7twROQ@mail.gmail.com>
-From: =?UTF-8?Q?Noralf_Tr=c3=b8nnes?= <noralf@tronnes.org>
-Message-ID: <c085e8f5-f626-28a9-1d3f-a1c277ec5052@tronnes.org>
-Date: Tue, 26 May 2020 12:38:00 +0200
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jdWzq-0003Bo-8C
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 10:39:47 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04QAc29I022072; Tue, 26 May 2020 12:39:40 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=date : from : to : cc :
+ subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=STMicroelectronics;
+ bh=C8k53DjjYyfSex56lDdOYubcmmBBqtjkh1SjIKFK07M=;
+ b=TJa7J+KAtCbOnxiZK8u+N6QqtUgLtfQvtNkevPschMh1XJjFhH8jP552iBQXXguttwQh
+ z3w80ac8qN4sp+TpakM9FxdyUhhRplARc6bqFemUdyeet+YozLGN+j6fLWSjU1zjLybG
+ TI+GIi4nfOW98MmUuiLAwIZI9dwUTAQf5fRzNfMhqezE6D9U5tpJjdihzwQ8HkA3+e5y
+ dqmtRyZKYc2eJ+7ehnq1PVI/44JJhoaIt4Iuqd5HSrWOISTNrDI5bAtEzrDpXAD+eyps
+ FX3ZiJqBU16syzJTWse7QPXLIZGe/UDh6Xgq6GGy5SqQ802IJN07pc5bhY0nhR/lop5O Kw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 316skw75hc-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 26 May 2020 12:39:40 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 4FD7710002A;
+ Tue, 26 May 2020 12:39:40 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 399452A705A;
+ Tue, 26 May 2020 12:39:40 +0200 (CEST)
+Received: from gnbcxd0016.gnb.st.com (10.75.127.46) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 26 May
+ 2020 12:39:39 +0200
+Date: Tue, 26 May 2020 12:39:38 +0200
+From: Alain Volmat <alain.volmat@st.com>
+To: Wolfram Sang <wsa@kernel.org>
+Subject: Re: [PATCH 4/4] i2c: stm32f7: Add SMBus-specific protocols support
+Message-ID: <20200526103938.GC14423@gnbcxd0016.gnb.st.com>
+Mail-Followup-To: Wolfram Sang <wsa@kernel.org>,
+ Benjamin Tissoires <benjamin.tissoires@redhat.com>,
+ robh+dt@kernel.org, mark.rutland@arm.com,
+ pierre-yves.mordret@st.com, mcoquelin.stm32@gmail.com,
+ alexandre.torgue@st.com, linux-i2c@vger.kernel.org,
+ devicetree@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ fabrice.gasnier@st.com
+References: <1588657871-14747-1-git-send-email-alain.volmat@st.com>
+ <1588657871-14747-5-git-send-email-alain.volmat@st.com>
+ <20200523110140.GD3459@ninjato>
 MIME-Version: 1.0
-In-Reply-To: <CAL9mu0+jmcivC6zAXxK0-oXy3n44pAU1QGD7BDq=CT2D7twROQ@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20200523110140.GD3459@ninjato>
+X-Disclaimer: ce message est personnel / this message is private
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-05-26_01:2020-05-26,
+ 2020-05-26 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_033808_055532_88B46867 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20200526_033946_645234_C05A1E9F 
+X-CRM114-Status: GOOD (  18.49  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:5b40:0:3005:0:0:0:1 listed in] [list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -85,66 +106,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- linux-spi <linux-spi@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
- Sam Ravnborg <sam@ravnborg.org>, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
+ linux-kernel@vger.kernel.org, pierre-yves.mordret@st.com, robh+dt@kernel.org,
+ Benjamin Tissoires <benjamin.tissoires@redhat.com>, linux-i2c@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sat, May 23, 2020 at 01:01:40PM +0200, Wolfram Sang wrote:
+> 
+> > +static int stm32f7_i2c_reg_client(struct i2c_client *client)
+> > +{
+> > +	struct stm32f7_i2c_dev *i2c_dev = i2c_get_adapdata(client->adapter);
+> > +	int ret;
+> > +
+> > +	if (client->flags & I2C_CLIENT_HOST_NOTIFY) {
+> > +		/* Only enable on the first device registration */
+> > +		if (atomic_inc_return(&i2c_dev->host_notify_cnt) == 1) {
+> > +			ret = stm32f7_i2c_enable_smbus_host(i2c_dev);
+> > +			if (ret) {
+> > +				dev_err(i2c_dev->dev,
+> > +					"failed to enable SMBus host notify (%d)\n",
+> > +					ret);
+> > +				return ret;
+> > +			}
+> > +		}
+> > +	}
+> > +
+> > +	return 0;
+> > +}
+> 
+> So, as mentioned in the other review, I'd like to evaluate other
+> possibilities for the above:
+> 
+> - One option is to enable it globally in probe(). Then you lose the
+>   possibility to have a device at address 0x08.
 
+I'd prefer avoid this solution to not lose the address 0x08.
 
-Den 26.05.2020 11.08, skrev dillon min:
-> Hi Andy,
-> 
-> Thanks for input.
-> 
-> On Tue, May 26, 2020 at 3:46 PM Andy Shevchenko
-> <andy.shevchenko@gmail.com> wrote:
->>
->> On Mon, May 25, 2020 at 6:46 AM <dillon.minfei@gmail.com> wrote:
->>>
->>> From: dillon min <dillon.minfei@gmail.com>
->>>
->>>     This driver combine tiny/ili9341.c mipi_dbi_interface driver
->>>     with mipi_dpi_interface driver, can support ili9341 with serial
->>>     mode or parallel rgb interface mode by register configuration.
->>
->> Noralf told once that this driver should be unified with mi0283qt.c.
->>
->> So, what should we do here?
->>
->> --
->> With Best Regards,
->> Andy Shevchenko
-> 
-> from sam's suggestion, we can't setup two drivers to support one panel
-> in the tree. so, i copy the mipi dbi part from tiny/ili9341.c. to this driver
-> from register settings and dts binding is keep the same to tiny/ili9341.c.
-> 
-> so, in my opinion if tiny/ili9341.c is unified with mi0283qt.c, this
-> driver should be
-> too.
-> 
+> - Enable it in probe() only if there is a generic binding "host-notify".
 
-There's a discussion about MIPI DBI panels here:
+Do you mean having the adapter walk through childs node and see if at least
+one of them have the host-notify property ? This mean that such solution
+wouldn't work for device relying on platform data rather than DT nodes.
 
-MIPI DSI, DBI, and tinydrm drivers
-https://lists.freedesktop.org/archives/dri-devel/2020-May/267031.html
+> - Let the core scan for a device with HOST_NOTIFY when registering an
+>   adapter and then call back into the driver somehow?
 
-Noralf.
+You mean at adapter registration time only ? Not device probing time ?
+At probing time, we could have the core (i2c_device_probe) check for the flag
+HOST_NOTIFY and if setted call a dedicated host-notify reg callback ?
 
-> thanks.
 > 
-> best regards,
-> 
-> Dillon,
+> Other ideas?
 > 
 
 _______________________________________________
