@@ -2,58 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D73081E2145
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:50:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD7221E214A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:50:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=pVYXHMC7rSCOzHO8otHr1u9aVs1sFLRlelzLpYXL5ak=; b=F8q
-	vKbDEFPpDp+9PNRiR5qQCVAqpkxDARueY6oBQWu2R6zUrXpHPvGzshH8WJgts/5jbb68glOiyUvwY
-	2CntAhVUC5PZnaw1eIR29detd25t10bnwwr0eLtCKwiorP7ly68bdSnK1IRztkoVdheS6B9wqLkky
-	iqCcxm4iSqlbHf3ZUHcXcFclq5YUhCqxu47xpizqoXrvBBksp41XJ4eWk+00jcxr8nwB6jswbnA00
-	s7d8q/uRyDkn6YvhALBRJW9PheTvNcXaTwgOlluXLue0WVuQfbrddStOMLhPU0tgTOaPKVFNQdcWk
-	b5WbF5OsFgCoYevCznfH5CP/N4YobCg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=fq8DhVxSVImei5iT66bFbQUSzwsBusIwafat1ClRRHw=; b=XYvR+ZE0wWlwUBDk+A5uq/2eRS
+	883cOalDlmBY/ED0GIN8e5Zt8uudJd5+QvBnQ8VQbS6D8n5lAibAOret+d6ygFxzl9Dbz+v5P0kbi
+	KSxxsRcjWb1sNuTcXYVz4/QpDLTqtHzAS4kAKhSv0ZmiL1arxjKVMgMY2WTgH69P48okpIzmE84/Q
+	R1O3ai24Rl/0/Vx8F313WcdMBxKNq9/W5x0GuLruYP+qeQgAc5RwBId/u3WKicLRhSeyabP3lwIBU
+	xWeAmfxZJGmzu3UrWM/5/YPGeJn6+UKVe6GlY0MFOfSPRNRp+ryorEbBS1UsLUjqxuxjPYLHN78O5
+	36KvhI7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdY65-0001Mp-BP; Tue, 26 May 2020 11:50:17 +0000
+	id 1jdY6L-00040O-QC; Tue, 26 May 2020 11:50:33 +0000
 Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdY5d-0001Ij-31
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:49:50 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y18so10067607pfl.9
+ id 1jdY5r-0001W9-Nq
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:50:06 +0000
+Received: by mail-pf1-x442.google.com with SMTP id y18so10067795pfl.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 04:49:48 -0700 (PDT)
+ Tue, 26 May 2020 04:50:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=aQLHuck/H6hUhxdEpWbnpYG+y4hFu1KRyBN1f+7zkW8=;
- b=XirmZKzM+LLXAtNZtlVmQwpy7SRWcMC0TYlRFk6EZGxsqxO252W3y8Nbx4uWD13qJw
- t6QjUR70f+5VrzW+sLYKnb8N8Jp5p/D00A51Ue/rxj4SAEosbp4CeVDJsJSIvPSWRds6
- /mk9A2jA56M7p0pSDTmMSNjOjPAWeCn/FACm5/I5azIw1lC3WMp2WR3XnbKbz9xqsl2/
- ulTm4r8T6NUFIzbvPYU2rllFJGPgCXxuSK2bWEK8Oovu2ZNsAUny/uwETLINLVVqPbNh
- AC58/ztbWIjpzc0KrCChbcnxAr9RxwVmBX0Q6vVr6ifmh4olUxNMQiOLvWnSfEcQiZg/
- 3Emw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=+jiFCKG1lfnYYtqCMQUL0FADyscKoxL3O8Mn7sFVi4U=;
+ b=xWP3LMiyXg9WkEiCrpIrQqSQF1pBVUsQ/FYoKllTcxGYHWrOAX4/TKjQGf13lZw580
+ kC7tZD5+ouByzCMpq3BjvKl4uV+20ecDjbKIzC7XkeNOtei2O0mO9XfES0omT/1eNKSv
+ v7GffipQ1UW17lE2ZPi167S7hV1unlCmvYmV/tqqQoK+cRhJBUuOUVEvwSddusA+1uX1
+ 5n7mgziqybjr23CBfp1mgDVcBGmdWAPJ/dfkzBfPtpzdv5kR7VVMrqyYLvZD5BCm6FLf
+ k+061vIoLAo4EHP+slmxjiehDXFzdkE0279YHy3AU9/dLCDnJ3gjhArclFyuDLHSlO5u
+ 6iqQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=aQLHuck/H6hUhxdEpWbnpYG+y4hFu1KRyBN1f+7zkW8=;
- b=juteZGlr3+4t4iRQRwvdYEx9cl4nRjuXUZZyMkYcCh6W22HPgUByPV6NSI7RTHgFkm
- 5/SmAa7Pp4xFKhQub6ksXTk+5REQUoHp7p62tNi1o7IzOK/WmfTunfShmI3ojWzI1Wr1
- a4xhi03oWdsOpn4JdDV4VyObZG5DG7Wd4aQGo3KmL8kK4XVxH+mSAMj/0WNqlgEUduuz
- RamVy8P3AJVHYJdBcry0nXHZsCQyWrzSQ2MRr701WLuifcsl6S3xH9R6zv6vaCt7alr/
- BFQcchxhkWkgn1fR5u+wutouCPcCJwJ5mOUMnRC+KZcooSiIvy4ovQO8ZksCkzkLKDob
- 5Thw==
-X-Gm-Message-State: AOAM533PTr6CGcpIm/ral2O7DHe5F0l2Tgb1B9s3SJfIYCUZ4RT1ynx8
- z3z8pmIFHg+AHgw5bTBTwHAbSQ==
-X-Google-Smtp-Source: ABdhPJwWqcev50wczjJKTLuB5KeWjX6Xh40o0PZ2aKsrj0RnXDD5TWs804Gl6GBeG4uho5hk5LIVkg==
-X-Received: by 2002:a63:33c6:: with SMTP id z189mr714101pgz.426.1590493787584; 
- Tue, 26 May 2020 04:49:47 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=+jiFCKG1lfnYYtqCMQUL0FADyscKoxL3O8Mn7sFVi4U=;
+ b=stnT2+z8uOHnHPgB6jY1q2edLSCmnjSQQtwHPN2mgNgL0HLWsvLGLamSTEQvf5gg/x
+ XMdUN0fgwEy9Q+ZjbjvTTfWH1gsgGpTJmcYem+NM92OH8ut5XaemET4SeEpvXiHb7EEi
+ 6kQzNDgek70pZ8BP9P97GBShMRVd21mlguA7glqrM3HM75FJ/H0YSCQCVwcajhLU05um
+ e72e54xUzc30tAZndHA8tunxdyby/EXHcDByupqO+wCYKuipD/s5BdHP0bFEthBH9iLv
+ uB54jHZ6LH+zcHIaR+f/Jly+TcYLq18dHOVTeSAdRQ6TQBDy1u4jucIRCF2+3sILZ/2X
+ Topw==
+X-Gm-Message-State: AOAM530qHLCwgtwm1nNp36ShffVTIWXEz9GeFnBfhU5NrwxbbGa4Fu2Z
+ LaOC1qJiX/QYR9sEj5f5Jf+8og==
+X-Google-Smtp-Source: ABdhPJz/38ANaCZARqziU7c0uO3u8fyzoWL11rla4SWMrBnFZjbOk7LU2LfzTWgFz9APwdcIVXrm+w==
+X-Received: by 2002:a63:4a1d:: with SMTP id x29mr671835pga.53.1590493801979;
+ Tue, 26 May 2020 04:50:01 -0700 (PDT)
 Received: from localhost.localdomain ([45.135.186.9])
- by smtp.gmail.com with ESMTPSA id c12sm15586567pjm.46.2020.05.26.04.49.29
+ by smtp.gmail.com with ESMTPSA id c12sm15586567pjm.46.2020.05.26.04.49.48
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 26 May 2020 04:49:46 -0700 (PDT)
+ Tue, 26 May 2020 04:50:01 -0700 (PDT)
 From: Zhangfei Gao <zhangfei.gao@linaro.org>
 To: Joerg Roedel <joro@8bytes.org>, Bjorn Helgaas <bhelgaas@google.com>,
  Arnd Bergmann <arnd@arndb.de>,
@@ -64,13 +66,15 @@ To: Joerg Roedel <joro@8bytes.org>, Bjorn Helgaas <bhelgaas@google.com>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Herbert Xu <herbert@gondor.apana.org.au>, kenneth-lee-2012@foxmail.com,
  Wangzhou <wangzhou1@hisilicon.com>
-Subject: [PATCH 0/2] Introduce PCI_FIXUP_IOMMU
-Date: Tue, 26 May 2020 19:49:07 +0800
-Message-Id: <1590493749-13823-1-git-send-email-zhangfei.gao@linaro.org>
+Subject: [PATCH 1/2] PCI: Introduce PCI_FIXUP_IOMMU
+Date: Tue, 26 May 2020 19:49:08 +0800
+Message-Id: <1590493749-13823-2-git-send-email-zhangfei.gao@linaro.org>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1590493749-13823-1-git-send-email-zhangfei.gao@linaro.org>
+References: <1590493749-13823-1-git-send-email-zhangfei.gao@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_044949_188876_E9B5284C 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20200526_045003_788760_C5AA6CB6 
+X-CRM114-Status: GOOD (  13.23  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -114,38 +118,88 @@ and they need fixup in drivers/pci/quirks.c handling iommu_fwnode.
 Here introducing PCI_FIXUP_IOMMU, which is called after iommu_fwnode
 is allocated, instead of reusing PCI_FIXUP_FINAL since it will slow
 down iommu probing as all devices in fixup final list will be
-reprocessed, suggested by Joerg, [1]
+reprocessed.
 
-For example:
-Hisilicon platform device need fixup in
-drivers/pci/quirks.c handling fwspec->can_stall, which is introduced in [2]
-
-+static void quirk_huawei_pcie_sva(struct pci_dev *pdev)
-+{
-+    struct iommu_fwspec *fwspec;
-+
-+    pdev->eetlp_prefix_path = 1;
-+    fwspec = dev_iommu_fwspec_get(&pdev->dev);
-+    if (fwspec)
-+        fwspec->can_stall = 1;
-+}
-+
-+DECLARE_PCI_FIXUP_IOMMU(PCI_VENDOR_ID_HUAWEI, 0xa250, quirk_huawei_pcie_sva);
-+DECLARE_PCI_iFIXUP_IOMMU(PCI_VENDOR_ID_HUAWEI, 0xa251, quirk_huawei_pcie_sva); 
-
-[1] https://www.spinics.net/lists/iommu/msg44591.html
-[2] https://www.spinics.net/lists/linux-pci/msg94559.html
-
-Zhangfei Gao (2):
-  PCI: Introduce PCI_FIXUP_IOMMU
-  iommu: calling pci_fixup_iommu in iommu_fwspec_init
-
- drivers/iommu/iommu.c             | 4 ++++
+Suggested-by: Joerg Roedel <joro@8bytes.org>
+Signed-off-by: Zhangfei Gao <zhangfei.gao@linaro.org>
+---
  drivers/pci/quirks.c              | 7 +++++++
  include/asm-generic/vmlinux.lds.h | 3 +++
  include/linux/pci.h               | 8 ++++++++
- 4 files changed, 22 insertions(+)
+ 3 files changed, 18 insertions(+)
 
+diff --git a/drivers/pci/quirks.c b/drivers/pci/quirks.c
+index ca9ed57..b037034 100644
+--- a/drivers/pci/quirks.c
++++ b/drivers/pci/quirks.c
+@@ -83,6 +83,8 @@ extern struct pci_fixup __start_pci_fixups_header[];
+ extern struct pci_fixup __end_pci_fixups_header[];
+ extern struct pci_fixup __start_pci_fixups_final[];
+ extern struct pci_fixup __end_pci_fixups_final[];
++extern struct pci_fixup __start_pci_fixups_iommu[];
++extern struct pci_fixup __end_pci_fixups_iommu[];
+ extern struct pci_fixup __start_pci_fixups_enable[];
+ extern struct pci_fixup __end_pci_fixups_enable[];
+ extern struct pci_fixup __start_pci_fixups_resume[];
+@@ -118,6 +120,11 @@ void pci_fixup_device(enum pci_fixup_pass pass, struct pci_dev *dev)
+ 		end = __end_pci_fixups_final;
+ 		break;
+ 
++	case pci_fixup_iommu:
++		start = __start_pci_fixups_iommu;
++		end = __end_pci_fixups_iommu;
++		break;
++
+ 	case pci_fixup_enable:
+ 		start = __start_pci_fixups_enable;
+ 		end = __end_pci_fixups_enable;
+diff --git a/include/asm-generic/vmlinux.lds.h b/include/asm-generic/vmlinux.lds.h
+index 71e387a..3da32d8 100644
+--- a/include/asm-generic/vmlinux.lds.h
++++ b/include/asm-generic/vmlinux.lds.h
+@@ -411,6 +411,9 @@
+ 		__start_pci_fixups_final = .;				\
+ 		KEEP(*(.pci_fixup_final))				\
+ 		__end_pci_fixups_final = .;				\
++		__start_pci_fixups_iommu = .;				\
++		KEEP(*(.pci_fixup_iommu))				\
++		__end_pci_fixups_iommu = .;				\
+ 		__start_pci_fixups_enable = .;				\
+ 		KEEP(*(.pci_fixup_enable))				\
+ 		__end_pci_fixups_enable = .;				\
+diff --git a/include/linux/pci.h b/include/linux/pci.h
+index 83ce1cd..0d5fbf8 100644
+--- a/include/linux/pci.h
++++ b/include/linux/pci.h
+@@ -1892,6 +1892,7 @@ enum pci_fixup_pass {
+ 	pci_fixup_early,	/* Before probing BARs */
+ 	pci_fixup_header,	/* After reading configuration header */
+ 	pci_fixup_final,	/* Final phase of device fixups */
++	pci_fixup_iommu,	/* After iommu_fwspec_init */
+ 	pci_fixup_enable,	/* pci_enable_device() time */
+ 	pci_fixup_resume,	/* pci_device_resume() */
+ 	pci_fixup_suspend,	/* pci_device_suspend() */
+@@ -1934,6 +1935,10 @@ enum pci_fixup_pass {
+ 					 class_shift, hook)		\
+ 	DECLARE_PCI_FIXUP_SECTION(.pci_fixup_final,			\
+ 		hook, vendor, device, class, class_shift, hook)
++#define DECLARE_PCI_FIXUP_CLASS_IOMMU(vendor, device, class,		\
++					 class_shift, hook)		\
++	DECLARE_PCI_FIXUP_SECTION(.pci_fixup_iommu,			\
++		hook, vendor, device, class, class_shift, hook)
+ #define DECLARE_PCI_FIXUP_CLASS_ENABLE(vendor, device, class,		\
+ 					 class_shift, hook)		\
+ 	DECLARE_PCI_FIXUP_SECTION(.pci_fixup_enable,			\
+@@ -1964,6 +1969,9 @@ enum pci_fixup_pass {
+ #define DECLARE_PCI_FIXUP_FINAL(vendor, device, hook)			\
+ 	DECLARE_PCI_FIXUP_SECTION(.pci_fixup_final,			\
+ 		hook, vendor, device, PCI_ANY_ID, 0, hook)
++#define DECLARE_PCI_FIXUP_IOMMU(vendor, device, hook)			\
++	DECLARE_PCI_FIXUP_SECTION(.pci_fixup_iommu,			\
++		hook, vendor, device, PCI_ANY_ID, 0, hook)
+ #define DECLARE_PCI_FIXUP_ENABLE(vendor, device, hook)			\
+ 	DECLARE_PCI_FIXUP_SECTION(.pci_fixup_enable,			\
+ 		hook, vendor, device, PCI_ANY_ID, 0, hook)
 -- 
 2.7.4
 
