@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C28E91E3218
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 00:11:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C76FA1E321A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 00:12:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q+rbYXlK2Er5cSPnQ0aSnaRpEeMMpzdD0OCQvRTr9A4=; b=Su3DMgGn7nGs+h
-	aOrDYtZwA+mkbIvVI40uubDI3UcXGaG33FImng+O9YSSU0uv8Gi8468bhg8RweXwyHt6A01XaTctM
-	XRyOkdXDG7dVDEKxs6jWnx3NBBHMzpskwi9j33bpIvdp8qq3w0DBAXkh1GtbUYWKOUgC5aBQ53RcY
-	UJnJ54ZQ9uziEE5x/Glg9wg2TqABGTUvr7XhXQomBuKf7799/w9ytpfso3CdEIheM628CPe3mVQDg
-	cIasbyKMLHGiMr8NSE6qRolYC83uLsaC20ykH6pxblsG/rGv8NXn68OM9EiiNqhmLEPXZ4l/pUKpt
-	XgbaydLQqNnZSY3U44Pw==;
+	List-Owner; bh=nwlYJDK+S576l2pTETWaCazaEslBJpGsEDhPYM143Jw=; b=scYLr/9NxiPhUa
+	CitEGWTtXtPrASLWM0Hp2ZYYOZl+4DfWuNwj0V8PDfE3obN7hqd6MHNGhbKo2uzRXWILLMO4r1ryG
+	acEtMt5jouTkaovuPiKtrH2nCX2W9wpEmbMTBfbcKkDoQZdXf+YeTeBZ0ftosgLMIbri6T/3Z54fc
+	J5hjBWXcCGNpWI5A5fO3ep6aSVDGaXoZwQc5opIii9kny+J+P+fZ3P9fNugDZOrsYCH3OqYEfiX2Z
+	QKT2Qjk1WaizPTK1qBVFIJHM3Js3L2pxuBWAzNTYNRSrLNsjI/OiVqAwKdSZPRLUu+SXiwKEAWisk
+	wygHsPinpTefOngB51eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdhn1-00038i-Im; Tue, 26 May 2020 22:11:15 +0000
+	id 1jdho4-0003VF-R6; Tue, 26 May 2020 22:12:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdhmj-00031z-No
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 22:11:00 +0000
+ id 1jdhnv-0003Ut-7a
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 22:12:12 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1734C208DB;
- Tue, 26 May 2020 22:10:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DE72D208DB;
+ Tue, 26 May 2020 22:12:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590531056;
- bh=NDgMcgxsWGVfavPDRi4+CdwajNlmdkDz1MEFIu3Jjcg=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=e5T+88UU9jaKOrW4oo65l+OFDZ8BaiqtlFRLCIQjWXJTyZlQF++utSC7P9BnVZ3Hl
- 4nJIDv8TBvhWpXVu3DzHvZy2BZQ+p2We/+cgiAABQ3W9dH0A/eVJYEjhfgJZqy8lN+
- dGdkucUM9fN/20jsxIfl7IcaZu7PEIUmAyjTBXGQ=
+ s=default; t=1590531130;
+ bh=JoouspmZnmYXmq8ZJTLOqrG3PM7FdXVCM07Jq5uMqXY=;
+ h=In-Reply-To:References:Subject:From:List-Id:Cc:To:Date:From;
+ b=JVAesrbxHIH/syQgqCInaZ3YuvWneFQeaZjK7S38JFnXcE6b6KbBKCrOdkhBKpHVZ
+ qe6pFf4LTOCdLKgQ4sCSvL8ISrZrz0r/dhDcf187XVgLLY5Ngd7AIW+XfPknZN9LS0
+ nXsyxjnr9vjBPuecg1dVJiyQ1p7cNGIk+b+2mrYg=
 MIME-Version: 1.0
-In-Reply-To: <20200523010732.GA9835@dragon>
-References: <20200523010732.GA9835@dragon>
-Subject: Re: [GIT PULL] i.MX clock updates for 5.8
+In-Reply-To: <20200526114054.GA2935745@ulmo>
+References: <20200515145311.1580134-1-thierry.reding@gmail.com>
+ <20200515145311.1580134-8-thierry.reding@gmail.com>
+ <CAK8P3a0kqjt8UNxe2ruRDOJNedOcqWxP-i5y2uW6YsaMNJgejg@mail.gmail.com>
+ <20200526114054.GA2935745@ulmo>
+Subject: Re: [GIT PULL 07/11] memory: tegra: Changes for v5.8-rc1
 From: Stephen Boyd <sboyd@kernel.org>
-To: Shawn Guo <shawnguo@kernel.org>
-Date: Tue, 26 May 2020 15:10:55 -0700
-Message-ID: <159053105536.88029.7016095954634120650@swboyd.mtv.corp.google.com>
+To: Arnd Bergmann <arnd@arndb.de>, Thierry Reding <thierry.reding@gmail.com>
+Date: Tue, 26 May 2020 15:12:10 -0700
+Message-ID: <159053113019.88029.6264653349405850933@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_151057_831018_B7FE86BD 
-X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-CacheID: sfid-20200526_151211_289676_99E0ADB9 
+X-CRM114-Status: UNSURE (   7.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -76,30 +79,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Michael Turquette <mturquette@baylibre.com>,
+ Jon Hunter <jonathanh@nvidia.com>, SoC Team <soc@kernel.org>,
+ arm-soc <arm@kernel.org>,
+ TEGRA ARCHITECTURE SUPPORT <linux-tegra@vger.kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Shawn Guo (2020-05-22 18:07:33)
-> The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+Quoting Thierry Reding (2020-05-26 04:40:54)
+> On Mon, May 25, 2020 at 11:52:30PM +0200, Arnd Bergmann wrote:
 > 
->   Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+> > Waiting for clarification before I can pull this.
 > 
-> are available in the Git repository at:
+> Given the above, might be best to hold off on this for a bit until the
+> clock branch was pulled by Mike or Stephen.
 > 
->   git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/clk-imx-5.8
-> 
-> for you to fetch changes up to b1657ad708f761f9ca6d166d4dda685ca39b1254:
-> 
->   clk: imx: use imx8m_clk_hw_composite_bus for i.MX8M bus clk slice (2020-05-21 22:37:48 +0800)
-> 
-> ----------------------------------------------------------------
 
-Thanks. Pulled into clk-next
+I pulled the clk branch into clk-next now.
 
 _______________________________________________
 linux-arm-kernel mailing list
