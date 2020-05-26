@@ -2,85 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A16971E32A5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 00:32:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B2F3E1E32A7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 00:32:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yyRiKzqzaw7QqYrZvT3y6LhJXEZzrj+hXq2Rf387YTw=; b=EYqImdAuDSSB7X
-	s0qZaZL8v4o3cns+3JwHrQFNdB0lxacteqoD0gGvalNjAi0RiOwrBrQ254R4h7wxhtiEBSpXCCL+5
-	JnwL4gcsfKRUcYf4UYL7iur6Nxh5g7TW0VsfwkTeVCZBBgaAFJ0QpSiSxoguRLEHr+sAkVAQQSbP0
-	rH5dvPuIrjxx+vFkQoL/sglpTv7D+igIxPmtmDdWe/0fMDQpzPSvfgRQQ/Poh1tICExj5SjoG07ky
-	nRRobMssSsgf+AznPgcl36Nz1drLQ72a3T4N28wpUUgpZLRrE87BqWamv+ko1Hoiiq2O4Fo7ZwlY1
-	0vtVROvlLmwXY4ogHg2A==;
+	List-Owner; bh=K9R821I66SkAQ8g1VgmJV2AFa/GQsNQuaDtdUiMYRRA=; b=CzyB9GQ1x75BzI
+	lI5ulQYBsUs5Ufesj9f+Z1EaBW43xi6NjiaYc9Q0B7LcgZvyM3LTojHrCqd89Ts393GJQ5DxqqKRi
+	jP4UMZotCAW5VCovA+x25icqDmiPeg+XYeMaCgD3ts50EZWMdX46Q9n8cFoa8iwB9RSKenGDA/PkW
+	G+a1KYOCyM8TxQSC9rvzviAtxeRRquZRrUofMrSincsi8l7pXk/kuuYYGUZlm+K+qB8VSaKLe15FA
+	vxwAF2y/YEmaf9/049mkxiTNRtdwbO89FrcOpLpX43ZtMGGZo/N31+Vsm2zc9YMCLT3un7cpyMSTG
+	hHwVE/Igt7JvVEFG2liQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdi75-0007hk-8w; Tue, 26 May 2020 22:31:59 +0000
-Received: from mail-io1-f65.google.com ([209.85.166.65])
+	id 1jdi7O-0007yW-7M; Tue, 26 May 2020 22:32:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdi6V-0007XE-AJ
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 22:31:26 +0000
-Received: by mail-io1-f65.google.com with SMTP id h10so23841851iob.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 15:31:23 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=7PO7nGDx6i6iJvomFwFAJKzAEqtQa3QMoljS+fScBDg=;
- b=Wp6W9DNJRcJkbwUQtKUPXR5P4cF+YKOYivuIdnGwWkWjK7mKntFNowniRLAyYtoEux
- 6igYA7/oFkQGpbj1OXsxF37Kl2gWXFE2Pm8HmilZ0LAgaD3Qxjbs6k94T4cZvFcFgysj
- t1qq3nwGe8UpqT/kpiYUI/DNhTA/WSxuKcmvDUyMzKCoTRohD3/keNf8bA7QiiGwfDyH
- A2MtZ8Tj5IonxPh+Of2OSqrB1xRXufbf0HKbqglRrUPRGdBhQwPRgGZT6pDlw6nqHaIC
- GcQtAfF2Uksv1Yb4GiAGqlVcgPcoulfpn/EdJPsxSby6lrc2JonLlOH7Lr/DNMLvDD+q
- xMrg==
-X-Gm-Message-State: AOAM533Ux0QKKxCDlRy8NPA6NfrltpPNW7kb7DKuzWgKa6WnMptIrxc4
- vw+7Hg9l/rfkarcC6Bo87Q==
-X-Google-Smtp-Source: ABdhPJzg3/7lwTB77ZTQN1hMWzcgg9hexWm7c31lZM6rBv5yZyP5Irit38gNDKsTOeMlYqaaRRoNkw==
-X-Received: by 2002:a6b:f812:: with SMTP id o18mr18386246ioh.87.1590532282441; 
- Tue, 26 May 2020 15:31:22 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id f15sm661633ill.58.2020.05.26.15.31.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 15:31:21 -0700 (PDT)
-Received: (nullmailer pid 504022 invoked by uid 1000);
- Tue, 26 May 2020 22:31:20 -0000
-Date: Tue, 26 May 2020 16:31:20 -0600
-From: Rob Herring <robh@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V5 4/5] dt-bindings: clock: Convert i.MX6SLL clock to
- json-schema
-Message-ID: <20200526223120.GA503921@bogus>
-References: <1589328684-1397-1-git-send-email-Anson.Huang@nxp.com>
- <1589328684-1397-5-git-send-email-Anson.Huang@nxp.com>
+ id 1jdi6f-0007dB-S3
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 22:31:35 +0000
+Received: from kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net (unknown
+ [163.114.132.6])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9454F20899;
+ Tue, 26 May 2020 22:31:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590532292;
+ bh=i/LsJ/7HDxl1uraGohIpTv1UEEpLZgqDBmcvFSkYrRs=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=L1hQtRDvn7ylGIClnE51U8xDbKeptk9RRRcxjD8KvV0vnGtqXOx6okqH3wGQU2F4s
+ AMxHim9tkh3trTRi+/Dihhe2jPHiIQ7YHpjVMePw/F7mtxQxe5ipm41gvPbE0O1/f+
+ WqWQhzzVJGfznE1VeNIwnVlo+h9/gVYBJXg1JpOk=
+Date: Tue, 26 May 2020 15:31:28 -0700
+From: Jakub Kicinski <kuba@kernel.org>
+To: Emanuele Giuseppe Esposito <eesposit@redhat.com>
+Subject: Re: [PATCH v3 0/7] Statsfs: a new ram-based file system for Linux
+ kernel statistics
+Message-ID: <20200526153128.448bfb43@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
+In-Reply-To: <20200526110318.69006-1-eesposit@redhat.com>
+References: <20200526110318.69006-1-eesposit@redhat.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1589328684-1397-5-git-send-email-Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_153123_380358_F3AB2759 
-X-CRM114-Status: GOOD (  10.48  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200526_153133_955541_37A741C2 
+X-CRM114-Status: GOOD (  13.88  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.65 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.65 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,33 +76,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, s.hauer@pengutronix.de, sboyd@kernel.org,
- festevam@gmail.com, mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- shawnguo@kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-doc@vger.kernel.org,
+ netdev@vger.kernel.org,
+ Emanuele Giuseppe Esposito <e.emanuelegiuseppe@gmail.com>,
+ linux-kernel@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ Jonathan Adams <jwadams@google.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, David Rientjes <rientjes@google.com>,
+ linux-fsdevel@vger.kernel.org, Paolo Bonzini <pbonzini@redhat.com>,
+ linux-mips@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 13 May 2020 08:11:23 +0800, Anson Huang wrote:
-> Convert the i.MX6SLL clock binding to DT schema format using json-schema.
+On Tue, 26 May 2020 13:03:10 +0200 Emanuele Giuseppe Esposito wrote:
+> There is currently no common way for Linux kernel subsystems to expose
+> statistics to userspace shared throughout the Linux kernel; subsystems have
+> to take care of gathering and displaying statistics by themselves, for
+> example in the form of files in debugfs. For example KVM has its own code
+> section that takes care of this in virt/kvm/kvm_main.c, where it sets up
+> debugfs handlers for displaying values and aggregating them from various
+> subfolders to obtain information about the system state (i.e. displaying
+> the total number of exits, calculated by summing all exits of all cpus of
+> all running virtual machines).
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> Acked-by: Stephen Boyd <sboyd@kernel.org>
-> ---
-> Changes since V4:
-> 	- add descriptions for interrupts and each item of it.
-> ---
->  .../devicetree/bindings/clock/imx6sll-clock.txt    | 36 ------------
->  .../devicetree/bindings/clock/imx6sll-clock.yaml   | 66 ++++++++++++++++++++++
->  2 files changed, 66 insertions(+), 36 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/clock/imx6sll-clock.txt
->  create mode 100644 Documentation/devicetree/bindings/clock/imx6sll-clock.yaml
+> Allowing each section of the kernel to do so has two disadvantages. First,
+> it will introduce redundant code. Second, debugfs is anyway not the right
+> place for statistics (for example it is affected by lockdown)
 > 
+> In this patch series I introduce statsfs, a synthetic ram-based virtual
+> filesystem that takes care of gathering and displaying statistics for the
+> Linux kernel subsystems.
+> 
+> The file system is mounted on /sys/kernel/stats and would be already used
+> by kvm. Statsfs was initially introduced by Paolo Bonzini [1].
 
-Applied, thanks!
+What's the direct motivation for this work? Moving KVM stats out of
+debugfs?
+
+In my experience stats belong in the API used for creating/enumerating
+objects, statsfs sounds like going in the exact opposite direction -
+creating a parallel structure / hierarchy for exposing stats. I know
+nothing about KVM but are you sure all the info that has to be exposed
+will be stats?
+
+In case of networking we have the basic stats in sysfs, under the
+netdevice's kobject. But since we're not using sysfs much any more 
+for config, new stats are added in netlink APIs. Again - same APIs
+used for enumeration and config.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
