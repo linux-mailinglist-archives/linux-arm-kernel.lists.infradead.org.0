@@ -2,79 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4D2C1E20E8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:32:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D6E41E210A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 13:40:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8ofogpBbeqyqkOPFhi+s9PBlYOsDVDzsX7/Yr1OagRE=; b=KUB+abVY07ERcO
-	BHClu6gp1mZFsR1yguf5qPfWu6u8KfsVOpWIXeA8A6u3AmDJAnRanWlBeyEGiMUE0lDWTieaLbptq
-	kT/0MVg902DHEaSQoIHcC6cFG5hPQu2aZmAPOX342hReDgazg19aPfhPUH0gkXTM0e8IcOJ7SiBBa
-	q9UX8z5+s6sDpbpzFAC6adNDkevWFv0Pm0NvBR+Xc4XfT0YgOevFBATnJVZ8OkfizASDdrIg40lC1
-	Avwgo+GjZnMqEeONX7L2LLoALU7oY25HALWHrg++yFXTib6FhquxrvpONrXbwDrASLcB47U2g6YEa
-	1APuukjhn0XYxhQxzqmw==;
+	List-Owner; bh=WFTr4mmJFVfcTRoecWBLjw50u7vZRK2VWApN/0FduVA=; b=ise7clBrhAzA9O
+	VyeXrwrZE4t8FOtk6B0gGdXdOhxawTFnxyjdZY53SSnfuoK1xIUBG36VGMtWt6yoYOjElqQXvw48F
+	LLu0rhCYLXmLI/hVUuCnxoi/1fOGef/40xiDPws65LUmtXAyqdexLvczxQ+j4Xizsr27JJu8SoEQA
+	UWEGVNLAxM6uIjHLezpkoCvSWQYVJLANW2/VLqMqzhhM+JGFMI3+QLA+QDuZst9wMM4X6B7F9+sLt
+	muQkmTyXBdnXnMj8NE52RrrWI2u4TyU2xTaLlr2vlGX4NnN3kCiTIgOoKuIAwigeOP3an6BO6K9FW
+	+4zLkvS1hc7665v6WhcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdXpF-00085v-V1; Tue, 26 May 2020 11:32:54 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jdXwT-0003Rk-TB; Tue, 26 May 2020 11:40:21 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdXp1-00084q-9O
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:32:41 +0000
-Received: by mail-lj1-x241.google.com with SMTP id k5so23988609lji.11
+ id 1jdXw9-0002xB-DJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 11:40:03 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u12so2881611wmd.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 04:32:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Tue, 26 May 2020 04:40:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=N3aU8bQ2jt19toIdkwK4iimsCUAHj37+zUJ/z8dG82c=;
- b=TxHGmW0M/1J5kA67dTHib6mjP7IqlmXB9GlPXLnj3brNAtLjENIk88ciWY00CFrxgh
- m+RVHnNpqmSoAmn0koZ4VVVv6Q8kij/9A1DQWcHw5NKCJPlqkcB/PoNqDhyiWHyl1iaj
- zEPAGqTTOUnZBomUlkcEEjud7qxatQaGdOU7DXRnWr8MnBbpiXXPwEQFgujvP3Mhq0jt
- KgGPg0GPrFObpIdq9Qmg9LZXRK6i2WYpw5FgQEWoJqeiLwnsW8YIpZroi2BnnirKRE1u
- Te3lMIxX9v3MiDlAkkFy2ES3BpkILyrkkioDjGf+EdIFsoI0j5f3Z1YOQU0m5o9ZCAGa
- zNVQ==
+ :cc:content-transfer-encoding;
+ bh=XNz9J6b/OZ2/1Fmez/GnqprE7eisy/1+uGqJfTQOLC4=;
+ b=I1UPOd2vABdAgPxVneTOoP6tzj7xsCGRvOyr48UXRni0gpsT73O9sUzt6bpt9joQ9c
+ qLSUnyrLyk/vOjwAhPxEsbAagm5ZeyQu0b+SQv26I6y7nz3lUI37rAijnWn2OeEA9HBI
+ CyucIRXauIONPkXv7CAJVAf7J6nx1z0aHePaD8Q0dh2PU7I9pOQrm1OGisaurBL5HDFk
+ SE8VVwXSrWfaH9+yA8xNasTY2UtUxOLd61G6D0GO3OlYxrnAVRQuUfZS5B5QDl9uMcBt
+ Ks+AvkW9VHguZwPrkcFVlheKfLq7OTeyshjqrzI/ZRIwkdSnZSkm6ABJglXylBR2NLHy
+ wQMQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=N3aU8bQ2jt19toIdkwK4iimsCUAHj37+zUJ/z8dG82c=;
- b=itbaGGv4oMoVmDGAKXFJcrDMjtFsH06TOm3+vPB6YzWj6drzfHRXS6sWnDCfPNzW70
- QPuzjvfkVSmt6+h7lVHwj5bVO9MWi78En1U9X2CyV4pgMo4kVG8gH28LiKHAj+XUa7/c
- B6rRGDfmuv9XLCrCEWoKOJZylmSnRofgiX2Nkioe1LoIwRCTBz6LQ5HbZdgZSGkUMwHX
- VzkQJ2nbj+9GehmztLpg2r0qbkDRoNqp4wP0tkiStc5DfnTQqVpR76WrnRQJK7fYEjf9
- Es8wPk3lkvCxA0uDd1Oi7vR1Se9YkgKKm8Hz4btn98dvR++UEVVAm4TVSbz0xXYNzwcc
- ek1w==
-X-Gm-Message-State: AOAM5303HvmSPk3kBOIiAE3ymV9RjObSlxBU9Cm9FUqXTvg5vFMAHGsE
- cU+2aMU/Gb5KCANCkTdrml2NV/GEXjizdPLFT87T/Q==
-X-Google-Smtp-Source: ABdhPJxM6A8ot4e/2DXXh6aue4hLFO5ial0ZBwWU8vJG+VNoWIczU4kxVWFCMR36ozh5h1OSlYeLxEUkI+61oop6giU=
-X-Received: by 2002:a05:651c:32d:: with SMTP id
- b13mr401630ljp.283.1590492757082; 
- Tue, 26 May 2020 04:32:37 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=XNz9J6b/OZ2/1Fmez/GnqprE7eisy/1+uGqJfTQOLC4=;
+ b=iEreKcfkM03Tkrm77NkNrCiUQiAuwbVqOBrLTZS4zNZq8Ah8wWvMLaki+Y+exaqpwO
+ aFrvlRG4OHn3+lIc1DuDLmmBgSpS7hCFCir/jmMhB5q0mhULViyDmVU2/mt9ydsDvT/M
+ Um5U/emGuYswMm/LvDFRKCqfsSBrXvo/xmMjMGeVqiQZWYi+Z5bEaDU7av5zlR5NfQ/N
+ /b1zT0NQdmjRKgL9EdSd8Hd+lO78nW7hJxWquqP0TEsEwQMDi/DztWYv1OA98xpejNxG
+ 7HGI5+MKXor2Dl9MoOoNENv8W7d7nC+QmvPWdAJut6qSmN+GWo6X1JtJPin7IjwBFrSI
+ MB3w==
+X-Gm-Message-State: AOAM530AShRXUezrOatcjDJ4sPP79vrAkof+wnHRLmutvbVVxBz7ylvy
+ 4WD8gtCE/8v//DjtDFcvZKtSd01vbROJFvn8AAw=
+X-Google-Smtp-Source: ABdhPJyrNBm0FnRwRbiS9MIhci3lGQnb9jCFVoa7fhtDCFX+azNqEJP4JBuYkUlsFFtwtUsrOcdqCXJvlgMf3wA7HqU=
+X-Received: by 2002:a05:600c:2313:: with SMTP id
+ 19mr1059849wmo.51.1590493199402; 
+ Tue, 26 May 2020 04:39:59 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200513212451.1919013-1-megous@megous.com>
- <20200513212451.1919013-4-megous@megous.com>
-In-Reply-To: <20200513212451.1919013-4-megous@megous.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 26 May 2020 13:32:25 +0200
-Message-ID: <CACRpkdZpiQ7E_v-Gfk6vFcUEiMazvixYaL0ksKeP=Tq3O6Fh=Q@mail.gmail.com>
-Subject: Re: [PATCH v3 3/5] drm: panel: Add Xingbangda XBD599 panel (ST7703
- controller)
-To: Ondrej Jirman <megous@megous.com>
+References: <20200514155737.12160-1-martin.kepplinger@puri.sm>
+In-Reply-To: <20200514155737.12160-1-martin.kepplinger@puri.sm>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Tue, 26 May 2020 14:39:48 +0300
+Message-ID: <CAEnQRZCJ_+V1+bd4JsWBqJVNu6-ETckxsD0qvkr48in9mj0J8Q@mail.gmail.com>
+Subject: Re: [PATCH 1/2] arm64: dts: Add a device tree for the Librem5 phone
+To: Martin Kepplinger <martin.kepplinger@puri.sm>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_043239_333781_BD33F4C0 
-X-CRM114-Status: GOOD (  16.54  )
+X-CRM114-CacheID: sfid-20200526_044001_484356_BC3753FE 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [daniel.baluta[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,134 +94,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Samuel Holland <samuel@sholland.org>,
- David Airlie <airlied@linux.ie>, Bhushan Shah <bshah@kde.org>,
- Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Martijn Braam <martijn@brixit.nl>, linux-sunxi <linux-sunxi@googlegroups.com>,
- Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- Daniel Vetter <daniel@ffwll.ch>, Sam Ravnborg <sam@ravnborg.org>,
- Luca Weiss <luca@z3ntu.xyz>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Rob Herring <robh@kernel.org>, kernel@puri.sm,
+ Anson Huang <Anson.Huang@nxp.com>,
+ Devicetree List <devicetree@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, mchehab@kernel.org,
+ Fabio Estevam <festevam@gmail.com>,
+ =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ondrej,
-
-I see you took over this driver submission from
-Icenowy.
-
-On Wed, May 13, 2020 at 11:24 PM Ondrej Jirman <megous@megous.com> wrote:
-
-> From: Icenowy Zheng <icenowy@aosc.io>
->
-> Xingbangda XBD599 is a 5.99" 720x1440 MIPI-DSI IPS LCD panel made by
-> Xingbangda, which is used on PinePhone final assembled phones.
->
-> It is based on Sitronix ST7703 LCD controller.
->
-> Add support for it.
->
-> Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-
-(...)
->  create mode 100644 drivers/gpu/drm/panel/panel-sitronix-st7703.c
-
-Nice!
-
-> +       /*
-> +        * Init sequence was supplied by the panel vendor.
-> +        */
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETEXTC,
-> +                         0xF1, 0x12, 0x83);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETMIPI,
-> +                         0x33, 0x81, 0x05, 0xF9, 0x0E, 0x0E, 0x20, 0x00,
-> +                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x44, 0x25,
-> +                         0x00, 0x91, 0x0a, 0x00, 0x00, 0x02, 0x4F, 0x11,
-> +                         0x00, 0x00, 0x37);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETPOWER_EXT,
-> +                         0x25, 0x22, 0x20, 0x03);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETRGBIF,
-> +                         0x10, 0x10, 0x05, 0x05, 0x03, 0xFF, 0x00, 0x00,
-> +                         0x00, 0x00);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETSCR,
-> +                         0x73, 0x73, 0x50, 0x50, 0x00, 0xC0, 0x08, 0x70,
-> +                         0x00);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETVDC, 0x4E);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETPANEL, 0x0B);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETCYC, 0x80);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETDISP, 0xF0, 0x12, 0xF0);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETEQ,
-> +                         0x00, 0x00, 0x0B, 0x0B, 0x10, 0x10, 0x00, 0x00,
-> +                         0x00, 0x00, 0xFF, 0x00, 0xC0, 0x10);
-> +       dsi_dcs_write_seq(dsi, 0xC6, 0x01, 0x00, 0xFF, 0xFF, 0x00);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETPOWER,
-> +                         0x74, 0x00, 0x32, 0x32, 0x77, 0xF1, 0xFF, 0xFF,
-> +                         0xCC, 0xCC, 0x77, 0x77);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETBGP, 0x07, 0x07);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETVCOM, 0x2C, 0x2C);
-> +       dsi_dcs_write_seq(dsi, 0xBF, 0x02, 0x11, 0x00);
-> +
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETGIP1,
-> +                         0x82, 0x10, 0x06, 0x05, 0xA2, 0x0A, 0xA5, 0x12,
-> +                         0x31, 0x23, 0x37, 0x83, 0x04, 0xBC, 0x27, 0x38,
-> +                         0x0C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x0C, 0x00,
-> +                         0x03, 0x00, 0x00, 0x00, 0x75, 0x75, 0x31, 0x88,
-> +                         0x88, 0x88, 0x88, 0x88, 0x88, 0x13, 0x88, 0x64,
-> +                         0x64, 0x20, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88,
-> +                         0x02, 0x88, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-> +                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETGIP2,
-> +                         0x02, 0x21, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-> +                         0x00, 0x00, 0x00, 0x00, 0x02, 0x46, 0x02, 0x88,
-> +                         0x88, 0x88, 0x88, 0x88, 0x88, 0x64, 0x88, 0x13,
-> +                         0x57, 0x13, 0x88, 0x88, 0x88, 0x88, 0x88, 0x88,
-> +                         0x75, 0x88, 0x23, 0x14, 0x00, 0x00, 0x02, 0x00,
-> +                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-> +                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x0A,
-> +                         0xA5, 0x00, 0x00, 0x00, 0x00);
-> +       dsi_dcs_write_seq(dsi, ST7703_CMD_SETGAMMA,
-> +                         0x00, 0x09, 0x0D, 0x23, 0x27, 0x3C, 0x41, 0x35,
-> +                         0x07, 0x0D, 0x0E, 0x12, 0x13, 0x10, 0x12, 0x12,
-> +                         0x18, 0x00, 0x09, 0x0D, 0x23, 0x27, 0x3C, 0x41,
-> +                         0x35, 0x07, 0x0D, 0x0E, 0x12, 0x13, 0x10, 0x12,
-> +                         0x12, 0x18);
-> +       msleep(20);
-
-This stuff is really hard or impossible to understand without the
-datasheet.
-
-In my previous review I wrote:
-
-It appears that the Himax HX8363 is using the same display controller
-if you look at the datasheet:
-http://www.datasheet-pdf.com/PDF/HX8369-A-Datasheet-Himax-729024
-There you find an explanation to some of the commands.
-
-That means, try to get rid of as much of the magic bytes as you can
-and use proper #defines. I know it takes some work but the result
-is so much more useful and readable.
-
-Further I wrote:
-
-You should definately insert code to read the MTP bytes:
-0xDA manufacturer
-0xDB driver version
-0xDC LCD module/driver
-And print these, se e.g. my newly added NT35510 driver or
-the Sony ACX424AKP driver.
-
-So please do that.
-
-Yours,
-Linus Walleij
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBNYXkgMTQsIDIwMjAgYXQgNzowMiBQTSBNYXJ0aW4gS2VwcGxpbmdlcgo8bWFydGlu
+LmtlcHBsaW5nZXJAcHVyaS5zbT4gd3JvdGU6Cj4KPiBGcm9tOiAiQW5ndXMgQWluc2xpZSAoUHVy
+aXNtKSIgPGFuZ3VzQGFra2VhLmNhPgo+Cj4gQWRkIGEgZGV2aWNldHJlZSBkZXNjcmlwdGlvbiBm
+b3IgdGhlIExpYnJlbSA1IHBob25lLiBUaGUgZWFybHkgYmF0Y2hlcwo+IHRoYXQgaGF2ZSBiZWVu
+IHNvbGQgYXJlIHN1cHBvcnRlZCBhcyB3ZWxsIGFzIHRoZSBtYXNzLXByb2R1Y2VkIGRldmljZQo+
+IGF2YWlsYWJsZSBsYXRlciB0aGlzIHllYXIsIHNlZSBodHRwczovL3B1cmkuc20vcHJvZHVjdHMv
+bGlicmVtLTUvCj4KPiBUaGlzIGJvb3RzIHRvIGEgd29ya2luZyBjb25zb2xlIHdpdGggd29ya2lu
+ZyBXV0FOIG1vZGVtLCB3aWZpIHVzZGhjLAo+IElNVSBzZW5zb3IgZGV2aWNlLCBwcm94aW1pdHkg
+c2Vuc29yLCBoYXB0aWMgbW90b3IsIGdwaW8ga2V5cywgR05TUyBhbmQgTEVEcy4KPgo+IFNpZ25l
+ZC1vZmYtYnk6IE1hcnRpbiBLZXBwbGluZ2VyIDxtYXJ0aW4ua2VwcGxpbmdlckBwdXJpLnNtPgo+
+IFNpZ25lZC1vZmYtYnk6IEFuZ3VzIEFpbnNsaWUgKFB1cmlzbSkgPGFuZ3VzQGFra2VhLmNhPgo+
+IFNpZ25lZC1vZmYtYnk6IEd1aWRvIEfDvG50aGVyIDxhZ3hAc2lneGNwdS5vcmc+CgpGb3IgYXVk
+aW8gcmVsYXRlZCBwYXJ0OgoKUmV2aWV3ZWQtYnk6IERhbmllbCBCYWx1dGEgPGRhbmllbC5iYWx1
+dGFAbnhwLmNvbT4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
+L2xpbnV4LWFybS1rZXJuZWwK
