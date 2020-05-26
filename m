@@ -2,90 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AC6E1E202D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 12:53:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 489F01E2042
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 12:58:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=BxPrCOUokkow8mEWqA5WJ1g78IBhTVa7fbkuYErWS3Q=; b=Nv1/cx0G9ry+uvHjSZClE6phXM
-	/IpxplPTesUlAsP8ePW9CJovFBl75spkArv1EWibBHyoy25DF1kzgQTngou+pCxaT3PpFcaNe26N1
-	21eQdTAtZ72EyxqhKFg4LMfqvb9v0876ltbYh8Z7A+AYfJN4wl0IGdNBjBwMH+wjx45gqN6mpZ0QK
-	ufnBtYlzX9UpOFbnRuloiEU4BjwKE7TdeunGByjg2cv+31af3LkH8uZsJOkMsowqjPq6MmJC/4VMf
-	JIMxCRtE0fjOnN+7DVTjAaKG4a2Xp6vpCfcNOeEeHlfnQuCLVWrkm/gRMxmpB321bH/6vOoLx1Ayo
-	Z06tlM8w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CceL0LvYLPML5VZYOpdbxeCd5y5mB8b72esxNHkdPmc=; b=asXargIGf+pzj9
+	03tsFjrHU9mVYTLF3dtNmKkJvVX6cithBHKnEyeNjXwTdtsIHdyLEniaxWxr1sCqVrbcum1rlMShd
+	gPd9qemN8lO5ep2l5QzbnRYqy1jHB/ue3tDJlQRFFTcgNO+kMw4e1FkgBdYwVrDVpaVngvQJ75n46
+	uH8kZuJntCWMIwM2DFso0gUgB2g2NGcG2xeP362gfmJ7ifwvyqiGJxHM3leNwzIeoXM2+3oio1veL
+	xbDmcnAiI8uj1IC8lBXPyn115P6uNFJRuRLMhHsnFnCStD38MzSOlBhoC3uu6KdVVO7k3FSsRQEcm
+	wY2w2ChrjqdTEVh4W2vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdXDN-0006MI-Ex; Tue, 26 May 2020 10:53:45 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdXCu-0006Ab-Di
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 10:53:17 +0000
-Received: by mail-wr1-x442.google.com with SMTP id e1so19938200wrt.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 03:53:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=y/X/VgnyC3HIoMTaZFKxWYG40oheShX3/ZPr18h9D1M=;
- b=Vc85tChelfWUsKYMlUXXJcIclXD0SP+4qTCuB01m0OhuQfmU2v6Bd/7wuJ4+QxQrDN
- LL/niYIf1u7fr6T/lrMq34JSdwSs6VTM5xv8iEYFVPXekiTGHgPhMSo6EJZA2RhbPCFl
- BTrtO355Exs9Hoit8jHxYHV2uC3Vht4nV4IQunmwreoSVRxObXqDx4VulGWdEuRDt1n7
- neDcSdcv4kF/mqfPa4MfFVBZl5QZMltFRTaBEsdiIsk7v1GMCAV+6yr6yl08eRLcduH+
- rSN4NMxt4yfbgMFFevBFKVCIfD/CIpBp9xZZl2mLsPaTkPrbSXGf7Al0d9g2hU8PY57P
- zUHg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=y/X/VgnyC3HIoMTaZFKxWYG40oheShX3/ZPr18h9D1M=;
- b=Keh/569EYoaQHRLMaYGkdIzoJCy18hjdKiEmnXRs9uA1RC18IXhaP8IbUXfOmI3PXu
- t7p98FKoyVKFjdffSSEZ6ndP6uo873be86gxEXAIvjdCOoEzm5gqzoT9Iv2JNw1pUuoA
- tFF4iCN0OEQNtaoqTCay2HnxpGe898VvE98x3Mc5PuYIzpwfi/4ryqYu4BUEB3u65bkp
- bZcBl73dCKkjybpdpjs17m6AN4GFs6q/zBT5a+euujxzRvw3IPJCq2eRcdp/O3u02E8E
- Ua6BEjukX+X9xEvBNa9xUEfA+1FV51Fhd6ZrHF5ydMR3YfcpMPFQebyhJGbqitFfx1B+
- Hm6g==
-X-Gm-Message-State: AOAM533fceOGER99eOkAb5x2x1UK40XX2AkLf1Cmv6mjQFppWKm/H1FS
- 2p2PZbYfEIEnDuIP/CxxtNerJXNKwbc=
-X-Google-Smtp-Source: ABdhPJyE4hdLBk98AqoF2vCujR8GjEG4YMHN12wrAaGuVW8KY7u4Cd1xS3+zTBdkQXJvLUOxIgksoA==
-X-Received: by 2002:adf:f8c8:: with SMTP id f8mr6638631wrq.151.1590490395069; 
- Tue, 26 May 2020 03:53:15 -0700 (PDT)
-Received: from linaro.org ([2a00:23c5:6801:1801:8bee:312:6092:58f2])
- by smtp.gmail.com with ESMTPSA id s7sm7244395wrr.60.2020.05.26.03.53.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 03:53:14 -0700 (PDT)
-From: Mike Leach <mike.leach@linaro.org>
-To: linux-arm-kernel@lists.infradead.org, coresight@lists.linaro.org,
- linux-kernel@vger.kernel.org, acme@kernel.org
-Subject: [PATCH v4 1/1] perf: cs-etm: Allow no CoreSight sink to be specified
- on command line
-Date: Tue, 26 May 2020 11:53:10 +0100
-Message-Id: <20200526105310.9706-2-mike.leach@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200526105310.9706-1-mike.leach@linaro.org>
-References: <20200526105310.9706-1-mike.leach@linaro.org>
+	id 1jdXHu-00016K-AT; Tue, 26 May 2020 10:58:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdXHi-00015r-6S
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 10:58:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1942F31B;
+ Tue, 26 May 2020 03:58:13 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 358A93F6C4;
+ Tue, 26 May 2020 03:58:10 -0700 (PDT)
+Date: Tue, 26 May 2020 11:58:07 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Gavin Shan <gshan@redhat.com>
+Subject: Re: [PATCH RFCv2 6/9] kvm/arm64: Export kvm_handle_user_mem_abort()
+ with prefault mode
+Message-ID: <20200526105807.GE1363@C02TD0UTHF1T.local>
+References: <20200508032919.52147-1-gshan@redhat.com>
+ <20200508032919.52147-7-gshan@redhat.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200508032919.52147-7-gshan@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_035316_457045_3DD7C4CB 
-X-CRM114-Status: GOOD (  15.58  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200526_035814_322564_11924E55 
+X-CRM114-Status: GOOD (  18.05  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,45 +63,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peterz@infradead.org, mingo@redhat.com, Mike Leach <mike.leach@linaro.org>,
- mathieu.poirier@linaro.org, suzuki.poulose@arm.com
-MIME-Version: 1.0
+Cc: aarcange@redhat.com, drjones@redhat.com, suzuki.poulose@arm.com,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, eric.auger@redhat.com,
+ james.morse@arm.com, shan.gavin@gmail.com, maz@kernel.org, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adjust the handling of the session sink selection to allow no sink to
-be selected on the command line. This then forwards the sink selection to
-the CoreSight infrastructure which will attempt to select a sink based
-on the default sink select priorities.
+On Fri, May 08, 2020 at 01:29:16PM +1000, Gavin Shan wrote:
+> This renames user_mem_abort() to kvm_handle_user_mem_abort(), and
+> then export it. The function will be used in asynchronous page fault
+> to populate a page table entry once the corresponding page is populated
+> from the backup device (e.g. swap partition):
+> 
+>    * Parameter @fault_status is replace by @esr.
+>    * The parameters are reorder based on their importance.
 
-Signed-off-by: Mike Leach <mike.leach@linaro.org>
----
- tools/perf/arch/arm/util/cs-etm.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
+It seems like multiple changes are going on here, and it would be
+clearer with separate patches.
 
-diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-index 941f814820b8..ed9ea2c60f27 100644
---- a/tools/perf/arch/arm/util/cs-etm.c
-+++ b/tools/perf/arch/arm/util/cs-etm.c
-@@ -242,10 +242,10 @@ static int cs_etm_set_sink_attr(struct perf_pmu *pmu,
- 	}
- 
- 	/*
--	 * No sink was provided on the command line - for _now_ treat
--	 * this as an error.
-+	 * No sink was provided on the command line - allow the CoreSight
-+	 * system to look for a default
- 	 */
--	return ret;
-+	return 0;
- }
- 
- static int cs_etm_recording_options(struct auxtrace_record *itr,
--- 
-2.17.1
+Passing the ESR rather than the extracted fault status seems fine, but
+for clarirty it's be nicer to do this in its own patch.
 
+Why is it necessary to re-order the function parameters? Does that align
+with other function prototypes?
+
+What exactly is the `prefault` parameter meant to do? It doesn't do
+anything currently, so it'd be better to introduce it later when logic
+using it is instroduced, or where callers will pass distinct values.
+
+Thanks,
+Mark.
+
+> 
+> This shouldn't cause any functional changes.
+> 
+> Signed-off-by: Gavin Shan <gshan@redhat.com>
+> ---
+>  arch/arm64/include/asm/kvm_host.h |  4 ++++
+>  virt/kvm/arm/mmu.c                | 14 ++++++++------
+>  2 files changed, 12 insertions(+), 6 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+> index 32c8a675e5a4..f77c706777ec 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -437,6 +437,10 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
+>  			      struct kvm_vcpu_events *events);
+>  
+>  #define KVM_ARCH_WANT_MMU_NOTIFIER
+> +int kvm_handle_user_mem_abort(struct kvm_vcpu *vcpu, unsigned int esr,
+> +			      struct kvm_memory_slot *memslot,
+> +			      phys_addr_t fault_ipa, unsigned long hva,
+> +			      bool prefault);
+>  int kvm_unmap_hva_range(struct kvm *kvm,
+>  			unsigned long start, unsigned long end);
+>  int kvm_set_spte_hva(struct kvm *kvm, unsigned long hva, pte_t pte);
+> diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+> index e462e0368fd9..95aaabb2b1fc 100644
+> --- a/virt/kvm/arm/mmu.c
+> +++ b/virt/kvm/arm/mmu.c
+> @@ -1656,12 +1656,12 @@ static bool fault_supports_stage2_huge_mapping(struct kvm_memory_slot *memslot,
+>  	       (hva & ~(map_size - 1)) + map_size <= uaddr_end;
+>  }
+>  
+> -static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+> -			  struct kvm_memory_slot *memslot, unsigned long hva,
+> -			  unsigned long fault_status)
+> +int kvm_handle_user_mem_abort(struct kvm_vcpu *vcpu, unsigned int esr,
+> +			      struct kvm_memory_slot *memslot,
+> +			      phys_addr_t fault_ipa, unsigned long hva,
+> +			      bool prefault)
+>  {
+> -	int ret;
+> -	u32 esr = kvm_vcpu_get_esr(vcpu);
+> +	unsigned int fault_status = kvm_vcpu_trap_get_fault_type(esr);
+>  	bool write_fault, writable, force_pte = false;
+>  	bool exec_fault, needs_exec;
+>  	unsigned long mmu_seq;
+> @@ -1674,6 +1674,7 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+>  	pgprot_t mem_type = PAGE_S2;
+>  	bool logging_active = memslot_is_logging(memslot);
+>  	unsigned long vma_pagesize, flags = 0;
+> +	int ret;
+>  
+>  	write_fault = kvm_is_write_fault(esr);
+>  	exec_fault = kvm_vcpu_trap_is_iabt(esr);
+> @@ -1995,7 +1996,8 @@ int kvm_handle_guest_abort(struct kvm_vcpu *vcpu, struct kvm_run *run)
+>  		goto out_unlock;
+>  	}
+>  
+> -	ret = user_mem_abort(vcpu, fault_ipa, memslot, hva, fault_status);
+> +	ret = kvm_handle_user_mem_abort(vcpu, esr, memslot,
+> +					fault_ipa, hva, false);
+>  	if (ret == 0)
+>  		ret = 1;
+>  out:
+> -- 
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
