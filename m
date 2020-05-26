@@ -2,93 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DA591E2199
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 14:07:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83C951E21B6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 14:19:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=95pBi3zfQKp0gfB8tan5SDoykFovrabeTY2pLnUbL9A=; b=qN1myYocGfai1sV1ICSf6UYly
-	S3DVMAwSp6YDRH2M/9oQsvY1m0TlKbN4gVaHKX5M+Ys6sHPAUjgurkkDBMKubKBIzhtMH+pRRGeXE
-	ftrenYDocijntmcV5QKvQgJrhy5Gwnh21EZIdpMf07SIcYfCFXj4A2RDaPmOOtmOtDh9c3chnHsTl
-	vvGpIjBBWo6D84jjk7USgMbu1O+1WbSeDDIox+a9kYq7BMXFXYw9qM0k+LRWCD+s7Fuu1kZtW5n/j
-	taQrY73q0chbC4VRWuQ78B8/snt+1PJ0fD7MXnXMgjGhC+7YamDelD8GWHQRUtHyu13aJmtnYgv0S
-	Ir4xYD7XQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zQILz3ELswO3ZqQh3O2AO9JOfTAV0s0w/FVAP+Y48No=; b=FEl2OPKtc/kBvB
+	Vyy+HfmhcOnw9oykbZClLPYUAd1av36bS+aR4sDGQus4sx+5N7qt9W4vEmT5lpcA9v8DW09XFqmzn
+	BMUDAaX+1NJerDQ8cqpymF2pRxyJF90zMwHuSQHtDOYHZJ7AgQf3HwRFP7Yu5GfkRDpCYOyg2zqiL
+	Ye/P/1sRHb6HKfmkyV/kaH9bQc/v6hPEFRzDQu2Ug1LrVMF9tYOHNf9HR55kpXkE2HNgQi9FwlgYS
+	3Phg2cSBBz/RsaM7wHMqSibBrbhqn9yd+l2zwnU0VAuuQ42YW1pCMUGIN09/qVWiYbRb36ByLh/ng
+	N7Vz03mY5P4O6s+cdQfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdYN3-0004nC-53; Tue, 26 May 2020 12:07:49 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdYMn-0004mm-1T
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 12:07:34 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id 5so1268757pjd.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 05:07:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=fpsA7Nq2nxropNth7zUzBAVP9PJ+/EXl3l54pU3n9ZM=;
- b=J+ir68uaqgnC0bpUtYh7gEhKg91ecOFPaqozofq5uKsLc7Q5y3iFeqMqCZAJviMx+s
- 5ig+pjzGqwz+mFaduqg65bildjvb3DkPZio13iXEBv0mAnfqdngUZrwP8cIh8JeTUCVJ
- gmFnjjcFBD8aNXil24SDu+Jkirv39gmumTTyj55+HgtSDlf8tVbBjh7E552efJG/Wjo8
- EJDaQDAdQwq7KwVsaMRKey6Y7TjZsMZCOt/LAThI6/92Dp0fkT6otf1CI6seawSCUyPt
- WoWoRsARBzdoihaCWqPAXG3jCyZxwI+pM2gsZxtGTudpYt/c710Xf3GM28FbeauVBfE6
- ryPQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=fpsA7Nq2nxropNth7zUzBAVP9PJ+/EXl3l54pU3n9ZM=;
- b=DV1RLI247Ny6rlCREHHziHgDVb0SkPKuF6Cl1ERpee04Gs3+ZTKTXcR+1gr2ng7Uyd
- qGjeLIsH+b0aPQc4RWHjh4xY/WGgsHTTUpWGts3++lufery6A3ZF+LQQT+axPwKEXPa3
- K3jM8DWqs50ndqgnah8sW28nvC/10GciQz7zp/0Aal1mwAKpUL9GOp1YWuDTLORyxMR+
- nv5+l9dNIJxQ9NleDiI5LoUY4JWqeHqw0HFpJPNGTgn2q5ltXTA6BS/rVbUoy2KQCjAt
- 9NZREr5s18T4XNNAOR1yAYUp875ZiUKyYCERFuhygrdnGxXfKnLMv5i0p0x1Z/umaSVM
- 2ODw==
-X-Gm-Message-State: AOAM5312wYCjNT0SCIvyBZYKtcxlNvq30yzMgir/eyw1NNUJBKOiQoUn
- Rwn5cuFME7044Z3tBsGewpIEoOEck3/wvw==
-X-Google-Smtp-Source: ABdhPJwJC/VIL8ph3znchjMxyQibr056u3YncVEhb6v6BwGdiIO+FoFmlj/9d7sAY/kJdEg5hx2xFg==
-X-Received: by 2002:a17:902:6b02:: with SMTP id o2mr822931plk.25.1590494851770; 
- Tue, 26 May 2020 05:07:31 -0700 (PDT)
-Received: from [10.74.2.18] ([45.135.186.9])
- by smtp.gmail.com with ESMTPSA id x132sm15300133pfd.214.2020.05.26.05.07.12
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 26 May 2020 05:07:30 -0700 (PDT)
-Subject: Re: [PATCH 0/2] Let pci_fixup_final access iommu_fwnode
-To: Joerg Roedel <joro@8bytes.org>
-References: <1589256511-12446-1-git-send-email-zhangfei.gao@linaro.org>
- <20200525134318.GB5221@8bytes.org>
-From: Zhangfei Gao <zhangfei.gao@linaro.org>
-Message-ID: <7c6e9389-c34a-4d30-bc8d-572c41572d15@linaro.org>
-Date: Tue, 26 May 2020 20:07:01 +0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jdYY8-0002TU-Sg; Tue, 26 May 2020 12:19:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdYY2-0002Sf-1c
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 12:19:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 432BD30E;
+ Tue, 26 May 2020 05:19:08 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AF8663F6C4;
+ Tue, 26 May 2020 05:19:06 -0700 (PDT)
+Date: Tue, 26 May 2020 13:19:03 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] arm64/cpufeature: Move BUG_ON() inside get_arm64_ftr_reg()
+Message-ID: <20200526121903.GF17051@gaia>
+References: <1589937774-20479-1-git-send-email-anshuman.khandual@arm.com>
+ <20200520122012.GA25815@willie-the-truck>
+ <20200520154711.GD18302@gaia>
+ <20200520173953.GA27629@willie-the-truck>
+ <cdea1cc5-41be-c125-d4d1-f63ff1989ec6@arm.com>
+ <20200521162212.GK6608@willie-the-truck>
+ <20200521165916.GF11507@gaia>
+ <aa6436d4-c724-4933-1341-6ca417ce40ed@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200525134318.GB5221@8bytes.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <aa6436d4-c724-4933-1341-6ca417ce40ed@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_050733_082597_46BA9E78 
-X-CRM114-Status: GOOD (  14.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200526_051910_129575_36671D6D 
+X-CRM114-Status: GOOD (  14.93  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 1.2 SUBJ_OBFU_PUNCT_MANY   Punctuation-obfuscated Subject: header
+ 0.7 SUBJ_OBFU_PUNCT_FEW    Possible punctuation-obfuscated Subject:
+ header
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,44 +74,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe <jean-philippe@linaro.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- linux-acpi@vger.kernel.org, Wangzhou <wangzhou1@hisilicon.com>,
- linux-crypto@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- kenneth-lee-2012@foxmail.com, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAyMDIwLzUvMjUg5LiL5Y2IOTo0MywgSm9lcmcgUm9lZGVsIHdyb3RlOgo+IE9uIFR1ZSwg
-TWF5IDEyLCAyMDIwIGF0IDEyOjA4OjI5UE0gKzA4MDAsIFpoYW5nZmVpIEdhbyB3cm90ZToKPj4g
-U29tZSBwbGF0Zm9ybSBkZXZpY2VzIGFwcGVhciBhcyBQQ0kgYnV0IGFyZQo+PiBhY3R1YWxseSBv
-biB0aGUgQU1CQSBidXMsIGFuZCB0aGV5IG5lZWQgZml4dXAgaW4KPj4gZHJpdmVycy9wY2kvcXVp
-cmtzLmMgaGFuZGxpbmcgaW9tbXVfZndub2RlLgo+PiBTbyBjYWxsaW5nIHBjaV9maXh1cF9maW5h
-bCBhZnRlciBpb21tdV9md25vZGUgaXMgYWxsb2NhdGVkLgo+Pgo+PiBGb3IgZXhhbXBsZToKPj4g
-SGlzaWxpY29uIHBsYXRmb3JtIGRldmljZSBuZWVkIGZpeHVwIGluCj4+IGRyaXZlcnMvcGNpL3F1
-aXJrcy5jCj4+Cj4+ICtzdGF0aWMgdm9pZCBxdWlya19odWF3ZWlfcGNpZV9zdmEoc3RydWN0IHBj
-aV9kZXYgKnBkZXYpCj4+ICt7Cj4+ICsJc3RydWN0IGlvbW11X2Z3c3BlYyAqZndzcGVjOwo+PiAr
-Cj4+ICsJcGRldi0+ZWV0bHBfcHJlZml4X3BhdGggPSAxOwo+PiArCWZ3c3BlYyA9IGRldl9pb21t
-dV9md3NwZWNfZ2V0KCZwZGV2LT5kZXYpOwo+PiArCWlmIChmd3NwZWMpCj4+ICsJCWZ3c3BlYy0+
-Y2FuX3N0YWxsID0gMTsKPj4gK30KPj4gKwo+PiArREVDTEFSRV9QQ0lfRklYVVBfRklOQUwoUENJ
-X1ZFTkRPUl9JRF9IVUFXRUksIDB4YTI1MCwgcXVpcmtfaHVhd2VpX3BjaWVfc3ZhKTsKPj4gK0RF
-Q0xBUkVfUENJX0ZJWFVQX0ZJTkFMKFBDSV9WRU5ET1JfSURfSFVBV0VJLCAweGEyNTEsIHF1aXJr
-X2h1YXdlaV9wY2llX3N2YSk7Cj4gSSBkb24ndCB0aGluayBpdCBpcyBhIGdyZWF0IGlkZWEgdG8g
-aG9vayB0aGlzIGludG8gUENJX0ZJWFVQX0ZJTkFMLiBUaGUKPiBmaXh1cCBsaXN0IG5lZWRzIHRv
-IGJlIHByb2Nlc3NlZCBmb3IgZXZlcnkgZGV2aWNlLCB3aGljaCB3aWxsIHNsb3cgZG93bgo+IHBy
-b2JpbmcuCj4KPiBTbyBlaXRoZXIgd2UgaW50cm9kdWNlIHNvbWV0aGluZyBsaWtlIFBDSV9GSVhV
-UF9JT01NVSwgaWYgdGhpcyBpcwo+IGVudGlyZWx5IFBDSSBzcGVjaWZpYy4gSWYgaXQgbmVlZHMg
-dG8gYmUgZ2VuZXJpYyB3ZSBuZWVkIHNvbWUgZml4dXAKPiBpbmZyYXN0cnVjdHVyZSBpbiB0aGUg
-SU9NTVUgY29kZSBpdHNlbGYuCgpUaGFua3MgSm9lcmcgZm9yIHRoZSBnb29kIHN1Z2dlc3Rpb24u
-CkkgYW0gdHJ5aW5nIHRvIGludHJvZHVjZSBQQ0lfRklYVVBfSU9NTVUgaW4KaHR0cHM6Ly9sa21s
-Lm9yZy9sa21sLzIwMjAvNS8yNi8zNjYKClRoYW5rcwoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, May 25, 2020 at 05:22:23AM +0530, Anshuman Khandual wrote:
+> On 05/21/2020 10:29 PM, Catalin Marinas wrote:
+> > On Thu, May 21, 2020 at 05:22:15PM +0100, Will Deacon wrote:
+> >> On Thu, May 21, 2020 at 08:45:38AM +0530, Anshuman Khandual wrote:
+> >>> The existing code has BUG_ON() in three different callers doing exactly the
+> >>> same thing that can easily be taken care in get_arm64_ftr_reg() itself. As
+> >>> mentioned before an enum variable (as preferred - over a bool) can still
+> >>> preserve the existing behavior for emulate_sys_reg().
+> >>>
+> >>> IMHO these are very good reasons for us to change the code which will make
+> >>> it cleaner while also removing three redundant BUG_ON() instances. Hence I
+> >>> will request you to please reconsider this proposal.
+> >>
+> >> Hmm, then how about trying my proposal with the WARN_ON(), but having a
+> >> get_arm64_ftr_reg_nowarn() variant for the user emulation case?
+[...]
+> > read_sanitised_ftr_reg() would need to return something though. Would
+> > all 0s be ok? I think it works as long as we don't have negative CPUID
+> > fields.
+> 
+> Just trying to understand. If get_arm64_ftr_reg() returns NULL, then
+> read_sanitised_ftr_reg() should also return 0 for that non existent
+> register (already been warned in get_arm64_ftr_reg).
+> 
+> @@ -961,8 +972,8 @@ u64 read_sanitised_ftr_reg(u32 id)
+>  {
+>         struct arm64_ftr_reg *regp = get_arm64_ftr_reg(id);
+> 
+> -       /* We shouldn't get a request for an unsupported register */
+> -       BUG_ON(!regp);
+> +       if (!regp)
+> +               return 0;
+>         return regp->sys_val;
+>  }
+
+Yes, as long as we also get the WARN_ON().
+
+-- 
+Catalin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
