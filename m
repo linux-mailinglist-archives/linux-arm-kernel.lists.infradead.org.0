@@ -2,57 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 888AA1E1E3E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 11:19:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1C6D1E1E48
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 26 May 2020 11:21:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Subject:
-	References:In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6lSYRfpFFl0ospf0QY0VdKwrlrnBhdR5lVK4HycCyJM=; b=kficXnCitueCMZ
-	VlsafMSxFricl20sFLbdeYU01NF8yfBBXCKR+o7wC3nqaeBs2iyGz3CrforSQHsQK16ujsSIz9boP
-	k6rxHR89JZjB1TKxYFVQkX0M9MSGoOWG5l69k290o1EpnHoxs8AfJ1hz9O5kDFU6MH8PCVxK1PRhA
-	6pCCTuq4+o0OFetlx/tc0hUiZaeVC4wF5mTVDR9n5qNvVgDaCuJ4qb8Q+VPoJ1KSGO00PRzdyczNa
-	XgoR7LXbQf5DTbfJK+2OQA8xOd2Hj66WmsyhGlSCXn9S5SHiv4zGbtgyyBd9ewkjwkJh8NEr1L5Fp
-	XVut/O8lq+Qnu8oreAZw==;
+	List-Owner; bh=gSVwWhXLxF+g+jIv7BichStULHjBlvo16O+p35bfRI8=; b=clNGMK4A4uAtkb
+	CTYBDSy6uVRTzlv2OzRwkKLfEIM5yLZlD9Px4NjCtnPFtirmhroDJxiQivvspZ+0BFtJv5UftXTrR
+	p5fp7bCeYKr+wJrwVhN4dvo5W4HwqYCZfnmg96POO3O3C0RRXsyiOO7GR7rufXxMSXNWc7vDULlTL
+	m3BWLpEJafpebYbRWHKNmPjII+a7JF1hw8s0zWJOqKXPSEomr8wYwoLlgKIFyZFkgoeJLsgMTrYIv
+	cBHUl4eWKZDjt560UqTz/ld/tFy6SN3KOp+eMdyZf97clGKSxNWxmzK5bA2VuG5mh0Hcw54IKGlhw
+	boHs1EcaDw1YdBVRH0IQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdVkH-0007Ig-Cp; Tue, 26 May 2020 09:19:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jdVli-0001t3-Jp; Tue, 26 May 2020 09:21:06 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdVk0-0007Gg-Fb
- for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 09:19:21 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8A7C82073B;
- Tue, 26 May 2020 09:19:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590484760;
- bh=pQ9fSIsd2546ytSpDQuQx2cfrsXYFihGA5BoJ2QU+ds=;
- h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
- b=n+3mDJ0XDwFUiVHYZkKbTC2uE5yIjCtnlRYbS8jwqSCDc7Cui5pUHoUegUZePsW4s
- WYWFddgcOpEBwGbXLF71WExMKCgY+mOfSOpeozhUTOWCMV8y+uE4U2O1rnDSa+oHvG
- LIzJVsrejlOYQFvW4u31p/rSDKJa9NMjmAPjb++4=
-Date: Tue, 26 May 2020 10:19:17 +0100
-From: Mark Brown <broonie@kernel.org>
-To: "dillon.minfei@gmail.com" <dillon.minfei@gmail.com>,
- linus.walleij@linaro.org
-In-Reply-To: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
-References: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
-Subject: Re: [PATCH v5 0/8] Enable ili9341 and l3gd20 on stm32f429-disco
-Message-Id: <159048475756.7363.2129939912077382888.b4-ty@kernel.org>
+ id 1jdVlZ-0001sH-W6
+ for linux-arm-kernel@lists.infradead.org; Tue, 26 May 2020 09:20:59 +0000
+Received: by mail-lj1-x243.google.com with SMTP id e4so1135592ljn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 02:20:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tjIxLurGAZl3ClrqkcDTUozxTD1nDew3Brnlr2xXLqY=;
+ b=JCqyYSiMdYS1eYDRtnDeEiedABn2SLAJ9eHMlUwpGPm+5yJt1v4LCf6UvpJc84XRbE
+ 1cfRRQoLViCSj/Ef6G2XQ1MnDs8XRyleZi6kQTJgM4lW4Eyurn8txIZenaHRroS5F4Ii
+ zqWLfi1rIGTUwxWPo6NxZWKxgXdkIdm6Z/9uTNfehAxFi1FZ5QXiVI/oLvhWfxfBZP04
+ 64YHr1ZbYww9BFPrJ+2zK2C1+oW+dLlk/sZkNNq4aRcvkJ5DbIEeA679CTRIvnoSxtQM
+ qA8qkXqWSIUdnpytsjCspoXtwgmZPFRfsVg7QYO2gGDE+hSnc8P9Dw8ZhWPx2fnwvwsb
+ qrxw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tjIxLurGAZl3ClrqkcDTUozxTD1nDew3Brnlr2xXLqY=;
+ b=il2+4rszo6kD1ydfz2HbpI6tIw2loxZN9qP9vHdqM+exWlU64yEQXsIw98T/bk9P2B
+ sjb7kyU4lQm2baR6ifpuZ9ioXSK8H1X9D5bgErnkX+1ACw9lGpK6/CHV8mGYAobi0CTT
+ gumeNKipEpikV2JV8bFNojSRXVwXyyRit/YVlXUpg2TVYzpF6C7bdOA+MQeAQQqZiwt+
+ 0R3+xKgDY5rGgH8wsxe56B88e6+J5n/kp6SOV9EAUe4oODyI7Ug44DWoQQttnFEF2EJt
+ CjlGiuL4jfsxJ2r8GC1t0NdkMkVsZqkLOL49Hwm13d9Ioh+PQs/Dzh5pXUO8N27Sa2S6
+ 1wow==
+X-Gm-Message-State: AOAM532t+dMTLfwO8h+LUOo1SwzIcjRVjrQu8JF06GE1EbIgI2ZnCKZC
+ NCbie+EkWNMMCDMxupNapR50v/Oki0AeYZ6fm01HkA==
+X-Google-Smtp-Source: ABdhPJwg6A/TEx1rm0SmH/Tfvf7jOImMZnrbm86NXCtz4hLlqpfrcSfkYxR6Rag1WIB7c/CsQ4iUICjgpzIFIhw1xII=
+X-Received: by 2002:a2e:711c:: with SMTP id m28mr162302ljc.104.1590484855739; 
+ Tue, 26 May 2020 02:20:55 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200513141134.25819-1-lars.povlsen@microchip.com>
+ <20200513141134.25819-2-lars.povlsen@microchip.com>
+ <CACRpkdZa7OM3bqB+zRprEQ3M4m9hG3uPCoYxrdH_O=oxD8zi8Q@mail.gmail.com>
+ <87pnb1nf2j.fsf@soft-dev15.microsemi.net>
+ <CACRpkdYesD9sRQZXQNEaBY2Ouu3bjKKGWpRtU-Lpa4AcjyPwXw@mail.gmail.com>
+ <87r1v8oz9f.fsf@soft-dev15.microsemi.net>
+In-Reply-To: <87r1v8oz9f.fsf@soft-dev15.microsemi.net>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 26 May 2020 11:20:44 +0200
+Message-ID: <CACRpkdaJvaqPptPD-A1DriVgBOZGZ4Qf0UsbsjG39ptx6bSJKg@mail.gmail.com>
+Subject: Re: [PATCH 1/3] dt-bindings: pinctrl: Add bindings for mscc,
+ ocelot-sgpio
+To: Lars Povlsen <lars.povlsen@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_021920_539951_4F7D0083 
-X-CRM114-Status: GOOD (  10.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200526_022058_039580_9A9C2922 
+X-CRM114-Status: GOOD (  10.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -62,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,57 +96,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-spi@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 25 May 2020 11:45:40 +0800, dillon.minfei@gmail.com wrote:
-> V5's update based on Mark Brown's suggestion, use 'SPI_MASTER_MUST_RX'
-> for SPI_SIMPLEX_RX mode on stm32 spi controller.
-> 
-> V5:
-> 1 instead of add send dummy data out under SIMPLEX_RX mode,
->    add flags 'SPI_CONTROLLER_MUST_TX' for stm32 spi driver
-> 2 bypass 'SPI_CONTROLLER_MUST_TX' and 'SPI_CONTROLLER_MUST_RX' under
-> 'SPI_3WIRE' mode
-> 
-> [...]
+On Mon, May 25, 2020 at 4:38 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
 
-Applied to
+> Yes, the problem is they're not in sequence. F.ex. you could have ports
+> 0,1 enabled, skip 2,3,4 and have 5,6,7 enabled.
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-next
+Just use disabled nodes.
 
-Thanks!
+That would look like this in my idea of a device tree:
 
-[1/2] spi: stm32: Add 'SPI_SIMPLEX_RX', 'SPI_3WIRE_RX' support for stm32f4
-      commit: 61367d0b8f5edf5146059ba8b79ce4e4485340b2
-[2/2] spi: flags 'SPI_CONTROLLER_MUST_RX' and 'SPI_CONTROLLER_MUST_TX' can't be coexit with 'SPI_3WIRE' mode
-      commit: aee67fe879e5030a2f5e1d9af3cb5b2a1027e78a
+pinctrl@nnn {
+    gpio0: gpio@0 {
+        compatible = "foo";
+        status = "ok";
+        ....
+    };
+    gpio1: gpio@1 {
+        compatible = "foo";
+        status = "ok";
+        ....
+    };
+    gpio2: gpio@2 {
+        compatible = "foo";
+        status = "disabled";
+        ....
+    };
+    gpio3: gpio@3 {
+        compatible = "foo";
+        status = "disabled";
+        ....
+    };
+    gpio4: gpio@4 {
+        compatible = "foo";
+        status = "disabled";
+        ....
+    };
+    gpio5: gpio@5 {
+        compatible = "foo";
+        status = "ok";
+        ....
+    };
+    gpio6: gpio@6 {
+        compatible = "foo";
+        status = "ok";
+        ....
+    };
+    gpio7: gpio@7 {
+        compatible = "foo";
+        status = "ok";
+        ....
+    };
+};
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.
+It is common to use the status to enable/disable nodes like this.
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
+In the Linux kernel is is possible to iterate over these subnodes and
+check which ones are enabled and disabled while keeping the
+index by using something like:
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
+i = 0;
+struct device_node *np, *child;
+for_each_child_of_node(np, child) {
+    if (of_device_is_available(child)) {
+        pr_info("populating device %d\n", i);
+    }
+    i++;
+}
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+Certainly you can use i in the above loop to populate your registers
+etc from an indexed array.
 
-Thanks,
-Mark
+This way the consumers can pick their GPIO from the right port
+and everything just using e.g.
+my-gpios = <&gpio6 4 GPIO_OUT_LOW>;
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
