@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 476DD1E4138
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:05:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 964821E4132
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:04:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BCo0nicHPlVhyulR1eDIsFCxuSiL+jy1KTeiFILPzis=; b=uOa+s7WZo7gVJZ
-	ZnUEh2sMI2AEp2JANiQMLG6peEhphyNAVuzb83hqhPlhcmma7ebSWUzZ4YT9Xy8+PFZ/9FgatDl4z
-	8s2YiwDKBOFmiRtEJEG4xZKthzwse3pbaL9ERLV4IwVM89Y2vutNxk7tMoLV3ZnjV9K4WeKCiDGKI
-	g1uEziF5ViLPaIn1bpKeJYf5U+Uva0qdB8L8b8Sl26yU+447K0a7jsXaRv9a9IRguvYkU4zZj15Il
-	zMeBl2FkCMAXU7wx0NIf3OxB68eEp2wmZTM7m4SXJp3YZRRpukJzbHnkD65DDNvorYyTC7Awr4aSP
-	C0DEW8T817AeavqvBc9Q==;
+	List-Owner; bh=Zz3zM9ez/aOcmsZosIOlInhkkyqI0zjBQsSL3o3FjCo=; b=Bk9ZuIvuWZ/7GF
+	h7VLTcM797T7FzlsJS+nvNgha/XdhgJzqHGe8RRQA0pnqKKqIdFB7V1ECMiK3moPiOmS2ln6UzmtI
+	dpkFdtzGoZv5qpCmgBdDO5JnzP9SRgIWjanVdknRnzeYlHSXvvIqMI/GIW5FWlOXTat19bKJ6XZpI
+	VH3CjcujYjwMDXEL1Bu0qy89LB0YMSrdCSmGXkbo0KeL0dGIk32hfGnQqCYA6/CaPLpXVvdFyxRaw
+	SWR86GQlZYIfaDf+BrrFw3G/RcsyHhdV/VQ/idWlDUR24DZg/sH45AQZOneeaEc4qgOp8iWZc7AXd
+	cil0RLdnPnvZeRdPNsrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jduoG-0002v6-BQ; Wed, 27 May 2020 12:05:24 +0000
+	id 1jdunS-0002LX-8a; Wed, 27 May 2020 12:04:34 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdudo-0006un-Eo; Wed, 27 May 2020 11:54:38 +0000
+ id 1jdudp-0006vG-HJ; Wed, 27 May 2020 11:54:40 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 5951AAC91;
- Wed, 27 May 2020 11:54:37 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 29337AE2D;
+ Wed, 27 May 2020 11:54:38 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [RFC 24/50] staging: vchi: Get rid of effect less expression
-Date: Wed, 27 May 2020 13:53:29 +0200
-Message-Id: <20200527115400.31391-25-nsaenzjulienne@suse.de>
+Subject: [RFC 25/50] staging: vchiq: Introduce vchiq_validate_params()
+Date: Wed, 27 May 2020 13:53:30 +0200
+Message-Id: <20200527115400.31391-26-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 References: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_045436_702239_75010D22 
-X-CRM114-Status: GOOD (  10.18  )
+X-CRM114-CacheID: sfid-20200527_045437_730718_DD673197 
+X-CRM114-Status: GOOD (  12.75  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,27 +71,71 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It was probably there to trick compilers into ignoring unused variables,
-which isn't needed in Linux.
+When adding a new service validate the configuration parameters
+provided, and remove unnecessary checks in vchi, now that we have
+validated service's config.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c | 2 --
- 1 file changed, 2 deletions(-)
+ .../interface/vchiq_arm/vchiq_core.c              | 15 +++++++++++++++
+ .../interface/vchiq_arm/vchiq_shim.c              |  4 ----
+ 2 files changed, 15 insertions(+), 4 deletions(-)
 
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
+index ae9183db44ee..46b09b7154f8 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
+@@ -2265,6 +2265,16 @@ vchiq_init_state(struct vchiq_state *state, struct vchiq_slot_zero *slot_zero)
+ 	return VCHIQ_ERROR;
+ }
+ 
++static int vchiq_validate_params(const struct vchiq_service_params *params)
++{
++	if (!params->callback || !params->fourcc) {
++		vchiq_loud_error("Can't add service, invalid params\n");
++		return -EINVAL;
++	}
++
++	return 0;
++}
++
+ /* Called from application thread when a client or server service is created. */
+ struct vchiq_service *
+ vchiq_add_service_internal(struct vchiq_state *state,
+@@ -2275,8 +2285,13 @@ vchiq_add_service_internal(struct vchiq_state *state,
+ 	struct vchiq_service *service;
+ 	struct vchiq_service __rcu **pservice = NULL;
+ 	struct vchiq_service_quota *service_quota;
++	int ret;
+ 	int i;
+ 
++	ret = vchiq_validate_params(params);
++	if (ret)
++		return NULL;
++
+ 	service = kmalloc(sizeof(*service), GFP_KERNEL);
+ 	if (!service)
+ 		return service;
 diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
-index 649a65f02578..e09c595d6f9d 100644
+index e09c595d6f9d..dcf8776834b1 100644
 --- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
 +++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
-@@ -288,8 +288,6 @@ static struct vchi_service *service_alloc(struct vchiq_instance *instance,
- {
- 	struct vchi_service *service = kzalloc(sizeof(struct vchi_service), GFP_KERNEL);
+@@ -271,15 +271,11 @@ static enum vchiq_status shim_callback(enum vchiq_reason reason,
+ 	struct vchi_service *service =
+ 		(struct vchi_service *)VCHIQ_GET_SERVICE_USERDATA(handle);
  
--	(void)instance;
+-	if (!service->callback)
+-		goto release;
 -
- 	if (service) {
- 		if (!vchiu_queue_init(&service->queue, 64)) {
- 			service->callback = setup->callback;
+ 	if (reason == VCHIQ_MESSAGE_AVAILABLE)
+ 		vchiu_queue_push(&service->queue, header);
+ 
+ 	service->callback(service->callback_param, reason, bulk_user);
+ 
+-release:
+ 	return VCHIQ_SUCCESS;
+ }
+ 
 -- 
 2.26.2
 
