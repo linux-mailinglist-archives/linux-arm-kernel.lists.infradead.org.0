@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8006B1E4962
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:09:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CB2D1E4963
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:09:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AhD7E27iRaxf+ett+wPwq69M87R/qmCE20ocs1S2q6U=; b=q4npOE+cHoFWWL
-	05hJDgHLRc7kXiPIdx9gQ8GqbAwGxJVwGBwAeHhEPhIjsLjnUOWytviOrPeSs7DVvoHgAQDV2Txv8
-	datdCQO6PnqpJxdl6iXnHZ4WMYQN2tTOYZaWM9B3jT6KD0/qoa5jpupyfQ6ADt//TL86xGnaFSVYP
-	kJmPY0SzTXf7lDLwEToi6j74pZLvCNRy7EJrCuARoAf7fxoklgW6upUXyu5SoNyFY9keiRy0n4IxD
-	96LL5E3x3Qv4S1QKGglT2kO7x4PQDPkaJvT5SNzUdYZxRElVj8/h+meBNDmYZyKp5vLM1ug0jxRTb
-	vuHzBCjoky7SCLnNUufA==;
+	List-Owner; bh=r2fu9nM0GALXVoa3PgOjvqCtq0PSOTKLcF0v1uR0flM=; b=j7HLYx9f/EHYJe
+	LzNjhHZbaF3qMI+iN+ea9/AkHmECJWhwlb+sstwO7dbAQKcSM03N4sm9VPbSkCQQRCYONrfIREi2t
+	Imv1oE0Cc3+dtXXJHLdvq7FCOXgJfss+O/cvI+rPPA17D/Urevn/tkWZK6WjtcfYIrpuPnNGvOGi2
+	7O77edmFS0PSa12snu4ZL8Rj1dzHysVuUm+ZZCM9+OdsENHX3XTDzIt9qEucIamK+PctLMMEoF1XE
+	H7afcMQJxACq1or0LwzzaaZpwLyhhUzzm/T/Xrqkgh3jTREAqwNvlkJxVRySqwxQ8QJHMdnyhlBR9
+	cwyBSy5sBe0zZLOPBRyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdycI-0004Ex-Rb; Wed, 27 May 2020 16:09:18 +0000
+	id 1jdych-0004dr-5p; Wed, 27 May 2020 16:09:43 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyJd-0006Ro-T3; Wed, 27 May 2020 15:50:05 +0000
+ id 1jdyJi-0006Xo-Dd; Wed, 27 May 2020 15:50:11 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 8427558204A;
- Wed, 27 May 2020 11:50:00 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:00 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id EA5B5582047;
+ Wed, 27 May 2020 11:50:03 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:03 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=nraSlgJbsb/0z
- SiZLIXgVenK3TQP78QMuAzCTOoxk9A=; b=HWbvOU3cV14XpZLhsgFbU4JmzTwr2
- t2eh+Uv86tDxtbq+msDaLU/AeuemAj/RCVzQmohicsA3Xoo3GMwK2CKlVxmltfj5
- k8/0MggVYg8smkSZsCVuGyVqs1tAEkiO/3k2JhOuNcQcDOibDvi8h71bd/u5evmQ
- TGpNpAVhZWkoPh7V3PP5xqMLvuM6SsC8pEWo0IiTMyyfLW0xfRMK4HkkrzjdxVTy
- qTv+ZYo9p9VTNALK5yTuCV5DtBNjnq3fGGN4wza87JBqlFtaOBe+sbpssk4ryW+l
- 208vM+sCELf+jKU+AF8cWn7aLG8sGiqROztuDHbJPhP4/5iGyAzoSJung==
+ :mime-version:content-transfer-encoding; s=fm2; bh=tK1sPZc0eto3z
+ 3gDAjTjmk5epnbO+EUqvo+nfO7QKg4=; b=GTHvq7BUjhPoi6mWZH4KmBNdZsm12
+ XetJZ7ezG2R44lQsom2amyjCajgbLqBuzazqizE8t/y0Jmr9nDK7RucvWnfoAq6S
+ Lh3jf1H23HlShmi77TnURpuJP3m84UnEk6FDYjo+OMdpPD8vV570QZvMYzel1wiZ
+ GyhYWvh50Ap0Mq7afoqWtlHj1Svbsp+RTVdEGny7laLljZcAXkDLdxd+JpCd3Mwd
+ 5F7pFn3rE4OJwpoKiUvk/Qs3z6pqJuPL5B8yW6R+OroeaM8sy0uBRPuSQPie0sFr
+ T/wZAxmHlru3WfNhT+wTbIKAwlf5/28hKSFRUNCaCFPPNb/D5rSitDFCw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=nraSlgJbsb/0zSiZLIXgVenK3TQP78QMuAzCTOoxk9A=; b=MIM5euon
- lys+3BtC83CyPOPiDZT5GxDEt4v34Q2HZh7aolEnWrmvt5RQ5hu0dbjO7U3qxrtL
- Dlc14QEyzXYQlhIXMZMz6tYLz23upTzsm7COSnliSTFw5/pKLENJTgc7T7D6vCwo
- +6zkypxE9rsDsdGx+I0nd1eF4CvLA785NUtDOIZ4MeqVXB4MBzlCPKy3TyoSYqBq
- 4cObxsWWqRYSCcheMyipwokN/XO6D7QpWZ+GcDloJDzSaYnVaoLOZff+UZrDlfXo
- 8JLozBArBqwC+B2tA2q3We7tHU/rVdKsxd2NwQFyPPG/6WjJgHcscisCyni372gk
- 0vqBo9n+0CGQEA==
-X-ME-Sender: <xms:KIzOXlwxG8Ezmqa4Mc2asPTIQzHX7PUbOw3SqxBEX7zL4SBPNYYB1g>
+ fm2; bh=tK1sPZc0eto3z3gDAjTjmk5epnbO+EUqvo+nfO7QKg4=; b=DmLvZIFj
+ 0wiCBpo/tCxDr3LZ0P+kxWkVWjxPiAwOCxbHNrSxKuhPhLK7f/EsTCKvw/3+CA/f
+ p6nNrOMJcT+bUzI8AujhnzgLSRRmWbFZqRzQ0qaErrqF9yxi+x7jWqV2DvIOqxNm
+ 1E0OwFHkF8AEM6T8fqUYTbKqUv6ZAgbt0xjkAMnJsdu9L7pt6ZbxmTgnZdMUrlXS
+ KX6sM3uYMwBoRDK134nb0/iAMANlCU+L7ABaMtSGQrkLhKlUTsnBbsktVwPgOXXi
+ xoiF2tx83DJH9NzChIVyK+pJ1/4f1B3JiZ/wyjOheCNRdA5ZMQ8am8OxAI8gEeuy
+ X7Hn1lRiT59pZQ==
+X-ME-Sender: <xms:K4zOXriJY-ZWP1vtJKX5jh38HmiJjtcg7YNkL8wxljYoPPOEdUu7Mg>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
- hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepjeenuc
- frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:KIzOXlTIsjdPFuUhWGOfe-R61_dtzaGrUMqUuJrBvXPWv-kPhV7xmA>
- <xmx:KIzOXvUb69PUN_TTXQUTOb2e3p_1g2WMFGyWwIpnB_44nLwDAdoARA>
- <xmx:KIzOXnhx-PaHRmoshoF32hSI8LmLAq6zcqVDEg9oQaRZpqW5v4ZsZg>
- <xmx:KIzOXpAPb8LKTfCLGXBOrVOxofXNsQ8FUlWhtwIuVNgETjN7pqugMQ>
+ hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepuddune
+ curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:K4zOXoAPs1N8ye02GgENVLkmdr6EMO7FMKxFbOsZb-fYeG10EQYUHQ>
+ <xmx:K4zOXrHxisQabacy1m3f9I5dEr0ldICUcFV7R6VJiFmaIGyve1iQmA>
+ <xmx:K4zOXoRaXRaIniZsjttjFb0tPGYdtnpzHxnHloy1qgZ-oSXFVk1TrQ>
+ <xmx:K4zOXrx5_55YQhc08xtmgs64sxaS8PxGlm5J104NrKB4kocEWfZZ5A>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 240F13280064;
- Wed, 27 May 2020 11:50:00 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 040FD30624CC;
+ Wed, 27 May 2020 11:50:01 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 028/105] drm/vc4: crtc: Restrict HACT_ACT setup to DSI
-Date: Wed, 27 May 2020 17:47:58 +0200
-Message-Id: <7a93436f97666a2aa025686ef3ff3606de4bec67.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 029/105] drm/vc4: crtc: Move the cob allocation outside of
+ bind
+Date: Wed, 27 May 2020 17:47:59 +0200
+Message-Id: <1c2c039ca885db63186491275708dbe4371b704c.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085002_409511_7B023302 
-X-CRM114-Status: UNSURE (   9.07  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200527_085007_119511_79A5A8A0 
+X-CRM114-Status: GOOD (  13.18  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -118,28 +118,111 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The HACT_ACT field only needs to be written to when using a DSI display.
-Let's move that setup to our DSI branch to clear a bit the common path.
+The COB allocation depends on the HVS channel used for a given
+pixelvalve.
+
+While the channel allocation was entirely static in vc4, vc5 changes
+that and at bind time, a pixelvalve can be assigned to multiple
+HVS channels.
+
+Let's prepare that rework by allocating the COB when it's actually
+needed.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_crtc.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/vc4/vc4_crtc.c | 36 ++++++++++++++++-------------------
+ drivers/gpu/drm/vc4/vc4_drv.h  |  2 +--
+ 2 files changed, 17 insertions(+), 21 deletions(-)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
-index 8dbf06cdb069..5e1d234f3c8e 100644
+index 5e1d234f3c8e..d58f881649d5 100644
 --- a/drivers/gpu/drm/vc4/vc4_crtc.c
 +++ b/drivers/gpu/drm/vc4/vc4_crtc.c
-@@ -344,7 +344,8 @@ static void vc4_crtc_config_pv(struct drm_crtc *crtc)
- 			   (is_dsi ? PV_VCONTROL_DSI : 0));
+@@ -65,6 +65,20 @@ static const struct debugfs_reg32 crtc_regs[] = {
+ 	VC4_REG32(PV_HACT_ACT),
+ };
+ 
++static unsigned int
++vc4_crtc_get_cob_allocation(struct vc4_dev *vc4, unsigned int channel)
++{
++	u32 dispbase = HVS_READ(SCALER_DISPBASEX(channel));
++	/* Top/base are supposed to be 4-pixel aligned, but the
++	 * Raspberry Pi firmware fills the low bits (which are
++	 * presumably ignored).
++	 */
++	u32 top = VC4_GET_FIELD(dispbase, SCALER_DISPBASEX_TOP) & ~3;
++	u32 base = VC4_GET_FIELD(dispbase, SCALER_DISPBASEX_BASE) & ~3;
++
++	return top - base + 4;
++}
++
+ static bool vc4_crtc_get_scanout_position(struct drm_crtc *crtc,
+ 					  bool in_vblank_irq,
+ 					  int *vpos, int *hpos,
+@@ -74,6 +88,7 @@ static bool vc4_crtc_get_scanout_position(struct drm_crtc *crtc,
+ 	struct drm_device *dev = crtc->dev;
+ 	struct vc4_dev *vc4 = to_vc4_dev(dev);
+ 	struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
++	unsigned int cob_size;
+ 	u32 val;
+ 	int fifo_lines;
+ 	int vblank_lines;
+@@ -109,8 +124,9 @@ static bool vc4_crtc_get_scanout_position(struct drm_crtc *crtc,
+ 			*hpos += mode->crtc_htotal / 2;
  	}
  
--	CRTC_WRITE(PV_HACT_ACT, mode->hdisplay * pixel_rep);
-+	if (is_dsi)
-+		CRTC_WRITE(PV_HACT_ACT, mode->hdisplay * pixel_rep);
++	cob_size = vc4_crtc_get_cob_allocation(vc4, vc4_crtc->channel);
+ 	/* This is the offset we need for translating hvs -> pv scanout pos. */
+-	fifo_lines = vc4_crtc->cob_size / mode->crtc_hdisplay;
++	fifo_lines = cob_size / mode->crtc_hdisplay;
  
- 	CRTC_WRITE(PV_CONTROL,
- 		   VC4_SET_FIELD(format, PV_CONTROL_FORMAT) |
+ 	if (fifo_lines > 0)
+ 		ret = true;
+@@ -1106,22 +1122,6 @@ static void vc4_set_crtc_possible_masks(struct drm_device *drm,
+ 	}
+ }
+ 
+-static void
+-vc4_crtc_get_cob_allocation(struct vc4_crtc *vc4_crtc)
+-{
+-	struct drm_device *drm = vc4_crtc->base.dev;
+-	struct vc4_dev *vc4 = to_vc4_dev(drm);
+-	u32 dispbase = HVS_READ(SCALER_DISPBASEX(vc4_crtc->channel));
+-	/* Top/base are supposed to be 4-pixel aligned, but the
+-	 * Raspberry Pi firmware fills the low bits (which are
+-	 * presumably ignored).
+-	 */
+-	u32 top = VC4_GET_FIELD(dispbase, SCALER_DISPBASEX_TOP) & ~3;
+-	u32 base = VC4_GET_FIELD(dispbase, SCALER_DISPBASEX_BASE) & ~3;
+-
+-	vc4_crtc->cob_size = top - base + 4;
+-}
+-
+ static int vc4_crtc_bind(struct device *dev, struct device *master, void *data)
+ {
+ 	struct platform_device *pdev = to_platform_device(dev);
+@@ -1176,8 +1176,6 @@ static int vc4_crtc_bind(struct device *dev, struct device *master, void *data)
+ 	 */
+ 	drm_crtc_enable_color_mgmt(crtc, 0, true, crtc->gamma_size);
+ 
+-	vc4_crtc_get_cob_allocation(vc4_crtc);
+-
+ 	CRTC_WRITE(PV_INTEN, 0);
+ 	CRTC_WRITE(PV_INTSTAT, PV_INT_VFP_START);
+ 	ret = devm_request_irq(dev, platform_get_irq(pdev, 0),
+diff --git a/drivers/gpu/drm/vc4/vc4_drv.h b/drivers/gpu/drm/vc4/vc4_drv.h
+index 8c0f714f557b..6c4b78b71446 100644
+--- a/drivers/gpu/drm/vc4/vc4_drv.h
++++ b/drivers/gpu/drm/vc4/vc4_drv.h
+@@ -475,8 +475,6 @@ struct vc4_crtc {
+ 	u8 lut_r[256];
+ 	u8 lut_g[256];
+ 	u8 lut_b[256];
+-	/* Size in pixels of the COB memory allocated to this CRTC. */
+-	u32 cob_size;
+ 
+ 	struct drm_pending_vblank_event *event;
+ 
 -- 
 git-series 0.9.1
 
