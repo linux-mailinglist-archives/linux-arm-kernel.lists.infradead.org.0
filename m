@@ -2,58 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BB501E41C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:14:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 286761E41D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:16:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gciXbU/g/Y57cd/Np5ByDBrCYToVcEVrVoZykYgtrFI=; b=Vo5usl04dZwegi
-	yFsv3bO7JRJTFAMG51o+KFXxTFcFbiyCgsbyIn/rmV4K+rB+0MzvodnnhJzpKHwber6tX98uF4DNb
-	ucpqMBGvSrZHWkfDr0vqnfC8bRhOB4QSHPgA4ZDrkrQQt2RFa/hjcLev2TErb6RxcDtwZjA725Ppn
-	1BxAAbxGWxQixtCpTVl3eHAgAsVf1QXtXPmrUxly0E2zZAI039MtJUYaT/9uoAW3+5/Sz9B5DihND
-	GsuSVJtWc4Ork8EbJbmFvs6YracbaA8LoRMEvnHIcOR0PoWVO7AaDjKihlW3N+Yb028DAlQLAKoyv
-	raSSqnNImmia9Kn68cyg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Nj+ess8e4hsExPELvkDW2d8sAbgxLz3LRGzd1Xp4czo=; b=pj9HYWvSMyhgjL
+	jPdB1QCVC/0yClU2g4JrthgX+MQasx/v92AFXhleN5rU7y1k8q2juw85ZfJYfuXbMom/Y/C37kx9r
+	Zm1BXKKvz43r2bxe6zOK6AAtoSYqLkQM9b2VOeUbU4zPxBRB8kAATwrCr/kAFRZK/8+fiUO29+rtt
+	Pgf4Ij10IrE5qL1OtSt77FIhIm9viJGxZYCp/hUYpaaVMp1vCdSMagptS+7L5zpBVCOhxSoAuEKhH
+	T5Zgf+Of1G6k000Tu+5p3xUzDdI4oII6qWHCvefLknGySCr1QqxQjBpPFgsRheQZeL0jkv/kvibDs
+	52XYASY5wwR4lBLfrYlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jduwx-0007bK-73; Wed, 27 May 2020 12:14:23 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jduyW-0002ib-32; Wed, 27 May 2020 12:16:00 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdueI-0007Ze-Qa; Wed, 27 May 2020 11:55:12 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id D415AAE2D;
- Wed, 27 May 2020 11:55:06 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>
-Subject: [RFC 50/50] staging: vchiq: Move vchiq.h into include directory
-Date: Wed, 27 May 2020 13:53:55 +0200
-Message-Id: <20200527115400.31391-51-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200527115400.31391-1-nsaenzjulienne@suse.de>
-References: <20200527115400.31391-1-nsaenzjulienne@suse.de>
+ id 1jduhU-00048j-GG
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:58:34 +0000
+Received: by mail-lf1-x144.google.com with SMTP id r125so14251172lff.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 04:58:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=rYrZ6BNeShCtzdDME/YtGKRfZIxdp9G0kT5ZVD+CsCM=;
+ b=punGG7/lcxtEUybVw/AkDDIp96wgkX0q1A2AfkZP8+e4I1WWgtGhI6QrE5IqqAxJRW
+ gqEZx5we5EzJA6+G0ZWNvoeQqoi7FGu2BD6pIV4BkzJPg4QCuz04dcS9s4qYJ6U5inaN
+ 1YAURPfKqwXBpRn0bnTFH6Ssy7h0TDt5RYHnVud2Az+f72gFTndXUg9cuqDAsWmHmoCI
+ O6uRRKmjAypbjOllD1OcDTT+YW7rEIiiRocExjTPWxNLX8ecMdOmgd2gjy3HE+x3s/gC
+ uC6txx7GUBYw4DdCS7/lD/pkeXc4edYjPBaDTzQXHDR+Q1NYZXQWRM+LLWlM3Dx44x7Y
+ 9NtA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=rYrZ6BNeShCtzdDME/YtGKRfZIxdp9G0kT5ZVD+CsCM=;
+ b=lQuEh1b1AeZCZjB/Gg8q1WSqCWknlxkAELPdVA9zFqaDv7bBt5pA/Ke0Zryq0r+Plt
+ KbDDNcO+sfaFh5zRjNXQAp0qGwr3J4ur78uF/aCr1griKObPTg9WZj+a2s5pzkeWFng1
+ kP4nIWFr3rvutY7GYsu7SJ1lrpmjP4erlBqNozO4GjkhW8VOw1QA/maBQtcspZAiJ784
+ n4cmFGgrd4xG+4kpZsK53NvV/SSMUZ8BXu2J218+gSZooqvBrvZM9IQbocVw/rJ+OTWK
+ pDGEjOKkDCvdesDn945/sslvsDh2tqdGbgr3JKyQISOMFGS9aKpMHj69aXOYE98qPmg6
+ 8Kzg==
+X-Gm-Message-State: AOAM5330jtpzQiJIRilFg6COvea4pOEfmusuxKHSviwVjHqMILGVnwDK
+ hIUMq/UmwdgI9xC2DO1LyEx8s1/2odQ=
+X-Google-Smtp-Source: ABdhPJz6BnIVdaE6omirT8WzHpqNo4HjEQiM4vi6c+coCdJpG45JgBzX6eMvw9f4MmtGXXbkt4Hn2Q==
+X-Received: by 2002:a19:bc4:: with SMTP id 187mr3007790lfl.211.1590580701220; 
+ Wed, 27 May 2020 04:58:21 -0700 (PDT)
+Received: from localhost.localdomain
+ (c-8cdb225c.014-348-6c756e10.bbcust.telenor.se. [92.34.219.140])
+ by smtp.gmail.com with ESMTPSA id 2sm648936lji.100.2020.05.27.04.58.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 04:58:20 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH v2] ARM: mm: Simplify act_mm macro
+Date: Wed, 27 May 2020 13:56:18 +0200
+Message-Id: <20200527115618.92792-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.25.4
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_045507_198276_A8670D56 
-X-CRM114-Status: GOOD (  13.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200527_045824_578929_43402B8D 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,177 +96,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, kernel-list@raspberrypi.com,
- laurent.pinchart@ideasonboard.com, linux-kernel@vger.kernel.org,
- gregkh@linuxfoundation.org
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To make the separation clear between vchiq's header files and vchiq.h,
-which is to be used by services and is the 'public' API, move it into a
-dedicated includes directory.
+The act_mm assembly macro is actually partly reimplementing
+get_thread_info so let's just use that.
 
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Suggested-by: Russell King <linux@armlinux.org.uk>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- drivers/staging/vc04_services/Makefile                         | 2 +-
- drivers/staging/vc04_services/bcm2835-audio/Makefile           | 2 +-
- drivers/staging/vc04_services/bcm2835-audio/bcm2835.h          | 2 +-
- .../{interface/vchiq_arm => include/linux/raspberrypi}/vchiq.h | 0
- drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h | 2 +-
- .../staging/vc04_services/interface/vchiq_arm/vchiq_ioctl.h    | 2 +-
- drivers/staging/vc04_services/vc-sm-cma/Makefile               | 1 -
- drivers/staging/vc04_services/vc-sm-cma/vc_sm.c                | 2 +-
- drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c       | 2 +-
- drivers/staging/vc04_services/vchiq-mmal/Makefile              | 1 +
- drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c          | 3 +--
- 11 files changed, 9 insertions(+), 10 deletions(-)
- rename drivers/staging/vc04_services/{interface/vchiq_arm => include/linux/raspberrypi}/vchiq.h (100%)
+ChangeLog v1->v2:
+- Accidentally removed the index to the active task which
+  is what we want here.
+---
+ arch/arm/mm/proc-macros.S | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/staging/vc04_services/Makefile b/drivers/staging/vc04_services/Makefile
-index e32c0744e7fc..e1de39303ffe 100644
---- a/drivers/staging/vc04_services/Makefile
-+++ b/drivers/staging/vc04_services/Makefile
-@@ -14,5 +14,5 @@ obj-$(CONFIG_VIDEO_ISP_BCM2835)		+= bcm2835-isp/
- obj-$(CONFIG_BCM_VC_SM_CMA) 		+= vc-sm-cma/
- obj-$(CONFIG_BCM2835_VCHIQ_MMAL)	+= vchiq-mmal/
+diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
+index 60ac7c5999a9..e2c743aa2eb2 100644
+--- a/arch/arm/mm/proc-macros.S
++++ b/arch/arm/mm/proc-macros.S
+@@ -5,7 +5,6 @@
+  *  VMA_VM_FLAGS
+  *  VM_EXEC
+  */
+-#include <linux/const.h>
+ #include <asm/asm-offsets.h>
+ #include <asm/thread_info.h>
  
--ccflags-y += -D__VCCOREVER__=0x04000000
-+ccflags-y += -I $(srctree)/$(src)/include  -D__VCCOREVER__=0x04000000
- 
-diff --git a/drivers/staging/vc04_services/bcm2835-audio/Makefile b/drivers/staging/vc04_services/bcm2835-audio/Makefile
-index 13fa6d7d9745..d59fe4dde615 100644
---- a/drivers/staging/vc04_services/bcm2835-audio/Makefile
-+++ b/drivers/staging/vc04_services/bcm2835-audio/Makefile
-@@ -2,4 +2,4 @@
- obj-$(CONFIG_SND_BCM2835)	+= snd-bcm2835.o
- snd-bcm2835-objs		:= bcm2835.o bcm2835-ctl.o bcm2835-pcm.o bcm2835-vchiq.o
- 
--ccflags-y += -I $(srctree)/$(src)/.. -D__VCCOREVER__=0x04000000
-+ccflags-y += -I $(srctree)/$(src)/../include -D__VCCOREVER__=0x04000000
-diff --git a/drivers/staging/vc04_services/bcm2835-audio/bcm2835.h b/drivers/staging/vc04_services/bcm2835-audio/bcm2835.h
-index ca220f5230ec..1b36475872d6 100644
---- a/drivers/staging/vc04_services/bcm2835-audio/bcm2835.h
-+++ b/drivers/staging/vc04_services/bcm2835-audio/bcm2835.h
-@@ -6,10 +6,10 @@
- 
- #include <linux/device.h>
- #include <linux/wait.h>
-+#include <linux/raspberrypi/vchiq.h>
- #include <sound/core.h>
- #include <sound/pcm.h>
- #include <sound/pcm-indirect.h>
--#include "interface/vchiq_arm/vchiq.h"
- 
- #define MAX_SUBSTREAMS   (8)
- #define AVAIL_SUBSTREAMS_MASK  (0xff)
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq.h b/drivers/staging/vc04_services/include/linux/raspberrypi/vchiq.h
-similarity index 100%
-rename from drivers/staging/vc04_services/interface/vchiq_arm/vchiq.h
-rename to drivers/staging/vc04_services/include/linux/raspberrypi/vchiq.h
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
-index 8a27f3d7217e..e67692879249 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
-@@ -10,10 +10,10 @@
- #include <linux/kref.h>
- #include <linux/rcupdate.h>
- #include <linux/wait.h>
-+#include <linux/raspberrypi/vchiq.h>
- 
- #include "vchiq_cfg.h"
- 
--#include "vchiq.h"
- 
- /* Do this so that we can test-build the code on non-rpi systems */
- #if IS_ENABLED(CONFIG_RASPBERRYPI_FIRMWARE)
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_ioctl.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_ioctl.h
-index f285d754ad28..3653fd99d8a1 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_ioctl.h
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_ioctl.h
-@@ -5,7 +5,7 @@
- #define VCHIQ_IOCTLS_H
- 
- #include <linux/ioctl.h>
--#include "vchiq.h"
-+#include <linux/raspberrypi/vchiq.h>
- 
- #define VCHIQ_IOC_MAGIC 0xc4
- #define VCHIQ_INVALID_HANDLE (~0)
-diff --git a/drivers/staging/vc04_services/vc-sm-cma/Makefile b/drivers/staging/vc04_services/vc-sm-cma/Makefile
-index 77d173694fbf..c92a5775c62e 100644
---- a/drivers/staging/vc04_services/vc-sm-cma/Makefile
-+++ b/drivers/staging/vc04_services/vc-sm-cma/Makefile
-@@ -1,6 +1,5 @@
- ccflags-y += \
- 	-I$(srctree)/$(src)/../ \
--	-I$(srctree)/$(src)/../interface/vchi \
- 	-I$(srctree)/$(src)/../interface/vchiq_arm\
- 	-I$(srctree)/$(src)/../include
- 
-diff --git a/drivers/staging/vc04_services/vc-sm-cma/vc_sm.c b/drivers/staging/vc04_services/vc-sm-cma/vc_sm.c
-index e4f7bdeef66d..cc69ce932317 100644
---- a/drivers/staging/vc04_services/vc-sm-cma/vc_sm.c
-+++ b/drivers/staging/vc04_services/vc-sm-cma/vc_sm.c
-@@ -46,9 +46,9 @@
- #include <linux/seq_file.h>
- #include <linux/syscalls.h>
- #include <linux/types.h>
-+#include <linux/raspberrypi/vchiq.h>
- #include <asm/cacheflush.h>
- 
--#include "vchiq.h"
- #include "vchiq_connected.h"
- #include "vc_sm_cma_vchi.h"
- 
-diff --git a/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c b/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
-index 2c65416cd331..8d8eda1a8142 100644
---- a/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
-+++ b/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
-@@ -18,8 +18,8 @@
- #include <linux/semaphore.h>
- #include <linux/slab.h>
- #include <linux/types.h>
-+#include <linux/raspberrypi/vchiq.h>
- 
--#include "vchiq.h"
- #include "vc_sm_cma_vchi.h"
- 
- #define VC_SM_VER  1
-diff --git a/drivers/staging/vc04_services/vchiq-mmal/Makefile b/drivers/staging/vc04_services/vchiq-mmal/Makefile
-index f8164c33aec3..b2a830f48acc 100644
---- a/drivers/staging/vc04_services/vchiq-mmal/Makefile
-+++ b/drivers/staging/vc04_services/vchiq-mmal/Makefile
-@@ -5,4 +5,5 @@ obj-$(CONFIG_BCM2835_VCHIQ_MMAL) += bcm2835-mmal-vchiq.o
- 
- ccflags-y += \
- 	-I$(srctree)/$(src)/.. \
-+	-I$(srctree)/$(src)/../include \
- 	-D__VCCOREVER__=0x04000000
-diff --git a/drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c b/drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c
-index 2101b79780eb..e057e21961d5 100644
---- a/drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c
-+++ b/drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c
-@@ -23,6 +23,7 @@
- #include <linux/slab.h>
- #include <linux/completion.h>
- #include <linux/vmalloc.h>
-+#include <linux/raspberrypi/vchiq.h>
- #include <media/videobuf2-vmalloc.h>
- 
- #include "mmal-common.h"
-@@ -32,8 +33,6 @@
- 
- #include "vc-sm-cma/vc_sm_knl.h"
- 
--#include "interface/vchiq_arm/vchiq.h"
--
- /*
-  * maximum number of components supported.
-  * This matches the maximum permitted by default on the VPU
+@@ -31,8 +30,7 @@
+  * act_mm - get current->active_mm
+  */
+ 	.macro	act_mm, rd
+-	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
+-	bic	\rd, \rd, #63
++	get_thread_info \rd
+ 	ldr	\rd, [\rd, #TI_TASK]
+ 	.if (TSK_ACTIVE_MM > IMM12_MASK)
+ 	add	\rd, \rd, #TSK_ACTIVE_MM & ~IMM12_MASK
 -- 
-2.26.2
+2.25.4
 
 
 _______________________________________________
