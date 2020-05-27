@@ -2,66 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 136CB1E379F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 07:04:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59A251E37BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 07:10:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dfYcAp2c/dPE0/JtzToeoN5WE9Ip0uSAToSHTBYhnZc=; b=lF035hIE9HvHbA
-	nQbFdgGJvhOrALI7UvXtnbIn2TTK/rT1nbRdAzOYl31ivUUH01SW+Vg7GQMOkzJ08ODnW6oZwiCwE
-	ALHw8Ajw+4IdnP2PGW5o/RiglnPepMjQHRIJ9obxySQsPm6dxl64nv3yRGePEEpMwtfVuR9CtlGjj
-	TLL1Zdjz4E5LzdOjG2xm1SH1JcCWycb3VtWlfqbE/BY/azoemf+QhULvWMJQUWg1raOLCLFwAW7+0
-	ZS5wM9iZC+Puc64SwgE981+cRzYJbAnS6OqRBfh+y1GL3Pk9P185fkK12+iWIfg3Tt6c+6j9YChi/
-	n6AMETFlGtl5JgeC3qCQ==;
+	List-Owner; bh=hNFc/FcgGXoOV/BGpDi7OY5EJ/W43r9ckWLj/X7iv9s=; b=BznDmdQQW6r8Vi
+	iD64x3Ud37ZIcEnJiuxi/UO5po7dw3J6nx9Z3ZYN0IrfzSglBSxGptCc0SUFUnQBl/OKnM1ONwYD2
+	KwSp5U6XNCnkeALdG2q1cXRDGDhE3vXCg98Uq3R79qLV2eX1VwGSlDuUpJ4D6LkfxOXRnS5b58nbu
+	XmArBfRY35xJxas2DMyAbmW+4pV5MSZUuM3QVfjXyJE+aQkhjEyFgDDoxqO1RFyEBJvvjXKl7Ukex
+	My42y6eIggGwA3pMg/jJyPca2rMEKpnqKB3Jkd5xeVLxhw87LwVQVCfOezYy9rKfs7BdjQpzG4oRJ
+	PCVmEgPiEFC97RhBBALw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdoEh-0005O4-PT; Wed, 27 May 2020 05:04:15 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jdoKf-0002gF-Rr; Wed, 27 May 2020 05:10:25 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdoEZ-0005ND-Ot
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 05:04:09 +0000
-Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jdoEK-0001cv-QG; Wed, 27 May 2020 07:03:52 +0200
-Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.92)
- (envelope-from <sha@pengutronix.de>)
- id 1jdoEI-0008BI-4d; Wed, 27 May 2020 07:03:50 +0200
-Date: Wed, 27 May 2020 07:03:50 +0200
-From: Sascha Hauer <s.hauer@pengutronix.de>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v8 00/13] add ecspi ERR009165 for i.mx6/7 soc family
-Message-ID: <20200527050350.GV11869@pengutronix.de>
-References: <1590006865-20900-1-git-send-email-yibin.gong@nxp.com>
+ id 1jdoKW-0002fn-JK; Wed, 27 May 2020 05:10:17 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 627CA68B02; Wed, 27 May 2020 07:10:12 +0200 (CEST)
+Date: Wed, 27 May 2020 07:10:11 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Nathan Chancellor <natechancellor@gmail.com>
+Subject: Re: [PATCH] media: omap3isp: Shuffle cacheflush.h and include mm.h
+Message-ID: <20200527051011.GB16317@lst.de>
+References: <20200515143646.3857579-7-hch@lst.de>
+ <20200527043426.3242439-1-natechancellor@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1590006865-20900-1-git-send-email-yibin.gong@nxp.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 07:02:31 up 97 days, 12:33, 88 users,  load average: 0.44, 0.37, 0.27
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
-X-SA-Exim-Mail-From: sha@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20200527043426.3242439-1-natechancellor@gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_220407_807162_CA8F0CBB 
-X-CRM114-Status: GOOD (  12.23  )
+X-CRM114-CacheID: sfid-20200526_221016_785662_5EB9F5A6 
+X-CRM114-Status: UNSURE (   6.47  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,46 +59,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- martin.fuzzey@flowbird.group, catalin.marinas@arm.com, will.deacon@arm.com,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-spi@vger.kernel.org,
- vkoul@kernel.org, broonie@kernel.org, linux-imx@nxp.com, festevam@gmail.com,
- u.kleine-koenig@pengutronix.de, dan.j.williams@intel.com, shawnguo@kernel.org,
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, zippel@linux-m68k.org,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org, sparclinux@vger.kernel.org,
+ linux-riscv@lists.infradead.org, hch@lst.de, linux-arch@vger.kernel.org,
+ linux-c6x-dev@linux-c6x.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-xtensa@linux-xtensa.org, arnd@arndb.de, linux-alpha@vger.kernel.org,
+ linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, linux-arm-kernel@lists.infradead.org,
+ monstr@monstr.eu, linux-kernel@vger.kernel.org, jeyu@kernel.org,
+ linux-fsdevel@vger.kernel.org, akpm@linux-foundation.org,
+ linuxppc-dev@lists.ozlabs.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 04:34:12AM +0800, Robin Gong wrote:
-> There is ecspi ERR009165 on i.mx6/7 soc family, which cause FIFO
-> transfer to be send twice in DMA mode. Please get more information from:
-> https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf. The workaround is adding
-> new sdma ram script which works in XCH  mode as PIO inside sdma instead
-> of SMC mode, meanwhile, 'TX_THRESHOLD' should be 0. The issue should be
-> exist on all legacy i.mx6/7 soc family before i.mx6ul.
-> NXP fix this design issue from i.mx6ul, so newer chips including i.mx6ul/
-> 6ull/6sll do not need this workaroud anymore. All other i.mx6/7/8 chips
-> still need this workaroud. This patch set add new 'fsl,imx6ul-ecspi'
-> for ecspi driver and 'ecspi_fixed' in sdma driver to choose if need errata
-> or not.
-> The first two reverted patches should be the same issue, though, it
-> seems 'fixed' by changing to other shp script. Hope Sean or Sascha could
-> have the chance to test this patch set if could fix their issues.
-> Besides, enable sdma support for i.mx8mm/8mq and fix ecspi1 not work
-> on i.mx8mm because the event id is zero.
+On Tue, May 26, 2020 at 09:34:27PM -0700, Nathan Chancellor wrote:
+> After mm.h was removed from the asm-generic version of cacheflush.h,
+> s390 allyesconfig shows several warnings of the following nature:
 
-For the series:
+Hmm, I'm pretty sure I sent the same fix a few days ago in response to
+a build bot report.  But if that didn't get picked up I'm fine with
+your version of it as well of course:
 
-Acked-by: Sascha Hauer <s.hauer@pengutronix.de>
-
-Sascha
-
--- 
-Pengutronix e.K.                           |                             |
-Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
-31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+Acked-by: Christoph Hellwig <hch@lst.de>
 
 _______________________________________________
 linux-arm-kernel mailing list
