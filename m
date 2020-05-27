@@ -2,44 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A9421E41A4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:11:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED9071E41A8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:12:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YkABzCy5yjqK1PptJh/YfGgOi4DgexZdSPScNbxXj6Y=; b=gwMjVbKv7hrx72
-	4Fivm9Zf4IDeDYUcDODkj0j+Ol7HvPm4hobaBDQSvu/JUkNT6hOmxBORJ3nSJH5HBWJmOgZITKZCG
-	saA9txeUuQqpLzNfR9Emf+ExR0HyWLfoeHY0D2riF0bDpUubSaW4NjyN5nHSeqD5NuAS7SYXTDc4L
-	n4vz7P99cqlM+b+SIa51OVz7ZK6lPqPPdBtGTYtP1r0DI2MuT+Hyx9ai+3nlvRxA/xkCZW6CPj35e
-	U+NpYdEV5AqW0P/99agJR0166IKQtJanE0sF/BOU3t9UrvujhV5bEUX59c1RsXQPpveiwS0QWgU5f
-	BUlqiz5H+SHc2An/mCHA==;
+	List-Owner; bh=YSgz+rif3g1Qn4tN6Djok1CUNrNyVw2DrkKn3tBiAGo=; b=dgs9rK/3q1kOaM
+	W51bXtCdh31nfIkKOk8vGrnbulhxfO57K0GiuuFKNl7Rk2Ks7pIhK1tmV6QQsq7pN3zm/QB5Vcjl+
+	htJ/NxWB3G5tjxY5VCK3EMK81WR8tkPPMf28Ng/lHPpNRTw8/XSn5BnS6NM1kw0IVlkCAelafvKMK
+	ZNfUW7JAu3i1kzqO4q2SGWsWUW98eDG1t6W9X4OOIxdRnu5F4E2kv/GwPDfltHCeHjZsVvlIARfNT
+	BIigTlAe9S7lJ4FvmmmOkLt+eM8trYfHhgsO31/QyOyEYXLJpJHWdvKN+XOrLSMj4cjFwnwusVxeU
+	Lf7nqkrwn7IFjpUndbFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jduuA-00053y-Gb; Wed, 27 May 2020 12:11:30 +0000
+	id 1jduun-0005ar-8y; Wed, 27 May 2020 12:12:09 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdue7-0007CG-2u; Wed, 27 May 2020 11:54:58 +0000
+ id 1jdue7-0007D5-UI; Wed, 27 May 2020 11:54:58 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 1DA71AF38;
+ by mx2.suse.de (Postfix) with ESMTP id DD722AF39;
  Wed, 27 May 2020 11:54:56 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [RFC 41/50] staging: vchiq: Make vchiq_add_service() local
-Date: Wed, 27 May 2020 13:53:46 +0200
-Message-Id: <20200527115400.31391-42-nsaenzjulienne@suse.de>
+Subject: [RFC 42/50] staging: vchiq: Move definitions only used by core into
+ core header
+Date: Wed, 27 May 2020 13:53:47 +0200
+Message-Id: <20200527115400.31391-43-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 References: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_045455_275989_06859A77 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20200527_045456_279359_9BC09C2F 
+X-CRM114-Status: GOOD (  13.66  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,50 +72,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The function is being exported although there is no use for it outside
-of vchiq's core code. Keep it local then.
+vchiq_if.h is used by service consumers and only the exported API should
+be present. Move the rest of definitions, which were not exported by the
+way, to vchiq_core.h where they belong.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c | 3 +--
- drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h  | 3 ---
- 2 files changed, 1 insertion(+), 5 deletions(-)
+ .../interface/vchiq_arm/vchiq_core.h          | 22 +++++++++++++++++++
+ .../interface/vchiq_arm/vchiq_if.h            | 16 --------------
+ 2 files changed, 22 insertions(+), 16 deletions(-)
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-index 4230f33ac38a..4d98d4d3ee8a 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_arm.c
-@@ -277,7 +277,7 @@ enum vchiq_status vchiq_connect(struct vchiq_instance *instance)
- }
- EXPORT_SYMBOL(vchiq_connect);
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
+index b97b661bea1c..ff91c04ba6b9 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.h
+@@ -486,6 +486,18 @@ struct bulk_waiter {
+ 	int actual;
+ };
  
--enum vchiq_status vchiq_add_service(
-+static enum vchiq_status vchiq_add_service(
- 	struct vchiq_instance             *instance,
- 	const struct vchiq_service_params *params,
- 	unsigned int       *phandle)
-@@ -314,7 +314,6 @@ enum vchiq_status vchiq_add_service(
++struct vchiq_config {
++	unsigned int max_msg_size;
++	unsigned int bulk_threshold; /* The message size above which it
++					is better to use a bulk transfer
++					(<= max_msg_size) */
++	unsigned int max_outstanding_bulks;
++	unsigned int max_services;
++	short version;      /* The version of VCHIQ */
++	short version_min;  /* The minimum compatible version of VCHIQ */
++};
++
++
+ extern spinlock_t bulk_waiter_spinlock;
  
- 	return status;
- }
--EXPORT_SYMBOL(vchiq_add_service);
+ extern int vchiq_core_log_level;
+@@ -665,4 +677,14 @@ extern void
+ vchiq_log_dump_mem(const char *label, uint32_t addr, const void *voidMem,
+ 	size_t numBytes);
  
- enum vchiq_status vchiq_open_service(
- 	struct vchiq_instance             *instance,
++extern enum vchiq_status vchiq_remove_service(unsigned int service);
++
++extern int vchiq_get_client_id(unsigned int service);
++
++extern void vchiq_get_config(struct vchiq_config *config);
++
++extern enum vchiq_status
++vchiq_set_service_option(unsigned int service, enum vchiq_service_option option,
++			 int value);
++
+ #endif
 diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h
-index 407e7dc31108..b852980447dc 100644
+index b852980447dc..931debcd6492 100644
 --- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h
 +++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h
-@@ -94,9 +94,6 @@ struct vchiq_instance;
+@@ -78,17 +78,6 @@ struct vchiq_service_params {
+ 	short version_min;   /* Update for incompatible changes */
+ };
+ 
+-struct vchiq_config {
+-	unsigned int max_msg_size;
+-	unsigned int bulk_threshold; /* The message size above which it
+-					is better to use a bulk transfer
+-					(<= max_msg_size) */
+-	unsigned int max_outstanding_bulks;
+-	unsigned int max_services;
+-	short version;      /* The version of VCHIQ */
+-	short version_min;  /* The minimum compatible version of VCHIQ */
+-};
+-
+ struct vchiq_instance;
+ 
  extern enum vchiq_status vchiq_initialise(struct vchiq_instance **pinstance);
- extern enum vchiq_status vchiq_shutdown(struct vchiq_instance *instance);
- extern enum vchiq_status vchiq_connect(struct vchiq_instance *instance);
--extern enum vchiq_status vchiq_add_service(struct vchiq_instance *instance,
--	const struct vchiq_service_params *params,
--	unsigned int *pservice);
- extern enum vchiq_status vchiq_open_service(struct vchiq_instance *instance,
+@@ -98,7 +87,6 @@ extern enum vchiq_status vchiq_open_service(struct vchiq_instance *instance,
  	const struct vchiq_service_params *params,
  	unsigned int *pservice);
+ extern enum vchiq_status vchiq_close_service(unsigned int service);
+-extern enum vchiq_status vchiq_remove_service(unsigned int service);
+ extern enum vchiq_status vchiq_use_service(unsigned int service);
+ extern enum vchiq_status vchiq_release_service(unsigned int service);
+ extern enum vchiq_status vchiq_queue_kernel_message(unsigned int handle,
+@@ -112,11 +100,7 @@ extern enum vchiq_status vchiq_bulk_transmit(unsigned int service,
+ extern enum vchiq_status vchiq_bulk_receive(unsigned int service,
+ 	void *data, unsigned int size, void *userdata,
+ 	enum vchiq_bulk_mode mode);
+-extern int   vchiq_get_client_id(unsigned int service);
+ extern void *vchiq_get_service_userdata(unsigned int service);
+-extern void vchiq_get_config(struct vchiq_config *config);
+-extern enum vchiq_status vchiq_set_service_option(unsigned int service,
+-	enum vchiq_service_option option, int value);
+ extern enum vchiq_status vchiq_get_peer_version(unsigned int handle,
+       short *peer_version);
+ extern void vchiq_msg_queue_push(unsigned handle, struct vchiq_header *header);
 -- 
 2.26.2
 
