@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E3E61E47EC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:46:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E14501E47F6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:46:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7nuR5oxH0B3bE0/82YK9YReCYbQWVvosg5f22YhuGWg=; b=C1/FfVazMcK4dE
-	Wcgcy24PDHGi+sLc909JEIibPNFBNKkPsnwRu0MNfus+3s/GVox6nbevocClvL6XGtPOdpcUYVhSI
-	YQJTitEj2mqg9fMrQgQLQ8qxuJl8M3BojEgEaWnMCiVWeMspvAxnV54lrPG2LlHRzPeq3SD5sy9Er
-	S+2QcMTHWmAqzGyo7opM8ze9TBCeF1Oyn/Ryw9x0yap9BXRfnszCQAzsnsV9fAtUehC3dKbehkl1N
-	cT6/qBzHcgJCbFXY7HoGcPSUSGHftCtG4m+WNUtqY0YSaHWJcrwWAqk/SxnBeXUgAUgvkg6b14thl
-	ocB0kkKTSctQE5IzgVSQ==;
+	List-Owner; bh=vQ0LFGnWXejP1OKMab7GbA/M7ZMcqxaRU4hNU4nVxto=; b=NbGuQPOK8ykXJR
+	4zOJtgCNVvP1+YDwqJXMa8G3AcjK7mkedwSPz5WcvRKt2Oq8qyAp52bdn1R2JzkPv/I9xWWEcT+o+
+	1P0oVN4JVV/+vGS9u1L0DzSbAqx2Qgkz43UOLqqDx5M10hHwhVsw8+CqjPB2YDvSztqbkf3Lvii3l
+	+8RQtsZg3J5neJ/Jfm/Ij94vW/yfJRhrbKRIVnN7fw7fbjEgWcqvpeHsDtpXnQ2e/VVJ4LdJW0PBI
+	SQZ4Vq+qFAOXcEBuLOrBE6vV67qBj5M3KVNaaeUxxrE9Kmyk0YrzFMStuOBksFSVi70fo+lpV7suD
+	qBTSUJKGaeHEYWME4L5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyFh-0003B5-0m; Wed, 27 May 2020 15:45:57 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
+	id 1jdyG7-0003RT-Kf; Wed, 27 May 2020 15:46:23 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyFO-000384-Hu; Wed, 27 May 2020 15:45:40 +0000
+ id 1jdyFO-000385-Hi; Wed, 27 May 2020 15:45:40 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 1402F581DB5;
- Wed, 27 May 2020 11:45:30 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:30 -0400
+ by mailout.nyi.internal (Postfix) with ESMTP id 81BE05C0220;
+ Wed, 27 May 2020 11:45:31 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:31 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=Qm04qMuBv7fTr
- 3XQL3pQXZGC/epnrC5zo/RIT1dLqig=; b=w4AqbP6Fx3bkqMTIIxC49dmDC1/iE
- cWFsjCA1OPveXcYYVnbrOP+8Oi9aRobj7RSrmm+NIg8i7OCT8bswzlpe+JgUpFaa
- z5gy/b9TDd//QgpoUy01DMuHZ/M3YsgfZTu5Qm2ZgZ5P5Y0+fvSzid7yXZRyj++X
- JoNqfJrhQY6XWNT1dpXjSll0oThTzgQhFtY4B5T11VKcSBwaOgmN9UyZWoWqv2XT
- 5JFVmZmKiuaqNE2WOu4RSPj2x4moJj3lE1gjZnHhIEzlEO4US9qGjAJqKOyYnWsM
- uEDDJ1E4XukGgfu5enFFM75N8OdPyR4/xz3sjY01L9gaPvWacy8C/h9dw==
+ :mime-version:content-transfer-encoding; s=fm2; bh=boMgmra7WOWY+
+ GlhAM0YnfrTd/Pn6DIw794uUlk43Ho=; b=ttA60JMA/fKXcDYfIddBdTXP31g3u
+ ku0HVrrXHgHsp+BZ76zihniJctwItF+ucgnsFBdFyaJC+sydFqaQACjdOYrUW40E
+ +JnQr7xN6vWV1e4I91TNsOK4NZRBK/VRWbdpHtq33jjlf3rGF36/4g5w5Z/VEA8Y
+ jAxRh1ANk9WO1DwBjDfAB2hkj0ig6LsJOFvBn8udqre+Wdmh3fg+wch+xxG+6hRC
+ 8T5tW9jIfITAnKFBewIfnDOsyS44DbMemZajrX46shFcmy71Ykt4XKHLeHvQnFtz
+ ClDmB8lsuOBsNJSOrI1vbPyK5ZMHGWu2kWFVkLKbjl+8JQ/kayFZq5Rng==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=Qm04qMuBv7fTr3XQL3pQXZGC/epnrC5zo/RIT1dLqig=; b=Mf09Owfc
- KKfh0rDn2rIcDV7vUKI+xDVRezuPkBWV7JIBJTTIMzxkS9cBbTDcqrDCY7H8ypjX
- 75OUJDbvTMql0I3TkzXIAq0xiVESBOaPi3ghRi3qFuZY3FbbXUQ7YeUm+3EqwIff
- zZ95rJ2yiefhNbv9RiLNa1xnZ0NzV3e+eZ/czvK7W4oIfR/AhYCy8/ZG/FgIAhBY
- 7VOXH3AlluAa5I9IX2p4sU4hi4NJQA62qlDWT7z84WsHScy/VysNqTJv1tYpuLsg
- ZM/oLnpPu4UElbpV4kWcM+47tg0h9J2A9Ywv75UnX1jFlYulwKC5I2clPsXXnFCD
- LVCoJnNR0JVAJg==
-X-ME-Sender: <xms:GYvOXge7xsZKTiC23ggjl6y0ZfgG99KD-7IUqd1vV1Z2_3JkbzCDPw>
+ fm2; bh=boMgmra7WOWY+GlhAM0YnfrTd/Pn6DIw794uUlk43Ho=; b=iPohzrkJ
+ 1sqFyhCxxissmlQAAbXK8ZofMHS4lKWW6gvRXdMaFMAuyOhIRfAVHg1CzF7GwUAC
+ SvHirGCgNu3rKn/SrV7ztoTketH0SlNaxPrkNGaTjj9LlzwG/yywHig9WMlFbcCb
+ uOxM7m0e4l1ZwHa4q2l9JAI0g/x7KsU8U7DI2OZ3xM6++8OZCeyVM9VO6Py4DQqL
+ HNr+9iHHVj1nmGL3jjuS9Vsrf1QFbCLsfLfOg5k9F/987zhQtrLI7SDSS+EIabw2
+ 6jkm410tmot72DWCvAZXxAst/mVLEDyZFOcF7ffLL6h4DIW9WcoqexsUIvle1+vy
+ 7n/sr3AjoB6+AQ==
+X-ME-Sender: <xms:G4vOXv36PFRg8Htj3NDqGLhiaa2YeOC-LOSdpG1X20zdjRbyREJj3A>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,38 +56,38 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
  frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:GYvOXiMIEPOip-l58CNC8InHUNvlHf_VkEJrBI-TkfCnsVYBdaBC8g>
- <xmx:GYvOXhhBx7ZtgBBv11j1uj2Mb8F0YUVrqs8YHHI2O7fdjXeSwQPrmg>
- <xmx:GYvOXl-zVe6uNdYCtWoZIxjIsfU9LXmIG5cLjGgMsm75eDNPmYbFHA>
- <xmx:GovOXtkY-vt99xFFopPmMhIXIpL-efiUrLSZ9wrLWut18vV4G3nMLg>
+X-ME-Proxy: <xmx:G4vOXuFHqLaWFk2lKB6yzLqpEiUuSsxFYvSmST0UFli_fk9ElxI2Ug>
+ <xmx:G4vOXv4YB0-FWrPGY0TfMmHhxiUQRYLz1q9uKCj85quPAQ0pyOdwcw>
+ <xmx:G4vOXk1EhZkUVi39yPRKGPAjlHyZJuvw8aSpSPp9Yhbo201AtGObvg>
+ <xmx:G4vOXvMTcGwTIn3UvA5lkRVP6-CPzL2ZXFxoqhnFQnPUAnVcSLdzyg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id A8DC53280066;
- Wed, 27 May 2020 11:45:29 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 367E130618B7;
+ Wed, 27 May 2020 11:45:31 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v3 02/25] dt-bindings: clock: Add a binding for the RPi
- Firmware clocks
-Date: Wed, 27 May 2020 17:44:58 +0200
-Message-Id: <919e2f2f13583d4d53d0e95b81fc3fb8a7606107.1590594293.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 03/25] firmware: rpi: Only create clocks device if we don't
+ have a node for it
+Date: Wed, 27 May 2020 17:44:59 +0200
+Message-Id: <f0b979221dedec7db9cab201388bf44c0d987a3d.1590594293.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
 References: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_084538_728946_341F3C1D 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20200527_084538_729126_88F65BD2 
+X-CRM114-Status: GOOD (  11.86  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
+ low trust [66.111.4.26 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.221 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -107,73 +107,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
- linux-arm-kernel@lists.infradead.org, Maxime Ripard <maxime@cerno.tech>
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The firmware running on the RPi VideoCore can be used to discover and
-change the various clocks running in the BCM2711. Since devices will
-need to use them through the DT, let's add a pretty simple binding.
+The firmware clocks driver was previously probed through a platform_device
+created by the firmware driver.
 
-Cc: Michael Turquette <mturquette@baylibre.com>
-Cc: Stephen Boyd <sboyd@kernel.org>
-Cc: Rob Herring <robh+dt@kernel.org>
-Cc: linux-clk@vger.kernel.org
-Cc: devicetree@vger.kernel.org
+Since we will now have a node for that clocks driver, we need to create the
+device only in the case where there's no node for it already.
+
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml | 24 ++++++++++++++++++++++++
- 1 file changed, 24 insertions(+)
+ drivers/firmware/raspberrypi.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-index cec540c052b6..b48ed875eb8e 100644
---- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-+++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-@@ -22,6 +22,25 @@ properties:
-       Phandle to the firmware device's Mailbox.
-       (See: ../mailbox/mailbox.txt for more information)
+diff --git a/drivers/firmware/raspberrypi.c b/drivers/firmware/raspberrypi.c
+index ef8098856a47..b25901a77c09 100644
+--- a/drivers/firmware/raspberrypi.c
++++ b/drivers/firmware/raspberrypi.c
+@@ -208,6 +208,20 @@ rpi_register_hwmon_driver(struct device *dev, struct rpi_firmware *fw)
  
-+  clocks:
-+    type: object
+ static void rpi_register_clk_driver(struct device *dev)
+ {
++	struct device_node *firmware;
 +
-+    properties:
-+      compatible:
-+        const: raspberrypi,firmware-clocks
++	/*
++	 * Earlier DTs don't have a node for the firmware clocks but
++	 * rely on us creating a platform device by hand. If we do
++	 * have a node for the firmware clocks, just bail out here.
++	 */
++	firmware = of_get_compatible_child(dev->of_node,
++					   "raspberrypi,firmware-clocks");
++	if (firmware) {
++		of_node_put(firmware);
++		return;
++	}
 +
-+      "#clock-cells":
-+        const: 1
-+        description: >
-+          The argument is the ID of the clocks contained by the
-+          firmware messages.
-+
-+    required:
-+      - compatible
-+      - "#clock-cells"
-+
-+    additionalProperties: false
-+
- required:
-   - compatible
-   - mboxes
-@@ -31,5 +50,10 @@ examples:
-     firmware {
-         compatible = "raspberrypi,bcm2835-firmware", "simple-bus";
-         mboxes = <&mailbox>;
-+
-+        firmware_clocks: clocks {
-+            compatible = "raspberrypi,firmware-clocks";
-+            #clock-cells = <1>;
-+        };
-     };
- ...
+ 	rpi_clk = platform_device_register_data(dev, "raspberrypi-clk",
+ 						-1, NULL, 0);
+ }
 -- 
 git-series 0.9.1
 
