@@ -2,71 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A6AB1E431C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:14:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C23001E432B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:15:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=23a0HOIaTySrfYUBjlvtG09R1FEuzS4wOjExLBp6hKQ=; b=k8YdRkMA7K8OS+
-	asP4uHZofWeCbvSFKvkpnEaUA9yaRvMRZP7tRcQHbwqjmlVdQRaf1lds8mHcCEkPk1ytR4chxhOPq
-	HlJUYn2tUElH7TmW1MeEmNIwINJtXBcwoLspJyPbF3Qy4XaUYpnnd+UxUMghaniXdeKGSiIlUt8S2
-	bW0mnbYY899ofvyVsTDJeTs4H8GTsp59zn1WUqWTr+nyzJ3Q1Dp1r3c+ijoORDEkAw0Fk0qj+d5/K
-	XUWGh9GVk9Ct0Z3wlROdt3qTtzPDzpEx+xvqKw5ayc+NNoZSMhgrB3/xAiOCSD5Y41DMUh2owZx4o
-	RAcg2G4LadH/KrjRJ3fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4Fv3OJSc0taj1O5EVnNtBnwZ90GAa3h7i0sa1Kl6f8Y=; b=ACEZHsqBK0S7kNUcGLHI6jSrq
+	V0vXRgtvHtZ+xDfh8g1ct5Js0z+2yv9SetjHLes7cx29r0JKFhG5xzNWBbR2nJKztoUbaXRjlv5XE
+	TKOU6jcpJ5eRAWkcBqX5rUpZ0wQgl4wVdujCD+lAf5XaGH60HPNVtCBPAo8jO/PQL5meMgb6PdJmd
+	jmbAZQkW27JobQ/3GgquFwdnZkFKN9gd7IaVUSylDLEhgJAz8nDSvsjrLOM2W0Scera7guuM7efaF
+	Ixzg/Y7BQLzz6jCaSIM1jxMW2CYSwYij2m+IAsBnn2MwY17+qERz5dftxwSv7zFi9BK+VTg4c7C8l
+	XWz+BHM0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdvss-0000H9-BJ; Wed, 27 May 2020 13:14:14 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jdvtn-0000ig-Bx; Wed, 27 May 2020 13:15:11 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdvsh-0000FB-5V
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:14:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=+wGjp+L++7jFDqiavXvVkKbLUjq33uwUPkJYG8H0aO4=; b=pBFubWVa1Xrd5Payn7xwXgBxE
- A97Ya+cy+35Yr6lMIoTx68LNeQupgHP39Kxb1Mq4OcXXZFeYIMh0KU7TnXjEytLOQnUWMP/Gq2+MD
- /11eAQq9hitgh2JmLZD0WQAiwqTOe2sOklk6hjWCnxfIScwHkGRBBJ/ISX/5NzijIyP7U7QD0B4q1
- Gwm/iYJWUKtZvjK9VHJ9nkTE4Qyui/An2N4G4D2W0lIU5MDSG8g6p6G/gbG8n1RabyKAptpIjBXKP
- LQGuP9pIYGzcydXBd3JMqfAmp3xiZ+w3q0lH+SiTQy3iwCPKDlFLb+D9SpCqNBgUo7Hmn4CZxYTne
- Rfrvcd7sw==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:37680)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jdvsb-0002Tu-P7; Wed, 27 May 2020 14:13:57 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jdvsb-0006SX-1r; Wed, 27 May 2020 14:13:57 +0100
-Date: Wed, 27 May 2020 14:13:57 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH] ARM: asm: Rewrite get_thread_info using BIC
-Message-ID: <20200527131356.GN1551@shell.armlinux.org.uk>
-References: <20200527122201.124090-1-linus.walleij@linaro.org>
+ id 1jdvtR-0000gN-IV
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:14:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1590585287;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=Xp4IU27b7aXZqohMpJFZPawUcolyfH/CQm0FvETLmFY=;
+ b=RQBhO4RyGmtftVuECLdSRL1cootwbRQuswQ9bmUojLtEP0hcYVKcfwIYJR3HFuiPa0dw74
+ W+xmaI1rR7U8qA+AYSbA/S0Ghg+1xtx8ZShdNuF0LheUsv+Ofhh55aJdphDb72G407fKVR
+ 6o8ftQ4DdCK+nT3IF1xpTWcyXe2a57Q=
+Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
+ [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-205-dAOgQlVCNAajn3mY5ZFX5g-1; Wed, 27 May 2020 09:14:45 -0400
+X-MC-Unique: dAOgQlVCNAajn3mY5ZFX5g-1
+Received: by mail-wm1-f71.google.com with SMTP id l26so836552wmh.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 06:14:45 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Xp4IU27b7aXZqohMpJFZPawUcolyfH/CQm0FvETLmFY=;
+ b=N3W8eSIQd32gBunxqJ7GbmhmDbq4Ip9qUCj10sBhiLBpSrCanJUe/P/Fuc9VQvnW+X
+ +Z10qEQRZdKFveh5IlOTbw8NpOAjZcWoDWBbgxv0gD6y7OQJ3aoFCzGNQS1XCvpfidth
+ KJ9hVFm38yY5Zn44QbhIg0gjjxo0W3GXUJz8Y2LBGG1iOYbEX777bPjiKO96vwhoTdIT
+ fSwv1Xya8WyEjdHAxszzZEeWhUh7wnc/x94Q4Cze0A+ELJ2L7GAOvSYFK47C8LJD2Ib7
+ /G6j56Vaveh63beUqZyknhUu1HZaygfgzsX3yACibIvH6UlnTTwHjPPlJWkUPi7FwFYm
+ PV6A==
+X-Gm-Message-State: AOAM532thot8xBQKWdiMqVSwW8CpJYmyaUYRrfq7gMoRVCi4dfVzUMZv
+ 1QXunN+924HzoVUzw/A/CMbFA/GUPrCwIX9z6+bH/dY+RNAVnAEsKgtDaCJp9KJRBmUvjZo/siy
+ 3gN1vqjyrTNHfjg957TrDbecC8WurSYTaaEw=
+X-Received: by 2002:a1c:1b17:: with SMTP id b23mr4189520wmb.3.1590585284190;
+ Wed, 27 May 2020 06:14:44 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJxXDD9pd6xDx85wKJ6DSUd0+jHdsTLXsbOgS1BfL3siVJ+UTokB2SEyRQkeYWpyFjB2Klsulg==
+X-Received: by 2002:a1c:1b17:: with SMTP id b23mr4189496wmb.3.1590585283890;
+ Wed, 27 May 2020 06:14:43 -0700 (PDT)
+Received: from localhost.localdomain ([194.230.155.225])
+ by smtp.gmail.com with ESMTPSA id r4sm2825862wro.32.2020.05.27.06.14.42
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 27 May 2020 06:14:43 -0700 (PDT)
+Subject: Re: [PATCH v3 0/7] Statsfs: a new ram-based file system for Linux
+ kernel statistics
+To: Jakub Kicinski <kuba@kernel.org>
+References: <20200526110318.69006-1-eesposit@redhat.com>
+ <20200526153128.448bfb43@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
+From: Emanuele Giuseppe Esposito <eesposit@redhat.com>
+Message-ID: <6a754b40-b148-867d-071d-8f31c5c0d172@redhat.com>
+Date: Wed, 27 May 2020 15:14:41 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200527122201.124090-1-linus.walleij@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200526153128.448bfb43@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
+Content-Language: en-US
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_061403_281673_84884FCD 
-X-CRM114-Status: GOOD (  16.67  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200527_061449_691888_990F03F8 
+X-CRM114-Status: GOOD (  17.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [207.211.31.81 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [207.211.31.81 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -75,6 +101,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,71 +114,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-doc@vger.kernel.org,
+ netdev@vger.kernel.org,
+ Emanuele Giuseppe Esposito <e.emanuelegiuseppe@gmail.com>,
+ linux-kernel@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ Jonathan Adams <jwadams@google.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, David Rientjes <rientjes@google.com>,
+ linux-fsdevel@vger.kernel.org, Paolo Bonzini <pbonzini@redhat.com>,
+ linux-mips@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 02:22:01PM +0200, Linus Walleij wrote:
-> By using two BIC instructions we can replace the ARM/thumb
-> split instructions with something that works on either
-> and also save one instruction.
-> 
-> Based on code from proc-macros.S and an idea from Ard
-> Biesheuvel.
-> 
-> We need to include <linux/const.h> to expand the
-> THREAD_SIZE definition properly in the preprocessor.
-> 
-> Suggested-by: Russell King <linux@armlinux.org.uk>
-> Suggested-by: Ard Biesheuvel <ardb@kernel.org>
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 
-Looks good to me, thanks.
+>>
+>> The file system is mounted on /sys/kernel/stats and would be already used
+>> by kvm. Statsfs was initially introduced by Paolo Bonzini [1].
+> 
+> What's the direct motivation for this work? Moving KVM stats out of
+> debugfs?
 
-> ---
->  arch/arm/include/asm/assembler.h | 7 +++----
->  1 file changed, 3 insertions(+), 4 deletions(-)
-> 
-> diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
-> index 99929122dad7..f218e8cf7f88 100644
-> --- a/arch/arm/include/asm/assembler.h
-> +++ b/arch/arm/include/asm/assembler.h
-> @@ -17,6 +17,7 @@
->  #error "Only include this from assembly code"
->  #endif
->  
-> +#include <linux/const.h>
->  #include <asm/ptrace.h>
->  #include <asm/domain.h>
->  #include <asm/opcodes-virt.h>
-> @@ -203,10 +204,8 @@
->   * Get current thread_info.
->   */
->  	.macro	get_thread_info, rd
-> - ARM(	mov	\rd, sp, lsr #THREAD_SIZE_ORDER + PAGE_SHIFT	)
-> - THUMB(	mov	\rd, sp			)
-> - THUMB(	lsr	\rd, \rd, #THREAD_SIZE_ORDER + PAGE_SHIFT	)
-> -	mov	\rd, \rd, lsl #THREAD_SIZE_ORDER + PAGE_SHIFT
-> +	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
-> +	bic	\rd, \rd, #63
->  	.endm
->  
->  /*
-> -- 
-> 2.25.4
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+There's many reasons: one of these is not using debugfs for statistics, 
+but also (and mainly) to try and have a single tool that automatically 
+takes care and displays them, instead of leaving each subsystem "on its 
+own".
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
+Sure, everyone gathers and processes stats in different ways, and the 
+aim of this tool is to hopefully be extensible enough to cover all needs.
+> In my experience stats belong in the API used for creating/enumerating
+> objects, statsfs sounds like going in the exact opposite direction -
+> creating a parallel structure / hierarchy for exposing stats.
+
+  I know
+> nothing about KVM but are you sure all the info that has to be exposed
+> will be stats?I don't understand, what do you mean here?
+
+> 
+> In case of networking we have the basic stats in sysfs, under the
+> netdevice's kobject. But since we're not using sysfs much any more
+> for config, new stats are added in netlink APIs. Again - same APIs
+> used for enumeration and config.
+
+I don't really know a lot about the networking subsystem, and as it was 
+pointed out in another email on patch 7 by Andrew, networking needs to 
+atomically gather and display statistics in order to make them 
+consistent, and currently this is not supported by stats_fs but could be 
+added in future.
+
+In addition, right now it won't work properly if the networking 
+namespaces are enabled. That is another issue to take into 
+consideration. That's also why I marked patch 7 as "not for merge"
+
+Regarding the config, as I said the idea is to gather multiple 
+subsystems' statistics, therefore there wouldn't be a single 
+configuration method like in netlink.
+For example in kvm there are file descriptors for configuration, and 
+creating them requires no privilege, contrary to the network interfaces.
+
+Thank you,
+Emanuele
+
 
 _______________________________________________
 linux-arm-kernel mailing list
