@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B0161E4A50
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:34:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C0371E4A55
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:34:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1q09L9Fi5nm+aUWjJy8iohddQDDszXSNu9JeIcLaRGc=; b=Bm0KJCISOUtaB2
-	JeyJKXWgchvyQP0uje8AS0lB9Cw+U9Gc8CiQgb//3QdklorLumRxA4iv5g5NAH3Fkaaoj2IKMhf0k
-	nhk8dO+6n32lphYvAoKcismEfSZwrxSxVQEDqyhXd33xuJnPbXm3cVll9aZL9sGs3w9ACyxdD6KDt
-	fbK5OKsw9xZ7vUJI1ug7Z9655iVVbXiZageDlaggBELRrbT+Cv+GlaKuXDOYw/ZPJaE0I8WOXfVbg
-	HhNZyJy3AW48a0M8cvz9CIu02dLdvplA5oJsZC9u2rFY2TFjDgZBa2CrRCSU2yqxAz3OoqpCyPfbG
-	RtAr9/+dsrZP5DgsReKw==;
+	List-Owner; bh=8NPqwq4QpLXhefDdot7x0sn1lUN4IwM7XLEa09ZqB8Y=; b=QOSehWaw83llOq
+	kjFw7PbUysX9pVHia02N1/EY6XNex3XiaFndenmS2Re6XeGGLTffdUHkVVJWyAmQ87ESyaGNhOVRc
+	mfe6h+ZAgWJqetZlUOCuoR+r7D1VRU78ii6aENwj/yI93KalLdS5b992Q1wx0A2Ak2QA8wQbt/Hww
+	fbYgx0EL7swIXZdHNJlXjF6T7ZvpbOwvv5VmIPh9eNCgzRVvV1DDBvNaWdyTgoQG896WVsY36j58N
+	vzQ7mItyQellbZqPwDgLMtyqBkjCfPryyxFWqRin5y9osTtuAuPbGpfnYeajWD/T3LB5Tmnho8c25
+	wb9fiPva9QojjHcaAtfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdz0Q-0002Sz-Lg; Wed, 27 May 2020 16:34:14 +0000
+	id 1jdz0y-0002wJ-4K; Wed, 27 May 2020 16:34:48 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyLV-0001z2-5g; Wed, 27 May 2020 15:51:58 +0000
+ id 1jdyLW-00020P-Ar; Wed, 27 May 2020 15:52:00 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 03D44582101;
- Wed, 27 May 2020 11:51:56 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:56 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 6D84F582126;
+ Wed, 27 May 2020 11:51:57 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:57 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=JDEX6MAtxosDe
- l7oC/fdDO/+J0huIvOIGDcYTweJxI0=; b=x3eRxR4NffTRdfcoyyIj7gXOrg6B1
- jjqqGl37SonoO+MqSMFUESbdSiVX4DioNRBId/l9XNtOpk1mggRxqmCVcWRmV4na
- jbT8+15S/VAaANzakrEcVnuluMc9bvDcw6sgXuf7xkAABWQ7oiL/jgJmrxDkI17t
- cvh5iFfr9t9vcIIFCJJFeTiFKiUqgEG7De2GSt9nlFZnhfQWyoJfoebTQxVbWd0A
- Hne2mRlsCkguZsKRAQ3SjRkktHzWJAMUsPMGXg35BMU0DW0GBRA0vqBp33KpexQn
- R3F8KRDt9lo8EYhACtlHHiHbo+K70gNc0nE0ykfa5YsdcsT0anoH6ebew==
+ :mime-version:content-transfer-encoding; s=fm2; bh=BuUKiGuqk973s
+ DDN5AZmCuX6+VtoVQEUzT93MfWaojA=; b=jTygBAYybWdJmfyo8k2Ct9ZWKqqdz
+ 6cr3EDlE1KyQn90HRJQ4yszEkjDwFHwNGpPuQAe7hEyFnGsktGzjTB9lYB9sPQLA
+ mPIaNz4PqhauZYpuwLp1kh0rcJ6yDNKiifb2SSGV2o3Hu6z4PhCcQo1+2A40dWZl
+ /natkAQ5x+kJDaNVYwvSIZwMzI8CIHsiEWlXjZ2AmXAILn/MW+rBFwAt8o2uk55j
+ vKjoSGK/0UI2ldCMHuzeBFqPq/TeQwAXqz6Z+Q3f/0xcPquuzoshx5tEzZEDfUKm
+ DRtyt+3XkKepuvAZZr7Q+FYhy+AA6hoH596QMK3wICNAUt1xylrHWz7aQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=JDEX6MAtxosDel7oC/fdDO/+J0huIvOIGDcYTweJxI0=; b=PYZrrH0V
- T2bzziBFlbEGOaS+ytete6XxyzrDCYH1HtHq49MmEB0cVm7TCaRNG6WFaed8sKBM
- WoNYFmAptJaS5lzWZDBFeNBTOTPTx1vcnTRVBoTWUZashX6G4ME9iJY0v5ueK/ik
- /QF6Cl623a9dtv6qZLSvbhY/bMBT0Y6o2TNex6aSx6sd6I4p9CjapDyRd9fcAw4r
- nu2VKwIuC4NkPDBzm0AhYayqfbVYDHJR9wlD2rI9uCHdWNhmihI+0NvI20FKYQSa
- pmaz9o7JzuAC7SHqWAeqogBN0tdgjSvG8lfYcS2dUtqDtzN+msNUWxy6dWSKMeOS
- Vm3/CjuIsa2Xtg==
-X-ME-Sender: <xms:m4zOXin0eoXbTUjy4Wwqjab0bt_hPbnsoNBcIBgwYFVDRyQXx9r0KA>
+ fm2; bh=BuUKiGuqk973sDDN5AZmCuX6+VtoVQEUzT93MfWaojA=; b=y5Rh7V3Z
+ qWQN1KSDAMmzPoDI4HrmYqdhSxMjEQFFxyCvXBhX1X4TJkQqJlCkhFbG73UuPPYf
+ CohwqFLzxJunDdf4/vytLXKd//rosgtBhI2+bg8uHGk8dip/2PQZqiNGwX/6OlVU
+ fn3RUr76Yoe5SPN0cJWpgIlKVtQRzlmScSk/PGuprazeOUAIusAPMigSvqOQxiTj
+ ZMigkVijCL7oESAxGsXk8cmwINyriVlrOttj01fcKCWikjUhyBPcVgMZjXYzt7qk
+ yKau+41WP0eCWDlQIj2kYLQWvB5N9/KyNEkZGOwDh8ax41J2sqrJtBRDv6QQYcv/
+ vhyHdjUs5PAn6A==
+X-ME-Sender: <xms:nYzOXjaIKie76PkGruBk1ooHVnpOMbciA11H153PszCsXagxbrgF1w>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,27 +56,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepjeekne
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:m4zOXp3neDgaUFj3t6analbmLAOHqioyOT9amYyEkbikdmGVcE-sWA>
- <xmx:m4zOXgoErk0KyxwpJbjY1iYmVku4E4Bw4GIwV_k_k1F92pUeHhCgFQ>
- <xmx:m4zOXmkg1BTpY3ohSGRg5npgje76EhOJfC6fMKYnXbpkAP48x7kzQA>
- <xmx:nIzOXhmTDw5uQksbRQQQpunfPmrweuXj3tP1XHIB2YCTnxkGbCGgew>
+X-ME-Proxy: <xmx:nYzOXiafOpEH5eKHLnoVjZpv8iE2jX9zjsGDa_HihT4zxkRx4yiwXQ>
+ <xmx:nYzOXl8_WiMRM6P53D2nuYrzOftXluOEr7iKKfI-QcXk_cZfyjhOtg>
+ <xmx:nYzOXprB0zTIQsW7eQg90RFEqoGxtrpiLh6KO98kP70BKgWkrAf5Dg>
+ <xmx:nYzOXuI-wqTsJn3Mww78i4EHepYfaI2tkl20Aa1kw1IZeajGZAiHnA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 90C75306215A;
- Wed, 27 May 2020 11:51:55 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 1ED1A328005A;
+ Wed, 27 May 2020 11:51:57 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 101/105] drm/vc4: hdmi: Do the VID_CTL configuration at once
-Date: Wed, 27 May 2020 17:49:11 +0200
-Message-Id: <733b4ae69521eb4e580efde2dd1cffeba9dcd80b.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 102/105] drm/vc4: hdmi: Switch to blank pixels when disabled
+Date: Wed, 27 May 2020 17:49:12 +0200
+Message-Id: <271605b39ee5e9bc7db5ac1d0ed9df6ecc4edc29.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085157_358370_6B252EE6 
-X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-CacheID: sfid-20200527_085158_529831_AA80654F 
+X-CRM114-Status: UNSURE (   8.03  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -118,50 +118,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The VID_CTL setup is done in several places in the driver even though it's
-not really required. Let's simplify it a bit to do the configuration in one
-go.
+In order to avoid pixels getting stuck in an unflushable FIFO, we need when
+we disable the HDMI controller to switch away from getting our pixels from
+the pixelvalve and instead use blank pixels, and switch back to the
+pixelvalve when we enable the HDMI controller.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_hdmi.c | 10 ++--------
- 1 file changed, 2 insertions(+), 8 deletions(-)
+ drivers/gpu/drm/vc4/vc4_hdmi.c |  9 +++++++++
+ drivers/gpu/drm/vc4/vc4_regs.h |  3 +++
+ 2 files changed, 12 insertions(+)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index 86ce8d247a00..d889a83a0f56 100644
+index d889a83a0f56..8c9cff9ce216 100644
 --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
 +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -429,10 +429,6 @@ static void vc4_hdmi_set_timings(struct vc4_hdmi *vc4_hdmi,
+@@ -325,6 +325,12 @@ static void vc4_hdmi_encoder_post_crtc_disable(struct drm_encoder *encoder)
+ 	struct vc4_hdmi *vc4_hdmi = encoder_to_vc4_hdmi(encoder);
  
- 	HDMI_WRITE(HDMI_VERTB0, vertb_even);
- 	HDMI_WRITE(HDMI_VERTB1, vertb);
--
--	HDMI_WRITE(HDMI_VID_CTL,
--		   (vsync_pos ? 0 : VC4_HD_VID_CTL_VSYNC_LOW) |
--		   (hsync_pos ? 0 : VC4_HD_VID_CTL_HSYNC_LOW));
+ 	HDMI_WRITE(HDMI_RAM_PACKET_CONFIG, 0);
++
++	HDMI_WRITE(HDMI_VID_CTL, HDMI_READ(HDMI_VID_CTL) |
++		   VC4_HD_VID_CTL_CLRRGB | VC4_HD_VID_CTL_CLRSYNC);
++
++	HDMI_WRITE(HDMI_VID_CTL,
++		   HDMI_READ(HDMI_VID_CTL) | VC4_HD_VID_CTL_BLANKPIX);
  }
  
- static void vc4_hdmi_recenter_fifo(struct vc4_hdmi *vc4_hdmi)
-@@ -521,8 +517,6 @@ static void vc4_hdmi_encoder_pre_crtc_configure(struct drm_encoder *encoder)
- 	if (vc4_hdmi->variant->phy_init)
- 		vc4_hdmi->variant->phy_init(vc4_hdmi, mode);
+ static void vc4_hdmi_encoder_post_crtc_powerdown(struct drm_encoder *encoder)
+@@ -563,6 +569,9 @@ static void vc4_hdmi_encoder_post_crtc_enable(struct drm_encoder *encoder)
+ 		   (vsync_pos ? 0 : VC4_HD_VID_CTL_VSYNC_LOW) |
+ 		   (hsync_pos ? 0 : VC4_HD_VID_CTL_HSYNC_LOW));
  
--	HDMI_WRITE(HDMI_VID_CTL, 0);
--
- 	HDMI_WRITE(HDMI_SCHEDULER_CONTROL,
- 		   HDMI_READ(HDMI_SCHEDULER_CONTROL) |
- 		   VC4_HDMI_SCHEDULER_CONTROL_MANUAL_FORMAT |
-@@ -566,8 +560,8 @@ static void vc4_hdmi_encoder_post_crtc_enable(struct drm_encoder *encoder)
- 	HDMI_WRITE(HDMI_VID_CTL,
- 		   HDMI_READ(HDMI_VID_CTL) |
- 		   VC4_HD_VID_CTL_ENABLE |
--		   VC4_HD_VID_CTL_UNDERFLOW_ENABLE |
--		   VC4_HD_VID_CTL_FRAME_COUNTER_RESET);
-+		   (vsync_pos ? 0 : VC4_HD_VID_CTL_VSYNC_LOW) |
-+		   (hsync_pos ? 0 : VC4_HD_VID_CTL_HSYNC_LOW));
- 
++	HDMI_WRITE(HDMI_VID_CTL,
++		   HDMI_READ(HDMI_VID_CTL) & ~VC4_HD_VID_CTL_BLANKPIX);
++
  	if (vc4_encoder->hdmi_monitor) {
  		HDMI_WRITE(HDMI_SCHEDULER_CONTROL,
+ 			   HDMI_READ(HDMI_SCHEDULER_CONTROL) |
+diff --git a/drivers/gpu/drm/vc4/vc4_regs.h b/drivers/gpu/drm/vc4/vc4_regs.h
+index 5a3ee2030cff..ce103f925f05 100644
+--- a/drivers/gpu/drm/vc4/vc4_regs.h
++++ b/drivers/gpu/drm/vc4/vc4_regs.h
+@@ -723,6 +723,9 @@
+ # define VC4_HD_VID_CTL_FRAME_COUNTER_RESET	BIT(29)
+ # define VC4_HD_VID_CTL_VSYNC_LOW		BIT(28)
+ # define VC4_HD_VID_CTL_HSYNC_LOW		BIT(27)
++# define VC4_HD_VID_CTL_CLRSYNC			BIT(24)
++# define VC4_HD_VID_CTL_CLRRGB			BIT(23)
++# define VC4_HD_VID_CTL_BLANKPIX		BIT(18)
+ 
+ # define VC4_HD_CSC_CTL_ORDER_MASK		VC4_MASK(7, 5)
+ # define VC4_HD_CSC_CTL_ORDER_SHIFT		5
 -- 
 git-series 0.9.1
 
