@@ -2,71 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41D931E4CDB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 20:09:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 607AC1E4CE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 20:13:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j6zebqhWM2sSYifz2DjLdNkDuOJGnp9JwTZKKDP3BLs=; b=Quudr6Z6ksodkI
-	Hu4xD9+mk5sD4waokWadU62xIRVUvehyEwnLdzZf6XQ5s5dCwIDOXT3bHNTHaLYckhMDmaFel6+2y
-	KG/6c8Uaw7vBpebR6IBBtPCvsXOBinVtdYJ3ib5tw4Vl3EHe/WDV/yzePKbpJW1VNpOXOheZkvLcO
-	BG+K1NcVpZnFY+fe2fF9dJIfGfJs93eTj/55C8PgUxis8fsOG3rw8laJI3BWKfy1PdV9eB/pMXakJ
-	525Wjmx94rRBPF5RZvHh++X8UbNI0i2OiNagBav5hfnUm1b+jlF5D8oiELwGa/Pis639W+z/6CifL
-	/af3aCPCSoYQWryV1Qhg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TboBtPR/Fak1+yi6y6cSpRGWlqaDOs8HdYj+X6Q9IMc=; b=S6iUBwlum6iuTh
+	ou9lnt3yX4QYTRKPWER2rHtj9iuiZgopqzimz9ILsDdzgRoQGW8f64l40cKvU8OOUj6qVS7QdPmZs
+	xEDVyA8yl/BI1+OzWVa/Fcc4RyDWoHN4+OsCkq9kKnBBSiduy8faa6cuskzYxg+w5wu3o6SfFGzVl
+	986bDc5sNK6naSeH5VcFEkO0/Xsf1+I5FdMzIj3T9UuOPPXdRfe13kNnsyZM9hGf8XS7bnM2D3RZr
+	2YbD8mPA0zW7/8+OxE6okjtcVUJvJxqr7426ZtTacLfCosUljTCc6PCW8PA5OqWBO2+ZrsFJ88LNj
+	wgD6SGdO2uSmIb08OqVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je0U7-0005SM-Lm; Wed, 27 May 2020 18:08:59 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1je0YO-0001db-A9; Wed, 27 May 2020 18:13:24 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je0Tv-0005Rr-HB
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 18:08:48 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E03042075A;
- Wed, 27 May 2020 18:08:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590602926;
- bh=EkrxDgW2W7jklShbuK3ccGvQdpxTbQarzQKd6FLVLgE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=deq7F0t+XNEaB9xXwmIRl6SLB0gmB4gu7wH7Dl6Jh7XBHRrdUXqFDcAa2b/sLRsSM
- 0PS6NRMEJD3NHSvnod+9TTScg4YL3BnjVq0f2x8KOosnPSwza6vegMDcw7UZoEd5Vx
- CEH+0Dd5z3MQ4/ta9IbM9e70z/NAFCwNiwCHeGYI=
-Date: Wed, 27 May 2020 19:08:40 +0100
-From: Will Deacon <will@kernel.org>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH] arm64: vdso32: force vdso32 to be compiled as -marm
-Message-ID: <20200527180839.GA16411@willie-the-truck>
-References: <20200526173117.155339-1-ndesaulniers@google.com>
- <2f58c2a4-0f37-d507-7767-00161c6b5d98@arm.com>
- <CAKwvOd=Oy_OfRbL6-q-3CAHxWBNBKE+HkfNfgCiP726u+4dU1Q@mail.gmail.com>
+ id 1je0YD-0001cy-Ih
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 18:13:15 +0000
+Received: by mail-io1-f66.google.com with SMTP id k18so27179180ion.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 11:13:10 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/EruCW5OyzYkTpIMEcZw9VvP4rIyANLSRqMpkEmMESc=;
+ b=ffH5KYPu1mvuHGiGb+G7wyjjpoFMhr6otgS37NUxv9hChJRKB1WQFbn7hMlPxhxl+U
+ qTGg192BtTivVYU5rzNvFQYxj4qSU1mVND4CGND7nE4mG36eoiFaFJToNfnwJlr3H1GS
+ k/cJJ0pPjDNHtV87sluxnkjOyRHzvv8TtaGxB/H+T3y2dH6t8YreKtGUfyO3R+KBfcIm
+ +pLueEw0qHa3sH8CAdLcI9gV0/IPRVIc9UTVQYsPqUrvQgA5EiLznLDnC/e0cj5EaZI0
+ jLDxl+/s3T2TLir/7WPh9k32xDV4+ISaJKCmHhqiaprv0Julw1GndzzIXUp/p2GUeiWL
+ eSMg==
+X-Gm-Message-State: AOAM532ZfzKCF2wxjD1pOaMeFa4Hep6ACdohaV6mdvMunoi2mWh2TYK9
+ gn+l8a51DL6/KmQEhNqwcw==
+X-Google-Smtp-Source: ABdhPJxUSllQ00lt5W6Ku5+TyPaZgvzDvlMqASKxBalVSX3oZwrMtPe4WkxLJ5GjLAWgGk9w552hsQ==
+X-Received: by 2002:a6b:ee15:: with SMTP id i21mr22853775ioh.179.1590603189487; 
+ Wed, 27 May 2020 11:13:09 -0700 (PDT)
+Received: from xps15.herring.priv ([64.188.179.252])
+ by smtp.googlemail.com with ESMTPSA id e12sm1562445ioc.37.2020.05.27.11.13.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 11:13:08 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: soc@kernel.org
+Subject: [PATCH] clk: versatile: Fix kconfig dependency on COMMON_CLK_VERSATILE
+Date: Wed, 27 May 2020 12:13:07 -0600
+Message-Id: <20200527181307.2482167-1-robh@kernel.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKwvOd=Oy_OfRbL6-q-3CAHxWBNBKE+HkfNfgCiP726u+4dU1Q@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_110847_584670_E9A1C7C0 
-X-CRM114-Status: GOOD (  17.85  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200527_111313_616202_872FB243 
+X-CRM114-Status: GOOD (  10.86  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,53 +86,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: anders.roxell@linaro.org, Stephen Boyd <sboyd@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-clk@vger.kernel.org,
+ Michael Turquette <mturquette@baylibre.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 10:55:24AM -0700, Nick Desaulniers wrote:
-> On Wed, May 27, 2020 at 6:45 AM Robin Murphy <robin.murphy@arm.com> wrote:
-> >
-> > On 2020-05-26 18:31, Nick Desaulniers wrote:
-> > > Custom toolchains that modify the default target to -mthumb cannot
-> > > compile the arm64 compat vdso32, as
-> > > arch/arm64/include/asm/vdso/compat_gettimeofday.h
-> > > contains assembly that's invalid in -mthumb.  Force the use of -marm,
-> > > always.
-> >
-> > FWIW, this seems suspicious - the only assembly instructions I see there
-> > are SWI(SVC), MRRC, and a MOV, all of which exist in Thumb for the
-> > -march=armv7a baseline that we set.
-> >
-> > On a hunch, I've just bodged "VDSO_CFLAGS += -mthumb" into my tree and
-> > built a Thumb VDSO quite happily with Ubuntu 19.04's
-> > gcc-arm-linux-gnueabihf. What was the actual failure you saw?
-> 
-> From the link in the commit message: `write to reserved register 'R7'`
-> https://godbolt.org/z/zwr7iZ
-> IIUC r7 is reserved for the frame pointer in THUMB?
-> 
-> What is the implicit default of your gcc-arm-linux-gnueabihf at -O2?
-> -mthumb, or -marm?
+If COMPILE_TEST is enabled, then COMMON_CLK_VERSATILE can be disabled
+when dependent options like ICST are selected resulting in kconfig
+warnings:
 
-Hmm, but this *is* weird because if I build a 32-bit kernel then I get
-either an ARM or a Thumb-2 VDSO depending on CONFIG_THUMB2_KERNEL. I'm
-not sure if that's deliberate, but both build and appear to work.
+WARNING: unmet direct dependencies detected for ICST
+  Depends on [n]: COMMON_CLK [=y] && COMMON_CLK_VERSATILE [=n]
+  Selected by [y]:
+  - ARCH_REALVIEW [=y] && (ARCH_MULTI_V5 [=n] || ARCH_MULTI_V6 [=n] || ARCH_MULTI_V7 [=y])
+  - ARCH_VEXPRESS [=y] && ARCH_MULTI_V7 [=y]
+  - ARCH_ZYNQ [=y] && ARCH_MULTI_V7 [=y]
 
-I'll drop this patch for now, while we figure it out a bit more.
+WARNING: unmet direct dependencies detected for CLK_SP810
+  Depends on [n]: COMMON_CLK [=y] && COMMON_CLK_VERSATILE [=n]
+  Selected by [y]:
+  - ARCH_REALVIEW [=y] && (ARCH_MULTI_V5 [=n] || ARCH_MULTI_V6 [=n] || ARCH_MULTI_V7 [=y])
 
-Cheers,
+Fix this by dropping COMMON_CLK_VERSATILE and just using 'menu' instead
+of 'menuconfig'.
 
-Will
+Fixes: 81134fb541d4 ("clk: versatile: Rework kconfig structure")
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Michael Turquette <mturquette@baylibre.com>
+Cc: Stephen Boyd <sboyd@kernel.org>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-clk@vger.kernel.org
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+Please apply this along with Ander's fixes to the SoC tree. 
+
+Note that this patch[1] is also need to resolve the kconfig issues. 
+Michal said he would apply it.
+
+Rob
+
+[1] https://lore.kernel.org/linux-arm-kernel/20200409221829.29421-1-robh@kernel.org/
+
+ drivers/clk/versatile/Kconfig | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+
+diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
+index a0ed412e8396..8c1b0e8e8d32 100644
+--- a/drivers/clk/versatile/Kconfig
++++ b/drivers/clk/versatile/Kconfig
+@@ -1,11 +1,8 @@
+ # SPDX-License-Identifier: GPL-2.0-only
+ 
+-menuconfig COMMON_CLK_VERSATILE
+-	bool "Clock driver for ARM Reference designs" if COMPILE_TEST
+-	default y if ARCH_INTEGRATOR || ARCH_REALVIEW || \
+-		ARCH_VERSATILE || ARCH_VEXPRESS
+-
+-if COMMON_CLK_VERSATILE
++menu "Clock driver for ARM Reference designs"
++	depends on ARCH_INTEGRATOR || ARCH_REALVIEW || \
++		ARCH_VERSATILE || ARCH_VEXPRESS || COMPILE_TEST
+ 
+ config ICST
+ 	bool "Clock driver for ARM Reference designs ICST"
+@@ -32,4 +29,4 @@ config CLK_VEXPRESS_OSC
+ 	  Express platforms hidden behind its configuration infrastructure,
+ 	  commonly known as OSCs.
+ 
+-endif
++endmenu
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
