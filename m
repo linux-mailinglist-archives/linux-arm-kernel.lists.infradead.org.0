@@ -2,68 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A7121E4CF6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 20:19:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE81A1E4D0F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 20:25:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=o2AAsTTHw+QUqPYJ43vWIj8xo+RNAEsSHYfbXkvZJPc=; b=Pvtnk+bXCwSCB/
-	Mr/2VJnVTrAhSqMXyJLDDDByIxaZB44vNy8abtX9Ssnecwb/y/zH1kYVNl2xBhAscN4JAaTv9kpTM
-	XYILVqnrNGBJYhns0xDw0SsbdS6DVJp7im2+kLmLJJn4jOzXs0y0eBRbHcS0MOnuMx2ymgkW7RkVL
-	TKQ1By2ai5McBdXfxNwk2dM1UTjyDrxDHd4UzsgMllc1YevxNTqgzm7r7ioFNC4SpUsfURfXhtumN
-	UKRkYdz1Gf66W7kxIMVZMRNTIp2bndmnaeIa5VfttGBFZ/DLpyv+CCoHmg3B8dAlprTbUQlq7kli+
-	jM1rXkkvSdLG2oHxjT0Q==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VBqtnnw/EsLTDKF0iutPI25nWgfBWledcKk6joDRrhA=; b=dlJISC/O1IILUP
+	pfn1AIgjnzYx3/75r1bRijm1V0dXGUx4i3kTkin1ZjAyvAp6xlH8Qr/wp6svRzMR7BiBAQxsmKxxs
+	rjAOz4UcoPlcV771updl7q58+VF5iiWvt6VXO7Jsf1LDs5E50DWJsmH3ol6mC4C537mzt04WLU80y
+	EXsDc9zra4AZBxnrwj0PaDfenYHOmQSEbb9e+XpOazNpw5Gz69YryaynxqV5fJkUSj8m1b5/L7hRz
+	aikO7n5sB3Yr7nq3kcUbfOpmMWLAdrSiYIf7L//gd1DsRmH5jZXo8bW05RVa+7kZh/aUt15TTKrHR
+	Hd6/7j1kkf0brsnoVeBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je0dk-00055f-PS; Wed, 27 May 2020 18:18:56 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1je0k6-0002UK-Ke; Wed, 27 May 2020 18:25:30 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je0dZ-00054j-6h
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 18:18:46 +0000
-Received: from localhost (mobile-166-175-190-200.mycingular.net
- [166.175.190.200])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3CF692075A;
- Wed, 27 May 2020 18:18:44 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590603524;
- bh=IlJRE+s/Xn0kFANnhdpCDcIhPKRLpygy8ad6xlPlHjQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=nIx2hX8lM30uXBDTL7TuhND9kQ3G+qZ++mUq5WECUp59CfqdUpYK43QoUK7AXlVPf
- KxTUevqFBycL9TlKq7SmWveEDn1K/rg1pDaaEGJos75PWipKFqulr3bGwuDJBHuVi1
- 7/+Jn7myhnHFa+KsZWLZ+HqvliJJB2ISAncHJDyU=
-Date: Wed, 27 May 2020 13:18:42 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Zhangfei Gao <zhangfei.gao@linaro.org>
-Subject: Re: [PATCH 0/2] Introduce PCI_FIXUP_IOMMU
-Message-ID: <20200527181842.GA256680@bjorn-Precision-5520>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1590493749-13823-1-git-send-email-zhangfei.gao@linaro.org>
+ id 1je0jw-0002RE-C0; Wed, 27 May 2020 18:25:21 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 8DC45128B2F3C;
+ Wed, 27 May 2020 11:25:16 -0700 (PDT)
+Date: Wed, 27 May 2020 11:25:15 -0700 (PDT)
+Message-Id: <20200527.112515.1714930146142742523.davem@davemloft.net>
+To: brgl@bgdev.pl
+Subject: Re: [PATCH] net: ethernet: mtk-star-emac: fix error path in RX
+ handling
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200527092404.3567-1-brgl@bgdev.pl>
+References: <20200527092404.3567-1-brgl@bgdev.pl>
+X-Mailer: Mew version 6.8 on Emacs 26.3
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Wed, 27 May 2020 11:25:17 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_111845_265545_091C4AC0 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200527_112520_416420_876308DE 
+X-CRM114-Status: UNSURE (   7.46  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,73 +63,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe <jean-philippe@linaro.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- linux-pci@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, linux-acpi@vger.kernel.org,
- Wangzhou <wangzhou1@hisilicon.com>, linux-crypto@vger.kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- kenneth-lee-2012@foxmail.com, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
+Cc: stephane.leprovost@mediatek.com, bgolaszewski@baylibre.com,
+ netdev@vger.kernel.org, sean.wang@mediatek.com, linux-kernel@vger.kernel.org,
+ fparent@baylibre.com, pedro.tsai@mediatek.com,
+ linux-mediatek@lists.infradead.org, andrew.perepech@mediatek.com,
+ john@phrozen.org, matthias.bgg@gmail.com, kuba@kernel.org,
+ natechancellor@gmail.com, Mark-MC.Lee@mediatek.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 07:49:07PM +0800, Zhangfei Gao wrote:
-> Some platform devices appear as PCI but are actually on the AMBA bus,
-> and they need fixup in drivers/pci/quirks.c handling iommu_fwnode.
-> Here introducing PCI_FIXUP_IOMMU, which is called after iommu_fwnode
-> is allocated, instead of reusing PCI_FIXUP_FINAL since it will slow
-> down iommu probing as all devices in fixup final list will be
-> reprocessed, suggested by Joerg, [1]
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Wed, 27 May 2020 11:24:04 +0200
 
-Is this slowdown significant?  We already iterate over every device
-when applying PCI_FIXUP_FINAL quirks, so if we used the existing
-PCI_FIXUP_FINAL, we wouldn't be adding a new loop.  We would only be
-adding two more iterations to the loop in pci_do_fixups() that tries
-to match quirks against the current device.  I doubt that would be a
-measurable slowdown.
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> 
+> The dma_addr field in desc_data must not be overwritten until after the
+> new skb is mapped. Currently we do replace it with uninitialized value
+> in error path. This change fixes it by moving the assignment before the
+> label to which we jump after mapping or allocation errors.
+> 
+> Fixes: 8c7bd5a454ff ("net: ethernet: mtk-star-emac: new driver")
+> Reported-by: Nathan Chancellor <natechancellor@gmail.com>
+> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-> For example:
-> Hisilicon platform device need fixup in
-> drivers/pci/quirks.c handling fwspec->can_stall, which is introduced in [2]
-> 
-> +static void quirk_huawei_pcie_sva(struct pci_dev *pdev)
-> +{
-> +    struct iommu_fwspec *fwspec;
-> +
-> +    pdev->eetlp_prefix_path = 1;
-> +    fwspec = dev_iommu_fwspec_get(&pdev->dev);
-> +    if (fwspec)
-> +        fwspec->can_stall = 1;
-> +}
-> +
-> +DECLARE_PCI_FIXUP_IOMMU(PCI_VENDOR_ID_HUAWEI, 0xa250, quirk_huawei_pcie_sva);
-> +DECLARE_PCI_iFIXUP_IOMMU(PCI_VENDOR_ID_HUAWEI, 0xa251, quirk_huawei_pcie_sva); 
-> 
-> [1] https://www.spinics.net/lists/iommu/msg44591.html
-> [2] https://www.spinics.net/lists/linux-pci/msg94559.html
+Applied, please use "[PATCH net-next]" to clearly indicate the target
+GIT tree next time.
 
-If you reference these in the commit logs, please use lore.kernel.org
-links instead of spinics.
-
-> Zhangfei Gao (2):
->   PCI: Introduce PCI_FIXUP_IOMMU
->   iommu: calling pci_fixup_iommu in iommu_fwspec_init
-> 
->  drivers/iommu/iommu.c             | 4 ++++
->  drivers/pci/quirks.c              | 7 +++++++
->  include/asm-generic/vmlinux.lds.h | 3 +++
->  include/linux/pci.h               | 8 ++++++++
->  4 files changed, 22 insertions(+)
-> 
-> -- 
-> 2.7.4
-> 
+Thank you.
 
 _______________________________________________
 linux-arm-kernel mailing list
