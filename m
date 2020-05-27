@@ -2,82 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 878151E4B18
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:55:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 086021E4B39
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:58:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1ErQ92GV6vU0dgqGVmbVwXL60kN3ERNBCRDO8fAP6e0=; b=hrPU+9La7pFasz
-	yYKnF1GdMVG8w9CXI7lr1DfRFOG9vCLeiaEMJgR6BHaTG2OgkB3by26YgT0Ifye7i2apixoe+rvrZ
-	lCXJnB1/95kxEIR+oHj1m2z7BGSJqj9o7timr11IJvUo7VrQO2dQx4kxOr1MPs4EGYIcQUvLHwjgP
-	cGowcci3XiEZXo1ZroSewz3gCgorOrVBhLzST2TnLVi/Fpix0azfSiFEjfROCwCeRBp13dEewyQfz
-	TZ/rSwJuEIGD1d2/l/O1n5cAkNIZaIqb6S+hnYJj0f3gA8yBlInuKZYt7nPFp3s8gxVdOb5fHHMc1
-	bsHgq46emUQjYUHzhQhw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	References:In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=btBc7+lNDVec7EHTrXviEV69zgxeg33d15vioZjRIGk=; b=rAbaP/YrSc3MqUdx9KRnFPyeuD
+	u56basY1Ij+RQ7+EODXqRH/Kk3fhj48eci3VFy0rh2LKrkXTpGF/x1nTCaCLue+qcflSBGLLkbxrm
+	f0KTRkvmp/dnEqtO3htRESW39y9AuC7BvlmFOZC2WtJqhxzdKnBEyW9jOeGYoh0dfiTFA6oujqnxU
+	LS9mTy0rC0pppSTzyZbl1iD/BXQrGC7b5AUxP09hr1mtcakd5Xm8zsk00cEoZ7QJj8mRYbFfnUMup
+	e/c7qZjA/UqWThigcE3nEBmYoCUV6IyAmZc1GTmI9RlUMHpPTGrCvCy0XBuXixzh1dQUPJCo950oN
+	2OXO8euA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdzKt-0005Yl-AB; Wed, 27 May 2020 16:55:23 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jdzNd-00008Y-Pl; Wed, 27 May 2020 16:58:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdzKT-0005Wb-4B
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 16:54:58 +0000
-Received: by mail-lj1-x242.google.com with SMTP id q2so29758240ljm.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 09:54:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=anholt-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=LHmWtQ2TkLP6OGqb3OSxb7myh0DpkLphjU9/234BIPw=;
- b=QS/DeL/4agLgqn43tz2d+1Pv+Wcw+zCxwuarjwcFOqdidEhljsODcljY+PQD4MZcez
- 6mcT5xo+Glj6Ozfyadq8H8umAzoBhXKuPdW8HcoZ043jES7AoSHHYu2QJvNfDbke8WKE
- Sd1361f4h8VU3lrRB8HNQrWQJqedcEnX0V0GYfKC+d5yU8R52r3f8aEWrcwoJJo1Lrm1
- rrlOSWgksgreXzlsXtCWma7ALPvRuCLrWDRnRqvsvYq0cqxGjb/3xHPbS33yS/6CjUiS
- 7Vbd2apZUjCw2NVUJTdQpNzUFRkW7nKRLrAvi1n05Ykl31i8DWeWBLHOOz7xf4ILLl7/
- 7SxQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=LHmWtQ2TkLP6OGqb3OSxb7myh0DpkLphjU9/234BIPw=;
- b=pKHBygJtuj56s3tKRzKt53ku+y8IGxIv6Jvvj208y+Ftbj0NoMZF5Aa1OmIdKdI+DZ
- oUxJxTY+1URHpabZttWEIUrXt7jOYIIqwxewT4Mz/+Oids2kcNUMzELPq01dEjIozBom
- ne92kYq6zv+URiYdVOqqzbQgYVWzMgRL8+OC8CQ/2m2vsvKKE9Mg//tfIUsMMBaU+ONw
- A2mTZB2mLG6yiIaY76TcTx5Tytryo2us9S73egIXIXswxv6kGxvsyNv5qCPDTMWLwmpm
- p1GjG3RLYsyiX/SRT/99bGOz+LlOBRgyWVRSfwf5OW3rNZz0guYltPuD59Khoe3zFVFV
- nZ8A==
-X-Gm-Message-State: AOAM5323ncyhFk39+Ev59n9IwoscJsZQzrnAR9+BZkNbVHkjt+D7m/2n
- fllBfWGoOhDc8k2AhhooPQKMPaVDCLJP0P3/75zx5Q==
-X-Google-Smtp-Source: ABdhPJzmJpMkCosVV6yjOyPlOezLCCBsNT9bqO2Vj1q1MAS7G8wJ94i7BKM7SJjLa8tONQ+EvxtbGKO7THS1xmZmk4Q=
-X-Received: by 2002:a2e:8186:: with SMTP id e6mr3672178ljg.252.1590598495776; 
- Wed, 27 May 2020 09:54:55 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
- <d2c1850e38e14f3def4c0307240e6826e296c14b.1590594512.git-series.maxime@cerno.tech>
-In-Reply-To: <d2c1850e38e14f3def4c0307240e6826e296c14b.1590594512.git-series.maxime@cerno.tech>
-From: Eric Anholt <eric@anholt.net>
-Date: Wed, 27 May 2020 09:54:44 -0700
-Message-ID: <CADaigPU7c=1u47R9GzvGCH_Z2fywY1foGYEy=KbBikjUQpwUFg@mail.gmail.com>
-Subject: Re: [PATCH v3 032/105] drm/vc4: crtc: Enable and disable the PV in
- atomic_enable / disable
-To: Maxime Ripard <maxime@cerno.tech>
+ id 1jdzNR-00007p-85
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 16:58:02 +0000
+Received: from localhost (unknown [137.135.114.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 64FD82088E;
+ Wed, 27 May 2020 16:58:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590598680;
+ bh=hVDbqyunzoY5eUjoD+ZZlE5Jv2a7JNgahubQFoF36cU=;
+ h=Date:From:To:To:To:Cc:Cc:Cc:Subject:In-Reply-To:References:From;
+ b=v9VY/fJ11OaNqD+cUZB7csfy2So+3PZ4DSS78XzUlw22ujaY2vlJ3YVTo8nrSgHMD
+ CUmew/bRAoIHF1FN0nIwiasKvoI66+vMJm6uSCsY4H0hL/jauhPL2Nz3HQ6moyG1mz
+ k+T3K3vAaqy+PM1+s1x0TmJYtuOhEC8i0MflrMQA=
+Date: Wed, 27 May 2020 16:57:59 +0000
+From: Sasha Levin <sashal@kernel.org>
+To: Sasha Levin <sashal@kernel.org>
+To: James Morse <james.morse@arm.com>
+To: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/3] KVM: arm64: Stop writing aarch32's CSSELR into ACTLR
+In-Reply-To: <20200526161834.29165-2-james.morse@arm.com>
+References: <20200526161834.29165-2-james.morse@arm.com>
+Message-Id: <20200527165800.64FD82088E@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_095457_191580_5AC3C735 
-X-CRM114-Status: GOOD (  13.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200527_095801_323750_988A3B1E 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,34 +77,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- DRI Development <dri-devel@lists.freedesktop.org>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
+Cc: Marc Zyngier <maz@kernel.org>, stable@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 8:50 AM Maxime Ripard <maxime@cerno.tech> wrote:
->
-> The VIDEN bit in the pixelvalve currently being used to enable or disable
-> the pixelvalve seems to not be enough in some situations, which whill end
-> up with the pixelvalve stalling.
->
-> In such a case, even re-enabling VIDEN doesn't bring it back and we need to
-> clear the FIFO. This can only be done if the pixelvalve is disabled though.
->
-> In order to overcome this, we can configure the pixelvalve during
-> mode_set_no_fb, but only enable it in atomic_enable and flush the FIFO
-> there, and in atomic_disable disable the pixelvalve again.
+Hi
 
-What displays has this been tested with?  Getting this sequencing
-right is so painful, and things like DSI are tricky to get to light
-up.
+[This is an automated email]
+
+This commit has been processed because it contains a -stable tag.
+The stable tag indicates that it's relevant for the following trees: all
+
+The bot has tested the following trees: v5.6.14, v5.4.42, v4.19.124, v4.14.181, v4.9.224, v4.4.224.
+
+v5.6.14: Build OK!
+v5.4.42: Build OK!
+v4.19.124: Failed to apply! Possible dependencies:
+    f7f2b15c3d42 ("arm64: KVM: Expose sanitised cache type register to guest")
+
+v4.14.181: Failed to apply! Possible dependencies:
+    005781be127f ("arm64: KVM: Move CPU ID reg trap setup off the world switch path")
+    93390c0a1b20 ("arm64: KVM: Hide unsupported AArch64 CPU features from guests")
+    f7f2b15c3d42 ("arm64: KVM: Expose sanitised cache type register to guest")
+
+v4.9.224: Failed to apply! Possible dependencies:
+    005781be127f ("arm64: KVM: Move CPU ID reg trap setup off the world switch path")
+    016f98afd050 ("irqchip/gic-v3: Use nops macro for Cavium ThunderX erratum 23154")
+    0d449541c185 ("KVM: arm64: use common invariant sysreg definitions")
+    0e9884fe63c6 ("arm64: sysreg: subsume GICv3 sysreg definitions")
+    14ae7518dd55 ("arm64: sysreg: add register encodings used by KVM")
+    47863d41ecf8 ("arm64: sysreg: sort by encoding")
+    82e0191a1aa1 ("arm64: Support systems without FP/ASIMD")
+    851050a573e1 ("KVM: arm64: Use common sysreg definitions")
+    93390c0a1b20 ("arm64: KVM: Hide unsupported AArch64 CPU features from guests")
+    bca8f17f57bd ("arm64: Get rid of asm/opcodes.h")
+    c7a3c61fc606 ("arm64: sysreg: add performance monitor registers")
+    c9a3c58f01fb ("KVM: arm64: Add the EL1 physical timer access handler")
+    cd9e1927a525 ("arm64: Work around broken .inst when defective gas is detected")
+    f7f2b15c3d42 ("arm64: KVM: Expose sanitised cache type register to guest")
+
+v4.4.224: Failed to apply! Possible dependencies:
+    005781be127f ("arm64: KVM: Move CPU ID reg trap setup off the world switch path")
+    06282fd2c2bf ("arm64: KVM: Implement vgic-v2 save/restore")
+    068a17a5805d ("arm64: mm: create new fine-grained mappings at boot")
+    072f0a633838 ("arm64: Introduce raw_{d,i}cache_line_size")
+    0a28714c53fd ("arm64: Use PoU cache instr for I/D coherency")
+    116c81f427ff ("arm64: Work around systems with mismatched cache line sizes")
+    1431af367e52 ("arm64: KVM: Implement timer save/restore")
+    157962f5a8f2 ("arm64: decouple early fixmap init from linear mapping")
+    1e48ef7fcc37 ("arm64: add support for building vmlinux as a relocatable PIE binary")
+    2a803c4db615 ("arm64: head.S: use memset to clear BSS")
+    57f4959bad0a ("arm64: kernel: Add support for User Access Override")
+    6d6ec20fcf28 ("arm64: KVM: Implement system register save/restore")
+    7b7293ae3dbd ("arm64: Fold proc-macros.S into assembler.h")
+    82869ac57b5d ("arm64: kernel: Add support for hibernate/suspend-to-disk")
+    82e0191a1aa1 ("arm64: Support systems without FP/ASIMD")
+    8eb992674c9e ("arm64: KVM: Implement debug save/restore")
+    910917bb7db0 ("arm64: KVM: Map the kernel RO section into HYP")
+    93390c0a1b20 ("arm64: KVM: Hide unsupported AArch64 CPU features from guests")
+    9e8e865bbe29 ("arm64: unify idmap removal")
+    a0bf9776cd0b ("arm64: kvm: deal with kernel symbols outside of linear mapping")
+    a7f8de168ace ("arm64: allow kernel Image to be loaded anywhere in physical memory")
+    ab893fb9f1b1 ("arm64: introduce KIMAGE_VADDR as the virtual base of the kernel region")
+    adc9b2dfd009 ("arm64: kernel: Rework finisher callback out of __cpu_suspend_enter()")
+    b3122023df93 ("arm64: Fix an enum typo in mm/dump.c")
+    b97b66c14b96 ("arm64: KVM: Implement guest entry")
+    be901e9b15cd ("arm64: KVM: Implement the core world switch")
+    c1a88e9124a4 ("arm64: kasan: avoid TLB conflicts")
+    c76a0a6695c6 ("arm64: KVM: Add a HYP-specific header file")
+    d5370f754875 ("arm64: prefetch: add alternative pattern for CPUs without a prefetcher")
+    f68d2b1b73cc ("arm64: KVM: Implement vgic-v3 save/restore")
+    f7f2b15c3d42 ("arm64: KVM: Expose sanitised cache type register to guest")
+    f80fb3a3d508 ("arm64: add support for kernel ASLR")
+    f9040773b7bb ("arm64: move kernel image to base of vmalloc area")
+    fd045f6cd98e ("arm64: add support for module PLTs")
+
+
+NOTE: The patch will not be queued to stable trees until it is upstream.
+
+How should we proceed with this patch?
+
+-- 
+Thanks
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
