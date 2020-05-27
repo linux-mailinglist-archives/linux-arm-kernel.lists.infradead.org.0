@@ -2,100 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 434131E4A6D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:39:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDDAE1E4A72
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:39:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=59I3p7bz5+tHhR+jVzax/QE9l19mfxA7wxVABtNVV/0=; b=pne5D/GRiS4JjL
-	FZXWc1SE7YdrwtAJl6ppec6yxD8a2u1kpdfWOlGQjHFY13WYM3CL2y9lXwBE94m8pvlNPAud8FQfa
-	l9Ucg5S3lJvneEc9m/AHQbi8RPA799hc6nu1AZum1OE3bZF+50Uj2jIEAtMPxliAdSaIaVxZ2iUnA
-	LTOjhYBAGZf9Cyr9+uDNo1YJE6m+eYlie/ONB6vcQRP2bcNxLAWedluJ0+bboWmPA/lwRszUFaPjk
-	DIz3JRFC89e+SweSI+wwRQvQJI7VQglsZecMVqow+zEngzbINg92KQwypGXAbHjxhXqrW776PlgL9
-	jJNCt+RX6Gtd1edQLY5Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nlRqppg/6b3UoqZovmflE00bXo6xcjQANhVXkrPXVmA=; b=lK3CPF8ssjsIe7
+	ySH1Y3ZuKk5czQ+JZgXcj+tV9m4+TKkrKSAPxgM+6pEAfbakSzjkjslWWZynTJmhU4L6vcfnJHp4a
+	BrOtP2p5hsPcnP3bqjOv+AEqbw9TbQ0ravVSBd+8L3xgnyZzk45MHC0GvfyVpVHSte86vOxlUZjRc
+	AZyqGLsdycb6RlvDorNLdGW2URwJiRnRZP8+wtAL4McTrPUPzqM1PL02W7bLqMIjySI0zHDoT/H1J
+	edMEcTCUzX1faFddjzRm4YZFNagj0fwVlAv9L9+8vCAZcURj/IsC4yoRXZUvPlaQMF+GNgUJuPQJi
+	oCRRUl7VHxAf3cUDC0sA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdz4x-0000XW-Ql; Wed, 27 May 2020 16:38:55 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jdz5H-0000kk-9p; Wed, 27 May 2020 16:39:15 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyde-0007z3-ON
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 16:10:46 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590595841;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=gpS5WDJIgyjBNnbz57joD1fkY56BnMjV/cB+edX+sFA=;
- b=eQs+PA1sqjIJqZrzF7zY/oP0eQTeCVfvHSdKoK3R+2x6cWZ5h2ln/xw4mfT+3HIfTHbG55
- cBibQpxczWkQN4QjWBWx9roUCc1L5Ur7tWYoo0YkfVl5PHqUbBNTS2ilNyXSSb/lHNOtYf
- 03I4mCKwss19oj1Ix5Jz3OBlabqTYE0=
-Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
- [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-426-2gSHZvOGPXCykF4Buh0ybQ-1; Wed, 27 May 2020 12:10:39 -0400
-X-MC-Unique: 2gSHZvOGPXCykF4Buh0ybQ-1
-Received: by mail-wm1-f71.google.com with SMTP id q7so542695wmj.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 09:10:39 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=gpS5WDJIgyjBNnbz57joD1fkY56BnMjV/cB+edX+sFA=;
- b=G00wm5tKbQolotTwINAzaLB4Hb1svZKuhxwEt8qpklKOXlAuHPhq22ZFIYquaLVksl
- tO/f1CPR98ne3Q9RZJHCYJAwEFvOoJYKVeiOpZGMbQOnuEk2MOAa9w6oGPI6DdYH9+EW
- Oz9C7Zl9rf57ocwpEh6F+4tPJJLSUmuR/oB6or0dZ/HE4ykm/JST5iu4WQ6q+pHArkCo
- f0nJU85RTFxwlbLg3UP0qfPNn5NIq0IiZwy01PSXTmwSdBMBmLEMPHY3dw8LpDe+dsxK
- gvbc/04JA6vfF+ybq/tMMfzTbdfcyN3P/4Q8ATMo1CGdwquXHouIxcgFADFVC1mqrycZ
- N0iw==
-X-Gm-Message-State: AOAM530n/Iwa9fXVwGA/nrJqvXEhHVS5j3wlZTD4IEPVednyqKp70BWp
- H9gTK+jwcS0yY3qldiovs4E3kyRqeJw0sfdjHhwbCgF2LF8236bHXI1t4nq2vZwGsM4D8M+qYTg
- 9tE4Du4SaOkvHUyMm0xpfYpSU3eUV1a63KNY=
-X-Received: by 2002:a7b:cf06:: with SMTP id l6mr4939090wmg.63.1590595838098;
- Wed, 27 May 2020 09:10:38 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJwwv2WOvp+dGE5Bd+63NHTAUmNpXjYKI6PXzKuriRFk4SIKF8scu4bdTkpQ8+eWY4jLf6e98w==
-X-Received: by 2002:a7b:cf06:: with SMTP id l6mr4939064wmg.63.1590595837858;
- Wed, 27 May 2020 09:10:37 -0700 (PDT)
-Received: from ?IPv6:2001:b07:6468:f312:3c1c:ffba:c624:29b8?
- ([2001:b07:6468:f312:3c1c:ffba:c624:29b8])
- by smtp.gmail.com with ESMTPSA id a10sm3149808wmf.46.2020.05.27.09.10.36
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 27 May 2020 09:10:37 -0700 (PDT)
-Subject: Re: [PATCH RFCv2 0/9] kvm/arm64: Support Async Page Fault
-To: Marc Zyngier <maz@kernel.org>, Gavin Shan <gshan@redhat.com>
-References: <20200508032919.52147-1-gshan@redhat.com>
- <20200526130927.GH1363@C02TD0UTHF1T.local>
- <987785b2-2533-c3d8-8f6a-4193aa82d502@redhat.com>
- <ae0f32fa338969d25dc3da56292e35ed@kernel.org>
-From: Paolo Bonzini <pbonzini@redhat.com>
-Message-ID: <eb2a2291-85b0-a39a-96d1-58e4652771ba@redhat.com>
-Date: Wed, 27 May 2020 18:10:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jdyer-0000V4-22
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 16:12:01 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 4E2655B4;
+ Wed, 27 May 2020 18:11:54 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1590595914;
+ bh=cZ0q0iInK9gUOJVsG4zE4U0nZZhqLB/LOrygKdeNQL4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=R2/els2hhOuuYesFZWndRbzo5QlylaTXr5Ir2UPZWCok8j+AZFSczPfFR7Qg+9UED
+ 2XHmUIjlDtH0Gz/rz7Lli+lkT+ei/x3pT+3IUvYCLgo40owS044h2s5y5aevKGOBNE
+ LP3XVUuYenT1ulptN9goNCCdbkm87yXTso6Gt1Z8=
+Date: Wed, 27 May 2020 19:11:40 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Vishal Sagar <vishal.sagar@xilinx.com>
+Subject: Re: [PATCH v14 1/2] media: dt-bindings: media: xilinx: Add Xilinx
+ MIPI CSI-2 Rx Subsystem
+Message-ID: <20200527161140.GF6171@pendragon.ideasonboard.com>
+References: <1590587839-129558-1-git-send-email-vishal.sagar@xilinx.com>
+ <1590587839-129558-2-git-send-email-vishal.sagar@xilinx.com>
 MIME-Version: 1.0
-In-Reply-To: <ae0f32fa338969d25dc3da56292e35ed@kernel.org>
-Content-Language: en-US
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <1590587839-129558-2-git-send-email-vishal.sagar@xilinx.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_091042_887597_46439EFB 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20200527_091157_273917_AD4F74C0 
+X-CRM114-Status: GOOD (  25.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [205.139.110.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -103,8 +62,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,38 +73,391 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, aarcange@redhat.com,
- drjones@redhat.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, eric.auger@redhat.com, james.morse@arm.com,
- shan.gavin@gmail.com, will@kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Jacopo Mondi <jacopo@jmondi.org>, Dinesh Kumar <dineshk@xilinx.com>,
+ Hyun Kwon <hyunk@xilinx.com>, Sandip Kothari <sandipk@xilinx.com>,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Michal Simek <michals@xilinx.com>, Luca Ceresoli <luca@lucaceresoli.net>,
+ hans.verkuil@cisco.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/05/20 09:48, Marc Zyngier wrote:
+Hi Vishal,
+
+Thank you for the patch.
+
+On Wed, May 27, 2020 at 07:27:18PM +0530, Vishal Sagar wrote:
+> Add bindings documentation for Xilinx MIPI CSI-2 Rx Subsystem.
 > 
-> My own question is whether this even makes any sense 10 years later.
-> The HW has massively changed, and this adds a whole lot of complexity
-> to both the hypervisor and the guest.
+> The Xilinx MIPI CSI-2 Rx Subsystem consists of a CSI-2 Rx controller, a
+> D-PHY in Rx mode and a Video Format Bridge.
+> 
+> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
+> Reviewed-by: Hyun Kwon <hyun.kwon@xilinx.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> Reviewed-by: Luca Ceresoli <luca@lucaceresoli.net>
+> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> ---
+> v14
+> - Removed xlnx,csi-pxl-format from required properties
+> - Added dependency of xlnx,csi-pxl-format on xlnx,vfb
+> - End the yaml file with ...
+> - Added Reviewed by Laurent
+> 
+> v13
+> - Based on Laurent's suggestions
+> - Fixed the datatypes values as minimum and maximum
+> - condition added for en-vcx property
+> 
+> v12
+> - Moved to yaml format
+> - Update CSI-2 and D-PHY
+> - Mention that bindings for D-PHY not here
+> - reset -> video-reset
+> 
+> v11
+> - Modify compatible string from 4.0 to 5.0
+> 
+> v10
+> - No changes
+> 
+> v9
+> - Fix xlnx,vfb description.
+> - s/Optional/Required endpoint property.
+> - Move data-lanes description from Ports to endpoint property section.
+> 
+> v8
+> - Added reset-gpios optional property to assert video_aresetn
+> 
+> v7
+> - Removed the control name from dt bindings
+> - Updated the example dt node name to csi2rx
+> 
+> v6
+> - Added "control" after V4L2_CID_XILINX_MIPICSISS_ACT_LANES as suggested by Luca
+> - Added reviewed by Rob Herring
+> 
+> v5
+> - Incorporated comments by Luca Cersoli
+> - Removed DPHY clock from description and example
+> - Removed bayer pattern from device tree MIPI CSI IP
+>   doesn't deal with bayer pattern.
+> 
+> v4
+> - Added reviewed by Hyun Kwon
+> 
+> v3
+> - removed interrupt parent as suggested by Rob
+> - removed dphy clock
+> - moved vfb to optional properties
+> - Added required and optional port properties section
+> - Added endpoint property section
+> 
+> v2
+> - updated the compatible string to latest version supported
+> - removed DPHY related parameters
+> - added CSI v2.0 related property (including VCX for supporting upto 16
+>   virtual channels).
+> - modified csi-pxl-format from string to unsigned int type where the value
+>   is as per the CSI specification
+> - Defined port 0 and port 1 as sink and source ports.
+> - Removed max-lanes property as suggested by Rob and Sakari
+> 
+>  .../bindings/media/xilinx/xlnx,csi2rxss.yaml       | 237 +++++++++++++++++++++
+>  1 file changed, 237 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
+> 
+> diff --git a/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml b/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
+> new file mode 100644
+> index 0000000..2282231
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
+> @@ -0,0 +1,237 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/media/xilinx/xlnx,csi2rxss.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Xilinx MIPI CSI-2 Receiver Subsystem
+> +
+> +maintainers:
+> +  - Vishal Sagar <vishal.sagar@xilinx.com>
+> +
+> +description: |
+> +  The Xilinx MIPI CSI-2 Receiver Subsystem is used to capture MIPI CSI-2
+> +  traffic from compliant camera sensors and send the output as AXI4 Stream
+> +  video data for image processing.
+> +  The subsystem consists of a MIPI D-PHY in slave mode which captures the
+> +  data packets. This is passed along the MIPI CSI-2 Rx IP which extracts the
+> +  packet data. The optional Video Format Bridge (VFB) converts this data to
+> +  AXI4 Stream video data.
+> +  For more details, please refer to PG232 Xilinx MIPI CSI-2 Receiver Subsystem.
+> +  Please note that this bindings includes only the MIPI CSI-2 Rx controller
+> +  and Video Format Bridge and not D-PHY.
+> +
+> +properties:
+> +  compatible:
+> +    items:
+> +      - enum:
+> +        - xlnx,mipi-csi2-rx-subsystem-5.0
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    description: List of clock specifiers
+> +    items:
+> +      - description: AXI Lite clock
+> +      - description: Video clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: lite_aclk
+> +      - const: video_aclk
+> +
+> +  xlnx,csi-pxl-format:
+> +    description: |
+> +      This denotes the CSI Data type selected in hw design.
+> +      Packets other than this data type (except for RAW8 and
+> +      User defined data types) will be filtered out.
+> +      Possible values are as below -
+> +      0x1e - YUV4228B
+> +      0x1f - YUV42210B
+> +      0x20 - RGB444
+> +      0x21 - RGB555
+> +      0x22 - RGB565
+> +      0x23 - RGB666
+> +      0x24 - RGB888
+> +      0x28 - RAW6
+> +      0x29 - RAW7
+> +      0x2a - RAW8
+> +      0x2b - RAW10
+> +      0x2c - RAW12
+> +      0x2d - RAW14
+> +      0x2e - RAW16
+> +      0x2f - RAW20
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#/definitions/uint32
+> +      - anyOf:
+> +        - minimum: 0x1e
+> +        - maximum: 0x24
+> +        - minimum: 0x28
+> +        - maximum: 0x2f
+> +
+> +  xlnx,vfb:
+> +    type: boolean
+> +    description: Present when Video Format Bridge is enabled in IP configuration
+> +
+> +  xlnx,en-csi-v2-0:
+> +    type: boolean
+> +    description: Present if CSI v2 is enabled in IP configuration.
+> +
+> +  xlnx,en-vcx:
+> +    type: boolean
+> +    description: |
+> +      When present, there are maximum 16 virtual channels, else only 4.
+> +
+> +  xlnx,en-active-lanes:
+> +    type: boolean
+> +    description: |
+> +      Present if the number of active lanes can be re-configured at
+> +      runtime in the Protocol Configuration Register. Otherwise all lanes,
+> +      as set in IP configuration, are always active.
+> +
+> +  video-reset-gpios:
+> +    description: Optional specifier for a GPIO that asserts video_aresetn.
+> +    maxItems: 1
+> +
+> +  ports:
+> +    type: object
+> +
+> +    properties:
+> +      port@0:
+> +        type: object
+> +        description: |
+> +          Input / sink port node, single endpoint describing the
+> +          CSI-2 transmitter.
+> +
+> +        properties:
+> +          reg:
+> +            const: 0
+> +
+> +          endpoint:
+> +            type: object
+> +
+> +            properties:
+> +
+> +              data-lanes:
+> +                description: |
+> +                  This is required only in the sink port 0 endpoint which
+> +                  connects to MIPI CSI-2 source like sensor.
+> +                  The possible values are -
+> +                  1       - For 1 lane enabled in IP.
+> +                  1 2     - For 2 lanes enabled in IP.
+> +                  1 2 3   - For 3 lanes enabled in IP.
+> +                  1 2 3 4 - For 4 lanes enabled in IP.
+> +                items:
+> +                  - const: 1
+> +                  - const: 2
+> +                  - const: 3
+> +                  - const: 4
+> +
+> +              remote-endpoint: true
+> +
+> +            required:
+> +              - data-lanes
+> +              - remote-endpoint
+> +
+> +            additionalProperties: false
+> +
+> +        additionalProperties: false
+> +
+> +      port@1:
+> +        type: object
+> +        description: |
+> +          Output / source port node, endpoint describing modules
+> +          connected the CSI-2 receiver.
+> +
+> +        properties:
+> +
+> +          reg:
+> +            const: 1
+> +
+> +          endpoint:
+> +            type: object
+> +
+> +            properties:
+> +
+> +              remote-endpoint: true
+> +
+> +            required:
+> +              - remote-endpoint
+> +
+> +            additionalProperties: false
+> +
+> +        additionalProperties: false
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - ports
+> +
+> +allOf:
+> +  - if:
+> +    required:
+> +      - xlnx,vfb
+> +    then:
+> +      required:
+> +        - xlnx,csi-pxl-format
+> +    else:
+> +      properties:
+> +        xlnx,csi-pxl-format: false
+> +
+> +  - if:
+> +    not:
+> +      required:
+> +        - xlnx,en-csi-v2-0
+> +    then:
+> +      properties:
+> +        xlnx,en-vcx: false
 
-It still makes sense, but indeed it's for different reasons.  One
-example is host page cache sharing, where (parts of) the host page cache
-are visible to the guest.  In this context, async page faults are used
-for any kind of host page faults, not just paging out memory due to
-overcommit.
+There's an indentation problem here, it should be
 
-But I agree that it is very very important to design the exception model
-first, as we're witnessing in x86 land the problems with a poor design.
- Nothing major, but just pain all around.
+allOf:
+  - if:
+      required:
+        - xlnx,vfb
+    then:
+      required:
+        - xlnx,csi-pxl-format
+    else:
+      properties:
+        xlnx,csi-pxl-format: false
 
-Paolo
+  - if:
+      not:
+        required:
+          - xlnx,en-csi-v2-0
+    then:
+      properties:
+        xlnx,en-vcx: false
 
-> It also plays very ugly games
-> with the exception model, which doesn't give me the warm fuzzy feeling
-> that it's going to be great.
+Have you run the bindings checks ?
 
+make DT_SCHEMA_FILES=Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml dt_binding_check
+
+It would have caught the issue.
+
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    #include <dt-bindings/gpio/gpio.h>
+> +    xcsi2rxss_1: csi2rx@a0020000 {
+> +        compatible = "xlnx,mipi-csi2-rx-subsystem-5.0";
+> +        reg = <0x0 0xa0020000 0x0 0x10000>;
+
+I think I mentioned in a previous review that this should be
+
+        reg = <0xa0020000 0x10000>;
+
+even if it doesn't match what the real values, as dt_binding_check
+compiles the examples in the context of a bus that has #address-cells =
+<1> and #size-cells = <1>.
+
+I can fix these when applying the patches to my tree if that's OK with
+you, and send a pull request.
+
+> +        interrupt-parent = <&gic>;
+> +        interrupts = <0 95 4>;
+> +        xlnx,csi-pxl-format = <0x2a>;
+> +        xlnx,vfb;
+> +        xlnx,en-active-lanes;
+> +        xlnx,en-csi-v2-0;
+> +        xlnx,en-vcx;
+> +        clock-names = "lite_aclk", "video_aclk";
+> +        clocks = <&misc_clk_0>, <&misc_clk_1>;
+> +        video-reset-gpios = <&gpio 86 GPIO_ACTIVE_LOW>;
+> +
+> +        ports {
+> +            #address-cells = <1>;
+> +            #size-cells = <0>;
+> +
+> +            port@0 {
+> +                /* Sink port */
+> +                reg = <0>;
+> +                csiss_in: endpoint {
+> +                    data-lanes = <1 2 3 4>;
+> +                    /* MIPI CSI-2 Camera handle */
+> +                    remote-endpoint = <&camera_out>;
+> +                };
+> +            };
+> +            port@1 {
+> +                /* Source port */
+> +                reg = <1>;
+> +                csiss_out: endpoint {
+> +                    remote-endpoint = <&vproc_in>;
+> +                };
+> +            };
+> +        };
+> +    };
+> +...
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
