@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DEE7B1E366E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 05:22:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63DEB1E366F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 05:23:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DZaD2qEVnMgez6YPO1hzt4BnSlPu594uXlk4/aYy0Ww=; b=Um+rW6HXwlBbbO
-	+dG0Mog0b7uELeD9Re6lBJVzEojFglxoJ3enbO4Ji7cQYdD6PUP1a2XSzZ/8erNF07IKUBKfydVZ9
-	E+t5/g21GpScZgp9xe1ttXYY56z0vbn5F7N2QjunIaO4uosJzPR/F6WCJCJGL6PI7Wic3zqhVA/zB
-	MmrOLTbh7uHc+UkgK6T7gU5Eli9CQQmrBaIMvj2W4TpSYe1WGZMwjwE/AXxGIQk0uQlKR2EmF0pub
-	trGM05eI7ye6DsDDHAiOQkFGXF4IkXHt/ktkD0nx5LXfYEUGs9YT+4BfBDetlbmcIP3PCos24qqbU
-	r4zYhRXhorLpA8aZUmOg==;
+	List-Owner; bh=0U+HkG8tDhXH6ftKeQuo1MY+MaJ0oYQI6pz0Whysg78=; b=KYSiwc88KSqLMA
+	46p1TPL3qwq4KzztMez6kANz27RJtHkywq0F0LQUPlkx2F+jT9WIei30Wcv0EluMgxjTamBGiTKrS
+	PbJ6LEuauH93uqbLAtJzzXiffm393omilo4+aTu7hR/6v2f8s+2hXvpyutrKc3HCQsNnbXnXa0/tS
+	Sz0EchkGshZnp/RAIzRtON2pe3JquVeOZ92J5KOHzktPMI783zLPLb7gpWopS6CiTT3aFeXK6bC9E
+	1xcYddev1tDt8MH4tzaNfAIMrGYgnL9gJD+6f3DHv/xKJ8CtJ8FubzRFO9rtdhDAaawFEpYGeInel
+	ZSjgOeVclH0BIy8qKcYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdmeb-0005Jq-9Q; Wed, 27 May 2020 03:22:53 +0000
+	id 1jdmfH-0005Yq-LA; Wed, 27 May 2020 03:23:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdmdt-00055Z-A3
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 03:22:10 +0000
+ id 1jdmex-0005YG-AR
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 03:23:17 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 87E4F20899;
- Wed, 27 May 2020 03:22:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E46BA207D8;
+ Wed, 27 May 2020 03:23:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590549728;
- bh=s5AebhNv/fPiQf8H+bfjKhgpA0L+7vopYyWrgXREc6E=;
+ s=default; t=1590549795;
+ bh=80jHVw6aQBSlvs8cXqPq7ku7ZsYEbQzW8pwnZJk0awE=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=xWJ4CBd9kqaTGDZiwWSamKLHHekIrHClNJvFxkxs74v+HTuWi8LS8E+u0rGklHHKF
- myywATth3Ipr8LdP591NPlptlNJ6Lbn+Z9HrkYn7k1lEyDWVOU2tEIajw0FwApJpar
- RHvJO2qNfzoSFjbILDTY4KvZY4/KWcKAMqqIx23Q=
+ b=R5Dg/k7Xdz4SfisMh9nuUX6t3M+H2g1Iv16u+zdJxx4EnqdvmEe3PONfZ8ung5KqM
+ 8CQ1hYnRLfUA4NvyRj3a+jgRgwpYi/tFrxdJ5GsvhbvYK5nEUTcATEy8SDtraH47B+
+ Sjnc868dAOIyZb+oDJNoRzhDarvwmdr26C70uJNI=
 MIME-Version: 1.0
-In-Reply-To: <1588508289-10140-2-git-send-email-claudiu.beznea@microchip.com>
-References: <1588508289-10140-1-git-send-email-claudiu.beznea@microchip.com>
- <1588508289-10140-2-git-send-email-claudiu.beznea@microchip.com>
-Subject: Re: [PATCH 2/2] clk: at91: pmc: decrement node's refcount
+In-Reply-To: <0054532c00163ddf405dad658b32f0d7d97fcc8e.1588630999.git.mirq-linux@rere.qmqm.pl>
+References: <cover.1588630999.git.mirq-linux@rere.qmqm.pl>
+ <0054532c00163ddf405dad658b32f0d7d97fcc8e.1588630999.git.mirq-linux@rere.qmqm.pl>
+Subject: Re: [PATCH v7 2/3] clk: at91: allow setting PCKx parent via DT
 From: Stephen Boyd <sboyd@kernel.org>
-To: Claudiu Beznea <claudiu.beznea@microchip.com>,
- alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
- mturquette@baylibre.com, nicolas.ferre@microchip.com
-Date: Tue, 26 May 2020 20:22:07 -0700
-Message-ID: <159054972792.88029.18036666635801379426@swboyd.mtv.corp.google.com>
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Ludovic Desroches <ludovic.desroches@microchip.com>, Michael Turquette <mturquette@baylibre.com>, Michał Mirosław <mirq-linux@rere.qmqm.pl>, Nicolas Ferre <nicolas.ferre@microchip.com>, Rob Herring <robh+dt@kernel.org>
+Date: Tue, 26 May 2020 20:23:14 -0700
+Message-ID: <159054979429.88029.8996330279557603331@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_202209_384197_9779F325 
-X-CRM114-Status: UNSURE (   5.97  )
+X-CRM114-CacheID: sfid-20200526_202315_377918_3A3306DC 
+X-CRM114-Status: UNSURE (   6.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,23 +77,18 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Claudiu Beznea <claudiu.beznea@microchip.com>, linux-clk@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Claudiu Beznea (2020-05-03 05:18:09)
-> of_find_matching_node() increment node's refcount. Call
-> of_node_put() to decrement it after it was used.
-> 
-> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
-> ---
-
-Applied to clk-next
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+UXVvdGluZyBNaWNoYcWCIE1pcm9zxYJhdyAoMjAyMC0wNS0wNCAxNTozNzo1NikKPiBUaGlzIGV4
+cG9zZXMgUFJPR3ggY2xvY2tzIGZvciB1c2UgaW4gYXNzaWduZWQtY2xvY2tzIERldmljZVRyZWUg
+cHJvcGVydHkKPiBmb3Igc2VsZWN0aW5nIFBDS3ggcGFyZW50IGNsb2NrLgo+IAo+IFNpZ25lZC1v
+ZmYtYnk6IE1pY2hhXHUwMTQyIE1pcm9zXHUwMTQyYXcgPG1pcnEtbGludXhAcmVyZS5xbXFtLnBs
+Pgo+IC0tLQoKQXBwbGllZCB0byBjbGstbmV4dAoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
