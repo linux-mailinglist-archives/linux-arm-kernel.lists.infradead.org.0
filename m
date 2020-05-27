@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A25761E49B0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:19:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D38C91E49F0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:25:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CStNne3/RseANkAf6XCCcYZJnVz7tnHu9ZwW0B5NXcI=; b=t2Y+edbt0FIQ7m
-	GPPXThhlsORANz5WhSGP46uINItQ9RkZ8u0R8O5gQ374O13yuKjIx5WxEWMu79QEJ15Tge1Yrr03C
-	yqHckkuEAdVHbnPk34HXwlky+JTgSKIfORwTRuvsXMLJQoJ4LJF3vK4NkOhwjakp1IYM9tYWoglb1
-	ig/5I1ZFkGoUOkbfsMMV8TrwWUMwo6VuquvBdyRPktAZ+if/KdHd2RJWrVC40p0LorZBwiRHHRQB9
-	az/PrDbuIk3NbrUEMsypYnmPUb/8g1ROQg9AIDUjDpFhdjJSQ/2tPwMVJUV3DySNSOs3StMdZ9arU
-	VnsU0+kZ1NKSJXj+duCg==;
+	List-Owner; bh=fwKY0/3k5RgJj5NLVPwFXWxpMAg00ktFbLwXd3EBugw=; b=Z9uv/kjb45SGXb
+	DB54eEB7uKlaCOMlccQJfZdGj8zF9UrHG5ZX5avP/g7k77s4PcJxlHMLz+0YT6r6IcgsuCU+77zBB
+	geuz+njQmrsecwvywaiqpqD1NDNDIQ7jJFS05O3ip+Rv9+yeyic+GV62tlMRUnhSU47IXY5tPR9J4
+	1mpNNQzBWroX+sqjbxv4SdxLa0oIcDh5zq5M6p+dyjAVjLxVGTxG1bTlPKOjKiYXPmvqKoF0hSafO
+	jSrGAZWovNVIkfHi4kPPDdb1AF9gKzymOLINb+BYkpbif3hQ+yLQpr8euDQKbwGnTQKD77D5NV9V6
+	hqwVNRLfCj+eGjnYL8PQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdylt-00005F-Vc; Wed, 27 May 2020 16:19:13 +0000
+	id 1jdyrq-00072M-9o; Wed, 27 May 2020 16:25:22 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyKa-000171-0r; Wed, 27 May 2020 15:51:06 +0000
+ id 1jdyKc-00018A-8V; Wed, 27 May 2020 15:51:06 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 1A5545820DD;
- Wed, 27 May 2020 11:50:59 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:59 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id A067E5820E1;
+ Wed, 27 May 2020 11:51:00 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:00 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=ounqDkKyB9FLa
- CDv2YNyzZ5BItMJjprgBr0/54Ryzxs=; b=Y7g8Yr+2xMKAOZQ8bzPpv/1tMXBiR
- AeyNgtwN9vLgyXFKq9IqmhXZusMdMggLEXnwiR/XUo01f8xFt3EZKZG7uzR8XWLC
- kpERJdh9mp9FImjNIeYVAyNsmCog/2jxStbBP5nqqsQdFSSGb7ZUcM01D0LcHlmX
- p5hnnqzxkydwLWZqBL4rE3VnNf9njKM8yPcNMdVlk6wJcxoG1Dv2Qt0h21LxcPAJ
- xbeEEoEHSUGhzedVxhnaASVcbqpbphsP8yzXYS5NDjwiKzE2Uy60Vc9hqmJKiR2A
- eCM6A9iuMwe+yrsHQ91yor82jnGj1OwO1sdn+xxgqHtVcUaGX4jFv/quA==
+ :mime-version:content-transfer-encoding; s=fm2; bh=7Xm21xCure/jt
+ b8FF3BBKZuJ/ZJTfcJibB388wH3Rbg=; b=ImXknI2VBQ/yOE0Z8pCse8QpBGY+p
+ zsBpjgT/3nSSoAcxeEPu/ExEvs03dEOWFd/RuT5jHWYQAMr/jwfJ2X38dcXdtWL5
+ Dqr6lZbqvHoxj+9LjTk88HHOeekUgpeI3FoNuDVxL9wjZD3K9MpzbphYS+69j/3Q
+ tjz5Vo+6gUmcXdsTz18h4isNN/ZndhyhmQNofAwGx9kpMpC8CuLQ0k3g3mMHgs7y
+ DKDvweym7qzQURzzsATelEzaupRLRCk4YhDpg+c9pu/cu/OvDl9EcbNoo8LmQnl+
+ OC5IngYqspHGSKTtVSkufEM5ujzSS8LuCry55Fp/q3ezqyQjn5+v/c1cA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=ounqDkKyB9FLaCDv2YNyzZ5BItMJjprgBr0/54Ryzxs=; b=FRp4on9b
- c9xGZztCjLa2tvjA4sKtG+SqJVXDrbFz/32ipl8piNlf/mQSCinb4ugs3hI51vvZ
- mayd6YXFHCkiq2hTdgdDBRIRHEDogjgw9FCxMUvan+FFBeunYMkHiq78iiHa5JQD
- D0pfOSNKeXCrqg+vL4HHIvwnY8CySBlNqC73LVqGY1CXJW4R75vNlMCPFxKOC/JO
- J3tT4wxNOKtLbudR/ucpst/x3OWQcr8mOw2jOaDcKVFE48fuXkCXHpWZI5D44OZL
- 6stis0HkAmjown4AiPrNlkfe401Z8Q1kikP5h5N8pgAEhBesnaeQLAs6onjUn+by
- reRL7eG2pd1o5g==
-X-ME-Sender: <xms:YozOXk8kDZnEoD_cS6SMfqHa789Nd4FCN3x7AOh1i9dZBNlffhAxng>
+ fm2; bh=7Xm21xCure/jtb8FF3BBKZuJ/ZJTfcJibB388wH3Rbg=; b=JO5gx/b9
+ Cf+YGrOm2Ks96QyE7IPVXQVyx+xrsmbRLUvS79W6MLNUw7kHULHOXVSMRUjf4y5i
+ gDZ34a4gIQn/rvs8J4kg9XBEZWBngAeNXZAsM4gj8ESN2MlRQdn4e8kBnViqRzj6
+ t5H6/LzXMEBGzIRA5lXKTLG53VqGBgakUbOj9xKeYwC1UorLQXxH3UrmUvdmXZ1e
+ wRdN1X5CLHkXjVjFpVmZyKrB/s5T4Nb75JZBIE0YB/vi8wHFGl4K05Wv7gH1Jcw1
+ x20mh/SFyzhr98+Kg/4buVTUSx0JZ9e3fNJ8hdiJ2cLmJjk8d/Kto9qEYJeCQIRD
+ cOtC0RhS2SxZnw==
+X-ME-Sender: <xms:ZIzOXqYTkzaOXIwjN1piJRO6xGlDK78u9tgt37AG_KVAHznQkMVBnA>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,28 +56,28 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepgeegne
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:YozOXsuLATyAfm73AxzeblL0V3Ou0iKSSt-8vfhnAQZ5Lt1igTCAHQ>
- <xmx:YozOXqA_xdCAYYcGKM8tlKN1xlE_me93MPd6nLA-sHhn-11iQIkAEg>
- <xmx:YozOXkdDicfZUJPRYPH7yQjFpI5A4aE2WnZYgGEmdE0aFD4H4JVM4g>
- <xmx:Y4zOXsee4amgMUSkSNr_-HVAcyaxVn3ve8-l71OnX7AkcQPh1nGeVw>
+X-ME-Proxy: <xmx:ZIzOXtadRLmP7281uZBf1p5uLPQj5ZLbauhh6Vd6xGmakiH7j6qIRA>
+ <xmx:ZIzOXk_QrZQDoLU5zLf-pj4v2R3V3qgpAuJ-9Orf3wS_F7naDqbvmQ>
+ <xmx:ZIzOXsoX4EbKY8KyWO_YxUUndlLiy1u0db7QwWyyoEF77yN99pge7A>
+ <xmx:ZIzOXpJJCUtGKoAeYU4qMR6h3M5LEENyKD27A93g8z0WO9-T2y6BgA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id B22CC3280059;
- Wed, 27 May 2020 11:50:58 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 3F11930618B7;
+ Wed, 27 May 2020 11:51:00 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 064/105] drm/vc4: crtc: Change the HVS5 test for
- of_device_is_compatible
-Date: Wed, 27 May 2020 17:48:34 +0200
-Message-Id: <2165607ede34d229d0cbce916c70c7fb6c0337be.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 065/105] drm/vc4: crtc: Move the txp_armed function to the
+ TXP
+Date: Wed, 27 May 2020 17:48:35 +0200
+Message-Id: <338f129930b6730eff4409a4f30a49100c96f722.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085100_225538_7C09D7FB 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20200527_085102_452165_D7234D6B 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -118,38 +118,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The TXP probes before the HVS, so testing the hvs5 flag in the hvs pointer
-of the main device structure won't work and result in a null pointer
-dereference.
-
-Let's test for the main device compatible instead so that it can work.
+The TXP driver is the only place where we need to set the txp_armed flag,
+so let's move the function in the TXP driver.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_crtc.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/gpu/drm/vc4/vc4_crtc.c |  7 -------
+ drivers/gpu/drm/vc4/vc4_drv.h  |  1 -
+ drivers/gpu/drm/vc4/vc4_txp.c  |  9 ++++++++-
+ 3 files changed, 8 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
-index 6d7799ff8f87..d284596ec048 100644
+index d284596ec048..fbddd38ba6a9 100644
 --- a/drivers/gpu/drm/vc4/vc4_crtc.c
 +++ b/drivers/gpu/drm/vc4/vc4_crtc.c
-@@ -1055,7 +1055,6 @@ int vc4_crtc_init(struct drm_device *drm, struct vc4_crtc *vc4_crtc,
- 		  const struct drm_crtc_funcs *crtc_funcs,
- 		  const struct drm_crtc_helper_funcs *crtc_helper_funcs)
+@@ -483,13 +483,6 @@ static void vc4_crtc_atomic_disable(struct drm_crtc *crtc,
+ 	}
+ }
+ 
+-void vc4_crtc_txp_armed(struct drm_crtc_state *state)
+-{
+-	struct vc4_crtc_state *vc4_state = to_vc4_crtc_state(state);
+-
+-	vc4_state->txp_armed = true;
+-}
+-
+ static void vc4_crtc_atomic_enable(struct drm_crtc *crtc,
+ 				   struct drm_crtc_state *old_state)
  {
--	struct vc4_dev *vc4 = to_vc4_dev(drm);
- 	struct drm_crtc *crtc = &vc4_crtc->base;
- 	struct drm_plane *primary_plane;
- 	unsigned int i;
-@@ -1076,7 +1075,7 @@ int vc4_crtc_init(struct drm_device *drm, struct vc4_crtc *vc4_crtc,
- 				  crtc_funcs, NULL);
- 	drm_crtc_helper_add(crtc, crtc_helper_funcs);
+diff --git a/drivers/gpu/drm/vc4/vc4_drv.h b/drivers/gpu/drm/vc4/vc4_drv.h
+index 999841b1edd8..e14ed9799ecc 100644
+--- a/drivers/gpu/drm/vc4/vc4_drv.h
++++ b/drivers/gpu/drm/vc4/vc4_drv.h
+@@ -831,7 +831,6 @@ void vc4_crtc_destroy_state(struct drm_crtc *crtc,
+ 			    struct drm_crtc_state *state);
+ void vc4_crtc_reset(struct drm_crtc *crtc);
+ void vc4_crtc_handle_vblank(struct vc4_crtc *crtc);
+-void vc4_crtc_txp_armed(struct drm_crtc_state *state);
+ void vc4_crtc_get_margins(struct drm_crtc_state *state,
+ 			  unsigned int *right, unsigned int *left,
+ 			  unsigned int *top, unsigned int *bottom);
+diff --git a/drivers/gpu/drm/vc4/vc4_txp.c b/drivers/gpu/drm/vc4/vc4_txp.c
+index bf720206727f..d9a8ab87ad25 100644
+--- a/drivers/gpu/drm/vc4/vc4_txp.c
++++ b/drivers/gpu/drm/vc4/vc4_txp.c
+@@ -222,6 +222,13 @@ static const u32 txp_fmts[] = {
+ 	TXP_FORMAT_BGRA8888,
+ };
  
--	if (!vc4->hvs->hvs5) {
-+	if (!of_device_is_compatible(drm->dev->of_node, "brcm,bcm2711-vc5")) {
- 		drm_mode_crtc_set_gamma_size(crtc, ARRAY_SIZE(vc4_crtc->lut_r));
++static void vc4_txp_armed(struct drm_crtc_state *state)
++{
++	struct vc4_crtc_state *vc4_state = to_vc4_crtc_state(state);
++
++	vc4_state->txp_armed = true;
++}
++
+ static int vc4_txp_connector_atomic_check(struct drm_connector *conn,
+ 					  struct drm_atomic_state *state)
+ {
+@@ -256,7 +263,7 @@ static int vc4_txp_connector_atomic_check(struct drm_connector *conn,
+ 	if (fb->pitches[0] & GENMASK(3, 0))
+ 		return -EINVAL;
  
- 		/* We support CTM, but only for one CRTC at a
+-	vc4_crtc_txp_armed(crtc_state);
++	vc4_txp_armed(crtc_state);
+ 
+ 	return 0;
+ }
 -- 
 git-series 0.9.1
 
