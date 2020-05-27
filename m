@@ -2,90 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABFA01E3769
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 06:37:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 136CB1E379F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 07:04:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zdq32bN4WvdnQcKDvscA51aNKHBhzR5DvtJ7FdBj4gk=; b=Nds7c9NG0+v52Y
-	oL+5O0+lkfXNMHuCvK2F/RcteDj7/Aa0PKLuY5sTPfxl6EXDcWJM2gY+QaPIF+QQbpZ+CVhKSXqWN
-	ntw+tOi5qcDx8Vbs73uusHFCWY8LR8Si1XrGzw2gLCUGCw1iLYfiZOlGeWhex8ZzFC5f0gGV2ZOb3
-	GmPfzJ13SriJwyBkn4lMKA5XeNqDuSX+zUmCAMqEs7RsBvBoWuKHd54CWWvMGrpYE4VsVMue1JoMQ
-	vi2oKe+ySsaj4eHketN/7Kk7pk6NYqthHGRZIv1kvxwHD8eSdCgct+nyjXlD5j6FVbEzVYoW8T9SM
-	mdH7i7e/rVpqrj5lcmHA==;
+	List-Owner; bh=dfYcAp2c/dPE0/JtzToeoN5WE9Ip0uSAToSHTBYhnZc=; b=lF035hIE9HvHbA
+	nQbFdgGJvhOrALI7UvXtnbIn2TTK/rT1nbRdAzOYl31ivUUH01SW+Vg7GQMOkzJ08ODnW6oZwiCwE
+	ALHw8Ajw+4IdnP2PGW5o/RiglnPepMjQHRIJ9obxySQsPm6dxl64nv3yRGePEEpMwtfVuR9CtlGjj
+	TLL1Zdjz4E5LzdOjG2xm1SH1JcCWycb3VtWlfqbE/BY/azoemf+QhULvWMJQUWg1raOLCLFwAW7+0
+	ZS5wM9iZC+Puc64SwgE981+cRzYJbAnS6OqRBfh+y1GL3Pk9P185fkK12+iWIfg3Tt6c+6j9YChi/
+	n6AMETFlGtl5JgeC3qCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdnoQ-0007TC-36; Wed, 27 May 2020 04:37:06 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jdoEh-0005O4-PT; Wed, 27 May 2020 05:04:15 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdnoG-0007Sa-6C; Wed, 27 May 2020 04:36:57 +0000
-Received: by mail-pf1-x443.google.com with SMTP id z64so6768526pfb.1;
- Tue, 26 May 2020 21:36:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=lOpmpojWwwDKmdgvBgyDR/91akL7lsEVaaRXHGRRif0=;
- b=RhgQiHKjSFxt0e4hdk9XFdFmwXlaqqy/oTAekflZtHFdhEKO64qFc1mpKDXZr69CPy
- jdKKGgMYF3/PwLMQqZRA0p7MJV/Go6tkta/h4swizRoRpVhai4LlQKtDfpzOQXol3xcY
- 3TW/CBGWUO1G35QH1UIuJXs9WTI3G+E29PktRQFzMSdgmMsbx+ViIkPx4XIoQKnwHjtI
- iuFirKyvXOkp6bKvGs8xYK3w/Dn4sctZ1lOJtxsH8Aa2nP03Bsx7PgwJODEguoGDFtQe
- EV7yB1UHGazYqjCw0y7SPUOzeb1Rx+s20xn4YP/gkyyGkm4H/LKnhLTIPlstwN50FD9J
- kU0w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=lOpmpojWwwDKmdgvBgyDR/91akL7lsEVaaRXHGRRif0=;
- b=n71EqAdjq9VQJ05fHGaufZHhewz8nQLW0OTl2C0ST83uTOXQIiYeDpL5yF1dKjmcga
- GUZRuDf5ygdgHNvZCPJTuLWLsw58noXdi/11VzqVb/448vimSAFWb8ikpZQJAF0Xvmvw
- PzQ1Oqn45Si2Oxu2y5omNhFaHKLVo/2TVW0A+eyy1snnu8vFqJbM+BojYqsW1nRioxn6
- k0d7NFqVTvTKc2us2X+8m59O/FjzicmPLujzT8yUKR0NKMbsSXbon/ZP2XneWL1LuCla
- jpPo/ggJgS91dHieCe9nQSdPwvZ7vQ9LTtoNplDJ+3cFeFvLLvyLz/Qv7wDOyIS6P+rM
- 0JLg==
-X-Gm-Message-State: AOAM531POt/aHceGTXdiL55HtRXeJj/J4QpxSvDdSy/R0bXRZYnN659E
- j1xsV17qHdwM6M3HYiGAGIM=
-X-Google-Smtp-Source: ABdhPJxaG/pR1wu1n7WufrFJ+x4wcg8X7uq9rcDJKu3YRWfpwt3nhECM4aeG8mrZfzsEkO9ezvPt1w==
-X-Received: by 2002:aa7:9302:: with SMTP id 2mr2035203pfj.164.1590554214171;
- Tue, 26 May 2020 21:36:54 -0700 (PDT)
-Received: from localhost.localdomain ([2604:1380:4111:8b00::1])
- by smtp.gmail.com with ESMTPSA id e13sm893604pfm.103.2020.05.26.21.36.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 21:36:53 -0700 (PDT)
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: hch@lst.de
-Subject: [PATCH] media: omap3isp: Shuffle cacheflush.h and include mm.h
-Date: Tue, 26 May 2020 21:34:27 -0700
-Message-Id: <20200527043426.3242439-1-natechancellor@gmail.com>
-X-Mailer: git-send-email 2.27.0.rc0
-In-Reply-To: <20200515143646.3857579-7-hch@lst.de>
-References: <20200515143646.3857579-7-hch@lst.de>
+ id 1jdoEZ-0005ND-Ot
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 05:04:09 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jdoEK-0001cv-QG; Wed, 27 May 2020 07:03:52 +0200
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jdoEI-0008BI-4d; Wed, 27 May 2020 07:03:50 +0200
+Date: Wed, 27 May 2020 07:03:50 +0200
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: Re: [PATCH v8 00/13] add ecspi ERR009165 for i.mx6/7 soc family
+Message-ID: <20200527050350.GV11869@pengutronix.de>
+References: <1590006865-20900-1-git-send-email-yibin.gong@nxp.com>
 MIME-Version: 1.0
-X-Patchwork-Bot: notify
+Content-Disposition: inline
+In-Reply-To: <1590006865-20900-1-git-send-email-yibin.gong@nxp.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 07:02:31 up 97 days, 12:33, 88 users,  load average: 0.44, 0.37, 0.27
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_213656_233966_F465E36A 
-X-CRM114-Status: GOOD (  10.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200526_220407_807162_CA8F0CBB 
+X-CRM114-Status: GOOD (  12.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [natechancellor[at]gmail.com]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,83 +73,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org, zippel@linux-m68k.org,
- linux-mips@vger.kernel.org, linux-mm@kvack.org, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
- linux-xtensa@linux-xtensa.org, arnd@arndb.de, linux-alpha@vger.kernel.org,
- linux-um@lists.infradead.org, linux-m68k@lists.linux-m68k.org,
- openrisc@lists.librecores.org, Nathan Chancellor <natechancellor@gmail.com>,
- linux-arm-kernel@lists.infradead.org, monstr@monstr.eu,
- linux-kernel@vger.kernel.org, jeyu@kernel.org, linux-fsdevel@vger.kernel.org,
- akpm@linux-foundation.org, linuxppc-dev@lists.ozlabs.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ martin.fuzzey@flowbird.group, catalin.marinas@arm.com, will.deacon@arm.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-spi@vger.kernel.org,
+ vkoul@kernel.org, broonie@kernel.org, linux-imx@nxp.com, festevam@gmail.com,
+ u.kleine-koenig@pengutronix.de, dan.j.williams@intel.com, shawnguo@kernel.org,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-After mm.h was removed from the asm-generic version of cacheflush.h,
-s390 allyesconfig shows several warnings of the following nature:
+On Thu, May 21, 2020 at 04:34:12AM +0800, Robin Gong wrote:
+> There is ecspi ERR009165 on i.mx6/7 soc family, which cause FIFO
+> transfer to be send twice in DMA mode. Please get more information from:
+> https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf. The workaround is adding
+> new sdma ram script which works in XCH  mode as PIO inside sdma instead
+> of SMC mode, meanwhile, 'TX_THRESHOLD' should be 0. The issue should be
+> exist on all legacy i.mx6/7 soc family before i.mx6ul.
+> NXP fix this design issue from i.mx6ul, so newer chips including i.mx6ul/
+> 6ull/6sll do not need this workaroud anymore. All other i.mx6/7/8 chips
+> still need this workaroud. This patch set add new 'fsl,imx6ul-ecspi'
+> for ecspi driver and 'ecspi_fixed' in sdma driver to choose if need errata
+> or not.
+> The first two reverted patches should be the same issue, though, it
+> seems 'fixed' by changing to other shp script. Hope Sean or Sascha could
+> have the chance to test this patch set if could fix their issues.
+> Besides, enable sdma support for i.mx8mm/8mq and fix ecspi1 not work
+> on i.mx8mm because the event id is zero.
 
-In file included from ./arch/s390/include/generated/asm/cacheflush.h:1,
-                 from drivers/media/platform/omap3isp/isp.c:42:
-./include/asm-generic/cacheflush.h:16:42: warning: 'struct mm_struct'
-declared inside parameter list will not be visible outside of this
-definition or declaration
+For the series:
 
-cacheflush.h does not include mm.h nor does it include any forward
-declaration of these structures hence the warning. To avoid this,
-include mm.h explicitly in this file and shuffle cacheflush.h below it.
+Acked-by: Sascha Hauer <s.hauer@pengutronix.de>
 
-Fixes: 19c0054597a0 ("asm-generic: don't include <linux/mm.h> in cacheflush.h")
-Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
----
+Sascha
 
-I am aware the fixes tag is kind of irrelevant because that SHA will
-change in the next linux-next revision and this will probably get folded
-into the original patch anyways but still.
-
-The other solution would be to add forward declarations of these structs
-to the top of cacheflush.h, I just chose to do what Christoph did in the
-original patch. I am happy to do that instead if you all feel that is
-better.
-
- drivers/media/platform/omap3isp/isp.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/media/platform/omap3isp/isp.c b/drivers/media/platform/omap3isp/isp.c
-index a4ee6b86663e..54106a768e54 100644
---- a/drivers/media/platform/omap3isp/isp.c
-+++ b/drivers/media/platform/omap3isp/isp.c
-@@ -39,8 +39,6 @@
-  *	Troy Laramy <t-laramy@ti.com>
-  */
- 
--#include <asm/cacheflush.h>
--
- #include <linux/clk.h>
- #include <linux/clkdev.h>
- #include <linux/delay.h>
-@@ -49,6 +47,7 @@
- #include <linux/i2c.h>
- #include <linux/interrupt.h>
- #include <linux/mfd/syscon.h>
-+#include <linux/mm.h>
- #include <linux/module.h>
- #include <linux/omap-iommu.h>
- #include <linux/platform_device.h>
-@@ -58,6 +57,8 @@
- #include <linux/sched.h>
- #include <linux/vmalloc.h>
- 
-+#include <asm/cacheflush.h>
-+
- #ifdef CONFIG_ARM_DMA_USE_IOMMU
- #include <asm/dma-iommu.h>
- #endif
 -- 
-2.27.0.rc0
-
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
