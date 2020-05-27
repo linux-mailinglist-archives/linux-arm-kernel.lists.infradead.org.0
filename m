@@ -2,64 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75E051E3FB6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:18:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD3AE1E3FEF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:26:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UMsPBtvtpTAIPYILMGFyf77lQjvMg7EscjmRJ0J7P3o=; b=sg+XQBTFeI/RNXUBi/Ops1Tlz
-	FLXDaueT5EMGKnRCwNsF6n/9R+hgD6Z/UbRufxzNgK+zf4Ou/8iZryDrQwLwGKJryVOQrsPj9+Rbd
-	reZPppYJFwnQsxxpN77fz9pJHCHRpYMyfrouikvVBm3KtO3HrA6/TZmNludcGre7sTnANbjmIuOzc
-	Op0TA2jJ09SMtM0oHd3/ylRQwVfJ/cafFSDglNv31cJM+Cz4WoMmIiuAd+X3103QhVzieFrtp4u6W
-	YFFKOd4DllcTBDYIaQrJOJoirwuPp8Hd5LBvLvLNbV43UeacIrjjUyiFVsvc6j7H7ZRZPUdpGavDD
-	C9VagnWaQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=scpmV3bkMW07nxu9qBN0vPHRiSMECN5PW53IgWwBbuc=; b=ZlGGYdl7LJBzQC
+	rkOM6dj/nwGvYjF1oxTLdMc+CiUtBOyupkVWtokx02xnpzGW8l8yun4LHgUL47xmWBmTBHFVZHNrA
+	+jycHhtFHKIX2GyhfTFGIzV5DcVsEDQjcGa0Evz1+Wtufz3sO9XqP3nGc5NMS1APWm7ZXvh7iJkpG
+	340y43kzTSpmRcB4s8kJD/fXp3My48loTLvaM0Z4K5SRsG2+2oB4Mf74d5WwYbKj4+2lhm28a09ON
+	t6eNlMOVwzhACE1V91KazH7I/TRiUTkQDYXYmeRHUJeqS9bv5RWuw4VaVa9D+wgLwtTgjJXew65H2
+	/GOvQhMR3jJIPS3hUFLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdu57-0005qp-GT; Wed, 27 May 2020 11:18:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jduCa-0003Y3-8q; Wed, 27 May 2020 11:26:28 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdu4w-0005qU-GM
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:18:35 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9302A207CB;
- Wed, 27 May 2020 11:18:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590578314;
- bh=Eb5W1Mu4UnXinW4nhuzmv6KKdI/oP0r3mQb3N4LC+sU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XtBpaS+v/lpJ9RrOyaPoiNOws0yskW0gCFJwnq5/cqlLekMU3baEbiWM2aeapJ8di
- CklyM05gEwvP4Kf2SWN9Va00wb2otRuEMe7bisF3ZeRBm8TTQ0bikOri9+9fyDnkXP
- E7vBo27aAiaM9AkQWfLi96qnlVRBQMOK2vWz9Xfs=
-Date: Wed, 27 May 2020 12:18:31 +0100
-From: Mark Brown <broonie@kernel.org>
-To: dillon min <dillon.minfei@gmail.com>
-Subject: Re: [PATCH v6 8/9] spi: stm32: Add 'SPI_SIMPLEX_RX', 'SPI_3WIRE_RX'
- support for stm32f4
-Message-ID: <20200527111831.GC5308@sirena.org.uk>
-References: <1590564453-24499-1-git-send-email-dillon.minfei@gmail.com>
- <1590564453-24499-9-git-send-email-dillon.minfei@gmail.com>
- <20200527095109.GA5308@sirena.org.uk>
- <CAL9mu0JA=XRTj_HONQGtj74X05TAV0__dW2At0AAeymwNvJhEw@mail.gmail.com>
+ id 1jduCP-0003XM-Dm
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:26:19 +0000
+Received: by mail-lj1-x243.google.com with SMTP id e4so5972299ljn.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 04:26:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lWRYWz8j8QnnnM8ufaAXpNzsDpZkkNcBRIK2qhhydRM=;
+ b=Xu6sjpfTRcKeL67QCgUgs7cBy6Ma6/R/KaBHq9H5Ngab54V9as90JwaXrpLCNyFuQ2
+ LfzdvPQVwIp4icx/gd/fEBON/h49xest5MkZQU3piml2IcOpVpDg6TjIp89fJbJygEWk
+ mqh2juZbpw7Y83y3tQL8imqesNsItGL406+aEYDPJyZj9XDfah91mKSl7xWFdR7HBD4+
+ /cDoWFNXac2nzEnDVaX9ZEXCBzpjvaZWNx3l7b7YSG1Nyt4uUXmOIiyDdPk+FcnIqPOy
+ /0nPh/++3YholLJfcqXm4X9PSQzRWSVCQXSaMeC7AtdUEA17awgYdSw1oGPou6M8s4sJ
+ QupA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lWRYWz8j8QnnnM8ufaAXpNzsDpZkkNcBRIK2qhhydRM=;
+ b=te3ohYqxozLuZlHUPfWJoCHGOmNbmUp89/AYfyPY2f5mwpHn4fj382rV8vyBBw8iUa
+ Cx6H4beKtf6TSYIvdbgoa5uHc07PQUghq3ROSHUAkcu98M0WMN4/wMXPYXgryh4rx9tB
+ ExYBJCiHoqzA5AatviBS67CFYqlr+yDiMzEB/CKftG59El1XT/9Vtwn+cZ5Tbi+jkqYB
+ HbINbp3GQerGTKCzzon55tZ30HPsKPMIBs3LklxAw6s5GOYK2eNytGqXkNmirUePSC/g
+ bEVzE/HiJPO0g73L27Ara+9UGTOTANE2U2CWDmI33vavg/h1dIIjleyigrRJrQZDA2Q3
+ THRQ==
+X-Gm-Message-State: AOAM530/PMUjqq0Iid7Y9O2VSkuzgRhHx5d71ioguyyks4m2Kk9gLkxC
+ Deh+wcEJQeC6HUUIKvokWH4rIg==
+X-Google-Smtp-Source: ABdhPJwUCC5ItOzijFp1n+ALKMHGKknZgz0Oa6TXm5dDosIRP2//Fby7ngZQ+3NlCiiSDFr+PqMaag==
+X-Received: by 2002:a2e:9586:: with SMTP id w6mr2708235ljh.274.1590578774453; 
+ Wed, 27 May 2020 04:26:14 -0700 (PDT)
+Received: from localhost (c-8c28e555.07-21-73746f28.bbcust.telenor.se.
+ [85.229.40.140])
+ by smtp.gmail.com with ESMTPSA id s8sm750146lfd.61.2020.05.27.04.26.13
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 04:26:13 -0700 (PDT)
+From: Anders Roxell <anders.roxell@linaro.org>
+To: soc@kernel.org
+Subject: [PATCH 0/5] vexpress: modularize power reset driver
+Date: Wed, 27 May 2020 13:26:03 +0200
+Message-Id: <20200527112608.3886105-1-anders.roxell@linaro.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <CAL9mu0JA=XRTj_HONQGtj74X05TAV0__dW2At0AAeymwNvJhEw@mail.gmail.com>
-X-Cookie: Drop in any mailbox.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_041834_564998_79FF4AEC 
-X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-CacheID: sfid-20200527_042617_495405_ACB239C3 
+X-CRM114-Status: UNSURE (   8.38  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -69,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,73 +96,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- Noralf =?iso-8859-1?Q?Tr=F8nnes?= <noralf@tronnes.org>,
- Hua Dillon <dillonhua@gmail.com>, p.zabel@pengutronix.de,
- linux-clk <linux-clk@vger.kernel.org>, Dave Airlie <airlied@linux.ie>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- linux-spi <linux-spi@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- thierry.reding@gmail.com, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Sam Ravnborg <sam@ravnborg.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Alexandre Torgue <alexandre.torgue@st.com>
-Content-Type: multipart/mixed; boundary="===============4790971715684209393=="
+Cc: robh@kernel.org, linus.walleij@linaro.org,
+ Anders Roxell <anders.roxell@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============4790971715684209393==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="TYecfFk8j8mZq+dy"
-Content-Disposition: inline
+This patchset contains a bugfixe, a cleanup and fixes allmodconfig build breakages
+on arm and arm64. Also making the vexpress power reset driver a module.
 
+Cheers,
+Anders
 
---TYecfFk8j8mZq+dy
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Anders Roxell (5):
+  power: vexpress: add suppress_bind_attrs to true
+  power: vexpress: cleanup: use builtin_platform_driver
+  Revert "ARM: vexpress: Don't select VEXPRESS_CONFIG"
+  power: reset: vexpress: fix build issue
+  power: vexpress: make the reset driver a module
 
-On Wed, May 27, 2020 at 06:45:53PM +0800, dillon min wrote:
+ arch/arm/mach-vexpress/Kconfig          | 2 +-
+ drivers/power/reset/Kconfig             | 3 ++-
+ drivers/power/reset/vexpress-poweroff.c | 8 +++++++-
+ 3 files changed, 10 insertions(+), 3 deletions(-)
 
-> sorry, forget to remove these two patch from this submits, will not
-> include it in later submits
-> which ack other's review result.
+-- 
+2.26.2
 
-Ah, OK - no problem.
-
---TYecfFk8j8mZq+dy
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7OTIcACgkQJNaLcl1U
-h9CjnAf9EH3yOA2f087uyr/KGCDeTZDdKdksfcJ4a9wlCQWW1Cur92auEEnoA3Rt
-OaZkMT9iqrDJqCSZ80c9Be1Ql4zXnjxCHU+qExkLFmDJcR448ywgqaYh9gluj6D3
-xQnn0fxJcjgY+eixxAPqszazPIQm3iHZL0TsQo5DNBU7uDO/p+HytpUoYEntT7AT
-bjn2mYE+1drgcxELR/TkQdRnV0jUiAtcpkGnI2tPO70MBQ6jcAwIAX4cBSnjwdhO
-L9bXUB58NNMcuUWSj9+c8WyJn0zssre7UWLaYiX9g92/yJEPJNzGN2SFXiM1Jsks
-PQH9axxSmBjKf8StOS7727u+sJ8H8Q==
-=Ibfd
------END PGP SIGNATURE-----
-
---TYecfFk8j8mZq+dy--
-
-
---===============4790971715684209393==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4790971715684209393==--
-
