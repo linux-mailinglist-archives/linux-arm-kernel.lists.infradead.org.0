@@ -2,145 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFE201E3B03
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:53:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F10C51E3B10
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:55:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+RH1mND8Rs4qZ0rzaz8EjL7NCBTkWotSEUGHwhBS5ag=; b=R7uODfgOyR6a0Y
-	S8P96rn289XL+n/00VDb2Q6twBAsndJ8MHs9YIyPi1H2n53AJGA8p1gXUWp6xd/acTpwzDUqNiBI2
-	Sk/LXXyostUmqXFyJLb2ss75TSa3MefAk5Dll3ryhAoxZazX5jxZ0xinHQZsIKgjPISwKhhhVCNXm
-	T0MALSW4rfP6RC9P2pCre/ry1jY/gS54EfT6xQ66EuKsizfuAI5Znp5EjWte1nbbwMLWtDkBzCK90
-	PlgpyC6ae7AEdpAH0w+5SYXi6sXs/8mzCGkabYfhNqCMCW71MQSaD+Jin7qwHcp/veq+DUJEWONHU
-	i2ZteyIJrOtvz1kEAjKg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=P516auDYNRAxD1mi0R3Y1SyuswR/J5QInIHqL6rvqXg=; b=DO/Mss1oaElUr6oi/24FWo+t8
+	r5t/Odu02yDOIMF9lFF3SGGFeTb1B6U+ALANJr2bsxcDx161XwV0tu202rzGEA6UJx/t1oJRBbDK1
+	J8GD10oUSUuv1e9dASGkmwJM08iUsvhy4lMcvbA0zCkR4aADy/VypbZxkZZuz1q/oHEU0bd9g8ehi
+	r+x+zkjxYDg4lYJ1/Dmc8lshoqDqn+OkyakKrPQNUDEq8UOHWQbIba7qvPklX9sy7LU7ZvxuKNB0F
+	/9YxgfhJFlh0wscddWWFbr7cw1MERzlSgIJvON6v6UCSun5scEwblD9y/bJyf16ddJNsP0/PF4Sxl
+	SsPRHDWzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdqso-0006at-8y; Wed, 27 May 2020 07:53:50 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jdquV-00014e-2m; Wed, 27 May 2020 07:55:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdqsc-0006Ze-0X
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:53:39 +0000
-Received: by mail-wr1-x442.google.com with SMTP id j16so10572322wrb.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 00:53:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=0uXOIK76KSs40fnk/nPthqtyEhJ+m0Y/dYNUNGL8EzA=;
- b=uP8qKtET22Dmlqb49Ul3D8lgyOk3haU2hVybPhJrVAT+QAKmCAEAJiW4D4nVp2oZTD
- 6WLECOGS8MI6Kwn2DGqMxOiNzWi2czeFM+i9AGQwj16db/QBtfsa9dpJzFACABMbcQ+b
- zyYGLY2fFy5wwzqiyYUIASb+e50kPYF5QuG4yhw650XBCB/pij/D6NjL1C+bHe7SU1b6
- S86iNSeSI8DgwNc6n5sCwvUrW4LCBbRJCq8khWPXTqhs8MXoew9yGdcwEl7jSyxA9pGf
- wLzeMCJSyefqqDZbaxMJ9it+bKJt6pf9Z9ZJCjXQpQ++UOQPEuLgqhUaLve9dcfTRERm
- XGvA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=0uXOIK76KSs40fnk/nPthqtyEhJ+m0Y/dYNUNGL8EzA=;
- b=sb5/GMM0r3fOTZp30y+x92AJ19oJnJFQ71ScRG51o95zS4IkKAOMMOfIaL6TQKnUjt
- DVNmXKRQsPOCVfb4vERF2jGp5JbjUCWESoOn5+yjy4O0ZOKKRHebQ3ysw8+tJPSbePCs
- tF48tOVvK3dic/4kZS680Dpx88VORuEI0ghZ6ce96OvbC/ms7JHWa8rDSLN816YoLqGX
- dfQjkdUiLSNGa2YiavHTC8cz9nQWn4puEx5+bgunuSIeDtJS4bHZHuUE3LVYyS4sNWKE
- C52oDgthMR6YlKkmQGtjJJTs2YeeeoeyJIfLnZqljn41EQu6tdy5xY6fSFfLzHuVx4ag
- p0TQ==
-X-Gm-Message-State: AOAM533YH3hRrucXOevm5jwslCGlscpLtL/NoH5gM5MtXnyhyLrk+CAE
- ZKaqcj2tnsP/OzCjTT5CLeiVPA==
-X-Google-Smtp-Source: ABdhPJxn28gk0kw3P6BCtiNPU+2IYx7W2LVb8NiQ4cjXVBUay1OBUQ0UwOCoSCQYZXQYFDKE+dooOg==
-X-Received: by 2002:a5d:4701:: with SMTP id y1mr78311wrq.310.1590566016324;
- Wed, 27 May 2020 00:53:36 -0700 (PDT)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:acf8:18a8:b3a5:a17b?
- ([2a01:e35:2ec0:82b0:acf8:18a8:b3a5:a17b])
- by smtp.gmail.com with ESMTPSA id w15sm1959515wmi.35.2020.05.27.00.53.34
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 27 May 2020 00:53:35 -0700 (PDT)
-Subject: Re: [PATCH for-5.8 1/2] usb: dwc3: meson-g12a: fix error path when
- fetching the reset line fails
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- balbi@kernel.org, gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
- linux-amlogic@lists.infradead.org
-References: <20200526202943.715220-1-martin.blumenstingl@googlemail.com>
- <20200526202943.715220-2-martin.blumenstingl@googlemail.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <f4428633-4a7b-226d-d7df-0a43efb9d6ec@baylibre.com>
-Date: Wed, 27 May 2020 09:53:34 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jdquH-00013o-Fa
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:55:22 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1272C206DF;
+ Wed, 27 May 2020 07:55:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590566121;
+ bh=jzOmuKHr7MlkKhB0uHGzKnveUIYCQtnDxs2JjhAI0Qw=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=IQfUN1SSOnwGbA+wQOaXCUtXhUe/1PYgxn+dBcov9P1qwLHE1jEo++wGH2RrhqjNF
+ kWQpzqI991EMT2EFP/jykooRM94vdRXLiSCFAUmRwPm1btiDP9GdDvo90nhr7gPubd
+ LG1u151RsnIxhDv4CAeA++tUcpAG6m+m9it6yv88=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jdquF-00FdO9-Bn; Wed, 27 May 2020 08:55:19 +0100
 MIME-Version: 1.0
-In-Reply-To: <20200526202943.715220-2-martin.blumenstingl@googlemail.com>
-Content-Language: en-US
+Date: Wed, 27 May 2020 08:55:19 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Zenghui Yu <yuzenghui@huawei.com>
+Subject: Re: [PATCH] KVM: arm64: Allow in-atomic injection of SPIs
+In-Reply-To: <47d6d521-f05e-86fe-4a94-ce21754100ae@huawei.com>
+References: <20200526161136.451312-1-maz@kernel.org>
+ <47d6d521-f05e-86fe-4a94-ce21754100ae@huawei.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <1d3658f4b92a690ba05367f2a22a7331@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, eric.auger@redhat.com,
+ kernel-team@android.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_005338_075254_049D6173 
-X-CRM114-Status: GOOD (  17.50  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200527_005521_564459_749A1761 
+X-CRM114-Status: GOOD (  16.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,42 +91,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: hanjie.lin@amlogic.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, yue.wang@amlogic.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, kernel-team@android.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 26/05/2020 22:29, Martin Blumenstingl wrote:
-> Disable and unprepare the clocks when devm_reset_control_get_shared()
-> fails. This fixes the error path as this must disable the clocks which
-> were previously enabled.
-> 
-> Fixes: 1e355f21d3fb96 ("usb: dwc3: Add Amlogic A1 DWC3 glue")
-> Cc: Yue Wang <yue.wang@amlogic.com>
-> Cc: Hanjie Lin <hanjie.lin@amlogic.com>
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->  drivers/usb/dwc3/dwc3-meson-g12a.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
-> index bd744e82cad4..ce5388338389 100644
-> --- a/drivers/usb/dwc3/dwc3-meson-g12a.c
-> +++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
-> @@ -738,7 +738,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
->  	if (IS_ERR(priv->reset)) {
->  		ret = PTR_ERR(priv->reset);
->  		dev_err(dev, "failed to get device reset, err=%d\n", ret);
-> -		return ret;
-> +		goto err_disable_clks;
->  	}
->  
->  	ret = reset_control_reset(priv->reset);
-> 
+Hi Zenghui,
 
-Acked-by: Neil Armstrong <narmstrong@baylibre.com>
+On 2020-05-27 08:41, Zenghui Yu wrote:
+> On 2020/5/27 0:11, Marc Zyngier wrote:
+>> On a system that uses SPIs to implement MSIs (as it would be
+>> the case on a GICv2 system exposing a GICv2m to its guests),
+>> we deny the possibility of injecting SPIs on the in-atomic
+>> fast-path.
+>> 
+>> This results in a very large amount of context-switches
+>> (roughly equivalent to twice the interrupt rate) on the host,
+>> and suboptimal performance for the guest (as measured with
+>> a test workload involving a virtio interface backed by vhost-net).
+>> Given that GICv2 systems are usually on the low-end of the spectrum
+>> performance wise, they could do without the aggravation.
+>> 
+>> We solved this for GICv3+ITS by having a translation cache. But
+>> SPIs do not need any extra infrastructure, and can be immediately
+>> injected in the virtual distributor as the locking is already
+>> heavy enough that we don't need to worry about anything.
+>> 
+>> This halves the number of context switches for the same workload.
+>> 
+>> Signed-off-by: Marc Zyngier <maz@kernel.org>
+>> ---
+>>   arch/arm64/kvm/vgic/vgic-irqfd.c | 20 ++++++++++++++++----
+>>   arch/arm64/kvm/vgic/vgic-its.c   |  3 +--
+>>   2 files changed, 17 insertions(+), 6 deletions(-)
+>> 
+>> diff --git a/arch/arm64/kvm/vgic/vgic-irqfd.c 
+>> b/arch/arm64/kvm/vgic/vgic-irqfd.c
+>> index d8cdfea5cc96..11a9f81115ab 100644
+>> --- a/arch/arm64/kvm/vgic/vgic-irqfd.c
+>> +++ b/arch/arm64/kvm/vgic/vgic-irqfd.c
+>> @@ -107,15 +107,27 @@ int kvm_arch_set_irq_inatomic(struct 
+>> kvm_kernel_irq_routing_entry *e,
+>>   			      struct kvm *kvm, int irq_source_id, int level,
+>>   			      bool line_status)
+> 
+> ... and you may also need to update the comment on top of it to
+> reflect this change.
+> 
+> /**
+>  * kvm_arch_set_irq_inatomic: fast-path for irqfd injection
+>  *
+>  * Currently only direct MSI injection is supported.
+>  */
+
+As far as I can tell, it is still valid (at least from the guest's
+perspective). You could in practice use that to deal with level
+interrupts, but we only inject the rising edge on this path, never
+the falling edge. So effectively, this is limited to edge interrupts,
+which is mostly MSIs.
+
+Unless you are thinking of something else which I would have missed?
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
