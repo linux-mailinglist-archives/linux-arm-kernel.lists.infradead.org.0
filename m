@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B369E1E39E6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:10:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9AEE1E3A0D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:14:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XH/Bl6plOPXbsw2BVuAn8iVOIi6f9BxdlMLYJr5csss=; b=lnoT3F8mbhO9V+
-	N/12vEaBJmNaPn/yLKbgfnkAWiOtyWaccjBb1W/+DRzHkW+1+lILwWCMimo5GEs2CnR42s1MAG/SB
-	uHJvLnXLPU4jTNEO4oe7iY7A+WPtYC8NAc0Ee889Wl6QpE8gJdVrlNU/o8brmp6Z5aNOBcKA0CU4t
-	EPtxCDxJsuBdyisE98tQAeed2ES3ra6PC3JPA+0tYVhZr7r+odaHrdtryooCiiwlxkhGqT8pN/93/
-	KymLK07DMDF6FVwdgBN0KaNd5wqtkRQva2a17nkSKjJmPQ0Rkvo2TGJFfbkMriUzxJF+e11OBb0I3
-	EZUUvOL93jpdzDp0afAQ==;
+	List-Owner; bh=egk0msRr/QakI7jMoAg/ojo1LQuuAosojohuhU4w3TU=; b=ZQgyyFaxv28Du7
+	VeuLJZj7WfVn/8EaSEoSRGMP4o0NY1v315yK3EZWTbalZqmu25efZEf12c27c//XE70CHV6F8lv/H
+	6Rzy/fgA/H07xNT0eOiFb1ui5Gw+duI2QDPkk9GOhujlolI1BKWnDnNU8lb5mH+IwL0iUx2PwFWDd
+	0ybfHvsxNEhHh0ttZRbhEpx6KNQnEF/hIxxgVFPVK7XLN9eXqKmrZ+VtoDQUyhveqsC6WcHVyh/hT
+	hOIf+ybLcUiWI8sUHAkJkMu4mH37kZsnQOkP5ct89OcSFMTWPO5DXkdgOGsBYISByIrRjrzHlaEl9
+	cQ4gHcBE6RGR5HIpc/6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdqCm-0000tm-Pk; Wed, 27 May 2020 07:10:24 +0000
+	id 1jdqGw-0001Mi-CX; Wed, 27 May 2020 07:14:42 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdqCc-0000t4-Ud; Wed, 27 May 2020 07:10:16 +0000
+ id 1jdqGm-0001MD-TM
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:14:34 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 879B22078C;
- Wed, 27 May 2020 07:10:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 63FED207ED;
+ Wed, 27 May 2020 07:14:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590563414;
- bh=5f88nzMEqPegezJKOkJqZXoqontH74AXnh+2bhAJsmo=;
+ s=default; t=1590563672;
+ bh=axTWvqm/1jxmhN6sEBwzGk9U0LLq3MsP8jRGcXy0l4M=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=t5cNX77+4RbiAEdrszt2vjDDTNux0be5OEVSAxqKUyMPYEKG6r+VUtx/2z9tO08B6
- otpHXxk42k57ptJbk56rY8zXBpE+fImfz6Lz0Ir3aSShqx6hTwaG6hfuGw/GEhj5uI
- F0Mpf+dwsLgmBUY6Q5bL2XeUP1Q3zkVIZZzLUtzg=
+ b=UyEUPDt9X10WJ9ktolRx4di5JGIjM5W61oxW6c7ojiOC37lRH7iRD7yoreJA3D71c
+ C+qeJo5LAglpq7gXjuDNoagj+sQLx2/yqqtfK61iMFK3taxZCGamid9W1wkYjXs/7F
+ pi7bhfH6vjxqrsBb3Lh5jCHBDzePmF/+aJxX2fKA=
 MIME-Version: 1.0
-In-Reply-To: <20200508220238.4883-1-rikard.falkeborn@gmail.com>
-References: <20200508220238.4883-1-rikard.falkeborn@gmail.com>
-Subject: Re: [PATCH] clk: bcm2835: Constify struct debugfs_reg32
+In-Reply-To: <CADRPPNQxRwa2kQj_5K26RcovBhtfxdKitOxBKF8sgoyu9O+W-Q@mail.gmail.com>
+References: <20200507112955.23520-1-geert+renesas@glider.be>
+ <20200507112955.23520-4-geert+renesas@glider.be>
+ <CADRPPNQxRwa2kQj_5K26RcovBhtfxdKitOxBKF8sgoyu9O+W-Q@mail.gmail.com>
+Subject: Re: [PATCH 3/4] clk: qoriq: Add platform dependencies
 From: Stephen Boyd <sboyd@kernel.org>
-To: Rikard Falkeborn <rikard.falkeborn@gmail.com>, eric@anholt.net,
- f.fainelli@gmail.com, mturquette@baylibre.com, nsaenzjulienne@suse.de,
- rjui@broadcom.com, sbranden@broadcom.com, wahrenst@gmx.net
-Date: Wed, 27 May 2020 00:10:13 -0700
-Message-ID: <159056341376.88029.8430380128281240784@swboyd.mtv.corp.google.com>
+To: Geert Uytterhoeven <geert+renesas@glider.be>, Li Yang <leoyang.li@nxp.com>
+Date: Wed, 27 May 2020 00:14:31 -0700
+Message-ID: <159056367164.88029.13565982192052541003@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_001015_011988_AD32A91C 
-X-CRM114-Status: UNSURE (   7.20  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200527_001432_966309_D5C4651C 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,33 +77,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Rikard Falkeborn <rikard.falkeborn@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Jens Axboe <axboe@kernel.dk>, Amit Kucheria <amit.kucheria@verdurent.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, lkml <linux-kernel@vger.kernel.org>,
+ linux-ide@vger.kernel.org, Zhang Rui <rui.zhang@intel.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
+ ARM/FREESCALE IMX / MXC ARM ARCHITECTURE
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Rikard Falkeborn (2020-05-08 15:02:38)
-> bcm2835_debugfs_clock_reg32 is never changed and can therefore be made
-> const.
+Quoting Li Yang (2020-05-22 14:28:06)
+> On Thu, May 7, 2020 at 6:31 AM Geert Uytterhoeven
+> <geert+renesas@glider.be> wrote:
+> >
+> > The Freescale QorIQ clock controller is only present on Freescale E500MC
+> > and Layerscape SoCs.  Add platform dependencies to the CLK_QORIQ config
+> > symbol, to avoid asking the user about it when configuring a kernel
+> > without E500MC or Layerscape support.
+> >
+> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 > 
-> This allows the compiler to put it in the text section instead of the
-> data section.
+> Hi Michael/Stephen,
 > 
-> Before:
->    text    data     bss     dec     hex filename
->   26598   16088      64   42750    a6fe drivers/clk/bcm/clk-bcm2835.o
+> Are you applying this patch?  If not I can apply it with your ACK.
 > 
-> After:
->    text    data     bss     dec     hex filename
->   26662   16024      64   42750    a6fe drivers/clk/bcm/clk-bcm2835.o
-> 
-> Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
-> ---
 
-Applied to clk-next
+I already acked it.
 
 _______________________________________________
 linux-arm-kernel mailing list
