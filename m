@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37D1A1E3FFF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:27:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 437BC1E4001
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:27:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Lxd2sc/OH8wMsUWW2tgH6y7rFPpXXShxf7JedovOlU=; b=M8GBzQQ4KNqRDF
-	o+stb1HFAViVS3ZlyZLS7VdgDl9dc/U+wK225/nczgtuteVdVxqk/ksyQbY+6K/vdfgzuyv7st1Fx
-	/o7+MTbPAFhNT0m5sE1AQ++e1x7Pgu5MJZ08C+X14OG4tVI4pqK/PHgUqf/RTPk+IjUre1unF9Fqi
-	LpEYsGN7sgczfjx+7p/8VloPN5UN4BH261kpfZ7aMGtXvTCXOvczIaStfD7EeiC64d3SAMP7bTSFM
-	qJBQ8lrEyGhTMaTUVyJmW9cBMdwpHPYSY5O+LEagWsa4o84otCyGNS0zjN4F3ExIvGF9i5G2FWL8D
-	h+OrY13twz9K66+2RxcQ==;
+	List-Owner; bh=5UAtiLkE6kzGzxj/xugWQZeDGVsvDui4wq/+Xkd0xVU=; b=FsNEozll3On1FS
+	UHwkpSVljXxJxvJScO7UYpeDVuRoCoS0Vmc0Qgsohe90DCX5gSLkU/tm+Aya1StYsuAQt/+JYLcMh
+	Hqp7HU6KeC2gILzbHWXvxsAw9kTFHcdjLJpS4bWf+Q0E+JvpOaJFyt0qeC6pocyDOI5F7rOHaHG3N
+	FIe/Rb4/kdG8Y5LGMcpCMvpe4hVYEtPX+s7Rtxv5W8r8sjYkORRl5gijgwDykj33JiZl4o908AHSG
+	IS8AgHS86KOdFhZ4VS6V6ovqvZzxqyeCcMxbT0WpJOBJ8EVlVuUc6ZaFzfEAvphyX58PhHu0mxBid
+	DOHlGoA8BSOG69xWWYKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jduDi-0004SM-1S; Wed, 27 May 2020 11:27:38 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jduDt-0004h9-3w; Wed, 27 May 2020 11:27:49 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jduCc-0003j6-5e
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:26:31 +0000
-Received: by mail-lj1-x243.google.com with SMTP id z13so18771585ljn.7
+ id 1jduCg-0003my-Qk
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:26:36 +0000
+Received: by mail-lf1-x143.google.com with SMTP id 202so14239707lfe.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 04:26:30 -0700 (PDT)
+ Wed, 27 May 2020 04:26:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=k7QD1+/Irx+1VllFQd8G5Bjp2O9W9kjYTs0FEoDMEik=;
- b=ONaJkYkRMcHeErRk8IHzp2w+8EQvfPsaAgChUgUktMUmtcYgYs5dsNUPwrdd7EYSKN
- D4DIXVxSh8u3zLOflHUEraISMLMQ/q3vCM3iubUxV5PigMwApQbkhw4RNuPg9ncvIcKA
- igWa+s5fR6fWEKXZModGjrdWz+h4RkpZiLE58jTQeLTji28ZQua4/RcpBz0uQLJfoHv6
- h2lEUZVOuA5FimUcUp9tk1qi4akUeGGx8ycuEGxWDgDoz5yLxUFniYV6PgTB5BGEi0wa
- 0lRZEgAnQqKON74RapS8RXexD/+QgFsv2GP/RJQSWnCB1YyFFPRe8na8cjCvrVBtJwSV
- /e5g==
+ bh=7O70g2lJGWAJBSxv7+BPv+EgaUlJHCXJMM3QrFbfLoU=;
+ b=XsUGywVbPPu2a5crGLJmxPTCsuzR0OuIQ+aBzOOBv++1v3NKjBLrrjSSZcDpiYN0qf
+ Dqa0KgBDDL2GMXstARbs0S3GGlmSB6moGoADwt2Gf9llGEkgAQoEEbIxpiCeugl/wXdJ
+ 1Y7er1GA02R3sgkVvwl7nNkN/XKDaMMP9Wjvt0SWx7XmF54qZM7DmAzM4MJwI1dZ8eli
+ ASI8yK3ag/j5xU4oDjT5/oP5EaLGYEpesbrFqrn6AVy/NiIea1s2hRKTrr2EHjKvVfgG
+ 4J+BYiAZgDrSD/C3CkWmD+A/yT8MjSYIMj7StC2bFYg9auoVk0KpMirlMocizL+A561/
+ 0/0g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=k7QD1+/Irx+1VllFQd8G5Bjp2O9W9kjYTs0FEoDMEik=;
- b=KesAAoHAEnXS+FIDoKKoaR82eToIx31aI8qgXzFkOkxprywRs6IIkOFWNGYgC3J8Sw
- /2XlPLK11ALEBLch30AonhkMUhzJ5yGarjR/liZ+O6KUQtk/DFR1OMkKXuc/QkkJdK5y
- niHVaPttGXzngQ1vC1Db4LOIYwN6c6d1TpY9ETdmw7ZvR/Vb+OVeb8KIzKt6UKa7OMa5
- 3+ZDCrLVK09HHAelJolNzj2aSmiL0gU/uI61CELcSO1LJaiKGyuIaQJGh4/LFPpzs73P
- ePQwb93uj1jGvZqalfkSi2fCgzxQefauN8ZHW7MN1jKmg8I6lIH8SqNAhvgHtmZ/7E2L
- 0IZA==
-X-Gm-Message-State: AOAM532v1BZru5XLxc7HGG4GLDeW4G+ETx/Pq1m0F6vsLa+KrGGgAmCW
- Jnmv4CS71fg1JlqXKJctkEgdgQ==
-X-Google-Smtp-Source: ABdhPJyJDrv1Hmbnw21diOmccCoGxDIOh35hLywSrDGN/chN+OoZ8ibsZbuSZCNyN3t40tOyXlz1BA==
-X-Received: by 2002:a2e:8115:: with SMTP id d21mr2937651ljg.167.1590578788647; 
- Wed, 27 May 2020 04:26:28 -0700 (PDT)
+ bh=7O70g2lJGWAJBSxv7+BPv+EgaUlJHCXJMM3QrFbfLoU=;
+ b=uQ7HxapyM8ceVg8goWr79jhdq8/WihbnQYQi+7M4Hrfh7iqUPP5ehOk3yaHhR1D/8H
+ SfYg0fdJbT/01DHMhASEII8nFabVUHUfhJv6qNY+W9k7Iom6vmLCRRVAtn75UOY/vfwr
+ Bb0BkN9a+kjdzxILIsdVhEoGGI3EOYI7n04bp9c54W6ENBUlsjc8JLRhAg7eJ2blkfR3
+ C1pEyPTHI/DiUtlq/mdpwH1NgU5DaQHulea6Rasb3b+VfpdOrl7ZNgy42y+2HcqGavxR
+ YlYKDUIqWvv0GF93AbgjGBD7O/xQ9jZBeYZeBYlQUE06PuZ0qeR29+KbYrYvRPUNebrF
+ 3gEg==
+X-Gm-Message-State: AOAM5332pWeWiauQ0v5gkX4z3QYJZR44rzRLJNv29ON4aEE7e1uc2gad
+ aFW4lpje+hDKXToM0MV/EYQiARxKxfs=
+X-Google-Smtp-Source: ABdhPJxqhuM7NA8BFMzydGM+AFjiGQCKOMTJMKG2dfNheWXSg5exJmnEkRYX48DfquyDmwLY2gQZtQ==
+X-Received: by 2002:ac2:5604:: with SMTP id v4mr2364028lfd.124.1590578792196; 
+ Wed, 27 May 2020 04:26:32 -0700 (PDT)
 Received: from localhost (c-8c28e555.07-21-73746f28.bbcust.telenor.se.
  [85.229.40.140])
- by smtp.gmail.com with ESMTPSA id y17sm628702ljm.133.2020.05.27.04.26.27
+ by smtp.gmail.com with ESMTPSA id n22sm627557ljj.138.2020.05.27.04.26.31
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 May 2020 04:26:28 -0700 (PDT)
+ Wed, 27 May 2020 04:26:31 -0700 (PDT)
 From: Anders Roxell <anders.roxell@linaro.org>
 To: soc@kernel.org
-Subject: [PATCH 4/5] power: reset: vexpress: fix build issue
-Date: Wed, 27 May 2020 13:26:07 +0200
-Message-Id: <20200527112608.3886105-5-anders.roxell@linaro.org>
+Subject: [PATCH 5/5] power: vexpress: make the reset driver a module
+Date: Wed, 27 May 2020 13:26:08 +0200
+Message-Id: <20200527112608.3886105-6-anders.roxell@linaro.org>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200527112608.3886105-1-anders.roxell@linaro.org>
 References: <20200527112608.3886105-1-anders.roxell@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_042630_262540_BE47F607 
-X-CRM114-Status: GOOD (  12.64  )
+X-CRM114-CacheID: sfid-20200527_042634_878428_D2CF8F88 
+X-CRM114-Status: GOOD (  13.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,38 +105,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-An allmodconfig kernel makes CONFIG_VEXPRESS_CONFIG a module and
-CONFIG_POWER_RESET_VEXPRESS builtin. That makes us see this build
-error:
+Today the vexpress power driver can only be builtin.  Rework so it's
+possible for the vexpress power driver to be a module.
 
-aarch64-linux-gnu-ld: drivers/power/reset/vexpress-poweroff.o: in function `vexpress_reset_probe':
-../drivers/power/reset/vexpress-poweroff.c:119: undefined reference to `devm_regmap_init_vexpress_config'
-../drivers/power/reset/vexpress-poweroff.c:119:(.text+0x48c): relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
-`devm_regmap_init_vexpress_config'
-make[1]: *** [/srv/src/kernel/next/Makefile:1126: vmlinux] Error 1
-
-Rework so that POWER_RESET_VEXPRESS depends on 'VEXPRESS_CONFIG=y'.
-
-Fixes: d06cfe3f123c ("bus: vexpress-config: Merge vexpress-syscfg into vexpress-config")
 Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
-Acked-by: Rob Herring <robh@kernel.org>
 ---
- drivers/power/reset/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/mach-vexpress/Kconfig          |  1 -
+ drivers/power/reset/Kconfig             |  5 +++--
+ drivers/power/reset/vexpress-poweroff.c | 12 +++++++++++-
+ 3 files changed, 14 insertions(+), 4 deletions(-)
 
+diff --git a/arch/arm/mach-vexpress/Kconfig b/arch/arm/mach-vexpress/Kconfig
+index 065e12991663..4b54d8cf897d 100644
+--- a/arch/arm/mach-vexpress/Kconfig
++++ b/arch/arm/mach-vexpress/Kconfig
+@@ -15,7 +15,6 @@ menuconfig ARCH_VEXPRESS
+ 	select NO_IOPORT_MAP
+ 	select PLAT_VERSATILE
+ 	select POWER_RESET
+-	select POWER_RESET_VEXPRESS
+ 	select POWER_SUPPLY
+ 	select REGULATOR if MMC_ARMMMCI
+ 	select REGULATOR_FIXED_VOLTAGE if REGULATOR
 diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
-index 4dfac618b942..f07b982c8dff 100644
+index f07b982c8dff..8468d42b0198 100644
 --- a/drivers/power/reset/Kconfig
 +++ b/drivers/power/reset/Kconfig
-@@ -191,7 +191,7 @@ config POWER_RESET_VERSATILE
+@@ -189,9 +189,10 @@ config POWER_RESET_VERSATILE
+ 	  reference boards.
+ 
  config POWER_RESET_VEXPRESS
- 	bool "ARM Versatile Express power-off and reset driver"
+-	bool "ARM Versatile Express power-off and reset driver"
++	tristate "ARM Versatile Express power-off and reset driver"
  	depends on ARM || ARM64
--	depends on VEXPRESS_CONFIG
-+	depends on VEXPRESS_CONFIG=y
+-	depends on VEXPRESS_CONFIG=y
++	depends on VEXPRESS_CONFIG
++	default VEXPRESS_CONFIG
  	help
  	  Power off and reset support for the ARM Ltd. Versatile
  	  Express boards.
+diff --git a/drivers/power/reset/vexpress-poweroff.c b/drivers/power/reset/vexpress-poweroff.c
+index 1fdbcbd95fc2..b1eef95132d9 100644
+--- a/drivers/power/reset/vexpress-poweroff.c
++++ b/drivers/power/reset/vexpress-poweroff.c
+@@ -5,6 +5,7 @@
+  */
+ 
+ #include <linux/delay.h>
++#include <linux/module.h>
+ #include <linux/notifier.h>
+ #include <linux/of.h>
+ #include <linux/of_device.h>
+@@ -146,4 +147,13 @@ static struct platform_driver vexpress_reset_driver = {
+ 		.suppress_bind_attrs = true,
+ 	},
+ };
+-builtin_platform_driver(vexpress_reset_driver);
++
++static int __init vexpress_reset_init(void)
++{
++	return platform_driver_register(&vexpress_reset_driver);
++}
++module_init(vexpress_reset_init);
++
++MODULE_AUTHOR("Pawel Moll <pawel.moll@arm.com>");
++MODULE_DESCRIPTION("Vexpress reset driver");
++MODULE_LICENSE("GPL v2");
 -- 
 2.26.2
 
