@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54B2C1E4A3A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:32:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E37821E4A38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:31:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DJHNvmPHlAdw0NiJ6Db8hYZhHV8x7zcLTMHXuuLU1so=; b=l+v/jAKLRdNTVr
-	y3jgqWafvt/kpN8QmXEVrkq7k5td8vohUdiuO4z5GwwWtVYncOYh4HB/mFSZbVO9uQFnLSrrZ4+rg
-	DUJHT93vCzkANrq81Wp2/OCv2Fu8qLplblukVegMz2MgqeKeDKR/Oc9e0Nw1FyDy0k42YPMyZ0Sbq
-	+ooOawXtFzyeKZkSjXL1HCGwI/Nf/ONxYY+OeHS4Fhg7s4hZZNEqPUdJPx/Xz8fx3sqz1fpBKfxxR
-	TpwGP0K2K/5ScacF/fQFJJSb7fH2UUM4ViZ2Nj9JGSG182fo/cz8X/Qptfe+fcGGwSW2x69VnE9av
-	vqvtl6oQk/mEGWNIUyLA==;
+	List-Owner; bh=50HpKnb0top/ra0vFboE7TAAIw37Hxujspa8z6Bu/PQ=; b=Tfiqa5fYDNrWep
+	d26FyBLADe2NLgEvJM5URip31Ho5OQPWRM5suxkN77T5XoHdiVpa48n95CWh+ObOay99rMF3E/aIX
+	weopPbZVlwBJHS0WQa2JP20Iltnmnyzq/to2IWDimMd18v1bQqyrPxSAgB3nkcP9RZW4PNNgI8qaS
+	/iauw6W+/Eu27gm65E2QyOwb3e1VfN6MEp9XEL2SKp3C0Ts2BLvdo85gmEDmBLOJlzJclj2X02s4M
+	vJEPk5FzWbuvwbOBGWBm8Xx6sQzOECi/W609tPGXIsYgQRH6q86knO1t/Jm047aBzdpTbeXMiOs7H
+	VEmjJdqNRoVHI7RtRAbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyyD-0000TH-2v; Wed, 27 May 2020 16:31:57 +0000
+	id 1jdyxw-00009F-0j; Wed, 27 May 2020 16:31:40 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyLH-0001o3-0a; Wed, 27 May 2020 15:51:46 +0000
+ id 1jdyLI-0001pO-PU; Wed, 27 May 2020 15:51:49 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 3AECF582101;
- Wed, 27 May 2020 11:51:42 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:42 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id DB6D1581518;
+ Wed, 27 May 2020 11:51:43 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:43 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=Z5JNWa+khkkPT
- A5Ia7+v7mohqb/B090X4sPaakkB4jc=; b=qqWPMuAyTDdQfrfyYk1Ym0j/4p/Uv
- 91o0yqsQMtl8AkIEiKrHrVTkhasZKcy+KhJqAqbSpDNchz3vkrDsRHM6L7ekh0T9
- +SMIniMCmTU+dVLVAX5btS4ko0f5JMTfs+qBXBnNX8PuWwY5hBiwaMa+r9goHnBs
- bOiafp2wfsZ96I8xPBcpJik/tjWnJ+xwkwn7iCHxxc21sTfqBJzSVbjtDge8bwhk
- 1pVLrOVKQXLQ9fAdMJMp7m/e5id2UbxiYYfGI2Bfa4/RwJwCMsnZKuBJNyeYTPUw
- RruV6TmpTyOiVO/OveI/6hrjnX3UCZfgQ7E2bDWIrJ+Gjs/7TvrCXsDeQ==
+ :mime-version:content-transfer-encoding; s=fm2; bh=IIw9eaxB3Tpgt
+ 3X5YVSg5tPQ4IfOI1UBHNLfesXywhY=; b=YeducADtmzS5QrXvADLOpISdwenaJ
+ EoptJM+OmVmn7AVsICJ/0eic01yD66D+O/n2Ss4UTHXXTeMNawxkJ5zl5vIBWO5q
+ N+CD+WqXSdmHJbKYsuJC9IcWXM+TuFUUGBvydyeaA1NY5fYPAxXDTLACvWdUOccg
+ 9mN/dNiTN69eNXxjkb/7N0Qo3ONv78PIl7Yj7GDRsjxy+qkbHepIye1dvpJLy36z
+ +no6TylzGWoqlO1U2F668Sq7v0pQgZqp9tH8vteVyMRZXuSrvRHhGcS9GjgL0Bj6
+ lUPtbVMunMY95EhNhw7M1+MMCt5o5ZtpU1pFLknIuYFrsWJxeVjVRM6mg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=Z5JNWa+khkkPTA5Ia7+v7mohqb/B090X4sPaakkB4jc=; b=XlOWjSI/
- MV7i8bVZ8sMTprDuGNG8P4oDOJcKQ1O5LTBsKakTaVOL9Xy/UFcK+wqp2U55IIm6
- QjRJaWG0Ir8Y0xs29qyetxXo4qnrFsVn2lIhvizSThMc6gosRLO0XFqs4eAoH17/
- GXAnZ4u6e+Mxuv1C1NNoGKqwuZrH7p4jQf+FcoY+SXOmMkRecU+r38B37yHBpxDj
- JEFI9ur2NM+IsV+QDyRYDdS+S5T/t+gpVpyiIL9B2Jln8gjhb85gOSAyXYgr5KbM
- EwagJYi6Gg4c58Vo62XiU90TVk/eQNsjQ/cHRjWLg2jqdk1kQX/Lrr71Um76XKBr
- ZMg3PkjpJCTYOA==
-X-ME-Sender: <xms:jozOXhDCp8m8hrjw9gGeTQxw__G6CM8fqjTp330kwSWpF6cWTbM-0g>
+ fm2; bh=IIw9eaxB3Tpgt3X5YVSg5tPQ4IfOI1UBHNLfesXywhY=; b=xrT8LMKp
+ RYKDoiZNHP+/ZDYdRzzaRAK1ggID2FDrvpUdJKCic/FuAF76TurZO8hvnszLy1Uy
+ AAc1VzWPAPmMmeOcRN9QY1Z9mKAqjSBMTkpnQrSqQit8EaLpp1NFXvykQppaNdBC
+ Y0/iLsJdupTtQHTxR0z7aWNfGLvK9ga+cf3RQZ1/+nflqMeLqVeTN8bsCOWQs5Gg
+ TBsN8MrySvOslkKKdOcMbZytUoEwAmoiG81G+fP8Lx7jpBYikgloKgGbBkvc9pPN
+ jCOETse9Z+1c8jnY+AYhvRb80bXepQLI52crs2jOrPFusLivkmHqF4AIrV5vv/5e
+ 4mIBifuisryTpA==
+X-ME-Sender: <xms:j4zOXgH5xrQf5RJuDrQyL2kQyk0_QIGfekdeNqCFuBftbcKAe2cvZw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
- hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepieejne
+ hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepjedune
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:jozOXvgcfqNDOY-hpin0hmQyB9PB7vquHF3dhNZGbbma4IQn30X5gA>
- <xmx:jozOXsl9uabmycJPIgdmCCrTRrNbekUoWBIMpNv8t8R08RC77io3-A>
- <xmx:jozOXryQLCye_aseRfXUS7KNs0ur5LpvzCHy7B50hkHipqxMcUgGTg>
- <xmx:jozOXjTVCJKduXePkdEL_RnQIdYY9Y7ocAk7dVOW4SP3jvne49xagg>
+X-ME-Proxy: <xmx:j4zOXpUHUW8dTd9TjWNO-KPjtAACAhStJlwiVDiNVb36Lao4sEEQMQ>
+ <xmx:j4zOXqJwDF3S4m-HgwsRN1QNINmjbJ9Gp62VSvRUjDth_FXdd0kj2A>
+ <xmx:j4zOXiHtuGHoQ86_kbdZRaZURBD_bm8fvCa2qE5oen1ixNyaavbqVA>
+ <xmx:j4zOXhGhjyeKpbq9OwYIhCyIhtWWluElPv0Mm5hntTzCxRc-LlCYhg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id C90743280068;
- Wed, 27 May 2020 11:51:41 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 55FCF3062551;
+ Wed, 27 May 2020 11:51:43 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 092/105] drm/vc4: hdmi: Use clk_set_min_rate instead
-Date: Wed, 27 May 2020 17:49:02 +0200
-Message-Id: <c946ab1946901d2d9426ce24733ff1f190f6096b.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 093/105] drm/vc4: hdmi: Use reg-names to retrieve the HDMI
+ audio registers
+Date: Wed, 27 May 2020 17:49:03 +0200
+Message-Id: <e01d4d2216a382ca3842a936972b5cdb13d13066.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085143_225109_487D0D8E 
-X-CRM114-Status: GOOD (  10.81  )
+X-CRM114-CacheID: sfid-20200527_085144_972572_0009FCE7 
+X-CRM114-Status: GOOD (  10.41  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -117,34 +118,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The HSM clock needs to be running at 101% the pixel clock of the HDMI
-controller, however it's shared between the two HDMI controllers, which
-means that if the resolutions are different between the two HDMI
-controllers, and the lowest resolution is on the second (in enable order)
-controller, the first HDMI controller will end up with a smaller than
-expected clock rate.
+From: Dave Stevenson <dave.stevenson@raspberrypi.com>
 
-Since we don't really need an exact frequency there, we can simply change
-the minimum rate we expect instead.
+The register range used for audio setup in the previous generations of
+SoC were always the second range in the device tree. However, now that
+the BCM2711 has way more register ranges, it makes sense to retrieve it
+by names for it, while preserving the id-based lookup as a fallback.
 
+Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.com>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_hdmi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/gpu/drm/vc4/vc4_hdmi.c |  9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index eda48f58dc01..c069bf8e6d7c 100644
+index c069bf8e6d7c..ebe9dd25c65a 100644
 --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
 +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -462,7 +462,7 @@ static void vc4_hdmi_encoder_enable(struct drm_encoder *encoder)
- 	 * pixel clock, but HSM ends up being the limiting factor.
+@@ -953,6 +953,7 @@ static int vc4_hdmi_audio_init(struct vc4_hdmi *vc4_hdmi)
+ 	struct snd_soc_card *card = &vc4_hdmi->audio.card;
+ 	struct device *dev = &vc4_hdmi->pdev->dev;
+ 	const __be32 *addr;
++	int index;
+ 	int ret;
+ 
+ 	if (!of_find_property(dev->of_node, "dmas", NULL)) {
+@@ -973,7 +974,13 @@ static int vc4_hdmi_audio_init(struct vc4_hdmi *vc4_hdmi)
+ 	 * for DMA transfers.
+ 	 * This VC/MMU should probably be exposed to avoid this kind of hacks.
  	 */
- 	hsm_rate = max_t(unsigned long, 120000000, (pixel_rate / 100) * 101);
--	ret = clk_set_rate(vc4_hdmi->hsm_clock, hsm_rate);
-+	ret = clk_set_min_rate(vc4_hdmi->hsm_clock, hsm_rate);
- 	if (ret) {
- 		DRM_ERROR("Failed to set HSM clock rate: %d\n", ret);
- 		return;
+-	addr = of_get_address(dev->of_node, 1, NULL, NULL);
++	index = of_property_match_string(dev->of_node, "reg-names", "hd");
++	/* Before BCM2711, we don't have a named register range */
++	if (index < 0)
++		index = 1;
++
++	addr = of_get_address(dev->of_node, index, NULL, NULL);
++
+ 	vc4_hdmi->audio.dma_data.addr = be32_to_cpup(addr) + mai_data->offset;
+ 	vc4_hdmi->audio.dma_data.addr_width = DMA_SLAVE_BUSWIDTH_4_BYTES;
+ 	vc4_hdmi->audio.dma_data.maxburst = 2;
 -- 
 git-series 0.9.1
 
