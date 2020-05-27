@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 310C31E4E21
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 21:28:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D9441E4E37
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 21:33:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oFuGGZf3MmwGA/I+Jpz/AwfYW94xmfxQ6ijz1pCClcY=; b=kdI6BgB4Jj9PAEGlwJMZwuh39
-	4B1EWVcuCQzOdfL0OterNzkBp8kLymj6MxejOJlCciIhn7Zpj5u0IpBevALjM+WCsHCs6l9mhE13I
-	RGUB58p7pAMqb2teBhkAUn0HZDUjPvKcI9nSLXCDQ0/yFBAKeQ3CBo4Yw10tUGkJ47oXl12PMulxN
-	P8i6CIiedfowKehqPgfEIV6Onlk08gneSt/9lWiVr41WuR5RJ13h5xhhFYPwu6HdXvFPmnmEeN2JK
-	l7UIhgH+sPrKnClrdh596ZoRSLUSgKu+7UlEYQr4k2zCKtjxbS3F0WKfkrECtiVB1ETy28sLahnB+
-	lrJWqBMsQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yfYxCGTuFeM0GudgRZw0caQ4nqGAnGEPdX47IFXGpgg=; b=HwO0YWlqqLB8DN
+	3YOzFL9Ek9selI3DrGourrFv+hmdOGiyal+84uEqPflFzioEVhk/FLmJ+FijSjmNvQCIQO3ecf/GL
+	gbFF6WOJOLn2hg7FoyMv16QMxYpS7G4fwGW0nh1Fyu6YcXFb+rAFo4U9H1CgcwEssy7D9zDWFT93S
+	5JZixZ5P+3/q7hZDf1XT+kmfzNVyvdN553XAb5E7gOzdydNwoR2ulMKyIXaQwoyl6l6WcYJnFNLOY
+	tE5HO4SDDs1dpb7d1exPGFtnCoT17DP7MYtCA1sglqR4kLs5Mu0WB5k9BXzESHksoeZXfpmuic2m+
+	ml2ASa24DZYm8k3AXSoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je1j3-0003xA-CJ; Wed, 27 May 2020 19:28:29 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je1iq-0003wF-PF
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 19:28:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BFC2830E;
- Wed, 27 May 2020 12:28:15 -0700 (PDT)
-Received: from [10.57.2.168] (unknown [10.57.2.168])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B4B843F305;
- Wed, 27 May 2020 12:28:13 -0700 (PDT)
-Subject: Re: [PATCH] arm64: vdso32: force vdso32 to be compiled as -marm
-To: Nick Desaulniers <ndesaulniers@google.com>
-References: <20200526173117.155339-1-ndesaulniers@google.com>
- <2f58c2a4-0f37-d507-7767-00161c6b5d98@arm.com>
- <CAKwvOd=Oy_OfRbL6-q-3CAHxWBNBKE+HkfNfgCiP726u+4dU1Q@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <34f261f7-c4b5-a628-9a4c-eb97b75fba52@arm.com>
-Date: Wed, 27 May 2020 20:28:12 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1je1o2-0007D4-Cl; Wed, 27 May 2020 19:33:38 +0000
+Received: from mail-io1-f65.google.com ([209.85.166.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1je1ns-0007CU-V2
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 19:33:30 +0000
+Received: by mail-io1-f65.google.com with SMTP id h10so27397013iob.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 12:33:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=W3JSjQKNUTVDwq2jZfNyE8OlRvobHjfbDFjoKiJceQk=;
+ b=lgQPaeQN3WRBJCyXuXcWt7QFE7/AXm8jnvj2SHD8ViEDjZj9MatMJLh4/5Zs1VDkgy
+ cMIia2ULuQ6NXHGz7ZNsYvGWBUhfNmfTbLMDYgawH7krL+A5uklZpMMxzaJEgQm62Nd1
+ AmwPlx10vKlrHjZsLfZoyWlC4hrEF0bS3eg5XXOkYGf68Eu+F/zAcqGfzSDgiyb5BfJD
+ j+b3tATgb5y2f/UPZzOKfjTrfxHhWWWi156jf7kvz+uzI3Z5GauxCILp+s7yhezf/krR
+ ynP34bwmGX6u8nYhaUKrab65Ph8g7u/iQfV/JVjLrpDhbGwU3lNseI5pHfGiDjQtWh7G
+ jKwA==
+X-Gm-Message-State: AOAM533AjJ9mXpQ1U4LcBJw2rSK+lwvGMoBxqIms4x8Xub9NY9UqUcmq
+ 8IFE382WlU5W5G++Q+eYfw==
+X-Google-Smtp-Source: ABdhPJxRWfw0O6HofA51rJdaC3d5All8AHRJ9jL/XoXkz1mv9qFlW+eJj6Id/+SWWdbo4NPhKdWj2w==
+X-Received: by 2002:a02:4d:: with SMTP id 74mr7144801jaa.141.1590608007841;
+ Wed, 27 May 2020 12:33:27 -0700 (PDT)
+Received: from xps15 ([64.188.179.252])
+ by smtp.gmail.com with ESMTPSA id t17sm2037371ilm.7.2020.05.27.12.33.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 12:33:27 -0700 (PDT)
+Received: (nullmailer pid 2604073 invoked by uid 1000);
+ Wed, 27 May 2020 19:33:26 -0000
+Date: Wed, 27 May 2020 13:33:26 -0600
+From: Rob Herring <robh@kernel.org>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: Re: [PATCH] dt-bindings: watchdog: Convert UniPhier watchdog timer
+ to json-schema
+Message-ID: <20200527193326.GA2604024@bogus>
+References: <1589348545-22244-1-git-send-email-hayashi.kunihiko@socionext.com>
 MIME-Version: 1.0
-In-Reply-To: <CAKwvOd=Oy_OfRbL6-q-3CAHxWBNBKE+HkfNfgCiP726u+4dU1Q@mail.gmail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1589348545-22244-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_122817_081435_95C30A9F 
-X-CRM114-Status: GOOD (  16.72  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200527_123329_000006_D00F4697 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.65 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,81 +92,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-watchdog@vger.kernel.org,
+ Keiji Hayashibara <hayashibara.keiji@socionext.com>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Guenter Roeck <linux@roeck-us.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-27 18:55, Nick Desaulniers wrote:
-> On Wed, May 27, 2020 at 6:45 AM Robin Murphy <robin.murphy@arm.com> wrote:
->>
->> On 2020-05-26 18:31, Nick Desaulniers wrote:
->>> Custom toolchains that modify the default target to -mthumb cannot
->>> compile the arm64 compat vdso32, as
->>> arch/arm64/include/asm/vdso/compat_gettimeofday.h
->>> contains assembly that's invalid in -mthumb.  Force the use of -marm,
->>> always.
->>
->> FWIW, this seems suspicious - the only assembly instructions I see there
->> are SWI(SVC), MRRC, and a MOV, all of which exist in Thumb for the
->> -march=armv7a baseline that we set.
->>
->> On a hunch, I've just bodged "VDSO_CFLAGS += -mthumb" into my tree and
->> built a Thumb VDSO quite happily with Ubuntu 19.04's
->> gcc-arm-linux-gnueabihf. What was the actual failure you saw?
+On Wed, 13 May 2020 14:42:25 +0900, Kunihiko Hayashi wrote:
+> Convert UniPhier watchdog timer binding to DT schema format.
 > 
->  From the link in the commit message: `write to reserved register 'R7'`
-> https://godbolt.org/z/zwr7iZ
-> IIUC r7 is reserved for the frame pointer in THUMB?
+> Cc: Keiji Hayashibara <hayashibara.keiji@socionext.com>
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  .../bindings/watchdog/socionext,uniphier-wdt.yaml  | 36 ++++++++++++++++++++++
+>  .../devicetree/bindings/watchdog/uniphier-wdt.txt  | 20 ------------
+>  2 files changed, 36 insertions(+), 20 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/watchdog/socionext,uniphier-wdt.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/watchdog/uniphier-wdt.txt
+> 
 
-It can be, if you choose to build with frame pointers and the common 
-frame pointer ABI for Thumb code that uses r7. However it can also be 
-for other things like the syscall number in the Arm syscall ABI too. I 
-take it Clang has decided that writing syscall wrappers with minimal 
-inline asm is not a thing people deserve to do without arbitrary other 
-restrictions?
-
-> What is the implicit default of your gcc-arm-linux-gnueabihf at -O2?
-> -mthumb, or -marm?
-
-As Dave pointed out, like the probable majority of users it's Thumb:
-
-$ arm-linux-gnueabihf-gcc -v
-Using built-in specs.
-COLLECT_GCC=arm-linux-gnueabihf-gcc
-COLLECT_LTO_WRAPPER=/usr/lib/gcc-cross/arm-linux-gnueabihf/8/lto-wrapper
-Target: arm-linux-gnueabihf
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu/Linaro 
-8.3.0-6ubuntu1' --with-bugurl=file:///usr/share/doc/gcc-8/README.Bugs 
---enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++ --prefix=/usr 
---with-gcc-major-version-only --program-suffix=-8 --enable-shared 
---enable-linker-build-id --libexecdir=/usr/lib 
---without-included-gettext --enable-threads=posix --libdir=/usr/lib 
---enable-nls --with-sysroot=/ --enable-clocale=gnu 
---enable-libstdcxx-debug --enable-libstdcxx-time=yes 
---with-default-libstdcxx-abi=new --enable-gnu-unique-object 
---disable-libitm --disable-libquadmath --disable-libquadmath-support 
---enable-plugin --enable-default-pie --with-system-zlib 
---with-target-system-zlib --enable-multiarch --enable-multilib 
---disable-sjlj-exceptions --with-arch=armv7-a --with-fpu=vfpv3-d16 
---with-float=hard --with-mode=thumb --disable-werror --enable-multilib 
---enable-checking=release --build=aarch64-linux-gnu 
---host=aarch64-linux-gnu --target=arm-linux-gnueabihf 
---program-prefix=arm-linux-gnueabihf- 
---includedir=/usr/arm-linux-gnueabihf/include
-Thread model: posix
-gcc version 8.3.0 (Ubuntu/Linaro 8.3.0-6ubuntu1)
-
-(yeah, I didn't actually need to hack my makefile at all)
-
-Robin.
+Applied, thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
