@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C8361E419C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:10:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A1851E419A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:09:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=po5GepFEhk0rNU5xE8pYpGp0frjC2IPs2BnAYh9CgqM=; b=UB9nJaykgpsbyg
-	Nmkx7vE2GOTbkfh6pqL0qXX8kfE//XVkNCieuJtI9ipaje5leoa7JixET8+CsOHzTmFHQwpNyE5YJ
-	v13074ctJQu18+DRQNzPHjuNSHEOBggGG7LPx/VBp4sXd22bwqzabKuE0zfmpYtL40kFq4wY0D6dH
-	o9kop0jjssjUlPAbqFa8OoP+/fLsihspKOtx90H391C7jFsoIhiBW51ZXZqSqzR9a9QOvKZYgCqWs
-	xV+V86bRLcHY1pB6Pp2KeKVkWkRy8bsaeWGBvMOaG9y9DGxHvictNg6Jk7mrKzbNF1FeYkwHRVqkY
-	iwp45b3ABaW73p1BZzRQ==;
+	List-Owner; bh=nITsd18vB4N5I4aD2mp93PqgFJz2enBVkSb7TR6U6vk=; b=QCqwMdak8LvOm7
+	5xnKZysOih2rTrUaCNSW7JlNaG4bxY7j7K1yY44GGsLooYN0aUtf5fgDaDO+U+2hrNu8qcAq108aH
+	1+POkp07g8t9aGYIzKv23RSnjRABQQ8jwEoBc+9ElSGi+cN+h03mVGBE+hqnrgBPfRyy4TB4Awl3G
+	GR9S3heqytCRIxgd2rtG0fKilksE/Is3IYGnXDJJ/sX5myBxk16Ay0MZYMgwIRDTF1+caGeGvN1ss
+	vxX4r6CBqRxFWBllC5kjuecCtnoqzXINbHrZbih1DNfWC2Dw6sRvhOlgOUK4OxkuH+4hQqqrF7jVZ
+	RkYngK48Iw7SlA+hLbAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdut3-0001Mg-9U; Wed, 27 May 2020 12:10:21 +0000
+	id 1jdusE-0000ly-4Z; Wed, 27 May 2020 12:09:30 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdue4-00079u-Pm; Wed, 27 May 2020 11:54:56 +0000
+ id 1jdue5-0007Aa-El; Wed, 27 May 2020 11:54:56 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id C02A5AE44;
- Wed, 27 May 2020 11:54:53 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 7E0C5AC91;
+ Wed, 27 May 2020 11:54:54 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [RFC 38/50] staging: vchi: Get rid of struct vchiq_instance forward
- declaration
-Date: Wed, 27 May 2020 13:53:43 +0200
-Message-Id: <20200527115400.31391-39-nsaenzjulienne@suse.de>
+Subject: [RFC 39/50] staging: vchi: Don't include vchiq_core.h
+Date: Wed, 27 May 2020 13:53:44 +0200
+Message-Id: <20200527115400.31391-40-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 References: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_045453_001000_B141EC05 
-X-CRM114-Status: UNSURE (   8.13  )
+X-CRM114-CacheID: sfid-20200527_045453_656292_6D4D7A95 
+X-CRM114-Status: UNSURE (   9.51  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -73,31 +72,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's already forward declared in vchiq_if.h. So no need to insist
+This file is internal to vchiq.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/staging/vc04_services/interface/vchi/vchi.h | 7 -------
- 1 file changed, 7 deletions(-)
+ drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/staging/vc04_services/interface/vchi/vchi.h b/drivers/staging/vc04_services/interface/vchi/vchi.h
-index 7108c254a38a..d24e7027c08f 100644
---- a/drivers/staging/vc04_services/interface/vchi/vchi.h
-+++ b/drivers/staging/vc04_services/interface/vchi/vchi.h
-@@ -4,13 +4,6 @@
- #ifndef VCHI_H_
- #define VCHI_H_
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
+index fc12b76617d1..52654123463d 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
+@@ -8,7 +8,6 @@
+ #include "vchiq_if.h"
+ #include "../vchi/vchi.h"
+ #include "vchiq.h"
+-#include "vchiq_core.h"
  
--/******************************************************************************
-- * Global defs
-- *****************************************************************************/
--
--// Opaque handle for a VCHIQ instance
--struct vchiq_instance;
--
- /******************************************************************************
-  * Global funcs - implementation is specific to which side you are on
-  * (local / remote)
+ int vchi_queue_kernel_message(unsigned handle, void *data, unsigned int size)
+ {
 -- 
 2.26.2
 
