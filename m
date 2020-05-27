@@ -2,39 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A627F1E3458
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 03:02:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E93B1E346A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 03:08:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DgrPdrRWKmPrOm8xWAodz/clT9ZXLyLCBk5lLk4jFCg=; b=fUC9IbH4MEoah8
-	HNIixkz+AWcn4UgCJdV0GY7mwshsdcBNOWVFyiyfPWon+W6vfvIQVwHrVMOQM4x/0r68xmUF421lT
-	QS4lZFndlJKWsmvRiKOVRi/ZNBIbTZZ7t+bOAQWCHD6wQ+re1x7mqLLTDZRy3TRMN+W3BHdMaxsp3
-	2BdvIu7UXzxMmciX8se5dL0DWOYvTuQfee0/4dOXgNVlDErhsYaA/cCTe8Bk9M1OXyjaBP6STegTy
-	SRaw+WDE7ezecJmJadpUqfHLj00UUDqvFnlASFW8gD9LNiw4r+IMRFJFDXk5oSGFD649CXLH8SNH3
-	2OMoG07Gyi9rhhcYdQfw==;
+	List-Owner; bh=DpgigB4kzq4j3tYgPp1b2APBHyjt1xnSiBIVbN5IlRM=; b=kEbRxoQqJ443L6
+	aYhkEpoNAHXBu39vidHuFIULYxizGdOKisKS/S6xTU/vK2LkiLnv1Qk0gG7cdoOIUY7A8p/ZeX/Yc
+	vk4ALOESQMH9PRGis9mnrfD1RRHCPULqStnREhpC+aX96bAPjw3JQVpZppZ8QdWV4abA4L2MTrShI
+	jTpjW7qTU4k7O/zsLvvDg6exnWXW0cuW1IgBI3hosRsFaVSHLYh1nc/KQWZratZpXwO46cEqUMZ0G
+	posSD393wnMobLHvVQfThzTJUptWpoktqK50naqy6z1fv4UArkGrYQlwxzuweUN4FiqJzxWwAWWrc
+	2tl88OWTcV2UBg2NWl+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdkT5-0001Mo-R9; Wed, 27 May 2020 01:02:51 +0000
+	id 1jdkYX-00052Y-HM; Wed, 27 May 2020 01:08:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdkRy-0000dL-9O
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 01:01:44 +0000
+ id 1jdkYM-00051x-5I
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 01:08:19 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7C59820DD4;
- Wed, 27 May 2020 01:01:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 77F922088E;
+ Wed, 27 May 2020 01:08:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590541301;
- bh=A0XFCrok43lumMPk2Ro8fOJSnMzJSpVlyHPws3IJ9Jc=;
+ s=default; t=1590541697;
+ bh=gEQCahnR2XMMiWuyGv9OLa98c7dUNuD50Z8vXWxnv1s=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=ZqvuuY9D3/7meeHWKUbQOf6WP57r2BTbP0eC5z5D8G+wTpZUruPKEnx5GuMDKk1s5
- vi2GX9RpWtAE9J/7O5J+q2Ypcwsft6vBPIXRj7yzEsK22TCQXqFOmV1tSur11KuRft
- FWMEXQz+HpCwzrw/Udk9I4zw3lT6fw/DA3TwCyRE=
+ b=Pr3AovO/66JVsQ6pMOFxy3X3OQ2+GE39lheSQKMxSP/jIN6snMAwzNKg1bDAhZUJp
+ tLPe/YEGL7n54na79S06oG9hjY3SBm7bQ3zYo7eV1aIu0A6W1ukXZIFA5x9vAH+Vol
+ 5CCJvEAtXiKHfrON8DlLGdYlwrplmm/iuOeptsNE=
 MIME-Version: 1.0
 In-Reply-To: <1584048699-24186-3-git-send-email-jolly.shah@xilinx.com>
 References: <1584048699-24186-1-git-send-email-jolly.shah@xilinx.com>
@@ -45,12 +45,12 @@ From: Stephen Boyd <sboyd@kernel.org>
 To: Jolly Shah <jolly.shah@xilinx.com>, arm@kernel.org,
  linux-clk@vger.kernel.org, michal.simek@xilinx.com, mturquette@baylibre.com,
  olof@lixom.net
-Date: Tue, 26 May 2020 18:01:40 -0700
-Message-ID: <159054130065.88029.8168299493953876586@swboyd.mtv.corp.google.com>
+Date: Tue, 26 May 2020 18:08:16 -0700
+Message-ID: <159054169658.88029.371843532116000844@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_180142_519964_27210916 
-X-CRM114-Status: UNSURE (   8.09  )
+X-CRM114-CacheID: sfid-20200526_180818_233043_264024A3 
+X-CRM114-Status: UNSURE (   8.62  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -103,13 +103,11 @@ Quoting Jolly Shah (2020-03-12 14:31:39)
 > 
 > To maintain compatibility BIT(13) of clkflag in firmware will not be
 > used in future for any purpose and will be marked as unused.
-> 
-> Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
-> Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
-> Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
-> ---
 
-Applied to clk-next
+Why are we mixing the firmware flags with the ccf flags? They shouldn't
+be the same. The firmware should have its own 'flag numberspace' that is
+distinct from the common clk framework's 'flag numberspace'. Please fix
+the code.
 
 _______________________________________________
 linux-arm-kernel mailing list
