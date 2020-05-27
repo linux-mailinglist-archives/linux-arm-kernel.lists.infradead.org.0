@@ -2,70 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 286BB1E43FD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:40:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D00981E4401
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:41:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2ycbwFAZ2ndIEM67God0qzbTVCHCc3GhVTcXIRN1vuQ=; b=BXWYMaefPIHx6j
-	753PyyCySYV+5+qwHjFZps/4lLD+G0hsalSLwiOTJldECkRGNiTMaB1NJgkVVrOHbQtEsVVzRXp/3
-	TA7K1awaXAOFcRHGdIdfjHQzooo/2oEQ1KZaPqKBiWNyufDbks/pVJLLovwd4LEMMF7KDfFcgXT3/
-	8l7Nhu8vjQULbhSlzCW0bqONXFN/QtJKY7m6gPrHYkgW7NJRngnAOe1a2LzHVu3H3c7OvTz7Mn148
-	qjFFhic1YJwLmhwbCKJEytc1SW3MnPQXX8plpqqHELkNtZ/pcY5RCG/+ZBAeISsDdzMl7fZag0uvR
-	4eyAPLgaOYN7fcMsehiQ==;
+	List-Owner; bh=qVf0+ihEYtvXSf6CNNIeaHI1CSv1VLoeA8PLxDBBch0=; b=rP3o1wpXR4zK8P
+	5KoOw6TvQpJ3WDSsUe3uEX7I/AY7HmnvT6ghqAMOmvtBK6JtdFGlX/C6CxQ3S0fD9NbWDCZU6hYsw
+	njeiVi4ek2c5eL7mEbA/rYjJpj3FTzbmkMWftSxNZid69kL5BFKIfvupwxT83+kLodjbJtKiIT7uA
+	tKkW60KcLsYBT/cFxuNk7cSVX5xUVzkDFuov1n9ODcVPjQvjPRkHZ9vvIrqQ8hedOKiq0eSSNcHSf
+	qAhsBLfA+mmFUBI7hf/jRfOWIcL2YGALt4kvafc3Yy/5FRoWj3X0VNcED3PgvtWvqZj49mR4Imz6A
+	utWQrjg+18EGNCz1V8Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdwIP-0005o4-RZ; Wed, 27 May 2020 13:40:37 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1jdwIp-00064B-QO; Wed, 27 May 2020 13:41:03 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdwIA-0005nL-Ac
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:40:23 +0000
+ id 1jdwIc-00063N-5D
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:40:52 +0000
 Received: from localhost.localdomain ([149.172.98.151]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MRTEr-1jPrFs1MOr-00NQt9; Wed, 27 May 2020 15:40:17 +0200
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1MxHLs-1ipQ2O23r6-00xZeZ; Wed, 27 May 2020 15:40:44 +0200
 From: Arnd Bergmann <arnd@arndb.de>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Sami Tolvanen <samitolvanen@google.com>, Kees Cook <keescook@chromium.org>
-Subject: [PATCH] arm64: disable -fsanitize=shadow-call-stack for big-endian
-Date: Wed, 27 May 2020 15:39:46 +0200
-Message-Id: <20200527134016.753354-1-arnd@arndb.de>
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Stephen Boyd <sboyd@kernel.org>
+Subject: [PATCH] clk: versatile: undo some dependency changes
+Date: Wed, 27 May 2020 15:40:33 +0200
+Message-Id: <20200527134043.807045-1-arnd@arndb.de>
 X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:WMyBDjaVpnuIlG/nKy3Lfv0f53mC2eMeZk2hD1L4n7nGNgyw6xg
- b3nnLX7RQgVMDLaEP8jeYPeAoZu/zF0+z/vVS6FlpSZ1SIFpVVgeTGlO1P3Ep0Lb6nJG0Zt
- X7hH8s/zBBJhCqlR2UHeoEwOqmPu4huhF9KMCDNPoiOurHivHXkoO0/SR60IwHGXsXj/yAF
- b2s7GbapOF9ubsY1p+h1w==
+X-Provags-ID: V03:K1:oX8d96/3agk6HQYMnHtVprdFalOQlNymeCToneAXooVriuWLRR+
+ c/h+AwhIj6fC9vUzuz5Aa2eLCM3DNnwR+1QROcwAEUOdv4Lulkj+kNPH+g7+VS00QAnl+gr
+ c/dD0CTtn4iEhMxVhrytOTGK3BdJav61Y5VWmm06MbbfbRJF+wr0RM02TJCmEuNKu6GocqM
+ fVPA8dCdLvlOl5QyMJoIg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:F2IKGpPrHuM=:tVtK56yFtrrepWDvUzbOpT
- 3us5e9MR1LU4mGSnKMn9Oify9OSZr+z1ryQsomr5xmHuXPTcDxkeL9FtQ6IIzaZK7M4TiGSfm
- SrfknaWXsLAXdIE0avmvLV0juYDzTAcvZtb9k/8fuDk5WLk1Xzj03wmeX+2+GlE+zBu5Uxtly
- 3R9vMAQ+KN6313tG9I0lsEvMPCLQoVMlkpm95g50p9vQzl9dxAcXxemJgg5SGc+kTmITf88fw
- TzBvY2rXiGKyibM7Dok5SP7iaxP+NvipLQt1Ykwnqib722x77OfOGSRsjyyAi05G3a0HhkfLW
- /qlIZ3cfZ8HwyXCftttGaI+tPf4INmvSHFJhcz3sp8T8zFr1DfksvLUXYM0yW2t/kSyUXAY6r
- jqg7lgnshy4rjtPaSbqwns/ofBBDNm2riCNB1dm6j/QFwHquE7UuMkpmdNxd3Rhw355uhMZyG
- 9WQzvmbaPYDkXMulDC/pFVUnnmk6JIMlNo7Lb4axzkRdQQrTE+TY5VKeSJqchQZ9k16DIJpfA
- DdpLlaK3d2hiHZaGGzVGDVaOXEUcC76oIrpg0ytLJaoNLJeVdcqjcrWlm0URQKYw5ffGf8cAc
- 554DdULyt0uYgJix3t8iQctDwx76HodgMDd3y8TrLOfz6t5g9HUTBgCA/CHd72mCM9OMNU/Sn
- vh5Z1871+ipaobAjqACcsmCDRluu13MqfojKB79O1jaGP+0U5ndDp6R6JRAaiJnKMbYdxmimb
- BmZNfm1gtJUlSBep2bkWn5rM/hFM9OhO5b2MYMJxNJwdy0tcIsr+uEsM+4EX8ZBMrkNJ/14MP
- TsHpy/trLFTR2EQPAPCTZ2pxYPaGA3bxNgm8GAncGv7aa37U1Y=
+X-UI-Out-Filterresults: notjunk:1;V03:K0:8aMReIkVdqU=:yhFX2lu64OasDPFeHhky3H
+ IC/WFCqnWvNVHYf5ttpwJsFmp8RmKdFCdbWyOd18oY93TMgMHBSi8BG4PNcmAcoOCzQbTAjVe
+ 2n0FO4gp/b8z0cbzciNh1NhDV0DzamUtNPfAS8PAhkfrmKZw8elLwnUZMZOT7mBFEkOgGvNzZ
+ ThhEgJyTv2JKI3sgBiQKIbZb8GRfvZJ3uGyje0aDEnZvabf/qwD8lcTjl9Ke1tA3R3Uli1pIv
+ YoMV4J4lZrUpvBNy8Hszb8VvYzzsmcfUTxRdAdpHfd6a6WiVtbzPYQCTCu0UYPfSgoXCDkm6k
+ Bl9xZ1P2tqJTpSTlI7fKnvmoU/cyRIE/E3ra0bIx1xIbMaptle12QYTc16RCVzmhe62aBMJ7J
+ Ml2ZBk2UrFyq8fbq0BoH6b/xnigNotBVskzXNTlpg+GA5iAgAVBC468xVXlMixGq51OsYx4ur
+ ikKJLzdpwjh+l5Ci1t7KLGorX51y2xm09nP3NGro/PAOMBUOC8JaaVCUxTy5QkjoWIveWwXfv
+ f4Vh12dELsS0OTHvouycvZJ7B8ti+36fqacZ///KhnekwVAtgGhn4/3MJCplRbvNIPV9c8jfG
+ pAmlZjnk/57dsb0vHyc7IO4OW+Lm6F8ZoFYg6K+W66eZNwPy269MjncCjaCFa2B7xl+/Ys+ug
+ +mW0eawTP/R9H0IE7cOoAfPolwNq2bevSAywLpxhuuU/cgovHRbYKgMBRInSn2LkLb7YkIoPU
+ L7z0bsXHv515uZ0R8FsS5miYtqW8nxOfNOvXXjBtw9udx3Qz5UiemItenrFyhRpLkCQzgja/D
+ vToTOthP83fSoshZtvzcCxjjx3RTDLF3cS67SJ6JCc5FYsPm2E=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_064022_661134_6B781DED 
-X-CRM114-Status: GOOD (  12.49  )
+X-CRM114-CacheID: sfid-20200527_064050_483560_F24D7999 
+X-CRM114-Status: GOOD (  11.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ [212.227.126.133 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,47 +78,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: clang-built-linux@googlegroups.com, linux-arm-kernel@lists.infradead.org,
- Arnd Bergmann <arnd@arndb.de>, linux-kernel@vger.kernel.org
+Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ linux-kernel@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-clang-11 and earlier do not support -fsanitize=shadow-call-stack
-in combination with -mbig-endian, but the Kconfig check does not
-pass the endianess flag, so building a big-endian kernel with
-this fails at build time:
+SP810 and ICST are selected by a couple of platforms, most but
+not all in the versatile family:
 
-clang: error: unsupported option '-fsanitize=shadow-call-stack' for target 'aarch64_be-unknown-linux'
+WARNING: unmet direct dependencies detected for CLK_SP810
+  Depends on [n]: COMMON_CLK [=y] && COMMON_CLK_VERSATILE [=n]
+  Selected by [y]:
+  - ARCH_REALVIEW [=y] && (ARCH_MULTI_V5 [=n] || ARCH_MULTI_V6 [=n] ||
+ARCH_MULTI_V7 [=y])
 
-Change the Kconfig check to let Kconfig figure this out earlier
-and prevent the broken configuration. I assume this is a bug
-in clang that needs to be fixed, but we also have to work
-around existing releases.
+WARNING: unmet direct dependencies detected for ICST
+  Depends on [n]: COMMON_CLK [=y] && COMMON_CLK_VERSATILE [=n]
+  Selected by [y]:
+  - ARCH_REALVIEW [=y] && (ARCH_MULTI_V5 [=n] || ARCH_MULTI_V6 [=n] || ARCH_MULTI_V7 [=y])
+  - ARCH_VEXPRESS [=y] && ARCH_MULTI_V7 [=y]
+  - ARCH_ZYNQ [=y] && ARCH_MULTI_V7 [=y]
 
-Fixes: 5287569a790d ("arm64: Implement Shadow Call Stack")
-Link: https://bugs.llvm.org/show_bug.cgi?id=46076
+Change back the Kconfig logic to allow these to be selected
+without the main option.
+
 Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 ---
- arch/arm64/Kconfig | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/clk/versatile/Kconfig | 22 ++++++++++++----------
+ 1 file changed, 12 insertions(+), 10 deletions(-)
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index a82441d6dc36..692e1575a6c8 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1031,7 +1031,9 @@ config ARCH_ENABLE_SPLIT_PMD_PTLOCK
+diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
+index a0ed412e8396..a557886d813e 100644
+--- a/drivers/clk/versatile/Kconfig
++++ b/drivers/clk/versatile/Kconfig
+@@ -7,6 +7,18 @@ menuconfig COMMON_CLK_VERSATILE
  
- # Supported by clang >= 7.0
- config CC_HAVE_SHADOW_CALL_STACK
--	def_bool $(cc-option, -fsanitize=shadow-call-stack -ffixed-x18)
-+	bool
-+	default $(cc-option, -fsanitize=shadow-call-stack -ffixed-x18 -mbig-endian) if CPU_BIG_ENDIAN
-+	default $(cc-option, -fsanitize=shadow-call-stack -ffixed-x18 -mlittle-endian) if !CPU_BIG_ENDIAN
+ if COMMON_CLK_VERSATILE
  
- config SECCOMP
- 	bool "Enable seccomp to safely compute untrusted bytecode"
++config CLK_VEXPRESS_OSC
++	tristate "Clock driver for Versatile Express OSC clock generators"
++	depends on VEXPRESS_CONFIG
++	select REGMAP_MMIO
++	default y if ARCH_VEXPRESS
++	---help---
++	  Simple regmap-based driver driving clock generators on Versatile
++	  Express platforms hidden behind its configuration infrastructure,
++	  commonly known as OSCs.
++
++endif
++
+ config ICST
+ 	bool "Clock driver for ARM Reference designs ICST"
+ 	select REGMAP_MMIO
+@@ -22,14 +34,4 @@ config CLK_SP810
+ 	  Supports clock muxing (REFCLK/TIMCLK to TIMERCLKEN0-3) capabilities
+ 	  of the ARM SP810 System Controller cell.
+ 
+-config CLK_VEXPRESS_OSC
+-	tristate "Clock driver for Versatile Express OSC clock generators"
+-	depends on VEXPRESS_CONFIG
+-	select REGMAP_MMIO
+-	default y if ARCH_VEXPRESS
+-	---help---
+-	  Simple regmap-based driver driving clock generators on Versatile
+-	  Express platforms hidden behind its configuration infrastructure,
+-	  commonly known as OSCs.
+ 
+-endif
 -- 
 2.26.2
 
