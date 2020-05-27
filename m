@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85BAE1E3B39
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:05:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E98601E3B79
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:14:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=JCuaLPB3Y47HWzo+yTkuwDv12u75Jry7cepPZu3NJCE=; b=WjmP3fD/0Bx/KI7iM9e+km0BYj
-	5XYeneKI6Ee8ePJ0V3JzT/DhOS2CKKZUmk+q01KH8FZAzrNLE7y1Gsb7+RFX9gF9fKkR0XOiNbldY
-	cOUNE/P/YadR5p+jr7Fvzf7NZ91U2H8WTVDKbHOlz5bDquVlCF4BZJg8fmA6sJGqO+l7QNfIk7wg5
-	uKIzSFxE4MaVa1OEHXguGJABpoftOUnwpUmXcdiCQDSQPGT4uz3ZbQYZPd7/NgWuidZzHxZqzooYr
-	YKZQuDsa5RNR/MaGxjFmEnKGKVEs1Yc1GOOw3+PJ1C3cif7K6rpht4HpkreMjHW070awkXPYpOknN
-	BYI7IxAQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=d/cdtsWe5LMhSZrD6nObZjQvV/0SATMw5XWM2bWWXEM=; b=b8vdBgXdkSZhas
+	H7IW5qRYPSEhGH3ecm75ihD87mTVR91Fe9yM//YNtNcIMn8Zo4Gcu62gzfzK83J2nfcJ39XXZlIYo
+	tW6TU/j5hDjtYGlOk/9BfZ+YRVh4Ichp3btIMfT00IeV2WNSYESYqB5PC3CbNUk+EiqLCQbG09exX
+	o+z3Rnzh2P9kTG3JWS/7huR0A7eS+bo+8mqjbS8tOra+yCAEGnppNhAf7x+m+baKCezZLh45bxanS
+	8qchlQ7iBRvzb3yA6bklBxz4Rvf0xPv+MmpbPYaZukKBTfWg1OQQFu0qoYx6RpWklUCmIxzERZpNb
+	x7CA5MfpgwjY4L03mY/w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdr4L-0007HO-Qg; Wed, 27 May 2020 08:05:45 +0000
-Received: from esa6.microchip.iphmx.com ([216.71.154.253])
+	id 1jdrCJ-0002m1-Sx; Wed, 27 May 2020 08:13:59 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdr48-0007GD-Gb
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 08:05:34 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1590566732; x=1622102732;
- h=references:from:to:cc:subject:in-reply-to:date:
- message-id:mime-version;
- bh=PVXzxMF9Vqjr2PV3qWdmGql8cs4THQnOC1D9NN8NFjI=;
- b=MHkYrIRm0ibZYXekNi2/+pNmuht5a2gVRrNHyNBzciMDDGz9k5CYwGBK
- WsIKnPHyKeT6/IqHyyRzLLVmJPzbNAc6e2v74abALzMQaunZsX7qKPBko
- bFRxCBR3uJzAG8/XkR7xUX3PK4SkEB7oB7dEaZEcY4BQXJTYgppJ+FfGs
- hv0l96zvDee5ovN+d4M+90RJsvEw9hkuCqyfLYKVcaMx0ZjQd8I+p15lu
- sMWylk9D3Uh3VwsE5bKdsHAdrblumoaaTrULC+nkrK1zdwJ/gTf2hzipb
- Z6EVanx0/AXFRRs9rTX+oX4JMT6I3Mn0QgB09W4TMRSis3rcCpdCaxOqb A==;
-IronPort-SDR: wg7qi6vKQlAMeUaLNnYr/pgQElF/mppTRVRdDs9j6PL/VdSfGQovFxd2A5lvqEM0HL/Ak6SWnd
- ajiqm0f2b17I3CEQkkBX2KqN9Qqxg5p/Q8wLzRN0jfPwJMHJFvYjz7hs5Ur4MGRcXojOH/HKbs
- qwbkThrcDH62qSlTpCfcrRcwCppPObutq2XoZRMqMTvY2iTGXWTgRnBE6QwtZZ3MvtvBHfLiMz
- B0KEQqOfwbBq7msr+yB8KK/1kjFe07ov25eqns6rasTXxFBJrGetBF5DDmXjml6pxyGrC+gVJb
- ccM=
-X-IronPort-AV: E=Sophos;i="5.73,440,1583218800"; d="scan'208";a="13635860"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 27 May 2020 01:05:25 -0700
-Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 27 May 2020 01:05:24 -0700
-Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Wed, 27 May 2020 01:05:22 -0700
-References: <20200513141134.25819-1-lars.povlsen@microchip.com>
- <20200513141134.25819-2-lars.povlsen@microchip.com>
- <CACRpkdZa7OM3bqB+zRprEQ3M4m9hG3uPCoYxrdH_O=oxD8zi8Q@mail.gmail.com>
- <87pnb1nf2j.fsf@soft-dev15.microsemi.net>
- <CACRpkdYesD9sRQZXQNEaBY2Ouu3bjKKGWpRtU-Lpa4AcjyPwXw@mail.gmail.com>
- <87r1v8oz9f.fsf@soft-dev15.microsemi.net>
- <CACRpkdaJvaqPptPD-A1DriVgBOZGZ4Qf0UsbsjG39ptx6bSJKg@mail.gmail.com>
-From: Lars Povlsen <lars.povlsen@microchip.com>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH 1/3] dt-bindings: pinctrl: Add bindings for mscc,
- ocelot-sgpio
-In-Reply-To: <CACRpkdaJvaqPptPD-A1DriVgBOZGZ4Qf0UsbsjG39ptx6bSJKg@mail.gmail.com>
-Date: Wed, 27 May 2020 10:05:20 +0200
-Message-ID: <87pnappzun.fsf@soft-dev15.microsemi.net>
+ id 1jdrC3-0002k8-QG; Wed, 27 May 2020 08:13:45 +0000
+Received: by mail-pf1-x443.google.com with SMTP id 131so3127366pfv.13;
+ Wed, 27 May 2020 01:13:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=1Pvjwk/n6XpSKsFU1yL/UyqSsSwArACV6a9IFuCvWoI=;
+ b=g+OBuTNL+ZECp7gRenSfzoC/L0SIFQs2wUNgQ5XneQ49ve7MCXLFqHyaI1J9HP8hFF
+ xZFvHdBiADmGYGqBL80SR5GtgLTUbXo9d3UfqDFFj0SLN/B5WFfGMlNyWLAR+tVbvYCz
+ C4EDVhl4IEpe78El/g9Nz+dJDWkO/ABrWAn818mbecK+TzsU4h/qWOTh9KLV22jXIyGm
+ SrUEFGzeyILWXpcIFBAIOJnIMer+3w8CniZCi5TVTCW1nLLYmDQxBwulWUNK49ca4BOt
+ f5OAT0gMgdznpvyOENVsocczF2HFLHy6Oq37nWMHgKTV2N1Nl/lqod7kwe1GiYzM7JwH
+ lhVQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=1Pvjwk/n6XpSKsFU1yL/UyqSsSwArACV6a9IFuCvWoI=;
+ b=Ipqqagki508gw2YcLTmhYhx0JhpbmxxLgyHGyEFNm8fVzQF863tSdTs45GuoACRKK6
+ YXut56qHJCuuqK9BDSbuRqLK5pwRWOUHLuI9vmGUTKdRw+3c2I0XxIABchOPVXs5CfFT
+ k6x/6VXValDhsIQaeD+GOKmWDoP4dHYIlQNxh5epkBxKBydJ1GoXgWvhj/KXq6b619vt
+ D0XqKYCwo6TNxap2LuzF3HK4CiALitsLU7kncwjTmKvWXRdrqhBZm3FdAGw9Un1DQZga
+ 6QbPYrpDokkNHPvC1HnGWsCGqZYy24wvcV6HuTiwve1mwjzMlIpzw9QBUNxtBGHExzDC
+ o1aw==
+X-Gm-Message-State: AOAM532etKzTA6RxS0DiZXnPqWsxcCbsASjBau6MvNxDw0UIdMXx8a9F
+ agFP9sWONL9V1JGV2Q8NyAQ=
+X-Google-Smtp-Source: ABdhPJzbLRuMmxwJUPY5sv1El/ZdSk39d9IjzJRaDZ9+OJbVht9mTOUgNcWeTP5sLyuANVdm7nAJ8g==
+X-Received: by 2002:a63:554e:: with SMTP id f14mr2850561pgm.191.1590567223153; 
+ Wed, 27 May 2020 01:13:43 -0700 (PDT)
+Received: from ubuntu-s3-xlarge-x86 ([2604:1380:4111:8b00::1])
+ by smtp.gmail.com with ESMTPSA id gz19sm1568851pjb.33.2020.05.27.01.13.39
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 01:13:42 -0700 (PDT)
+Date: Wed, 27 May 2020 01:13:37 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH] media: omap3isp: Shuffle cacheflush.h and include mm.h
+Message-ID: <20200527081337.GA3506499@ubuntu-s3-xlarge-x86>
+References: <20200515143646.3857579-7-hch@lst.de>
+ <20200527043426.3242439-1-natechancellor@gmail.com>
+ <CAMuHMdVSduTOi5bUgF9sLQdGADwyL1+qALWsKgin1TeOLGhAKQ@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdVSduTOi5bUgF9sLQdGADwyL1+qALWsKgin1TeOLGhAKQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_010532_657370_E0E51D6C 
-X-CRM114-Status: GOOD (  16.22  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200527_011343_852168_A122591B 
+X-CRM114-Status: GOOD (  26.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.253 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [natechancellor[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,118 +98,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE
- TREE BINDINGS" <devicetree@vger.kernel.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- SoC Team <soc@kernel.org>, Rob
- Herring <robh+dt@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Lars Povlsen <lars.povlsen@microchip.com>
+Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>, Roman Zippel <zippel@linux-m68k.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux MM <linux-mm@kvack.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ sparclinux <sparclinux@vger.kernel.org>, linux-riscv@lists.infradead.org,
+ Christoph Hellwig <hch@lst.de>, Linux-Arch <linux-arch@vger.kernel.org>,
+ linux-c6x-dev@linux-c6x.org,
+ "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "open list:TENSILICA XTENSA PORT \(xtensa\)" <linux-xtensa@linux-xtensa.org>,
+ Arnd Bergmann <arnd@arndb.de>, alpha <linux-alpha@vger.kernel.org>,
+ linux-um <linux-um@lists.infradead.org>,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Openrisc <openrisc@lists.librecores.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>,
+ "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
+ Jessica Yu <jeyu@kernel.org>, Linux FS Devel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Geert,
 
-Linus Walleij writes:
+On Wed, May 27, 2020 at 09:02:51AM +0200, Geert Uytterhoeven wrote:
+> Hi Nathan,
+> 
+> CC Laurent
+> 
+> On Wed, May 27, 2020 at 6:37 AM Nathan Chancellor
+> <natechancellor@gmail.com> wrote:
+> > After mm.h was removed from the asm-generic version of cacheflush.h,
+> > s390 allyesconfig shows several warnings of the following nature:
+> >
+> > In file included from ./arch/s390/include/generated/asm/cacheflush.h:1,
+> >                  from drivers/media/platform/omap3isp/isp.c:42:
+> > ./include/asm-generic/cacheflush.h:16:42: warning: 'struct mm_struct'
+> > declared inside parameter list will not be visible outside of this
+> > definition or declaration
+> >
+> > cacheflush.h does not include mm.h nor does it include any forward
+> > declaration of these structures hence the warning. To avoid this,
+> > include mm.h explicitly in this file and shuffle cacheflush.h below it.
+> >
+> > Fixes: 19c0054597a0 ("asm-generic: don't include <linux/mm.h> in cacheflush.h")
+> > Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+> 
+> Thanks for your patch!
+> 
+> > I am aware the fixes tag is kind of irrelevant because that SHA will
+> > change in the next linux-next revision and this will probably get folded
+> > into the original patch anyways but still.
+> >
+> > The other solution would be to add forward declarations of these structs
+> > to the top of cacheflush.h, I just chose to do what Christoph did in the
+> > original patch. I am happy to do that instead if you all feel that is
+> > better.
+> 
+> That actually looks like a better solution to me, as it would address the
+> problem for all users.
+> 
+> >  drivers/media/platform/omap3isp/isp.c | 5 +++--
+> >  1 file changed, 3 insertions(+), 2 deletions(-)
+> >
+> > diff --git a/drivers/media/platform/omap3isp/isp.c b/drivers/media/platform/omap3isp/isp.c
+> > index a4ee6b86663e..54106a768e54 100644
+> > --- a/drivers/media/platform/omap3isp/isp.c
+> > +++ b/drivers/media/platform/omap3isp/isp.c
+> > @@ -39,8 +39,6 @@
+> >   *     Troy Laramy <t-laramy@ti.com>
+> >   */
+> >
+> > -#include <asm/cacheflush.h>
+> > -
+> >  #include <linux/clk.h>
+> >  #include <linux/clkdev.h>
+> >  #include <linux/delay.h>
+> > @@ -49,6 +47,7 @@
+> >  #include <linux/i2c.h>
+> >  #include <linux/interrupt.h>
+> >  #include <linux/mfd/syscon.h>
+> > +#include <linux/mm.h>
+> >  #include <linux/module.h>
+> >  #include <linux/omap-iommu.h>
+> >  #include <linux/platform_device.h>
+> > @@ -58,6 +57,8 @@
+> >  #include <linux/sched.h>
+> >  #include <linux/vmalloc.h>
+> >
+> > +#include <asm/cacheflush.h>
+> > +
+> >  #ifdef CONFIG_ARM_DMA_USE_IOMMU
+> >  #include <asm/dma-iommu.h>
+> >  #endif
+> 
+> Why does this file need <asm/cacheflush.h> at all?
+> It doesn't call any of the flush_*() functions, and seems to compile fine
+> without (on arm32).
+> 
+> Perhaps it was included at the top intentionally, to override the definitions
+> of copy_{to,from}_user_page()? Fortunately that doesn't seem to be the
+> case, from a quick look at the assembler output.
+> 
+> So let's just remove the #include instead?
 
-> On Mon, May 25, 2020 at 4:38 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
->
->> Yes, the problem is they're not in sequence. F.ex. you could have ports
->> 0,1 enabled, skip 2,3,4 and have 5,6,7 enabled.
->
-> Just use disabled nodes.
->
-> That would look like this in my idea of a device tree:
->
-> pinctrl@nnn {
->     gpio0: gpio@0 {
->         compatible = "foo";
->         status = "ok";
->         ....
->     };
->     gpio1: gpio@1 {
->         compatible = "foo";
->         status = "ok";
->         ....
->     };
->     gpio2: gpio@2 {
->         compatible = "foo";
->         status = "disabled";
->         ....
->     };
->     gpio3: gpio@3 {
->         compatible = "foo";
->         status = "disabled";
->         ....
->     };
->     gpio4: gpio@4 {
->         compatible = "foo";
->         status = "disabled";
->         ....
->     };
->     gpio5: gpio@5 {
->         compatible = "foo";
->         status = "ok";
->         ....
->     };
->     gpio6: gpio@6 {
->         compatible = "foo";
->         status = "ok";
->         ....
->     };
->     gpio7: gpio@7 {
->         compatible = "foo";
->         status = "ok";
->         ....
->     };
-> };
->
-> It is common to use the status to enable/disable nodes like this.
->
-> In the Linux kernel is is possible to iterate over these subnodes and
-> check which ones are enabled and disabled while keeping the
-> index by using something like:
->
-> i = 0;
-> struct device_node *np, *child;
-> for_each_child_of_node(np, child) {
->     if (of_device_is_available(child)) {
->         pr_info("populating device %d\n", i);
->     }
->     i++;
-> }
->
-> Certainly you can use i in the above loop to populate your registers
-> etc from an indexed array.
->
-> This way the consumers can pick their GPIO from the right port
-> and everything just using e.g.
-> my-gpios = <&gpio6 4 GPIO_OUT_LOW>;
->
+Sounds good to me. I can send a patch if needed or I suppose Andrew can
+just make a small fixup patch for it. Let me know what I should do.
 
-Linux, thank you for your input, it is much appreciated. I will use the
-pattern in the driver in the next revision.
-
-The only issue is that the gpios on the same "port" have restrictions on
-their status - they can only be enabled "all" or "none" for gpios that
-map to the same port. F.ex. gpio0, gpio32, gpio64 and gpio96 must all be
-enabled or disabled because at the hardware level you control the
-_port_. But as I noted earlier, that could just be the driver enforcing
-this.
-
-Thanks again.
-
----Lars
-
-> Yours,
-> Linus Walleij
-
--- 
-Lars Povlsen,
-Microchip
+Cheers,
+Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
