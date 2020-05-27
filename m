@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ECD31E4987
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:14:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B6E71E4992
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:15:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/ElFNSxwjgqe8vjy+J/6wbes0edTKvYbD1/tTs9Pwk8=; b=gh5V662tzjLDlM
-	lP3G4nYY0f6GtPBdzzGtaGkeAlIZL3KPMFh72sg+ybSvpZciykSRHOCBf1HtBJdNGAp2JLNYSseh3
-	fIctcVwN3b4kz7JbPzr+tqsr+o3ly/xxXBK4OvG3vVkdEucjCvrOCobkEzpQvi6KunVfOhMtrC8zm
-	QzCyaAnvqs7ZsjqBMEO3S9rkcGqhLrhi9JJxgduYX8vh1QZi2pQcr8+AvEItuR+qm4REoDzs8th9H
-	1USvSTAd/xeYr8SpmZYd4RsXPmmYxU2RGua1XW71pA2W8UfSUqItasi7rypNWvavCoSyfDlVvwKkj
-	jXkbF3mr3SCqrFoeMt/A==;
+	List-Owner; bh=Uzl1oHWCm8svIdDE/k+3yXQxavvass0iY6NiDskt7wg=; b=kALFWxanDH/D7a
+	swVwrPO9v+Wfdg9pQinn+niLac4N4UiufBIl4c9CCpZ5od03Snza0HjBe5l13ocgr3oezOqC2249O
+	Rvhg/zkyAgbN8sGtJkLLhh8xJ9JJlrye4K0RJg9jHye42dcW0HnGgXEc3Y7MFon5UdzIClzgBUszg
+	E6FPxAY8ycSxKVs68Gf83+V0bqdFbQGGFNiw8VtIZzy20clukF3FYTrYO1N5MyrFJbF7a+Jjnhgcz
+	Rd7kIy7WvgCyM5h+h+5tOSiWBBJD27Km20z/X+cqszMgOJ4N0Yy6XZhUs0jNOasDCzOmwxyMksUYF
+	Gt+Np/16LoHCLiJAY9eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdygu-0002G0-C8; Wed, 27 May 2020 16:14:04 +0000
+	id 1jdyiB-00036D-7q; Wed, 27 May 2020 16:15:23 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyK4-0000gK-5K; Wed, 27 May 2020 15:50:30 +0000
+ id 1jdyK6-0000iN-8w; Wed, 27 May 2020 15:50:32 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 6E7ED58208B;
- Wed, 27 May 2020 11:50:27 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:27 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 2AD8A582086;
+ Wed, 27 May 2020 11:50:29 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:29 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=GAOeZq/xDTflc
- 6+P9LvBBHtQ9OlNDddl/lapwGwoANs=; b=cgimq93HzfgKRS6nQic9ZXJgcznq7
- feFRMqB03YBMQWWq1b+bVSj/YpqnQTTZ7qI/hAGiApbVOvzABTMYmil/xS+cwHBh
- +D8XXng7/de7pN5Et12Zz8Tc/QjEo72vIlwKzhd6lbv3kOje/4dD8/USN+39+ngD
- fNtOwzNhogquofQl2hFmoGeQmTBKHsCArTKtNYc3ZlzObMoFmBYuMtZnkw5ZzEOo
- /+xKjrtiEgFIWSfMTD/tI06w5MjLrMck6Es+btliBSX1d4l84IuD4vLKwd5Ps6XP
- Jpg3hw8Kiyd1RUYZyOXImYgaIhr5+KwgdnwqBrcHpWUDL+NNIzK5k00dQ==
+ :mime-version:content-transfer-encoding; s=fm2; bh=nG/RYo7tmKxJf
+ 6kRryI78rAS9caRthvRwWfJX3SbsG0=; b=A5CdNSbzLgWsDFPRyDGr7S6i2Qp6J
+ vgfku64SpbbqX1swjGP4Im9bmXzaraxHGW+KHX2EOPNHDfZcxTmnRaU1vbl+9bLS
+ ZRJEfcwoFdN5LbbSsGqd8ywC9dAY8Qp8F8LIRTZHH0PQScEZZcLTss0H2wDxYFeN
+ n5/Vaz1eV3NHGr8Q9hAkDtzgP2P/3zIjyL1TbTB/aULwNTi8Jr3nDPlrumDkTmIo
+ Y6I1oBAPiOJn64U1BU7LDhC9bIgIyFOAqAxfCtPOqFDHyg6ER+1UYOU3B/CUba0G
+ ChRxxPKpajCBqC0lE28jtAOFLrsOEEs0aWZyKuvmjWRreqULCHPgiH0xw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=GAOeZq/xDTflc6+P9LvBBHtQ9OlNDddl/lapwGwoANs=; b=kmDEp8eU
- cmwjzM9Z1zO8xSDTSEJDUHynohjfK1PCbcxanoMa04/A4xa76ipoMndA3kMONFgj
- UJSVySYgPcZBcF+PcyDFz7UrGWGGCZLxI/auSl2WNmdE15F7EmjkQY6Hf69qvgOx
- qVjFCaFIz0xzCsi7YJf4jg1/EbzPvo5116RzPJNqAASIb+vzOg0ugWHkNEF3sln+
- uUhtpIArAszMcUHKgVIUWAEMi0BbTW2emtgsNUE7T0xKqneO+p9lUOK19MeI+iVa
- 2EhrsqTp1Ol3cXCBicFLTb8k+paI27u7lxv1lTT4Y97H8rNvc14wgOOKqiSBeCrr
- NpY128nQ9VdBXw==
-X-ME-Sender: <xms:Q4zOXkazRh37YV4SnK8xjokLg1tb7ezshx9C5MikkgMutmHCvhmCIg>
+ fm2; bh=nG/RYo7tmKxJf6kRryI78rAS9caRthvRwWfJX3SbsG0=; b=1Fp/wADc
+ U9CoB8+Xb/cAepV5LsvhZE5Ybj7f3c4OX2rHQyLcWZ2XbbORDmY39LaWY53JYyUu
+ qd7qhVu3LFi+lFsbEaDYmnPgF3640mj7rya8im20njaCYB3LNyDPqcmMWtBwdTue
+ 03dDIU2yvmlpdHkqTebyeiUk/cuX4phcz9kkyHHF00LoSSbE3/DcQUEOI9IT3Rri
+ 6QPkXya+7at64Q69oO9G/FY+QR0MjJUnnXvbKTcee4o/9I7y5PkTAn2CHHpVqyRl
+ e7ix3nZaY5qw64x1swnuPMWHQRbu/F8Prx+RlCnkT/5OVE8UZ2hkKj1V15e70gG4
+ HjiZ4tWzuXEVFg==
+X-ME-Sender: <xms:RYzOXu39WoUbQEbRgsOLV35Yfy_8hMu55Unxy0A0yEWaG_lMy9ALVQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,28 +56,28 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepvdehne
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:Q4zOXvZUqTwumq3GQPgyl_IwNuKVir2V-YsRGrinksEbnIO9FYXQ5g>
- <xmx:Q4zOXu-IlpTh-fXIXDi8N31lycdWcV5x1AicnbzZ_B9f42ZKybbOhg>
- <xmx:Q4zOXupzVkZgmioJvv77Bb-QS2UnNIPay_4r88Bq4M0737zsetkYZA>
- <xmx:Q4zOXrIIimuNMJbJWpoP-V5mjdb8yB23cQzVLHUNXW-s_sT52ZVN6g>
+X-ME-Proxy: <xmx:RYzOXhEoU2zzLKEzZoaPyG5uMLEcxpZmJcjyVfHvjK6x-lwksZp7sQ>
+ <xmx:RYzOXm6tc3rkK2f05zF3f2CO28fhhrgFKmyf7ooU0eyHR_b6UY2Edg>
+ <xmx:RYzOXv0XXZvz_mGcy7MCNvksUEk9Xi8anuFRCeMFaY_J2onO8DufPg>
+ <xmx:RYzOXo3YiqEi58qDNsOLf2piHcaszUUnKVyvxxTCUXSCvfobXzrscA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 11EDF3280060;
- Wed, 27 May 2020 11:50:26 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 98E263061CCB;
+ Wed, 27 May 2020 11:50:28 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 044/105] drm/vc4: crtc: Move the HVS gamma LUT setup to our
- init function
-Date: Wed, 27 May 2020 17:48:14 +0200
-Message-Id: <aa92d353d0cf3673a5d36a60fb82f7a5634270ac.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 045/105] drm/vc4: hvs: Make sure our channel is reset
+Date: Wed, 27 May 2020 17:48:15 +0200
+Message-Id: <c1c69d2d2d909822300dca1ddc0bb5b5896a5107.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085028_367448_94C6A751 
-X-CRM114-Status: GOOD (  10.68  )
+X-CRM114-CacheID: sfid-20200527_085030_497894_68537D58 
+X-CRM114-Status: UNSURE (   6.85  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -118,74 +118,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since most of the HVS channel is setup in the init function, let's move the
-gamma setup there too.
+In order to clear our intermediate FIFOs that might end up with a stale
+pixel, let's make sure our FIFO channel is reset everytime our channel is
+setup.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_hvs.c | 28 ++++++++++++++++------------
- 1 file changed, 16 insertions(+), 12 deletions(-)
+ drivers/gpu/drm/vc4/vc4_hvs.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_hvs.c b/drivers/gpu/drm/vc4/vc4_hvs.c
-index 2352a63fd26b..87bbd68d44db 100644
+index 87bbd68d44db..754aff3966bd 100644
 --- a/drivers/gpu/drm/vc4/vc4_hvs.c
 +++ b/drivers/gpu/drm/vc4/vc4_hvs.c
-@@ -201,6 +201,8 @@ static int vc4_hvs_init_channel(struct vc4_dev *vc4, struct drm_crtc *crtc,
- {
- 	struct vc4_crtc_state *vc4_crtc_state = to_vc4_crtc_state(crtc->state);
- 	unsigned int chan = vc4_crtc_state->assigned_channel;
-+	bool interlace = mode->flags & DRM_MODE_FLAG_INTERLACE;
-+	u32 dispbkgndx;
+@@ -205,6 +205,10 @@ static int vc4_hvs_init_channel(struct vc4_dev *vc4, struct drm_crtc *crtc,
+ 	u32 dispbkgndx;
  	u32 dispctrl;
  
++	HVS_WRITE(SCALER_DISPCTRLX(chan), 0);
++	HVS_WRITE(SCALER_DISPCTRLX(chan), SCALER_DISPCTRLX_RESET);
++	HVS_WRITE(SCALER_DISPCTRLX(chan), 0);
++
  	/* Turn on the scaler, which will wait for vstart to start
-@@ -225,6 +227,20 @@ static int vc4_hvs_init_channel(struct vc4_dev *vc4, struct drm_crtc *crtc,
- 
- 	HVS_WRITE(SCALER_DISPCTRLX(chan), dispctrl);
- 
-+	dispbkgndx = HVS_READ(SCALER_DISPBKGNDX(chan));
-+	dispbkgndx &= ~SCALER_DISPBKGND_GAMMA;
-+	dispbkgndx &= ~SCALER_DISPBKGND_INTERLACE;
-+
-+	HVS_WRITE(SCALER_DISPBKGNDX(chan), dispbkgndx |
-+		  SCALER_DISPBKGND_AUTOHS |
-+		  ((!vc4->hvs->hvs5) ? SCALER_DISPBKGND_GAMMA : 0) |
-+		  (interlace ? SCALER_DISPBKGND_INTERLACE : 0));
-+
-+	/* Reload the LUT, since the SRAMs would have been disabled if
-+	 * all CRTCs had SCALER_DISPBKGND_GAMMA unset at once.
-+	 */
-+	vc4_hvs_lut_load(crtc);
-+
- 	return 0;
- }
- 
-@@ -427,8 +443,6 @@ void vc4_hvs_mode_set_nofb(struct drm_crtc *crtc)
- 	struct vc4_dev *vc4 = to_vc4_dev(dev);
- 	struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
- 	struct vc4_crtc_state *vc4_state = to_vc4_crtc_state(crtc->state);
--	struct drm_display_mode *mode = &crtc->state->adjusted_mode;
--	bool interlace = mode->flags & DRM_MODE_FLAG_INTERLACE;
- 
- 	if (vc4_crtc->data->hvs_output == 2) {
- 		u32 dispctrl;
-@@ -453,16 +467,6 @@ void vc4_hvs_mode_set_nofb(struct drm_crtc *crtc)
- 			   ~SCALER_DISPCTRL_DSP3_MUX_MASK;
- 		HVS_WRITE(SCALER_DISPCTRL, dispctrl | dsp3_mux);
- 	}
--
--	HVS_WRITE(SCALER_DISPBKGNDX(vc4_state->assigned_channel),
--		  SCALER_DISPBKGND_AUTOHS |
--		  ((!vc4->hvs->hvs5) ? SCALER_DISPBKGND_GAMMA : 0) |
--		  (interlace ? SCALER_DISPBKGND_INTERLACE : 0));
--
--	/* Reload the LUT, since the SRAMs would have been disabled if
--	 * all CRTCs had SCALER_DISPBKGND_GAMMA unset at once.
--	 */
--	vc4_hvs_lut_load(crtc);
- }
- 
- void vc4_hvs_mask_underrun(struct drm_device *dev, int channel)
+ 	 * compositing.
+ 	 * When feeding the transposer, we should operate in oneshot
 -- 
 git-series 0.9.1
 
