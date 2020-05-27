@@ -2,54 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 026F91E3AE2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:47:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 324AA1E3AE8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:48:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f4wHYUEtYqJXnjd16D32GPRmw6Qz+LcGpTWRgD31TQ4=; b=lir+Dfj+xOAQyG
-	Gr6XTQ/ePOWgx+JIywdEmdLX19NMOCENpjeiIuPMPVTHkMMMai45f5aVP6kZi5vtATnt2i7zeQQHf
-	SZHi51mXO4kvHtGBOIUEu2EAsls1wd9SFtAlntJHJpSzu1Aq2bH6w3gyrR/h+Noo3j+8Bgusdcnv0
-	2q127HohG25+Ls86YgYIA0hpIYsUeKKFr2dQW3nNuWQXHhjUvmj2E5C2P0TaELQYqDG7mZpJAkATJ
-	n94ZnI4EPBQHeI4p2qjOOFXI8oBHKAF31hbB6XNoDDqqPLt9zpo5hNyW686zJMmOjQZMh6b78P88K
-	PRCvFTV9cFMroe9k0CvA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aDrQ1u66pGWpNjPlQhokR5vMjIJRDMcUThu19ywMpbA=; b=mjkpDd2zOTFRqOsGPHj27qQQ6
+	8VWt3c1fxpwCRd30MdZAB0jC74swYPVcYx2+5V4+ns/JXD6gl6TAuN+pW8ssbCtT1wxSVw9fBUwNl
+	ZUqok7EpACx9W3vuoNj9jGGA2PrkEPGZWKUkoCkZqZJZ11g7ofRmsZZv88RBD5tGhnY0nSf/wBOW5
+	bEFk+owLtQho+mVsC+rsJamuzbl2WkGhkXi44QcLTnlgiD7GUWQtbaFcpc5K6uKbaQjTywCnqnfMo
+	NOkDBxoozzq/5qdTm0CvqVcgpPOHO5koeIIGkxCVLUtNnjZUkDBVPzNqgR4RKetqFlg5bgPl5TZnH
+	q/S8Bc7zQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdqmY-0002jH-Qe; Wed, 27 May 2020 07:47:22 +0000
+	id 1jdqno-0003EG-Un; Wed, 27 May 2020 07:48:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdqmG-0002iq-9A
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:47:05 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4A0BD207CB;
- Wed, 27 May 2020 07:47:02 +0000 (UTC)
+ id 1jdqnd-0003Dt-Ks
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:48:31 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 23590207CB;
+ Wed, 27 May 2020 07:48:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590565624;
- bh=/FVQ3sLZUY/KzEKvgBXodRAdsyRqYRRArkYuCnMkydY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=LVeFzpVdK/UfgPBIOmXoKNIzgx0gyeybY/yzjW9JfmshAD076tdIm8WEbWr9uII4S
- WXSdBD994NaKD8njjZAuYD4+sQJyHg9UtzIEBh5m8MWiUyZS/QNILopeSK3OP2I3IP
- FABRqUXF/55oL2QMxAZ5l3ouZLJiePenMtgCn6/c=
-Date: Wed, 27 May 2020 08:46:59 +0100
-From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v4 15/26] arm64: mte: Allow user control of the tag check
- mode via prctl()
-Message-ID: <20200527074658.GB9887@willie-the-truck>
-References: <20200515171612.1020-1-catalin.marinas@arm.com>
- <20200515171612.1020-16-catalin.marinas@arm.com>
+ s=default; t=1590565709;
+ bh=o2RNuuLOPzIUQugqXI2pXs40dw3MxypX2JaA7iDkwY8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=pni6+ov8tRzZ5DYViPK8gJK1/JIpPkaSWj18F4PfL9wWknwOagXXMykJH5HcwlvDQ
+ x3IiBKDcFTUwwSCMybSkdY/4dptm9ehSXmDPIAHI+/XDgYY1Knn4OLNEjNFyJBSJnJ
+ 20ZlhzylGziKft32Jn5ApIezyaR0yfrkfHQwD5Sw=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jdqnb-00FdJT-Gw; Wed, 27 May 2020 08:48:27 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200515171612.1020-16-catalin.marinas@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Wed, 27 May 2020 08:48:27 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Gavin Shan <gshan@redhat.com>
+Subject: Re: [PATCH RFCv2 0/9] kvm/arm64: Support Async Page Fault
+In-Reply-To: <987785b2-2533-c3d8-8f6a-4193aa82d502@redhat.com>
+References: <20200508032919.52147-1-gshan@redhat.com>
+ <20200526130927.GH1363@C02TD0UTHF1T.local>
+ <987785b2-2533-c3d8-8f6a-4193aa82d502@redhat.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <ae0f32fa338969d25dc3da56292e35ed@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: gshan@redhat.com, mark.rutland@arm.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, pbonzini@redhat.com, will@kernel.org,
+ catalin.marinas@arm.com, james.morse@arm.com, suzuki.poulose@arm.com,
+ drjones@redhat.com, eric.auger@redhat.com, aarcange@redhat.com,
+ shan.gavin@gmail.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_004704_338940_B387C766 
-X-CRM114-Status: GOOD (  18.20  )
+X-CRM114-CacheID: sfid-20200527_004829_707280_65ADE54E 
+X-CRM114-Status: GOOD (  12.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,67 +94,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, Dave P Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, aarcange@redhat.com,
+ drjones@redhat.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, eric.auger@redhat.com, james.morse@arm.com,
+ shan.gavin@gmail.com, pbonzini@redhat.com, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 06:16:01PM +0100, Catalin Marinas wrote:
-> By default, even if PROT_MTE is set on a memory range, there is no tag
-> check fault reporting (SIGSEGV). Introduce a set of option to the
-> exiting prctl(PR_SET_TAGGED_ADDR_CTRL) to allow user control of the tag
-> check fault mode:
-> 
->   PR_MTE_TCF_NONE  - no reporting (default)
->   PR_MTE_TCF_SYNC  - synchronous tag check fault reporting
->   PR_MTE_TCF_ASYNC - asynchronous tag check fault reporting
-> 
-> These options translate into the corresponding SCTLR_EL1.TCF0 bitfield,
-> context-switched by the kernel. Note that uaccess done by the kernel is
-> not checked and cannot be configured by the user.
-> 
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> ---
-> 
-> Notes:
->     v3:
->     - Use SCTLR_EL1_TCF0_NONE instead of 0 for consistency.
->     - Move mte_thread_switch() in this patch from an earlier one. In
->       addition, it is called after the dsb() in __switch_to() so that any
->       asynchronous tag check faults have been registered in the TFSR_EL1
->       registers (to be added with the in-kernel MTE support.
->     
->     v2:
->     - Handle SCTLR_EL1_TCF0_NONE explicitly for consistency with PR_MTE_TCF_NONE.
->     - Fix SCTLR_EL1 register setting in flush_mte_state() (thanks to Peter
->       Collingbourne).
->     - Added ISB to update_sctlr_el1_tcf0() since, with the latest
->       architecture update/fix, the TCF0 field is used by the uaccess
->       routines.
-> 
->  arch/arm64/include/asm/mte.h       | 14 ++++++
->  arch/arm64/include/asm/processor.h |  3 ++
->  arch/arm64/kernel/mte.c            | 77 ++++++++++++++++++++++++++++++
->  arch/arm64/kernel/process.c        | 26 ++++++++--
->  include/uapi/linux/prctl.h         |  6 +++
->  5 files changed, 123 insertions(+), 3 deletions(-)
+On 2020-05-27 03:39, Gavin Shan wrote:
+> Hi Mark,
 
-Dave is working on man pages for prctl() (and I think also ptrace). I think
-it would be /very/ useful for us to have some RFC patches on top of his work
-adding documentation for the MTE interactions, as we found some other minor
-issues/inconsistencies as a direct result of writing and reviewing the man
-page for our existing interfaces.
+[...]
 
-Cheers,
+>> Can you run tests with a real workload? For example, a kernel build
+>> inside the VM?
+>> 
+> 
+> Yeah, I agree it's far from a realistic workload. However, it's the 
+> test case
+> which was suggested when async page fault was proposed from day one, 
+> according
+> to the following document. On the page#34, you can see the benchmark, 
+> which is
+> similar to what we're doing.
+> 
+> https://www.linux-kvm.org/images/a/ac/2010-forum-Async-page-faults.pdf
 
-Will
+My own question is whether this even makes any sense 10 years later.
+
+The HW has massively changed, and this adds a whole lot of complexity
+to both the hypervisor and the guest. It also plays very ugly games
+with the exception model, which doesn't give me the warm fuzzy feeling
+that it's going to be great.
+
+> Ok. I will test with the workload to build kernel or another better one 
+> to
+> represent the case.
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
