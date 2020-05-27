@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9284A1E4136
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:05:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F2511E413B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:05:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w9Uvyue02nG+dksC8h4YnrKSZrbxxnTM15Za1fzhopw=; b=UInqXMJRxjsanL
-	bsL7RNFapNWGVPctbTdStknxj2E8G/xQ7cBJfKou1qyKCp/+LHDdmZEwOYnC8MLNyvvnRt8Bwv9Yn
-	NfGkDTAKg0JFF1XZvzjUKmvSXu361VOmAZBwbRqSidWr6GYI7rfDRuySjlhWgSChAFXHpGUXskU5c
-	IDSFlhj3Ycg5pd/ZQvkkbFZxXvq5INloFXH8CCCvhWCkkRMX0y+1dwEpdLJNlBDHGri59dEAMK7nd
-	mjWj3vhu5dU12E3+44B7W5NvGuDlJp3OsK6ILMnQUUX9o83+lCcU42RGTUkfbEfSdB4Wvyra/q0nk
-	4/B815al5RDt2O8tqktQ==;
+	List-Owner; bh=y2NYSCeDIZkUYdS0ZHbacoU+7wuDi02W+DNJwhyzWFo=; b=ZFOj1Z2lwh+y0C
+	UdTMws9sfb/3VX4DRBvC1PIdNSJnK/oDH0TsPHpl8tc+LEN4h+4LXX7H30vCzA9Dj2bfxaUau0LGC
+	rJDP8QpUxF6i5zsWlasMs9meLJ17cnP9NA4YAp+qqymQDEYNaEn0CRpAAwCeZMoXm2EjFu0P/nu5d
+	/BYLXZsnRk5NvYtfjCPnPsrA8ddhv+6XIa8byQjlYzq5EgP0u+HXKM0utR1twvgoxOoyA88a7pE8Z
+	ExfNUDmkQgTfI+CIIHMpO+sV8loE14+5USy7Rur1vO0ALqtp8KRK0QfBlNRY4fGvaEBPK78GacdkV
+	nG0+ETeOTJw6QHrrXHcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jduns-0002fy-5n; Wed, 27 May 2020 12:05:00 +0000
+	id 1jduoY-0005WF-6z; Wed, 27 May 2020 12:05:42 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdudm-0006tb-Vc; Wed, 27 May 2020 11:54:38 +0000
+ id 1jdudn-0006uS-MT; Wed, 27 May 2020 11:54:38 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 7CF2FAF16;
- Wed, 27 May 2020 11:54:35 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id AD89AAD17;
+ Wed, 27 May 2020 11:54:36 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
  Scott Branden <sbranden@broadcom.com>
-Subject: [RFC 22/50] staging: vchi: Use enum vchiq_bulk_mode instead of vchi's
- transmission flags
-Date: Wed, 27 May 2020 13:53:27 +0200
-Message-Id: <20200527115400.31391-23-nsaenzjulienne@suse.de>
+Subject: [RFC 23/50] staging: vchi: Use vchiq's enum vchiq_reason
+Date: Wed, 27 May 2020 13:53:28 +0200
+Message-Id: <20200527115400.31391-24-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 References: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_045435_988245_4AD88563 
-X-CRM114-Status: GOOD (  17.09  )
+X-CRM114-CacheID: sfid-20200527_045436_070642_06AAD7C7 
+X-CRM114-Status: GOOD (  17.86  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,198 +73,211 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-vchi has a set of transfer flags which almost map 1:1 to vchiq's own
-transfer modes. For the sake of simplicity let's use the later and
-delete vchi's.
+enum vchi_callback_reason maps 1:1 to enum vchiq_reason, in an effort to
+simplify things, let's use the later, and get rid of the extra
+indirection.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- .../bcm2835-audio/bcm2835-vchiq.c             |  2 +-
- .../vc04_services/bcm2835-audio/bcm2835.h     |  1 +
- .../vc04_services/interface/vchi/vchi.h       |  4 +-
- .../interface/vchi/vchi_common.h              |  9 ----
- .../interface/vchiq_arm/vchiq_shim.c          | 44 ++-----------------
- .../vc04_services/vc-sm-cma/vc_sm_cma_vchi.c  |  1 +
- .../vc04_services/vchiq-mmal/mmal-vchiq.c     |  4 +-
- 7 files changed, 10 insertions(+), 55 deletions(-)
+ .../bcm2835-audio/bcm2835-vchiq.c             |  5 +--
+ .../interface/vchi/vchi_common.h              | 20 +---------
+ .../interface/vchiq_arm/vchiq_shim.c          | 40 +------------------
+ .../staging/vc04_services/vc-sm-cma/vc_sm.c   |  1 +
+ .../vc04_services/vc-sm-cma/vc_sm_cma_vchi.c  |  7 ++--
+ .../vc04_services/vchiq-mmal/mmal-vchiq.c     | 11 +++--
+ 6 files changed, 14 insertions(+), 70 deletions(-)
 
 diff --git a/drivers/staging/vc04_services/bcm2835-audio/bcm2835-vchiq.c b/drivers/staging/vc04_services/bcm2835-audio/bcm2835-vchiq.c
-index 68119246f10b..565853ec1e7a 100644
+index 565853ec1e7a..0f97eda4ec90 100644
 --- a/drivers/staging/vc04_services/bcm2835-audio/bcm2835-vchiq.c
 +++ b/drivers/staging/vc04_services/bcm2835-audio/bcm2835-vchiq.c
-@@ -348,7 +348,7 @@ int bcm2835_audio_write(struct bcm2835_alsa_stream *alsa_stream,
- 		/* Send the message to the videocore */
- 		status = vchi_bulk_queue_transmit(instance->service,
- 						  src, count,
--						  VCHI_FLAGS_BLOCK_UNTIL_DATA_READ,
-+						  VCHIQ_BULK_MODE_BLOCKING,
- 						  NULL);
- 	} else {
- 		while (count > 0) {
-diff --git a/drivers/staging/vc04_services/bcm2835-audio/bcm2835.h b/drivers/staging/vc04_services/bcm2835-audio/bcm2835.h
-index 2a94e825194f..7a0e4ab50fc7 100644
---- a/drivers/staging/vc04_services/bcm2835-audio/bcm2835.h
-+++ b/drivers/staging/vc04_services/bcm2835-audio/bcm2835.h
-@@ -9,6 +9,7 @@
- #include <sound/core.h>
- #include <sound/pcm.h>
- #include <sound/pcm-indirect.h>
-+#include "interface/vchiq_arm/vchiq_if.h"
- #include "interface/vchi/vchi.h"
+@@ -89,8 +89,7 @@ static int bcm2835_audio_send_simple(struct bcm2835_audio_instance *instance,
+ 	return bcm2835_audio_send_msg(instance, &m, wait);
+ }
  
- #define MAX_SUBSTREAMS   (8)
-diff --git a/drivers/staging/vc04_services/interface/vchi/vchi.h b/drivers/staging/vc04_services/interface/vchi/vchi.h
-index 92ce811fc28d..9a74ca4e1062 100644
---- a/drivers/staging/vc04_services/interface/vchi/vchi.h
-+++ b/drivers/staging/vc04_services/interface/vchi/vchi.h
-@@ -105,14 +105,14 @@ extern int32_t vchi_held_msg_release(struct vchi_held_msg *message);
- extern int32_t vchi_bulk_queue_receive(struct vchi_service *service,
- 				       void *data_dst,
- 				       uint32_t data_size,
--				       enum vchi_flags flags,
-+				       enum vchiq_bulk_mode mode,
- 				       void *transfer_handle);
+-static void audio_vchi_callback(void *param,
+-				const enum vchi_callback_reason reason,
++static void audio_vchi_callback(void *param, const enum vchiq_reason reason,
+ 				void *msg_handle)
+ {
+ 	struct bcm2835_audio_instance *instance = param;
+@@ -99,7 +98,7 @@ static void audio_vchi_callback(void *param,
+ 	unsigned size;
+ 	int status;
  
- // Routine to queue up data ready for transfer to the other (once they have signalled they are ready)
- extern int32_t vchi_bulk_queue_transmit(struct vchi_service *service,
- 					const void *data_src,
- 					uint32_t data_size,
--					enum vchi_flags flags,
-+				        enum vchiq_bulk_mode mode,
- 					void *transfer_handle);
+-	if (reason != VCHI_CALLBACK_MSG_AVAILABLE)
++	if (reason != VCHIQ_MESSAGE_AVAILABLE)
+ 		return;
  
- /******************************************************************************
+ 	status = vchi_msg_hold(instance->service, (void **)&m, &size, &handle);
 diff --git a/drivers/staging/vc04_services/interface/vchi/vchi_common.h b/drivers/staging/vc04_services/interface/vchi/vchi_common.h
-index e07376fe4dfd..52b447c19445 100644
+index 52b447c19445..24e8665e214a 100644
 --- a/drivers/staging/vc04_services/interface/vchi/vchi_common.h
 +++ b/drivers/staging/vc04_services/interface/vchi/vchi_common.h
-@@ -4,15 +4,6 @@
+@@ -4,27 +4,9 @@
  #ifndef VCHI_COMMON_H_
  #define VCHI_COMMON_H_
  
--//flags used when sending messages (must be bitmapped)
--enum vchi_flags {
--	VCHI_FLAGS_NONE                      = 0x0,
--	VCHI_FLAGS_BLOCK_UNTIL_OP_COMPLETE   = 0x1,   // waits for message to be received, or sent (NB. not the same as being seen on other side)
--	VCHI_FLAGS_CALLBACK_WHEN_OP_COMPLETE = 0x2,   // run a callback when message sent
--	VCHI_FLAGS_BLOCK_UNTIL_QUEUED        = 0x4,   // return once the transfer is in a queue ready to go
--	VCHI_FLAGS_BLOCK_UNTIL_DATA_READ     = 0x10,
+-//callback reasons when an event occurs on a service
+-enum vchi_callback_reason {
+-	/*
+-	 * This indicates that there is data available handle is the msg id that
+-	 * was transmitted with the data
+-	 * When a message is received and there was no FULL message available
+-	 * previously, send callback
+-	 * Tasks get kicked by the callback, reset their event and try and read
+-	 * from the fifo until it fails
+-	 */
+-	VCHI_CALLBACK_SERVICE_CLOSED,
+-	VCHI_CALLBACK_MSG_AVAILABLE,
+-	VCHI_CALLBACK_BULK_SENT,
+-	VCHI_CALLBACK_BULK_RECEIVED,
+-	VCHI_CALLBACK_BULK_TRANSMIT_ABORTED,
+-	VCHI_CALLBACK_BULK_RECEIVE_ABORTED,
 -};
 -
- //callback reasons when an event occurs on a service
- enum vchi_callback_reason {
- 	/*
+ //Callback used by all services / bulk transfers
+ typedef void (*vchi_callback)(void *callback_param, //my service local param
+-			      enum vchi_callback_reason reason,
++			      enum vchiq_reason reason,
+ 			      void *handle); //for transmitting msg's only
+ 
+ #endif // VCHI_COMMON_H_
 diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
-index 0466512cfe3c..3a5545e0db6b 100644
+index 3a5545e0db6b..649a65f02578 100644
 --- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
 +++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_shim.c
-@@ -3,6 +3,7 @@
- #include <linux/module.h>
+@@ -274,46 +274,10 @@ static enum vchiq_status shim_callback(enum vchiq_reason reason,
+ 	if (!service->callback)
+ 		goto release;
+ 
+-	switch (reason) {
+-	case VCHIQ_MESSAGE_AVAILABLE:
++	if (reason == VCHIQ_MESSAGE_AVAILABLE)
+ 		vchiu_queue_push(&service->queue, header);
+ 
+-		service->callback(service->callback_param,
+-				  VCHI_CALLBACK_MSG_AVAILABLE, NULL);
+-
+-		break;
+-
+-	case VCHIQ_BULK_TRANSMIT_DONE:
+-		service->callback(service->callback_param,
+-				  VCHI_CALLBACK_BULK_SENT, bulk_user);
+-		break;
+-
+-	case VCHIQ_BULK_RECEIVE_DONE:
+-		service->callback(service->callback_param,
+-				  VCHI_CALLBACK_BULK_RECEIVED, bulk_user);
+-		break;
+-
+-	case VCHIQ_SERVICE_CLOSED:
+-		service->callback(service->callback_param,
+-				  VCHI_CALLBACK_SERVICE_CLOSED, NULL);
+-		break;
+-
+-	case VCHIQ_BULK_TRANSMIT_ABORTED:
+-		service->callback(service->callback_param,
+-				  VCHI_CALLBACK_BULK_TRANSMIT_ABORTED,
+-				  bulk_user);
+-		break;
+-
+-	case VCHIQ_BULK_RECEIVE_ABORTED:
+-		service->callback(service->callback_param,
+-				  VCHI_CALLBACK_BULK_RECEIVE_ABORTED,
+-				  bulk_user);
+-		break;
+-
+-	default:
+-		WARN(1, "not supported\n");
+-		break;
+-	}
++	service->callback(service->callback_param, reason, bulk_user);
+ 
+ release:
+ 	return VCHIQ_SUCCESS;
+diff --git a/drivers/staging/vc04_services/vc-sm-cma/vc_sm.c b/drivers/staging/vc04_services/vc-sm-cma/vc_sm.c
+index e660f546a7e4..fcef607e9446 100644
+--- a/drivers/staging/vc04_services/vc-sm-cma/vc_sm.c
++++ b/drivers/staging/vc04_services/vc-sm-cma/vc_sm.c
+@@ -48,6 +48,7 @@
  #include <linux/types.h>
+ #include <asm/cacheflush.h>
  
 +#include "vchiq_if.h"
- #include "../vchi/vchi.h"
- #include "vchiq.h"
- #include "vchiq_core.h"
-@@ -57,30 +58,11 @@ EXPORT_SYMBOL(vchi_queue_kernel_message);
-  *
-  ***********************************************************/
- int32_t vchi_bulk_queue_receive(struct vchi_service *service, void *data_dst,
--				uint32_t data_size, enum vchi_flags flags,
-+				uint32_t data_size, enum vchiq_bulk_mode mode,
- 				void *bulk_handle)
- {
--	enum vchiq_bulk_mode mode;
- 	enum vchiq_status status;
- 
--	switch ((int)flags) {
--	case VCHI_FLAGS_CALLBACK_WHEN_OP_COMPLETE
--		| VCHI_FLAGS_BLOCK_UNTIL_QUEUED:
--		WARN_ON(!service->callback);
--		mode = VCHIQ_BULK_MODE_CALLBACK;
--		break;
--	case VCHI_FLAGS_BLOCK_UNTIL_OP_COMPLETE:
--		mode = VCHIQ_BULK_MODE_BLOCKING;
--		break;
--	case VCHI_FLAGS_BLOCK_UNTIL_QUEUED:
--	case VCHI_FLAGS_NONE:
--		mode = VCHIQ_BULK_MODE_NOCALLBACK;
--		break;
--	default:
--		WARN(1, "unsupported message\n");
--		return VCHIQ_ERROR;
--	}
--
- 	while (1) {
- 		status = vchiq_bulk_receive(service->handle, data_dst,
- 			data_size, bulk_handle, mode);
-@@ -116,31 +98,11 @@ EXPORT_SYMBOL(vchi_bulk_queue_receive);
- int32_t vchi_bulk_queue_transmit(struct vchi_service *service,
- 				 const void *data_src,
- 				 uint32_t data_size,
--				 enum vchi_flags flags,
-+				 enum vchiq_bulk_mode mode,
- 				 void *bulk_handle)
- {
--	enum vchiq_bulk_mode mode;
- 	enum vchiq_status status;
- 
--	switch ((int)flags) {
--	case VCHI_FLAGS_CALLBACK_WHEN_OP_COMPLETE
--		| VCHI_FLAGS_BLOCK_UNTIL_QUEUED:
--		WARN_ON(!service->callback);
--		mode = VCHIQ_BULK_MODE_CALLBACK;
--		break;
--	case VCHI_FLAGS_BLOCK_UNTIL_DATA_READ:
--	case VCHI_FLAGS_BLOCK_UNTIL_OP_COMPLETE:
--		mode = VCHIQ_BULK_MODE_BLOCKING;
--		break;
--	case VCHI_FLAGS_BLOCK_UNTIL_QUEUED:
--	case VCHI_FLAGS_NONE:
--		mode = VCHIQ_BULK_MODE_NOCALLBACK;
--		break;
--	default:
--		WARN(1, "unsupported message\n");
--		return VCHIQ_ERROR;
--	}
--
- 	while (1) {
- 		status = vchiq_bulk_transmit(service->handle, data_src,
- 			data_size, bulk_handle, mode);
-diff --git a/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c b/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
-index 826cac7922d2..b7de8526fc54 100644
---- a/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
-+++ b/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
-@@ -19,6 +19,7 @@
- #include <linux/slab.h>
- #include <linux/types.h>
- 
-+#include "interface/vchiq_arm/vchiq_if.h"
+ #include "vchiq_connected.h"
  #include "vc_sm_cma_vchi.h"
  
- #define VC_SM_VER  1
+diff --git a/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c b/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
+index b7de8526fc54..7efe42d51e46 100644
+--- a/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
++++ b/drivers/staging/vc04_services/vc-sm-cma/vc_sm_cma_vchi.c
+@@ -265,8 +265,7 @@ static int vc_sm_cma_vchi_videocore_io(void *arg)
+ 	return 0;
+ }
+ 
+-static void vc_sm_cma_vchi_callback(void *param,
+-				    const enum vchi_callback_reason reason,
++static void vc_sm_cma_vchi_callback(void *param, const enum vchiq_reason reason,
+ 				    void *msg_handle)
+ {
+ 	struct sm_instance *instance = param;
+@@ -274,11 +273,11 @@ static void vc_sm_cma_vchi_callback(void *param,
+ 	(void)msg_handle;
+ 
+ 	switch (reason) {
+-	case VCHI_CALLBACK_MSG_AVAILABLE:
++	case VCHIQ_MESSAGE_AVAILABLE:
+ 		complete(&instance->io_cmplt);
+ 		break;
+ 
+-	case VCHI_CALLBACK_SERVICE_CLOSED:
++	case VCHIQ_SERVICE_CLOSED:
+ 		pr_info("%s: service CLOSED!!", __func__);
+ 	default:
+ 		break;
 diff --git a/drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c b/drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c
-index 9f905f529d91..1d9a3f94799a 100644
+index 1d9a3f94799a..258cfab7d397 100644
 --- a/drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c
 +++ b/drivers/staging/vc04_services/vchiq-mmal/mmal-vchiq.c
-@@ -32,6 +32,7 @@
+@@ -674,8 +674,7 @@ static void bulk_abort_cb(struct vchiq_mmal_instance *instance,
+ }
  
- #include "vc-sm-cma/vc_sm_knl.h"
+ /* incoming event service callback */
+-static void service_callback(void *param,
+-			     const enum vchi_callback_reason reason,
++static void service_callback(void *param, const enum vchiq_reason reason,
+ 			     void *bulk_ctx)
+ {
+ 	struct vchiq_mmal_instance *instance = param;
+@@ -691,7 +690,7 @@ static void service_callback(void *param,
+ 	}
  
-+#include "interface/vchiq_arm/vchiq_if.h"
- #include "interface/vchi/vchi.h"
+ 	switch (reason) {
+-	case VCHI_CALLBACK_MSG_AVAILABLE:
++	case VCHIQ_MESSAGE_AVAILABLE:
+ 		status = vchi_msg_hold(instance->service, (void **)&msg,
+ 				       &msg_len, &msg_handle);
+ 		if (status) {
+@@ -756,15 +755,15 @@ static void service_callback(void *param,
  
- /*
-@@ -298,8 +299,7 @@ static void buffer_to_host_work_cb(struct work_struct *work)
- 				       * of 4 bytes
- 				       */
- 				      (len + 3) & ~3,
--				      VCHI_FLAGS_CALLBACK_WHEN_OP_COMPLETE |
--				      VCHI_FLAGS_BLOCK_UNTIL_QUEUED,
-+				      VCHIQ_BULK_MODE_CALLBACK,
- 				      msg_context);
+ 		break;
  
- 	vchi_service_release(instance->service);
+-	case VCHI_CALLBACK_BULK_RECEIVED:
++	case VCHIQ_BULK_RECEIVE_DONE:
+ 		bulk_receive_cb(instance, bulk_ctx);
+ 		break;
+ 
+-	case VCHI_CALLBACK_BULK_RECEIVE_ABORTED:
++	case VCHIQ_BULK_RECEIVE_ABORTED:
+ 		bulk_abort_cb(instance, bulk_ctx);
+ 		break;
+ 
+-	case VCHI_CALLBACK_SERVICE_CLOSED:
++	case VCHIQ_SERVICE_CLOSED:
+ 		/* TODO: consider if this requires action if received when
+ 		 * driver is not explicitly closing the service
+ 		 */
 -- 
 2.26.2
 
