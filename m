@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DA0D1E491B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:03:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 124481E492B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:04:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4f8U3phSU46saa6JkGpf1GAF6m+51xQqUcOT3GwWzWs=; b=u1Eg5lJQSJhHbb
-	PuKlKrJA1HVLcgQ3mk0sD7YGFijXSWrCD+VzoJyktegelkCn/X6tatmW6jVNl6iHnoh8TMPXtK7QM
-	2kmhsqYGTawgdh+czL+yFzjd/sMYiE9f995ysrjlw45naXheOAyzACyNhq/NPyaWr1IiwCDljIRwQ
-	hI+ExF6C5hcwciUxReuS3Ahp6Kv0m9fC6M2ds7dy+B7ZPx7sA++Q4jQ/I+CQHpcOIRE/EJL7Vcv2U
-	JiG+KENKCWnUBUnYf06emAyvmEwG2ofdqbrAxoe+DVN3YsTn2NtwBGmpt7cpTednWGlRAljQup+ht
-	zHVM5Lye5hDqH6RI3uww==;
+	List-Owner; bh=QPJrmW041w33cPF2860deGS8qaIRkytNkTwygrbEcx8=; b=KTXayBLOmkmLFq
+	oivhMaGTfyHOnVUtctgML6u1rkNvsfxJlVR1Zh+uhd6Ghq26kToT4laRQOXi8nHBb9PhznB5sX/Lr
+	BAf9yO3PNeGXqnmMEpPdfxacnMXpKGiCE7/z2d1ssmqYoMfWG3wA5oBfnB8BRGY1j8OpieWy89iyQ
+	Wr1NiYr530h9BcUwzP8rF0QaiP8eBN1KeJ76E5ShzZg1NT4wdFoMxkoxNRE4Qsarz26Ajjc4m0ue5
+	zidaZp1K4cMnf4sBCf29CKEzEGD660mErI27xpNWPJb2V5YZTeCxWgaPw0OZ48slep7RAyVUdI3Kb
+	knGz6atw08mQgs9P2Pnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyWR-0006AF-Gu; Wed, 27 May 2020 16:03:15 +0000
+	id 1jdyX4-0006dZ-Qe; Wed, 27 May 2020 16:03:54 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyJD-00067q-L0; Wed, 27 May 2020 15:49:38 +0000
+ id 1jdyJF-000692-Aa; Wed, 27 May 2020 15:49:41 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 95A4F582007;
- Wed, 27 May 2020 11:49:34 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:49:34 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id E454958200C;
+ Wed, 27 May 2020 11:49:35 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:49:35 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=9VNSPM39dPjV/
- 5EKHPEmX5F0pfjtv/pW8b8YIRJwQsE=; b=Zu2ERzNbysuyjRUW9ui7IOax81fJn
- /PuKKzKalOtkCUNlbWOtj/awsnqJMz5hfCLySk4u2DdholnRmwlJOzECoclBO1Ll
- m/1vSvCub4hMOknEiRfnSx1Uh6eF5ZxWUqNbual67rDF7LZskuaOhhiBKE08GZxj
- o/EchnMpcZiD6Vr5raNkNp6lIlEnTZcLKSDvda46Jvh70ZUyKf8mSVIDxLs9QxUd
- sMsWGCe4JDnK4btlzDe97w6VWiTvv1oIPiFG3masPYVS8j0x4furil5JP/Tuq+7Y
- 2Hy6lQwIQKZ4Q4z6QAW8oxJvaWnEayP1D9viwssMLIv1eY5FQ7qx7Yi0A==
+ :mime-version:content-transfer-encoding; s=fm2; bh=YPVkA42r4+6W/
+ vsowzv0aziDtj61rrsZr23S9R/5TQU=; b=XNpVcwyPtZWTwFeClLwvn2VVGagf0
+ Bs6fEtH3FcRLgmtRdIRmTZhM+Dnqd9yH8WxLZyW8jpLLaiPf2CB8furjPHarv0iZ
+ PK88iGXrKVgWdVOvd7YWHlogEqhOWmOPfhhP+qa7RXAg3lDV266z9908dDdKN/sg
+ Bdln+az6WoWgiu6rWCa2HPevnX3HH0SxgDAL/AJCWU46CGYdxldChmvktJT8zMGB
+ TodJmt6xWaJ6BCGBbnNy6+LqroZaCcEa57wKGxDGzgSi6ZmP7dRrNjsMWl6u6+Ea
+ 9pnWiKmKSe1xAa/7KNriWAe8yquQkCWLvL0I1oAVVaU1IBbi5K6jQh6Kg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=9VNSPM39dPjV/5EKHPEmX5F0pfjtv/pW8b8YIRJwQsE=; b=TGcyIT+6
- ZJksWnbv04zfv4ORiD9qWzVEvqr5FW9haI32kWovSBeWt0Mfm/f0Le1mXsxHpErc
- 9lBSifKVS3jaGEpQDsga7l0P4MMdKoaWD94IC4ncHRtTphGXNytbPybU2NqDUd+T
- tW4kstJWIMZIJJE1Nt8a3k9BhJyzenL+KwX6IETBs1/xd9dRt0vMEaXAIjrWO3Nw
- otNmRPqgiRbdP5l8S+nK8iOQAnygZtW3U2c0SKRZiDgnQ7N5ViToy1iNYPbSyACy
- xL74QIq1sy9ZJccKLspswGfnUMGDK5ME3bKjuR94wRHeO2RYYqHCC4vV5a/wyPv/
- dTgV80+s0eD8Dg==
-X-ME-Sender: <xms:DozOXghRpF60Ats_V7Pkd_YqvkD-DOcLC2keMa3KmBPbnQJ710-HKQ>
+ fm2; bh=YPVkA42r4+6W/vsowzv0aziDtj61rrsZr23S9R/5TQU=; b=fufEWdsT
+ Kd8ktmA5+TYW4s6jgpNEqmI4SxKT/fLxVb1fQGaOR3zRF2rQwh7PkMsivFmYmw3Q
+ H7A62bRivCTmHU1SwbmD1xBucJbRDfxMGCYat3kBa2SqMjGHjeGuvgF+QrUr5FC/
+ OeI54ih7/O5HJ88AqxjZXoIwYxPP4xKaoOID4ZE5ZV0Kx8vW5j0Q8pEIxwVeEoQn
+ DCAQVEFRy5cXlEf672qPvyql2E9zOToEhJ4zRFhySieFyooFB+1O1RKf1JPEvGkm
+ D9FUEX5epNNPvN3VangyCOjGH0VeV9DezR/oho+ztyHVayTFwt6nNh3DpenuZX+Y
+ 15/2iRPr0x8HGA==
+X-ME-Sender: <xms:D4zOXqOusdx61rev90hPIZGH1vuqhA_2KqXrFrFDZWkmuoP-Fchi4w>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,28 +56,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepfedune
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:DozOXpDMGdhqpWrzgU4B46gDGudNCfHulI-g2mhR3I7P5YVaw2xWqg>
- <xmx:DozOXoHR5Zyv2niY-HoCGqBlEO8skX2XC9qxvxnbwu4WQC9hjqSFtw>
- <xmx:DozOXhSG440H8499WEPUXZCmFm6n9nEI-v1FHoWWk4d63jBI30TrBQ>
- <xmx:DozOXsyaz7VNj9GjcpHT0DqV2ZcxX2YHJfBhSqz-Vp3dIRiNUV5zjw>
+X-ME-Proxy: <xmx:D4zOXo_pxzp6ijX0Pzr6vZPSXnSoAWJG57L4rshBpUAMGMY1Lyxgdg>
+ <xmx:D4zOXhREKewy6wNWTlm-UtglLTeRtNPxlOeFiZ5zpiTAbCieQFg04g>
+ <xmx:D4zOXqtgDwAhwqRXclj7u1mW5dIBxgHd2-5KoYW2dfudphPapqZbCg>
+ <xmx:D4zOXov1yuNOH20ViF9bKgDmJwm02AAE4-d5_IL7xBZ5qlteErTeJg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 052973062499;
- Wed, 27 May 2020 11:49:33 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 84A53328005E;
+ Wed, 27 May 2020 11:49:35 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 011/105] drm/vc4: drv: Add include guards
-Date: Wed, 27 May 2020 17:47:41 +0200
-Message-Id: <68e89e315c4c35b313efc277c9642eca684e0ade.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 012/105] drm/vc4: drv: Support BCM2711
+Date: Wed, 27 May 2020 17:47:42 +0200
+Message-Id: <49c552751ec619e03371bc4bb1b9ec66c8423bf7.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_084935_897427_B70D517E 
-X-CRM114-Status: UNSURE (   5.88  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200527_084937_854465_56BFA8B2 
+X-CRM114-Status: GOOD (  13.93  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -118,33 +117,135 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-vc4_drv.h doesn't have any include guards which prevents it from being
-included twice. Let's add them.
+The BCM2711 has a reworked display pipeline, and the load tracker needs
+some adjustement to operate properly. Let's add a compatible for BCM2711
+and disable the load tracker until properly supported.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_drv.h | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/gpu/drm/vc4/vc4_drv.c   |  1 +-
+ drivers/gpu/drm/vc4/vc4_drv.h   |  3 ++-
+ drivers/gpu/drm/vc4/vc4_kms.c   | 42 +++++++++++++++++++++++-----------
+ drivers/gpu/drm/vc4/vc4_plane.c |  5 ++++-
+ 4 files changed, 38 insertions(+), 13 deletions(-)
 
+diff --git a/drivers/gpu/drm/vc4/vc4_drv.c b/drivers/gpu/drm/vc4/vc4_drv.c
+index 76f93b662766..d7f554a6f0ed 100644
+--- a/drivers/gpu/drm/vc4/vc4_drv.c
++++ b/drivers/gpu/drm/vc4/vc4_drv.c
+@@ -364,6 +364,7 @@ static int vc4_platform_drm_remove(struct platform_device *pdev)
+ }
+ 
+ static const struct of_device_id vc4_of_match[] = {
++	{ .compatible = "brcm,bcm2711-vc5", },
+ 	{ .compatible = "brcm,bcm2835-vc4", },
+ 	{ .compatible = "brcm,cygnus-vc4", },
+ 	{},
 diff --git a/drivers/gpu/drm/vc4/vc4_drv.h b/drivers/gpu/drm/vc4/vc4_drv.h
-index 3b1f02efefbe..6f50a91e3933 100644
+index 6f50a91e3933..649bf47c80e5 100644
 --- a/drivers/gpu/drm/vc4/vc4_drv.h
 +++ b/drivers/gpu/drm/vc4/vc4_drv.h
-@@ -2,6 +2,8 @@
- /*
-  * Copyright (C) 2015 Broadcom
-  */
-+#ifndef _VC4_DRV_H_
-+#define _VC4_DRV_H_
+@@ -201,6 +201,9 @@ struct vc4_dev {
  
- #include <linux/delay.h>
- #include <linux/refcount.h>
-@@ -897,3 +899,5 @@ int vc4_perfmon_destroy_ioctl(struct drm_device *dev, void *data,
- 			      struct drm_file *file_priv);
- int vc4_perfmon_get_values_ioctl(struct drm_device *dev, void *data,
- 				 struct drm_file *file_priv);
+ 	int power_refcount;
+ 
++	/* Set to true when the load tracker is supported. */
++	bool load_tracker_available;
 +
-+#endif /* _VC4_DRV_H_ */
+ 	/* Set to true when the load tracker is active. */
+ 	bool load_tracker_enabled;
+ 
+diff --git a/drivers/gpu/drm/vc4/vc4_kms.c b/drivers/gpu/drm/vc4/vc4_kms.c
+index 78d4fb0499e3..9417e45d981f 100644
+--- a/drivers/gpu/drm/vc4/vc4_kms.c
++++ b/drivers/gpu/drm/vc4/vc4_kms.c
+@@ -415,6 +415,9 @@ static int vc4_load_tracker_atomic_check(struct drm_atomic_state *state)
+ 	struct drm_plane *plane;
+ 	int i;
+ 
++	if (!vc4->load_tracker_available)
++		return 0;
++
+ 	priv_state = drm_atomic_get_private_obj_state(state,
+ 						      &vc4->load_tracker);
+ 	if (IS_ERR(priv_state))
+@@ -514,10 +517,14 @@ int vc4_kms_load(struct drm_device *dev)
+ 	struct vc4_load_tracker_state *load_state;
+ 	int ret;
+ 
+-	/* Start with the load tracker enabled. Can be disabled through the
+-	 * debugfs load_tracker file.
+-	 */
+-	vc4->load_tracker_enabled = true;
++	if (!of_device_is_compatible(dev->dev->of_node, "brcm,bcm2711-vc5")) {
++		vc4->load_tracker_available = true;
++
++		/* Start with the load tracker enabled. Can be
++		 * disabled through the debugfs load_tracker file.
++		 */
++		vc4->load_tracker_enabled = true;
++	}
+ 
+ 	sema_init(&vc4->async_modeset, 1);
+ 
+@@ -531,8 +538,14 @@ int vc4_kms_load(struct drm_device *dev)
+ 		return ret;
+ 	}
+ 
+-	dev->mode_config.max_width = 2048;
+-	dev->mode_config.max_height = 2048;
++	if (!of_device_is_compatible(dev->dev->of_node, "brcm,bcm2711-vc5")) {
++		dev->mode_config.max_width = 7680;
++		dev->mode_config.max_height = 7680;
++	} else {
++		dev->mode_config.max_width = 2048;
++		dev->mode_config.max_height = 2048;
++	}
++
+ 	dev->mode_config.funcs = &vc4_mode_funcs;
+ 	dev->mode_config.preferred_depth = 24;
+ 	dev->mode_config.async_page_flip = true;
+@@ -547,14 +560,17 @@ int vc4_kms_load(struct drm_device *dev)
+ 	drm_atomic_private_obj_init(dev, &vc4->ctm_manager, &ctm_state->base,
+ 				    &vc4_ctm_state_funcs);
+ 
+-	load_state = kzalloc(sizeof(*load_state), GFP_KERNEL);
+-	if (!load_state) {
+-		drm_atomic_private_obj_fini(&vc4->ctm_manager);
+-		return -ENOMEM;
+-	}
++	if (vc4->load_tracker_available) {
++		load_state = kzalloc(sizeof(*load_state), GFP_KERNEL);
++		if (!load_state) {
++			drm_atomic_private_obj_fini(&vc4->ctm_manager);
++			return -ENOMEM;
++		}
+ 
+-	drm_atomic_private_obj_init(dev, &vc4->load_tracker, &load_state->base,
+-				    &vc4_load_tracker_state_funcs);
++		drm_atomic_private_obj_init(dev, &vc4->load_tracker,
++					    &load_state->base,
++					    &vc4_load_tracker_state_funcs);
++	}
+ 
+ 	drm_mode_config_reset(dev);
+ 
+diff --git a/drivers/gpu/drm/vc4/vc4_plane.c b/drivers/gpu/drm/vc4/vc4_plane.c
+index 91e408f7a56e..57a73a2e2e5c 100644
+--- a/drivers/gpu/drm/vc4/vc4_plane.c
++++ b/drivers/gpu/drm/vc4/vc4_plane.c
+@@ -492,6 +492,11 @@ static void vc4_plane_calc_load(struct drm_plane_state *state)
+ 	struct vc4_plane_state *vc4_state;
+ 	struct drm_crtc_state *crtc_state;
+ 	unsigned int vscale_factor;
++	struct vc4_dev *vc4;
++
++	vc4 = to_vc4_dev(state->plane->dev);
++	if (!vc4->load_tracker_available)
++		return;
+ 
+ 	vc4_state = to_vc4_plane_state(state);
+ 	crtc_state = drm_atomic_get_existing_crtc_state(state->state,
 -- 
 git-series 0.9.1
 
