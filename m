@@ -2,68 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D8721E34B4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 03:26:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C31FF1E34B7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 03:27:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1V8JP+Wa44iE0tK1RjpQG1fuB6I4Omami44mpm+OvkI=; b=aQ67P6u7W6wyP1
-	IlmygWaAX7QUc2g3Rzgm1RcGU0Gyt3SkLAlSC6c+CpgMt6My4joLbL2PuVYSHA0k23xbvq0b6CtLt
-	NAG5U6JQlvT85MO5vDzd42V/yKgPsih6QrujCcbCjxuPTkMBatpAb9h6QD8FxvOyc3nSzw+nIq2Bb
-	fVnXlHsfIQuZF2+j5oI5TwX7x6BtMwfiEBeoh5AYsGv24DHlp8AsG6+Z9bo9vdgHV6n6TeUj11G3X
-	EUOP7DDi1CSl8DmrH/uKmoHJRo+bhbMEEpkMztCgQ5JfcTWzuxsxJBAZ9iLf7EZ6nEGCAquZKQ8T0
-	JwicgL5eA6GUuYGvSGJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=RPKiYIq0URgWB7dPZKZF846IpI4u9OHxLdSbykngZZg=; b=Ae8Q9XdL+yrXtD
+	Caba3/TNZQaRc1JBFRvI0OcR6Abm2KGTPXDw/DW2UFYtEoIw2R8gW5NkwEqAIpyC8uTWSSraNWrXn
+	S3D9baFM/iuQA/H0pWqOskN59OYFA1q4TyOPdIPelJuVGtngu8iczcCWuglxgLcQUIsM0sWhILIco
+	zhvHXyLtzap3jbvHXru4WqT7oUilG3mnG7ajxhjsuT2Kkd8s1hBwtlEumkL4UVkT5dc2uJC/ZFf3Z
+	nVoYKIp3jbM6RtTy0xTUiswU5x5OdhSNo5gtPINUbJrzdVWOdtOtxShI/COorhPUkow7JJtLC/Q4a
+	N9CpeI71ZM5XQC1K3uGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdkq9-0007pJ-7p; Wed, 27 May 2020 01:26:41 +0000
+	id 1jdkqn-0008IH-VB; Wed, 27 May 2020 01:27:21 +0000
 Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdkpz-0007o7-4w
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 01:26:32 +0000
+ id 1jdkq0-0007o6-G9
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 01:26:33 +0000
 Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
  hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5ecdc1730000>; Tue, 26 May 2020 18:25:07 -0700
+ id <B5ecdc1730001>; Tue, 26 May 2020 18:25:07 -0700
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate101.nvidia.com (PGP Universal service);
  Tue, 26 May 2020 18:26:30 -0700
 X-PGP-Universal: processed;
  by hqpgpgate101.nvidia.com on Tue, 26 May 2020 18:26:30 -0700
-Received: from HQMAIL105.nvidia.com (172.20.187.12) by HQMAIL105.nvidia.com
+Received: from HQMAIL101.nvidia.com (172.20.187.10) by HQMAIL105.nvidia.com
  (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 27 May
  2020 01:26:29 +0000
-Received: from hqnvemgw03.nvidia.com (10.124.88.68) by HQMAIL105.nvidia.com
- (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+Received: from hqnvemgw03.nvidia.com (10.124.88.68) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
  Transport; Wed, 27 May 2020 01:26:29 +0000
 Received: from sandstorm.nvidia.com (Not Verified[10.2.50.17]) by
  hqnvemgw03.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5ecdc1c50003>; Tue, 26 May 2020 18:26:29 -0700
+ id <B5ecdc1c50004>; Tue, 26 May 2020 18:26:29 -0700
 From: John Hubbard <jhubbard@nvidia.com>
 To: LKML <linux-kernel@vger.kernel.org>
-Subject: [PATCH 0/3] misc: xilinx-sdfec: convert get_user_pages() -->
- pin_user_pages()
-Date: Tue, 26 May 2020 18:26:25 -0700
-Message-ID: <20200527012628.1100649-1-jhubbard@nvidia.com>
+Subject: [PATCH 1/3] misc: xilinx-sdfec: improve get_user_pages_fast() error
+ handling
+Date: Tue, 26 May 2020 18:26:26 -0700
+Message-ID: <20200527012628.1100649-2-jhubbard@nvidia.com>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200527012628.1100649-1-jhubbard@nvidia.com>
+References: <20200527012628.1100649-1-jhubbard@nvidia.com>
 MIME-Version: 1.0
 X-NVConfidentiality: public
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1590542707; bh=ShQgIonpjrN4inaE1D0TnZ3TUuscVNocNaQmsilKjaU=;
+ t=1590542707; bh=Z0H0NZ0azdDBw/pz6UaXScJeua7CgszsKUI21rNpIIc=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
- MIME-Version:X-NVConfidentiality:Content-Transfer-Encoding:
- Content-Type;
- b=DBpk2k6ro/0XXj68bcDqWQcx8cjVF1G1CWq87yBfGN5cMiOnhENPviM2iWntlKn2t
- o1gJ8CRO8dAOb+tBbeIum7XxxUWC1h4176vnIvX63IU33nOyDTa4THZEKWIkcJLsEx
- ZWii9wgRuJtOH2aehgsQYBsjEd/trbfA5O4v2ww+O/FmC3ZdDYatQMjJjKS5kZrTwK
- MvLpS0daX/yjs22DyOZg8gzhikwnOc48q9FrQ9aH44XTZDI88S3l5/95rjEhFnc2T+
- EwXKhULuozxf39W7WkcSpNNES+wVqKSaMsV7E8wGTLBdks85ci4QX/DY5o6YXrQLAa
- ENc8VhUaLjJTg==
+ In-Reply-To:References:MIME-Version:X-NVConfidentiality:
+ Content-Transfer-Encoding:Content-Type;
+ b=A8UwiX4zwnd0jIKivrFW1WRvjUMNk0bhMGLDQydxVtXYlh9U/1D/h8QUT4RVJSryq
+ BRY0WYKCu1Gcvx0n9z19TiS0jBZtZuVoHRyy+ZbyEQztjj66vY+dTPfRosbo2uSsgD
+ ADGiYR4EScHloc8SrbdXxAfUgtaQLNAxZHmtgVtnKtxAJINkGsx7qlqC3Gb4YP4/UD
+ aM+1SfGtF/Yy6j1DfnjNNcr+ASerSgFkpMfQsK/L6j4lztD5i8TOU4GShn8O8zWpab
+ VAgP6OLlntY0JSi0Se/r9D9Q9r8lE1kyIantgllKdq77Np8d8b+qgAZJEUufvH8Sqh
+ hRmQjiA9iUueg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_182631_207831_BEC69B52 
-X-CRM114-Status: UNSURE (   6.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200526_182632_542946_554D521D 
+X-CRM114-Status: GOOD (  14.72  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -103,33 +104,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+This fixes the case of get_user_pages_fast() returning a -errno.
+The result needs to be stored in a signed integer. And for safe
+signed/unsigned comparisons, it's best to keep everything signed.
+And get_user_pages_fast() also expects a signed value for number
+of pages to pin.
 
-There are also a couple of tiny cleanup patches, just to fix up a few
-minor issues that I spotted while converting from get_user_pages_fast()
-to pin_user_pages_fast().
+Therefore, change most relevant variables, from u32 to int. Leave
+"n" unsigned, for convenience in checking for overflow. And provide
+a WARN_ON_ONCE() and early return, if overflow occurs.
 
-Note that I have only compile-tested these patches, although that does
-also include cross-compiling for a few other arches. Any run-time
-testing would be greatly appreciated!
+Also, as long as we're tidying up: rename the page array from page,
+to pages, in order to match the conventions used in most other call
+sites.
 
+Fixes: 20ec628e8007e ("misc: xilinx_sdfec: Add ability to configure LDPC")
 Cc: Derek Kiernan <derek.kiernan@xilinx.com>
 Cc: Dragan Cvetic <dragan.cvetic@xilinx.com>
 Cc: Arnd Bergmann <arnd@arndb.de>
 Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 Cc: Michal Simek <michal.simek@xilinx.com>
 Cc: linux-arm-kernel@lists.infradead.org
+Signed-off-by: John Hubbard <jhubbard@nvidia.com>
+---
+ drivers/misc/xilinx_sdfec.c | 27 +++++++++++++++++----------
+ 1 file changed, 17 insertions(+), 10 deletions(-)
 
-John Hubbard (3):
-  misc: xilinx-sdfec: improve get_user_pages_fast() error handling
-  misc: xilinx-sdfec: cleanup return value in xsdfec_table_write()
-  misc: xilinx-sdfec: convert get_user_pages() --> pin_user_pages()
-
- drivers/misc/xilinx_sdfec.c | 30 +++++++++++++++++-------------
- 1 file changed, 17 insertions(+), 13 deletions(-)
-
-
-base-commit: 9cb1fd0efd195590b828b9b865421ad345a4a145
+diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
+index 71bbaa56bdb5..e2766aad9e14 100644
+--- a/drivers/misc/xilinx_sdfec.c
++++ b/drivers/misc/xilinx_sdfec.c
+@@ -602,10 +602,10 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
+ 			      const u32 depth)
+ {
+ 	u32 reg = 0;
+-	u32 res;
+-	u32 n, i;
++	int res, i, nr_pages;
++	u32 n;
+ 	u32 *addr = NULL;
+-	struct page *page[MAX_NUM_PAGES];
++	struct page *pages[MAX_NUM_PAGES];
+ 
+ 	/*
+ 	 * Writes that go beyond the length of
+@@ -622,15 +622,22 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
+ 	if ((len * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE)
+ 		n += 1;
+ 
+-	res = get_user_pages_fast((unsigned long)src_ptr, n, 0, page);
+-	if (res < n) {
+-		for (i = 0; i < res; i++)
+-			put_page(page[i]);
++	if (WARN_ON_ONCE(n > INT_MAX))
++		return -EINVAL;
++
++	nr_pages = n;
++
++	res = get_user_pages_fast((unsigned long)src_ptr, nr_pages, 0, pages);
++	if (res < nr_pages) {
++		if (res > 0) {
++			for (i = 0; i < res; i++)
++				put_page(pages[i]);
++		}
+ 		return -EINVAL;
+ 	}
+ 
+-	for (i = 0; i < n; i++) {
+-		addr = kmap(page[i]);
++	for (i = 0; i < nr_pages; i++) {
++		addr = kmap(pages[i]);
+ 		do {
+ 			xsdfec_regwrite(xsdfec,
+ 					base_addr + ((offset + reg) *
+@@ -639,7 +646,7 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
+ 			reg++;
+ 		} while ((reg < len) &&
+ 			 ((reg * XSDFEC_REG_WIDTH_JUMP) % PAGE_SIZE));
+-		put_page(page[i]);
++		put_page(pages[i]);
+ 	}
+ 	return reg;
+ }
 -- 
 2.26.2
 
