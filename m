@@ -2,83 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 437BC1E4001
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:27:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A0FA1E4006
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:28:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5UAtiLkE6kzGzxj/xugWQZeDGVsvDui4wq/+Xkd0xVU=; b=FsNEozll3On1FS
-	UHwkpSVljXxJxvJScO7UYpeDVuRoCoS0Vmc0Qgsohe90DCX5gSLkU/tm+Aya1StYsuAQt/+JYLcMh
-	Hqp7HU6KeC2gILzbHWXvxsAw9kTFHcdjLJpS4bWf+Q0E+JvpOaJFyt0qeC6pocyDOI5F7rOHaHG3N
-	FIe/Rb4/kdG8Y5LGMcpCMvpe4hVYEtPX+s7Rtxv5W8r8sjYkORRl5gijgwDykj33JiZl4o908AHSG
-	IS8AgHS86KOdFhZ4VS6V6ovqvZzxqyeCcMxbT0WpJOBJ8EVlVuUc6ZaFzfEAvphyX58PhHu0mxBid
-	DOHlGoA8BSOG69xWWYKA==;
+	List-Owner; bh=wDNq9KvfxgfsM9qxstEDNOfgeOW6eLZY0J6T7L1jpYY=; b=kSNOhoBct5w69o
+	zV0KBtJP+TsD9tXHr1fl9OgXBQY7tHaCC5SAAR4dW9gW0ks3VN5CPrLfgU471kYt60BUKWlnYDxE3
+	CL3aQHl7AKzCe5YNl8UHzRCmIJCSUUqJzervYm83BJopjJAEuDr0d8n/mNiP9NugSKf7A7lrFFGzi
+	Xz82ZlR/p8UFN9jQF1AV/ZKpezR0WMl6jB4z+w74BfwOdp3m4VSnQQksBPzgGdi0S2TJ2DO6S0A8x
+	8aM8FVlTUPm3ewP6z5rGtrsms+vlE33kP6e70cQRv62LYTXc8x6fK1c62BJnGmvrIRxQKn09S1gVF
+	M+GySpcaJmLOTLNz1RPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jduDt-0004h9-3w; Wed, 27 May 2020 11:27:49 +0000
-Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
+	id 1jduEQ-00054x-7a; Wed, 27 May 2020 11:28:22 +0000
+Received: from mail-vi1eur05on2078.outbound.protection.outlook.com
+ ([40.107.21.78] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jduCg-0003my-Qk
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:26:36 +0000
-Received: by mail-lf1-x143.google.com with SMTP id 202so14239707lfe.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 04:26:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=7O70g2lJGWAJBSxv7+BPv+EgaUlJHCXJMM3QrFbfLoU=;
- b=XsUGywVbPPu2a5crGLJmxPTCsuzR0OuIQ+aBzOOBv++1v3NKjBLrrjSSZcDpiYN0qf
- Dqa0KgBDDL2GMXstARbs0S3GGlmSB6moGoADwt2Gf9llGEkgAQoEEbIxpiCeugl/wXdJ
- 1Y7er1GA02R3sgkVvwl7nNkN/XKDaMMP9Wjvt0SWx7XmF54qZM7DmAzM4MJwI1dZ8eli
- ASI8yK3ag/j5xU4oDjT5/oP5EaLGYEpesbrFqrn6AVy/NiIea1s2hRKTrr2EHjKvVfgG
- 4J+BYiAZgDrSD/C3CkWmD+A/yT8MjSYIMj7StC2bFYg9auoVk0KpMirlMocizL+A561/
- 0/0g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=7O70g2lJGWAJBSxv7+BPv+EgaUlJHCXJMM3QrFbfLoU=;
- b=uQ7HxapyM8ceVg8goWr79jhdq8/WihbnQYQi+7M4Hrfh7iqUPP5ehOk3yaHhR1D/8H
- SfYg0fdJbT/01DHMhASEII8nFabVUHUfhJv6qNY+W9k7Iom6vmLCRRVAtn75UOY/vfwr
- Bb0BkN9a+kjdzxILIsdVhEoGGI3EOYI7n04bp9c54W6ENBUlsjc8JLRhAg7eJ2blkfR3
- C1pEyPTHI/DiUtlq/mdpwH1NgU5DaQHulea6Rasb3b+VfpdOrl7ZNgy42y+2HcqGavxR
- YlYKDUIqWvv0GF93AbgjGBD7O/xQ9jZBeYZeBYlQUE06PuZ0qeR29+KbYrYvRPUNebrF
- 3gEg==
-X-Gm-Message-State: AOAM5332pWeWiauQ0v5gkX4z3QYJZR44rzRLJNv29ON4aEE7e1uc2gad
- aFW4lpje+hDKXToM0MV/EYQiARxKxfs=
-X-Google-Smtp-Source: ABdhPJxqhuM7NA8BFMzydGM+AFjiGQCKOMTJMKG2dfNheWXSg5exJmnEkRYX48DfquyDmwLY2gQZtQ==
-X-Received: by 2002:ac2:5604:: with SMTP id v4mr2364028lfd.124.1590578792196; 
- Wed, 27 May 2020 04:26:32 -0700 (PDT)
-Received: from localhost (c-8c28e555.07-21-73746f28.bbcust.telenor.se.
- [85.229.40.140])
- by smtp.gmail.com with ESMTPSA id n22sm627557ljj.138.2020.05.27.04.26.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 May 2020 04:26:31 -0700 (PDT)
-From: Anders Roxell <anders.roxell@linaro.org>
-To: soc@kernel.org
-Subject: [PATCH 5/5] power: vexpress: make the reset driver a module
-Date: Wed, 27 May 2020 13:26:08 +0200
-Message-Id: <20200527112608.3886105-6-anders.roxell@linaro.org>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200527112608.3886105-1-anders.roxell@linaro.org>
-References: <20200527112608.3886105-1-anders.roxell@linaro.org>
+ id 1jduE8-000512-01
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:28:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=CJmRpu/hb5+ayKVywN3a+vnrqCRisD9vlF4TQt8vDaCmJPBdrX1zLcRP9mdlqJzQ8CDc+T9EdTrXVLmHCIJgCVfC2dQxDVeigvJ2Qnn9QZdfgAbp0gki2L9Cp5qxtjXYEFVsclkIC2iDK1rdUkS1scaFOcH5pCitRdnyRdyoOq6fE4GwWJgbE/bqDX1/0W2G4Taj7bGovkO5p6BXwChMyllUKdjIPPgFnJOh2ypQteBVxBIcuYYYLsQjGsH69GI5AWcqqZCTdzpAa0fa2jrk8Lmfya8FnARBiZ0PdBEebL5qj0cPTDS5gt8Z8FdTlSS40x8EKHlA9qwJ7l8JQ59FIQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tT0GukeElKYbB98PcWdMfP//Sij0YgNHAYxGNl4QhPU=;
+ b=Pdh/Jb22G3g/6672pJlRPDEMI953/JkkSYHL+GD7k+81Rr4+phgyXzWfBVnzi216a2AtOCob9KWxGCTHbWkbWP4afgsgmBISUrktxBrVu9RcNAlSxFq46iphGTTxeGaMaymxvVxdie2FdpVlEevkNXa0zD+2HCwTK+JFQf69dlx0jMbfCFB8BQaU5zmT9n4xUh/0xAH6UD52tdvSy0HCKcsl4vg1pqAjA25yyaSW/HDKdYUaBp0vxucp0P7pmMWR4v6gabSEJUrerGoPBqBL2e9oDjpuxIv6WuSHCCRuGGEGGqxTWx1bTCYPzrTTDLCBGFAJ2WTsgXdc+SdSR9GBLQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=vaisala.com; dmarc=pass action=none header.from=vaisala.com;
+ dkim=pass header.d=vaisala.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vaisala.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tT0GukeElKYbB98PcWdMfP//Sij0YgNHAYxGNl4QhPU=;
+ b=rbPRGHIXrdDOtnj27dN/IL5aN/9//he5Zy6I8W1eJQyWhi/j5tBfqCIW513eiA0ikCETY5CLoaol0+kf1+HPxnVq2VOP0OsIH49CYqdqEKxMTU/B7Hudb7A+SJXt5WufFcFtzIDi0hPcH0TYDotpVDNp9Rgt7J/Qq5HA0Zbisd8=
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com (2603:10a6:208:107::25)
+ by AM0PR06MB5970.eurprd06.prod.outlook.com (2603:10a6:208:119::13)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.17; Wed, 27 May
+ 2020 11:27:57 +0000
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::4827:5dc7:d31e:2eb5]) by AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::4827:5dc7:d31e:2eb5%7]) with mapi id 15.20.3045.018; Wed, 27 May 2020
+ 11:27:57 +0000
+From: Laine Jaakko EXT <ext-jaakko.laine@vaisala.com>
+To: Wolfram Sang <wsa@the-dreams.de>
+Subject: RE: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Topic: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Index: AQHV5mNyTIn2+pYf+Eu7yiopaV9KGKhOcmGAgAAnv5CAFgB+gIAA/BRAgAA+l4CAMnEssIAkGs0AgAAEdsA=
+Date: Wed, 27 May 2020 11:27:57 +0000
+Message-ID: <AM0PR06MB5185C1DA8133409444A397E4D4B10@AM0PR06MB5185.eurprd06.prod.outlook.com>
+References: <20200218135627.24739-1-ext-jaakko.laine@vaisala.com>
+ <CAKfKVtFf+VpinkOGsBFZ2-_PKvx-C1L7G7_uhY2RCvV5dy6L_w@mail.gmail.com>
+ <AM0PR06MB5185E501349E06428093B62FD4F70@AM0PR06MB5185.eurprd06.prod.outlook.com>
+ <20200401143254.GA2409@ninjato>
+ <AM0PR06MB5185F8F51316FCD5213F0ABED4C60@AM0PR06MB5185.eurprd06.prod.outlook.com>
+ <20200402092813.GA986@ninjato>
+ <AM0PR06MB51857F4CDC7AE643CE160F9ED4A60@AM0PR06MB5185.eurprd06.prod.outlook.com>
+ <20200527110732.GA4875@ninjato>
+In-Reply-To: <20200527110732.GA4875@ninjato>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Enabled=True;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SetDate=2020-05-27T11:27:55.3815783Z;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Name=Restricted;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_ActionId=2cbc8feb-cadb-49fd-8d63-f2ecfb2ef614;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Extended_MSFT_Method=Automatic;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Enabled=True;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SetDate=2020-05-27T11:27:55.3815783Z;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Name=No Label;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_ActionId=2cbc8feb-cadb-49fd-8d63-f2ecfb2ef614;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Parent=d5842b46-9b7a-431a-b662-8cc44ff92a4e;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Extended_MSFT_Method=Automatic
+authentication-results: the-dreams.de; dkim=none (message not signed)
+ header.d=none;the-dreams.de; dmarc=none action=none header.from=vaisala.com;
+x-originating-ip: [81.175.223.46]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b2338f45-523b-412b-9268-08d8023101a8
+x-ms-traffictypediagnostic: AM0PR06MB5970:
+x-microsoft-antispam-prvs: <AM0PR06MB59701D3D334BBB38B6E1691CD4B10@AM0PR06MB5970.eurprd06.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
+x-forefront-prvs: 04163EF38A
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: AU4ksjSG+kJdMubgwBTz+GA6afltY/lanFzCX1tYAtO3eqTpLgukqkxngvTEJj+s0QuP8SLohCOZuJy9jd8WrhWUdoeMr4twF5NzRYIvvuQYeZaUKg0XwlWg5IGsZuucXbwUK/c8Nted0HwXyRImd20f32w5XrMdhrmAQ6uH/iqiGuq8XgIlrW/oyUcxd85CvlO5nT7pEU5Qsu306uPZdm2ERu9A+L+GG+hG4l1xQ8pRAED6yGGeSQLeNItdBcjmwRsBo9JZ7cweCLHz9sYveEyGfIQj0KA3/PQH6aMnMVkdp+SQsD6EXAliOATuC0JIHPGHqS6aoCva1UTeUB8B7Q==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM0PR06MB5185.eurprd06.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(376002)(136003)(39850400004)(366004)(346002)(396003)(478600001)(558084003)(8936002)(76116006)(2906002)(6916009)(64756008)(66556008)(66476007)(33656002)(52536014)(9686003)(71200400001)(55016002)(8676002)(186003)(6506007)(26005)(5660300002)(7696005)(86362001)(316002)(54906003)(4326008)(66946007)(66446008);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: 6E4ro5KuWsebrXl+PF1Keezn80C+L2E3og70fLIpSseYtsI0F11erif0ZVi+p5mBKcTqOhzhXy6EABCb5UiJJ73f7BvPQ/yobkH3qyKgjj6oD+BGcXp9JK5EO5ww7JrnVH6n/UIQwn5sC61kaKzFe53sTxy1y5GEcJB/kivvEVC/n0Ukr9iPdURnjmDiWQKbAIg6uWdrLrNkw9696I7crt4NJ6gmoiAj+FWAuCj8iNQGBZryDzdQfRAjtoB7DPz8JC5TZd9m8KkR9DI3fydH2fBlWfUCmByMq3KprFiYC38fmYTVjidmLnsswSYsuTQ6bCjVo2PY01T7TkwlLEJrOTOwNeKIufh/NT5jO0/vZw32Nav5OuDeGsKGx5qUbWx0VE1oEqEP+BAsNjeVtGB6UGU6GqS5dTKyQgM0A9y4gRHKlajn2wHyqHfqJ50DlXCSW68Kq2NWC7tLPfRXWkDtugQcjWNq7hgNEwSoCoCoeB0=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
+X-OriginatorOrg: vaisala.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: b2338f45-523b-412b-9268-08d8023101a8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2020 11:27:57.5464 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 6d7393e0-41f5-4c2e-9b12-4c2be5da5c57
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: BM+TiA3yN1/eWq7AePTSfiXaCA9eDCB5dvHGFuE4CM8ld7UhFvar1gxWtCyVbLQq47NI4sVIcwj+put+/zI5zhT94YThEyZVOJg7I3GDxFg=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR06MB5970
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_042634_878428_D2CF8F88 
-X-CRM114-Status: GOOD (  13.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200527_042804_152117_4FC30820 
+X-CRM114-Status: UNSURE (   3.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:143 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.21.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.78 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,83 +148,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, linus.walleij@linaro.org,
- Anders Roxell <anders.roxell@linaro.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>,
+ Shubhrajyoti Datta <shubhrajyoti.datta@gmail.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "michal.simek@xilinx.com" <michal.simek@xilinx.com>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Today the vexpress power driver can only be builtin.  Rework so it's
-possible for the vexpress power driver to be a module.
+Thanks Wolfram for helping me out with this.
 
-Signed-off-by: Anders Roxell <anders.roxell@linaro.org>
----
- arch/arm/mach-vexpress/Kconfig          |  1 -
- drivers/power/reset/Kconfig             |  5 +++--
- drivers/power/reset/vexpress-poweroff.c | 12 +++++++++++-
- 3 files changed, 14 insertions(+), 4 deletions(-)
+I will make Version 2 patch with proposed changes.
 
-diff --git a/arch/arm/mach-vexpress/Kconfig b/arch/arm/mach-vexpress/Kconfig
-index 065e12991663..4b54d8cf897d 100644
---- a/arch/arm/mach-vexpress/Kconfig
-+++ b/arch/arm/mach-vexpress/Kconfig
-@@ -15,7 +15,6 @@ menuconfig ARCH_VEXPRESS
- 	select NO_IOPORT_MAP
- 	select PLAT_VERSATILE
- 	select POWER_RESET
--	select POWER_RESET_VEXPRESS
- 	select POWER_SUPPLY
- 	select REGULATOR if MMC_ARMMMCI
- 	select REGULATOR_FIXED_VOLTAGE if REGULATOR
-diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
-index f07b982c8dff..8468d42b0198 100644
---- a/drivers/power/reset/Kconfig
-+++ b/drivers/power/reset/Kconfig
-@@ -189,9 +189,10 @@ config POWER_RESET_VERSATILE
- 	  reference boards.
- 
- config POWER_RESET_VEXPRESS
--	bool "ARM Versatile Express power-off and reset driver"
-+	tristate "ARM Versatile Express power-off and reset driver"
- 	depends on ARM || ARM64
--	depends on VEXPRESS_CONFIG=y
-+	depends on VEXPRESS_CONFIG
-+	default VEXPRESS_CONFIG
- 	help
- 	  Power off and reset support for the ARM Ltd. Versatile
- 	  Express boards.
-diff --git a/drivers/power/reset/vexpress-poweroff.c b/drivers/power/reset/vexpress-poweroff.c
-index 1fdbcbd95fc2..b1eef95132d9 100644
---- a/drivers/power/reset/vexpress-poweroff.c
-+++ b/drivers/power/reset/vexpress-poweroff.c
-@@ -5,6 +5,7 @@
-  */
- 
- #include <linux/delay.h>
-+#include <linux/module.h>
- #include <linux/notifier.h>
- #include <linux/of.h>
- #include <linux/of_device.h>
-@@ -146,4 +147,13 @@ static struct platform_driver vexpress_reset_driver = {
- 		.suppress_bind_attrs = true,
- 	},
- };
--builtin_platform_driver(vexpress_reset_driver);
-+
-+static int __init vexpress_reset_init(void)
-+{
-+	return platform_driver_register(&vexpress_reset_driver);
-+}
-+module_init(vexpress_reset_init);
-+
-+MODULE_AUTHOR("Pawel Moll <pawel.moll@arm.com>");
-+MODULE_DESCRIPTION("Vexpress reset driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.26.2
+Happy hacking for you too!
 
+-Jaakko
 
 _______________________________________________
 linux-arm-kernel mailing list
