@@ -2,72 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42DC01E3F85
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:04:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10B3F1E3F92
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:07:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FDEVKrHZb+mXa68M3zwEvDYnJ+xonhBaDWZBwec602k=; b=sJvt3A4fcK+aPm
-	u6QTHW2TQ6kUB6WZSyaeklR6p9RsjhsF8C8JiFyZibAvtcms65lmBQajKsOKkhTQgOZv4JAeCaAAO
-	UK5kaeHws1sD4qXykGsX0OIDAUDS2EtEtxhCQ3N4jM5D0N8JpsrYoPh5jw6+hh2knPXmnyfAQwFBm
-	TuTmhiwZieUDLjOBY+lIrv530UNBE0ffzfZulxzSveqsOj6mKNabeWedHgFFqvvoAfFoCHp3HyjBC
-	zIPMUB91+PvLoiAFQWTB9aW1nijbOGhUt0KqRBY/zWcA4cssQqUhd1SwS9Io7dUHRLjE2qEe1OI1q
-	V4HnF35xALuLO7jHCn2g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Sey/dfhrU+Z+20bQacygnyLWbi2obHFywF2TXr5uq0k=; b=VzI5aLkMcG+SU3XtedygU/yts
+	UjwonVzLm4evmAQDQvYb1Y3FL4ogIcQhSxOpaW5vRv/L3apxSJFQSsAe4CiAlOFP3m65PYdwMEd56
+	haBLEdqV5q9fao6CnuNPQvUYISlrr9ZmzbyQovjvywWgjoqukRZsk2BAZIdyDfZSWgXIC5gbt+VpK
+	DyHBCaKmYAOyRTgwLa8yY/nuZQ4CyXVq1MvZSQI1NKAHadaMj7bLDnQCnKF5dXRKPyYFbYr89F9v5
+	c/9X1+bb75YLUKGGJeGVgy0D3JzC1hVRMTeqFahe8eoWlRl1a32BPa4sPrHxfg2S9U6FXBPnqKxhL
+	AvhO+1oZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdtqs-0004eG-L8; Wed, 27 May 2020 11:04:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdtqg-0004dl-Pe
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:03:52 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B215620888;
- Wed, 27 May 2020 11:03:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590577429;
- bh=/5q5E35lU26NZlVnSFPENEc5BsWu8IjTiBALwIZ+uzs=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=NbfNZeW+B0WTiDGlfacsC6E9Wr035a/Lzp1aENZVzeT/hupGv9jVz+/Z5dhwCjfuC
- ch5GYgNGK1XTPaZR4oZfyz+rAlw8WVBuD+1QzCKSDYyxp5PcxeEJcrGjF04zxdzFnj
- lR1wIthcC/zwvgE5kOC9uxpFWZYTs0A7lQAEEQW4=
-Date: Wed, 27 May 2020 12:03:44 +0100
-From: Will Deacon <will@kernel.org>
-To: John Stultz <john.stultz@linaro.org>
-Subject: Re: [RFC 0/2] iommu: arm-smmu: Add support for early direct mappings
-Message-ID: <20200527110343.GD11111@willie-the-truck>
-References: <20191209150748.2471814-1-thierry.reding@gmail.com>
- <20200228025700.GA856087@builder>
- <20200514193249.GE279327@builder.lan>
- <CALAqxLVmomdKJCwh=e-PX+8-seDX0RXA81FzmG4sEyJmbXBh9A@mail.gmail.com>
+	id 1jdtuX-0007aJ-Pn; Wed, 27 May 2020 11:07:49 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdtuM-0007ZO-Jr
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:07:40 +0000
+Received: from localhost (p54b33011.dip0.t-ipconnect.de [84.179.48.17])
+ by pokefinder.org (Postfix) with ESMTPSA id 84A462C2037;
+ Wed, 27 May 2020 13:07:32 +0200 (CEST)
+Date: Wed, 27 May 2020 13:07:32 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Laine Jaakko EXT <ext-jaakko.laine@vaisala.com>
+Subject: Re: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Message-ID: <20200527110732.GA4875@ninjato>
+References: <20200218135627.24739-1-ext-jaakko.laine@vaisala.com>
+ <CAKfKVtFf+VpinkOGsBFZ2-_PKvx-C1L7G7_uhY2RCvV5dy6L_w@mail.gmail.com>
+ <AM0PR06MB5185E501349E06428093B62FD4F70@AM0PR06MB5185.eurprd06.prod.outlook.com>
+ <20200401143254.GA2409@ninjato>
+ <AM0PR06MB5185F8F51316FCD5213F0ABED4C60@AM0PR06MB5185.eurprd06.prod.outlook.com>
+ <20200402092813.GA986@ninjato>
+ <AM0PR06MB51857F4CDC7AE643CE160F9ED4A60@AM0PR06MB5185.eurprd06.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CALAqxLVmomdKJCwh=e-PX+8-seDX0RXA81FzmG4sEyJmbXBh9A@mail.gmail.com>
+In-Reply-To: <AM0PR06MB51857F4CDC7AE643CE160F9ED4A60@AM0PR06MB5185.eurprd06.prod.outlook.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_040350_884092_9BA93B32 
-X-CRM114-Status: GOOD (  26.23  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200527_040738_950691_CEF1263D 
+X-CRM114-Status: GOOD (  12.51  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,89 +62,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
- iommu@lists.linux-foundation.org, Thierry Reding <thierry.reding@gmail.com>,
- linux-tegra@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Rob Herring <robh@kernel.org>,
+ Shubhrajyoti Datta <shubhrajyoti.datta@gmail.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "michal.simek@xilinx.com" <michal.simek@xilinx.com>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============0652280549931685695=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi John, Bjorn,
 
-On Tue, May 26, 2020 at 01:34:45PM -0700, John Stultz wrote:
-> On Thu, May 14, 2020 at 12:34 PM <bjorn.andersson@linaro.org> wrote:
-> >
-> > On Thu 27 Feb 18:57 PST 2020, Bjorn Andersson wrote:
-> >
-> > Rob, Will, we're reaching the point where upstream has enough
-> > functionality that this is becoming a critical issue for us.
-> >
-> > E.g. Lenovo Yoga C630 is lacking this and a single dts patch to boot
-> > mainline with display, GPU, WiFi and audio working and the story is
-> > similar on several devboards.
-> >
-> > As previously described, the only thing I want is the stream mapping
-> > related to the display controller in place, either with the CB with
-> > translation disabled or possibly with a way to specify the framebuffer
-> > region (although this turns out to mess things up in the display
-> > driver...)
-> >
-> > I did pick this up again recently and concluded that by omitting the
-> > streams for the USB controllers causes an instability issue seen on one
-> > of the controller to disappear. So I would prefer if we somehow could
-> > have a mechanism to only pick the display streams and the context
-> > allocation for this.
-> >
-> >
-> > Can you please share some pointers/insights/wishes for how we can
-> > conclude on this subject?
-> 
-> Ping? I just wanted to follow up on this discussion as this small
-> series is crucial for booting mainline on the Dragonboard 845c
-> devboard. It would be really valuable to be able to get some solution
-> upstream so we can test mainline w/o adding additional patches.
+--===============0652280549931685695==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="45Z9DzgjV8m4Oswq"
+Content-Disposition: inline
 
-Sorry, it's been insanely busy recently and I haven't had a chance to think
-about this on top of everything else. We're also carrying a hack in Android
-for you :)
 
-> The rest of the db845c series has been moving forward smoothly, but
-> this set seems to be very stuck with no visible progress since Dec.
-> 
-> Are there any pointers for what folks would prefer to see?
+--45Z9DzgjV8m4Oswq
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-I've had a chat with Robin about this. Originally, I was hoping that
-people would all work together towards an idyllic future where firmware
-would be able to describe arbitrary pre-existing mappings for devices,
-irrespective of the IOMMU through which they master and Linux could
-inherit this configuration. However, that hasn't materialised (there was
-supposed to be an IORT update, but I don't know what happened to that)
-and, in actual fact, the problem that you have on db845 is /far/ more
-restricted than the general problem.
+Hi Jaako,
 
-Could you please try hacking something along the following lines and see
-how you get on? You may need my for-joerg/arm-smmu/updates branch for
-all the pieces:
+> The changes required to this patch at XIIC driver from suggested DT
+> changes are pretty minor. Basically only checking a different
+> property, reversing logic and some naming changes. I can make these
+> changes already for the driver if this solution is what will be
+> chosen, or would you prefer to still think about this?
 
-  1. Use the ->cfg_probe() callback to reserve the SMR/S2CRs you need
-     "pinning" and configure for bypass.
+I think we can go forward this way. Although I didn't find an example, I
+am quite sure YAML format can have exclusive properties. If not, it
+should be added ;) I'll try again to get some information from people
+more experienced with YAML. But we don't depend on it.
 
-  2. Use the ->def_domain_type() callback to return IOMMU_DOMAIN_IDENTITY
-     for the display controller
+> Regarding the device tree changes: I am not very familiar with the
+> needed documentation changes, YAML bindings or what needs to be done
+> for new bindings in general. Would you prefer to still consider them
+> and/or get these subsystem level bindings done by someone more
+> familiar with them? Another option would be for me to try find time to
+> do the suggested bindings changes anyway, but it will likely require
+> some effort from me to familiarize with device tree bindings changes
+> and schedule the time for it.
 
-I /think/ that's sufficient, but note that it differs from the current
-approach because we don't end up reserving a CB -- bypass is configured
-in the S2CR instead. Some invalidation might therefore be needed in
-->cfg_probe() after unhooking the CB.
+No need to. Luckily, the I2C main bindings file is still text, so it is
+easy to modify. I will send a patch out in a few minutes, so you can
+base your driver code on that. Converting to YAML is a completely
+different step, not related to your patch here. (Sidenote: I am looking
+for volunteers to do that)
 
-Thanks, and please yell if you run into problems with this approach.
+I think this covers it?
 
-Will
+Happy hacking,
+
+   Wolfram
+
+
+--45Z9DzgjV8m4Oswq
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7OSe8ACgkQFA3kzBSg
+KbYhDA/+Mz+QoufnY4EPCz5k/e/sII/jXO8cozIN4DhnrjHB/hm1ypYwvJxyQGnO
+ajA/7vWPE5ZdFTff+DiaVu4btR0fZpUztvZOZnko7CVtgnhZ+2q44nY7kuOEJzo5
+RqqrmWcNRDu5kDtfFKZqkQS2Lg8mkN7FKulq3VBXBhhov2G+OcIzjVW981QwFRFl
+An9skXoQKUu7Jog7EwZEhPYPuVEDPsxIgwJjQW0RagIT3N4hiRAlPBUvy2hy1FWV
+55b4Xf16A2lBnRrUPYvs4W75KAVdCgWxuJvNINKremjpZGkbile0nVKvyEUc8Qyi
+scu180J5u6PFvjJO9x49unn7qf9XtcwtlE9oabUcOHvDa3U753m8RHrh+K/j1iYu
+WntnYjpcKWqGmodj9JoiAXledcy/ntfd+9UJL4zihxAP6wgcVzpxl2W9Zn3aOgPE
+PBowiHNZl9lwLm9uKCpi29+7Ne1Vt1v7J2FZ07S+bY+ytvDM1abvp5GfBzKRz7XA
+q8aXZ2Amhh84dNha9r3VOiLRBAzHjZOVc6hR8mBnAjy8+1O0kyJn2GrPK9rGwDQ7
+kqhe5uTlBmJyvQrJx0CnILXOuRS7rJTj7y2u5FHUZNZghROzEXn6PlmnL4WNeqBz
+cgus7tOk4/Xz8ihlAGrKvNOvPkSNALVyW96kCkUT9EcOV5qmWKk=
+=g4Yu
+-----END PGP SIGNATURE-----
+
+--45Z9DzgjV8m4Oswq--
+
+
+--===============0652280549931685695==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0652280549931685695==--
+
