@@ -2,80 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C75AB1E3C49
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:42:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC1711E3BF9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:32:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qsawhi5WAmavyIzyImd95fBGFUJKjMAe6rW6Diuctmc=; b=ldYlB6UnW5fAda
-	sbygP9ZSELgy0R8d7hKw0PbwO/YVgQPNQPpjCQhara+422iWzpXmVH3eeS34hzSr38NABAkxzsfCa
-	pexIhtA11FL9IUFCsTa4r++Da35Peo2OsTFtxP12h2q0+Lfm289QA18iCdyBr6RB8058OcUQe0nAg
-	guPJ8eQK/1R3St0JpQDG7CAEPjcxha653BGIhlbQ2l4Vua4NxEHL3WQog8/qDMdoZnfdCiM15Hmje
-	4Tg+p32RawYNmg3Yo9r3H5Ll2LE3EPOYAtZalGf8lVr1h+5IXMhzgph0cxDUeAxUuKWlyb4oDmdkU
-	wPJqM4ZNqOYpanw/MIZg==;
+	List-Owner; bh=fnRR7XVMFd4XkuNnmFKysjR7HPhqKxAWzU8x6VFQjOI=; b=Xb6BG5SxrnQc3Z
+	Lxa5+Frav3KjlDNerGvDnjjqExD/vmVDnMSRMIF+RLxozoylYvCVf/qWM+vOeXt0ynMSNn/+AtHig
+	bADA7498ecTGMZBeFHbtVKuA3a+o7R+OLrlj58mPTJxXgUakEmwoZVTws2tPr11lUvgz6OUzccjJf
+	CfChDHeiwFohCFSrOiNHwgitVxwtBuFlcO70J/ct4wan3fU+W1eYUj4qxwJYhDVF4i6YepiZ0Qq1n
+	rAJ1yO3c/Xnr+CM8ScWmSf2JFWSrVYuiwjaFsKrnaYBD1lFx8xofcjP0OIMr/Mll0sBNXzjGt3RIU
+	wBDtsDO5IAQaWkQRlxOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdre4-0006vI-WC; Wed, 27 May 2020 08:42:41 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdrdW-0006gv-9n; Wed, 27 May 2020 08:42:07 +0000
-X-UUID: 844d290291bf401fb4cfdac044a967db-20200527
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=nnpcRKVMg+Ds8Jsd86q+Mu9psGr5IX3/2sTy8A93vwo=; 
- b=pz8d4YoxMxNDFSCkHsOCMtU29SqeJ3O5VgoJh9B1bjJ2kihPIVx7eP3YVDgh94eGMYAhp3njABp/8aQ6wJ6mlBBXcbiPLtzUF8uao+8dkZyMTNdVE9S1Z1V+nmTwSOYnpB+Ui33jdsrY8Dd6Q6fMxKuNQmfrxNRdwKrFRHBd68Q=;
-X-UUID: 844d290291bf401fb4cfdac044a967db-20200527
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <fengping.yu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 687154816; Wed, 27 May 2020 00:41:52 -0800
-Received: from MTKMBS32DR.mediatek.inc (172.27.6.104) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 27 May 2020 01:32:36 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS32DR.mediatek.inc (172.27.6.104) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 27 May 2020 16:32:32 +0800
-Received: from localhost.localdomain (10.15.43.140) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 27 May 2020 16:32:28 +0800
-From: Fengping Yu <fengping.yu@mediatek.com>
-To: Dmitry Torokhov <dmitry.torokhov@gmail.com>, Andy Shevchenko
- <andriy.shevchenko@linux.intel.com>, Marco Felsch <m.felsch@pengutronix.de>
-Subject: [PATCH v9 3/3] configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD=m
-Date: Wed, 27 May 2020 16:31:40 +0800
-Message-ID: <20200527083137.56566-4-fengping.yu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200527083137.56566-1-fengping.yu@mediatek.com>
-References: <20200527083137.56566-1-fengping.yu@mediatek.com>
+	id 1jdrUL-0007O9-V7; Wed, 27 May 2020 08:32:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdrUA-0007NH-T5
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 08:32:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1A61F30E;
+ Wed, 27 May 2020 01:32:24 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 995513F6C4;
+ Wed, 27 May 2020 01:32:22 -0700 (PDT)
+Date: Wed, 27 May 2020 09:32:20 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v4 15/26] arm64: mte: Allow user control of the tag check
+ mode via prctl()
+Message-ID: <20200527083218.GS5031@arm.com>
+References: <20200515171612.1020-1-catalin.marinas@arm.com>
+ <20200515171612.1020-16-catalin.marinas@arm.com>
+ <20200527074658.GB9887@willie-the-truck>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 12939F4AABF241A3AE60197FE84EC36D147EBC1A47214B849DDF3C821B0C55882000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200527074658.GB9887@willie-the-truck>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_014206_349967_262F3151 
-X-CRM114-Status: UNSURE (   7.40  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200527_013226_981228_4E28C2E8 
+X-CRM114-Status: GOOD (  22.72  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,37 +65,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "fengping.yu" <fengping.yu@mediatek.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-input@vger.kernel.org
+Cc: linux-arch@vger.kernel.org, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "fengping.yu" <fengping.yu@mediatek.com>
+On Wed, May 27, 2020 at 08:46:59AM +0100, Will Deacon wrote:
+> On Fri, May 15, 2020 at 06:16:01PM +0100, Catalin Marinas wrote:
+> > By default, even if PROT_MTE is set on a memory range, there is no tag
+> > check fault reporting (SIGSEGV). Introduce a set of option to the
+> > exiting prctl(PR_SET_TAGGED_ADDR_CTRL) to allow user control of the tag
+> > check fault mode:
+> > 
+> >   PR_MTE_TCF_NONE  - no reporting (default)
+> >   PR_MTE_TCF_SYNC  - synchronous tag check fault reporting
+> >   PR_MTE_TCF_ASYNC - asynchronous tag check fault reporting
+> > 
+> > These options translate into the corresponding SCTLR_EL1.TCF0 bitfield,
+> > context-switched by the kernel. Note that uaccess done by the kernel is
+> > not checked and cannot be configured by the user.
+> > 
+> > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: Will Deacon <will@kernel.org>
+> > ---
+> > 
+> > Notes:
+> >     v3:
+> >     - Use SCTLR_EL1_TCF0_NONE instead of 0 for consistency.
+> >     - Move mte_thread_switch() in this patch from an earlier one. In
+> >       addition, it is called after the dsb() in __switch_to() so that any
+> >       asynchronous tag check faults have been registered in the TFSR_EL1
+> >       registers (to be added with the in-kernel MTE support.
+> >     
+> >     v2:
+> >     - Handle SCTLR_EL1_TCF0_NONE explicitly for consistency with PR_MTE_TCF_NONE.
+> >     - Fix SCTLR_EL1 register setting in flush_mte_state() (thanks to Peter
+> >       Collingbourne).
+> >     - Added ISB to update_sctlr_el1_tcf0() since, with the latest
+> >       architecture update/fix, the TCF0 field is used by the uaccess
+> >       routines.
+> > 
+> >  arch/arm64/include/asm/mte.h       | 14 ++++++
+> >  arch/arm64/include/asm/processor.h |  3 ++
+> >  arch/arm64/kernel/mte.c            | 77 ++++++++++++++++++++++++++++++
+> >  arch/arm64/kernel/process.c        | 26 ++++++++--
+> >  include/uapi/linux/prctl.h         |  6 +++
+> >  5 files changed, 123 insertions(+), 3 deletions(-)
+> 
+> Dave is working on man pages for prctl() (and I think also ptrace). I think
+> it would be /very/ useful for us to have some RFC patches on top of his work
+> adding documentation for the MTE interactions, as we found some other minor
+> issues/inconsistencies as a direct result of writing and reviewing the man
+> page for our existing interfaces.
 
-Add Mediatek matrix keypad support in defconfig.
+I have a local draft for the address tagging and MTE prctls already btw.
+I hadn't posted them yet so as to focus on nailing the "easy" stuff down
+;)
 
-Signed-off-by: fengping.yu <fengping.yu@mediatek.com>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+If I have time I'll try and get them posted today so that people can
+take a look before next week.
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 24e534d85045..112ced090b21 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -349,6 +349,7 @@ CONFIG_KEYBOARD_GPIO=y
- CONFIG_KEYBOARD_SNVS_PWRKEY=m
- CONFIG_KEYBOARD_IMX_SC_KEY=m
- CONFIG_KEYBOARD_CROS_EC=y
-+CONFIG_KEYBOARD_MTK_KPD=m
- CONFIG_INPUT_TOUCHSCREEN=y
- CONFIG_TOUCHSCREEN_ATMEL_MXT=m
- CONFIG_INPUT_MISC=y
--- 
-2.18.0
+Cheers
+---Dave
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
