@@ -2,81 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2FC11E50E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 00:06:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F23C81E5121
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 00:22:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sy4hI3KvH5wHPaMlMU0Hclz5/uPcxsF4HNzTEJXY35U=; b=QNkWeGq290nOwD
-	G0xaDMfsMLPRvOek9JqJCBcJ3Z3PhzEu8Zsas/jF/YlyeRXa43jVxjXhFe6Id1PrmX2XAXsH3Wc/j
-	JrWG7UgMcZZZ5t5cNJBlTeRhjDMPy+uZgs3ZkX+cE7UpUXDPD+eFOp5SUdcHAbSkJc0Ith5kJ/VRN
-	HRIopRZuZTKBT0gL4PX4dg21IdEOCxt13UqdA2x03+wSZATbDY4LPL3FP0qg+1fQiohT0Vz3HPvLp
-	DutxzeL/kGLUHjcNPeJteHcGqoQ3iyJcAxYSU2OUfeFzc6Y+GjMgiSD2X/BuvDf//kIomhU84y6W7
-	1qMbndaiEGuYZMzebEnQ==;
+	List-Owner; bh=49VRoxtdydutzreWLplqGt50MKoI11qk8C3LnaqsRIQ=; b=ezWySyhWbK1pYd
+	2jFncTyFSjKFaQCDsBgop7yDDa7MMJAoRUdt1TAx7oo4kLAswZregnCWNcJ3bmjYElMiTWOSaRC3R
+	zb8G1Rskzj08s7dzkYncMRmvnTKlJaOw3Rk+zUrltfLZpwfrUE9Iy4bSwRNMdhRZ53cTxEYOuhTMa
+	McKFKMGtP8GUWMnIKA29RZM6+Jy6UlhyH7LxFmEnj/bLhxG5enpECfk9a0T6wKX2U1kdPZ0P/hQpo
+	lOv3qEd4clPd980PfUUlKAgqJ5AhAmLlVAt/yovjKlgTKOS0qkq5d0XJcHqR+Nxs2SQ7ZbEnWKKQy
+	5jOVbjCY46fnZrNZPVmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je4C8-0000Yo-TK; Wed, 27 May 2020 22:06:40 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1je4R6-00022u-0Q; Wed, 27 May 2020 22:22:08 +0000
+Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je4Bz-0000Xt-9j
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 22:06:32 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04RM6JMC027110;
- Wed, 27 May 2020 17:06:19 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1590617179;
- bh=wHq3GUk6tsshZfXmIGKnDN4gAiFx1/8S5VNAsQF6aUI=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=OrUSiKp5bsBc5ZXTvXvnjoBh7y5cW5Pl1xWZ+u16iP4DZrzl9cE38cGyolacbSAwn
- Zo+9OrtH66DhqQeKxD07qnql0hbgqaYBbryCQY8AULI9Cvtd5PK9VUA6lM8p2URc2F
- crKYqnkUMugBmcwsHOn0IuUdAJ5EIz/C8KZ9Y5D0=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04RM6JpY043916
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 27 May 2020 17:06:19 -0500
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 27
- May 2020 17:06:19 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 27 May 2020 17:06:18 -0500
-Received: from [10.250.233.85] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04RM6EbP092800;
- Wed, 27 May 2020 17:06:15 -0500
-Subject: Re: [PATCH v5 03/14] PCI: cadence: Convert all r/w accessors to
- perform only 32-bit accesses
-To: Rob Herring <robh@kernel.org>
-References: <20200522033631.32574-1-kishon@ti.com>
- <20200522033631.32574-4-kishon@ti.com>
- <CAL_JsqJjXUUgTbSAi83w4Eie-sVTrkLLMGh_PRQsd8k2vuua4Q@mail.gmail.com>
- <df29309d-8401-4040-eb1e-90bb3af93a82@ti.com>
- <CAL_JsqLy9T8O81stSW8RHpsUXFFjon80VG9-Jgync1eVR4iTew@mail.gmail.com>
- <b3663862-44df-867f-0824-28802909f224@ti.com>
- <CAL_JsqJMZxOFw-kn5_9bNTPzJuwHybJAi6iQyBq=6BrKSvfTqA@mail.gmail.com>
-From: Kishon Vijay Abraham I <kishon@ti.com>
-Message-ID: <457db3ae-e68a-d2fc-ba5f-5393ad464413@ti.com>
-Date: Thu, 28 May 2020 03:36:14 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1je4Qy-00022S-Bx
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 22:22:01 +0000
+Received: by mail-qt1-x842.google.com with SMTP id i68so20689534qtb.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 15:21:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=O0EZFokD4VETW8hilHGvqiWo+AY18MjoTOCmb0j2QP0=;
+ b=s2T8fMW9uZpIMjWGcD1ZLd6JVhc9lKb0qUFORy1p1/+usP51vVfE7imxKLhJ4zBXJL
+ X0mKKqb2aJCwjf5JmHRE1iXQ5HDbob9tUqqLNARkQ4SclF98OdsiSN0H9L7Jk7a0uncw
+ hkkYgpvz1WcPKKAIE5+ZaRlyLjX6J5dcqyx6Jy/iaBSWUW4u7GmrcX5FGeEQ7HFP7/to
+ Y3/evqAvP8745WekeffD2AUo5xLwINjsmVd9GSXBQoU8+b3mUNz7Y2lZUf15r70X16G7
+ pzzvqB9L/QSRoPPhm2dplOLBsn3NmgGCi0h/ITu1v08iISeTVI8BH0uIZYxV4HlMnPo9
+ yrWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=O0EZFokD4VETW8hilHGvqiWo+AY18MjoTOCmb0j2QP0=;
+ b=E6tRCFQg5WppPFWqs6zI37oGBY2BQzRXhpomjyNgyxIrrH1ZWHJgJGI6n8+ICbN4yG
+ wFJ8m8hrKdXTcuRnYTMRwrdQGB7k0M/Z5OakBmntK4w4UiEBRLAl/BzkcwqaRV9BQT9B
+ st7Vo8zrmwialdtaH3MtcFhZKGq0wb6+ToGhnY6mdxsaLqfO19k8wxDvXqHslKYmlnRw
+ dEHkugggxgH2/qaKjS1VGPOotNR5jo+MO/pBNF/H+8MO4v9U09hpCFOxJLqdNb8mrKMj
+ vrAl51bkGcBpinMwtR9SrERtTvivpqr3BcbxKDEQ6cZXqYp7fhWOuVZW+8oxrK0E47Lh
+ hasg==
+X-Gm-Message-State: AOAM531706T/MoAgww7QX2LIZgxiJEkKO7Nne296Yzwxb1s7QJSFGnIn
+ suQGPs0sBssoZhgx1soQoJs=
+X-Google-Smtp-Source: ABdhPJyOgdLDKEz0HQkCQmvOCQBIMuQEJnT24eYzL6cb96knhDKVZ2UOmt/SMnmijP1sKg5MpJ9iCQ==
+X-Received: by 2002:ac8:6cf:: with SMTP id j15mr107653qth.143.1590618118847;
+ Wed, 27 May 2020 15:21:58 -0700 (PDT)
+Received: from ?IPv6:2601:282:803:7700:2840:9137:669d:d1e7?
+ ([2601:282:803:7700:2840:9137:669d:d1e7])
+ by smtp.googlemail.com with ESMTPSA id v14sm3909630qtj.31.2020.05.27.15.21.56
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 27 May 2020 15:21:58 -0700 (PDT)
+Subject: Re: [PATCH v3 0/7] Statsfs: a new ram-based file system for Linux
+ kernel statistics
+To: Paolo Bonzini <pbonzini@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
+ Emanuele Giuseppe Esposito <eesposit@redhat.com>
+References: <20200526110318.69006-1-eesposit@redhat.com>
+ <20200526153128.448bfb43@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
+ <6a754b40-b148-867d-071d-8f31c5c0d172@redhat.com>
+ <20200527132321.54bcdf04@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
+ <af2ba926-73bc-26c3-7ce7-bd45f657fd85@redhat.com>
+From: David Ahern <dsahern@gmail.com>
+Message-ID: <b6fa4439-c6b8-63a4-84fd-fbac3d4f10fd@gmail.com>
+Date: Wed, 27 May 2020 16:21:55 -0600
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:68.0)
+ Gecko/20100101 Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqJMZxOFw-kn5_9bNTPzJuwHybJAi6iQyBq=6BrKSvfTqA@mail.gmail.com>
+In-Reply-To: <af2ba926-73bc-26c3-7ce7-bd45f657fd85@redhat.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_150631_442104_6A77ED65 
-X-CRM114-Status: GOOD (  22.24  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200527_152200_407645_1FA5A80E 
+X-CRM114-Status: GOOD (  12.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dsahern[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,7 +97,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,98 +108,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, PCI <linux-pci@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tom Joseph <tjoseph@cadence.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-omap <linux-omap@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX /
- MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-doc@vger.kernel.org,
+ netdev@vger.kernel.org,
+ Emanuele Giuseppe Esposito <e.emanuelegiuseppe@gmail.com>,
+ linux-kernel@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ Jonathan Adams <jwadams@google.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, David Rientjes <rientjes@google.com>,
+ linux-fsdevel@vger.kernel.org, linux-mips@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
+On 5/27/20 3:07 PM, Paolo Bonzini wrote:
+> I see what you meant now.  statsfs can also be used to enumerate objects
+> if one is so inclined (with the prototype in patch 7, for example, each
+> network interface becomes a directory).
 
-On 5/27/2020 10:07 PM, Rob Herring wrote:
-> On Wed, May 27, 2020 at 4:49 AM Kishon Vijay Abraham I <kishon@ti.com> wrote:
->>
->> Hi Rob,
->>
->> On 5/26/2020 8:42 PM, Rob Herring wrote:
->>> On Sun, May 24, 2020 at 9:30 PM Kishon Vijay Abraham I <kishon@ti.com> wrote:
->>>>
->>>> Hi Rob,
->>>>
->>>> On 5/22/2020 9:24 PM, Rob Herring wrote:
->>>>> On Thu, May 21, 2020 at 9:37 PM Kishon Vijay Abraham I <kishon@ti.com> wrote:
->>>>>>
->>>>>> Certain platforms like TI's J721E using Cadence PCIe IP can perform only
->>>>>> 32-bit accesses for reading or writing to Cadence registers. Convert all
->>>>>> read and write accesses to 32-bit in Cadence PCIe driver in preparation
->>>>>> for adding PCIe support in TI's J721E SoC.
->>>>>
->>>>> Looking more closely I don't think cdns_pcie_ep_assert_intx is okay
->>>>> with this and never can be given the PCI_COMMAND and PCI_STATUS
->>>>> registers are in the same word (IIRC, that's the main reason 32-bit
->>>>> config space accesses are broken). So this isn't going to work at
->>>>
->>>> right, PCI_STATUS has write '1' to clear bits and there's a chance that it
->>>> could be reset while raising legacy interrupt. While this cannot be avoided for
->>>> TI's J721E, other platforms doesn't have to have this limitation.
->>>>> least for EP accesses. And maybe you need a custom .raise_irq() hook
->>>>> to minimize any problems (such as making the RMW atomic at least from
->>>>> the endpoint's perspective).
->>>>
->>>> This is to make sure EP doesn't update in-consistent state when RC is updating
->>>> the PCI_STATUS register? Since this involves two different systems, how do we
->>>> make this atomic?
->>>
->>> You can't make it atomic WRT both systems, but is there locking around
->>> each RMW? Specifically, are preemption and interrupts disabled to
->>> ensure time between a read and write are minimized? You wouldn't want
->>> interrupts disabled during the delay too though (i.e. around
->>> .raise_irq()).
->>
->> Okay, I'll add spin spin_lock_irqsave() in cdns_pcie_write_sz(). As you also
->> pointed below that delay for legacy interrupt is wrong and it has to be fixed
->> (with a later series).
-> 
-> But you don't need a lock everywhere. You need locks in the callers
-> (and only sometimes).
-
-Okay, the locks should be added only for registers where HOST can also write to
-the same register? Maybe only raise_irq then..
-
-> 
->> How do you want to handle cdns_pcie_ep_fn_writew() now? Because now we are
->> changing the default implementation to perform only 32-bit access (used for
->> legacy interrupt, msi-x interrupt and while writing standard headers) and it's
->> not okay only for legacy interrupts for platforms other than TI.
-> 
-> Now I'm wondering how set_msi is not racy in the current code with the
-> host setting/clearing PCI_MSI_FLAGS_ENABLE? Maybe that bit is RO from
-> the EP side?
-
-set_msi/set_msix is a one time configuration that is invoked before the host
-establishes the link with the endpoint. I don't think we have to consider this
-as racy.
-
-Thanks
-Kishon
-
-> 
-> Ultimately I think you're going to have to provide your own endpoint
-> functions or you need accessors for specific registers like
-> PCI_MSI_FLAGS. Then for example, you just rely on the 2 bytes before
-> PCI_MSI_FLAGS being reserved and do a 32-bit access without a RMW.
-> Trying to abstract this at the register read/write level is going to
-> be fragile
-> 
-> Rob
-> 
+there are many use cases that have 100's to 1000's have network devices.
+Having a sysfs entry per device already bloats memory usage for these
+use cases; another filesystem with an entry per device makes that worse.
+Really the wrong direction for large scale systems.
 
 _______________________________________________
 linux-arm-kernel mailing list
