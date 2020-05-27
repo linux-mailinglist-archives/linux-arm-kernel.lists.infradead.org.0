@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64A761E4AAF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:45:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C7891E4B0B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:53:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+7qWqPlSyi8RAsXl/K/7sMYmTEix7yQxKcc7iB77q+c=; b=cT4Uoiz1GAUe3P
-	DBtqEjpOg3p3ciXhG8OSMzSOm5vf/MMs1yZMJPMyUOu1o4s/hrWs+QY34nMIw5Ca0nEKraabs1nyZ
-	BM/uDrvwhuOBx6VwJYtclZ4H+xvcdd3u7zXH6GcIW1rVXEH9StQ4wuamFrgfgR4QDlbWe8X6CcWO/
-	pSDeXWFrbmzOQAd53GJT8bJehCTYiV6Qw1/UGEOSr6YioWQ6+D32gCVZ0/zWBC5cL4Drpr4942NC3
-	rRQD0XZBAir0YAcdgkVx5LemmsSCoNePFWs4iA0FQGJPXdV7/MqEyt7KVvghQNIK/4IbdJ5M46jZ4
-	KhMMFNZqyqm3OdvpJjLA==;
+	List-Owner; bh=ZEMCq2h1hMX+qqtCBPsHqutLiMK2al4hRkZK5tvtk4U=; b=LGYSVasrSQDpEs
+	DwlabBaUqgwfk3nuZNVraF3YttMUw7+imerm3pNjBFDB7s5GnhA6YC7dAXmauJVCErBIPE0JPTgtM
+	4GbQz3HZeIIVhXlMst7JS+LbAoTgplQiJgocRDtegkc+K1HUct5vVUog/92Y/vkdxWikadibdwy7V
+	BQntR8AHg/k/sujeS0mKva8diiudkKUP8g3Xtl2VaNg3CwbXvZLwXK33ntPDPPJhcBLjBktsxAnZ4
+	wTrIaJ2UL1YywDPkpsLFaFU+mecYKhAe9Hs7d/mTKdP1Il/7hn7Yn8YvFP2L9hnJhinEsbpznrQBQ
+	p3FCfJ8oud7tPqNf2ZSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdzBC-000163-LV; Wed, 27 May 2020 16:45:22 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jdzIY-00042n-1O; Wed, 27 May 2020 16:52:58 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdzB0-0008T1-0v
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 16:45:11 +0000
-Received: by mail-lj1-x243.google.com with SMTP id w10so29808521ljo.0
+ id 1jdzIN-000427-Fl
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 16:52:48 +0000
+Received: by mail-lj1-x242.google.com with SMTP id c11so27637169ljn.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 09:45:09 -0700 (PDT)
+ Wed, 27 May 2020 09:52:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=anholt-net.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=x5U/zKfkvmSEww+vSURoUmS0s1xUIVHLA1Nb4AtxJis=;
- b=W1Cxi2bY3PkaST1Z8OpeWGbMyEmo5P8jlNIwCdvVr+EjtPpX+j4R/HBMaMD7y4Dbz2
- sN2rfypqEM2mZkwCR0i0VC8WXHwpnf1WoXE9veH7nmHE1qcnAYL60rYjN5GtdbL7Er1s
- WzhIsrXN6NswcPYYrH1wEJ9LKSW6ea64X8zPbj5KzHqu6v6U4SOTWTD1ACj2AgEXeE6n
- Ow7zyaPtpdsM5IvuEpbGg6vrgBYIUyUwC4ri2NUosucaU5RmpJLrkxfAuYYsbvPM+u9v
- L7aHcngTSiHdWHOweNSQYkka0AxBsVpDzpNMA5BjYV4Hv/uBtOwPuqzDoOR/heOa38Sr
- dgyw==
+ :cc; bh=3s8Z6TqgZ6rWtKMmi0vz86r9c3ZptE+7p8K+InML9XA=;
+ b=hheOM/T3hgh3E9Yc0l9MkrAt26GKtRqNh6+lDuuRkJ/Z+uJHoSZl2dSFjgqp7BBq2L
+ /SLxlWegH7b1a2tMbGhTqU9tk1RRu8RG6IgFKbDUfWCaHOMYtga8OzWAy6QPqhf6afE4
+ BPHSLALrgxXbCKxk2lUBsDW7mQzcA5W1z6ovU9gQF7mTlBL1LR3YrrkKMxwQdgJtC1Ut
+ U7d3H4vDH+D55QCG6JckSgD+23dcS96mwHuITUzmtasl8ytZgd9iNVVwwbWAHw1fvaPE
+ kCJTA2dYBT45FIiwBmfqzZzr0+fDKMIxtpDKto1RUd6bnbcf/FYbBHHIeQMNoFLcbZ4N
+ gfIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=x5U/zKfkvmSEww+vSURoUmS0s1xUIVHLA1Nb4AtxJis=;
- b=GXZCx0M7BQeUG7CTTNJI8XrSTIxZUNYCBCl6WjWWvHmcpTLE2WLIdnWTf5XW/kPHP0
- XjL7LMy+Vr3yoHjKvVGaJCPUJQNdpttjrgD/2D5Gi5LaulbT62OLiSmprjh/nYaO67Kh
- QDb1RI42rJxhD9VSCBQl1tm8VNyi+rFgqiJtwe2lam8oxDserUCrhPZcOKqKNfDMNJiJ
- rFVR46j8Cs5HP8k2Qp8kZ7CPJQKPDybEWPqFa7Shav0obKO2px14QXMSqfW+K4J5pOpt
- E6Qo2Iond9uzd/0RCP+kAtt4HQDzHhEBh1GLcvIv0D0YTeH1/qL1W0n3ARAzlp3tJKO3
- pHUA==
-X-Gm-Message-State: AOAM5325VxhxH30uf7RPDm6uf5ibrk5W8c3e7VH5JvLKvdlPu5zMNffy
- a0+Fyn84P4JCwV6mjIHLRD/adaogf1c5SMG26jGddg==
-X-Google-Smtp-Source: ABdhPJzlE2zCA4ef3RAWHj2biI9Q1eAsYK7BNlo9EXKXBDmBQL0WWpSKBn/3tA9ID11/ogPIYEhxoy1NogcPeGz3zR4=
-X-Received: by 2002:a2e:b0ec:: with SMTP id h12mr3241295ljl.269.1590597907811; 
- Wed, 27 May 2020 09:45:07 -0700 (PDT)
+ bh=3s8Z6TqgZ6rWtKMmi0vz86r9c3ZptE+7p8K+InML9XA=;
+ b=gm3VmXeMuyuW/z1/1AkrjAze5E9rpuzA092hEG4hmVw3bAS0dfRigMi0H4YaXPT7k2
+ xDcjtl/Wmv+wgCyJo2GLMq18bbSDkraJdwc/2001WQimFNyMpDcRrvWpbrNzlxhF42aK
+ YvW3fXRq0jVGMT+uF6N5XVE62C9+M6wDCKLIDoVPFbwO6QuspM/MwubxXTPk7du6BZri
+ NqoxTdg5OW/ImXpiLajaApka+OGMB7XZNaACCq++5j6XV0v+8fv+iIEadDi1zwrcyCY7
+ oTdhQ6DHG9gv+PnFVSxyDxEQ18qzSLAd7cpIp0GznsPvtGGALzOVkVQR8uPPBEu0tEZv
+ 6K0Q==
+X-Gm-Message-State: AOAM531OdUaVVz5IkBGa2C2H5ZTSUrobW3wGF+L7wH0T/weaIlHHjauo
+ HkSIhBeww/50NhQWDbbWWCp7clcS5VqaiFeDTpoybQ==
+X-Google-Smtp-Source: ABdhPJykPtRUbq3wuH3bc4nCEgiCAkTCt706TKmwFiZu59fzrGES6YLoGp3T1oNdU87IWiuXxpt7gGN7IYPEMgs6uZM=
+X-Received: by 2002:a2e:b0ec:: with SMTP id h12mr3253838ljl.269.1590598365768; 
+ Wed, 27 May 2020 09:52:45 -0700 (PDT)
 MIME-Version: 1.0
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
- <44e3ec27ee6c0d81c440cd2d6cdd1bf93ea102e7.1590594512.git-series.maxime@cerno.tech>
-In-Reply-To: <44e3ec27ee6c0d81c440cd2d6cdd1bf93ea102e7.1590594512.git-series.maxime@cerno.tech>
+ <74d84c75511974bc1ff4bc044413894a43a907a6.1590594512.git-series.maxime@cerno.tech>
+In-Reply-To: <74d84c75511974bc1ff4bc044413894a43a907a6.1590594512.git-series.maxime@cerno.tech>
 From: Eric Anholt <eric@anholt.net>
-Date: Wed, 27 May 2020 09:44:56 -0700
-Message-ID: <CADaigPVbUZzo5c8fp9EqZsfrp44-09whu-HPk9c-eNc2KXS4Mg@mail.gmail.com>
-Subject: Re: [PATCH v3 016/105] drm/vc4: plane: Improve LBM usage
+Date: Wed, 27 May 2020 09:52:34 -0700
+Message-ID: <CADaigPWzgP=C86D6zWN-z_tajFP8-F8GrQ-TcSzUt2cHcM8=8A@mail.gmail.com>
+Subject: Re: [PATCH v3 020/105] drm/vc4: plane: Create overlays for any CRTC
 To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_094510_102542_5AF4357E 
-X-CRM114-Status: GOOD (  21.45  )
+X-CRM114-CacheID: sfid-20200527_095247_524023_BDF0879B 
+X-CRM114-Status: GOOD (  23.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,113 +102,81 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, May 27, 2020 at 8:49 AM Maxime Ripard <maxime@cerno.tech> wrote:
 >
-> From: Dave Stevenson <dave.stevenson@raspberrypi.com>
+> Now that we have everything in place, we can now register all the overlay
+> planes that can be assigned to all the CRTCs.
 >
-> LBM allocations were always taking the worst case sizing of
-> max(src_width, dst_width) * 16. This is significantly over
-> the required sizing, and stops us rendering multiple 4k images
-> to the screen.
+> This has two side effects:
 >
-> Add some of the additional constraints to more accurately
-> describe the LBM requirements.
+>   - The number of overlay planes is reduced from 24 to 8. This is temporary
+>     and will be increased again in the next patch.
 >
-> Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.com>
+>   - The ID of the various planes is changed again, and we will now have all
+>     the primary planes, then all the overlay planes and finally the cursor
+>     planes. This shouldn't cause any issue since the ordering between
+>     primary, overlay and cursor planes is preserved.
+>
 > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+
+Honestly, I'd squash this with the previous two patches, the
+individual refactors don't make much sense on their own or simplify
+this patch I think.  Either way, patch 17-29 r-b.
+
+
+
+
 > ---
->  drivers/gpu/drm/vc4/vc4_plane.c | 31 ++++++++++++++++++++-----------
->  1 file changed, 20 insertions(+), 11 deletions(-)
+>  drivers/gpu/drm/vc4/vc4_plane.c | 35 +++++++++++++++++-----------------
+>  1 file changed, 18 insertions(+), 17 deletions(-)
 >
 > diff --git a/drivers/gpu/drm/vc4/vc4_plane.c b/drivers/gpu/drm/vc4/vc4_plane.c
-> index 1575c05e3106..602927745f84 100644
+> index 824c188980b0..5335123ae2a0 100644
 > --- a/drivers/gpu/drm/vc4/vc4_plane.c
 > +++ b/drivers/gpu/drm/vc4/vc4_plane.c
-> @@ -142,9 +142,10 @@ static const struct hvs_format *vc4_get_hvs_format(u32 drm_format)
->         return NULL;
->  }
+> @@ -1378,26 +1378,27 @@ int vc4_plane_create_additional_planes(struct drm_device *drm)
+>         struct drm_crtc *crtc;
+>         unsigned int i;
 >
-> -static enum vc4_scaling_mode vc4_get_scaling_mode(u32 src, u32 dst)
-> +static enum vc4_scaling_mode vc4_get_scaling_mode(u32 src, u32 dst,
-> +                                                 bool chroma_vrep)
->  {
-> -       if (dst == src)
-> +       if (dst == src && !chroma_vrep)
->                 return VC4_SCALING_NONE;
->         if (3 * dst >= 2 * src)
->                 return VC4_SCALING_PPF;
-> @@ -369,9 +370,11 @@ static int vc4_plane_setup_clipping_and_scaling(struct drm_plane_state *state)
->                 return ret;
+> -       drm_for_each_crtc(crtc, drm) {
+> -               /* Set up some arbitrary number of planes.  We're not limited
+> -                * by a set number of physical registers, just the space in
+> -                * the HVS (16k) and how small an plane can be (28 bytes).
+> -                * However, each plane we set up takes up some memory, and
+> -                * increases the cost of looping over planes, which atomic
+> -                * modesetting does quite a bit.  As a result, we pick a
+> -                * modest number of planes to expose, that should hopefully
+> -                * still cover any sane usecase.
+> -                */
+> -               for (i = 0; i < 8; i++) {
+> -                       struct drm_plane *plane =
+> -                               vc4_plane_init(drm, DRM_PLANE_TYPE_OVERLAY);
+> +       /* Set up some arbitrary number of planes.  We're not limited
+> +        * by a set number of physical registers, just the space in
+> +        * the HVS (16k) and how small an plane can be (28 bytes).
+> +        * However, each plane we set up takes up some memory, and
+> +        * increases the cost of looping over planes, which atomic
+> +        * modesetting does quite a bit.  As a result, we pick a
+> +        * modest number of planes to expose, that should hopefully
+> +        * still cover any sane usecase.
+> +        */
+> +       for (i = 0; i < 8; i++) {
+> +               struct drm_plane *plane =
+> +                       vc4_plane_init(drm, DRM_PLANE_TYPE_OVERLAY);
 >
->         vc4_state->x_scaling[0] = vc4_get_scaling_mode(vc4_state->src_w[0],
-> -                                                      vc4_state->crtc_w);
-> +                                                      vc4_state->crtc_w,
-> +                                                      false);
->         vc4_state->y_scaling[0] = vc4_get_scaling_mode(vc4_state->src_h[0],
-> -                                                      vc4_state->crtc_h);
-> +                                                      vc4_state->crtc_h,
-> +                                                      false);
+> -                       if (IS_ERR(plane))
+> -                               continue;
+> +               if (IS_ERR(plane))
+> +                       continue;
 >
->         vc4_state->is_unity = (vc4_state->x_scaling[0] == VC4_SCALING_NONE &&
->                                vc4_state->y_scaling[0] == VC4_SCALING_NONE);
-> @@ -384,10 +387,12 @@ static int vc4_plane_setup_clipping_and_scaling(struct drm_plane_state *state)
+> -                       plane->possible_crtcs = drm_crtc_mask(crtc);
+> -               }
+> +               plane->possible_crtcs =
+> +                       GENMASK(drm->mode_config.num_crtc - 1, 0);
+> +       }
 >
->                 vc4_state->x_scaling[1] =
->                         vc4_get_scaling_mode(vc4_state->src_w[1],
-> -                                            vc4_state->crtc_w);
-> +                                            vc4_state->crtc_w,
-> +                                            v_subsample == 2);
->                 vc4_state->y_scaling[1] =
->                         vc4_get_scaling_mode(vc4_state->src_h[1],
-> -                                            vc4_state->crtc_h);
-> +                                            vc4_state->crtc_h,
-> +                                            v_subsample == 2);
->
->                 /* YUV conversion requires that horizontal scaling be enabled
->                  * on the UV plane even if vc4_get_scaling_mode() returned
-
-The change above isn't mentioned in the commit message and I don't
-understand what's going on.  It should be split out with an
-explanation.
-
-> @@ -437,10 +442,7 @@ static void vc4_write_ppf(struct vc4_plane_state *vc4_state, u32 src, u32 dst)
->  static u32 vc4_lbm_size(struct drm_plane_state *state)
->  {
->         struct vc4_plane_state *vc4_state = to_vc4_plane_state(state);
-> -       /* This is the worst case number.  One of the two sizes will
-> -        * be used depending on the scaling configuration.
-> -        */
-> -       u32 pix_per_line = max(vc4_state->src_w[0], (u32)vc4_state->crtc_w);
-> +       u32 pix_per_line;
->         u32 lbm;
->
->         /* LBM is not needed when there's no vertical scaling. */
-> @@ -448,6 +450,11 @@ static u32 vc4_lbm_size(struct drm_plane_state *state)
->             vc4_state->y_scaling[1] == VC4_SCALING_NONE)
->                 return 0;
->
-> +       if (vc4_state->x_scaling[0] == VC4_SCALING_TPZ)
-> +               pix_per_line = vc4_state->crtc_w;
-> +       else
-> +               pix_per_line = vc4_state->src_w[0];
-
-Looks like it's also crtc_w for RGB or 4:4:4 and HPPF in (0.5,1.0].
-Maybe drop a note in here that we're not covering that case, but src_w
-> crtc_w so it's safe at least.
-
-> +
->         if (!vc4_state->is_yuv) {
->                 if (vc4_state->y_scaling[0] == VC4_SCALING_TPZ)
->                         lbm = pix_per_line * 8;
-> @@ -583,7 +590,9 @@ static int vc4_plane_allocate_lbm(struct drm_plane_state *state)
->                 spin_lock_irqsave(&vc4->hvs->mm_lock, irqflags);
->                 ret = drm_mm_insert_node_generic(&vc4->hvs->lbm_mm,
->                                                  &vc4_state->lbm,
-> -                                                lbm_size, 32, 0, 0);
-> +                                                lbm_size,
-> +                                                vc4->hvs->hvs5 ? 64 : 32,
-> +                                                0, 0);
->                 spin_unlock_irqrestore(&vc4->hvs->mm_lock, irqflags);
->
->                 if (ret)
+> +       drm_for_each_crtc(crtc, drm) {
+>                 /* Set up the legacy cursor after overlay initialization,
+>                  * since we overlay planes on the CRTC in the order they were
+>                  * initialized.
 > --
 > git-series 0.9.1
 
