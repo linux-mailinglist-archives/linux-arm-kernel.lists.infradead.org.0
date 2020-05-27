@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FB3A1E366C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 05:21:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 834691E366D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 05:22:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CmH9MClIZO29Ki3sGj9E0hI+HJ7SH2EE70BjRpWwNg4=; b=uJ2q7eJayL7DBu
-	F7oMpLQgKPvYu0JqKxlKExxql3Mq+7Mtdzl/BxBqSDgLIrrWoVslrnYoVjXj2CFIB39tAW2Wwai8A
-	H+9A1f046/3gwv7A+5rlnua28FJ/ltn+PaW+TzALam37NwwGKVfxIpkb0artOUYWJIYjiMD5QZLrI
-	aVfKwrJJ77WvMhDZVgL2WXYYGVe1B3af8peKa/nRlstZQymwgAmCiiGpVkGiHOqFqZ3blStDPVxMz
-	yTKI/2U5J5LEY5qidfzgR8L4UPDIFiCS3KE4y4nh7RV8UBOyMVrcqRqfz+LboeQxHBkzZztAG/SsH
-	gLIGTpVZOAcH8k4GPP0A==;
+	List-Owner; bh=JBpANnXVBZZyGrpXTB1qbNMdni8e3ciFhRbL+pu9wyA=; b=rTJ1crrwSGzf0K
+	yao4bejl51IcwuM7D8gdIeOTH56UiU1ZzhMLr3pyfc8cLIURf7SCGBV2i/kb/DPxVeqVXUwv1fyQ8
+	Vqbogj1DqDrOvJDnwHwOmi1qQH6dKZmI94M+Cp8WdgBdf2yvYhOh/nJb45nNmLSDQHABp0YbgtHv+
+	WVRn1XtY3gYhLL+GI7XVOiQCHv7XfDGMNgqSFN7YAE3i29MoMdRFnnvAtY/LK6E4zxmhinnaofTy3
+	WjcvlI3WT/OjYK/iRpeZnFfh+XCGh6ylSAAtc+1FB+IfH/ajoDrizz+U8cJDAiHfDNNusW7J6WEjG
+	Ec4g60FRwLlTTJNxTASA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdmdV-0004p7-CN; Wed, 27 May 2020 03:21:45 +0000
+	id 1jdme0-00054J-P7; Wed, 27 May 2020 03:22:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdmdK-0004oT-OO
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 03:21:35 +0000
+ id 1jdmdo-00053H-Un
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 03:22:06 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 449D5207D8;
- Wed, 27 May 2020 03:21:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 85142207D8;
+ Wed, 27 May 2020 03:22:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590549694;
- bh=0HJqmsukxEbasVpB0fF6u+rD8B57992xBAQgVKu4vos=;
+ s=default; t=1590549724;
+ bh=3BfeorGCkLtdTas1uzCnbhiIA2SgE1HFtEW+jxo7+p4=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=Mi2ISsnNU9VRd0oVowT29uMrvDgoQXlh6ejF5wBU8G0zam7mydG3ewqR1VOzSQzje
- CCTsde1bR3zcyIiv1CxVKQINxSi76uvVOOWps6OFskQGFjDsTzP7jatk3KVMu+tU2Z
- E5QEZxQnhI1T1+ni/FYMwVrT9td1xl3m7trLemxY=
+ b=w1F1E7q7WjgpBJt3y6p4FfKfpi3hE1+4bLCoozWc/cNiKtCS/TYTU3McAIHrjdZ69
+ WUxhQSB9GJ4gzWd9dNT6IOv6+0i6AK9xEc34FPhVUhU5P1/5fdtugE2JggRbCfAvdw
+ Cnu1VgUlD5mcSJodvEa2vHCqj4tp2qP/Y3SDjpYc=
 MIME-Version: 1.0
-In-Reply-To: <20200515142720.290206-1-codrin.ciubotariu@microchip.com>
-References: <20200515142720.290206-1-codrin.ciubotariu@microchip.com>
-Subject: Re: [PATCH] clk: at91: Add peripheral clock for PTC
+In-Reply-To: <1588508289-10140-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1588508289-10140-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: Re: [PATCH 1/2] clk: at91: pmc: do not continue if compatible not
+ located
 From: Stephen Boyd <sboyd@kernel.org>
-To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
- linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Date: Tue, 26 May 2020 20:21:33 -0700
-Message-ID: <159054969349.88029.10932617999893578868@swboyd.mtv.corp.google.com>
+To: Claudiu Beznea <claudiu.beznea@microchip.com>,
+ alexandre.belloni@bootlin.com, ludovic.desroches@microchip.com,
+ mturquette@baylibre.com, nicolas.ferre@microchip.com
+Date: Tue, 26 May 2020 20:22:03 -0700
+Message-ID: <159054972384.88029.12499827364972798016@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_202134_811437_A157CF5D 
-X-CRM114-Status: UNSURE (   5.99  )
+X-CRM114-CacheID: sfid-20200526_202205_016690_534E2B93 
+X-CRM114-Status: UNSURE (   6.64  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,18 +79,18 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, mturquette@baylibre.com,
- ludovic.desroches@microchip.com, eugen.hristev@microchip.com,
- Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Cc: Claudiu Beznea <claudiu.beznea@microchip.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Codrin Ciubotariu (2020-05-15 07:27:20)
-> PMC generates the peripheral clock for the PTC.
+Quoting Claudiu Beznea (2020-05-03 05:18:08)
+> pmc_register_ops() is called for all AT91 devices. Return
+> -ENODEV in case of_find_matching_node() returns NULL.
 > 
-> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+> Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 > ---
 
 Applied to clk-next
