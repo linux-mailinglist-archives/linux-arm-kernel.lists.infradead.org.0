@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A5461E4A1F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:28:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E4561E4A23
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:29:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lFN6LsDwzotyWQa66/5vRstSCTF3n4dKM0NtIup8dCg=; b=QygrQgHnYCiP5u
-	miZy9lvUlx8ZDpL1wz7tTmL1XpejdufcSsneNjIDglBRI6+vmG1cryVZm/w2YFI0wq1NHTlx+RV/r
-	AnLoZuO36WImzPNqrRFPGheO4CxlgctyC4Kt5EAzO54HKCzy9o+g8yXC82GVhE/nvgiHfNln5aLTq
-	EmeJHob38KMkB7Bft4hmtxZIz+TMtG1ux0eKZ6xk9BnqEomfS3ayISJQuuE2HcZ1ADC9EXsJa1mII
-	4UU1N81CaDyeDshAG3oOliA02471a6h+3wLbucFQshUeBvT6OI5PyEek2ZFd+NEpg981cHNwnwsDd
-	RA8KpN9Vh+C6UJvbTBEw==;
+	List-Owner; bh=14TYK0NDXR7qg6z6u+BUSRxbMMyiCb409L0VSnkTue0=; b=LiHstWLDoOsrbd
+	5FLYhKSNVEl4EQLxO7Zr201hTvy7AYhDH/j6pfVTCVLMU7BHJ6wJUkf+JAdVB3QjRU+asFXHnDrUT
+	qpST6YFOpxHyaN6oV4/s8byOh9bXc+pzW9vnDzpg9t4DvpSo9ndw8eB2hzVJYpDeG6CE7vIw0VoXW
+	AT8tLp4eJR8EE+24nOYpZTiUm1IOPdxVWXZXRX8gDhDrt56v+8yIx+lwGgiqeSMKsFpdxxd9fjJEB
+	GkXA1vry4sEMduFTHrSFhja+HD9SJ/KFXWa7TJ/x72qoVH5ZEi5qvbUWGRsE5K9vxv6p9yXLZAPT8
+	x9zb2gTC+NCw5L/TMw4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyvB-0003wI-AU; Wed, 27 May 2020 16:28:49 +0000
+	id 1jdyvW-00048Y-AJ; Wed, 27 May 2020 16:29:10 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyL0-0001Qw-Qt; Wed, 27 May 2020 15:51:34 +0000
+ id 1jdyL2-0001S8-R1; Wed, 27 May 2020 15:51:35 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 4D6D65814F4;
- Wed, 27 May 2020 11:51:25 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:25 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id D3F575814F9;
+ Wed, 27 May 2020 11:51:26 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:26 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=IuU4CyqN1WTD2
- W0jNMeAupQpwuiyhjcP/tC7268QG+E=; b=LrgeF09U5T9+MuSN6cTRJcoGpbLfG
- qamBEaHvSSORb2kv6gnbY2KYIqvt3LEbk8YVGxmvDo+0ojJn9u19/nGFUPX/lGYI
- LhXdCwYVa65AMZyuTUhwb/lAev/eV77jKhbfeBIZqcCNqt5/LWEGZNIAX4vxQ+x5
- XxFcVXHpek1HTwCzhEhx8Kppxfvfm07nW8Fp0EEXz/ZUxcPnnqP5PqVD0hfNFXFt
- KDhF+7Cu1gO85HTRlM2fvEFp/E+guayJkCA0ixaGrYKov8b2WWZco7cJOS0qY3jj
- 25YeKFygdD6es6rnLWLQH9P3agcUsFoCXCvWrpnr0SBq97gr9PJRPAwow==
+ :mime-version:content-transfer-encoding; s=fm2; bh=Qt9/P4yukHV2B
+ TUxxyxl9vY352xX2ptPfPzVLjzzRFg=; b=sVRlM84xe3TyV0NPrwgJBwH7ZsZAM
+ MklsRzKl5y8mqAaxIjVJfMCCzXWCLoLw1lOiDVR38y92KDT6erd1dxqbpFAuOcYs
+ jD/IUd/4Idc5i2IxJbNEGSjWbrqtEMpAiPiXE39KOK3SbaOcOI/WcuFxdRmXAL1A
+ iTv55a9sIv3Vsi+GDw6zEZ9nB+WeDuDKIkb+MsiERKL81YitJRKiW4RQHRsg2Rzz
+ CECGngwsNIZSfIc87ba/VPw43Ga26aSEMfYJVWUJYXtbnYvZUfE+IYvAXhJPJmWu
+ Yqk9wEFkhriC5aehnjBkZQFZYwTfkq7ajlWbKo9IwNLADp4dPgHTpEhJw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=IuU4CyqN1WTD2W0jNMeAupQpwuiyhjcP/tC7268QG+E=; b=0a4bM5Vc
- QTJwpp736BZUNNisnncdEBdhdag/OzYYomHLEOyEQorAGiR9N0+mmELPmuKAFrdk
- T/fkQ5KWmtP8K8lhADm52LYkKSW/N+bl12CwWU9ZlcqaglTqwd2U0kTMHSR5Dce0
- miZKexMQRQW9bTbmXDeLTa95XIKllUH79YMoqnIC25P10I1d2/dIRx88JKrwI7L+
- r/T5l8fK2aP0x++7jHUMSEHBnIYl4x30bWu+6x0wGrgLj0VFtFEAyiVKWADD1X9g
- uHobX3wVVXmpC7d7irhmr3IRuaijAruu96+PSkHx3iSxHQIb00jYYBN+ZRQsxjh3
- d44CFAYrspCRyQ==
-X-ME-Sender: <xms:fYzOXsklk5C_8E-ib88-Qm00w6Bwf0oR5GIXj8F7ELlQVYkoZojYYg>
+ fm2; bh=Qt9/P4yukHV2BTUxxyxl9vY352xX2ptPfPzVLjzzRFg=; b=J2/RQ2kR
+ v98ruPKOf6pL1rocIL6Qq8IONCT+Kdz5cO+nRBnjzH2xmuhp9on7iQg89CSLJb53
+ vPIkM01yg1d/uBJ9o0dvthq92FCAmYpWzknhKor+0T+wwK2kdkhZivE9mpj0FjaX
+ sussLiepjHxHgLfmKlHqMWwXQuPH0RrUvwmCsGAvLVNVj9WWxwGkI0aE/QzyqduG
+ qW2KRRQWeLoomrhsQFfi0Z8OCtuQ49+hXX2LsgzrwDS9TYmolUqVCxsO9EYoc6ze
+ nQspnsjEVD1w0mcEb8RZbQw1R8Yc/hFKryjuy/k7oT+CkItQl9K8dKS5bIpiMaMy
+ 0p6+2Oqu8Wklkg==
+X-ME-Sender: <xms:fozOXsb_v5XmlXhJaaxJF-_Yi8JNYEyV6XePpFHa2SHst1Cq9gYG_A>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,27 +56,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepheelne
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:fYzOXr3I2y0bbXEb_QjLnWZHf-wGVAenyTcQw_CVS5sTgMRSA-46PA>
- <xmx:fYzOXqqeiuiwNQoqv-dkPl3LMuc_NIBXLTw3wOPwxtP1noABopBO1w>
- <xmx:fYzOXom2LYOcoPO7vauftYCoohJYgSiQ7xTqh6OQee0r8q-tYdAs5g>
- <xmx:fYzOXjn8bCQ0mHuxzoKHMPsCpOutoBy_ONFV8l_TT5HMua2t35cMDg>
+X-ME-Proxy: <xmx:fozOXnbnCQnxw9FAZYgHPC53wNkGhGMIKi1TqUFYvl3mARhZz7m0PA>
+ <xmx:fozOXm_pU2veX9JEoHkEzT8LGFlk-HeIPNIHqTtZBHKPdhBSaFGUkg>
+ <xmx:fozOXmqKq88bTAK5_3mllqyVTqD5o9z4VpBwOXKz4SzWiBFuE0YBLw>
+ <xmx:fozOXjI7NHNfBccefGtHERMKpJ85yKikb7u4znAgg7aG1oJtRUjjSw>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id E412A30618B7;
- Wed, 27 May 2020 11:51:24 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 70284328005E;
+ Wed, 27 May 2020 11:51:26 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 081/105] drm/vc4: hdmi: Add reset callback
-Date: Wed, 27 May 2020 17:48:51 +0200
-Message-Id: <1cbd5fcbc9b0bcc604990b61c8646a15cbba0c81.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 082/105] drm/vc4: hdmi: Add PHY init and disable function
+Date: Wed, 27 May 2020 17:48:52 +0200
+Message-Id: <f56124810ee0dd417cefa40546d3302e61c828ed.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085127_265439_350326DA 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20200527_085129_053923_103DCBB9 
+X-CRM114-Status: GOOD (  14.84  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -117,92 +117,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The BCM2711 and BCM283x HDMI controllers use a slightly different reset
-sequence, so let's add a callback to reset the controller.
+The HDMI PHY in the BCM2711 HDMI controller is significantly more
+complicated to setup than in the older BCM283x SoCs.
+
+Let's add hooks to enable and disable the PHY.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_hdmi.c | 31 ++++++++++++++++++-------------
- drivers/gpu/drm/vc4/vc4_hdmi.h |  3 +++
- 2 files changed, 21 insertions(+), 13 deletions(-)
+ drivers/gpu/drm/vc4/Makefile       |  1 +
+ drivers/gpu/drm/vc4/vc4_hdmi.c     | 14 +++++++-------
+ drivers/gpu/drm/vc4/vc4_hdmi.h     | 13 +++++++++++++
+ drivers/gpu/drm/vc4/vc4_hdmi_phy.c | 25 +++++++++++++++++++++++++
+ 4 files changed, 46 insertions(+), 7 deletions(-)
+ create mode 100644 drivers/gpu/drm/vc4/vc4_hdmi_phy.c
 
+diff --git a/drivers/gpu/drm/vc4/Makefile b/drivers/gpu/drm/vc4/Makefile
+index b303703bc7f3..d0163e18e9ca 100644
+--- a/drivers/gpu/drm/vc4/Makefile
++++ b/drivers/gpu/drm/vc4/Makefile
+@@ -12,6 +12,7 @@ vc4-y := \
+ 	vc4_kms.o \
+ 	vc4_gem.o \
+ 	vc4_hdmi.o \
++	vc4_hdmi_phy.o \
+ 	vc4_vec.o \
+ 	vc4_hvs.o \
+ 	vc4_irq.o \
 diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index aa7b24267a0b..dceff505c840 100644
+index dceff505c840..3d5e35aa96ff 100644
 --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
 +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -69,6 +69,21 @@ static int vc4_hdmi_debugfs_regs(struct seq_file *m, void *unused)
- 	return 0;
- }
+@@ -321,7 +321,9 @@ static void vc4_hdmi_encoder_disable(struct drm_encoder *encoder)
  
-+static void vc4_hdmi_reset(struct vc4_hdmi *vc4_hdmi)
-+{
-+	HDMI_WRITE(HDMI_M_CTL, VC4_HD_M_SW_RST);
-+	udelay(1);
-+	HDMI_WRITE(HDMI_M_CTL, 0);
-+
-+	HDMI_WRITE(HDMI_M_CTL, VC4_HD_M_ENABLE);
-+
-+	HDMI_WRITE(HDMI_SW_RESET_CONTROL,
-+		   VC4_HDMI_SW_RESET_HDMI |
-+		   VC4_HDMI_SW_RESET_FORMAT_DETECT);
-+
-+	HDMI_WRITE(HDMI_SW_RESET_CONTROL, 0);
-+}
-+
- static enum drm_connector_status
- vc4_hdmi_connector_detect(struct drm_connector *connector, bool force)
- {
-@@ -363,11 +378,8 @@ static void vc4_hdmi_encoder_enable(struct drm_encoder *encoder)
- 		return;
- 	}
+ 	HDMI_WRITE(HDMI_RAM_PACKET_CONFIG, 0);
  
--	HDMI_WRITE(HDMI_SW_RESET_CONTROL,
--		   VC4_HDMI_SW_RESET_HDMI |
--		   VC4_HDMI_SW_RESET_FORMAT_DETECT);
+-	HDMI_WRITE(HDMI_TX_PHY_RESET_CTL, 0xf << 16);
++	if (vc4_hdmi->variant->phy_disable)
++		vc4_hdmi->variant->phy_disable(vc4_hdmi);
++
+ 	HDMI_WRITE(HDMI_VID_CTL,
+ 		   HDMI_READ(HDMI_VID_CTL) & ~VC4_HD_VID_CTL_ENABLE);
+ 
+@@ -381,12 +383,8 @@ static void vc4_hdmi_encoder_enable(struct drm_encoder *encoder)
+ 	if (vc4_hdmi->variant->reset)
+ 		vc4_hdmi->variant->reset(vc4_hdmi);
+ 
+-	/* PHY should be in reset, like
+-	 * vc4_hdmi_encoder_disable() does.
+-	 */
+-	HDMI_WRITE(HDMI_TX_PHY_RESET_CTL, 0xf << 16);
 -
--	HDMI_WRITE(HDMI_SW_RESET_CONTROL, 0);
-+	if (vc4_hdmi->variant->reset)
-+		vc4_hdmi->variant->reset(vc4_hdmi);
+-	HDMI_WRITE(HDMI_TX_PHY_RESET_CTL, 0);
++	if (vc4_hdmi->variant->phy_init)
++		vc4_hdmi->variant->phy_init(vc4_hdmi, mode);
  
- 	/* PHY should be in reset, like
- 	 * vc4_hdmi_encoder_disable() does.
-@@ -1289,14 +1301,6 @@ static int vc4_hdmi_bind(struct device *dev, struct device *master, void *data)
- 		vc4_hdmi->hpd_active_low = hpd_gpio_flags & OF_GPIO_ACTIVE_LOW;
- 	}
- 
--	/* HDMI core must be enabled. */
--	if (!(HDMI_READ(HDMI_M_CTL) & VC4_HD_M_ENABLE)) {
--		HDMI_WRITE(HDMI_M_CTL, VC4_HD_M_SW_RST);
--		udelay(1);
--		HDMI_WRITE(HDMI_M_CTL, 0);
--
--		HDMI_WRITE(HDMI_M_CTL, VC4_HD_M_ENABLE);
--	}
- 	pm_runtime_enable(dev);
- 
- 	drm_simple_encoder_init(drm, encoder, DRM_MODE_ENCODER_TMDS);
-@@ -1409,6 +1413,7 @@ static const struct vc4_hdmi_variant bcm2835_variant = {
- 	.num_registers		= ARRAY_SIZE(vc4_hdmi_fields),
+ 	if (debug_dump_regs) {
+ 		struct drm_printer p = drm_info_printer(&vc4_hdmi->pdev->dev);
+@@ -1414,6 +1412,8 @@ static const struct vc4_hdmi_variant bcm2835_variant = {
  
  	.init_resources		= vc4_hdmi_init_resources,
-+	.reset			= vc4_hdmi_reset,
+ 	.reset			= vc4_hdmi_reset,
++	.phy_init		= vc4_hdmi_phy_init,
++	.phy_disable		= vc4_hdmi_phy_disable,
  };
  
  static const struct of_device_id vc4_hdmi_dt_match[] = {
 diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.h b/drivers/gpu/drm/vc4/vc4_hdmi.h
-index f7d0ca9447d2..93695674c2d3 100644
+index 93695674c2d3..39ae5273f36b 100644
 --- a/drivers/gpu/drm/vc4/vc4_hdmi.h
 +++ b/drivers/gpu/drm/vc4/vc4_hdmi.h
-@@ -35,6 +35,9 @@ struct vc4_hdmi_variant {
- 	 * clocks, etc) for that variant.
- 	 */
- 	int (*init_resources)(struct vc4_hdmi *vc4_hdmi);
+@@ -21,6 +21,8 @@ to_vc4_hdmi_encoder(struct drm_encoder *encoder)
+ 	return container_of(encoder, struct vc4_hdmi_encoder, base.base);
+ }
+ 
++struct drm_display_mode;
 +
-+	/* Callback to reset the HDMI block */
-+	void (*reset)(struct vc4_hdmi *vc4_hdmi);
+ struct vc4_hdmi;
+ struct vc4_hdmi_register;
+ 
+@@ -38,6 +40,13 @@ struct vc4_hdmi_variant {
+ 
+ 	/* Callback to reset the HDMI block */
+ 	void (*reset)(struct vc4_hdmi *vc4_hdmi);
++
++	/* Callback to initialize the PHY according to the mode */
++	void (*phy_init)(struct vc4_hdmi *vc4_hdmi,
++			 struct drm_display_mode *mode);
++
++	/* Callback to disable the PHY */
++	void (*phy_disable)(struct vc4_hdmi *vc4_hdmi);
  };
  
  /* HDMI audio information */
+@@ -95,4 +104,8 @@ encoder_to_vc4_hdmi(struct drm_encoder *encoder)
+ 	return container_of(_encoder, struct vc4_hdmi, encoder);
+ }
+ 
++void vc4_hdmi_phy_init(struct vc4_hdmi *vc4_hdmi,
++		       struct drm_display_mode *mode);
++void vc4_hdmi_phy_disable(struct vc4_hdmi *vc4_hdmi);
++
+ #endif /* _VC4_HDMI_H_ */
+diff --git a/drivers/gpu/drm/vc4/vc4_hdmi_phy.c b/drivers/gpu/drm/vc4/vc4_hdmi_phy.c
+new file mode 100644
+index 000000000000..5a1746877bb5
+--- /dev/null
++++ b/drivers/gpu/drm/vc4/vc4_hdmi_phy.c
+@@ -0,0 +1,25 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2015 Broadcom
++ * Copyright (c) 2014 The Linux Foundation. All rights reserved.
++ * Copyright (C) 2013 Red Hat
++ * Author: Rob Clark <robdclark@gmail.com>
++ */
++
++#include "vc4_hdmi.h"
++#include "vc4_hdmi_regs.h"
++
++void vc4_hdmi_phy_init(struct vc4_hdmi *vc4_hdmi, struct drm_display_mode *mode)
++{
++	/* PHY should be in reset, like
++	 * vc4_hdmi_encoder_disable() does.
++	 */
++
++	HDMI_WRITE(HDMI_TX_PHY_RESET_CTL, 0xf << 16);
++	HDMI_WRITE(HDMI_TX_PHY_RESET_CTL, 0);
++}
++
++void vc4_hdmi_phy_disable(struct vc4_hdmi *vc4_hdmi)
++{
++	HDMI_WRITE(HDMI_TX_PHY_RESET_CTL, 0xf << 16);
++}
 -- 
 git-series 0.9.1
 
