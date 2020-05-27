@@ -2,99 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F384A1E4D29
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 20:35:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E428E1E4D32
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 20:41:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0rhDwTBGtQ/5CQhmg2C/IEsm0jxcBbHXbnI28ottmO4=; b=TytH7yeWCVkC3RXumGmhl3BbU
-	Z8degzhBtFB0aSYOuL23pglOntLAsGEXmm0Bzc+UwBy/W7OIypKymqgoPO3Zh2WUNyFe2H/OaS3Yb
-	RN4xxHPAtb3YUIQ90VXW/GwqpFUHiWqeTWZAuQF+/h1iygwJg8SBGSHnqVh+0R1J6r9lFl3oUe6Qh
-	2jrcSx0mS0lnaoDWvXf3xMaj5jaDL8s6b8gOkSLyasE1o22MpsxggFTe+Pf2mwsyhPPdJWt1EpRQe
-	2bF4utvktUbapD+6S+xqZe0qKpzxsLfcesXaDcclajRtLfuRF6fPIR3vSGdOwin66Yx7w+xFRgbNz
-	E+ZIabEhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g1lNM1h7VMCWTWRWnEjnDTbcu6Gg90k0s+Pm1xGP8ro=; b=Ls3ytPDZkAFf1+
+	HXlUmni4RA1TKvV0K8LIgRby7aE2mk+Iyq0HRGj3/98IzW7ZEkOuyQlVq9zokvjITa0ENI75wxwlz
+	7v5nGaEbzNuP89jdiXRHZlR2kX5IKK+rD4u1rK+TWFWrWytmPKQP+0PfJDNN2Nc1Vfce+WfVbK5No
+	WoBg7ykh5cC1pf3vpLN/YapvE0VGVhdwuOhTl1EZMJMTfoOWKib4Lr/eBS1QhZLPN22IL2emRxB06
+	/bwbCT9GlfdM+tpg2zSp7/RYQOFCWgwLhOiYpjUEFCsrIdmRW6UNrz6LzAI405FFK2mYlBN5yAwZN
+	DKlfWi59HwYz2HVAo9xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je0tt-0001Ty-Jb; Wed, 27 May 2020 18:35:37 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1je0zs-0005iq-MY; Wed, 27 May 2020 18:41:48 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je0tf-0001Tb-As
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 18:35:24 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id ci21so1980962pjb.3
+ id 1je0zh-0005gj-F3
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 18:41:39 +0000
+Received: by mail-lj1-x241.google.com with SMTP id m12so27805257ljc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 11:35:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=Ac0TzlNqiL+rdZbCAWc33T2M+dlFeVr61CWdwcJ9jPo=;
- b=ntJ5XnpRsas3+IMRMkXV9mcg+6CdbP5T94nDFftj+4ije7j9kUpq40mpLekWlH7lmr
- v0pHPz+h4ZJ7MURzp29LzyPdWpK5hvGFFrBNYkiLR2zpYFkIujD8VfGPfd9EJGJ2RiAH
- eiao4XAVqkbAGxBNqSzZR1BCJagtyVTbzHtnr0RV4y7OVFWJldtsbvj7jS7UOzmirJZn
- 8e7c+7y5Dhl9SfuiIxQ+P8quG5KWv6kvHbdpOAf0VGiFlJ1LRg7eUEoXw1khaFbWaOe9
- 8mScLq9mra70QUndy0nnxLX5YfwM0TLoSw3U+yyrLPCguSLnac8d3Q4jnxB/MV1JBzS1
- LPkw==
+ Wed, 27 May 2020 11:41:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=anholt-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=80e9RnD9Ss8eOafGm0SPCkZYoQv72dsa4vHL2CNUsTI=;
+ b=QN1siCcUywmiFL5b2l7OO2oJrFZjy0oVoG39jF8U3zH1k9rEEmuBmleEe7rSCXVq9b
+ QDK/ZQZSsIFtjtyqvUKUGZpDAKKGE4YXN8HrzpU0lJnDxfXUnAFWPaerCMwA/UkQaGq6
+ NV6pwJVvRp8hgN5+JK1UdeoLeCp6e0a+/V5iE7yug/9UO4hqzlfLKMTtQBJjCHMPkpgM
+ gSOMNRg8jwdPUo7jOdYjVE95+JviMtUNl2EJK784jiP4U2WAA6mUOgpjejHB3we1xTko
+ lpHOf2J4ipaoutCd2b80OURfvWweVQlY47Ga3y1MboXT4o7ZqhvVwpWG0R0EOVn86EpA
+ 5Adw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=Ac0TzlNqiL+rdZbCAWc33T2M+dlFeVr61CWdwcJ9jPo=;
- b=p4fG8oqUmWCufxxOE6IP8sjSbWmYj6NP2XpI+YR9bJthWMlfFv1nusuwBtcj/xnaFs
- hfjRNdhqgaOJOm4ugHObsKCHyJVtXGjDC9UaUVr9JMkF837H1EaLkVjTzkYV3rCiYXSq
- pm/IDYx72asLHvqY2JKg//pFBuG/VpcCO3VPetXRgJ3eVcyy96Y1R4Tr+s0KTpw/CkJy
- Yy0JfkA/g2lSaIftixtqfaXyvH2/ZIT/lij2hspqDi43C2gPb7QNtn39LA19V3GRQ8ul
- 4wEKr3MzWJmge5fb+jGNX26+tDKZ/CKhnt4nMGo3tO75cYUTQBfRvqqmg2wuyWkdo3Ca
- ju/A==
-X-Gm-Message-State: AOAM530E4KfHr88lIVTP4Ja1WXZecQ2MFROi2Jerh6KhXKXDZUydV+9p
- jDvC+XYzpTDkDdBKoU64qPw3iQ==
-X-Google-Smtp-Source: ABdhPJyhIbb+P3aEI+nNHtP5EaxJ5+1NfeT9he/b7PSyOrzjqPRnOl5zjZoroTF+LzRVkxyswCPIDg==
-X-Received: by 2002:a17:902:c006:: with SMTP id
- v6mr6787936plx.53.1590604522433; 
- Wed, 27 May 2020 11:35:22 -0700 (PDT)
-Received: from google.com ([2620:15c:2ce:0:9efe:9f1:9267:2b27])
- by smtp.gmail.com with ESMTPSA id k7sm2497552pga.87.2020.05.27.11.35.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 May 2020 11:35:21 -0700 (PDT)
-Date: Wed, 27 May 2020 11:35:17 -0700
-From: Fangrui Song <maskray@google.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] arm64: disable -fsanitize=shadow-call-stack for big-endian
-Message-ID: <20200527183517.uhph2pvnkyf6c5p7@google.com>
-References: <20200527134016.753354-1-arnd@arndb.de>
- <20200527152406.GD59947@C02TD0UTHF1T.local>
- <CAKwvOdn637hSboMnMV=S5f1wbiEnc6qtnrn=fpeCGtvr2W_Daw@mail.gmail.com>
- <CAK8P3a3-L-AQomvTcBv-KH1cVVu6uYNT_-2Ofir3UgwzGjcSug@mail.gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=80e9RnD9Ss8eOafGm0SPCkZYoQv72dsa4vHL2CNUsTI=;
+ b=P05qKWnWnx/1UoRFZ2FTvUZ6gcu7fNZQuggWgR3+piewlZp/TGIB5qC+ujH15ITu9h
+ VDtLp5reTtrxCG4IuR93GKmPIPpr09xPJM7Tbje6BQpgEthZndSZJsCR3ZBJxw+9PUkr
+ WY94hnAHQxc34q6nQ035Cs3RxFRGX1ZKi/JX7/4/21rNWs2bllkzBWhgDIBtjXI+eWgi
+ OFiHzbHtIcZrw8bo93tqFStINGm4hsm9aIh0dccmO2RHmot02WYVnBAkhFq1iQ3jOq02
+ 3UsA/17JNErpCS4pS1LE09XHo4W6BOG6RS3Lxfby8PMtYD5qA9SHCZWW8Pncp+1iknUi
+ 5AJg==
+X-Gm-Message-State: AOAM5331jxk2DxXP9XulrDNnK4phdVJgkPe4lSqMh2//6YtyRLT3+g7q
+ afkv942Y/w6XMc5v/bT6ffkYpxiXRe7zXK8CQ/vO+w==
+X-Google-Smtp-Source: ABdhPJzW+yK0neVV5ZLXfHZuKdL2m3iIwiXaA8c97nSmT8Xer0u16SBA/+K8iU8H0iefWgDrIbwvO/Ns2eUMghYcqCI=
+X-Received: by 2002:a2e:8186:: with SMTP id e6mr3868617ljg.252.1590604895724; 
+ Wed, 27 May 2020 11:41:35 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a3-L-AQomvTcBv-KH1cVVu6uYNT_-2Ofir3UgwzGjcSug@mail.gmail.com>
+References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
+ <020de18840a1075b2671736c6cc2e451030fad74.1590594512.git-series.maxime@cerno.tech>
+In-Reply-To: <020de18840a1075b2671736c6cc2e451030fad74.1590594512.git-series.maxime@cerno.tech>
+From: Eric Anholt <eric@anholt.net>
+Date: Wed, 27 May 2020 11:41:24 -0700
+Message-ID: <CADaigPXJ0BnMUp=XN6G92Tx=H9j55pmsBAujO2mcpiiTs-RHnQ@mail.gmail.com>
+Subject: Re: [PATCH v3 070/105] drm/vc4: hdmi: rework connectors and encoders
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_113523_391706_38BDD460 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200527_114137_566000_7892B2A2 
+X-CRM114-Status: GOOD (  14.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,61 +88,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Tom Stellard <tstellar@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>,
- LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Sami Tolvanen <samitolvanen@google.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-27, Arnd Bergmann wrote:
->On Wed, May 27, 2020 at 7:28 PM 'Nick Desaulniers' via Clang Built
->Linux <clang-built-linux@googlegroups.com> wrote:
->>
->> On Wed, May 27, 2020 at 8:24 AM Mark Rutland <mark.rutland@arm.com> wrote:
->> >
->> > On Wed, May 27, 2020 at 03:39:46PM +0200, Arnd Bergmann wrote:
->> > > clang-11 and earlier do not support -fsanitize=shadow-call-stack
->> > > in combination with -mbig-endian, but the Kconfig check does not
->> > > pass the endianess flag, so building a big-endian kernel with
->> > > this fails at build time:
->> > >
->> > > clang: error: unsupported option '-fsanitize=shadow-call-stack' for target 'aarch64_be-unknown-linux'
->> > >
->> > > Change the Kconfig check to let Kconfig figure this out earlier
->> > > and prevent the broken configuration. I assume this is a bug
->> > > in clang that needs to be fixed, but we also have to work
->> > > around existing releases.
->> > >
->> > > Fixes: 5287569a790d ("arm64: Implement Shadow Call Stack")
->> > > Link: https://bugs.llvm.org/show_bug.cgi?id=46076
->> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
->> >
->> > I suspect this is similar to the patchable-function-entry issue, and
->> > this is an oversight that we'd rather fix toolchain side.
->> >
->> > Nick, Fangrui, thoughts?
->>
->> Exactly, Fangrui already has a fix: https://reviews.llvm.org/D80647.
->> Thanks Fangrui!
+On Wed, May 27, 2020 at 8:51 AM Maxime Ripard <maxime@cerno.tech> wrote:
 >
->Ok, great! I had opened the bug first so I could reference it in the
->commit changelog, it seems the fix came fast than I managed to
->send out the kernel workaround.
+> the vc4_hdmi driver has some custom structures to hold the data it needs to
+> associate with the drm_encoder and drm_connector structures.
 >
->Do we still want the kernel workaround anyway to make it work
->with older clang versions, or do we expect to fall back to not
->use the integrated assembler for the moment?
+> However, it allocates them separately from the vc4_hdmi structure which
+> makes it more complicated than it needs to be.
 >
->      Arnd
+> Move those structures to be contained by vc4_hdmi and update the code
+> accordingly.
 
-We can condition it on `CLANG_VERSION >= 100001` (assuming Tom (CCed)
-is happy (and there is still time) cherrying pick the two commits https://bugs.llvm.org/show_bug.cgi?id=46076 to clang 10.0.1)
+
+> @@ -1220,7 +1219,7 @@ static int vc4_hdmi_bind(struct device *dev, struct device *master, void *data)
+>         struct drm_device *drm = dev_get_drvdata(master);
+>         struct vc4_dev *vc4 = drm->dev_private;
+>         struct vc4_hdmi *hdmi;
+> -       struct vc4_hdmi_encoder *vc4_hdmi_encoder;
+> +       struct drm_encoder *encoder;
+>         struct device_node *ddc_node;
+>         u32 value;
+>         int ret;
+> @@ -1229,14 +1228,10 @@ static int vc4_hdmi_bind(struct device *dev, struct device *master, void *data)
+>         if (!hdmi)
+>                 return -ENOMEM;
+>
+> -       vc4_hdmi_encoder = devm_kzalloc(dev, sizeof(*vc4_hdmi_encoder),
+> -                                       GFP_KERNEL);
+> -       if (!vc4_hdmi_encoder)
+> -               return -ENOMEM;
+> -       vc4_hdmi_encoder->base.type = VC4_ENCODER_TYPE_HDMI0;
+> -       hdmi->encoder = &vc4_hdmi_encoder->base.base;
+> -
+>         hdmi->pdev = pdev;
+> +       encoder = &hdmi->encoder.base.base;
+> +       encoder->base.type = VC4_ENCODER_TYPE_HDMI0;
+
+Wait, does this patch build?  setting struct drm_encoder->base.type =
+VC4_* seems very wrong, when previously we were setting struct
+vc4_hdmi_encoder->base.type (struct vc4_encoder->type).
+
+Other than this, patch 68-78 r-b.
 
 _______________________________________________
 linux-arm-kernel mailing list
