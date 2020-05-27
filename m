@@ -2,80 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD8DE1E4CA7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 20:03:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41D931E4CDB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 20:09:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+CsKYpr7hMxudYbjjXJSBK6SNS5xW9NBH1veXlJrO60=; b=bWu7ccz4orQlsL
-	eu3mmv3YIUCdM/2AQwGXDkvC6oHMpUIz6ni5CcsaMw9OXJ2jn6joroUa6f6AOk+ajBVFxvmQz39JI
-	+4a2kVHJaByU39Ir48qrY9CsqjkEEl7A/YeQYeiDp//FCAYYyUU8MeUU2RUd11uyvAwNwzE9jYqT/
-	pyOi5lMY99ank7aFBbj3/++lzIYShhsNWZg5qiOsZ3gPy2X53paNvhZfkEpyEUFx/2m8vS26IYQah
-	oi/UiDnGY0dGrhzf4gp7C30whepP0hX0DWwNJ/++u/i8ehHRkKvoGIwceD72s8Qoh5yaGYegHX5CD
-	Q1iZT8ph4ERTqKw9oyDQ==;
+	List-Owner; bh=j6zebqhWM2sSYifz2DjLdNkDuOJGnp9JwTZKKDP3BLs=; b=Quudr6Z6ksodkI
+	Hu4xD9+mk5sD4waokWadU62xIRVUvehyEwnLdzZf6XQ5s5dCwIDOXT3bHNTHaLYckhMDmaFel6+2y
+	KG/6c8Uaw7vBpebR6IBBtPCvsXOBinVtdYJ3ib5tw4Vl3EHe/WDV/yzePKbpJW1VNpOXOheZkvLcO
+	BG+K1NcVpZnFY+fe2fF9dJIfGfJs93eTj/55C8PgUxis8fsOG3rw8laJI3BWKfy1PdV9eB/pMXakJ
+	525Wjmx94rRBPF5RZvHh++X8UbNI0i2OiNagBav5hfnUm1b+jlF5D8oiELwGa/Pis639W+z/6CifL
+	/af3aCPCSoYQWryV1Qhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je0P5-0002Aa-I5; Wed, 27 May 2020 18:03:47 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1je0U7-0005SM-Lm; Wed, 27 May 2020 18:08:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je0Ou-0002AC-K8
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 18:03:38 +0000
-Received: by mail-pf1-x443.google.com with SMTP id g5so667448pfm.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 11:03:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=1i+2CYKnygDzk/GvSPMFnlsBZ+PDQAs0JHC2OCU8Rpg=;
- b=Juuy34H7e5clylfdiyvSvG4F1wyq9c8Gaj8QNysrOlDgGCGB7A08vEUvk3NP/Wn1H6
- Yog5pD+mXyHk+WVgoLhuHW3Omp5d+eepMRoD2hYNRRK5PkkUSlyxec51h45s6fdpYill
- lA4WHf6wyk335XsVHjeAc4Q2RIQDLyeAIKwrzDBommB66eFrjgaTrHUKh+YskoAupwbq
- eDWaNMQh5VN1aoa5wksCQ49WwMi1vHRhUDNMtMhCEclzc24PdY4Wv3QfxGMydNAOePYK
- xdcnU39N8S3XzdUmTP21oRzd9CrtlFniuJBnOhhkPr0/09QMJdtokXOxrAby+3nxwfjm
- aARA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=1i+2CYKnygDzk/GvSPMFnlsBZ+PDQAs0JHC2OCU8Rpg=;
- b=I4Ep0SbrAW2XmIFnmCtME4APV+6xjP3qvxQKagux/8z54rSBP314lhENqy19czXvWM
- 9TTLPiKpC8w1J5kVNSE4TgYUXwnnZ8hH6eDJ0z5kR39gqdSnPEcjAPJrsSVdDf7syg3Q
- tpBw/A0Gn7NCK53olz0jbUj+Sw4QN6y86SIPLYI+9hwKFOgO6d+WlDp9izXcw0maOi1r
- 8PY6+lRdE+HuHkzj4aMuhfvswmKXc3Y0+2rExrVSu9eEnTVrMqvja2pBFH2tjazFs1R2
- Dqri145ZkONBkS2o5vXJ3fDPlk2PPbfVoxjhC5d+FM+eETIMefJIieM/3TW/14XIkxYD
- mESA==
-X-Gm-Message-State: AOAM531Bz09XSCkAAxS8X1QOEoW/mS/orOekEtcuQQXqtbFxS1g+Ym1n
- 74U39NKyjY2T2h82IjNkXBLETs89ErkYjnfuKNRq2w==
-X-Google-Smtp-Source: ABdhPJzzSTK199jYEXH1x++KGRbblCgHnTwlQdoA6pICLSVL6mQAiv7Qjw8mXRGdXDnysRpSmZq3n9RSuMqpypAtzOk=
-X-Received: by 2002:aa7:8c44:: with SMTP id e4mr5128942pfd.108.1590602615524; 
- Wed, 27 May 2020 11:03:35 -0700 (PDT)
+ id 1je0Tv-0005Rr-HB
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 18:08:48 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E03042075A;
+ Wed, 27 May 2020 18:08:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590602926;
+ bh=EkrxDgW2W7jklShbuK3ccGvQdpxTbQarzQKd6FLVLgE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=deq7F0t+XNEaB9xXwmIRl6SLB0gmB4gu7wH7Dl6Jh7XBHRrdUXqFDcAa2b/sLRsSM
+ 0PS6NRMEJD3NHSvnod+9TTScg4YL3BnjVq0f2x8KOosnPSwza6vegMDcw7UZoEd5Vx
+ CEH+0Dd5z3MQ4/ta9IbM9e70z/NAFCwNiwCHeGYI=
+Date: Wed, 27 May 2020 19:08:40 +0100
+From: Will Deacon <will@kernel.org>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH] arm64: vdso32: force vdso32 to be compiled as -marm
+Message-ID: <20200527180839.GA16411@willie-the-truck>
+References: <20200526173117.155339-1-ndesaulniers@google.com>
+ <2f58c2a4-0f37-d507-7767-00161c6b5d98@arm.com>
+ <CAKwvOd=Oy_OfRbL6-q-3CAHxWBNBKE+HkfNfgCiP726u+4dU1Q@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200527141435.1716510-1-arnd@arndb.de>
-In-Reply-To: <20200527141435.1716510-1-arnd@arndb.de>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Wed, 27 May 2020 11:03:24 -0700
-Message-ID: <CAKwvOdnNxj-MdKj3aWoefF2W9PPG-TSeNU4Ym-N8NODJB5Yw_w@mail.gmail.com>
-Subject: Re: [PATCH] arm64: fix clang integrated assembler build
-To: Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <CAKwvOd=Oy_OfRbL6-q-3CAHxWBNBKE+HkfNfgCiP726u+4dU1Q@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_110336_677131_49885597 
-X-CRM114-Status: GOOD (  23.19  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200527_110847_584670_E9A1C7C0 
+X-CRM114-Status: GOOD (  17.85  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,8 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,112 +78,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fangrui Song <maskray@google.com>, Will Deacon <will@kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- "# 3.4.x" <stable@vger.kernel.org>, Jian Cai <jiancai@google.com>,
- Alexios Zavras <alexios.zavras@intel.com>, Bill Wendling <morbo@google.com>,
- Enrico Weigelt <info@metux.net>,
+Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <masahiroy@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
+ Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Robin Murphy <robin.murphy@arm.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 7:14 AM Arnd Bergmann <arnd@arndb.de> wrote:
->
-> clang and gas seem to interpret the symbols in memmove.S and
-> memset.S differently, such that clang does not make them
-> 'weak' as expected, which leads to a linker error, with both
-> ld.bfd and ld.lld:
->
-> ld.lld: error: duplicate symbol: memmove
-> >>> defined at common.c
-> >>>            kasan/common.o:(memmove) in archive mm/built-in.a
-> >>> defined at memmove.o:(__memmove) in archive arch/arm64/lib/lib.a
->
-> ld.lld: error: duplicate symbol: memset
-> >>> defined at common.c
-> >>>            kasan/common.o:(memset) in archive mm/built-in.a
-> >>> defined at memset.o:(__memset) in archive arch/arm64/lib/lib.a
->
-> Copy the exact way these are written in memcpy_64.S, which does
-> not have the same problem.
->
-> I don't know why this makes a difference, and it would be good
-> to have someone with a better understanding of assembler internals
-> review it.
->
-> It might be either a bug in the kernel or a bug in the assembler,
-> no idea which one. My patch makes it work with all versions of
-> clang and gcc, which is probably helpful even if it's a workaround
-> for a clang bug.
+On Wed, May 27, 2020 at 10:55:24AM -0700, Nick Desaulniers wrote:
+> On Wed, May 27, 2020 at 6:45 AM Robin Murphy <robin.murphy@arm.com> wrote:
+> >
+> > On 2020-05-26 18:31, Nick Desaulniers wrote:
+> > > Custom toolchains that modify the default target to -mthumb cannot
+> > > compile the arm64 compat vdso32, as
+> > > arch/arm64/include/asm/vdso/compat_gettimeofday.h
+> > > contains assembly that's invalid in -mthumb.  Force the use of -marm,
+> > > always.
+> >
+> > FWIW, this seems suspicious - the only assembly instructions I see there
+> > are SWI(SVC), MRRC, and a MOV, all of which exist in Thumb for the
+> > -march=armv7a baseline that we set.
+> >
+> > On a hunch, I've just bodged "VDSO_CFLAGS += -mthumb" into my tree and
+> > built a Thumb VDSO quite happily with Ubuntu 19.04's
+> > gcc-arm-linux-gnueabihf. What was the actual failure you saw?
+> 
+> From the link in the commit message: `write to reserved register 'R7'`
+> https://godbolt.org/z/zwr7iZ
+> IIUC r7 is reserved for the frame pointer in THUMB?
+> 
+> What is the implicit default of your gcc-arm-linux-gnueabihf at -O2?
+> -mthumb, or -marm?
 
-+ Bill, Fangrui, Jian
-I think we saw this bug or a very similar bug internally around the
-ordering of .weak to .global.
+Hmm, but this *is* weird because if I build a 32-bit kernel then I get
+either an ARM or a Thumb-2 VDSO depending on CONFIG_THUMB2_KERNEL. I'm
+not sure if that's deliberate, but both build and appear to work.
 
->
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> ---
-> ---
->  arch/arm64/lib/memcpy.S  | 3 +--
->  arch/arm64/lib/memmove.S | 3 +--
->  arch/arm64/lib/memset.S  | 3 +--
->  3 files changed, 3 insertions(+), 6 deletions(-)
->
-> diff --git a/arch/arm64/lib/memcpy.S b/arch/arm64/lib/memcpy.S
-> index e0bf83d556f2..dc8d2a216a6e 100644
-> --- a/arch/arm64/lib/memcpy.S
-> +++ b/arch/arm64/lib/memcpy.S
-> @@ -56,9 +56,8 @@
->         stp \reg1, \reg2, [\ptr], \val
->         .endm
->
-> -       .weak memcpy
->  SYM_FUNC_START_ALIAS(__memcpy)
-> -SYM_FUNC_START_PI(memcpy)
-> +SYM_FUNC_START_WEAK_PI(memcpy)
->  #include "copy_template.S"
->         ret
->  SYM_FUNC_END_PI(memcpy)
-> diff --git a/arch/arm64/lib/memmove.S b/arch/arm64/lib/memmove.S
-> index 02cda2e33bde..1035dce4bdaf 100644
-> --- a/arch/arm64/lib/memmove.S
-> +++ b/arch/arm64/lib/memmove.S
-> @@ -45,9 +45,8 @@ C_h   .req    x12
->  D_l    .req    x13
->  D_h    .req    x14
->
-> -       .weak memmove
->  SYM_FUNC_START_ALIAS(__memmove)
-> -SYM_FUNC_START_PI(memmove)
-> +SYM_FUNC_START_WEAK_PI(memmove)
->         cmp     dstin, src
->         b.lo    __memcpy
->         add     tmp1, src, count
-> diff --git a/arch/arm64/lib/memset.S b/arch/arm64/lib/memset.S
-> index 77c3c7ba0084..a9c1c9a01ea9 100644
-> --- a/arch/arm64/lib/memset.S
-> +++ b/arch/arm64/lib/memset.S
-> @@ -42,9 +42,8 @@ dst           .req    x8
->  tmp3w          .req    w9
->  tmp3           .req    x9
->
-> -       .weak memset
->  SYM_FUNC_START_ALIAS(__memset)
-> -SYM_FUNC_START_PI(memset)
-> +SYM_FUNC_START_WEAK_PI(memset)
->         mov     dst, dstin      /* Preserve return value.  */
->         and     A_lw, val, #255
->         orr     A_lw, A_lw, A_lw, lsl #8
-> --
-> 2.26.2
+I'll drop this patch for now, while we figure it out a bit more.
 
--- 
-Thanks,
-~Nick Desaulniers
+Cheers,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
