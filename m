@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5059C1E4DF0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 21:12:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E09C01E4E19
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 21:25:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eI5tfHlcuIGIUoxOcHpKD8XIVU5Q/9bkIf5Lgcv5mMQ=; b=CVs8jC2edWWTxJ
-	Qutx1iGS2azE7VNAW0DsrrFWKGUtPsTXKHg0lBmfBPAQzWSV4J67oCeK/DtaCK5F3BNwzzIl5gnNf
-	ew+ZXM330a8w/CNud+sRae7fcPRFUsXj73V28jkeBLl6DW9kEq31aEi+W0ms4krPnFoluNDD29vfa
-	O59gs45Y6719kk/G3BJHFWV8iBjltAUKW7NIRZ67CWUQgSUqh9PxS86CxqTDKQQZkL+DbC7H7iNDF
-	txcXFlkn1DVv+e8d5+VH4lpZE8aQKLjsXbis0QNiQu+OBPVyiPUx4CvlVzYLJejNrkqCfNIKqV5Qr
-	v9Lela1W7nZrQZzSyvVg==;
+	List-Owner; bh=GfOipGnyxblWjds0d36jQTK36b4teSSyEZGGx6Nn9IQ=; b=f0zb5C4OkqEWaD
+	UFmsz9h/rIXFKFEc1muRYnVJVPFl/LCIeucCAelFqqOdK7YxFfUVnfbFiYwTAteezrASNM0aABC5l
+	9GRqHMY9MhCtFg5mmTciu8E0MDgmUfkO50LfzgVOpP3RQ95lio3thgP/o7/VCDrikLbznw+ZtSWl6
+	qZ9KuoqoAI06U/0W3rljHKPHm4OuM7BTSgFRR6Q0+hq20Oav4h1ccx0NioYkCc/jz1pZl+1Q/2Hf+
+	DC4zOc+olraa0QakIkXLb8mxb+FbSKcUS6H4L4qSzmFCLIfb57sZByI9xHFW6t45d3rlgDlnZIeh2
+	7icjXqYxXfqDguYhzIJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je1TX-00022k-CL; Wed, 27 May 2020 19:12:27 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1je1fy-0000XX-7W; Wed, 27 May 2020 19:25:18 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je1TL-00021m-KK; Wed, 27 May 2020 19:12:17 +0000
-Received: by mail-io1-f68.google.com with SMTP id y5so4496520iob.12;
- Wed, 27 May 2020 12:12:15 -0700 (PDT)
+ id 1je1fc-0000Lb-B4
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 19:24:57 +0000
+Received: by mail-lj1-x242.google.com with SMTP id l15so30021932lje.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 12:24:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=anholt-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=B06LJB5h/zgyW4gA7PYFxNZx20JgVf522YB+3F5h4TA=;
+ b=u+9b6a0UuzqNEdKrRRYp74xaFel684WNim59ka+OYrYbmLKL+H/nprkX7vFkVdiCUa
+ +O86fHKLZqw/5tvWP3hqw33ak6tHjf4NSI1j5fKipCDJdZkSuCUv1XCSLH8Tfb6vMsFa
+ +KsDYhqcUq9p3f4rUyvTwRp9v9Amptoi+GEESpmqsgMwwWNwe5Zu3KFM4nYbIyauEQQW
+ Usd8sT8LWVX1IsdfL24D+BCSQx7pVofPBfOZl09tfusTjauehsiP52sutkoRRUjTp+ui
+ nESEZOg8iF63hA/Zd9X5L9zSoARxejFqZOUOXEg2msmKduDEaDnFqQPCGDpRoIWyLiqu
+ vDtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=bcgn8vintUmn/KLNjY166boSuempda8GQiMOp/S9kfA=;
- b=rw4UO7Few7x7m9DsKba9f0N/O8q0rleTv92iWCa+7ehXLUNfuaZNQ+CIz9f3u2LzP7
- 08wBIRp+czj800m0uX5k+EQFwwSN0n3nd/Lnk7R6gAELt5s6P6wW/J1Iyw1xahXMuB/q
- Z5eYb3e5nKOfWo9hUFsbfom4kUMMCfKW95++9MvMYaCzpblqIpn1G3Yttny0Iy2URiAy
- zY4Gc6pD2g3IFyHZAtOv8vgLI5XkYe3QaXQJOKUcMMN8pqTeddBFm/FE1Xcy9rgXhdGM
- t0fJ65aMF00QnHiYrA9F+wqGQbZs7dkEo1N0apXZ0V+7dSzzm+yojxlxO+IGvTTSxXEc
- xtgQ==
-X-Gm-Message-State: AOAM5312YgcGKDZUZGluDXWmBLfbG3EmCiTQH04UodiNu1b+WKHHMnAM
- Oa8zLwg94b4NLXFw0Nb4mA==
-X-Google-Smtp-Source: ABdhPJz3OUlhVOntgWTwiyD9K0iT6Dx6LzGlpf8nvq36l0+6hwUoaK1G46ggh/RhOEPZ+ELiB1RfTQ==
-X-Received: by 2002:a5e:aa14:: with SMTP id s20mr10199282ioe.58.1590606733230; 
- Wed, 27 May 2020 12:12:13 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id v15sm2083078ila.57.2020.05.27.12.12.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 May 2020 12:12:12 -0700 (PDT)
-Received: (nullmailer pid 2570767 invoked by uid 1000);
- Wed, 27 May 2020 19:12:11 -0000
-Date: Wed, 27 May 2020 13:12:11 -0600
-From: Rob Herring <robh@kernel.org>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH v3 006/105] dt-bindings: display: Convert VC4 bindings to
- schemas
-Message-ID: <20200527191211.GA2559189@bogus>
-References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
- <2dc6384c945c7d35ab4f75464d3a77046dc125b3.1590594512.git-series.maxime@cerno.tech>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=B06LJB5h/zgyW4gA7PYFxNZx20JgVf522YB+3F5h4TA=;
+ b=pKpi0U/gb3f/Ax4HSJSrEkujY6Cj2GHYGahU33Ts3zeth2yC/rFSBFsWzNWr97leEh
+ RgzXQPBglutZAXaPoc/KdqIicS+Ww3PxytwBBkR6JvtmeY50+lTX2cJ+8sE3C7HKFyjj
+ 8XtAFn0US8uu55S1j7F3FX1/hW7nuP4N4DcoiundLoE/liBJhrJDOzOztGqkZFbawM0o
+ iSqytLqy4554dDEyldQl7kQNfXBb1YyMrhqG2U/YhNLu5bFrmvnAluyQr0Y8czPPkkjh
+ 6NqMP6VCdxPq7i67OClLHu3g/tp3JmZUPt3UssgLatxrdeC/JqyaSHxBG/smQbjrmrix
+ kBFg==
+X-Gm-Message-State: AOAM533nouiH/TWWPHAsdMte19TwR1/wDDuBm+o/Udlc3oVSf9HAg+Ak
+ VfIdg7KTlK5nbtWr/A25iWdlJscYhNQS/p6YMY6xXw==
+X-Google-Smtp-Source: ABdhPJwwWyamvPVDkwG/N5cdNWA1k5bhKyYHl2B8H32SDSArpyPTtBHqXMrv/ns/v1MgZiZHuBPsS7jNbWkMbQJkOuA=
+X-Received: by 2002:a2e:b0ec:: with SMTP id h12mr3493066ljl.269.1590607494583; 
+ Wed, 27 May 2020 12:24:54 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2dc6384c945c7d35ab4f75464d3a77046dc125b3.1590594512.git-series.maxime@cerno.tech>
+References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
+ <eb489952ba212a84dbe3d369371c0ee75b9a2d3e.1590594512.git-series.maxime@cerno.tech>
+In-Reply-To: <eb489952ba212a84dbe3d369371c0ee75b9a2d3e.1590594512.git-series.maxime@cerno.tech>
+From: Eric Anholt <eric@anholt.net>
+Date: Wed, 27 May 2020 12:24:43 -0700
+Message-ID: <CADaigPXm-ap=FxVV0_BPJmoL7A2cteVcD+EU3i954ParbyP7wA@mail.gmail.com>
+Subject: Re: [PATCH v3 059/105] drm/vc4: crtc: Add BCM2711 pixelvalves
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_121215_665378_69A21622 
-X-CRM114-Status: GOOD (  18.36  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200527_122456_381456_E3D35EA9 
+X-CRM114-Status: GOOD (  20.10  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,9 +88,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
  Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
  bcm-kernel-feedback-list@broadcom.com,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
@@ -102,92 +100,77 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 05:47:36PM +0200, Maxime Ripard wrote:
-> The BCM283x SoCs have a display pipeline composed of several controllers
-> with device tree bindings that are supported by Linux.
-> 
-> Now that we have the DT validation in place, let's split into separate
-> files and convert the device tree bindings for those controllers to
-> schemas.
-> 
-> This is just a 1:1 conversion though, and some bindings were incomplete so
-> it results in example validation warnings that are going to be addressed in
-> the following patches.
-> 
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: devicetree@vger.kernel.org
+On Wed, May 27, 2020 at 8:50 AM Maxime Ripard <maxime@cerno.tech> wrote:
+>
+> The BCM2711 has 5 pixelvalves, so now that our driver is ready, let's add
+> support for them.
+>
 > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 > ---
->  Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt              | 174 +------------------------------------------------------------------------
->  Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml         |  66 +++++++++++++++++++++++++++-
->  Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml        |  73 ++++++++++++++++++++++++++++++-
->  Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml        |  75 +++++++++++++++++++++++++++++++-
->  Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml         |  37 +++++++++++++++-
->  Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml |  40 +++++++++++++++++-
->  Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml         |  37 +++++++++++++++-
->  Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml         |  42 +++++++++++++++++-
->  Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml         |  34 ++++++++++++++-
->  Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml         |  44 ++++++++++++++++++-
->  MAINTAINERS                                                             |   2 +-
->  11 files changed, 449 insertions(+), 175 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml
-
-
-> diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
-> new file mode 100644
-> index 000000000000..3887675f844e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
-> @@ -0,0 +1,73 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/brcm,bcm2835-dsi0.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>  drivers/gpu/drm/vc4/vc4_crtc.c | 84 ++++++++++++++++++++++++++++++++++-
+>  drivers/gpu/drm/vc4/vc4_regs.h |  6 +++-
+>  2 files changed, 88 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
+> index 9efd7cb25590..a577ed8f929f 100644
+> --- a/drivers/gpu/drm/vc4/vc4_crtc.c
+> +++ b/drivers/gpu/drm/vc4/vc4_crtc.c
+> @@ -229,6 +229,13 @@ static u32 vc4_get_fifo_full_level(struct vc4_crtc *vc4_crtc, u32 format)
+>         case PV_CONTROL_FORMAT_24:
+>         case PV_CONTROL_FORMAT_DSIV_24:
+>         default:
+> +               /*
+> +                * For some reason, the pixelvalve4 doesn't work with
+> +                * the usual formula and will only work with 32.
+> +                */
+> +               if (vc4_crtc->data->hvs_output == 5)
+> +                       return 32;
 > +
-> +title: Broadcom VC4 (VideoCore4) DSI Controller
+>                 return fifo_len_bytes - 3 * HVS_FIFO_LATENCY_PIX;
+>         }
+>  }
+> @@ -237,9 +244,14 @@ static u32 vc4_crtc_get_fifo_full_level_bits(struct vc4_crtc *vc4_crtc,
+>                                              u32 format)
+>  {
+>         u32 level = vc4_get_fifo_full_level(vc4_crtc, format);
+> +       u32 ret = 0;
+>
+> -       return VC4_SET_FIELD(level & 0x3f,
+> -                            PV_CONTROL_FIFO_LEVEL);
+> +       if (level > 0x3f)
+> +               ret |= VC4_SET_FIELD((level >> 6) & 0x3,
+> +                                    PV5_CONTROL_FIFO_LEVEL_HIGH);
 > +
-> +maintainers:
-> +  - Eric Anholt <eric@anholt.net>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - brcm,bcm2835-dsi0
-> +      - brcm,bcm2835-dsi1
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    items:
-> +      - description: The DSI PLL clock feeding the DSI analog PHY
-> +      - description: The DSI ESC clock
-> +      - description: The DSI pixel clock
-> +
-> +  clock-output-names: true
-> +    # FIXME: The meta-schemas don't seem to allow it for now
-> +    # items:
-> +    #   - description: The DSI byte clock for the PHY
-> +    #   - description: The DSI DDR2 clock
-> +    #   - description: The DSI DDR clock
 
-Doesn't pattern work for you?
+I would drop the conditional here (ORing in zero is fine), and also
+the & 3 because it would be good to get a warning if you picked a fifo
+full level that doesn't fit in the field.
 
-pattern: '^dsi[0-1]_byte$'
+> +       return ret | VC4_SET_FIELD(level & 0x3f,
+> +                                  PV_CONTROL_FIFO_LEVEL);
+>  }
+>
+>  /*
+> @@ -277,6 +289,8 @@ static void vc4_crtc_pixelvalve_reset(struct drm_crtc *crtc)
+>
+>  static void vc4_crtc_config_pv(struct drm_crtc *crtc)
+>  {
+> +       struct drm_device *dev = crtc->dev;
+> +       struct vc4_dev *vc4 = to_vc4_dev(dev);
+>         struct drm_encoder *encoder = vc4_get_crtc_encoder(crtc);
+>         struct vc4_encoder *vc4_encoder = to_vc4_encoder(encoder);
+>         struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
+> @@ -356,6 +370,10 @@ static void vc4_crtc_config_pv(struct drm_crtc *crtc)
+>         if (is_dsi)
+>                 CRTC_WRITE(PV_HACT_ACT, mode->hdisplay * pixel_rep);
+>
+> +       if (vc4->hvs->hvs5)
+> +               CRTC_WRITE(PV_MUX_CFG,
+> +                          VC4_SET_FIELD(8, PV_MUX_CFG_RGB_PIXEL_MUX_MODE));
 
-Either way,
+Can we get some #defines in the reg header instead of a magic value?
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Other than that, r-b.
 
 _______________________________________________
 linux-arm-kernel mailing list
