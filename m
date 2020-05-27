@@ -2,79 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D5251E3CA2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:51:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D706F1E3CB0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:53:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i+5a7ZmkhkBlO2mGcwzDUP6vgbeaRQSFrdlHeeWaS+A=; b=FhkfI/vM8YeINs
-	S+asi1D7CPEKrYH9IQpC+nzNTdlyPKeh/S25DGt95p5MdAZwEs3HnpAXcOoMMB7rFjcHOhOlhy4xa
-	KpyNI4e23HEp+N7KtQj42zzrW3RllXVKOxX3nIEisMg/nKgpUvUqzNfrE0YSvDjtjUKWJf3G/lqZL
-	GZYXs6GGKWc7trnk0ldO1+o5RiFJOtNUN9rx451ic7z7z4AGBpL5TS6RHxRtVwWV/o1sv7uqiHM1m
-	Era5bd7/fuiDyRgqzEF504MXXwJd34GdnrLbSUHhcUWwMZdQUsqrOEMfQelY3rbFGoS/d81XtzoDA
-	tVHu1cHsbeGh1poiSx8w==;
+	List-Owner; bh=3IuCWFucePC6o06uZMlf3qgI8dflf5WBxi48qxlYev8=; b=aBA2TMBBaPqfrp
+	PMcOIKz9Av+MJbcrflmFVV0BEpHULGZFBBJMyFiDoSE1Nd6+cPFf9FQ34eaUqZ8mcyZB9/xwsgdYz
+	axawfbTcFiiHeRkwqVKsL/UQ6C/EhgGFLcJ+dwhoRTkGLnvxSGxrqmC38k2AKx0mIZt+y79G6wSa/
+	7YDtambSZ/OXSWsKYGGSchQuj/ouRKc16e2qXisfoqEOa3/6wrnh6EKQC5UjO2IbmfBeXEjbUTop4
+	cJjmyN3VsIj6Q2PKdNPun0WQZ+rFNztmDRDSBOtkjU6f2QEaNyCZ7irr8fPBdUujnm9O5MYV1eUQ4
+	cWs0uTTwQIrr62ubrTJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdrmb-0007Ae-Lx; Wed, 27 May 2020 08:51:29 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jdrob-0007ic-3t; Wed, 27 May 2020 08:53:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdrmJ-00078b-N1; Wed, 27 May 2020 08:51:13 +0000
-X-UUID: 09a57e3aa8be45eb998480bb912e113d-20200527
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=DiIMoPScyJ+50+VuuFYsWXLfNu4cJqcpxf3a1uqkMkU=; 
- b=eU3f/RWoPtgfwpRGeA1wMlQzowmLByuQGBg7n7V2abuZ0e5Virmd/QqCGOAJyDP2pO/EL8yqGgjHt+cZlW8N3BCLQPCiL1kJwuHpItgKxYlLNW1P7op3BgO9zbFO7bEGxiUG3dsaSyBZnLPiPpcZfKATq2k+djrwhNKtd9jFTUw=;
-X-UUID: 09a57e3aa8be45eb998480bb912e113d-20200527
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1578637235; Wed, 27 May 2020 00:50:56 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 27 May 2020 01:51:04 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Wed, 27 May 2020 16:51:00 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 27 May 2020 16:50:59 +0800
-Message-ID: <1590569355.8804.448.camel@mhfsdcap03>
-Subject: Re: [V9, 1/2] media: dt-bindings: media: i2c: Document OV02A10
- bindings
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Wed, 27 May 2020 16:49:15 +0800
-In-Reply-To: <20200526182847.GA92449@bogus>
-References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
- <20200523084103.31276-2-dongchun.zhu@mediatek.com>
- <20200526182847.GA92449@bogus>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jdroM-0007gx-QF; Wed, 27 May 2020 08:53:20 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3AA9F20723;
+ Wed, 27 May 2020 08:53:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590569597;
+ bh=21T7sPdQCrYT7yx27IXVTIKRDL60nkltAXenV63O92M=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=jap5XRLqUYxuDAD+TFlFFCsHfOP1n3cKaPyUG1wx2aWwZQaFUekRMDW5RX+f7/9nm
+ whX6Bap6JcEsdXGAX8+ZaqqRHA3ogx/2NUaGIZYYi9y0L9B8LuYr7f7tH48GfX3we0
+ QoWeiz77MD8CnHHgOj5Uo7bFhFlrdURuXiqNDiGA=
+Date: Wed, 27 May 2020 10:53:15 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH for-5.8 2/2] usb: dwc3: meson-g12a: fix USB2 PHY
+ initialization on G12A and A1 SoCs
+Message-ID: <20200527085315.GA168054@kroah.com>
+References: <20200526202943.715220-1-martin.blumenstingl@googlemail.com>
+ <20200526202943.715220-3-martin.blumenstingl@googlemail.com>
+ <40a874eb-1a2b-533e-ee3e-bd90510abaf9@baylibre.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: FD690253A9D5A698FD78664998AEEA2DFF479A4CE4320FD38196C8F592345D0D2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <40a874eb-1a2b-533e-ee3e-bd90510abaf9@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_015111_757138_3F4FDB60 
-X-CRM114-Status: GOOD (  23.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200527_015318_872025_23C128C4 
+X-CRM114-Status: GOOD (  14.99  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,283 +74,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- andriy.shevchenko@linux.intel.com, louis.kuo@mediatek.com,
- srv_heupstream@mediatek.com, linus.walleij@linaro.org,
- shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
- sj.huang@mediatek.com, drinkcat@chromium.org,
- linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
- sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: balbi@kernel.org, hanjie.lin@amlogic.com,
+ "kernelci.org bot" <bot@kernelci.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org, yue.wang@amlogic.com,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
-
-Thanks for the review. Please see my replies below.
-
-On Tue, 2020-05-26 at 12:28 -0600, Rob Herring wrote:
-> On Sat, May 23, 2020 at 04:41:02PM +0800, Dongchun Zhu wrote:
-> > Add DT bindings documentation for Omnivision OV02A10 image sensor.
+On Wed, May 27, 2020 at 10:17:31AM +0200, Neil Armstrong wrote:
+> Hi Martin,
+> 
+> On 26/05/2020 22:29, Martin Blumenstingl wrote:
+> > dwc3_meson_g12a_usb2_init_phy() crashes with NULL pointer on an SM1
+> > board (which uses the same USB setup as G12A) dereference as reported
+> > by the Kernel CI bot. This is because of the following call flow:
+> >   dwc3_meson_g12a_probe
+> >     priv->drvdata->setup_regmaps
+> >       dwc3_meson_g12a_setup_regmaps
+> >         priv->usb2_ports is still 0 so priv->u2p_regmap[i] will be NULL
+> >     dwc3_meson_g12a_get_phys
+> >       initializes priv->usb2_ports
+> >     priv->drvdata->usb_init
+> >       dwc3_meson_g12a_usb_init
+> >         dwc3_meson_g12a_usb_init_glue
+> >           dwc3_meson_g12a_usb2_init
+> >             priv->drvdata->usb2_init_phy
+> >               dwc3_meson_g12a_usb2_init_phy
+> >                 dereferences priv->u2p_regmap[i]
 > > 
-> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > Call priv->drvdata->setup_regmaps only after dwc3_meson_g12a_get_phys so
+> > priv->usb2_ports is initialized and the regmaps will be set up
+> > correctly. This fixes the NULL dereference later on.
+> > 
+> > Fixes: 013af227f58a97 ("usb: dwc3: meson-g12a: handle the phy and glue registers separately")
+> > Reported-by: "kernelci.org bot" <bot@kernelci.org>
+> > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 > > ---
-> >  .../bindings/media/i2c/ovti,ov02a10.yaml           | 172 +++++++++++++++++++++
-> >  MAINTAINERS                                        |   7 +
-> >  2 files changed, 179 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> >  drivers/usb/dwc3/dwc3-meson-g12a.c | 8 ++++----
+> >  1 file changed, 4 insertions(+), 4 deletions(-)
 > > 
-> > diff --git a/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > new file mode 100644
-> > index 0000000..56f31b5
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > @@ -0,0 +1,172 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +# Copyright (c) 2020 MediaTek Inc.
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/media/i2c/ovti,ov02a10.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Omnivision OV02A10 CMOS Sensor Device Tree Bindings
-> > +
-> > +maintainers:
-> > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > +
-> > +description: |-
-> > +  The Omnivision OV02A10 is a low-cost, high performance, 1/5-inch, 2 megapixel
-> > +  image sensor, which is the latest production derived from Omnivision's CMOS
-> > +  image sensor technology. Ihis chip supports high frame rate speeds up to 30fps
-> > +  @ 1600x1200 (UXGA) resolution transferred over a 1-lane MIPI interface. The
-> > +  sensor output is available via CSI-2 serial data output.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: ovti,ov02a10
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    items:
-> > +      - description: top mux camtg clock
-> > +      - description: divider clock
-> > +
-> > +  clock-names:
-> > +    items:
-> > +      - const: eclk
-> > +      - const: freq_mux
-> > +
-> > +  clock-frequency:
-> > +    description:
-> > +      Frequency of the eclk clock in Hertz.
-> > +
-
-Rob, shall we use 'maxItems: 1' to constrain property: clock-frequency?
-Or could we adopt 'clock-frequency: true' directly here?
-
-> > +  dovdd-supply:
-> > +    description:
-> > +      Definition of the regulator used as Digital I/O voltage supply.
-> > +
-
-Shall we add 'maxItems: 1' here?
-
-> > +  avdd-supply:
-> > +    description:
-> > +      Definition of the regulator used as Analog voltage supply.
-> > +
-
-Ditto.
-
-> > +  dvdd-supply:
-> > +    description:
-> > +      Definition of the regulator used as Digital core voltage supply.
-> > +
-
-Ditto.
-
-> > +  powerdown-gpios:
-> > +    description:
-> > +      Must be the device tree identifier of the GPIO connected to the
-> > +      PD_PAD pin. This pin is used to place the OV02A10 into Standby mode
-> > +      or Shutdown mode. As the line is active low, it should be
-> > +      marked GPIO_ACTIVE_LOW.
+> > diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
+> > index ce5388338389..1f7f4d88ed9d 100644
+> > --- a/drivers/usb/dwc3/dwc3-meson-g12a.c
+> > +++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
 > 
-> Need to define how many GPIOs ('maxItems: 1')
+> [...]
 > 
-
-It would be fixed like this in next release.
-powerdown-gpios:
-  maxItems: 1
-  description:
-    Must be the device tree identifier of the GPIO connected to the
-    PD_PAD pin. This pin is used to place the OV02A10 into Standby mode
-    or Shutdown mode. As the line is active low, it should be
-    marked GPIO_ACTIVE_LOW.
-
-> > +
-> > +  reset-gpios:
-> > +    description:
-> > +      Must be the device tree identifier of the GPIO connected to the
-> > +      RST_PD pin. If specified, it will be asserted during driver probe.
-> > +      As the line is active high, it should be marked GPIO_ACTIVE_HIGH.
+> Fixes regression reported at [1] on SEI510 board based on Amlogic G12A.
 > 
-> Here too.
+> Felipe, Greg, can this be queued on uxb-next for 5.8 ?
 > 
+> Acked-by: Neil Armstrong <narmstron@baylibre.com>
 
-Similar as 'powerdown-gpios'.
-Fixed in next release.
+I can take this and patch 1/2 here if Felipe acks them.
 
-> > +
-> > +  rotation:
-> > +    description:
-> > +      Definition of the sensor's placement.
-> > +    allOf:
-> > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > +      - enum:
-> > +          - 0    # Sensor Mounted Upright
-> > +          - 180  # Sensor Mounted Upside Down
-> > +        default: 0
-> > +
-> > +  ovti,mipi-tx-speed:
-> > +    description:
-> > +      Indication of MIPI transmission speed select, which is to control D-PHY
-> > +      timing setting by adjusting MIPI clock voltage to improve the clock
-> > +      driver capability.
-> > +    allOf:
-> > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > +      - enum:
-> > +          - 0    #  20MHz -  30MHz
-> > +          - 1    #  30MHz -  50MHz
-> > +          - 2    #  50MHz -  75MHz
-> > +          - 3    #  75MHz - 100MHz
-> > +          - 4    # 100MHz - 130MHz
-> > +        default: 3
-> > +
-> > +  # See ../video-interfaces.txt for details
-> > +  port:
-> > +    type: object
-> > +    additionalProperties: false
-> 
-> Should have a description of what data the port has.
-> 
+thanks,
 
-It would be updated as below in next release.
-port:
-  type: object
-  additionalProperties: false
-  description:
-    Input port node, single endpoint describing the CSI-2 transmitter.
-
-> > +
-> > +    properties:
-> > +      endpoint:
-> > +        type: object
-> > +        additionalProperties: false
-> > +
-> > +        properties:
-
-Actually I wonder whether we need to declare 'clock-lanes' here?
-
-> > +          data-lanes:
-> > +            maxItems: 1
-> > +
-> > +          link-frequencies: true
-> > +          remote-endpoint: true
-> > +
-> > +        required:
-
-Ditto.
-
-> > +          - data-lanes
-> > +          - link-frequencies
-> > +          - remote-endpoint
-> > +
-> > +    required:
-> > +      - endpoint
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +  - clocks
-> > +  - clock-names
-> > +  - clock-frequency
-> > +  - dovdd-supply
-> > +  - avdd-supply
-> > +  - dvdd-supply
-> > +  - powerdown-gpios
-> > +  - reset-gpios
-> > +  - port
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +
-> > +    #include <dt-bindings/clock/mt8183-clk.h>
-> > +    #include <dt-bindings/gpio/gpio.h>
-> > +
-> > +    i2c {
-> > +        #address-cells = <1>;
-> > +        #size-cells = <0>;
-> > +
-> > +        ov02a10: camera-sensor@3d {
-> > +            compatible = "ovti,ov02a10";
-> > +            reg = <0x3d>;
-> > +            pinctrl-names = "default";
-> > +            pinctrl-0 = <&clk_24m_cam>;
-> > +
-> > +            clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
-> > +                     <&topckgen CLK_TOP_UNIVP_192M_D8>;
-> > +            clock-names = "eclk", "freq_mux";
-> > +            clock-frequency = <24000000>;
-> > +
-> > +            rotation = <180>;
-> > +            ovti,mipi-tx-speed = <4>;
-> > +
-> > +            dovdd-supply = <&mt6358_vcamio_reg>;
-> > +            avdd-supply = <&mt6358_vcama1_reg>;
-> > +            dvdd-supply = <&mt6358_vcn18_reg>;
-> > +
-> > +            powerdown-gpios = <&pio 107 GPIO_ACTIVE_LOW>;
-> > +            reset-gpios = <&pio 109 GPIO_ACTIVE_HIGH>;
-> > +
-> > +            port {
-> > +                wcam_out: endpoint {
-> > +                    data-lanes = <1>;
-> > +                    link-frequencies = /bits/ 64 <390000000>;
-> > +                    remote-endpoint = <&mipi_in_wcam>;
-> > +                };
-> > +            };
-> > +        };
-> > +    };
-> > +
-> > +...
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> > index e64e5db..63a2335 100644
-> > --- a/MAINTAINERS
-> > +++ b/MAINTAINERS
-> > @@ -12389,6 +12389,13 @@ M:	Harald Welte <laforge@gnumonks.org>
-> >  S:	Maintained
-> >  F:	drivers/char/pcmcia/cm4040_cs.*
-> >  
-> > +OMNIVISION OV02A10 SENSOR DRIVER
-> > +M:	Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > +L:	linux-media@vger.kernel.org
-> > +S:	Maintained
-> > +T:	git git://linuxtv.org/media_tree.git
-> > +F:	Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > +
-> >  OMNIVISION OV13858 SENSOR DRIVER
-> >  M:	Sakari Ailus <sakari.ailus@linux.intel.com>
-> >  L:	linux-media@vger.kernel.org
-> > -- 
-> > 2.9.2
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
