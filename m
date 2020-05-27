@@ -2,72 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48C571E3B00
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:53:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFE201E3B03
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:53:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6TLoYn4FH2LgdaP5CqXD0PNnXrr6EJHl5red0kat4Mg=; b=MLCn6yztRWa/av
-	0mSyECzKF8Jf4mPaWWDLe6d9R/UFXCSge3QP5LlSNRryHNd8vCnBuAWueur0MRzwA0lpzrdlGYY/E
-	OcNRG55giILulMXRI1bDAKT5om8NayL/kLe9G4rYXBHp4IlgkPP2m13ZhqyUAcpXGZovgP5S3BPi3
-	lYqgzvr/0B8lPuoXlL/24OXLHx0Mb5f4ydJiOmu/qJlFeC09KKKFw9ZNpf2smXEUINbzSycuJHao+
-	6fxysOR0a/K68XDyrC7wTmAYTCX31s0R2YaOj1puhvUQcdv0ITEewrjFiH8VB/zp1ndEK4GTJ15aX
-	1/vZu8gGiFJkq0C7vcxQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+RH1mND8Rs4qZ0rzaz8EjL7NCBTkWotSEUGHwhBS5ag=; b=R7uODfgOyR6a0Y
+	S8P96rn289XL+n/00VDb2Q6twBAsndJ8MHs9YIyPi1H2n53AJGA8p1gXUWp6xd/acTpwzDUqNiBI2
+	Sk/LXXyostUmqXFyJLb2ss75TSa3MefAk5Dll3ryhAoxZazX5jxZ0xinHQZsIKgjPISwKhhhVCNXm
+	T0MALSW4rfP6RC9P2pCre/ry1jY/gS54EfT6xQ66EuKsizfuAI5Znp5EjWte1nbbwMLWtDkBzCK90
+	PlgpyC6ae7AEdpAH0w+5SYXi6sXs/8mzCGkabYfhNqCMCW71MQSaD+Jin7qwHcp/veq+DUJEWONHU
+	i2ZteyIJrOtvz1kEAjKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdqsK-0006Ki-Pd; Wed, 27 May 2020 07:53:20 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jdqso-0006at-8y; Wed, 27 May 2020 07:53:50 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdqs9-0006Jq-3t
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:53:10 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 894A120FC3;
- Wed, 27 May 2020 07:53:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590565988;
- bh=Uz9VQ5ssMAnN5D1Zw8oLy/WNGOVCjJrTYN7Wo34QeXg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UgSznrbPLEsdZgh8jYyrwAoodAz/I/EFVZy0/azyVkV+fdaIHQitlZQ/IxT5L/XQ4
- XBVOOpb3V2yjhN5922zof+32xjxajhg0/d1vULou0YTHSJe+VWQX214hMELGMqD3fv
- 7k0OjwYs6SIZWzHrd5ORT/MDGT37kqMDP5JQnOJo=
-Date: Wed, 27 May 2020 08:53:04 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V2] arm64/cpufeature: Add get_arm64_ftr_reg_nowarn()
-Message-ID: <20200527075303.GC9887@willie-the-truck>
-References: <1590500353-28082-1-git-send-email-anshuman.khandual@arm.com>
- <20200526150135.GI17051@gaia>
- <20200526194648.GA2206@willie-the-truck>
- <ca38b2c0-533f-9b98-46a2-37ba8bf21d83@arm.com>
+ id 1jdqsc-0006Ze-0X
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:53:39 +0000
+Received: by mail-wr1-x442.google.com with SMTP id j16so10572322wrb.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 00:53:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:autocrypt:organization:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=0uXOIK76KSs40fnk/nPthqtyEhJ+m0Y/dYNUNGL8EzA=;
+ b=uP8qKtET22Dmlqb49Ul3D8lgyOk3haU2hVybPhJrVAT+QAKmCAEAJiW4D4nVp2oZTD
+ 6WLECOGS8MI6Kwn2DGqMxOiNzWi2czeFM+i9AGQwj16db/QBtfsa9dpJzFACABMbcQ+b
+ zyYGLY2fFy5wwzqiyYUIASb+e50kPYF5QuG4yhw650XBCB/pij/D6NjL1C+bHe7SU1b6
+ S86iNSeSI8DgwNc6n5sCwvUrW4LCBbRJCq8khWPXTqhs8MXoew9yGdcwEl7jSyxA9pGf
+ wLzeMCJSyefqqDZbaxMJ9it+bKJt6pf9Z9ZJCjXQpQ++UOQPEuLgqhUaLve9dcfTRERm
+ XGvA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=0uXOIK76KSs40fnk/nPthqtyEhJ+m0Y/dYNUNGL8EzA=;
+ b=sb5/GMM0r3fOTZp30y+x92AJ19oJnJFQ71ScRG51o95zS4IkKAOMMOfIaL6TQKnUjt
+ DVNmXKRQsPOCVfb4vERF2jGp5JbjUCWESoOn5+yjy4O0ZOKKRHebQ3ysw8+tJPSbePCs
+ tF48tOVvK3dic/4kZS680Dpx88VORuEI0ghZ6ce96OvbC/ms7JHWa8rDSLN816YoLqGX
+ dfQjkdUiLSNGa2YiavHTC8cz9nQWn4puEx5+bgunuSIeDtJS4bHZHuUE3LVYyS4sNWKE
+ C52oDgthMR6YlKkmQGtjJJTs2YeeeoeyJIfLnZqljn41EQu6tdy5xY6fSFfLzHuVx4ag
+ p0TQ==
+X-Gm-Message-State: AOAM533YH3hRrucXOevm5jwslCGlscpLtL/NoH5gM5MtXnyhyLrk+CAE
+ ZKaqcj2tnsP/OzCjTT5CLeiVPA==
+X-Google-Smtp-Source: ABdhPJxn28gk0kw3P6BCtiNPU+2IYx7W2LVb8NiQ4cjXVBUay1OBUQ0UwOCoSCQYZXQYFDKE+dooOg==
+X-Received: by 2002:a5d:4701:: with SMTP id y1mr78311wrq.310.1590566016324;
+ Wed, 27 May 2020 00:53:36 -0700 (PDT)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:acf8:18a8:b3a5:a17b?
+ ([2a01:e35:2ec0:82b0:acf8:18a8:b3a5:a17b])
+ by smtp.gmail.com with ESMTPSA id w15sm1959515wmi.35.2020.05.27.00.53.34
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 27 May 2020 00:53:35 -0700 (PDT)
+Subject: Re: [PATCH for-5.8 1/2] usb: dwc3: meson-g12a: fix error path when
+ fetching the reset line fails
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ balbi@kernel.org, gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
+ linux-amlogic@lists.infradead.org
+References: <20200526202943.715220-1-martin.blumenstingl@googlemail.com>
+ <20200526202943.715220-2-martin.blumenstingl@googlemail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <f4428633-4a7b-226d-d7df-0a43efb9d6ec@baylibre.com>
+Date: Wed, 27 May 2020 09:53:34 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ca38b2c0-533f-9b98-46a2-37ba8bf21d83@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200526202943.715220-2-martin.blumenstingl@googlemail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_005309_177718_54DA2AA0 
-X-CRM114-Status: GOOD (  13.75  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200527_005338_075254_049D6173 
+X-CRM114-Status: GOOD (  17.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,57 +152,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: hanjie.lin@amlogic.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, yue.wang@amlogic.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 07:56:30AM +0530, Anshuman Khandual wrote:
+On 26/05/2020 22:29, Martin Blumenstingl wrote:
+> Disable and unprepare the clocks when devm_reset_control_get_shared()
+> fails. This fixes the error path as this must disable the clocks which
+> were previously enabled.
 > 
+> Fixes: 1e355f21d3fb96 ("usb: dwc3: Add Amlogic A1 DWC3 glue")
+> Cc: Yue Wang <yue.wang@amlogic.com>
+> Cc: Hanjie Lin <hanjie.lin@amlogic.com>
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+>  drivers/usb/dwc3/dwc3-meson-g12a.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> On 05/27/2020 01:16 AM, Will Deacon wrote:
-> > On Tue, May 26, 2020 at 04:01:35PM +0100, Catalin Marinas wrote:
-> >> On Tue, May 26, 2020 at 07:09:13PM +0530, Anshuman Khandual wrote:
-> >>> @@ -632,8 +654,6 @@ static void __init init_cpu_ftr_reg(u32 sys_reg, u64 new)
-> >>>  	const struct arm64_ftr_bits *ftrp;
-> >>>  	struct arm64_ftr_reg *reg = get_arm64_ftr_reg(sys_reg);
-> >>>  
-> >>> -	BUG_ON(!reg);
-> >>> -
-> >>>  	for (ftrp = reg->ftr_bits; ftrp->width; ftrp++) {
-> >>>  		u64 ftr_mask = arm64_ftr_mask(ftrp);
-> >>>  		s64 ftr_new = arm64_ftr_value(ftrp, new);
-> >>> @@ -762,7 +782,6 @@ static int check_update_ftr_reg(u32 sys_id, int cpu, u64 val, u64 boot)
-> >>>  {
-> >>>  	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
-> >>>  
-> >>> -	BUG_ON(!regp);
-> >>>  	update_cpu_ftr_reg(regp, val);
-> >>>  	if ((boot & regp->strict_mask) == (val & regp->strict_mask))
-> >>>  		return 0;
-> >>> @@ -776,9 +795,6 @@ static void relax_cpu_ftr_reg(u32 sys_id, int field)
-> >>>  	const struct arm64_ftr_bits *ftrp;
-> >>>  	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
-> >>>  
-> >>> -	if (WARN_ON(!regp))
-> >>> -		return;
-> >>
-> >> I think Will wanted an early return in all these functions not just
-> >> removing the BUG_ON(). I'll let him clarify.
-> > 
-> > Yes, the callers need to check the pointer and return early.
+> diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc3-meson-g12a.c
+> index bd744e82cad4..ce5388338389 100644
+> --- a/drivers/usb/dwc3/dwc3-meson-g12a.c
+> +++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
+> @@ -738,7 +738,7 @@ static int dwc3_meson_g12a_probe(struct platform_device *pdev)
+>  	if (IS_ERR(priv->reset)) {
+>  		ret = PTR_ERR(priv->reset);
+>  		dev_err(dev, "failed to get device reset, err=%d\n", ret);
+> -		return ret;
+> +		goto err_disable_clks;
+>  	}
+>  
+>  	ret = reset_control_reset(priv->reset);
 > 
-> Sure, will do. But for check_update_ftr_reg(), a feature register search
-> failure should be treated as a success (0) or a failure (1). What should
-> it return ? Seems bit tricky, as there are good reasons to go either way.
 
-We're unable to check it so return 0, otherwise we'll randomly taint the
-kernel and print a weird message.
-
-Will
+Acked-by: Neil Armstrong <narmstrong@baylibre.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
