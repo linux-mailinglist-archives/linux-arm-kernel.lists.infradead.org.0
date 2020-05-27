@@ -2,82 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAE9C1E3E1E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 11:54:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 650EB1E3E23
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 11:55:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h2drNp7+9ewsokOpo7Uu0nptomVLd99CK2p+915hFUA=; b=OVXPdW0KUgeMuW
-	Nsf9yCm1z3Iuyt6tgC17VGZ6QCUKIB5LkPRDwpGkm6Jnhza4UybmgjD7fKKPJ1osXClqAXjf50e3T
-	Dp0cwANFD/MMzQD5gRPC3aT19uWC4Ny6u7YexxfkXACbF3eOzH3IlqRLn+L3Vx69L3S/Sekm6cIrZ
-	ZsWM2w4Y2QwqtD6Hu1A9O4rt8Sc9GFmkQkpH9ildm3/POITgS7wuQ6tV0oLZkK/VsUAZWhyVl/wnp
-	1Vryui73slgLJaN8IqrS0OKb1UD4X26HIxbYuXWCX/BCQNmEFCttI3f4OvRcD9SE83WKW5jYLpHnQ
-	45EnrqjX9NRfTcgH+7TQ==;
+	List-Owner; bh=b1dvqAAEVp/gqxQtb9d2SmyWExuW1D+8hWoP/n885yw=; b=Vk3+Oa4KesjXIt
+	D6Fb3p1vXza2fO2t2BUyrgEkbGoTC9VWZ1BKGXthzNSrFIDjpKGcT3RJhC1M9TIW+cpis8/VD//N3
+	h7hXG+L4g4KVlWNqjAXBXNBikWWLKpxw5F96aRHIKUgtJedMKKI42v2a+z86ZkKwz26CUb1G8gWj6
+	n90zE0zZH50m/Qn9HoeIpJLR21cJ71PKgThIA9Y0veSffPvd/jyDfx8LVw08vcn8UkhWJl9UNgKUp
+	1CCoMbX1yxEsIMb/h72KfuqfI+cFxMMhb/jrcxNiWkcTZyBYQrzvDLH9i2mtJDbqJ//jbDhKhPdms
+	1SnR6LyOrF3uw+SWmOmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdslV-0007DQ-IM; Wed, 27 May 2020 09:54:25 +0000
-Received: from mout.kundenserver.de ([217.72.192.73])
+	id 1jdsmV-0001jA-MI; Wed, 27 May 2020 09:55:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdslH-0007CG-6c
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 09:54:12 +0000
-Received: from mail-qv1-f43.google.com ([209.85.219.43]) by
- mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MN5aF-1jLX5s1zgj-00J5LH for <linux-arm-kernel@lists.infradead.org>; Wed,
- 27 May 2020 11:54:05 +0200
-Received: by mail-qv1-f43.google.com with SMTP id f89so10874203qva.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 02:54:05 -0700 (PDT)
-X-Gm-Message-State: AOAM532hrRQM4qQBn/0yRPkljr6yf3LQI/HuRRKOPiGoR1Oz1x767Joq
- 3WkFHDOLS/Z8TrOngPmGkYzLu137eW/3TCr8GrI=
-X-Google-Smtp-Source: ABdhPJwFY+9e2QwGxBuOVJhyvZzHkmdup67C33Hon0tX+xYCanXD6siiWNyzzW3vpc4K6tTqx9WsMyOJzXh6HoLxoPA=
-X-Received: by 2002:a05:6214:370:: with SMTP id
- t16mr24222212qvu.197.1590573244279; 
- Wed, 27 May 2020 02:54:04 -0700 (PDT)
+ id 1jdsmF-0001R7-AB
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 09:55:13 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0ECDD20B80;
+ Wed, 27 May 2020 09:55:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590573311;
+ bh=fus0z074K2+v5viezNh5aSTINzkfZlDW5gDLPTcN3rs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=0E4osRJDeF5F9676q35dVh44ubGc76fAsV838gxtkC0dMpGT+R8yCAz744kJTI6vv
+ +omcCl+atGm3jy4pKReRU4Gg0HdBFfoVtavYZR/imqGupWJKP+XANkpWp3pTqLJqtM
+ N5eQfGrHl4rf9HtHLPDBh8apf64eXXFp2aLbdclc=
+Date: Wed, 27 May 2020 10:55:05 +0100
+From: Will Deacon <will@kernel.org>
+To: Patrick Daly <pdaly@codeaurora.org>
+Subject: Re: [PATCH v4 24/26] arm64: mte: Introduce early param to disable
+ MTE support
+Message-ID: <20200527095504.GB11111@willie-the-truck>
+References: <20200515171612.1020-1-catalin.marinas@arm.com>
+ <20200515171612.1020-25-catalin.marinas@arm.com>
+ <a2ad6cbf-2632-3cda-eb49-74ddfbed2cec@arm.com>
+ <20200518113103.GA32394@willie-the-truck>
+ <20200518172054.GL9862@gaia>
+ <20200522055710.GA25791@pdaly-linux.qualcomm.com>
+ <20200522103714.GA26492@gaia>
+ <20200527021153.GA24439@pdaly-linux.qualcomm.com>
 MIME-Version: 1.0
-References: <1590493749-13823-1-git-send-email-zhangfei.gao@linaro.org>
- <20200527090007.GA179718@kroah.com>
-In-Reply-To: <20200527090007.GA179718@kroah.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 27 May 2020 11:53:48 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a35fjXt1F2hJygup5gWfjPHZTuU+VD69K5uzrNhhgu0Pw@mail.gmail.com>
-Message-ID: <CAK8P3a35fjXt1F2hJygup5gWfjPHZTuU+VD69K5uzrNhhgu0Pw@mail.gmail.com>
-Subject: Re: [PATCH 0/2] Introduce PCI_FIXUP_IOMMU
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-X-Provags-ID: V03:K1:kZCl8YHfGLgFQHjOPgOVkQw9LXTvWNY8g3Q65r80IpnlM3i+DM9
- f4sldfZ9Qxw5AiZywrZWGjw2BQ1YNjJabpl8gdCKyFUuxgFdXRCVR4xXQerQc5DobNAJuAc
- h8v8hcbwX61NAoYjw4shube7IqQ5IFZYd8yqBiV+CT9IcBQca7I7qRpf1GAGkSe0mthxx9q
- Z0bqMM9W5kvE2XvSsZ+HQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:hC5/fc4W6ZM=:6nsaBYyCd3n4+pkkVIQn5f
- /XbWdSOM2++nL02bwK4eJ9+jYkXbvPb0+Wqps6ftPels+tJkcyUwDNDzcw08THkPdLPk0lc52
- xHW+MCRJSsFVmd8AUjV4oGFEX+uVnWEnWLsH0VFhTInsNHqXBr3a7Z9ycD0w8DnRaFFdMC/CJ
- or4BjEu6A3c9rhIU19d/1lSXJ0ik3hkHjmHFBMQltxlkMWCpe2FGniS4B+FZABec0/NAUxpUY
- 56H30A9etMKn+oelvNTqeQDyQOWKZv17ViWxIOoXoJwqWKOjcKhkQ3c0VisVAFrtmhsNFiqyA
- Pc9SOYMJBd6fH7g3hC6Gdu7N0Z2IXt9tymPfkbDpkBpZz1aZpQ+5PV6guNzmkIs10IP4f79eQ
- 9InP+yQsdS3IndzR43LGMyfdRt8AnNvrt1oIBOc99gpCK+TW2ELudT/isnAfAtWShsS1my3Lv
- Zqa4UceAuxK93EzaMoB0bBmsbkzwxCOE3tyA/BAMLHPoSf2y8Jr37q1E3hUygIsy8rfYBKV/J
- YrTjs2YVRJKDklYMLi0Hd3RcNZ6MA9vzZ4XEOY2EhQqtO1ziz7kVdaGH7XLbyYEPhf+HPC/hG
- AbSAFVz060Y93ax+vAz1STWnXW4vplLQ2ceNePcrzpM1ltkMu8L/b3fpg/r5S1ioNfwgfj0Ir
- No0hpG2DTocCYCyY/ECwN0Bv6PB1eKIrKJ25VU0wSuewHbgXavtTCXJ2yNKpd2nb1sQUpinfn
- MtHK6/KJW0odWsOroD1VI2D+1ZNpdQJyD/efY/f9yShaDIndOIKbEXNhshUkWo/Nh+qDeOnJQ
- qzS6UVAVW6uqcgUJAM8SUA/eNaR+r9QGBIfrdPm2OItJIj6aIY=
+Content-Disposition: inline
+In-Reply-To: <20200527021153.GA24439@pdaly-linux.qualcomm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_025411_535447_21364E7B 
-X-CRM114-Status: GOOD (  13.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200527_025511_399165_C89621CF 
+X-CRM114-Status: GOOD (  30.41  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.73 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.72.192.73 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,47 +84,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe <jean-philippe@linaro.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- linux-pci <linux-pci@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:IOMMU DRIVERS" <iommu@lists.linux-foundation.org>,
- kenneth-lee-2012@foxmail.com,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Wangzhou <wangzhou1@hisilicon.com>,
- "open list:HARDWARE RANDOM NUMBER GENERATOR CORE"
- <linux-crypto@vger.kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>, Zhangfei Gao <zhangfei.gao@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, Len Brown <lenb@kernel.org>
+Cc: linux-arch@vger.kernel.org, Vladimir Murzin <vladimir.murzin@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, Dave P Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 11:00 AM Greg Kroah-Hartman
-<gregkh@linuxfoundation.org> wrote:
->
-> On Tue, May 26, 2020 at 07:49:07PM +0800, Zhangfei Gao wrote:
-> > Some platform devices appear as PCI but are actually on the AMBA bus,
->
-> Why would these devices not just show up on the AMBA bus and use all of
-> that logic instead of being a PCI device and having to go through odd
-> fixes like this?
+On Tue, May 26, 2020 at 07:11:53PM -0700, Patrick Daly wrote:
+> On Fri, May 22, 2020 at 11:37:15AM +0100, Catalin Marinas wrote:
+> > On Thu, May 21, 2020 at 10:57:10PM -0700, Patrick Daly wrote:
+> > > On Mon, May 18, 2020 at 06:20:55PM +0100, Catalin Marinas wrote:
+> > > > On Mon, May 18, 2020 at 12:31:03PM +0100, Will Deacon wrote:
+> > > > > On Mon, May 18, 2020 at 12:26:30PM +0100, Vladimir Murzin wrote:
+> > > > > > On 5/15/20 6:16 PM, Catalin Marinas wrote:
+> > > > > > > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> > > > > > > index f2a93c8679e8..7436e7462b85 100644
+> > > > > > > --- a/Documentation/admin-guide/kernel-parameters.txt
+> > > > > > > +++ b/Documentation/admin-guide/kernel-parameters.txt
+> > > > > > > @@ -373,6 +373,10 @@
+> > > > > > >  	arcrimi=	[HW,NET] ARCnet - "RIM I" (entirely mem-mapped) cards
+> > > > > > >  			Format: <io>,<irq>,<nodeID>
+> > > > > > >  
+> > > > > > > +	arm64.mte_disable=
+> > > > > > > +			[ARM64] Disable Linux support for the Memory
+> > > > > > > +			Tagging Extension (both user and in-kernel).
+> > > > > > > +
+> > > > > > 
+> > > > > > Should it really to take parameter (on/off/true/false)? It may lead to expectation
+> > > > > > that arm64.mte_disable=false should enable MT and, yes, double negatives make it
+> > > > > > look ugly, so if we do need parameter, can it be arm64.mte=on/off/true/false?
+> > > > > 
+> > > > > I don't think "performance analysis" is a good justification for this
+> > > > > parameter tbh. We don't tend to add these options for other architectural
+> > > > > features, and I don't see why MTE is any different in this regard.
+> > > > 
+> > > > There is an expectation of performance impact with MTE enabled,
+> > > > especially if it's running in synchronous mode. For the in-kernel MTE,
+> > > > we could add a parameter which sets sync vs async at boot time rather
+> > > > than a big disable knob. It won't affect user space however.
+> > > > 
+> > > > The other 'justification' is if your hardware has weird unexpected
+> > > > behaviour but I'd like this handled via errata workarounds.
+> > > > 
+> > > > I'll let the people who asked for this to chip in ;). I agree with you
+> > > > that we rarely add these (and I rejected a similar option a few weeks
+> > > > ago on the AMU patchset).
+> > > 
+> > > We've been looking into other ways this on/off behavior could be achieved.
+> > 
+> > The actual question here is what the on/off behaviour is needed for. We
+> > can figure out the best mechanism for this once we know what we want to
+> > achieve. My wild guess above was performance analysis but that can be
+> > toggled by either kernel boot parameter or run-time sysctl (or just the
+> > Kconfig option).
+> > 
+> > If it is about forcing user space not to use MTE, we may look into some
+> > other sysctl controls (we already have one for the tagged address ABI).
+> 
+> We want to allow the end user to be able to easily "opt out" of MTE in favour
+> of better power, perf and battery life.
 
-There is a general move to having hardware be discoverable even with
-ARM processors. Having on-chip devices be discoverable using PCI config
-space is how x86 SoCs usually do it, and that is generally a good thing
-as it means we don't need to describe them in DT
+Who is "the end user" in this case?
 
-I guess as the hardware designers are still learning about it, this is not
-always done correctly. In general, we can also describe PCI devices on
-DT and do fixups during the probing there, but I suspect that won't work
-as easily using ACPI probing, so the fixup is keyed off the hardware ID,
-again as is common for x86 on-chip devices.
+If MTE is bad enough for power, performance and battery life that we need a
+kill switch, then perhaps we shouldn't enable it by default and the few
+people that want to use it can build a kernel with it enabled. However, then
+I don't really see what MTE buys you over the existing KASAN implementations.
 
-      Arnd
+I thought the general idea was that you could run in the (cheap) "async"
+mode, and then re-run in the more expensive "sync" mode to further diagnose
+any failures. That model seems to work well with these patches, since
+reporting is disabled by default. Are you saying that there is a
+significant penalty incurred even when reporting is not enabled?
+
+Anyway, we don't offer global runtime/cmdline switches for the vast majority
+of other architectural features -- instead, we choose a sensible default,
+and I think we should do the same here.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
