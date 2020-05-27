@@ -2,95 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 936761E4828
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:48:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E3E61E47EC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:46:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y9ZYHVQJCFbQpwXq2XLekcV/vOKDtkFiYQAJDBgWXco=; b=lOGcyT/SClxuvA
-	zO4GB7Bj2lPUbXjrKdq3AZn74TG4MDXu2Qzd3j6fHsEOgnZPAKyxPYEoEuod9pOTDkm3+m7qNEaKk
-	ryWaAq/f0tGnLFX6oWTabzS2f1ca+zlRpTo3p/mQPiY1gYTiSDwykLeRXzSxEC4FBrNcCRtUdITn5
-	fg9I23OhsH3VN33P5nsYXTdbhSk/hdpWn4eoBvQJjj/XaXaRhdMW93ig6qh8tRtKdGmYWfq3GaMpf
-	pJeOg2+IyBiDO7kKrrXN+VK6GlYkIQtQV7g/iQrxeUA2CT3u93ciHL8tYMgXONRcHpHr/FC+amLj6
-	xliGNwgIID2Owbvl93TA==;
+	List-Owner; bh=7nuR5oxH0B3bE0/82YK9YReCYbQWVvosg5f22YhuGWg=; b=C1/FfVazMcK4dE
+	Wcgcy24PDHGi+sLc909JEIibPNFBNKkPsnwRu0MNfus+3s/GVox6nbevocClvL6XGtPOdpcUYVhSI
+	YQJTitEj2mqg9fMrQgQLQ8qxuJl8M3BojEgEaWnMCiVWeMspvAxnV54lrPG2LlHRzPeq3SD5sy9Er
+	S+2QcMTHWmAqzGyo7opM8ze9TBCeF1Oyn/Ryw9x0yap9BXRfnszCQAzsnsV9fAtUehC3dKbehkl1N
+	cT6/qBzHcgJCbFXY7HoGcPSUSGHftCtG4m+WNUtqY0YSaHWJcrwWAqk/SxnBeXUgAUgvkg6b14thl
+	ocB0kkKTSctQE5IzgVSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyIE-00056L-GW; Wed, 27 May 2020 15:48:34 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1jdyFh-0003B5-0m; Wed, 27 May 2020 15:45:57 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyFO-000382-KZ; Wed, 27 May 2020 15:45:42 +0000
+ id 1jdyFO-000384-Hu; Wed, 27 May 2020 15:45:40 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 670AB5C021C;
- Wed, 27 May 2020 11:45:29 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:29 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 1402F581DB5;
+ Wed, 27 May 2020 11:45:30 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:30 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=Br6jNHTz2Qqeu
- hVMkqvSgmOdnA/EpKz1fVYzAs6ZIJ8=; b=K1CqDH1Ionf73F04BRWvx5bIQcVx5
- KRcTo3666HaPFq5Lfplbn2jvFVZC6t5YQgb4HdzAlrNPJsf2d/0SSLmUE2Clp5BV
- 83fLE3nI/kezVl4+Avo5lPtIkKNDUxG2++H+OZrQQFe5kp5kc/AkPChscim+Odaa
- Vzd5DIzCBdXFxR8Za19isbiQp9LxvYcBEAaWWu3Ku7LdzcA05mGY6D5yU774XIyp
- KnBUiPfudLJtfztNVYtmG2ljDpgTmls/JP9qF17B1+z3pp5sWiZVmlKMAqLga+g5
- gGaqloclxHrvOVDCucWETqrVulUDdcAZSzlKNlbq7NDfYLOyBlL2WpT3g==
+ :mime-version:content-transfer-encoding; s=fm2; bh=Qm04qMuBv7fTr
+ 3XQL3pQXZGC/epnrC5zo/RIT1dLqig=; b=w4AqbP6Fx3bkqMTIIxC49dmDC1/iE
+ cWFsjCA1OPveXcYYVnbrOP+8Oi9aRobj7RSrmm+NIg8i7OCT8bswzlpe+JgUpFaa
+ z5gy/b9TDd//QgpoUy01DMuHZ/M3YsgfZTu5Qm2ZgZ5P5Y0+fvSzid7yXZRyj++X
+ JoNqfJrhQY6XWNT1dpXjSll0oThTzgQhFtY4B5T11VKcSBwaOgmN9UyZWoWqv2XT
+ 5JFVmZmKiuaqNE2WOu4RSPj2x4moJj3lE1gjZnHhIEzlEO4US9qGjAJqKOyYnWsM
+ uEDDJ1E4XukGgfu5enFFM75N8OdPyR4/xz3sjY01L9gaPvWacy8C/h9dw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=Br6jNHTz2QqeuhVMkqvSgmOdnA/EpKz1fVYzAs6ZIJ8=; b=Q08L1e6r
- B2A2JS3+sDyNI9KVLVDNJeuZqKcDTFKS7cgxjsUzFjLDUgdgxV+2VSZWMiVbBVIc
- R38pZ9wdKrxy5FYUOsr6LI0Br3oAvQJWmADc2mwF9lu2Be4tK30pQmEqBUw/z0po
- qzwRs65t6Cs44RBwGDhtpzJcU/HiX2GHXeOSHJAhfk6//kNB17pHpD4E3iLMIleg
- pfrtTSp9ne6S6MHjXQIEZUwEvhjB4iAApWtw47lS7kXc3nmmGgD2OIOAPDAWqxsC
- 83V06HrOevLoILfPhkQoeFQfUsVbR9x8HOb317T8diegD49msEkTd0HBKpmPlY/V
- j6Vq5xVrpuXG5w==
-X-ME-Sender: <xms:GIvOXvaxWik3iX2VsGuCCYdWeJKEhGDddmGZ0-ql2okHeYuET7mcGg>
+ fm2; bh=Qm04qMuBv7fTr3XQL3pQXZGC/epnrC5zo/RIT1dLqig=; b=Mf09Owfc
+ KKfh0rDn2rIcDV7vUKI+xDVRezuPkBWV7JIBJTTIMzxkS9cBbTDcqrDCY7H8ypjX
+ 75OUJDbvTMql0I3TkzXIAq0xiVESBOaPi3ghRi3qFuZY3FbbXUQ7YeUm+3EqwIff
+ zZ95rJ2yiefhNbv9RiLNa1xnZ0NzV3e+eZ/czvK7W4oIfR/AhYCy8/ZG/FgIAhBY
+ 7VOXH3AlluAa5I9IX2p4sU4hi4NJQA62qlDWT7z84WsHScy/VysNqTJv1tYpuLsg
+ ZM/oLnpPu4UElbpV4kWcM+47tg0h9J2A9Ywv75UnX1jFlYulwKC5I2clPsXXnFCD
+ LVCoJnNR0JVAJg==
+X-ME-Sender: <xms:GYvOXge7xsZKTiC23ggjl6y0ZfgG99KD-7IUqd1vV1Z2_3JkbzCDPw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- govehorghsthgrlhdqhfeguddvqddtvdculdduhedtmdenucfjughrpefhvffufffkofgj
- fhgggfestdekredtredttdenucfhrhhomhepofgrgihimhgvucftihhprghrugcuoehmrg
- igihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtthgvrhhnpeevjeeijedtvefg
- fffgjeeugffguedtleetkeegteeufedtuddttdfgfffhgfeuffenucffohhmrghinhepug
- gvvhhitggvthhrvggvrdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhs
- thgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvg
- hrnhhordhtvggthh
-X-ME-Proxy: <xmx:GIvOXublPsLx6x4UmbPQLa2XRbxc4D_q-7pu91nkW_hdNEgnvEmb_Q>
- <xmx:GIvOXh_fvJL2WQJFmciPu6P7z01SHUYeBRfg162OvXoxowCug5tDjQ>
- <xmx:GIvOXlpGWAJZmLyj3IlPRjjXvhAtmv01k4MWlX72lP8o-cav88ejlw>
- <xmx:GYvOXreAUMRWDVZc5dQ_z2ao--49ihbi8KRiC5NV4vaMWPuFJtHxLw>
+ cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
+ hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
+ frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:GYvOXiMIEPOip-l58CNC8InHUNvlHf_VkEJrBI-TkfCnsVYBdaBC8g>
+ <xmx:GYvOXhhBx7ZtgBBv11j1uj2Mb8F0YUVrqs8YHHI2O7fdjXeSwQPrmg>
+ <xmx:GYvOXl-zVe6uNdYCtWoZIxjIsfU9LXmIG5cLjGgMsm75eDNPmYbFHA>
+ <xmx:GovOXtkY-vt99xFFopPmMhIXIpL-efiUrLSZ9wrLWut18vV4G3nMLg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 28BB4306215A;
- Wed, 27 May 2020 11:45:28 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id A8DC53280066;
+ Wed, 27 May 2020 11:45:29 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v3 01/25] dt-bindings: arm: bcm: Convert BCM2835 firmware
- binding to YAML
-Date: Wed, 27 May 2020 17:44:57 +0200
-Message-Id: <2cd7d7e08bd90c2f61eb2ce79b1db418ff9270b6.1590594293.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 02/25] dt-bindings: clock: Add a binding for the RPi
+ Firmware clocks
+Date: Wed, 27 May 2020 17:44:58 +0200
+Message-Id: <919e2f2f13583d4d53d0e95b81fc3fb8a7606107.1590594293.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
 References: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_084538_816038_996072E6 
-X-CRM114-Status: UNSURE (   9.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200527_084538_728946_341F3C1D 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.26 listed in wl.mailspike.net]
+ low trust [66.111.4.221 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -110,92 +107,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- Maxime Ripard <maxime@cerno.tech>
+Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
+ linux-arm-kernel@lists.infradead.org, Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Florian Fainelli <f.fainelli@gmail.com>
+The firmware running on the RPi VideoCore can be used to discover and
+change the various clocks running in the BCM2711. Since devices will
+need to use them through the DT, let's add a pretty simple binding.
 
-Convert the Raspberry Pi BCM2835 firmware binding document to YAML.
-Verified with dt_binding_check and dtbs_check.
-
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Cc: Michael Turquette <mturquette@baylibre.com>
+Cc: Stephen Boyd <sboyd@kernel.org>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: linux-clk@vger.kernel.org
+Cc: devicetree@vger.kernel.org
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt  | 14 --------------
- Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml | 35 +++++++++++++++++++++++++++++++++++
- 2 files changed, 35 insertions(+), 14 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
- create mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
+ Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
-deleted file mode 100644
-index 6824b3180ffb..000000000000
---- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
-+++ /dev/null
-@@ -1,14 +0,0 @@
--Raspberry Pi VideoCore firmware driver
--
--Required properties:
--
--- compatible:		Should be "raspberrypi,bcm2835-firmware"
--- mboxes:		Phandle to the firmware device's Mailbox.
--			  (See: ../mailbox/mailbox.txt for more information)
--
--Example:
--
--firmware {
--	compatible = "raspberrypi,bcm2835-firmware";
--	mboxes = <&mailbox>;
--};
 diff --git a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-new file mode 100644
-index 000000000000..cec540c052b6
---- /dev/null
+index cec540c052b6..b48ed875eb8e 100644
+--- a/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
 +++ b/Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
-@@ -0,0 +1,35 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/bcm/raspberrypi,bcm2835-firmware.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+@@ -22,6 +22,25 @@ properties:
+       Phandle to the firmware device's Mailbox.
+       (See: ../mailbox/mailbox.txt for more information)
+ 
++  clocks:
++    type: object
 +
-+title: Raspberry Pi VideoCore firmware driver
++    properties:
++      compatible:
++        const: raspberrypi,firmware-clocks
 +
-+maintainers:
-+  - Eric Anholt <eric@anholt.net>
-+  - Stefan Wahren <wahrenst@gmx.net>
++      "#clock-cells":
++        const: 1
++        description: >
++          The argument is the ID of the clocks contained by the
++          firmware messages.
 +
-+properties:
-+  compatible:
-+    items:
-+      - const: raspberrypi,bcm2835-firmware
-+      - const: simple-bus
++    required:
++      - compatible
++      - "#clock-cells"
 +
-+  mboxes:
-+    $ref: '/schemas/types.yaml#/definitions/phandle'
-+    description: |
-+      Phandle to the firmware device's Mailbox.
-+      (See: ../mailbox/mailbox.txt for more information)
++    additionalProperties: false
 +
-+required:
-+  - compatible
-+  - mboxes
+ required:
+   - compatible
+   - mboxes
+@@ -31,5 +50,10 @@ examples:
+     firmware {
+         compatible = "raspberrypi,bcm2835-firmware", "simple-bus";
+         mboxes = <&mailbox>;
 +
-+examples:
-+  - |
-+    firmware {
-+        compatible = "raspberrypi,bcm2835-firmware", "simple-bus";
-+        mboxes = <&mailbox>;
-+    };
-+...
++        firmware_clocks: clocks {
++            compatible = "raspberrypi,firmware-clocks";
++            #clock-cells = <1>;
++        };
+     };
+ ...
 -- 
 git-series 0.9.1
 
