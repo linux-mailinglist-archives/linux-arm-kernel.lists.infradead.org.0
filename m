@@ -2,79 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA6131E350D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 03:54:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D9C01E3546
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 04:12:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=txtiY6fc9yf4X4BPklTpW6mjZo83qJttgRvf4BcPJzY=; b=Rhoey/xnGW3en4
-	wv/uXqRMuzE7hkr4vOGL9VXG1D4SK4T5ZVj928yTBu1DfmcR/DExoSUXgq1FVdyC+KZGKqEAGIoo8
-	vN9bBF/0Kyw+75oP48nx+Qqv1MP9z41Gm8pqLG2p0JYzlk6Lc62ZVG+Bu+NQPAQOz4gvkhH8mBlDa
-	mj55E7BtJLwI7TBw9YPidCJg2gklYmTu8ve3Fo1xdxvirg3j+ALP/yckWIfe8bQtSRHi+v9web4yv
-	4hPKRNI9i4NGN/TEXOYgJ+UkE5SAcqHW5RiUv7WCt0iFPh9v3GhZcSz2l5Dz3wV91RiloF6o0SI/o
-	pVmItWXvIRHZrN3gjdRQ==;
+	List-Owner; bh=0oKPvOxeBb2vvWXJSS6maO6TDLKBgWnZISYi+dnrbkg=; b=VRuzFh8RIKAOA/
+	V+Nm/KnBOrPRxlg5XapBtK3lLItlOXTb7GbH9cAdpDxjNfwLMFJ3uWVoKZOkrQf+7mk8rDQ6lyKHC
+	Ao9lFsiWp9pgMNa7s8DLAFjn5z6d04a9JiaZ3oxZF+x4TIt1S2ie0Ob3qYYAd0LsaCPpBGkQzecOU
+	24UPdbZFs2Lp3jFLoZ1NyNtxBc6jk2CzsVNT9P84lQep100Qf/6HEwOFCBLgv6knQ3GSlwXlvUNHt
+	efvf9h/1CWKf/Z4wstxvlFTN1tbZSEvHUeQQ7g8R0fT6efEQJe4AtnBIH7dq8aLZrW2VzrbrpX0FF
+	kgzGLdlj0/txrJBWS2Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdlGm-0007VZ-BY; Wed, 27 May 2020 01:54:12 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jdlYR-0002LJ-OP; Wed, 27 May 2020 02:12:27 +0000
+Received: from m43-7.mailgun.net ([69.72.43.7])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdlGW-0007Tv-F9; Wed, 27 May 2020 01:53:58 +0000
-X-UUID: 70968973716b4ec48519c7d51480beb1-20200526
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=ZKrqKJ1L5uEpCnzzklpqeT5Qk2zFyQCkc/heYv9ITnM=; 
- b=XUpTR3U9I2ql6YbBD1AN1sf+a1IszagSd55v/wuip50S9/YIF8rA9dVIwyETT7qsAB4UioxxjiJl2jorkFc3bTQscHdkOM5PYG3KJALZhcLw5rs7aCpEHTRlLV/5R55JuwVqICKGca09ozObWc59DmiNt3f5/kisqeSm05yxpfA=;
-X-UUID: 70968973716b4ec48519c7d51480beb1-20200526
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <xia.jiang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 328047851; Tue, 26 May 2020 17:53:47 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 26 May 2020 18:53:43 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Wed, 27 May 2020 09:53:46 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 27 May 2020 09:53:45 +0800
-Message-ID: <1590544320.12671.10.camel@mhfsdcap03>
-Subject: Re: [PATCH v8 06/14] media: platform: Improve the implementation of
- the system PM ops
-From: Xia Jiang <xia.jiang@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 27 May 2020 09:52:00 +0800
-In-Reply-To: <20200521153257.GF209565@chromium.org>
-References: <20200403094033.8288-1-xia.jiang@mediatek.com>
- <20200403094033.8288-7-xia.jiang@mediatek.com>
- <20200521153257.GF209565@chromium.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jdlYH-0002Kj-4r
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 02:12:20 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1590545539; h=In-Reply-To: Content-Type: MIME-Version:
+ References: Message-ID: Subject: Cc: To: From: Date: Sender;
+ bh=Bmk5WkxY5L5x6WBMTF6uxk/H1gCBb/eUTlTTCX/Pjmw=;
+ b=BpIN+NFOWdDy/tE9vXFfoggyfr6LbMReFbfVOMUpFQxnyTv3vVgvTHJnod71/2hoIryMCSj8
+ BYzMkpbrkg2OLZ/6B8phPf9YHXzlpve5e1hmJR/MBMw56PqBEQUCYdOatA7c0gw7NbAQfhM2
+ tsq3aBvexURT2mc+fH1QmVEE3Hw=
+X-Mailgun-Sending-Ip: 69.72.43.7
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n02.prod.us-east-1.postgun.com with SMTP id
+ 5ecdcc7576fccbb4c80d36a6 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 27 May 2020 02:12:05
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 1333BC433CB; Wed, 27 May 2020 02:12:05 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from pdaly-linux.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested) (Authenticated sender: pdaly)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id CAB9AC433C9;
+ Wed, 27 May 2020 02:12:03 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org CAB9AC433C9
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=pdaly@codeaurora.org
+Date: Tue, 26 May 2020 19:11:53 -0700
+From: Patrick Daly <pdaly@codeaurora.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v4 24/26] arm64: mte: Introduce early param to disable
+ MTE support
+Message-ID: <20200527021153.GA24439@pdaly-linux.qualcomm.com>
+References: <20200515171612.1020-1-catalin.marinas@arm.com>
+ <20200515171612.1020-25-catalin.marinas@arm.com>
+ <a2ad6cbf-2632-3cda-eb49-74ddfbed2cec@arm.com>
+ <20200518113103.GA32394@willie-the-truck>
+ <20200518172054.GL9862@gaia>
+ <20200522055710.GA25791@pdaly-linux.qualcomm.com>
+ <20200522103714.GA26492@gaia>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 31B56BA102CB296BF42975F3308432FBE35B5776613BCF49476A31BDC9D305D32000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200522103714.GA26492@gaia>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_185356_517193_3EB30BA8 
-X-CRM114-Status: GOOD (  23.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200526_191219_392708_1E509C02 
+X-CRM114-Status: GOOD (  33.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [69.72.43.7 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [69.72.43.7 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,117 +102,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, devicetree@vger.kernel.org, mojahsu@chromium.org,
- srv_heupstream@mediatek.com, Rick Chang <rick.chang@mediatek.com>,
- senozhatsky@chromium.org, linux-kernel@vger.kernel.org,
- maoguang.meng@mediatek.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- sj.huang@mediatek.com, Rob Herring <robh+dt@kernel.org>, Matthias
- Brugger <matthias.bgg@gmail.com>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- linux-mediatek@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-arch@vger.kernel.org, Vladimir Murzin <vladimir.murzin@arm.com>,
+ Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, Dave P Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-05-21 at 15:32 +0000, Tomasz Figa wrote:
-> Hi Xia,
+On Fri, May 22, 2020 at 11:37:15AM +0100, Catalin Marinas wrote:
+> Hi Patrick,
 > 
-> On Fri, Apr 03, 2020 at 05:40:25PM +0800, Xia Jiang wrote:
-> > Cancel reset hw operation in suspend and resume function because this
-> > will be done in device_run().
-> 
-> This and...
-> 
-> > Add spin_lock and unlock operation in irq and resume function to make
-> > sure that the current frame is processed completely before suspend.
-> 
-> ...this are two separate changes. Please split.
-> 
+> On Thu, May 21, 2020 at 10:57:10PM -0700, Patrick Daly wrote:
+> > On Mon, May 18, 2020 at 06:20:55PM +0100, Catalin Marinas wrote:
+> > > On Mon, May 18, 2020 at 12:31:03PM +0100, Will Deacon wrote:
+> > > > On Mon, May 18, 2020 at 12:26:30PM +0100, Vladimir Murzin wrote:
+> > > > > On 5/15/20 6:16 PM, Catalin Marinas wrote:
+> > > > > > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
+> > > > > > index f2a93c8679e8..7436e7462b85 100644
+> > > > > > --- a/Documentation/admin-guide/kernel-parameters.txt
+> > > > > > +++ b/Documentation/admin-guide/kernel-parameters.txt
+> > > > > > @@ -373,6 +373,10 @@
+> > > > > >  	arcrimi=	[HW,NET] ARCnet - "RIM I" (entirely mem-mapped) cards
+> > > > > >  			Format: <io>,<irq>,<nodeID>
+> > > > > >  
+> > > > > > +	arm64.mte_disable=
+> > > > > > +			[ARM64] Disable Linux support for the Memory
+> > > > > > +			Tagging Extension (both user and in-kernel).
+> > > > > > +
+> > > > > 
+> > > > > Should it really to take parameter (on/off/true/false)? It may lead to expectation
+> > > > > that arm64.mte_disable=false should enable MT and, yes, double negatives make it
+> > > > > look ugly, so if we do need parameter, can it be arm64.mte=on/off/true/false?
+> > > > 
+> > > > I don't think "performance analysis" is a good justification for this
+> > > > parameter tbh. We don't tend to add these options for other architectural
+> > > > features, and I don't see why MTE is any different in this regard.
+> > > 
+> > > There is an expectation of performance impact with MTE enabled,
+> > > especially if it's running in synchronous mode. For the in-kernel MTE,
+> > > we could add a parameter which sets sync vs async at boot time rather
+> > > than a big disable knob. It won't affect user space however.
+> > > 
+> > > The other 'justification' is if your hardware has weird unexpected
+> > > behaviour but I'd like this handled via errata workarounds.
+> > > 
+> > > I'll let the people who asked for this to chip in ;). I agree with you
+> > > that we rarely add these (and I rejected a similar option a few weeks
+> > > ago on the AMU patchset).
 > > 
-> > Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
-> > ---
-> >  drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 11 +++++++++--
-> >  1 file changed, 9 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-> > index dd5cadd101ef..2fa3711fdc9b 100644
-> > --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-> > +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-> > @@ -911,6 +911,8 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
-> >  	u32 dec_ret;
-> >  	int i;
-> >  
-> > +	spin_lock(&jpeg->hw_lock);
-> > +
+> > We've been looking into other ways this on/off behavior could be achieved.
 > 
-> nit: For consistency, it is recommended to always use the same, i.e. the
-> strongest, spin_(un)lock_ primitives when operating on the same spinlock.
-> In this case it would be the irqsave(restore) variants.
+> The actual question here is what the on/off behaviour is needed for. We
+> can figure out the best mechanism for this once we know what we want to
+> achieve. My wild guess above was performance analysis but that can be
+> toggled by either kernel boot parameter or run-time sysctl (or just the
+> Kconfig option).
 > 
-> >  	dec_ret = mtk_jpeg_dec_get_int_status(jpeg->dec_reg_base);
-> >  	dec_irq_ret = mtk_jpeg_dec_enum_result(dec_ret);
-> >  	ctx = v4l2_m2m_get_curr_priv(jpeg->m2m_dev);
-> > @@ -941,6 +943,7 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
-> >  	v4l2_m2m_buf_done(src_buf, buf_state);
-> >  	v4l2_m2m_buf_done(dst_buf, buf_state);
-> >  	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-> > +	spin_unlock(&jpeg->hw_lock);
-> >  	pm_runtime_put_sync(ctx->jpeg->dev);
-> >  	return IRQ_HANDLED;
-> >  }
-> > @@ -1191,7 +1194,6 @@ static __maybe_unused int mtk_jpeg_pm_suspend(struct device *dev)
-> >  {
-> >  	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
-> >  
-> > -	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
-> >  	mtk_jpeg_clk_off(jpeg);
-> >  
-> >  	return 0;
-> > @@ -1202,19 +1204,24 @@ static __maybe_unused int mtk_jpeg_pm_resume(struct device *dev)
-> >  	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
-> >  
-> >  	mtk_jpeg_clk_on(jpeg);
-> > -	mtk_jpeg_dec_reset(jpeg->dec_reg_base);
-> >  
-> >  	return 0;
-> >  }
-> >  
-> >  static __maybe_unused int mtk_jpeg_suspend(struct device *dev)
-> >  {
-> > +	struct mtk_jpeg_dev *jpeg = dev_get_drvdata(dev);
-> > +	unsigned long flags;
-> >  	int ret;
-> >  
-> >  	if (pm_runtime_suspended(dev))
-> >  		return 0;
-> >  
-> > +	spin_lock_irqsave(&jpeg->hw_lock, flags);
-> 
-> What does this spinlock protect us from? I can see that it would prevent
-> the interrupt handler from being called, but is it okay to suspend the
-> system without handling the interrupt?
-Dear Tomasz,
-I mean that if current image is processed in irq handler,suspend
-function can not get the lock(it was locked in irq handler).Should I
-move the spin_lock_irqsave(&jpeg->hw_lock, flags) to the start location
-of suspend function or use wait_event_timeout() to handle the interrupt
-before suspend?
+> If it is about forcing user space not to use MTE, we may look into some
+> other sysctl controls (we already have one for the tagged address ABI).
 
-Best Regards,
-Xia Jiang
+We want to allow the end user to be able to easily "opt out" of MTE in favour
+of better power, perf and battery life.
+
+In terms of deciding policy, a sysctl is much more accessible than
+reompiling with CONFIG_MTE=n, or replacing userspace libraries with
+equivalents which don't use PROT_MTE.
+
+--Patrick
+
 > 
-> > +
-> >  	ret = mtk_jpeg_pm_suspend(dev);
-> > +
+> If it is for working around hardware not supporting MTE (i.e. no
+> allocation tag storage), this should be handled differently, not by
+> kernel parameter.
 > 
-> Looking at the implementation of mtk_jpeg_pm_suspend(), all it does is
-> disabling the clock. How do we make sure that there is no frame currently
-> being processed by the hardware?
+> > The "arm,armv8.5-memtag" DT flag already provides what we want - meaning
+> > that this flag could be removed if the system did not support MTE.
+> > 
+> > I did see your remark on "arm64: mte: Check the DT memory nodes for MTE support"
+> > questioning whether it was the right approach - is this still the case?
 > 
-> Best regards,
-> Tomasz
+> My plan is to remove the DT patch altogether _if_ I get confirmation
+> from the CPU designers. The idea is that if ID_AA64PFR1_EL1.MTE > 1,
+> Linux can assume system-wide MTE support. If an MTE-capable CPU is
+> deployed in an SoC without tag storage, a tie-off should change the ID
+> field to 1 (or 0). If we do find hardware with an ID field > 1 and no
+> tag storage, it will be handled as an SoC erratum in the kernel,
+> probably tied to the new SoC Id advertised by firmware (Sudeep had some
+> patches recently).
+
+-- 
+Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
