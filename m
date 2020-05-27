@@ -2,69 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E2701E43C2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:33:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C757C1E43D4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:35:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NwaVRCTsvN/O1DPQxhOoha4CG1GDMD6fjc0IPA93jIA=; b=nfjS5xoO+5aEDq
-	8PR6mWS/lra9AJurL0GSkONn08C9XXU086iCkheWgTDgRu5VF/VEeLfQRZFicPAJxVBu+i/RxvoKI
-	gkATCbspOqH/iUFDzY+AgrcvGuVgRbtfKh8rEVjWaqKZIvA8jdgQ6W6IWNn5QG0AzHLMmiROcpsZH
-	q8ylevHDAR1KSiScbsnCmrPpUYZdwuRRf4UZWHJzpuWRu+8TfaT5prGVuhhSZmaijQ+7STuy3Raht
-	Zk7V1L4CBnmMA/oyBjnrPVZ6KQE0lO4J/sFiVMyX6Kakkze7DZS6cyMGMYG1K1AOVOatyyA8YKYZw
-	wzSvs7HPaCAs7wuEodlg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nnpByFojDmX+GkRigCVHFRHu04aN1nOHWD+5aapALis=; b=TS7m7N5tH99cjs
+	Ve6gQ75t0wXmTWvdo73pZIxUxVKIK6wkRuhmTBS75CtIVyuMPsFz6Y45FQ2KGHLIJ91pD5YSd18cI
+	0qph01tcvNAU41crOZCJx93fFQQwfvW+dlX5ZOGnCPvEh2KSBaNKVg98v2PNhW4L0TcgQ+DJdr533
+	Fo4jPjZ1Cz4CvsTlfzLyyW7qnwWGV8Em0z/uA5wqsHOFlMGpQfs2o2gdlbakkLErVgoEHWhTi0tAQ
+	RjxNOXz16E7zHPNAFZJOONOAgAFGVr43DXemobj42d3v8cbUbGkVYbqVCxiz1gm1y+eZ5jJgwJju+
+	2d2ADryYqVpyO1RlwsjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdwBh-0005vz-Fz; Wed, 27 May 2020 13:33:41 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
+	id 1jdwDg-0000lI-B3; Wed, 27 May 2020 13:35:44 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdwBW-0005uz-4i
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:33:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=opjoqZxCQdaB3EzLhcpxSqBTfSFuC3UOtI1l3JqnwoU=; b=Kgft5gaHZhY6Kt4LopUAPR1ibt
- iemlkwvFnSOxJ271VosIgscoX/KwtN7xZ/kuhmVq/CrBp6KE281qC0tv5OMou0Hw+rqgRrij29HCQ
- DV/oOV3I+Uk2wVTQGSfJ4hCiCskj0zzroOumECHC2x/r/e0C7rvWilX+xSTk/WUs3nc8=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jdwBB-003PI5-M7; Wed, 27 May 2020 15:33:09 +0200
-Date: Wed, 27 May 2020 15:33:09 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Emanuele Giuseppe Esposito <eesposit@redhat.com>
-Subject: Re: [PATCH v3 0/7] Statsfs: a new ram-based file system for Linux
- kernel statistics
-Message-ID: <20200527133309.GC793752@lunn.ch>
-References: <20200526110318.69006-1-eesposit@redhat.com>
- <20200526153128.448bfb43@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
- <6a754b40-b148-867d-071d-8f31c5c0d172@redhat.com>
+ id 1jdwDU-0000jn-93; Wed, 27 May 2020 13:35:33 +0000
+Received: from localhost.localdomain ([149.172.98.151]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1MUD7D-1jUlQi0JwB-00RKHc; Wed, 27 May 2020 15:35:19 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Felix Fietkau <nbd@openwrt.org>, John Crispin <john@phrozen.org>,
+ Sean Wang <sean.wang@mediatek.com>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ "David S. Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCH] [net-next] mtk-star-emac: mark PM functions as __maybe_unused
+Date: Wed, 27 May 2020 15:34:45 +0200
+Message-Id: <20200527133513.579367-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6a754b40-b148-867d-071d-8f31c5c0d172@redhat.com>
+X-Provags-ID: V03:K1:cjj7qKhbYdAc+XoRu26dmgr99+0Mva2jDkFaa+78wl0aZCmV0UC
+ ncWKQldljAs9dUqWY0pwFACTSCYn+/UUUoGqoBekQdJxfEOmZ8sl1HSxzBgSyVaAO/n82XN
+ AkaShtBDsW9lZ8jpzC0+KlPr+2Y837pRS9hMODZSl5LC0r0sD1Ic6quun77ngs6pdMvub+y
+ RyKC7kjWmzV29q58j/l4Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:oj+4JOX6juU=:0m8IpO+rj+vvHLiYhZyv58
+ D4pCaNsPZ1/q70Tk2+JpIvmlDIZoPGimTin1lF+Sc16SU5olSM75WbhAaB7DcPnDWoTSgDxpT
+ Rs1v3nRGTX5OU7FHDg7T0TwbHPu8hz5P0lA7uSExtaCZ9MdwFbiBA4V5Uifyi7+mFGBB3Ku05
+ 1p2K/sQLMSkLJ7R5YWl9J1xgm9Q13Dpx9yCdIhSHCNIfbGhxl2xhR1kr/IAB6H+7X+b5MfncL
+ hilM5lyLg367eb/mY5vEOmG/BFU7qUYxOx51fTaKMD5piYkjGhe+VbbXk7wXmb8XFrunvAoaO
+ stSL9IuHMslwPrE8R9t0OuJyoyD4p9ORgUJAt/aNnOzVWToYoM2Bz2ptG+brORPXNpQleY0vU
+ ytUjSljBF9rh/7KWROwvrrIYKSfIksSCrriVubLuVKuTGEg4tF9VM0ENRChN6mstZXasxBdKb
+ 3kRtme4WFswSSMmttxf00aRO1IxGerzYscCJCqnR5KElnjHh9lUfU1rwx+E00RMappZji8y9N
+ wc7oMm2EMBKGmQRYKrNdCboJP3EUNkmaqMf8PmI8lbEUmT6We8ZYT4uqyejwDtqRDlgL+yCsf
+ oNg9rZBeBQB9urX3AOO68xlnOj4kSTQGcTYzdp1093vZpJINl9lErqkTeKoKWgRqeU0dZB9dI
+ 908SW4x0C349asxQQdKek789w1MRNkNgHYeeXo8yhlORH7/8e6gYpWQB6RjTBMZBs/Js+k4aP
+ UPfmHIS6Tj4wmqsdhSBh5MmevMDEqNlXA2lfa12XRaqCtpj8w97k/qOMQG5W9LGa5paADueGt
+ OMrDQ5hTnr6zTtfaIXcL+PRkXXI6gsp4NOpc4g/BJwgRSgpXJ0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_063330_183897_ACA57A05 
-X-CRM114-Status: UNSURE (   8.39  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200527_063532_612365_16D362A0 
+X-CRM114-Status: GOOD (  10.40  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.187 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,33 +78,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-doc@vger.kernel.org,
- netdev@vger.kernel.org, David Rientjes <rientjes@google.com>,
- Emanuele Giuseppe Esposito <e.emanuelegiuseppe@gmail.com>,
- linux-kernel@vger.kernel.org, kvm-ppc@vger.kernel.org,
- Jonathan Adams <jwadams@google.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>, Paolo Bonzini <pbonzini@redhat.com>,
- linux-fsdevel@vger.kernel.org, Jakub Kicinski <kuba@kernel.org>,
- linux-mips@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> I don't really know a lot about the networking subsystem, and as it was
-> pointed out in another email on patch 7 by Andrew, networking needs to
-> atomically gather and display statistics in order to make them consistent,
-> and currently this is not supported by stats_fs but could be added in
-> future.
+Without CONFIG_PM, the compiler warns about two unused functions:
 
-Hi Emanuele
+drivers/net/ethernet/mediatek/mtk_star_emac.c:1472:12: error: unused function 'mtk_star_suspend' [-Werror,-Wunused-function]
+drivers/net/ethernet/mediatek/mtk_star_emac.c:1488:12: error: unused function 'mtk_star_resume' [-Werror,-Wunused-function]
 
-Do you have any idea how you will support atomic access? It does not
-seem easy to implement in a filesystem based model.
+Mark these as __maybe_unused.
 
-     Andrew
+Fixes: 8c7bd5a454ff ("net: ethernet: mtk-star-emac: new driver")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ drivers/net/ethernet/mediatek/mtk_star_emac.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/ethernet/mediatek/mtk_star_emac.c b/drivers/net/ethernet/mediatek/mtk_star_emac.c
+index b18ce47c4f2e..3223567fe1cb 100644
+--- a/drivers/net/ethernet/mediatek/mtk_star_emac.c
++++ b/drivers/net/ethernet/mediatek/mtk_star_emac.c
+@@ -1469,7 +1469,7 @@ static int mtk_star_mdio_init(struct net_device *ndev)
+ 	return ret;
+ }
+ 
+-static int mtk_star_suspend(struct device *dev)
++static __maybe_unused int mtk_star_suspend(struct device *dev)
+ {
+ 	struct mtk_star_priv *priv;
+ 	struct net_device *ndev;
+@@ -1485,7 +1485,7 @@ static int mtk_star_suspend(struct device *dev)
+ 	return 0;
+ }
+ 
+-static int mtk_star_resume(struct device *dev)
++static __maybe_unused int mtk_star_resume(struct device *dev)
+ {
+ 	struct mtk_star_priv *priv;
+ 	struct net_device *ndev;
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
