@@ -2,58 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F66B1E4406
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:41:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99A891E4437
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:46:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/FG+LbiDf1Hti5IBIjGQsMdTb6AxsvIq2F/5aWCJU0I=; b=o7xnAVStzUVNdj
-	VcwhZ1Wur4DnIpUyUUf4R89hrOIbCZ8Vmz5DQs40Jx3gtCIWkSY0NgBlFmlUpBlecU9E0hoxNGHxU
-	UBlg0xnehFTkWT5z5mJMJ0lVPB/ElK/cEMtv8pwsXCefUtP7IFgsEqT2Nq2v8boOKW2fa1X0AugnO
-	tIXQR08qXdr+ynEDJLI6w0Oo6wQ0Voje6ywnoOb7k/FJcH2RLPwi28edMiDDPjA/fMA9W8v0z52oW
-	1K57IdgH/xIo19MExWovHBcd2rhn46MjSLmG9vKbdJYXFGCisGZtIp/O5IsDT2wM8aJVzqi+aRkEt
-	iQ1JTxsrQT+pgFoWqctg==;
+	List-Owner; bh=MGx/H3TKGB6QKuQ748UPA167DmLRhl+PJzkanFl1cG4=; b=d+11UX9PoZREu8
+	xSbNas9z2hnrgvINcB1dlPdk+NTi+eKcwRvdsgkSw8aCX6fdXDgMQYxiEIsO4ClajsKAwQ+W3jUGG
+	+oaPU+rD2lqavIWZ44PSqiwjd4gDC+MdwEmfntQLHMueLKmAsGkEf5SMxopV9sw+EmSjx7FGtoTyN
+	zezuUFqCTUx/wA/S6zESweSIdpvNtrQDLwR3EjYANt0NRnKUv1qLMaPbPQIuptzxXnOZSEBINfcUY
+	T+5ATI/sEYDSrhrCN1DaMmm4Yd8Rb8e+y8tGxznXK3kQRdTVYvqVAkaaVpUwajbFmrUkWuH9mQS+o
+	FKpm+1JcBP9p2reu8dcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdwJE-0006K1-Og; Wed, 27 May 2020 13:41:28 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdwJ0-0006Iu-OG
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:41:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 163A755D;
- Wed, 27 May 2020 06:41:11 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ECA433F305;
- Wed, 27 May 2020 06:41:09 -0700 (PDT)
-Date: Wed, 27 May 2020 14:41:04 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: arm64/acpi: NULL dereference reports from UBSAN at boot
-Message-ID: <20200527134104.GA16115@e121166-lin.cambridge.arm.com>
-References: <20200521100952.GA5360@willie-the-truck>
- <20200521173738.GA29590@e121166-lin.cambridge.arm.com>
- <20200526202157.GE2206@willie-the-truck>
+	id 1jdwNp-0001KP-6w; Wed, 27 May 2020 13:46:13 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdwNI-00016l-K3
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:45:41 +0000
+Received: by mail-lf1-x142.google.com with SMTP id x27so14474167lfg.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 06:45:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=pqMjF481/emegOTyAnp90i2QSPi+4HPq/HRpDph3sd4=;
+ b=cEtxG1QBb6k0/9pivnXsIM4fxxgTmO6eKy3cb4jjp5+kQNfHVlksx1KW++A7tdPXNv
+ oY2Ob0P9vNNprE6p4NGP04bu/InKQ/EF4F2+wJwW+oY9E8YyJqJNZGtPMuzc5qLL0HWI
+ fbhtYM7PcCz7DfVylsOzqby5Qs3IHhHLLbl9blKfUGBSf4zaaAgjnl5o0dbVSJ4DvPoW
+ Lx+VZEycnhRAGhdVQAj29L9RY0uZ6YY2m8X2b2LqnnTUPWNtVuoZ+MHCVqwRrOEjYOq/
+ EKnUL6kl2azL30dBaSZuMa/KxZcpN6UCJO8YV+KqgmxgC4f8GArCvy88KgPw8b2F4xLC
+ ixNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=pqMjF481/emegOTyAnp90i2QSPi+4HPq/HRpDph3sd4=;
+ b=iV+rMeC8FXX7A/1AJQK8iVaPL2nhRg+eGL0w7UZaygz86bkBmuth0F/5P2dOuVmgpZ
+ WeGts7oMQQMwjO4T25Vlf6m/cZCepAAEmCnMiaBpQsENxp8y083sQUUw7jauefoh8cP6
+ PKftXvbpB74Cq+kwWi+jqWuTh8jcto/m9ZlO+tRjXfSU1Q60VmZDsbfv8ggxQurJmi2B
+ zCKHMBR/UUctD2ea7Cl18v1TpNMbTS403lYDnwxI9iHCF7Qlb/icWMfoP9CWI3glZjzc
+ N3yc5O7aD08niib2X9JpoLvIZYixSnLg+XB6qAqSxDOusGtY/bfZM/YIZAo05yjNetFL
+ kr0A==
+X-Gm-Message-State: AOAM530P883/5vfeJ2BGCwOW+JeyhLHX+YCPol244jlj99G2xIPwdgPW
+ t6vnvpmUF8Qlw7y7fYEFxG1hNou3jajzLaEU/Y2yTQ==
+X-Google-Smtp-Source: ABdhPJywnRjyy63BmYPCVd6xtABhxO8rvnbtGtftY9/L9Axjxr/II+eDgYpm5vNmJPSCVWS3wWgZuzCOQirdIHM52xc=
+X-Received: by 2002:ac2:5473:: with SMTP id e19mr3147605lfn.21.1590587138395; 
+ Wed, 27 May 2020 06:45:38 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200526202157.GE2206@willie-the-truck>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200513141134.25819-1-lars.povlsen@microchip.com>
+ <20200513141134.25819-2-lars.povlsen@microchip.com>
+ <CACRpkdZa7OM3bqB+zRprEQ3M4m9hG3uPCoYxrdH_O=oxD8zi8Q@mail.gmail.com>
+ <87pnb1nf2j.fsf@soft-dev15.microsemi.net>
+ <CACRpkdYesD9sRQZXQNEaBY2Ouu3bjKKGWpRtU-Lpa4AcjyPwXw@mail.gmail.com>
+ <87r1v8oz9f.fsf@soft-dev15.microsemi.net>
+ <CACRpkdaJvaqPptPD-A1DriVgBOZGZ4Qf0UsbsjG39ptx6bSJKg@mail.gmail.com>
+ <87pnappzun.fsf@soft-dev15.microsemi.net>
+In-Reply-To: <87pnappzun.fsf@soft-dev15.microsemi.net>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 27 May 2020 15:45:27 +0200
+Message-ID: <CACRpkdbfNPWKDU5zDaKT0kvJhCpL3X=jvTpLpicm1yMD5brA8Q@mail.gmail.com>
+Subject: Re: [PATCH 1/3] dt-bindings: pinctrl: Add bindings for mscc,
+ ocelot-sgpio
+To: Lars Povlsen <lars.povlsen@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_064114_834101_9545F2E4 
-X-CRM114-Status: GOOD (  20.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200527_064540_684996_67DF05B3 
+X-CRM114-Status: GOOD (  10.03  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,79 +98,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, rjw@rjwysocki.net, ndesaulniers@google.com,
- linux-kernel@vger.kernel.org, guohanjun@huawei.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 09:21:57PM +0100, Will Deacon wrote:
-> Hi Lorenzo, Hanjun, [+Nick]
-> 
-> On Thu, May 21, 2020 at 06:37:38PM +0100, Lorenzo Pieralisi wrote:
-> > On Thu, May 21, 2020 at 11:09:53AM +0100, Will Deacon wrote:
-> > > Hi folks,
-> > > 
-> > > I just tried booting the arm64 for-kernelci branch under QEMU (version
-> > > 4.2.50 (v4.2.0-779-g4354edb6dcc7)) with UBSAN enabled, and I see a
-> > > couple of NULL pointer dereferences reported at boot. I think they're
-> > > both GIC related (log below). I don't see a panic with UBSAN disabled,
-> > > so something's fishy here.
-> > 
-> > May I ask you the QEMU command line please - just to make sure I can
-> > replicate it.
-> 
-> As it turns out, I'm only able to reproduce this when building with Clang,
-> but I don't know whether that's because GCC is missing something of Clang
-> is signalling a false positive. You also don't need all of those whacky
-> fuzzing options enabled.
-> 
-> Anyway, to reproduce:
-> 
->  $ git checkout for-next/kernelci
->  $ make ARCH=arm64  CC=clang CROSS_COMPILE=aarch64-linux-gnu- defconfig
->  <then do a menuconfig and enable UBSAN>
->  $ make ARCH=arm64  CC=clang CROSS_COMPILE=aarch64-linux-gnu- Image
-> 
-> I throw that at QEMU using:
-> 
-> qemu-system-aarch64 -M virt -machine virtualization=true \
-> 	-machine virt,gic-version=3 \
-> 	-cpu max,sve=off -smp 2 -m 4096 \
-> 	-drive if=pflash,format=raw,file=efi.img,readonly \
-> 	-drive if=pflash,format=raw,file=varstore.img \
-> 	-drive if=virtio,format=raw,file=disk.img \
-> 	-device virtio-scsi-pci,id=scsi0 \
-> 	-device virtio-rng-pci \
-> 	-device virtio-net-pci,netdev=net0 \
-> 	-netdev user,id=net0,hostfwd=tcp::8222-:22 \
-> 	-nographic \
-> 	-kernel ~/work/linux/arch/arm64/boot/Image \
-> 	-append "earlycon root=/dev/vda2"
-> 
-> I built QEMU a while ago according to:
-> 
-> https://mirrors.edge.kernel.org/pub/linux/kernel/people/will/docs/qemu/qemu-arm64-howto.html
-> 
-> and its version 4.2.50 (v4.2.0-779-g4354edb6dcc7).
-> 
-> My clang is version 11.0.1.
+On Wed, May 27, 2020 at 10:05 AM Lars Povlsen
+<lars.povlsen@microchip.com> wrote:
 
-Thanks a lot Will.
+> The only issue is that the gpios on the same "port" have restrictions on
+> their status - they can only be enabled "all" or "none" for gpios that
+> map to the same port. F.ex. gpio0, gpio32, gpio64 and gpio96 must all be
+> enabled or disabled because at the hardware level you control the
+> _port_.
 
-I *think* I was right - it is the ACPI_OFFSET() macro:
+This is fairly common. For example that an entire port/block share
+a clock.
 
-#define ACPI_OFFSET(d, f)  ACPI_PTR_DIFF (&(((d *) 0)->f), (void *) 0)
+> But as I noted earlier, that could just be the driver enforcing
+> this.
 
-that triggers the warnings (I suspected it because at least in one of
-the warnings I could not see any dereference of any dynamically
-allocated data).
+Yeps.
 
-Now on what to do with it - thoughts welcome.
-
-Lorenzo
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
