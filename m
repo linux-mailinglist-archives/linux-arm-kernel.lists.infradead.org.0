@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3661D1E49A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:17:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BB2B1E49A3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:17:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TJ3PsiQENFWAMKbBhNdxjsmAJcKjDQzkknKhBxeukBU=; b=Pduu5qYkKChRxG
-	NRGepQJQ8o3GnPo0SJsGl41LziOpyWCQLjvgg9k+wpn7am+h2MPB6X3Y6uUOcgaq2pST6oIgtUYnm
-	xrFBAagqpVAdoECkkxqX/qsAtjYoO5lok7BUWo1vWqJL9bthNxg0JLQQREAFEQEZ7fpGaHtzSvXEH
-	UZavaJtpr8F82vAri+9r4Q0Bn732JtFlcbuKFbLi91Ti36bWyx0yuL5aM9t2nkJtfiCMzFVe8pe+z
-	EidbS/tYVO+IoApH5SAftcvhCW3NeItIIzVS4KPbzf8B180h3B4hF8jvDtJqP/R1j5WydwrvCL/qY
-	s3K9WJ9BI4LuXriABL4w==;
+	List-Owner; bh=4sSSnPyw0BtFbUcKdfGIPGwlkumX7DchOmuCJ8BhPJc=; b=pqP/tyFu2hWbUT
+	ZaHnIyr+9A18vGefKuivgyjrSTydILT3tRWhI62XFWMfWDq0MQFMXNmslP70Us4AAyxOd6nD+Qbce
+	5F41YSre4c3UT9SaqP8rRvkb/aiUxfeq7GEOpHm1F5sWV6ZaaiDl6ZDfz+lMhCyl5dB/ZD2EnReoz
+	YQXupKGPN5vvrMd8yIVoiJ+ak5AA92g7k0s1wSh0AtE/Zh8vGHha891DS+CZMdkvLPB9/p8aSqryR
+	Yp4QkP+4FmYLrjCHegGmgFEDiiuB9DyVOQNX38JB/1PwXOjCYm0CMK2M3e7YihrNxk2s22YHGzqIk
+	RySC/MwCRl+5/xOXK1dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyk7-0007Dt-M7; Wed, 27 May 2020 16:17:23 +0000
+	id 1jdykY-0007aE-FW; Wed, 27 May 2020 16:17:50 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyKF-0000qd-9J; Wed, 27 May 2020 15:50:41 +0000
+ id 1jdyKI-0000ro-97; Wed, 27 May 2020 15:50:44 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 318E05820A4;
- Wed, 27 May 2020 11:50:38 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:38 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id B22DF5820A9;
+ Wed, 27 May 2020 11:50:39 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:39 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=VKidWh/xRLUFk
- +z0aZ3qSdUJ5qwcVhi/4K7wFX4ohRw=; b=Lab361bwp8weaCdvQ1Vw2hzig+xSy
- 3dpMfc31fNL5pzV5n/gH2Ys4CN1YiPklGiVtvsws+N/QUKhAjc1jcMYIRGgYydVH
- Rch9j0M4Fsf0JNVLkBFJ7z/utJdFK4DyMyyc5sVq2pMQlVQGdAWEnJKA3fiFhgkl
- si9HBDY06GYAIcgGW4x0JkpA1JyGK+DXWJ1kpOeg44LTYcWqU/DIYZP9v2YuNOvJ
- wjxSPNQK1RBnZcv72YbBb1/HNnMomD4GrpRahMz4d6THgym4+vq5serQWIt7D/ai
- GrNxeONND4SKkD6LXx/1pcMTpSk29lA3DVUmaF+yHDME2Lssrqui+TsvA==
+ :mime-version:content-transfer-encoding; s=fm2; bh=wpVt7MhIxZsbZ
+ JMkpP4mIlyTyjudls9LyuYdKN3Ljp4=; b=pnj2XnLV96vUGilZPa4JnZ59m5qvs
+ vfEmbfg53mUOazvOm7q8TT8HKUeOIACR7CUp86wOuSUWvmS5hWn9xPdmKSk2f5Lz
+ zheK/SZpKXrDNThMXn4v0MPYxpnrKQtPFJbmSFMWzEj5juNz8YCqMHmuYD4KhUEq
+ 1tIGAeGo2Sn3uNIv8tULGuRs93MPiMry34jrrhCfQAJRJzJc0VHg7eADkAGS3dHr
+ vadOW6LmH8Z5uK7Q92ZzEgMt+l44uHNrb4MzCFRwJpWmjQ3dwUVPOPyyPqiSxpEN
+ mfNiN3MFQTsLFXixOrFqEe3h8j8Z6yl+rZtTXRJJuMGgkY7tlmUWT8BTg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=VKidWh/xRLUFk+z0aZ3qSdUJ5qwcVhi/4K7wFX4ohRw=; b=K257Z5g/
- CApKwqzjdOKRmulXPeNFjZi8NZjj5biiX7HC/FzdcgFFIpCyvjSFJZJK0c/YFbxM
- rBby5VyUiJD5i/6LHhajeuiZ08zuzSlwkBoi2YX5ZectZU6I7zvrVuMWia7n7pbh
- dFZfsxrSyc7FvmfEQPZ6D2C6bpFx0FX3cWg1gQlyBauUQql8PwzaLxc1p4Kle+68
- SeJer/sBc+KOhO6sEmiOtdW846mjD5Xofm0ko2r4bRyQAkjFtHFi4+ZFUzffoOtW
- fUEUqhjmr0QD27ufqKVwgZmqbMttLY2YzH3eTnvxXP+1Iqsk0SWGuXt5PrClmacz
- oLS840lOc1r7Yg==
-X-ME-Sender: <xms:TozOXvVegG84VuxgC_Az_ZtNewWWL32HiKyShXtJf4Mgq_Ayeniywg>
+ fm2; bh=wpVt7MhIxZsbZJMkpP4mIlyTyjudls9LyuYdKN3Ljp4=; b=WyG1EDus
+ g6P+LEd/6ZqvkOfmoS1+tf42JZdYw4c/9iYCaCfcbqMMGxZYHFHp8bker3VN+uqy
+ kgA2bR25bUPwGisCcnbvkZG0EucZ2i75TjS25SJ2o+3ppbdb63796omM3Cn8HL8u
+ Ms4nsZ+oybj5o9g+8VeHRISHyLWRceUHLbh8pi52vxRdg+84CRqWpMBVrA6j+PsQ
+ GLQR0LdXb5fUuR7AxEgXqhn38zdo1jgCweXBmgLEA9rU3oxbodtXBV81cCRf2gKM
+ PaXma7LvVrC+IKv7GsX+aHofu/BYC0py2YnVh+lI/FPp+eNnl6eq1JqxZjnnHmrV
+ 8PYZufwO9PVqlw==
+X-ME-Sender: <xms:T4zOXjv6_gfKCs-FHi_8abZfC8vEhx5VPPxT2s4q7X8cEbCGM66fhw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,28 +56,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepfeefne
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:TozOXnmoyhYaoz41JMzjytFh-QDk_ICckmqqJybj08wzoniY2vL_ig>
- <xmx:TozOXrbJkvyvuI8AoSrdV2I2yuyyUvU_R5oRvlHCT08rYUEgrxAYsA>
- <xmx:TozOXqXSZHjK9QOUpFxIpXXHZEn-oPs43I0cxkI7nshcBL8KJHiT2A>
- <xmx:TozOXvVCAwjVHFUvJOH10CsI5G-8945LCchadQmgNrQqBjPXnbjcKQ>
+X-ME-Proxy: <xmx:T4zOXkepu5zGh28UOokfTghtI9Ii2sHm3Riyb1S4rJVNxZQeo54sVg>
+ <xmx:T4zOXmw10ewjiPpBds_kNOxDvJsQz3IKyYS9wcoguGMkeDo-7-_M5A>
+ <xmx:T4zOXiMzhvfSmIaQjgDuPmXv1aFApUwLaQJZEdm6zG9_jm9OzqnSCg>
+ <xmx:T4zOXkMTjolr2Wl7PXWFBOJfGlS_JqTjQVZVf0zFMPjcPy5lPwkglg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id C73F030618B7;
- Wed, 27 May 2020 11:50:37 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 54DC93280059;
+ Wed, 27 May 2020 11:50:39 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 051/105] drm/vc4: crtc: Add a delay after disabling the
- PixelValve output
-Date: Wed, 27 May 2020 17:48:21 +0200
-Message-Id: <5935e1b778ec330216a0143646746f9d3b18bfd9.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 052/105] drm/vc4: crtc: Clear the PixelValve FIFO on disable
+Date: Wed, 27 May 2020 17:48:22 +0200
+Message-Id: <9153ce3f0281d57de817a3c8ea0f12530212808b.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085039_479620_7F58DC29 
-X-CRM114-Status: UNSURE (   8.43  )
+X-CRM114-CacheID: sfid-20200527_085042_890956_CD3399F8 
+X-CRM114-Status: UNSURE (   9.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -119,29 +118,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to avoid pixels getting stuck in the (unflushable) FIFO between
-the HVS and the PV, we need to add some delay after disabling the PV output
-and before disabling the HDMI controller. 20ms seems to be good enough so
-let's use that.
+In order to avoid a stale pixel getting stuck on mode change or a disable
+/ enable cycle, we need to make sure to flush the PV FIFO on disable.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_crtc.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/gpu/drm/vc4/vc4_crtc.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
-index b3721bce7c81..dee8dc7b9409 100644
+index dee8dc7b9409..61e0945a8697 100644
 --- a/drivers/gpu/drm/vc4/vc4_crtc.c
 +++ b/drivers/gpu/drm/vc4/vc4_crtc.c
-@@ -401,6 +401,8 @@ static void vc4_crtc_atomic_disable(struct drm_crtc *crtc,
- 	ret = wait_for(!(CRTC_READ(PV_V_CONTROL) & PV_VCONTROL_VIDEN), 1);
- 	WARN_ONCE(ret, "Timeout waiting for !PV_VCONTROL_VIDEN\n");
- 
-+	mdelay(20);
-+
+@@ -406,8 +406,7 @@ static void vc4_crtc_atomic_disable(struct drm_crtc *crtc,
  	if (vc4_encoder->post_crtc_disable)
  		vc4_encoder->post_crtc_disable(encoder);
  
+-	CRTC_WRITE(PV_CONTROL, CRTC_READ(PV_CONTROL) & ~PV_CONTROL_EN);
+-
++	vc4_crtc_pixelvalve_reset(crtc);
+ 	vc4_hvs_atomic_disable(crtc, old_state);
+ 
+ 	if (vc4_encoder->post_crtc_powerdown)
 -- 
 git-series 0.9.1
 
