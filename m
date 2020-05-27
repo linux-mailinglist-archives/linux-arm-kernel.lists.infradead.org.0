@@ -2,67 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1B5C1E3991
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 08:46:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1EBC1E3995
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 08:47:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pnjXGgzVP05GmXit55IGq8hQ/9TRKOwQJsDfOJAa8ng=; b=HEs8CxRa3cSX2b
-	pu5xN5c8Syjtuo81VGjxbVOWGar2ShXw/ulq902R4lx4ReAo2hlGo8AqoJCn9OPeUE9ZPo2IKpE4N
-	ig77F5BSF9MOwaTWkOR8tBJ2qaWWHSEPAxrAHBl6O00aDipT0Hy2iUM8Y2ZYeDBeQ/USBH98/QkEN
-	EE7ywi8wFNHC9Y5rXct0bn27i+fjI13OcypNhiFFIvdoIC6z5Ko8yFlwlNHDzVXZjXi/CdZWUJEb4
-	OTul82tX0f3gBstXk94htpJYanxKQ8M9Dng9ccIvWXQ7ttMMlkewvG2e64gf38oxJJjsQLqi3q8D4
-	ynxWfb+Xzk14GCI8qu8Q==;
+	List-Owner; bh=I74A8qZQUvKmW8mE6zK9BiOiuuU7CRfM1EsHoD7Jq/M=; b=uX1ECzafpnXPKc
+	u9ZHSCvghiOp1d9xp8JZemmwqhtFr/TuCZOkzUIEhNQ9gyKdM3sRaUovipMXrzFcFBqPagH+d8ksI
+	DTF0+EbM4SSxrFSBSqH0vc4JXV/ABQNr8pUbihVTQEynOS8MOZltKkAGhkHtDFX1A5RDhO8PW24CL
+	FCOLGcyXM9V6y/XYGpm6129N6CiV4AlPaQY48wEk3Kd5mZA09QjCmzuk+UWr3VZIFuq3AbhdHSmPp
+	lIxeaTU1VWvA77gtEQUdsd6W8sLqDQRJcEKqtZvAccQSynJh1s22ScG9A+1YCwuIE14QR+PDew8aB
+	vHqPVLMaYAteO+hHH70A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdppy-000177-9T; Wed, 27 May 2020 06:46:50 +0000
-Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
+	id 1jdpqv-0001N4-Nz; Wed, 27 May 2020 06:47:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdppl-00016S-GI
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 06:46:41 +0000
-Received: from DGGEMM403-HUB.china.huawei.com (unknown [172.30.72.56])
- by Forcepoint Email with ESMTP id 35613D2FADC08F94C152;
- Wed, 27 May 2020 14:46:32 +0800 (CST)
-Received: from DGGEMM424-HUB.china.huawei.com (10.1.198.41) by
- DGGEMM403-HUB.china.huawei.com (10.3.20.211) with Microsoft SMTP Server (TLS)
- id 14.3.487.0; Wed, 27 May 2020 14:46:31 +0800
-Received: from DGGEMM506-MBX.china.huawei.com ([169.254.3.4]) by
- dggemm424-hub.china.huawei.com ([10.1.198.41]) with mapi id 14.03.0487.000;
- Wed, 27 May 2020 14:46:25 +0800
-From: "Zengtao (B)" <prime.zeng@hisilicon.com>
-To: "zhengxiang (A)" <zhengxiang9@huawei.com>, Jean-Philippe Brucker
- <jean-philippe@linaro.org>
-Subject: RE: [RFC] Use SMMU HTTU for DMA dirty page tracking
-Thread-Topic: [RFC] Use SMMU HTTU for DMA dirty page tracking
-Thread-Index: AQHWLcHpdMO0bbYbEkW2sovVw/ZxjKiz12IAgARX1wCAA1ZFUA==
-Date: Wed, 27 May 2020 06:46:24 +0000
-Message-ID: <678F3D1BB717D949B966B68EAEB446ED4146A6E4@DGGEMM506-MBX.china.huawei.com>
-References: <b926ec0b-fe87-0792-c41d-acad56c656a4@huawei.com>
- <20200522171452.GC3453945@myrica>
- <e68c1158-8573-a477-42ce-48cee510c3ce@huawei.com>
-In-Reply-To: <e68c1158-8573-a477-42ce-48cee510c3ce@huawei.com>
-Accept-Language: zh-CN, en-US
-Content-Language: zh-CN
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.74.221.187]
+ id 1jdpql-0001MR-AC; Wed, 27 May 2020 06:47:40 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D0ABC20787;
+ Wed, 27 May 2020 06:47:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590562058;
+ bh=5+tlLkLihU00jqHmrP7H7SWlj+BNK7hJ7XmRaGHL96w=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=nZ0/4jIgaBAacgfigDF/ATTLFMH2+8osx1Ba1rg/F7Ox0XbAWloCR0TZG4GKia4Bd
+ ABwmIPWaiNEmptbBXpVCXTQd8TJQrLrGAS6A92GnC/aKmfjEKLvpvwzV5ZCYnFIVfG
+ egoj4X3fin0ToeOosPdQfr+/anpPn4ia9B0mIHZY=
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+In-Reply-To: <eeae1a92da7812f04a034498d3a1cb60e282fec7.1587742492.git-series.maxime@cerno.tech>
+References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
+ <eeae1a92da7812f04a034498d3a1cb60e282fec7.1587742492.git-series.maxime@cerno.tech>
+Subject: Re: [PATCH v2 06/91] clk: bcm: rpi: Statically init clk_init_data
+From: Stephen Boyd <sboyd@kernel.org>
+To: Eric Anholt <eric@anholt.net>, Maxime Ripard <maxime@cerno.tech>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Date: Tue, 26 May 2020 23:47:38 -0700
+Message-ID: <159056205813.88029.2378352854347673195@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_234639_196687_41C0322D 
-X-CRM114-Status: GOOD (  24.33  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200526_234739_369289_57F0E6BA 
+X-CRM114-Status: UNSURE (   6.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.255 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,124 +77,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alex.williamson@redhat.com" <alex.williamson@redhat.com>,
- Yan Zhao <yan.y.zhao@intel.com>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- "maz@kernel.org" <maz@kernel.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- Kirti Wankhede <kwankhede@nvidia.com>,
- "Wangzhou \(B\)" <wangzhou1@hisilicon.com>, James
- Morse <james.morse@arm.com>,
- "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>, "Wanghaibin
- \(D\)" <wanghaibin.wang@huawei.com>, Will Deacon <will@kernel.org>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-clk@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> -----Original Message-----
-> From: zhengxiang (A)
-> Sent: Monday, May 25, 2020 7:34 PM
-> To: Jean-Philippe Brucker
-> Cc: linux-arm-kernel@lists.infradead.org; kvmarm@lists.cs.columbia.edu;
-> Will Deacon; Wanghaibin (D); Zengtao (B); maz@kernel.org; James Morse;
-> julien.thierry.kdev@gmail.com; Suzuki K Poulose; Wangzhou (B);
-> iommu@lists.linux-foundation.org; Kirti Wankhede; Yan Zhao;
-> alex.williamson@redhat.com
-> Subject: Re: [RFC] Use SMMU HTTU for DMA dirty page tracking
+Quoting Maxime Ripard (2020-04-24 08:33:47)
+> Instead of declaring the clk_init_data and then calling memset on it, just
+> initialise properly.
 > 
-> [+cc Kirti, Yan, Alex]
-> 
-> On 2020/5/23 1:14, Jean-Philippe Brucker wrote:
-> > Hi,
-> >
-> > On Tue, May 19, 2020 at 05:42:55PM +0800, Xiang Zheng wrote:
-> >> Hi all,
-> >>
-> >> Is there any plan for enabling SMMU HTTU?
-> >
-> > Not outside of SVA, as far as I know.
-> >
-> 
-> >> I have seen the patch locates in the SVA series patch, which adds
-> >> support for HTTU:
-> >>     https://www.spinics.net/lists/arm-kernel/msg798694.html
-> >>
-> >> HTTU reduces the number of access faults on SMMU fault queue
-> >> (permission faults also benifit from it).
-> >>
-> >> Besides reducing the faults, HTTU also helps to track dirty pages for
-> >> device DMA. Is it feasible to utilize HTTU to get dirty pages on device
-> >> DMA during VFIO live migration?
-> >
-> > As you know there is a VFIO interface for this under discussion:
-> >
-> https://lore.kernel.org/kvm/1589781397-28368-1-git-send-email-kwankhe
-> de@nvidia.com/
-> > It doesn't implement an internal API to communicate with the IOMMU
-> driver
-> > about dirty pages.
-> 
-> >
-> >> If SMMU can track dirty pages, devices are not required to implement
-> >> additional dirty pages tracking to support VFIO live migration.
-> >
-> > It seems feasible, though tracking it in the device might be more
-> > efficient. I might have misunderstood but I think for live migration of
-> > the Intel NIC they trap guest accesses to the device and introspect its
-> > state to figure out which pages it is accessing.
-> >
-> > With HTTU I suppose (without much knowledge about live migration)
-> that
-> > you'd need several new interfaces to the IOMMU drivers:
-> >
-> > * A way for VFIO to query HTTU support in the SMMU. There are some
-> >   discussions about communicating more IOMMU capabilities through
-> VFIO but
-> >   no implementation yet. When HTTU isn't supported the DIRTY_PAGES
-> bitmap
-> >   would report all pages as they do now.
-> >
-> > * VFIO_IOMMU_DIRTY_PAGES_FLAG_START/STOP would clear the dirty
-> bit
-> >   for all VFIO mappings (which is going to take some time). There is a
-> >   walker in io-pgtable for iova_to_phys() which could be extended. I
-> >   suppose it's also possible to atomically switch the HA and HD bits in
-> >   context descriptors.
-> 
-> Maybe we need not switch HA and HD bits, just turn on them all the time?
+> Cc: Michael Turquette <mturquette@baylibre.com>
+> Cc: Stephen Boyd <sboyd@kernel.org>
+> Cc: linux-clk@vger.kernel.org
+> Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
 
-I think we need START/STOP, start is called when migration is started and STOP
-called when migration finished.
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
-I think you mean that during the migration(between START and STOP), HA and HD
-functionality is always turned on.
-
-> 
-> >
-> > * VFIO_IOMMU_DIRTY_PAGES_FLAG_GET_BITMAP would query the
-> dirty bit for all
-> >   VFIO mappings.
-> >
-We need a clear during the query which mean we have to reset the dirty status 
-after a query.
-
-> 
-> I think we need to consider the case of IOMMU dirty pages logging. We
-> want
-> to test Kirti's VFIO migration patches combined with SMMU HTTU, any
-> suggestions?
-
-@kirti @yan @alex
-As we know, you have worked on this feature for a long time, and it seems that
- everything is going very well now, thanks very much for your VFIO migration 
-framework, it really helps a lot, and we want to start with SMMU HTTU enabled
- based on your jobs, it's kind of hardware dirty page tracking, and expected to bring us
- better performance, any suggestions? 
-
-Thank you.
-Zengtao 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
