@@ -2,70 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D0D71E4607
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 16:36:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A43D91E4629
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 16:39:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EUYwnVti7CLVsLFGuN0HYm6WyxmhW9Bsredj8sZ8LpY=; b=VHLydcgMurf0OWbhFjRPZtdlx
-	VEKmMe7w1B/VTQQpYlSxK80u6rK5GjHQSxemqwW2MqU0So/LTJyIHSpI2Xy7nUe+bmDWnnavT4k+H
-	x2cSADpAdgqhflfiLSv/t+P4Uo+Zz+lXRarW4Kb+tw6HlxxFq1phnNDgcjiYLFDusv8UkObb5QbNr
-	byx/9RaC4WqUkdvxVw89yla6gnJzilEFpKCHrTQGNkoR3Xv3eGYq6J0aCS1V+0xC34PW9N6wkWpIh
-	DGgtl+rX3tSPcebQxejKnLAFkVuKA15C+4FEDhLXEJES4yzcR26r3IuEjHyEmH6bikLqhnSavPNm+
-	GPMhEONcg==;
+	 bh=MhSCuH+KIzvglUFtKIRdWY3HIcKbplD5lNR5CpyvruA=; b=RRN5z/Lil5Tv4JWyUDfQb8hZj
+	MLUBbPcFhPMMpegu1XCA7y5XlT0cWVASmHMLrkri8yXrNAybREnW7SQaN/Znl06I+VbWLZCERuq/6
+	Ke5qk+kwgVcIxe28A/mEO8Ww+g10t3IQxeTo+mt1kVB1qVnulXzilBwJISVNn9hSPWg+i2tOMHoIQ
+	MdKfGSfRdLOfLKDiCGrDVaw7x+JBfq3adh89/stLHzwpl2kNcvUMyWolxXAVFyEBnCavxJ+TdiDtm
+	VTLnEBgSyvHSUjlImtbN8qpe+Y4Y0aYmqFUxBsKH+VMl+FCuJEE68XqliF4xrwJBqSKEM87Rk7od5
+	FnCrrc1tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdxAS-00076Q-HZ; Wed, 27 May 2020 14:36:28 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jdxDL-0007m7-Bt; Wed, 27 May 2020 14:39:27 +0000
+Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdxAI-00074r-VP
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 14:36:20 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id B48B11895055C8A31AB1;
- Wed, 27 May 2020 15:35:53 +0100 (IST)
-Received: from [127.0.0.1] (10.47.6.244) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Wed, 27 May
- 2020 15:35:52 +0100
-From: John Garry <john.garry@huawei.com>
-Subject: Re: [PATCH V1 RESEND 1/3] perf/imx_ddr: Add system PMU identifier for
- userspace
-To: Will Deacon <will@kernel.org>, Rob Herring <robh@kernel.org>
-References: <20200512073115.14177-1-qiangqing.zhang@nxp.com>
- <20200512073115.14177-2-qiangqing.zhang@nxp.com>
- <20200519185125.GB453195@bogus> <20200520073304.GA23534@willie-the-truck>
- <CAL_JsqJfQ0PFy5mmwSG4aM91ghq5xiAEPR2YZOymws+BfGa+uA@mail.gmail.com>
- <20200521130415.GB5949@willie-the-truck>
- <c3be06c5-781f-384f-768b-d809da99b7e0@huawei.com>
-Message-ID: <51aa7cbc-0ce2-b96d-b056-fcc6013ccecf@huawei.com>
-Date: Wed, 27 May 2020 15:34:48 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1jdxDB-0007lX-5j
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 14:39:18 +0000
+Received: by mail-qt1-x841.google.com with SMTP id x29so6109740qtv.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 07:39:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=c3iUyv2ACu3GpcAgyaKwrhyX2JOcPpWzj8/UV5t9xCg=;
+ b=aYhE1Olgr+ev3gdMLXXeSwYykA/jP5JIRtVKuD/FBn/IgJV5b55wDqPcDi1g/8JYND
+ wkJPzi+iiE1K6SML3E8pWoK9nPiayL/l+hLzt3AFswGG0f2JqcVGKYymQLEGrmb0xFzY
+ QBGz2N7497XPfQVZE+zjRTK8f0I2Ny7/bhpdfGNIVuiKi7MF78oJQSGjceyqdnkZo+pr
+ kgEttGtonZrrA/Ff7Nh2+0Ld84fO/v1lzsZP11mnT4Y42Chrm+lBMyWR4oW9h/BSm4mg
+ dclMwUS9oDc6zF3VweR06s0D/jszxi618kGcYNgaN5pzVCfMoje3gruLA5lnz73eQ3q2
+ fhgA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=c3iUyv2ACu3GpcAgyaKwrhyX2JOcPpWzj8/UV5t9xCg=;
+ b=C0uFCAGDeP/NFofaTgjB0P7Taasggn5709aipSt5RO25d/u/OYyKQCixPhVtL3HAI8
+ Fw1Wq4Ae58QSYXOYVsz6YrUSfXEjUlMA4+8UpmUBdAQgB14iE7EK0u1R2OcYL1eztqYV
+ NvCc2CK3/tnpqt0ckTaE7WjG8EdsuR8rE+1Nf686MQv48HhLlumhCBRv9MovSyzWuT0L
+ aPnK63a73VLjdJ7BQ0PWXbGL8gKVbY5Adm6S3lS39guJElS1LZ2ue0TJLhTihydiVeQc
+ 4fRN+My+obH+kCK2RKauMCoBnI/FzDn9P1k1te2kPM0jn8l8bG7tlH21mcZsx0ubtUC1
+ EE6w==
+X-Gm-Message-State: AOAM531fyiLVE2xrT+bbxvW+75+rosGYYVL9c6oxpdRqZK46Z4Tq4dkB
+ ONuWqU8KY6K5VQ1HsdKbWiNOxJ0dh4o=
+X-Google-Smtp-Source: ABdhPJwPl9yEmykceJY0i74+YGfu60qsPW57q1HRJOLGF2NEzt9QKY5A34dowe7j/nYE8lSqKayMmg==
+X-Received: by 2002:aed:23d2:: with SMTP id k18mr4653133qtc.224.1590590354891; 
+ Wed, 27 May 2020 07:39:14 -0700 (PDT)
+Received: from [192.168.0.185] ([191.34.87.30])
+ by smtp.gmail.com with ESMTPSA id r77sm21209qke.6.2020.05.27.07.39.12
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 27 May 2020 07:39:13 -0700 (PDT)
+Subject: Re: [arm64, debug] PTRACE_SINGLESTEP does not single-step a valid
+ instruction
+To: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>
+References: <1eed6d69-d53d-9657-1fc9-c089be07f98c@linaro.org>
+ <20191118131525.GA4180@willie-the-truck>
+ <b3a9ae7e-8a45-7c14-7bc6-1d3b62728a0c@linaro.org>
+ <307ece3d-4e9d-21c4-0abf-9f4f3b313e74@linaro.org>
+ <82cb3dea-db82-1c71-3b08-957102b85c93@linaro.org>
+ <20200213120115.GD1405@willie-the-truck>
+ <20200220130222.GA28634@lakrids.cambridge.arm.com>
+ <20200220132941.GB14459@willie-the-truck>
+ <20200221111652.GB45022@lakrids.cambridge.arm.com>
+From: Luis Machado <luis.machado@linaro.org>
+Message-ID: <a4ef6d40-0c4f-c568-84e8-1baac9cc5474@linaro.org>
+Date: Wed, 27 May 2020 11:39:10 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <c3be06c5-781f-384f-768b-d809da99b7e0@huawei.com>
+In-Reply-To: <20200221111652.GB45022@lakrids.cambridge.arm.com>
 Content-Language: en-US
-X-Originating-IP: [10.47.6.244]
-X-ClientProxiedBy: lhreml717-chm.china.huawei.com (10.201.108.68) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_073619_152639_51EC390A 
-X-CRM114-Status: GOOD (  16.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200527_073917_216293_47BBC3EE 
+X-CRM114-Status: GOOD (  37.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [185.176.76.210 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,62 +108,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Joakim Zhang <qiangqing.zhang@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Zhangshaokun <zhangshaokun@hisilicon.com>, NXP Linux Team <linux-imx@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>, "moderated list:ARM/FREESCALE IMX / MXC ARM
- ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->>>>
->>>> I also really dislike this. What's the preferred way to identify the 
->>>> SoC
->>>> from userspace?
+Hi,
+
+On 2/21/20 8:16 AM, Mark Rutland wrote:
+> On Thu, Feb 20, 2020 at 01:29:42PM +0000, Will Deacon wrote:
+>> Hi Mark,
+>>
+>> Thanks for having a look.
+>>
+>> On Thu, Feb 20, 2020 at 01:02:22PM +0000, Mark Rutland wrote:
+>>> On Thu, Feb 13, 2020 at 12:01:16PM +0000, Will Deacon wrote:
+>>>> diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+>>>> index cd6e5fa48b9c..d479fbcbd0d2 100644
+>>>> --- a/arch/arm64/kernel/ptrace.c
+>>>> +++ b/arch/arm64/kernel/ptrace.c
+>>>> @@ -1934,8 +1934,8 @@ static int valid_native_regs(struct user_pt_regs *regs)
+>>>>    */
+>>>>   int valid_user_regs(struct user_pt_regs *regs, struct task_struct *task)
+>>>>   {
+>>>> -	if (!test_tsk_thread_flag(task, TIF_SINGLESTEP))
+>>>> -		regs->pstate &= ~DBG_SPSR_SS;
+>>>> +	/* https://lore.kernel.org/lkml/20191118131525.GA4180@willie-the-truck */
+>>>> +	user_regs_reset_single_step(regs, task);
 >>>
->>> /proc/cpuinfo? ;)
+>>> I think this change means we do the right thing for signal entry/return
+>>> and ptrace messing with the regs. Instruction emulation seems to do the
+>>> right thing via skip_faulting_instruction().
+>>>
+>>> I think there are a few more single-step edge cases lying around (e.g.
+>>> uprobes, rseq), but it looks like those have to be fixed separately. I
+>>> fear fixing uprobes might require a largler structural change to single
+>>> step, but ignoring uprobes the changes above seem to be sound.
 >>
->> The *SoC*!
+>> Rseq should just abort when delivering the step signal and I'm not sure I
+>> see the issue with uprobes. Can you elaborate on your concerns a bit,
+>> please?
+> 
+> For rseq I wasn't sure what state PSTATE.SS should be when we head to
+> the abort handler -- I think the sensible thing would be that it
+> immediately triggers a single-step exception, but I don't see where we'd
+> clear PSTATE.SS to ensure that.
+> 
+> For uprobes I fear that the uprobes xol single-stepping might end up
+> conflicting with the regular ptrace single-stepping, and that the
+> uprobes emulation might not always advance the state machine correctly.
+> 
+>>> If userspace doesn't consume the SS value today, I wonder if we should
+>>> hide it when dumping the SPSR to userspace, so that userspace has a
+>>> consistent view regardless of whether it's being stepped.
 >>
->>> For an non-firmware specific case, I'd say soc_device should be. I'd
->>> guess ACPI systems don't use it and for them it's dmidecode typically.
->>> The other problem I have with soc_device is it is optional.
+>> You can't really hide it though, because '0' has a meaning so I don't think
+>> it gains us a lot other than increasing the scope of the change.
+> 
+> I think that it reduces the likelihood that single-stepping a program
+> changes its behaviour unexpectedly. This patch makes the kernel
+> disregard the PSTATE.SS value provided by userspace, so what is gained
+> by exposing PSTATE.SS to userspace at all?
+> 
+> I do agree that there are potentially subtle landmines here; I just
+> can't see a legitimate reason for userspace to need the value.
+> 
+>>> I'll try to dig into the uprobes stuff this afternoon, just in case
+>>> that
+>>> needs us to do something substantially different.
 >>
+>> Thanks.
 > 
-> Hi Will,
+> I didn't get the chance to do this yesterday, but I did think of another
+> potential problem.
 > 
->> John -- what do you think about using soc_device to expose this 
->> information,
->> with ACPI systems using DMI data instead?
+> I *think* that when attempting to single-step a syscall, if prior to
+> return from the syscall the tracer messed with the tracee's regs (e.g.
+> to mess with arguments or the retun value) then valid_user_regs() will
+> set the SS bit, and upon return from the syscall the next instruction
+> would be executed rather than first raising a single-step exception.
 > 
-> Generally I don't think that DMI is reliable, and I saw this as the 
-> least preferred choice. I'm looking at the sysfs DMI info for my dev 
-> board, and I don't even see anything like a SoC identifier.
+> This patch relies on valid_user_regs() being a signal that PSTATE.SS is
+> stale, but that's not always the case. To handle that generally I
+> suspect we need two bits of state rather than just TIF_SINGLESTEP.
 > 
-> As for the event_source device sysfs identifier file, it would not 
-> always contain effectively the same as the SoC ID.
+>>> The existing logic in valid_user_regs() doesn't make sense to me, given
+>>> SPSR_EL1.SS is immaterial unless MSCDR_EL1.SS == 1. I'm not sure if that
+>>> was overzealous or I've forgotten an edge case that we cared about in
+>>> the past.
+>>
+>> I think it was just part of sanitising the registers to a consistent value,
+>> but I agree that it wouldn't have a functional impact.
 > 
-> Certain PMUs which I'm interested in plan to have probe-able 
-> identification info available in future.
+> Thanks for confirming my understanding. I guess this may have minimized
+> the cases where userspace saw PSTATE.SS set.
+> 
+>>>> diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
+>>>> index 339882db5a91..bc54bdbfd760 100644
+>>>> --- a/arch/arm64/kernel/signal.c
+>>>> +++ b/arch/arm64/kernel/signal.c
+>>>> @@ -505,8 +505,12 @@ static int restore_sigframe(struct pt_regs *regs,
+>>>>   	forget_syscall(regs);
+>>>>   
+>>>>   	err |= !valid_user_regs(&regs->user_regs, current);
+>>>> -	if (err == 0)
+>>>> +
+>>>> +	if (err == 0) {
+>>>> +		/* Make it look like we stepped the sigreturn system call */
+>>>> +		user_fastforward_single_step(current);
+>>>>   		err = parse_user_sigframe(&user, sf);
+>>>> +	}
+>>>
+>>> I don't understand this. AFAICT  we don't likewise for other SVCs, so
+>>> either I'm missing that, or there's something else I'm missing.
+>>>
+>>> Why do we need to step sigreturn but not SVC generally?
+>>
+>> Because we restore the SPSR from the sigframe during sigreturn, so we will
+>> end up with PSTATE.SS set when it should be cleared.
+> 
+> Ah, I see. As above, I think we can hit a similar case when
+> single-stepping an SVC for a regular syscall.
+> 
+> Thanks,
+> Mark.
 > 
 
-BTW, Shaokun now tells me that the HiSi uncore PMU HW have such 
-registers to identify the implementation. I didn't know.
-
-So we could add that identifier file for those PMUs as proof-of-concept, 
-exposing that register.
-
-As for other PMUs which I'm interested in, again, future versions should 
-have such registers to self-identify.
-
-So using something derived from the DT compat string would hopefully be 
-the uncommon case.
-
-Cheers,
-John
+Did we have any further developments on this front? Has a patch made its 
+way upstream for review?
 
 _______________________________________________
 linux-arm-kernel mailing list
