@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD1481E3A87
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:29:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8E8B1E3A88
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:29:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=EFVihLmaYYjmqSh7ccHYxegYfQHVcUgqtqx4qPU9PDE=; b=BsBQVnejkE7yWn9DI4k3jluJo1
-	iC6OCn9EcAtdUMWgY/WGUI1YgljbVxYg2+EGycwGaFqeCHHeZLvCzV0KHX9rCoxaBC1pALCWQ/4Fj
-	zrsFQjQi635Q+NUpjH0d6s99RmTm2CbSu//ICbK8HxIKgc/MIyR9lbogQgIJQZXFFUNJdw9jQ3wSG
-	vBpNp/eIPYNT1M45X1IehrJ9lsVoJMzS9jvmVLOXzIozC1uIiY0CqHRuiPDdPxLRDojQpjEzZTBta
-	tKzCuy1VnhEeE1Bb+vxHwmaMWnRGsOAck8lPKVTKXb1iZOjI6Vsl8AyikJkM3sbHLhibsUdv2hNnQ
-	avHP+4Qg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yZBipTIgOKBMjbg6WpDc4NN8EgYKe4fPMRGr+TzjHj4=; b=B7S3ZqH1QuX5Lw
+	xfTF2vnU4QzN90zl1lZZVsE7UcOSzjpnDePfKe2Y6bjPM1Fl105t+3ROVzY8M4Q3ZAm6TKIzKSkef
+	m/e9/EVd2BSpOii67fIy2AYUO5YcXD5nHMVNkX8EErifrtKXsF9Shc5ZuTYRMw/haMew7IAAf+Tki
+	kmcwzDwa89u2jBrnE9rrEV9nx0Zwd/YxcuqwUdhZCxX4W4GzG83HBDzNqm4BIGWNsMu/jGhzkzp4L
+	jo0CreeD2fz8OJjBCM0czw4pde3KM65GuqZt3afrflyeqsfRYWULwt2iOb83iPDPwtfA0GQPN0WiP
+	m/8ybLCVtpN4+2kJa2Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdqV5-0003we-Fo; Wed, 27 May 2020 07:29:19 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jdqVJ-0004AT-MO; Wed, 27 May 2020 07:29:33 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdqTr-00035D-5L
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:28:05 +0000
-Received: by mail-pl1-x641.google.com with SMTP id k22so9820328pls.10
+ id 1jdqTw-0003CL-9S
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:28:09 +0000
+Received: by mail-pf1-x443.google.com with SMTP id y198so11462313pfb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 00:28:02 -0700 (PDT)
+ Wed, 27 May 2020 00:28:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=nVArjOONMUkkYFoFrci5k0663uSmHnt2FzTEZnX/GkE=;
- b=fNuI+idsbzoB3q+zS+ICH8mO5EylmfUuUOqZmykgFsWg7vs6FF87px9saoDbnpMB1N
- 9Pt6MoaMW+ot6Kjuwk95RYR4F8rLKpcDYuvEvPOPftpgTVRx/KD0Gz1y2dCPMWKOrZcE
- aX+Nij+DtOvqgqXWrssP49bQvzkFQuV0TsLmqFgDyG3xOZayLc+E2xe88K/lunp1mlOm
- uhJiCNPxCW/g2h4L9YdqTpAqKNA6BUHtm3B2QUJe/FsjT4g7IE63UzNB5x5j2z09Iabr
- +peSmHWwb+BBTn/5IUJ1/Yb71gjsvAYsMeRC8gC/zKp6zOM0uqvUXaAbPgJf/N+51uig
- OoRg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=PnARTlRhVkBUQkPqC454r4YU05zMHZz2LfM1l53WRb0=;
+ b=j/De+h+QmNQ49bidmH96zLrOu2OBXrIIB6Y9QUEalQjZ1catzyle70SRBwOcwMWe+z
+ iZIt54zFlbJqY6v33AGBhOtUxRV6Szu1l68EY9j0+rctjO15uFYPrWRUy3ghFb1xW7/H
+ abClqYr3/WLdGWazduydiccGKMYgnyX/8lNoQoRJwJbpCE62LWArAo1EIY7SkaA1x3Hy
+ nzV7QCUDYFaESm+gzjKIQGUvU0Na2CtsCyVwB+tlMQSf8mPIG7N0fY14a/SFd+dOWhAt
+ 0otXEMgwfJZ4aADjlvQwy4zZJ3PleE0M9x94oSgoEBNHkCtYi9ZFIcjq5FV59Ysyeooz
+ E3Sw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=nVArjOONMUkkYFoFrci5k0663uSmHnt2FzTEZnX/GkE=;
- b=ExS2kgiOL9dqb85dfCwaZocpoQkHEwtO4I5tcT57N5aLD5W3b7IoRROtEEtVb3/voW
- GfBlWVsUL7bQ35jvrqzaEw/oqe1UFgLM+HO26uLbKQLZdKrfISjYDtv7aeWdDoefkdH/
- mT9ZJVTymVuJrujpRCikTF7QLmAluQcA9ra0DGKEShTpeW8vGAeot7LlI9ogrFs2N2Ul
- 4Jt4do6aS65+lpoqgD0tlux0nYpXe6ufGExcldvx+YWinm0ZasdzkoGKsPDL4GtBJ6d5
- b6gG16u8RDHmm0eIYLguiQuOs387hcn+yUp5jjV1gkjm92YKaZliBSlAETrNcYXFJiNU
- TwFw==
-X-Gm-Message-State: AOAM533MMDNMRsAmJ5PMrkPYVBYydKfquYtUCokdme+ZlXnXewmlNUGD
- lVuHwXxrNIS4TwyNy8JXttUNjPM6AP4l5w==
-X-Google-Smtp-Source: ABdhPJzrL/U3t1oZby1+25XxH8pSctzfppOL3s8v/Pl5c9EFRQsy1WnMGrduSxxRz3uMkZe46M4AsQ==
-X-Received: by 2002:a17:902:7b96:: with SMTP id
- w22mr4863111pll.232.1590564481460; 
- Wed, 27 May 2020 00:28:01 -0700 (PDT)
+ :references:mime-version:content-transfer-encoding;
+ bh=PnARTlRhVkBUQkPqC454r4YU05zMHZz2LfM1l53WRb0=;
+ b=NV07NSGsy+OycLeKnld+rMApnu8XN1gA00bBPSHG6IaGLSFMamfhk3179kXTko5tSV
+ aumwwR7qXdOBPMh3HZsw+8PSKkjkS3SQV0IhsTYfi0sKaFj7eyYBiPKKmAhCSjTcEGep
+ obkl9jrOvZCc2FfCGVDAUgDZjbfpqEoKCwzZlsXHZMRkxiNcGm8g6YbUX5Rk2xd/8dus
+ Uc1YR4lamVf84Jgl/KWPAdNOWJLBcXUhz2ZFfFCVDxvktGWGdI7p64hzo+W9xGu3da0v
+ pFHAg5E31ElLj/h6xyjxp1v5gKfvFQHeGrZoG3AfY+v0ZcxVH9V4+rab7dimdvLGuqY9
+ NCTg==
+X-Gm-Message-State: AOAM530HGNJhGR8PcYMkIdbMOTfbT5WXhSjHnerhznIP4hrAoneZsiAV
+ WHV5YLb6PnhbNatF4HLqCH8=
+X-Google-Smtp-Source: ABdhPJx3SUGNW2XD8h8US9uScxTycxVHXeqpLbmx7fMrRID3k4oOipLAcBnlwkA/Q3ap+M2eKxw16w==
+X-Received: by 2002:aa7:9ab6:: with SMTP id x22mr2661695pfi.136.1590564486694; 
+ Wed, 27 May 2020 00:28:06 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.191.44])
- by smtp.gmail.com with ESMTPSA id q201sm1371842pfq.40.2020.05.27.00.27.56
+ by smtp.gmail.com with ESMTPSA id q201sm1371842pfq.40.2020.05.27.00.28.01
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 27 May 2020 00:28:01 -0700 (PDT)
+ Wed, 27 May 2020 00:28:06 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: robh+dt@kernel.org, p.zabel@pengutronix.de, mcoquelin.stm32@gmail.com,
  alexandre.torgue@st.com, thierry.reding@gmail.com, sam@ravnborg.org,
  airlied@linux.ie, daniel@ffwll.ch, mturquette@baylibre.com,
  sboyd@kernel.org, andy.shevchenko@gmail.com, noralf@tronnes.org,
  linus.walleij@linaro.org, broonie@kernel.org
-Subject: [PATCH v6 4/9] dt-bindings: display: panel: Add ilitek ili9341 panel
- bindings
-Date: Wed, 27 May 2020 15:27:28 +0800
-Message-Id: <1590564453-24499-5-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v6 5/9] clk: stm32: Fix stm32f429's ltdc driver hang in set
+ clock rate
+Date: Wed, 27 May 2020 15:27:29 +0800
+Message-Id: <1590564453-24499-6-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1590564453-24499-1-git-send-email-dillon.minfei@gmail.com>
 References: <1590564453-24499-1-git-send-email-dillon.minfei@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_002803_340681_3B810996 
-X-CRM114-Status: GOOD (  12.57  )
+X-CRM114-CacheID: sfid-20200527_002808_400640_EC4E630B 
+X-CRM114-Status: GOOD (  12.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,102 +107,44 @@ Cc: devicetree@vger.kernel.org, dillonhua@gmail.com, linux-clk@vger.kernel.org,
  linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
  linux-spi@vger.kernel.org, dillon min <dillon.minfei@gmail.com>,
  linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: dillon min <dillon.minfei@gmail.com>
-
-Add documentation for "ilitek,ili9341" panel.
-
-Signed-off-by: dillon min <dillon.minfei@gmail.com>
----
- .../bindings/display/panel/ilitek,ili9341.yaml     | 69 ++++++++++++++++++++++
- 1 file changed, 69 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-
-diff --git a/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-new file mode 100644
-index 000000000000..2172f889af3c
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-@@ -0,0 +1,69 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/panel/ilitek,ili9341.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Ilitek-9341 Display Panel
-+
-+maintainers:
-+  - Dillon Min <dillon.minfei@gmail.com>
-+
-+description: |
-+  Ilitek ILI9341 TFT panel driver with SPI control bus
-+  This is a driver for 320x240 TFT panels, accepting a rgb input
-+  streams with 16 bits or 18 bits.
-+
-+allOf:
-+  - $ref: panel-common.yaml#
-+
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          # ili9341 240*320 Color on stm32f429-disco board
-+        - st,sf-tc240t-9370-t
-+      - const: ilitek,ili9341
-+
-+  reg: true
-+
-+  dc-gpios:
-+    maxItems: 1
-+    description: Display data/command selection (D/CX)
-+
-+  spi-3wire: true
-+
-+  spi-max-frequency:
-+    const: 10000000
-+
-+  port: true
-+
-+additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - dc-gpios
-+  - port
-+
-+examples:
-+  - |+
-+    spi {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        panel: display@0 {
-+                 compatible = "st,sf-tc240t-9370-t",
-+                              "ilitek,ili9341";
-+                 reg = <0>;
-+                 spi-3wire;
-+                 spi-max-frequency = <10000000>;
-+                 dc-gpios = <&gpiod 13 0>;
-+                 port {
-+                         panel_in: endpoint {
-+                           remote-endpoint = <&display_out>;
-+                      };
-+                 };
-+             };
-+        };
-+...
-+
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogZGlsbG9uIG1pbiA8ZGlsbG9uLm1pbmZlaUBnbWFpbC5jb20+CgpUaGlzIGlzIGR1ZSB0
+byBtaXN1c2Ug4oCYUExMX1ZDT19TQUknIGFuZCdQTExfU0FJJyBpbiBjbGstc3RtMzJmNC5jCidQ
+TExfU0FJJyBpcyAyLCAnUExMX1ZDT19TQUknIGlzIDcoZGVmaW5lZCBpbgppbmNsdWRlL2R0LWJp
+bmRpbmdzL2Nsb2NrL3N0bTMyZngtY2xvY2suaCkuCgoncG9zdF9kaXYnIHBvaW50IHRvICdwb3N0
+X2Rpdl9kYXRhW10nLCAncG9zdF9kaXYtPnBsbF9udW0nCmlzIFBMTF9JMlMgb3IgUExMX1NBSS4K
+CidjbGtzW1BMTF9WQ09fU0FJXScgaGFzIHZhbGlkICdzdHJ1Y3QgY2xrX2h3KiAnIHJldHVybgpm
+cm9tIHN0bTMyZjRfcmNjX3JlZ2lzdGVyX3BsbCgpIGJ1dCwgYXQgbGluZSAxNzc3IG9mCmRyaXZl
+ci9jbGsvY2xrLXN0bTMyZjQuYywgdXNlIHRoZSAnY2xrc1twb3N0X2Rpdi0+cGxsX251bV0nLApl
+cXVhbCB0byAnY2xrc1tQTExfU0FJXScsIHRoaXMgaXMgaW52YWxpZCBhcnJheSBtZW1iZXIgYXQg
+dGhhdCB0aW1lLgoKRml4ZXM6IDUxNzYzM2VmNjMwZSAoImNsazogc3RtMzJmNDogQWRkIHBvc3Qg
+ZGl2aXNvciBmb3IgSTJTICYgU0FJIFBMTHMiKQpTaWduZWQtb2ZmLWJ5OiBkaWxsb24gbWluIDxk
+aWxsb24ubWluZmVpQGdtYWlsLmNvbT4KLS0tCgpIaSBTdGVwaGVuIEJveWQsCgpUaGlzIHVwZGF0
+ZSBpbmNsdWRlIGJlbG93IGNoYW5nZXMgc2luY2UgVjUKMSBzZXBhcmF0ZSAnW1BBVENIIHY1IDUv
+OF0nIHBhdGNoIHRvIHR3byBzdWJtaXRzCjIgZWFjaCBvbmUgaGFzIGEgRml4ZXMgdGFncwoKYmVz
+dCByZWdhcmRzLgoKIGRyaXZlcnMvY2xrL2Nsay1zdG0zMmY0LmMgfCA2ICsrKy0tLQogMSBmaWxl
+IGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9k
+cml2ZXJzL2Nsay9jbGstc3RtMzJmNC5jIGIvZHJpdmVycy9jbGsvY2xrLXN0bTMyZjQuYwppbmRl
+eCAxODExN2NlNWZmODUuLjQyY2EyZGQ4NmFlYSAxMDA2NDQKLS0tIGEvZHJpdmVycy9jbGsvY2xr
+LXN0bTMyZjQuYworKysgYi9kcml2ZXJzL2Nsay9jbGstc3RtMzJmNC5jCkBAIC01NTcsMTMgKzU1
+NywxMyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGNsa19kaXZfdGFibGUgcG9zdF9kaXZyX3RhYmxl
+W10gPSB7CiAKICNkZWZpbmUgTUFYX1BPU1RfRElWIDMKIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgc3Rt
+MzJmNF9wbGxfcG9zdF9kaXZfZGF0YSAgcG9zdF9kaXZfZGF0YVtNQVhfUE9TVF9ESVZdID0gewot
+CXsgQ0xLX0kyU1FfUERJViwgUExMX0kyUywgInBsbGkycy1xLWRpdiIsICJwbGxpMnMtcSIsCisJ
+eyBDTEtfSTJTUV9QRElWLCBQTExfVkNPX0kyUywgInBsbGkycy1xLWRpdiIsICJwbGxpMnMtcSIs
+CiAJCUNMS19TRVRfUkFURV9QQVJFTlQsIFNUTTMyRjRfUkNDX0RDS0NGR1IsIDAsIDUsIDAsIE5V
+TEx9LAogCi0JeyBDTEtfU0FJUV9QRElWLCBQTExfU0FJLCAicGxsc2FpLXEtZGl2IiwgInBsbHNh
+aS1xIiwKKwl7IENMS19TQUlRX1BESVYsIFBMTF9WQ09fU0FJLCAicGxsc2FpLXEtZGl2IiwgInBs
+bHNhaS1xIiwKIAkJQ0xLX1NFVF9SQVRFX1BBUkVOVCwgU1RNMzJGNF9SQ0NfRENLQ0ZHUiwgOCwg
+NSwgMCwgTlVMTCB9LAogCi0JeyBOT19JRFgsIFBMTF9TQUksICJwbGxzYWktci1kaXYiLCAicGxs
+c2FpLXIiLCBDTEtfU0VUX1JBVEVfUEFSRU5ULAorCXsgTk9fSURYLCBQTExfVkNPX1NBSSwgInBs
+bHNhaS1yLWRpdiIsICJwbGxzYWktciIsIENMS19TRVRfUkFURV9QQVJFTlQsCiAJCVNUTTMyRjRf
+UkNDX0RDS0NGR1IsIDE2LCAyLCAwLCBwb3N0X2RpdnJfdGFibGUgfSwKIH07CiAKLS0gCjIuNy40
+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
