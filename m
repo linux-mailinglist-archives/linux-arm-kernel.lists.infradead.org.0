@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 337B11E4839
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:49:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39B691E483A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:50:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XGyIPLvPf9ojaf7stMBG2AkcZcRgFt3OTNmdWbi3GKM=; b=X5NgNLGFFnhy8Q
-	wDc47XLwobiHXbmmU8ZxBDvrFYqKcY03St8v27PNZn1Ib9n80s68fp32RZRa1KZmiz846z20DkU/0
-	uPqEGr2l6paEkcC4ZKx/okp/TrTPH25KucZuLOd9G14JNfS+GbcosaUPUzFbkKc9uMJP/YhPcYjYD
-	N33Gtuq09r8WBmY+zkiAKY7NoiY8BLhIndhrvUTg99iXtyE8ImUv876dpDOo4WZkxWTTjKnYFf/TM
-	SEBKH1W4XgEDXNo2G3h9xPbEyzoFIJ3D7xOHH2erLulTFUMbBtNBagvE//GmgiHucpnzHTGNhnw2Y
-	wd1/MtaPa4+aMSuPSlCg==;
+	List-Owner; bh=MGi2tKxyQbyUDve+bwtAezWF6DFiyNpsI1Z0nj9Nqrc=; b=gublKZHLsrn+jU
+	vzPi/gCG2+x/iK2qEbdo4LetE5c7xRjb4lYP5Ad3tSDB9eIZZgg6LE6vxu1TSWxZ0Il1rbpwsIxUN
+	h5gdCLI4L7x8XCCRMIhM8oBy7iNyX63x9AWHvW0WWWBzcio8BkZq2YVFsjVJiNRqDU5bAwR6lHUYf
+	HryHU6xNRqKVBnRuJnUP+8GgPuHRmaqsHADV8NcltkBq6G05Kr0NB6chPe5VQuaKiLTriKEbJe070
+	2GlXb7yZQ2HoBReyDolAapfc6OWPXJYQQDMw/xRqRumWmZWVHrQTuLfKeZgOCOoUXc1vAuoXB0o3K
+	CzW1EBnwl9zgqwObYmrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyJA-0005oi-9i; Wed, 27 May 2020 15:49:32 +0000
+	id 1jdyJq-00066v-J4; Wed, 27 May 2020 15:50:14 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyFT-0003D2-8U; Wed, 27 May 2020 15:45:44 +0000
+ id 1jdyFU-0003Ed-VA; Wed, 27 May 2020 15:45:46 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 726A2581DC2;
- Wed, 27 May 2020 11:45:42 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:42 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id F353F581DD8;
+ Wed, 27 May 2020 11:45:43 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:43 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=n0QSF+s7WNrvA
- CQUMag7Hrl5LkSGFMi3zaAhmTrJUaw=; b=Gm2g75HpZ+CJtYWJmlbVWIH4cZbIZ
- f8/LaHICAaR26ZPHUreHjRvyv+ymsJxjFoEKhnJfFbkyfheo9leX96fP0E5kBlLy
- wjIZn3Abo/9xiB9e39u86Gipf+uJ83dbT22y1IxQ1GXupWGO6FA0xJW9nnKBW3EZ
- HZG190aUDsLevi3am+rPln/BSTYteuOej21ta28PJHgiF7i/CR+wXuk0IrtVLmxk
- q/jW/hrSlJT88cUQIWrgxMX0db4jYhq/x/MMjK+WzmPuG2g/dKKK4YHZm5IPO7u2
- WtUIZsKJcF9Y9szBeRRG1DCWTTfOSa96IuFjGZ9CqMx/opGKeVBEHltAw==
+ :mime-version:content-transfer-encoding; s=fm2; bh=6iQKMxJg9h0BJ
+ TznOS0hTu6hgQnCXnqNYbjoQGsXtMs=; b=ZDfPzcs8nzFcoFOScZ8jDFuPQdO/b
+ xbS4APJSADkov/UEjNgOJMIJUTAvcfV0d4+cltZgZWM19BVlVSYGf/CZtQqJUrZ4
+ LN90e2hp/YK6w+SzSI4w2zm+YM555ggm6EMVOn28ZwK/1At1Viu0LGbj3hi8hDKY
+ mS8UhqA8lUZnF7HvY8C7WatDWO3qa9o/Bf7U7K5bZlbsA4RPC2ciDBlp1uNoQ9TS
+ STxKARTyfqJIlFNztRbgpe8jB2c8bLu8i0doYMcxFPgep79Kqhlf8LDDiFAWHBHy
+ YfSWLHzUlvbmfoE62C++nkhKyjiePW0BSsXgYHoASjOQ+sQYFPcVIebtw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=n0QSF+s7WNrvACQUMag7Hrl5LkSGFMi3zaAhmTrJUaw=; b=fxXyW92y
- vtfUYQb89RbnpiOKFoPb+fabiigMWMbUToCFgmDg/nUdFlZNtm5EeduJRrpJiIjk
- APzBmerR5/917MDbeYFBJpap0kPEDggBzDYcaO60gS3F2/CUv3ow1pGbEVZJFXZW
- JcW5jecYMT+8oYcYz01GeZ/ckdjcbvyBR/aOPXrd8HW+U61raDTIgFXIgpYozD87
- j86C4bzqnIS4Pd2Txi59X4iGzUFR4NfjDzig3OsvOESv58/3HXlIz1kocKwu3Jn2
- Y6oyPpK8k1odgwJrRfjfoMw30b7aFf71/FyR96gkBf4Sx0wsMSzCEeaTK15bWW6W
- BNgCuBsE/cWpeA==
-X-ME-Sender: <xms:JovOXkM7UYB53LmfyFsLrkAy6P8O9sjYLnYz0L-d4I73uQWSrZ9FDQ>
+ fm2; bh=6iQKMxJg9h0BJTznOS0hTu6hgQnCXnqNYbjoQGsXtMs=; b=K9Mqm1+B
+ 81cdZ9+2rSG9w1oyzWJFmhmc862ZAUwxEe0W0rkkiGyK4vZ1ZtJGokPSZTLLukkO
+ VAQfUB4eet5CdREDeK03lBk23AZwP5CIm3VoPbdNrie4SvthTbcRi5LqY+iS1FRk
+ HOff4XSo5JZbkEwxi9zZzoc7CGt4aSvh767l8iLIkSUpjKBApRq6vuhQppULmWkc
+ IBBkB+9DogriXk557CBjGR8RcGbsQKbdNE3OdWmW09LvOmw8gSRadJpJUv3dUFHF
+ 9ZuwdJOgbhIXWfcrs0GS36rgJLVAAa7Xc6TZpN2UJsagrOGdYetUvQz56v86NU/i
+ a8JXu83ipFA4qA==
+X-ME-Sender: <xms:J4vOXlru3VydWhggf72F_7LdFZO8vkVByibZqwZApta0mjXC4gFG9w>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,26 +56,27 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepieenuc
  frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:JovOXq-JjqEcc2Faf0OyV8DEwvmUM5q9FvfV3AKMdY_rX_fFvqu7Mw>
- <xmx:JovOXrQxGIBaaK-pemFzw-Hay6vyL5KxAwAj4qgoSgMoQXo21LSHwg>
- <xmx:JovOXstNyHXsHaTpyBySRiBm5kcM-ehnUqGyU-8qYm2VDu1kHjTizg>
- <xmx:JovOXjzvxvOOSoRW1nTWefbfr1uZbPwDXi3TtluTzE_cP-3akWR-qw>
+X-ME-Proxy: <xmx:J4vOXnp0kf1M0QWj1g13azxpVBz05u4A-OfF6AI6I9x9zO8mDEBKAw>
+ <xmx:J4vOXiOMbMl60KA0TkIoFOMkulZYWuJG6Yt2Gd24ZB0dT0TW7QsOTA>
+ <xmx:J4vOXg6JRhi4TJjUO2HLxEBcn8VVafl2baTZmadY3OEydo233valTg>
+ <xmx:J4vOXmvDMtXibxnmRTNf87CnXtJjygB8JMqNsAkRfNjSPd1VzD2g9g>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 0DD323280060;
- Wed, 27 May 2020 11:45:41 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 927A430618B7;
+ Wed, 27 May 2020 11:45:43 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v3 10/25] clk: bcm: rpi: Switch to clk_hw_register_clkdev
-Date: Wed, 27 May 2020 17:45:06 +0200
-Message-Id: <d21f81fe036fa4b0935764f939653b9911c42a6a.1590594293.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 11/25] clk: bcm: rpi: Make sure the clkdev lookup is removed
+Date: Wed, 27 May 2020 17:45:07 +0200
+Message-Id: <ec65846db8f8879a002c3cbe38085d37fc1fe9d3.1590594293.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
 References: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_084543_586006_9BBC8892 
-X-CRM114-Status: GOOD (  10.86  )
+X-CRM114-CacheID: sfid-20200527_084545_158540_D98FA919 
+X-CRM114-Status: UNSURE (   9.19  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -118,9 +119,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since we don't care about retrieving the clk_lookup structure pointer
-returned by clkdev_hw_create, we can just use the clk_hw_register_clkdev
-function.
+The clkdev lookup created for the cpufreq device is never removed if
+there's an issue later in probe or at module removal time.
+
+Let's convert to the managed variant of the clk_hw_register_clkdev function
+to make sure it happens.
 
 Cc: Michael Turquette <mturquette@baylibre.com>
 Cc: linux-clk@vger.kernel.org
@@ -128,38 +131,25 @@ Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-raspberrypi.c | 11 +++++------
- 1 file changed, 5 insertions(+), 6 deletions(-)
+ drivers/clk/bcm/clk-raspberrypi.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-index 5a06c4991c7f..23f06618a356 100644
+index 23f06618a356..a20492fade6a 100644
 --- a/drivers/clk/bcm/clk-raspberrypi.c
 +++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -237,7 +237,6 @@ static struct clk_fixed_factor raspberrypi_clk_pllb_arm = {
- 
- static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
- {
--	struct clk_lookup *pllb_arm_lookup;
- 	int ret;
- 
- 	ret = devm_clk_hw_register(rpi->dev, &raspberrypi_clk_pllb_arm.hw);
-@@ -246,11 +245,11 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
+@@ -245,8 +245,9 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
  		return ret;
  	}
  
--	pllb_arm_lookup = clkdev_hw_create(&raspberrypi_clk_pllb_arm.hw,
--					   NULL, "cpu0");
--	if (!pllb_arm_lookup) {
--		dev_err(rpi->dev, "Failed to initialize pllb_arm_lookup\n");
--		return -ENOMEM;
-+	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
-+				     NULL, "cpu0");
-+	if (ret) {
-+		dev_err(rpi->dev, "Failed to initialize clkdev\n");
-+		return ret;
- 	}
- 
- 	return 0;
+-	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
+-				     NULL, "cpu0");
++	ret = devm_clk_hw_register_clkdev(rpi->dev,
++					  &raspberrypi_clk_pllb_arm.hw,
++					  NULL, "cpu0");
+ 	if (ret) {
+ 		dev_err(rpi->dev, "Failed to initialize clkdev\n");
+ 		return ret;
 -- 
 git-series 0.9.1
 
