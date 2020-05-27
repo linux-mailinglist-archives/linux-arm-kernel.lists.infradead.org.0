@@ -2,90 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39B691E483A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:50:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D3E81E4852
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:51:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MGi2tKxyQbyUDve+bwtAezWF6DFiyNpsI1Z0nj9Nqrc=; b=gublKZHLsrn+jU
-	vzPi/gCG2+x/iK2qEbdo4LetE5c7xRjb4lYP5Ad3tSDB9eIZZgg6LE6vxu1TSWxZ0Il1rbpwsIxUN
-	h5gdCLI4L7x8XCCRMIhM8oBy7iNyX63x9AWHvW0WWWBzcio8BkZq2YVFsjVJiNRqDU5bAwR6lHUYf
-	HryHU6xNRqKVBnRuJnUP+8GgPuHRmaqsHADV8NcltkBq6G05Kr0NB6chPe5VQuaKiLTriKEbJe070
-	2GlXb7yZQ2HoBReyDolAapfc6OWPXJYQQDMw/xRqRumWmZWVHrQTuLfKeZgOCOoUXc1vAuoXB0o3K
-	CzW1EBnwl9zgqwObYmrw==;
+	List-Owner; bh=Li/wbdbQiCcVZzgL3ssElLON/xtV29fCut+ugmwfDHs=; b=LBsnm7UjaCtKg0
+	NXnbQ5wyXFzwsA0j9LGJQIebWG3n+osZ5Vkw3tfNk/Q7RIWAFWvngb0RT+415g09zR5I3SIftc8SQ
+	oFjidnWMpTz4oNnG75EPqD/q0mti2A5DphH8iN25ZN8s6JcT3F2xLQTPoOmNSpP/QBcYiJV8TpgUb
+	LVGStQef5s5F88b03itnfz0TK+8wBIrDEGDWOgFoauxOfPo7+pKziLM9Jb0+THlcZukr8L0+zRc/H
+	lmsF4g5iY7QmgefGSertOByd3JrdxUPTr7CP326yOYUsvmUaz8k2xq7IODh1b2iin0BvHrY6sEw4d
+	w3bV+ZsrIGompvKtD4aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyJq-00066v-J4; Wed, 27 May 2020 15:50:14 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
+	id 1jdyKx-00011m-CL; Wed, 27 May 2020 15:51:23 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyFU-0003Ed-VA; Wed, 27 May 2020 15:45:46 +0000
+ id 1jdyFW-0003GH-7f; Wed, 27 May 2020 15:45:47 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id F353F581DD8;
- Wed, 27 May 2020 11:45:43 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:43 -0400
+ by mailout.nyi.internal (Postfix) with ESMTP id 7E7A25C009C;
+ Wed, 27 May 2020 11:45:45 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:45 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=6iQKMxJg9h0BJ
- TznOS0hTu6hgQnCXnqNYbjoQGsXtMs=; b=ZDfPzcs8nzFcoFOScZ8jDFuPQdO/b
- xbS4APJSADkov/UEjNgOJMIJUTAvcfV0d4+cltZgZWM19BVlVSYGf/CZtQqJUrZ4
- LN90e2hp/YK6w+SzSI4w2zm+YM555ggm6EMVOn28ZwK/1At1Viu0LGbj3hi8hDKY
- mS8UhqA8lUZnF7HvY8C7WatDWO3qa9o/Bf7U7K5bZlbsA4RPC2ciDBlp1uNoQ9TS
- STxKARTyfqJIlFNztRbgpe8jB2c8bLu8i0doYMcxFPgep79Kqhlf8LDDiFAWHBHy
- YfSWLHzUlvbmfoE62C++nkhKyjiePW0BSsXgYHoASjOQ+sQYFPcVIebtw==
+ :mime-version:content-transfer-encoding; s=fm2; bh=AjDg50eF8/fT3
+ dIsJRXR7a1XQUYcZlWK28+/sYq4TL8=; b=A8Yr1qDAjGPEvcfBDVvSflFlkBROn
+ HkHZVljyA/FdA/tSVwpCND7ymE/99oez/hacuPBPg8wOi9SFUngeKWpM7zCIgMRa
+ pCU3Jf68Y7o+lBdG1bfzId+Ak1qMKOkk1zcurelnr3OIbxvNzZZG8kfUi5FNow+s
+ rQ3b3+8PZfmEPIHUExcm6OfdeD3sNTGaJhw3tea+kbjmQBj4rq/mrSPfRnO5IWuc
+ XiKN8POh8htKBeNhYQ2VNaz5n99PqmGD2M0LC/HJr2oOpl8l8FYNWTi3IBX6CbzM
+ NGXMGNU3JLjQmyw5ZtE9SoSShLxylewO5B1sSaDZjslrkYWSYa+Nfddmw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=6iQKMxJg9h0BJTznOS0hTu6hgQnCXnqNYbjoQGsXtMs=; b=K9Mqm1+B
- 81cdZ9+2rSG9w1oyzWJFmhmc862ZAUwxEe0W0rkkiGyK4vZ1ZtJGokPSZTLLukkO
- VAQfUB4eet5CdREDeK03lBk23AZwP5CIm3VoPbdNrie4SvthTbcRi5LqY+iS1FRk
- HOff4XSo5JZbkEwxi9zZzoc7CGt4aSvh767l8iLIkSUpjKBApRq6vuhQppULmWkc
- IBBkB+9DogriXk557CBjGR8RcGbsQKbdNE3OdWmW09LvOmw8gSRadJpJUv3dUFHF
- 9ZuwdJOgbhIXWfcrs0GS36rgJLVAAa7Xc6TZpN2UJsagrOGdYetUvQz56v86NU/i
- a8JXu83ipFA4qA==
-X-ME-Sender: <xms:J4vOXlru3VydWhggf72F_7LdFZO8vkVByibZqwZApta0mjXC4gFG9w>
+ fm2; bh=AjDg50eF8/fT3dIsJRXR7a1XQUYcZlWK28+/sYq4TL8=; b=gX5BfnMm
+ 5i1zEdKS2FFCmxBNXukmDlOTXyOrg6SS5EjniXZsNcpQfaHRRcDngpq2qZn3nDvQ
+ qfZJBMZ04xjGkboaxofO12EcWS3A6tW6gBHYHCyLS34pRP0YWxSRPxOIvBZsrKXW
+ xTDeh1E0qtxs216nypnIlKRD7nYnn6RSmKqUFTY+l1Not5mqUbZ35qkwiKROAus2
+ MTP4NFiBWrdW15PYRopS0OMauw1jvV2jLEQUzcqeMuJKCPzNLcivOmrKKkFbZNNE
+ sLjHvq52n6VOU8plIPQDsFEAsrUbrhdM9dGNGFDiUSQeQJ8LFihyTqwP72VxlBoK
+ LjelHnLThy/R/Q==
+X-ME-Sender: <xms:KYvOXuiNnCHZ2dvM80J3QMxBpLIk6Byyfpg5OtZy-EsUrOEcf6bshw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
- hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepieenuc
- frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:J4vOXnp0kf1M0QWj1g13azxpVBz05u4A-OfF6AI6I9x9zO8mDEBKAw>
- <xmx:J4vOXiOMbMl60KA0TkIoFOMkulZYWuJG6Yt2Gd24ZB0dT0TW7QsOTA>
- <xmx:J4vOXg6JRhi4TJjUO2HLxEBcn8VVafl2baTZmadY3OEydo233valTg>
- <xmx:J4vOXmvDMtXibxnmRTNf87CnXtJjygB8JMqNsAkRfNjSPd1VzD2g9g>
+ hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepuddtne
+ curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:KYvOXvD3_EDkBsZTXziqYuUyBgDePE2Gk1lKTGOoTCe2nLxytDqn0w>
+ <xmx:KYvOXmGJF5vSL7mplmM0FQmPvh7rxi3G_px3dES6dvZlWoppzBwxUQ>
+ <xmx:KYvOXnQQwjaI9g1sKfxZpcqHefwF6Zf90U6Q6HWNahEsVlj6m4w-MQ>
+ <xmx:KYvOXmrXehv3cRsmuhw-4URqKWCvaK4o8O9kEZ5os6RtO2LPN90PUw>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 927A430618B7;
- Wed, 27 May 2020 11:45:43 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 1F5343280060;
+ Wed, 27 May 2020 11:45:45 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH v3 11/25] clk: bcm: rpi: Make sure the clkdev lookup is removed
-Date: Wed, 27 May 2020 17:45:07 +0200
-Message-Id: <ec65846db8f8879a002c3cbe38085d37fc1fe9d3.1590594293.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 12/25] clk: bcm: rpi: Use CCF boundaries instead of rolling
+ our own
+Date: Wed, 27 May 2020 17:45:08 +0200
+Message-Id: <eb1b2838f1c3c006c24bcb9816f75e1351c63b05.1590594293.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
 References: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_084545_158540_D98FA919 
-X-CRM114-Status: UNSURE (   9.19  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200527_084546_437701_E1844DFA 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
+ low trust [66.111.4.26 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.221 listed in wl.mailspike.net]
+ [66.111.4.26 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -108,9 +108,7 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
  bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
  Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
  Maxime Ripard <maxime@cerno.tech>
@@ -119,37 +117,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The clkdev lookup created for the cpufreq device is never removed if
-there's an issue later in probe or at module removal time.
+The raspberrypi firmware clock driver has a min_rate / max_rate clamping by
+storing the info it needs in a private structure.
 
-Let's convert to the managed variant of the clk_hw_register_clkdev function
-to make sure it happens.
+However, the CCF already provides such a facility, so we can switch to it
+to remove the boilerplate.
 
-Cc: Michael Turquette <mturquette@baylibre.com>
-Cc: linux-clk@vger.kernel.org
-Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/clk-raspberrypi.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/clk/bcm/clk-raspberrypi.c | 18 ++++++++----------
+ 1 file changed, 8 insertions(+), 10 deletions(-)
 
 diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-raspberrypi.c
-index 23f06618a356..a20492fade6a 100644
+index a20492fade6a..e135ad28d38d 100644
 --- a/drivers/clk/bcm/clk-raspberrypi.c
 +++ b/drivers/clk/bcm/clk-raspberrypi.c
-@@ -245,8 +245,9 @@ static int raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
- 		return ret;
- 	}
+@@ -36,9 +36,6 @@ struct raspberrypi_clk {
+ 	struct rpi_firmware *firmware;
+ 	struct platform_device *cpufreq;
  
--	ret = clk_hw_register_clkdev(&raspberrypi_clk_pllb_arm.hw,
--				     NULL, "cpu0");
-+	ret = devm_clk_hw_register_clkdev(rpi->dev,
-+					  &raspberrypi_clk_pllb_arm.hw,
-+					  NULL, "cpu0");
- 	if (ret) {
- 		dev_err(rpi->dev, "Failed to initialize clkdev\n");
- 		return ret;
+-	unsigned long min_rate;
+-	unsigned long max_rate;
+-
+ 	struct clk_hw pllb;
+ };
+ 
+@@ -142,13 +139,11 @@ static int raspberrypi_fw_pll_set_rate(struct clk_hw *hw, unsigned long rate,
+ static int raspberrypi_pll_determine_rate(struct clk_hw *hw,
+ 					  struct clk_rate_request *req)
+ {
+-	struct raspberrypi_clk *rpi = container_of(hw, struct raspberrypi_clk,
+-						   pllb);
+ 	u64 div, final_rate;
+ 	u32 ndiv, fdiv;
+ 
+ 	/* We can't use req->rate directly as it would overflow */
+-	final_rate = clamp(req->rate, rpi->min_rate, rpi->max_rate);
++	final_rate = clamp(req->rate, req->min_rate, req->max_rate);
+ 
+ 	div = (u64)final_rate << A2W_PLL_FRAC_BITS;
+ 	do_div(div, req->best_parent_rate);
+@@ -215,12 +210,15 @@ static int raspberrypi_register_pllb(struct raspberrypi_clk *rpi)
+ 	dev_info(rpi->dev, "CPU frequency range: min %u, max %u\n",
+ 		 min_rate, max_rate);
+ 
+-	rpi->min_rate = min_rate * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
+-	rpi->max_rate = max_rate * RPI_FIRMWARE_PLLB_ARM_DIV_RATE;
+-
+ 	rpi->pllb.init = &init;
+ 
+-	return devm_clk_hw_register(rpi->dev, &rpi->pllb);
++	ret = devm_clk_hw_register(rpi->dev, &rpi->pllb);
++	if (!ret)
++		clk_hw_set_rate_range(&rpi->pllb,
++				      min_rate * RPI_FIRMWARE_PLLB_ARM_DIV_RATE,
++				      max_rate * RPI_FIRMWARE_PLLB_ARM_DIV_RATE);
++
++	return ret;
+ }
+ 
+ static struct clk_fixed_factor raspberrypi_clk_pllb_arm = {
 -- 
 git-series 0.9.1
 
