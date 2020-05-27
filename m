@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 936631E4A5F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:36:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3597E1E4A69
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:38:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NkeJIJqqR2pvHqrBMzHhquxK4ZipShooRtRfe4Oe/9U=; b=Todjl8whhB+hAX
-	7RlaCS2nMsQ5UTtVXB2Z03SfVRf/jQTsNfr4q5QQ8gegHYAcLAIoX9L7gjDx8Y7mLbtcm21YA2+dT
-	SYq1QN7Y47zssOvuk4xwVZnzWlGknKzZbreiz2E2AKLX4kjXPGbQf6VZzgqC7+Oz+GJp3bRPJddqL
-	RVfJezlHkCTXW+xq344EfEv/YCxq5Kto5V2cTHjfAYeiDTSY3VCqaQZVVclG8WJE7YjNwG8MwGHD7
-	Uz/tIRtio2/GOV7dbHtkctlXvn4t+fmSSkZ8mKoOL9v6cTWPySw72fg80QRoT6OdhkmSvdByNOwIS
-	RGtQ9sA4V6HTWiQzlACw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=4BJ/8qK6slJ2ZNrUUYR7RATGAtEqw3fTLHIsXfqam/U=; b=PUO
+	CLUrBjACUpk+1ABv+ghI9dPsdG/7mFniWpR/kiQC3Jk3h+bgRq+CpgY4pa7oraqYTbLDIktzS2WJa
+	JzADA6pcWJmjfGrd2igD3XwTUm9sCKWHVRis9fNZzpRjdTzFP08fQwUk90dyCqHdMXlrzNEGls0i5
+	vokBuidaYAZ2kpOosMryjffJKO2SaatdfdTzW8CHMITBK/MScoIGEwGiIay97aGHFi9J7Q68mHVQB
+	sgiGpvgkt9lpfMk4eflPJF/4A+Ox2BSd8Z6Q4ybDlPVhsqXXcoFKOWE8D0z/251eCIbHTWjL8/Sed
+	uPaVInQO70seo8ZKORyJHur8M0pDA2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdz2k-0006uh-Nd; Wed, 27 May 2020 16:36:38 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1jdz45-00087m-Cd; Wed, 27 May 2020 16:38:01 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyRe-0000rE-1m
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 15:58:28 +0000
-Received: by mail-io1-xd42.google.com with SMTP id k18so26597563ion.0
+ id 1jdyWn-0006dw-9z
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 16:03:38 +0000
+Received: by mail-wr1-x443.google.com with SMTP id j16so12108649wrb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 08:58:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2KPqlFHIaFhXtFQPvI4kGCnPDvEbmm2Nd6KaCmQEOqI=;
- b=Ue2h3jU4f/LBJYIl5gzQnW6cFNCOrZdqN7G+mrLx2xOGYGPx/CgSI78VNT8fRU9xq0
- lkqDwqHymn6uTiXkL2sB3Jv/jYk+VIahOCjFbKqx8Se6imQdjZZUsQFWoJWcIDQeqDk5
- /GnqOXT52GNJbnAJAVHjKsaA7r+TEhvfYyGLNjgh/ZMUanZ2wJ1iKUHTICzXVF7Kg0X3
- gq28gtfdxSplbXNONiMr/re5nk3r/bGumjn/tgmz48H8r/lbMOrYi+fNZKL7nbkrscRw
- ee3POVIFcVhS0M75LB0rtu5A2OAsHWylRbguOty3S23SpgXlSpQ6t0xRaprA1Kp3ZIS7
- GMgA==
+ Wed, 27 May 2020 09:03:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=KFKU2FIEXjR2LVGipQU8OJxGYrMEcKfupZbFBx9PZZY=;
+ b=B2e2R9PE8ZAp1sDLI7S8lrsjRfkvo6x+EJYJrJz0c/qJQagKVvvmzFan3qz6GVfd6w
+ ZKbl/Y4xcQche/y9+bbZ5lOKaV7q9ddkacdSC40vxtQbuTw+sN+TPTU7MPDWmrXxy9ax
+ 3iBMFvXs8pOm6kAt7e6x61xsyeX0RxXmUKZn4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2KPqlFHIaFhXtFQPvI4kGCnPDvEbmm2Nd6KaCmQEOqI=;
- b=ubjzqfFTrXZFQVdJQTKnehD2eM4EtKGKwyQqEKC+FgYzHIfE2vRoYRqh5AC+xcBg5s
- 3dIrxqQ+MMSjnxm08l/WqEaiT6wkZaFBz1AOcuQ3j08/UTHZ1heWcdtoWYjooSa3ekw2
- JbPa2QcHLXOivpAhd52fsdE+Dnv20CHpjYZRoNXtmuXblRSlgoF/NuG3NA1DM58hJzTM
- p3U0ApeZpBuMsmYFmvuldcF/vXr935P7J5DUj8+UD0J/k6vyoYzgsvtn0KkHueaMoUUF
- eBz+hvAzC1K4rvcDqYviwiD6YxRWR6C1ffik8XtMK5XG76+YFHgrXnMGJkJFXg4hQh7M
- tSaQ==
-X-Gm-Message-State: AOAM533hTpkTlFKhxYS45Bl99DbNNCsZr4ZXIBS5JsO7jepY/WOLTs0s
- Veu9rKgrvUIV4KHakYRbLCxWpri6zI/n3G16ZcL3t8QN
-X-Google-Smtp-Source: ABdhPJwEacnpf6hd8M9CKQVk2EmgBvTRIgmuQRIOr4WGHoTCA7OXr3+tw4e5T7AV1FeZN+6cRErbAP2GfUUpHfxEDg0=
-X-Received: by 2002:a05:6602:2e96:: with SMTP id
- m22mr21995431iow.165.1590595095340; 
- Wed, 27 May 2020 08:58:15 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200526055241.2671-1-vulab@iscas.ac.cn>
-In-Reply-To: <20200526055241.2671-1-vulab@iscas.ac.cn>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Wed, 27 May 2020 09:58:04 -0600
-Message-ID: <CANLsYkxU-Srbu+-GT13cVfUqjE4GOGhtkxZgKfxGz+P=n1BB7A@mail.gmail.com>
-Subject: Re: [PATCH] coresight: Use devm_kcalloc() in coresight_alloc_conns()
-To: Xu Wang <vulab@iscas.ac.cn>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=KFKU2FIEXjR2LVGipQU8OJxGYrMEcKfupZbFBx9PZZY=;
+ b=gKoFFkv6ynHfvjJUR9C8YPK5q4D9VbFKBXUWbq2Hsiczjv2YTLcY0RgaOeDtQpY68N
+ sh57yIspw20K5DvEABLLG9pAikRf7ZdRHBPmKWZpqN5LnhMp8PLPzXSkjPNfbWGZxmuO
+ dU5GsVHFLWIeKvk0sQYnUuWBiLlP+M8qtuspELNwcusUx+g26evLs0ncfKTvvlaIiUmw
+ SngQmZhohvPsT3hLsnI+tBWkRXeNMMT5MAvMD4ReRC2s5Uox9pQs+Sl7pi3zteBAuFLy
+ 34B+7FO7zpYVedHvYXtWLc3N4jbSHdnMM0fhcV6DjotEe/UG+2JArjHosZnbO/5lH3hc
+ VtyQ==
+X-Gm-Message-State: AOAM5317Z6jvdwfDOphlqty8WsvPnGXtmiNX25n47W7JD/WfgPmg3flE
+ oPMJOG1Wz3bUyqHISCBosw2+RA==
+X-Google-Smtp-Source: ABdhPJy6zYyWagZxKoXwDNe6/zG4VwLJq8RxTRFygqpQIc/E1CTTwd97wcehZx5+4rvjGpKll243Ug==
+X-Received: by 2002:adf:ee47:: with SMTP id w7mr19715593wro.171.1590595413899; 
+ Wed, 27 May 2020 09:03:33 -0700 (PDT)
+Received: from mannams-OptiPlex-7010.dhcp.broadcom.net ([192.19.234.250])
+ by smtp.gmail.com with ESMTPSA id t185sm3166536wmt.28.2020.05.27.09.03.29
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 27 May 2020 09:03:33 -0700 (PDT)
+From: Srinath Mannam <srinath.mannam@broadcom.com>
+To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+ Joerg Roedel <joro@8bytes.org>
+Subject: [RFC PATCH] iommu/arm-smmu: Add module parameter to set msi iova
+ address
+Date: Wed, 27 May 2020 21:33:18 +0530
+Message-Id: <1590595398-4217-1-git-send-email-srinath.mannam@broadcom.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085818_142655_4162F394 
-X-CRM114-Status: GOOD (  16.70  )
+X-CRM114-CacheID: sfid-20200527_090337_457470_A1574C03 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -80,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,52 +91,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Mike Leach <mike.leach@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>
+Cc: Srinath Mannam <srinath.mannam@broadcom.com>,
+ iommu@lists.linux-foundation.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 25 May 2020 at 23:53, Xu Wang <vulab@iscas.ac.cn> wrote:
->
-> A multiplication for the size determination of a memory allocation
-> indicated that an array data structure should be processed.
-> Thus use the corresponding function "devm_kcalloc".
->
-> Signed-off-by: Xu Wang <vulab@iscas.ac.cn>
-> ---
->  drivers/hwtracing/coresight/coresight-platform.c | 5 ++---
->  1 file changed, 2 insertions(+), 3 deletions(-)
->
-> diff --git a/drivers/hwtracing/coresight/coresight-platform.c b/drivers/hwtracing/coresight/coresight-platform.c
-> index 43418a2126ff..6720049409f3 100644
-> --- a/drivers/hwtracing/coresight/coresight-platform.c
-> +++ b/drivers/hwtracing/coresight/coresight-platform.c
-> @@ -27,9 +27,8 @@ static int coresight_alloc_conns(struct device *dev,
->                                  struct coresight_platform_data *pdata)
->  {
->         if (pdata->nr_outport) {
-> -               pdata->conns = devm_kzalloc(dev, pdata->nr_outport *
-> -                                           sizeof(*pdata->conns),
-> -                                           GFP_KERNEL);
-> +               pdata->conns = devm_kcalloc(dev, pdata->nr_outport,
-> +                                           sizeof(*pdata->conns), GFP_KERNEL);
+This patch gives the provision to change default value of MSI IOVA base
+to platform's suitable IOVA using module parameter. The present
+hardcoded MSI IOVA base may not be the accessible IOVA ranges of platform.
 
-I have applied your patch.
+Since commit aadad097cd46 ("iommu/dma: Reserve IOVA for PCIe inaccessible
+DMA address"), inaccessible IOVA address ranges parsed from dma-ranges
+property are reserved.
 
-Thanks,
-Mathieu
+If any platform has the limitaion to access default MSI IOVA, then it can
+be changed using "arm-smmu.msi_iova_base=0xa0000000" command line argument.
 
->                 if (!pdata->conns)
->                         return -ENOMEM;
->         }
-> --
-> 2.17.1
->
+Signed-off-by: Srinath Mannam <srinath.mannam@broadcom.com>
+---
+ drivers/iommu/arm-smmu.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+index 4f1a350..5e59c9d 100644
+--- a/drivers/iommu/arm-smmu.c
++++ b/drivers/iommu/arm-smmu.c
+@@ -72,6 +72,9 @@ static bool disable_bypass =
+ module_param(disable_bypass, bool, S_IRUGO);
+ MODULE_PARM_DESC(disable_bypass,
+ 	"Disable bypass streams such that incoming transactions from devices that are not attached to an iommu domain will report an abort back to the device and will not be allowed to pass through the SMMU.");
++static unsigned long msi_iova_base = MSI_IOVA_BASE;
++module_param(msi_iova_base, ulong, S_IRUGO);
++MODULE_PARM_DESC(msi_iova_base, "msi iova base address.");
+ 
+ struct arm_smmu_s2cr {
+ 	struct iommu_group		*group;
+@@ -1566,7 +1569,7 @@ static void arm_smmu_get_resv_regions(struct device *dev,
+ 	struct iommu_resv_region *region;
+ 	int prot = IOMMU_WRITE | IOMMU_NOEXEC | IOMMU_MMIO;
+ 
+-	region = iommu_alloc_resv_region(MSI_IOVA_BASE, MSI_IOVA_LENGTH,
++	region = iommu_alloc_resv_region(msi_iova_base, MSI_IOVA_LENGTH,
+ 					 prot, IOMMU_RESV_SW_MSI);
+ 	if (!region)
+ 		return;
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
