@@ -2,56 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 123291E4436
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:46:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5882B1E4460
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:50:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fnHQosCWBcDHABGjToJnEVSl58sCeW0m9EDlpr2K8to=; b=FWH+gj7gAGcFo91+yHNuReaLd
-	xtuyklukbS7486KImi20rCttCE8u3cf4EY5wy0T4uQznRQD2xUK5hm5YshS6sRrZjRD1W9WmEASN3
-	j2eIRF8GQjboDp33x03uz38Mof4iLyAlonBkO5n6z8TABxG4tyuTNo6nOLGr51odF/3CMZ3oj7Rxg
-	2AKcjQ3Pe1gdiUjDKuXMG2lttuxB2MbWslZ57/TBpDfxHB7gEEi1lp3Hn4nF0U4IdpDgfz9G747Wj
-	guQlE+NkDq4FeucQ95OMmAGLVuw6wp8XD8d++JkzO+T1SXhRU8vdhM/yfcb49H+mj+Xe0AoPsLJrM
-	illQfmHoA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qQzv5xI2jOX6+s8Lzz3vklqwuKx5inHTfi3jfnhd8FU=; b=V0VgWI0NF4NGqm
+	42p++dDPUz9ha+XR/xGZApYvH60ZMi2mOwBOExUOK80iw1uyUZCH3zoHdoksQZlSsudP7SZgRXmCp
+	uFFg7Ridh+Hr+6uuQwtyJQL34RNxw4OV0yxJVyP5i7BSyx6Yv2z+ZRDqdWsd+LYd3hUp9sppATrZh
+	xz4lTmD80a8PDUWsomlXPX1umSQMJ5A550EgXouhwxvYXC4jwIRRLyOxCUG+IKLzOY0yMtDHVUj2y
+	YOnf+/VJpICw/YibmnJICqptriuKMytS5Q91d71Ut6g1grBT7cj9w67P/7xtpPDhGCKst6ChGdD/R
+	pHRqxr7XdTC/sc2U601g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdwNT-00017Y-6x; Wed, 27 May 2020 13:45:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdwNG-00016V-TJ
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:45:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CBFFB55D;
- Wed, 27 May 2020 06:45:36 -0700 (PDT)
-Received: from [10.57.2.168] (unknown [10.57.2.168])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C0FB23F6C4;
- Wed, 27 May 2020 06:45:34 -0700 (PDT)
-Subject: Re: [PATCH] arm64: vdso32: force vdso32 to be compiled as -marm
-To: Nick Desaulniers <ndesaulniers@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
-References: <20200526173117.155339-1-ndesaulniers@google.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <2f58c2a4-0f37-d507-7767-00161c6b5d98@arm.com>
-Date: Wed, 27 May 2020 14:45:32 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jdwRh-0002c9-4P; Wed, 27 May 2020 13:50:13 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdwRM-0002bR-7Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:49:53 +0000
+Received: from threadripper.lan ([149.172.98.151]) by mrelayeu.kundenserver.de
+ (mreue011 [212.227.15.129]) with ESMTPA (Nemesis) id
+ 1MeToK-1j3mD13omq-00aStF; Wed, 27 May 2020 15:49:47 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH] ARM: pass -msoft-float to gcc earlier
+Date: Wed, 27 May 2020 15:49:34 +0200
+Message-Id: <20200527134946.1034391-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <20200526173117.155339-1-ndesaulniers@google.com>
-Content-Language: en-GB
+X-Provags-ID: V03:K1:G5fO0GvXqQ7URCOK275565svfOfjD5zjWbghoAyYqsXD61NGPPV
+ K3P+UcFTh2o/d8MI/VsrOcbfFksMEw7u1v2KFJI6nP+xf/v/qOU6RVa+Pu5ZZg2ZtebjVaW
+ tsb2V6RQplKSQTiTvuvi5WkDqZy6qzEGPwloEkwqKHfbICW6mNJObm/mwqBT1AGpuNNM43i
+ vEz1YQwWcfzoziXlzOepQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:F/gBf8yOHW8=:5cuOcmDhdtzCJCm0zoNZgt
+ ZtF8+oGlZwNWTXQJqiHCMjNXmEsfdwmft9cA4rbnXJs9aM7km6WYRsyc6oz9js5S1d3sh/aye
+ xnogOzfSLlw+BYYo/c4AzbyxQgxv4OKSMa+RisnP8LfBCwUO980XTUQV5zRKqWw8IZn+FMPmB
+ WtZhDlM9utEQyHFrPLej3hA/59gBS9ly0J0hXKZJRAvsykz8CzxVdtB639NywEP24FtN7cth6
+ bWHBzJeTfzu/4dB6UWULId8FwI0XShfSfurO6JXs7gLBUJMruxzK9t8Y7WnCWnJY5e6q+GtOv
+ +Mv0p6hs0+HsDU1jJRyQXtAbdAWJ92FMIaBptBuDogpASSMz2MwT2XeL6XXFAwJ+ndY/WBfbz
+ SP3HS5MpUbA06oumhVdpuZR2WY8I3DxrmL5XYz9SXyJrr9PnEvcyrUwVjyK9dYSVvQhiLKfi1
+ szwpcnObSPKcbdjQkxZSQ6WNJ73zQxmBtiqUjSZoy3FAxEvaGu23bH6+gRn2oFkkd0/M5R7UC
+ Gs8rPkNeFdnDTpOeJOUXlD4t/AbqNafO0auZuWwnmvA9dRBiJfVj/Y63/XIkstvjBbTWx9GjG
+ aUoPZpu+wffPiTB/0WCY3K4EQn5S0XwRXYYKHfypFtctx52XbI9G2utzxW4henz2dE4/gvxFa
+ +3ZNgLhUBk1iDMWpzcERcAgRiGTX+Uxwk9yimIb1V6k4SUnoH6rKXG91EPLsNHPr54fMeJvF5
+ 3lu5tOCJzhS33qiU2PAupR2XFh93FPWVYvs55jwY0OiFTlqbH9DoBINICzuivzM3NVBPRryvJ
+ KywP/UlNgPerwZHcHme3CXB1FxX6+wGwHYyoiXy3Lac0wX7lfM=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_064538_987466_DE02FFF6 
-X-CRM114-Status: GOOD (  17.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200527_064952_560593_7AEC1327 
+X-CRM114-Status: GOOD (  11.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.187 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -64,61 +76,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
+Cc: Arnd Bergmann <arnd@arndb.de>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
  Masahiro Yamada <masahiroy@kernel.org>, linux-kernel@vger.kernel.org,
- Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Nathan Huckleberry <nhuck15@gmail.com>,
+ Nathan Chancellor <natechancellor@gmail.com>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-26 18:31, Nick Desaulniers wrote:
-> Custom toolchains that modify the default target to -mthumb cannot
-> compile the arm64 compat vdso32, as
-> arch/arm64/include/asm/vdso/compat_gettimeofday.h
-> contains assembly that's invalid in -mthumb.  Force the use of -marm,
-> always.
+Szabolcs Nagy ran into a kernel build failure with a custom gcc
+toochain that sets -mfpu=auto -mfloat-abi-hard:
 
-FWIW, this seems suspicious - the only assembly instructions I see there 
-are SWI(SVC), MRRC, and a MOV, all of which exist in Thumb for the 
--march=armv7a baseline that we set.
+ /tmp/ccmNdcdf.s:1898: Error: selected processor does not support `cpsid i' in ARM mode
 
-On a hunch, I've just bodged "VDSO_CFLAGS += -mthumb" into my tree and 
-built a Thumb VDSO quite happily with Ubuntu 19.04's 
-gcc-arm-linux-gnueabihf. What was the actual failure you saw?
+The problem is that $(call cc-option, -march=armv7-a) fails before the
+kernel overrides the gcc options to also pass -msoft-float.
 
-Robin.
+Move the option to the beginning the Makefile, before we call
+cc-option for the first time.
 
-> Link: https://bugs.chromium.org/p/chromium/issues/detail?id=1084372
-> Cc: Stephen Boyd <swboyd@google.com>
-> Reported-by: Luis Lozano <llozano@google.com>
-> Tested-by: Manoj Gupta <manojgupta@google.com>
-> Signed-off-by: Nick Desaulniers <ndesaulniers@google.com>
-> ---
-> Surgeon General's Warning: changing the compiler defaults is not
-> recommended and can lead to spooky bugs that are hard to reproduce
-> upstream.
-> 
->   arch/arm64/kernel/vdso32/Makefile | 2 ++
->   1 file changed, 2 insertions(+)
-> 
-> diff --git a/arch/arm64/kernel/vdso32/Makefile b/arch/arm64/kernel/vdso32/Makefile
-> index 3964738ebbde..c449a293d81e 100644
-> --- a/arch/arm64/kernel/vdso32/Makefile
-> +++ b/arch/arm64/kernel/vdso32/Makefile
-> @@ -104,6 +104,8 @@ VDSO_CFLAGS += -D__uint128_t='void*'
->   # (on GCC 4.8 or older, there is unfortunately no way to silence this warning)
->   VDSO_CFLAGS += $(call cc32-disable-warning,shift-count-overflow)
->   VDSO_CFLAGS += -Wno-int-to-pointer-cast
-> +# Force vdso to be compiled in ARM mode, not THUMB.
-> +VDSO_CFLAGS += -marm
->   
->   VDSO_AFLAGS := $(VDSO_CAFLAGS)
->   VDSO_AFLAGS += -D__ASSEMBLY__
-> 
+Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
+Link: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=87302
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ arch/arm/Makefile | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+index fcd40c5bfd94..9804f8f61e67 100644
+--- a/arch/arm/Makefile
++++ b/arch/arm/Makefile
+@@ -16,6 +16,8 @@ LDFLAGS_vmlinux	+= --be8
+ KBUILD_LDFLAGS_MODULE	+= --be8
+ endif
+ 
++KBUILD_CFLAGS	+= -msoft-float
++
+ ifeq ($(CONFIG_CPU_32v4),y)
+ LDFLAGS_vmlinux	+= $(call ld-option,--fix-v4bx)
+ LDFLAGS_MODULE	+= $(call ld-option,--fix-v4bx)
+@@ -138,7 +140,7 @@ AFLAGS_ISA	:=$(CFLAGS_ISA)
+ endif
+ 
+ # Need -Uarm for gcc < 3.x
+-KBUILD_CFLAGS	+=$(CFLAGS_ABI) $(CFLAGS_ISA) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -msoft-float -Uarm
++KBUILD_CFLAGS	+=$(CFLAGS_ABI) $(CFLAGS_ISA) $(arch-y) $(tune-y) $(call cc-option,-mshort-load-bytes,$(call cc-option,-malignment-traps,)) -Uarm
+ KBUILD_AFLAGS	+=$(CFLAGS_ABI) $(AFLAGS_ISA) $(arch-y) $(tune-y) -include asm/unified.h -msoft-float
+ 
+ CHECKFLAGS	+= -D__arm__
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
