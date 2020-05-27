@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10D9B1E403E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:38:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2CB41E402F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 13:37:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qfBiS5zZE78z7yy7m7wvMubSoL1dI6/PU2TmCKxrM0E=; b=fDspvhSi0kZ9FX
-	a5qsTRgIZR2SyYU0y8mU0V0KU34Plr97fkceNwYVDMZYlze2Ogo7GVFc4JSa2mScE0Q1MaOaFWYy6
-	savRwLOF1CkPM+dQWqSfGgtg9qG3vpZ3pbB42UOFiyWQkGk8Pdi0SZOybgoDxjgvjL7RkAalpcGdh
-	zafuZl4WsL1lvMC2aPum6u+fu5t9IuKCf2dy7bV1Ni1gp18DJ+q2TsmTRAdlQiLQR2vgCnM3QaZDN
-	qkRPH9ncf/CuZwwx7Z455ZUForpaRFBCb5oLPSSEw97Zoquu8iqY8g0jdlBAhS6l4MrCUu2BU/N/6
-	vHvj6kxK1NPLCNNVr1Mg==;
+	List-Owner; bh=1aIXmvJm730ilxi7GX8fPQtcamXBYCOXZJbL+VWXF6I=; b=Zic/pqvxKt1Ix4
+	7KLXxwl3XxlDZp877e0EDFwh0nfAi9eLWVr5Vu57Y0d7fbFQVBzdZBsejro0jBQv/vRupnMajXBDP
+	cB5NsJDfGFQFJBolC6vyBqkCMeAOX9tacfyiDmPyQT11e9TbVt268ewKriM0JaG7XAu7BHxxgjopP
+	TCbqr4iQu43Ea9BbV6Xp61T/fNijJPOqP53meJfwP8cSjxfwBqlOjBLJPTsPQda6gaaw2ljeWN8m7
+	OmsHgWNvhm1HCXlUSRbL5rXJPSFai/jqt3HPdnCpN4ppvIt8+HY+tbk8V4waA2yNRF114D5N7B9bc
+	KjATXNc6lkmiTqI4r6Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jduOQ-0002ug-Bg; Wed, 27 May 2020 11:38:42 +0000
-Received: from elvis.franken.de ([193.175.24.41])
+	id 1jduN3-0002aC-LF; Wed, 27 May 2020 11:37:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jduOG-0002tH-Oa
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:38:34 +0000
-Received: from uucp (helo=alpha)
- by elvis.franken.de with local-bsmtp (Exim 3.36 #1)
- id 1jduO3-00011U-01; Wed, 27 May 2020 13:38:19 +0200
-Received: by alpha.franken.de (Postfix, from userid 1000)
- id 29C33C0594; Wed, 27 May 2020 13:33:21 +0200 (CEST)
-Date: Wed, 27 May 2020 13:33:21 +0200
-From: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-To: =?iso-8859-1?Q?=C1lvaro_Fern=E1ndez?= Rojas <noltari@gmail.com>
-Subject: Re: [PATCH] MIPS: BCM63xx: fix 6328 boot selection bit
-Message-ID: <20200527113321.GB13537@alpha.franken.de>
-References: <20200526110324.1324754-1-noltari@gmail.com>
+ id 1jduMt-0002ZI-NK
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 11:37:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8F4BE55D;
+ Wed, 27 May 2020 04:37:06 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7F6CD3F305;
+ Wed, 27 May 2020 04:37:05 -0700 (PDT)
+Date: Wed, 27 May 2020 12:37:03 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V3] arm64/cpufeature: Add get_arm64_ftr_reg_nowarn()
+Message-ID: <20200527113703.GD28101@gaia>
+References: <1590573876-19120-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200526110324.1324754-1-noltari@gmail.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <1590573876-19120-1-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_043832_953787_69997F59 
-X-CRM114-Status: UNSURE (   9.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200527_043707_801522_3793D6B5 
+X-CRM114-Status: GOOD (  11.44  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [193.175.24.41 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,32 +62,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, linux-kernel@vger.kernel.org,
- linux-mips@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- jonas.gorski@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 01:03:24PM +0200, =C1lvaro Fern=E1ndez Rojas wrote:
-> MISC_STRAP_BUS_BOOT_SEL_SHIFT is 18 according to Broadcom's GPL source co=
-de.
-> =
+On Wed, May 27, 2020 at 03:34:36PM +0530, Anshuman Khandual wrote:
+> +/*
+> + * get_arm64_ftr_reg - Looks up a feature register entry using
+> + * its sys_reg() encoding. This calls get_arm64_ftr_reg_nowarn().
+> + *
+> + * returns - Upon success,  matching ftr_reg entry for id.
+> + *         - NULL on failure but with an WARN_ON().
+> + */
+> +static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
+> +{
+> +	struct arm64_ftr_reg *reg;
+> +
+> +	reg = get_arm64_ftr_reg_nowarn(sys_id);
+> +
+> +	/*
+> +	 * Can not really proceed when the search fails here.
+> +	 * Requesting for a non existent register search will
+> +	 * be an error. Warn but let it continue for now.
+> +	 */
+> +	WARN_ON(!reg);
+> +	return reg;
 
-> Signed-off-by: =C1lvaro Fern=E1ndez Rojas <noltari@gmail.com>
-> ---
->  arch/mips/include/asm/mach-bcm63xx/bcm63xx_regs.h | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+I find the comment here slightly confusing: cannot proceed but continue.
+Maybe something like:
 
-applied to mips-next.
+	/*
+	 * Requesting a non-existent register search is an error. Warn
+	 * and let the caller handle it.
+	 */
 
-Thomas.
+Otherwise it looks fine:
 
--- =
-
-Crap can work. Given enough thrust pigs will fly, but it's not necessarily a
-good idea.                                                [ RFC1925, 2.3 ]
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
