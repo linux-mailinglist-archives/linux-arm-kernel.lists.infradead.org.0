@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63DEB1E366F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 05:23:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49AF51E3678
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 05:23:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0U+HkG8tDhXH6ftKeQuo1MY+MaJ0oYQI6pz0Whysg78=; b=KYSiwc88KSqLMA
-	46p1TPL3qwq4KzztMez6kANz27RJtHkywq0F0LQUPlkx2F+jT9WIei30Wcv0EluMgxjTamBGiTKrS
-	PbJ6LEuauH93uqbLAtJzzXiffm393omilo4+aTu7hR/6v2f8s+2hXvpyutrKc3HCQsNnbXnXa0/tS
-	Sz0EchkGshZnp/RAIzRtON2pe3JquVeOZ92J5KOHzktPMI783zLPLb7gpWopS6CiTT3aFeXK6bC9E
-	1xcYddev1tDt8MH4tzaNfAIMrGYgnL9gJD+6f3DHv/xKJ8CtJ8FubzRFO9rtdhDAaawFEpYGeInel
-	ZSjgOeVclH0BIy8qKcYQ==;
+	List-Owner; bh=kPLC/9JmpY2YFBvDIjCc7eBFGsUl9hxgUpjx7nBzecA=; b=hcmNgodb2k7grw
+	riaW/+4i93W+bl0U5qvjkXkv4XlN63v4s21OHsnHviDpMEaPLN5yGAhRpKjfpk6okdGe/iZE7zyin
+	Y6XRT3cMAinortIhQvFRg/2LvLdcNUe/vE3ool8gSkPe7SkztuAWSMQaKkU1xR1tkd/QjKipCk1Ms
+	ER+HjVNTlE0oyjsqVJeZ3XFgTJjo6uI5SkFGagsKFLJ3WIbxyoNlBCFPRgT6p7PFa7uLwcakoDVzc
+	yadvZTt4CPAl2jWTx01ecJkEBubgH7MELMfMUuWoMXfZmyBMhHIcZFMeX0Hwphfpj5vtXtoLNp5g+
+	ShzZPl/Wkr7hT5SCzOPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdmfH-0005Yq-LA; Wed, 27 May 2020 03:23:36 +0000
+	id 1jdmfY-0005nw-RO; Wed, 27 May 2020 03:23:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdmex-0005YG-AR
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 03:23:17 +0000
+ id 1jdmf1-0005Zu-6v
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 03:23:20 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E46BA207D8;
- Wed, 27 May 2020 03:23:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AD66D20899;
+ Wed, 27 May 2020 03:23:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590549795;
- bh=80jHVw6aQBSlvs8cXqPq7ku7ZsYEbQzW8pwnZJk0awE=;
+ s=default; t=1590549798;
+ bh=jY7s5UN1EDTOEEGFXI3SQGhT0VH8jcKAbhfL22s4a04=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=R5Dg/k7Xdz4SfisMh9nuUX6t3M+H2g1Iv16u+zdJxx4EnqdvmEe3PONfZ8ung5KqM
- 8CQ1hYnRLfUA4NvyRj3a+jgRgwpYi/tFrxdJ5GsvhbvYK5nEUTcATEy8SDtraH47B+
- Sjnc868dAOIyZb+oDJNoRzhDarvwmdr26C70uJNI=
+ b=uBlxMbO5B9CUgcTiQd06VJ+s26BvHe8CDrSLdjHcgaS2upi/Rj2yd6WGmPQkGhwKq
+ Hx43TRw2JhykK8q9LLU2S6onrhyer/CaLcElCHq1krJThvHEf3T4KJ70Mi/xOP+LIf
+ hIX1vN27gYaRiD4SdZ2vp8BJctUOYbzuwVtRM/Cw=
 MIME-Version: 1.0
-In-Reply-To: <0054532c00163ddf405dad658b32f0d7d97fcc8e.1588630999.git.mirq-linux@rere.qmqm.pl>
+In-Reply-To: <fc6f6d67b8cee0beace4a9d9cca7431e5efa769d.1588630999.git.mirq-linux@rere.qmqm.pl>
 References: <cover.1588630999.git.mirq-linux@rere.qmqm.pl>
- <0054532c00163ddf405dad658b32f0d7d97fcc8e.1588630999.git.mirq-linux@rere.qmqm.pl>
-Subject: Re: [PATCH v7 2/3] clk: at91: allow setting PCKx parent via DT
+ <fc6f6d67b8cee0beace4a9d9cca7431e5efa769d.1588630999.git.mirq-linux@rere.qmqm.pl>
+Subject: Re: [PATCH v7 1/3] clk: at91: optimize pmc data allocation
 From: Stephen Boyd <sboyd@kernel.org>
 To: Alexandre Belloni <alexandre.belloni@bootlin.com>, Ludovic Desroches <ludovic.desroches@microchip.com>, Michael Turquette <mturquette@baylibre.com>, Michał Mirosław <mirq-linux@rere.qmqm.pl>, Nicolas Ferre <nicolas.ferre@microchip.com>, Rob Herring <robh+dt@kernel.org>
-Date: Tue, 26 May 2020 20:23:14 -0700
-Message-ID: <159054979429.88029.8996330279557603331@swboyd.mtv.corp.google.com>
+Date: Tue, 26 May 2020 20:23:18 -0700
+Message-ID: <159054979801.88029.12506665855627304531@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_202315_377918_3A3306DC 
-X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-CacheID: sfid-20200526_202319_278911_4F33B73B 
+X-CRM114-Status: UNSURE (   7.45  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -84,11 +84,11 @@ Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-UXVvdGluZyBNaWNoYcWCIE1pcm9zxYJhdyAoMjAyMC0wNS0wNCAxNTozNzo1NikKPiBUaGlzIGV4
-cG9zZXMgUFJPR3ggY2xvY2tzIGZvciB1c2UgaW4gYXNzaWduZWQtY2xvY2tzIERldmljZVRyZWUg
-cHJvcGVydHkKPiBmb3Igc2VsZWN0aW5nIFBDS3ggcGFyZW50IGNsb2NrLgo+IAo+IFNpZ25lZC1v
-ZmYtYnk6IE1pY2hhXHUwMTQyIE1pcm9zXHUwMTQyYXcgPG1pcnEtbGludXhAcmVyZS5xbXFtLnBs
-Pgo+IC0tLQoKQXBwbGllZCB0byBjbGstbmV4dAoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
-YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
-L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+UXVvdGluZyBNaWNoYcWCIE1pcm9zxYJhdyAoMjAyMC0wNS0wNCAxNTozNzo1NikKPiBBbGxvYyB3
+aG9sZSBkYXRhIHN0cnVjdHVyZSBpbiBvbmUgYmxvY2suIFRoaXMgbWFrZXMgdGhlIGNvZGUgc2hv
+cnRlciwKPiBtb3JlIGVmZmljaWVudCBhbmQgZWFzaWVyIHRvIGV4dGVuZCBpbiBmb2xsb3dpbmcg
+cGF0Y2guCj4gCj4gU2lnbmVkLW9mZi1ieTogTWljaGFcdTAxNDIgTWlyb3NcdTAxNDJhdyA8bWly
+cS1saW51eEByZXJlLnFtcW0ucGw+Cj4gLS0tCgpBcHBsaWVkIHRvIGNsay1uZXh0CgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
