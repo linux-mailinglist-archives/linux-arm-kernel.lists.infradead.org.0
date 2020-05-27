@@ -2,82 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E87F1E4904
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:01:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A35131E490D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:01:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lFC/b6TCqco02Z0GOQDuq5j5aCfojngg93l/ELzjeGo=; b=bKnojPmq//cHfW
-	4RENTQ8ipoBkBK66cuhz3YSyZw9mHfjD9oKaTUZD84HnWoC7LDYrxT5Gldz79YZ5/NxH5u7SD4TNt
-	CAjru4oXQkdjvFg3R1Ry50R+WrRGqxQSAVUzsKLqG63+a+32ZMCJo9fO4lcJUGgIP0ntrdulXVy0h
-	Bj/qvHpCNSZIZ/i6gXjRnASh+V+UPvnHUkoRTINv8aROantoDbmpf9p6MDotT98xa0/jKCJXybxXS
-	4an+HVrLT4e3+G5d83CI0AZsq60BjUVHTXMkgCqrCy0pP0yGFZ2i5yNNCL1HtVYorExcKFd33TqQx
-	gCmxEArFMIAzXf7RGYRw==;
+	List-Owner; bh=kZi7JA5qHvZq2lR9B6azYIHwn3z1GD150TiC9yUqRuo=; b=K0YGajTda+gXdf
+	BXlzwTSAZafe5m9MBDHg3m7F4QOyvPZ74AC8pgy1E5TobUENeSynB+mkjFL5//XguOCCVx5mMvU9+
+	3Uzobs99b9k1pAjtKKQtdn6oZNu60OSJ4S+06J82KenWpKWxbKWQD0EMcvxSxA19BoxVgNjSpF9wA
+	7KDyC34ZCWRHRopLu6gfNB9DQvj4UQRd6DkqVH5IzNdOBwALdo6m6YfGUBRY6XAHkvDNbSMABPt5e
+	K1SoSmT3xPcJRSEwrD4F54H1jNH3CPL1Cki3YdZjF9NLzEyFGZK0h4dBUb46gW481VGzjDzubZHpD
+	23/B8wHp2YYrSRSmUt0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyU7-0004dR-Ir; Wed, 27 May 2020 16:00:51 +0000
+	id 1jdyV3-0005CH-8F; Wed, 27 May 2020 16:01:49 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyJ2-0005xq-9c; Wed, 27 May 2020 15:49:26 +0000
+ id 1jdyJ5-00061b-RH; Wed, 27 May 2020 15:49:31 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 80EF6581FF0;
- Wed, 27 May 2020 11:49:23 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id BD340581FF8;
+ Wed, 27 May 2020 11:49:26 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:49:23 -0400
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:49:26 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=JS2UKqRBYPadW
- vDMXsMwdmCOk/vh+t2B16LPXJpi9Ps=; b=Nj0JRBg0iY8fzLsKwLcvMLUdYTJjv
- 2cdBT/hXX4w7p0QipcKLmlguVouTTGfHCH033T8oZag3qRW1kuPempSYfMpCUnbZ
- qb8XdX4fw1/JoT7DWKO2y01L2GCC3p2yEDv1/Umn4FIwTrg8sSagLasShJF6HF8F
- oQM88zECePTw2qf3HTMt0+GzufzE8lKwK2KvxVfGAUguxeXC0ch0ApiX60yRS7v9
- CcN6ZG6RJtUtHG7FKeMyiloiUqycf2D1tPyia5HC1nbhfa4TO16TSmVQK3HF7XFB
- jvv9pcB+M6ErC8RcqcYFcWJs4Kh7z+A0lwAM5T+Odmig5zyfB4GB6Ew1A==
+ :mime-version:content-transfer-encoding; s=fm2; bh=MU7eZVtnDwybr
+ +mHo1iyU4jXWJ/3SJl/BtiKpmw68Lk=; b=EE/c7zDHdHbAwJhRUOCHpCKU2+DK/
+ BSkkEOZNMggY8T+mYE4d5+cIimjEOhtrXZ9CUS3PUZC7MAejqPcwl4mpa6ghq6X9
+ OjLd2IogFa2aLMD/SgIE+oeJLh6kpgt38UgFwZaKQaUq/V3JcGKNJck8KyiMS9ql
+ +qd2a5SekYo66altUDyKh6KX1i+C8gl29lJVNDIy+yphfda7dq6gCzanXQXAIw6k
+ NVURl1B5a37TrYDujBmsjWNPdptLtUCF/sSOdy75079Zk6pXSZrZ0HYK7j6xBnNB
+ MHvJ9KJJERwUHKOe6RIIRIC32H44wNr63Q5WaaZHneNRTKQeu5kd76zpA==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=JS2UKqRBYPadWvDMXsMwdmCOk/vh+t2B16LPXJpi9Ps=; b=AbeO0tAo
- NaodgRmxdhYn10Eufk/75eknWlBSIzTTbBvcdDHIeatxtA/UTpLbzTDVGXuAMlaP
- ZiDItfAVP7bjqlOTKZJif2M1BPwk3cFgXyc0FN5HxzwaRA4Z/9EhrZ1oF8F0f0JJ
- 4Bi4hZUaCXWSrCjLJ8WKFgooseYH9T1GeVsOFX+lmp8KVyKud9jWSOPuKMIwmJ3W
- S6ov4F1BPeHz/eQ8pK2YLzBuCFIPv3piz1IomDyZqvjLjY+w3K+7S53eVFjPaMXK
- pn7svUl6prAbCitYbfkAUYJxoNqqgKS1IkEUKiGK2Ci+x1X7Rmc5VR7YWMmDuuGK
- d9YeM4A8UpxOxA==
-X-ME-Sender: <xms:A4zOXvQUbCpL073Nzl95SPp88_wkm31NN89u6e_cCzPvQS70TzAsDQ>
+ fm2; bh=MU7eZVtnDwybr+mHo1iyU4jXWJ/3SJl/BtiKpmw68Lk=; b=W4raxyAC
+ LReBJcTWUMpoD/HWWsvJT7zhWaNB3yQgZSk+thuFpbLKXMUrLihiretPZtmXn/sW
+ KMj2uM8zTr7mA8nkblqv1NCCKaf9YCHZ/rp2l80Q42JBTwzfstBnelf533dkkxeJ
+ 9svxdGqAXsji6fd9SMt8RNNQMNN6rOvxuRQFv/ESnf/Pz91kQodncKjasnMwy0Zg
+ RDypO9XtglOzcOcRJZERQbQY4YFmJ15+EvjHxW6inFb06booKJp92pVSxOY+3lTr
+ s9m6raqDqhOLkkM+hVMG1ca9KyCq8DHT0hklY5XUCmuu7E2uI9qeZSe2eLpDxoNF
+ TISJa9B+60jkrA==
+X-ME-Sender: <xms:BozOXoZ6aCXer017wVFrrSAo_TEtSeC6su9rz4tAGJH9eu6hu5yJ2Q>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
  cujfgurhephffvufffkffojghfggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhm
  vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
- htvghrnhepvdevjeduiedtuddtteeuiefgiedukeevjeevuddttddvtdefkedvleeufeej
- leeknecuffhomhgrihhnpehrtgguvghvrdhnrhenucfkphepledtrdekledrieekrdejie
- enucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgig
- ihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:A4zOXgxAvlsdVZLvxvwLd1OZDBMrlQzp6OtxJgzfkFGg88XNQSVXNQ>
- <xmx:A4zOXk1l_GeoaFpQ-27l1C_0DQDjRq_X9SxqgnTLXDugTzK9ThnK2w>
- <xmx:A4zOXvC7WXfdpyWqIwtSOJz5ItkOuGQdvbEYOWgfSH6vqtkeWF_Cjw>
- <xmx:A4zOXpYj9AYGu4u2KrWr5R0rIljRDNm2LwOcdEeLGitYjDgBabz9eA>
+ htvghrnhepvdekkeekleelvdehgeehieejtefhgfdtveetudegffeikedvuddvudekjeet
+ veefnecuffhomhgrihhnpeguvghvihgtvghtrhgvvgdrohhrghdpghhithhhuhgsrdgtoh
+ hmpdhfrhgvvgguvghskhhtohhprdhorhhgnecukfhppeeltddrkeelrdeikedrjeeinecu
+ vehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimh
+ gvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:BozOXjarDjvlCd-JDf2qd-VL5rh_pDkrl-uVYshE07efLhG-r1a1bw>
+ <xmx:BozOXi_COfTNDhQRdzd17S4Ki8xItQzmNZJiLNiniYqNL32FzmIC9g>
+ <xmx:BozOXipUReu7kIVLmPZToRG-c63EGPDZ6Z8l_H4KWndHjRaK164yxw>
+ <xmx:BozOXm3TX0cogN5Jp4BTUpS69JffuLUX11qfMcu5YX1xbNXZyFkFBA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 221A2328005D;
- Wed, 27 May 2020 11:49:23 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 3A8213280060;
+ Wed, 27 May 2020 11:49:26 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 004/105] clk: bcm: Add BCM2711 DVP driver
-Date: Wed, 27 May 2020 17:47:34 +0200
-Message-Id: <6615a61b8af240e3d10f8890e4b2462ccdaac9b9.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 006/105] dt-bindings: display: Convert VC4 bindings to
+ schemas
+Date: Wed, 27 May 2020 17:47:36 +0200
+Message-Id: <2dc6384c945c7d35ab4f75464d3a77046dc125b3.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_084924_494210_583CAE9B 
-X-CRM114-Status: GOOD (  14.28  )
+X-CRM114-CacheID: sfid-20200527_084928_273125_3FCF8361 
+X-CRM114-Status: GOOD (  17.37  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -109,10 +111,8 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-clk@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Rob Herring <robh+dt@kernel.org>,
  bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
  Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
  Maxime Ripard <maxime@cerno.tech>
@@ -121,191 +121,739 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The HDMI block has a block that controls clocks and reset signals to the
-HDMI0 and HDMI1 controllers.
+The BCM283x SoCs have a display pipeline composed of several controllers
+with device tree bindings that are supported by Linux.
 
-Let's expose that through a clock driver implementing a clock and reset
-provider.
+Now that we have the DT validation in place, let's split into separate
+files and convert the device tree bindings for those controllers to
+schemas.
 
-Cc: Michael Turquette <mturquette@baylibre.com>
-Cc: Stephen Boyd <sboyd@kernel.org>
+This is just a 1:1 conversion though, and some bindings were incomplete so
+it results in example validation warnings that are going to be addressed in
+the following patches.
+
 Cc: Rob Herring <robh+dt@kernel.org>
-Cc: linux-clk@vger.kernel.org
 Cc: devicetree@vger.kernel.org
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/clk/bcm/Kconfig           |  11 +++-
- drivers/clk/bcm/Makefile          |   1 +-
- drivers/clk/bcm/clk-bcm2711-dvp.c | 127 +++++++++++++++++++++++++++++++-
- 3 files changed, 139 insertions(+)
- create mode 100644 drivers/clk/bcm/clk-bcm2711-dvp.c
+ Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt              | 174 +------------------------------------------------------------------------
+ Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml         |  66 +++++++++++++++++++++++++++-
+ Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml        |  73 ++++++++++++++++++++++++++++++-
+ Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml        |  75 +++++++++++++++++++++++++++++++-
+ Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml         |  37 +++++++++++++++-
+ Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml |  40 +++++++++++++++++-
+ Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml         |  37 +++++++++++++++-
+ Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml         |  42 +++++++++++++++++-
+ Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml         |  34 ++++++++++++++-
+ Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml         |  44 ++++++++++++++++++-
+ MAINTAINERS                                                             |   2 +-
+ 11 files changed, 449 insertions(+), 175 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
+ create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml
 
-diff --git a/drivers/clk/bcm/Kconfig b/drivers/clk/bcm/Kconfig
-index 8c83977a7dc4..784f12c72365 100644
---- a/drivers/clk/bcm/Kconfig
-+++ b/drivers/clk/bcm/Kconfig
-@@ -1,4 +1,15 @@
- # SPDX-License-Identifier: GPL-2.0-only
-+
-+config CLK_BCM2711_DVP
-+	tristate "Broadcom BCM2711 DVP support"
-+	depends on ARCH_BCM2835 ||COMPILE_TEST
-+	depends on COMMON_CLK
-+	default ARCH_BCM2835
-+	select RESET_SIMPLE
-+	help
-+	  Enable common clock framework support for the Broadcom BCM2711
-+	  DVP Controller.
-+
- config CLK_BCM2835
- 	bool "Broadcom BCM2835 clock support"
- 	depends on ARCH_BCM2835 || ARCH_BRCMSTB || COMPILE_TEST
-diff --git a/drivers/clk/bcm/Makefile b/drivers/clk/bcm/Makefile
-index 0070ddf6cdd2..2c1349062147 100644
---- a/drivers/clk/bcm/Makefile
-+++ b/drivers/clk/bcm/Makefile
-@@ -6,6 +6,7 @@ obj-$(CONFIG_CLK_BCM_KONA)	+= clk-kona-setup.o
- obj-$(CONFIG_CLK_BCM_KONA)	+= clk-bcm281xx.o
- obj-$(CONFIG_CLK_BCM_KONA)	+= clk-bcm21664.o
- obj-$(CONFIG_COMMON_CLK_IPROC)	+= clk-iproc-armpll.o clk-iproc-pll.o clk-iproc-asiu.o
-+obj-$(CONFIG_CLK_BCM2835)	+= clk-bcm2711-dvp.o
- obj-$(CONFIG_CLK_BCM2835)	+= clk-bcm2835.o
- obj-$(CONFIG_CLK_BCM2835)	+= clk-bcm2835-aux.o
- obj-$(CONFIG_CLK_RASPBERRYPI)	+= clk-raspberrypi.o
-diff --git a/drivers/clk/bcm/clk-bcm2711-dvp.c b/drivers/clk/bcm/clk-bcm2711-dvp.c
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt b/Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt
+deleted file mode 100644
+index 26649b4c4dd8..000000000000
+--- a/Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt
++++ /dev/null
+@@ -1,174 +0,0 @@
+-Broadcom VC4 (VideoCore4) GPU
+-
+-The VC4 device present on the Raspberry Pi includes a display system
+-with HDMI output and the HVS (Hardware Video Scaler) for compositing
+-display planes.
+-
+-Required properties for VC4:
+-- compatible:	Should be "brcm,bcm2835-vc4" or "brcm,cygnus-vc4"
+-
+-Required properties for Pixel Valve:
+-- compatible:	Should be one of "brcm,bcm2835-pixelvalve0",
+-		  "brcm,bcm2835-pixelvalve1", or "brcm,bcm2835-pixelvalve2"
+-- reg:		Physical base address and length of the PV's registers
+-- interrupts:	The interrupt number
+-		  See bindings/interrupt-controller/brcm,bcm2835-armctrl-ic.txt
+-
+-Required properties for HVS:
+-- compatible:	Should be "brcm,bcm2835-hvs"
+-- reg:		Physical base address and length of the HVS's registers
+-- interrupts:	The interrupt number
+-		  See bindings/interrupt-controller/brcm,bcm2835-armctrl-ic.txt
+-
+-Required properties for HDMI
+-- compatible:	Should be "brcm,bcm2835-hdmi"
+-- reg:		Physical base address and length of the two register ranges
+-		  ("HDMI" and "HD", in that order)
+-- interrupts:	The interrupt numbers
+-		  See bindings/interrupt-controller/brcm,bcm2835-armctrl-ic.txt
+-- ddc:		phandle of the I2C controller used for DDC EDID probing
+-- clocks:	a) hdmi: The HDMI state machine clock
+-		b) pixel: The pixel clock.
+-
+-Optional properties for HDMI:
+-- hpd-gpios:	The GPIO pin for HDMI hotplug detect (if it doesn't appear
+-		  as an interrupt/status bit in the HDMI controller
+-		  itself).  See bindings/pinctrl/brcm,bcm2835-gpio.txt
+-- dmas:		Should contain one entry pointing to the DMA channel used to
+-		transfer audio data
+-- dma-names:	Should contain "audio-rx"
+-
+-Required properties for DPI:
+-- compatible:	Should be "brcm,bcm2835-dpi"
+-- reg:		Physical base address and length of the registers
+-- clocks:	a) core: The core clock the unit runs on
+-		b) pixel: The pixel clock that feeds the pixelvalve
+-- port:		Port node with a single endpoint connecting to the panel
+-		  device, as defined in [1]
+-
+-Required properties for VEC:
+-- compatible:	Should be "brcm,bcm2835-vec"
+-- reg:		Physical base address and length of the registers
+-- clocks:	The core clock the unit runs on
+-- interrupts:	The interrupt number
+-		  See bindings/interrupt-controller/brcm,bcm2835-armctrl-ic.txt
+-
+-Required properties for V3D:
+-- compatible:	Should be "brcm,bcm2835-v3d" or "brcm,cygnus-v3d"
+-- reg:		Physical base address and length of the V3D's registers
+-- interrupts:	The interrupt number
+-		  See bindings/interrupt-controller/brcm,bcm2835-armctrl-ic.txt
+-
+-Optional properties for V3D:
+-- clocks:	The clock the unit runs on
+-
+-Required properties for DSI:
+-- compatible:	Should be "brcm,bcm2835-dsi0" or "brcm,bcm2835-dsi1"
+-- reg:		Physical base address and length of the DSI block's registers
+-- interrupts:	The interrupt number
+-		  See bindings/interrupt-controller/brcm,bcm2835-armctrl-ic.txt
+-- clocks:	a) phy: The DSI PLL clock feeding the DSI analog PHY
+-		b) escape: The DSI ESC clock from CPRMAN
+-		c) pixel: The DSI pixel clock from CPRMAN
+-- clock-output-names:
+-		The 3 clocks output from the DSI analog PHY: dsi[01]_byte,
+-		dsi[01]_ddr2, and dsi[01]_ddr
+-
+-Required properties for the TXP (writeback) block:
+-- compatible:	Should be "brcm,bcm2835-txp"
+-- reg:		Physical base address and length of the TXP block's registers
+-- interrupts:	The interrupt number
+-		  See bindings/interrupt-controller/brcm,bcm2835-armctrl-ic.txt
+-
+-[1] Documentation/devicetree/bindings/media/video-interfaces.txt
+-
+-Example:
+-pixelvalve@7e807000 {
+-	compatible = "brcm,bcm2835-pixelvalve2";
+-	reg = <0x7e807000 0x100>;
+-	interrupts = <2 10>; /* pixelvalve */
+-};
+-
+-hvs@7e400000 {
+-	compatible = "brcm,bcm2835-hvs";
+-	reg = <0x7e400000 0x6000>;
+-	interrupts = <2 1>;
+-};
+-
+-hdmi: hdmi@7e902000 {
+-	compatible = "brcm,bcm2835-hdmi";
+-	reg = <0x7e902000 0x600>,
+-	      <0x7e808000 0x100>;
+-	interrupts = <2 8>, <2 9>;
+-	ddc = <&i2c2>;
+-	hpd-gpios = <&gpio 46 GPIO_ACTIVE_HIGH>;
+-	clocks = <&clocks BCM2835_PLLH_PIX>,
+-		 <&clocks BCM2835_CLOCK_HSM>;
+-	clock-names = "pixel", "hdmi";
+-};
+-
+-dpi: dpi@7e208000 {
+-	compatible = "brcm,bcm2835-dpi";
+-	reg = <0x7e208000 0x8c>;
+-	clocks = <&clocks BCM2835_CLOCK_VPU>,
+-	         <&clocks BCM2835_CLOCK_DPI>;
+-	clock-names = "core", "pixel";
+-	#address-cells = <1>;
+-	#size-cells = <0>;
+-
+-	port {
+-		dpi_out: endpoint@0 {
+-			remote-endpoint = <&panel_in>;
+-		};
+-	};
+-};
+-
+-dsi1: dsi@7e700000 {
+-	compatible = "brcm,bcm2835-dsi1";
+-	reg = <0x7e700000 0x8c>;
+-	interrupts = <2 12>;
+-	#address-cells = <1>;
+-	#size-cells = <0>;
+-	#clock-cells = <1>;
+-
+-	clocks = <&clocks BCM2835_PLLD_DSI1>,
+-		 <&clocks BCM2835_CLOCK_DSI1E>,
+-		 <&clocks BCM2835_CLOCK_DSI1P>;
+-	clock-names = "phy", "escape", "pixel";
+-
+-	clock-output-names = "dsi1_byte", "dsi1_ddr2", "dsi1_ddr";
+-
+-	pitouchscreen: panel@0 {
+-		compatible = "raspberrypi,touchscreen";
+-		reg = <0>;
+-
+-		<...>
+-	};
+-};
+-
+-vec: vec@7e806000 {
+-	compatible = "brcm,bcm2835-vec";
+-	reg = <0x7e806000 0x1000>;
+-	clocks = <&clocks BCM2835_CLOCK_VEC>;
+-	interrupts = <2 27>;
+-};
+-
+-v3d: v3d@7ec00000 {
+-	compatible = "brcm,bcm2835-v3d";
+-	reg = <0x7ec00000 0x1000>;
+-	interrupts = <1 10>;
+-};
+-
+-vc4: gpu {
+-	compatible = "brcm,bcm2835-vc4";
+-};
+-
+-panel: panel {
+-	compatible = "ontat,yx700wv03", "simple-panel";
+-
+-	port {
+-		panel_in: endpoint {
+-			remote-endpoint = <&dpi_out>;
+-		};
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml
 new file mode 100644
-index 000000000000..c1c4b5857d32
+index 000000000000..288494b70e82
 --- /dev/null
-+++ b/drivers/clk/bcm/clk-bcm2711-dvp.c
-@@ -0,0 +1,127 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+// Copyright 2020 Cerno
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-dpi.yaml
+@@ -0,0 +1,66 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-dpi.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+#include <linux/clk-provider.h>
-+#include <linux/module.h>
-+#include <linux/platform_device.h>
-+#include <linux/reset-controller.h>
-+#include <linux/reset/reset-simple.h>
++title: Broadcom VC4 (VideoCore4) DPI Controller
 +
-+#define DVP_HT_RPI_SW_INIT	0x04
-+#define DVP_HT_RPI_MISC_CONFIG	0x08
++maintainers:
++  - Eric Anholt <eric@anholt.net>
 +
-+#define NR_CLOCKS	2
-+#define NR_RESETS	6
++properties:
++  compatible:
++    const: brcm,bcm2835-dpi
 +
-+struct clk_dvp {
-+	struct clk_hw_onecell_data	*data;
-+	struct reset_simple_data	reset;
-+};
++  reg:
++    maxItems: 1
 +
-+static const struct clk_parent_data clk_dvp_parent = {
-+	.index	= 0,
-+};
++  clocks:
++    items:
++      - description: The core clock the unit runs on
++      - description: The pixel clock that feeds the pixelvalve
 +
-+static int clk_dvp_probe(struct platform_device *pdev)
-+{
-+	struct clk_hw_onecell_data *data;
-+	struct resource *res;
-+	struct clk_dvp *dvp;
-+	void __iomem *base;
-+	int ret;
++  port:
++    type: object
++    description: >
++      Port node with a single endpoint connecting to the panel, as
++      defined in Documentation/devicetree/bindings/media/video-interfaces.txt.
 +
-+	dvp = devm_kzalloc(&pdev->dev, sizeof(*dvp), GFP_KERNEL);
-+	if (!dvp)
-+		return -ENOMEM;
-+	platform_set_drvdata(pdev, dvp);
++required:
++  - compatible
++  - reg
++  - clocks
++  - port
 +
-+	dvp->data = devm_kzalloc(&pdev->dev,
-+				 struct_size(dvp->data, hws, NR_CLOCKS),
-+				 GFP_KERNEL);
-+	if (!dvp->data)
-+		return -ENOMEM;
-+	data = dvp->data;
++additionalProperties: false
 +
-+	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-+	base = devm_ioremap_resource(&pdev->dev, res);
-+	if (IS_ERR(base))
-+		return PTR_ERR(base);
++examples:
++  - |
++    #include <dt-bindings/clock/bcm2835.h>
 +
-+	dvp->reset.rcdev.owner = THIS_MODULE;
-+	dvp->reset.rcdev.nr_resets = NR_RESETS;
-+	dvp->reset.rcdev.ops = &reset_simple_ops;
-+	dvp->reset.rcdev.of_node = pdev->dev.of_node;
-+	dvp->reset.membase = base + DVP_HT_RPI_SW_INIT;
-+	spin_lock_init(&dvp->reset.lock);
++    panel: panel {
++        compatible = "ontat,yx700wv03", "simple-panel";
 +
-+	ret = reset_controller_register(&dvp->reset.rcdev);
-+	if (ret)
-+		return ret;
++        port {
++            panel_in: endpoint {
++                remote-endpoint = <&dpi_out>;
++            };
++        };
++    };
 +
-+	data->hws[0] = clk_hw_register_gate_parent_data(&pdev->dev,
-+							"hdmi0-108MHz",
-+							&clk_dvp_parent, 0,
-+							base + DVP_HT_RPI_MISC_CONFIG, 3,
-+							CLK_GATE_SET_TO_DISABLE,
-+							&dvp->reset.lock);
-+	if (IS_ERR(data->hws[0])) {
-+		ret = PTR_ERR(data->hws[0]);
-+		goto unregister_reset;
-+	}
++    dpi: dpi@7e208000 {
++        compatible = "brcm,bcm2835-dpi";
++        reg = <0x7e208000 0x8c>;
++        clocks = <&clocks BCM2835_CLOCK_VPU>,
++                 <&clocks BCM2835_CLOCK_DPI>;
++        clock-names = "core", "pixel";
 +
-+	data->hws[1] = clk_hw_register_gate_parent_data(&pdev->dev,
-+							"hdmi1-108MHz",
-+							&clk_dvp_parent, 0,
-+							base + DVP_HT_RPI_MISC_CONFIG, 4,
-+							CLK_GATE_SET_TO_DISABLE,
-+							&dvp->reset.lock);
-+	if (IS_ERR(data->hws[1])) {
-+		ret = PTR_ERR(data->hws[1]);
-+		goto unregister_clk0;
-+	}
++        port {
++            dpi_out: endpoint {
++                remote-endpoint = <&panel_in>;
++            };
++        };
++    };
 +
-+	data->num = NR_CLOCKS;
-+	ret = of_clk_add_hw_provider(pdev->dev.of_node, of_clk_hw_onecell_get,
-+				     data);
-+	if (ret)
-+		goto unregister_clk1;
++...
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
+new file mode 100644
+index 000000000000..3887675f844e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-dsi0.yaml
+@@ -0,0 +1,73 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-dsi0.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+	return 0;
++title: Broadcom VC4 (VideoCore4) DSI Controller
 +
-+unregister_clk1:
-+	clk_hw_unregister_gate(data->hws[1]);
++maintainers:
++  - Eric Anholt <eric@anholt.net>
 +
-+unregister_clk0:
-+	clk_hw_unregister_gate(data->hws[0]);
++properties:
++  compatible:
++    enum:
++      - brcm,bcm2835-dsi0
++      - brcm,bcm2835-dsi1
 +
-+unregister_reset:
-+	reset_controller_unregister(&dvp->reset.rcdev);
-+	return ret;
-+};
++  reg:
++    maxItems: 1
 +
-+static int clk_dvp_remove(struct platform_device *pdev)
-+{
-+	struct clk_dvp *dvp = platform_get_drvdata(pdev);
-+	struct clk_hw_onecell_data *data = dvp->data;
++  clocks:
++    items:
++      - description: The DSI PLL clock feeding the DSI analog PHY
++      - description: The DSI ESC clock
++      - description: The DSI pixel clock
 +
-+	clk_hw_unregister_gate(data->hws[1]);
-+	clk_hw_unregister_gate(data->hws[0]);
-+	reset_controller_unregister(&dvp->reset.rcdev);
++  clock-output-names: true
++    # FIXME: The meta-schemas don't seem to allow it for now
++    # items:
++    #   - description: The DSI byte clock for the PHY
++    #   - description: The DSI DDR2 clock
++    #   - description: The DSI DDR clock
 +
-+	return 0;
-+}
++  interrupts:
++    maxItems: 1
 +
-+static const struct of_device_id clk_dvp_dt_ids[] = {
-+	{ .compatible = "brcm,brcm2711-dvp", },
-+	{ /* sentinel */ }
-+};
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-output-names
++  - interrupts
 +
-+static struct platform_driver clk_dvp_driver = {
-+	.probe	= clk_dvp_probe,
-+	.remove	= clk_dvp_remove,
-+	.driver	= {
-+		.name		= "brcm2711-dvp",
-+		.of_match_table	= clk_dvp_dt_ids,
-+	},
-+};
-+module_platform_driver(clk_dvp_driver);
++unevaluatedProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/bcm2835.h>
++
++    dsi1: dsi@7e700000 {
++        compatible = "brcm,bcm2835-dsi1";
++        reg = <0x7e700000 0x8c>;
++        interrupts = <2 12>;
++        #address-cells = <1>;
++        #size-cells = <0>;
++        #clock-cells = <1>;
++
++        clocks = <&clocks BCM2835_PLLD_DSI1>,
++                 <&clocks BCM2835_CLOCK_DSI1E>,
++                 <&clocks BCM2835_CLOCK_DSI1P>;
++        clock-names = "phy", "escape", "pixel";
++
++        clock-output-names = "dsi1_byte", "dsi1_ddr2", "dsi1_ddr";
++
++        pitouchscreen: panel@0 {
++            compatible = "raspberrypi,touchscreen";
++            reg = <0>;
++
++            /* ... */
++        };
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
+new file mode 100644
+index 000000000000..834cc5f1c254
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-hdmi.yaml
+@@ -0,0 +1,75 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-hdmi.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom VC4 (VideoCore4) HDMI Controller
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++
++properties:
++  compatible:
++    const: brcm,bcm2835-hdmi
++
++  reg:
++    items:
++      - description: HDMI register range
++      - description: HD register range
++
++  interrupts:
++    minItems: 2
++
++  clocks:
++    items:
++      - description: The HDMI state machine clock
++      - description: The pixel clock
++
++  ddc:
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/phandle
++    description: >
++      Phandle of the I2C controller used for DDC EDID probing
++
++  hpd-gpios:
++    description: >
++      The GPIO pin for the HDMI hotplug detect (if it doesn't appear
++      as an interrupt/status bit in the HDMI controller itself)
++
++  dmas:
++    maxItems: 1
++    description: >
++      Should contain one entry pointing to the DMA channel used to
++      transfer audio data.
++
++  dma-names:
++    const: audio-rx
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - ddc
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/bcm2835.h>
++    #include <dt-bindings/gpio/gpio.h>
++
++    hdmi: hdmi@7e902000 {
++        compatible = "brcm,bcm2835-hdmi";
++        reg = <0x7e902000 0x600>,
++              <0x7e808000 0x100>;
++        interrupts = <2 8>, <2 9>;
++        ddc = <&i2c2>;
++        hpd-gpios = <&gpio 46 GPIO_ACTIVE_HIGH>;
++        clocks = <&clocks BCM2835_PLLH_PIX>,
++                 <&clocks BCM2835_CLOCK_HSM>;
++        clock-names = "pixel", "hdmi";
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml
+new file mode 100644
+index 000000000000..02410f8d6d49
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-hvs.yaml
+@@ -0,0 +1,37 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-hvs.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom VC4 (VideoCore4) Hardware Video Scaler
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++
++properties:
++  compatible:
++    const: brcm,bcm2835-hvs
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++
++additionalProperties: false
++
++examples:
++  - |
++    hvs@7e400000 {
++        compatible = "brcm,bcm2835-hvs";
++        reg = <0x7e400000 0x6000>;
++        interrupts = <2 1>;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml
+new file mode 100644
+index 000000000000..e60791db1fa1
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-pixelvalve0.yaml
+@@ -0,0 +1,40 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-pixelvalve0.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom VC4 (VideoCore4) PixelValve
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++
++properties:
++  compatible:
++    enum:
++      - brcm,bcm2835-pixelvalve0
++      - brcm,bcm2835-pixelvalve1
++      - brcm,bcm2835-pixelvalve2
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++
++additionalProperties: false
++
++examples:
++  - |
++    pixelvalve@7e807000 {
++        compatible = "brcm,bcm2835-pixelvalve2";
++        reg = <0x7e807000 0x100>;
++        interrupts = <2 10>; /* pixelvalve */
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml
+new file mode 100644
+index 000000000000..bb186197e471
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-txp.yaml
+@@ -0,0 +1,37 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-txp.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom VC4 (VideoCore4) TXP (writeback) Controller
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++
++properties:
++  compatible:
++    const: brcm,bcm2835-txp
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++
++additionalProperties: false
++
++examples:
++  - |
++    txp: txp@7e004000 {
++        compatible = "brcm,bcm2835-txp";
++        reg = <0x7e004000 0x20>;
++        interrupts = <1 11>;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml
+new file mode 100644
+index 000000000000..8a73780f573d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-v3d.yaml
+@@ -0,0 +1,42 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-v3d.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom VC4 (VideoCore4) V3D GPU
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++
++properties:
++  compatible:
++    enum:
++      - brcm,bcm2835-v3d
++      - brcm,cygnus-v3d
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++
++additionalProperties: false
++
++examples:
++  - |
++    v3d: v3d@7ec00000 {
++        compatible = "brcm,bcm2835-v3d";
++        reg = <0x7ec00000 0x1000>;
++        interrupts = <1 10>;
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
+new file mode 100644
+index 000000000000..0dcf0c397375
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-vc4.yaml
+@@ -0,0 +1,34 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-vc4.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom VC4 (VideoCore4) GPU
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++
++description: >
++  The VC4 device present on the Raspberry Pi includes a display system
++  with HDMI output and the HVS (Hardware Video Scaler) for compositing
++  display planes.
++
++properties:
++  compatible:
++    enum:
++      - brcm,bcm2835-vc4
++      - brcm,cygnus-vc4
++
++required:
++  - compatible
++
++additionalProperties: false
++
++examples:
++  - |
++    vc4: gpu {
++        compatible = "brcm,bcm2835-vc4";
++    };
++
++...
+diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml
+new file mode 100644
+index 000000000000..d900cc57b4ec
+--- /dev/null
++++ b/Documentation/devicetree/bindings/display/brcm,bcm2835-vec.yaml
+@@ -0,0 +1,44 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/display/brcm,bcm2835-vec.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Broadcom VC4 (VideoCore4) VEC
++
++maintainers:
++  - Eric Anholt <eric@anholt.net>
++
++properties:
++  compatible:
++    const: brcm,bcm2835-vec
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - interrupts
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/bcm2835.h>
++
++    vec: vec@7e806000 {
++        compatible = "brcm,bcm2835-vec";
++        reg = <0x7e806000 0x1000>;
++        clocks = <&clocks BCM2835_CLOCK_VEC>;
++        interrupts = <2 27>;
++    };
++
++...
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 3a003f310574..8d17e2e402fa 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -5818,7 +5818,7 @@ M:	Eric Anholt <eric@anholt.net>
+ S:	Supported
+ T:	git git://github.com/anholt/linux
+ T:	git git://anongit.freedesktop.org/drm/drm-misc
+-F:	Documentation/devicetree/bindings/display/brcm,bcm-vc4.txt
++F:	Documentation/devicetree/bindings/display/brcm,bcm2835-*.yaml
+ F:	drivers/gpu/drm/vc4/
+ F:	include/uapi/drm/vc4_drm.h
+ 
 -- 
 git-series 0.9.1
 
