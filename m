@@ -2,98 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C23001E432B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:15:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DAB21E4382
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:24:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4Fv3OJSc0taj1O5EVnNtBnwZ90GAa3h7i0sa1Kl6f8Y=; b=ACEZHsqBK0S7kNUcGLHI6jSrq
-	V0vXRgtvHtZ+xDfh8g1ct5Js0z+2yv9SetjHLes7cx29r0JKFhG5xzNWBbR2nJKztoUbaXRjlv5XE
-	TKOU6jcpJ5eRAWkcBqX5rUpZ0wQgl4wVdujCD+lAf5XaGH60HPNVtCBPAo8jO/PQL5meMgb6PdJmd
-	jmbAZQkW27JobQ/3GgquFwdnZkFKN9gd7IaVUSylDLEhgJAz8nDSvsjrLOM2W0Scera7guuM7efaF
-	Ixzg/Y7BQLzz6jCaSIM1jxMW2CYSwYij2m+IAsBnn2MwY17+qERz5dftxwSv7zFi9BK+VTg4c7C8l
-	XWz+BHM0w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=x6hNqQ8CYim6w/mkM2lPFvx2DVdDK3koUwbtAuxb6rQ=; b=PZt7wG8KqztW/a
+	CI8ykYGnUP0F8Ir20L5RY3/wJ8f0UZom2NfGKQ14WxO31lxAI8ZZWty/8hQF8xfAUTG4dfWupBBut
+	16FK4EL6XNWWLbon2ZWqIRGVaqnm2SWaZihDVhokPZQuh0wKl3Vdof5EZCqJIleaSqJPFrcf54EnT
+	VzcmkKxJRKZj6/Vo50JcIQBRKPUiGdd4GEI3MuHiu1omYxWRGoK68hLDOfXi/CuHHn8dVOK2+CQIs
+	lmHe8+RN/RKK5+pe5nhFgMu0WEtyYWJH6H1S03aoWxmbIDw5QLHTgeaEy7DykpIJOMxa2bMnndtlg
+	2TRC5egRmbrEld3ELH9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdvtn-0000ig-Bx; Wed, 27 May 2020 13:15:11 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jdw2d-0006yW-12; Wed, 27 May 2020 13:24:19 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdvtR-0000gN-IV
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:14:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590585287;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=Xp4IU27b7aXZqohMpJFZPawUcolyfH/CQm0FvETLmFY=;
- b=RQBhO4RyGmtftVuECLdSRL1cootwbRQuswQ9bmUojLtEP0hcYVKcfwIYJR3HFuiPa0dw74
- W+xmaI1rR7U8qA+AYSbA/S0Ghg+1xtx8ZShdNuF0LheUsv+Ofhh55aJdphDb72G407fKVR
- 6o8ftQ4DdCK+nT3IF1xpTWcyXe2a57Q=
-Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
- [209.85.128.71]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-205-dAOgQlVCNAajn3mY5ZFX5g-1; Wed, 27 May 2020 09:14:45 -0400
-X-MC-Unique: dAOgQlVCNAajn3mY5ZFX5g-1
-Received: by mail-wm1-f71.google.com with SMTP id l26so836552wmh.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 06:14:45 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Xp4IU27b7aXZqohMpJFZPawUcolyfH/CQm0FvETLmFY=;
- b=N3W8eSIQd32gBunxqJ7GbmhmDbq4Ip9qUCj10sBhiLBpSrCanJUe/P/Fuc9VQvnW+X
- +Z10qEQRZdKFveh5IlOTbw8NpOAjZcWoDWBbgxv0gD6y7OQJ3aoFCzGNQS1XCvpfidth
- KJ9hVFm38yY5Zn44QbhIg0gjjxo0W3GXUJz8Y2LBGG1iOYbEX777bPjiKO96vwhoTdIT
- fSwv1Xya8WyEjdHAxszzZEeWhUh7wnc/x94Q4Cze0A+ELJ2L7GAOvSYFK47C8LJD2Ib7
- /G6j56Vaveh63beUqZyknhUu1HZaygfgzsX3yACibIvH6UlnTTwHjPPlJWkUPi7FwFYm
- PV6A==
-X-Gm-Message-State: AOAM532thot8xBQKWdiMqVSwW8CpJYmyaUYRrfq7gMoRVCi4dfVzUMZv
- 1QXunN+924HzoVUzw/A/CMbFA/GUPrCwIX9z6+bH/dY+RNAVnAEsKgtDaCJp9KJRBmUvjZo/siy
- 3gN1vqjyrTNHfjg957TrDbecC8WurSYTaaEw=
-X-Received: by 2002:a1c:1b17:: with SMTP id b23mr4189520wmb.3.1590585284190;
- Wed, 27 May 2020 06:14:44 -0700 (PDT)
-X-Google-Smtp-Source: ABdhPJxXDD9pd6xDx85wKJ6DSUd0+jHdsTLXsbOgS1BfL3siVJ+UTokB2SEyRQkeYWpyFjB2Klsulg==
-X-Received: by 2002:a1c:1b17:: with SMTP id b23mr4189496wmb.3.1590585283890;
- Wed, 27 May 2020 06:14:43 -0700 (PDT)
-Received: from localhost.localdomain ([194.230.155.225])
- by smtp.gmail.com with ESMTPSA id r4sm2825862wro.32.2020.05.27.06.14.42
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 27 May 2020 06:14:43 -0700 (PDT)
-Subject: Re: [PATCH v3 0/7] Statsfs: a new ram-based file system for Linux
- kernel statistics
-To: Jakub Kicinski <kuba@kernel.org>
-References: <20200526110318.69006-1-eesposit@redhat.com>
- <20200526153128.448bfb43@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
-From: Emanuele Giuseppe Esposito <eesposit@redhat.com>
-Message-ID: <6a754b40-b148-867d-071d-8f31c5c0d172@redhat.com>
-Date: Wed, 27 May 2020 15:14:41 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jdw2S-0006w3-MZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:24:11 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id B06ABA3C;
+ Wed, 27 May 2020 15:23:57 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1590585837;
+ bh=ccL7lFOWmVadayKZJr9QvwOk55pxnfp1u48HZhwkuJI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=DjC09TBYc1PyHkWoCy6U8PtP7goKkQi9hQCHLOoMv/h9KQg8WmobggFOPe1n6BfT/
+ Aq80hrS9f8pfzHL6m4fGAu1xSTTJz9xbsdgOvcf8knIx33B4gk7YyVD0TKFc6ElD+5
+ jKwF35aTuGTi9kHBXPRBTz9NAcsifcrd/+YDcxNg=
+Date: Wed, 27 May 2020 16:23:44 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Vishal Sagar <vsagar@xilinx.com>
+Subject: Re: [PATCH v13 1/2] media: dt-bindings: media: xilinx: Add Xilinx
+ MIPI CSI-2 Rx Subsystem
+Message-ID: <20200527132344.GC6171@pendragon.ideasonboard.com>
+References: <20200512151947.120348-1-vishal.sagar@xilinx.com>
+ <20200512151947.120348-2-vishal.sagar@xilinx.com>
+ <20200524020214.GB6026@pendragon.ideasonboard.com>
+ <DM6PR02MB68762DFB8F24E485B9B302B6A7B10@DM6PR02MB6876.namprd02.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <20200526153128.448bfb43@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
-Content-Language: en-US
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <DM6PR02MB68762DFB8F24E485B9B302B6A7B10@DM6PR02MB6876.namprd02.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_061449_691888_990F03F8 
-X-CRM114-Status: GOOD (  17.56  )
+X-CRM114-CacheID: sfid-20200527_062409_034965_221F8FC8 
+X-CRM114-Status: GOOD (  33.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [207.211.31.81 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,8 +64,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,69 +75,478 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-doc@vger.kernel.org,
- netdev@vger.kernel.org,
- Emanuele Giuseppe Esposito <e.emanuelegiuseppe@gmail.com>,
- linux-kernel@vger.kernel.org, kvm-ppc@vger.kernel.org,
- Jonathan Adams <jwadams@google.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Andrew Lunn <andrew@lunn.ch>,
- Alexander Viro <viro@zeniv.linux.org.uk>, David Rientjes <rientjes@google.com>,
- linux-fsdevel@vger.kernel.org, Paolo Bonzini <pbonzini@redhat.com>,
- linux-mips@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Jacopo Mondi <jacopo@jmondi.org>, Dinesh Kumar <dineshk@xilinx.com>,
+ Hyun Kwon <hyunk@xilinx.com>, Sandip Kothari <sandipk@xilinx.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, Michal Simek <michals@xilinx.com>,
+ Luca Ceresoli <luca@lucaceresoli.net>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>, Rob Herring <robh@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Vishal,
 
->>
->> The file system is mounted on /sys/kernel/stats and would be already used
->> by kvm. Statsfs was initially introduced by Paolo Bonzini [1].
+On Wed, May 27, 2020 at 11:53:01AM +0000, Vishal Sagar wrote:
+> On Sunday, May 24, 2020 7:32 AM, Laurent Pinchart wrote:
+> > On Tue, May 12, 2020 at 08:49:46PM +0530, Vishal Sagar wrote:
+> > > Add bindings documentation for Xilinx MIPI CSI-2 Rx Subsystem.
+> > >
+> > > The Xilinx MIPI CSI-2 Rx Subsystem consists of a CSI-2 Rx controller,
+> > > a D-PHY in Rx mode and a Video Format Bridge.
+> > >
+> > > Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
+> > > Reviewed-by: Hyun Kwon <hyun.kwon@xilinx.com>
+> > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > > Reviewed-by: Luca Ceresoli <luca@lucaceresoli.net>
+> > > Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+> > > ---
+> > > v13
+> > > - Based on Laurent's suggestions
+> > > - Fixed the datatypes values as minimum and maximum
+> > > - condition added for en-vcx property
+> > >
+> > > v12
+> > > - Moved to yaml format
+> > > - Update CSI-2 and D-PHY
+> > > - Mention that bindings for D-PHY not here
+> > > - reset -> video-reset
+> > >
+> > > v11
+> > > - Modify compatible string from 4.0 to 5.0
+> > >
+> > > v10
+> > > - No changes
+> > >
+> > > v9
+> > > - Fix xlnx,vfb description.
+> > > - s/Optional/Required endpoint property.
+> > > - Move data-lanes description from Ports to endpoint property section.
+> > >
+> > > v8
+> > > - Added reset-gpios optional property to assert video_aresetn
+> > >
+> > > v7
+> > > - Removed the control name from dt bindings
+> > > - Updated the example dt node name to csi2rx
+> > >
+> > > v6
+> > > - Added "control" after V4L2_CID_XILINX_MIPICSISS_ACT_LANES as
+> > > suggested by Luca
+> > > - Added reviewed by Rob Herring
+> > >
+> > > v5
+> > > - Incorporated comments by Luca Cersoli
+> > > - Removed DPHY clock from description and example
+> > > - Removed bayer pattern from device tree MIPI CSI IP
+> > >   doesn't deal with bayer pattern.
+> > >
+> > > v4
+> > > - Added reviewed by Hyun Kwon
+> > >
+> > > v3
+> > > - removed interrupt parent as suggested by Rob
+> > > - removed dphy clock
+> > > - moved vfb to optional properties
+> > > - Added required and optional port properties section
+> > > - Added endpoint property section
+> > >
+> > > v2
+> > > - updated the compatible string to latest version supported
+> > > - removed DPHY related parameters
+> > > - added CSI v2.0 related property (including VCX for supporting upto 16
+> > >   virtual channels).
+> > > - modified csi-pxl-format from string to unsigned int type where the value
+> > >   is as per the CSI specification
+> > > - Defined port 0 and port 1 as sink and source ports.
+> > > - Removed max-lanes property as suggested by Rob and Sakari
+> > > .../bindings/media/xilinx/xlnx,csi2rxss.yaml  | 226 ++++++++++++++++++
+> > >  1 file changed, 226 insertions(+)
+> > >  create mode 100644
+> > > Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
+> > >
+> > > diff --git
+> > > a/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
+> > > b/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
+> > > new file mode 100644
+> > > index 000000000000..b0885f461785
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yam
+> > > +++ l
+> > > @@ -0,0 +1,226 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause) %YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/media/xilinx/xlnx,csi2rxss.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Xilinx MIPI CSI-2 Receiver Subsystem
+> > > +
+> > > +maintainers:
+> > > +  - Vishal Sagar <vishal.sagar@xilinx.com>
+> > > +
+> > > +description: |
+> > > +  The Xilinx MIPI CSI-2 Receiver Subsystem is used to capture MIPI
+> > > +CSI-2
+> > > +  traffic from compliant camera sensors and send the output as AXI4
+> > > +Stream
+> > > +  video data for image processing.
+> > > +  The subsystem consists of a MIPI D-PHY in slave mode which captures
+> > > +the
+> > > +  data packets. This is passed along the MIPI CSI-2 Rx IP which
+> > > +extracts the
+> > > +  packet data. The optional Video Format Bridge (VFB) converts this
+> > > +data to
+> > > +  AXI4 Stream video data.
+> > > +  For more details, please refer to PG232 Xilinx MIPI CSI-2 Receiver
+> > Subsystem.
+> > > +  Please note that this bindings includes only the MIPI CSI-2 Rx
+> > > +controller
+> > > +  and Video Format Bridge and not D-PHY.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    items:
+> > > +      - enum:
+> > > +        - xlnx,mipi-csi2-rx-subsystem-5.0
+> > > +
+> > > +  reg:
+> > > +    maxItems: 1
+> > > +
+> > > +  interrupts:
+> > > +    maxItems: 1
+> > > +
+> > > +  clocks:
+> > > +    description: List of clock specifiers
+> > > +    items:
+> > > +      - description: AXI Lite clock
+> > > +      - description: Video clock
+> > > +
+> > > +  clock-names:
+> > > +    items:
+> > > +      - const: lite_aclk
+> > > +      - const: video_aclk
+> > > +
+> > > +  xlnx,csi-pxl-format:
+> > > +    description: |
+> > > +      This denotes the CSI Data type selected in hw design.
+> > > +      Packets other than this data type (except for RAW8 and
+> > > +      User defined data types) will be filtered out.
+> > > +      Possible values are as below -
+> > > +      0x1e - YUV4228B
+> > > +      0x1f - YUV42210B
+> > > +      0x20 - RGB444
+> > > +      0x21 - RGB555
+> > > +      0x22 - RGB565
+> > > +      0x23 - RGB666
+> > > +      0x24 - RGB888
+> > > +      0x28 - RAW6
+> > > +      0x29 - RAW7
+> > > +      0x2a - RAW8
+> > > +      0x2b - RAW10
+> > > +      0x2c - RAW12
+> > > +      0x2d - RAW14
+> > > +      0x2e - RAW16
+> > > +      0x2f - RAW20
+> > > +    allOf:
+> > > +      - $ref: /schemas/types.yaml#/definitions/uint32
+> > > +      - anyOf:
+> > > +        - minimum: 0x1e
+> > > +        - maximum: 0x24
+> > > +        - minimum: 0x28
+> > > +        - maximum: 0x2f
+> > > +
+> > > +  xlnx,vfb:
+> > > +    type: boolean
+> > > +    description: Present when Video Format Bridge is enabled in IP
+> > > + configuration
+> > > +
+> > > +  xlnx,en-csi-v2-0:
+> > > +    type: boolean
+> > > +    description: Present if CSI v2 is enabled in IP configuration.
+> > > +
+> > > +  xlnx,en-vcx:
+> > > +    type: boolean
+> > > +    description: |
+> > > +      When present, there are maximum 16 virtual channels, else only 4.
+> > > +
+> > > +  xlnx,en-active-lanes:
+> > > +    type: boolean
+> > > +    description: |
+> > > +      Present if the number of active lanes can be re-configured at
+> > > +      runtime in the Protocol Configuration Register. Otherwise all lanes,
+> > > +      as set in IP configuration, are always active.
+> > > +
+> > > +  video-reset-gpios:
+> > > +    description: Optional specifier for a GPIO that asserts video_aresetn.
+> > > +    maxItems: 1
+> > > +
+> > > +  ports:
+> > > +    type: object
+> > > +
+> > > +    properties:
+> > > +      port@0:
+> > > +        type: object
+> > > +        description: |
+> > > +          Input / sink port node, single endpoint describing the
+> > > +          CSI-2 transmitter.
+> > > +
+> > > +        properties:
+> > > +          reg:
+> > > +            const: 0
+> > > +
+> > > +          endpoint:
+> > > +            type: object
+> > > +
+> > > +            properties:
+> > > +
+> > > +              data-lanes:
+> > > +                description: |
+> > > +                  This is required only in the sink port 0 endpoint which
+> > > +                  connects to MIPI CSI-2 source like sensor.
+> > > +                  The possible values are -
+> > > +                  1       - For 1 lane enabled in IP.
+> > > +                  1 2     - For 2 lanes enabled in IP.
+> > > +                  1 2 3   - For 3 lanes enabled in IP.
+> > > +                  1 2 3 4 - For 4 lanes enabled in IP.
+> > > +                items:
+> > > +                  - const: 1
+> > > +                  - const: 2
+> > > +                  - const: 3
+> > > +                  - const: 4
+> > > +
+> > > +              remote-endpoint: true
+> > > +
+> > > +            required:
+> > > +              - data-lanes
+> > > +              - remote-endpoint
+> > > +
+> > > +            additionalProperties: false
+> > > +
+> > > +        additionalProperties: false
+> > > +
+> > > +      port@1:
+> > > +        type: object
+> > > +        description: |
+> > > +          Output / source port node, endpoint describing modules
+> > > +          connected the CSI-2 receiver.
+> > > +
+> > > +        properties:
+> > > +
+> > > +          reg:
+> > > +            const: 1
+> > > +
+> > > +          endpoint:
+> > > +            type: object
+> > > +
+> > > +            properties:
+> > > +
+> > > +              remote-endpoint: true
+> > > +
+> > > +            required:
+> > > +              - remote-endpoint
+> > > +
+> > > +            additionalProperties: false
+> > > +
+> > > +        additionalProperties: false
+> > > +
+> > > +required:
+> > > +  - compatible
+> > > +  - reg
+> > > +  - interrupts
+> > > +  - clocks
+> > > +  - clock-names
+> > > +  - xlnx,csi-pxl-format
+> > > +  - ports
+> > > +
+> > > +if:
+> > > +  not:
+> > > +    required:
+> > > +      - xlnx,en-csi-v2-0
+> > > +then:
+> > > +  properties:
+> > > +    xlnx,en-vcx: false
+> > 
+> > As I've just commented on v12, I think we should condition the xlnx,csi-pxl-
+> > format property to xlnx,vfb being set. xlnx,csi-pxl-format should be removed
+> > from the required properties above, and the following conditions added:
+> > 
+> > allOf:
+> >   - if:
+> >       required:
+> >         - xlnx,vfb
+> >     then:
+> >       required:
+> >         - xlnx,csi-pxl-format
+> >     else:
+> >       properties:
+> >         xlnx,csi-pxl-format: false
+> > 
+> >   - if:
+> >       not:
+> >         required:
+> >           - xlnx,en-csi-v2-0
+> >     then:
+> >       properties:
+> >         xlnx,en-vcx: false
+> > 
+> > The 'allOf' is needed as you can't have two 'if' constructs at the top level.
+> > 
+> Thanks for sharing the explanation for this.
+> Can you please share where I can get this info?
+
+The json-schema specification is available at
+https://json-schema.org/specification.html. allOf is defined in
+https://json-schema.org/draft/2019-09/json-schema-core.html#allOf.
+
+JSON schemas are expressed in JSON format, and YAML is a (more readable)
+superset syntax of JSON. A YAML document contains lists and objects:
+
+- this
+- is
+- a
+- list
+
+object:
+  can: have
+  properties:
+    that: can
+    be: other
+    objects
+
+An object is similar to a Python dictionary, it can't have multiple
+entries with the same key. So having
+
+if:
+  required:
+    - xlnx,vfb
+then:
+  required:
+    - xlnx,csi-pxl-format
+else:
+  properties:
+    xlnx,csi-pxl-format: false
+
+if:
+  not:
+    required:
+      - xlnx,en-csi-v2-0
+then:
+  properties:
+    xlnx,en-vcx: false
+
+at the top level is not valid, the same way that
+
+properties:
+  reg:
+    maxItems: 1
+  reg:
+    maxItems: 1
+
+wouldn't be valid. The allOf object has a value that is a list of
+schemas:
+
+allOf:
+  - schema1
+  - schema2
+  - schema3
+
+and in this case, we use it with a if...then...else for each of the
+schemas. As documented in the spec, "An instance validates successfully
+against [allOf] if it validates successfully against all schemas defined
+by [allOf]'s value".
+
+allOf is also used to include sub-schemas, as explained in
+Documentation/devicetree/bindings/example-schema.yaml.
+
+  vendor,int-property:
+    description: Vendor specific properties must have a description
+    # 'allOf' is the json-schema way of subclassing a schema. Here the base
+    # type schema is referenced and then additional constraints on the values
+    # are added.
+    allOf:
+      - $ref: /schemas/types.yaml#/definitions/uint32
+      - enum: [2, 4, 6, 8, 10]
+
+If this was written
+
+  vendor,int-property:
+    $ref: /schemas/types.yaml#/definitions/uint32
+    enum: [2, 4, 6, 8, 10]
+
+we would have an issue (among other problems) if
+/schemas/types.yaml#/definitions/uint32 contained an enum, as there
+would be two enum properties for vendor,int-property.
+
+> > Please however let me know if my understanding is wrong and xlnx,csi-pxl-
+> > format is needed even when xlnx,vfb is not set. In that case please ignore this
+> > change (but please add the ... below).
 > 
-> What's the direct motivation for this work? Moving KVM stats out of
-> debugfs?
-
-There's many reasons: one of these is not using debugfs for statistics, 
-but also (and mainly) to try and have a single tool that automatically 
-takes care and displays them, instead of leaving each subsystem "on its 
-own".
-
-Sure, everyone gathers and processes stats in different ways, and the 
-aim of this tool is to hopefully be extensible enough to cover all needs.
-> In my experience stats belong in the API used for creating/enumerating
-> objects, statsfs sounds like going in the exact opposite direction -
-> creating a parallel structure / hierarchy for exposing stats.
-
-  I know
-> nothing about KVM but are you sure all the info that has to be exposed
-> will be stats?I don't understand, what do you mean here?
-
+> Ok. I will add ... in the end.
 > 
-> In case of networking we have the basic stats in sysfs, under the
-> netdevice's kobject. But since we're not using sysfs much any more
-> for config, new stats are added in netlink APIs. Again - same APIs
-> used for enumeration and config.
+> > > +
+> > > +additionalProperties: false
+> > > +
+> > > +examples:
+> > > +  - |
+> > > +    #include <dt-bindings/gpio/gpio.h>
+> > > +    xcsi2rxss_1: csi2rx@a0020000 {
+> > > +        compatible = "xlnx,mipi-csi2-rx-subsystem-5.0";
+> > > +        reg = <0x0 0xa0020000 0x0 0x10000>;
+> > > +        interrupt-parent = <&gic>;
+> > > +        interrupts = <0 95 4>;
+> > > +        xlnx,csi-pxl-format = <0x2a>;
+> > > +        xlnx,vfb;
+> > > +        xlnx,en-active-lanes;
+> > > +        xlnx,en-csi-v2-0;
+> > > +        xlnx,en-vcx;
+> > > +        clock-names = "lite_aclk", "video_aclk";
+> > > +        clocks = <&misc_clk_0>, <&misc_clk_1>;
+> > > +        video-reset-gpios = <&gpio 86 GPIO_ACTIVE_LOW>;
+> > > +
+> > > +        ports {
+> > > +            #address-cells = <1>;
+> > > +            #size-cells = <0>;
+> > > +
+> > > +            port@0 {
+> > > +                /* Sink port */
+> > > +                reg = <0>;
+> > > +                csiss_in: endpoint {
+> > > +                    data-lanes = <1 2 3 4>;
+> > > +                    /* MIPI CSI-2 Camera handle */
+> > > +                    remote-endpoint = <&camera_out>;
+> > > +                };
+> > > +            };
+> > > +            port@1 {
+> > > +                /* Source port */
+> > > +                reg = <1>;
+> > > +                csiss_out: endpoint {
+> > > +                    remote-endpoint = <&vproc_in>;
+> > > +                };
+> > > +            };
+> > > +        };
+> > > +    };
+> > 
+> > YAML files usually end with
+> > 
+> > ...
+> > 
+> > on the last line to mark the end of file.
+> > 
+> 
+> Ok I will add this to the end of the file.
+> 
+> > Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 
-I don't really know a lot about the networking subsystem, and as it was 
-pointed out in another email on patch 7 by Andrew, networking needs to 
-atomically gather and display statistics in order to make them 
-consistent, and currently this is not supported by stats_fs but could be 
-added in future.
+-- 
+Regards,
 
-In addition, right now it won't work properly if the networking 
-namespaces are enabled. That is another issue to take into 
-consideration. That's also why I marked patch 7 as "not for merge"
-
-Regarding the config, as I said the idea is to gather multiple 
-subsystems' statistics, therefore there wouldn't be a single 
-configuration method like in netlink.
-For example in kvm there are file descriptors for configuration, and 
-creating them requires no privilege, contrary to the network interfaces.
-
-Thank you,
-Emanuele
-
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
