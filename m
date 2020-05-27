@@ -2,92 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7730A1E467A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 16:54:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79DF51E469C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 16:58:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Subject:
+	References:In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rzk3knaqEqy+g6DL+6xJLmpzYtPx5eacnS3UKJH4Its=; b=HrOLXm8Ylnb+tv
-	5PyySAZSVKpGVmEOy7mxTzxfvzr6tOlmS4CXBEQZPQv32CQrwz6RYZ55lWw9GD3xaJu28s1cIY/9R
-	gm1q8wty0scgFenuFwfIKQ7DSBlgUJ083BrWvvAeWCM2A/i+asIt6ETyBuzfpVl5VkBuy/uAzg09h
-	WW/0X6TFOqk4/PskNC/3l6n+dxLyz9yEDpvIFEvTBp3Sb6FohikNvH3fMMXgoiJoskRRGFb2rUOA5
-	jLQpIU+nvfWYdFeVOZiyLJoR4BFHXxR8/MgEDZ7SfIVpIhMCTFD6+cKFZA7y36Bovm1OOfNlA1GNB
-	g6unTyFVumi7w4hrribQ==;
+	List-Owner; bh=liNOsJMJHby50oRTwGTWG1CiIP7Div3zlcBRj04AQLU=; b=B9LGb4HmqAQ2gD
+	DCIAlNR0ZC0fhw/dXxHEnvHN92O6HeK1ize20toQg/sRICpl+lTpecdfaX+A1dnQK/0cNU5iAvHgR
+	QOGzCqwYpmYFPQhAPkwXDPMC10t7ByQTO5XyY5IxU5Uz2XbaUVLRseK4dSGNqwQWkMGSE8Z8u0mx5
+	gaGHbKmXtV5XbLCpeOjUG1sMt5UWnExf5sxQynmRxlL+JPPBSKHI8YE+skayo2csnVNm/BsvPLFca
+	qPxlDJxvTkBkeTx9DlVwZPnxdZqNaHHJtWL1B6Np4gm0n8mFtCw2FKr4jxfQqAvXz2rLZ+2di6Pbx
+	V0RBmzOyPRG54WBJzhfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdxRy-0001Xv-JB; Wed, 27 May 2020 14:54:34 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jdxVf-0004Pv-0h; Wed, 27 May 2020 14:58:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdxRp-0001XQ-3c
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 14:54:27 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04REm9eF021938; Wed, 27 May 2020 16:54:11 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=+pa5HDE8S2P7eZEDEvB589bMp1LTGjav2rvU/0Z9yls=;
- b=akG+HuPdK3aWbp3HVqB15fhzua5+NP3RKh7gWn0ovyl5pqiUlJjukwlPhihcGzZ1KqNm
- 7Ie7ykioB4VC3kcL/fKQGHa4/UR6wujp2xx0XkBf+MDKsuhAMWaoTU+wLnP9fzmtgsxd
- 5XtwiYrBmBYx53W43KW/i6HsaQbdtX5lT40TsCl3fcfk6rt9w8fnlkuVKfYaojFR9EMM
- 7LL2kHLP7k7X5b4elsFYfnc2iR3cMy7dOYz7NcoOYRgnuCHNJ2CDTRVkQ+66+4UCqlAN
- qEED7QCFyO8Ix5xV1hABikfNoF55yOeVS6Cqp+FZFBdoAUMRF44T+cFjMRHMh9u+IVwE sQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 316sa26b2v-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 27 May 2020 16:54:11 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1231410002A;
- Wed, 27 May 2020 16:54:11 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E8C012BF9AF;
- Wed, 27 May 2020 16:54:10 +0200 (CEST)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 27 May
- 2020 16:54:10 +0200
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Wed, 27 May 2020 16:54:10 +0200
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: Vincent Guittot <vincent.guittot@linaro.org>
-Subject: Re: [RFC RESEND 0/3] Introduce cpufreq minimum load QoS
-Thread-Topic: [RFC RESEND 0/3] Introduce cpufreq minimum load QoS
-Thread-Index: AQHWM3CeA6bTrCFpTUymlrJxXTw8j6i7lUyAgAATBICAABI/gIAAB1gAgAAjCoA=
-Date: Wed, 27 May 2020 14:54:10 +0000
-Message-ID: <fe69390f-ea8c-b6e3-7610-d6bd73e8500d@st.com>
-References: <20200526151619.8779-1-benjamin.gaignard@st.com>
- <jhjk10xu1tq.mognet@arm.com> <ab4340c0-bda3-e752-9073-e162e6325bb1@st.com>
- <CAKfTPtBt6Ju-CnETnn6_FkgR0CAJ+jYnySz9OHP9X2hmxWHM7w@mail.gmail.com>
- <51917583-f8ff-3933-7783-2eedc91484a4@st.com>
-In-Reply-To: <51917583-f8ff-3933-7783-2eedc91484a4@st.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.46]
-Content-ID: <B4421090511CA045BA0A372BCCB072C0@st.com>
-MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-05-27_03:2020-05-27,
- 2020-05-27 signatures=0
+ id 1jdxVV-0004PS-Ib
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 14:58:14 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 753DB2088E;
+ Wed, 27 May 2020 14:58:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590591493;
+ bh=n3T3SCw7AuNm+LGdYO+r5qpnOKzrU0x+b1p1GFAuRg4=;
+ h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+ b=clIMJ+gt1V10YcDy1CW3cRioiIu1IIxtmB1+ghdi9LkQDIaTTRX/HryEFwOMSbSCH
+ oxse4sGd3xANMflPwtPhJwIN0uX2HKBOtc9GZa8shaxIrcPNxZIFiHSiX9KTzr3s9O
+ aVmnYXR9VZlp26At+IKdgWeccHt5ISL07FHx/yI0=
+Date: Wed, 27 May 2020 15:58:10 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Robert Jarzmik <robert.jarzmik@free.fr>, Takashi Iwai <tiwai@suse.com>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
+ Liam Girdwood <lgirdwood@gmail.com>, Wei Yongjun <weiyongjun1@huawei.com>,
+ Daniel Mack <daniel@zonque.org>
+In-Reply-To: <20200527030210.124393-1-weiyongjun1@huawei.com>
+References: <20200527030210.124393-1-weiyongjun1@huawei.com>
+Subject: Re: [PATCH -next] ASoC: mmp-sspa: Fix return value check in
+ asoc_mmp_sspa_probe()
+Message-Id: <159059147354.50918.14800110942668588703.b4-ty@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_075425_508188_FF7E25D9 
-X-CRM114-Status: GOOD (  22.05  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200527_075813_635518_FA4B6A65 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,87 +78,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "len.brown@intel.com" <len.brown@intel.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "pavel@ucw.cz" <pavel@ucw.cz>, "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Hugues FRUCHET <hugues.fruchet@st.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- Valentin Schneider <valentin.schneider@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: alsa-devel@alsa-project.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCk9uIDUvMjcvMjAgMjo0OCBQTSwgQmVuamFtaW4gR0FJR05BUkQgd3JvdGU6DQo+DQo+DQo+
-IE9uIDUvMjcvMjAgMjoyMiBQTSwgVmluY2VudCBHdWl0dG90IHdyb3RlOg0KPj4gT24gV2VkLCAy
-NyBNYXkgMjAyMCBhdCAxMzoxNywgQmVuamFtaW4gR0FJR05BUkQNCj4+IDxiZW5qYW1pbi5nYWln
-bmFyZEBzdC5jb20+IHdyb3RlOg0KPj4+DQo+Pj4NCj4+PiBPbiA1LzI3LzIwIDEyOjA5IFBNLCBW
-YWxlbnRpbiBTY2huZWlkZXIgd3JvdGU6DQo+Pj4+IEhpIEJlbmphbWluLA0KPj4+Pg0KPj4+PiBP
-biAyNi8wNS8yMCAxNjoxNiwgQmVuamFtaW4gR2FpZ25hcmQgd3JvdGU6DQo+Pj4+PiBBIGZpcnN0
-IHJvdW5kIFsxXSBvZiBkaXNjdXNzaW9ucyBhbmQgc3VnZ2VzdGlvbnMgaGF2ZSBhbHJlYWR5IGJl
-IA0KPj4+Pj4gZG9uZSBvbg0KPj4+Pj4gdGhpcyBzZXJpZXMgYnV0IHdpdGhvdXQgZm91bmQgYSBz
-b2x1dGlvbiB0byB0aGUgcHJvYmxlbS4gSSByZXNlbmQgDQo+Pj4+PiBpdCB0bw0KPj4+Pj4gcHJv
-Z3Jlc3Mgb24gdGhpcyB0b3BpYy4NCj4+Pj4+DQo+Pj4+IEFwb2xvZ2llcyBmb3Igc2xlZXBpbmcg
-b24gdGhhdCBwcmV2aW91cyB0aHJlYWQuDQo+Pj4+DQo+Pj4+IFNvIHdoYXQgaGFkIGJlZW4gc3Vn
-Z2VzdGVkIG92ZXIgdGhlcmUgd2FzIHRvIHVzZSB1Y2xhbXAgdG8gYm9vc3QgdGhlDQo+Pj4+IGZy
-ZXF1ZW5jeSBvZiB0aGUgaGFuZGxpbmcgdGhyZWFkOyBob3dldmVyIGlmIHlvdSB1c2UgdGhyZWFk
-ZWQgSVJRcyB5b3UNCj4+Pj4gZ2V0IFJUIHRocmVhZHMsIHdoaWNoIGFscmVhZHkgZ2V0IHRoZSBt
-YXggZnJlcXVlbmN5IGJ5IGRlZmF1bHQgKGF0IA0KPj4+PiBsZWFzdA0KPj4+PiB3aXRoIHNjaGVk
-dXRpbCkuDQo+Pj4+DQo+Pj4+IERvZXMgdGhhdCBub3Qgd29yayBmb3IgeW91LCBhbmQgaWYgc28s
-IHdoeT8NCj4+PiBUaGF0IGRvZXNuJ3Qgd29yayBiZWNhdXNlIGFsbW9zdCBldmVyeXRoaW5nIGlz
-IGRvbmUgYnkgdGhlIGhhcmR3YXJlIA0KPj4+IGJsb2Nrcw0KPj4+IHdpdGhvdXQgY2hhcmdlIHRo
-ZSBDUFUgc28gdGhlIHRocmVhZCBpc24ndCBydW5uaW5nLiBJIGhhdmUgZG9uZSB0aGUNCj4+PiB0
-ZXN0cyB3aXRoIHNjaGVkdXRpbA0KPj4+IGFuZCBvbmRlbWFuZCBzY2hlZHVsZXIgKHdoaWNoIGlz
-IHRoZSBvbmUgSSdtIHRhcmdldGluZykuIEkgaGF2ZSBubw0KPj4+IGlzc3VlcyB3aGVuIHVzaW5n
-DQo+Pj4gcGVyZm9ybWFuY2Ugc2NoZWR1bGVyIGJlY2F1c2UgaXQgYWx3YXlzIGtlZXAgdGhlIGhp
-Z2hlc3QgZnJlcXVlbmNpZXMuDQo+PiBJTUhPLCB0aGUgb25seSB3YXkgdG8gZW5zdXJlIGEgbWlu
-IGZyZXF1ZW5jeSBmb3IgYW55dGhpbmcgZWxzZSB0aGFuIGENCj4+IHRocmVhZCBpcyB0byB1c2Ug
-ZnJlcV9xb3NfYWRkX3JlcXVlc3QoKSBqdXN0IGxpa2UgY3B1ZnJlcSBjb29saW5nDQo+PiBkZXZp
-Y2UgYnV0IGZvciB0aGUgb3Bwb3NpdGUgUW9TLiBUaGlzIGNhbiBiZSBhcHBsaWVkIG9ubHkgb24g
-dGhlDQo+PiBmcmVxdWVuY3kgZG9tYWluIG9mIHRoZSBDUFUgd2hpY2ggaGFuZGxlcyB0aGUgaW50
-ZXJydXB0Lg0KPiBJIHdpbGwgZ2l2ZSBhIHRyeSB3aXRoIHRoaXMgaWRlYS4NCj4gVGhhbmtzLg0K
-DQpBZGRpbmcgZnJlcV9xb3NfYWRkX3JlcXVlc3QoRlJFUV9RT1NfTUlOKSB3aGVuIHN0YXJ0aW5n
-IHN0cmVhbWluZyBmcmFtZXMNCnNvbHZlIG15IHByb2JsZW0uIEkgcmVtb3ZlIHRoZSByZXF1ZXN0
-IGF0IHRoZSBlbmQgb2YgdGhlIHN0cmVhbWluZyB0byANCnJlc3RvcmUNCnRoZSBkZWZhdWx0IHZh
-bHVlLg0KDQpCZW5qYW1pbg0KDQoNCj4+IEhhdmUgeW91IGFsc28gY2hlY2tlZCB0aGUgd2FrZXVw
-IGxhdGVuY3kgb2YgeW91ciBpZGxlIHN0YXRlID8NCj4gSXQganVzdCBjb3VsZCBnbyBpbiBXRkkg
-c28gbGF0ZW5jeSBzaG91bGQgYmUgbWluaW1hbC4NCj4+DQo+Pj4NCj4+Pj4+IFdoZW4gc3RhcnQg
-c3RyZWFtaW5nIGZyb20gdGhlIHNlbnNvciB0aGUgQ1BVIGxvYWQgY291bGQgcmVtYWluIA0KPj4+
-Pj4gdmVyeSBsb3cNCj4+Pj4+IGJlY2F1c2UgYWxtb3N0IGFsbCB0aGUgY2FwdHVyZSBwaXBlbGlu
-ZSBpcyBkb25lIGluIGhhcmR3YXJlIChpLmUuIA0KPj4+Pj4gd2l0aG91dA0KPj4+Pj4gdXNpbmcg
-dGhlIENQVSkgYW5kIGxldCBiZWxpZXZlIHRvIGNwdWZyZXEgZ292ZXJub3IgdGhhdCBpdCBjb3Vs
-ZCANCj4+Pj4+IHVzZSBsb3dlcg0KPj4+Pj4gZnJlcXVlbmNpZXMuIElmIHRoZSBnb3Zlcm5vciBk
-ZWNpZGVzIHRvIHVzZSBhIHRvbyBsb3cgZnJlcXVlbmN5IHRoYXQNCj4+Pj4+IGJlY29tZXMgYSBw
-cm9ibGVtIHdoZW4gd2UgbmVlZCB0byBhY2tub3dsZWRnZSB0aGUgaW50ZXJydXB0IGR1cmluZyAN
-Cj4+Pj4+IHRoZQ0KPj4+Pj4gYmxhbmtpbmcgdGltZS4NCj4+Pj4+IFRoZSBkZWxheSB0byBhY2sg
-dGhlIGludGVycnVwdCBhbmQgcGVyZm9ybSBhbGwgdGhlIG90aGVyIGFjdGlvbnMgDQo+Pj4+PiBi
-ZWZvcmUNCj4+Pj4+IHRoZSBuZXh0IGZyYW1lIGlzIHZlcnkgc2hvcnQgYW5kIGRvZXNuJ3QgYWxs
-b3cgdG8gdGhlIGNwdWZyZXEgDQo+Pj4+PiBnb3Zlcm5vciB0bw0KPj4+Pj4gcHJvdmlkZSB0aGUg
-cmVxdWlyZWQgYnVyc3Qgb2YgcG93ZXIuIFRoYXQgbGVkIHRvIGRyb3AgdGhlIGhhbGYgb2YgDQo+
-Pj4+PiB0aGUgZnJhbWVzLg0KPj4+Pj4NCj4+Pj4+IFRvIGF2b2lkIHRoaXMgcHJvYmxlbSwgRENN
-SSBkcml2ZXIgaW5mb3JtcyB0aGUgY3B1ZnJlcSBnb3Zlcm5vcnMgDQo+Pj4+PiBieSBhZGRpbmcN
-Cj4+Pj4+IGEgY3B1ZnJlcSBtaW5pbXVtIGxvYWQgUW9TIHJlc3F1ZXN0Lg0KPj4+Pj4NCj4+Pj4+
-IEJlbmphbWluDQo+Pj4+Pg0KPj4+Pj4gWzFdIGh0dHBzOi8vbGttbC5vcmcvbGttbC8yMDIwLzQv
-MjQvMzYwDQo+Pj4+Pg0KPj4+Pj4gQmVuamFtaW4gR2FpZ25hcmQgKDMpOg0KPj4+Pj4gwqDCoMKg
-IFBNOiBRb1M6IEludHJvZHVjZSBjcHVmcmVxIG1pbmltdW0gbG9hZCBRb1MNCj4+Pj4+IMKgwqDC
-oCBjcHVmcmVxOiBnb3Zlcm5vcjogVXNlIG1pbmltdW0gbG9hZCBRb1MNCj4+Pj4+IMKgwqDCoCBt
-ZWRpYTogc3RtMzItZGNtaTogSW5mb3JtIGNwdWZyZXEgZ292ZXJub3JzIGFib3V0IGNwdSBsb2Fk
-IG5lZWRzDQo+Pj4+Pg0KPj4+Pj4gwqDCoCBkcml2ZXJzL2NwdWZyZXEvY3B1ZnJlcV9nb3Zlcm5v
-ci5jwqDCoMKgwqDCoMKgwqAgfMKgwqAgNSArDQo+Pj4+PiDCoMKgIGRyaXZlcnMvbWVkaWEvcGxh
-dGZvcm0vc3RtMzIvc3RtMzItZGNtaS5jIHzCoMKgIDggKysNCj4+Pj4+IMKgwqAgaW5jbHVkZS9s
-aW51eC9wbV9xb3MuaMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHzCoCAx
-MiArKw0KPj4+Pj4gwqDCoCBrZXJuZWwvcG93ZXIvcW9zLmPCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHwgMjEzIA0KPj4+Pj4gKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKysrDQo+Pj4+PiDCoMKgIDQgZmlsZXMgY2hhbmdlZCwgMjM4IGluc2VydGlvbnMo
-KykNCj4NCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+On Wed, 27 May 2020 03:02:10 +0000, Wei Yongjun wrote:
+> In case of error, the function devm_ioremap() returns NULL pointer not
+> ERR_PTR(). The IS_ERR() test in the return value check should be
+> replaced with NULL test.
+
+Applied to
+
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-next
+
+Thanks!
+
+[1/1] ASoC: mmp-sspa: Fix return value check in asoc_mmp_sspa_probe()
+      commit: 185457632ba344d3100e6bdd8ba839b959521813
+
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
