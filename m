@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DDD41E497E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:12:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1C601E4980
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:12:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i8wK1h80/NLEopiiAPf5T5YrFjZk0SYoGcxYNcEah2U=; b=Vt+zPTEiSKspnS
-	cUnQqeFIEx5M/qKV6Hm3BVDWDCi9kaU+LzFu1zUD0LKBgrupF0a6edMYjD4129X1i/COmw3X2Jq+c
-	0F1Ym7obtvtVPUO3JKso2Tm23m9J6cmwVIpbjiiXGaA+Fu19xEgN4gW1W4Ios6nPuha/QyBQutM65
-	J9Z7cS+ehgNq/zvP6Js/c0VGA/TXAJqpWx0i+u95VPF4udeyP0Z7Ho3JKsMZ/az0rsfYgj5isSmf9
-	RPUp9x/vU8hp7/4z7BOHL8ns5PcHPaQFlzRBin6Nid/19k14wip0TXPl4bjsUESt2YrSVyc46SUyk
-	NJO6LVae368+BoRZgc5g==;
+	List-Owner; bh=2L3wxn0kVWGQ0pxJ/+g+zFIhG/qMoV9fX9sTqp+qW5k=; b=dw9VVmvVID+t3s
+	v3ctoLAA8xG0PWKqNOrFOK3g7/wvIzOEtopLk1rPAFVeFIVByprv+rn4uf0rMKRNMf7Dx2djmH1sx
+	P4HQeGLheE9B/clki8hqz+NqhiYMZZjHc0G+1wP+2T/3mtJfcnlr/sapbLyqfjrV8kZgV8bn0eDhB
+	mwPYQtJHmhqu6WCHvkqLr4BVAc630XIzE6yhaID19j3e9ulSlG95ScpX08HWiWk9YDNaKdhZ7wQ1q
+	Poz/qBKxmANZ0/GT18CFNCTI0gosqVyFelrWszRX7jeqT5HcfZYoNuySBYNcvm+98nbRjPIKf4aaO
+	aZTvpcPM93v8ju3hjt8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyet-0000L0-JD; Wed, 27 May 2020 16:11:59 +0000
+	id 1jdyfC-0000Zn-9s; Wed, 27 May 2020 16:12:18 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyJs-00087l-GF; Wed, 27 May 2020 15:50:23 +0000
+ id 1jdyJu-0008Ko-Qp; Wed, 27 May 2020 15:50:24 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id F1C9758206B;
- Wed, 27 May 2020 11:50:14 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:14 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 7C75958206F;
+ Wed, 27 May 2020 11:50:16 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:16 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=AYntIEGn/N8Te
- jy9EdOiCZqtq7NEMMt3i/z/5gIyw54=; b=VvbBmlSjZBuMrFAaip71bI8fXKq6Z
- 3LrLWECRjAxsoDoK9cSBJ1xXioJN7ZTYDQfkQKq3cpHFeLiIUmHSl8bOAcAP67M5
- KMDAnMHIArA3s/NZmB7JeGUuxpp7B5HwfGGS5SRwbSmJkxmNKSFABerTJHXVML2F
- LG6UP5LUFUL6sVlA305edDOgCn3xWe4ubldFSkU1xMKrG3ks14P5PwydABNDTqR3
- wgmiTcRHqqgSkna+vhTcNMbQylmg60dWgrLrY1pjAy3Mcp9+uk+D36tnkx6rBOnI
- KOq82DkgQKyAoVk21LupYTHoWadtdQej1JQ8ELNKJsZNrPewzP+TIJpRQ==
+ :mime-version:content-transfer-encoding; s=fm2; bh=84iVjZEVQJdxU
+ ub2RqdoiAca3IQhRqY+Zryl/iBO7LM=; b=aIQNde5AckuCt3Hui7I4pRqEy3l5V
+ J0h1tbjbDzXbOD/nRZy5IueBPtl7ump3pxopfEKK8LYqkHsRWLnqCGAyMbq3cFzJ
+ O4xY+sw9TWWnm46GcNa0iNJ/GIK492oXV/9nJNpNX49tejKq/ZtnBWVhFvgITrn2
+ ggDEMO9jnJSuKG6ISJouYZrVWX8EI7MNBfsz5xZnnm82JrptV69LJaU7AvlaKnVB
+ ZGjlhTvXkKD7+Hg1RmZ687d5GZ2S2TrMiteifzFmXS+U6B3rJvSbO/MW0RJgcYBC
+ 56NMteCKgcRm9J99kNZZgS/utQrTsu2S2zcbTAETSkjJw3RHcD00Wjksw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=AYntIEGn/N8Tejy9EdOiCZqtq7NEMMt3i/z/5gIyw54=; b=oE5qmfKt
- l+bCXrZH1oU0cPyl0B8xcM1twPXQbg30RYWJMgIRm1uJBik04qqeanBr2aVKYjtY
- lK5Zs70pv71sJ8Q8u8P4seitPE3Gt+07z53HNsLI+9TxbqHWCkVlSZF715dNZywg
- a+yVgiPGYysJxLrPBl7boPfbjCh0rA2wJDL6fjON7e0YuQIV0CQ6qV8Fj0MFNLYO
- kJyRj0GLrsrvFdlpWF8AaWWZ9rPG6vz/gbsMuTBx3N822xNeA+R5eCF5FEjGGjds
- BK+q4+nlv6V1yOY6fNZKNv4blZvXMH/iPrbxFtvsQLLKSlPhxTJ8rI8Q0JIWiG2j
- IdW0t0tGbq8vXQ==
-X-ME-Sender: <xms:NozOXrZJAirHLCGLi6CgUA9SdCmX6UbVig1WaAOwTi7fmXNgZIOVsA>
+ fm2; bh=84iVjZEVQJdxUub2RqdoiAca3IQhRqY+Zryl/iBO7LM=; b=2/J0b4qf
+ MT7M5Zdxkn9Othpn8jgwdJuMFQshdII71CyzdxHztsnMbNWDfKy3X2FwKpzilVN7
+ ueUY9CgEMJ0uNpHYrF43OvhjqzQSkDMYX7agVoIBqKcmL4Kmla4HUgi9fEo5xZNr
+ TY3vIvhXZSaebFAMVzo/llco70e0UQ2yZDVoTHTIx3+GeQEhQ95B6uhkyZGfTKOk
+ Eq2v5690/s5lTzqUHMiPBoEcKeuEHnz/Neqg8GD9ytyiSAUqyKjxvvs8uKts93Uz
+ IGw6G5uOmBxJlf+kn6beMxDv0n0I/DBRU19IdmWl6iOW4z7h0kXGc0qyP4r+Y8vc
+ vLzch9Bx3fm+BQ==
+X-ME-Sender: <xms:OIzOXqyRAND6Nnp9Wv8QYqbqenPs9WcUabo57MfsEKh98xu8G7gBzg>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,27 +56,28 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepudejne
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:NozOXqYC8QAJCS474wOqrNWz5Mm-iyVedAl-B-yGkTuSXxgVeqQ53g>
- <xmx:NozOXt-cZ0uIX0FczYgl2LAJvslHFDhwGShmg1eA40y8AAGQPCn7xw>
- <xmx:NozOXhqRhXYGsb4nF-2m0IX2VjlQNOD7zg5i1UMHGcwyc7jpjXkpLg>
- <xmx:NozOXmKC2ITdjF0Q2I1311JWogleQ68o2GOpT4ZqpwdgWlUoJ05lwQ>
+X-ME-Proxy: <xmx:OIzOXmSqpM3M_jL8U0mI57vamMWWmUgoyCrQ04yV_4w6VEC-EOWifw>
+ <xmx:OIzOXsW8wkMH2nHkWjYyi_AQXkH6uvbJi6zWDCwhWvHSLXU_rfq0cg>
+ <xmx:OIzOXgjKAvBv5k_HZHqY0tWmL_sjj9TQidoFbWoEvc47BxqkhR6UQw>
+ <xmx:OIzOXqCV3Sd724CtH92CfnW84S3Q-j762vGAhDj-WphHL6rkDpEjWQ>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 90341328005D;
- Wed, 27 May 2020 11:50:14 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id 1D5A83061CCB;
+ Wed, 27 May 2020 11:50:16 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 036/105] drm/vc4: crtc: Rename HDMI encoder type to HDMI0
-Date: Wed, 27 May 2020 17:48:06 +0200
-Message-Id: <0304b076c3a67091c8eabc005b827032827e9339.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 037/105] drm/vc4: crtc: Add HDMI1 encoder type
+Date: Wed, 27 May 2020 17:48:07 +0200
+Message-Id: <5ddada6589946b06858ed78b1f6e27abc611f19d.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085016_770606_7C7C7E25 
-X-CRM114-Status: GOOD (  10.50  )
+X-CRM114-CacheID: sfid-20200527_085019_208688_8754AE1B 
+X-CRM114-Status: UNSURE (   7.28  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -117,56 +118,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The previous generations were only supporting a single HDMI controller, but
-that's about to change, so put an index as well to differentiate between
-the two controllers.
+The BCM2711 sports a second HDMI controller, so let's add that second HDMI
+encoder type.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_crtc.c | 2 +-
- drivers/gpu/drm/vc4/vc4_drv.h  | 2 +-
- drivers/gpu/drm/vc4/vc4_hdmi.c | 2 +-
- 3 files changed, 3 insertions(+), 3 deletions(-)
+ drivers/gpu/drm/vc4/vc4_drv.h | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
-index 12cfa0fb2e19..07e23f76451c 100644
---- a/drivers/gpu/drm/vc4/vc4_crtc.c
-+++ b/drivers/gpu/drm/vc4/vc4_crtc.c
-@@ -1111,7 +1111,7 @@ static const struct vc4_crtc_data bcm2835_pv2_data = {
- 	.fifo_depth = 64,
- 	.pixels_per_clock = 1,
- 	.encoder_types = {
--		[PV_CONTROL_CLK_SELECT_DPI_SMI_HDMI] = VC4_ENCODER_TYPE_HDMI,
-+		[PV_CONTROL_CLK_SELECT_DPI_SMI_HDMI] = VC4_ENCODER_TYPE_HDMI0,
- 		[PV_CONTROL_CLK_SELECT_VEC] = VC4_ENCODER_TYPE_VEC,
- 	},
- };
 diff --git a/drivers/gpu/drm/vc4/vc4_drv.h b/drivers/gpu/drm/vc4/vc4_drv.h
-index 1f62dffd6676..cc30e54d75ab 100644
+index cc30e54d75ab..974cda3c5292 100644
 --- a/drivers/gpu/drm/vc4/vc4_drv.h
 +++ b/drivers/gpu/drm/vc4/vc4_drv.h
-@@ -429,7 +429,7 @@ to_vc4_plane_state(struct drm_plane_state *state)
- 
+@@ -430,6 +430,7 @@ to_vc4_plane_state(struct drm_plane_state *state)
  enum vc4_encoder_type {
  	VC4_ENCODER_TYPE_NONE,
--	VC4_ENCODER_TYPE_HDMI,
-+	VC4_ENCODER_TYPE_HDMI0,
+ 	VC4_ENCODER_TYPE_HDMI0,
++	VC4_ENCODER_TYPE_HDMI1,
  	VC4_ENCODER_TYPE_VEC,
  	VC4_ENCODER_TYPE_DSI0,
  	VC4_ENCODER_TYPE_DSI1,
-diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index 625bfcf52dc4..19a0780a14bd 100644
---- a/drivers/gpu/drm/vc4/vc4_hdmi.c
-+++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -1309,7 +1309,7 @@ static int vc4_hdmi_bind(struct device *dev, struct device *master, void *data)
- 					GFP_KERNEL);
- 	if (!vc4_hdmi_encoder)
- 		return -ENOMEM;
--	vc4_hdmi_encoder->base.type = VC4_ENCODER_TYPE_HDMI;
-+	vc4_hdmi_encoder->base.type = VC4_ENCODER_TYPE_HDMI0;
- 	hdmi->encoder = &vc4_hdmi_encoder->base.base;
- 
- 	hdmi->pdev = pdev;
 -- 
 git-series 0.9.1
 
