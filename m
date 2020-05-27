@@ -2,72 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82C911E474D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:27:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A82A1E481C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 17:47:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P8aBWADQGF/3f8F8LLHUfWUnujHfXBSYTQTwX/Z+3B8=; b=MWJYgSH1y6+S/u
-	noFO0JIfBZV5yBzCtq6jI3nb437Ehm+O3OYWoPFh0k/EYuBL2T6Q3MLElxKebERnHcLAtKCAIODgt
-	OqG3QasMbVvcu7lbt1T3ksf0LdAwOg7EC0J+dI2jJ2PifvDj9E7ydNqahoc/PFj7EwjJknD+aHjjc
-	lIXOUw25WW/HKacJwlNFa3ZSeTP9ZIznBjFxOWG9JYRWUb66XTQxVJ54EQz3Q315blEj0ldcI+UCc
-	D9dLZiOjyIk//0UcJj7WW7nwuIGibNm8gIOzjWmwuPEeHFVA+0iSYnt9uZEXCziIuDVOvLT1/hr3d
-	pDbVZ10T0qutVpA4DDlQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3NZ11qg2Zw7tUOo0uzXnqfsrXyUcg7UGStXiyXabtak=; b=En6RA23ge/aysu
+	zKVaBDBCsp+XdXy8FLfm0AC8J9GHEyhq8RpReG7pNda0cfd5IVFFP+B6ji2W1q8SBxTDmM0IkiZ7j
+	k9gKIfXNXmrjO66E7ajV5CujDfKNYyBdni9yzJGA6QmSEiFsAWPKu5TmQQ3fD8FXn8DKZUaq9s5w9
+	P9+i3vMhu182kM0s/xqkT+zlQLNo3cmUNtHrCsAMzCzvKFIFw+OZZltMQ9x7F0/Hjy/Jvx3voAWka
+	09QAeYWPuq7Z+h0yiXWPdTZeoMTj3kpkMQb5uPJRYjE0hZ7OzPdb3f4G4qlno/j6zqctqDUT85UaS
+	Um1OUIAeUJo2QHXLQkpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdxy6-00082E-NR; Wed, 27 May 2020 15:27:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jdyHR-0004cD-9R; Wed, 27 May 2020 15:47:45 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdxxw-00081o-2A; Wed, 27 May 2020 15:27:38 +0000
-Received: from mail-ot1-f42.google.com (mail-ot1-f42.google.com
- [209.85.210.42])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3CB3720C09;
- Wed, 27 May 2020 15:27:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590593255;
- bh=xAFJoL70d9ptR2NlMMkE9/iL0C+dD4a1o8Ji7U0Hb74=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=meKNxFtFPc8ejIUrmHPjvQMpux3lpz4nVSfwAHxcfmqFZ3ffOKRtZjEPFrDdeI51n
- 0cpc8RWD9qbwCysQC9ittfZSPQk7aOa49Y69A+/XEqOTxoaUO0uG5DBBrkFbDGaxIM
- MKc9Hgg4/rrqQm3VTvEar4SzP9NNHGMqntCLgOSw=
-Received: by mail-ot1-f42.google.com with SMTP id h7so19471598otr.3;
- Wed, 27 May 2020 08:27:35 -0700 (PDT)
-X-Gm-Message-State: AOAM533wxk1NqXqH2tCxfHQkEwD+AjTJCnGUuA41aoqdhQXOfjoYNV4u
- SN4QqTzLBEAZ+nvgApxO0TtvnMkTIOSGuSAh1w==
-X-Google-Smtp-Source: ABdhPJwAUmHkMY1nUf8HbXBqDXmvGKeOnwn9QC9NkyEmRMRdlXEbaZqugbcVRvRSQNkjP5kSY2sfkSI9xI4FKt86cmQ=
-X-Received: by 2002:a05:6830:3104:: with SMTP id
- b4mr5098223ots.192.1590593254440; 
- Wed, 27 May 2020 08:27:34 -0700 (PDT)
+ id 1jdyFO-000381-LX; Wed, 27 May 2020 15:45:42 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 6717C581DB3;
+ Wed, 27 May 2020 11:45:29 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:45:29 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm2; bh=nXEtTH5SN5wx/wDh0BQNd6ms4U
+ oDlGel5I6M1n2fXwI=; b=PxbclBKz8Er5HtpgsLeicOCTtceqszSqGWtRP6cApw
+ nNZKMMzZbOXxdkiv6zDKdb4DGPvU425JMeMI6xC3Ecz/08aS4VDy3iifb5nVTWqu
+ 5fAYPJt9Rj9iHOUKabLnNvQXoom2VNoKnY8iepfAescYXVI8juJUZH8fBQxciWFL
+ uNRDaY5MOLv50LRiVpRE17Uf2nDRoBkSfYtCLXJMFfvxGjdRTY5pSAJaZC4KDkGR
+ pgPZhh7mSksn+8Z1gleGZ5o5RoKlx+r0TDE5SrF+90eWIeFVYW/RLxn0gXBQFJRm
+ oyMAFqcfckc3EPKcknF7Oe65GZQ19eFGL43N+JIeiu2g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=nXEtTH5SN5wx/wDh0
+ BQNd6ms4UoDlGel5I6M1n2fXwI=; b=W9XVPXnUmB1MYQqrHRHK2CkyPEtGupI8W
+ 9usMfEOWnFkz9eq0MpsZ39U7etnBdQO4jDmz0eekqTL+pqmdwz/5db+OWu7/GpNC
+ U9VFRVTYXp7s+WMgK62fdA58Ei1XxcdTPEDYabpxEDvgVee/ukui4fF/dcGuvZSr
+ GuGtDooZQoquPEKsPqflr0Rf6gY4x5Dq4vSY8NmJF4oSu+hygHryxnFxgmA1C7Nv
+ DxmIrIxVCzhEWNQtHql83EsjuEZygOA9JIoUIy5q7pIFaHc+HM2GBL9+5M4BDcjr
+ ws5pfybztPyTCyEQUlUR4/vnkI13AKNQrFsETFbQNP4w0DGWidz6A==
+X-ME-Sender: <xms:FovOXpUS4_LPJ4_XrtTtVtynt6kIauUKIB5xPc8LHTQlhXluCN8llA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeefucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhephffvufffkffoggfgsedtkeertdertddtnecuhfhrohhmpeforgigihhmvgcu
+ tfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrthhtvg
+ hrnhepjeffheduvddvvdelhfegleelfffgieejvdehgfeijedtieeuteejteefueekjeeg
+ necukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrg
+ hrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:FovOXpnjsgwi0RuRDvlaMtNWUuS23P5zgkBksRtzP5_Rq3DKNJA7BQ>
+ <xmx:FovOXla2EpcVKZW02NOe8-YWL01yVaqZfn0HaQi9wqMLGvKIMj9vpg>
+ <xmx:FovOXsVS9BJs93bc3Ajo7ZXY7_Tsrj2BswUZ09hCd5tTa1TysRpshA>
+ <xmx:GYvOXhfR68HQ3W7Tx8Ivy0GfmxXYtF6F6LOjvFKcOm8Sjis9q95fEQ>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 5D129328005E;
+ Wed, 27 May 2020 11:45:26 -0400 (EDT)
+From: Maxime Ripard <maxime@cerno.tech>
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Subject: [PATCH v3 00/25] clk: bcm: rpi: Add support for BCM2711 firmware
+ clocks
+Date: Wed, 27 May 2020 17:44:56 +0200
+Message-Id: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
- <20200523084103.31276-2-dongchun.zhu@mediatek.com>
- <20200526182847.GA92449@bogus>
- <1590569355.8804.448.camel@mhfsdcap03>
-In-Reply-To: <1590569355.8804.448.camel@mhfsdcap03>
-From: Rob Herring <robh@kernel.org>
-Date: Wed, 27 May 2020 09:27:22 -0600
-X-Gmail-Original-Message-ID: <CAL_Jsq+sN0SVidTrY0ODXEkzkxYFvG1FTnL0oRQBSKf=ynLdyQ@mail.gmail.com>
-Message-ID: <CAL_Jsq+sN0SVidTrY0ODXEkzkxYFvG1FTnL0oRQBSKf=ynLdyQ@mail.gmail.com>
-Subject: Re: [V9,
- 1/2] media: dt-bindings: media: i2c: Document OV02A10 bindings
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_082736_144641_16240FA9 
-X-CRM114-Status: GOOD (  26.54  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200527_084538_849089_E0E93C84 
+X-CRM114-Status: GOOD (  12.12  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -75,7 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,213 +104,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Louis Kuo <louis.kuo@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- =?UTF-8?B?U2hlbmduYW4gV2FuZyAo546L5Zyj55S3KQ==?= <shengnan.wang@mediatek.com>,
- Tomasz Figa <tfiga@chromium.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Nicolas Boichat <drinkcat@chromium.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>,
+ Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
+ Kamal Dasu <kdasu.kdev@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ Maxime Ripard <maxime@cerno.tech>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 2:51 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
->
-> Hi Rob,
->
-> Thanks for the review. Please see my replies below.
->
-> On Tue, 2020-05-26 at 12:28 -0600, Rob Herring wrote:
-> > On Sat, May 23, 2020 at 04:41:02PM +0800, Dongchun Zhu wrote:
-> > > Add DT bindings documentation for Omnivision OV02A10 image sensor.
-> > >
-> > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > ---
-> > >  .../bindings/media/i2c/ovti,ov02a10.yaml           | 172 +++++++++++++++++++++
-> > >  MAINTAINERS                                        |   7 +
-> > >  2 files changed, 179 insertions(+)
-> > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > > new file mode 100644
-> > > index 0000000..56f31b5
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > > @@ -0,0 +1,172 @@
-> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > +# Copyright (c) 2020 MediaTek Inc.
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/media/i2c/ovti,ov02a10.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Omnivision OV02A10 CMOS Sensor Device Tree Bindings
-> > > +
-> > > +maintainers:
-> > > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > +
-> > > +description: |-
-> > > +  The Omnivision OV02A10 is a low-cost, high performance, 1/5-inch, 2 megapixel
-> > > +  image sensor, which is the latest production derived from Omnivision's CMOS
-> > > +  image sensor technology. Ihis chip supports high frame rate speeds up to 30fps
-> > > +  @ 1600x1200 (UXGA) resolution transferred over a 1-lane MIPI interface. The
-> > > +  sensor output is available via CSI-2 serial data output.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    const: ovti,ov02a10
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  clocks:
-> > > +    items:
-> > > +      - description: top mux camtg clock
-> > > +      - description: divider clock
-> > > +
-> > > +  clock-names:
-> > > +    items:
-> > > +      - const: eclk
-> > > +      - const: freq_mux
-> > > +
-> > > +  clock-frequency:
-> > > +    description:
-> > > +      Frequency of the eclk clock in Hertz.
-> > > +
->
-> Rob, shall we use 'maxItems: 1' to constrain property: clock-frequency?
+Hi,
 
-No, because it is a scalar, not an array.
+Since the whole DRM/HDMI support began to grow fairly big, I've chosen
+to split away the two discussions between the firmware clocks and the
+HDMI support.
 
-> Or could we adopt 'clock-frequency: true' directly here?
+Let me know what you think,
+Maxime
 
-As-is is fine.
+Cc: bcm-kernel-feedback-list@broadcom.com
+Cc: devicetree@vger.kernel.org
+Cc: Kamal Dasu <kdasu.kdev@gmail.com>
+Cc: linux-clk@vger.kernel.org
+Cc: Michael Turquette <mturquette@baylibre.com>
+Cc: Rob Herring <robh+dt@kernel.org>
+Cc: Stephen Boyd <sboyd@kernel.org>
 
-> > > +  dovdd-supply:
-> > > +    description:
-> > > +      Definition of the regulator used as Digital I/O voltage supply.
-> > > +
->
-> Shall we add 'maxItems: 1' here?
+Changes from v2:
+  - Rebased on top of next-20200526
+  - Split away from the HDMI series
+  - Fixed an of_node leakage in the firmware driver
+  - Fixed an of_node leakage in the firmware clocks driver
+  - Added the min/max rate retrieval to all the firmware clocks
+  - Added proper name for the firmware clocks
+  - Removed the PLLB setup from the firmware clocks and moved it back to
+    the MMIO driver
 
-No, supplies are always singular.
+Florian Fainelli (1):
+  dt-bindings: arm: bcm: Convert BCM2835 firmware binding to YAML
 
+Maxime Ripard (24):
+  dt-bindings: clock: Add a binding for the RPi Firmware clocks
+  firmware: rpi: Only create clocks device if we don't have a node for it
+  clk: bcm: rpi: Allow the driver to be probed by DT
+  clk: bcm: rpi: Statically init clk_init_data
+  clk: bcm: rpi: Use clk_hw_register for pllb_arm
+  clk: bcm: rpi: Remove global pllb_arm clock pointer
+  clk: bcm: rpi: Make sure pllb_arm is removed
+  clk: bcm: rpi: Remove pllb_arm_lookup global pointer
+  clk: bcm: rpi: Switch to clk_hw_register_clkdev
+  clk: bcm: rpi: Make sure the clkdev lookup is removed
+  clk: bcm: rpi: Use CCF boundaries instead of rolling our own
+  clk: bcm: rpi: Create a data structure for the clocks
+  clk: bcm: rpi: Add clock id to data
+  clk: bcm: rpi: Pass the clocks data to the firmware function
+  clk: bcm: rpi: Rename is_prepared function
+  clk: bcm: rpi: Split pllb clock hooks
+  clk: bcm: rpi: Make the PLLB registration function return a clk_hw
+  clk: bcm: rpi: Add DT provider for the clocks
+  clk: bcm: rpi: Add an enum for the firmware clocks
+  clk: bcm: rpi: Discover the firmware clocks
+  clk: bcm: rpi: Give firmware clocks a name
+  Revert "clk: bcm2835: remove pllb"
+  clk: bcm: rpi: Remove the quirks for the CPU clock
+  ARM: dts: bcm2711: Add firmware clocks node
 
->
-> > > +  avdd-supply:
-> > > +    description:
-> > > +      Definition of the regulator used as Analog voltage supply.
-> > > +
->
-> Ditto.
->
-> > > +  dvdd-supply:
-> > > +    description:
-> > > +      Definition of the regulator used as Digital core voltage supply.
-> > > +
->
-> Ditto.
->
-> > > +  powerdown-gpios:
-> > > +    description:
-> > > +      Must be the device tree identifier of the GPIO connected to the
-> > > +      PD_PAD pin. This pin is used to place the OV02A10 into Standby mode
-> > > +      or Shutdown mode. As the line is active low, it should be
-> > > +      marked GPIO_ACTIVE_LOW.
-> >
-> > Need to define how many GPIOs ('maxItems: 1')
-> >
->
-> It would be fixed like this in next release.
-> powerdown-gpios:
->   maxItems: 1
->   description:
->     Must be the device tree identifier of the GPIO connected to the
->     PD_PAD pin. This pin is used to place the OV02A10 into Standby mode
->     or Shutdown mode. As the line is active low, it should be
->     marked GPIO_ACTIVE_LOW.
->
-> > > +
-> > > +  reset-gpios:
-> > > +    description:
-> > > +      Must be the device tree identifier of the GPIO connected to the
-> > > +      RST_PD pin. If specified, it will be asserted during driver probe.
-> > > +      As the line is active high, it should be marked GPIO_ACTIVE_HIGH.
-> >
-> > Here too.
-> >
->
-> Similar as 'powerdown-gpios'.
-> Fixed in next release.
->
-> > > +
-> > > +  rotation:
-> > > +    description:
-> > > +      Definition of the sensor's placement.
-> > > +    allOf:
-> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > > +      - enum:
-> > > +          - 0    # Sensor Mounted Upright
-> > > +          - 180  # Sensor Mounted Upside Down
-> > > +        default: 0
-> > > +
-> > > +  ovti,mipi-tx-speed:
-> > > +    description:
-> > > +      Indication of MIPI transmission speed select, which is to control D-PHY
-> > > +      timing setting by adjusting MIPI clock voltage to improve the clock
-> > > +      driver capability.
-> > > +    allOf:
-> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > > +      - enum:
-> > > +          - 0    #  20MHz -  30MHz
-> > > +          - 1    #  30MHz -  50MHz
-> > > +          - 2    #  50MHz -  75MHz
-> > > +          - 3    #  75MHz - 100MHz
-> > > +          - 4    # 100MHz - 130MHz
-> > > +        default: 3
-> > > +
-> > > +  # See ../video-interfaces.txt for details
-> > > +  port:
-> > > +    type: object
-> > > +    additionalProperties: false
-> >
-> > Should have a description of what data the port has.
-> >
->
-> It would be updated as below in next release.
-> port:
->   type: object
->   additionalProperties: false
->   description:
->     Input port node, single endpoint describing the CSI-2 transmitter.
+ Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt  |  14 +---
+ Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml |  59 ++++++++++++++-
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts                                       |   5 +-
+ drivers/clk/bcm/clk-bcm2835.c                                               |  30 ++++++-
+ drivers/clk/bcm/clk-raspberrypi.c                                           | 299 ++++++++++++++++++++++++++++++++++++++++++++----------------------------
+ drivers/firmware/raspberrypi.c                                              |  14 +++-
+ include/soc/bcm2835/raspberrypi-firmware.h                                  |   5 +-
+ 7 files changed, 293 insertions(+), 133 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml
 
-Output?
-
->
-> > > +
-> > > +    properties:
-> > > +      endpoint:
-> > > +        type: object
-> > > +        additionalProperties: false
-> > > +
-> > > +        properties:
->
-> Actually I wonder whether we need to declare 'clock-lanes' here?
-
-Yes, if you are using it.
-
-Rob
+base-commit: b0523c7b1c9d0edcd6c0fe6d2cb558a9ad5c60a8
+-- 
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
