@@ -2,65 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7FEB51E3914
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 08:24:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97BA31E391C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 08:26:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=C+OcRHtZPlT2+kEFwDdoi0O5Yr/Nu6ju3zRORe4Ku24=; b=M2QNBBxonr8Hzr4BnyYQ1wWZ4
-	gcW+SboPMwE8IzPavyve3Yzg0ys/0VXYIBi+8uwlHMFoDcPQD4RVCvB2uO3okkbaTRD3+Y+szN+LR
-	nlOkCzpLyiHdeIndNm5BZ7tidE2aktGVNCB2GG9ZV+L33BOA2VK+JBFMfvvb6cuvMUHf3t9cwPjYo
-	H79CO/lR1YrAt9ryOuNk/Y5XGjq/c59+RNoykPFdG5IlXB/xX4ACk8YK6riOfPwd9dmGSX8YT2FGv
-	NqjC1kQh/+HMaZ4U4I+8n5EK9sBIiOOvIcgLbtqC9q5kLwLGIbnLzVBcWgOlTPfR7XpuqnG0UUV0N
-	Draz3ZbHw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=NxmXbUH8UISAqV1NyTV/98W1Hz7bluxovvrwtKp9qBw=; b=FHgmA4+LGvK6cK
+	1MkxKO8sDcNCCFRwy3Q8Dxnnt5hl8ix6zFnEX8Z+IYBHhJVwYbJyFAQ0FCFEsvMlr0N1H+LYGmZPD
+	tK20l4HIO9k3dDBnGB6r81CxaP6UxWJGbBT/JTCXf5QRvPm2imgPO1ksMnoqb0/GL/0buUo/qtPca
+	xr5NG+NtTd0U0AsWCygi/zGYgfWWhkWrK074F1mzYh9J37K6F0KpPonVtwGxuJfNRq32KxqraIrwT
+	7of59SWz8pSsfDd6F7JzNIvUVvPdSN6LgC0LnUJLsYkAPTlByofS9/iD268XhMmD9KTW3BUfLEW4V
+	4iNOzu4foK8mPyhYyfrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdpUR-0002r8-3m; Wed, 27 May 2020 06:24:35 +0000
-Received: from out30-130.freemail.mail.aliyun.com ([115.124.30.130])
+	id 1jdpW8-0005a8-Pm; Wed, 27 May 2020 06:26:20 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdpUC-0002pb-RA
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 06:24:28 +0000
-X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R941e4; CH=green; DM=||false|;
- DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e07425;
- MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=37; SR=0;
- TI=SMTPD_---0TzmW8ts_1590560648; 
-Received: from 30.27.118.64(mailfrom:tianjia.zhang@linux.alibaba.com
- fp:SMTPD_---0TzmW8ts_1590560648) by smtp.aliyun-inc.com(127.0.0.1);
- Wed, 27 May 2020 14:24:10 +0800
-Subject: Re: [PATCH v4 6/7] KVM: MIPS: clean up redundant 'kvm_run' parameters
-To: Huacai Chen <chenhuacai@gmail.com>
-References: <20200427043514.16144-1-tianjia.zhang@linux.alibaba.com>
- <20200427043514.16144-7-tianjia.zhang@linux.alibaba.com>
- <CAAhV-H7kpKUfQoWid6GSNL5+4hTTroGyL83EaW6yZwS2+Ti9kA@mail.gmail.com>
-From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
-Message-ID: <37246a25-c4dc-7757-3f5c-d46870a4f186@linux.alibaba.com>
-Date: Wed, 27 May 2020 14:24:08 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jdpVy-0005ZQ-MG; Wed, 27 May 2020 06:26:12 +0000
+X-UUID: f015e84058bb43428e434ba0bdb2fae5-20200526
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=3JgPtKgRdy8ddR7xtaWXijDFOHGnyaGurBt3CDZDbJc=; 
+ b=qa3bSPrvl0ZaXE29kjfi/OCbwK/CBns3iU/bn193BTzTIC8m9KXM7e+ODSYjAyw4m/MhHBZ64uESU0j3wJdPRzr2SXv3k15qGdBMpe6favG1RWr12y3QHPawBEzy0oMy/v1gokoVwDoouJLug0hDk5423JdQnefmWRUEb6k0DFA=;
+X-UUID: f015e84058bb43428e434ba0bdb2fae5-20200526
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <weiyi.lu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1518370596; Tue, 26 May 2020 22:25:54 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 26 May 2020 23:25:59 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 27 May 2020 14:25:52 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Wed, 27 May 2020 14:25:52 +0800
+From: Weiyi Lu <weiyi.lu@mediatek.com>
+To: Nicolas Boichat <drinkcat@chromium.org>, Stephen Boyd <sboyd@kernel.org>, 
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH v2] clk: mediatek: assign the initial value to clk_init_data
+ of mtk_mux
+Date: Wed, 27 May 2020 14:25:49 +0800
+Message-ID: <1590560749-29136-1-git-send-email-weiyi.lu@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-In-Reply-To: <CAAhV-H7kpKUfQoWid6GSNL5+4hTTroGyL83EaW6yZwS2+Ti9kA@mail.gmail.com>
+X-TM-SNTS-SMTP: BFDC40E46F0324815F4D3721A56AD387881A75494A619CD8E2BD5B4CD48C0DC62000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_232426_933244_0666025F 
-X-CRM114-Status: UNSURE (   9.99  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20200526_232610_731022_FEBD8D5D 
+X-CRM114-Status: GOOD (  10.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [115.124.30.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,62 +85,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wanpengli@tencent.com, kvm@vger.kernel.org, david@redhat.com,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, heiko.carstens@de.ibm.com,
- Peter Xu <peterx@redhat.com>, "open list:MIPS" <linux-mips@vger.kernel.org>,
- paulus@ozlabs.org, hpa@zytor.com, kvmarm@lists.cs.columbia.edu,
- linux-s390@vger.kernel.org, frankja@linux.ibm.com,
- Marc Zyngier <maz@kernel.org>, joro@8bytes.org, x86@kernel.org,
- borntraeger@de.ibm.com, mingo@redhat.com, julien.thierry.kdev@gmail.com,
- thuth@redhat.com, gor@linux.ibm.com, suzuki.poulose@arm.com,
- kvm-ppc@vger.kernel.org, Borislav Petkov <bp@alien8.de>,
- Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, jmattson@google.com,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, cohuck@redhat.com,
- christoffer.dall@arm.com, sean.j.christopherson@intel.com,
- LKML <linux-kernel@vger.kernel.org>, james.morse@arm.com, mpe@ellerman.id.au,
- Paolo Bonzini <pbonzini@redhat.com>, vkuznets@redhat.com,
- linuxppc-dev@lists.ozlabs.org
+Cc: James Liao <jamesjj.liao@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
+ stable@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Owen Chen <owen.chen@mediatek.com>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+When some new clock supports are introduced, e.g. [1]
+it might lead to an error although it should be NULL because
+clk_init_data is on the stack and it might have random values
+if using without initialization.
+Add the missing initial value to clk_init_data.
 
+[1] https://android-review.googlesource.com/c/kernel/common/+/1278046
 
-On 2020/4/27 13:40, Huacai Chen wrote:
-> Reviewed-by: Huacai Chen <chenhc@lemote.com>
-> 
-> On Mon, Apr 27, 2020 at 12:35 PM Tianjia Zhang
-> <tianjia.zhang@linux.alibaba.com> wrote:
->>
->> In the current kvm version, 'kvm_run' has been included in the 'kvm_vcpu'
->> structure. For historical reasons, many kvm-related function parameters
->> retain the 'kvm_run' and 'kvm_vcpu' parameters at the same time. This
->> patch does a unified cleanup of these remaining redundant parameters.
->>
->> Signed-off-by: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
->> ---
->>   arch/mips/include/asm/kvm_host.h |  28 +-------
->>   arch/mips/kvm/emulate.c          |  59 ++++++----------
->>   arch/mips/kvm/mips.c             |  11 ++-
->>   arch/mips/kvm/trap_emul.c        | 114 ++++++++++++++-----------------
->>   arch/mips/kvm/vz.c               |  26 +++----
->>   5 files changed, 87 insertions(+), 151 deletions(-)
->>
+Fixes: a3ae549917f1 ("clk: mediatek: Add new clkmux register API")
+Cc: <stable@vger.kernel.org>
+Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
+---
+ drivers/clk/mediatek/clk-mux.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Hi Huacai,
-
-These two patches(6/7 and 7/7) should be merged into the tree of the 
-mips architecture separately. At present, there seems to be no good way 
-to merge the whole architecture patchs.
-
-For this series of patches, some architectures have been merged, some 
-need to update the patch.
-
-Thanks and best,
-Tianjia
-
+diff --git a/drivers/clk/mediatek/clk-mux.c b/drivers/clk/mediatek/clk-mux.c
+index 76f9cd0..14e127e 100644
+--- a/drivers/clk/mediatek/clk-mux.c
++++ b/drivers/clk/mediatek/clk-mux.c
+@@ -160,7 +160,7 @@ struct clk *mtk_clk_register_mux(const struct mtk_mux *mux,
+ 				 spinlock_t *lock)
+ {
+ 	struct mtk_clk_mux *clk_mux;
+-	struct clk_init_data init;
++	struct clk_init_data init = {};
+ 	struct clk *clk;
+ 
+ 	clk_mux = kzalloc(sizeof(*clk_mux), GFP_KERNEL);
+-- 
+1.8.1.1.dirty
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
