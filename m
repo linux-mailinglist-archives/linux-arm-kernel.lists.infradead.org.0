@@ -2,56 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E98961E41E6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:17:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B06EF1E4203
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:24:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=eLFtZu7ILs2E+IeD0GNt5j5zKiznVIN6TrYyB0VvmmA=; b=Y4HEf8//NRmfWd/zUGYkYg1K36
-	HPzxAf0LJPEYEEEXVHpsJKiFLm/uYM/mQTYa9pR3VKFKx2yXHpQmIvrjBYeFq1OzBBnC6fw6Esh8r
-	v7e2eYJcPIO6cm7hknJ3EjDpyNXK6UUFRmo5iJf/EicqZ4ZqM1SVIWSpmdj8PdRQmGBaezWv2HQt2
-	3GyrJ8SySgZ5PRrpYCurpU9RtECyZ+OkWpub4w6gzjr1o9FCC8HAwo8QmGzF1rHA9ter3zWVBhY8g
-	0rDVCCzA4deFZisuBZDphYT6LieW+qEoLf8XpYPJWVSbo/k1A6seGgT4o/WI/8dEnDs+0iiRjr4vd
-	woZ2HGIw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ebD8H3hh9ZWzKu/LK0cPiXeAoWkWP4ZN21ZowYU4+LA=; b=BKeMUPEq57FTSw
+	1zoAsOgyBdt00mCNswRepHh87nVAm8G8NAyQy3fvaOq+lNHKXvUqA2czYKn5fH9AQyFkx1YRvw+Zd
+	FWdOsGA5H4fS6skKuWfGu30e5Hep9XRXABoa9i4CxWU3ge7IXYUiynOV8D83OvehRFQ686UVUdOSm
+	hDTYt6K9iPpvc29VdLEEwjrZiQCig2KGRCuX34b9ESpUuAhDyFkz2kKDyjn4ns5QPr+f2DYViohNK
+	gVMuheFNPtwL2jBgaFFPYyl9wgZdoFp+CHaT/9cafcFB0vWdbeuTiIZAHE+yCt7FyCQs66Q1E8z64
+	ESnCmGyI5WyZ4FGxSyAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdv06-0003yv-L7; Wed, 27 May 2020 12:17:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdux9-000810-4O
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 12:14:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 52F8755D;
- Wed, 27 May 2020 05:14:33 -0700 (PDT)
-Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B21C3F305;
- Wed, 27 May 2020 05:14:31 -0700 (PDT)
-References: <20200526151619.8779-1-benjamin.gaignard@st.com>
- <jhjk10xu1tq.mognet@arm.com> <ab4340c0-bda3-e752-9073-e162e6325bb1@st.com>
-User-agent: mu4e 0.9.17; emacs 26.3
-From: Valentin Schneider <valentin.schneider@arm.com>
-To: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-Subject: Re: [RFC RESEND 0/3] Introduce cpufreq minimum load QoS
-In-reply-to: <ab4340c0-bda3-e752-9073-e162e6325bb1@st.com>
-Date: Wed, 27 May 2020 13:14:24 +0100
-Message-ID: <jhjwo4xinhb.mognet@arm.com>
+	id 1jdv6Y-0007Ql-SH; Wed, 27 May 2020 12:24:18 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdv6N-0007Py-7C
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 12:24:08 +0000
+Received: by mail-lj1-x244.google.com with SMTP id v16so28685225ljc.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 05:24:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=tM0CgkbzZCppo0/FAsEjCVL3tTByqy9FZRD5jkPNIV8=;
+ b=Zp1KwW8gOoQb+N9g2YkDcHkbS0vQS0JpPfvzS6NnZtdVw5ltVE8GYWCHBum6U8/3q0
+ zN3wkLqgBAvqTYodizJMPcvBs3fR1gOacvnPVYkW5ZZKNP4fGv8jxjFR1X5JfecmHO92
+ FFKZOQWcpQaANUd6Tg3DG+6j/P3DukHUMtlt51Mri0qLJtVIJgT11m8h4iGylOdaLe+Y
+ kN7g/s54kmj8J+73MyCFimmlsWiv2/gc1IlbDRHyyYK4RtOnV6lMG+uyHpcKbAquYwNE
+ 7HSp3+TjD6QzqbkAC3b763/IoYWNexJetcR75qngd8vAXz97o8+vK9AkAdPv5pEDF/42
+ 54eQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=tM0CgkbzZCppo0/FAsEjCVL3tTByqy9FZRD5jkPNIV8=;
+ b=BlhQC5zw6xXIOgs12DUUxKaFg3J9JneRi2rQyeMp8DP8+wfs3WhzvQdTkOrYKyMr0k
+ 0ngJ31OLcaVcdoZ+S3c+EA5hxTX4RElRyEhim8LmgywJ5HqcSOalV/X2mlLd5Q/dhx78
+ oLcZ1lss1iRf47gvVG4v+DnEFMSlAnvH0DL1p0KJozbo3V1hh3jepZ8chuLx6CoiixCb
+ a3NKOW8UXVj/GLr7TyeyZ94EIwG9h1ISKP2gXbkW4EO8BBu51x40kRpLiapsetOTM509
+ NOXYnbonpo/oyyCqfzFgTJIZc32eIwpqg383z+5EL4GyXHbED1zn1CPUOBKlhfBAB445
+ aPFg==
+X-Gm-Message-State: AOAM533mwgaPjV2bZOl9KfSHdbM9CtKrUtY6T4cU1567siE37WYZf6Jo
+ W3IMLDWsuq09VbdDpbsXcMDtfQ==
+X-Google-Smtp-Source: ABdhPJwrZpYXd4k/FHu7zTppTHGwMqnQk9mk/gubCGBkDW7bmV1J3xDRshy14+kFf5vPSnKLKRWUjg==
+X-Received: by 2002:a2e:7c17:: with SMTP id x23mr2714988ljc.307.1590582245404; 
+ Wed, 27 May 2020 05:24:05 -0700 (PDT)
+Received: from localhost.localdomain
+ (c-8cdb225c.014-348-6c756e10.bbcust.telenor.se. [92.34.219.140])
+ by smtp.gmail.com with ESMTPSA id t27sm660019ljo.114.2020.05.27.05.24.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 05:24:04 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Russell King <linux@armlinux.org.uk>
+Subject: [PATCH] ARM: asm: Rewrite get_thread_info using BIC
+Date: Wed, 27 May 2020 14:22:01 +0200
+Message-Id: <20200527122201.124090-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.25.4
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_051435_328172_45189D99 
-X-CRM114-Status: GOOD (  16.13  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200527_052407_264789_488DC183 
+X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,91 +96,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "len.brown@intel.com" <len.brown@intel.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "pavel@ucw.cz" <pavel@ucw.cz>, "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Hugues FRUCHET <hugues.fruchet@st.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+By using two BIC instructions we can replace the ARM/thumb
+split instructions with something that works on either
+and also save one instruction.
 
-On 27/05/20 12:17, Benjamin GAIGNARD wrote:
-> On 5/27/20 12:09 PM, Valentin Schneider wrote:
->> Hi Benjamin,
->>
->> On 26/05/20 16:16, Benjamin Gaignard wrote:
->>> A first round [1] of discussions and suggestions have already be done on
->>> this series but without found a solution to the problem. I resend it to
->>> progress on this topic.
->>>
->> Apologies for sleeping on that previous thread.
->>
->> So what had been suggested over there was to use uclamp to boost the
->> frequency of the handling thread; however if you use threaded IRQs you
->> get RT threads, which already get the max frequency by default (at least
->> with schedutil).
->>
->> Does that not work for you, and if so, why?
->
-> That doesn't work because almost everything is done by the hardware blocks
-> without charge the CPU so the thread isn't running.
+Based on code from proc-macros.S and an idea from Ard
+Biesheuvel.
 
-I'm not sure I follow; the frequency of the CPU doesn't matter while
-your hardware blocks are spinning, right? AIUI what matters is running
-your interrupt handler / action at max freq, which you get if you use
-threaded IRQs and schedutil.
+We need to include <linux/const.h> to expand the
+THREAD_SIZE definition properly in the preprocessor.
 
-I think it would help if you could clarify which tasks / parts of your
-pipeline you need running at high frequencies. The point is that setting
-a QoS request affects all tasks, whereas we could be smarter and only
-boost the required tasks.
+Suggested-by: Russell King <linux@armlinux.org.uk>
+Suggested-by: Ard Biesheuvel <ardb@kernel.org>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ arch/arm/include/asm/assembler.h | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-> I have done the
-> tests with schedutil
-> and ondemand scheduler (which is the one I'm targeting). I have no
-> issues when using
-> performance scheduler because it always keep the highest frequencies.
->
->
->>
->>> When start streaming from the sensor the CPU load could remain very low
->>> because almost all the capture pipeline is done in hardware (i.e. without
->>> using the CPU) and let believe to cpufreq governor that it could use lower
->>> frequencies. If the governor decides to use a too low frequency that
->>> becomes a problem when we need to acknowledge the interrupt during the
->>> blanking time.
->>> The delay to ack the interrupt and perform all the other actions before
->>> the next frame is very short and doesn't allow to the cpufreq governor to
->>> provide the required burst of power. That led to drop the half of the frames.
->>>
->>> To avoid this problem, DCMI driver informs the cpufreq governors by adding
->>> a cpufreq minimum load QoS resquest.
->>>
->>> Benjamin
->>>
->>> [1] https://lkml.org/lkml/2020/4/24/360
->>>
->>> Benjamin Gaignard (3):
->>>    PM: QoS: Introduce cpufreq minimum load QoS
->>>    cpufreq: governor: Use minimum load QoS
->>>    media: stm32-dcmi: Inform cpufreq governors about cpu load needs
->>>
->>>   drivers/cpufreq/cpufreq_governor.c        |   5 +
->>>   drivers/media/platform/stm32/stm32-dcmi.c |   8 ++
->>>   include/linux/pm_qos.h                    |  12 ++
->>>   kernel/power/qos.c                        | 213 ++++++++++++++++++++++++++++++
->>>   4 files changed, 238 insertions(+)
+diff --git a/arch/arm/include/asm/assembler.h b/arch/arm/include/asm/assembler.h
+index 99929122dad7..f218e8cf7f88 100644
+--- a/arch/arm/include/asm/assembler.h
++++ b/arch/arm/include/asm/assembler.h
+@@ -17,6 +17,7 @@
+ #error "Only include this from assembly code"
+ #endif
+ 
++#include <linux/const.h>
+ #include <asm/ptrace.h>
+ #include <asm/domain.h>
+ #include <asm/opcodes-virt.h>
+@@ -203,10 +204,8 @@
+  * Get current thread_info.
+  */
+ 	.macro	get_thread_info, rd
+- ARM(	mov	\rd, sp, lsr #THREAD_SIZE_ORDER + PAGE_SHIFT	)
+- THUMB(	mov	\rd, sp			)
+- THUMB(	lsr	\rd, \rd, #THREAD_SIZE_ORDER + PAGE_SHIFT	)
+-	mov	\rd, \rd, lsl #THREAD_SIZE_ORDER + PAGE_SHIFT
++	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
++	bic	\rd, \rd, #63
+ 	.endm
+ 
+ /*
+-- 
+2.25.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
