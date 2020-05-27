@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C89F01E414A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:07:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12AE61E4147
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:06:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Obu96/cVHbpNC6OmDdvxetWCYfqkj522Hf7owanUloY=; b=VsRdb3GPCYh+ch
-	qUjjrdY+EQisaZMvaCs6Aqg09qP+FCEO1Cv2Thxa8/Tr6YPeI0aGTx1zYsMr0K6Pi2MIEiiPr0VAF
-	w9PoPAWivduUyuNWsGslECxA4x0/wlKNjR+6vh6f6XKA7vaLUAIQb6FlpJwwAjN0MW0oyJnSQJRJl
-	N7noEyPls/1P755cLYi0Xl3PyZX2aWG3O1KWlcLKxHe1yV1/YVRggPDhE4t5FR9yZCnKneJ2Q5cJr
-	06xOvJuYs0J1w5d8uglHeOlbnekf9b8wvDqIm6trg5jMD0Gbms2VTe4Odf+SbL30Y87c2r0/kbDZU
-	0NFCmfP0dwgI38te7zLA==;
+	List-Owner; bh=NaxAISowfgNnvEgrFHEUH7Qnahd6jII6bFzAeRbX4Y8=; b=F22SNZme7vG89g
+	+kpXhoeKYILNFtX5nNp9iWE2BQorSMhlNCzxieAo7cjLNvhG+yceVrUSXxddxOsUMFb5Vlf7BqKrB
+	IZlwOaEv7Qo6Fys70C7Gl9LL/kxKLSgDkj7vKI1+VvvogW50fy6jMfMQdx7P2UXk1vncLCyedLkiG
+	Q2dLHsrQUjWw39lJdFOSTWFEBlT7qn6n6feSTJN87MOW5Na2oVsi/LB365uI7HPTXoIwytXtqmz0l
+	ovvAcOwguTGWzwMHfQGzhIAjkzq3wqPhRNBtsOGrVS7pTB7B58D1KIaohSz7Aehk5WN4jFpNe/GnM
+	XE0njIoYG2Cmdc3/KeUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdupt-0006kC-ID; Wed, 27 May 2020 12:07:05 +0000
+	id 1jdupc-0006Wx-MM; Wed, 27 May 2020 12:06:48 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdudt-00070I-R1; Wed, 27 May 2020 11:54:43 +0000
+ id 1jdudu-00070i-EV; Wed, 27 May 2020 11:54:44 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id C5C3EACB8;
- Wed, 27 May 2020 11:54:42 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 89954ACF2;
+ Wed, 27 May 2020 11:54:43 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: bcm-kernel-feedback-list@broadcom.com,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [RFC 29/50] staging: vchiq: Export vchiq_get_service_userdata()
-Date: Wed, 27 May 2020 13:53:34 +0200
-Message-Id: <20200527115400.31391-30-nsaenzjulienne@suse.de>
+Subject: [RFC 30/50] staging: vchiq: Export vchiq_msg_queue_push
+Date: Wed, 27 May 2020 13:53:35 +0200
+Message-Id: <20200527115400.31391-31-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 References: <20200527115400.31391-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_045442_020635_A605E47D 
-X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-CacheID: sfid-20200527_045442_638107_ED080544 
+X-CRM114-Status: UNSURE (   9.34  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -72,25 +72,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is for service's callbacks to get their private data.
+vchiq consumer drivers may need to use this function in order to get the
+benefits of vchiq's per service message queueing mechanism.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c | 1 +
+ drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
-index 5b55d32e62a0..01a9331dbff4 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_core.c
-@@ -332,6 +332,7 @@ vchiq_get_service_userdata(unsigned int handle)
- 	rcu_read_unlock();
- 	return userdata;
- }
-+EXPORT_SYMBOL(vchiq_get_service_userdata);
- 
- static void
- mark_service_closing_internal(struct vchiq_service *service, int sh_thread)
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h
+index 8fd51d885a18..c99caa3add57 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_if.h
+@@ -107,6 +107,7 @@ extern enum vchiq_status vchiq_use_service(unsigned int service);
+ extern enum vchiq_status vchiq_release_service(unsigned int service);
+ extern enum vchiq_status vchiq_queue_kernel_message(unsigned int handle,
+ 						    void *context, size_t size);
++extern void vchiq_msg_queue_push(unsigned handle, struct vchiq_header *header);
+ extern void           vchiq_release_message(unsigned int service,
+ 	struct vchiq_header *header);
+ extern enum vchiq_status vchiq_bulk_transmit(unsigned int service,
 -- 
 2.26.2
 
