@@ -2,98 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7617E1E39B5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 08:54:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA1981E39C6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:03:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RoObnkB6SXJ/lQXd2PF+uL+xoTAcWIFw+YvuAivA8Sk=; b=WUjVrE74mQgy7h
-	VaDM3ISLtyWz1Z6X6SgcxBU/3tZrRg3hTj0Ys4suE7Zs7i7GGXpIf+LvftYL2KXaN76xUASsbqSqy
-	bbbUtGhP/K/upt/RS6kfvma+1lZmZTB0dta8du7sID/ZumEPNTuncwwd1bmVqTyPOtYfOOjZgHALD
-	71RtQAYkzP0ji4on1vEz24ZbwBoK+Si0ucdINrk/LTmJglwWRJ6XYllG7ewbVq9MBfd1eJPuk3qsH
-	gUgfC4sNR8in17iYnqrXHD065JfFQfl40JP31sOx7fcLT4FDPywWhWNDptpq66LWv8YFQ0tf/VcT4
-	T+yfQ2vp69HOu+mN40tw==;
+	List-Owner; bh=Pj0kiF9DOJTNqXrSbzlNkdrNmEDNqdLJ9qwnV/BgOMk=; b=knM4HZMSY1vTt9
+	TEzsLOA4szqbJGCv4l+auW5K/IxERoY298IUNhnhzX2QDfXzHcUY1iX2BGwpm35D5wuQn/zy0WM/W
+	dF/wAjsgm28B+8gzgGAGvw3u40IgmURSexmc3j3lUm4/O2oWhMXfZmw90AZ1siDHh7LpRSzbsg7xz
+	A5UkodbcN/3aHKP8Er7NoX+NcUZr3r/rbLUzRsIN0w2nYhvEBt1yaQfgGKCkxSxass01cV7oECGjb
+	gqSSG5Jci+qBd91/wvldDQZWG4VS4G4X7LpptwWPBF9sR7uSpx8tr8yiWGMDADvdMGvLXaLlZ0ND+
+	Ub4BjRwkvhojLKPrHfkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdpwz-0005t1-Bf; Wed, 27 May 2020 06:54:05 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jdq5w-00038b-BR; Wed, 27 May 2020 07:03:20 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdpwl-0005sI-Bw
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 06:53:52 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f5so1926592wmh.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 26 May 2020 23:53:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=KaQOkQA7F9aEmTtrQs4AHoVIEVINLPeKbMlE71dR8YI=;
- b=cPWisZ+A4SR3iQJ6RsEDeDne0OUCVjnfpAGxMjkPrCxzFO71csUJv0xmdBRl7npeZh
- AeFPi1ZmAv1VwihKmOwSRiZrJsJ1i6kwIn8Nkt2Ls6PrSh4pmaZSr97snzWfE0Tn5x79
- bn5tQlmvjopqjhhwA+8717mpKH4FIRbM2wsps9Yaybn+1Sbdk7PQ6e6xPJok7tTW3hQT
- 6R8cBzso9tSPzo2k0UZJPVj9XZDBCfP717btD4AxbyDHH0f/x517SgR/trJkcSQlO6BB
- UekgSoUHoJVz0M2m9h5Iu/ibOmd2JCvlYeh977CW4E0Cm+pKuCkVczG89O4X7pFde+o4
- gPzw==
+ id 1jdq5g-00036o-88; Wed, 27 May 2020 07:03:05 +0000
+Received: by mail-oi1-f193.google.com with SMTP id j145so20931957oib.5;
+ Wed, 27 May 2020 00:03:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=KaQOkQA7F9aEmTtrQs4AHoVIEVINLPeKbMlE71dR8YI=;
- b=K/VOHyADKETZ5efwhwPa18aPGoIGWRj8g29FINbV6aSZaipSEoiQuQQvH1xXYkAlUt
- XzcnLEVxRGQbqs8jHKNnsEHOf0O1vycgyPeNZaqN2fVTuaCZgw7CV2aOGFRx682AMEeI
- 4vZihVSRHt6g8lg0kKaheE0C2oV+9J3AQiPYKvwYDX4/uf5WcenKKHxxdUEWq85eI1vd
- AgSrE1gaqGsAFdB3Ctg3JbVsFoCwKmdPQa4s7QxjXUaFDBJiNjBx2CvmzcKHww6UC2JN
- KpNf9Rgf37548d2hgOjxklp5NduFPiGWfI4LMUKy3u1EBn/OyvN3E+uIrqYzCTLgGHCO
- cr5Q==
-X-Gm-Message-State: AOAM532mVliPdUKZJGu6zt25A7O9/a40EKLrOyKdTQFiOwEX61HQRSFf
- K00jieFjA5ryT6rY8eJ51xo+TQ==
-X-Google-Smtp-Source: ABdhPJzEz2uP3oWCohWVrLCnTYgAhvZIGv77IRU3z+lWX42qdjUmDcj2EC+NMT9wwZk7n/CATpsnBg==
-X-Received: by 2002:a1c:25c3:: with SMTP id l186mr2814857wml.103.1590562426704; 
- Tue, 26 May 2020 23:53:46 -0700 (PDT)
-Received: from dell ([95.149.164.102])
- by smtp.gmail.com with ESMTPSA id p23sm1900743wma.17.2020.05.26.23.53.45
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 26 May 2020 23:53:46 -0700 (PDT)
-Date: Wed, 27 May 2020 07:53:44 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Re: [PATCH v3 03/16] mfd: mfd-core: match device tree node against
- reg property
-Message-ID: <20200527065344.GP3628@dell>
-References: <20200423174543.17161-1-michael@walle.cc>
- <20200423174543.17161-4-michael@walle.cc>
- <67e90dafd67c285158c2c6f67f92edb7@walle.cc>
- <20200515102848.GH271301@dell>
- <159e68b4ce53630ef906b2fcbca925bd@walle.cc>
- <20200526072427.GC3628@dell>
- <f5704ce5a3e280f63c81fe35efb08234@walle.cc>
- <20200526160336.GV1634618@smile.fi.intel.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UmrgkNrS7YJyoX//CVVX8i/eCGz9CaA9GDfJeRj6hok=;
+ b=YGQW+jtSlyfD12rn3ejmQBn4B4Qm2W/IixEOH9fkscSemUeCSazCA03iFXHgz77y2i
+ xlm/rhznCGzo9SyRtAqAz/bBp8kRPgkcRfVBSPomdw1tEROmx4+9aQJ09Jml3hiOsY1A
+ /5QxI7iMiM3RGAEi7DtjkBvkNBhasbOtWpmtWx4rvbpb3kAHK3cNEivNZKaZodZKPXiA
+ ek4BiCdagtpg18aXajhq5ioPoEjR/rj68wcjK/HT2UAdsqcFi6DZyOWWF08CYYgbnfeF
+ r4ouMAKBX0jVkNtyxmi/miivF1FP5uiEHzxjH9heiNgqkXWuGu+S7cDnSzaLVTA/4rXa
+ yVHg==
+X-Gm-Message-State: AOAM530ZAEARIur0LjbexSg4WNby3YcuGrUWIABzYipu5aVeIa2A2e3B
+ +q2K1n+cVgaOh1XVKRl/7UlVokXreuQwMzp+mbk=
+X-Google-Smtp-Source: ABdhPJyJItgq7CbQXJlF6MFLLk/+bu/fSz/XUZ+gwTEqMYOT9P6OwO82+92+P3alNyNfXtW65E6GNWlSoFsc0hwoXsQ=
+X-Received: by 2002:a05:6808:1:: with SMTP id u1mr1778697oic.54.1590562983010; 
+ Wed, 27 May 2020 00:03:03 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200526160336.GV1634618@smile.fi.intel.com>
+References: <20200515143646.3857579-7-hch@lst.de>
+ <20200527043426.3242439-1-natechancellor@gmail.com>
+In-Reply-To: <20200527043426.3242439-1-natechancellor@gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 27 May 2020 09:02:51 +0200
+Message-ID: <CAMuHMdVSduTOi5bUgF9sLQdGADwyL1+qALWsKgin1TeOLGhAKQ@mail.gmail.com>
+Subject: Re: [PATCH] media: omap3isp: Shuffle cacheflush.h and include mm.h
+To: Nathan Chancellor <natechancellor@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_235351_408447_69F2F1D9 
-X-CRM114-Status: GOOD (  14.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200527_000304_288651_07AF27E7 
+X-CRM114-Status: GOOD (  19.87  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,38 +80,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, linux-watchdog@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, Jason Cooper <jason@lakedaemon.net>,
- linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Li Yang <leoyang.li@nxp.com>, Michael Walle <michael@walle.cc>,
- Mark Brown <broonie@kernel.org>, Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>, Roman Zippel <zippel@linux-m68k.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux MM <linux-mm@kvack.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ sparclinux <sparclinux@vger.kernel.org>, linux-riscv@lists.infradead.org,
+ Christoph Hellwig <hch@lst.de>, Linux-Arch <linux-arch@vger.kernel.org>,
+ linux-c6x-dev@linux-c6x.org,
+ "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "open list:TENSILICA XTENSA PORT \(xtensa\)" <linux-xtensa@linux-xtensa.org>,
+ Arnd Bergmann <arnd@arndb.de>, alpha <linux-alpha@vger.kernel.org>,
+ linux-um <linux-um@lists.infradead.org>,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Openrisc <openrisc@lists.librecores.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>,
+ "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
+ Jessica Yu <jeyu@kernel.org>, Linux FS Devel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCAyNiBNYXkgMjAyMCwgQW5keSBTaGV2Y2hlbmtvIHdyb3RlOgoKPiBPbiBUdWUsIE1h
-eSAyNiwgMjAyMCBhdCAwNTo1NDozOFBNICswMjAwLCBNaWNoYWVsIFdhbGxlIHdyb3RlOgo+ID4g
-QW0gMjAyMC0wNS0yNiAwOToyNCwgc2NocmllYiBMZWUgSm9uZXM6Cj4gCj4gLi4uCj4gCj4gPiBM
-aWtlIEkgc2FpZCwgaW4gdGhlIGxvbmcgdGVybSBJIHdvdWxkIGxpa2UgdG8gaGF2ZSBzdXBwb3J0
-IGZvcgo+ID4gZGlmZmVyZW50IHZlcnNpb25zIG9mIHRoZSBib2FyZCBtYW5hZ2VtZW50IGNvbnRy
-b2xsZXIKPiAKPiA+IHdpdGhvdXQgaGF2aW5nIHRvIGNoYW5nZSB0aGUgZGV2aWNlIHRyZWUgYW5k
-IGhhdmUgZGV2aWNlIHRyZWUgYmluZGluZ3MgZm9yIHRoZQo+ID4gc3ViZGV2aWNlcyBhdCB0aGUg
-c2FtZSB0aW1lLgo+IAo+IEJ1dCBpc24ndCBkZXZpY2UgdHJlZSB0byBkZXNjcmliZSAqdmVyeSBz
-cGVjaWZpYyBwbGF0Zm9ybSogcmF0aGVyIHRoYW4gKmNsYXNzCj4gb2YgcGxhdGZvcm1zKj8KClll
-cy4gIERldmljZSBUcmVlIGRlc2NyaWJlcyB0aGUgaGFyZHdhcmUuCgpJZiB0aGUgaGFyZHdhcmUg
-Y2hhbmdlcywgc28gbXVzdCB0aGUgRGV2aWNlIFRyZWUuCgotLSAKTGVlIEpvbmVzIFvmnY7nkLzm
-lq9dCkxpbmFybyBTZXJ2aWNlcyBUZWNobmljYWwgTGVhZApMaW5hcm8ub3JnIOKUgiBPcGVuIHNv
-dXJjZSBzb2Z0d2FyZSBmb3IgQVJNIFNvQ3MKRm9sbG93IExpbmFybzogRmFjZWJvb2sgfCBUd2l0
-dGVyIHwgQmxvZwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+Hi Nathan,
+
+CC Laurent
+
+On Wed, May 27, 2020 at 6:37 AM Nathan Chancellor
+<natechancellor@gmail.com> wrote:
+> After mm.h was removed from the asm-generic version of cacheflush.h,
+> s390 allyesconfig shows several warnings of the following nature:
+>
+> In file included from ./arch/s390/include/generated/asm/cacheflush.h:1,
+>                  from drivers/media/platform/omap3isp/isp.c:42:
+> ./include/asm-generic/cacheflush.h:16:42: warning: 'struct mm_struct'
+> declared inside parameter list will not be visible outside of this
+> definition or declaration
+>
+> cacheflush.h does not include mm.h nor does it include any forward
+> declaration of these structures hence the warning. To avoid this,
+> include mm.h explicitly in this file and shuffle cacheflush.h below it.
+>
+> Fixes: 19c0054597a0 ("asm-generic: don't include <linux/mm.h> in cacheflush.h")
+> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
+
+Thanks for your patch!
+
+> I am aware the fixes tag is kind of irrelevant because that SHA will
+> change in the next linux-next revision and this will probably get folded
+> into the original patch anyways but still.
+>
+> The other solution would be to add forward declarations of these structs
+> to the top of cacheflush.h, I just chose to do what Christoph did in the
+> original patch. I am happy to do that instead if you all feel that is
+> better.
+
+That actually looks like a better solution to me, as it would address the
+problem for all users.
+
+>  drivers/media/platform/omap3isp/isp.c | 5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/media/platform/omap3isp/isp.c b/drivers/media/platform/omap3isp/isp.c
+> index a4ee6b86663e..54106a768e54 100644
+> --- a/drivers/media/platform/omap3isp/isp.c
+> +++ b/drivers/media/platform/omap3isp/isp.c
+> @@ -39,8 +39,6 @@
+>   *     Troy Laramy <t-laramy@ti.com>
+>   */
+>
+> -#include <asm/cacheflush.h>
+> -
+>  #include <linux/clk.h>
+>  #include <linux/clkdev.h>
+>  #include <linux/delay.h>
+> @@ -49,6 +47,7 @@
+>  #include <linux/i2c.h>
+>  #include <linux/interrupt.h>
+>  #include <linux/mfd/syscon.h>
+> +#include <linux/mm.h>
+>  #include <linux/module.h>
+>  #include <linux/omap-iommu.h>
+>  #include <linux/platform_device.h>
+> @@ -58,6 +57,8 @@
+>  #include <linux/sched.h>
+>  #include <linux/vmalloc.h>
+>
+> +#include <asm/cacheflush.h>
+> +
+>  #ifdef CONFIG_ARM_DMA_USE_IOMMU
+>  #include <asm/dma-iommu.h>
+>  #endif
+
+Why does this file need <asm/cacheflush.h> at all?
+It doesn't call any of the flush_*() functions, and seems to compile fine
+without (on arm32).
+
+Perhaps it was included at the top intentionally, to override the definitions
+of copy_{to,from}_user_page()? Fortunately that doesn't seem to be the
+case, from a quick look at the assembler output.
+
+So let's just remove the #include instead?
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
