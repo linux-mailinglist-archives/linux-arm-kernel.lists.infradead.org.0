@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BB2B1E49A3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:17:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 160A11E49D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:23:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4sSSnPyw0BtFbUcKdfGIPGwlkumX7DchOmuCJ8BhPJc=; b=pqP/tyFu2hWbUT
-	ZaHnIyr+9A18vGefKuivgyjrSTydILT3tRWhI62XFWMfWDq0MQFMXNmslP70Us4AAyxOd6nD+Qbce
-	5F41YSre4c3UT9SaqP8rRvkb/aiUxfeq7GEOpHm1F5sWV6ZaaiDl6ZDfz+lMhCyl5dB/ZD2EnReoz
-	YQXupKGPN5vvrMd8yIVoiJ+ak5AA92g7k0s1wSh0AtE/Zh8vGHha891DS+CZMdkvLPB9/p8aSqryR
-	Yp4QkP+4FmYLrjCHegGmgFEDiiuB9DyVOQNX38JB/1PwXOjCYm0CMK2M3e7YihrNxk2s22YHGzqIk
-	RySC/MwCRl+5/xOXK1dg==;
+	List-Owner; bh=cQ3h5pMxTyPDU0nPzJhhMupEZ6HzvHqapWIH/TzwzWc=; b=o1Um6SgTE8DO2b
+	FH5bGUHmeMvBlTunh8bvl2Fn862zoYkkqjmYHVmG2t1McMtJJ8MZwyk8+00mdO3dRPbJZ/6a50Qzl
+	XIkSyQShAhBRYuheFvU/M2Xf7mo9f+pGajD19Bo8gXJ/ti/ypyrt1th9NQ9crQeBJSfEPA2tIPQJJ
+	OkH+PM+H+LfTERtarkpIz0Y7GCRQrpCVOSGfKlM4TtWyW+4dgBqKgilhoa6HhE0IEeke5FGBUmLx2
+	N5ly6rgKi3oEMlPLh9I5Pr4RKbK//XHVrydvill9ZMc1TNW9i4lY03JUWu9mDw6Q3af330vcULklc
+	CshvJzMr567preKD1EmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdykY-0007aE-FW; Wed, 27 May 2020 16:17:50 +0000
+	id 1jdypl-0005Zf-3O; Wed, 27 May 2020 16:23:13 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyKI-0000ro-97; Wed, 27 May 2020 15:50:44 +0000
+ id 1jdyKJ-0000tX-QF; Wed, 27 May 2020 15:50:46 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id B22DF5820A9;
- Wed, 27 May 2020 11:50:39 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:39 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 432135820AC;
+ Wed, 27 May 2020 11:50:42 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:50:42 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=wpVt7MhIxZsbZ
- JMkpP4mIlyTyjudls9LyuYdKN3Ljp4=; b=pnj2XnLV96vUGilZPa4JnZ59m5qvs
- vfEmbfg53mUOazvOm7q8TT8HKUeOIACR7CUp86wOuSUWvmS5hWn9xPdmKSk2f5Lz
- zheK/SZpKXrDNThMXn4v0MPYxpnrKQtPFJbmSFMWzEj5juNz8YCqMHmuYD4KhUEq
- 1tIGAeGo2Sn3uNIv8tULGuRs93MPiMry34jrrhCfQAJRJzJc0VHg7eADkAGS3dHr
- vadOW6LmH8Z5uK7Q92ZzEgMt+l44uHNrb4MzCFRwJpWmjQ3dwUVPOPyyPqiSxpEN
- mfNiN3MFQTsLFXixOrFqEe3h8j8Z6yl+rZtTXRJJuMGgkY7tlmUWT8BTg==
+ :mime-version:content-transfer-encoding; s=fm2; bh=JKPJcF5P9O84B
+ kfkFMzL0EEY5mowhYm7H9n+PdHiw6A=; b=Z4QknsdJy5pMWMN1FFG/YOqpjb7Cs
+ qbT/ZYZxmKPExwIwzcvDt3w1Y7RiKx0PF1P94wcetSbtMCinys0cZmACWhCG2oNp
+ 4U/fEfYHmo163xIwEwvVjheEYEdFpsfmIb/MrC6IGDlmNxCcH+Jqt07KHr2gjUOR
+ VG/w60HilcgvV9joLaw3Ef+/cs5oZsLjUC5OjDh3cM5qskyBK1JopBZUxy/8pTC0
+ Qh4uFmC3lxzDF2KWG4CcKZMgKBhHKop4ESAMmhb7TmbbolQz29lumeMJYOHPJQ2h
+ QtPeawn8tHtpjfxQ0D9uZ5o+9dsPxsC/bMa4hRe3z6F4QwpniX4hJ/yag==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=wpVt7MhIxZsbZJMkpP4mIlyTyjudls9LyuYdKN3Ljp4=; b=WyG1EDus
- g6P+LEd/6ZqvkOfmoS1+tf42JZdYw4c/9iYCaCfcbqMMGxZYHFHp8bker3VN+uqy
- kgA2bR25bUPwGisCcnbvkZG0EucZ2i75TjS25SJ2o+3ppbdb63796omM3Cn8HL8u
- Ms4nsZ+oybj5o9g+8VeHRISHyLWRceUHLbh8pi52vxRdg+84CRqWpMBVrA6j+PsQ
- GLQR0LdXb5fUuR7AxEgXqhn38zdo1jgCweXBmgLEA9rU3oxbodtXBV81cCRf2gKM
- PaXma7LvVrC+IKv7GsX+aHofu/BYC0py2YnVh+lI/FPp+eNnl6eq1JqxZjnnHmrV
- 8PYZufwO9PVqlw==
-X-ME-Sender: <xms:T4zOXjv6_gfKCs-FHi_8abZfC8vEhx5VPPxT2s4q7X8cEbCGM66fhw>
+ fm2; bh=JKPJcF5P9O84BkfkFMzL0EEY5mowhYm7H9n+PdHiw6A=; b=jb4CVfTw
+ ThorRSJWcCLpBAwKeh4Q4AmJHbPTLvWtLzODo1vqeTZF5oAASgnM5arIY32Lu1VT
+ 680cIaFRokcBVL688xhVoj5w1niQkBdFosbR7c1CVbZrTLqa3qr7zjQA54lg3QW4
+ 4NrdTDkh2ggcPHfIVkxyi/jjs/tnnLW13r1gIkXr0k9fMwhmvX/JQ4YkehcFTdIa
+ EzoLQhKsy77swiTxwzlujF+cQCAiMuwbqbu+A5bXopu2jo4xLuhCVoO82gGX4hNp
+ LnHgOqg4KDs7Yh7pUhwmFPzybKyabyCmZH4vm/53Z1MG3xef0kRAGv0RjB2JYuem
+ rgMy6z1VQja4xg==
+X-ME-Sender: <xms:UozOXriWN4QIm-ASBHRux8Ahm8gb6b5YEp4a3NkJtn-nwUxRAEGAkg>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,27 +56,28 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepfeefne
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:T4zOXkepu5zGh28UOokfTghtI9Ii2sHm3Riyb1S4rJVNxZQeo54sVg>
- <xmx:T4zOXmw10ewjiPpBds_kNOxDvJsQz3IKyYS9wcoguGMkeDo-7-_M5A>
- <xmx:T4zOXiMzhvfSmIaQjgDuPmXv1aFApUwLaQJZEdm6zG9_jm9OzqnSCg>
- <xmx:T4zOXkMTjolr2Wl7PXWFBOJfGlS_JqTjQVZVf0zFMPjcPy5lPwkglg>
+X-ME-Proxy: <xmx:UozOXoCYqgYJ9Gc3v3eQ1PCekFRP4MSw0XXTWQZsqbx1ExugxeBbAQ>
+ <xmx:UozOXrFGBqlvWLmOVj9_dkARfX0jDpNsAUzVd7VGjjkKwwWBaZrZSg>
+ <xmx:UozOXoSLPolXcX8kNPoWti18IZ_dtgAoaXWfffd25GSOqwjRpcqwAA>
+ <xmx:UozOXrxC6xIuddkyCHyI7k07PKHPaUhkqVqkQeX7o3CUlvbqxQgRcw>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 54DC93280059;
- Wed, 27 May 2020 11:50:39 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id D8E3930618B7;
+ Wed, 27 May 2020 11:50:40 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 052/105] drm/vc4: crtc: Clear the PixelValve FIFO on disable
-Date: Wed, 27 May 2020 17:48:22 +0200
-Message-Id: <9153ce3f0281d57de817a3c8ea0f12530212808b.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 053/105] drm/vc4: crtc: Clear the PixelValve FIFO during
+ configuration
+Date: Wed, 27 May 2020 17:48:23 +0200
+Message-Id: <edcf101ddbf3f710d7e7295ffcedca831ca56a12.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085042_890956_CD3399F8 
-X-CRM114-Status: UNSURE (   9.84  )
+X-CRM114-CacheID: sfid-20200527_085044_044300_4B0D17E2 
+X-CRM114-Status: UNSURE (   9.52  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -118,28 +119,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to avoid a stale pixel getting stuck on mode change or a disable
-/ enable cycle, we need to make sure to flush the PV FIFO on disable.
+Even though it's not really clear why we need to flush the PV FIFO during
+the configuration even though we started by flushing it, experience shows
+that without it we get a stale pixel stuck in the FIFO between the HVS and
+the PV.
 
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_crtc.c | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+ drivers/gpu/drm/vc4/vc4_crtc.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
-index dee8dc7b9409..61e0945a8697 100644
+index 61e0945a8697..ecb3431470dd 100644
 --- a/drivers/gpu/drm/vc4/vc4_crtc.c
 +++ b/drivers/gpu/drm/vc4/vc4_crtc.c
-@@ -406,8 +406,7 @@ static void vc4_crtc_atomic_disable(struct drm_crtc *crtc,
- 	if (vc4_encoder->post_crtc_disable)
- 		vc4_encoder->post_crtc_disable(encoder);
+@@ -356,7 +356,7 @@ static void vc4_crtc_config_pv(struct drm_crtc *crtc)
+ 	if (is_dsi)
+ 		CRTC_WRITE(PV_HACT_ACT, mode->hdisplay * pixel_rep);
  
--	CRTC_WRITE(PV_CONTROL, CRTC_READ(PV_CONTROL) & ~PV_CONTROL_EN);
--
-+	vc4_crtc_pixelvalve_reset(crtc);
- 	vc4_hvs_atomic_disable(crtc, old_state);
- 
- 	if (vc4_encoder->post_crtc_powerdown)
+-	CRTC_WRITE(PV_CONTROL,
++	CRTC_WRITE(PV_CONTROL, PV_CONTROL_FIFO_CLR |
+ 		   vc4_crtc_get_fifo_full_level_bits(vc4_crtc, format) |
+ 		   VC4_SET_FIELD(format, PV_CONTROL_FORMAT) |
+ 		   VC4_SET_FIELD(pixel_rep - 1, PV_CONTROL_PIXEL_REP) |
 -- 
 git-series 0.9.1
 
