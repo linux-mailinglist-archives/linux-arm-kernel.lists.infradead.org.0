@@ -2,95 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D9C01E3546
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 04:12:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B21851E3565
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 04:15:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0oKPvOxeBb2vvWXJSS6maO6TDLKBgWnZISYi+dnrbkg=; b=VRuzFh8RIKAOA/
-	V+Nm/KnBOrPRxlg5XapBtK3lLItlOXTb7GbH9cAdpDxjNfwLMFJ3uWVoKZOkrQf+7mk8rDQ6lyKHC
-	Ao9lFsiWp9pgMNa7s8DLAFjn5z6d04a9JiaZ3oxZF+x4TIt1S2ie0Ob3qYYAd0LsaCPpBGkQzecOU
-	24UPdbZFs2Lp3jFLoZ1NyNtxBc6jk2CzsVNT9P84lQep100Qf/6HEwOFCBLgv6knQ3GSlwXlvUNHt
-	efvf9h/1CWKf/Z4wstxvlFTN1tbZSEvHUeQQ7g8R0fT6efEQJe4AtnBIH7dq8aLZrW2VzrbrpX0FF
-	kgzGLdlj0/txrJBWS2Fw==;
+	List-Owner; bh=6fu9JwFw7W9m5j21NeEB235fMdv70Oc1kDyurALFFG4=; b=B1GyqzIR3AzzcA
+	oQM5UghR3v3huE116BIJs1hsAIgawRMJD8hjvZU0FYhsqNktmgbol82SKUnPMR0fC5xSrai48o07R
+	w+XMivodYWBhbqujbS5uBz1vOLqeMuO9AqQJiA5pdWOpK0zH/J5jQyOZ/6RpqQ0IPHKjadcGvZz01
+	JeP30Kqb1H0MSdOEcr0OMZTeF4Ef04JLTkOFt4WGk6b70iGkUdLl+a0F3Qarvs5Cd/G6K1PNpGv97
+	aoK6vnYJ6bCQ61qLv2deQJUvfVWTXsIeQMDtdhhbSSaQnCiFhxaVk2AwUYvxr9vhEPzAzlud7Rm3Q
+	1KiXj02HfxvPjexZb/sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdlYR-0002LJ-OP; Wed, 27 May 2020 02:12:27 +0000
-Received: from m43-7.mailgun.net ([69.72.43.7])
+	id 1jdlbY-0005AV-LX; Wed, 27 May 2020 02:15:40 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdlYH-0002Kj-4r
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 02:12:20 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1590545539; h=In-Reply-To: Content-Type: MIME-Version:
- References: Message-ID: Subject: Cc: To: From: Date: Sender;
- bh=Bmk5WkxY5L5x6WBMTF6uxk/H1gCBb/eUTlTTCX/Pjmw=;
- b=BpIN+NFOWdDy/tE9vXFfoggyfr6LbMReFbfVOMUpFQxnyTv3vVgvTHJnod71/2hoIryMCSj8
- BYzMkpbrkg2OLZ/6B8phPf9YHXzlpve5e1hmJR/MBMw56PqBEQUCYdOatA7c0gw7NbAQfhM2
- tsq3aBvexURT2mc+fH1QmVEE3Hw=
-X-Mailgun-Sending-Ip: 69.72.43.7
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n02.prod.us-east-1.postgun.com with SMTP id
- 5ecdcc7576fccbb4c80d36a6 (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 27 May 2020 02:12:05
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 1333BC433CB; Wed, 27 May 2020 02:12:05 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from pdaly-linux.qualcomm.com (i-global254.qualcomm.com
- [199.106.103.254])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested) (Authenticated sender: pdaly)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id CAB9AC433C9;
- Wed, 27 May 2020 02:12:03 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org CAB9AC433C9
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=pdaly@codeaurora.org
-Date: Tue, 26 May 2020 19:11:53 -0700
-From: Patrick Daly <pdaly@codeaurora.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v4 24/26] arm64: mte: Introduce early param to disable
- MTE support
-Message-ID: <20200527021153.GA24439@pdaly-linux.qualcomm.com>
-References: <20200515171612.1020-1-catalin.marinas@arm.com>
- <20200515171612.1020-25-catalin.marinas@arm.com>
- <a2ad6cbf-2632-3cda-eb49-74ddfbed2cec@arm.com>
- <20200518113103.GA32394@willie-the-truck>
- <20200518172054.GL9862@gaia>
- <20200522055710.GA25791@pdaly-linux.qualcomm.com>
- <20200522103714.GA26492@gaia>
+ id 1jdlbK-00059X-AM; Wed, 27 May 2020 02:15:27 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04R2BjPs057175;
+ Wed, 27 May 2020 02:15:16 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=from : to : cc :
+ subject : date : message-id : in-reply-to : references : mime-version :
+ content-transfer-encoding; s=corp-2020-01-29;
+ bh=p4qvcrtuW2bQGADmeQqiBGaWVrsj08iNi0oxkXFi0eQ=;
+ b=fPS3SYDVFsh+c3H8EZcys574JlA89oAGvHnq3N3ieIOzmgxz2cKa/sLsZfIwHbKvqRqy
+ tcKIPfofusdABQBRqsHSknxoAsTvhi72bvbGV0MGM7j8bXFKM3axK1kN5XlunQbsD9Sb
+ MO+Wdy9IdZeBlUJXcGwXtjglTuN9QQKmkUdriBfSG13SJKCxAPtaGC94PvfHTpxAvn6c
+ nGYqspb79ICwJr2vT2qGc9S7xt14tRJqWijl3vPIFcOXKN//zpmTSKsSIjgpqnrSOE2F
+ kjWL/yvLAGdI4Ygon5MRsUkh6CA+xag5vfCOVBtwC1vYmj2OHapEhZYmaJRZRpG5e01D KQ== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2120.oracle.com with ESMTP id 318xbjvyqx-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 27 May 2020 02:15:16 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04R27ZGl133300;
+ Wed, 27 May 2020 02:13:15 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3020.oracle.com with ESMTP id 317j5q908d-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 27 May 2020 02:13:15 +0000
+Received: from abhmp0017.oracle.com (abhmp0017.oracle.com [141.146.116.23])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04R2DEwN024111;
+ Wed, 27 May 2020 02:13:14 GMT
+Received: from ca-mkp.ca.oracle.com (/10.156.108.201)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 26 May 2020 19:13:14 -0700
+From: "Martin K. Petersen" <martin.petersen@oracle.com>
+To: avri.altman@wdc.com, asutoshd@codeaurora.org, linux-scsi@vger.kernel.org, 
+ alim.akhtar@samsung.com, jejb@linux.ibm.com,
+ Stanley Chu <stanley.chu@mediatek.com>
+Subject: Re: [PATCH v4 0/4] scsi: ufs: Fix WriteBooster and cleanup UFS driver
+Date: Tue, 26 May 2020 22:12:59 -0400
+Message-Id: <159054550935.12032.12783598826763830376.b4-ty@oracle.com>
+X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200522083212.4008-1-stanley.chu@mediatek.com>
+References: <20200522083212.4008-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200522103714.GA26492@gaia>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9633
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
+ spamscore=0 suspectscore=0
+ mlxlogscore=999 mlxscore=0 adultscore=0 phishscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2005270012
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9633
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ spamscore=0 mlxscore=0
+ lowpriorityscore=0 priorityscore=1501 phishscore=0 cotscore=-2147483648
+ suspectscore=0 bulkscore=0 clxscore=1011 impostorscore=0 malwarescore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2004280000 definitions=main-2005270013
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_191219_392708_1E509C02 
-X-CRM114-Status: GOOD (  33.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200526_191526_443287_D4326742 
+X-CRM114-Status: GOOD (  13.08  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [69.72.43.7 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [69.72.43.7 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [156.151.31.85 listed in wl.mailspike.net]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,102 +113,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Vladimir Murzin <vladimir.murzin@arm.com>,
- Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, Dave P Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Virtual_Global_UFS_Upstream@mediatek.com, bvanassche@acm.org,
+ "Martin K . Petersen" <martin.petersen@oracle.com>,
+ linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 22, 2020 at 11:37:15AM +0100, Catalin Marinas wrote:
-> Hi Patrick,
-> 
-> On Thu, May 21, 2020 at 10:57:10PM -0700, Patrick Daly wrote:
-> > On Mon, May 18, 2020 at 06:20:55PM +0100, Catalin Marinas wrote:
-> > > On Mon, May 18, 2020 at 12:31:03PM +0100, Will Deacon wrote:
-> > > > On Mon, May 18, 2020 at 12:26:30PM +0100, Vladimir Murzin wrote:
-> > > > > On 5/15/20 6:16 PM, Catalin Marinas wrote:
-> > > > > > diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-> > > > > > index f2a93c8679e8..7436e7462b85 100644
-> > > > > > --- a/Documentation/admin-guide/kernel-parameters.txt
-> > > > > > +++ b/Documentation/admin-guide/kernel-parameters.txt
-> > > > > > @@ -373,6 +373,10 @@
-> > > > > >  	arcrimi=	[HW,NET] ARCnet - "RIM I" (entirely mem-mapped) cards
-> > > > > >  			Format: <io>,<irq>,<nodeID>
-> > > > > >  
-> > > > > > +	arm64.mte_disable=
-> > > > > > +			[ARM64] Disable Linux support for the Memory
-> > > > > > +			Tagging Extension (both user and in-kernel).
-> > > > > > +
-> > > > > 
-> > > > > Should it really to take parameter (on/off/true/false)? It may lead to expectation
-> > > > > that arm64.mte_disable=false should enable MT and, yes, double negatives make it
-> > > > > look ugly, so if we do need parameter, can it be arm64.mte=on/off/true/false?
-> > > > 
-> > > > I don't think "performance analysis" is a good justification for this
-> > > > parameter tbh. We don't tend to add these options for other architectural
-> > > > features, and I don't see why MTE is any different in this regard.
-> > > 
-> > > There is an expectation of performance impact with MTE enabled,
-> > > especially if it's running in synchronous mode. For the in-kernel MTE,
-> > > we could add a parameter which sets sync vs async at boot time rather
-> > > than a big disable knob. It won't affect user space however.
-> > > 
-> > > The other 'justification' is if your hardware has weird unexpected
-> > > behaviour but I'd like this handled via errata workarounds.
-> > > 
-> > > I'll let the people who asked for this to chip in ;). I agree with you
-> > > that we rarely add these (and I rejected a similar option a few weeks
-> > > ago on the AMU patchset).
-> > 
-> > We've been looking into other ways this on/off behavior could be achieved.
-> 
-> The actual question here is what the on/off behaviour is needed for. We
-> can figure out the best mechanism for this once we know what we want to
-> achieve. My wild guess above was performance analysis but that can be
-> toggled by either kernel boot parameter or run-time sysctl (or just the
-> Kconfig option).
-> 
-> If it is about forcing user space not to use MTE, we may look into some
-> other sysctl controls (we already have one for the tagged address ABI).
+On Fri, 22 May 2020 16:32:08 +0800, Stanley Chu wrote:
 
-We want to allow the end user to be able to easily "opt out" of MTE in favour
-of better power, perf and battery life.
-
-In terms of deciding policy, a sysctl is much more accessible than
-reompiling with CONFIG_MTE=n, or replacing userspace libraries with
-equivalents which don't use PROT_MTE.
-
---Patrick
-
+> This patch set fixes some WriteBooster issues and do small cleanup in UFS driver
 > 
-> If it is for working around hardware not supporting MTE (i.e. no
-> allocation tag storage), this should be handled differently, not by
-> kernel parameter.
+> v3 -> v4
+>   - Squash patch [4] and [5] (Asutosh)
+>   - Fix commit message in patch [4]
 > 
-> > The "arm,armv8.5-memtag" DT flag already provides what we want - meaning
-> > that this flag could be removed if the system did not support MTE.
-> > 
-> > I did see your remark on "arm64: mte: Check the DT memory nodes for MTE support"
-> > questioning whether it was the right approach - is this still the case?
+> v2 -> v3
+>   - Introduce patch [5] to fix possible VCC power drain during runtime suspend (Asutosh)
 > 
-> My plan is to remove the DT patch altogether _if_ I get confirmation
-> from the CPU designers. The idea is that if ID_AA64PFR1_EL1.MTE > 1,
-> Linux can assume system-wide MTE support. If an MTE-capable CPU is
-> deployed in an SoC without tag storage, a tie-off should change the ID
-> field to 1 (or 0). If we do find hardware with an ID field > 1 and no
-> tag storage, it will be handled as an SoC erratum in the kernel,
-> probably tied to the new SoC Id advertised by firmware (Sudeep had some
-> patches recently).
+> [...]
+
+Applied to 5.8/scsi-queue, thanks!
+
+[1/4] scsi: ufs: Remove unnecessary memset for dev_info
+      https://git.kernel.org/mkp/scsi/c/3a66ae512b09
+[2/4] scsi: ufs: Allow WriteBooster on UFS 2.2 devices
+      https://git.kernel.org/mkp/scsi/c/c7cee3e746a5
+[3/4] scsi: ufs: Fix index of attributes query for WriteBooster feature
+      https://git.kernel.org/mkp/scsi/c/e31011ab3709
+[4/4] scsi: ufs: Fix WriteBooster flush during runtime suspend
+      https://git.kernel.org/mkp/scsi/c/51dd905bd2f6
 
 -- 
-Qualcomm Innovation Center, Inc. is a member of Code Aurora Forum,
-a Linux Foundation Collaborative Project
+Martin K. Petersen	Oracle Linux Engineering
 
 _______________________________________________
 linux-arm-kernel mailing list
