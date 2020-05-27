@@ -2,73 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0A1D1E35F7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 04:57:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27AD71E35FD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 04:58:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1gGuOfGO/Spd3Bjbqs11odckMgJweE+bbEXXiEzv2gQ=; b=jDEStxUHjIBuIA
-	oe2rSxMDaKWE+WlREbAklnvBIyG32gU7VNuMX9Nkbdd/hah50jwNQ5i6Ky7pa6HYDyfmOM2z/uBIu
-	CwZPC/APgJOFOPXdNEG6NvDK+AyXMfduduGKCFehq3iPDwbo8sS37CVkCmsqzgNeOl7j20fYFBn3p
-	qOxm1f34OUjguDH7ONB2LyNTDwde60qhcnBdVtZbEtZ3E8s8ZZ92NO3INei8yS+jiA+mSPBiNnL4D
-	m8UNrlkIyEZJHBqn7nc7ztyUW2cVAq+w+WETdQ3iWdBehsup/icw8FAzrdj6jfSePTOWFcQqv8ugy
-	IAL7aqW1IbLc0m3wmqWQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FbWNoGIzEahH4sVb+6F5LgzUQHmOMP4F3kPsrfzKddY=; b=BdHZASXN6uTJ9R
+	1Tlvz20lwQW+wTM4ohc057UspAHq/csWJwc1UJv6PFqokUWBPPgqNEj6TOyKV7mnqTftbC1J4G3Ln
+	UexQoh51YTsbeDfDYzc2YsU3DSxonMb4EX6F07p/a74qX0P6L+fCQ/BjCAAfU+WbdMBmXJknNbeuh
+	dEBh0NlQSWN73n6TRBpvc/Ih6LpCw9kEn0omrBJHHU9g3Dqjb/V4StLWKNgVPWFIBOIjXXo24Xvml
+	5eUbuhQVnbC5P2B6IrBmse3u9H46tf/EewYufra69F83TsqgD0C3orj2YaJv5ZQJZmIBtVaJfqFJx
+	pvHka9+ooeooc4qsZHKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdmFn-0004Yj-En; Wed, 27 May 2020 02:57:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jdmGS-000568-Es; Wed, 27 May 2020 02:57:56 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdmFB-0004PS-JM
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 02:56:39 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 58F852075F;
- Wed, 27 May 2020 02:56:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590548196;
- bh=n9dvUu+NtyJwfH62PmjJx6xXSHs8D7kYCnbMcWJ9ToU=;
- h=In-Reply-To:References:Subject:From:Cc:List-Id:To:Date:From;
- b=qj6CLfkwziEqJE0cdG6OSj4iWYDCdrnd9JXApTvKeBLmi6RpfOv0zI4Pg9NKGAnsM
- hTtoCdw3qwvYXYp0yuETm1DeAGFRrLVaBOvAtOsOxsE2h4VKRXsG2mvBbeh8wY0TKA
- MBvZulJ93bH4oUTIz5r9HapLIQ2oMIi5mRFDBCSk=
+ id 1jdmGE-00054c-UN
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 02:57:44 +0000
+Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 6ABE37498ABE6535058E;
+ Wed, 27 May 2020 10:57:32 +0800 (CST)
+Received: from localhost.localdomain.localdomain (10.175.113.25) by
+ DGGEMS403-HUB.china.huawei.com (10.3.19.203) with Microsoft SMTP Server id
+ 14.3.487.0; Wed, 27 May 2020 10:57:25 +0800
+From: Wei Yongjun <weiyongjun1@huawei.com>
+To: Daniel Mack <daniel@zonque.org>, Haojian Zhuang
+ <haojian.zhuang@gmail.com>, Robert Jarzmik <robert.jarzmik@free.fr>, "Liam
+ Girdwood" <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>, "Jaroslav
+ Kysela" <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>
+Subject: [PATCH -next] ASoC: mmp-sspa: Fix return value check in
+ asoc_mmp_sspa_probe()
+Date: Wed, 27 May 2020 03:02:10 +0000
+Message-ID: <20200527030210.124393-1-weiyongjun1@huawei.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200513125532.24585-12-lars.povlsen@microchip.com>
-References: <20200513125532.24585-1-lars.povlsen@microchip.com>
- <20200513125532.24585-12-lars.povlsen@microchip.com>
-Subject: Re: [PATCH 11/14] dt-bindings: clock: sparx5: Add bindings include
- file
-From: Stephen Boyd <sboyd@kernel.org>
-To: Arnd Bergmann <arnd@arndb.de>, Lars Povlsen <lars.povlsen@microchip.com>,
- Linus Walleij <linus.walleij@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- SoC Team <soc@kernel.org>
-Date: Tue, 26 May 2020 19:56:35 -0700
-Message-ID: <159054819573.88029.1560447721512485816@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+X-Originating-IP: [10.175.113.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_195637_694806_6AA3929E 
-X-CRM114-Status: UNSURE (   6.61  )
+X-CRM114-CacheID: sfid-20200526_195743_147129_456E84CF 
+X-CRM114-Status: UNSURE (   9.64  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.191 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,28 +69,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Steen Hegelund <Steen.Hegelund@microchip.com>, linux-clk@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Olof Johansson <olof@lixom.net>, Michael Turquette <mturquette@baylibre.com>,
- Lars Povlsen <lars.povlsen@microchip.com>
+Cc: kernel-janitors@vger.kernel.org, alsa-devel@alsa-project.org,
+ Wei Yongjun <weiyongjun1@huawei.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lars Povlsen (2020-05-13 05:55:29)
-> The Sparx5 support 9 different clock outputs. This include file has
-> defines for each supported clock ordinal.
-> 
-> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
-> ---
+In case of error, the function devm_ioremap() returns NULL pointer not
+ERR_PTR(). The IS_ERR() test in the return value check should be
+replaced with NULL test.
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+---
+ sound/soc/pxa/mmp-sspa.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/sound/soc/pxa/mmp-sspa.c b/sound/soc/pxa/mmp-sspa.c
+index 3e37ab625f8d..4255851c71c1 100644
+--- a/sound/soc/pxa/mmp-sspa.c
++++ b/sound/soc/pxa/mmp-sspa.c
+@@ -493,13 +493,13 @@ static int asoc_mmp_sspa_probe(struct platform_device *pdev)
+ 			return -ENODEV;
+ 
+ 		sspa->rx_base = devm_ioremap(&pdev->dev, res->start, 0x30);
+-		if (IS_ERR(sspa->rx_base))
+-			return PTR_ERR(sspa->rx_base);
++		if (!sspa->rx_base)
++			return -ENOMEM;
+ 
+ 		sspa->tx_base = devm_ioremap(&pdev->dev,
+ 					     res->start + 0x80, 0x30);
+-		if (IS_ERR(sspa->tx_base))
+-			return PTR_ERR(sspa->tx_base);
++		if (!sspa->tx_base)
++			return -ENOMEM;
+ 
+ 		sspa->clk = devm_clk_get(&pdev->dev, NULL);
+ 		if (IS_ERR(sspa->clk))
+
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
