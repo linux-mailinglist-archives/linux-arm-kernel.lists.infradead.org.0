@@ -2,85 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD5A61E4F52
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 22:31:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60D491E4FD6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 23:08:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hvwq8hmpaoD2u8oNMmLB5nEZ/UBGVlWax0D0vegT6HY=; b=NIaQO7OhLEBULf
-	juTmEH6scf8VHC7cU135KROGnhDhFTVKVhlhbdqVr4KvXCJfiixywgxnXxLhJwHDxV7wU4Xh0WemW
-	LxUcq64rCb/hquGD50nfOq+zsWPRn/4KZgDbiLuKv0ORwd3Qy2UFB9vA3vmVs+pfUNRAf2LsIeQ/J
-	CFtqGyFeV7HG3CGE3eIE12w2bb+NMO84hwvv0iGTo0SnmF3jllMVm6VaHhNGJhMteDYWcSnvd5lI5
-	B2p2Z+OflogHa2WMq9BmYc6m2KTv9my8HAotCTZ4DWPoekl5VExv29FAFCldykmbfZ63XwACne0OX
-	Tp8pRId9B5jmL7FP1/rw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gAgW2eLm2DsjCkIBOjVNM5iThaTz+kJ5fTMbXMMqoYc=; b=AGgs9LibAtJ02d
+	NJ3QRgjAsS4ckE7vYq8FPwE2tcr2UOK3bDqCvN5Bc+26otYWb4+XpY+ZO7ltBo18/NBvZSEmWCiay
+	CdrFp3T3+40fY9AZ2pc+xNrsH7T8311vqNY7r+mq2ZjX/kIguJDZ80KVqJMqmZ2dIknlLJrlpAlja
+	Vj/GmMPIrZRAKpAOcwvk33zaLnszxrCgD7gxjXLHGw5Hx3etYSkZuFaPP0dRhfLdi1OdqPS9NkCzT
+	1P4gbsd0Taflpkf5BQVnXqfMpr6JAXx2qDv6e1XudH3M4kj3zwIiXlD3pcmrgx3fVq/GoCPQrDQmF
+	2zYL7hUSSGaRqKP0IBaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je2hx-0005UN-9r; Wed, 27 May 2020 20:31:25 +0000
-Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
+	id 1je3Hd-0002EO-4I; Wed, 27 May 2020 21:08:17 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je2hn-0005TU-Gf
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 20:31:17 +0000
-Received: by mail-pj1-x1043.google.com with SMTP id fs4so2103633pjb.5
+ id 1je3HP-0002DC-ID
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 21:08:05 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1590613681;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=3sSNRFYrb0CdmbwXzPVaN6Wl+qrkOkjvYM/9vtvRcHo=;
+ b=Wvcvd2qty/6nMECvyDauW30OyC5QDVB51wRwSxuhItNMT8rkQE+D2VD471RRLS5pIRqw1S
+ tVERUUP2BOmEJs5+prld19JF2mO40pPn6EzAvsotBm8X0Z0O0uZ5QkOT3AGxdLu6Y5zuIO
+ Tji2zLno2fg6U3oKX4OLhI06g4PkFoE=
+Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
+ [209.85.221.71]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-199-PLp7VJzhP2esKvBpXuVY7A-1; Wed, 27 May 2020 17:07:57 -0400
+X-MC-Unique: PLp7VJzhP2esKvBpXuVY7A-1
+Received: by mail-wr1-f71.google.com with SMTP id o1so176561wrm.17
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 13:31:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gqTtOxf1VeVKv93J0vI4JCcXB031qmV7s7ROwagrA3E=;
- b=vray6QFipLSa6Zrr1DR1XbG3QjUIDz/wbMWL+WLYA1+neDtywxY3+/s5y+zWzdoB2f
- qcu8k4EXyQPVMggMeGyT/CQ9XK4CBK++Jq3i/kNJYoseBryOweQ4U/JWICMdXEIS/gY9
- PiJfNiDTLhYrsbc/SDK1sXcoIuPAOqUi1ek/KdDACdvra8MZ3+ynrN1HLtTQ0QxUK7zo
- i810G43EuzbbVtDQ7+T4jKwB+NVnKMs7X2zNXRtBM9vXj9JWHlZuNbQXz9MGXiJXlERu
- cUFKBjpcVg9ytJ8L2k8bxE9kDLheC45LReO6csE4GmcfiyocPw0ty4eFWVbamUXeN7Mm
- 1siw==
+ Wed, 27 May 2020 14:07:57 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gqTtOxf1VeVKv93J0vI4JCcXB031qmV7s7ROwagrA3E=;
- b=ideudB5vieTE4lcxiJ9ttX86ZAycHXGkL6b8IPbU9OwmYg+q6lPlGvSjiNoG1hEIh5
- YMUxUE41R1rAQnjuX0d4nBW2QSPDqXHea0TUOtcbfp3YrUgdEiWYvhKhfR/ZF2072EfA
- sY+E6V+ilw4/SPQXeKeDlaK1dcdH8sCymyEqbuZ+dRwNmK8sjKXUkVgUaYRSqNAA0deM
- SmZiy7QQQpNFs9vYJlzpWRWMbqca8fXOki+V4aP/I69mLvHqRRTX6ooKRqbbPN5CgLkU
- MYLXRmOr/OGm4gBEe4QRRug4SFtHoYW0MmGTXn2I/RcNaD+slX7WC6nTUAsh6L6aSuc4
- 7Vfg==
-X-Gm-Message-State: AOAM531Nc/oniMYDhY/IC4Dc3GPMdMsZgqvpGqs7MAXnw4AkOHJv2qZb
- 2JdTVkbFhytkxrrkmKLp3sGNasIpYYFmzwWehN8ONg==
-X-Google-Smtp-Source: ABdhPJygdUZklCY45cKMtHF7+W8TRx7Zi+nO1S9a/7BQuk6a5E/aPgvj4vI0zAAr+LRr8v57FOgpTLXG8R8KUxpiLHc=
-X-Received: by 2002:a17:90a:2a4a:: with SMTP id
- d10mr180245pjg.32.1590611474425; 
- Wed, 27 May 2020 13:31:14 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=3sSNRFYrb0CdmbwXzPVaN6Wl+qrkOkjvYM/9vtvRcHo=;
+ b=EXS3VYFU8JG9ABLzRYtyIMU6cLQ6WvVfhr9kGEbW7Dh2241ZzH4gvII3K29nEt4kSI
+ OWIzaYjnt4F3CgoE32ZV05QcGjZKgbdFaTmuaxnqCL9EPsgsofdk3XEJsg/GTAQBcdFK
+ AQ78OFyhQvVv3TI7Y0pVDI3xQBRZN7xMJsCeCtBJBEctMUnHPnGwedh2f2LDGPSbpFIA
+ A+0r/Hmct/AauUa2QtYnZw8R3oC29qBxLABRmSOwpUlsE30yfACJqp4zfBQ/U7VdgSmL
+ MMBxEZXvkI3Pu/eW+BZNE86B+a3d86aMPzJU3tArHCy90ojjKKwZ9D/chI/mKGdYiNWG
+ oZ8w==
+X-Gm-Message-State: AOAM533Td1Ge4YZ21vrv46WbLxqTz4W/4fw1VxLlyV9r8vsLy2AjuLKf
+ MgeflRRfDRGxYLaKqWoLYxJGJUu4ouu+0btLCWD6PDaSbEIWjYSU0sDzDvrOHsX+dY2OyTJ/L9u
+ eovO8M62jGPAit+RXXV5hfuUYvaroqAIgFTw=
+X-Received: by 2002:adf:e908:: with SMTP id f8mr195578wrm.184.1590613676662;
+ Wed, 27 May 2020 14:07:56 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJz/MqK9aixnJqSNydmC9tSwCyqyq7nI9EAoQtkXsEPNQuE8I0JoA6xnM6f4HETfKsks8bq+5g==
+X-Received: by 2002:adf:e908:: with SMTP id f8mr195551wrm.184.1590613676318;
+ Wed, 27 May 2020 14:07:56 -0700 (PDT)
+Received: from ?IPv6:2001:b07:6468:f312:3c1c:ffba:c624:29b8?
+ ([2001:b07:6468:f312:3c1c:ffba:c624:29b8])
+ by smtp.gmail.com with ESMTPSA id v27sm4074887wrv.81.2020.05.27.14.07.55
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 27 May 2020 14:07:55 -0700 (PDT)
+Subject: Re: [PATCH v3 0/7] Statsfs: a new ram-based file system for Linux
+ kernel statistics
+To: Jakub Kicinski <kuba@kernel.org>,
+ Emanuele Giuseppe Esposito <eesposit@redhat.com>
+References: <20200526110318.69006-1-eesposit@redhat.com>
+ <20200526153128.448bfb43@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
+ <6a754b40-b148-867d-071d-8f31c5c0d172@redhat.com>
+ <20200527132321.54bcdf04@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
+From: Paolo Bonzini <pbonzini@redhat.com>
+Message-ID: <af2ba926-73bc-26c3-7ce7-bd45f657fd85@redhat.com>
+Date: Wed, 27 May 2020 23:07:53 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-References: <20200526173117.155339-1-ndesaulniers@google.com>
- <2f58c2a4-0f37-d507-7767-00161c6b5d98@arm.com>
- <CAKwvOd=Oy_OfRbL6-q-3CAHxWBNBKE+HkfNfgCiP726u+4dU1Q@mail.gmail.com>
- <34f261f7-c4b5-a628-9a4c-eb97b75fba52@arm.com>
- <CAKwvOdn1W4C5HRJEch5PS-Atcmysh0UD+VZX_wi8tviGwhmM7Q@mail.gmail.com>
-In-Reply-To: <CAKwvOdn1W4C5HRJEch5PS-Atcmysh0UD+VZX_wi8tviGwhmM7Q@mail.gmail.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Wed, 27 May 2020 13:31:03 -0700
-Message-ID: <CAKwvOd=Zxm9TDPNd4Qvn6Ru==FLasiP1xWXMM7ji08VWRjBu2g@mail.gmail.com>
-Subject: Re: [PATCH] arm64: vdso32: force vdso32 to be compiled as -marm
-To: Robin Murphy <robin.murphy@arm.com>
+In-Reply-To: <20200527132321.54bcdf04@kicinski-fedora-PC1C0HJN.hsd1.ca.comcast.net>
+Content-Language: en-US
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_133115_581274_E8F9DF14 
-X-CRM114-Status: GOOD (  21.99  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200527_140803_679564_E252D5FD 
+X-CRM114-Status: GOOD (  14.67  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ no trust [207.211.31.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,8 +105,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,79 +118,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- david.spickett@linaro.org, Peter Smith <Peter.Smith@arm.com>,
- Manoj Gupta <manojgupta@google.com>, Kristof Beyls <Kristof.Beyls@arm.com>,
- Luis Lozano <llozano@google.com>, Nathan Chancellor <natechancellor@gmail.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- victor.campos@arm.com, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-doc@vger.kernel.org,
+ netdev@vger.kernel.org,
+ Emanuele Giuseppe Esposito <e.emanuelegiuseppe@gmail.com>,
+ linux-kernel@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ Jonathan Adams <jwadams@google.com>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, David Rientjes <rientjes@google.com>,
+ linux-fsdevel@vger.kernel.org, linux-mips@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 1:14 PM Nick Desaulniers
-<ndesaulniers@google.com> wrote:
+On 27/05/20 22:23, Jakub Kicinski wrote:
+> On Wed, 27 May 2020 15:14:41 +0200 Emanuele Giuseppe Esposito wrote:
+>> Regarding the config, as I said the idea is to gather multiple 
+>> subsystems' statistics, therefore there wouldn't be a single 
+>> configuration method like in netlink.
+>> For example in kvm there are file descriptors for configuration, and 
+>> creating them requires no privilege, contrary to the network interfaces.
 >
-> On Wed, May 27, 2020 at 12:28 PM Robin Murphy <robin.murphy@arm.com> wrote:
-> >
-> > On 2020-05-27 18:55, Nick Desaulniers wrote:
-> > > On Wed, May 27, 2020 at 6:45 AM Robin Murphy <robin.murphy@arm.com> wrote:
-> > >>
-> > >> On 2020-05-26 18:31, Nick Desaulniers wrote:
-> > >>> Custom toolchains that modify the default target to -mthumb cannot
-> > >>> compile the arm64 compat vdso32, as
-> > >>> arch/arm64/include/asm/vdso/compat_gettimeofday.h
-> > >>> contains assembly that's invalid in -mthumb.  Force the use of -marm,
-> > >>> always.
-> > >>
-> > >> FWIW, this seems suspicious - the only assembly instructions I see there
-> > >> are SWI(SVC), MRRC, and a MOV, all of which exist in Thumb for the
-> > >> -march=armv7a baseline that we set.
-> > >>
-> > >> On a hunch, I've just bodged "VDSO_CFLAGS += -mthumb" into my tree and
-> > >> built a Thumb VDSO quite happily with Ubuntu 19.04's
-> > >> gcc-arm-linux-gnueabihf. What was the actual failure you saw?
-> > >
-> > >  From the link in the commit message: `write to reserved register 'R7'`
-> > > https://godbolt.org/z/zwr7iZ
-> > > IIUC r7 is reserved for the frame pointer in THUMB?
-> >
-> > It can be, if you choose to build with frame pointers and the common
-> > frame pointer ABI for Thumb code that uses r7. However it can also be
-> > for other things like the syscall number in the Arm syscall ABI too.
->
-> Ah, right, with -fomit-frame-pointer, this error also goes away.  Not
-> sure if we prefer either:
-> - build the compat vdso as -marm always or
-> - disable frame pointers for the vdso (does this have unwinding implications?)
-> - other?
->
-> > I
-> > take it Clang has decided that writing syscall wrappers with minimal
-> > inline asm is not a thing people deserve to do without arbitrary other
-> > restrictions?
->
-> Was the intent not obvious? We would have gotten away with it, too, if
-> wasn't for you meddling kids and your stupid dog! /s
-> https://www.youtube.com/watch?v=hXUqwuzcGeU
-> Anyways, this seems to explain more the intentions:
-> https://reviews.llvm.org/D76848#1945810
-> + Victor, Kristof (ARM)
+> Enumerating networking interfaces, addresses, and almost all of the
+> configuration requires no extra privilege. In fact I'd hope that
+> whatever daemon collects network stats doesn't run as root :)
+> 
+> I think enumerating objects is of primary importance, and statistics 
+> of those objects are subordinate.
 
-And maybe some other useful data points regarding warning on use of r7
-and frame pointers.
-https://github.com/ClangBuiltLinux/linux/issues/701#issuecomment-591325758
-https://bugs.llvm.org/show_bug.cgi?id=45826
-https://gcc.gnu.org/bugzilla/show_bug.cgi?id=94986
+I see what you meant now.  statsfs can also be used to enumerate objects
+if one is so inclined (with the prototype in patch 7, for example, each
+network interface becomes a directory).
 
-+ Peter (ARM)
-+ David, Arnd (Linaro)
--- 
+> Again, I have little KVM knowledge, but BPF also uses a fd-based API,
+> and carries stats over the same syscall interface.
+
+Can BPF stats (for BPF scripts created by whatever process is running in
+the system) be collected by an external daemon that does not have access
+to the file descriptor?  For KVM it's of secondary importance to gather
+stats in the program; it can be nice to have and we are thinking of a
+way to export the stats over the fd-based API, but it's less useful than
+system-wide monitoring.  Perhaps this is a difference between the two.
+
+Another case where stats and configuration are separate is CPUs, where
+CPU enumeration is done in sysfs but statistics are exposed in various
+procfs files such as /proc/interrupts and /proc/stats.
+
 Thanks,
-~Nick Desaulniers
+
+Paolo
+
 
 _______________________________________________
 linux-arm-kernel mailing list
