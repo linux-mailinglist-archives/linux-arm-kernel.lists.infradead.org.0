@@ -2,98 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DAAB41E3D55
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 11:14:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC11E1E3D59
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 11:15:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZuB5JgbTMMdPeXAOD1tP17gMDM0RR5Yn1KkQooy1Z3g=; b=uEhGhEr7ug2S+DFSKk2jXUYft
-	s9ay1OCpHS+CjN/1arVR8UNwAQCNEWS+oM4zC6l0HrNbUCFo+Qs9qHQuh2aeeDoNOB9NhfuFxMIlN
-	JsBa1ewAstfazWBlHfeSdDSq4IS4HdaOxeqwlOpNDrmx5/cqMEDT0e5Q0J8h74ELEqcfGbecre8k+
-	HxjEmuL3vIocpQbkb4QGr1IL4BAMWbG9/H5ArH0JIUAeg9ASJ7P4uOD10Xej3xW0zx2A1kmVUlmA2
-	HBcuSsWwIHEd7jWGR0QlU/eiFzyKl0bjojyoLV1JPzz5Vl01dba6EBAUJVjexIJFFA9yaaOXj18P3
-	gunCw3zRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nzdne9H8V9xw1haReTI2NkwTPVNqGEMxaq1jc32O61Y=; b=Z/jSg6PQMCCV6/
+	uCTy/lC6FW3Hc7nlUtbeiNH6NlOMk9LhxrhgkuLuUqkAuvrM2FIepDqpy04eCwVk1SC55xZsHP3Md
+	5vwVq8qy3SOf3XMPJyM8tLicdUTbfnmF2NGFKmG0fUA+4yBCN0VfU8IBh20CcsdjqPx+cHhLjVQtb
+	ofg1bHq6qtZqZY9bynHzXk4jksNJw7/QcVW99Ojpn5LT5d3sO8O8jZGHaEqVweB/QFyDethNdK50i
+	0aRmc4AegtZ25iPq1OxJkQ1lW+l/ZXvK0mVCW2QWTiK5DFM6bBnzVDUb5sAQBy+6aa1l8n1Nz6GM9
+	JMY7GmqWluYCHfbEgeVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jds8d-0006Ce-EM; Wed, 27 May 2020 09:14:15 +0000
-Received: from new2-smtp.messagingengine.com ([66.111.4.224])
+	id 1jds9P-0006d4-A9; Wed, 27 May 2020 09:15:03 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jds89-0005u7-BU; Wed, 27 May 2020 09:13:47 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id 458BF580184;
- Wed, 27 May 2020 05:13:40 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 27 May 2020 05:13:40 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=V5epjiDGiclpAXJJpB3JE24jmk6
- thqQZcHWLQmvyuUI=; b=afFk/O5M5iUdGGh/mcZZQSmWP9l8zSgz9lNVaE199Em
- nbgE6W8CSw0zFL9SnUP7uXSR7qT1XxQX8tDdeDIuY63lN0z5jgxQp4K5Lzt2PKyf
- tHXjyQicYV5VWtE3SKycCHL1AQqxyyxm30+2DEW9afNDHrvV5Vd9FwJXmT1omEjC
- YZV4G+4eDO7d/2maCVg0uHcPCT7HbYcuC35DsDs3+0/WTRsb0gq23xUK8F2IlYX2
- RjXIdbJykAIb8SUnCbhyKd2QczXXB1GyyYlOAryCe7ZNnjGl4O8Awk148iQP3fV/
- 0s0yWscW+JB8U/aPOF0BQrBhdHzJgelUb3Ju7GZz0Yg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=V5epji
- DGiclpAXJJpB3JE24jmk6thqQZcHWLQmvyuUI=; b=NfATUaw901WlNTfX1Pg5wf
- VzyV0ZCjREZzEubzT29J2zNQtbxmxgarGmO8OTcLnJFZDbjLIXpU3YkLFpApRf43
- d65r9jucWdefHFKo0BDbhE7aiqT7SY1cq1i6OnXfumEe+D/Tof39+ge+z5byB15/
- ow68Z6xgT68Q0RX2pF3Si0qRS9tOce+bAZdreEyzfvLOFc3JTg9wayySAW93iUgz
- NtanODdCevcGOpqwweMlK8Gr2cUnF6hj+YrjQXuEkwsfWySc6dNXD5gmkrYuqboi
- Tq5bKPkejPCobXrRhfgT0iKOemYDwJWFeUdfk72nOQz13dPB0YYxNb0M0zZ5/diw
- ==
-X-ME-Sender: <xms:QS_OXsbh5mG9N37eoM9wr1nZmwvzQsVZK5HS5wtVD4XrBkrpuZoLTw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedguddtucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
- htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
- gedunecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
- frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:QS_OXnYhpDwxYPnG140lqFLRlDN_P27ktwVqvxghdhSeN_ZdlZWniA>
- <xmx:QS_OXm-bGmz1PUWtUlPhyx3yvXa3lF9sSUY1SINUu-poX_q3iI8POQ>
- <xmx:QS_OXmpUMcCGukOP73oVLStJAyFaG9_8rlFR6rCrTeTgHqNJxkMotw>
- <xmx:RC_OXq1jTEytyhpvWEScpxh_pvTdwfI8yH08SfBPb187Z1Mw3FSxjg>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id E95C43280063;
- Wed, 27 May 2020 05:13:36 -0400 (EDT)
-Date: Wed, 27 May 2020 11:13:35 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Daniel Drake <drake@endlessm.com>
-Subject: Re: [PATCH v2 00/91] drm/vc4: Support BCM2711 Display Pipelin
-Message-ID: <20200527091335.7wc3uy67lbz7j4di@gilmour.lan>
-References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
- <20200427072342.5499-1-jian-hong@endlessm.com>
- <20200428162152.ztsqp7nxqbwqrm6r@gilmour.lan>
- <CAPpJ_efvtVzb_hvoVOeaePh7UdE13wOiiGaDBH38cToB-yhkUg@mail.gmail.com>
- <20200507172158.cybtakpo6cxv6wcs@gilmour.lan>
- <CAPpJ_efxenmSXt2OXkhkQ1jDJ59tyWBDUvmpyOB-bfPMDENQZg@mail.gmail.com>
- <CAPpJ_ed9TMJjN8xS1_3saf5obQhULJSLNgQSAFxgiWM2QX9A7Q@mail.gmail.com>
- <20200526102018.kznh6aglpkqlp6en@gilmour.lan>
- <CAD8Lp467DiYWLwH6T1Jeq-uyN4VEuef-gGWw0_bBTtmSPr00Ag@mail.gmail.com>
+ id 1jds93-0006be-7F
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 09:14:43 +0000
+Received: by mail-wm1-x341.google.com with SMTP id f5so2301898wmh.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 02:14:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=ERVcxFTM0vT/1MH9e0iwQ2bGR9XL129932mJIGULC34=;
+ b=cMob0knkFSJDBlUwLV6UPNqIun4MapJpUgHYb9tboeOz36yVvhh9l2hDsgB54ivPJO
+ yiCC30cVW3EKTZ3OO3AfHqU8x+VtFkIIr0R9fGSd418KPIu5PXD3MofWwt9Cn2ZLKNWJ
+ WbqhPncsVCI9jaz/XYl8TQfUkBhZcJJIY+1dRZnbr6+8xGUCHKX6T3hTbccnFO0xr8m3
+ 3EGoD8UDVloV9br85tJzoOvF0n7pBVf6BYmpEDvTfr4K+VpGOi5q5unNylupXEFoRhUj
+ VLg7JlpiPYNFEZAuzR0Ht67wXC9aZNcjXjxPiAMlvjYvrPxmhzj07ZCy89z8WzMRBcry
+ p1wg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=ERVcxFTM0vT/1MH9e0iwQ2bGR9XL129932mJIGULC34=;
+ b=WKAfEQUvUwI3cIV76irUFqx+fKOKsA+jiKe0eslrNsmDw+NqhPHXNL3WvPilOoIzlp
+ MTxX+a1GlAas/eGKJDjXqCyjZiAQqnL4BZDlw6Th4SKbiZtsETRJC02JxO4TJQCV7wxy
+ 7FYZ2zNgUXnxKEmybMWiBFqrx1xRCk9tj7eFoQsuZVIGnvb+tvkQz+A0bCNLrs7LFsaH
+ z94YE4qg3SJrhx4jtV502L5xhb3OmI4z0tbR2Roxcmoam1YsmUE0jxjkkIHCUakYd8D5
+ 0sprfNAvTt74AcJLMOHwNKF+gamZ4ln6bq6V0nywIQ6ZZK7icQYOqYguJF19BKOy9ggs
+ jvxQ==
+X-Gm-Message-State: AOAM530T6Z+Q6J0hVMILPxwCjeEbWCBMHMQslthrjUuh/1QKUvf2hA2b
+ zjT30bviqV7OePEEwmLAtK3WYQ==
+X-Google-Smtp-Source: ABdhPJwwb+zSrIRkBY0A0SsuRcJOHMxMcWGLJGJHnizfqmIO4FBg2RexGKWtdOVRtUHcowLTG/s5zA==
+X-Received: by 2002:a7b:c5d7:: with SMTP id n23mr3582615wmk.185.1590570879183; 
+ Wed, 27 May 2020 02:14:39 -0700 (PDT)
+Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id r5sm2369132wrq.0.2020.05.27.02.14.38
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 02:14:38 -0700 (PDT)
+Date: Wed, 27 May 2020 11:14:28 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: "Tian, Kevin" <kevin.tian@intel.com>
+Subject: Re: [RFC] Use SMMU HTTU for DMA dirty page tracking
+Message-ID: <20200527091428.GB265288@myrica>
+References: <b926ec0b-fe87-0792-c41d-acad56c656a4@huawei.com>
+ <20200522171452.GC3453945@myrica>
+ <e68c1158-8573-a477-42ce-48cee510c3ce@huawei.com>
+ <MWHPR11MB16454475DA1FF417CEF5A32B8CB10@MWHPR11MB1645.namprd11.prod.outlook.com>
+ <897a84ac-0a71-ace7-e05b-3cc9f0b05c28@huawei.com>
+ <MWHPR11MB1645AA007D24F2D005794E5C8CB10@MWHPR11MB1645.namprd11.prod.outlook.com>
 MIME-Version: 1.0
-In-Reply-To: <CAD8Lp467DiYWLwH6T1Jeq-uyN4VEuef-gGWw0_bBTtmSPr00Ag@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <MWHPR11MB1645AA007D24F2D005794E5C8CB10@MWHPR11MB1645.namprd11.prod.outlook.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_021345_738037_70A5D4FC 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200527_021441_266602_E65AA8B8 
+X-CRM114-Status: GOOD (  24.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.224 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [66.111.4.224 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -101,7 +90,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,73 +101,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- devicetree <devicetree@vger.kernel.org>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Jian-Hong Pan <jian-hong@endlessm.com>,
- Linux Upstreaming Team <linux@endlessm.com>, linux-clk@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============2753457068578751445=="
+Cc: "Zhao, Yan Y" <yan.y.zhao@intel.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, "maz@kernel.org" <maz@kernel.org>,
+ "alex.williamson@redhat.com" <alex.williamson@redhat.com>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ Xiang Zheng <zhengxiang9@huawei.com>, James Morse <james.morse@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "prime.zeng@hisilicon.com" <prime.zeng@hisilicon.com>,
+ Kirti Wankhede <kwankhede@nvidia.com>,
+ Wang Haibin <wanghaibin.wang@huawei.com>, Will Deacon <will@kernel.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, May 27, 2020 at 08:40:47AM +0000, Tian, Kevin wrote:
+> > From: Xiang Zheng <zhengxiang9@huawei.com>
+> > Sent: Wednesday, May 27, 2020 2:45 PM
+> > 
+> > 
+> > On 2020/5/27 11:27, Tian, Kevin wrote:
+> > >> From: Xiang Zheng
+> > >> Sent: Monday, May 25, 2020 7:34 PM
+> > >>
+> > >> [+cc Kirti, Yan, Alex]
+> > >>
+> > >> On 2020/5/23 1:14, Jean-Philippe Brucker wrote:
+> > >>> Hi,
+> > >>>
+> > >>> On Tue, May 19, 2020 at 05:42:55PM +0800, Xiang Zheng wrote:
+> > >>>> Hi all,
+> > >>>>
+> > >>>> Is there any plan for enabling SMMU HTTU?
+> > >>>
+> > >>> Not outside of SVA, as far as I know.
+> > >>>
+> > >>
+> > >>>> I have seen the patch locates in the SVA series patch, which adds
+> > >>>> support for HTTU:
+> > >>>>     https://www.spinics.net/lists/arm-kernel/msg798694.html
+> > >>>>
+> > >>>> HTTU reduces the number of access faults on SMMU fault queue
+> > >>>> (permission faults also benifit from it).
+> > >>>>
+> > >>>> Besides reducing the faults, HTTU also helps to track dirty pages for
+> > >>>> device DMA. Is it feasible to utilize HTTU to get dirty pages on device
+> > >>>> DMA during VFIO live migration?
+> > >>>
+> > >>> As you know there is a VFIO interface for this under discussion:
+> > >>> https://lore.kernel.org/kvm/1589781397-28368-1-git-send-email-
+> > >> kwankhede@nvidia.com/
+> > >>> It doesn't implement an internal API to communicate with the IOMMU
+> > >> driver
+> > >>> about dirty pages.
+> > >
+> > > We plan to add such API later, e.g. to utilize A/D bit in VT-d 2nd-level
+> > > page tables (Rev 3.0).
+> > >
+> > 
+> > Thank you, Kevin.
+> > 
+> > When will you send this series patches? Maybe(Hope) we can also support
+> > hardware-based dirty pages tracking via common APIs based on your
+> > patches. :)
+> 
+> Yan is working with Kirti on basic live migration support now. After that
+> part is done, we will start working on A/D bit support. Yes, common APIs
+> are definitely the goal here.
+> 
+> > 
+> > >>
+> > >>>
+> > >>>> If SMMU can track dirty pages, devices are not required to implement
+> > >>>> additional dirty pages tracking to support VFIO live migration.
+> > >>>
+> > >>> It seems feasible, though tracking it in the device might be more
+> > >>> efficient. I might have misunderstood but I think for live migration of
+> > >>> the Intel NIC they trap guest accesses to the device and introspect its
+> > >>> state to figure out which pages it is accessing.
+> > >
+> > > Does HTTU implement A/D-like mechanism in SMMU page tables, or just
+> > > report dirty pages in a log buffer? Either way tracking dirty pages in IOMMU
+> > > side is generic thus doesn't require device-specific tweak like in Intel NIC.
+> > >
+> > 
+> > Currently HTTU just implement A/D-like mechanism in SMMU page tables.
+> > We certainly
+> > expect SMMU can also implement PML-like feature so that we can avoid
+> > walking the
+> > whole page table to get the dirty pages.
 
---===============2753457068578751445==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="kokco5kof5hl45yv"
-Content-Disposition: inline
+There is no reporting of dirty pages in log buffer. It might be possible
+to do software logging based on PRI or Stall, but that requires special
+support in the endpoint as well as the SMMU.
 
+> Is there a link to HTTU introduction?
 
---kokco5kof5hl45yv
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I don't know any gentle introduction, but there are sections D5.4.11
+"Hardware management of the Access flag and dirty state" in the ARM
+Architecture Reference Manual (DDI0487E), and section 3.13 "Translation
+table entries and Access/Dirty flags" in the SMMU specification
+(IHI0070C). HTTU stands for "Hardware Translation Table Update".
 
-Hi Daniel,
+In short, when HTTU is enabled, the SMMU translation performs an atomic
+read-modify-write on the leaf translation table descriptor, setting some
+bits depending on the type of memory access. This can be enabled
+independently on both stage-1 and stage-2 tables (equivalent to your 1st
+and 2nd page tables levels, I think).
 
-On Wed, May 27, 2020 at 11:49:36AM +0800, Daniel Drake wrote:
-> Hi Maxime,
->=20
-> On Tue, May 26, 2020 at 6:20 PM Maxime Ripard <maxime@cerno.tech> wrote:
-> > I gave it a try with U-Boot with my latest work and couldn't reproduce =
-it, so it
-> > seems that I fixed it along the way
->=20
-> Is your latest work available in a git branch anywhere that we could
-> test directly?
-
-I'm about to send a v3 today or tomorrow, I can Cc you (and Jian-Hong) if y=
-ou
-want.
-
-Maxime
-
---kokco5kof5hl45yv
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXs4vPwAKCRDj7w1vZxhR
-xaGaAQCg3gZaUrnvSNp3BzxW8iTAVt5FCWnVgDC2YFeAH5wRnAD/RUVn5pMYOZX3
-CW4nLRVoZ8NFLwZqHrhV/v6g5LHIhgQ=
-=WuzX
------END PGP SIGNATURE-----
-
---kokco5kof5hl45yv--
-
-
---===============2753457068578751445==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Jean
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2753457068578751445==--
-
