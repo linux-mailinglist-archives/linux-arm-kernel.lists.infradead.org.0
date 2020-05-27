@@ -2,138 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F8571E3685
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 05:28:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EE331E368F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 05:31:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=35iKskT9A73VBUqul/xwXjfYSpVIy1A5r2sA1zgrsH8=; b=pBgYk/Qx0CsDlA
-	+LneaCAYxehsXuyvyhIdK7dtXx6mAeHAzQjXDRQ8zbiCaSmQ+gGI8uK4C/Qa9BdXpQmrpZEK4STvf
-	1YzdzfJM/qYZAdsJvU2RIHT5vWFtG39sQHi+cwd6OSSYif8qZCpHyPT2YYloGwsB34zmHdVqWXhbh
-	EtasjN7hpV0LZjdG6vHQMeKzA03MErFX7cZNgXOqS+Q7p2cxByYiZwL7doiWBWCkawWNWYqbe+wjQ
-	w+a52OASLNGxq3lJ6pQPJmoGQqL/R3D+mif+Q6R5v6xrhsrtVy5dKFw1V2w1fzB29CAvbdlpNMWSi
-	UDUt2+ZeuKxXbZUbZdSA==;
+	List-Owner; bh=1HquERNqWBp6/MCrjFCpwHetmNT0lNA4XnKI3QIt2R8=; b=S9Molso//wEjht
+	fbwYeP4nEKZ+YTqN80N04eJBR7vCCKAEgOFGDGfAhL9WqS1Tok2fIxpokpfq7TxNU80mbwOuRG0Cb
+	0a7l3FCzfvMnz7YX4CCclqVlGV7ygxrfeo8zRahcpjYyjLj261X8MCR231kEVTTNPNbBvKODbNvkc
+	F2R+m4F62gTK0QcZBpdNmQuu1aZuT/ZxqJ30M5wPMxLDfibouGNiNsOR1k45quDnLdWm8peGVGD1D
+	Vbq+C2RU/mwVdLu15wS780NwUW1NvSHwzDGozesDF76TuSKhH7Xc7I8Der+HlTSH60ruMBn/ebi8F
+	fveHm94FDVZ5q06HZ/9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdmjb-0000t9-6x; Wed, 27 May 2020 03:28:03 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jdmn2-0003dQ-Ri; Wed, 27 May 2020 03:31:36 +0000
+Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdmjN-0000sn-64
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 03:27:50 +0000
-IronPort-SDR: 5kj+d6CH8pnkDIFhuQHG7l3lZi0gkVMqq8WwpSdu588B/+qFJOOGCB8XiuOYmMhJW0edgI0AvC
- x/hEkcrKiewQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 26 May 2020 20:27:48 -0700
-IronPort-SDR: Wg2daB6xUYgbP61JpkF4sz+Azr4I2SWGGgi7T+o4Cwtazh6/VNlHX+QkGeUAgWzdV9j3ldmtcC
- RaXx2mqsjenw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,439,1583222400"; d="scan'208";a="468589474"
-Received: from orsmsx107.amr.corp.intel.com ([10.22.240.5])
- by fmsmga006.fm.intel.com with ESMTP; 26 May 2020 20:27:48 -0700
-Received: from orsmsx123.amr.corp.intel.com (10.22.240.116) by
- ORSMSX107.amr.corp.intel.com (10.22.240.5) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Tue, 26 May 2020 20:27:47 -0700
-Received: from ORSEDG001.ED.cps.intel.com (10.7.248.4) by
- ORSMSX123.amr.corp.intel.com (10.22.240.116) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Tue, 26 May 2020 20:27:47 -0700
-Received: from NAM10-BN7-obe.outbound.protection.outlook.com (104.47.70.109)
- by edgegateway.intel.com (134.134.137.100) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Tue, 26 May 2020 20:27:47 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DDlFA7ocN5WViwSbRG9px/zsQAIJNeQ00lxGBDnJNiG2B2ZOCNy/nRSjMpGxrpptvmWzFgjMZpzvhRzdQkDWsVoNqlt1SwWUeHpj/BpMDnHo/BJ9lj2FfIK3swEHmx3OAjtXthHUab4TfMR7+6H/iALY8WGqx2YFP37rfgGEyBFN6QkOm0t5J/IeLZsWt997cxQv3QOTBM3MrSyucEhKGyn2aL4n0H30sBRanCnWvJuN51BYdLjjXvCNyFISM9eDMttymH7BZojgxff+JgDoxva3D3gs/tIm0P4ndmTD3zvpX/Akbs6Js4XfciXuePKyk4NioZuUbBup4HRAv1f/7g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PuCP09GFIpCbXzVrIAS8QLGUXrK+6QhkOXgsTwLQnFY=;
- b=j1SA97FYKoy94o0lFUu2LyX8XvV1gDZzyJQxnYqRE3oyWZWX519wW8WDDwLWJNEsnSSUo1bkZEx1VH4A6MFe8CwV9Br0KB1LPX5J21ZTEQkcGcCFDVAsuoJHJXWGF6Wqw9EsweUXogkk0L1vSbstp8KLKvtP9zJ9Nj9FvUK5kyP7VqCizTQlC6RYJreccDr7gk+EoUHFehKUzuSShMYxKGTTI/4VE39mcz1S6n6hpZYYokMPLGJ2s28Iv/iE35SRBF2Ka4ADQrLJKlzT7ZIFO8/g3GN31dH23MqM9PPBXZPK3xkyRoaMjNEI1LUuMvP81kwoaWXP7wjVYH1kZYWAcg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
- dkim=pass header.d=intel.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=intel.onmicrosoft.com; 
- s=selector2-intel-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PuCP09GFIpCbXzVrIAS8QLGUXrK+6QhkOXgsTwLQnFY=;
- b=t7OR6TuTEjVekaw2P3SxSyTLh86XL3PTEIEuZQnNh7vNlb9r3HMvrAkhC+ln9Rq3ObIm5C2W8KMbG/qSycUDIK0UIY73YAJd+20NXuMeJ1Z6MVf50vYMW5itCbeiZ8Y7wKtKgfZqfIQdRfnuBHTgMbbrY4I7YlQuVilWp+iVUP8=
-Received: from MWHPR11MB1645.namprd11.prod.outlook.com (2603:10b6:301:b::12)
- by MWHPR11MB1277.namprd11.prod.outlook.com (2603:10b6:300:29::22) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3021.23; Wed, 27 May
- 2020 03:27:45 +0000
-Received: from MWHPR11MB1645.namprd11.prod.outlook.com
- ([fe80::b441:f6bd:703b:ba41]) by MWHPR11MB1645.namprd11.prod.outlook.com
- ([fe80::b441:f6bd:703b:ba41%2]) with mapi id 15.20.3021.029; Wed, 27 May 2020
- 03:27:45 +0000
-From: "Tian, Kevin" <kevin.tian@intel.com>
-To: Xiang Zheng <zhengxiang9@huawei.com>, Jean-Philippe Brucker
- <jean-philippe@linaro.org>
-Subject: RE: [RFC] Use SMMU HTTU for DMA dirty page tracking
-Thread-Topic: [RFC] Use SMMU HTTU for DMA dirty page tracking
-Thread-Index: AQHWMFylSKWbJMD/rEatnfJX129kWai4sCAAgAKbIaA=
-Date: Wed, 27 May 2020 03:27:45 +0000
-Message-ID: <MWHPR11MB16454475DA1FF417CEF5A32B8CB10@MWHPR11MB1645.namprd11.prod.outlook.com>
-References: <b926ec0b-fe87-0792-c41d-acad56c656a4@huawei.com>
- <20200522171452.GC3453945@myrica>
- <e68c1158-8573-a477-42ce-48cee510c3ce@huawei.com>
-In-Reply-To: <e68c1158-8573-a477-42ce-48cee510c3ce@huawei.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-dlp-version: 11.2.0.6
-dlp-product: dlpe-windows
-dlp-reaction: no-action
-authentication-results: huawei.com; dkim=none (message not signed)
- header.d=none;huawei.com; dmarc=none action=none header.from=intel.com;
-x-originating-ip: [192.55.52.201]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: dfe24859-021e-40fa-eeb6-08d801edec16
-x-ms-traffictypediagnostic: MWHPR11MB1277:
-x-ld-processed: 46c98d88-e344-4ed4-8496-4ed7712e255d,ExtAddr
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <MWHPR11MB12779AEB5FBA459A61D5A9288CB10@MWHPR11MB1277.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 04163EF38A
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: k+S344j/6Y/72khmcvXATyNtL37jYgE9l7Z7/B8IzB7pTbvJNtBzF5oXe4etrrJcfssBoocWzFTkpoY43hClJ9b84h542zKq+5dcT1OjiHAK+4fbfD3e1OQnxO5lffXY6DeIMpjmQRSB/2rlqjMPQ5RmJO3/G9ZOoRKNkhQxMXdAlaI3FxM85AEQOEfv6ZnmTz5ej0cXm0qFZZSuv/hdxzphrttShbUtvpTr7TdMWg6taxQIYkGkTNwiv4KX5x3XTsQMo67fJE/vjNyZo3Wclpo/oVz7j/jU8dHtKp6HIjhX0i0MBYNrBXKkMecbs2yNXH8SQ6POg0byzh0UXjt5QHROF1ojidRm3EqoWmOa7i4BCF7R4++AaNh1J51SVKfhr90UtCW2T2kF+TomzAKf37IeBa5FEaCc5Xw4HUndwJNIm9FEtifd8bb3AJz0PA154AvKAG8Fz4KE8fXhV1GMAA==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:MWHPR11MB1645.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(396003)(39860400002)(136003)(366004)(346002)(376002)(26005)(55016002)(186003)(966005)(64756008)(478600001)(7416002)(7696005)(86362001)(53546011)(66556008)(83380400001)(8936002)(66946007)(66476007)(33656002)(76116006)(66446008)(2906002)(6506007)(316002)(9686003)(54906003)(4326008)(110136005)(5660300002)(8676002)(71200400001)(52536014)(14143004);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: Bxk2QFZQFa9dN2KwthZztJJA2csJscwbhPS1E4ZB1L5f77NAfOw9uh03+0KP/EmPsom+/3XfobQWqCzWwlEt0lht+YT03gwOVlQ6VaRsYwdE/XxYUfiKFXWaV+U6F0mJI6MgU3bG13fU8KxCMrSFmRQ3nSARh45gSszGg4Oc0oHDn2l7gDXSus2eVUspMnjHziCe+Mo4Mygpy8geryJLqY19RwKjGVURGq27MfwN9jYkZfNdu//qIkmkUow5KzXHcjKG7e4bo6VHJ0TiEK3Y0LBN8g6kgwqp4YDBNDrTNRM8v34iFOp4GIEp0Hfhjz5qkngSJuT7IWfNv7uZIVkAmwSOLXlMb64yada+3PfwQkWG3fGqMzCk8GC5V95KMdx96PKbGwlk5W07jHpUJRBerX+Mrh+VSygTKWePLLC5GVnOSiAvN8V6ZBEeHZZcTovg/OJ4DOyxt2X4PjHG8jo0LDJjeDck5SkO5KHCpfEVRlqZqfV6hV86juJ7NL8j8Hw9
+ id 1jdmmr-0003d3-2w
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 03:31:26 +0000
+Received: by mail-il1-x144.google.com with SMTP id j3so22588654ilk.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 26 May 2020 20:31:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=mYTDBjmF5P3Prc+HqW20hE68LTSpmhjJUYlei4pinL4=;
+ b=gqG/fvpbY+IG7TyiRzSTZ9wDGJLAHqG+o9kNi1AF9EL+ny4VwJW8K4LxWrnbLj+2aG
+ 2glK+H/RU/c7WBt6NoFHIPTeid2VMzvufC3lzP+lg/+KT6G5OjUYdzk1eiT1uyVQcIOx
+ Hs+qapgUNPryh9o3UdyGBOqeckXGT7W0FCKlX6QMQAFJAhXFk+RK2B+BvQ9mI88x7AKL
+ +Nzf5eOLuW/BbgmASX4gDk97t8UoqWmo2RtbjP3ZKxtiFi7wEpH3aVcSKcIL+mBo5qPT
+ 7NtdN1wgwoI/hRCJwS/P90XKG51rV9cmbRn7RVOLBrZ4a7JnWmXWeTz++nPwy7tuupdz
+ msfA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=mYTDBjmF5P3Prc+HqW20hE68LTSpmhjJUYlei4pinL4=;
+ b=sttvPWHkCshq0WEUgEc/TEWvvlLWwzk6+iJ7BRrcjlnUdK3UCAxdTY2ge8ITIhw7eM
+ x0JyVqRbn0LE8oM9QMjg2eQQ4+jcAduEi0koJ0eM6kZrDuE311/qZ7OKCaHx9GO1agoj
+ gxml4btE21mQ/qKH5DSUO7BEVWsF5Ig69oJXODWEshxf5YCjMWnRfH0JgbDwXmWCRISC
+ pzyYNaz+RvrZa7YN/a5mIrJc/fnmmoDK87cF1LxZwa2EOMlS+UyD9QOzHKEM0/WdedHX
+ nd0fCu+ghMCsRWGW6NObo+uoz9mMMXyZuvvJ/2YBnVMzibn4Vev6iQOPe4/uje9zvEdL
+ 8zNA==
+X-Gm-Message-State: AOAM530eb2/Sh2X2kgcQT42/v6oOf7fLVUsP89os84Zc0RNUntoCUJxE
+ KykAp7pLuP2y3SgjAjN3jfYPT6KB8mggt0Dq+VE=
+X-Google-Smtp-Source: ABdhPJwuyAxSxLkhVb7QvcW25hO5jSZaAlIwIL+dnkE3kgzuiin71PvFpxjwpkiCyDSpFszGEGBvvFVmU0Khgad6kBg=
+X-Received: by 2002:a92:40ca:: with SMTP id d71mr4124378ill.200.1590550284118; 
+ Tue, 26 May 2020 20:31:24 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: dfe24859-021e-40fa-eeb6-08d801edec16
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 May 2020 03:27:45.1458 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 46c98d88-e344-4ed4-8496-4ed7712e255d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: SN1tHEQ5CKrYDxp+LsStR/LsEPTO9An5e5+UZzZ6VB0xQwObPjRTsl4VL0ETqcl1Cbdv+wVk1rjAT29btCKErw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1277
-X-OriginatorOrg: intel.com
+References: <1590378348-8115-1-git-send-email-dillon.minfei@gmail.com>
+ <1590378348-8115-6-git-send-email-dillon.minfei@gmail.com>
+ <159054389592.88029.12389551390229328953@swboyd.mtv.corp.google.com>
+In-Reply-To: <159054389592.88029.12389551390229328953@swboyd.mtv.corp.google.com>
+From: dillon min <dillon.minfei@gmail.com>
+Date: Wed, 27 May 2020 11:30:47 +0800
+Message-ID: <CAL9mu0L1OxDMHwNjfh+11br+z3vt+wyq45Q7-KNVSLTENAxH+Q@mail.gmail.com>
+Subject: Re: [PATCH v5 5/8] clk: stm32: Fix stm32f429's ltdc driver hang in
+ set clock rate, fix duplicated ltdc clock register to 'clk_core' case ltdc's
+ clock turn off by clk_disable_unused()
+To: Stephen Boyd <sboyd@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200526_202749_298624_7EBFF91D 
-X-CRM114-Status: GOOD (  25.59  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200526_203125_146142_EC2E9A14 
+X-CRM114-Status: GOOD (  17.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dillon.minfei[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,115 +97,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Zhao, Yan Y" <yan.y.zhao@intel.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, "maz@kernel.org" <maz@kernel.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- Kirti Wankhede <kwankhede@nvidia.com>,
- "alex.williamson@redhat.com" <alex.williamson@redhat.com>,
- James Morse <james.morse@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "prime.zeng@hisilicon.com" <prime.zeng@hisilicon.com>,
- Wang Haibin <wanghaibin.wang@huawei.com>, Will Deacon <will@kernel.org>,
- "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
- "julien.thierry.kdev@gmail.com" <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ linux-spi <linux-spi@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Xiang Zheng
-> Sent: Monday, May 25, 2020 7:34 PM
-> 
-> [+cc Kirti, Yan, Alex]
-> 
-> On 2020/5/23 1:14, Jean-Philippe Brucker wrote:
-> > Hi,
-> >
-> > On Tue, May 19, 2020 at 05:42:55PM +0800, Xiang Zheng wrote:
-> >> Hi all,
-> >>
-> >> Is there any plan for enabling SMMU HTTU?
-> >
-> > Not outside of SVA, as far as I know.
-> >
-> 
-> >> I have seen the patch locates in the SVA series patch, which adds
-> >> support for HTTU:
-> >>     https://www.spinics.net/lists/arm-kernel/msg798694.html
-> >>
-> >> HTTU reduces the number of access faults on SMMU fault queue
-> >> (permission faults also benifit from it).
-> >>
-> >> Besides reducing the faults, HTTU also helps to track dirty pages for
-> >> device DMA. Is it feasible to utilize HTTU to get dirty pages on device
-> >> DMA during VFIO live migration?
-> >
-> > As you know there is a VFIO interface for this under discussion:
-> > https://lore.kernel.org/kvm/1589781397-28368-1-git-send-email-
-> kwankhede@nvidia.com/
-> > It doesn't implement an internal API to communicate with the IOMMU
-> driver
-> > about dirty pages.
-
-We plan to add such API later, e.g. to utilize A/D bit in VT-d 2nd-level 
-page tables (Rev 3.0). 
-
-> 
-> >
-> >> If SMMU can track dirty pages, devices are not required to implement
-> >> additional dirty pages tracking to support VFIO live migration.
-> >
-> > It seems feasible, though tracking it in the device might be more
-> > efficient. I might have misunderstood but I think for live migration of
-> > the Intel NIC they trap guest accesses to the device and introspect its
-> > state to figure out which pages it is accessing.
-
-Does HTTU implement A/D-like mechanism in SMMU page tables, or just
-report dirty pages in a log buffer? Either way tracking dirty pages in IOMMU
-side is generic thus doesn't require device-specific tweak like in Intel NIC.
-
-Thanks
-kevin
-
-> >
-> > With HTTU I suppose (without much knowledge about live migration) that
-> > you'd need several new interfaces to the IOMMU drivers:
-> >
-> > * A way for VFIO to query HTTU support in the SMMU. There are some
-> >   discussions about communicating more IOMMU capabilities through VFIO
-> but
-> >   no implementation yet. When HTTU isn't supported the DIRTY_PAGES
-> bitmap
-> >   would report all pages as they do now.
-> >
-> > * VFIO_IOMMU_DIRTY_PAGES_FLAG_START/STOP would clear the dirty bit
-> >   for all VFIO mappings (which is going to take some time). There is a
-> >   walker in io-pgtable for iova_to_phys() which could be extended. I
-> >   suppose it's also possible to atomically switch the HA and HD bits in
-> >   context descriptors.
-> 
-> Maybe we need not switch HA and HD bits, just turn on them all the time?
-> 
-> >
-> > * VFIO_IOMMU_DIRTY_PAGES_FLAG_GET_BITMAP would query the dirty
-> bit for all
-> >   VFIO mappings.
-> >
-> 
-> I think we need to consider the case of IOMMU dirty pages logging. We want
-> to test Kirti's VFIO migration patches combined with SMMU HTTU, any
-> suggestions?
-> 
-> --
-> Thanks,
-> Xiang
-> 
-> _______________________________________________
-> iommu mailing list
-> iommu@lists.linux-foundation.org
-> https://lists.linuxfoundation.org/mailman/listinfo/iommu
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU3RlcGhlbiwKClRoYW5rcyBmb3IgcmV2aWV3aW5nLgoKT24gV2VkLCBNYXkgMjcsIDIwMjAg
+YXQgOTo0NCBBTSBTdGVwaGVuIEJveWQgPHNib3lkQGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4gUXVv
+dGluZyBkaWxsb24ubWluZmVpQGdtYWlsLmNvbSAoMjAyMC0wNS0yNCAyMDo0NTo0NSkKPiA+IEZy
+b206IGRpbGxvbiBtaW4gPGRpbGxvbi5taW5mZWlAZ21haWwuY29tPgo+ID4KPiA+IGx0ZGMgc2V0
+IGNsb2NrIHJhdGUgY3Jhc2hlZAo+ID4gICAgJ3Bvc3RfZGl2X2RhdGFbXScncyBwbGxfbnVtIGlz
+IFBMTF9JMlMsIFBMTF9TQUkgKG51bWJlciBpcyAxLDIpLiBidXQsCj4KPiBQbGVhc2Ugd3JpdGUg
+InBvc3RfZGl2X2RhdGFbXSdzIiBpZiBpdCBpcyBwb3NzZXNzaXZlLiAiQnV0IiBkb2Vzbid0Cj4g
+c3RhcnQgYSBzZW50ZW5jZS4gVGhpcyBpcyBvbmUgc2VudGVuY2UsIG5vdCB0d28uCk9rLgoKPgo+
+ID4gICAgIGFzIHBsbF9udW0gaXMgb2Zmc2V0IG9mICdjbGtzW10nIGlucHV0IHRvIGNsa19yZWdp
+c3Rlcl9wbGxfZGl2KCksIHdoaWNoCj4gPiAgICAgaXMgRkNMSywgQ0xLX0xTSSwgZGVmaW5lZCBp
+biAnaW5jbHVkZS9kdC1iaW5kaW5ncy9jbG9jay9zdG0zMmZ4LWNsb2NrLmgnCj4gPiAgICAgc28s
+IHRoaXMgaXMgYSBudWxsIG9iamVjdCBhdCB0aGUgcmVnaXN0ZXIgdGltZS4KPiA+ICAgICB0aGVu
+LCBpbiBsdGRjJ3MgY2xvY2sgaXNfZW5hYmxlZCgpLCBlbmFibGUoKSwgd2lsbCBjYWxsIHRvX2Ns
+a19nYXRlKCkuCj4gPiAgICAgd2lsbCByZXR1cm4gYSBudWxsIG9iamVjdCwgY2F1c2Uga2VybmVs
+IGNyYXNoZWQuCj4gPiAgICAgbmVlZCBjaGFuZ2UgcGxsX251bSB0byBQTExfVkNPX0kyUywgUExM
+X1ZDT19TQUkgZm9yICdwb3N0X2Rpdl9kYXRhW10nCj4gPgo+ID4gIGR1cGxpY2F0ZWQgbHRkYyBj
+bG9jawo+ID4gICAgJ3N0bTMyZjQyOV9nYXRlc1tdJyBoYXMgYSBtZW1iZXIgJ2x0ZGMnIHJlZ2lz
+dGVyIHRvICdjbGtfY29yZScsIGJ1dCBubwo+ID4gICAgIHVwcGVyIGRyaXZlciB1c2UgaXQsIGx0
+ZGMgZHJpdmVyIHVzZSB0aGUgbGNkLXRmdCBkZWZpbmVkIGluCj4gPiAgICAnc3RtMzJmNDI5X2F1
+eF9jbGtbXScuIGFmdGVyIHN5c3RlbSBzdGFydHVwLCBhcyBzdG0zMmY0MjlfZ2F0ZXNbXSdzIGx0
+ZGMKPiA+ICAgICBlbmFibGVfY291bnQgaXMgemVybywgc28gdHVybiBvZmYgYnkgY2xrX2Rpc2Fi
+bGVfdW51c2VkKCkKPgo+IEkgc29ydCBvZiBmb2xsb3cgdGhpcy4gSXMgdGhpcyBhbm90aGVyIHBh
+dGNoPyBTZWVtcyBsaWtlIHR3byB0aGluZ3MgYXJlCj4gZ29pbmcgb24gaGVyZS4KClRoaXMgcGF0
+Y2ggZml4IHR3byBidWdzIGFib3V0IHN0bTMyJ3MgY2xvY2suCmJ1ZzE6ICBsdGRjIGRyaXZlciBs
+b2FkaW5nIGhhbmcgaW4gY2xrX3NldF9yYXRlKCksIHRoaXMgaXMgZHVlIHRvCm1pc3VzZSDigJhQ
+TExfVkNPX1NBSScgYW5kCiAgICAgICAgICAgJ1BMTF9TQUknLgoKIHNwZWFrIGluIHNob3J0LCBm
+cm9tIHRoZSBiZWxvdyBjb2RlLAogICAg4oCZUExMX1NBSScgaXMgMiwgJ1BMTF9WQ09fU0FJJyBp
+cyA3LgogICAgJ3Bvc3RfZGl2JyBwb2ludCB0byAncG9zdF9kaXZfZGF0YVtdJywgJ3Bvc3RfZGl2
+LT5wbGxfbnVtJyBpcwpQTExfSTJTLCBQTExfU0FJLgogICAgJ2Nsa3NbUExMX1ZDT01fU0FJJyBo
+YXMgdmFpbGQgJ3N0cnVjdCBjbGtfaHcqICcgcmV0dXJuIGZyb20Kc3RtMzJmNF9yY2NfcmVnaXN0
+ZXJfcGxsKCkKICAgIGJ1dCwgYXQgbGluZSAxNzc2LCB1c2UgdGhlICdjbGtzW3Bvc3RfZGl2LT5w
+bGxfbnVtXScsIGVxdWFsIHRvCidjbGtzW1BMTF9TQUldJywgdGhpcyBpcyBpbnZhaWxkCiAgICBh
+dCB0aGF0IHRpbWUuCgppbmNsdWRlL2R0LWJpbmRpbmdzL2Nsb2NrL3N0bTMyZngtY2xvY2suaAoy
+OSAjZGVmaW5lIFBMTF9WQ09fU0FJICAgICAgICAgICAgIDcKCmRyaXZlcnMvY2xrL2Nsay1zdG0z
+MmY0LmMKIDQ5NCBlbnVtIHsKIDQ5NSAgICAgICAgIFBMTCwKIDQ5NiAgICAgICAgIFBMTF9JMlMs
+CiA0OTcgICAgICAgICBQTExfU0FJLAogNDk4IH07CgoKIDU1OCBzdGF0aWMgY29uc3Qgc3RydWN0
+IHN0bTMyZjRfcGxsX3Bvc3RfZGl2X2RhdGEKcG9zdF9kaXZfZGF0YVtNQVhfUE9TVF9ESVZdID0g
+ewogNTU5ICAgICAgICAgeyBDTEtfSTJTUV9QRElWLCBQTExfSTJTLCAicGxsaTJzLXEtZGl2Iiwg
+InBsbGkycy1xIiwKIDU2MCAgICAgICAgICAgICAgICAgQ0xLX1NFVF9SQVRFX1BBUkVOVCwgU1RN
+MzJGNF9SQ0NfRENLQ0ZHUiwgMCwgNSwgMCwgTlVMTH0sCiA1NjEKIDU2MiAgICAgICAgIHsgQ0xL
+X1NBSVFfUERJViwgUExMX1NBSSwgInBsbHNhaS1xLWRpdiIsICJwbGxzYWktcSIsCiA1NjMgICAg
+ICAgICAgICAgICAgIENMS19TRVRfUkFURV9QQVJFTlQsIFNUTTMyRjRfUkNDX0RDS0NGR1IsIDgs
+IDUsIDAsIE5VTEwgfSwKIDU2NAogNTY1ICAgICAgICAgeyBOT19JRFgsIFBMTF9TQUksICJwbGxz
+YWktci1kaXYiLCAicGxsc2FpLXIiLCBDTEtfU0VUX1JBVEVfUEFSRU5ULAogNTY2ICAgICAgICAg
+ICAgICAgICBTVE0zMkY0X1JDQ19EQ0tDRkdSLCAxNiwgMiwgMCwgcG9zdF9kaXZyX3RhYmxlIH0s
+CiA1NjcgfTsKCgoxNzU5ICAgICAgICAgY2xrc1tQTExfVkNPX1NBSV0gPSBzdG0zMmY0X3JjY19y
+ZWdpc3Rlcl9wbGwoInZjb19pbiIsCjE3NjAgICAgICAgICAgICAgICAgICAgICAgICAgJmRhdGEt
+PnBsbF9kYXRhWzJdLCAmc3RtMzJmNF9jbGtfbG9jayk7CjE3NjEKMTc2MiAgICAgICAgIGZvciAo
+biA9IDA7IG4gPCBNQVhfUE9TVF9ESVY7IG4rKykgewoxNzYzICAgICAgICAgICAgICAgICBjb25z
+dCBzdHJ1Y3Qgc3RtMzJmNF9wbGxfcG9zdF9kaXZfZGF0YSAqcG9zdF9kaXY7CjE3NjQgICAgICAg
+ICAgICAgICAgIHN0cnVjdCBjbGtfaHcgKmh3OwoxNzY1CjE3NjYgICAgICAgICAgICAgICAgIHBv
+c3RfZGl2ID0gJnBvc3RfZGl2X2RhdGFbbl07CjE3NjcKMTc2OCAgICAgICAgICAgICAgICAgaHcg
+PSBjbGtfcmVnaXN0ZXJfcGxsX2Rpdihwb3N0X2Rpdi0+bmFtZSwKMTc2OSAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgIHBvc3RfZGl2LT5wYXJlbnQsCjE3NzAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICBwb3N0X2Rpdi0+ZmxhZywKMTc3MSAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIGJhc2UgKyBwb3N0X2Rpdi0+b2Zmc2V0LAoxNzcyICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgcG9zdF9kaXYtPnNoaWZ0LAoxNzczICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgcG9zdF9kaXYtPndpZHRoLAoxNzc0ICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgcG9zdF9kaXYtPmZsYWdfZGl2LAoxNzc1ICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgcG9zdF9kaXYtPmRpdl90YWJsZSwKMTc3NiAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgIGNsa3NbcG9zdF9kaXYtPnBsbF9udW1dLAoxNzc3ICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgJnN0bTMyZjRfY2xrX2xvY2spOwoxNzc4CjE3NzkgICAgICAgICAg
+ICAgICAgIGlmIChwb3N0X2Rpdi0+aWR4ICE9IE5PX0lEWCkKMTc4MCAgICAgICAgICAgICAgICAg
+ICAgICAgICBjbGtzW3Bvc3RfZGl2LT5pZHhdID0gaHc7CjE3ODEgICAgICAgICB9CgpidWcyOiBs
+dGRjJ3MgY2xvY2sgdHVybiBvZmYgYnkgY2xrX2Rpc2FibGVfdW51c2VkKCkKCmZyb20geW91ciBj
+b21tZW50cyBhdCAnW1BBVENIIHYzIDQvNV0gY2xrOiBzdG0zMjogRml4IHN0bTMyZjQyOSBsdGRj
+CmRyaXZlciBsb2FkaW5nIGhhbmcKIGluIGNsayBzZXQgcmF0ZS4ga2VlcCBsdGRjIGNsayBydW5u
+aW5nIGFmdGVyIGtlcm5lbCBzdGFydHVwJyAsIGkgZ28KZGVlcCBpbnRvIHRoZSBjb2RlLCBmb3Vu
+ZApzdG0zMidzIGNsayBkcml2ZXIgcmVnaXN0ZXIgdHdvIGdhdGUgY2xrIHRvIGNsayBjb3JlIGJ5
+CmNsa19od19yZWdpc3Rlcl9nYXRlKCkgYW5kCmNsa19od19yZWdpc3Rlcl9jb21wb3NpdGUoKQoK
+Zmlyc3Q6ICdzdG0zMmY0MjlfZ2F0ZXNbXScsIGNsayBuYW1lIGlzICdsdGRjJywgdGhpcyBpcyBu
+byB1c2VyIHVzZWQuCnNlY29uZDogJ3N0bTMyZjQyOV9hdXhfY2xrW10nLCBjbGsgbmFtZSBpcyAn
+bGNkLXRmdCcsIHRoaXMgaXMgdXNlZCBieQpsdGRjIGRyaXZlcgoKYm90aCBvZiB0aGVtIHBvaW50
+IHRvIHRoZSBzYW1lIG9mZnNldCBvZiBzdG0zMidzIFJDQyByZWdpc3Rlci4gYWZ0ZXIKa2VybmVs
+IGVudGVyIGNvbnNvbGUsCmNsayBjb3JlIHR1cm4gb2ZmIGx0ZGMncyBjbGsgYXMgJ3N0bTMyZjQy
+OV9nYXRlc1tdJyBpcyB1bnVzZWQuIGJ1dCwKYWN0dWFsbHkgJ3N0bTMyZjQyOV9hdXhfY2xrW10n
+CmlzIGluIHVzZS4KCmkgY2FuIHNlcGFyYXRlIHRoaXMgcGF0Y2ggdG8gdHdvLCBlYWNoIGJ1ZyBh
+IHBhdGNoIGlmIG5lY2Vzc2FyeQoKPgo+ID4KPiA+IENoYW5nZXMgc2luY2UgVjM6Cj4gPiAxIGRy
+b3AgbGFzdCB3cm9uZyBjaGFuZ2VzIGFib3V0ICdDTEtfSUdOT1JFX1VOVVNFRCcgcGF0Y2gKPiA+
+IDIgZml4IFBMTF9TQUkgbWlzbWF0Y2ggd2l0aCBQTExfVkNPX1NBSQo+Cj4gVGhpcyBjaGFuZ2Ug
+bG9nIGdvZXMgdW5kZXIgdGhlIC0tLSBiZWxvdy4Kb2sKCj4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5
+OiBkaWxsb24gbWluIDxkaWxsb24ubWluZmVpQGdtYWlsLmNvbT4KPgo+IEFueSBGaXhlcyB0YWc/
+Cm9rLCB3aWxsIGFkZCAtLWZpeHVwIGluIGdpdCBjb21taXQgbmV4dCB0aW1lLCB0aGlzIHBhdGNo
+IGZpeCB0d28gYnVncywKaSBzaG91bGQgbWFrZSB0d28gY29tbWl0LCBlYWNoIG9uZSBoYXMgYQpm
+aXhlcyB0YWcsIHJpZ2h0PwpmaXJzdCBwb2ludCB0byAnNTE3NjMzZSBjbGs6IHN0bTMyZjQ6IEFk
+ZCBwb3N0IGRpdmlzb3IgZm9yIEkyUyAmIFNBSSBQTExzJwpzZWNvbmQgcG9pbnQgdG8gJ2RhZjJk
+MTEgY2xrOiBzdG0zMmY0OiBBZGQgbGNkLXRmdCBjbG9jaycKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
