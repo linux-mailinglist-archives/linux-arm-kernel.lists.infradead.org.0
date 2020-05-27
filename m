@@ -2,74 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F10C51E3B10
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:55:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85BAE1E3B39
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:05:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=P516auDYNRAxD1mi0R3Y1SyuswR/J5QInIHqL6rvqXg=; b=DO/Mss1oaElUr6oi/24FWo+t8
-	r5t/Odu02yDOIMF9lFF3SGGFeTb1B6U+ALANJr2bsxcDx161XwV0tu202rzGEA6UJx/t1oJRBbDK1
-	J8GD10oUSUuv1e9dASGkmwJM08iUsvhy4lMcvbA0zCkR4aADy/VypbZxkZZuz1q/oHEU0bd9g8ehi
-	r+x+zkjxYDg4lYJ1/Dmc8lshoqDqn+OkyakKrPQNUDEq8UOHWQbIba7qvPklX9sy7LU7ZvxuKNB0F
-	/9YxgfhJFlh0wscddWWFbr7cw1MERzlSgIJvON6v6UCSun5scEwblD9y/bJyf16ddJNsP0/PF4Sxl
-	SsPRHDWzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=JCuaLPB3Y47HWzo+yTkuwDv12u75Jry7cepPZu3NJCE=; b=WjmP3fD/0Bx/KI7iM9e+km0BYj
+	5XYeneKI6Ee8ePJ0V3JzT/DhOS2CKKZUmk+q01KH8FZAzrNLE7y1Gsb7+RFX9gF9fKkR0XOiNbldY
+	cOUNE/P/YadR5p+jr7Fvzf7NZ91U2H8WTVDKbHOlz5bDquVlCF4BZJg8fmA6sJGqO+l7QNfIk7wg5
+	uKIzSFxE4MaVa1OEHXguGJABpoftOUnwpUmXcdiCQDSQPGT4uz3ZbQYZPd7/NgWuidZzHxZqzooYr
+	YKZQuDsa5RNR/MaGxjFmEnKGKVEs1Yc1GOOw3+PJ1C3cif7K6rpht4HpkreMjHW070awkXPYpOknN
+	BYI7IxAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdquV-00014e-2m; Wed, 27 May 2020 07:55:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jdr4L-0007HO-Qg; Wed, 27 May 2020 08:05:45 +0000
+Received: from esa6.microchip.iphmx.com ([216.71.154.253])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdquH-00013o-Fa
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:55:22 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1272C206DF;
- Wed, 27 May 2020 07:55:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590566121;
- bh=jzOmuKHr7MlkKhB0uHGzKnveUIYCQtnDxs2JjhAI0Qw=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=IQfUN1SSOnwGbA+wQOaXCUtXhUe/1PYgxn+dBcov9P1qwLHE1jEo++wGH2RrhqjNF
- kWQpzqI991EMT2EFP/jykooRM94vdRXLiSCFAUmRwPm1btiDP9GdDvo90nhr7gPubd
- LG1u151RsnIxhDv4CAeA++tUcpAG6m+m9it6yv88=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jdquF-00FdO9-Bn; Wed, 27 May 2020 08:55:19 +0100
+ id 1jdr48-0007GD-Gb
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 08:05:34 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1590566732; x=1622102732;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=PVXzxMF9Vqjr2PV3qWdmGql8cs4THQnOC1D9NN8NFjI=;
+ b=MHkYrIRm0ibZYXekNi2/+pNmuht5a2gVRrNHyNBzciMDDGz9k5CYwGBK
+ WsIKnPHyKeT6/IqHyyRzLLVmJPzbNAc6e2v74abALzMQaunZsX7qKPBko
+ bFRxCBR3uJzAG8/XkR7xUX3PK4SkEB7oB7dEaZEcY4BQXJTYgppJ+FfGs
+ hv0l96zvDee5ovN+d4M+90RJsvEw9hkuCqyfLYKVcaMx0ZjQd8I+p15lu
+ sMWylk9D3Uh3VwsE5bKdsHAdrblumoaaTrULC+nkrK1zdwJ/gTf2hzipb
+ Z6EVanx0/AXFRRs9rTX+oX4JMT6I3Mn0QgB09W4TMRSis3rcCpdCaxOqb A==;
+IronPort-SDR: wg7qi6vKQlAMeUaLNnYr/pgQElF/mppTRVRdDs9j6PL/VdSfGQovFxd2A5lvqEM0HL/Ak6SWnd
+ ajiqm0f2b17I3CEQkkBX2KqN9Qqxg5p/Q8wLzRN0jfPwJMHJFvYjz7hs5Ur4MGRcXojOH/HKbs
+ qwbkThrcDH62qSlTpCfcrRcwCppPObutq2XoZRMqMTvY2iTGXWTgRnBE6QwtZZ3MvtvBHfLiMz
+ B0KEQqOfwbBq7msr+yB8KK/1kjFe07ov25eqns6rasTXxFBJrGetBF5DDmXjml6pxyGrC+gVJb
+ ccM=
+X-IronPort-AV: E=Sophos;i="5.73,440,1583218800"; d="scan'208";a="13635860"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa6.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 27 May 2020 01:05:25 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 27 May 2020 01:05:24 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Wed, 27 May 2020 01:05:22 -0700
+References: <20200513141134.25819-1-lars.povlsen@microchip.com>
+ <20200513141134.25819-2-lars.povlsen@microchip.com>
+ <CACRpkdZa7OM3bqB+zRprEQ3M4m9hG3uPCoYxrdH_O=oxD8zi8Q@mail.gmail.com>
+ <87pnb1nf2j.fsf@soft-dev15.microsemi.net>
+ <CACRpkdYesD9sRQZXQNEaBY2Ouu3bjKKGWpRtU-Lpa4AcjyPwXw@mail.gmail.com>
+ <87r1v8oz9f.fsf@soft-dev15.microsemi.net>
+ <CACRpkdaJvaqPptPD-A1DriVgBOZGZ4Qf0UsbsjG39ptx6bSJKg@mail.gmail.com>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: Re: [PATCH 1/3] dt-bindings: pinctrl: Add bindings for mscc,
+ ocelot-sgpio
+In-Reply-To: <CACRpkdaJvaqPptPD-A1DriVgBOZGZ4Qf0UsbsjG39ptx6bSJKg@mail.gmail.com>
+Date: Wed, 27 May 2020 10:05:20 +0200
+Message-ID: <87pnappzun.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-Date: Wed, 27 May 2020 08:55:19 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Zenghui Yu <yuzenghui@huawei.com>
-Subject: Re: [PATCH] KVM: arm64: Allow in-atomic injection of SPIs
-In-Reply-To: <47d6d521-f05e-86fe-4a94-ce21754100ae@huawei.com>
-References: <20200526161136.451312-1-maz@kernel.org>
- <47d6d521-f05e-86fe-4a94-ce21754100ae@huawei.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <1d3658f4b92a690ba05367f2a22a7331@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: yuzenghui@huawei.com, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, eric.auger@redhat.com,
- kernel-team@android.com, james.morse@arm.com, julien.thierry.kdev@gmail.com,
- suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_005521_564459_749A1761 
-X-CRM114-Status: GOOD (  16.48  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200527_010532_657370_E0E51D6C 
+X-CRM114-Status: GOOD (  16.22  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.253 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,76 +99,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, kernel-team@android.com,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE
+ TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, Rob
+ Herring <robh+dt@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Lars Povlsen <lars.povlsen@microchip.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Zenghui,
 
-On 2020-05-27 08:41, Zenghui Yu wrote:
-> On 2020/5/27 0:11, Marc Zyngier wrote:
->> On a system that uses SPIs to implement MSIs (as it would be
->> the case on a GICv2 system exposing a GICv2m to its guests),
->> we deny the possibility of injecting SPIs on the in-atomic
->> fast-path.
->> 
->> This results in a very large amount of context-switches
->> (roughly equivalent to twice the interrupt rate) on the host,
->> and suboptimal performance for the guest (as measured with
->> a test workload involving a virtio interface backed by vhost-net).
->> Given that GICv2 systems are usually on the low-end of the spectrum
->> performance wise, they could do without the aggravation.
->> 
->> We solved this for GICv3+ITS by having a translation cache. But
->> SPIs do not need any extra infrastructure, and can be immediately
->> injected in the virtual distributor as the locking is already
->> heavy enough that we don't need to worry about anything.
->> 
->> This halves the number of context switches for the same workload.
->> 
->> Signed-off-by: Marc Zyngier <maz@kernel.org>
->> ---
->>   arch/arm64/kvm/vgic/vgic-irqfd.c | 20 ++++++++++++++++----
->>   arch/arm64/kvm/vgic/vgic-its.c   |  3 +--
->>   2 files changed, 17 insertions(+), 6 deletions(-)
->> 
->> diff --git a/arch/arm64/kvm/vgic/vgic-irqfd.c 
->> b/arch/arm64/kvm/vgic/vgic-irqfd.c
->> index d8cdfea5cc96..11a9f81115ab 100644
->> --- a/arch/arm64/kvm/vgic/vgic-irqfd.c
->> +++ b/arch/arm64/kvm/vgic/vgic-irqfd.c
->> @@ -107,15 +107,27 @@ int kvm_arch_set_irq_inatomic(struct 
->> kvm_kernel_irq_routing_entry *e,
->>   			      struct kvm *kvm, int irq_source_id, int level,
->>   			      bool line_status)
-> 
-> ... and you may also need to update the comment on top of it to
-> reflect this change.
-> 
-> /**
->  * kvm_arch_set_irq_inatomic: fast-path for irqfd injection
->  *
->  * Currently only direct MSI injection is supported.
->  */
+Linus Walleij writes:
 
-As far as I can tell, it is still valid (at least from the guest's
-perspective). You could in practice use that to deal with level
-interrupts, but we only inject the rising edge on this path, never
-the falling edge. So effectively, this is limited to edge interrupts,
-which is mostly MSIs.
+> On Mon, May 25, 2020 at 4:38 PM Lars Povlsen <lars.povlsen@microchip.com> wrote:
+>
+>> Yes, the problem is they're not in sequence. F.ex. you could have ports
+>> 0,1 enabled, skip 2,3,4 and have 5,6,7 enabled.
+>
+> Just use disabled nodes.
+>
+> That would look like this in my idea of a device tree:
+>
+> pinctrl@nnn {
+>     gpio0: gpio@0 {
+>         compatible = "foo";
+>         status = "ok";
+>         ....
+>     };
+>     gpio1: gpio@1 {
+>         compatible = "foo";
+>         status = "ok";
+>         ....
+>     };
+>     gpio2: gpio@2 {
+>         compatible = "foo";
+>         status = "disabled";
+>         ....
+>     };
+>     gpio3: gpio@3 {
+>         compatible = "foo";
+>         status = "disabled";
+>         ....
+>     };
+>     gpio4: gpio@4 {
+>         compatible = "foo";
+>         status = "disabled";
+>         ....
+>     };
+>     gpio5: gpio@5 {
+>         compatible = "foo";
+>         status = "ok";
+>         ....
+>     };
+>     gpio6: gpio@6 {
+>         compatible = "foo";
+>         status = "ok";
+>         ....
+>     };
+>     gpio7: gpio@7 {
+>         compatible = "foo";
+>         status = "ok";
+>         ....
+>     };
+> };
+>
+> It is common to use the status to enable/disable nodes like this.
+>
+> In the Linux kernel is is possible to iterate over these subnodes and
+> check which ones are enabled and disabled while keeping the
+> index by using something like:
+>
+> i = 0;
+> struct device_node *np, *child;
+> for_each_child_of_node(np, child) {
+>     if (of_device_is_available(child)) {
+>         pr_info("populating device %d\n", i);
+>     }
+>     i++;
+> }
+>
+> Certainly you can use i in the above loop to populate your registers
+> etc from an indexed array.
+>
+> This way the consumers can pick their GPIO from the right port
+> and everything just using e.g.
+> my-gpios = <&gpio6 4 GPIO_OUT_LOW>;
+>
 
-Unless you are thinking of something else which I would have missed?
+Linux, thank you for your input, it is much appreciated. I will use the
+pattern in the driver in the next revision.
 
-Thanks,
+The only issue is that the gpios on the same "port" have restrictions on
+their status - they can only be enabled "all" or "none" for gpios that
+map to the same port. F.ex. gpio0, gpio32, gpio64 and gpio96 must all be
+enabled or disabled because at the hardware level you control the
+_port_. But as I noted earlier, that could just be the driver enforcing
+this.
 
-         M.
+Thanks again.
+
+---Lars
+
+> Yours,
+> Linus Walleij
+
 -- 
-Jazz is not dead. It just smells funny...
+Lars Povlsen,
+Microchip
 
 _______________________________________________
 linux-arm-kernel mailing list
