@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E37821E4A38
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:31:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 002B71E4A3C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 18:32:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=50HpKnb0top/ra0vFboE7TAAIw37Hxujspa8z6Bu/PQ=; b=Tfiqa5fYDNrWep
-	d26FyBLADe2NLgEvJM5URip31Ho5OQPWRM5suxkN77T5XoHdiVpa48n95CWh+ObOay99rMF3E/aIX
-	weopPbZVlwBJHS0WQa2JP20Iltnmnyzq/to2IWDimMd18v1bQqyrPxSAgB3nkcP9RZW4PNNgI8qaS
-	/iauw6W+/Eu27gm65E2QyOwb3e1VfN6MEp9XEL2SKp3C0Ts2BLvdo85gmEDmBLOJlzJclj2X02s4M
-	vJEPk5FzWbuvwbOBGWBm8Xx6sQzOECi/W609tPGXIsYgQRH6q86knO1t/Jm047aBzdpTbeXMiOs7H
-	VEmjJdqNRoVHI7RtRAbw==;
+	List-Owner; bh=6OMtwMLUocl7GQLKGVHwHKYddiDmgRc3pTbMIJlkO+Y=; b=NWn2ht23x95GG6
+	vsb4WP5hAayVx6tqDG1WiWZA0736Sj2BFrA7K/+l+U3RWy/yjwBP/ghL87RKguNHGBEzBG131p/hr
+	EtEZWJqIAgiEXlT+GVZSeMbtMOfCKsRh45X84Vh0FSL1mQmzcZajgEK4Qb+5EKAG2Qd+wUGPdJaHr
+	WdzaIymTCrrGF+c+7dPD2YPK8g45talitpopf9fgE5MI8Ztl6WQfYPabdsJXhPhLnrO0P7srPiL8F
+	RbIJUQhysPtu4XT0j48TkDqARrbXUfuV7jL+wGNf65qB2W8n2VukGLLJ9sougayDtCQt48YtyKo6r
+	Mhk40X9X98mBYAwa2NLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdyxw-00009F-0j; Wed, 27 May 2020 16:31:40 +0000
+	id 1jdyym-0000zy-KU; Wed, 27 May 2020 16:32:32 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdyLI-0001pO-PU; Wed, 27 May 2020 15:51:49 +0000
+ id 1jdyLK-0001qL-Ir; Wed, 27 May 2020 15:51:50 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id DB6D1581518;
- Wed, 27 May 2020 11:51:43 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:43 -0400
+ by mailnew.nyi.internal (Postfix) with ESMTP id 4247258210B;
+ Wed, 27 May 2020 11:51:45 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Wed, 27 May 2020 11:51:45 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm2; bh=IIw9eaxB3Tpgt
- 3X5YVSg5tPQ4IfOI1UBHNLfesXywhY=; b=YeducADtmzS5QrXvADLOpISdwenaJ
- EoptJM+OmVmn7AVsICJ/0eic01yD66D+O/n2Ss4UTHXXTeMNawxkJ5zl5vIBWO5q
- N+CD+WqXSdmHJbKYsuJC9IcWXM+TuFUUGBvydyeaA1NY5fYPAxXDTLACvWdUOccg
- 9mN/dNiTN69eNXxjkb/7N0Qo3ONv78PIl7Yj7GDRsjxy+qkbHepIye1dvpJLy36z
- +no6TylzGWoqlO1U2F668Sq7v0pQgZqp9tH8vteVyMRZXuSrvRHhGcS9GjgL0Bj6
- lUPtbVMunMY95EhNhw7M1+MMCt5o5ZtpU1pFLknIuYFrsWJxeVjVRM6mg==
+ :mime-version:content-transfer-encoding; s=fm2; bh=9l0N3GFCYNrVd
+ 2F1SBKJ2XrWSefL3iJLCc9iCwPGOWc=; b=Bgbo7Rw5pG0Z+dBmot69P7zT9T7U8
+ kPRwgDqXDLKNWPBXhyoIcMTFMJaIjLnUn1NDbAyiB2y7K0FLgMo7V9w+c/SE0iq9
+ Lu4BMV25y3401nxy7KcyAgDsfGAKHdhHtGAy+gazv+dP+lPg6sH4iyWwbWXyvE1P
+ CkfzlPgVouZfI1bWwYa5vN9c5QXwg8ofOPYuU8NKpODACZQGPV9HTFDTPprTzMHX
+ lccYIQALryZihCb68noGgy9vcwF4jYXsPP0IrMAi65FbR2aOseXKvk0wPawJmGSk
+ QqwA+3ab4d1znTgAndrmW5r/2LAnnaz9qmIaOqEZ4SeMQssPDYiQ4J+Jg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm2; bh=IIw9eaxB3Tpgt3X5YVSg5tPQ4IfOI1UBHNLfesXywhY=; b=xrT8LMKp
- RYKDoiZNHP+/ZDYdRzzaRAK1ggID2FDrvpUdJKCic/FuAF76TurZO8hvnszLy1Uy
- AAc1VzWPAPmMmeOcRN9QY1Z9mKAqjSBMTkpnQrSqQit8EaLpp1NFXvykQppaNdBC
- Y0/iLsJdupTtQHTxR0z7aWNfGLvK9ga+cf3RQZ1/+nflqMeLqVeTN8bsCOWQs5Gg
- TBsN8MrySvOslkKKdOcMbZytUoEwAmoiG81G+fP8Lx7jpBYikgloKgGbBkvc9pPN
- jCOETse9Z+1c8jnY+AYhvRb80bXepQLI52crs2jOrPFusLivkmHqF4AIrV5vv/5e
- 4mIBifuisryTpA==
-X-ME-Sender: <xms:j4zOXgH5xrQf5RJuDrQyL2kQyk0_QIGfekdeNqCFuBftbcKAe2cvZw>
+ fm2; bh=9l0N3GFCYNrVd2F1SBKJ2XrWSefL3iJLCc9iCwPGOWc=; b=Qma4d6X8
+ Qyk2dmH50kPLN8Ifw4CWSWSR3oceIFZnqM7Gfq1pW/AUCSiw3JomtbIrvV9nSvPk
+ OuUIE73ewObEFfE3rBdWncBUqPQj/0xItDmYqVvGqpIe9pfFhRGXV0aQf/Sj1hlx
+ bqwbjJUtyEt04JR9NL/pOvwooWbEtJH4rRh8Aebn1OS0MCa9kCQL97oahorWGmrV
+ pWhGHpB150cSTP/yZJijUP+AA6roCVU4hx8ZJjpA2eKicxBFoRB//RxgejT5g5x9
+ ujVTI2oWz4D9X4TiHcBnsbr6/LCMhCO6OX2ZfCWE9vOQtlLd5d9kchlsX9t0dDLs
+ FisNdoex+Ck5Uw==
+X-ME-Sender: <xms:kYzOXplL64OvlFO1vPhyNF3QSmRrHR805ONXI0gDOI9pdtqrwxURtQ>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
@@ -56,28 +56,28 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedruddvgedgkeegucetufdoteggod
  htvghrnhepvdekleevfeffkeejhfffueelteelfeduieefheduudfggffhhfffheevveeh
  hedvnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgepjedune
  curfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:j4zOXpUHUW8dTd9TjWNO-KPjtAACAhStJlwiVDiNVb36Lao4sEEQMQ>
- <xmx:j4zOXqJwDF3S4m-HgwsRN1QNINmjbJ9Gp62VSvRUjDth_FXdd0kj2A>
- <xmx:j4zOXiHtuGHoQ86_kbdZRaZURBD_bm8fvCa2qE5oen1ixNyaavbqVA>
- <xmx:j4zOXhGhjyeKpbq9OwYIhCyIhtWWluElPv0Mm5hntTzCxRc-LlCYhg>
+X-ME-Proxy: <xmx:kYzOXk3CHDglhhKTwhLsH9392NeJkBbq1i84qzQk5hTfx7EDZXdtYw>
+ <xmx:kYzOXvpALJfeeheTZp5Xmal_b_K-CI5LELsCrIC24bCO1DaKtLtb3g>
+ <xmx:kYzOXpmykxfYOcRLaUIewkuLdtxA3fC3nhKh7i2s37OrRd1nUq1PiA>
+ <xmx:kYzOXsl5H1bNA8HlbAP7PNU8dwAr_YPKSs-U-dmPSrRqlxnUfIx8mA>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 55FCF3062551;
- Wed, 27 May 2020 11:51:43 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id D8E553280060;
+ Wed, 27 May 2020 11:51:44 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Eric Anholt <eric@anholt.net>
-Subject: [PATCH v3 093/105] drm/vc4: hdmi: Use reg-names to retrieve the HDMI
- audio registers
-Date: Wed, 27 May 2020 17:49:03 +0200
-Message-Id: <e01d4d2216a382ca3842a936972b5cdb13d13066.1590594512.git-series.maxime@cerno.tech>
+Subject: [PATCH v3 094/105] drm/vc4: hdmi: Reset audio infoframe on
+ encoder_enable if previously streaming
+Date: Wed, 27 May 2020 17:49:04 +0200
+Message-Id: <1802995678e68ab74e1dd87b30666a0d5b7146f6.1590594512.git-series.maxime@cerno.tech>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_085144_972572_0009FCE7 
-X-CRM114-Status: GOOD (  10.41  )
+X-CRM114-CacheID: sfid-20200527_085147_132922_B41DDC1A 
+X-CRM114-Status: GOOD (  11.05  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -120,44 +120,77 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Dave Stevenson <dave.stevenson@raspberrypi.com>
 
-The register range used for audio setup in the previous generations of
-SoC were always the second range in the device tree. However, now that
-the BCM2711 has way more register ranges, it makes sense to retrieve it
-by names for it, while preserving the id-based lookup as a fallback.
+If the encoder is disabled and re-enabled (eg mode change) all infoframes
+are reset, whilst the audio subsystem know nothing about this change.
+The driver therefore needs to reinstate the audio infoframe for
+itself.
 
 Signed-off-by: Dave Stevenson <dave.stevenson@raspberrypi.com>
 Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 ---
- drivers/gpu/drm/vc4/vc4_hdmi.c |  9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
+ drivers/gpu/drm/vc4/vc4_hdmi.c | 12 ++++++++++++
+ drivers/gpu/drm/vc4/vc4_hdmi.h |  2 ++
+ 2 files changed, 14 insertions(+)
 
 diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-index c069bf8e6d7c..ebe9dd25c65a 100644
+index ebe9dd25c65a..dcac5e77d2ab 100644
 --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
 +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-@@ -953,6 +953,7 @@ static int vc4_hdmi_audio_init(struct vc4_hdmi *vc4_hdmi)
- 	struct snd_soc_card *card = &vc4_hdmi->audio.card;
+@@ -308,8 +308,16 @@ static void vc4_hdmi_set_audio_infoframe(struct drm_encoder *encoder)
+ 
+ static void vc4_hdmi_set_infoframes(struct drm_encoder *encoder)
+ {
++	struct vc4_hdmi *vc4_hdmi = encoder_to_vc4_hdmi(encoder);
++
+ 	vc4_hdmi_set_avi_infoframe(encoder);
+ 	vc4_hdmi_set_spd_infoframe(encoder);
++	/*
++	 * If audio was streaming, then we need to reenabled the audio
++	 * infoframe here during encoder_enable.
++	 */
++	if (vc4_hdmi->audio.streaming)
++		vc4_hdmi_set_audio_infoframe(encoder);
+ }
+ 
+ static void vc4_hdmi_encoder_disable(struct drm_encoder *encoder)
+@@ -694,6 +702,7 @@ static void vc4_hdmi_audio_reset(struct vc4_hdmi *vc4_hdmi)
  	struct device *dev = &vc4_hdmi->pdev->dev;
- 	const __be32 *addr;
-+	int index;
  	int ret;
  
- 	if (!of_find_property(dev->of_node, "dmas", NULL)) {
-@@ -973,7 +974,13 @@ static int vc4_hdmi_audio_init(struct vc4_hdmi *vc4_hdmi)
- 	 * for DMA transfers.
- 	 * This VC/MMU should probably be exposed to avoid this kind of hacks.
- 	 */
--	addr = of_get_address(dev->of_node, 1, NULL, NULL);
-+	index = of_property_match_string(dev->of_node, "reg-names", "hd");
-+	/* Before BCM2711, we don't have a named register range */
-+	if (index < 0)
-+		index = 1;
++	vc4_hdmi->audio.streaming = false;
+ 	ret = vc4_hdmi_stop_packet(encoder, HDMI_INFOFRAME_TYPE_AUDIO);
+ 	if (ret)
+ 		dev_err(dev, "Failed to stop audio infoframe: %d\n", ret);
+@@ -797,6 +806,7 @@ static int vc4_hdmi_audio_trigger(struct snd_pcm_substream *substream, int cmd,
+ 	switch (cmd) {
+ 	case SNDRV_PCM_TRIGGER_START:
+ 		vc4_hdmi_set_audio_infoframe(encoder);
++		vc4_hdmi->audio.streaming = true;
+ 
+ 		if (vc4_hdmi->variant->phy_rng_enable)
+ 			vc4_hdmi->variant->phy_rng_enable(vc4_hdmi);
+@@ -815,6 +825,8 @@ static int vc4_hdmi_audio_trigger(struct snd_pcm_substream *substream, int cmd,
+ 		if (vc4_hdmi->variant->phy_rng_disable)
+ 			vc4_hdmi->variant->phy_rng_disable(vc4_hdmi);
+ 
++		vc4_hdmi->audio.streaming = false;
 +
-+	addr = of_get_address(dev->of_node, index, NULL, NULL);
+ 		break;
+ 	default:
+ 		break;
+diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.h b/drivers/gpu/drm/vc4/vc4_hdmi.h
+index 9a6831b941d9..eb0f91b57316 100644
+--- a/drivers/gpu/drm/vc4/vc4_hdmi.h
++++ b/drivers/gpu/drm/vc4/vc4_hdmi.h
+@@ -85,6 +85,8 @@ struct vc4_hdmi_audio {
+ 	int channels;
+ 	struct snd_dmaengine_dai_dma_data dma_data;
+ 	struct snd_pcm_substream *substream;
 +
- 	vc4_hdmi->audio.dma_data.addr = be32_to_cpup(addr) + mai_data->offset;
- 	vc4_hdmi->audio.dma_data.addr_width = DMA_SLAVE_BUSWIDTH_4_BYTES;
- 	vc4_hdmi->audio.dma_data.maxburst = 2;
++	bool streaming;
+ };
+ 
+ /* General HDMI hardware state. */
 -- 
 git-series 0.9.1
 
