@@ -2,59 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F1621E4EC3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 22:02:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DA92D1E4EDD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 22:09:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vkwPi9XNWsXkJjDuCpZGe0qmOl7NDj8ve0ZpUwz2U7o=; b=Iamja7Nj9HA/nxHETIXwUvOgS
-	o/71VLvHm01lY01Y+UYG2OoRe0jfhNNqsHSnd/VVS/kNE6sK3PeWoKeSLOowj2pMsNHAwau2ma5qx
-	laXuNUlLL/7Lux12PlxvlCOKAejEnrMmrSSRqSGQeW1ialLRI4y9MHRayywBWsRrO0JNybOvgtSyt
-	czUa4JN7xLi2/U1hZyFUrJW2URbOu2h0cPysRAdbEy6KJzJVHDw7b7nE8qT3B3RTuN4cSReQ8spRj
-	CYTQ5gtpkeV2k9CdF1hQGWRcoQMJgVO5RyUgqZRxWxPRRMwnDQsO5rPNEsDywNmUkfGc0r+e4tlXt
-	lgKNXJJ3Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2Xg5MPV9hSriajfl090WbusjyL6o6rc3dbaqeJNlPA4=; b=J0PFGrrBOKrlZ2
+	r3iZ6v8doKZxL1sgzaY/fFnFtaiHJ6FJAkGKMXQweydrs8gS07lnnAWMQTI98A/U1kiWgc5MnjcqF
+	f2fp8mlPCpO7c/L/kAd0CxhLjdySVrHoyacu+xJzUaRHysuuN/tvwYowemlI4kz/FO/vlu8M65TTy
+	elArWkKYbS1BXvq2frInnr9B5S56Nbp9pVotkxX8z2bCCkXsCB7AxfBg0Hdn1EcTGXt7HZXmfARNH
+	dK5Rp9sm9pKxemk6uc+UWCU4dqPWK+n7gxlox5RCDCYliQQUgoTWc3p7PrDIyTVDjtxalyWN0T8xp
+	+w2gR45DjEz+Wt8YVBXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je2GI-00023O-N5; Wed, 27 May 2020 20:02:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je2G8-00022j-8k
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 20:02:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7394C31B;
- Wed, 27 May 2020 13:02:38 -0700 (PDT)
-Received: from [10.57.2.168] (unknown [10.57.2.168])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 45AE93F52E;
- Wed, 27 May 2020 13:02:36 -0700 (PDT)
-Subject: Re: [PATCH] arm64: vdso32: force vdso32 to be compiled as -marm
-From: Robin Murphy <robin.murphy@arm.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-References: <20200526173117.155339-1-ndesaulniers@google.com>
- <2f58c2a4-0f37-d507-7767-00161c6b5d98@arm.com>
- <CAKwvOd=Oy_OfRbL6-q-3CAHxWBNBKE+HkfNfgCiP726u+4dU1Q@mail.gmail.com>
- <34f261f7-c4b5-a628-9a4c-eb97b75fba52@arm.com>
-Message-ID: <d2bf55cf-8b72-3f88-3c0b-5dfb4e120f7f@arm.com>
-Date: Wed, 27 May 2020 21:02:33 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1je2N5-00054j-Dg; Wed, 27 May 2020 20:09:51 +0000
+Received: from 212.199.177.27.static.012.net.il ([212.199.177.27]
+ helo=herzl.nuvoton.co.il)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1je2Mx-00053E-8q
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 20:09:45 +0000
+Received: from taln60.nuvoton.co.il (ntil-fw [212.199.177.25])
+ by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id 04RK91HZ011493;
+ Wed, 27 May 2020 23:09:01 +0300
+Received: by taln60.nuvoton.co.il (Postfix, from userid 20088)
+ id C2D1D639C1; Wed, 27 May 2020 23:09:01 +0300 (IDT)
+From: Tali Perry <tali.perry1@gmail.com>
+To: ofery@google.com, brendanhiggins@google.com, avifishman70@gmail.com,
+ tmaimon77@gmail.com, kfting@nuvoton.com, venture@google.com,
+ yuenn@google.com, benjaminfair@google.com, robh+dt@kernel.org,
+ wsa@the-dreams.de, andriy.shevchenko@linux.intel.com
+Subject: [PATCH v14 1/3] dt-bindings: i2c: npcm7xx: add NPCM I2C controller
+Date: Wed, 27 May 2020 23:08:18 +0300
+Message-Id: <20200527200820.47359-2-tali.perry1@gmail.com>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20200527200820.47359-1-tali.perry1@gmail.com>
+References: <20200527200820.47359-1-tali.perry1@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <34f261f7-c4b5-a628-9a4c-eb97b75fba52@arm.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_130240_394962_86FC4F8E 
-X-CRM114-Status: GOOD (  19.39  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200527_130943_698350_05DC6589 
+X-CRM114-Status: UNSURE (   8.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 3.1 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (3.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 TVD_RCVD_IP            Message was received from an IP address
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [tali.perry1[at]gmail.com]
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
+ 0.4 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,78 +77,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Naohiro Aota <naohiro.aota@wdc.com>, Stephen Boyd <swboyd@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Masahiro Yamada <masahiroy@kernel.org>, LKML <linux-kernel@vger.kernel.org>,
- Manoj Gupta <manojgupta@google.com>, Luis Lozano <llozano@google.com>,
- Nathan Chancellor <natechancellor@gmail.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, openbmc@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, Tali Perry <tali.perry1@gmail.com>,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wNS0yNyAyMDoyOCwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IE9uIDIwMjAtMDUtMjcg
-MTg6NTUsIE5pY2sgRGVzYXVsbmllcnMgd3JvdGU6Cj4+IE9uIFdlZCwgTWF5IDI3LCAyMDIwIGF0
-IDY6NDUgQU0gUm9iaW4gTXVycGh5IDxyb2Jpbi5tdXJwaHlAYXJtLmNvbT4gCj4+IHdyb3RlOgo+
-Pj4KPj4+IE9uIDIwMjAtMDUtMjYgMTg6MzEsIE5pY2sgRGVzYXVsbmllcnMgd3JvdGU6Cj4+Pj4g
-Q3VzdG9tIHRvb2xjaGFpbnMgdGhhdCBtb2RpZnkgdGhlIGRlZmF1bHQgdGFyZ2V0IHRvIC1tdGh1
-bWIgY2Fubm90Cj4+Pj4gY29tcGlsZSB0aGUgYXJtNjQgY29tcGF0IHZkc28zMiwgYXMKPj4+PiBh
-cmNoL2FybTY0L2luY2x1ZGUvYXNtL3Zkc28vY29tcGF0X2dldHRpbWVvZmRheS5oCj4+Pj4gY29u
-dGFpbnMgYXNzZW1ibHkgdGhhdCdzIGludmFsaWQgaW4gLW10aHVtYi7CoCBGb3JjZSB0aGUgdXNl
-IG9mIC1tYXJtLAo+Pj4+IGFsd2F5cy4KPj4+Cj4+PiBGV0lXLCB0aGlzIHNlZW1zIHN1c3BpY2lv
-dXMgLSB0aGUgb25seSBhc3NlbWJseSBpbnN0cnVjdGlvbnMgSSBzZWUgdGhlcmUKPj4+IGFyZSBT
-V0koU1ZDKSwgTVJSQywgYW5kIGEgTU9WLCBhbGwgb2Ygd2hpY2ggZXhpc3QgaW4gVGh1bWIgZm9y
-IHRoZQo+Pj4gLW1hcmNoPWFybXY3YSBiYXNlbGluZSB0aGF0IHdlIHNldC4KPj4+Cj4+PiBPbiBh
-IGh1bmNoLCBJJ3ZlIGp1c3QgYm9kZ2VkICJWRFNPX0NGTEFHUyArPSAtbXRodW1iIiBpbnRvIG15
-IHRyZWUgYW5kCj4+PiBidWlsdCBhIFRodW1iIFZEU08gcXVpdGUgaGFwcGlseSB3aXRoIFVidW50
-dSAxOS4wNCdzCj4+PiBnY2MtYXJtLWxpbnV4LWdudWVhYmloZi4gV2hhdCB3YXMgdGhlIGFjdHVh
-bCBmYWlsdXJlIHlvdSBzYXc/Cj4+Cj4+IMKgRnJvbSB0aGUgbGluayBpbiB0aGUgY29tbWl0IG1l
-c3NhZ2U6IGB3cml0ZSB0byByZXNlcnZlZCByZWdpc3RlciAnUjcnYAo+PiBodHRwczovL2dvZGJv
-bHQub3JnL3ovendyN2laCj4+IElJVUMgcjcgaXMgcmVzZXJ2ZWQgZm9yIHRoZSBmcmFtZSBwb2lu
-dGVyIGluIFRIVU1CPwo+IAo+IEl0IGNhbiBiZSwgaWYgeW91IGNob29zZSB0byBidWlsZCB3aXRo
-IGZyYW1lIHBvaW50ZXJzIGFuZCB0aGUgY29tbW9uIAo+IGZyYW1lIHBvaW50ZXIgQUJJIGZvciBU
-aHVtYiBjb2RlIHRoYXQgdXNlcyByNy4gSG93ZXZlciBpdCBjYW4gYWxzbyBiZSAKPiBmb3Igb3Ro
-ZXIgdGhpbmdzIGxpa2UgdGhlIHN5c2NhbGwgbnVtYmVyIGluIHRoZSBBcm0gc3lzY2FsbCBBQkkg
-dG9vLiBJIAoKT2gsIGFuZCBmb3IgdGhlIGF2b2lkYW5jZSBvZiBhbWJpZ3VpdHkgdGhhdCdzICJB
-cm0iIGFzIGluIHRoZSAzMi1iaXQgQXJtIAphcmNoaXRlY3R1cmUgcG9ydCwgbm90IGEgc3BlY2lm
-aWMgaW5zdHJ1Y3Rpb24gc2V0LgoKUm9iaW4uCgo+IHRha2UgaXQgQ2xhbmcgaGFzIGRlY2lkZWQg
-dGhhdCB3cml0aW5nIHN5c2NhbGwgd3JhcHBlcnMgd2l0aCBtaW5pbWFsIAo+IGlubGluZSBhc20g
-aXMgbm90IGEgdGhpbmcgcGVvcGxlIGRlc2VydmUgdG8gZG8gd2l0aG91dCBhcmJpdHJhcnkgb3Ro
-ZXIgCj4gcmVzdHJpY3Rpb25zPwo+IAo+PiBXaGF0IGlzIHRoZSBpbXBsaWNpdCBkZWZhdWx0IG9m
-IHlvdXIgZ2NjLWFybS1saW51eC1nbnVlYWJpaGYgYXQgLU8yPwo+PiAtbXRodW1iLCBvciAtbWFy
-bT8KPiAKPiBBcyBEYXZlIHBvaW50ZWQgb3V0LCBsaWtlIHRoZSBwcm9iYWJsZSBtYWpvcml0eSBv
-ZiB1c2VycyBpdCdzIFRodW1iOgo+IAo+ICQgYXJtLWxpbnV4LWdudWVhYmloZi1nY2MgLXYKPiBV
-c2luZyBidWlsdC1pbiBzcGVjcy4KPiBDT0xMRUNUX0dDQz1hcm0tbGludXgtZ251ZWFiaWhmLWdj
-Ywo+IENPTExFQ1RfTFRPX1dSQVBQRVI9L3Vzci9saWIvZ2NjLWNyb3NzL2FybS1saW51eC1nbnVl
-YWJpaGYvOC9sdG8td3JhcHBlcgo+IFRhcmdldDogYXJtLWxpbnV4LWdudWVhYmloZgo+IENvbmZp
-Z3VyZWQgd2l0aDogLi4vc3JjL2NvbmZpZ3VyZSAtdiAtLXdpdGgtcGtndmVyc2lvbj0nVWJ1bnR1
-L0xpbmFybyAKPiA4LjMuMC02dWJ1bnR1MScgLS13aXRoLWJ1Z3VybD1maWxlOi8vL3Vzci9zaGFy
-ZS9kb2MvZ2NjLTgvUkVBRE1FLkJ1Z3MgCj4gLS1lbmFibGUtbGFuZ3VhZ2VzPWMsYWRhLGMrKyxn
-byxkLGZvcnRyYW4sb2JqYyxvYmotYysrIC0tcHJlZml4PS91c3IgCj4gLS13aXRoLWdjYy1tYWpv
-ci12ZXJzaW9uLW9ubHkgLS1wcm9ncmFtLXN1ZmZpeD0tOCAtLWVuYWJsZS1zaGFyZWQgCj4gLS1l
-bmFibGUtbGlua2VyLWJ1aWxkLWlkIC0tbGliZXhlY2Rpcj0vdXNyL2xpYiAKPiAtLXdpdGhvdXQt
-aW5jbHVkZWQtZ2V0dGV4dCAtLWVuYWJsZS10aHJlYWRzPXBvc2l4IC0tbGliZGlyPS91c3IvbGli
-IAo+IC0tZW5hYmxlLW5scyAtLXdpdGgtc3lzcm9vdD0vIC0tZW5hYmxlLWNsb2NhbGU9Z251IAo+
-IC0tZW5hYmxlLWxpYnN0ZGN4eC1kZWJ1ZyAtLWVuYWJsZS1saWJzdGRjeHgtdGltZT15ZXMgCj4g
-LS13aXRoLWRlZmF1bHQtbGlic3RkY3h4LWFiaT1uZXcgLS1lbmFibGUtZ251LXVuaXF1ZS1vYmpl
-Y3QgCj4gLS1kaXNhYmxlLWxpYml0bSAtLWRpc2FibGUtbGlicXVhZG1hdGggLS1kaXNhYmxlLWxp
-YnF1YWRtYXRoLXN1cHBvcnQgCj4gLS1lbmFibGUtcGx1Z2luIC0tZW5hYmxlLWRlZmF1bHQtcGll
-IC0td2l0aC1zeXN0ZW0temxpYiAKPiAtLXdpdGgtdGFyZ2V0LXN5c3RlbS16bGliIC0tZW5hYmxl
-LW11bHRpYXJjaCAtLWVuYWJsZS1tdWx0aWxpYiAKPiAtLWRpc2FibGUtc2psai1leGNlcHRpb25z
-IC0td2l0aC1hcmNoPWFybXY3LWEgLS13aXRoLWZwdT12ZnB2My1kMTYgCj4gLS13aXRoLWZsb2F0
-PWhhcmQgLS13aXRoLW1vZGU9dGh1bWIgLS1kaXNhYmxlLXdlcnJvciAtLWVuYWJsZS1tdWx0aWxp
-YiAKPiAtLWVuYWJsZS1jaGVja2luZz1yZWxlYXNlIC0tYnVpbGQ9YWFyY2g2NC1saW51eC1nbnUg
-Cj4gLS1ob3N0PWFhcmNoNjQtbGludXgtZ251IC0tdGFyZ2V0PWFybS1saW51eC1nbnVlYWJpaGYg
-Cj4gLS1wcm9ncmFtLXByZWZpeD1hcm0tbGludXgtZ251ZWFiaWhmLSAKPiAtLWluY2x1ZGVkaXI9
-L3Vzci9hcm0tbGludXgtZ251ZWFiaWhmL2luY2x1ZGUKPiBUaHJlYWQgbW9kZWw6IHBvc2l4Cj4g
-Z2NjIHZlcnNpb24gOC4zLjAgKFVidW50dS9MaW5hcm8gOC4zLjAtNnVidW50dTEpCj4gCj4gKHll
-YWgsIEkgZGlkbid0IGFjdHVhbGx5IG5lZWQgdG8gaGFjayBteSBtYWtlZmlsZSBhdCBhbGwpCj4g
-Cj4gUm9iaW4uCj4gCj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KPiBsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+IGxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwo+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4v
-bGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Added device tree binding documentation for Nuvoton BMC
+NPCM I2C controller.
+
+Signed-off-by: Tali Perry <tali.perry1@gmail.com>
+---
+ .../bindings/i2c/nuvoton,npcm7xx-i2c.yaml     | 62 +++++++++++++++++++
+ 1 file changed, 62 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+
+diff --git a/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml b/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+new file mode 100644
+index 000000000000..e3ef2d36f372
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+@@ -0,0 +1,62 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i2c/nuvoton,npcm7xx-i2c.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: nuvoton NPCM7XX I2C Controller Device Tree Bindings
++
++description: |
++  The NPCM750x includes sixteen I2C bus controllers. All Controllers support
++  both master and slave mode. Each controller can switch between master and slave
++  at run time (i.e. IPMB mode). Each controller has two 16 byte HW FIFO for TX and
++  RX.
++
++maintainers:
++  - Tali Perry <tali.perry1@gmail.com>
++
++properties:
++  compatible:
++    const: nuvoton,npcm7xx-i2c
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++    description: Reference clock for the I2C bus
++
++  clock-frequency:
++    description: Desired I2C bus clock frequency in Hz. If not specified,
++                 the default 100 kHz frequency will be used.
++                 possible values are 100000, 400000 and 1000000.
++    default: 100000
++    enum: [100000, 400000, 1000000]
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++
++allOf:
++  - $ref: /schemas/i2c/i2c-controller.yaml#
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/nuvoton,npcm7xx-clock.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++    i2c0: i2c@80000 {
++        reg = <0x80000 0x1000>;
++        clocks = <&clk NPCM7XX_CLK_APB2>;
++        clock-frequency = <100000>;
++        interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
++        compatible = "nuvoton,npcm750-i2c";
++    };
++
++...
+-- 
+2.22.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
