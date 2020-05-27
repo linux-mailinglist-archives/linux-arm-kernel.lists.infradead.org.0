@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65F0C1E3C12
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:34:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF0F21E3C4B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 10:43:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=th/rqU3DVRAO5Znx4l82rWrHdqYyHaDOdcsqxsNiRco=; b=r1KH95jOBFi6mM
-	5pR6g9i03rQ6B1SJv6diU03FyJl3CPnR8fnytUr+dqZ82Zt1LSPIlmRhopSDUf1Fn88yXNcy4JOL0
-	9/0VtY1eVum0ksDtDVcKWExGfK96x4T2jlnU7cN2l+oPNeqw3BVnoA7Rp6Q1F0bFDHBkGKw+dOH0/
-	J+aX5vN7fvL2T6zb/JdlKPsvfTnTLKS6OllLFdUGPRIeaW4VDL2y4pYQTBxBfFA/HFYHVgx62iPdh
-	wf7J8MqSeEu8DAcallhs03973fKlQgHTvwxX1jipoUsa2OA4fp5EfQRbscLvOBV9SE5ECV/yT1CUG
-	WZcg1BnnPgBxdaLyrWwg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qrVJZS/FT3QXNIR6qhtB3cmpijTrMsjAoRa5//VX+T0=; b=c5sxS4nYachhU+
+	Cw9fcREJZ8waFHWXskS7l9UKT9IirbwGO0ahgQ+Fv2cBMlDwXO3NSsskjDBOm5VMau6i8u12hEak1
+	MKAOYN0PR52C+KT0+Q9GzYe73OHBCI1IPePOoV9c2CjVoDEpWo0z5XGJjFZMZqgCC8QgcK6Kmw6HZ
+	6+z0KsOva3Xh+kD8P/DLigjECUBpsy7tiTaSo12o/kCsKoOWwC4oVjzO0OI7uc9x0HXyDxK1pfr33
+	1kypLcRyHdZwIZlCTq/VBGWq2NDvC1eHhxqZGsfPESt504q8hDUZuWmExP7jfXlXku1MHlmDn7T3a
+	bxFeqGA/hE4OT5pf13ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdrWC-0007j4-Md; Wed, 27 May 2020 08:34:32 +0000
+	id 1jdreP-0007EF-4f; Wed, 27 May 2020 08:43:01 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdrW0-0007iG-Nn; Wed, 27 May 2020 08:34:22 +0000
-X-UUID: feca4e4780dd424190427fd9e25a7a5d-20200527
+ id 1jdrdX-0006hA-4M; Wed, 27 May 2020 08:42:09 +0000
+X-UUID: 38c47a7549b8454b9bcd2da0adf0e185-20200527
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=mGfMvXBS/Umbxn/FMqRjFLRpEx4665AZUVd2koqihCk=; 
- b=Z4vZeq4sfmcKXBvlS3r+mfdkvJ9ljwqhlj91Z/f4K/TOJ5CAt4exEAsk4ZWol4s8XKYs82OcciR4vcnh3lbcRVC/0BcqfH6o+m0YCoBJyYdMZkjmkbxosD8uNxQzlujtpBCer1O9OfrVPyffsksJQ6xmp6BUirICok0eJUT1FBs=;
-X-UUID: feca4e4780dd424190427fd9e25a7a5d-20200527
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=LHzzu50DpS5jGqeT2gYznjth/s6hLGdqgPvoCojn0Kw=; 
+ b=SjCJbWMaKoW8e5/M8IqM/oNSKChC9c0ofuO4S4rLCqB1sSn0pGkLBEld+rBUPD7hp0rS7NXNm+vx1V3jVQx7yDWeBIs+Gyw1VguL1UrnZiBAq3ycIdRDwgCV4nlVQVnIEi86R/Y9EbRTWxMhsSz8GsLT7Jh4nJzg133pW9IpWYI=;
+X-UUID: 38c47a7549b8454b9bcd2da0adf0e185-20200527
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <fengping.yu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1569681739; Wed, 27 May 2020 00:34:02 -0800
-Received: from MTKMBS06N2.mediatek.inc (172.21.101.130) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 27 May 2020 01:31:47 -0700
+ with ESMTP id 1370921546; Wed, 27 May 2020 00:41:52 -0800
+Received: from MTKMBS32N2.mediatek.inc (172.27.4.72) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 27 May 2020 01:31:58 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs06n2.mediatek.inc (172.21.101.130) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 27 May 2020 16:31:37 +0800
+ MTKMBS32N2.mediatek.inc (172.27.4.72) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 27 May 2020 16:31:57 +0800
 Received: from localhost.localdomain (10.15.43.140) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 27 May 2020 16:31:37 +0800
+ Transport; Wed, 27 May 2020 16:31:54 +0800
 From: Fengping Yu <fengping.yu@mediatek.com>
 To: Dmitry Torokhov <dmitry.torokhov@gmail.com>, Andy Shevchenko
  <andriy.shevchenko@linux.intel.com>, Marco Felsch <m.felsch@pengutronix.de>
-Subject: [PATCH v9] Add matrix keypad driver support for Mediatek SoCs 
-Date: Wed, 27 May 2020 16:31:34 +0800
-Message-ID: <20200527083137.56566-1-fengping.yu@mediatek.com>
+Subject: [PATCH v9 1/3] dt-bindings: Add keypad devicetree documentation
+Date: Wed, 27 May 2020 16:31:36 +0800
+Message-ID: <20200527083137.56566-2-fengping.yu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20200527083137.56566-1-fengping.yu@mediatek.com>
+References: <20200527083137.56566-1-fengping.yu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 4E664246734A8A7914944D9C47FD5B5E6A115F861A65D17AFB572507FD2B628A2000:8
+X-TM-SNTS-SMTP: 77B63A15266108BE8F185E2AD6C100C1334BE74BC6EDE3EB77F2886018E0A6E82000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_013420_801981_37DEAA1A 
-X-CRM114-Status: UNSURE (   6.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200527_014207_177533_006F48BE 
+X-CRM114-Status: GOOD (  12.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -85,39 +86,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+Cc: "fengping.yu" <fengping.yu@mediatek.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  linux-input@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: "fengping.yu" <fengping.yu@mediatek.com>
 
-Change since v8:
-- update keypad config dependent items
-- remove useless comment about debounce time
-- use internal function as devm_add_action_or_reset callback
-- remove input_set_drvdata
-- remove redundant log
-- add missing whitespace with compatible sentinel string
+Add Mediatek matrix keypad dt-bindings doc as yaml schema.
 
-fengping.yu (3):
-  dt-bindings: Add keypad devicetree documentation
-  drivers: input: keyboard: Add mtk keypad driver
-  configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD=m
-
- .../devicetree/bindings/input/mtk-kpd.yaml    |  94 ++++++++
- arch/arm64/configs/defconfig                  |   1 +
- drivers/input/keyboard/Kconfig                |  11 +
- drivers/input/keyboard/Makefile               |   1 +
- drivers/input/keyboard/mtk-kpd.c              | 219 ++++++++++++++++++
- 5 files changed, 326 insertions(+)
+Signed-off-by: fengping.yu <fengping.yu@mediatek.com>
+---
+ .../devicetree/bindings/input/mtk-kpd.yaml    | 94 +++++++++++++++++++
+ 1 file changed, 94 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.yaml
- create mode 100644 drivers/input/keyboard/mtk-kpd.c
 
+diff --git a/Documentation/devicetree/bindings/input/mtk-kpd.yaml b/Documentation/devicetree/bindings/input/mtk-kpd.yaml
+new file mode 100644
+index 000000000000..d5068720e5b4
+--- /dev/null
++++ b/Documentation/devicetree/bindings/input/mtk-kpd.yaml
+@@ -0,0 +1,94 @@
++%YAML 1.2
++---
++version: 1
++
++$id: http://devicetree.org/schemas/input/mtk-keypad.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Mediatek's Keypad Controller device tree bindings
++
++maintainer:
++  - Fengping Yu <fengping.yu@mediatek.com>
++
++description: |
++  Mediatek's Keypad controller is used to interface a SoC with a matrix-type
++  keypad device. The keypad controller supports multiple row and column lines.
++  A key can be placed at each intersection of a unique row and a unique column.
++  The keypad controller can sense a key-press and key-release and report the
++  event using a interrupt to the cpu.
++
++properties:
++  compatible:
++    oneOf:
++      - const: "mediatek,mt6779-keypad"
++      - const: "mediatek, kp"
++
++  clock-names:
++    description: Names of the clocks listed in clocks property in the same order
++    maxItems: 1
++
++  clocks:
++    description: Must contain one entry, for the module clock
++    refs: devicetree/bindings/clocks/clock-bindings.txt for details.
++
++  interrupts:
++    description: A single interrupt specifier
++    maxItems: 1
++
++  linux,keymap:
++    description: The keymap for keys as described in the binding document
++    refs: devicetree/bindings/input/matrix-keymap.txt
++    minItems: 1
++    maxItems: 16
++
++  pinctrl-0:
++    description: Specify pin control groups used for this controller
++    refs: devicetree/bindings/pinctrl/pinctrl-bindings.txt
++
++  pinctrl-names:
++    description: Names for optional pin modes
++    maxItems: 1
++
++  reg:
++    description: The base address of the Keypad register bank
++    maxItems: 1
++
++  wakeup-source:
++    description: use any event on keypad as wakeup event
++    type: boolean
++
++  keypad,num-columns:
++    description: Number of column lines connected to the keypad controller,
++    it is not equal to PCB columns number, instead you should add required value
++    for each IC
++
++  keypad,num-rows:
++    description: Number of row lines connected to the keypad controller, it is
++    not equal to PCB rows number, instead you should add required value for each IC
++
++  mediatek,debounce-us:
++    description: Debounce interval in microseconds
++    maximum: 256000
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - linux,keymap
++  - pinctrl
++  - clocks
++  - clock-names
++
++examples:
++  - |
++
++  keypad: kp@10010000 {
++    compatible = "mediatek,kp";
++    reg = <0 0x10010000 0 0x1000>;
++    linux,keymap = < MATRIX_KEY(0x00, 0x00, KEY_VOLUMEDOWN) >;
++    interrupts = <GIC_SPI 75 IRQ_TYPE_EDGE_FALLING>;
++    clocks = <&clk26m>;
++    clock-names = "kpd";
++    pinctrl-names = "default";
++    pinctrl-0 = <&kpd_gpios_def_cfg>;
++  };
 -- 
 2.18.0
-
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
