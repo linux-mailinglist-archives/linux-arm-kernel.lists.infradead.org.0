@@ -2,51 +2,107 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A37A1E3E8A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 12:05:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B6671E3E9D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 12:08:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=eidllNcNKIEMkP2PcF0RfeRjDdJCcneSDsGaM4y34wo=; b=YUv
-	IQoAqQl279IxnJhzCYt6A3sshSy5/hi4pZpMWr+JI4NDnFqGiwfqYVNM+vsQT+HIr7j9oisdo/uc5
-	VBwhH7Hcf5Q5IuZq7qBBjvDYvLxC6NrgaMWK+IUaAnv6xauYmPRUA+22Z29oCetGk075kimL4JMn5
-	6D+OkxRH+8+PyufXgNjKk8BFIhniW+NwmoCDjFqXyi2J1z6LwxkjL5/eIOsN6C0lX8i6191BAkj+N
-	6zFW7IMQFYhuMnflG76EkrIyREGY/nO3twgBwC8vMJ7s/VuyBGY5hRLY6fcSi8OTuRex+/nwJlnD0
-	tqKfuQwz8bmtgTxdT8yN0snf/esVx7Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pfLIVc0iiyIfDOajXI5OAQKKQmChUX4o7baFvO0t3hU=; b=eIO0bFMTxT22yE
+	gammXEHs3KLhGiju9Rny6rZKEry+Ahlb21Y0+dwHX/vUKhupYLMlrdOm9oH442YOL9n3oad7H9YaP
+	UzSvuSefC4R1LIYhL4xnWcgxYGZW08ewHuoPMveMNjwjUzK+nKzHtvhxDkNKor5anKfVhHf4AdaL6
+	FUlI1ESQr22kEXh3nUGi6EdpTp1FGAZlmF+0E7wlGYMBOAY8aZrmuJjFYSSY8JMSBDnBQeHLJMHSv
+	4jhCzA7lqVdjqBPM16reN83sOMe5i0y4dP8OEc3rjPLtsQFBontj8usJ+7KBCd7WehpzsdgeONKZr
+	h7Fbqdsb5qYs8/ortqQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdswQ-0003Bj-3z; Wed, 27 May 2020 10:05:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdswE-0003BE-U5
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 10:05:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 09A5455D;
- Wed, 27 May 2020 03:05:30 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.76.112])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4A1103F6C4;
- Wed, 27 May 2020 03:05:26 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V3] arm64/cpufeature: Add get_arm64_ftr_reg_nowarn()
-Date: Wed, 27 May 2020 15:34:36 +0530
-Message-Id: <1590573876-19120-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jdsyf-0003YO-2c; Wed, 27 May 2020 10:08:01 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jdsyS-0003XN-0D
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 10:07:49 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04RA7bN9029643;
+ Wed, 27 May 2020 10:07:37 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : in-reply-to : message-id : references : mime-version :
+ content-type; s=corp-2020-01-29;
+ bh=Jgk+aa3gaSbaEJGRzqmUB4J/D3RcAW2mzmSgXwtDYpI=;
+ b=I++iBdw/d6EbbsVc0QonMYtP9GdH7G9gqk7JTiB94+7WbFWe/ILrE7Z3/1Xou2AA/fj0
+ XfiW1ia3B13QNes64K8EvFxGTdek2n1b1W/CZkKh0BNspXqu5WHk3CdXeMTM9mLZJxGW
+ HOtff/B6xDcXoVujMkSWvLLR+R8xcPpBHqJLZ0kEdQhnfyRw8J6J6VCNosFSIaEu0thm
+ Xz1cn4ch5LgZ1tUZIBA3t8NTvbbgSWEt29tV/Ak2G+yNA1HvzCz/bBs7k698p7fC90vO
+ 0n/SEPzLJEx2JmH8cX0h5LZ95k2fkDoJBgdt9g4Ud68tggcn37DEw46UAI4yWToBi71J Lg== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2130.oracle.com with ESMTP id 316u8qxjjc-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 27 May 2020 10:07:37 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04R9vY3D160684;
+ Wed, 27 May 2020 10:05:35 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3020.oracle.com with ESMTP id 317j5rcya4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Wed, 27 May 2020 10:05:35 +0000
+Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04RA5XM3005085;
+ Wed, 27 May 2020 10:05:33 GMT
+Received: from dhcp-10-175-217-36.vpn.oracle.com (/10.175.217.36)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 27 May 2020 03:05:33 -0700
+Date: Wed, 27 May 2020 11:05:23 +0100 (BST)
+From: Alan Maguire <alan.maguire@oracle.com>
+X-X-Sender: alan@localhost
+To: Emanuele Giuseppe Esposito <eesposit@redhat.com>
+Subject: Re: [PATCH v3 3/7] kunit: tests for stats_fs API
+In-Reply-To: <20200526110318.69006-4-eesposit@redhat.com>
+Message-ID: <alpine.LRH.2.21.2005271054360.24819@localhost>
+References: <20200526110318.69006-1-eesposit@redhat.com>
+ <20200526110318.69006-4-eesposit@redhat.com>
+User-Agent: Alpine 2.21 (LRH 202 2017-01-01)
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9633
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
+ spamscore=0 suspectscore=4
+ mlxlogscore=999 mlxscore=0 adultscore=0 phishscore=0 malwarescore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2005270072
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9633
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ mlxscore=0
+ priorityscore=1501 spamscore=0 cotscore=-2147483648 suspectscore=4
+ phishscore=0 clxscore=1011 mlxlogscore=999 bulkscore=0 adultscore=0
+ lowpriorityscore=0 impostorscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.12.0-2004280000 definitions=main-2005270073
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_030531_056232_5209984A 
-X-CRM114-Status: GOOD (  16.86  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200527_030748_176653_74585CA3 
+X-CRM114-Status: GOOD (  13.40  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [156.151.31.86 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [156.151.31.86 listed in wl.mailspike.net]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,153 +114,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, Anshuman Khandual <anshuman.khandual@arm.com>,
- catalin.marinas@arm.com, suzuki.poulose@arm.com, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, will@kernel.org
-MIME-Version: 1.0
+Cc: linux-s390@vger.kernel.org, kvm@vger.kernel.org, linux-doc@vger.kernel.org,
+ netdev@vger.kernel.org, kunit-dev@googlegroups.com,
+ Emanuele Giuseppe Esposito <e.emanuelegiuseppe@gmail.com>,
+ linux-kernel@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ Jonathan Adams <jwadams@google.com>, brendanhiggins@google.com,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, linux-kselftest@vger.kernel.org,
+ David Rientjes <rientjes@google.com>, linux-fsdevel@vger.kernel.org,
+ Paolo Bonzini <pbonzini@redhat.com>, linux-mips@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no way to proceed when requested register could not be searched in
-arm64_ftr_reg[]. Requesting for a non present register would be an error as
-well. Hence lets just WARN_ON() when search fails in get_arm64_ftr_reg()
-rather than checking for return value and doing a BUG_ON() instead in some
-individual callers. But there are also caller instances that dont error out
-when register search fails. Add a new helper get_arm64_ftr_reg_nowarn() for
-such cases.
+On Tue, 26 May 2020, Emanuele Giuseppe Esposito wrote:
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: Mark Brown <broonie@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
----
-Changes in V3:
+> Add kunit tests to extensively test the stats_fs API functionality.
+>
 
-- Early return on register search failure in some callers per Will
-- Return 0, when search fails in check_update_ftr_reg() per Will
+I've added in the kunit-related folks.
+ 
+> In order to run them, the kernel .config must set CONFIG_KUNIT=y
+> and a new .kunitconfig file must be created with CONFIG_STATS_FS=y
+> and CONFIG_STATS_FS_TEST=y
+>
 
-Changes in V2: (https://patchwork.kernel.org/patch/11570575/)
+It looks like CONFIG_STATS_FS is built-in, but it exports
+much of the functionality you are testing.  However could the
+tests also be built as a module (i.e. make CONFIG_STATS_FS_TEST
+a tristate variable)? To test this you'd need to specify
+CONFIG_KUNIT=m and CONFIG_STATS_FS_TEST=m, and testing would
+simply be a case of "modprobe"ing the stats fs module and collecting
+results in /sys/kernel/debug/kunit/<module_name> (rather 
+than running kunit.py). Are you relying on unexported internals in
+the the tests that would prevent building them as a module?
 
-- Added get_arm64_ftr_reg_nowarn() per Will
-- read_sanitised_ftr_reg() returns 0 when register search fails per Catalin
+Thanks!
 
-Changes in V1: (https://patchwork.kernel.org/patch/11559083/)
-
- arch/arm64/kernel/cpufeature.c | 45 ++++++++++++++++++++++++++--------
- 1 file changed, 35 insertions(+), 10 deletions(-)
-
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index e744f647cbac..64e87a7b3c3c 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -597,16 +597,16 @@ static int search_cmp_ftr_reg(const void *id, const void *regp)
- }
- 
- /*
-- * get_arm64_ftr_reg - Lookup a feature register entry using its
-- * sys_reg() encoding. With the array arm64_ftr_regs sorted in the
-- * ascending order of sys_id , we use binary search to find a matching
-+ * get_arm64_ftr_reg_nowarn - Looks up a feature register entry using
-+ * its sys_reg() encoding. With the array arm64_ftr_regs sorted in the
-+ * ascending order of sys_id, we use binary search to find a matching
-  * entry.
-  *
-  * returns - Upon success,  matching ftr_reg entry for id.
-  *         - NULL on failure. It is upto the caller to decide
-  *	     the impact of a failure.
-  */
--static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
-+static struct arm64_ftr_reg *get_arm64_ftr_reg_nowarn(u32 sys_id)
- {
- 	const struct __ftr_reg_entry *ret;
- 
-@@ -620,6 +620,28 @@ static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
- 	return NULL;
- }
- 
-+/*
-+ * get_arm64_ftr_reg - Looks up a feature register entry using
-+ * its sys_reg() encoding. This calls get_arm64_ftr_reg_nowarn().
-+ *
-+ * returns - Upon success,  matching ftr_reg entry for id.
-+ *         - NULL on failure but with an WARN_ON().
-+ */
-+static struct arm64_ftr_reg *get_arm64_ftr_reg(u32 sys_id)
-+{
-+	struct arm64_ftr_reg *reg;
-+
-+	reg = get_arm64_ftr_reg_nowarn(sys_id);
-+
-+	/*
-+	 * Can not really proceed when the search fails here.
-+	 * Requesting for a non existent register search will
-+	 * be an error. Warn but let it continue for now.
-+	 */
-+	WARN_ON(!reg);
-+	return reg;
-+}
-+
- static u64 arm64_ftr_set_value(const struct arm64_ftr_bits *ftrp, s64 reg,
- 			       s64 ftr_val)
- {
-@@ -681,7 +703,8 @@ static void __init init_cpu_ftr_reg(u32 sys_reg, u64 new)
- 	const struct arm64_ftr_bits *ftrp;
- 	struct arm64_ftr_reg *reg = get_arm64_ftr_reg(sys_reg);
- 
--	BUG_ON(!reg);
-+	if (!reg)
-+		return;
- 
- 	for (ftrp = reg->ftr_bits; ftrp->width; ftrp++) {
- 		u64 ftr_mask = arm64_ftr_mask(ftrp);
-@@ -815,7 +838,9 @@ static int check_update_ftr_reg(u32 sys_id, int cpu, u64 val, u64 boot)
- {
- 	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
- 
--	BUG_ON(!regp);
-+	if (!regp)
-+		return 0;
-+
- 	update_cpu_ftr_reg(regp, val);
- 	if ((boot & regp->strict_mask) == (val & regp->strict_mask))
- 		return 0;
-@@ -829,7 +854,7 @@ static void relax_cpu_ftr_reg(u32 sys_id, int field)
- 	const struct arm64_ftr_bits *ftrp;
- 	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
- 
--	if (WARN_ON(!regp))
-+	if (!regp)
- 		return;
- 
- 	for (ftrp = regp->ftr_bits; ftrp->width; ftrp++) {
-@@ -1022,8 +1047,8 @@ u64 read_sanitised_ftr_reg(u32 id)
- {
- 	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(id);
- 
--	/* We shouldn't get a request for an unsupported register */
--	BUG_ON(!regp);
-+	if (!regp)
-+		return 0;
- 	return regp->sys_val;
- }
- 
-@@ -2663,7 +2688,7 @@ static int emulate_sys_reg(u32 id, u64 *valp)
- 	if (sys_reg_CRm(id) == 0)
- 		return emulate_id_reg(id, valp);
- 
--	regp = get_arm64_ftr_reg(id);
-+	regp = get_arm64_ftr_reg_nowarn(id);
- 	if (regp)
- 		*valp = arm64_ftr_reg_user_value(regp);
- 	else
--- 
-2.20.1
-
+Alan
 
 _______________________________________________
 linux-arm-kernel mailing list
