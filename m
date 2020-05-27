@@ -2,70 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 324AA1E3AE8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:48:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48C571E3B00
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 09:53:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aDrQ1u66pGWpNjPlQhokR5vMjIJRDMcUThu19ywMpbA=; b=mjkpDd2zOTFRqOsGPHj27qQQ6
-	8VWt3c1fxpwCRd30MdZAB0jC74swYPVcYx2+5V4+ns/JXD6gl6TAuN+pW8ssbCtT1wxSVw9fBUwNl
-	ZUqok7EpACx9W3vuoNj9jGGA2PrkEPGZWKUkoCkZqZJZ11g7ofRmsZZv88RBD5tGhnY0nSf/wBOW5
-	bEFk+owLtQho+mVsC+rsJamuzbl2WkGhkXi44QcLTnlgiD7GUWQtbaFcpc5K6uKbaQjTywCnqnfMo
-	NOkDBxoozzq/5qdTm0CvqVcgpPOHO5koeIIGkxCVLUtNnjZUkDBVPzNqgR4RKetqFlg5bgPl5TZnH
-	q/S8Bc7zQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6TLoYn4FH2LgdaP5CqXD0PNnXrr6EJHl5red0kat4Mg=; b=MLCn6yztRWa/av
+	0mSyECzKF8Jf4mPaWWDLe6d9R/UFXCSge3QP5LlSNRryHNd8vCnBuAWueur0MRzwA0lpzrdlGYY/E
+	OcNRG55giILulMXRI1bDAKT5om8NayL/kLe9G4rYXBHp4IlgkPP2m13ZhqyUAcpXGZovgP5S3BPi3
+	lYqgzvr/0B8lPuoXlL/24OXLHx0Mb5f4ydJiOmu/qJlFeC09KKKFw9ZNpf2smXEUINbzSycuJHao+
+	6fxysOR0a/K68XDyrC7wTmAYTCX31s0R2YaOj1puhvUQcdv0ITEewrjFiH8VB/zp1ndEK4GTJ15aX
+	1/vZu8gGiFJkq0C7vcxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdqno-0003EG-Un; Wed, 27 May 2020 07:48:40 +0000
+	id 1jdqsK-0006Ki-Pd; Wed, 27 May 2020 07:53:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdqnd-0003Dt-Ks
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:48:31 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 23590207CB;
- Wed, 27 May 2020 07:48:29 +0000 (UTC)
+ id 1jdqs9-0006Jq-3t
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 07:53:10 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 894A120FC3;
+ Wed, 27 May 2020 07:53:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590565709;
- bh=o2RNuuLOPzIUQugqXI2pXs40dw3MxypX2JaA7iDkwY8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=pni6+ov8tRzZ5DYViPK8gJK1/JIpPkaSWj18F4PfL9wWknwOagXXMykJH5HcwlvDQ
- x3IiBKDcFTUwwSCMybSkdY/4dptm9ehSXmDPIAHI+/XDgYY1Knn4OLNEjNFyJBSJnJ
- 20ZlhzylGziKft32Jn5ApIezyaR0yfrkfHQwD5Sw=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jdqnb-00FdJT-Gw; Wed, 27 May 2020 08:48:27 +0100
+ s=default; t=1590565988;
+ bh=Uz9VQ5ssMAnN5D1Zw8oLy/WNGOVCjJrTYN7Wo34QeXg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=UgSznrbPLEsdZgh8jYyrwAoodAz/I/EFVZy0/azyVkV+fdaIHQitlZQ/IxT5L/XQ4
+ XBVOOpb3V2yjhN5922zof+32xjxajhg0/d1vULou0YTHSJe+VWQX214hMELGMqD3fv
+ 7k0OjwYs6SIZWzHrd5ORT/MDGT37kqMDP5JQnOJo=
+Date: Wed, 27 May 2020 08:53:04 +0100
+From: Will Deacon <will@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2] arm64/cpufeature: Add get_arm64_ftr_reg_nowarn()
+Message-ID: <20200527075303.GC9887@willie-the-truck>
+References: <1590500353-28082-1-git-send-email-anshuman.khandual@arm.com>
+ <20200526150135.GI17051@gaia>
+ <20200526194648.GA2206@willie-the-truck>
+ <ca38b2c0-533f-9b98-46a2-37ba8bf21d83@arm.com>
 MIME-Version: 1.0
-Date: Wed, 27 May 2020 08:48:27 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Gavin Shan <gshan@redhat.com>
-Subject: Re: [PATCH RFCv2 0/9] kvm/arm64: Support Async Page Fault
-In-Reply-To: <987785b2-2533-c3d8-8f6a-4193aa82d502@redhat.com>
-References: <20200508032919.52147-1-gshan@redhat.com>
- <20200526130927.GH1363@C02TD0UTHF1T.local>
- <987785b2-2533-c3d8-8f6a-4193aa82d502@redhat.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <ae0f32fa338969d25dc3da56292e35ed@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: gshan@redhat.com, mark.rutland@arm.com,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, pbonzini@redhat.com, will@kernel.org,
- catalin.marinas@arm.com, james.morse@arm.com, suzuki.poulose@arm.com,
- drjones@redhat.com, eric.auger@redhat.com, aarcange@redhat.com,
- shan.gavin@gmail.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <ca38b2c0-533f-9b98-46a2-37ba8bf21d83@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_004829_707280_65ADE54E 
-X-CRM114-Status: GOOD (  12.68  )
+X-CRM114-CacheID: sfid-20200527_005309_177718_54DA2AA0 
+X-CRM114-Status: GOOD (  13.75  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -94,51 +79,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, aarcange@redhat.com,
- drjones@redhat.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, eric.auger@redhat.com, james.morse@arm.com,
- shan.gavin@gmail.com, pbonzini@redhat.com, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-27 03:39, Gavin Shan wrote:
-> Hi Mark,
-
-[...]
-
->> Can you run tests with a real workload? For example, a kernel build
->> inside the VM?
->> 
+On Wed, May 27, 2020 at 07:56:30AM +0530, Anshuman Khandual wrote:
 > 
-> Yeah, I agree it's far from a realistic workload. However, it's the 
-> test case
-> which was suggested when async page fault was proposed from day one, 
-> according
-> to the following document. On the page#34, you can see the benchmark, 
-> which is
-> similar to what we're doing.
 > 
-> https://www.linux-kvm.org/images/a/ac/2010-forum-Async-page-faults.pdf
+> On 05/27/2020 01:16 AM, Will Deacon wrote:
+> > On Tue, May 26, 2020 at 04:01:35PM +0100, Catalin Marinas wrote:
+> >> On Tue, May 26, 2020 at 07:09:13PM +0530, Anshuman Khandual wrote:
+> >>> @@ -632,8 +654,6 @@ static void __init init_cpu_ftr_reg(u32 sys_reg, u64 new)
+> >>>  	const struct arm64_ftr_bits *ftrp;
+> >>>  	struct arm64_ftr_reg *reg = get_arm64_ftr_reg(sys_reg);
+> >>>  
+> >>> -	BUG_ON(!reg);
+> >>> -
+> >>>  	for (ftrp = reg->ftr_bits; ftrp->width; ftrp++) {
+> >>>  		u64 ftr_mask = arm64_ftr_mask(ftrp);
+> >>>  		s64 ftr_new = arm64_ftr_value(ftrp, new);
+> >>> @@ -762,7 +782,6 @@ static int check_update_ftr_reg(u32 sys_id, int cpu, u64 val, u64 boot)
+> >>>  {
+> >>>  	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
+> >>>  
+> >>> -	BUG_ON(!regp);
+> >>>  	update_cpu_ftr_reg(regp, val);
+> >>>  	if ((boot & regp->strict_mask) == (val & regp->strict_mask))
+> >>>  		return 0;
+> >>> @@ -776,9 +795,6 @@ static void relax_cpu_ftr_reg(u32 sys_id, int field)
+> >>>  	const struct arm64_ftr_bits *ftrp;
+> >>>  	struct arm64_ftr_reg *regp = get_arm64_ftr_reg(sys_id);
+> >>>  
+> >>> -	if (WARN_ON(!regp))
+> >>> -		return;
+> >>
+> >> I think Will wanted an early return in all these functions not just
+> >> removing the BUG_ON(). I'll let him clarify.
+> > 
+> > Yes, the callers need to check the pointer and return early.
+> 
+> Sure, will do. But for check_update_ftr_reg(), a feature register search
+> failure should be treated as a success (0) or a failure (1). What should
+> it return ? Seems bit tricky, as there are good reasons to go either way.
 
-My own question is whether this even makes any sense 10 years later.
+We're unable to check it so return 0, otherwise we'll randomly taint the
+kernel and print a weird message.
 
-The HW has massively changed, and this adds a whole lot of complexity
-to both the hypervisor and the guest. It also plays very ugly games
-with the exception model, which doesn't give me the warm fuzzy feeling
-that it's going to be great.
-
-> Ok. I will test with the workload to build kernel or another better one 
-> to
-> represent the case.
-
-Thanks,
-
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
