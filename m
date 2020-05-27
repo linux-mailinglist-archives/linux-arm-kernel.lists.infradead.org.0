@@ -2,85 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6A171E4BA5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 19:15:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B6EE1E4BC8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 19:23:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OR9jSB009ROQW8CTnVZgnB23EpWLUkmslBONBwY11cM=; b=DWocl5fdAChKjj
-	A96JYUSxFD/FoCEoWZLbefb6D8+wpFfI5B88UpZjUTRA6nsfD2K7zJS00JRalml8/JmLfIcjNbWNr
-	fYGqMdhW9Z80BPbwHFS3suVsxJW5W06bj66bL8a6rF36Vl7aSkQ1ankr4iBHkvHNz744zXCNo0DlP
-	J+8ZYZkvr/+sZRldGjllnsQw4+hwRIlpPiQeCknRJlsaQ6Z9UT62mahKnYJ/Iltrz3SqcBsaoardS
-	8ecJxwxT2l7612ZKL+9I1+LHtngWaAsNdvlX8GF5AAZX0tqmVcwoR6exj7gOXJwmMRimbOUtNryre
-	p7S1U02+Nns6dGPuuKHA==;
+	List-Owner; bh=721YR07oAXVF9FIQqWkH8sPykorJ8pwvv72PjqKXGso=; b=Ob1Df86s75Gq5e
+	0zEvucxxVf+LR0/QP8yZ7P6fGa0xz3WLzAHjWzyoSoCNCgOBtkKK4CCgV93VP6LUM1YFhUQzUlgeM
+	Gjw5MrO6e2kG0QhDizAdOlE43Sac4HYE4LU2qCDyhWR27WcB4eLPiYRLNEdkWDMWyScjG9mlFiaRN
+	n7s3GJX0Na0UYQJQ8b2sUwWAWVla+ghaljBd95D1uP6p8rSP1mM6hnjwcVzogXe0J3VTd8y4bEDdU
+	4SXn/EvE9Jhd3Hd/loVqrGgWWNizLjF8ZDVVFqzW0wi9j2If3LwQWbW2tyucdNTfY8rPVPK0VK+Em
+	yC3/ELyc7jKSlF4j453g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdzeC-0003Sp-3N; Wed, 27 May 2020 17:15:20 +0000
-Received: from mail-il1-f194.google.com ([209.85.166.194])
+	id 1jdzmO-0008Cm-1o; Wed, 27 May 2020 17:23:48 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdzdu-0002cd-Up
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 17:15:05 +0000
-Received: by mail-il1-f194.google.com with SMTP id v11so7447015ilh.1
+ id 1jdzmC-0008Bc-Co
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 17:23:38 +0000
+Received: by mail-lj1-x243.google.com with SMTP id v16so29948793ljc.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 10:15:02 -0700 (PDT)
+ Wed, 27 May 2020 10:23:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=anholt-net.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XdS5MlddQcIYzgyIwv0Tj03luLSfujVc0G7WTJCkC1I=;
+ b=igS6TmvmbDEZmU5X1m5HyMo+20yVflp5xg/RCX6gCnfcFtefpNFfW1Y6GgiOJIBbPV
+ KIE+KFGxmrd9ldAKzch0Y56GasAmJTZc2HnsxOrrroFMG3g01fcZ/sJ2790iTdZsp2kY
+ kWyrRvkkpCQKso0S912F73+WK421JUkBt10W2gLtUSBrRMXieBLFPaTZf0ZWop0s8YYQ
+ TMmcX6bfjiayKUmHT/qN7wk53XEZVLznTkXl87OzKxJ4fgvJ7XEqKKtsDr5YYmd9A6v8
+ QEApCqpumg5/gjn1O2ithj7wryMDyrnWgZ+cdgPktBiI12cvVgT+iHkOM9O2LZugY5Ax
+ fhGw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=cUzyV2ffMQiKR0ssWs7eyow7JR4Jl831ooktar0LQs8=;
- b=MqGI3FJZQvbAdGN92IM+gdyyPMMcC6oMUkcFo1MNYwkFO3LolfrXB+L8T6oc+Kx0Eo
- /5Xp4KVV7cpTcYWy0WJXCAaKN2Rsb1Ky6Kfxqloc4jwmrxf5XkO9+XAE086i16Kd+JLU
- avPbfcBpmpaoyyN+LhsAbVUpgc3XthBAIepVH0fZnRc0Vdne8/cpxqPx5lyqABlTAOrN
- oYDhKSVxwHstmIt2CTW+Caf//lq/Gq57mHRiwylcl91taZSAObM+JMQ9gXnYpw5cIld7
- hWYh5eVJobebl7PceLcX3egpZyhT5c+gi8feu2dZkZ4TQR6gaEj5EMsXlATVAELPgfeq
- r1rA==
-X-Gm-Message-State: AOAM533WrfzvFYqrYzxwGrk2/Aw6nTGdKww7p+XmstzB7OpvRuwBFb9U
- 4C3GSfZx5KwfrFvH8g3dOQ==
-X-Google-Smtp-Source: ABdhPJyMbZlW7pnwHQ6C5waz/unexLEaHdTcjFI8Zo6M8xBHeFoOJCORR1G1b9IprQ6sjolb1S7dSA==
-X-Received: by 2002:a92:8c4c:: with SMTP id o73mr6482499ild.172.1590599701983; 
- Wed, 27 May 2020 10:15:01 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id c7sm1419991ioa.38.2020.05.27.10.14.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 May 2020 10:15:00 -0700 (PDT)
-Received: (nullmailer pid 2363073 invoked by uid 1000);
- Wed, 27 May 2020 17:14:59 -0000
-Date: Wed, 27 May 2020 11:14:59 -0600
-From: Rob Herring <robh@kernel.org>
-To: Vishal Sagar <vishal.sagar@xilinx.com>
-Subject: Re: [PATCH v14 1/2] media: dt-bindings: media: xilinx: Add Xilinx
- MIPI CSI-2 Rx Subsystem
-Message-ID: <20200527171459.GA2360474@bogus>
-References: <1590587839-129558-1-git-send-email-vishal.sagar@xilinx.com>
- <1590587839-129558-2-git-send-email-vishal.sagar@xilinx.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XdS5MlddQcIYzgyIwv0Tj03luLSfujVc0G7WTJCkC1I=;
+ b=jCVnZcHW4v9dVtTcVa2V7Rs4r2VS09yhDPmr6VNXGGrVHzwDwNeYX7vXjIV2IENugW
+ By1lUqnbimdQfzAU2A6/dXw/OY5c9DgCzmvzoxY3ao8wNJDus/byCM8bX6TKJl4UJK2S
+ iXxbtELwrv3Q0RAhcFxYBd6qoUZBwZe3lXoSrlKGCCT/Q0m/Vgb6MZZGPTLYnL9wzlTY
+ jOwsvbG4yJupxsTuahnpdBhj1+Wv2IGqiubY46Rfc3YGOHrkXWUxOY/2aga010ZWN84U
+ i67RCWu1m0danBz3QSqDU/eF6BTSJthjCbUyeKqU4MUwWzVFjP9M28rK3gbd/DjP9dM3
+ xj7A==
+X-Gm-Message-State: AOAM532OBIatwEko/7kLZ29u1n2w+emNiYB1ihCBAauQOqCfnUlYAg6M
+ adugqNnZfFCWOGbc41deLHyvtky58TVEfR/YRpZifg==
+X-Google-Smtp-Source: ABdhPJxFkfnlNG8dVSQ/rQmzhJrEvHk6dg38PI8cx4M9CZ9wjBWl0uSvQez4yOMYo+yYJPIYantl8siIBjMNUA5W7CY=
+X-Received: by 2002:a2e:958d:: with SMTP id w13mr3762628ljh.207.1590600214534; 
+ Wed, 27 May 2020 10:23:34 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1590587839-129558-2-git-send-email-vishal.sagar@xilinx.com>
+References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
+ <5186409a2b5d290b78f6b518a2eb8e407bf1e83e.1590594512.git-series.maxime@cerno.tech>
+In-Reply-To: <5186409a2b5d290b78f6b518a2eb8e407bf1e83e.1590594512.git-series.maxime@cerno.tech>
+From: Eric Anholt <eric@anholt.net>
+Date: Wed, 27 May 2020 10:23:23 -0700
+Message-ID: <CADaigPXQ4fLyba3X1mtSnRZb-Z2HgJck_acbpLXGnaL0RqEXQQ@mail.gmail.com>
+Subject: Re: [PATCH v3 033/105] drm/vc4: crtc: Assign output to channel
+ automatically
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_101503_069034_E6394B64 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200527_102336_504307_384365B1 
+X-CRM114-Status: GOOD (  30.46  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.194 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,127 +89,480 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Jacopo Mondi <jacopo@jmondi.org>, mchehab@kernel.org,
- Hyun Kwon <hyunk@xilinx.com>, Sandip Kothari <sandipk@xilinx.com>,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- Michal Simek <michals@xilinx.com>, laurent.pinchart@ideasonboard.com,
- Luca Ceresoli <luca@lucaceresoli.net>, hans.verkuil@cisco.com,
- Dinesh Kumar <dineshk@xilinx.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 27 May 2020 19:27:18 +0530, Vishal Sagar wrote:
-> Add bindings documentation for Xilinx MIPI CSI-2 Rx Subsystem.
-> 
-> The Xilinx MIPI CSI-2 Rx Subsystem consists of a CSI-2 Rx controller, a
-> D-PHY in Rx mode and a Video Format Bridge.
-> 
-> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
-> Reviewed-by: Hyun Kwon <hyun.kwon@xilinx.com>
-> Reviewed-by: Rob Herring <robh@kernel.org>
-> Reviewed-by: Luca Ceresoli <luca@lucaceresoli.net>
-> Reviewed-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+On Wed, May 27, 2020 at 8:50 AM Maxime Ripard <maxime@cerno.tech> wrote:
+>
+> The HVS found in the BCM2711 has 6 outputs and 3 FIFOs, with each output
+> being connected to a pixelvalve, and some muxing between the FIFOs and
+> outputs.
+>
+> Any output cannot feed from any FIFO though, and they all have a bunch of
+> constraints.
+>
+> In order to support this, let's store the possible FIFOs each output can be
+> assigned to in the vc4_crtc_data, and use that information at atomic_check
+> time to iterate over all the CRTCs enabled and assign them FIFOs.
+>
+> The channel assigned is then set in the vc4_crtc_state so that the rest of
+> the driver can use it.
+>
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
 > ---
-> v14
-> - Removed xlnx,csi-pxl-format from required properties
-> - Added dependency of xlnx,csi-pxl-format on xlnx,vfb
-> - End the yaml file with ...
-> - Added Reviewed by Laurent
-> 
-> v13
-> - Based on Laurent's suggestions
-> - Fixed the datatypes values as minimum and maximum
-> - condition added for en-vcx property
-> 
-> v12
-> - Moved to yaml format
-> - Update CSI-2 and D-PHY
-> - Mention that bindings for D-PHY not here
-> - reset -> video-reset
-> 
-> v11
-> - Modify compatible string from 4.0 to 5.0
-> 
-> v10
-> - No changes
-> 
-> v9
-> - Fix xlnx,vfb description.
-> - s/Optional/Required endpoint property.
-> - Move data-lanes description from Ports to endpoint property section.
-> 
-> v8
-> - Added reset-gpios optional property to assert video_aresetn
-> 
-> v7
-> - Removed the control name from dt bindings
-> - Updated the example dt node name to csi2rx
-> 
-> v6
-> - Added "control" after V4L2_CID_XILINX_MIPICSISS_ACT_LANES as suggested by Luca
-> - Added reviewed by Rob Herring
-> 
-> v5
-> - Incorporated comments by Luca Cersoli
-> - Removed DPHY clock from description and example
-> - Removed bayer pattern from device tree MIPI CSI IP
->   doesn't deal with bayer pattern.
-> 
-> v4
-> - Added reviewed by Hyun Kwon
-> 
-> v3
-> - removed interrupt parent as suggested by Rob
-> - removed dphy clock
-> - moved vfb to optional properties
-> - Added required and optional port properties section
-> - Added endpoint property section
-> 
-> v2
-> - updated the compatible string to latest version supported
-> - removed DPHY related parameters
-> - added CSI v2.0 related property (including VCX for supporting upto 16
->   virtual channels).
-> - modified csi-pxl-format from string to unsigned int type where the value
->   is as per the CSI specification
-> - Defined port 0 and port 1 as sink and source ports.
-> - Removed max-lanes property as suggested by Rob and Sakari
-> 
->  .../bindings/media/xilinx/xlnx,csi2rxss.yaml       | 237 +++++++++++++++++++++
->  1 file changed, 237 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
-> 
+>  drivers/gpu/drm/vc4/vc4_crtc.c |  37 +++++----
+>  drivers/gpu/drm/vc4/vc4_drv.h  |   7 +-
+>  drivers/gpu/drm/vc4/vc4_kms.c  | 142 ++++++++++++++++++++++++++++++++--
+>  drivers/gpu/drm/vc4/vc4_regs.h |  10 ++-
+>  4 files changed, 172 insertions(+), 24 deletions(-)
+>
+> diff --git a/drivers/gpu/drm/vc4/vc4_crtc.c b/drivers/gpu/drm/vc4/vc4_crtc.c
+> index 580b37ad514d..a6c3f2f907bd 100644
+> --- a/drivers/gpu/drm/vc4/vc4_crtc.c
+> +++ b/drivers/gpu/drm/vc4/vc4_crtc.c
+> @@ -88,6 +88,7 @@ static bool vc4_crtc_get_scanout_position(struct drm_crtc *crtc,
+>         struct drm_device *dev = crtc->dev;
+>         struct vc4_dev *vc4 = to_vc4_dev(dev);
+>         struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
+> +       struct vc4_crtc_state *vc4_crtc_state = to_vc4_crtc_state(crtc->state);
+>         unsigned int cob_size;
+>         u32 val;
+>         int fifo_lines;
+> @@ -104,7 +105,7 @@ static bool vc4_crtc_get_scanout_position(struct drm_crtc *crtc,
+>          * Read vertical scanline which is currently composed for our
+>          * pixelvalve by the HVS, and also the scaler status.
+>          */
+> -       val = HVS_READ(SCALER_DISPSTATX(vc4_crtc->channel));
+> +       val = HVS_READ(SCALER_DISPSTATX(vc4_crtc_state->assigned_channel));
+>
+>         /* Get optional system timestamp after query. */
+>         if (etime)
+> @@ -124,7 +125,7 @@ static bool vc4_crtc_get_scanout_position(struct drm_crtc *crtc,
+>                         *hpos += mode->crtc_htotal / 2;
+>         }
+>
+> -       cob_size = vc4_crtc_get_cob_allocation(vc4, vc4_crtc->channel);
+> +       cob_size = vc4_crtc_get_cob_allocation(vc4, vc4_crtc_state->assigned_channel);
+>         /* This is the offset we need for translating hvs -> pv scanout pos. */
+>         fifo_lines = cob_size / mode->crtc_hdisplay;
+>
+> @@ -211,6 +212,7 @@ vc4_crtc_lut_load(struct drm_crtc *crtc)
+>         struct drm_device *dev = crtc->dev;
+>         struct vc4_dev *vc4 = to_vc4_dev(dev);
+>         struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
+> +       struct vc4_crtc_state *vc4_crtc_state = to_vc4_crtc_state(crtc->state);
+>         u32 i;
+>
+>         /* The LUT memory is laid out with each HVS channel in order,
+> @@ -219,7 +221,7 @@ vc4_crtc_lut_load(struct drm_crtc *crtc)
+>          */
+>         HVS_WRITE(SCALER_GAMADDR,
+>                   SCALER_GAMADDR_AUTOINC |
+> -                 (vc4_crtc->channel * 3 * crtc->gamma_size));
+> +                 (vc4_crtc_state->assigned_channel * 3 * crtc->gamma_size));
+>
+>         for (i = 0; i < crtc->gamma_size; i++)
+>                 HVS_WRITE(SCALER_GAMDATA, vc4_crtc->lut_r[i]);
+> @@ -392,7 +394,7 @@ static void vc4_crtc_mode_set_nofb(struct drm_crtc *crtc)
+>                 drm_print_regset32(&p, &vc4_crtc->regset);
+>         }
+>
+> -       if (vc4_crtc->channel == 2) {
+> +       if (vc4_crtc->data->hvs_output == 2) {
+>                 u32 dispctrl;
+>                 u32 dsp3_mux;
 
+Looks like this hunk is maybe supposed to be in the hvs_output rename patch?
 
-My bot found errors running 'make dt_binding_check' on your patch:
+> @@ -419,7 +421,7 @@ static void vc4_crtc_mode_set_nofb(struct drm_crtc *crtc)
+>         if (!vc4_state->feed_txp)
+>                 vc4_crtc_config_pv(crtc);
+>
+> -       HVS_WRITE(SCALER_DISPBKGNDX(vc4_crtc->channel),
+> +       HVS_WRITE(SCALER_DISPBKGNDX(vc4_state->assigned_channel),
+>                   SCALER_DISPBKGND_AUTOHS |
+>                   SCALER_DISPBKGND_GAMMA |
+>                   (interlace ? SCALER_DISPBKGND_INTERLACE : 0));
+> @@ -451,7 +453,8 @@ static void vc4_crtc_atomic_disable(struct drm_crtc *crtc,
+>         struct drm_device *dev = crtc->dev;
+>         struct vc4_dev *vc4 = to_vc4_dev(dev);
+>         struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
+> -       u32 chan = vc4_crtc->channel;
+> +       struct vc4_crtc_state *vc4_crtc_state = to_vc4_crtc_state(old_state);
+> +       u32 chan = vc4_crtc_state->assigned_channel;
+>         int ret;
+>         require_hvs_enabled(dev);
+>
+> @@ -530,12 +533,12 @@ static void vc4_crtc_update_dlist(struct drm_crtc *crtc)
+>                         crtc->state->event = NULL;
+>                 }
+>
+> -               HVS_WRITE(SCALER_DISPLISTX(vc4_crtc->channel),
+> +               HVS_WRITE(SCALER_DISPLISTX(vc4_state->assigned_channel),
+>                           vc4_state->mm.start);
+>
+>                 spin_unlock_irqrestore(&dev->event_lock, flags);
+>         } else {
+> -               HVS_WRITE(SCALER_DISPLISTX(vc4_crtc->channel),
+> +               HVS_WRITE(SCALER_DISPLISTX(vc4_state->assigned_channel),
+>                           vc4_state->mm.start);
+>         }
+>  }
+> @@ -584,7 +587,7 @@ static void vc4_crtc_atomic_enable(struct drm_crtc *crtc,
+>                             (vc4_state->feed_txp ?
+>                                         SCALER5_DISPCTRLX_ONESHOT : 0);
+>
+> -       HVS_WRITE(SCALER_DISPCTRLX(vc4_crtc->channel), dispctrl);
+> +       HVS_WRITE(SCALER_DISPCTRLX(vc4_state->assigned_channel), dispctrl);
+>
+>         /* When feeding the transposer block the pixelvalve is unneeded and
+>          * should not be enabled.
+> @@ -700,7 +703,6 @@ static void vc4_crtc_atomic_flush(struct drm_crtc *crtc,
+>  {
+>         struct drm_device *dev = crtc->dev;
+>         struct vc4_dev *vc4 = to_vc4_dev(dev);
+> -       struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
+>         struct vc4_crtc_state *vc4_state = to_vc4_crtc_state(crtc->state);
+>         struct drm_plane *plane;
+>         struct vc4_plane_state *vc4_plane_state;
+> @@ -742,8 +744,8 @@ static void vc4_crtc_atomic_flush(struct drm_crtc *crtc,
+>                 /* This sets a black background color fill, as is the case
+>                  * with other DRM drivers.
+>                  */
+> -               HVS_WRITE(SCALER_DISPBKGNDX(vc4_crtc->channel),
+> -                         HVS_READ(SCALER_DISPBKGNDX(vc4_crtc->channel)) |
+> +               HVS_WRITE(SCALER_DISPBKGNDX(vc4_state->assigned_channel),
+> +                         HVS_READ(SCALER_DISPBKGNDX(vc4_state->assigned_channel)) |
+>                           SCALER_DISPBKGND_FILL);
+>
+>         /* Only update DISPLIST if the CRTC was already running and is not
+> @@ -757,7 +759,7 @@ static void vc4_crtc_atomic_flush(struct drm_crtc *crtc,
+>                 vc4_crtc_update_dlist(crtc);
+>
+>         if (crtc->state->color_mgmt_changed) {
+> -               u32 dispbkgndx = HVS_READ(SCALER_DISPBKGNDX(vc4_crtc->channel));
+> +               u32 dispbkgndx = HVS_READ(SCALER_DISPBKGNDX(vc4_state->assigned_channel));
+>
+>                 if (crtc->state->gamma_lut) {
+>                         vc4_crtc_update_gamma_lut(crtc);
+> @@ -769,7 +771,7 @@ static void vc4_crtc_atomic_flush(struct drm_crtc *crtc,
+>                          */
+>                         dispbkgndx &= ~SCALER_DISPBKGND_GAMMA;
+>                 }
+> -               HVS_WRITE(SCALER_DISPBKGNDX(vc4_crtc->channel), dispbkgndx);
+> +               HVS_WRITE(SCALER_DISPBKGNDX(vc4_state->assigned_channel), dispbkgndx);
+>         }
+>
+>         if (debug_dump_regs) {
+> @@ -800,7 +802,7 @@ static void vc4_crtc_handle_page_flip(struct vc4_crtc *vc4_crtc)
+>         struct drm_device *dev = crtc->dev;
+>         struct vc4_dev *vc4 = to_vc4_dev(dev);
+>         struct vc4_crtc_state *vc4_state = to_vc4_crtc_state(crtc->state);
+> -       u32 chan = vc4_crtc->channel;
+> +       u32 chan = vc4_state->assigned_channel;
+>         unsigned long flags;
+>
+>         spin_lock_irqsave(&dev->event_lock, flags);
+> @@ -999,6 +1001,7 @@ static struct drm_crtc_state *vc4_crtc_duplicate_state(struct drm_crtc *crtc)
+>         old_vc4_state = to_vc4_crtc_state(crtc->state);
+>         vc4_state->feed_txp = old_vc4_state->feed_txp;
+>         vc4_state->margins = old_vc4_state->margins;
+> +       vc4_state->assigned_channel = old_vc4_state->assigned_channel;
+>
+>         __drm_atomic_helper_crtc_duplicate_state(crtc, &vc4_state->base);
+>         return &vc4_state->base;
+> @@ -1060,6 +1063,7 @@ static const struct drm_crtc_helper_funcs vc4_crtc_helper_funcs = {
+>  };
+>
+>  static const struct vc4_crtc_data bcm2835_pv0_data = {
+> +       .hvs_available_channels = BIT(0),
+>         .hvs_output = 0,
+>         .debugfs_name = "crtc0_regs",
+>         .pixels_per_clock = 1,
+> @@ -1070,6 +1074,7 @@ static const struct vc4_crtc_data bcm2835_pv0_data = {
+>  };
+>
+>  static const struct vc4_crtc_data bcm2835_pv1_data = {
+> +       .hvs_available_channels = BIT(2),
+>         .hvs_output = 2,
+>         .debugfs_name = "crtc1_regs",
+>         .pixels_per_clock = 1,
+> @@ -1080,6 +1085,7 @@ static const struct vc4_crtc_data bcm2835_pv1_data = {
+>  };
+>
+>  static const struct vc4_crtc_data bcm2835_pv2_data = {
+> +       .hvs_available_channels = BIT(1),
+>         .hvs_output = 1,
+>         .debugfs_name = "crtc2_regs",
+>         .pixels_per_clock = 1,
+> @@ -1171,7 +1177,6 @@ static int vc4_crtc_bind(struct device *dev, struct device *master, void *data)
+>         drm_crtc_init_with_planes(drm, crtc, primary_plane, NULL,
+>                                   &vc4_crtc_funcs, NULL);
+>         drm_crtc_helper_add(crtc, &vc4_crtc_helper_funcs);
+> -       vc4_crtc->channel = vc4_crtc->data->hvs_output;
+>         drm_mode_crtc_set_gamma_size(crtc, ARRAY_SIZE(vc4_crtc->lut_r));
+>         drm_crtc_enable_color_mgmt(crtc, 0, false, crtc->gamma_size);
+>
+> diff --git a/drivers/gpu/drm/vc4/vc4_drv.h b/drivers/gpu/drm/vc4/vc4_drv.h
+> index 9d120aae4af9..73156a53822f 100644
+> --- a/drivers/gpu/drm/vc4/vc4_drv.h
+> +++ b/drivers/gpu/drm/vc4/vc4_drv.h
+> @@ -450,6 +450,9 @@ to_vc4_encoder(struct drm_encoder *encoder)
+>  }
+>
+>  struct vc4_crtc_data {
+> +       /* Which channels of the HVS can the output source from */
+> +       unsigned int hvs_available_channels;
 
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml: allOf:0:if: None is not of type 'object', 'boolean'
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml: allOf:1:if: None is not of type 'object', 'boolean'
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml: allOf:0: 'required' is not one of ['$ref', 'if', 'then', 'else']
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml: allOf:1: 'not' is not one of ['$ref', 'if', 'then', 'else']
-Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.example.dts' failed
-make[1]: *** [Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.example.dts] Error 1
-make[1]: *** Waiting for unfinished jobs....
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml: ignoring, error in schema: allOf: 0: if
-warning: no schema found in file: ./Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml: ignoring, error in schema: allOf: 0: if
-warning: no schema found in file: ./Documentation/devicetree/bindings/media/xilinx/xlnx,csi2rxss.yaml
-Makefile:1300: recipe for target 'dt_binding_check' failed
-make: *** [dt_binding_check] Error 2
+Maybe /* Bitmask of channels (FIFOs) of the HVS that the output can
+source from */
 
-See https://patchwork.ozlabs.org/patch/1298945
+>         /* Which output of the HVS this pixelvalve sources from. */
+>         int hvs_output;
+>
+> @@ -469,9 +472,6 @@ struct vc4_crtc {
+>         /* Timestamp at start of vblank irq - unaffected by lock delays. */
+>         ktime_t t_vblank;
+>
+> -       /* Which HVS channel we're using for our CRTC. */
+> -       int channel;
+> -
+>         u8 lut_r[256];
+>         u8 lut_g[256];
+>         u8 lut_b[256];
+> @@ -493,6 +493,7 @@ struct vc4_crtc_state {
+>         struct drm_mm_node mm;
+>         bool feed_txp;
+>         bool txp_armed;
+> +       unsigned int assigned_channel;
+>
+>         struct {
+>                 unsigned int left;
+> diff --git a/drivers/gpu/drm/vc4/vc4_kms.c b/drivers/gpu/drm/vc4/vc4_kms.c
+> index 29b75b60d858..db00625c61dd 100644
+> --- a/drivers/gpu/drm/vc4/vc4_kms.c
+> +++ b/drivers/gpu/drm/vc4/vc4_kms.c
+> @@ -11,6 +11,8 @@
+>   * crtc, HDMI encoder).
+>   */
+>
+> +#include <linux/bitfield.h>
+> +#include <linux/bitops.h>
+>  #include <linux/clk.h>
+>
+>  #include <drm/drm_atomic.h>
+> @@ -146,6 +148,72 @@ vc4_ctm_commit(struct vc4_dev *vc4, struct drm_atomic_state *state)
+>                   VC4_SET_FIELD(ctm_state->fifo, SCALER_OLEDOFFS_DISPFIFO));
+>  }
+>
+> +static void vc4_hvs_pv_muxing_commit(struct vc4_dev *vc4,
+> +                                    struct drm_atomic_state *state)
+> +{
+> +       struct drm_crtc_state *crtc_state;
+> +       struct drm_crtc *crtc;
+> +       unsigned char dsp2_mux = 0;
+> +       unsigned char dsp3_mux = 3;
+> +       unsigned char dsp4_mux = 3;
+> +       unsigned char dsp5_mux = 3;
+> +       unsigned int i;
+> +       u32 reg;
+> +
+> +       for_each_new_crtc_in_state(state, crtc, crtc_state, i) {
+> +               struct vc4_crtc_state *vc4_state = to_vc4_crtc_state(crtc_state);
+> +               struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
+> +
+> +               if (!crtc_state->active)
+> +                       continue;
+> +
+> +               switch (vc4_crtc->data->hvs_output) {
+> +               case 2:
+> +                       dsp2_mux = (vc4_state->assigned_channel == 2) ? 0 : 1;
+> +                       break;
+> +
+> +               case 3:
+> +                       dsp3_mux = vc4_state->assigned_channel;
+> +                       break;
+> +
+> +               case 4:
+> +                       dsp4_mux = vc4_state->assigned_channel;
+> +                       break;
+> +
+> +               case 5:
+> +                       dsp5_mux = vc4_state->assigned_channel;
+> +                       break;
+> +
+> +               default:
+> +                       break;
+> +               }
+> +       }
+> +
+> +       reg = HVS_READ(SCALER_DISPECTRL);
+> +       if (FIELD_GET(SCALER_DISPECTRL_DSP2_MUX_MASK, reg) != dsp2_mux)
+> +               HVS_WRITE(SCALER_DISPECTRL,
+> +                         (reg & ~SCALER_DISPECTRL_DSP2_MUX_MASK) |
+> +                         VC4_SET_FIELD(dsp2_mux, SCALER_DISPECTRL_DSP2_MUX));
+> +
+> +       reg = HVS_READ(SCALER_DISPCTRL);
+> +       if (FIELD_GET(SCALER_DISPCTRL_DSP3_MUX_MASK, reg) != dsp3_mux)
+> +               HVS_WRITE(SCALER_DISPCTRL,
+> +                         (reg & ~SCALER_DISPCTRL_DSP3_MUX_MASK) |
+> +                         VC4_SET_FIELD(dsp3_mux, SCALER_DISPCTRL_DSP3_MUX));
+> +
+> +       reg = HVS_READ(SCALER_DISPEOLN);
+> +       if (FIELD_GET(SCALER_DISPEOLN_DSP4_MUX_MASK, reg) != dsp4_mux)
+> +               HVS_WRITE(SCALER_DISPEOLN,
+> +                         (reg & ~SCALER_DISPEOLN_DSP4_MUX_MASK) |
+> +                         VC4_SET_FIELD(dsp4_mux, SCALER_DISPEOLN_DSP4_MUX));
+> +
+> +       reg = HVS_READ(SCALER_DISPDITHER);
+> +       if (FIELD_GET(SCALER_DISPDITHER_DSP5_MUX_MASK, reg) != dsp5_mux)
+> +               HVS_WRITE(SCALER_DISPDITHER,
+> +                         (reg & ~SCALER_DISPDITHER_DSP5_MUX_MASK) |
+> +                         VC4_SET_FIELD(dsp5_mux, SCALER_DISPDITHER_DSP5_MUX));
 
-If you already ran 'make dt_binding_check' and didn't see the above
-error(s), then make sure dt-schema is up to date:
+Looks like you're writing vc5 bitfields on vc4 where those fields are
+marked "write zero".
 
-pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
+I don't see why you're going to this extra effort to avoid the reg
+writes for no change -- you've already done a read, which is the
+expensive part.
 
-Please check and re-submit.
+> +}
+> +
+>  static void
+>  vc4_atomic_complete_commit(struct drm_atomic_state *state)
+>  {
+> @@ -156,11 +224,15 @@ vc4_atomic_complete_commit(struct drm_atomic_state *state)
+>         int i;
+>
+>         for (i = 0; i < dev->mode_config.num_crtc; i++) {
+> -               if (!state->crtcs[i].ptr || !state->crtcs[i].commit)
+> +               struct __drm_crtcs_state *_state = &state->crtcs[i];
+> +               struct vc4_crtc_state *vc4_crtc_state;
+> +
+> +               if (!_state->ptr || !_state->commit)
+>                         continue;
+>
+> -               vc4_crtc = to_vc4_crtc(state->crtcs[i].ptr);
+> -               vc4_hvs_mask_underrun(dev, vc4_crtc->channel);
+> +               vc4_crtc = to_vc4_crtc(_state->ptr);
+> +               vc4_crtc_state = to_vc4_crtc_state(_state->state);
+> +               vc4_hvs_mask_underrun(dev, vc4_crtc_state->assigned_channel);
+>         }
 
+Looks like this loop could really stand to be for_each_new_crtc_in_state()
+
+>         clk_set_rate(hvs->core_clk, 500000000);
+> @@ -172,6 +244,7 @@ vc4_atomic_complete_commit(struct drm_atomic_state *state)
+>         drm_atomic_helper_commit_modeset_disables(dev, state);
+>
+>         vc4_ctm_commit(vc4, state);
+> +       vc4_hvs_pv_muxing_commit(vc4, state);
+>
+>         drm_atomic_helper_commit_planes(dev, state, 0);
+>
+> @@ -381,8 +454,11 @@ vc4_ctm_atomic_check(struct drm_device *dev, struct drm_atomic_state *state)
+>
+>                 /* CTM is being enabled or the matrix changed. */
+>                 if (new_crtc_state->ctm) {
+> +                       struct vc4_crtc_state *vc4_crtc_state =
+> +                               to_vc4_crtc_state(new_crtc_state);
+> +
+>                         /* fifo is 1-based since 0 disables CTM. */
+> -                       int fifo = to_vc4_crtc(crtc)->channel + 1;
+> +                       int fifo = vc4_crtc_state->assigned_channel + 1;
+>
+>                         /* Check userland isn't trying to turn on CTM for more
+>                          * than one CRTC at a time.
+> @@ -495,10 +571,66 @@ static const struct drm_private_state_funcs vc4_load_tracker_state_funcs = {
+>         .atomic_destroy_state = vc4_load_tracker_destroy_state,
+>  };
+>
+> +#define NUM_OUTPUTS  6
+> +#define NUM_CHANNELS 3
+> +
+>  static int
+>  vc4_atomic_check(struct drm_device *dev, struct drm_atomic_state *state)
+>  {
+> -       int ret;
+> +       unsigned long unassigned_channels = GENMASK(NUM_CHANNELS - 1, 0);
+> +       struct drm_crtc_state *crtc_state;
+> +       struct drm_crtc *crtc;
+> +       int i, ret;
+> +
+> +       for_each_new_crtc_in_state(state, crtc, crtc_state, i) {
+> +               struct vc4_crtc_state *vc4_crtc_state =
+> +                       to_vc4_crtc_state(crtc_state);
+> +               struct vc4_crtc *vc4_crtc = to_vc4_crtc(crtc);
+> +               bool is_assigned = false;
+> +               unsigned int channel;
+> +
+> +               if (!crtc_state->active)
+> +                       continue;
+> +
+> +               /*
+> +                * The problem we have to solve here is that we have
+> +                * up to 7 encoders, connected to up to 6 CRTCs.
+> +                *
+> +                * Those CRTCs, depending on the instance, can be
+> +                * routed to 1, 2 or 3 HVS FIFOs, and we need to set
+> +                * the change the muxing between FIFOs and outputs in
+> +                * the HVS accordingly.
+> +                *
+> +                * It would be pretty hard to come up with an
+> +                * algorithm that would generically solve
+> +                * this. However, the current routing trees we support
+> +                * allow us to simplify a bit the problem.
+> +                *
+> +                * Indeed, with the current supported layouts, if we
+> +                * try to assign in the ascending crtc index order the
+> +                * FIFOs, we can't fall into the situation where an
+> +                * earlier CRTC that had multiple routes is assigned
+> +                * one that was the only option for a later CRTC.
+> +                *
+> +                * If the layout changes and doesn't give us that in
+> +                * the future, we will need to have something smarter,
+> +                * but it works so far.
+> +                */
+> +               for_each_set_bit(channel, &unassigned_channels,
+> +                                sizeof(unassigned_channels)) {
+> +
+> +                       if (!(BIT(channel) & vc4_crtc->data->hvs_available_channels))
+> +                               continue;
+> +
+> +                       vc4_crtc_state->assigned_channel = channel;
+> +                       unassigned_channels &= ~BIT(channel);
+> +                       is_assigned = true;
+> +                       break;
+> +               }
+> +
+> +               if (!is_assigned)
+> +                       return -EINVAL;
+
+I think this logic is just
+
+int matching_channels = unassigned_channels &
+vc4_crtc->data->hvs_available_channels;
+if (matching_channels) {
+  vc4_crtc_state->assigned_channel = ffs(matching_channels) - 1;
+  unassigned_channels &= ~BIT(channel);
+} else {
+  return -EINVAL;
+}
+
+If you're changing the assignment of a channel, I think you're going
+to need to set state->mode_changed or something to trigger a full
+modeset, so we don't try to just rewrite the channel of an existing
+CRTC while scanning out.
 
 _______________________________________________
 linux-arm-kernel mailing list
