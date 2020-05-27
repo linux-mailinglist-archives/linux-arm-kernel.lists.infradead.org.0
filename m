@@ -2,94 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E87DC1E42CB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 14:57:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F59F1E42FA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 15:12:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NSu7H7Fm03I3lTFIsD0FMGyyMNFLPjxDFcuVg2AIte0=; b=qN2fgM9WNY25xjmhQITGiavCY
-	utr5PWN9if2RiFfDwBfsGOu+U+33htdklpmItj3MED0b5QLvcBK9VT0lP3t4q7NVuwmGyYsjGlmqy
-	0VsfYf9ASxB/1ac3yNNbg+83jLOZi7Pto6ymzFa5hcibpgr2mSg6jf61LNuOeq6lvp2eJ3HSgArJQ
-	tUT3fJspEUkARkoAuhZK39vvRMCyyi+zyaCql43EywqXYsNY1GUMEuhSB7h6HRp8zuhQ4SpG5gMWs
-	SIstEVLOlpQeoa14gEw15/u2BFEX8cV20JkSd7Mf793whMgzu172NXrfTwru41jI0yqQjFU+9kHC6
-	o/yTBPgog==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dG8RycH7eUo7gkojSxURZqDDhU5WDMZaEHY4dxi89Do=; b=tq6PE7TSGl4bwr
+	wATcGYaApaQhu7aqOXyoFA5xCOIkMlcHmkdL37L/fDY9mMEUkt88w70kFyx6Fmf17GgjIGuS6IolZ
+	GdGcm3s+7nLjWDCnozITQPWRO2hszksUYkg/3P/gXcfFcFtSs8IRkL88TPWo1u15GTrqMM9vS53qv
+	KtxhId17zaSrJRwJqVmyfcRb0n4MaPtQqZInim0p1dR02hKngU7NA/qJvOBWVvB7vi5Qy3B/vmcx3
+	dhOJLYozI6YatU/NeGD29rscr8f0LuegyaeFoNuYajpSKyckBCf2r5fFbp+IkZFf9gKtDFROB+xrw
+	n3QTDKCsyTwTggLes0Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdvcD-0005y0-Hr; Wed, 27 May 2020 12:57:01 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jdvqk-0007fh-KR; Wed, 27 May 2020 13:12:02 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jdvc1-0005uf-3H; Wed, 27 May 2020 12:56:50 +0000
-Received: by mail-lj1-x243.google.com with SMTP id m18so28753377ljo.5;
- Wed, 27 May 2020 05:56:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=3vGPAEN7EbkXErW9fSFtRny4Z1vag3pW/OLkpcJ4DRI=;
- b=Mr2coyS14UPM1YA2MC9vEyzwVu5iP4fzdum+cFAUe/8X9S0pgLoTIoGj6bdxCvljvs
- OR2TzhIdbIrASS6tdBBIceaqzyzw2fzC/IQgZ9bBg/22zKJ0fXytoUy+lIdZ7lQFCQgq
- jLUuH0WYDLxxtDhTb/66gKClmWBKt4St5ex1KCjCYssVO+FkIvr4kLQIzLCFDsiECyla
- 0DTRbVC7xAuR83vo+nY0frHtSmpdHphoKUF9hXg+UlungONT8B/69caFWp5fcTINSnDa
- AapHA/dKF9IkNTslv627nuwU+HAJPfVk8qScTZSVgfCSBkiA/ZjAHsu020EkWdCHPBQL
- M93w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:in-reply-to:references
- :date:message-id:mime-version;
- bh=3vGPAEN7EbkXErW9fSFtRny4Z1vag3pW/OLkpcJ4DRI=;
- b=B+qc/aZXoErOmBQKzBbxTLcHmg7wZ7oBjVOIlgldYam9A4CTFFhE35pDDBbmukK2Al
- M7v+DTKn1KJqKk2IWkgNY2umE76vmjmJV2UEQXqft3X/3tK4uUMPKPD9Hdb5g7HZD3MY
- ymJ3DLCH6576bpc78OC32igadTzD8X5NUnA5T33SR5cmWklIRWS3GUC+eg25zkW4tx74
- lvKNmXMiMEDRfbTpTLJ1dh7TPcdhtiuhJfhDEvrWzSbDZIv5KbVZTMZZ9C13bo6hjF4u
- tPLAj3YRGJbHG+YsQvuEelX/L7pFOEodD6j+EnUwgfi1qCcNltsIZeovkJRWWiVdrTnL
- C3EQ==
-X-Gm-Message-State: AOAM530VPfHbAmV07CpHo8o8BdadOG/VFuI0NGet6lMNJsyQjaDdNmT8
- aASfv9OSkdQ7ZfCRSVLM/M4=
-X-Google-Smtp-Source: ABdhPJxtvzmXmbURkG5ELpUsVYJeCfAoLEjID1fDrWld7TIOVChr9rYSaLDVBxcHfTbBmJq6HA8+DQ==
-X-Received: by 2002:a2e:596:: with SMTP id 144mr3191505ljf.364.1590584206551; 
- Wed, 27 May 2020 05:56:46 -0700 (PDT)
-Received: from saruman (91-155-214-58.elisa-laajakaista.fi. [91.155.214.58])
- by smtp.gmail.com with ESMTPSA id 23sm800224lfb.1.2020.05.27.05.56.44
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 27 May 2020 05:56:45 -0700 (PDT)
-From: Felipe Balbi <balbi@kernel.org>
-To: Greg KH <gregkh@linuxfoundation.org>,
- Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH for-5.8 2/2] usb: dwc3: meson-g12a: fix USB2 PHY
- initialization on G12A and A1 SoCs
-In-Reply-To: <20200527085315.GA168054@kroah.com>
-References: <20200526202943.715220-1-martin.blumenstingl@googlemail.com>
- <20200526202943.715220-3-martin.blumenstingl@googlemail.com>
- <40a874eb-1a2b-533e-ee3e-bd90510abaf9@baylibre.com>
- <20200527085315.GA168054@kroah.com>
-Date: Wed, 27 May 2020 15:56:40 +0300
-Message-ID: <87y2pd1qpj.fsf@kernel.org>
+ id 1jdvqb-0007e2-Ka
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 13:11:55 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04RD8AFR008753; Wed, 27 May 2020 15:11:44 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=msqWAAt3W24QRgICYNWFWTZaQ/yQljeulY2121WBxwQ=;
+ b=SD6qx4d3rijF6tZWnCcsYWW7jfmei4vLK6Z5aocb2/DoMgk19LbBCfF6kjgcCfGLiEvP
+ wlM9t4PQePAVb/4x4hvxpvcVd8ir2/Fshu6uBUv8ga1NR3PG9OxktXqlrGFUNoBeDes0
+ lksiyR29y/5FOCyN1llf0v7/4gAzHr3qVv4NTimBjFNNMwNxMbZ4PAeMGNcKJrwrnMjG
+ jSJcF0bITSMQwLOdrx2xRe3zvSWU1MP5MXyV8W5rFd5uND4T29dQigUCDGhGuRojlkoo
+ obhFVrsVydHxQ+sPQ6WYngGeTbSL1UndsdleKKRZy/0DJa94vpeJAYN5ZTCV83waGoyq lQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 316skwe06k-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 27 May 2020 15:11:43 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 80D2710002A;
+ Wed, 27 May 2020 15:11:43 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 668F82AC7CD;
+ Wed, 27 May 2020 15:11:43 +0200 (CEST)
+Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG3NODE3.st.com
+ (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 27 May
+ 2020 15:11:42 +0200
+Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
+ SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
+ 15.00.1347.000; Wed, 27 May 2020 15:11:42 +0200
+From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+To: Valentin Schneider <valentin.schneider@arm.com>
+Subject: Re: [RFC RESEND 0/3] Introduce cpufreq minimum load QoS
+Thread-Topic: [RFC RESEND 0/3] Introduce cpufreq minimum load QoS
+Thread-Index: AQHWM3CeA6bTrCFpTUymlrJxXTw8j6i7lUyAgAATBICAAA//AIAAEAGA
+Date: Wed, 27 May 2020 13:11:42 +0000
+Message-ID: <099f5b6c-aa81-be4a-19bf-52a2fff7b3db@st.com>
+References: <20200526151619.8779-1-benjamin.gaignard@st.com>
+ <jhjk10xu1tq.mognet@arm.com> <ab4340c0-bda3-e752-9073-e162e6325bb1@st.com>
+ <jhjwo4xinhb.mognet@arm.com>
+In-Reply-To: <jhjwo4xinhb.mognet@arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.49]
+Content-ID: <706816CEE5C22249B8804FAF19ABB7CF@st.com>
 MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-05-27_03:2020-05-27,
+ 2020-05-27 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_055649_187051_EA1FBC7D 
-X-CRM114-Status: GOOD (  14.30  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200527_061154_034485_535BD5B1 
+X-CRM114-Status: GOOD (  23.95  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [balbif[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,113 +107,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: hanjie.lin@amlogic.com, "kernelci.org bot" <bot@kernelci.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org, yue.wang@amlogic.com,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1802687465389327692=="
+Cc: "len.brown@intel.com" <len.brown@intel.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "pavel@ucw.cz" <pavel@ucw.cz>, "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Hugues FRUCHET <hugues.fruchet@st.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============1802687465389327692==
-Content-Type: multipart/signed; boundary="=-=-=";
-	micalg=pgp-sha256; protocol="application/pgp-signature"
 
---=-=-=
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
 
-Greg KH <gregkh@linuxfoundation.org> writes:
-
-> On Wed, May 27, 2020 at 10:17:31AM +0200, Neil Armstrong wrote:
->> Hi Martin,
->>=20
->> On 26/05/2020 22:29, Martin Blumenstingl wrote:
->> > dwc3_meson_g12a_usb2_init_phy() crashes with NULL pointer on an SM1
->> > board (which uses the same USB setup as G12A) dereference as reported
->> > by the Kernel CI bot. This is because of the following call flow:
->> >   dwc3_meson_g12a_probe
->> >     priv->drvdata->setup_regmaps
->> >       dwc3_meson_g12a_setup_regmaps
->> >         priv->usb2_ports is still 0 so priv->u2p_regmap[i] will be NULL
->> >     dwc3_meson_g12a_get_phys
->> >       initializes priv->usb2_ports
->> >     priv->drvdata->usb_init
->> >       dwc3_meson_g12a_usb_init
->> >         dwc3_meson_g12a_usb_init_glue
->> >           dwc3_meson_g12a_usb2_init
->> >             priv->drvdata->usb2_init_phy
->> >               dwc3_meson_g12a_usb2_init_phy
->> >                 dereferences priv->u2p_regmap[i]
->> >=20
->> > Call priv->drvdata->setup_regmaps only after dwc3_meson_g12a_get_phys =
-so
->> > priv->usb2_ports is initialized and the regmaps will be set up
->> > correctly. This fixes the NULL dereference later on.
->> >=20
->> > Fixes: 013af227f58a97 ("usb: dwc3: meson-g12a: handle the phy and glue=
- registers separately")
->> > Reported-by: "kernelci.org bot" <bot@kernelci.org>
->> > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
->> > ---
->> >  drivers/usb/dwc3/dwc3-meson-g12a.c | 8 ++++----
->> >  1 file changed, 4 insertions(+), 4 deletions(-)
->> >=20
->> > diff --git a/drivers/usb/dwc3/dwc3-meson-g12a.c b/drivers/usb/dwc3/dwc=
-3-meson-g12a.c
->> > index ce5388338389..1f7f4d88ed9d 100644
->> > --- a/drivers/usb/dwc3/dwc3-meson-g12a.c
->> > +++ b/drivers/usb/dwc3/dwc3-meson-g12a.c
->>=20
->> [...]
->>=20
->> Fixes regression reported at [1] on SEI510 board based on Amlogic G12A.
->>=20
->> Felipe, Greg, can this be queued on uxb-next for 5.8 ?
->>=20
->> Acked-by: Neil Armstrong <narmstron@baylibre.com>
+On 5/27/20 2:14 PM, Valentin Schneider wrote:
+> On 27/05/20 12:17, Benjamin GAIGNARD wrote:
+>> On 5/27/20 12:09 PM, Valentin Schneider wrote:
+>>> Hi Benjamin,
+>>>
+>>> On 26/05/20 16:16, Benjamin Gaignard wrote:
+>>>> A first round [1] of discussions and suggestions have already be done on
+>>>> this series but without found a solution to the problem. I resend it to
+>>>> progress on this topic.
+>>>>
+>>> Apologies for sleeping on that previous thread.
+>>>
+>>> So what had been suggested over there was to use uclamp to boost the
+>>> frequency of the handling thread; however if you use threaded IRQs you
+>>> get RT threads, which already get the max frequency by default (at least
+>>> with schedutil).
+>>>
+>>> Does that not work for you, and if so, why?
+>> That doesn't work because almost everything is done by the hardware blocks
+>> without charge the CPU so the thread isn't running.
+> I'm not sure I follow; the frequency of the CPU doesn't matter while
+> your hardware blocks are spinning, right? AIUI what matters is running
+> your interrupt handler / action at max freq, which you get if you use
+> threaded IRQs and schedutil.
+Yes but not limited to schedutil.
+Given the latency needed to change of frequencies I think it could 
+already too late
+to change the CPU frequency when handling the threaded interrupt.
 >
-> I can take this and patch 1/2 here if Felipe acks them.
-
-Sure thing, Greg. Thanks.
-
-Acked-by: Felipe Balbi <balbi@kernel.org>
-
-=2D-=20
-balbi
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl7OY4gACgkQzL64meEa
-mQbULw//QEHuzbRomKSbPaOe0cM+/i1yGMyZAnXKQ0Q8bG+JLpSVDe8cXhRr2edg
-Ilfx6m8Kt/CYIZn6zZ73MdjPtVADkkJfsNVpGD+iAZ3uww8lAIm1rn4XozjNJt/5
-Jpno6KBqmXY3NXuE0HZ7LraJw7XMc01c3tSOh8T54pqeJ62aLHuxfkv+4fSYQS2R
-0gSF0tCJKC5eATjzg1retNX8nUkf0h8Zi3HyZTD2iUVSYiOe5FJeGYGNfmozwe3c
-shI0qMyIzCU/yFrvblfh4LANI8D938SCCgUfs8rXUNmbtdYlHcdcNEPWOh9q0ecF
-/bwHfaMkNAhtjrLa/4U4kNuoTPQhZIlPfl48Smq30xw+qUvMfkij1woAneYPBvxE
-Qz8VuaLQEcIBq/qkG2hQAjkJn6XoAXVPXO/dktZJjTWv2iJq2arNaGcUzB9t5RNg
-h1zCj3uphIP3t5uTmLGaeGm/4NQVcTSH843/kWMEcc/eZ27/t2DZL8Zl9llMVsr7
-cMIS7LWBTamc+GA2g5c2d27EH6xGnUYW9ribrXNZsZlpqFCGc0nvQHNj++lAFUc0
-iOoKhst9DZYTegMOgpbHyxIJnsInJlHhXf6C7vVdL75S9O+mLm9S5hJid9baWJTO
-mW78XccwWqGp5ctssvPr0e1qbflw39fQGeXAZC4acQr6W76wvwI=
-=bVFY
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============1802687465389327692==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+> I think it would help if you could clarify which tasks / parts of your
+> pipeline you need running at high frequencies. The point is that setting
+> a QoS request affects all tasks, whereas we could be smarter and only
+> boost the required tasks.
+What make us drop frames is that the threaded IRQ is scheduled too late.
+The not thread part of the interrupt handler where we clear the 
+interrupt flags
+is going fine but the thread part not.
+>
+>> I have done the
+>> tests with schedutil
+>> and ondemand scheduler (which is the one I'm targeting). I have no
+>> issues when using
+>> performance scheduler because it always keep the highest frequencies.
+>>
+>>
+>>>> When start streaming from the sensor the CPU load could remain very low
+>>>> because almost all the capture pipeline is done in hardware (i.e. without
+>>>> using the CPU) and let believe to cpufreq governor that it could use lower
+>>>> frequencies. If the governor decides to use a too low frequency that
+>>>> becomes a problem when we need to acknowledge the interrupt during the
+>>>> blanking time.
+>>>> The delay to ack the interrupt and perform all the other actions before
+>>>> the next frame is very short and doesn't allow to the cpufreq governor to
+>>>> provide the required burst of power. That led to drop the half of the frames.
+>>>>
+>>>> To avoid this problem, DCMI driver informs the cpufreq governors by adding
+>>>> a cpufreq minimum load QoS resquest.
+>>>>
+>>>> Benjamin
+>>>>
+>>>> [1] https://lkml.org/lkml/2020/4/24/360
+>>>>
+>>>> Benjamin Gaignard (3):
+>>>>     PM: QoS: Introduce cpufreq minimum load QoS
+>>>>     cpufreq: governor: Use minimum load QoS
+>>>>     media: stm32-dcmi: Inform cpufreq governors about cpu load needs
+>>>>
+>>>>    drivers/cpufreq/cpufreq_governor.c        |   5 +
+>>>>    drivers/media/platform/stm32/stm32-dcmi.c |   8 ++
+>>>>    include/linux/pm_qos.h                    |  12 ++
+>>>>    kernel/power/qos.c                        | 213 ++++++++++++++++++++++++++++++
+>>>>    4 files changed, 238 insertions(+)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1802687465389327692==--
-
