@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 635911E3D64
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 11:15:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E7701E3D80
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 27 May 2020 11:24:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=utD4mm7k3vfE2YAdG4PE8fNBvAhGk9Ji9skq6bWGOkg=; b=mzW7xIqjkck5V2
-	BEXVMouGujICsQTFyK0FqpN8M2nrLK/zya94nk5KIA36if7CE61QeMrwSW669XAepe2NHS9y4kVoF
-	M+aMIfHVdSFoq8vGBXD6zbWIp6SBuQS2STbCOW/v18cuRyPYHTXuqI5tei0mYg5/QwLRZfqB6O8dT
-	jF57FhcUcaOjkqjBBC1NKZtyn/bhbIVnWyL/IAsnwSbfUOhBCQ4ELRTTDOJs96fxC8HHgc6mDoITE
-	U1YNmTcmr+FXGG2gf8CrDubqrT3qMyiyJsiP5+O3nRMEp9gMX45lOPe9Dw1/6AW/0g9wtTZ/FQqrS
-	sw/G8vtNK5KlNIPpymew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Zql6eYB3P9ldUo47U6dsMvm6J587K5B6h5+qRmii5Iw=; b=UZVNRE2CYfVHaa
+	flJkRcCC/0zsjDqTgSS86Dot8QXxw+WFklf8ZJxZ0zpE65bE+c7KAk9II4fKZdXyZHMJbGyCvgGaf
+	l3U04ot3diU+mrUZwYSH4P2pBQoV0zbS0ZqYgYd86J8p+f6qdnCAabmH8/7bNd8E1MZEGwA0dN9kx
+	ysXEC8FZyspkHlqokcfsulfpRqRgHydpdy22QWUc6ujbdoQSZuNK6NFbyfUPaIQcgZAnYMZH/0+AS
+	xPcbSZc0H/jXqnJTKezW9UZOWHbuvWphogT2A/YVdHkPM2ccnlVhTXSIyoA1qBHdd69f2kgm5eSe9
+	iIenF5Bi7ooy7JvtmzZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jdsA1-0000v6-6Y; Wed, 27 May 2020 09:15:41 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1jdsIY-0004EZ-Ls; Wed, 27 May 2020 09:24:30 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jds9n-0000tz-7H
- for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 09:15:28 +0000
-Received: by mail-qk1-x743.google.com with SMTP id b6so23598929qkh.11
+ id 1jdsIN-0004Dz-Ik
+ for linux-arm-kernel@lists.infradead.org; Wed, 27 May 2020 09:24:22 +0000
+Received: by mail-wm1-x341.google.com with SMTP id h4so2346739wmb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 02:15:24 -0700 (PDT)
+ Wed, 27 May 2020 02:24:19 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=endlessm-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=idtnrQWeAURzpQW+RLs00G+O8A4gS3L+K9UkeXCQe20=;
- b=kaep8FtjTBescBuh/DTMipJrlsUmsVVNCeoJaIoHjvFY3aLX/ypieDP9Eq0bg2Z8Fy
- mfEtfW6eHGq4NWtk78hJA1GrV3b34qvVN1y21NxIWuPsmIIXM3kXfejRW4UodWTNTGQt
- YABx6/a5Ku1L3BTkJ0r9WGY0xs/SJ+8CxmdNMGjb3/7hEkYvKlwFZQmAKkojuQcYbqHm
- wfcdyvs6+MwWQTqgRRzcFX/xcVW3zkg99aMg/449QxobkNDo8rTRYi2IYoVyuomDKqhv
- sBoGhIIszOrZDFM6DGvgkQHYND20PdHpwXfvfZuf9WzJSYFFV0iDQC1JNV1jMqjJ2VlQ
- tvhQ==
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iK/p1RCXvKF/OvIr3JooWyPvnEDB/sbZcEn98mkIDwE=;
+ b=K9sfDNJcKCyRlgVNfYviMiUKOkM1L1ErbyvdGqC349mim10kIuJ7iesKN3kHKaByg/
+ 9aMV+55ANv6LyrS67uYorbrZ7jMaXwcPPtbOq66POFClQLvDUGeA3ckVrMl1X8Obagqx
+ E2oZe/pmR+eoF1mVMwgvRp3DI33gG466+YY4+Qd3Fl5YXJ9zW433Xk0/0UNwi3JxbOpI
+ SwVI4dnmpxTuQqJF12eLnupZw2ZTGgpRF6DHpEppgi+dgLsu7l6Nm5Bm+8r0y5glNSl8
+ z3cCOiDxTJ+vg4IFq8+dNTQ4VLZSIOW4fExS/0qo3rcOcCpBlh6FS1kkDKAKDbrqPfzb
+ xFcA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=idtnrQWeAURzpQW+RLs00G+O8A4gS3L+K9UkeXCQe20=;
- b=FVOaarArOluJUqm0ial911JEQspnEYtaNV31rFaSD+91vA9omUmIvoN7fKl4Og5O+I
- tYT5Fh8pfiLAEjs6tHu4Vw0Ua33X83rAF7+ocyHYraTvV3E2hhY8jQstpf3n9Y5P2TrS
- ROlFpJpo5dO8BXJBsAHsNVU+gEMiiRXXQIPsxDpnbGq84dTwF3sd5SgEDxFnK4FZPTBL
- MfyvtSw3jyesXG+TbhP5J1Mny9co485m/tGl0KPaMY7y/eTatNbJz/scvyjuBw9w8ges
- wjqBqr3hH1sYLqfUerUDFqlcpspVneW5X8oKBjIXGeS/YxKt63p8adk4pKiObadEwhnl
- jdXQ==
-X-Gm-Message-State: AOAM530zn9IuokBVcF1TgzKjgUS5aJWn+TK74oZUBU5KpbtPJXLL/2Dh
- rtamgUnPuQjkjc7t7gq2mzY71cie+FX3z5nrmSwQdA==
-X-Google-Smtp-Source: ABdhPJz2rYXRknrAa47G5ZoicHWOBJaEnkLv8Z2pCeyzrLZa3p9k5mhYAvQMKK0N2KMt5GCFK7O6dYRm2sJ476AKlKA=
-X-Received: by 2002:a37:6851:: with SMTP id d78mr2994513qkc.86.1590570923313; 
- Wed, 27 May 2020 02:15:23 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=iK/p1RCXvKF/OvIr3JooWyPvnEDB/sbZcEn98mkIDwE=;
+ b=ANx6IIR4/SUTyUbhambBLcPqv+2r+IK3zULSvGcACQareX66VKLxUdtvoHN35rRAt3
+ u5t1iM0fpLT2Lc6vtyACKVejs/syZPphK2bkLwdrb/9R4kc/25GCibX/YSOEeuMe+O8A
+ FzCKWVBffmWF+VDuKOlv9JIjKunec1sBUkgguLfOqYytdddRcrbqJJJgNeTwlNY3bB+N
+ S3vGXKC15lYjXdNykJMllM6aQj6C1gIN43XnFMFDC46JvZ0r2tseEcnaIw1tCUWKavuZ
+ iSci8MJeLxiCq0A4dB+OGPB+rp8rS4ETo7fkmoYpNu6oCAcypuWxaipUxI3hvlyVJ4tX
+ SEfQ==
+X-Gm-Message-State: AOAM533JDW054ULD3W7cexkx7mTV+0ihO6qp2TEZN0GuLJzsdqI15NWc
+ U9+6x66vhoAy8YlWH3Fbzp5f9A==
+X-Google-Smtp-Source: ABdhPJyCox//hlsTwOFPPKuQKWeWBXVZn0uc8sk6yk61mpiZuZ7Lb2amN/+W7d8zFEtcVbRbgYS+mw==
+X-Received: by 2002:a05:600c:2614:: with SMTP id
+ h20mr3540149wma.155.1590571458351; 
+ Wed, 27 May 2020 02:24:18 -0700 (PDT)
+Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
+ [2.15.156.232])
+ by smtp.gmail.com with ESMTPSA id o6sm2278500wrp.3.2020.05.27.02.24.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 02:24:17 -0700 (PDT)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: John Crispin <john@phrozen.org>, Sean Wang <sean.wang@mediatek.com>,
+ Mark Lee <Mark-MC.Lee@mediatek.com>,
+ "David S . Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH] net: ethernet: mtk-star-emac: fix error path in RX handling
+Date: Wed, 27 May 2020 11:24:04 +0200
+Message-Id: <20200527092404.3567-1-brgl@bgdev.pl>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
- <20200427072342.5499-1-jian-hong@endlessm.com>
- <20200428162152.ztsqp7nxqbwqrm6r@gilmour.lan>
- <CAPpJ_efvtVzb_hvoVOeaePh7UdE13wOiiGaDBH38cToB-yhkUg@mail.gmail.com>
- <20200507172158.cybtakpo6cxv6wcs@gilmour.lan>
- <CAPpJ_efxenmSXt2OXkhkQ1jDJ59tyWBDUvmpyOB-bfPMDENQZg@mail.gmail.com>
- <CAPpJ_ed9TMJjN8xS1_3saf5obQhULJSLNgQSAFxgiWM2QX9A7Q@mail.gmail.com>
- <20200526102018.kznh6aglpkqlp6en@gilmour.lan>
- <CAD8Lp467DiYWLwH6T1Jeq-uyN4VEuef-gGWw0_bBTtmSPr00Ag@mail.gmail.com>
- <20200527091335.7wc3uy67lbz7j4di@gilmour.lan>
-In-Reply-To: <20200527091335.7wc3uy67lbz7j4di@gilmour.lan>
-From: Daniel Drake <drake@endlessm.com>
-Date: Wed, 27 May 2020 17:15:12 +0800
-Message-ID: <CAD8Lp45ucK-yZ5G_DrUVA7rnxo58UF1LPUy65w2PCOcSxKx_Sg@mail.gmail.com>
-Subject: Re: [PATCH v2 00/91] drm/vc4: Support BCM2711 Display Pipelin
-To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_021527_319584_FE9076B9 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20200527_022419_621775_1FAAC78E 
+X-CRM114-Status: GOOD (  12.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,31 +96,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- devicetree <devicetree@vger.kernel.org>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Jian-Hong Pan <jian-hong@endlessm.com>,
- Linux Upstreaming Team <linux@endlessm.com>, linux-clk@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-i2c@vger.kernel.org
+Cc: Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Fabien Parent <fparent@baylibre.com>,
+ linux-mediatek@lists.infradead.org,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ Pedro Tsai <pedro.tsai@mediatek.com>,
+ Nathan Chancellor <natechancellor@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 5:13 PM Maxime Ripard <maxime@cerno.tech> wrote:
-> I'm about to send a v3 today or tomorrow, I can Cc you (and Jian-Hong) if you
-> want.
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-That would be great, although given the potentially inconsistent
-results we've been seeing so far it would be great if you could
-additionally push a git branch somewhere.
-That way we can have higher confidence that we are applying exactly
-the same patches to the same base etc.
+The dma_addr field in desc_data must not be overwritten until after the
+new skb is mapped. Currently we do replace it with uninitialized value
+in error path. This change fixes it by moving the assignment before the
+label to which we jump after mapping or allocation errors.
 
-Thanks
-Daniel
+Fixes: 8c7bd5a454ff ("net: ethernet: mtk-star-emac: new driver")
+Reported-by: Nathan Chancellor <natechancellor@gmail.com>
+Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+---
+ drivers/net/ethernet/mediatek/mtk_star_emac.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/ethernet/mediatek/mtk_star_emac.c b/drivers/net/ethernet/mediatek/mtk_star_emac.c
+index b74349cede28..72bb624a6a68 100644
+--- a/drivers/net/ethernet/mediatek/mtk_star_emac.c
++++ b/drivers/net/ethernet/mediatek/mtk_star_emac.c
+@@ -1308,6 +1308,8 @@ static int mtk_star_receive_packet(struct mtk_star_priv *priv)
+ 		goto push_new_skb;
+ 	}
+ 
++	desc_data.dma_addr = new_dma_addr;
++
+ 	/* We can't fail anymore at this point: it's safe to unmap the skb. */
+ 	mtk_star_dma_unmap_rx(priv, &desc_data);
+ 
+@@ -1318,7 +1320,6 @@ static int mtk_star_receive_packet(struct mtk_star_priv *priv)
+ 	netif_receive_skb(desc_data.skb);
+ 
+ push_new_skb:
+-	desc_data.dma_addr = new_dma_addr;
+ 	desc_data.len = skb_tailroom(new_skb);
+ 	desc_data.skb = new_skb;
+ 
+-- 
+2.25.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
