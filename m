@@ -2,70 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 367E41E6454
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 16:45:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 621551E645F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 16:46:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ESduqECNujmlGFwqpWgrvPm7NL7YrvELfTe9FTnsQvA=; b=Sp573nQ6GBZHTb2F7UroSwE27
-	dBia7xIXppUH6tIVnDcsVsZPp4X8G2pF37HZdW23ikZG1BTHlw8LJEZy4OrzkFMI3VTITGvAuGsNj
-	y8h0OEzibL9lpxH/RTfqZkOzfaVY1OWR7lrMafPsrv5+Nepxb10SUgkLGQyOVgSZ2lRasYXaBR8GI
-	hF7unqBeu1kSDJVsqQiFD91V886nHV9C8EJ6XZY9/HoV+gxTgaYEbjh3vBsO6of55va6LTLoFNpkL
-	1I+xQdJAECWyhwPXPjSJ1P0Yxv+/YcYFZ7ADFt1XhDK6U6rH0KvOBhs3Y5vMuRyQgOyQeBuaUwXmo
-	450WH+jTg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S4mVg/GsMhSc5s9QqvW1JLishlAnPiM0O9VQOPv3WZg=; b=sOwlmIkNS3S9oK
+	JJ4KQgOXiG2PTVMyZuaaR9FPVMZqkRT+lPuEamHhslMci1T+1T7XqLZWzojlakzdOrV36s6wp21c2
+	SBYWkJAss/4wo5AFpecU1pwh6nxAy8Ac9a+Mt2kh9qujvGcJh0724K/8j49e23thnZINYaX3OFA5C
+	7MpqXkdCoVqnyJ9K66zYFbY7OAQ4nW77qy0DZcZRD3KSQV0Kn37J4gAiz9eKx+cU+8xU+9mTt5Z1f
+	coUJyGOJE6Fg+gQgnCb8djvqOWUWGfEGJFvuvFwxreFi6jx462t7xxdimRGFLCtMXO4/UjYpWUZzb
+	YESCclC3bIrwRHLmYORw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeJmb-0006Tm-0g; Thu, 28 May 2020 14:45:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jeJnA-0000kU-NU; Thu, 28 May 2020 14:45:56 +0000
+Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeJmG-0006Mn-EF; Thu, 28 May 2020 14:45:01 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5BEB6207D3;
- Thu, 28 May 2020 14:44:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590677100;
- bh=X9YK+GDEsdW2T8WyDGxweojlNXR+vB7BnE1HKRUoVxo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=l2E2WVrocVGuy1b/MoQhvijltZBfFRIPA1HuIMFqM5dN6XLFuQWc89P9MA+V3Em7x
- 9Rgm9qI719tIY6fUpzodZNDu7Nt24Upte5jX83v0rzQGTFaN+0PlHnIxzjfDBJ8YwR
- f5bCGf7jklLlgV/qFq/P4M6JnQzRot0Ta1CnpqS0=
-Date: Thu, 28 May 2020 15:44:56 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Bartosz Golaszewski <brgl@bgdev.pl>
-Subject: Re: [PATCH v2 1/2] regmap: provide helpers for simple bit operations
-Message-ID: <20200528144456.GG3606@sirena.org.uk>
-References: <20200528142241.20466-1-brgl@bgdev.pl>
- <20200528142241.20466-2-brgl@bgdev.pl>
+ id 1jeJmy-0000jO-CV; Thu, 28 May 2020 14:45:45 +0000
+X-Originating-IP: 91.224.148.103
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 4C0F4C0009;
+ Thu, 28 May 2020 14:45:37 +0000 (UTC)
+Date: Thu, 28 May 2020 16:45:35 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Boris Brezillon <boris.brezillon@collabora.com>
+Subject: Re: [PATCH v6 08/18] mtd: rawnand: Use the new ECC engine type
+ enumeration
+Message-ID: <20200528164535.3655ffcb@xps13>
+In-Reply-To: <20200528163150.6ad71fcc@collabora.com>
+References: <20200528113113.9166-1-miquel.raynal@bootlin.com>
+ <20200528113113.9166-9-miquel.raynal@bootlin.com>
+ <20200528163150.6ad71fcc@collabora.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20200528142241.20466-2-brgl@bgdev.pl>
-X-Cookie: Small is beautiful.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_074500_497879_BDF459E4 
-X-CRM114-Status: UNSURE (   6.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200528_074544_556666_96E2E605 
+X-CRM114-Status: GOOD (  17.60  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.198 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.198 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,65 +65,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephane Le Provost <stephane.leprovost@mediatek.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, netdev@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- Mark Lee <Mark-MC.Lee@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
- Pedro Tsai <pedro.tsai@mediatek.com>, linux-mediatek@lists.infradead.org,
- Andrew Perepech <andrew.perepech@mediatek.com>,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
+ Richard Weinberger <richard@nod.at>, Weijie Gao <weijie.gao@mediatek.com>,
+ Paul Cercueil <paul@crapouillou.net>, Rob Herring <robh+dt@kernel.org>,
+ linux-mtd@lists.infradead.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, Chuanhong Guo <gch981213@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6350011105306867269=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6350011105306867269==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="RMedoP2+Pr6Rq0N2"
-Content-Disposition: inline
+Boris Brezillon <boris.brezillon@collabora.com> wrote on Thu, 28 May
+2020 16:31:50 +0200:
 
+> On Thu, 28 May 2020 13:31:03 +0200
+> Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+> 
+> > Mechanical switch from the legacy "mode" enumeration to the new
+> > "engine type" enumeration in drivers and board files.
+> > 
+> > The device tree parsing is also updated to return the new enumeration
+> > from the old strings.
+> > 
+> > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>  
+> 
+> I didn't check all the changes, but I'm fine with the approach
+> 
+> Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+> 
+> > diff --git a/include/linux/platform_data/mtd-davinci.h b/include/linux/platform_data/mtd-davinci.h
+> > index 3383101c233b..dd474dd44848 100644
+> > --- a/include/linux/platform_data/mtd-davinci.h
+> > +++ b/include/linux/platform_data/mtd-davinci.h
+> > @@ -60,16 +60,16 @@ struct davinci_nand_pdata {		/* platform_data */
+> >  	struct mtd_partition	*parts;
+> >  	unsigned		nr_parts;
+> >  
+> > -	/* none  == NAND_ECC_NONE (strongly *not* advised!!)
+> > -	 * soft  == NAND_ECC_SOFT
+> > -	 * else  == NAND_ECC_HW, according to ecc_bits
+> > +	/* none  == NAND_ECC_ENGINE_TYPE_NONE (strongly *not* advised!!)
+> > +	 * soft  == NAND_ECC_ENGINE_TYPE_SOFT
+> > +	 * else  == NAND_ECC_ENGINE_TYPE_ON_HOST, according to ecc_bits
+> >  	 *
+> >  	 * All DaVinci-family chips support 1-bit hardware ECC.
+> >  	 * Newer ones also support 4-bit ECC, but are awkward
+> >  	 * using it with large page chips.
+> >  	 */
+> > -	enum nand_ecc_mode	ecc_mode;
+> > -	enum nand_ecc_placement	ecc_placement;
+> > +	enum nand_ecc_engine_type engine_type;
+> > +	enum nand_ecc_placement ecc_placement;  
+> 
+> Nitpick: if you want to use a space instead of tab, it should be done in
+> patch 3.
 
---RMedoP2+Pr6Rq0N2
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, May 28, 2020 at 04:22:40PM +0200, Bartosz Golaszewski wrote:
-
-> +	return (val & bits) == bits ? 1 : 0;
-
-The tenery here is redundant, it's converting a boolean value into a
-boolean value.  Otherwise this looks good.
-
---RMedoP2+Pr6Rq0N2
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7PzmcACgkQJNaLcl1U
-h9DzXAf9EwegJko8ZtKiJNAmWI/0roZMdNBpTkKJLOfFqs0LbMZdg1Tg3UA+jOe6
-AM9PSwU009hn4dmLdAbnqIfXhp1e1zPUb537lozVi/6cAbc6yzwzZBxajJjUxjk9
-amrt61H/LZBJyyP1qrY4a/vNtu0R558ozAuMmINAfkEsFdGQq6WZ63N+bcJzPiF4
-kxSTX7Mewb0jyB6ZAilOMkuRFNR+bCGjV0MNVd41MUT+zEcgaMP7Dv6eJ/PUBJ2y
-klySoD2xOzlpxBUpKblFYuso9Q8iRrGGjr49/rh1rYuKjRz/wt8cbwe4NjrG0N+q
-E8vZUZWNgG2ZVnG3DbKIx5QlNJxtDA==
-=EkdN
------END PGP SIGNATURE-----
-
---RMedoP2+Pr6Rq0N2--
-
-
---===============6350011105306867269==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Right, fixed!
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6350011105306867269==--
-
