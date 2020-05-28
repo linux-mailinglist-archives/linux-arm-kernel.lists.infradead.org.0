@@ -2,72 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A22541E5693
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 07:35:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB6261E56FA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 07:47:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qsawhi5WAmavyIzyImd95fBGFUJKjMAe6rW6Diuctmc=; b=BYH4PLj4TA685R
-	tBPtc5cc3MBQhD3EWf7rDoIU+2A324ObkitGdBsPXEvaUqtjeTQlebznUbW+ZrFyaz50J4fzu0VRD
-	K7Keq3yCxSnb2YOVy+EF1On+Zf5Zn2EO8QTwWqHARbjeROo9RkHovBaXQADAZ1rQRD7xT03YJCqDy
-	MCICeymseWvhpTHZz1cDl2XXgS4iEbaWicRkWvyAURlpmCEFWCk8rn1li4ZwVwDm4oF9vYKvSkQBh
-	i/0iD1vyzvYqeRyLAHqEoDCtG85FNVp0MUnWI18x8mep/MPPlQgRG/Z4O3lnYzGTQaKqlfnTfF8TK
-	OVXKGkdxorz/fAH1krWg==;
+	List-Owner; bh=vBOZdgjYcQ7DaFHrHcKurE6ButHuFc2wGTXNeaMaRDo=; b=V/U1r/T1Py+hJw
+	g9oXzFStdwyMKw9q74rjycp60WyGHyk21AzDPMwpx6KHrp+x0rF5n23itNNBGt595d4nefbdgyWAX
+	vMFWyjRhKljR/SsH6PXjoqoDS/pK4esxulVT7AZ4ncMlDxMvFYZX38pQ96qtT9seMellCdaiHnBzn
+	MaHFAxBZl2UpJbdNd39M56BAfx0j6O4sZ4ArjaWD/bfEu3c6T6jBm61/PI6HdxnoQcRxmv6i20OxN
+	NIn6PvsMGiKEL/41EQ1epmeCwLJ9bMrz6Uli3o82b14oI5x8qC839E1IbaxZy4qwnnDAAF/qKQ5+z
+	zfj0SwagbFmVSOUbV2PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeBCW-0007QK-1D; Thu, 28 May 2020 05:35:32 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jeBNc-00062R-Ed; Thu, 28 May 2020 05:47:00 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeBBc-0004Rq-CE; Thu, 28 May 2020 05:34:39 +0000
-X-UUID: c41cf8cda39c40de955816b9f0f9dcdc-20200527
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=nnpcRKVMg+Ds8Jsd86q+Mu9psGr5IX3/2sTy8A93vwo=; 
- b=r+vgBM/LSP8qbXFzRI1cLmJzTGMG7HK0dm3r1hzX6nqnMRQ/OJ/5bFavRKmNUiCfH0+tDr8Pd4032ReEzAsYcukMOi2NpzhB5gEOttNBaGVEMsPZe3YfwaU6oYaa5jLYbPVolYaqFXVE/Lyt5yYouDb3yqPeZQO/lsFqKXenCuM=;
-X-UUID: c41cf8cda39c40de955816b9f0f9dcdc-20200527
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <fengping.yu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2034854522; Wed, 27 May 2020 21:34:37 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 27 May 2020 22:34:28 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 28 May 2020 13:34:31 +0800
-Received: from localhost.localdomain (10.15.43.140) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 28 May 2020 13:34:30 +0800
-From: Fengping Yu <fengping.yu@mediatek.com>
-To: Yingjoe Chen <yingjoe.chen@mediatek.com>, Dmitry Torokhov
- <dmitry.torokhov@gmail.com>, Andy Shevchenko
- <andriy.shevchenko@linux.intel.com>, Marco Felsch <m.felsch@pengutronix.de>
-Subject: [PATCH v10 3/3] configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD=m
-Date: Thu, 28 May 2020 13:33:47 +0800
-Message-ID: <20200528053344.25936-4-fengping.yu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200528053344.25936-1-fengping.yu@mediatek.com>
-References: <20200528053344.25936-1-fengping.yu@mediatek.com>
+ id 1jeBNQ-000625-IL
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 05:46:50 +0000
+Received: by mail-wm1-x343.google.com with SMTP id n5so1892426wmd.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 22:46:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Ippx2MHf4bBIL8gswP/FHgb+jqJ3Lt0DInexFTWRZ30=;
+ b=IJNgsJJOTWhZyjqt5tRNB2c6yFml1Jns6RP9JQv6paJ9WNg/5Slp2PlqulABwgH/X4
+ bSPPL+ig62+FFK7mdLOMQcqWiZIY2PrwNwGL+rycfovS2EvIzNRcFKLT/DhDqWso4J9j
+ Jv0FD0G8cxcC1AwI65zh8L7k71+qRo873c7jY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Ippx2MHf4bBIL8gswP/FHgb+jqJ3Lt0DInexFTWRZ30=;
+ b=Sao0v/CtU8tFKYWdq0DV4CJuReSO47SmUI5JAOQF/SrphhzUdBS4d/UAlArq3M95co
+ LZSRJ51TxdpvU0tEx5sclNetOJFQsM22QYAPVtqY12vlWoiibR0WcgtoBTH4HBISYYFN
+ 7To57ptHaK/Bq3oFwVBm3Ll3mUIQ/tKZsl0ow3Jp/Yn03HO04gf2U2ugbJWdwwDCOVnE
+ dJ3IyQFVedPMtMko7yv2CJZo9m8q38+R4z1Qb6ZqB9RBin/DtIj1IEOnxYvFKvKrw9A0
+ Fw1PDITvKi2VQu46t3xS/HXhnSjaHlcoxJGkd8dFsocQRkp/Opo39E3jIxiQpxwITZD6
+ jqWw==
+X-Gm-Message-State: AOAM532ssZGe/GxkqjiJcPAI7DQiLe1Sg3vOGD59zbjXGICVvNKscF+I
+ zuVORGDUXUZ5P8od4rv8VY4b/A==
+X-Google-Smtp-Source: ABdhPJwuag71of/p+Z9jCVFiTwZqc0Sg36w1Cu6Df/y3upnKUUn7+x132HaZweIfbIdVnWbpjuQAeQ==
+X-Received: by 2002:a1c:22d7:: with SMTP id i206mr1583884wmi.186.1590644806739; 
+ Wed, 27 May 2020 22:46:46 -0700 (PDT)
+Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
+ by smtp.gmail.com with ESMTPSA id 5sm4905641wmd.19.2020.05.27.22.46.45
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 22:46:45 -0700 (PDT)
+Date: Thu, 28 May 2020 07:46:44 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: DRI Development <dri-devel@lists.freedesktop.org>
+Subject: Re: [PATCH 1/2] drm/mxsfb: Call drm_crtc_vblank_on/off
+Message-ID: <20200528054643.GQ206103@phenom.ffwll.local>
+References: <20200527094757.1414174-1-daniel.vetter@ffwll.ch>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5D8AE3C39C13D1CAABD17E90C63640CD31E3340CC1887E8CA54D2A74C5D9B8E92000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200527094757.1414174-1-daniel.vetter@ffwll.ch>
+X-Operating-System: Linux phenom 5.6.0-1-amd64 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_223437_019307_1383B747 
-X-CRM114-Status: UNSURE (   6.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200527_224648_608825_A9D41170 
+X-CRM114-Status: GOOD (  18.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -75,8 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,37 +94,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "fengping.yu" <fengping.yu@mediatek.com>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-input@vger.kernel.org
+Cc: Marek Vasut <marex@denx.de>, Fabio Estevam <festevam@gmail.com>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ Stefan Agner <stefan@agner.ch>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Daniel Vetter <daniel.vetter@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "fengping.yu" <fengping.yu@mediatek.com>
+On Wed, May 27, 2020 at 11:47:56AM +0200, Daniel Vetter wrote:
+> mxsfb has vblank support, is atomic, but doesn't call
+> drm_crtc_vblank_on/off as it should. Not good.
+> 
+> With my next patch to add the drm_crtc_vblank_reset to helpers this
+> means not even the very first crtc enabling will vblanks work anymore,
+> since they'll just stay off forever.
+> 
+> Since mxsfb doesn't have any vblank waits of its own in the
+> enable/disable flow, nor an enable/disable_vblank callback we can do
+> the on/off as the first respectively last operation, and it should all
+> work.
+> 
+> Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+> Cc: Marek Vasut <marex@denx.de>
+> Cc: Stefan Agner <stefan@agner.ch>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Sascha Hauer <s.hauer@pengutronix.de>
+> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: NXP Linux Team <linux-imx@nxp.com>
+> Cc: linux-arm-kernel@lists.infradead.org
 
-Add Mediatek matrix keypad support in defconfig.
+Ping for some ack/review on this one here, it's holding up the subsystem
+wide fix in patch 2.
 
-Signed-off-by: fengping.yu <fengping.yu@mediatek.com>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+Thanks, Daniel
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 24e534d85045..112ced090b21 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -349,6 +349,7 @@ CONFIG_KEYBOARD_GPIO=y
- CONFIG_KEYBOARD_SNVS_PWRKEY=m
- CONFIG_KEYBOARD_IMX_SC_KEY=m
- CONFIG_KEYBOARD_CROS_EC=y
-+CONFIG_KEYBOARD_MTK_KPD=m
- CONFIG_INPUT_TOUCHSCREEN=y
- CONFIG_TOUCHSCREEN_ATMEL_MXT=m
- CONFIG_INPUT_MISC=y
+> ---
+>  drivers/gpu/drm/mxsfb/mxsfb_drv.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/mxsfb/mxsfb_drv.c b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> index 497cf443a9af..1891cd6deb2f 100644
+> --- a/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> +++ b/drivers/gpu/drm/mxsfb/mxsfb_drv.c
+> @@ -124,6 +124,7 @@ static void mxsfb_pipe_enable(struct drm_simple_display_pipe *pipe,
+>  	drm_panel_prepare(mxsfb->panel);
+>  	mxsfb_crtc_enable(mxsfb);
+>  	drm_panel_enable(mxsfb->panel);
+> +	drm_crtc_vblank_on(&pipe->crtc);
+>  }
+>  
+>  static void mxsfb_pipe_disable(struct drm_simple_display_pipe *pipe)
+> @@ -133,6 +134,7 @@ static void mxsfb_pipe_disable(struct drm_simple_display_pipe *pipe)
+>  	struct drm_crtc *crtc = &pipe->crtc;
+>  	struct drm_pending_vblank_event *event;
+>  
+> +	drm_crtc_vblank_off(&pipe->crtc);
+>  	drm_panel_disable(mxsfb->panel);
+>  	mxsfb_crtc_disable(mxsfb);
+>  	drm_panel_unprepare(mxsfb->panel);
+> -- 
+> 2.26.2
+> 
+
 -- 
-2.18.0
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
