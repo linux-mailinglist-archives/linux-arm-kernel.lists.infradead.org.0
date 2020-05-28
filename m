@@ -2,67 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B3931E6E13
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 23:46:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 267851E6E49
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 00:01:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uhNlCuuqM61wwpyZ7J+myOF3nB4hQ5V2aLAhhQqQbxM=; b=F2HWIhv3Oj9jkx
-	Wz/rcf0yi1oSHj2Os9bRAgfC//F8mavDYCrvK0jUpGNkOAeIAd5BI9KtG13kBKoVTkzaM4cLKlfG8
-	ZRdawaw0IIDLhaxIhnXpbnaQtpGPW1j9zQy/sPUtbkQPwrkYmTv5S7Xflaairu8IRPw+R3ozAOeyL
-	StkojvAS9ZQ6GXqmpUoZHKhYbXodxpUApvNwtWKeT1iD3dE2UjUGDCggOQR7e4kp3v+kP9IKoT3ZQ
-	1QVYBQmz1aDnpeeBi/JzbmKZGNL3XjdwaJ3HpKDyWnTmWGnV9GUejnt3pcv+9ID4A9aX+EQZaEV93
-	iNiaSbVO6dria9nE/9dQ==;
+	List-Owner; bh=mvVmXnx5+5LjqYVxC9vnCkRyClNNaJDQ43g86BKDBVc=; b=eeYfEU/GhwDc7B
+	hvuE35XC/8/h2HXTDLTsTwuELpfOlb1SQfC9rjxpo8nwtS3cHemiT4oO1AJ6vKvxP5uU0Id+8UXyk
+	VDwpZRatyPM936SEjdub9eJ8BYarLTA0t0azKiOO7a+2YtN8CewWrU3lUUidwxYvs30gIy5Fq48wW
+	EYkjMcOg8giF/aw05EeMTM0s3a0Tynu4nQyTPuE0yn+HjO2RLix8SQFDgIyBsEV5RoB/7I2shDvLr
+	O+gCh1Zcqp73f1DnceB4r0H88E67efg2SeyUOs138K9NJHlEDS81pR8v2dJnpFNiOqvpN+8Xkf6uQ
+	iF+wnEDVCGGm+9W9VTrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeQML-00089L-VP; Thu, 28 May 2020 21:46:41 +0000
-Received: from perceval.ideasonboard.com
- ([2001:4b98:dc2:55:216:3eff:fef7:d647])
+	id 1jeQax-0000S4-34; Thu, 28 May 2020 22:01:47 +0000
+Received: from mail-il1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeQM4-000876-EE
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 21:46:25 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id BF5BB2A8;
- Thu, 28 May 2020 23:46:21 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1590702381;
- bh=2kQLJ6ihq2PvrAL0aFkV0qdd4HEG8jQjlPEKzcWA4zI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=aNNmYmnx/YtiaQVF0zhm6NKUhO6tyxYre9WWwiDlNS9QeKkblOPHKa6HLKEXjG+4j
- lNUPQzPegoZeRz0wrGN3ySSpAhmrl3OfbCK8+SDVn8I76Sr/WH83NJZ3j3uohoSBvM
- OYwD8YwyTzk36wLhNTnG1MiavALmhYO0KitlmpBg=
-Date: Fri, 29 May 2020 00:46:07 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Ricardo =?utf-8?Q?Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>
-Subject: Re: [PATCH v2 4/4] drm/bridge: tfp410: Fix setup and hold time
- calculation
-Message-ID: <20200528214607.GB14756@pendragon.ideasonboard.com>
-References: <20200514143612.2094-1-ricardo.canuelo@collabora.com>
- <20200514143612.2094-5-ricardo.canuelo@collabora.com>
+ id 1jeQap-0000Ri-PC; Thu, 28 May 2020 22:01:41 +0000
+Received: by mail-il1-f194.google.com with SMTP id 17so529372ilj.3;
+ Thu, 28 May 2020 15:01:39 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=ypTe2PhllcbFDiwKFVMlag8IDVx6GgqoGKohXERCZBQ=;
+ b=pl4KBLYQ/DTFaOsasyn+KA7ay2AcpQmkm94QK0TiWEVwkn+77c9FIwptSWzlgdohqY
+ +QcZOYYI4aAtWTDh7mgLUy186ZZUBKSnwA+Ph58KbiWkdquLmzjN72HfgBlv/Yx9xNrR
+ Cy7CXxjrNEncy6lqfuH9cjb9PM2zS0VN5on95Y+z8CSRPcYgMCf/fqwDoZEG+CSfcPT/
+ /CabGiTdX3zeTbKt9FdUwZ9673dQ9Kycyc2WHbSNs3LA0PqsZS2apqNGEMxJDqKjMvtc
+ mtLDxwvclSZBMGhH5gISWJfbfnT1PDE0zdQBkdy0jLbXolYpZ5+qiOE/XGi8AJxsm+jX
+ p6rg==
+X-Gm-Message-State: AOAM533w98QVtSb0cMIzjXKG6OquEmDehIvGdwVU/1P57nNGQYAnmd87
+ lDkM5yz3Bo3Pnofex/zULXH/GGo=
+X-Google-Smtp-Source: ABdhPJzFT3oU/vjsNRn309VDH/DNiO+Z5WPTFKoWeipwpTJAZ6V1gzsWGOibx8+mO77rr6DZOlHjqA==
+X-Received: by 2002:a92:2801:: with SMTP id l1mr5040474ilf.132.1590703298885; 
+ Thu, 28 May 2020 15:01:38 -0700 (PDT)
+Received: from xps15 ([64.188.179.252])
+ by smtp.gmail.com with ESMTPSA id f9sm3853884ile.39.2020.05.28.15.01.37
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 28 May 2020 15:01:38 -0700 (PDT)
+Received: (nullmailer pid 760172 invoked by uid 1000);
+ Thu, 28 May 2020 22:01:36 -0000
+Date: Thu, 28 May 2020 16:01:36 -0600
+From: Rob Herring <robh@kernel.org>
+To: Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>
+Subject: Re: [PATCH] dt-bindings: input: touchscreen: edt-ft5x06: change reg
+ property
+Message-ID: <20200528220136.GA748777@bogus>
+References: <20200520073327.6016-1-jbx6244@gmail.com>
+ <20200520171324.GS89269@dtor-ws> <4727344.YYj2SkWT1V@diego>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200514143612.2094-5-ricardo.canuelo@collabora.com>
+In-Reply-To: <4727344.YYj2SkWT1V@diego>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_144624_629451_26E2548B 
-X-CRM114-Status: GOOD (  17.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200528_150139_817205_7ADDA9F0 
+X-CRM114-Status: GOOD (  19.54  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.194 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.194 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,55 +91,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, jason@lakedaemon.net, airlied@linux.ie,
- dri-devel@lists.freedesktop.org, robh+dt@kernel.org, tomi.valkeinen@ti.com,
- kernel@collabora.com, shawnguo@kernel.org,
+Cc: devicetree@vger.kernel.org, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ linux-input@vger.kernel.org, Johan Jonker <jbx6244@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUmljYXJkbywKClRoYW5rIHlvdSBmb3IgdGhlIHBhdGNoLgoKT24gVGh1LCBNYXkgMTQsIDIw
-MjAgYXQgMDQ6MzY6MTJQTSArMDIwMCwgUmljYXJkbyBDYcOxdWVsbyB3cm90ZToKPiBUaGUgdGZw
-NDEwIGhhcyBhIGRhdGEgZGUtc2tldyBmZWF0dXJlIHRoYXQgYWxsb3dzIHRoZSB1c2VyIHRvIGNv
-bXBlbnNhdGUKPiB0aGUgc2tldyBiZXR3ZWVuIElEQ0sgYW5kIHRoZSBwaXhlbCBkYXRhIGFuZCBj
-b250cm9sIHNpZ25hbHMuCj4gCj4gSW4gdGhlIGRyaXZlciwgdGhlIHNldHVwIGFuZCBob2xkIHRp
-bWVzIGFyZSBjYWxjdWxhdGVkIGZyb20gdGhlIGRlLXNrZXcKPiB2YWx1ZS4gVGhpcyByZXRyaWV2
-ZXMgdGhlIGRlc2tldyB2YWx1ZSBmcm9tIHRoZSBEVCB1c2luZyB0aGUgcHJvcGVyCj4gZGF0YXR5
-cGUgYW5kIHJhbmdlIGNoZWNrIGFzIGRlc2NyaWJlZCBieSB0aGUgYmluZGluZyAodTMyIGZyb20g
-MCB0byA3KQo+IGFuZCBmaXhlcyB0aGUgY2FsY3VsYXRpb24gb2YgdGhlIHNldHVwIGFuZCBob2xk
-IHRpbWVzLgoKSG93IGFib3V0IG1lbnRpb25pbmcgdGhhdCB0aGUgZml4IHJlc3VsdHMgZnJvbSBh
-IGNoYW5nZSBpbiB0aGUgRFQKYmluZGluZ3MgPyBPdGhlcndpc2UgaXQgc291bmRzIGl0IHdhcyBh
-IGJ1ZyBpbiB0aGUgZHJpdmVyLgoKSSB3b3VsZCBhbHNvIG1lbnRpb24gdGhhdCB0aGUgcGF0Y2gg
-Zml4ZXMgdGhlIG1pbigpIGNhbGN1bGF0aW9uLCB3aGljaAp3YXMgY2xlYXJseSB3cm9uZy4gSSB0
-aGluayBJIHdvdWxkIGhhdmUgc3BsaXQgdGhpcyBpbiB0d28gcGF0Y2hlcy4KCldpdGggdGhpcyBh
-ZGRyZXNzZWQsCgpSZXZpZXdlZC1ieTogTGF1cmVudCBQaW5jaGFydCA8bGF1cmVudC5waW5jaGFy
-dEBpZGVhc29uYm9hcmQuY29tPgoKPiBTaWduZWQtb2ZmLWJ5OiBSaWNhcmRvIENhw7F1ZWxvIDxy
-aWNhcmRvLmNhbnVlbG9AY29sbGFib3JhLmNvbT4KPiAtLS0KPiAgZHJpdmVycy9ncHUvZHJtL2Jy
-aWRnZS90aS10ZnA0MTAuYyB8IDEwICsrKysrLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQsIDUgaW5z
-ZXJ0aW9ucygrKSwgNSBkZWxldGlvbnMoLSkKPiAKPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUv
-ZHJtL2JyaWRnZS90aS10ZnA0MTAuYyBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvdGktdGZwNDEw
-LmMKPiBpbmRleCBlM2ViNjM2NGMwZjcuLjIxZDk5YjRlYTBjOSAxMDA2NDQKPiAtLS0gYS9kcml2
-ZXJzL2dwdS9kcm0vYnJpZGdlL3RpLXRmcDQxMC5jCj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL2Jy
-aWRnZS90aS10ZnA0MTAuYwo+IEBAIC0yMjAsNyArMjIwLDcgQEAgc3RhdGljIGludCB0ZnA0MTBf
-cGFyc2VfdGltaW5ncyhzdHJ1Y3QgdGZwNDEwICpkdmksIGJvb2wgaTJjKQo+ICAJc3RydWN0IGRl
-dmljZV9ub2RlICplcDsKPiAgCXUzMiBwY2xrX3NhbXBsZSA9IDA7Cj4gIAl1MzIgYnVzX3dpZHRo
-ID0gMjQ7Cj4gLQlzMzIgZGVza2V3ID0gMDsKPiArCXUzMiBkZXNrZXcgPSAwOwo+ICAKPiAgCS8q
-IFN0YXJ0IHdpdGggZGVmYXVsdHMuICovCj4gIAkqdGltaW5ncyA9IHRmcDQxMF9kZWZhdWx0X3Rp
-bWluZ3M7Cj4gQEAgLTI3NCwxMiArMjc0LDEyIEBAIHN0YXRpYyBpbnQgdGZwNDEwX3BhcnNlX3Rp
-bWluZ3Moc3RydWN0IHRmcDQxMCAqZHZpLCBib29sIGkyYykKPiAgCX0KPiAgCj4gIAkvKiBHZXQg
-dGhlIHNldHVwIGFuZCBob2xkIHRpbWUgZnJvbSB2ZW5kb3Itc3BlY2lmaWMgcHJvcGVydGllcy4g
-Ki8KPiAtCW9mX3Byb3BlcnR5X3JlYWRfdTMyKGR2aS0+ZGV2LT5vZl9ub2RlLCAidGksZGVza2V3
-IiwgKHUzMiAqKSZkZXNrZXcpOwo+IC0JaWYgKGRlc2tldyA8IC00IHx8IGRlc2tldyA+IDMpCj4g
-KwlvZl9wcm9wZXJ0eV9yZWFkX3UzMihkdmktPmRldi0+b2Zfbm9kZSwgInRpLGRlc2tldyIsICZk
-ZXNrZXcpOwo+ICsJaWYgKGRlc2tldyA+IDcpCj4gIAkJcmV0dXJuIC1FSU5WQUw7Cj4gIAo+IC0J
-dGltaW5ncy0+c2V0dXBfdGltZV9wcyA9IG1pbigwLCAxMjAwIC0gMzUwICogZGVza2V3KTsKPiAt
-CXRpbWluZ3MtPmhvbGRfdGltZV9wcyA9IG1pbigwLCAxMzAwICsgMzUwICogZGVza2V3KTsKPiAr
-CXRpbWluZ3MtPnNldHVwX3RpbWVfcHMgPSAxMjAwIC0gMzUwICogKChzMzIpZGVza2V3IC0gNCk7
-Cj4gKwl0aW1pbmdzLT5ob2xkX3RpbWVfcHMgPSBtYXgoMCwgMTMwMCArIDM1MCAqICgoczMyKWRl
-c2tldyAtIDQpKTsKPiAgCj4gIAlyZXR1cm4gMDsKPiAgfQoKLS0gClJlZ2FyZHMsCgpMYXVyZW50
-IFBpbmNoYXJ0CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+On Wed, May 20, 2020 at 08:41:59PM +0200, Heiko St=FCbner wrote:
+> Hi Dmitry,
+> =
+
+> Am Mittwoch, 20. Mai 2020, 19:13:24 CEST schrieb Dmitry Torokhov:
+> > Hi Johan,
+> > =
+
+> > On Wed, May 20, 2020 at 09:33:27AM +0200, Johan Jonker wrote:
+> > > A test with the command below gives this error:
+> > > =
+
+> > > arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
+> > > touchscreen@3e: reg:0:0: 56 was expected
+> > > =
+
+> > > The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
+> > > was shipped with different addresses then the binding currently allow=
+s.
+> > > Change the reg property that any address will pass.
+> > > =
+
+> > > make ARCH=3Darm dtbs_check
+> > > DT_SCHEMA_FILES=3DDocumentation/devicetree/bindings/input/touchscreen/
+> > > edt-ft5x06.yaml
+> > > =
+
+> > > Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> > > ---
+> > >  Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml =
+| 2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > > =
+
+> > > diff --git a/Documentation/devicetree/bindings/input/touchscreen/edt-=
+ft5x06.yaml b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x0=
+6.yaml
+> > > index 383d64a91..baa8e8f7e 100644
+> > > --- a/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.=
+yaml
+> > > +++ b/Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.=
+yaml
+> > > @@ -42,7 +42,7 @@ properties:
+> > >        - focaltech,ft6236
+> > >  =
+
+> > >    reg:
+> > > -    const: 0x38
+> > > +    maxItems: 1
+> > =
+
+> > Should we have a list of valid addresses instead of allowing any
+> > address? Controllers usually have only a couple of addresses that they
+> > support.
+> =
+
+> from what I've read, the fdt touchscreen controllers are just a generic
+> cpu with device-specific (or better panel-specific) firmware, which seems
+> to include the address as well - so it looks to be variable.
+> =
+
+> But of course that is only 2nd hand knowledge for me ;-)
+> =
+
+> =
+
+> But also, the i2c address is something you cannot really mess up,
+> either it is correct and your touchscreen works, or it isn't and and
+> adding entries to this list every time a new address variant pops up
+> feels clumsy.
+
+Is that an Ack?
+
+I'm fine either way. It's really only useful if there's a single =
+
+address because with a list it could still be wrong just as any other =
+
+data like an interrupt number could be wrong.
+
+Rob
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
