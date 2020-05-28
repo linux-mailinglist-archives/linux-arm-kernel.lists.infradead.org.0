@@ -2,55 +2,149 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06E771E69DF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 20:58:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E02B51E69F2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 21:01:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qMgH4AlLaaJtJdN/bU4Kn1+S0n2clQ/s/H4Z3V/caTw=; b=APD5O7oxYljdI3
-	XxYC5FEWd98Um8pAz/WjWM0Jr55qD224/ndAMOO5/d4VRD+dAAwLpbKEfeFJ0JomXvxpxinvPaBBf
-	U2hyCHz2N536iihk3xpJvCn/Zexjv4qtfGm0Ge9Usom3yGNwLf1npOWGjNkE2n4iJ1v4g9lc5s+73
-	3wJlIFZIKIehmwOZtVytFhbn/6kmlMpHqWmZ/9V/TA+dyKxl7Qw/KiMmA+aUZDkSd5Qkj/lXbBQ8w
-	lC6+NPfN1KrAZk0Tq6AW/nqrQXimojWKSQUEdP+nR91YEpRydd0AmmHry6spmgX1PTT38PRTB4jHQ
-	c0AEg+kXHOeMoPkrTI+A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZUG414bkGToRd3imO/wnfcd5Tq3cyf9bC45mhFyu5Ow=; b=DCbwKU5EzezNEn
+	3nr7aF2k2GyQW/76MCHuujMkafnvdbLs4CkP2Pm2ra56bGWYYWNiE7QSBMBKtRve0NoO93hRw8qP4
+	6XexWO9EDFEFPphCabWg737umiqsK3hMVvE8i+u+04k1jW3ktzf3rFoIL8HapM5DzZqCmRnlm1ahy
+	A/nGlJlikKG6bc1Xk05OyDb1o8zzqbkrDKECn63/wx6qVyG/FisO0n1phuv59w3mW9MbKQiWDCMMK
+	T72VXLty45nSbXr3Q81xlnbbKHYn8Pz1SSSrLUhrNB/vT6ALqS52JLo/nmx2djMSlCvlVanFDrbSv
+	gAzQPP8Xn706wlQeVn/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeNjZ-0005nX-Ja; Thu, 28 May 2020 18:58:29 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jeNmi-0001EQ-4u; Thu, 28 May 2020 19:01:44 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeNjR-0005my-8b; Thu, 28 May 2020 18:58:22 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 3F458AB5C;
- Thu, 28 May 2020 18:58:16 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Mark Brown <broonie@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH] spi: bcm2835: Enable shared interrupt support
-Date: Thu, 28 May 2020 20:58:04 +0200
-Message-Id: <20200528185805.28991-1-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.26.2
+ id 1jeNma-0001Do-3J; Thu, 28 May 2020 19:01:37 +0000
+Received: by mail-ej1-x643.google.com with SMTP id h21so1124559ejq.5;
+ Thu, 28 May 2020 12:01:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=j0MYj8Ipmt8xXyoUeRuSIQ/UfKCEmpy3Z2Hbpa9+pow=;
+ b=qGGfxL55Xf/KNFJq17UFdFOPwFIGiZZRGtBt7m2pE3MyF0Zz2VCVQ7j/isc2STj9zp
+ nUG928sndbC3RTnXFK8aqFl6F57QTGq5D8ekPwfRj48UsAQqXJ4Df1FgDtjnAi5jn27D
+ CcHjfHAdPpPRwmvU8H8LbsXJkPsg3DrezXLQwgIzlgdFN3hsL9QvPD2/ahqTZfAgRHv0
+ nL14m5ZrFwdh1QTvCu7QWJnaZudmnDo37J7Wj8uzmEk66f74+S5vMM7nASIwy3cOtvce
+ qbF5Bs3E2G8RJK5itlBsoKlZQRgmfiVC8gvqAD0JymVWp9mkH3yXo6OFl41ofNn7mAnV
+ xl1A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=j0MYj8Ipmt8xXyoUeRuSIQ/UfKCEmpy3Z2Hbpa9+pow=;
+ b=ouCxQB/bllfHQpKKuNwCrMRj9GOyv1Ye7dGCpiUR0RwrPqflnBcVeLNNm0fnu2M8vX
+ w+MCWhAcsd6H8oSGRKjlXs33/+e39L12019GbEN6Kdcm+NKhRAplDGR7nsAbkOH6P6ut
+ fwdo36PZZbbMG3Ggy5UnK9fHNYSZdBKd90W6bGmTSu/9iMqwfKZH95LCf7dqdLF1uPwy
+ 3gSfWsD486JlzqiaUgcmYr4R/WVaT+8TpiC7Q7IdXVJNJwNSkst0IP7IyneYl8X8rm8y
+ r4F4Kq2xftPDs/RCKCPkFXkVQaQqFhdpHsaLh1oTTDwNpRhouDhIKTG3NNSfKNdMg73J
+ 7RPQ==
+X-Gm-Message-State: AOAM530jCcj1lPsEqBJC6iYrJ9Upe08HzovPl4oY5wR6FO+Z8lBNfRel
+ hzouORogyXtj3fWaRES9J64=
+X-Google-Smtp-Source: ABdhPJy4tZ5KolUuKBwNRg9w/I1PpC7IwqxSLlejHRH3OHgtwMguzAU4TtE3ZNPpSKBWtRtIgtzitg==
+X-Received: by 2002:a17:906:15cb:: with SMTP id
+ l11mr4221301ejd.224.1590692493388; 
+ Thu, 28 May 2020 12:01:33 -0700 (PDT)
+Received: from [10.67.49.116] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id r9sm5428558edg.13.2020.05.28.12.01.30
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 28 May 2020 12:01:32 -0700 (PDT)
+Subject: Re: [PATCH] spi: bcm2835: Enable shared interrupt support
+To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Mark Brown <broonie@kernel.org>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
+References: <20200528185805.28991-1-nsaenzjulienne@suse.de>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
+Message-ID: <bb82ab33-69b4-b407-ef1a-08f6326d5d93@gmail.com>
+Date: Thu, 28 May 2020 12:00:32 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <20200528185805.28991-1-nsaenzjulienne@suse.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_115821_451172_7D244B12 
-X-CRM114-Status: GOOD (  12.41  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200528_120136_156226_210EFB73 
+X-CRM114-Status: GOOD (  12.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,52 +164,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Sperl <kernel@martin.sperl.org>
+On 5/28/20 11:58 AM, Nicolas Saenz Julienne wrote:
+> From: Martin Sperl <kernel@martin.sperl.org>
+> 
+> bcm2711, Rasberry Pi 4's SoC, shares one interrupt for multiple
+> instances of the bcm2835 SPI controller. So this enables shared
+> interrupt support for them.
+> 
+> The early bail out in the interrupt routine avoids messing with buffers
+> of transfers being done by other means. Otherwise, the driver can handle
+> receiving interrupts asserted by other controllers during an IRQ based
+> transfer.
+> 
+> Signed-off-by: Martin Sperl <kernel@martin.sperl.org>
+> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-bcm2711, Rasberry Pi 4's SoC, shares one interrupt for multiple
-instances of the bcm2835 SPI controller. So this enables shared
-interrupt support for them.
+Thanks Nicolas, we have been using this patch on 7211 (which is very
+similar to 2711):
 
-The early bail out in the interrupt routine avoids messing with buffers
-of transfers being done by other means. Otherwise, the driver can handle
-receiving interrupts asserted by other controllers during an IRQ based
-transfer.
-
-Signed-off-by: Martin Sperl <kernel@martin.sperl.org>
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
- drivers/spi/spi-bcm2835.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
-index 11c235879bb7..ca1085c812f2 100644
---- a/drivers/spi/spi-bcm2835.c
-+++ b/drivers/spi/spi-bcm2835.c
-@@ -379,6 +379,10 @@ static irqreturn_t bcm2835_spi_interrupt(int irq, void *dev_id)
- 	if (bs->tx_len && cs & BCM2835_SPI_CS_DONE)
- 		bcm2835_wr_fifo_blind(bs, BCM2835_SPI_FIFO_SIZE);
- 
-+	/* check if we got interrupt enabled */
-+	if (!(bcm2835_rd(bs, BCM2835_SPI_CS) & BCM2835_SPI_CS_INTR))
-+		return IRQ_NONE;
-+
- 	/* Read as many bytes as possible from FIFO */
- 	bcm2835_rd_fifo(bs);
- 	/* Write as many bytes as possible to FIFO */
-@@ -1340,8 +1344,8 @@ static int bcm2835_spi_probe(struct platform_device *pdev)
- 	bcm2835_wr(bs, BCM2835_SPI_CS,
- 		   BCM2835_SPI_CS_CLEAR_RX | BCM2835_SPI_CS_CLEAR_TX);
- 
--	err = devm_request_irq(&pdev->dev, bs->irq, bcm2835_spi_interrupt, 0,
--			       dev_name(&pdev->dev), ctlr);
-+	err = devm_request_irq(&pdev->dev, bs->irq, bcm2835_spi_interrupt,
-+			       IRQF_SHARED, dev_name(&pdev->dev), ctlr);
- 	if (err) {
- 		dev_err(&pdev->dev, "could not request IRQ: %d\n", err);
- 		goto out_dma_release;
+Tested-by: Florian Fainelli <f.fainelli@gmail.com>
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
-2.26.2
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
