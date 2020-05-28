@@ -2,72 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56EBE1E579F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 08:36:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF15D1E57D1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 08:42:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PyYnY75p4PEACvXa5hVbMGC8I+qBr0aEZWktFm0tFVM=; b=uFTSs6hvZxsfoD
-	VhftfHJZTa1NnA/ieM7wAx5d6aKM2Nou8HwSm6vpYMOIC1Ur6p2yku3b5fhTbR7WXUvFR4G25/rqC
-	ds7skcdSqnRJ7BgFjGI3XKCEt7d2fhSYowTAUVfUVLuxIIlpfMkDobQvJ991fxDvrFlEHkrBi97Sq
-	u2Z1Su5w+NOFEoe6m6v/qD7KAYjuEzF5jXVeiNV9XxmpxUsfdcG2/frjIPnnDAMNdzdYKj+z8I5HZ
-	0qJEOGKzE5uvzuOm1jHxanVOmaaMY6Rl6YUnVs5cCHjnuE8Eb3HPfc2dAbLQuk9Phjwu1oScpUiGp
-	Yl04DkjgWUQnb9nowc/g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oTslVZTwLv9HVx/7fCh2BrznDhmOKH5VFTWn0b06sWE=; b=FmIhNZFXou10tD
+	ufwqSlNG5ljDUfKBH21AFcZ+1PClPDpS3gvkfK6LLT7sweyGqbxpWpExJw8MBabnMjbkRsuTYYhdc
+	r/lR2G0E+i6eMcCagqTSUk2hq2aAz8QoahIKRhkpjGojqWoNN1XzPsaHrUMYV6umN4BS6ux2g8vGH
+	XES8cnroMt6Y9wqnVRgYjaD2FDvDhC26mSJs28d+S6v7JPkUfH0hzh7ZvBNzEmhD/F+qf4Q5u5gJQ
+	tkJjZCzEUKGFWKexlBn2siq5Xf8wImdlZkV2NeQcgX7+bEppEUyXS+A9pAkPCQYeIDp5wVWXG0Hna
+	3uTLbWb0NYzhE5XtqvSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeC9Z-0007Up-RG; Thu, 28 May 2020 06:36:33 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jeCEz-0003yB-Vg; Thu, 28 May 2020 06:42:09 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeC9P-0007Tm-Dc
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 06:36:24 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: rcn)
- with ESMTPSA id 445512A3C63
-Date: Thu, 28 May 2020 08:36:16 +0200
-From: Ricardo =?utf-8?Q?Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>
-To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH v2 6/6] dt-bindings: drm: bridge: adi,adv7511.txt:
- convert to yaml
-Message-ID: <20200528063616.e2na5lcnxzl34sc3@rcn-XPS-13-9360>
-Mail-Followup-To: Geert Uytterhoeven <geert@linux-m68k.org>,
- Rob Herring <robh+dt@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, 
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Wei Xu <xuwei5@hisilicon.com>, michal.simek@xilinx.com
-References: <20200511110611.3142-1-ricardo.canuelo@collabora.com>
- <20200511110611.3142-7-ricardo.canuelo@collabora.com>
- <20200514015412.GF7425@pendragon.ideasonboard.com>
- <20200514093617.dwhmqaasc3z5ixy6@rcn-XPS-13-9360>
- <20200514152239.GG5955@pendragon.ideasonboard.com>
- <20200525074335.grnjvdjnipq5g3kf@rcn-XPS-13-9360>
- <20200526014444.GB6179@pendragon.ideasonboard.com>
- <CAMuHMdXinhY13us9rt9h7EvrT_8zhnQg6tmOBtA0nEQ=1G1O7Q@mail.gmail.com>
- <CAL_JsqJgQajnKdQ1Bt6YFX04fX0VGz44Q3kBdLLR04OzhWrH5A@mail.gmail.com>
- <CAMuHMdXQQXOcVuq7Zhfp4qGH0vmLtxp3fdCJ+7VSAMQYSdjsTg@mail.gmail.com>
+ id 1jeCEo-0003v9-Pu
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 06:42:00 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id cx22so2629468pjb.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 23:41:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=xrBThDxeaj7xavtiCZsH7YWZDMSxeuAoxlObig/4N/I=;
+ b=FLxBZ9um2B2vEtPr7iWB8XrtkQjPngKLYYruLGsgNh0z4zcH/kRn+xf9BjeYNqgn6v
+ a1y8YeP8u9KYE8YO90AbBef2V2RHKBFt5Uht42QMif6yLUiSoBF96vNaq3O2mrjUecyY
+ 7n1PFt5QAypRKHp3c0ajsBka1XeAjra/w41dwwD+ZJLvJoA6iDRzZu5rieTDtEBfc8OH
+ XK8eB+Hghu9vQMOaaO+1w5bUxee5WXmODQZsnsKZhcoVUJYU0lTWAJlmakfZzBsw9Qan
+ cQPV/i03z77q21dBx2XCO2Qg/wTl24x7aWlKON4pprcUxVi2JtpcDVn9aZOW5joX9rJl
+ PPDA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=xrBThDxeaj7xavtiCZsH7YWZDMSxeuAoxlObig/4N/I=;
+ b=UqGmUJY9VTK1VbmQna+h+yRPwPylfcjcmoQyhJOIDDUWf5/juHV1QByjvGJ14A7BM/
+ STkpLObfCPeX+r07ZQpV99TLyk3JKjco6uzm1Nq3tD8Mbe+tmcW2lbfHNAz9SUan0AWJ
+ 8irtiaaE/SEdxwT3qXrO0PWW1TpOBQ9CqA2+rjY2vCUGi03P3HtAQ+IXM/SFSQjO0Ccs
+ 3dI9XEEx10gMD0BkTvE9L98+6mYM/HxVWn+5rgpcMMJVb68MOYMmlpOx9iq4dL8D62gP
+ joz5CAYyULQkOWluLuRHoQAz+3UDgB/jnvDInIdp0e4x9MCSivylqTKQScBBCBDKFqCa
+ 2J8Q==
+X-Gm-Message-State: AOAM532/m1biACIiskOFTcTUumqIV1EYUxH1Cnr/jBdzoOgGpGhfrLQV
+ /8x4k9+2GybcSoJexEFbt+A=
+X-Google-Smtp-Source: ABdhPJxfyVJYCW6OXxyIdqotYbExAo0vhBiYRCbKzt47PRvIp3kO28WGI5wLHLxB+zAdla2Gy3EPbA==
+X-Received: by 2002:a17:902:9695:: with SMTP id
+ n21mr2045679plp.137.1590648118126; 
+ Wed, 27 May 2020 23:41:58 -0700 (PDT)
+Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
+ by smtp.gmail.com with ESMTPSA id h21sm4284633pjz.6.2020.05.27.23.41.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 27 May 2020 23:41:57 -0700 (PDT)
+From: Chuhong Yuan <hslester96@gmail.com>
+To: 
+Subject: [PATCH v2] media: exynos4-is: Add missed check for
+ pinctrl_lookup_state()
+Date: Thu, 28 May 2020 14:41:47 +0800
+Message-Id: <20200528064147.547158-1-hslester96@gmail.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMuHMdXQQXOcVuq7Zhfp4qGH0vmLtxp3fdCJ+7VSAMQYSdjsTg@mail.gmail.com>
-User-Agent: NeoMutt/20171215
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_233623_589635_EB7FAB14 
-X-CRM114-Status: GOOD (  11.53  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200527_234158_862532_08F6EC0C 
+X-CRM114-Status: GOOD (  10.67  )
+X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ [list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [202.120.40.82 listed in dnsbl.sorbs.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [hslester96[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [hslester96[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,39 +102,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
- michal.simek@xilinx.com, Wei Xu <xuwei5@hisilicon.com>,
- Rob Herring <robh+dt@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-samsung-soc@vger.kernel.org, Chuhong Yuan <hslester96@gmail.com>,
+ linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgYWxsLAoKT24gbWnDqSAyNy0wNS0yMDIwIDIwOjE4OjA3LCBHZWVydCBVeXR0ZXJob2V2ZW4g
-d3JvdGU6Cj4gPiBUaGVyZSdzIGN1cnJlbnRseSBubyByZXF1aXJlbWVudCB0aGF0IGJpbmRpbmcg
-c2NoZW1hIGRvbid0IGludHJvZHVjZQo+ID4gd2FybmluZ3MgaW4gZHRzIGZpbGVzLiBUaGF0IHNo
-b3VsZCBjaGFuZ2Ugd2hlbi9pZiB3ZSBnZXQgdG8gYSB3YXJuaW5nCj4gPiBmcmVlIHN0YXRlIChw
-cm9iYWJseSBwZXIgcGxhdGZvcm0vZmFtaWx5KS4gSSBkb24ndCB0aGluayB3ZSdyZSBjbG9zZQo+
-ID4gb24gYW55IHBsYXRmb3JtPyAoSWYgd2UgYXJlLCBJJ2QgbGlrZSB0byBzdGFydCB0cmFja2lu
-ZyB0aGF0KS4gSXQgaXMKPiA+IGdvb2QgdG8gcGF5IGF0dGVudGlvbiB0byB0aGUgd2FybmluZ3Mg
-eW91IGdldCB0aG91Z2ggYXMgdGhlIHNjaGVtYSBtYXkKPiA+IG5vdCBiZSBkb2luZyB3aGF0IHlv
-dSBleHBlY3Qgb3IgdGhlIGJpbmRpbmcgcmVhbGx5IGRvZXNuJ3QgbWF0Y2gKPiA+IHJlYWxpdHku
-Cj4gCj4gT0suCj4gCj4gPiA+IEkgZG8gbXkgYmVzdCB0byBhdm9pZCBpbnRyb2R1Y2luZyByZWdy
-ZXNzaW9ucyB3aGVuIHRoZSBiaW5kaW5nIGNvbnZlcnNpb25zCj4gPiA+IGdvIHVwc3RyZWFtLgo+
-ID4KPiA+IE1lYW5pbmcgeW91IGZpeCB0aGUgZHRzIGZpbGVzIG9yIG1hc3NhZ2UgdGhlIHNjaGVt
-YSB0byBtYXRjaD8gSWYgd2UKPiA+IGp1c3QgYWRqdXN0IHNjaGVtYSB0byBtYXRjaCwgd2hhdCdz
-IHRoZSBwb2ludCBpbiB0aGlzIGVmZm9ydD8gV2UKPiA+IHNob3VsZCBmaW5kIHRoaW5ncyB3cm9u
-ZyBvciBpbGwgZGVmaW5lZC4KPiAKPiBJIGZpeCB1cCBEVFMgZmlsZXMsIGFuZCBmYXN0LXRyYWNr
-IHRob3NlIGZpeGVzLCBzbyB0aGV5IGFwcGVhciB1cHN0cmVhbSBiZWZvcmUKPiB0aGUgRFQgYmlu
-ZGluZyBjb252ZXJzaW9uLCB3aGVyZSBwb3NzaWJsZS4KClRoYW5rIHlvdSBldmVyeW9uZSBmb3Ig
-cGl0Y2hpbmcgaW4gYW5kIGZvciBjbGFyaWZ5aW5nIHRoZSBwcm9jZWR1cmUsCkknbGwgcHJlcGFy
-ZSBhIG5ldyBzZXJpZXMgd2l0aCB0aGUgY2hhbmdlcyB0aGF0IExhdXJlbnQgcHJvcG9zZWQKKHdp
-dGhvdXQgdGhlIHBhdGNoZXMgdGhhdCBHZWVydCBhbHJlYWR5IG1lcmdlZCkuCgpDaGVlcnMsClJp
-Y2FyZG8KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+fimc_md_get_pinctrl() misses a check for pinctrl_lookup_state().
+Add the missed check to fix it.
+
+Fixes: 4163851f7b99 ("[media] s5p-fimc: Use pinctrl API for camera ports configuration]") 
+Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
+---
+Changes in v2:
+  - Add fixes tag.
+
+ drivers/media/platform/exynos4-is/media-dev.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/drivers/media/platform/exynos4-is/media-dev.c b/drivers/media/platform/exynos4-is/media-dev.c
+index 9aaf3b8060d5..9c31d950cddf 100644
+--- a/drivers/media/platform/exynos4-is/media-dev.c
++++ b/drivers/media/platform/exynos4-is/media-dev.c
+@@ -1270,6 +1270,9 @@ static int fimc_md_get_pinctrl(struct fimc_md *fmd)
+ 
+ 	pctl->state_idle = pinctrl_lookup_state(pctl->pinctrl,
+ 					PINCTRL_STATE_IDLE);
++	if (IS_ERR(pctl->state_idle))
++		return PTR_ERR(pctl->state_idle);
++
+ 	return 0;
+ }
+ 
+-- 
+2.26.2
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
