@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36AD11E5277
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 03:01:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8C341E5282
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 03:01:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UjWYJcRi3MGtdWLqBx33yL+/+mocw5wAJXQpYwfl05Y=; b=NBjMfCnDk9UZP5
-	TqPx+H4PPNQbBMD4HHUEnKDB6QguDqsG/H0jpZ358IsO6Wb45TtMLZS/Tij7f0WJY3rqWJAj0chMB
-	SqHLcfHmjlA4u7ty7gCJrXN8NtgssanKNpx2TknIYCgCrgneGPbYGGb4TXz0mE6OvP1BDpY6EkY7+
-	Am5N8uxcp6CMPrmbMZO1K0svncMcT1ZIJf52XMmny4zyxindkmRA9e67UdTrKFxjlMvMmGx00w0Su
-	eQaXFEocqw9f7Yl8sXABA30aHnMZrIpCV3tgW5mCpXBOJaJ42MUOlwmqPy7Ifbqy95QtVP7pwsjfS
-	5clc+OwlEkNw8qfQldxg==;
+	List-Owner; bh=vUvJaCbYkYfYk7QwCIk2JCJ77uYaeyMzUm6cKO25Xt0=; b=n2Z0PvIs3untkr
+	S8oP/Dq+LTs9YMAMMUPj7bsLC/LVwXXRasO+hRSgnQKE5RsjeClkSK0sxw+2RTJD0l4siB/BfYxES
+	7x30dlt26CgfS02WjUUlDC7SsKTYsIuZ1xoB/WoYH+AziPbd/cvRg6qAXVDj1WPkMPvs5rxdxG+yw
+	83KR0cXUvtBgSn6468VrbaFEB8E1AE2pG+x7cUUngcQKEXp0qnlO8ZzmkFrEt0DotNDko6fadeOoM
+	xlccalXtqqh1TNoPse9D2NU52zCF8+H8C/bCuoPi20xW8e42TySGK8tm5ngnKNwxmhx7Km/DYAeVx
+	u2l1TxdVgL8VsZu4V83w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je6v5-00060C-BF; Thu, 28 May 2020 01:01:15 +0000
+	id 1je6vQ-0006DW-HJ; Thu, 28 May 2020 01:01:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je6us-0005zr-BE
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 01:01:03 +0000
+ id 1je6uv-00060k-52
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 01:01:06 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EF3A8207CB;
- Thu, 28 May 2020 01:01:01 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C332E20888;
+ Thu, 28 May 2020 01:01:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590627662;
- bh=QZVovAg3P0CDDBYuXa84Mk4f+pzCTaS1urGpsaPq4pM=;
+ s=default; t=1590627664;
+ bh=alsI1NJ7dUnoc92F0OsN+dSI8ElEXXkMgPNKsbL2p0A=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=UtXLQgkfltJgjpCiLclQ2qwHaOA9rs+AOTPwCpDhc6lt8/t8zfrZxKVodhkG4jCvy
- D8b5Ba+nVhfBGuwaLdOCdz46hn/yIoJq4dNCXiKwilCxkpx+izlzfRqYbQ9NDCnlfK
- JUvH/nHkCj8NvhGhzBNWPJDsZ8n2/Sg0mnHGozRI=
+ b=WquipNrv4UrB8lq3ayvibOQL+cJbte32y2IMgbB13YObMm165mv0DDNPmI51P6O+H
+ 6OtZtg/Ki9wgJHwtroJGMNWZMsUAuDPPszh/FJErh6U/FN4NMA2GK1xjBwKMN8An36
+ 1PezuBsCBGs0Hfx8p98OQwwqHONJSCmGF8MA59rA=
 MIME-Version: 1.0
-In-Reply-To: <20200519224151.2074597-2-lkundrak@v3.sk>
+In-Reply-To: <20200519224151.2074597-3-lkundrak@v3.sk>
 References: <20200519224151.2074597-1-lkundrak@v3.sk>
- <20200519224151.2074597-2-lkundrak@v3.sk>
-Subject: Re: [PATCH v3 01/13] clk: mmp: frac: Do not lose last 4 digits of
- precision
+ <20200519224151.2074597-3-lkundrak@v3.sk>
+Subject: Re: [PATCH v3 02/13] clk: mmp: frac: Allow setting bits other than
+ the numerator/denominator
 From: Stephen Boyd <sboyd@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Date: Wed, 27 May 2020 18:01:01 -0700
-Message-ID: <159062766126.69627.12547507696491958467@swboyd.mtv.corp.google.com>
+Date: Wed, 27 May 2020 18:01:04 -0700
+Message-ID: <159062766410.69627.1416612987165272481@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_180102_403822_E9B3250C 
-X-CRM114-Status: UNSURE (   6.75  )
+X-CRM114-CacheID: sfid-20200527_180105_212530_BDA635C3 
+X-CRM114-Status: UNSURE (   6.47  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -87,16 +87,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lubomir Rintel (2020-05-19 15:41:39)
-> While calculating the output rate of a fractional divider clock, the
-> value is divided and multipled by 10000, discarding the least
-> significant digits -- presumably to fit the intermediate value within 32
-> bits.
-> 
-> The precision we're losing is, however, not insignificant for things like
-> I2S clock. Maybe also elsewhere, now that since commit ea56ad60260e ("clk:
-> mmp2: Stop pretending PLL outputs are constant") the parent rates are more
-> precise and no longer rounded to 10000s.
+Quoting Lubomir Rintel (2020-05-19 15:41:40)
+> For the I2S fractional clocks, there are more bits that need to be set
+> for the clock to run. Their actual meaning is unknown.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > ---
