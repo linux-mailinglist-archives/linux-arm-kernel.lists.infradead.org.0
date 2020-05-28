@@ -2,81 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A8CF1E6FE8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 01:03:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF5B31E7014
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 01:12:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vs2vpY4o4+Kz6iO9SUJTlAE8TRkMCvZFb9oJ4xNIx10=; b=EIDgsVJDCQbVKq
-	2LzU8Mdv/d8TyZ6z/i9qwjTTr3EVvckrOD3cFLXjkAhcBCh3NigTNBFNrcWWjpbFm7rcNX5VpR4RL
-	iKzK5c9lr+af2MBO4RtbQY1qb8QWJ2uTsXNvC2W/bNVo1F8LpzOVk+lopKivLM8ovmn8aW0BiNxeB
-	DQ7O8ze47fRT6oaeW+W4lewImq/16/9gHGUELbSWF0Iq2AUBkLjYTS9e5O988jGHGc9ipGlOxIoW5
-	mtybk6B6d1+pF3Dg9AV1BjJvU7fLjYxBioyC4Lhua2EOEGEVlncFH2n/bhvuLJIg5XgkGtXv2Qiin
-	G4aj5SgSsbTDHeV+MJ3w==;
+	List-Owner; bh=mOV1EpxC4t/Obs2RkNqQrDqM8TlWUi6Z/OVqDIk8EBM=; b=iuuwjc/Ss8AR9q
+	2UEpoV9ijcoQg283mx1xdQWYQ+DHGO6hLADI2TI7K8gHXm7p29QboQlPOkMM4N49jNawwAbDZBd7s
+	lFq29FO858fy4tEG/JZEaYBlEZh2CYDVokipZH9pW8fyv4YeWCojC0xONU5Yq2iCVWaSlYzb/iqvA
+	NIjnmKirGrEoXEz+/1b3IqHdf+rrngwN5E218Xs54Ri3VnNsRoFCHziH4Zx/eWmhmVg+SjbSUiV4P
+	SDjRxpDdHAKOfvBc3+0s06VLDo19x/iGGtx3hL5TEhFScXGq5/8GwMN1hh6z1m0W6Tvp0ADn+ynZN
+	ORu+iNWbl1jA99H/Xb3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeRYV-0005MN-Iu; Thu, 28 May 2020 23:03:19 +0000
-Received: from us-smtp-1.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jeRhf-0003DX-MJ; Thu, 28 May 2020 23:12:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeRYO-0005Lr-7l
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 23:03:13 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590706990;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=qUIox5FhQJ2z08jhZB7sfNniyrJZwWCLCZ4Ajtdwh7I=;
- b=KbvJi97G0mAEKEK9mXcnqTYPiXH/5BFY7FE8720lC3/HlqMkiKeWaH/yDT1jO4mC0FcxUv
- 15B5jDxDVW39ZJOrAquu4DA1bVydrnwhZxjkS7j23/fRVfwY2Ij4OxExESHLK414wnBlqO
- ViXuznoBGuOEnwEeo7lsbuV07g3B4gU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-286-9_wHkkfkNRKqvFNP88Dgeg-1; Thu, 28 May 2020 19:03:06 -0400
-X-MC-Unique: 9_wHkkfkNRKqvFNP88Dgeg-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ id 1jeRhX-0003Co-2k
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 23:12:40 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id CCE351005510;
- Thu, 28 May 2020 23:03:04 +0000 (UTC)
-Received: from localhost.localdomain (vpn2-54-130.bne.redhat.com
- [10.64.54.130])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 421C860C80;
- Thu, 28 May 2020 23:03:01 +0000 (UTC)
-Subject: Re: [PATCH RFCv2 9/9] arm64: Support async page fault
-To: Paolo Bonzini <pbonzini@redhat.com>, kvmarm@lists.cs.columbia.edu
-References: <20200508032919.52147-1-gshan@redhat.com>
- <20200508032919.52147-10-gshan@redhat.com>
- <81adf013-3de7-23e6-7648-8aec821b033c@redhat.com>
- <a6addc25-29af-3690-8392-efa5e8381e98@redhat.com>
- <8ab64c6a-582b-691d-79ab-21cdc0455cd3@redhat.com>
-From: Gavin Shan <gshan@redhat.com>
-Message-ID: <6a4a82a4-af01-98c2-c854-9199f55f7bd3@redhat.com>
-Date: Fri, 29 May 2020 09:02:58 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ by mail.kernel.org (Postfix) with ESMTPSA id 5B6E520776;
+ Thu, 28 May 2020 23:12:38 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590707558;
+ bh=VGj2i8flL9JlQmAgKNzGrKzB+vOOk0rvJ232QmrQW+U=;
+ h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
+ b=SObhxzW0L9TD8+lQKsRJoVJbBChIFc11d9J4X/Xct+03ugNYxr56U2xTRNwgn7dHB
+ aExWegMQLCmeVfn7ykME1aGYMtvOKHaaYYjziXI/cHRzY7cDqQV20dImop//7idsQ9
+ id34cjmGl/0MApGajyGtOqF4UTajggOQNMSVEIZ0=
 MIME-Version: 1.0
-In-Reply-To: <8ab64c6a-582b-691d-79ab-21cdc0455cd3@redhat.com>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+In-Reply-To: <2c8cd31a-46ba-ec6a-67a7-f3d9abe561ff@xilinx.com>
+References: <1584048699-24186-1-git-send-email-jolly.shah@xilinx.com>
+ <1584048699-24186-3-git-send-email-jolly.shah@xilinx.com>
+ <159054169658.88029.371843532116000844@swboyd.mtv.corp.google.com>
+ <2c8cd31a-46ba-ec6a-67a7-f3d9abe561ff@xilinx.com>
+Subject: Re: [PATCH v2 2/2] drivers: clk: zynqmp: Update fraction clock check
+ from custom type flags
+From: Stephen Boyd <sboyd@kernel.org>
+To: Jolly Shah <jolly.shah@xilinx.com>, arm@kernel.org,
+ linux-clk@vger.kernel.org, michal.simek@xilinx.com, mturquette@baylibre.com,
+ olof@lixom.net
+Date: Thu, 28 May 2020 16:12:37 -0700
+Message-ID: <159070755756.69627.18401650656284023600@swboyd.mtv.corp.google.com>
+User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_160312_351666_BD1AE7F8 
-X-CRM114-Status: GOOD (  14.93  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200528_161239_162026_559ADC67 
+X-CRM114-Status: GOOD (  16.42  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,34 +81,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Gavin Shan <gshan@redhat.com>
-Cc: maz@kernel.org, linux-kernel@vger.kernel.org, shan.gavin@gmail.com,
- catalin.marinas@arm.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Tejas Patel <tejas.patel@xilinx.com>, Rajan Vaja <rajan.vaja@xilinx.com>,
+ rajanv@xilinx.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUGFvbG8sCgpPbiA1LzI4LzIwIDg6NDggUE0sIFBhb2xvIEJvbnppbmkgd3JvdGU6Cj4gT24g
-MjgvMDUvMjAgMDg6MTQsIEdhdmluIFNoYW4gd3JvdGU6Cj4+PiAtIGZvciB4ODYgd2UncmUgYWxz
-byB0aGlua2luZyBvZiBpbml0aWF0aW5nIHRoZSBwYWdlIGZhdWx0IGZyb20gdGhlCj4+PiBleGNl
-cHRpb24gaGFuZGxlciwgcmF0aGVyIHRoYW4gZG9pbmcgc28gZnJvbSB0aGUgaHlwZXJ2aXNvciBi
-ZWZvcmUKPj4+IGluamVjdGluZyB0aGUgZXhjZXB0aW9uLsKgIElmIEFSTSBsZWFkcyB0aGUgd2F5
-IGhlcmUsIHdlIHdvdWxkIGRvIG91cgo+Pj4gYmVzdCB0byBzaGFyZSBjb2RlIHdoZW4geDg2IGRv
-ZXMgdGhlIHNhbWUuCj4+Cj4+IFNvcnJ5LCBQYW9sbywgSSBkb24ndCBmb2xsb3cgeW91ciBpZGVh
-IGhlcmUuIENvdWxkIHlvdSBwbGVhc2UgcHJvdmlkZQo+PiBtb3JlIGRldGFpbHM/Cj4gCj4gVGhl
-IGlkZWEgaXMgdG8gaW5qZWN0IHN0YWdlMiBwYWdlIGZhdWx0cyBpbnRvIHRoZSBndWVzdCBldmVu
-IGJlZm9yZSB0aGUKPiBob3N0IHN0YXJ0cyBwb3B1bGF0ZXMgdGhlIHBhZ2UuICBUaGUgZ3Vlc3Qg
-dGhlbiBpbnZva2VzIGEgaHlwZXJjYWxsLAo+IHRlbGxpbmcgdGhlIGhvc3QgdG8gcG9wdWxhdGUg
-dGhlIHBhZ2UgdGFibGUgYW5kIGluamVjdCB0aGUgJ3BhZ2UgcmVhZHknCj4gZXZlbnQgKGludGVy
-cnVwdCkgd2hlbiBpdCdzIGRvbmUuCj4gCj4gRm9yIHg4NiB0aGUgYWR2YW50YWdlIGlzIHRoYXQg
-dGhlIHByb2Nlc3NvciBjYW4gdGFrZSBjYXJlIG9mIHJhaXNpbmcgdGhlCj4gc3RhZ2UyIHBhZ2Ug
-ZmF1bHQgaW4gdGhlIGd1ZXN0LCBzbyBpdCdzIGZhc3Rlci4KPiAKSSB0aGluayB0aGVyZSBtaWdo
-dCBiZSB0b28gbXVjaCBvdmVyaGVhZCBpZiB0aGUgcGFnZSBjYW4gYmUgcG9wdWxhdGVkCnF1aWNr
-bHkgYnkgaG9zdC4gRm9yIGV4YW1wbGUsIGl0J3MgZmFzdCB0byBwb3B1bGF0ZSB0aGUgcGFnZXMg
-aWYgc3dhcGluCmlzbid0IGludm9sdmVkLgoKSWYgSSdtIGNvcnJlY3QgZW5vdWdoLCBpdCBzZWVt
-cyBhcm02NCBkb2Vzbid0IGhhdmUgc2ltaWxhciBtZWNoYW5pc20sCnJvdXRpbmcgc3RhZ2UyIHBh
-Z2UgZmF1bHQgdG8gZ3Vlc3QuCgpUaGFua3MsCkdhdmluCgoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QK
-bGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRl
-YWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Quoting Jolly Shah (2020-05-28 10:44:01)
+> Hi Stephan,
+> 
+> Thanks for the review.
+> 
+>  > ------Original Message------
+>  > From: Stephen Boyd <sboyd@kernel.org>
+>  > Sent:  Tuesday, May 26, 2020 6:08PM
+>  > To: Jolly Shah <jolly.shah@xilinx.com>, Arm <arm@kernel.org>, 
+> Linux-clk <linux-clk@vger.kernel.org>, Michal Simek 
+> <michal.simek@xilinx.com>, Mturquette <mturquette@baylibre.com>, Olof 
+> <olof@lixom.net>
+>  > Cc: Rajan Vaja <rajanv@xilinx.com>, 
+> Linux-arm-kernel@lists.infradead.org 
+> <linux-arm-kernel@lists.infradead.org>, Linux-kernel@vger.kernel.org 
+> <linux-kernel@vger.kernel.org>, Tejas Patel <tejas.patel@xilinx.com>, 
+> Rajan Vaja <rajan.vaja@xilinx.com>, Jolly Shah <jolly.shah@xilinx.com>
+>  > Subject: Re: [PATCH v2 2/2] drivers: clk: zynqmp: Update fraction 
+> clock check from custom type flags
+>  >
+> > Quoting Jolly Shah (2020-03-12 14:31:39)
+> >> From: Tejas Patel <tejas.patel@xilinx.com>
+> >>
+> >> Older firmware version sets BIT(13) in clkflag to mark a
+> >> divider as fractional divider. Updated firmware version sets BIT(4)
+> >> in type flags to mark a divider as fractional divider since
+> >> BIT(13) is defined as CLK_DUTY_CYCLE_PARENT in the common clk
+> >> framework flags.
+> >>
+> >> To support both old and new firmware version, consider BIT(13) from
+> >> clkflag and BIT(4) from type_flag to check if divider is fractional
+> >> or not.
+> >>
+> >> To maintain compatibility BIT(13) of clkflag in firmware will not be
+> >> used in future for any purpose and will be marked as unused.
+> > 
+> > Why are we mixing the firmware flags with the ccf flags? They shouldn't
+> > be the same. The firmware should have its own 'flag numberspace' that is
+> > distinct from the common clk framework's 'flag numberspace'. Please fix
+> > the code.
+> > 
+> 
+> Yes firmware flags are using separate numberspace now. Firmware 
+> maintains CCF and firmware specific flags separately but earlier 
+> CLK_FRAC was mistakenly defined in ccf flagspace and hence handled here 
+> for backward compatibility. Driver takes care of not registering same 
+> with CCF. Let me know if I misunderstood.
+
+Why is the firmware maintaining CCF specific flags? The firmware
+shouldn't know about the CCF flag numbering at all. We can change the
+numbers that the CCF flags are assigned to randomly and that shouldn't
+mean that the firmware needs to change. Maybe I should apply this patch?
+
+---8<----
+diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
+index bd1ee9039558..c1f36bca85b0 100644
+--- a/include/linux/clk-provider.h
++++ b/include/linux/clk-provider.h
+@@ -16,22 +16,22 @@
+  *
+  * Please update clk_flags[] in drivers/clk/clk.c when making changes here!
+  */
+-#define CLK_SET_RATE_GATE	BIT(0) /* must be gated across rate change */
+-#define CLK_SET_PARENT_GATE	BIT(1) /* must be gated across re-parent */
+-#define CLK_SET_RATE_PARENT	BIT(2) /* propagate rate change up one level */
+-#define CLK_IGNORE_UNUSED	BIT(3) /* do not gate even if unused */
++#define CLK_SET_RATE_GATE	BIT(13) /* must be gated across rate change */
++#define CLK_SET_PARENT_GATE	BIT(2) /* must be gated across re-parent */
++#define CLK_SET_RATE_PARENT	BIT(3) /* propagate rate change up one level */
++#define CLK_IGNORE_UNUSED	BIT(4) /* do not gate even if unused */
+ 				/* unused */
+ 				/* unused */
+-#define CLK_GET_RATE_NOCACHE	BIT(6) /* do not use the cached clk rate */
+-#define CLK_SET_RATE_NO_REPARENT BIT(7) /* don't re-parent on rate change */
+-#define CLK_GET_ACCURACY_NOCACHE BIT(8) /* do not use the cached clk accuracy */
+-#define CLK_RECALC_NEW_RATES	BIT(9) /* recalc rates after notifications */
+-#define CLK_SET_RATE_UNGATE	BIT(10) /* clock needs to run to set rate */
+-#define CLK_IS_CRITICAL		BIT(11) /* do not gate, ever */
++#define CLK_GET_RATE_NOCACHE	BIT(5) /* do not use the cached clk rate */
++#define CLK_SET_RATE_NO_REPARENT BIT(6) /* don't re-parent on rate change */
++#define CLK_GET_ACCURACY_NOCACHE BIT(7) /* do not use the cached clk accuracy */
++#define CLK_RECALC_NEW_RATES	BIT(8) /* recalc rates after notifications */
++#define CLK_SET_RATE_UNGATE	BIT(9) /* clock needs to run to set rate */
++#define CLK_IS_CRITICAL		BIT(10) /* do not gate, ever */
+ /* parents need enable during gate/ungate, set rate and re-parent */
+-#define CLK_OPS_PARENT_ENABLE	BIT(12)
++#define CLK_OPS_PARENT_ENABLE	BIT(11)
+ /* duty cycle call may be forwarded to the parent clock */
+-#define CLK_DUTY_CYCLE_PARENT	BIT(13)
++#define CLK_DUTY_CYCLE_PARENT	BIT(12)
+ 
+ struct clk;
+ struct clk_hw;
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
