@@ -2,65 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18AA01E5D19
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 12:25:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1998E1E5D1D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 12:26:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nw9qxCzsbpYGYfi7MzX7tXpUixK/hO1rYUPYJdmcUY0=; b=hm0cYOJ3mlvKOR
-	9mVz9M36WMyHy3qm0b5EPs0LzHWaBa1WgDLouKzeODNjIOEt7f9OilmBlIFARzA2Q9jQtwPTf106i
-	w6Zf4oc0a83aTckq+6rkBLKc+uLIiG6OqZkk4BH89VlnbgGa5C1gvnROrSBJ6bWelWgyj+e8BRGNq
-	jqhU8ZBDn2v0J87RmjJTsTRGw6SuL1+chi/Xa6gjUjP+J+KtsJb5mCcGxK7OIrHClVGSBUvrmDYqu
-	ILvhTgyAaVD2WYRMvpBAc02qsSjpOLBR8NEY/LT6rbEZMGfKSvGFWdPVlafqpnlatITp7xc8Vv6li
-	uwQOgXoWXuDz0YZt3ocg==;
+	List-Owner; bh=7utH1h5wL0b2oK+Sor54qrSW/LV5AT39jg9CpfGbwMA=; b=DYClgnnmlyaokj
+	whGFU11j8jZuLOlpDnPUUDHYLKLgmjrPX1k1SO1ktQex+AXRvx4G7CjeOGc16LDaQSp2u0GRNG6/M
+	dDnYB2/Soai+Qm5BlzEG7gzhIDTf0wmD3SEsEMt66KEVECR1u9O+yllCX3ylQaCwN5q8svasT3FmK
+	0DcjaruhdxPGLee9dGdSNV3xn3cSO9oGEyZcD/goMX0O3W5VSNHF8Ss7hwKscIH3SzeEjUlAENgU3
+	hOnuY5OWxLMyrjvu4PZTsvIamHcQYh52ljzv1jiBSwkuNi6MPUTkfxwNbzq4SQWGqqZzF+MiNjZ+h
+	/8iXFMBlAC+8upkLozkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeFil-0004VI-JC; Thu, 28 May 2020 10:25:07 +0000
-Received: from mga12.intel.com ([192.55.52.136])
+	id 1jeFk5-0007mz-0R; Thu, 28 May 2020 10:26:29 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeFiT-0004UM-El; Thu, 28 May 2020 10:24:50 +0000
-IronPort-SDR: AUUd8XUiY3PE+JSTJ/5xn6p83MEuo+TDWEoCfSkQ2CR9rESNvuC0IPWqPrEQZjEqNyYfCIWQk8
- BWRsXBSLX5+g==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga006.jf.intel.com ([10.7.209.51])
- by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 28 May 2020 03:24:43 -0700
-IronPort-SDR: 7YzXa/VGBxUz2xxG1w1dcOrFdJUpU2foPW9a+SEpZaDyYkYPl7NWzB4+lh2YzRLemfTKQLD834
- iDij8LIGp9qw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,444,1583222400"; d="scan'208";a="270806799"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by orsmga006.jf.intel.com with ESMTP; 28 May 2020 03:24:41 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jeFiO-009PMJ-HY; Thu, 28 May 2020 13:24:44 +0300
-Date: Thu, 28 May 2020 13:24:44 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Fengping Yu <fengping.yu@mediatek.com>
-Subject: Re: [RESEND PATCH v11] Add matrix keypad driver support for Mediatek
- SoCs
-Message-ID: <20200528102444.GJ1634618@smile.fi.intel.com>
-References: <20200528090144.54033-1-fengping.yu@mediatek.com>
+ id 1jeFjn-0007dq-Un
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 10:26:16 +0000
+Received: from mail-qt1-f169.google.com ([209.85.160.169]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MEmAV-1joSCC3ZFb-00GJYi for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 28 May 2020 12:26:08 +0200
+Received: by mail-qt1-f169.google.com with SMTP id b11so3034172qtt.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 28 May 2020 03:26:06 -0700 (PDT)
+X-Gm-Message-State: AOAM530GBThFvX/+Pua7kRdTQLWalYx8EU8NlehlYVtuHhz89rVoI/tA
+ ns5jAenoZs5uSYG/DFDgMsEdrWq3m0lcmFzwans=
+X-Google-Smtp-Source: ABdhPJzZDzCqFPei9gCeAOoruNGiztHbqxTx7mAfeb8dqjxHRA7W1V875BfSq9ThfnHKfXdXDTVICVEKmIsGV5hdYf4=
+X-Received: by 2002:ac8:691:: with SMTP id f17mr2257635qth.204.1590661565700; 
+ Thu, 28 May 2020 03:26:05 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200528090144.54033-1-fengping.yu@mediatek.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+References: <20200527112608.3886105-1-anders.roxell@linaro.org>
+ <20200527112608.3886105-2-anders.roxell@linaro.org>
+ <CAL_Jsq+vrEE2DBY+c3iVyMLf9oOaGVHVvdiMgdYEGCjJwX7Hcw@mail.gmail.com>
+In-Reply-To: <CAL_Jsq+vrEE2DBY+c3iVyMLf9oOaGVHVvdiMgdYEGCjJwX7Hcw@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 28 May 2020 12:25:49 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1P3bFC=cneCR9CURgYis6Ue7oPXKAEAQ8TpxQQYUPwgA@mail.gmail.com>
+Message-ID: <CAK8P3a1P3bFC=cneCR9CURgYis6Ue7oPXKAEAQ8TpxQQYUPwgA@mail.gmail.com>
+Subject: Re: [PATCH 1/5] power: vexpress: add suppress_bind_attrs to true
+To: Rob Herring <robh@kernel.org>
+X-Provags-ID: V03:K1:cS7Qhba1k/90aeh6xfwy37coLHmPlTWZ+nJP0tkF4rEHpVRoHTp
+ /rG5prhHsT4DMgo9pwW+ZspQ6zGH0I8C+TW8kQcGyojCSZIV7OY470NdT7bsZYEGq1EPJ11
+ JKJsxnuy0b5QMGrZ3l73bAmr6wz8mMkmg5y46SscL9KFfdpn8jAYpcS3Uvuvw9N177qakt6
+ QmzA3S7VFIGp4vpf0eqdQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:xSwXqcLefQM=:unreyMQEdZ8BEh2DEVLeVC
+ fPov4aE6elZdIQczLKF2HRnBKiVpjLcNycufgc8eBla8wQ8hu4ZQzjaT3omsYut4h85dSZBdc
+ 1drr5Rg2oXAwLI6R0T8SrxwlVeodstUi/ifU0OjWiQpIVTRwebXPGQnJU2zGypQU41r1EZj7w
+ mYg+AysPFLuaMxvwga1P15TL0ngZp0jFuFK06zLCDHExhXmpU4MNRrE/VLt2Cgw5nZYDZWbq4
+ uBOjza+0JqRnLZJs/fMsFkNO0A/CJxwmhwtqqT3Dc4Hru4bhuYM+p+pZlrwrVWZkfWadOBHJy
+ WeyLJUV2RpgeD22gb+v9H00/KGp4DdwI2lQzsgaVHEMpOf6kH89+UJa7M4C5k62pwkzvrZ3BQ
+ 3TgGZTqmkwqvo6yxs2pUOHevcxGokqSXXRpDH6we6r2XuCnsKrPpSRQEBqaum+Ua0u9AuVP9p
+ NCAcMlrJu0zbzNAwPj8+mUlk8dAmPdLmP4Nmf3ivBoL6pNNDJ8gtZFT+pTPaGtzBNN1qbCg0Z
+ qYRFwcvF1yToHIPdEvjJg8Q0ePUoEydwxkfoLR3fkEbdYvwNPr5h4xiU+4jBeb85ICjn9Fvyl
+ 6B+DOz/gK0gWYnWVVyBolJQb/Ukz/VHr49uISNMbhfbn7L/Z7SKlT7GUK9NkeUkXlcC4IIYBl
+ bGOtDaV8hzns30lXM66jrxOr8GPZ7ROjkuXU9rzyLvNqE0OkSo1vytQ1byL/4J32tyXAR37JW
+ esp6rKdWekKnPeq4S81PBVd0XNN8spaO4jzOooMf/xMLSWhrc8a6+yl2Cj7zO1PztJwV1uTiX
+ 6uDsGYn78sjGFcsO0iTFysndPEC2zIbHribBaHWnQaWmthJb+E=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_032449_509139_CAE6E6D7 
-X-CRM114-Status: GOOD (  10.02  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200528_032615_384647_4D202F41 
+X-CRM114-Status: GOOD (  12.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.133 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,46 +89,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Marco Felsch <m.felsch@pengutronix.de>, linux-mediatek@lists.infradead.org,
- linux-input@vger.kernel.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: SoC Team <soc@kernel.org>, Anders Roxell <anders.roxell@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linus Walleij <linus.walleij@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 28, 2020 at 05:01:42PM +0800, Fengping Yu wrote:
-> 
-> Change since v10:
-> - add wakeup source setting in probe function
+On Wed, May 27, 2020 at 3:27 PM Rob Herring <robh@kernel.org> wrote:
+>
+> On Wed, May 27, 2020 at 5:26 AM Anders Roxell <anders.roxell@linaro.org> wrote:
+> >
+> > Make sure that the POWER_RESET_VEXPRESS driver won't have bind/unbind
+> > attributes available via the sysfs, so lets be explicit here and use
+> > ".suppress_bind_attrs = true" to prevent userspace from doing something
+> > silly.
+>
+> This doesn't really make sense if we're going to make this a module.
+> Module unloading and unbind introduce the same requirements of
+> cleaning up (undoing whatever probe did).
 
-You forgot tags by Marco
+I still want this change as a separate patch so we can backport it to stable
+kernels for correctness.
 
-> 
-> fengping.yu (3):
->   dt-bindings: Add keypad devicetree documentation
->   drivers: input: keyboard: Add mtk keypad driver
->   configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD=m
-> 
->  .../devicetree/bindings/input/mtk-kpd.yaml    |  95 ++++++++
->  arch/arm64/configs/defconfig                  |   1 +
->  drivers/input/keyboard/Kconfig                |  11 +
->  drivers/input/keyboard/Makefile               |   1 +
->  drivers/input/keyboard/mtk-kpd.c              | 206 ++++++++++++++++++
->  5 files changed, 314 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.yaml
->  create mode 100644 drivers/input/keyboard/mtk-kpd.c
-> 
-> -- 
-> 2.18.0
-> 
+Also, as long as we don't have a working (and tested) .remove callback,
+we can only allow making the driver a loadable module but not also
+allowing the module to be removed.
 
--- 
-With Best Regards,
-Andy Shevchenko
-
-
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
