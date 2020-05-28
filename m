@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AFFE1E6115
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 14:39:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 667671E616E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 14:52:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
 	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=si7Xq2YhcdRztcThC88CYmwUHZkSc/KDF4ueFhVXMmQ=; b=W+XWfHE5xTp+fGAdxX8ixWtOZ
-	NYx09pZRUppt5WvPQ/s/YiTZ6XN3rCrn3asA0hh82IVj5wHGBXqQ1zdsvUOqdKNZP/7Z+dNnAN2+D
-	gbXhi11rOUD+Apqr9eH9P/CwC5zYVhSo+QBOFC44WpHBWMNs+WbiJn57kDuqNEhXQceTvcJT+CppA
-	OqNNYUt6IRG8BwaawByjaDjgYkq6yrCb0TioKhZwkgPT+4y30vmZ0zMLL8K9sOKUV9yrMNNQ9BfD0
-	T7UBCc2OCHm8fkExgdJYUoiNzn4Q+fAZLjj56cuA/S7hV223Vf+IWyM0N9fuZxiN/wRIOFfYzPAbD
-	9y7SKy/EA==;
+	 bh=as1zJnPTTejABaudvdHmi4pXCnFJA9RRx9Fw9dMyhng=; b=YQKbSUnkBSpStzBMSvAxwaoxy
+	5UvGywwXgEWZEeok70VfkL5fFPYd9HWbgglEzjNm/kW+SZxUDo3tZ/O0MLkP2Enq+AaBlfQwNGEU3
+	YbZYv4DpNn1XGJiumDIClOZBweceMnVd0mAE75qft1AgzS5VR6GYWKmfwoqP8f8qd8QnooXsvfaz2
+	W8YO5NeoKdDzRU/p4Vr9byoQkk/KE2BZkl3nQhzd8mCibDOQgyQsirlZK87VHZoeGKghrNfFt6TCG
+	01I81jdxqwEOx2fTtLRsbSpFQ9gHj3t45pTM86Eyw7eSPSMapRNBg/o2y8Dh9w90IQLnva+8NkZrc
+	W9ZAB09Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeHoW-00010S-JW; Thu, 28 May 2020 12:39:12 +0000
+	id 1jeI0o-0006WI-0P; Thu, 28 May 2020 12:51:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeHoD-0000z8-9r
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 12:38:54 +0000
+ id 1jeI0W-0006DP-6F
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 12:51:37 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D4FA6206F1;
- Thu, 28 May 2020 12:38:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 61666206F1;
+ Thu, 28 May 2020 12:51:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590669533;
- bh=BZ3w3GKugfaLInyp5RM4AxYALpTVIM2qk6X84rH4MZ0=;
+ s=default; t=1590670295;
+ bh=VYAwSKnjlk0HjjtuNyDMxeRTHpbjzETtCwkNhHk4Ng4=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Z3rJ1R+bzPOdlblNYhPa8gmGr4lF28LeXZT53IK4yg4k6erfxGYql74WkmlXVUann
- bQaelJYw+9Evjwn1vQuA2fIBs9erGxfL+xVjdMxGbWtvcfojUY4uZlibadAf6vU7Yc
- XFVkRPpsxlDCWwmOWnMjC8YSn4ZczW5sSqK7Caac=
+ b=FR1uGFO1nVoZfGSGOEBbv/FaGlSPTalA/J0vbhrFo9BSzAtLtoADZRY2T/kpVR2Wh
+ GXJ10jcmxZbPP8Ra8hF4b3ue+yXDDrEilmZk/hBt5FQ3noYN7GwNolBwsZrSFsToAf
+ mwwgy6xtSy0ZFs4aFCuLcuqdwjOPRukPH3IZxYkU=
 Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
  by disco-boy.misterjones.org with esmtpsa
  (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jeHoB-00FzCQ-BM; Thu, 28 May 2020 13:38:51 +0100
+ id 1jeI0T-00FzPb-SH; Thu, 28 May 2020 13:51:33 +0100
 MIME-Version: 1.0
-Date: Thu, 28 May 2020 13:38:51 +0100
+Date: Thu, 28 May 2020 13:51:33 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH 2/3] KVM: arm64: Stop save/restoring ACTLR_EL1
-In-Reply-To: <4d42a5db0b573c7a184aea654829a06c@kernel.org>
+Subject: Re: [PATCH 3/3] KVM: arm64: Add emulation for 32bit guests accessing
+ ACTLR2
+In-Reply-To: <20200526161834.29165-4-james.morse@arm.com>
 References: <20200526161834.29165-1-james.morse@arm.com>
- <20200526161834.29165-3-james.morse@arm.com>
- <4d42a5db0b573c7a184aea654829a06c@kernel.org>
+ <20200526161834.29165-4-james.morse@arm.com>
 User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <07d09551c456c6be326473e003def3ab@kernel.org>
+Message-ID: <1da83682a9ba3704601cb2071e8b638d@kernel.org>
 X-Sender: maz@kernel.org
 X-SA-Exim-Connect-IP: 51.254.78.96
 X-SA-Exim-Rcpt-To: james.morse@arm.com, kvmarm@lists.cs.columbia.edu,
@@ -61,8 +61,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_053853_408449_815F261C 
-X-CRM114-Status: GOOD (  14.25  )
+X-CRM114-CacheID: sfid-20200528_055136_287422_005F416F 
+X-CRM114-Status: GOOD (  20.12  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -99,84 +99,129 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-28 13:36, Marc Zyngier wrote:
-> On 2020-05-26 17:18, James Morse wrote:
->> KVM sets HCR_EL2.TACR (which it calls HCR_TAC) via HCR_GUEST_FLAGS.
-> 
-> TAC is a leftover from 32bit.
-> 
->> This means ACTLR* accesses from the guest are always trapped, and
->> always return the value in the sys_regs array.
->> 
->> The guest can't change the value of these registers, so we are
->> save restoring the reset value, which came from the host.
->> 
->> Stop save/restoring this register.
->> 
->> This also stops this register being affected by sysregs_loaded_on_cpu,
->> so we can provide 32 bit accessors that always use the in-memory copy.
->> 
->> Signed-off-by: James Morse <james.morse@arm.com>
->> ---
->>  arch/arm64/kvm/hyp/sysreg-sr.c | 2 --
->>  arch/arm64/kvm/sys_regs.c      | 2 --
->>  2 files changed, 4 deletions(-)
->> 
->> diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c 
->> b/arch/arm64/kvm/hyp/sysreg-sr.c
->> index 75b1925763f1..57116cf3a1a5 100644
->> --- a/arch/arm64/kvm/hyp/sysreg-sr.c
->> +++ b/arch/arm64/kvm/hyp/sysreg-sr.c
->> @@ -44,7 +44,6 @@ static void __hyp_text
->> __sysreg_save_el1_state(struct kvm_cpu_context *ctxt)
->>  {
->>  	ctxt->sys_regs[CSSELR_EL1]	= read_sysreg(csselr_el1);
->>  	ctxt->sys_regs[SCTLR_EL1]	= read_sysreg_el1(SYS_SCTLR);
->> -	ctxt->sys_regs[ACTLR_EL1]	= read_sysreg(actlr_el1);
->>  	ctxt->sys_regs[CPACR_EL1]	= read_sysreg_el1(SYS_CPACR);
->>  	ctxt->sys_regs[TTBR0_EL1]	= read_sysreg_el1(SYS_TTBR0);
->>  	ctxt->sys_regs[TTBR1_EL1]	= read_sysreg_el1(SYS_TTBR1);
->> @@ -133,7 +132,6 @@ static void __hyp_text
->> __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
->>  		isb();
->>  	}
->> 
->> -	write_sysreg(ctxt->sys_regs[ACTLR_EL1],		actlr_el1);
-> 
-> If we don't need to save/restore it, we can also drop its presence
-> in the sys_regs array.
-> 
->>  	write_sysreg_el1(ctxt->sys_regs[CPACR_EL1],	SYS_CPACR);
->>  	write_sysreg_el1(ctxt->sys_regs[TTBR0_EL1],	SYS_TTBR0);
->>  	write_sysreg_el1(ctxt->sys_regs[TTBR1_EL1],	SYS_TTBR1);
->> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
->> index 2eda539f3281..aae58513025c 100644
->> --- a/arch/arm64/kvm/sys_regs.c
->> +++ b/arch/arm64/kvm/sys_regs.c
->> @@ -81,7 +81,6 @@ u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, 
->> int reg)
->>  	switch (reg) {
->>  	case CSSELR_EL1:	return read_sysreg_s(SYS_CSSELR_EL1);
->>  	case SCTLR_EL1:		return read_sysreg_s(SYS_SCTLR_EL12);
->> -	case ACTLR_EL1:		return read_sysreg_s(SYS_ACTLR_EL1);
->>  	case CPACR_EL1:		return read_sysreg_s(SYS_CPACR_EL12);
->>  	case TTBR0_EL1:		return read_sysreg_s(SYS_TTBR0_EL12);
->>  	case TTBR1_EL1:		return read_sysreg_s(SYS_TTBR1_EL12);
->> @@ -124,7 +123,6 @@ void vcpu_write_sys_reg(struct kvm_vcpu *vcpu, u64
->> val, int reg)
->>  	switch (reg) {
->>  	case CSSELR_EL1:	write_sysreg_s(val, SYS_CSSELR_EL1);	return;
->>  	case SCTLR_EL1:		write_sysreg_s(val, SYS_SCTLR_EL12);	return;
->> -	case ACTLR_EL1:		write_sysreg_s(val, SYS_ACTLR_EL1);	return;
->>  	case CPACR_EL1:		write_sysreg_s(val, SYS_CPACR_EL12);	return;
->>  	case TTBR0_EL1:		write_sysreg_s(val, SYS_TTBR0_EL12);	return;
->>  	case TTBR1_EL1:		write_sysreg_s(val, SYS_TTBR1_EL12);	return;
-> 
-> It strikes me that we don't even have a trap handler for this sysreg,
-> whether it is 32 or 64bit... That's a bit unfortunate, to say the
-> least...
+Hi James,
 
-Ah, no. the sucker is hidden away in "generic_v8"...
+On 2020-05-26 17:18, James Morse wrote:
+> ACTLR_EL1 is a 64bit register while the 32bit ACTLR is obviously 32bit.
+> For 32bit software, the extra bits are accessible via ACTLR2... which
+> KVM doesn't emulate.
+> 
+> Signed-off-by: James Morse <james.morse@arm.com>
+> ---
+> I'm not convinced this is endian safe, but it does match what
+> kvm_inject_undef32() do.
+> 
+> The alternative would be to always read the 64bit value, and generate
+> the 32bit offets like access_vm_reg() does.
+> 
+>  arch/arm64/include/asm/kvm_host.h    |  1 +
+>  arch/arm64/kvm/sys_regs_generic_v8.c | 16 +++++++++++++++-
+>  2 files changed, 16 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_host.h
+> b/arch/arm64/include/asm/kvm_host.h
+> index 32c8a675e5a4..5b7538663a8e 100644
+> --- a/arch/arm64/include/asm/kvm_host.h
+> +++ b/arch/arm64/include/asm/kvm_host.h
+> @@ -185,6 +185,7 @@ enum vcpu_sysreg {
+>  #define c0_CSSELR	(CSSELR_EL1 * 2)/* Cache Size Selection Register */
+>  #define c1_SCTLR	(SCTLR_EL1 * 2)	/* System Control Register */
+>  #define c1_ACTLR	(ACTLR_EL1 * 2)	/* Auxiliary Control Register */
+> +#define c1_ACTLR2	(c1_ACTLR + 1)	/* ACTLR top 32 bits */
+>  #define c1_CPACR	(CPACR_EL1 * 2)	/* Coprocessor Access Control */
+>  #define c2_TTBR0	(TTBR0_EL1 * 2)	/* Translation Table Base Register 0 
+> */
+>  #define c2_TTBR0_high	(c2_TTBR0 + 1)	/* TTBR0 top 32 bits */
+> diff --git a/arch/arm64/kvm/sys_regs_generic_v8.c
+> b/arch/arm64/kvm/sys_regs_generic_v8.c
+> index 9cb6b4c8355a..ed77bbb48e64 100644
+> --- a/arch/arm64/kvm/sys_regs_generic_v8.c
+> +++ b/arch/arm64/kvm/sys_regs_generic_v8.c
+> @@ -30,6 +30,18 @@ static bool access_actlr(struct kvm_vcpu *vcpu,
+>  	return true;
+>  }
+> 
+> +static bool access_cp15_actlr(struct kvm_vcpu *vcpu,
+> +			      struct sys_reg_params *p,
+> +			      const struct sys_reg_desc *r)
+> +{
+> +	if (p->is_write)
+> +		return ignore_write(vcpu, p);
+> +
+> +	p->regval = vcpu_cp15(vcpu, r->reg);
+> +	return true;
+> +
+> +}
+> +
+>  static void reset_actlr(struct kvm_vcpu *vcpu, const struct 
+> sys_reg_desc *r)
+>  {
+>  	__vcpu_sys_reg(vcpu, ACTLR_EL1) = read_sysreg(actlr_el1);
+> @@ -46,7 +58,9 @@ static const struct sys_reg_desc genericv8_sys_regs[] 
+> = {
+>  static const struct sys_reg_desc genericv8_cp15_regs[] = {
+>  	/* ACTLR */
+>  	{ Op1(0b000), CRn(0b0001), CRm(0b0000), Op2(0b001),
+> -	  access_actlr },
+> +	  access_cp15_actlr, NULL, c1_ACTLR },
+> +	{ Op1(0b000), CRn(0b0001), CRm(0b0000), Op2(0b011),
+> +	  access_cp15_actlr, NULL, c1_ACTLR2 },
+>  };
+> 
+>  static struct kvm_sys_reg_target_table genericv8_target_table = {
+
+I'd get rid of any form of storage, and go with something like 
+(untested, again):
+
+diff --git a/arch/arm64/kvm/sys_regs_generic_v8.c 
+b/arch/arm64/kvm/sys_regs_generic_v8.c
+index 9cb6b4c8355a..1b2bf2d37612 100644
+--- a/arch/arm64/kvm/sys_regs_generic_v8.c
++++ b/arch/arm64/kvm/sys_regs_generic_v8.c
+@@ -26,13 +26,16 @@ static bool access_actlr(struct kvm_vcpu *vcpu,
+  	if (p->is_write)
+  		return ignore_write(vcpu, p);
+
+-	p->regval = vcpu_read_sys_reg(vcpu, ACTLR_EL1);
+-	return true;
+-}
++	p->regval = read_sysreg(actlr_el1);
+
+-static void reset_actlr(struct kvm_vcpu *vcpu, const struct 
+sys_reg_desc *r)
+-{
+-	__vcpu_sys_reg(vcpu, ACTLR_EL1) = read_sysreg(actlr_el1);
++	if (p->aarch32) {
++		if (r->Op2 & 2)
++			p->regval = upper_32_bit(p->regval);
++		else
++			p->regval = lower_32_bit(p->regval);
++	}
++
++	return true;
+  }
+
+  /*
+@@ -40,13 +43,13 @@ static void reset_actlr(struct kvm_vcpu *vcpu, const 
+struct sys_reg_desc *r)
+   * Important: Must be sorted ascending by Op0, Op1, CRn, CRm, Op2
+   */
+  static const struct sys_reg_desc genericv8_sys_regs[] = {
+-	{ SYS_DESC(SYS_ACTLR_EL1), access_actlr, reset_actlr, ACTLR_EL1 },
++	{ SYS_DESC(SYS_ACTLR_EL1), access_actlr, },
+  };
+
+  static const struct sys_reg_desc genericv8_cp15_regs[] = {
+  	/* ACTLR */
+-	{ Op1(0b000), CRn(0b0001), CRm(0b0000), Op2(0b001),
+-	  access_actlr },
++	{ Op1(0b000), CRn(0b0001), CRm(0b0000), Op2(0b001), access_actlr },
++	{ Op1(0b000), CRn(0b0001), CRm(0b0000), Op2(0b011), access_actlr },
+  };
+
+  static struct kvm_sys_reg_target_table genericv8_target_table = {
+
+Thanks,
 
          M.
 -- 
