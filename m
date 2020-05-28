@@ -2,86 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 342EF1E6B92
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 21:48:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AC2941E6BBB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 21:53:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AsfxWTUGWbawCEAUA9r9I+mJibgDfIUSl8JiRgP8KS4=; b=UIFaqu62F88Pnk
-	1JKnZCEmjAzk5IEbbzu9dWFvLquShDChzdM7PMd+hbHT7l1Th4yR7rQTJMGzBaInNLfrp4DNPZeTr
-	pzsDHA8XUYDR8sksK7fdyu8zjomsTh/iURrKvfL657SnPHW2fkK/KjR9dTeUEY2c/QlaFZ7fHp88U
-	kmC5csi9RkCta4TQ46UpvVwPs0fSBvXaM/jdwR4VTvXEffM3s2kneUxBfC6Vt23peztGEs8osPzp7
-	8Qmen1EITjpe4kIgTJ30qlFfr2MsMW4e0aCmo1bqY5tORyyOH9yRys2cLDOhfaSigTgcvP+dzt+A0
-	RuV0HUScYWDcid+scM1Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5n5oz+af8jVRka2ozKMEStB4JXCG7xtw2uonb+xpwf4=; b=VGg
+	f81VITIsbWbnGRhWSrLqIuM6OA49THz/eD4zHlej7zZuXFae15ZL/IsRkjxsy15EpqSTyNcJNZy6Q
+	e0WMJlSpBsmKdxYryO7OTZn/TMHIQUekm6fE5FiB5d3qZENDAcRPJ5Eoz5oQE3slmM2fI+EV8EHS4
+	QNKcF80LtY6TAXHMcjVf2jg5dm6brd0BjFte+tjpHaSQ8xtr2j6gdSUOz354/B18KNkOgp5Fk8ONv
+	3N0kOWskjRui/ZyaFU1Ehg/sDHoMliEf9eWgT3jaSyADLlUztWL67sZzLqqFBKVa90D8+qVuLLdE0
+	qurJjlhG+nGXf4peSRBf0n6ij+VfTqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeOWE-0004Vf-W1; Thu, 28 May 2020 19:48:47 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jeOaj-0008GN-1i; Thu, 28 May 2020 19:53:25 +0000
+Received: from lists.gateworks.com ([108.161.130.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeOW6-0004Ue-Tw
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 19:48:40 +0000
-Received: by mail-il1-f196.google.com with SMTP id a14so144300ilk.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 12:48:38 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=Go6xO5WoC3zEQRJwVmH9bUe++RxJSEnlCwIRvUl4+dQ=;
- b=eD8Q5wyemmaHaOvvvKq4glXhRO7GcSkZlyl2qKGhnVQjvQdmDdRoQKKWJziT2LnJHS
- BmAL2QZczx3cvcWVvN2IGDrx3WbSnIM2m+f1Uaoe9NJJzkfYKgn82qshMznb4prPCs1t
- 3rUEl+xUE/wtufhu4chBEi0vm62TFTM9/HE9+1Daedf/NcLcpvREkJ7pO4HeWdBr1aPD
- 6vGsaJz1F1WnQaWofAjMo9KQnQ5Dsx01iSDVBRxkTXtDVEJvIPGpRdpTaX6d+Ms2pB19
- FFBCmQzl2x16K57nRbwYGMhCk2bbcJLdCjfehrf55u+4HWvYtiOlbRyR/flAtTQ1Gb1j
- eYdw==
-X-Gm-Message-State: AOAM531n9XqYhmwlxgDYfSJMidXA66msC7mxt2zDQYI5Nt2DBijxWKLT
- z59SXpZnhD8LSAuRstmdHQ==
-X-Google-Smtp-Source: ABdhPJxdVc8I3c5Wd+1g7euGl5ed0EkKErorxTkquQmiCvhOLVCyVbgdKy+eSwMN7mVRv2h0Ec4qUQ==
-X-Received: by 2002:a92:c809:: with SMTP id v9mr4288575iln.209.1590695318014; 
- Thu, 28 May 2020 12:48:38 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id y13sm2960819iob.51.2020.05.28.12.48.07
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 May 2020 12:48:16 -0700 (PDT)
-Received: (nullmailer pid 568649 invoked by uid 1000);
- Thu, 28 May 2020 19:48:04 -0000
-Date: Thu, 28 May 2020 13:48:04 -0600
-From: Rob Herring <robh@kernel.org>
-To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-Subject: Re: [RFC PATCH 1/6] dt-bindings: display/bridge: Add binding for
- input mux bridge
-Message-ID: <20200528194804.GA541078@bogus>
-References: <cover.1589548223.git.agx@sigxcpu.org>
- <14a44a664f40584ffa25c1764aab5ebf97809c71.1589548223.git.agx@sigxcpu.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <14a44a664f40584ffa25c1764aab5ebf97809c71.1589548223.git.agx@sigxcpu.org>
+ id 1jeOaV-0008Ec-Gh
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 19:53:12 +0000
+Received: from 068-189-091-139.biz.spectrum.com ([68.189.91.139]
+ helo=tharvey.pdc.gateworks.com)
+ by lists.gateworks.com with esmtp (Exim 4.82)
+ (envelope-from <tharvey@gateworks.com>)
+ id 1jeOdH-0000tP-Cd; Thu, 28 May 2020 19:56:03 +0000
+From: Tim Harvey <tharvey@gateworks.com>
+To: Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH] ARM: dts: imx6qdl-gw53xx: allow boot firmware to set eth1 MAC
+Date: Thu, 28 May 2020 12:53:03 -0700
+Message-Id: <1590695583-1327-1-git-send-email-tharvey@gateworks.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_124838_962982_FF23FAD1 
-X-CRM114-Status: GOOD (  15.35  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200528_125311_589231_A04F57EE 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,70 +57,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Peng Fan <peng.fan@nxp.com>,
+Cc: devicetree@vger.kernel.org, Tim Harvey <tharvey@gateworks.com>,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Sam Ravnborg <sam@ravnborg.org>, Anson Huang <Anson.Huang@nxp.com>,
- David Airlie <airlied@linux.ie>, Shawn Guo <shawnguo@kernel.org>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Lucas Stach <l.stach@pengutronix.de>,
- Robert Chiras <robert.chiras@nxp.com>,
- Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org, NXP Linux Team <linux-imx@nxp.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 03:12:10PM +0200, Guido G=FCnther wrote:
-> The bridge allows to select the input source via a mux controller.
-> =
+The GW53xx has a PCIe based GbE as the 2nd ethernet device. The
+boot firmware will populate the local-mac-address field of the
+device aliased to ethernet1 thus adding the PCIe device to
+dt allows boot firmware to set its MAC address.
 
-> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
-> ---
->  .../display/bridge/mux-input-bridge.yaml      | 123 ++++++++++++++++++
->  1 file changed, 123 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/mux-=
-input-bridge.yaml
-> =
+Signed-off-by: Tim Harvey <tharvey@gateworks.com>
+---
+ arch/arm/boot/dts/imx6qdl-gw53xx.dtsi | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
 
-> diff --git a/Documentation/devicetree/bindings/display/bridge/mux-input-b=
-ridge.yaml b/Documentation/devicetree/bindings/display/bridge/mux-input-bri=
-dge.yaml
-> new file mode 100644
-> index 000000000000..4029cf63ee5c
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/mux-input-bridge.y=
-aml
-> @@ -0,0 +1,123 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/bridge/mux-input-bridge.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: DRM input source selection via multiplexer
+diff --git a/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi b/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
+index 8942bec..6601d07 100644
+--- a/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-gw53xx.dtsi
+@@ -8,6 +8,7 @@
+ / {
+ 	/* these are used by bootloader for disabling nodes */
+ 	aliases {
++		ethernet1 = &eth1;
+ 		led0 = &led0;
+ 		led1 = &led1;
+ 		led2 = &led2;
+@@ -341,6 +342,23 @@
+ 	pinctrl-0 = <&pinctrl_pcie>;
+ 	reset-gpio = <&gpio1 29 GPIO_ACTIVE_LOW>;
+ 	status = "okay";
++
++	pcie@0,0,0 {
++		reg = <0x0000 0 0 0 0>;
++
++		pcie@1,0,0 {
++			reg = <0x0000 0 0 0 0>;
++
++			pcie@2,4,0 {
++				reg = <0x2000 0 0 0 0>;
++
++				eth1: pcie@4,0,0 {
++					reg = <0x0000 0 0 0 0>;
++					local-mac-address = [00 00 00 00 00 00];
++				};
++			};
++		};
++	};
+ };
+ 
+ &pwm2 {
+-- 
+2.7.4
 
-DRM is not a hardware thing.
-
-The graph binding is already designed to support muxing. Generally, =
-
-multiple endpoints on an input node is a mux. So either the device with =
-
-the input ports knows how to select the input, or you just need a =
-
-mux-control property for the port to have some other device implement =
-
-the control.
-
-You could do it like you have below. That would be appropriate if =
-
-there's a separate h/w device controlling the muxing. Say for example =
-
-some board level device controlled by i2c.
-
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
