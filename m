@@ -2,73 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A0BC1E6BC8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 21:57:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A9331E6BCE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 21:59:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0V87jU2+zZ7YGCKFsWyCJL0yOH4T68bfnEI/bEbuaic=; b=VLOzTLRMPJoTKO
-	gJXaonXdfHfAfLRk/sB8cmesPlQD3k0coHaOAnM+GRLj/HW/c+z3uxtZCNJYpWUn7BbR8pm5etp5p
-	hznz6DjphHmPuAhrpTIqh1amLb7oFPKzitz3BPbaUvrcG7hRhR5xxU0RYLpvXT4ccv6LM+F7gFXuV
-	kWHz7eFQI/IO9h6BrPq9AiLtNPASwFi5wOtNd+zzQYd1S2UY9MVokR4s6uoK93vzEYpDac+KucNvM
-	5XzPeoYtwb0Iu2T2Jt3zMyfmTY4OQef2sr5EfTSEUPyB8YBEiYW6j6MkyjjvC7AI2Lx6+k5kEfXmV
-	0bWC6w+GrwySs/LV7evQ==;
+	List-Owner; bh=6tk2CNcuKqiNGHej+tPjQSqozDbtFzx/QNWz5Dzt5o0=; b=oF+qBjlgZLYCui
+	ItD8ER9EPjo+j1Y1Z0xtM+nTU3D8gWag8uwYJfs+kQ/oUsJCnHFoihtKeYYRrvga2VXsoQuxIEj/5
+	QcK8At058IiUtH1I9FlkShpotbXnNXPdKaMknK8WseDNrlVH/y5Va0CXDnFBLOkPZphbwYNQY3gTR
+	6RJrB1m+ZKMaAFwG4qsMNZtMebes1C9roCgPOLpQeMsq1eeAZZKQG7UIKa9K1D30sTqqYDqyBn3An
+	EWCBv18nlNZ4NqG5+OpOT3TJjwruH1g4YxDTGQYxSnwb4nSda9Tq7w7PIEAETnhlAlXXGA09JJ4+K
+	zLMNn8kON2u8GdvCgKRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeOem-0003vX-Rf; Thu, 28 May 2020 19:57:36 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1jeOgZ-0005Q2-AK; Thu, 28 May 2020 19:59:27 +0000
+Received: from mail-io1-f65.google.com ([209.85.166.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeOeY-0003um-HR
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 19:57:23 +0000
-Received: by mail-io1-f68.google.com with SMTP id q8so30098097iow.7
+ id 1jeOgP-0005J6-Dy
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 19:59:18 +0000
+Received: by mail-io1-f65.google.com with SMTP id s18so17556514ioe.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 12:57:20 -0700 (PDT)
+ Thu, 28 May 2020 12:59:17 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:content-transfer-encoding
  :in-reply-to;
- bh=C1yxG+5EPv3E4hC3r9qMne3qQ1WLqR3rVkfPRz5Lf7A=;
- b=l1xBETaNToj+5fDpl135iwmJVUFdKrwDX1fb8Ik35/N2z2KsCAhqzvvNNhpLI6Ibq9
- jt+pg6c9HPK1lki0nS64Ha3kvBAfxIjsTjZYyFh2x16acOCgxD6wiafetfrKxi+Jy0bH
- F4AUfudrtbncPSe9x8idZr/SKqGW4FuHEWXB/VDo52PF/HIdmGMzF44bgRA2JhbGkgHg
- mL/tfGlVoXwpppMQUWk2S5S1RUE0Etrbd/NT3uoL2TFKxYw9C+3Z8pQ1SLZzZ14tEFZg
- 0VXM8/0S4LMMEqd1XOy/MGiQ6sERLfRDF8vNnzG8zp0k+qEFiMnWZ0EwwsR2Ls4TrriD
- fkKw==
-X-Gm-Message-State: AOAM532kpGy58RMlzVRDlCsWZxPyz+5UGKIyqvocAR1vh5WC+oYS+yjt
- ARjdyTJFF5F7BRZ/fBXQyA==
-X-Google-Smtp-Source: ABdhPJwSH+qxIcWv8h/fKAo6SOTAQdcOfw2m0OYWjSIpa6W5m47BsalTXqPIM9X9CbE4u2CeC3MeOw==
-X-Received: by 2002:a02:95a6:: with SMTP id b35mr4047016jai.40.1590695839998; 
- Thu, 28 May 2020 12:57:19 -0700 (PDT)
+ bh=kknKsSMTJoI8gmLeG3qit6ojGRVqNCU1BTs8KXTSykU=;
+ b=B5d0hifClUeOwFiTt8MHlJuxMUK6gWKxt+uOaat8iqJhrETMcEjcdy84vblPLBOH2U
+ moEbj8EqIaHT1XXvTms4oAxILIJYmABWY7ptcVIR+b5iyl1xNOljiQ4R+LiVnd+w/7U6
+ YLkpqBQDx0bl5EzL/hxqr7a70JvYXYvr191RA6ofaL3UTNlCdq6fAVhlrF8VZ5DD9/7B
+ qx4U5nl3ATj4dX02MCwExysclGMfe92i/IJ8utiSveCCY5DEqDqAtITnQgMtcU9jbuKz
+ aPpj0jRXVFfIDOvLotbjn3wpacvWSwdRB/+2dVKBwX0P+ryihxHZfDA/gGht5LCiIG5U
+ JK2g==
+X-Gm-Message-State: AOAM532/64PJn5jBbajm1VIDtEaUo7jT6iLvkhYHP+tWUMBznL90abY5
+ JjdnMx8jvJ86cgE/ZAQ9Dw==
+X-Google-Smtp-Source: ABdhPJxIPzW5HlNlbXXVKKRYIMx6e5UuSWAm/HfNNltKTsPfZADYYFbEPTL1adrf1g+L4+tiTXXJjw==
+X-Received: by 2002:a6b:8b51:: with SMTP id n78mr3726080iod.120.1590695956580; 
+ Thu, 28 May 2020 12:59:16 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id b18sm3627485ilh.77.2020.05.28.12.57.18
+ by smtp.gmail.com with ESMTPSA id h28sm3829573ild.53.2020.05.28.12.59.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 May 2020 12:57:19 -0700 (PDT)
-Received: (nullmailer pid 580805 invoked by uid 1000);
- Thu, 28 May 2020 19:57:17 -0000
-Date: Thu, 28 May 2020 13:57:17 -0600
+ Thu, 28 May 2020 12:59:16 -0700 (PDT)
+Received: (nullmailer pid 583331 invoked by uid 1000);
+ Thu, 28 May 2020 19:59:14 -0000
+Date: Thu, 28 May 2020 13:59:14 -0600
 From: Rob Herring <robh@kernel.org>
 To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-Subject: Re: [RFC PATCH 4/6] drm/bridge/nwl-dsi: Drop mux handling
-Message-ID: <20200528195717.GA568887@bogus>
+Subject: Re: [RFC PATCH 3/6] dt-bindings: display/bridge/nwl-dsi: Drop mux
+ handling
+Message-ID: <20200528195914.GB568887@bogus>
 References: <cover.1589548223.git.agx@sigxcpu.org>
- <951688795f969ebcbf9fb3c38065ccce6f488235.1589548223.git.agx@sigxcpu.org>
+ <9884c56219e9bdbeec179c27ea2b734dbb5f1289.1589548223.git.agx@sigxcpu.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <951688795f969ebcbf9fb3c38065ccce6f488235.1589548223.git.agx@sigxcpu.org>
+In-Reply-To: <9884c56219e9bdbeec179c27ea2b734dbb5f1289.1589548223.git.agx@sigxcpu.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_125722_577675_25741BF7 
-X-CRM114-Status: GOOD (  17.56  )
+X-CRM114-CacheID: sfid-20200528_125917_475024_7EA51300 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
+ no trust [209.85.166.65 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -78,7 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
+ [209.85.166.65 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,128 +110,20 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 03:12:13PM +0200, Guido G=FCnther wrote:
-> This will be handled via the mux-input-bridge.
+On Fri, May 15, 2020 at 03:12:12PM +0200, Guido G=FCnther wrote:
+> No need to encode the SoC specifics in the bridge driver. For the
+> imx8mq we can use the mux-input-bridge.
 
-You can't do this. What happens booting a kernel with this change and an =
+You can't just change bindings like this. You'd still have to support =
 
-un-modified dtb? You just broke it.
+the "old" way. But IMO, this way is the right way.
 
 > =
 
 > Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
 > ---
->  drivers/gpu/drm/bridge/Kconfig   |  1 -
->  drivers/gpu/drm/bridge/nwl-dsi.c | 61 --------------------------------
->  2 files changed, 62 deletions(-)
-> =
-
-> diff --git a/drivers/gpu/drm/bridge/Kconfig b/drivers/gpu/drm/bridge/Kcon=
-fig
-> index 3886c0f41bdd..11444f841e35 100644
-> --- a/drivers/gpu/drm/bridge/Kconfig
-> +++ b/drivers/gpu/drm/bridge/Kconfig
-> @@ -78,7 +78,6 @@ config DRM_NWL_MIPI_DSI
->  	select DRM_PANEL_BRIDGE
->  	select GENERIC_PHY_MIPI_DPHY
->  	select MFD_SYSCON
-> -	select MULTIPLEXER
->  	select REGMAP_MMIO
->  	help
->  	  This enables the Northwest Logic MIPI DSI Host controller as
-> diff --git a/drivers/gpu/drm/bridge/nwl-dsi.c b/drivers/gpu/drm/bridge/nw=
-l-dsi.c
-> index b14d725bf609..8839f333f39c 100644
-> --- a/drivers/gpu/drm/bridge/nwl-dsi.c
-> +++ b/drivers/gpu/drm/bridge/nwl-dsi.c
-> @@ -12,7 +12,6 @@
->  #include <linux/math64.h>
->  #include <linux/mfd/syscon.h>
->  #include <linux/module.h>
-> -#include <linux/mux/consumer.h>
->  #include <linux/of.h>
->  #include <linux/of_platform.h>
->  #include <linux/phy/phy.h>
-> @@ -44,9 +43,6 @@ enum transfer_direction {
->  	DSI_PACKET_RECEIVE,
->  };
->  =
-
-> -#define NWL_DSI_ENDPOINT_LCDIF 0
-> -#define NWL_DSI_ENDPOINT_DCSS 1
-> -
->  struct nwl_dsi_plat_clk_config {
->  	const char *id;
->  	struct clk *clk;
-> @@ -94,7 +90,6 @@ struct nwl_dsi {
->  	struct reset_control *rst_esc;
->  	struct reset_control *rst_dpi;
->  	struct reset_control *rst_pclk;
-> -	struct mux_control *mux;
->  =
-
->  	/* DSI clocks */
->  	struct clk *phy_ref_clk;
-> @@ -1018,14 +1013,6 @@ static int nwl_dsi_parse_dt(struct nwl_dsi *dsi)
->  	}
->  	dsi->tx_esc_clk =3D clk;
->  =
-
-> -	dsi->mux =3D devm_mux_control_get(dsi->dev, NULL);
-> -	if (IS_ERR(dsi->mux)) {
-> -		ret =3D PTR_ERR(dsi->mux);
-> -		if (ret !=3D -EPROBE_DEFER)
-> -			DRM_DEV_ERROR(dsi->dev, "Failed to get mux: %d\n", ret);
-> -		return ret;
-> -	}
-> -
->  	base =3D devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(base))
->  		return PTR_ERR(base);
-> @@ -1073,47 +1060,6 @@ static int nwl_dsi_parse_dt(struct nwl_dsi *dsi)
->  	return 0;
->  }
->  =
-
-> -static int nwl_dsi_select_input(struct nwl_dsi *dsi)
-> -{
-> -	struct device_node *remote;
-> -	u32 use_dcss =3D 1;
-> -	int ret;
-> -
-> -	remote =3D of_graph_get_remote_node(dsi->dev->of_node, 0,
-> -					  NWL_DSI_ENDPOINT_LCDIF);
-> -	if (remote) {
-> -		use_dcss =3D 0;
-> -	} else {
-> -		remote =3D of_graph_get_remote_node(dsi->dev->of_node, 0,
-> -						  NWL_DSI_ENDPOINT_DCSS);
-> -		if (!remote) {
-> -			DRM_DEV_ERROR(dsi->dev,
-> -				      "No valid input endpoint found\n");
-> -			return -EINVAL;
-> -		}
-> -	}
-> -
-> -	DRM_DEV_INFO(dsi->dev, "Using %s as input source\n",
-> -		     (use_dcss) ? "DCSS" : "LCDIF");
-> -	ret =3D mux_control_try_select(dsi->mux, use_dcss);
-> -	if (ret < 0)
-> -		DRM_DEV_ERROR(dsi->dev, "Failed to select input: %d\n", ret);
-> -
-> -	of_node_put(remote);
-> -	return ret;
-> -}
-
-You could however make these functions generic for any bridge to use. =
-
-Define a function that checks for mux-control property and if found sets =
-
-up the mux (IIRC, there's already a concept of a default state). That =
-
-should be callable from somewhere generic too.
-
-Rob
+>  .../devicetree/bindings/display/bridge/nwl-dsi.yaml         | 6 ------
+>  1 file changed, 6 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
