@@ -2,69 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 627C51E5717
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 07:56:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B57001E573C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 08:05:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+hYUUddBS2W9vl+N+R0e20VjV8MFh7NcBresRY7NrM8=; b=P/0p5n8rGH6U7+
-	LS/ur5RKSdu6fQd2Ve3UFej2B8yJSZDu/ZUlU8rO46LGkZtoARoCeab3/G5urIvegCNmP/+G6afs4
-	pAD3XKSblVc27XkIRMHvXuKyTVo5/5jfG5WRzQEEVWapAPu69QstzICklvvQDxoT2n44DGvXA8mF0
-	WprrLt6P5WKwjQ3M+xL0BWIgDifZY1hhWF49i9zO+fZceRywj86iga5n5C0AR+F9YJPeY2l2wItS1
-	miFHsI8atmEQjz+1m2hFgG5PmAtSPJHdYJDQDhuTtLHotoQJcv8egBhMTNAIOyWf/Hf0d+FmgfMKI
-	fEsLJ7HJrCD1QQxUL/fg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E4tHGhVR4ORy0OXsxO4p708KbYpiAKDAtRQVy9544CU=; b=bzPzhc4M3fq2MT
+	vbcmZsgCDKXfqkqpPGc1nAAkMXVdcW6EXR2qFqABO9xgNj5rR31tFc+7rIhvCILmAU6VvcQqgZSR8
+	PwH1rsiNahvh0S0fOdFeI/mDVsqiCFOFsM5mq89GEDgcae7OljvgVZ1CgnNjezP4oz7/PaRyCdrPQ
+	pavBw/mPHuupQh35v+TlCHrTnkbs0psnhA8lcWo0+jBQCo8Us3uYBwyve2DDIQsV1sG3gZW13sGcO
+	+trSlIFGkPothregp5QJk15dt+eWtk3Aqr+WkvGjaFekEPIvM03wnsM/hIVuHnfcnOuIfttA4XhyR
+	HFWB8OoeNa0jKq2Ym3jQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeBWd-0004Lx-0l; Thu, 28 May 2020 05:56:19 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jeBfT-0002w8-Ol; Thu, 28 May 2020 06:05:27 +0000
+Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeBWR-0004Jd-Ia; Thu, 28 May 2020 05:56:09 +0000
-X-UUID: 5dbe97a447524cdea5a3f7ac24e028fa-20200527
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=GKJ7cZiMqfb2VfBlip933OA74rr18gz1+qPKGEU9fns=; 
- b=O9DKw2sxmT4kSvKbsn+cpmAeOQjHHq3SitDDUCsUvY2FzyzsSK5L3n9/90S7ppUkDsHd1Vx+VA9NWAg9PhrhW70tNFTqgJDtAUZSWEsUnOKNUg7iGi/V8dgzlreIdppBeiIv0w2sWAKGgUxhFYthqwBmOzs4hfjQFBXYs6h4+qY=;
-X-UUID: 5dbe97a447524cdea5a3f7ac24e028fa-20200527
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 293861917; Wed, 27 May 2020 21:56:02 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 27 May 2020 22:55:58 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Thu, 28 May 2020 13:55:50 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 28 May 2020 13:55:31 +0800
-Message-ID: <1590645223.8804.498.camel@mhfsdcap03>
-Subject: Re: [V9, 1/2] media: dt-bindings: media: i2c: Document OV02A10
- bindings
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Thu, 28 May 2020 13:53:43 +0800
-In-Reply-To: <CAL_Jsq+sN0SVidTrY0ODXEkzkxYFvG1FTnL0oRQBSKf=ynLdyQ@mail.gmail.com>
-References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
- <20200523084103.31276-2-dongchun.zhu@mediatek.com>
- <20200526182847.GA92449@bogus> <1590569355.8804.448.camel@mhfsdcap03>
- <CAL_Jsq+sN0SVidTrY0ODXEkzkxYFvG1FTnL0oRQBSKf=ynLdyQ@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jeBf9-0001Eg-UA
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 06:05:13 +0000
+Received: by mail-ej1-x641.google.com with SMTP id k11so5507554ejr.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 27 May 2020 23:05:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=cc:subject:to:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Gr2QJjfQwZw9TOoef9/CtZwlj2xaVVZ2MosCnhi+D4Y=;
+ b=uT664BfCKD11g59N8NxYNnQAplKNgks3tcQJtPsg7EMK8v+bHKLWEx+us61PDVoIEF
+ Etojnh0KAUk3Dq74XioSiL2SIkDcVQ+r6Rkyyvux71cTcPX3s1pUMcrqZoRwaanfkGHv
+ t2PCfR6IovtThJ5/d29Kw3XIRWcd+gcesYcP1jsxf6lxI3y/CuVMVYWxxedyuqzRixZJ
+ HNIMCiPmwjFwo78VSSDRn8+VRvoUBBD1qmpniDXb1FUt8U58R+5uDnH0Za+/3aWCUw+x
+ +kufOH7t5VY7XVfBrlZ6rMBI6a2gdAW7ZOzjAN7I+4McB4v8L6QP3+kiJ/mKcMNOiI4a
+ 0QWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:cc:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Gr2QJjfQwZw9TOoef9/CtZwlj2xaVVZ2MosCnhi+D4Y=;
+ b=Ve6lTR6yFZuLsKkVl3CEY6Y803t2wxUpvCSCnEHXNpvnr+1HEL30Lr49zSiio8CjuP
+ SoJ7z4vNaTQ2MJTBhycI2w17nRxr1+M9jeeMq2d86q4gslEoU6RFLXW4rEroVwix62Ey
+ JAOQvhhUX0AFxETxDZy6WMgk3fa6W/0q35p946iQgOhTg6jPRKvHqLifcB9Vf4uQz6iO
+ 6PvLgJnBcZ80ORsMZCxSekTybUtdWSTnHxRq0NLKOm/7VJTQyFR7b6/NXMqlOd70c9Af
+ JCNG44MOf8sgRrrlutt+sObivrM7VjJeG9+mvuxNu/x1mCDMUM1XjyUMzy0sLFPdl3cH
+ yp+Q==
+X-Gm-Message-State: AOAM533dPwKB1RiLUxw8Jw7TEZ+FMvTCDnqMCCf1tqOrbaYOuC/UnYy5
+ exxFxFix+V0PXZtJiwBmB1OrzoJRwIk=
+X-Google-Smtp-Source: ABdhPJxjVLMKxzwXsFiCP+cJ7nLEssCwZug0h9DUfmwi6L1qHjlZIWcNchUGODktXsRFZRS6d4H40Q==
+X-Received: by 2002:a17:906:4088:: with SMTP id
+ u8mr1634002ejj.422.1590645905844; 
+ Wed, 27 May 2020 23:05:05 -0700 (PDT)
+Received: from ?IPv6:2001:a61:2516:6501:a84b:ccd6:785a:2f0f?
+ ([2001:a61:2516:6501:a84b:ccd6:785a:2f0f])
+ by smtp.gmail.com with ESMTPSA id nw22sm4561913ejb.48.2020.05.27.23.05.04
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 27 May 2020 23:05:05 -0700 (PDT)
+Subject: Re: [PATCH v2 1/6] prctl.2: ffix use literal hyphens when referencing
+ kernel docs
+To: Dave Martin <Dave.Martin@arm.com>
+References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-2-git-send-email-Dave.Martin@arm.com>
+From: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
+Message-ID: <43a7fb5b-7626-0f05-a13f-a4d35eb3289f@gmail.com>
+Date: Thu, 28 May 2020 08:05:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 5202DC9C4A6DAD8E5332356556DAFB0DC31C7CBC60798AF4CE88C6F8C832C7CA2000:8
-X-MTK: N
+In-Reply-To: <1590614258-24728-2-git-send-email-Dave.Martin@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_225607_625042_B4B7F7BE 
-X-CRM114-Status: GOOD (  28.55  )
+X-CRM114-CacheID: sfid-20200527_230507_997014_B31031B2 
+X-CRM114-Status: GOOD (  16.49  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mtk.manpages[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -74,8 +94,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,247 +105,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Louis Kuo <louis.kuo@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Linus Walleij <linus.walleij@linaro.org>, Shengnan
- Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
- <shengnan.wang@mediatek.com>, Tomasz Figa <tfiga@chromium.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Nicolas
- Boichat <drinkcat@chromium.org>, "moderated list:ARM/Mediatek
- SoC support" <linux-mediatek@lists.infradead.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>, dongchun.zhu@medaitek.com,
- Matthias
- Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, "moderated
- list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ mtk.manpages@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
-
-On Wed, 2020-05-27 at 09:27 -0600, Rob Herring wrote:
-> On Wed, May 27, 2020 at 2:51 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> >
-> > Hi Rob,
-> >
-> > Thanks for the review. Please see my replies below.
-> >
-> > On Tue, 2020-05-26 at 12:28 -0600, Rob Herring wrote:
-> > > On Sat, May 23, 2020 at 04:41:02PM +0800, Dongchun Zhu wrote:
-> > > > Add DT bindings documentation for Omnivision OV02A10 image sensor.
-> > > >
-> > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > ---
-> > > >  .../bindings/media/i2c/ovti,ov02a10.yaml           | 172 +++++++++++++++++++++
-> > > >  MAINTAINERS                                        |   7 +
-> > > >  2 files changed, 179 insertions(+)
-> > > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > > >
-> > > > diff --git a/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > > > new file mode 100644
-> > > > index 0000000..56f31b5
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > > > @@ -0,0 +1,172 @@
-> > > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > > +# Copyright (c) 2020 MediaTek Inc.
-> > > > +%YAML 1.2
-> > > > +---
-> > > > +$id: http://devicetree.org/schemas/media/i2c/ovti,ov02a10.yaml#
-> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > +
-> > > > +title: Omnivision OV02A10 CMOS Sensor Device Tree Bindings
-> > > > +
-> > > > +maintainers:
-> > > > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > +
-> > > > +description: |-
-> > > > +  The Omnivision OV02A10 is a low-cost, high performance, 1/5-inch, 2 megapixel
-> > > > +  image sensor, which is the latest production derived from Omnivision's CMOS
-> > > > +  image sensor technology. Ihis chip supports high frame rate speeds up to 30fps
-> > > > +  @ 1600x1200 (UXGA) resolution transferred over a 1-lane MIPI interface. The
-> > > > +  sensor output is available via CSI-2 serial data output.
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    const: ovti,ov02a10
-> > > > +
-> > > > +  reg:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  clocks:
-> > > > +    items:
-> > > > +      - description: top mux camtg clock
-> > > > +      - description: divider clock
-> > > > +
-> > > > +  clock-names:
-> > > > +    items:
-> > > > +      - const: eclk
-> > > > +      - const: freq_mux
-> > > > +
-> > > > +  clock-frequency:
-> > > > +    description:
-> > > > +      Frequency of the eclk clock in Hertz.
-> > > > +
-> >
-> > Rob, shall we use 'maxItems: 1' to constrain property: clock-frequency?
+On 5/27/20 11:17 PM, Dave Martin wrote:
+> There is one case of a cross-reference to a kernel documentation
+> filename that uses unescaped hyphens.
 > 
-> No, because it is a scalar, not an array.
+> To avoid misrendering, escape these as \- similarly to other
+> instances.
 > 
-
-Got it.
-
-> > Or could we adopt 'clock-frequency: true' directly here?
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> ---
+>  man2/prctl.2 | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> As-is is fine.
-> 
+> diff --git a/man2/prctl.2 b/man2/prctl.2
+> index 968a75a..dc99218 100644
+> --- a/man2/prctl.2
+> +++ b/man2/prctl.2
+> @@ -1261,7 +1261,7 @@ This parameter may enforce a read-only policy which will result in the
+>  call failing with the error
+>  .BR ENXIO .
+>  For further details, see the kernel source file
+> -.IR Documentation/admin-guide/kernel-parameters.txt .
+> +.IR Documentation/admin\-guide/kernel\-parameters.txt .
+>  .\"
+>  .\" prctl PR_TASK_PERF_EVENTS_DISABLE
+>  .TP
 
-Understood.
+Thanks, Dave. Applied.
 
-> > > > +  dovdd-supply:
-> > > > +    description:
-> > > > +      Definition of the regulator used as Digital I/O voltage supply.
-> > > > +
-> >
-> > Shall we add 'maxItems: 1' here?
-> 
-> No, supplies are always singular.
-> 
+Cheers,
 
-Fine.
+Michael
 
-> >
-> > > > +  avdd-supply:
-> > > > +    description:
-> > > > +      Definition of the regulator used as Analog voltage supply.
-> > > > +
-> >
-> > Ditto.
-> >
-> > > > +  dvdd-supply:
-> > > > +    description:
-> > > > +      Definition of the regulator used as Digital core voltage supply.
-> > > > +
-> >
-> > Ditto.
-> >
-> > > > +  powerdown-gpios:
-> > > > +    description:
-> > > > +      Must be the device tree identifier of the GPIO connected to the
-> > > > +      PD_PAD pin. This pin is used to place the OV02A10 into Standby mode
-> > > > +      or Shutdown mode. As the line is active low, it should be
-> > > > +      marked GPIO_ACTIVE_LOW.
-> > >
-> > > Need to define how many GPIOs ('maxItems: 1')
-> > >
-> >
-> > It would be fixed like this in next release.
-> > powerdown-gpios:
-> >   maxItems: 1
-> >   description:
-> >     Must be the device tree identifier of the GPIO connected to the
-> >     PD_PAD pin. This pin is used to place the OV02A10 into Standby mode
-> >     or Shutdown mode. As the line is active low, it should be
-> >     marked GPIO_ACTIVE_LOW.
-> >
 
-Tomasz, I don't know whether you noticed this description.
-Here I simply defined one necessary GPIO polarity in DT which driver
-settings need to follow.
-
-> > > > +
-> > > > +  reset-gpios:
-> > > > +    description:
-> > > > +      Must be the device tree identifier of the GPIO connected to the
-> > > > +      RST_PD pin. If specified, it will be asserted during driver probe.
-> > > > +      As the line is active high, it should be marked GPIO_ACTIVE_HIGH.
-> > >
-> > > Here too.
-> > >
-> >
-> > Similar as 'powerdown-gpios'.
-> > Fixed in next release.
-> >
-> > > > +
-> > > > +  rotation:
-> > > > +    description:
-> > > > +      Definition of the sensor's placement.
-> > > > +    allOf:
-> > > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > > > +      - enum:
-> > > > +          - 0    # Sensor Mounted Upright
-> > > > +          - 180  # Sensor Mounted Upside Down
-> > > > +        default: 0
-> > > > +
-> > > > +  ovti,mipi-tx-speed:
-> > > > +    description:
-> > > > +      Indication of MIPI transmission speed select, which is to control D-PHY
-> > > > +      timing setting by adjusting MIPI clock voltage to improve the clock
-> > > > +      driver capability.
-> > > > +    allOf:
-> > > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > > > +      - enum:
-> > > > +          - 0    #  20MHz -  30MHz
-> > > > +          - 1    #  30MHz -  50MHz
-> > > > +          - 2    #  50MHz -  75MHz
-> > > > +          - 3    #  75MHz - 100MHz
-> > > > +          - 4    # 100MHz - 130MHz
-> > > > +        default: 3
-> > > > +
-> > > > +  # See ../video-interfaces.txt for details
-> > > > +  port:
-> > > > +    type: object
-> > > > +    additionalProperties: false
-> > >
-> > > Should have a description of what data the port has.
-> > >
-> >
-> > It would be updated as below in next release.
-> > port:
-> >   type: object
-> >   additionalProperties: false
-> >   description:
-> >     Input port node, single endpoint describing the CSI-2 transmitter.
-> 
-> Output?
-> 
-
-Sorry for the typo.
-Yes, this should be output port node.
-
-> >
-> > > > +
-> > > > +    properties:
-> > > > +      endpoint:
-> > > > +        type: object
-> > > > +        additionalProperties: false
-> > > > +
-> > > > +        properties:
-> >
-> > Actually I wonder whether we need to declare 'clock-lanes' here?
-> 
-> Yes, if you are using it.
-> 
-
-Looking back to the upstreamed patches, it seems that there is a deep
-divide in the setting of 'clock-lanes' property.
-
-As the last comment I just posed, for OV02A10, 'clock-lanes' should be
-set to <0> (clock lane on hardware lane 0).
-But here we may follow IMX219 patch, which removed 'clock-lanes'
-property due to the fact that sensor hardware does not support lane
-reordering.
-
-Rob, Sakari, what's your opinions?
-
-> Rob
+-- 
+Michael Kerrisk
+Linux man-pages maintainer; http://www.kernel.org/doc/man-pages/
+Linux/UNIX System Programming Training: http://man7.org/training/
 
 _______________________________________________
 linux-arm-kernel mailing list
