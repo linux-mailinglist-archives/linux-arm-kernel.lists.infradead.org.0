@@ -2,137 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E02B51E69F2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 21:01:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97D4C1E6A0E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 21:07:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZUG414bkGToRd3imO/wnfcd5Tq3cyf9bC45mhFyu5Ow=; b=DCbwKU5EzezNEn
-	3nr7aF2k2GyQW/76MCHuujMkafnvdbLs4CkP2Pm2ra56bGWYYWNiE7QSBMBKtRve0NoO93hRw8qP4
-	6XexWO9EDFEFPphCabWg737umiqsK3hMVvE8i+u+04k1jW3ktzf3rFoIL8HapM5DzZqCmRnlm1ahy
-	A/nGlJlikKG6bc1Xk05OyDb1o8zzqbkrDKECn63/wx6qVyG/FisO0n1phuv59w3mW9MbKQiWDCMMK
-	T72VXLty45nSbXr3Q81xlnbbKHYn8Pz1SSSrLUhrNB/vT6ALqS52JLo/nmx2djMSlCvlVanFDrbSv
-	gAzQPP8Xn706wlQeVn/g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=dnuMIwK07tW72AjACMW1pxm7yF+bKJMoHy8T+hKGktY=; b=nVY
+	5jZlMtKAua60PtbGRPEV+IS1eht9Q4Rh8jTu47FvB1cOhHqx8G6mUsRjOgmDqSNyljUyJEgitOzCJ
+	Lv1r3l9HDkyUDvSJ8vmhYSYl5xDwmBgoC9nYUGMWhzC5par03ldhoyFEkE3Ov0DmXo1aOev1qsDhF
+	iKBEYNPEMPL75kLDfIo7V4DWMAsb/C+JH2RzjDfbpKpFfXL1RAea6v2xEGPq/P2bhRgwcJMUwYMMr
+	i7cz5C+Y4fBfvkLWCmNJoNkVKaL3t1QsWKzjdsZkCzwXaB6Ctd2+mxXUN4U0ArBk1/7Nuhp0cJh6/
+	3jVaTITRtyLFuSgRCXUtg5ct2Qd8ilg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeNmi-0001EQ-4u; Thu, 28 May 2020 19:01:44 +0000
-Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
+	id 1jeNrl-0004Ma-Cm; Thu, 28 May 2020 19:06:57 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeNma-0001Do-3J; Thu, 28 May 2020 19:01:37 +0000
-Received: by mail-ej1-x643.google.com with SMTP id h21so1124559ejq.5;
- Thu, 28 May 2020 12:01:34 -0700 (PDT)
+ id 1jeNrY-0004Lm-Sf; Thu, 28 May 2020 19:06:46 +0000
+Received: by mail-wm1-x343.google.com with SMTP id u13so157361wml.1;
+ Thu, 28 May 2020 12:06:44 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=j0MYj8Ipmt8xXyoUeRuSIQ/UfKCEmpy3Z2Hbpa9+pow=;
- b=qGGfxL55Xf/KNFJq17UFdFOPwFIGiZZRGtBt7m2pE3MyF0Zz2VCVQ7j/isc2STj9zp
- nUG928sndbC3RTnXFK8aqFl6F57QTGq5D8ekPwfRj48UsAQqXJ4Df1FgDtjnAi5jn27D
- CcHjfHAdPpPRwmvU8H8LbsXJkPsg3DrezXLQwgIzlgdFN3hsL9QvPD2/ahqTZfAgRHv0
- nL14m5ZrFwdh1QTvCu7QWJnaZudmnDo37J7Wj8uzmEk66f74+S5vMM7nASIwy3cOtvce
- qbF5Bs3E2G8RJK5itlBsoKlZQRgmfiVC8gvqAD0JymVWp9mkH3yXo6OFl41ofNn7mAnV
- xl1A==
+ h=from:to:cc:subject:date:message-id;
+ bh=4KhJ0czAtInc6S6Xs9xVMwv9E2Cl3DrgPdxIonc8bGQ=;
+ b=GQo3w7YNGghCGU1XnVGFhDTXxN7CHLJy5jHWuFWHMjmjY1DpiRjBbt3+fX52jRH4pB
+ tA7eVVSlE8fR6l6YVf4FMcg3QGw9Z4pYlIDgPgZQSKKV0j0dosHPzhtTCtH/hxbp8Z2y
+ YuT2OSFUyqo1p6xnZfv8yGsn6IgyZ/RY86XrNTrF0cTQGOs4xKDcQU4XJo66BJucPbkh
+ W5v7+w+PalWr2jdmjB/N73DKTQh3rTNR/KstTYX1AUE4noSPD5J/z5TOrbuX6rwdWBNw
+ 2qQE+YZUHkiPOLlLyRhr2ItFHrJwv/nAD1BZX2bfCWn2p0EBGiOpRV39kIQHiLNRaCGl
+ W17Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=j0MYj8Ipmt8xXyoUeRuSIQ/UfKCEmpy3Z2Hbpa9+pow=;
- b=ouCxQB/bllfHQpKKuNwCrMRj9GOyv1Ye7dGCpiUR0RwrPqflnBcVeLNNm0fnu2M8vX
- w+MCWhAcsd6H8oSGRKjlXs33/+e39L12019GbEN6Kdcm+NKhRAplDGR7nsAbkOH6P6ut
- fwdo36PZZbbMG3Ggy5UnK9fHNYSZdBKd90W6bGmTSu/9iMqwfKZH95LCf7dqdLF1uPwy
- 3gSfWsD486JlzqiaUgcmYr4R/WVaT+8TpiC7Q7IdXVJNJwNSkst0IP7IyneYl8X8rm8y
- r4F4Kq2xftPDs/RCKCPkFXkVQaQqFhdpHsaLh1oTTDwNpRhouDhIKTG3NNSfKNdMg73J
- 7RPQ==
-X-Gm-Message-State: AOAM530jCcj1lPsEqBJC6iYrJ9Upe08HzovPl4oY5wR6FO+Z8lBNfRel
- hzouORogyXtj3fWaRES9J64=
-X-Google-Smtp-Source: ABdhPJy4tZ5KolUuKBwNRg9w/I1PpC7IwqxSLlejHRH3OHgtwMguzAU4TtE3ZNPpSKBWtRtIgtzitg==
-X-Received: by 2002:a17:906:15cb:: with SMTP id
- l11mr4221301ejd.224.1590692493388; 
- Thu, 28 May 2020 12:01:33 -0700 (PDT)
-Received: from [10.67.49.116] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id r9sm5428558edg.13.2020.05.28.12.01.30
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 28 May 2020 12:01:32 -0700 (PDT)
-Subject: Re: [PATCH] spi: bcm2835: Enable shared interrupt support
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Mark Brown <broonie@kernel.org>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>, bcm-kernel-feedback-list@broadcom.com
-References: <20200528185805.28991-1-nsaenzjulienne@suse.de>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=4KhJ0czAtInc6S6Xs9xVMwv9E2Cl3DrgPdxIonc8bGQ=;
+ b=iDnGRiKPs1+I7kzAty8I+soHy1ccgtTiOE9Czqlnivfm2rJZHPJZipT8e9FObB7xGY
+ +AVP1ddAhNQbFZuPeVfrRmtMFLGWYlHHPbMGMcFJpcMabXmrserzq+5uxLGvsV+EmeR4
+ ocmgjtIfp0Ghst8H/oMNuIzUQZQwjix94RrCjhonq1AhZDyxfwresN7l/IUZsHPiHJjt
+ ByvfhCfP5B6TeGHI6YFbIoED7+AiAaBRRpepBDi9sAQJl4gU8BV0HCr/+32WgSJUbWCC
+ 6SQo5WJwdU4GzriPXmvpVwykWRqJvyPSm3WMGxSZPB0u1ryKa2lH4u2UfKbSAtRY7s/7
+ UKCg==
+X-Gm-Message-State: AOAM532Fio7eHgFu2EIbwgOCAqVfXQ+fAn7TxPof+9ZLU86a9phmRaFR
+ 6Kvlfv89SRRjaq+8b2aZajw=
+X-Google-Smtp-Source: ABdhPJwodjVwERbd9IbT6+7c3t6iPtNjLkkwJVDncWF6oaZ/MtkezkiKEFsDJCsEzoaJBToaLSlodw==
+X-Received: by 2002:a1c:3dd6:: with SMTP id k205mr3731402wma.87.1590692803224; 
+ Thu, 28 May 2020 12:06:43 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id p7sm6953516wro.26.2020.05.28.12.06.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 28 May 2020 12:06:41 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
-Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <bb82ab33-69b4-b407-ef1a-08f6326d5d93@gmail.com>
-Date: Thu, 28 May 2020 12:00:32 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200528185805.28991-1-nsaenzjulienne@suse.de>
-Content-Language: en-US
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH] spi: bcm2835: Implement shutdown callback
+Date: Thu, 28 May 2020 12:06:05 -0700
+Message-Id: <20200528190605.24850-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_120136_156226_210EFB73 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20200528_120644_951995_94256F73 
+X-CRM114-Status: GOOD (  11.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -156,36 +91,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Sperl <kernel@martin.sperl.org>, linux-kernel@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-spi@vger.kernel.org
+Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Florian Fainelli <f.fainelli@gmail.com>, Scott Branden <sbranden@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>,
+ "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/28/20 11:58 AM, Nicolas Saenz Julienne wrote:
-> From: Martin Sperl <kernel@martin.sperl.org>
-> 
-> bcm2711, Rasberry Pi 4's SoC, shares one interrupt for multiple
-> instances of the bcm2835 SPI controller. So this enables shared
-> interrupt support for them.
-> 
-> The early bail out in the interrupt routine avoids messing with buffers
-> of transfers being done by other means. Otherwise, the driver can handle
-> receiving interrupts asserted by other controllers during an IRQ based
-> transfer.
-> 
-> Signed-off-by: Martin Sperl <kernel@martin.sperl.org>
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Make sure we clear the FIFOs, stop the block, disable the clock and
+release the DMA channel.
 
-Thanks Nicolas, we have been using this patch on 7211 (which is very
-similar to 2711):
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+---
+ drivers/spi/spi-bcm2835.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-Tested-by: Florian Fainelli <f.fainelli@gmail.com>
-Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
+index 20d8581fdf88..237bd306c268 100644
+--- a/drivers/spi/spi-bcm2835.c
++++ b/drivers/spi/spi-bcm2835.c
+@@ -1391,6 +1391,15 @@ static int bcm2835_spi_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static void bcm2835_spi_shutdown(struct platform_device *pdev)
++{
++	int ret;
++
++	ret = bcm2835_spi_remove(pdev);
++	if (ret)
++		dev_err(&pdev->dev, "failed to shutdown\n");
++}
++
+ static const struct of_device_id bcm2835_spi_match[] = {
+ 	{ .compatible = "brcm,bcm2835-spi", },
+ 	{}
+@@ -1404,6 +1413,7 @@ static struct platform_driver bcm2835_spi_driver = {
+ 	},
+ 	.probe		= bcm2835_spi_probe,
+ 	.remove		= bcm2835_spi_remove,
++	.shutdown	= bcm2835_spi_shutdown,
+ };
+ module_platform_driver(bcm2835_spi_driver);
+ 
 -- 
-Florian
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
