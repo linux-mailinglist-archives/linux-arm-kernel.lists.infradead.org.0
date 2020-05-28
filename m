@@ -2,85 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 359A21E65D4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 17:19:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F12BB1E6684
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 17:45:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L0xYt8RkjXnGFAqoq0HPT5ClAhEB8hdKdwtQvnuCXaE=; b=RjNfqyutg/bqRI
-	D/L09rKY8vq6D4jcpmgJ0mOCcZTNL14bRyuxaU6o9gkVQrxIfs5Md0F1Fqz7V9l+fJUs631rbQR9m
-	J8r2EvOr3m2v5INB9x/AZb+qxd4QiDhR8MzqfIl9zBNs+6HpZk+e1fsIORl84/BxG0rBscq/x0E17
-	L4hchwz94Wklz8nW4/mDUC2pKa+mDywkuHki+gkARxCSm/wiAc6FKYkrk36XgpTE3wggQhZLZey3u
-	s8LVci0kStqiGkKLN7wuDIg9SU8tt2XsJGE4+NIHf42nVMHG16XXDA0Z7dqVnp9wLwOnijjj2Bs3b
-	WS4Nygk0AlIHSV1wxquA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rNGEOKWdg7XRNS5EFB88ypJkfpUsKlp7pCrfjKsx7/g=; b=upfHVdgOwz5HB3
+	T86aqxDWlGI4XaWWyg8zuQ/yDxbiV/hFe+VWT670bdtA6HZkkVdbxPdRCsm4ueUBAbUKeLKi9DCf9
+	uJsSIFtGwyJv/V07kNBIdvdxVVR+SlfrQXp+gbe980gc2GzHdSwbWInFCkZPi4Uhc65Ye2qu1BsKc
+	pXtmAOz53D1/ou+KOjih+cMnR/RDqI5EOJwak3TgmVefVn4fwGJw5OYWD3U2x0427WHTEPg2NGhdq
+	WFUN5GnUkQaGAM1h/UO/iAbMguhsBK2PBxJWIzfQCqr+s7Rr6QMFb67VauF5m1TmGClmn9IQ1VXg1
+	g/0xgFeVpwILqud3RWxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeKJj-0003z6-OB; Thu, 28 May 2020 15:19:35 +0000
-Received: from mail-il1-f195.google.com ([209.85.166.195])
+	id 1jeKik-0002bU-Q4; Thu, 28 May 2020 15:45:26 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeKJa-0003yc-62
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 15:19:27 +0000
-Received: by mail-il1-f195.google.com with SMTP id 18so472333iln.9
+ id 1jeKiT-0001Nu-EH
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 15:45:11 +0000
+Received: by mail-wm1-x342.google.com with SMTP id n5so3743056wmd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 08:19:25 -0700 (PDT)
+ Thu, 28 May 2020 08:45:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=RRcpe0H3lCAzNpSzTtIGdoPxExC1gnrWV04XMN1Ki5Y=;
+ b=g0HFkoJKIY9iSEkgGQr+z2ngQ5RvAXjSLWxFjTtoZKt7hmDAuvtCGVOiKVewJ4rQqt
+ T2/8s2EPboAsw2RPb5z3xfaPEiobgw2PMqFJ1KOvmAxxWtVsHP9U0UvlOUIuZFjX4prO
+ EROm0xvcPNCKxVAQ4MY81faMt0ml8cV0vQj1lO/w0BPMLaIBrby2hr1ncD0+i5Oordpy
+ EMCYu6kRDEgoyGD2TDNNS7Uc4me45W8sJuzMWwUmnF6BmQH2E+ng5a6R0eqKr6M8kiXi
+ zeJapxgvsGZrHT30JbNBOTMLluxih3uG2BT13+Qk13hcumfHzLaDzvuwG3Q7yAmDOOAc
+ +mLQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=5kBEZPlNqzKPyCgrp/KWIwOTiSVLQMBol2Vgbb91EpM=;
- b=Z+StSx5Z5vX9QpBErdWON6nfnyBsJLXd68vmOU+BY1TvTOeKTaUWZ7RuQ93zCve0QE
- wnMkHI2yFy4ekQ/VHg82TwuluS3DIHBLpgT8/eWa7UibBai6oq3EFE4x7AO4TwFd4YMF
- h+6G4Fl4/D5yFujREKdb4h30qlOFnVdP58acnNmAEAukLnDSKq+OS7LwxoMdYsC1XSW8
- Md9fBk+wZXq8+0M/9y6dxWKasoAMDXaYMqYZvW+gyyh2p5Nund41DSyLZd8jLL8L+L45
- MtAM1yCFbSyFs+OZFQv5F+p0QNDOqslpANtWko9W+udh1gHuIbPr0Y6j/bnYyrmZmEm/
- cyHA==
-X-Gm-Message-State: AOAM530TBDw6QzDCWtb5VkeQHJKyIOJlvAiDV37EnxZEZ/N6LGBXO7Zi
- DGbVeHtBxDqmSpLLuzRJSla65kM=
-X-Google-Smtp-Source: ABdhPJwibNiFPrIx377+XuzcIXNpytt1Fqw5yA5j7iuroWojsn3v5IBwUqhYpDxPaOr7/N2GzRdyqw==
-X-Received: by 2002:a92:1b86:: with SMTP id f6mr3430564ill.9.1590679165207;
- Thu, 28 May 2020 08:19:25 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id u66sm3018630ilc.61.2020.05.28.08.19.23
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=RRcpe0H3lCAzNpSzTtIGdoPxExC1gnrWV04XMN1Ki5Y=;
+ b=YnZHITlx+2xxofAaQHqwjIaXCFC4x2Q3yjpZ0Ebe1xpLW3gn/qeO2UHdQXWc0IHOPx
+ 2Lup2isHPiAqhWvuCqyAxQ6AeqK6hFZGZWYnv5AZ/YLnQCMNHpcvkUCvFj0v/c1hFJpO
+ D/uKRaGU4VwpqK2JzssckhkWnSua3m4zSJHMu4PlX9EaR+3DdrncFi0f7o/+c/P8HGYu
+ NeZulVuud1sHBasgJ4JCdQc7t32f79grYA0ziX6g4CIRtM0H13KOz8sONyafBZlbQFpy
+ Nv/DT+9PyMcF++0Cyi6zVyY9Ph+jQtpiJOsmWZMDONyWfzWfMXrnuCn6E3h2n5jd6GOd
+ WhAw==
+X-Gm-Message-State: AOAM5327n6juHGyfiIuedKjgrtJkHFIANwcnz82f6+4wXqzmb0707o7U
+ 5C4+FYQ7Nj3H0/eeppXl344IPw==
+X-Google-Smtp-Source: ABdhPJxsoz5O8Wu+pBo3JregNWfan6WrHopy2c2n+D7n8gRcdVSFiDJEqbgTrXNos0B2dRpaa0ksxg==
+X-Received: by 2002:a05:600c:2201:: with SMTP id
+ z1mr3945929wml.70.1590680707286; 
+ Thu, 28 May 2020 08:45:07 -0700 (PDT)
+Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
+ [2.15.156.232])
+ by smtp.gmail.com with ESMTPSA id n1sm6285650wrp.10.2020.05.28.08.45.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 May 2020 08:19:24 -0700 (PDT)
-Received: (nullmailer pid 94809 invoked by uid 1000);
- Thu, 28 May 2020 15:19:23 -0000
-Date: Thu, 28 May 2020 09:19:23 -0600
-From: Rob Herring <robh@kernel.org>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: PCI: Add UniPhier PCIe endpoint
- controller description
-Message-ID: <20200528151923.GA94755@bogus>
-References: <1589457801-12796-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1589457801-12796-2-git-send-email-hayashi.kunihiko@socionext.com>
+ Thu, 28 May 2020 08:45:06 -0700 (PDT)
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+To: John Crispin <john@phrozen.org>, Sean Wang <sean.wang@mediatek.com>,
+ Mark Lee <Mark-MC.Lee@mediatek.com>,
+ "David S . Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Mark Brown <broonie@kernel.org>
+Subject: [PATCH v3 0/2] regmap: provide simple bitops and use them in a driver
+Date: Thu, 28 May 2020 17:45:01 +0200
+Message-Id: <20200528154503.26304-1-brgl@bgdev.pl>
+X-Mailer: git-send-email 2.26.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1589457801-12796-2-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_081926_224080_4A96EDE9 
-X-CRM114-Status: GOOD (  10.63  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200528_084509_575666_077C4DE2 
+X-CRM114-Status: GOOD (  12.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.195 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.195 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,31 +96,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Jassi Brar <jaswinder.singh@linaro.org>,
- Rob Herring <robh+dt@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Fabien Parent <fparent@baylibre.com>,
+ linux-mediatek@lists.infradead.org,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ Pedro Tsai <pedro.tsai@mediatek.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 14 May 2020 21:03:20 +0900, Kunihiko Hayashi wrote:
-> Add DT bindings for PCIe controller implemented in UniPhier SoCs
-> when configured in endpoint mode. This controller is based on
-> the DesignWare PCIe core.
-> 
-> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-> ---
->  .../bindings/pci/socionext,uniphier-pcie-ep.yaml   | 92 ++++++++++++++++++++++
->  MAINTAINERS                                        |  2 +-
->  2 files changed, 93 insertions(+), 1 deletion(-)
->  create mode 100644 Documentation/devicetree/bindings/pci/socionext,uniphier-pcie-ep.yaml
-> 
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+I noticed that oftentimes I use regmap_update_bits() for simple bit
+setting or clearing. In this case the fourth argument is superfluous as
+it's always 0 or equal to the mask argument.
+
+This series proposes to add simple bit operations for setting, clearing
+and testing specific bits with regmap.
+
+The second patch uses all three in a driver that got recently picked into
+the net-next tree.
+
+The patches obviously target different trees so - if you're ok with
+the change itself - I propose you pick the first one into your regmap
+tree for v5.8 and then I'll resend the second patch to add the first
+user for these macros for v5.9.
+
+v1 -> v2:
+- convert the new macros to static inline functions
+
+v2 -> v3:
+- drop unneeded ternary operator
+
+Bartosz Golaszewski (2):
+  regmap: provide helpers for simple bit operations
+  net: ethernet: mtk-star-emac: use regmap bitops
+
+ drivers/base/regmap/regmap.c                  | 22 +++++
+ drivers/net/ethernet/mediatek/mtk_star_emac.c | 80 ++++++++-----------
+ include/linux/regmap.h                        | 36 +++++++++
+ 3 files changed, 93 insertions(+), 45 deletions(-)
+
+-- 
+2.26.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
