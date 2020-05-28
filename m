@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E41B11E549E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 05:23:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 307321E54A1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 05:24:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=62uvqlKGBs9eC00ZAHJ0/5JCS86RbE30OUPiyXAKyhI=; b=cWSJf9TVyw7STmrvxNR7UwSZLb
-	FR1e1JV3JzHTPrUFMZ5tK81evHywjDd/yDf0whdwXtOBEUcCLCJSSOhUhd2wkCOv97qHiV2pMJwLV
-	GIchPFocpzvC9Nji1CEA4xydyPiK3n6eHwRY6hygQd1B7g/IAikSh7+cGh+FKu+eBKSerzIixQSOB
-	v29KU8Mrm5s10OmQ4a4iC4uUEo1edYB5sXyozmfWe5CaoNAdYUBT82NDv6nIY4NFqklZ4vo95Cwur
-	owSur6Ug1b4y8T6j/nJBcc/mjdMjyXDwAB9u47nvmRPWXOt+U43BaxqHxM/j7kwvADeoWrwE9vhbP
-	gSpMQezg==;
+	bh=tLDJvUV2yNQKam0YCWmNee35b7h5W12yo3Cv8YoR1xA=; b=Q2ESdPgx6tcSwcHbWOEaWqpF1f
+	J7Fo6i+OnNDL1kxyqa+DYIrzLDdegJH2RCjIBmrmHo37ngYRye7JEX9XwrHqAsiQTyTjGkW51el4I
+	6sx92dNs3PS+h7tLI84Mmwo6ULwRITWcwt2wIHypod7G/bOxJV96rDpLFBQC4YgGsahnkb9U8P18t
+	0B60xjo6cIuGhHRZnGuQkC3Um7AOHKeN8hZhyQGkvTSQD/ZjSSeEgT4t0Rzg9A319sMJZQSOkb065
+	TSqO7Ec3TmgakZLkf/nhBLtcFk+sCeD77zyzdkewhr7KLp3n837xT+2PAztfQ6Rlqn3gN0OzY9G6g
+	cQjc8YTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je994-0005sL-Ct; Thu, 28 May 2020 03:23:50 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1je99p-0006Yu-QK; Thu, 28 May 2020 03:24:37 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je98X-0005fc-3x
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 03:23:18 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 941261A0A5E;
- Thu, 28 May 2020 05:23:11 +0200 (CEST)
+ id 1je98f-0005mM-1c
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 03:23:26 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9C84020092F;
+ Thu, 28 May 2020 05:23:12 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A43B41A0A63;
- Thu, 28 May 2020 05:23:02 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 836D9200601;
+ Thu, 28 May 2020 05:23:04 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7D0E8402BF;
- Thu, 28 May 2020 11:22:52 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4D015402D3;
+ Thu, 28 May 2020 11:22:54 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, daniel.baluta@nxp.com,
@@ -44,16 +44,16 @@ To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  l.stach@pengutronix.de, andrew.smirnov@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 1/4] ARM: dts: imx: change ocotp node name on i.MX6/7 SoCs
-Date: Thu, 28 May 2020 11:12:47 +0800
-Message-Id: <1590635570-8541-2-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/4] arm64: dts: imx8m: change ocotp node name on i.MX8M SoCs
+Date: Thu, 28 May 2020 11:12:48 +0800
+Message-Id: <1590635570-8541-3-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1590635570-8541-1-git-send-email-Anson.Huang@nxp.com>
 References: <1590635570-8541-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_202317_435220_E29919B4 
-X-CRM114-Status: UNSURE (   8.36  )
+X-CRM114-CacheID: sfid-20200527_202325_238689_E97D2B96 
+X-CRM114-Status: UNSURE (   7.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -61,7 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -87,106 +87,64 @@ yaml schema, it requires the nodename to be one of "eeprom|efuse|nvram".
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx6qdl.dtsi | 2 +-
- arch/arm/boot/dts/imx6sl.dtsi  | 2 +-
- arch/arm/boot/dts/imx6sll.dtsi | 2 +-
- arch/arm/boot/dts/imx6sx.dtsi  | 2 +-
- arch/arm/boot/dts/imx6ul.dtsi  | 2 +-
- arch/arm/boot/dts/imx7s.dtsi   | 2 +-
- arch/arm/boot/dts/imx7ulp.dtsi | 2 +-
- 7 files changed, 7 insertions(+), 7 deletions(-)
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 2 +-
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi | 2 +-
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi | 2 +-
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-index 43d44d5..e14a6f2 100644
---- a/arch/arm/boot/dts/imx6qdl.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl.dtsi
-@@ -1162,7 +1162,7 @@
- 				status = "disabled";
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index aaf6e71..740cc62 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -467,7 +467,7 @@
+ 				reg = <0x30340000 0x10000>;
  			};
  
--			ocotp: ocotp-ctrl@21bc000 {
-+			ocotp: efuse@21bc000 {
- 				compatible = "fsl,imx6q-ocotp", "syscon";
- 				reg = <0x021bc000 0x4000>;
- 				clocks = <&clks IMX6QDL_CLK_IIM>;
-diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
-index d8efc0a..11e7bf3 100644
---- a/arch/arm/boot/dts/imx6sl.dtsi
-+++ b/arch/arm/boot/dts/imx6sl.dtsi
-@@ -952,7 +952,7 @@
- 				status = "disabled";
+-			ocotp: ocotp-ctrl@30350000 {
++			ocotp: efuse@30350000 {
+ 				compatible = "fsl,imx8mm-ocotp", "syscon";
+ 				reg = <0x30350000 0x10000>;
+ 				clocks = <&clk IMX8MM_CLK_OCOTP_ROOT>;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+index 9a4b65a..0625cc8 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+@@ -374,7 +374,7 @@
+ 				reg = <0x30340000 0x10000>;
  			};
  
--			ocotp: ocotp-ctrl@21bc000 {
-+			ocotp: efuse@21bc000 {
- 				compatible = "fsl,imx6sl-ocotp", "syscon";
- 				reg = <0x021bc000 0x4000>;
- 				clocks = <&clks IMX6SL_CLK_OCOTP>;
-diff --git a/arch/arm/boot/dts/imx6sll.dtsi b/arch/arm/boot/dts/imx6sll.dtsi
-index bf7f048..b715aa7 100644
---- a/arch/arm/boot/dts/imx6sll.dtsi
-+++ b/arch/arm/boot/dts/imx6sll.dtsi
-@@ -786,7 +786,7 @@
- 				clocks = <&clks IMX6SLL_CLK_MMDC_P0_IPG>;
+-			ocotp: ocotp-ctrl@30350000 {
++			ocotp: efuse@30350000 {
+ 				compatible = "fsl,imx8mn-ocotp", "fsl,imx8mm-ocotp", "syscon";
+ 				reg = <0x30350000 0x10000>;
+ 				clocks = <&clk IMX8MN_CLK_OCOTP_ROOT>;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+index 23e9a4c..c248e7f 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+@@ -340,7 +340,7 @@
+ 				reg = <0x30340000 0x10000>;
  			};
  
--			ocotp: ocotp-ctrl@21bc000 {
-+			ocotp: efuse@21bc000 {
- 				#address-cells = <1>;
- 				#size-cells = <1>;
- 				compatible = "fsl,imx6sll-ocotp", "syscon";
-diff --git a/arch/arm/boot/dts/imx6sx.dtsi b/arch/arm/boot/dts/imx6sx.dtsi
-index 8c4473b..5cccf69 100644
---- a/arch/arm/boot/dts/imx6sx.dtsi
-+++ b/arch/arm/boot/dts/imx6sx.dtsi
-@@ -1053,7 +1053,7 @@
- 				status = "disabled";
- 			};
- 
--			ocotp: ocotp-ctrl@21bc000 {
-+			ocotp: efuse@21bc000 {
- 				#address-cells = <1>;
- 				#size-cells = <1>;
- 				compatible = "fsl,imx6sx-ocotp", "syscon";
-diff --git a/arch/arm/boot/dts/imx6ul.dtsi b/arch/arm/boot/dts/imx6ul.dtsi
-index 505fd4f..a7a85c2 100644
---- a/arch/arm/boot/dts/imx6ul.dtsi
-+++ b/arch/arm/boot/dts/imx6ul.dtsi
-@@ -946,7 +946,7 @@
- 				status = "disabled";
- 			};
- 
--			ocotp: ocotp-ctrl@21bc000 {
-+			ocotp: efuse@21bc000 {
- 				#address-cells = <1>;
- 				#size-cells = <1>;
- 				compatible = "fsl,imx6ul-ocotp", "syscon";
-diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
-index 3904558..4771d70 100644
---- a/arch/arm/boot/dts/imx7s.dtsi
-+++ b/arch/arm/boot/dts/imx7s.dtsi
-@@ -526,7 +526,7 @@
+-			ocotp: ocotp-ctrl@30350000 {
++			ocotp: efuse@30350000 {
+ 				compatible = "fsl,imx8mp-ocotp", "syscon";
+ 				reg = <0x30350000 0x10000>;
+ 				clocks = <&clk IMX8MP_CLK_OCOTP_ROOT>;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+index 978f812..b156cd5 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+@@ -539,7 +539,7 @@
  				};
  			};
  
 -			ocotp: ocotp-ctrl@30350000 {
 +			ocotp: efuse@30350000 {
- 				#address-cells = <1>;
- 				#size-cells = <1>;
- 				compatible = "fsl,imx7d-ocotp", "syscon";
-diff --git a/arch/arm/boot/dts/imx7ulp.dtsi b/arch/arm/boot/dts/imx7ulp.dtsi
-index f7c4878..3674396 100644
---- a/arch/arm/boot/dts/imx7ulp.dtsi
-+++ b/arch/arm/boot/dts/imx7ulp.dtsi
-@@ -452,7 +452,7 @@
- 			reg = <0x410a3000 0x1000>;
- 		};
- 
--		ocotp: ocotp-ctrl@410a6000 {
-+		ocotp: efuse@410a6000 {
- 			compatible = "fsl,imx7ulp-ocotp", "syscon";
- 			reg = <0x410a6000 0x4000>;
- 			clocks = <&scg1 IMX7ULP_CLK_DUMMY>;
+ 				compatible = "fsl,imx8mq-ocotp", "syscon";
+ 				reg = <0x30350000 0x10000>;
+ 				clocks = <&clk IMX8MQ_CLK_OCOTP_ROOT>;
 -- 
 2.7.4
 
