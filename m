@@ -2,84 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFA041E6D4B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 23:10:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 605181E6D5E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 23:13:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YTnXkAmyI+ZAGuM7lsQjC2ebHuWSGtKBJqHOsMLqZW8=; b=W/RxIExcQ9embC
-	G572P89x/O/a78o0SxOmIWX3TiVMyvWoIZ5RjTQhuMhCq37rJhMBILkOLeT2HeUUhdwmmhSrVKOiY
-	Z301aBlReuSm6Y5vtuZ3pwj0NFdpyLgVsLr6x38jEfWoaNfChPj+pIDpxT9x8uNXUaPV49DOiPSMw
-	Hk2ZxZWOGFmYRMO6duwVeI7zDfZWCoyz4HLf1Y/PkiTXT2crh3Mkp8pS9czXOXRJzDR1/BuBrBRDI
-	B+ZBfq5pYXBJ6UbCYuW7olH9F3ljPCDUF7aipyxMBqDUnQl8sZfDqd4DOrxZuxm3dk3cAMzN4kZuy
-	1xV4xp4wSqC+BbWPnppQ==;
+	List-Owner; bh=qfmTe9hSX7RBMef8nbhYrYjugz1Shob9w3bL6Bhlh3s=; b=FRsBKWDXq48YUz
+	clIHTDhE/Q7i2AERihGyZB0V+DDr/Bj0wB50qcbmPGqB49SEhuq7XYPzfcCAIQ1pDIACgRPt6VUJ+
+	h0OL58NI1ZVVj2UT+OM+tJwr17pMx5gfSSrKJnCN3+EoIF8aeELyso435lFKVauUXZgije8rTARu+
+	FrkIP9CLQK6px4kaNGOCBrz8LhAW0UIUOkKcDF/dRteysSZkwY4Gc5mNPLR4nOK3WGOFilJZwQUvS
+	BVXzV3B0sMMPNTA1j2jGpzLEwU101GqtOsfVpHE/Grd0YU9XDHPqT7UqR8H5Gv5dbZOiASdR2ccdt
+	KLz5nXZwKQWIxQENVuFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jePnK-0000Pi-6S; Thu, 28 May 2020 21:10:30 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1jePpi-0000r0-PD; Thu, 28 May 2020 21:12:58 +0000
+Received: from perceval.ideasonboard.com
+ ([2001:4b98:dc2:55:216:3eff:fef7:d647])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jePnB-0000PD-3p
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 21:10:22 +0000
-Received: by mail-io1-f68.google.com with SMTP id c8so31652iob.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 14:10:20 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=6AESZjKsRo2fnaeCFt3ie8q62yK2oF6atXYzGHTWfx4=;
- b=IuFYj7IZYRczCpqAZorxFpzFMajCXP6b7POR+1AOR/lSrR4PpvYVblEtX3kd0003ar
- 99KX/bOYLGPvvKFROZrCWHjKS4faG9yik4Y/ix7xd0zcxYcjhM1/j7QQLxUsOgF626Dj
- N2Yu75gHvmMDtVuczNxVgvjck4KaioAkk9kG/u5npBZygXCwM228fVHbCVVvzjgu3RRC
- TV03U6lRcNEwU4lxlLIKMgF43jvgRC4FsyglrgUDwozUWQT2yotxQ2HFClYtzYdAx/tz
- fdMoS/iGDclk4jeQSxxHBJJG/sf3cEAx1S2hujsIGHAYiJ4vcp9E7+BYmuyi+SrVF4NO
- 353g==
-X-Gm-Message-State: AOAM533PqUv9XIEEi7/hqR3Cvt5eWdHIV2r1FNwXCsMHMqjW4G4DZ/jk
- zonquqGWaKkoK7hiKA+z8Q==
-X-Google-Smtp-Source: ABdhPJwIExRXhFstYmHtSSBnlb7OJBayFPc2AtryCPNDffN7eq2c/9FR1XoR8JDaDfTcKokoMBt/1A==
-X-Received: by 2002:a5e:a61a:: with SMTP id q26mr3896898ioi.207.1590700220245; 
- Thu, 28 May 2020 14:10:20 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id f15sm3775266ill.58.2020.05.28.14.10.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 May 2020 14:10:19 -0700 (PDT)
-Received: (nullmailer pid 689735 invoked by uid 1000);
- Thu, 28 May 2020 21:10:18 -0000
-Date: Thu, 28 May 2020 15:10:18 -0600
-From: Rob Herring <robh@kernel.org>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH] dt-bindings: interrupt-controller: arm, gic: Document
- resets property
-Message-ID: <20200528211018.GA689668@bogus>
-References: <20200519080519.28324-1-geert+renesas@glider.be>
+ id 1jePpY-0000qF-Lf
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 21:12:50 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id 858602A8;
+ Thu, 28 May 2020 23:12:28 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1590700348;
+ bh=mBPwghkxCn/U41zxI9xPuO+7LoQVh7Lh56biCkGXlQg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=CLz8ATsR9sYMn576TdhXMznzLqdtPWMRJV9YwBHepqQT+e4Nm2JQBViTVVPJ8tjhc
+ pedNkvB8zTtsi2pRAOgWBA/vC6ZWlBh/94N6Za9W2Vhe7GYEM2c+Wpr0zb7oowJugC
+ rNucBfzOAdbsTAwI8Kjl18NZJVXA7EC6gQrJWk+Y=
+Date: Fri, 29 May 2020 00:12:14 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 1/4] ARM: dts: dove: Make the DT compliant with the
+ ti,tfp410 binding
+Message-ID: <20200528211214.GA14756@pendragon.ideasonboard.com>
+References: <20200514143612.2094-1-ricardo.canuelo@collabora.com>
+ <20200514143612.2094-2-ricardo.canuelo@collabora.com>
+ <20200528173755.GA113289@bogus>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200519080519.28324-1-geert+renesas@glider.be>
+In-Reply-To: <20200528173755.GA113289@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_141021_154182_19A536F4 
-X-CRM114-Status: GOOD (  10.59  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200528_141248_854662_83E38257 
+X-CRM114-Status: GOOD (  15.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,34 +75,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
- Andre Przywara <andre.przywara@arm.com>, linux-kernel@vger.kernel.org,
- linux-renesas-soc@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Marc Zyngier <maz@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+Cc: devicetree@vger.kernel.org, jason@lakedaemon.net, airlied@linux.ie,
+ shawnguo@kernel.org, dri-devel@lists.freedesktop.org, tomi.valkeinen@ti.com,
+ kernel@collabora.com,
+ Ricardo =?utf-8?Q?Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 19 May 2020 10:05:19 +0200, Geert Uytterhoeven wrote:
-> A generic GIC block embedded in an SoC may be connected to an on-SoC
-> reset controller.  Hence allow the DTS writer to describe this relation,
-> by documenting the optional presence of a "reset" property.
-> 
-> This gets rid of "make dtbs_check" warnings like:
-> 
->     arch/arm/boot/dts/r8a7791-porter.dt.yaml: interrupt-controller@f1001000: 'resets' does not match any of the regexes: '^v2m@[0-9a-f]+$', 'pinctrl-[0-9]+'
-> 
-> Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-> ---
->  .../devicetree/bindings/interrupt-controller/arm,gic.yaml      | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-
-Applied, thanks!
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUm9iLAoKT24gVGh1LCBNYXkgMjgsIDIwMjAgYXQgMTE6Mzc6NTVBTSAtMDYwMCwgUm9iIEhl
+cnJpbmcgd3JvdGU6Cj4gT24gVGh1LCBNYXkgMTQsIDIwMjAgYXQgMDQ6MzY6MDlQTSArMDIwMCwg
+UmljYXJkbyBDYcOxdWVsbyB3cm90ZToKPiA+IERlZmluZSBhICdwb3J0cycgbm9kZSBmb3IgJ2R2
+aTogdmlkZW9AMzknIGFuZCB1c2UgdGhlIHByb3BlciBuYW1pbmcgZm9yCj4gPiB0aGUgcG93ZXJk
+b3duLWdwaW9zIHByb3BlcnR5IHRvIG1ha2UgaXQgY29tcGxpYW50IHdpdGggdGhlIHRpLHRmcDQx
+MAo+ID4gYmluZGluZy4KPiA+IAo+ID4gVGhpcyBmaWxscyB0aGUgbWluaW11bSByZXF1aXJlbWVu
+dHMgdG8gbWVldCB0aGUgYmluZGluZyByZXF1aXJlbWVudHMsCj4gPiBwb3J0IGVuZHBvaW50cyBh
+cmUgbm90IGRlZmluZWQuCj4gCj4gSnVzdCBtYWtlICdwb3J0cycgb3B0aW9uYWwuIFRoaXMgaXNu
+J3QgcmVhbGx5IGFueSBiZXR0ZXIgdW5sZXNzIHlvdSBhZGQgCj4gZW5kcG9pbnRzIHRvby4KCkkg
+d29uZGVyIGhvdyB0aGlzIGlzIHN1cHBvc2VkIHRvIHdvcmsgdGhvdWdoLiBUaGUgdGktdGZwNDEw
+IGRyaXZlciB3aWxsCmZhaWwgdG8gcHJvYmUgaWYgdGhlcmUncyBubyBlbmRwb2ludC4gSSdkIHJh
+dGhlciBhbHJlYWR5IGFkZCBhIG5vZGUgZm9yCnRoZSBEVkkgY29ubmVjdG9yIGFuZCBjb25uZWN0
+IGl0IHRvIHBvcnRAMSBvZiB0aGUgVEZQNDEwLgoKPiA+IFNpZ25lZC1vZmYtYnk6IFJpY2FyZG8g
+Q2HDsXVlbG8gPHJpY2FyZG8uY2FudWVsb0Bjb2xsYWJvcmEuY29tPgo+ID4gLS0tCj4gPiAgYXJj
+aC9hcm0vYm9vdC9kdHMvZG92ZS1zYmMtYTUxMC5kdHMgfCAxMyArKysrKysrKysrKystCj4gPiAg
+MSBmaWxlIGNoYW5nZWQsIDEyIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKPiA+IAo+ID4g
+ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL2RvdmUtc2JjLWE1MTAuZHRzIGIvYXJjaC9h
+cm0vYm9vdC9kdHMvZG92ZS1zYmMtYTUxMC5kdHMKPiA+IGluZGV4IDJiYjg1YTliNzYxNC4uMzI4
+MDRjOTgxNjI1IDEwMDY0NAo+ID4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvZG92ZS1zYmMtYTUx
+MC5kdHMKPiA+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL2RvdmUtc2JjLWE1MTAuZHRzCj4gPiBA
+QCAtMTMyLDcgKzEzMiwxOCBAQAo+ID4gIAlkdmk6IHZpZGVvQDM5IHsKPiA+ICAJCWNvbXBhdGli
+bGUgPSAidGksdGZwNDEwIjsKPiA+ICAJCXJlZyA9IDwweDM5PjsKPiA+IC0JCXBvd2VyZG93bi1n
+cGlvID0gPCZncGlvX2V4dCAzIEdQSU9fQUNUSVZFX0xPVz47Cj4gPiArCQlwb3dlcmRvd24tZ3Bp
+b3MgPSA8JmdwaW9fZXh0IDMgR1BJT19BQ1RJVkVfTE9XPjsKPiA+ICsKPiA+ICsJCXBvcnRzIHsK
+PiA+ICsJCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKPiA+ICsJCQkjc2l6ZS1jZWxscyA9IDwwPjsK
+PiA+ICsJCQlwb3J0QDAgewo+ID4gKwkJCQlyZWcgPSA8MD47Cj4gPiArCQkJfTsKPiA+ICsJCQlw
+b3J0QDEgewo+ID4gKwkJCQlyZWcgPSA8MT47Cj4gPiArCQkJfTsKPiA+ICsJCX07Cj4gPiAgCX07
+Cj4gPiAgfTsKPiA+ICAKCi0tIApSZWdhcmRzLAoKTGF1cmVudCBQaW5jaGFydAoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
+YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
