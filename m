@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C6F91E5804
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 08:58:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D6E81E581C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 09:02:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
 	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
 	From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9pCGftdaKDlCKPh35aVQLOokv4AEryPXpsRI2+yISf8=; b=Wr0zlNpd6ZRw4h
-	3g6EVa0fBdDgzeXZ3dP4HtAZ3jEwScmY7vuO/lXmLfIO2aGoVzSVmsiHoRWhMSY6u368ZE8GUR9O4
-	FuzcgBfoNGK1B9xsUTQ4b5Gc8AaPglkGbaYx6e1cD8Lqtt4IoWby1QjTZSYlpLBPXXtSQJDuUEz34
-	nlZ2LNRmXR8jbJ+BMTyNpfpcUGQhApja8tQaNaCfobFYiLhTfkmE2QyfqVD5vfzlyqh2lEIrjRNbe
-	iqKTVWwwivuL4uME5hS7SEx9Jd2ppwgXmE8lKMveLvMDTSSUVhOnnJevSmzNmCFRsGacjrBMNyv5d
-	lXtF7DgDTVw4R5Cht6kw==;
+	List-Owner; bh=ClXb79krZHSov2NXON03+JT8qZzWQ+dpSwmh4qsBSqU=; b=ifikuQOZaWATPt
+	xd+l+nfrULB1L2UoWGxR7hZN615JRhRDYCGf+tpPTzdmubwdJaYfgUQKgndJvNKvTz1RQ7blpFJL/
+	ItR1mWfwrQSzX7wz52TPY1qLn7OY8nV6/KE05X2ST4vg8F5sI+u3jnyURosydx0n82LiLUsMLE5HP
+	3B25W8kV1xhO6N/R9KYz/Fad2rhRzPz8YumzyRFun51z5seRRM2uV0ay5bN0v7rl7nzrzNV2Ie0Gt
+	y4oapau3wT+bh1SLASLxLOYfDlFA1DM9VPh5chkjiOLcMG1RykOPwuyaMri2Bfgiqkwq9Flx7OyRJ
+	utjphnPZ8hsSIO3JQ7oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeCUS-0005tT-Vm; Thu, 28 May 2020 06:58:09 +0000
-Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
+	id 1jeCYa-0000lZ-Ke; Thu, 28 May 2020 07:02:24 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeCUL-0005sl-KK
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 06:58:03 +0000
-Received: by mail-ej1-x644.google.com with SMTP id k11so5634969ejr.9
+ id 1jeCYR-0000bz-FH
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 07:02:17 +0000
+Received: by mail-ej1-x643.google.com with SMTP id h21so30857430ejq.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 23:58:01 -0700 (PDT)
+ Thu, 28 May 2020 00:02:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:reply-to:from:date:message-id
  :subject:to:cc;
- bh=l30+XH7GIqcPUFeaZG9f/zXlLL1cUH8oN11gUUpIQH8=;
- b=t/IILzIyVUFJKLVaKcWqmVulVV3hiYboHW7owxFQMjo4HkTxeqiIsWaaSi3tTSXQGG
- JyD/vL32GnFKt7rYUM1qP4DY80SPsqSSuI2uxfO1vn+MwSc1L5ijQ6E62up8o9IT0NBW
- UWBqRM499LidI+guRHky7fd5LI/B9TwFXwQYqLa0Rt8jNCFftaM8QM1DrWDjje9TcDWx
- F2d62XVAKpy6CAMNUDe1YEBMiD7GOdU2wUX2wKiQWMXcI9hSto4X9kcyiZ0R7u9uHdJo
- x1utqSDzWcHW+N8BB20XbgfeOQTBLrU+50zkBsPrZjmLnfHUw+CagIdoSgh6Jy0SRJ2L
- ++uA==
+ bh=WaItKJRCBat4XMITP05DOJ0vrN7SQihwq33TZYRmdLs=;
+ b=n7vVqx+Z5lnOfcJhZGB36iMnkqTyTgkgBJGJUOOwzYsjkaYIHKFDhL6D+2d2S7eHbe
+ RALIc54ulwNDOBjj1iK3Wgmjde11GdMHywyEdRGwCtcaX0Md3GRE8ZJHjM8mFO/ZCQvX
+ mClUbvdTMgsEd641E8lm2ST88yshg4Otc6X+ZJuzTYfgjgrRf4i6NmzOGk5rLOYr8YCd
+ McfCsuNW4XGwUT0aGxqX1jtWIbG3Ta8+LIPj2dn7+bXZuMY219gG8iBz2hN+RXY1pnuN
+ pZLTKXzlsI75VIMNUELkniiwoL1lyZwSthy/27kvRh+kt5FYOoWPBaauZwiZghdC/I9+
+ 7oAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:reply-to
  :from:date:message-id:subject:to:cc;
- bh=l30+XH7GIqcPUFeaZG9f/zXlLL1cUH8oN11gUUpIQH8=;
- b=DNHPCdcqOI+KQns+8itpAZAloO3/KdtM8IccYmpdU5TjwPDglp2rGzi9pw3Mylw/9y
- iP93I4PSRN/pIPrr57La9yXy+pMBm+le4TonavK5ITNX/QzeNRoDeiRz/aVz26aTxagH
- TIvFr10jC1/noqhx4b+1/QLrqAT5vtDUqrPuMC6NUqavoFKri8/AupAqQ62emk2Hxmid
- XYaEWB6xyHIUsc5aWrXC3i5Gt/MjO66QH1TQXvwefL6O5lZDfZaqwlieZr8YqvP0Js7Y
- wDQmPV9ifW9tFv62n5Fk/lUUFdsLMfHshsfseG56OH296LsTSOS2ftoxtBDOC7mNd/lb
- 9ryA==
-X-Gm-Message-State: AOAM532swazPScxID5+hqMW6mYurxJegtn32VEdG1zjsiElChL7vqdAr
- 7sTT5yu20WLaPA/B4Xxkgnk2So24kSeokvBm93c=
-X-Google-Smtp-Source: ABdhPJwIUqdDsy4Ne4drAA5CiYn8Fuz53Xu/Z9G4g6JWO0nsFtF7JHCXsyBvqrV+JFPNGYy9fdNYyuD2DqhoY2pJa/g=
-X-Received: by 2002:a17:906:8492:: with SMTP id
- m18mr1660565ejx.168.1590649080199; 
- Wed, 27 May 2020 23:58:00 -0700 (PDT)
+ bh=WaItKJRCBat4XMITP05DOJ0vrN7SQihwq33TZYRmdLs=;
+ b=ZtT6ePd/zi4kIV6DoPJQSbwYQnOEWrjLoifDmt8ndMqJMwLIZ7HMexI+CgmhsP0KkC
+ aovFRcjey7rPF+DfAibVEEnnK5C8Y3c+SYqmj2FpZiuMQoHiA1tgq9wOmlo5MLR1+4jd
+ tYkXrySgOKvz/I5j6VP2DRzuL8+pLf66u/RCDBY52w1Usaqkn/90u18BgNF9CL7hMN7H
+ gfuEfs6rxVfAwQD0CMJYPve3azqrdzoND/YWqdVWBsteElPI6iSd2BKRFHVOSeZS26cq
+ 8IRapLZ01dgWG4iWs9RIH1EygIifmTEVcDLe7EETXZI6tdxVw6xF6o8/kZRClM3a6v74
+ h6OQ==
+X-Gm-Message-State: AOAM533bI2Ui/jVx82FhQc/sSneR8QqKI7GtfH8BPVvaBWtEnnnBl0XR
+ npZvDjYC2q3KvvaAZBmuRULLoli44EQm7aIF0yw=
+X-Google-Smtp-Source: ABdhPJxtQKImAJSqXwa6UQU7yyDXiXDfNjBoTpRYI3HzUIJEZ9dzVyLB6BZLFSMGOK929j1yFP2fQ3GuU9HZceHtCZ8=
+X-Received: by 2002:a17:906:2dc8:: with SMTP id
+ h8mr1816818eji.108.1590649330841; 
+ Thu, 28 May 2020 00:02:10 -0700 (PDT)
 MIME-Version: 1.0
 References: <1590614258-24728-1-git-send-email-Dave.Martin@arm.com>
- <1590614258-24728-4-git-send-email-Dave.Martin@arm.com>
-In-Reply-To: <1590614258-24728-4-git-send-email-Dave.Martin@arm.com>
+ <1590614258-24728-3-git-send-email-Dave.Martin@arm.com>
+In-Reply-To: <1590614258-24728-3-git-send-email-Dave.Martin@arm.com>
 From: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
-Date: Thu, 28 May 2020 08:57:49 +0200
-Message-ID: <CAKgNAkg4P4GTVEoVXZd6yzpr97S0H+N8pdtwptJXaJBHfLAzKQ@mail.gmail.com>
-Subject: Re: [PATCH v2 3/6] prctl.2: Add PR_SPEC_DISABLE_NOEXEC for
+Date: Thu, 28 May 2020 09:01:59 +0200
+Message-ID: <CAKgNAkhwYASEM+wqaDZQ-ftcB3jnsVN2cXq4E_1ep1rqv+4aLw@mail.gmail.com>
+Subject: Re: [PATCH v2 2/6] prctl.2: Add PR_SPEC_INDIRECT_BRANCH for
  SPECULATION_CTRL prctls
 To: Dave Martin <Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_235801_684735_01704FF8 
-X-CRM114-Status: GOOD (  16.96  )
+X-CRM114-CacheID: sfid-20200528_000215_517115_8ECD61CF 
+X-CRM114-Status: GOOD (  18.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:644 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [mtk.manpages[at]gmail.com]
@@ -99,7 +99,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Reply-To: mtk.manpages@gmail.com
 Cc: linux-arch <linux-arch@vger.kernel.org>,
  linux-man <linux-man@vger.kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Waiman Long <longman@redhat.com>
+ Tim Chen <tim.c.chen@linux.intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -109,75 +109,72 @@ Hi Dave,
 
 On Wed, 27 May 2020 at 23:18, Dave Martin <Dave.Martin@arm.com> wrote:
 >
-> Add the PR_SPEC_DISABLE_NOEXEC mode added in Linux 5.1
-> for the PR_SPEC_STORE_BYPASS "misfeature" of
-> PR_SET_SPECULATION_CTRL and PR_GET_SPECULATION_CTRL.
+> Add the PR_SPEC_INDIRECT_BRANCH "misfeature" added in Linux 4.20
+> for PR_SET_SPECULATION_CTRL and PR_GET_SPECULATION_CTRL.
 >
 > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-> Cc: Waiman Long <longman@redhat.com>
+> Cc: Tim Chen <tim.c.chen@linux.intel.com>
 > Cc: Thomas Gleixner <tglx@linutronix.de>
 
-I had already applied your earlier send of this patch (in a private
-branch). I'll push those changes shortly.
+I had also applied this patch from the email you sent earlier. I've
+pushed those changes to master now.
 
-Cheers,
+Thanks,
 
 Michael
 
 > ---
->  man2/prctl.2 | 22 ++++++++++++++++++++--
->  1 file changed, 20 insertions(+), 2 deletions(-)
+>  man2/prctl.2 | 24 ++++++++++++++++++------
+>  1 file changed, 18 insertions(+), 6 deletions(-)
 >
 > diff --git a/man2/prctl.2 b/man2/prctl.2
-> index b6fb51c..cab9915 100644
+> index dc99218..b6fb51c 100644
 > --- a/man2/prctl.2
 > +++ b/man2/prctl.2
-> @@ -1187,6 +1187,12 @@ The speculation feature is disabled, mitigation is enabled.
->  Same as
->  .B PR_SPEC_DISABLE
->  but cannot be undone.
+> @@ -1213,11 +1213,20 @@ arguments must be specified as 0; otherwise the call fails with the error
+>  .\" commit 356e4bfff2c5489e016fdb925adbf12a1e3950ee
+>  Sets the state of the speculation misfeature specified in
+>  .IR arg2 .
+> -Currently, the only permitted value for this argument is
+> +Currently, this argument must be one of:
+> +.RS
 > +.TP
-> +.BR PR_SPEC_DISABLE_NOEXEC " (since Linux 5.1)"
-> +Same as
-> +.BR PR_SPEC_DISABLE ,
-> +but but the state will be cleared on
-> +.BR execve (2).
->  .RE
->  .IP
->  If all bits are 0,
-> @@ -1251,6 +1257,17 @@ with the same value for
->  .I arg2
+>  .B PR_SPEC_STORE_BYPASS
+> -(otherwise the call fails with the error
+> +speculative store bypass control, or
+> +.\" commit 9137bb27e60e554dab694eafa4cca241fa3a694f
+> +.TP
+> +.BR PR_SPEC_INDIRECT_BRANCH " (since Linux 4.20)"
+> +indirect branch speculation control.
+> +.RE
+> +.IP
+> +(Otherwise the call fails with the error
+>  .BR ENODEV ).
+> -This setting is a per-thread attribute.
+> +These settings are per-thread attributes.
+>  The
+>  .IR arg3
+>  argument is used to hand in the control value,
+> @@ -1235,13 +1244,16 @@ Same as
+>  .BR PR_SPEC_DISABLE ,
+>  but cannot be undone.
+>  A subsequent
+> -.B
+> -prctl(..., PR_SPEC_ENABLE)
+> +.BR prctl (\c
+> +.IR arg2 ,
+> +.BR PR_SPEC_ENABLE )
+> +with the same value for
+> +.I arg2
 >  will fail with the error
 >  .BR EPERM .
-> +.\" commit 71368af9027f18fe5d1c6f372cfdff7e4bde8b48
-> +.TP
-> +.BR PR_SPEC_DISABLE_NOEXEC " (since Linux 5.1)"
-> +Same as
-> +.BR PR_SPEC_DISABLE ,
-> +but but the state will be cleared on
-> +.BR execve (2).
-> +Currently only supported for
-> +.I arg2
-> +equal to
-> +.B PR_SPEC_STORE_BYPASS.
 >  .RE
 >  .IP
->  Any unsupported value in
-> @@ -1899,11 +1916,12 @@ was
->  .BR PR_SET_SPECULATION_CTRL
->  and
+> -Any other value in
+> +Any unsupported value in
 >  .IR arg3
-> -is neither
-> +is not
->  .BR PR_SPEC_ENABLE ,
->  .BR PR_SPEC_DISABLE ,
-> +.BR PR_SPEC_FORCE_DISABLE ,
->  nor
-> -.BR PR_SPEC_FORCE_DISABLE .
-> +.BR PR_SPEC_DISABLE_NOEXEC .
->  .SH VERSIONS
->  The
->  .BR prctl ()
+>  will result in the call failing with the error
+>  .BR ERANGE .
 > --
 > 2.1.4
 >
