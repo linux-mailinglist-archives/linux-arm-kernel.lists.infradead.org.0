@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B747D1E5928
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 09:43:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB12A1E5923
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 09:42:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RV08cEgHLEpE28UIcQP6J+Qj1CcdgojruIHm5963+vE=; b=HgEBeTpG/qCaSK
-	0hkT/3au/fpaHqRNzURiLh7tfdskpIdzbBiD0Ld0nA2MS59di6+UzNZolhxRkYTi7L6bxhIttxcGa
-	W83eWuIDWeg6Ycq5hZbwk0S7fjYiAVYTGy8JJ+kO+vPBTst4VzD68Jd0hmeZ/HF7Z2mbksmCH1FY+
-	2rQypxv5IKqGQ/WuHdRKR0tH02byd4Ofo0ngtv14k5Nbiqy/SV041yz4EVaYziJOHoBLwrDC0FPco
-	qinVETPDNNe+Js3lwsaVflW7hmUj9Yu+qMrWhgvoTdmynf6uiclq4G8tBYjJJsVxSIgXZlxhqxQYZ
-	iRhWvOf1HAPnKlP7xcuw==;
+	List-Owner; bh=PUFubztKFgEVNVdY1+fTpKzDhMKv3ZO3qyToFKGBftA=; b=Z4J31636MQ9MOg
+	wFIVtO0Lk7V7DB66+4NMLfz74mq9nmM/rF+Tm4xMTc/DBq86QAyZtS184CWu+2cZLCiLbQawlw7Wf
+	rds+rex+4Se9gqUmE1Gne4nH3OK217ZjBXwkuhbraZW/LQzjF3LtOBAc3tqZDrAAjs0tW0HRWDuCL
+	dVHv+HTsBoe5+/QjZTzwxlkTV3JyTCrjPXP6ZhnbFs4MDx2ArZx4YLyt+JcH3qDcEEvmURTKNHVKP
+	xOvScH5k+nXjrP+ae5igOTXmUiWaHFB9Js/m5KEjm30KQjMf3kx4TAhkk76izAHSwIv5dmiE78tzU
+	zC8OU3DUG/BQURHY1vXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeDCC-0001J9-7Q; Thu, 28 May 2020 07:43:20 +0000
+	id 1jeDBe-0000lb-Ja; Thu, 28 May 2020 07:42:46 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeD8T-00049q-U0
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 07:39:32 +0000
+ id 1jeD8N-00044Y-88
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 07:39:26 +0000
 Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04S7cEfk021437; Thu, 28 May 2020 09:39:22 +0200
+ 04S7cIbi021615; Thu, 28 May 2020 09:39:15 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=FD9fIXxwV2oHTn6w6OIQVc/O0NAdIHR1RVt7JqzrGl8=;
- b=PIaFp3l+6vcRMk3KVG/OUCMq+hhB3SF+Fy4OXA1IdnCK5tSivVuC5f8lN1SMMcLyjnzF
- VJzCqTemMYPbEN4M0wLcnbnLXdZzE4/+/EggmTbQcXWrvqQpoJLmxr1pugn05WrGt6RP
- 3zT3LoiZ0WCSUGNAApQ49mJC8DDyDQsHjfWEEUxzLsDvqOp0ztc12IVkZGcvm075dhCO
- 9NaiyMcvlRvl+hzT5b1L3NSAwUAfmkXlJ+xKNrEEDd8Lllwe5huiwXreVzq4Oep3NO9e
- Qx3kx7/fBgEYsvVCeqmhpFtxZGrILbAGK7kmGkztQ6Bk16PPrgC7wVGaFsNmxToTehNm Wg== 
+ bh=Czrynlm97B4km/mdwdtE92PGZORQSK+XFneMmyWlY4g=;
+ b=r8qZdN0VivBTcih08Vo4TPKaNpGdQC3h4t8iOUHpvNf94XQUnQOuyvHHvH0Fg9ujv7qv
+ Imngto15NAnypUvKpaIKGz79Jp7PCfWqfhqjD6yXx4nx/IwMTPiywQwoqRujLeXtBVlt
+ QnI6U67+hiKLBfQTCdl9fe9IeN0PeKLLT96smAhhTINBBAbHNXkpHGgvrp0z/NgFH6ja
+ Uvk9332a8ukgqpE85aedpk5fepZqRik6l18cGzsNgdOSh6lDCH2QntEC97qVtyq2fMbC
+ vTIUOF6XKo+pTl9m53LRL7m8xoI0xgw6FKvOkFsONeY0WAScswdg6GYrG9hcl+PmNqvn Gg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 319mfanmas-1
+ by mx07-00178001.pphosted.com with ESMTP id 319mfanmaw-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 28 May 2020 09:39:22 +0200
+ Thu, 28 May 2020 09:39:09 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7C10610002A;
- Thu, 28 May 2020 09:38:59 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 41287100034;
+ Thu, 28 May 2020 09:39:00 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6FA982B187F;
- Thu, 28 May 2020 09:38:59 +0200 (CEST)
-Received: from localhost (10.75.127.45) by SFHDAG3NODE1.st.com (10.75.127.7)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 28 May 2020 09:38:58
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3431E2B187F;
+ Thu, 28 May 2020 09:39:00 +0200 (CEST)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE1.st.com (10.75.127.7)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 28 May 2020 09:38:59
  +0200
 From: Erwan Le Ray <erwan.leray@st.com>
 To: Maxime Coquelin <mcoquelin.stm32@gmail.com>, Alexandre Torgue
  <alexandre.torgue@st.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
  <mark.rutland@arm.com>
-Subject: [PATCH 2/3] ARM: dts: stm32: Update pin states for uart4 on
- stm32mp157c-ed1
-Date: Thu, 28 May 2020 09:38:52 +0200
-Message-ID: <20200528073853.24759-3-erwan.leray@st.com>
+Subject: [PATCH 3/3] ARM: dts: stm32: Update UART4 pin states on
+ stm32mp15xx-dkx
+Date: Thu, 28 May 2020 09:38:53 +0200
+Message-ID: <20200528073853.24759-4-erwan.leray@st.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200528073853.24759-1-erwan.leray@st.com>
 References: <20200528073853.24759-1-erwan.leray@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE1.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG7NODE3.st.com (10.75.127.21) To SFHDAG3NODE1.st.com
  (10.75.127.7)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
  definitions=2020-05-28_02:2020-05-28,
  2020-05-27 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_003930_282249_01C83A7D 
-X-CRM114-Status: GOOD (  11.34  )
+X-CRM114-CacheID: sfid-20200528_003923_584248_5AA2F181 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -110,11 +110,11 @@ Add sleep and idle states to uart4 pin configuration.
 
 Signed-off-by: Erwan Le Ray <erwan.leray@st.com>
 
-diff --git a/arch/arm/boot/dts/stm32mp157c-ed1.dts b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-index 32ccd50b4144..ca109dc18238 100644
---- a/arch/arm/boot/dts/stm32mp157c-ed1.dts
-+++ b/arch/arm/boot/dts/stm32mp157c-ed1.dts
-@@ -353,8 +353,10 @@
+diff --git a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+index 70db923a45f7..e5fdbc149bf4 100644
+--- a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
++++ b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
+@@ -584,8 +584,10 @@
  };
  
  &uart4 {
