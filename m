@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D93BF1E5EA8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 13:48:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D88E81E5EAD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 13:48:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=MnhO3crlu3TesYk/DE6vSUJOUq3jbwYjXOgd4pI1Dj0=; b=eO3s2j2akE+Ry8yk/cTRsbVMb3
-	T67Wz+HOb1sw3i0L0amAfoatyy9vO8xyjoZbigsRkgWmcpIBfkR8y6e+JV6NLXLIfoxvE5w2s/cGT
-	mYfteIOZ3TT8iGVXWv3BIG58P68iCXv3SaZ0MtQl7LzP4BIIxQg3nYxPev0GC5j3dsdmzeUI7somp
-	qPuWGAtxGDxtMdphZDC4lfU8qvP05Wufy/bVxTtDuBrZpSDQMJqCTkBkEfMyAGpkzFqK8+g4K6uGk
-	8uNZ/6Mm/hlyEOi/2kySjxDlohS+NoXt46Oan/Cg0yfRLsjP3vhShmIZBGlR9JGiG4HX6WQnMuNhe
-	L3k/Iwng==;
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Fr2aYxeYqym/u5MU9WOI7CnIfDFM0+rhK8UiYUdY8hY=; b=UQPczy/DGpEzKO
+	PEIaq/j2EicV4VggCRkm967LvpOPliOXBxn+TOR1ZCdgPkwvgSk1ZLvwwikf0EsniHKxvYelNrh2Z
+	PqYRDc4ScJJFdz1p2Biq6k8ozXf+XkHrTKa8vrNv3N1+4s4sPneYZtBmP4e+wRuZ7Wn0VkVE0eVJI
+	MBbpyka0aHtFvkVGSOW8PbNAXXYTaHm0tC5A/pwNCC0bdVTJROpp98xO3Jb8GMyhtbaaMBALbIjCz
+	ixTTFHGlJR16OgeasssFnifYcY8gjMIAQiyldfjAkqcczgOrHiGu27nOxhz7lMIuQf+0hwewi5jeZ
+	qcE3U0pJxh5iRtKKFO7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeH10-0004P8-Im; Thu, 28 May 2020 11:48:02 +0000
-Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+	id 1jeH1j-0004fC-8H; Thu, 28 May 2020 11:48:47 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeH0o-0004Og-Ll
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 11:47:52 +0000
+ id 1jeH1T-0004eb-5N
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 11:48:35 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1590666469;
+ s=mimecast20190719; t=1590666510;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:mime-version:mime-version:content-type:content-type:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=Jk8MvRz2TIyd2vNEDMfNEKXTYajcQBFG09vQzjeSIRw=;
- b=TyKmoHmhpjvF97k2tbMqGz35eVxwUPB0YfSIVGShlgdRGKBqPGffD6ycbYnVM4PH251Oz2
- fnmeq1TdqhEFYOocX7cmlj4Qakr2VmmaTBXzHvl4CWb0LGzIXFmjhNy1RwDNgbWTJ5llpJ
- y/2XebjCFv+VAFtr0lbvLP1IuKj6XBU=
+ bh=xnHQtkliN6rluxUd6WzwCffgmVvNtrEVoosP3+lcIzw=;
+ b=Ti+huU+44GNfyOr+yKiSYlj1gMS8j8UO0XN4Vt3jY8RC0vlESjfRj7dN9zwuf3P3u7ulkE
+ m1ac0B3JPvZ0UP8LwIlMK154M9tRQcWdpbKA2G8dFHcAWouEdatUTaaI7kuB3M341psLk+
+ padcKmnMcrdVPVZ23hiJ0haKflpjinE=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-505-YV2gZRbRMjuDVDhJGNnrow-1; Thu, 28 May 2020 07:47:43 -0400
-X-MC-Unique: YV2gZRbRMjuDVDhJGNnrow-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
+ us-mta-102-hG7-F5FkNdCHgU06SfcwLQ-1; Thu, 28 May 2020 07:48:25 -0400
+X-MC-Unique: hG7-F5FkNdCHgU06SfcwLQ-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 985D1107ACCD
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 11:47:42 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 48208107ACF2;
+ Thu, 28 May 2020 11:48:21 +0000 (UTC)
 Received: from [10.36.113.56] (ovpn-113-56.ams2.redhat.com [10.36.113.56])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id ECAC160C81
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 11:47:41 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 57FE87A8BA;
+ Thu, 28 May 2020 11:48:15 +0000 (UTC)
 Subject: Re: [RFC PATCH] iommu/arm-smmu: Add module parameter to set msi iova
  address
-To: linux-arm-kernel@lists.infradead.org
+To: Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>
 References: <1590595398-4217-1-git-send-email-srinath.mannam@broadcom.com>
  <f9b221cf-1c7f-9f95-133b-dca65197b6c2@arm.com>
  <CABe79T7WwD2AyWp2e5pAi8TO2r5=-v5gPb2Gjtf8EhHOn3dogQ@mail.gmail.com>
@@ -62,30 +60,28 @@ References: <1590595398-4217-1-git-send-email-srinath.mannam@broadcom.com>
  <0076d965-b180-fc44-103c-9bc9d73fe7f2@redhat.com>
  <25ad278ae9ed4833aeb7b625fcb89d88@huawei.com>
 From: Auger Eric <eric.auger@redhat.com>
-Message-ID: <a6f8ecbb-15dd-ada2-cf23-0f4265a33b74@redhat.com>
-Date: Thu, 28 May 2020 13:47:40 +0200
+Message-ID: <9aeb1cd5-48de-f581-1212-5c7b95fd8338@redhat.com>
+Date: Thu, 28 May 2020 13:48:13 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.4.0
 MIME-Version: 1.0
 In-Reply-To: <25ad278ae9ed4833aeb7b625fcb89d88@huawei.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_044750_795167_04693007 
-X-CRM114-Status: GOOD (  30.42  )
+X-CRM114-CacheID: sfid-20200528_044831_285657_34C831D8 
+X-CRM114-Status: GOOD (  30.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [207.211.31.81 listed in wl.mailspike.net]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.61 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -106,12 +101,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ Srinath Mannam <srinath.mannam@broadcom.com>,
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Shameer,
+
 
 On 5/28/20 11:15 AM, Shameerali Kolothum Thodi wrote:
 > 
