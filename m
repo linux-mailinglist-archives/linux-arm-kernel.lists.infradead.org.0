@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 307321E54A1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 05:24:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A6BB1E54A0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 05:24:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=tLDJvUV2yNQKam0YCWmNee35b7h5W12yo3Cv8YoR1xA=; b=Q2ESdPgx6tcSwcHbWOEaWqpF1f
-	J7Fo6i+OnNDL1kxyqa+DYIrzLDdegJH2RCjIBmrmHo37ngYRye7JEX9XwrHqAsiQTyTjGkW51el4I
-	6sx92dNs3PS+h7tLI84Mmwo6ULwRITWcwt2wIHypod7G/bOxJV96rDpLFBQC4YgGsahnkb9U8P18t
-	0B60xjo6cIuGhHRZnGuQkC3Um7AOHKeN8hZhyQGkvTSQD/ZjSSeEgT4t0Rzg9A319sMJZQSOkb065
-	TSqO7Ec3TmgakZLkf/nhBLtcFk+sCeD77zyzdkewhr7KLp3n837xT+2PAztfQ6Rlqn3gN0OzY9G6g
-	cQjc8YTg==;
+	bh=V91jdNiM4t3hJcY2FYG6oFITEyxqNtAWl5FdqeSVdIE=; b=JR7yTbX0QzrN/y3K6crpxZCpGO
+	IfEyLKAUF7smf1voxoVG9YuOj1bFZzCUn66Im6cc3fyU1q7Ng9zT6ogNFVEhyIEpvbi65n7yq2krt
+	kwo5xe+91VcfmGKBbhNnwrMzeMF05kadWlh4TFYdMuSIO248Gcqn/Zd9t0/uYLtdAZ+TbwArpD18d
+	vBzVTd5LOWShuw9oCfa6/GgKoIsGO3X4k1pIrvjv21aH+Fj1lnpc6hlccU00lSUK9CVyzGfGLMDQk
+	pW2xz+XSTC5HGNOVv9HbJgBZjGr62VItAiDOXg6CtD9jMl9mP7B7OfirVkwleWKti4ZZoah7XOrTY
+	W/1J7HYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je99p-0006Yu-QK; Thu, 28 May 2020 03:24:37 +0000
+	id 1je99c-0006Kr-BV; Thu, 28 May 2020 03:24:24 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je98f-0005mM-1c
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 03:23:26 +0000
+ id 1je98b-0005hd-1i
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 03:23:22 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9C84020092F;
- Thu, 28 May 2020 05:23:12 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 696E6200960;
+ Thu, 28 May 2020 05:23:14 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 836D9200601;
- Thu, 28 May 2020 05:23:04 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5039F200961;
+ Thu, 28 May 2020 05:23:06 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4D015402D3;
- Thu, 28 May 2020 11:22:54 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1B720402DF;
+ Thu, 28 May 2020 11:22:56 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, daniel.baluta@nxp.com,
@@ -44,16 +44,16 @@ To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  l.stach@pengutronix.de, andrew.smirnov@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 2/4] arm64: dts: imx8m: change ocotp node name on i.MX8M SoCs
-Date: Thu, 28 May 2020 11:12:48 +0800
-Message-Id: <1590635570-8541-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 3/4] ARM: dts: imx: change ocotp node name on MXS SoCs
+Date: Thu, 28 May 2020 11:12:49 +0800
+Message-Id: <1590635570-8541-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1590635570-8541-1-git-send-email-Anson.Huang@nxp.com>
 References: <1590635570-8541-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_202325_238689_E97D2B96 
-X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-CacheID: sfid-20200527_202321_235473_2AB67C48 
+X-CRM114-Status: UNSURE (   9.13  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -82,69 +82,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Change OCOTP node name from ocotp-ctrl to efuse to be compliant with
-yaml schema, it requires the nodename to be one of "eeprom|efuse|nvram".
+Change OCOTP node name from ocotp to efuse to be compliant
+with yaml schema, it requires the nodename to be one of
+"eeprom|efuse|nvram".
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mm.dtsi | 2 +-
- arch/arm64/boot/dts/freescale/imx8mn.dtsi | 2 +-
- arch/arm64/boot/dts/freescale/imx8mp.dtsi | 2 +-
- arch/arm64/boot/dts/freescale/imx8mq.dtsi | 2 +-
- 4 files changed, 4 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/imx23.dtsi | 2 +-
+ arch/arm/boot/dts/imx28.dtsi | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index aaf6e71..740cc62 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -467,7 +467,7 @@
- 				reg = <0x30340000 0x10000>;
+diff --git a/arch/arm/boot/dts/imx23.dtsi b/arch/arm/boot/dts/imx23.dtsi
+index c5edff3..18289f6 100644
+--- a/arch/arm/boot/dts/imx23.dtsi
++++ b/arch/arm/boot/dts/imx23.dtsi
+@@ -442,7 +442,7 @@
+ 				status = "disabled";
  			};
  
--			ocotp: ocotp-ctrl@30350000 {
-+			ocotp: efuse@30350000 {
- 				compatible = "fsl,imx8mm-ocotp", "syscon";
- 				reg = <0x30350000 0x10000>;
- 				clocks = <&clk IMX8MM_CLK_OCOTP_ROOT>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index 9a4b65a..0625cc8 100644
---- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -374,7 +374,7 @@
- 				reg = <0x30340000 0x10000>;
+-			ocotp@8002c000 {
++			efuse@8002c000 {
+ 				compatible = "fsl,imx23-ocotp", "fsl,ocotp";
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
+diff --git a/arch/arm/boot/dts/imx28.dtsi b/arch/arm/boot/dts/imx28.dtsi
+index a1cbbeb..a2b799c 100644
+--- a/arch/arm/boot/dts/imx28.dtsi
++++ b/arch/arm/boot/dts/imx28.dtsi
+@@ -1011,7 +1011,7 @@
+ 				status = "disabled";
  			};
  
--			ocotp: ocotp-ctrl@30350000 {
-+			ocotp: efuse@30350000 {
- 				compatible = "fsl,imx8mn-ocotp", "fsl,imx8mm-ocotp", "syscon";
- 				reg = <0x30350000 0x10000>;
- 				clocks = <&clk IMX8MN_CLK_OCOTP_ROOT>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-index 23e9a4c..c248e7f 100644
---- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
-@@ -340,7 +340,7 @@
- 				reg = <0x30340000 0x10000>;
- 			};
- 
--			ocotp: ocotp-ctrl@30350000 {
-+			ocotp: efuse@30350000 {
- 				compatible = "fsl,imx8mp-ocotp", "syscon";
- 				reg = <0x30350000 0x10000>;
- 				clocks = <&clk IMX8MP_CLK_OCOTP_ROOT>;
-diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-index 978f812..b156cd5 100644
---- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-@@ -539,7 +539,7 @@
- 				};
- 			};
- 
--			ocotp: ocotp-ctrl@30350000 {
-+			ocotp: efuse@30350000 {
- 				compatible = "fsl,imx8mq-ocotp", "syscon";
- 				reg = <0x30350000 0x10000>;
- 				clocks = <&clk IMX8MQ_CLK_OCOTP_ROOT>;
+-			ocotp: ocotp@8002c000 {
++			ocotp: efuse@8002c000 {
+ 				compatible = "fsl,imx28-ocotp", "fsl,ocotp";
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
 -- 
 2.7.4
 
