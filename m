@@ -2,89 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F9651E54C9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 05:47:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA4481E54DD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 06:02:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pYPqtEPgpPYPjjCTHb/xF/V2BUP5HHmkElhT46Xgk5U=; b=jPwRPS2bc87QFw
-	h0q1qMlyJiagZiT7nrTcgzieOvCEnfm1Z7ZF+UKtEMOo4791zUUugJlL3GJtGPqPVvIKBTcmRKLH7
-	eTjbFcSO3nyZHL7+Z+9oN+++jWtei6Hkq5oc9XtDrbsPyCLEeuMEF7ZlxC1k7DZQWxFdT/yyvNQeW
-	+fIWwJbuAP5iH/YwypmtwB50m6u7KKXjzjniemuZdgZiuEf/Fm4SoYxs8sOgQxnityovXmzck5Vjb
-	msBNGMhjROljM8yMytkGBPsWSTiQqSE/rUPejOvGEyYdCiIBYoCwL4D6XW6CCE2TmjVnIiiY0cMfa
-	/gcf5f2kAh2XWnwJeQrg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=I5Q8P1k2i5fbkYwBmTe3AZV+Kbcjbphj511b0Jatz/0=; b=ZGR
+	Y2OjqXwJCbSYt+lgRqSf9MI2D1svnqX0Gv4DSjLZL+SPHvThohJOMAAy/86EB3zc6UFUea0/KEWEy
+	wV9STTvNWdF04VxGAslYQ0uzpxp+Fd0cGlsYAu/3w2xNbsJ1db3mKJ77yd72ErcR8k32sXxlqoOZi
+	+0GG6lyaGD+x3JDrHH0+yxgP5Q/r0JB4fg4SN++6HyAw5VFdDWQr6SW16H3h5SzcYfhJQQpHKGGZ0
+	WU5OMN1fUEvgD71dIZN2iPNdY0LBMTLU/JFYEqsPyrdbIpgfTlkOp2aKbxOagUP126hxpe7bKI2C5
+	YgOwWPys6DagrsFlpJLkyyH45Tzxjsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je9Vl-0006Tk-O4; Thu, 28 May 2020 03:47:17 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1je9ki-0007Ze-HA; Thu, 28 May 2020 04:02:44 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je9Vc-0006Rv-1r
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 03:47:09 +0000
-Received: by mail-oi1-x243.google.com with SMTP id w4so23803304oia.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 20:47:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:in-reply-to:message-id:references
- :user-agent:mime-version;
- bh=2qx91aVPuFO0vUiP0/I7F3TMnsxZODsCo0wW/nZA/Ek=;
- b=PL6zETkbGU9mqzrGsocE1HBzwqKl3IMV7yV8wFZbGm4wHOwRBD8OMMG+y5JKGvCgPi
- vm5n3+sf1eGzsQmqX4L8++JRmCX3DzLApuWLh2lFuHx1IPNt0zVceXBi8JMZm08yMjJi
- dgTLtqCBs6olHY2rqJsuK9NL5GyMjlA9kP/Cz6nR6Si2xwGFFoE603kc/Dr53G3rQp6S
- gFBb+PddTEBGiaWOuBvRGs40Im9zVq8VTNmoIb/MzDf19j1pLiqnHKik2BuMsIkBrRbh
- TYnm6OVvmQUcyWzw/IOjcAS7zNs0Q98eBrYT94efLyjDduG9AxjlXGJtnrsATHUpOImZ
- HIag==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:in-reply-to:message-id
- :references:user-agent:mime-version;
- bh=2qx91aVPuFO0vUiP0/I7F3TMnsxZODsCo0wW/nZA/Ek=;
- b=RPG0qFzyvyqUTtIklYg870B9t7bj2xLGa7vM4VXIKS+qRW9icmKJ2Q27bFUfGXS/rV
- eMVzLtxLTNYQAAXFOjjvMwTXT+A9L/g8E42j6IzvmcXt/aLjOL0qlBdSSS5xhJ4RB3Dl
- SqkAJUSJcxif2MXH0Fh5oBj8DH4SI38DtWYF2AJrld2IBaPWyg+4PdSG+QLiDtVlVzm7
- dzLPikl7ac8BqUUXyArmxpPgEcg+fwSrSw0ni9N7T7kxB06+l8Q72wuJ4t1J7UtdgWM4
- 9vSPBnoSrRwnnazopcEBRpHacHtfM4OY0Pn8zrOUebAr+74NcCM09WUXgGxxEc7xub/P
- gc0w==
-X-Gm-Message-State: AOAM532BOcVwxOvCq15h8VjvL3kcX7jPnSpUnRra4Lz0ryyIokFb3NNb
- LONkBs7HGf8kErsZgfxfn1potw==
-X-Google-Smtp-Source: ABdhPJyOlEQNd0DWG0KMQ3iclWevL0B8TV/DHISOzSWHCezO7ksCSIPPniMHO6dFdL8N85bmZfl1CA==
-X-Received: by 2002:aca:d856:: with SMTP id p83mr958723oig.38.1590637619384;
- Wed, 27 May 2020 20:46:59 -0700 (PDT)
-Received: from eggly.attlocal.net
- (172-10-233-147.lightspeed.sntcca.sbcglobal.net. [172.10.233.147])
- by smtp.gmail.com with ESMTPSA id v10sm1036334oov.15.2020.05.27.20.46.55
- (version=TLS1 cipher=ECDHE-ECDSA-AES128-SHA bits=128/128);
- Wed, 27 May 2020 20:46:58 -0700 (PDT)
-Date: Wed, 27 May 2020 20:46:22 -0700 (PDT)
-From: Hugh Dickins <hughd@google.com>
-X-X-Sender: hugh@eggly.anvils
-To: Jerome Glisse <jglisse@redhat.com>
-Subject: Re: Cache flush issue with page_mapping_file() and swap back shmem
- page ?
-In-Reply-To: <20200528002033.GB1992500@redhat.com>
-Message-ID: <alpine.LSU.2.11.2005272021220.3857@eggly.anvils>
-References: <20200528002033.GB1992500@redhat.com>
-User-Agent: Alpine 2.11 (LSU 23 2013-08-11)
-MIME-Version: 1.0
+ id 1je9kH-0007PL-JW
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 04:02:19 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04S41m5Q153940;
+ Thu, 28 May 2020 04:01:48 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=from : to : cc :
+ subject : date : message-id; s=corp-2020-01-29;
+ bh=vn6zVVZmICnL9E0RyBPMSzspks17zsHewEDQE4IfYyU=;
+ b=aCkMq37gj5cs4fSitWUW6KhQNtKljMriAL9OtQUY9J3Fx6neQYPvF3colhdoJjDBKGJF
+ CxFa8GRQ1wcKBPoJeoc1qNxSSt8gAyPhNjMEPWgyoWfA5FrL6EtbMLMl9XgDg0/Q/mFW
+ XiiRwikVVvbaQWtC99ayjBN5Pr8V26LrxwAp6s5H6623JlC+qAjNtFjdlj65lWDT8TUs
+ zzYMaAoqTVfdo4gCEFbJkLhM2F71Xi3Aieb4M4Pc1b+4anOX4AV+C6BZLaZNLu+Jc8nx
+ 8kKxRqkuKEnNyxvcC9p/52jnZAKDPxlgaNgNl/QqdnYURM5WuKK/gP/rAybaiBzqcVTx 0w== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 318xbk2rx8-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 28 May 2020 04:01:48 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04S3veHw132695;
+ Thu, 28 May 2020 04:01:43 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3020.oracle.com with ESMTP id 317dkvpnqb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 28 May 2020 04:01:42 +0000
+Received: from abhmp0013.oracle.com (abhmp0013.oracle.com [141.146.116.19])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 04S41dO9008043;
+ Thu, 28 May 2020 04:01:39 GMT
+Received: from localhost.localdomain (/10.159.238.186)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Wed, 27 May 2020 21:01:39 -0700
+From: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+To: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [GIT PULL 1/2] soc: TI drivers updates for v5.8
+Date: Wed, 27 May 2020 21:01:28 -0700
+Message-Id: <1590638489-12023-1-git-send-email-santosh.shilimkar@oracle.com>
+X-Mailer: git-send-email 1.9.1
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9634
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
+ malwarescore=0 bulkscore=0
+ spamscore=0 suspectscore=0 mlxscore=0 adultscore=0 mlxlogscore=999
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2005280018
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9634
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ spamscore=0 mlxscore=0
+ lowpriorityscore=0 priorityscore=1501 phishscore=0 cotscore=-2147483648
+ suspectscore=0 bulkscore=0 clxscore=1015 impostorscore=0 malwarescore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2004280000 definitions=main-2005280019
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_204708_097519_59973E13 
-X-CRM114-Status: GOOD (  29.47  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200527_210217_722783_26D01BE8 
+X-CRM114-Status: GOOD (  18.20  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,8 +92,11 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [156.151.31.85 listed in wl.mailspike.net]
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,114 +108,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-sh@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- linux-mm@kvack.org, Guo Ren <guoren@kernel.org>, sparclinux@vger.kernel.org,
- Paul Burton <paulburton@kernel.org>, Helge Deller <deller@gmx.de>,
- Huang Ying <ying.huang@intel.com>, James Hogan <jhogan@kernel.org>,
- rmk+kernel@arm.linux.org.uk, linux-xtensa@linux-xtensa.org,
- Steven Capper <steve.capper@linaro.org>, Rabin Vincent <rabinv@axis.com>,
- Ley Foon Tan <lftan@altera.com>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-parisc@vger.kernel.org,
- Max Filippov <jcmvbkbc@gmail.com>, linux-kernel@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, nios2-dev@lists.rocketboards.org,
- Andrew Morton <akpm@linux-foundation.org>,
- "David S. Miller" <davem@davemloft.net>
+Cc: arnd@arndb.de, khilman@kernel.org, santosh.shilimkar@oracle.com,
+ linux-kernel@vger.kernel.org, soc@kernel.org, olof@lixom.net
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jerome,
+The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
-On Wed, 27 May 2020, Jerome Glisse wrote:
-> So any arch code which uses page_mapping_file() might get the wrong
-> answer, this function will return NULL for a swap backed page which
-> can be a shmem pages. But shmem pages can still be shared among
-> multiple process (and possibly at different virtual addresses if
-> mremap was use).
-> 
-> Attached is a patch that changes page_mapping_file() to return the
-> shmem mapping for swap backed shmem page. I have not tested it (no
-> way for me to test all those architecture) and i spotted this while
-> working on something else. So i hope someone can take a closer look.
+  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
 
-I'm certainly no expert on flush_dcache_page() and friends, but I'd
-be very surprised if such a problem exists, yet has gone unnoticed
-for so long.  page_mapping_file() itself is fairly new, added when
-a risk of crashing on a race with swapoff came in: but the previous
-use of page_mapping() would have suffered equally if there were such
-a cache flushinhg problem here.
+are available in the git repository at:
 
-And I'm afraid your patch won't do anything to help if there is a
-problem: very soon after shmem calls add_to_swap_cache(), it calls
-shmem_delete_from_page_cache(), which sets page->mapping to NULL.
+  git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/drivers_soc_for_5.8
 
-But I can assure you that a shmem page (unlike an anon page) is never
-put into swap cache while it is mapped into userspace, and never
-mapped into userspace while it is still in swap cache: does that help?
+for you to fetch changes up to b8b38a8e3cae100f292d756e32c78ab288db8a7d:
 
-Hugh
+  drivers: soc: ti: knav_qmss_queue: Make knav_gp_range_ops static (2020-05-27 20:39:14 -0700)
 
-> This might be a shmem page that is in a sense a file that
-> can be mapped multiple times in different processes at
-> possibly different virtual addresses (fork + mremap). So
-> return the shmem mapping that will allow any arch code to
-> find all mappings of the page.
-> 
-> Note that even if page is not anonymous then the page might
-> have a NULL page->mapping field if it is being truncated,
-> but then it is fine as each pte poiting to the page will be
-> remove and cache flushing should be handled properly by that
-> part of the code.
-> 
-> Signed-off-by: Jerome Glisse <jglisse@redhat.com>
-> Cc: "Huang, Ying" <ying.huang@intel.com>
-> Cc: Michal Hocko <mhocko@suse.com>
-> Cc: Mel Gorman <mgorman@techsingularity.net>
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: Mike Rapoport <rppt@linux.vnet.ibm.com>
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: "James E.J. Bottomley" <jejb@parisc-linux.org>
-> ---
->  mm/util.c | 18 +++++++++++++++++-
->  1 file changed, 17 insertions(+), 1 deletion(-)
-> 
-> diff --git a/mm/util.c b/mm/util.c
-> index 988d11e6c17c..ec8739ab0cc3 100644
-> --- a/mm/util.c
-> +++ b/mm/util.c
-> @@ -685,8 +685,24 @@ EXPORT_SYMBOL(page_mapping);
->   */
->  struct address_space *page_mapping_file(struct page *page)
->  {
-> -	if (unlikely(PageSwapCache(page)))
-> +	if (unlikely(PageSwapCache(page))) {
-> +		/*
-> +		 * This might be a shmem page that is in a sense a file that
-> +		 * can be mapped multiple times in different processes at
-> +		 * possibly different virtual addresses (fork + mremap). So
-> +		 * return the shmem mapping that will allow any arch code to
-> +		 * find all mappings of the page.
-> +		 *
-> +		 * Note that even if page is not anonymous then the page might
-> +		 * have a NULL page->mapping field if it is being truncated,
-> +		 * but then it is fine as each pte poiting to the page will be
-> +		 * remove and cache flushing should be handled properly by that
-> +		 * part of the code.
-> +		 */
-> +		if (!PageAnon(page))
-> +			return page->mapping;
->  		return NULL;
-> +	}
->  	return page_mapping(page);
->  }
->  
-> -- 
-> 2.26.2
+----------------------------------------------------------------
+soc: ARM TI update for v5.8
+
+ - Platform chipid driver support and associated dts doc update
+ - Sparse warning fix in Navigator driver
+
+----------------------------------------------------------------
+Grygorii Strashko (2):
+      dt-bindings: soc: ti: add binding for k3 platforms chipid module
+      soc: ti: add k3 platforms chipid module driver
+
+Samuel Zou (1):
+      drivers: soc: ti: knav_qmss_queue: Make knav_gp_range_ops static
+
+ .../devicetree/bindings/soc/ti/k3-socinfo.yaml     |  40 ++++++
+ drivers/soc/ti/Kconfig                             |  10 ++
+ drivers/soc/ti/Makefile                            |   1 +
+ drivers/soc/ti/k3-socinfo.c                        | 152 +++++++++++++++++++++
+ drivers/soc/ti/knav_qmss_queue.c                   |   2 +-
+ 5 files changed, 204 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-socinfo.yaml
+ create mode 100644 drivers/soc/ti/k3-socinfo.c
 
 _______________________________________________
 linux-arm-kernel mailing list
