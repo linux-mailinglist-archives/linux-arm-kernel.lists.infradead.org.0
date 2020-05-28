@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5715B1E53B3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 04:11:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12BA61E53D1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 04:18:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yiBkBhy1AAdZ16EbdFV0I6pfxlwHnwVgu3lCFrHkd9U=; b=Clk2QQLxqtHTmX
-	eblOSJ7ttdSoPUoB6n9mviO9a4p/maxXUJgyVyMzuHVjwMY39HC4kBPQSYgTkjSam1bxgT0dPmeY1
-	kFJ5ZEEcDxHr23ksx0rTvKk9/LMrpXndWG3Y6j6XYtwWALFoujBLFM+paux23DsYKdKbz0GRhTU72
-	PNL03Lb/cTrbd+khKemcfYiYi+E1Li8t0fdXyjJVYLIjM2xq0nFSZqXnAdV5yJS4Ngs2bBPH0+UDq
-	ucSz8RSaXOr6rdR+JLXdi19T/nFS2su4VnFUZWgQYJNB/Kz6rzVrMGVf0OoqOxucpzPcmKL2cZYBZ
-	I3dsfiguY9RCzhTsB3Ng==;
+	List-Owner; bh=AIWDbACeuOxupWZbOdy8L6JBU8whBjDifne6ay4oREI=; b=ojCLC7kNJPFrRw
+	qvhjZgSStrdcaLswQG+TSwCX/HH9qyUUar/+FQf4AdklA3wN3K/bDRfqhR6lMVh2i0enSPUuWg7bg
+	gC3zx5cbI7Rnjyz81wVvlfCXoUF8qRbeYEdcac/z3L0LjL0upbFiAlKb3SuhvLMe4x9l1oAw1mv8E
+	HCp7sHcr+ZJU74WknPlpmnfMY2PSnKdD6pkL7Y/y7ApEsTwISbNEAyu/1NxFvbZL/Ss1ReXMU228W
+	jx6hLwNL8ORQs8mWovujiVHyx80SiwIfmTq986WvcX5u0T/f3dU3a2ayZnexAS9fvIb1lEwQRFeSm
+	sTj2O/v97EyC/kLaFbpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je81O-0007Bp-M2; Thu, 28 May 2020 02:11:50 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1je881-0001mO-C0; Thu, 28 May 2020 02:18:41 +0000
+Received: from mail-il1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je81E-0007BK-VF
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 02:11:42 +0000
-Received: by mail-il1-f196.google.com with SMTP id c20so26161097ilk.6
+ id 1je87p-0001lg-Eh
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 02:18:31 +0000
+Received: by mail-il1-f194.google.com with SMTP id a14so26136096ilk.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 27 May 2020 19:11:40 -0700 (PDT)
+ Wed, 27 May 2020 19:18:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=8/7AtcVQnogEJMITKMjo/+NbsrcSCHvci6t4MVh9Kc8=;
- b=rYH2DCWc0ouk6aTTb6nKKWZIQUF1s7qNJB6GBAFj+eS7T/wVd7NrUdnuuhHG4iW+Pm
- byHPnNdLKyN4NyPMmjDr2fZwe4tamRDKSmh8HPtkwmMlWfAtx/3DuGabpxoxX+2fgXly
- WIwQUuItAGacrSm4963OiJnEUodLn/5Z2zHu2QhavJY2bqCB66+1rrCekdQXFbYd7Nwe
- 27LFv6cug3hDH7z/umFerYdZqRpqwn8USPnJJ9Vqk4DjTOI7BQv9VtVqwvXAXMx/+ReN
- YTEMbRAxqBIAXgARh/6olN3Uu4Pi/CWJrkKEQUeHlDsgCiKEYHEC67N7IkTqLRksN9jl
- wjNQ==
-X-Gm-Message-State: AOAM533LOqtfpGZ76+UYgkCo8ReCipnQkKJBFEzJOUYy/9kPi847CRXT
- hLjWq1m3CyZxwm7x0ItnpA==
-X-Google-Smtp-Source: ABdhPJyarlfDg0topsEF4LLMlLljnAFIUiSejKfnwzERU46ep1pIjMA9nxf26wH/i1HT1FPTA9wZsg==
-X-Received: by 2002:a92:2907:: with SMTP id l7mr1061985ilg.48.1590631899776;
- Wed, 27 May 2020 19:11:39 -0700 (PDT)
+ bh=kltOMpJbIDHqgiVTyTHUiwKcDlpFvBKVIUzBWkM4zNU=;
+ b=LPNykEN8gdm68G8uc6lG6Ry+Yg/qRiAXpeco9/vdMIFj38TbRr7U8yQyQTTX5/Cfuv
+ KamWNLDQe0o9HFg5UHZ75hCwzLH3M37b7FH5aiSniSZ43V2HhrKORI5Su20TDaDwdJgb
+ 0kSw7P3LYXz2Qv+twYHfRt8rg/GokDz7ZYDzWCtNEoawS4++7y9Fch2O1qYE4C3UVuA2
+ 6IkjlXqjRJkaIgofWRb+/LgFayMoWYJcVZcxOCQLvB6oLTCs7J09sQrOcyIQdyLsCVZJ
+ gIp2p1wBwdevIjzwzW7zhW31FOIuIGoBbzB2h9C8oFOj+YlfgZ+MoEBVtAXBB9BUmcSU
+ w4Ow==
+X-Gm-Message-State: AOAM533qXHt5/kJwjV1483CpjOJ+qUKuy9QcTv6KHw4mzpRQA7bo4Toa
+ HTcd8PTnAAv5JB7HggJi30Vd6nM=
+X-Google-Smtp-Source: ABdhPJyQklBA7zhhBevQrvYgoJ+/iCs+760GP/ErwqCeqexJ7KvCqkPZY0e8thS5U2igqZQbCPbZng==
+X-Received: by 2002:a92:9f82:: with SMTP id z2mr950652ilk.59.1590632307912;
+ Wed, 27 May 2020 19:18:27 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id b18sm2458167ilh.77.2020.05.27.19.11.38
+ by smtp.gmail.com with ESMTPSA id s71sm2536741ilc.32.2020.05.27.19.18.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 27 May 2020 19:11:39 -0700 (PDT)
-Received: (nullmailer pid 3220699 invoked by uid 1000);
- Thu, 28 May 2020 02:11:37 -0000
-Date: Wed, 27 May 2020 20:11:37 -0600
+ Wed, 27 May 2020 19:18:27 -0700 (PDT)
+Received: (nullmailer pid 3229541 invoked by uid 1000);
+ Thu, 28 May 2020 02:18:26 -0000
+Date: Wed, 27 May 2020 20:18:26 -0600
 From: Rob Herring <robh@kernel.org>
 To: Lars Povlsen <lars.povlsen@microchip.com>
-Subject: Re: [PATCH 05/14] dt-bindings: arm: sparx5: Add documentation for
- Microchip Sparx5 SoC
-Message-ID: <20200528021137.GA3214411@bogus>
+Subject: Re: [PATCH 10/14] dt-bindings: clock: sparx5: Add Sparx5 SoC DPLL
+ clock
+Message-ID: <20200528021826.GA3221035@bogus>
 References: <20200513125532.24585-1-lars.povlsen@microchip.com>
- <20200513125532.24585-6-lars.povlsen@microchip.com>
+ <20200513125532.24585-11-lars.povlsen@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200513125532.24585-6-lars.povlsen@microchip.com>
+In-Reply-To: <20200513125532.24585-11-lars.povlsen@microchip.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_191141_006273_0A911787 
-X-CRM114-Status: GOOD (  17.38  )
+X-CRM114-CacheID: sfid-20200527_191829_494153_C0497952 
+X-CRM114-Status: GOOD (  15.63  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
+ no trust [209.85.166.194 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -106,123 +106,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 02:55:23PM +0200, Lars Povlsen wrote:
-> This adds the main Sparx5 SoC DT documentation file, with information
-> abut the supported board types.
+On Wed, May 13, 2020 at 02:55:28PM +0200, Lars Povlsen wrote:
+> This add the DT bindings documentation for the Sparx5 SoC DPLL clock
 > 
 > Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 > Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
 > ---
->  .../bindings/arm/microchip,sparx5.yaml        | 87 +++++++++++++++++++
->  1 file changed, 87 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/arm/microchip,sparx5.yaml
+>  .../bindings/clock/microchip,sparx5-dpll.yaml | 46 +++++++++++++++++++
+>  1 file changed, 46 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/microchip,sparx5.yaml b/Documentation/devicetree/bindings/arm/microchip,sparx5.yaml
+> diff --git a/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml b/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
 > new file mode 100644
-> index 0000000000000..83b36d1217988
+> index 0000000000000..594007d8fc59a
 > --- /dev/null
-> +++ b/Documentation/devicetree/bindings/arm/microchip,sparx5.yaml
-> @@ -0,0 +1,87 @@
+> +++ b/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
+> @@ -0,0 +1,46 @@
 > +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 > +%YAML 1.2
 > +---
-> +$id: http://devicetree.org/schemas/arm/microchip,sparx5.yaml#
+> +$id: http://devicetree.org/schemas/clock/microchip,sparx5-dpll.yaml#
 > +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
-> +title: Microchip Sparx5 Boards Device Tree Bindings
+> +title: Microchip Sparx5 DPLL Clock
 > +
 > +maintainers:
 > +  - Lars Povlsen <lars.povlsen@microchip.com>
 > +
-> +description: |+
-> +   The Microchip Sparx5 SoC is a ARMv8-based used in a family of
-> +   gigabit TSN-capable gigabit switches.
+> +description: |
+> +  The Sparx5 DPLL clock controller generates and supplies clock to
+> +  various peripherals within the SoC.
 > +
-> +   The SparX-5 Ethernet switch family provides a rich set of switching
-> +   features such as advanced TCAM-based VLAN and QoS processing
-> +   enabling delivery of differentiated services, and security through
-> +   TCAM-based frame processing using versatile content aware processor
-> +   (VCAP)
+> +  This binding uses common clock bindings
+> +  [1] Documentation/devicetree/bindings/clock/clock-bindings.txt
 > +
 > +properties:
-> +  $nodename:
-> +    const: '/'
 > +  compatible:
-> +    oneOf:
-> +      - description: The Sparx5 pcb125 board is a modular board,
-> +          which has both spi-nor and eMMC storage. The modular design
-> +          allows for connection of different network ports.
-> +        items:
-> +          - const: microchip,sparx5-pcb125
-> +          - const: microchip,sparx5
+> +    const: microchip,sparx5-dpll
 > +
-> +      - description: The Sparx5 pcb134 is a pizzabox form factor
-> +          gigabit switch with 20 SFP ports. It features spi-nor and
-> +          either spi-nand or eMMC storage (mount option).
-> +        items:
-> +          - const: microchip,sparx5-pcb134
-> +          - const: microchip,sparx5
-> +
-> +      - description: The Sparx5 pcb135 is a pizzabox form factor
-> +          gigabit switch with 48+4 Cu ports. It features spi-nor and
-> +          either spi-nand or eMMC storage (mount option).
-> +        items:
-> +          - const: microchip,sparx5-pcb135
-> +          - const: microchip,sparx5
-> +
-> +  axi@600000000:
-> +    type: object
-> +    description: the root node in the Sparx5 platforms must contain
-> +      an axi bus child node. They are always at physical address
-> +      0x600000000 in all the Sparx5 variants.
-> +    properties:
-> +      compatible:
-> +        items:
-> +          - const: simple-bus
-> +      reg:
-> +        maxItems: 1
+> +  reg:
+> +    items:
+> +      - description: dpll registers
 
-simple-bus doesn't have 'reg'. If there's bus registers, then it's not 
-simple.
+For a single entry, just:
+
+maxItems: 1
 
 > +
-> +    required:
-> +      - compatible
-> +      - reg
-> +
-> +patternProperties:
-> +  "^syscon@[0-9a-f]+$":
-
-This should be under a bus node.
-
-> +    description: All Sparx5 boards must provide a system controller,
-> +      typically under the axi bus node. It contain reset registers and
-> +      other system control.
-> +    type: object
-> +    properties:
-> +      compatible:
-> +        items:
-> +          - const: microchip,sparx5-cpu-syscon
-> +          - const: syscon
-
-This probably should be in its own document. If really this simple, 
-there's already syscon.yaml you can add to. 
-
-> +      reg:
-> +        maxItems: 1
-> +
-> +    required:
-> +      - compatible
-> +      - reg
+> +  '#clock-cells':
+> +    const: 1
 > +
 > +required:
 > +  - compatible
-> +  - axi@600000000
-> +  - syscon@600000000
+> +  - reg
+> +  - '#clock-cells'
 > +
-> +...
-> --
-> 2.26.2
+> +additionalProperties: false
+> +
+> +examples:
+> +  # Clock provider for eMMC:
+> +  - |
+> +    clks: clks@61110000c {
+
+clock-controller@1110000c {
+
+> +         compatible = "microchip,sparx5-dpll";
+> +         #clock-cells = <1>;
+> +         reg = <0x1110000c 0x24>;
+
+Looks like this is a sub-block in some other h/w block. What's the 
+parent device? That should be described and this should be part of it 
+either as a single node or a child node. Without a complete view of what 
+this block has I can't provide any guidance.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
