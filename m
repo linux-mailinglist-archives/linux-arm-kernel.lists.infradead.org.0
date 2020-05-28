@@ -2,75 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 435C71E6E71
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 00:14:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24B871E6E87
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 00:20:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=APjHkgSngeKCSyy81CuELQU3xPYEgdUb4osURXLXwvk=; b=sfPihyhYorQc2R
-	F8lxLO3jMFgQ4cmmFkMlN1KEPZblSwDFJ3GY5tkawk3km3g3cBag/csJ2dBjbIMwqQXm7/JMT/kyL
-	gw0LF1jijJFJrqJXzJbylzn2KDgNDeZcnCdCGBMxUxroBatoIChzpwBzZDsv8ZKPsVZDNSWOa+pcx
-	EGyuvCtM6PWXdXlD3hJ4SL3fFeJHYI4S6hpGNTZqSPovgajbEsAfM1nE/38W53PaKtASToCnZcBn9
-	j5puxj194ypwZDSHc44RrvgdOoLGdJBOohXN8x9ZRGeiChIjAU6LgHRB42O1lTUkq0yzokbGSXHB1
-	movX9faQHH1kIJSoe2VQ==;
+	List-Owner; bh=OVobSMtrqKX5pLXcn6egfZMARfwWq6XYu5yNeVEFPm4=; b=NQjfgvFj/FPmqt
+	IM/S7mie/pHvzCBEaM4g0rEurjia0YbbXjwrK05MLgc7PdP5FX1CRNTM9qDn9aCwABidqAViqVzJR
+	8GeMKLfIh3rZeE9D41UQN19EmXEp8K/WMzKRoMdvjJ9ITW8RJC6ZrET8I+3kFiOzhf2V54E5rGMAf
+	0aFtYF3MhoT2WxRqOw5kJ8fUnb8tHXCRenekj3FUCQ3OxiAx6obOmj3Eq5A9/JY7Mb09UUJhxUrd+
+	I8GPCOmGffNfkn89zXVMeJvFI6igE2aREfyTIQ4e5TDJrg1yyPIkvWSdmvfrIJykNuXpNC+tOer8e
+	o2ZJNnwL9og8aunE1EqQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeQn6-0007BZ-JJ; Thu, 28 May 2020 22:14:20 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1jeQt5-00054p-HR; Thu, 28 May 2020 22:20:31 +0000
+Received: from mail-io1-f68.google.com ([209.85.166.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeQmx-0007Au-Oc
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 22:14:13 +0000
-Received: by mail-io1-f66.google.com with SMTP id k18so254014ion.0
+ id 1jeQsx-00052O-GV
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 22:20:24 +0000
+Received: by mail-io1-f68.google.com with SMTP id q8so219543iow.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 15:14:10 -0700 (PDT)
+ Thu, 28 May 2020 15:20:22 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=eZt6S4Voc1GVGbmZ9OSkpYu147Jwa8sfxjXcTtEMq88=;
- b=P8bJUjDUtsB2T0Rm3HXdPcJZ0cXDNcb+km3jQ27N4ViUTet29vc4nwSAU0MDuROJcY
- II97TPqs7smOkdskuR7KISSoSKomlS1Ih9rM+2ybafKOguEIXUNPKg0AZkVN9L+rp2n4
- kZZnlOyZxYkk8NoD6ChlgFXEE57KVFf3+8ZOGETclv3ImdtHrxlDZ7rBBNgIXOdHTdMG
- Fp+m8v27dISvhonF0poNMEPMS4oF6QPVTR4ZGU9duBTHgkt7h/EhiGIyk3aephM7TfMt
- zaTQSgPUdOg+FV9F5rGUmoXlAoM3dv52Lebw67AKrxyE2uc+3CEY6n9UH3I21lHQgCY8
- qjuQ==
-X-Gm-Message-State: AOAM532rE5ZX6MzEbWGn2nGErvkqWIp6tLN8dx3fqrIUcyGzkrH0g66N
- TQ4ax3fBRr7qVm9zt4AKKqbDWDg=
-X-Google-Smtp-Source: ABdhPJy3G7A8UkjiY37GNsMp60BJHw4S4Y4hMohQN9/R5R0vFSwjndJxazHP9bVDM7DganPPCmGqRg==
-X-Received: by 2002:a5d:8ad8:: with SMTP id e24mr4044872iot.41.1590704050154; 
- Thu, 28 May 2020 15:14:10 -0700 (PDT)
+ bh=V1pVNRBWzHZ1G6jffgYB9BbYesxXCexItPOb/g+HRwk=;
+ b=D1c14VKKcWKopl5tiyQP9q7nCWyJIQGLXyY4F1r4RCGa/jW0jOmNSF7MwVclOiX/39
+ ulKo7f8GdXPwQuVgQN/t//lP2cv5SCutGPoHnpTIyc+m0LOKogNCn2PiHp7x5ezpm7WN
+ DZrCcVI1WvCLmjQdcaqwSBIT8g0eqqCXWA7MllfrpgK638zJ69loXygIV5yrbg2JB0eW
+ NFV7pDw3BhK6vV3tpbSx5IY+qbu4NXF04IwaXt0b4+yWm+4P48i2Xx9bJP4C42Ntm9ff
+ JzDbAZTKgnTx80CBQgPMPoPbYt2oODnqFRYQ7jNf/2Y5UaCq3tKhngbvb3kSGkEUcyYN
+ xUUA==
+X-Gm-Message-State: AOAM533A/1YWOZZWAIBYLWp+EanmOFW+MJ9s8z+f2vC0W4EZYqUjQQnX
+ Lq3uvcbK3DrwEe7zgge8DOEmbp8=
+X-Google-Smtp-Source: ABdhPJwj8PCtzTwAhMry0miLqUZxr77A1fRZS29Pm/8O3Pm0xpLEjyn2R+dRN+D30uJ90Rg4+GEwtA==
+X-Received: by 2002:a5e:d903:: with SMTP id n3mr3603677iop.93.1590704422191;
+ Thu, 28 May 2020 15:20:22 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id s71sm3905985ilc.32.2020.05.28.15.14.07
+ by smtp.gmail.com with ESMTPSA id q6sm3787197ilj.72.2020.05.28.15.20.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 May 2020 15:14:09 -0700 (PDT)
-Received: (nullmailer pid 776909 invoked by uid 1000);
- Thu, 28 May 2020 22:14:06 -0000
-Date: Thu, 28 May 2020 16:14:06 -0600
+ Thu, 28 May 2020 15:20:21 -0700 (PDT)
+Received: (nullmailer pid 785342 invoked by uid 1000);
+ Thu, 28 May 2020 22:20:20 -0000
+Date: Thu, 28 May 2020 16:20:20 -0600
 From: Rob Herring <robh@kernel.org>
-To: Lokesh Vutla <lokeshvutla@ti.com>
-Subject: Re: [PATCH 04/12] dt-bindings: irqchip: ti, sci-intr: Update bindings
- to drop the usage of gic as parent
-Message-ID: <20200528221406.GA769073@bogus>
-References: <20200520124454.10532-1-lokeshvutla@ti.com>
- <20200520124454.10532-5-lokeshvutla@ti.com>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [PATCH 1/6] dt-bindings: omap: Update PRM binding for genpd
+Message-ID: <20200528222020.GA783133@bogus>
+References: <20200520211334.61814-1-tony@atomide.com>
+ <20200520211334.61814-2-tony@atomide.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200520124454.10532-5-lokeshvutla@ti.com>
+In-Reply-To: <20200520211334.61814-2-tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_151411_800203_33BD47F1 
-X-CRM114-Status: GOOD (  17.98  )
+X-CRM114-CacheID: sfid-20200528_152023_551166_8A7DE7A6 
+X-CRM114-Status: GOOD (  13.50  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.66 listed in wl.mailspike.net]
+ no trust [209.85.166.68 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -79,6 +76,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.68 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,95 +91,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Device Tree Mailing List <devicetree@vger.kernel.org>,
- Marc Zyngier <maz@kernel.org>, Sekhar Nori <nsekhar@ti.com>,
+Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-kernel@vger.kernel.org, "Andrew F . Davis" <afd@ti.com>,
  Tero Kristo <t-kristo@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+ Suman Anna <s-anna@ti.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 06:14:46PM +0530, Lokesh Vutla wrote:
-> Drop the firmware related dt-bindings and use the hardware specified
-> interrupt numbers within Interrupt Router. This ensures interrupt router
-> DT node need not assume any interrupt parent type.
+On Wed, May 20, 2020 at 02:13:29PM -0700, Tony Lindgren wrote:
+> The PRM (Power and Reset Module) has registers to enable and disable
+> power domains, so let's update the binding for that.
 
-I didn't like this binding to begin with, but now you're breaking 
-compatibility.
+multiple domains? Then why 0 cells?
 
-> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
-> ---
->  .../interrupt-controller/ti,sci-intr.txt      | 31 ++++++++++---------
->  1 file changed, 16 insertions(+), 15 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt b/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
-> index 1a8718f8855d..8b56b2de1c73 100644
-> --- a/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
-> +++ b/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
-> @@ -44,15 +44,17 @@ Required Properties:
->  			4: If intr supports level triggered interrupts.
->  - interrupt-controller:	Identifies the node as an interrupt controller
->  - #interrupt-cells:	Specifies the number of cells needed to encode an
-> -			interrupt source. The value should be 2.
-> -			First cell should contain the TISCI device ID of source
-> -			Second cell should contain the interrupt source offset
-> -			within the device.
-> +			interrupt source. The value should be 1.
-> +			First cell should contain interrupt router input number
-> +			as specified by hardware.
->  - ti,sci:		Phandle to TI-SCI compatible System controller node.
-> -- ti,sci-dst-id:	TISCI device ID of the destination IRQ controller.
-> -- ti,sci-rm-range-girq:	Array of TISCI subtype ids representing the host irqs
-> -			assigned to this interrupt router. Each subtype id
-> -			corresponds to a range of host irqs.
-> +- ti,sci-dev-id:	TISCI device id of interrupt controller.
-> +- ti,interrupt-ranges:	Set of triplets containing ranges that convert
-> +			the INTR output interrupt numbers to parent's
-> +			interrupt number. Each triplet has following entries:
-> +			- First entry specifies the base for intr output irq
-> +			- Second entry specifies the base for parent irqs
-> +			- Third entry specifies the limit
+> Cc: devicetree@vger.kernel.org
+> Cc: Rob Herring <robh@kernel.org>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> ---
+>  Documentation/devicetree/bindings/arm/omap/prm-inst.txt | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/omap/prm-inst.txt b/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
+> --- a/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
+> +++ b/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
+> @@ -18,6 +18,7 @@ Required properties:
+>  		(base address and length)
+>  
+>  Optional properties:
+> +- #power-domain-cells:	Should be 0 if the PRM instance is a power domain.
 
-Humm, sounds like what interrupt-map does.
+...power domain provider.
 
+>  - #reset-cells:	Should be 1 if the PRM instance in question supports resets.
 >  
->  For more details on TISCI IRQ resource management refer:
->  http://downloads.ti.com/tisci/esd/latest/2_tisci_msgs/rm/rm_irq.html
-> @@ -62,21 +64,20 @@ Example:
->  The following example demonstrates both interrupt router node and the consumer
->  node(main gpio) on the AM654 SoC:
->  
-> -main_intr: interrupt-controller0 {
-> +main_gpio_intr: interrupt-controller0 {
->  	compatible = "ti,sci-intr";
->  	ti,intr-trigger-type = <1>;
->  	interrupt-controller;
->  	interrupt-parent = <&gic500>;
-> -	#interrupt-cells = <2>;
-> +	#interrupt-cells = <1>;
->  	ti,sci = <&dmsc>;
-> -	ti,sci-dst-id = <56>;
-> -	ti,sci-rm-range-girq = <0x1>;
-> +	ti,sci-dev-id = <131>;
-> +	ti,interrupt-ranges = <0 360 32>;
->  };
->  
->  main_gpio0: gpio@600000 {
->  	...
-> -	interrupt-parent = <&main_intr>;
-> -	interrupts = <57 256>, <57 257>, <57 258>,
-> -		     <57 259>, <57 260>, <57 261>;
-> +	interrupt-parent = <&main_gpio_intr>;
-> +	interrupts = <192>, <193>, <194>, <195>, <196>, <197>;
->  	...
+>  Example:
+> @@ -25,5 +26,6 @@ Example:
+>  prm_dsp2: prm@1b00 {
+>  	compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
+>  	reg = <0x1b00 0x40>;
+> +	#power-domain-cells = <0>;
+>  	#reset-cells = <1>;
 >  };
 > -- 
-> 2.17.1
-> 
+> 2.26.2
 
 _______________________________________________
 linux-arm-kernel mailing list
