@@ -2,67 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0D021E5D25
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 12:27:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 013941E5D2B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 12:29:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6L0peX1B2cOAb8RmcqGaZ+7ODIvcDBZYjVmHIxd0Fxw=; b=uWG61IGtM3014B
-	0eOaPN873X710TabGgZv9IKd4h8kWBRflW4C7GbEgcJSMOUt6Hk6Ayny+HFvnRxLWI8Qgycpn+e9T
-	3v0eobZ6/OZCfxkRxXvUa2haYuO2YijFM33CaaX7cIx2ALVSF2tERtsaOG6ajpqbzVSNcITi8KIDu
-	L/VhRaLA+dtuiLbEPvlUxPY0mmb6w2gqDcD65NnYn1fNVkr2j4atDMWtcdvIeWt9ZW9pDihuNQjJv
-	kHRFy4VD6IWwnpkfe81baGDaw6SpJn8pGylYTcI6e++O/7LDQJEp7F738ujNAnGST4yvDh9vRAM3L
-	+2JHuMoo3UOmCU2MQNfg==;
+	List-Owner; bh=8I/bUe/dBWhOCxog9LCtTlusPcA3YDa9NeTSrungTTU=; b=e5fKpt6+m5vqa6
+	+ZhQSwMfEj8OvW859ojBahpbZ7FYvy9R/aOUXFGptsYlwGexdEgZ8hkRhEEMjtb+o3sJQrIVZJMFt
+	mRrEWbBmqix/g+ltSkNBonH6UzruC030OiloKWpfeOwdDK0Jx1vN4Gmz+8O0pHhkOPh261m92LRVa
+	6C3+DEBctjJsN8yoNPcHv+CphiQn5Tz8c76AYQufnYeh3hJzBitzWAys5IP5QaHfOotq3tQICTGIH
+	fiUBq11mc07CLKYqALsomLXH8NwPqCuVBR4R5s9lnVEYV+gtgYxdmni/MXBD5/W3GossTDm90GxV0
+	I3aFejd6QCJltbxayvIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeFlI-0008UU-DO; Thu, 28 May 2020 10:27:44 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1jeFmu-0000RC-Ml; Thu, 28 May 2020 10:29:24 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeFl4-0008Tb-Oq; Thu, 28 May 2020 10:27:31 +0000
-IronPort-SDR: KJhq/bqMJ2zqpCboiJG/987FLYzjXz/RV6p0XdAN3dOP4BmJDROWy07/H1/7g1ztXfbQr2DtVg
- ErFEkAuqjPzg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 28 May 2020 03:27:29 -0700
-IronPort-SDR: QUbWppTdipRmkK6s3TNjKXxDmOVRiFx+Anq76PGnZ8ysN5MS/bpNf3b8K3wf/qJwZvs4uvoVXl
- 6VHpJrTTuyog==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,444,1583222400"; d="scan'208";a="291950293"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga004.fm.intel.com with ESMTP; 28 May 2020 03:27:27 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jeFl4-009PNm-Uf; Thu, 28 May 2020 13:27:30 +0300
-Date: Thu, 28 May 2020 13:27:30 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Fengping Yu <fengping.yu@mediatek.com>
-Subject: Re: [RESEND PATCH v11 2/3] drivers: input: keyboard: Add mtk keypad
- driver
-Message-ID: <20200528102730.GK1634618@smile.fi.intel.com>
-References: <20200528090144.54033-1-fengping.yu@mediatek.com>
- <20200528090144.54033-3-fengping.yu@mediatek.com>
+ id 1jeFmf-0000QR-BC
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 10:29:10 +0000
+Received: from mail-qt1-f180.google.com ([209.85.160.180]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MWixU-1jXkRj3CMC-00X6Lq for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 28 May 2020 12:29:03 +0200
+Received: by mail-qt1-f180.google.com with SMTP id w90so3746366qtd.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 28 May 2020 03:29:03 -0700 (PDT)
+X-Gm-Message-State: AOAM533IlNSBMvytjaBInWmNnScqIjDTPL17VB7enzD6PXEqEkq2BjJK
+ HYi20V8PmTVy6IFe7NuSo9ckSExp2BEAkWYtS+w=
+X-Google-Smtp-Source: ABdhPJz2a2WytWmIneIq2G9OpjaO/RzuEzD9ej4GIQPy/ppJNSDQ6lV/bFBZfFaxAIKkS/hUB94Bg+Cs4mG8X8OBWbA=
+X-Received: by 2002:ac8:1844:: with SMTP id n4mr2210189qtk.142.1590661742672; 
+ Thu, 28 May 2020 03:29:02 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200528090144.54033-3-fengping.yu@mediatek.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+References: <20200527112608.3886105-1-anders.roxell@linaro.org>
+ <20200527112608.3886105-6-anders.roxell@linaro.org>
+ <CAL_Jsq+bwnwQBpxf_Q5GNhCz8+-psH-ovpW80LMk=MK=zcbYcA@mail.gmail.com>
+In-Reply-To: <CAL_Jsq+bwnwQBpxf_Q5GNhCz8+-psH-ovpW80LMk=MK=zcbYcA@mail.gmail.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 28 May 2020 12:28:46 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a3_5pHCc0WqDNt1Aim2M67cicyq27f0ggqPbJuu97i=Nw@mail.gmail.com>
+Message-ID: <CAK8P3a3_5pHCc0WqDNt1Aim2M67cicyq27f0ggqPbJuu97i=Nw@mail.gmail.com>
+Subject: Re: [PATCH 5/5] power: vexpress: make the reset driver a module
+To: Rob Herring <robh@kernel.org>
+X-Provags-ID: V03:K1:DuvYyYyWkSzyeS4CHLqL9CtxdKPGkK1HREENTyElwnez4ImOFiQ
+ X1+PClRqwoC1rsRxYVvfJayZxM7wobpEWuSfbpB9Cw2WeTXk+//xT47XjGGblqIol3Pv7E/
+ mZE2H18BM9Ohdbh2pp719S36LJK9cWdk2W8aAp3KQuqcni5/7KRMIYOZnnOlBGBcRXD3jzg
+ J3145t24Uih1+Pr1M1MQA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:vF6JpYfyaws=:6IGghFny8pJ53+bp0kFHvB
+ xKCf/M2MiW61G+plRBiHwu4BnubUKJI3OB8vej3MgYqEhbxRzO9/rMAspVomy1C5LvZLg7MAe
+ EoZQ0U7FAtfbqgrz/UKhFgvG5CKYlqj+rR54fR3QOXYWxQJpOP1Jnibx3v8mY9QvI5bXOaDJ3
+ NX4WZqknllMn+hZfH6L2N/nJhcveHAGan7L3Qo3h+tvk3l4A77E21aE9aD7q3+YnRyz9i83q+
+ dCLg6ceeoebYeJVj0UNO3sun9e5VP+iHUAOMQ2vXKEBBxAPsEJynt/YVABUvogBr6rZ1mNtCW
+ 8EnaNm0roLm2PmmlSgwZI1hhV0WHMsZx4m3v9yZDhiN96hXunTUtgPM/cLLYeONVZtYGeCABn
+ TDvTIJwLQh+Arya1glSsPKAzP7ZjpjvWFI7/89CJa7iqsotlXWdDoIko/oLB5aDOiYawtqoI3
+ /yylx3G4td4tDwgqkPZSPObgjmOPJ1ybXuwUirAYuhmnysdJvaqcYZZCdO0w3FpACzoqnArri
+ reDvMNXULMFnW5C0l3SzTqDCUlI7dlsO0UBDozaUBeKCKWpdC4Lf94P8t7Avnck4uQ/styv2B
+ jLd0j7YGFjsGJcdmAQb9oF9N7APHauXHIcklfQb2f6RYVFGWXfwco5wX3B3poCCEBhqYC0whv
+ 8/FG3GUO34wpuD4DGrJAnmJrpkAUkZUxTSIujt7oCIn4wv5Zy3530ZoM7nBuJ+tO8ETz/wh8j
+ N5M7tSFx5HGd3hdMh3weO0uecI6t0zM2N5TSdvEPF1nk+WmwnrvqX/rFbXIhTtkMaqTeSPbqi
+ Sreu5J9Xqi7uU9UX7Cjg+vIdQJAGyGw8UFX7LGn15BtGIJjw1Q=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_032730_819218_32C0537C 
-X-CRM114-Status: UNSURE (   9.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200528_032909_678922_29247A73 
+X-CRM114-Status: GOOD (  14.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.187 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,47 +89,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Marco Felsch <m.felsch@pengutronix.de>, linux-mediatek@lists.infradead.org,
- linux-input@vger.kernel.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: SoC Team <soc@kernel.org>, Anders Roxell <anders.roxell@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linus Walleij <linus.walleij@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 28, 2020 at 05:01:47PM +0800, Fengping Yu wrote:
-> From: "fengping.yu" <fengping.yu@mediatek.com>
-> 
-> This adds matrix keypad support for Mediatek SoCs.
+On Wed, May 27, 2020 at 3:32 PM Rob Herring <robh@kernel.org> wrote:
+>
+> On Wed, May 27, 2020 at 5:26 AM Anders Roxell <anders.roxell@linaro.org> wrote:
+> >
+> > Today the vexpress power driver can only be builtin.  Rework so it's
+> > possible for the vexpress power driver to be a module.
+>
+> This is the same incomplete patch I did[1]. As a module, it needs to
+> clean-up everything probe did like overwriting global variables.
+>
+> Rob
+>
+> [1] https://lore.kernel.org/linux-arm-kernel/20200419170810.5738-5-robh@kernel.org/
 
-...
+Your version was actually broken because it allowed unloading the
+driver again. The version that Anders sent is a bit better because it
+explicitly forbids unloading by having a module_init but not module_exit
+function, so as long as the .suppress_bind_attrs flag is set, this will
+not crash the kernel.
 
-> +config KEYBOARD_MTK_KPD
-> +	tristate "MediaTek Keypad Support"
-> +	depends on ARCH_MEDIATEK || COMPILE_TEST
+It would be nice to have a .remove callback, but for the merge window
+I'm happy with a patch that fixes the build regression.
 
-> +	select CONFIG_REGMAP_MMIO
-
-This is wrong.
-
-> +	select INPUT_MATRIXKMAP
-
-...
-
-> +	ret = devm_add_action_or_reset(&pdev->dev, kpd_clk_disable,
-> +				       keypad->clk);
-
-I would leave on one line (only 81 characters).
-
-> +	if (ret)
-> +		return ret;
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
