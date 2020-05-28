@@ -2,58 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F4881E6C9C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 22:33:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 096521E6C9F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 22:34:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hK/qYWMMFgtbH36m5uTHFek29k5odMRJHX0mM4HhQow=; b=MKire/LT46lENF
-	1C1c2NS/30XPuau9qJ05YF7E6Q7DM3eDPXyb/W1VzsbxPppld5yxijlsX34IjNlSNpeBdKD4HEWS1
-	3pwNZl1De6GVCSbem79742yDkwa5K8Jz6AZzHMs0cwZ/Su+Hg6vdzMawt4bj9SQiga8zlFZ0zAPn2
-	8FFJQ/BM/uWqk7XgrbjN770lJ3YGhM/8WTb8Pphl24hR+YFUZE8iVbeSomGW8G3jZsxY/ff1sP/2a
-	hXWuxAnPx9X4x4nvKSOjBpA+Hv726XJo11Y6BUgBjy6dxmzQ50cpXhepiGLIE/RlgFl9gFKiU+GVy
-	Qy1ZHobzcYH+75jN75yA==;
+	List-Owner; bh=DOX/vsmN85T2B1HsDcIxPMprBQOJ65+ru83oy58mMIc=; b=Vftc9CHm2YVdqm
+	ECWUDiE9eeccUK6GVp8XgRLJcdrp877FPj9GNOrxAczy6jZ/g13P/XCZleGUBBwoSZ0ZtCGvtp2IM
+	fSYa5vlosCdaEoMOC+Pe0syIxzfk/N5T5FdZDvNw4lpK9x1iKtGYnvFDgoUuJeDuCtfpXqnRD+oms
+	MXs6HDrTI0cO5NPEgF9e6i2d/EA/2vLzEzty17bXiEQ9N8+BydAVSLXIHoD5tNmRuj618NEwCOUtJ
+	At1Xvpetre9gXbSb0enp83QH/JN4Ibpp36ALXhppSKsqmlJt64xHL8j8acp7pIvch/em54nL78Dzm
+	gmIqbTgMdWx0aLc52aCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jePDr-0003q4-PT; Thu, 28 May 2020 20:33:51 +0000
-Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
+	id 1jePEP-0004Xv-VT; Thu, 28 May 2020 20:34:25 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jePDk-0003o0-8q
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 20:33:45 +0000
-Received: from unknown (HELO ironmsg05-sd.qualcomm.com) ([10.53.140.145])
- by alexa-out-sd-01.qualcomm.com with ESMTP; 28 May 2020 13:33:41 -0700
-Received: from gurus-linux.qualcomm.com ([10.46.162.81])
- by ironmsg05-sd.qualcomm.com with ESMTP; 28 May 2020 13:33:41 -0700
-Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
- id 40EB24CCF; Thu, 28 May 2020 13:33:41 -0700 (PDT)
-Date: Thu, 28 May 2020 13:33:41 -0700
-From: Guru Das Srinagesh <gurus@codeaurora.org>
-To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- Daniel Thompson <daniel.thompson@linaro.org>,
- Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH v15 04/11] pwm: clps711x: Use 64-bit division macro
-Message-ID: <20200528203341.GA8065@codeaurora.org>
-References: <cover.1590514331.git.gurus@codeaurora.org>
- <dd03cc467ac3fc470826aef523822b32e15dc929.1590514331.git.gurus@codeaurora.org>
+ id 1jePEC-0004Hr-4A
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 20:34:14 +0000
+Received: from mail-qk1-f178.google.com ([209.85.222.178]) by
+ mrelayeu.kundenserver.de (mreue010 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MJEMt-1jPucE31ch-00Kevh for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 28 May 2020 22:34:09 +0200
+Received: by mail-qk1-f178.google.com with SMTP id w3so231374qkb.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 28 May 2020 13:34:08 -0700 (PDT)
+X-Gm-Message-State: AOAM531MeGjbDhYmoQVg95j0RlA9Ek1tlRDgt0LtLK50rR6H6zq3i6Vs
+ emD5IwUSrMz/WzcLnfVI/RKagAyE1UhsTPnERto=
+X-Google-Smtp-Source: ABdhPJw35+vBI63bF7SfK+zLRpe/uowGSJPEFF3GisVzMhFz/CLIpy+Xs9Ye1mQuxA5jYglGf/r9jzeY5QW4ONbtd8k=
+X-Received: by 2002:ae9:de85:: with SMTP id s127mr3586078qkf.352.1590698047221; 
+ Thu, 28 May 2020 13:34:07 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <dd03cc467ac3fc470826aef523822b32e15dc929.1590514331.git.gurus@codeaurora.org>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+References: <20200528091923.2951100-1-arnd@arndb.de>
+ <20200528134621.GN37466@atomide.com>
+ <20200528135057.GO37466@atomide.com> <20200528155759.GP37466@atomide.com>
+ <34e8fb61-b452-529b-b2c6-3849b2395096@oracle.com>
+In-Reply-To: <34e8fb61-b452-529b-b2c6-3849b2395096@oracle.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 28 May 2020 22:33:50 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a0AaH+pAdhu7jzEAGC-bECgmz7w=D8PN6NOUjj2kxevkg@mail.gmail.com>
+Message-ID: <CAK8P3a0AaH+pAdhu7jzEAGC-bECgmz7w=D8PN6NOUjj2kxevkg@mail.gmail.com>
+Subject: Re: [PATCH] ARM: omap2: drop broken broadcast timer hack
+To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+X-Provags-ID: V03:K1:TLIvXITr8EVaDi6iHe/ABGzouirraRnDdSG0GHJvk4U+g+o2fXM
+ 10+lPeePfQdbjQHMXkNS1/9r07WqsSFvYwGT7IrJ3wrPI4OaLC+gvpR3hvzaB74QCnAzlhQ
+ 5mSTn+JxkjDZNQJI0BKvgzPdQMZlPeeedVj/46k2vzjjkLwSttxoHmTTjv5YAhnAWrxNdn9
+ SHzohanbyb2suFBIGlCvQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:1ma3F0/4dIY=:Rq/X52Q8IQamCsw9KsQnJW
+ VbX1MDKk2Pdz3Ejw8Xm2vX2+ePGd8Cro0e2MRCjLImZOOhzQQdf3e3oQPyZaLKGouZdxH16Gb
+ is/aM5vDw5Pb36eIWDvbHbmV+QdnTMPK17oTUUjAW/N5mbRinF+iGbbAaIKxaBLgQ94DpsOId
+ 79J8p0GnEX014pOCJzrPi0UUR4FOowQ2Vm7JvdBwcjAke2FvuTdkRRiPlTny2c88cFEwN2U6S
+ k6YsPVQylalAtjZ9mkTH7W4zuM7hcstYi+RovT+uYpXGQiOfjiajVZs8XI3PTh19bmHYsjd/H
+ WrUkgGS4rMo3ctFH2SDFPS2UjHCjdBJMUrVOV86RdDuqfnZJd01Z4CN1jr2eL/UdQX4xCjGN1
+ E7joYLcs1nuKMhQVcDp/4fMSVnSuDt7bQ0UVn/DG3DuABhgT6fBvCwxj+Y4UQyAJXRFTterpZ
+ 5wmMZHV4wBSqjJcjXBGLQ07Gl8i/CMYWqX33b0U+/eXxS5a7bpoqZpz21QuVPORnE7IWEHm+2
+ gVg+ZEv+XTspMXui1GtRKd5EZOQRhbwxv3/1pGRcUf2pWt74KApLR9TKG/fjC4tcKenJ7+3gN
+ s9MnZPTsXgZH/o3Nbu4ApTKvNmCIhDPnkKxr1E1z2wShYyYUGnVzebKqVbSg3Fvu7wu6hNEJS
+ DBXUuxNSWkkIF6tCy14vXdxcNMZUHYZxjYWCLkbV5AbJX/l5/7l+fOGZ056Jx0019WJN82JWe
+ 8ChY0fy0WNO3XLUd2n6l9E5o50/VVOBCCPREFyylsWCerYPjOAQCGEaMEfpu2v7d5/dqZJh5F
+ Jiltra9qGdtyjRZvXAHP+o3rfsQKQGuArKog6r4T59906zWVeA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_133344_336129_03CF9295 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20200528_133412_458361_2BC56A8D 
+X-CRM114-Status: GOOD (  18.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [199.106.114.38 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.134 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.134 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,50 +90,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>,
- David Collins <collinsd@codeaurora.org>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Geert Uytterhoeven <geert@linux-m68k.org>,
- Dan Carpenter <dan.carpenter@oracle.com>, Joe Perches <joe@perches.com>,
- Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
- Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
+Cc: Rob Herring <robh@kernel.org>, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Tony Lindgren <tony@atomide.com>,
+ Keerthy <j-keerthy@ti.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
+ arm-soc <arm@kernel.org>, Olof Johansson <olof@lixom.net>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ afzal mohammed <afzal.mohd.ma@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 26, 2020 at 10:35:04AM -0700, Guru Das Srinagesh wrote:
-> Since the PWM framework is switching struct pwm_args.period's datatype
-> to u64, prepare for this transition by using DIV64_U64_ROUND_CLOSEST to
-> handle a 64-bit divisor.
-> 
-> Cc: Daniel Thompson <daniel.thompson@linaro.org>
-> Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
-> ---
->  drivers/pwm/pwm-clps711x.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
-> index 924d39a..ba9500a 100644
-> --- a/drivers/pwm/pwm-clps711x.c
-> +++ b/drivers/pwm/pwm-clps711x.c
-> @@ -43,7 +43,7 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
->  static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
->  {
->  	/* Duty cycle 0..15 max */
-> -	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
-> +	return DIV64_U64_ROUND_CLOSEST(v * 0xf, pwm->args.period);
->  }
->  
->  static int clps711x_pwm_request(struct pwm_chip *chip, struct pwm_device *pwm)
-> -- 
+On Thu, May 28, 2020 at 6:18 PM <santosh.shilimkar@oracle.com> wrote:
+> On 5/28/20 8:57 AM, Tony Lindgren wrote:
+> > * Tony Lindgren <tony@atomide.com> [200528 13:51]:
+> >> * Tony Lindgren <tony@atomide.com> [200528 13:47]:
+> >>> * Arnd Bergmann <arnd@arndb.de> [200528 09:20]:
+> >>>> The OMAP4 timer code had a special hack for using the broadcast timer
+> >>>> without SMP. Since the dmtimer is now gone, this also needs to be dropped
+> >>>> to avoid a link failure for non-SMP AM43xx configurations:
+> >>>>
+> >>>> kernel/time/tick-broadcast.o: in function `tick_device_uses_broadcast':
+> >>>> tick-broadcast.c:(.text+0x130): undefined reference to `tick_broadcast'
+> >>>
+> >>> Hmm this sounds like a regression though. Isn't this needed for using
+> >>> the ARM local timers on non-SMP SoC, so a separate timer from dmtimer?
+> >>>
+> >>> I've probably removed something accidentally to cause this.
+> >>
+> >> Sounds like arch/arm/mach-omap2/Makefile change needs to be removed
+> >> to always still build in timer.o. And probably timer.c needs back
+> >> the ifdef for CONFIG_SOC_HAS_REALTIME_COUNTER.
+> >>
+> >> I'll take a look today.
+> >
+> > I've sent a patch along those lines as:
+> >
+> > [PATCH] ARM: OMAP2+: Fix regression for using local timer on non-SMP SoCs
+> >
+> > A link for the patch at [0] below.
+> >
+> CPU local timers not being in always ON power domain use to be the
+> reason on early version of the SOCs but later SOC moved the CPU local
+> timer also in always on domain. Probably AM43xx does loose local timer
+> on CPU PD in low power so yes broadcast would be needed with dmtimer
+> help.
+>
+> >
+> > [0] https://lore.kernel.org/linux-omap/20200528155453.8585-1-tony@atomide.com/T/#u
+> >
+> This should restore it.
 
-Hi Daniel,
+Should I apply the fix directly to the arm/soc branch that has the
+other changes then?
 
-Could you please review this patch when you get a chance to?
-
-Thank you.
-
-Guru Das.
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
