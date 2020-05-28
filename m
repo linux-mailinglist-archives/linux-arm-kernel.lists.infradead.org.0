@@ -2,74 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E9CE1E6403
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 16:32:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06CC91E63FF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 16:32:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EL9qjniwwxz1PSbt6OeMmg4hOQtMTqO7wgf85Bmkpgo=; b=kZHoskoJOYZUUd
-	wKni4vE+UJtrmk+m3AJHHcPIjarSSNlhYNvfGY4pveayE2QvoJIRMMajw5cEIf+8KVsB1BXo69aMJ
-	lA1pVDRPiVA0gKeCID9Qj56ubiAP20rzVI3lLve6FpgpY9zqKsz5ROy3aeWOT8ay2jeZJBOUG8Nf5
-	0iznJAhUPuVSzyVHs6aIyKrVPalVoIzO95Fa9xso4fSG3t9kCvDuVHvXDKQUDB6YfpUvrvzTYMHXr
-	eyPKaw1VHfyr4VAvZhzZCE7KShoIXaDRiZ4TSj6qf1yfwYaCxxNgBI6OcS4SCHwS7PFJKw76uqClt
-	vD3yAqGtEXxhohq7qwqA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pplcuRLvUDEuHF61aciANIxu/C6rGQcUTDf8B7D6v2k=; b=h3B07PCr3k6fNw
+	kzNeGB7YNqubnuQMppqg8fSar9dc0VLUMurRMEWBohbDQZasaknFagDBfYNLmQD0HzQ6VYbzoWzDy
+	Stscj/Dag4Gg2yQCPlNS3FWybk/3Wu1uz+Ce0VscFr+YiR8f9QjMXzLmSCtKeE/r9fMcnXAlb6f8X
+	SvDNDC3+r02y6oo0K9Biz9sC1UT9BCV+quy6ZNwIpI5Be27Y7RI9uqB164YRHEBGLHThHmajv3pWh
+	gTd4oS9wyg8Gqids9CPrTc+pugpprmCVY4Ouu/Imo1ffVfSeSbRpPknfzeUwoL0P9gD49QHfdJRA1
+	CjxpoMGxr1DAH04i50BQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeJaH-0003dn-0y; Thu, 28 May 2020 14:32:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jeJZi-0003Bm-OF; Thu, 28 May 2020 14:32:02 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeJZp-0003Mi-RP
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 14:32:11 +0000
-Received: from pali.im (pali.im [31.31.79.79])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0F098207D3;
- Thu, 28 May 2020 14:32:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590676328;
- bh=akyLuHeiAlZIZHfR0soky+wL6Do/cboTPXXRrmLbVcM=;
- h=From:To:Cc:Subject:Date:From;
- b=d2K+pAeTDZ5RpezmH6ZH/G46972OO1eS9ejtgl4eRc+z7CDanFwXHD1jvVuStpsI5
- fwr7nmGoeDP3rq4Ie9BtO8Gr19T8OYE3cDJ41T8Iz8Mgrg0s9egdszpU5+1TEu6Rgk
- rRysRM5YScuyL1XYDRPU9YQDjqjugHwQLtkIgmaI=
-Received: by pali.im (Postfix)
- id 8BC2B865; Thu, 28 May 2020 16:32:05 +0200 (CEST)
-From: =?UTF-8?q?Pali=20Roh=C3=A1r?= <pali@kernel.org>
-To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Andrew Murray <amurray@thegoodpenguin.co.uk>,
- Bjorn Helgaas <bhelgaas@google.com>,
- =?UTF-8?q?Marek=20Beh=C3=BAn?= <marek.behun@nic.cz>,
- Remi Pommarel <repk@triplefau.lt>, Tomasz Maciej Nowak <tmn505@gmail.com>,
- Xogium <contact@xogium.me>
-Subject: [PATCH] PCI: aardvark: Don't touch PCIe registers if no card connected
-Date: Thu, 28 May 2020 16:31:41 +0200
-Message-Id: <20200528143141.29956-1-pali@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ id 1jeJZa-0003B4-Vb; Thu, 28 May 2020 14:31:56 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 6A0A72A0AA8;
+ Thu, 28 May 2020 15:31:53 +0100 (BST)
+Date: Thu, 28 May 2020 16:31:50 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v6 08/18] mtd: rawnand: Use the new ECC engine type
+ enumeration
+Message-ID: <20200528163150.6ad71fcc@collabora.com>
+In-Reply-To: <20200528113113.9166-9-miquel.raynal@bootlin.com>
+References: <20200528113113.9166-1-miquel.raynal@bootlin.com>
+ <20200528113113.9166-9-miquel.raynal@bootlin.com>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_073209_912735_D8EC3D1F 
-X-CRM114-Status: GOOD (  12.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200528_073155_148479_64A7E946 
+X-CRM114-Status: GOOD (  17.29  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,35 +61,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
+ Richard Weinberger <richard@nod.at>, Weijie Gao <weijie.gao@mediatek.com>,
+ Paul Cercueil <paul@crapouillou.net>, Rob Herring <robh+dt@kernel.org>,
+ linux-mtd@lists.infradead.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, Chuanhong Guo <gch981213@gmail.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-V2hlbiB0aGVyZSBpcyBubyBQQ0llIGNhcmQgY29ubmVjdGVkIGFuZCBhZHZrX3BjaWVfcmRfY29u
-ZigpIG9yCmFkdmtfcGNpZV93cl9jb25mKCkgaXMgY2FsbGVkIGZvciBQQ0kgYnVzIHdoaWNoIGRv
-ZXNuJ3QgYmVsb25nIHRvIGVtdWxhdGVkCnJvb3QgYnJpZGdlLCB0aGUgYWFyZHZhcmsgZHJpdmVy
-IHRocm93cyB0aGUgZm9sbG93aW5nIGVycm9yIG1lc3NhZ2U6CgogIGFkdmstcGNpZSBkMDA3MDAw
-MC5wY2llOiBjb25maWcgcmVhZC93cml0ZSB0aW1lZCBvdXQKCk9idmlvdXNseSBhY2Nlc3Npbmcg
-UENJZSByZWdpc3RlcnMgb2YgZGlzY29ubmVjdGVkIGNhcmQgaXMgbm90IHBvc3NpYmxlLgoKRXh0
-ZW5kIGNoZWNrIGluIGFkdmtfcGNpZV92YWxpZF9kZXZpY2UoKSBmdW5jdGlvbiBmb3IgdmFsaWRh
-dGluZwphdmFpbGFiaWxpdHkgb2YgUENJZSBidXMuIElmIFBDSWUgbGluayBpcyBkb3duLCB0aGVu
-IHRoZSBkZXZpY2UgaXMgbWFya2VkCmFzIE5vdCBGb3VuZCBhbmQgdGhlIGRyaXZlciBkb2VzIG5v
-dCB0cnkgdG8gYWNjZXNzIHRoZXNlIHJlZ2lzdGVycy4KClNpZ25lZC1vZmYtYnk6IFBhbGkgUm9o
-w6FyIDxwYWxpQGtlcm5lbC5vcmc+Ci0tLQogZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2ktYWFy
-ZHZhcmsuYyB8IDMgKysrCiAxIGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCspCgpkaWZmIC0t
-Z2l0IGEvZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2ktYWFyZHZhcmsuYyBiL2RyaXZlcnMvcGNp
-L2NvbnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMKaW5kZXggOTBmZjI5MWMyNGYwLi41M2E0Y2ZkN2Qz
-NzcgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvcGNpLWFhcmR2YXJrLmMKKysr
-IGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9wY2ktYWFyZHZhcmsuYwpAQCAtNjQ0LDYgKzY0NCw5
-IEBAIHN0YXRpYyBib29sIGFkdmtfcGNpZV92YWxpZF9kZXZpY2Uoc3RydWN0IGFkdmtfcGNpZSAq
-cGNpZSwgc3RydWN0IHBjaV9idXMgKmJ1cywKIAlpZiAoKGJ1cy0+bnVtYmVyID09IHBjaWUtPnJv
-b3RfYnVzX25yKSAmJiBQQ0lfU0xPVChkZXZmbikgIT0gMCkKIAkJcmV0dXJuIGZhbHNlOwogCisJ
-aWYgKGJ1cy0+bnVtYmVyICE9IHBjaWUtPnJvb3RfYnVzX25yICYmICFhZHZrX3BjaWVfbGlua191
-cChwY2llKSkKKwkJcmV0dXJuIGZhbHNlOworCiAJcmV0dXJuIHRydWU7CiB9CiAKLS0gCjIuMjAu
-MQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+On Thu, 28 May 2020 13:31:03 +0200
+Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+
+> Mechanical switch from the legacy "mode" enumeration to the new
+> "engine type" enumeration in drivers and board files.
+> 
+> The device tree parsing is also updated to return the new enumeration
+> from the old strings.
+> 
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+
+I didn't check all the changes, but I'm fine with the approach
+
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+
+> diff --git a/include/linux/platform_data/mtd-davinci.h b/include/linux/platform_data/mtd-davinci.h
+> index 3383101c233b..dd474dd44848 100644
+> --- a/include/linux/platform_data/mtd-davinci.h
+> +++ b/include/linux/platform_data/mtd-davinci.h
+> @@ -60,16 +60,16 @@ struct davinci_nand_pdata {		/* platform_data */
+>  	struct mtd_partition	*parts;
+>  	unsigned		nr_parts;
+>  
+> -	/* none  == NAND_ECC_NONE (strongly *not* advised!!)
+> -	 * soft  == NAND_ECC_SOFT
+> -	 * else  == NAND_ECC_HW, according to ecc_bits
+> +	/* none  == NAND_ECC_ENGINE_TYPE_NONE (strongly *not* advised!!)
+> +	 * soft  == NAND_ECC_ENGINE_TYPE_SOFT
+> +	 * else  == NAND_ECC_ENGINE_TYPE_ON_HOST, according to ecc_bits
+>  	 *
+>  	 * All DaVinci-family chips support 1-bit hardware ECC.
+>  	 * Newer ones also support 4-bit ECC, but are awkward
+>  	 * using it with large page chips.
+>  	 */
+> -	enum nand_ecc_mode	ecc_mode;
+> -	enum nand_ecc_placement	ecc_placement;
+> +	enum nand_ecc_engine_type engine_type;
+> +	enum nand_ecc_placement ecc_placement;
+
+Nitpick: if you want to use a space instead of tab, it should be done in
+patch 3.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
