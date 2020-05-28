@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3DBB1E5296
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 03:02:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A10E1E5299
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 03:03:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8tUwFR8IkR+eGjtLWw+cOlY/iL00XMWf02ae7Qe8jH4=; b=EXko7PmP1PE3yR
-	2R560DifTImQc2AZu8euG6TNCx+/HtTGcV3q9T9S4NM23fZwK3Pkdyi4o1sPQv0PFf7DGtAGMrsVF
-	wHhEL2cd24yCMZ7aztoLgP94kqvan1FtjGjT89V2MqRrhKRWiyiC/qMHlRg5zGfNDFsvK/aATqamS
-	Vp+xu0Q0BFPjb31ukeYkw2h0EBhSJs7wF+aPJT3CL+kHYtyslZlnW4jil7jyNdzxA/CGxQOVfXZn6
-	9P9wUMMS5eNXb2DDF989r7gUpqoGq90+nQv0SXym1PpYy4wD2MH97SOEBvWs0TWGJn+YYKAVNhnW+
-	jos2IWvk7MU7DvcKglMQ==;
+	List-Owner; bh=kPvJ76MVZ/M+cbOFfrClXHY0BJj9WqojQ990Iqh6NJM=; b=Pho6CneKVHLbIW
+	017yMibNkw8ij28fU+nhuL7w3VADx1m2+cy3B6+Cg3NbNiTdp52WyreK4Wyc16fo9LzqEuhSMfijr
+	2e7rZfpj2gFx5MenBObjoEQsIylKgvqolIsB5xa9wrNJ3r3mGLICcbBzpULgiFMzB2J49f3hCyhV0
+	KJEXJCM/NPq/s1DRtTcxVjBbMM+ZsNQc8DggC2HzmHs9uhwHTGO00pTDNYUHQVx1dvWIYv9RT1vFH
+	/hjoxvjsCOHykOccdvdpN6mESjiqNe0L3fLdQueZTdAmR4igZ54djb/IpH/1cSHuVUkWUD7hTZN6L
+	7/6ZVn1tmD1V+O/1UCew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je6wR-00072T-NH; Thu, 28 May 2020 01:02:39 +0000
+	id 1je6wp-0007HM-Jx; Thu, 28 May 2020 01:03:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je6v4-000699-Lb
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 01:01:16 +0000
+ id 1je6v8-0006C8-Sk
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 01:01:22 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D4A2820888;
- Thu, 28 May 2020 01:01:13 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 260C720888;
+ Thu, 28 May 2020 01:01:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590627673;
- bh=ktm4pRzhf1NV+YzaN6U4bH9oGe9Z7m0BKz8OebZtXV4=;
+ s=default; t=1590627677;
+ bh=jBVXYZkmmWDlv9o4kqsnN/HfJGhCXkyYlOK0BYqwJg8=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=bGQAVXnrqqYj5PIC4HmEiIEF1X9H/Ia6ZctYMMYMP9cVlqeuH6/pUCSX/x7WaA+z+
- c6hhnjEfLiycahb1z2jYP9y/P/w0D7ipCE6p/U/rgabHHb2Nk4yQjLScOLI5fenqK9
- X8eBp9NIH0X6E3BkAPwsqlnIHYnSlRXj4etAmzlE=
+ b=dvB1PfwnC/pD0upEAcY9qqx5epSxMeNZj3ziOAmBlyHhJd4nrHQK0DBRTfV8LzXBu
+ KPL6Xcy0Lpd+GbFgEbXVYSw4TCuaz1ZhBptIWMKqKWkdHjCFkxWbSWUvX+y5EKNrBk
+ cxH1s60bwbhz82qGG6PNxVahQ9AwcyX2QTm+LFD0=
 MIME-Version: 1.0
-In-Reply-To: <20200519224151.2074597-6-lkundrak@v3.sk>
+In-Reply-To: <20200519224151.2074597-7-lkundrak@v3.sk>
 References: <20200519224151.2074597-1-lkundrak@v3.sk>
- <20200519224151.2074597-6-lkundrak@v3.sk>
-Subject: Re: [PATCH v3 05/13] clk: mmp2: Move thermal register defines up a bit
+ <20200519224151.2074597-7-lkundrak@v3.sk>
+Subject: Re: [PATCH v3 06/13] clk: mmp2: Rename mmp2_pll_init() to
+ mmp2_main_clk_init()
 From: Stephen Boyd <sboyd@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Date: Wed, 27 May 2020 18:01:13 -0700
-Message-ID: <159062767309.69627.11783454941191458083@swboyd.mtv.corp.google.com>
+Date: Wed, 27 May 2020 18:01:16 -0700
+Message-ID: <159062767630.69627.10455271223525770055@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_180114_722775_84424DF4 
-X-CRM114-Status: UNSURE (   6.48  )
+X-CRM114-CacheID: sfid-20200527_180119_181625_8A356DF1 
+X-CRM114-Status: UNSURE (   6.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -86,9 +87,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lubomir Rintel (2020-05-19 15:41:43)
-> A trivial change to keep the sorting sane. The APBC registers are happier
-> when they are grouped together, instead of mixed with the APMU ones.
+Quoting Lubomir Rintel (2020-05-19 15:41:44)
+> This is a trivial rename for a routine that registers more clock sources
+> than the PLLs -- there's also a XO.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > ---
