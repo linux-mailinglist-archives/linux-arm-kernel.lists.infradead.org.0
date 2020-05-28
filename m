@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F33D31E655E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 17:03:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D36781E656E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 17:05:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=erP1kL1LTULDxlKPOVD7ERCt8jAGJ/KSHNri2kb/YoM=; b=pP3lCAWwTs0W6C
-	dQIo6eYFPbPC8D65yY8fbbj8YZI2vqEFhBH+YzCpnQ6z2dUrLr+pfnS4l8gbWBunXDDJd5cgY4iNK
-	uRQlgN8+rnJAXyDmpy+AIUgE4iqgnuaBkjRMXJyjoFm/3KcjBykVt+PqEZezzlIF4i/GQgZ4K+ltc
-	8JFnqZr2bCE+HIm2qXzM1itsiqd/rdxRpqPGSCe8IgmgVQe2Cpn41fFIg3/O3SvaOhoh0OWMykdRw
-	D+4KjYAt1AhwCmbGSXYKfHd5IxAa7g0BQzXqT+/OMNZt9zfzUdoOtQlVAuPmXYfbsmU6TeTalPfRn
-	A2cAgoxAOPYiia7sAfYg==;
+	List-Owner; bh=GAp9kfNboywAIBnDh7ew8mq7zTFJjmYUjDgJ87jFS0o=; b=DxKm6qKa8kMoSh
+	rprO/zCUMgTKEZSdcHW82NeCcQaZ5XnAnFSybJv8NyiXpSuVrPjiM4HKxo7WebUkKIMCWp+Zg/lWt
+	ciJk7XNHXMDA3hWsfFTqORPF/7yr0vyVdw6/4TGyDNxlVNmBsTMyYwC210cLmiTTLJIyKyGUB20Do
+	z79n9MV+aplJOMnOMvzom5np9eCsYEYd0WOQZxBKuevZxuO+DsN0Ly8MimB7pSPOmNaV7M4lagMXY
+	7liKKX5KwRsU88EWYlu1yYHf3IUIXgs9hJRwFrplDSooqR3iWIcMIumF6u5f57F6o8smpABugur4p
+	P980iVPcW3ENKRWF2e3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeK4S-00005j-01; Thu, 28 May 2020 15:03:48 +0000
+	id 1jeK63-00014f-9o; Thu, 28 May 2020 15:05:27 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeK3N-00087p-Uk; Thu, 28 May 2020 15:02:43 +0000
+ id 1jeK53-0000oP-0d; Thu, 28 May 2020 15:04:27 +0000
 Received: from xps13 (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 22B84240017;
- Thu, 28 May 2020 15:02:34 +0000 (UTC)
-Date: Thu, 28 May 2020 17:02:33 +0200
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id A9D7A240003;
+ Thu, 28 May 2020 15:04:20 +0000 (UTC)
+Date: Thu, 28 May 2020 17:04:19 +0200
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Boris Brezillon <boris.brezillon@collabora.com>
-Subject: Re: [PATCH v6 14/18] mtd: nand: Add more parameters to the
- nand_ecc_props structure
-Message-ID: <20200528170233.0b91986b@xps13>
-In-Reply-To: <20200528170022.5cd5b46c@collabora.com>
+Subject: Re: [PATCH v6 16/18] mtd: nand: Convert generic NAND bits to use
+ the ECC framework
+Message-ID: <20200528170419.0c2ba99a@xps13>
+In-Reply-To: <20200528165217.6582f9aa@collabora.com>
 References: <20200528113113.9166-1-miquel.raynal@bootlin.com>
- <20200528113113.9166-15-miquel.raynal@bootlin.com>
- <20200528163424.6677597c@collabora.com>
- <20200528165754.35985b62@xps13>
- <20200528170022.5cd5b46c@collabora.com>
+ <20200528113113.9166-17-miquel.raynal@bootlin.com>
+ <20200528163907.6539e2a1@collabora.com>
+ <20200528164926.3b99f848@xps13>
+ <20200528165217.6582f9aa@collabora.com>
 Organization: Bootlin
 X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_080242_291452_9280E557 
-X-CRM114-Status: GOOD (  21.83  )
+X-CRM114-CacheID: sfid-20200528_080425_350476_35D161A9 
+X-CRM114-Status: GOOD (  18.68  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -64,12 +64,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Vignesh Raghavendra <vigneshr@ti.com>,
+Cc: devicetree@vger.kernel.org, Vignesh Raghavendra <vigneshr@ti.com>,
  Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>, Paul Cercueil <paul@crapouillou.net>,
- Rob Herring <robh+dt@kernel.org>, linux-mtd@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Richard Weinberger <richard@nod.at>, Weijie Gao <weijie.gao@mediatek.com>,
+ Paul Cercueil <paul@crapouillou.net>, Rob Herring <robh+dt@kernel.org>,
+ linux-mtd@lists.infradead.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Mason Yang <masonccyang@mxic.com.tw>, Chuanhong Guo <gch981213@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -79,101 +78,70 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 Boris Brezillon <boris.brezillon@collabora.com> wrote on Thu, 28 May
-2020 17:00:22 +0200:
+2020 16:52:17 +0200:
 
-> On Thu, 28 May 2020 16:57:54 +0200
+> On Thu, 28 May 2020 16:49:26 +0200
 > Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 > 
 > > Boris Brezillon <boris.brezillon@collabora.com> wrote on Thu, 28 May
-> > 2020 16:34:24 +0200:
+> > 2020 16:39:07 +0200:
 > >   
-> > > On Thu, 28 May 2020 13:31:09 +0200
+> > > On Thu, 28 May 2020 13:31:11 +0200
 > > > Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 > > >     
-> > > > Prepare the migration to the generic ECC framework by adding more
-> > > > fields to the nand_ecc_props structure which will be used widely to
-> > > > describe different kind of ECC properties.
-> > > > 
-> > > > Doing this imposes to move the engine type, ECC placement and
-> > > > algorithm enumerations in a shared place: nand.h.
+> > > > Embed a generic NAND ECC high-level object in the nand_device
+> > > > structure to carry all the ECC engine configuration/data. Adapt the
+> > > > raw NAND and SPI-NAND cores to fit the change.
 > > > > 
 > > > > Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 > > > > ---
-> > > >  include/linux/mtd/nand.h    | 52 +++++++++++++++++++++++++++++++++++++
-> > > >  include/linux/mtd/rawnand.h | 44 -------------------------------
-> > > >  2 files changed, 52 insertions(+), 44 deletions(-)
+> > > >  drivers/mtd/nand/Kconfig                     |  1 +
+> > > >  drivers/mtd/nand/raw/atmel/nand-controller.c |  9 +++--
+> > > >  drivers/mtd/nand/raw/brcmnand/brcmnand.c     |  7 ++--
+> > > >  drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c   | 12 +++---
+> > > >  drivers/mtd/nand/raw/marvell_nand.c          |  7 ++--
+> > > >  drivers/mtd/nand/raw/mtk_nand.c              |  4 +-
+> > > >  drivers/mtd/nand/raw/nand_base.c             | 25 ++++++------
+> > > >  drivers/mtd/nand/raw/nand_esmt.c             | 11 +++---
+> > > >  drivers/mtd/nand/raw/nand_hynix.c            | 41 ++++++++++----------
+> > > >  drivers/mtd/nand/raw/nand_jedec.c            |  4 +-
+> > > >  drivers/mtd/nand/raw/nand_micron.c           | 14 ++++---
+> > > >  drivers/mtd/nand/raw/nand_onfi.c             |  8 ++--
+> > > >  drivers/mtd/nand/raw/nand_samsung.c          | 19 ++++-----
+> > > >  drivers/mtd/nand/raw/nand_toshiba.c          | 11 +++---
+> > > >  drivers/mtd/nand/raw/sunxi_nand.c            |  5 ++-
+> > > >  drivers/mtd/nand/raw/tegra_nand.c            |  9 +++--
+> > > >  drivers/mtd/nand/spi/core.c                  |  8 ++--
+> > > >  drivers/mtd/nand/spi/macronix.c              |  6 +--
+> > > >  drivers/mtd/nand/spi/toshiba.c               |  6 +--
+> > > >  include/linux/mtd/nand.h                     |  8 ++--
+> > > >  20 files changed, 115 insertions(+), 100 deletions(-)
 > > > > 
-> > > > diff --git a/include/linux/mtd/nand.h b/include/linux/mtd/nand.h
-> > > > index 6add464fd18b..2e9af24936cd 100644
-> > > > --- a/include/linux/mtd/nand.h
-> > > > +++ b/include/linux/mtd/nand.h
-> > > > @@ -127,14 +127,66 @@ struct nand_page_io_req {
-> > > >  	int mode;
-> > > >  };
+> > > > diff --git a/drivers/mtd/nand/Kconfig b/drivers/mtd/nand/Kconfig
+> > > > index a4478ffa279d..3327d8539a73 100644
+> > > > --- a/drivers/mtd/nand/Kconfig
+> > > > +++ b/drivers/mtd/nand/Kconfig
+> > > > @@ -13,6 +13,7 @@ menu "ECC engine support"
 > > > >  
-> > > > +/**
-> > > > + * enum nand_ecc_engine_type - NAND ECC engine type
-> > > > + * @NAND_ECC_ENGINE_TYPE_INVALID: Invalid value
-> > > > + * @NAND_ECC_ENGINE_TYPE_NONE: No ECC correction
-> > > > + * @NAND_ECC_ENGINE_TYPE_SOFT: Software ECC correction
-> > > > + * @NAND_ECC_ENGINE_TYPE_ON_HOST: On host hardware ECC correction
-> > > > + * @NAND_ECC_ENGINE_TYPE_ON_DIE: On chip hardware ECC correction
-> > > > + */
-> > > > +enum nand_ecc_engine_type {
-> > > > +	NAND_ECC_ENGINE_TYPE_INVALID,
-> > > > +	NAND_ECC_ENGINE_TYPE_NONE,
-> > > > +	NAND_ECC_ENGINE_TYPE_SOFT,
-> > > > +	NAND_ECC_ENGINE_TYPE_ON_HOST,
-> > > > +	NAND_ECC_ENGINE_TYPE_ON_DIE,
-> > > > +};
-> > > > +
-> > > > +/**
-> > > > + * enum nand_ecc_placement - NAND ECC bytes placement
-> > > > + * @NAND_ECC_PLACEMENT_UNKNOWN: The actual position of the ECC bytes is unknown
-> > > > + * @NAND_ECC_PLACEMENT_OOB: The ECC bytes are located in the OOB area
-> > > > + * @NAND_ECC_PLACEMENT_INTERLEAVED: Syndrome layout, there are ECC bytes
-> > > > + *                                  interleaved with regular data in the main
-> > > > + *                                  area
-> > > > + */
-> > > > +enum nand_ecc_placement {
-> > > > +	NAND_ECC_PLACEMENT_UNKNOWN,
-> > > > +	NAND_ECC_PLACEMENT_OOB,
-> > > > +	NAND_ECC_PLACEMENT_INTERLEAVED,
-> > > > +};
-> > > > +
-> > > > +/**
-> > > > + * enum nand_ecc_algo - NAND ECC algorithm
-> > > > + * @NAND_ECC_ALGO_UNKNOWN: Unknown algorithm
-> > > > + * @NAND_ECC_ALGO_HAMMING: Hamming algorithm
-> > > > + * @NAND_ECC_ALGO_BCH: Bose-Chaudhuri-Hocquenghem algorithm
-> > > > + * @NAND_ECC_ALGO_RS: Reed-Solomon algorithm
-> > > > + */
-> > > > +enum nand_ecc_algo {
-> > > > +	NAND_ECC_ALGO_UNKNOWN,
-> > > > +	NAND_ECC_ALGO_HAMMING,
-> > > > +	NAND_ECC_ALGO_BCH,
-> > > > +	NAND_ECC_ALGO_RS,
-> > > > +};
-> > > > +
-> > > >  /**
-> > > >   * struct nand_ecc_props - NAND ECC properties
-> > > > + * @engine_type: ECC engine type
-> > > > + * @placement: OOB placement (if relevant)
-> > > > + * @algo: ECC algorithm (if relevant)
-> > > >   * @strength: ECC strength
-> > > >   * @step_size: Number of bytes per step
-> > > > + * @flags: Misc properties      
+> > > >  config MTD_NAND_ECC
+> > > >  	bool
+> > > > +	select MTD_NAND_CORE      
 > > > 
-> > > I'd like to hear more about that one. What is this about? I'd rather
-> > > not add a field if it's not needed.
-> > >     
+> > > This select looks suspicious. Shouldn't it be a depends on, and more
+> > > importantly, I think it should be part of patch 15.    
 > > 
-> > It is used in patch 18/18 to store the NAND_ECC_MAXIMIZE flag. And I
-> > expect others to come later...  
+> > Wouldn't we break a lot of users by using depends on?
+> > 
+> > Or maybe we can turn it on by default?  
 > 
-> Then I think it should be introduced in this patch, not here.
+> It's a sub-functionality of the NAND core, so it should be a depends on
+> in my opinion. Why would that break users. Aren't you selecting
+> MTD_NAND_CORE in MTD_RAWNAND now? Those options should really remain
+> hidden, and be selected at the SPI/raw NAND framework level.
 
-I'm fine with that.
+I remembered we discussed that point already, yes the generic core is
+selected by the SPI/raw NAND layers, so it should be fine. I'll move
+this as a depends on in the previous patch.
 
 _______________________________________________
 linux-arm-kernel mailing list
