@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F12BB1E6684
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 17:45:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C9371E668B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 17:46:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rNGEOKWdg7XRNS5EFB88ypJkfpUsKlp7pCrfjKsx7/g=; b=upfHVdgOwz5HB3
-	T86aqxDWlGI4XaWWyg8zuQ/yDxbiV/hFe+VWT670bdtA6HZkkVdbxPdRCsm4ueUBAbUKeLKi9DCf9
-	uJsSIFtGwyJv/V07kNBIdvdxVVR+SlfrQXp+gbe980gc2GzHdSwbWInFCkZPi4Uhc65Ye2qu1BsKc
-	pXtmAOz53D1/ou+KOjih+cMnR/RDqI5EOJwak3TgmVefVn4fwGJw5OYWD3U2x0427WHTEPg2NGhdq
-	WFUN5GnUkQaGAM1h/UO/iAbMguhsBK2PBxJWIzfQCqr+s7Rr6QMFb67VauF5m1TmGClmn9IQ1VXg1
-	g/0xgFeVpwILqud3RWxA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Xlqtyq8Uwu4QdwZDTll5RnsRT2QD6XcItO/BCIt8eJQ=; b=ZQs/KtWq7EpFo0
+	xZ4U24f0ha9+yx6iZG5FNuW+wwtnzQNsvxxmtBPCuouZCgaxGEEKGdqSzzrOP82Vxo1k5imzpIWYm
+	7j+MuXbls7ZxhRJeZTfD2CTo3a4vVRvbUJOyHM8DIhxbeUOMZ/46rT7GSKNLhLhf36BzU0rZXr9zD
+	Le2CoicmcZ9hRKoRFIDMGAJ+j0l45hC+2AqZDJaP/Ay6HHS8cNwnKxa4fGnepn6Ev11BFLRWl54cw
+	ZYt9C3lbdCzzY7ousC+4ofu++8R/PZ4UX2rbzfqZxwrI4doULB6GAGZj9WI0lrQ2k56REsu4RnsT4
+	JEfsrsJUo7LgjRR9EsLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeKik-0002bU-Q4; Thu, 28 May 2020 15:45:26 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jeKjD-0003E5-Rf; Thu, 28 May 2020 15:45:55 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeKiT-0001Nu-EH
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 15:45:11 +0000
-Received: by mail-wm1-x342.google.com with SMTP id n5so3743056wmd.0
+ id 1jeKiT-0001iN-Vu
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 15:45:14 +0000
+Received: by mail-wr1-x444.google.com with SMTP id j16so15999957wrb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 08:45:08 -0700 (PDT)
+ Thu, 28 May 2020 08:45:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RRcpe0H3lCAzNpSzTtIGdoPxExC1gnrWV04XMN1Ki5Y=;
- b=g0HFkoJKIY9iSEkgGQr+z2ngQ5RvAXjSLWxFjTtoZKt7hmDAuvtCGVOiKVewJ4rQqt
- T2/8s2EPboAsw2RPb5z3xfaPEiobgw2PMqFJ1KOvmAxxWtVsHP9U0UvlOUIuZFjX4prO
- EROm0xvcPNCKxVAQ4MY81faMt0ml8cV0vQj1lO/w0BPMLaIBrby2hr1ncD0+i5Oordpy
- EMCYu6kRDEgoyGD2TDNNS7Uc4me45W8sJuzMWwUmnF6BmQH2E+ng5a6R0eqKr6M8kiXi
- zeJapxgvsGZrHT30JbNBOTMLluxih3uG2BT13+Qk13hcumfHzLaDzvuwG3Q7yAmDOOAc
- +mLQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=bqViQ9O7yTT1lgzVQrGPraM7Z4Hz1E/DmaF8sGIg+iU=;
+ b=Lz/Ir6YYZ1FaaBpnkUI+cMYlywvXzGXow6KMrv4fZdA7/bgI4AbB23N78iA7MFyp2p
+ LvnyLynD7rqEMo0nz3JXHbUIf4JazglS82LMO7DvDpJz/fVU1TcVgS09Dup9yOmn5wVS
+ KL5+ITKGh5QNC2uugt7BU6Efi/LHQXySdc7wLKdh+Pr3d4FAZLegm0DE9oBVR77mo1y0
+ FAk0imstc1fNze/qzrVYEYKGVF7+SzYP2hXp+8GYMvhtNAK8FdjCA+ocmiHyukxsKLmR
+ fdPTO09bYF9gqF+Vi7AomscvgvmjVD+/Glq0pkKK4n4azHfefXrjzrah3Ije8A9aOINv
+ h4Mw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RRcpe0H3lCAzNpSzTtIGdoPxExC1gnrWV04XMN1Ki5Y=;
- b=YnZHITlx+2xxofAaQHqwjIaXCFC4x2Q3yjpZ0Ebe1xpLW3gn/qeO2UHdQXWc0IHOPx
- 2Lup2isHPiAqhWvuCqyAxQ6AeqK6hFZGZWYnv5AZ/YLnQCMNHpcvkUCvFj0v/c1hFJpO
- D/uKRaGU4VwpqK2JzssckhkWnSua3m4zSJHMu4PlX9EaR+3DdrncFi0f7o/+c/P8HGYu
- NeZulVuud1sHBasgJ4JCdQc7t32f79grYA0ziX6g4CIRtM0H13KOz8sONyafBZlbQFpy
- Nv/DT+9PyMcF++0Cyi6zVyY9Ph+jQtpiJOsmWZMDONyWfzWfMXrnuCn6E3h2n5jd6GOd
- WhAw==
-X-Gm-Message-State: AOAM5327n6juHGyfiIuedKjgrtJkHFIANwcnz82f6+4wXqzmb0707o7U
- 5C4+FYQ7Nj3H0/eeppXl344IPw==
-X-Google-Smtp-Source: ABdhPJxsoz5O8Wu+pBo3JregNWfan6WrHopy2c2n+D7n8gRcdVSFiDJEqbgTrXNos0B2dRpaa0ksxg==
-X-Received: by 2002:a05:600c:2201:: with SMTP id
- z1mr3945929wml.70.1590680707286; 
- Thu, 28 May 2020 08:45:07 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=bqViQ9O7yTT1lgzVQrGPraM7Z4Hz1E/DmaF8sGIg+iU=;
+ b=jSlxl2/8jglmuOBAKYJ7LCx03bPEkeBSzVcVNQwPJd46T0TZDnTTZ5fwziQudsjgyS
+ F4HpvRxRdgXApOKJUR0FKt0O3UT1tyY4HV4PenMGsBPnvcN9LmEZda+cXBzLp9QEnFHp
+ uadNegRVMiHf7OTQSt3AZWEJ39rkQR0lDsQzC/aTm8ErOm5ZsVSQ1sMi3IWL7Mh4KvRF
+ j49ZuuauBdvvHYRDFAIHFnVrfm9bYojSSDqRHi7YGiVA47GWVVwyPezYqYL0gIJZ+QkH
+ lf1fDEIfVYAAkjlzK9y6tZ+3DDh4kWM3b31auDiUlQILrov94c35+P2DTqcIMzKI9dbG
+ I90Q==
+X-Gm-Message-State: AOAM5312Zr2NVVqUCTGl1tg9l5UYLwi46+wVL3uVYWOPeLfQIKlyyIM+
+ 0zPRUFb9Uwd+gdb8owpKiTz+sA==
+X-Google-Smtp-Source: ABdhPJxZ3c9apdw8jBteGu0AEMQp/RpPJsqo4qBOi5jFydJGbre3onqrr8gehfrvNztP9kivt1/xOA==
+X-Received: by 2002:adf:e3c4:: with SMTP id k4mr4076613wrm.262.1590680708560; 
+ Thu, 28 May 2020 08:45:08 -0700 (PDT)
 Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
  [2.15.156.232])
- by smtp.gmail.com with ESMTPSA id n1sm6285650wrp.10.2020.05.28.08.45.05
+ by smtp.gmail.com with ESMTPSA id n1sm6285650wrp.10.2020.05.28.08.45.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 May 2020 08:45:06 -0700 (PDT)
+ Thu, 28 May 2020 08:45:08 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: John Crispin <john@phrozen.org>, Sean Wang <sean.wang@mediatek.com>,
  Mark Lee <Mark-MC.Lee@mediatek.com>,
  "David S . Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
  Matthias Brugger <matthias.bgg@gmail.com>, Mark Brown <broonie@kernel.org>
-Subject: [PATCH v3 0/2] regmap: provide simple bitops and use them in a driver
-Date: Thu, 28 May 2020 17:45:01 +0200
-Message-Id: <20200528154503.26304-1-brgl@bgdev.pl>
+Subject: [PATCH v3 1/2] regmap: provide helpers for simple bit operations
+Date: Thu, 28 May 2020 17:45:02 +0200
+Message-Id: <20200528154503.26304-2-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.26.1
+In-Reply-To: <20200528154503.26304-1-brgl@bgdev.pl>
+References: <20200528154503.26304-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_084509_575666_077C4DE2 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20200528_084510_039716_86CC5F34 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -109,36 +110,106 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-I noticed that oftentimes I use regmap_update_bits() for simple bit
-setting or clearing. In this case the fourth argument is superfluous as
-it's always 0 or equal to the mask argument.
+In many instances regmap_update_bits() is used for simple bit setting
+and clearing. In these cases the last argument is redundant and we can
+hide it with a static inline function.
 
-This series proposes to add simple bit operations for setting, clearing
-and testing specific bits with regmap.
+This adds three new helpers for simple bit operations: set_bits,
+clear_bits and test_bits (the last one defined as a regular function).
 
-The second patch uses all three in a driver that got recently picked into
-the net-next tree.
+Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+---
+ drivers/base/regmap/regmap.c | 22 ++++++++++++++++++++++
+ include/linux/regmap.h       | 36 ++++++++++++++++++++++++++++++++++++
+ 2 files changed, 58 insertions(+)
 
-The patches obviously target different trees so - if you're ok with
-the change itself - I propose you pick the first one into your regmap
-tree for v5.8 and then I'll resend the second patch to add the first
-user for these macros for v5.9.
-
-v1 -> v2:
-- convert the new macros to static inline functions
-
-v2 -> v3:
-- drop unneeded ternary operator
-
-Bartosz Golaszewski (2):
-  regmap: provide helpers for simple bit operations
-  net: ethernet: mtk-star-emac: use regmap bitops
-
- drivers/base/regmap/regmap.c                  | 22 +++++
- drivers/net/ethernet/mediatek/mtk_star_emac.c | 80 ++++++++-----------
- include/linux/regmap.h                        | 36 +++++++++
- 3 files changed, 93 insertions(+), 45 deletions(-)
-
+diff --git a/drivers/base/regmap/regmap.c b/drivers/base/regmap/regmap.c
+index 59f911e57719..4ad5c5adc0a3 100644
+--- a/drivers/base/regmap/regmap.c
++++ b/drivers/base/regmap/regmap.c
+@@ -2936,6 +2936,28 @@ int regmap_update_bits_base(struct regmap *map, unsigned int reg,
+ }
+ EXPORT_SYMBOL_GPL(regmap_update_bits_base);
+ 
++/**
++ * regmap_test_bits() - Check if all specified bits are set in a register.
++ *
++ * @map: Register map to operate on
++ * @reg: Register to read from
++ * @bits: Bits to test
++ *
++ * Returns -1 if the underlying regmap_read() fails, 0 if at least one of the
++ * tested bits is not set and 1 if all tested bits are set.
++ */
++int regmap_test_bits(struct regmap *map, unsigned int reg, unsigned int bits)
++{
++	unsigned int val, ret;
++
++	ret = regmap_read(map, reg, &val);
++	if (ret)
++		return ret;
++
++	return (val & bits) == bits;
++}
++EXPORT_SYMBOL_GPL(regmap_test_bits);
++
+ void regmap_async_complete_cb(struct regmap_async *async, int ret)
+ {
+ 	struct regmap *map = async->map;
+diff --git a/include/linux/regmap.h b/include/linux/regmap.h
+index 40b07168fd8e..ddf0baff195d 100644
+--- a/include/linux/regmap.h
++++ b/include/linux/regmap.h
+@@ -1111,6 +1111,21 @@ bool regmap_reg_in_ranges(unsigned int reg,
+ 			  const struct regmap_range *ranges,
+ 			  unsigned int nranges);
+ 
++static inline int regmap_set_bits(struct regmap *map,
++				  unsigned int reg, unsigned int bits)
++{
++	return regmap_update_bits_base(map, reg, bits, bits,
++				       NULL, false, false);
++}
++
++static inline int regmap_clear_bits(struct regmap *map,
++				    unsigned int reg, unsigned int bits)
++{
++	return regmap_update_bits_base(map, reg, bits, 0, NULL, false, false);
++}
++
++int regmap_test_bits(struct regmap *map, unsigned int reg, unsigned int bits);
++
+ /**
+  * struct reg_field - Description of an register field
+  *
+@@ -1410,6 +1425,27 @@ static inline int regmap_update_bits_base(struct regmap *map, unsigned int reg,
+ 	return -EINVAL;
+ }
+ 
++static inline int regmap_set_bits(struct regmap *map,
++				  unsigned int reg, unsigned int bits)
++{
++	WARN_ONCE(1, "regmap API is disabled");
++	return -EINVAL;
++}
++
++static inline int regmap_clear_bits(struct regmap *map,
++				    unsigned int reg, unsigned int bits)
++{
++	WARN_ONCE(1, "regmap API is disabled");
++	return -EINVAL;
++}
++
++static inline int regmap_test_bits(struct regmap *map,
++				   unsigned int reg, unsigned int bits)
++{
++	WARN_ONCE(1, "regmap API is disabled");
++	return -EINVAL;
++}
++
+ static inline int regmap_field_update_bits_base(struct regmap_field *field,
+ 					unsigned int mask, unsigned int val,
+ 					bool *change, bool async, bool force)
 -- 
 2.26.1
 
