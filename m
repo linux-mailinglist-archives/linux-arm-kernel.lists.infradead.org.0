@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0E441E529F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 03:04:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 628621E52A0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 03:04:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lt16YIQBZv+YejgyHm3xaNFwURaW8XoJkKgsEM3q6Ag=; b=FRhuAxf2G298ee
-	c/70DmjYWB89c71XqI70MalT8onALZXObJrr08jsz1uPCseBrpHnlBytuxAKOfYxJxCZV9USLrmvr
-	LhwWxQXMpMMPw5PkNOMV4dXqzC9Bc5igeiJY+rKf+WQ9RbxxppUgq3dl9TailRQHFsFgenv/cTMzR
-	aLKJenmWXe3uNt93ltYR+yV3G0CIzLa3Fr9GJXLBBA60q4CnLZAeqfhBH0qPqkPtqNAPCT+AByWpV
-	VAmzE+U3ArZWAek3fwpGCIRK0teM2wilqXvnWquSrAqxrJGiYgUiKbmvUaPrkgTbRJft4M2x2M2k7
-	7L/snyK5+GZSsgCBbXxg==;
+	List-Owner; bh=yQmn67IxHEc+5Xt6M8HQjh9hlVjDpPqxTLaHW1PcR+4=; b=qIsGlof9JrQQcn
+	53ofu/tBDtbhtF5QpHQX6UXCiD/e//AIwD6atK79Cfn+yOahlBnRfNa93tkp3DlLbk5WoYLwmWcq6
+	hzm2tbFqkg8BDjxYlCXZuM7mc7pqoz88jFB28kFQWUVvCUzfHzMXqOmFITjlhTBuI22Iu4PYJws/j
+	eDlPv4lf2aNRMn2LKKQzSJZeY964oif5PYkzGVYhxALNAzgAlxBE7UN7wWh4fDNexjlgeUVPBoEhq
+	GRWMPipGEU7XpVx0E5fVE/ycd4+yfTlavMzKEwRNRZ+EebAdLJmrtb4xbNc/TYNpKRbel80fmWGJQ
+	PWhWkbpugoFUjMetv8RA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1je6y8-0008Qw-Ug; Thu, 28 May 2020 01:04:24 +0000
+	id 1je6yI-0000Ek-0G; Thu, 28 May 2020 01:04:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1je6vS-0006Tn-S3
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 01:01:40 +0000
+ id 1je6vV-0006Va-GL
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 01:01:42 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A0CBB208B8;
- Thu, 28 May 2020 01:01:37 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 904E320888;
+ Thu, 28 May 2020 01:01:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590627697;
- bh=CxBnyEySoxB08leWTQx73PJ4rDx9yvuvCPRoL/+Ej7I=;
+ s=default; t=1590627700;
+ bh=04em0Z+lfaonSDeFTgVsJrVmRC09psh3c7hnHoe/2ow=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=YrZvYmxkaX7ctkiek/h8zEef593zZ3+w0+yLIkdsuKI3thRyt2+Tklf2aWXkSLHs9
- wPitpsGSnOug3ONN78YxqDPa0INBnIn45bowt5ofxVLk2unMOELb0GhxWbBEyvz8z8
- wO139FLO1Gt436SHvCOGwmKDAEWAjo04K2+UHD8k=
+ b=pfaFbWXXQm4JljWofGAvIYjnj0w5cr3Kr7Kj3VqCfyPDLXfQX0hDQ2TksCuoCZNSU
+ s0iHQBw9dapcZKLFmDStFiLe02+o47nesqFyY2oYsuU/+57wdX1r4zk87Z7s5j+jJv
+ JLAP4tWAcSPr0KTMju0/MFRGIy6Xj2uKW8XnaYIw=
 MIME-Version: 1.0
-In-Reply-To: <20200519224151.2074597-12-lkundrak@v3.sk>
+In-Reply-To: <20200519224151.2074597-13-lkundrak@v3.sk>
 References: <20200519224151.2074597-1-lkundrak@v3.sk>
- <20200519224151.2074597-12-lkundrak@v3.sk>
-Subject: Re: [PATCH v3 11/13] clk: mmp2: Add support for power islands
+ <20200519224151.2074597-13-lkundrak@v3.sk>
+Subject: Re: [PATCH v3 12/13] dt-bindings: clock: Add Marvell MMP Audio Clock
+ Controller binding
 From: Stephen Boyd <sboyd@kernel.org>
 To: Lubomir Rintel <lkundrak@v3.sk>
-Date: Wed, 27 May 2020 18:01:36 -0700
-Message-ID: <159062769688.69627.6085466493600393511@swboyd.mtv.corp.google.com>
+Date: Wed, 27 May 2020 18:01:39 -0700
+Message-ID: <159062769984.69627.5943120062110654972@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200527_180139_113848_05CCE8D3 
-X-CRM114-Status: UNSURE (   7.87  )
+X-CRM114-CacheID: sfid-20200527_180141_718496_B5790255 
+X-CRM114-Status: UNSURE (   6.15  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -86,12 +87,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Lubomir Rintel (2020-05-19 15:41:49)
-> Apart from the clocks and resets, the PMU hardware also controls power
-> to peripherals that are on separate power islands. On MMP2, that's the
-> GC860 GPU and the SSPA audio interface, while on MMP3 also the camera
-> interface is on a separate island, along with the pair of GC2000 and GC300
-> GPUs and the SSPA.
+Quoting Lubomir Rintel (2020-05-19 15:41:50)
+> This describes the bindings for a controller that generates master and bit
+> clocks for the I2S interface.
 > 
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 > 
