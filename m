@@ -2,60 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66CF11E6250
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 15:32:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 761D71E625A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 15:33:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EMNCrLE8hVHubg88NpArr6Z8tPQvNbxqxhb5BRz4IR0=; b=oFGC8IvADiZups
-	QX/IKYWospvrz+FcqNM3UM9H6R8idjlNay4OkPcCYYlaPFENA2o4F1DkqIvtQ5e3Q3hay+zmwDg7K
-	yVs0d+HP+xMHPBEFzYTFYkrd7XijABGcgb9SYu3ylSA8cGqbRT9s9st8tyAr3a9e4kXn2yGxleyEh
-	pCxG6rO+B2BmFpQm04m40f0fvCR3HA9jFiPUUJmNntQcmNysmN6eNoYSM8jHiM7vGalPD2l4MlWL7
-	ETiv85IY9n9V1c7Ek2g2Vkk1Tp5GxXOH/0tckti6chLjVzVOdtOXjhu39B6fQyFKuxIbw69vmJcF2
-	RYboby04K1jHmXsPPfdw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6Hd+3pp2bpctaNvV6VIaYtToGzgL8Af8tnc0lHYYnEQ=; b=iuEcKSnu66XTqA
+	KaO9EAyKuOORbAiBEn0TLcJMrbyhNpN7wIQJMAinUt+BZpKh2SBMZTEIkIecpFfSssSYnTizaqPcB
+	Lr3/1RJLIVkr4c5MhWZf9SSzbxnuwA1jHzDGn4AjR+5fZgUhy8i6ezoFI+IXG/52wmTickATfHzdh
+	QAC7hoVmRqwCq08H1A/kRDuMOL54y8Fp4IamNysdOj03qO3D+uraYVIb9WhA8RWnt3s8u5J1lf22J
+	tNEnczFqCbb/nSpCaXkZM2SVjL/F2aTmTvTFm7i4S2FCNvAW0gpmorbnhZvTUYW4WtloqktGE2cHR
+	dlONcmNo0MuDeQ9iANeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeIdd-0004BQ-QS; Thu, 28 May 2020 13:32:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeIdT-0004AW-Ij
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 13:31:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5687DD6E;
- Thu, 28 May 2020 06:31:49 -0700 (PDT)
-Received: from [192.168.2.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 34C4B3F52E;
- Thu, 28 May 2020 06:31:48 -0700 (PDT)
-Subject: Re: [PATCH v3 04/20] arm64: dts: arm: vexpress: Move fixed devices
- out of bus node
-To: Guenter Roeck <linux@roeck-us.net>
-References: <20200513103016.130417-1-andre.przywara@arm.com>
- <20200513103016.130417-5-andre.przywara@arm.com>
- <20200528024810.GA232303@roeck-us.net>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Organization: ARM Ltd.
-Message-ID: <48afb8bb-a22a-54df-7751-55b7b84c3c88@arm.com>
-Date: Thu, 28 May 2020 14:30:30 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jeIef-0004UZ-HK; Thu, 28 May 2020 13:33:05 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jeIeS-0004TE-7j
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 13:32:53 +0000
+Received: by mail-io1-xd44.google.com with SMTP id d5so20444492ios.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 28 May 2020 06:32:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=W6Ng+4krUrmarKse2LeV5TbqCd00mWN+CVVq8JMM5SE=;
+ b=NJ0ybiSwbgGo1ahGYgAEwAdeEVE39Up4uZ5A1HFgeBFSeLdYyEjBoxzLaGany3U5qV
+ tjyrvq25hqP+szOxI6JhW3xweR3C+uklX69AslmSgzZCTItj/lE1GwHfTH3xcf08EAt3
+ mIwE34/rwjc7maTJJIaEZzx9+zgsTJyg16wtDEVvAZDos92VaeKTKyLujiHiG6B1cOYc
+ KIuFtxHGqOtrjVeCdhdPy1poHODMArChjps6RUTUQ889ANVor3RtIvsULAyoI9a8m+lM
+ yGQ/vmJQnyAURdQlFeawVfHk0vmYbLrVgpgL5isYwZKpihaGQitPE1wijKFtYBpDmHAO
+ jbyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=W6Ng+4krUrmarKse2LeV5TbqCd00mWN+CVVq8JMM5SE=;
+ b=evztZFbum/hbkz9yNt5UNtv+8ExyaKGZnHgRSP4k553qCEwU4B0KuTPs+shoDiRoem
+ 6vN8atK6L98MEq4G+leMDrFrhmbdYUFkU7pDDqk7z/BYXSh8qQs/GmleBe3MRwDaiLGR
+ 6Qb05Lx4x1SaUPfFOTxmlGeaJstpU1Buuv/jOuayZFwn86p/Z/pQi98a4i5SXwZcvdI8
+ cFuSi3paHz482fuzDuCywbBxJOW4diQVf3YNoomA3dZcMCb7JSFWk9TPOazYxBqtJGB8
+ sxhhmR0bmRSEOu9Y+e0pSuaZDt/o2DYrYwPFLmRlxN+H2umXLSWTn6bncy3BJxOcQ5kv
+ 6TTQ==
+X-Gm-Message-State: AOAM532Pn+ehpc872At+WjVliIOHoK+4Sm1rIbpxRZnM9RVgiT5Ef6mo
+ aeNKKXVlzB8cQ9zBG52yS88bcnymomLU1kUeIY+R4g==
+X-Google-Smtp-Source: ABdhPJzo7KSXJqLmG4j0rLnWfVnluS/E9w7gshGux7pMtHXApV9skQgthF60OVdfNho6c1thzgPYEEykEs0OHoviWNw=
+X-Received: by 2002:a5e:981a:: with SMTP id s26mr2322972ioj.131.1590672771135; 
+ Thu, 28 May 2020 06:32:51 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200528024810.GA232303@roeck-us.net>
-Content-Language: en-US
+References: <20200528123459.21168-1-brgl@bgdev.pl>
+ <20200528123459.21168-2-brgl@bgdev.pl>
+ <20200528132938.GC3606@sirena.org.uk>
+In-Reply-To: <20200528132938.GC3606@sirena.org.uk>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Thu, 28 May 2020 15:32:40 +0200
+Message-ID: <CAMRc=MejeXv6vd5iRW_EB3XqBtdCWDcV=4BOCDDFd4D0-y9LUA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] regmap: provide helpers for simple bit operations
+To: Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_063151_713665_A252647A 
-X-CRM114-Status: GOOD (  18.54  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200528_063252_285564_947AD68B 
+X-CRM114-Status: UNSURE (   9.18  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,120 +91,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, devicetree@vger.kernel.org,
- Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ netdev <netdev@vger.kernel.org>, Sean Wang <sean.wang@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mark Lee <Mark-MC.Lee@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
+ Pedro Tsai <pedro.tsai@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 28/05/2020 03:48, Guenter Roeck wrote:
-
-Hi Guenter,
-
-> On Wed, May 13, 2020 at 11:30:00AM +0100, Andre Przywara wrote:
->> The devicetree compiler complains when DT nodes without a reg property
->> live inside a (simple) bus node:
->> Warning (simple_bus_reg): Node /bus@8000000/motherboard-bus/refclk32khz
->>                           missing or empty reg/ranges property
->>
->> Move the fixed clocks, the fixed regulator, the leds and the config bus
->> subtree to the root node, since they do not depend on any busses.
->>
->> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> 
-> This patch results in tracebacks when booting the vexpress-a15 machine
-> with vexpress-v2p-ca15-tc1 devicetree file in qemu. Reverting it as well
-> as the subsequent patches affecting the same file (to avoid revert
-> conflicts) fixes the problem.
-
-Many thanks for the heads up! I was able to reproduce it here. On the
-first glance it looks like the UART is probed before the clocks now,
-because the traversal of the changed DT leads to a different probe
-order. I will look into how to fix this.
-
-Cheers,
-Andre
-
-> 
-> Guenter
-> 
-> ---
-> [   12.744248] ------------[ cut here ]------------
-> [   12.744562] WARNING: CPU: 0 PID: 20 at drivers/tty/serial/serial_core.c:471 uart_get_baud_rate+0x100/0x154
-> [   12.744607] Modules linked in:
-> [   12.744785] CPU: 0 PID: 20 Comm: kworker/0:1 Not tainted 5.7.0-rc7-next-20200526 #1
-> [   12.744818] Hardware name: ARM-Versatile Express
-> [   12.745021] Workqueue: events amba_deferred_retry_func
-> [   12.745155] [<c0312484>] (unwind_backtrace) from [<c030c490>] (show_stack+0x10/0x14)
-> [   12.745206] [<c030c490>] (show_stack) from [<c0880f04>] (dump_stack+0xc8/0xdc)
-> [   12.745239] [<c0880f04>] (dump_stack) from [<c0346e44>] (__warn+0xdc/0xf4)
-> [   12.745270] [<c0346e44>] (__warn) from [<c0346f0c>] (warn_slowpath_fmt+0xb0/0xb8)
-> [   12.745302] [<c0346f0c>] (warn_slowpath_fmt) from [<c0a6b16c>] (uart_get_baud_rate+0x100/0x154)
-> [   12.745336] [<c0a6b16c>] (uart_get_baud_rate) from [<c0a7f5ac>] (pl011_set_termios+0x48/0x32c)
-> [   12.745367] [<c0a7f5ac>] (pl011_set_termios) from [<c0a6bbbc>] (uart_set_options+0x124/0x164)
-> [   12.745404] [<c0a6bbbc>] (uart_set_options) from [<c1b8c804>] (pl011_console_setup+0x214/0x230)
-> [   12.745438] [<c1b8c804>] (pl011_console_setup) from [<c03ab0d8>] (try_enable_new_console+0x98/0x138)
-> [   12.745469] [<c03ab0d8>] (try_enable_new_console) from [<c03acc64>] (register_console+0xe8/0x304)
-> [   12.745499] [<c03acc64>] (register_console) from [<c0a6c88c>] (uart_add_one_port+0x4c0/0x504)
-> [   12.745529] [<c0a6c88c>] (uart_add_one_port) from [<c0a80404>] (pl011_register_port+0x5c/0xac)
-> [   12.745568] [<c0a80404>] (pl011_register_port) from [<c097f5a0>] (amba_probe+0x9c/0x110)
-> [   12.745602] [<c097f5a0>] (amba_probe) from [<c0b57e84>] (really_probe+0x218/0x348)
-> [   12.745632] [<c0b57e84>] (really_probe) from [<c0b580c0>] (driver_probe_device+0x5c/0xb4)
-> [   12.745662] [<c0b580c0>] (driver_probe_device) from [<c0b55ff4>] (bus_for_each_drv+0x58/0xb8)
-> [   12.745692] [<c0b55ff4>] (bus_for_each_drv) from [<c0b57bf8>] (__device_attach+0xd4/0x140)
-> [   12.745721] [<c0b57bf8>] (__device_attach) from [<c0b56eb0>] (bus_probe_device+0x88/0x90)
-> [   12.745751] [<c0b56eb0>] (bus_probe_device) from [<c0b53234>] (device_add+0x3d4/0x6e8)
-> [   12.745782] [<c0b53234>] (device_add) from [<c097f664>] (amba_device_try_add+0x50/0x2d4)
-> [   12.745812] [<c097f664>] (amba_device_try_add) from [<c097f924>] (amba_deferred_retry+0x3c/0x98)
-> [   12.745847] [<c097f924>] (amba_deferred_retry) from [<c097f988>] (amba_deferred_retry_func+0x8/0x40)
-> [   12.745881] [<c097f988>] (amba_deferred_retry_func) from [<c0365b6c>] (process_one_work+0x2b8/0x6e8)
-> [   12.745912] [<c0365b6c>] (process_one_work) from [<c0365fe0>] (worker_thread+0x44/0x540)
-> [   12.745942] [<c0365fe0>] (worker_thread) from [<c036d810>] (kthread+0x16c/0x178)
-> [   12.745973] [<c036d810>] (kthread) from [<c03001a8>] (ret_from_fork+0x14/0x2c)
-> [   12.746041] Exception stack(0xc73abfb0 to 0xc73abff8)
-> [   12.746181] bfa0:                                     00000000 00000000 00000000 00000000
-> [   12.746302] bfc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-> [   12.746397] bfe0: 00000000 00000000 00000000 00000000 00000013 00000000
-> [   12.746651] ---[ end trace 2a3f61da56bd8a49 ]---
-> 
-> ---
-> # bad: [b0523c7b1c9d0edcd6c0fe6d2cb558a9ad5c60a8] Add linux-next specific files for 20200526
-> # good: [9cb1fd0efd195590b828b9b865421ad345a4a145] Linux 5.7-rc7
-> git bisect start 'next-20200526' 'v5.7-rc7'
-> # bad: [0c7351ad83670964e48cb9a098ad732c1ecbf804] Merge remote-tracking branch 'crypto/master'
-> git bisect bad 0c7351ad83670964e48cb9a098ad732c1ecbf804
-> # bad: [42e11d9b4682229fa7187d129758b8c382f8cd5d] Merge remote-tracking branch 'jc_docs/docs-next'
-> git bisect bad 42e11d9b4682229fa7187d129758b8c382f8cd5d
-> # bad: [ab6f501559e9efa687c711a781243cf6651a82d3] Merge remote-tracking branch 'm68k/for-next'
-> git bisect bad ab6f501559e9efa687c711a781243cf6651a82d3
-> # bad: [44aaa516ca63b3ab2da8ae81e9c6a58656e6acb5] Merge branch 'arm/drivers' into for-next
-> git bisect bad 44aaa516ca63b3ab2da8ae81e9c6a58656e6acb5
-> # good: [1cb00f8c3b36e6ae026fb58d1cd2ccd78b81aa9f] Merge tag 'qcom-arm64-for-5.8' of git://git.kernel.org/pub/scm/linux/kernel/git/qcom/linux into arm/dt
-> git bisect good 1cb00f8c3b36e6ae026fb58d1cd2ccd78b81aa9f
-> # bad: [ed0c25932fbfafdfe37e9633dee21770d3c5a306] Merge branch 'arm/defconfig' into for-next
-> git bisect bad ed0c25932fbfafdfe37e9633dee21770d3c5a306
-> # bad: [9eddc06a3bc79402f50176703237ed045ae77b16] Merge branch 'mmp/fixes' into arm/dt
-> git bisect bad 9eddc06a3bc79402f50176703237ed045ae77b16
-> # bad: [87b990ab62722a8a3cb0691107971ab1bd7bddb5] Merge tag 'mvebu-dt64-5.8-1' of git://git.infradead.org/linux-mvebu into arm/dt
-> git bisect bad 87b990ab62722a8a3cb0691107971ab1bd7bddb5
-> # bad: [94cc3f1baabac5e5c4dcc6c2f070353f8315d0ee] arm64: dts: juno: Fix SCPI shared mem node name
-> git bisect bad 94cc3f1baabac5e5c4dcc6c2f070353f8315d0ee
-> # bad: [a78aee9e434932a500db36cc6d88daeff3745e9f] arm64: dts: juno: Fix GIC child nodes
-> git bisect bad a78aee9e434932a500db36cc6d88daeff3745e9f
-> # bad: [feebdc3f7950d7e44e914e821f6c04e58e292c74] arm64: dts: fvp: Move fixed clocks out of bus node
-> git bisect bad feebdc3f7950d7e44e914e821f6c04e58e292c74
-> # good: [849bfc3dfc13cde6ec04fbcf32af553ded9f7ec3] arm64: dts: fvp: Move fixed devices out of bus node
-> git bisect good 849bfc3dfc13cde6ec04fbcf32af553ded9f7ec3
-> # bad: [d9258898ad49cbb46caffe23af0d4f0b766e67a2] arm64: dts: vexpress: Move fixed devices out of bus node
-> git bisect bad d9258898ad49cbb46caffe23af0d4f0b766e67a2
-> # first bad commit: [d9258898ad49cbb46caffe23af0d4f0b766e67a2] arm64: dts: vexpress: Move fixed devices out of bus node
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Y3p3LiwgMjggbWFqIDIwMjAgbyAxNToyOSBNYXJrIEJyb3duIDxicm9vbmllQGtlcm5lbC5vcmc+
+IG5hcGlzYcWCKGEpOgo+Cj4gT24gVGh1LCBNYXkgMjgsIDIwMjAgYXQgMDI6MzQ6NThQTSArMDIw
+MCwgQmFydG9zeiBHb2xhc3pld3NraSB3cm90ZToKPgo+ID4gVGhpcyBhZGRzIHRocmVlIG5ldyBt
+YWNyb3MgZm9yIHNpbXBsZSBiaXQgb3BlcmF0aW9uczogc2V0X2JpdHMsCj4gPiBjbGVhcl9iaXRz
+IGFuZCB0ZXN0X2JpdHMuCj4KPiBXaHkgbWFjcm9zIGFuZCBub3Qgc3RhdGljIGlubGluZXM/CgpU
+aGUgZXhpc3RpbmcgcmVnbWFwX3VwZGF0ZV9iaXRzXyooKSBoZWxwZXJzIGFyZSBtYWNyb3MgdG9v
+LCBzbyBJIHRyaWVkCnRvIHN0YXkgY29uc2lzdGVudC4gQW55IHJlYXNvbiB3aHkgdGhleSBhcmUg
+bWFjcm9zIGFuZCBub3Qgc3RhdGljCmlubGluZXM/IElmIHRoZXJlJ3Mgbm9uZSwgdGhlbiB3aHkg
+bm90IGNvbnZlcnQgdGhlbSB0b28/IE90aGVyd2lzZQp3ZSdkIGhhdmUgYSBzdGF0aWMgaW5saW5l
+IGV4cGFuZGluZyBhIG1hY3JvIHdoaWNoIGluIHR1cm4gaXMgY2FsbGluZyBhCmZ1bmN0aW9uIChy
+ZWdtYXBfdXBkYXRlX2JpdHNfYmFzZSgpKS4KCkJhcnRvc3oKCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
