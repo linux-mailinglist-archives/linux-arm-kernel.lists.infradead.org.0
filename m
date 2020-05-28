@@ -2,71 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F71E1E62AE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 15:48:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FF851E62C2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 15:51:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=26SZlyKf1vp4t+acIEbpsOr8MePYbB1Gj8KiOWx9jlQ=; b=D8GaGpM+dGAQgw2iazjpD45XI
-	CMF360U7IAWE9Iq4DNMAj9kN4oc8iw6MqPwVg5/4hsT41m0C297P6ZivgRCpsY4vyQ8Sw9/WUjBU4
-	w6Fs4qHCx/cMDHSsioBNBhsBLZ4PqnywFMkgMYZjFjcqW9TL27hHkSrymhqOdIBsPc3A6EN1SFFmd
-	KSb7IhYJzNE4wp4QFJyN0sCDVT588rvgCzQ19w2q51dDWt4DJe6D8q4KENbmLv7+hkyZZ1qgU2iCI
-	l2HHMSoWIO7+5Jsns+py/okla7B790A3PexOArymyCS5nxteVyPUpe9JKl0vdSMwAqKST8CSUGYb8
-	ntMblVrlg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sjSVX0zoqc6Bi6/NXlBvKV5chtD5EItC+KonbX7ZkA8=; b=KrwhKV4Do0Gj2F
+	Owlih7jxdZzwko2R5UEg+qPEKVo4ZFtmgTa5V/vWCmcH2QDjeo0cdlp0Y5rWCsyOMGpAHb6W9xF7E
+	8o/uvnywcqOTeekKWOsseAOWG7NBMtamBaP2uXMDmJC2ibGt4pUB2Ux/3B0H4wVZtbbfmhIgYXAFI
+	mARH2BryiVSH1udUiR6xSn9xJ6irkmb5aNJlxtPtJNBYae7GyBZOPN+utMhT2wUFRs6Z3o44LmcPT
+	IGLCDK9NysYJbwSzX2IWjfWB8X65PtQmyoQc//KRRVbtt6qKJ9I9iAA8Rd8oeN7avhSb0H4/m8tKf
+	Qv7AHV6HmfDEurxnV5KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeItR-0007Ki-39; Thu, 28 May 2020 13:48:21 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeItB-0007KC-L2; Thu, 28 May 2020 13:48:06 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 900B4207D3;
- Thu, 28 May 2020 13:48:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590673685;
- bh=hCc/4WkpOoMnYzAs7vLH2tpFPjfk82hCbKAhbeXkNI0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Y4k39ZFaQ41ExRlY1FpyEQJR61aEW8XCAqj3dq0dkZ3PCbvGQ8q/L0EwtUR+BdXqt
- b+coz6x9QHt1uSD8fvSAyy9Ku/2ke4nRaAGrNDGhCFHwPI7+CSialN6cbAZJ9geC2r
- dKuhxH11yqWoiaq+GxLW8DRut8Peg/xIRNbM6Fpw=
-Date: Thu, 28 May 2020 14:48:02 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Bartosz Golaszewski <brgl@bgdev.pl>
-Subject: Re: [PATCH 1/2] regmap: provide helpers for simple bit operations
-Message-ID: <20200528134802.GE3606@sirena.org.uk>
-References: <20200528123459.21168-1-brgl@bgdev.pl>
- <20200528123459.21168-2-brgl@bgdev.pl>
- <20200528132938.GC3606@sirena.org.uk>
- <CAMRc=MejeXv6vd5iRW_EB3XqBtdCWDcV=4BOCDDFd4D0-y9LUA@mail.gmail.com>
+	id 1jeIw9-0002Qm-3s; Thu, 28 May 2020 13:51:09 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jeIw0-0002QT-7k
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 13:51:01 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 6F64D80BF;
+ Thu, 28 May 2020 13:51:50 +0000 (UTC)
+Date: Thu, 28 May 2020 06:50:57 -0700
+From: Tony Lindgren <tony@atomide.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] ARM: omap2: drop broken broadcast timer hack
+Message-ID: <20200528135057.GO37466@atomide.com>
+References: <20200528091923.2951100-1-arnd@arndb.de>
+ <20200528134621.GN37466@atomide.com>
 MIME-Version: 1.0
-In-Reply-To: <CAMRc=MejeXv6vd5iRW_EB3XqBtdCWDcV=4BOCDDFd4D0-y9LUA@mail.gmail.com>
-X-Cookie: Small is beautiful.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20200528134621.GN37466@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_064805_710725_6D446DC5 
-X-CRM114-Status: GOOD (  10.75  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200528_065100_313816_3E462D15 
+X-CRM114-Status: GOOD (  10.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,75 +59,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephane Le Provost <stephane.leprovost@mediatek.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- netdev <netdev@vger.kernel.org>, Sean Wang <sean.wang@mediatek.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Mark Lee <Mark-MC.Lee@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
- Pedro Tsai <pedro.tsai@mediatek.com>,
- "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
- Andrew Perepech <andrew.perepech@mediatek.com>,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============4649264996007943894=="
+Cc: Rob Herring <robh@kernel.org>, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Lokesh Vutla <lokeshvutla@ti.com>, Keerthy <j-keerthy@ti.com>,
+ Santosh Shilimkar <santosh.shilimkar@oracle.com>, linux-kernel@vger.kernel.org,
+ Tero Kristo <t-kristo@ti.com>, arm@kernel.org, Olof Johansson <olof@lixom.net>,
+ linux-omap@vger.kernel.org, afzal mohammed <afzal.mohd.ma@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+* Tony Lindgren <tony@atomide.com> [200528 13:47]:
+> * Arnd Bergmann <arnd@arndb.de> [200528 09:20]:
+> > The OMAP4 timer code had a special hack for using the broadcast timer
+> > without SMP. Since the dmtimer is now gone, this also needs to be dropped
+> > to avoid a link failure for non-SMP AM43xx configurations:
+> > 
+> > kernel/time/tick-broadcast.o: in function `tick_device_uses_broadcast':
+> > tick-broadcast.c:(.text+0x130): undefined reference to `tick_broadcast'
+> 
+> Hmm this sounds like a regression though. Isn't this needed for using
+> the ARM local timers on non-SMP SoC, so a separate timer from dmtimer?
+> 
+> I've probably removed something accidentally to cause this.
 
---===============4649264996007943894==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Ns7jmDPpOpCD+GE/"
-Content-Disposition: inline
+Sounds like arch/arm/mach-omap2/Makefile change needs to be removed
+to always still build in timer.o. And probably timer.c needs back
+the ifdef for CONFIG_SOC_HAS_REALTIME_COUNTER.
 
+I'll take a look today.
 
---Ns7jmDPpOpCD+GE/
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Regards,
 
-On Thu, May 28, 2020 at 03:32:40PM +0200, Bartosz Golaszewski wrote:
-> czw., 28 maj 2020 o 15:29 Mark Brown <broonie@kernel.org> napisa=C5=82(a):
-
-> > Why macros and not static inlines?
-
-> The existing regmap_update_bits_*() helpers are macros too, so I tried
-> to stay consistent. Any reason why they are macros and not static
-> inlines? If there's none, then why not convert them too? Otherwise
-> we'd have a static inline expanding a macro which in turn is calling a
-> function (regmap_update_bits_base()).
-
-Not really, I think it was just that they're argument tables.  It'd be
-good to convert them.
-
---Ns7jmDPpOpCD+GE/
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7PwREACgkQJNaLcl1U
-h9BZlQf/Rnk3QvRXUU9UWRrY62o3tOtAkM+YDOn1qkCahCNlR3xn6spu/jZ2xpm8
-wtG0/ml9T9EeXbWZU0n2vWYQowTecwv3zFcQgHRtEaN+Q0F1pZeBoGo7Hazyp47Y
-2UI0x5pTwKgEs6xwxQ9hDWy9KhGgLODt7MWUQv8T8m7XxDRmoCh9MbMAiEm2GPLb
-Vt5FGW0iBTVJh/h0J84HpA1BY1bXPFBwICbqISunBPso9Gj7D5YzmK9iKvz4qW+g
-eCfgV0eYbRbMCcL7UG9jOWOZxuznG+BfLNmzOLl/eydOppXcHVWhah9Q8Q8xsdqG
-+R17K+lbB6MGwp7pU0Fr2sp98g43Cw==
-=Zc21
------END PGP SIGNATURE-----
-
---Ns7jmDPpOpCD+GE/--
-
-
---===============4649264996007943894==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4649264996007943894==--
-
