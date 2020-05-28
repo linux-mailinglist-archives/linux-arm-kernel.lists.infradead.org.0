@@ -2,81 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61D9A1E5EFA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 13:58:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB7CE1E5F1F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 14:00:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OJOKrlkqtjws43NpIL0IofzbFB3TAjvA5eJj8OKrILY=; b=FO56ECvahMyPRS
-	Vr+svrKxzkS74cX+165Y2BONGUyIFyjgPHjKw9JKcMW7DbdNfscQaOHNRxGEsEj0I3u9F9F9jn9n8
-	nV8MzPJbUKYDfoMmXGwJprAYg3R2vPvShSxZ2iXaAlLDzpyhVurzV0+9NHe3EeD89Kxo1RISeLPQn
-	SPU49LCUokONUtktig60vwetXCfXYfqAE7dZdBpSV3g7JHELLkVHfccgSsxJPlKOXqsXFYytKmUCM
-	0tnSlTRx3AFaNQZp0gBjOFFhH+ccIPX/wyEInClrJCgbwC66C78en0eyIFDYF3YmLU1mbEG9UuzDk
-	zuXE8MeMzILe5NsS8ybw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WiXHlXGPFZOE4Xd1ckd6BOESEJbR3OfrsXRD9vPPYCs=; b=aHKOM6/XcxaaZI
+	8dHyVkhtCmVlBa7AGoCFKBBsIxP/NkMguXeU7TZtacaXQqeTRMtkpwTdb2MIyICR4fA2hHMuBQyVf
+	Alq5VuBErD6Z8dJUVEFbO00TYMrFcnXQ0ppDItUTAFhLbt7P7R0ITPbWtvLTaigRPYWruKcI4hPR9
+	6k8MWy4Yj03Simrq/QGbU2lRRbe1A4GGWFknfOygzKxfmcmB7Xd0d4aG1t3koaxgppM1NAx/m5agj
+	8BGYfkhxIPwXCVd2z+Sg3UERHBeMPa8ia/rQ2PMQDDTCqN+fpSXPvwTEgPCCxP+cnSragEIjmH0PD
+	E+SJslWcK61D8rEWbxEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeHAl-0003nH-Of; Thu, 28 May 2020 11:58:07 +0000
-Received: from mout.kundenserver.de ([212.227.17.10])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeHAX-0003mY-Jk
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 11:57:55 +0000
-Received: from mail-qk1-f182.google.com ([209.85.222.182]) by
- mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1Mg6i8-1j5Vhr48ly-00hdYD for <linux-arm-kernel@lists.infradead.org>; Thu,
- 28 May 2020 13:57:50 +0200
-Received: by mail-qk1-f182.google.com with SMTP id b27so2758938qka.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 04:57:49 -0700 (PDT)
-X-Gm-Message-State: AOAM533i8oTALzsE3WnD9D8QFWDGGBPJnajOeqkAVtMnrrz82O0nDoo2
- T3h+Cd5imPO4mFXCH9TlD4bLGr/X/c1wX26HM4Y=
-X-Google-Smtp-Source: ABdhPJz02BIHcejgMZy60Qf70ZgFyMNKd+rhOvbUF4qbhRCLsGQ7Yvaxbck9sSYKzX9BuNp74DvRvQw4vU3WenCxBwM=
-X-Received: by 2002:ae9:de85:: with SMTP id s127mr1139395qkf.352.1590667068879; 
- Thu, 28 May 2020 04:57:48 -0700 (PDT)
+	id 1jeHCS-000497-V7; Thu, 28 May 2020 11:59:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jeHCE-00048G-W0
+ for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 11:59:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A4602D6E;
+ Thu, 28 May 2020 04:59:35 -0700 (PDT)
+Received: from [192.168.0.14] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D37283F6C4;
+ Thu, 28 May 2020 04:59:34 -0700 (PDT)
+Subject: Re: [PATCH 1/3] KVM: arm64: Stop writing aarch32's CSSELR into ACTLR
+To: Marc Zyngier <maz@kernel.org>
+References: <20200526161834.29165-1-james.morse@arm.com>
+ <20200526161834.29165-2-james.morse@arm.com>
+ <4be0c0b654f7d7c1efe9f52efb856bd8@kernel.org>
+From: James Morse <james.morse@arm.com>
+Message-ID: <09dca8e9-c548-43fd-a95b-747a77f19e02@arm.com>
+Date: Thu, 28 May 2020 12:59:25 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20200527181307.2482167-1-robh@kernel.org>
-In-Reply-To: <20200527181307.2482167-1-robh@kernel.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 28 May 2020 13:57:32 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a27RkBkt5mnBeVJ-67MnJi29Dc+jYL2Q8JskaZ1W_XrKg@mail.gmail.com>
-Message-ID: <CAK8P3a27RkBkt5mnBeVJ-67MnJi29Dc+jYL2Q8JskaZ1W_XrKg@mail.gmail.com>
-Subject: Re: [PATCH] clk: versatile: Fix kconfig dependency on
- COMMON_CLK_VERSATILE
-To: Rob Herring <robh@kernel.org>
-X-Provags-ID: V03:K1:hJnerRtqON9veurAPQWGqWQow1VTISuY3wIAROkucepzofjjtFD
- RiuCO6fTzVep9CwAdzM/BBgdQz8hjiXOft/CrVH4+11d+5uxzXchmnrWO91uj7rbJzfai7J
- G3CePI1umyAYeYHpqgZPSiAGdJMUzWTihLzSbesl/ZTcl2ZAQD6obCLeIuNmxeMbd0MVnlg
- TOAFmivof7XWDvT248P+Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:GYYMbPpZFwo=:8Rl1dQ/ioFuyDWcsTjCH93
- KIwgkLNrV5v/gn/oR8OgrUpyy4Wmh6E7FecPXvy2XGxjjmvP1RT110i47wvfKVApJVzbmOvhT
- jLTXeQIXTkxvty1mTdVa+mO/R0W0DCalWY+qTIE8/tTcSvJTS6i+zntZPbOhncuwPpklNwLyY
- ZO7RFMJlEJgvB5iTi3V5I7gLxNTGs8zPsD6TOPSaCDaniYKX9DU9dGqwzLimT6OmTCF65fIAT
- fvgIxnHxdQB75GSz5NXofYA/fVyt/Shn9jP71NdcGOqr85WRMaJ+KaK06dG0HVgkWwJNh7Tdk
- 9RGyBxi8DwAJRjM1YXGqwAfRjKlZ8iQzcGmwOMNJoWcUCDrTVa5KjlcfwBCB56fJztp15LaZC
- uFHj7ySXwspGT22tMYU5PIObd7/TgaUrYYZd0UY98kXgwEPLjlQsAG1v7ExPbbDtecklgsYDO
- nUHB81cIvxKNILq/hgsG9JOTyXjNN1Ilg2pnay57lEvb+ScaOfMr+XITwwHhfrVtGnowdffUF
- BuuXLaJwSCVZvOYx2QxlFqqp3lbuEzXUXS9ggqSsN/fn2l4hs41S04Q4mJ16GnFGPn7C3jv4s
- 3D1RoZo+3NDSWhhEPOy2QauSTuTMnFKy892uz5sH2KwnWdzESN0GiTx1R2dzB7XCzwtsV32vT
- iCBTiZZ1Waoee6LqaMkx8TjjI+Cxhj2UYoIVaLYy+Mu39ErPnCIGnr0VMBxTiR19JGUgzy723
- d1R8wFKuf0V9yqRa64JllGaHLqLu96pkitnUbBxy/8Q8WStihOTwSrLRCBHG55PftDA3rSATG
- BlWD0UAZ71LE0u+ZANR26+H7na8eBcNGq5TCjaJdtd7G6uMxOI=
+In-Reply-To: <4be0c0b654f7d7c1efe9f52efb856bd8@kernel.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_045753_934794_5919F2BC 
-X-CRM114-Status: GOOD (  11.51  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200528_045939_069853_0958B3C8 
+X-CRM114-Status: GOOD (  16.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.10 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.10 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,41 +65,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anders Roxell <anders.roxell@linaro.org>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-clk <linux-clk@vger.kernel.org>, SoC Team <soc@kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: stable@vger.kernel.org, Julien Thierry <julien.thierry.kdev@gmail.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 8:13 PM Rob Herring <robh@kernel.org> wrote:
-> diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
-> index a0ed412e8396..8c1b0e8e8d32 100644
-> --- a/drivers/clk/versatile/Kconfig
-> +++ b/drivers/clk/versatile/Kconfig
-> @@ -1,11 +1,8 @@
->  # SPDX-License-Identifier: GPL-2.0-only
->
-> -menuconfig COMMON_CLK_VERSATILE
-> -       bool "Clock driver for ARM Reference designs" if COMPILE_TEST
-> -       default y if ARCH_INTEGRATOR || ARCH_REALVIEW || \
-> -               ARCH_VERSATILE || ARCH_VEXPRESS
-> -
-> -if COMMON_CLK_VERSATILE
-> +menu "Clock driver for ARM Reference designs"
-> +       depends on ARCH_INTEGRATOR || ARCH_REALVIEW || \
-> +               ARCH_VERSATILE || ARCH_VEXPRESS || COMPILE_TEST
->
-
-I've applied this version now but added ARCH_ZYNQ as an additional
-dependency to work around one of the warnings we got earlier.
-
-       Arnd
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFyYywKCk9uIDI4LzA1LzIwMjAgMDk6NTcsIE1hcmMgWnluZ2llciB3cm90ZToKPiBPbiAy
+MDIwLTA1LTI2IDE3OjE4LCBKYW1lcyBNb3JzZSB3cm90ZToKPj4gYWNjZXNzX2Nzc2VscigpIHVz
+ZXMgdGhlIDMyYml0IHItPnJlZyB2YWx1ZSB0byBhY2Nlc3MgdGhlIDY0Yml0IGFycmF5LAo+PiBz
+byByZWFkcyBhbmQgd3JpdGUgdGhlIHdyb25nIHZhbHVlLiBzeXNfcmVnc1s0XSwgaXMgQUNUTFJf
+RUwxLCB3aGljaAo+PiBpcyBzdWJzZXF1ZW50bHkgc2F2ZS9yZXN0b3JlZCB3aGVuIHdlIGVudGVy
+IHRoZSBndWVzdC4KCj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2t2bS9zeXNfcmVncy5jIGIv
+YXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYwo+PiBpbmRleCA1MWRiOTM0NzAyYjYuLjJlZGE1Mzlm
+MzI4MSAxMDA2NDQKPj4gLS0tIGEvYXJjaC9hcm02NC9rdm0vc3lzX3JlZ3MuYwo+PiArKysgYi9h
+cmNoL2FybTY0L2t2bS9zeXNfcmVncy5jCj4+IEBAIC0yMDYwLDcgKzIwNjAsNyBAQCBzdGF0aWMg
+Y29uc3Qgc3RydWN0IHN5c19yZWdfZGVzYyBjcDE1X3JlZ3NbXSA9IHsKPj4KPj4gwqDCoMKgwqAg
+eyBPcDEoMSksIENSbiggMCksIENSbSggMCksIE9wMigwKSwgYWNjZXNzX2Njc2lkciB9LAo+PiDC
+oMKgwqDCoCB7IE9wMSgxKSwgQ1JuKCAwKSwgQ1JtKCAwKSwgT3AyKDEpLCBhY2Nlc3NfY2xpZHIg
+fSwKPj4gLcKgwqDCoCB7IE9wMSgyKSwgQ1JuKCAwKSwgQ1JtKCAwKSwgT3AyKDApLCBhY2Nlc3Nf
+Y3NzZWxyLCBOVUxMLCBjMF9DU1NFTFIgfSwKPj4gK8KgwqDCoCB7IE9wMSgyKSwgQ1JuKCAwKSwg
+Q1JtKCAwKSwgT3AyKDApLCBhY2Nlc3NfY3NzZWxyX2VsMSwgTlVMTCwgQ1NTRUxSX0VMMSB9LAo+
+PiDCoH07Cgo+IFRoaXMgaXMgYSBkZXBhcnR1cmUgZnJvbSB0aGUgd2F5IHdlIGRlYWwgd2l0aCAz
+MmJpdCBDUDE1IHJlZ2lzdGVycy4KPiBXZSBkZWFsIHdpdGggdGhpcyBleGFjdCBpc3N1ZSBpbiBh
+IHZlcnkgZGlmZmVyZW50IHdheSBmb3Igb3RoZXIKPiBDUDE1IHJlZ3MsIGJ5IGFkanVzdGluZyB0
+aGUgaW5kZXggaW4gdGhlIHN5c19yZWdzIGFycmF5IChzZWUgdGhlCj4gd2F5IHdlIGhhbmRsZSB0
+aGUgVk0gcmVncykuCj4gCj4gSG93IGFib3V0IHNvbWV0aGluZyBsaWtlIHRoaXMgKHVudGVzdGVk
+KToKCltsaWtlIGFjY2Vzc192bV9yZWcoKSBkb2VzXQoKU3VyZSwgSSdsbCBnaXZlIHRoYXQgYSB0
+ZXN0IGFuZCByZS1wb3N0IGl0LgoKCj4gSWRlYWxseSwgSSdkIGxpa2UgdGhlIGNvcmUgc3lzX3Jl
+ZyBjb2RlIHRvIGRlYWwgd2l0aCB0aGlzIHNvcnQKPiBvZiBmdW5uaWVzLCBidXQgSSdtIHRyeWlu
+ZyB0byBrZWVwIHRoZSBjaGFuZ2UgbWluaW1hbC4uLgoKUm9sbCB0aGlzICcvMicgYW5kIHVwcGVy
+L2xvd2VyIGJpdHMgc3R1ZmYgaW50byBhIHZjcHVfd3JpdGVfY3AxNV9yZWcoKSB0aGF0IGNhbGxz
+CnZjcHVfd3JpdGVfc3lzX3JlZygpPyAoL21lIGh1bnRzIG91dCB0aGUgdG9kbyBsaXN0KQoKClRo
+YW5rcywKCkphbWVzCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
