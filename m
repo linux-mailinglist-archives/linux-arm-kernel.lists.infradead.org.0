@@ -2,88 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B708C1E6232
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 15:28:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97A221E6242
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 28 May 2020 15:30:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=w04S+ju7WN4H+vrGoZouDBa4QEakgeCbMj2rWjWCg7M=; b=bVCSfpuzhmtX0k
-	Q61gClS0qw5HprWU0oJPUAP6mba3PWqulMkjhXJGou6KL0uaM9twn+emx/cvPImM1A+/BW2JUAXqz
-	35yT+jZothc+PqeUf1kPJhdyo0FoBQWGVv9krpI7H6QpbsaBG38yj22HcnIAq73STK5J6ZqFwHYNx
-	T4wmn03Kn29GoLTcgnOANAGA45uG4b35WFFWJEp6vs1X6uTbqwBaJAuMGsS8sfIjj7BDpZPs0VSHQ
-	xC+Vz4UUI0DOMvKacANWejz7LzGl5gZ7TLFOWbPYys/yz0Xkm8RMFfeBSzLLiQJnx2EbeBY8ADD09
-	rmhd9RxV0f56lnXe/fGQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=BpqailmzA3LbZZX9CoZAbXwLNNaq/oRSixH2wN4KboU=; b=WZm+m+TNnIK97PAFDlbhWhaE2
+	RBrBp+gSgjjofNOI7+YYLocCXeZIg0kJyIzvfTbmO216gW0hqwdjNNYFjR1PnwcfdVbhkDRTP9Tjp
+	PEGaWeOwAf27ID6tpuNG49ApRMJ8/WfjHRr49EGj6PLu7IRkUIKfFx40SJfylgL5t/+GX9k/5WxCw
+	rHZh//NcHBMueSaymprJuNdxWJePzK8JiPFfDCnbxYx9HtuL7ex62bdF2+19502wj5Tx+xaSQkbLT
+	GRL+CR31VVLJ/9GhpohfQtwhYR7B6SH4ec62U+0jQCtlRWTDsBsQWYqiv90Sr82YLkzcG6inDbY4z
+	hxSzrZagg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeIZq-0000sZ-M3; Thu, 28 May 2020 13:28:06 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jeIba-0001Gz-Mn; Thu, 28 May 2020 13:29:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeIZg-0000rf-J4
- for linux-arm-kernel@lists.infradead.org; Thu, 28 May 2020 13:27:57 +0000
-Received: by mail-wm1-x341.google.com with SMTP id r15so3147676wmh.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 28 May 2020 06:27:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=9cN8WC7B8xH4SW3c0YEgj3hG2uP+gsYVa8Phs/daLJo=;
- b=XhU9Ag1ZLhT6nRnPcN/QI44p0PvvTskUnXmbN7WZRjd0YK63lIUd2JzL7Ymo5MnHpF
- CKuiJgYA8GajqzmjbrwTZBPpRm1rdmf9aUTcTr1Ptu7f5DEizfgwzQrBN1yqo1ZynKXM
- gsHFRlzRGEEKjj4pUGIUil9HKgvMyyc+xTk3o3rxmRZ/WDY2zuuNKPNoGZvDvhFReQPU
- JmRi9ZP6d6BgpPtIXPvFqOgY2ngEhp0ozEYddVmRNK/q3inC/U8ubvRcTlBaypFAdyte
- 9nV1SyMkXnOZOBNr6wmwBL5sDwijzaWBPwXlRsa4Qmfc7ohCOkuaeKf+EOcAtG2Tvg/2
- dM+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=9cN8WC7B8xH4SW3c0YEgj3hG2uP+gsYVa8Phs/daLJo=;
- b=iNjT2Ezxb36DTQ5VF1jWlogoJ7RP1P6xausJ+7U6cOQillJm2wGrFhN2lsAgID0LBX
- x7mmImgvGCGDq9DQcWgq6xuaCgZ6Jrtl5CkkIrfIqMOHHwECaetELnFs0Zj+nENKQ/zh
- PHUzPu1Xz1wue4AipJjcSTqsJIbMVYrb8PpEMxPoAKwyQGOVwMJyBoeTIRA0ykdbQWDN
- 9BYAXUsDJw3EnMPbgVeLgGAqnxYWR2uW3M03iy04kTYxVh49hwFWJeEa3M509A2/7FiG
- BxQe7hcee1bDRsi6aXL5qEzUBLOvrcUAJiZCxT3rh85qz8qm5Ee1lTvlDCRA9GbzUmnO
- jzyg==
-X-Gm-Message-State: AOAM531FvBRAnNeYlRfp/8twUp7SbToucEMeq4efdc7eHfCdogymO3r0
- X7kMi6R/vtU3otC1ySrCykrnAg==
-X-Google-Smtp-Source: ABdhPJwGxbatIHlP4QiBp7yS7pM9Cy7ihGVx/tvTL9NgArY/12jr4DGk9+/NG/bPpKAD3mawZpovqQ==
-X-Received: by 2002:a1c:a943:: with SMTP id s64mr3345147wme.103.1590672474339; 
- Thu, 28 May 2020 06:27:54 -0700 (PDT)
-Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
- [2.15.156.232])
- by smtp.gmail.com with ESMTPSA id q15sm6175408wrf.87.2020.05.28.06.27.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 28 May 2020 06:27:53 -0700 (PDT)
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-To: "David S . Miller" <davem@davemloft.net>, Jakub Kicinski <kuba@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH net-next] dt-bindings: net: rename the bindings document for
- MediaTek STAR MAC
-Date: Thu, 28 May 2020 15:27:43 +0200
-Message-Id: <20200528132743.9221-1-brgl@bgdev.pl>
-X-Mailer: git-send-email 2.26.1
+ id 1jeIbO-0001GT-Ie; Thu, 28 May 2020 13:29:43 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 657F5207D3;
+ Thu, 28 May 2020 13:29:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590672582;
+ bh=VbVffYZ9WuhrTKtlvAZN7dWKp6BJwRmGIOc4s2SHMVM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=e2a6o2ZN6Np0K45Iawn8mRD4HE3IlheKZ8Q+L5IcK88V9cyt75e174rdcp9rbMcHk
+ IDPXs4jfsoyWbNc+vbUrg2haSKzUHFxhsmQxCXYKbzQ9h6rew50Mfz86o7l0jflU8r
+ G/iHlnSeeX/Yc4LJmCTwxHThDoxF24h3fHuoptts=
+Date: Thu, 28 May 2020 14:29:38 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+Subject: Re: [PATCH 1/2] regmap: provide helpers for simple bit operations
+Message-ID: <20200528132938.GC3606@sirena.org.uk>
+References: <20200528123459.21168-1-brgl@bgdev.pl>
+ <20200528123459.21168-2-brgl@bgdev.pl>
 MIME-Version: 1.0
+In-Reply-To: <20200528123459.21168-2-brgl@bgdev.pl>
+X-Cookie: Small is beautiful.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_062756_630077_B6B5A67B 
-X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-CacheID: sfid-20200528_062942_635626_5A30CB12 
+X-CRM114-Status: UNSURE (   6.68  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,38 +77,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Stephane Le Provost <stephane.leprovost@mediatek.com>,
+Cc: Stephane Le Provost <stephane.leprovost@mediatek.com>,
  Bartosz Golaszewski <bgolaszewski@baylibre.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Fabien Parent <fparent@baylibre.com>,
- linux-mediatek@lists.infradead.org,
+ Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ Mark Lee <Mark-MC.Lee@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
+ Pedro Tsai <pedro.tsai@mediatek.com>, linux-mediatek@lists.infradead.org,
  Andrew Perepech <andrew.perepech@mediatek.com>,
- Pedro Tsai <pedro.tsai@mediatek.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2468259846389123612=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-The driver itself was renamed before getting merged into mainline, but
-the binding document kept the old name. This makes both names consistent.
+--===============2468259846389123612==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="/e2eDi0V/xtL+Mc8"
+Content-Disposition: inline
 
-Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
----
- .../net/{mediatek,eth-mac.yaml => mediatek,star-emac.yaml}        | 0
- 1 file changed, 0 insertions(+), 0 deletions(-)
- rename Documentation/devicetree/bindings/net/{mediatek,eth-mac.yaml => mediatek,star-emac.yaml} (100%)
 
-diff --git a/Documentation/devicetree/bindings/net/mediatek,eth-mac.yaml b/Documentation/devicetree/bindings/net/mediatek,star-emac.yaml
-similarity index 100%
-rename from Documentation/devicetree/bindings/net/mediatek,eth-mac.yaml
-rename to Documentation/devicetree/bindings/net/mediatek,star-emac.yaml
--- 
-2.26.1
+--/e2eDi0V/xtL+Mc8
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
+On Thu, May 28, 2020 at 02:34:58PM +0200, Bartosz Golaszewski wrote:
+
+> This adds three new macros for simple bit operations: set_bits,
+> clear_bits and test_bits.
+
+Why macros and not static inlines?
+
+--/e2eDi0V/xtL+Mc8
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7PvMEACgkQJNaLcl1U
+h9BJSwf/dYRTjyQ2Yy7iTcNYVOuamZoSQgG3ZL6ANS748UWNttQaOUnNCc46dxSw
+MowHobHyRDcWopIfxiDE/ZiBeNAZD971eifLIHjTnHtUdrsZWXrsfGg/BSUGJYTA
+pRhv0h3uHXvIBlGhOXCGcuNDUV+bAhHv0xWr00E0bKIjoHff9Rnw9PaEOI24sSzy
+x5NVhciZzUFnROu1RHResg2qzDYcROM5lNBaOnz3tD4+0E2YtF0dgoQYnf0WjWV3
+R02uaFjFRsfdbr+NmpoKgVKbzZa+Z9/0eY3BYBiBk9MdfkJaex52O55AiGHy6V8v
+W4E4Q9Nh0PrJJ+AZwItYtnNqeaWSQA==
+=dUDC
+-----END PGP SIGNATURE-----
+
+--/e2eDi0V/xtL+Mc8--
+
+
+--===============2468259846389123612==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2468259846389123612==--
+
