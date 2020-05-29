@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 385401E8C12
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 01:29:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77A6A1E8C15
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 01:30:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/pu6IsV5f7wsNch3Fb6b38a/WpmKgPvK2H93f5PVAkY=; b=A3Uf7mQ9IcWdHO
-	TB5cDSGvRQKJub51pKNVU9iLzwdY5+UhlHRgORT0tgErv/XBS9jmNqoYKJX7788qUncL2Q7Eusl9d
-	eiNyGU3Vn9UGWxb6247R9I1nNjQ4H1GK3BUKha4ENlAFVo54XbiGCRwt+GvO8aTpkP+RPaJ2myhgE
-	JAt2rLt68J/voP0HyB5y6HvQsb4nRCt/qN0sWoR8p/JTU3qG5S98m4iJKlvFIm6WZ0I+ZpQOdyqLy
-	gT3S3vvR7FvOQTq8KHLPD48teavt4OEPB5HnUgKTNOwb0kI5cmNoOcmfoDSshZ+zxTOatQBFE3pbu
-	MtpPRypVMZFHBTZz11fA==;
+	List-Owner; bh=oawa1Be8DamE70tw/BoiGoiRNzMpcB8IxvQofmSWF0g=; b=ng6aqlYTcX15LR
+	QnTMdGY/iw+IKxWTnwBrh/3f4v3L0KUrnM0ejdrcWsUJYaxW3/YkyJFuks5LFd8F6D0PAW1uQqw0i
+	/keB41vH4inD3WmUOZLornGs3Ut9sUjHf7Bf9BqasmvfpGfcmFjhypqbG8mVlzixJLZMauahoqfbB
+	DMm6WmYdpjqIEIETogCulOHUs5U4sv7RJZC7widWXbr2vtjIsmgWABnHLKgUBw/ayT6eytADBLG/T
+	v4TXMcnCG08/7kjS5vkVRZvztw0lMmJC6jOvF5EZiY5hGtwgXMEd/WEG1SGfegR+gvGs+ZbHQvwwJ
+	cF3kTuDxLekmFKw+hGtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeoRN-00056k-6Z; Fri, 29 May 2020 23:29:29 +0000
+	id 1jeoS9-0005h5-1Z; Fri, 29 May 2020 23:30:17 +0000
 Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeoQ0-0004Cg-V1
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 23:28:06 +0000
+ id 1jeoQ3-0004F8-9w
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 23:28:09 +0000
 X-Originating-IP: 86.202.110.81
 Received: from localhost (lfbn-lyo-1-15-81.w86-202.abo.wanadoo.fr
  [86.202.110.81])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id BC390C0005;
- Fri, 29 May 2020 23:28:02 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id B0990C0007;
+ Fri, 29 May 2020 23:28:04 +0000 (UTC)
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH v4 5/9] clocksource/drivers/timer-atmel-tcb: rework 32khz
- clock selection
-Date: Sat, 30 May 2020 01:27:45 +0200
-Message-Id: <20200529232749.299627-6-alexandre.belloni@bootlin.com>
+Subject: [PATCH v4 7/9] clocksource/drivers/timer-atmel-tcb: stop using the
+ 32kHz for clockevents
+Date: Sat, 30 May 2020 01:27:47 +0200
+Message-Id: <20200529232749.299627-8-alexandre.belloni@bootlin.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200529232749.299627-1-alexandre.belloni@bootlin.com>
 References: <20200529232749.299627-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_162805_349100_B1D0346F 
-X-CRM114-Status: GOOD (  11.92  )
+X-CRM114-CacheID: sfid-20200529_162807_660888_6A6799AF 
+X-CRM114-Status: GOOD (  19.34  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -74,54 +74,160 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On all the supported SoCs, the slow clock is always ATMEL_TC_TIMER_CLOCK5,
-avoid looking it up and pass it directly to setup_clkevents.
+Stop using the slow clock as the clock source for 32 bit counters because
+even at 10MHz, they are able to handle delays up to two minutes. This
+provides a way better resolution.
 
 Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- drivers/clocksource/timer-atmel-tcb.c | 11 ++---------
- 1 file changed, 2 insertions(+), 9 deletions(-)
+ drivers/clocksource/timer-atmel-tcb.c | 61 ++++++++++++++-------------
+ 1 file changed, 32 insertions(+), 29 deletions(-)
 
 diff --git a/drivers/clocksource/timer-atmel-tcb.c b/drivers/clocksource/timer-atmel-tcb.c
-index 7427b07495a8..b255a4a1a36b 100644
+index 423af2f9835f..8fcd4d74c54b 100644
 --- a/drivers/clocksource/timer-atmel-tcb.c
 +++ b/drivers/clocksource/timer-atmel-tcb.c
-@@ -346,7 +346,7 @@ static void __init tcb_setup_single_chan(struct atmel_tc *tc, int mck_divisor_id
+@@ -27,9 +27,10 @@
+  *   - Some chips support 32 bit counter. A single channel is used for
+  *     this 32 bit free-running counter. the second channel is not used.
+  *
+- *   - The third channel may be used to provide a 16-bit clockevent
+- *     source, used in either periodic or oneshot mode.  This runs
+- *     at 32 KiHZ, and can handle delays of up to two seconds.
++ *   - The third channel may be used to provide a clockevent source, used in
++ *   either periodic or oneshot mode. For 16-bit counter its runs at 32 KiHZ,
++ *   and can handle delays of up to two seconds. For 32-bit counters, it runs at
++ *   the same rate as the clocksource
+  *
+  * REVISIT behavior during system suspend states... we should disable
+  * all clocks and save the power.  Easily done for clockevent devices,
+@@ -47,6 +48,8 @@ static struct
+ } tcb_cache[3];
+ static u32 bmr_cache;
+ 
++static const u8 atmel_tcb_divisors[] = { 2, 8, 32, 128 };
++
+ static u64 tc_get_cycles(struct clocksource *cs)
+ {
+ 	unsigned long	flags;
+@@ -151,13 +154,6 @@ static struct tc_clkevt_device *to_tc_clkevt(struct clock_event_device *clkevt)
+ 	return container_of(clkevt, struct tc_clkevt_device, clkevt);
+ }
+ 
+-/* For now, we always use the 32K clock ... this optimizes for NO_HZ,
+- * because using one of the divided clocks would usually mean the
+- * tick rate can never be less than several dozen Hz (vs 0.5 Hz).
+- *
+- * A divided clock could be good for high resolution timers, since
+- * 30.5 usec resolution can seem "low".
+- */
+ static u32 timer_clock;
+ 
+ static int tc_shutdown(struct clock_event_device *d)
+@@ -183,7 +179,7 @@ static int tc_set_oneshot(struct clock_event_device *d)
+ 
+ 	clk_enable(tcd->clk);
+ 
+-	/* slow clock, count up to RC, then irq and stop */
++	/* count up to RC, then irq and stop */
+ 	writel(timer_clock | ATMEL_TC_CPCSTOP | ATMEL_TC_WAVE |
+ 		     ATMEL_TC_WAVESEL_UP_AUTO, regs + ATMEL_TC_REG(2, CMR));
+ 	writel(ATMEL_TC_CPCS, regs + ATMEL_TC_REG(2, IER));
+@@ -205,7 +201,7 @@ static int tc_set_periodic(struct clock_event_device *d)
+ 	 */
+ 	clk_enable(tcd->clk);
+ 
+-	/* slow clock, count up to RC, then irq and restart */
++	/* count up to RC, then irq and restart */
+ 	writel(timer_clock | ATMEL_TC_WAVE | ATMEL_TC_WAVESEL_UP_AUTO,
+ 		     regs + ATMEL_TC_REG(2, CMR));
+ 	writel((32768 + HZ / 2) / HZ, tcaddr + ATMEL_TC_REG(2, RC));
+@@ -256,47 +252,56 @@ static irqreturn_t ch2_irq(int irq, void *handle)
+ 	return IRQ_NONE;
+ }
+ 
+-static int __init setup_clkevents(struct atmel_tc *tc, int clk32k_divisor_idx)
++static int __init setup_clkevents(struct atmel_tc *tc, int divisor_idx)
+ {
++	u32 rate;
+ 	int ret;
+ 	struct clk *t2_clk = tc->clk[2];
+ 	int irq = tc->irq[2];
+-
+-	ret = clk_prepare_enable(tc->slow_clk);
+-	if (ret)
+-		return ret;
++	int bits = tc->tcb_config->counter_width;
+ 
+ 	/* try to enable t2 clk to avoid future errors in mode change */
+ 	ret = clk_prepare_enable(t2_clk);
+-	if (ret) {
+-		clk_disable_unprepare(tc->slow_clk);
++	if (ret)
+ 		return ret;
+-	}
+-
+-	clk_disable(t2_clk);
+ 
+ 	clkevt.regs = tc->regs;
+ 	clkevt.clk = t2_clk;
+ 
+-	timer_clock = clk32k_divisor_idx;
++	if (bits == 32) {
++		timer_clock = divisor_idx;
++		rate = clk_get_rate(t2_clk) / atmel_tcb_divisors[divisor_idx];
++	} else {
++		ret = clk_prepare_enable(tc->slow_clk);
++		if (ret) {
++			clk_disable_unprepare(t2_clk);
++			return ret;
++		}
++
++		rate = clk_get_rate(tc->slow_clk);
++		timer_clock = ATMEL_TC_TIMER_CLOCK5;
++	}
++
++	clk_disable(t2_clk);
+ 
+ 	clkevt.clkevt.cpumask = cpumask_of(0);
+ 
+ 	ret = request_irq(irq, ch2_irq, IRQF_TIMER, "tc_clkevt", &clkevt);
+ 	if (ret) {
+ 		clk_unprepare(t2_clk);
+-		clk_disable_unprepare(tc->slow_clk);
++		if (bits != 32)
++			clk_disable_unprepare(tc->slow_clk);
+ 		return ret;
+ 	}
+ 
+-	clockevents_config_and_register(&clkevt.clkevt, 32768, 1, 0xffff);
++	clockevents_config_and_register(&clkevt.clkevt, rate, 1, BIT(bits) - 1);
+ 
+ 	return ret;
+ }
+ 
+ #else /* !CONFIG_GENERIC_CLOCKEVENTS */
+ 
+-static int __init setup_clkevents(struct atmel_tc *tc, int clk32k_divisor_idx)
++static int __init setup_clkevents(struct atmel_tc *tc, int divisor_idx)
+ {
+ 	/* NOTHING */
+ 	return 0;
+@@ -346,8 +351,6 @@ static void __init tcb_setup_single_chan(struct atmel_tc *tc, int mck_divisor_id
  	writel(ATMEL_TC_SYNC, tcaddr + ATMEL_TC_BCR);
  }
  
--static const u8 atmel_tcb_divisors[5] = { 2, 8, 32, 128, 0, };
-+static const u8 atmel_tcb_divisors[] = { 2, 8, 32, 128 };
- 
- static const struct of_device_id atmel_tcb_of_match[] = {
- 	{ .compatible = "atmel,at91rm9200-tcb", .data = (void *)16, },
-@@ -362,7 +362,6 @@ static int __init tcb_clksrc_init(struct device_node *node)
- 	u64 (*tc_sched_clock)(void);
- 	u32 rate, divided_rate = 0;
- 	int best_divisor_idx = -1;
--	int clk32k_divisor_idx = -1;
- 	int bits;
- 	int i;
- 	int ret;
-@@ -416,12 +415,6 @@ static int __init tcb_clksrc_init(struct device_node *node)
- 		unsigned divisor = atmel_tcb_divisors[i];
- 		unsigned tmp;
- 
--		/* remember 32 KiHz clock for later */
--		if (!divisor) {
--			clk32k_divisor_idx = i;
--			continue;
--		}
+-static const u8 atmel_tcb_divisors[] = { 2, 8, 32, 128 };
 -
- 		tmp = rate / divisor;
- 		pr_debug("TC: %u / %-3u [%d] --> %u\n", rate, divisor, i, tmp);
- 		if (best_divisor_idx > 0) {
-@@ -467,7 +460,7 @@ static int __init tcb_clksrc_init(struct device_node *node)
+ static struct atmel_tcb_config tcb_rm9200_config = {
+ 	.counter_width = 16,
+ };
+@@ -472,7 +475,7 @@ static int __init tcb_clksrc_init(struct device_node *node)
  		goto err_disable_t1;
  
  	/* channel 2:  periodic and oneshot timer support */
--	ret = setup_clkevents(&tc, clk32k_divisor_idx);
-+	ret = setup_clkevents(&tc, ATMEL_TC_TIMER_CLOCK5);
+-	ret = setup_clkevents(&tc, ATMEL_TC_TIMER_CLOCK5);
++	ret = setup_clkevents(&tc, best_divisor_idx);
  	if (ret)
  		goto err_unregister_clksrc;
  
