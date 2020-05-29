@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 917101E8629
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 20:04:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F13E1E862F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 20:04:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0qDdVUCtPdG2/clApmsT6ayemLs0EKOFbLXfX5QvBe8=; b=iBSDpfQwD0m9b6
-	SRpR1Vg+E9NIkpQTcAA5n5CBzJTlYQAyP/+9FO5K3HbLh2o9B67RTzCvjU0qwbfKjadpdZ3zXu6yM
-	aVHE2a7A8cWL+tGrlr38xswigO3bO+gbnH4sL7cYldkYfmo8EDjXUByfiHvdSIkb/LGFzGv6o/+C/
-	TgqjUALe1JREhLzR9VYdodjO15atg6jfXb+4+Wv6Xu2f8bDRvuvyvjjCKFzcI6ac1SiFGSIJYaYs8
-	FZyoHYuTAoJkzIF/JOvQte4jlZQ9fnoxH0Zifp173rlQbb7L2zJ99jGiW74K1gkOpld+pdwXB0dBG
-	4hZzRG9qtqA/cU7CWNcQ==;
+	List-Owner; bh=m6ynOXDZrF1X3XpAcOI1ZOEO2iVq0kvcc/ik0hBgBtw=; b=MNciPyRePU57lr
+	pCo94fdXYy5T3rVMvf+LJYTxQc+f4B5vFE+TClmNMCVbpRoIG4+iEcBoNLhP06jfj+79Oxey1h/gu
+	EqjFU64DR53jdtMumWoJyWH/7RXLilcq7wmbtm2HmT40LFGz5i92wu4gpI5V2O/or51rn6Y7geL9i
+	PnBrsgzscM7FnCjNZjiFaJ7KDjqK+jlgrE6NERx0TUOjzOcpXjke2JaiNIsaEDjZ1CAuiy0FISLfq
+	KzmYG9lIw5af9Z+tRsF2fpreavuIOjOxQa/xz0RVcVOA3nQ/21oargkAeNh1qQkSVHP5L4b6fzN4a
+	m35Uy+bIoLv8BZaa8i7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jejMT-00073O-3Z; Fri, 29 May 2020 18:04:05 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1jejNC-0007JP-Bi; Fri, 29 May 2020 18:04:50 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jejMJ-00072v-Ce; Fri, 29 May 2020 18:03:56 +0000
-Received: by mail-ed1-x542.google.com with SMTP id s19so2379261edt.12;
- Fri, 29 May 2020 11:03:55 -0700 (PDT)
+ id 1jejN3-0007Iz-HJ; Fri, 29 May 2020 18:04:42 +0000
+Received: by mail-ed1-x544.google.com with SMTP id e10so2434416edq.0;
+ Fri, 29 May 2020 11:04:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=SiB7HET2dLvdlmmU4DX5gmb+mL1M6obOE7qdN1rHGNg=;
- b=g+JcM8esIk55PDKHgHqGEM5/WOea6axPRjT/TyFWtQH74h7F/44gAtRFeRLdQv6t60
- vIkf0wIjSsTGP/rlmlMelaPjtWGN5PLa14LT54AI3xBLGXmmixkmqXdefLForDXQH6Ia
- Lbc6l0VVpnjfj7Gm/OdnjnrtQ67JYXo62mtUW2XVxM+Dio4+NhuQsaGK05S1NmD2hmPZ
- AD5IZsqvgfYZ6eij0ie/rR4l52Y8lTGzV2eP0HoGebb9AUDG0IeNAq5HwhiGleVf8B9i
- IBxbveYCUrbKTOCuOmgsAQkwTFu5qqx8dPa6Hh8m11Cfu+1K6Y0JUCGmHXiwvAT8YjzU
- lrGg==
+ bh=rUVw3FAGDKoCxrlejVcKMZ4OarR88gdhRDB3p4bmqkg=;
+ b=gtW4ToZUEzT36p1PdJ+JnIvDT20XeGJz64XAYB7FW/fkGsHb7wO+WvWkOZnF/fXFmG
+ qEu+3JyJ5tZAHBjiTcotKxdh6IFYtUU9xQkR2N4ZZdBQrAlJJdmASJdvTsZS76uTkRJw
+ 07lMrDZRgrBK3RMIfh0ULNr2+iWoYjqoNW6KbVe8YAO5pekBKQJxvObZzar9/DSsXZpV
+ k+t5wvXnY31r8KXaOulFUIAaNfTi26i08du7kAdf8530N+cepKz1WKwbhRrsqt3939p3
+ ICjltHpr9peNTmO5v9WrSj4ak0aTFjFgLX7BTc4Z83l5Ek3GdqwLMvNIrPZDry7ZM25O
+ QYyg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=SiB7HET2dLvdlmmU4DX5gmb+mL1M6obOE7qdN1rHGNg=;
- b=uG++/46hXf+D9uecCZEIaO096uRiLBHObJe8NvAVQ61Osmdew21rwTCRaTX/UoIOLk
- XiU4tU4+GAcWOvDumSii+QXOg3hc3je6MYeDpJCF/e/SHochfswzUQ4eYARQWhrxW2Jf
- B+XitM1Jf5loHg2CEH/aJIcSMWo7lizEeXpVqXUpiHyLuObVLS45FIJNTQhE6o6muj/b
- pEItxK980tMmFAi/Kxn+ymXbnXEn24vdKnDG3Uuv4PRoqT//hHbDVN4xmptHOdeSv0IO
- 39nQuuC70IChzoEhT5otUpPvZi0tqawKrejSoTm/4VF2LEp11w/bV52GDkJSvUc8aZSE
- 99nA==
-X-Gm-Message-State: AOAM532BebOix2vwDyMSvL04N/WY8YG6v9CIL3nVYUSVnNncrrouj31Y
- wrB3w12Po0pL7QkGEPPvXCbFICmL
-X-Google-Smtp-Source: ABdhPJyG9pcq/VJyek9MK7/FBu1uPl148Z7dAaldQ9lOzZIAObImvzjo5Nlt2tKiVYIKXxkyvD09iw==
-X-Received: by 2002:a05:6402:1cad:: with SMTP id
- cz13mr9717939edb.56.1590775433876; 
- Fri, 29 May 2020 11:03:53 -0700 (PDT)
+ bh=rUVw3FAGDKoCxrlejVcKMZ4OarR88gdhRDB3p4bmqkg=;
+ b=R7ghvLqgcJGMhOYyB7+x6YAecWDaKdPfGtvJSvuAtopRzswYAHH0QXdkZXz8I8CaKh
+ p+NloCYRtfahg82Fx+dNc8/nYmOQj0Y4rIr45OXbPdA6etBGRf0nFJ9Vy3n7M+FT9rMB
+ TYKovpXPCyyDxXe8TJptMcb3KIC6HDkUHY2/nyxIzybNnx/ndJAJXgdxh2I5/tbraAxo
+ 0Ewdp1nlAUtj/GLtd04sHMtan85kpKID5JxsDIIJ0PjLOFMpNX4XCOhf7Ca0D5pVFCgl
+ /0GR99sBlu2EanhBkDjQnzVZVVuKoGLcbdwA9/wByZmsqMTBWJgJ8Dl6bRn8msatg7z1
+ bMNw==
+X-Gm-Message-State: AOAM533f3WNn+uxyQiRY6+UVtnI7m82tBA5mSaAiD3P67UFBVmL6+G0W
+ fxtTaBPzXHM6vjXPwONg6Dsmgy6v
+X-Google-Smtp-Source: ABdhPJyu2UVsISH4mCc5MLxQaFVVXtCUMLZIGA8dWE7RcAdw9Q7j8XHjRTx+i/Q4ePEvX0TUh0SvgQ==
+X-Received: by 2002:a50:d1d3:: with SMTP id i19mr9337476edg.35.1590775480084; 
+ Fri, 29 May 2020 11:04:40 -0700 (PDT)
 Received: from [10.67.49.116] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id m3sm7514272ede.58.2020.05.29.11.03.49
+ by smtp.googlemail.com with ESMTPSA id m8sm7707794ejk.100.2020.05.29.11.04.37
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 29 May 2020 11:03:52 -0700 (PDT)
-Subject: Re: [PATCH] spi: bcm2835: Enable shared interrupt support
+ Fri, 29 May 2020 11:04:39 -0700 (PDT)
+Subject: Re: [PATCH] spi: bcm2835: Implement shutdown callback
 To: Lukas Wunner <lukas@wunner.de>
-References: <20200528185805.28991-1-nsaenzjulienne@suse.de>
- <20200529174358.som3snunfxch6phi@wunner.de>
- <36dd65bb-18a9-9697-b9b6-76eaf8cbe45c@gmail.com>
- <20200529175350.2wtoqttipa354m2m@wunner.de>
+References: <20200528190605.24850-1-f.fainelli@gmail.com>
+ <20200529174719.5tvchnoov747fm2x@wunner.de>
+ <c081060b-7442-bf20-40c9-cb403787610a@gmail.com>
+ <20200529175831.p4dphb5luymgapzx@wunner.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -117,23 +116,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <b832eaed-b480-b3b6-4df0-75abcc11f08a@gmail.com>
-Date: Fri, 29 May 2020 11:03:48 -0700
+Message-ID: <7299c445-4d26-06ce-9073-8ac0f32e590e@gmail.com>
+Date: Fri, 29 May 2020 11:04:36 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200529175350.2wtoqttipa354m2m@wunner.de>
+In-Reply-To: <20200529175831.p4dphb5luymgapzx@wunner.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_110355_444019_806FF1B8 
-X-CRM114-Status: GOOD (  19.20  )
+X-CRM114-CacheID: sfid-20200529_110441_587820_BE77BAC8 
+X-CRM114-Status: GOOD (  14.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -157,65 +156,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Scott Branden <sbranden@broadcom.com>,
+Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Scott Branden <sbranden@broadcom.com>,
  Ray Jui <rjui@broadcom.com>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Martin Sperl <kernel@martin.sperl.org>,
+ "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/29/20 10:53 AM, Lukas Wunner wrote:
-> On Fri, May 29, 2020 at 10:46:01AM -0700, Florian Fainelli wrote:
->> On 5/29/20 10:43 AM, Lukas Wunner wrote:
->>> On Thu, May 28, 2020 at 08:58:04PM +0200, Nicolas Saenz Julienne wrote:
->>>> --- a/drivers/spi/spi-bcm2835.c
->>>> +++ b/drivers/spi/spi-bcm2835.c
->>>> @@ -379,6 +379,10 @@ static irqreturn_t bcm2835_spi_interrupt(int irq, void *dev_id)
->>>>  	if (bs->tx_len && cs & BCM2835_SPI_CS_DONE)
->>>>  		bcm2835_wr_fifo_blind(bs, BCM2835_SPI_FIFO_SIZE);
->>>>  
->>>> +	/* check if we got interrupt enabled */
->>>> +	if (!(bcm2835_rd(bs, BCM2835_SPI_CS) & BCM2835_SPI_CS_INTR))
->>>> +		return IRQ_NONE;
->>>> +
->>>>  	/* Read as many bytes as possible from FIFO */
->>>>  	bcm2835_rd_fifo(bs);
->>>>  	/* Write as many bytes as possible to FIFO */
-> [...]
->>> Finally, it would be nice if the check would be optimized away when
->>> compiling for pre-RasPi4 products, maybe something like:
+On 5/29/20 10:58 AM, Lukas Wunner wrote:
+> On Fri, May 29, 2020 at 10:48:11AM -0700, Florian Fainelli wrote:
+>> On 5/29/20 10:47 AM, Lukas Wunner wrote:
+>>> On Thu, May 28, 2020 at 12:06:05PM -0700, Florian Fainelli wrote:
+>>>> Make sure we clear the FIFOs, stop the block, disable the clock and
+>>>> release the DMA channel.
 >>>
->>> +	if (IS_ENABLED(CONFIG_ARM_LPAE) && !(cs & BCM2835_SPI_CS_INTR))
->>> +		return IRQ_NONE;
+>>> To what end?  Why is this change necessary?  Sorry but this seems like
+>>> an awfully terse commit message.
 >>
->> Rather than keying this off ARM_LPAE or any other option, this should be
->> keyed off a compatible string, that way we can even conditionally pass
->> IRQF_SHARED to the interrupt handler if we care so much about performance.
+>> To ensure clocks are disabled and to save power in low power modes used
+>> on 7211 for instance.
 > 
-> But a compatible string can't be checked at compile time, can it?
+> Thanks for the explanation, that's an important tidbit.  I wasn't even
+> aware that this SPI controller is used on SoCs beyond the Raspberry Pi
+> ones.  Does the BCM7211 use shared interrupts for this controller?
+> Does it have DMA DREQ attached?
 
-No, but you can have a different interrupt handler that it set at
-runtime if you want to completely eliminate this comparison.
-
-My point is that CONFIG_ARM_LPAE is just too brittle, there is nothing
-that prevents you from using a non-LPAE kernel on the Pi 4, even PCIe
-could be made to work if using super section mappings to map the PCIe
-outbound space. Even on models with over 4GB of DRAM, if you are willing
-to lose some of it, it can work.
-
-> 
-> The point is that at the least the Foundation compiles and ships a separate
-> kernel for each of the three platforms BCM2835, BCM2837, BCM2711.  It's
-> unnecessary to check whether an interrupt was actually raised if we *know*
-> in advance that it's not shared (as is the case with kernels compiled for
-> BCM2835 and BCM2837).
-
-I am fine with any solution that does not involve keying off
-CONFIG_ARM_LPAE to discriminate 2711 from any other chip.
+For all practical purposes you can consider that 7211 is identical to a
+2711, it does use shared interrupts for this controller and there is a
+DRAM DREQ attached as well. Where they differ are on the display, video,
+and memory controller MAC.
 -- 
 Florian
 
