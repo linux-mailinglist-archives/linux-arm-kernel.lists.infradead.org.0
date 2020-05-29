@@ -2,65 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32F4E1E792E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 11:19:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63E151E794A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 11:24:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x/o7FedQ/9CJXo17jo7TwjHC+W6juLO8FtjKZ2q8FwA=; b=RbDmRXZEhHQmEW
-	Fv2xGpQHD8bG/VTw9c2hVRlf3u7+dfBUcDEmCDZA73525SOTVmVs2gPJVZh1mWIQDKLVt98Oq0Nt+
-	4CM7xn0LMf0PjUWh1sDqp+WsGlHqte7s5HFPgrMaMqtrkk0Ifdts+qfXWxdyuRWhhR1jEadouNAXI
-	pbMy+d6pBwf1uYuMOJFMESD8GyHQ4QhczTixcGL2fA61jA15PH6g13wgWVBghLKHD94zsVDqQpU4Y
-	Xpq7OINc9Ieg9disiUjS3Jry8Hf5Xmqs6DjUVWbmLmj7itqZIRjI5ed8aPPpc0cIBM0zbPnDUKv0v
-	EjyvcPJyEegzvT02rfdw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=3Wz+3Z2jYJw7i03HAGIU7EvShTBJfpd9y1W8DWh9XiU=; b=X4UhxYnsyAeSJX
+	RXCNHybrdJxexCX1MXaoDnNNIeoSc8K+PgoBb6+WvIsGmhNHcuNty63n04fm8o/9kgDCbu2FdbMvD
+	ZQlYaPyz9dpdo/NHaNmVLMgEL3TP7LWg+Ue9XepflRarAdyRrc0Mte69TQcgJ5WWhoy5Bkt6PcRbl
+	JFBQMqoHd99S2vHOCWNAvGnCg4kjAbjB0HFUw8mIsJcx8dT2xoVs1htfk8glxAoRlb2zjAUaWZq/3
+	4blTSURA6XOqZix8XhkW17L1d3LG4Ootx0Z5dz3KvkksVcrpeui1s+CQSZ8dHGFNtWfyY3KtfgUub
+	JafdxQigpHY83ohRKbbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jebAX-0001g8-5J; Fri, 29 May 2020 09:19:13 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jebF7-0005bD-FW; Fri, 29 May 2020 09:23:57 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jebAN-0001em-6m
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 09:19:05 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 033A1F48536489043E95;
- Fri, 29 May 2020 17:18:58 +0800 (CST)
-Received: from [127.0.0.1] (10.173.221.213) by DGGEMS411-HUB.china.huawei.com
- (10.3.19.211) with Microsoft SMTP Server id 14.3.487.0;
- Fri, 29 May 2020 17:18:40 +0800
-Subject: Re: [PATCH v7 04/24] iommu: Add a page fault handler
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- <iommu@lists.linux-foundation.org>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-pci@vger.kernel.org>,
- <linux-mm@kvack.org>
-References: <20200519175502.2504091-1-jean-philippe@linaro.org>
- <20200519175502.2504091-5-jean-philippe@linaro.org>
-From: Xiang Zheng <zhengxiang9@huawei.com>
-Message-ID: <422e84da-9ccb-5452-8cbf-f472d2ad16b5@huawei.com>
-Date: Fri, 29 May 2020 17:18:27 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.0
+ id 1jebEd-0005Ne-0Z; Fri, 29 May 2020 09:23:28 +0000
+X-UUID: b4759ac15c4d49e2bd9a59ed3eafd004-20200529
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=C7jiqWJqQUQFX3wanPIiepBSjlj6iNhBD/xNOyaJx/o=; 
+ b=kDCJTzk4x9EtqMkosbm3DAGFx0pWXlTB7sW3ZcZqrgz+AXw6iJUOLZqazpKxcEMmA9jmKCICggLLMID5HMjyDYmJ1ig5CfhfcE04ZC+Rd7OOnM/EZ40UtPNZqaudmFALvmHyaPlPP22b6OjO2toRWq7109FZebZaPy1ayyuQRcM=;
+X-UUID: b4759ac15c4d49e2bd9a59ed3eafd004-20200529
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1765577043; Fri, 29 May 2020 01:23:13 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 29 May 2020 02:23:18 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 29 May 2020 17:23:10 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Fri, 29 May 2020 17:23:09 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
+Subject: [PATCH v2 0/5] scsi: ufs-mediatek: Fix clk-gating and introduce
+ low-power mode for vccq2
+Date: Fri, 29 May 2020 17:23:05 +0800
+Message-ID: <20200529092310.1106-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <20200519175502.2504091-5-jean-philippe@linaro.org>
-Content-Language: en-US
-X-Originating-IP: [10.173.221.213]
-X-CFilter-Loop: Reflected
+X-TM-SNTS-SMTP: BC13AC5E0CEC9B039233AABE34122B89E422FCA98B5DA0A01FF13D32ED2EEF7E2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_021903_588028_19F88C46 
-X-CRM114-Status: GOOD (  34.10  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200529_022327_059376_509AE53D 
+X-CRM114-Status: UNSURE (   5.67  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.190 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,421 +86,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: fenghua.yu@intel.com, kevin.tian@intel.com, jacob.jun.pan@linux.intel.com,
- will@kernel.org, catalin.marinas@arm.com, joro@8bytes.org,
- christian.koenig@amd.com, hch@infradead.org, jgg@ziepe.ca,
- Wang Haibin <wanghaibin.wang@huawei.com>, Jonathan.Cameron@huawei.com,
- zhangfei.gao@linaro.org, xuzaibo@huawei.com, robin.murphy@arm.com,
- felix.kuehling@amd.com, baolu.lu@linux.intel.com
+Cc: pengshun.zhao@mediatek.com, Stanley Chu <stanley.chu@mediatek.com>,
+ bvanassche@acm.org, andy.teng@mediatek.com, cc.chou@mediatek.com,
+ chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, beanhuo@micron.com, chaotian.jing@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Hi,
+This series fixes clk-gating issues and introduces low-power mode for vccq2 in MediaTek platforms.
 
-On 2020/5/20 1:54, Jean-Philippe Brucker wrote:
-> Some systems allow devices to handle I/O Page Faults in the core mm. For
-> example systems implementing the PCIe PRI extension or Arm SMMU stall
-> model. Infrastructure for reporting these recoverable page faults was
-> added to the IOMMU core by commit 0c830e6b3282 ("iommu: Introduce device
-> fault report API"). Add a page fault handler for host SVA.
-> 
-> IOMMU driver can now instantiate several fault workqueues and link them
-> to IOPF-capable devices. Drivers can choose between a single global
-> workqueue, one per IOMMU device, one per low-level fault queue, one per
-> domain, etc.
-> 
-> When it receives a fault event, supposedly in an IRQ handler, the IOMMU
-> driver reports the fault using iommu_report_device_fault(), which calls
-> the registered handler. The page fault handler then calls the mm fault
-> handler, and reports either success or failure with iommu_page_response().
-> When the handler succeeded, the IOMMU retries the access.
-> 
-> The iopf_param pointer could be embedded into iommu_fault_param. But
-> putting iopf_param into the iommu_param structure allows us not to care
-> about ordering between calls to iopf_queue_add_device() and
-> iommu_register_device_fault_handler().
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> ---
-> v6->v7: Fix leak in iopf_queue_discard_partial()
-> ---
->  drivers/iommu/Kconfig      |   4 +
->  drivers/iommu/Makefile     |   1 +
->  include/linux/iommu.h      |  51 +++++
->  drivers/iommu/io-pgfault.c | 459 +++++++++++++++++++++++++++++++++++++
->  4 files changed, 515 insertions(+)
->  create mode 100644 drivers/iommu/io-pgfault.c
-> 
-> diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-> index d9fa5b410015..15e9dc4e503c 100644
-> --- a/drivers/iommu/Kconfig
-> +++ b/drivers/iommu/Kconfig
-> @@ -107,6 +107,10 @@ config IOMMU_SVA
->  	bool
->  	select IOASID
->  
-> +config IOMMU_PAGE_FAULT
-> +	bool
-> +	select IOMMU_SVA
-> +
->  config FSL_PAMU
->  	bool "Freescale IOMMU support"
->  	depends on PCI
-> diff --git a/drivers/iommu/Makefile b/drivers/iommu/Makefile
-> index 40c800dd4e3e..bf5cb4ee8409 100644
-> --- a/drivers/iommu/Makefile
-> +++ b/drivers/iommu/Makefile
-> @@ -4,6 +4,7 @@ obj-$(CONFIG_IOMMU_API) += iommu-traces.o
->  obj-$(CONFIG_IOMMU_API) += iommu-sysfs.o
->  obj-$(CONFIG_IOMMU_DEBUGFS) += iommu-debugfs.o
->  obj-$(CONFIG_IOMMU_DMA) += dma-iommu.o
-> +obj-$(CONFIG_IOMMU_PAGE_FAULT) += io-pgfault.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE) += io-pgtable.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE_ARMV7S) += io-pgtable-arm-v7s.o
->  obj-$(CONFIG_IOMMU_IO_PGTABLE_LPAE) += io-pgtable-arm.o
-> diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-> index b62525747bd9..a462157c855b 100644
-> --- a/include/linux/iommu.h
-> +++ b/include/linux/iommu.h
-> @@ -46,6 +46,7 @@ struct iommu_domain;
->  struct notifier_block;
->  struct iommu_sva;
->  struct iommu_fault_event;
-> +struct iopf_queue;
->  
->  /* iommu fault flags */
->  #define IOMMU_FAULT_READ	0x0
-> @@ -347,6 +348,7 @@ struct iommu_fault_param {
->   * struct dev_iommu - Collection of per-device IOMMU data
->   *
->   * @fault_param: IOMMU detected device fault reporting data
-> + * @iopf_param:	 I/O Page Fault queue and data
->   * @fwspec:	 IOMMU fwspec data
->   * @priv:	 IOMMU Driver private data
->   *
-> @@ -356,6 +358,7 @@ struct iommu_fault_param {
->  struct dev_iommu {
->  	struct mutex lock;
->  	struct iommu_fault_param	*fault_param;
-> +	struct iopf_device_param	*iopf_param;
->  	struct iommu_fwspec		*fwspec;
->  	void				*priv;
->  };
+v1 -> v2:
+  - Add patch [4] and [5]
 
-[...]
+Stanley Chu (5):
+  scsi: ufs-mediatek: Fix imprecise waiting time for ref-clk control
+  scsi: ufs-mediatek: Do not gate clocks if auto-hibern8 is not entered
+    yet
+  scsi: ufs-mediatek: Introduce low-power mode for device power supply
+  scsi: ufs-mediatek: Fix unbalanced clock on/off
+  scsi: ufs-mediatek: Allow unbound mphy
 
->  #endif /* __LINUX_IOMMU_H */
-> diff --git a/drivers/iommu/io-pgfault.c b/drivers/iommu/io-pgfault.c
-> new file mode 100644
-> index 000000000000..1f61c1bc05da
-> --- /dev/null
-> +++ b/drivers/iommu/io-pgfault.c
-> @@ -0,0 +1,459 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Handle device page faults
-> + *
-> + * Copyright (C) 2020 ARM Ltd.
-> + */
-> +
-> +#include <linux/iommu.h>
-> +#include <linux/list.h>
-> +#include <linux/sched/mm.h>
-> +#include <linux/slab.h>
-> +#include <linux/workqueue.h>
-> +
-> +#include "iommu-sva.h"
-> +
-> +/**
-> + * struct iopf_queue - IO Page Fault queue
-> + * @wq: the fault workqueue
-> + * @devices: devices attached to this queue
-> + * @lock: protects the device list
-> + */
-> +struct iopf_queue {
-> +	struct workqueue_struct		*wq;
-> +	struct list_head		devices;
-> +	struct mutex			lock;
-> +};
-> +
-> +/**
-> + * struct iopf_device_param - IO Page Fault data attached to a device
-> + * @dev: the device that owns this param
-> + * @queue: IOPF queue
-> + * @queue_list: index into queue->devices
-> + * @partial: faults that are part of a Page Request Group for which the last
-> + *           request hasn't been submitted yet.
-> + */
-> +struct iopf_device_param {
-> +	struct device			*dev;
-> +	struct iopf_queue		*queue;
-> +	struct list_head		queue_list;
-> +	struct list_head		partial;
-> +};
-> +
-> +struct iopf_fault {
-> +	struct iommu_fault		fault;
-> +	struct list_head		list;
-> +};
-> +
-> +struct iopf_group {
-> +	struct iopf_fault		last_fault;
-> +	struct list_head		faults;
-> +	struct work_struct		work;
-> +	struct device			*dev;
-> +};
-> +
->
-[...]
-
-> +
-> +static void iopf_handle_group(struct work_struct *work)
-> +{
-> +	struct iopf_group *group;
-> +	struct iopf_fault *iopf, *next;
-> +	enum iommu_page_response_code status = IOMMU_PAGE_RESP_SUCCESS;
-> +
-> +	group = container_of(work, struct iopf_group, work);
-> +
-> +	list_for_each_entry_safe(iopf, next, &group->faults, list) {
-> +		/*
-> +		 * For the moment, errors are sticky: don't handle subsequent
-> +		 * faults in the group if there is an error.
-> +		 */
-> +		if (status == IOMMU_PAGE_RESP_SUCCESS)
-> +			status = iopf_handle_single(iopf);
-> +
-> +		if (!(iopf->fault.prm.flags &
-> +		      IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE))
-> +			kfree(iopf);
-> +	}
-> +
-> +	iopf_complete_group(group->dev, &group->last_fault, status);
-> +	kfree(group);
-> +}
-> +
-> +/**
-> + * iommu_queue_iopf - IO Page Fault handler
-> + * @evt: fault event
-> + * @cookie: struct device, passed to iommu_register_device_fault_handler.
-> + *
-> + * Add a fault to the device workqueue, to be handled by mm.
-> + *
-> + * This module doesn't handle PCI PASID Stop Marker; IOMMU drivers must discard
-> + * them before reporting faults. A PASID Stop Marker (LRW = 0b100) doesn't
-> + * expect a response. It may be generated when disabling a PASID (issuing a
-> + * PASID stop request) by some PCI devices.
-> + *
-> + * The PASID stop request is issued by the device driver before unbind(). Once
-> + * it completes, no page request is generated for this PASID anymore and
-> + * outstanding ones have been pushed to the IOMMU (as per PCIe 4.0r1.0 - 6.20.1
-> + * and 10.4.1.2 - Managing PASID TLP Prefix Usage). Some PCI devices will wait
-> + * for all outstanding page requests to come back with a response before
-> + * completing the PASID stop request. Others do not wait for page responses, and
-> + * instead issue this Stop Marker that tells us when the PASID can be
-> + * reallocated.
-> + *
-> + * It is safe to discard the Stop Marker because it is an optimization.
-> + * a. Page requests, which are posted requests, have been flushed to the IOMMU
-> + *    when the stop request completes.
-> + * b. We flush all fault queues on unbind() before freeing the PASID.
-> + *
-> + * So even though the Stop Marker might be issued by the device *after* the stop
-> + * request completes, outstanding faults will have been dealt with by the time
-> + * we free the PASID.
-> + *
-> + * Return: 0 on success and <0 on error.
-> + */
-> +int iommu_queue_iopf(struct iommu_fault *fault, void *cookie)
-> +{
-> +	int ret;
-> +	struct iopf_group *group;
-> +	struct iopf_fault *iopf, *next;
-> +	struct iopf_device_param *iopf_param;
-> +
-> +	struct device *dev = cookie;
-> +	struct dev_iommu *param = dev->iommu;
-> +
-> +	lockdep_assert_held(&param->lock);
-> +
-> +	if (fault->type != IOMMU_FAULT_PAGE_REQ)
-> +		/* Not a recoverable page fault */
-> +		return -EOPNOTSUPP;
-> +
-> +	/*
-> +	 * As long as we're holding param->lock, the queue can't be unlinked
-> +	 * from the device and therefore cannot disappear.
-> +	 */
-> +	iopf_param = param->iopf_param;
-> +	if (!iopf_param)
-> +		return -ENODEV;
-> +
-> +	if (!(fault->prm.flags & IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE)) {
-> +		iopf = kzalloc(sizeof(*iopf), GFP_KERNEL);
-> +		if (!iopf)
-> +			return -ENOMEM;
-> +
-> +		iopf->fault = *fault;
-> +
-> +		/* Non-last request of a group. Postpone until the last one */
-> +		list_add(&iopf->list, &iopf_param->partial);
-> +
-> +		return 0;
-> +	}
-> +
-> +	group = kzalloc(sizeof(*group), GFP_KERNEL);
-> +	if (!group) {
-> +		/*
-> +		 * The caller will send a response to the hardware. But we do
-> +		 * need to clean up before leaving, otherwise partial faults
-> +		 * will be stuck.
-> +		 */
-> +		ret = -ENOMEM;
-> +		goto cleanup_partial;
-> +	}
-> +
-> +	group->dev = dev;
-> +	group->last_fault.fault = *fault;
-> +	INIT_LIST_HEAD(&group->faults);
-> +	list_add(&group->last_fault.list, &group->faults);
-> +	INIT_WORK(&group->work, iopf_handle_group);
-> +
-> +	/* See if we have partial faults for this group */
-> +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, list) {
-> +		if (iopf->fault.prm.grpid == fault->prm.grpid)
-> +			/* Insert *before* the last fault */
-> +			list_move(&iopf->list, &group->faults);
-> +	}
-> +
-> +	queue_work(iopf_param->queue->wq, &group->work);
-> +	return 0;
-> +
-> +cleanup_partial:
-> +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, list) {
-> +		if (iopf->fault.prm.grpid == fault->prm.grpid) {
-> +			list_del(&iopf->list);
-> +			kfree(iopf);
-> +		}
-> +	}
-> +	return ret;
-> +}
-> +EXPORT_SYMBOL_GPL(iommu_queue_iopf);
-
-[...]
-
-> +/**
-> + * iopf_queue_remove_device - Remove producer from fault queue
-> + * @queue: IOPF queue
-> + * @dev: device to remove
-> + *
-> + * Caller makes sure that no more faults are reported for this device.
-> + *
-> + * Return: 0 on success and <0 on error.
-> + */
-> +int iopf_queue_remove_device(struct iopf_queue *queue, struct device *dev)
-> +{
-> +	int ret = 0;
-> +	struct iopf_fault *iopf, *next;
-> +	struct iopf_device_param *iopf_param;
-> +	struct dev_iommu *param = dev->iommu;
-> +
-> +	if (!param || !queue)
-> +		return -EINVAL;
-> +
-> +	mutex_lock(&queue->lock);
-> +	mutex_lock(&param->lock);
-> +	iopf_param = param->iopf_param;
-> +	if (iopf_param && iopf_param->queue == queue) {
-> +		list_del(&iopf_param->queue_list);
-> +		param->iopf_param = NULL;
-> +	} else {
-> +		ret = -EINVAL;
-> +	}
-> +	mutex_unlock(&param->lock);
-> +	mutex_unlock(&queue->lock);
-> +	if (ret)
-> +		return ret;
-> +
-> +	/* Just in case some faults are still stuck */
-> +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, list)
-> +		kfree(iopf);
-> +
-> +	kfree(iopf_param);
-> +
-> +	return 0;
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_remove_device);
-> +
-> +/**
-> + * iopf_queue_alloc - Allocate and initialize a fault queue
-> + * @name: a unique string identifying the queue (for workqueue)
-> + *
-> + * Return: the queue on success and NULL on error.
-> + */
-> +struct iopf_queue *iopf_queue_alloc(const char *name)
-> +{
-> +	struct iopf_queue *queue;
-> +
-> +	queue = kzalloc(sizeof(*queue), GFP_KERNEL);
-> +	if (!queue)
-> +		return NULL;
-> +
-> +	/*
-> +	 * The WQ is unordered because the low-level handler enqueues faults by
-> +	 * group. PRI requests within a group have to be ordered, but once
-> +	 * that's dealt with, the high-level function can handle groups out of
-> +	 * order.
-> +	 */
-> +	queue->wq = alloc_workqueue("iopf_queue/%s", WQ_UNBOUND, 0, name);
-> +	if (!queue->wq) {
-> +		kfree(queue);
-> +		return NULL;
-> +	}
-> +
-> +	INIT_LIST_HEAD(&queue->devices);
-> +	mutex_init(&queue->lock);
-> +
-> +	return queue;
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_alloc);
-> +
-> +/**
-> + * iopf_queue_free - Free IOPF queue
-> + * @queue: queue to free
-> + *
-> + * Counterpart to iopf_queue_alloc(). The driver must not be queuing faults or
-> + * adding/removing devices on this queue anymore.
-> + */
-> +void iopf_queue_free(struct iopf_queue *queue)
-> +{
-> +	struct iopf_device_param *iopf_param, *next;
-> +
-> +	if (!queue)
-> +		return;
-> +
-> +	list_for_each_entry_safe(iopf_param, next, &queue->devices, queue_list)
-> +		iopf_queue_remove_device(queue, iopf_param->dev);
-> +
-> +	destroy_workqueue(queue->wq);
-
-Do we need to free iopf_group(s) here in case the work queue of the group(s) are not
-scheduled yet? If that occurs, we might leak memory here.
-
-If the caller can ensure that would never occur or I miss something, please ignore
-my noise. :)
-
-> +	kfree(queue);
-> +}
-> +EXPORT_SYMBOL_GPL(iopf_queue_free);
-> 
+ drivers/scsi/ufs/ufs-mediatek.c | 112 +++++++++++++++++++++++---------
+ drivers/scsi/ufs/ufs-mediatek.h |   2 +-
+ 2 files changed, 84 insertions(+), 30 deletions(-)
 
 -- 
-Thanks,
-Xiang
-
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
