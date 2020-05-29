@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B23621E8120
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:02:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 158E51E8139
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:07:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=q4j0EsJSfy+UdbPa6ROQNau0QKbMyBGLUlE6HPSDlno=; b=aD0HOK2ZkUPvfXSMgEIAvoN3z
-	GMreLcf1wkPLkrS94e3ZF/7nsmHaX72ec35+/J4hU2Hdq0EMSVDeCpteAlo1gKVcTOZMPP4TPqgsi
-	X3ZiWEeIN+pdtUPGfT+1dIJqpqWmZ85O7996BqkxSHJhDVMJbvSRo1QiFWVdrtFvxCI7BXjUcO3qx
-	F3Uj3wxTA0YyY+I9bDQRG+qSezGtqiwOlOnqpyaY9W9OIvqWahcnH8wQezLhBhDMMflHwSrDVFf95
-	UuLYfJLOE6LunOq5dEVOquunTBRrJbVt/dg6L2up0PDw1j0cjyB5ksX8Bc273I7C006vIDBcN6ev/
-	tc/m1Myzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MUTWVmMqjIetqgxUl6g4zZbWaLyCGFSjFloouXUohk8=; b=sxAT59yn0fvSAt
+	ILyUsT/Y3opT5sAJ40SlrHShbid6uazW7fdATOy9XQkqCLd8UHcmlvFAsfKQ0RIQTB8+Lk2fWctiE
+	wPjmAZkmS9h6PDzKSz7NAea9hS+cfQLbmHTur7B96Mvs1N1lsilrJAM73l34eorVwsY4qaf9tQaGN
+	kyLgayKXfd2C0p7yjOdIlRSG2oxuNYBxqnkh7Eggr5CZQDZ9XRJoVm8y9yY2L9oUHxLGLYinWH5gs
+	J1Q/T0/qv7KETi/+vL+QP6wCUEtWBv+dTAmmrRR21ttzmxVM8de28VZYT+TatXMTUVUdai/tKb7DT
+	j97Zy4u/p0xSfeyRiE4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jegX2-0003mD-KY; Fri, 29 May 2020 15:02:48 +0000
+	id 1jegbN-0006iN-HG; Fri, 29 May 2020 15:07:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jegVJ-0003ey-HM; Fri, 29 May 2020 15:01:02 +0000
+ id 1jegbC-0006hx-Jd
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 15:07:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D452F1045;
- Fri, 29 May 2020 08:00:58 -0700 (PDT)
-Received: from [10.37.12.52] (unknown [10.37.12.52])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C41F73F718;
- Fri, 29 May 2020 08:00:48 -0700 (PDT)
-Subject: Re: [PATCH v8 0/8] Add support for devices in the Energy Model
-To: rjw@rjwysocki.net
-References: <20200527095854.21714-1-lukasz.luba@arm.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <8fca24a1-93f7-f859-bd1f-b7bf484737f4@arm.com>
-Date: Fri, 29 May 2020 16:00:47 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5B5CA1045;
+ Fri, 29 May 2020 08:07:04 -0700 (PDT)
+Received: from merodach.members.linode.com (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 89BE03F718;
+ Fri, 29 May 2020 08:07:03 -0700 (PDT)
+From: James Morse <james.morse@arm.com>
+To: kvmarm@lists.cs.columbia.edu,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 0/3] KVM: arm64: aarch32 ACTLR accesses
+Date: Fri, 29 May 2020 15:06:53 +0000
+Message-Id: <20200529150656.7339-1-james.morse@arm.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200527095854.21714-1-lukasz.luba@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_080101_617834_3211E2A6 
-X-CRM114-Status: GOOD (  19.10  )
+X-CRM114-CacheID: sfid-20200529_080706_688809_8D787302 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,71 +61,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
- viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
- bjorn.andersson@linaro.org, bsegall@google.com,
- alyssa.rosenzweig@collabora.com, festevam@gmail.com, mka@chromium.org,
- robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
- khilman@kernel.org, agross@kernel.org, daniel.lezcano@linaro.org,
- steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
- linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
- daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- s.hauer@pengutronix.de, rostedt@goodmis.org,
- linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
- linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
- linux-arm-kernel@lists.infradead.org, airlied@linux.ie,
- tomeu.vizoso@collabora.com, qperret@google.com, sboyd@kernel.org,
- rdunlap@infradead.org, linux-kernel@vger.kernel.org, b.zolnierkie@samsung.com,
- kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
- shawnguo@kernel.org
+Cc: Marc Zyngier <maz@kernel.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rafael,
+Hello!
+
+Changes since v1:
+ * Patches 2 & 3 have been swapped.
+ * Copy access_vm_reg() to swizzle 32bit offets back to 64bit
+ * Peek at the encoding to tell ACTLR and ACTLR2 apart...
+
+I didn't pick up the suggestion to remove the ACTLR_EL1 storage from
+sys_regs[] as this turns out to break migration. Fixing it would require
+a get_user() helper, which has a different prototype to access_actlr(),
+would be noisier overall.
+
+~
+
+Patch 1 fixes an issue where the 32bit and 64bit indexes into copro[]
+and sys_regs[] are muddled.
+
+Patch 2 adds support for aarch32 accessing the top 32bits of ACTLR_EL1
+via ACTLR2. Support for this register is advertised in ID_MMFR4.AC2, which
+doesn't get removed by cpufeature. The register is mandatory from v8.2, but
+imp-def before then.
+
+Patch 3 stops the sys_regs[] value we use for emulation being save/restored.
+
+I think Patch 1 is stable material, I'm not sure about 2&3.
 
 
-On 5/27/20 10:58 AM, Lukasz Luba wrote:
-> Hi all,
-> 
-> Background of this version:
-> This is the v8 of the patch set and is has smaller scope. I had to split
-> the series into two: EM changes and thermal changes due to devfreq
-> dependencies. The patches from v7 9-14 which change devfreq cooling are
-> going to be sent in separate patch series, just after this set get merged
-> into mainline. These patches related to EM got acks and hopefully can go
-> through linux-pm tree. The later thermal patches will go through thermal
-> tree.
-> 
-> The idea and purpose of the Energy Model framework changes:
-> This patch set introduces support for devices in the Energy Model (EM)
-> framework. It will unify the power model for thermal subsystem. It will
-> make simpler to add support for new devices willing to use more
-> advanced features (like Intelligent Power Allocation). Now it should
-> require less knowledge and effort for driver developer to add e.g.
-> GPU driver with simple energy model. A more sophisticated energy model
-> in the thermal framework is also possible, driver needs to provide
-> a dedicated callback function. More information can be found in the
-> updated documentation file.
-> 
-> First 7 patches are refactoring Energy Model framework to add support
-> of other devices that CPUs. They change:
-> - naming convention from 'capacity' to 'performance' state,
-> - API arguments adding device pointer and not rely only on cpumask,
-> - change naming when 'cpu' was used, now it's a 'device'
-> - internal structure to maintain registered devices
-> - update users to the new API
-> Patch 8 updates OPP framework helper function to be more generic, not
-> CPU specific.
-> 
-> The patch set is based on linux-pm branch linux-next 813946019dfd.
-> 
+Thanks,
 
-Could you take the patch set via your linux-pm?
+James Morse (3):
+  KVM: arm64: Stop writing aarch32's CSSELR into ACTLR
+  KVM: arm64: Add emulation for 32bit guests accessing ACTLR2
+  KVM: arm64: Stop save/restoring ACTLR_EL1
 
-Regards,
-Lukasz
+ arch/arm64/kvm/hyp/sysreg-sr.c       |  2 --
+ arch/arm64/kvm/sys_regs.c            | 12 ++++++++----
+ arch/arm64/kvm/sys_regs_generic_v8.c | 10 ++++++++++
+ 3 files changed, 18 insertions(+), 6 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
