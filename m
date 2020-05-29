@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 465D31E7FA0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 16:05:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 582291E7FD7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 16:11:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -11,63 +11,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PZPCryhykxqW0AQmS3ZU6LmiC5CftVbkorXXd9wTbv0=; b=KBhxDujfObkga15IzQomc80y+5
-	zRinACCCQZxQ6OL+UF5E27xet2l+d23aevovO0ONPBXY6f9OoPWvj04Kc/kteRNZKcBA3RwTZv6QI
-	h9xFDTBTtc++oR/DbmbI17zipTEhtFGVjRtUxX9CrM3EirOXO75tR1M+jLGXvymLRRpM/tn+PAPbK
-	3gS42n1sFYp7QXq6vF8E+6D+tUePwV+SRMbJsNgB5aqCv7+SrkMVfpX/D+N3U6DJAtICotOugSH9r
-	lopyLKJ8Bqto4wPBdW+OSS38IghNiw3f2zZP6pCVAcsmh1YEZAKZq0aFG96uz6EzBebAHt9siHE5Z
-	waD0dbVg==;
+	bh=OVXTlj1Vpy4LMciASg47S6pP1rlMFHmX7KcgrY2IhaQ=; b=Ax+N10mGzbrejPTVfqernUdI/M
+	3yj26el+vR/W/hrjgp/BcDjBPly6nFX1+rjeGokPk4yhZWrydBhNJuwX8EFYdLBtInWVofBi44vIx
+	GmhKu8FpjUrvO9DWNMkrhPuY1TEnplMRQDvHyd5tZJc2/Sjf0CBLf+40eMDtBeTj4fvsO/jL6UeUh
+	M0kZk8pSbgqAzK/U8lMiTlouKl6T0gdmQZpQYRnzzRzxX2EieFuOm5Lo42BJPvv/OsYnSuJUWa4Hp
+	w0Qz1culydiugIbDOFjr3ZjwKfwGqcdzX06JYJSb90vhT2uvwqD+VLLHxecFlHA8cS51hzjpy93sg
+	GJgcLxMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jefd4-0007Hm-A1; Fri, 29 May 2020 14:04:58 +0000
+	id 1jefjh-0004d7-7I; Fri, 29 May 2020 14:11:49 +0000
 Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jefcv-0007Gj-61
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 14:04:51 +0000
+ id 1jefja-0004cU-4N
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 14:11:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1590761089; x=1622297089;
+ t=1590761501; x=1622297501;
  h=references:from:to:cc:subject:in-reply-to:date:
  message-id:mime-version;
- bh=sAGWaqia1JF0ryeRDXVzFPeaOltQyl1NGW+wvlqDi/E=;
- b=HcyETpnkJOtnHOGDUJshWXG8L7896rE73jv/wLE+cCgS6ytKZYr8L0aW
- 9G8Av7zp53xKViFCFQ2IATSkhIHPhD/ruM8VwB93mD+3cZVIR3t2d9cC5
- vjkwEQPrJffQ7Xe1hYoKfBHVO1YGU17A6KPMNr62OPynNo1EVo3kSkiNh
- yEBOGwzhWqiIXvdkyXcukxwTDQkZHGNbgItra/2EsE5jHuDP63bL8dkc6
- XAmAODKEGEw+t9wRUqXOrpkzcoxhuNITCg6iHEvEUuyajjfNAIOiNQ3e3
- NQkE3WhSk6m4bu0gCPUtyzmbSoICVIt8Ef0mVQ9JaGyWuW7lPfrrzneXe Q==;
-IronPort-SDR: xpzqGjpyykV5Ih2wHq02FXx0AqsGr/X8yLZnO6sUmywda4kivT2QCL6RfgUMu/+Mo7l9o/BFdz
- eE5+qVqCa2lVZL5SDnAKAB9ZWgFApKonr+D6Tn6LKVvhGj0EMsHHtXKOQO4hBQk4pAhpJdC3/T
- oSeo8ia8aXe0OQprk4ftk7b2Q5mkFCr7fBh1lEuOKj3veab6yAchm6/zODKBhgT3fNGupVkkZX
- NyNMfNrLKlKmDbgry41qbg+dHhM/zAN07j+tX4W+FU0kPMqY2yjRRAJZ5m8BXBRwZSwDb8/s93
- CCI=
-X-IronPort-AV: E=Sophos;i="5.73,448,1583218800"; d="scan'208";a="76764161"
+ bh=McPi/uyYFfHmQeVvhx6otxjv+LEVF2BZkJXArIGF6Pw=;
+ b=ZY87lhfXXTesXWE7rRdkGTksFF5JiCJd8L8JA7upEBIUtQDygo0xN/RU
+ iSYVePT5au8QcDiYwvBsmnsc5QWnojsU6COnmqw02+GwMQUtZRYMxwVfB
+ TG4Laa9WUnKvtuNOYDi06xufJRXEKeHKibcZFsNgnVU9vbOuxkv/udjrE
+ KsFTu+krLt6vLs6DkRjmYiI2tvavguRfO2JSc5mXabIN+lWhOoAcltU/L
+ 1ebdG1H7BScpZqhtyfea9d6221Zlf9A++QCtLJs4uDDnOxWNGeD0c9KNj
+ hpSkcAVVc9Y/UpWJe3Hm4DJpshWQwTFlDpMi0C7hk3IFTPnMH+WbdP2vz A==;
+IronPort-SDR: 9A/C2v/lTqGJAah29JTQL5X9JQIdYVxPcU+b0aGKUa6hrEKlcwegvmtswmD9QoAY78BtH33Lhb
+ ZHB5uP1yT48gEuJjf2Yztfowjp8+XUMY454fCfB6WQrR4k2STJrI+D1MHSwQl9EZWXZq1GYU+Z
+ LPd1iBaJt4NpL5VeigQKPkQcJm16cNGA2DpQDzDVaRCgCK2CJO6RMbr4EOcABAbZxrSsNvRkca
+ abK49kVUIR1sGVNghWMxaK+pLonzAp1B2N8mc2cZPdsxUhEXkewjoEUR4CsjBXKRSwY+F45+5t
+ D8c=
+X-IronPort-AV: E=Sophos;i="5.73,448,1583218800"; d="scan'208";a="76765191"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 29 May 2020 07:04:37 -0700
-Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ 29 May 2020 07:11:41 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
  chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 29 May 2020 07:04:40 -0700
+ 15.1.1713.5; Fri, 29 May 2020 07:11:44 -0700
 Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Fri, 29 May 2020 07:04:25 -0700
-References: <20200513125532.24585-1-lars.povlsen@microchip.com>
- <20200513125532.24585-11-lars.povlsen@microchip.com>
- <159054759981.88029.2630901114208720574@swboyd.mtv.corp.google.com>
+ via Frontend Transport; Fri, 29 May 2020 07:11:38 -0700
+References: <20200513133122.25121-1-lars.povlsen@microchip.com>
+ <20200513133122.25121-3-lars.povlsen@microchip.com>
+ <6398c7a6-ce5e-1df6-d5a6-08664a7fc123@intel.com>
+ <87v9ktoc0h.fsf@soft-dev15.microsemi.net>
+ <87wo56q2o3.fsf@soft-dev15.microsemi.net>
+ <abbd2306-55ed-014c-4b06-a5cb3f34796f@intel.com>
+ <87sgfoozt8.fsf@soft-dev15.microsemi.net>
 From: Lars Povlsen <lars.povlsen@microchip.com>
-To: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH 10/14] dt-bindings: clock: sparx5: Add Sparx5 SoC DPLL
- clock
-In-Reply-To: <159054759981.88029.2630901114208720574@swboyd.mtv.corp.google.com>
-Date: Fri, 29 May 2020 16:04:32 +0200
-Message-ID: <87lflaq1lb.fsf@soft-dev15.microsemi.net>
+To: Adrian Hunter <adrian.hunter@intel.com>
+Subject: Re: [PATCH 2/3] sdhci: sparx5: Add Sparx5 SoC eMMC driver
+In-Reply-To: <87sgfoozt8.fsf@soft-dev15.microsemi.net>
+Date: Fri, 29 May 2020 16:11:37 +0200
+Message-ID: <87k10uq19i.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_070449_289086_BECA0B00 
-X-CRM114-Status: GOOD (  11.67  )
+X-CRM114-CacheID: sfid-20200529_071142_235168_40FD30B7 
+X-CRM114-Status: GOOD (  17.95  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -75,10 +78,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [68.232.149.84 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [68.232.149.84 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [68.232.149.84 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -98,101 +101,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-gpio@vger.kernel.org,
- Steen Hegelund <Steen.Hegelund@microchip.com>, linux-clk@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-mmc@vger.kernel.org,
  linux-kernel@vger.kernel.org,
  Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- Michael Turquette <mturquette@baylibre.com>, SoC Team <soc@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Olof Johansson <olof@lixom.net>, Linus Walleij <linus.walleij@linaro.org>,
- Lars Povlsen <lars.povlsen@microchip.com>
+ SoC Team <soc@kernel.org>, Lars Povlsen <lars.povlsen@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-Stephen Boyd writes:
+Lars Povlsen writes:
 
-> Quoting Lars Povlsen (2020-05-13 05:55:28)
->> diff --git a/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml b/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
->> new file mode 100644
->> index 0000000000000..594007d8fc59a
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
->> @@ -0,0 +1,46 @@
->> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/clock/microchip,sparx5-dpll.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Microchip Sparx5 DPLL Clock
->> +
->> +maintainers:
->> +  - Lars Povlsen <lars.povlsen@microchip.com>
->> +
->> +description: |
->> +  The Sparx5 DPLL clock controller generates and supplies clock to
->> +  various peripherals within the SoC.
->> +
->> +  This binding uses common clock bindings
->> +  [1] Documentation/devicetree/bindings/clock/clock-bindings.txt
+> Adrian Hunter writes:
 >
-> I don't think we need this sentence. Please drop it.
-
-OK. (Assuming the "This binding ..." part).
-
+>> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+>>
+>> On 20/05/20 2:14 pm, Lars Povlsen wrote:
+>>>
+>>> Lars Povlsen writes:
+>>>
+>>>> Adrian Hunter writes:
+>>>>
+>>>>> On 13/05/20 4:31 pm, Lars Povlsen wrote:
+>>>>>> This adds the eMMC driver for the Sparx5 SoC. It is based upon the
+>>>>>> designware IP, but requires some extra initialization and quirks.
+>>>>>>
+>>>>>> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+>>>>>> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
+>>>>>> ---
+>>> {Snip]
+>>>>>> +};
+>>>>>> +
+>>>>>> +static const struct sdhci_pltfm_data sdhci_sparx5_pdata = {
+>>>>>> +     .quirks  = 0,
+>>>>>> +     .quirks2 = SDHCI_QUIRK2_HOST_NO_CMD23 | /* Card quirk */
+>>>>>
+>>>>> If this is a card quirk then it should be in drivers/mmc/core/quirks.h not here.
+>>>>
+>>>
+>>> Adrian, I had a go at changing the controller quirk to a card quirk.
+>>>
+>>> Unfortunately, SDHCI_QUIRK2_HOST_NO_CMD23 does not directly translate to
+>>> MMC_QUIRK_BLK_NO_CMD23, as for 'do_rel_wr' in mmc_blk_rw_rq_prep(), it
+>>> will *still* use MMC_SET_BLOCK_COUNT (cmd23), causing the issue.
+>>>
+>>> We are using a ISSI "IS004G" device, and so I have gone through the
+>>> motions of adding it to quirks.h. The comment before the list of devices
+>>> using MMC_QUIRK_BLK_NO_CMD23 suggest working around a performance issue,
+>>> which is not exactly the issue I'm seeing. I'm seeing combinations of
+>>> CMD_TOUT_ERR, DATA_CRC_ERR and DATA_END_BIT_ERR whenever a cmd23 is
+>>> issued.
+>>>
+>>> I have not been able to test the controller with another eMMC device
+>>> yet, but I expect its not the controller at fault.
+>>>
+>>> So, I'm a little bit in doubt of how to proceed - either keep the quirk
+>>> as a controller quirk - or make a *new* card quirk (with
+>>> SDHCI_QUIRK2_HOST_NO_CMD23 semantics)?
+>>>
+>>> Anybody else have had experience with ISSI eMMC devices?
+>>>
+>>> I have also tried to use DT sdhci-caps-mask, but MMC_CAP_CMD23 is not
+>>> read from the controller just (unconditionally) set in sdhci.c - so that
+>>> doesn't fly either.
+>>>
+>>> Any suggestions?
+>>
+>> It is up to you.  In the future, you may want to distinguish devices that
+>> have this problem from ones that do not.
+>>
+>> If you are not sure it is the ISSI eMMC, and maybe not the host controller,
+>> then might it be the board?  Perhaps make SDHCI_QUIRK2_HOST_NO_CMD23
+>> conditional on the particular compatibility string?
+>>
+>> At a minimum, change the "/* Card quirk */" comment to a fuller explanation.
+>>
 >
->> +
->> +properties:
->> +  compatible:
->> +    const: microchip,sparx5-dpll
->> +
->> +  reg:
->> +    items:
->> +      - description: dpll registers
->> +
->> +  '#clock-cells':
->> +    const: 1
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - '#clock-cells'
->> +
->> +additionalProperties: false
->> +
->> +examples:
->> +  # Clock provider for eMMC:
->> +  - |
->> +    clks: clks@61110000c {
+> Adrian, I'm getting a board ready with another eMMC device, and we're
+> also trying to contact ISSI for info.
 >
-> Node name should be clock-controller@61110000c
-
-Ok.
-
+> My hope is to at least verify whether this is a controller or a card
+> issue one way or the other. Then, I'll choose an appropriate solution
+> for it.
 >
->> +         compatible = "microchip,sparx5-dpll";
->> +         #clock-cells = <1>;
->> +         reg = <0x1110000c 0x24>;
+> Thank you for your advice so far.
 >
-> Does it consume any clks itself? I'd expect to see some sort of 'clocks'
-> property in this node.
+
+I was able to try on a board with another eMMC card (panasonic), so that
+clearly casts the suspicion on the controller, and ISSI is in the clear.
+
+I reintroduced the original SDHCI_QUIRK2_HOST_NO_CMD23 quirk, with a
+"Controller issue" comment.
+
+I will refresh the series shortly.
+
+Cheers,
+
+> ---Lars
 >
->> +    };
-
-I changed the driver to use a fixed-rate input clock, replacing the
-BASE_CLOCK define(s). Additionally, I made the ahb_clock into
-fixed-factor clock using the A53 cpu clock as a base.
-
-So I updated the example and added 'clocks' to the schema.
-
-I will send you a new series shortly.
-
-Thank you for the comments.
+>>>
+>>>> Yes, its supposedly a card quirk. I'll see to use the card quirks
+>>>> methods in place.
+>>>>
+>>>
 
 --
 Lars Povlsen,
