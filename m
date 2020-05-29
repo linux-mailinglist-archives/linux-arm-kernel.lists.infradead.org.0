@@ -2,79 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F21E71E7268
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 04:07:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3FF61E727A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 04:15:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QujaCdszvOJYjkrs3An/IQxwXA3n7W1bQxGhxiM7r5A=; b=B8lTO8npLzzTDK
-	zNGcHW8asPKFN5PNXDzt7raOSIMJJiJdGhOLQWozdF0YEIHg9dSpw68FjqCl7OkmYGiz5ykw6TWy4
-	RcYImalDu5QA7ruPTmS57d+Cw60uuMa85DFIonG0iYS5kG0E8RaAvQ6SXNadF6Gj7QfbyJ1n8frCT
-	y61DAHWA3CZYeT4MnV3rxtF5tkgTriKWgcw0B2GDgUfrfoK9G9QhZ1VyBZIrOuMJ+vFSV9bxJthsw
-	kjQWPVou0JRjtZ2HGxnmZjTA6npgx6MtDDE4sY6zciVaXwQX9+4XuVjfvDqFvp+41GUvBSns9OF48
-	LMSZaZEHNIpCDKLsZoTA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=s74KGOAfgQthtuBzmSuWN6hLeL3GSSzC2YaE7MCtgZg=; b=iTy
+	WZLHvH2TutF9ijefl1AyrX7KHPc54/8btbn773lNHD7pgszza8GhiFLFY0RQ53Bk/fRYkBolOWhsT
+	/b/EUWX5MmwcrzIA5RcRFuYH6GI0madlCzqRu6khCGPG3JE0KeSjiR1NNS/N7gww3Y5o2Lrd4wN7K
+	heK/y/wwX6GhSJDkHKuCMGOLTqZpAq6fYbhWJ42Yjr/3v8InWzdF/PLktOu1Vp3Y4aygaMoRRaHIs
+	gPUAzSHn/t2C2gkR0LZTla1WkZn789rJAyJRK801gb5LKalaZPs3K/Vgk8WIxyk3ABZfvHl7itA9i
+	KRJmdsKr0rpU6kbSELUXkBunOkBDulA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeUQK-0001Fp-4l; Fri, 29 May 2020 02:07:04 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jeUYK-0004ej-4B; Fri, 29 May 2020 02:15:20 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeUQ7-0001EQ-Mh; Fri, 29 May 2020 02:06:53 +0000
-X-UUID: 678b16e78cd64141b0cdfae3c0bed2be-20200528
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=/qPJfesccbE8p4/Xig7xSfYSlwk0MldP3sImV7vtVY0=; 
- b=eGktl4MJdGiZwrYOoqAE7QTMwwJswsieNIjEIziuJFiczIPLvJI+xoKL5j/EGjSTR6Chy0YV85lnTGRFrzOvf2gsLTXZmAVqw6F00r7dssUUVTnI42Vhz6HfCjwj13mFeVbPcfxpJbQ+vtgj6JaNDpsftr7ETd2yL5g9yFUrAKw=;
-X-UUID: 678b16e78cd64141b0cdfae3c0bed2be-20200528
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <fengping.yu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 106444041; Thu, 28 May 2020 18:06:50 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 28 May 2020 18:56:42 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 29 May 2020 09:56:29 +0800
-Received: from localhost.localdomain (10.15.43.140) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 29 May 2020 09:56:33 +0800
-From: Fengping Yu <fengping.yu@mediatek.com>
-To: Yingjoe Chen <yingjoe.chen@mediatek.com>, Dmitry Torokhov
- <dmitry.torokhov@gmail.com>, Andy Shevchenko
- <andriy.shevchenko@linux.intel.com>, Marco Felsch <m.felsch@pengutronix.de>
-Subject: [PATCH v12] Add matrix keypad driver support for Mediatek SoCs 
-Date: Fri, 29 May 2020 09:56:16 +0800
-Message-ID: <20200529015618.128283-1-fengping.yu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: 7ABF326F49CD9B8FAA5FD72CAEF456DFE587E5E34BB2F408B84BE2582E0802AE2000:8
-X-MTK: N
+ id 1jeUXx-0004eL-Hd
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 02:14:59 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6D7FF1A0098;
+ Fri, 29 May 2020 04:14:55 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A9EA31A0099;
+ Fri, 29 May 2020 04:14:50 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id BC2EE402DF;
+ Fri, 29 May 2020 10:14:44 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: daniel.lezcano@linaro.org, tglx@linutronix.de, robh+dt@kernel.org,
+ shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, linux-kernel@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH V3] dt-bindings: timer: Convert i.MX GPT to json-schema
+Date: Fri, 29 May 2020 10:04:42 +0800
+Message-Id: <1590717882-20922-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_190651_746836_C25B07CB 
-X-CRM114-Status: UNSURE (   6.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200528_191457_860821_CABC52AE 
+X-CRM114-Status: GOOD (  10.59  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,34 +67,159 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-input@vger.kernel.org
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Convert the i.MX GPT binding to DT schema format using json-schema.
 
-Change since v11:
-- remove CONFIG_ prefix in CONFIG_REGMAP_MMIO
-- keep devm_add_action_or_reset as one line
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V2:
+	- in compatible properties, group all the ones with the same
+	  fallback to a single 'items' list using enum for the first entry.
+---
+ .../devicetree/bindings/timer/fsl,imxgpt.txt       | 45 --------------
+ .../devicetree/bindings/timer/fsl,imxgpt.yaml      | 72 ++++++++++++++++++++++
+ 2 files changed, 72 insertions(+), 45 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
+ create mode 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
 
-fengping.yu (3):
-  dt-bindings: Add keypad devicetree documentation
-  drivers: input: keyboard: Add mtk keypad driver
-  configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD       =m
-
- .../devicetree/bindings/input/mtk-kpd.yaml    |  95 ++++++++
- arch/arm64/configs/defconfig                  |   1 +
- drivers/input/keyboard/Kconfig                |  11 +
- drivers/input/keyboard/Makefile               |   1 +
- drivers/input/keyboard/mtk-kpd.c              | 205 ++++++++++++++++++
- 5 files changed, 313 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.yaml
- create mode 100644 drivers/input/keyboard/mtk-kpd.c
-
+diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt b/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
+deleted file mode 100644
+index 5d8fd5b..0000000
+--- a/Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
++++ /dev/null
+@@ -1,45 +0,0 @@
+-Freescale i.MX General Purpose Timer (GPT)
+-
+-Required properties:
+-
+-- compatible : should be one of following:
+-  for i.MX1:
+-  - "fsl,imx1-gpt";
+-  for i.MX21:
+-  - "fsl,imx21-gpt";
+-  for i.MX27:
+-  - "fsl,imx27-gpt", "fsl,imx21-gpt";
+-  for i.MX31:
+-  - "fsl,imx31-gpt";
+-  for i.MX25:
+-  - "fsl,imx25-gpt", "fsl,imx31-gpt";
+-  for i.MX50:
+-  - "fsl,imx50-gpt", "fsl,imx31-gpt";
+-  for i.MX51:
+-  - "fsl,imx51-gpt", "fsl,imx31-gpt";
+-  for i.MX53:
+-  - "fsl,imx53-gpt", "fsl,imx31-gpt";
+-  for i.MX6Q:
+-  - "fsl,imx6q-gpt", "fsl,imx31-gpt";
+-  for i.MX6DL:
+-  - "fsl,imx6dl-gpt";
+-  for i.MX6SL:
+-  - "fsl,imx6sl-gpt", "fsl,imx6dl-gpt";
+-  for i.MX6SX:
+-  - "fsl,imx6sx-gpt", "fsl,imx6dl-gpt";
+-- reg : specifies base physical address and size of the registers.
+-- interrupts : should be the gpt interrupt.
+-- clocks : the clocks provided by the SoC to drive the timer, must contain
+-           an entry for each entry in clock-names.
+-- clock-names : must include "ipg" entry first, then "per" entry.
+-
+-Example:
+-
+-gpt1: timer@10003000 {
+-	compatible = "fsl,imx27-gpt", "fsl,imx21-gpt";
+-	reg = <0x10003000 0x1000>;
+-	interrupts = <26>;
+-	clocks = <&clks IMX27_CLK_GPT1_IPG_GATE>,
+-		 <&clks IMX27_CLK_PER1_GATE>;
+-	clock-names = "ipg", "per";
+-};
+diff --git a/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml b/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
+new file mode 100644
+index 0000000..883f7f4
+--- /dev/null
++++ b/Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
+@@ -0,0 +1,72 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/timer/fsl,imxgpt.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX General Purpose Timer (GPT)
++
++maintainers:
++  - Sascha Hauer <s.hauer@pengutronix.de>
++
++properties:
++  compatible:
++    oneOf:
++      - const: fsl,imx1-gpt
++      - const: fsl,imx21-gpt
++      - items:
++          - const: fsl,imx27-gpt
++          - const: fsl,imx21-gpt
++      - const: fsl,imx31-gpt
++      - items:
++          - enum:
++            - fsl,imx25-gpt
++            - fsl,imx50-gpt
++            - fsl,imx51-gpt
++            - fsl,imx53-gpt
++            - fsl,imx6q-gpt
++          - const: fsl,imx31-gpt
++      - const: fsl,imx6dl-gpt
++      - items:
++          - enum:
++            - fsl,imx6sl-gpt
++            - fsl,imx6sx-gpt
++          - const: fsl,imx6dl-gpt
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    items:
++      - description: SoC GPT ipg clock
++      - description: SoC GPT per clock
++
++  clock-names:
++    items:
++      - const: ipg
++      - const: per
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - clock-names
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx27-clock.h>
++
++    timer@10003000 {
++        compatible = "fsl,imx27-gpt", "fsl,imx21-gpt";
++        reg = <0x10003000 0x1000>;
++        interrupts = <26>;
++        clocks = <&clks IMX27_CLK_GPT1_IPG_GATE>,
++                 <&clks IMX27_CLK_PER1_GATE>;
++        clock-names = "ipg", "per";
++    };
 -- 
-2.18.0
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
