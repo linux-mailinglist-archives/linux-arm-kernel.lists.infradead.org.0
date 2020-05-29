@@ -2,82 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03CD11E8789
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 21:17:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EE601E8772
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 21:15:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=h8FODr/nY1cafidKah1PxXoN1kqLiqBsC1t4ijR844k=; b=mo4/5x/nTBYm5k1Np47/RcNIWZ
-	7/f65nuN0v4KUTrOgtN047OYetj7pASPALgh4KtKqU9yIH2Om0OfMhzkqd3nRTsdWCtNz9OBTTjeI
-	QU2mQHqfxlgCgFyW8lUVBAI1LVJzia6OalQuRee3VsjQ6Y4LL5ZKxZOltPtE6Urc7M3Da3wSWi6hC
-	BHraHLKUajWhKqwiWH+XF4dnF0jbJ6g1hZ4dG1IT658FmT+HYsEhb+d48JtUMcjxEqAt0XOCfVlzv
-	eTMJ3Tr0YCtLqMHSBJApXWkdtlDHaaYU42ZZwLss8dNkGJrxUIt6IdyZUI2FT+fYi/o1IQL6QHVNW
-	cydIXhBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=TI75NyhxF45pzgkRrDorSM05lr4HgGT3p93nzCQRajo=; b=SurD2S0PjTIioy/q3BrWQq2iS
+	josJepwNK65lKMvc0X1CDR7lV4tRutPvP6bz7IQfprrv0XYLc/4pGZsLf81EIEO2aziIrXIlXthjR
+	Xbt11wMayonLtO3G3zEehc83cMW66iQaeME87X63i27kqazmIbDfpVbL/RxIC9WlgGLhrzHzzsqZK
+	CyhENozKGysS0cDzJtnDMUzTwm/OHlY8fRV/wO03Kuq9M1ahUrU1k2mcQWP1F+Z2MfxZDKUW/6E7F
+	PyqMQvcjoQKb4T7+tPARzZPzLn6GpMaPCnd7pTl8XBiRVEste/oulCdDIlxTP2m5du98tWDBVhgBq
+	8aTA6QtsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jekVg-0003PT-1E; Fri, 29 May 2020 19:17:40 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jekTa-0002ZQ-PT; Fri, 29 May 2020 19:15:30 +0000
+Received: from hqnvemgate26.nvidia.com ([216.228.121.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jekUv-0002wF-5s; Fri, 29 May 2020 19:16:54 +0000
-Received: by mail-pg1-x542.google.com with SMTP id o6so387157pgh.2;
- Fri, 29 May 2020 12:16:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=vSuzW0Fxrw3Yl1GJT8aprzfotLQBAijlg/osXVZg1ZM=;
- b=tdKG7Fj5mfIquGy1eUqVbKlogVE2r2eE0xHChc6Ukhnqc+QpBMZcy1wWbzEmzEYL2k
- 6bi9XgN03X/RK5gtPXa9lTHLT8grv8Z4Bxw9y5Qk0ds+5kqiwaNfqgfpWkB6hHsU0yQz
- m2RKbjU4wr1t0Vc3KBFIsq0ULJUWC/iqGfpf9MqE55b4jxruuOj+3PDzMGfuCoUZqdsk
- 5OorKwy8ziH4APZvvjRt+dLhUyx/CL+hqAuoLAO4jZQb1wY37fXUhKQiYyQ72As7Mt8I
- wLc60AIsWRvIZ+Ofn1kYd6YYI5nIpdgNfodqyVHbfjQ4K7T/M1hRX+8B49eOcR1rwqig
- 40XA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=vSuzW0Fxrw3Yl1GJT8aprzfotLQBAijlg/osXVZg1ZM=;
- b=QZnqwm47ycrqH5x91YcSHDUk3ADTOk2bXKprWkgN991qKrY2u94rNrHsq4aRZpI84S
- SO4QmKFhFOgOLuQ/pqhAIukjeSsPHg9/O+jFaPtUCNVIb1sV5+GDgBX5Z6MAWOS7peYz
- 8MI7z9cqnIwYLB2keklieOkNiVl4qJkpFuZB5UGHxNotGHaRsvqA6D9/Yg+bJIPxaIQY
- a+cRmHEIvJ9DosRC+GV3YcX3lrzKUrIZPuHj4TR5Wt83nxh5DnR4GpkmbQMYI+OrKR0N
- 3+f5paAJRvp6hYClXfqQ9MaM87zL4P+R3aY5Q9pErkmS85gNDkoDQVi8bR+/15PJ+1vF
- EqIw==
-X-Gm-Message-State: AOAM532B2TzZFzqcZEIh5lBDcvRx6RUNn1nNhZt6QDG+7ZkUfkx35mv2
- nrYnGcVqYyioVyOF7iUsAwE=
-X-Google-Smtp-Source: ABdhPJxUBqwsPVzMf/xOoD/c6fqXBbj/6QGB9lXW5L5Z8RrZaLVL+aBLPOwze0zw6HCZngwJRSZ3Lw==
-X-Received: by 2002:a63:4b0c:: with SMTP id y12mr9343218pga.56.1590779812662; 
- Fri, 29 May 2020 12:16:52 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id g92sm202505pje.13.2020.05.29.12.16.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 12:16:52 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 2/4] dt-bindings: pinctrl: Document optional BCM7211
- wake-up interrupts
+ id 1jekTS-0002Yd-Nx
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 19:15:24 +0000
+Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate26.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5ed15f3c0001>; Fri, 29 May 2020 12:15:08 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate102.nvidia.com (PGP Universal service);
+ Fri, 29 May 2020 12:15:20 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate102.nvidia.com on Fri, 29 May 2020 12:15:20 -0700
+Received: from [10.2.87.173] (10.124.1.5) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 29 May
+ 2020 19:15:20 +0000
+Subject: Re: [PATCH 0/3] misc: xilinx-sdfec: convert get_user_pages() -->
+ pin_user_pages()
+To: Dragan Cvetic <draganc@xilinx.com>, LKML <linux-kernel@vger.kernel.org>
+References: <20200527012628.1100649-1-jhubbard@nvidia.com>
+ <DM6PR02MB41405A1300813F8A511BE449CB8F0@DM6PR02MB4140.namprd02.prod.outlook.com>
+X-Nvconfidentiality: public
+From: John Hubbard <jhubbard@nvidia.com>
+Message-ID: <c01d2d45-250f-e8a9-cfc0-0f0df6db13b4@nvidia.com>
 Date: Fri, 29 May 2020 12:15:20 -0700
-Message-Id: <20200529191522.27938-3-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200529191522.27938-1-f.fainelli@gmail.com>
-References: <20200529191522.27938-1-f.fainelli@gmail.com>
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
+MIME-Version: 1.0
+In-Reply-To: <DM6PR02MB41405A1300813F8A511BE449CB8F0@DM6PR02MB4140.namprd02.prod.outlook.com>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
+ HQMAIL107.nvidia.com (172.20.187.13)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1590779708; bh=fzhGtzZMcfGKFcA4Tvhs0mwDOSypFMG8kMfO5rPUm/E=;
+ h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+ Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+ X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=e+r/k5WqVFkAi2PibQRZ6bmKhraegciNQsi76G3cRF+zPtEfWvG/Fptuf90ZMBfnc
+ 20fqiotqN8AdRUzB6gPpRSJFcRRzRQX9/XdpQb7nScTTu876Bz7/PsSZCa0XzfIiEn
+ 5M2ut6nC9ozgHHDK3uTQWTMSfMtsMkJdpm0jlWx1CzTkoe4N9jHBilpG6wQ8hoGMDE
+ hCsDoWDlGmfXlB3BpEl72NLx0PixwbxJM/2i4ojGR2ECEtd4XpcTlmE7ikP9mzjp3S
+ xz2H5RgtgoEf4qPfE2o/eU2TFtKNRDcKTP+m8qwgjI/0tO4UIDPsQIBWaJ2JpnMVDF
+ j49Xc5ebg7z4Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_121653_214993_4272A44A 
-X-CRM114-Status: GOOD (  11.35  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200529_121522_786797_6EC2CBE5 
+X-CRM114-Status: GOOD (  14.24  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -85,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,54 +94,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
- "open list:PIN CONTROL SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Michal Simek <michals@xilinx.com>, Souptick Joarder <jrdr.linux@gmail.com>,
+ Derek Kiernan <dkiernan@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BCM7211 supports wake-up interrupts in the form of optional interrupt
-lines, one per bank, plus the "all banks" interrupt line.
+On 2020-05-29 01:29, Dragan Cvetic wrote:
+> Hi John,
+> 
+> Thank you for the suggestion, please find my comment below:
+> 
+>> -----Original Message-----
+>> From: John Hubbard <jhubbard@nvidia.com>
+>> Sent: Wednesday 27 May 2020 02:26
+>> To: LKML <linux-kernel@vger.kernel.org>
+>> Cc: Souptick Joarder <jrdr.linux@gmail.com>; John Hubbard <jhubbard@nvidia.com>; Derek Kiernan <dkiernan@xilinx.com>; Dragan
+>> Cvetic <draganc@xilinx.com>; Arnd Bergmann <arnd@arndb.de>; Greg Kroah-Hartman <gregkh@linuxfoundation.org>; Michal Simek
+>> <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org
+>> Subject: [PATCH 0/3] misc: xilinx-sdfec: convert get_user_pages() --> pin_user_pages()
+>>
+>> Hi,
+>>
+>> There are also a couple of tiny cleanup patches, just to fix up a few
+>> minor issues that I spotted while converting from get_user_pages_fast()
+>> to pin_user_pages_fast().
+>>
+>> Note that I have only compile-tested these patches, although that does
+>> also include cross-compiling for a few other arches. Any run-time
+>> testing would be greatly appreciated!
+>>
+>> Cc: Derek Kiernan <derek.kiernan@xilinx.com>
+>> Cc: Dragan Cvetic <dragan.cvetic@xilinx.com>
+>> Cc: Arnd Bergmann <arnd@arndb.de>
+>> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+>> Cc: Michal Simek <michal.simek@xilinx.com>
+>> Cc: linux-arm-kernel@lists.infradead.org
+>>
+>> John Hubbard (3):
+>>    misc: xilinx-sdfec: improve get_user_pages_fast() error handling
+>>    misc: xilinx-sdfec: cleanup return value in xsdfec_table_write()
+>>    misc: xilinx-sdfec: convert get_user_pages() --> pin_user_pages()
+> 
+> 
+> Reviewed-by:
+> 	Technically there is no problem in this patch, but as you said this should be tested.
+> 	Currently due to Covid-19 I'm not able to access the HW and I cannot validate this suggestion.
+> 
 
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- .../devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt         | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+Hi Dragan,
 
-diff --git a/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt b/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
-index dfc67b90591c..5682b2010e50 100644
---- a/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
-+++ b/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
-@@ -16,7 +16,9 @@ Required properties:
-   second cell is used to specify optional parameters:
-   - bit 0 specifies polarity (0 for normal, 1 for inverted)
- - interrupts : The interrupt outputs from the controller. One interrupt per
--  individual bank followed by the "all banks" interrupt.
-+  individual bank followed by the "all banks" interrupt. For BCM7211, an
-+  additional set of per-bank interrupt line and an "all banks" wake-up
-+  interrupt may be specified.
- - interrupt-controller: Marks the device node as an interrupt controller.
- - #interrupt-cells : Should be 2.
-   The first cell is the GPIO number.
+Thanks for the review, and for *wanting* to do the testing, even though you
+can't right now. :)
+
+thanks,
 -- 
-2.17.1
+John Hubbard
+NVIDIA
 
+>>
+>>   drivers/misc/xilinx_sdfec.c | 30 +++++++++++++++++-------------
+>>   1 file changed, 17 insertions(+), 13 deletions(-)
+>>
+>>
+>> base-commit: 9cb1fd0efd195590b828b9b865421ad345a4a145
+>> --
+>> 2.26.2
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
