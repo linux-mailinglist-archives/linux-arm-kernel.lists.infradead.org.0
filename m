@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6DF151E7475
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 06:19:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AACE21E747D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 06:20:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hxuUpSosvriyQtg064YES/W8dt3Q0aCR/yUKxfINYRg=; b=CJwb5L9MmKHucP
-	pYZpHVoEhiW57518KAhxQ7hZlGPwsEUDDIJZk9FZhPcX/PKVgUtQAVyHNJyF5XbOh9gwoQJOwkhHH
-	Hcrpds0Z0l9LyOtq+iKlSA8ctaVxdhr0TG8CwHL3XLEyEb9Ro5vds3m3DDFZnNKopH4tDL+UYe7En
-	AwlVGTkaSlN7ruNFj/VLtu3vpNqsd4bRy98SlwnPqrkXwOzGAInRntFR52+N38COcQ5WdJeoQLHvd
-	2ZeeklQq8SAlAfPPf0rx/paGAMVU26FLu1VIDj3QASKlCIm+GXGaQf5HRDxC9/OEQxB03vozl6qAY
-	zXNKMiQhTJI5PqENwiRw==;
+	List-Owner; bh=ODM6+6zRq8pOq29b9EchQkcqwOmlbeIrdEzHrjW+elA=; b=GNSqT1NYQqMBpy
+	Xw3aF1/WsJ6BRZwG1bvAo2nySCjMz1gc/o45qJK+FsvLR/sXNDsSPTjEsYY+PEyEhPZLiFt59/Mni
+	PiARF+Oipf+h8nrpzNibtchynXcewYjbzIvrUaZFiTw/zxjZ2bknRrcHWDyQal/rgkFN9amdbI59e
+	6Dt1N5zz88REBqzb0D74o7JeOMVUDrmGU9h+7BK4ynlqHJ87X6PcCRaF+GoxJgj5SbmhW+L+Gw+yP
+	Qjda+h0y7iHi8LxRCD1UFAQ7DFqAXguzJ7+NvqziXAD33rqSa1jilyr/8gCaZSKXd8UNaNNxuOs9n
+	69YEP+TrLf1SC2JqPfig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeWUo-0006V8-Fe; Fri, 29 May 2020 04:19:50 +0000
+	id 1jeWVH-0006i9-Sl; Fri, 29 May 2020 04:20:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeWUd-0006Uo-Jz; Fri, 29 May 2020 04:19:40 +0000
+ id 1jeWUk-0006ZG-69; Fri, 29 May 2020 04:19:47 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1C252207D3;
- Fri, 29 May 2020 04:19:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8981D20814;
+ Fri, 29 May 2020 04:19:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590725979;
- bh=lPI6A83ttQ/c1j1m7UcKEFeIJazjx5XcZ050fvSwitM=;
+ s=default; t=1590725985;
+ bh=33+MHwIedDJ1eCtpRa7VZElWCFVUcTFTamW43B1VK2U=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=FLoDt9ZaYlmcWVtsbov0qFpFQnYWpDrZlJE8pluEIXwGBFctnyQ70IBUVDMCHnTPC
- ySnCdMFeCBEQag+v9idxiHKADP31tRaLwg7xGqsD5++rkjuyvjLtAS7mWz8zzH+1oL
- RdrggKyTQ+m2k9Nwbzkj658elIKf729eZieXBJCg=
+ b=y1IYg0PlIZFZTBahbBdFs8PRajY+bFIxDvd3m3A7jSgE9aPPpaoBrSyJll/14YzzS
+ B2GDlFDstzXOLtacHn39d16w8THXHK4q1JFprQsFPKgXo3VVhIhZT2oQbx+JZE48fr
+ UohXpuwo6xCMOHhtpV/eCIPBUGhLacyHQaaTrJVE=
 MIME-Version: 1.0
-In-Reply-To: <1582278742-1626-2-git-send-email-macpaul.lin@mediatek.com>
+In-Reply-To: <1582278742-1626-3-git-send-email-macpaul.lin@mediatek.com>
 References: <1582278742-1626-1-git-send-email-macpaul.lin@mediatek.com>
- <1582278742-1626-2-git-send-email-macpaul.lin@mediatek.com>
-Subject: Re: [PATCH 1/5] dt-bindings: clock: mediatek: document clk bindings
- for Mediatek MT6765 SoC
+ <1582278742-1626-3-git-send-email-macpaul.lin@mediatek.com>
+Subject: Re: [PATCH 2/5] dt-bindings: clock: mediatek: document clk bindings
+ mipi0a for Mediatek MT6765 SoC
 From: Stephen Boyd <sboyd@kernel.org>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  Chunfeng Yun <chunfeng.yun@mediatek.com>, Evan Green <evgreen@chromium.org>,
@@ -55,12 +55,12 @@ To: Catalin Marinas <catalin.marinas@arm.com>,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-mediatek@lists.infradead.org, mtk01761 <wendell.lin@mediatek.com>
-Date: Thu, 28 May 2020 21:19:38 -0700
-Message-ID: <159072597842.69627.10940278621295452958@swboyd.mtv.corp.google.com>
+Date: Thu, 28 May 2020 21:19:44 -0700
+Message-ID: <159072598489.69627.4505171077410009164@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_211939_676353_0AC776A4 
-X-CRM114-Status: UNSURE (   6.73  )
+X-CRM114-CacheID: sfid-20200528_211946_259800_5F46A8CF 
+X-CRM114-Status: UNSURE (   6.83  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -97,9 +97,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Macpaul Lin (2020-02-21 01:52:18)
-> This patch adds the binding documentation for apmixedsys, audsys, camsys,
-> imgsys, infracfg, mmsys, pericfg, topckgen
+Quoting Macpaul Lin (2020-02-21 01:52:19)
+> This patch adds the binding documentation for mipi0a.
 > 
 > Signed-off-by: Mars Cheng <mars.cheng@mediatek.com>
 > Signed-off-by: Owen Chen <owen.chen@mediatek.com>
