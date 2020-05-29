@@ -2,86 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A51F1E8690
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 20:23:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF0061E86BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 20:35:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7DIDVTtLoLYQOqipLzwZsLeTO46p0nN64L/DCRJAtXo=; b=qcylJylfLTEHfSMGU7scaMiTj
-	WzWXrtrItdA3iOJHbmaLTxega60RMqQ95iJh0pWbDv/I32W7c4Hc1tpjCN5FPNEw4tr+rYvZ+y7ie
-	9vkb5/HXZ9wq1fnBS7sizMPfC/UNOuRh9Mvac42ggahs0kofmZcW0xGVV9I3QaEJkdfCVzvmai/Ia
-	ogTAOrtXamp8YcuvWBHedv0XZpNL+/3NrSk07d4egpdy9IMcxJh+M9JsYYCBCXauxda9RdkIqDSjB
-	pCYSahhZXTLn4gkErh15ilgk8XwsgI4XFCtyddS6yEUuiabk/heEHsZQGdLEo2OqJFPmX2L91Ldzw
-	WS2qCiFTQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xtVUGDSzixhaxkNBb36GVaHeACRabsPk1clPRVy90eo=; b=Gd23g/Ru4QKi3C
+	b+iD4nm+Jt66TkUlfj3U1UWo5A0SpE2x1orKGqJjuZw/Hg3AH5iKGsJCZE2SSEgDJX6J4AoXMXJAo
+	hnvWQQZkbAGl/+3J0kytHGKkTqKOUqzxX12ZHJCmXvCw+C7b06xQTyPjfsDfBHhN2JEelVKJwHXsf
+	piJ05Je7Cpg/j2eZwYUPLSzXuBzzqqpN3vLrFQFY5h3EqBa47Aw4NVG7hAXDYM8GChg+ItpMNryNX
+	LobWm2Di2YZbFTS1U1kFLMvPB/AQtUWyhDhKsPVDcVJL59Isb2lZRB4JS/sGWxnjiHkDbTKZ0Gl71
+	YDYnpNCk7FYmgfHxmaeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jejez-0003K4-UX; Fri, 29 May 2020 18:23:13 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jejqp-0003WA-7k; Fri, 29 May 2020 18:35:27 +0000
+Received: from mout.kundenserver.de ([212.227.126.133])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jejen-0003J1-NJ
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 18:23:03 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04TIMrg8100299;
- Fri, 29 May 2020 13:22:53 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1590776573;
- bh=sPL+7JF8rHgYei8jMdMnhOJQnH3qvwFo9YiQ/UVOtBk=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=OFpF9T6aPW1jiMAsw+jzoXiPteEzQWhRGAILRgyXSNnAa+jp7eel8S2M00s2gyOVq
- l/fvmMxrA3Zf7mTbwEAQKCGHMF/Q5ppbGpisOy5WVldIBX/mKLjFUN0/EWRvHlOMBE
- aAD63HCd+8PwKaqFxG7TORxY/H86X78JJdq5nc2M=
-Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04TIMrTS013909
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 29 May 2020 13:22:53 -0500
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 29
- May 2020 13:22:53 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 29 May 2020 13:22:53 -0500
-Received: from [10.250.100.73] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04TIMoKe058585;
- Fri, 29 May 2020 13:22:51 -0500
-Subject: Re: [PATCH v4 0/2] soc: ti: add k3 platforms chipid module driver
-To: Santosh Shilimkar <ssantosh@kernel.org>, Tero Kristo <t-kristo@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Lokesh Vutla <lokeshvutla@ti.com>,
- <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>
-References: <20200512123449.16517-1-grygorii.strashko@ti.com>
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-Message-ID: <a132765e-f4e4-a1e8-fb43-239188fecf1b@ti.com>
-Date: Fri, 29 May 2020 21:22:59 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jejqg-0003VE-K5
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 18:35:20 +0000
+Received: from mail-qt1-f171.google.com ([209.85.160.171]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MZkxj-1jSrKQ16pD-00WkUj for <linux-arm-kernel@lists.infradead.org>; Fri,
+ 29 May 2020 20:35:13 +0200
+Received: by mail-qt1-f171.google.com with SMTP id h9so2751776qtj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 29 May 2020 11:35:12 -0700 (PDT)
+X-Gm-Message-State: AOAM532OnrOyzpHuMW1fPwx3UYE8CFZ2+jkHJIa4rGP6MtSwv4PFYjMI
+ ho1wdPUn+Ia6U9fouA76LtwKGIRj2NjWE8XpUCw=
+X-Google-Smtp-Source: ABdhPJz0GQVZ8aEOYoh2Eg686R2qtyZBwglBT2H2SkC4sf7A7FKjV8ciE5SbxV0sBfMPwA64WiBDRICxg4mo/fBWltM=
+X-Received: by 2002:ac8:4742:: with SMTP id k2mr2866567qtp.304.1590777311089; 
+ Fri, 29 May 2020 11:35:11 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200512123449.16517-1-grygorii.strashko@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20200512123449.16517-1-grygorii.strashko@ti.com>
+ <a132765e-f4e4-a1e8-fb43-239188fecf1b@ti.com>
+In-Reply-To: <a132765e-f4e4-a1e8-fb43-239188fecf1b@ti.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 29 May 2020 20:34:54 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a31DYOn1TyjxCYM7ebc9nL5EFKsNpSHkq55bG54Bns+MA@mail.gmail.com>
+Message-ID: <CAK8P3a31DYOn1TyjxCYM7ebc9nL5EFKsNpSHkq55bG54Bns+MA@mail.gmail.com>
+Subject: Re: [PATCH v4 0/2] soc: ti: add k3 platforms chipid module driver
+To: Grygorii Strashko <grygorii.strashko@ti.com>
+X-Provags-ID: V03:K1:CHpvTznC9KyttYXmBgDSXICdqg0a0x5th2jDC+WMuJwWJHlRTtZ
+ MAgNDAj3kQFTErZ6qm3Pb2U58ZxyNw+YLYYub16FPSo2aqrJuLt4wZsX5Khknpy3VYK5oZw
+ k0q1Dduy5xggWpeZWWEXCHysLg1aT7fp93f/SQPk2dQHlJyKpp7VWtDkx2lCc5NvAu9H0lf
+ pssj3ShSgkNSDBUnAjn6A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:zrd5HuLOs7g=:ECMMncHOeJvwl/0o6qmtfU
+ aQB9GGZoHlchkYG5L96rVBCaIQFDXijxbwH5CJhyDjP45GkNA1UR98tP4Gb69vcGWOmm8KXFG
+ eJErVVapBENmFGv5dY2TfkcVCPaZBwDsvti08/dZthtTCB21WKfRMhWK+2WRIUkFaUxkRns9+
+ H/kHWkAmk+FCsBCHbbpAML2RVgcouT/P3jyC+K5cj6p+EdSfDK5bWaEwFXJpBe4/w89ost4dh
+ Cm9UdpnM3tXf6lbw9Mc9fbKxrMCCI9r8kuqTQ+0s4Bp1q16wYVcRFSbcTZZmITkRfosyX0a91
+ uoRT7hTstAENiyff1fPhadGoo84OZM6TtWpV8B/nkUVdHfDXkMmWjXGHj4Byyw3IwINguvR6o
+ Mbb9XfYvAAbx6J2KWJLuk1f57GaZuidGuQxUr2nKy6VV5/mWJN3jBfpUnrwtZ2jHQ5E47aPz3
+ 669C+G/HP/3EBsFkBnmWN74dxcad1cu3eEhBnMCXqHzT0/uzXpWbZ/h1mvqUBxVGiVknMbddj
+ F49iS3pzuUBmbC8JpMvOofUcn8LPYvVeCT39AA/dZASt6P4RvTWNqaXoKmSedBGD9UH7EdFJ8
+ kVDxTC5cjch4cqb4RHOFwVBrg8jE7hLdGMwJWOW/5Ew5rDTCMyAPtFHtNSfsgVxJM1HvxdqkW
+ cJ9tyT0eEB5sU2c8topArE7oUwZH6VRTlwUeZoOQMS0OCTMTdttbLBea8tqI/skLyGrKnQ+21
+ SxD1xVfJ8j+EBYroVDacEY+3Wc5Boja2NZ3JyaT9yL5emKDzKL1cyl4Zl4rZcNvypbU7p0FpQ
+ ByTOo0wEauDjwWvi+z8Uk4l9udjPHt6v/TOF9HCq+GyjdmHVL8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_112301_879349_522C9664 
-X-CRM114-Status: GOOD (  18.24  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200529_113518_952910_FF277B99 
+X-CRM114-Status: GOOD (  12.18  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.133 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.133 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,73 +88,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Dave Gerlach <d-gerlach@ti.com>
+Cc: Nishanth Menon <nm@ti.com>, DTML <devicetree@vger.kernel.org>,
+ Dave Gerlach <d-gerlach@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
+ Sekhar Nori <nsekhar@ti.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Santosh,
+On Fri, May 29, 2020 at 8:22 PM Grygorii Strashko
+<grygorii.strashko@ti.com> wrote:
+> On 12/05/2020 15:34, Grygorii Strashko wrote:
 
-On 12/05/2020 15:34, Grygorii Strashko wrote:
-> Hi All,
-> 
-> This series introduces TI K3 Multicore SoC platforms chipid module driver
-> which provides identification support of the TI K3 SoCs (family, revision)
-> and register this information with the SoC bus. It is available under
-> /sys/devices/soc0/ for user space, and can be checked, where needed,
-> in Kernel using soc_device_match().
-> It is also required for introducing support for new revisions of
-> K3 AM65x/J721E SoCs.
-> 
-> Example J721E:
->    # cat /sys/devices/soc0/{machine,family,revision}
->    Texas Instruments K3 J721E SoC
->    J721E
->    SR1.0
-> 
-> Example AM65x:
->    # cat /sys/devices/soc0/{machine,family,revision}
->    Texas Instruments AM654 Base Board
->    AM65X
->    SR1.0
-> 
-> Changes in v4:
->   - convert to platform_driver as suggested by Arnd Bergmann <arnd@arndb.de>
-> 
-> Changes in v3:
->   - add handling of kasprintf() fail
-> 
-> Changes in v2:
->   - pr_debug() replaced with pr_info() to show SoC info on init
->   - minor format change
->   - split series on driver and platform changes
->   - add Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
-> 
-> v3: https://lkml.org/lkml/2020/5/8/357
-> v2: https://lkml.org/lkml/2020/5/5/1193
-> v1: https://lwn.net/Articles/818577/
-> 
-> Grygorii Strashko (2):
->    dt-bindings: soc: ti: add binding for k3 platforms chipid module
->    soc: ti: add k3 platforms chipid module driver
-> 
->   .../bindings/soc/ti/k3-socinfo.yaml           |  40 +++++
->   drivers/soc/ti/Kconfig                        |  10 ++
->   drivers/soc/ti/Makefile                       |   1 +
->   drivers/soc/ti/k3-socinfo.c                   | 152 ++++++++++++++++++
->   4 files changed, 203 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-socinfo.yaml
->   create mode 100644 drivers/soc/ti/k3-socinfo.c
-> 
+> >   .../bindings/soc/ti/k3-socinfo.yaml           |  40 +++++
+> >   drivers/soc/ti/Kconfig                        |  10 ++
+> >   drivers/soc/ti/Makefile                       |   1 +
+> >   drivers/soc/ti/k3-socinfo.c                   | 152 ++++++++++++++++++
+> >   4 files changed, 203 insertions(+)
+> >   create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-socinfo.yaml
+> >   create mode 100644 drivers/soc/ti/k3-socinfo.c
+> >
+>
+> Any chances you can pick this up?
 
-Any chances you can pick this up?
+I merged a version of this driver from Santosh's pull request into the
+arm/drviers tree yesterday.
 
--- 
-Best regards,
-grygorii
+Is there something missing?
+
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
