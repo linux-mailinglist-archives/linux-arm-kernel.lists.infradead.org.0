@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 290171E7182
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 02:30:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E5051E7188
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 02:32:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fgpwEqWQdyDnwYOhMkHc1vDdT8cNKiQzIEzqOtQLBLc=; b=Lpq3sV2sdY0Ujs
-	dDbYOINyA0dYlFRWjiS6cxJFcUceNYT1nRtWVdMhr14gdwdBFD4ZpirWS0TYhXt15jTlKvYM+QYJo
-	b6bLobR1NeVHWxxNYzlrSc1dqSfoqJMYpYjepIEwDb4rYWDg/ej4e5wT7gO4y5Gi4wFa9qpyOHxkL
-	MaoegAYxRLAZ4ao7TWee4/+rRHgl/VVyn/zGL9UE9u+yh2NbyYd488wKxIJ91/7YYTDyaCCMVGygx
-	qHvThnK9El990wwVKDfq0Ku4oLZdZmzXgy0XLchAHOKxs+staj9vcfRiEeIJ49IeQzpKOrqFAeLNl
-	Mq1nSjh7nI2IZQzQ+ICA==;
+	List-Owner; bh=6UT/MDWyWNpJp54nCcTFohanGhFzyrhzPZObebdialE=; b=WxMYuvXF4Dxo19
+	/VxvLwJ29jXCmF8tgscAQSAQ6KR/LYo5+iPrc/9XtjqCkwk82GhX8GQ6s5zB3n3xIGIWQSodlz88/
+	MmdOSrNktPEA23Vm+dl8qZ9qHnQ+OnLKG5jYii3oJfQsZirHv5lyuumNgpl+hOL+1WoZHDHJ3sxLJ
+	YIxqbsacPB9S4h4oumnxPijT531njAxFHlm+AC3JTt4B3w53Pfpg9kbk4Mz7TGFLGTNi0RQCuJTnL
+	G5aY2448Wn24Dl7/oXenI7gRycN1fDLMbI10QqWISlIOUePQ9C9/2NvbQctnrEkI+ETvC/a34PJDm
+	anJzSa+qkab6DooOAa7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeSv0-0003rQ-Kh; Fri, 29 May 2020 00:30:38 +0000
+	id 1jeSwY-0005Eo-OB; Fri, 29 May 2020 00:32:14 +0000
 Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeSqE-00069V-FR; Fri, 29 May 2020 00:25:44 +0000
+ id 1jeSqG-0006AF-6K; Fri, 29 May 2020 00:25:46 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id D56ED200007;
- Fri, 29 May 2020 00:25:38 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id AC3F8200008;
+ Fri, 29 May 2020 00:25:40 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tudor Ambarus <Tudor.Ambarus@microchip.com>,
  <linux-mtd@lists.infradead.org>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, <devicetree@vger.kernel.org>
-Subject: [PATCH v7 10/20] mtd: nand: Add an extra level in the Kconfig
- hierarchy
-Date: Fri, 29 May 2020 02:25:07 +0200
-Message-Id: <20200529002517.3546-11-miquel.raynal@bootlin.com>
+Subject: [PATCH v7 11/20] mtd: nand: Drop useless 'depends on' in Kconfig
+Date: Fri, 29 May 2020 02:25:08 +0200
+Message-Id: <20200529002517.3546-12-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200529002517.3546-1-miquel.raynal@bootlin.com>
 References: <20200529002517.3546-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_172542_689291_0585532B 
-X-CRM114-Status: UNSURE (   7.46  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200528_172544_376188_12B5D09D 
+X-CRM114-Status: GOOD (  10.37  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -77,31 +75,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use an extra level in Kconfig for all NAND related entries.
+Both OneNAND and raw NAND bits can't be compiled if MTD is disabled
+because of the if/endif logic in drivers/mtd/Kconfig. There is no need
+for an extra "depends on MTD" in their respective Kconfig files.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 ---
- drivers/mtd/nand/Kconfig | 5 +++++
- 1 file changed, 5 insertions(+)
+ drivers/mtd/nand/onenand/Kconfig | 1 -
+ drivers/mtd/nand/raw/Kconfig     | 1 -
+ 2 files changed, 2 deletions(-)
 
-diff --git a/drivers/mtd/nand/Kconfig b/drivers/mtd/nand/Kconfig
-index a5d8a211cb8a..c1a45b071165 100644
---- a/drivers/mtd/nand/Kconfig
-+++ b/drivers/mtd/nand/Kconfig
-@@ -1,7 +1,12 @@
+diff --git a/drivers/mtd/nand/onenand/Kconfig b/drivers/mtd/nand/onenand/Kconfig
+index 572b8fe69abb..1a0e65bc246e 100644
+--- a/drivers/mtd/nand/onenand/Kconfig
++++ b/drivers/mtd/nand/onenand/Kconfig
+@@ -1,7 +1,6 @@
  # SPDX-License-Identifier: GPL-2.0-only
-+
-+menu "NAND"
-+
- config MTD_NAND_CORE
- 	tristate
+ menuconfig MTD_ONENAND
+ 	tristate "OneNAND Device Support"
+-	depends on MTD
+ 	depends on HAS_IOMEM
+ 	help
+ 	  This enables support for accessing all type of OneNAND flash
+diff --git a/drivers/mtd/nand/raw/Kconfig b/drivers/mtd/nand/raw/Kconfig
+index 113f61052269..85280e327bfe 100644
+--- a/drivers/mtd/nand/raw/Kconfig
++++ b/drivers/mtd/nand/raw/Kconfig
+@@ -12,7 +12,6 @@ config MTD_NAND_ECC_SW_HAMMING_SMC
  
- source "drivers/mtd/nand/onenand/Kconfig"
- source "drivers/mtd/nand/raw/Kconfig"
- source "drivers/mtd/nand/spi/Kconfig"
-+
-+endmenu
+ menuconfig MTD_RAW_NAND
+ 	tristate "Raw/Parallel NAND Device Support"
+-	depends on MTD
+ 	select MTD_NAND_CORE
+ 	select MTD_NAND_ECC_SW_HAMMING
+ 	help
 -- 
 2.20.1
 
