@@ -2,53 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 64B9F1E7DE7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 15:06:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D90EF1E7E11
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 15:11:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+H4Pxp5vcZbEMUciKY7+ed39KZ6u5gdOKyEXrlA7Ukw=; b=XJ3q9wlajeVqzKtZPSoVp/YWM
-	U8GnnUNUsrcfqGajpSpds8jKYKHWcnHFWO54ITBtf4AnTLWfzauuhdgyaL3HtFuF61sdqnZWHbkMq
-	btN8bVnlr0fKFyKnbt9/EWlWG4msvlpqSiT+9c3kXJq/Xb0Xx3Z+MYqs9UrDCuBxaFkjB/d6cAhXi
-	1ZV8Gv8mOyg21mOkFixLJq6/ad9FzX6tCNbOVkzyjOXiAu1zg5ErORM1PvhXbrrVn+w3uEB7s6oAn
-	uOT9ib0bm7F/R1BtgZXOa61mfhJeZFRB6lKE1wNsQZM/T9gNGnN0PtqXKgFd8RY6CItIOSf5EJzjK
-	FOHHhAMYg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CMy6SV9mYCf7xj5xt1TyyzU7qyaGTYIgKREx/2W+QkQ=; b=vD+UQDv7zRjmWd
+	vf4KvuH0WArgp/VoGx3iDVUvY/xo0Qshv1VSALV3e31FENJcgLmjybNUsAc3RidGKHa8jqfhazjfl
+	T07fufqPqeDePPZcWfCDizGwyHTvHwW/eyocyeVZKWeJmwyQ1vH+2QFE4+KRP5YN+rE6ewsR2wBED
+	IyivAwrXApUji3AkYT1x54iqveIXcQxU/JY3XNKIOKWzARZW20rJTfPRtZRoxdUuQdRTI2KWjZI2m
+	ifIaI2SnG+86m8TOSacUI3QgtZCTjpeyZb01/n5s9Q+Lz8Yy+xVReDtvWkiykfLg+hLLXJdVmfKwh
+	r6sbxouHpVlOdbCgp9wg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeeiB-0002tT-Kj; Fri, 29 May 2020 13:06:11 +0000
+	id 1jeemw-0006ML-IN; Fri, 29 May 2020 13:11:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeehl-0002pJ-QZ; Fri, 29 May 2020 13:05:48 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jeeml-0006M2-JD
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 13:10:57 +0000
+Received: from mail-io1-f47.google.com (mail-io1-f47.google.com
+ [209.85.166.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B714E206B6;
- Fri, 29 May 2020 13:05:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2B0EE207BC
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 29 May 2020 13:10:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590757543;
- bh=iujYvPFgp+kMyGs/HHL6d27m94u1qo0gtVVFdFB0M/c=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=s2sCbN+iq+BEr27d1TkCSeB+hJjmmTUlzYgQtmKUT88ehDy9jx8UgGGIPErHPLR54
- C/vcqmkGF5HZUV/dHn3msmqyvaFSHcBlTibGinAm7Kw+KMrh27uciL4Etw9ZyxZ5Pv
- HrKoTIT7/v9KH+mx6J/GeAsPi6tuIjURhuo22PFY=
-Date: Fri, 29 May 2020 14:05:40 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Tzung-Bi Shih <tzungbi@google.com>
-Subject: Re: [PATCH] ASoC: mediatek: mt6358: support DMIC one-wire mode
-Message-ID: <20200529130539.GK4610@sirena.org.uk>
-References: <1590750293-12769-1-git-send-email-jiaxin.yu@mediatek.com>
- <20200529110915.GH4610@sirena.org.uk>
- <CA+Px+wVSwJK-=75chKLjSEe3bPRtV2wD95W5D_pdR0Pw0G470A@mail.gmail.com>
+ s=default; t=1590757855;
+ bh=fpqVd2S6sw1KSq77Y2DVJhgyP64rnlywDZYYuZ+bqz0=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=eyRv3lIf3nxOiFUyHfQJOkkCF749DBt8NILeq+Jgngy9UVmPvm3I40r6vL/31mJx/
+ J5XjucqOBosTU96NxUq31/pw9bhedn3Gn19rP26AojfMwpXY0/uHGmFJEqNBbXLMuQ
+ xm+Xml7hLNLNp5SnjbHXKcuVMC87stHOG7biVwu0=
+Received: by mail-io1-f47.google.com with SMTP id q8so2223607iow.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 29 May 2020 06:10:55 -0700 (PDT)
+X-Gm-Message-State: AOAM532o1kWNn/aZz2Y9a0Qg9R0SrEW4hD0vPgnm7TDn+iW4xOvaGe1n
+ 6OyI1WgubgkgNwOalhIA7JccsZ5Gq2Eaa7ZiVRU=
+X-Google-Smtp-Source: ABdhPJxrjkBcfs0Pwb8hm9j6Z8KfUMTzH62EGj9Zul7v3MunXRuE7aVAAm7CDPLbyG0PafBWgbNWcL0q0mVGSBLO7Ws=
+X-Received: by 2002:a05:6638:a50:: with SMTP id
+ 16mr6709322jap.71.1590757854581; 
+ Fri, 29 May 2020 06:10:54 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CA+Px+wVSwJK-=75chKLjSEe3bPRtV2wD95W5D_pdR0Pw0G470A@mail.gmail.com>
-X-Cookie: The Killer Ducks are coming!!!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200519190211.76855-1-ardb@kernel.org>
+ <20200528073349.GA32566@gondor.apana.org.au>
+ <CAMj1kXGkvLP1YnDimdLOM6xMXSQKXPKCEBGRCGBRsWKAQR5Stg@mail.gmail.com>
+ <20200529080508.GA2880@gondor.apana.org.au>
+ <CAMj1kXE43VvEXyYQF=s5HybhF6Wq23wDTrvTfNV9d4fUVZZ8aw@mail.gmail.com>
+ <20200529115126.GA3573@gondor.apana.org.au>
+ <CAMj1kXFFPKWwwSpLnPmNa_Up1syMb7T5STG7Tw8mRuRqSzc9vw@mail.gmail.com>
+ <20200529120216.GA3752@gondor.apana.org.au>
+In-Reply-To: <20200529120216.GA3752@gondor.apana.org.au>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Fri, 29 May 2020 15:10:43 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXF2-jJ6yGh9m759V2858_c45txoUBgKirvR-4z4GOHUfQ@mail.gmail.com>
+Message-ID: <CAMj1kXF2-jJ6yGh9m759V2858_c45txoUBgKirvR-4z4GOHUfQ@mail.gmail.com>
+Subject: Re: [RFC/RFT PATCH 0/2] crypto: add CTS output IVs for arm64 and
+ testmgr
+To: Herbert Xu <herbert@gondor.apana.org.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_060545_891832_95EF5B43 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20200529_061055_660880_1F9CEFFE 
+X-CRM114-Status: GOOD (  17.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,73 +94,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hariprasad Kelam <hariprasad.kelam@gmail.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- howie.huang@mediatek.com, Takashi Iwai <tiwai@suse.com>,
- ALSA development <alsa-devel@alsa-project.org>,
- Jiaxin Yu <jiaxin.yu@mediatek.com>, Liam Girdwood <lgirdwood@gmail.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6876339908921672999=="
+Cc: Eric Biggers <ebiggers@kernel.org>, Stephan Mueller <smueller@chronox.de>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, 29 May 2020 at 14:02, Herbert Xu <herbert@gondor.apana.org.au> wrote:
+>
+> On Fri, May 29, 2020 at 02:00:14PM +0200, Ard Biesheuvel wrote:
+> >
+> > Even if this is the case, it requires that an skcipher implementation
+> > stores an output IV in the buffer that skcipher request's IV field
+> > points to. Currently, we only check whether this is the case for CBC
+> > implementations, and so it is quite likely that lots of h/w
+> > accelerators or arch code don't adhere to this today.
+>
+> They are and have always been broken because algif_skcipher has
+> always relied on this.
+>
 
---===============6876339908921672999==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="kswDJesP0akhmDn8"
-Content-Disposition: inline
+OK, so the undocumented assumption is that algif_skcipher requests are
+delineated by ALG_SET_IV commands, and that anything that gets sent to
+the socket in between should be treated as a single request, right? I
+think that makes sense, but do note that this deviates from Stephan's
+use case, where the ciphertext stealing block swap was applied after
+every call into af_alg, with the IV being inherited from one request
+to the next. I think that case was invalid to begin with, I just hope
+no other use cases exist where this unspecified behavior is being
+relied upon.
 
+> > This might be feasible for the generic CTS driver wrapping h/w
+> > accelerated CBC. But how is this supposed to work, e.g., for the two
+> > existing h/w implementations of cts(cbc(aes)) that currently ignore
+> > this?
+>
+> They'll have to disable chaining.
+>
+> The way I'm doing this would allow some implementations to allow
+> chaining while others of the same algorithm can disable chaining
+> and require the whole request to be presented together.
+>
 
---kswDJesP0akhmDn8
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Fri, May 29, 2020 at 07:22:43PM +0800, Tzung-Bi Shih wrote:
-> On Fri, May 29, 2020 at 7:09 PM Mark Brown <broonie@kernel.org> wrote:
-
-> > What is DMIC one wire mode?  This doesn't sound like something I'd
-> > expect to vary at runtime.
-
-> It means: 1 PDM data wire carries 2 channel data (rising edge for left
-> and falling edge for right).
-
-I thought that was normal for DMICs - is this selecting between left and
-right or something?
-
-> The setting shouldn't and won't change at runtime.  Would you suggest
-> putting it into DTS binding?
-
-Yes.
-
---kswDJesP0akhmDn8
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7RCKMACgkQJNaLcl1U
-h9Dt/gf/avkSzsxeit+z9NWHGp2tenf6Da8cB10e6pe1usBAJnkn+iqx1Si29kpO
-V/fPJbNJY31D3PVd9dnyKQs4ASO+IbdUS2URSUDI795vnUy+fZ+5gu7CWoTc9LVy
-PvRBFNaVmKrSxHTR3dgeFs3Ehf1cTKnxhL3wXnqg0WrN5tXSzChYnsjz7vHs2aqo
-Rt6eiUaP3GKEyOLUeI/ND7iucB6eWqh/1RcDuGobJNZkhaVnh4Vk2RbbbJoREPki
-ni2aN+zVokiZj+JywoG5DP7488T3JdEjWJ84dHAAtb9QhQoZwwO75nHWXhPvRr0q
-ATS32LCIvu4eZCYa7kNcUqItzPKNDA==
-=TM61
------END PGP SIGNATURE-----
-
---kswDJesP0akhmDn8--
-
-
---===============6876339908921672999==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Fair enough.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6876339908921672999==--
-
