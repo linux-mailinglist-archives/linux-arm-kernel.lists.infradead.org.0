@@ -2,99 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EBAC1E826A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:46:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8BDF11E827E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:50:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xm57aC6MUZh2U+Gxm/5CFwB9qcUrgYSq7lfucsRc4+M=; b=izuJwk1Sy/hfVP
-	4cj6LBk1QSQ8dtU+Ws59/4JsSP4+1+yTbElKijr8UBRsxt0Q3VT4wsBaKPLzWvy4kWaVVnc83ofGV
-	zqLP184SNIlK7wGXiCGspcQm5ejGNrzOzTZp/2neXh8WJ5+vpa/8DQORzvYsQ0uGk19EqcCgFQAeh
-	7ZQyH5H419M8W8tlAyo1dc4IrXWozj4N0F35WsQqhT/c+STBCVOwXuFBy/uEyQY0Tu40kwnMvvBoZ
-	MHCz5xqrCzqGovWnk7TWMVTBuMBRM8PQuBn6ehTTJK80oSvUcL02unTY3b76/Kf3yiHRkBZckqXoC
-	eUgw2/fZZ7fpY8t/hpRg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nQGH9ytdHS7ySUht9p/SXW1DST+fSetE3dGTjgoPdtY=; b=Ox4OYgYUBW7QlI
+	7m3rxHTgMK8IP4ZyXSZCsQ0ohjvHGlEZzjsfkL2UVMtb5QCOfvjM9tHOTG5Cby0DBWh15lIMXMu5W
+	jjEY6ASPJj2m/VgBq7xgPAzm0snFxyOEGdO8f6rx+hSgA0X62gKESc8iJS6OJWg06ANZNzFSI49M7
+	Ft5XbYHuqbrRqK1WS6+UG2uy8lGaJInLz7oHgZtBr+as3R6LqNIAdE+pdZ/lAUucT36PKWcwnEvsT
+	pMuTXmbp/Lmpt6inYuciG9/ZlxRy+xBcZQdmSqCGQPQcVRJgTd9KLzFh36ipEiPVFeRx9iTX3V9T7
+	Bg4YWiS1hpjsnqHk4yiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jehD4-0001iK-BA; Fri, 29 May 2020 15:46:14 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jehHL-0004lz-Bx; Fri, 29 May 2020 15:50:39 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jehCr-0001gT-Vl; Fri, 29 May 2020 15:46:03 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04TFbsGw004565; Fri, 29 May 2020 17:45:49 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=MUqHOgczk7YoJhh076iqGU09+X0d5LSpCvIgcaIw6hU=;
- b=q0oGSqWCvjiL3B4zk68Matq7A+gu2efgaP+G8uXEWnPc9o93OqEZ1vtb4usPssjrtLVn
- 3meynMM4VDckBEJXGrXxCWOlCCKGk5K1EZVzmfTIx6kHKYlqVkJe73c3V50QYhqWquCE
- rutWC0WF5G+S/sDfzfx7nedXU0esELuaNrx5OigSCARnKYp1uhBUh2v/dCQVHaeY0e/F
- bwLlh6ThmCAdDee8QwGDK7BrpFTZV2a6MUMukwAJSChKy0RfewWwop5Cklp4Jam8y8YA
- psmO5/z8OTrHe6lPz4UFItkpbhQC0zvpagrl6lH8jYu2gtaF3dCsvNgSm+TN/JfVuwwu bg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 316tqhhpwj-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 29 May 2020 17:45:48 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 48A0E100034;
- Fri, 29 May 2020 17:45:45 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id DFC542B1893;
- Fri, 29 May 2020 17:45:44 +0200 (CEST)
-Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 29 May
- 2020 17:45:44 +0200
-Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
- SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
- 15.00.1473.003; Fri, 29 May 2020 17:45:44 +0200
-From: Philippe CORNU <philippe.cornu@st.com>
-To: Adrian Ratiu <adrian.ratiu@collabora.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
- <devicetree@vger.kernel.org>, "linux-rockchip@lists.infradead.org"
- <linux-rockchip@lists.infradead.org>, Laurent Pinchart
- <Laurent.pinchart@ideasonboard.com>
-Subject: Re: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
- bridge handle the HW version check
-Thread-Topic: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
- bridge handle the HW version check
-Thread-Index: AQHWNdA2P+mlUH/UMUatFbM8/3eWsg==
-Date: Fri, 29 May 2020 15:45:44 +0000
-Message-ID: <4acc09e8-0610-01f6-b18d-3ffc390c45a3@st.com>
-References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
- <20200427081952.3536741-9-adrian.ratiu@collabora.com>
-In-Reply-To: <20200427081952.3536741-9-adrian.ratiu@collabora.com>
-Accept-Language: fr-FR, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.47]
-Content-ID: <EB516333C6BA834A9DE9BB87A8FFBD44@st.com>
+ id 1jehHB-0004kD-1a; Fri, 29 May 2020 15:50:30 +0000
+Received: by mail-ed1-x544.google.com with SMTP id i16so2109444edv.1;
+ Fri, 29 May 2020 08:50:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=EsMvt8EiZib5FGRRaF/qmPkTiPSrV02BKHt077M8wMI=;
+ b=cGUtShBaCi9MqoE1+GESbw69dKQPzfpBkPzL3us2slLVv6fyW3FzZR38Ss0xy1A4Yh
+ 8iss/1gsa3WW9/xeUZSAv4euyAve2ASBsIjapI7OxHttUYUEEopFsOQr5gtW2x5K5DVv
+ xVcOJQyCfYgiQM0ZEi2S3hc4pTM0phT9t8mt4RPzVUv4RbiwbWMbTC4Xda9iJQ19GUFU
+ 4Vuze25Dm/GfmaXfyvhPMotiRoRlhae3fCXG+9MqDgTLBwr0foE2cAwLI/LkEyRSuBXL
+ YPVTXNicS/KYigpGnlH14hS02GzJL0KIS5PDjXI8yWtoebKHBFfq3ifTgX2kWJOrJtmT
+ +e1Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=EsMvt8EiZib5FGRRaF/qmPkTiPSrV02BKHt077M8wMI=;
+ b=Tl3F4HV+KLgdCpSLqF9FAd29YgTfyDqjisoHy86B3iCjXlPNL+DrGv0ITkfZLY7+yy
+ 0pFYU35DwK96cTMGdv0hdYH74MC4isjWopo/sBcTySQqcGlZXogD96JkO8HXpI8aug5c
+ LROezFPpYkgFAgCMWUkmAfict+zHSk8qEBP150pcAdpHun8XbI9RnQU5qfwFC+4fTiSc
+ RTM3V5l6cA+SbhJ3/9fzSyyXnOSH8DVdweLdpRtRI85zNPmstPTw1jW9RZ7dvpnuqe4f
+ tHZ64Lx7GUWh9AOBBDhMW2AojYwjHqphUjY/vfJhcb6TU8RAqJGhzI71utceegvJ7ezf
+ EwYg==
+X-Gm-Message-State: AOAM531CCRIeX7Y/RO9SF9sfjEdf4BuhFGv+Qis9+2QKwn8z0M5XjHXz
+ 7xTO+0kryuk7nhA+Usyd6Ro=
+X-Google-Smtp-Source: ABdhPJx6DPMPIrVyjdcMp9A6H0ZgGz361F/QduvdG+yveRgopAM+PuB1Tb/x09hjpiea6VuHfcN3Iw==
+X-Received: by 2002:a50:bb41:: with SMTP id y59mr8736067ede.311.1590767427825; 
+ Fri, 29 May 2020 08:50:27 -0700 (PDT)
+Received: from localhost.localdomain ([188.27.38.213])
+ by smtp.gmail.com with ESMTPSA id cz9sm7068103edb.18.2020.05.29.08.50.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 29 May 2020 08:50:27 -0700 (PDT)
+From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+To: =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jiri Slaby <jslaby@suse.com>
+Subject: [PATCH 1/1] tty: serial: owl: Add support for kernel debugger
+Date: Fri, 29 May 2020 18:50:25 +0300
+Message-Id: <6ee88060c129715980592a1ae33c93923916a14b.1590766726.git.cristian.ciocaltea@gmail.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-05-29_08:2020-05-28,
- 2020-05-29 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_084602_482143_C7E67258 
-X-CRM114-Status: GOOD (  26.45  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200529_085029_087177_EE676E93 
+X-CRM114-Status: GOOD (  11.67  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [cristian.ciocaltea[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -113,97 +97,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- Yannick FERTRE <yannick.fertre@st.com>, Andrzej Hajda <a.hajda@samsung.com>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>,
- "kernel@collabora.com" <kernel@collabora.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Cc: linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-serial@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Adrian,
-and thank you very much for the patchset.
-Thank you also for having tested it on STM32F769 and STM32MP1.
-Sorry for the late response, Yannick and I will review it as soon as 
-possible and we will keep you posted.
-Note: Do not hesitate to put us in copy for the next version 
-(philippe.cornu@st.com, yannick.fertre@st.com)
-Regards,
-Philippe :-)
+Implement poll_put_char and poll_get_char callbacks in struct uart_ops
+that enables OWL UART to be used for KGDB debugging over serial line.
+
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+---
+ drivers/tty/serial/owl-uart.c | 45 ++++++++++++++++++++++++++++++-----
+ 1 file changed, 39 insertions(+), 6 deletions(-)
+
+diff --git a/drivers/tty/serial/owl-uart.c b/drivers/tty/serial/owl-uart.c
+index c2fa2f15d50a..26dcc374dec5 100644
+--- a/drivers/tty/serial/owl-uart.c
++++ b/drivers/tty/serial/owl-uart.c
+@@ -12,6 +12,7 @@
+ #include <linux/console.h>
+ #include <linux/delay.h>
+ #include <linux/io.h>
++#include <linux/iopoll.h>
+ #include <linux/module.h>
+ #include <linux/of.h>
+ #include <linux/platform_device.h>
+@@ -20,13 +21,13 @@
+ #include <linux/tty.h>
+ #include <linux/tty_flip.h>
+ 
+-#define OWL_UART_PORT_NUM 7
+-#define OWL_UART_DEV_NAME "ttyOWL"
++#define OWL_UART_PORT_NUM		7
++#define OWL_UART_DEV_NAME		"ttyOWL"
+ 
+-#define OWL_UART_CTL	0x000
+-#define OWL_UART_RXDAT	0x004
+-#define OWL_UART_TXDAT	0x008
+-#define OWL_UART_STAT	0x00c
++#define OWL_UART_CTL			0x000
++#define OWL_UART_RXDAT			0x004
++#define OWL_UART_TXDAT			0x008
++#define OWL_UART_STAT			0x00c
+ 
+ #define OWL_UART_CTL_DWLS_MASK		GENMASK(1, 0)
+ #define OWL_UART_CTL_DWLS_5BITS		(0x0 << 0)
+@@ -461,6 +462,34 @@ static void owl_uart_config_port(struct uart_port *port, int flags)
+ 	}
+ }
+ 
++#ifdef CONFIG_CONSOLE_POLL
++
++static int owl_uart_poll_get_char(struct uart_port *port)
++{
++	u32 c = NO_POLL_CHAR;
++
++	if (!(owl_uart_read(port, OWL_UART_STAT) & OWL_UART_STAT_RFEM))
++		c = owl_uart_read(port, OWL_UART_RXDAT);
++
++	return c;
++}
++
++static void owl_uart_poll_put_char(struct uart_port *port, unsigned char c)
++{
++	/* Wait while TX FIFO is full */
++	while (owl_uart_read(port, OWL_UART_STAT) & OWL_UART_STAT_TFFU)
++		cpu_relax();
++
++	/* Send the character out */
++	owl_uart_write(port, c, OWL_UART_TXDAT);
++
++	/* Wait for transmitter to become empty */
++	while (owl_uart_read(port, OWL_UART_STAT) & OWL_UART_STAT_TRFL_MASK)
++		cpu_relax();
++}
++
++#endif /* CONFIG_CONSOLE_POLL */
++
+ static const struct uart_ops owl_uart_ops = {
+ 	.set_mctrl = owl_uart_set_mctrl,
+ 	.get_mctrl = owl_uart_get_mctrl,
+@@ -476,6 +505,10 @@ static const struct uart_ops owl_uart_ops = {
+ 	.request_port = owl_uart_request_port,
+ 	.release_port = owl_uart_release_port,
+ 	.verify_port = owl_uart_verify_port,
++#ifdef CONFIG_CONSOLE_POLL
++	.poll_get_char	= owl_uart_poll_get_char,
++	.poll_put_char	= owl_uart_poll_put_char,
++#endif
+ };
+ 
+ #ifdef CONFIG_SERIAL_OWL_CONSOLE
+-- 
+2.26.2
 
 
-On 4/27/20 10:19 AM, Adrian Ratiu wrote:
-> The stm mipi-dsi platform driver added a version test in
-> commit fa6251a747b7 ("drm/stm: dsi: check hardware version")
-> so that HW revisions other than v1.3x get rejected. The rockchip
-> driver had no such check and just assumed register layouts are
-> v1.3x compatible.
-> 
-> Having such tests was a good idea because only v130/v131 layouts
-> were supported at the time, however since adding multiple layout
-> support in the bridge, the version is automatically checked for
-> all drivers, compatible layouts get picked and unsupported HW is
-> automatically rejected by the bridge, so there's no use keeping
-> the test in the stm driver.
-> 
-> The main reason prompting this change is that the stm driver
-> test immediately disabled the peripheral clock after reading
-> the version, making the bridge read version 0x0 immediately
-> after in its own probe(), so we move the clock disabling after
-> the bridge does the version test.
-> 
-> Tested on STM32F769 and STM32MP1.
-> 
-> Cc: linux-stm32@st-md-mailman.stormreply.com
-> Reported-by: Adrian Pop <pop.adrian61@gmail.com>
-> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
-> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
-> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
-> ---
-> New in v6.
-> ---
->   drivers/gpu/drm/stm/dw_mipi_dsi-stm.c | 12 +++---------
->   1 file changed, 3 insertions(+), 9 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-> index 2e1f2664495d0..7218e405d7e2b 100644
-> --- a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-> +++ b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
-> @@ -402,15 +402,6 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
->   		goto err_dsi_probe;
->   	}
->   
-> -	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
-> -	clk_disable_unprepare(pclk);
-> -
-> -	if (dsi->hw_version != HWVER_130 && dsi->hw_version != HWVER_131) {
-> -		ret = -ENODEV;
-> -		DRM_ERROR("bad dsi hardware version\n");
-> -		goto err_dsi_probe;
-> -	}
-> -
->   	dw_mipi_dsi_stm_plat_data.base = dsi->base;
->   	dw_mipi_dsi_stm_plat_data.priv_data = dsi;
->   
-> @@ -423,6 +414,9 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
->   		goto err_dsi_probe;
->   	}
->   
-> +	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
-> +	clk_disable_unprepare(pclk);
-> +
->   	return 0;
->   
->   err_dsi_probe:
-> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
