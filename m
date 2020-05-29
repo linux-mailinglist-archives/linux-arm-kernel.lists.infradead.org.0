@@ -2,70 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0009A1E8BD8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 01:20:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 976BD1E8BF7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 01:28:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
-	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=USLcWplqCS+UDVfBe8wGAXNpGIoNUyphfjmjW8iJLFM=; b=DQnlIzZTr3Sp3o
-	LN3EoezZIZMJehHxyk3do0S2ag6NOJQI/UtHBtgrNe+qUaM+qBLzo3YqTO1zuw3c9dAZ/roB0U5z5
-	nfcIMsU2VfpOy+4DImgA4LvS9XDkSmbM44LV60to90ZiRbis2ERSvCkHPYK2bPOym7X0my+QXwvD2
-	oxwtGmW/prvc3crZAJt5iLOu1k7gwqHfCwPnT0gAo/dOz/4gSwQhAvi/+nxKfTPRwUUg9HSVCrC0J
-	TEXZOh6kV2weoE/IIuLzt/omcxUOqi0+47mv6/uqPMtKfmdA7MT4xSTKg6qBEkqCAFaibAGKk/LLR
-	M8X/BYqWjNxtwsOJ438Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=g2thfXW2+xE4wa66QE7vuzCsafv+fxJgfHzRSmuDwYE=; b=FhaZLtirhED7cs
+	kFz5g6Y+XxvZrFvcRdr2KuphjmTtlfQrGNciGp5CRzq2uqiv03GQCZ4E1XeFX6zu+EBuChzweS6+p
+	0iK9tYAoeo8PNu1n40ZZrbaHGUFdZ+l5WncU9rBjuemBcfTPOE1WwU32sDzSezAawVxuZfD4jGcEb
+	5rcoEHsvYGwfTbTxEJsmIx1YummSIyswUuQkOsMTTnH4ZVteKaRcTnGLfvgB3JpEFXRZNBworXrts
+	jQi1RAnUZbVJ46eEWkBwAO090rLPpHfUplzrpMhLVnd7edC/I40y4uoEz2N1CcPEvNhBiclgZa9Tq
+	t1sV5FaoejNaeiHyAVnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeoIU-0007oh-V0; Fri, 29 May 2020 23:20:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jeoQ4-00048C-V6; Fri, 29 May 2020 23:28:08 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeoIF-00070f-Bi
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 23:20:04 +0000
-Subject: Re: [GIT PULL] ARM: SoC fixes for v5.7
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590794402;
- bh=SmpGnk1e3H/eBNuNInMjR3K+Hid5CJ+i9D/8vqRVVKc=;
- h=From:In-Reply-To:References:Date:To:List-Id:Cc:From;
- b=QmKJWLbSyGiEGFlVUCL1CMWzU3stsZmhqX2kNBURaNCEAMrnvm/4SaZDKV9CaMUpZ
- ybeU9H+96+Sza6JUZ5e4OJte2fl1raPSw1cBVVz1/L3x6KP9WD7NPU8TYnuEw2OsTW
- R41uoYJD2pk0grhxodgErAMs17znFZimJmDbECM0=
-From: pr-tracker-bot@kernel.org
-In-Reply-To: <CAK8P3a05i=j3xh6bGti+-pkQWFid5=Em_NCprz1J9Jp9TDmTeQ@mail.gmail.com>
-References: <CAK8P3a05i=j3xh6bGti+-pkQWFid5=Em_NCprz1J9Jp9TDmTeQ@mail.gmail.com>
-X-PR-Tracked-List-Id: <soc.lore.kernel.org>
-X-PR-Tracked-Message-Id: <CAK8P3a05i=j3xh6bGti+-pkQWFid5=Em_NCprz1J9Jp9TDmTeQ@mail.gmail.com>
-X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git
- tags/armsoc-fixes-v5.7
-X-PR-Tracked-Commit-Id: 99706d62fb50486eadb4441eaed311491fd7addf
-X-PR-Merge-Tree: torvalds/linux.git
-X-PR-Merge-Refname: refs/heads/master
-X-PR-Merge-Commit-Id: 86852175b016f0c6873dcbc24b93d12b7b246612
-Message-Id: <159079440285.17741.11956133340419679856.pr-tracker-bot@kernel.org>
-Date: Fri, 29 May 2020 23:20:02 +0000
-To: Arnd Bergmann <arnd@arndb.de>
+ id 1jeoPs-00047H-Nv
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 23:27:58 +0000
+X-Originating-IP: 86.202.110.81
+Received: from localhost (lfbn-lyo-1-15-81.w86-202.abo.wanadoo.fr
+ [86.202.110.81])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id A4C9C20007;
+ Fri, 29 May 2020 23:27:52 +0000 (UTC)
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Subject: [PATCH v4 0/9] clocksource/drivers/timer-atmel-tcb: add sama5d2
+ support
+Date: Sat, 30 May 2020 01:27:40 +0200
+Message-Id: <20200529232749.299627-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.26.2
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_162003_454849_F5AB19EE 
-X-CRM114-Status: UNSURE (   3.24  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200529_162756_911804_4E29E7E0 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.200 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,29 +62,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Lubomir Rintel <lkundrak@v3.sk>, SoC Team <soc@kernel.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: kamel.bouhara@bootlin.com,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, devicetree@vger.kernel.org,
+ Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
+ linux-kernel@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The pull request you sent on Sat, 30 May 2020 00:24:13 +0200:
+Hello,
 
-> git://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git tags/armsoc-fixes-v5.7
+This series mainly adds sama5d2 support where we need to avoid using
+clock index 0 because that clock is never enabled by the driver.
 
-has been merged into torvalds/linux.git:
-https://git.kernel.org/torvalds/c/86852175b016f0c6873dcbc24b93d12b7b246612
+There is also a rework of the 32khz clock handling so it is not used for
+clockevents on 32 bit counter because the increased rate improves the
+resolution and doesn't have any drawback with that counter width. This
+replaces a patch that has been carried in the linux-rt tree for a while.
 
-Thank you!
+Changes in v4:
+ - Rework binding documentation
+
+Changes in v3:
+ - Moved the child node documentation to the parent documentation
+
+Changes in v2:
+ - Rebased on v5.7-rc1
+ - Moved the binding documentation to its proper place
+ - Added back the atmel,tcb-timer child node documentation
+
+Alexandre Belloni (8):
+  dt-bindings: atmel-tcb: convert bindings to json-schema
+  dt-bindings: microchip: atmel,at91rm9200-tcb: add sama5d2 compatible
+  ARM: dts: at91: sama5d2: add TCB GCLK
+  clocksource/drivers/timer-atmel-tcb: rework 32khz clock selection
+  clocksource/drivers/timer-atmel-tcb: fill tcb_config
+  clocksource/drivers/timer-atmel-tcb: stop using the 32kHz for
+    clockevents
+  clocksource/drivers/timer-atmel-tcb: allow selecting first divider
+  clocksource/drivers/timer-atmel-tcb: add sama5d2 support
+
+Kamel Bouhara (1):
+  ARM: at91: add atmel tcb capabilities
+
+ .../devicetree/bindings/mfd/atmel-tcb.txt     |  56 -------
+ .../soc/microchip/atmel,at91rm9200-tcb.yaml   | 155 ++++++++++++++++++
+ arch/arm/boot/dts/sama5d2.dtsi                |  12 +-
+ drivers/clocksource/timer-atmel-tcb.c         | 101 +++++++-----
+ include/soc/at91/atmel_tcb.h                  |   5 +
+ 5 files changed, 224 insertions(+), 105 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/mfd/atmel-tcb.txt
+ create mode 100644 Documentation/devicetree/bindings/soc/microchip/atmel,at91rm9200-tcb.yaml
 
 -- 
-Deet-doot-dot, I am a bot.
-https://korg.wiki.kernel.org/userdoc/prtracker
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
