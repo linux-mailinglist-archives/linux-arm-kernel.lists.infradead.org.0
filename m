@@ -2,83 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF5721E8679
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 20:18:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F04E01E8687
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 20:22:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QjeLjLUsgiiPABldXk4IEbT7Ej4BRHgp7iyLti2EBdY=; b=dikjqDqPYoHNbz
-	qE1M6JPPL0NemD3jlkCHjG4M3DLQxNY8spy1ue5nKCpXwwVAVq1fyJY0ZPZqPdmi5jF3hs5VdIzA3
-	JyT+k91z2FsV/oo+0Jkn2Ocps6btvnN5eYur/5Z/ADrFj1BzvXWHPHl3T8taiN+DoFZfvAam2oL+H
-	3tng4ujsZLAYYab5qULrbY5lPbkoMZsnpqQi4giVqLzGZg/yBBsXmY1/gBjywWNXUdW1Gj7vt88xM
-	YjBBIvbysnGUYzoNppdFnXs6XCOWbsgDyJXIOE+HfXe/wd1m/BNdI4ITWoqOrYEftQQwzTPNkyRNz
-	QDvaz1tzylym61KVHZ6Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iaym4YRg40fv1xRbyNMnIuzrRxmEuB5ebZg3JgHFT08=; b=UQ2Lrcm2hR40Mr
+	XLl14z60jVAxZgMM7ergoZ8oMUmz39XKZ3FZzw91oO9LF+2qse/HvdXBL3X9QndB7mR/JzNqymO+s
+	0JD+GDuAAGce1LqiSqNXXB5I/J1bd34bPVirSePG/fel6BeU75/LQ9pTqnPoZ+uXDoQHpyjQSPHg8
+	KrzCrokqozzQu2ku1iR+YNFYn+rXNvyLjLHyAJxUTisCmPkbhLk8aByF6VhTiliLC8eSbH//+H+bi
+	cQ46KDGl7HhDpz18SuW8axOsDQZjWRjUee4F06+PILXo+ZDMoyqsCkaGsrVM1xSZ9LCLRWBdmPfZu
+	9O+9hrvAZSTs4Ob5Qn/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jejaf-0008W2-4b; Fri, 29 May 2020 18:18:45 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
+	id 1jejdl-000318-HS; Fri, 29 May 2020 18:21:57 +0000
+Received: from comms.puri.sm ([159.203.221.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jejaW-0008VN-AX; Fri, 29 May 2020 18:18:37 +0000
-Received: by mail-io1-f66.google.com with SMTP id p20so302422iop.11;
- Fri, 29 May 2020 11:18:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=+Zt0XlCRbQEAA6WM2kGlK/C6ChZT4zLq85OJJjGFn0o=;
- b=XXOhjXN6PoeCjddDkJLIP3Zi22jGC3sRAAaYl0B0xDkTEokHHDsPf/OzCjKrFjpPCG
- XvFH8vb8bn+Z8T/yWZNT2o4aghdDTr6zAZIpns5eqDMKVqSwPIVrD1tJRz8Ya9tJAwxz
- Aiho2K7iiFQy0jcdNARLrUAgJD9RnuALwg8LAh9DvrsRuzH7bCmPSJuKB1lTH7kpqKbn
- ADymd4zbSc6uwXyu6MjhrW622JD0l1ANB1DYIeGUY3QMF3R3dSBvQVDBI4Aq8e0M2+iQ
- uT71fWFphnf0A/LAcVtegbkQza9mdPCoceWaGNUhbJNhMnyROYUcfvEIRKFeoSlLTvdm
- aYdw==
-X-Gm-Message-State: AOAM5308Ip1W3YUbk2y6Cy1+oJhCEqx/qI3oJ1v1rZfoq3mduTI3tXbR
- AG1vSF0Jel8QlqB7gW8CJw==
-X-Google-Smtp-Source: ABdhPJzNDQewkud68OMi7ffyblEdKBffzwXmj7DJAvdOeqGXbabXJygx2EyHsLyuZVGswit2+zLTxg==
-X-Received: by 2002:a6b:5c19:: with SMTP id z25mr7597825ioh.119.1590776315569; 
- Fri, 29 May 2020 11:18:35 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id j63sm1246230ilg.50.2020.05.29.11.18.34
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 11:18:34 -0700 (PDT)
-Received: (nullmailer pid 2691280 invoked by uid 1000);
- Fri, 29 May 2020 18:18:33 -0000
-Date: Fri, 29 May 2020 12:18:33 -0600
-From: Rob Herring <robh@kernel.org>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH v3 104/105] dt-bindings: display: vc4: hdmi: Add BCM2711
- HDMI controllers bindings
-Message-ID: <20200529181833.GA2685451@bogus>
-References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
- <e85e24a494a3ff41177c94673ced0f4280b6a0ee.1590594512.git-series.maxime@cerno.tech>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e85e24a494a3ff41177c94673ced0f4280b6a0ee.1590594512.git-series.maxime@cerno.tech>
+ id 1jejdZ-00030O-4i
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 18:21:46 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by comms.puri.sm (Postfix) with ESMTP id A1B35E0336;
+ Fri, 29 May 2020 11:20:59 -0700 (PDT)
+Received: from comms.puri.sm ([127.0.0.1])
+ by localhost (comms.puri.sm [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 8cS1DEnwvLJ2; Fri, 29 May 2020 11:20:58 -0700 (PDT)
+Subject: Re: [PATCH 1/2] arm64: dts: Add a device tree for the Librem5 phone
+To: Pavel Machek <pavel@ucw.cz>
+References: <20200514155737.12160-1-martin.kepplinger@puri.sm>
+ <20200529162850.GC3709@amd> <20200529180743.GA1081@bug>
+From: Martin Kepplinger <martin.kepplinger@puri.sm>
+Autocrypt: addr=martin.kepplinger@puri.sm; keydata=
+ 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
+ ekMtxgNYb/8oDry09UFHbGHLsWn6oBo=
+Message-ID: <c8cebbbf-8348-6ecb-306c-be124db04876@puri.sm>
+Date: Fri, 29 May 2020 20:20:54 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
+In-Reply-To: <20200529180743.GA1081@bug>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_111836_363567_CA958620 
-X-CRM114-Status: GOOD (  17.32  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200529_112145_191777_2B4592C7 
+X-CRM114-Status: UNSURE (   9.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
+ no trust [159.203.221.185 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,162 +138,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
+Cc: robh@kernel.org, kernel@puri.sm, Anson.Huang@nxp.com,
+ devicetree@vger.kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ angus@akkea.ca, linux-kernel@vger.kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, mchehab@kernel.org, festevam@gmail.com, agx@sigxcpu.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 27, 2020 at 05:49:14PM +0200, Maxime Ripard wrote:
-> The HDMI controllers found in the BCM2711 SoC need some adjustments to the
-> bindings, especially since the registers have been shuffled around in more
-> register ranges.
+On 29.05.20 20:07, Pavel Machek wrote:
+> Hi!
 > 
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: devicetree@vger.kernel.org
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
->  Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml | 109 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
->  1 file changed, 109 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml
+> Plus, do we need calibration matrix for magnetometer?
+
+I guess so. It's not a calibration matrix, it's the mount matrix that
+tells you how the chip is placed on the PCB relative to a "natural"
+orientation, see
+https://github.com/torvalds/linux/blob/master/Documentation/ABI/testing/sysfs-bus-iio#L1638
+
 > 
-> diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml
-> new file mode 100644
-> index 000000000000..6091fe3d315b
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml
-> @@ -0,0 +1,109 @@
-> +# SPDX-License-Identifier: GPL-2.0
-
-Dual license...
-
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/brcm,bcm2711-hdmi.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Broadcom BCM2711 HDMI Controller Device Tree Bindings
-> +
-> +maintainers:
-> +  - Eric Anholt <eric@anholt.net>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - brcm,bcm2711-hdmi0
-> +      - brcm,bcm2711-hdmi1
-
-What's the difference between the 2 blocks? 
-
-> +
-> +  reg:
-> +    items:
-> +      - description: HDMI controller register range
-> +      - description: DVP register range
-> +      - description: HDMI PHY register range
-> +      - description: Rate Manager register range
-> +      - description: Packet RAM register range
-> +      - description: Metadata RAM register range
-> +      - description: CSC register range
-> +      - description: CEC register range
-> +      - description: HD register range
-> +
-> +  reg-names:
-> +    items:
-> +      - const: hdmi
-> +      - const: dvp
-> +      - const: phy
-> +      - const: rm
-> +      - const: packet
-> +      - const: metadata
-> +      - const: csc
-> +      - const: cec
-> +      - const: hd
-> +
-> +  clocks:
-> +    description: The HDMI state machine clock
-> +
-> +  clock-names:
-> +    const: hdmi
-> +
-> +  ddc:
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/phandle
-> +    description: >
-> +      Phandle of the I2C controller used for DDC EDID probing
-
-Goes in the connector.
-
-And isn't the standard name ddc-i2c-bus?
-
-> +
-> +  hpd-gpios:
-> +    description: >
-> +      The GPIO pin for the HDMI hotplug detect (if it doesn't appear
-> +      as an interrupt/status bit in the HDMI controller itself)
-
-Goes in the connector.
-
-> +
-> +  dmas:
-> +    maxItems: 1
-> +    description: >
-> +      Should contain one entry pointing to the DMA channel used to
-> +      transfer audio data.
-> +
-> +  dma-names:
-> +    const: audio-rx
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - reg-names
-> +  - clocks
-> +  - resets
-> +  - ddc
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    hdmi0: hdmi@7ef00700 {
-> +        compatible = "brcm,bcm2711-hdmi0";
-> +        reg = <0x7ef00700 0x300>,
-> +              <0x7ef00300 0x200>,
-> +              <0x7ef00f00 0x80>,
-> +              <0x7ef00f80 0x80>,
-> +              <0x7ef01b00 0x200>,
-> +              <0x7ef01f00 0x400>,
-> +              <0x7ef00200 0x80>,
-> +              <0x7ef04300 0x100>,
-> +              <0x7ef20000 0x100>;
-> +        reg-names = "hdmi",
-> +                    "dvp",
-> +                    "phy",
-> +                    "rm",
-> +                    "packet",
-> +                    "metadata",
-> +                    "csc",
-> +                    "cec",
-> +                    "hd";
-> +        clocks = <&firmware_clocks 13>;
-> +        clock-names = "hdmi";
-> +        resets = <&dvp 0>;
-> +        ddc = <&ddc0>;
-> +    };
-> +
-> +...
-> -- 
-> git-series 0.9.1
+> Best regards,
+> 								Pavel
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
