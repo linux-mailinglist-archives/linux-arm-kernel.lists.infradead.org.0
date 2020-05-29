@@ -2,59 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3EC01E74FB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 06:40:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 842831E74FC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 06:40:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sjuQFOBjV0MjyZ4eARBU+KXYsR3IsHPfKYtwbqIrqRE=; b=pY9dBSNKmKq1wE
-	MXaVuiDEO0knYlOq6nRBBgqGvX+twf9ByQGjXXn5xCuN8hIfrRUfKeHGbXksLVFdm+hDDNzLwVkGO
-	G2LpwsdN9nQu93YcIEpKbtW2isX+fhYCs0UoTBNWJbtESdCmlc5W3SK4ZJ/PISZZtlSxHXGNW5UBK
-	t4UD/PARaF1uQhcKFfDdKz7XuY2A5UFzd5m//0UuVFjzXOSfl1VVIPqfSk8S/aaw5fEFwrOoghIxU
-	FXcS+oSAgIA/8rwWFbXfKRqqqIGOgLYGiAih4Rtf7T/ufelHYI16aURXeZ7VB5Pee7KkssPKFf9qV
-	vatAxEHzPiw2AdKdWj3w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iWW58IdGOuUI0AbRSZp+kUyynxOSBC/gZgDYcow8tmw=; b=YzUSsdcQvyNDB0
+	eBZlureRef0qmlF2BDfLaJG02APLW8au/yOv+Pj9gETEQrqPPX2QeE7uawH11ncubscpqmy6o/3mx
+	fvESIRBzntjA+BgEvhKC9Ewz2GvZAFLjmA4yjZ63yE21oAllPQahD8Y0C+SZYKf9PjTsgk9ocJ8FX
+	d8r3k9Kbr7YaRH1BgTx8Mw4VCRzTeKNjZyFlVs7N5lk4FOdlLvALTTOU5rN8AG+n55dbXDTBXWp0p
+	JGzBlIb59HljXTPL+NjDgdoXy9W/xjH/88CpBIRM6/D6rxuhXkkfLO6NYnejgUkM0xGrMtl3yCbHO
+	tFaGifo8pLXe9Dnf7l/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeWof-00035u-9E; Fri, 29 May 2020 04:40:21 +0000
+	id 1jeWow-0005iD-F5; Fri, 29 May 2020 04:40:38 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeWoH-00034x-Nw; Fri, 29 May 2020 04:39:59 +0000
-X-UUID: ed21fbb1c1ad4c8f8eb1e9481eb532ce-20200528
+ id 1jeWoH-00034z-Ns; Fri, 29 May 2020 04:39:59 +0000
+X-UUID: d6aa826bfac2400db287ca0362d9208f-20200528
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=/8kwEHmJ6TaKvbOevYpGl57UqTkIwazDt7MXIqKtVPY=; 
- b=qmcsrnbzADgRypVyMJU/lHib1OIYoafb48XWw0diQCBr5kUmgwZdXKklqZ1Fi1qVyq03f566vBPsrL2TKUXxgAaaLoDCArZedcz7sRnM9s9n1QFioPpp55RyTdxuTXqBTN+i58a/2xhF1SM5fOhtqzlG6bi6edI4X7602P3DsF4=;
-X-UUID: ed21fbb1c1ad4c8f8eb1e9481eb532ce-20200528
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=NQxTpzWSVt9V/exBuo1GGmsYXw0ueriE8T12aD6F8IM=; 
+ b=XtDq46ugdCZakv0oCcUDzadMUYjE6/TWegB2PNYxZtPM4VKPNCYaFG5cpBrlgQkFA3fMlcq1jP/97Wq+wV5Bxua9aLYovYopOJOyv0I3M/UUfMMBAxEOem6HhueJkD/jpW8TnB7qnMZ3lmzTjsOj1sgu4ZW8hLBlX9utYS/Ic04=;
+X-UUID: d6aa826bfac2400db287ca0362d9208f-20200528
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <macpaul.lin@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1930152965; Thu, 28 May 2020 20:39:59 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ with ESMTP id 628873786; Thu, 28 May 2020 20:39:59 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 28 May 2020 21:29:48 -0700
+ 15.0.1497.2; Thu, 28 May 2020 21:33:03 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 29 May 2020 12:29:30 +0800
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 29 May 2020 12:32:57 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Fri, 29 May 2020 12:29:34 +0800
+ Frontend Transport; Fri, 29 May 2020 12:33:02 +0800
 From: Macpaul Lin <macpaul.lin@mediatek.com>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Mathias Nyman
  <mathias.nyman@intel.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH] usb: host: xhci-mtk: avoid runtime suspend when removing hcd
-Date: Fri, 29 May 2020 12:29:28 +0800
-Message-ID: <1590726569-28248-1-git-send-email-macpaul.lin@mediatek.com>
+Subject: [PATCH v2] usb: host: xhci-mtk: avoid runtime suspend when removing
+ hcd
+Date: Fri, 29 May 2020 12:32:58 +0800
+Message-ID: <1590726778-29065-1-git-send-email-macpaul.lin@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1590726569-28248-1-git-send-email-macpaul.lin@mediatek.com>
+References: <1590726569-28248-1-git-send-email-macpaul.lin@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: F7F5029A8E56D799AC15E58E9FB9F79910F4976461FD69A9201D4F2A0F901EDB2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_213957_790002_84A79640 
-X-CRM114-Status: UNSURE (   9.24  )
+X-CRM114-CacheID: sfid-20200528_213957_788893_88A8DEFC 
+X-CRM114-Status: UNSURE (   9.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -99,7 +103,6 @@ when xhci is removing hcd. This might cause kernel panic when hcd
 has been freed but runtime pm suspend related handle need to
 reference it.
 
-Change-Id: I70a5dc8006207caeecbac6955ce8e5345dcc70e6
 Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
 ---
  drivers/usb/host/xhci-mtk.c |    5 +++--
