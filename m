@@ -2,83 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95F671E866C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 20:14:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 633C01E866E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 20:16:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ymrZ9WlYWsQ6wZXy98m0AC1BNSa2DLtvU0bgC+9B8Qk=; b=Tl6fKj3Y9Do1b7
-	iTiMA7nuvy7MS1O6m6hqtYAGB0Hptjfr5yDKX55zKq//NpmrChOQqFfcRcGB72JiJGbnzUROxKzCn
-	IaeNpetG+lNFZUrfFvl3shblt31Xh2mli9QbQwoSDdmDYuBAdevWRKkvlOMi05dl4BMcjPAhFVqKh
-	vciSmOlcFDW2IYhosyVZ+FCcgxs0RiaQ++lIOJuUWENka3AiJRt/28Nha83W326aHpLlqWemjTZNL
-	v5wmqj8kYYUODOPix/pjbpAX8dQuJNnijjqfq3MfxdGncBlrl3qz5Dhd81fAZGkp8keu1O6dH6niI
-	2aSnlWbJkDms4tXz1Idg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=aJoAmp/oz6DFs70lLxQE8G7QXxhhjN5C3Cz/9Go5MO4=; b=SVOEklJh1eaP+rwC8Hi8VoI1z
+	McBIk4WV1aGUDrn3A/mI60Za76lxWTqunls0AohCGAOceU1kf/ElWSB21Jx+UNpli/sx2s7vNFsDf
+	BIQDyvwPAOZ/rUM7CL8zzaX9XBAenaljdTvi9q+/CfnXeu3JwrEpI2mgXKd2sxJthtLg8aCwo2OQw
+	BnnPCc5AdT9h3BRr1N8Xlwz8bjTfXJbyxvBc9Ucp2bRXryS4qPSAByFfxDKZEExVW7GGbAXq+6wbO
+	XGh2exiaCY+7mJSPFSlPfSYsfVaJNHPIN7E+uhd6kOkOpEnK5yzQt2a+bY3CilPabDu8S/2TQ57/k
+	Vl6GV56Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jejWq-0005Le-6B; Fri, 29 May 2020 18:14:48 +0000
-Received: from mail-il1-f194.google.com ([209.85.166.194])
+	id 1jejYN-000885-Hz; Fri, 29 May 2020 18:16:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jejWi-0005L0-8x; Fri, 29 May 2020 18:14:41 +0000
-Received: by mail-il1-f194.google.com with SMTP id t8so2876661ilm.7;
- Fri, 29 May 2020 11:14:39 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=cpRQ/sE4FwRCuliRnokEgxqnFdsexjORBq+C6UB3EhI=;
- b=cDb14EEmhoMsDSYvgbHrMo84yCDDoP27D/kzM8xy5nDBNkHhaxdw6hR7CMDnfwmhxg
- sVYzfmFj7F5d5pyXCpLUof0I3I4gQacbTZQOo0OJoWUwXnUZbPs83hkwk2PJKrLFrV8U
- BUnCDWyxAcjJVApL3Ih4dhvy3HcCPf7Egf/8ZbOI4nIxJnWAjyCPPXT5bE6Eg4ay+6Mp
- 6IxYPAxBLZS3TCmQOFgLCFKzgL3fMsyoG6YnGJfCO0hEbWfCP0t8sHBQvMab+gp3Dqcs
- sPIQQerJAqrYDbsVRqMZHJcdhzfssvJyjA8WplsHwo631Wcl2eBTCp/+l/cVtKfLYI0n
- opEg==
-X-Gm-Message-State: AOAM532B4dp0LMFqOml1U71ORALEpC52qYw8k51dvjocOfqKmtLyFj9j
- kzRw70YmzxS6HnIUsbwVwg==
-X-Google-Smtp-Source: ABdhPJzvi9bsOJFgClHgIdgjoPscdvkkEsnqnNIGf4ndljse4E6rFhgqWxD2dgYBIkQ7YzCNJ9ZWCA==
-X-Received: by 2002:a92:9c52:: with SMTP id h79mr8272285ili.252.1590776078779; 
- Fri, 29 May 2020 11:14:38 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id j17sm5012580ilq.79.2020.05.29.11.14.37
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 11:14:38 -0700 (PDT)
-Received: (nullmailer pid 2685148 invoked by uid 1000);
- Fri, 29 May 2020 18:14:37 -0000
-Date: Fri, 29 May 2020 12:14:37 -0600
-From: Rob Herring <robh@kernel.org>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH v3 02/25] dt-bindings: clock: Add a binding for the RPi
- Firmware clocks
-Message-ID: <20200529181437.GA2685096@bogus>
-References: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
- <919e2f2f13583d4d53d0e95b81fc3fb8a7606107.1590594293.git-series.maxime@cerno.tech>
+ id 1jejYA-00087S-Vt; Fri, 29 May 2020 18:16:12 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E96E3206A4;
+ Fri, 29 May 2020 18:16:09 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590776170;
+ bh=GH7xgOfWGLC1xYWHZL51BlZXClwRjmPTGXTEkgGZCAc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=rs/5+UaBczGURiLrYQDpbv1FEsswVSL+V7v/G+hW1TcMvv846K+Vqn5aLBaf0Zth3
+ fKZGLUa+ZDpzeu3pWLeubWt+46pbK9QSLhmRNRxYJwAmddJfx/XAE+WX2bhO/qkD1V
+ RDEIci3V4TGyCD05zXZeC4PH9tOmCjRw2P5giNv4=
+Date: Fri, 29 May 2020 19:16:06 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Tzung-Bi Shih <tzungbi@google.com>
+Subject: Re: [PATCH] ASoC: mediatek: mt6358: support DMIC one-wire mode
+Message-ID: <20200529181606.GU4610@sirena.org.uk>
+References: <1590750293-12769-1-git-send-email-jiaxin.yu@mediatek.com>
+ <20200529110915.GH4610@sirena.org.uk>
+ <CA+Px+wVSwJK-=75chKLjSEe3bPRtV2wD95W5D_pdR0Pw0G470A@mail.gmail.com>
+ <20200529130539.GK4610@sirena.org.uk>
+ <CA+Px+wVhXoU=BdBmMW0sdPtUrnQH+Kn6dkFdW-n67qEDGceCEQ@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <919e2f2f13583d4d53d0e95b81fc3fb8a7606107.1590594293.git-series.maxime@cerno.tech>
+In-Reply-To: <CA+Px+wVhXoU=BdBmMW0sdPtUrnQH+Kn6dkFdW-n67qEDGceCEQ@mail.gmail.com>
+X-Cookie: The Killer Ducks are coming!!!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_111440_311401_6759E8F3 
-X-CRM114-Status: GOOD (  11.02  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200529_111611_044118_21674FFB 
+X-CRM114-Status: GOOD (  11.47  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.194 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,37 +79,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, Phil Elwell <phil@raspberrypi.com>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Hariprasad Kelam <hariprasad.kelam@gmail.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ howie.huang@mediatek.com, Takashi Iwai <tiwai@suse.com>,
+ ALSA development <alsa-devel@alsa-project.org>,
+ Jiaxin Yu <jiaxin.yu@mediatek.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6462452780131972351=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 27 May 2020 17:44:58 +0200, Maxime Ripard wrote:
-> The firmware running on the RPi VideoCore can be used to discover and
-> change the various clocks running in the BCM2711. Since devices will
-> need to use them through the DT, let's add a pretty simple binding.
-> 
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Cc: devicetree@vger.kernel.org
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
->  Documentation/devicetree/bindings/arm/bcm/raspberrypi,bcm2835-firmware.yaml | 24 ++++++++++++++++++++++++
->  1 file changed, 24 insertions(+)
-> 
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+--===============6462452780131972351==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="oP9at/Ymg5VWhwKB"
+Content-Disposition: inline
+
+
+--oP9at/Ymg5VWhwKB
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Sat, May 30, 2020 at 01:26:20AM +0800, Tzung-Bi Shih wrote:
+> On Fri, May 29, 2020 at 9:05 PM Mark Brown <broonie@kernel.org> wrote:
+
+> > I thought that was normal for DMICs - is this selecting between left and
+> > right or something?
+
+> Not sure what is the common name but use the same context here.
+
+> MT6358 accepts up to 2 PDM wires for 2 DMICs.
+> If one wire mode is on, MT6358 only accepts 1 PDM wire.
+> If one wire mode is off, MT6358 merges L/R from 2 PDM wires into 1
+> I2S-like to SoC.
+
+Oh, interesting - so it's essentially a mixer?  Not seen that before but
+makes sense.  In any case this definitely seems like a good fit for a DT
+property.
+
+--oP9at/Ymg5VWhwKB
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7RUWYACgkQJNaLcl1U
+h9DzCAf/eSG8ftQqt2zLUXgVK2VdTkdi/4wwtHrEUTnLh92NVK3qVJo7AlDSmwxK
+nq/ophHJqVsYmeXUCott6BaJKspd6r+KnrnyJRupzBixtLTx573x7VdREPful5eW
+6cVUHkoI0quLHqspblBrZFW0kvt6iwuol2dK0pIORn6rRiaaQlzB9kTmE1BI5Clt
+GZrYuFcCzsW7IHYLPWD3Mbl9IsTFius8mjWym4jiglkPFu+8c8bgXRLJE7wGgoGz
+x60eHOnNmXwuzOBkrao6njQPWLX+/jtRU5aw4mQ5csVzf662KRmsciNScxyWLHMV
+v00PW1FlfI9AGrtQdlSKb1UMyO+Rpg==
+=ODhy
+-----END PGP SIGNATURE-----
+
+--oP9at/Ymg5VWhwKB--
+
+
+--===============6462452780131972351==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6462452780131972351==--
+
