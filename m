@@ -2,49 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37C111E8494
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 19:19:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE7D61E849A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 19:19:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Subject:
 	References:In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fki1BjhFhnE8HUbZlASb6IspjVE7sLnBleAhpsCRjyQ=; b=AMDNKs23UwJaAn
-	9pyqzDEzWdGNEDuiYSywIiHOJeo4a+8H2Uja5OsmyyGIcaW58Zp1mat+JK/foY8rJ8yCxIChGk865
-	rqchLctH3VvAscMKSItsSZF+4Owhr5eXveYuHye4NFzP5hn9627ZKJbAZ7MxNZV5wfTABFpAJ4Wml
-	KhlJxcJHLVuZSc3TDd7RaT6LKts+UQDGDlCyf5Q83MjUtwb5zYC7PvMsWR8clYcHKrozgTFfdSiyp
-	YQtjk+GEzeUVRwEwl1c3NtpMqEJeAZhhRqjZmqhB6LbuF+KxV+UFpTNaAcEGVcL/il1YVzt2hJQf6
-	TUXZYUEOV5IbZ5aoznlg==;
+	List-Owner; bh=JI9EoNq1whxwvc4eMJgi3KOQNp0/sq3TWJHY1ttLJB8=; b=HJ5ayPxCJTMiDH
+	bDKK0/bqnZD6/Aeva63xRn5u3C7caSunTs6ZJddNJ2Ya4TQJzgdHzl8BI0aT+DxBcwe+uhT0zIuHF
+	LCQ1CW0M3F9oUKdHfpiHbvv5Sgn/9MZ/eFfdwm/SF11hWZnFh6A17a0BjTXnlN8aGMkwKowACJfI8
+	MEI4cuvOVWZm8+41i4WKSAQsfDEz467krmxDPa1Org0Ch+Dq1U23TzX92x7v3FsAkryHp92LlJQUZ
+	LK7cMdzU/nsZl6t7yv1WN3ki/aTh03iqfIpK/5xL0707aTCoJ3O3RHO9t+1Rxe8fDOyBKmbWK9rv+
+	vJKLFEpAwX7JoTuMqQyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeiex-000875-5i; Fri, 29 May 2020 17:19:07 +0000
+	id 1jeifE-0008Lc-Dl; Fri, 29 May 2020 17:19:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeiel-00086L-F8; Fri, 29 May 2020 17:18:56 +0000
+ id 1jeien-000874-Or; Fri, 29 May 2020 17:18:59 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EFB852074D;
- Fri, 29 May 2020 17:18:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A0FA420897;
+ Fri, 29 May 2020 17:18:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590772730;
- bh=a5S1gx+JJjYPO8/mi+Gcgzo3QS58fT7hT71d61WRYqY=;
+ s=default; t=1590772737;
+ bh=5AnoZIQt/nUngVMipM9Z3V3UapCgO2srd+PigzQFs3Y=;
  h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
- b=fr3b99EKpWX6dNiBPw7VavMlT7GriqwmdJIPGhfIMPclSFt3svBQ+4tI6fWQ90ct2
- ux78Dcs4U0fu896v258Aup5J1T495R63lJH5K7WGmMOnz/c1jBJ+UruRGE6+O91nAG
- uKEGDpzO80C/Q23LkPLZ3VSJqY94VGd97iPWWdME=
-Date: Fri, 29 May 2020 18:18:47 +0100
+ b=OhJ+mVVaKP2Dl1XjqU+DoGalrBE9hn5wEeNejkhRZA5ZekruQZcuIfpeU5f2aUE+G
+ a6XQuHzTos903BkVK35wpK0T+HnHSC0V6cwE2jqrvM5InXkrQYrOau6Pb9CV5Cqgmn
+ Ejsn76KQEKsB0k9FQVw1Wk34d2B1ENh/TGzWL67o=
+Date: Fri, 29 May 2020 18:18:54 +0100
 From: Mark Brown <broonie@kernel.org>
-To: linux-kernel@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>
-In-Reply-To: <20200528190605.24850-1-f.fainelli@gmail.com>
-References: <20200528190605.24850-1-f.fainelli@gmail.com>
-Subject: Re: [PATCH] spi: bcm2835: Implement shutdown callback
-Message-Id: <159077271266.17043.15897964625717364519.b4-ty@kernel.org>
+To: bcm-kernel-feedback-list@broadcom.com, Ray Jui <rjui@broadcom.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Scott Branden <sbranden@broadcom.com>, Florian Fainelli <f.fainelli@gmail.com>
+In-Reply-To: <20200528185805.28991-1-nsaenzjulienne@suse.de>
+References: <20200528185805.28991-1-nsaenzjulienne@suse.de>
+Subject: Re: [PATCH] spi: bcm2835: Enable shared interrupt support
+Message-Id: <159077271265.17043.9288577188746299196.b4-ty@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_101855_524245_52D1F687 
-X-CRM114-Status: UNSURE (   9.39  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200529_101857_831161_4F60BF24 
+X-CRM114-Status: GOOD (  10.53  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -73,24 +74,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>
+Cc: Martin Sperl <kernel@martin.sperl.org>, linux-kernel@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-spi@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 28 May 2020 12:06:05 -0700, Florian Fainelli wrote:
-> Make sure we clear the FIFOs, stop the block, disable the clock and
-> release the DMA channel.
+On Thu, 28 May 2020 20:58:04 +0200, Nicolas Saenz Julienne wrote:
+> bcm2711, Rasberry Pi 4's SoC, shares one interrupt for multiple
+> instances of the bcm2835 SPI controller. So this enables shared
+> interrupt support for them.
+> 
+> The early bail out in the interrupt routine avoids messing with buffers
+> of transfers being done by other means. Otherwise, the driver can handle
+> receiving interrupts asserted by other controllers during an IRQ based
+> transfer.
 
 Applied to
 
@@ -98,8 +99,8 @@ Applied to
 
 Thanks!
 
-[1/1] spi: bcm2835: Implement shutdown callback
-      commit: 118eb0e52eb74b899053a0f46dfe7e178788d23b
+[1/1] spi: bcm2835: Enable shared interrupt support
+      commit: ecfbd3cf3b8bb73ac6a80ddf430b5912fd4402a6
 
 All being well this means that it will be integrated into the linux-next
 tree (usually sometime in the next 24 hours) and sent to Linus during
