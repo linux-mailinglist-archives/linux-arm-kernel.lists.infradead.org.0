@@ -2,88 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 267F41E825D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:44:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2EBAC1E826A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:46:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mFAVa6IxAPzEZF9iKKxKkmyy7+G3tbX6VkhiVN9RK2w=; b=aeyGt0b9epYWt2
-	j3REgJOs1rJGp/+nsE4uQ7FbrZUMttm2NF/EpMORUmr37/ZW2LJrWRJiQa0RFsjPFEXnTxi9gEcDO
-	OeNrTbQjwUNraCBbNyRL5myzuUpvOLpzDY07MD5U4dQAA6HGTm8hkwW8V1S1m2TnSnxZCF+b5HzS+
-	HyIFZBXscvHwzpdtm47XjfJW4hH6d6/YaOvBlMeG69CdBeSc+NTVLrXCYIp4mqAgWDI8tg+fg8VAE
-	p3eg3CaF/cXv2MIKuGkz39bsCmQoAak/8otGue4fi6r878DzPG/yIhx1VsDTKVjxO14kuPr+MWdHM
-	AuIBsG1SpZiWfWKTwFjA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xm57aC6MUZh2U+Gxm/5CFwB9qcUrgYSq7lfucsRc4+M=; b=izuJwk1Sy/hfVP
+	4cj6LBk1QSQ8dtU+Ws59/4JsSP4+1+yTbElKijr8UBRsxt0Q3VT4wsBaKPLzWvy4kWaVVnc83ofGV
+	zqLP184SNIlK7wGXiCGspcQm5ejGNrzOzTZp/2neXh8WJ5+vpa/8DQORzvYsQ0uGk19EqcCgFQAeh
+	7ZQyH5H419M8W8tlAyo1dc4IrXWozj4N0F35WsQqhT/c+STBCVOwXuFBy/uEyQY0Tu40kwnMvvBoZ
+	MHCz5xqrCzqGovWnk7TWMVTBuMBRM8PQuBn6ehTTJK80oSvUcL02unTY3b76/Kf3yiHRkBZckqXoC
+	eUgw2/fZZ7fpY8t/hpRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jehBg-0007SB-2j; Fri, 29 May 2020 15:44:48 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jehD4-0001iK-BA; Fri, 29 May 2020 15:46:14 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jehBX-0007RH-MD; Fri, 29 May 2020 15:44:41 +0000
-Received: by mail-wm1-x341.google.com with SMTP id f185so4119490wmf.3;
- Fri, 29 May 2020 08:44:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=dZl3sOoHlWuzucNXfMp2p0mgDBU/NJ3Y6nLUtAUeFPY=;
- b=iQh51dnsOVAsZ7p1i/vc+iLPLJedHjqmvk0WT6zqHKt35yhG+mF5N24hr44F71lnt3
- ziXY8P94diOdcINikFCpltde3xjphLzv2losCnWXGrBRUSkRbJDADPXxoKR1+z2HoXxn
- CucmmxO3c0lODdzbLNMlwetSvlgp2D2zZdsyoZMftqPCG9wYC5cX7A7ZdKhnlA6NJP2a
- +2XzsX0j4Zh/jbzuFX0kRcM8YT1N+YSx549FIg2+6cYBjLDJG/3xIacSOB+gVobk4aYz
- MOvVjaQaDb34rFNJmnfn9zR1VtLZBGJhokEjOlG+uSsMNq2r8djtb/Mk+7GWciVwBRaI
- Qt0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=dZl3sOoHlWuzucNXfMp2p0mgDBU/NJ3Y6nLUtAUeFPY=;
- b=gw29aPeozRUDAnQfwrvHsLN/016xz9FmLMULKTfURDYoIdbJQyl8V42VkWRTWLo+Zn
- 7k8FJ3ma4UhbPObS1tYutCn3J6xjT91GzC8scCjL5yKsEHVfX1U0bf40fKASdvPTvk0j
- 8fLzirP2P6Bjv5lvgJt+rAHH8qROYQtV9KIEuLVZde9KoDGOb2YI8dlAJRoetXSqU8tU
- kJeoylFlZmMjDvgZbFeKZT4RAput6PjSDgub/OGv4aBNvlRomQUTEKTKcjrqSnli2ur7
- 5pQBWc1thczJKUMCCrA/qsiIFdvNfYz63Sfzb7hgdW5oiEkuHUM9si7tQyp72BVmPTQy
- EE/g==
-X-Gm-Message-State: AOAM533CZPmRaNMEdWEFoPA1wYvoC55x0xjpOBW8fvAViP87va/0Qisd
- D5oJL3ErFVVoYwEzb6Y3rQdPHnt7
-X-Google-Smtp-Source: ABdhPJyZ8xu3odmGBzMNwbIAqQRzO79AqjDmSy79FzGlVroNcfOqyFP+z+tOoF/poA2GOlef/CwZiQ==
-X-Received: by 2002:a7b:c096:: with SMTP id r22mr9080376wmh.92.1590767073359; 
- Fri, 29 May 2020 08:44:33 -0700 (PDT)
-Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id
- h20sm11766789wma.6.2020.05.29.08.44.29
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 29 May 2020 08:44:32 -0700 (PDT)
-Subject: Re: [PATCH 3/4] pinctrl: bcm2835: Match BCM7211 compatible string
-To: Stefan Wahren <stefan.wahren@i2se.com>, linux-kernel@vger.kernel.org
-References: <20200528192112.26123-1-f.fainelli@gmail.com>
- <20200528192112.26123-4-f.fainelli@gmail.com>
- <291609c0-f1ec-2626-8bfa-cf25a9e45365@i2se.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <7a25489d-e496-d470-b99f-459630b1db44@gmail.com>
-Date: Fri, 29 May 2020 08:44:27 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.8.1
-MIME-Version: 1.0
-In-Reply-To: <291609c0-f1ec-2626-8bfa-cf25a9e45365@i2se.com>
+ id 1jehCr-0001gT-Vl; Fri, 29 May 2020 15:46:03 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04TFbsGw004565; Fri, 29 May 2020 17:45:49 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=MUqHOgczk7YoJhh076iqGU09+X0d5LSpCvIgcaIw6hU=;
+ b=q0oGSqWCvjiL3B4zk68Matq7A+gu2efgaP+G8uXEWnPc9o93OqEZ1vtb4usPssjrtLVn
+ 3meynMM4VDckBEJXGrXxCWOlCCKGk5K1EZVzmfTIx6kHKYlqVkJe73c3V50QYhqWquCE
+ rutWC0WF5G+S/sDfzfx7nedXU0esELuaNrx5OigSCARnKYp1uhBUh2v/dCQVHaeY0e/F
+ bwLlh6ThmCAdDee8QwGDK7BrpFTZV2a6MUMukwAJSChKy0RfewWwop5Cklp4Jam8y8YA
+ psmO5/z8OTrHe6lPz4UFItkpbhQC0zvpagrl6lH8jYu2gtaF3dCsvNgSm+TN/JfVuwwu bg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 316tqhhpwj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 29 May 2020 17:45:48 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 48A0E100034;
+ Fri, 29 May 2020 17:45:45 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id DFC542B1893;
+ Fri, 29 May 2020 17:45:44 +0200 (CEST)
+Received: from SFHDAG6NODE3.st.com (10.75.127.18) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 29 May
+ 2020 17:45:44 +0200
+Received: from SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6]) by
+ SFHDAG6NODE3.st.com ([fe80::d04:5337:ab17:b6f6%20]) with mapi id
+ 15.00.1473.003; Fri, 29 May 2020 17:45:44 +0200
+From: Philippe CORNU <philippe.cornu@st.com>
+To: Adrian Ratiu <adrian.ratiu@collabora.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-rockchip@lists.infradead.org"
+ <linux-rockchip@lists.infradead.org>, Laurent Pinchart
+ <Laurent.pinchart@ideasonboard.com>
+Subject: Re: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
+ bridge handle the HW version check
+Thread-Topic: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
+ bridge handle the HW version check
+Thread-Index: AQHWNdA2P+mlUH/UMUatFbM8/3eWsg==
+Date: Fri, 29 May 2020 15:45:44 +0000
+Message-ID: <4acc09e8-0610-01f6-b18d-3ffc390c45a3@st.com>
+References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
+ <20200427081952.3536741-9-adrian.ratiu@collabora.com>
+In-Reply-To: <20200427081952.3536741-9-adrian.ratiu@collabora.com>
+Accept-Language: fr-FR, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.47]
+Content-ID: <EB516333C6BA834A9DE9BB87A8FFBD44@st.com>
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-05-29_08:2020-05-28,
+ 2020-05-29 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_084439_725980_AB97A4C9 
-X-CRM114-Status: GOOD (  17.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200529_084602_482143_C7E67258 
+X-CRM114-Status: GOOD (  26.45  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -102,65 +113,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
- "open list:PIN CONTROL SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>, Heiko Stuebner <heiko@sntech.de>,
+ Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ Yannick FERTRE <yannick.fertre@st.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@collabora.com" <kernel@collabora.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ Arnaud Ferraris <arnaud.ferraris@collabora.com>,
+ Benjamin GAIGNARD <benjamin.gaignard@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Adrian,
+and thank you very much for the patchset.
+Thank you also for having tested it on STM32F769 and STM32MP1.
+Sorry for the late response, Yannick and I will review it as soon as 
+possible and we will keep you posted.
+Note: Do not hesitate to put us in copy for the next version 
+(philippe.cornu@st.com, yannick.fertre@st.com)
+Regards,
+Philippe :-)
 
 
-On 5/29/2020 6:11 AM, Stefan Wahren wrote:
-> Hi Florian,
+On 4/27/20 10:19 AM, Adrian Ratiu wrote:
+> The stm mipi-dsi platform driver added a version test in
+> commit fa6251a747b7 ("drm/stm: dsi: check hardware version")
+> so that HW revisions other than v1.3x get rejected. The rockchip
+> driver had no such check and just assumed register layouts are
+> v1.3x compatible.
 > 
-> Am 28.05.20 um 21:21 schrieb Florian Fainelli:
->> The BCM7211 SoC uses the same pinconf_ops as the ones defined for the
->> BCM2711 SoC, match the compatible string and use the correct set of
->> options.
->>
->> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
->> ---
->>  drivers/pinctrl/bcm/pinctrl-bcm2835.c | 4 ++++
->>  1 file changed, 4 insertions(+)
->>
->> diff --git a/drivers/pinctrl/bcm/pinctrl-bcm2835.c b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
->> index 06bd2b70af3c..e8ad1824c6b3 100644
->> --- a/drivers/pinctrl/bcm/pinctrl-bcm2835.c
->> +++ b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
->> @@ -1137,6 +1137,10 @@ static const struct of_device_id bcm2835_pinctrl_match[] = {
->>  		.compatible = "brcm,bcm2711-gpio",
->>  		.data = &bcm2711_plat_data,
->>  	},
->> +	{
->> +		.compatible = "brcm,bcm7211-gpio",
->> +		.data = &bcm2711_pinconf_ops,
+> Having such tests was a good idea because only v130/v131 layouts
+> were supported at the time, however since adding multiple layout
+> support in the bridge, the version is automatically checked for
+> all drivers, compatible layouts get picked and unsupported HW is
+> automatically rejected by the bridge, so there's no use keeping
+> the test in the stm driver.
 > 
-> this doesn't look safe. Maybe bcm2711_plat_data?
-
-Whoops you are right, I sent an incorrect version.
-
+> The main reason prompting this change is that the stm driver
+> test immediately disabled the peripheral clock after reading
+> the version, making the bridge read version 0x0 immediately
+> after in its own probe(), so we move the clock disabling after
+> the bridge does the version test.
 > 
-> Looks like the original patch series based on a older version. Please
-> double check this still applies since the introduction of 58 GPIO
-> support for BCM2711.
-
-We can use bcm2711_plat_data, thanks Stefan.
--- 
-Florian
-
+> Tested on STM32F769 and STM32MP1.
+> 
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> Reported-by: Adrian Pop <pop.adrian61@gmail.com>
+> Tested-by: Adrian Pop <pop.adrian61@gmail.com>
+> Tested-by: Arnaud Ferraris <arnaud.ferraris@collabora.com>
+> Signed-off-by: Adrian Ratiu <adrian.ratiu@collabora.com>
+> ---
+> New in v6.
+> ---
+>   drivers/gpu/drm/stm/dw_mipi_dsi-stm.c | 12 +++---------
+>   1 file changed, 3 insertions(+), 9 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+> index 2e1f2664495d0..7218e405d7e2b 100644
+> --- a/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+> +++ b/drivers/gpu/drm/stm/dw_mipi_dsi-stm.c
+> @@ -402,15 +402,6 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
+>   		goto err_dsi_probe;
+>   	}
+>   
+> -	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
+> -	clk_disable_unprepare(pclk);
+> -
+> -	if (dsi->hw_version != HWVER_130 && dsi->hw_version != HWVER_131) {
+> -		ret = -ENODEV;
+> -		DRM_ERROR("bad dsi hardware version\n");
+> -		goto err_dsi_probe;
+> -	}
+> -
+>   	dw_mipi_dsi_stm_plat_data.base = dsi->base;
+>   	dw_mipi_dsi_stm_plat_data.priv_data = dsi;
+>   
+> @@ -423,6 +414,9 @@ static int dw_mipi_dsi_stm_probe(struct platform_device *pdev)
+>   		goto err_dsi_probe;
+>   	}
+>   
+> +	dsi->hw_version = dsi_read(dsi, DSI_VERSION) & VERSION;
+> +	clk_disable_unprepare(pclk);
+> +
+>   	return 0;
+>   
+>   err_dsi_probe:
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
