@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4244C1E7179
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 02:29:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB5911E717C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 02:29:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/utFHMrdobSjaU2mB2tj+HSrSmrpWv3xa1nbb8NTHY8=; b=YnwxjyORewu/9C
-	WFgEnqqAx77D+tourp7li6JO+viLLl/co3gULC1LVuQVZ1nORc6SAVmszuVlT36JjmiAk18AdUTEs
-	gHW4svncAny6EOA+PevnmZFUbxCIpNleNV4NuuS2uKpT3ZCXWF/apPSXp1wzOO+1+zdS8QHwPp7HC
-	PltX0o1v8P3EO88xausywH2kfji4YBOK+i+p5AWOxcPFZa2Ywu1SsquYDOZaMJfdHwgz0PaC93Qf5
-	GkjlZxi6nlUUl7hS6yHwFUtMqnzbbYUn8jyb1+WUE72sHMV8yBtgid94FHy9tkul4PTcXT0P++mtE
-	IUs5sjddKvovs7BrAfkg==;
+	List-Owner; bh=cT8JH43Iby9CVHZuMyRdyIJJX++HydTITrwUKhiEwCU=; b=pc3grBQqwv4z1C
+	vHeE9FME8LYa1BbyKpYVuNkpn5Mkaq7TdV0J9orhULwW1zhTPlsswZ7zaFIsm+a9xoNxO6Oan///M
+	RIGEaXZojs0rg2YINMNHHsoPW7wsKMl0tBN6UehlGpQEM+sOCKzvz285dOYO0L8f8xeDsQjHxwCME
+	zQJf3XXYmFHZ6Ja4QptFEvuK7P0i81cKe1PkIVp5+1T6qYOd0Pw41hwrwX/AKz+Hn4CFbiQQzMun8
+	c7fypnQ1bt6Zg/9IconrkyX/7naGBzdBpJN898qGn4TCNgbqBF4+mCo+m1foUoY4nvoK65idaFp8F
+	XsScyx5CWaTCPcbyy8Zg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeStV-00086l-8b; Fri, 29 May 2020 00:29:05 +0000
+	id 1jeSu6-0000dl-NY; Fri, 29 May 2020 00:29:42 +0000
 Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeSq3-00060z-1R; Fri, 29 May 2020 00:25:32 +0000
+ id 1jeSq4-00062F-SH; Fri, 29 May 2020 00:25:34 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id CCE30200005;
- Fri, 29 May 2020 00:25:27 +0000 (UTC)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 9F7C2200009;
+ Fri, 29 May 2020 00:25:29 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tudor Ambarus <Tudor.Ambarus@microchip.com>,
  <linux-mtd@lists.infradead.org>, Rob Herring <robh+dt@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>, <devicetree@vger.kernel.org>
-Subject: [PATCH v7 04/20] mtd: rawnand: Create a helper to retrieve the ECC
- placement
-Date: Fri, 29 May 2020 02:25:01 +0200
-Message-Id: <20200529002517.3546-5-miquel.raynal@bootlin.com>
+Subject: [PATCH v7 05/20] mtd: rawnand: Add a kernel doc to the ECC algorithm
+ enumeration
+Date: Fri, 29 May 2020 02:25:02 +0200
+Message-Id: <20200529002517.3546-6-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200529002517.3546-1-miquel.raynal@bootlin.com>
 References: <20200529002517.3546-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_172531_234520_C98639E4 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20200528_172533_097435_8C231E1B 
+X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -76,63 +77,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use it from nand_dt_init() to initialize the ECC structure.
-
-This allows the deprecation of the hw_syndrome ECC mode.
+Before moving it to the generic raw NAND core, ensure the enumeration
+is properly described.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 ---
- drivers/mtd/nand/raw/nand_base.c | 29 +++++++++++++++++++++++++++++
- 1 file changed, 29 insertions(+)
+ include/linux/mtd/rawnand.h | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/drivers/mtd/nand/raw/nand_base.c b/drivers/mtd/nand/raw/nand_base.c
-index 9fbd2a474b62..fd0bfe9bf7ae 100644
---- a/drivers/mtd/nand/raw/nand_base.c
-+++ b/drivers/mtd/nand/raw/nand_base.c
-@@ -5047,6 +5047,34 @@ static int of_get_nand_ecc_mode(struct device_node *np)
- 	return -ENODEV;
- }
+diff --git a/include/linux/mtd/rawnand.h b/include/linux/mtd/rawnand.h
+index f6ffd174abb7..6699ec7f4d40 100644
+--- a/include/linux/mtd/rawnand.h
++++ b/include/linux/mtd/rawnand.h
+@@ -106,6 +106,13 @@ enum nand_ecc_placement {
+ 	NAND_ECC_PLACEMENT_INTERLEAVED,
+ };
  
-+enum nand_ecc_placement of_get_nand_ecc_placement(struct device_node *np)
-+{
-+	enum nand_ecc_placement placement;
-+	const char *pm;
-+	int err;
-+
-+	err = of_property_read_string(np, "nand-ecc-placement", &pm);
-+	if (!err) {
-+		for (placement = NAND_ECC_PLACEMENT_INTERLEAVED;
-+		     placement < ARRAY_SIZE(nand_ecc_placement); placement++) {
-+			if (!strcasecmp(pm, nand_ecc_placement[placement]))
-+				return placement;
-+		}
-+	}
-+
-+	/*
-+	 * For backward compatibility we support few obsoleted values that don't
-+	 * have their mappings into the nand_ecc_placement enum anymore.
-+	 */
-+	err = of_property_read_string(np, "nand-ecc-mode", &pm);
-+	if (!err) {
-+		if (!strcasecmp(pm, "hw_syndrome"))
-+			return NAND_ECC_PLACEMENT_INTERLEAVED;
-+	}
-+
-+	return NAND_ECC_PLACEMENT_UNKNOWN;
-+}
-+
- static const char * const nand_ecc_algos[] = {
- 	[NAND_ECC_HAMMING]	= "hamming",
- 	[NAND_ECC_BCH]		= "bch",
-@@ -5143,6 +5171,7 @@ static int nand_dt_init(struct nand_chip *chip)
- 
- 	ecc_mode = of_get_nand_ecc_mode(dn);
- 	ecc_algo = of_get_nand_ecc_algo(dn);
-+	chip->ecc.placement = of_get_nand_ecc_placement(dn);
- 	ecc_strength = of_get_nand_ecc_strength(dn);
- 	ecc_step = of_get_nand_ecc_step_size(dn);
- 
++/**
++ * enum nand_ecc_algo - NAND ECC algorithm
++ * @NAND_ECC_UNKNOWN: Unknown algorithm
++ * @NAND_ECC_HAMMING: Hamming algorithm
++ * @NAND_ECC_BCH: Bose-Chaudhuri-Hocquenghem algorithm
++ * @NAND_ECC_RS: Reed-Solomon algorithm
++ */
+ enum nand_ecc_algo {
+ 	NAND_ECC_UNKNOWN,
+ 	NAND_ECC_HAMMING,
 -- 
 2.20.1
 
