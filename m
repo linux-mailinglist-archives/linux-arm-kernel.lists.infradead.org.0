@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A84131E8C13
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 01:29:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64F6A1E8C0E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 01:29:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nl3ERsxnrO5jLmTGH0NkeeYKdzpeymMtb7ExEEzx7l8=; b=g8CEV9Wh6L5g9f
-	c63XqtlXrtwWrhnloq9JyGmPD4weV/D25V5ypRe5zD1LZ9L4wkNaMdeqtGA3gwYPARppS3ueqKZCr
-	YqZAhWJjqjUbq7cHMceR6rhZYN0qmrfvgS3pU1vTFE04kbwX3tsgosE1wNev9Pvot4QQdQ1UWmZuM
-	DmVFpW9FXYl57H93bL6jaKNYOMcKnIymSSzKTeueEX5BRrcdmNf3ST9w8GpOY4YlxHY1UjXjyusOJ
-	NiX6LRulvEKRVF0wIi9cUXZkcKu4pPeqVva8k2ceIvZuWjhqUfXRLVPtiKyay3Etk9kRV92qOF48C
-	2vNKe4xyxvSp42fpQs5w==;
+	List-Owner; bh=vonhv2wxUgKR5kUdEpMLTmeFq+AJo5hIXB3byuhmq2Q=; b=tzbn1EfyFSFzgY
+	BAMvl2d6MsUGqTjwYr9VF2qPaRs1lT3x4jobutHEeZx6+pRz/fvR0Id+Tv1+smEo+eNVUueyxaoGP
+	8AWff/jnxzEWuN5Lth8OvNCa/V7et0m7y9KZvtMFo1q9LINgP0gLS9byazwo5nDhRsWFQbXyc6YyJ
+	YlIxddt50GphRxh2GzSZsieDVM2XU5uXT2pCgKY2Q8qHbLZMek41JJQG0r6AvXN2gfMwUeuQAHTQZ
+	KFK9bDGrKgC5DeBYhNkPCOQpxp+OFryo6hxgid+KLHHZM4sINXxFWVDZ8zmabxU0XTGfOwY+bVY6Q
+	N6LcyICNVB1D2jzOwePg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeoRa-0005Or-GJ; Fri, 29 May 2020 23:29:42 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
+	id 1jeoR1-0004rn-9Q; Fri, 29 May 2020 23:29:07 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeoQ0-0004BD-Lt
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 23:28:06 +0000
+ id 1jeoQ0-0004Bm-CH
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 23:28:05 +0000
 X-Originating-IP: 86.202.110.81
 Received: from localhost (lfbn-lyo-1-15-81.w86-202.abo.wanadoo.fr
  [86.202.110.81])
  (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id BA796C0002;
- Fri, 29 May 2020 23:28:00 +0000 (UTC)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id E7DE920002;
+ Fri, 29 May 2020 23:28:01 +0000 (UTC)
 From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 To: Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH v4 3/9] ARM: dts: at91: sama5d2: add TCB GCLK
-Date: Sat, 30 May 2020 01:27:43 +0200
-Message-Id: <20200529232749.299627-4-alexandre.belloni@bootlin.com>
+Subject: [PATCH v4 4/9] ARM: at91: add atmel tcb capabilities
+Date: Sat, 30 May 2020 01:27:44 +0200
+Message-Id: <20200529232749.299627-5-alexandre.belloni@bootlin.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200529232749.299627-1-alexandre.belloni@bootlin.com>
 References: <20200529232749.299627-1-alexandre.belloni@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_162804_866072_D68291CD 
-X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-CacheID: sfid-20200529_162804_578840_3058234F 
+X-CRM114-Status: UNSURE (   9.17  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -48,9 +48,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
+ low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
+ [217.70.183.200 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -74,47 +74,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The sama5d2 tcbs take an extra input clock, their gclk.
+From: Kamel Bouhara <kamel.bouhara@bootlin.com>
 
+Some atmel socs have extra tcb capabilities that allow using a generic
+clock source or enabling a quadrature decoder.
+
+Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
 Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- arch/arm/boot/dts/sama5d2.dtsi | 12 ++++++------
- 1 file changed, 6 insertions(+), 6 deletions(-)
+ include/soc/at91/atmel_tcb.h | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-diff --git a/arch/arm/boot/dts/sama5d2.dtsi b/arch/arm/boot/dts/sama5d2.dtsi
-index ab550d69db91..996143e966d8 100644
---- a/arch/arm/boot/dts/sama5d2.dtsi
-+++ b/arch/arm/boot/dts/sama5d2.dtsi
-@@ -499,23 +499,23 @@ macb0: ethernet@f8008000 {
- 			};
+diff --git a/include/soc/at91/atmel_tcb.h b/include/soc/at91/atmel_tcb.h
+index c3c7200ce151..1d7071dc0bca 100644
+--- a/include/soc/at91/atmel_tcb.h
++++ b/include/soc/at91/atmel_tcb.h
+@@ -36,9 +36,14 @@ struct clk;
+ /**
+  * struct atmel_tcb_config - SoC data for a Timer/Counter Block
+  * @counter_width: size in bits of a timer counter register
++ * @has_gclk: boolean indicating if a timer counter has a generic clock
++ * @has_qdec: boolean indicating if a timer counter has a quadrature
++ * decoder.
+  */
+ struct atmel_tcb_config {
+ 	size_t	counter_width;
++	bool    has_gclk;
++	bool    has_qdec;
+ };
  
- 			tcb0: timer@f800c000 {
--				compatible = "atmel,at91sam9x5-tcb", "simple-mfd", "syscon";
-+				compatible = "atmel,sama5d2-tcb", "simple-mfd", "syscon";
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				reg = <0xf800c000 0x100>;
- 				interrupts = <35 IRQ_TYPE_LEVEL_HIGH 0>;
--				clocks = <&pmc PMC_TYPE_PERIPHERAL 35>, <&clk32k>;
--				clock-names = "t0_clk", "slow_clk";
-+				clocks = <&pmc PMC_TYPE_PERIPHERAL 35>, <&pmc PMC_TYPE_GCK 35>, <&clk32k>;
-+				clock-names = "t0_clk", "gclk", "slow_clk";
- 			};
- 
- 			tcb1: timer@f8010000 {
--				compatible = "atmel,at91sam9x5-tcb", "simple-mfd", "syscon";
-+				compatible = "atmel,sama5d2-tcb", "simple-mfd", "syscon";
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				reg = <0xf8010000 0x100>;
- 				interrupts = <36 IRQ_TYPE_LEVEL_HIGH 0>;
--				clocks = <&pmc PMC_TYPE_PERIPHERAL 36>, <&clk32k>;
--				clock-names = "t0_clk", "slow_clk";
-+				clocks = <&pmc PMC_TYPE_PERIPHERAL 36>, <&pmc PMC_TYPE_GCK 36>, <&clk32k>;
-+				clock-names = "t0_clk", "gclk", "slow_clk";
- 			};
- 
- 			hsmc: hsmc@f8014000 {
+ /**
 -- 
 2.26.2
 
