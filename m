@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCC161E87C3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 21:27:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B57B1E87E0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 21:32:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5qb2pae0K47DzullrFOrQ0KAewAncGk3NozKSNE+AF4=; b=udGcbxYlB/8aXp
-	xKz/+Ndw5fr9OY7N21OfzYil58rH/ePQeOX51jm/Z8tmPinUfzhFLilFQll5wJAaOfnD5NsIfZe/v
-	yh+txRX1XFCK02VHtv3Tu7Z2zti+ZHJOIB76r1v6EBNvqiQaJxmHWoVhxcg1OTwaZmXEPq3oalKMr
-	grA3AdKIBltc4xdr9fP0E0Un62mbPr/hgqcN9gx39Mj/vA0FiPN/iSOJTjaZfZKU6q69j2ByAYgrL
-	4ypwJZWpSYtbETVRc6rhDGgVE8GR8DYIC3+acVAeUqj66mT/s2hHYoQenOhggKCnNcvllUQHJwKGv
-	5w8jNZkPGYe+K3+GxRTw==;
+	List-Owner; bh=O2Q2/4SBdx2U6khioJEidNYcY0bPHwKJBXIJEP7PYBE=; b=ryBJ3b3LLHTHgo
+	zNfsX0dDIvjQ3EM5M46y46yXhOmsnkjrtD9/SrV/4u3fUY2jHwiPE/kFrpmixcpNhnwZAAAAVW+cG
+	7BEtRGETdBuGfPvMxipvFsUpjm9WZ4PA8VRcd9OoAh+w7cIGP6EpVPl6KonXklMD5SownYdH7Ciu5
+	l5XQ5e7AP553PWIUgo45c6SHjMLc+LNlqvWm6/RXdir7lDZvej6WJEK085zWKBQnCr+7eE6ko/BG6
+	Rd9j2GCSk5XB+QwPXC+mVBXdjLgHpwUqsuaP89YMYtSV5YFVGX4ygPLsK/Sr3qIm1hcdWc5gITFfS
+	C/fKUtnnvMVUnGmAYRGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jekfB-00024J-0j; Fri, 29 May 2020 19:27:29 +0000
-Received: from mail-io1-f68.google.com ([209.85.166.68])
+	id 1jekjr-0005Om-Lz; Fri, 29 May 2020 19:32:19 +0000
+Received: from mail-il1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jekf0-00023o-Mu; Fri, 29 May 2020 19:27:19 +0000
-Received: by mail-io1-f68.google.com with SMTP id j8so507062iog.13;
- Fri, 29 May 2020 12:27:18 -0700 (PDT)
+ id 1jekjg-0005OE-GF; Fri, 29 May 2020 19:32:09 +0000
+Received: by mail-il1-f194.google.com with SMTP id t8so3095233ilm.7;
+ Fri, 29 May 2020 12:32:08 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=/aw5rjkKZ1aNLtzNBPRgdXUzA/GNRGygjmxINK2X5fA=;
- b=K8j4Xapt7DOs4R9rFNd9Ggz3gGUtggw7WkryoXu0SNUX8NPj4hmLRkFNF+mkpNDZaE
- 2U0/BoX6N8OAocjAuvnMDFrvR8SxpyYOG43wKzwznE+AN1kX5Py2q3kyyKj/hljMe+yA
- zNfcUrMtuYB75ghGfrJvRjX4GhTDw1fngoI4rys313sJlN2p/N5RUeMDch5kvIjJCl6c
- hhUC+dd4BG1eKx7oODgQ3tW6zXNM+g7pFFRlBbYxuhmTV5SeYCNucOWtp20s4TC3q8yU
- nE2cGcv7G1LijlDQP6lKUg6p+25p9vvICOPqWP4lWAp94IgoPkOsDem8+DJFKKcoQE6B
- AuQA==
-X-Gm-Message-State: AOAM533093rOBCXrmx4oiZt/wnF6qsF2Lo2n1c/8ZiWghvwPSabzjsMK
- XR9UwhRnhMiY80zNBD4lXQ==
-X-Google-Smtp-Source: ABdhPJzI+XOVZoeOXsD31yjOKfbl4d6VkVa2jbPtpd2RLN5CANUU/Kj27igKjwRkwCJ3YG/2Z4DjRQ==
-X-Received: by 2002:a02:90cd:: with SMTP id c13mr8587847jag.83.1590780437502; 
- Fri, 29 May 2020 12:27:17 -0700 (PDT)
+ bh=WLIXs+NotcPvB/2nb4x3iCIqRLOdwgpWw+TVrHgQ7j0=;
+ b=ByrIoLI4DjEpKdWR8ifXCYOrzELsW3qgDmsooUsyTwFhMiNDxihSanWRGisRyDK2yy
+ fc4flHFMbO3vIPujRqj73BOqj9NvyNfcl+8gYGl0Mkd2uBINq9ygBY64VHAMXZEnNt3l
+ QIzM1ccVhZsAoDvBjzwcf0Nz66bjI1ufLeDlaWtcf8Naj5yPUtIh29rKtCQmaOTKyyaB
+ 5uE2qzXcZsRV+uCnPaW1qk2TB8lnMjhVSku50CuRfprpFy/hYMTOXNaAusDC1t+3888E
+ svdk01APxHWNeFSrJLllNO9CrjrwMgM/LZaj4IWiZvjlzUaTHU6OfxT7vAbijCkpP5Tk
+ RESQ==
+X-Gm-Message-State: AOAM5309IIX3pNwRPg+0Yvf8Pnu3+WSVW/g2zcXitObuI+rLkKv8EImi
+ 8aqShAfkYwsoQcstBiSaZQ==
+X-Google-Smtp-Source: ABdhPJzLV4Nh06NDTo1GqYtMBGKgDfGEco5yimV1fqmE6f7qX9jUhDGQjrePOOMW9O2eVU9uMOmh5A==
+X-Received: by 2002:a92:c9c6:: with SMTP id k6mr9282512ilq.192.1590780727627; 
+ Fri, 29 May 2020 12:32:07 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id v76sm5436198ill.73.2020.05.29.12.27.16
+ by smtp.gmail.com with ESMTPSA id f26sm2734253ion.23.2020.05.29.12.32.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 12:27:16 -0700 (PDT)
-Received: (nullmailer pid 2799831 invoked by uid 1000);
- Fri, 29 May 2020 19:27:15 -0000
-Date: Fri, 29 May 2020 13:27:15 -0600
+ Fri, 29 May 2020 12:32:06 -0700 (PDT)
+Received: (nullmailer pid 2807651 invoked by uid 1000);
+ Fri, 29 May 2020 19:32:05 -0000
+Date: Fri, 29 May 2020 13:32:05 -0600
 From: Rob Herring <robh@kernel.org>
-To: Bartosz Golaszewski <brgl@bgdev.pl>
-Subject: Re: [PATCH net-next v2] dt-bindings: net: rename the bindings
- document for MediaTek STAR EMAC
-Message-ID: <20200529192715.GA2799386@bogus>
-References: <20200528135902.14041-1-brgl@bgdev.pl>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH 1/4] dt-bindings: pinctrl: Document 7211 compatible for
+ brcm, bcm2835-gpio.txt
+Message-ID: <20200529193205.GA2807600@bogus>
+References: <20200528192112.26123-1-f.fainelli@gmail.com>
+ <20200528192112.26123-2-f.fainelli@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200528135902.14041-1-brgl@bgdev.pl>
+In-Reply-To: <20200528192112.26123-2-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_122718_746155_1B16FD9B 
-X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-CacheID: sfid-20200529_123208_537849_8894D037 
+X-CRM114-Status: UNSURE (   9.66  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -66,7 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.68 listed in list.dnswl.org]
+ no trust [209.85.166.194 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -76,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.68 listed in wl.mailspike.net]
+ [209.85.166.194 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -90,33 +91,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Stephane Le Provost <stephane.leprovost@mediatek.com>,
- Fabien Parent <fparent@baylibre.com>, Pedro Tsai <pedro.tsai@mediatek.com>,
- linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Andrew Perepech <andrew.perepech@mediatek.com>, netdev@vger.kernel.org,
- Matthias Brugger <matthias.bgg@gmail.com>, Jakub Kicinski <kuba@kernel.org>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Ray Jui <rjui@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
+ linux-kernel@vger.kernel.org,
+ "open list:PIN CONTROL SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 28 May 2020 15:59:02 +0200, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+On Thu, 28 May 2020 12:21:09 -0700, Florian Fainelli wrote:
+> Document the brcm,bcm7211-gpio compatible string in the
+> brcm,bcm2835-gpio.txt document.
 > 
-> The driver itself was renamed before getting merged into mainline, but
-> the binding document kept the old name. This makes both names consistent.
-> 
-> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 > ---
-> v1 -> v2:
-> - update the id field as well
-> 
->  .../net/{mediatek,eth-mac.yaml => mediatek,star-emac.yaml}      | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->  rename Documentation/devicetree/bindings/net/{mediatek,eth-mac.yaml => mediatek,star-emac.yaml} (96%)
+>  Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt | 1 +
+>  1 file changed, 1 insertion(+)
 > 
 
 Acked-by: Rob Herring <robh@kernel.org>
