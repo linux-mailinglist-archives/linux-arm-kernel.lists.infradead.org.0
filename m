@@ -2,81 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A83171E8792
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 21:18:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CCB81E87A1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 21:19:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=8FR9bC7B0FPyWwtsH88K9rnqIuhQEDYegePlHV5ezaY=; b=IAhI2CcscJ8RFMwx6WAUnN+XuZ
-	w9bIkLrkPAN26MnIveg0E4GM45Q7Bor/6f1TgAs/JOe1SOMxmirYpBTc6ue1t6I6z3hXw+YU2oeAf
-	dzkH3LgLZfvTIznxmFAExcH1NcJzsu2T9FgI5kuWtjjlJ/p4tb40LxKzC2tHk9VpfZATP8/k9P3yc
-	UyAQJmxVAvoRO6Xzi6+3rgpj9e2EGe3euEhpyhXwteFh1kiMrY+j22oIXzVufdEGEKIbS9Ia8K/wz
-	th7PHxyQ1u4Q41/qTlUijkA02wLAUV4EgP0ecJJ3Kq4tWsAck4I8jzhvKTHXgcHJBrnu3TQZ58aJg
-	ykSDGSqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=PSvNxliTsTTZffWSpB1FaMlG96qvkAL0zTDhqZfR8NI=; b=UZPgzgWO/JHkmWvqH3OpdMex5
+	u7/MnQq5RAtWbCy9MRLlzZc30Oh3XSl4CWScLdGG2vuT7cK1Yu7OvICknz5EZbK/lq2DepGvB8+a/
+	JVW3FF5o8/armWNXO0LcOTjlN8H/IAlAwKiYX4aXVkTZ/4cHxolKGisan+LC4HhJEkruIvdvcgxkM
+	iGtj/SSAF3mlzCUUkOorIDn9AN9uPG9mQHhTaTs4nzdFfg7axaX49K7669qkIeUDdqfHN9RrdmcvV
+	kJyRXnxuIssfSGd+UiA4KJw5h6N8JdujmExr65DdMsvSXRhNd2zZuox4cGGvHfvatNsKC3N24EbbW
+	g9Gum4Z0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jekW7-0003rc-M3; Fri, 29 May 2020 19:18:07 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jekXV-0004XZ-PR; Fri, 29 May 2020 19:19:33 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jekUy-0002zy-I9; Fri, 29 May 2020 19:16:58 +0000
-Received: by mail-pf1-x441.google.com with SMTP id d66so312637pfd.6;
- Fri, 29 May 2020 12:16:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=EIjxAykk2tEttvRx9JnBGeY9/qJpeki3+e7nJQ2gjnE=;
- b=ad3gth5nKUdz0v9um43Fwb3jWGazQdA5gCgFD3/5E7SSFH3AJvG+GPliixKy8cHaPT
- wuOkMV4SkXG9UwVyjLWNwH/pOxnj4Vnvi+v+CSibTNC5fCRyTMBn/qiciVrE5GFck/TZ
- 71kkYR7SsbldH0HVvHQ4GdKSbPA3W2Y9wFWLXx4Nzu343JliIXh+/RAEsEtu43erzEH1
- Rt6DJCrqDEJQRuXYzrE00ya7u3CjzTfpOQz3aoGn1oIdzbz3GSa3tEbTMc/fXDUcZzia
- lfl8VlwtcYcehgE0RK7/G1zlR0sP3/JpW5KJJP/sCSv6lE0cDpNb24U/U39/ABZ+Apf+
- Ic2A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=EIjxAykk2tEttvRx9JnBGeY9/qJpeki3+e7nJQ2gjnE=;
- b=VlpjSuF8LA56Wj+33+Ouh/yQyNRSV3w4tEAiNxCaO8BpViviKizuXoK0QJpXsdGMI6
- ykcQqaQ7qCtKCNcWtEXmxOsr3bqRMXv02cug90dR0I6XH4Kwl5ZFWmClMyQFhgM8B+Ij
- ApGq1ttR5mVnqHQ8mXp52YIHqGEaVe9FBiIPoAUm5nFOnHc0B17z0DM8VfPhJwyVe6rR
- 6saz8iSf7KgZIpCH9vYOdf2930/Ksvvh39joeAF9UfMV5ZdCatD63S4p3nxkiSRtMm7z
- kOLjw9WeVe7hLKk4bMEUDucZO1PnetPPGh1xVotM4mR4IoH3w/4LnaAVDVZ2QF3wrC7k
- M3sQ==
-X-Gm-Message-State: AOAM531ZjgNzciJ/5vfv/Prfba8NUCYAJ/R1/6bvut3YkhtYX+FsL5pK
- UVdW2w9QQQEnJc+d9hWwwxA=
-X-Google-Smtp-Source: ABdhPJyaZe9ea+hMIcwaCx50qw1p0vx0dz0p9ALM5yPtD8ybx+di/H54gVlWvly/GLOUrORykVEQQg==
-X-Received: by 2002:a63:6345:: with SMTP id x66mr9424392pgb.156.1590779815731; 
- Fri, 29 May 2020 12:16:55 -0700 (PDT)
-Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id g92sm202505pje.13.2020.05.29.12.16.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 12:16:55 -0700 (PDT)
-From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 4/4] pinctrl: bcm2835: Add support for wake-up interrupts
-Date: Fri, 29 May 2020 12:15:22 -0700
-Message-Id: <20200529191522.27938-5-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200529191522.27938-1-f.fainelli@gmail.com>
-References: <20200529191522.27938-1-f.fainelli@gmail.com>
+ id 1jekXJ-0004X8-02
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 19:19:22 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04TJI2dv053359;
+ Fri, 29 May 2020 19:19:15 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=otyw0YZ9V4bNP7MKEHhgkJR24Ilms/TAyE06rglTaVw=;
+ b=SBFCAXhe5o7UqD1c4n02OJe340CvZKWOODvizoXzF2lwgUE0OdKTGfhspnUPt5yS9oQo
+ P3dRdk1e6Sw1BKCx2z/hVtZrbF95ezxGlgng/6RRvOLHadjc7dY9f3ADU9bZXQswms1F
+ hOuo3/jSbMsvbnVaFNKi2M0GQDcL0GU/sWR3yGhqZRBoavW1uE6bdwgV+YqEg+jlJnc7
+ akAoRD3SIFVpsrKbKILYHnZVtzh5d4v5Nz3IEhDDNQX1wUuMdPr2ezKaKWx2tJT/CklQ
+ OktnWWTgVgjAwgmzrNUaTaQn9lL1TMbSls1J4WacU8CtsIAZfMREGh5kIv55xWedt0em og== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2120.oracle.com with ESMTP id 318xbkc43q-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 29 May 2020 19:19:15 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04TJJ1MS123231;
+ Fri, 29 May 2020 19:19:14 GMT
+Received: from aserv0122.oracle.com (aserv0122.oracle.com [141.146.126.236])
+ by userp3030.oracle.com with ESMTP id 317ds4qcn4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 29 May 2020 19:19:14 +0000
+Received: from abhmp0004.oracle.com (abhmp0004.oracle.com [141.146.116.10])
+ by aserv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 04TJJDQE019992;
+ Fri, 29 May 2020 19:19:13 GMT
+Received: from [10.74.105.211] (/10.74.105.211)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 29 May 2020 12:19:13 -0700
+Subject: Re: [PATCH v4 0/2] soc: ti: add k3 platforms chipid module driver
+To: Arnd Bergmann <arnd@arndb.de>, Grygorii Strashko <grygorii.strashko@ti.com>
+References: <20200512123449.16517-1-grygorii.strashko@ti.com>
+ <a132765e-f4e4-a1e8-fb43-239188fecf1b@ti.com>
+ <CAK8P3a31DYOn1TyjxCYM7ebc9nL5EFKsNpSHkq55bG54Bns+MA@mail.gmail.com>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <cb980673-d3ad-53b8-9351-196ff3f47c45@oracle.com>
+Date: Fri, 29 May 2020 12:19:10 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
+ Gecko/20100101 Thunderbird/68.8.1
+MIME-Version: 1.0
+In-Reply-To: <CAK8P3a31DYOn1TyjxCYM7ebc9nL5EFKsNpSHkq55bG54Bns+MA@mail.gmail.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9636
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
+ phishscore=0 malwarescore=0
+ mlxlogscore=999 adultscore=0 suspectscore=0 bulkscore=0 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
+ definitions=main-2005290145
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9636
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxlogscore=999
+ spamscore=0 mlxscore=0
+ lowpriorityscore=0 priorityscore=1501 phishscore=0 cotscore=-2147483648
+ suspectscore=0 bulkscore=0 clxscore=1015 impostorscore=0 malwarescore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2004280000 definitions=main-2005290145
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_121656_606792_7653DAEC 
-X-CRM114-Status: GOOD (  18.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200529_121921_125784_D4679220 
+X-CRM114-Status: GOOD (  18.41  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -84,6 +101,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [156.151.31.85 listed in wl.mailspike.net]
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,189 +115,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
- "open list:PIN CONTROL SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: Nishanth Menon <nm@ti.com>, DTML <devicetree@vger.kernel.org>,
+ Dave Gerlach <d-gerlach@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
+ Sekhar Nori <nsekhar@ti.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Leverage the IRQCHIP_MASK_ON_SUSPEND flag in order to avoid having to
-specifically treat the GPIO interrupts during suspend and resume, and
-simply implement an irq_set_wake() callback that is responsible for
-enabling the parent wake-up interrupt as a wake-up interrupt.
+On 5/29/20 11:34 AM, Arnd Bergmann wrote:
+> On Fri, May 29, 2020 at 8:22 PM Grygorii Strashko
+> <grygorii.strashko@ti.com> wrote:
+>> On 12/05/2020 15:34, Grygorii Strashko wrote:
+> 
+>>>    .../bindings/soc/ti/k3-socinfo.yaml           |  40 +++++
+>>>    drivers/soc/ti/Kconfig                        |  10 ++
+>>>    drivers/soc/ti/Makefile                       |   1 +
+>>>    drivers/soc/ti/k3-socinfo.c                   | 152 ++++++++++++++++++
+>>>    4 files changed, 203 insertions(+)
+>>>    create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-socinfo.yaml
+>>>    create mode 100644 drivers/soc/ti/k3-socinfo.c
+>>>
+>>
+>> Any chances you can pick this up?
+> 
+> I merged a version of this driver from Santosh's pull request into the
+> arm/drviers tree yesterday.
+> 
+> Is there something missing?
+> 
+Nope. I was going to reply on the thread but missed it.
 
-To avoid allocating unnecessary resources for other chips, the wake-up
-interrupts are only initialized if we have a brcm,bcm7211-gpio
-compatibility string.
-
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/pinctrl/bcm/pinctrl-bcm2835.c | 76 ++++++++++++++++++++++++++-
- 1 file changed, 75 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/pinctrl/bcm/pinctrl-bcm2835.c b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-index 1b00d93aa66e..1fbf067a3eed 100644
---- a/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-+++ b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
-@@ -19,6 +19,7 @@
- #include <linux/irq.h>
- #include <linux/irqdesc.h>
- #include <linux/init.h>
-+#include <linux/interrupt.h>
- #include <linux/of_address.h>
- #include <linux/of.h>
- #include <linux/of_irq.h>
-@@ -76,6 +77,7 @@
- struct bcm2835_pinctrl {
- 	struct device *dev;
- 	void __iomem *base;
-+	int *wake_irq;
- 
- 	/* note: locking assumes each bank will have its own unsigned long */
- 	unsigned long enabled_irq_map[BCM2835_NUM_BANKS];
-@@ -435,6 +437,11 @@ static void bcm2835_gpio_irq_handler(struct irq_desc *desc)
- 	chained_irq_exit(host_chip, desc);
- }
- 
-+static irqreturn_t bcm2835_gpio_wake_irq_handler(int irq, void *dev_id)
-+{
-+	return IRQ_HANDLED;
-+}
-+
- static inline void __bcm2835_gpio_irq_config(struct bcm2835_pinctrl *pc,
- 	unsigned reg, unsigned offset, bool enable)
- {
-@@ -634,6 +641,34 @@ static void bcm2835_gpio_irq_ack(struct irq_data *data)
- 	bcm2835_gpio_set_bit(pc, GPEDS0, gpio);
- }
- 
-+static int bcm2835_gpio_irq_set_wake(struct irq_data *data, unsigned int on)
-+{
-+	struct gpio_chip *chip = irq_data_get_irq_chip_data(data);
-+	struct bcm2835_pinctrl *pc = gpiochip_get_data(chip);
-+	unsigned gpio = irqd_to_hwirq(data);
-+	unsigned int irqgroup;
-+	int ret = -EINVAL;
-+
-+	if (!pc->wake_irq)
-+		return ret;
-+
-+	if (gpio <= 27)
-+		irqgroup = 0;
-+	else if (gpio >= 28 && gpio <= 45)
-+		irqgroup = 1;
-+	else if (gpio >= 46 && gpio <= 53)
-+		irqgroup = 2;
-+	else
-+		return ret;
-+
-+	if (on)
-+		ret = enable_irq_wake(pc->wake_irq[irqgroup]);
-+	else
-+		ret = disable_irq_wake(pc->wake_irq[irqgroup]);
-+
-+	return ret;
-+}
-+
- static struct irq_chip bcm2835_gpio_irq_chip = {
- 	.name = MODULE_NAME,
- 	.irq_enable = bcm2835_gpio_irq_enable,
-@@ -642,6 +677,8 @@ static struct irq_chip bcm2835_gpio_irq_chip = {
- 	.irq_ack = bcm2835_gpio_irq_ack,
- 	.irq_mask = bcm2835_gpio_irq_disable,
- 	.irq_unmask = bcm2835_gpio_irq_enable,
-+	.irq_set_wake = bcm2835_gpio_irq_set_wake,
-+	.flags = IRQCHIP_MASK_ON_SUSPEND,
- };
- 
- static int bcm2835_pctl_get_groups_count(struct pinctrl_dev *pctldev)
-@@ -1154,6 +1191,7 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
- 	struct resource iomem;
- 	int err, i;
- 	const struct of_device_id *match;
-+	int is_7211 = 0;
- 
- 	BUILD_BUG_ON(ARRAY_SIZE(bcm2835_gpio_pins) != BCM2711_NUM_GPIOS);
- 	BUILD_BUG_ON(ARRAY_SIZE(bcm2835_gpio_groups) != BCM2711_NUM_GPIOS);
-@@ -1180,6 +1218,7 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
- 		return -EINVAL;
- 
- 	pdata = match->data;
-+	is_7211 = of_device_is_compatible(np, "brcm,bcm7211-gpio");
- 
- 	pc->gpio_chip = *pdata->gpio_chip;
- 	pc->gpio_chip.parent = dev;
-@@ -1214,6 +1253,15 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
- 				     GFP_KERNEL);
- 	if (!girq->parents)
- 		return -ENOMEM;
-+
-+	if (is_7211) {
-+		pc->wake_irq = devm_kcalloc(dev, BCM2835_NUM_IRQS,
-+					    sizeof(*pc->wake_irq),
-+					    GFP_KERNEL);
-+		if (!pc->wake_irq)
-+			return -ENOMEM;
-+	}
-+
- 	/*
- 	 * Use the same handler for all groups: this is necessary
- 	 * since we use one gpiochip to cover all lines - the
-@@ -1221,8 +1269,34 @@ static int bcm2835_pinctrl_probe(struct platform_device *pdev)
- 	 * bank that was firing the IRQ and look up the per-group
- 	 * and bank data.
- 	 */
--	for (i = 0; i < BCM2835_NUM_IRQS; i++)
-+	for (i = 0; i < BCM2835_NUM_IRQS; i++) {
-+		int len;
-+		char *name;
-+
- 		girq->parents[i] = irq_of_parse_and_map(np, i);
-+		if (!is_7211)
-+			continue;
-+
-+		/* Skip over the all banks interrupts */
-+		pc->wake_irq[i] = irq_of_parse_and_map(np, i +
-+						       BCM2835_NUM_IRQS + 1);
-+
-+		len = strlen(dev_name(pc->dev)) + 16;
-+		name = devm_kzalloc(pc->dev, len, GFP_KERNEL);
-+		if (!name)
-+			return -ENOMEM;
-+
-+		snprintf(name, len, "%s:bank%d", dev_name(pc->dev), i);
-+
-+		/* These are optional interrupts */
-+		err = devm_request_irq(dev, pc->wake_irq[i],
-+				       bcm2835_gpio_wake_irq_handler,
-+				       IRQF_SHARED, name, pc);
-+		if (err)
-+			dev_warn(dev, "unable to request wake IRQ %d\n",
-+				 pc->wake_irq[i]);
-+	}
-+
- 	girq->default_type = IRQ_TYPE_NONE;
- 	girq->handler = handle_level_irq;
- 
--- 
-2.17.1
-
+Regards,
+Santosh
 
 _______________________________________________
 linux-arm-kernel mailing list
