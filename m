@@ -2,56 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95AB11E786B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 10:32:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 057AB1E7877
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 10:33:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y5YPIk5qGhqE1kCN1EOzPBkRQ8vcVockffx1rr8FoKM=; b=fjrq7u7zYKDzqB
-	Psmut177ECK8Id3TPqDJN9KIToKVakuaOm5GAY1bh+0eZnuupg6AbXS7kXjD2v2GltP+DmHZj4NLR
-	OM2sNw5Xwefffz7x+L8iZlOYrzSNWIyDFQHSY9uOffDOngRXFjA7pKEyFWdFHhCHcTf4QO5sP+RRO
-	wloL1pzytaZZiu/Qs4uaF20/OmNM7tySjKykc9Cjxh2NKx9bUihj7v4Cr5P9+aBOpqHekm3HhffBN
-	CYhuZb1c+2OZCGYTYZZ2gKHwX4g2uE8s6Jk1KTEWxx46VxBhr6iCq1X8FrOjF3tJOinjTgcSrHGNG
-	z5A9I7KybqlmP/1yM34A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=J8+De8duvLYA12W1dtMpdfeXJZ9KFdtTx8C4SKEChUA=; b=ScPzohGBmbiZqn9YWHpL26qfI
+	8YJNX+F6JYo5i8tXPkv6sruVJivPIG4dS6bJPhd9lNQ3/iQd3ucuUVe4fOb42euw3EHWI7QL286er
+	L1RYqNvHw900EB6bBtHbmA2HIOupxkJHPESgs9HY6dxtN5zdDqJT2foqTf3HPfEQThlQKz/h3QLRk
+	Jh1yD02V43OZ+haHSySs8S04Gmz382XC3YW9ZCYgwKw5xNs9DrdUniDplk8T/nPameYVtf63RrT0e
+	moKzGhOXL/rXOhtMIv1xZ4PIxaPJtqKhSDDnaw+/SEydrzrmosxmAH35RODcOa2/msReMvYTiaPdv
+	rs6HNd9uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeaRV-0005lS-HO; Fri, 29 May 2020 08:32:41 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jeaSK-0006Gy-4X; Fri, 29 May 2020 08:33:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeaRJ-0005ko-RR; Fri, 29 May 2020 08:32:32 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:b93f:9fae:b276:a89a])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 6D9CA2A3F15;
- Fri, 29 May 2020 09:32:25 +0100 (BST)
-Date: Fri, 29 May 2020 10:32:22 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH v7 16/20] mtd: nand: Convert generic NAND bits to use
- the ECC framework
-Message-ID: <20200529103222.18c5b89b@collabora.com>
-In-Reply-To: <20200529002517.3546-17-miquel.raynal@bootlin.com>
-References: <20200529002517.3546-1-miquel.raynal@bootlin.com>
- <20200529002517.3546-17-miquel.raynal@bootlin.com>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1jeaRQ-0005nD-5L
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 08:32:37 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 95CD2207F5;
+ Fri, 29 May 2020 08:32:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590741155;
+ bh=c6Aa5ByuhdG16T+5Vu74GnNb0ZM+kd3oe7ecqFSIjgY=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=joysJ+Nph1O6ii0Q3g0E5dyYkW2jwQEFd1pZ0jexWpDcDdZDw/XCRQlYlZ20PpBoV
+ 0f5TU88TMJzW4ub8J2EfxgBtv1ynUdMN48EFzdgrohcbJLLvER467XxLdtOH0hPIUD
+ IquyZ2Wcsof87ce7gBTifswM/74D6c7vWMUhM2Lk=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jeaRN-00GDax-PL; Fri, 29 May 2020 09:32:33 +0100
 MIME-Version: 1.0
+Date: Fri, 29 May 2020 09:32:33 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Ali Saidi <alisaidi@amazon.com>
+Subject: Re: [PATCH] irqchip/gic-v3-its: Don't try to move a disabled irq
+In-Reply-To: <20200529015501.15771-1-alisaidi@amazon.com>
+References: <20200529015501.15771-1-alisaidi@amazon.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <8c3be990888ecfb7cca9503853dc4aac@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: alisaidi@amazon.com, tglx@linutronix.de,
+ jason@lakedaemon.net, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, benh@amazon.com, dwmw@amazon.com,
+ zeev@amazon.com, zorik@amazon.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_013230_160055_8D8BB81D 
-X-CRM114-Status: GOOD (  26.62  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200529_013236_314102_C05AE887 
+X-CRM114-Status: GOOD (  23.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,744 +90,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>, Weijie Gao <weijie.gao@mediatek.com>,
- Paul Cercueil <paul@crapouillou.net>, Rob Herring <robh+dt@kernel.org>,
- linux-mtd@lists.infradead.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, Chuanhong Guo <gch981213@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: benh@amazon.com, Jason Cooper <jason@lakedaemon.net>, zorik@amazon.com,
+ linux-kernel@vger.kernel.org, zeev@amazon.com,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ dwmw@amazon.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 29 May 2020 02:25:13 +0200
-Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+Hi Ali,
 
-> Embed a generic NAND ECC high-level object in the nand_device
-> structure to carry all the ECC engine configuration/data. Adapt the
-> raw NAND and SPI-NAND cores to fit the change.
-
-In order to split that one, and make future re-organizations less
-painful (hope we won't have to do that again, but who knows), I would
-recommend doing things in this order:
-
-1/ create a nanddev_get_ecc_requirements() helper that returns a
-   const struct nand_ecc_props *
-2/ patch spinand to use this helper
-3/ introduce nand_ecc
-4/ patch rawnand to use the new ecc layer
-
+On 2020-05-29 02:55, Ali Saidi wrote:
+> If an interrupt is disabled the ITS driver has sent a discard removing
+> the DeviceID and EventID from the ITT. After this occurs it can't be
+> moved to another collection with a MOVI and a command error occurs if
+> attempted. Before issuing the MOVI command make sure that the IRQ isn't
+> disabled and change the activate code to try and use the previous
+> affinity.
 > 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> Signed-off-by: Ali Saidi <alisaidi@amazon.com>
 > ---
->  drivers/mtd/nand/raw/atmel/nand-controller.c |  9 +++--
->  drivers/mtd/nand/raw/brcmnand/brcmnand.c     |  7 ++--
->  drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c   | 12 +++---
->  drivers/mtd/nand/raw/marvell_nand.c          |  7 ++--
->  drivers/mtd/nand/raw/mtk_nand.c              |  4 +-
->  drivers/mtd/nand/raw/nand_base.c             | 25 ++++++------
->  drivers/mtd/nand/raw/nand_esmt.c             | 11 +++---
->  drivers/mtd/nand/raw/nand_hynix.c            | 41 ++++++++++----------
->  drivers/mtd/nand/raw/nand_jedec.c            |  4 +-
->  drivers/mtd/nand/raw/nand_micron.c           | 14 ++++---
->  drivers/mtd/nand/raw/nand_onfi.c             |  8 ++--
->  drivers/mtd/nand/raw/nand_samsung.c          | 19 ++++-----
->  drivers/mtd/nand/raw/nand_toshiba.c          | 11 +++---
->  drivers/mtd/nand/raw/sunxi_nand.c            |  5 ++-
->  drivers/mtd/nand/raw/tegra_nand.c            |  9 +++--
->  drivers/mtd/nand/spi/core.c                  |  8 ++--
->  drivers/mtd/nand/spi/macronix.c              |  6 +--
->  drivers/mtd/nand/spi/toshiba.c               |  6 +--
->  include/linux/mtd/nand.h                     |  8 ++--
->  19 files changed, 114 insertions(+), 100 deletions(-)
+>  drivers/irqchip/irq-gic-v3-its.c | 18 +++++++++++++++---
+>  1 file changed, 15 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/mtd/nand/raw/atmel/nand-controller.c b/drivers/mtd/nand/raw/atmel/nand-controller.c
-> index 85cf396731ce..2ebcf3087d8d 100644
-> --- a/drivers/mtd/nand/raw/atmel/nand-controller.c
-> +++ b/drivers/mtd/nand/raw/atmel/nand-controller.c
-> @@ -1043,6 +1043,7 @@ static int atmel_hsmc_nand_pmecc_read_page_raw(struct nand_chip *chip,
->  
->  static int atmel_nand_pmecc_init(struct nand_chip *chip)
->  {
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	struct mtd_info *mtd = nand_to_mtd(chip);
->  	struct atmel_nand *nand = to_atmel_nand(chip);
->  	struct atmel_nand_controller *nc;
-> @@ -1072,15 +1073,15 @@ static int atmel_nand_pmecc_init(struct nand_chip *chip)
->  		req.ecc.strength = ATMEL_PMECC_MAXIMIZE_ECC_STRENGTH;
->  	else if (chip->ecc.strength)
->  		req.ecc.strength = chip->ecc.strength;
-> -	else if (chip->base.eccreq.strength)
-> -		req.ecc.strength = chip->base.eccreq.strength;
-> +	else if (requirements->strength)
-> +		req.ecc.strength = requirements->strength;
->  	else
->  		req.ecc.strength = ATMEL_PMECC_MAXIMIZE_ECC_STRENGTH;
->  
->  	if (chip->ecc.size)
->  		req.ecc.sectorsize = chip->ecc.size;
-> -	else if (chip->base.eccreq.step_size)
-> -		req.ecc.sectorsize = chip->base.eccreq.step_size;
-> +	else if (requirements->step_size)
-> +		req.ecc.sectorsize = requirements->step_size;
->  	else
->  		req.ecc.sectorsize = ATMEL_PMECC_SECTOR_SIZE_AUTO;
->  
-> diff --git a/drivers/mtd/nand/raw/brcmnand/brcmnand.c b/drivers/mtd/nand/raw/brcmnand/brcmnand.c
-> index 164617b33942..40f6d107ffa2 100644
-> --- a/drivers/mtd/nand/raw/brcmnand/brcmnand.c
-> +++ b/drivers/mtd/nand/raw/brcmnand/brcmnand.c
-> @@ -2563,10 +2563,11 @@ static int brcmnand_setup_dev(struct brcmnand_host *host)
->  
->  	if (chip->ecc.engine_type != NAND_ECC_ENGINE_TYPE_NONE &&
->  	    (!chip->ecc.size || !chip->ecc.strength)) {
-> -		if (chip->base.eccreq.step_size && chip->base.eccreq.strength) {
-> +		if (chip->base.ecc.requirements.step_size &&
-> +		    chip->base.ecc.requirements.strength) {
->  			/* use detected ECC parameters */
-> -			chip->ecc.size = chip->base.eccreq.step_size;
-> -			chip->ecc.strength = chip->base.eccreq.strength;
-> +			chip->ecc.size = chip->base.ecc.requirements.step_size;
-> +			chip->ecc.strength = chip->base.ecc.requirements.strength;
->  			dev_info(ctrl->dev, "Using ECC step-size %d, strength %d\n",
->  				chip->ecc.size, chip->ecc.strength);
->  		}
-> diff --git a/drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c b/drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c
-> index d1ea6df9fd64..5f56570ce04d 100644
-> --- a/drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c
-> +++ b/drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c
-> @@ -272,8 +272,8 @@ static int set_geometry_by_ecc_info(struct gpmi_nand_data *this,
->  	default:
->  		dev_err(this->dev,
->  			"unsupported nand chip. ecc bits : %d, ecc size : %d\n",
-> -			chip->base.eccreq.strength,
-> -			chip->base.eccreq.step_size);
-> +			chip->base.ecc.requirements.strength,
-> +			chip->base.ecc.requirements.step_size);
->  		return -EINVAL;
->  	}
->  	geo->ecc_chunk_size = ecc_step;
-> @@ -517,13 +517,13 @@ static int common_nfc_set_geometry(struct gpmi_nand_data *this)
->  
->  	if ((of_property_read_bool(this->dev->of_node, "fsl,use-minimum-ecc"))
->  				|| legacy_set_geometry(this)) {
-> -		if (!(chip->base.eccreq.strength > 0 &&
-> -		      chip->base.eccreq.step_size > 0))
-> +		if (!(chip->base.ecc.requirements.strength > 0 &&
-> +		      chip->base.ecc.requirements.step_size > 0))
->  			return -EINVAL;
->  
->  		return set_geometry_by_ecc_info(this,
-> -						chip->base.eccreq.strength,
-> -						chip->base.eccreq.step_size);
-> +						chip->base.ecc.requirements.strength,
-> +						chip->base.ecc.requirements.step_size);
->  	}
->  
->  	return 0;
-> diff --git a/drivers/mtd/nand/raw/marvell_nand.c b/drivers/mtd/nand/raw/marvell_nand.c
-> index f9cc03c11deb..e7a269461a6d 100644
-> --- a/drivers/mtd/nand/raw/marvell_nand.c
-> +++ b/drivers/mtd/nand/raw/marvell_nand.c
-> @@ -2244,14 +2244,15 @@ static int marvell_nand_ecc_init(struct mtd_info *mtd,
->  				 struct nand_ecc_ctrl *ecc)
->  {
->  	struct nand_chip *chip = mtd_to_nand(mtd);
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	struct marvell_nfc *nfc = to_marvell_nfc(chip->controller);
->  	int ret;
->  
->  	if (ecc->engine_type != NAND_ECC_ENGINE_TYPE_NONE &&
->  	    (!ecc->size || !ecc->strength)) {
-> -		if (chip->base.eccreq.step_size && chip->base.eccreq.strength) {
-> -			ecc->size = chip->base.eccreq.step_size;
-> -			ecc->strength = chip->base.eccreq.strength;
-> +		if (requirements->step_size && requirements->strength) {
-> +			ecc->size = requirements->step_size;
-> +			ecc->strength = requirements->strength;
->  		} else {
->  			dev_info(nfc->dev,
->  				 "No minimum ECC strength, using 1b/512B\n");
-> diff --git a/drivers/mtd/nand/raw/mtk_nand.c b/drivers/mtd/nand/raw/mtk_nand.c
-> index a0294c9161dd..1f8dbae38286 100644
-> --- a/drivers/mtd/nand/raw/mtk_nand.c
-> +++ b/drivers/mtd/nand/raw/mtk_nand.c
-> @@ -1234,8 +1234,8 @@ static int mtk_nfc_ecc_init(struct device *dev, struct mtd_info *mtd)
->  	/* if optional dt settings not present */
->  	if (!nand->ecc.size || !nand->ecc.strength) {
->  		/* use datasheet requirements */
-> -		nand->ecc.strength = nand->base.eccreq.strength;
-> -		nand->ecc.size = nand->base.eccreq.step_size;
-> +		nand->ecc.strength = nand->base.ecc.requirements.strength;
-> +		nand->ecc.size = nand->base.ecc.requirements.step_size;
->  
->  		/*
->  		 * align eccstrength and eccsize
-> diff --git a/drivers/mtd/nand/raw/nand_base.c b/drivers/mtd/nand/raw/nand_base.c
-> index 1ce2cbe72e4c..bc2d5d2e8f4c 100644
-> --- a/drivers/mtd/nand/raw/nand_base.c
-> +++ b/drivers/mtd/nand/raw/nand_base.c
-> @@ -4746,8 +4746,8 @@ static bool find_full_id_nand(struct nand_chip *chip,
->  					   memorg->pagesize *
->  					   memorg->pages_per_eraseblock);
->  		chip->options |= type->options;
-> -		chip->base.eccreq.strength = NAND_ECC_STRENGTH(type);
-> -		chip->base.eccreq.step_size = NAND_ECC_STEP(type);
-> +		chip->base.ecc.requirements.strength = NAND_ECC_STRENGTH(type);
-> +		chip->base.ecc.requirements.step_size = NAND_ECC_STEP(type);
->  		chip->onfi_timing_mode_default =
->  					type->onfi_timing_mode_default;
->  
-> @@ -5485,8 +5485,8 @@ nand_match_ecc_req(struct nand_chip *chip,
->  {
->  	struct mtd_info *mtd = nand_to_mtd(chip);
->  	const struct nand_ecc_step_info *stepinfo;
-> -	int req_step = chip->base.eccreq.step_size;
-> -	int req_strength = chip->base.eccreq.strength;
-> +	int req_step = chip->base.ecc.requirements.step_size;
-> +	int req_strength = chip->base.ecc.requirements.strength;
->  	int req_corr, step_size, strength, nsteps, ecc_bytes, ecc_bytes_total;
->  	int best_step, best_strength, best_ecc_bytes;
->  	int best_ecc_bytes_total = INT_MAX;
-> @@ -5677,9 +5677,10 @@ static bool nand_ecc_strength_good(struct nand_chip *chip)
->  {
->  	struct mtd_info *mtd = nand_to_mtd(chip);
->  	struct nand_ecc_ctrl *ecc = &chip->ecc;
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	int corr, ds_corr;
->  
-> -	if (ecc->size == 0 || chip->base.eccreq.step_size == 0)
-> +	if (ecc->size == 0 || requirements->step_size == 0)
->  		/* Not enough information */
->  		return true;
->  
-> @@ -5688,10 +5689,10 @@ static bool nand_ecc_strength_good(struct nand_chip *chip)
->  	 * the correction density.
->  	 */
->  	corr = (mtd->writesize * ecc->strength) / ecc->size;
-> -	ds_corr = (mtd->writesize * chip->base.eccreq.strength) /
-> -		  chip->base.eccreq.step_size;
-> +	ds_corr = (mtd->writesize * requirements->strength) /
-> +		  requirements->step_size;
->  
-> -	return corr >= ds_corr && ecc->strength >= chip->base.eccreq.strength;
-> +	return corr >= ds_corr && ecc->strength >= requirements->strength;
->  }
->  
->  static int rawnand_erase(struct nand_device *nand, const struct nand_pos *pos)
-> @@ -5977,9 +5978,11 @@ static int nand_scan_tail(struct nand_chip *chip)
->  	/* ECC sanity check: warn if it's too weak */
->  	if (!nand_ecc_strength_good(chip))
->  		pr_warn("WARNING: %s: the ECC used on your system (%db/%dB) is too weak compared to the one required by the NAND chip (%db/%dB)\n",
-> -			mtd->name, chip->ecc.strength, chip->ecc.size,
-> -			chip->base.eccreq.strength,
-> -			chip->base.eccreq.step_size);
-> +			mtd->name,
-> +			chip->base.ecc.ctx.conf.strength,
-> +			chip->base.ecc.ctx.conf.step_size,
-> +			chip->base.ecc.requirements.strength,
-> +			chip->base.ecc.requirements.step_size);
->  
->  	/* Allow subpage writes up to ecc.steps. Not possible for MLC flash */
->  	if (!(chip->options & NAND_NO_SUBPAGE_WRITE) && nand_is_slc(chip)) {
-> diff --git a/drivers/mtd/nand/raw/nand_esmt.c b/drivers/mtd/nand/raw/nand_esmt.c
-> index 3338c68aaaf1..11f25ec3e4fc 100644
-> --- a/drivers/mtd/nand/raw/nand_esmt.c
-> +++ b/drivers/mtd/nand/raw/nand_esmt.c
-> @@ -10,24 +10,25 @@
->  
->  static void esmt_nand_decode_id(struct nand_chip *chip)
->  {
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	nand_decode_ext_id(chip);
->  
->  	/* Extract ECC requirements from 5th id byte. */
->  	if (chip->id.len >= 5 && nand_is_slc(chip)) {
-> -		chip->base.eccreq.step_size = 512;
-> +		requirements->step_size = 512;
->  		switch (chip->id.data[4] & 0x3) {
->  		case 0x0:
-> -			chip->base.eccreq.strength = 4;
-> +			requirements->strength = 4;
->  			break;
->  		case 0x1:
-> -			chip->base.eccreq.strength = 2;
-> +			requirements->strength = 2;
->  			break;
->  		case 0x2:
-> -			chip->base.eccreq.strength = 1;
-> +			requirements->strength = 1;
->  			break;
->  		default:
->  			WARN(1, "Could not get ECC info");
-> -			chip->base.eccreq.step_size = 0;
-> +			requirements->step_size = 0;
->  			break;
->  		}
->  	}
-> diff --git a/drivers/mtd/nand/raw/nand_hynix.c b/drivers/mtd/nand/raw/nand_hynix.c
-> index 7caedaa5b9e5..bac7732a86e9 100644
-> --- a/drivers/mtd/nand/raw/nand_hynix.c
-> +++ b/drivers/mtd/nand/raw/nand_hynix.c
-> @@ -495,34 +495,35 @@ static void hynix_nand_extract_oobsize(struct nand_chip *chip,
->  static void hynix_nand_extract_ecc_requirements(struct nand_chip *chip,
->  						bool valid_jedecid)
->  {
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	u8 ecc_level = (chip->id.data[4] >> 4) & 0x7;
->  
->  	if (valid_jedecid) {
->  		/* Reference: H27UCG8T2E datasheet */
-> -		chip->base.eccreq.step_size = 1024;
-> +		requirements->step_size = 1024;
->  
->  		switch (ecc_level) {
->  		case 0:
-> -			chip->base.eccreq.step_size = 0;
-> -			chip->base.eccreq.strength = 0;
-> +			requirements->step_size = 0;
-> +			requirements->strength = 0;
->  			break;
->  		case 1:
-> -			chip->base.eccreq.strength = 4;
-> +			requirements->strength = 4;
->  			break;
->  		case 2:
-> -			chip->base.eccreq.strength = 24;
-> +			requirements->strength = 24;
->  			break;
->  		case 3:
-> -			chip->base.eccreq.strength = 32;
-> +			requirements->strength = 32;
->  			break;
->  		case 4:
-> -			chip->base.eccreq.strength = 40;
-> +			requirements->strength = 40;
->  			break;
->  		case 5:
-> -			chip->base.eccreq.strength = 50;
-> +			requirements->strength = 50;
->  			break;
->  		case 6:
-> -			chip->base.eccreq.strength = 60;
-> +			requirements->strength = 60;
->  			break;
->  		default:
->  			/*
-> @@ -543,14 +544,14 @@ static void hynix_nand_extract_ecc_requirements(struct nand_chip *chip,
->  		if (nand_tech < 3) {
->  			/* > 26nm, reference: H27UBG8T2A datasheet */
->  			if (ecc_level < 5) {
-> -				chip->base.eccreq.step_size = 512;
-> -				chip->base.eccreq.strength = 1 << ecc_level;
-> +				requirements->step_size = 512;
-> +				requirements->strength = 1 << ecc_level;
->  			} else if (ecc_level < 7) {
->  				if (ecc_level == 5)
-> -					chip->base.eccreq.step_size = 2048;
-> +					requirements->step_size = 2048;
->  				else
-> -					chip->base.eccreq.step_size = 1024;
-> -				chip->base.eccreq.strength = 24;
-> +					requirements->step_size = 1024;
-> +				requirements->strength = 24;
->  			} else {
->  				/*
->  				 * We should never reach this case, but if that
-> @@ -563,14 +564,14 @@ static void hynix_nand_extract_ecc_requirements(struct nand_chip *chip,
->  		} else {
->  			/* <= 26nm, reference: H27UBG8T2B datasheet */
->  			if (!ecc_level) {
-> -				chip->base.eccreq.step_size = 0;
-> -				chip->base.eccreq.strength = 0;
-> +				requirements->step_size = 0;
-> +				requirements->strength = 0;
->  			} else if (ecc_level < 5) {
-> -				chip->base.eccreq.step_size = 512;
-> -				chip->base.eccreq.strength = 1 << (ecc_level - 1);
-> +				requirements->step_size = 512;
-> +				requirements->strength = 1 << (ecc_level - 1);
->  			} else {
-> -				chip->base.eccreq.step_size = 1024;
-> -				chip->base.eccreq.strength = 24 +
-> +				requirements->step_size = 1024;
-> +				requirements->strength = 24 +
->  							(8 * (ecc_level - 5));
->  			}
->  		}
-> diff --git a/drivers/mtd/nand/raw/nand_jedec.c b/drivers/mtd/nand/raw/nand_jedec.c
-> index b15c42f48755..5ed3656d88dd 100644
-> --- a/drivers/mtd/nand/raw/nand_jedec.c
-> +++ b/drivers/mtd/nand/raw/nand_jedec.c
-> @@ -120,8 +120,8 @@ int nand_jedec_detect(struct nand_chip *chip)
->  	ecc = &p->ecc_info[0];
->  
->  	if (ecc->codeword_size >= 9) {
-> -		chip->base.eccreq.strength = ecc->ecc_bits;
-> -		chip->base.eccreq.step_size = 1 << ecc->codeword_size;
-> +		chip->base.ecc.requirements.strength = ecc->ecc_bits;
-> +		chip->base.ecc.requirements.step_size = 1 << ecc->codeword_size;
->  	} else {
->  		pr_warn("Invalid codeword size\n");
->  	}
-> diff --git a/drivers/mtd/nand/raw/nand_micron.c b/drivers/mtd/nand/raw/nand_micron.c
-> index c8ebfd8c77a1..d1dc684ecd6c 100644
-> --- a/drivers/mtd/nand/raw/nand_micron.c
-> +++ b/drivers/mtd/nand/raw/nand_micron.c
-> @@ -413,6 +413,7 @@ enum {
->   */
->  static int micron_supports_on_die_ecc(struct nand_chip *chip)
->  {
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	u8 id[5];
->  	int ret;
->  
-> @@ -425,7 +426,7 @@ static int micron_supports_on_die_ecc(struct nand_chip *chip)
->  	/*
->  	 * We only support on-die ECC of 4/512 or 8/512
->  	 */
-> -	if  (chip->base.eccreq.strength != 4 && chip->base.eccreq.strength != 8)
-> +	if  (requirements->strength != 4 && requirements->strength != 8)
->  		return MICRON_ON_DIE_UNSUPPORTED;
->  
->  	/* 0x2 means on-die ECC is available. */
-> @@ -466,7 +467,7 @@ static int micron_supports_on_die_ecc(struct nand_chip *chip)
->  	/*
->  	 * We only support on-die ECC of 4/512 or 8/512
->  	 */
-> -	if  (chip->base.eccreq.strength != 4 && chip->base.eccreq.strength != 8)
-> +	if  (requirements->strength != 4 && requirements->strength != 8)
->  		return MICRON_ON_DIE_UNSUPPORTED;
->  
->  	return MICRON_ON_DIE_SUPPORTED;
-> @@ -474,6 +475,7 @@ static int micron_supports_on_die_ecc(struct nand_chip *chip)
->  
->  static int micron_nand_init(struct nand_chip *chip)
->  {
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	struct mtd_info *mtd = nand_to_mtd(chip);
->  	struct micron_nand *micron;
->  	int ondie;
-> @@ -523,7 +525,7 @@ static int micron_nand_init(struct nand_chip *chip)
->  		 * That's not needed for 8-bit ECC, because the status expose
->  		 * a better approximation of the number of bitflips in a page.
->  		 */
-> -		if (chip->base.eccreq.strength == 4) {
-> +		if (requirements->strength == 4) {
->  			micron->ecc.rawbuf = kmalloc(mtd->writesize +
->  						     mtd->oobsize,
->  						     GFP_KERNEL);
-> @@ -533,16 +535,16 @@ static int micron_nand_init(struct nand_chip *chip)
->  			}
->  		}
->  
-> -		if (chip->base.eccreq.strength == 4)
-> +		if (requirements->strength == 4)
->  			mtd_set_ooblayout(mtd,
->  					  &micron_nand_on_die_4_ooblayout_ops);
->  		else
->  			mtd_set_ooblayout(mtd,
->  					  &micron_nand_on_die_8_ooblayout_ops);
->  
-> -		chip->ecc.bytes = chip->base.eccreq.strength * 2;
-> +		chip->ecc.bytes = requirements->strength * 2;
->  		chip->ecc.size = 512;
-> -		chip->ecc.strength = chip->base.eccreq.strength;
-> +		chip->ecc.strength = requirements->strength;
->  		chip->ecc.algo = NAND_ECC_ALGO_BCH;
->  		chip->ecc.read_page = micron_nand_read_page_on_die_ecc;
->  		chip->ecc.write_page = micron_nand_write_page_on_die_ecc;
-> diff --git a/drivers/mtd/nand/raw/nand_onfi.c b/drivers/mtd/nand/raw/nand_onfi.c
-> index be3456627288..c9ae29774c1f 100644
-> --- a/drivers/mtd/nand/raw/nand_onfi.c
-> +++ b/drivers/mtd/nand/raw/nand_onfi.c
-> @@ -94,8 +94,8 @@ static int nand_flash_detect_ext_param_page(struct nand_chip *chip,
->  		goto ext_out;
->  	}
->  
-> -	chip->base.eccreq.strength = ecc->ecc_bits;
-> -	chip->base.eccreq.step_size = 1 << ecc->codeword_size;
-> +	chip->base.ecc.requirements.strength = ecc->ecc_bits;
-> +	chip->base.ecc.requirements.step_size = 1 << ecc->codeword_size;
->  	ret = 0;
->  
->  ext_out:
-> @@ -265,8 +265,8 @@ int nand_onfi_detect(struct nand_chip *chip)
->  		chip->options |= NAND_BUSWIDTH_16;
->  
->  	if (p->ecc_bits != 0xff) {
-> -		chip->base.eccreq.strength = p->ecc_bits;
-> -		chip->base.eccreq.step_size = 512;
-> +		chip->base.ecc.requirements.strength = p->ecc_bits;
-> +		chip->base.ecc.requirements.step_size = 512;
->  	} else if (onfi_version >= 21 &&
->  		(le16_to_cpu(p->features) & ONFI_FEATURE_EXT_PARAM_PAGE)) {
->  
-> diff --git a/drivers/mtd/nand/raw/nand_samsung.c b/drivers/mtd/nand/raw/nand_samsung.c
-> index 3a4a19e808f6..0ee85e88aeb5 100644
-> --- a/drivers/mtd/nand/raw/nand_samsung.c
-> +++ b/drivers/mtd/nand/raw/nand_samsung.c
-> @@ -10,6 +10,7 @@
->  
->  static void samsung_nand_decode_id(struct nand_chip *chip)
->  {
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	struct mtd_info *mtd = nand_to_mtd(chip);
->  	struct nand_memory_organization *memorg;
->  
-> @@ -71,23 +72,23 @@ static void samsung_nand_decode_id(struct nand_chip *chip)
->  		/* Extract ECC requirements from 5th id byte*/
->  		extid = (chip->id.data[4] >> 4) & 0x07;
->  		if (extid < 5) {
-> -			chip->base.eccreq.step_size = 512;
-> -			chip->base.eccreq.strength = 1 << extid;
-> +			requirements->step_size = 512;
-> +			requirements->strength = 1 << extid;
->  		} else {
-> -			chip->base.eccreq.step_size = 1024;
-> +			requirements->step_size = 1024;
->  			switch (extid) {
->  			case 5:
-> -				chip->base.eccreq.strength = 24;
-> +				requirements->strength = 24;
->  				break;
->  			case 6:
-> -				chip->base.eccreq.strength = 40;
-> +				requirements->strength = 40;
->  				break;
->  			case 7:
-> -				chip->base.eccreq.strength = 60;
-> +				requirements->strength = 60;
->  				break;
->  			default:
->  				WARN(1, "Could not decode ECC info");
-> -				chip->base.eccreq.step_size = 0;
-> +				requirements->step_size = 0;
->  			}
->  		}
->  	} else {
-> @@ -97,8 +98,8 @@ static void samsung_nand_decode_id(struct nand_chip *chip)
->  			switch (chip->id.data[1]) {
->  			/* K9F4G08U0D-S[I|C]B0(T00) */
->  			case 0xDC:
-> -				chip->base.eccreq.step_size = 512;
-> -				chip->base.eccreq.strength = 1;
-> +				requirements->step_size = 512;
-> +				requirements->strength = 1;
->  				break;
->  
->  			/* K9F1G08U0E 21nm chips do not support subpage write */
-> diff --git a/drivers/mtd/nand/raw/nand_toshiba.c b/drivers/mtd/nand/raw/nand_toshiba.c
-> index 436ed90a90ad..1180068007a9 100644
-> --- a/drivers/mtd/nand/raw/nand_toshiba.c
-> +++ b/drivers/mtd/nand/raw/nand_toshiba.c
-> @@ -145,6 +145,7 @@ static void toshiba_nand_benand_init(struct nand_chip *chip)
->  
->  static void toshiba_nand_decode_id(struct nand_chip *chip)
->  {
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	struct mtd_info *mtd = nand_to_mtd(chip);
->  	struct nand_memory_organization *memorg;
->  
-> @@ -175,20 +176,20 @@ static void toshiba_nand_decode_id(struct nand_chip *chip)
->  	 *  - 24nm: 8 bit ECC for each 512Byte is required.
->  	 */
->  	if (chip->id.len >= 6 && nand_is_slc(chip)) {
-> -		chip->base.eccreq.step_size = 512;
-> +		requirements->step_size = 512;
->  		switch (chip->id.data[5] & 0x7) {
->  		case 0x4:
-> -			chip->base.eccreq.strength = 1;
-> +			requirements->strength = 1;
->  			break;
->  		case 0x5:
-> -			chip->base.eccreq.strength = 4;
-> +			requirements->strength = 4;
->  			break;
->  		case 0x6:
-> -			chip->base.eccreq.strength = 8;
-> +			requirements->strength = 8;
->  			break;
->  		default:
->  			WARN(1, "Could not get ECC info");
-> -			chip->base.eccreq.step_size = 0;
-> +			requirements->step_size = 0;
->  			break;
->  		}
->  	}
-> diff --git a/drivers/mtd/nand/raw/sunxi_nand.c b/drivers/mtd/nand/raw/sunxi_nand.c
-> index c6dd2e6d9ef8..a5eefdf89660 100644
-> --- a/drivers/mtd/nand/raw/sunxi_nand.c
-> +++ b/drivers/mtd/nand/raw/sunxi_nand.c
-> @@ -1732,6 +1732,7 @@ static void sunxi_nand_ecc_cleanup(struct nand_ecc_ctrl *ecc)
->  
->  static int sunxi_nand_attach_chip(struct nand_chip *nand)
->  {
-> +	struct nand_ecc_props *requirements = &nand->base.ecc.requirements;
->  	struct nand_ecc_ctrl *ecc = &nand->ecc;
->  	struct device_node *np = nand_get_flash_node(nand);
->  	int ret;
-> @@ -1745,8 +1746,8 @@ static int sunxi_nand_attach_chip(struct nand_chip *nand)
->  	nand->options |= NAND_SUBPAGE_READ;
->  
->  	if (!ecc->size) {
-> -		ecc->size = nand->base.eccreq.step_size;
-> -		ecc->strength = nand->base.eccreq.strength;
-> +		ecc->size = requirements->step_size;
-> +		ecc->strength = requirements->strength;
->  	}
->  
->  	if (!ecc->size || !ecc->strength)
-> diff --git a/drivers/mtd/nand/raw/tegra_nand.c b/drivers/mtd/nand/raw/tegra_nand.c
-> index 2325b06ccc9a..8264bb991d03 100644
-> --- a/drivers/mtd/nand/raw/tegra_nand.c
-> +++ b/drivers/mtd/nand/raw/tegra_nand.c
-> @@ -855,7 +855,7 @@ static int tegra_nand_get_strength(struct nand_chip *chip, const int *strength,
->  		} else {
->  			strength_sel = strength[i];
->  
-> -			if (strength_sel < chip->base.eccreq.strength)
-> +			if (strength_sel < chip->base.ecc.requirements.strength)
->  				continue;
->  		}
->  
-> @@ -908,6 +908,7 @@ static int tegra_nand_select_strength(struct nand_chip *chip, int oobsize)
->  static int tegra_nand_attach_chip(struct nand_chip *chip)
->  {
->  	struct tegra_nand_controller *ctrl = to_tegra_ctrl(chip->controller);
-> +	struct nand_ecc_props *requirements = &chip->base.ecc.requirements;
->  	struct tegra_nand_chip *nand = to_tegra_chip(chip);
->  	struct mtd_info *mtd = nand_to_mtd(chip);
->  	int bits_per_step;
-> @@ -919,9 +920,9 @@ static int tegra_nand_attach_chip(struct nand_chip *chip)
->  	chip->ecc.engine_type = NAND_ECC_ENGINE_TYPE_ON_HOST;
->  	chip->ecc.size = 512;
->  	chip->ecc.steps = mtd->writesize / chip->ecc.size;
-> -	if (chip->base.eccreq.step_size != 512) {
-> +	if (requirements->step_size != 512) {
->  		dev_err(ctrl->dev, "Unsupported step size %d\n",
-> -			chip->base.eccreq.step_size);
-> +			requirements->step_size);
->  		return -EINVAL;
->  	}
->  
-> @@ -952,7 +953,7 @@ static int tegra_nand_attach_chip(struct nand_chip *chip)
->  		if (ret < 0) {
->  			dev_err(ctrl->dev,
->  				"No valid strength found, minimum %d\n",
-> -				chip->base.eccreq.strength);
-> +				requirements->strength);
->  			return ret;
->  		}
->  
-> diff --git a/drivers/mtd/nand/spi/core.c b/drivers/mtd/nand/spi/core.c
-> index 6f6ec8aa143d..edc8ec2923d5 100644
-> --- a/drivers/mtd/nand/spi/core.c
-> +++ b/drivers/mtd/nand/spi/core.c
-> @@ -419,7 +419,7 @@ static int spinand_check_ecc_status(struct spinand_device *spinand, u8 status)
->  		 * fixed, so let's return the maximum possible value so that
->  		 * wear-leveling layers move the data immediately.
->  		 */
-> -		return nand->eccreq.strength;
-> +		return nand->ecc.ctx.conf.strength;
->  
->  	case STATUS_ECC_UNCOR_ERROR:
->  		return -EBADMSG;
-> @@ -903,7 +903,7 @@ int spinand_match_and_init(struct spinand_device *spinand,
->  			continue;
->  
->  		nand->memorg = table[i].memorg;
-> -		nand->eccreq = table[i].eccreq;
-> +		nand->ecc.requirements = table[i].eccreq;
->  		spinand->eccinfo = table[i].eccinfo;
->  		spinand->flags = table[i].flags;
->  		spinand->id.len = 1 + table[i].devid.len;
-> @@ -1091,8 +1091,8 @@ static int spinand_init(struct spinand_device *spinand)
->  	mtd->oobavail = ret;
->  
->  	/* Propagate ECC information to mtd_info */
-> -	mtd->ecc_strength = nand->eccreq.strength;
-> -	mtd->ecc_step_size = nand->eccreq.step_size;
-> +	mtd->ecc_strength = nand->ecc.ctx.conf.strength;
-> +	mtd->ecc_step_size = nand->ecc.ctx.conf.step_size;
->  
->  	return 0;
->  
-> diff --git a/drivers/mtd/nand/spi/macronix.c b/drivers/mtd/nand/spi/macronix.c
-> index 0f900f3aa21a..9db55828a995 100644
-> --- a/drivers/mtd/nand/spi/macronix.c
-> +++ b/drivers/mtd/nand/spi/macronix.c
-> @@ -84,10 +84,10 @@ static int mx35lf1ge4ab_ecc_get_status(struct spinand_device *spinand,
->  		 * data around if it's not necessary.
->  		 */
->  		if (mx35lf1ge4ab_get_eccsr(spinand, &eccsr))
-> -			return nand->eccreq.strength;
-> +			return nand->ecc.ctx.conf.strength;
->  
-> -		if (WARN_ON(eccsr > nand->eccreq.strength || !eccsr))
-> -			return nand->eccreq.strength;
-> +		if (WARN_ON(eccsr > nand->ecc.ctx.conf.strength || !eccsr))
-> +			return nand->ecc.ctx.conf.strength;
->  
->  		return eccsr;
->  
-> diff --git a/drivers/mtd/nand/spi/toshiba.c b/drivers/mtd/nand/spi/toshiba.c
-> index bc801d83343e..c3e5b1a85e3e 100644
-> --- a/drivers/mtd/nand/spi/toshiba.c
-> +++ b/drivers/mtd/nand/spi/toshiba.c
-> @@ -90,12 +90,12 @@ static int tx58cxgxsxraix_ecc_get_status(struct spinand_device *spinand,
->  		 * data around if it's not necessary.
->  		 */
->  		if (spi_mem_exec_op(spinand->spimem, &op))
-> -			return nand->eccreq.strength;
-> +			return nand->ecc.ctx.conf.strength;
->  
->  		mbf >>= 4;
->  
-> -		if (WARN_ON(mbf > nand->eccreq.strength || !mbf))
-> -			return nand->eccreq.strength;
-> +		if (WARN_ON(mbf > nand->ecc.ctx.conf.strength || !mbf))
-> +			return nand->ecc.ctx.conf.strength;
->  
->  		return mbf;
->  
-> diff --git a/include/linux/mtd/nand.h b/include/linux/mtd/nand.h
-> index 2f838394b5f7..975ddf26ac8c 100644
-> --- a/include/linux/mtd/nand.h
-> +++ b/include/linux/mtd/nand.h
-> @@ -290,7 +290,7 @@ struct nand_ecc {
->   * struct nand_device - NAND device
->   * @mtd: MTD instance attached to the NAND device
->   * @memorg: memory layout
-> - * @eccreq: ECC requirements
-> + * @ecc: NAND ECC object attached to the NAND device
->   * @rowconv: position to row address converter
->   * @bbt: bad block table info
->   * @ops: NAND operations attached to the NAND device
-> @@ -298,8 +298,8 @@ struct nand_ecc {
->   * Generic NAND object. Specialized NAND layers (raw NAND, SPI NAND, OneNAND)
->   * should declare their own NAND object embedding a nand_device struct (that's
->   * how inheritance is done).
-> - * struct_nand_device->memorg and struct_nand_device->eccreq should be filled
-> - * at device detection time to reflect the NAND device
-> + * struct_nand_device->memorg and struct_nand_device->ecc.ctx.conf should
-> + * be filled at device detection time to reflect the NAND device
->   * capabilities/requirements. Once this is done nanddev_init() can be called.
->   * It will take care of converting NAND information into MTD ones, which means
->   * the specialized NAND layers should never manually tweak
-> @@ -308,7 +308,7 @@ struct nand_ecc {
->  struct nand_device {
->  	struct mtd_info mtd;
->  	struct nand_memory_organization memorg;
-> -	struct nand_ecc_props eccreq;
-> +	struct nand_ecc ecc;
->  	struct nand_row_converter rowconv;
->  	struct nand_bbt bbt;
->  	const struct nand_ops *ops;
+> diff --git a/drivers/irqchip/irq-gic-v3-its.c 
+> b/drivers/irqchip/irq-gic-v3-its.c
+> index 124251b0ccba..1235dd9a2fb2 100644
+> --- a/drivers/irqchip/irq-gic-v3-its.c
+> +++ b/drivers/irqchip/irq-gic-v3-its.c
+> @@ -1540,7 +1540,11 @@ static int its_set_affinity(struct irq_data *d,
+> const struct cpumask *mask_val,
+>  	/* don't set the affinity when the target cpu is same as current one 
+> */
+>  	if (cpu != its_dev->event_map.col_map[id]) {
+>  		target_col = &its_dev->its->collections[cpu];
+> -		its_send_movi(its_dev, target_col, id);
+> +
+> +		/* If the IRQ is disabled a discard was sent so don't move */
+> +		if (!irqd_irq_disabled(d))
+> +			its_send_movi(its_dev, target_col, id);
+> +
 
+This looks wrong. What you are testing here is whether the interrupt
+is masked, not that there isn't a valid translation.
+
+In the commit message, you're saying that we've issued a discard. This
+hints at doing a set_affinity on an interrupt that has been deactivated
+(mapping removed). Is that actually the case? If so, why was it 
+deactivated
+the first place?
+
+>  		its_dev->event_map.col_map[id] = cpu;
+>  		irq_data_update_effective_affinity(d, cpumask_of(cpu));
+>  	}
+> @@ -3439,8 +3443,16 @@ static int its_irq_domain_activate(struct
+> irq_domain *domain,
+>  	if (its_dev->its->numa_node >= 0)
+>  		cpu_mask = cpumask_of_node(its_dev->its->numa_node);
+> 
+> -	/* Bind the LPI to the first possible CPU */
+> -	cpu = cpumask_first_and(cpu_mask, cpu_online_mask);
+> +	/* If the cpu set to a different CPU that is still online use it */
+> +	cpu = its_dev->event_map.col_map[event];
+> +
+> +	cpumask_and(cpu_mask, cpu_mask, cpu_online_mask);
+> +
+> +	if (!cpumask_test_cpu(cpu, cpu_mask)) {
+> +		/* Bind the LPI to the first possible CPU */
+> +		cpu = cpumask_first(cpu_mask);
+> +	}
+> +
+>  	if (cpu >= nr_cpu_ids) {
+>  		if (its_dev->its->flags & ITS_FLAGS_WORKAROUND_CAVIUM_23144)
+>  			return -EINVAL;
+
+So you deactivate an interrupt, do a set_affinity that doesn't issue
+a MOVI but preserves the affinity, then reactivate it and hope that
+the new mapping will target the "right" CPU.
+
+That seems a bit mad, but I presume this isn't the whole story...
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
