@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C63AB1E8345
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 18:10:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E65A71E8327
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 18:07:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YntAjavpRUKXx3+YK3y5OP+9YsjzSwpBZzTAUoPI5ns=; b=FTHb3MuAzZH3zs
-	xYdUgKizAqz+Z2m9IDnWdZxatWNqynAWglR2StKXOeYINdno+/ThMnnQO5pe1IfGDdtceiV1M0JKp
-	PccWrumuzMmtNAgbAggpJhTzSeA9Hq4pOEN2ak6vAw2/EqufvFW/ZH64s9lX12CO6XY+6wdAsg0ku
-	ayLLiiNWaZIJ9moh11VtBwNW0QpOKxkrn/NVu81jsvxtKVavwnv896ok43GxH7mMzv2EfIl7c3giU
-	0hyi+Tqi7RdTd//3PgTfSNJplDKed+KU65qkpBvg5BrcdiziaQc7DYXQwDYB+Z0WwjVt42sbqJNeI
-	UVevLTgtOBfpcnD2G36A==;
+	List-Owner; bh=f3GC6054XtfRcGkc1ROc3Pl2L5JUd+evKwmzDdgES28=; b=azInaCj5OgSQvE
+	pce3EvLSr67sRR8q6HKLA02xiAC+1KsrCFVYtedjS4hV2ty7Z+z4BcVgq33iumZD1WEP99RobSSmL
+	/5dMF2kULngC+UcU05C5rE0n5X7sjFT0SvS0B21NRCjnzrpTxUwCAQHpFFDqctEhi1480aTtfV47q
+	sEJksz7qafjP4Ei23038RSOD2YRlSJG5Sy8IsCepqgELzGMi/uXp6Gb8IS1+WceBwzgrwsxlse/PL
+	pXQkb37QY0A6Fu5n8pClaZmVBTlN4XyrhgN4hyWI+NTrNkSOnse9/j9ffzfXtvNXVLqw2x2wt/0vb
+	k9QbLqnCA0SRKoiG3+ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jehac-0006LN-8X; Fri, 29 May 2020 16:10:34 +0000
+	id 1jehXI-0001Ku-IY; Fri, 29 May 2020 16:07:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jehUP-0005Gl-UA
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 16:04:14 +0000
+ id 1jehTs-0004qr-Vz
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 16:03:41 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E933207BC;
- Fri, 29 May 2020 16:04:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1EA2520814;
+ Fri, 29 May 2020 16:03:35 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590768248;
- bh=9yqTa5LpsDYSLQJHPcL8M1lq28IIleOmSLUASgoqcAI=;
+ s=default; t=1590768215;
+ bh=R6r5GkOAL3ZO4KyBEEK8jowTrzETCOs0VNAKSknUigQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=NApHd2XIa3F6tKzwVofEEEZMTW7hh6FA33rvqkQ7U+GcMi1d/qgBKMXQliiJTtYsl
- 9h68Kc2wlC3BW6Qr6mc4kiYm6D8YPDiMDxOwzXvqpF2xLSPc2TRPmSGFTnaM4Hfe/8
- MoMLMCRTeaZ/pDmTZmTnkFq4wyLM/guOtw8aRKAU=
+ b=YcnFoBNwGYCJ+0cE90hlmpyIwlOlpZaPDciH/QNLFsc1+flwoV/cQk/HDFiJFGepP
+ WqXA+2j9c57PBLjwtboHBVxaCOh1+BEbDsdNpaIY5AhiSMJ4HnP3ykzcRHWnM0qFg1
+ OX1N/2u4YrzwnVbKzPSL5qKb6ujntP0wwHZW8+W4=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jehSC-00GJKc-Tk; Fri, 29 May 2020 17:01:53 +0100
+ id 1jehSD-00GJKc-Nk; Fri, 29 May 2020 17:01:54 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 13/24] KVM: arm64: Support enabling dirty log gradually in
- small chunks
-Date: Fri, 29 May 2020 17:01:10 +0100
-Message-Id: <20200529160121.899083-14-maz@kernel.org>
+Subject: [PATCH 14/24] KVM: arm64: Make KVM_CAP_MAX_VCPUS compatible with the
+ selected GIC version
+Date: Fri, 29 May 2020 17:01:11 +0100
+Message-Id: <20200529160121.899083-15-maz@kernel.org>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200529160121.899083-1-maz@kernel.org>
 References: <20200529160121.899083-1-maz@kernel.org>
@@ -63,8 +63,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_090410_286190_FE8D3B12 
-X-CRM114-Status: GOOD (  16.51  )
+X-CRM114-CacheID: sfid-20200529_090337_138084_33F139C9 
+X-CRM114-Status: GOOD (  13.76  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -108,89 +108,66 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Keqian Zhu <zhukeqian1@huawei.com>
+KVM_CAP_MAX_VCPUS always return the maximum possible number of
+VCPUs, irrespective of the selected interrupt controller. This
+is pretty misleading for userspace that selects a GICv2 on a GICv3
+system that supports v2 compat: It always gets a maximum of 512
+VCPUs, even if the effective limit is 8. The 9th VCPU will fail
+to be created, which is unexpected as far as userspace is concerned.
 
-There is already support of enabling dirty log gradually in small chunks
-for x86 in commit 3c9bd4006bfc ("KVM: x86: enable dirty log gradually in
-small chunks"). This adds support for arm64.
+Fortunately, we already have the right information stashed in the
+kvm structure, and we can return it as requested.
 
-x86 still writes protect all huge pages when DIRTY_LOG_INITIALLY_ALL_SET
-is enabled. However, for arm64, both huge pages and normal pages can be
-write protected gradually by userspace.
-
-Under the Huawei Kunpeng 920 2.6GHz platform, I did some tests on 128G
-Linux VMs with different page size. The memory pressure is 127G in each
-case. The time taken of memory_global_dirty_log_start in QEMU is listed
-below:
-
-Page Size      Before    After Optimization
-  4K            650ms         1.8ms
-  2M             4ms          1.8ms
-  1G             2ms          1.8ms
-
-Besides the time reduction, the biggest improvement is that we will minimize
-the performance side effect (because of dissolving huge pages and marking
-memslots dirty) on guest after enabling dirty log.
-
-Signed-off-by: Keqian Zhu <zhukeqian1@huawei.com>
+Reported-by: Ard Biesheuvel <ardb@kernel.org>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Link: https://lore.kernel.org/r/20200413122023.52583-1-zhukeqian1@huawei.com
+Tested-by: Alexandru Elisei <alexandru.elisei@arm.com>
+Reviewed-by: Alexandru Elisei <alexandru.elisei@arm.com>
+Link: https://lore.kernel.org/r/20200427141507.284985-1-maz@kernel.org
 ---
- Documentation/virt/kvm/api.rst    |  2 +-
- arch/arm64/include/asm/kvm_host.h |  3 +++
- arch/arm64/kvm/mmu.c              | 12 ++++++++++--
- 3 files changed, 14 insertions(+), 3 deletions(-)
+ arch/arm64/kvm/arm.c | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
 
-diff --git a/Documentation/virt/kvm/api.rst b/Documentation/virt/kvm/api.rst
-index efbbe570aa9b..0017f63fa44f 100644
---- a/Documentation/virt/kvm/api.rst
-+++ b/Documentation/virt/kvm/api.rst
-@@ -5777,7 +5777,7 @@ will be initialized to 1 when created.  This also improves performance because
- dirty logging can be enabled gradually in small chunks on the first call
- to KVM_CLEAR_DIRTY_LOG.  KVM_DIRTY_LOG_INITIALLY_SET depends on
- KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE (it is also only available on
--x86 for now).
-+x86 and arm64 for now).
- 
- KVM_CAP_MANUAL_DIRTY_LOG_PROTECT2 was previously available under the name
- KVM_CAP_MANUAL_DIRTY_LOG_PROTECT, but the implementation had bugs that make
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index 32c8a675e5a4..a723f84fab83 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -46,6 +46,9 @@
- #define KVM_REQ_RECORD_STEAL	KVM_ARCH_REQ(3)
- #define KVM_REQ_RELOAD_GICv4	KVM_ARCH_REQ(4)
- 
-+#define KVM_DIRTY_LOG_MANUAL_CAPS   (KVM_DIRTY_LOG_MANUAL_PROTECT_ENABLE | \
-+				     KVM_DIRTY_LOG_INITIALLY_SET)
-+
- DECLARE_STATIC_KEY_FALSE(userspace_irqchip_in_use);
- 
- extern unsigned int kvm_sve_max_vl;
-diff --git a/arch/arm64/kvm/mmu.c b/arch/arm64/kvm/mmu.c
-index 66eb8e3f6e8c..ddf85bf21897 100644
---- a/arch/arm64/kvm/mmu.c
-+++ b/arch/arm64/kvm/mmu.c
-@@ -2277,8 +2277,16 @@ void kvm_arch_commit_memory_region(struct kvm *kvm,
- 	 * allocated dirty_bitmap[], dirty pages will be tracked while the
- 	 * memory slot is write protected.
- 	 */
--	if (change != KVM_MR_DELETE && mem->flags & KVM_MEM_LOG_DIRTY_PAGES)
--		kvm_mmu_wp_memory_region(kvm, mem->slot);
-+	if (change != KVM_MR_DELETE && mem->flags & KVM_MEM_LOG_DIRTY_PAGES) {
-+		/*
-+		 * If we're with initial-all-set, we don't need to write
-+		 * protect any pages because they're all reported as dirty.
-+		 * Huge pages and normal pages will be write protect gradually.
-+		 */
-+		if (!kvm_dirty_log_manual_protect_and_init_set(kvm)) {
-+			kvm_mmu_wp_memory_region(kvm, mem->slot);
-+		}
-+	}
+diff --git a/arch/arm64/kvm/arm.c b/arch/arm64/kvm/arm.c
+index 0ea9a0266d9a..e01d44df98df 100644
+--- a/arch/arm64/kvm/arm.c
++++ b/arch/arm64/kvm/arm.c
+@@ -95,6 +95,11 @@ int kvm_vm_ioctl_enable_cap(struct kvm *kvm,
+ 	return r;
  }
  
- int kvm_arch_prepare_memory_region(struct kvm *kvm,
++static int kvm_arm_default_max_vcpus(void)
++{
++	return vgic_present ? kvm_vgic_get_max_vcpus() : KVM_MAX_VCPUS;
++}
++
+ /**
+  * kvm_arch_init_vm - initializes a VM data structure
+  * @kvm:	pointer to the KVM struct
+@@ -128,8 +133,7 @@ int kvm_arch_init_vm(struct kvm *kvm, unsigned long type)
+ 	kvm->arch.vmid.vmid_gen = 0;
+ 
+ 	/* The maximum number of VCPUs is limited by the host's GIC model */
+-	kvm->arch.max_vcpus = vgic_present ?
+-				kvm_vgic_get_max_vcpus() : KVM_MAX_VCPUS;
++	kvm->arch.max_vcpus = kvm_arm_default_max_vcpus();
+ 
+ 	return ret;
+ out_free_stage2_pgd:
+@@ -204,10 +208,11 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
+ 		r = num_online_cpus();
+ 		break;
+ 	case KVM_CAP_MAX_VCPUS:
+-		r = KVM_MAX_VCPUS;
+-		break;
+ 	case KVM_CAP_MAX_VCPU_ID:
+-		r = KVM_MAX_VCPU_ID;
++		if (kvm)
++			r = kvm->arch.max_vcpus;
++		else
++			r = kvm_arm_default_max_vcpus();
+ 		break;
+ 	case KVM_CAP_MSI_DEVID:
+ 		if (!kvm)
 -- 
 2.26.2
 
