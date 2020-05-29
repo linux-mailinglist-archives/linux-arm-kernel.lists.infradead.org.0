@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B7DF1E89BF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 23:13:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F2691E89C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 23:14:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mme2HykfjOvBImM+Gk+hnAxbdznx0qS9nVJYshpKajE=; b=RRjEJ1txaVUnN7
-	GyCl/LdXJIs+40WkG6YW7RelLp7oUWnVB1GPCvGU1Vc2JNLpv6nXC88Lpr3fHbpcP8FFSk/L6TOec
-	L66lw6f2nIzkW9qrA9LspEgzldfv5Yb5xFCjy+0fJtMa2lrxlzYT279ldxeeFgcwutgmSCeQHgKSt
-	OvLumceQ+sGyyLHGa2bN1af9+5rOnAX6keAj4i7Dpz+YWU7BNnZ99HZsc1PQyxPINr1uNJtdDasV6
-	oU34aYyWw2jblM0sEKLlJtOY2Oq6KJ+JoF4E9pu6i9l2uI1J0Vyqx7Zx8dfMDZ6WbUYq0UbbpXkNG
-	dTZjBmmRoac7Kj2bVHhQ==;
+	List-Owner; bh=MBaun6JUtq0SuCbXRSY90XFJqXrJCuM+jxwvaNfDOVc=; b=oNJNWcSzBZo9Ej
+	kaCSVC/umAG8z0E659tYQZi29ogVkUrCcpqQXxBtlMfOVtC0QzAINiqNndprNTO5b5XyDYKijvbyd
+	iZHrb4kil7V1L7D1a+eb7dHt9+s0042a3zuMkyzm0LNHA+Bf8xZYdmaC6xCkzXbAW+4ChZ2dFIWT5
+	BX0++Cun5AtEnEHgP9j8oc60fFusrZKnvRvTXnvfFchhgCP17/pCzJnrP2CwfkVwqEWGJSsdj3OLb
+	5gKzlxa0/uAtYawuN8CYY4G7fqWGJKmFdVRd8J5qQ2bDC5aAXGuHGvoQDB4D58CzsRdOIDcsnQ46q
+	JatsAuX291NH+zWGKU0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jemJx-0003XI-S1; Fri, 29 May 2020 21:13:41 +0000
-Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+	id 1jemKN-0003o9-Sb; Fri, 29 May 2020 21:14:07 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jemJk-0003Wy-MJ
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 21:13:29 +0000
-Received: by mail-il1-x143.google.com with SMTP id t8so3352459ilm.7
+ id 1jemJx-0003fw-FX
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 21:13:43 +0000
+Received: by mail-il1-x141.google.com with SMTP id 9so3832351ilg.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 May 2020 14:13:28 -0700 (PDT)
+ Fri, 29 May 2020 14:13:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Jt21Ps9+FBfKcNDuc8FGSnESCVuwAkGYn52AtK2/my0=;
- b=sRBj0+Ppc7iItYy7PgZkBnNG7da65q4EmFfkJHRbwo6jGTj9wX4wTpAKNDKg+/wc98
- 7buaceYdzMJ9nPlBGkxdHUIm7Ae+Ux0Ghi8LvMIvvXQXNyuNI541xgtioLzL9bYIzHw8
- Px0JOmQVBDxLOPcUoj+HBzMiCKsPTkTR0FXbBd9HHfohNlNrZYRdGYMPYoEpbrNqzcdv
- RzLihGI5JedvgZxNAZO0kfaMwBS5iaR2B9WhQ3wSS7V8Pv8fUj8UIbZZoPYqMZ8Fgkb6
- 7I1h1sJz4LE5SQq6jc0HWHh7/FwzxNWp/+znNYUrTsY63qmOZTGP2mS0jj0kLck/K4XD
- WKvA==
+ bh=/dLkMJn0QiVpV9Of7J4nw4nIp9zcJOlOeEhXZiLTfEM=;
+ b=ePqjhnu16E0Jhahg6XdHQJ5PDrqh8FukjCER5ulalEySfxgRqjeopwCBDNeivg+aOT
+ THF+yWs8Yj4CVxaVlByFJUtNEV6mIsHQMD7fzEoSH58JVrrFasSsuOxVQUSrzq2lW38q
+ dhx4KS9MXcaBjE/T2f9yWmM5dtUL84h9DW2Tnoz+vPUohbH/Yr3xEMcOGMMxfMAwIPSa
+ 3O9BXxv3n/PgCvVw5Fk/a9JRgdP40uQ8qm8aZ7aiGY7NdfZQXUOaywsRAmSSVzr1+29t
+ BbdoGa7TIGMtslJVgV72qwWSBCHVTwcumfKfLn8dde3cP+ny2GZs8dZZEAvixMhRGmtv
+ 7y3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Jt21Ps9+FBfKcNDuc8FGSnESCVuwAkGYn52AtK2/my0=;
- b=PBKS7mMbaRTwUIgnL65ZgRe8KTHNiqUWb1yd4Mq8bGbdkfwmq0u7NpIR0/f4am5lN4
- L0AWr/zoh+xN758zUKS6oCXsmE27rX9eYL5xg1PoRVPUJVCMK7gNQnAdD5d8MHbhzVMQ
- fyTO/jSxTQDNXHW3jD2wJ2+rgVG3JSHbELLbCBKve/dgG9ghc29Hq+ovbNjv1vfZyXyD
- KFBeCxjUmFSV5AeQPUq/dIfoq64AIBdr1uDWQU2BNmB5xyWgKc783/Lpq1RzCbYwwaRr
- LRdOxbdEU4wUw2sNNbwrpaGfr14/8HsQEjM/O+hkgl9duKYbH1RzGKhtHQ7n6/rb3JuP
- vz3w==
-X-Gm-Message-State: AOAM530KY5EhCnRmvg02qbuRGXkEtII67vTewRUL02QiLw9+lH/Ky1fl
- 2lnf7Sdkgn7t2K+opjsG/Qk=
-X-Google-Smtp-Source: ABdhPJykRswbemFD9ygIADTIYs3BlujLkEyTV/gfU/Eo7CFF+ov7rAEGnqxPK4yvdyi1MgyQLq8i4w==
-X-Received: by 2002:a05:6e02:ea2:: with SMTP id
- u2mr9309952ilj.202.1590786807650; 
- Fri, 29 May 2020 14:13:27 -0700 (PDT)
+ bh=/dLkMJn0QiVpV9Of7J4nw4nIp9zcJOlOeEhXZiLTfEM=;
+ b=Htyr++BOZQWmAttwkp0lHEOUu6Y9/XYRbEWfTKngppqLFC1Nl2oxgePkDc4tRsPKVE
+ NCh6MTatChPi4i23ppaLKE1TKZzgySSb09Ll3/ueYaFnpAsIdCO4vkPb9qOnQnX3xwF8
+ brgnJNlTj2OC3+1ytJnD6RZgV1p4NwJIFgoe4ecLxf1wzjWn5KJ+n2KsNBu9ce2ATilS
+ mhHKr1MO09kS1AsOY6JG7sxhzKIzMFfMpgcuDHf8oFCwWjKnCkOJ3T6kY8Bt8hWMifdW
+ gX+S5VZIu4bsNZsgRAlr3ZycKMnIeId5o7/Tjj02xe0Kp9JvBZhuS7sZHuyNo5yYjQgI
+ 63AA==
+X-Gm-Message-State: AOAM530F7kM08xGqFsXHqgVp966tb7K5BpOgRYfpJY3dYJSwzUoa41Dn
+ 83cXwermwqRvm8Dtp5yvfIY=
+X-Google-Smtp-Source: ABdhPJw5Tem8TuV9FAcL5Up3BD9pUxEXEty/777TKhZNe8MZHN1fJpHPIrieQuXlX03vG3BoDhL3jA==
+X-Received: by 2002:a92:2a06:: with SMTP id r6mr8537644ile.121.1590786820308; 
+ Fri, 29 May 2020 14:13:40 -0700 (PDT)
 Received: from [10.67.49.116] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id m5sm4189886ioj.52.2020.05.29.14.13.25
+ by smtp.googlemail.com with ESMTPSA id t189sm4221511iod.16.2020.05.29.14.13.38
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 29 May 2020 14:13:26 -0700 (PDT)
-Subject: Re: [PATCH 1/3] cpufreq: brcmstb-avs-cpufreq: more flexible interface
- for __issue_avs_command()
+ Fri, 29 May 2020 14:13:39 -0700 (PDT)
+Subject: Re: [PATCH 3/3] cpufreq: brcmstb-avs-cpufreq: send S2_ENTER / S2_EXIT
+ commands to AVS
 To: Markus Mayer <markus.mayer@broadcom.com>,
  "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  Viresh Kumar <viresh.kumar@linaro.org>,
  Florian Fainelli <f.fainelli@gmail.com>
 References: <20200528182014.20021-1-mmayer@broadcom.com>
+ <20200528182014.20021-3-mmayer@broadcom.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -120,23 +120,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <35e51785-e5f2-792f-321e-e083572a21b5@gmail.com>
-Date: Fri, 29 May 2020 14:13:24 -0700
+Message-ID: <6b1a2e6d-46bc-b540-b368-c2cd600de4c3@gmail.com>
+Date: Fri, 29 May 2020 14:13:37 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200528182014.20021-1-mmayer@broadcom.com>
+In-Reply-To: <20200528182014.20021-3-mmayer@broadcom.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_141328_729503_41B74090 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20200529_141341_531273_3C60CDC6 
+X-CRM114-Status: GOOD (  11.85  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -170,9 +170,9 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 5/28/20 11:20 AM, Markus Mayer wrote:
-> We are changing how parameters are passed to __issue_avs_command(), so we
-> can pass input *and* output arguments with the same command, rather than
-> just one or the other.
+> On suspend we send AVS_CMD_S2_ENTER and on resume AVS_CMD_S2_EXIT.
+> These are best effort calls, so we don't check the return code or take
+> any action if either of the calls fails.
 > 
 > Signed-off-by: Markus Mayer <mmayer@broadcom.com>
 
