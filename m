@@ -2,142 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D843A1E89DE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 23:21:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C9F21E89E8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 23:22:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qWfxtwxzQlLafpMpZdocKQ7NPqmnUrGPFLj2jtL8/Nc=; b=paXr4ZNTet6beFSqaq3OVQWk3
-	3u0zjOUewDRf2PP0+TYv2+pEwNZ5FCBHuiEdzw8WMcTC2SwIP9qG2+lPO0WsWEtp9bc1Fkyc059/F
-	oA7yDYtTi9Ynt+wzwVecMe7JEbAJ/mJDVaLP3nYD2Jnb87cApDGFvh4R57SWFB5uAMZnrUplB+TxQ
-	R+KIW8OZzIB+khqpMiV5+0ZrvGs/QIAO1X4uI6QIbre+HKFdCT+tS2NNxv3qN6rhfvvk23pCcrzsi
-	/+fc8n2LWGqFbUJT9ME+v50HHgjumTMbIdt1ieGi47pG+PPWurr7RPU8ygC0pdBvzG8xR1P8EbGGV
-	j80GGO99A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Subject:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ygduobzmFciB/oMfCq1gYvM23FNM5TAIzO0yCc2wD80=; b=lxeVlim/hXusGF
+	e2jI0ZSFTAEd89aPwf6lP5SK8gQuxcVAQjmi7Zgq3STOsAtMqUL8oR3hGHJj856IXWVgbrEkXPU/4
+	HdU5piNXECc6Q/SbI1m4YmoPW6WlBkFlhN2k8sXlV0ZG+hgZZi/2yVLPL/v4qQwLMRLeiDFmYmgpF
+	SfinUSNHiZ9rc67tVsH08L7Xd2q5BFQW8zJ46PVk1AY1UenkLZJ6rwy9Wg3zdX6dwPM/GV+D+TtAf
+	z7pWD/2XUPSnOrpCz/PSfUeJm0wodqyewTjtqIMzGyYhu/3f3StQF8nYsJjiHzKzTYC6Q1HL7snh9
+	jHltHYkoQsX3aQFELLbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jemRR-0001g5-UH; Fri, 29 May 2020 21:21:25 +0000
-Received: from mail-bn8nam11on2078.outbound.protection.outlook.com
- ([40.107.236.78] helo=NAM11-BN8-obe.outbound.protection.outlook.com)
+	id 1jemRv-0001vM-4X; Fri, 29 May 2020 21:21:55 +0000
+Received: from [204.191.154.188] (helo=ale.deltatee.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jemRH-0001ez-9m
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 21:21:16 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=j2plQyIoozcLQtahqCn0OC+F6N9YGzWTUpzU5/x8wdx1xTSIgYLs0VTgK3mv9FcqEa+7iz7IZNzMzdPK+AKXA4qJeIfgMkf/agM+GdBpiZCrN7grjc2qqO9Xx+3fhl87ixoCWWuOLdTFEiWSAuqeajnP00yWnmikslo/WDZAsSFLBCaxdDPvqLWJbWdCtAZ23xO2kYEs2O1fSORECjdoJr+9XS9jZHmI08LMp9wG5BeN6AWQ1We+YH4rRK+7B9uJy/qKn/dsW0tS08OEhWeJe17qs7+CLHC2v5x4RZXmkB3Vc1FH4IaL46hzl18pdfcfRnuo9ltqkIp4ac3UjHCnYw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kAv0O7pIqyJc0rZaiMS393OUZWJX+JYnzmvHi8+2FGM=;
- b=b7RtUvSy9PLnVZxoyJk7y5qiyt2tdTdeKJQzxN1bNVVOFxywY24fkH704FEMLWjyMC2vmJxTm/SrX/XTY8XF09+r+xpS9qKHEFuycWax3w5DnNWf3YRuntXG2vBFPAO/dSMq0g80Oc/QBRYigMH/DJq2OXPuyQbrXho0Kk7ybwX5kuIEZvK2w6tDYIdrgeza1IlRfVIP2c4v/M5LzlopCYR2bN6txdO8g6s51FgAUNyR/GPKr5lfXtS8s4fnwXMDGr5pImA3zrDvJk+LsGIwI8ftHxAUjFP6P4AjjDZXUo3htsuJ5bxqjJ9IKttXbKJNw7YB/DFCXhwan4wK18KTxA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=kAv0O7pIqyJc0rZaiMS393OUZWJX+JYnzmvHi8+2FGM=;
- b=OWszzkIrUfOoCQinvz4qwp/RdDzIh86Sp+Zk7DNx/8kfThC305W18L3riaWnpBNWrglW1NZ8ZCIEDU3MewRZPQ3eITe+zuaPyXHfi1fMhYjAiadUdFCEhgwhLorVL26ivpXZQJnI76vHdml5tsAeEtb6GvwV+vmrKaMqGRj7EoA=
-Received: from SN4PR0201CA0028.namprd02.prod.outlook.com
- (2603:10b6:803:2e::14) by BN6PR02MB2196.namprd02.prod.outlook.com
- (2603:10b6:404:34::13) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.21; Fri, 29 May
- 2020 21:21:08 +0000
-Received: from SN1NAM02FT012.eop-nam02.prod.protection.outlook.com
- (2603:10b6:803:2e:cafe::65) by SN4PR0201CA0028.outlook.office365.com
- (2603:10b6:803:2e::14) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.19 via Frontend
- Transport; Fri, 29 May 2020 21:21:08 +0000
-X-MS-Exchange-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT012.mail.protection.outlook.com (10.152.72.95) with Microsoft SMTP
- Server id 15.20.3045.17 via Frontend Transport; Fri, 29 May 2020 21:21:07
- +0000
-Received: from [149.199.38.66] (port=57015 helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
- (envelope-from <jolly.shah@xilinx.com>)
- id 1jemQW-0007Wc-4s; Fri, 29 May 2020 14:20:28 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <jolly.shah@xilinx.com>)
- id 1jemR9-0008DD-KO; Fri, 29 May 2020 14:21:07 -0700
-Received: from xsj-pvapsmtp01 (mail.xilinx.com [149.199.38.66] (may be forged))
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 04TLKuCp019086; 
- Fri, 29 May 2020 14:20:56 -0700
-Received: from [10.23.122.231] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <jollys@xilinx.com>)
- id 1jemQy-00089k-63; Fri, 29 May 2020 14:20:56 -0700
-Subject: Re: [PATCH v2 2/2] drivers: clk: zynqmp: Update fraction clock check
- from custom type flags
-To: Stephen Boyd <sboyd@kernel.org>, Jolly Shah <jolly.shah@xilinx.com>,
- arm@kernel.org, linux-clk@vger.kernel.org, michal.simek@xilinx.com,
- mturquette@baylibre.com, olof@lixom.net
-References: <1584048699-24186-1-git-send-email-jolly.shah@xilinx.com>
- <1584048699-24186-3-git-send-email-jolly.shah@xilinx.com>
- <159054169658.88029.371843532116000844@swboyd.mtv.corp.google.com>
- <2c8cd31a-46ba-ec6a-67a7-f3d9abe561ff@xilinx.com>
- <159070755756.69627.18401650656284023600@swboyd.mtv.corp.google.com>
-From: Jolly Shah <jolly.shah@xilinx.com>
-Message-ID: <725e9477-647f-83b7-7fdf-7cdb7ae74586@xilinx.com>
-Date: Fri, 29 May 2020 14:20:55 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:68.0)
- Gecko/20100101 Thunderbird/68.8.1
+ id 1jemRR-0001mS-VD; Fri, 29 May 2020 21:21:27 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=deltatee.com; s=20200525; h=Subject:Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Sender:
+ Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender
+ :Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=fj4wKOtVYLrcqYVXpt9c2vH51FUvKotCgqQuY7zVZ2k=; b=b96g+2M4iyp1SAYrzZS1fpiUCq
+ ePzANrhF0COO+6jRUPoeDmySlgJVU6m/rPyXt57P4RCIonCpkajDWlESxSns8SkeMf1JUN+p5VwXI
+ LaIpyCsQ3xEY1tRZbmrAX1IIBtYPv/hiJXGWo2BfT5aPumyg7CKRMqnBzpal97YO+lQtoBA8ZuQUK
+ SvJ/HICeFgy28c6+YAi2NJ+GFJ1XPggoZqdjJjDjetSllwedUe6OueW8gHeiWxj/co4q2lewqWPGz
+ DL15eKFLSm2BXN06PzSHNqzjDuDvbEQNIY7M7rCSGRrH1HOWFDVmuFoq8SLMVZEdPWs3RbLgauKc/
+ 5xPZm2ZA==;
+Received: from guinness.priv.deltatee.com ([172.16.1.162])
+ by ale.deltatee.com with esmtp (Exim 4.92)
+ (envelope-from <logang@deltatee.com>)
+ id 1jemRE-0004yn-1k; Fri, 29 May 2020 15:21:12 -0600
+To: Marek Szyprowski <m.szyprowski@samsung.com>,
+ Christoph Hellwig <hch@infradead.org>
+References: <20191221150402.13868-1-murphyt7@tcd.ie>
+ <465815ae-9292-f37a-59b9-03949cb68460@deltatee.com>
+ <20200529124523.GA11817@infradead.org>
+ <CGME20200529190523eucas1p2c086133e707257c0cdc002f502d4f51d@eucas1p2.samsung.com>
+ <33137cfb-603c-86e8-1091-f36117ecfaf3@deltatee.com>
+ <ef2150d5-7b6a-df25-c10d-e43316fe7812@samsung.com>
+From: Logan Gunthorpe <logang@deltatee.com>
+Message-ID: <b9140772-0370-a858-578c-af503a06d8e9@deltatee.com>
+Date: Fri, 29 May 2020 15:21:04 -0600
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <159070755756.69627.18401650656284023600@swboyd.mtv.corp.google.com>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
- SFTY:;
- SFS:(346002)(136003)(376002)(39860400002)(396003)(46966005)(5660300002)(478600001)(26005)(31686004)(4326008)(82740400003)(36756003)(107886003)(54906003)(2906002)(53546011)(336012)(426003)(47076004)(82310400002)(356005)(44832011)(8676002)(8936002)(81166007)(316002)(110136005)(70586007)(2616005)(83380400001)(9786002)(31696002)(15650500001)(186003)(70206006)(42866002)(43740500002);
- DIR:OUT; SFP:1101; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 7e236307-d780-4db1-9398-08d8041633e5
-X-MS-TrafficTypeDiagnostic: BN6PR02MB2196:
-X-Microsoft-Antispam-PRVS: <BN6PR02MB2196DCF584CC8FA6D84154F3B88F0@BN6PR02MB2196.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
-X-Forefront-PRVS: 04180B6720
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: EeLsH3oq2qKyJjHX7V5XBPQAUTl6A7g/yZWEKFlMtxBoPt6mi3JXvsz8PNCQ0DBfkTpJka8dYY/XBY4HvtpiNY1pm1WWqZ+rOrhgKeUeJ5d9l5sDJJZlQwcUtlgYGTdmHTQ9bpm3FYWfR/XsptskjGYB7G9PX22dqp7k3kNZ48VJ3GR5FUWnUDElKPD5eGg7Jz781LUrEhgZp1oOOpf2ErdakLQi0DcTbQElAmS/YSaelqezi1QwxNGlqy8y6Cb7BztRooLjcnAJD3s6rHuQtMGshlUbgKvA7khgWjQOFCrXaRx9p6tKro9HMKQOcl1POFTffkkXtK/hFc+iE5a+p9nn40i0ZVFUuuj+3GoDpYBoL3lEKKe675mGBOPSS+Vpx4ePS5DXXxF5exTTFSDrNM5zgHdMUH7Fqmb0mkU6pbbl0eeaMyX4pDHmWCU7JCQaM5mMfk213VC9P90jMtHhhw==
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 May 2020 21:21:07.9260 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7e236307-d780-4db1-9398-08d8041633e5
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN6PR02MB2196
+In-Reply-To: <ef2150d5-7b6a-df25-c10d-e43316fe7812@samsung.com>
+Content-Language: en-CA
+X-SA-Exim-Connect-IP: 172.16.1.162
+X-SA-Exim-Rcpt-To: joonas.lahtinen@linux.intel.com, jani.nikula@linux.intel.com,
+ dwmw2@infradead.org, kgene@kernel.org, linux-kernel@vger.kernel.org,
+ cohuck@redhat.com, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org,
+ virtualization@lists.linux-foundation.org, tglx@linutronix.de,
+ linux-tegra@vger.kernel.org, rodrigo.vivi@intel.com,
+ linux-mediatek@lists.infradead.org, alex.williamson@redhat.com,
+ intel-gfx@lists.freedesktop.org, linux-arm-msm@vger.kernel.org,
+ linux-s390@vger.kernel.org, gerald.schaefer@de.ibm.com, agross@kernel.org,
+ linux-rockchip@lists.infradead.org, jonathanh@nvidia.com, krzk@kernel.org,
+ maz@kernel.org, linux-samsung-soc@vger.kernel.org, jean-philippe@linaro.org,
+ will@kernel.org, thierry.reding@gmail.com, julien.grall@arm.com,
+ matthias.bgg@gmail.com, bjorn.andersson@linaro.org,
+ dri-devel@lists.freedesktop.org, airlied@linux.ie, kvm@vger.kernel.org,
+ iommu@lists.linux-foundation.org, murphyt7@tcd.ie, hch@infradead.org,
+ m.szyprowski@samsung.com
+X-SA-Exim-Mail-From: logang@deltatee.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on ale.deltatee.com
+X-Spam-Level: 
+X-Spam-Status: No, score=-8.9 required=5.0 tests=ALL_TRUSTED,BAYES_00,
+ GREYLIST_ISWHITE autolearn=ham autolearn_force=no version=3.4.2
+Subject: Re: [PATCH 0/8] Convert the intel iommu driver to the dma-iommu api
+X-SA-Exim-Version: 4.2.1 (built Wed, 08 May 2019 21:11:16 +0000)
+X-SA-Exim-Scanned: Yes (on ale.deltatee.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_142115_343724_5FE4311A 
-X-CRM114-Status: GOOD (  17.65  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200529_142126_148842_399148F5 
+X-CRM114-Status: GOOD (  13.42  )
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.236.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.236.78 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -149,132 +107,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tejas Patel <tejas.patel@xilinx.com>, Rajan Vaja <rajan.vaja@xilinx.com>,
- rajanv@xilinx.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: kvm@vger.kernel.org, David Airlie <airlied@linux.ie>,
+ Joonas Lahtinen <joonas.lahtinen@linux.intel.com>,
+ dri-devel@lists.freedesktop.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ linux-tegra@vger.kernel.org, Julien Grall <julien.grall@arm.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Marc Zyngier <maz@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Andy Gross <agross@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-s390@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, intel-gfx@lists.freedesktop.org,
+ Jani Nikula <jani.nikula@linux.intel.com>,
+ Alex Williamson <alex.williamson@redhat.com>,
+ linux-mediatek@lists.infradead.org, Rodrigo Vivi <rodrigo.vivi@intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ virtualization@lists.linux-foundation.org,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ David Woodhouse <dwmw2@infradead.org>, Cornelia Huck <cohuck@redhat.com>,
+ linux-kernel@vger.kernel.org, Tom Murphy <murphyt7@tcd.ie>,
+ iommu@lists.linux-foundation.org, Kukjin Kim <kgene@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephan,
 
- > ------Original Message------
- > From: Stephen Boyd <sboyd@kernel.org>
- > Sent:  Thursday, May 28, 2020 4:12PM
- > To: Jolly Shah <jolly.shah@xilinx.com>, Arm <arm@kernel.org>, 
-Linux-clk <linux-clk@vger.kernel.org>, Michal Simek 
-<michal.simek@xilinx.com>, Mturquette <mturquette@baylibre.com>, Olof 
-<olof@lixom.net>
- > Cc: Rajan Vaja <rajanv@xilinx.com>, 
-Linux-arm-kernel@lists.infradead.org 
-<linux-arm-kernel@lists.infradead.org>, Linux-kernel@vger.kernel.org 
-<linux-kernel@vger.kernel.org>, Tejas Patel <tejas.patel@xilinx.com>, 
-Rajan Vaja <rajan.vaja@xilinx.com>
- > Subject: Re: [PATCH v2 2/2] drivers: clk: zynqmp: Update fraction 
-clock check from custom type flags
- >
-> Quoting Jolly Shah (2020-05-28 10:44:01)
->> Hi Stephan,
->>
->> Thanks for the review.
->>
->>   > ------Original Message------
->>   > From: Stephen Boyd <sboyd@kernel.org>
->>   > Sent:  Tuesday, May 26, 2020 6:08PM
->>   > To: Jolly Shah <jolly.shah@xilinx.com>, Arm <arm@kernel.org>,
->> Linux-clk <linux-clk@vger.kernel.org>, Michal Simek
->> <michal.simek@xilinx.com>, Mturquette <mturquette@baylibre.com>, Olof
->> <olof@lixom.net>
->>   > Cc: Rajan Vaja <rajanv@xilinx.com>,
->> Linux-arm-kernel@lists.infradead.org
->> <linux-arm-kernel@lists.infradead.org>, Linux-kernel@vger.kernel.org
->> <linux-kernel@vger.kernel.org>, Tejas Patel <tejas.patel@xilinx.com>,
->> Rajan Vaja <rajan.vaja@xilinx.com>, Jolly Shah <jolly.shah@xilinx.com>
->>   > Subject: Re: [PATCH v2 2/2] drivers: clk: zynqmp: Update fraction
->> clock check from custom type flags
->>   >
->>> Quoting Jolly Shah (2020-03-12 14:31:39)
->>>> From: Tejas Patel <tejas.patel@xilinx.com>
->>>>
->>>> Older firmware version sets BIT(13) in clkflag to mark a
->>>> divider as fractional divider. Updated firmware version sets BIT(4)
->>>> in type flags to mark a divider as fractional divider since
->>>> BIT(13) is defined as CLK_DUTY_CYCLE_PARENT in the common clk
->>>> framework flags.
->>>>
->>>> To support both old and new firmware version, consider BIT(13) from
->>>> clkflag and BIT(4) from type_flag to check if divider is fractional
->>>> or not.
->>>>
->>>> To maintain compatibility BIT(13) of clkflag in firmware will not be
->>>> used in future for any purpose and will be marked as unused.
->>>
->>> Why are we mixing the firmware flags with the ccf flags? They shouldn't
->>> be the same. The firmware should have its own 'flag numberspace' that is
->>> distinct from the common clk framework's 'flag numberspace'. Please fix
->>> the code.
->>>
->>
->> Yes firmware flags are using separate numberspace now. Firmware
->> maintains CCF and firmware specific flags separately but earlier
->> CLK_FRAC was mistakenly defined in ccf flagspace and hence handled here
->> for backward compatibility. Driver takes care of not registering same
->> with CCF. Let me know if I misunderstood.
+
+On 2020-05-29 3:11 p.m., Marek Szyprowski wrote:
+> Patches are pending:
+> https://lore.kernel.org/linux-iommu/20200513132114.6046-1-m.szyprowski@samsung.com/T/
+
+Cool, nice! Though, I still don't think that fixes the issue in
+i915_scatterlist.h given it still ignores sg_dma_len() and strictly
+relies on sg_next()/sg_is_last() to stop iterating -- and I suspect this
+is the bug that got in Tom's way.
+
+>> However, as Robin pointed out, there are other ugly tricks like stopping
+>> iterating through the SGL when sg_dma_len() is zero. For example, the
+>> AMD driver appears to use drm_prime_sg_to_page_addr_arrays() which does
+>> this trick and thus likely isn't buggy (otherwise, I'd expect someone to
+>> have complained by now seeing AMD has already switched to IOMMU-DMA.
 > 
-> Why is the firmware maintaining CCF specific flags? The firmware
-> shouldn't know about the CCF flag numbering at all. We can change the
-> numbers that the CCF flags are assigned to randomly and that shouldn't
-> mean that the firmware needs to change. Maybe I should apply this patch?
+> I'm not sure that this is a trick. Stopping at zero sg_dma_len() was 
+> somewhere documented.
 
-Got it. Will fix it.
+Well whatever you want to call it, it is ugly to have some drivers doing
+one thing with the returned value and others assuming there's an extra
+zero at the end. It just causes confusion for people reading/copying the
+code. It would be better if they are all consistent. However, I concede
+stopping at zero should not be broken, presently.
 
-Thanks,
-Jolly Shah
-
-
-> 
-> ---8<----
-> diff --git a/include/linux/clk-provider.h b/include/linux/clk-provider.h
-> index bd1ee9039558..c1f36bca85b0 100644
-> --- a/include/linux/clk-provider.h
-> +++ b/include/linux/clk-provider.h
-> @@ -16,22 +16,22 @@
->    *
->    * Please update clk_flags[] in drivers/clk/clk.c when making changes here!
->    */
-> -#define CLK_SET_RATE_GATE	BIT(0) /* must be gated across rate change */
-> -#define CLK_SET_PARENT_GATE	BIT(1) /* must be gated across re-parent */
-> -#define CLK_SET_RATE_PARENT	BIT(2) /* propagate rate change up one level */
-> -#define CLK_IGNORE_UNUSED	BIT(3) /* do not gate even if unused */
-> +#define CLK_SET_RATE_GATE	BIT(13) /* must be gated across rate change */
-> +#define CLK_SET_PARENT_GATE	BIT(2) /* must be gated across re-parent */
-> +#define CLK_SET_RATE_PARENT	BIT(3) /* propagate rate change up one level */
-> +#define CLK_IGNORE_UNUSED	BIT(4) /* do not gate even if unused */
->   				/* unused */
->   				/* unused */
-> -#define CLK_GET_RATE_NOCACHE	BIT(6) /* do not use the cached clk rate */
-> -#define CLK_SET_RATE_NO_REPARENT BIT(7) /* don't re-parent on rate change */
-> -#define CLK_GET_ACCURACY_NOCACHE BIT(8) /* do not use the cached clk accuracy */
-> -#define CLK_RECALC_NEW_RATES	BIT(9) /* recalc rates after notifications */
-> -#define CLK_SET_RATE_UNGATE	BIT(10) /* clock needs to run to set rate */
-> -#define CLK_IS_CRITICAL		BIT(11) /* do not gate, ever */
-> +#define CLK_GET_RATE_NOCACHE	BIT(5) /* do not use the cached clk rate */
-> +#define CLK_SET_RATE_NO_REPARENT BIT(6) /* don't re-parent on rate change */
-> +#define CLK_GET_ACCURACY_NOCACHE BIT(7) /* do not use the cached clk accuracy */
-> +#define CLK_RECALC_NEW_RATES	BIT(8) /* recalc rates after notifications */
-> +#define CLK_SET_RATE_UNGATE	BIT(9) /* clock needs to run to set rate */
-> +#define CLK_IS_CRITICAL		BIT(10) /* do not gate, ever */
->   /* parents need enable during gate/ungate, set rate and re-parent */
-> -#define CLK_OPS_PARENT_ENABLE	BIT(12)
-> +#define CLK_OPS_PARENT_ENABLE	BIT(11)
->   /* duty cycle call may be forwarded to the parent clock */
-> -#define CLK_DUTY_CYCLE_PARENT	BIT(13)
-> +#define CLK_DUTY_CYCLE_PARENT	BIT(12)
->   
->   struct clk;
->   struct clk_hw;
-> 
+Logan
 
 _______________________________________________
 linux-arm-kernel mailing list
