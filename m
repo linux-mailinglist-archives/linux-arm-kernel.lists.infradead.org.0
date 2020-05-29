@@ -2,69 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 890421E7B3B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 13:07:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C62A61E7B39
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 13:07:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MnQ4t1EGoSf3M4foJ8nmHdZswu7NN0Pz1IFR/vpq1SM=; b=KuSOMa0MbQ7wVP
-	dyoly70Q8eEnrcOVC29WLfyLMMH9ugH9WsJ6ASQM8ICCV70ntiekvIxsj0ySF5JvZJJ0gO+JSsMl7
-	5E0MahnihpM2X8eqG7W2Em9Aw2TwKaD4+rBgrwzt9JY3AvM9HtoEPwp5GYVCr0dFsg1+RdvvznVdV
-	d8pEriMDHmuch7ZuqI85elHWqcn0+iAlUTihjeQLk3rUbr1a5Mu+wuheWPIy68yL708XajA7xoRMg
-	1N+Yvs4bGlK2YanEGaJ7ROrG+7qwOfifcxmeRQXZuQpXHpyCmZsUVnNZbvAxRm8uBhpxbQDJ/uC4s
-	8A1BdZowte4pIs91uoLA==;
+	List-Owner; bh=Tu+otbIDl6ggFraeVhJsK28/uaIB0Ux0d5IBcwQx12w=; b=A9S/RPGYCNdoa6
+	XUf2YITIKi4BKVkGrWg3rBKPEyRlEt7EF7cvQ8Djvp/gyFDc5qyWkReX3XbSpy4yKxShqhFRD4G4N
+	N60D8xVzxRwtwhulXv4alAxG87DaVFbNhpIyTtI+5BBGeV1d7EgSwPmXU00QQjcNbBGzAnfwt9DeA
+	bhTRKyF0djWlXpwcK8AaxRtlEuOvjx36bTxYZ1aGQqc47r47lpA2xZ2p590rPAO/LHqGO7dJSgMCB
+	OjBgD2QotvQiozTjOnYtMcrKR9osuj1QnJ5xcdwagcnAaHzNgd6iakEna+9jw8OFUHc7p68OZ4KgT
+	747ggOKBd2Lc+sf1hbEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jecrF-0007N1-Aj; Fri, 29 May 2020 11:07:25 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jecqs-00078c-Ud; Fri, 29 May 2020 11:07:02 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jecqn-00078Z-HD; Fri, 29 May 2020 11:06:59 +0000
-X-UUID: 5c724e649e524c3fa729287950a85146-20200529
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=jZUffhDsS3iywjAJ/yJ5JfUnRTxh9XWi8vUqBMSK1xw=; 
- b=MAeKSDfGibfhzNGpPlWlhJ/kWsZ4/N80ioIeOhEGfnRn/faegoj3xhPuJufnwFq45IodCqZ+aF5bUNUbzM8rYaIWU0OjCsYFaNOpfs8fsCBPRhKtCJe/9TaHin9DIIrmv4bbFFCv/8ljt+sDmssUASCaQQOUMOXjv6XuBF8n3JU=;
-X-UUID: 5c724e649e524c3fa729287950a85146-20200529
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <jiaxin.yu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 821815558; Fri, 29 May 2020 03:06:43 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 29 May 2020 04:06:47 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 29 May 2020 19:06:43 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 29 May 2020 19:06:43 +0800
-From: Jiaxin Yu <jiaxin.yu@mediatek.com>
-To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <tiwai@suse.com>,
- <matthias.bgg@gmail.com>, <hariprasad.kelam@gmail.com>
-Subject: [PATCH] ASoC: mediatek: mt6358: support DMIC one-wire mode
-Date: Fri, 29 May 2020 19:04:53 +0800
-Message-ID: <1590750293-12769-1-git-send-email-jiaxin.yu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
+ id 1jecqi-00077s-O7; Fri, 29 May 2020 11:06:54 +0000
+Received: by mail-ej1-x643.google.com with SMTP id a2so1639202ejb.10;
+ Fri, 29 May 2020 04:06:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/Qrt/M6ESkhAHYOhCagfsNNbU0iRRKlGQGvvz+MpDCI=;
+ b=d/pFoFsJEbZkDRHl8C3A5NoY1WvxEvuXxnoEEyBlb7Ixf/1XXQyJj5Kp+eCc/gH1uk
+ DapBeiWr2v5LlJoHs5ARSvFO4ZEkGzmZLq4BZKm14sBzPnw4Fs2C1SwL5amP8s8w35BL
+ dtDZRejSjTrcFR/yJVeMa3E+r5X4hOgR8cyzexoaVVMCZGF1Hf3wOOkj5OskDpP3nXk0
+ N3kgLQS4wbRjH83Nejs8KHTt1AMcF4WuK5UDJ+7eS3nESoy6cs0Tg+0bFJ3ysn2gT+/g
+ exPruriM5g+Ia/8+48SiACXTDDo5GOBOdcou2Sekro78abWEAiJ9J2IlzLaO0fbzOa0/
+ jN6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=/Qrt/M6ESkhAHYOhCagfsNNbU0iRRKlGQGvvz+MpDCI=;
+ b=shWOuuafjelKo6nVZrgIysy7rB3YV7CY77Akxnh+l2eAm6FA3lTjnsN2/teZm6V6tY
+ H3MlpZZFlNR/SRBHd1iOP9Q00jn86qkoBw5BXxNyEN20VsZwTgMvHXOmEIu+faODYshn
+ BaiCx3VwSvh2Ec1kxBkF6L0VADtCLGWtoBCfW2rFnzxQuNovRwaNrgYnxTnwJ3cZSrjT
+ LXWugXHqOf4lF9CHpBkAjMNntC58u9aDUzxQIfQH4zoklniYwgWtTz2IWioGYF8s3x1W
+ xDfq3Z0jOEl1rOVb3zrXw5RRLdZXXE4U7rGAP9cLA7201LLrNeIAgh4y/Nkc8bdSlLZD
+ 62+w==
+X-Gm-Message-State: AOAM531r4r2+hBV/7fya5jG83CjaLFT/3m76Y1rs3ygERzSaj7Yn7Fh7
+ HcKFhMpM2rcEvvBGf0hpL7c=
+X-Google-Smtp-Source: ABdhPJwSYAUA1tEGXMKk2UbE0RYx2jAbIfjeWFqmHFpDQjctaZBHpvJ2BW+4mwajo0IjUMU8Zrhgbw==
+X-Received: by 2002:a17:907:9d8:: with SMTP id
+ bx24mr7011248ejc.517.1590750409945; 
+ Fri, 29 May 2020 04:06:49 -0700 (PDT)
+Received: from localhost.localdomain ([188.27.38.213])
+ by smtp.gmail.com with ESMTPSA id 64sm6734004eda.85.2020.05.29.04.06.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 29 May 2020 04:06:49 -0700 (PDT)
+From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+To: =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jiri Slaby <jslaby@suse.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Subject: [PATCH 1/1] tty: serial: owl: Initialize lock before registering port
+Date: Fri, 29 May 2020 14:06:47 +0300
+Message-Id: <89f6393934fc6d493f8b9e87c1a6e916642b6a18.1590749143.git.cristian.ciocaltea@gmail.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 56AF50F10CD9D0433DF18F5F850C09F0DF00BA6224F5C412DE4A190D0C76F8BF2000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_040657_591136_8B719D79 
-X-CRM114-Status: UNSURE (   9.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200529_040652_805541_AA484BDF 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [cristian.ciocaltea[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -72,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,90 +99,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, howie.huang@mediatek.com,
- linux-kernel@vger.kernel.org, Jiaxin Yu <jiaxin.yu@mediatek.com>,
- tzungbi@google.com, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ linux-serial@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Supports DMIC one-wire mode. Adds a mixer control to enable and disable.
+Running a lockdep-enabled kernel leads to the following splat when
+probing the owl-uart driver:
 
-Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
-Reviewed-by: Tzung-Bi Shih <tzungbi@google.com>
+[    1.271784] b0124000.serial: ttyOWL2 at MMIO 0xb0124000 (irq = 22, base_baud = 1500000) is a owl-uart
+[    1.281226] INFO: trying to register non-static key.
+[    1.286179] the code is fine but needs lockdep annotation.
+[    1.291648] turning off the locking correctness validator.
+[    1.297125] CPU: 0 PID: 1 Comm: swapper/0 Not tainted 5.7.0-rc7+ #70
+[    1.303462] Hardware name: Generic DT based system
+[    1.308268] [<80111d3c>] (unwind_backtrace) from [<8010c9b8>] (show_stack+0x10/0x14)
+[    1.316003] [<8010c9b8>] (show_stack) from [<805016b4>] (dump_stack+0xb4/0xe0)
+[    1.323218] [<805016b4>] (dump_stack) from [<80182dec>] (register_lock_class+0x25c/0x8f4)
+[    1.331391] [<80182dec>] (register_lock_class) from [<8017ee34>] (__lock_acquire+0xb4/0x2ee4)
+[    1.339901] [<8017ee34>] (__lock_acquire) from [<8018291c>] (lock_acquire+0x424/0x4c8)
+[    1.347813] [<8018291c>] (lock_acquire) from [<808597b0>] (_raw_spin_lock_irqsave+0x54/0x68)
+[    1.356242] [<808597b0>] (_raw_spin_lock_irqsave) from [<80582e94>] (uart_add_one_port+0x384/0x510)
+[    1.365276] [<80582e94>] (uart_add_one_port) from [<8058b4d0>] (owl_uart_probe+0x1bc/0x248)
+[    1.373621] [<8058b4d0>] (owl_uart_probe) from [<8059c0e4>] (platform_drv_probe+0x48/0x94)
+[    1.381874] [<8059c0e4>] (platform_drv_probe) from [<805997c4>] (really_probe+0x200/0x470)
+[    1.390123] [<805997c4>] (really_probe) from [<80599c80>] (driver_probe_device+0x16c/0x1bc)
+[    1.398461] [<80599c80>] (driver_probe_device) from [<80599f18>] (device_driver_attach+0x44/0x60)
+[    1.407317] [<80599f18>] (device_driver_attach) from [<8059a078>] (__driver_attach+0x144/0x14c)
+[    1.416000] [<8059a078>] (__driver_attach) from [<805978ac>] (bus_for_each_dev+0x5c/0xb4)
+[    1.424162] [<805978ac>] (bus_for_each_dev) from [<8059896c>] (bus_add_driver+0x118/0x204)
+[    1.432410] [<8059896c>] (bus_add_driver) from [<8059ae6c>] (driver_register+0xbc/0xf8)
+[    1.440405] [<8059ae6c>] (driver_register) from [<80c1fd24>] (owl_uart_init+0x20/0x40)
+[    1.448313] [<80c1fd24>] (owl_uart_init) from [<801021d8>] (do_one_initcall+0x184/0x3a4)
+[    1.456399] [<801021d8>] (do_one_initcall) from [<80c01100>] (kernel_init_freeable+0x264/0x2e4)
+[    1.465085] [<80c01100>] (kernel_init_freeable) from [<80850a88>] (kernel_init+0x8/0x110)
+[    1.473249] [<80850a88>] (kernel_init) from [<80100114>] (ret_from_fork+0x14/0x20)
+[    1.480800] Exception stack(0xee8bdfb0 to 0xee8bdff8)
+[    1.485841] dfa0:                                     00000000 00000000 00000000 00000000
+[    1.494002] dfc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+[    1.502162] dfe0: 00000000 00000000 00000000 00000000 00000013 00000000
+[    1.508914] printk: console [ttyOWL2] enabled
+
+The locking issue occurs in uart_configure_port() when trying to
+guard the call to set_mctrl().
+
+uart_add_one_port() should normally initialize the spinlock via
+uart_port_spin_lock_init(), but it never happens because the port is
+detected as a console and, as a consequence, the spinlock is expected
+to be already initialized.
+
+The commit a3cb39d258ef
+("serial: core: Allow detach and attach serial device for console")
+changed the lock initialization logic to assume the spinlock is
+initialized even if the console is not enabled.
+
+Therefore, initialize the lock explicitly in owl_uart_probe(), before
+attempting to invoke uart_add_one_port().
+
+Fixes: a3cb39d258ef ("serial: core: Allow detach and attach serial device for console")
+Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
 ---
- sound/soc/codecs/mt6358.c | 33 ++++++++++++++++++++++++++++++++-
- 1 file changed, 32 insertions(+), 1 deletion(-)
+ drivers/tty/serial/owl-uart.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
-diff --git a/sound/soc/codecs/mt6358.c b/sound/soc/codecs/mt6358.c
-index 1b830ea..ca7628d 100644
---- a/sound/soc/codecs/mt6358.c
-+++ b/sound/soc/codecs/mt6358.c
-@@ -95,6 +95,8 @@ struct mt6358_priv {
- 	struct regulator *avdd_reg;
+diff --git a/drivers/tty/serial/owl-uart.c b/drivers/tty/serial/owl-uart.c
+index c149f8c30007..c2fa2f15d50a 100644
+--- a/drivers/tty/serial/owl-uart.c
++++ b/drivers/tty/serial/owl-uart.c
+@@ -705,6 +705,8 @@ static int owl_uart_probe(struct platform_device *pdev)
+ 	owl_uart_ports[pdev->id] = owl_port;
+ 	platform_set_drvdata(pdev, owl_port);
  
- 	int wov_enabled;
++	spin_lock_init(&owl_port->port.lock);
 +
-+	int dmic_one_wire_mode;
- };
- 
- int mt6358_set_mtkaif_protocol(struct snd_soc_component *cmpnt,
-@@ -566,6 +568,28 @@ static int mt6358_put_wov(struct snd_kcontrol *kcontrol,
- 	return 0;
- }
- 
-+static int mt6358_dmic_one_wire_mode_get(struct snd_kcontrol *kcontrol,
-+					 struct snd_ctl_elem_value *ucontrol)
-+{
-+	struct snd_soc_component *cmpnt = snd_soc_kcontrol_component(kcontrol);
-+	struct mt6358_priv *priv = snd_soc_component_get_drvdata(cmpnt);
-+
-+	ucontrol->value.integer.value[0] = priv->dmic_one_wire_mode;
-+
-+	return 0;
-+}
-+
-+static int mt6358_dmic_one_wire_mode_set(struct snd_kcontrol *kcontrol,
-+					 struct snd_ctl_elem_value *ucontrol)
-+{
-+	struct snd_soc_component *cmpnt = snd_soc_kcontrol_component(kcontrol);
-+	struct mt6358_priv *priv = snd_soc_component_get_drvdata(cmpnt);
-+
-+	priv->dmic_one_wire_mode = ucontrol->value.integer.value[0];
-+
-+	return 0;
-+}
-+
- static const DECLARE_TLV_DB_SCALE(playback_tlv, -1000, 100, 0);
- static const DECLARE_TLV_DB_SCALE(pga_tlv, 0, 600, 0);
- 
-@@ -588,6 +612,10 @@ static int mt6358_put_wov(struct snd_kcontrol *kcontrol,
- 
- 	SOC_SINGLE_BOOL_EXT("Wake-on-Voice Phase2 Switch", 0,
- 			    mt6358_get_wov, mt6358_put_wov),
-+
-+	SOC_SINGLE_BOOL_EXT("Dmic One Wire Mode", 0,
-+			    mt6358_dmic_one_wire_mode_get,
-+			    mt6358_dmic_one_wire_mode_set),
- };
- 
- /* MUX */
-@@ -1740,7 +1768,10 @@ static int mt6358_amic_enable(struct mt6358_priv *priv)
- 	mt6358_mtkaif_tx_enable(priv);
- 
- 	/* UL dmic setting off */
--	regmap_write(priv->regmap, MT6358_AFE_UL_SRC_CON0_H, 0x0000);
-+	if (priv->dmic_one_wire_mode)
-+		regmap_write(priv->regmap, MT6358_AFE_UL_SRC_CON0_H, 0x0400);
-+	else
-+		regmap_write(priv->regmap, MT6358_AFE_UL_SRC_CON0_H, 0x0080);
- 
- 	/* UL turn on */
- 	regmap_write(priv->regmap, MT6358_AFE_UL_SRC_CON0_L, 0x0001);
+ 	ret = uart_add_one_port(&owl_uart_driver, &owl_port->port);
+ 	if (ret)
+ 		owl_uart_ports[pdev->id] = NULL;
 -- 
-1.8.1.1.dirty
+2.26.2
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
