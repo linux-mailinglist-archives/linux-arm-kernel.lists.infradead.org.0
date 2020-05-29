@@ -2,44 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 545361E8377
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 18:19:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E80DD1E838A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 18:22:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KV4mKfHTJ0LKYSK89w780PKnXZMfaMANVGjgd0+byr8=; b=FqfydwBWqeGQRF
-	wqHVy8/SH1xxjDR+7alf2NH9H708/8m02zUZfvv87Se0d1Dc9NOOixpT6QNs+F7EZ6U86d7N5J87V
-	gvMXlIGWRtk2ITh8OQgzlpjTFvRYe473C21+1T9Rf82+BIye2HNXCkyQkYte42PskxylXjoFt1y2H
-	bWOqLPVqkAQjtC7ksqciAbzimkQvm85URaEFs4rNXdHCerZ2t1UG//EW8RCx7b7C/LjjZpt2LCWFc
-	pkvDdh2+NZQTokXDo5xiqlHPHWI87upAH5IDiPkvSKuluWW9OcViwKQA+enNKVmBCktH3TwTwfTY1
-	50K1zCDvcGEd7yBs/Aqg==;
+	List-Owner; bh=yiiMrpX0K9VK0ZV49fa3nzodDBGi2dORBeGpuzKGjW4=; b=hkBdS2J9p6PUWe
+	FcS9TmHanXdFIf40TJiP/6ml9xtjzaQsfZhaxYEXwvlBTY9OhduhfmOAPP6NMXTV7EDfhP/q0vkQv
+	8MMKt7N+k74RBkSWWlL8o16n5DOyT18pUeoC4/MwFrBGy6OoHERiioyBgUdmUbp2/9G/z1nfPjBIQ
+	jDrMAcnS6wWMY3xzbzCcVOI0B1DsEUNJ4s79PhSqHIFvVHQQoKyhLl66rW5QjtswDLfCP/TLg6Xy+
+	JhYc9gOGIVg3Foy3tRnGreUxfeaCX6P3RE2E1FbLZbR4TkWTPR+xXZZsu6HAgsMF48oQDfpNIf/2a
+	MHgcdZiiTg+aZwyNdLyA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jehif-0003BR-Tr; Fri, 29 May 2020 16:18:53 +0000
-Received: from [179.97.37.151] (helo=quaco.ghostprotocols.net)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jehiK-00034B-JE; Fri, 29 May 2020 16:18:32 +0000
-Received: by quaco.ghostprotocols.net (Postfix, from userid 1000)
- id 7D94440AFD; Fri, 29 May 2020 13:18:30 -0300 (-03)
-Date: Fri, 29 May 2020 13:18:30 -0300
-From: Arnaldo Carvalho de Melo <acme@kernel.org>
-To: Leo Yan <leo.yan@linaro.org>
-Subject: Re: [PATCH v7 0/3] perf arm-spe: Add support for synthetic events
-Message-ID: <20200529161830.GD537@kernel.org>
-References: <20200504115625.12589-1-leo.yan@linaro.org>
- <20200522030919.GE32389@leoy-ThinkPad-X240s>
- <20200526102602.GA27166@willie-the-truck>
- <20200526104337.GA7154@leoy-ThinkPad-X240s>
- <20200526195438.GC2206@willie-the-truck>
- <3a80a66f-b991-ec55-77a5-a8fc4fa69e5e@arm.com>
- <20200529152800.GB21552@leoy-ThinkPad-X240s>
+	id 1jehld-00066L-Kh; Fri, 29 May 2020 16:21:57 +0000
+Received: from mail.baikalelectronics.com ([87.245.175.226]
+ helo=mail.baikalelectronics.ru)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jehlT-00064u-JO
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 16:21:49 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id 078768030772;
+ Fri, 29 May 2020 16:21:36 +0000 (UTC)
+X-Virus-Scanned: amavisd-new at baikalelectronics.ru
+Received: from mail.baikalelectronics.ru ([127.0.0.1])
+ by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id t-5OvJZSG0eC; Fri, 29 May 2020 19:21:31 +0300 (MSK)
+Date: Fri, 29 May 2020 19:21:30 +0300
+From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+To: Lars Povlsen <lars.povlsen@microchip.com>
+Subject: Re: [PATCH 00/10] spi: Adding support for Microchip Sparx5 SoC
+Message-ID: <20200529162130.hsjcde27xhohl6jl@mobilestation>
+References: <20200513140031.25633-1-lars.povlsen@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200529152800.GB21552@leoy-ThinkPad-X240s>
-X-Url: http://acmel.wordpress.com
+In-Reply-To: <20200513140031.25633-1-lars.povlsen@microchip.com>
+X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200529_092147_997891_822CADE2 
+X-CRM114-Status: GOOD (  15.49  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -51,37 +62,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Al Grant <al.grant@arm.com>,
- Mathieu Poirier <mathieu.poirier@linaro.org>,
- Peter Zijlstra <peterz@infradead.org>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, James Clark <james.clark@arm.com>,
- Namhyung Kim <namhyung@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Serge Semin <fancer.lancer@gmail.com>, linux-spi@vger.kernel.org,
+ SoC Team <soc@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Fri, May 29, 2020 at 11:28:01PM +0800, Leo Yan escreveu:
-> Hi James,
-> 
-> On Fri, May 29, 2020 at 03:58:23PM +0100, James Clark wrote:
-> > Hi Will and Leo,
-> > 
-> > I've tested this on an Arm N1 machine and it looks good to me.
-> 
-> This is great!  Will respin the new patch set with adding your test tag
-> and send to ML.  Thanks a lot for the effort.
-> 
-> Hi Will, Arnaldo, sorry for late replying you due to other works and
-> thanks for suggestions in other emails.
+Hello Lars,
 
-Np, please do it on top of my tmp.perf/core branch, it'll become
-perf/core as soon as testing that is ongoing finishes.
+On Wed, May 13, 2020 at 04:00:21PM +0200, Lars Povlsen wrote:
+> This is an add-on series to the main SoC Sparx5 series
+> (Message-ID: <20200513125532.24585-1-lars.povlsen@microchip.com>).
+> 
+> The series add support for Sparx5 on top of the existing
+> ocelot/jaguar2 spi driver.
+> 
+> It spins off the existing support for the MSCC platforms into a
+> separate driver, as adding new platforms from the MSCC/Microchip
+> product lines will further complicate (clutter) the original driver.
+> 
+> New YAML dt-bindings are provided for the resulting driver.
+> 
+> It is expected that the DT patches are to be taken directly by the arm-soc
+> maintainers.
 
-- Arnaldo
+Regarding our cooperation. It can be implemented as follows. Since your patchset
+is less cumbersome than mine and is more ready to be integrated into the generic DW
+APB SSI code, it would be better to first make it through Mark', Andy' and my reviews
+to be further merged into the kernel version of the driver. After that I'll have
+my code altered so it could be applied on top of your patches. When everything
+is done we'll have a more comprehensive DW APB SSI driver with poll-based
+PIO operations support, new features like rx-delay, etc.
+
+Thank you one more time for the series you've shared with us. Let's see what can
+be done to improve it...
+
+-Sergey
+
+> 
+> Lars Povlsen (10):
+>   spi: dw: Add support for polled operation via no IRQ specified in DT
+>   spi: dw: Add support for RX sample delay register
+>   spi: dw: Add support for client driver memory operations
+>   dt-bindings: spi: Add bindings for spi-dw-mchp
+>   spi: spi-dw-mmio: Spin off MSCC platforms into spi-dw-mchp
+>   dt-bindings: spi: spi-dw-mchp: Add Sparx5 support
+>   spi: spi-dw-mchp: Add Sparx5 support
+>   arm64: dts: sparx5: Add SPI controller
+>   arm64: dts: sparx5: Add spi-nor support
+>   arm64: dts: sparx5: Add spi-nand devices
+> 
+>  .../bindings/spi/mscc,ocelot-spi.yaml         |  89 ++++
+>  .../bindings/spi/snps,dw-apb-ssi.txt          |   7 +-
+>  MAINTAINERS                                   |   2 +
+>  arch/arm64/boot/dts/microchip/sparx5.dtsi     |  37 ++
+>  .../boot/dts/microchip/sparx5_pcb125.dts      |  16 +
+>  .../boot/dts/microchip/sparx5_pcb134.dts      |  22 +
+>  .../dts/microchip/sparx5_pcb134_board.dtsi    |   9 +
+>  .../boot/dts/microchip/sparx5_pcb135.dts      |  23 +
+>  .../dts/microchip/sparx5_pcb135_board.dtsi    |   9 +
+>  arch/mips/configs/generic/board-ocelot.config |   2 +-
+>  drivers/spi/Kconfig                           |   7 +
+>  drivers/spi/Makefile                          |   1 +
+>  drivers/spi/spi-dw-mchp.c                     | 399 ++++++++++++++++++
+>  drivers/spi/spi-dw-mmio.c                     |  93 ----
+>  drivers/spi/spi-dw.c                          |  31 +-
+>  drivers/spi/spi-dw.h                          |   4 +
+>  16 files changed, 644 insertions(+), 107 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/spi/mscc,ocelot-spi.yaml
+>  create mode 100644 drivers/spi/spi-dw-mchp.c
+> 
+> --
+> 2.26.2
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
