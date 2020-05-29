@@ -2,65 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 655691E7BFE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 13:34:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C62311E7C0C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 13:35:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S/7mUHp8Dy3Zwb0+wFfAFzVRdO5vdWZc8TTnb2UmZN8=; b=RDpOzYEiLgVpyN
-	wt7t32vy+wBLBlv2g++/GcnGMMKLI6DxmnPP3FYxvGlqadDtZ1GY20iXfh+7zdZNC4d3NPJTX6Ck3
-	uWoBokmlY9dKMHUvo4DhfIyFAUjBG2xzvIC2QhQ/oSmVEZB0edtUd0dQSyL6oW+DCw7/v6/p3YpsN
-	w+rOJp4mxe8ce3m4LbdoaQ/F+WLJY+di5dPOilngEGuWr0G1Fg3bsnn7+J7R3hK40398b0qj+BZEy
-	SmV4Fa9TfXbI9tCvyD8XrW4FNz88QJ/w+BxGo8u5S//V6RbNdh9TzBARMI4c0XEBMZyXCpvoJk9cq
-	CQ6ctfFF4dMFlEhCOdkw==;
+	List-Owner; bh=+GeT98ZwXc7FUNZJubaiGUkvA8LoeYGToJPfJWy/Xrs=; b=f7kZNb3lZLCD3H
+	asU9C1CslsPh6PHbrZ1PiVxrllhxXYVvAJXWBrs9kpSUTwxmJlGiM922xxnYwC0QHSGNzZ/Zln1fF
+	X0K9l3IS8Jm375btQWfuU/ahXLTL5qLv9T2eW0b2J9Lr3G8EDz9wrBozcRrdXhlFBwY6U4NBkPEnc
+	GP/t4sBXjE7uKh0slIIWn2NRdg3E5sJpEpA3MTnLuTswFtZchNrP+KY3PN0IcduUJM2WsHQCXBoQL
+	7wSlq/Hsia8rTU7tmjafJ3rzh2LqzyuglGk318JIGiVZCxQtfAgu3brU0M6sTyvdmq95MaAP41zhX
+	FZWUc8YI5KuLQz0+6Sjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jedHX-0007Xz-CY; Fri, 29 May 2020 11:34:35 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jedIO-0001n2-Cn; Fri, 29 May 2020 11:35:28 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jedHL-0007XS-RT; Fri, 29 May 2020 11:34:25 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BD6AC2074D;
- Fri, 29 May 2020 11:34:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590752062;
- bh=qiIfDGRDhLmCmqfNyI9oCVYYxVukeiaDUPgdXqd2ttw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=H99J23gA4rUUloXkwCU9gOqfAo95n70m/qWqJloLlyJ0MNKEGihGSXfdDyjUpjIjC
- kGkXIYDKyZhyx8oP7VXbe3l+gh3iZnjGJ5WnXvxQ/ho4LQsN7SXqxtnnA364gJC4Fe
- m/xFXsGiVaJaMfRFzJUjlISByDDGOeSPPILrP7lY=
-Date: Fri, 29 May 2020 13:34:19 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+ id 1jedIF-0001lz-JE; Fri, 29 May 2020 11:35:21 +0000
+Received: by mail-pf1-x442.google.com with SMTP id n18so1277306pfa.2;
+ Fri, 29 May 2020 04:35:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=A/8AVUJdvOiynNLDMUmFl6p6jEKrS4pLsMpfZjizUzo=;
+ b=QGTigm0CR/xtCjAF6zk31bpGzHMwMEhvL6+EkHBzHlQTYEfY4EiVx7eQSPmWi0ApPl
+ xUquAByYBHSVw7efJZhPDaJJd4v3j7jVpN6AgJedKtZhugIEnqWVW/ETA6rkhdWlv18z
+ 4dZNT1eBj1j6/ajGMynBde/egjpPh3ocCWxSKjt8WHByAebN4whWF5R4yiALOKeAXh8Z
+ kdEcH+fF3Kug2xI0QgKcxmEft7p++KTVBpMTl1BuhVTUYwEOO3wYjYdJzyIbIF0nzLLm
+ AUl0yb8OmmG6VO+Yb4AfWeIBCMIoAPlogQP5M/8q651hZtg+hZWcx5L0PQ1GxJB7FAWm
+ 66gQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=A/8AVUJdvOiynNLDMUmFl6p6jEKrS4pLsMpfZjizUzo=;
+ b=UYz4sgIu5wL4b8eo/zdeiz+Z+d62UtPmzsBtumVm0q8/WMS0qnfGf72pHJnReib46l
+ F2Zt3Kj66fT2kvXjfyaMA9ALUu9O9KhzmnhOcfl9LWzzu959hpaxYDEY+Qtt0m2rTSKX
+ zBx64AB3GZf4lMIuVyYtkk3rcKi+nQESUkS/k4ksvQ73GnDBXSMUf0AUIYjf2zamlMDc
+ wm5lFJCgCXQgwliiWLImHECtJwKNTNdsapY2AZceHg0eZcLbXv8TzOCiQaV3vYAz49D/
+ Pq06UaIulPuM2J/oH/axdrMEcJ66xzmK30LUO/qb8KLzl7VHzWhi97dSZZM+gNX4YYLo
+ uK0A==
+X-Gm-Message-State: AOAM530lpsBiRauXbSFsJntdlAZbJZDywY2pmBikym4hyDLcBD6a9ewq
+ /mHQZ5p59tOc1xtrSiDoLN4xJBboH8m0F07bJ0c=
+X-Google-Smtp-Source: ABdhPJzYg1wP5drwVOQXE/AqhepEFdY0IS9y17Jl1ma8d1oEIchfTEfggGDsztl/Yq0qVt+/oxT0++TDbK1cOrN36ao=
+X-Received: by 2002:a63:545a:: with SMTP id e26mr7770326pgm.4.1590752117594;
+ Fri, 29 May 2020 04:35:17 -0700 (PDT)
+MIME-Version: 1.0
+References: <89f6393934fc6d493f8b9e87c1a6e916642b6a18.1590749143.git.cristian.ciocaltea@gmail.com>
+In-Reply-To: <89f6393934fc6d493f8b9e87c1a6e916642b6a18.1590749143.git.cristian.ciocaltea@gmail.com>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Fri, 29 May 2020 14:35:05 +0300
+Message-ID: <CAHp75Vf8xJ2yX-11JsTDnRvZQOK+16aePcB1AUzq=5oO-mFCGQ@mail.gmail.com>
 Subject: Re: [PATCH 1/1] tty: serial: owl: Initialize lock before registering
  port
-Message-ID: <20200529113419.GA1631227@kroah.com>
-References: <89f6393934fc6d493f8b9e87c1a6e916642b6a18.1590749143.git.cristian.ciocaltea@gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <89f6393934fc6d493f8b9e87c1a6e916642b6a18.1590749143.git.cristian.ciocaltea@gmail.com>
+To: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_043423_928749_22E75656 
-X-CRM114-Status: GOOD (  17.22  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200529_043519_635265_034F7BFB 
+X-CRM114-Status: GOOD (  18.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,21 +91,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-actions@lists.infradead.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>,
  Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
- linux-arm-kernel@lists.infradead.org
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 29, 2020 at 02:06:47PM +0300, Cristian Ciocaltea wrote:
+On Fri, May 29, 2020 at 2:09 PM Cristian Ciocaltea
+<cristian.ciocaltea@gmail.com> wrote:
+>
 > Running a lockdep-enabled kernel leads to the following splat when
 > probing the owl-uart driver:
-> 
+>
 > [    1.271784] b0124000.serial: ttyOWL2 at MMIO 0xb0124000 (irq = 22, base_baud = 1500000) is a owl-uart
 > [    1.281226] INFO: trying to register non-static key.
 > [    1.286179] the code is fine but needs lockdep annotation.
@@ -119,48 +143,53 @@ On Fri, May 29, 2020 at 02:06:47PM +0300, Cristian Ciocaltea wrote:
 > [    1.494002] dfc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
 > [    1.502162] dfe0: 00000000 00000000 00000000 00000000 00000013 00000000
 > [    1.508914] printk: console [ttyOWL2] enabled
-> 
+>
 > The locking issue occurs in uart_configure_port() when trying to
 > guard the call to set_mctrl().
-> 
+>
 > uart_add_one_port() should normally initialize the spinlock via
 > uart_port_spin_lock_init(), but it never happens because the port is
 > detected as a console and, as a consequence, the spinlock is expected
 > to be already initialized.
-> 
+>
 > The commit a3cb39d258ef
 > ("serial: core: Allow detach and attach serial device for console")
 > changed the lock initialization logic to assume the spinlock is
 > initialized even if the console is not enabled.
-> 
+>
 > Therefore, initialize the lock explicitly in owl_uart_probe(), before
 > attempting to invoke uart_add_one_port().
-> 
+
+Reviewed-by: Andy Shevchenko <andy.shevchenko@gmail.com>
+You are faster than me, thanks!
+
 > Fixes: a3cb39d258ef ("serial: core: Allow detach and attach serial device for console")
 > Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
 > ---
 >  drivers/tty/serial/owl-uart.c | 2 ++
 >  1 file changed, 2 insertions(+)
-> 
+>
 > diff --git a/drivers/tty/serial/owl-uart.c b/drivers/tty/serial/owl-uart.c
 > index c149f8c30007..c2fa2f15d50a 100644
 > --- a/drivers/tty/serial/owl-uart.c
 > +++ b/drivers/tty/serial/owl-uart.c
 > @@ -705,6 +705,8 @@ static int owl_uart_probe(struct platform_device *pdev)
->  	owl_uart_ports[pdev->id] = owl_port;
->  	platform_set_drvdata(pdev, owl_port);
->  
-> +	spin_lock_init(&owl_port->port.lock);
+>         owl_uart_ports[pdev->id] = owl_port;
+>         platform_set_drvdata(pdev, owl_port);
+>
+> +       spin_lock_init(&owl_port->port.lock);
 > +
->  	ret = uart_add_one_port(&owl_uart_driver, &owl_port->port);
->  	if (ret)
->  		owl_uart_ports[pdev->id] = NULL;
+>         ret = uart_add_one_port(&owl_uart_driver, &owl_port->port);
+>         if (ret)
+>                 owl_uart_ports[pdev->id] = NULL;
+> --
+> 2.26.2
+>
 
-Ugh, another one :(
 
-Thanks for this, will queue this up now.
-
-greg k-h
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
