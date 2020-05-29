@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9806C1E82DE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 18:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB5951E82E7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 18:03:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MJg7BxhGnbZqh+pqut0UWhS47qCPnBbsRCORILlnlTM=; b=U9hI7zr4VknXIo
-	F9r4ay7Z1UOsOWNRV7eTtySZAQ6DYwq5q/k6jDrUVQuD3mdgYowduWxUqOt3JVI3c7comIDHA4KO0
-	vdJg3j5/g0P5jh3RxC2ZRASyNNQwb0+6g7kc8GmeC9h9SA+rnIfi2QlBYrJ79dH1Jyv+biWYzJx6p
-	DYvADddG77ATBM2dxvojHKzCdFMHBb+jqfoNmObP5inJXJq4cL99oJyR2X/XgAXyk6dFZm0K7f/U5
-	Bc8HXcvs1+J8/N266WJisosozY661I5HdF+Q+UiXz6tUlBd7Z4O94YBDJKVyMT4uMbMCWzDatkQvA
-	8R4rw97g3u6QLClCnRdg==;
+	List-Owner; bh=hGvU33r+kaR3lXTGJVb5WDtDvq9MPkkIvQghe3gilY4=; b=r0myQbbtTd1JIi
+	f+wQgjGRW1BmeW4xjMu0smYQRxRW91b3N62qgDOA1s6irkEsCnPWJ0dVFPBhIac9OZncCm6hIQ3tX
+	30jWdnIH9ZsZf/GzerYoAxF1TwRDr+6dW5nS6zA+MfZ1UezGM/XG4TWSCsGG3QWNXj7w5jXZS9Dp9
+	Vdfb98fMqUIyZ5tWai73ApW3p8lGbYMdUGBhNXvy4ZKgSOp85Q+Ux1rXKH/IkfqThRrtTrR+6sdeR
+	mZykf9Wiflt3gW2B0bPjgO9ap87FbOBMHhGSggsknB0hBqEERVYUq8+AuIgdU2mxbzRQjCQcT2z7p
+	+eolp8FxM62m4gLK/pCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jehTL-0004EB-Kf; Fri, 29 May 2020 16:03:03 +0000
+	id 1jehTd-0004Rg-N7; Fri, 29 May 2020 16:03:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jehS3-0003U6-RM
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 16:01:45 +0000
+ id 1jehS4-0003Uz-Oq
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 16:01:46 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 69AFF20C09;
- Fri, 29 May 2020 16:01:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5A0DC20897;
+ Fri, 29 May 2020 16:01:44 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590768103;
- bh=lBKNCDT+VQ6RenPcWHqIkWtmZULheGIxt+fd/AyAAAg=;
+ s=default; t=1590768104;
+ bh=3zbLS5pfeT524Z366MfRgPxFm3lGCKRMk/h96+hQyQk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kwihRHxW6RxTpA9LITjh/ZujFbbAo+kV233sGkdT8br6Od77JXEySZ1xC84DOUPvp
- iAKs2q6uu4Gb8LDhXi2o7Cr12w0oj5HsunvKGnmA0FvA0xWGtusk5itCAN8H+e1mav
- 4pQ5Jy8KFhoRWoQEh8cUgEbAM8h7Gk2mvxLN+Wgw=
+ b=AuiVCoa/JCwDK4OTj6nj5AdD4sYjXgfoTlMp/jxJRG46GYpBqx9qtTgirmWkm3v8J
+ YUJIJO8tMdmkqHL02EfD47MwDNRZmY3b5O6MH+N+N3UFxN3c3yN6kan3VWXdUQ3XSf
+ LDLs7YnYvLHDRpq94bOM7MVVxjCU04j0hTleQe7M=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jehS1-00GJKc-RD; Fri, 29 May 2020 17:01:41 +0100
+ id 1jehS2-00GJKc-OQ; Fri, 29 May 2020 17:01:42 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 03/24] KVM: arm64: Update help text
-Date: Fri, 29 May 2020 17:01:00 +0100
-Message-Id: <20200529160121.899083-4-maz@kernel.org>
+Subject: [PATCH 04/24] KVM: arm64: Change CONFIG_KVM to a menuconfig entry
+Date: Fri, 29 May 2020 17:01:01 +0100
+Message-Id: <20200529160121.899083-5-maz@kernel.org>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200529160121.899083-1-maz@kernel.org>
 References: <20200529160121.899083-1-maz@kernel.org>
@@ -62,8 +62,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_090143_931999_BFF710BF 
-X-CRM114-Status: GOOD (  10.75  )
+X-CRM114-CacheID: sfid-20200529_090144_858591_26FCF574 
+X-CRM114-Status: GOOD (  11.24  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -109,31 +109,71 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Will Deacon <will@kernel.org>
 
-arm64 KVM supports 16k pages since 02e0b7600f83
-("arm64: kvm: Add support for 16K pages"), so update the Kconfig help
-text accordingly.
+Changing CONFIG_KVM to be a 'menuconfig' entry in Kconfig mean that we
+can straightforwardly enumerate optional features, such as the virtual
+PMU device as dependent options.
 
 Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Fuad Tabba <tabba@google.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
-Link: https://lore.kernel.org/r/20200505154520.194120-3-tabba@google.com
+Link: https://lore.kernel.org/r/20200505154520.194120-4-tabba@google.com
 ---
- arch/arm64/kvm/Kconfig | 2 --
- 1 file changed, 2 deletions(-)
+ arch/arm64/kvm/Kconfig | 16 +++++++++++-----
+ 1 file changed, 11 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm64/kvm/Kconfig b/arch/arm64/kvm/Kconfig
-index ce724e526689..d2cf4f099454 100644
+index d2cf4f099454..f1c1f981482c 100644
 --- a/arch/arm64/kvm/Kconfig
 +++ b/arch/arm64/kvm/Kconfig
-@@ -44,8 +44,6 @@ config KVM
- 	select TASK_DELAY_ACCT
- 	---help---
- 	  Support hosting virtualized guest machines.
--	  We don't support KVM with 16K page tables yet, due to the multiple
--	  levels of fake page tables.
+@@ -3,7 +3,6 @@
+ # KVM configuration
+ #
+ 
+-source "virt/kvm/Kconfig"
+ source "virt/lib/Kconfig"
+ 
+ menuconfig VIRTUALIZATION
+@@ -18,7 +17,7 @@ menuconfig VIRTUALIZATION
+ 
+ if VIRTUALIZATION
+ 
+-config KVM
++menuconfig KVM
+ 	bool "Kernel-based Virtual Machine (KVM) support"
+ 	depends on OF
+ 	# for TASKSTATS/TASK_DELAY_ACCT:
+@@ -33,7 +32,6 @@ config KVM
+ 	select KVM_VFIO
+ 	select HAVE_KVM_EVENTFD
+ 	select HAVE_KVM_IRQFD
+-	select KVM_ARM_PMU if HW_PERF_EVENTS
+ 	select HAVE_KVM_MSI
+ 	select HAVE_KVM_IRQCHIP
+ 	select HAVE_KVM_IRQ_ROUTING
+@@ -47,13 +45,21 @@ config KVM
  
  	  If unsure, say N.
  
++if KVM
++
++source "virt/kvm/Kconfig"
++
+ config KVM_ARM_PMU
+-	bool
++	bool "Virtual Performance Monitoring Unit (PMU) support"
++	depends on HW_PERF_EVENTS
++	default y
+ 	---help---
+ 	  Adds support for a virtual Performance Monitoring Unit (PMU) in
+ 	  virtual machines.
+ 
+ config KVM_INDIRECT_VECTORS
+-       def_bool KVM && (HARDEN_BRANCH_PREDICTOR || HARDEN_EL2_VECTORS)
++	def_bool HARDEN_BRANCH_PREDICTOR || HARDEN_EL2_VECTORS
++
++endif # KVM
+ 
+ endif # VIRTUALIZATION
 -- 
 2.26.2
 
