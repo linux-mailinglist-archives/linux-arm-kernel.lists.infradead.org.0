@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E87761E813D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:08:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE5B11E8145
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:08:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NSBbqKb+lHh+n7/wYzsPnNoOX4ph+O9oAgrqxw89K6s=; b=X3RPaRaxETRnJV
-	vpGfN+V+Q9dRLDCL++9r4xpMdhKCXeo07C6YO/HeEQRsiRuqciHtfGA3cC/ZdUZemzKt2zRx/Z8RG
-	Kux3RiC40lR0pHh1fFzjTW1sj4sbOb9vVmEgYNxBaTuKFQgT2KsrwgtejqgqExAh9LybjGiO5gtBt
-	bVp8iWlxGXCr2nfeLrCdenWh6wouHXgL8NwqlNyiEN2Jl+A0cFpTtihIXhwyKKFEv+/X6yId+YzPJ
-	6I8kJyiWvf4KgHiNZZq+YoGIcZfHklw68udvygDWPvPd2x0cvzWU2scTzacQXp3tlpzkrmwoA+Ynk
-	uWlrn8SlFMSINJDgJcqw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=F2e3FFtwby5y+I4T1TMvIw8grXlDcPzrPl03oOe3xy0=; b=ZfW3h+Ax6yiflTV7f+hSzwseV
+	XuMxJ9VzBfgqKAYd8sUnvDT5B9sgp9+RJX1t5hAiFi8nNbUdtV4DIhB8O9+btG0/PCG+0/E+rOvQH
+	rsHWOjr3rY25PcDCg6CJDKBVNfLaZtvLWcjo9SkL2Vq1/fXKhrcWds9RM8iU0pQzRa9/JkqHGcGa9
+	e49oPGQS4Oh47wY0OFJoEn7ngr+mACNZH6Vu9GxXm3uMzIv/L2AiJ6359DmIWcOOo9WuJykFZc5ij
+	kUp1TfpVohzteLJK79XMg3jrnYeNFtyK1EIEmIR0EhYeOX+gANVv2/JZUXCqmypmRrTl+LuHMLbzV
+	+sHP9dZ2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jegc7-0007Od-PB; Fri, 29 May 2020 15:08:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jegbT-0006yZ-Rc
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 15:07:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 20BBA1045;
- Fri, 29 May 2020 08:07:22 -0700 (PDT)
-Received: from merodach.members.linode.com (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 510CF3F718;
- Fri, 29 May 2020 08:07:21 -0700 (PDT)
-From: James Morse <james.morse@arm.com>
-To: kvmarm@lists.cs.columbia.edu,
-	linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 3/3] KVM: arm64: Stop save/restoring ACTLR_EL1
-Date: Fri, 29 May 2020 15:06:56 +0000
-Message-Id: <20200529150656.7339-4-james.morse@arm.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200529150656.7339-1-james.morse@arm.com>
-References: <20200529150656.7339-1-james.morse@arm.com>
+	id 1jegcf-0007pQ-9B; Fri, 29 May 2020 15:08:37 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jegcT-0007p1-Pu; Fri, 29 May 2020 15:08:27 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id B4BEF2A46A5
+Subject: Re: [PATCH v4 02/11] thermal: Store thermal mode in a dedicated enum
+To: Guenter Roeck <linux@roeck-us.net>
+References: <20200529150549.GA154196@roeck-us.net>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <b9aa246f-4534-db23-aea1-07aae2edbdd5@collabora.com>
+Date: Fri, 29 May 2020 17:08:18 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <20200529150549.GA154196@roeck-us.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_080723_996551_C9784129 
-X-CRM114-Status: GOOD (  10.61  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200529_080825_968185_95571B9F 
+X-CRM114-Status: GOOD (  12.24  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,76 +60,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Kalle Valo <kvalo@codeaurora.org>,
+ linux-wireless@vger.kernel.org, Peter Kaestle <peter@piie.net>,
+ platform-driver-x86@vger.kernel.org, Vishal Kulkarni <vishal@chelsio.com>,
+ Luca Coelho <luciano.coelho@intel.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, Shawn Guo <shawnguo@kernel.org>,
+ kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ linux-rockchip@lists.infradead.org, Chunyan Zhang <zhang.lyra@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Johannes Berg <johannes.berg@intel.com>,
+ linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Intel Linux Wireless <linuxwifi@intel.com>, Ido Schimmel <idosch@mellanox.com>,
+ =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
+ Jiri Pirko <jiri@mellanox.com>, Orson Zhai <orsonzhai@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Sebastian Reichel <sre@kernel.org>,
+ linux-renesas-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Baolin Wang <baolin.wang7@gmail.com>, Len Brown <lenb@kernel.org>,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KVM sets HCR_EL2.TACR via HCR_GUEST_FLAGS. This means ACTLR* accesses
-from the guest are always trapped, and always return the value in the
-sys_regs array.
-
-The guest can't change the value of these registers, so we are
-save restoring the reset value, which came from the host.
-
-Stop save/restoring this register. Keep the storage for this register
-in sys_regs[] as this is how the value is exposed to user-space,
-removing it would break migration.
-
-Signed-off-by: James Morse <james.morse@arm.com>
----
- arch/arm64/kvm/hyp/sysreg-sr.c | 2 --
- arch/arm64/kvm/sys_regs.c      | 2 --
- 2 files changed, 4 deletions(-)
-
-diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-index 75b1925763f1..57116cf3a1a5 100644
---- a/arch/arm64/kvm/hyp/sysreg-sr.c
-+++ b/arch/arm64/kvm/hyp/sysreg-sr.c
-@@ -44,7 +44,6 @@ static void __hyp_text __sysreg_save_el1_state(struct kvm_cpu_context *ctxt)
- {
- 	ctxt->sys_regs[CSSELR_EL1]	= read_sysreg(csselr_el1);
- 	ctxt->sys_regs[SCTLR_EL1]	= read_sysreg_el1(SYS_SCTLR);
--	ctxt->sys_regs[ACTLR_EL1]	= read_sysreg(actlr_el1);
- 	ctxt->sys_regs[CPACR_EL1]	= read_sysreg_el1(SYS_CPACR);
- 	ctxt->sys_regs[TTBR0_EL1]	= read_sysreg_el1(SYS_TTBR0);
- 	ctxt->sys_regs[TTBR1_EL1]	= read_sysreg_el1(SYS_TTBR1);
-@@ -133,7 +132,6 @@ static void __hyp_text __sysreg_restore_el1_state(struct kvm_cpu_context *ctxt)
- 		isb();
- 	}
- 
--	write_sysreg(ctxt->sys_regs[ACTLR_EL1],		actlr_el1);
- 	write_sysreg_el1(ctxt->sys_regs[CPACR_EL1],	SYS_CPACR);
- 	write_sysreg_el1(ctxt->sys_regs[TTBR0_EL1],	SYS_TTBR0);
- 	write_sysreg_el1(ctxt->sys_regs[TTBR1_EL1],	SYS_TTBR1);
-diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
-index bfd68cd4fc54..545bc18b9c24 100644
---- a/arch/arm64/kvm/sys_regs.c
-+++ b/arch/arm64/kvm/sys_regs.c
-@@ -81,7 +81,6 @@ u64 vcpu_read_sys_reg(const struct kvm_vcpu *vcpu, int reg)
- 	switch (reg) {
- 	case CSSELR_EL1:	return read_sysreg_s(SYS_CSSELR_EL1);
- 	case SCTLR_EL1:		return read_sysreg_s(SYS_SCTLR_EL12);
--	case ACTLR_EL1:		return read_sysreg_s(SYS_ACTLR_EL1);
- 	case CPACR_EL1:		return read_sysreg_s(SYS_CPACR_EL12);
- 	case TTBR0_EL1:		return read_sysreg_s(SYS_TTBR0_EL12);
- 	case TTBR1_EL1:		return read_sysreg_s(SYS_TTBR1_EL12);
-@@ -124,7 +123,6 @@ void vcpu_write_sys_reg(struct kvm_vcpu *vcpu, u64 val, int reg)
- 	switch (reg) {
- 	case CSSELR_EL1:	write_sysreg_s(val, SYS_CSSELR_EL1);	return;
- 	case SCTLR_EL1:		write_sysreg_s(val, SYS_SCTLR_EL12);	return;
--	case ACTLR_EL1:		write_sysreg_s(val, SYS_ACTLR_EL1);	return;
- 	case CPACR_EL1:		write_sysreg_s(val, SYS_CPACR_EL12);	return;
- 	case TTBR0_EL1:		write_sysreg_s(val, SYS_TTBR0_EL12);	return;
- 	case TTBR1_EL1:		write_sysreg_s(val, SYS_TTBR1_EL12);	return;
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VyBkbml1IDI5LjA1LjIwMjAgb8KgMTc6MDUsIEd1ZW50ZXIgUm9lY2sgcGlzemU6Cj4gT24gVGh1
+LCBNYXkgMjgsIDIwMjAgYXQgMDk6MjA6NDJQTSArMDIwMCwgQW5kcnplaiBQaWV0cmFzaWV3aWN6
+IHdyb3RlOgo+PiBQcmVwYXJlIGZvciBzdG9yaW5nIG1vZGUgaW4gc3RydWN0IHRoZXJtYWxfem9u
+ZV9kZXZpY2UuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEFuZHJ6ZWogUGlldHJhc2lld2ljeiA8YW5k
+cnplai5wQGNvbGxhYm9yYS5jb20+Cj4gCj4gV2hhdCBpcyB0aGUgYmFzZWxpbmUgZm9yIHRoaXMg
+c2VyaWVzID8gSSBjYW4ndCBnZXQgdGhpcyBwYXRjaCB0byBhcHBseQo+IG9uIHRvcCBvZiBjdXJy
+ZW50IG1haW5saW5lLCBub3Igb24gdjUuNiwgbm9yIG9uIHRvcCBvZiBsaW51eC1uZXh0Lgo+IAo+
+IFRoYW5rcywKPiBHdWVudGVyCj4gCgpnaXQ6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4
+L2tlcm5lbC9naXQvdGhlcm1hbC9saW51eC5naXQsIGJyYW5jaCAidGVzdGluZyIuCgpiYXNlLWNv
+bW1pdDogMzUxZjQ5MTFhNDc3YWUwMTIzOWM0MmY3NzFmNjIxZDg1YjA2ZWExMAoKQW5kcnplagoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
+LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
+cm5lbAo=
