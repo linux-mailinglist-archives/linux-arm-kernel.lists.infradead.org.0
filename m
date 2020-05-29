@@ -2,90 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BDF11E827E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:50:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E8FB1E829D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 17:57:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nQGH9ytdHS7ySUht9p/SXW1DST+fSetE3dGTjgoPdtY=; b=Ox4OYgYUBW7QlI
-	7m3rxHTgMK8IP4ZyXSZCsQ0ohjvHGlEZzjsfkL2UVMtb5QCOfvjM9tHOTG5Cby0DBWh15lIMXMu5W
-	jjEY6ASPJj2m/VgBq7xgPAzm0snFxyOEGdO8f6rx+hSgA0X62gKESc8iJS6OJWg06ANZNzFSI49M7
-	Ft5XbYHuqbrRqK1WS6+UG2uy8lGaJInLz7oHgZtBr+as3R6LqNIAdE+pdZ/lAUucT36PKWcwnEvsT
-	pMuTXmbp/Lmpt6inYuciG9/ZlxRy+xBcZQdmSqCGQPQcVRJgTd9KLzFh36ipEiPVFeRx9iTX3V9T7
-	Bg4YWiS1hpjsnqHk4yiw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=t782Y7nbJnq8vuzIBpD70pefOKEMPDZz+Z7jZSc4YeA=; b=OMUgDCwTyrvKmdlH1sYJ43+GA
+	CzEmEHid3fYwxPdPANePL6dSX0H1Isdh7JmpUf5BH6qtzrxlBSKzAch+9bM8rBr3GaFx6HFIlfErD
+	dx5TKWCpSsJI3pLqjbD8/xQE5ndTJmQolQTaR3KPcabB82SD2iN+OFOzSMnCWfFXyHX9gBmMaIL3v
+	qVmsPq3gKsaTgSY8CcwlGZq5G4TTl2oP+IV9JO5Am7yNhaDAXrMacjHsxT627YGNAIDQOQL2fTMoS
+	PYahUo/cvwtwspd6EdDSSYBCyAlJevs6VNGdOicV78cFe0f+GLY5WA38fvHiMjHc94b/pk3nWO53m
+	/13LVHL4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jehHL-0004lz-Bx; Fri, 29 May 2020 15:50:39 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1jehNT-00081f-I5; Fri, 29 May 2020 15:56:59 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jehHB-0004kD-1a; Fri, 29 May 2020 15:50:30 +0000
-Received: by mail-ed1-x544.google.com with SMTP id i16so2109444edv.1;
- Fri, 29 May 2020 08:50:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=EsMvt8EiZib5FGRRaF/qmPkTiPSrV02BKHt077M8wMI=;
- b=cGUtShBaCi9MqoE1+GESbw69dKQPzfpBkPzL3us2slLVv6fyW3FzZR38Ss0xy1A4Yh
- 8iss/1gsa3WW9/xeUZSAv4euyAve2ASBsIjapI7OxHttUYUEEopFsOQr5gtW2x5K5DVv
- xVcOJQyCfYgiQM0ZEi2S3hc4pTM0phT9t8mt4RPzVUv4RbiwbWMbTC4Xda9iJQ19GUFU
- 4Vuze25Dm/GfmaXfyvhPMotiRoRlhae3fCXG+9MqDgTLBwr0foE2cAwLI/LkEyRSuBXL
- YPVTXNicS/KYigpGnlH14hS02GzJL0KIS5PDjXI8yWtoebKHBFfq3ifTgX2kWJOrJtmT
- +e1Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=EsMvt8EiZib5FGRRaF/qmPkTiPSrV02BKHt077M8wMI=;
- b=Tl3F4HV+KLgdCpSLqF9FAd29YgTfyDqjisoHy86B3iCjXlPNL+DrGv0ITkfZLY7+yy
- 0pFYU35DwK96cTMGdv0hdYH74MC4isjWopo/sBcTySQqcGlZXogD96JkO8HXpI8aug5c
- LROezFPpYkgFAgCMWUkmAfict+zHSk8qEBP150pcAdpHun8XbI9RnQU5qfwFC+4fTiSc
- RTM3V5l6cA+SbhJ3/9fzSyyXnOSH8DVdweLdpRtRI85zNPmstPTw1jW9RZ7dvpnuqe4f
- tHZ64Lx7GUWh9AOBBDhMW2AojYwjHqphUjY/vfJhcb6TU8RAqJGhzI71utceegvJ7ezf
- EwYg==
-X-Gm-Message-State: AOAM531CCRIeX7Y/RO9SF9sfjEdf4BuhFGv+Qis9+2QKwn8z0M5XjHXz
- 7xTO+0kryuk7nhA+Usyd6Ro=
-X-Google-Smtp-Source: ABdhPJx6DPMPIrVyjdcMp9A6H0ZgGz361F/QduvdG+yveRgopAM+PuB1Tb/x09hjpiea6VuHfcN3Iw==
-X-Received: by 2002:a50:bb41:: with SMTP id y59mr8736067ede.311.1590767427825; 
- Fri, 29 May 2020 08:50:27 -0700 (PDT)
-Received: from localhost.localdomain ([188.27.38.213])
- by smtp.gmail.com with ESMTPSA id cz9sm7068103edb.18.2020.05.29.08.50.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 08:50:27 -0700 (PDT)
-From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
-To: =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jiri Slaby <jslaby@suse.com>
-Subject: [PATCH 1/1] tty: serial: owl: Add support for kernel debugger
-Date: Fri, 29 May 2020 18:50:25 +0300
-Message-Id: <6ee88060c129715980592a1ae33c93923916a14b.1590766726.git.cristian.ciocaltea@gmail.com>
-X-Mailer: git-send-email 2.26.2
+ id 1jehNK-000818-8a; Fri, 29 May 2020 15:56:51 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 9CCE2ACB8;
+ Fri, 29 May 2020 15:56:48 +0000 (UTC)
+Subject: Re: [PATCH 1/1] tty: serial: owl: Add support for kernel debugger
+To: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+References: <6ee88060c129715980592a1ae33c93923916a14b.1590766726.git.cristian.ciocaltea@gmail.com>
+From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
+Organization: SUSE Software Solutions Germany GmbH
+Message-ID: <16ff435f-9172-e01d-dfe6-7aa8575c4bd6@suse.de>
+Date: Fri, 29 May 2020 17:56:47 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <6ee88060c129715980592a1ae33c93923916a14b.1590766726.git.cristian.ciocaltea@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_085029_087177_EE676E93 
-X-CRM114-Status: GOOD (  11.67  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200529_085650_593112_3EFB5DEF 
+X-CRM114-Status: GOOD (  19.05  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [cristian.ciocaltea[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,104 +64,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implement poll_put_char and poll_get_char callbacks in struct uart_ops
-that enables OWL UART to be used for KGDB debugging over serial line.
-
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
----
- drivers/tty/serial/owl-uart.c | 45 ++++++++++++++++++++++++++++++-----
- 1 file changed, 39 insertions(+), 6 deletions(-)
-
-diff --git a/drivers/tty/serial/owl-uart.c b/drivers/tty/serial/owl-uart.c
-index c2fa2f15d50a..26dcc374dec5 100644
---- a/drivers/tty/serial/owl-uart.c
-+++ b/drivers/tty/serial/owl-uart.c
-@@ -12,6 +12,7 @@
- #include <linux/console.h>
- #include <linux/delay.h>
- #include <linux/io.h>
-+#include <linux/iopoll.h>
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/platform_device.h>
-@@ -20,13 +21,13 @@
- #include <linux/tty.h>
- #include <linux/tty_flip.h>
- 
--#define OWL_UART_PORT_NUM 7
--#define OWL_UART_DEV_NAME "ttyOWL"
-+#define OWL_UART_PORT_NUM		7
-+#define OWL_UART_DEV_NAME		"ttyOWL"
- 
--#define OWL_UART_CTL	0x000
--#define OWL_UART_RXDAT	0x004
--#define OWL_UART_TXDAT	0x008
--#define OWL_UART_STAT	0x00c
-+#define OWL_UART_CTL			0x000
-+#define OWL_UART_RXDAT			0x004
-+#define OWL_UART_TXDAT			0x008
-+#define OWL_UART_STAT			0x00c
- 
- #define OWL_UART_CTL_DWLS_MASK		GENMASK(1, 0)
- #define OWL_UART_CTL_DWLS_5BITS		(0x0 << 0)
-@@ -461,6 +462,34 @@ static void owl_uart_config_port(struct uart_port *port, int flags)
- 	}
- }
- 
-+#ifdef CONFIG_CONSOLE_POLL
-+
-+static int owl_uart_poll_get_char(struct uart_port *port)
-+{
-+	u32 c = NO_POLL_CHAR;
-+
-+	if (!(owl_uart_read(port, OWL_UART_STAT) & OWL_UART_STAT_RFEM))
-+		c = owl_uart_read(port, OWL_UART_RXDAT);
-+
-+	return c;
-+}
-+
-+static void owl_uart_poll_put_char(struct uart_port *port, unsigned char c)
-+{
-+	/* Wait while TX FIFO is full */
-+	while (owl_uart_read(port, OWL_UART_STAT) & OWL_UART_STAT_TFFU)
-+		cpu_relax();
-+
-+	/* Send the character out */
-+	owl_uart_write(port, c, OWL_UART_TXDAT);
-+
-+	/* Wait for transmitter to become empty */
-+	while (owl_uart_read(port, OWL_UART_STAT) & OWL_UART_STAT_TRFL_MASK)
-+		cpu_relax();
-+}
-+
-+#endif /* CONFIG_CONSOLE_POLL */
-+
- static const struct uart_ops owl_uart_ops = {
- 	.set_mctrl = owl_uart_set_mctrl,
- 	.get_mctrl = owl_uart_get_mctrl,
-@@ -476,6 +505,10 @@ static const struct uart_ops owl_uart_ops = {
- 	.request_port = owl_uart_request_port,
- 	.release_port = owl_uart_release_port,
- 	.verify_port = owl_uart_verify_port,
-+#ifdef CONFIG_CONSOLE_POLL
-+	.poll_get_char	= owl_uart_poll_get_char,
-+	.poll_put_char	= owl_uart_poll_put_char,
-+#endif
- };
- 
- #ifdef CONFIG_SERIAL_OWL_CONSOLE
--- 
-2.26.2
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpBbSAyOS4wNS4yMCB1bSAxNzo1MCBzY2hyaWViIENyaXN0aWFuIENpb2NhbHRlYToKPiBJ
+bXBsZW1lbnQgcG9sbF9wdXRfY2hhciBhbmQgcG9sbF9nZXRfY2hhciBjYWxsYmFja3MgaW4gc3Ry
+dWN0IHVhcnRfb3BzCj4gdGhhdCBlbmFibGVzIE9XTCBVQVJUIHRvIGJlIHVzZWQgZm9yIEtHREIg
+ZGVidWdnaW5nIG92ZXIgc2VyaWFsIGxpbmUuCj4gCj4gU2lnbmVkLW9mZi1ieTogQ3Jpc3RpYW4g
+Q2lvY2FsdGVhIDxjcmlzdGlhbi5jaW9jYWx0ZWFAZ21haWwuY29tPgo+IC0tLQo+ICAgZHJpdmVy
+cy90dHkvc2VyaWFsL293bC11YXJ0LmMgfCA0NSArKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KystLS0tLQo+ICAgMSBmaWxlIGNoYW5nZWQsIDM5IGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25z
+KC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdHR5L3NlcmlhbC9vd2wtdWFydC5jIGIvZHJp
+dmVycy90dHkvc2VyaWFsL293bC11YXJ0LmMKPiBpbmRleCBjMmZhMmYxNWQ1MGEuLjI2ZGNjMzc0
+ZGVjNSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3R0eS9zZXJpYWwvb3dsLXVhcnQuYwo+ICsrKyBi
+L2RyaXZlcnMvdHR5L3NlcmlhbC9vd2wtdWFydC5jCj4gQEAgLTEyLDYgKzEyLDcgQEAKPiAgICNp
+bmNsdWRlIDxsaW51eC9jb25zb2xlLmg+Cj4gICAjaW5jbHVkZSA8bGludXgvZGVsYXkuaD4KPiAg
+ICNpbmNsdWRlIDxsaW51eC9pby5oPgo+ICsjaW5jbHVkZSA8bGludXgvaW9wb2xsLmg+Cj4gICAj
+aW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gICAjaW5jbHVkZSA8bGludXgvb2YuaD4KPiAgICNp
+bmNsdWRlIDxsaW51eC9wbGF0Zm9ybV9kZXZpY2UuaD4KPiBAQCAtMjAsMTMgKzIxLDEzIEBACj4g
+ICAjaW5jbHVkZSA8bGludXgvdHR5Lmg+Cj4gICAjaW5jbHVkZSA8bGludXgvdHR5X2ZsaXAuaD4K
+PiAgIAo+IC0jZGVmaW5lIE9XTF9VQVJUX1BPUlRfTlVNIDcKPiAtI2RlZmluZSBPV0xfVUFSVF9E
+RVZfTkFNRSAidHR5T1dMIgo+ICsjZGVmaW5lIE9XTF9VQVJUX1BPUlRfTlVNCQk3Cj4gKyNkZWZp
+bmUgT1dMX1VBUlRfREVWX05BTUUJCSJ0dHlPV0wiCj4gICAKPiAtI2RlZmluZSBPV0xfVUFSVF9D
+VEwJMHgwMDAKPiAtI2RlZmluZSBPV0xfVUFSVF9SWERBVAkweDAwNAo+IC0jZGVmaW5lIE9XTF9V
+QVJUX1RYREFUCTB4MDA4Cj4gLSNkZWZpbmUgT1dMX1VBUlRfU1RBVAkweDAwYwo+ICsjZGVmaW5l
+IE9XTF9VQVJUX0NUTAkJCTB4MDAwCj4gKyNkZWZpbmUgT1dMX1VBUlRfUlhEQVQJCQkweDAwNAo+
+ICsjZGVmaW5lIE9XTF9VQVJUX1RYREFUCQkJMHgwMDgKPiArI2RlZmluZSBPV0xfVUFSVF9TVEFU
+CQkJMHgwMGMKClBsZWFzZSBkbyBub3QgdW5uZWNlc3NhcmlseSByZS1pbmRlbnQga2VybmVsIGNv
+ZGUuIFlvdSBjYW4gZG8gc28gd2hlbiAKeW91J3JlIGFjdHVhbGx5IGFkZGluZyBzb21ldGhpbmcg
+bmV3LgoKPiAgIAo+ICAgI2RlZmluZSBPV0xfVUFSVF9DVExfRFdMU19NQVNLCQlHRU5NQVNLKDEs
+IDApCj4gICAjZGVmaW5lIE9XTF9VQVJUX0NUTF9EV0xTXzVCSVRTCQkoMHgwIDw8IDApCj4gQEAg
+LTQ2MSw2ICs0NjIsMzQgQEAgc3RhdGljIHZvaWQgb3dsX3VhcnRfY29uZmlnX3BvcnQoc3RydWN0
+IHVhcnRfcG9ydCAqcG9ydCwgaW50IGZsYWdzKQo+ICAgCX0KPiAgIH0KPiAgIAo+ICsjaWZkZWYg
+Q09ORklHX0NPTlNPTEVfUE9MTAo+ICsKPiArc3RhdGljIGludCBvd2xfdWFydF9wb2xsX2dldF9j
+aGFyKHN0cnVjdCB1YXJ0X3BvcnQgKnBvcnQpCj4gK3sKPiArCXUzMiBjID0gTk9fUE9MTF9DSEFS
+Owo+ICsKPiArCWlmICghKG93bF91YXJ0X3JlYWQocG9ydCwgT1dMX1VBUlRfU1RBVCkgJiBPV0xf
+VUFSVF9TVEFUX1JGRU0pKQo+ICsJCWMgPSBvd2xfdWFydF9yZWFkKHBvcnQsIE9XTF9VQVJUX1JY
+REFUKTsKPiArCj4gKwlyZXR1cm4gYzsKPiArfQo+ICsKPiArc3RhdGljIHZvaWQgb3dsX3VhcnRf
+cG9sbF9wdXRfY2hhcihzdHJ1Y3QgdWFydF9wb3J0ICpwb3J0LCB1bnNpZ25lZCBjaGFyIGMpCj4g
+K3sKPiArCS8qIFdhaXQgd2hpbGUgVFggRklGTyBpcyBmdWxsICovCj4gKwl3aGlsZSAob3dsX3Vh
+cnRfcmVhZChwb3J0LCBPV0xfVUFSVF9TVEFUKSAmIE9XTF9VQVJUX1NUQVRfVEZGVSkKPiArCQlj
+cHVfcmVsYXgoKTsKPiArCj4gKwkvKiBTZW5kIHRoZSBjaGFyYWN0ZXIgb3V0ICovCj4gKwlvd2xf
+dWFydF93cml0ZShwb3J0LCBjLCBPV0xfVUFSVF9UWERBVCk7Cj4gKwo+ICsJLyogV2FpdCBmb3Ig
+dHJhbnNtaXR0ZXIgdG8gYmVjb21lIGVtcHR5ICovCj4gKwl3aGlsZSAob3dsX3VhcnRfcmVhZChw
+b3J0LCBPV0xfVUFSVF9TVEFUKSAmIE9XTF9VQVJUX1NUQVRfVFJGTF9NQVNLKQo+ICsJCWNwdV9y
+ZWxheCgpOwo+ICt9CgpIb3cgaXMgdGhpcyBkaWZmZXJlbnQgZnJvbSBlYXJseWNvbj8gSSBkaXNs
+aWtlIHRoYXQgdGhpcyBpcyBiZWluZyAKb3Blbi1jb2RlZC4gUGxlYXNlIHRyeSB0byByZXVzZSBl
+eGlzdGluZyBmdW5jdGlvbnMgZm9yIHRoaXMuCgpSZWdhcmRzLApBbmRyZWFzCgo+ICsKPiArI2Vu
+ZGlmIC8qIENPTkZJR19DT05TT0xFX1BPTEwgKi8KPiArCj4gICBzdGF0aWMgY29uc3Qgc3RydWN0
+IHVhcnRfb3BzIG93bF91YXJ0X29wcyA9IHsKPiAgIAkuc2V0X21jdHJsID0gb3dsX3VhcnRfc2V0
+X21jdHJsLAo+ICAgCS5nZXRfbWN0cmwgPSBvd2xfdWFydF9nZXRfbWN0cmwsCj4gQEAgLTQ3Niw2
+ICs1MDUsMTAgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCB1YXJ0X29wcyBvd2xfdWFydF9vcHMgPSB7
+Cj4gICAJLnJlcXVlc3RfcG9ydCA9IG93bF91YXJ0X3JlcXVlc3RfcG9ydCwKPiAgIAkucmVsZWFz
+ZV9wb3J0ID0gb3dsX3VhcnRfcmVsZWFzZV9wb3J0LAo+ICAgCS52ZXJpZnlfcG9ydCA9IG93bF91
+YXJ0X3ZlcmlmeV9wb3J0LAo+ICsjaWZkZWYgQ09ORklHX0NPTlNPTEVfUE9MTAo+ICsJLnBvbGxf
+Z2V0X2NoYXIJPSBvd2xfdWFydF9wb2xsX2dldF9jaGFyLAo+ICsJLnBvbGxfcHV0X2NoYXIJPSBv
+d2xfdWFydF9wb2xsX3B1dF9jaGFyLAo+ICsjZW5kaWYKPiAgIH07Cj4gICAKPiAgICNpZmRlZiBD
+T05GSUdfU0VSSUFMX09XTF9DT05TT0xFCj4gCgoKLS0gClNVU0UgU29mdHdhcmUgU29sdXRpb25z
+IEdlcm1hbnkgR21iSApNYXhmZWxkc3RyLiA1LCA5MDQwOSBOw7xybmJlcmcsIEdlcm1hbnkKR0Y6
+IEZlbGl4IEltZW5kw7ZyZmZlcgpIUkIgMzY4MDkgKEFHIE7DvHJuYmVyZykKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
