@@ -2,57 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 852591E8446
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 19:06:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F7731E8452
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 19:08:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UWd5G2TGHWhbt81AZbV8CVDsp7hFZGPhFnapKroa8qY=; b=TOHI2NjYvUC+GicYL4w7aqq8h
-	WPcV1Oj0DWIo5eHx34EfFhwHr9nudJ9FxQBMAW9QeIFOVakEJMo4gTBmlbmRsVxD4uy3NyUvnAbAZ
-	l6xnU/ttZq72uHXKZix2JiG88sCswHqmMwAWAsGir7fShSZXM2ELlVlVgMDUlaMvyA9XjvQ4WHdLA
-	2I1usR9tRjhNliEhRYjyeqo2GKF8DgSXvHYYWWGilo5QW1KnKe5s+fYqd1AUmMvJsuGoNhYbMxhfT
-	OH9r1pbx/ymNYoJpaGWhExkcy0Jm0CqXuqu/4QQko1aWXkCM1gFHSTUdeRuyssFZVo4NhkF35KGsw
-	70HdvpNAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W19SNRbBvgqKptS3ncy+QTG07e3wT0jQOAXV9o1NHxA=; b=qr+H52RgEFZMK8
+	uKzkL8s2NrXQoEWKxjE8kkU6KqRUFZg0fuEIGjdZooJElXQpP+tNwl5LHLCW3FrSIQZkA/Gj+tgvq
+	V83YwqY86g8KdvQxripzh90A6TeTpLncMQkD197o2YiClZI6MTyA+I3dmUYu+9PZwWd/zdMiwS1iq
+	8eWEqtgcwQARCcODRBmCk9wkgK5YfHFYxuTrwCX7+FkD8dLnXJUZP4a44Ut2Sf0atec6xVs921UDq
+	gDvPSRuN98dfQQ+U3fXHFeCHZuE908gK1KdsVbr8unZkY1ZTgEZcIgOG4HXaSvZhQsy8pUYxDTPqS
+	koXAkAG2m0P8bi8w84gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeiSa-0001Q6-VV; Fri, 29 May 2020 17:06:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeiSR-0001PM-G5; Fri, 29 May 2020 17:06:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6E3A61045;
- Fri, 29 May 2020 10:06:10 -0700 (PDT)
-Received: from [10.37.12.52] (unknown [10.37.12.52])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2CC243F52E;
- Fri, 29 May 2020 10:05:59 -0700 (PDT)
-Subject: Re: [PATCH v8 0/8] Add support for devices in the Energy Model
-To: "Rafael J. Wysocki" <rafael@kernel.org>
-References: <20200527095854.21714-1-lukasz.luba@arm.com>
- <8fca24a1-93f7-f859-bd1f-b7bf484737f4@arm.com>
- <CAJZ5v0g5whSUMkd4majCGj0j9TMeO+fCfhxB6FNWoaLpPsi6UA@mail.gmail.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <5237e339-62f5-2e1c-50e2-6f391e863032@arm.com>
-Date: Fri, 29 May 2020 18:05:57 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jeiUA-0001kP-Nv; Fri, 29 May 2020 17:07:58 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jeiTz-0001jP-O5; Fri, 29 May 2020 17:07:48 +0000
+Received: by mail-il1-f196.google.com with SMTP id 17so3231084ilj.3;
+ Fri, 29 May 2020 10:07:47 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=MUooCf11G+wzFa88ewKcb5EHAEEa+XEEiZTRljzO3gM=;
+ b=ZyWrXI30CjLcjwvuoOka2tZiaudT4kHja1RvaW1N4A5If+4jRCvEtReQ3u0ecC6ynt
+ gQOXbOV3ypFBgL0AEzBiJssfL8iYAn+P5rLBdsRu48f1ImX6s8Vomq6RnI8JHiaawMs6
+ MM4c+q2aeNpreF0x/3H9yEW2/y7VD9NRFCPd3nBHnL4BG2VJtdQkx2geJQbX4TAXq7u4
+ p+V7oIq4g/ZN7RUmBW5j9DDossT4HGWMsQJAwLK4IJAoqk7F/S9hOjf8e7RxwltexEif
+ ak5wfvChg6gQ8sbfWSvA7qpDDdF3e7KZOisbwfZMCFH03bdtHy5rBD3jDpBGCmkMus/X
+ gCwA==
+X-Gm-Message-State: AOAM531ffAhWt5BfZ0M78CT2YdkaLM/MPzYOQothNTf75sZEPxdKNfU0
+ WS/xFDIV0On7Lj18dvKx8w==
+X-Google-Smtp-Source: ABdhPJxBmlK7urpI9ApsfbfQd7gBioqSkjdj2dSXUO1JzWzfzgFdYXxVnOPUDRqf46kOGQCOV5afxQ==
+X-Received: by 2002:a92:8496:: with SMTP id y22mr1243486ilk.115.1590772067110; 
+ Fri, 29 May 2020 10:07:47 -0700 (PDT)
+Received: from xps15 ([64.188.179.252])
+ by smtp.gmail.com with ESMTPSA id c23sm3276894ioc.28.2020.05.29.10.07.44
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 29 May 2020 10:07:45 -0700 (PDT)
+Received: (nullmailer pid 2577192 invoked by uid 1000);
+ Fri, 29 May 2020 17:07:44 -0000
+Date: Fri, 29 May 2020 11:07:44 -0600
+From: Rob Herring <robh@kernel.org>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH] dt-bindings: input: touchscreen: edt-ft5x06: change reg
+ property
+Message-ID: <20200529170744.GA2577033@bogus>
+References: <20200520073327.6016-1-jbx6244@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAJZ5v0g5whSUMkd4majCGj0j9TMeO+fCfhxB6FNWoaLpPsi6UA@mail.gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200520073327.6016-1-jbx6244@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_100611_630357_89CDFB2B 
-X-CRM114-Status: GOOD (  20.40  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200529_100747_783524_E00220BE 
+X-CRM114-Status: UNSURE (   9.38  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.196 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,95 +90,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Juri Lelli <juri.lelli@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>, Viresh Kumar <viresh.kumar@linaro.org>,
- Liviu Dudau <liviu.dudau@arm.com>, dri-devel <dri-devel@lists.freedesktop.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Benjamin Segall <bsegall@google.com>, alyssa.rosenzweig@collabora.com,
- Fabio Estevam <festevam@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
- Rob Herring <robh@kernel.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kevin Hilman <khilman@kernel.org>, Andy Gross <agross@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, steven.price@arm.com,
- Chanwoo Choi <cw00.choi@samsung.com>, Ingo Molnar <mingo@redhat.com>,
- dl-linux-imx <linux-imx@nxp.com>, "Zhang, Rui" <rui.zhang@intel.com>,
- Mel Gorman <mgorman@suse.de>, orjan.eide@arm.com,
- Daniel Vetter <daniel@ffwll.ch>, Linux PM <linux-pm@vger.kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Steven Rostedt <rostedt@goodmis.org>,
- "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Linux OMAP Mailing List <linux-omap@vger.kernel.org>,
- Dietmar Eggemann <Dietmar.Eggemann@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- David Airlie <airlied@linux.ie>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- Quentin Perret <qperret@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Randy Dunlap <rdunlap@infradead.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Sascha Hauer <kernel@pengutronix.de>, Sudeep Holla <sudeep.holla@arm.com>,
- patrick.bellasi@matbug.net, Shawn Guo <shawnguo@kernel.org>
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, dmitry.torokhov@gmail.com,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-input@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 5/29/20 5:18 PM, Rafael J. Wysocki wrote:
-> On Fri, May 29, 2020 at 5:01 PM Lukasz Luba <lukasz.luba@arm.com> wrote:
->>
->> Hi Rafael,
->>
->>
->> On 5/27/20 10:58 AM, Lukasz Luba wrote:
->>> Hi all,
->>>
->>> Background of this version:
->>> This is the v8 of the patch set and is has smaller scope. I had to split
->>> the series into two: EM changes and thermal changes due to devfreq
->>> dependencies. The patches from v7 9-14 which change devfreq cooling are
->>> going to be sent in separate patch series, just after this set get merged
->>> into mainline. These patches related to EM got acks and hopefully can go
->>> through linux-pm tree. The later thermal patches will go through thermal
->>> tree.
->>>
->>> The idea and purpose of the Energy Model framework changes:
->>> This patch set introduces support for devices in the Energy Model (EM)
->>> framework. It will unify the power model for thermal subsystem. It will
->>> make simpler to add support for new devices willing to use more
->>> advanced features (like Intelligent Power Allocation). Now it should
->>> require less knowledge and effort for driver developer to add e.g.
->>> GPU driver with simple energy model. A more sophisticated energy model
->>> in the thermal framework is also possible, driver needs to provide
->>> a dedicated callback function. More information can be found in the
->>> updated documentation file.
->>>
->>> First 7 patches are refactoring Energy Model framework to add support
->>> of other devices that CPUs. They change:
->>> - naming convention from 'capacity' to 'performance' state,
->>> - API arguments adding device pointer and not rely only on cpumask,
->>> - change naming when 'cpu' was used, now it's a 'device'
->>> - internal structure to maintain registered devices
->>> - update users to the new API
->>> Patch 8 updates OPP framework helper function to be more generic, not
->>> CPU specific.
->>>
->>> The patch set is based on linux-pm branch linux-next 813946019dfd.
->>>
->>
->> Could you take the patch set via your linux-pm?
+On Wed, 20 May 2020 09:33:27 +0200, Johan Jonker wrote:
+> A test with the command below gives this error:
 > 
-> I can do that, but I didn't realize that it was targeted at me, so I
-> need some more time to review the patches.
+> arch/arm/boot/dts/rk3188-bqedison2qc.dt.yaml:
+> touchscreen@3e: reg:0:0: 56 was expected
 > 
-> Thanks!
+> The touchscreen chip on 'rk3188-bqedison2qc' and other BQ models
+> was shipped with different addresses then the binding currently allows.
+> Change the reg property that any address will pass.
+> 
+> make ARCH=arm dtbs_check
+> DT_SCHEMA_FILES=Documentation/devicetree/bindings/input/touchscreen/
+> edt-ft5x06.yaml
+> 
+> Signed-off-by: Johan Jonker <jbx6244@gmail.com>
+> ---
+>  Documentation/devicetree/bindings/input/touchscreen/edt-ft5x06.yaml | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
 
-No worries. Thank you for your time!
-
-Regards,
-Lukasz
+Applied, thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
