@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A27DF1E80E4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 16:50:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86F081E80F1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 16:51:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aQGwAxAo0wgs1xomyWO3yZUt0Q2+FPB60TEs/EFJ7pU=; b=LrqJMkSzTb4U3+
-	HOuTCTNf3Z63O6EBGfrk4f2tPS1/Ii69tv/61pKH++0OSlwAZTcf84btDEdsfnUCA9d4o9Jx7sFCA
-	Xbie7bWsCfREcBkN5TWNJXAEr22s0uuy9kv/zYtTTpv9eIh46iQ5p6pVImlNRJf3TuGVKzJK59eyK
-	dvyvU6peKuZzzmat5yVw3eyOcvblgBd3OF6btdLodt+wrb6xdW7eJTnwRrClF0Rb6FJ0KkuLhwlPs
-	G+ucRhQjJCwAtGlYlHnBOIunHlH6WVeg5RB4n3os3hjkJDcT1YCCpuDJ0Q8JbMNQ2mQIoGknkVfSm
-	WJfzS94kXWpq+EALSRVA==;
+	List-Owner; bh=nC0WXMZ8vLcuJgWMW6UWPM/X7feeS5NOAUPpEaASEnw=; b=NFRzzBGq8GNRde
+	BNcWZp769ypYdhZyaNt2m+xU6yfo2EpzW887PZf8MjgmeeFYpZC76n5vEYWyjzxXNavz8Lkxy7IQ/
+	iyZsEgYFyidjVXvjh1OkpsjHidJPTt7j8BrdbaIk8fwWmTiZSnxebh8nz/SLBONExla8/QQt/BSnJ
+	q8mGqngG/L1NwxQI4+z793KKkrZkIONXioB6ia6KYNl+YQLAVsf6ok+jt59XLZairO6MF11IOM/dT
+	/bu7gIYlm8MdkBHjr/Ci1WAFuPt9OjwucotXa/jW4aLuo2WbiaImgNosYVnOqXCL/6KfI0OlkKqPV
+	CqWq9iGWarTRwXo7RXUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jegL4-0004nh-CH; Fri, 29 May 2020 14:50:26 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jegLr-00059W-69; Fri, 29 May 2020 14:51:15 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jegKu-0004mY-B2; Fri, 29 May 2020 14:50:17 +0000
-Received: by mail-pl1-x641.google.com with SMTP id x18so1243271pll.6;
- Fri, 29 May 2020 07:50:15 -0700 (PDT)
+ id 1jegLg-00058k-TQ; Fri, 29 May 2020 14:51:06 +0000
+Received: by mail-pg1-x541.google.com with SMTP id f21so1567971pgg.12;
+ Fri, 29 May 2020 07:51:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=ckAKropeOCUm1zmt0HIr3BWF9IN5QnUNbPwdDc91gQM=;
- b=VApd29jCPL4t/dmJjYuL4RaTRnmPGPnedoBqJignh4pwfT+adxmEfTg6KII8hVU3+y
- P+HgN3s66RdiqfaK5p5d5Yb+BT/bbTfelEz53DfeySa6BOi8Nz7ffDOzXCWc89PjESDx
- j6npuyY26G43teVevipd+CCGm4HtCtJrWRFgp4B5iTes87Z/DOyGYha+cTN2aS6Yq7+g
- UIcmEP7iCNmgbhNY34/sjXKt1JDcShF6tnfO6arWC71pCNhSjMtPj7a+U0UGOqyJbLTn
- eXE2kLLF08hY0We0hSvVFKsCyOel7J8thLG3PvUb5jL/2Zf8PvzV6kVN8vl8lNQ2kvTd
- uw2A==
+ bh=jOr9kSCuiRiGZqn8Tb20ICSny+xva6gwuSuQrspoPj0=;
+ b=KgwcPZgZePP7ksJE/N3Elst8TGaRjtTyng3aVjAQVMiuK5WRj3KBrPfHTaEo6hH/5e
+ NneEeN/a3Q4eVBsbszr8/xziSKQK53Cx1/6TLkiXvS8U4iZAh68lgseLhACqZS43k1Y0
+ N1X3LVpLdfopR37McJJB4ZVw8N9NVCcsz8RHKEzSnz335rwWLh3vfQiQSGRherRJ0hYP
+ lBLgwY5IO3LGlXYEe4+o53bxWcxv57+99+ayF1+XEQ5xRQ9pV127/3/7OjdsJYysJjO7
+ Zgqh36dbycrH4G3rU1cCji+DELoV0L/qNEk0OVOlqbv/RwkIlvpncwtNXGy0eWhtF9Wp
+ Iwjw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
  :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=ckAKropeOCUm1zmt0HIr3BWF9IN5QnUNbPwdDc91gQM=;
- b=fchPDEWbhZwKFvXrXqCQvBIETpnmNZvW8dZu0cFb7FjsZXhfcUD2ncteuApUDpH4Kz
- +dO2W2njm6q7+qQcuwhG95U+FdviutXg52CHfKfKcFsIs+qGg4i9HiNxxB3sLJnWO5uP
- QIuPLLgxhkwzQBEeXB1ITj7nSWZHW2m+8gLQ9T8gpG/kQB2AmtIAYmpHs/ZzEOjaa8QV
- aOOY06M9gfI7GYZGq/0ij7ZxFLSPGXErk3M1V/ijUOBy4/Q2vW/f0ipf6KaTm8rc5ATa
- HyY0z6Bj9eghMa1RVZBYYjGVIntNtlALvx2BtrSFq9Tc8nFh/fegoM744f9y07gl+44i
- 5W2A==
-X-Gm-Message-State: AOAM530OkdPi1KOTjuSnQIWocR3Zz/jzvnAp6nNjMZqjfikmBRGdcQRY
- i+eMcAfVEtfsSqSUt/wcEBc=
-X-Google-Smtp-Source: ABdhPJxKeEIcZPHMl4KTv3Kl/4nwkc/Lyd2ImrMkBUvZkzIyDKXQUYsPEnihKLG8uevhr4cQxpz+iw==
-X-Received: by 2002:a17:90a:4805:: with SMTP id
- a5mr4970593pjh.22.1590763815238; 
- Fri, 29 May 2020 07:50:15 -0700 (PDT)
+ bh=jOr9kSCuiRiGZqn8Tb20ICSny+xva6gwuSuQrspoPj0=;
+ b=labEEB7GA+HH6QMgqh0vtSx67iP0WXkYzeLn4khoJ4zSqGQw6szIEs6umCuA3n2EF6
+ MvNSuHh8mHu8He8bOuykoOyyIw2/wY2z+8LQqoX0H5gBQmspw90b0GBFlV0HucnS+I2D
+ IL4UzR3RZOSxAizmftP4PGJPbyCwNwlPHz+y2Xi1l7WqCrCNONk4aiRkR3ZjDK03uIm1
+ KvGfyUTjHuk5isRPn9QaQrqRmU+0KGPRL4Gh7sg72T2THdpeqRu9j6OhhSX8KKWHtCZm
+ /iCIm+axAOgAM+vwaCRg56UnCw2A14rg5FwgTljiTSITYINwc5o5ZPKl8K4/+Uevsoqf
+ n5NQ==
+X-Gm-Message-State: AOAM533quipiX86vvtYG/j8wEbj548Q9g4+9ltML+NMQdypP4x9rMmB8
+ Xte+kJo4ta4s8GmY7JQLQEw=
+X-Google-Smtp-Source: ABdhPJyuEWKA2q+MgeYdj6dmRKu/uvmTHR2Eywfghl8T0eMS68ZZfCLq9KCdRvKzdhJYo7ebVpb7jg==
+X-Received: by 2002:a62:1d48:: with SMTP id d69mr9214260pfd.27.1590763863863; 
+ Fri, 29 May 2020 07:51:03 -0700 (PDT)
 Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id 140sm4674978pfy.95.2020.05.29.07.50.14
+ by smtp.gmail.com with ESMTPSA id b23sm6933857pgs.33.2020.05.29.07.51.03
  (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 29 May 2020 07:50:14 -0700 (PDT)
-Date: Fri, 29 May 2020 07:50:13 -0700
+ Fri, 29 May 2020 07:51:03 -0700 (PDT)
+Date: Fri, 29 May 2020 07:51:02 -0700
 From: Guenter Roeck <linux@roeck-us.net>
 To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCH v4 01/11] acpi: thermal: Fix error handling in the
- register function
-Message-ID: <20200529145013.GA125062@roeck-us.net>
+Subject: Re: [PATCH v4 03/11] thermal: Add current mode to thermal zone device
+Message-ID: <20200529145102.GA125312@roeck-us.net>
 References: <4493c0e4-51aa-3907-810c-74949ff27ca4@samsung.com>
  <20200528192051.28034-1-andrzej.p@collabora.com>
- <20200528192051.28034-2-andrzej.p@collabora.com>
+ <20200528192051.28034-4-andrzej.p@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200528192051.28034-2-andrzej.p@collabora.com>
+In-Reply-To: <20200528192051.28034-4-andrzej.p@collabora.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_075016_385246_1546CCAE 
-X-CRM114-Status: GOOD (  17.19  )
+X-CRM114-CacheID: sfid-20200529_075104_946384_A0ECD693 
+X-CRM114-Status: GOOD (  16.15  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -136,62 +134,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 28, 2020 at 09:20:41PM +0200, Andrzej Pietrasiewicz wrote:
-> The acpi_thermal_register_thermal_zone() is missing any error handling.
-> This needs to be fixed.
+On Thu, May 28, 2020 at 09:20:43PM +0200, Andrzej Pietrasiewicz wrote:
+> Prepare for changing the place where the mode is stored: now it is in
+> drivers, which might or might not implement get_mode()/set_mode() methods.
+> A lot of cleanup can be done thanks to storing it in struct tzd. The
+> get_mode() methods will become redundant.
 > 
 > Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 
 Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
 > ---
->  drivers/acpi/thermal.c | 20 ++++++++++++++++----
->  1 file changed, 16 insertions(+), 4 deletions(-)
+>  include/linux/thermal.h | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/drivers/acpi/thermal.c b/drivers/acpi/thermal.c
-> index 19067a5e5293..6de8066ca1e7 100644
-> --- a/drivers/acpi/thermal.c
-> +++ b/drivers/acpi/thermal.c
-> @@ -901,23 +901,35 @@ static int acpi_thermal_register_thermal_zone(struct acpi_thermal *tz)
->  	result = sysfs_create_link(&tz->device->dev.kobj,
->  				   &tz->thermal_zone->device.kobj, "thermal_zone");
->  	if (result)
-> -		return result;
-> +		goto unregister_tzd;
->  
->  	result = sysfs_create_link(&tz->thermal_zone->device.kobj,
->  				   &tz->device->dev.kobj, "device");
->  	if (result)
-> -		return result;
-> +		goto remove_tz_link;
->  
->  	status =  acpi_bus_attach_private_data(tz->device->handle,
->  					       tz->thermal_zone);
-> -	if (ACPI_FAILURE(status))
-> -		return -ENODEV;
-> +	if (ACPI_FAILURE(status)) {
-> +		result = -ENODEV;
-> +		goto remove_dev_link;
-> +	}
->  
->  	tz->tz_enabled = 1;
->  
->  	dev_info(&tz->device->dev, "registered as thermal_zone%d\n",
->  		 tz->thermal_zone->id);
-> +
->  	return 0;
-> +
-> +remove_dev_link:
-> +	sysfs_remove_link(&tz->thermal_zone->device.kobj, "device");
-> +remove_tz_link:
-> +	sysfs_remove_link(&tz->device->dev.kobj, "thermal_zone");
-> +unregister_tzd:
-> +	thermal_zone_device_unregister(tz->thermal_zone);
-> +
-> +	return result;
->  }
->  
->  static void acpi_thermal_unregister_thermal_zone(struct acpi_thermal *tz)
+> diff --git a/include/linux/thermal.h b/include/linux/thermal.h
+> index 216185bb3014..5f91d7f04512 100644
+> --- a/include/linux/thermal.h
+> +++ b/include/linux/thermal.h
+> @@ -128,6 +128,7 @@ struct thermal_cooling_device {
+>   * @trip_temp_attrs:	attributes for trip points for sysfs: trip temperature
+>   * @trip_type_attrs:	attributes for trip points for sysfs: trip type
+>   * @trip_hyst_attrs:	attributes for trip points for sysfs: trip hysteresis
+> + * @mode:		current mode of this thermal zone
+>   * @devdata:	private pointer for device private data
+>   * @trips:	number of trip points the thermal zone supports
+>   * @trips_disabled;	bitmap for disabled trips
+> @@ -170,6 +171,7 @@ struct thermal_zone_device {
+>  	struct thermal_attr *trip_temp_attrs;
+>  	struct thermal_attr *trip_type_attrs;
+>  	struct thermal_attr *trip_hyst_attrs;
+> +	enum thermal_device_mode mode;
+>  	void *devdata;
+>  	int trips;
+>  	unsigned long trips_disabled;	/* bitmap for disabled trips */
 
 _______________________________________________
 linux-arm-kernel mailing list
