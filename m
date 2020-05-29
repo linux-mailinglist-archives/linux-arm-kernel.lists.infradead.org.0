@@ -2,90 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DFC41E7A3E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 12:14:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C382D1E7A42
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 12:15:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:From:To:Subject:MIME-Version:Date:
-	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
-	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=MCYuwFD5rOonYydj15V22CwG6ma7s22w+ZejoCCgVvM=; b=MRiH6FDIJ5wH4O
-	s2JeXiWP+7fYGENmt5BPhdl0TA2BcQWnVycz11ShKsTj/Mr2HkXIs/yqIZz2fjgIKqHHbSN8W2pec
-	n+JDBs4nUIwzaBMwjQ3mUMZmrLBpLs7StLwu6Dwb0hxtzgvu/C2rI15H3uIbim7R0MFsz3zQmPMRy
-	yyZB5kzYXTJbItNDrEMoEqWobEVWJpEhWQxZ+ODdmVtUNjmo8T45uqTYxfMADJDi5Ff1acJr2wQBh
-	ZDe1Uj8Otahpbc3vnNqcHWLQ4FXaB5VuW+ko13b5KKyeGGogDuIiGK5HmW3BjQajqcuTVurI7ZG8W
-	M07g6WS/1pQKbNTTcsWQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WC5rQSCSXAl/5l499uZccLTtUEDWEu2zEUHk/C0D/UA=; b=SKFLWFj6TbH0V+
+	kFRQYnVjWW8H9rsd6JdzxSnSqRvREc/pKmoe/IiAv6y17Jgl7TtJTawy4FhUwEUL8AA+AULYq+Ehe
+	AfBF2AGjhpv3G3midKpruSfHMV7xoRXNH44XIOniH/j/C4EHLDuAGkEp5tmvfUD2ccq7h4A0hgl2S
+	vQqOI5e2hhAJLw0lK4bie0nTeSnAbXWBDcLMzsVrCAqQo+bCqt8qHAkvh+WnwuVYPpWpwAgyRy8So
+	RL0iZcqY+qSTVScVzmJLQy0MUCHqT69tYf9ez8Q9SVtjkGFG6DMkpymuj3ndROK0ww93B8dJCy1rG
+	Dl8qCXHrLRR4Hc6ir5iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jec20-0006XD-VB; Fri, 29 May 2020 10:14:28 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jec2v-00080V-13; Fri, 29 May 2020 10:15:25 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jec1d-0006LG-36
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 10:14:06 +0000
-Received: by mail-pl1-x641.google.com with SMTP id t7so963853plr.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 May 2020 03:14:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=kernelci-org.20150623.gappssmtp.com; s=20150623;
- h=message-id:date:mime-version:content-transfer-encoding:subject:to
- :from; bh=+jQEgzEfe2F3/ZJF6I7g1U2FYFpMP9pijnty7dDfZTQ=;
- b=eN1HJwDD+SrbEmVjDZLLhHGctf3PKHdwq55vgsXyjbXWOEPrlFrFCqCkfGRhfSvQx7
- z5HyG/Ljxd8AahkpSTUYAAyxaRzNQySIe5jUg0SiRomMIUSBXnOmskL4t81fGC/WjVFz
- rO/z8sUIF2I0OAihKJVyBwmnRaPsk7v9P/eBhAnFSyKCWdQhOtOK3XTwIJGcyf8sHo/u
- uUYC4Jy0001GYzzIUmb8QjfHJxaou27LBLxY1Q3NLUci3b7LI5zDPm+/otRs1XQ9dxB8
- GHVo3W9CKejsTDfYnF5V2UvxvrU0gjt4xCPKSAiVg7EJYarTvmMLd8ATRJXIYlBWIETM
- UsXQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:mime-version
- :content-transfer-encoding:subject:to:from;
- bh=+jQEgzEfe2F3/ZJF6I7g1U2FYFpMP9pijnty7dDfZTQ=;
- b=Iqz0mFvMcdQ2VzF786iX5kTS5iKh1UGFhhSklHDKOpy5uZLyA7NgG3AHnnd167LNlo
- Lak/MXRS8/nBEQUHDv+hm/bSEuvHT5bdCvLyOF/Vm17q6TGW94ENUMnCAnjNeZtBsZgN
- ShXbhjQi5DiCiDZcr08NRNlzlpphAdUT5YWh4I7BvVod2UzjQkUZoBiPBhdqKTzrqm3D
- Eg69dOGQEn3WnfDFkoc59/VdqNQbDgQQC5tPhp4/jD/RkfBPSZj/kjfGiHElk0vEG21b
- sPhq/VmjHR65PDryDoK8J3Xzs+bd970UtMn2DFtKMg2SjxbuM2CotMsFsRkkcmeQNPu4
- yyxw==
-X-Gm-Message-State: AOAM533V8iFJCuOsFszLzUYTVCxQlN9jvwoqg2KXebR065Yy+45UMmBC
- drk37MCs0ptJa5el2Ytd8yoCDp4VzrA=
-X-Google-Smtp-Source: ABdhPJw9DVpycbZLPG0FEy9xpzOu5UOm8tGWZFqOL+Env5sAre7UtcmybbgtjM505UgCKILD7BCgnQ==
-X-Received: by 2002:a17:90a:dc10:: with SMTP id
- i16mr8599626pjv.137.1590747244637; 
- Fri, 29 May 2020 03:14:04 -0700 (PDT)
-Received: from kernelci-production.internal.cloudapp.net ([52.250.1.28])
- by smtp.gmail.com with ESMTPSA id o21sm997114pfp.12.2020.05.29.03.14.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 03:14:03 -0700 (PDT)
-Message-ID: <5ed0e06b.1c69fb81.e14d1.33c0@mx.google.com>
-Date: Fri, 29 May 2020 03:14:03 -0700 (PDT)
+ id 1jec2W-00070v-7q
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 10:15:04 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04TAEhWW022992;
+ Fri, 29 May 2020 05:14:43 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1590747283;
+ bh=eV3Ea3rbl4XaNDus1+DK9jQ6sPK5lI/ChCqGDCfcrVw=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=PpfT8mi2irg7RIfZrXPZ0Nf8E+K2sBsN2PP7OSrfK3sOcq3AdWqgVsurUCCVsNMVT
+ YJNxZWYjCXGp2bnlewx99CseS7FVMBTBlJRvRmnDII9kfQ+V8taEP8XlDVPJv91m1u
+ KzOpXPW7gHerbyQG/gqmiasAGmXUluk6YaTKYjE8=
+Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04TAEhpO118133;
+ Fri, 29 May 2020 05:14:43 -0500
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE107.ent.ti.com
+ (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 29
+ May 2020 05:14:42 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Fri, 29 May 2020 05:14:42 -0500
+Received: from [10.24.69.20] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04TAEcpP095213;
+ Fri, 29 May 2020 05:14:39 -0500
+Subject: Re: [PATCH 04/12] dt-bindings: irqchip: ti, sci-intr: Update bindings
+ to drop the usage of gic as parent
+To: Rob Herring <robh@kernel.org>
+References: <20200520124454.10532-1-lokeshvutla@ti.com>
+ <20200520124454.10532-5-lokeshvutla@ti.com> <20200528221406.GA769073@bogus>
+From: Lokesh Vutla <lokeshvutla@ti.com>
+Message-ID: <f803f646-2a55-4f15-9682-1dc616d7c714@ti.com>
+Date: Fri, 29 May 2020 15:44:37 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-Kernelci-Branch: for-kernelci
-X-Kernelci-Tree: arm64
-X-Kernelci-Report-Type: test
-X-Kernelci-Kernel: v5.7-rc7-156-g46909976c59d
-Subject: arm64/for-kernelci baseline: 24 runs,
- 2 regressions (v5.7-rc7-156-g46909976c59d)
-To: will@kernel.org, catalin.marinas@arm.com,
- linux-arm-kernel@lists.infradead.org, kernel-build-reports@lists.linaro.org
-From: "kernelci.org bot" <bot@kernelci.org>
+In-Reply-To: <20200528221406.GA769073@bogus>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_031405_141900_901C3859 
-X-CRM114-Status: UNSURE (   3.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200529_031502_661465_93737492 
+X-CRM114-Status: GOOD (  17.18  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,69 +92,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Nishanth Menon <nm@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>,
+ Device Tree Mailing List <devicetree@vger.kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Sekhar Nori <nsekhar@ti.com>,
+ Tero Kristo <t-kristo@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-arm64/for-kernelci baseline: 24 runs, 2 regressions (v5.7-rc7-156-g46909976c59d)
+Hi Rob,
 
-Regressions Summary
--------------------
+On 29/05/20 3:44 am, Rob Herring wrote:
+> On Wed, May 20, 2020 at 06:14:46PM +0530, Lokesh Vutla wrote:
+>> Drop the firmware related dt-bindings and use the hardware specified
+>> interrupt numbers within Interrupt Router. This ensures interrupt router
+>> DT node need not assume any interrupt parent type.
+> 
+> I didn't like this binding to begin with, but now you're breaking 
+> compatibility.
 
-platform                     | arch  | lab          | compiler | defconfig | results
------------------------------+-------+--------------+----------+-----------+--------
-bcm2837-rpi-3-b              | arm64 | lab-baylibre | gcc-8    | defconfig | 4/5    
-meson-gxl-s805x-libretech-ac | arm64 | lab-baylibre | gcc-8    | defconfig | 4/5    
+Yes, I do agree that this change is breaking backward compatibility. But IMHO,
+this does cleanup of firmware specific properties from DT. Since this is not
+deployed out yet in the wild market, I took the leverage of breaking backward
+compatibility. Before accepting these changes from firmware team, I did
+discuss[0] with Marc on this topic.
 
-  Details:  https://kernelci.org/test/job/arm64/branch/for-kernelci/kernel/v5.7-rc7-156-g46909976c59d/plan/baseline/
+> 
+>> Signed-off-by: Lokesh Vutla <lokeshvutla@ti.com>
+>> ---
+>>  .../interrupt-controller/ti,sci-intr.txt      | 31 ++++++++++---------
+>>  1 file changed, 16 insertions(+), 15 deletions(-)
+>>
+>> diff --git a/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt b/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>> index 1a8718f8855d..8b56b2de1c73 100644
+>> --- a/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>> +++ b/Documentation/devicetree/bindings/interrupt-controller/ti,sci-intr.txt
+>> @@ -44,15 +44,17 @@ Required Properties:
+>>  			4: If intr supports level triggered interrupts.
+>>  - interrupt-controller:	Identifies the node as an interrupt controller
+>>  - #interrupt-cells:	Specifies the number of cells needed to encode an
+>> -			interrupt source. The value should be 2.
+>> -			First cell should contain the TISCI device ID of source
+>> -			Second cell should contain the interrupt source offset
+>> -			within the device.
+>> +			interrupt source. The value should be 1.
+>> +			First cell should contain interrupt router input number
+>> +			as specified by hardware.
+>>  - ti,sci:		Phandle to TI-SCI compatible System controller node.
+>> -- ti,sci-dst-id:	TISCI device ID of the destination IRQ controller.
+>> -- ti,sci-rm-range-girq:	Array of TISCI subtype ids representing the host irqs
+>> -			assigned to this interrupt router. Each subtype id
+>> -			corresponds to a range of host irqs.
+>> +- ti,sci-dev-id:	TISCI device id of interrupt controller.
+>> +- ti,interrupt-ranges:	Set of triplets containing ranges that convert
+>> +			the INTR output interrupt numbers to parent's
+>> +			interrupt number. Each triplet has following entries:
+>> +			- First entry specifies the base for intr output irq
+>> +			- Second entry specifies the base for parent irqs
+>> +			- Third entry specifies the limit
+> 
+> Humm, sounds like what interrupt-map does.
 
-  Test:     baseline
-  Tree:     arm64
-  Branch:   for-kernelci
-  Describe: v5.7-rc7-156-g46909976c59d
-  URL:      https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
-  SHA:      46909976c59d6f251cede6280611aac5b6813867 
+ Okay, Ill look at it.
 
+[0]
+https://lore.kernel.org/linux-arm-kernel/2331f04eacee3b06cc152fc609225233@www.loen.fr/
 
-Test Regressions
----------------- 
+Thanks and regards,
+Lokesh
 
-
-platform                     | arch  | lab          | compiler | defconfig | results
------------------------------+-------+--------------+----------+-----------+--------
-bcm2837-rpi-3-b              | arm64 | lab-baylibre | gcc-8    | defconfig | 4/5    
-
-  Details:     https://kernelci.org/test/plan/id/5ed0d69e283f18e1e01dba70
-
-  Results:     4 PASS, 1 FAIL, 0 SKIP
-  Full config: defconfig
-  Compiler:    gcc-8 (aarch64-linux-gnu-gcc (Debian 8.3.0-2) 8.3.0)
-  Plain log:   https://storage.kernelci.org//arm64/for-kernelci/v5.7-rc7-156-g46909976c59d/arm64/defconfig/gcc-8/lab-baylibre/baseline-bcm2837-rpi-3-b.txt
-  HTML log:    https://storage.kernelci.org//arm64/for-kernelci/v5.7-rc7-156-g46909976c59d/arm64/defconfig/gcc-8/lab-baylibre/baseline-bcm2837-rpi-3-b.html
-  Rootfs:      http://storage.kernelci.org/images/rootfs/buildroot/kci-2019.02-11-g17e793fa4728/arm64/baseline/rootfs.cpio.gz 
-
-  * baseline.dmesg.crit: https://kernelci.org/test/case/id/5ed0d69e283f18e1e01dba73
-      new failure (last pass: v5.7-rc6-152-gf4582661223d)
-      3 lines 
-
-
-platform                     | arch  | lab          | compiler | defconfig | results
------------------------------+-------+--------------+----------+-----------+--------
-meson-gxl-s805x-libretech-ac | arm64 | lab-baylibre | gcc-8    | defconfig | 4/5    
-
-  Details:     https://kernelci.org/test/plan/id/5ed0d880a257a2135c1dba73
-
-  Results:     4 PASS, 1 FAIL, 0 SKIP
-  Full config: defconfig
-  Compiler:    gcc-8 (aarch64-linux-gnu-gcc (Debian 8.3.0-2) 8.3.0)
-  Plain log:   https://storage.kernelci.org//arm64/for-kernelci/v5.7-rc7-156-g46909976c59d/arm64/defconfig/gcc-8/lab-baylibre/baseline-meson-gxl-s805x-libretech-ac.txt
-  HTML log:    https://storage.kernelci.org//arm64/for-kernelci/v5.7-rc7-156-g46909976c59d/arm64/defconfig/gcc-8/lab-baylibre/baseline-meson-gxl-s805x-libretech-ac.html
-  Rootfs:      http://storage.kernelci.org/images/rootfs/buildroot/kci-2019.02-11-g17e793fa4728/arm64/baseline/rootfs.cpio.gz 
-
-  * baseline.dmesg.emerg: https://kernelci.org/test/case/id/5ed0d880a257a2135c1dba78
-      new failure (last pass: v5.7-rc6-124-g96bc42ff0a82)
-      2 lines  
 
 _______________________________________________
 linux-arm-kernel mailing list
