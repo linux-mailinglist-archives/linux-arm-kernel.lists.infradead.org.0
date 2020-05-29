@@ -2,55 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E80DD1E838A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 18:22:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 986F21E83A3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 18:27:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yiiMrpX0K9VK0ZV49fa3nzodDBGi2dORBeGpuzKGjW4=; b=hkBdS2J9p6PUWe
-	FcS9TmHanXdFIf40TJiP/6ml9xtjzaQsfZhaxYEXwvlBTY9OhduhfmOAPP6NMXTV7EDfhP/q0vkQv
-	8MMKt7N+k74RBkSWWlL8o16n5DOyT18pUeoC4/MwFrBGy6OoHERiioyBgUdmUbp2/9G/z1nfPjBIQ
-	jDrMAcnS6wWMY3xzbzCcVOI0B1DsEUNJ4s79PhSqHIFvVHQQoKyhLl66rW5QjtswDLfCP/TLg6Xy+
-	JhYc9gOGIVg3Foy3tRnGreUxfeaCX6P3RE2E1FbLZbR4TkWTPR+xXZZsu6HAgsMF48oQDfpNIf/2a
-	MHgcdZiiTg+aZwyNdLyA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9b2f/HDr1engmXglTQGGzxkXWrcxdhL+fNFUhjJAtnw=; b=Gsl94CLnWEwWP5OQ7uSKFqRB+
+	cMOAibXnwZ/YgWhyWK1Ky4MPOAcnCxdA9EA2o1/P7E3M0VQ33ZBOgb8GrAMvsIFdvwQwEMUS7uCMz
+	X9HRZZI1s7kVO5w11LHS/n5v7bmzOJ3D9ClyQNVgk3o6GQ2TGMGrlz+Ha5qpD3tKaL8myFPAAnZ+g
+	IgMPR6Be7jFNaY4CobMW9R1nKWNNlJC1QQGd2QkfQBG98nR+Ke1WCjdGMbgaU8nEvCvdkDbOZL8tJ
+	8ijsah573ggpWcA16Ao98rDuelqIsmvDYWQMvuMMrPE5gSZRaE1x3vRemRP23fRJ2PNO4cJ6lv4vi
+	CIEFiiGUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jehld-00066L-Kh; Fri, 29 May 2020 16:21:57 +0000
-Received: from mail.baikalelectronics.com ([87.245.175.226]
- helo=mail.baikalelectronics.ru)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jehlT-00064u-JO
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 16:21:49 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mail.baikalelectronics.ru (Postfix) with ESMTP id 078768030772;
- Fri, 29 May 2020 16:21:36 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at baikalelectronics.ru
-Received: from mail.baikalelectronics.ru ([127.0.0.1])
- by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id t-5OvJZSG0eC; Fri, 29 May 2020 19:21:31 +0300 (MSK)
-Date: Fri, 29 May 2020 19:21:30 +0300
-From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-To: Lars Povlsen <lars.povlsen@microchip.com>
-Subject: Re: [PATCH 00/10] spi: Adding support for Microchip Sparx5 SoC
-Message-ID: <20200529162130.hsjcde27xhohl6jl@mobilestation>
-References: <20200513140031.25633-1-lars.povlsen@microchip.com>
+	id 1jehrO-00017y-7F; Fri, 29 May 2020 16:27:54 +0000
+Received: from jabberwock.ucw.cz ([46.255.230.98])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jehrC-00017K-U0
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 16:27:44 +0000
+Received: by jabberwock.ucw.cz (Postfix, from userid 1017)
+ id 7ADB11C0385; Fri, 29 May 2020 18:27:29 +0200 (CEST)
+Date: Fri, 29 May 2020 18:27:28 +0200
+From: Pavel Machek <pavel@ucw.cz>
+To: Ondrej Jirman <megous@megous.com>
+Subject: Re: [PATCH v3 4/5] arm64: dts: sun50i-a64-pinephone: Enable LCD
+ support on PinePhone
+Message-ID: <20200529162728.GB3709@amd>
+References: <20200513212451.1919013-1-megous@megous.com>
+ <20200513212451.1919013-5-megous@megous.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200513140031.25633-1-lars.povlsen@microchip.com>
-X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
+In-Reply-To: <20200513212451.1919013-5-megous@megous.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_092147_997891_822CADE2 
-X-CRM114-Status: GOOD (  15.49  )
+X-CRM114-CacheID: sfid-20200529_092743_117309_DA8121D7 
+X-CRM114-Status: GOOD (  14.20  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,89 +57,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- Serge Semin <fancer.lancer@gmail.com>, linux-spi@vger.kernel.org,
- SoC Team <soc@kernel.org>, Mark Brown <broonie@kernel.org>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Samuel Holland <samuel@sholland.org>,
+ David Airlie <airlied@linux.ie>, Linus Walleij <linus.walleij@linaro.org>,
+ Bhushan Shah <bshah@kde.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
+ Martijn Braam <martijn@brixit.nl>, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, Thierry Reding <thierry.reding@gmail.com>,
+ dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
+ Sam Ravnborg <sam@ravnborg.org>, Luca Weiss <luca@z3ntu.xyz>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============5412632604176053436=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Lars,
 
-On Wed, May 13, 2020 at 04:00:21PM +0200, Lars Povlsen wrote:
-> This is an add-on series to the main SoC Sparx5 series
-> (Message-ID: <20200513125532.24585-1-lars.povlsen@microchip.com>).
-> 
-> The series add support for Sparx5 on top of the existing
-> ocelot/jaguar2 spi driver.
-> 
-> It spins off the existing support for the MSCC platforms into a
-> separate driver, as adding new platforms from the MSCC/Microchip
-> product lines will further complicate (clutter) the original driver.
-> 
-> New YAML dt-bindings are provided for the resulting driver.
-> 
-> It is expected that the DT patches are to be taken directly by the arm-soc
-> maintainers.
+--===============5412632604176053436==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="i9LlY+UWpKt15+FH"
+Content-Disposition: inline
 
-Regarding our cooperation. It can be implemented as follows. Since your patchset
-is less cumbersome than mine and is more ready to be integrated into the generic DW
-APB SSI code, it would be better to first make it through Mark', Andy' and my reviews
-to be further merged into the kernel version of the driver. After that I'll have
-my code altered so it could be applied on top of your patches. When everything
-is done we'll have a more comprehensive DW APB SSI driver with poll-based
-PIO operations support, new features like rx-delay, etc.
 
-Thank you one more time for the series you've shared with us. Let's see what can
-be done to improve it...
+--i9LlY+UWpKt15+FH
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
--Sergey
+Hi!
 
-> 
-> Lars Povlsen (10):
->   spi: dw: Add support for polled operation via no IRQ specified in DT
->   spi: dw: Add support for RX sample delay register
->   spi: dw: Add support for client driver memory operations
->   dt-bindings: spi: Add bindings for spi-dw-mchp
->   spi: spi-dw-mmio: Spin off MSCC platforms into spi-dw-mchp
->   dt-bindings: spi: spi-dw-mchp: Add Sparx5 support
->   spi: spi-dw-mchp: Add Sparx5 support
->   arm64: dts: sparx5: Add SPI controller
->   arm64: dts: sparx5: Add spi-nor support
->   arm64: dts: sparx5: Add spi-nand devices
-> 
->  .../bindings/spi/mscc,ocelot-spi.yaml         |  89 ++++
->  .../bindings/spi/snps,dw-apb-ssi.txt          |   7 +-
->  MAINTAINERS                                   |   2 +
->  arch/arm64/boot/dts/microchip/sparx5.dtsi     |  37 ++
->  .../boot/dts/microchip/sparx5_pcb125.dts      |  16 +
->  .../boot/dts/microchip/sparx5_pcb134.dts      |  22 +
->  .../dts/microchip/sparx5_pcb134_board.dtsi    |   9 +
->  .../boot/dts/microchip/sparx5_pcb135.dts      |  23 +
->  .../dts/microchip/sparx5_pcb135_board.dtsi    |   9 +
->  arch/mips/configs/generic/board-ocelot.config |   2 +-
->  drivers/spi/Kconfig                           |   7 +
->  drivers/spi/Makefile                          |   1 +
->  drivers/spi/spi-dw-mchp.c                     | 399 ++++++++++++++++++
->  drivers/spi/spi-dw-mmio.c                     |  93 ----
->  drivers/spi/spi-dw.c                          |  31 +-
->  drivers/spi/spi-dw.h                          |   4 +
->  16 files changed, 644 insertions(+), 107 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/spi/mscc,ocelot-spi.yaml
->  create mode 100644 drivers/spi/spi-dw-mchp.c
-> 
-> --
-> 2.26.2
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> PinePhone uses PWM backlight and a XBD599 LCD panel over DSI for
+> display.
+>=20
+> Backlight levels curve was optimized by Martijn Braam using a
+> lux meter.
+
+If it was possible to preserve lux values for individual settings in
+the comment somewhere... that would be nice :-).
+
+One day, it would be nice to have brightness settings in lux, so I
+could easily set matching levels on multiple devices, for example...
+
+Best regards,
+
+								Pavel
+
+> +
+> +&backlight {
+> +	power-supply =3D <&reg_ldo_io0>;
+> +	/*
+> +	 * PWM backlight circuit on this PinePhone revision was changed since
+> +	 * 1.0, and the lowest PWM duty cycle that doesn't lead to backlight
+> +	 * being off is around 20%. Duty cycle for the lowest brightness level
+> +	 * also varries quite a bit between individual boards, so the lowest
+> +	 * value here was chosen as a safe default.
+> +	 */
+> +	brightness-levels =3D <
+> +		774  793  814  842
+> +		882  935  1003 1088
+> +		1192 1316 1462 1633
+> +		1830 2054 2309 2596
+> +		2916 3271 3664 4096>;
+> +	num-interpolated-steps =3D <50>;
+> +	default-brightness-level =3D <400>;
+
+--=20
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
+g.html
+
+--i9LlY+UWpKt15+FH
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: Digital signature
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iEYEARECAAYFAl7RN/AACgkQMOfwapXb+vKbHQCgpslUZBfZdvt5G0n+46mybETz
+vjcAnj6Q0OeuWlJccqmIncSEyhdvvZh2
+=w+1i
+-----END PGP SIGNATURE-----
+
+--i9LlY+UWpKt15+FH--
+
+
+--===============5412632604176053436==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5412632604176053436==--
+
