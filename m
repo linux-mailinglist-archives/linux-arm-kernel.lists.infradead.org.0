@@ -2,70 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DC171E8B39
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 00:21:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D0BF1E8B41
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 00:22:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k0Mld2pEq/ofAqPJOmmOo3CGwY87n27kwSWKMguH9og=; b=aHex7/T2gLClaH
-	RUNzdDIUtlbx20sMFaWRodVY6k9KoGaJ8gFjFtqwKRfsStWeRO38VOikO94WoHJ698pkH3XBvTtJu
-	6Hvkj3lUgLgVqfQznLUTiydDso2e72qx9YSfilcRkrbdv9bPsRqQyIQLK6rq7HXJkMS9aStn34vkw
-	6IianunwnHJUdsghMA1UWbLlv1zzEAk5ykBKSBbu1RlT/aLh0piTZ3cMiStirpVebJp7n0zqBJRfX
-	vDqcO3zcQrEzNIjIngnLZ6EMfJXucyDvXB/H4BflbGZdtRrU2VWovbAFJ9U/tcSGsyiu/I5rJnZYM
-	Q5d4OdC1K/vzGHcnxmZQ==;
+	List-Owner; bh=Eyo5pjLC5rV8abqlJmOId1fkawW7j7ULX+EECXGVV6o=; b=ILIpQJ6zHNrz4l
+	7Xi9JUgNj5yZ86KCIYemnTsMvL6bDp11piTgyw1kUYkxAoun4hGmS1uc0n0QAYL3QITgwRAMNs9WV
+	WZHz8JuP1TU3BpzCBO/tRmjvjkuibdYmkoveRhjk82RTc+XHma6nPRmJ+0leAmw3SpuHPsb0F28al
+	wiRRW/qwP9R9ZW0z8So/eBLIBUH1zAFGfaIXKQgm5IbQYZuiFbTx4SI77lcvn3dJgPG83/qiT5oPM
+	JqCtx3IquCXRlFjSBtWv48bD1sgupqQewLQzL0RBhnI3WLvBfqlGIU5NlAyVH4DjeWk4JvvMW+Z7K
+	PdEeqMfxu1mPp0qYBBsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jenNc-0005wK-7d; Fri, 29 May 2020 22:21:32 +0000
-Received: from mail-io1-f65.google.com ([209.85.166.65])
+	id 1jenOo-0006Mm-6P; Fri, 29 May 2020 22:22:46 +0000
+Received: from mail-il1-f196.google.com ([209.85.166.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jenNC-0005pj-HD; Fri, 29 May 2020 22:21:07 +0000
-Received: by mail-io1-f65.google.com with SMTP id y18so1040519iow.3;
- Fri, 29 May 2020 15:21:05 -0700 (PDT)
+ id 1jenOf-0006MQ-Ey; Fri, 29 May 2020 22:22:38 +0000
+Received: by mail-il1-f196.google.com with SMTP id r2so4035757ila.4;
+ Fri, 29 May 2020 15:22:37 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=EmDTON6AQ2i8MRYfDTHNbj+AcDtbUpQQQwspW9k3zWI=;
- b=WCIapBiVwaNySTLCh7r7XFcc/6VMQ3rI4626Iud8HGlJme+hcSfmXq66o4asFUo66g
- Jyi4U8XUGpYPkckcWGGpkInaJsQF780vp34sNuNMcQHTwPj55ul8nih74057LBArmfNC
- DceGr3reMEz3Rw+FNdmOXAIaR/GO0qAoB3aRdqpy7IgBDvdUsZcrDsTtTE59DM+/IPZk
- vKHJYiARLO1W5zPxE2riY6I2s2RG7YTQWVt6ezkbFsGi49IIgDniY034hoFEXj/helvj
- RnaIgQlLuQyJYXaLvitzyypAEkw57hqupdrLoYiEZRDbug3Ts1eO4QYgPvGvAE7lKe+A
- KdGA==
-X-Gm-Message-State: AOAM5328U9W4bGzWGNRtox2qMyttQWpS/6qdVkWYekk9+yvZ3OIyB3cy
- QKky1S/Y7kzTDECuxj6k1A==
-X-Google-Smtp-Source: ABdhPJzbrH0WZ6IiAmNJ+kmxBIzSREc7hfngjeQSiTKhre/7z6U9I4bpx931rvICTL8zJgcvYPD1cQ==
-X-Received: by 2002:a02:6543:: with SMTP id u64mr9653378jab.26.1590790864601; 
- Fri, 29 May 2020 15:21:04 -0700 (PDT)
+ bh=Wc0UZ31C0R3iMEWNK6qgINTbfHE6rJcur/PJ3R+10SA=;
+ b=N9ebn8+XfeiGe4D7PA4HxxLjzD85OXbh+G+mAfUgMOnyrV0/sYxfyhBlNs1y92J7y2
+ LKv6ulOw/xTYFzMN6YMHb6WkESGpSGJLZdVESeBJv/yTa8wmZYh0RO0pQ4UXUTAjZ2ND
+ PJpplubCNkf139jrh5sDuNVb/lG54k4oMIAHpz1b7DPh5hWBS1HKrhhjBaN1lww3g+wq
+ l5D7ogPlIsZH6hUOw4KPNMJahjiNXJgv/j4CwFG9ff0erTjeSsR5WWeHRmOd/CvojIew
+ wqhsqM2ddvhlON8DBoBDf1RffRg3b6tsICoghGto8XnVvZPu6DyDTB+Qfj0oUVvtlCS4
+ xaow==
+X-Gm-Message-State: AOAM530XQ/tAkpcVvcPQmS+dTkTt/7GTi4ZxXR2UuROPC0hS/uQSKo6p
+ gFkxnZYnbpJ+kqOe4UhZfA==
+X-Google-Smtp-Source: ABdhPJyW7aiqVBA3hBYuboTheA0HD4gSduG5P8ca7spP8PYPak05yBl+9zeFg6CIcYzK5ANh312zbg==
+X-Received: by 2002:a92:9ac7:: with SMTP id c68mr9620013ill.53.1590790956445; 
+ Fri, 29 May 2020 15:22:36 -0700 (PDT)
 Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id v13sm5593815ili.15.2020.05.29.15.21.03
+ by smtp.gmail.com with ESMTPSA id h23sm4349826ioj.39.2020.05.29.15.22.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 15:21:03 -0700 (PDT)
-Received: (nullmailer pid 3092973 invoked by uid 1000);
- Fri, 29 May 2020 22:21:02 -0000
-Date: Fri, 29 May 2020 16:21:02 -0600
+ Fri, 29 May 2020 15:22:35 -0700 (PDT)
+Received: (nullmailer pid 3095678 invoked by uid 1000);
+ Fri, 29 May 2020 22:22:33 -0000
+Date: Fri, 29 May 2020 16:22:33 -0600
 From: Rob Herring <robh@kernel.org>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH v7 01/20] dt-bindings: mtd: Document nand-ecc-placement
-Message-ID: <20200529222102.GA3089633@bogus>
-References: <20200529002517.3546-1-miquel.raynal@bootlin.com>
- <20200529002517.3546-2-miquel.raynal@bootlin.com>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH v2 2/4] dt-bindings: pinctrl: Document optional BCM7211
+ wake-up interrupts
+Message-ID: <20200529222233.GA3095594@bogus>
+References: <20200529191522.27938-1-f.fainelli@gmail.com>
+ <20200529191522.27938-3-f.fainelli@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200529002517.3546-2-miquel.raynal@bootlin.com>
+In-Reply-To: <20200529191522.27938-3-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_152106_569818_36350603 
-X-CRM114-Status: GOOD (  17.29  )
+X-CRM114-CacheID: sfid-20200529_152237_500087_428C9479 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.65 listed in list.dnswl.org]
+ no trust [209.85.166.196 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -75,7 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.65 listed in wl.mailspike.net]
+ [209.85.166.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,63 +91,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>, Weijie Gao <weijie.gao@mediatek.com>,
- Paul Cercueil <paul@crapouillou.net>,
- Boris Brezillon <boris.brezillon@collabora.com>, linux-mtd@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, Chuanhong Guo <gch981213@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Ray Jui <rjui@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
+ linux-kernel@vger.kernel.org,
+ "open list:PIN CONTROL SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 29, 2020 at 02:24:58AM +0200, Miquel Raynal wrote:
-> This optional property defines where the ECC bytes are expected to be
-> stored. No value defaults to an unknown location, while these
-> locations can be explicitly set to OOB or interleaved depending if
-> the ECC bytes are entirely stored in the OOB area or mixed with
-> regular data in the main area (also sometimes referred as
-> "syndrome").
+On Fri, 29 May 2020 12:15:20 -0700, Florian Fainelli wrote:
+> BCM7211 supports wake-up interrupts in the form of optional interrupt
+> lines, one per bank, plus the "all banks" interrupt line.
 > 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 > ---
->  .../devicetree/bindings/mtd/nand-controller.yaml       | 10 ++++++++++
->  1 file changed, 10 insertions(+)
+>  .../devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt         | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/mtd/nand-controller.yaml b/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-> index d261b7096c69..4a0798247d2d 100644
-> --- a/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-> +++ b/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-> @@ -56,6 +56,16 @@ patternProperties:
->            (Linux will handle the calculations). soft_bch is deprecated
->            and should be replaced by soft and nand-ecc-algo.
->  
-> +      nand-ecc-placement:
-> +        allOf:
-
-You can drop using allOf now, but it still works as is.
 
 Acked-by: Rob Herring <robh@kernel.org>
-
-> +          - $ref: /schemas/types.yaml#/definitions/string
-> +          - enum: [ oob, interleaved ]
-> +        description:
-> +          Location of the ECC bytes. This location is unknown by default
-> +          but can be explicitly set to "oob", if all ECC bytes are
-> +          known to be stored in the OOB area, or "interleaved" if ECC
-> +          bytes will be interleaved with regular data in the main area.
-> +
->        nand-ecc-algo:
->          allOf:
->            - $ref: /schemas/types.yaml#/definitions/string
-> -- 
-> 2.20.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
