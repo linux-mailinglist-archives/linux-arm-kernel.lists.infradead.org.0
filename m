@@ -2,83 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 132791E87F8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 21:37:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A325E1E8805
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 21:39:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2vP9xTl0WtfK8N94GbQ11SI4AcXNvGuNd3vCU8qyIMA=; b=nfClWooORTi9z0
-	LfZK++STlXnqJ5J2lJw4eOuk2nWIztNUU/s6HoKiz5pKieoa0mKF+PsD3PWeLqGUFDIEoahw+ghZS
-	yMy64HosN2QEA7juz2hRJZ0ObYCyHIP0vyBEVki7g5mfNZxkC14zxPnsh18xb2fVvsEBPXoEmOWOf
-	cMAr4L2FaFBtOmTG7WQOCZ49fVPZEwYs4P9iQjMA5Cnic8zJSSbZIu31SNq9aUD1F7Xh0thOy5/zF
-	ZQsg54ObmptB0GcdXMfsVqYQTOx3+uEbGcyWKmjhTEs5SA+u9L2QbzdNzo1DvNQhhu3Zc5u1DOAyx
-	MwFRNDGU+NgIw9/b3vxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sgAPc/YvU8juXWpDof6+4LyOVfM3DgxDl3ruiIMgJ5I=; b=gAu4xDhfra7eh8fvsPrgyBioQ
+	sTm86YrtIdPxjinqfZXEVODoTWKkT5pfkUadu8zqdSdMq8EL0+XvoFcTFKOiC7cxUcscC3Ci/652A
+	69JjU2USs3ja4iks0cehg+JoUFgq5MO/SYg1ZEQnsUCyPA3pT+TOWttIgbCTR4EjdX3Fz1QkVIupU
+	IXugiRiHl1CHOXJeRL2k1hJpWy8iJ+Elk0+ZZ+jXVCJexU7GzZXtmT5I41SiPrbmysGON2zz7/n+Y
+	BxwSAc6L1J5/s9sKm6YuJTqL191xGXbcvncCe7SCAYRDyZuuey2PNu2LgYhHs5X4YGFxj2GuAsI0u
+	tZZp1OAZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jekoT-0001BY-JP; Fri, 29 May 2020 19:37:05 +0000
-Received: from mail-il1-f193.google.com ([209.85.166.193])
+	id 1jekr3-0001kZ-Le; Fri, 29 May 2020 19:39:45 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jekoB-00015w-1c
- for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 19:36:48 +0000
-Received: by mail-il1-f193.google.com with SMTP id l20so3597974ilj.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 29 May 2020 12:36:46 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=u4JJuz4TAar60F38SQZw2KBTCJrS5nElM3p5G9Nq7yQ=;
- b=YtPDPhBsvrunFB5LpRwLTc04Hx1SNiSDKw+o/4e+Gfe5A7ajPS5gaXpCiQvZdxLZK2
- wVgFkPsv+dy2Q5wxx4Xea/sxx8ky02wXXIZlari+wIkPfbI9a+s0SqbpjUVYdLIYMhOk
- 71pXQa9ktNdu0IFPtAgdokdQXVjn+ctmCv2mw0xmockyCLJUYW1z1uuGAphQOQrEGrjH
- 4BsorKweUaBl+EumVwE0o+YLfkdbtLFfuJeASX8vrV7mJiuWuASb0mvls/KfQcIkMmX1
- dRDHuzktg30l1MeeKV8fqRLi1GiokYqs2tDP0QWfKwJ2qBafkiC7jxwWxFuhsvBmHGRJ
- 7vxg==
-X-Gm-Message-State: AOAM53331M3Y5Lri3PikRUaDmZCqz8NUkBPtRp2B/7Ik/6lw0xbo9+j3
- UBSd/eNTlSyYB90vLWAHrg==
-X-Google-Smtp-Source: ABdhPJz+wV8UcwQ0Kd/c679Va6YB924PcALUTRcMGJuXlpRNr8Q7V/3QZdJFrUIiLqnJWf5HqXDRvQ==
-X-Received: by 2002:a92:cd11:: with SMTP id z17mr7965249iln.12.1590781005909; 
- Fri, 29 May 2020 12:36:45 -0700 (PDT)
-Received: from xps15 ([64.188.179.252])
- by smtp.gmail.com with ESMTPSA id s15sm5239645iln.49.2020.05.29.12.36.44
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 29 May 2020 12:36:45 -0700 (PDT)
-Received: (nullmailer pid 2815499 invoked by uid 1000);
- Fri, 29 May 2020 19:36:44 -0000
-Date: Fri, 29 May 2020 13:36:44 -0600
-From: Rob Herring <robh@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V3] dt-bindings: timer: Convert i.MX GPT to json-schema
-Message-ID: <20200529193644.GA2815265@bogus>
-References: <1590717882-20922-1-git-send-email-Anson.Huang@nxp.com>
+ id 1jekqo-0001k1-3X
+ for linux-arm-kernel@lists.infradead.org; Fri, 29 May 2020 19:39:31 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04TJdP6B037266;
+ Fri, 29 May 2020 14:39:25 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1590781165;
+ bh=wQ582Jun/nwakMpVHCTGC+XK6lct9XsIpF/gTKCzB4E=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=y8IOIIbgm87LrsXCKCcUbTGdAcKHRwAu8QJEeHzVJRcjRZ/e7U8Hh8xCeF08Tsyp1
+ NsIfBDRAbDXOZIXycPjJWkWr63uGpgIkutvuZU/LiPTM7gbbSePlsCZS7b3vmjcTYb
+ 6QMjwKrczyzOuEgiZDYA2k5QEjJKpKnLUjEdwkHA=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04TJdPXe124917
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 29 May 2020 14:39:25 -0500
+Received: from DLEE115.ent.ti.com (157.170.170.26) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 29
+ May 2020 14:39:24 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE115.ent.ti.com
+ (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Fri, 29 May 2020 14:39:24 -0500
+Received: from [10.250.100.73] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04TJdMYP008147;
+ Fri, 29 May 2020 14:39:22 -0500
+Subject: Re: [PATCH v4 0/2] soc: ti: add k3 platforms chipid module driver
+To: <santosh.shilimkar@oracle.com>, Arnd Bergmann <arnd@arndb.de>
+References: <20200512123449.16517-1-grygorii.strashko@ti.com>
+ <a132765e-f4e4-a1e8-fb43-239188fecf1b@ti.com>
+ <CAK8P3a31DYOn1TyjxCYM7ebc9nL5EFKsNpSHkq55bG54Bns+MA@mail.gmail.com>
+ <cb980673-d3ad-53b8-9351-196ff3f47c45@oracle.com>
+From: Grygorii Strashko <grygorii.strashko@ti.com>
+Message-ID: <f06a6285-aa9f-918b-044c-c0ba1f0ad1fc@ti.com>
+Date: Fri, 29 May 2020 22:39:26 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1590717882-20922-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <cb980673-d3ad-53b8-9351-196ff3f47c45@oracle.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200529_123647_392170_35161F3B 
-X-CRM114-Status: GOOD (  10.65  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200529_123930_227921_8FA9B9D0 
+X-CRM114-Status: GOOD (  13.30  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.193 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,34 +94,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- Linux-imx@nxp.com, kernel@pengutronix.de, tglx@linutronix.de,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Nishanth Menon <nm@ti.com>, DTML <devicetree@vger.kernel.org>,
+ Dave Gerlach <d-gerlach@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
+ Sekhar Nori <nsekhar@ti.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 29 May 2020 10:04:42 +0800, Anson Huang wrote:
-> Convert the i.MX GPT binding to DT schema format using json-schema.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V2:
-> 	- in compatible properties, group all the ones with the same
-> 	  fallback to a single 'items' list using enum for the first entry.
-> ---
->  .../devicetree/bindings/timer/fsl,imxgpt.txt       | 45 --------------
->  .../devicetree/bindings/timer/fsl,imxgpt.yaml      | 72 ++++++++++++++++++++++
->  2 files changed, 72 insertions(+), 45 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.txt
->  create mode 100644 Documentation/devicetree/bindings/timer/fsl,imxgpt.yaml
-> 
-
-Applied, thanks!
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAyOS8wNS8yMDIwIDIyOjE5LCBzYW50b3NoLnNoaWxpbWthckBvcmFjbGUuY29tIHdyb3Rl
+Ogo+IE9uIDUvMjkvMjAgMTE6MzQgQU0sIEFybmQgQmVyZ21hbm4gd3JvdGU6Cj4+IE9uIEZyaSwg
+TWF5IDI5LCAyMDIwIGF0IDg6MjIgUE0gR3J5Z29yaWkgU3RyYXNoa28KPj4gPGdyeWdvcmlpLnN0
+cmFzaGtvQHRpLmNvbT4gd3JvdGU6Cj4+PiBPbiAxMi8wNS8yMDIwIDE1OjM0LCBHcnlnb3JpaSBT
+dHJhc2hrbyB3cm90ZToKPj4KPj4+PiDCoMKgIC4uLi9iaW5kaW5ncy9zb2MvdGkvazMtc29jaW5m
+by55YW1swqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKgIDQwICsrKysrCj4+Pj4gwqDCoCBkcml2ZXJz
+L3NvYy90aS9LY29uZmlnwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCB8wqAgMTAgKysKPj4+PiDCoMKgIGRyaXZlcnMvc29jL3RpL01ha2VmaWxlwqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgfMKgwqAgMSArCj4+Pj4gwqDCoCBk
+cml2ZXJzL3NvYy90aS9rMy1zb2NpbmZvLmPCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqAgfCAxNTIgKysrKysrKysrKysrKysrKysrCj4+Pj4gwqDCoCA0IGZpbGVzIGNoYW5nZWQs
+IDIwMyBpbnNlcnRpb25zKCspCj4+Pj4gwqDCoCBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRh
+dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3NvYy90aS9rMy1zb2NpbmZvLnlhbWwKPj4+PiDCoMKg
+IGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3NvYy90aS9rMy1zb2NpbmZvLmMKPj4+Pgo+Pj4K
+Pj4+IEFueSBjaGFuY2VzIHlvdSBjYW4gcGljayB0aGlzIHVwPwo+Pgo+PiBJIG1lcmdlZCBhIHZl
+cnNpb24gb2YgdGhpcyBkcml2ZXIgZnJvbSBTYW50b3NoJ3MgcHVsbCByZXF1ZXN0IGludG8gdGhl
+Cj4+IGFybS9kcnZpZXJzIHRyZWUgeWVzdGVyZGF5Lgo+Pgo+PiBJcyB0aGVyZSBzb21ldGhpbmcg
+bWlzc2luZz8KPj4KPiBOb3BlLiBJIHdhcyBnb2luZyB0byByZXBseSBvbiB0aGUgdGhyZWFkIGJ1
+dCBtaXNzZWQgaXQuCgpPaC4gVGhhbmtzLiBJJ3ZlIG1pc3NlZCB0aGF0IGl0IHdhcyBhbHJlYWR5
+IHBpY2tlZCB1cC4KClRoYW5rcyBhZ2Fpbi4KCi0tIApCZXN0IHJlZ2FyZHMsCmdyeWdvcmlpCgpf
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
+a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
+aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
+bmVsCg==
