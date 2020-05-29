@@ -2,62 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2A8B1E74D8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 06:27:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3EC01E74FB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 29 May 2020 06:40:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8S4Waml3rZgE88aDl3IDnYnv6LRNTpf9K7NXU5PdSkU=; b=mrKMCVgncwI2WD
-	Tz50OPF1W7UzYoHLtPbHpPkfUvgCRjtECzkjq8EL1CGI0Xlp6LTQdyrwDv78lSl/Nw0gPDtPrs4T+
-	8Fx1EOKZGtU9SD7y8a5MN1mC6SNv04ysyhdJhCPw500M7Jk+MYTK1UlVEEFl5yVJDrNTGW0j1qiP0
-	AtM1/pG5QcPBRQ8606hJbNF4RgccwgivGUPwlGqrVOZE1JVzH9vPuVCnU0ieSvnLjVFeblln0hzOl
-	bisbP/VEESJcJQ6+CMqXWqzoKcgyaO+PCFzIol69yBMnRCYlE91cvsKRCCLIZQVYyMoblORzTTMoS
-	OQh97CKjRIADYlWLxxAw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=sjuQFOBjV0MjyZ4eARBU+KXYsR3IsHPfKYtwbqIrqRE=; b=pY9dBSNKmKq1wE
+	MXaVuiDEO0knYlOq6nRBBgqGvX+twf9ByQGjXXn5xCuN8hIfrRUfKeHGbXksLVFdm+hDDNzLwVkGO
+	G2LpwsdN9nQu93YcIEpKbtW2isX+fhYCs0UoTBNWJbtESdCmlc5W3SK4ZJ/PISZZtlSxHXGNW5UBK
+	t4UD/PARaF1uQhcKFfDdKz7XuY2A5UFzd5m//0UuVFjzXOSfl1VVIPqfSk8S/aaw5fEFwrOoghIxU
+	FXcS+oSAgIA/8rwWFbXfKRqqqIGOgLYGiAih4Rtf7T/ufelHYI16aURXeZ7VB5Pee7KkssPKFf9qV
+	vatAxEHzPiw2AdKdWj3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jeWbf-0005T9-73; Fri, 29 May 2020 04:26:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jeWof-00035u-9E; Fri, 29 May 2020 04:40:21 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jeWbN-0005Sp-CX; Fri, 29 May 2020 04:26:38 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F0B7E2074D;
- Fri, 29 May 2020 04:26:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590726397;
- bh=biY26RlQtZl+eOvAa3r0qNI+95AZPiHE6MWy69incsQ=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=uR/4VKmjPeu7nUm0lkHtc5fQuVyg9Cv8k9mjBTofLk9uGIZ+gv7NcC1inBtBriBu5
- ydFYWUvxalNlqlw/nKCPjTvH8jWZ1TRiCEu7pDvB5+NSVdzR97iRZSQekgx7ct8aTp
- 2NgFtT9YMZWTQ17NB/enzc0fLu2TBOXJ+pMrMYyw=
+ id 1jeWoH-00034x-Nw; Fri, 29 May 2020 04:39:59 +0000
+X-UUID: ed21fbb1c1ad4c8f8eb1e9481eb532ce-20200528
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=/8kwEHmJ6TaKvbOevYpGl57UqTkIwazDt7MXIqKtVPY=; 
+ b=qmcsrnbzADgRypVyMJU/lHib1OIYoafb48XWw0diQCBr5kUmgwZdXKklqZ1Fi1qVyq03f566vBPsrL2TKUXxgAaaLoDCArZedcz7sRnM9s9n1QFioPpp55RyTdxuTXqBTN+i58a/2xhF1SM5fOhtqzlG6bi6edI4X7602P3DsF4=;
+X-UUID: ed21fbb1c1ad4c8f8eb1e9481eb532ce-20200528
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <macpaul.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1930152965; Thu, 28 May 2020 20:39:59 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 28 May 2020 21:29:48 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 29 May 2020 12:29:30 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Fri, 29 May 2020 12:29:34 +0800
+From: Macpaul Lin <macpaul.lin@mediatek.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>, Mathias Nyman
+ <mathias.nyman@intel.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH] usb: host: xhci-mtk: avoid runtime suspend when removing hcd
+Date: Fri, 29 May 2020 12:29:28 +0800
+Message-ID: <1590726569-28248-1-git-send-email-macpaul.lin@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
-In-Reply-To: <1590560749-29136-1-git-send-email-weiyi.lu@mediatek.com>
-References: <1590560749-29136-1-git-send-email-weiyi.lu@mediatek.com>
-Subject: Re: [PATCH v2] clk: mediatek: assign the initial value to
- clk_init_data of mtk_mux
-From: Stephen Boyd <sboyd@kernel.org>
-To: Matthias Brugger <matthias.bgg@gmail.com>,
- Nicolas Boichat <drinkcat@chromium.org>, Weiyi Lu <weiyi.lu@mediatek.com>
-Date: Thu, 28 May 2020 21:26:36 -0700
-Message-ID: <159072639634.69627.7492835408539422310@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200528_212637_453838_76DB30EA 
-X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-CacheID: sfid-20200528_213957_790002_84A79640 
+X-CRM114-Status: UNSURE (   9.24  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -65,7 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,33 +85,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Liao <jamesjj.liao@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
- linux-mediatek@lists.infradead.org, Owen Chen <owen.chen@mediatek.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Macpaul Lin <macpaul.lin@mediatek.com>,
+ Macpaul Lin <macpaul.lin@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Weiyi Lu (2020-05-26 23:25:49)
-> When some new clock supports are introduced, e.g. [1]
-> it might lead to an error although it should be NULL because
-> clk_init_data is on the stack and it might have random values
-> if using without initialization.
-> Add the missing initial value to clk_init_data.
-> 
-> [1] https://android-review.googlesource.com/c/kernel/common/+/1278046
-> 
-> Fixes: a3ae549917f1 ("clk: mediatek: Add new clkmux register API")
-> Cc: <stable@vger.kernel.org>
-> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
-> Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
-> ---
+When runtime suspend was enabled, runtime suspend might happened
+when xhci is removing hcd. This might cause kernel panic when hcd
+has been freed but runtime pm suspend related handle need to
+reference it.
 
-Applied to clk-next
+Change-Id: I70a5dc8006207caeecbac6955ce8e5345dcc70e6
+Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+---
+ drivers/usb/host/xhci-mtk.c |    5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/usb/host/xhci-mtk.c b/drivers/usb/host/xhci-mtk.c
+index bfbdb3c..641d24e 100644
+--- a/drivers/usb/host/xhci-mtk.c
++++ b/drivers/usb/host/xhci-mtk.c
+@@ -587,6 +587,9 @@ static int xhci_mtk_remove(struct platform_device *dev)
+ 	struct xhci_hcd	*xhci = hcd_to_xhci(hcd);
+ 	struct usb_hcd  *shared_hcd = xhci->shared_hcd;
+ 
++	pm_runtime_put_sync(&dev->dev);
++	pm_runtime_disable(&dev->dev);
++
+ 	usb_remove_hcd(shared_hcd);
+ 	xhci->shared_hcd = NULL;
+ 	device_init_wakeup(&dev->dev, false);
+@@ -597,8 +600,6 @@ static int xhci_mtk_remove(struct platform_device *dev)
+ 	xhci_mtk_sch_exit(mtk);
+ 	xhci_mtk_clks_disable(mtk);
+ 	xhci_mtk_ldos_disable(mtk);
+-	pm_runtime_put_sync(&dev->dev);
+-	pm_runtime_disable(&dev->dev);
+ 
+ 	return 0;
+ }
+-- 
+1.7.9.5
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
