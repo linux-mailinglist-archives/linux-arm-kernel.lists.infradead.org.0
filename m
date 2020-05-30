@@ -2,60 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 530B61E8FF2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 11:17:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB71C1E903D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 11:46:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9heobb9xIDVf/oyapTQjN3UvPKr0OJ+bWD+HE8ENpEk=; b=AXr+/dpv+xX+9w
-	i77CNu9c7ehI19Z2VLvuITI2nmyZspwZV5IKlnzBeZXXHWm4Y7wVDK/s1VYsfS1dKiQV3CA3zJbfv
-	VnJFsnFEhCTDwA32uHuqCrDreePXIP4Xm6Nw9VlUiv1VnKX3A20x35HrlFtyYLidxNn3tiPKFJUv+
-	EQul60S4dzoZtrtlzVnx98gYjwIhMrn9g7kDbNV38XfogNRtyvnOoTAT0zt7so+eHHGA6oW5XM6pH
-	0EkcJfPdv9Wk0XEIN40ULeXncoVgl8+E1n7CDRMNIoTlHYnmts/jgBLgneuuaQMBQuNhd9LUrcBvo
-	gKqlEMFwp9v0t4SAPWyw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HPS4MFL0CNwcXSBds1eTr6MMYU7BJQHyVyCRXeeLpbk=; b=WI1sSn4xCIWARs
+	QhMfptpMQa808MlULlmxbgCGm6vQutw89Ycm5SqOGikH5vBQQA5iJUCYlzFQ4eEmst1XD+b3lDk3w
+	enhb8rB/u4iMruAf+XW3klnleU2yAWZWqsCi9ZaLlGXeEQutl5CbruCFn06fn3SII5c38eV6LzVpV
+	kU4qoaNm/2PrnA2qWUNheYlcH96TnBIQetUiVNWQdUATb54vlrQD2w6dSESEV4+DGxIDxAKqh1NYy
+	IL9BFTSNnP56St0G9zABoDgCcsjC2YbG1FPiIlO+FZ/BAz+HHmhWRMp0KLOYIsjbaXiG7zcfMW3LY
+	MjTG5JgrTlbDy/FrTatw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jexbq-0005dy-Nx; Sat, 30 May 2020 09:16:54 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jey44-0006iL-Ja; Sat, 30 May 2020 09:46:04 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jexbi-0005aU-PX
- for linux-arm-kernel@lists.infradead.org; Sat, 30 May 2020 09:16:48 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 7AF68A855B4A1C271330;
- Sat, 30 May 2020 17:16:24 +0800 (CST)
-Received: from SWX921481.china.huawei.com (10.126.200.151) by
- DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
- 14.3.487.0; Sat, 30 May 2020 17:16:16 +0800
-From: Barry Song <song.bao.hua@hisilicon.com>
-To: <will@kernel.org>, <robin.murphy@arm.com>, <hch@lst.de>,
- <m.szyprowski@samsung.com>, <iommu@lists.linux-foundation.org>
-Subject: [PATCH] iommu/arm-smmu-v3: expose numa_node attribute to users in
- sysfs
-Date: Sat, 30 May 2020 21:15:05 +1200
-Message-ID: <20200530091505.56664-1-song.bao.hua@hisilicon.com>
-X-Mailer: git-send-email 2.21.0.windows.1
+ id 1jey3t-0004A9-NX
+ for linux-arm-kernel@lists.infradead.org; Sat, 30 May 2020 09:45:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=73MMfueoWp3O9MARH/BR3+rDia4lZUeJmAGiQu0hBYs=; b=QY0CoQptM3vcN8m7QNDn4q6uK
+ gIPUOe6k+M3redoEf1Eg+mEiVYU9XhMNrsqV8EkLD6Z8fFGvlrL4GPacHBmMdxpDU74F+k2kcgvYY
+ E3bGXzsQ7FHq4yBDcTFzR68k3Vk0WDkRfza2j52e9m1EacfgSVrL4dnGdedYVcLcKpLN90JspKkDA
+ gX82xXcAYQ6Zo6DXBWf4ATMQWzUfyJMKPcUEA7tyZnqsFfrmmj3TPEoQDWjFB3jZbP/m8jzMsBq0X
+ rn865YQdWjw81vwxMoCOc8h+VYni2zQcn0Ig/skNsBdWGlrY/et/7wKy3ttK/IKFddLBXO2vVqQHJ
+ /fCMoFRNQ==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:36466)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jey1k-0001rf-IR; Sat, 30 May 2020 10:43:40 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jey1i-0000yO-AE; Sat, 30 May 2020 10:43:38 +0100
+Date: Sat, 30 May 2020 10:43:38 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Subject: Re: [PATCH] scsi: cumana_2: Fix different dev_id between
+ 'request_irq()' and 'free_irq()'
+Message-ID: <20200530094338.GE1551@shell.armlinux.org.uk>
+References: <20200530073555.577414-1-christophe.jaillet@wanadoo.fr>
 MIME-Version: 1.0
-X-Originating-IP: [10.126.200.151]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200530073555.577414-1-christophe.jaillet@wanadoo.fr>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_021646_994435_233AD540 
-X-CRM114-Status: GOOD (  10.01  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200530_024553_768083_CE524B1F 
+X-CRM114-Status: UNSURE (   8.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.190 listed in wl.mailspike.net]
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 AC_FROM_MANY_DOTS      Multiple periods in From user name
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,92 +88,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Barry Song <song.bao.hua@hisilicon.com>, linuxarm@huawei.com,
+Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com, jejb@linux.ibm.com,
+ kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As tests show the latency of dma_unmap can increase dramatically while
-calling them cross NUMA nodes, especially cross CPU packages, eg.
-300ns vs 800ns while waiting for the completion of CMD_SYNC in an
-empty command queue. The large latency causing by remote node will
-in turn make contention of the command queue more serious, and enlarge
-the latency of DMA users within local NUMA nodes.
+On Sat, May 30, 2020 at 09:35:55AM +0200, Christophe JAILLET wrote:
+> The dev_id used in 'request_irq()' and 'free_irq()' should match.
+> So use 'host' in both cases.
+> 
+> Fixes: 1da177e4c3f4 ("Linux-2.6.12-rc2")
+> Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 
-Users might intend to enforce NUMA locality with the consideration of
-the position of SMMU. The patch provides minor benefit by presenting
-this information to users directly, as they might want to know it without
-checking hardware spec at all.
+This is itself wrong.  cumanascsi_2_intr() requires "info" as the devid.
+Either cumanascsi_2_intr() needs changing to use shost_priv(host) along
+with this change, or free_irq() needs changing to use "info".
 
-Signed-off-by: Barry Song <song.bao.hua@hisilicon.com>
----
- drivers/iommu/arm-smmu-v3.c | 40 ++++++++++++++++++++++++++++++++++++-
- 1 file changed, 39 insertions(+), 1 deletion(-)
+Likely the same for the other patches, I haven't looked.
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 82508730feb7..754c4d59498b 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -4021,6 +4021,44 @@ err_reset_pci_ops: __maybe_unused;
- 	return err;
- }
- 
-+static ssize_t numa_node_show(struct device *dev,
-+		struct device_attribute *attr, char *buf)
-+{
-+	return sprintf(buf, "%d\n", dev_to_node(dev));
-+}
-+static DEVICE_ATTR_RO(numa_node);
-+
-+static umode_t arm_smmu_numa_attr_visible(struct kobject *kobj, struct attribute *a,
-+		int n)
-+{
-+	struct device *dev = container_of(kobj, typeof(*dev), kobj);
-+
-+	if (!IS_ENABLED(CONFIG_NUMA))
-+		return 0;
-+
-+	if (a == &dev_attr_numa_node.attr &&
-+			dev_to_node(dev) == NUMA_NO_NODE)
-+		return 0;
-+
-+	return a->mode;
-+}
-+
-+static struct attribute *arm_smmu_dev_attrs[] = {
-+	&dev_attr_numa_node.attr,
-+	NULL
-+};
-+
-+static struct attribute_group arm_smmu_dev_attrs_group = {
-+	.attrs          = arm_smmu_dev_attrs,
-+	.is_visible     = arm_smmu_numa_attr_visible,
-+};
-+
-+
-+static const struct attribute_group *arm_smmu_dev_attrs_groups[] = {
-+	&arm_smmu_dev_attrs_group,
-+	NULL,
-+};
-+
- static int arm_smmu_device_probe(struct platform_device *pdev)
- {
- 	int irq, ret;
-@@ -4097,7 +4135,7 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
- 		return ret;
- 
- 	/* And we're up. Go go go! */
--	ret = iommu_device_sysfs_add(&smmu->iommu, dev, NULL,
-+	ret = iommu_device_sysfs_add(&smmu->iommu, dev, arm_smmu_dev_attrs_groups,
- 				     "smmu3.%pa", &ioaddr);
- 	if (ret)
- 		return ret;
 -- 
-2.23.0
-
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
