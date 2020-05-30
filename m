@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B77581E8FC7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 10:26:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D77441E8FB7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 10:23:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ClSjbKTyUe85r6H9aPoLwdVk5ep3ZB0L3YttRyoT6c=; b=oj1ARRRLlAF5FB
-	lSR8eIiF1398BTGHCb5s622aeZe/bJ0tmw7apQx90PnfIHNqventv09RyDZliG3i17sOwg6J6OO9a
-	BISvjRhYEJtt4Jlr4LNx3UOD39lvYrgmXpUcerjgfaamTwdJPDrOXCN3AJm90tTpVJePkFsWhCB5X
-	ZEgmkhIfDDc4K0CJw5roFJFrjuelBEu57dHEJGPwODipPljYGKcE1OfYD16yeSL2WBtdaL3Ny7gqv
-	oRikmjuZ3dKVL87rlOvhG4yqEATiYLg1i2PLIFaD6ayaSQnXXZp4YQ3cT78pu2Tci3tFHh/gExn3C
-	cdk8+3vVL8T3mP7V3n3A==;
+	List-Owner; bh=p4WyXJNnUVcZ3AT0LFu6w5R2QnuimxRB3EUTEbNKGfI=; b=V2eZSGPulU/MN+
+	PvSCtG5h/9dCs55h/efVLceTGFYpXjgKUdxP8IYvqcL+FKRuZ2X8S93Hmm8/rbmDrXpVnYy3wFLQy
+	aFlFdLg+FIefiLiQJmu3QdE36CHSuh3MvlTzdHDUNeurbdEkBHcmK4YXFFyCvhFEG9eNtf6eyJRGZ
+	w6TE79weSH6Hi3BfguJcxlUzqovemKxzRmA9Jej0hPOFuhTQF6udcrOHr4PtTpU6RvyxoF/uU9ptg
+	lpFk+CcygcZ+U8nBcUy+b9PR9t9c4sWUzClz8sCJEi601vN9/YF/3ujhq35NePiWaNFDlXNBCuG39
+	fwhRiqk2/znDGNrZmgYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jewpB-0001fS-2w; Sat, 30 May 2020 08:26:37 +0000
+	id 1jewmE-00055b-Kw; Sat, 30 May 2020 08:23:34 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jewmo-0005v3-5H; Sat, 30 May 2020 08:24:14 +0000
-X-UUID: 18f027bb8b7c45818c36408ceaaa2639-20200530
+ id 1jewlJ-0004Y0-34; Sat, 30 May 2020 08:22:38 +0000
+X-UUID: f52b6f6490d34b328493125ff942c975-20200530
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=8H2tXyQBBPUD1GcH5xZGraxq7v8PS8Ye3wet1U9PU0c=; 
- b=bSoSH3xgmtyF636WFzCrKTwuUhjqeIpWrY5UJ1oACD3z1x91GMNP5fbYIzY89oLtzeUYUfRarzUkXnzalDFzBtGvmNwv+QH6H9aI2VcPTR4qM3ug5gh1uipYv7XJsZumG3gYU1L38lciGy0KnWa6tolCbn/B1KEDenNFAJ80/cs=;
-X-UUID: 18f027bb8b7c45818c36408ceaaa2639-20200530
+ bh=3n8qQs/+XQtriV9uBcTrs++ZoOREAIe6PJ1LIF68gR4=; 
+ b=M2kAZT6ZrYkSk5AmgCpfM8peyFM2WHXUFizcc4Fd2f7i6Wd9SQppW0qScWN4LZUV0CQzQY/ALzGh46aEs4U5UULlcoOxRjp1+PzbeqE4lB0gbBlDlObHY/X0jUisfbLadi7I3IXPUmktqybifmTIvjbzbiD+Oz5/Bk+VorUvXXk=;
+X-UUID: f52b6f6490d34b328493125ff942c975-20200530
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1881262708; Sat, 30 May 2020 00:24:00 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 30 May 2020 01:14:13 -0700
+ with ESMTP id 989418461; Sat, 30 May 2020 00:22:27 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 30 May 2020 01:14:24 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 30 May 2020 16:14:10 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 30 May 2020 16:14:22 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Sat, 30 May 2020 16:14:10 +0800
+ Transport; Sat, 30 May 2020 16:14:22 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 12/17] memory: mtk-smi: Get rid of mtk_smi_larb_get/put
-Date: Sat, 30 May 2020 16:10:13 +0800
-Message-ID: <1590826218-23653-13-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v4 13/17] iommu/mediatek: Use module_platform_driver
+Date: Sat, 30 May 2020 16:10:14 +0800
+Message-ID: <1590826218-23653-14-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1590826218-23653-1-git-send-email-yong.wu@mediatek.com>
 References: <1590826218-23653-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_012410_405808_5C9B2B83 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20200530_012237_134862_D613D701 
+X-CRM114-Status: GOOD (  11.02  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,74 +100,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-After adding device_link between the iommu consumer and smi-larb,
-the pm_runtime_get(_sync) of smi-larb and smi-common will be called
-automatically. we can get rid of mtk_smi_larb_get/put.
+MediaTek IOMMU should wait for smi larb which need wait for the
+power domain(mtk-scpsys.c) and the multimedia ccf, both are module
+init. Thus, subsys_initcall for MediaTek IOMMU is not helpful.
+Switch to module_platform_driver.
 
-CC: Matthias Brugger <matthias.bgg@gmail.com>
+Correspondingly, add the module license information.
+
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-Reviewed-by: Evan Green <evgreen@chromium.org>
 ---
- drivers/memory/mtk-smi.c   | 14 --------------
- include/soc/mediatek/smi.h | 20 --------------------
- 2 files changed, 34 deletions(-)
+for iommu v1: honghui's mail address is not valid now. I will be
+responsible for that file too, So I add myself in it.
+---
+ drivers/iommu/mtk_iommu.c    | 18 ++++++------------
+ drivers/iommu/mtk_iommu_v1.c | 12 +++++++-----
+ 2 files changed, 13 insertions(+), 17 deletions(-)
 
-diff --git a/drivers/memory/mtk-smi.c b/drivers/memory/mtk-smi.c
-index 6cdefda..19c3949 100644
---- a/drivers/memory/mtk-smi.c
-+++ b/drivers/memory/mtk-smi.c
-@@ -125,20 +125,6 @@ static void mtk_smi_clk_disable(const struct mtk_smi *smi)
- 	clk_disable_unprepare(smi->clk_apb);
- }
- 
--int mtk_smi_larb_get(struct device *larbdev)
--{
--	int ret = pm_runtime_get_sync(larbdev);
--
--	return (ret < 0) ? ret : 0;
--}
--EXPORT_SYMBOL_GPL(mtk_smi_larb_get);
--
--void mtk_smi_larb_put(struct device *larbdev)
--{
--	pm_runtime_put_sync(larbdev);
--}
--EXPORT_SYMBOL_GPL(mtk_smi_larb_put);
--
- static int
- mtk_smi_larb_bind(struct device *dev, struct device *master, void *data)
- {
-diff --git a/include/soc/mediatek/smi.h b/include/soc/mediatek/smi.h
-index 5a34b87..f8bf595 100644
---- a/include/soc/mediatek/smi.h
-+++ b/include/soc/mediatek/smi.h
-@@ -20,26 +20,6 @@ struct mtk_smi_larb_iommu {
- 	unsigned int   mmu;
+diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
+index 5c3a6ba..0740ca9 100644
+--- a/drivers/iommu/mtk_iommu.c
++++ b/drivers/iommu/mtk_iommu.c
+@@ -15,6 +15,7 @@
+ #include <linux/iommu.h>
+ #include <linux/iopoll.h>
+ #include <linux/list.h>
++#include <linux/module.h>
+ #include <linux/of_address.h>
+ #include <linux/of_iommu.h>
+ #include <linux/of_irq.h>
+@@ -823,16 +824,9 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
+ 		.pm = &mtk_iommu_pm_ops,
+ 	}
  };
++module_platform_driver(mtk_iommu_driver);
  
--/*
-- * mtk_smi_larb_get: Enable the power domain and clocks for this local arbiter.
-- *                   It also initialize some basic setting(like iommu).
-- * mtk_smi_larb_put: Disable the power domain and clocks for this local arbiter.
-- * Both should be called in non-atomic context.
-- *
-- * Returns 0 if successful, negative on failure.
-- */
--int mtk_smi_larb_get(struct device *larbdev);
--void mtk_smi_larb_put(struct device *larbdev);
--
--#else
--
--static inline int mtk_smi_larb_get(struct device *larbdev)
+-static int __init mtk_iommu_init(void)
 -{
--	return 0;
+-	int ret;
+-
+-	ret = platform_driver_register(&mtk_iommu_driver);
+-	if (ret != 0)
+-		pr_err("Failed to register MTK IOMMU driver\n");
+-
+-	return ret;
 -}
 -
--static inline void mtk_smi_larb_put(struct device *larbdev) { }
--
- #endif
+-subsys_initcall(mtk_iommu_init)
++MODULE_DESCRIPTION("IOMMU API for MediaTek M4U implementations");
++MODULE_AUTHOR("Yong Wu <yong.wu@mediatek.com>");
++MODULE_ALIAS("platform:MediaTek-M4U");
++MODULE_LICENSE("GPL v2");
+diff --git a/drivers/iommu/mtk_iommu_v1.c b/drivers/iommu/mtk_iommu_v1.c
+index 26b6c79..0852cb3 100644
+--- a/drivers/iommu/mtk_iommu_v1.c
++++ b/drivers/iommu/mtk_iommu_v1.c
+@@ -20,6 +20,7 @@
+ #include <linux/iommu.h>
+ #include <linux/iopoll.h>
+ #include <linux/list.h>
++#include <linux/module.h>
+ #include <linux/of_address.h>
+ #include <linux/of_iommu.h>
+ #include <linux/of_irq.h>
+@@ -711,9 +712,10 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
+ 		.pm = &mtk_iommu_pm_ops,
+ 	}
+ };
++module_platform_driver(mtk_iommu_driver);
  
- #endif
+-static int __init m4u_init(void)
+-{
+-	return platform_driver_register(&mtk_iommu_driver);
+-}
+-subsys_initcall(m4u_init);
++MODULE_DESCRIPTION("IOMMU API for MediaTek M4U v1 implementations");
++MODULE_AUTHOR("Yong Wu <yong.wu@mediatek.com>");
++MODULE_AUTHOR("Honghui Zhang <honghui.zhang@mediatek.com>");
++MODULE_ALIAS("platform:MediaTek-M4U-v1");
++MODULE_LICENSE("GPL v2");
 -- 
 1.9.1
 _______________________________________________
