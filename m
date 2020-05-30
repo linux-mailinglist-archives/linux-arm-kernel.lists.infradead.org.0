@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58C591E8F79
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 10:13:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6185B1E8F82
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 10:14:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0Tb5fDQG1z/dwMRpYE01ZTlS6iHlKoZbsSBV4ov6j2U=; b=X+0ous/mVcdB+s
-	svOnhAr7WMm/KI8lebKGcRSXk9i4XzuBDM/v01fe/2kztelX8pMrAy/t4W0UbPIKfCLOERecfUqKg
-	2UBe88LOsu0zga5kHEorWleHV5q5MeppJA2WCQgG8/EzvhyGox7FvpIJtN8d+e+6nvUjql6RyE0qR
-	Wb70GAbnj0axHewHFcSg1aqSCsbgfACfz0svq39DgIA6SzmMAmrUKnT+DSzxH6dVKD5mdoKvtSBqU
-	2R7xzoDJZIMAZUQwgqlkNOIYByELuM2hauHSUIhOtNP0VtwB/pk2WoZbtgzYF8qpKguhP9c/6NVEP
-	HyREOM92TFz5Q0agWlQw==;
+	List-Owner; bh=USoHwbPXOnzpAvvvbdH/kLp7pLHyiBqEyRyCtwLKi0E=; b=XOm75ITL7QeVDI
+	J/eqNleAY4lIf4QyehLwsqge5yeoTQWA53o4RtvMIa0Xz8mrk6ypLCNTlt5++q7VVSnCrwE2td8Sd
+	BITecSEAf7y2b6a8Ba4rYslBtyJ2XTBzJXfiy2MzFWhUDqhtDqc+suFzWa5hQTzBTC75mzX6OsCcd
+	UOgQ62gdKTwHenii8R2ARx3Y5JZfoG4lv3OUttrMvGMV22Nwd5TM3DehtSJL0gkcSgF3xiKHY8flo
+	qiqtO6W2k9DSZGnQGzZOlgI3CiplNshPJEzjWK4KPZV2alWw5/PQ24EIpAPM5/t9GGMBY/Ov3ZAuj
+	qPXlas0MWaCIUsJyeygw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jewcW-0005YB-MW; Sat, 30 May 2020 08:13:32 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jewd1-0005y0-Pq; Sat, 30 May 2020 08:14:03 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jewc5-0005Rk-1P; Sat, 30 May 2020 08:13:07 +0000
-X-UUID: 0953f474673e4b62ae689b90d2e5b385-20200530
+ id 1jewc9-0005WM-Lh; Sat, 30 May 2020 08:13:11 +0000
+X-UUID: b47dd4dd7caf45f89665d0317c1687de-20200530
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=xCqWi5z6+Xboewg72YASIv16teQ3+/TFq1FrFtej2K8=; 
- b=RfOQHU1fv5UUkq8SuaR6jDUbZzp2s6doDwQ9yrLWgq/y8HyuW6XdQbNXJzGotupRADLgyiYiBmGzC7bS7o6uYOfMPBQX5ASohmVqjh7fmcVmwh/H5QnQoMly+07zk4LY+nJGoYkSZbTG6LF18Gm8FZ/no4y3MzXSByKZ5fQCiDc=;
-X-UUID: 0953f474673e4b62ae689b90d2e5b385-20200530
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ bh=QagKBSo8QFwvJ//9sIEJ70vkMyQb9zwTGgIpL4HmXWw=; 
+ b=ZIWmh0hgyzfM47NOPcGg87+tcwnyHfBZRpjX3V0Mr2sSm9gabqs3ADYzeTzJcEj+OZE5Js8DQ8KnwyhG8ACyzTU0vTN5A5IIB024c/9Ift7G37dCznt40QArPsvc58Oa0YXalnE+SldAa2bs9hMPFcbvg+/ejOyK+Rt0QxU0gsE=;
+X-UUID: b47dd4dd7caf45f89665d0317c1687de-20200530
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 699976220; Sat, 30 May 2020 00:12:53 -0800
+ with ESMTP id 1842063904; Sat, 30 May 2020 00:13:02 -0800
 Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 30 May 2020 01:12:56 -0700
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 30 May 2020 01:13:06 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
  mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 30 May 2020 16:12:54 +0800
+ 15.0.1497.2; Sat, 30 May 2020 16:13:03 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Sat, 30 May 2020 16:12:54 +0800
+ Transport; Sat, 30 May 2020 16:13:03 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v4 04/17] iommu/mediatek: Add device_link between the consumer
- and the larb devices
-Date: Sat, 30 May 2020 16:10:05 +0800
-Message-ID: <1590826218-23653-5-git-send-email-yong.wu@mediatek.com>
+Subject: [PATCH v4 05/17] memory: mtk-smi: Add device-link between smi-larb
+ and smi-common
+Date: Sat, 30 May 2020 16:10:06 +0800
+Message-ID: <1590826218-23653-6-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1590826218-23653-1-git-send-email-yong.wu@mediatek.com>
 References: <1590826218-23653-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_011305_125790_0940478C 
-X-CRM114-Status: GOOD (  16.16  )
+X-CRM114-CacheID: sfid-20200530_011309_715100_31C538A3 
+X-CRM114-Status: GOOD (  15.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -101,147 +101,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-MediaTek IOMMU don't have its power-domain. all the consumer connect
-with smi-larb, then connect with smi-common.
+Normally, If the smi-larb HW need work, we should enable the smi-common
+HW power and clock firstly.
+This patch adds device-link between the smi-larb dev and the smi-common
+dev. then If pm_runtime_get_sync(smi-larb-dev), the pm_runtime_get_sync
+(smi-common-dev) will be called automatically.
 
-        M4U
-         |
-    smi-common
-         |
-  -------------
-  |         |    ...
-  |         |
-larb1     larb2
-  |         |
-vdec       venc
+Also, Add DL_FLAG_STATELESS to avoid the smi-common clocks be gated when
+probe.
 
-When the consumer works, it should enable the smi-larb's power which
-also need enable the smi-common's power firstly.
-
-Thus, First of all, use the device link connect the consumer and the
-smi-larbs. then add device link between the smi-larb and smi-common.
-
-This patch adds device_link between the consumer and the larbs.
-
-When device_link_add, I add the flag DL_FLAG_STATELESS to avoid calling
-pm_runtime_xx to keep the original status of clocks. It can avoid two
-issues:
-1) Display HW show fastlogo abnormally reported in [1]. At the beggining,
-all the clocks are enabled before entering kernel, but the clocks for
-display HW(always in larb0) will be gated after clk_enable and clk_disable
-called from device_link_add(->pm_runtime_resume) and rpm_idle. The clock
-operation happened before display driver probe. At that time, the display
-HW will be abnormal.
-
-2) A deadlock issue reported in [2]. Use DL_FLAG_STATELESS to skip
-pm_runtime_xx to avoid the deadlock.
-
-Corresponding, DL_FLAG_AUTOREMOVE_CONSUMER can't be added, then
-device_link_removed should be added explicitly.
-
-[1] http://lists.infradead.org/pipermail/linux-mediatek/2019-July/
-021500.html
-[2] https://lore.kernel.org/patchwork/patch/1086569/
-
+CC: Matthias Brugger <matthias.bgg@gmail.com>
 Suggested-by: Tomasz Figa <tfiga@chromium.org>
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 ---
- drivers/iommu/mtk_iommu.c    | 18 ++++++++++++++++++
- drivers/iommu/mtk_iommu_v1.c | 20 +++++++++++++++++++-
- 2 files changed, 37 insertions(+), 1 deletion(-)
+ drivers/memory/mtk-smi.c | 19 ++++++++++---------
+ 1 file changed, 10 insertions(+), 9 deletions(-)
 
-diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 7d8f3d0..5c3a6ba 100644
---- a/drivers/iommu/mtk_iommu.c
-+++ b/drivers/iommu/mtk_iommu.c
-@@ -445,22 +445,40 @@ static struct iommu_device *mtk_iommu_probe_device(struct device *dev)
- {
- 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
- 	struct mtk_iommu_data *data;
+diff --git a/drivers/memory/mtk-smi.c b/drivers/memory/mtk-smi.c
+index a113e81..6cdefda 100644
+--- a/drivers/memory/mtk-smi.c
++++ b/drivers/memory/mtk-smi.c
+@@ -273,6 +273,7 @@ static int mtk_smi_larb_probe(struct platform_device *pdev)
+ 	struct device *dev = &pdev->dev;
+ 	struct device_node *smi_node;
+ 	struct platform_device *smi_pdev;
 +	struct device_link *link;
-+	struct device *larbdev;
-+	unsigned int larbid;
  
- 	if (!fwspec || fwspec->ops != &mtk_iommu_ops)
- 		return ERR_PTR(-ENODEV); /* Not a iommu client device */
+ 	larb = devm_kzalloc(dev, sizeof(*larb), GFP_KERNEL);
+ 	if (!larb)
+@@ -312,6 +313,12 @@ static int mtk_smi_larb_probe(struct platform_device *pdev)
+ 		if (!platform_get_drvdata(smi_pdev))
+ 			return -EPROBE_DEFER;
+ 		larb->smi_common_dev = &smi_pdev->dev;
++		link = device_link_add(dev, larb->smi_common_dev,
++				       DL_FLAG_PM_RUNTIME | DL_FLAG_STATELESS);
++		if (!link) {
++			dev_err(dev, "Unable to link smi-common dev\n");
++			return -ENODEV;
++		}
+ 	} else {
+ 		dev_err(dev, "Failed to get the smi_common device\n");
+ 		return -EINVAL;
+@@ -324,6 +331,9 @@ static int mtk_smi_larb_probe(struct platform_device *pdev)
  
- 	data = dev_iommu_priv_get(dev);
- 
-+	/* Link the consumer device with the smi-larb device(supplier) */
-+	larbid = MTK_M4U_TO_LARB(fwspec->ids[0]);
-+	larbdev = data->larb_imu[larbid].dev;
-+	link = device_link_add(dev, larbdev,
-+			       DL_FLAG_PM_RUNTIME | DL_FLAG_STATELESS);
-+	if (!link)
-+		dev_err(dev, "Unable to link %s\n", dev_name(larbdev));
- 	return &data->iommu;
- }
- 
- static void mtk_iommu_release_device(struct device *dev)
+ static int mtk_smi_larb_remove(struct platform_device *pdev)
  {
- 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
-+	struct mtk_iommu_data *data;
-+	struct device *larbdev;
-+	unsigned int larbid;
- 
- 	if (!fwspec || fwspec->ops != &mtk_iommu_ops)
- 		return;
- 
-+	data = dev_iommu_priv_get(dev);
-+	larbid = MTK_M4U_TO_LARB(fwspec->ids[0]);
-+	larbdev = data->larb_imu[larbid].dev;
-+	device_link_remove(dev, larbdev);
++	struct mtk_smi_larb *larb = platform_get_drvdata(pdev);
 +
- 	iommu_fwspec_free(dev);
- }
++	device_link_remove(&pdev->dev, larb->smi_common_dev);
+ 	pm_runtime_disable(&pdev->dev);
+ 	component_del(&pdev->dev, &mtk_smi_larb_component_ops);
+ 	return 0;
+@@ -335,17 +345,9 @@ static int __maybe_unused mtk_smi_larb_resume(struct device *dev)
+ 	const struct mtk_smi_larb_gen *larb_gen = larb->larb_gen;
+ 	int ret;
  
-diff --git a/drivers/iommu/mtk_iommu_v1.c b/drivers/iommu/mtk_iommu_v1.c
-index 02858a0..26b6c79 100644
---- a/drivers/iommu/mtk_iommu_v1.c
-+++ b/drivers/iommu/mtk_iommu_v1.c
-@@ -422,7 +422,9 @@ static struct iommu_device *mtk_iommu_probe_device(struct device *dev)
- 	struct of_phandle_args iommu_spec;
- 	struct of_phandle_iterator it;
- 	struct mtk_iommu_data *data;
--	int err;
-+	struct device_link *link;
-+	struct device *larbdev;
-+	int err, larbid;
+-	/* Power on smi-common. */
+-	ret = pm_runtime_get_sync(larb->smi_common_dev);
+-	if (ret < 0) {
+-		dev_err(dev, "Failed to pm get for smi-common(%d).\n", ret);
+-		return ret;
+-	}
+-
+ 	ret = mtk_smi_clk_enable(&larb->smi);
+ 	if (ret < 0) {
+ 		dev_err(dev, "Failed to enable clock(%d).\n", ret);
+-		pm_runtime_put_sync(larb->smi_common_dev);
+ 		return ret;
+ 	}
  
- 	of_for_each_phandle(&it, err, dev->of_node, "iommus",
- 			"#iommu-cells", -1) {
-@@ -444,6 +446,14 @@ static struct iommu_device *mtk_iommu_probe_device(struct device *dev)
+@@ -360,7 +362,6 @@ static int __maybe_unused mtk_smi_larb_suspend(struct device *dev)
+ 	struct mtk_smi_larb *larb = dev_get_drvdata(dev);
  
- 	data = dev_iommu_priv_get(dev);
- 
-+	/* Link the consumer device with the smi-larb device(supplier) */
-+	larbid = mt2701_m4u_to_larb(fwspec->ids[0]);
-+	larbdev = data->larb_imu[larbid].dev;
-+	link = device_link_add(dev, larbdev,
-+			       DL_FLAG_PM_RUNTIME | DL_FLAG_STATELESS);
-+	if (!link)
-+		dev_err(dev, "Unable to link %s\n", dev_name(larbdev));
-+
- 	return &data->iommu;
- }
- 
-@@ -465,10 +475,18 @@ static void mtk_iommu_probe_finalize(struct device *dev)
- static void mtk_iommu_release_device(struct device *dev)
- {
- 	struct iommu_fwspec *fwspec = dev_iommu_fwspec_get(dev);
-+	struct mtk_iommu_data *data;
-+	struct device *larbdev;
-+	unsigned int larbid;
- 
- 	if (!fwspec || fwspec->ops != &mtk_iommu_ops)
- 		return;
- 
-+	data = dev_iommu_priv_get(dev);
-+	larbid = mt2701_m4u_to_larb(fwspec->ids[0]);
-+	larbdev = data->larb_imu[larbid].dev;
-+	device_link_remove(dev, larbdev);
-+
- 	iommu_fwspec_free(dev);
+ 	mtk_smi_clk_disable(&larb->smi);
+-	pm_runtime_put_sync(larb->smi_common_dev);
+ 	return 0;
  }
  
 -- 
