@@ -2,132 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D9091E939C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 22:38:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EDAE1E93AC
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 22:44:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tb8Ke+fnf8i8WrCovoX7KXGz8CKAzBU5xe4RbC+5S6Q=; b=k6v+nvKsbUtgxS
-	VXs+sTccKqprYZEVIxQ2ZgcldOnXBcYFZFfzEsao8CW2i30Pw4EysWGP5G1lFn4HSBapCKm4jBSdw
-	wEz1JAls0BaAhB5lNQRf/Vmz2kPblRShArJqgPaufooRp28wfT5Ae+Rifi46PnFE4oqSsv4wduFod
-	1wUjB2H9b5T3rF5R+OVlh/rzJgVH7NnxZ1fjRyDT3ubm+mCmjzP2AUZeIz4JMmq0I56JpxpZup6Je
-	b6v+ADb0thFSFjV6MSA/hoAToNqnrvInV7HnYmceVGyaUtBaUMai+3AW/cYxzFvxtpzaVvqBY1aoc
-	Ud4ZxBFyQNAAaExTHL3A==;
+	List-Owner; bh=VUzUXzBmR3I7h3w9l1zqWoAZ6InLS8FfTpmYVsScDl0=; b=YSUgz22qs+RKzG
+	M4yCy/7tDXVHCQUlM1XMhGgCZoq1hTbw4WZ6ctcG1YtPzlcHWd1fM1wHfjDyMtBnD8Lh9R9PWbcRm
+	vs9n4qcMn7lxUFkY9Im1Cr0hQd7pXrbmD7v8ngMl9R4fDwzqksvV8LfHNZwhVahZ7+AG0ArZU0BvM
+	jUJSnrbxAuxRK4lc8zc3LwjOFdkqh9kFdTLJsupmb31V7EjP+vEKRLN0ZQCyRnUPDtzJr/MEFB+Vl
+	rRjvgxRKHuoTwWxscpi7w3fDHeQzy1WnZmk/Sohv7u7gfwjoNSHQ6sl8yQb0MLXRHHMoCKQoEIo0C
+	VqnL3bQkjaEMSxJBrkcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jf8FH-0005hs-2n; Sat, 30 May 2020 20:38:19 +0000
-Received: from esa2.hgst.iphmx.com ([68.232.143.124])
+	id 1jf8Kl-00011Y-IZ; Sat, 30 May 2020 20:43:59 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jf8F1-0005gY-5h; Sat, 30 May 2020 20:38:05 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1590871104; x=1622407104;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=8BiLFCBkL+XnOf1HHoA9Rc/8Hd0LDHzcqPI16UkgvG4=;
- b=NILCm+8u4jM5bnozUrDWZaANQX/aCH+7riBRp19OyVenwV0Zl7bKikt3
- 5rxAHYs7Uvwo1KbjcIkdFUX6jF2Y8B/FQ17ktweliJq9scytpILEz7i+m
- KgylNykV+7gL0q9I1Mayg8d3kj8vw4EMTj5D7+cIgaKCJwPKCd1uU2eL5
- +fEM+0JWFiGfmYx052h+GnJq10pfuVnJtrQrW0ru8F6cN/kE7i0BPYlnJ
- iLRLlM+nL3fA8idOAw/pp67gF9mIAERgSBhlIblY4NaAdgp6mwtTeecSJ
- LJkxliy054v2gyJMI8EYQ0bGmIx03D0z1iKa0Up5tSp6SydUvTwfs8V6L A==;
-IronPort-SDR: +6ysK6XMZGmn5u0X0ySNtEFyM7psZ0dkANh066O3sE32GNpCGDCT0NuhDg55ivHebT/euf/Kh5
- Woy8YGPP8w6PNIeXkugAMEG8ikK1m0+kHzUFqieq32FxtRmYkh/6uIplX6+TxrMV1Ovtun0Mgn
- FzGzQkCIAAqaumEaZs1NP1CXMruNtPiAO6BoXdz7nshnx7AbZdA2yK144hFtja+fTN8f5kJJ7Q
- ODYHlfy0S1NNOEzkAKwJtEIszTtId0UC6tP8M0Ixh2iuDrcY1PP/Cf2DBacYexaDLn7v8ZKfZX
- uV4=
-X-IronPort-AV: E=Sophos;i="5.73,454,1583164800"; d="scan'208";a="241707897"
-Received: from mail-mw2nam10lp2103.outbound.protection.outlook.com (HELO
- NAM10-MW2-obe.outbound.protection.outlook.com) ([104.47.55.103])
- by ob1.hgst.iphmx.com with ESMTP; 31 May 2020 04:38:21 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=X82G0BBG6Q5bPVWSBnU0z6TxOgx6Z54dNlIqvLLvcszm6WfQPAcqGF3mhaOdkHZS7lUXeeC0EJHIDhm4DE9zxukGRu/fs8NLVdqefvp8dtLIaaC3hId75M3syVymC1BrKAy9zHRRyz0gGt9kWHF+sXGCYIGnvTIBzq2INH2zTHzVIGUUJb8AftCXKumzVy5ddGzHS88C0LeORky2UysOi6yhtOKN/F3RijUHNbowgrLwXEGNGXantatD/kUHsl1QI8HkfYvYWeVV/xxef5XqR5GKs0/EspuVHKD+fbZzZhXtKyY0VFjdy5aESgWir5T4F+ccr5PgOoKxfi8bul5vVw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Wpfgxi24WL33phAyME1DCOrxSIyIK4rqeaSdrztVxaU=;
- b=Qh8Ok93NLYpU2CmbeiQdwXAOLylBBCID6fEuHljR1JjCJPlQc80bZc1qFMnXeqj7i3aTsbZeHdfiZ7LfJSbSzApxn2/eMLYwNyJWxeqkTQAQ7RqPc54hEEtFzGexKcdhByHsj/tpybAjriYoBO9ts91AyZi3WxGq3WKZTw4hYr3oxo5N7MdG6NhyM1HgXdbWXrVlb6WXB19EXMcf+GgBme2itKgde0KWvEUOwRPAQWK2BytlhS5HayZOBPZnJ2dZHbXBnn7MJQKyBmgKrZN3K0e5Cl4lU0AjQ9LUnTsL2mGU4aFhbFbZkhdCj5EQRwlrHirdCsGsSPMCX31QlzB5oA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Wpfgxi24WL33phAyME1DCOrxSIyIK4rqeaSdrztVxaU=;
- b=BnEyiUqWdDQjJ9pZey90rVVRCjV9AbKcSpgKfwX3jMWCD99fjK9dxLlrPfDe8cQRWz1s8P1zT/bCjJKoJzx66uRky5jD9dM81cwZUgwK0VK3p+hNlwiYTyiHPcJcTZ+wEKoJYAvAgv5mUrPPlbjUEudg0MmBaAMunXXnBDalBwQ=
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
- by SN6PR04MB5070.namprd04.prod.outlook.com (2603:10b6:805:9e::30)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.21; Sat, 30 May
- 2020 20:37:57 +0000
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::9cbe:995f:c25f:d288]) by SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::9cbe:995f:c25f:d288%6]) with mapi id 15.20.3045.022; Sat, 30 May 2020
- 20:37:57 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
- <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>
-Subject: RE: [PATCH v1 1/2] scsi: ufs: Support WriteBooster on Samsung UFS
- devices
-Thread-Topic: [PATCH v1 1/2] scsi: ufs: Support WriteBooster on Samsung UFS
- devices
-Thread-Index: AQHWNpT3Vi/TzAb5lEy8ZsLwGGZsRajBERRQ
-Date: Sat, 30 May 2020 20:37:57 +0000
-Message-ID: <SN6PR04MB46400873245235EA56838A19FC8C0@SN6PR04MB4640.namprd04.prod.outlook.com>
-References: <20200530151337.6182-1-stanley.chu@mediatek.com>
- <20200530151337.6182-2-stanley.chu@mediatek.com>
-In-Reply-To: <20200530151337.6182-2-stanley.chu@mediatek.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: mediatek.com; dkim=none (message not signed)
- header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
-x-originating-ip: [77.138.4.172]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 4c2e3a2c-f906-40c1-a775-08d804d9563f
-x-ms-traffictypediagnostic: SN6PR04MB5070:
-x-microsoft-antispam-prvs: <SN6PR04MB5070F195D45B3FCCEF891F28FC8C0@SN6PR04MB5070.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:849;
-x-forefront-prvs: 041963B986
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: W7GcxjGCtRJBa1XIp/vDvJTIP+J3RfdskcI60PJkzFDakJ2Uej0X8fplgIWvxmJCx23DGYBe+GQ4t2XG67Co3w11jo14j97XwFvIV8R3DwHBKe4kKs9fBD6PKovA0gSC3jOQvGAVadfRi8nz1MWkDVKMS74WC8m9a+ARPOHk5LC9sFMJaP5U4CCTFMFliWgwdFxjkdvM8mBrTTFDjk5kqxpmCmhRZkW0LFOGc3fLtgRvLTyX4Bnk2rzEzZ4lOJtwysNubcbETyLFig0U+X8cNRyjLQvJJOLaHG8vTs0MiXs4HXXEVsFU1CkfIETAkkxyytboXinxjFLhAzy007umDQ==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(396003)(376002)(136003)(366004)(39860400002)(6506007)(64756008)(4326008)(2906002)(110136005)(8936002)(86362001)(316002)(52536014)(66556008)(7696005)(71200400001)(54906003)(66446008)(8676002)(83380400001)(9686003)(478600001)(55016002)(33656002)(5660300002)(66946007)(76116006)(66476007)(7416002)(26005)(186003);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: +ddPBFk3kPg+OjxiZnZ+01tLHj5p9X4r+b0rUV+Pir0STD1M482lN/5uOvVjC7m0mzmnvi4qt8ULYxDgYp4IWsMIu1Sp9Vo889QNYVJTA6mINCGHFPOWwjrvKuM3a2rT0CNqzxHpYltnHlpz2BtdlcclcLCc5vGO6syc551h33Vo9CqofRZi23nA4Va+bxPD8dpPdm7QB2FuCJtgRq34Oels9LUzFiucaXk87cKmUDDSM0PzyHy03Zn2JbQie2uxW9tudQr5JD+Wh1zSpLxOxhG/rb4sOKXiK5QWSaOYDeC1ZM64UeHGjmVEjWrZjGw7SX8+yxJsgejYiqwcLgs8dCwE/Hjzg6Dtg0mdbMR+ZPuneqdHXskdP0I/kgxwg0cIf3sI6l7pPk08lACkRNlx7EdoU+HmNx5fBeXusLWOFM0G+zlMYG6s0D0CrjXnYEM3ap5HnIwu/f26/gmp08RovWNxDRwZzfrmzHaydxXJkxQ=
-x-ms-exchange-transport-forked: True
+ id 1jf8KJ-0000qA-S2
+ for linux-arm-kernel@lists.infradead.org; Sat, 30 May 2020 20:43:33 +0000
+Received: by mail-io1-xd43.google.com with SMTP id c8so3016005iob.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 30 May 2020 13:43:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=V4AsZGoHkWeKZl23U2BgKUaE05/budRARyGFisUFMAg=;
+ b=OQmXWerIg8QIvwAPvdBRaSBVezUo5IXv/JrET0Ok0KHl9WRT5scWvK8IQNIWc0KtMn
+ Lkvgxho9ysVNpAmheK8lMRh+f/RTpT1iR1OUu8fKh3+Mm8bVJc7ycrmuXuY5ixrA9l2C
+ u+ROczlA8vOOgr4hXs0YzFBOOoTea9C8kKE3ZzTrFT4vjw8DfhxYJb5XxvOqEIaZPV69
+ +1Z3UFEDChNboaZGgHvjtF+0DbDU1zlODSZLNLwoiI3FRNkNbOiV/fnl9YoLatz91vlM
+ 27sZKOL0n4svv6djq4nMOvMXkLFAmII8H4tO99dsK8k5k8nHOdMrUVL/Cn83cidaQhb7
+ ArhA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=V4AsZGoHkWeKZl23U2BgKUaE05/budRARyGFisUFMAg=;
+ b=b/0GyxmrG03Rs6hD0OOlcgQHUzlozJjOzzZgi7NqTrNz5FthvjmCAh0LucYO4R/y0m
+ /jroOxYWzHBFaZSAfK545gN0VmGjd4Yz3bxJJ5Rwrbcswa4fsiVhHhmD0/6CMTKWJn55
+ tQwE6uFTRZiCMg4nGXIz/ZZsj7ZdTQNSPaq4zaXfhTsJ4gOYReDtI4+FzdO+z5W0BOp3
+ ayRqGdxfwQe5x4znnkIKWpJbXcS/3256rQvwzvhR7cwaFXFKbPcaBIBtacLrTO7ZZW91
+ iO/1O4gNYyhJf0+OQrf7TXj59DwK9N6NQbdUsv30A4BvqByoQYUDymhbb++FcvZHh1vQ
+ cJuA==
+X-Gm-Message-State: AOAM530NBLE09AE9/TtTh/9k6x3j8Oz3Y4kfqaBgSR5YLeocOxkxP0EN
+ W1aYOXv36xbwEnrx9o6XuR8N43pgjH2v71iLeO8=
+X-Google-Smtp-Source: ABdhPJzu7g1KysQKCksCZKnwLqPTctR/FKten80v+eHNGAZ22seueovNdiNBUYMuUDcn6usaq72w9TPTlEK/Ff5Hlc4=
+X-Received: by 2002:a05:6602:2c45:: with SMTP id
+ x5mr12011542iov.80.1590871410827; 
+ Sat, 30 May 2020 13:43:30 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4c2e3a2c-f906-40c1-a775-08d804d9563f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 May 2020 20:37:57.3202 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Tz0fHFYpBGNYRh5tnggMOuaEq3CWXtGqLBtAjqBw6PC2Zu6d0sSyGMpYS9Nzh1umB9L8A0ZtMdp8dpDjZhPLGw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB5070
+References: <1587682871-528-1-git-send-email-Anson.Huang@nxp.com>
+ <AM6PR04MB49666D6A0B015FD1DF3A20B480D00@AM6PR04MB4966.eurprd04.prod.outlook.com>
+ <DB3PR0402MB3916D588A9432A9F1D1F99BAF5D00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <AM6PR04MB496671BFF3496FD1C4C51E7E80D00@AM6PR04MB4966.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39164CB0791AB259CE62EC4EF5D00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <DB3PR0402MB3916BD0FCF482C124E21D3B1F58E0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB3916BD0FCF482C124E21D3B1F58E0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Sat, 30 May 2020 15:43:20 -0500
+Message-ID: <CABb+yY2J5Q6uvXNk0KE3QL32C_J3RFHJJX_tq4R9arAcvJ262g@mail.gmail.com>
+Subject: Re: [PATCH] mailbox: imx: Add context save/restore for suspend/resume
+To: Anson Huang <anson.huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_133803_312602_464A0E79 
-X-CRM114-Status: GOOD (  17.39  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200530_134331_933818_453BDA7D 
+X-CRM114-Status: GOOD (  33.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.143.124 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jassisinghbrar[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -146,167 +98,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "cc.chou@mediatek.com" <cc.chou@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "beanhuo@micron.com" <beanhuo@micron.com>,
- "chaotian.jing@mediatek.com" <chaotian.jing@mediatek.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
- 
-> @@ -2801,11 +2801,17 @@ int ufshcd_query_flag(struct ufs_hba *hba, enum
-> query_opcode opcode,
->  {
->         struct ufs_query_req *request = NULL;
->         struct ufs_query_res *response = NULL;
-> -       int err, selector = 0;
-> +       int err;
->         int timeout = QUERY_REQ_TIMEOUT;
-> +       u8 selector = 0;
-> 
->         BUG_ON(!hba);
-> 
-> +       if (hba->dev_quirks & UFS_DEVICE_QUIRK_WB_SPECIAL_SELECTOR) {
-> +               if (ufshcd_is_wb_flags(idn))
-> +                       selector = 1;
-> +       }
-> +
-Why not make the caller set the applicable selector,
-Instead of checking this for every flag?
+On Wed, May 27, 2020 at 8:55 PM Anson Huang <anson.huang@nxp.com> wrote:
+>
+> Gentle ping...
+>
+>
+> > Subject: RE: [PATCH] mailbox: imx: Add context save/restore for
+> > suspend/resume
+> >
+> >
+> >
+> > > Subject: RE: [PATCH] mailbox: imx: Add context save/restore for
+> > > suspend/resume
+> > >
+> > > > From: Anson Huang <anson.huang@nxp.com>
+> > > > Sent: Friday, April 24, 2020 10:33 AM
+> > > >
+> > > > > Subject: RE: [PATCH] mailbox: imx: Add context save/restore for
+> > > > > suspend/resume
+> > > > >
+> > > > > > From: Anson Huang <Anson.Huang@nxp.com>
+> > > > > > Sent: Friday, April 24, 2020 7:01 AM
+> > > > > >
+> > > > > > For "mem" mode suspend on i.MX8 SoCs, MU settings could be lost
+> > > > > > because its power is off, so save/restore is needed for MU
+> > > > > > settings during
+> > > > > suspend/resume.
+> > > > > > However, the restore can ONLY be done when MU settings are
+> > > > > > actually lost, for the scenario of settings NOT lost in "freeze"
+> > > > > > mode suspend, since there could be still IPC going on multiple
+> > > > > > CPUs, restoring the MU settings could overwrite the TIE by
+> > > > > > mistake and cause system freeze, so need to make sure ONLY
+> > > > > > restore the MU settings when it is
+> > > > > powered off.
+> > > > > >
+> > > > > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > > >
+> > > > > As mentioned before, we'd better keep the original author.
+> > > > >
+> > > > > > ---
+> > > > > >  drivers/mailbox/imx-mailbox.c | 35
+> > > > > > +++++++++++++++++++++++++++++++++++
+> > > > > >  1 file changed, 35 insertions(+)
+> > > > > >
+> > > > > > diff --git a/drivers/mailbox/imx-mailbox.c
+> > > > > > b/drivers/mailbox/imx-mailbox.c index 97bf0ac..b53cf63 100644
+> > > > > > --- a/drivers/mailbox/imx-mailbox.c
+> > > > > > +++ b/drivers/mailbox/imx-mailbox.c
+> > > > > > @@ -67,6 +67,8 @@ struct imx_mu_priv {
+> > > > > >       struct clk              *clk;
+> > > > > >       int                     irq;
+> > > > > >
+> > > > > > +     u32 xcr;
+> > > > > > +
+> > > > > >       bool                    side_b;
+> > > > > >  };
+> > > > > >
+> > > > > > @@ -583,12 +585,45 @@ static const struct of_device_id
+> > > > > > imx_mu_dt_ids[] = {  };  MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
+> > > > > >
+> > > > > > +static int imx_mu_suspend_noirq(struct device *dev) {
+> > > > > > +     struct imx_mu_priv *priv = dev_get_drvdata(dev);
+> > > > > > +
+> > > > > > +     priv->xcr = imx_mu_read(priv, priv->dcfg->xCR);
+> > > > > > +
+> > > > > > +     return 0;
+> > > > > > +}
+> > > > > > +
+> > > > > > +static int imx_mu_resume_noirq(struct device *dev) {
+> > > > > > +     struct imx_mu_priv *priv = dev_get_drvdata(dev);
+> > > > > > +
+> > > > > > +     /*
+> > > > > > +      * ONLY restore MU when context lost, the TIE could
+> > > > > > +      * be set during noirq resume as there is MU data
+> > > > > > +      * communication going on, and restore the saved
+> > > > > > +      * value will overwrite the TIE and cause MU data
+> > > > > > +      * send failed, may lead to system freeze. This issue
+> > > > > > +      * is observed by testing freeze mode suspend.
+> > > > > > +      */
+> > > > > > +     if (!imx_mu_read(priv, priv->dcfg->xCR))
+> > > > > > +             imx_mu_write(priv, priv->xcr, priv->dcfg->xCR);
+> > > > >
+> > > > > This could be separate patch if it aims to fix a specific corner case.
+> > > >
+> > > > This is NOT corner case, it can be reproduced with our imx_5.4.y
+> > > > very easily, and this issue cause me many days to debug...Also cause
+> > > > Clark's effort to help test it a lot for many days...
+> > > >
+> > >
+> > > Is this issue only happen for non-state lost case (eg. Freeze mode)?
+> > > If yes, it's a specific case and worth a separate patch to highlight it IMHO.
+> > >
+> > > BTW, it seems most drivers have this issue in current kernel because
+> > > they don't know whether the state are really lost, it seems like
+> > > kernel still doesn't support this well.
+> > >
+> > > > I do NOT think it makes sense to first send out your patch with bug
+> > > > for review, And then add another patch to fix it. 1 patch is enough
+> > > > for this
+> > > feature.
+> > > >
+> > >
+> > > Anyway, if you really want to go with one patch, for this case, we
+> > > usually could keep original author and add a small fix note in commit
+> > message.
+> > > (You could see many community guys do like this if you search kernel
+> > > commit
+> > > log)
+> > >
+> > > Basically we try our best to keep origin author in order to respect
+> > > others' work for community work.
+> >
+> > I am fine with whoever is the author, my focus is the issue fix and easy rebase.
+> > If maintainer agrees that introduce a patch with bug and add another patch to
+> > fix is OK, then I can rework the patch into 2 patches.
+> >
+Not two patches, just add to the original patch and add a fix note in
+commit as Anson suggested ... though I don't know what the original
+patch was. But I am definitely in support of giving credit to the
+original author.
 
->         ufshcd_hold(hba, false);
->         mutex_lock(&hba->dev_cmd.lock);
->         ufshcd_init_query(hba, &request, &response, opcode, idn, index,
-> @@ -2882,6 +2888,11 @@ int ufshcd_query_attr(struct ufs_hba *hba, enum
-> query_opcode opcode,
->                 goto out;
->         }
-> 
-> +       if (hba->dev_quirks & UFS_DEVICE_QUIRK_WB_SPECIAL_SELECTOR) {
-> +               if (ufshcd_is_wb_attrs(idn))
-> +                       selector = 1;
-> +       }
-> +
-Same here
-
->         mutex_lock(&hba->dev_cmd.lock);
->         ufshcd_init_query(hba, &request, &response, opcode, idn, index,
->                         selector);
-> @@ -3042,6 +3053,11 @@ int ufshcd_query_descriptor_retry(struct ufs_hba
-> *hba,
->         int err;
->         int retries;
-> 
-> +       if (hba->dev_quirks & UFS_DEVICE_QUIRK_WB_SPECIAL_SELECTOR) {
-> +               if (ufshcd_is_wb_desc(idn, index))
-> +                       selector = 1;
-> +       }
-> +
-And here.
-But this can't be true - 
-Are you setting the selector = 1 for reading any field for those descriptors?
-Shouldn't it be for the wb specific fields?
- 
-
->         for (retries = QUERY_REQ_RETRIES; retries > 0; retries--) {
->                 err = __ufshcd_query_descriptor(hba, opcode, idn, index,
->                                                 selector, desc_buf, buf_len);
-> @@ -6907,8 +6923,10 @@ static int ufs_get_device_desc(struct ufs_hba *hba)
->         size_t buff_len;
->         u8 model_index;
->         u8 *desc_buf;
-> +       u8 retry_cnt = 0;
->         struct ufs_dev_info *dev_info = &hba->dev_info;
-> 
-> +retry:
->         buff_len = max_t(size_t, hba->desc_size.dev_desc,
->                          QUERY_DESC_MAX_SIZE + 1);
->         desc_buf = kmalloc(buff_len, GFP_KERNEL);
-> @@ -6948,6 +6966,29 @@ static int ufs_get_device_desc(struct ufs_hba *hba)
-> 
->         ufs_fixup_device_setup(hba);
-> 
-> +       if (!retry_cnt && (hba->dev_quirks &
-> +               UFS_DEVICE_QUIRK_WB_SPECIAL_SELECTOR)) {
-If you only want to enter this clause once - you should use something other than retry_cnt,
-Which the reader expects to performs retries....
-
-Also, this is becoming too wired - 
-From your commit log I get that for specific Samsung devices,
-You need to query wb descriptor fields/attributes/flags using selectore = 1.
-But what it has to do with descriptor sizes?
-
-> +               /*
-> +                * Update WriteBooster related descriptor length with specific
-> +                * seletor used.
-> +                */
-> +               ufshcd_read_desc_length(hba, QUERY_DESC_IDN_DEVICE, 0,
-> +                                       &hba->desc_size.dev_desc);
-> +               ufshcd_read_desc_length(hba, QUERY_DESC_IDN_CONFIGURATION,
-> 0,
-> +                                       &hba->desc_size.conf_desc);
-> +               ufshcd_read_desc_length(hba, QUERY_DESC_IDN_UNIT, 0,
-> +                                       &hba->desc_size.unit_desc);
-> +               ufshcd_read_desc_length(hba, QUERY_DESC_IDN_GEOMETRY, 0,
-> +                                       &hba->desc_size.geom_desc);
-> +               /*
-> +                * Read device descriptor again with specific selector used to
-> +                * get WriteBooster related fileds.
-> +                */
-> +               kfree(desc_buf);
-> +               retry_cnt++;
-> +               goto retry;
-> +       }
-> +
->         /*
->          * Probe WB only for UFS-3.1 devices or UFS devices with quirk
->          * UFS_DEVICE_QUIRK_SUPPORT_EXTENDED_FEATURES enabled
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> index bf97d616e597..d850c47e8ae0 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -876,6 +876,26 @@ static inline u8 ufshcd_wb_get_query_index(struct
-> ufs_hba *hba)
->         return 0;
->  }
-> 
-> +static inline bool ufshcd_is_wb_attrs(enum attr_idn idn)
-> +{
-> +       return ((idn >= QUERY_ATTR_IDN_WB_FLUSH_STATUS) &&
-> +               (idn <= QUERY_ATTR_IDN_CURR_WB_BUFF_SIZE));
-> +}
-> +
-> +static inline bool ufshcd_is_wb_desc(enum desc_idn idn, u8 index)
-> +{
-> +       return (idn <= QUERY_DESC_IDN_CONFIGURATION) ||
-> +               ((idn == QUERY_DESC_IDN_UNIT) &&
-> +               (index != UFS_UPIU_RPMB_QUERY_INDEX)) ||
-> +               (idn == QUERY_DESC_IDN_GEOMETRY);
-> +}
-> +
-> +static inline bool ufshcd_is_wb_flags(enum flag_idn idn)
-> +{
-> +       return ((idn >= QUERY_FLAG_IDN_WB_EN) &&
-> +               (idn <= QUERY_FLAG_IDN_WB_BUFF_FLUSH_DURING_HIBERN8));
-> +}
-> +
->  extern int ufshcd_runtime_suspend(struct ufs_hba *hba);
->  extern int ufshcd_runtime_resume(struct ufs_hba *hba);
->  extern int ufshcd_runtime_idle(struct ufs_hba *hba);
-> --
-> 2.18.0
+thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
