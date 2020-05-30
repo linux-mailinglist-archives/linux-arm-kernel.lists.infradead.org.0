@@ -2,73 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0FF11E9236
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 16:59:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE2A61E924D
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 30 May 2020 17:24:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SjVk0/IPyb66KYhKM+15uE0BOouSCxsgvFqN2WC83vE=; b=GxOeJXxcHivbH2
-	IsnYF6vnJW31Oxq/I96l0j2/yxPKGuwhLf54JwwzoBAEmuvg02QPuSUnsUnIz/CMe/Om2Wwd9SN+i
-	SsyaduIAN0Aom/9+vXfxWLmO1N7RxX/C3xZaD7b4IrKzFcehG9EFMIuRzMuqh8ycCDyHrMypNGBcP
-	Nhv6iFGXEtT8hMnTP1mLQqd1dPmA6W3/RnVAzujNHyPPRqg/pFNYoukAHkAep5NuH7iKdLvKA+PvX
-	1G/aUGf+pEwBHWqI5wpXEHPWLIU5P9H8OlVZQ52f0Z4MXpP3FE9gB1hxepib/IfzPTbQU2UrRt9Me
-	wzV3aHTta9lsgs5iP+ug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+AV3zQyM+GEb4UDImicwFYSPAFPJ2LqEw9AH6yMu0QU=; b=Y3gzGRlheeWZ6b
+	BW6B2juYlGdthMbsx/i/PHhZDA2NQ+Egbch1tnMFikkdJFY2C045IWmNDr9TQn5funYXb49FDmZbB
+	PZi2TvodFQky4egunMKTZfRaNuo/mQ/Vl6fOBKG6jTJiVz2gmQTVw6iE852tC50dLx3AN1lmodJWT
+	+y2AYeUTeyEPkMX+XROWtXHKcjgETwvf8Ho7s8xnlA2/lIHuAuPy06T/qg7ZNpUOw66HI+LVPKhgD
+	/0S3fL3fWuFVxDgJV03oUsWG9EFeAmR5SG3mcrwmyPwmlni8rDLqUgqav42kH4vsPKP3ICal662yN
+	ribnuV8tyUWHNXp8wi1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jf2xc-0004LJ-IN; Sat, 30 May 2020 14:59:44 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jf3LI-0002bG-Ry; Sat, 30 May 2020 15:24:12 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jf2xR-0004Ke-R1
- for linux-arm-kernel@lists.infradead.org; Sat, 30 May 2020 14:59:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Q+dWUhTcb1T2zwpRVnTRa6gA3hfl11OJa+yQ18DEkbc=; b=wlhYNCzReqJ0Yd2vFdHgwfPrb
- mIFkfReuPgrp38MaHQItAN0M2zMsMvXbkij3TwO4VrmLn3AOiOP0SQq/rTHRin5lYKfAhRwMmpwu4
- h9g061YQHLl2cF6uZ+uqSaRLelVCtMpLSkWu0fP4quZArq6H6va9P8f8Rq+DGUX5cgJHd37bWHG44
- NLNE+g7BaKekneA9aJ7VZPuFGSTWHK2Tj0p5nJhy5ygfECuz9ZcvCEsRz1MrraOuO2sd0DZ31nQ+Y
- E7v4h+C74/nx2cRmmrUt+tZ0TUl23F4PjphDZ283bX1Kg5NTOTEYous+heJsOe6C3yzLF5CW+yRML
- 8aYomTp5Q==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:47058)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jf2xK-0002Oj-H5; Sat, 30 May 2020 15:59:26 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jf2xI-00019V-1W; Sat, 30 May 2020 15:59:24 +0100
-Date: Sat, 30 May 2020 15:59:24 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] ARM: VDSO: Fix incorrect clock_gettime64
-Message-ID: <20200530145923.GF1551@shell.armlinux.org.uk>
-References: <20200409050508.96753-1-jaedon.shin@gmail.com>
- <b17b74eb-1ca9-8af4-6564-3874c97d5ae7@arm.com>
+ id 1jf3L9-0002Zy-Dy; Sat, 30 May 2020 15:24:04 +0000
+X-UUID: 11b993649c9c4ae0a6a36f0af0255626-20200530
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=TG3MGGEKF/HqosfrebB3c9qNzlnnNnjoxDaBqGy6cyo=; 
+ b=fIPOrWEh/YuDwU9XjMAbkNjgpWXGdmMxvGn8IpvEPqclehZhRvUcuoQecN2I4EEearbPAeEad1F/BIEjmTg8w5H+69PHf3/2sBzJ1XQSnmb/+WEP0ZHnvOSufjmACXz98lAnrf0armmRJoShx3vmYnLfclrIRFuBDfRVR/U1iP0=;
+X-UUID: 11b993649c9c4ae0a6a36f0af0255626-20200530
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 218737930; Sat, 30 May 2020 07:23:23 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 30 May 2020 08:13:51 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 30 May 2020 23:13:36 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Sat, 30 May 2020 23:13:36 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
+Subject: [PATCH v1 0/2] scsi: ufs: Support WriteBooster on Samsung UFS devices
+Date: Sat, 30 May 2020 23:13:35 +0800
+Message-ID: <20200530151337.6182-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b17b74eb-1ca9-8af4-6564-3874c97d5ae7@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-TM-SNTS-SMTP: BEBA1EC4334FD6D47E55445D4CD1D1D6C3162BAA74DD7D92426F224804E3E0D72000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_075933_874646_FE964050 
-X-CRM114-Status: GOOD (  13.80  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200530_082403_474080_8493B52A 
+X-CRM114-Status: UNSURE (   5.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -76,6 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,37 +85,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Jaedon Shin <jaedon.shin@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Stanley Chu <stanley.chu@mediatek.com>, bvanassche@acm.org,
+ andy.teng@mediatek.com, cc.chou@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, beanhuo@micron.com, chaotian.jing@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 30, 2020 at 03:51:35PM +0100, Robin Murphy wrote:
-> On 2020-04-09 06:05, Jaedon Shin wrote:
-> > __vdso_*() should be removed and fallback used if CNTCVT is not
-> > available by cntvct_functional(). __vdso_clock_gettime64 when added
-> > previous commit is using the incorrect CNTCVT value in that state.
-> > __vdso_clock_gettime64 is also added to remove it's symbol.
-> 
-> Tested-by: Robin Murphy <robin.murphy@arm.com>
-> 
-> Turns out this is what was making my RK3288 box virtually unusable since its
-> last couple of updates - it would be nice to get the fix merged and
-> backported ASAP. I suspect it's also the same underlying thing for the
-> Raspberry Pi thread over here:
-> 
-> https://lore.kernel.org/linux-arm-kernel/CAK8P3a2Tw2w73ZkK-W6AA9veMK4-miLUx-TL1EuOdP7EdW-AmQ@mail.gmail.com/
+Hi,
+Samsung UFS devices are widely used in the market, however these devices need some special handling to support WriteBooster. Introduce a device quirk to handle this special requirement.
 
-Does this mean I need to do something with this patch? It's not been
-put in the patch system, so I'm afraid it's missed the boat for 5.7.
+Currently Bean Huo is doing some nice cleanup work for device descriptor length so our series will have merge conflict. I would like to submit this series first for review and then resend with conflict fix after Bean's series gets accepted.
+
+Stanley Chu (2):
+  scsi: ufs: Support WriteBooster on Samsung UFS devices
+  scsi: ufs-mediatek: Support WriteBooster on Samsung UFS devices
+
+ drivers/scsi/ufs/ufs-mediatek.c |  3 +++
+ drivers/scsi/ufs/ufs-sysfs.c    | 12 ---------
+ drivers/scsi/ufs/ufs.h          |  1 +
+ drivers/scsi/ufs/ufs_quirks.h   |  7 +++++
+ drivers/scsi/ufs/ufshcd.c       | 45 ++++++++++++++++++++++++++++++++-
+ drivers/scsi/ufs/ufshcd.h       | 20 +++++++++++++++
+ 6 files changed, 75 insertions(+), 13 deletions(-)
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
