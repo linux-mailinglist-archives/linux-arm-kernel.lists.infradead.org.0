@@ -2,69 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDC8A1E9830
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 16:42:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB9221E9837
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 16:46:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/JrWg10a6ecpa5mRl1IxYsxkhnVncj8P8TerpwVzJxE=; b=jRqpfD1B4lZeRo
-	GaZHKcTzs6EVJ0LkUUrawGkg4fwgYTl5M6oW6t6ezCWNrDREVjdgjspZJAmxSn6ehBteip7/xkvh4
-	et6Uo5+SNYo28Q6a9pDVmN5NGll8yiPX9LudhhRawDvtwKD5qjbgmXatx6I+J7TdnV4bPh7xLUZVo
-	hZ+F66xRTExbHcVA/6xbPr4fKTgmXrLJdO0Jw1ots9MNEIJ7SUJkJEmZovlW3WljfSswjYbpAFr8i
-	ozvgxmwAHctQI/lAPe/aoFkaruTIqqJFLHlJ9Z2Fr5RTEEiJnBbi9w1zk3fV+eb2DUcRlqkmUZi9X
-	m/EJr0IAP3ritA3eRZCw==;
+	List-Owner; bh=foRF/o6yDHh8wBPA4JpFOg0RFvqjSY209FiAI8FABrg=; b=V6A6trgS3EZJVg
+	RpeFikpF8SeUEL2ujlEGB0IN+ZM+uvqt2Pl+2AYswy7MWLy29ZsJ4fS9CmEY/Vb409t4oV+lqiy9d
+	qor2WMuUg7In9N4phWyJgYGiLsS2ac5kuDrGtlQK7bNrq2pGn7PmzXwbss5qtE04ebhLEGBz+eAFc
+	Kl5AquT9eIFksjKU/IvgENwUHiZR2sRV7QA9a/q4USzW/keGDp8SMmUf+fMQvZU3kLMUXS7CdYfCt
+	LcxE2ryhA57oqS5ItHGPFPEeIIcoybxPsF5ezpzQVTCCE97qiIc6z50cxg2B0anE7l5IxXYwwuJ0E
+	ePnXKuXE2f3rg4CXLE5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfPAS-0003gx-Vk; Sun, 31 May 2020 14:42:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jfPDm-0006Xg-33; Sun, 31 May 2020 14:45:54 +0000
+Received: from saturn.retrosnub.co.uk ([2a00:1098:86::1:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfPAK-0003gQ-In
- for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 14:42:22 +0000
+ id 1jfPDc-0006Wf-9Q
+ for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 14:45:46 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1C5212074A;
- Sun, 31 May 2020 14:42:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590936140;
- bh=GAx+82x99RdNgWYjm/WCxDyQXCQkvjhfbgexOhhOB3A=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=dZNHdeWnx0Wc0K67qxYEMFURXe7FKEgRg2IEbIggix6JT8xKPauw8n8SPDdwryocn
- ohj88wf9R8gKp/O9t7k4H1JxxrXwn6W2rDVDFgdHMoeQLeAal095OtJUWCef1KDqv5
- sA6FRITJfMR+bGpS/1nYcL6ZUpRpZZUz3/T8ORHw=
-Date: Sun, 31 May 2020 15:42:16 +0100
-From: Jonathan Cameron <jic23@kernel.org>
+ [82.4.196.95]) by saturn.retrosnub.co.uk (Postfix;
+ Retrosnub mail submission) with ESMTPSA id A14449E7476; 
+ Sun, 31 May 2020 15:45:38 +0100 (BST)
+Date: Sun, 31 May 2020 15:45:35 +0100
+From: Jonathan Cameron <jic23@jic23.retrosnub.co.uk>
 To: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Subject: Re: [PATCH] iio: at91_adc: remove usage of iio_priv_to_dev() helper
-Message-ID: <20200531154216.361285c6@archlinux>
-In-Reply-To: <20200525102513.130664-1-alexandru.ardelean@analog.com>
-References: <20200525102513.130664-1-alexandru.ardelean@analog.com>
+Subject: Re: [PATCH v2] iio: stm32-dfsdm-adc: remove usage of
+ iio_priv_to_dev() helper
+Message-ID: <20200531154535.4e7490e0@archlinux>
+In-Reply-To: <20200525082648.39656-1-alexandru.ardelean@analog.com>
+References: <20200522130804.631508-1-alexandru.ardelean@analog.com>
+ <20200525082648.39656-1-alexandru.ardelean@analog.com>
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_074220_660328_BF4A019C 
-X-CRM114-Status: GOOD (  22.39  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200531_074544_596823_9F9B87AD 
+X-CRM114-Status: GOOD (  19.66  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,15 +59,15 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, ludovic.desroches@microchip.com,
- linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 25 May 2020 13:25:13 +0300
+On Mon, 25 May 2020 11:26:48 +0300
 Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
 
 > We may want to get rid of the iio_priv_to_dev() helper. The reason is that
@@ -102,133 +85,251 @@ Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
 > pass the iio device and using iio_priv() to access the private information.
 > 
 > Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Looks good to me.  Will leave it a bit longer though to potentially
-get some people more familiar with the driver to sanity check it.
-
-Poke me after the usual couple of weeks if I seem to have lost it
-down the back of the sofa.
+Looks great.  Will let it sit a little longer on list for others to review
+though.
 
 Thanks,
 
 Jonathan
 
 > ---
->  drivers/iio/adc/at91_adc.c | 30 +++++++++++++++---------------
->  1 file changed, 15 insertions(+), 15 deletions(-)
 > 
-> diff --git a/drivers/iio/adc/at91_adc.c b/drivers/iio/adc/at91_adc.c
-> index 0368b6dc6d60..896af58e88bc 100644
-> --- a/drivers/iio/adc/at91_adc.c
-> +++ b/drivers/iio/adc/at91_adc.c
-> @@ -287,13 +287,13 @@ static void handle_adc_eoc_trigger(int irq, struct iio_dev *idev)
->  	}
->  }
->  
-> -static int at91_ts_sample(struct at91_adc_state *st)
-> +static int at91_ts_sample(struct iio_dev *idev)
->  {
-> +	struct at91_adc_state *st = iio_priv(idev);
->  	unsigned int xscale, yscale, reg, z1, z2;
->  	unsigned int x, y, pres, xpos, ypos;
->  	unsigned int rxp = 1;
->  	unsigned int factor = 1000;
-> -	struct iio_dev *idev = iio_priv_to_dev(st);
->  
->  	unsigned int xyz_mask_bits = st->res;
->  	unsigned int xyz_mask = (1 << xyz_mask_bits) - 1;
-> @@ -449,7 +449,7 @@ static irqreturn_t at91_adc_9x5_interrupt(int irq, void *private)
->  
->  		if (status & AT91_ADC_ISR_PENS) {
->  			/* validate data by pen contact */
-> -			at91_ts_sample(st);
-> +			at91_ts_sample(idev);
->  		} else {
->  			/* triggered by event that is no pen contact, just read
->  			 * them to clean the interrupt and discard all.
-> @@ -737,10 +737,10 @@ static int at91_adc_read_raw(struct iio_dev *idev,
->  	return -EINVAL;
->  }
->  
-> -static int at91_adc_of_get_resolution(struct at91_adc_state *st,
-> +static int at91_adc_of_get_resolution(struct iio_dev *idev,
->  				      struct platform_device *pdev)
->  {
-> -	struct iio_dev *idev = iio_priv_to_dev(st);
-> +	struct at91_adc_state *st = iio_priv(idev);
->  	struct device_node *np = pdev->dev.of_node;
->  	int count, i, ret = 0;
->  	char *res_name, *s;
-> @@ -866,10 +866,10 @@ static int at91_adc_probe_dt_ts(struct device_node *node,
->  	}
->  }
->  
-> -static int at91_adc_probe_dt(struct at91_adc_state *st,
-> +static int at91_adc_probe_dt(struct iio_dev *idev,
->  			     struct platform_device *pdev)
->  {
-> -	struct iio_dev *idev = iio_priv_to_dev(st);
-> +	struct at91_adc_state *st = iio_priv(idev);
->  	struct device_node *node = pdev->dev.of_node;
->  	struct device_node *trig_node;
->  	int i = 0, ret;
-> @@ -910,7 +910,7 @@ static int at91_adc_probe_dt(struct at91_adc_state *st,
->  	}
->  	st->vref_mv = prop;
->  
-> -	ret = at91_adc_of_get_resolution(st, pdev);
-> +	ret = at91_adc_of_get_resolution(idev, pdev);
->  	if (ret)
->  		goto error_ret;
->  
-> @@ -1010,9 +1010,9 @@ static void atmel_ts_close(struct input_dev *dev)
->  		at91_adc_writel(st, AT91_ADC_IDR, AT91RL_ADC_IER_PEN);
->  }
->  
-> -static int at91_ts_hw_init(struct at91_adc_state *st, u32 adc_clk_khz)
-> +static int at91_ts_hw_init(struct iio_dev *idev, u32 adc_clk_khz)
->  {
-> -	struct iio_dev *idev = iio_priv_to_dev(st);
-> +	struct at91_adc_state *st = iio_priv(idev);
->  	u32 reg = 0;
->  	u32 tssctim = 0;
->  	int i = 0;
-> @@ -1085,11 +1085,11 @@ static int at91_ts_hw_init(struct at91_adc_state *st, u32 adc_clk_khz)
+> Changelog v1 -> v2:
+> * changed some paths to pass a reference to ref to iio device and access
+>   private state-struct via iio_priv()
+> 
+>  drivers/iio/adc/stm32-dfsdm-adc.c | 65 ++++++++++++++++---------------
+>  1 file changed, 33 insertions(+), 32 deletions(-)
+> 
+> diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
+> index 76a60d93fe23..03dfc0b6ba98 100644
+> --- a/drivers/iio/adc/stm32-dfsdm-adc.c
+> +++ b/drivers/iio/adc/stm32-dfsdm-adc.c
+> @@ -330,9 +330,9 @@ static int stm32_dfsdm_compute_all_osrs(struct iio_dev *indio_dev,
 >  	return 0;
 >  }
 >  
-> -static int at91_ts_register(struct at91_adc_state *st,
-> +static int at91_ts_register(struct iio_dev *idev,
->  		struct platform_device *pdev)
+> -static int stm32_dfsdm_start_channel(struct stm32_dfsdm_adc *adc)
+> +static int stm32_dfsdm_start_channel(struct iio_dev *indio_dev)
 >  {
-> +	struct at91_adc_state *st = iio_priv(idev);
->  	struct input_dev *input;
-> -	struct iio_dev *idev = iio_priv_to_dev(st);
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	struct regmap *regmap = adc->dfsdm->regmap;
+>  	const struct iio_chan_spec *chan;
+>  	unsigned int bit;
+> @@ -350,9 +350,9 @@ static int stm32_dfsdm_start_channel(struct stm32_dfsdm_adc *adc)
+>  	return 0;
+>  }
+>  
+> -static void stm32_dfsdm_stop_channel(struct stm32_dfsdm_adc *adc)
+> +static void stm32_dfsdm_stop_channel(struct iio_dev *indio_dev)
+>  {
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	struct regmap *regmap = adc->dfsdm->regmap;
+>  	const struct iio_chan_spec *chan;
+>  	unsigned int bit;
+> @@ -418,11 +418,11 @@ static void stm32_dfsdm_stop_filter(struct stm32_dfsdm *dfsdm,
+>  			   DFSDM_CR1_DFEN_MASK, DFSDM_CR1_DFEN(0));
+>  }
+>  
+> -static int stm32_dfsdm_filter_set_trig(struct stm32_dfsdm_adc *adc,
+> +static int stm32_dfsdm_filter_set_trig(struct iio_dev *indio_dev,
+>  				       unsigned int fl_id,
+>  				       struct iio_trigger *trig)
+>  {
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	struct regmap *regmap = adc->dfsdm->regmap;
+>  	u32 jextsel = 0, jexten = STM32_DFSDM_JEXTEN_DISABLED;
+>  	int ret;
+> @@ -447,11 +447,11 @@ static int stm32_dfsdm_filter_set_trig(struct stm32_dfsdm_adc *adc,
+>  	return 0;
+>  }
+>  
+> -static int stm32_dfsdm_channels_configure(struct stm32_dfsdm_adc *adc,
+> +static int stm32_dfsdm_channels_configure(struct iio_dev *indio_dev,
+>  					  unsigned int fl_id,
+>  					  struct iio_trigger *trig)
+>  {
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	struct regmap *regmap = adc->dfsdm->regmap;
+>  	struct stm32_dfsdm_filter *fl = &adc->dfsdm->fl_list[fl_id];
+>  	struct stm32_dfsdm_filter_osr *flo = &fl->flo[0];
+> @@ -491,11 +491,11 @@ static int stm32_dfsdm_channels_configure(struct stm32_dfsdm_adc *adc,
+>  	return 0;
+>  }
+>  
+> -static int stm32_dfsdm_filter_configure(struct stm32_dfsdm_adc *adc,
+> +static int stm32_dfsdm_filter_configure(struct iio_dev *indio_dev,
+>  					unsigned int fl_id,
+>  					struct iio_trigger *trig)
+>  {
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	struct regmap *regmap = adc->dfsdm->regmap;
+>  	struct stm32_dfsdm_filter *fl = &adc->dfsdm->fl_list[fl_id];
+>  	struct stm32_dfsdm_filter_osr *flo = &fl->flo[fl->fast];
+> @@ -521,7 +521,7 @@ static int stm32_dfsdm_filter_configure(struct stm32_dfsdm_adc *adc,
+>  	if (ret)
+>  		return ret;
+>  
+> -	ret = stm32_dfsdm_filter_set_trig(adc, fl_id, trig);
+> +	ret = stm32_dfsdm_filter_set_trig(indio_dev, fl_id, trig);
+>  	if (ret)
+>  		return ret;
+>  
+> @@ -729,21 +729,22 @@ static ssize_t dfsdm_adc_audio_set_spiclk(struct iio_dev *indio_dev,
+>  	return len;
+>  }
+>  
+> -static int stm32_dfsdm_start_conv(struct stm32_dfsdm_adc *adc,
+> +static int stm32_dfsdm_start_conv(struct iio_dev *indio_dev,
+>  				  struct iio_trigger *trig)
+>  {
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	struct regmap *regmap = adc->dfsdm->regmap;
 >  	int ret;
 >  
->  	input = input_allocate_device();
-> @@ -1161,7 +1161,7 @@ static int at91_adc_probe(struct platform_device *pdev)
->  	st = iio_priv(idev);
+> -	ret = stm32_dfsdm_channels_configure(adc, adc->fl_id, trig);
+> +	ret = stm32_dfsdm_channels_configure(indio_dev, adc->fl_id, trig);
+>  	if (ret < 0)
+>  		return ret;
 >  
->  	if (pdev->dev.of_node)
-> -		ret = at91_adc_probe_dt(st, pdev);
-> +		ret = at91_adc_probe_dt(idev, pdev);
->  	else
->  		ret = at91_adc_probe_pdata(st, pdev);
+> -	ret = stm32_dfsdm_start_channel(adc);
+> +	ret = stm32_dfsdm_start_channel(indio_dev);
+>  	if (ret < 0)
+>  		return ret;
 >  
-> @@ -1301,11 +1301,11 @@ static int at91_adc_probe(struct platform_device *pdev)
->  			goto error_disable_adc_clk;
->  		}
->  	} else {
-> -		ret = at91_ts_register(st, pdev);
-> +		ret = at91_ts_register(idev, pdev);
->  		if (ret)
->  			goto error_disable_adc_clk;
+> -	ret = stm32_dfsdm_filter_configure(adc, adc->fl_id, trig);
+> +	ret = stm32_dfsdm_filter_configure(indio_dev, adc->fl_id, trig);
+>  	if (ret < 0)
+>  		goto stop_channels;
 >  
-> -		at91_ts_hw_init(st, adc_clk_khz);
-> +		at91_ts_hw_init(idev, adc_clk_khz);
+> @@ -757,13 +758,14 @@ static int stm32_dfsdm_start_conv(struct stm32_dfsdm_adc *adc,
+>  	regmap_update_bits(regmap, DFSDM_CR1(adc->fl_id),
+>  			   DFSDM_CR1_CFG_MASK, 0);
+>  stop_channels:
+> -	stm32_dfsdm_stop_channel(adc);
+> +	stm32_dfsdm_stop_channel(indio_dev);
+>  
+>  	return ret;
+>  }
+>  
+> -static void stm32_dfsdm_stop_conv(struct stm32_dfsdm_adc *adc)
+> +static void stm32_dfsdm_stop_conv(struct iio_dev *indio_dev)
+>  {
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	struct regmap *regmap = adc->dfsdm->regmap;
+>  
+>  	stm32_dfsdm_stop_filter(adc->dfsdm, adc->fl_id);
+> @@ -771,7 +773,7 @@ static void stm32_dfsdm_stop_conv(struct stm32_dfsdm_adc *adc)
+>  	regmap_update_bits(regmap, DFSDM_CR1(adc->fl_id),
+>  			   DFSDM_CR1_CFG_MASK, 0);
+>  
+> -	stm32_dfsdm_stop_channel(adc);
+> +	stm32_dfsdm_stop_channel(indio_dev);
+>  }
+>  
+>  static int stm32_dfsdm_set_watermark(struct iio_dev *indio_dev,
+> @@ -1017,7 +1019,7 @@ static int __stm32_dfsdm_postenable(struct iio_dev *indio_dev)
+>  		goto stop_dfsdm;
 >  	}
 >  
->  	ret = iio_device_register(idev);
+> -	ret = stm32_dfsdm_start_conv(adc, indio_dev->trig);
+> +	ret = stm32_dfsdm_start_conv(indio_dev, indio_dev->trig);
+>  	if (ret) {
+>  		dev_err(&indio_dev->dev, "Can't start conversion\n");
+>  		goto err_stop_dma;
+> @@ -1063,7 +1065,7 @@ static void __stm32_dfsdm_predisable(struct iio_dev *indio_dev)
+>  {
+>  	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  
+> -	stm32_dfsdm_stop_conv(adc);
+> +	stm32_dfsdm_stop_conv(indio_dev);
+>  
+>  	stm32_dfsdm_adc_dma_stop(indio_dev);
+>  
+> @@ -1159,7 +1161,7 @@ static int stm32_dfsdm_single_conv(struct iio_dev *indio_dev,
+>  
+>  	adc->nconv = 1;
+>  	adc->smask = BIT(chan->scan_index);
+> -	ret = stm32_dfsdm_start_conv(adc, NULL);
+> +	ret = stm32_dfsdm_start_conv(indio_dev, NULL);
+>  	if (ret < 0) {
+>  		regmap_update_bits(adc->dfsdm->regmap, DFSDM_CR2(adc->fl_id),
+>  				   DFSDM_CR2_REOCIE_MASK, DFSDM_CR2_REOCIE(0));
+> @@ -1180,7 +1182,7 @@ static int stm32_dfsdm_single_conv(struct iio_dev *indio_dev,
+>  	else
+>  		ret = IIO_VAL_INT;
+>  
+> -	stm32_dfsdm_stop_conv(adc);
+> +	stm32_dfsdm_stop_conv(indio_dev);
+>  
+>  	stm32_dfsdm_process_data(adc, res);
+>  
+> @@ -1313,8 +1315,8 @@ static const struct iio_info stm32_dfsdm_info_adc = {
+>  
+>  static irqreturn_t stm32_dfsdm_irq(int irq, void *arg)
+>  {
+> -	struct stm32_dfsdm_adc *adc = arg;
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct iio_dev *indio_dev = arg;
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	struct regmap *regmap = adc->dfsdm->regmap;
+>  	unsigned int status, int_en;
+>  
+> @@ -1574,7 +1576,7 @@ static int stm32_dfsdm_adc_probe(struct platform_device *pdev)
+>  	iio->dev.of_node = np;
+>  	iio->modes = INDIO_DIRECT_MODE;
+>  
+> -	platform_set_drvdata(pdev, adc);
+> +	platform_set_drvdata(pdev, iio);
+>  
+>  	ret = of_property_read_u32(dev->of_node, "reg", &adc->fl_id);
+>  	if (ret != 0 || adc->fl_id >= adc->dfsdm->num_fls) {
+> @@ -1603,7 +1605,7 @@ static int stm32_dfsdm_adc_probe(struct platform_device *pdev)
+>  		return irq;
+>  
+>  	ret = devm_request_irq(dev, irq, stm32_dfsdm_irq,
+> -			       0, pdev->name, adc);
+> +			       0, pdev->name, iio);
+>  	if (ret < 0) {
+>  		dev_err(dev, "Failed to request IRQ\n");
+>  		return ret;
+> @@ -1650,8 +1652,8 @@ static int stm32_dfsdm_adc_probe(struct platform_device *pdev)
+>  
+>  static int stm32_dfsdm_adc_remove(struct platform_device *pdev)
+>  {
+> -	struct stm32_dfsdm_adc *adc = platform_get_drvdata(pdev);
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  
+>  	if (adc->dev_data->type == DFSDM_AUDIO)
+>  		of_platform_depopulate(&pdev->dev);
+> @@ -1663,8 +1665,7 @@ static int stm32_dfsdm_adc_remove(struct platform_device *pdev)
+>  
+>  static int __maybe_unused stm32_dfsdm_adc_suspend(struct device *dev)
+>  {
+> -	struct stm32_dfsdm_adc *adc = dev_get_drvdata(dev);
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
+>  
+>  	if (iio_buffer_enabled(indio_dev))
+>  		__stm32_dfsdm_predisable(indio_dev);
+> @@ -1674,8 +1675,8 @@ static int __maybe_unused stm32_dfsdm_adc_suspend(struct device *dev)
+>  
+>  static int __maybe_unused stm32_dfsdm_adc_resume(struct device *dev)
+>  {
+> -	struct stm32_dfsdm_adc *adc = dev_get_drvdata(dev);
+> -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
+> +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
+> +	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
+>  	const struct iio_chan_spec *chan;
+>  	struct stm32_dfsdm_channel *ch;
+>  	int i, ret;
 
 
 _______________________________________________
