@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC6781E94B1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 02:12:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB4261E94B2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 02:12:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=R6pM0S542C7qvOomq7r5Q4cwRCxoD2zUgUp+sk1MAOE=; b=Wmgo/K/fOhZ2jFGMXxB2+IxVxN
-	102d92GxqD4vnqA2n+YuowNMGPHlFk9TvBLs6O5vrDoMEVR6aDG9t60Wdnd4JIPZD+S1RY1lbK/Ta
-	RefBN4+MCDdG2poHZUILkubR8qg89ZsHfBzLjFQVmhfBbDYs+lJS1z42QnzmMqBTWkyxE3OlBcoui
-	8jbag4Vu6i65jXIiY6cJQAdzk+xJSUpz0nVun9PAe+xkNmpkULKac7ms19BJnLubRRGsixs5QNso3
-	QUIcRQOeWusqRx3BmhbrrTakeT8+V+bm2YCTthpjO3m2Y2Kp5fa8NI6CQX0Jjrdwbgph56CqvCPm9
-	SOHZwx4g==;
+	bh=7ZUDS+Sz4uMxtYrF7+bofpK5p7OgI1y1grs3U3WICZM=; b=NshDNFv+9WQOD91GUR21RIBwGg
+	L8e6Wm209Y4DPVI0BMxCDwK5/r2qmOPwvvYLcQ34UT7P1QT46WY0h0Bgf7tqhcA5pJHMaobb+G9A/
+	+S8Fqg5NjK/X3KelYE3uJa5CtAQBwipYsyWIcO3652fHAKgmSlklhkl7U+m4EjDEarFmHouRddVIv
+	ojguLjlzhif+Dzg0NyhkIuyWDlemjzMG8lH01DC9CaaU7xvS66ZFlf/GBFFaZHkiYpQ/DD0gU00i9
+	a1RXZkYVTpqROfSP3X5/+R3LzehcJWGFx7WNGNdk4DUV286VTz3rKf77t+EG77/+a57ULV2biKv8c
+	ES2JTGZg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfBa6-0003IK-7Y; Sun, 31 May 2020 00:12:02 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jfBaP-0003ZA-Ur; Sun, 31 May 2020 00:12:21 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfBZN-0002tH-TO; Sun, 31 May 2020 00:11:19 +0000
-Received: by mail-wr1-x444.google.com with SMTP id r7so7889574wro.1;
- Sat, 30 May 2020 17:11:17 -0700 (PDT)
+ id 1jfBZR-0002y0-GA; Sun, 31 May 2020 00:11:22 +0000
+Received: by mail-wr1-x442.google.com with SMTP id l10so7793021wrr.10;
+ Sat, 30 May 2020 17:11:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=vX2j+ZqsOynp+SkPgzqmgQI0qHfSmxvzrYIfKti767U=;
- b=cy1f+p4dDAWjMTLoinEhGQay6sqfyhmfWAy2m/5zqhP8Zv2jj1rifHH2ZepjX+OU6f
- mcuxW9yKPbz6l8RrL9oI7pJsKdFS8sdWXlI9mbyBgQLLOoJQWc/itzxxwXBd0bCrYuBP
- 2Vax7Sxw5XUq0STfJiY2eEVMoB6VP8CP+HdnCFSul20CYrKj30DpVWYGiQAl0irSZcF1
- 21OISGHPNSrvXf7w5S2/QHBzm/0YwRWlG1ZNQzOXl35spVVu6NkOEuANQ8yvcaSM0Hjc
- tf9o6EyL7lNmR21NOcBpIyhRwpb8DEK1iJja9+y0FaSvtfbUd1lz3shmOappEFNA6ssm
- DiYQ==
+ bh=rVJ4oym9rXNaA44QDrgvFNwDxvnSEboxykGaMiySkgs=;
+ b=MVLxJVw32p1OtN2vdVxrhz6dYK+xoVjcLbAs9VH4QhsyENwRJtA5zZRCP/tlw9WNqS
+ PficSCvAUSR6HHg03iTAhAdB/+mMS/lbTuyiQt52U5DGkBL7gR2o9g7tL36Z+U3lwEfj
+ xMjAnN2m4HhzJTuZ3xuk1bEeVB4/MvBxsL/m9t1nfBH5kWEMYTXS/Q0I/dTDV1F+owx9
+ bMDjuRYGM6ksnHPgXrbfjMC55mwKZzzoN0BVbzMHvI9CCUfy+9hSWSLCNZUvI4F2nYNG
+ zTaN8mGpsyeZniEcJJ4u4zrmo/Q3ciEVYxZ83HkeG3EWGg24HCqBW8HEQ9UkeGI4P4Zm
+ vgtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=vX2j+ZqsOynp+SkPgzqmgQI0qHfSmxvzrYIfKti767U=;
- b=cHoARx3l6KLUogpZVS7WSyQOUcE2rYdAMKZZWrkjIZtp5jpG+I0tnBX3sZ3snwyWY4
- tFBzh73uAX7jHliX4CXWGoaerlGj05nse1WjBTy1Tu1221eu4xXAPwXZuEwx8Y+zpFxN
- J/+hGbEnRTmD/1QZHpH3nb0AkW+H7UxN0a9ntUyiX3kJYJ4PncyuqCc8v77VieESuYea
- 91TqaooFQBOlVbj57xaZkCSjTQsqVpjm+HiSNLCA/Gp98EpaLOUoH2GW1xzN2w2V2I6v
- /LCAnFWqzGkU3JECH3tsxsoo38kZlvXoWGixJUb7TcAM8bvd8SceCfpcYZ3uV2XcjrwQ
- xcNA==
-X-Gm-Message-State: AOAM532TtAdOzVl6YjdOLMlzgfWcF1fPZCXf7PDIBLmYgZhiywIW7t8Q
- b1eOzW/N79PBMh/baDYjwaA=
-X-Google-Smtp-Source: ABdhPJzmvV0vOAPA3dfn1ipknELjJg2/sLbGGdqcF12/Qa5dIVvV0XqsPfu44CCicBEqCvBSQ2Vi2A==
-X-Received: by 2002:adf:e749:: with SMTP id c9mr16433368wrn.25.1590883876451; 
- Sat, 30 May 2020 17:11:16 -0700 (PDT)
+ bh=rVJ4oym9rXNaA44QDrgvFNwDxvnSEboxykGaMiySkgs=;
+ b=opXXyCEZPqB1dHSz28mUAVmpJPhtL0Yh/3TECUpMk8cfD526wg7V5p4qnndlh/sZhF
+ TORMmfLNyaz5oIUs7EaDEDj2ucO8C//LuZUsC7o22FNlMQ6hMRhs3IbfF8AD+7dRDtQn
+ e1d+s6T+pSJxaboRMv6w01EVpGjGqR9lB7uOoNZGTB6ImzJ3kw/qtD8REkRkWy22+qDt
+ 7qXU43QRdno62X3Gi9zsn0fLdVPYLp1rAb9feZaBp9lODi1Cw1rWCWnsMYQspsDlTF9w
+ 6ad1FTQGAuv/21Xw4rOTdoFXzIgQrDdx/BZUaYOZPQjPO5mcEklRnMSuNw7zBJtugHne
+ B70A==
+X-Gm-Message-State: AOAM532Jfk0DMaZaXQmxZXu7yLiYpEfsSD7pfCr9x1l6PjNhshDHFbjJ
+ 5q19Kad0CiABemvqKSNE2K8=
+X-Google-Smtp-Source: ABdhPJwqp1mCH35XDunsWOItoM/EABnx5HwsMdbjoQ7rQPkUJ9ipZrg/XucyJy/4w1gIBktL9lbVwg==
+X-Received: by 2002:adf:c44e:: with SMTP id a14mr14272619wrg.50.1590883879709; 
+ Sat, 30 May 2020 17:11:19 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id d17sm15455807wrg.75.2020.05.30.17.11.13
+ by smtp.gmail.com with ESMTPSA id d17sm15455807wrg.75.2020.05.30.17.11.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 30 May 2020 17:11:15 -0700 (PDT)
+ Sat, 30 May 2020 17:11:19 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3 2/4] dt-bindings: pinctrl: Document optional BCM7211
- wake-up interrupts
-Date: Sat, 30 May 2020 17:10:59 -0700
-Message-Id: <20200531001101.24945-3-f.fainelli@gmail.com>
+Subject: [PATCH v3 3/4] pinctrl: bcm2835: Match BCM7211 compatible string
+Date: Sat, 30 May 2020 17:11:00 -0700
+Message-Id: <20200531001101.24945-4-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200531001101.24945-1-f.fainelli@gmail.com>
 References: <20200531001101.24945-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_171118_015438_32ED5E0C 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20200530_171121_573194_9B659872 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -118,30 +117,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BCM7211 supports wake-up interrupts in the form of optional interrupt
-lines, one per bank, plus the "all banks" interrupt line.
+The BCM7211 SoC uses the same pinconf_ops as the ones defined for the
+BCM2711 SoC, match the compatible string and use the correct set of
+options.
 
-Acked-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- .../devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt         | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/pinctrl/bcm/pinctrl-bcm2835.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt b/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
-index dfc67b90591c..5682b2010e50 100644
---- a/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
-+++ b/Documentation/devicetree/bindings/pinctrl/brcm,bcm2835-gpio.txt
-@@ -16,7 +16,9 @@ Required properties:
-   second cell is used to specify optional parameters:
-   - bit 0 specifies polarity (0 for normal, 1 for inverted)
- - interrupts : The interrupt outputs from the controller. One interrupt per
--  individual bank followed by the "all banks" interrupt.
-+  individual bank followed by the "all banks" interrupt. For BCM7211, an
-+  additional set of per-bank interrupt line and an "all banks" wake-up
-+  interrupt may be specified.
- - interrupt-controller: Marks the device node as an interrupt controller.
- - #interrupt-cells : Should be 2.
-   The first cell is the GPIO number.
+diff --git a/drivers/pinctrl/bcm/pinctrl-bcm2835.c b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
+index 06bd2b70af3c..1b00d93aa66e 100644
+--- a/drivers/pinctrl/bcm/pinctrl-bcm2835.c
++++ b/drivers/pinctrl/bcm/pinctrl-bcm2835.c
+@@ -1137,6 +1137,10 @@ static const struct of_device_id bcm2835_pinctrl_match[] = {
+ 		.compatible = "brcm,bcm2711-gpio",
+ 		.data = &bcm2711_plat_data,
+ 	},
++	{
++		.compatible = "brcm,bcm7211-gpio",
++		.data = &bcm2711_plat_data,
++	},
+ 	{}
+ };
+ 
 -- 
 2.17.1
 
