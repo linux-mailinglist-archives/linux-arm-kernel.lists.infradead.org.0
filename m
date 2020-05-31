@@ -2,74 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B97B1E949F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 02:08:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3B3A1E94A2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 02:11:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eH3cM0uXkAxFrBWETxlCzFtMXxiIGeiDCLG+NJo+R/8=; b=qYer1yiO2sH/2I
-	Y/RXSaAFc/ySr7egisPCyZDSnvc2GQ1mxPkNoQw6r1wpBcvHPRKg5K0VmEoe1TN3AtYwXZY1M6o8+
-	KjesscQdEGLrLZnnYKqb00QuxLua7PK6eaqTNUvS7kjwIAKmn4OusmMMyxIRVm5q/7kYQC8teWU2P
-	/fdkWco+MrxEOTisXbzQ42Nwm9Cb/XvttbifzQPPbC/IsEC2BkHA2u2gcoG6Crb7Ot7PIQIXP+jtw
-	npI2oXxQvTojrdDQh+veAnU75xvwuvoPx9+r2OiJrP7+//DEzIaRUALtn43aUSJGIOtz7cAjrC20m
-	/YSpZIj3iOhpR0GiNdAA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0pgheh4Dtpivo+qfMHE68B0YuhH2NiB8y1ZgBVByxA4=; b=RN0
+	M6EzxjpKFT1erVuIOlwb2bGq9PwntMlJ+kro5YujHmUz5cdH+UzvAdepLJhCCTVq1liURiPcWYxQy
+	OXzrL+IonNpRuIuIzkEf+MLGSRXslvMO64cItF6UnNschLkJpTdW7GiD7n2WAT842Ikb3S1KE0wAW
+	4vnBKXR9QXkroWlLBreCmcUVlClTGChkLrChRQ06b6ItsBLmoqNpYenuo4CYMMuDfBs6xk8gp/4io
+	gSL8Ux+0n7wWdemlJ8uGs8OwzRsLUEvABrDIClmmmAMJQ8nqCoBKCzR+EzRLSWIgIrg2vPztIYWMW
+	aOTbzSrpl1/i6wszUIfIoZPjo/uCNxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfBWu-0008Em-Ep; Sun, 31 May 2020 00:08:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jfBZU-0002qT-FL; Sun, 31 May 2020 00:11:24 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfBWk-0008EP-H7
- for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 00:08:35 +0000
-Received: from mail-lf1-f49.google.com (mail-lf1-f49.google.com
- [209.85.167.49])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C29FD207BB
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 31 May 2020 00:08:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590883714;
- bh=vPVMwMifj/bpMWbGPxUi+uNL+vBHSk9Nn5YsO2IKxxU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=ye8Fo2mczopyLo1ob1diXWW16znwynBE+2PS8SYTdutOvrF6fUiiyZsJixjjlMzXJ
- XuuRfBeBELwzCQi63Xm7fLhI+BQgJUfT7Dvo/yFWzBKi+Tvc7eao+I2X8IPANwF/QQ
- ItZVnMjy7oOjV3O+C2cQB8U06NNjgT5XUonvKu2A=
-Received: by mail-lf1-f49.google.com with SMTP id z22so1876182lfd.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 30 May 2020 17:08:33 -0700 (PDT)
-X-Gm-Message-State: AOAM530ijVQbnseKy7ssk/JaWFWBHmSGX7ffSPkE0npXU0kqVSyYr6cE
- Ffg6LIrAGZPu7vaxLtRVSDWNES6ZMsOha/d2eLc=
-X-Google-Smtp-Source: ABdhPJx30aOLCYD8rhRQWuNuFBNi6DG6GHiGFBCH1V8mZXSiFUlhvrP9bf+Ajogwaw5NyNDhtFnAPjOErTVI/7WeuYc=
-X-Received: by 2002:a05:6512:691:: with SMTP id
- t17mr7982786lfe.85.1590883712070; 
- Sat, 30 May 2020 17:08:32 -0700 (PDT)
-MIME-Version: 1.0
-References: <CGME20200529163228eucas1p1d05340fef9ffc724f5d3d9f5709a600f@eucas1p1.samsung.com>
- <20200529163200.18031-1-s.nawrocki@samsung.com>
- <20200529163200.18031-6-s.nawrocki@samsung.com>
-In-Reply-To: <20200529163200.18031-6-s.nawrocki@samsung.com>
-From: Chanwoo Choi <chanwoo@kernel.org>
-Date: Sun, 31 May 2020 09:07:55 +0900
-X-Gmail-Original-Message-ID: <CAGTfZH1Cin346tRz=+AH1x9QT=z0UGOvCC=NaAM9xLjGM2dHjg@mail.gmail.com>
-Message-ID: <CAGTfZH1Cin346tRz=+AH1x9QT=z0UGOvCC=NaAM9xLjGM2dHjg@mail.gmail.com>
-Subject: Re: [RFC PATCH v5 5/6] ARM: dts: exynos: Add interconnects to
- Exynos4412 mixer
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
+ id 1jfBZI-0002pi-4O; Sun, 31 May 2020 00:11:13 +0000
+Received: by mail-wm1-x341.google.com with SMTP id u13so7328709wml.1;
+ Sat, 30 May 2020 17:11:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=N1fNAY9W8nEz1STCUYqUNen8ccMRBFwNRvnI1O2D6Bk=;
+ b=nR7OkrMZbdF68Iig0EWwolS+t4nAgQo0fHFUPfd4w53QSAJ2eZN+YOkwNLb+xWMglN
+ gyn4w4FCEUqufm1WT5z7sik8zMY8VXHULDiqoqj6mIYOIIYLgNjERhh3QWtzVQ87JHD2
+ Wqza2uvs0nfFPt36iilhAkM3gMUCZ0FMAGFYITBDbte2kFFXJACind9sKBZHoy52LzJC
+ hJt5JmImr9MGLqV3rOUDCZ/bgz5Qegk/lUhn/I/VcvvKuO8zQ//+pzZxMj18f2tlMIlS
+ faHXl49Kg59qeOiG76ciJxAYyKM8ZXWaCvMdn1WLV742dQTTG+YG/AXhV77GNhKEKRzQ
+ 8HyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=N1fNAY9W8nEz1STCUYqUNen8ccMRBFwNRvnI1O2D6Bk=;
+ b=EWTnzSx1ve47rKtp2DCYwER6if05Q6iMVB7MGCqBSws9vtojaMXwozXXPJECjZDqGX
+ Ck/naAfF5PfGlnMOnHSVG2L9RodzZ+8qGMJAKA8o20AX3FgZebxXTZf9ebyeYUIv+DO+
+ ka/PC3RRs7SG5JljtTSKJhy9kQWz/xS15WhHTE/6vuclbLy0wLtEnVRTRWGxj8t+VQTG
+ +Pzg0NDN9tMyVKCp6ejJnAeHKmWqnLhWxX8vfnPnyF+JFABzQxxD/MNutKL75Gk/73sB
+ 4xg/SO5u7/3/1fNvCTLdTl57rfd0dq8dR8W4kANcRjjsBAgFlNJD4SQhHD3HEbpMOX+E
+ UE0w==
+X-Gm-Message-State: AOAM533ngv6/SVEYH9yNM/owLpUs9u2Eb5O1B21kxZdIsE73ZyBmcCR3
+ K6RCAlRxAQtrohN7UgxvbV4=
+X-Google-Smtp-Source: ABdhPJzYEz/vDQ+dGMjZgZtLaTL+hqSIOROHuJY7+wHyuEMVcZKdl/wOm+YoLtweprg5342Kl8toOw==
+X-Received: by 2002:a1c:6244:: with SMTP id w65mr13515496wmb.82.1590883869773; 
+ Sat, 30 May 2020 17:11:09 -0700 (PDT)
+Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id d17sm15455807wrg.75.2020.05.30.17.11.06
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 30 May 2020 17:11:09 -0700 (PDT)
+From: Florian Fainelli <f.fainelli@gmail.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v3 0/4] pinctrl: bcm2835: Add support for wake-up interrupts
+Date: Sat, 30 May 2020 17:10:57 -0700
+Message-Id: <20200531001101.24945-1-f.fainelli@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_170834_609001_2616D73F 
-X-CRM114-Status: GOOD (  20.57  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200530_171112_188755_CED5C17F 
+X-CRM114-Status: GOOD (  11.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -77,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,48 +91,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- =?UTF-8?B?QXJ0dXIgxZp3aWdvxYQ=?= <a.swigon@samsung.com>,
- Krzysztof Kozlowski <krzk@kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, inki.dae@samsung.com,
- Chanwoo Choi <cw00.choi@samsung.com>, MyungJoo Ham <myungjoo.ham@samsung.com>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- Georgi Djakov <georgi.djakov@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Stefan Wahren <stefan.wahren@i2se.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Matti Vaittinen <matti.vaittinen@fi.rohmeurope.com>,
+ "open list:PIN CONTROL SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU3lsd2VzdGVyLAoKT24gU2F0LCBNYXkgMzAsIDIwMjAgYXQgMTozMyBBTSBTeWx3ZXN0ZXIg
-TmF3cm9ja2kKPHMubmF3cm9ja2lAc2Ftc3VuZy5jb20+IHdyb3RlOgo+Cj4gRnJvbTogQXJ0dXIg
-xZp3aWdvxYQgPGEuc3dpZ29uQHNhbXN1bmcuY29tPgo+Cj4gVGhpcyBwYXRjaCBhZGRzIGFuICdp
-bnRlcmNvbm5lY3RzJyBwcm9wZXJ0eSB0byBFeHlub3M0NDEyIERUUyBpbiBvcmRlciB0bwo+IGRl
-Y2xhcmUgdGhlIGludGVyY29ubmVjdCBwYXRoIHVzZWQgYnkgdGhlIG1peGVyLiBQbGVhc2Ugbm90
-ZSB0aGF0IHRoZQo+ICdpbnRlcmNvbm5lY3QtbmFtZXMnIHByb3BlcnR5IGlzIG5vdCBuZWVkZWQg
-d2hlbiB0aGVyZSBpcyBvbmx5IG9uZSBwYXRoIGluCj4gJ2ludGVyY29ubmVjdHMnLCBpbiB3aGlj
-aCBjYXNlIGNhbGxpbmcgb2ZfaWNjX2dldCgpIHdpdGggYSBOVUxMIG5hbWUgc2ltcGx5Cj4gcmV0
-dXJucyB0aGUgcmlnaHQgcGF0aC4KPgo+IFNpZ25lZC1vZmYtYnk6IEFydHVyIMWad2lnb8WEIDxh
-LnN3aWdvbkBzYW1zdW5nLmNvbT4KPiBSZXZpZXdlZC1ieTogQ2hhbndvbyBDaG9pIDxjdzAwLmNo
-b2lAc2Ftc3VuZy5jb20+Cj4gLS0tCj4gQ2hhbmdlcyBmb3IgdjU6Cj4gIC0gbm9uZS4KPiAtLS0K
-PiAgYXJjaC9hcm0vYm9vdC9kdHMvZXh5bm9zNDQxMi5kdHNpIHwgMSArCj4gIDEgZmlsZSBjaGFu
-Z2VkLCAxIGluc2VydGlvbigrKQo+Cj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL2V4
-eW5vczQ0MTIuZHRzaSBiL2FyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczQ0MTIuZHRzaQo+IGluZGV4
-IGE3NDk2ZDMuLmVlZTg2ZDIgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvZXh5bm9z
-NDQxMi5kdHNpCj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvZXh5bm9zNDQxMi5kdHNpCj4gQEAg
-LTc3Niw2ICs3NzYsNyBAQAo+ICAgICAgICAgY2xvY2stbmFtZXMgPSAibWl4ZXIiLCAiaGRtaSIs
-ICJzY2xrX2hkbWkiLCAidnAiOwo+ICAgICAgICAgY2xvY2tzID0gPCZjbG9jayBDTEtfTUlYRVI+
-LCA8JmNsb2NrIENMS19IRE1JPiwKPiAgICAgICAgICAgICAgICAgIDwmY2xvY2sgQ0xLX1NDTEtf
-SERNST4sIDwmY2xvY2sgQ0xLX1ZQPjsKPiArICAgICAgIGludGVyY29ubmVjdHMgPSA8JmJ1c19k
-aXNwbGF5ICZidXNfZG1jPjsKCkkgdGhpbmsgaXQgaXMgcmVhbGx5IGdvb2QgYW5kIG5lY2Vzc2Fy
-eSBpbiBvcmRlciB0byBzdXBwb3J0IHRoZQptaW5pbXVtIGJhbmR3aWR0aC4KVW50aWwgbm93LCBJ
-IGhhZCB0byBhZGQgdGhlIGFkZGl0aW9uYWwgY29kZSB0byBzdXBwb3J0IGZvciB0aGlzIHNhbWUg
-cHVycG9zZQppbnRvIHByb2R1Y3QgY29kZS4KClJldmlld2VkLWJ5OiBDaGFud29vIENob2kgPGN3
-MDAuY2hvaUBzYW1zdW5nLmNvbT4KCi0tIApCZXN0IFJlZ2FyZHMsCkNoYW53b28gQ2hvaQpTYW1z
-dW5nIEVsZWN0cm9uaWNzCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Linus,
+
+This patch series updates the bcm2835 pinctrl driver to support
+the BCM7211 SoC which is quite similar to 2711 (Raspberry Pi 4)
+except that it also supports wake-up interrupts.
+
+Thanks!
+
+Changes in v3:
+
+- added Rob's Acked-by for the binding patches (#1 and #2)
+- correct check on the number of GPIOs in irq_set_irq_wake (Stefan)
+
+Changes in v2:
+
+- fixed patch #3 to reference the correct data structure (Stefan)
+- fixed patch #4 to use conditional initialization and fetching of
+  interrupt resources to limit the memory overhead for non-7211 chips
+
+Florian Fainelli (4):
+  dt-bindings: pinctrl: Document 7211 compatible for
+    brcm,bcm2835-gpio.txt
+  dt-bindings: pinctrl: Document optional BCM7211 wake-up interrupts
+  pinctrl: bcm2835: Match BCM7211 compatible string
+  pinctrl: bcm2835: Add support for wake-up interrupts
+
+ .../bindings/pinctrl/brcm,bcm2835-gpio.txt    |  5 +-
+ drivers/pinctrl/bcm/pinctrl-bcm2835.c         | 80 ++++++++++++++++++-
+ 2 files changed, 83 insertions(+), 2 deletions(-)
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
