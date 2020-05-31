@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2338B1E9898
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 17:36:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4ED591E989F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 17:40:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LJaTXiFqLeg0J2YbX5vHrL14KEkMlTcjfpi6Wc1xJ+k=; b=Iy3QL6gR2hUT5n
-	IB0MkK0fvz/gFjRLDz8585RRrFk9xlQnSD50pfs4LkjsOijRnxzkcplmXW6fYY7H9F8OZjtLP/2og
-	ubvBw3HEW9dTYXaNpUsklp8iUP5DNpAr8VQh07McAn6UQIFCi0n4QuOwixztHNJkFWzmN/WsRdo5e
-	7MX3LNuLMNwuwjqfRxf8SGAt1LBQFImdv4uxu2JzuKTvBpXoKFhjW/0QYzK6v+FPgJ1V6jw1ozbWu
-	EkdhM4ucSJbAd805dsQD1EYt63xU2jEQXzrLcfMkU5IREZ5UrtMmVVvpLhwIscg5/jWiK/TGNdUm+
-	oxmURZSIpkvT1iLoStCA==;
+	List-Owner; bh=+yWIDr5fxvjFxVIO+BNjZQE70XPvmin9Ij7gUvjwd6k=; b=IsnFO+0A2AlBS1
+	cLcWBeEdFIa3TNp1z1jdc8YpXjbsLq1wqnQe2zxAXHvcl19zGAEpQvzFEO+AxpzAWLtijlbMyY0M9
+	1wjXo8/y7fJ/9tnjHloPgjW0NP8zuF1uP/sjsJ68owcaP6IrWuaGVhmra7zKsjdGzTuYAofkqnTEi
+	ehMrZnrAcgJHdolGGH/KHLI4N5X0V4+ZywJIgY57jTUJv4iHXLujCO1PZAqbYMap6ZgcGGDJZrWBo
+	w5UAcrI1xocPrjkeaq0N6N1j5LirUIrXnNrdScZC3S6V6ysu2rBOJW1xEoW2iWfmfwU6cKuDhTenR
+	47T9jRiyvLuQWLLuv/ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfQ0h-00022t-TK; Sun, 31 May 2020 15:36:27 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1jfQ4g-00051M-3P; Sun, 31 May 2020 15:40:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfQ0Z-00022I-Gt
- for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 15:36:21 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 45D7FFB03;
- Sun, 31 May 2020 17:36:12 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id BPwWvG9Wfq8s; Sun, 31 May 2020 17:36:11 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 52F2944BF8; Sun, 31 May 2020 17:36:10 +0200 (CEST)
-Date: Sun, 31 May 2020 17:36:10 +0200
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Pavel Machek <pavel@ucw.cz>
-Subject: Re: [PATCH 1/2] arm64: dts: Add a device tree for the Librem5 phone
-Message-ID: <20200531153610.GA9581@bogon.m.sigxcpu.org>
-References: <20200514155737.12160-1-martin.kepplinger@puri.sm>
- <20200529162850.GC3709@amd>
+ id 1jfQ4Z-00050W-Dz
+ for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 15:40:28 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CB41620659;
+ Sun, 31 May 2020 15:40:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1590939626;
+ bh=ZihwhZLxsqzhnXkpIKIJp7j0qhmfl7QS0mKBa+pmKOg=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=tp1Sv1rUKr6NrKiTwxlXF4s0pdEoq4kByy9NBdZGnj+otXZHgL3vPTm3kV/UlDZcy
+ IR70NT10/iVsHYN4bHayiWg2mM/gVhkFaHgFv23m99x35bH7xvtwmDNpiWgetRj8lO
+ EKkSDV4lAJJImd26X+G1XZaAVuYfJvZc8FKw6Yfo=
+Date: Sun, 31 May 2020 16:40:20 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: Alexandru Ardelean <alexandru.ardelean@analog.com>
+Subject: Re: [PATCH v2 3/3] iio: remove
+ iio_triggered_buffer_postenable()/iio_triggered_buffer_predisable()
+Message-ID: <20200531164020.765822dc@archlinux>
+In-Reply-To: <20200525113855.178821-3-alexandru.ardelean@analog.com>
+References: <20200525113855.178821-1-alexandru.ardelean@analog.com>
+ <20200525113855.178821-3-alexandru.ardelean@analog.com>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200529162850.GC3709@amd>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_083619_724506_2BB84892 
-X-CRM114-Status: GOOD (  15.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200531_084027_490004_F8D3CC03 
+X-CRM114-Status: GOOD (  15.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,96 +78,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Kepplinger <martin.kepplinger@puri.sm>, kernel@puri.sm,
- Anson.Huang@nxp.com, robh@kernel.org, festevam@gmail.com,
- s.hauer@pengutronix.de, angus@akkea.ca, linux-kernel@vger.kernel.org,
- devicetree@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- mchehab@kernel.org, shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linus.walleij@linaro.org, Lars-Peter Clausen <lars@metafoo.de>,
+ alexandre.torgue@st.com, linux-iio@vger.kernel.org, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, songqiang1304521@gmail.com,
+ mcoquelin.stm32@gmail.com, lorenzo.bianconi83@gmail.com, shawnguo@kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Fri, May 29, 2020 at 06:28:50PM +0200, Pavel Machek wrote:
-> Hi!
-> =
+On Mon, 25 May 2020 14:38:55 +0300
+Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
 
-> > From: "Angus Ainslie (Purism)" <angus@akkea.ca>
-> > =
+> From: Lars-Peter Clausen <lars@metafoo.de>
+> 
+> This patch should be squashed into the first one, as the first one is
+> breaking the build (intentionally) to make the IIO core files easier to
+> review.
+> 
+> Signed-off-by: Lars-Peter Clausen <lars@metafoo.de>
+> Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
+> ---
 
-> > Add a devicetree description for the Librem 5 phone. The early batches
-> > that have been sold are supported as well as the mass-produced device
-> > available later this year, see https://puri.sm/products/librem-5/
-> > =
+Friend poke.  Version log?
 
-> > This boots to a working console with working WWAN modem, wifi usdhc,
-> > IMU sensor device, proximity sensor, haptic motor, gpio keys, GNSS and =
-LEDs.
-> > =
+Other than the wistful comment below (which I'm not expecting you to
+do anything about btw!) whole series looks good to me.
 
-> > Signed-off-by: Martin Kepplinger <martin.kepplinger@puri.sm>
-> > Signed-off-by: Angus Ainslie (Purism) <angus@akkea.ca>
-> > Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
-> =
+These are obviously no functional changes (I think) so it's only really patch 2 that
+could do with more eyes and acks.
 
-> =
+Far as I can tell that case is fine as well because of the protections
+on being in the right mode, but more eyes on that would be great.
 
-> > +		blue {
-> > +			label =3D "phone:blue:front";
-> > +			label =3D "phone:green:front";
-> > +			label =3D "phone:red:front";
-> =
+So assuming that's fine, what commit message do you want me to use for
+the fused single patch?
 
-> Droid 4 uses "status-led:{red,green,blue}". Could this use same
-> naming?
+Thanks,
 
-Looking at leds-class.rst we don't have a useful devicename so
-should that just be omitted and s.th. like
+Jonathan
 
-		label =3D "blue:status";
-		label =3D "green:status";
-		label =3D "red:status";
-
-be used instead. If we want to map to current usage
-
-		label =3D "blue:status";
-		label =3D "green:boot";
-		label =3D "red:charging";
-
-would be even closer but since that is bound to change just going with
-"status" would make sense.
-Cheers,
- -- Guido
-
-
-> =
-
-> > +			label =3D "lm3560:flash";
-> > +			label =3D "lm3560:torch";
-> =
-
-> This is one LED, right? I'm pretty sure we don't want lm3560 in the
-> name... "main-camera:flash" would be better. Even better would be
-> something that's already in use.
-> =
-
-> > +			label =3D "white:backlight_cluster";
-> =
-
-> Make this ":backlight", please. Again, we want something that's
-> already used.
-> =
-
-> Best regards,
-> 									Pavel
-> -- =
-
-> (english) http://www.livejournal.com/~pavelmachek
-> (cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/b=
-log.html
-
-
+>  static const struct iio_trigger_ops atlas_interrupt_trigger_ops = {
+> diff --git a/drivers/iio/dummy/iio_simple_dummy_buffer.c b/drivers/iio/dummy/iio_simple_dummy_buffer.c
+> index 17606eca42b4..8e13c53d4360 100644
+> --- a/drivers/iio/dummy/iio_simple_dummy_buffer.c
+> +++ b/drivers/iio/dummy/iio_simple_dummy_buffer.c
+> @@ -99,20 +99,6 @@ static irqreturn_t iio_simple_dummy_trigger_h(int irq, void *p)
+>  }
+>  
+>  static const struct iio_buffer_setup_ops iio_simple_dummy_buffer_setup_ops = {
+> -	/*
+> -	 * iio_triggered_buffer_postenable:
+> -	 * Generic function that simply attaches the pollfunc to the trigger.
+> -	 * Replace this to mess with hardware state before we attach the
+> -	 * trigger.
+> -	 */
+> -	.postenable = &iio_triggered_buffer_postenable,
+> -	/*
+> -	 * iio_triggered_buffer_predisable:
+> -	 * Generic function that simple detaches the pollfunc from the trigger.
+> -	 * Replace this to put hardware state back again after the trigger is
+> -	 * detached but before userspace knows we have disabled the ring.
+> -	 */
+> -	.predisable = &iio_triggered_buffer_predisable,
+>  };
+>  
+Hmm. Guess we should probably 'invent' a reason to illustrate the bufer
+ops in the dummy example.  Anyone feeling creative?
 
 _______________________________________________
 linux-arm-kernel mailing list
