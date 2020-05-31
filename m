@@ -2,81 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62A591E97B1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 14:45:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8734A1E97D9
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 15:32:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=JFO8vvN90BUeBZ0fzm92JqIfDy0eKhOIF/1TjlvHJ1k=; b=f5gWK+OYztqr2IElYrqrnMw02
-	Rt5DPCJvF1yw2T5JBNyqlmUl7fws06BJJzWACI7SrqFJVadV1A111Cj+0drWR3hcEyyJ6EyY7vmwE
-	lJxFH1wQA4IwqnYn6thrXckzX5hnNLEMkWXDv/c3MXH2aFfars+4nlOXOYeBeYXbHJrWxQa7RULrv
-	gyg0PofgR20yecg080I6sWSsOh3c7XW1egWE5rvcdlTAg3o2pdTtpO1TLvpyvLSYVBNSOLeKg/9dr
-	fZGy+jVGVfTKuNE9oQYNaJI4h80JFjwAjfQwLaUBNK09BUJAuufH/LntTIVTYnBOK5vs4mJ8E4UQt
-	k27WxKq4g==;
+	 bh=14V1g2Een/+tog4Mm1CijdD0VeZhvFJ790l/gJBuAsE=; b=SiBt3gqTEGX2n8oqiTde8Pz1u
+	1SkA6c0GR2AuCqlVKjUZTb+euHgAivOWR30lrA6tpr4dosDSvKvV5dGoxc1PRiE+K2H1k4ihmZYUO
+	qsNVPKnwE3UwRffTDjW03QyND++ZedwxRner5ybMcPS7b+Le0irxSjsxAPmWQYYuy+MNyPJAuB5FJ
+	xhKyKc7yCI4LbtAvKHr4xqUB6jFnJNqU4/kVCO39SR24PlOnAOtr1yf3y4a91qUFvmQNp3Sb9+7M2
+	NPBV4xkDTOOpyF6m6zV+tdhaUKdrwfDcuTVqMNcgJ7u7lALOzYI2LzGj45CNuY4khQ2FxtPEAiFKV
+	YMtAYVvjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfNKg-0003sF-V2; Sun, 31 May 2020 12:44:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jfO4Y-00059A-Fb; Sun, 31 May 2020 13:32:18 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfNKW-0003ri-H7
- for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 12:44:46 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E5C5620707;
- Sun, 31 May 2020 12:44:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590929082;
- bh=2vL02Vz4eW1dAdaOSuiF9dEX0n59BC4p/43yQ+cQhzE=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=vFlD0XZGL4swONxoZWY9HC8REfRlBdsTA/uPXgH0nN3NiBqWmIm/6Bqq7Fqfq3W3Q
- 9PQgssKMp9KkuRXfuwkerCfpuPIB4sKNb6UXA6JD1ryjLTpw/nKpLpEnV+IQQDBgdL
- MeJ+uYq9xKf0P/tZBkcFdBnkJ+PGMUfcRsO2Rsg4=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jfNKS-00Ggkq-8R; Sun, 31 May 2020 13:44:40 +0100
+ id 1jfO4L-00058k-K4
+ for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 13:32:07 +0000
+Received: by mail-qk1-x742.google.com with SMTP id c185so6665247qke.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 31 May 2020 06:32:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=7mjQPFZLDY3zOJxS6K+hwBYDZ7ogeoyTkdPn+NbadQA=;
+ b=OvQUeyLfMwrvAin4ZW+rJVAV3Brt0cXRGFYFkbwhjGFNAlulLUWx2u+XlDicCYbIIv
+ cngSvARYr/W1RWxz62Nu9/fYPz98+YYIE53Mv5wST7j3b2/BZ+Ck8mzn/gm3kX/kiIjA
+ fAg42ScpwGAu2VBrl+wgSz0uMRL2n4sMzy7Peq2EXcpiI5HB2Cz5TRdsCHZmpxEQrbaM
+ 2hffWRCVFTk9uMmbVPUtjrifiAiqSS0uiWVBuJWkpUpP2QcBBHBKVdp+9FZbIqMo9v8k
+ i1wOJg8tK0Q6N7B/MBkUAO30R4AE8SPalg+BkZoLrEosrQxINBJg49zXwiwBVsqLoOiF
+ QIaA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=7mjQPFZLDY3zOJxS6K+hwBYDZ7ogeoyTkdPn+NbadQA=;
+ b=h57r428RS82Ergpf+/4vcIXBPOm9SQME+IprVuibZJtJVoHymLPrwFL6/9L00FV5Me
+ JtAnaVZprEYckX/JaAlxfWv9/+6vdK9La+GIuSjZ6eLu0LGdNuW/JwI1wb1vrDujPFLi
+ QQ+YryY1/uz1/sHaPdGxnD0m4tFjJ6+Vh+6I/ZljPhTVLyKPDVb0uxWL5CLOIq2HRf5F
+ PqCrmOjqeFwL4LNfjhQHBH9sbK6oa/WCvbCTQJxHrYLBpcL1v0hEw0S+SIn1/RvP+Zed
+ 7rxUTdjzx12r8oIOQyzGjSha5oR2d38fm3PeAGbokABqYJy4TGWhE0enmK4PwsKUiCEN
+ 2XKQ==
+X-Gm-Message-State: AOAM532j3PSAsY/qAPT5oZ9VQIXgYa5LBC3K7eVANjRsf5x1NPEwzosE
+ ba76oskMX0U5RToIIVLKrZU=
+X-Google-Smtp-Source: ABdhPJyLqWvBTi+Blweff9xoUoSmEYagIdQTmznRqhCCEj/Zz7hVlATzQXnLTG1Q06c2kaU18tdn4w==
+X-Received: by 2002:a05:620a:1f6:: with SMTP id
+ x22mr15510121qkn.199.1590931921668; 
+ Sun, 31 May 2020 06:32:01 -0700 (PDT)
+Received: from shinobu (072-189-064-225.res.spectrum.com. [72.189.64.225])
+ by smtp.gmail.com with ESMTPSA id q187sm11366164qka.34.2020.05.31.06.31.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 31 May 2020 06:32:00 -0700 (PDT)
+Date: Sun, 31 May 2020 09:31:47 -0400
+From: William Breathitt Gray <vilhelm.gray@gmail.com>
+To: Pavel Machek <pavel@ucw.cz>
+Subject: Re: [PATCH v2 4/4] docs: counter: Document character device interface
+Message-ID: <20200531133131.GA6725@shinobu>
+References: <cover.1589654470.git.vilhelm.gray@gmail.com>
+ <db0a9206d31c82f8381316ef5ff9872bfb53665b.1589654470.git.vilhelm.gray@gmail.com>
+ <20200529132604.GB1339@bug>
 MIME-Version: 1.0
-Date: Sun, 31 May 2020 13:44:40 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: Re: [PATCH RFCv2 9/9] arm64: Support async page fault
-In-Reply-To: <d0bfb944-b50a-608a-7dcc-5a409cdc4524@redhat.com>
-References: <20200508032919.52147-1-gshan@redhat.com>
- <20200508032919.52147-10-gshan@redhat.com>
- <81adf013-3de7-23e6-7648-8aec821b033c@redhat.com>
- <a6addc25-29af-3690-8392-efa5e8381e98@redhat.com>
- <8ab64c6a-582b-691d-79ab-21cdc0455cd3@redhat.com>
- <6a4a82a4-af01-98c2-c854-9199f55f7bd3@redhat.com>
- <6965aaf641a23fab64fbe2ceeb790272@kernel.org>
- <d0bfb944-b50a-608a-7dcc-5a409cdc4524@redhat.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <4337cca152df47c93d96e092189a0e36@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: pbonzini@redhat.com, gshan@redhat.com,
- kvmarm@lists.cs.columbia.edu, linux-kernel@vger.kernel.org,
- shan.gavin@gmail.com, catalin.marinas@arm.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200529132604.GB1339@bug>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_054444_606534_3E4DFB39 
-X-CRM114-Status: GOOD (  16.19  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200531_063205_679091_C47B18C0 
+X-CRM114-Status: GOOD (  22.47  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [vilhelm.gray[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,66 +100,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Gavin Shan <gshan@redhat.com>, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, shan.gavin@gmail.com, will@kernel.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: kamel.bouhara@bootlin.com, gwendal@chromium.org, david@lechnology.com,
+ linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
+ alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, mcoquelin.stm32@gmail.com,
+ fabrice.gasnier@st.com, syednwaris@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, jic23@kernel.org,
+ alexandre.torgue@st.com
+Content-Type: multipart/mixed; boundary="===============6416789360296114410=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-29 12:11, Paolo Bonzini wrote:
-> On 29/05/20 11:41, Marc Zyngier wrote:
->>>> 
->>>> 
->>>> For x86 the advantage is that the processor can take care of raising 
->>>> the
->>>> stage2 page fault in the guest, so it's faster.
->>>> 
->>> I think there might be too much overhead if the page can be populated
->>> quickly by host. For example, it's fast to populate the pages if 
->>> swapin
->>> isn't involved.
-> 
-> Those would still be handled by the host.  Only those that are not
-> present in the host (which you can see through the MMU notifier) would
-> be routed to the guest.  You can do things differently between "not
-> present fault because the page table does not exist" and "not present
-> fault because the page is missing in the host".
-> 
->>> If I'm correct enough, it seems arm64 doesn't have similar mechanism,
->>> routing stage2 page fault to guest.
->> 
->> Indeed, this isn't a thing on arm64. Exception caused by a S2 fault 
->> are
->> always routed to EL2.
-> 
-> Is there an ARM-approved way to reuse the S2 fault syndromes to detect
-> async page faults?
 
-It would mean being able to set an ESR_EL2 register value into ESR_EL1,
-and there is nothing in the architecture that would allow that, with
-the exception of nested virt: a VHE guest hypervisor running at EL1
-must be able to observe S2 faults for its own S2, as synthesized by
-the host hypervisor.
+--===============6416789360296114410==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="p4qYPpj5QlsIQJ0K"
+Content-Disposition: inline
 
-The trouble is that:
-- there is so far no commercially available CPU supporting NV
-- even if you could get hold of such a machine, there is no
-   guarantee that such "EL2 syndrome at EL1" is valid outside of
-   the nested context
-- this doesn't solve the issue for non-NV CPUs anyway
 
-> (By the way, another "modern" use for async page faults is for postcopy
-> live migration).
+--p4qYPpj5QlsIQJ0K
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Right. That's definitely a more interesting version of "swap-in".
+On Fri, May 29, 2020 at 03:26:04PM +0200, Pavel Machek wrote:
+> On Sat 2020-05-16 15:20:02, William Breathitt Gray wrote:
+> > This patch adds high-level documentation about the Counter subsystem
+> > character device interface.
+> >=20
+> > Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
+> > ---
+> >  Documentation/driver-api/generic-counter.rst | 112 +++++++++++++------
+> >  1 file changed, 76 insertions(+), 36 deletions(-)
+> >=20
+> > diff --git a/Documentation/driver-api/generic-counter.rst b/Documentati=
+on/driver-api/generic-counter.rst
+> > index 8f85c30dea0b..58045b33b576 100644
+> > --- a/Documentation/driver-api/generic-counter.rst
+> > +++ b/Documentation/driver-api/generic-counter.rst
+>=20
+> > +
+> > +Counter chrdev
+> > +--------------
+> > +Translates counter data to the standard Counter character device; data
+> > +is transferred via standard character device read/write calls.
+> > +
+> > +Sysfs Interface
+> > +=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> > +
+> > +Several sysfs attributes are generated by the Generic Counter interfac=
+e,
+> > +and reside under the `/sys/bus/counter/devices/counterX` directory,
+> > +where `X` is to the respective counter device id. Please see
+> > +Documentation/ABI/testing/sysfs-bus-counter for detailed information on
+> > +each Generic Counter interface sysfs attribute.
+> > +
+> > +Through these sysfs attributes, programs and scripts may interact with
+> > +the Generic Counter paradigm Counts, Signals, and Synapses of respecti=
+ve
+> > +counter devices.
+> > +
+> > +Counter Character Device
+> > +=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D
+> > +
+> > +Counter character device nodes are created under the `/dev` directory =
+as
+> > +`counterX`, where `X` is the respective counter device id. Defines for
+> > +the standard Counter data types are exposed via the userspace
+> > +`include/uapi/linux/counter-types.h` file.
+> > +
+> > +The first 196095 bytes of the character device serve as a control
+> > +selection area where control exposure of desired Counter components and
+> > +extensions may be selected. Each byte serves as a boolean selection
+> > +indicator for a respective Counter component or extension. The format =
+of
+> > +this area is as follows:
+> > +
+> > +* For each device extension, a byte is required.
+> > +* For each Signal, a byte is reserved for the Signal component, and a
+> > +  byte is reserved for each Signal extension.
+> > +* For each Count, a byte is reserved for the Count component, a byte is
+> > +  reserved for the count function, a byte is reserved for each Synapse
+> > +  action, and byte is reserved for each Count extension.
+> > +
+> > +The selected Counter components and extensions may then be interfaced
+> > +after the first 196095 bytes via standard character device read/write
+> > +operations. The number of bytes available for each component or
+> > +extension is dependent on their respective data type: u8 will have 1
+> > +byte available, u64 will have 8 bytes available, strings will have 64
+> > +bytes available, etc.
+>=20
+> This looks like very, very strange interface, and not described in detail
+> required to understand it.
+>=20
+> Could you take a look at input subsystem, /dev/input/event0? Perhaps it i=
+s=20
+> directly usable, and if not something similar should probably be acceptab=
+le.
+>=20
+> Best regards,
+> 									Pavel
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Yes, I don't think this is a good interface afterall. I'm implementing a
+different design for v3 that should be more intuitive. The input
+subsystem could be useful for streams of events such as timestamps, so
+I'll take a look at it as well in case something similar to it could be
+used.
+
+William Breathitt Gray
+
+--p4qYPpj5QlsIQJ0K
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEk5I4PDJ2w1cDf/bghvpINdm7VJIFAl7TscMACgkQhvpINdm7
+VJLU9hAAjZE3eFls1/dM0bpj9fivaZE+WCka2FakUqh0/3e48BVKe4lgLXBKxvBV
+EYJrNH9fastmhGjWwI2JU9nVaTMUMeDZMtQFX6WccLR6wbZbncR6eDv/N2sn0VNB
+jqQ+QdidLI+0tHJIVhQCzgEE0G6J6OMlUI1XkolNQVFKc2AWyxVFOKYcXWVlOaJF
+5RuNDd067JuwqUncPfnInAMsI/5310+8UTEDza3twfjg61EI5wzU/PB7CzeE5rpz
+uXex2BiRUcR/QQiNP1KjhrIyawQkBGhx4LKcqFGlx5QTwec/Jg7NmjyWEnSsboZg
+AnHu1w+b2UbsHhWWRSHDWB1m7qM+zKhDYTYVOr5d0u0qgvitqeOsOaux34/tNMTT
+cc4PTlf5zZFozDvTsilbLhNf5OhkIp5emAVCG5lXF4i0r7Q/jcRI0ScHZ3BSmL1p
+unxD66ZbwtxHej5HJWAdZ1VPGr0gjWL29q+cxK3B7RqOUgl5ZwYnKgUaqbJAOM6Q
+2K8z+BqLVH975M33jnPm0PSRyCxLfYPN+vKcEgw/ly3Z/3b3LYePtsuxc7bo8kVA
+7uNPKFaSp2VW1XCaAd0hqBx3/q/LZEQjaPGVFtWkrMpv/vnsJVWSPAoJO9+9T/zS
+HZ5TugHnAaPTVx7eo+0u7rzLOVv2wS5v0G0MU4KMwiN85Ws1Umo=
+=ca5o
+-----END PGP SIGNATURE-----
+
+--p4qYPpj5QlsIQJ0K--
+
+
+--===============6416789360296114410==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6416789360296114410==--
+
