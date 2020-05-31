@@ -2,65 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 185DB1E9492
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 01:58:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6494B1E9497
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 02:01:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P9JpI/XJWCjbV1WrlN3YLWarSNFPTdDemzroAqMJC8Q=; b=VJOOlGScWajZ+p
-	Lv37oEX3s7Ut7+qViLXFto8smGxozpzUiiec9SIyQCWUFFqZ6uRaV2Eyo/Oqa8pAXUAswYwCp77ua
-	j61hgqQIXkILH//JPFOzx2RzckBAoWkp2fQGL4RjevyEwW68YjdYogY1NLNJUGD6GO0Ttslbtrq4n
-	2Icb36A9g9GQMVf2pcrc9po6Agg+ID42Qv6YZYuspKAuBPSQErhS4h/qRh/XpX/1wX58V2TIMUcjo
-	37wxH66Y8GB5vQXEwmyBghsTGVny5Ur6XtzFhxnkrI8n3MTcW6RYGpDey1vOVHdy/EkB9fIwL+ihA
-	EBexdktvAsbeV3BDY/8w==;
+	List-Owner; bh=JWaV22iyD+2Wsi79nz5JFVO7sh8290HZZl5c/fLT2p4=; b=YcjJi7vQf3E5TK
+	h2OuefupyMNmtinwj8VZYzApSCmJ1y0O/ADcBXDjW4LW09Ug68YWKEM2B25CRuJ0ZzrLp+Sf9oTFB
+	d86EE3TtRQww4W+yWKE5P5kd9Y0Z+UBP+gEcVEAzjaQNojw1IVx1OzpdAzSmih7oWTRGSIlHNrsfH
+	KPrAj05NA26Q1l3zRb5TTjROFpUTkhPuic2KZglqS1WXWy+HWT1jEYNvPvpJ5D5GjR/HLhqf5nVTg
+	cr9uyAQG86gykHjX8+DnW5jLGChDD5LdpUdOZrCLhBt7SW6rTu8UA2pDojE0N9h2NQTGyOZRNIaqR
+	cZOXWAPho/YyabShlT1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfBNC-0001yO-Kl; Sat, 30 May 2020 23:58:42 +0000
+	id 1jfBQB-0004rs-7v; Sun, 31 May 2020 00:01:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfBN5-0001xo-32
- for linux-arm-kernel@lists.infradead.org; Sat, 30 May 2020 23:58:36 +0000
-Received: from mail-lj1-f175.google.com (mail-lj1-f175.google.com
- [209.85.208.175])
+ id 1jfBQ2-0004r2-RC
+ for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 00:01:40 +0000
+Received: from mail-lj1-f181.google.com (mail-lj1-f181.google.com
+ [209.85.208.181])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E648720776
+ by mail.kernel.org (Postfix) with ESMTPSA id 31293207BB
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 30 May 2020 23:58:32 +0000 (UTC)
+ Sun, 31 May 2020 00:01:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590883113;
- bh=VUz6nHZXjZ/r4lCM+WBxybE+t4xw4kvQcisbJmoT/Dg=;
+ s=default; t=1590883298;
+ bh=2p4SBOzIcxqldDQV+EgA8g75sZR4n3jmr6ytOgA1hPs=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=18ho/PhYFDtcVEFFwa9kL4XMLHSHS3voxfTSEgSRGbxy+wrWU2KJ6VYRzamYa2M4c
- oODZBCidDXttGIIH56KairuG4hGqUTBS3F5Tbg/TAihKM+8KqipnLdYGHacHH++erf
- 65sfhOv3W5JIIaGJXkt4EyX7DeBPsLOlDH0XR1Q8=
-Received: by mail-lj1-f175.google.com with SMTP id s1so3763782ljo.0
+ b=LAZ2ml8d4tllly6yUKcA/bFgxj/GgNzOm0gXCJCNiuDci5YuQ5r4pMox+T1OJYV72
+ 5PjXNv1Y5hW8w24ZrhtxIMQ3p8jB3cTQoOBZT4n+D+hRCfoeplyK67Lrya9geraBXN
+ ab34i9F2dcOBC5NYC1slzpGFwKQ7Cuys08WeKMAk=
+Received: by mail-lj1-f181.google.com with SMTP id m18so3739800ljo.5
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 30 May 2020 16:58:32 -0700 (PDT)
-X-Gm-Message-State: AOAM533iPKnPG/7PSjrblySY+53ldNdAV7+v2Bba3v6peMDgNOxu8RPL
- iT6z3iiUbynFZiYRKGnMRnKNKRR8RgylWcOtfVM=
-X-Google-Smtp-Source: ABdhPJzgSmF0+p11oPO+AZBR8CytQW5O5N8qZczqfnM6nRVQcCxJIot76Q2X9ANKtvk8r/cwbxtdchn2Ly+QLKlKomk=
-X-Received: by 2002:a05:651c:105a:: with SMTP id
- x26mr7446493ljm.159.1590883111232; 
- Sat, 30 May 2020 16:58:31 -0700 (PDT)
+ Sat, 30 May 2020 17:01:38 -0700 (PDT)
+X-Gm-Message-State: AOAM530gJikj7s+/Gt42JO7dobRrVfVgXsx/So1YSmaYTmfwoCoLnNv5
+ 7a1i9E4Zql3Ewrp3HP1PhdW3ZeyN26OEDAypMWY=
+X-Google-Smtp-Source: ABdhPJzU/8i47JcqsMEUq8jJ7WZ2YavPcT4Y4tu7MIIVGyb75w7ekgPJ3jPOCNAUup5FQRQs5D0G9kNh1jYivsMC+Lo=
+X-Received: by 2002:a2e:b5b0:: with SMTP id f16mr7700307ljn.100.1590883296477; 
+ Sat, 30 May 2020 17:01:36 -0700 (PDT)
 MIME-Version: 1.0
-References: <CGME20200529163225eucas1p1cfb2233c869dcc3dab84b754bbce17b6@eucas1p1.samsung.com>
+References: <CGME20200529163219eucas1p2d127fe3936921f53f6fe7902e7d14a3e@eucas1p2.samsung.com>
  <20200529163200.18031-1-s.nawrocki@samsung.com>
- <20200529163200.18031-4-s.nawrocki@samsung.com>
-In-Reply-To: <20200529163200.18031-4-s.nawrocki@samsung.com>
+ <20200529163200.18031-2-s.nawrocki@samsung.com>
+In-Reply-To: <20200529163200.18031-2-s.nawrocki@samsung.com>
 From: Chanwoo Choi <chanwoo@kernel.org>
-Date: Sun, 31 May 2020 08:57:54 +0900
-X-Gmail-Original-Message-ID: <CAGTfZH1KC=jpQ5GXNtEf1cn7+WqXJdqbbVKmpxr8Snh4GEy8bA@mail.gmail.com>
-Message-ID: <CAGTfZH1KC=jpQ5GXNtEf1cn7+WqXJdqbbVKmpxr8Snh4GEy8bA@mail.gmail.com>
-Subject: Re: [RFC PATCH v5 3/6] PM / devfreq: exynos-bus: Add registration of
- interconnect child device
+Date: Sun, 31 May 2020 09:01:00 +0900
+X-Gmail-Original-Message-ID: <CAGTfZH1yM0KRaEF5VTs2juTm+yrK9VqQZxWjdNf_ffjGHWPLsg@mail.gmail.com>
+Message-ID: <CAGTfZH1yM0KRaEF5VTs2juTm+yrK9VqQZxWjdNf_ffjGHWPLsg@mail.gmail.com>
+Subject: Re: [RFC PATCH v5 1/6] dt-bindings: exynos-bus: Add documentation for
+ interconnect properties
 To: Sylwester Nawrocki <s.nawrocki@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200530_165835_179164_994E1342 
-X-CRM114-Status: GOOD (  25.68  )
+X-CRM114-CacheID: sfid-20200530_170138_921036_B1E59301 
+X-CRM114-Status: GOOD (  22.77  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -100,101 +99,71 @@ Cc: linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
  Georgi Djakov <georgi.djakov@linaro.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
  Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sylwester,
-
-On Sat, May 30, 2020 at 1:33 AM Sylwester Nawrocki
-<s.nawrocki@samsung.com> wrote:
->
-> This patch adds registration of a child platform device for the exynos
-> interconnect driver. It is assumed that the interconnect provider will
-> only be needed when #interconnect-cells property is present in the bus
-> DT node, hence the child device will be created only when such a property
-> is present.
->
-> Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
->
-> Changes for v5:
->  - new patch.
-> ---
->  drivers/devfreq/exynos-bus.c | 17 +++++++++++++++++
->  1 file changed, 17 insertions(+)
->
-> diff --git a/drivers/devfreq/exynos-bus.c b/drivers/devfreq/exynos-bus.c
-> index 8fa8eb5..856e37d 100644
-> --- a/drivers/devfreq/exynos-bus.c
-> +++ b/drivers/devfreq/exynos-bus.c
-> @@ -24,6 +24,7 @@
->
->  struct exynos_bus {
->         struct device *dev;
-> +       struct platform_device *icc_pdev;
->
->         struct devfreq *devfreq;
->         struct devfreq_event_dev **edev;
-> @@ -156,6 +157,8 @@ static void exynos_bus_exit(struct device *dev)
->         if (ret < 0)
->                 dev_warn(dev, "failed to disable the devfreq-event devices\n");
->
-> +       platform_device_unregister(bus->icc_pdev);
-> +
->         dev_pm_opp_of_remove_table(dev);
->         clk_disable_unprepare(bus->clk);
->         if (bus->opp_table) {
-> @@ -168,6 +171,8 @@ static void exynos_bus_passive_exit(struct device *dev)
->  {
->         struct exynos_bus *bus = dev_get_drvdata(dev);
->
-> +       platform_device_unregister(bus->icc_pdev);
-> +
->         dev_pm_opp_of_remove_table(dev);
->         clk_disable_unprepare(bus->clk);
->  }
-> @@ -431,6 +436,18 @@ static int exynos_bus_probe(struct platform_device *pdev)
->         if (ret < 0)
->                 goto err;
->
-> +       /* Create child platform device for the interconnect provider */
-> +       if (of_get_property(dev->of_node, "#interconnect-cells", NULL)) {
-> +                   bus->icc_pdev = platform_device_register_data(
-> +                                               dev, "exynos-generic-icc",
-> +                                               PLATFORM_DEVID_AUTO, NULL, 0);
-> +
-> +                   if (IS_ERR(bus->icc_pdev)) {
-> +                           ret = PTR_ERR(bus->icc_pdev);
-> +                           goto err;
-> +                   }
-> +       }
-> +
->         max_state = bus->devfreq->profile->max_state;
->         min_freq = (bus->devfreq->profile->freq_table[0] / 1000);
->         max_freq = (bus->devfreq->profile->freq_table[max_state - 1] / 1000);
-> --
-> 2.7.4
->
-
-It looks like very similar like the registering the interconnect
-device of imx-bus.c
-and I already reviewed and agreed this approach.
-
-Acked-by: Chanwoo Choi <cw00.choi@samsung.com>
-
-nitpick: IMHO, I think that 'exynos-icc' is proper and simple without
-'generic' word.
-If we need to add new icc compatible int the future, we will add
-'exynosXXXX-icc' new compatible.
-But, I'm not forcing it. just opinion. Anyway, I agree this approach.
-
--- 
-Best Regards,
-Chanwoo Choi
-Samsung Electronics
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgU3lsd2VzdGVyLAoKCk9uIFNhdCwgTWF5IDMwLCAyMDIwIGF0IDE6MzIgQU0gU3lsd2VzdGVy
+IE5hd3JvY2tpCjxzLm5hd3JvY2tpQHNhbXN1bmcuY29tPiB3cm90ZToKPgo+IEFkZCBkb2N1bWVu
+dGF0aW9uIGZvciBuZXcgb3B0aW9uYWwgcHJvcGVydGllcyBpbiB0aGUgZXh5bm9zIGJ1cyBub2Rl
+czoKPiBzYW1zdW5nLGludGVyY29ubmVjdC1wYXJlbnQsICNpbnRlcmNvbm5lY3QtY2VsbHMuCj4g
+VGhlc2UgcHJvcGVydGllcyBhbGxvdyB0byBzcGVjaWZ5IHRoZSBTb0MgaW50ZXJjb25uZWN0IHN0
+cnVjdHVyZSB3aGljaAo+IHRoZW4gYWxsb3dzIHRoZSBpbnRlcmNvbm5lY3QgY29uc3VtZXIgZGV2
+aWNlcyB0byByZXF1ZXN0IHNwZWNpZmljCj4gYmFuZHdpZHRoIHJlcXVpcmVtZW50cy4KPgo+IFNp
+Z25lZC1vZmYtYnk6IEFydHVyIMWad2lnb8WEIDxhLnN3aWdvbkBzYW1zdW5nLmNvbT4KPiBTaWdu
+ZWQtb2ZmLWJ5OiBTeWx3ZXN0ZXIgTmF3cm9ja2kgPHMubmF3cm9ja2lAc2Ftc3VuZy5jb20+Cj4g
+LS0tCj4gQ2hhbmdlcyBmb3IgdjU6Cj4gIC0gZXh5bm9zLGludGVyY29ubmVjdC1wYXJlbnQtbm9k
+ZSByZW5hbWVkIHRvIHNhbXN1bmcsaW50ZXJjb25uZWN0LXBhcmVudAo+IC0tLQo+ICBEb2N1bWVu
+dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGV2ZnJlcS9leHlub3MtYnVzLnR4dCB8IDE1ICsr
+KysrKysrKysrKystLQo+ICAxIGZpbGUgY2hhbmdlZCwgMTMgaW5zZXJ0aW9ucygrKSwgMiBkZWxl
+dGlvbnMoLSkKPgo+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGlu
+Z3MvZGV2ZnJlcS9leHlub3MtYnVzLnR4dCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
+aW5ncy9kZXZmcmVxL2V4eW5vcy1idXMudHh0Cj4gaW5kZXggZTcxZjc1Mi4uZTBkMmRhYSAxMDA2
+NDQKPiAtLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGV2ZnJlcS9leHlu
+b3MtYnVzLnR4dAo+ICsrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kZXZm
+cmVxL2V4eW5vcy1idXMudHh0Cj4gQEAgLTUxLDYgKzUxLDExIEBAIE9wdGlvbmFsIHByb3BlcnRp
+ZXMgb25seSBmb3IgcGFyZW50IGJ1cyBkZXZpY2U6Cj4gIC0gZXh5bm9zLHNhdHVyYXRpb24tcmF0
+aW86IHRoZSBwZXJjZW50YWdlIHZhbHVlIHdoaWNoIGlzIHVzZWQgdG8gY2FsaWJyYXRlCj4gICAg
+ICAgICAgICAgICAgICAgICAgICAgdGhlIHBlcmZvcm1hbmNlIGNvdW50IGFnYWluc3QgdG90YWwg
+Y3ljbGUgY291bnQuCj4KPiArT3B0aW9uYWwgcHJvcGVydGllcyBmb3IgaW50ZXJjb25uZWN0IGZ1
+bmN0aW9uYWxpdHkgKFFvUyBmcmVxdWVuY3kgY29uc3RyYWludHMpOgo+ICstIHNhbXN1bmcsaW50
+ZXJjb25uZWN0LXBhcmVudDogcGhhbmRsZSB0byB0aGUgcGFyZW50IGludGVyY29ubmVjdCBub2Rl
+OyBmb3IKPiArICBwYXNzaXZlIGRldmljZXMgc2hvdWxkIHBvaW50IHRvIHNhbWUgbm9kZSBhcyB0
+aGUgZXh5bm9zLHBhcmVudC1idXMgcHJvcGVydHkuCj4gKy0gI2ludGVyY29ubmVjdC1jZWxsczog
+c2hvdWxkIGJlIDAKPiArCj4gIERldGFpbGVkIGNvcnJlbGF0aW9uIGJldHdlZW4gc3ViLWJsb2Nr
+cyBhbmQgcG93ZXIgbGluZSBhY2NvcmRpbmcgdG8gRXh5bm9zIFNvQzoKPiAgLSBJbiBjYXNlIG9m
+IEV4eW5vczMyNTAsIHRoZXJlIGFyZSB0d28gcG93ZXIgbGluZSBhcyBmb2xsb3dpbmc6Cj4gICAg
+ICAgICBWRERfTUlGIHwtLS0gRE1DCj4gQEAgLTE4NSw4ICsxOTAsOSBAQCBFeGFtcGxlMToKPiAg
+ICAgICAgIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0KPgo+ICBFeGFtcGxlMiA6Cj4gLSAgICAgICBUaGUgYnVzIG9mIERNQyAoRHluYW1p
+YyBNZW1vcnkgQ29udHJvbGxlcikgYmxvY2sgaW4gZXh5bm9zMzI1MC5kdHNpCj4gLSAgICAgICBp
+cyBsaXN0ZWQgYmVsb3c6Cj4gKyAgICAgICBUaGUgYnVzIG9mIERNQyAoRHluYW1pYyBNZW1vcnkg
+Q29udHJvbGxlcikgYmxvY2sgaW4gZXh5bm9zMzI1MC5kdHNpIGlzCj4gKyAgICAgICBsaXN0ZWQg
+YmVsb3cuIEFuIGludGVyY29ubmVjdCBwYXRoICJidXNfbGNkMCAtLSBidXNfbGVmdGJ1cyAtLSBi
+dXNfZG1jIgo+ICsgICAgICAgaXMgZGVmaW5lZCBmb3IgZGVtb25zdHJhdGlvbiBwdXJwb3Nlcy4K
+Pgo+ICAgICAgICAgYnVzX2RtYzogYnVzX2RtYyB7Cj4gICAgICAgICAgICAgICAgIGNvbXBhdGli
+bGUgPSAic2Ftc3VuZyxleHlub3MtYnVzIjsKPiBAQCAtMzc2LDEyICszODIsMTUgQEAgRXhhbXBs
+ZTIgOgo+ICAgICAgICAgJmJ1c19kbWMgewo+ICAgICAgICAgICAgICAgICBkZXZmcmVxLWV2ZW50
+cyA9IDwmcHBtdV9kbWMwXzM+LCA8JnBwbXVfZG1jMV8zPjsKPiAgICAgICAgICAgICAgICAgdmRk
+LXN1cHBseSA9IDwmYnVjazFfcmVnPjsgICAgICAvKiBWRERfTUlGICovCj4gKyAgICAgICAgICAg
+ICAgICNpbnRlcmNvbm5lY3QtY2VsbHMgPSA8MD47Cj4gICAgICAgICAgICAgICAgIHN0YXR1cyA9
+ICJva2F5IjsKPiAgICAgICAgIH07Cj4KPiAgICAgICAgICZidXNfbGVmdGJ1cyB7Cj4gICAgICAg
+ICAgICAgICAgIGRldmZyZXEtZXZlbnRzID0gPCZwcG11X2xlZnRidXNfMz4sIDwmcHBtdV9yaWdo
+dGJ1c18zPjsKPiAgICAgICAgICAgICAgICAgdmRkLXN1cHBseSA9IDwmYnVjazNfcmVnPjsKPiAr
+ICAgICAgICAgICAgICAgc2Ftc3VuZyxpbnRlcmNvbm5lY3QtcGFyZW50ID0gPCZidXNfZG1jPjsK
+PiArICAgICAgICAgICAgICAgI2ludGVyY29ubmVjdC1jZWxscyA9IDwwPjsKPiAgICAgICAgICAg
+ICAgICAgc3RhdHVzID0gIm9rYXkiOwo+ICAgICAgICAgfTsKPgo+IEBAIC0zOTIsNiArNDAxLDgg
+QEAgRXhhbXBsZTIgOgo+Cj4gICAgICAgICAmYnVzX2xjZDAgewo+ICAgICAgICAgICAgICAgICBk
+ZXZmcmVxID0gPCZidXNfbGVmdGJ1cz47Cj4gKyAgICAgICAgICAgICAgIHNhbXN1bmcsaW50ZXJj
+b25uZWN0LXBhcmVudCA9IDwmYnVzX2xlZnRidXM+Owo+ICsgICAgICAgICAgICAgICAjaW50ZXJj
+b25uZWN0LWNlbGxzID0gPDA+Owo+ICAgICAgICAgICAgICAgICBzdGF0dXMgPSAib2theSI7Cj4g
+ICAgICAgICB9Owo+Cj4gLS0KPiAyLjcuNAo+CgpJZiB5b3UgYWRkIHRoZSB1c2FnZSBleGFtcGxl
+IGxpa2UgdGhlIG1peGVyIGRldmljZSBvZiBwYXRjaDUgdG8gdGhpcwpkdC1iaW5kaW5nIGRvY3Vt
+ZW50LApJIHRoaW5rIGl0IGlzIHZlcnkgYmVuZWZpY2lhbCBhbmQgbW9yZSBoZWxwZnVsIGZvciB1
+c2VyIG9mCmV4eW5vcy1idXMvZXh5bm9zLWdlbmVyaWMtaWNjLgoKQWNrZWQtYnk6IENoYW53b28g
+Q2hvaSA8Y3cwMC5jaG9pQHNhbXN1bmcuY29tPgoKLS0KQmVzdCBSZWdhcmRzLApDaGFud29vIENo
+b2kKU2Ftc3VuZyBFbGVjdHJvbmljcwoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
