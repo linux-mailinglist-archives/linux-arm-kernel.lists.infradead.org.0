@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CD341E983E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 16:47:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 437BC1E986E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 17:18:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jAjLiXU4YvDDlAfWlRJeGjGSd6dcAO5F+aAJqjDX4u4=; b=tsJzqwjf6gKRCQ
-	K9pz2JOAkKpgBgdUJmgxGtZX4UgzjrSsrUy1HouyTSabKFnP/DY1ze0DNV8Rl/UFIA7817XRuYNc+
-	KF6O9QBED+VB7arQ5tNuSMDjr6cnd3cJYsT4GnSLhKoNVroBwOIbbNtGjDwHShfP9nWcIvsHLuqJm
-	JexeNygPzu2YpE8TLt32MemMAuHVuyUNht7iYxAJq2pMXeSpH/bTmHmy670KeO2zrDO42ouiivPDQ
-	ToxXvOFEmzQBWSGVG5+TunY3nXM/TV7BABTaItPjyCXKalw3ppMt9Qwt/Sm0JoFOmpVIqWXqoMyfL
-	jYylrTJ8yyY7I2tl457g==;
+	List-Owner; bh=DkApKJODNP7A9s4v3RLkpiPCGSVzajOPb0i05JNK9gw=; b=C62l7m5ISuxp9s
+	aEhu+leWG2wpJU740+An606+GogbFyhOx4i1Ff5JjTKiKkD5/I7W5XGUUGsOPb7+sNz5SLZuq7b3/
+	iEoyDEO2eObae5hLCBTRkrZ3z/PfJYhRZQhuATlrNBItSSffqqWAlgy+BwAbseqHU1nOx1E2JlSQ4
+	WJFGU9LfCcKPWe0/WYOMxzQsTuoXmcD7Pblaj6kWL4cSGVCuyq7LDicGfK/Tjo8NHr2pdE5gfyrM7
+	JGrkW5Mlc8XXwQTogamGQeqlNU/ASWWZv0Bh9iWYVUWrVMMgjES94y2cikGrMYlzdKp6ilG1Zmy97
+	E56xjMel/eVAHfcuaI9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfPFY-0006qB-8M; Sun, 31 May 2020 14:47:44 +0000
+	id 1jfPjJ-0007zp-5Q; Sun, 31 May 2020 15:18:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfPFO-0006pk-Hm
- for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 14:47:36 +0000
+ id 1jfPjA-0007zA-4z
+ for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 15:18:22 +0000
 Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
  [82.4.196.95])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A1944206EB;
- Sun, 31 May 2020 14:47:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0906F2076B;
+ Sun, 31 May 2020 15:18:15 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590936454;
- bh=J2GNlv+3GaeMBkMkSVSiyjSrU8C+abkuOXbakFr1cu0=;
+ s=default; t=1590938298;
+ bh=E+uMzovuaorWpT7lwFcO50Gyd9dtFoZvVuV6RGxGkco=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=lfk6ZgAqntfUDrsV/veuzRxYwl99r+Mis14TAgmUOYRCy5MwU2LjMFqL4o88ZzFyE
- qIKwtsZa9AQ8+1CD7Y+OnomfFWcqrFdlDiEbjaZKg4wkcqFqw2egHhF1DfynsePZQw
- 1bnbMrI/MheDuAbQks7u6RIezl2U/TS463xBWEzw=
-Date: Sun, 31 May 2020 15:47:29 +0100
+ b=Tit+rF8YyfFOwvzqKlV1x+Aq7yQeq3GORg8/7lCSZ1ufiXiW62c7XyEcreA5qhYuB
+ yYDlXqGOLSQxyO9WrLcg/8k3UdYCQY79PSjj5z6tDgIPqtrsuNTaIu1AGqPIzVg9h2
+ cIapxa+9qNTKLNwGFF8FBelLu+LzO9DtFEPvWxxE=
+Date: Sun, 31 May 2020 16:18:13 +0100
 From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH v3] iio: stm32-adc: remove usage of iio_priv_to_dev()
- helper
-Message-ID: <20200531154729.6e9f48da@archlinux>
-In-Reply-To: <cc5dc422-d1a6-ab95-a1c3-a8e0b38a145a@st.com>
-References: <20200525090720.72696-1-alexandru.ardelean@analog.com>
- <20200526134448.7328-1-alexandru.ardelean@analog.com>
- <cc5dc422-d1a6-ab95-a1c3-a8e0b38a145a@st.com>
+To: William Breathitt Gray <vilhelm.gray@gmail.com>
+Subject: Re: [PATCH v2 0/4] Introduce the Counter character device interface
+Message-ID: <20200531161813.658ffdfb@archlinux>
+In-Reply-To: <20200524175439.GA14300@shinobu>
+References: <cover.1589654470.git.vilhelm.gray@gmail.com>
+ <20200524172542.31ff6ac7@archlinux>
+ <20200524175439.GA14300@shinobu>
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_074734_629819_FB6EA3D7 
-X-CRM114-Status: GOOD (  26.23  )
+X-CRM114-CacheID: sfid-20200531_081820_235361_3E0EE0B9 
+X-CRM114-Status: GOOD (  48.82  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,431 +78,274 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: olivier.moysan@st.com, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- Alexandru Ardelean <alexandru.ardelean@analog.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: kamel.bouhara@bootlin.com, gwendal@chromium.org, david@lechnology.com,
+ linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
+ alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com, syednwaris@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 26 May 2020 17:46:41 +0200
-Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
+On Sun, 24 May 2020 13:54:39 -0400
+William Breathitt Gray <vilhelm.gray@gmail.com> wrote:
 
-> On 5/26/20 3:44 PM, Alexandru Ardelean wrote:
-> > We may want to get rid of the iio_priv_to_dev() helper. The reason is that
-> > we will hide some of the members of the iio_dev structure (to prevent
-> > drivers from accessing them directly), and that will also mean hiding the
-> > implementation of the iio_priv_to_dev() helper inside the IIO core.
+> On Sun, May 24, 2020 at 05:25:42PM +0100, Jonathan Cameron wrote:
 > > 
-> > Hiding the implementation of iio_priv_to_dev() implies that some fast-paths
-> > may not be fast anymore, so a general idea is to try to get rid of the
-> > iio_priv_to_dev() altogether.
-> > The iio_priv() helper won't be affected by the rework, as the iio_dev
-> > struct will keep a reference to the private information.
+> > ...
+> >   
+> > > The following are some questions I have about this patchset:
+> > > 
+> > > 1. Should the data format of the character device be configured via a
+> > >    sysfs attribute?
+> > > 
+> > >    In this patchset, the first 196095 bytes of the character device are
+> > >    dedicated as a selection area to choose which Counter components or
+> > >    extensions should be exposed; the subsequent bytes are the actual
+> > >    data for the Counter components and extensions that were selected.  
 > > 
-> > For this driver, not using iio_priv_to_dev(), means reworking some paths to
-> > pass the iio device and using iio_priv() to access the private information.
-> > 
-> > Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-> > ---
-> > 
-> > Changelog v2 -> v3:
-> > - update doc-strings; warnings show-up during build with W=1 arg
-> > 
-> > Changelog v1 -> v2:
-> > - converted to pass reference to IIO device in function hooks (vs
-> >   reference
-> >   to adc private data)
-> > 
-> >  drivers/iio/adc/stm32-adc.c | 118 +++++++++++++++++++-----------------
-> >  1 file changed, 63 insertions(+), 55 deletions(-)  
+> > That sounds like the worst of all possible worlds.  Reality is you need
+> > to do some magic library so at that point you might as well have ioctl
+> > options to configure it.   I wonder if you can keep the data flow
+> > to be a simple 'read' from the chardev but move the control away from
+> > that.  Either control via some chrdevs but keep them to the 'set / get'
+> > if this element is going to turn up in the read or not.  You rapidly
+> > run into problems though, such as now to see how large a given element
+> > is going to be etc.  Plus ioctls are rather messier to extend than
+> > simply adding a new sysfs file.  Various subsystems do complex
+> > 'descriptor' type approaches to get around this, or you could do
+> > self describing records rather than raw data - like an input
+> > ev_dev event.  
 > 
-> Hi Alexandru,
+> Yes I agree, I don't think combining nondata with data is good design --
+> it's better if users are able to simply perform read/write on the
+> character device without having to keep track of valid offsets and
+> controls.
 > 
-> Acked-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+> After giving this some more thought, I believe human-readable sysfs
+> attributes are the way to go to support configuration of the character
+> device. I am thinking of a system like this:
+> 
+> * Users configure the counter character device via a sysfs attribute
+>   such as /sys/bus/counter/devices/counterX/chrdev_format or similar.
+> 
+> * Users may write to this sysfs attribute to select the components they
+>   want to interface -- the layout can be determined as well from the
+>   order. For example:
+> 
+>   # echo "C0 C3 C2" > /sys/bus/counter/devices/counter0/chrdev_format
 
-Applied to the togreg branch of iio.git and pushed out as testing for the
-autobuilders to poke at it.
+I guess that 'just' meets the sysfs requirement of one file => one thing.
 
-Thanks,
+> 
+>   This would select Counts 0, 3, and 2 (in that order) to be available
+>   in the /dev/counter0 node as a contiguous memory region.
+> 
+>   You can select extensions in a similar fashion:
+> 
+>   # echo "C4E2 S1E0" > /sys/bus/counter/devices/counter0/chrdev_format
+> 
+>   This would select extension 2 from Count 4, and extension 0 from
+>   Signal 1.
+
+I'm not totally clear why we'd want to have a chrdev access to extensions.
+To be honest I'm not totally sure what an extension is today as it's been
+a week ;)
+
+Perhaps an example?  I see timestamp below.  What is that attached to?
+If we gave multiple counters, do they each have a timestamp?
+
+> 
+> * Users may read from this chrdev_format sysfs attribute in order to see
+>   the currently configured format of the character device.
+> 
+> * Users may perform read/write operations on the /dev/counterX node
+>   directly; the layout of the data is what they user has configured via
+>   the chrdev_format sysfs attribute. For example:
+> 
+>   # echo "C0 C1 S0 S1" > /sys/bus/counter/devices/counter0/chrdev_format
+> 
+>   Yields the following /dev/counter0 memory layout:
+> 
+>   +-----------------+------------------+----------+----------+
+>   | Byte 0 - Byte 7 | Byte 8 - Byte 15 | Byte 16  | Byte 17  |
+>   +-----------------+------------------+----------+----------+
+>   | Count 0         | Count 1          | Signal 0 | Signal 2 |
+>   +-----------------+------------------+----------+----------+
+> 
+> * Users may perform select/poll operations on the /dev/counterX node.
+>   Users can be notified if data is available or events have occurred.
+
+One thing to think about early if watermarks.  We bolted them on
+late in IIO and maybe we could have done it better from the start.
+I'd almost guarantee someone will want one fairly soon - particularly
+as it's more than possible you'll have a counter device with a
+hardware fifo.  I have some vague recollection that ti-ecap
+stuff could be presented as a short fifo for starters.
+
+> 
+> The benefit of this design is that the format is robust so users can
+> choose the components they want to interface and in the layout they
+> want. For example, if I am writing a userspace application to control a
+> dual-axis positioning table, I can select the two counts I care about
+> for the position axes. This allows me to read just those two values
+> directly from /dev/counterX with a simple read() call, without having to
+> fumble around seeking to an offset and parsing the layout.
+
+I wonder if I'm over thinking things for counters, but you may run into
+the complexity of different counters having different sampling frequencies.
+Here you are suggesting a scheme that I think ends up closer to IIO than
+input.   That makes this case a pain.   Input takes the view that it's
+fine to have data coming in any order and frequency because every
+record is self describing.  I'm not sure it matters here, but it is
+a nice layer of flexibility, but you do loose the efficiency of
+the description being external to the data flow.
+
+> 
+> Similarly, support for future extensions is simple to implement. When
+> timestamp support is implemented, users can just select the desired
+> timestamp extension and read it directly from the /dev/counterX node;
+> they should also be able to perform a select()/poll() call to be
+> notified on new timestamps.
+> 
+> So what do you think of this sort of design? I think there is a useful
+> robustness to the simplicity of performing a single read/write call on
+> /dev/counterX.
+
+It seems like a reasonable solution to me.  The only blurry
+boundary to my mind is what level of buffering is behind this.
+The things you can do are open, non blocking read, blocking read and select.
+
+If we have a counter that is sampled on demand, then 
+1) Non blocking read - makes not sense, fair enough I guess, could make it
+   the same as a blocking read.
+2) Blocking read - reads from the sensor.
+3) Select, meaningless as all reads are done on demand - so I guess you
+   hardwire it to return immediately.
+4) open. Nothing special
+
+If you have a counter that is self clocking then data gets pushed into some
+software structure (probably kfifo)
+1) Blocking read, question of semantics to resolve
+   a) Return when 'some' data is available (like a socket)
+   b) Return when 'requested amount of data is available'?
+2) Non blocking read. Return whatever happens to be available.
+3) Select.  Semantics to be defined.
+   a) Some data?
+   b) Watermark based (default watermark is 0 so any data triggers it)
+4) Open.  Starts up sampling of configured set - (typically turns on the
+   device, enables interrupt output etc.)
+
+So some corners to resolve but should all work.
+
+
+> 
+> > > 
+> > >    Moving this selection to a sysfs attribute and dedicating the
+> > >    character device to just data transfer might be a better design. If
+> > >    such a design is chosen, should the selection attribute be
+> > >    human-readable or binary?  
+> > 
+> > Sysfs basically requires things are more or less human readable.
+> > So if you go that way I think it needs to be.
+> >   
+> > > 
+> > > 2. How much space should allotted for strings?
+> > > 
+> > >    Each Counter component and extension has a respective size allotted
+> > >    for its data (u8 data is allotted 1 byte, u64 data is allotted 8
+> > >    bytes, etc.); I have arbitrarily chosen to allot 64 bytes for
+> > >    strings. Is this an apt size, or should string data be allotted more
+> > >    or less space?  
+> > 
+> > I'd go with that being big enough, but try to keep the expose interface
+> > such that the size can change it it needs to the in the future.  
+> 
+> Following along with the separation of control vs data as discussed
+> above, we could support a more variable size by exposing it through a
+> sysfs attribute (maybe a chrdev_string_size attribute or similar).
+
+I'm unconvinced you'd ever want to return a string via the chardev.
+People are using the chrdev to get efficiency. String based data flows
+are rarely that!
+
+> 
+> >   
+> > > 
+> > > 3. Should the owning component of an extension be handled by the device
+> > >    driver or Counter subsystem?
+> > > 
+> > >    The Counter subsystem figures out the owner (enum counter_owner_type)
+> > >    for each component/extension in the counter-sysfs and counter-chrdev
+> > >    code. When a callback must be executed, there are various switch
+> > >    statements throughout the code to check whether the respective
+> > >    Device, Signal, or Count version of the callback should be executed;
+> > >    similarly, the appropriate owner type must match for the struct
+> > >    counter_data macros such as COUNTER_DATA_DEVICE_U64,
+> > >    COUNTER_DATA_SIGNAL_U64, COUNTER_DATA_COUNT_U64, etc.
+> > > 
+> > >    All this complexity in the Counter subsystem code can be eliminated
+> > >    if a single callback type with a `void *owner` parameter is defined
+> > >    for use with all three owner types (Device, Signal, and Count). The
+> > >    device driver would then be responsible for casting the callback
+> > >    argument to the appropriate owner type; but in theory, this should
+> > >    not be much of a problem since the device driver is responsible for
+> > >    assigning the callbacks to the owning component anyway.  
+> > 
+> > Whilst its more complex for subsytem I think it's better to keep everything
+> > typed if we possibly can.  Always a trade off though, so use your discretion.
+> > 
+> > Jonathan  
+> 
+> I'm going to keep it all typed for now since I don't want to make too
+> many changes at once. Since this is somewhat unrelated to the purpose of
+> introducing Counter character devices, I'll postpone the discussion to a
+> later date after the Counter character device interface is merged.
+
+Makes sense.
 
 Jonathan
-
 > 
-> Thanks,
-> Fabrice
+> William Breathitt Gray
 > 
 > > 
-> > diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
-> > index ae622ee6d08c..1dd97ec5571c 100644
-> > --- a/drivers/iio/adc/stm32-adc.c
-> > +++ b/drivers/iio/adc/stm32-adc.c
-> > @@ -162,10 +162,10 @@ struct stm32_adc_cfg {
-> >  	struct stm32_adc_trig_info	*trigs;
-> >  	bool clk_required;
-> >  	bool has_vregready;
-> > -	int (*prepare)(struct stm32_adc *);
-> > -	void (*start_conv)(struct stm32_adc *, bool dma);
-> > -	void (*stop_conv)(struct stm32_adc *);
-> > -	void (*unprepare)(struct stm32_adc *);
-> > +	int (*prepare)(struct iio_dev *);
-> > +	void (*start_conv)(struct iio_dev *, bool dma);
-> > +	void (*stop_conv)(struct iio_dev *);
-> > +	void (*unprepare)(struct iio_dev *);
-> >  	const unsigned int *smp_cycles;
-> >  };
-> >  
-> > @@ -538,10 +538,11 @@ static void stm32_adc_set_res(struct stm32_adc *adc)
-> >  
-> >  static int stm32_adc_hw_stop(struct device *dev)
-> >  {
-> > -	struct stm32_adc *adc = dev_get_drvdata(dev);
-> > +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  
-> >  	if (adc->cfg->unprepare)
-> > -		adc->cfg->unprepare(adc);
-> > +		adc->cfg->unprepare(indio_dev);
-> >  
-> >  	if (adc->clk)
-> >  		clk_disable_unprepare(adc->clk);
-> > @@ -551,7 +552,8 @@ static int stm32_adc_hw_stop(struct device *dev)
-> >  
-> >  static int stm32_adc_hw_start(struct device *dev)
-> >  {
-> > -	struct stm32_adc *adc = dev_get_drvdata(dev);
-> > +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int ret;
-> >  
-> >  	if (adc->clk) {
-> > @@ -563,7 +565,7 @@ static int stm32_adc_hw_start(struct device *dev)
-> >  	stm32_adc_set_res(adc);
-> >  
-> >  	if (adc->cfg->prepare) {
-> > -		ret = adc->cfg->prepare(adc);
-> > +		ret = adc->cfg->prepare(indio_dev);
-> >  		if (ret)
-> >  			goto err_clk_dis;
-> >  	}
-> > @@ -579,7 +581,7 @@ static int stm32_adc_hw_start(struct device *dev)
-> >  
-> >  /**
-> >   * stm32f4_adc_start_conv() - Start conversions for regular channels.
-> > - * @adc: stm32 adc instance
-> > + * @indio_dev: IIO device instance
-> >   * @dma: use dma to transfer conversion result
-> >   *
-> >   * Start conversions for regular channels.
-> > @@ -587,8 +589,10 @@ static int stm32_adc_hw_start(struct device *dev)
-> >   * conversions, in IIO buffer modes. Otherwise, use ADC interrupt with direct
-> >   * DR read instead (e.g. read_raw, or triggered buffer mode without DMA).
-> >   */
-> > -static void stm32f4_adc_start_conv(struct stm32_adc *adc, bool dma)
-> > +static void stm32f4_adc_start_conv(struct iio_dev *indio_dev, bool dma)
-> >  {
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> > +
-> >  	stm32_adc_set_bits(adc, STM32F4_ADC_CR1, STM32F4_SCAN);
-> >  
-> >  	if (dma)
-> > @@ -605,8 +609,10 @@ static void stm32f4_adc_start_conv(struct stm32_adc *adc, bool dma)
-> >  		stm32_adc_set_bits(adc, STM32F4_ADC_CR2, STM32F4_SWSTART);
-> >  }
-> >  
-> > -static void stm32f4_adc_stop_conv(struct stm32_adc *adc)
-> > +static void stm32f4_adc_stop_conv(struct iio_dev *indio_dev)
-> >  {
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> > +
-> >  	stm32_adc_clr_bits(adc, STM32F4_ADC_CR2, STM32F4_EXTEN_MASK);
-> >  	stm32_adc_clr_bits(adc, STM32F4_ADC_SR, STM32F4_STRT);
-> >  
-> > @@ -615,8 +621,9 @@ static void stm32f4_adc_stop_conv(struct stm32_adc *adc)
-> >  			   STM32F4_ADON | STM32F4_DMA | STM32F4_DDS);
-> >  }
-> >  
-> > -static void stm32h7_adc_start_conv(struct stm32_adc *adc, bool dma)
-> > +static void stm32h7_adc_start_conv(struct iio_dev *indio_dev, bool dma)
-> >  {
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	enum stm32h7_adc_dmngt dmngt;
-> >  	unsigned long flags;
-> >  	u32 val;
-> > @@ -635,9 +642,9 @@ static void stm32h7_adc_start_conv(struct stm32_adc *adc, bool dma)
-> >  	stm32_adc_set_bits(adc, STM32H7_ADC_CR, STM32H7_ADSTART);
-> >  }
-> >  
-> > -static void stm32h7_adc_stop_conv(struct stm32_adc *adc)
-> > +static void stm32h7_adc_stop_conv(struct iio_dev *indio_dev)
-> >  {
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int ret;
-> >  	u32 val;
-> >  
-> > @@ -652,9 +659,9 @@ static void stm32h7_adc_stop_conv(struct stm32_adc *adc)
-> >  	stm32_adc_clr_bits(adc, STM32H7_ADC_CFGR, STM32H7_DMNGT_MASK);
-> >  }
-> >  
-> > -static int stm32h7_adc_exit_pwr_down(struct stm32_adc *adc)
-> > +static int stm32h7_adc_exit_pwr_down(struct iio_dev *indio_dev)
-> >  {
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int ret;
-> >  	u32 val;
-> >  
-> > @@ -690,9 +697,9 @@ static void stm32h7_adc_enter_pwr_down(struct stm32_adc *adc)
-> >  	stm32_adc_set_bits(adc, STM32H7_ADC_CR, STM32H7_DEEPPWD);
-> >  }
-> >  
-> > -static int stm32h7_adc_enable(struct stm32_adc *adc)
-> > +static int stm32h7_adc_enable(struct iio_dev *indio_dev)
-> >  {
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int ret;
-> >  	u32 val;
-> >  
-> > @@ -713,9 +720,9 @@ static int stm32h7_adc_enable(struct stm32_adc *adc)
-> >  	return ret;
-> >  }
-> >  
-> > -static void stm32h7_adc_disable(struct stm32_adc *adc)
-> > +static void stm32h7_adc_disable(struct iio_dev *indio_dev)
-> >  {
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int ret;
-> >  	u32 val;
-> >  
-> > @@ -730,12 +737,12 @@ static void stm32h7_adc_disable(struct stm32_adc *adc)
-> >  
-> >  /**
-> >   * stm32h7_adc_read_selfcalib() - read calibration shadow regs, save result
-> > - * @adc: stm32 adc instance
-> > + * @indio_dev: IIO device instance
-> >   * Note: Must be called once ADC is enabled, so LINCALRDYW[1..6] are writable
-> >   */
-> > -static int stm32h7_adc_read_selfcalib(struct stm32_adc *adc)
-> > +static int stm32h7_adc_read_selfcalib(struct iio_dev *indio_dev)
-> >  {
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int i, ret;
-> >  	u32 lincalrdyw_mask, val;
-> >  
-> > @@ -774,12 +781,12 @@ static int stm32h7_adc_read_selfcalib(struct stm32_adc *adc)
-> >  
-> >  /**
-> >   * stm32h7_adc_restore_selfcalib() - Restore saved self-calibration result
-> > - * @adc: stm32 adc instance
-> > + * @indio_dev: IIO device instance
-> >   * Note: ADC must be enabled, with no on-going conversions.
-> >   */
-> > -static int stm32h7_adc_restore_selfcalib(struct stm32_adc *adc)
-> > +static int stm32h7_adc_restore_selfcalib(struct iio_dev *indio_dev)
-> >  {
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int i, ret;
-> >  	u32 lincalrdyw_mask, val;
-> >  
-> > @@ -847,12 +854,12 @@ static int stm32h7_adc_restore_selfcalib(struct stm32_adc *adc)
-> >  
-> >  /**
-> >   * stm32h7_adc_selfcalib() - Procedure to calibrate ADC
-> > - * @adc: stm32 adc instance
-> > + * @indio_dev: IIO device instance
-> >   * Note: Must be called once ADC is out of power down.
-> >   */
-> > -static int stm32h7_adc_selfcalib(struct stm32_adc *adc)
-> > +static int stm32h7_adc_selfcalib(struct iio_dev *indio_dev)
-> >  {
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int ret;
-> >  	u32 val;
-> >  
-> > @@ -903,7 +910,7 @@ static int stm32h7_adc_selfcalib(struct stm32_adc *adc)
-> >  
-> >  /**
-> >   * stm32h7_adc_prepare() - Leave power down mode to enable ADC.
-> > - * @adc: stm32 adc instance
-> > + * @indio_dev: IIO device instance
-> >   * Leave power down mode.
-> >   * Configure channels as single ended or differential before enabling ADC.
-> >   * Enable ADC.
-> > @@ -912,30 +919,31 @@ static int stm32h7_adc_selfcalib(struct stm32_adc *adc)
-> >   * - Only one input is selected for single ended (e.g. 'vinp')
-> >   * - Two inputs are selected for differential channels (e.g. 'vinp' & 'vinn')
-> >   */
-> > -static int stm32h7_adc_prepare(struct stm32_adc *adc)
-> > +static int stm32h7_adc_prepare(struct iio_dev *indio_dev)
-> >  {
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	int calib, ret;
-> >  
-> > -	ret = stm32h7_adc_exit_pwr_down(adc);
-> > +	ret = stm32h7_adc_exit_pwr_down(indio_dev);
-> >  	if (ret)
-> >  		return ret;
-> >  
-> > -	ret = stm32h7_adc_selfcalib(adc);
-> > +	ret = stm32h7_adc_selfcalib(indio_dev);
-> >  	if (ret < 0)
-> >  		goto pwr_dwn;
-> >  	calib = ret;
-> >  
-> >  	stm32_adc_writel(adc, STM32H7_ADC_DIFSEL, adc->difsel);
-> >  
-> > -	ret = stm32h7_adc_enable(adc);
-> > +	ret = stm32h7_adc_enable(indio_dev);
-> >  	if (ret)
-> >  		goto pwr_dwn;
-> >  
-> >  	/* Either restore or read calibration result for future reference */
-> >  	if (calib)
-> > -		ret = stm32h7_adc_restore_selfcalib(adc);
-> > +		ret = stm32h7_adc_restore_selfcalib(indio_dev);
-> >  	else
-> > -		ret = stm32h7_adc_read_selfcalib(adc);
-> > +		ret = stm32h7_adc_read_selfcalib(indio_dev);
-> >  	if (ret)
-> >  		goto disable;
-> >  
-> > @@ -944,16 +952,18 @@ static int stm32h7_adc_prepare(struct stm32_adc *adc)
-> >  	return 0;
-> >  
-> >  disable:
-> > -	stm32h7_adc_disable(adc);
-> > +	stm32h7_adc_disable(indio_dev);
-> >  pwr_dwn:
-> >  	stm32h7_adc_enter_pwr_down(adc);
-> >  
-> >  	return ret;
-> >  }
-> >  
-> > -static void stm32h7_adc_unprepare(struct stm32_adc *adc)
-> > +static void stm32h7_adc_unprepare(struct iio_dev *indio_dev)
-> >  {
-> > -	stm32h7_adc_disable(adc);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> > +
-> > +	stm32h7_adc_disable(indio_dev);
-> >  	stm32h7_adc_enter_pwr_down(adc);
-> >  }
-> >  
-> > @@ -1160,7 +1170,7 @@ static int stm32_adc_single_conv(struct iio_dev *indio_dev,
-> >  
-> >  	stm32_adc_conv_irq_enable(adc);
-> >  
-> > -	adc->cfg->start_conv(adc, false);
-> > +	adc->cfg->start_conv(indio_dev, false);
-> >  
-> >  	timeout = wait_for_completion_interruptible_timeout(
-> >  					&adc->completion, STM32_ADC_TIMEOUT);
-> > @@ -1173,7 +1183,7 @@ static int stm32_adc_single_conv(struct iio_dev *indio_dev,
-> >  		ret = IIO_VAL_INT;
-> >  	}
-> >  
-> > -	adc->cfg->stop_conv(adc);
-> > +	adc->cfg->stop_conv(indio_dev);
-> >  
-> >  	stm32_adc_conv_irq_disable(adc);
-> >  
-> > @@ -1227,8 +1237,8 @@ static int stm32_adc_read_raw(struct iio_dev *indio_dev,
-> >  
-> >  static irqreturn_t stm32_adc_threaded_isr(int irq, void *data)
-> >  {
-> > -	struct stm32_adc *adc = data;
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct iio_dev *indio_dev = data;
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	const struct stm32_adc_regspec *regs = adc->cfg->regs;
-> >  	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
-> >  
-> > @@ -1240,8 +1250,8 @@ static irqreturn_t stm32_adc_threaded_isr(int irq, void *data)
-> >  
-> >  static irqreturn_t stm32_adc_isr(int irq, void *data)
-> >  {
-> > -	struct stm32_adc *adc = data;
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct iio_dev *indio_dev = data;
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	const struct stm32_adc_regspec *regs = adc->cfg->regs;
-> >  	u32 status = stm32_adc_readl(adc, regs->isr_eoc.reg);
-> >  
-> > @@ -1514,7 +1524,7 @@ static int __stm32_adc_buffer_postenable(struct iio_dev *indio_dev)
-> >  	if (!adc->dma_chan)
-> >  		stm32_adc_conv_irq_enable(adc);
-> >  
-> > -	adc->cfg->start_conv(adc, !!adc->dma_chan);
-> > +	adc->cfg->start_conv(indio_dev, !!adc->dma_chan);
-> >  
-> >  	return 0;
-> >  
-> > @@ -1547,7 +1557,7 @@ static void __stm32_adc_buffer_predisable(struct iio_dev *indio_dev)
-> >  	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  	struct device *dev = indio_dev->dev.parent;
-> >  
-> > -	adc->cfg->stop_conv(adc);
-> > +	adc->cfg->stop_conv(indio_dev);
-> >  	if (!adc->dma_chan)
-> >  		stm32_adc_conv_irq_disable(adc);
-> >  
-> > @@ -1891,7 +1901,7 @@ static int stm32_adc_probe(struct platform_device *pdev)
-> >  	indio_dev->info = &stm32_adc_iio_info;
-> >  	indio_dev->modes = INDIO_DIRECT_MODE | INDIO_HARDWARE_TRIGGERED;
-> >  
-> > -	platform_set_drvdata(pdev, adc);
-> > +	platform_set_drvdata(pdev, indio_dev);
-> >  
-> >  	ret = of_property_read_u32(pdev->dev.of_node, "reg", &adc->offset);
-> >  	if (ret != 0) {
-> > @@ -1905,7 +1915,7 @@ static int stm32_adc_probe(struct platform_device *pdev)
-> >  
-> >  	ret = devm_request_threaded_irq(&pdev->dev, adc->irq, stm32_adc_isr,
-> >  					stm32_adc_threaded_isr,
-> > -					0, pdev->name, adc);
-> > +					0, pdev->name, indio_dev);
-> >  	if (ret) {
-> >  		dev_err(&pdev->dev, "failed to request IRQ\n");
-> >  		return ret;
-> > @@ -1989,8 +1999,8 @@ static int stm32_adc_probe(struct platform_device *pdev)
-> >  
-> >  static int stm32_adc_remove(struct platform_device *pdev)
-> >  {
-> > -	struct stm32_adc *adc = platform_get_drvdata(pdev);
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct iio_dev *indio_dev = platform_get_drvdata(pdev);
-> > +	struct stm32_adc *adc = iio_priv(indio_dev);
-> >  
-> >  	pm_runtime_get_sync(&pdev->dev);
-> >  	iio_device_unregister(indio_dev);
-> > @@ -2012,8 +2022,7 @@ static int stm32_adc_remove(struct platform_device *pdev)
-> >  #if defined(CONFIG_PM_SLEEP)
-> >  static int stm32_adc_suspend(struct device *dev)
-> >  {
-> > -	struct stm32_adc *adc = dev_get_drvdata(dev);
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-> >  
-> >  	if (iio_buffer_enabled(indio_dev))
-> >  		__stm32_adc_buffer_predisable(indio_dev);
-> > @@ -2023,8 +2032,7 @@ static int stm32_adc_suspend(struct device *dev)
-> >  
-> >  static int stm32_adc_resume(struct device *dev)
-> >  {
-> > -	struct stm32_adc *adc = dev_get_drvdata(dev);
-> > -	struct iio_dev *indio_dev = iio_priv_to_dev(adc);
-> > +	struct iio_dev *indio_dev = dev_get_drvdata(dev);
-> >  	int ret;
-> >  
-> >  	ret = pm_runtime_force_resume(dev);
+> >   
+> > > 
+> > > William Breathitt Gray (4):
+> > >   counter: Internalize sysfs interface code
+> > >   docs: counter: Update to reflect sysfs internalization
+> > >   counter: Add character device interface
+> > >   docs: counter: Document character device interface
+> > > 
+> > >  Documentation/driver-api/generic-counter.rst |  275 +++-
+> > >  MAINTAINERS                                  |    3 +-
+> > >  drivers/counter/104-quad-8.c                 |  547 +++----
+> > >  drivers/counter/Makefile                     |    1 +
+> > >  drivers/counter/counter-chrdev.c             |  656 ++++++++
+> > >  drivers/counter/counter-chrdev.h             |   16 +
+> > >  drivers/counter/counter-core.c               |  187 +++
+> > >  drivers/counter/counter-sysfs.c              |  881 +++++++++++
+> > >  drivers/counter/counter-sysfs.h              |   14 +
+> > >  drivers/counter/counter.c                    | 1496 ------------------
+> > >  drivers/counter/ftm-quaddec.c                |   89 +-
+> > >  drivers/counter/stm32-lptimer-cnt.c          |  161 +-
+> > >  drivers/counter/stm32-timer-cnt.c            |  139 +-
+> > >  drivers/counter/ti-eqep.c                    |  211 +--
+> > >  include/linux/counter.h                      |  626 ++++----
+> > >  include/linux/counter_enum.h                 |   45 -
+> > >  include/uapi/linux/counter-types.h           |   45 +
+> > >  17 files changed, 2826 insertions(+), 2566 deletions(-)
+> > >  create mode 100644 drivers/counter/counter-chrdev.c
+> > >  create mode 100644 drivers/counter/counter-chrdev.h
+> > >  create mode 100644 drivers/counter/counter-core.c
+> > >  create mode 100644 drivers/counter/counter-sysfs.c
+> > >  create mode 100644 drivers/counter/counter-sysfs.h
+> > >  delete mode 100644 drivers/counter/counter.c
+> > >  delete mode 100644 include/linux/counter_enum.h
+> > >  create mode 100644 include/uapi/linux/counter-types.h
+> > >   
 > >   
 
 
