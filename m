@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29EC21E9A2D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 21:41:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4FB91E9A2E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 31 May 2020 21:41:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vNXyS8I+4z7BuPws/nvrQaOOEBAkEey18IeBFYVMzs4=; b=G2DwCbv3+6Mp23
-	+D432RczzFPr03qFiVSPsC/8FyLo9cyUj4+G3x5gMsea7afyTsHd/q3W6NcFkB8zVMbWv/gtL8Mjh
-	TskgbAimeoGLV/JuukfboRM8/NFLOdvMrsVwCE4GYPBNsxsGVhpbJdnDw+DEIe+YyVGfSvh/e2E5D
-	57K3N/OlByxi8jn6W3X6ECdKHjmNhiaM8pBs77jzUGkZzxKk9GJ5vM2axQJOv3BblkD61tEaeZz1f
-	UaeG3tlG5oQ/Dc/B6bnD91h+DniIClg/cIAKDAoPf/2hDTD4MK6U+Ags02BHVRHcS/E14+hSdk05l
-	YlFaZ7jNqtEdtDRJ30XQ==;
+	List-Owner; bh=mLSthfQr+TwHd44CTOA84UlGDFDF5gb6DYQBWNieAt8=; b=FtW5/uJ0yEtP+y
+	xV9Apvkgon1M6EDZ3GX6iiRz+5g2nPpXNwrmDTJPMcf50b5f9qHd/wnOk3VaY9vZ1Po92BPL1o+52
+	LVkKuHimU9Y/tCTVwKNkilTU5ZHwHUCT/vRfrsdW/44C/fHo2yY7yFKhqyEZ4ZXb/vcZyvnVsTP7C
+	M/7WHzT9HO+fq/Hdgkhm6k5Zgj2g8SYYxlbhRVWfs+hliZ7vVvD9Rl6Cfr9d8ammDYl3vNvW7OSf7
+	do0uw2+wXM6THFZaLSp48Hhbc6TWjTCkU1SDdcED2Ln5gCnivpGeNLtEYGPq1A+C8l7vv3ykoWUCx
+	AK4f4iykGtAU1ZqvpB+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfTpM-0003Vd-50; Sun, 31 May 2020 19:41:00 +0000
+	id 1jfTpZ-0003k2-9R; Sun, 31 May 2020 19:41:13 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfToa-0002zo-P5
- for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 19:40:14 +0000
+ id 1jfToc-00030W-JZ
+ for linux-arm-kernel@lists.infradead.org; Sun, 31 May 2020 19:40:15 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 0AAE2813D;
- Sun, 31 May 2020 19:41:01 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 6B22E814F;
+ Sun, 31 May 2020 19:41:04 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 2/5] bus: ti-sysc: Use optional clocks on for enable and wait
- for softreset bit
-Date: Sun, 31 May 2020 12:39:38 -0700
-Message-Id: <20200531193941.13179-3-tony@atomide.com>
+Subject: [PATCH 3/5] bus: ti-sysc: Ignore clockactivity unless specified as a
+ quirk
+Date: Sun, 31 May 2020 12:39:39 -0700
+Message-Id: <20200531193941.13179-4-tony@atomide.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200531193941.13179-1-tony@atomide.com>
 References: <20200531193941.13179-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_124012_854226_784728E7 
-X-CRM114-Status: GOOD (  14.32  )
+X-CRM114-CacheID: sfid-20200531_124014_722563_23A164C6 
+X-CRM114-Status: GOOD (  10.28  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,150 +73,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some modules reset automatically when idled, and when re-enabled, we must
-wait for the automatic OCP softreset to complete. And if optional clocks
-are configured, we need to keep the clocks on while waiting for the reset
-to complete.
+We must ignore the clockactivity bit for most modules and not set it
+unless specified for the module with SYSC_QUIRK_USE_CLOCKACT. Otherwise
+the interface clock can be automatically gated constantly causing
+unexpected performance issues.
 
-Let's fix the issue by moving the OCP softreset code to a separate
-function sysc_wait_softreset(), and call it also from sysc_enable_module()
-with the optional clocks enabled.
-
-This is based on what we're already doing for legacy platform data booting
-in _enable_sysc().
-
-Fixes: 7324a7a0d5e2 ("bus: ti-sysc: Implement display subsystem reset quirk")
-Reported-by: Faiz Abbas <faiz_abbas@ti.com>
+Fixes: ae9ae12e9daa ("bus: ti-sysc: Handle clockactivity for enable and disable")
 Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
 Cc: Tomi Valkeinen <tomi.valkeinen@ti.com>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/bus/ti-sysc.c | 81 ++++++++++++++++++++++++++++++++-----------
- 1 file changed, 61 insertions(+), 20 deletions(-)
+ drivers/bus/ti-sysc.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
 --- a/drivers/bus/ti-sysc.c
 +++ b/drivers/bus/ti-sysc.c
-@@ -221,6 +221,36 @@ static u32 sysc_read_sysstatus(struct sysc *ddata)
- 	return sysc_read(ddata, offset);
- }
+@@ -989,10 +989,13 @@ static int sysc_enable_module(struct device *dev)
+ 	regbits = ddata->cap->regbits;
+ 	reg = sysc_read(ddata, ddata->offsets[SYSC_SYSCONFIG]);
  
-+/* Poll on reset status */
-+static int sysc_wait_softreset(struct sysc *ddata)
-+{
-+	u32 sysc_mask, syss_done, rstval;
-+	int sysc_offset, syss_offset, error = 0;
-+
-+	sysc_offset = ddata->offsets[SYSC_SYSCONFIG];
-+	syss_offset = ddata->offsets[SYSC_SYSSTATUS];
-+	sysc_mask = BIT(ddata->cap->regbits->srst_shift);
-+
-+	if (ddata->cfg.quirks & SYSS_QUIRK_RESETDONE_INVERTED)
-+		syss_done = 0;
-+	else
-+		syss_done = ddata->cfg.syss_mask;
-+
-+	if (syss_offset >= 0) {
-+		error = readx_poll_timeout(sysc_read_sysstatus, ddata, rstval,
-+					   (rstval & ddata->cfg.syss_mask) ==
-+					   syss_done,
-+					   100, MAX_MODULE_SOFTRESET_WAIT);
-+
-+	} else if (ddata->cfg.quirks & SYSC_QUIRK_RESET_STATUS) {
-+		error = readx_poll_timeout(sysc_read_sysconfig, ddata, rstval,
-+					   !(rstval & sysc_mask),
-+					   100, MAX_MODULE_SOFTRESET_WAIT);
-+	}
-+
-+	return error;
-+}
-+
- static int sysc_add_named_clock_from_child(struct sysc *ddata,
- 					   const char *name,
- 					   const char *optfck_name)
-@@ -925,8 +955,34 @@ static int sysc_enable_module(struct device *dev)
- 	struct sysc *ddata;
- 	const struct sysc_regbits *regbits;
- 	u32 reg, idlemodes, best_mode;
-+	int error;
- 
- 	ddata = dev_get_drvdata(dev);
-+
+-	/* Set CLOCKACTIVITY, we only use it for ick */
 +	/*
-+	 * Some modules like DSS reset automatically on idle. Enable optional
-+	 * reset clocks and wait for OCP softreset to complete.
++	 * Set CLOCKACTIVITY, we only use it for ick. And we only configure it
++	 * based on the SYSC_QUIRK_USE_CLOCKACT flag, not based on the hardware
++	 * capabilities. See the old HWMOD_SET_DEFAULT_CLOCKACT flag.
 +	 */
-+	if (ddata->cfg.quirks & SYSC_QUIRK_OPT_CLKS_IN_RESET) {
-+		error = sysc_enable_opt_clocks(ddata);
-+		if (error) {
-+			dev_err(ddata->dev,
-+				"Optional clocks failed for enable: %i\n",
-+				error);
-+			return error;
-+		}
-+	}
-+	error = sysc_wait_softreset(ddata);
-+	if (error)
-+		dev_warn(ddata->dev, "OCP softreset timed out\n");
-+	if (ddata->cfg.quirks & SYSC_QUIRK_OPT_CLKS_IN_RESET)
-+		sysc_disable_opt_clocks(ddata);
-+
-+	/*
-+	 * Some subsystem private interconnects, like DSS top level module,
-+	 * need only the automatic OCP softreset handling with no sysconfig
-+	 * register bits to configure.
-+	 */
- 	if (ddata->offsets[SYSC_SYSCONFIG] == -ENODEV)
- 		return 0;
+ 	if (regbits->clkact_shift >= 0 &&
+-	    (ddata->cfg.quirks & SYSC_QUIRK_USE_CLOCKACT ||
+-	     ddata->cfg.sysc_val & BIT(regbits->clkact_shift)))
++	    (ddata->cfg.quirks & SYSC_QUIRK_USE_CLOCKACT))
+ 		reg |= SYSC_CLOCACT_ICK << regbits->clkact_shift;
  
-@@ -1828,11 +1884,10 @@ static int sysc_legacy_init(struct sysc *ddata)
-  */
- static int sysc_reset(struct sysc *ddata)
- {
--	int sysc_offset, syss_offset, sysc_val, rstval, error = 0;
--	u32 sysc_mask, syss_done;
-+	int sysc_offset, sysc_val, error;
-+	u32 sysc_mask;
- 
- 	sysc_offset = ddata->offsets[SYSC_SYSCONFIG];
--	syss_offset = ddata->offsets[SYSC_SYSSTATUS];
- 
- 	if (ddata->legacy_mode ||
- 	    ddata->cap->regbits->srst_shift < 0 ||
-@@ -1841,11 +1896,6 @@ static int sysc_reset(struct sysc *ddata)
- 
- 	sysc_mask = BIT(ddata->cap->regbits->srst_shift);
- 
--	if (ddata->cfg.quirks & SYSS_QUIRK_RESETDONE_INVERTED)
--		syss_done = 0;
--	else
--		syss_done = ddata->cfg.syss_mask;
--
- 	if (ddata->pre_reset_quirk)
- 		ddata->pre_reset_quirk(ddata);
- 
-@@ -1862,18 +1912,9 @@ static int sysc_reset(struct sysc *ddata)
- 	if (ddata->post_reset_quirk)
- 		ddata->post_reset_quirk(ddata);
- 
--	/* Poll on reset status */
--	if (syss_offset >= 0) {
--		error = readx_poll_timeout(sysc_read_sysstatus, ddata, rstval,
--					   (rstval & ddata->cfg.syss_mask) ==
--					   syss_done,
--					   100, MAX_MODULE_SOFTRESET_WAIT);
--
--	} else if (ddata->cfg.quirks & SYSC_QUIRK_RESET_STATUS) {
--		error = readx_poll_timeout(sysc_read_sysconfig, ddata, rstval,
--					   !(rstval & sysc_mask),
--					   100, MAX_MODULE_SOFTRESET_WAIT);
--	}
-+	error = sysc_wait_softreset(ddata);
-+	if (error)
-+		dev_warn(ddata->dev, "OCP softreset timed out\n");
- 
- 	if (ddata->reset_done_quirk)
- 		ddata->reset_done_quirk(ddata);
+ 	/* Set SIDLE mode */
 -- 
 2.26.2
 
