@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34FA51EA226
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 12:47:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A4AA1EA22E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 12:48:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZQ1AgT38zl9GKfIhuebiuaMaQQpQ0zuykhAYoT86iaM=; b=UIEXnde2uQshu5
-	DMJrNrOfvTwj+AkSxcF8wigeyUOJZlJG8qqfNi4tU/mpwBFY9A+X6juKIIvzr1PaZHh9HBC5sfoEA
-	Yd4Hp309Vrvuq73ubuvqKVHK3Bojic8klDlTltx3c69yVn4xje7Js9tT3IakOHFG5d1I9e0HqZZ+B
-	Dg5aQNKw1PHvmYgGltOOo6UA/7KBFckT0x9QinpUkbgcerNmN3cBYKHByhrpoyuIZcFgCXjzPSI1n
-	w0oEKkIIs27DhnKFuAkTG7UiOxl7y5TPQ65LmQHgW0iwCYxoL0nI3JprF4qM9LdsbLObzYrmU+vWW
-	ZPXr7jvtByVJ0IpRlKmw==;
+	List-Owner; bh=2HjCVZmx/5DnWSgjXKPoMzDhHxflTufQVQK0v9aSBCQ=; b=EjSNq5ztXzDqak
+	48jCEry0hp9O1Cq9COBB98EW/l914jRS8CTUE+2IMTpSZtcjAiu1iaZkYx8QLTJ+X1OfSWg4tS120
+	xPmyLtxRAgEYMufpimIkJFcYPD2os+wE7X0bMhvgaGwuFsOlWP/niEnJ4P+SxSKjs3g3BpXtxol9l
+	52/7eNEKV6wN626wDnfqaHmhsYmUsUTQRHb0IRV3XqRH3Hx4s1bXZu6Gdol4SzMeepYLYja3D8UNG
+	ze+7tB8yOxXUcavH7PauQ/9SKVbC0McJD8hPdM31t3C/9mviagpqOsspWqbRbCEU0Wdl65F/I9bic
+	Lenl93tWUzsmE+7ixmiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfhyi-0000R0-Tf; Mon, 01 Jun 2020 10:47:36 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jfhzj-0001Qi-8x; Mon, 01 Jun 2020 10:48:39 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfhy2-0008Ja-Ne; Mon, 01 Jun 2020 10:46:56 +0000
-X-UUID: 8b7282dcb8a9494c9ba3aaa9e488dadf-20200601
+ id 1jfhyB-0008Tr-DO; Mon, 01 Jun 2020 10:47:05 +0000
+X-UUID: aa2590a2777c44f984e25ded2697b0ba-20200601
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=dAJ6kQkuED5Us38miQWm8ZMdm7uCNWRKUju7pfkDY6k=; 
- b=FMgPkk0NMETlIKu/y74w5lJrmsBNW2eGz6UFPhfaiRACdIgMRpFxDlDYDPGvUogtjRwgtN9eRnzCRR+QyZzbM8/oggrP85oYj84R9gNhK9bdYPcbhREICGrqju6cPBHUas/wqJjzCXaONNkWLYJAPa10NOTPas3sfDlQsC2+AtY=;
-X-UUID: 8b7282dcb8a9494c9ba3aaa9e488dadf-20200601
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ bh=ew+RGCuaV2Y1qHcybtLqf6q5Y9tu1r8jPZYZhoV+ToI=; 
+ b=A7SGOhvht8wg2PLc3KmLquUNvZkUAe0xivrZoBQTKyf0lXl/uu6Qba4BlrVx4AdRLS+l5FERi3m50Mly/90752MweMcSg+n5EKwPPKpjWhXDpO3P88DpzdpK2SJqmhW/kGefAtQeCwESpORnQj0m/THGDF5ywBQDzmUgINptH44=;
+X-UUID: aa2590a2777c44f984e25ded2697b0ba-20200601
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1883269047; Mon, 01 Jun 2020 02:46:44 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ with ESMTP id 984776720; Mon, 01 Jun 2020 02:46:52 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 1 Jun 2020 03:46:46 -0700
+ 15.0.1497.2; Mon, 1 Jun 2020 03:46:54 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Mon, 1 Jun 2020 18:46:46 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -45,19 +45,19 @@ Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v3 1/5] scsi: ufs-mediatek: Fix imprecise waiting time for
- ref-clk control
-Date: Mon, 1 Jun 2020 18:46:42 +0800
-Message-ID: <20200601104646.15436-2-stanley.chu@mediatek.com>
+Subject: [PATCH v3 2/5] scsi: ufs-mediatek: Do not gate clocks if auto-hibern8
+ is not entered yet
+Date: Mon, 1 Jun 2020 18:46:43 +0800
+Message-ID: <20200601104646.15436-3-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200601104646.15436-1-stanley.chu@mediatek.com>
 References: <20200601104646.15436-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: A3A38F099F244B213021D7716C53E5E2CFB044CE2A7C2B50457DA796582604B42000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_034654_773844_7D5993A0 
-X-CRM114-Status: UNSURE (   9.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200601_034703_467080_8C1E0643 
+X-CRM114-Status: GOOD (  11.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,65 +98,80 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently ref-clk control timeout is implemented by Jiffies. However
-jiffies is not accurate enough thus "false timeout" may happen.
+There are some chances that link enters hibern8 lately by auto-hibern8
+scheme during the clock-gating flow. Clocks shall not be gated if link
+is still active otherwise host or device may hang.
 
-Use more accurate delay mechanism instead, for example, ktime.
+Fix this by returning error code to the caller __ufshcd_setup_clocks()
+to skip gating clocks there if link is not confirmed in hibern8
+state yet.
+
+Also allow some waiting time for the hibern8 state transition.
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 Reviewed-by: Andy Teng <andy.teng@mediatek.com>
-Reviewed-by: Avri Altman <avri.altman@wdc.com>
 ---
- drivers/scsi/ufs/ufs-mediatek.c | 7 ++++---
- drivers/scsi/ufs/ufs-mediatek.h | 2 +-
- 2 files changed, 5 insertions(+), 4 deletions(-)
+ drivers/scsi/ufs/ufs-mediatek.c | 36 ++++++++++++++++++++++++---------
+ 1 file changed, 27 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index d56ce8d97d4e..523ee5573921 100644
+index 523ee5573921..3c85f5e97dea 100644
 --- a/drivers/scsi/ufs/ufs-mediatek.c
 +++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -120,7 +120,7 @@ static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
+@@ -178,15 +178,30 @@ static void ufs_mtk_setup_ref_clk_wait_us(struct ufs_hba *hba,
+ 	host->ref_clk_ungating_wait_us = ungating_us;
+ }
+ 
+-static u32 ufs_mtk_link_get_state(struct ufs_hba *hba)
++int ufs_mtk_wait_link_state(struct ufs_hba *hba, u32 state,
++			    unsigned long max_wait_ms)
  {
- 	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
- 	struct arm_smccc_res res;
--	unsigned long timeout;
 +	ktime_t timeout, time_checked;
- 	u32 value;
+ 	u32 val;
  
- 	if (host->ref_clk_enabled == on)
-@@ -135,8 +135,9 @@ static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
- 	}
- 
- 	/* Wait for ack */
--	timeout = jiffies + msecs_to_jiffies(REFCLK_REQ_TIMEOUT_MS);
-+	timeout = ktime_add_us(ktime_get(), REFCLK_REQ_TIMEOUT_US);
- 	do {
+-	ufshcd_writel(hba, 0x20, REG_UFS_DEBUG_SEL);
+-	val = ufshcd_readl(hba, REG_UFS_PROBE);
+-	val = val >> 28;
++	timeout = ktime_add_us(ktime_get(), ms_to_ktime(max_wait_ms));
++	do {
 +		time_checked = ktime_get();
- 		value = ufshcd_readl(hba, REG_UFS_REFCLK_CTRL);
++		ufshcd_writel(hba, 0x20, REG_UFS_DEBUG_SEL);
++		val = ufshcd_readl(hba, REG_UFS_PROBE);
++		val = val >> 28;
++
++		if (val == state)
++			return 0;
  
- 		/* Wait until ack bit equals to req bit */
-@@ -144,7 +145,7 @@ static int ufs_mtk_setup_ref_clk(struct ufs_hba *hba, bool on)
- 			goto out;
- 
- 		usleep_range(100, 200);
--	} while (time_before(jiffies, timeout));
+-	return val;
++		/* Sleep for max. 200us */
++		usleep_range(100, 200);
 +	} while (ktime_before(time_checked, timeout));
++
++	if (val == state)
++		return 0;
++
++	return -ETIMEDOUT;
+ }
  
- 	dev_err(hba->dev, "missing ack of refclk req, reg: 0x%x\n", value);
- 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.h b/drivers/scsi/ufs/ufs-mediatek.h
-index 5bbd3e9cbae2..fc42dcbfd800 100644
---- a/drivers/scsi/ufs/ufs-mediatek.h
-+++ b/drivers/scsi/ufs/ufs-mediatek.h
-@@ -28,7 +28,7 @@
- #define REFCLK_REQUEST              BIT(0)
- #define REFCLK_ACK                  BIT(1)
- 
--#define REFCLK_REQ_TIMEOUT_MS       3
-+#define REFCLK_REQ_TIMEOUT_US       3000
- 
- /*
-  * Vendor specific pre-defined parameters
+ /**
+@@ -221,10 +236,13 @@ static int ufs_mtk_setup_clocks(struct ufs_hba *hba, bool on,
+ 			 * triggered by Auto-Hibern8.
+ 			 */
+ 			if (!ufshcd_can_hibern8_during_gating(hba) &&
+-			    ufshcd_is_auto_hibern8_enabled(hba) &&
+-			    ufs_mtk_link_get_state(hba) ==
+-			    VS_LINK_HIBERN8)
+-				ufs_mtk_setup_ref_clk(hba, on);
++			    ufshcd_is_auto_hibern8_enabled(hba)) {
++				ret = ufs_mtk_wait_link_state(hba,
++							      VS_LINK_HIBERN8,
++							      15);
++				if (!ret)
++					ufs_mtk_setup_ref_clk(hba, on);
++			}
+ 		}
+ 	} else if (on && status == POST_CHANGE) {
+ 		ret = phy_power_on(host->mphy);
 -- 
 2.18.0
 _______________________________________________
