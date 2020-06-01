@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBB5D1E9F57
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 09:35:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26D031E9F63
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 09:40:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YNDhxeJdgsFXwKl8ayzbKYarjI1+TkVDAlz5oLYX+gc=; b=AHfrnwKI+tac7m
-	3CgUay9o472Gxe9LKgWkus3zHy5BB9J8Jn9BBIl86uY2enX5wv55PcuCw1Csv+oZwp2acWlgLLg5a
-	Em3nP3sqlJMpXN51VSkwu0q30GyahtfjH9vCICg3KRWQAu09q+9Moovn7fe3hw7jB5E+pdNTeIitO
-	c7gQMWj1hiSxFlfIPgRPTjZ9/DVtBVfAkToh5NQwOUCIs46bsrjzjGV7WIGcQReiIGL5qFeljlOvK
-	kNU9ekd6rmkAhWzUchldF+pbO9YXRx3YdBeBngfZn+0bOenUchjiSK5loiW0x19Lf4UfkQYzA8EH8
-	3CqIZGLFM787Tkx1E80g==;
+	List-Owner; bh=Il+nbzREkkZ+7qh/AvBjyoecHVzmuNKbVWsl1+DiV4I=; b=N8E4AaMxwYlBj8
+	x/NPQveQtsQPPLZa76nxR3SWmAcXe1XAaWxrjthWRjlnAeygfb/cQLRGNCqGegIooPCh3qiWgJvNk
+	tF1Z4F+ZLn5o0g3TFxdzrZR71YocnMepqDpeDN90EirOQuL8K0POBikydlYMhxLNDQJLNJxO43cmG
+	9JF+Q3M8Ub7KJ+07KVQQ5mw2f1MjEqnlzTTAXAgY5hw1u9cxK7q6d4xYfdoRsRkTRe9eReuqq40xY
+	SYNdVyD/pwPT6+8OQmCM6qlsx6/IHwA6pJpi5HgOvEKnuLrJYkQ9EmRprYgL7TB1GWZCrjuccjK0m
+	4gsxU6tvtEg8fhH73DqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfeyf-0005pe-E3; Mon, 01 Jun 2020 07:35:21 +0000
+	id 1jff3T-0002LY-S4; Mon, 01 Jun 2020 07:40:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfeyD-0005oB-M1; Mon, 01 Jun 2020 07:34:54 +0000
+ id 1jff3D-0001IL-9C; Mon, 01 Jun 2020 07:40:05 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 76B87206C3;
- Mon,  1 Jun 2020 07:34:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 622A0206E2;
+ Mon,  1 Jun 2020 07:40:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1590996892;
- bh=40jsU43O8eC43slVJFFsvBL5/wiEz4WNFbtD3aZZJyM=;
+ s=default; t=1590997203;
+ bh=FyHcyMF4ZlnF9cw2o7B84pnPHILgJlC+50CCvUgnec8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=vmqjomVQL0qtmrHqycB8s5j+pGrF2cJ1aFKhHxb90mPeHNB8kpu5YC3i+o5Q1TYtl
- ivvEWYnJYIdUhunIxi7o7joahKc9cWqmC7XAeCoY66vI90+W7QVz0iPPwJvo6ZALAw
- EvcYM/8kdC3q6v8E3fT9tePz2+n/ZJpBfvnpaLQg=
-Date: Mon, 1 Jun 2020 08:34:48 +0100
+ b=pTdQwku6NU00KgX+IldtXNs16JG0B50epi1ji/FpWCgG9JZe+d7USE9Sar6ZnKua/
+ x72VMDhp9emZJM1d7h4+WnrzwRoWTaiS/Nmktueo9X4AelfP1vrMj3Yxh9TXNnTVZr
+ bp/w7w9ccmr2cgMdbtACUGqGJwF4YLM+iLSDHVPw=
+Date: Mon, 1 Jun 2020 08:39:58 +0100
 From: Will Deacon <will@kernel.org>
 To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Subject: Re: kdump: Getting "warn_alloc" warning during boot of kdump kernel
-Message-ID: <20200601073447.GC8601@willie-the-truck>
-References: <CAJ2QiJJgw0Cm=XBeVvOJ8WnWB0Xfv3JEYKTQUovnwrrDw17w9g@mail.gmail.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200601073957.GD8601@willie-the-truck>
+References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
+ <20200518155545.GO32394@willie-the-truck>
+ <CAJ2QiJLMKckbuAqJutAi_zUQqqaK5Mg_u5Q=gg-POSvmk8cT9g@mail.gmail.com>
+ <20200521092311.GB5091@willie-the-truck>
+ <CAJ2QiJK4h=5abVdODWTYg8Loy0Hhnhm1HrBzAM3bZXKtGXYK+Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJ2QiJJgw0Cm=XBeVvOJ8WnWB0Xfv3JEYKTQUovnwrrDw17w9g@mail.gmail.com>
+In-Reply-To: <CAJ2QiJK4h=5abVdODWTYg8Loy0Hhnhm1HrBzAM3bZXKtGXYK+Q@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_003453_742878_E78B5800 
-X-CRM114-Status: UNSURE (   7.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200601_004003_372231_1D468CF7 
+X-CRM114-Status: GOOD (  23.88  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,25 +80,93 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
  kexec mailing list <kexec@lists.infradead.org>,
- Kamlakant Patel <kamlakantp@marvell.com>,
- Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Bjorn Helgaas <helgaas@kernel.org>, Prabhakar Kushwaha <pkushwaha@marvell.com>,
+ Robin Murphy <robin.murphy@arm.com>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 04:28:13PM +0530, Prabhakar Kushwaha wrote:
-> We are getting "warn_alloc" warning during boot of kdump kernel. This
-> warning is observed with latest upstream tag (v5.7-rc5).
+On Thu, May 21, 2020 at 04:52:02PM +0530, Prabhakar Kushwaha wrote:
+> On Thu, May 21, 2020 at 2:53 PM Will Deacon <will@kernel.org> wrote:
+> >
+> > On Tue, May 19, 2020 at 08:24:21AM +0530, Prabhakar Kushwaha wrote:
+> > > On Mon, May 18, 2020 at 9:25 PM Will Deacon <will@kernel.org> wrote:
+> > > > On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
+> > > > > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+> > > > >       return 0;
+> > > > >  }
+> > > > >
+> > > > > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
+> > > > > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
+> > > > > +{
+> > > > > +     struct arm_smmu_strtab_cfg rdcfg;
+> > > > > +
+> > > > > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
+> > > > > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
+> > > > > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
+> > > > > +
+> > > > > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
+> > > > > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
+> > > > > +
+> > > > > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
+> > > > > +
+> > >
+> > > this need a fix. It should be memcpy.
+> > >
+> > > > > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
+> > > >
+> > > > Sorry, but this is unacceptable. These things were allocated by the DMA API
+> > > > so you can't just memcpy them around and hope for the best.
+> > > >
+> > >
+> > > I was referring copy_context_table() in drivers/iommu/intel-iommu.c.
+> > > here i see usage of memremap and memcpy to copy older iommu table.
+> > > did I take wrong reference?
+> > >
+> > > What kind of issue you are foreseeing in using memcpy(). May be we can
+> > > try to find a solution.
+> >
+> > Well the thing might not be cache-coherent to start with...
+> >
+> 
+> Thanks for telling possible issue area.  Let me try to explain why
+> this should not be an issue.
+> 
+> kdump kernel runs from reserved memory space defined during the boot
+> of first kernel. kdump does not touch memory of the previous kernel.
+> So no page has been created in kdump kernel  and  there should not be
+> any data/attribute/coherency issue from MMU point of view .
 
-Perhaps you can help to review:
+Then how does this work?:
 
-https://lore.kernel.org/r/20200521093805.64398-1-chenzhou10@huawei.com
+	rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
 
-Since it looks like it should solve your problem.
+You're explicitly asking for a write-back mapping.
+
+> During SMMU probe functions,  dmem_alloc_coherent() will be used
+> allocate new memory (part of existing flow).
+> This patch copy STE or first level descriptor to *this* memory, after
+> mapping physical address using memremap().
+> It just copy everything  so there should not be any issue related to
+> attribute/content.
+> 
+> Yes, copying  done after mapping it as MEMREMAP_WB. if you want I can
+> use it as MEMREMAP_WT
+
+You need to take into account whether or not the device is coherent, and the
+DMA API is designed to handle that for you. But even then, this is fragile
+as hell because you end up having to infer the hardware configuration
+from the device to understand the size and format of the data structures.
+If the crashkernel isn't identical to the host kernel (in terms of kconfig,
+driver version, firmware tables, cmdline etc) then this is very likely to
+go wrong.
+
+That's why I think that you need to reinitialise any devices that want to
+do DMA.
 
 Will
 
