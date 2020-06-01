@@ -2,68 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7B141EA87D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 19:41:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F15651EA88D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 19:48:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=HcBXNJIDbfnZ5UCLRxmwiaxMM3128zfAiHrKrSF5OTw=; b=aAWp9FZ46RZ0SJ
-	ItYTISNxgKa3GTPLUcHeYW111JWG0TA5JdMWmMc5ZTOwI042H/mdPchnDPf6SSOgHAeF/dlER53Cb
-	cG1cgR1ted6naQIjJIgBmyYwrAdM5Wr+L6sM+gLjD9A+3dbRMb9C6U6ma0eKdTjThL2vMque3esir
-	VGDEk9TC98bjLuD58jJuzJ2Kz2clG9GaqOkM4AXW3QwNxUyDbpvs2Wg71zjKIJKRvwTi4FQiSuwD4
-	FCfiRHJUane3TBUKL7DJDoZcK7KpPNkeAi33dSGbq5IxBDNKtEBaFHMFXw3XkfNBJBumFswx4zKUt
-	6NULMbsni5hIuvaZjUSw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YQblidR2UlYENNpkw61lDi/TdxepPOLKGo4vd9i2qw0=; b=r3deP88STTvPKd
+	qLL7cYaQvk9laK/ekX0H+QxnNwTcBSf52xhyzIN6X9X/sy4sS6OB10K9nP7pHYLYksXEZroDEThzd
+	44mwg0n8RSsyF2zDGF4SBWU6GVxZPCa3iVobQijpyQv3U2HlLkxf64gctVp/4rSUWiOUY8wFSSXag
+	i2C5cxja/M6T+h7MmLtOk6tsk6B58mBikT+tnufl1M4IXmPp5taWrBqmoL9NVqDyarKswnqwMl6sr
+	K8xOgS08g3qdCfTZbOyXXx6vTaqZyzDEVbSsjbz5EVQ03SU9DDTjRmPAFyVMZm38o+9n6wrYizTPY
+	8eMz9PoSgX4EfleOAHwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfoQz-0003FF-I6; Mon, 01 Jun 2020 17:41:13 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jfoXr-0006i8-2T; Mon, 01 Jun 2020 17:48:19 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfoQt-0003Er-L3
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 17:41:09 +0000
-Received: from localhost (mobile-166-175-190-200.mycingular.net
- [166.175.190.200])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 48FEF206A4;
- Mon,  1 Jun 2020 17:41:06 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591033266;
- bh=egFH6RgQ4a+4kLCfGrEDkjv5v4bJblqDQOjodPikqEM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=PBS/XvI5mPBJhMQPW3QR/267YghZh8VBNHFVIA3y76nvmv7wSAOnIG8ZofBmrwL3W
- hjX/e/kbh6hI/0SHMT/KsCJ3IYwK/78zwY6ZY8W6ZDDtNYI4kfbVVgq5NF84Mj/Dz5
- u9OiYWmcq6uvLgae6Udy20G6q8HsslAkBraLQcZo=
-Date: Mon, 1 Jun 2020 12:41:04 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Joerg Roedel <joro@8bytes.org>
-Subject: Re: [PATCH 0/2] Introduce PCI_FIXUP_IOMMU
-Message-ID: <20200601174104.GA734973@bjorn-Precision-5520>
+ id 1jfoXk-0006h9-88
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 17:48:13 +0000
+Received: by mail-wm1-x343.google.com with SMTP id q25so408109wmj.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 01 Jun 2020 10:48:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=beagleboard-org.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=EF2MUXWe+0T7eyxkA8rRyjXJ0lsym9S82yVeKfIolyg=;
+ b=wS+C3T2s8Q7602JUv3jWGhy8HPjzuOYzUPOpfSA5smX0EG3VwfTnAlZsoGasBnlyfg
+ 4ERS3mJMRO2/G3pVMuJSD09lBkKa/NcDOuUqMb4g2CwqWQzMCBZvoQ41i3H50aDvU0Rx
+ ERuHo8/KK/pjd5PZRwwIPJ7mKT7wV7tPAFfpZjYgZDp6jCA3KWWzxyjNE3+7HmbsVdEP
+ /SpwYW0aUknx/oMKZE168CjaLYOdZj4+BaQ4/j7WddQdFJc3qUZtVYgRGgOE2Dgyfl6G
+ HhzZGjddlkJ2txyX10rH5WJWrhyn7jSt+lSXuW5wTNQNHTeNVN9+BYBjjr/SvmVXYhlX
+ Hg4A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=EF2MUXWe+0T7eyxkA8rRyjXJ0lsym9S82yVeKfIolyg=;
+ b=Df3MYv9yhjbKrnxgz1s6izxbP3ZI7+eZR4XC9JQWafEGlUgHJ/rRv84geFh5lpnlst
+ U7m++qmG0fgVA5JYSfbh8naj/UBu0FOXYnQwDNQoD0blBFMf0aIhcL/sxeAzYMVo5r4t
+ WIl4zTCkislPNk9/f9uttDvOWCKVqRHfMK5fYi+cMBgGm/Zqu9gDX+4dSnD536UTpABc
+ efV3NORLOoE9DM3qT1DtneeR5+wzjLmS1Gf7v8Kgyu2kB2XHrCcbb7MOY0PR7GHGh5Zx
+ +Hdlo89JrTJF46KdjKZmdGqnRqX5YWL4xRdDgkAMhzaSE45Fye4aHT5q/hhrkwEXmwQM
+ +6jw==
+X-Gm-Message-State: AOAM5337fKDPzXxojIxn8rGMqcchYTIbDA8PAD+myGx771u2aQ2Dx4JO
+ VTb+jtlSVOj4S5e+Yqn/HjmLmA==
+X-Google-Smtp-Source: ABdhPJwGZ7xVM43OkmrdbN8kKFpqKZnhsQ0DhmfJ55I00xz5ohrw+O7sia6vxKrkXQ2zK+FBQy25gA==
+X-Received: by 2002:a05:600c:2110:: with SMTP id
+ u16mr426062wml.26.1591033686091; 
+ Mon, 01 Jun 2020 10:48:06 -0700 (PDT)
+Received: from x1 ([2001:16b8:5cbd:c001:98fe:8f8:cce1:59e])
+ by smtp.gmail.com with ESMTPSA id l1sm297821wrb.31.2020.06.01.10.48.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 01 Jun 2020 10:48:05 -0700 (PDT)
+Date: Mon, 1 Jun 2020 19:48:03 +0200
+From: Drew Fustini <drew@beagleboard.org>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [PATCH] pinctrl-single: fix pcs_parse_pinconf() return val
+Message-ID: <20200601174803.GD1371046@x1>
+References: <20200531204147.GA664833@x1> <20200601161851.GC37466@atomide.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200528073344.GO5221@8bytes.org>
+In-Reply-To: <20200601161851.GC37466@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_104107_710771_3EFC49A1 
-X-CRM114-Status: GOOD (  15.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200601_104812_288294_661ACA21 
+X-CRM114-Status: GOOD (  13.68  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,50 +94,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe <jean-philippe@linaro.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- linux-pci@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- kenneth-lee-2012@foxmail.com, linux-acpi@vger.kernel.org,
- Wangzhou <wangzhou1@hisilicon.com>, linux-crypto@vger.kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Zhangfei Gao <zhangfei.gao@linaro.org>, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ Robert Nelson <robertcnelson@beagleboard.org>, linux-gpio@vger.kernel.org,
+ Jason Kridner <jkridner@beagleboard.org>,
+ Haojian Zhuang <haojian.zhuang@linaro.org>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 28, 2020 at 09:33:44AM +0200, Joerg Roedel wrote:
-> On Wed, May 27, 2020 at 01:18:42PM -0500, Bjorn Helgaas wrote:
-> > Is this slowdown significant?  We already iterate over every device
-> > when applying PCI_FIXUP_FINAL quirks, so if we used the existing
-> > PCI_FIXUP_FINAL, we wouldn't be adding a new loop.  We would only be
-> > adding two more iterations to the loop in pci_do_fixups() that tries
-> > to match quirks against the current device.  I doubt that would be a
-> > measurable slowdown.
+On Mon, Jun 01, 2020 at 09:18:51AM -0700, Tony Lindgren wrote:
+> * Drew Fustini <drew@beagleboard.org> [200531 20:42]:
+> > This patch causes pcs_parse_pinconf() to return an error when no
+> > pinctrl_map is added.  The current behavior is to return 0 when
+> > !PCS_HAS_PINCONF or !nconfs.  Thus pcs_parse_one_pinctrl_entry()
+> > incorrectly assumes that a map was added and sets num_maps = 2.
 > 
-> I don't know how significant it is, but I remember people complaining
-> about adding new PCI quirks because it takes too long for them to run
-> them all. That was in the discussion about the quirk disabling ATS on
-> AMD Stoney systems.
+> Looks OK to me, would be good to wait for Haojian to test this one.
 > 
-> So it probably depends on how many PCI devices are in the system whether
-> it causes any measureable slowdown.
+> Regards,
+> 
+> Tony
 
-I found this [1] from Paul Menzel, which was a slowdown caused by
-quirk_usb_early_handoff().  I think the real problem is individual
-quirks that take a long time.
+Yes, I would like to get input as I don't have the other platforms using
+"pinconf,single":
 
-The PCI_FIXUP_IOMMU things we're talking about should be fast, and of
-course, they're only run for matching devices anyway.  So I'd rather
-keep them as PCI_FIXUP_FINAL than add a whole new phase.
+$ git grep 'compatible = "pinconf-single"' arch/
+arch/arm/boot/dts/am33xx-l4.dtsi:                                       compatible = "pinconf-single";
+arch/arm/boot/dts/hi3620.dtsi:                  compatible = "pinconf-single";
+arch/arm/boot/dts/pxa3xx.dtsi:                  compatible = "pinconf-single";
+arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hi3798cv200.dtsi:                 compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hi6220.dtsi:                      compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hi6220.dtsi:                      compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey970-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey970-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey970-pinctrl.dtsi:                    compatible = "pinconf-single";
+arch/arm64/boot/dts/hisilicon/hikey970-pinctrl.dtsi:                    compatible = "pinconf-single";
 
-Bjorn
+NOTE: the arch/arm/boot/dts/am33xx-l4.dtsi was patched by me from
+"pinctrl-single" to "pinconf-single.  But, I think for upstream
+submission I would need to move that to one of the beaglebone specific
+dts files like am335x-bone-common.dtsi.
 
-[1] https://lore.kernel.org/linux-pci/b1533fd5-1fae-7256-9597-36d3d5de9d2a@molgen.mpg.de/
+I believe this pinctrl-single.c patch fixes a flaw in return logic and
+is useful regardless of whether beaglebone adopts "pinconf,single".
+However, I would very much like to get input from others in case my
+analysis is too narrow.
+
+Thanks,
+Drew
 
 _______________________________________________
 linux-arm-kernel mailing list
