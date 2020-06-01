@@ -2,59 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 669601E9C42
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 05:58:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 518831E9C48
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 06:00:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=hDovZVfceZ93KsRhTjwYgSEmE2+vfWjEBYDCFIaw8/E=; b=CGa
-	RnYUpBDBrHKMHCtON7x/skMhkWdCagAZHsW9qAEp0s+WzPfRxIGCAxE7T8ZJGPL1sSTR4S9P04Tp2
-	vW205dMwvKkwqs5qL0ZPcBW0imA7XF8ZnfUJdrBz7ps6wF/snSPsg2TWIoUVwNyMoGHUny6wOnlT8
-	BSRKT84hg2ChqGJNuE0lIzpFBaw6wz+q7/hLNaiMBI/JXh2kW6RBZz1JeAxXmj7BcvsO270YdiuBD
-	aDl+RIvpepF6p4hMiTrh8wu7c/MYEowYMC6Yxvon9gQNHJWm7IgtZDZjDb1eSI5jkX5+3YAvc3BrZ
-	quWpkYJguZ+NK9xWBz36OzIwb5vJQxQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AVhZ0T5ihlzlj7zdhV58HIp65tRxJEGc3qI4TeLZriA=; b=Y1KLCHBYe92tFa
+	iyCVTN8/8V4KmriM0z2YK69PGix/UUmyfmV2BqCd4zHd8zujazn/XC9b42jTeKmQdZ2gKJiJ/7l98
+	FFWr17EFITkhEfiw211Y2E+QQKyQ8IvTGkwby6OUVb7vUDjhxlPHD/iZZjje1HLx1cAwPZ/pYoKX7
+	eYc3hERQKMY6XUStSG3Es94qdMR7RlDwwo0AD2pbYxn7DM0qvX1p44VLAvYIZhVstoYuqt0iGP9FF
+	bGZgKT2q4GW1X4Kdn6IxaN6AseluEFYytQh2pvUJBNgRseyr1ua9EkKRylI4wNT56M2RDRNfN9r+6
+	ME06GG+ERDxc3wKU+MfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfbaK-0002up-UK; Mon, 01 Jun 2020 03:58:00 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jfbch-0005lr-H3; Mon, 01 Jun 2020 04:00:27 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfbaB-0002tw-Q6
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 03:57:53 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id BEDF320043F;
- Mon,  1 Jun 2020 05:57:47 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4FEA32001B8;
- Mon,  1 Jun 2020 05:57:44 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 9EC89402A7;
- Mon,  1 Jun 2020 11:57:39 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: jassisinghbrar@gmail.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2] mailbox: imx: Add context save/restore for suspend/resume
-Date: Mon,  1 Jun 2020 11:47:28 +0800
-Message-Id: <1590983248-7203-1-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jfbcV-0005kn-M1
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 04:00:16 +0000
+Received: by mail-wm1-x341.google.com with SMTP id j198so11149555wmj.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 31 May 2020 21:00:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=i0iFRUKIhMIn73b620xicHjGoW+z77B/xZwAWrbWKks=;
+ b=XIsgxwNtx8vkGzYsgAp6FtVr27+1TVCIG4CzEU+9fqyI8eUqlQg1uf0yKxakkhRdG0
+ LISvfnCKImmoKCsa/eZdySxR+FykrrFrGruGc8dfiuKqaNj/EDLmSaGgr+AND7c8OZh9
+ mkxSHyLXA8Zw0P9N1bh+5A1qyz8dY6OZdcPfHbzpSw+Jkbm8121OuL6wXdpceWFFH/iH
+ aZekmZpfVf++40S+laocP/7I5OuPzzpNg2TK5vWx8KJ6khEJHtoRLimQKtu+yxUDwuG0
+ 9tR1SJmidqXAB7R53D4/bJVv6tl8PnYzAjz1lM0ohPEeZXEvHaqAPvIOPnrvz1JaNePR
+ w7EQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=i0iFRUKIhMIn73b620xicHjGoW+z77B/xZwAWrbWKks=;
+ b=jKxkCez2k5JlIvEVVjlBTL8eVLtYU1ERthVs3QUGx+WzVZU+hXWUuQcwFxGpvbYvkm
+ OY/8Znp3Ko2denLbmzMzn8eqFuxNnrg6VtBUloB2P2WS5w8FKwT20MGyNHXQuXGuy0m7
+ C1kDYgwCQ6qyhXXrezOXwqntB8lICpPLekYTFJ4h6s/cboLGok2ZEo1QuQESbu+ihdTQ
+ BDJFjkN94H89e2moNnrx4pW5YuyJQ4nysq+/KlhNG1nZD5p8Rd/mKa08KGp0C76a61/J
+ 1/4phuTDdejzjx8qJN3fwfQ+ETN47VYJh/ZSlaHO0uxQt0V2zxyygFss14CAtMbnSNEx
+ Kt8g==
+X-Gm-Message-State: AOAM5314hXvdE/rxRTf20AlxJR+iJK2rbcjc9E0rDkofXT+HVUSIl5m7
+ xkt6XtHsuVclb9BTk1xiAzizUS3O
+X-Google-Smtp-Source: ABdhPJwJNkNuJzxB72WtCVoph6PAL2vKZr7NDqkt6+sv4vj6xFStNvqxVokYBUkclWoXrlQydCmSNA==
+X-Received: by 2002:a1c:44c3:: with SMTP id r186mr19345350wma.67.1590984012573; 
+ Sun, 31 May 2020 21:00:12 -0700 (PDT)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ q128sm9529402wma.38.2020.05.31.21.00.10
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 31 May 2020 21:00:11 -0700 (PDT)
+Subject: Re: [PATCH 0/5 v2] KASan for ARM
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Abbott Liu <liuwenliang@huawei.com>, Russell King <linux@armlinux.org.uk>,
+ Ard Biesheuvel <ardb@kernel.org>, Andrey Ryabinin <aryabinin@virtuozzo.com>
+References: <20200412002407.396790-1-linus.walleij@linaro.org>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <107be5e0-3acd-1bf5-d1dd-e27f796e87d9@gmail.com>
+Date: Sun, 31 May 2020 21:00:09 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.8.1
+MIME-Version: 1.0
+In-Reply-To: <20200412002407.396790-1-linus.walleij@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_205751_984575_222406D5 
-X-CRM114-Status: GOOD (  11.33  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200531_210015_738033_A894A550 
+X-CRM114-Status: GOOD (  22.34  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,97 +104,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dong Aisheng <aisheng.dong@nxp.com>
+Hi Linus,
 
-For "mem" mode suspend on i.MX8 SoCs, MU settings could be
-lost because its power is off, so save/restore is needed
-for MU settings during suspend/resume. However, the restore
-can ONLY be done when MU settings are actually lost, for the
-scenario of settings NOT lost in "freeze" mode suspend, since
-there could be still IPC going on multiple CPUs, restoring the
-MU settings could overwrite the TIE by mistake and cause system
-freeze, so need to make sure ONLY restore the MU settings when
-it is powered off, Anson fixes this by checking whether restore
-is actually needed when resume.
+On 4/11/2020 5:24 PM, Linus Walleij wrote:
+> I am trying to pick up this series.
+> 
+> I rebased it on what is soon v5.7-rc1 and fixed some bug
+> or two (see individual ChangeLog on the patches).
+> 
+> The main thing I need to fix here is the usage of TTBR0
+> in patch 4. This isn't working for machines without
+> TTBR0 obviously. I need help with the right approach
+> here.
+> 
+> I want to support all ARM CPUs that we support with the
+> kernel and it is not far off: I tried it in Faraday's
+> FA526 and it mostly works until we reach userspace
+> and my guess is that that is because of the TTBR0
+> shortcut it is taking.
+> 
+> What is interesting is that if I compile in the KASan
+> test module into the kernel, it performs most of the
+> tests correctly even on this old platform, so we only
+> have a few things to fix.
 
-Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
-Changes since V1:
-	- change the author and add more fix note in commit log.
----
- drivers/mailbox/imx-mailbox.c | 35 +++++++++++++++++++++++++++++++++++
- 1 file changed, 35 insertions(+)
+Since this patch series has had many people trying to push it forward,
+how about we try to get it merged as-is (minus bugs, see below) with the
+caveat that TTRB0-less CPUs are not going to be supported for now and
+later on, this gets lifted if we find a champion who can get that working?
 
-diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
-index 97bf0ac..b53cf63 100644
---- a/drivers/mailbox/imx-mailbox.c
-+++ b/drivers/mailbox/imx-mailbox.c
-@@ -67,6 +67,8 @@ struct imx_mu_priv {
- 	struct clk		*clk;
- 	int			irq;
- 
-+	u32 xcr;
-+
- 	bool			side_b;
- };
- 
-@@ -583,12 +585,45 @@ static const struct of_device_id imx_mu_dt_ids[] = {
- };
- MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
- 
-+static int imx_mu_suspend_noirq(struct device *dev)
-+{
-+	struct imx_mu_priv *priv = dev_get_drvdata(dev);
-+
-+	priv->xcr = imx_mu_read(priv, priv->dcfg->xCR);
-+
-+	return 0;
-+}
-+
-+static int imx_mu_resume_noirq(struct device *dev)
-+{
-+	struct imx_mu_priv *priv = dev_get_drvdata(dev);
-+
-+	/*
-+	 * ONLY restore MU when context lost, the TIE could
-+	 * be set during noirq resume as there is MU data
-+	 * communication going on, and restore the saved
-+	 * value will overwrite the TIE and cause MU data
-+	 * send failed, may lead to system freeze. This issue
-+	 * is observed by testing freeze mode suspend.
-+	 */
-+	if (!imx_mu_read(priv, priv->dcfg->xCR))
-+		imx_mu_write(priv, priv->xcr, priv->dcfg->xCR);
-+
-+	return 0;
-+}
-+
-+static const struct dev_pm_ops imx_mu_pm_ops = {
-+	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(imx_mu_suspend_noirq,
-+				      imx_mu_resume_noirq)
-+};
-+
- static struct platform_driver imx_mu_driver = {
- 	.probe		= imx_mu_probe,
- 	.remove		= imx_mu_remove,
- 	.driver = {
- 		.name	= "imx_mu",
- 		.of_match_table = imx_mu_dt_ids,
-+		.pm = &imx_mu_pm_ops,
- 	},
- };
- module_platform_driver(imx_mu_driver);
+I tested this on an ARMv8 system (Brahma-B53 CPU) and an ARMv7-A system
+(Brahma-B15 CPU) with and without ARM_LPAE enabled and neither were able
+to boot unless KASAN was turned off (outline instrumentation), I don't
+even get to the point where earlyprintk is giving me anything which is
+odd. Have not looked at the differences between this version and the one
+I had sent before and have not hooked a debugger to find out where we
+are hung.
+
+If you have a Raspberry Pi 4 you could use it as a test system for ARM_LPAE.
+
+Thanks!
 -- 
-2.7.4
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
