@@ -2,38 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E693F1EA327
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:55:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 714F31EA32A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:55:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1bIHtePJ0Ggiy81/h6VHalJjdJH3mYORNIpddOhuJ3w=; b=XqeXJRjfqyFsm0
-	GbHssUFWRwkDNwzKGEazUJ4Y2SjHgoHtXyOVA2lZymBP1x8OhLHhbm1dOZK+OleRpBQ5ztNBuW1p0
-	JZX6ep7kv/6V4ElTGPQZ2wEx37KZocBe9Z7jWmsX0TK4d9rc5bS0DSkAPoiPtbJEA1oo+2yW62f2x
-	XWaz9OOnJj83Z9TTscx2kpwW5pFTgHQ2shgurChqSG4jiJpwcnNSMgDDKjdG4BOQml7QjRzrMb8VE
-	1IV96/VuwsTvDSlytS1KKaviMiA8J/9A0stvPnNcNkJLXUo6etytauYfQRPV1VkCvYUSMQ6T4cqQ1
-	dLeL0AzZVfUXGKqoIQWw==;
+	List-Owner; bh=Zp2z0DK5Umw2e4RyXKMxgBDh1xDCpkG2v4s1sOmNWlc=; b=QQ/4kx1MTzTDCu
+	sSZSPmfT09HwXLhWOLlyPT5LE3K/5mJP4lQXV/hT3NfPUuZ0RBFzvNr4V4PxOY6XPwq7kOs+0Df6Q
+	cuKLhj1iQn6Fx0zFkJmpS0ATvAMHI/4Ne5SuzNI6CemueN+MEx8IG3lhtOPhm+kUAz33ziYHmpqGi
+	lVdTR239N8NR4oS/qV45uH4e/iC+4LGbzclrpXewf2VkJyLQIdQAgay//FGb9DGEuMLV+OxXLfV1p
+	jmm7OGtbd23FFrXzfRfXaCoX2sfPN+SzuG8ZMqtk20+vyD2KpqH+e0dPhneuUL4QDP3hRlfp7GoL+
+	S87+mS/Fz2EFZsuKrS/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfj2J-0000DI-3b; Mon, 01 Jun 2020 11:55:23 +0000
+	id 1jfj2c-0002wB-9U; Mon, 01 Jun 2020 11:55:42 +0000
 Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfj1o-0008SO-Bx
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 11:54:54 +0000
+ id 1jfj1q-0008SQ-08
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 11:54:55 +0000
 Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 5C1D6AE3451ABF32B2F5;
+ by Forcepoint Email with ESMTP id 54D2BCBCB725E06F887B;
  Mon,  1 Jun 2020 19:54:48 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
- 14.3.487.0; Mon, 1 Jun 2020 19:54:37 +0800
+ 14.3.487.0; Mon, 1 Jun 2020 19:54:38 +0800
 From: John Garry <john.garry@huawei.com>
 To: <will@kernel.org>, <robin.murphy@arm.com>
-Subject: [PATCH RFC 1/2] iommu/arm-smmu-v3: Calculate bits for prod and owner
-Date: Mon, 1 Jun 2020 19:50:47 +0800
-Message-ID: <1591012248-37956-2-git-send-email-john.garry@huawei.com>
+Subject: [PATCH RFC 2/2] iommu/arm-smmu-v3: Remove cmpxchg() in
+ arm_smmu_cmdq_issue_cmdlist()
+Date: Mon, 1 Jun 2020 19:50:48 +0800
+Message-ID: <1591012248-37956-3-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1591012248-37956-1-git-send-email-john.garry@huawei.com>
 References: <1591012248-37956-1-git-send-email-john.garry@huawei.com>
@@ -41,8 +42,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_045452_566451_B933CA70 
-X-CRM114-Status: GOOD (  13.68  )
+X-CRM114-CacheID: sfid-20200601_045454_223911_3ABE3901 
+X-CRM114-Status: GOOD (  18.65  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -50,10 +51,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
  [45.249.212.32 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -74,90 +75,141 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the arm_smmu_ll_queue.prod will be for counting the "owner" value
-and also HW prod pointer, calculate how many bits are available for and
-used by each.
+It has been shown that the cmpxchg() for finding space in the cmdq can
+be a bottleneck:
+- For more CPUs contenting the cmdq, cmpxchg() will fail more often.
+- Since the software-maintained cons pointer is updated on the same 64b
+  memory region, the chance of cmpxchg() failure increases again.
 
-This is based on the number of possible CPUs in the system. And we require
-that each CPU can issue a minimum of 2 commands per batch - 1 x CMD_SYNC
-and at least 1 x other.
-
-Ignoring limits of HW max_n_shift and HW cmdq memory allocation, approx 16K
-is the max supported CPUs. For this, max_n_shift would be 15.
+The cmpxchg() is removed as part of 2 related changes:
+- If a CMD_SYNC is always issued for a batch, the cmdq can - in theory -
+  never fill, since we always wait for a CMD_SYNC to be consumed. We must
+  issue the CMD_SYNC so that a CPU will be always limited to issuing
+  max_cmd_per_batch commands. Generally for DMA unmap ops, a CMD_SYNC
+  is always issued anyway.
+  As such, the cmdq locking is removed, and we only longer maintain cons
+  in software (this needs to be revised for !MSI support).
+- Update prod and cmdq owner in a single operation. For this, we count the
+  prod and owner in separate regions in arm_smmu_ll_queue.prod.
+  As with simple binary counting, once the prod+wrap fields overflow, they
+  will zero. They will overflow into "owner" region, but this is ok as we
+  have accounted for the extra value.
+  As for the "owner", we now count this value, instead of setting a flag.
+  Similar to before, once the owner has finished gathering, it will clear
+  this mask. As such, a CPU declares itself as the "owner" when it reads
+  zero for this field. This zeroing will also clear possible overflow in
+  wrap+prod region.
 
 Signed-off-by: John Garry <john.garry@huawei.com>
 ---
- drivers/iommu/arm-smmu-v3.c | 34 +++++++++++++++++++++++++++++++++-
- 1 file changed, 33 insertions(+), 1 deletion(-)
+ drivers/iommu/arm-smmu-v3.c | 58 +++++++++++----------------------------------
+ 1 file changed, 14 insertions(+), 44 deletions(-)
 
 diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 82508730feb7..e607ab5a4cbd 100644
+index e607ab5a4cbd..d6c7d82f9cf8 100644
 --- a/drivers/iommu/arm-smmu-v3.c
 +++ b/drivers/iommu/arm-smmu-v3.c
-@@ -530,6 +530,8 @@ struct arm_smmu_ll_queue {
- 		u8			__pad[SMP_CACHE_BYTES];
- 	} ____cacheline_aligned_in_smp;
- 	u32				max_n_shift;
-+	u32				max_cmd_per_batch;
-+	u32				owner_count_shift;
- };
- 
- struct arm_smmu_queue {
-@@ -1512,7 +1514,10 @@ static void arm_smmu_cmdq_batch_add(struct arm_smmu_device *smmu,
- 				    struct arm_smmu_cmdq_batch *cmds,
- 				    struct arm_smmu_cmdq_ent *cmd)
+@@ -1375,7 +1375,7 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 				       u64 *cmds, int n, bool sync)
  {
--	if (cmds->num == CMDQ_BATCH_ENTRIES) {
-+	struct arm_smmu_cmdq *q = &smmu->cmdq;
-+	struct arm_smmu_ll_queue *llq = &q->q.llq;
+ 	u64 cmd_sync[CMDQ_ENT_DWORDS];
+-	u32 prod;
++	u32 prod, prodx;
+ 	unsigned long flags;
+ 	bool owner;
+ 	struct arm_smmu_cmdq *cmdq = &smmu->cmdq;
+@@ -1383,33 +1383,21 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 		.max_n_shift = cmdq->q.llq.max_n_shift,
+ 	}, head = llq;
+ 	int ret = 0;
++	u32 owner_val = 1 << cmdq->q.llq.owner_count_shift;
++	u32 prod_mask = GENMASK(cmdq->q.llq.max_n_shift, 0);
++	u32 owner_mask = GENMASK(30, cmdq->q.llq.owner_count_shift);
 +
-+	if (cmds->num == llq->max_cmd_per_batch) {
- 		arm_smmu_cmdq_issue_cmdlist(smmu, cmds->cmds, cmds->num, false);
- 		cmds->num = 0;
++	/* always issue a CMD_SYNC TODO: fixup callers for this */
++	sync = true;
+ 
+ 	/* 1. Allocate some space in the queue */
+ 	local_irq_save(flags);
+-	llq.val = READ_ONCE(cmdq->q.llq.val);
+-	do {
+-		u64 old;
+-
+-		while (!queue_has_space(&llq, n + sync)) {
+-			local_irq_restore(flags);
+-			if (arm_smmu_cmdq_poll_until_not_full(smmu, &llq))
+-				dev_err_ratelimited(smmu->dev, "CMDQ timeout\n");
+-			local_irq_save(flags);
+-		}
+ 
+-		head.cons = llq.cons;
+-		head.prod = queue_inc_prod_n(&llq, n + sync) |
+-					     CMDQ_PROD_OWNED_FLAG;
++	prodx = atomic_fetch_add(n + sync + owner_val, &cmdq->q.llq.atomic.prod);
+ 
+-		old = cmpxchg_relaxed(&cmdq->q.llq.val, llq.val, head.val);
+-		if (old == llq.val)
+-			break;
+-
+-		llq.val = old;
+-	} while (1);
+-	owner = !(llq.prod & CMDQ_PROD_OWNED_FLAG);
+-	head.prod &= ~CMDQ_PROD_OWNED_FLAG;
+-	llq.prod &= ~CMDQ_PROD_OWNED_FLAG;
++	owner = !(prodx & owner_mask);
++	llq.prod = prod_mask & prodx;
++	head.prod = queue_inc_prod_n(&llq, n + sync);
+ 
+ 	/*
+ 	 * 2. Write our commands into the queue As with simple binary counting, once the prod+wrap fields overflow, they
+  will zero. They will overflow into "owner" region, but this is ok as we
+  have accounted for the extra value.
+@@ -1420,14 +1408,6 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 		prod = queue_inc_prod_n(&llq, n);
+ 		arm_smmu_cmdq_build_sync_cmd(cmd_sync, smmu, prod);
+ 		queue_write(Q_ENT(&cmdq->q, prod), cmd_sync, CMDQ_ENT_DWORDS);
+-
+-		/*
+-		 * In order to determine completion of our CMD_SYNC, we must
+-		 * ensure that the queue can't wrap twice without us noticing.
+-		 * We achieve that by taking the cmdq lock as shared before
+-		 * marking our slot as valid.
+-		 */
+-		arm_smmu_cmdq_shared_lock(cmdq);
  	}
-@@ -3156,8 +3161,24 @@ static int arm_smmu_init_one_queue(struct arm_smmu_device *smmu,
- 				   unsigned long cons_off,
- 				   size_t dwords, const char *name)
- {
-+	int cpus = num_possible_cpus();
- 	size_t qsz;
  
-+	/*
-+	 * We can get the number of bits required for owner counting by
-+	 * log2(nr possible cpus) + 1, but we have to take into account that he
-+	 * wrap+prod could overflow before the owner zeroes, so add 1
-+	 * more (to cpus) for bits_for_cmdq_owner calculation.
-+	 */
-+	int bits_for_cmdq_owner = ilog2(cpus + 1) + 1;
-+	/* 1-bit for overflow, 1-bit for wrap */
-+	int bits_available_for_prod = 32 - 2 - bits_for_cmdq_owner;
-+	int entries_for_prod;
-+
-+	if (bits_available_for_prod < 1) /* this would be insane - how many CPUs? */
-+		return -ENOMEM;
-+
-+	q->llq.max_n_shift = min_t(int, q->llq.max_n_shift, bits_available_for_prod);
- 	do {
- 		qsz = ((1 << q->llq.max_n_shift) * dwords) << 3;
- 		q->base = dmam_alloc_coherent(smmu->dev, qsz, &q->base_dma,
-@@ -3167,6 +3188,17 @@ static int arm_smmu_init_one_queue(struct arm_smmu_device *smmu,
+ 	/* 3. Mark our slots as valid, ensuring commands are visible first */
+@@ -1439,11 +1419,10 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 		/* a. Wait for previous owner to finish */
+ 		atomic_cond_read_relaxed(&cmdq->owner_prod, VAL == llq.prod);
  
- 		q->llq.max_n_shift--;
- 	} while (1);
-+	entries_for_prod = 1 << q->llq.max_n_shift;
-+
-+	/*
-+	 * We need at least 2 commands in a batch (1 x CMD_SYNC and 1 x whatever else).
-+	 * Assuming orig max_n_shift >= 17, this would mean ~16K CPUs max.
-+	 */
-+	if (entries_for_prod < 2 * cpus)
-+		return -ENOMEM;
-+
-+	q->llq.max_cmd_per_batch = min_t(u32, entries_for_prod / cpus, CMDQ_BATCH_ENTRIES);
-+	q->llq.owner_count_shift = q->llq.max_n_shift + 1;
+-		/* b. Stop gathering work by clearing the owned flag */
+-		prod = atomic_fetch_andnot_relaxed(CMDQ_PROD_OWNED_FLAG,
++		/* b. Stop gathering work by clearing the owned mask */
++		prod = atomic_fetch_andnot_relaxed(owner_mask,
+ 						   &cmdq->q.llq.atomic.prod);
+-		prod &= ~CMDQ_PROD_OWNED_FLAG;
+-
++		prod &= prod_mask;
+ 		/*
+ 		 * c. Wait for any gathered work to be written to the queue.
+ 		 * Note that we read our own entries so that we have the control
+@@ -1476,15 +1455,6 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
+ 					    readl_relaxed(cmdq->q.prod_reg),
+ 					    readl_relaxed(cmdq->q.cons_reg));
+ 		}
+-
+-		/*
+-		 * Try to unlock the cmq lock. This will fail if we're the last
+-		 * reader, in which case we can safely update cmdq->q.llq.cons
+-		 */
+-		if (!arm_smmu_cmdq_shared_tryunlock(cmdq)) {
+-			WRITE_ONCE(cmdq->q.llq.cons, llq.cons);
+-			arm_smmu_cmdq_shared_unlock(cmdq);
+-		}
+ 	}
  
- 	if (!q->base) {
- 		dev_err(smmu->dev,
+ 	local_irq_restore(flags);
 -- 
 2.16.4
 
