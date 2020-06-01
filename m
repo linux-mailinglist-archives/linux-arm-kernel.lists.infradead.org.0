@@ -2,46 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2D4721EA128
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 11:46:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABA6C1EA13F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 11:52:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=f1SGFvvXisMmdA6TWuLDYZEk6xquZeJdMdmdfoO57iA=; b=S3gVlWEXJCzeJAS9OMlR8elSax
-	qD+5qZRk7HV/YmUmfkdLxbu9JlypFoUWMTPE4crW7a6VdenR3fEqLOqAVtYhjNw8WPsD8ozNl+tlW
-	WDFrroGjs+HjTzU1nuR6HJsHoqLnofB4JfaEE43BxVAhyMMLw1kN2PgR53INSgr6ARVhOqg9qsxwi
-	cKrU6eHTYMEEGPdIXqH7qw4Yy/S2+iP7vuLpLGc3lAa75xUE0jKRjb/lUK8okDeWK19XTGohLN5Yq
-	5cJmy/64/omF2vVGta8epvUtDgkdI2vlp5dTAIVdeX1emqlHKbe6Fnrom1Xav7pm2fatR47FWnqPC
-	1BJr3qRQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FArTOilqy/G/YOD5iyQci4EinwNet6lBqOxH1Nx1Z1Q=; b=R/yuJbqGP0SHgk
+	Fs43NEFrmfd78f2ga8yG2snF7kI2UchsXHRFjQ3a50x2YcHShlxgXu7eHw3Xnw5myAVUrqnhYfOMX
+	Micvaax4dX6JZEGxIy7T0rRcXGibgqgiQE6JAjOKn0FCilAk/j07YhP3dpvN59knXkctUl9gsEbzc
+	j2o+LawrEyAVOHai2UELI0kc8Gma/zmTcxHxacpYv5SUw2jEmXy0tT1eFtJgLkrIEIzuQcIopDvi3
+	qjjR6pfSvefgCKtCdhtiy7LE6rBQZG2NlM2V0BuHH7IJ/FqSQ5xl6iwyRv7nmKnJgbf8kuPpI3EJu
+	VCVKff0y/6jkw9yv4xwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfh1H-0003Gv-E9; Mon, 01 Jun 2020 09:46:11 +0000
+	id 1jfh7R-0006vt-9D; Mon, 01 Jun 2020 09:52:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfh0Z-0002qA-RN
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 09:45:30 +0000
+ id 1jfh7L-0006vP-8G
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 09:52:28 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 142C31063;
- Mon,  1 Jun 2020 02:45:23 -0700 (PDT)
-Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 16F5F3F305;
- Mon,  1 Jun 2020 02:45:21 -0700 (PDT)
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Will Deacon <will@kernel.org>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH 3/3] firmware: Add example PSA FF-A non-secure VM partition
-Date: Mon,  1 Jun 2020 10:45:12 +0100
-Message-Id: <20200601094512.50509-4-sudeep.holla@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200601094512.50509-1-sudeep.holla@arm.com>
-References: <20200601094512.50509-1-sudeep.holla@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6CD871FB;
+ Mon,  1 Jun 2020 02:52:26 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 512B33F305;
+ Mon,  1 Jun 2020 02:52:25 -0700 (PDT)
+Date: Mon, 1 Jun 2020 10:52:23 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Keno Fischer <keno@juliacomputing.com>
+Subject: Re: arm64: Register modification during syscall entry/exit stop
+Message-ID: <20200601095222.GY5031@arm.com>
+References: <CABV8kRzYzBrdzC1_opmmdpW63N2htfOsAUZ+RjiSDsy=SJW6Yg@mail.gmail.com>
+ <20200520174149.GB27629@willie-the-truck>
+ <CABV8kRzjCCsjVeRsBD7U_Lo0==sBw9EKm=1z7g=60KyJvJLZBQ@mail.gmail.com>
+ <CABV8kRxfet2RXXNcUoTKwfVzFWEQfxAkXUX4M5XhkP3nc-0+rQ@mail.gmail.com>
+ <20200527095528.GC11111@willie-the-truck>
+ <20200527101929.GT5031@arm.com>
+ <20200531093320.GA30204@willie-the-truck>
+ <CABV8kRyHo+EAWaMUzGA220z=HJRBCpH6UWiYGb84uSL3h8HQHw@mail.gmail.com>
+ <20200601091441.GW5031@arm.com>
+ <CABV8kRz2ineTcLS29Lh=BW_kJB_X7PoqY-MaMj_pUUziOxrYCw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CABV8kRz2ineTcLS29Lh=BW_kJB_X7PoqY-MaMj_pUUziOxrYCw@mail.gmail.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_024527_997317_57CBC676 
-X-CRM114-Status: GOOD (  15.67  )
+X-CRM114-CacheID: sfid-20200601_025227_339217_0B8043D7 
+X-CRM114-Status: GOOD (  17.44  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,128 +71,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>
-MIME-Version: 1.0
+Cc: Kyle Huey <khuey@pernos.co>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is just an example non-secure VM partition to show how to create
-the device and use the PSA FF-A interface APIs.
+On Mon, Jun 01, 2020 at 05:23:01AM -0400, Keno Fischer wrote:
+> On Mon, Jun 1, 2020 at 5:14 AM Dave Martin <Dave.Martin@arm.com> wrote:
+> > Can you explain why userspace would write a changed value for x7
+> > but at the same time need that new to be thrown away?
+> 
+> The discarding behavior is the primary reason things aren't completely
+> broken at the moment. If it read the wrong x7 value and didn't know about
+> the Aarch64 quirk, it's often just trying to write that same wrong
+> value back during the next stop, so if that's just ignored,
+> that's probably fine in 99% of cases, since the value in the
+> tracee will be undisturbed.
 
-Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
----
- drivers/firmware/arm_psa_ffa/Kconfig     |  7 +++
- drivers/firmware/arm_psa_ffa/Makefile    |  1 +
- drivers/firmware/arm_psa_ffa/partition.c | 71 ++++++++++++++++++++++++
- 3 files changed, 79 insertions(+)
- create mode 100644 drivers/firmware/arm_psa_ffa/partition.c
+I guess that's my question: when is x7 "disturbed".
 
-diff --git a/drivers/firmware/arm_psa_ffa/Kconfig b/drivers/firmware/arm_psa_ffa/Kconfig
-index ba699ec68ec4..34ad61e79234 100644
---- a/drivers/firmware/arm_psa_ffa/Kconfig
-+++ b/drivers/firmware/arm_psa_ffa/Kconfig
-@@ -13,3 +13,10 @@ config ARM_PSA_FFA_TRANSPORT
- 
- 	  This driver provides interface for all the client drivers making
- 	  use of the features offered by ARM PSA-FF-A.
-+
-+config ARM_PSA_FFA_PARTITION
-+	tristate "Arm PSA FF-A compliant partition"
-+	depends on ARM_PSA_FFA_TRANSPORT
-+	help
-+	  This driver provides example for ARM PSA-FF-A client driver
-+	  making use of the interfaces offered by ARM PSA-FF-A driver.
-diff --git a/drivers/firmware/arm_psa_ffa/Makefile b/drivers/firmware/arm_psa_ffa/Makefile
-index ac0455ff71a4..8eb03898baf7 100644
---- a/drivers/firmware/arm_psa_ffa/Makefile
-+++ b/drivers/firmware/arm_psa_ffa/Makefile
-@@ -1,2 +1,3 @@
- # SPDX-License-Identifier: GPL-2.0-only
- obj-$(CONFIG_ARM_PSA_FFA_TRANSPORT) += driver.o
-+obj-$(CONFIG_ARM_PSA_FFA_PARTITION) += partition.o
-diff --git a/drivers/firmware/arm_psa_ffa/partition.c b/drivers/firmware/arm_psa_ffa/partition.c
-new file mode 100644
-index 000000000000..8549f8d61454
---- /dev/null
-+++ b/drivers/firmware/arm_psa_ffa/partition.c
-@@ -0,0 +1,71 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/*
-+ * Arm PSA FFA example partition driver
-+ *
-+ * Copyright (C) 2020 Arm Ltd.
-+ */
-+
-+#include <linux/arm_psa_ffa.h>
-+#include <linux/of_address.h>
-+#include <linux/of_platform.h>
-+#include <linux/platform_device.h>
-+#include <linux/module.h>
-+#include <linux/types.h>
-+#include <linux/uuid.h>
-+
-+static int psa_ffa_partition_probe(struct platform_device *pdev)
-+{
-+	u16 vm_id;
-+	uuid_t uuid;
-+	const char *uuid_str;
-+	u32 uuid0_4[4];
-+	struct device *dev = &pdev->dev;
-+	const struct device_node *np = dev->of_node;
-+	struct arm_psa_ffa_handle *handle;
-+	struct psa_ffa_partition_info **buffer;
-+
-+	handle = arm_psa_ffa_handle_get(dev);
-+	if (!handle)
-+		return -ENODEV;
-+
-+	if (of_property_read_string(np, "uuid", &uuid_str)) {
-+		dev_err(dev, "failed to parse \"uuid\" property in '%pOF'\n", np);
-+		return -ENODEV;
-+	}
-+
-+	if (uuid_parse(uuid_str, &uuid)) {
-+		dev_err(dev, "invalid \"uuid\" property (%s)\n", uuid_str);
-+		return -ENODEV;
-+	}
-+
-+	export_uuid((u8 *)uuid0_4, &uuid);
-+
-+	vm_id = handle->id_get();
-+
-+	handle->partition_info_get(uuid0_4[0], uuid0_4[1], uuid0_4[2],
-+				   uuid0_4[3], buffer);
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id psa_ffa_partition_of_match[] = {
-+	{.compatible = "arm,psa-ffa-partition"},
-+	{},
-+};
-+
-+MODULE_DEVICE_TABLE(of, psa_ffa_partition_of_match);
-+
-+static struct platform_driver psa_ffa_partition_driver = {
-+	.driver = {
-+		   .name = "psa-ffa-partition",
-+		   .of_match_table = psa_ffa_partition_of_match,
-+		   },
-+	.probe = psa_ffa_partition_probe,
-+};
-+
-+module_platform_driver(psa_ffa_partition_driver);
-+
-+MODULE_ALIAS("platform: arm-psa-ffa");
-+MODULE_AUTHOR("Sudeep Holla <sudeep.holla@arm.com>");
-+MODULE_DESCRIPTION("Arm PSA FF-A example partition driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.17.1
+Other than sigreturn, I can't think of a case.
 
+I'm likely missing some aspect of what you're trying to do.
+
+> I don't think there's a sane way to change the aarch64 NT_PRSTATUS
+> semantics without just completely removing the x7 behavior, but of course
+> people may be relying on that (I think somebody said upthread that strace does?)
+
+Since rt_sigreturn emulation was always broken, can we just say
+that the effect of updating any reg other than x0 is unspecified in this
+case?
+
+Even fixing the x7 issue won't magically teach your tracer how to
+deal with unrecognised data in the signal frame, so new hardware or
+a new kernel could cause your tracer to become subtly broken.  Would you
+be better off tweaking the real signal frame as desired and doing a real
+rt_sigreturn for example, instead of attempting to emulate it?
+
+
+I'm somewhat playing devil's advocate here...
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
