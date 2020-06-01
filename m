@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79C121EA8C4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 19:56:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 347FA1EA8C5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 19:57:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IxroNIsJNoSvHiPgbWxvUNiwVshokBwwuY62D1pQrP4=; b=HYrrHXMPbaoust
-	ZhpjDxSWD2HwiNF5DUbQmFMydVays9VdodopNqlhh+H+m5oB5xUNbHjTfDRn/UCbmAOrmYmlVtfay
-	vJ0iNMd1LlG0YJE7aFKRWY4/KT3K7utJUVRZ3goWMK4esbnpQb5KRKvndPdHRCVU4fwQYAOJNOlhE
-	jsaF+lHm4+ewmho/BSKgaSRVlbvOME1+zsBksKBUwZXhPR25DPr/Y63nBGHzRWlaFyVx/Vq62adiU
-	lLgLqsifVmY8zbMG0TRW1xDsrc8ALvxhoi+EcdTsE3lLsk25PbhkZ5Yo29bLAJhplaTAHMfLCcnbW
-	XJa1F2kE2fRQVaD9WZUA==;
+	List-Owner; bh=+hlXn1200TGBiF1cKoyqo1W95iIOVZHubR4fsiDyVXQ=; b=ZHgJgqCDy7Qm9a
+	OmofB6YCISpyYTq+J1ScQNB0ELaZQlMwAzPZb3t71URl7Pmzlea66G/jSBnk9N6scvyebT6ysaaNe
+	I2NtoBwQYf/qPGejxqEEY/qoiUBDYUveTu7DJhTKl2cYyuF+3g17JcC2aIk20E2XoZwm4a7Mgln70
+	p07VhTs9DedA+J2dbvx4D22OqQp7/Ab1QE3TSg2WcfHmAxcIENRSSHSpwfOqyTCeor9sXaFhqscCs
+	TX3u3sHq67Ib+/KlM+LilMaBVfuN0EsAU+iqOGShdO2Fm+wYd/SL70NMG9NRU4qF6VHnRbeEJ/3kW
+	iJe+q5VHt7tDGR1CONIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfog5-0005Ai-QE; Mon, 01 Jun 2020 17:56:49 +0000
+	id 1jfogJ-0005P2-Se; Mon, 01 Jun 2020 17:57:03 +0000
 Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfofH-0004T2-Ro
+ id 1jfofI-0004Ta-I3
  for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 17:56:01 +0000
-Received: by mail-pg1-x541.google.com with SMTP id j21so3840498pgb.7
+Received: by mail-pg1-x541.google.com with SMTP id o6so3852019pgh.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jun 2020 10:55:58 -0700 (PDT)
+ Mon, 01 Jun 2020 10:56:00 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Mt1xsDxJMbdYjwmldK7j7a3WkNUGnKAAzigiHh0OZYk=;
- b=u5/FuQaVxT5K7fVveXroKYGE2Zkc2ldozzP6SgKNozz77UeMbxAqCMvbgzVT8RVLFA
- Scg4NCGQT4Sqz9xEoi8yNghdiu3YgMMNBjOvFgSkBZD2e3V8BWngoTlOfX0OSbxUXBAR
- N7yJa2o/eGXN/O4gAijAldki0lalo/I7xkj1OwnLQPDaPI59ltWTcV7QeAH1Nep5jYOZ
- c4vMH+DMedwZSIqH2iJyjH0t/8loYGv8Uk3bIdG4kC3BU1jafTVZmZyWJBJelJlSwy/l
- Nixoyy16uXwvpYgUYsPModiPoxQA2EJwhA3SbYihK5ht40Ag4OMwVIxvmW19nWOiTzrz
- uBbw==
+ bh=i5BZPTZAmXxklJpoMRb5vD0GYMFXpjrq4/dihvCieGA=;
+ b=oGDezAuwIcD3h/JVFiFkScpwzDR7DBlQ3K82qjR89+nwgkSaq0E5YppwnXKytVSlas
+ dl/hRrPjMDN0njFWBVSKAVG8aR6rmRXgaxqwVvmhmdk2DKf6XYFQIaf9Eavl3reRURgG
+ 4VEQIvfKLORMIIs35V5Mm8PL7qzFCVvr+tQ1uxZG6vBedJTKCkDSH6rRJC6hMMaRqZEO
+ Y1YAuNKI1gQ3YObz3ty3IXa5OyI1bnIprq3f84lh9LlQnL03m3dce8SwO14bW/NuHYM3
+ 5FXETrADg+UOjJ5EoctZZ4Ix7VbLhchbCdEu3YuYtK8CejO9iOCwSu3PY5LVK5LaBEhj
+ yPkA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Mt1xsDxJMbdYjwmldK7j7a3WkNUGnKAAzigiHh0OZYk=;
- b=s9apaaf3S/4W3d3dEuVG3g4iTIFY0cI144pwBamxKzGeAJ2qyqU74bYsAjL3rTwjBX
- 8oLj6EpT4sc/GVUe6yk5rcvTgbOFglSSskq3JxufZflN2ztPdZXHI8mmJfT4s4vIE7TO
- H6ImVP/1vtFPgcSVy8mc9yc61ZJoHezQ5cQxO0r6P+h4aN4IFe6efgiljrVYegZM0ucO
- Ql6gy2vByH3zCSFWU/EA7VliwC11hy/CEvZEFb7q7hXtAweGWJJbI7eonEaXFbmU1xdc
- ozq2238nkVsIumGui68KiIcmEk+5PhuCEtVOfqiOpkugmmYCNJHOkDjWpPllGnbnpFjp
- zG6g==
-X-Gm-Message-State: AOAM532zPhmIraUmArldL6K+hVLd3n3ODKsAdQSpf1DJmS+0ql/09pWH
- f9FnQyQT0+wPUINjxN66QlT9Ug==
-X-Google-Smtp-Source: ABdhPJzE2aa5iEK5faj4x4YJ+CgK8FSIvkIzTyWsM91Imyim08uFbh4bfBtcgO0gJflpEkMgLor8XA==
-X-Received: by 2002:a62:1e84:: with SMTP id e126mr22019473pfe.67.1591034158196; 
- Mon, 01 Jun 2020 10:55:58 -0700 (PDT)
+ bh=i5BZPTZAmXxklJpoMRb5vD0GYMFXpjrq4/dihvCieGA=;
+ b=F4X7iOlOcdct4a3uKt+bmIth9kH6hyG70sCmVLdOd2cCEDGXUcsIj7p4JQ7kecczux
+ yfDVXR1c7UMaqiPR78VbETBecKB1SGcv3ErE7DmYno/t8GlV1v8Cg72c/BRZemPRrRh5
+ 8a4fDtO2PhthP5rMdD/kWwKhpIvhTMd9/0VNC2U3ohTGApVJQPp/1WPtrlEE0HTzjP2p
+ fcGCFbHAskayBuc3/LnlooDzb3J/bLzEhRa5E7IiogmFZMwXjsIxkf7z0ZKdJfIP2fhZ
+ FbHUnT3sJSf8vyMptO3XrWKQXw3nOUfScyOHtB2v9Yo752q48eXFGKXF8yRAWFeqbR7R
+ YTlg==
+X-Gm-Message-State: AOAM5333ILU+FBKsxXvzCey/nVDkxwiHcunmlKuqQapwznM0gxwVi1OY
+ Vw9pfDn0fKxzfELIlDawhYKmEA==
+X-Google-Smtp-Source: ABdhPJxrhPzy4O3NyPsLmeg5/fP9w0+e83//FkVHlGYJSYKm29+DOBd/ogwZCnOjBob1eTm4pfRdqw==
+X-Received: by 2002:a63:3c11:: with SMTP id j17mr20781628pga.70.1591034160056; 
+ Mon, 01 Jun 2020 10:56:00 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id p7sm64771pfq.184.2020.06.01.10.55.57
+ by smtp.gmail.com with ESMTPSA id p7sm64771pfq.184.2020.06.01.10.55.58
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 01 Jun 2020 10:55:57 -0700 (PDT)
+ Mon, 01 Jun 2020 10:55:59 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: bjorn.andersson@linaro.org, ohad@wizery.com, mcoquelin.stm32@gmail.com,
  alexandre.torgue@st.com
-Subject: [PATCH v4 03/11] remoteproc: stm32: Decouple rproc from DT parsing
-Date: Mon,  1 Jun 2020 11:55:44 -0600
-Message-Id: <20200601175552.22286-4-mathieu.poirier@linaro.org>
+Subject: [PATCH v4 04/11] remoteproc: stm32: Remove memory translation from DT
+ parsing
+Date: Mon,  1 Jun 2020 11:55:45 -0600
+Message-Id: <20200601175552.22286-5-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200601175552.22286-1-mathieu.poirier@linaro.org>
 References: <20200601175552.22286-1-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_105559_894149_32C54A52 
-X-CRM114-Status: GOOD (  12.91  )
+X-CRM114-CacheID: sfid-20200601_105600_610528_E26C4AE0 
+X-CRM114-Status: GOOD (  11.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -106,86 +107,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove the remote processor from the process of parsing the device tree
-since (1) there is no correlation between them and (2) to use the
-information that was gathered to make a decision on whether to
-synchronise with the M4 or not.
+Other than one has to be done after the other, there is no correlation
+between memory translation and DT parsing.  As such move function
+stm32_rproc_of_memory_translations() to stm32_rproc_probe() so that
+stm32_rproc_parse_dt() can be extended to look for attach bindings
+in a clean way.
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Reviewed-by: Loic Pallardy <loic.pallardy@st.com>
 Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 ---
- drivers/remoteproc/stm32_rproc.c | 23 ++++++++++++-----------
- 1 file changed, 12 insertions(+), 11 deletions(-)
+ drivers/remoteproc/stm32_rproc.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-index 94fd687fb5b2..1e512ddf2591 100644
+index 1e512ddf2591..3e3b199a02c1 100644
 --- a/drivers/remoteproc/stm32_rproc.c
 +++ b/drivers/remoteproc/stm32_rproc.c
-@@ -538,12 +538,11 @@ static int stm32_rproc_get_syscon(struct device_node *np, const char *prop,
- 	return err;
+@@ -606,7 +606,7 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev,
+ 
+ 	*auto_boot = of_property_read_bool(np, "st,auto-boot");
+ 
+-	return stm32_rproc_of_memory_translations(pdev, ddata);
++	return 0;
  }
  
--static int stm32_rproc_parse_dt(struct platform_device *pdev)
-+static int stm32_rproc_parse_dt(struct platform_device *pdev,
-+				struct stm32_rproc *ddata, bool *auto_boot)
- {
- 	struct device *dev = &pdev->dev;
- 	struct device_node *np = dev->of_node;
--	struct rproc *rproc = platform_get_drvdata(pdev);
--	struct stm32_rproc *ddata = rproc->priv;
- 	struct stm32_syscon tz;
- 	unsigned int tzen;
- 	int err, irq;
-@@ -589,7 +588,7 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev)
+ static int stm32_rproc_probe(struct platform_device *pdev)
+@@ -633,6 +633,10 @@ static int stm32_rproc_probe(struct platform_device *pdev)
+ 	if (ret)
+ 		goto free_rproc;
  
- 	err = regmap_read(tz.map, tz.reg, &tzen);
- 	if (err) {
--		dev_err(&rproc->dev, "failed to read tzen\n");
-+		dev_err(dev, "failed to read tzen\n");
- 		return err;
- 	}
- 	ddata->secured_soc = tzen & tz.mask;
-@@ -605,7 +604,7 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev)
- 	if (err)
- 		dev_info(dev, "failed to get pdds\n");
- 
--	rproc->auto_boot = of_property_read_bool(np, "st,auto-boot");
-+	*auto_boot = of_property_read_bool(np, "st,auto-boot");
- 
- 	return stm32_rproc_of_memory_translations(pdev, ddata);
- }
-@@ -626,9 +625,15 @@ static int stm32_rproc_probe(struct platform_device *pdev)
- 	if (!rproc)
- 		return -ENOMEM;
- 
-+	ddata = rproc->priv;
-+
- 	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
-+
-+	ret = stm32_rproc_parse_dt(pdev, ddata, &rproc->auto_boot);
++	ret = stm32_rproc_of_memory_translations(pdev, ddata);
 +	if (ret)
 +		goto free_rproc;
 +
  	rproc->has_iommu = false;
--	ddata = rproc->priv;
  	ddata->workqueue = create_workqueue(dev_name(dev));
  	if (!ddata->workqueue) {
- 		dev_err(dev, "cannot create workqueue\n");
-@@ -638,13 +643,9 @@ static int stm32_rproc_probe(struct platform_device *pdev)
- 
- 	platform_set_drvdata(pdev, rproc);
- 
--	ret = stm32_rproc_parse_dt(pdev);
--	if (ret)
--		goto free_wkq;
--
- 	ret = stm32_rproc_request_mbox(rproc);
- 	if (ret)
--		goto free_rproc;
-+		goto free_wkq;
- 
- 	ret = rproc_add(rproc);
- 	if (ret)
 -- 
 2.20.1
 
