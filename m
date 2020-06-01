@@ -2,51 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B61311EA28E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:17:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 561C91EA2AF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:32:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+xZWxUuyQZvxuUQNfuwlznVeB9YIpC/2DJrfw8R5ZDA=; b=IxPCTjFuVKo36KcvWWbCn36+7
-	uEsuWS9CSVgXTaOBXKHdbWuuGD43dRW9tFomMvaQrdS4Vp9ddn96cAGzQvbJNEG4BuQQYTUVn+TE3
-	wd1tJSTY+VjvvooeKNIHLFKDNPwR5XA/GarNHLbIzWv6bt9KDLy7KY+ZGWZlCkEgolTxlBKpMyj0b
-	oYBR1hrpq1yyhSiJmBWgb+bpxh2kFIcCeJBfRO6WwFmSpaMlZa+RYA8Gtu5ptUBILPLAHwdPAS7eU
-	oBaLP6D/6Yl86EwJ6DZY4dakbNydeEdLREBnodCyBEO9ztoENpOImO3h25HmqETwCAq9ojAfsQNP2
-	f51XvyRtg==;
+	 bh=bFio66K+IWNp2SWMuOAYf0fY7ZPGuStWkLOWn66Durg=; b=uv6c5jFbYXBSJZBtjyJjluu5p
+	ElDS6N8+IEOFGFINcMQsK5Q4LJ6Qn1VpiWJPBTJ+GC7OVoYTbpCo19hz6hD1I3OKxhON68gc6LoNy
+	TVS2zPKIC1mB0pXRwn4H3MiP8lj4LkJoCf4zpaqWxIS0T7023jHiwWvKF1XGLjL5btU56IPEyYXP9
+	tYOZpfUdNP4bR4cFHg+S7lQJiomvGPlPnN/gtWsh+GFsEzF66jZwtkATBBGFzTMyElmkr//Q2kTvZ
+	HOv8vlm3H2CG23aBTcvBZt9oGcyT8VkHAf2fbS6xv7beorLY4ECVd2DcfOvSvlqN8NSX1JBZo+ULy
+	yELcQIKjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfiR2-0001Fo-8H; Mon, 01 Jun 2020 11:16:52 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jfigJ-0002S5-4R; Mon, 01 Jun 2020 11:32:39 +0000
+Received: from smtp12.smtpout.orange.fr ([80.12.242.134]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfiQx-0001Es-2l; Mon, 01 Jun 2020 11:16:48 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 8966B2A15EF
-Subject: Re: [PATCH v4 06/11] thermal: Add mode helpers
-To: Guenter Roeck <linux@roeck-us.net>
-References: <20200529155206.GA158553@roeck-us.net>
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Message-ID: <526286da-70d2-7c55-3c41-15fd2c969a39@collabora.com>
-Date: Mon, 1 Jun 2020 13:16:37 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jfigC-0002RB-Nj
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 11:32:34 +0000
+Received: from [192.168.1.41] ([92.140.207.208]) by mwinf5d35 with ME
+ id lnXo2200Y4WJoZY03nXyvM; Mon, 01 Jun 2020 13:32:27 +0200
+X-ME-Helo: [192.168.1.41]
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Mon, 01 Jun 2020 13:32:27 +0200
+X-ME-IP: 92.140.207.208
+Subject: Re: [PATCH] pinctrl: pxa: pxa2xx: Remove 'pxa2xx_pinctrl_exit()'
+ which is unused and broken
+To: Robert Jarzmik <robert.jarzmik@free.fr>
+Newsgroups: gmane.linux.kernel.janitors, gmane.linux.ports.arm.kernel,
+ gmane.linux.kernel.gpio, gmane.linux.kernel
+References: <20200531073716.593343-1-christophe.jaillet@wanadoo.fr>
+ <87h7vvb1s3.fsf@belgarion.home>
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Message-ID: <a2e34c9a-676f-d83f-f395-7428af038c16@wanadoo.fr>
+Date: Mon, 1 Jun 2020 13:31:23 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-In-Reply-To: <20200529155206.GA158553@roeck-us.net>
+In-Reply-To: <87h7vvb1s3.fsf@belgarion.home>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_041647_256890_669C2BC4 
-X-CRM114-Status: GOOD (  11.80  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200601_043233_054467_4C7E4062 
+X-CRM114-Status: GOOD (  14.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.134 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.134 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,50 +70,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
- Heiko Stuebner <heiko@sntech.de>, Kalle Valo <kvalo@codeaurora.org>,
- linux-wireless@vger.kernel.org, Peter Kaestle <peter@piie.net>,
- platform-driver-x86@vger.kernel.org, Vishal Kulkarni <vishal@chelsio.com>,
- Luca Coelho <luciano.coelho@intel.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>, Shawn Guo <shawnguo@kernel.org>,
- kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
- Amit Kucheria <amit.kucheria@verdurent.com>,
- linux-rockchip@lists.infradead.org, Chunyan Zhang <zhang.lyra@gmail.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Darren Hart <dvhart@infradead.org>,
- Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
- NXP Linux Team <linux-imx@nxp.com>, Johannes Berg <johannes.berg@intel.com>,
- linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
- Intel Linux Wireless <linuxwifi@intel.com>, Ido Schimmel <idosch@mellanox.com>,
- =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
- Jiri Pirko <jiri@mellanox.com>, Orson Zhai <orsonzhai@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
- Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, Sebastian Reichel <sre@kernel.org>,
- linux-renesas-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Baolin Wang <baolin.wang7@gmail.com>, Len Brown <lenb@kernel.org>,
- Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
- Andy Shevchenko <andy@infradead.org>
+Cc: linus.walleij@linaro.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, haojian.zhuang@gmail.com,
+ linux-gpio@vger.kernel.org, daniel@zonque.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: base64
 Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgR3VlbnRlciwKClcgZG5pdSAyOS4wNS4yMDIwIG/CoDE3OjUyLCBHdWVudGVyIFJvZWNrIHBp
-c3plOgo+IE9uIFRodSwgTWF5IDI4LCAyMDIwIGF0IDA5OjIwOjQ2UE0gKzAyMDAsIEFuZHJ6ZWog
-UGlldHJhc2lld2ljeiB3cm90ZToKPj4gUHJlcGFyZSBmb3IgbWFraW5nIHRoZSBkcml2ZXJzIG5v
-dCBhY2Nlc3MgdHpkJ3MgcHJpdmF0ZSBtZW1iZXJzLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBBbmRy
-emVqIFBpZXRyYXNpZXdpY3ogPGFuZHJ6ZWoucEBjb2xsYWJvcmEuY29tPgoKPHNuaXA+Cgo+PiAr
-Cj4gTml0OiB1bm5lY2Vzc2FyeSBlbXB0eSBsaW5lLgo+IAo+PiArCQlyZXR1cm4gcmV0OwoKPHNu
-aXA+Cgo+PiArCXJldHVybiB0aGVybWFsX3pvbmVfZGV2aWNlX3NldF9tb2RlKHR6LCBUSEVSTUFM
-X0RFVklDRV9FTkFCTEVEKTsKPj4gK30KPj4gK0VYUE9SVF9TWU1CT0wodGhlcm1hbF96b25lX2Rl
-dmljZV9lbmFibGUpOwo+IAo+IE90aGVyIGV4cG9ydHMgaW4gdGhlcm1hbC8gdXNlIEVYUE9SVF9T
-WU1CT0xfR1BMLgoKT3RoZXIgdGhhbiB0aGF0IGRvZXMgaXQgbG9vayBnb29kIHRvIHlvdT8KSSBj
-YW4gc2VuZCBhIHY1IHdoZXJlIHRoZSB0d28gYWJvdmUgd2lsbCBiZSBjb3JyZWN0ZWQsIGJ1dCBk
-aWQgeW91IGhhdmUKYSBjaGFuY2UgdG8gcmV2aWV3IHBhdGNoZXMgNy0xMT8KCkFuZHJ6ZWoKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+TGUgMDEvMDYvMjAyMCDDoCAxMDo1OCwgUm9iZXJ0IEphcnptaWsgYSDDqWNyaXTCoDoKPiBDaHJp
+c3RvcGhlIEpBSUxMRVQgPGNocmlzdG9waGUuamFpbGxldEB3YW5hZG9vLmZyPiB3cml0ZXM6Cj4K
+Pj4gQ29tbWl0IDZkMzNlZTdhMDUzNCAoInBpbmN0cmw6IHB4YTogVXNlIGRldm1fcGluY3RybF9y
+ZWdpc3RlcigpIGZvciBwaW5jdHJsIHJlZ2lzdHJhdGlvbiIpCj4+IGhhcyB0dXJuZWQgYSAncGlu
+Y3RybF9yZWdpc3RlcigpJyBpbnRvICdkZXZtX3BpbmN0cmxfcmVnaXN0ZXIoKScgaW4KPj4gJ3B4
+YTJ4eF9waW5jdHJsX2luaXQoKScuCj4+IEhvd2V2ZXIsIHRoZSBjb3JyZXNwb25kaW5nICdwaW5j
+dHJsX3VucmVnaXN0ZXIoKScgY2FsbCBpbgo+PiAncHhhMnh4X3BpbmN0cmxfZXhpdCgpJyBoYXMg
+bm90IGJlZW4gcmVtb3ZlZC4KPj4KPj4gVGhpcyBpcyBub3QgYW4gaXNzdWUsIGJlY2F1c2UgJ3B4
+YTJ4eF9waW5jdHJsX2V4aXQoKScgaXMgdW51c2VkLgo+PiBSZW1vdmUgaXQgbm93IHRvIGF2b2lk
+IHNvbWUgd29uZGVyaW5nIGluIHRoZSBmdXR1cmUgYW5kIHNhdmUgYSBmZXcgTG9DLgo+Pgo+PiBT
+aWduZWQtb2ZmLWJ5OiBDaHJpc3RvcGhlIEpBSUxMRVQgPGNocmlzdG9waGUuamFpbGxldEB3YW5h
+ZG9vLmZyPgo+IEFja2VkLWJ5OiBSb2JlcnQgSmFyem1payA8cm9iZXJ0LmphcnptaWtAZnJlZS5m
+cj4KPgo+IFdvdWxkIGJlIGV2ZW4gYSBiZXR0ZXIgcGF0Y2ggd2l0aCBhIDoKPiBGaXhlczogNmQz
+M2VlN2EwNTM0ICgicGluY3RybDogcHhhOiBVc2UgZGV2bV9waW5jdHJsX3JlZ2lzdGVyKCkgZm9y
+IHBpbmN0cmwgcmVnaXN0cmF0aW9uIikKCkkgd2FzIHdvbmRlcmluZyBpdCB3YXMgd2FzIG5lZWRl
+ZCBpbiB0aGlzIGNhc2UuClRoZSBwYXRjaCBkb2VzIG5vdCByZWFsbHkgZml4IGFueXRoaW5nLCBh
+cyB0aGUgZnVuY3Rpb24gaXMgdW51c2VkLiBPciBpdCAKZml4ZXMgdGhpbmdzIG9uIGEgdGhlb3Jl
+dGljYWwgcG9pbnQgb2Ygdmlldy4KCkNKCgoKPiBDaGVlcnMuCj4KPiAtLQo+IFJvYmVydAo+CgoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
+LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
+cm5lbAo=
