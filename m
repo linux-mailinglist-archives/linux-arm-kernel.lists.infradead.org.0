@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A9911EA224
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 12:47:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A618E1EA22B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 12:48:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XMFNBcLUnMXt5x34/JvbB8vNTPDt9Wp0FZ3tiv7wMgg=; b=eohw4+IwoyVN8E
-	KK23NbVzkKtvUDyG3jW8dcDGkPPW+A1Lto3yJw99N3eV+vaDZqNLZIsCLcdQlGI3/1OHQFSF2C1o5
-	jO+tlKqrk3qOTQroSo9IIJNmm9OBSKBtX5uKadAnvL0xmFhTe3uZTLxl8DYr/WLxZ1EjsE4igtJuv
-	mWXcESR3ZepDbho/bEeaxv+itCbp7n9Avkkl6iod5nA80V78q/lZdgidqSULDZqpzoZm5wYWzMS4Q
-	IWKRApE8OWfy7M62M7wzQKBQSId6B5Fz0AJ/UO3R6cyQYzJDq9tSOZzgq3rKtOgI1VZCV61VoArU7
-	wKiFBzRb6U4TbXvULYKg==;
+	List-Owner; bh=8f9Ws0rd3uxnw7CmA2QbPYiMc+RK8modF6wni80aXzM=; b=ocyJ/82Qvtxu0f
+	AKSHq5qhUyM9oRueX2sNWwrK0UqPLBWiugj8YmL7zb2/84Am3KkDF+chcWnsjeVYoeqmEdkOqnE7b
+	baPv2xDGZt4VYgvMSGW6kYIvf9aJF/fPtiwdHKCgZsee7ljIeP1Y+ziyh0N+aDfzaRW+JTuMFffDN
+	ji7gzP8M4NFObboJsKf+WUMdraq9LGZAlWKtGKrYO5DpIYA8SGQriYF9y4Oz7sqOm3hpAB4Kh/Hmf
+	AuhPhEnpFuzdOASAnuAd+laFbzdivaXmjhi/WnhLAiTh/EowbP/Q918uW4o6ZdIER2sz8X5peIfPl
+	Hp39xF9WJot/PvYPYDOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfhyQ-0008SM-QH; Mon, 01 Jun 2020 10:47:18 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jfhzQ-00019L-Lm; Mon, 01 Jun 2020 10:48:20 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfhy1-0008Jp-T5; Mon, 01 Jun 2020 10:46:55 +0000
-X-UUID: 2584d97053dd47c49edbeef5a86af626-20200601
+ id 1jfhyB-0008U6-DO; Mon, 01 Jun 2020 10:47:05 +0000
+X-UUID: 279fbd99eefd4d4e916d08cceac89461-20200601
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=ckHEM7GVI4e4nimxXTABhbmcvCORVQbBj1jfInkgoAg=; 
- b=qnN/SsqGEXsZ18dqu2xVroL2VBVeEEMEczfG/pDyYCVrhvUl8L5hQh06i+noZP9ZEkh1JUF2WeYH/p2ivFVDzCCNvuUlaxL25TfZj5jJB/T0pZf24humDsJroV31H/4gQeIEuJTkDeLzYTY0SEMkiffNvIbjPxqMuXuloKATZyo=;
-X-UUID: 2584d97053dd47c49edbeef5a86af626-20200601
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=ffvmQC8t/hn3+jnrp17+5Ooh5VVEaAxae4PFdHA2xRE=; 
+ b=rsZ05fmHpOwcDjggbiz5R/eIbtWkvbp43DuOvfeO8r7e2TBpeVrUCvtlrAxyDDTEqmiBO6H26xHvQbGEJ+OhvayASzTC0OjVBMxOtrKGgtVZubFp3mta2HniCezqzu7sXXEF3pgtO9/EIQ4J1iC3mPlPwlwpaSsjzdrjUMtL5Hk=;
+X-UUID: 279fbd99eefd4d4e916d08cceac89461-20200601
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2014456497; Mon, 01 Jun 2020 02:46:44 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 1 Jun 2020 03:46:47 -0700
+ with ESMTP id 1811915542; Mon, 01 Jun 2020 02:46:52 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 1 Jun 2020 03:46:54 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 1 Jun 2020 18:46:45 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 1 Jun 2020 18:46:46 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
  Frontend Transport; Mon, 1 Jun 2020 18:46:46 +0800
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v3 3/5] scsi: ufs-mediatek: Introduce low-power mode for
- device power supply
-Date: Mon, 1 Jun 2020 18:46:44 +0800
-Message-ID: <20200601104646.15436-4-stanley.chu@mediatek.com>
+Subject: [PATCH v3 4/5] scsi: ufs-mediatek: Fix unbalanced clock on/off
+Date: Mon, 1 Jun 2020 18:46:45 +0800
+Message-ID: <20200601104646.15436-5-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200601104646.15436-1-stanley.chu@mediatek.com>
 References: <20200601104646.15436-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 3B690E7BA8B2E87E504F51C7332648DAE36C3531BDA6C53F261C0676475742F02000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_034653_938523_98A4776D 
-X-CRM114-Status: GOOD (  10.11  )
+X-CRM114-CacheID: sfid-20200601_034703_497296_1ECEAAD9 
+X-CRM114-Status: GOOD (  12.92  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,68 +97,149 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allow device power supply to enter low-power mode if device will
-do nothing to save more power.
+MediaTek UFS clocks are separated to two parts and controlled
+by different modules: ufs-mediatek and phy-ufs-mediatek.
+
+If both Auto-Hibern8 and clk-gating feature are enabled, mphy
+power control is not balanced thus unbalanced control also
+happens to the clocks probed by phy-ufs-mediatek module.
+
+Fix this issue by
+
+- Promise usage of phy_power_on/off balanced
+
+- Remove phy_power_on/off control in suspend/resume vops since
+  both can be handled in setup_clock vops only
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Pengshun Zhao <pengshun.zhao@mediatek.com>
+Reviewed-by: Peter Wang <peter.wang@mediatek.com>
 ---
- drivers/scsi/ufs/ufs-mediatek.c | 21 +++++++++++++++++++++
- 1 file changed, 21 insertions(+)
+ drivers/scsi/ufs/ufs-mediatek.c | 60 ++++++++++++++++++++-------------
+ drivers/scsi/ufs/ufs-mediatek.h |  1 +
+ 2 files changed, 38 insertions(+), 23 deletions(-)
 
 diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 3c85f5e97dea..5f41b7b7db8f 100644
+index 5f41b7b7db8f..1cc7bea1468b 100644
 --- a/drivers/scsi/ufs/ufs-mediatek.c
 +++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -12,6 +12,7 @@
- #include <linux/of_address.h>
- #include <linux/phy/phy.h>
- #include <linux/platform_device.h>
-+#include <linux/regulator/consumer.h>
- #include <linux/soc/mediatek/mtk_sip_svc.h>
- 
- #include "ufshcd.h"
-@@ -521,6 +522,19 @@ static int ufs_mtk_link_set_lpm(struct ufs_hba *hba)
- 	return 0;
+@@ -205,6 +205,23 @@ int ufs_mtk_wait_link_state(struct ufs_hba *hba, u32 state,
+ 	return -ETIMEDOUT;
  }
  
-+static void ufs_mtk_vreg_set_lpm(struct ufs_hba *hba, bool lpm)
++static void ufs_mtk_mphy_power_on(struct ufs_hba *hba, bool on)
 +{
-+	if (!hba->vreg_info.vccq2)
++	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
++	struct phy *mphy = host->mphy;
++
++	if (!mphy)
 +		return;
 +
-+	if (lpm & !hba->vreg_info.vcc->enabled)
-+		regulator_set_mode(hba->vreg_info.vccq2->reg,
-+				   REGULATOR_MODE_IDLE);
-+	else if (!lpm)
-+		regulator_set_mode(hba->vreg_info.vccq2->reg,
-+				   REGULATOR_MODE_NORMAL);
++	if (on && !host->mphy_powered_on)
++		phy_power_on(mphy);
++	else if (!on && host->mphy_powered_on)
++		phy_power_off(mphy);
++	else
++		return;
++	host->mphy_powered_on = on;
 +}
 +
+ /**
+  * ufs_mtk_setup_clocks - enables/disable clocks
+  * @hba: host controller instance
+@@ -218,6 +235,7 @@ static int ufs_mtk_setup_clocks(struct ufs_hba *hba, bool on,
+ {
+ 	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+ 	int ret = 0;
++	bool clk_pwr_off = false;
+ 
+ 	/*
+ 	 * In case ufs_mtk_init() is not yet done, simply ignore.
+@@ -228,25 +246,29 @@ static int ufs_mtk_setup_clocks(struct ufs_hba *hba, bool on,
+ 		return 0;
+ 
+ 	if (!on && status == PRE_CHANGE) {
+-		if (!ufshcd_is_link_active(hba)) {
+-			ufs_mtk_setup_ref_clk(hba, on);
+-			ret = phy_power_off(host->mphy);
+-		} else {
++		if (ufshcd_is_link_off(hba)) {
++			clk_pwr_off = true;
++		} else if (ufshcd_is_link_hibern8(hba) ||
++			 (!ufshcd_can_hibern8_during_gating(hba) &&
++			 ufshcd_is_auto_hibern8_enabled(hba))) {
+ 			/*
+-			 * Gate ref-clk if link state is in Hibern8
+-			 * triggered by Auto-Hibern8.
++			 * Gate ref-clk and poweroff mphy if link state is in
++			 * OFF or Hibern8 by either Auto-Hibern8 or
++			 * ufshcd_link_state_transition().
+ 			 */
+-			if (!ufshcd_can_hibern8_during_gating(hba) &&
+-			    ufshcd_is_auto_hibern8_enabled(hba)) {
+-				ret = ufs_mtk_wait_link_state(hba,
+-							      VS_LINK_HIBERN8,
+-							      15);
+-				if (!ret)
+-					ufs_mtk_setup_ref_clk(hba, on);
+-			}
++			ret = ufs_mtk_wait_link_state(hba,
++						      VS_LINK_HIBERN8,
++						      15);
++			if (!ret)
++				clk_pwr_off = true;
++		}
++
++		if (clk_pwr_off) {
++			ufs_mtk_setup_ref_clk(hba, on);
++			ufs_mtk_mphy_power_on(hba, on);
+ 		}
+ 	} else if (on && status == POST_CHANGE) {
+-		ret = phy_power_on(host->mphy);
++		ufs_mtk_mphy_power_on(hba, on);
+ 		ufs_mtk_setup_ref_clk(hba, on);
+ 	}
+ 
+@@ -538,7 +560,6 @@ static void ufs_mtk_vreg_set_lpm(struct ufs_hba *hba, bool lpm)
  static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
  {
  	int err;
-@@ -537,6 +551,12 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 			ufshcd_set_link_off(hba);
- 			return -EAGAIN;
- 		}
-+		/*
-+		 * Make sure no error will be returned to prevent
-+		 * ufshcd_suspend() re-enabling regulators while vreg is still
-+		 * in low-power mode.
-+		 */
-+		ufs_mtk_vreg_set_lpm(hba, true);
- 	}
- 
- 	if (!ufshcd_is_link_active(hba))
-@@ -554,6 +574,7 @@ static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 		phy_power_on(host->mphy);
+-	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
  
  	if (ufshcd_is_link_hibern8(hba)) {
-+		ufs_mtk_vreg_set_lpm(hba, false);
+ 		err = ufs_mtk_link_set_lpm(hba);
+@@ -559,20 +580,13 @@ static int ufs_mtk_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+ 		ufs_mtk_vreg_set_lpm(hba, true);
+ 	}
+ 
+-	if (!ufshcd_is_link_active(hba))
+-		phy_power_off(host->mphy);
+-
+ 	return 0;
+ }
+ 
+ static int ufs_mtk_resume(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+ {
+-	struct ufs_mtk_host *host = ufshcd_get_variant(hba);
+ 	int err;
+ 
+-	if (!ufshcd_is_link_active(hba))
+-		phy_power_on(host->mphy);
+-
+ 	if (ufshcd_is_link_hibern8(hba)) {
+ 		ufs_mtk_vreg_set_lpm(hba, false);
  		err = ufs_mtk_link_set_hpm(hba);
- 		if (err) {
- 			err = ufshcd_link_recovery(hba);
+diff --git a/drivers/scsi/ufs/ufs-mediatek.h b/drivers/scsi/ufs/ufs-mediatek.h
+index fc42dcbfd800..6052ec105aba 100644
+--- a/drivers/scsi/ufs/ufs-mediatek.h
++++ b/drivers/scsi/ufs/ufs-mediatek.h
+@@ -91,6 +91,7 @@ enum {
+ struct ufs_mtk_host {
+ 	struct ufs_hba *hba;
+ 	struct phy *mphy;
++	bool mphy_powered_on;
+ 	bool unipro_lpm;
+ 	bool ref_clk_enabled;
+ 	u16 ref_clk_ungating_wait_us;
 -- 
 2.18.0
 _______________________________________________
