@@ -2,65 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF6661EA101
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 11:32:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22A3F1EA116
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 11:41:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2625q0T94VaUqSZQbhZMHGwS3fBA6/NBfNJcWs2QlnA=; b=rDqoX3bkatosJe
-	sEe6yQUfQLA/ZNkG8hJbIsw+IQH3r3l5q0GyPAIgEFZ75CNplKtSKPkimwRJdilQ4dj6A5J7N5ATZ
-	QNru9UOZ8FGWrM6RUwdbDghVZh+FIw26H9Iok2Nnen9mtK5y1fwktWTt8C7NZqcwT0BixGaOJK67e
-	XM7XTSPse6O4gK6AL+Hi8awmj1Em247Khn5lY2jSrjTDzmb5hVTSW7jDeGh2CRYZqXTydALt662Qp
-	YNJk30gvWpGbv9KmdDmJ5T/FH/4WU2CljE6626biCvANE/5bUbDlXw8flxGdg4IiVEewiED0oVdTI
-	MbXahnAwmTjX2q0YCvKg==;
+	List-Owner; bh=JRO1kb8kwdXWE4dHqE4mkUbbWs6FmPfvAZAfPY9IeJk=; b=KzgirQM6J4wVHA
+	y4oVYxvodhJA2kVDyTXDYUtk4jgYmlunXVOgYU23X05JLZ2Z7x9h0cqAgMuu2+JbCc3MQPKiGz2WJ
+	LdZwAwY66/OxxVLgHukBmut3UX2jclWoQ2xsU0wLnoLU9OUDHI0TGlhxZd0BqACgS7IUAsFfn7MON
+	iZGdQHw6NVEu4aLfM1LCKuH9qN72mIW4veaPN5+DcS3eDGUqvoSxTYjN7ad5p8zTz2FHOAOyO+rOC
+	cZ+iZsyxs+Q2KJX7njKNgzuzgACTb3M/tar1+hW9AWOeaI2MVmJF38St6gdACseMdz6piX2Sj2URG
+	nmEEbIYIr0LHDEG9vmeg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfgoJ-0001sd-La; Mon, 01 Jun 2020 09:32:47 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1jfgwQ-0007yw-T9; Mon, 01 Jun 2020 09:41:10 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfgo9-0001s9-S3; Mon, 01 Jun 2020 09:32:39 +0000
-IronPort-SDR: 44f3qzUo6GAK5Ghh+n+EGLadC5mJuDxZE2MOkOResZiZuEzhBRDgatUXeZenvaRtgQW4TKttH1
- 3XzJr6wU35Fw==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 01 Jun 2020 02:32:37 -0700
-IronPort-SDR: nTif1mTtkHi87XZiGU70czwtX/SDkyvcmgJrttLqVCTKcoabc4BmuzI7P5TPPZVdLGzswEnEVZ
- hKGv+W/ALVvA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,460,1583222400"; d="scan'208";a="470229744"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga006.fm.intel.com with ESMTP; 01 Jun 2020 02:32:34 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jfgo9-00AC72-GP; Mon, 01 Jun 2020 12:32:37 +0300
-Date: Mon, 1 Jun 2020 12:32:37 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Fengping Yu <fengping.yu@mediatek.com>
-Subject: Re: [PATCH v13 1/3] dt-bindings: Add keypad devicetree documentation
-Message-ID: <20200601093237.GB2428291@smile.fi.intel.com>
-References: <20200601022548.18213-1-fengping.yu@mediatek.com>
- <20200601022548.18213-2-fengping.yu@mediatek.com>
+ id 1jfgwL-0007yV-Ah
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 09:41:06 +0000
+Received: by mail-il1-x142.google.com with SMTP id p5so7655193ile.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 01 Jun 2020 02:41:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=juliacomputing-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nO7elIn75rXMDTmbGX5CwrU6GxaesMXHLlCbJsq5rEQ=;
+ b=cLgpUZDiWZDwAN2vx/sytkpCsMzPnswW25yhXlVOp7mvVpeRlJOUcL6ONESsHq4N5X
+ HH2yxwDti5i1GdDd4YCHAfPTiWSoyXWJxirYGBbpZDuEGo9JLmODxeuxOXEeKzLCB9+C
+ l7vGuRn6j6t3VTQiJVZq5T2MzB9ClqZ6VP+bNNVn8ZUM4GYX9hNpIDTbFVB/Jjh/UT/l
+ /7o7vY5W2BcCYbuGhcjIItQQeq6n7o6igNnkuw3WivgXrRHJoIRI8dDzPGEKi9pDWVXi
+ 9om6exEDZE16d0x4y+jjS1v1SxPgLbzLu1EyvD2GvI+iRK8xDBnMidpRDhiCnt2pEJX/
+ RUWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nO7elIn75rXMDTmbGX5CwrU6GxaesMXHLlCbJsq5rEQ=;
+ b=RCGcO4C+4oR/+dpW3nXBywEui6lO1oPFMyxJ3Y9p9CKwA3t1XXo3IIotmDRIEEoOLV
+ DYHrQ4R4X6evFl6TvtEyH0AnV5fudkT1Y8xnkn2kWze8JBm/L2U5rKm03MkvpyHTj+1t
+ OW0y0XVZM+VnoUtL5CuhPWBZ/pLNUnqeIdFhfaQFnfvVya8fPO2GPpL92ENlaUC8IaSl
+ g1wfxsM/RaYt/yCEYMeg3wI78fXKbU6IG/ziYaTqBzywWc+spqf/MXqucddppLmiFS7z
+ ScLL2mvLpkllJBmWwP1TyTszA0dMqral4pPreHOFFtp82evwCV3f0atTbUfgzeb+UyCx
+ K/yw==
+X-Gm-Message-State: AOAM533Vs7fqIxYR+K03UDk1fX1xQzlpSSVo8IPe2mhi3p78BXupBvam
+ TeV5KHmpdQP6COYxNcU/YM62vuvjjPNXK4L/i98I5g==
+X-Google-Smtp-Source: ABdhPJzVdyKeWuJzEbxe7Sc+FKz1NHQru8HQk5OZpdLtuY1JD367wXLiZfSvV0eqC82O90IqonbPfcZ/GoTr0iSLTy4=
+X-Received: by 2002:a92:c04d:: with SMTP id o13mr7724607ilf.201.1591004464341; 
+ Mon, 01 Jun 2020 02:41:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200601022548.18213-2-fengping.yu@mediatek.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+References: <CABV8kRz0mKSc=u1LeonQSLroKJLOKWOWktCoGji2nvEBc=e7=w@mail.gmail.com>
+ <20200519081551.GA9980@willie-the-truck>
+ <CABV8kRzYzBrdzC1_opmmdpW63N2htfOsAUZ+RjiSDsy=SJW6Yg@mail.gmail.com>
+ <20200520174149.GB27629@willie-the-truck>
+ <CABV8kRzjCCsjVeRsBD7U_Lo0==sBw9EKm=1z7g=60KyJvJLZBQ@mail.gmail.com>
+ <CABV8kRxfet2RXXNcUoTKwfVzFWEQfxAkXUX4M5XhkP3nc-0+rQ@mail.gmail.com>
+ <20200527095528.GC11111@willie-the-truck> <20200527101929.GT5031@arm.com>
+ <CABV8kRwhsPhhqUXS46Rwh-xDEDY2q=KSd-xz1W-pu4Gy4KVp8Q@mail.gmail.com>
+ <20200601092329.GX5031@arm.com>
+In-Reply-To: <20200601092329.GX5031@arm.com>
+From: Keno Fischer <keno@juliacomputing.com>
+Date: Mon, 1 Jun 2020 05:40:28 -0400
+Message-ID: <CABV8kRzkLiVuqxT3+8c1o8m_OuROtXgfowQcrMVnrxu=CiGB=w@mail.gmail.com>
+Subject: Re: arm64: Register modification during syscall entry/exit stop
+To: Dave Martin <Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_023237_926774_22CC535F 
-X-CRM114-Status: GOOD (  20.77  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200601_024105_365198_E0DF44F2 
+X-CRM114-Status: GOOD (  14.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,141 +95,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- Marco Felsch <m.felsch@pengutronix.de>, linux-mediatek@lists.infradead.org,
- linux-input@vger.kernel.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Kyle Huey <khuey@pernos.co>, Catalin Marinas <catalin.marinas@arm.com>,
+ Oleg Nesterov <oleg@redhat.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 01, 2020 at 10:25:47AM +0800, Fengping Yu wrote:
-> From: "fengping.yu" <fengping.yu@mediatek.com>
-> 
-> Add Mediatek matrix keypad dt-bindings doc as yaml schema.
-> 
-> Signed-off-by: fengping.yu <fengping.yu@mediatek.com>
-> Reviewed-by: Marco Felsch <m.felsch@pengutronix.de>
+On Mon, Jun 1, 2020 at 5:23 AM Dave Martin <Dave.Martin@arm.com> wrote:
+> > > Can't PTRACE_SYSEMU be emulated by using PTRACE_SYSCALL, cancelling the
+> > > syscall at the syscall enter stop, then modifying the regs at the
+> > > syscall exit stop?
+> >
+> > Yes, it can. The idea behind SYSEMU is to be able to save half the
+> > ptrace traps that would require, in theory making the ptracer
+> > a decent amount faster. That said, the x7 issue is orthogonal to
+> > SYSEMU, you'd have the same issues if you used PTRACE_SYSCALL.
+>
+> Right, I just wondered whether there was some deeper difference between
+> the two approaches.
 
-> Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+You're asking about a new regset vs trying to do it via ptrace option?
+I don't think there's anything a ptrace option can do that a new regset
+that replicates the same registers (I'm gonna propose adding orig_x0,
+while we're at it and changing the x0 semantics a bit, will have
+those details with the patch) wouldn't be able to do . The reason I
+originally thought it might have to be a ptrace option is because
+the register modification currently gets applied in the syscall entry
+code to the actual regs struct, so I thought you might have to know
+to preserve those registers. However, then I realized that you could
+just change the regset accessors to emulate the old behavior, since
+we do already store all the required information (what kind of stop
+we're currently at) in order to be able to answer the ptrace
+informational queries. So doing that it probably just all around
+easier. I guess NT_PRSTATUS might also rot, but I guess strace
+doesn't really have to stop using it, since it doesn't care about
+the x7 value nor does it need to modify it.
 
-I didn't review this.
-
-> ---
->  .../devicetree/bindings/input/mtk-kpd.yaml    | 95 +++++++++++++++++++
->  1 file changed, 95 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/input/mtk-kpd.yaml b/Documentation/devicetree/bindings/input/mtk-kpd.yaml
-> new file mode 100644
-> index 000000000000..586cd196dd00
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/input/mtk-kpd.yaml
-> @@ -0,0 +1,95 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +version: 1
-> +
-> +$id: http://devicetree.org/schemas/input/mtk-keypad.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Mediatek's Keypad Controller device tree bindings
-> +
-> +maintainer:
-> +  - Fengping Yu <fengping.yu@mediatek.com>
-> +
-> +description: |
-> +  Mediatek's Keypad controller is used to interface a SoC with a matrix-type
-> +  keypad device. The keypad controller supports multiple row and column lines.
-> +  A key can be placed at each intersection of a unique row and a unique column.
-> +  The keypad controller can sense a key-press and key-release and report the
-> +  event using a interrupt to the cpu.
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - const: "mediatek,mt6779-keypad"
-> +      - const: "mediatek,mt6873-keypad"
-> +
-> +  clock-names:
-> +    description: Names of the clocks listed in clocks property in the same order
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    description: Must contain one entry, for the module clock
-> +    refs: devicetree/bindings/clocks/clock-bindings.txt for details.
-> +
-> +  interrupts:
-> +    description: A single interrupt specifier
-> +    maxItems: 1
-> +
-> +  linux,keymap:
-> +    description: The keymap for keys as described in the binding document
-> +    refs: devicetree/bindings/input/matrix-keymap.txt
-> +    minItems: 1
-> +    maxItems: 16
-> +
-> +  pinctrl-0:
-> +    description: Specify pin control groups used for this controller
-> +    refs: devicetree/bindings/pinctrl/pinctrl-bindings.txt
-> +
-> +  pinctrl-names:
-> +    description: Names for optional pin modes
-> +    maxItems: 1
-> +
-> +  reg:
-> +    description: The base address of the Keypad register bank
-> +    maxItems: 1
-> +
-> +  wakeup-source:
-> +    description: use any event on keypad as wakeup event
-> +    type: boolean
-> +
-> +  keypad,num-columns:
-> +    description: Number of column lines connected to the keypad controller,
-> +    it is not equal to PCB columns number, instead you should add required value
-> +    for each IC
-> +
-> +  keypad,num-rows:
-> +    description: Number of row lines connected to the keypad controller, it is
-> +    not equal to PCB rows number, instead you should add required value for each IC
-> +
-> +  mediatek,debounce-us:
-> +    description: Debounce interval in microseconds
-> +    maximum: 256000
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - linux,keymap
-> +  - pinctrl
-> +  - clocks
-> +  - clock-names
-> +
-> +examples:
-> +  - |
-> +
-> +  keypad: kp@10010000 {
-> +    compatible = "mediatek,mt6779-keypad";
-> +    reg = <0 0x10010000 0 0x1000>;
-> +    linux,keymap = < MATRIX_KEY(0x00, 0x00, KEY_VOLUMEDOWN) >;
-> +    interrupts = <GIC_SPI 75 IRQ_TYPE_EDGE_FALLING>;
-> +    clocks = <&clk26m>;
-> +    clock-names = "kpd";
-> +    pinctrl-names = "default";
-> +    pinctrl-0 = <&kpd_gpios_def_cfg>;
-> +  };
-> -- 
-> 2.18.0
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
+Keno
 
 _______________________________________________
 linux-arm-kernel mailing list
