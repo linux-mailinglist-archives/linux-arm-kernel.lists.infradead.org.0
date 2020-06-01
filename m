@@ -2,60 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 439071EA2B6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:34:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F31C1EA2B4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:33:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=z0LqiGy9iWMmTuEuqb/abEk1bCr8waj9QpJioDIH5pI=; b=PX2q3Q2B+ExzOO
-	CnKOwxswdknxacDFETV8HOmKSu+OYW7l4RyWbk9UTMz436XZ9NxoEXndlYAn33P5bZMWcbAuRm94C
-	B52jKoKIcBY0R4/A5MmiN7vYZPX5R8yJWx2vfMf1ydK9s9s0va/vZb3xY4JLg86ZKh8CK0iLLy2Qa
-	72e3EQsb2kqDaIhUy938GWF2HkuSWw3cqe5CFejHyu7RC2/NXOt+FEpnF94TYh/8eKWl5klYy8mSe
-	VzPsulb+1Rx+mzflB+Lnh4rX2cBceHnMD16pkorGqJ8W1nos1vaSrVUj9dTS87E8cZZFDdW9zp1Be
-	9AgWv9cX6zRM80RvTJnQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T5im11T6EPjaPvf6nXpCE/1FE7ltbhFKTeiHEtJ6K3E=; b=KTsTe104YgQPGL
+	T3kToOaegj3nbHcx3VzHaCYmEW3Hz2srYuwESz3DYTBSi0pBSYd9alCvy/N8I2lEzCg8lCxaZBo4o
+	5lRdoHU8GfMHMUh99Kme4pmxbUC8lTfDcPU6A2dD90VD9jeHtpaMcrFOUSjPnO/4dr39sTiJB/DPL
+	yOxwOI8nCSKmmsM1tQYQNL7rWBAGaCdYLVpEFq3lKnrT8fN8J4Fd5GEAuKrZSc8KcUG4C3iIxXA1q
+	wtOEVf91VTtmwhlsJTItd7Hm3rr8gDO2Xdkgxo5WBHlBS4MO7i+9uxNExOMnwFcGN0gac1tJVuaAh
+	LgJ0VykMIMZL4mID1iSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfiha-0002wN-KG; Mon, 01 Jun 2020 11:33:58 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jfihH-0002j2-DF; Mon, 01 Jun 2020 11:33:39 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfihD-0002ij-PM
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 11:33:37 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id C7A55737A7AB0965E261;
- Mon,  1 Jun 2020 19:33:24 +0800 (CST)
-Received: from SWX921481.china.huawei.com (10.126.200.163) by
- DGGEMS409-HUB.china.huawei.com (10.3.19.209) with Microsoft SMTP Server id
- 14.3.487.0; Mon, 1 Jun 2020 19:33:14 +0800
-From: Barry Song <song.bao.hua@hisilicon.com>
-To: <hch@lst.de>, <m.szyprowski@samsung.com>, <robin.murphy@arm.com>,
- <will@kernel.org>
-Subject: [PATCH] iommu/arm-smmu-v3: allocate the memory of queues in local
- numa node
-Date: Mon, 1 Jun 2020 23:31:41 +1200
-Message-ID: <20200601113141.69488-1-song.bao.hua@hisilicon.com>
-X-Mailer: git-send-email 2.21.0.windows.1
+ id 1jfihB-0002ih-2t
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 11:33:34 +0000
+Received: by mail-wr1-x443.google.com with SMTP id e1so11171720wrt.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 01 Jun 2020 04:33:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Nd0MJv58FOzwtHGzKOAQUQrfp095J8UPcRViDxSn4NY=;
+ b=W1cq8qUfXNb0j4Lq6BuNFnrIp53KOB8jyeE6rYZeTI51f51hwvHIG8BMXCMp30BfcV
+ Kz/SCbb6ETAHq3dGo029IWxUjmMkUz9Max3D/z1jlGGo9qVQX5MaQ0y+BgRt/DHvwxo0
+ RdVUU7GjYR/htIut780K5s1uKUZ3OK2iZVbmowEjMjE7GOiArJCYEkC6vgo9QPYK8nZO
+ Lqab5QsLwiu8GkCE/AA07HEeFEaNoSkx5MwfuSlQJmGmLDy4JWZJBCDOv5WRJQzgVlwo
+ r3zCmmu3iuz7KlkftwAHmjHe7lGtZDZgMfBzSIVGGV85FYemiKmMRx050a7sYfAPJPUW
+ IkkA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Nd0MJv58FOzwtHGzKOAQUQrfp095J8UPcRViDxSn4NY=;
+ b=ZTgNpKfqDCjFwmxCRZPDeKHfmFrnTrRUxSOmJvqsYNLttIR/aPsF3mHUSshAuGqSRR
+ GNE9GpPQUZ0mQjEj2FA9T0y8iZWeGz5McAaeB8sQ4CsV4p8tIasnDjZga8iqZhupOMdQ
+ BPlENFCOMTDDHptPat6QiAvC9hi5n+lQ3tXAzqxgb6MvRD5bzUik5Y4XBPsj/+kMdOVz
+ Udg/JTiV9QVM65qGOtg5Vc6M0GdN5NEZfv61HPQR1QcjAh+FHf/sUKIchbMp2HWafvN2
+ p9M+mYPZ0PculDX+IVG4hdaDtrMoRgNFhmd6YvxCLMejOIajLfw45V2OdfQR/xYwpka9
+ Oa/g==
+X-Gm-Message-State: AOAM530i6+H2mjklN3RMU0WfEez6JE4Y9gmqG0yQnBOYz8Yvpe2qXHbS
+ xiZPapNnKgqT3iWPkYjzZWkvjw==
+X-Google-Smtp-Source: ABdhPJznm2NwADIlcTttzQpXZsKob+NEyXiM45iR0TXFLhl9xhARzjwzu6BQz/MCHNd4RCDBIowhrg==
+X-Received: by 2002:a5d:4e88:: with SMTP id e8mr22527436wru.188.1591011210824; 
+ Mon, 01 Jun 2020 04:33:30 -0700 (PDT)
+Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
+ [86.9.19.6])
+ by smtp.gmail.com with ESMTPSA id n23sm10731794wmc.0.2020.06.01.04.33.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 01 Jun 2020 04:33:30 -0700 (PDT)
+Date: Mon, 1 Jun 2020 12:33:28 +0100
+From: Daniel Thompson <daniel.thompson@linaro.org>
+To: Guru Das Srinagesh <gurus@codeaurora.org>
+Subject: Re: [PATCH v15 04/11] pwm: clps711x: Use 64-bit division macro
+Message-ID: <20200601113328.oyhxosbtlfeaqytq@holly.lan>
+References: <cover.1590514331.git.gurus@codeaurora.org>
+ <dd03cc467ac3fc470826aef523822b32e15dc929.1590514331.git.gurus@codeaurora.org>
+ <20200528203341.GA8065@codeaurora.org>
 MIME-Version: 1.0
-X-Originating-IP: [10.126.200.163]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200528203341.GA8065@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_043335_993050_4B9AAE6F 
-X-CRM114-Status: GOOD (  13.69  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200601_043333_195439_960E2348 
+X-CRM114-Status: GOOD (  16.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.35 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 AC_FROM_MANY_DOTS      Multiple periods in From user name
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,160 +99,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Barry Song <song.bao.hua@hisilicon.com>, iommu@lists.linux-foundation.org,
- linuxarm@huawei.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, linux-pwm@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, David Collins <collinsd@codeaurora.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Joe Perches <joe@perches.com>,
+ Subbaraman Narayanamurthy <subbaram@codeaurora.org>,
+ Lee Jones <lee.jones@linaro.org>, Guenter Roeck <linux@roeck-us.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dmam_alloc_coherent() will usually allocate memory from the default CMA. For
-a common arm64 defconfig without reserved memory in device tree, there is only
-one CMA close to address 0.
-dma_alloc_contiguous() will allocate memory without any idea of  NUMA and smmu
-has no customized per-numa cma_area.
-struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp)
-{
-        size_t count = size >> PAGE_SHIFT;
-        struct page *page = NULL;
-        struct cma *cma = NULL;
+On Thu, May 28, 2020 at 01:33:41PM -0700, Guru Das Srinagesh wrote:
+> On Tue, May 26, 2020 at 10:35:04AM -0700, Guru Das Srinagesh wrote:
+> > Since the PWM framework is switching struct pwm_args.period's datatype
+> > to u64, prepare for this transition by using DIV64_U64_ROUND_CLOSEST to
+> > handle a 64-bit divisor.
+> > 
+> > Cc: Daniel Thompson <daniel.thompson@linaro.org>
+> > Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
+> > ---
+> >  drivers/pwm/pwm-clps711x.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/pwm/pwm-clps711x.c b/drivers/pwm/pwm-clps711x.c
+> > index 924d39a..ba9500a 100644
+> > --- a/drivers/pwm/pwm-clps711x.c
+> > +++ b/drivers/pwm/pwm-clps711x.c
+> > @@ -43,7 +43,7 @@ static void clps711x_pwm_update_val(struct clps711x_chip *priv, u32 n, u32 v)
+> >  static unsigned int clps711x_get_duty(struct pwm_device *pwm, unsigned int v)
+> >  {
+> >  	/* Duty cycle 0..15 max */
+> > -	return DIV_ROUND_CLOSEST(v * 0xf, pwm->args.period);
+> > +	return DIV64_U64_ROUND_CLOSEST(v * 0xf, pwm->args.period);
+> >  }
+> >  
+> >  static int clps711x_pwm_request(struct pwm_chip *chip, struct pwm_device *pwm)
+> > -- 
+> 
+> Hi Daniel,
+> 
+> Could you please review this patch when you get a chance to?
 
-        if (dev && dev->cma_area)
-                cma = dev->cma_area;
-        else if (count > 1)
-                cma = dma_contiguous_default_area;
-
-	...
-        return page;
-}
-
-if there are N numa nodes, N-1 nodes will put command/evt queues etc in a
-remote node the default CMA belongs to,probably node 0. Tests show, after
-sending CMD_SYNC in an empty command queue,
-on Node2, without this patch, it takes 550ns to wait for the completion
-of CMD_SYNC; with this patch, it takes 250ns to wait for the completion
-of CMD_SYNC.
-
-Signed-off-by: Barry Song <song.bao.hua@hisilicon.com>
----
- drivers/iommu/arm-smmu-v3.c | 63 ++++++++++++++++++++++++++++---------
- 1 file changed, 48 insertions(+), 15 deletions(-)
-
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 82508730feb7..58295423e1d7 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -3157,21 +3157,23 @@ static int arm_smmu_init_one_queue(struct arm_smmu_device *smmu,
- 				   size_t dwords, const char *name)
- {
- 	size_t qsz;
-+	struct page *page;
- 
--	do {
--		qsz = ((1 << q->llq.max_n_shift) * dwords) << 3;
--		q->base = dmam_alloc_coherent(smmu->dev, qsz, &q->base_dma,
--					      GFP_KERNEL);
--		if (q->base || qsz < PAGE_SIZE)
--			break;
--
--		q->llq.max_n_shift--;
--	} while (1);
-+	qsz = ((1 << q->llq.max_n_shift) * dwords) << 3;
-+	page = alloc_pages_node(dev_to_node(smmu->dev), GFP_KERNEL,
-+				get_order(qsz));
-+	if (!page) {
-+		dev_err(smmu->dev,
-+				"failed to allocate queue (0x%zx bytes) for %s\n",
-+				qsz, name);
-+		return -ENOMEM;
-+	}
- 
--	if (!q->base) {
-+	q->base = page_address(page);
-+	q->base_dma = dma_map_single(smmu->dev, q->base, qsz, DMA_BIDIRECTIONAL);
-+	if (dma_mapping_error(smmu->dev, q->base_dma)) {
- 		dev_err(smmu->dev,
--			"failed to allocate queue (0x%zx bytes) for %s\n",
--			qsz, name);
-+				"failed to dma map for %s\n", name);
- 		return -ENOMEM;
- 	}
- 
-@@ -3192,6 +3194,18 @@ static int arm_smmu_init_one_queue(struct arm_smmu_device *smmu,
- 	return 0;
- }
- 
-+static int arm_smmu_deinit_one_queue(struct arm_smmu_device *smmu,
-+				   struct arm_smmu_queue *q,
-+				   size_t dwords)
-+{
-+	size_t qsz = ((1 << q->llq.max_n_shift) * dwords) << 3;
-+
-+	dma_unmap_single(smmu->dev, q->base_dma, qsz, DMA_BIDIRECTIONAL);
-+	free_page((unsigned long)q->base);
-+
-+	return 0;
-+}
-+
- static void arm_smmu_cmdq_free_bitmap(void *data)
- {
- 	unsigned long *bitmap = data;
-@@ -3233,22 +3247,40 @@ static int arm_smmu_init_queues(struct arm_smmu_device *smmu)
- 
- 	ret = arm_smmu_cmdq_init(smmu);
- 	if (ret)
--		return ret;
-+		goto deinit_cmdq;
- 
- 	/* evtq */
- 	ret = arm_smmu_init_one_queue(smmu, &smmu->evtq.q, ARM_SMMU_EVTQ_PROD,
- 				      ARM_SMMU_EVTQ_CONS, EVTQ_ENT_DWORDS,
- 				      "evtq");
- 	if (ret)
--		return ret;
-+		goto deinit_cmdq;
- 
- 	/* priq */
- 	if (!(smmu->features & ARM_SMMU_FEAT_PRI))
- 		return 0;
- 
--	return arm_smmu_init_one_queue(smmu, &smmu->priq.q, ARM_SMMU_PRIQ_PROD,
-+	ret = arm_smmu_init_one_queue(smmu, &smmu->priq.q, ARM_SMMU_PRIQ_PROD,
- 				       ARM_SMMU_PRIQ_CONS, PRIQ_ENT_DWORDS,
- 				       "priq");
-+	if (ret)
-+		goto deinit_evtq;
-+
-+	return 0;
-+
-+deinit_evtq:
-+	arm_smmu_deinit_one_queue(smmu, &smmu->evtq.q, EVTQ_ENT_DWORDS);
-+deinit_cmdq:
-+	arm_smmu_deinit_one_queue(smmu, &smmu->cmdq.q, CMDQ_ENT_DWORDS);
-+	return ret;
-+}
-+
-+static void arm_smmu_deinit_queues(struct arm_smmu_device *smmu)
-+{
-+	arm_smmu_deinit_one_queue(smmu, &smmu->cmdq.q, CMDQ_ENT_DWORDS);
-+	arm_smmu_deinit_one_queue(smmu, &smmu->evtq.q, EVTQ_ENT_DWORDS);
-+	if (smmu->features & ARM_SMMU_FEAT_PRI)
-+		arm_smmu_deinit_one_queue(smmu, &smmu->priq.q, PRIQ_ENT_DWORDS);
- }
- 
- static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-@@ -4121,6 +4153,7 @@ static int arm_smmu_device_remove(struct platform_device *pdev)
- 	arm_smmu_set_bus_ops(NULL);
- 	iommu_device_unregister(&smmu->iommu);
- 	iommu_device_sysfs_remove(&smmu->iommu);
-+	arm_smmu_deinit_queues(smmu);
- 	arm_smmu_device_disable(smmu);
- 
- 	return 0;
--- 
-2.23.0
+I don't normally review PWM patches... but this no longer has the bug
+there was there when I first read this patch.
 
 
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
