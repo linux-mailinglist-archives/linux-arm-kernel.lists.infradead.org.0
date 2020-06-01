@@ -2,123 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B68B81EB02D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 22:28:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72EA71EB05F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 22:42:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	References:MIME-Version:Message-ID:In-Reply-To:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=d5o1V8eYv1Yq3Qx/I6sRiWjaWMWu16RC630IdWSgQLs=; b=pDPIjFJ90ojDw6k51nsDhXvvk
-	iVy04kL+RIuPYotaqz2H3hZZLoJIX1uk2QCooA4UZNrNMIUKLJrZCDfFWa8sE5xEmxRdjKIpJbFo+
-	s4nyWStyaE57wHz84ZIlGgw6Nfx8sdxpOuK5PaPXYIWlK5bCczGX/yTGrvali+3Zlzi2XO3gapONj
-	BbmkSdFTdPnahaBe+8tO62WPQx/A5zQxDUV8kaiOgsr4fFxlaZa0euhqh+VdAq8WC7fXV6yDEng9L
-	g+UPwyXc0U7i7RBGyqmOXnU+Bf43J/jkt04e4ukAP+mMHoYhQwcWCuh4q9bCJlRf5aFu/eDe7ErwL
-	Z0giiPdFA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+8k+kMbjpOqjKbUrgidR5nqKt9K5zUKcmkJqy3s4Vww=; b=BRZDujOdZsiMeb
+	+T2kZrjLsMlndr/cD5rm4DiJldrVfAs+T4nLPp1rZXczRSVV2ur5fCtLMb6TGLqgM04TiWs/U76CB
+	3pkWKAVM4qwfPP4QWEyVLtcp5Gm9cZpCT1sGE1oy/x3cVY5/GN94kbKq6B0ydsG34/6fLqpd8AZ3z
+	jM8qpA/Fsvm99S+ALLE6YDwkZnHL0C0iMno0YR6HYfHu+1Zwmi5wEwiYhiJf9kW4ATmG5UF+oKILE
+	kIzPXwh3i1yvooj4Jnwj8gfbAOWxmgVAP15ftDoxwxccF8carF4FE0TPen60bZ2xnD8jt6yqHmjU4
+	jmISEI1oCwVGBR+1pOmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfr2Y-0001XJ-7u; Mon, 01 Jun 2020 20:28:10 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1jfrG7-000273-39; Mon, 01 Jun 2020 20:42:11 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfr2Q-0001WM-F8
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 20:28:04 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200601202758euoutp022aaa10d0913830004adf5984972d1be3~UhW60jmpw1473614736euoutp02F;
- Mon,  1 Jun 2020 20:27:58 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200601202758euoutp022aaa10d0913830004adf5984972d1be3~UhW60jmpw1473614736euoutp02F
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1591043278;
- bh=PDQg9D3HcC/RvEzGxrOVLnYHE3k+Zs1sSiqBViavFVg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=pl/Aw0YcrKRI470p58IQrG8LkcDPfrdsxWT56zwTAnBX8y3lN0vIyy3hJUkZH6LBT
- bFhdbuwpD6Qsck+TSmVrILQFxMfYL5ap/vhUS/MFftUCDi3eU0DQClVJia1w0HCIv9
- UQA1nJbiSHQCH9kDpa54rk6Kb6M2VEOHOUmMYxHM=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20200601202758eucas1p2651c0d1a9494913ae9839daf3c19c8a6~UhW6c_R6S1505515055eucas1p27;
- Mon,  1 Jun 2020 20:27:58 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id DE.09.61286.EC465DE5; Mon,  1
- Jun 2020 21:27:58 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200601202757eucas1p11d380be9e0b2fe912a358d21e2d8dc2a~UhW5xIFUX1796617966eucas1p19;
- Mon,  1 Jun 2020 20:27:57 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200601202757eusmtrp17294f9403de7f243b5537780759d9702~UhW5wdgBc2812128121eusmtrp1L;
- Mon,  1 Jun 2020 20:27:57 +0000 (GMT)
-X-AuditID: cbfec7f2-f0bff7000001ef66-cf-5ed564ce0dce
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 74.A8.07950.DC465DE5; Mon,  1
- Jun 2020 21:27:57 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip2.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200601202757eusmtip27fc9c7a39cc74f78ffa2c19285d5aa59~UhW5i52wu2351523515eusmtip2f;
- Mon,  1 Jun 2020 20:27:57 +0000 (GMT)
-From: Lukasz Stelmach <l.stelmach@samsung.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ id 1jfrFz-00020n-Ll
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 20:42:06 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=umNH2IL374QzFan0BCFcUz4Yz1dQZIoKe9xkPK7BB8s=; b=B9o5hLZiZ1dPkxYLQykjzopdu
+ GHX4LxcCtCvEGM3Etjy9cC/j67bI6OG7DXbk0FL3NMs4GZPx3NMDcxHGu3AhZgoQfMRYa5T/fklLd
+ bQCadn2i3BcPIvBWj5CYlGe+NVeD+Iqwq5oR+Un9UgUzM7efNQbclkYVxmA1vrd4bg6oxwZAbG+aD
+ ZOV2yspeu/h0j4c8lr2P52OlKgu8GVA2XqaVq+HSjhtnbubUjqs98lgJN3Ml6vPnD22gho5e+Ntxh
+ kvqtycKCARRli2besSBD53t/GNcT3V3NK7tGXYyioK0xIldo9fhgWMcI4HYTljt0NHPKx9Tte0zh4
+ 553jyL+pQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:40102)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jfrFa-0001Eq-Lu; Mon, 01 Jun 2020 21:41:38 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jfrFQ-0003e1-2I; Mon, 01 Jun 2020 21:41:28 +0100
+Date: Mon, 1 Jun 2020 21:41:28 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Lukasz Stelmach <l.stelmach@samsung.com>
 Subject: Re: [PATCH 3/5] arm: decompressor: define a new zImage tag
-Date: Mon, 01 Jun 2020 22:27:45 +0200
-In-Reply-To: <20200601182555.GP1551@shell.armlinux.org.uk> (Russell King's
- message of "Mon, 1 Jun 2020 19:25:55 +0100")
-Message-ID: <dleftj8sh6sf9a.fsf%l.stelmach@samsung.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
-MIME-Version: 1.0
-X-Brightmail-Tracker: H4sIAAAAAAAAA02SWUxTURCGOb1LL2jxWFFGXDBVE5cIGlyuC0bFh/toYuKCila5wUZaSK+I
- mBjgQaLIWlCkkshiFIssFmQTI6lElB2xBCIErQQRQVCWqKFVysHEt29m/vln5uRwlHKa8eI0
- uouiXqcOVbFudPmrX62bWoKtQZv7LcA/uVPM8IaiWhnfHftMxjfd1PLmT50M31GdxfKWW88R
- X1jXK+c/fuhi+AJHA+LHUv7I+OkXv2i+1HyL2qcQOjrbKeFuTDst2E2DlJBtjhDMphus0NNZ
- wwrfWlrkQun9aCFlbIQVkspMSBg3rzw0L9BtT7AYqrkk6n33nnE7P9FbyoZ/X3c5o2QSxaBR
- 73jkygHeCq3J16l45MYpcT6C6sz7iAQTCPq/58lIMI7ANl4g+9fSF9c6V3iIIO7JYzkJPiNo
- 633DxCOOY7EPFBYec6IH3gVtCeucEgqPUNBut88aLcIBcO1R9yzTeC2kZqUzTnbFUTBgvTfL
- CrwDjNfy5U5ejHdC2WCfnOQXwpvMftrJFNZCZuvw7NqAczhIra5iyaYHwfLezhBeBEP1ZXLC
- y6ExLYF2Lgc4GtIM20lvAoLyrJ800eyGnpbfcz77wVpShYjeHbpGFpK57mAoz6BIWgHX45RE
- vQaKkmvmXLwgcSgfERbgd24pS54qEUFB8xSVglYZ/zvH+N85xhlbCq+H4mpfkt4ID3K+UoT9
- oaholM5GjAl5ihGSNkSUtujESB9JrZUidCE+58K0ZjTzDxsd9T8q0eTbsxaEOaSaryjpexek
- ZNSXpCitBa2ZcbKVFLQhL1oXphNVHooDzY1BSkWwOuqKqA87rY8IFSULWsbRKk+FX+6XU0oc
- or4oXhDFcFH/ryrjXL1i0O3EqBMu2tFmc89TW+1zb3t8Xl12gHV1ZmDsgqsa01Vv6woX0W+Z
- 9rDxnP/DqUrlkaT58sHXbwPr9q1y+Kzn0hp0tm0ux6j6WmNTTuRLw1H8pfdzwxLd6iNLu/IH
- ypIE8WSFbVg66lAaTEZNRYXQNL222K9/rN6Rbj1eE64ZeK+ipfPqLRsovaT+C7XBr/OPAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrMIsWRmVeSWpSXmKPExsVy+t/xe7pnU67GGWxZoW6xccZ6VotJ6w4w
- Wdxs3M1kcaY712LT42usFpd3zWGzODR1L6PF2iN32S0ePrjBarH63ylGiw8T/jNZ/Nn/k8Vi
- 86apzA68HpevXWT2mN1wkcXj76oXzB4LNpV6bFrVyeZx59oeNo93586xe2xeUu8x4cNbNo++
- LasYPT5vkgvgjtKzKcovLUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rezSUnNySxL
- LdK3S9DL+HJ3M1vBR42K6Ru+MjYwvpfvYuTkkBAwkbjfdp6pi5GLQ0hgKaPEuoZN7F2MHEAJ
- KYmVc9MhaoQl/lzrYoOoecoo8f3PeTaQGjYBPYm1ayNATBEBK4kLPRogJcwCD5klNl28yQLS
- KyzgLNG68iYTiC0kYCkx83AnM4jNIqAqMXHOFFYQm1OgUuLZ1flgNq+AucSs1hXsILYoUP2W
- F/fZIeKCEidnPgGbySyQLfF19XPmCYwCs5CkZiFJzQI6iVlAU2L9Ln2IsLbEsoWvmSFsW4l1
- 696zLGBkXcUoklpanJueW2ykV5yYW1yal66XnJ+7iREYyduO/dyyg7HrXfAhRgEORiUe3g33
- r8QJsSaWFVfmHmJUARrzaMPqC4xSLHn5ealKIrxOZ0/HCfGmJFZWpRblxxeV5qQWH2I0Bfpz
- IrOUaHI+MPnklcQbmhqaW1gamhubG5tZKInzdggcjBESSE8sSc1OTS1ILYLpY+LglGpgPN33
- ypPbUfjdFJfpHiZfFD787H8TmL17x/Mfsn3cyTpvFM19XlxrqTFoCulNWCJ+vyQnza16emy7
- 7ca/xlreynNd1JxSD+48dtY+TiZF9sCiuxfu5qtvvLE4SmJln3ZE8dTC+OzZjH/qO/gN17xd
- vakq8mtRI8Ovy+utbBkCSnTNHLiubrdUYinOSDTUYi4qTgQAnoD6vgYDAAA=
-X-CMS-MailID: 20200601202757eucas1p11d380be9e0b2fe912a358d21e2d8dc2a
-X-Msg-Generator: CA
-X-RootMTR: 20200601202757eucas1p11d380be9e0b2fe912a358d21e2d8dc2a
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200601202757eucas1p11d380be9e0b2fe912a358d21e2d8dc2a
+Message-ID: <20200601204127.GS1551@shell.armlinux.org.uk>
 References: <20200601182555.GP1551@shell.armlinux.org.uk>
  <CGME20200601202757eucas1p11d380be9e0b2fe912a358d21e2d8dc2a@eucas1p1.samsung.com>
+ <dleftj8sh6sf9a.fsf%l.stelmach@samsung.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <dleftj8sh6sf9a.fsf%l.stelmach@samsung.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_132802_821136_FE353596 
-X-CRM114-Status: GOOD (  26.20  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200601_134203_721105_078AA1DE 
+X-CRM114-Status: GOOD (  25.22  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -126,8 +77,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,156 +96,98 @@ Cc: Kees Cook <keescook@chromium.org>,
  Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
  Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org,
  Marek Szyprowski <m.szyprowski@samsung.com>
-Content-Type: multipart/mixed; boundary="===============1126998479321149667=="
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============1126998479321149667==
-Content-Type: multipart/signed; boundary="=-=-="; micalg="pgp-sha256";
-	protocol="application/pgp-signature"
-
---=-=-=
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-
-It was <2020-06-01 pon 19:25>, when Russell King - ARM Linux admin wrote:
-> On Mon, Jun 01, 2020 at 06:19:52PM +0200, Lukasz Stelmach wrote:
->> It was <2020-06-01 pon 15:55>, when Russell King - ARM Linux admin wrote:
->> > On Mon, Jun 01, 2020 at 04:27:52PM +0200, =C5=81ukasz Stelmach wrote:
->> >> Add DCSZ tag which holds dynamic memory (stack, bss, malloc pool)
->> >> requirements of the decompressor code.
->> >
->> > Why do we need to know the stack and BSS size, when the userspace
->> > kexec tool doesn't need to know this to perform the same function.
->>=20
->>=20
->> kexec-tools load zImage as low in DRAM as possible and rely on two
->> assumptions:
->>=20
->>     + the zImage will copy itself to make enough room for the kernel,
->>     + sizeof(zImage+mem) < sizeof(kernel+mem), which is true because
->>       of compression.
->>=20
->>        DRAM start
->>        + 0x8000
->>=20
->> zImage    |-----------|-----|-------|
->>             text+data   bss   stack=20
->>=20
->>                  text+data           bss=20=20=20
->> kernel    |---------------------|-------------------|
->>=20
->>=20
->> initrd                                              |-initrd-|-dtb-|
->
-> This is actually incorrect, because the decompressor will self-
-> relocate itself to avoid the area that it is going to decompress
-> into.
-
-I described the state right after kexec(8) invocation.
-
-> So, while the decompressor runs, in the above situation it
-> ends up as:
->
->
-> ram    |------------------------------------------------------...
->                  text+data           bss=20=20=20
-> kernel    |---------------------|-------------------|
-> zImage                          |-----------|-----|-------|
->                                   text+data   bss   stack+malloc
-
-And I am trying to achieve this state before the decompressor starts so
-it won't need to copy itself during boot. The only exception is (as we
-discussed under a different patch) when edata_size >=3D 128-eps MiB because
-loading zImage above 128 MiB prevents it from properly detecting
-physical memory. In such unlikely case my code behaves like kexec-tools
-and loads zImage low. That is why I suggested that passing detailed
-information about memory layout to the decompressor would help.
-
-> Where "text+data" is actually smaller than the image size that
-> was loaded - the part of the image that performs the relocation
-> is discarded (the first chunk of code up to "restart" - 200
-> bytes.)  The BSS is typically smaller than 200 bytes, so we've
-> been able to get away without knowing the actual BSS size so
-> far.
->
->
-> ram    |--|-----------------------------------------|---------...
->        |<>| TEXT_OFFSET
-> kernel    |---------------------|-------------------|
->           |<----edata_size----->|<-----bss_size---->|
->           |<---------------kernel_size------------->|
-> zImage                          |-----------|-----|-------|
->                                 |<-------len------->| (initial)
-> 				|<----------len------------>| (final)
->
-> The "final" len value is what the decompressor prints as the "zImage
-> requires" debugging value.
->
-> Hence, the size that the decompressed kernel requires is kernel_size.
->
-> The size that the decompressor requires is edata_size + len(final).
->
-> Now, if you intend to load the kernel to ram + TEXT_OFFSET + edata_size
-> then it isn't going to lose the first 200 bytes of code, so as you
-> correctly point out, we need to know the BSS size.
-
-Formal note: can we keep using terms zImage and kernel as separate,
-where zImage is what is loaded with kexec and kernel is the decompressed
-code loaded at TEXT_OFFSET. I believe, it will help us avoid mistakes.
-
->> >> +struct arm_zimage_tag_dc {
->> >> +	struct tag_header hdr;
->> >> +	union {
->> >> +#define ZIMAGE_TAG_DECOMP_SIZE ARM_ZIMAGE_MAGIC4
->> >> +		struct zimage_decomp_size {
->> >> +			__le32 bss_size;
->> >> +			__le32 stack_size;
->> >> +			__le32 malloc_size;
->> >> +		} decomp_size;
->
-> You certainly don't need to know all this.  All you need to know is
-> how much space the decompressor requires after the end of the image,
-> encompassing the BSS size, stack size and malloc size, which is one
-> value.
-
-I agree. However, since we are not fighting here for every single byte,
-I'd rather add them as separate values and make the tag, even if only
-slightly, more future-proof.
-
-Kind regards,
-=2D-=20
-=C5=81ukasz Stelmach
-Samsung R&D Institute Poland
-Samsung Electronics
-
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEXpuyqjq9kGEVr9UQsK4enJilgBAFAl7VZMIACgkQsK4enJil
-gBBE6ggAmCX2V5lKQ4KXbFaOvSbxLjCzXxJrWedAUwBsVPrIewPmDaOEEn8oez4K
-nBhyDSFVNTbZhmGMMAf108/z2466ffTdQu3vzY1AuuJMk4PSPuLDEnbuq0HQoVAS
-tNemISFpAIsF8s1wqAqeOGznabyDh5mrFnnOMI5nv3s4PuUR8es5dUJSQQiXD9p8
-a5qhixnQDLVc+k//jldAYjTmjr2ZU8c/m1OInGpQLcnb+e+nIK2FzKbjnAt7fsqw
-jiproC69Kt2Dsl8lYzop7pLDPFog/Cq3Iq8Mhb7RNf8BuvyUuXlBq44zXRKkoiVu
-4QYGtReBJKCdmVAVxrbgQ0imEHfRLg==
-=E5A3
------END PGP SIGNATURE-----
---=-=-=--
-
-
---===============1126998479321149667==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1126998479321149667==--
-
+T24gTW9uLCBKdW4gMDEsIDIwMjAgYXQgMTA6Mjc6NDVQTSArMDIwMCwgTHVrYXN6IFN0ZWxtYWNo
+IHdyb3RlOgo+IEl0IHdhcyA8MjAyMC0wNi0wMSBwb24gMTk6MjU+LCB3aGVuIFJ1c3NlbGwgS2lu
+ZyAtIEFSTSBMaW51eCBhZG1pbiB3cm90ZToKPiA+IE9uIE1vbiwgSnVuIDAxLCAyMDIwIGF0IDA2
+OjE5OjUyUE0gKzAyMDAsIEx1a2FzeiBTdGVsbWFjaCB3cm90ZToKPiA+PiBJdCB3YXMgPDIwMjAt
+MDYtMDEgcG9uIDE1OjU1Piwgd2hlbiBSdXNzZWxsIEtpbmcgLSBBUk0gTGludXggYWRtaW4gd3Jv
+dGU6Cj4gPj4gPiBPbiBNb24sIEp1biAwMSwgMjAyMCBhdCAwNDoyNzo1MlBNICswMjAwLCDFgXVr
+YXN6IFN0ZWxtYWNoIHdyb3RlOgo+ID4+ID4+IEFkZCBEQ1NaIHRhZyB3aGljaCBob2xkcyBkeW5h
+bWljIG1lbW9yeSAoc3RhY2ssIGJzcywgbWFsbG9jIHBvb2wpCj4gPj4gPj4gcmVxdWlyZW1lbnRz
+IG9mIHRoZSBkZWNvbXByZXNzb3IgY29kZS4KPiA+PiA+Cj4gPj4gPiBXaHkgZG8gd2UgbmVlZCB0
+byBrbm93IHRoZSBzdGFjayBhbmQgQlNTIHNpemUsIHdoZW4gdGhlIHVzZXJzcGFjZQo+ID4+ID4g
+a2V4ZWMgdG9vbCBkb2Vzbid0IG5lZWQgdG8ga25vdyB0aGlzIHRvIHBlcmZvcm0gdGhlIHNhbWUg
+ZnVuY3Rpb24uCj4gPj4gCj4gPj4gCj4gPj4ga2V4ZWMtdG9vbHMgbG9hZCB6SW1hZ2UgYXMgbG93
+IGluIERSQU0gYXMgcG9zc2libGUgYW5kIHJlbHkgb24gdHdvCj4gPj4gYXNzdW1wdGlvbnM6Cj4g
+Pj4gCj4gPj4gICAgICsgdGhlIHpJbWFnZSB3aWxsIGNvcHkgaXRzZWxmIHRvIG1ha2UgZW5vdWdo
+IHJvb20gZm9yIHRoZSBrZXJuZWwsCj4gPj4gICAgICsgc2l6ZW9mKHpJbWFnZSttZW0pIDwgc2l6
+ZW9mKGtlcm5lbCttZW0pLCB3aGljaCBpcyB0cnVlIGJlY2F1c2UKPiA+PiAgICAgICBvZiBjb21w
+cmVzc2lvbi4KPiA+PiAKPiA+PiAgICAgICAgRFJBTSBzdGFydAo+ID4+ICAgICAgICArIDB4ODAw
+MAo+ID4+IAo+ID4+IHpJbWFnZSAgICB8LS0tLS0tLS0tLS18LS0tLS18LS0tLS0tLXwKPiA+PiAg
+ICAgICAgICAgICB0ZXh0K2RhdGEgICBic3MgICBzdGFjayAKPiA+PiAKPiA+PiAgICAgICAgICAg
+ICAgICAgIHRleHQrZGF0YSAgICAgICAgICAgYnNzICAgCj4gPj4ga2VybmVsICAgIHwtLS0tLS0t
+LS0tLS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tLS0tLXwKPiA+PiAKPiA+PiAKPiA+PiBpbml0
+cmQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfC1pbml0cmQt
+fC1kdGItfAo+ID4KPiA+IFRoaXMgaXMgYWN0dWFsbHkgaW5jb3JyZWN0LCBiZWNhdXNlIHRoZSBk
+ZWNvbXByZXNzb3Igd2lsbCBzZWxmLQo+ID4gcmVsb2NhdGUgaXRzZWxmIHRvIGF2b2lkIHRoZSBh
+cmVhIHRoYXQgaXQgaXMgZ29pbmcgdG8gZGVjb21wcmVzcwo+ID4gaW50by4KPiAKPiBJIGRlc2Ny
+aWJlZCB0aGUgc3RhdGUgcmlnaHQgYWZ0ZXIga2V4ZWMoOCkgaW52b2NhdGlvbi4KCkFjdHVhbGx5
+LCB5b3UgaGF2ZW4ndCwgYmVjYXVzZSB0aGlzIGlzIF9ub3RfIGhvdyBrZXhlYyg4KSBsYXlzIGl0
+Cm91dCwgYXMgSSBhdHRlbXB0ZWQgdG8gZGV0YWlsIGZ1cnRoZXIgZG93biBpbiBteSByZXBseS4K
+Cj4gPiBTbywgd2hpbGUgdGhlIGRlY29tcHJlc3NvciBydW5zLCBpbiB0aGUgYWJvdmUgc2l0dWF0
+aW9uIGl0Cj4gPiBlbmRzIHVwIGFzOgo+ID4KPiA+Cj4gPiByYW0gICAgfC0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS4uLgo+ID4gICAgICAgICAg
+ICAgICAgICB0ZXh0K2RhdGEgICAgICAgICAgIGJzcyAgIAo+ID4ga2VybmVsICAgIHwtLS0tLS0t
+LS0tLS0tLS0tLS0tLS18LS0tLS0tLS0tLS0tLS0tLS0tLXwKPiA+IHpJbWFnZSAgICAgICAgICAg
+ICAgICAgICAgICAgICAgfC0tLS0tLS0tLS0tfC0tLS0tfC0tLS0tLS18Cj4gPiAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgdGV4dCtkYXRhICAgYnNzICAgc3RhY2srbWFsbG9jCgpO
+b3RlIGhlcmUgLSBpZiB0aGUgaW5pdHJkIHdhcyBwbGFjZWQgYXMgX3lvdV8gZGVzY3JpYmUgYXQg
+dGhlIGVuZApvZiB3aGVyZSB0aGUgekltYWdlIGVuZHMgdXAgaW5jbHVkaW5nIGl0cyBCU1MsIGl0
+IHdvdWxkIGJlCmNvcnJ1cHRlZCBieSB0aGUgc3RhY2sgYW5kIG1hbGxvYyBzcGFjZSBvZiB0aGUg
+ZGVjb21wcmVzc29yIHdoaWxlCnJ1bm5pbmcuICBFcmdvLCB5b3VyIGRlc2NyaXB0aW9uIG9mIGhv
+dyBrZXhlYyg4KSBsYXlzIHN0dWZmIG91dAppcyBpbmNvcnJlY3QuCgo+ID4gV2hlcmUgInRleHQr
+ZGF0YSIgaXMgYWN0dWFsbHkgc21hbGxlciB0aGFuIHRoZSBpbWFnZSBzaXplIHRoYXQKPiA+IHdh
+cyBsb2FkZWQgLSB0aGUgcGFydCBvZiB0aGUgaW1hZ2UgdGhhdCBwZXJmb3JtcyB0aGUgcmVsb2Nh
+dGlvbgo+ID4gaXMgZGlzY2FyZGVkICh0aGUgZmlyc3QgY2h1bmsgb2YgY29kZSB1cCB0byAicmVz
+dGFydCIgLSAyMDAKPiA+IGJ5dGVzLikgIFRoZSBCU1MgaXMgdHlwaWNhbGx5IHNtYWxsZXIgdGhh
+biAyMDAgYnl0ZXMsIHNvIHdlJ3ZlCj4gPiBiZWVuIGFibGUgdG8gZ2V0IGF3YXkgd2l0aG91dCBr
+bm93aW5nIHRoZSBhY3R1YWwgQlNTIHNpemUgc28KPiA+IGZhci4KPiA+Cj4gPgo+ID4gcmFtICAg
+IHwtLXwtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLXwtLS0tLS0tLS0u
+Li4KPiA+ICAgICAgICB8PD58IFRFWFRfT0ZGU0VUCj4gPiBrZXJuZWwgICAgfC0tLS0tLS0tLS0t
+LS0tLS0tLS0tLXwtLS0tLS0tLS0tLS0tLS0tLS0tfAo+ID4gICAgICAgICAgIHw8LS0tLWVkYXRh
+X3NpemUtLS0tLT58PC0tLS0tYnNzX3NpemUtLS0tPnwKPiA+ICAgICAgICAgICB8PC0tLS0tLS0t
+LS0tLS0tLWtlcm5lbF9zaXplLS0tLS0tLS0tLS0tLT58Cj4gPiB6SW1hZ2UgICAgICAgICAgICAg
+ICAgICAgICAgICAgIHwtLS0tLS0tLS0tLXwtLS0tLXwtLS0tLS0tfAo+ID4gICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICB8PC0tLS0tLS1sZW4tLS0tLS0tPnwgKGluaXRpYWwpCj4gPiAJ
+CQkJfDwtLS0tLS0tLS0tbGVuLS0tLS0tLS0tLS0tPnwgKGZpbmFsKQo+ID4KPiA+IFRoZSAiZmlu
+YWwiIGxlbiB2YWx1ZSBpcyB3aGF0IHRoZSBkZWNvbXByZXNzb3IgcHJpbnRzIGFzIHRoZSAieklt
+YWdlCj4gPiByZXF1aXJlcyIgZGVidWdnaW5nIHZhbHVlLgo+ID4KPiA+IEhlbmNlLCB0aGUgc2l6
+ZSB0aGF0IHRoZSBkZWNvbXByZXNzZWQga2VybmVsIHJlcXVpcmVzIGlzIGtlcm5lbF9zaXplLgo+
+ID4KPiA+IFRoZSBzaXplIHRoYXQgdGhlIGRlY29tcHJlc3NvciByZXF1aXJlcyBpcyBlZGF0YV9z
+aXplICsgbGVuKGZpbmFsKS4KPiA+Cj4gPiBOb3csIGlmIHlvdSBpbnRlbmQgdG8gbG9hZCB0aGUg
+a2VybmVsIHRvIHJhbSArIFRFWFRfT0ZGU0VUICsgZWRhdGFfc2l6ZQo+ID4gdGhlbiBpdCBpc24n
+dCBnb2luZyB0byBsb3NlIHRoZSBmaXJzdCAyMDAgYnl0ZXMgb2YgY29kZSwgc28gYXMgeW91Cj4g
+PiBjb3JyZWN0bHkgcG9pbnQgb3V0LCB3ZSBuZWVkIHRvIGtub3cgdGhlIEJTUyBzaXplLgo+IAo+
+IEZvcm1hbCBub3RlOiBjYW4gd2Uga2VlcCB1c2luZyB0ZXJtcyB6SW1hZ2UgYW5kIGtlcm5lbCBh
+cyBzZXBhcmF0ZSwKPiB3aGVyZSB6SW1hZ2UgaXMgd2hhdCBpcyBsb2FkZWQgd2l0aCBrZXhlYyBh
+bmQga2VybmVsIGlzIHRoZSBkZWNvbXByZXNzZWQKPiBjb2RlIGxvYWRlZCBhdCBURVhUX09GRlNF
+VC4gSSBiZWxpZXZlLCBpdCB3aWxsIGhlbHAgdXMgYXZvaWQgbWlzdGFrZXMuCj4gCj4gPj4gPj4g
+K3N0cnVjdCBhcm1femltYWdlX3RhZ19kYyB7Cj4gPj4gPj4gKwlzdHJ1Y3QgdGFnX2hlYWRlciBo
+ZHI7Cj4gPj4gPj4gKwl1bmlvbiB7Cj4gPj4gPj4gKyNkZWZpbmUgWklNQUdFX1RBR19ERUNPTVBf
+U0laRSBBUk1fWklNQUdFX01BR0lDNAo+ID4+ID4+ICsJCXN0cnVjdCB6aW1hZ2VfZGVjb21wX3Np
+emUgewo+ID4+ID4+ICsJCQlfX2xlMzIgYnNzX3NpemU7Cj4gPj4gPj4gKwkJCV9fbGUzMiBzdGFj
+a19zaXplOwo+ID4+ID4+ICsJCQlfX2xlMzIgbWFsbG9jX3NpemU7Cj4gPj4gPj4gKwkJfSBkZWNv
+bXBfc2l6ZTsKPiA+Cj4gPiBZb3UgY2VydGFpbmx5IGRvbid0IG5lZWQgdG8ga25vdyBhbGwgdGhp
+cy4gIEFsbCB5b3UgbmVlZCB0byBrbm93IGlzCj4gPiBob3cgbXVjaCBzcGFjZSB0aGUgZGVjb21w
+cmVzc29yIHJlcXVpcmVzIGFmdGVyIHRoZSBlbmQgb2YgdGhlIGltYWdlLAo+ID4gZW5jb21wYXNz
+aW5nIHRoZSBCU1Mgc2l6ZSwgc3RhY2sgc2l6ZSBhbmQgbWFsbG9jIHNpemUsIHdoaWNoIGlzIG9u
+ZQo+ID4gdmFsdWUuCj4gCj4gSSBhZ3JlZS4gSG93ZXZlciwgc2luY2Ugd2UgYXJlIG5vdCBmaWdo
+dGluZyBoZXJlIGZvciBldmVyeSBzaW5nbGUgYnl0ZSwKPiBJJ2QgcmF0aGVyIGFkZCB0aGVtIGFz
+IHNlcGFyYXRlIHZhbHVlcyBhbmQgbWFrZSB0aGUgdGFnLCBldmVuIGlmIG9ubHkKPiBzbGlnaHRs
+eSwgbW9yZSBmdXR1cmUtcHJvb2YuCgpJdCBkb2Vzbid0IG1ha2UgaXQgbW9yZSBmdXR1cmUtcHJv
+b2YuICBXaGF0IGhhcHBlbnMgaWYgd2UgYWRkIHNvbWV0aGluZwplbHNlLCBkbyB3ZSBuZWVkIHRv
+IGxpc3QgaXQgc2VwYXJhdGVseSwgYW5kIHRoZW4gY2hhbmdlIHRoZSBrZXJuZWwgdG8KYWNjZXB0
+IHRoZSBuZXcgdmFsdWUgYW5kIG1heWJlIGFsc28ga2V4ZWMoOCk/ICBPciBkbyB3ZSBqdXN0IHNh
+eSAidGhlCmRlY29tcHJlc3NvciBuZWVkcyBYIG1hbnkgYnl0ZXMgYWZ0ZXIgdGhlIGltYWdlIiBh
+bmQgYmUgZG9uZSB3aXRoIGl0PwpUaGUgbGF0dGVyIHNvdW5kcyB3YXkgbW9yZSBmdXR1cmUtcHJv
+b2YgdG8gbWUuCgotLSAKUk1LJ3MgUGF0Y2ggc3lzdGVtOiBodHRwczovL3d3dy5hcm1saW51eC5v
+cmcudWsvZGV2ZWxvcGVyL3BhdGNoZXMvCkZUVEMgZm9yIDAuOG0gKGVzdC4gMTc2Mm0pIGxpbmUg
+aW4gc3VidXJiaWE6IHN5bmMgYXQgMTMuMU1icHMgZG93biA0MjRrYnBzIHVwCgpfX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1h
+aWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xp
+c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
