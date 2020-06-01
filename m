@@ -2,84 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9B721EA735
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 17:44:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FD9F1EA7AE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 18:19:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C6B0OTigYMwfYgVd+a52HRYeH5lcjsZ3m6Vtd9Y8loQ=; b=LiG3MNnteW0qJI
-	ugryiu235aD4ZLBb0WoLHB0ZH37HvaNPPhZGgs8MNkKH2t+kktYsK3+dgDOn7TFwqCVehgb77ix9A
-	mSYIifMFkTkiSACDoChkRQFWQNOLGp82031kqk0gseHY0Hxgm/cWKwkbGrRWOu+p8ZQetyc2+BY/u
-	eu2BxxgRd9BQ0rY6igegYB0e+Bz7Zobc/KeGW3DNRz9vhfJFr+446yp3gSmYXJkYT2T+zRBix7foa
-	1Fb0gOPis31NvZ21I1Kuf3bZAp/SLdNdoojOHoKtqXKxSNTJ+7Jp0xXLH9pBbVpN042pUXPnTKt/W
-	BBK1/KeJrehzg8FSvgUQ==;
+	List-Owner; bh=EFKlDzi/mGmCySoqhpTRcYG9eXY89EfDT7CqPCuqEY8=; b=tDK0oDU9m7uMsQ
+	c9S7X9bxsFV4alSfGktV5buZ8h4Ep81UExr7XK1zQwy4rzOwcBkXtFtFIBEZh6tSlI90YRnWp7Rx9
+	O0QSmuG5doA3i0S/VYmciKS534ICTjeueJPNNE1Wa0azVgdAb18mVSwAwxpNonEfMm7+xNZxDFOUt
+	0RDE8ke62sWPTkGtgzSjAt1gh0TEasBn7wjPOX+yEs3ZmwhFpvha+Y+MjVEtRhJaxx03R4otKdH5C
+	ATqITW7AmCmcXdfeQu6wMXRXAoMWDZQ3cfQCP2eh/csIf7/UUxRdQxGfMpPD/lHFZ+1sx/HNEoNW2
+	KGl2q8XMG3Gh3rgIKA3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfmbh-0004EW-Nx; Mon, 01 Jun 2020 15:44:09 +0000
-Received: from mail-io1-f66.google.com ([209.85.166.66])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfmba-0004Dw-Fe
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 15:44:03 +0000
-Received: by mail-io1-f66.google.com with SMTP id m81so7399266ioa.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jun 2020 08:44:02 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=tPG61Iob6GWwH5KaiKNOOzQS6HPkHBEF1ZIAaOyNuMc=;
- b=Paz5k0Xul9V2RJMklAK/n/c3w7DsP3uTVICZt1Ow3dwT3X9QXIhAvouNI6N6UjekvL
- N4wv1+OVFokoQCnt4AngPtAY6+mnfwkOpesmZyzHiQ9ixfB4QXWj7xFqQNUMwVm+gbn2
- hr2DrfkO7wy9aTMjoMAa72DiBZFjAYwbnxkmKMcvOCcKwtgtXe9qXoEx62/IvQqwFIhx
- dWWRV5pulyO2Mqpu6LkKJKO0DPi5lLIrF5uF6lJqFuSmq9KOFpYlu/SUzlXoCCfjUNN/
- 0KCEDRhkgs7Kc4WO+pHn9oGXD+sSpiu80sCk9z3nGRbjZICQPMrpTU7zRWFxIlpLdKc2
- OmNA==
-X-Gm-Message-State: AOAM5312ggliX51LasM0eMm6pv+2LdrrO2r6L9oqAwu+FNjkBTabsnT+
- VspcLcPsxTIU/zuHN8DcWA==
-X-Google-Smtp-Source: ABdhPJx/MOdbvba8QtwcxyGL+i4Oe2Hv4WWqEamLRvnLmSR6Lhmk4XJ0vyajak++iZFRI8G+5suarA==
-X-Received: by 2002:a02:c8d2:: with SMTP id q18mr21899465jao.127.1591026241572; 
- Mon, 01 Jun 2020 08:44:01 -0700 (PDT)
-Received: from xps15 ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id 18sm7776643ion.17.2020.06.01.08.44.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 01 Jun 2020 08:44:01 -0700 (PDT)
-Received: (nullmailer pid 964289 invoked by uid 1000);
- Mon, 01 Jun 2020 15:43:59 -0000
-Date: Mon, 1 Jun 2020 09:43:59 -0600
-From: Rob Herring <robh@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH 2/2] dt-bindings: power: Convert imx gpcv2 to json-schema
-Message-ID: <20200601154359.GA963841@bogus>
-References: <1590998803-29191-1-git-send-email-Anson.Huang@nxp.com>
- <1590998803-29191-2-git-send-email-Anson.Huang@nxp.com>
+	id 1jfn9V-0008N2-CK; Mon, 01 Jun 2020 16:19:05 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jfn9O-0008MO-Uw
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 16:19:00 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id 36C6F804F;
+ Mon,  1 Jun 2020 16:19:45 +0000 (UTC)
+Date: Mon, 1 Jun 2020 09:18:51 -0700
+From: Tony Lindgren <tony@atomide.com>
+To: Drew Fustini <drew@beagleboard.org>
+Subject: Re: [PATCH] pinctrl-single: fix pcs_parse_pinconf() return val
+Message-ID: <20200601161851.GC37466@atomide.com>
+References: <20200531204147.GA664833@x1>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1590998803-29191-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <20200531204147.GA664833@x1>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_084402_521894_E0CBB319 
-X-CRM114-Status: GOOD (  11.01  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200601_091859_035197_CE2EDDD1 
+X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.66 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,32 +59,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, ulf.hansson@linaro.org, kernel@pengutronix.de,
- andrew.smirnov@gmail.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, krzk@kernel.org, sboyd@kernel.org,
- robh+dt@kernel.org, Linux-imx@nxp.com, p.zabel@pengutronix.de,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
+ Robert Nelson <robertcnelson@beagleboard.org>, linux-gpio@vger.kernel.org,
+ Jason Kridner <jkridner@beagleboard.org>,
+ Haojian Zhuang <haojian.zhuang@linaro.org>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 01 Jun 2020 16:06:43 +0800, Anson Huang wrote:
-> Convert the i.MX GPCv2 binding to DT schema format using json-schema
-> 
-> Example is updated based on latest DT file and consumer's example is
-> removed since it is NOT that useful.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
->  .../devicetree/bindings/power/fsl,imx-gpcv2.txt    |  77 ---------------
->  .../devicetree/bindings/power/fsl,imx-gpcv2.yaml   | 108 +++++++++++++++++++++
->  2 files changed, 108 insertions(+), 77 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/power/fsl,imx-gpcv2.txt
->  create mode 100644 Documentation/devicetree/bindings/power/fsl,imx-gpcv2.yaml
-> 
+* Drew Fustini <drew@beagleboard.org> [200531 20:42]:
+> This patch causes pcs_parse_pinconf() to return an error when no
+> pinctrl_map is added.  The current behavior is to return 0 when
+> !PCS_HAS_PINCONF or !nconfs.  Thus pcs_parse_one_pinctrl_entry()
+> incorrectly assumes that a map was added and sets num_maps = 2.
 
-Applied, thanks!
+Looks OK to me, would be good to wait for Haojian to test this one.
+
+Regards,
+
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
