@@ -2,105 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6944C1EA650
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 16:55:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A709E1EA654
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 16:56:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z9thJauf9G3oK/+Fca80QCyAC/rF3rQHzlNqZIF2M3A=; b=VTIEacQgcUcZ+j
-	l8wa1fE3ofSwEKIWT8HhVn6HBk5rVSlIKRQK+xV/ObqCH5HiFJoenJQU/aUZ+CYAKCF3Jm+lDnEJr
-	MVi/OzkSuputi3bW9ZxT062aHirGxPCyaB5s0mQj6VCDU3vgobfdwqZcUBh8NKta8LBCMt23gvemV
-	K91WLZvAkdf4nt0C22oSjYHaF0Jy8lNcackUVAyjdeAjNXJ0hzqpakSLDR28gcJ34zKtEjHRgSRvi
-	PxnwugRbGpcEjR8vM8jQydafcFxrX8Du+xxuVHlQCx1+KmSlJTAXZ7bLLxQ8uoj+PXuBM+NL8o0UP
-	z5D8VZjUh1MNZpRso5SA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sYX8IxVlvCNhHPmSg1ye76uiR3+s25KILD+FGMLxVpE=; b=l8A8Lel4SPO71p
+	Bd7ow2nssfrC6dK+YvLexapzNz2WnY8//P5HOg1v0mfDkZgOHNoO3QIlU1vX2nm5C4J9Vt3pFqYsd
+	y3OKzzLdD9z1Z2EL0ntE9lCq5knCv00psgEQTCTA0fk+pbH6ZTAFW52M/iGPZ8la25Y9ZpcyAb1Ce
+	4q85ocDLvn5qa+ddeRkRHeMvSb6dAfGhhrEECF7ll8VDcmQtSUBunS7qmHu7xVPyH6KcoFER8HzYj
+	Up5JbWFqXAb5t9yrQhGfdF0NTFlP0PgOeZgzOniDvn77ZUxJmxPcumhkPZMp7vvKbqfRkTWu2a5FR
+	xV8j7PZ4ALdtMHHOxQsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jflqg-0006gJ-Pf; Mon, 01 Jun 2020 14:55:34 +0000
-Received: from gproxy9-pub.mail.unifiedlayer.com ([69.89.20.122])
+	id 1jflrd-0007MV-W0; Mon, 01 Jun 2020 14:56:33 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jflqN-0006bV-JI
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 14:55:17 +0000
-Received: from cmgw11.unifiedlayer.com (unknown [10.9.0.11])
- by gproxy9.mail.unifiedlayer.com (Postfix) with ESMTP id 1D9A41E0948
- for <linux-arm-kernel@lists.infradead.org>;
- Mon,  1 Jun 2020 08:55:15 -0600 (MDT)
-Received: from md-in-79.webhostbox.net ([43.225.55.182]) by cmsmtp with ESMTP
- id flqKjMHllqNBqflqMj4AIy; Mon, 01 Jun 2020 08:55:15 -0600
-X-Authority-Reason: nr=8
-X-Authority-Analysis: v=2.3 cv=QsJwI26d c=1 sm=1 tr=0
- a=LfuyaZh/8e9VOkaVZk0aRw==:117 a=LfuyaZh/8e9VOkaVZk0aRw==:17
- a=dLZJa+xiwSxG16/P+YVxDGlgEgI=:19 a=IkcTkHD0fZMA:10:nop_charset_1
- a=nTHF0DUjJn0A:10:nop_rcvd_month_year
- a=oz0wMknONp8A:10:endurance_base64_authed_username_1 a=vU9dKmh3AAAA:8
- a=vzkQzeYxvNWxcUWojyIA:9 a=S98yGVt2Wv-XtSOH:21 a=EiBAABpLls2hw3GD:21
- a=QEXdDO2ut3YA:10:nop_charset_2 a=rsP06fVo5MYu2ilr0aT5:22
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=linumiz.com
- ; s=default;
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
- MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=+Xu7l6hzOuH+trrTVismt5vHgjqhSWauB5JkIiiPwYc=; b=cbHrA0JHvmnRgimXA9GIwodGL7
- 86IJQLgQnMJjadzWicFo3eOVxMnTXYDx+pCy+6UU0bb85ibHHpHtkvX1BLmlpPobtxnfGN0gRPjfo
- lRrnC9YNBxLuWp1dlvN1bSYEGtWTcyRvHJs0+NdWk1kRhsXbBMBMC7Q6lLKOkMO91cNDEyJYCPF1z
- /MR62im3YCqJUsBcm1Py9vI2oz3LyOADgughp13FNEJNrevTocXW/VK6s45sQcrSZqaqKJr9ib4fi
- 6LVkw01QuxwbO17RYJKMSkkkKG+vm2ReuaDm4NR/IgygvR8f20Xry8YDqclAyQKqwaM2qICw9+hZK
- D5VU2HLA==;
-Received: from dslb-002-205-073-081.002.205.pools.vodafone-ip.de
- ([2.205.73.81]:51482 helo=[192.168.178.164])
- by md-in-79.webhostbox.net with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128) (Exim 4.92)
- (envelope-from <parthiban@linumiz.com>)
- id 1jflqJ-0004h4-Mc; Mon, 01 Jun 2020 14:55:11 +0000
-Subject: Re: [PATCH] ARM: dts: imx6ull: add MYiR MYS-6ULX SBC
-To: Marco Felsch <m.felsch@pengutronix.de>
-References: <20200408184351.135716-1-parthiban@linumiz.com>
- <20200427061844.i5hb2xatq2ntdqbe@pengutronix.de>
-From: Parthiban <parthiban@linumiz.com>
-Message-ID: <9077f6b0-66ac-8854-75fe-5bebb8314fc2@linumiz.com>
-Date: Mon, 1 Jun 2020 16:55:08 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+ id 1jflrX-0007Lx-Hr
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 14:56:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=nDf9cvm/ZefW9y6efpBbORsXzUNCnvBktxgDSUJOFe0=; b=xJ3jMVdaSmg2Ny7iJI06PVpl7
+ SCS6f+oZDfUj0tkfF5DLpvqlKPdRpf1oDCW6w2N4xY8LHAMKQ27jM3FruT0cBSJGsF0iUMXZ5gz4l
+ Frfyv4n59QLbmn9BqF/9v8aFUg8QZknM3BGdSEw8eklEHRwu/UMk00KY8muN3FPe+5MJNJmvyFYDW
+ P7GutIGYA6/jn37IhfdMUzZYgM0zLD1U1BARdCSNYFMDnHAMJ0bnxiTj3d5hyfI5TIE5xV3fOm0OH
+ WLUcluznY6uGxGFu3ZuNvly1dphT7bh0apG/41hfx4vv1vtaLxEBbxvM/co/7H6x2cMIluUzYpJbF
+ tUn9zw3cw==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39986)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jflrL-0000Zg-2t; Mon, 01 Jun 2020 15:56:15 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jflrK-0003Or-Gl; Mon, 01 Jun 2020 15:56:14 +0100
+Date: Mon, 1 Jun 2020 15:56:14 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: =?utf-8?Q?=C5=81ukasz?= Stelmach <l.stelmach@samsung.com>
+Subject: Re: [PATCH 4/5] arm: Add kexec_image_info
+Message-ID: <20200601145614.GK1551@shell.armlinux.org.uk>
+References: <20200601142754.26139-1-l.stelmach@samsung.com>
+ <CGME20200601142811eucas1p260e5a434ea7743eecdb37c4d975c5f05@eucas1p2.samsung.com>
+ <20200601142754.26139-5-l.stelmach@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <20200427061844.i5hb2xatq2ntdqbe@pengutronix.de>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - md-in-79.webhostbox.net
-X-AntiAbuse: Original Domain - lists.infradead.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - linumiz.com
-X-BWhitelist: no
-X-Source-IP: 2.205.73.81
-X-Source-L: No
-X-Exim-ID: 1jflqJ-0004h4-Mc
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: dslb-002-205-073-081.002.205.pools.vodafone-ip.de
- ([192.168.178.164]) [2.205.73.81]:51482
-X-Source-Auth: parthiban@linumiz.com
-X-Email-Count: 19
-X-Source-Cap: bGludW1jbWM7aG9zdGdhdG9yO21kLWluLTc5LndlYmhvc3Rib3gubmV0
-X-Local-Domain: yes
+Content-Disposition: inline
+In-Reply-To: <20200601142754.26139-5-l.stelmach@samsung.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_075515_754720_7E87D41C 
-X-CRM114-Status: GOOD (  13.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200601_075627_667982_AE39750B 
+X-CRM114-Status: GOOD (  15.37  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [69.89.20.122 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [69.89.20.122 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -119,304 +88,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Parthiban <parthiban@linumiz.com>,
- shawnguo@kernel.org, s.hauer@pengutronix.de, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kees Cook <keescook@chromium.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Masahiro Yamada <masahiroy@kernel.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>, Ben Dooks <ben-linux@fluff.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Enrico Weigelt <info@metux.net>,
+ Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 4/27/20 8:18 AM, Marco Felsch wrote:
-> Hi Parthiban,
-> 
-> a few more minor comments..
-> 
-> On 20-04-08 20:43, Parthiban Nallathambi wrote:
-> 
-> ...
-> 
->> diff --git a/arch/arm/boot/dts/imx6ull-myir-mys-6ulx.dtsi b/arch/arm/boot/dts/imx6ull-myir-mys-6ulx.dtsi
->> new file mode 100644
->> index 000000000000..f0a514187c21
->> --- /dev/null
->> +++ b/arch/arm/boot/dts/imx6ull-myir-mys-6ulx.dtsi
->> @@ -0,0 +1,247 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright (C) 2020 Linumiz
->> + * Author: Parthiban Nallathambi <parthiban@linumiz.com>
->> + */
->> +
->> +#include <dt-bindings/gpio/gpio.h>
->> +#include <dt-bindings/interrupt-controller/irq.h>
->> +#include <dt-bindings/pwm/pwm.h>
->> +
->> +/ {
->> +	model = "MYiR MYS-6ULX Single Board Computer";
->> +	compatible = "myir,imx6ull-mys-6ulx", "fsl,imx6ull";
->> +
->> +	chosen {
->> +		stdout-path = &uart1;
->> +	};
->> +
->> +	regulators: regulators {
->> +		compatible = "simple-bus";
->> +		#address-cells = <1>;
->> +		#size-cells = <0>;
->> +
->> +		vdd_5v: regulator@0 {
->> +			compatible = "regulator-fixed";
->> +			regulator-name = "VDD_5V";
->> +			regulator-min-microvolt = <5000000>;
->> +			regulator-max-microvolt = <5000000>;
->> +			regulator-always-on;
->> +			regulator-boot-on;
->> +		};
->> +
->> +		vdd_3v3: regulator@1 {
->> +			compatible = "regulator-fixed";
->> +			regulator-name = "VDD_3V3";
->> +			regulator-min-microvolt = <3300000>;
->> +			regulator-max-microvolt = <3300000>;
->> +			regulator-always-on;
->> +			vin-supply = <&vdd_5v>;
->> +		};
->> +	};
->> +};
->> +
->> +&fec1 {
->> +	pinctrl-names = "default";
->> +	pinctrl-0 = <&pinctrl_enet1>;
->> +	phy-mode = "rmii";
->> +	phy-handle = <&ethphy0>;
->> +	phy-supply = <&vdd_3v3>;
->> +	status = "okay";
->> +
->> +	mdio: mdio {
->> +		#address-cells = <1>;
->> +		#size-cells = <0>;
->> +
->> +		ethphy0: ethernet-phy@0 {
->> +			reg = <0>;
->> +			compatible = "ethernet-phy-ieee802.3-c22";
->> +			interrupt-parent = <&gpio5>;
->> +			interrupts = <5 IRQ_TYPE_LEVEL_LOW>;
->> +			clocks = <&clks IMX6UL_CLK_ENET_REF>;
->> +			clock-names = "rmii-ref";
->> +			status = "okay";
-> 
-> Status not needed here.
-
-Thanks, removed it.
-
-> 
->> +		};
->> +	};
->> +};
->> +
->> +&gpmi {
->> +	pinctrl-names = "default";
->> +	pinctrl-0 = <&pinctrl_gpmi_nand>;
->> +	nand-on-flash-bbt;
->> +	status = "disabled";
->> +};
->> +
->> +&uart1 {
->> +	pinctrl-names = "default";
->> +	pinctrl-0 = <&pinctrl_uart1>;
->> +	status = "okay";
->> +};
->> +
->> +&usbotg1 {
->> +	pinctrl-names = "default";
->> +	pinctrl-0 = <&pinctrl_usb_otg1_id>;
->> +	dr_mode = "otg";
->> +	status = "okay";
->> +};
->> +
->> +&usbotg2 {
->> +	dr_mode = "host";
->> +	disable-over-current;
->> +	status = "okay";
->> +};
->> +
->> +&usdhc1 {
->> +	pinctrl-names = "default", "state_100mhz", "state_200mhz";
->> +	pinctrl-0 = <&pinctrl_usdhc1>;
->> +	pinctrl-1 = <&pinctrl_usdhc1_100mhz>;
->> +	pinctrl-2 = <&pinctrl_usdhc1_200mhz>;
->> +	cd-gpios = <&gpio1 19 GPIO_ACTIVE_LOW>;
->> +	no-1-8-v;
->> +	keep-power-in-suspend;
->> +	wakeup-source;
->> +	vmmc-supply = <&vdd_3v3>;
->> +	status = "okay";
->> +};
->> +
->> +&usdhc2 {
->> +	pinctrl-names = "default";
->> +	pinctrl-0 = <&pinctrl_usdhc2>;
->> +	pinctrl-1 = <&pinctrl_usdhc2_100mhz>;
->> +	pinctrl-2 = <&pinctrl_usdhc2_200mhz>;
->> +	bus-width = <8>;
->> +	non-removable;
->> +	keep-power-in-suspend;
->> +	vmmc-supply = <&vdd_3v3>;
->> +	status = "disabled";
-> 
-> Status not needed here.
-
-Removed, thanks.
-
-> 
-> Regards,
->   Marco
-> 
->> +};
->> +
->> +&iomuxc {
->> +	pinctrl_enet1: enet1grp {
->> +		fsl,pins = <
->> +			MX6UL_PAD_GPIO1_IO06__ENET1_MDIO	0x1b0b0
->> +			MX6UL_PAD_GPIO1_IO07__ENET1_MDC		0x1b0b0
->> +			MX6UL_PAD_ENET1_RX_EN__ENET1_RX_EN	0x1b0b0
->> +			MX6UL_PAD_ENET1_RX_ER__ENET1_RX_ER	0x1b0b0
->> +			MX6UL_PAD_ENET1_RX_DATA0__ENET1_RDATA00	0x1b0b0
->> +			MX6UL_PAD_ENET1_RX_DATA1__ENET1_RDATA01	0x1b0b0
->> +			MX6UL_PAD_ENET1_TX_EN__ENET1_TX_EN	0x1b0b0
->> +			MX6UL_PAD_ENET1_TX_DATA0__ENET1_TDATA00	0x1b0b0
->> +			MX6UL_PAD_ENET1_TX_DATA1__ENET1_TDATA01	0x1b0b0
->> +			MX6UL_PAD_ENET1_TX_CLK__ENET1_REF_CLK1	0x4001b031
->> +			MX6UL_PAD_SNVS_TAMPER5__GPIO5_IO05	0x1b0b0
->> +		>;
->> +	};
->> +
->> +	pinctrl_gpmi_nand: gpminandgrp {
->> +		fsl,pins = <
->> +			MX6UL_PAD_NAND_CLE__RAWNAND_CLE		0x0b0b1
->> +			MX6UL_PAD_NAND_ALE__RAWNAND_ALE		0x0b0b1
->> +			MX6UL_PAD_NAND_WP_B__RAWNAND_WP_B	0x0b0b1
->> +			MX6UL_PAD_NAND_READY_B__RAWNAND_READY_B	0x0b000
->> +			MX6UL_PAD_NAND_CE0_B__RAWNAND_CE0_B	0x0b0b1
->> +			MX6UL_PAD_NAND_RE_B__RAWNAND_RE_B	0x0b0b1
->> +			MX6UL_PAD_NAND_WE_B__RAWNAND_WE_B	0x0b0b1
->> +			MX6UL_PAD_NAND_DATA00__RAWNAND_DATA00	0x0b0b1
->> +			MX6UL_PAD_NAND_DATA01__RAWNAND_DATA01	0x0b0b1
->> +			MX6UL_PAD_NAND_DATA02__RAWNAND_DATA02	0x0b0b1
->> +			MX6UL_PAD_NAND_DATA03__RAWNAND_DATA03	0x0b0b1
->> +			MX6UL_PAD_NAND_DATA04__RAWNAND_DATA04	0x0b0b1
->> +			MX6UL_PAD_NAND_DATA05__RAWNAND_DATA05	0x0b0b1
->> +			MX6UL_PAD_NAND_DATA06__RAWNAND_DATA06	0x0b0b1
->> +			MX6UL_PAD_NAND_DATA07__RAWNAND_DATA07	0x0b0b1
->> +		>;
->> +	};
->> +
->> +	pinctrl_uart1: uart1grp {
->> +		fsl,pins = <
->> +			MX6UL_PAD_UART1_TX_DATA__UART1_DCE_TX	0x1b0b1
->> +			MX6UL_PAD_UART1_RX_DATA__UART1_DCE_RX	0x1b0b1
->> +		>;
->> +	};
->> +
->> +	pinctrl_usb_otg1_id: usbotg1idgrp {
->> +		fsl,pins = <
->> +			MX6UL_PAD_GPIO1_IO00__ANATOP_OTG1_ID	0x17059
->> +		>;
->> +	};
->> +
->> +	pinctrl_usdhc1: usdhc1grp {
->> +		fsl,pins = <
->> +			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x17059
->> +			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x10059
->> +			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x17059
->> +			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x17059
->> +			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x17059
->> +			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x17059
->> +			MX6UL_PAD_UART1_RTS_B__GPIO1_IO19	0x17059
->> +		>;
->> +	};
->> +
->> +	pinctrl_usdhc1_100mhz: usdhc1grp100mhz {
->> +		fsl,pins = <
->> +			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x170b9
->> +			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x100b9
->> +			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x170b9
->> +			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x170b9
->> +			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x170b9
->> +			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x170b9
->> +		>;
->> +	};
->> +
->> +	pinctrl_usdhc1_200mhz: usdhc1grp200mhz {
->> +		fsl,pins = <
->> +			MX6UL_PAD_SD1_CMD__USDHC1_CMD		0x170f9
->> +			MX6UL_PAD_SD1_CLK__USDHC1_CLK		0x100f9
->> +			MX6UL_PAD_SD1_DATA0__USDHC1_DATA0	0x170f9
->> +			MX6UL_PAD_SD1_DATA1__USDHC1_DATA1	0x170f9
->> +			MX6UL_PAD_SD1_DATA2__USDHC1_DATA2	0x170f9
->> +			MX6UL_PAD_SD1_DATA3__USDHC1_DATA3	0x170f9
->> +		>;
->> +	};
->> +
->> +	pinctrl_usdhc2: usdhc2grp {
->> +		fsl,pins = <
->> +			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x10069
->> +			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x17059
->> +			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x17059
->> +			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x17059
->> +			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x17059
->> +			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x17059
->> +			MX6UL_PAD_NAND_DATA04__USDHC2_DATA4	0x17059
->> +			MX6UL_PAD_NAND_DATA05__USDHC2_DATA5	0x17059
->> +			MX6UL_PAD_NAND_DATA06__USDHC2_DATA6	0x17059
->> +			MX6UL_PAD_NAND_DATA07__USDHC2_DATA7	0x17059
->> +		>;
->> +	};
->> +
->> +	pinctrl_usdhc2_100mhz: usdhc2grp100mhz {
->> +		fsl,pins = <
->> +			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100b9
->> +			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170b9
->> +			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170b9
->> +			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170b9
->> +			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170b9
->> +			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170b9
->> +			MX6UL_PAD_NAND_DATA04__USDHC2_DATA4	0x170b9
->> +			MX6UL_PAD_NAND_DATA05__USDHC2_DATA5	0x170b9
->> +			MX6UL_PAD_NAND_DATA06__USDHC2_DATA6	0x170b9
->> +			MX6UL_PAD_NAND_DATA07__USDHC2_DATA7	0x170b9
->> +		>;
->> +	};
->> +
->> +	pinctrl_usdhc2_200mhz: usdhc2grp200mhz {
->> +		fsl,pins = <
->> +			MX6UL_PAD_NAND_RE_B__USDHC2_CLK		0x100f9
->> +			MX6UL_PAD_NAND_WE_B__USDHC2_CMD		0x170f9
->> +			MX6UL_PAD_NAND_DATA00__USDHC2_DATA0	0x170f9
->> +			MX6UL_PAD_NAND_DATA01__USDHC2_DATA1	0x170f9
->> +			MX6UL_PAD_NAND_DATA02__USDHC2_DATA2	0x170f9
->> +			MX6UL_PAD_NAND_DATA03__USDHC2_DATA3	0x170f9
->> +			MX6UL_PAD_NAND_DATA04__USDHC2_DATA4	0x170f9
->> +			MX6UL_PAD_NAND_DATA05__USDHC2_DATA5	0x170f9
->> +			MX6UL_PAD_NAND_DATA06__USDHC2_DATA6	0x170f9
->> +			MX6UL_PAD_NAND_DATA07__USDHC2_DATA7	0x170f9
->> +		>;
->> +	};
->> +};
->> -- 
->> 2.11.0
->>
-
--- 
-Thanks,
-Parthiban N
-+4915163761545
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBKdW4gMDEsIDIwMjAgYXQgMDQ6Mjc6NTNQTSArMDIwMCwgxYF1a2FzeiBTdGVsbWFj
+aCB3cm90ZToKPiBBZGQga2V4ZWNfaW1hZ2VfaW5mbyB0byBwcmludCBkZXRhaWxlZCBpbmZvcm1h
+dGlvbiBhYm91dCBhIGtleGVjIGltYWdlLgoKSXNuJ3QgdGhpcyBhbHJlYWR5IHZpc2libGUgdGhy
+b3VnaCBrZXhlYyBkZWJ1Z2dpbmc/ICBXaHkgZG8gd2UgbmVlZAp0byBkdXBsaWNhdGUgdGhlIHNh
+bWUgb3V0cHV0IGluIHRoZSBrZXJuZWw/ICBEbyB3ZSB0aGluayB0aGF0IHRoZQprZXhlYyBpbnRl
+cmZhY2VzIGFyZSB0aGF0IGZyYWdpbGUgdGhhdCB0aGV5IGRvbid0IHdvcms/Cgo+IAo+IFNpZ25l
+ZC1vZmYtYnk6IMWBdWthc3ogU3RlbG1hY2ggPGwuc3RlbG1hY2hAc2Ftc3VuZy5jb20+Cj4gLS0t
+Cj4gIGFyY2gvYXJtL2tlcm5lbC9tYWNoaW5lX2tleGVjLmMgfCAyOCArKysrKysrKysrKysrKysr
+KysrKysrKysrKysrCj4gIDEgZmlsZSBjaGFuZ2VkLCAyOCBpbnNlcnRpb25zKCspCj4gCj4gZGlm
+ZiAtLWdpdCBhL2FyY2gvYXJtL2tlcm5lbC9tYWNoaW5lX2tleGVjLmMgYi9hcmNoL2FybS9rZXJu
+ZWwvbWFjaGluZV9rZXhlYy5jCj4gaW5kZXggNzYzMDBmMzgxM2U4Li5jMTBhMmRmZDUzZDEgMTAw
+NjQ0Cj4gLS0tIGEvYXJjaC9hcm0va2VybmVsL21hY2hpbmVfa2V4ZWMuYwo+ICsrKyBiL2FyY2gv
+YXJtL2tlcm5lbC9tYWNoaW5lX2tleGVjLmMKPiBAQCAtMzEsNiArMzEsMzIgQEAgZXh0ZXJuIHVu
+c2lnbmVkIGxvbmcga2V4ZWNfYm9vdF9hdGFnczsKPiAgCj4gIHN0YXRpYyBhdG9taWNfdCB3YWl0
+aW5nX2Zvcl9jcmFzaF9pcGk7Cj4gIAo+ICsvKioKPiArICoga2V4ZWNfaW1hZ2VfaW5mbyAtIEZv
+ciBkZWJ1Z2dpbmcgb3V0cHV0Lgo+ICsgKi8KPiArI2RlZmluZSBrZXhlY19pbWFnZV9pbmZvKF9p
+KSBfa2V4ZWNfaW1hZ2VfaW5mbyhfX2Z1bmNfXywgX19MSU5FX18sIF9pKQo+ICtzdGF0aWMgdm9p
+ZCBfa2V4ZWNfaW1hZ2VfaW5mbyhjb25zdCBjaGFyICpmdW5jLCBpbnQgbGluZSwKPiArCWNvbnN0
+IHN0cnVjdCBraW1hZ2UgKmtpbWFnZSkKPiArewo+ICsJdW5zaWduZWQgbG9uZyBpOwo+ICsKPiAr
+CXByX2RlYnVnKCIlczolZDpcbiIsIGZ1bmMsIGxpbmUpOwo+ICsJcHJfZGVidWcoIiAga2V4ZWMg
+a2ltYWdlIGluZm86XG4iKTsKPiArCXByX2RlYnVnKCIgICAgdHlwZTogICAgICAgICVkXG4iLCBr
+aW1hZ2UtPnR5cGUpOwo+ICsJcHJfZGVidWcoIiAgICBzdGFydDogICAgICAgJWx4XG4iLCBraW1h
+Z2UtPnN0YXJ0KTsKPiArCXByX2RlYnVnKCIgICAgaGVhZDogICAgICAgICVseFxuIiwga2ltYWdl
+LT5oZWFkKTsKPiArCXByX2RlYnVnKCIgICAgbnJfc2VnbWVudHM6ICVsdVxuIiwga2ltYWdlLT5u
+cl9zZWdtZW50cyk7Cj4gKwo+ICsJZm9yIChpID0gMDsgaSA8IGtpbWFnZS0+bnJfc2VnbWVudHM7
+IGkrKykgewo+ICsJCXByX2RlYnVnKCIgICAgICBzZWdtZW50WyVsdV06ICUwOGx4IC0gJTA4bHgs
+IDB4JXggYnl0ZXMsICVsdSBwYWdlc1xuIiwKPiArCQkJaSwKPiArCQkJa2ltYWdlLT5zZWdtZW50
+W2ldLm1lbSwKPiArCQkJa2ltYWdlLT5zZWdtZW50W2ldLm1lbSArIGtpbWFnZS0+c2VnbWVudFtp
+XS5tZW1zeiwKPiArCQkJa2ltYWdlLT5zZWdtZW50W2ldLm1lbXN6LAo+ICsJCQlraW1hZ2UtPnNl
+Z21lbnRbaV0ubWVtc3ogLyAgUEFHRV9TSVpFKTsKPiArCX0KPiArfQo+ICsKPiAgLyoKPiAgICog
+UHJvdmlkZSBhIGR1bW15IGNyYXNoX25vdGVzIGRlZmluaXRpb24gd2hpbGUgY3Jhc2ggZHVtcCBh
+cnJpdmVzIHRvIGFybS4KPiAgICogVGhpcyBwcmV2ZW50cyBicmVha2FnZSBvZiBjcmFzaF9ub3Rl
+cyBhdHRyaWJ1dGUgaW4ga2VybmVsL2tzeXNmcy5jLgo+IEBAIC00Miw2ICs2OCw4IEBAIGludCBt
+YWNoaW5lX2tleGVjX3ByZXBhcmUoc3RydWN0IGtpbWFnZSAqaW1hZ2UpCj4gIAlfX2JlMzIgaGVh
+ZGVyOwo+ICAJaW50IGksIGVycjsKPiAgCj4gKwlrZXhlY19pbWFnZV9pbmZvKGltYWdlKTsKPiAr
+Cj4gIAlpbWFnZS0+YXJjaC5rZXJuZWxfcjIgPSBpbWFnZS0+c3RhcnQgLSBLRVhFQ19BUk1fWklN
+QUdFX09GRlNFVAo+ICAJCQkJICAgICArIEtFWEVDX0FSTV9BVEFHU19PRkZTRVQ7Cj4gIAo+IC0t
+IAo+IDIuMjYuMgo+IAo+IAoKLS0gClJNSydzIFBhdGNoIHN5c3RlbTogaHR0cHM6Ly93d3cuYXJt
+bGludXgub3JnLnVrL2RldmVsb3Blci9wYXRjaGVzLwpGVFRDIGZvciAwLjhtIChlc3QuIDE3NjJt
+KSBsaW5lIGluIHN1YnVyYmlhOiBzeW5jIGF0IDEzLjFNYnBzIGRvd24gNDI0a2JwcyB1cAoKX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtl
+cm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0
+dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
+bAo=
