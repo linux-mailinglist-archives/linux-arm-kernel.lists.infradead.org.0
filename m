@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E500E1EB068
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 22:43:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BEA61EB095
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 23:01:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wpzXG7uFRE9EaaqNccEU+U0zmTAGHy+Ft5+Zzh6i+8M=; b=TvLm6CvXr3tGs/
-	oSrvq2KiRSIttDXhb+osUwlSWzPTebQvstVa3/VDtGfQ92ItYqPy6T2uT5sU088V16mFJZBMmOdPn
-	eOQ4D3j9KbfukoRX+oAvDTmQOVsqx4MDleg4yTTcNG0yet3PeixihW+faDWhQpzJBVfu8vlRzQ87N
-	Cpqd6BRo8sESxEK22BCoDWMIHOpkwKklaOjoRCSPuDGD2L00jtcWJASKIxVdjxYXxbzWsKQL2Dg3r
-	C0Ch9u2tRFypgi3PE6kKzDIf7NrCbRVoyLatOUR1aZSt5ulXGZENEIRGjThvpfs7kPNAps8K+BQom
-	gwcxEuM2v/kF+7piZfXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ctlMcFrUKx6MftnlF0km4HWdyJ8GhbZWDbEpVu1/tOE=; b=UwJ4eWKxy4Omdd
+	+5tRwvoKwyO36t+M6kzKZ+5SYkmIcDhIQ/IrfmbtPBS3B9PyToJTM1m3QZGQtwMI8oKz0qeIb3kiA
+	Q4xCH/BVb/ukLcK4sNQMGgsJ3t59/U/j949BI+okJiBEOb+hB1Z5n2hIMxenf/8+D7v8gsc6Qh37w
+	MTMsm6/1ZWP9G4q/1MS6vShi3hqGbdxu9KyFoS/yD1wN8ExiOfGthDFpokkKAF4iqn5YXbkTpx9tz
+	RrqKJjwztKrDN6IYHvIvf1OaLy5Oeq4LWSGQ3Ch8n5faXwTChFGIGWD6UrA6ASm61hFr6NadSX57A
+	iW/GZt69XQfWScMBdn6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfrHW-0002dt-BT; Mon, 01 Jun 2020 20:43:38 +0000
-Received: from szxga03-in.huawei.com ([45.249.212.189] helo=huawei.com)
+	id 1jfrYb-0006MZ-8F; Mon, 01 Jun 2020 21:01:17 +0000
+Received: from mail.nic.cz ([217.31.204.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfrHO-0002d3-Oh
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 20:43:32 +0000
-Received: from dggemi406-hub.china.huawei.com (unknown [172.30.72.55])
- by Forcepoint Email with ESMTP id 4198766B57FCA23C5AD2;
- Tue,  2 Jun 2020 04:43:23 +0800 (CST)
-Received: from DGGEMI525-MBS.china.huawei.com ([169.254.6.10]) by
- dggemi406-hub.china.huawei.com ([10.3.17.144]) with mapi id 14.03.0487.000;
- Tue, 2 Jun 2020 04:43:15 +0800
-From: "Song Bao Hua (Barry Song)" <song.bao.hua@hisilicon.com>
-To: Robin Murphy <robin.murphy@arm.com>, "will@kernel.org" <will@kernel.org>, 
- "hch@lst.de" <hch@lst.de>, "m.szyprowski@samsung.com"
- <m.szyprowski@samsung.com>, "iommu@lists.linux-foundation.org"
- <iommu@lists.linux-foundation.org>
-Subject: RE: [PATCH] iommu/arm-smmu-v3: expose numa_node attribute to users
- in sysfs
-Thread-Topic: [PATCH] iommu/arm-smmu-v3: expose numa_node attribute to users
- in sysfs
-Thread-Index: AQHWNmL+BAaoTPaXd0CO3TAe6c7BnKjDOhgAgAD/rYA=
-Date: Mon, 1 Jun 2020 20:43:14 +0000
-Message-ID: <B926444035E5E2439431908E3842AFD24D83EB@DGGEMI525-MBS.china.huawei.com>
-References: <20200530091505.56664-1-song.bao.hua@hisilicon.com>
- <4e902884-7ac3-9e79-ec01-f56f2fc5ebad@arm.com>
-In-Reply-To: <4e902884-7ac3-9e79-ec01-f56f2fc5ebad@arm.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.126.202.97]
+ id 1jfrYF-0006G5-KL
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 21:00:57 +0000
+Received: from dellmb.labs.office.nic.cz (unknown
+ [IPv6:2001:1488:fffe:6:cac7:3539:7f1f:463])
+ by mail.nic.cz (Postfix) with ESMTP id 89DB213FF2D;
+ Mon,  1 Jun 2020 23:00:51 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=nic.cz; s=default;
+ t=1591045251; bh=3f7VneOyNYQk0hWOTDawo1xZIgQ1AyQQb5nPH47b+mg=;
+ h=From:To:Date;
+ b=V+lLZ84BtyUUt6LfxNFQoYu899FmSTKHjvGW+Qw0UNC9J3U9pvmJRU9PiuyaNpHri
+ fTdvm8VVhUIQwVwCrkLyCrvb5n16ihnPpc0Moc9lFZ1Gnn7e0qpRCKbY4TdY3Qn60W
+ adxtiu0kV3ikcy77eTc+++uBiAc8WETZIy66QmdE=
+From: =?UTF-8?q?Marek=20Beh=C3=BAn?= <marek.behun@nic.cz>
+To: Gregory CLEMENT <gregory.clement@bootlin.com>
+Subject: [PATCH mvebu 1/2] firmware: turris-mox-rwtm: support ECDSA signatures
+ via debugfs
+Date: Mon,  1 Jun 2020 23:00:49 +0200
+Message-Id: <20200601210050.31821-1-marek.behun@nic.cz>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on mail.nic.cz
+X-Spam-Status: No, score=0.00
+X-Spamd-Bar: /
+X-Virus-Scanned: clamav-milter 0.102.2 at mail
+X-Virus-Status: Clean
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_134331_124728_C34C11FD 
-X-CRM114-Status: GOOD (  22.64  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200601_140056_114078_6F1696B3 
+X-CRM114-Status: GOOD (  17.99  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.189 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [217.31.204.67 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,155 +76,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linuxarm <linuxarm@huawei.com>, "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ =?UTF-8?q?Marek=20Beh=C3=BAn?= <marek.behun@nic.cz>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-> -----Original Message-----
-> From: Robin Murphy [mailto:robin.murphy@arm.com]
-> Sent: Tuesday, June 2, 2020 1:14 AM
-> To: Song Bao Hua (Barry Song) <song.bao.hua@hisilicon.com>; will@kernel.org;
-> hch@lst.de; m.szyprowski@samsung.com; iommu@lists.linux-foundation.org
-> Cc: Linuxarm <linuxarm@huawei.com>; linux-arm-kernel@lists.infradead.org
-> Subject: Re: [PATCH] iommu/arm-smmu-v3: expose numa_node attribute to
-> users in sysfs
-> 
-> On 2020-05-30 10:15, Barry Song wrote:
-> > As tests show the latency of dma_unmap can increase dramatically while
-> > calling them cross NUMA nodes, especially cross CPU packages, eg.
-> > 300ns vs 800ns while waiting for the completion of CMD_SYNC in an
-> > empty command queue. The large latency causing by remote node will
-> > in turn make contention of the command queue more serious, and enlarge
-> > the latency of DMA users within local NUMA nodes.
-> >
-> > Users might intend to enforce NUMA locality with the consideration of
-> > the position of SMMU. The patch provides minor benefit by presenting
-> > this information to users directly, as they might want to know it without
-> > checking hardware spec at all.
-> 
-> Hmm, given that dev-to_node() is a standard driver model thing, is there
-> not already some generic device property that can expose it - and if
-> not, should there be? Presumably if userspace cares enough to want to
-> know whereabouts in the system an IOMMU is, it probably also cares where
-> the actual endpoint devices are too.
-> 
-> At the very least, it doesn't seem right for it to be specific to one
-> single IOMMU driver.
-
-Right now pci devices have generally got the numa_node in sysfs by drivers/pci/pci-sysfs.c
-
-static ssize_t numa_node_store(struct device *dev,
-                               struct device_attribute *attr, const char *buf,
-                               size_t count)
-{
-        ...
-
-        add_taint(TAINT_FIRMWARE_WORKAROUND, LOCKDEP_STILL_OK);
-        pci_alert(pdev, FW_BUG "Overriding NUMA node to %d.  Contact your vendor for updates.",
-                  node);
-
-        dev->numa_node = node;
-        return count;
-}
-
-static ssize_t numa_node_show(struct device *dev, struct device_attribute *attr,
-                              char *buf)
-{
-        return sprintf(buf, "%d\n", dev->numa_node);
-}
-static DEVICE_ATTR_RW(numa_node);
-
-for other devices who care about numa information, the specific drivers are doing that, for example:
-
-drivers/dax/bus.c:      if (a == &dev_attr_numa_node.attr && !IS_ENABLED(CONFIG_NUMA))
-drivers/dax/bus.c:      &dev_attr_numa_node.attr,
-drivers/dma/idxd/sysfs.c:       &dev_attr_numa_node.attr,
-drivers/hv/vmbus_drv.c: &dev_attr_numa_node.attr,
-drivers/nvdimm/bus.c:   &dev_attr_numa_node.attr,
-drivers/nvme/host/core.c:       &dev_attr_numa_node.attr,
-
-smmu is usually a platform device, we can actually expose numa_node for platform_device, or globally expose numa_node
-for general "device" if people don't opposite.
-
-Barry
-
-> 
-> Robin.
-> 
-> > Signed-off-by: Barry Song <song.bao.hua@hisilicon.com>
-> > ---
-> >   drivers/iommu/arm-smmu-v3.c | 40
-> ++++++++++++++++++++++++++++++++++++-
-> >   1 file changed, 39 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > index 82508730feb7..754c4d59498b 100644
-> > --- a/drivers/iommu/arm-smmu-v3.c
-> > +++ b/drivers/iommu/arm-smmu-v3.c
-> > @@ -4021,6 +4021,44 @@ err_reset_pci_ops: __maybe_unused;
-> >   	return err;
-> >   }
-> >
-> > +static ssize_t numa_node_show(struct device *dev,
-> > +		struct device_attribute *attr, char *buf)
-> > +{
-> > +	return sprintf(buf, "%d\n", dev_to_node(dev));
-> > +}
-> > +static DEVICE_ATTR_RO(numa_node);
-> > +
-> > +static umode_t arm_smmu_numa_attr_visible(struct kobject *kobj, struct
-> attribute *a,
-> > +		int n)
-> > +{
-> > +	struct device *dev = container_of(kobj, typeof(*dev), kobj);
-> > +
-> > +	if (!IS_ENABLED(CONFIG_NUMA))
-> > +		return 0;
-> > +
-> > +	if (a == &dev_attr_numa_node.attr &&
-> > +			dev_to_node(dev) == NUMA_NO_NODE)
-> > +		return 0;
-> > +
-> > +	return a->mode;
-> > +}
-> > +
-> > +static struct attribute *arm_smmu_dev_attrs[] = {
-> > +	&dev_attr_numa_node.attr,
-> > +	NULL
-> > +};
-> > +
-> > +static struct attribute_group arm_smmu_dev_attrs_group = {
-> > +	.attrs          = arm_smmu_dev_attrs,
-> > +	.is_visible     = arm_smmu_numa_attr_visible,
-> > +};
-> > +
-> > +
-> > +static const struct attribute_group *arm_smmu_dev_attrs_groups[] = {
-> > +	&arm_smmu_dev_attrs_group,
-> > +	NULL,
-> > +};
-> > +
-> >   static int arm_smmu_device_probe(struct platform_device *pdev)
-> >   {
-> >   	int irq, ret;
-> > @@ -4097,7 +4135,7 @@ static int arm_smmu_device_probe(struct
-> platform_device *pdev)
-> >   		return ret;
-> >
-> >   	/* And we're up. Go go go! */
-> > -	ret = iommu_device_sysfs_add(&smmu->iommu, dev, NULL,
-> > +	ret = iommu_device_sysfs_add(&smmu->iommu, dev,
-> arm_smmu_dev_attrs_groups,
-> >   				     "smmu3.%pa", &ioaddr);
-> >   	if (ret)
-> >   		return ret;
-> >
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlIGZpcm13YXJlIG9uIFR1cnJpcyBNT1ggc2VjdXJlIHByb2Nlc3NvciBvZmZlcnMgc2lnbmlu
+ZyBtZXNzYWdlcwp3aXRoIEVDRFNBIHByaXZhdGUga2V5IHN0b3JlZCBpbiBwcm90ZWN0ZWQgT1RQ
+IG1lbW9yeS4KClRoZSBvcHRpbWFsIHNvbHV0aW9uIHdvdWxkIGJlIHRvIHJlZ2lzdGVyIGFuIGFr
+Y2lwaGVyIHByb3ZpZGVyIHZpYQprZXJuZWwncyBjcnlwdG8gQVBJLCBidXQgY3J5cHRvIEFQSSBk
+b2VzIG5vdCB5ZXQgc3VwcG9ydCBhY2Nlc3NpbmcKYWtjaXBoZXIgQVBJIGZyb20gdXNlcnNwYWNl
+IChhbmQgcHJvYmFibHkgd29uJ3QgZm9yIHNvbWUgdGltZSwgc2VlCmh0dHBzOi8vd3d3LnNwaW5p
+Y3MubmV0L2xpc3RzL2xpbnV4LWNyeXB0by9tc2czODM4OC5odG1sKS4KCkF0IGZpcnN0IEkgdHJp
+ZWQgdG8gcHV0IHRoaXMgdmlhIHN0YW5kYXJkIHN5c2ZzIEFQSSwgYnV0IHRoZSB3YXkgSQpkZXNp
+Z25lZCBpdCBpcyBub3QgY29tcGF0aWJsZSB3aXRoIHN5c2ZzJ3Mgc3RhbmRhcmQgIm9uZSBmaWxl
+IHBlcgphdHRyaWJ1dGUiLgoKVGhpcyBwYXRjaCB0aGVyZWZvcmUgYWRkcyBzdXBwb3J0IGZvciBh
+Y2Nlc3NpbmcgdGhpcyBzaWduYXR1cmUKZ2VuZXJhdGlvbiBtZWNoYW5pc20gdmlhIGRlYnVnZnMu
+IFNpbmNlIENaLk5JQydzIFR1cnJpcyBNT1ggaXMgdGhlIG9ubHkKdXNlciBvZiB0aGlzIG1vZHVs
+ZSwgdGhlIHBvdGVudGlhbCBmdXR1cmUgY2hhbmdlIHRvIGFrY2lwaGVyIEFQSSBzaG91bGQKbm90
+IGNhdXNlIHByb2JsZW1zLCBzaW5jZSB3ZSBjYW4ganVzdCBjaGFuZ2Ugb3VyIHVzZXJzcGFjZSBz
+b2Z0d2FyZSB0aGVuLgoKU2lnbmVkLW9mZi1ieTogTWFyZWsgQmVow7puIDxtYXJlay5iZWh1bkBu
+aWMuY3o+Ci0tLQogZHJpdmVycy9maXJtd2FyZS90dXJyaXMtbW94LXJ3dG0uYyB8IDE2NiArKysr
+KysrKysrKysrKysrKysrKysrKysrKysrKwogMSBmaWxlIGNoYW5nZWQsIDE2NiBpbnNlcnRpb25z
+KCspCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9maXJtd2FyZS90dXJyaXMtbW94LXJ3dG0uYyBiL2Ry
+aXZlcnMvZmlybXdhcmUvdHVycmlzLW1veC1yd3RtLmMKaW5kZXggZTI3ZjY4NDM3YjU2Li41MGJi
+MmE2ZDZjY2YgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZmlybXdhcmUvdHVycmlzLW1veC1yd3RtLmMK
+KysrIGIvZHJpdmVycy9maXJtd2FyZS90dXJyaXMtbW94LXJ3dG0uYwpAQCAtNyw2ICs3LDcgQEAK
+IAogI2luY2x1ZGUgPGxpbnV4L2FybWFkYS0zN3h4LXJ3dG0tbWFpbGJveC5oPgogI2luY2x1ZGUg
+PGxpbnV4L2NvbXBsZXRpb24uaD4KKyNpbmNsdWRlIDxsaW51eC9kZWJ1Z2ZzLmg+CiAjaW5jbHVk
+ZSA8bGludXgvZG1hLW1hcHBpbmcuaD4KICNpbmNsdWRlIDxsaW51eC9od19yYW5kb20uaD4KICNp
+bmNsdWRlIDxsaW51eC9tYWlsYm94X2NsaWVudC5oPgpAQCAtNjksNiArNzAsMTggQEAgc3RydWN0
+IG1veF9yd3RtIHsKIAkvKiBwdWJsaWMga2V5IGJ1cm5lZCBpbiBlRnVzZSAqLwogCWludCBoYXNf
+cHVia2V5OwogCXU4IHB1YmtleVsxMzVdOworCisjaWZkZWYgQ09ORklHX0RFQlVHX0ZTCisJLyoK
+KwkgKiBTaWduYXR1cmUgcHJvY2Vzcy4gVGhpcyBpcyBjdXJyZW50bHkgZG9uZSB2aWEgZGVidWdm
+cywgYmVjYXVzZSBpdAorCSAqIGRvZXMgbm90IGNvbmZvcm0gdG8gdGhlIHN5c2ZzIHN0YW5kYXJk
+ICJvbmUgZmlsZSBwZXIgYXR0cmlidXRlIi4KKwkgKiBJdCBzaG91bGQgYmUgcmV3cml0dGVuIHZp
+YSBjcnlwdG8gQVBJIG9uY2UgYWtjaXBoZXIgQVBJIGlzIGF2YWlsYWJsZQorCSAqIGZyb20gdXNl
+cnNwYWNlLgorCSAqLworCXN0cnVjdCBkZW50cnkgKmRlYnVnZnNfcm9vdDsKKwl1MzIgbGFzdF9z
+aWdbMzRdOworCWludCBsYXN0X3NpZ19kb25lOworI2VuZGlmCiB9OwogCiBzdHJ1Y3QgbW94X2tv
+YmplY3QgewpAQCAtMjc5LDYgKzI5MiwxNTIgQEAgc3RhdGljIGludCBtb3hfaHdybmdfcmVhZChz
+dHJ1Y3QgaHdybmcgKnJuZywgdm9pZCAqZGF0YSwgc2l6ZV90IG1heCwgYm9vbCB3YWl0KQogCXJl
+dHVybiByZXQ7CiB9CiAKKyNpZmRlZiBDT05GSUdfREVCVUdfRlMKK3N0YXRpYyBpbnQgcnd0bV9k
+ZWJ1Z19vcGVuKHN0cnVjdCBpbm9kZSAqaW5vZGUsIHN0cnVjdCBmaWxlICpmaWxlKQoreworCWZp
+bGUtPnByaXZhdGVfZGF0YSA9IGlub2RlLT5pX3ByaXZhdGU7CisKKwlyZXR1cm4gbm9uc2Vla2Fi
+bGVfb3Blbihpbm9kZSwgZmlsZSk7Cit9CisKK3N0YXRpYyBzc2l6ZV90IGRvX3NpZ25fcmVhZChz
+dHJ1Y3QgZmlsZSAqZmlsZSwgY2hhciBfX3VzZXIgKmJ1Ziwgc2l6ZV90IGxlbiwKKwkJCSAgICBs
+b2ZmX3QgKnBwb3MpCit7CisJc3RydWN0IG1veF9yd3RtICpyd3RtID0gZmlsZS0+cHJpdmF0ZV9k
+YXRhOworCXNzaXplX3QgcmV0OworCisJLyogb25seSBhbGxvdyBvbmUgcmVhZCwgb2YgMTM2IGJ5
+dGVzLCBmcm9tIHBvc2l0aW9uIDAgKi8KKwlpZiAoKnBwb3MgIT0gMCkKKwkJcmV0dXJuIDA7CisK
+KwlpZiAobGVuIDwgMTM2KQorCQlyZXR1cm4gLUVJTlZBTDsKKworCWlmICghcnd0bS0+bGFzdF9z
+aWdfZG9uZSkKKwkJcmV0dXJuIC1FTk9EQVRBOworCisJLyogMiBhcnJheXMgb2YgMTcgMzItYml0
+IHdvcmRzIGFyZSAxMzYgYnl0ZXMgKi8KKwlyZXQgPSBzaW1wbGVfcmVhZF9mcm9tX2J1ZmZlcihi
+dWYsIGxlbiwgcHBvcywgcnd0bS0+bGFzdF9zaWcsIDEzNik7CisJcnd0bS0+bGFzdF9zaWdfZG9u
+ZSA9IDA7CisKKwlyZXR1cm4gcmV0OworfQorCitzdGF0aWMgc3NpemVfdCBkb19zaWduX3dyaXRl
+KHN0cnVjdCBmaWxlICpmaWxlLCBjb25zdCBjaGFyIF9fdXNlciAqYnVmLAorCQkJICAgICBzaXpl
+X3QgbGVuLCBsb2ZmX3QgKnBwb3MpCit7CisJc3RydWN0IG1veF9yd3RtICpyd3RtID0gZmlsZS0+
+cHJpdmF0ZV9kYXRhOworCXN0cnVjdCBhcm1hZGFfMzd4eF9yd3RtX3J4X21zZyAqcmVwbHkgPSAm
+cnd0bS0+cmVwbHk7CisJc3RydWN0IGFybWFkYV8zN3h4X3J3dG1fdHhfbXNnIG1zZzsKKwlsb2Zm
+X3QgZHVtbXkgPSAwOworCXNzaXplX3QgcmV0OworCisJLyogdGhlIGlucHV0IGlzIGEgU0hBLTUx
+MiBoYXNoLCBzbyBleGFjdGx5IDY0IGJ5dGVzIGhhdmUgdG8gYmUgcmVhZCAqLworCWlmIChsZW4g
+IT0gNjQpCisJCXJldHVybiAtRUlOVkFMOworCisJLyogaWYgbGFzdCByZXN1bHQgaXMgbm90IHpl
+cm8gdXNlciBoYXMgbm90IHJlYWQgdGhhdCBpbmZvcm1hdGlvbiB5ZXQgKi8KKwlpZiAocnd0bS0+
+bGFzdF9zaWdfZG9uZSkKKwkJcmV0dXJuIC1FQlVTWTsKKworCWlmICghbXV0ZXhfdHJ5bG9jaygm
+cnd0bS0+YnVzeSkpCisJCXJldHVybiAtRUJVU1k7CisKKwkvKgorCSAqIEhlcmUgd2UgaGF2ZSB0
+byBzZW5kOgorCSAqICAgMS4gQWRkcmVzcyBvZiB0aGUgaW5wdXQgdG8gc2lnbi4KKwkgKiAgICAg
+IFRoZSBpbnB1dCBpcyBhbiBhcnJheSBvZiAxNyAzMi1iaXQgd29yZHMsIHRoZSBmaXJzdCAobW9z
+dAorCSAqICAgICAgc2lnbmlmaWNhdCkgaXMgMCwgdGhlIHJlc3QgMTYgd29yZHMgYXJlIGNvcGll
+ZCBmcm9tIHRoZSBTSEEtNTEyCisJICogICAgICBoYXNoIGdpdmVuIGJ5IHRoZSB1c2VyIGFuZCBj
+b252ZXJ0ZWQgZnJvbSBCRSB0byBMRS4KKwkgKiAgIDIuIEFkZHJlc3Mgb2YgdGhlIGJ1ZmZlciB3
+aGVyZSBFQ0RTQSBzaWduYXR1cmUgdmFsdWUgUiBzaGFsbCBiZQorCSAqICAgICAgc3RvcmVkIGJ5
+IHRoZSByV1RNIGZpcm13YXJlLgorCSAqICAgMy4gQWRkcmVzcyBvZiB0aGUgYnVmZmVyIHdoZXJl
+IEVDRFNBIHNpZ25hdHVyZSB2YWx1ZSBTIHNoYWxsIGJlCisJICogICAgICBzdG9yZWQgYnkgdGhl
+IHJXVE0gZmlybXdhcmUuCisJICovCisJbWVtc2V0KHJ3dG0tPmJ1ZiwgMCwgNCk7CisJcmV0ID0g
+c2ltcGxlX3dyaXRlX3RvX2J1ZmZlcihyd3RtLT5idWYgKyA0LCA2NCwgJmR1bW15LCBidWYsIGxl
+bik7CisJaWYgKHJldCA8IDApCisJCWdvdG8gdW5sb2NrX211dGV4OworCWJlMzJfdG9fY3B1X2Fy
+cmF5KHJ3dG0tPmJ1Ziwgcnd0bS0+YnVmLCAxNyk7CisKKwltc2cuY29tbWFuZCA9IE1CT1hfQ01E
+X1NJR047CisJbXNnLmFyZ3NbMF0gPSAxOworCW1zZy5hcmdzWzFdID0gcnd0bS0+YnVmX3BoeXM7
+CisJbXNnLmFyZ3NbMl0gPSByd3RtLT5idWZfcGh5cyArIDY4OworCW1zZy5hcmdzWzNdID0gcnd0
+bS0+YnVmX3BoeXMgKyAyICogNjg7CisJcmV0ID0gbWJveF9zZW5kX21lc3NhZ2Uocnd0bS0+bWJv
+eCwgJm1zZyk7CisJaWYgKHJldCA8IDApCisJCWdvdG8gdW5sb2NrX211dGV4OworCisJcmV0ID0g
+d2FpdF9mb3JfY29tcGxldGlvbl9pbnRlcnJ1cHRpYmxlKCZyd3RtLT5jbWRfZG9uZSk7CisJaWYg
+KHJldCA8IDApCisJCWdvdG8gdW5sb2NrX211dGV4OworCisJcmV0ID0gTUJPWF9TVFNfVkFMVUUo
+cmVwbHktPnJldHZhbCk7CisJaWYgKE1CT1hfU1RTX0VSUk9SKHJlcGx5LT5yZXR2YWwpICE9IE1C
+T1hfU1RTX1NVQ0NFU1MpCisJCWdvdG8gdW5sb2NrX211dGV4OworCisJLyoKKwkgKiBIZXJlIHdl
+IHJlYWQgdGhlIFIgYW5kIFMgdmFsdWVzIG9mIHRoZSBFQ0RTQSBzaWduYXR1cmUKKwkgKiBjb21w
+dXRlZCBieSB0aGUgcldUTSBmaXJtd2FyZSBhbmQgY29udmVydCB0aGVpciB3b3JkcyBmcm9tCisJ
+ICogTEUgdG8gQkUuCisJICovCisJbWVtY3B5KHJ3dG0tPmxhc3Rfc2lnLCByd3RtLT5idWYgKyA2
+OCwgMTM2KTsKKwljcHVfdG9fYmUzMl9hcnJheShyd3RtLT5sYXN0X3NpZywgcnd0bS0+bGFzdF9z
+aWcsIDM0KTsKKwlyd3RtLT5sYXN0X3NpZ19kb25lID0gMTsKKworCW11dGV4X3VubG9jaygmcnd0
+bS0+YnVzeSk7CisJcmV0dXJuIGxlbjsKK3VubG9ja19tdXRleDoKKwltdXRleF91bmxvY2soJnJ3
+dG0tPmJ1c3kpOworCXJldHVybiByZXQ7Cit9CisKK3N0YXRpYyBjb25zdCBzdHJ1Y3QgZmlsZV9v
+cGVyYXRpb25zIGRvX3NpZ25fZm9wcyA9IHsKKwkub3duZXIJPSBUSElTX01PRFVMRSwKKwkub3Bl
+bgk9IHJ3dG1fZGVidWdfb3BlbiwKKwkucmVhZAk9IGRvX3NpZ25fcmVhZCwKKwkud3JpdGUJPSBk
+b19zaWduX3dyaXRlLAorCS5sbHNlZWsJPSBub19sbHNlZWssCit9OworCitzdGF0aWMgaW50IHJ3
+dG1fcmVnaXN0ZXJfZGVidWdmcyhzdHJ1Y3QgbW94X3J3dG0gKnJ3dG0pCit7CisJc3RydWN0IGRl
+bnRyeSAqcm9vdCwgKmVudHJ5OworCisJcm9vdCA9IGRlYnVnZnNfY3JlYXRlX2RpcigidHVycmlz
+LW1veC1yd3RtIiwgTlVMTCk7CisKKwlpZiAoSVNfRVJSKHJvb3QpKQorCQlyZXR1cm4gUFRSX0VS
+Uihyb290KTsKKworCWVudHJ5ID0gZGVidWdmc19jcmVhdGVfZmlsZV91bnNhZmUoImRvX3NpZ24i
+LCAwNjAwLCByb290LCByd3RtLAorCQkJCQkgICAmZG9fc2lnbl9mb3BzKTsKKwlpZiAoSVNfRVJS
+KGVudHJ5KSkKKwkJZ290byBlcnJfcmVtb3ZlOworCisJcnd0bS0+ZGVidWdmc19yb290ID0gcm9v
+dDsKKworCXJldHVybiAwOworZXJyX3JlbW92ZToKKwlkZWJ1Z2ZzX3JlbW92ZV9yZWN1cnNpdmUo
+cm9vdCk7CisJcmV0dXJuIFBUUl9FUlIoZW50cnkpOworfQorCitzdGF0aWMgdm9pZCByd3RtX3Vu
+cmVnaXN0ZXJfZGVidWdmcyhzdHJ1Y3QgbW94X3J3dG0gKnJ3dG0pCit7CisJZGVidWdmc19yZW1v
+dmVfcmVjdXJzaXZlKHJ3dG0tPmRlYnVnZnNfcm9vdCk7Cit9CisjZWxzZQorc3RhdGljIGlubGlu
+ZSBpbnQgcnd0bV9yZWdpc3Rlcl9kZWJ1Z2ZzKHN0cnVjdCBtb3hfcnd0bSAqcnd0bSkKK3sKKwly
+ZXR1cm4gMDsKK30KKworc3RhdGljIGlubGluZSB2b2lkIHJ3dG1fdW5yZWdpc3Rlcl9kZWJ1Z2Zz
+KHN0cnVjdCBtb3hfcnd0bSAqcnd0bSkKK3sKK30KKyNlbmRpZgorCiBzdGF0aWMgaW50IHR1cnJp
+c19tb3hfcnd0bV9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQogewogCXN0cnVj
+dCBtb3hfcnd0bSAqcnd0bTsKQEAgLTM0MCw2ICs0OTksMTIgQEAgc3RhdGljIGludCB0dXJyaXNf
+bW94X3J3dG1fcHJvYmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKIAkJZ290byBmcmVl
+X2NoYW5uZWw7CiAJfQogCisJcmV0ID0gcnd0bV9yZWdpc3Rlcl9kZWJ1Z2ZzKHJ3dG0pOworCWlm
+IChyZXQgPCAwKSB7CisJCWRldl9lcnIoZGV2LCAiRmFpbGVkIGNyZWF0aW5nIGRlYnVnZnMgZW50
+cmllczogJWlcbiIsIHJldCk7CisJCWdvdG8gZnJlZV9jaGFubmVsOworCX0KKwogCXJldHVybiAw
+OwogCiBmcmVlX2NoYW5uZWw6CkBAIC0zNTUsNiArNTIwLDcgQEAgc3RhdGljIGludCB0dXJyaXNf
+bW94X3J3dG1fcmVtb3ZlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCiB7CiAJc3RydWN0
+IG1veF9yd3RtICpyd3RtID0gcGxhdGZvcm1fZ2V0X2RydmRhdGEocGRldik7CiAKKwlyd3RtX3Vu
+cmVnaXN0ZXJfZGVidWdmcyhyd3RtKTsKIAlzeXNmc19yZW1vdmVfZmlsZXMocnd0bV90b19rb2Jq
+KHJ3dG0pLCBtb3hfcnd0bV9hdHRycyk7CiAJa29iamVjdF9wdXQocnd0bV90b19rb2JqKHJ3dG0p
+KTsKIAltYm94X2ZyZWVfY2hhbm5lbChyd3RtLT5tYm94KTsKLS0gCjIuMjYuMgoKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
