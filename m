@@ -2,77 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BF6A1EA221
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 12:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B61311EA28E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:17:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4ABmnj33S/r8VPoXm5EsU2AEfXqhQpJvTCULc6sx58o=; b=jfuVXYcaYaY5//
-	StVxD5GZLNl/c0h6tpoCpMcodnbuj1HJ/pAy/cqdliM/6tUUUmunwdJMkooc6snmxuZffMwaLfwAI
-	TqDNECs1ciuiFot1Hu8zyvbjajokVTJr//46t3/NuI7sGRqdHkVmgMvj7Gbl9A2s07DX9Szs4MClk
-	/sYJeqWLn/f3P9X8hlwrv8/4FQeq8HRoB3Qc97XpQM2wqT9pQryPtyqHIuAxEL7E3TX52s29UoXma
-	W3TjFYjlXc7hADs0BOVFLVewzV93tQG5uR66i5deH82oweQ8kznftZiRNsd7pxW8cAv2msssIVP2V
-	whICecZd7/5shMSa875w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+xZWxUuyQZvxuUQNfuwlznVeB9YIpC/2DJrfw8R5ZDA=; b=IxPCTjFuVKo36KcvWWbCn36+7
+	uEsuWS9CSVgXTaOBXKHdbWuuGD43dRW9tFomMvaQrdS4Vp9ddn96cAGzQvbJNEG4BuQQYTUVn+TE3
+	wd1tJSTY+VjvvooeKNIHLFKDNPwR5XA/GarNHLbIzWv6bt9KDLy7KY+ZGWZlCkEgolTxlBKpMyj0b
+	oYBR1hrpq1yyhSiJmBWgb+bpxh2kFIcCeJBfRO6WwFmSpaMlZa+RYA8Gtu5ptUBILPLAHwdPAS7eU
+	oBaLP6D/6Yl86EwJ6DZY4dakbNydeEdLREBnodCyBEO9ztoENpOImO3h25HmqETwCAq9ojAfsQNP2
+	f51XvyRtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfhy7-0008Ka-Hz; Mon, 01 Jun 2020 10:46:59 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jfiR2-0001Fo-8H; Mon, 01 Jun 2020 11:16:52 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfhy1-0008Ja-9x; Mon, 01 Jun 2020 10:46:54 +0000
-X-UUID: 33c10c9899ea461b8e12452b15f3cd83-20200601
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=HC7R/RfYWhRRX5sUAj43TCGykJv8IzBjx5dQ0drVC1Y=; 
- b=MS6FVG0CJMlklXSkKrq2E05G3ez5TpsEAyO679RfNqQGsAwokG/E82vZhBK3xwx0aKapkgVKvmXcU6SENIRmCKz+eM7RPg7sCapjhLlQJAb1ZI2Lk7DvoqGwonUEc+czAQyd3Xj4/BcWIV4qsQkiftTrIsjPtOd0dpVzQnG5qLs=;
-X-UUID: 33c10c9899ea461b8e12452b15f3cd83-20200601
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2071583030; Mon, 01 Jun 2020 02:46:44 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 1 Jun 2020 03:46:47 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 1 Jun 2020 18:46:46 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Mon, 1 Jun 2020 18:46:46 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>
-Subject: [PATCH v3 5/5] scsi: ufs-mediatek: Allow unbound mphy
-Date: Mon, 1 Jun 2020 18:46:46 +0800
-Message-ID: <20200601104646.15436-6-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200601104646.15436-1-stanley.chu@mediatek.com>
-References: <20200601104646.15436-1-stanley.chu@mediatek.com>
+ id 1jfiQx-0001Es-2l; Mon, 01 Jun 2020 11:16:48 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 8966B2A15EF
+Subject: Re: [PATCH v4 06/11] thermal: Add mode helpers
+To: Guenter Roeck <linux@roeck-us.net>
+References: <20200529155206.GA158553@roeck-us.net>
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+Message-ID: <526286da-70d2-7c55-3c41-15fd2c969a39@collabora.com>
+Date: Mon, 1 Jun 2020 13:16:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20200529155206.GA158553@roeck-us.net>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_034653_482918_6534DD9D 
-X-CRM114-Status: UNSURE (   7.62  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200601_041647_256890_669C2BC4 
+X-CRM114-Status: GOOD (  11.80  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,46 +58,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stanley Chu <stanley.chu@mediatek.com>, bvanassche@acm.org,
- andy.teng@mediatek.com, cc.chou@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, beanhuo@micron.com, chaotian.jing@mediatek.com,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Emmanuel Grumbach <emmanuel.grumbach@intel.com>,
+ Heiko Stuebner <heiko@sntech.de>, Kalle Valo <kvalo@codeaurora.org>,
+ linux-wireless@vger.kernel.org, Peter Kaestle <peter@piie.net>,
+ platform-driver-x86@vger.kernel.org, Vishal Kulkarni <vishal@chelsio.com>,
+ Luca Coelho <luciano.coelho@intel.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, Shawn Guo <shawnguo@kernel.org>,
+ kernel@collabora.com, Fabio Estevam <festevam@gmail.com>,
+ Amit Kucheria <amit.kucheria@verdurent.com>,
+ linux-rockchip@lists.infradead.org, Chunyan Zhang <zhang.lyra@gmail.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-acpi@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Darren Hart <dvhart@infradead.org>,
+ Zhang Rui <rui.zhang@intel.com>, Gayatri Kammela <gayatri.kammela@intel.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Johannes Berg <johannes.berg@intel.com>,
+ linux-pm@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Intel Linux Wireless <linuxwifi@intel.com>, Ido Schimmel <idosch@mellanox.com>,
+ =?UTF-8?Q?Niklas_S=c3=b6derlund?= <niklas.soderlund@ragnatech.se>,
+ Jiri Pirko <jiri@mellanox.com>, Orson Zhai <orsonzhai@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Support Opensource <support.opensource@diasemi.com>, netdev@vger.kernel.org,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Sebastian Reichel <sre@kernel.org>,
+ linux-renesas-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Baolin Wang <baolin.wang7@gmail.com>, Len Brown <lenb@kernel.org>,
+ Enrico Weigelt <info@metux.net>, "David S . Miller" <davem@davemloft.net>,
+ Andy Shevchenko <andy@infradead.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Allow unbound MPHY module since not every MediaTek UFS platform
-needs specific MPHY control.
-
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Peter Wang <peter.wang@mediatek.com>
----
- drivers/scsi/ufs/ufs-mediatek.c | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 1cc7bea1468b..9a4432c9f7dc 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -113,6 +113,12 @@ static int ufs_mtk_bind_mphy(struct ufs_hba *hba)
- 
- 	if (err)
- 		host->mphy = NULL;
-+	/*
-+	 * Allow unbound mphy because not every platform needs specific
-+	 * mphy control.
-+	 */
-+	if (err == -ENODEV)
-+		err = 0;
- 
- 	return err;
- }
--- 
-2.18.0
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgR3VlbnRlciwKClcgZG5pdSAyOS4wNS4yMDIwIG/CoDE3OjUyLCBHdWVudGVyIFJvZWNrIHBp
+c3plOgo+IE9uIFRodSwgTWF5IDI4LCAyMDIwIGF0IDA5OjIwOjQ2UE0gKzAyMDAsIEFuZHJ6ZWog
+UGlldHJhc2lld2ljeiB3cm90ZToKPj4gUHJlcGFyZSBmb3IgbWFraW5nIHRoZSBkcml2ZXJzIG5v
+dCBhY2Nlc3MgdHpkJ3MgcHJpdmF0ZSBtZW1iZXJzLgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBBbmRy
+emVqIFBpZXRyYXNpZXdpY3ogPGFuZHJ6ZWoucEBjb2xsYWJvcmEuY29tPgoKPHNuaXA+Cgo+PiAr
+Cj4gTml0OiB1bm5lY2Vzc2FyeSBlbXB0eSBsaW5lLgo+IAo+PiArCQlyZXR1cm4gcmV0OwoKPHNu
+aXA+Cgo+PiArCXJldHVybiB0aGVybWFsX3pvbmVfZGV2aWNlX3NldF9tb2RlKHR6LCBUSEVSTUFM
+X0RFVklDRV9FTkFCTEVEKTsKPj4gK30KPj4gK0VYUE9SVF9TWU1CT0wodGhlcm1hbF96b25lX2Rl
+dmljZV9lbmFibGUpOwo+IAo+IE90aGVyIGV4cG9ydHMgaW4gdGhlcm1hbC8gdXNlIEVYUE9SVF9T
+WU1CT0xfR1BMLgoKT3RoZXIgdGhhbiB0aGF0IGRvZXMgaXQgbG9vayBnb29kIHRvIHlvdT8KSSBj
+YW4gc2VuZCBhIHY1IHdoZXJlIHRoZSB0d28gYWJvdmUgd2lsbCBiZSBjb3JyZWN0ZWQsIGJ1dCBk
+aWQgeW91IGhhdmUKYSBjaGFuY2UgdG8gcmV2aWV3IHBhdGNoZXMgNy0xMT8KCkFuZHJ6ZWoKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
+ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
+ZWwK
