@@ -2,66 +2,120 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 583EB1E9C05
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 05:25:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E8F91E9C2C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 05:54:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hjhvxG2bCoxpR74yKVSFOkXDojkXxxz31HN6RmUeTjY=; b=K4YrK3sFOCPxgIA78Vruup1Na
-	ZmbTVxG+YZToBKWmrWNuPmwUTOGTUc2eQszhsKsnSaprumV4V5nsF5dUItSZZ93hWzrUH3V+uAMfy
-	UYwulGJ+P9At4/Cb/pQMYI2Sz5BEDbA7XyAJWtnJ5e9f3J4x5GMVljplNSzbcXLSU0xlKoa3gHCx0
-	uHFTZLEY04NFvbO5Gt1AEfT+UCb6kB63/kvhQMNZJFQipdoxq36HV1OeLSv5v4o3yagqZB4AMsVHA
-	adb01QKXarQ/0qHXnKirczWXL1ADX3laDArsw00hJxTJwKKlRa3iezchOHFSOfQiqlP0rJjojm5sE
-	sKBKk9rFw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PYOZClDWRyl6pH34BTbOwpZ54wWpt/9H405BndyqJr4=; b=GiEx0OZHTMbFOx
+	BDYgaSUsqA1GCxEldOVL5pzZnOOpDockDi2KLDqu3LGB7BFBk6NKwhWVuESv+15gA5nRPYheU6Knk
+	VNwr7FOxRDTmBXi2E6WQvovQB8W7jSxjUPNO+b5+xbJSKRHKoQ+qHOIDQsz6WdK1zZfXXDFE1Tdil
+	B5jXI9Mqrg2iRUdorCXSmnwTBv/twpdNpH276cBm4ItUiYTKlonteJLQK0oIRvBnes+SF5VugIHCs
+	N7tEw0k1o8nKRXBZL6MhFev+v3aRHogyEjE9FmWHrRW2qh397jLrn/0L+gmohfSZ7Z0A1w4oU7we5
+	adwL4a+YJ+aQmac4Twfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfb4i-0007CF-Bd; Mon, 01 Jun 2020 03:25:20 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jfbWO-0007fk-1p; Mon, 01 Jun 2020 03:53:56 +0000
+Received: from mail-am6eur05on2080.outbound.protection.outlook.com
+ ([40.107.22.80] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfb4M-0007Aw-2F
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 03:24:59 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id B78B58EEB6B23FA263E9;
- Mon,  1 Jun 2020 11:24:44 +0800 (CST)
-Received: from [10.173.222.27] (10.173.222.27) by
- DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
- 14.3.487.0; Mon, 1 Jun 2020 11:24:37 +0800
-Subject: Re: [PATCH RFC] KVM: arm64: Sidestep stage2_unmap_vm() on vcpu reset
- when S2FWB is supported
-To: Alexandru Elisei <alexandru.elisei@arm.com>,
- <kvmarm@lists.cs.columbia.edu>, <linux-arm-kernel@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>
-References: <20200415072835.1164-1-yuzenghui@huawei.com>
- <e99bc07d-0dd4-055c-808f-fd9cde88d2fc@arm.com>
- <a1a1961a-2eae-b26c-e607-ab5c0c929f37@arm.com>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <4c5c76d6-7dc3-e598-76cd-602a3cdc2f26@huawei.com>
-Date: Mon, 1 Jun 2020 11:24:37 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1jfbWF-0007ep-6T
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 03:53:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cpihDk/Aqz6WFB/xVTsMJMpZB62clyHCT8owksUU8II0xhjXaJXajG84KmaoqZ74LR5Ar6XDv9LrQz568dWqbqPi2j8yMP4OpnZwqRNUlrTWnWBgK8tFNAx34UwlhsKjCsQuMc7xXhXRxeIdutjQERN88atugPYWOGlYkDsgANneu7gTQ1lIP48mdSyYLYHV4Igg/df2AYeq8uWlQEd6D97MHAn5fdQGAykQXXU7QmAuqQ0Bl0sP7xm5u/ydM2ajS+49AmEz6bUR0PWxAno5BCSqXP3yKwry43UqW0DEV7zdikAyXkkYDx/6FWpiSt7BYk+xPOeETjterCRPqzDHtw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FwbhX2Idsrxieujj/Kq5c0pr0q2R66ph9RRONGZsnp4=;
+ b=jpmKN0J4LBRIoqxh57kRzb7eSMD7up1+iotnfBRfATFckgmGIROkiM03OY9y6JGmNovkVvjdRaS6ZjV2AvZnwY1zvXoS5mB7Hv58NVzdtUqxpj7elEVIkd9RqOIYceGbhshhqlWJP0X8pox8pwGhzvKSSoNQlp1b7AT/gTN+arS8c912EAG4zAvV5uzQ5tyeQvjbdXvebU+70Q7AY3qzQ8g0/zxKJJQwMQlhivKVLaSNG3xrP+SlollvrxlmJWrmnd839KEPRCTCbQmOuhcscImsn5AIpc4Tyn+DUdm62rbcbIrXtoG/0XpYDPdaBCN6HbHLWRsgik0+DWPvnQAgUA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FwbhX2Idsrxieujj/Kq5c0pr0q2R66ph9RRONGZsnp4=;
+ b=UzjUoCfifcYznK6Frijky7bJ/Mcp8fClasTCYM2XE39IRMfaUc2Ms9Znjzn9iOBtDKwJDDTQZtSE/3eS3ouNVHeK70w/IfnS8h1Z1tdUBFw5Deb7SXu3sbytojBoRsTlyc/1HI651QfRWZRXExgmoEEmfCenay3uNxT9TGcWvhw=
+Authentication-Results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
+ by DB6PR0402MB2920.eurprd04.prod.outlook.com (2603:10a6:4:9d::16)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.19; Mon, 1 Jun
+ 2020 03:53:43 +0000
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.3045.022; Mon, 1 Jun 2020
+ 03:53:43 +0000
+From: peng.fan@nxp.com
+To: shawnguo@kernel.org, fabio.estevam@nxp.com, kernel@pengutronix.de,
+ aisheng.dong@nxp.com, robh+dt@kernel.org, sboyd@kernel.org,
+ linux@rempel-privat.de, jaswinder.singh@linaro.org
+Subject: [PATCH V2 0/3] imx8m: add mu support
+Date: Mon,  1 Jun 2020 11:43:16 +0800
+Message-Id: <1590982999-7149-1-git-send-email-peng.fan@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: SG2PR03CA0096.apcprd03.prod.outlook.com
+ (2603:1096:4:7c::24) To DB6PR0402MB2760.eurprd04.prod.outlook.com
+ (2603:10a6:4:a1::14)
 MIME-Version: 1.0
-In-Reply-To: <a1a1961a-2eae-b26c-e607-ab5c0c929f37@arm.com>
-Content-Language: en-US
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from localhost.localdomain (119.31.174.66) by
+ SG2PR03CA0096.apcprd03.prod.outlook.com (2603:1096:4:7c::24) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.3066.7 via Frontend Transport; Mon, 1 Jun 2020 03:53:38 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [119.31.174.66]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: e9b92cd3-023f-488c-b84a-08d805df607d
+X-MS-TrafficTypeDiagnostic: DB6PR0402MB2920:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <DB6PR0402MB292040F4891454E055FC7272888A0@DB6PR0402MB2920.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1284;
+X-Forefront-PRVS: 0421BF7135
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: m8tpC0YIBbSf6V1JDlPVJqQQ3hFyekuyRVA+/QDxU70+TH4U8tgsb0/zMMFriNlXxCniMNwAa71UqhN7go5k7tVup5tUKCzf+ivcakYWprCnCnXTneDoDpHtLq+5u32eI2dWjopb4WpXYWG4vpLBtHvqY6v+/yyYqD7OztMXT9w6JosuBd8mdHu0/cX5RlPof2sXzedOSu+Crr0wnDv4rQlFTfHb1f14DQFzqjUBE8poOs64VbloEYOLvedAT0VNFmVfXMebm98D+UrBwDFm2dXZBiq68au5/MAfWbu3UobN9oEhU72fmYFQ6ksRojQRrzD5vlLUnJi5n6OspUhhLJXJVwyEzg5uydWGyWQ1UqYnfNNUnkj/4Xq91gwvWjPtZtZq2d2FLACPDZ+KwGvNCKnYWX83kndru1yZuRirm3E=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(396003)(136003)(346002)(39860400002)(376002)(36756003)(4326008)(6486002)(8936002)(6666004)(8676002)(7416002)(6506007)(9686003)(6512007)(478600001)(69590400007)(16526019)(26005)(316002)(52116002)(5660300002)(66946007)(66476007)(4744005)(2906002)(66556008)(86362001)(186003)(956004)(83380400001)(2616005)(32563001);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: 5mNPz3F7DR0BRWUy2y+SQaKni9+HgvqyFjDvKXGGGqRvKFOY8luTRUBXL/OMiUP33S0G2tGvJgks0NsK0oZqyzg2erxrMPUXhpJUphyTgdt5EwN198WikPEnoUVpvG7BPNPoUODr0z67IwQu73v6flFLiLLzkJfVRWNgkS8V0gwcAmMWEaNRcjYUTl5MwMzBjXw8Qd9W9Diy/XGkJCJehzcPjgPTEA5wZcFr+zAf9lqIJmj85fxiJUhIOIWsqyBNAqLZp5oIhtUQFQSxVO5vwkd3RTAx+11LdZ+YSrfW5Kh5P1vwOAUhHdbJ8AemEuDCJhRyqj95wtwn+xQelWKivPKifJ9x4zBvuAsK3U4YQNMo9MPeupHuF1m0z6X/Wm0S1/gBj/037L9MdM1coRLnJkZ23I0Qow96y7Jt88RtBy09BHzJlAiR3sBv4UipEJ/VDTS58M/m28+8AbH45nyDUHFzZZTW0unHvfZvnTK3OzY=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e9b92cd3-023f-488c-b84a-08d805df607d
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 Jun 2020 03:53:43.1391 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: 0tI/ZZCmgvPkNbeEKSgIp3xaajsk/3dP+r3qA8fD5ejjVX8uUvvC9O4lxBErz4DWNVd3E8fvqOueOiBbTfhQDA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2920
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200531_202458_279345_58F56291 
-X-CRM114-Status: GOOD (  22.71  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200531_205347_238991_764CF78E 
+X-CRM114-Status: UNSURE (   7.55  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.35 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.22.80 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.22.80 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,114 +127,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>
+Cc: devicetree@vger.kernel.org, Peng Fan <peng.fan@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-imx@nxp.com, leonard.crestez@nxp.com,
+ daniel.baluta@nxp.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alex,
+From: Peng Fan <peng.fan@nxp.com>
 
-On 2020/5/30 18:46, Alexandru Elisei wrote:
-> Hi,
-> 
-> On 4/20/20 5:10 PM, Alexandru Elisei wrote:
+V2:
+ Add dt-bindings
+ Merge dts changes into one patch, since all is to add mu node
 
-[ For some unknown reasons, I had missed your reply one month ago.
-   Sorry, I'm going to fix my email settings ... ]
+Add mu dt bindings
+Add mu node
+Add i.MX8MP mu root clk
 
->> Hi,
->>
->> On 4/15/20 8:28 AM, Zenghui Yu wrote:
->>> stage2_unmap_vm() was introduced to unmap user RAM region in the stage2
->>> page table to make the caches coherent. E.g., a guest reboot with stage1
->>> MMU disabled will access memory using non-cacheable attributes. If the
->>> RAM and caches are not coherent at this stage, some evicted dirty cache
->>> line may go and corrupt guest data in RAM.
->>>
->>> Since ARMv8.4, S2FWB feature is mandatory and KVM will take advantage
->>> of it to configure the stage2 page table and the attributes of memory
->>> access. So we ensure that guests always access memory using cacheable
->>> attributes and thus, the caches always be coherent.
->>>
->>> So on CPUs that support S2FWB, we can safely reset the vcpu without a
->>> heavy stage2 unmapping.
->>>
->>> Cc: Marc Zyngier <maz@kernel.org>
->>> Cc: Christoffer Dall <christoffer.dall@arm.com>
->>> Cc: James Morse <james.morse@arm.com>
->>> Cc: Julien Thierry <julien.thierry.kdev@gmail.com>
->>> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
->>> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
->>> ---
->>>
->>> If this is correct, there should be a great performance improvement on
->>> a guest reboot (or reset) on systems support S2FWB. But I'm afraid that
->>> I've missed some points here, so please comment!
->>>
->>> The commit 957db105c997 ("arm/arm64: KVM: Introduce stage2_unmap_vm")
->>> was merged about six years ago and I failed to track its histroy and
->>> intention. Instead of a whole stage2 unmapping, something like
->>> stage2_flush_vm() looks enough to me. But again, I'm unsure...
->>>
->>> Thanks for having a look!
->> I had a chat with Christoffer about stage2_unmap_vm, and as I understood it, the
->> purpose was to make sure that any changes made by userspace were seen by the guest
->> while the MMU is off. When a stage 2 fault happens, we do clean+inval on the
->> dcache, or inval on the icache if it was an exec fault. This means that whatever
->> the host userspace writes while the guest is shut down and is still in the cache,
->> the guest will be able to read/execute.
->>
->> This can be relevant if the guest relocates the kernel and overwrites the original
->> image location, and userspace copies the original kernel image back in before
->> restarting the vm.
+Peng Fan (3):
+  dt-bindings: mailbox: imx-mu: support i.MX8M
+  arm64: dts: imx8m: add mu node
+  clk: imx8mp: add mu root clk
 
-Yes, I-cache coherency is what I had missed! So without a S2 unmapping
-on reboot, if there's any stale and "valid" cache line in the I-cache,
-guest may fetch the wrong instructions directly from it, and bad things
-will happen... (We will otherwise get a translation fault and a
-permission fault and invalidate the I-cache as needed.)
+ Documentation/devicetree/bindings/mailbox/fsl,mu.txt | 3 ++-
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi            | 9 +++++++++
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi            | 9 +++++++++
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi            | 9 +++++++++
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi            | 9 +++++++++
+ drivers/clk/imx/clk-imx8mp.c                         | 1 +
+ 6 files changed, 39 insertions(+), 1 deletion(-)
 
->>
->>>   virt/kvm/arm/arm.c | 5 ++++-
->>>   1 file changed, 4 insertions(+), 1 deletion(-)
->>>
->>> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
->>> index 48d0ec44ad77..e6378162cdef 100644
->>> --- a/virt/kvm/arm/arm.c
->>> +++ b/virt/kvm/arm/arm.c
->>> @@ -983,8 +983,11 @@ static int kvm_arch_vcpu_ioctl_vcpu_init(struct kvm_vcpu *vcpu,
->>>   	/*
->>>   	 * Ensure a rebooted VM will fault in RAM pages and detect if the
->>>   	 * guest MMU is turned off and flush the caches as needed.
->>> +	 *
->>> +	 * S2FWB enforces all memory accesses to RAM being cacheable, we
->>> +	 * ensure that the cache is always coherent.
->>>   	 */
->>> -	if (vcpu->arch.has_run_once)
->>> +	if (vcpu->arch.has_run_once && !cpus_have_const_cap(ARM64_HAS_STAGE2_FWB))
->> I think userspace does not invalidate the icache when loading a new kernel image,
->> and if the guest patched instructions, they could potentially still be in the
->> icache. Should the icache be invalidated if FWB is present?
-> 
-> I noticed that this was included in the current pull request and I remembered that
-> I wasn't sure about this part. Did some more digging and it turns out that FWB
-> implies no cache maintenance needed for *data to instruction* coherence. From ARM
-> DDI 0487F.b, page D5-2635:
-> 
-> "When ARMv8.4-S2FWB is implemented, the architecture requires that
-> CLIDR_EL1.{LOUU, LOIUS} are zero so that no levels of data cache need to be
-> cleaned in order to manage coherency with instruction fetches".
-> 
-> However, there's no mention that I found for instruction to data coherence,
-> meaning that the icache would still need to be invalidated on each vcpu in order
-> to prevent fetching of patched instructions from the icache. Am I missing something?
+-- 
+2.16.4
 
-Thanks for the head up and Marc's fix!
-
-
-Thanks both,
-Zenghui
 
 _______________________________________________
 linux-arm-kernel mailing list
