@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 714F31EA32A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:55:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3164C1EA32D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 13:57:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zp2z0DK5Umw2e4RyXKMxgBDh1xDCpkG2v4s1sOmNWlc=; b=QQ/4kx1MTzTDCu
-	sSZSPmfT09HwXLhWOLlyPT5LE3K/5mJP4lQXV/hT3NfPUuZ0RBFzvNr4V4PxOY6XPwq7kOs+0Df6Q
-	cuKLhj1iQn6Fx0zFkJmpS0ATvAMHI/4Ne5SuzNI6CemueN+MEx8IG3lhtOPhm+kUAz33ziYHmpqGi
-	lVdTR239N8NR4oS/qV45uH4e/iC+4LGbzclrpXewf2VkJyLQIdQAgay//FGb9DGEuMLV+OxXLfV1p
-	jmm7OGtbd23FFrXzfRfXaCoX2sfPN+SzuG8ZMqtk20+vyD2KpqH+e0dPhneuUL4QDP3hRlfp7GoL+
-	S87+mS/Fz2EFZsuKrS/Q==;
+	List-Owner; bh=PZNj8YM/Cqf6l6STDWOM7Jwqq9rR0K4RdKd92IKJqos=; b=ioHNq/ZVKz4dKr
+	fiL6ZGKvoyic/9+1boYXtCCoFqM2333ZDql7q4iuhHuI5SggXjpeK1ugumq0pB9paHpT1JT+nnESd
+	huyDaC/iO0YuGcAWaP39nIL0sH4k+XLlQbVxpNOF5PM9ygwF918FcEgSvU2qlz9HSabE+0BgKGnAw
+	R1XPqzKC+sXebb0QUfYa4xjXMyAtwBnrzytKfQhNBUpDa9P1V1OIwwV+W+gj9sAh2CFT5c6O40uvw
+	flOGJtT8o6YJvtJRDqq/JneFrEEkf4UZa2kJjTh1cVgNRUJ/OB3MciP7/k7MocU0yHboh4qNzUM23
+	lK9UDnCpizLUAy1R9ZJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfj2c-0002wB-9U; Mon, 01 Jun 2020 11:55:42 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfj1q-0008SQ-08
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 11:54:55 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 54D2BCBCB725E06F887B;
- Mon,  1 Jun 2020 19:54:48 +0800 (CST)
-Received: from localhost.localdomain (10.69.192.58) by
- DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
- 14.3.487.0; Mon, 1 Jun 2020 19:54:38 +0800
-From: John Garry <john.garry@huawei.com>
-To: <will@kernel.org>, <robin.murphy@arm.com>
-Subject: [PATCH RFC 2/2] iommu/arm-smmu-v3: Remove cmpxchg() in
- arm_smmu_cmdq_issue_cmdlist()
-Date: Mon, 1 Jun 2020 19:50:48 +0800
-Message-ID: <1591012248-37956-3-git-send-email-john.garry@huawei.com>
-X-Mailer: git-send-email 2.8.1
-In-Reply-To: <1591012248-37956-1-git-send-email-john.garry@huawei.com>
-References: <1591012248-37956-1-git-send-email-john.garry@huawei.com>
+	id 1jfj3u-0003Nn-FK; Mon, 01 Jun 2020 11:57:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jfj3n-0003N0-4m
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 11:56:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6BDFE55D;
+ Mon,  1 Jun 2020 04:56:51 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 291A23F52E;
+ Mon,  1 Jun 2020 04:56:48 -0700 (PDT)
+Date: Mon, 1 Jun 2020 12:56:45 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Zhenyu Ye <yezhenyu2@huawei.com>
+Subject: Re: [PATCH v2 5/6] mm: tlb: Provide flush_*_tlb_range wrappers
+Message-ID: <20200601115644.GA23419@gaia>
+References: <20200423135656.2712-1-yezhenyu2@huawei.com>
+ <20200423135656.2712-6-yezhenyu2@huawei.com>
+ <20200522154254.GD26492@gaia>
+ <ddba6d98-29b5-0748-ba74-ec022f509270@huawei.com>
+ <20200526145244.GG17051@gaia>
+ <0c6f79e4-f29a-d373-2e43-c4f87cf78b49@huawei.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.69.192.58]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <0c6f79e4-f29a-d373-2e43-c4f87cf78b49@huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_045454_223911_3ABE3901 
-X-CRM114-Status: GOOD (  18.65  )
+X-CRM114-CacheID: sfid-20200601_045655_272217_5708A022 
+X-CRM114-Status: GOOD (  20.43  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.32 listed in wl.mailspike.net]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,152 +67,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: song.bao.hua@hisilicon.com, maz@kernel.org, joro@8bytes.org,
- John Garry <john.garry@huawei.com>, iommu@lists.linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, peterz@infradead.org, linux-mm@kvack.org,
+ guohanjun@huawei.com, will@kernel.org, linux-arch@vger.kernel.org,
+ yuzhao@google.com, aneesh.kumar@linux.ibm.com, steven.price@arm.com,
+ arm@kernel.org, Dave.Martin@arm.com, arnd@arndb.de, suzuki.poulose@arm.com,
+ npiggin@gmail.com, zhangshaokun@hisilicon.com, broonie@kernel.org,
+ rostedt@goodmis.org, prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
+ xiexiangyou@huawei.com, linux-kernel@vger.kernel.org, maz@kernel.org,
+ akpm@linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It has been shown that the cmpxchg() for finding space in the cmdq can
-be a bottleneck:
-- For more CPUs contenting the cmdq, cmpxchg() will fail more often.
-- Since the software-maintained cons pointer is updated on the same 64b
-  memory region, the chance of cmpxchg() failure increases again.
+Hi Zhenyu,
 
-The cmpxchg() is removed as part of 2 related changes:
-- If a CMD_SYNC is always issued for a batch, the cmdq can - in theory -
-  never fill, since we always wait for a CMD_SYNC to be consumed. We must
-  issue the CMD_SYNC so that a CPU will be always limited to issuing
-  max_cmd_per_batch commands. Generally for DMA unmap ops, a CMD_SYNC
-  is always issued anyway.
-  As such, the cmdq locking is removed, and we only longer maintain cons
-  in software (this needs to be revised for !MSI support).
-- Update prod and cmdq owner in a single operation. For this, we count the
-  prod and owner in separate regions in arm_smmu_ll_queue.prod.
-  As with simple binary counting, once the prod+wrap fields overflow, they
-  will zero. They will overflow into "owner" region, but this is ok as we
-  have accounted for the extra value.
-  As for the "owner", we now count this value, instead of setting a flag.
-  Similar to before, once the owner has finished gathering, it will clear
-  this mask. As such, a CPU declares itself as the "owner" when it reads
-  zero for this field. This zeroing will also clear possible overflow in
-  wrap+prod region.
+On Sat, May 30, 2020 at 06:24:21PM +0800, Zhenyu Ye wrote:
+> On 2020/5/26 22:52, Catalin Marinas wrote:
+> > On Mon, May 25, 2020 at 03:19:42PM +0800, Zhenyu Ye wrote:
+> >> tlb_flush_##_pxx##_range() is used to set tlb->cleared_*,
+> >> flush_##_pxx##_tlb_range() will actually flush the TLB entry.
+> >>
+> >> In arch64, tlb_flush_p?d_range() is defined as:
+> >>
+> >> 	#define flush_pmd_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
+> >> 	#define flush_pud_tlb_range(vma, addr, end)	flush_tlb_range(vma, addr, end)
+> > 
+> > Currently, flush_p??_tlb_range() are generic and defined as above. I
+> > think in the generic code they can remain an alias for
+> > flush_tlb_range().
+> > 
+> > On arm64, we can redefine them as:
+> > 
+> > #define flush_pte_tlb_range(vma, addr, end)	__flush_tlb_range(vma, addr, end, 3)
+> > #define flush_pmd_tlb_range(vma, addr, end)	__flush_tlb_range(vma, addr, end, 2)
+> > #define flush_pud_tlb_range(vma, addr, end)	__flush_tlb_range(vma, addr, end, 1)
+> > #define flush_p4d_tlb_range(vma, addr, end)	__flush_tlb_range(vma, addr, end, 0)
+> > 
+> > (unless the compiler optimises away all the mmu_gather stuff in your
+> > macro above but they don't look trivial to me)
+> 
+> I changed generic code before considering that other structures may also
+> use this feature, such as Power9. And Peter may want to replace all
+> flush_tlb_range() by tlb_flush() in the future, see [1] for details.
+> 
+> If only enable this feature on aarch64, your codes are better.
+> 
+> [1] https://lore.kernel.org/linux-arm-kernel/20200402163849.GM20713@hirez.programming.kicks-ass.net/
 
-Signed-off-by: John Garry <john.garry@huawei.com>
----
- drivers/iommu/arm-smmu-v3.c | 58 +++++++++++----------------------------------
- 1 file changed, 14 insertions(+), 44 deletions(-)
+But we change the semantics slightly if we implement these as
+mmu_gather. For example, tlb_end_vma() -> tlb_flush_mmu_tlbonly() ends
+up calling mmu_notifier_invalidate_range() which it didn't before. I
+think we end up invoking the notifier unnecessarily in some cases (see
+the comment in __split_huge_pmd()) or we end up calling the notifier
+twice (e.g. pmdp_huge_clear_flush_notify()).
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index e607ab5a4cbd..d6c7d82f9cf8 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -1375,7 +1375,7 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 				       u64 *cmds, int n, bool sync)
- {
- 	u64 cmd_sync[CMDQ_ENT_DWORDS];
--	u32 prod;
-+	u32 prod, prodx;
- 	unsigned long flags;
- 	bool owner;
- 	struct arm_smmu_cmdq *cmdq = &smmu->cmdq;
-@@ -1383,33 +1383,21 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 		.max_n_shift = cmdq->q.llq.max_n_shift,
- 	}, head = llq;
- 	int ret = 0;
-+	u32 owner_val = 1 << cmdq->q.llq.owner_count_shift;
-+	u32 prod_mask = GENMASK(cmdq->q.llq.max_n_shift, 0);
-+	u32 owner_mask = GENMASK(30, cmdq->q.llq.owner_count_shift);
-+
-+	/* always issue a CMD_SYNC TODO: fixup callers for this */
-+	sync = true;
- 
- 	/* 1. Allocate some space in the queue */
- 	local_irq_save(flags);
--	llq.val = READ_ONCE(cmdq->q.llq.val);
--	do {
--		u64 old;
--
--		while (!queue_has_space(&llq, n + sync)) {
--			local_irq_restore(flags);
--			if (arm_smmu_cmdq_poll_until_not_full(smmu, &llq))
--				dev_err_ratelimited(smmu->dev, "CMDQ timeout\n");
--			local_irq_save(flags);
--		}
- 
--		head.cons = llq.cons;
--		head.prod = queue_inc_prod_n(&llq, n + sync) |
--					     CMDQ_PROD_OWNED_FLAG;
-+	prodx = atomic_fetch_add(n + sync + owner_val, &cmdq->q.llq.atomic.prod);
- 
--		old = cmpxchg_relaxed(&cmdq->q.llq.val, llq.val, head.val);
--		if (old == llq.val)
--			break;
--
--		llq.val = old;
--	} while (1);
--	owner = !(llq.prod & CMDQ_PROD_OWNED_FLAG);
--	head.prod &= ~CMDQ_PROD_OWNED_FLAG;
--	llq.prod &= ~CMDQ_PROD_OWNED_FLAG;
-+	owner = !(prodx & owner_mask);
-+	llq.prod = prod_mask & prodx;
-+	head.prod = queue_inc_prod_n(&llq, n + sync);
- 
- 	/*
- 	 * 2. Write our commands into the queue As with simple binary counting, once the prod+wrap fields overflow, they
-  will zero. They will overflow into "owner" region, but this is ok as we
-  have accounted for the extra value.
-@@ -1420,14 +1408,6 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 		prod = queue_inc_prod_n(&llq, n);
- 		arm_smmu_cmdq_build_sync_cmd(cmd_sync, smmu, prod);
- 		queue_write(Q_ENT(&cmdq->q, prod), cmd_sync, CMDQ_ENT_DWORDS);
--
--		/*
--		 * In order to determine completion of our CMD_SYNC, we must
--		 * ensure that the queue can't wrap twice without us noticing.
--		 * We achieve that by taking the cmdq lock as shared before
--		 * marking our slot as valid.
--		 */
--		arm_smmu_cmdq_shared_lock(cmdq);
- 	}
- 
- 	/* 3. Mark our slots as valid, ensuring commands are visible first */
-@@ -1439,11 +1419,10 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 		/* a. Wait for previous owner to finish */
- 		atomic_cond_read_relaxed(&cmdq->owner_prod, VAL == llq.prod);
- 
--		/* b. Stop gathering work by clearing the owned flag */
--		prod = atomic_fetch_andnot_relaxed(CMDQ_PROD_OWNED_FLAG,
-+		/* b. Stop gathering work by clearing the owned mask */
-+		prod = atomic_fetch_andnot_relaxed(owner_mask,
- 						   &cmdq->q.llq.atomic.prod);
--		prod &= ~CMDQ_PROD_OWNED_FLAG;
--
-+		prod &= prod_mask;
- 		/*
- 		 * c. Wait for any gathered work to be written to the queue.
- 		 * Note that we read our own entries so that we have the control
-@@ -1476,15 +1455,6 @@ static int arm_smmu_cmdq_issue_cmdlist(struct arm_smmu_device *smmu,
- 					    readl_relaxed(cmdq->q.prod_reg),
- 					    readl_relaxed(cmdq->q.cons_reg));
- 		}
--
--		/*
--		 * Try to unlock the cmq lock. This will fail if we're the last
--		 * reader, in which case we can safely update cmdq->q.llq.cons
--		 */
--		if (!arm_smmu_cmdq_shared_tryunlock(cmdq)) {
--			WRITE_ONCE(cmdq->q.llq.cons, llq.cons);
--			arm_smmu_cmdq_shared_unlock(cmdq);
--		}
- 	}
- 
- 	local_irq_restore(flags);
+> > Also, I don't see the new flush_pte_* and flush_p4d_* macros used
+> > anywhere and I don't think they are needed. The pte equivalent is
+> > flush_tlb_page() (we need to make sure it's not used on a pmd in the
+> > hugetlb context).
+> 
+> flush_tlb_page() is used to flush only one page.  If we add the
+> flush_pte_tlb_range(), then we can use it to flush a range of pages in
+> the future.
+
+If we know flush_tlb_page() is only called on a small page, could we add
+TTL information here as well?
+
+> But flush_pte_* and flush_p4d_* macros are really not used anywhere. I
+> will remove them in next version of series, and add them if someone
+> needs.
+
+I think it makes sense.
+
 -- 
-2.16.4
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
