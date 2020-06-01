@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 889EF1EA86D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 19:31:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7B141EA87D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 19:41:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VvPxS12waOshWDRL+D8p25CNKWVGHGWmwt7Y/XS4gd8=; b=W/MrSJRKkAy1Po
-	hPXlrVxOWrE72yL00ZGpM1m7ZfdvWhOyYQaj7aUIAv/Nii/mkwI1yay2yAe5w3Ug8ocDAEcqK9dRH
-	u5H0qI+86ZTXRhwEKUkDlDwJJaOJGxPIyb0JSSFMCCZGm4HgNxZkLpk8mvJAzWs0YaGv+mIu1/AFq
-	fNnInnwnficSV58DLvB4BJx48jN37MNrrtq9ObvpXsYeWiFu4bSpGlml/D9iQmXlf4u14GHwCypgu
-	Ex1jKoO2ffPPbqbl34ThGqmhrfaSumbcLuLH9MPNk0BKZGPeTbYyBEsBnpuMbYH//L5ybewcRHE4o
-	6AV5bgtgMuaf8uOPI+ow==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=HcBXNJIDbfnZ5UCLRxmwiaxMM3128zfAiHrKrSF5OTw=; b=aAWp9FZ46RZ0SJ
+	ItYTISNxgKa3GTPLUcHeYW111JWG0TA5JdMWmMc5ZTOwI042H/mdPchnDPf6SSOgHAeF/dlER53Cb
+	cG1cgR1ted6naQIjJIgBmyYwrAdM5Wr+L6sM+gLjD9A+3dbRMb9C6U6ma0eKdTjThL2vMque3esir
+	VGDEk9TC98bjLuD58jJuzJ2Kz2clG9GaqOkM4AXW3QwNxUyDbpvs2Wg71zjKIJKRvwTi4FQiSuwD4
+	FCfiRHJUane3TBUKL7DJDoZcK7KpPNkeAi33dSGbq5IxBDNKtEBaFHMFXw3XkfNBJBumFswx4zKUt
+	6NULMbsni5hIuvaZjUSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfoHk-00042m-3D; Mon, 01 Jun 2020 17:31:40 +0000
-Received: from rere.qmqm.pl ([91.227.64.183])
+	id 1jfoQz-0003FF-I6; Mon, 01 Jun 2020 17:41:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfoHd-000429-DK
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 17:31:34 +0000
-Received: from remote.user (localhost [127.0.0.1])
- by rere.qmqm.pl (Postfix) with ESMTPSA id 49bMfS2W0LzLn;
- Mon,  1 Jun 2020 19:31:28 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rere.qmqm.pl; s=1;
- t=1591032689; bh=OcbJRSI9gSF9z5NgduN2oVxJ6vT/DUHo/GDJNy7Y0Is=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=oO3KEZHmFcixsHiF3qnNmW6/EaRrzo5ZWLa8usHOmKZLeqcBlzOwyoIXVFZ5y2Bzy
- tYH2SgKLRYiMAXaI/xPqQBRZbuetTrK8vnZPUl6MkAwaFocrSHsyqpDoRXVk8L5dU6
- +L26ikeDTAIUDCRYAkfRPurU8uZZaA9GQk/26W0lNFaSPugQp9KJ1XW14ZEd+XO82Z
- +21ysbjhAD3kzwfDgnR3vEkubG4VA76j0epEm3xkR/NRKIgRLDjee+Nv/J0E4BqqBS
- RuMZNzijow8bL4OoAChoVn+m8AiEoJ9ltbgttpX/lfcIUxMiGZnsAqitqjYTUAzdgK
- YIJSeGX1Pe/qA==
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.102.2 at mail
-Date: Mon, 1 Jun 2020 19:31:27 +0200
-From: =?iso-8859-2?Q?Micha=B3_Miros=B3aw?= <mirq-linux@rere.qmqm.pl>
-To: Markus Elfring <Markus.Elfring@web.de>
-Subject: Re: [PATCH] misc: atmel-ssc: lock with mutex instead of spinlock
-Message-ID: <20200601173126.GA31822@qmqm.qmqm.pl>
-References: <eb9b1cb3-5b3f-f387-da45-71427a4383ed@web.de>
+ id 1jfoQt-0003Er-L3
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 17:41:09 +0000
+Received: from localhost (mobile-166-175-190-200.mycingular.net
+ [166.175.190.200])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 48FEF206A4;
+ Mon,  1 Jun 2020 17:41:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591033266;
+ bh=egFH6RgQ4a+4kLCfGrEDkjv5v4bJblqDQOjodPikqEM=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=PBS/XvI5mPBJhMQPW3QR/267YghZh8VBNHFVIA3y76nvmv7wSAOnIG8ZofBmrwL3W
+ hjX/e/kbh6hI/0SHMT/KsCJ3IYwK/78zwY6ZY8W6ZDDtNYI4kfbVVgq5NF84Mj/Dz5
+ u9OiYWmcq6uvLgae6Udy20G6q8HsslAkBraLQcZo=
+Date: Mon, 1 Jun 2020 12:41:04 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Joerg Roedel <joro@8bytes.org>
+Subject: Re: [PATCH 0/2] Introduce PCI_FIXUP_IOMMU
+Message-ID: <20200601174104.GA734973@bjorn-Precision-5520>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <eb9b1cb3-5b3f-f387-da45-71427a4383ed@web.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200528073344.GO5221@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_103133_616802_10895465 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200601_104107_710771_3EFC49A1 
+X-CRM114-Status: GOOD (  15.73  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,25 +75,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: jean-philippe <jean-philippe@linaro.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ linux-pci@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ kenneth-lee-2012@foxmail.com, linux-acpi@vger.kernel.org,
+ Wangzhou <wangzhou1@hisilicon.com>, linux-crypto@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Zhangfei Gao <zhangfei.gao@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Len Brown <lenb@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBKdW4gMDEsIDIwMjAgYXQgMTE6MTg6NDhBTSArMDIwMCwgTWFya3VzIEVsZnJpbmcg
-d3JvdGU6Cj4gPiBVbmludGVycnVwdGlibGUgY29udGV4dCBpcyBub3QgbmVlZGVkIGluIHRoZSBk
-cml2ZXIgYW5kIGNhdXNlcyBsb2NrZGVwCj4gPiB3YXJuaW5nIGJlY2F1c2Ugb2YgbXV0ZXggdGFr
-ZW4gaW4gb2ZfYWxpYXNfZ2V0X2lkKCkuCj4gCj4gV2FzIGEgc3BpbiBsb2NrIHRha2VuPwo+ID4g
-Q29udmVydCB0aGUgbG9jayB0byBtdXRleCB0byBhdm9pZCB0aGUgaXNzdWUuCj4gV291bGQgeW91
-IGxpa2UgdG8gYWRkIHRoZSB0YWcg4oCcRml4ZXPigJ0gdG8gdGhlIGNvbW1pdCBtZXNzYWdlPwoK
-SSBndWVzcyB3ZSBjYW4gYWRkOgoKRml4ZXM6IDA5OTM0M2M2NGUxNiAoIkFSTTogYXQ5MTogYXRt
-ZWwtc3NjOiBhZGQgZGV2aWNlIHRyZWUgc3VwcG9ydCIpCgpCZXN0IFJlZ2FyZHMKTWljaGHFgiBN
-aXJvc8WCYXcKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+On Thu, May 28, 2020 at 09:33:44AM +0200, Joerg Roedel wrote:
+> On Wed, May 27, 2020 at 01:18:42PM -0500, Bjorn Helgaas wrote:
+> > Is this slowdown significant?  We already iterate over every device
+> > when applying PCI_FIXUP_FINAL quirks, so if we used the existing
+> > PCI_FIXUP_FINAL, we wouldn't be adding a new loop.  We would only be
+> > adding two more iterations to the loop in pci_do_fixups() that tries
+> > to match quirks against the current device.  I doubt that would be a
+> > measurable slowdown.
+> 
+> I don't know how significant it is, but I remember people complaining
+> about adding new PCI quirks because it takes too long for them to run
+> them all. That was in the discussion about the quirk disabling ATS on
+> AMD Stoney systems.
+> 
+> So it probably depends on how many PCI devices are in the system whether
+> it causes any measureable slowdown.
+
+I found this [1] from Paul Menzel, which was a slowdown caused by
+quirk_usb_early_handoff().  I think the real problem is individual
+quirks that take a long time.
+
+The PCI_FIXUP_IOMMU things we're talking about should be fast, and of
+course, they're only run for matching devices anyway.  So I'd rather
+keep them as PCI_FIXUP_FINAL than add a whole new phase.
+
+Bjorn
+
+[1] https://lore.kernel.org/linux-pci/b1533fd5-1fae-7256-9597-36d3d5de9d2a@molgen.mpg.de/
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
