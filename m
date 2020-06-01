@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFA571EA0F1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 11:23:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C65F71EA0FE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 11:32:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KJk7XTDwB6we0yENiajQDSIYenaeg3TSYmUjvlR2Pqc=; b=DOh2pR1eOCN938
-	PtQV8P4UFcWeW3ZSRBQADeQYPNQXXsl2r6f+ndDZXh3Uohly5D+/nPWx/gkk1joKT5Yu+tJxDU0TB
-	HwwKuHxOfPbEKeGc6iJUVU1d2LWu1AOHyVNVLo17XY8MGfK9n2HmKYUGrmzs8rwKhW5jCNaDkFYMY
-	f3P+j5pbEEo9DyzXSNYzD+0S60eDhXsUDw8wR1Ak9tLHuHPZa2Eftm0Rtxoc30Kiw0hCuOP2od6Xj
-	YNPUr7uzMOxR/kOXc7shb+VJLexqlJVn9Guo267Q4YgZY6MGWUWfZeAFX8m/Rb/SsY13PCbVDaWwP
-	0KvMjxti8mDfgMHxVgnw==;
+	List-Owner; bh=dkFl/movWI3/eOeqgpzNXjb+aFyGHlYELdaXU9ScYmw=; b=LCKOip8AKt5s//
+	kB1kFEWmY7kQ5faZE1aQPgyqzy0P/ayIRKrhGfellbabVouUgKyh58tSg45IfNlong1ae+WDoYEcv
+	6vTDEzCY01A0xoTxpvZiZGo7tAJhayT7EC/jgHP6BeJPR5FDCycJ6E+GhTYo/5nPXDeUfQodAi7QU
+	7cjDYijjzRLM5o11tljW2ZvgDbh24gpM/+Ndoa8flMvyIAS+c20c3fXQujjb2mVCKGD4Xek6TomNm
+	mNb7ozU+S4q67ekswHgZYWDrb2cR1NeHoEHsZNxcSiSj6xOF7wq/VUpJJOe/DRO8KZ5N2pNJTey7H
+	qnZyDG3grRgejPQBVVTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfgfY-0003rR-4Y; Mon, 01 Jun 2020 09:23:44 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfgfN-0003qz-NR
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 09:23:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 095D01FB;
- Mon,  1 Jun 2020 02:23:33 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E18B23F305;
- Mon,  1 Jun 2020 02:23:31 -0700 (PDT)
-Date: Mon, 1 Jun 2020 10:23:29 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Keno Fischer <keno@juliacomputing.com>
-Subject: Re: arm64: Register modification during syscall entry/exit stop
-Message-ID: <20200601092329.GX5031@arm.com>
-References: <CABV8kRz0mKSc=u1LeonQSLroKJLOKWOWktCoGji2nvEBc=e7=w@mail.gmail.com>
- <20200519081551.GA9980@willie-the-truck>
- <CABV8kRzYzBrdzC1_opmmdpW63N2htfOsAUZ+RjiSDsy=SJW6Yg@mail.gmail.com>
- <20200520174149.GB27629@willie-the-truck>
- <CABV8kRzjCCsjVeRsBD7U_Lo0==sBw9EKm=1z7g=60KyJvJLZBQ@mail.gmail.com>
- <CABV8kRxfet2RXXNcUoTKwfVzFWEQfxAkXUX4M5XhkP3nc-0+rQ@mail.gmail.com>
- <20200527095528.GC11111@willie-the-truck>
- <20200527101929.GT5031@arm.com>
- <CABV8kRwhsPhhqUXS46Rwh-xDEDY2q=KSd-xz1W-pu4Gy4KVp8Q@mail.gmail.com>
+	id 1jfgno-0001bi-TC; Mon, 01 Jun 2020 09:32:16 +0000
+Received: from mga04.intel.com ([192.55.52.120])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jfgni-0001bI-Pq; Mon, 01 Jun 2020 09:32:11 +0000
+IronPort-SDR: Y1drMRaHti6N0vPmghbBJhvVipiYSPwSQiFFABUcBLSretjG2dLHtZXltba91/TOBTH3m0OaD9
+ E5yKPOEU993Q==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 01 Jun 2020 02:32:09 -0700
+IronPort-SDR: /ujC3+DghISsUsonHBJPV5Gk1lF8j7sRohgtk5GOx7IvnSaAXmCHl6B6CxQWao4yIOCr0yCDB7
+ OVC2kkPKlCsA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,460,1583222400"; d="scan'208";a="470229648"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga006.fm.intel.com with ESMTP; 01 Jun 2020 02:32:07 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jfgni-00AC6i-VN; Mon, 01 Jun 2020 12:32:10 +0300
+Date: Mon, 1 Jun 2020 12:32:10 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Fengping Yu <fengping.yu@mediatek.com>
+Subject: Re: [PATCH v13 3/3] configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD=m
+Message-ID: <20200601093210.GA2428291@smile.fi.intel.com>
+References: <20200601022548.18213-1-fengping.yu@mediatek.com>
+ <20200601022548.18213-4-fengping.yu@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CABV8kRwhsPhhqUXS46Rwh-xDEDY2q=KSd-xz1W-pu4Gy4KVp8Q@mail.gmail.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20200601022548.18213-4-fengping.yu@mediatek.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_022333_803964_6F280660 
-X-CRM114-Status: GOOD (  11.38  )
+X-CRM114-CacheID: sfid-20200601_023210_849966_0E4D2DDC 
+X-CRM114-Status: GOOD (  12.06  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,30 +72,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kyle Huey <khuey@pernos.co>, Catalin Marinas <catalin.marinas@arm.com>,
- Oleg Nesterov <oleg@redhat.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Marco Felsch <m.felsch@pengutronix.de>, linux-mediatek@lists.infradead.org,
+ linux-input@vger.kernel.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 31, 2020 at 12:20:51PM -0400, Keno Fischer wrote:
-> > Can't PTRACE_SYSEMU be emulated by using PTRACE_SYSCALL, cancelling the
-> > syscall at the syscall enter stop, then modifying the regs at the
-> > syscall exit stop?
+On Mon, Jun 01, 2020 at 10:25:51AM +0800, Fengping Yu wrote:
+> From: "fengping.yu" <fengping.yu@mediatek.com>
 > 
-> Yes, it can. The idea behind SYSEMU is to be able to save half the
-> ptrace traps that would require, in theory making the ptracer
-> a decent amount faster. That said, the x7 issue is orthogonal to
-> SYSEMU, you'd have the same issues if you used PTRACE_SYSCALL.
+> Add Mediatek matrix keypad support in defconfig.
 
-Right, I just wondered whether there was some deeper difference between
-the two approaches.
+I didn't review this either, but it's fine to me.
 
-Cheers
----Dave
+> Signed-off-by: fengping.yu <fengping.yu@mediatek.com>
+> Reviewed-by: Marco Felsch <m.felsch@pengutronix.de>
+> Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+> ---
+>  arch/arm64/configs/defconfig | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> index 24e534d85045..112ced090b21 100644
+> --- a/arch/arm64/configs/defconfig
+> +++ b/arch/arm64/configs/defconfig
+> @@ -349,6 +349,7 @@ CONFIG_KEYBOARD_GPIO=y
+>  CONFIG_KEYBOARD_SNVS_PWRKEY=m
+>  CONFIG_KEYBOARD_IMX_SC_KEY=m
+>  CONFIG_KEYBOARD_CROS_EC=y
+> +CONFIG_KEYBOARD_MTK_KPD=m
+>  CONFIG_INPUT_TOUCHSCREEN=y
+>  CONFIG_TOUCHSCREEN_ATMEL_MXT=m
+>  CONFIG_INPUT_MISC=y
+> -- 
+> 2.18.0
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
