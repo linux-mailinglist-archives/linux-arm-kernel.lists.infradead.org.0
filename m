@@ -2,87 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F15651EA88D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 19:48:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 953E31EA8BE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 19:56:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YQblidR2UlYENNpkw61lDi/TdxepPOLKGo4vd9i2qw0=; b=r3deP88STTvPKd
-	qLL7cYaQvk9laK/ekX0H+QxnNwTcBSf52xhyzIN6X9X/sy4sS6OB10K9nP7pHYLYksXEZroDEThzd
-	44mwg0n8RSsyF2zDGF4SBWU6GVxZPCa3iVobQijpyQv3U2HlLkxf64gctVp/4rSUWiOUY8wFSSXag
-	i2C5cxja/M6T+h7MmLtOk6tsk6B58mBikT+tnufl1M4IXmPp5taWrBqmoL9NVqDyarKswnqwMl6sr
-	K8xOgS08g3qdCfTZbOyXXx6vTaqZyzDEVbSsjbz5EVQ03SU9DDTjRmPAFyVMZm38o+9n6wrYizTPY
-	8eMz9PoSgX4EfleOAHwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=m0Ebm5/pEAsp48rWNZ603TW99EOa1C4Cw+zeng88QBs=; b=Ihw0rBKceX+83R
+	9vPvq6FTMQg4uh1iuqSzlZckMGyiIVc9YV92OpDiooyo9J7xCgbg1kxkTijQvOMlxZBusf8Lb+x95
+	ZRdS8wiGSL4XsCAPbFRrNHC6sE1p2WVuh1CKC2ZycfXIGZEPFQZo6qoLtT/dqMd0aD5NsJg1GrnbP
+	+ba1YLp1MpHanR0ko3R54iQOvFViXfbHnIp2BM7C1VCovMGjyvAaU68rmFu4ZxIF7LFuE0sZnlLzN
+	V43POLkcVWlqDiPyKp/QCyKqWEh7OaORNTlE3zud7wQgG3cw08IHxJXtfGx3x0EMqLbGYrQMtAv9G
+	96NHSbyqJtRJLF/1JVvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfoXr-0006i8-2T; Mon, 01 Jun 2020 17:48:19 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jfofN-0004TR-JV; Mon, 01 Jun 2020 17:56:05 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfoXk-0006h9-88
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 17:48:13 +0000
-Received: by mail-wm1-x343.google.com with SMTP id q25so408109wmj.0
+ id 1jfofE-0004Rv-7w
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 17:55:58 +0000
+Received: by mail-pf1-x443.google.com with SMTP id v2so3822633pfv.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jun 2020 10:48:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=beagleboard-org.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=EF2MUXWe+0T7eyxkA8rRyjXJ0lsym9S82yVeKfIolyg=;
- b=wS+C3T2s8Q7602JUv3jWGhy8HPjzuOYzUPOpfSA5smX0EG3VwfTnAlZsoGasBnlyfg
- 4ERS3mJMRO2/G3pVMuJSD09lBkKa/NcDOuUqMb4g2CwqWQzMCBZvoQ41i3H50aDvU0Rx
- ERuHo8/KK/pjd5PZRwwIPJ7mKT7wV7tPAFfpZjYgZDp6jCA3KWWzxyjNE3+7HmbsVdEP
- /SpwYW0aUknx/oMKZE168CjaLYOdZj4+BaQ4/j7WddQdFJc3qUZtVYgRGgOE2Dgyfl6G
- HhzZGjddlkJ2txyX10rH5WJWrhyn7jSt+lSXuW5wTNQNHTeNVN9+BYBjjr/SvmVXYhlX
- Hg4A==
+ Mon, 01 Jun 2020 10:55:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=zACkuhg/77H3zeO+PGHNh+9yMlSwDDWi/x5X1ISMcog=;
+ b=PLoEnhnypIxdDYglWjZWdbmVY9O/3d/FXn7/fOGLX1J0QDbcyq5yORuXvRPyf69GmH
+ bPmuZpFDZjpxs3BNlZhAHlyAgGtEMEaGUOkeX2GeG6uWEGH6IiHYN5iv6fgkoia729ic
+ ukbV9fvbH6EccxPGYp4IcT2N++qdipIqSfWyHPUiwWylioQAnUx6SmnS0U5wt9sn7I2r
+ UgI/3DvCL6guNdStmxOeftLH3GgBU0iz+2AdiElVirEa8e3vyBspGCr1Bhs4voehcJiU
+ uexyoOA9cpespFyQz8k1bf0tB1pWLksPQnbJGucIYnyTYj7SR+jT1oVyu66oYWuZi+iR
+ NJAQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=EF2MUXWe+0T7eyxkA8rRyjXJ0lsym9S82yVeKfIolyg=;
- b=Df3MYv9yhjbKrnxgz1s6izxbP3ZI7+eZR4XC9JQWafEGlUgHJ/rRv84geFh5lpnlst
- U7m++qmG0fgVA5JYSfbh8naj/UBu0FOXYnQwDNQoD0blBFMf0aIhcL/sxeAzYMVo5r4t
- WIl4zTCkislPNk9/f9uttDvOWCKVqRHfMK5fYi+cMBgGm/Zqu9gDX+4dSnD536UTpABc
- efV3NORLOoE9DM3qT1DtneeR5+wzjLmS1Gf7v8Kgyu2kB2XHrCcbb7MOY0PR7GHGh5Zx
- +Hdlo89JrTJF46KdjKZmdGqnRqX5YWL4xRdDgkAMhzaSE45Fye4aHT5q/hhrkwEXmwQM
- +6jw==
-X-Gm-Message-State: AOAM5337fKDPzXxojIxn8rGMqcchYTIbDA8PAD+myGx771u2aQ2Dx4JO
- VTb+jtlSVOj4S5e+Yqn/HjmLmA==
-X-Google-Smtp-Source: ABdhPJwGZ7xVM43OkmrdbN8kKFpqKZnhsQ0DhmfJ55I00xz5ohrw+O7sia6vxKrkXQ2zK+FBQy25gA==
-X-Received: by 2002:a05:600c:2110:: with SMTP id
- u16mr426062wml.26.1591033686091; 
- Mon, 01 Jun 2020 10:48:06 -0700 (PDT)
-Received: from x1 ([2001:16b8:5cbd:c001:98fe:8f8:cce1:59e])
- by smtp.gmail.com with ESMTPSA id l1sm297821wrb.31.2020.06.01.10.48.04
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=zACkuhg/77H3zeO+PGHNh+9yMlSwDDWi/x5X1ISMcog=;
+ b=KIrNBAvPk9phi8UFrOtce4ldUc7DLv8s4A424Z7EG0kGiBp0LccB50EJXL4+Hf8RaH
+ P2K34CeixepyWAEkw0VDI/jBm/Bk6QrqGrOj3VnBSQr5aIrhDFDQ3Qbr5IOfhfvvugl0
+ ++YIHUrW2nctBJ14noplyke/KMgWjVn/vwBmN31jUYjA/hcdYe/xMV1nA3cqFy5RljgP
+ zIJTK19mzUymkqXwgfpZLtIeGq1iChOqC7uZM2YOrKphGeYNPMR+csUZdnB4UEF2Pbyi
+ igbLp/UuUteSlzNsKOZ++KdEzOOThyHSbSZtgU2qXzBMpYky3CuMIrd2DrKhKn/7seTw
+ HPSg==
+X-Gm-Message-State: AOAM532ZY2XPJFybUkzW0C0dYWEky/cEjzU7ooeIxTu/LEfqkapNTUZx
+ WaD004nF7J4OLlakzCDielKxyfDDsoo=
+X-Google-Smtp-Source: ABdhPJx7mm5a3eTp+VHkriv3BjsSxvd0F8RrxXaATmZINzJsX7X4HNjbdTel9tb4XVNDl4GzAM/86Q==
+X-Received: by 2002:a62:1681:: with SMTP id 123mr20422249pfw.306.1591034154312; 
+ Mon, 01 Jun 2020 10:55:54 -0700 (PDT)
+Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
+ [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id p7sm64771pfq.184.2020.06.01.10.55.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 01 Jun 2020 10:48:05 -0700 (PDT)
-Date: Mon, 1 Jun 2020 19:48:03 +0200
-From: Drew Fustini <drew@beagleboard.org>
-To: Tony Lindgren <tony@atomide.com>
-Subject: Re: [PATCH] pinctrl-single: fix pcs_parse_pinconf() return val
-Message-ID: <20200601174803.GD1371046@x1>
-References: <20200531204147.GA664833@x1> <20200601161851.GC37466@atomide.com>
+ Mon, 01 Jun 2020 10:55:53 -0700 (PDT)
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: bjorn.andersson@linaro.org, ohad@wizery.com, mcoquelin.stm32@gmail.com,
+ alexandre.torgue@st.com
+Subject: [PATCH v4 00/11] remoteproc: stm32: Add support for attaching to M4 
+Date: Mon,  1 Jun 2020 11:55:41 -0600
+Message-Id: <20200601175552.22286-1-mathieu.poirier@linaro.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200601161851.GC37466@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_104812_288294_661ACA21 
-X-CRM114-Status: GOOD (  13.68  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200601_105556_314338_7C2CE680 
+X-CRM114-Status: UNSURE (   9.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.7 SPF_NEUTRAL            SPF: sender does not match SPF record (neutral)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,62 +97,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, linux-kernel@vger.kernel.org,
- Robert Nelson <robertcnelson@beagleboard.org>, linux-gpio@vger.kernel.org,
- Jason Kridner <jkridner@beagleboard.org>,
- Haojian Zhuang <haojian.zhuang@linaro.org>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: loic.pallardy@st.com, arnaud.pouliquen@st.com,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 01, 2020 at 09:18:51AM -0700, Tony Lindgren wrote:
-> * Drew Fustini <drew@beagleboard.org> [200531 20:42]:
-> > This patch causes pcs_parse_pinconf() to return an error when no
-> > pinctrl_map is added.  The current behavior is to return 0 when
-> > !PCS_HAS_PINCONF or !nconfs.  Thus pcs_parse_one_pinctrl_entry()
-> > incorrectly assumes that a map was added and sets num_maps = 2.
-> 
-> Looks OK to me, would be good to wait for Haojian to test this one.
-> 
-> Regards,
-> 
-> Tony
+This set applies on top of [1] and refactors the STM32 platform code in
+order to attach to the M4 remote processor when it has been started by the
+boot loader.
 
-Yes, I would like to get input as I don't have the other platforms using
-"pinconf,single":
+It carries the same functionatlity as the previeous revision but account
+for changes in the remoteproc core to support attaching scenarios.  More
+specifically patches 6 to 10 should be given special consideration.
 
-$ git grep 'compatible = "pinconf-single"' arch/
-arch/arm/boot/dts/am33xx-l4.dtsi:                                       compatible = "pinconf-single";
-arch/arm/boot/dts/hi3620.dtsi:                  compatible = "pinconf-single";
-arch/arm/boot/dts/pxa3xx.dtsi:                  compatible = "pinconf-single";
-arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hi3798cv200.dtsi:                 compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hi6220.dtsi:                      compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hi6220.dtsi:                      compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey970-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey970-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey970-pinctrl.dtsi:                    compatible = "pinconf-single";
-arch/arm64/boot/dts/hisilicon/hikey970-pinctrl.dtsi:                    compatible = "pinconf-single";
+Note that I skipped over v3 and went directly to v4 in order to synchronise
+with the remoterproc core patchset[1] that is set at v4.
 
-NOTE: the arch/arm/boot/dts/am33xx-l4.dtsi was patched by me from
-"pinctrl-single" to "pinconf-single.  But, I think for upstream
-submission I would need to move that to one of the beaglebone specific
-dts files like am335x-bone-common.dtsi.
-
-I believe this pinctrl-single.c patch fixes a flaw in return logic and
-is useful regardless of whether beaglebone adopts "pinconf,single".
-However, I would very much like to get input from others in case my
-analysis is too narrow.
+Tested on ST's mp157c development board.
 
 Thanks,
-Drew
+Mathieu
+
+[1]. https://patchwork.kernel.org/project/linux-remoteproc/list/?series=296713
+
+Mathieu Poirier (11):
+  remoteproc: stm32: Decouple rproc from memory translation
+  remoteproc: stm32: Request IRQ with platform device
+  remoteproc: stm32: Decouple rproc from DT parsing
+  remoteproc: stm32: Remove memory translation from DT parsing
+  remoteproc: stm32: Parse syscon that will manage M4 synchronisation
+  remoteproc: stm32: Properly set co-processor state when attaching
+  remoteproc: Make function rproc_resource_cleanup() public
+  remoteproc: stm32: Split function stm32_rproc_parse_fw()
+  remoteproc: stm32: Properly handle the resource table when attaching
+  remoteproc: stm32: Introduce new attach() operation
+  remoteproc: stm32: Update M4 state in stm32_rproc_stop()
+
+ drivers/remoteproc/remoteproc_core.c |   3 +-
+ drivers/remoteproc/stm32_rproc.c     | 214 ++++++++++++++++++++++++---
+ include/linux/remoteproc.h           |   1 +
+ 3 files changed, 198 insertions(+), 20 deletions(-)
+
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
