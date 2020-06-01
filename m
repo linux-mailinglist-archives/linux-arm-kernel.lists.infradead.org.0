@@ -2,86 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E1751EB135
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 23:43:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 260221EB13E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  1 Jun 2020 23:44:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lMf06mtjzSBOW/LFjwH1VvDXHifAyBdLbL5Zgfw1baQ=; b=Zw05QOunCyUtcv
-	p7WF/95IkWO6l6GHPLPu7mnm3/dh+qgQwUDWgi4VklyBrDd8CAbPyHWQlKVG/bYTK3/saR0KvNQ7S
-	c5Xzqmw0hyyehRTqM5zA5ZBgEspAVOTFuAqjsWGEjjDiMDP8QV7n3p+6mWgaOnE9i5lOrC31Jt2/J
-	+D/0eLH9/6qKJpQBRdaHN11DW8oLHe4tDGx9h8G56CMvqXPJweMG8OM1P5yH7DeZXq00dz1xVTbrp
-	1cyvqYYbh08YZ6eQT6uAxfjM2mFaobvOGNFJASlQrP/S533ZK32HQsav3vywESvgoVIZeXJbvzvYO
-	FfB3zbh6ZyIoLcNg7pZA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n+3dtN5Mb3KitvktroZ1mjWtzuzRLURgVO8zrPXTvAE=; b=s1HfiYan2LGgcD
+	U+lA+F1WjBy/EQnCcuiix7B2Jlyj0+xSB2zoD9MpmZ//sByWjLhbkzVkC+S5RrqCAVuTl+LvTM+Lr
+	otyXvjfOs1IqrprjNOjsboX+dGNyZ+kQHvzQE0iORbu1A0sNfKcSu75FyX0g/4xtEvD5+yTf2wLgD
+	66PaeXf4DzedPFFAhkll2bU+kX4dwa1OiLyJYJpZrjcCIcdHzR7QeAsB1MigbJ2DSiI11vBCqwolg
+	Ed2H9yyzC8cCNdhJULRh5848OOG3r78F0yWvrBvIuZxesLVVRP+zF34+spa6i3F5EFVfJibaLLTZE
+	C37QC+c+rHkAbuLXOeLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jfsDB-0006WB-1t; Mon, 01 Jun 2020 21:43:13 +0000
-Received: from mail-il1-f196.google.com ([209.85.166.196])
+	id 1jfsEj-0006sO-GQ; Mon, 01 Jun 2020 21:44:49 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jfsD5-0006TQ-E4
- for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 21:43:09 +0000
-Received: by mail-il1-f196.google.com with SMTP id d1so10852614ila.8
+ id 1jfsEV-0006pg-Lg
+ for linux-arm-kernel@lists.infradead.org; Mon, 01 Jun 2020 21:44:37 +0000
+Received: by mail-wr1-x441.google.com with SMTP id e1so1317714wrt.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 01 Jun 2020 14:43:04 -0700 (PDT)
+ Mon, 01 Jun 2020 14:44:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=qqOi9XVkzEqBE1rgTfwzfPJ8XwX72091Extww43XdB0=;
+ b=BLUBXAlsbcW7Id0UV+YkyUmxE0jzUe0/jTCXnNN4S8dLK5/1aj1C/RlHrWFxV1AwyH
+ 6GbdjWZyiEzX2SGei8S9rFvzqJyLKzA9Iy1wx2DpNKBEIC7EvyM/NTa3QPflZz7Q+ctF
+ ymXXXQNdt5EUCszEr9mNqRiaL85A+fJwEzmckf2Kn1c5Kj4vkhgcAvTDk3fbqqPaWI6M
+ cirigyYvKk2PguC2yqvcAtCchyS4BOP//JBSjBzcOvPA9eIXC1GzF9l4PAcWwI/C7xU5
+ L3laXdnfYY+55kcVzKEzfzrpIagABRawHXTr1HqGHv8f0SlrtfRQGIBxyD8Oa8lGahS5
+ e7HA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=h6bmu3CJcmV/9le9YJQNFFMA2nIiHEqBi68n/JP+HZg=;
- b=Xs3SV/3FlkJvaTF7DB7Yf4PJsipYfw0nbFmTDubTXXwsa3gdvl/v8K61qNrFa+BWLI
- V2Bm1G/bDv5wTGQsm/2KlWiRyvs0Rr/kTTKfRRIntzgnsgiaG7aiDfiqp0hzOP5fnsx0
- KwDAZ3/0RIF35i4PDNpiZWhM9SnuKIejZFhFjWIJ74yOa3o9zvFn0XtL2oWu+6fOY3se
- 6iRuKaEFYMjhcNtVCktNnNDiVAsFFaf5y9L+SPpenQC5c83IArK1MC1L4OQV5Or9ej50
- eBlhFn3qbXqLUVOLWc3xyY1mDnJcvz33sWJXErQ8bQlvNxHWG30xV2wW71hl6rAvtnUC
- FF7Q==
-X-Gm-Message-State: AOAM531Sypd4yPCflQBrYYrsexedOLdw3EVxZYoWCPNwgcPUZkiNmH9+
- ag9wWposi1CvqY6oNQZLlw==
-X-Google-Smtp-Source: ABdhPJyjdTs1k1AJmK5ghDCtRiwra/ZwCyc7YXPiOjDJbc7itj5xSqUIw+cqQ9LzQTmIn5vJwpBTSQ==
-X-Received: by 2002:a05:6e02:e53:: with SMTP id
- l19mr5346647ilk.96.1591047783964; 
- Mon, 01 Jun 2020 14:43:03 -0700 (PDT)
-Received: from xps15 ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id g4sm387323ilj.45.2020.06.01.14.43.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 01 Jun 2020 14:43:03 -0700 (PDT)
-Received: (nullmailer pid 1554558 invoked by uid 1000);
- Mon, 01 Jun 2020 21:43:02 -0000
-Date: Mon, 1 Jun 2020 15:43:02 -0600
-From: Rob Herring <robh@kernel.org>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Re: [PATCH v2 5/5] PCI: uniphier: Add error message when failed to
- get phy
-Message-ID: <20200601214302.GA1538223@bogus>
-References: <1589536743-6684-1-git-send-email-hayashi.kunihiko@socionext.com>
- <1589536743-6684-6-git-send-email-hayashi.kunihiko@socionext.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=qqOi9XVkzEqBE1rgTfwzfPJ8XwX72091Extww43XdB0=;
+ b=ct6I/eQY1E2cFhw0NzfkHJaZ1164YdBmD+5w9iBqb3sNIQqt8Fm1WKhc8JOxFEmLSS
+ 6f2AafvhZGlBJheqW/+CZ21gDqt2PQ4OUYp6x8BLSG+5eFerLpNYzz+vlV3mCeWhYF7k
+ uGc6kMBYeKjop8QLOgRChDcdPgqIv5ALW6lsUEqvwQjHnK1bMIfQrZSieJ94+saBRLxt
+ m+51C/b2/Ambi1XXQM51wwcIoINu/EwcAWWV0WkKzPhWAJ8gW6OIJB3dX1cO1xZ07y75
+ 16r5/OlG57xoV2kC9oG0hog19v2ml2sRVsanXmCFJflMMi+7GCumNfJ+1qIsslzQotxe
+ iGRA==
+X-Gm-Message-State: AOAM531KmNguzARm4/MBWjm2Bp2UQiIb077poP0JC3866EYldOVjSWcW
+ bvKGLfnoj423VjPJdPnOEYPfJg==
+X-Google-Smtp-Source: ABdhPJxAkSTXgDmNloFKRd9lVGwwLE5uAp68LgGpm5gXOB9wVVSaY/AqsZoSHbg0AzWXmkv4CYHlkA==
+X-Received: by 2002:a5d:490f:: with SMTP id x15mr23274786wrq.259.1591047871147; 
+ Mon, 01 Jun 2020 14:44:31 -0700 (PDT)
+Received: from ?IPv6:2a01:e34:ed2f:f020:e125:f600:eb3c:705b?
+ ([2a01:e34:ed2f:f020:e125:f600:eb3c:705b])
+ by smtp.googlemail.com with ESMTPSA id q4sm781499wma.47.2020.06.01.14.44.28
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 01 Jun 2020 14:44:30 -0700 (PDT)
+Subject: Re: [PATCH v8 4/8] PM / EM: add support for other devices than CPUs
+ in Energy Model
+To: Lukasz Luba <lukasz.luba@arm.com>, linux-kernel@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-omap@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-imx@nxp.com
+References: <20200527095854.21714-1-lukasz.luba@arm.com>
+ <20200527095854.21714-5-lukasz.luba@arm.com>
+From: Daniel Lezcano <daniel.lezcano@linaro.org>
+Message-ID: <d45e5592-8e11-858b-d3a3-2ec9ce1d1f54@linaro.org>
+Date: Mon, 1 Jun 2020 23:44:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1589536743-6684-6-git-send-email-hayashi.kunihiko@socionext.com>
+In-Reply-To: <20200527095854.21714-5-lukasz.luba@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_144307_475257_AE00FB13 
-X-CRM114-Status: GOOD (  18.10  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200601_144435_753010_A54C042A 
+X-CRM114-Status: GOOD (  16.22  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.196 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,54 +106,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Jassi Brar <jaswinder.singh@linaro.org>, Jingoo Han <jingoohan1@gmail.com>,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, bjorn.andersson@linaro.org,
+ bsegall@google.com, festevam@gmail.com, mka@chromium.org, robh@kernel.org,
+ amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com, khilman@kernel.org,
+ steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com, mgorman@suse.de,
+ rui.zhang@intel.com, alyssa.rosenzweig@collabora.com, orjan.eide@arm.com,
+ daniel@ffwll.ch, b.zolnierkie@samsung.com, s.hauer@pengutronix.de,
+ rostedt@goodmis.org, matthias.bgg@gmail.com, Dietmar.Eggemann@arm.com,
+ airlied@linux.ie, tomeu.vizoso@collabora.com, qperret@google.com,
+ sboyd@kernel.org, rdunlap@infradead.org, rjw@rjwysocki.net, agross@kernel.org,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ shawnguo@kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 06:59:03PM +0900, Kunihiko Hayashi wrote:
-> Even if phy driver doesn't probe, the error message can't be distinguished
-> from other errors. This displays error message caused by the phy driver
-> explicitly.
-> 
-> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-> ---
->  drivers/pci/controller/dwc/pcie-uniphier.c | 7 +++++--
->  1 file changed, 5 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
-> index 493f105..7ae9688 100644
-> --- a/drivers/pci/controller/dwc/pcie-uniphier.c
-> +++ b/drivers/pci/controller/dwc/pcie-uniphier.c
-> @@ -468,8 +468,11 @@ static int uniphier_pcie_probe(struct platform_device *pdev)
->  		return PTR_ERR(priv->rst);
->  
->  	priv->phy = devm_phy_optional_get(dev, "pcie-phy");
-> -	if (IS_ERR(priv->phy))
-> -		return PTR_ERR(priv->phy);
-> +	if (IS_ERR(priv->phy)) {
-> +		ret = PTR_ERR(priv->phy);
-> +		dev_err(dev, "Failed to get phy (%d)\n", ret);
-
-This will print an error on EPROBE_DEFERRED which isn't an error.
-
-> +		return ret;
-> +	}
->  
->  	platform_set_drvdata(pdev, priv);
->  
-> -- 
-> 2.7.4
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjcvMDUvMjAyMCAxMTo1OCwgTHVrYXN6IEx1YmEgd3JvdGU6Cj4gQWRkIHN1cHBvcnQgZm9y
+IG90aGVyIGRldmljZXMgdGhhbiBDUFVzLiBUaGUgcmVnaXN0cmF0aW9uIGZ1bmN0aW9uCj4gZG9l
+cyBub3QgcmVxdWlyZSBhIHZhbGlkIGNwdW1hc2sgcG9pbnRlciBhbmQgaXMgcmVhZHkgdG8gaGFu
+ZGxlIG5ldwo+IGRldmljZXMuIFNvbWUgb2YgdGhlIGludGVybmFsIHN0cnVjdHVyZXMgaGFzIGJl
+ZW4gcmVvcmdhbml6ZWQgaW4gb3JkZXIgdG8KPiBrZWVwIGNvbnNpc3RlbnQgdmlldyAobGlrZSBy
+ZW1vdmluZyBwZXJfY3B1IHBkIHBvaW50ZXJzKS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBMdWthc3og
+THViYSA8bHVrYXN6Lmx1YmFAYXJtLmNvbT4KPiAtLS0KClsgLi4uIF0KCj4gIH0KPiAgRVhQT1JU
+X1NZTUJPTF9HUEwoZW1fcmVnaXN0ZXJfcGVyZl9kb21haW4pOwo+ICsKPiArLyoqCj4gKyAqIGVt
+X2Rldl91bnJlZ2lzdGVyX3BlcmZfZG9tYWluKCkgLSBVbnJlZ2lzdGVyIEVuZXJneSBNb2RlbCAo
+RU0pIGZvciBhIGRldmljZQo+ICsgKiBAZGV2CQk6IERldmljZSBmb3Igd2hpY2ggdGhlIEVNIGlz
+IHJlZ2lzdGVyZWQKPiArICoKPiArICogVHJ5IHRvIHVucmVnaXN0ZXIgdGhlIEVNIGZvciB0aGUg
+c3BlY2lmaWVkIGRldmljZSAoYnV0IG5vdCBhIENQVSkuCj4gKyAqLwo+ICt2b2lkIGVtX2Rldl91
+bnJlZ2lzdGVyX3BlcmZfZG9tYWluKHN0cnVjdCBkZXZpY2UgKmRldikKPiArewo+ICsJaWYgKElT
+X0VSUl9PUl9OVUxMKGRldikgfHwgIWRldi0+ZW1fcGQpCj4gKwkJcmV0dXJuOwo+ICsKPiArCWlm
+IChfaXNfY3B1X2RldmljZShkZXYpKQo+ICsJCXJldHVybjsKPiArCj4gKwltdXRleF9sb2NrKCZl
+bV9wZF9tdXRleCk7CgpJcyB0aGUgbXV0ZXggcmVhbGx5IG5lZWRlZD8KCklmIHRoaXMgZnVuY3Rp
+b24gaXMgY2FsbGVkIHRoYXQgbWVhbnMgdGhlcmUgaXMgbm8gbW9yZSB1c2VyIG9mIHRoZQplbV9w
+ZCwgbm8/Cgo+ICsJZW1fZGVidWdfcmVtb3ZlX3BkKGRldik7Cj4gKwo+ICsJa2ZyZWUoZGV2LT5l
+bV9wZC0+dGFibGUpOwo+ICsJa2ZyZWUoZGV2LT5lbV9wZCk7Cj4gKwlkZXYtPmVtX3BkID0gTlVM
+TDsKPiArCW11dGV4X3VubG9jaygmZW1fcGRfbXV0ZXgpOwo+ICt9Cj4gK0VYUE9SVF9TWU1CT0xf
+R1BMKGVtX2Rldl91bnJlZ2lzdGVyX3BlcmZfZG9tYWluKTsKPiAKCgotLSAKPGh0dHA6Ly93d3cu
+bGluYXJvLm9yZy8+IExpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0g
+U29DcwoKRm9sbG93IExpbmFybzogIDxodHRwOi8vd3d3LmZhY2Vib29rLmNvbS9wYWdlcy9MaW5h
+cm8+IEZhY2Vib29rIHwKPGh0dHA6Ly90d2l0dGVyLmNvbS8jIS9saW5hcm9vcmc+IFR3aXR0ZXIg
+fAo8aHR0cDovL3d3dy5saW5hcm8ub3JnL2xpbmFyby1ibG9nLz4gQmxvZwoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
