@@ -2,81 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 500F61EB83B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 11:18:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA3C11EB893
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 11:31:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lxw0j9hx5X2FcQgHoFfpK+/bhhQA4OGnyvMp6kTto9g=; b=iT5LZaiiTW+fJR
-	kBLJri7LIylo3xSAF5qXawW4HE//naoKPMF6enmppZFnCTzd4sYODQ/uof4172jB2w5NflXPlKI7r
-	CRUZJIxOyVCo+1hYXb7LROUG7hn1py7wEEX4Ktli7ZshijjEEzi7dxVr5dg8VXljlAQUFVhCj4O2L
-	1c2dk87Q5pvVojVNr57HMI4AxgMfrx1QzM3OysMbx7Ij+8cS0e9dERni/a5Wg9EfLqQADXuWyF1ca
-	6RMSASjHsAaCV+PDoJJr/HbJFUiN3UzE+uhN6xtqxA9I0v+9kV8Z9K372MPhrd/+5wiJLGLOyxgiI
-	Fp+7kRrTQrNsTnKykUFw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=uJuPFeFA10EgAp5y+fK3oyMeAbjW5h+nBIIKjQnaEEQ=; b=f1FUTvk9arI7xNx2+cdZOu+XXX
+	5hM1sqgKz7wYV/1fSc/J+JkGrjZnR1WTkEzKDFjXlJwTXZaUaLyF/OG6VD58MU0wnBjxeQ5b7/Vhh
+	6naf5OL2T2cNob6XBBOzNMGcFbHZE5ArHCwotnDb5T/g/a65x/ol5iTnz/Mto6fnPbmOFO7YBYyNI
+	tOQDwsLvGQxpvNFbn1fPXFD34XKWkqYZnKNJ1hyJVspbBOWAwTr19p2QM35KQe7yX9j3elHBiUxCz
+	MeEq29uGh065lCPWIsoA8T7B0ZDFtRIZl40IF4D3RTkva1j5Dquwg4lTHKJf5lbL1zEZNN8NO1l+m
+	Jh+M87qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg34H-0008Sl-R1; Tue, 02 Jun 2020 09:18:45 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg34B-0008S8-6Z
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 09:18:40 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 0529IKFD068269;
- Tue, 2 Jun 2020 04:18:20 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1591089500;
- bh=HRp5NJcgpD5M8lfp1dgBCoU2NWUCFTruXvAY9gBzvvk=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=xoz6eOIKkhtxgQJsERCAN6s8rjW8N8YLGgcl2MBUUz5p2Eg03KD9IMxMAXsfnQBjh
- Qdn3DOiIf9P8UdT4a2RJ1CLUB/UNAOlMlBb0bcN6j+Xic98hxZBNq2rB+kegFpFNeO
- SXKjKsec1cIcDMAGrlIeSuHj9e5q1kricH+7kB0w=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 0529IKYx121479
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 2 Jun 2020 04:18:20 -0500
-Received: from DLEE109.ent.ti.com (157.170.170.41) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Tue, 2 Jun
- 2020 04:18:19 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE109.ent.ti.com
- (157.170.170.41) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Tue, 2 Jun 2020 04:18:19 -0500
-Received: from feketebors.localnet (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 0529IH14004338; 
- Tue, 2 Jun 2020 04:18:18 -0500
-From: Peter Ujfalusi <peter.ujfalusi@ti.com>
-To: Sekhar Nori <nsekhar@ti.com>, Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] ARM: davinci: fix build failure without I2C
-Date: Tue, 2 Jun 2020 12:19:00 +0300
-Message-ID: <2499396.lGaqSPkdTl@feketebors>
-In-Reply-To: <20200527133746.643895-1-arnd@arndb.de>
-References: <20200527133746.643895-1-arnd@arndb.de>
+	id 1jg3Gk-0002CF-Vg; Tue, 02 Jun 2020 09:31:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jg3Ge-0002B9-EL
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 09:31:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 45ACC55D;
+ Tue,  2 Jun 2020 02:31:28 -0700 (PDT)
+Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A47393F305;
+ Tue,  2 Jun 2020 02:31:26 -0700 (PDT)
+References: <20200527151613.16083-1-benjamin.gaignard@st.com>
+User-agent: mu4e 0.9.17; emacs 26.3
+From: Valentin Schneider <valentin.schneider@arm.com>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Re: [PATCH] media: stm32-dcmi: Set minimum cpufreq requirement
+In-reply-to: <20200527151613.16083-1-benjamin.gaignard@st.com>
+Date: Tue, 02 Jun 2020 10:31:21 +0100
+Message-ID: <jhjpnahizkm.mognet@arm.com>
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_021839_339709_AD27705D 
-X-CRM114-Status: GOOD (  18.78  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200602_023132_524892_C82AC4AC 
+X-CRM114-Status: GOOD (  14.38  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,115 +62,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- soc@kernel.org, Bin Liu <b-liu@ti.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: alexandre.torgue@st.com, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, hugues.fruchet@st.com, mchehab@kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
 
-On Wednesday, 27 May 2020 16.37.34 EEST Arnd Bergmann wrote:
-> The two supplies are referenced outside of #ifdef CONFIG_I2C but
-> defined inside, which breaks the build if that is not built-in:
-> =
+Hi Benjamin,
 
-> mach-davinci/board-dm644x-evm.c:861:21: error: use of undeclared identifi=
-er 'fixed_supplies_1_8v'
->                                      ARRAY_SIZE(fixed_supplies_1_8v), 180=
-0000);
->                                                 ^
-> mach-davinci/board-dm644x-evm.c:861:21: error: use of undeclared identifi=
-er 'fixed_supplies_1_8v'
-> mach-davinci/board-dm644x-evm.c:861:21: error: use of undeclared identifi=
-er 'fixed_supplies_1_8v'
-> mach-davinci/board-dm644x-evm.c:860:49: error: use of undeclared identifi=
-er 'fixed_supplies_1_8v'
->         regulator_register_always_on(0, "fixed-dummy", fixed_supplies_1_8=
-v,
-> =
+On 27/05/20 16:16, Benjamin Gaignard wrote:
+> Before start streaming set cpufreq minimum frequency requirement.
+> The cpufreq governor will adapt the frequencies and we will have
+> no latency for handling interrupts.
+>
 
-> I don't know if the regulators are used anywhere without I2C, but
-> always registering them seems to be the safe choice here.
+Few comments below from someone oblivious to your platform, they may not
+be all that relevant but I figured I'd pitch in anyway.
 
-Thanks for fixing this,
-Reviewed-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
- =
-
-> On a related note, it might be best to also deal with CONFIG_I2C=3Dm
-> across the file, unless this is going to be moved to DT and removed
-> really soon anyway.
-> =
-
-> Fixes: 5e06d19694a4 ("ARM: davinci: dm644x-evm: Add Fixed regulators need=
-ed for tlv320aic33")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 > ---
->  arch/arm/mach-davinci/board-dm644x-evm.c | 26 ++++++++++++------------
->  1 file changed, 13 insertions(+), 13 deletions(-)
-> =
-
-> diff --git a/arch/arm/mach-davinci/board-dm644x-evm.c b/arch/arm/mach-dav=
-inci/board-dm644x-evm.c
-> index 3461d12bbfc0..a5d3708fedf6 100644
-> --- a/arch/arm/mach-davinci/board-dm644x-evm.c
-> +++ b/arch/arm/mach-davinci/board-dm644x-evm.c
-> @@ -655,19 +655,6 @@ static struct i2c_board_info __initdata i2c_info[] =
-=3D  {
->  	},
->  };
->  =
-
-> -/* Fixed regulator support */
-> -static struct regulator_consumer_supply fixed_supplies_3_3v[] =3D {
-> -	/* Baseboard 3.3V: 5V -> TPS54310PWP -> 3.3V */
-> -	REGULATOR_SUPPLY("AVDD", "1-001b"),
-> -	REGULATOR_SUPPLY("DRVDD", "1-001b"),
-> -};
-> -
-> -static struct regulator_consumer_supply fixed_supplies_1_8v[] =3D {
-> -	/* Baseboard 1.8V: 5V -> TPS54310PWP -> 1.8V */
-> -	REGULATOR_SUPPLY("IOVDD", "1-001b"),
-> -	REGULATOR_SUPPLY("DVDD", "1-001b"),
-> -};
-> -
->  #define DM644X_I2C_SDA_PIN	GPIO_TO_PIN(2, 12)
->  #define DM644X_I2C_SCL_PIN	GPIO_TO_PIN(2, 11)
->  =
-
-> @@ -700,6 +687,19 @@ static void __init evm_init_i2c(void)
->  }
->  #endif
->  =
-
-> +/* Fixed regulator support */
-> +static struct regulator_consumer_supply fixed_supplies_3_3v[] =3D {
-> +	/* Baseboard 3.3V: 5V -> TPS54310PWP -> 3.3V */
-> +	REGULATOR_SUPPLY("AVDD", "1-001b"),
-> +	REGULATOR_SUPPLY("DRVDD", "1-001b"),
-> +};
+>  drivers/media/platform/stm32/stm32-dcmi.c | 29 ++++++++++++++++++++++++++++-
+>  1 file changed, 28 insertions(+), 1 deletion(-)
+>
+> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+> index b8931490b83b..97c342351569 100644
+> --- a/drivers/media/platform/stm32/stm32-dcmi.c
+> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
+> @@ -13,6 +13,7 @@
+>
+>  #include <linux/clk.h>
+>  #include <linux/completion.h>
+> +#include <linux/cpufreq.h>
+>  #include <linux/delay.h>
+>  #include <linux/dmaengine.h>
+>  #include <linux/init.h>
+> @@ -99,6 +100,8 @@ enum state {
+>
+>  #define OVERRUN_ERROR_THRESHOLD	3
+>
+> +#define DCMI_MIN_FREQ	650000 /* in KHz */
 > +
-> +static struct regulator_consumer_supply fixed_supplies_1_8v[] =3D {
-> +	/* Baseboard 1.8V: 5V -> TPS54310PWP -> 1.8V */
-> +	REGULATOR_SUPPLY("IOVDD", "1-001b"),
-> +	REGULATOR_SUPPLY("DVDD", "1-001b"),
-> +};
+
+This assumes the handling part is guaranteed to always run on the same CPU
+with the same performance profile (regardless of the platform). If that's
+not guaranteed, it feels like you'd want this to be configurable in some
+way.
+
+>  struct dcmi_graph_entity {
+>       struct v4l2_async_subdev asd;
+>
+[...]
+> @@ -2020,6 +2042,8 @@ static int dcmi_probe(struct platform_device *pdev)
+>               goto err_cleanup;
+>       }
+>
+> +	dcmi->policy = cpufreq_cpu_get(0);
 > +
->  #define VENC_STD_ALL	(V4L2_STD_NTSC | V4L2_STD_PAL)
->  =
 
->  /* venc standard timings */
-> =
+Ideally you'd want to fetch the policy of the CPU your IRQ (and handling
+thread) is affined to; The only compatible DTS I found describes a single
+A7, which is somewhat limited in the affinity area...
 
-
-- P=E9ter
-
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Bu=
-siness ID: 0615521-4. Kotipaikka/Domicile: Helsinki
-
-
+>       dev_info(&pdev->dev, "Probe done\n");
+>
+>       platform_set_drvdata(pdev, dcmi);
+> @@ -2049,6 +2073,9 @@ static int dcmi_remove(struct platform_device *pdev)
+>
+>       pm_runtime_disable(&pdev->dev);
+>
+> +	if (dcmi->policy)
+> +		cpufreq_cpu_put(dcmi->policy);
+> +
+>       v4l2_async_notifier_unregister(&dcmi->notifier);
+>       v4l2_async_notifier_cleanup(&dcmi->notifier);
+>       media_entity_cleanup(&dcmi->vdev->entity);
 
 _______________________________________________
 linux-arm-kernel mailing list
