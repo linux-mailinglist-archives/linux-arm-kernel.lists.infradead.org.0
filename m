@@ -2,87 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93E621EB5BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 08:17:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6972A1EB5CA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 08:27:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FBPLz6Zqn8/DwHNPj2gu/c2GJT1qoSI3YQYmS6Diauk=; b=DxHidm1zMvX+LD
-	fp43OBd6FvDKDhjVKxGneTevqoVWyKflWWxaTkxy22Q9Bbb2FpUFLa3Y26iFzi3Iciemv1v7FK9QY
-	7tUYsH3pc5cQ9EuJe2Zm7qYzrXvtFybRI9xzRueTgi/M8aHPZT7WxCuOZICkr8h9YnKe9rD62ibvg
-	PyWEDDLGNii6jOWeXlTp7zGrCcUInObf/Pvi3bQo9OQmaV/IxsDp6BEXZeILBUOKj8xtZG3Ye3iYr
-	ipm+TZFSE5fZYMl8zEd9hMO6X9rv7JZrzjvei+zUu308oiWdpqeBIqxBZFDKVqYeZIRnMtX4gNrk/
-	+7MFnsVZjzv33BqhY82w==;
+	List-Owner; bh=MkK5mkug5GqXZorB97hXEQpA3/0h8uM+fVxrGMKJz0U=; b=CZ9Z1KsQJUdX/u
+	0z1x8cQWpvO4uRpzDCQixSx5cG8GH+J2k9CtIjWPYkKZw6if12oBUn+uxdI4bCGYCY9G0pEJVofA5
+	I5R13dEnuk+qEeU6RgwXAtcWYQVYN26KZsg2gHPn2LW0g47VsgSRxSXiRW/UokMXcZCCDsFVgQgPS
+	fjZ0Xwz81XjCsRtV67jgUiv7e4yE/y6s17uPKyeUeEAg2OqLRXWqN6AgPbnVYHt1p42jPfyWQdVZp
+	1c3vCD9a06AIfxLxD9usyAqg6U2QO1A4j/ImgdT5NQJqrFxArt/wvvSWniSCfCK3f2gv5aGVJwRmy
+	0/dNBTqC0nYGuSG/9eBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg0Eh-0003xy-GT; Tue, 02 Jun 2020 06:17:19 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jg0Os-0002Fq-OE; Tue, 02 Jun 2020 06:27:50 +0000
+Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg0EZ-0003w0-LG; Tue, 02 Jun 2020 06:17:13 +0000
-X-UUID: 4e6c9ac029b04959aa5da090be7d0dc2-20200601
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=52LMWjXgcgHTMdeFN/WLfv0/xMo/B6WtU8uG4FMZzUc=; 
- b=brkEbC7PQ7BPyK0asQ7MLzoRxPDxiDKLca0AlxvlyJf31gWXk6MSkxDPSbGhI7Mg0f7aRgf672qvljYfh6JVNyCBa3RcyY0W7C+ounm6Ux0ON5TDxpjCAbzW/t7GKw60jqPXQ3mzrQHe3kRiZfReb9WSTCNHEijTaY4eWcA0XuM=;
-X-UUID: 4e6c9ac029b04959aa5da090be7d0dc2-20200601
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 544322756; Mon, 01 Jun 2020 22:17:07 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 1 Jun 2020 23:17:03 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 2 Jun 2020 14:16:59 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 2 Jun 2020 14:16:58 +0800
-Message-ID: <1591078501.8804.539.camel@mhfsdcap03>
-Subject: Re: [V9, 1/2] media: dt-bindings: media: i2c: Document OV02A10
- bindings
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Tue, 2 Jun 2020 14:15:01 +0800
-In-Reply-To: <CAAFQd5AY9gejoiwxojvvG0FaVfEAf8gCqOddvo-dxemQWFksVw@mail.gmail.com>
-References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
- <20200523084103.31276-2-dongchun.zhu@mediatek.com>
- <20200526182847.GA92449@bogus> <1590569355.8804.448.camel@mhfsdcap03>
- <CAL_Jsq+sN0SVidTrY0ODXEkzkxYFvG1FTnL0oRQBSKf=ynLdyQ@mail.gmail.com>
- <20200527211628.GT7618@paasikivi.fi.intel.com>
- <1590636882.8804.474.camel@mhfsdcap03>
- <20200528072332.GW7618@paasikivi.fi.intel.com>
- <1590653082.8804.517.camel@mhfsdcap03>
- <CAAFQd5AuHDpQN8xZsWgnAt6m2reAYJbs9nBp0+mBo7_FS81LbQ@mail.gmail.com>
- <1590978816.8804.523.camel@mhfsdcap03>
- <CAAFQd5AY9gejoiwxojvvG0FaVfEAf8gCqOddvo-dxemQWFksVw@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jg0Ol-0002Ek-VZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 06:27:45 +0000
+Received: from dggemi405-hub.china.huawei.com (unknown [172.30.72.55])
+ by Forcepoint Email with ESMTP id A38F213119F8EAEEE759;
+ Tue,  2 Jun 2020 14:27:30 +0800 (CST)
+Received: from DGGEMI525-MBS.china.huawei.com ([169.254.6.10]) by
+ dggemi405-hub.china.huawei.com ([10.3.17.143]) with mapi id 14.03.0487.000;
+ Tue, 2 Jun 2020 14:26:20 +0800
+From: "Song Bao Hua (Barry Song)" <song.bao.hua@hisilicon.com>
+To: Greg KH <gregkh@linuxfoundation.org>
+Subject: RE: [PATCH] driver core: platform: expose numa_node to users in sysfs
+Thread-Topic: [PATCH] driver core: platform: expose numa_node to users in sysfs
+Thread-Index: AQHWOIpUwdvGGcJ/+UCxidEm0PhHvqjEM/4AgACJWmCAAAdA0P//jXEAgACHQ7A=
+Date: Tue, 2 Jun 2020 06:26:19 +0000
+Message-ID: <B926444035E5E2439431908E3842AFD24D90DD@DGGEMI525-MBS.china.huawei.com>
+References: <20200602030139.73012-1-song.bao.hua@hisilicon.com>
+ <20200602042340.GA2130884@kroah.com>
+ <B926444035E5E2439431908E3842AFD24D8F9E@DGGEMI525-MBS.china.huawei.com>
+ <20200602061112.GC2256033@kroah.com>
+In-Reply-To: <20200602061112.GC2256033@kroah.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.126.200.200]
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: A9AC065C4A1F08B9E7B8B0326C91B759B13EEBC728E9C857B02494DBE22A12912000:8
-X-MTK: N
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_231711_704763_FCFAC4B2 
-X-CRM114-Status: GOOD (  30.80  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200601_232744_203310_83C08703 
+X-CRM114-Status: GOOD (  20.34  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.255 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,158 +71,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Shengnan Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
- <shengnan.wang@mediatek.com>, Louis Kuo <louis.kuo@mediatek.com>, Bartosz
- Golaszewski <bgolaszewski@baylibre.com>, Sj Huang <sj.huang@mediatek.com>,
- Nicolas Boichat <drinkcat@chromium.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC
- ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: "rafael@kernel.org" <rafael@kernel.org>, Linuxarm <linuxarm@huawei.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz, Sakari,
 
-On Mon, 2020-06-01 at 20:18 +0200, Tomasz Figa wrote:
-> On Mon, Jun 1, 2020 at 4:35 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> >
-> > Hi Tomasz,
-> >
-> > On Fri, 2020-05-29 at 15:43 +0200, Tomasz Figa wrote:
-> > > On Thu, May 28, 2020 at 10:06 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
+
+> -----Original Message-----
+> From: Greg KH [mailto:gregkh@linuxfoundation.org]
+> Sent: Tuesday, June 2, 2020 6:11 PM
+> To: Song Bao Hua (Barry Song) <song.bao.hua@hisilicon.com>
+> Cc: rafael@kernel.org; iommu@lists.linux-foundation.org;
+> linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Linuxarm
+> <linuxarm@huawei.com>; Zengtao (B) <prime.zeng@hisilicon.com>; Robin
+> Murphy <robin.murphy@arm.com>
+> Subject: Re: [PATCH] driver core: platform: expose numa_node to users in sysfs
+> 
+> On Tue, Jun 02, 2020 at 05:09:57AM +0000, Song Bao Hua (Barry Song) wrote:
 > > > >
-> > > > Hi Sakari,
-> > > >
-> > > > On Thu, 2020-05-28 at 10:23 +0300, Sakari Ailus wrote:
-> > > > > Hi Dongchun,
-> > > > >
-> > > > > On Thu, May 28, 2020 at 11:34:42AM +0800, Dongchun Zhu wrote:
-> > > > > > Hi Sakari, Rob,
-> > > > > >
-> > > > > > On Thu, 2020-05-28 at 00:16 +0300, Sakari Ailus wrote:
-> > > > > > > Hi Rob, Dongchun,
-> > > > > > >
-> > > > > > > On Wed, May 27, 2020 at 09:27:22AM -0600, Rob Herring wrote:
-> > > > > > > > > > > +    properties:
-> > > > > > > > > > > +      endpoint:
-> > > > > > > > > > > +        type: object
-> > > > > > > > > > > +        additionalProperties: false
-> > > > > > > > > > > +
-> > > > > > > > > > > +        properties:
-> > > > > > > > >
-> > > > > > > > > Actually I wonder whether we need to declare 'clock-lanes' here?
-> > > > > > > >
-> > > > > > > > Yes, if you are using it.
-> > > > > > >
-> > > > > > > Dongchun, can you confirm the chip has a single data and a single clock
-> > > > > > > lane and that it does not support lane reordering?
-> > > > > > >
-> > > > > >
-> > > > > > From the datasheet, 'MIPI inside the OV02A10 provides one single
-> > > > > > uni-directional clock lane and one bi-directional data lane solution for
-> > > > > > communication links between components inside a mobile device.
-> > > > > > The data lane has full support for HS(uni-directional) and
-> > > > > > LP(bi-directional) data transfer mode.'
-> > > > > >
-> > > > > > The sensor doesn't support lane reordering, so 'clock-lanes' property
-> > > > > > would not be added in next release.
-> > > > > >
-> > > > > > > So if there's nothing to convey to the driver, also the data-lanes should
-> > > > > > > be removed IMO.
-> > > > > > >
-> > > > > >
-> > > > > > However, 'data-lanes' property may still be required.
-> > > > > > It is known that either data-lanes or clock-lanes is an array of
-> > > > > > physical data lane indexes. Position of an entry determines the logical
-> > > > > > lane number, while the value of an entry indicates physical lane, e.g.,
-> > > > > > for 1-lane MIPI CSI-2 bus we could have "data-lanes = <1>;", assuming
-> > > > > > the clock lane is on hardware lane 0.
-> > > > > >
-> > > > > > As mentioned earlier, the OV02A10 sensor supports only 1C1D and does not
-> > > > > > support lane reordering, so here we shall use 'data-lanes = <1>' as
-> > > > > > there is only a clock lane for OV02A10.
-> > > > > >
-> > > > > > Reminder:
-> > > > > > If 'data-lanes' property is not present, the driver would assume
-> > > > > > four-lane operation. This means for one-lane or two-lane operation, this
-> > > > > > property must be present and set to the right physical lane indexes.
-> > > > > > If the hardware does not support lane reordering, monotonically
-> > > > > > incremented values shall be used from 0 or 1 onwards, depending on
-> > > > > > whether or not there is also a clock lane.
-> > > > >
-> > > > > How can the driver use four lanes, considering the device only supports a
-> > > > > single lane??
-> > > > >
-> > > >
-> > > > I understood your meaning.
-> > > > If we omit the property 'data-lanes', the sensor should work still.
-> > > > But then what's the meaning of the existence of 'data-lanes'?
-> > > > If this property 'data-lanes' is always optional, then why dt-bindings
-> > > > provide the interface?
-> > > >
-> > > > In the meantime, if omitting 'data-lanes' for one sensor(transmitter)
-> > > > that has only one physical data lane, MIPI receiver(e.g., MIPI CSI-2)
-> > > > shall enable four-lane configuration, which may increase consumption of
-> > > > both power and resource in the process of IIC communication.
+> > > > Platform devices are NUMA?  That's crazy, and feels like a total
+> > > > abuse of platform devices and drivers that really should belong on a
+> "real"
+> > > > bus.
 > > >
-> > > Wouldn't the receiver still have the data-lanes property under its
-> > > endpoint node, telling it how many lanes and in which order should be
-> > > used?
+> > > I am not sure if it is an abuse of platform device. But smmu is a
+> > > platform device, drivers/iommu/arm-smmu-v3.c is a platform driver.
+> > > In a typical ARM server, there are maybe multiple SMMU devices which
+> > > can support IO virtual address and page tables for other devices on
+> > > PCI-like busses.
+> > > Each different SMMU device might be close to different NUMA node.
+> > > There is really a hardware topology.
 > > >
+> > > If you have multiple CPU packages in a NUMA server, some platform
+> > > devices might Belong to CPU0, some other might belong to CPU1.
 > >
-> > The MIPI receiver(RX) shall use
-> > v4l2_async_notifier_add_fwnode_remote_subdev() API to parse the property
-> > "data-lanes" under sensor output port.
+> > Those devices are populated by acpi_iort for an ARM server:
+> >
+> > drivers/acpi/arm64/iort.c:
+> >
+> > static const struct iort_dev_config iort_arm_smmu_v3_cfg __initconst = {
+> >         .name = "arm-smmu-v3",
+> >         .dev_dma_configure = arm_smmu_v3_dma_configure,
+> >         .dev_count_resources = arm_smmu_v3_count_resources,
+> >         .dev_init_resources = arm_smmu_v3_init_resources,
+> >         .dev_set_proximity = arm_smmu_v3_set_proximity, };
+> >
+> > void __init acpi_iort_init(void)
+> > {
+> >         acpi_status status;
+> >
+> >         status = acpi_get_table(ACPI_SIG_IORT, 0, &iort_table);
+> >         ...
+> >         iort_check_id_count_workaround(iort_table);
+> >         iort_init_platform_devices();
+> > }
+> >
+> > static void __init iort_init_platform_devices(void) {
+> >         ...
+> >
+> >         for (i = 0; i < iort->node_count; i++) {
+> >                 if (iort_node >= iort_end) {
+> >                         pr_err("iort node pointer overflows, bad
+> table\n");
+> >                         return;
+> >                 }
+> >
+> >                 iort_enable_acs(iort_node);
+> >
+> >                 ops = iort_get_dev_cfg(iort_node);
+> >                 if (ops) {
+> >                         fwnode = acpi_alloc_fwnode_static();
+> >                         if (!fwnode)
+> >                                 return;
+> >
+> >                         iort_set_fwnode(iort_node, fwnode);
+> >
+> >                         ret = iort_add_platform_device(iort_node, ops);
+> >                         if (ret) {
+> >                                 iort_delete_fwnode(iort_node);
+> >                                 acpi_free_fwnode_static(fwnode);
+> >                                 return;
+> >                         }
+> >                 }
+> >
+> >                 ...
+> >         }
+> > ...
+> > }
+> >
+> > NUMA node is got from ACPI:
+> >
+> > static int  __init arm_smmu_v3_set_proximity(struct device *dev,
+> >                                               struct acpi_iort_node
+> > *node) {
+> >         struct acpi_iort_smmu_v3 *smmu;
+> >
+> >         smmu = (struct acpi_iort_smmu_v3 *)node->node_data;
+> >         if (smmu->flags & ACPI_IORT_SMMU_V3_PXM_VALID) {
+> >                 int dev_node = acpi_map_pxm_to_node(smmu->pxm);
+> >
+> >                 ...
+> >
+> >                 set_dev_node(dev, dev_node);
+> >                 ...
+> >         }
+> >         return 0;
+> > }
+> >
+> > Barry
 > 
-> That's not true. The MIPI receiver driver parses its own port node
-> corresponding to the sensor. Also quoting the documentation [1]:
-> 
-> "An endpoint subnode of a device contains all properties needed for
-> _configuration of this device_ for data exchange with other device. In most
-> cases properties at the peer 'endpoint' nodes will be identical, however they
-> might need to be different when there is any signal modifications on the bus
-> between two devices, e.g. there are logic signal inverters on the lines."
-> 
-> In this case, there is such a signal modification if the sensor has a
-> 1-lane bus and the receiver more lines, so the data-lanes properties
-> would be different on both sides.
-> 
-> [1] https://elixir.bootlin.com/linux/v5.7/source/Documentation/devicetree/bindings/media/video-interfaces.txt
+> That's fine, but those are "real" devices, not platform devices, right?
 > 
 
-Sorry for the misunderstanding.
-After doing some experiments about the data-lanes property under sensor
-i2c node, we found the API
-v4l2_async_notifier_add_fwnode_remote_subdev() that MIPI receiver driver
-used indeed parses the data-lanes under its own port node.
+Most platform devices are "real" memory-mapped hardware devices. For an embedded system, almost all "simple-bus"
+devices are populated from device trees as platform devices. Only a part of platform devices are not "real" hardware.
 
-Sorry make a mistake for the use case of sensor data-lanes previously.
-Now We may encounter one new question for this patch.
-In practice we haven't used the data-lanes under sensor i2c node
-anywhere, if sensor driver itself doesn't parse that.
+Smmu is a memory-mapped device. It is totally like most other platform devices populated in a 
+memory space mapped in cpu's local space. It uses ioremap to map registers, use readl/writel to read/write its
+space.
 
-But there is still one reason to keep the exactly right data-lanes in
-DT. That is, the data-lanes under sensor i2c node could be used as a
-reference for MIPI receiver driver.
-Just as Tomasz said, 'The MIPI receiver driver parses its own port node
-corresponding to the sensor'.
+> What platform device has this issue?  What one will show up this way with
+> the new patch?
 
-Sakari, Tomasz, what's your opinions about the present of data-lanes
-under sensor node or not?
+if platform device shouldn't be a real hardware, there is no platform device with a hardware topology.
+But platform devices are "real" hardware at most time. Smmu is a "real" device, but it is a platform device in Linux.
 
-> Best regards,
-> Tomasz
+> 
+> thanks,
+> 
+> greg k-h
+
+-barry
+
 
 _______________________________________________
 linux-arm-kernel mailing list
