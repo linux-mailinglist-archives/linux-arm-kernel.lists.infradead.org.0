@@ -2,91 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D32D71EB764
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 10:30:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92EB11EB772
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 10:33:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rxsnFgLpPs3ABKBnyrTszjS5sUpb+gQeIAnfSq3T13o=; b=bq1TxCgUhRTd8F
-	qq5LxtK+FtSeeoT3/mgaJBJDW0gsyQqkIeglFPLAX9nbJqFpkOhJzcZcRTziLZAImfdy458w6V8eK
-	o8si1XEWiViXcBwAOReqqxk+zEpraYXpuqYOoptHjMp7mOWoMeu9hEeaCfILRsDzMI5JBfFkCNjIb
-	OeuI3V+iOXBrbZMgGQZJ8KUWEHSkHSs7A42T4D5J7Onr8jWDyCMvzTw+DLA3VHFhYeuTzbA0Hsdp+
-	sW3eaRqA3QkFoVGmoak8hmD1TA6d2MX9hIlFlm8oUVt5j6+5ALCGkswoR189scM4Tud1vE8gkMZ7q
-	prW9eAJUkE/tkJ032J3A==;
+	List-Owner; bh=HbQqNXNN3akl88pdoz6pKypedHGBQzMEJ8NX+q342bI=; b=mynnZs1CD47HhO
+	WFJAQmrmkXIJlSjbCA/wZDaiF/KMWhM46Iirv3Zh1MIYottwQKClkHTJrQY07x6k+6Ai6+MqGgzi4
+	noy3DN73LwuPHfZsliCY7CNBDOUvMasIzSrPy2KKd7yB8Su1bol73A00gNXzyZPCTYqzOPkAEQGke
+	nsCUaw7RoxRpvBGq93w+K+8a28InOeTGfaVBKsKJ8vzz3Wq6J6/u4expPB5+fM6r8PeTtFM3C/UhP
+	GxJblfN7uMzoS/6/NwAi0tLG1BUvpkHlohHykV+nRcnu8QYrdMVQnRhEmNddY1B618vGdUaeOUtpe
+	1TGUwHCxfoSgY8gBQ+ZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg2JA-0007mV-Ka; Tue, 02 Jun 2020 08:30:04 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jg2MO-0002r6-2b; Tue, 02 Jun 2020 08:33:24 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg2Iu-0007k1-Pp
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 08:29:51 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 0528SDJr026270; Tue, 2 Jun 2020 10:29:38 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=6XTqD4oSlrbjM9/x3g1YaVOoeoVL9aa2OTi5ThyuPwU=;
- b=k09ef3UywWNyT67MNoGBHI4ZPUwtwJR6gOuT1+2KnA+ifAvFV6a5VYVL0hKX/ckO5/o4
- ITQgyRe7JF5o7ZEaY/b1mlOGAFz/E0tg5kJK7kFMAOmk/EOXFpLEAWKDuhvQLm+RqLp3
- BKCKTERRngN/N5C0LLulBMBorgDnpzZxUkf9d50rwRvujWBreb+2x7yMUdokyUYi0uDN
- 4ZEy3o5LEBlH+qmPrVYeIDiq+MO6JpndyQmfmiekY3L9MGNgkviKgp6ZF/W8iyPRA0ks
- qqShYb1lUKr+Me++2/IKQ0VMnvQgSOaAdxZVQFLp8EBQk8G+Tj32Y1mZ1BE+a6a9VshR Tg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31bcy0dbp8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 02 Jun 2020 10:29:38 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D80D410002A;
- Tue,  2 Jun 2020 10:29:36 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A661A2AAD1F;
- Tue,  2 Jun 2020 10:29:36 +0200 (CEST)
-Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG3NODE3.st.com
- (10.75.127.9) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 2 Jun
- 2020 10:29:36 +0200
-Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
- SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
- 15.00.1473.003; Tue, 2 Jun 2020 10:29:36 +0200
-From: Hugues FRUCHET <hugues.fruchet@st.com>
-To: Benjamin GAIGNARD <benjamin.gaignard@st.com>, "mchehab@kernel.org"
- <mchehab@kernel.org>, "mcoquelin.stm32@gmail.com"
- <mcoquelin.stm32@gmail.com>, Alexandre TORGUE <alexandre.torgue@st.com>
-Subject: Re: [PATCH] media: stm32-dcmi: Set minimum cpufreq requirement
-Thread-Topic: [PATCH] media: stm32-dcmi: Set minimum cpufreq requirement
-Thread-Index: AQHWNDnEu2gs2ws6JUCiuNPgKFH4kKjE5e6A
-Date: Tue, 2 Jun 2020 08:29:36 +0000
-Message-ID: <c53ca6f9-5350-0234-eb52-2c656ffab79c@st.com>
-References: <20200527151613.16083-1-benjamin.gaignard@st.com>
-In-Reply-To: <20200527151613.16083-1-benjamin.gaignard@st.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.48]
-Content-ID: <5C415AA3C357474291DF12AFD1D350E4@st.com>
+ id 1jg2ME-0002oZ-G4
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 08:33:15 +0000
+Received: by mail-wr1-x443.google.com with SMTP id r7so2479531wro.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 02 Jun 2020 01:33:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=7H1jGmdpunK0UnpTr7PELYFOau+0SDjGmyZeNU7l2WE=;
+ b=XQyBLPtBdqQOAVQxORH0WMvK8c7jAnhw7HnsfvKWm85fSsgd/SsCqwiw9n6xZK+tx7
+ o4DSQYLwZ8YCxHV59VL9JjH6M+O3AxueEkFGjlwYAFqJBp94Ku6Xi5hzbK3h4Kvg3KPr
+ MmCxgREKkngV8Cbbpe9+M72opU6j6OfcflSXcUpmqvZ8xID5/B0ZJhS6IEQ9WjCnssXp
+ uu64wX9kvwJNZZZQRSfvB8CLAcHOLvZp2Wt8kl3O5jRh/XVkRlALE52jOU+9PWRmChZN
+ +VO3kn5jOnZj+mPkhBYJdJS9o2NKd95hosuB3A12H2sKIwDr4qua1Hy+LFxlDu68FxU2
+ Tv0Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=7H1jGmdpunK0UnpTr7PELYFOau+0SDjGmyZeNU7l2WE=;
+ b=iZmGDl+MFY84nKdLYBpdKUGDc6iRE7tBQStsOtD6zMe2IxPHlk+S9xl4f273kz85gP
+ KoO/pf8AnsBWEhnWNB9tLDWrL9LmHrMYgYXxMPeNsa0Bl4R1dglypDJU5zIATt1o0C2N
+ olcJSbpnpP3ijxbIKSvA9Ao/F2jLC8So+Y4U3jfe8Im3DTcmVYi3SHB7hlFP3VyTMwy2
+ Fa5V6pXYXpvXyC0kZ8b+0U0svDVfoY9dFlJfSdop8Zjudjv86E+yADJv+i+ikUstnXlD
+ V8c0b0hDETGcHIUvKsq+4FJy8Dae2huSZY9zG/nEPA8Ln0KqGSYUZlQs2ygrEtixhEoN
+ rSEQ==
+X-Gm-Message-State: AOAM531Mmb7rvKx9hWLG62etU2v4voUPlqccuK9V3hs//NxZ5aedZjkr
+ CNGDPt+9pFpzpqxigyKSn09Q1A==
+X-Google-Smtp-Source: ABdhPJwTWstLJV8DOsVmKsrBfUkOLHr+Ifb0u8UVqxHHLBh22pbnHCSAkqvAWuYTZbyxJQ25mTIjDQ==
+X-Received: by 2002:adf:a4dd:: with SMTP id h29mr27110163wrb.372.1591086793255; 
+ Tue, 02 Jun 2020 01:33:13 -0700 (PDT)
+Received: from dell ([95.147.198.92])
+ by smtp.gmail.com with ESMTPSA id h7sm2489681wml.24.2020.06.02.01.33.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 02 Jun 2020 01:33:12 -0700 (PDT)
+Date: Tue, 2 Jun 2020 09:33:11 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v2 2/6] mfd: add support for the Khadas System control
+ Microcontroller
+Message-ID: <20200602083311.GD3714@dell>
+References: <20200512132613.31507-1-narmstrong@baylibre.com>
+ <20200512132613.31507-3-narmstrong@baylibre.com>
+ <20200520090101.GE271301@dell>
+ <8837fa43-bf46-fdd1-472e-e5f0159dab2c@baylibre.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-02_11:2020-06-01,
- 2020-06-02 signatures=0
+Content-Disposition: inline
+In-Reply-To: <8837fa43-bf46-fdd1-472e-e5f0159dab2c@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_012949_291633_DFD25983 
-X-CRM114-Status: GOOD (  21.07  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200602_013314_544293_9999E274 
+X-CRM114-Status: GOOD (  17.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -107,125 +101,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "valentin.schneider@arm.com" <valentin.schneider@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Acked-by: Hugues Fruchet <hugues.fruchet@st.com>
-
-On 5/27/20 5:16 PM, Benjamin Gaignard wrote:
-> Before start streaming set cpufreq minimum frequency requirement.
-> The cpufreq governor will adapt the frequencies and we will have
-> no latency for handling interrupts.
-> 
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
-> ---
->   drivers/media/platform/stm32/stm32-dcmi.c | 29 ++++++++++++++++++++++++++++-
->   1 file changed, 28 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-> index b8931490b83b..97c342351569 100644
-> --- a/drivers/media/platform/stm32/stm32-dcmi.c
-> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
-> @@ -13,6 +13,7 @@
->   
->   #include <linux/clk.h>
->   #include <linux/completion.h>
-> +#include <linux/cpufreq.h>
->   #include <linux/delay.h>
->   #include <linux/dmaengine.h>
->   #include <linux/init.h>
-> @@ -99,6 +100,8 @@ enum state {
->   
->   #define OVERRUN_ERROR_THRESHOLD	3
->   
-> +#define DCMI_MIN_FREQ	650000 /* in KHz */
-> +
->   struct dcmi_graph_entity {
->   	struct v4l2_async_subdev asd;
->   
-> @@ -173,6 +176,10 @@ struct stm32_dcmi {
->   	struct media_device		mdev;
->   	struct media_pad		vid_cap_pad;
->   	struct media_pipeline		pipeline;
-> +
-> +	/* CPU freq contraint */
-> +	struct cpufreq_policy		*policy;
-> +	struct freq_qos_request		qos_req;
->   };
->   
->   static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
-> @@ -736,11 +743,20 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->   		goto err_release_buffers;
->   	}
->   
-> +	if (dcmi->policy) {
-> +		ret = freq_qos_add_request(&dcmi->policy->constraints,
-> +					   &dcmi->qos_req, FREQ_QOS_MIN,
-> +					   DCMI_MIN_FREQ);
-> +
-> +		if (ret < 0)
-> +			goto err_pm_put;
-> +	}
-> +
->   	ret = media_pipeline_start(&dcmi->vdev->entity, &dcmi->pipeline);
->   	if (ret < 0) {
->   		dev_err(dcmi->dev, "%s: Failed to start streaming, media pipeline start error (%d)\n",
->   			__func__, ret);
-> -		goto err_pm_put;
-> +		goto err_drop_qos;
->   	}
->   
->   	ret = dcmi_pipeline_start(dcmi);
-> @@ -835,6 +851,9 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->   err_media_pipeline_stop:
->   	media_pipeline_stop(&dcmi->vdev->entity);
->   
-> +err_drop_qos:
-> +	if (dcmi->policy)
-> +		freq_qos_remove_request(&dcmi->qos_req);
->   err_pm_put:
->   	pm_runtime_put(dcmi->dev);
->   
-> @@ -863,6 +882,9 @@ static void dcmi_stop_streaming(struct vb2_queue *vq)
->   
->   	media_pipeline_stop(&dcmi->vdev->entity);
->   
-> +	if (dcmi->policy)
-> +		freq_qos_remove_request(&dcmi->qos_req);
-> +
->   	spin_lock_irq(&dcmi->irqlock);
->   
->   	/* Disable interruptions */
-> @@ -2020,6 +2042,8 @@ static int dcmi_probe(struct platform_device *pdev)
->   		goto err_cleanup;
->   	}
->   
-> +	dcmi->policy = cpufreq_cpu_get(0);
-> +
->   	dev_info(&pdev->dev, "Probe done\n");
->   
->   	platform_set_drvdata(pdev, dcmi);
-> @@ -2049,6 +2073,9 @@ static int dcmi_remove(struct platform_device *pdev)
->   
->   	pm_runtime_disable(&pdev->dev);
->   
-> +	if (dcmi->policy)
-> +		cpufreq_cpu_put(dcmi->policy);
-> +
->   	v4l2_async_notifier_unregister(&dcmi->notifier);
->   	v4l2_async_notifier_cleanup(&dcmi->notifier);
->   	media_entity_cleanup(&dcmi->vdev->entity);
-> 
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAwMiBKdW4gMjAyMCwgTmVpbCBBcm1zdHJvbmcgd3JvdGU6Cgo+IE9uIDIwLzA1LzIw
+MjAgMTE6MDEsIExlZSBKb25lcyB3cm90ZToKPiA+IE9uIFR1ZSwgMTIgTWF5IDIwMjAsIE5laWwg
+QXJtc3Ryb25nIHdyb3RlOgo+ID4gCj4gPj4gVGhpcyBNaWNyb2NvbnRyb2xsZXIgaXMgcHJlc2Vu
+dCBvbiB0aGUgS2hhZGFzIFZJTTEsIFZJTTIsIFZJTTMgYW5kIEVkZ2UKPiA+PiBib2FyZHMuCj4g
+Pj4KPiA+PiBJdCBoYXMgbXVsdGlwbGUgYm9vdCBjb250cm9sIGZlYXR1cmVzIGxpa2UgcGFzc3dv
+cmQgY2hlY2ssIHBvd2VyLW9uCj4gPj4gb3B0aW9ucywgcG93ZXItb2ZmIGNvbnRyb2wgYW5kIHN5
+c3RlbSBGQU4gY29udHJvbCBvbiByZWNlbnQgYm9hcmRzLgo+ID4+Cj4gPj4gVGhpcyBpbXBsZW1l
+bnRzIGEgdmVyeSBiYXNpYyBNRkQgZHJpdmVyIHdpdGggdGhlIGZhbiBjb250cm9sIGFuZCBVc2Vy
+Cj4gPj4gTlZNRU0gY2VsbHMuCj4gPj4KPiA+PiBTaWduZWQtb2ZmLWJ5OiBOZWlsIEFybXN0cm9u
+ZyA8bmFybXN0cm9uZ0BiYXlsaWJyZS5jb20+Cj4gPj4gLS0tCj4gPj4gIGRyaXZlcnMvbWZkL0tj
+b25maWcgICAgICAgICAgICB8ICAxNCArKysrCj4gPj4gIGRyaXZlcnMvbWZkL01ha2VmaWxlICAg
+ICAgICAgICB8ICAgMSArCj4gPj4gIGRyaXZlcnMvbWZkL2toYWRhcy1tY3UuYyAgICAgICB8IDE0
+MyArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKPiA+PiAgaW5jbHVkZS9saW51eC9t
+ZmQva2hhZGFzLW1jdS5oIHwgIDkxICsrKysrKysrKysrKysrKysrKysrKwo+ID4+ICA0IGZpbGVz
+IGNoYW5nZWQsIDI0OSBpbnNlcnRpb25zKCspCj4gPj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2
+ZXJzL21mZC9raGFkYXMtbWN1LmMKPiA+PiAgY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvbGlu
+dXgvbWZkL2toYWRhcy1tY3UuaAo+ID4+Cj4gPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvbWZkL0tj
+b25maWcgYi9kcml2ZXJzL21mZC9LY29uZmlnCj4gPj4gaW5kZXggMGE1OTI0OTE5OGQzLi5iOTUw
+OTEzOTcwNTIgMTAwNjQ0Cj4gPj4gLS0tIGEvZHJpdmVycy9tZmQvS2NvbmZpZwo+ID4+ICsrKyBi
+L2RyaXZlcnMvbWZkL0tjb25maWcKPiA+PiBAQCAtMjAwMyw2ICsyMDAzLDIwIEBAIGNvbmZpZyBN
+RkRfV0NEOTM0WAo+ID4+ICAJICBUaGlzIGRyaXZlciBwcm92aWRlcyBjb21tb24gc3VwcG9ydCBX
+Q0Q5MzR4IGF1ZGlvIGNvZGVjIGFuZCBpdHMKPiA+PiAgCSAgYXNzb2NpYXRlZCBQaW4gQ29udHJv
+bGxlciwgU291bmR3aXJlIENvbnRyb2xsZXIgYW5kIEF1ZGlvIGNvZGVjLgo+ID4+ICAKPiA+PiAr
+Y29uZmlnIE1GRF9LSEFEQVNfTUNVCj4gPj4gKwl0cmlzdGF0ZSAiU3VwcG9ydCBmb3IgS2hhZGFz
+IFN5c3RlbSBjb250cm9sIE1pY3JvY29udHJvbGxlciIKPiA+PiArCWRlcGVuZHMgb24gSTJDCj4g
+Pj4gKwlkZXBlbmRzIG9uIE9GIHx8IENPTVBJTEVfVEVTVAo+ID4+ICsJc2VsZWN0IE1GRF9DT1JF
+Cj4gPj4gKwlzZWxlY3QgUkVHTUFQX0kyQwo+ID4+ICsJaGVscAo+ID4+ICsJICBTdXBwb3J0IGZv
+ciB0aGUgS2hhZGFzIFN5c3RlbSBjb250cm9sIE1pY3JvY29udHJvbGxlciBpbnRlcmZhY2UgcHJl
+c2VudAo+ID4+ICsJICBvbiB0aGVpciBWSU0gYW5kIEVkZ2UgYm9hcmRzLgo+ID4+ICsKPiA+PiAr
+CSAgVGhpcyBkcml2ZXIgcHJvdmlkZXMgY29tbW9uIHN1cHBvcnQgZm9yIGFjY2Vzc2luZyB0aGUg
+ZGV2aWNlLAo+ID4+ICsJICBhZGRpdGlvbmFsIGRyaXZlcnMgbXVzdCBiZSBlbmFibGVkIGluIG9y
+ZGVyIHRvIHVzZSB0aGUgZnVuY3Rpb25hbGl0eQo+ID4+ICsJICBvZiB0aGUgZGV2aWNlLgo+ID4g
+Cj4gPiBJdCB3b3VsZCBiZSBnb29kIHRvIGRlc2NyaWJlIHRoZSBkZXZpY2UgaGVyZS4KPiAKPiBP
+awoKSWYgeW91IGFncmVlIHdpdGggYWxsIHJldmlldyBjb21tZW50cywgdGhlcmUgcmVhbGx5IGlz
+IG5vIG5lZWQgdG8KcmVwbHkuICBJdCdzIGEgd2FzdGUgb2YgeW91ciB0aW1lIGFuZCBhbnlvbmUg
+ZWxzZSB3aG8gY2FyZXMgZW5vdWdoIHRvCnNlYXJjaCB0aHJvdWdoIGxvb2tpbmcgZm9yIHJlcGxp
+ZXMgKGFzIEkganVzdCBkaWQpLgoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5hcm8gU2Vy
+dmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUg
+Zm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
+ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
+ZWwK
