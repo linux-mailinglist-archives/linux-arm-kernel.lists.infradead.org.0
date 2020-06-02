@@ -2,64 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6972A1EB5CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 08:27:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A6701EB5E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 08:35:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MkK5mkug5GqXZorB97hXEQpA3/0h8uM+fVxrGMKJz0U=; b=CZ9Z1KsQJUdX/u
-	0z1x8cQWpvO4uRpzDCQixSx5cG8GH+J2k9CtIjWPYkKZw6if12oBUn+uxdI4bCGYCY9G0pEJVofA5
-	I5R13dEnuk+qEeU6RgwXAtcWYQVYN26KZsg2gHPn2LW0g47VsgSRxSXiRW/UokMXcZCCDsFVgQgPS
-	fjZ0Xwz81XjCsRtV67jgUiv7e4yE/y6s17uPKyeUeEAg2OqLRXWqN6AgPbnVYHt1p42jPfyWQdVZp
-	1c3vCD9a06AIfxLxD9usyAqg6U2QO1A4j/ImgdT5NQJqrFxArt/wvvSWniSCfCK3f2gv5aGVJwRmy
-	0/dNBTqC0nYGuSG/9eBg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=i2LUVgEZlKqn1y9lQ6xejIbIgi9lo2joRrYIE/YpIkY=; b=Npn
+	X7aksC19rui8jrLsWj2shd8rDwwXz6Bt+9jhn2V3Tllxs0jiK/GOhEHYiIfTmpBc0ocwNKEAWMXYk
+	9Woie66koZeVZI8tVjQDYH+VAMYEheSsqfp2/009syrEx5d4cqLrQSDyC1vKQCsqLKRJDw4/spV96
+	kyk0jicqV3VZXhhbl4SFmgZCUefinTK+8StkuhdlYqmF0T+RwDp9zHw3qA383Ku7eppokrk9Nc6jz
+	o5fdAGa0igdKK6GyaG7iPkH021YfeYdEUOPwFoCInk8X8DWP0/Foq9OGix6LGckDNI3qhWFOAFxDL
+	5rXKWlMPVbj2iyxf4YBHubrJGXpH3bQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg0Os-0002Fq-OE; Tue, 02 Jun 2020 06:27:50 +0000
-Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
+	id 1jg0WE-0008A0-Hi; Tue, 02 Jun 2020 06:35:26 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg0Ol-0002Ek-VZ
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 06:27:45 +0000
-Received: from dggemi405-hub.china.huawei.com (unknown [172.30.72.55])
- by Forcepoint Email with ESMTP id A38F213119F8EAEEE759;
- Tue,  2 Jun 2020 14:27:30 +0800 (CST)
-Received: from DGGEMI525-MBS.china.huawei.com ([169.254.6.10]) by
- dggemi405-hub.china.huawei.com ([10.3.17.143]) with mapi id 14.03.0487.000;
- Tue, 2 Jun 2020 14:26:20 +0800
-From: "Song Bao Hua (Barry Song)" <song.bao.hua@hisilicon.com>
-To: Greg KH <gregkh@linuxfoundation.org>
-Subject: RE: [PATCH] driver core: platform: expose numa_node to users in sysfs
-Thread-Topic: [PATCH] driver core: platform: expose numa_node to users in sysfs
-Thread-Index: AQHWOIpUwdvGGcJ/+UCxidEm0PhHvqjEM/4AgACJWmCAAAdA0P//jXEAgACHQ7A=
-Date: Tue, 2 Jun 2020 06:26:19 +0000
-Message-ID: <B926444035E5E2439431908E3842AFD24D90DD@DGGEMI525-MBS.china.huawei.com>
-References: <20200602030139.73012-1-song.bao.hua@hisilicon.com>
- <20200602042340.GA2130884@kroah.com>
- <B926444035E5E2439431908E3842AFD24D8F9E@DGGEMI525-MBS.china.huawei.com>
- <20200602061112.GC2256033@kroah.com>
-In-Reply-To: <20200602061112.GC2256033@kroah.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.126.200.200]
-MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+ id 1jg0W7-00088O-Jq
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 06:35:20 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F04631A264E;
+ Tue,  2 Jun 2020 08:35:15 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 34F061A2603;
+ Tue,  2 Jun 2020 08:35:12 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2EFED402DF;
+ Tue,  2 Jun 2020 14:35:07 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, festevam@gmail.com, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 1/3] ARM: dts: imx: Change sdhci node name on i.MX27/i.MX31
+ SoCs
+Date: Tue,  2 Jun 2020 14:24:50 +0800
+Message-Id: <1591079092-18625-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200601_232744_203310_83C08703 
-X-CRM114-Status: GOOD (  20.34  )
+X-CRM114-CacheID: sfid-20200601_233519_791806_3CB41F09 
+X-CRM114-Status: UNSURE (   8.31  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.255 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,144 +68,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "rafael@kernel.org" <rafael@kernel.org>, Linuxarm <linuxarm@huawei.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
- Robin Murphy <robin.murphy@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Change i.MX27/i.MX31 node name from sdhci to mmc to be compliant
+with yaml schema, it requires the nodename to be "mmc".
 
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ arch/arm/boot/dts/imx27.dtsi | 6 +++---
+ arch/arm/boot/dts/imx31.dtsi | 4 ++--
+ 2 files changed, 5 insertions(+), 5 deletions(-)
 
-> -----Original Message-----
-> From: Greg KH [mailto:gregkh@linuxfoundation.org]
-> Sent: Tuesday, June 2, 2020 6:11 PM
-> To: Song Bao Hua (Barry Song) <song.bao.hua@hisilicon.com>
-> Cc: rafael@kernel.org; iommu@lists.linux-foundation.org;
-> linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Linuxarm
-> <linuxarm@huawei.com>; Zengtao (B) <prime.zeng@hisilicon.com>; Robin
-> Murphy <robin.murphy@arm.com>
-> Subject: Re: [PATCH] driver core: platform: expose numa_node to users in sysfs
-> 
-> On Tue, Jun 02, 2020 at 05:09:57AM +0000, Song Bao Hua (Barry Song) wrote:
-> > > >
-> > > > Platform devices are NUMA?  That's crazy, and feels like a total
-> > > > abuse of platform devices and drivers that really should belong on a
-> "real"
-> > > > bus.
-> > >
-> > > I am not sure if it is an abuse of platform device. But smmu is a
-> > > platform device, drivers/iommu/arm-smmu-v3.c is a platform driver.
-> > > In a typical ARM server, there are maybe multiple SMMU devices which
-> > > can support IO virtual address and page tables for other devices on
-> > > PCI-like busses.
-> > > Each different SMMU device might be close to different NUMA node.
-> > > There is really a hardware topology.
-> > >
-> > > If you have multiple CPU packages in a NUMA server, some platform
-> > > devices might Belong to CPU0, some other might belong to CPU1.
-> >
-> > Those devices are populated by acpi_iort for an ARM server:
-> >
-> > drivers/acpi/arm64/iort.c:
-> >
-> > static const struct iort_dev_config iort_arm_smmu_v3_cfg __initconst = {
-> >         .name = "arm-smmu-v3",
-> >         .dev_dma_configure = arm_smmu_v3_dma_configure,
-> >         .dev_count_resources = arm_smmu_v3_count_resources,
-> >         .dev_init_resources = arm_smmu_v3_init_resources,
-> >         .dev_set_proximity = arm_smmu_v3_set_proximity, };
-> >
-> > void __init acpi_iort_init(void)
-> > {
-> >         acpi_status status;
-> >
-> >         status = acpi_get_table(ACPI_SIG_IORT, 0, &iort_table);
-> >         ...
-> >         iort_check_id_count_workaround(iort_table);
-> >         iort_init_platform_devices();
-> > }
-> >
-> > static void __init iort_init_platform_devices(void) {
-> >         ...
-> >
-> >         for (i = 0; i < iort->node_count; i++) {
-> >                 if (iort_node >= iort_end) {
-> >                         pr_err("iort node pointer overflows, bad
-> table\n");
-> >                         return;
-> >                 }
-> >
-> >                 iort_enable_acs(iort_node);
-> >
-> >                 ops = iort_get_dev_cfg(iort_node);
-> >                 if (ops) {
-> >                         fwnode = acpi_alloc_fwnode_static();
-> >                         if (!fwnode)
-> >                                 return;
-> >
-> >                         iort_set_fwnode(iort_node, fwnode);
-> >
-> >                         ret = iort_add_platform_device(iort_node, ops);
-> >                         if (ret) {
-> >                                 iort_delete_fwnode(iort_node);
-> >                                 acpi_free_fwnode_static(fwnode);
-> >                                 return;
-> >                         }
-> >                 }
-> >
-> >                 ...
-> >         }
-> > ...
-> > }
-> >
-> > NUMA node is got from ACPI:
-> >
-> > static int  __init arm_smmu_v3_set_proximity(struct device *dev,
-> >                                               struct acpi_iort_node
-> > *node) {
-> >         struct acpi_iort_smmu_v3 *smmu;
-> >
-> >         smmu = (struct acpi_iort_smmu_v3 *)node->node_data;
-> >         if (smmu->flags & ACPI_IORT_SMMU_V3_PXM_VALID) {
-> >                 int dev_node = acpi_map_pxm_to_node(smmu->pxm);
-> >
-> >                 ...
-> >
-> >                 set_dev_node(dev, dev_node);
-> >                 ...
-> >         }
-> >         return 0;
-> > }
-> >
-> > Barry
-> 
-> That's fine, but those are "real" devices, not platform devices, right?
-> 
-
-Most platform devices are "real" memory-mapped hardware devices. For an embedded system, almost all "simple-bus"
-devices are populated from device trees as platform devices. Only a part of platform devices are not "real" hardware.
-
-Smmu is a memory-mapped device. It is totally like most other platform devices populated in a 
-memory space mapped in cpu's local space. It uses ioremap to map registers, use readl/writel to read/write its
-space.
-
-> What platform device has this issue?  What one will show up this way with
-> the new patch?
-
-if platform device shouldn't be a real hardware, there is no platform device with a hardware topology.
-But platform devices are "real" hardware at most time. Smmu is a "real" device, but it is a platform device in Linux.
-
-> 
-> thanks,
-> 
-> greg k-h
-
--barry
+diff --git a/arch/arm/boot/dts/imx27.dtsi b/arch/arm/boot/dts/imx27.dtsi
+index ee04771..47de96b 100644
+--- a/arch/arm/boot/dts/imx27.dtsi
++++ b/arch/arm/boot/dts/imx27.dtsi
+@@ -265,7 +265,7 @@
+ 				status = "disabled";
+ 			};
+ 
+-			sdhci1: sdhci@10013000 {
++			sdhci1: mmc@10013000 {
+ 				compatible = "fsl,imx27-mmc", "fsl,imx21-mmc";
+ 				reg = <0x10013000 0x1000>;
+ 				interrupts = <11>;
+@@ -277,7 +277,7 @@
+ 				status = "disabled";
+ 			};
+ 
+-			sdhci2: sdhci@10014000 {
++			sdhci2: mmc@10014000 {
+ 				compatible = "fsl,imx27-mmc", "fsl,imx21-mmc";
+ 				reg = <0x10014000 0x1000>;
+ 				interrupts = <10>;
+@@ -431,7 +431,7 @@
+ 				status = "disabled";
+ 			};
+ 
+-			sdhci3: sdhci@1001e000 {
++			sdhci3: mmc@1001e000 {
+ 				compatible = "fsl,imx27-mmc", "fsl,imx21-mmc";
+ 				reg = <0x1001e000 0x1000>;
+ 				interrupts = <9>;
+diff --git a/arch/arm/boot/dts/imx31.dtsi b/arch/arm/boot/dts/imx31.dtsi
+index 4f3d7ab..eedf2d7 100644
+--- a/arch/arm/boot/dts/imx31.dtsi
++++ b/arch/arm/boot/dts/imx31.dtsi
+@@ -173,7 +173,7 @@
+ 			reg = <0x50000000 0x100000>;
+ 			ranges;
+ 
+-			sdhci1: sdhci@50004000 {
++			sdhci1: mmc@50004000 {
+ 				compatible = "fsl,imx31-mmc";
+ 				reg = <0x50004000 0x4000>;
+ 				interrupts = <9>;
+@@ -184,7 +184,7 @@
+ 				status = "disabled";
+ 			};
+ 
+-			sdhci2: sdhci@50008000 {
++			sdhci2: mmc@50008000 {
+ 				compatible = "fsl,imx31-mmc";
+ 				reg = <0x50008000 0x4000>;
+ 				interrupts = <8>;
+-- 
+2.7.4
 
 
 _______________________________________________
