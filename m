@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7BD91EB978
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 12:21:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E775C1EB990
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 12:27:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2pJPEHQgs1eoJO/SVSuO9KCGIQxuGTs+qBWRvKO3ucc=; b=CSXB8jXxwp2lVtGIWMo015OVh
-	YZ71RRoJN3y7wOyOIFq380K55dSTYiEcGL4ZY8JGR5Gq3ArAT4+KFSRhhY92klRhZFbrse2SekkfS
-	mrMT9A7UcietzpKmb5hpL9li5uQ46JYeSgnodbL/jliWc6wYg3rDadAWqRjIYwlArOOBgXeR9Mv6B
-	3sqVWQKAwq3fwg54vTqHC9rsZqukognogvxWn1aJjRH/5rp9yKgUglijup7Mu/vcHMaEGo7lzIuWt
-	HGxxkydja/yDzIOcqmJgfUkd+cffINbdS/CuwfeqXy+zGHdVa5Z02IHwlzo2kkakxiNOQhoLLYkMu
-	LsjsTpC5A==;
+	 bh=w8FMzjdzADfNqKk6V/Rj9Oc8J0A88JpgaQDkWQaIvlY=; b=Y2f/0NUqpsCASSl8T1GU6Icj8
+	wLm72AYiObCOH+7wcZXQdmTegRpThEo0CxDlTtPSKR9SolUneAe/Y8oElLjk7PkmvPN8UJO3KFcv6
+	aTm4jzbxXLACQVVgjoMCJiq15yO9CqxG8fGd6zOXm8H/nHdHDWyn6W7wYfUJJVhYBDvRBMLcZRh05
+	EXNaV/lKdrlmCl1rjH7HZ+nsMibIvsP0RcK6Axg0PpjfwTrlL87ST+OpseSgHFqV0pIKxXFHL6oiA
+	mt1AWWVGOvhb5uqtYSVp/N3oWEBUMop+sqBWcSCy0GKktYG2juMBVXC/0Fs+Ebh3nqHLXyKNARMcH
+	vmZVszRfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg42L-0008Pn-O8; Tue, 02 Jun 2020 10:20:49 +0000
+	id 1jg48P-0003Ls-6c; Tue, 02 Jun 2020 10:27:05 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg42E-0008PA-Uu
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 10:20:44 +0000
+ id 1jg48I-0003LQ-LX
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 10:27:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AB56431B;
- Tue,  2 Jun 2020 03:20:39 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AD66031B;
+ Tue,  2 Jun 2020 03:26:57 -0700 (PDT)
 Received: from [10.37.12.77] (unknown [10.37.12.77])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AC1AA3F52E;
- Tue,  2 Jun 2020 03:20:34 -0700 (PDT)
-Subject: Re: [PATCH v4 2/5] coresight: Add default sink selection to CoreSight
- base
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7BD273F52E;
+ Tue,  2 Jun 2020 03:26:53 -0700 (PDT)
+Subject: Re: [PATCH v4 3/5] coresight: tmc: Update sink types for default
+ selection.
 To: mike.leach@linaro.org, linux-arm-kernel@lists.infradead.org,
  coresight@lists.linaro.org, mathieu.poirier@linaro.org
 References: <20200526104642.9526-1-mike.leach@linaro.org>
- <20200526104642.9526-3-mike.leach@linaro.org>
+ <20200526104642.9526-4-mike.leach@linaro.org>
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <350f19a1-bdba-c464-9fd3-68c77daea4b0@arm.com>
-Date: Tue, 2 Jun 2020 11:25:29 +0100
+Message-ID: <5cb7d10b-5b5c-8c3f-de39-8a0ac087dadd@arm.com>
+Date: Tue, 2 Jun 2020 11:31:48 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
  Thunderbird/52.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200526104642.9526-3-mike.leach@linaro.org>
+In-Reply-To: <20200526104642.9526-4-mike.leach@linaro.org>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_032043_039205_62524475 
-X-CRM114-Status: GOOD (  21.84  )
+X-CRM114-CacheID: sfid-20200602_032658_745682_A0B1EF25 
+X-CRM114-Status: GOOD (  16.13  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,59 +73,41 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 05/26/2020 11:46 AM, Mike Leach wrote:
-> Adds a method to select a suitable sink connected to a given source.
+> An additional sink subtype is added to differentiate ETB/ETF buffer
+> sinks and ETR type system memory sinks.
 > 
-> In cases where no sink is defined, the coresight_find_default_sink
-> routine can search from a given source, through the child connections
-> until a suitable sink is found.
-> 
-> The suitability is defined in by the sink coresight_dev_subtype on the
-> CoreSight device, and the distance from the source by counting
-> connections.
-> 
-> Higher value subtype is preferred - where these are equal, shorter
-> distance from source is used as a tie-break.
-> 
-> This allows for default sink to be discovered were none is specified
-> (e.g. perf command line)
+> This allows the prioritised selection of default sinks.
 > 
 > Signed-off-by: Mike Leach <mike.leach@linaro.org>
 
-Feel free to add:
-Suggested-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-> +/**
-> + * coresight_find_default_sink: Find a sink suitable for use as a
-> + * default sink.
-> + *
-> + * @csdev: starting source to find a connected sink.
-> + *
-> + * Walks connections graph looking for a suitable sink to enable for the
-> + * supplied source. Uses CoreSight device subtypes and distance from source
-> + * to select the best sink.
-> + *
-> + * If a sink is found, then the default sink for this device is set and
-> + * will be automatically used in future.
-> + *
-> + * Used in cases where the CoreSight user (perf / sysfs) has not selected a
-> + * sink.
-> + */
-> +struct coresight_device *
-> +coresight_find_default_sink(struct coresight_device *csdev)
-> +{
-> +	int depth = 0;
-> +
-> +	/* look for a default sink if we have not found for this device */
-> +	if (!csdev->def_sink)
-> +		csdev->def_sink = coresight_find_sink(csdev, &depth);
-
-Could we add a helper to clear the cached "def-sink" from all the
-"sources", when the sink is going away ? You may be able to do this via
-coresight_remove_match()
-
-Rest looks good to me.
-Suzuki
-
+> ---
+>   drivers/hwtracing/coresight/coresight-tmc.c | 3 ++-
+>   1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
+> index 39fba1d16e6e..0d2eb7e0e1bb 100644
+> --- a/drivers/hwtracing/coresight/coresight-tmc.c
+> +++ b/drivers/hwtracing/coresight/coresight-tmc.c
+> @@ -484,7 +484,7 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
+>   		break;
+>   	case TMC_CONFIG_TYPE_ETR:
+>   		desc.type = CORESIGHT_DEV_TYPE_SINK;
+> -		desc.subtype.sink_subtype = CORESIGHT_DEV_SUBTYPE_SINK_BUFFER;
+> +		desc.subtype.sink_subtype = CORESIGHT_DEV_SUBTYPE_SINK_SYSMEM;
+>   		desc.ops = &tmc_etr_cs_ops;
+>   		ret = tmc_etr_setup_caps(dev, devid,
+>   					 coresight_get_uci_data(id));
+> @@ -496,6 +496,7 @@ static int tmc_probe(struct amba_device *adev, const struct amba_id *id)
+>   		break;
+>   	case TMC_CONFIG_TYPE_ETF:
+>   		desc.type = CORESIGHT_DEV_TYPE_LINKSINK;
+> +		desc.subtype.sink_subtype = CORESIGHT_DEV_SUBTYPE_SINK_BUFFER;
+>   		desc.subtype.link_subtype = CORESIGHT_DEV_SUBTYPE_LINK_FIFO;
+>   		desc.ops = &tmc_etf_cs_ops;
+>   		dev_list = &etf_devs;
+> 
 
 
 _______________________________________________
