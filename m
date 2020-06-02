@@ -2,85 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C55EF1EBADA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 13:54:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70F691EBB32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 14:06:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0BV64puJDfirbOxvk4lC/7yvuVukF1oMT808Pm9YDQE=; b=aPj527rG6PqGfH
-	ByK4pVhBNrP0TSyMmYyeFd1u6QifZuagRstVusJ5tXb5kaP+F0G1ZMHOzsQw3ZbOaCD2BOEoNov5s
-	AvNzeGFn7VQ1pPvsOHIkRMRdHMEU1MLeAFJd1cITNi4fheW0NrwBRvoTJbewDWQKMgpaMhdCVe7Dq
-	gVXaTkCv9HmLERM4cK+4F3hCWuA3+eiQmQFBn3VPqqfJsYnKqeUepmN1TLDuWrzUyDDJAP2mBo5JM
-	9cCHYUIePY1UoSVeuRhPe53py7vHtmfFNcU1hzx/gbUo/fcB0hkCEtsjVblqqWs9baiuTEy8H3QjR
-	TDrYKSt02j6u87o4hh7A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v3mg1bSkJW8WM4xpEbDT/IV5IzgzmoOz2NJBpDbqv3U=; b=om88h6Dlt/ILiz
+	DZYxMQDZyMSZGMDh9flg4ojjzwihsUF97aQq5/1/v2/MVzUY/NfNG0ORud5M3ILAqyuC/8Xr4sY9d
+	VGiN/LNnPN4j6fZQLq+ZemF5YkPX0V/Tnf6ndVFGSNW3vqbguzXiajJS6963s5V+gUIkrpYWPgenp
+	eU2JbXoeo9Sa6ijDwVJxoPnVsIrx9I++8SvNwiNMSz1VpvhWxbLYHkOSm8uSNHFQrnwUgNXNm8PU8
+	+YzhMfNoJ7++tbjqv2ppToIX7jwvKacbJ+mKyR/2DCPcSyddsXZ05ojSPV5MoxXgkb5EfZy2iMdro
+	KpVIJZGSlj/wrTOGT6Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg5Uv-0006a9-QN; Tue, 02 Jun 2020 11:54:25 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jg5gZ-00077X-PB; Tue, 02 Jun 2020 12:06:27 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg5Un-0006XU-29; Tue, 02 Jun 2020 11:54:18 +0000
-X-UUID: 1db94df2a1fe476085617d00c6754847-20200602
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=L8W+8mcW7tehoLHNruKxathHioAmFWgzPfCM36oBzVI=; 
- b=k9mn8oVKytEFmfU9V9wfE7bOeHl582gKVvTUdOLHqqCH7lSp7cflofcwSgaHQ0ZeaoDugr6BF/FB6eHeRMa4ma2CVUniQg21aktdRPhztGUzRTYCM7UqUwSZOh1PjvKZdklXygr7vZ8rdF/qyB5qTjsL4yEYpKiAmqrxOacpFw0=;
-X-UUID: 1db94df2a1fe476085617d00c6754847-20200602
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2097894321; Tue, 02 Jun 2020 03:54:15 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 2 Jun 2020 04:54:09 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 2 Jun 2020 19:54:01 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Tue, 2 Jun 2020 19:54:01 +0800
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Jaroslav Kysela <perex@perex.cz>, Takashi Iwai <tiwai@suse.com>, "Matthias
- Brugger" <matthias.bgg@gmail.com>, Alexander Tsoy <alexander@tsoy.me>,
- "Johan Hovold" <johan@kernel.org>, Hui Wang <hui.wang@canonical.com>,
- =?UTF-8?q?Szabolcs=20Sz=C5=91ke?= <szszoke.code@gmail.com>, Macpaul Lin
- <macpaul.lin@mediatek.com>, <alsa-devel@alsa-project.org>,
- <linux-usb@vger.kernel.org>
-Subject: [PATCH] sound: usb: pcm: fix incorrect power state when playing sound
- after PM_AUTO suspend
-Date: Tue, 2 Jun 2020 19:53:41 +0800
-Message-ID: <1591098821-17910-1-git-send-email-macpaul.lin@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org>
-References: <linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org>
+ id 1jg5gT-00076W-9j
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 12:06:23 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 81E03B2E8FAAB54CD06E;
+ Tue,  2 Jun 2020 20:06:15 +0800 (CST)
+Received: from [127.0.0.1] (10.173.220.25) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.487.0; Tue, 2 Jun 2020
+ 20:06:09 +0800
+Subject: Re: [RFC PATCH v4 2/2] arm64: tlb: Use the TLBI RANGE feature in arm64
+To: <catalin.marinas@arm.com>, <will@kernel.org>, <suzuki.poulose@arm.com>,
+ <maz@kernel.org>, <steven.price@arm.com>, <guohanjun@huawei.com>,
+ <olof@lixom.net>
+References: <20200601144713.2222-1-yezhenyu2@huawei.com>
+ <20200601144713.2222-3-yezhenyu2@huawei.com>
+From: Zhenyu Ye <yezhenyu2@huawei.com>
+Message-ID: <7f15f835-cf73-be5b-8bb0-cabb6e4eeed2@huawei.com>
+Date: Tue, 2 Jun 2020 20:06:08 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20200601144713.2222-3-yezhenyu2@huawei.com>
+X-Originating-IP: [10.173.220.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_045417_118683_B4DDC215 
-X-CRM114-Status: GOOD (  12.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200602_050621_517060_E50333B7 
+X-CRM114-Status: GOOD (  10.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.191 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,65 +70,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Macpaul Lin <macpaul.lin@gmail.com>,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>
+Cc: linux-arch@vger.kernel.org, linux-kernel@vger.kernel.org,
+ xiexiangyou@huawei.com, zhangshaokun@hisilicon.com, linux-mm@kvack.org,
+ arm@kernel.org, prime.zeng@hisilicon.com, kuhn.chenqun@huawei.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch fix incorrect power state changed by usb_audio_suspend()
-when CONFIG_PM is enabled.
+Hi all,
 
-After receiving suspend PM message with auto flag, usb_audio_suspend()
-change card's power state to SNDRV_CTL_POWER_D3hot. Only when the other
-resume PM message with auto flag can change power state to
-SNDRV_CTL_POWER_D0 in __usb_audio_resume().
+Some optimizations to the codes:
 
-However, when system is not under auto suspend, resume PM message with
-auto flag might not be able to receive on time which cause the power
-state was incorrect. At this time, if a player starts to play sound,
-will cause snd_usb_pcm_open() to access the card and setup_hw_info() will
-resume the card.
+On 2020/6/1 22:47, Zhenyu Ye wrote:
+> -	start = __TLBI_VADDR(start, asid);
+> -	end = __TLBI_VADDR(end, asid);
+> +	/*
+> +	 * The minimum size of TLB RANGE is 2 pages;
+> +	 * Use normal TLB instruction to handle odd pages.
+> +	 * If the stride != PAGE_SIZE, this will never happen.
+> +	 */
+> +	if (range_pages % 2 == 1) {
+> +		addr = __TLBI_VADDR(start, asid);
+> +		__tlbi_last_level(vale1is, vae1is, addr, last_level);
+> +		start += 1 << PAGE_SHIFT;
+> +		range_pages >>= 1;
+> +	}
+>  
 
-But even the card is back to work and all function normal, the power
-state is still in SNDRV_CTL_POWER_D3hot. Which cause the infinite loop
-happened in snd_power_wait() to check the power state. Thus the
-successive setting ioctl cannot be passed to card.
+We flush a single page here, and below loop does the same thing
+if cpu not support TLB RANGE feature.  So may we use a goto statement
+to simplify the code.
 
-Hence we suggest to change power state to SNDRV_CTL_POWER_D0 when card
-has been resumed successfully.
+> +	while (range_pages > 0) {
+> +		if (cpus_have_const_cap(ARM64_HAS_TLBI_RANGE) &&
+> +		    stride == PAGE_SIZE) {
+> +			num = (range_pages & TLB_RANGE_MASK) - 1;
+> +			if (num >= 0) {
+> +				addr = __TLBI_VADDR_RANGE(start, asid, scale,
+> +							  num, 0);
+> +				__tlbi_last_level(rvale1is, rvae1is, addr,
+> +						  last_level);
+> +				start += __TLBI_RANGE_SIZES(num, scale);
+> +			}
+> +			scale++;
+> +			range_pages >>= TLB_RANGE_MASK_SHIFT;
+> +			continue;
+>  		}
+> +
+> +		addr = __TLBI_VADDR(start, asid);
+> +		__tlbi_last_level(vale1is, vae1is, addr, last_level);
+> +		start += stride;
+> +		range_pages -= stride >> 12;
+>  	}
+>  	dsb(ish);
+>  }
+> 
 
-Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
----
- sound/usb/pcm.c |   11 +++++++++++
- 1 file changed, 11 insertions(+)
+Just like:
 
-diff --git a/sound/usb/pcm.c b/sound/usb/pcm.c
-index a4e4064..d667ecb 100644
---- a/sound/usb/pcm.c
-+++ b/sound/usb/pcm.c
-@@ -1322,6 +1322,17 @@ static int setup_hw_info(struct snd_pcm_runtime *runtime, struct snd_usb_substre
- 	if (err < 0)
- 		return err;
- 
-+	/* fix incorrect power state when resuming by open and later ioctls */
-+	if (IS_ENABLED(CONFIG_PM) &&
-+		snd_power_get_state(subs->stream->chip->card)
-+			== SNDRV_CTL_POWER_D3hot) {
-+		/* set these variables for power state correction */
-+		subs->stream->chip->autosuspended = 0;
-+		subs->stream->chip->num_suspended_intf = 1;
-+		dev_info(&subs->dev->dev,
-+			"change power state from D3hot to D0\n");
-+	}
-+
- 	return snd_usb_autoresume(subs->stream->chip);
- }
- 
--- 
-1.7.9.5
+--8<---
+	if (range_pages %2 == 1)
+		goto flush_single_tlb;
+
+	while (range_pages > 0) {
+		if (cpus_have_const_cap(ARM64_HAS_TLBI_RANGE) &&
+		    stride == PAGE_SIZE) {
+			num = ((range_pages >> 1) & TLB_RANGE_MASK) - 1;
+			if (num >= 0) {
+				addr = __TLBI_VADDR_RANGE(start, asid, scale,
+							  num, 0);
+				__tlbi_last_level(rvale1is, rvae1is, addr,
+						  last_level);
+				start += __TLBI_RANGE_SIZES(num, scale);
+			}
+			scale++;
+			range_pages >>= TLB_RANGE_MASK_SHIFT;
+			continue;
+		}
+
+flush_single_tlb:
+		addr = __TLBI_VADDR(start, asid);
+		__tlbi_last_level(vale1is, vae1is, addr, last_level);
+		start += stride;
+		range_pages -= stride >> PAGE_SHIFT;
+	}
+--8<---
+
+
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
