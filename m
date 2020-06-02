@@ -2,86 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 384321EC2BA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 21:29:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4529C1EC2C0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 21:31:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dIoTeOyIfy/m7M/CbREyZ0izPEH9cE2rchjmaoNYekE=; b=V+7TkXKZcEByGh
-	ItnAfr6VAo1X+iLwSRGxuJNL4hzxg46XcBPBSGNSFm55jaJgVMFl9brH7XCA+JPiwgs/csomB55dF
-	uw/u2KpW0PskFZt5uhaOXY+tPfuyUDNURfK+FNXekcvyTQ34dwaZ/okPSfNjo4UC5OUUq98X00g2l
-	48mlKhJD9zJ2rsVKCfaJYwHUUlGz9M3gvp3Q5UT9S219DmTVSsLjgY8b7/NxnPBvnRK9JHKk0zJTQ
-	NeC4Y43QxAQizwaVS4gc23YkaLaklc7/9RAoULac1/KfdTY35XAzUe/sjRICGaP6OGMmPSaejQJmo
-	gib0LCNSAAcGNTCVERFw==;
+	List-Owner; bh=Tim5UJhd31wCl49qLlIDSwE8JavOJpC8PF/jUZd768U=; b=FiXmq4z1e/QkOn
+	1/sez+GIr6ClXXt/3k/y/C6N54rZmAcTq19+/ZKoNrC1aBNN7SYPc0/g4Kg2WXCHVFfJPyBJMNJOE
+	fL4WECmq4UoMwGog7ZMyBcIiS/RPnh9+VJzlo4SI0T+LoEUtlABETn3ooOVuLFIhwqTa8yocZrlHw
+	bwGJXalD1vMGGNItYL1jwmE8QuKcR8I0als3bFddrv0z/LPG7hYcXcIzXXJDNq5Wrc2F06XbMbmfn
+	WAEcCU1LWpez4NxiPkjfzK0/i+kBw2xTKDJAVUZ5HdphhcomAYYkFMPkTwBXakPF11T2PlLyvHm5X
+	FH2LIGnVfFTLKFhRGPCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgCbP-0002kH-NT; Tue, 02 Jun 2020 19:29:35 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jgCd0-0005SW-70; Tue, 02 Jun 2020 19:31:14 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgCbJ-0002jG-5i
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 19:29:31 +0000
-Received: by mail-pg1-x543.google.com with SMTP id w20so5604533pga.6
+ id 1jgCcu-0005S4-4W
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 19:31:09 +0000
+Received: by mail-pg1-x542.google.com with SMTP id o8so174394pgm.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jun 2020 12:29:23 -0700 (PDT)
+ Tue, 02 Jun 2020 12:31:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=arista.com; s=googlenew;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=jt9wTvbBB9l8BA385ydswer9G/ASNFMgQz2sVTAlGwY=;
- b=BGjm8Ah3Pr7hHscdoJXTL21nGZPG4PnLKU6jA9IWJJGiA3WnGcbIzvTS7bxWuFIUQw
- DPDRWnq2PLJmKzmq5Uf8cCKL7sHZKR5bCnU/j65E0birBHYZWTXje41hiOgnXH/qTjow
- ijI6FUsie6nRXhrLqyHtL+qqUQrZ4bpjgliRZtslnm1Vt4k9hkLunsOH+efJeWr01hLj
- dz/uqXkmODoVaCaF2mdefg2ay3SvWLgY93xskoihdt1S3hQ3siqSAumw2cYrhovzu4SV
- u+OwNhe5YYDzQaxC9jimnrgVzhr3cV5o4cYRthNKu3/euNBxL6MW2ywxy4cd4kbCMYMF
- V4fA==
+ bh=6w+XkUkU5h5LP0oH8IvcLuw6U3W/97W5DvOiXSMn/mA=;
+ b=WgkU/r3jMF9n33U8WloHJaM9zXFQJe2XsKzRsi/9mRzHgTDM8IZ97uCi0DdfxuBerD
+ 26V8O/NVxAOOvlGJyZO9cfboF+5RY/Lp2TTyeRE9QzjgRLbAvonU6TpkcjihKBsoOVpF
+ QahWqbXJnNbkfidvMqq9c7UQcS2luBejKZl+olP8pzlszbI5SGw/956jai2htH3Lh9Bc
+ 2tbSkAvw14Q2ds0/JMN7GjEs7y59z2iCOULnoF2g77jIleJ84sjve+uNP/KO8FVQmuN5
+ K95bNpISSjfOJFkStw24uui2/zSOmjMaiPW4GT0qMVAiV78fu1CWTEb9n5Qtn6vCpox3
+ x5MQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=jt9wTvbBB9l8BA385ydswer9G/ASNFMgQz2sVTAlGwY=;
- b=aXPiAjI1pW1i3kHYl86fJh+qwmzcITXbIvQiNjaJ0/l8ZXMiSgtuR6CKyr3XH1YGfb
- AEgmw+7z+PqQqUtIVXJw/Kf3bOR4fnI2s628Ka/Ch6c0/G1XtL6XOy71DiKBIlYdyEgj
- Zd6EjhoJyFQMX1HqmT6btuxO9wNXVcYcEpeHLvEFA5g3EUsCrCHDYgbBOb8hAtE7FyyE
- W6ZuKcLTvgvqRnMVN/HOChmijt0ZcDRKaba9R6ZBjXLZ0GyDuLrmZYsZu8BM/273uqe7
- Uw4U9XM0vHBQZ+gDAjhbl2dxu0rGGYy7OKvM30qu3TcBT6YMPeW+ExtDNt5AEtmesbZJ
- b2oQ==
-X-Gm-Message-State: AOAM530AzSvoSPBcNAL+/XdjSZ8RzZ8V4P3B11u0HOIy4h8YT5KXDx8q
- tyGIdcDvLp9YoLq+VMYDIhtx4LoQhwAHGw==
-X-Google-Smtp-Source: ABdhPJzONNh6ti+mI0rlAqkmgvqRBA1IcAxfDD8TOiWcba6fmr7wI9/I20P9retKbEDJLLAu40knuQ==
-X-Received: by 2002:a63:565b:: with SMTP id g27mr24394556pgm.166.1591126163012; 
- Tue, 02 Jun 2020 12:29:23 -0700 (PDT)
+ bh=6w+XkUkU5h5LP0oH8IvcLuw6U3W/97W5DvOiXSMn/mA=;
+ b=jsCTFOfSFfXzR16AdpqwL5+VdRYUkDpgv5B1Al5vuYLP58k20TKnBzyOEfByfgyJb+
+ aaoe4nibFaFtVKuRjM9rMuF7bxRycvOJ2RPSaDmyFUZxWOqQ193iCFoHBBRJeWfEOhmk
+ /Z6c7v5TAedejCdc5Zg1MUq0ljfpG5UpD3qQ1677vvJbcIGq3VsDwQ+hVG2eaxJnr9fd
+ VjOb/Aqz6lBSwlzQLrz7gzcBKjYis7paYzSJIk7H64k88/8rWzlRvYnJxMQT6QzkmjHl
+ FnZ3md0yRiLYmILTwS28XFwRALnyzw2mHJFcE2FQ/vSqxYhZxgZtCkOjLVm3fHZibTHA
+ 0NOA==
+X-Gm-Message-State: AOAM5334Dv0UwhC19VFGWUyoPiRt43HIvEIaRB9X6TGE4hTU+ltNZOVL
+ aWIozztbWl5T7p5cKGiaK72fow==
+X-Google-Smtp-Source: ABdhPJyv+MI97viRmZ6Mwyl2wRJj7hDq6oxKKSr+JdzibxHzmCC73fMp5Fx+ItV+U3VgzYvK9x8iAw==
+X-Received: by 2002:a17:90a:d809:: with SMTP id
+ a9mr823280pjv.212.1591126267247; 
+ Tue, 02 Jun 2020 12:31:07 -0700 (PDT)
 Received: from ?IPv6:2a02:8084:e84:2480:228:f8ff:fe6f:83a8?
  ([2a02:8084:e84:2480:228:f8ff:fe6f:83a8])
- by smtp.gmail.com with ESMTPSA id s197sm3267932pfc.188.2020.06.02.12.29.19
+ by smtp.gmail.com with ESMTPSA id e12sm3086572pfj.137.2020.06.02.12.31.04
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 02 Jun 2020 12:29:21 -0700 (PDT)
-Subject: Re: [PATCH 3/6] arm64/vdso: Add time namespace page
+ Tue, 02 Jun 2020 12:31:06 -0700 (PDT)
+Subject: Re: [PATCH RESEND v3 0/6] arm64: add the time namespace support
 To: Andrei Vagin <avagin@gmail.com>, linux-arm-kernel@lists.infradead.org,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
 References: <20200602180259.76361-1-avagin@gmail.com>
- <20200602180259.76361-4-avagin@gmail.com>
 From: Dmitry Safonov <dima@arista.com>
-Message-ID: <fd789c85-f08b-3397-d463-501f7ee5c974@arista.com>
-Date: Tue, 2 Jun 2020 20:29:17 +0100
+Message-ID: <3906fa01-1b3c-76f7-5587-b1f5cf6b6066@arista.com>
+Date: Tue, 2 Jun 2020 20:31:02 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200602180259.76361-4-avagin@gmail.com>
+In-Reply-To: <20200602180259.76361-1-avagin@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_122929_212768_FA677B3A 
-X-CRM114-Status: GOOD (  12.47  )
+X-CRM114-CacheID: sfid-20200602_123108_178177_9FF88D7E 
+X-CRM114-Status: GOOD (  22.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -114,33 +114,61 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Andrei,
 
 On 6/2/20 7:02 PM, Andrei Vagin wrote:
-[..]
-> --- a/arch/arm64/include/asm/vdso.h
-> +++ b/arch/arm64/include/asm/vdso.h
-> @@ -12,6 +12,12 @@
->   */
->  #define VDSO_LBASE	0x0
->  
-> +#ifdef CONFIG_TIME_NS
-> +#define __VVAR_PAGES    2
-> +#else
-> +#define __VVAR_PAGES    1
-> +#endif
-> +
->  #ifndef __ASSEMBLY__
+> Allocate the time namespace page among VVAR pages and add the logic
+> to handle faults on VVAR properly.
+> 
+> If a task belongs to a time namespace then the VVAR page which contains
+> the system wide VDSO data is replaced with a namespace specific page
+> which has the same layout as the VVAR page. That page has vdso_data->seq
+> set to 1 to enforce the slow path and vdso_data->clock_mode set to
+> VCLOCK_TIMENS to enforce the time namespace handling path.
+> 
+> The extra check in the case that vdso_data->seq is odd, e.g. a concurrent
+> update of the VDSO data is in progress, is not really affecting regular
+> tasks which are not part of a time namespace as the task is spin waiting
+> for the update to finish and vdso_data->seq to become even again.
+> 
+> If a time namespace task hits that code path, it invokes the corresponding
+> time getter function which retrieves the real VVAR page, reads host time
+> and then adds the offset for the requested clock which is stored in the
+> special VVAR page.
+> 
+> v2: Code cleanups suggested by Vincenzo.
+> v3: add a comment in __arch_get_timens_vdso_data.
+> 
+> Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Dmitry Safonov <dima@arista.com>
+> 
+> v3 on github (if someone prefers `git pull` to `git am`):
+> https://github.com/avagin/linux-task-diag/tree/arm64/timens-v3
 
-Not an issue as-is, but:
+Thanks for adding arm64 support, I've looked through patches and don't
+see any major problems.
 
-on x86 vdso+vvar is always the same size with/without CONFIG_TIME_NAMESPACE.
+Reviewed-by: Dmitry Safonov <dima@arista.com>
 
-Timens page isn't allocated on !CONFIG_TIME_NAMESPACE, but vma is the
-same size. Which simplifies criu/vdso migration between different kernel
-configs.
-
-Not any critical, but just to note..
+> 
+> Andrei Vagin (6):
+>   arm64/vdso: use the fault callback to map vvar pages
+>   arm64/vdso: Zap vvar pages when switching to a time namespace
+>   arm64/vdso: Add time napespace page
+>   arm64/vdso: Handle faults on timens page
+>   arm64/vdso: Restrict splitting VVAR VMA
+>   arm64: enable time namespace support
+> 
+>  arch/arm64/Kconfig                            |   1 +
+>  .../include/asm/vdso/compat_gettimeofday.h    |  11 ++
+>  arch/arm64/include/asm/vdso/gettimeofday.h    |   8 ++
+>  arch/arm64/kernel/vdso.c                      | 134 ++++++++++++++++--
+>  arch/arm64/kernel/vdso/vdso.lds.S             |   3 +-
+>  arch/arm64/kernel/vdso32/vdso.lds.S           |   3 +-
+>  include/vdso/datapage.h                       |   1 +
+>  7 files changed, 147 insertions(+), 14 deletions(-)
+> 
 
 Thanks,
-          Dima
+          Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
