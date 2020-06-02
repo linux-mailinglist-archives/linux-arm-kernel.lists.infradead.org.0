@@ -2,95 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32F671EC16E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 19:53:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 719971EC188
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 20:03:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lcd6doLkBgsJm8nqCcbyYdKaQgsO4402T3WwjVN9BQQ=; b=mv2PW1BnQ3FFG7
-	XsQoTTi/ddMtB4WLSR3+A7aRaiZWFstEnNtgBQ9r9bBdNiKrGx183Kme23q8YlP3SyGO6eS79Dusw
-	AjfDRNyuiAb56EOq9hQB4tTxP56ziv/J3fazYXGA/M+JTWpwfFkxZIDlL5w/KH12d5/AHR/+DR5fm
-	3SfkU2ehcJk+i9u+qodqUkLMoDj9JBKhgSnSkXhJmw1zX1J9paE5/eq8lCKMvJOjJfR4Paf1ufMga
-	GFMcK3nuMxrkjmxoxXFw50NZ35u0jl53aOUe3u7KZr1nha/8lJCy7rZ1Hdsw4TVYJ1akWPTYCnVic
-	msOqGfMYN+4qmwyCMG9w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=6lgprSietX32cwsbqU9dAS89Mjbu6OucchYDeku2RkI=; b=ZUE
+	zRKGzgIQNPYIWBdjMdnxRp3D39J/DmcA8Fv5HSNWgILa2riZpbGAdMUe/1KxGqCq3JsMocEyXvy9s
+	bWAz0On+lLqjB1v+xTezyEHWSwkdE1Z7VfvFJO7YDr0KCTvHDLKb7AANo7TiLrymG1XYcOhmKnAXc
+	46Oa1h9l4IpuICCzik3Qi0Df2dRB3eYHik5D+Gj5RAGLxKGaoVjYggq35pwkRKWkmyOqcBMAl5R3o
+	+eLPVGPH2EzQEYZQA5IUOwJd3PjUk/0UZwoBCpEeRohDTtueAnVVtRZQgnXur/VAedeRj6oIK057L
+	GsQDIHrNRlXbVvob+VfVnGSqE8/p77g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgB5s-0004S1-SG; Tue, 02 Jun 2020 17:52:56 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jgBFq-0002hD-Gf; Tue, 02 Jun 2020 18:03:14 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgB5i-0004Pm-Sx
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 17:52:48 +0000
-Received: by mail-pl1-x644.google.com with SMTP id y18so1666349plr.4
+ id 1jgBFi-0002fc-66
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 18:03:07 +0000
+Received: by mail-pf1-x442.google.com with SMTP id v2so5425115pfv.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jun 2020 10:52:46 -0700 (PDT)
+ Tue, 02 Jun 2020 11:03:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to;
- bh=DsDlTAN5nXx2eXeaYpyOizF6rp89+ZyQuZEoODyhpKQ=;
- b=lOt5bDJGsfK9IyNxz3BNa4rLKdk08R28EoDJrT2TUNMLbDyn8CzBBmFfkFe6atRsGn
- NQUzHizY/xR0tIwR/Fv6cLBvYq4vV4+Q1oNNa578UCAQkfJUbXwU0XvgRE6TIZ4K0ZVL
- +IilnKMWHrYZbepwRYHoTr0hmJk9tLHnDUs3xNl11dsFboIB3dq7c9tD088BsqY9MbHi
- +SPZDl667YmxpVexTZNqnhx5Pgecw0OPK+asacMRjWAHfk4LuN6hUAN5lYYRVMImMTkJ
- rkLXt/cXLA5dp+fg8J/cStQdFtFGauWWiBHCKiftRfNn+KL8xQifFcVN5QzSVxpMF7pD
- M3Aw==
+ h=from:to:cc:subject:date:message-id;
+ bh=LqqP+fCBEpc/gpW2bM0qsawU9eAMfAXXBH14Fdira24=;
+ b=bBKF7aNg2fySoOb6ttSQ11xvrTHokXCKtjJz1mu0mC8FjEsrdftUBVb/s/0Q67Rz2w
+ ltPmZirT8vBG7x0Q0SQCuxe+bQNrvLkr/BDYfqT9KJxLYQ/HShqcQ4ONqMy92BpJ6bQC
+ xqDgXsiNDcdA4earA6K1w9Iy40XIL1BHGE4UW/lquDnW8G7AJFYEAMUAd/C+1Go1qNKB
+ 83pODOROVBPnjacUFgp2rEXwUNV+TREpLlyLR+Syjj9LKzxeom6X4dYny+NSMHKJXS06
+ Px/N6SQhYYmeQ2QpNNr3mQvhl3UgL4x52Nqq7CxsTXtO75lj+tjQQ1aKsRcG89wia2bC
+ +wSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to;
- bh=DsDlTAN5nXx2eXeaYpyOizF6rp89+ZyQuZEoODyhpKQ=;
- b=ZhDlPDT5/OW2tP4/GbW6u1UTB1rdjopsPkymWtluWnhSNtvpyBDzi4HnV5SlY+6Lss
- pOR0U7dGG9hX6P89kRHODzqqI/9J09YlS0aG9+v+GBHH1HPmtHvwjT/mN3e1rrUqFpTT
- r+8YFdsIOM+NHtAz2PWSXBy8Fal3wWaFgMz5bL/Th5GJzDRFn8m0NelmVYhXlaHV5UXi
- +ZSnl+N9fhijW/luiKalgvgX9FLO3GIuNvjeTLk3BdUrTvrwBVEPAFbdHtflBwWe2piB
- HvZP4UnitwyMjoVilxJOAdYrCnOQjDdeF17KBQesmxwqwAFXJD/gcWq/UEe/ZD8/g2FN
- mOEQ==
-X-Gm-Message-State: AOAM530wkra0j/yPFrhrwwJvZPWYBxGZKcyJ8BP67m/P/uanKrx2ztAO
- M9IFfYWSKNqisgjYISW44LM=
-X-Google-Smtp-Source: ABdhPJw4j3qAh/n1rbRzh5j+Qh1ZpRvg/yNd1He12Pkb+W7uWkt4zY60I9IIhaoAP1YKs8H+3eduzw==
-X-Received: by 2002:a17:902:c411:: with SMTP id
- k17mr22524187plk.165.1591120365656; 
- Tue, 02 Jun 2020 10:52:45 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
- by smtp.gmail.com with ESMTPSA id m9sm2909107pfo.200.2020.06.02.10.52.42
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=LqqP+fCBEpc/gpW2bM0qsawU9eAMfAXXBH14Fdira24=;
+ b=WoPBK/XHuERPt3qT+EimBQQfA8ELM8OvfETs1e1iCXsF4T/OLzqSq4aI7Y1sHjYNzO
+ 3ts+pt+sR+YaDoSs7iJ5Ydjv1h2YOgqOyIBh8U22dY7QPL+SGIuMtg0u5hYZ5zb5mZQ1
+ f0Tqtt+fFn6HCbBLrQO9CaIy4pen+pYrB/Nlzg5izL3Qg/XYXH5eH1vmC9kxoYnYtkN1
+ ZB3gthqaU3G0oBt/jC7Y5IznW4s10othAle2CYcj979uEuksGXgVa/LAqhke9qHds63g
+ rpxGtoOUHRDHwbUnNP1S/w5LYjnCMXjlumUevcVl10uZjyNqUTGqcQVcYAHuWG+PwcVN
+ tc7w==
+X-Gm-Message-State: AOAM531eI6nnzURYLFHdMYXQ1/A/pzBPYYGdLmhLRm/XJkuFycpeqz5r
+ 1NYt0so+KpUqm6DcD7rKqQ9dw0pt
+X-Google-Smtp-Source: ABdhPJwo4mTczar9tEK3KvUezbiNQ8f58zT0h9JcwBT8hfRdPJbuvqIe8wPBBbll4RvPUioempxIaA==
+X-Received: by 2002:a63:34cd:: with SMTP id b196mr23583126pga.2.1591120984192; 
+ Tue, 02 Jun 2020 11:03:04 -0700 (PDT)
+Received: from laptop.hsd1.wa.comcast.net
+ ([2601:600:817f:a132:df3e:521d:99d5:710d])
+ by smtp.gmail.com with ESMTPSA id p8sm2740053pgs.29.2020.06.02.11.03.03
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 02 Jun 2020 10:52:44 -0700 (PDT)
-Date: Tue, 2 Jun 2020 10:52:41 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCHv2 0/7] Support inhibiting input devices
-Message-ID: <20200602175241.GO89269@dtor-ws>
-References: <20200515164943.28480-1-andrzej.p@collabora.com>
- <842b95bb-8391-5806-fe65-be64b02de122@redhat.com>
- <e6030957-97dc-5b04-7855-bc14a78164c8@collabora.com>
- <6d9921fc-5c2f-beda-4dcd-66d6970a22fe@redhat.com>
- <09679de4-75d3-1f29-ec5f-8d42c84273dd@collabora.com>
- <f674ba4f-bd83-0877-c730-5dc6ea09ae4b@redhat.com>
- <2d224833-3a7e-bc7c-af15-1f803f466697@collabora.com>
- <aa2ce2ab-e5bc-9cb4-8b53-c1ef9348b646@redhat.com>
- <20200527063430.GJ89269@dtor-ws>
- <88f939cd-1518-d516-59f2-8f627a6a70d2@collabora.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <88f939cd-1518-d516-59f2-8f627a6a70d2@collabora.com>
+ Tue, 02 Jun 2020 11:03:03 -0700 (PDT)
+From: Andrei Vagin <avagin@gmail.com>
+To: linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: [PATCH RESEND v3 0/6] arm64: add the time namespace support
+Date: Tue,  2 Jun 2020 11:02:53 -0700
+Message-Id: <20200602180259.76361-1-avagin@gmail.com>
+X-Mailer: git-send-email 2.17.2
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_105246_961563_400E33E8 
-X-CRM114-Status: GOOD (  28.90  )
+X-CRM114-CacheID: sfid-20200602_110306_242043_739C87E8 
+X-CRM114-Status: GOOD (  13.12  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dmitry.torokhov[at]gmail.com]
+ provider [avagin[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -109,125 +95,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nick Dyer <nick@shmanahar.org>, linux-iio@vger.kernel.org,
- Benjamin Tissoires <btissoir@redhat.com>, platform-driver-x86@vger.kernel.org,
- ibm-acpi-devel@lists.sourceforge.net, Laxman Dewangan <ldewangan@nvidia.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, linux-samsung-soc@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-acpi@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, linux-input@vger.kernel.org,
- Len Brown <lenb@kernel.org>, Peter Hutterer <peter.hutterer@redhat.com>,
- Michael Hennerich <michael.hennerich@analog.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
- Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
- Lars-Peter Clausen <lars@metafoo.de>, linux-tegra@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Barry Song <baohua@kernel.org>,
- Ferruh Yigit <fery@cypress.com>, patches@opensource.cirrus.com,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
- Jonathan Cameron <jic23@kernel.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>, Dmitry Safonov <dima@arista.com>,
+ linux-kernel@vger.kernel.org, Andrei Vagin <avagin@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrzej,
+Allocate the time namespace page among VVAR pages and add the logic
+to handle faults on VVAR properly.
 
-On Tue, Jun 02, 2020 at 06:56:40PM +0200, Andrzej Pietrasiewicz wrote:
-> Hi Dmitry,
-> =
+If a task belongs to a time namespace then the VVAR page which contains
+the system wide VDSO data is replaced with a namespace specific page
+which has the same layout as the VVAR page. That page has vdso_data->seq
+set to 1 to enforce the slow path and vdso_data->clock_mode set to
+VCLOCK_TIMENS to enforce the time namespace handling path.
 
-> W dniu 27.05.2020 o=A008:34, Dmitry Torokhov pisze:
-> > That said, I think the way we should handle inhibit/uninhibit, is that
-> > if we have the callback defined, then we call it, and only call open and
-> > close if uninhibit or inhibit are _not_ defined.
-> > =
+The extra check in the case that vdso_data->seq is odd, e.g. a concurrent
+update of the VDSO data is in progress, is not really affecting regular
+tasks which are not part of a time namespace as the task is spin waiting
+for the update to finish and vdso_data->seq to become even again.
 
-> =
+If a time namespace task hits that code path, it invokes the corresponding
+time getter function which retrieves the real VVAR page, reads host time
+and then adds the offset for the requested clock which is stored in the
+special VVAR page.
 
-> If I understand you correctly you suggest to call either inhibit,
-> if provided or close, if inhibit is not provided, but not both,
-> that is, if both are provided then on the inhibit path only
-> inhibit is called. And, consequently, you suggest to call either
-> uninhibit or open, but not both. The rest of my mail makes this
-> assumption, so kindly confirm if I understand you correctly.
+v2: Code cleanups suggested by Vincenzo.
+v3: add a comment in __arch_get_timens_vdso_data.
 
-Yes, that is correct. If a driver wants really fine-grained control, it
-will provide inhibit (or both inhibit and close), otherwise it will rely
-on close in place of inhibit.
+Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Dmitry Safonov <dima@arista.com>
 
-> =
+v3 on github (if someone prefers `git pull` to `git am`):
+https://github.com/avagin/linux-task-diag/tree/arm64/timens-v3
 
-> In my opinion this idea will not work.
-> =
+Andrei Vagin (6):
+  arm64/vdso: use the fault callback to map vvar pages
+  arm64/vdso: Zap vvar pages when switching to a time namespace
+  arm64/vdso: Add time napespace page
+  arm64/vdso: Handle faults on timens page
+  arm64/vdso: Restrict splitting VVAR VMA
+  arm64: enable time namespace support
 
-> The first question is should we be able to inhibit a device
-> which is not opened? In my opinion we should, in order to be
-> able to inhibit a device in anticipation without needing to
-> open it first.
+ arch/arm64/Kconfig                            |   1 +
+ .../include/asm/vdso/compat_gettimeofday.h    |  11 ++
+ arch/arm64/include/asm/vdso/gettimeofday.h    |   8 ++
+ arch/arm64/kernel/vdso.c                      | 134 ++++++++++++++++--
+ arch/arm64/kernel/vdso/vdso.lds.S             |   3 +-
+ arch/arm64/kernel/vdso32/vdso.lds.S           |   3 +-
+ include/vdso/datapage.h                       |   1 +
+ 7 files changed, 147 insertions(+), 14 deletions(-)
 
-I agree.
+-- 
+2.24.1
 
-> =
-
-> Then what does opening (with input_open_device()) an inhibited
-> device mean? Should it succeed or should it fail?
-
-It should succeed.
-
-> If it is not
-> the first opening then effectively it boils down to increasing
-> device's and handle's counters, so we can allow it to succeed.
-> If, however, the device is being opened for the first time,
-> the ->open() method wants to be called, but that somehow
-> contradicts the device's inhibited state. So a logical thing
-> to do is to either fail input_open_device() or postpone ->open()
-> invocation to the moment of uninhibiting - and the latter is
-> what the patches in this series currently do.
-> =
-
-> Failing input_open_device() because of the inhibited state is
-> not the right thing to do. Let me explain. Suppose that a device
-> is already inhibited and then a new matching handler appears
-> in the system. Most handlers (apm-power.c, evbug.c, input-leds.c,
-> mac_hid.c, sysrq.c, vt/keyboard.c and rfkill/input.c) don't create
-> any character devices (only evdev.c, joydev.c and mousedev.c do),
-> so for them it makes no sense to delay calling input_open_device()
-> and it is called in handler's ->connect(). If input_open_device()
-> now fails, we have lost the only chance for this ->connect() to
-> succeed.
-> =
-
-> Summarizing, IMO the uninhibit path should be calling both
-> ->open() and ->uninhibit() (if provided), and conversely, the inhibit
-> path should be calling both ->inhibit() and ->close() (if provided).
-
-So what you are trying to say is that you see inhibit as something that
-is done in addition to what happens in close. But what exactly do you
-want to do in inhibit, in addition to what close is doing?
-
-In my view, if we want to have a dedicated inhibit callback, then it
-will do everything that close does, they both are aware of each other
-and can sort out the state transitions between them. For drivers that do
-not have dedicated inhibit/uninhibit, we can use open and close
-handlers, and have input core sort out when each should be called. That
-means that we should not call dev->open() in input_open_device() when
-device is inhibited (and same for dev->close() in input_close_device).
-And when uninhibiting, we should not call dev->open() when there are no
-users for the device, and no dev->close() when inhibiting with no users.
-
-Do you see any problems with this approach?
-
-Thanks.
-
--- =
-
-Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
