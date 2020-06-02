@@ -2,84 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88E3C1EC40C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 22:54:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 201D61EC40F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 22:54:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1V+JnA1USoQcA21YthyRUFJL6Am5QP789f4CCEs1OgQ=; b=Fu0v24CbssFVH/
-	L0iu7Sg0SfW5QVDPgORNXTtQSWtPKKzPRB9KtACHDViFIWh4mZjjRqzb0nHxPeYbPII+MLlBkcLBv
-	/8wfyDn/iMiD5Oa+LSxTnGWR4rfkKlluBRXONGYC/GXkAHAp8RipdnBLPQvS5g7XgpyPPWlouCMEX
-	O8/TeoJbGHKIccW9i0eV/WOuzElYzpCBl0/yLgGzicortBTp4CjcrMTzefgIhDDzcakMpAxfqSrvt
-	FKCxww6BH1Dq2LH05cl0rKLtU6xmhCEgfzQfqydA7BCXZ/br+25y+0SDJnFGr0+gFz66X2RNEEph6
-	2bPu8nHuKGCNHSmyvF8A==;
+	List-Owner; bh=jJ4i32H63wZTlWRz8A9Rct5Bj8HOHOQJWEJm6OG8qSE=; b=YNd4A22aVKnpcn
+	Et1nvPmRZf9/zTmiTacLpXyVdpnperax17ysrpfRHrA4Y46C8PqGkErm74onUmS4K/a5sXLLf+8Sl
+	FkVOdnAz6XqDVy/EZu4na7z9GxDESuOBLRfpf9t/5kgl1iBUopZZwucNWI4o174zpV6FWrMm7bLOU
+	BA+Rrw0rRUQyEyIK0ux2ghEoFcQb2pahRYJ+HYW6hyMdd84q0VjFHJEDteYAczyv2ggrcJXdg+qU5
+	6gF/YAetXNmyrhyFoPevUNEdipZwWMD9EdANojXDpAxqJQEghn9wMGnsOga/f6mLq7Mf/TPByOrV4
+	VvZY/4KZPniTkMYhTDEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgDv5-0006sR-LW; Tue, 02 Jun 2020 20:53:59 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jgDvg-0007GG-4W; Tue, 02 Jun 2020 20:54:36 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgDux-0006rS-R7
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 20:53:53 +0000
-Received: by mail-wm1-x341.google.com with SMTP id k26so4511925wmi.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jun 2020 13:53:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UNdx3Mmpf3DrIzViCGyzis6VE+eW7LcGk/DvPm/aizg=;
- b=gUQhoSQGFIHa7ZtNQ/mcdet2GnsJdah69f2gfvdvdf3oal9ZbFaY5RBDmch2/JCwpo
- 1ySrRPlo+q1t6qjbKXPFmySFIdIUeoYzuR+SDIhTteakfiGtW0pdZri/mG9znO4mjmE5
- VpRIxXI+2IPUmFBA+igDQybSrvkqI8sP+60yo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UNdx3Mmpf3DrIzViCGyzis6VE+eW7LcGk/DvPm/aizg=;
- b=VUm6TeJzcHkrEWAf1nGva9ez2lOJ0oWdT7q9iH14xX1NAdvSZxkBE3PthRq4hxNw/X
- poqBV1fZn6NRo/GvrxJr2KoFZOpWzmxewKXQh3FTWQpiXNeuSb0u4mgya/7ACMaOXK/g
- EOP1x2oBAfdhAlzMF4LFNGZUOZgtYmFfpKD/aD8ZRhLq0dYi2IMaq/eC6XdlwByHKP6o
- Z0r/UTZB9toJ7owKv6m1tZAks7JPzvWYIklg9q2LhnAW1kUfQko7oaIE0fzU88oXe1st
- hmlAecvi3eBAgsdlaL5LkjtLsQSoFDFk9bE/KV9vyIyOQ2QHyHKgBsqMDIoigDCYQs30
- GFiQ==
-X-Gm-Message-State: AOAM533nWcGPRszke+ny2y26j16cHW3uGxlf3xfc5D7K5OqErnIeyhx6
- gzbYLgZQFI5cgbLGDfrMZPuu11mMWTrL0x5BcR9sAQ==
-X-Google-Smtp-Source: ABdhPJwkj8NL5zp+q4S4GBVPgKweYcMhpEHQU9ScieMb1qOnyIRY9ZULyNPHba9ox1is5xBNjGQKqzly82AVsgTZlQM=
-X-Received: by 2002:a7b:c0cc:: with SMTP id s12mr5862628wmh.111.1591131229682; 
- Tue, 02 Jun 2020 13:53:49 -0700 (PDT)
+ id 1jgDvS-0007Eo-Sr
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 20:54:25 +0000
+Received: from p5de0bf0b.dip0.t-ipconnect.de ([93.224.191.11]
+ helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1jgDvL-0003XN-0L; Tue, 02 Jun 2020 22:54:15 +0200
+Received: by nanos.tec.linutronix.de (Postfix, from userid 1000)
+ id 4DB14100F18; Tue,  2 Jun 2020 22:54:14 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: "Herrenschmidt\, Benjamin" <benh@amazon.com>,
+ "maz\@kernel.org" <maz@kernel.org>, "Saidi\, Ali" <alisaidi@amazon.com>
+Subject: Re: [PATCH] irqchip/gic-v3-its: Don't try to move a disabled irq
+In-Reply-To: <37e55e71faf76dc3db76d89c20c1bdfff942e380.camel@amazon.com>
+References: <20200529015501.15771-1-alisaidi@amazon.com>
+ <8c3be990888ecfb7cca9503853dc4aac@kernel.org>
+ <2C4F431F-8140-4C82-B4BD-E51DE618FC08@amazon.com>
+ <20200530174929.7bf6d5d7@why> <eed907d48de84c96e3ceb27c1ed6f622@kernel.org>
+ <37e55e71faf76dc3db76d89c20c1bdfff942e380.camel@amazon.com>
+Date: Tue, 02 Jun 2020 22:54:14 +0200
+Message-ID: <87y2p5fatl.fsf@nanos.tec.linutronix.de>
 MIME-Version: 1.0
-References: <20200526191303.1492-1-james.quinlan@broadcom.com>
- <20200526191303.1492-4-james.quinlan@broadcom.com>
- <20200529174634.GA2630216@bogus>
-In-Reply-To: <20200529174634.GA2630216@bogus>
-From: Jim Quinlan <james.quinlan@broadcom.com>
-Date: Tue, 2 Jun 2020 16:53:37 -0400
-Message-ID: <CA+-6iNwWBFYHVKiwwJ95DYQ5zmc5uBo1cgZzd6rpD++aQWgGpw@mail.gmail.com>
-Subject: Re: [PATCH v2 03/14] dt-bindings: PCI: Add bindings for more Brcmstb
- chips
-To: Rob Herring <robh@kernel.org>
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_135351_880817_0C48F4CD 
-X-CRM114-Status: GOOD (  23.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200602_135423_072819_EC671115 
+X-CRM114-Status: GOOD (  17.65  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,150 +70,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
- <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Christoph Hellwig <hch@lst.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: "jason@lakedaemon.net" <jason@lakedaemon.net>, "Machulsky,
+ Zorik" <zorik@amazon.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "Zilberman,
+ Zeev" <zeev@amazon.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "Woodhouse, David" <dwmw@amazon.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 29, 2020 at 1:46 PM Rob Herring <robh@kernel.org> wrote:
+"Herrenschmidt, Benjamin" <benh@amazon.com> writes:
+> On Sun, 2020-05-31 at 12:09 +0100, Marc Zyngier wrote:
+>> > The semantic of activate/deactivate (which maps to started/shutdown
+>> > in the IRQ code) is that the HW resources for a given interrupt are
+>> > only committed when the interrupt is activated. Trying to perform
+>> > actions involving the HW on an interrupt that isn't active cannot be
+>> > guaranteed to take effect.
+>> > 
+>> > I'd rather address it in the core code, by preventing set_affinity (and
+>> > potentially others) to take place when the interrupt is not in the
+>> > STARTED state. Userspace would get an error, which is perfectly
+>> > legitimate, and which it already has to deal with it for plenty of
+>> > other
+>> > reasons.
 >
-> On Tue, May 26, 2020 at 03:12:42PM -0400, Jim Quinlan wrote:
-> > From: Jim Quinlan <jquinlan@broadcom.com>
-> >
-> > - Add compatible strings for three more Broadcom STB chips: 7278, 7216,
-> >   7211 (STB version of RPi4).
-> > - add new property 'brcm,scb-sizes'
-> > - add new property 'resets'
-> > - add new property 'reset-names'
-> > - allow 'ranges' and 'dma-ranges' to have more than one item and update
-> >   the example to show this.
-> >
-> > Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
-> > ---
-> >  .../bindings/pci/brcm,stb-pcie.yaml           | 40 +++++++++++++++++--
-> >  1 file changed, 36 insertions(+), 4 deletions(-)
-> >
-> > diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> > index 8680a0f86c5a..66a7df45983d 100644
-> > --- a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> > +++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-> > @@ -14,7 +14,13 @@ allOf:
-> >
-> >  properties:
-> >    compatible:
-> > -    const: brcm,bcm2711-pcie # The Raspberry Pi 4
-> > +    items:
-> > +      - enum:
+> So I finally found time to dig a bit in there :) Code has changed a bit
+> since last I looked. But I have memories of the startup code messing
+> around with the affinity, and here it is. In irq_startup() :
 >
-> Don't need items here. Just change the const to enum.
 >
-> > +          - brcm,bcm2711-pcie # The Raspberry Pi 4
-> > +          - brcm,bcm7211-pcie # Broadcom STB version of RPi4
-> > +          - brcm,bcm7278-pcie # Broadcom 7278 Arm
-> > +          - brcm,bcm7216-pcie # Broadcom 7216 Arm
-> > +          - brcm,bcm7445-pcie # Broadcom 7445 Arm
-> >
-> >    reg:
-> >      maxItems: 1
-> > @@ -34,10 +40,12 @@ properties:
-> >        - const: msi
-> >
-> >    ranges:
-> > -    maxItems: 1
-> > +    minItems: 1
-> > +    maxItems: 4
-> >
-> >    dma-ranges:
-> > -    maxItems: 1
-> > +    minItems: 1
-> > +    maxItems: 6
-> >
-> >    clocks:
-> >      maxItems: 1
-> > @@ -58,8 +66,30 @@ properties:
-> >
-> >    aspm-no-l0s: true
-> >
-> > +  resets:
-> > +    description: for "brcm,bcm7216-pcie", must be a valid reset
-> > +      phandle pointing to the RESCAL reset controller provider node.
-> > +    $ref: "/schemas/types.yaml#/definitions/phandle"
-> > +
-> > +  reset-names:
-> > +    items:
-> > +      - const: rescal
+> 		switch (__irq_startup_managed(desc, aff, force)) {
+> 		case IRQ_STARTUP_NORMAL:
+> 			ret = __irq_startup(desc);
+> 			irq_setup_affinity(desc);
+> 			break;
+> 		case IRQ_STARTUP_MANAGED:
+> 			irq_do_set_affinity(d, aff, false);
+> 			ret = __irq_startup(desc);
+> 			break;
+> 		case IRQ_STARTUP_ABORT:
+> 			irqd_set_managed_shutdown(d);
+> 			return 0;
 >
-> These are going to need to be an if/then schema if they only apply to
-> certain compatible(s).
+> So we have two cases here. Normal and managed.
+>
+> In the managed case, we set the affinity before startup. I feel like your
+> patch might break that or am I missing something ?
 
-Why is that -- the code is general enough to handle its presence or
-not (it is an optional compatibility)>
+It will break stuff because the affinity is not stored in case that the
+interrupt is not started.
 
->
->
-> > +
-> > +  brcm,scb-sizes:
-> > +    description: (u32, u32) tuple giving the 64bit PCIe memory
-> > +      viewport size of a memory controller.  There may be up to
-> > +      three controllers, and each size must be a power of two
-> > +      with a size greater or equal to the amount of memory the
-> > +      controller supports.
->
-> This sounds like what dma-ranges should express?
-
-There is some overlap but this contains information that is not in the
-dma-ranges.  Believe me I tried.
-
->
-> If not, we do have 64-bit size if that what you need.
-
-IIRC I tried the 64-bit size but the YAML validator did not like it;
-it wanted numbers like  <0x1122334455667788> while dtc wanted <
-0x11223344 0x55667788>.  I gave up trying and switched to u32.
+I think we can fix this in the core code but that needs more thought.
+__irq_can_set_affinity() is definitely the wrong place.
 
 Thanks,
-Jim
 
->
->
-> > +    allOf:
-> > +      - $ref: /schemas/types.yaml#/definitions/uint32-array
-> > +      - items:
-> > +          minItems: 2
-> > +          maxItems: 6
-> > +
-> >  required:
-> >    - reg
-> > +  - ranges
-> >    - dma-ranges
-> >    - "#interrupt-cells"
-> >    - interrupts
-> > @@ -93,7 +123,9 @@ examples:
-> >                      msi-parent = <&pcie0>;
-> >                      msi-controller;
-> >                      ranges = <0x02000000 0x0 0xf8000000 0x6 0x00000000 0x0 0x04000000>;
-> > -                    dma-ranges = <0x02000000 0x0 0x00000000 0x0 0x00000000 0x0 0x80000000>;
-> > +                    dma-ranges = <0x42000000 0x1 0x00000000 0x0 0x40000000 0x0 0x80000000>,
-> > +                                 <0x42000000 0x1 0x80000000 0x3 0x00000000 0x0 0x80000000>;
-> >                      brcm,enable-ssc;
-> > +                    brcm,scb-sizes = <0x0 0x80000000 0x0 0x80000000>;
-> >              };
-> >      };
-> > --
-> > 2.17.1
-> >
+        tglx
+
 
 _______________________________________________
 linux-arm-kernel mailing list
