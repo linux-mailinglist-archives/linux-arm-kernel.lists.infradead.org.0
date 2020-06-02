@@ -2,93 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9452C1EBDB4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 16:12:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D7251EBDE9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 16:19:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bo4ctyrvCeAxPqtOaEz90NtiOXSU04F5dZ5p83SpkwY=; b=eseervpIpq4LPBUPnI4x7HGdp
-	ugDaogp7ECUMGU9B7sJ9CEtI+Y4tOfGtW7r7t4zhFpWFd18aejBErPmvUoBEa5Uv2fXw8JmLETxVg
-	NrzpFzt2TlkwwWTGCA2flKaXYISqWgTstr/s9BZfkK3EHesVGfdK0By0IgWR94fRjHpETiC+r/hgj
-	tzW5iAXKYIckD9+3njDIHYzXbzBha31tT+gCa8BYG1T09QQGPBYcLca2aEVU3BH/4I6Mvh2u1cqLR
-	8cicepSMRARUYpv7FEMlAGt+LyR41COBKLcETXwbUU4vgBo1lp/6V+oiEmqZVxTY9MsHYKVvQ2u+Z
-	HMILmQkBA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=rjazXjun1aaOrYsyLEVhSBB4VbF+HxPksmphlmMOeEs=; b=WnF
+	y/eKyitLVCFVNb2FNufttYP1mwFoXpqy3vUB3vlXkRLpBywsMnel3JeshLFCt7BBSFjShmJfmXS48
+	oSjx4Dsdy+iLr0rxg0ESG7ENFB9GZ7xXviRDnGBM+T+bHF/djXqoZrOkfTMnfp9IdnVqP7JJ/gzbI
+	GrsoAfSADJkn6ljTw4ROWKWT7SK5nBotntPZMCqL+iFOWNkng+1So4/hwQy8RFTbBtmqSDfkzD282
+	G+zk3IWUfEqZozZgTvds/qj0ftVhBWdCRdRDLUORUlyzpk0tm8kfplq82c2+Pq9rH0F3wEwXnrziw
+	KXLEfNhyzuB7RfDzJxSiUEz3g0Yh2/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg7eq-0004ms-HI; Tue, 02 Jun 2020 14:12:48 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
+	id 1jg7kt-0008CS-IC; Tue, 02 Jun 2020 14:19:03 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg7ek-0004mJ-8c; Tue, 02 Jun 2020 14:12:43 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id DF8795C00B9;
- Tue,  2 Jun 2020 10:12:31 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 02 Jun 2020 10:12:31 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=6nfNzIAdvv+2u2nlDiEbeWjNRvu
- HHWtTui6XJIgYRnc=; b=jAUnEuWco8XlUL2BK4xM3qarlYtcrL+3VZ0Ym1RM8WD
- 5b5AAbDS7DVtJLbQknXzWWrhrpvUmpN+U91zfJ/soaK39ndvePIEKUYrmuaYORGT
- 4x4KrUOhaCRClx3KNGcWEfuICJLq4t/tib5EP7eCG2goCt9YRerKedfW13jepPtt
- gQfFqQdfKJECr7Ryku8u4/aj91qVPIWaanSp5Lf6hJ9DyGbX3AlSGd6xbVjW8cKl
- 1YYlss8WlFoEHFBdGOQIyJU95rSRjeLHy9WnuIQ0/RukKbrtbo/BcUFoTVAo47LU
- RCDQDZR3nu5zpnpUyMOWUI2krXgijryDKSx0XSSXa+w==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=6nfNzI
- Advv+2u2nlDiEbeWjNRvuHHWtTui6XJIgYRnc=; b=Hu4oqsVsaTtiSj5i7jvC4r
- NsH/ZN/D2lCDRDqGz7TrWtTeQC8EuTYqs8G+Ezfb2mLymz9Xa/BzSxNEG9ZJ/gkl
- aM4h2IdDYABb7EuvQadKyThkjSB7SWHRbP7hEXazK9mRUBdqlSu9S/LCB9qu/1uE
- cc7vfIdIqQ9TBsQB47COChmIFjY4vopQ9L7wsIbPBJyzNRq84CIRqr0yf4Z2SekP
- KnWNl28M5SNbFUF8ctmDHpeEgz8cJIN06TajSckWZuIWNk+TkiOD49pxb2TyMkQz
- z2IAUcviiPttjrseNGyOyJGVGz00DUZASBdrdOIzjfR1tBqNBwXhPMzrz2dCQdpw
- ==
-X-ME-Sender: <xms:TV7WXo9CO17tSpLgPFR7ZfnEb5jzmTgd-KulMWm5-4SGMKqS_moV-A>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudefjedgheegucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
- htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
- gedunecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
- frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:TV7WXgvt0QITr9I9KP7DC0J-r-wx8Bobhwlhcl2qoc1fCp_MLUuhNw>
- <xmx:TV7WXuAn3tU1N1MDvgwI8oOe8_do1iKiV-M_RsYxFV3cGLgaFV615w>
- <xmx:TV7WXoemze4jGbSqKicPDyTImtFDo5iRHqfM-rDJbUfwYHOtOgIAiA>
- <xmx:T17WXpBpyteFSyJTeWMejXCyGZvzmoEFEMDuFNQBphC0Xg8f1UGoZQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 725C43280066;
- Tue,  2 Jun 2020 10:12:29 -0400 (EDT)
-Date: Tue, 2 Jun 2020 16:12:28 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Eric Anholt <eric@anholt.net>
-Subject: Re: [PATCH v3 032/105] drm/vc4: crtc: Enable and disable the PV in
- atomic_enable / disable
-Message-ID: <20200602141228.7zbkob7bw3owajsq@gilmour>
-References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
- <d2c1850e38e14f3def4c0307240e6826e296c14b.1590594512.git-series.maxime@cerno.tech>
- <CADaigPU7c=1u47R9GzvGCH_Z2fywY1foGYEy=KbBikjUQpwUFg@mail.gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <CADaigPU7c=1u47R9GzvGCH_Z2fywY1foGYEy=KbBikjUQpwUFg@mail.gmail.com>
+ id 1jg7km-0008Bw-LW
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 14:18:58 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id q24so1523170pjd.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 02 Jun 2020 07:18:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=IFVZxk2HGJlMEd0AkzA5r6bJ1EWPxWtJbu5fiwrTlkk=;
+ b=JvpZSL2lWhR5tYa+0MyrURuF3XxT4Bg05zgghXWrj8m/9g+1Ox6Ir5KISwxK/MpNTP
+ ZffKHyQE1dUV1zirFPktPK6i7z16ntuaOjYZ9A8P1OZSkkD3qx2GtsID1JO/gtTpFcYM
+ 2pZqkBlMO6NoKN/YPKlFeOSQKkZvWOuTuRHeHjs8Jy6fLWlzoHouK2HGOPVBUWTYFMGf
+ RFQFyMVfYpxNN2fzo5WWah0E6j6QvQ/I7aOA+6WhewtBo4ASxJyyhUcMvSa9IxyGzTFg
+ aO4E+qT2PdLHJZp7NDFT4uG75TDUwgUrMz4lixMisDIeKT9AAYW+6bvntiSYvqW+hODb
+ WkrA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=IFVZxk2HGJlMEd0AkzA5r6bJ1EWPxWtJbu5fiwrTlkk=;
+ b=p43nI49Hp71qDsFF2MND6xv45ATd8EtU2AsglBXi7FOwTLWy0j+ZXIrRSFmUnfsUAR
+ lZRcQtuq1fsQTwy74+oeS9kmp9FjW5Cyx9v5mF18F2YmpoZNjLaDKreytQmtKPh9THDz
+ vdBUnOX4onHQ0syitmnaFbcBIpzb1EWOsRi5b411TSarHl/+nqqLTzHwZj7U/7YqOMyJ
+ 88sjdmlcjFk0RM4T0olzNahK47KE9GoVSbYJ6IcSMwKgjypDGLtZb8rGLzi3ZSu1IpQC
+ fx3EpJZVPlvP+KwCeYfpl09paLfnLkeOXZE9M+zui0GSlC5Y0swc+KWrYCynK7GZWCxJ
+ uOOA==
+X-Gm-Message-State: AOAM533tYd9OYEYKxgyusNDeUTRtogYnkzH6moDP+ffajB1Xf7U9vw+A
+ qGP5oN/hGEs6IBSnCXNh8MOm2A==
+X-Google-Smtp-Source: ABdhPJyEDi3JjDMMnzCMHmH2BT/npctwWmmUyygPOyrdqNRu+XCIL7pP9LG1SrYenp+nsP4IZAqzgw==
+X-Received: by 2002:a17:90b:4c91:: with SMTP id
+ my17mr5390973pjb.81.1591107535207; 
+ Tue, 02 Jun 2020 07:18:55 -0700 (PDT)
+Received: from localhost.localdomain ([117.252.66.248])
+ by smtp.gmail.com with ESMTPSA id 141sm2529670pfz.171.2020.06.02.07.18.45
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 02 Jun 2020 07:18:53 -0700 (PDT)
+From: Sumit Garg <sumit.garg@linaro.org>
+To: jarkko.sakkinen@linux.intel.com, zohar@linux.ibm.com, jejb@linux.ibm.com
+Subject: [PATCH v5 0/4] Introduce TEE based Trusted Keys support
+Date: Tue,  2 Jun 2020 19:48:21 +0530
+Message-Id: <1591107505-6030-1-git-send-email-sumit.garg@linaro.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_071242_441768_1736E172 
-X-CRM114-Status: GOOD (  13.60  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200602_071856_743687_A0ABBD54 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.29 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,83 +92,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- DRI Development <dri-devel@lists.freedesktop.org>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3902730978337574479=="
+Cc: tee-dev@lists.linaro.org, daniel.thompson@linaro.org,
+ Sumit Garg <sumit.garg@linaro.org>, op-tee@lists.trustedfirmware.org,
+ corbet@lwn.net, janne.karhunen@gmail.com, linux-doc@vger.kernel.org,
+ jmorris@namei.org, linux-kernel@vger.kernel.org, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org, keyrings@vger.kernel.org,
+ Markus.Wamser@mixed-mode.de, casey@schaufler-ca.com,
+ linux-integrity@vger.kernel.org, jens.wiklander@linaro.org,
+ linux-arm-kernel@lists.infradead.org, serge@hallyn.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Add support for TEE based trusted keys where TEE provides the functionality
+to seal and unseal trusted keys using hardware unique key. Also, this is
+an alternative in case platform doesn't possess a TPM device.
 
---===============3902730978337574479==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="6jdhhfajj55wnhto"
-Content-Disposition: inline
+This patch-set has been tested with OP-TEE based early TA which is already
+merged in upstream [1].
 
+[1] https://github.com/OP-TEE/optee_os/commit/f86ab8e7e0de869dfa25ca05a37ee070d7e5b86b
 
---6jdhhfajj55wnhto
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Changes in v5:
+1. Drop dynamic detection of trust source and use compile time flags
+   instead.
+2. Rename trusted_common.c -> trusted_core.c.
+3. Rename callback: cleanup() -> exit().
+4. Drop "tk" acronym.
+5. Other misc. comments.
+6. Added review tags for patch #3 and #4.
 
-Hi Eric
+Changes in v4:
+1. Pushed independent TEE features separately:
+  - Part of recent TEE PR: https://lkml.org/lkml/2020/5/4/1062
+2. Updated trusted-encrypted doc with TEE as a new trust source.
+3. Rebased onto latest tpmdd/master.
 
-On Wed, May 27, 2020 at 09:54:44AM -0700, Eric Anholt wrote:
-> On Wed, May 27, 2020 at 8:50 AM Maxime Ripard <maxime@cerno.tech> wrote:
-> >
-> > The VIDEN bit in the pixelvalve currently being used to enable or disab=
-le
-> > the pixelvalve seems to not be enough in some situations, which whill e=
-nd
-> > up with the pixelvalve stalling.
-> >
-> > In such a case, even re-enabling VIDEN doesn't bring it back and we nee=
-d to
-> > clear the FIFO. This can only be done if the pixelvalve is disabled tho=
-ugh.
-> >
-> > In order to overcome this, we can configure the pixelvalve during
-> > mode_set_no_fb, but only enable it in atomic_enable and flush the FIFO
-> > there, and in atomic_disable disable the pixelvalve again.
->=20
-> What displays has this been tested with?  Getting this sequencing
-> right is so painful, and things like DSI are tricky to get to light
-> up.
+Changes in v3:
+1. Update patch #2 to support registration of multiple kernel pages.
+2. Incoporate dependency patch #4 in this patch-set:
+   https://patchwork.kernel.org/patch/11091435/
 
-That FIFO is between the HVS and the HDMI PVs, so this was obviously
-tested against that. Dave also tested the DSI output IIRC, so we should
-be covered here.
+Changes in v2:
+1. Add reviewed-by tags for patch #1 and #2.
+2. Incorporate comments from Jens for patch #3.
+3. Switch to use generic trusted keys framework.
 
-Maxime
+Sumit Garg (4):
+  KEYS: trusted: Add generic trusted keys framework
+  KEYS: trusted: Introduce TEE based Trusted Keys
+  doc: trusted-encrypted: updates with TEE as a new trust source
+  MAINTAINERS: Add entry for TEE based Trusted Keys
 
---6jdhhfajj55wnhto
-Content-Type: application/pgp-signature; name="signature.asc"
+ Documentation/security/keys/trusted-encrypted.rst | 203 ++++++++++---
+ MAINTAINERS                                       |   8 +
+ include/keys/trusted-type.h                       |  48 ++++
+ include/keys/trusted_tee.h                        |  66 +++++
+ include/keys/trusted_tpm.h                        |  15 -
+ security/keys/Kconfig                             |  31 +-
+ security/keys/trusted-keys/Makefile               |   6 +-
+ security/keys/trusted-keys/trusted_core.c         | 321 +++++++++++++++++++++
+ security/keys/trusted-keys/trusted_tee.c          | 280 ++++++++++++++++++
+ security/keys/trusted-keys/trusted_tpm1.c         | 335 ++++------------------
+ 10 files changed, 981 insertions(+), 332 deletions(-)
+ create mode 100644 include/keys/trusted_tee.h
+ create mode 100644 security/keys/trusted-keys/trusted_core.c
+ create mode 100644 security/keys/trusted-keys/trusted_tee.c
 
------BEGIN PGP SIGNATURE-----
+-- 
+2.7.4
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXtZeTAAKCRDj7w1vZxhR
-xVJqAQCUmpR8JL8pnnKjcPFlmgxyfzwLZXpVwBbL1P2+kZmIMAEAtrzlIP25oS5g
-9aixg7Ifrmc88nWmBcIbxDH1tuDcFAs=
-=Ak49
------END PGP SIGNATURE-----
-
---6jdhhfajj55wnhto--
-
-
---===============3902730978337574479==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3902730978337574479==--
-
