@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59ED51EC517
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 00:34:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9650E1EC50E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 00:33:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6QbjAtCFZ8DKwiDaEphJsysdpMr8Nyf39gTNEvQ9i5Q=; b=pCSc4xMD/SBx/uh1KHUXlBLXQ9
-	N0wRZBRrb3F9oqLEs8QSN/Acc6z+rkaAwY95qhcDgcbol6eerpN14mGrPuUe/fc6UbrZZIqasYua4
-	BI16Lxdwj97/I4CUgyb6d/+yq7MOdcg284pxgR4ocCB43Zfdgu2YZfmN0neDzbnnEJ19HCTw1ddbz
-	lusgcFM0SDTHh/Sj+9Zn0nr3hiKk8FVW+yrbl5ZeptY+2EP+03qF08ujE4EHghGI1wk9fzhLQDRMq
-	efG8icBzhAP1d/wfFTXPSdjN+P2fdBZe5C2u4LnDBeA2HL240H39Vjiqcss+P1o6+lE+lL3JOpneJ
-	Wgvejogg==;
+	bh=pSNsxhJ+51dEP9IEOgrg2PRHvFiDd1/umrbfw49CARE=; b=IWK/sDYPZ94SlY9AUTQD96Jir4
+	9RerPL8Wf+BqOrvT6lLT5j3fh2laAW6x76Dp/KFCf4Za6+LL057W7O9fQftiGzBhdcbg0klYp7CKW
+	Vk2vVGqm1h6c0KnzCJlkBtzz9vnOmBhucSA5EdZzEseklvs06s0XRdgBZ2AuyhEPrOkYnKa2yovLb
+	7BuEhi2Gk8tzxtwSDgPXVTNMiR+84dMZnPvLUZAtN3bCfxk0Rrhzqfjw9GWoFdJp3K4MaQ3RgRHhT
+	AeaDDdKAnCa4DQnA1vGEzPFf3ux3JRDTskp6iYyDhpmhVH6wSuZhkQqqgJUXAOzCX97EPn8AqaBfP
+	4PUjNoSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgFU5-0004WW-60; Tue, 02 Jun 2020 22:34:13 +0000
+	id 1jgFT1-0003Jq-N7; Tue, 02 Jun 2020 22:33:07 +0000
 Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgFRS-0001pL-CH
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 22:31:31 +0000
-Received: from unknown (HELO ironmsg01-sd.qualcomm.com) ([10.53.140.141])
- by alexa-out-sd-02.qualcomm.com with ESMTP; 02 Jun 2020 15:31:23 -0700
+ id 1jgFRP-0001oJ-Ha
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 22:31:29 +0000
+Received: from unknown (HELO ironmsg05-sd.qualcomm.com) ([10.53.140.145])
+ by alexa-out-sd-02.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
 Received: from gurus-linux.qualcomm.com ([10.46.162.81])
- by ironmsg01-sd.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
+ by ironmsg05-sd.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
 Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
- id B3D5C4DF5; Tue,  2 Jun 2020 15:31:22 -0700 (PDT)
+ id C464F4BDA; Tue,  2 Jun 2020 15:31:22 -0700 (PDT)
 From: Guru Das Srinagesh <gurus@codeaurora.org>
 To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: [PATCH v16 09/11] backlight: pwm_bl: Use 64-bit division function
-Date: Tue,  2 Jun 2020 15:31:14 -0700
-Message-Id: <0ba6e042fc207c1b0b7dfe3a86d8971240faace1.1591136989.git.gurus@codeaurora.org>
+Subject: [PATCH v16 10/11] clk: pwm: Use 64-bit division function
+Date: Tue,  2 Jun 2020 15:31:15 -0700
+Message-Id: <88a1218670d0d68cbf173dd0924316e42ea45a97.1591136989.git.gurus@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <cover.1591136989.git.gurus@codeaurora.org>
 References: <cover.1591136989.git.gurus@codeaurora.org>
 In-Reply-To: <cover.1591136989.git.gurus@codeaurora.org>
 References: <cover.1591136989.git.gurus@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_153130_452218_957EBC16 
-X-CRM114-Status: GOOD (  10.30  )
+X-CRM114-CacheID: sfid-20200602_153127_692104_B9A9E4D7 
+X-CRM114-Status: UNSURE (   9.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -80,31 +81,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the PWM framework is switching struct pwm_state.period's datatype
-to u64, prepare for this transition by using div_u64 to handle a 64-bit
-dividend instead of a straight division operation.
+Since the PWM framework is switching struct pwm_args.period's datatype
+to u64, prepare for this transition by using div64_u64() to handle a
+64-bit divisor.
+
+Also ensure that divide-by-zero (with fixed_rate as denominator) does
+not happen with an explicit check with probe failure as a consequence.
 
 Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
-Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
-Acked-by: Lee Jones <lee.jones@linaro.org>
+Acked-by: Stephen Boyd <sboyd@kernel.org>
 ---
- drivers/video/backlight/pwm_bl.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/clk/clk-pwm.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/video/backlight/pwm_bl.c b/drivers/video/backlight/pwm_bl.c
-index 82b8d75..464baad 100644
---- a/drivers/video/backlight/pwm_bl.c
-+++ b/drivers/video/backlight/pwm_bl.c
-@@ -606,7 +606,8 @@ static int pwm_backlight_probe(struct platform_device *pdev)
- 		pb->scale = data->max_brightness;
+diff --git a/drivers/clk/clk-pwm.c b/drivers/clk/clk-pwm.c
+index 87fe0b0e..86f2e2d 100644
+--- a/drivers/clk/clk-pwm.c
++++ b/drivers/clk/clk-pwm.c
+@@ -89,7 +89,12 @@ static int clk_pwm_probe(struct platform_device *pdev)
  	}
  
--	pb->lth_brightness = data->lth_brightness * (state.period / pb->scale);
-+	pb->lth_brightness = data->lth_brightness * (div_u64(state.period,
-+				pb->scale));
+ 	if (of_property_read_u32(node, "clock-frequency", &clk_pwm->fixed_rate))
+-		clk_pwm->fixed_rate = NSEC_PER_SEC / pargs.period;
++		clk_pwm->fixed_rate = div64_u64(NSEC_PER_SEC, pargs.period);
++
++	if (!clk_pwm->fixed_rate) {
++		dev_err(&pdev->dev, "fixed_rate cannot be zero\n");
++		return -EINVAL;
++	}
  
- 	props.type = BACKLIGHT_RAW;
- 	props.max_brightness = data->max_brightness;
+ 	if (pargs.period != NSEC_PER_SEC / clk_pwm->fixed_rate &&
+ 	    pargs.period != DIV_ROUND_UP(NSEC_PER_SEC, clk_pwm->fixed_rate)) {
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
