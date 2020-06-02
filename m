@@ -2,63 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 201D61EC40F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 22:54:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F08F1EC41F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 23:01:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jJ4i32H63wZTlWRz8A9Rct5Bj8HOHOQJWEJm6OG8qSE=; b=YNd4A22aVKnpcn
-	Et1nvPmRZf9/zTmiTacLpXyVdpnperax17ysrpfRHrA4Y46C8PqGkErm74onUmS4K/a5sXLLf+8Sl
-	FkVOdnAz6XqDVy/EZu4na7z9GxDESuOBLRfpf9t/5kgl1iBUopZZwucNWI4o174zpV6FWrMm7bLOU
-	BA+Rrw0rRUQyEyIK0ux2ghEoFcQb2pahRYJ+HYW6hyMdd84q0VjFHJEDteYAczyv2ggrcJXdg+qU5
-	6gF/YAetXNmyrhyFoPevUNEdipZwWMD9EdANojXDpAxqJQEghn9wMGnsOga/f6mLq7Mf/TPByOrV4
-	VvZY/4KZPniTkMYhTDEQ==;
+	List-Owner; bh=Arof1Fe3MP0WjP4DnwmMzLdW37l5hul5JEy0lM29ovU=; b=VYJqijG+j58RQW
+	m5TrMUno3bdqgt4f2MPCKDKL3K6lN+3+vg5vKp3/SNZroRU4uFnMyk61yKsQSRXVXxAV3jabzf4D5
+	uWQF+H+5XiPfjqtuKWH+VqXwUK98LRM0gsmxn4Zucsegoz5EQhzneM6twuviVfoBDYFyR2dxUav42
+	2k0flq4ULOrTB7x3KyulRyIriqBzhlODHnc5s+SX8LHIBPbcxHe2OQ4I2AEKRjSkuBSTZUOeht0SA
+	Gb0sICMxV+rKkB3dMa8RwBvCsEna+X5HMioPELqefJvh3nHk9hFZJQmA45cE6GFWiTN3FOqK2puB0
+	oQaOHTsaaihMw5d27+PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgDvg-0007GG-4W; Tue, 02 Jun 2020 20:54:36 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1jgE2P-0004kX-0i; Tue, 02 Jun 2020 21:01:33 +0000
+Received: from mail-io1-f66.google.com ([209.85.166.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgDvS-0007Eo-Sr
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 20:54:25 +0000
-Received: from p5de0bf0b.dip0.t-ipconnect.de ([93.224.191.11]
- helo=nanos.tec.linutronix.de)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1jgDvL-0003XN-0L; Tue, 02 Jun 2020 22:54:15 +0200
-Received: by nanos.tec.linutronix.de (Postfix, from userid 1000)
- id 4DB14100F18; Tue,  2 Jun 2020 22:54:14 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: "Herrenschmidt\, Benjamin" <benh@amazon.com>,
- "maz\@kernel.org" <maz@kernel.org>, "Saidi\, Ali" <alisaidi@amazon.com>
-Subject: Re: [PATCH] irqchip/gic-v3-its: Don't try to move a disabled irq
-In-Reply-To: <37e55e71faf76dc3db76d89c20c1bdfff942e380.camel@amazon.com>
-References: <20200529015501.15771-1-alisaidi@amazon.com>
- <8c3be990888ecfb7cca9503853dc4aac@kernel.org>
- <2C4F431F-8140-4C82-B4BD-E51DE618FC08@amazon.com>
- <20200530174929.7bf6d5d7@why> <eed907d48de84c96e3ceb27c1ed6f622@kernel.org>
- <37e55e71faf76dc3db76d89c20c1bdfff942e380.camel@amazon.com>
-Date: Tue, 02 Jun 2020 22:54:14 +0200
-Message-ID: <87y2p5fatl.fsf@nanos.tec.linutronix.de>
+ id 1jgE2H-0004jo-SR
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 21:01:27 +0000
+Received: by mail-io1-f66.google.com with SMTP id d7so12402789ioq.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 02 Jun 2020 14:01:25 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=RdOOI6THo1klBm0yIRedlU8s9OpbTJoviIA/URFciN8=;
+ b=FHAZDDTxskhh2A5VEPygfcxYRATvSES4NGEruUz76EpgDcu/QuUyaasheBOo11tvXO
+ ad9Be+VhvFPesHFrUfhNjlqausR9lHtT7m0Eld6382L1ErIL6TkOMy68Apwl6P4+hBhz
+ fuvEv3vPje8kJLQLqYRUWBfzbPZNtsjdKlCaDUPBrrTWD5bsmnaWETGqqUT1eyesuqx4
+ ihyWjzBXX5RvBZzTbPsYmFmZTCrsAGPqdvzWLJ71efJVoYhMn4XaEIcSWL2qR6v0anl2
+ /H5FbLvpkqLXlE5s2F9OeXVpS6QBShsHWVHoyHejBtf7jGrLaGzq1C1Rxqr8aQE/AMl3
+ zH6A==
+X-Gm-Message-State: AOAM531uNG1LCP4torUo1QfyumYn04pIoiPYBHQmiC2Ru619IaBPcq19
+ neNtYEx8qtlWWPw5MQP4FjoKGko=
+X-Google-Smtp-Source: ABdhPJyED+cNMQ8/u2s36pB/sr1W0BzLhhpcCiviur8uywjjNdNTWlEfvdk/qgx24vUTx4ZeDFdd4A==
+X-Received: by 2002:a02:ca18:: with SMTP id i24mr26930962jak.70.1591131684561; 
+ Tue, 02 Jun 2020 14:01:24 -0700 (PDT)
+Received: from xps15 ([64.188.179.251])
+ by smtp.gmail.com with ESMTPSA id p11sm59004ioo.26.2020.06.02.14.01.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 02 Jun 2020 14:01:23 -0700 (PDT)
+Received: (nullmailer pid 3941805 invoked by uid 1000);
+ Tue, 02 Jun 2020 21:01:22 -0000
+Date: Tue, 2 Jun 2020 15:01:22 -0600
+From: Rob Herring <robh@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH v2 13/24] docs: arm64: convert perf.txt to ReST format
+Message-ID: <20200602210122.GA3930090@bogus>
+References: <cover.1581956285.git.mchehab+huawei@kernel.org>
+ <e000ccaf21f899a4c503c0a0e8734a2a3e177ee6.1581956285.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
-X-Linutronix-Spam-Score: -1.0
-X-Linutronix-Spam-Level: -
-X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
- SHORTCIRCUIT=-0.0001
+Content-Disposition: inline
+In-Reply-To: <e000ccaf21f899a4c503c0a0e8734a2a3e177ee6.1581956285.git.mchehab+huawei@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_135423_072819_EC671115 
-X-CRM114-Status: GOOD (  17.65  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200602_140125_915644_47FF4A15 
+X-CRM114-Status: GOOD (  16.03  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.66 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,65 +91,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "jason@lakedaemon.net" <jason@lakedaemon.net>, "Machulsky,
- Zorik" <zorik@amazon.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, "Zilberman,
- Zeev" <zeev@amazon.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "Woodhouse, David" <dwmw@amazon.co.uk>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-"Herrenschmidt, Benjamin" <benh@amazon.com> writes:
-> On Sun, 2020-05-31 at 12:09 +0100, Marc Zyngier wrote:
->> > The semantic of activate/deactivate (which maps to started/shutdown
->> > in the IRQ code) is that the HW resources for a given interrupt are
->> > only committed when the interrupt is activated. Trying to perform
->> > actions involving the HW on an interrupt that isn't active cannot be
->> > guaranteed to take effect.
->> > 
->> > I'd rather address it in the core code, by preventing set_affinity (and
->> > potentially others) to take place when the interrupt is not in the
->> > STARTED state. Userspace would get an error, which is perfectly
->> > legitimate, and which it already has to deal with it for plenty of
->> > other
->> > reasons.
->
-> So I finally found time to dig a bit in there :) Code has changed a bit
-> since last I looked. But I have memories of the startup code messing
-> around with the affinity, and here it is. In irq_startup() :
->
->
-> 		switch (__irq_startup_managed(desc, aff, force)) {
-> 		case IRQ_STARTUP_NORMAL:
-> 			ret = __irq_startup(desc);
-> 			irq_setup_affinity(desc);
-> 			break;
-> 		case IRQ_STARTUP_MANAGED:
-> 			irq_do_set_affinity(d, aff, false);
-> 			ret = __irq_startup(desc);
-> 			break;
-> 		case IRQ_STARTUP_ABORT:
-> 			irqd_set_managed_shutdown(d);
-> 			return 0;
->
-> So we have two cases here. Normal and managed.
->
-> In the managed case, we set the affinity before startup. I feel like your
-> patch might break that or am I missing something ?
+On Mon, Feb 17, 2020 at 05:20:31PM +0100, Mauro Carvalho Chehab wrote:
+> This file is almost in ReST. All it needs is a rename and
+> adding a :field: for the two fields at the beginning
+> (author and date).
+> 
+> While here, add a proper SPDX header, and use the standard
+> markup for document titles, just for consistency.
+> 
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+> ---
+>  Documentation/arm64/index.rst              | 1 +
+>  Documentation/arm64/{perf.txt => perf.rst} | 7 +++++--
+>  2 files changed, 6 insertions(+), 2 deletions(-)
+>  rename Documentation/arm64/{perf.txt => perf.rst} (95%)
 
-It will break stuff because the affinity is not stored in case that the
-interrupt is not started.
+Is there some reason this hasn't been merged or commented on?
 
-I think we can fix this in the core code but that needs more thought.
-__irq_can_set_affinity() is definitely the wrong place.
 
-Thanks,
+> diff --git a/Documentation/arm64/index.rst b/Documentation/arm64/index.rst
+> index 5c0c69dc58aa..c51d0fa80318 100644
+> --- a/Documentation/arm64/index.rst
+> +++ b/Documentation/arm64/index.rst
+> @@ -13,6 +13,7 @@ ARM64 Architecture
+>      hugetlbpage
+>      legacy_instructions
+>      memory
+> +    perf
+>      pointer-authentication
+>      silicon-errata
+>      sve
+> diff --git a/Documentation/arm64/perf.txt b/Documentation/arm64/perf.rst
+> similarity index 95%
+> rename from Documentation/arm64/perf.txt
+> rename to Documentation/arm64/perf.rst
+> index 0d6a7d87d49e..9c76a97baf28 100644
+> --- a/Documentation/arm64/perf.txt
+> +++ b/Documentation/arm64/perf.rst
+> @@ -1,8 +1,11 @@
+> +.. SPDX-License-Identifier: GPL-2.0
+> +
+> +=====================
+>  Perf Event Attributes
+>  =====================
+>  
+> -Author: Andrew Murray <andrew.murray@arm.com>
+> -Date: 2019-03-06
+> +:Author: Andrew Murray <andrew.murray@arm.com>
+> +:Date: 2019-03-06
 
-        tglx
+Andrew is no long with Arm. Both lines look like things that become  
+stale, so I'd just remove them.
 
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
