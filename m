@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93BC81EC10C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 19:36:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33B861EC114
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 19:37:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=q/84+Xzv9wYXjXxsrOfAsHwY4PctCFPoScIapKHvVZQ=; b=MFjkRnjkwfu7Pdxl7LwR10MnqC
-	jaDR3RVPMfhtOjzuHXftGRP9JGstnQViIHKY7cq8Kts6u2pM8b3KyTkIlyuJtX7DMHqVYE0lOHioe
-	6wkVrMKQXuF9KMWkRWnixhbj1mgf2LQkVX3EyPcMuVowHXGMRmOXpWi8zw7SV4d84oTd1+UwA/60x
-	hZGVE4HTOO7rKZp1F5zPwqKNmnwK7+IIcvblajPxnc9UX0AtUsvFoHir1Xk/5N2bq6shVCaXEe7wM
-	HBx0ZXwB5dXiOfXozaDI6IfmXK+g/NZvok8RpBk+agM6AghrqVu2E0ytINKsTVnCWnLvP8VPMSWO3
-	rp2xk3Mg==;
+	bh=kLbTjsvZaEmH3GwIeJvwSiLd72wCym3BhsAjN5iO49M=; b=k+7B01xeNEFxKuPD739BWrxoBL
+	JimooGf2RdfVmv0nKt2xGiUz6k707EQHg0b2HPyYmh4ROnACP6bQK6BHgURcCVJ4qTXxApzddULxx
+	zu0mYGYCmWXVVP4y/tCu2Ly+DeN5wLSrQOjN1/pfbaG+MRr+YrIDv7GJucIDFkyfAlvq1oE/tsKts
+	rQbUn/8jPo11YA3XR+VN/n6X8QSKRNn7ynwa1sbena+Dbo8jQnsFO42NDCzyY8+118alQ24vX1IBY
+	9F9bUsu9R+OEGV4g9K5UB9eTm3vhZ6WmOYAEv8epgavsQpFZeqyKO7q4oerjavmhI0zg9Ez8/m5QB
+	1P3Gzkgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgApw-0001lo-Bt; Tue, 02 Jun 2020 17:36:28 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jgAql-0002Ku-52; Tue, 02 Jun 2020 17:37:19 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgApp-0001lT-4c; Tue, 02 Jun 2020 17:36:22 +0000
-Received: by mail-pf1-x444.google.com with SMTP id h185so4374358pfg.2;
- Tue, 02 Jun 2020 10:36:20 -0700 (PDT)
+ id 1jgAqf-0002KS-5J; Tue, 02 Jun 2020 17:37:14 +0000
+Received: by mail-pl1-x642.google.com with SMTP id x11so1622602plv.9;
+ Tue, 02 Jun 2020 10:37:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Uce1GUg/yeAXqzZgy16vemL5SREKQhoWq++yzE0HX/k=;
- b=Xq2HkgktcbP09b447MRSywQnvS/ELe+9AihIJrcVVuSVUy55gNXjhQr7/8rqMwt0Vq
- Ur9ztyYu7A4/EYgrHVPyu77LTe1Zlfa05TswMKF3CwTmqiOYkbOliwwgbhrf0zFtsU0Q
- 95tbh/amSpR5VYzUaZi2b3cXSv4T/gO3azZvbx1uGQp8QzR2aDoQTDkDANhBeVPkU6Tq
- MlEglM6NM/UddT0W/FY5ai/n20C+g6KIWaJThwXeUOaq41/Vrc8nZhYPo2oEXRppjZVC
- 6NFNvfrVNyCScTlPkMmGyaVkwyrAUctbo3uRKpVlHnU1ZswKvoBnAqfOA3LgbqUv4ytq
- 58ow==
+ bh=yC3b8DT3Kq2HwvI7o7BNmEUaQSfwkzDaER9EH5kkdq0=;
+ b=Yviw9z295zj5fjLl2vUlLMAJzpUBdI6yODgLo71V+gnRWdy/HAfOku+4RRGF+yzmqK
+ t+au//KmqSyun3jNCn8vCEmKZNdAFWTJftT893d+nbe9PjQ8sJDXaTHzCZ/jv3Wa/7/Y
+ QigrSViYpDIh7VAmvvZTyDug+wYeFeI+s7pGmAbiZpsKOOY1z3i1+6IG3saPoQPuQW8L
+ PRHyMDST7Kx8Ek98ZFeCdl8Ojb5DhgTobkvM0vWcFMfafJCDpPpjqhzsc+N/z6iB08FZ
+ DSJW5bxNzFbXaXqd0LKkWoaLxpbP935w0N9J0lqkRULyFI9st4ghdJYOiCX90M0LelV8
+ k1lQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=Uce1GUg/yeAXqzZgy16vemL5SREKQhoWq++yzE0HX/k=;
- b=Oa7MbPYek3qpiGkp6XaU96WmrbiMhlVTfecoJLrlHcM6aCsz+bfWNKv0ov6vJHG6G/
- OCtQs7uaQlPxDoadXUcl5z35YxGluQ0vuL/i1E9Rzsi2xbQTXkU+oZ0qqoIeB98OZpTU
- 2U/DA9W3X7awHoTrfs8f9Ai38C0VmrY303iC9zZnId2cREs+m+D4PqC2KjS9V7dCTj5l
- e+q17KGPZMgN/de9NzRQSAvGx7T/9Rva3OMCPpPQjNfHqVjBkYrGSbsOx2QgI+tBYft5
- SFEZ6YRlI/7rHFVEkKXDtXwaLI79FLjjYbQVrYvtWD0aWLyiUq3sUF72IfvwMIRlvtf6
- 7ROw==
-X-Gm-Message-State: AOAM530oxwNYQ1lS1zesIlLGRykboDjUXObi2iS2wNnjl8VPoULiB8bv
- whPJSFVmVK+ixDRObi/8gUM=
-X-Google-Smtp-Source: ABdhPJzojgq3mk4y99SD0KUo/tv5azMA07TY6lAMuLSGuWWXOIsLruARqyvangOgvctSu8ulNVAw2Q==
-X-Received: by 2002:aa7:80d0:: with SMTP id a16mr28203334pfn.188.1591119380338; 
- Tue, 02 Jun 2020 10:36:20 -0700 (PDT)
+ bh=yC3b8DT3Kq2HwvI7o7BNmEUaQSfwkzDaER9EH5kkdq0=;
+ b=l9xQkgqvTjjmw8aSVCnWIqlG626eszVV+hoB/Njjx1w+zCMmLJUdo+oyhYZVlb1vtP
+ y2FcBcUkkcmqqrRV18t9F/9VwmYJpzAdQebp8qG+0icKc3VFqVu5YJTArJj2NVPSj5sG
+ HqW124n99ByLS3iPFrbZ7WjvzC/FFE2WUuWeF1ikZJqwkPznVkeyljVzypI/vAX1nh46
+ 8wclER0zMGFJsEBzNsowIsmxF6At4aOoetHd/JA4MYdC+MepEBqGP1RPyQHGrzZ8Gufw
+ Uh9r4SlekSxEn5BGXVpIuRQr/mTbE+Bnaa72XwM9LVNmGnv1VGXjTe3EI0INjDYTNDq7
+ BRXQ==
+X-Gm-Message-State: AOAM531BUIGaYgn7778AO4OUGT5egSL4Olm1L+sY06e8T9rizSvywXxX
+ np6sKiUjBazrrKF+A2D/EHc=
+X-Google-Smtp-Source: ABdhPJz/gwr+d9DNnYFiNawK6YhfZFHEyC8/iMMp5w+Vh1TRDaGaZmArZRTSZkbx1AZrUmItAtFU5g==
+X-Received: by 2002:a17:902:aa48:: with SMTP id
+ c8mr17901684plr.128.1591119432420; 
+ Tue, 02 Jun 2020 10:37:12 -0700 (PDT)
 Received: from localhost.localdomain ([223.235.152.125])
- by smtp.gmail.com with ESMTPSA id i22sm2864382pfo.92.2020.06.02.10.35.37
+ by smtp.gmail.com with ESMTPSA id i22sm2864382pfo.92.2020.06.02.10.36.26
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 02 Jun 2020 10:36:19 -0700 (PDT)
+ Tue, 02 Jun 2020 10:37:11 -0700 (PDT)
 From: Amit Singh Tomar <amittomer25@gmail.com>
 To: andre.przywara@arm.com, afaerber@suse.de, manivannan.sadhasivam@linaro.org,
- sboyd@kernel.org
-Subject: [PATCH v3 03/10] clk: actions: Add MMC clock-register reset bits
-Date: Tue,  2 Jun 2020 23:03:05 +0530
-Message-Id: <1591119192-18538-4-git-send-email-amittomer25@gmail.com>
+ robh+dt@kernel.org
+Subject: [PATCH v3 04/10] arm64: dts: actions: limit address range for pinctrl
+ node
+Date: Tue,  2 Jun 2020 23:03:06 +0530
+Message-Id: <1591119192-18538-5-git-send-email-amittomer25@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591119192-18538-1-git-send-email-amittomer25@gmail.com>
 References: <1591119192-18538-1-git-send-email-amittomer25@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_103621_179091_E4FBAAF9 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200602_103713_201263_35DCD8F8 
+X-CRM114-Status: GOOD (  14.04  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [amittomer25[at]gmail.com]
@@ -99,43 +100,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, cristian.ciocaltea@gmail.com
+Cc: devicetree@vger.kernel.org, linux-actions@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ cristian.ciocaltea@gmail.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commit adds reset bits needed for MMC clock registers present
-on Actions S700 SoC.
+After commit 7cdf8446ed1d ("arm64: dts: actions: Add pinctrl node for
+Actions Semi S700") following error has been observed while booting
+Linux on Cubieboard7-lite(based on S700 SoC).
 
+[    0.257415] pinctrl-s700 e01b0000.pinctrl: can't request region for
+resource [mem 0xe01b0000-0xe01b0fff]
+[    0.266902] pinctrl-s700: probe of e01b0000.pinctrl failed with error -16
+
+This is due to the fact that memory range for "sps" power domain controller
+clashes with pinctrl.
+
+One way to fix it, is to limit pinctrl address range which is safe
+to do as current pinctrl driver uses address range only up to 0x100.
+
+This commit limits the pinctrl address range to 0x100 so that it doesn't
+conflict with sps range.
+
+Fixes: 7cdf8446ed1d ("arm64: dts: actions: Add pinctrl node for Actions
+Semi S700")
+
+Suggested-by: Andre Przywara <andre.przywara@arm.com>
 Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
 ---
-Changes from v2:
-	* No change.
-Changes from v1:
+Changes since v2:
+	* this is no more don't merge and fixed
+	  the broken S700 boot by limiting pinctrl
+	  address range.
+	* Modified the subject to reflect the changes.
+Changes since v1:
         * No change.
-Changes from RFC:
-        * No change.
+Changes since RFC:
+        * kept as do not merge.
 ---
- drivers/clk/actions/owl-s700.c | 3 +++
- 1 file changed, 3 insertions(+)
+ arch/arm64/boot/dts/actions/s700.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/clk/actions/owl-s700.c b/drivers/clk/actions/owl-s700.c
-index a2f34d13fb54..cd60eca7727d 100644
---- a/drivers/clk/actions/owl-s700.c
-+++ b/drivers/clk/actions/owl-s700.c
-@@ -577,6 +577,9 @@ static const struct owl_reset_map s700_resets[] = {
- 	[RESET_DSI]	= { CMU_DEVRST0, BIT(2) },
- 	[RESET_CSI]	= { CMU_DEVRST0, BIT(13) },
- 	[RESET_SI]	= { CMU_DEVRST0, BIT(14) },
-+	[RESET_SD0]     = { CMU_DEVRST0, BIT(22) },
-+	[RESET_SD1]     = { CMU_DEVRST0, BIT(23) },
-+	[RESET_SD2]     = { CMU_DEVRST0, BIT(24) },
- 	[RESET_I2C0]	= { CMU_DEVRST1, BIT(0) },
- 	[RESET_I2C1]	= { CMU_DEVRST1, BIT(1) },
- 	[RESET_I2C2]	= { CMU_DEVRST1, BIT(2) },
+diff --git a/arch/arm64/boot/dts/actions/s700.dtsi b/arch/arm64/boot/dts/actions/s700.dtsi
+index 2006ad5424fa..f8eb72bb4125 100644
+--- a/arch/arm64/boot/dts/actions/s700.dtsi
++++ b/arch/arm64/boot/dts/actions/s700.dtsi
+@@ -231,7 +231,7 @@
+ 
+ 		pinctrl: pinctrl@e01b0000 {
+ 			compatible = "actions,s700-pinctrl";
+-			reg = <0x0 0xe01b0000 0x0 0x1000>;
++			reg = <0x0 0xe01b0000 0x0 0x100>;
+ 			clocks = <&cmu CLK_GPIO>;
+ 			gpio-controller;
+ 			gpio-ranges = <&pinctrl 0 0 136>;
 -- 
 2.7.4
 
