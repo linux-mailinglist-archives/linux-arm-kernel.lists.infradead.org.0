@@ -2,67 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 473891EB7BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 10:57:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54B601EB7E8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 11:07:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I2wZMWxpjRan9WaOwtIK3qW99E9DECtc5SZy6H8q9rQ=; b=WuCHpsN4buY8HQ
-	58LofsV1VBc2g/Lsezh/7SpBTuIuv1izWfkOrBIrgvq2tIMISPdtdyosDqnFifIrvMIsZDLZRsJ3X
-	cZ2FOdj+qT3dyv8b8gfkgcXp0j9pUDRHkR9/o5FtlzDDaW+MNQIvxRqNqApHyMdXm4rnDA9OdqhAQ
-	cOR6L4kVMNpjr9AviXSX0oi/5djHaydCwkXcbsV1y7jxqCcJA2suJ9dpk1aY4x+ZVxbIMDaBBHTX2
-	j8Hjh2RNg1OCVRWGf4QKpsk8Rt08Qk8VDibu/ua7MI+5wr2d3aXRx5gGBrSO4m49c6r/TiWP4JqDv
-	G9bmhkJddJ5QHFKR45eA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Mx1mj4CLHX9NncegRVFOnpMzGxHVvY2U4Z2Y7ngPZkA=; b=llcAKiKqNcxH27qeP/VBLICC7
+	SMIb6eBUfNN8axNrm5IR4wUbKQ2tJa4VkXw27mxl9/bCDpjR96j1A5hfEx9fvjFQWX+/8Sfzb4tO8
+	FY34/a0kbHKx8kpBzmfiOrVXZWByEHu/j8t8ntCL9DGOaSdNC1cm9g93mU9pKE/RYKtFj7du0Kxt3
+	Ft1TVjKM9Xwh8MK9O5OzZ9Qc4u2lfGPXf/KZkzVH5Np04gkkKc5fepsdg5HJboYeYYihuM3iUDNHp
+	dIycNm3RCKyx1rkrfDejhSwDdNm+NdgrLNSCdv7hfMY1fVS9YA1Cp2YiXOaC5MyW8l5/FGIkQYbd8
+	NazkV0wvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg2ja-0003Fd-Op; Tue, 02 Jun 2020 08:57:22 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg2hC-0007PF-WE
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 08:54:59 +0000
-Received: from lhreml710-chm.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id B113D257B5EFB95BE55A;
- Tue,  2 Jun 2020 09:54:46 +0100 (IST)
-Received: from localhost (10.47.95.180) by lhreml710-chm.china.huawei.com
- (10.201.108.61) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Tue, 2 Jun 2020
- 09:54:46 +0100
-Date: Tue, 2 Jun 2020 09:54:06 +0100
-From: Jonathan Cameron <Jonathan.Cameron@Huawei.com>
-To: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
-Subject: Re: [PATCH v2 3/3] iio: remove
- iio_triggered_buffer_postenable()/iio_triggered_buffer_predisable()
-Message-ID: <20200602095406.00005add@Huawei.com>
-In-Reply-To: <a0253d719a4390f65668789e5fc182ec19355f17.camel@analog.com>
-References: <20200525113855.178821-1-alexandru.ardelean@analog.com>
- <20200525113855.178821-3-alexandru.ardelean@analog.com>
- <20200531164020.765822dc@archlinux>
- <a0253d719a4390f65668789e5fc182ec19355f17.camel@analog.com>
-Organization: Huawei Technologies Research and Development (UK) Ltd.
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; i686-w64-mingw32)
+	id 1jg2tl-0001CD-Cl; Tue, 02 Jun 2020 09:07:53 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jg2tf-0001Bi-46
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 09:07:48 +0000
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 02 Jun 2020 18:07:43 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id BB527180B46;
+ Tue,  2 Jun 2020 18:07:43 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Tue, 2 Jun 2020 18:07:43 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 673931A0E67;
+ Tue,  2 Jun 2020 18:07:43 +0900 (JST)
+Received: from [10.213.31.100] (unknown [10.213.31.100])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id BC777120136;
+ Tue,  2 Jun 2020 18:07:42 +0900 (JST)
+Subject: Re: [PATCH v2 4/5] PCI: uniphier: Add iATU register support
+To: Rob Herring <robh@kernel.org>
+References: <1589536743-6684-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1589536743-6684-5-git-send-email-hayashi.kunihiko@socionext.com>
+ <20200601213215.GA1521885@bogus>
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Message-ID: <e6e7de73-6a89-b0e9-a9b0-de353c4e3218@socionext.com>
+Date: Tue, 2 Jun 2020 18:07:42 +0900
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-X-Originating-IP: [10.47.95.180]
-X-ClientProxiedBy: lhreml714-chm.china.huawei.com (10.201.108.65) To
- lhreml710-chm.china.huawei.com (10.201.108.61)
-X-CFilter-Loop: Reflected
+In-Reply-To: <20200601213215.GA1521885@bogus>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_015455_198552_B6AF2FA0 
-X-CRM114-Status: GOOD (  28.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200602_020747_281664_199EAAA6 
+X-CRM114-Status: GOOD (  19.77  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [185.176.76.210 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,141 +70,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "lars@metafoo.de" <lars@metafoo.de>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "songqiang1304521@gmail.com" <songqiang1304521@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "lorenzo.bianconi83@gmail.com" <lorenzo.bianconi83@gmail.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linus.walleij@linaro.org" <linus.walleij@linaro.org>,
- "jic23@kernel.org" <jic23@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>, Jingoo Han <jingoohan1@gmail.com>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2 Jun 2020 07:50:23 +0000
-"Ardelean, Alexandru" <alexandru.Ardelean@analog.com> wrote:
+Hi Rob,
 
-> On Sun, 2020-05-31 at 16:40 +0100, Jonathan Cameron wrote:
-> > On Mon, 25 May 2020 14:38:55 +0300
-> > Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
-> >   
-> > > From: Lars-Peter Clausen <lars@metafoo.de>
-> > > 
-> > > This patch should be squashed into the first one, as the first one is
-> > > breaking the build (intentionally) to make the IIO core files easier to
-> > > review.
-> > > 
-> > > Signed-off-by: Lars-Peter Clausen <lars@metafoo.de>
-> > > Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
-> > > ---  
-> > 
-> > Friend poke.  Version log?  
+On 2020/06/02 6:32, Rob Herring wrote:
+> On Fri, May 15, 2020 at 06:59:02PM +0900, Kunihiko Hayashi wrote:
+>> This gets iATU register area from reg property. In Synopsis DWC version
+>> 4.80 or later, since iATU register area is separated from core register
+>> area, this area is necessary to get from DT independently.
+>>
+>> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+>> ---
+>>   drivers/pci/controller/dwc/pcie-uniphier.c | 7 +++++++
+>>   1 file changed, 7 insertions(+)
+>>
+>> diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
+>> index a8dda39..493f105 100644
+>> --- a/drivers/pci/controller/dwc/pcie-uniphier.c
+>> +++ b/drivers/pci/controller/dwc/pcie-uniphier.c
+>> @@ -447,6 +447,13 @@ static int uniphier_pcie_probe(struct platform_device *pdev)
+>>   	if (IS_ERR(priv->pci.dbi_base))
+>>   		return PTR_ERR(priv->pci.dbi_base);
+>>   
+>> +	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "atu");
+>> +	if (res) {
+>> +		priv->pci.atu_base = devm_pci_remap_cfg_resource(dev, res);
 > 
-> Version log is in the first patch.
-> I was wondering if I omitted it.
-> Seems, this time I didn't. But I admit, it probably would have been better
-> here.
-Ah fair enough.  That works fine if there is a cover letter but not
-so much just putting things in the first patch!
+> This isn't config space, so this function shouldn't be used.
 > 
-> > 
-> > Other than the wistful comment below (which I'm not expecting you to
-> > do anything about btw!) whole series looks good to me.
-> > 
-> > These are obviously no functional changes (I think) so it's only really
-> > patch 2 that
-> > could do with more eyes and acks.
-> > 
-> > Far as I can tell that case is fine as well because of the protections
-> > on being in the right mode, but more eyes on that would be great.
-> > 
-> > So assuming that's fine, what commit message do you want me to use for
-> > the fused single patch?  
-> 
-> Commit message-wise: I think the message in the first commit would be
-> mostly sufficient.
-> No idea what other description would be needed.
-> 
-> So, maybe something like:
-> 
-> ----------------------------------------------------------------------
-> All devices using a triggered buffer need to attach and detach the trigger
-> to the device in order to properly work. Instead of doing this in each and
-> every driver by hand move this into the core.
-> 
-> At this point in time, all drivers should have been resolved to
-> attach/detach the poll-function in the same order.
-> 
-> This patch removes all explicit calls of iio_triggered_buffer_postenable()
-> & iio_triggered_buffer_predisable() in all drivers, since the core handles
-> now the pollfunc attach/detach.
-> 
-> The more peculiar change is for the 'at91-sama5d2_adc' driver, since it's
-> not obvious that removing the hooks doesn't break anything**
-> ----------------------------------------------------------------------
-> 
+> Use devm_platform_ioremap_resource_byname().
 
-Looks good.
+Indeed. I'll replace with it.
 
-> ** for the comment about 'at91-sama5d2_adc', we really do need to get some
-> testing; otherwise this risks breaking it.
-
-Agreed.  
-
+>> +		if (IS_ERR(priv->pci.atu_base))
+>> +			priv->pci.atu_base = NULL;
+>> +	}
+>> +
+>>   	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "link");
+>>   	priv->base = devm_ioremap_resource(dev, res);
 > 
-> 
-> > 
-> > Thanks,
-> > 
-> > Jonathan
-> >   
-> > >  static const struct iio_trigger_ops atlas_interrupt_trigger_ops = {
-> > > diff --git a/drivers/iio/dummy/iio_simple_dummy_buffer.c
-> > > b/drivers/iio/dummy/iio_simple_dummy_buffer.c
-> > > index 17606eca42b4..8e13c53d4360 100644
-> > > --- a/drivers/iio/dummy/iio_simple_dummy_buffer.c
-> > > +++ b/drivers/iio/dummy/iio_simple_dummy_buffer.c
-> > > @@ -99,20 +99,6 @@ static irqreturn_t iio_simple_dummy_trigger_h(int
-> > > irq, void *p)
-> > >  }
-> > >  
-> > >  static const struct iio_buffer_setup_ops
-> > > iio_simple_dummy_buffer_setup_ops = {
-> > > -	/*
-> > > -	 * iio_triggered_buffer_postenable:
-> > > -	 * Generic function that simply attaches the pollfunc to the
-> > > trigger.
-> > > -	 * Replace this to mess with hardware state before we attach the
-> > > -	 * trigger.
-> > > -	 */
-> > > -	.postenable = &iio_triggered_buffer_postenable,
-> > > -	/*
-> > > -	 * iio_triggered_buffer_predisable:
-> > > -	 * Generic function that simple detaches the pollfunc from the
-> > > trigger.
-> > > -	 * Replace this to put hardware state back again after the trigger
-> > > is
-> > > -	 * detached but before userspace knows we have disabled the ring.
-> > > -	 */
-> > > -	.predisable = &iio_triggered_buffer_predisable,
-> > >  };
-> > >    
-> > Hmm. Guess we should probably 'invent' a reason to illustrate the bufer
-> > ops in the dummy example.  Anyone feeling creative?  
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Feel free to convert this one too.
 
+This should be replaced as well.
 
+Thank you,
+  
+---
+Best Regards
+Kunihiko Hayashi
 
 _______________________________________________
 linux-arm-kernel mailing list
