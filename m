@@ -2,56 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF15C1EC308
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 21:49:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEE811EC352
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 22:01:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dHzq8gkPh9J5CQlDnPYAl9ZJZDbSW+I8oJSHgxFdhbc=; b=oGBmZADg3654CZ
-	pwx0L54FIGXnJiWAI81jEzKSC7kDywPxfYtczaReK9eFQT3pXlhRhCOcZ5ESzUqnAdixnEQcaREhB
-	IS3H/V8enmOE3OVJZcQJiLHNeDZsIt4EXeh/JbAjemXqUZuIktrcZUSsqUARZVjzIzzFtiY8nRzKT
-	QWQVzZONgZI9/9S9d/N9GbZ8L1v8MY/qouIFbRTcasZMls4fydYxcDj2TJWeX+SpfkElvjCi6V42i
-	oDukeh1CPe94tf5+BQi5ww5Z56422Tda4tzBQGCcbPmL40Igqs1tir2cbUiRHGkOnJOjq/GLKNMmW
-	xqtuk0mn6Yt1h1SS1iog==;
+	List-Owner; bh=SQDws0KosQK7UtvVyMFL5Xevea5gIAONInwtTRP+k6k=; b=PiXeHGuUEpwNQS
+	btNBMV5qNd54jL0CzjTJA18wdVV9Kwt8YMXxU71s+HMSbVujRndl9O8F4Pti2iPKsC7th2yxQX6nJ
+	wPw3sMmScf/PTqnAgR6smZ4TYLX+j0NqvxPaoclJA3FgErowJs2axxUQAOa/khYfKxVIPnwrwUVav
+	mW9OGTYbZO6hBDvzzmO4Dt3SKewjUXAEfkfuOhHlPdde/xK61E0js9ePZlb6JJXMReXrShbBQOMk4
+	HNLz48TcdHU3fHbmBe81u0cMVefe4Rh3CvEBv4gVhgiyQDp4hwfSNp+dBhY/92WkMLWBTYzc9gq//
+	wRAkqZ9WVUE8yRSoZFJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgCul-0006zC-O9; Tue, 02 Jun 2020 19:49:35 +0000
-Received: from ns2.baikalelectronics.com ([94.125.187.42]
- helo=mail.baikalelectronics.ru)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgCuf-0006yr-9W
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 19:49:31 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mail.baikalelectronics.ru (Postfix) with ESMTP id 966508030838;
- Tue,  2 Jun 2020 19:49:28 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at baikalelectronics.ru
-Received: from mail.baikalelectronics.ru ([127.0.0.1])
- by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id H-uqhSvYPpnb; Tue,  2 Jun 2020 22:49:25 +0300 (MSK)
-Date: Tue, 2 Jun 2020 22:49:25 +0300
-From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-To: Lars Povlsen <lars.povlsen@microchip.com>
-Subject: Re: [PATCH 04/10] dt-bindings: spi: Add bindings for spi-dw-mchp
-Message-ID: <20200602194925.qbevttzz3ghvmd2d@mobilestation>
-References: <20200513140031.25633-1-lars.povlsen@microchip.com>
- <20200513140031.25633-5-lars.povlsen@microchip.com>
+	id 1jgD5i-0007Ly-GG; Tue, 02 Jun 2020 20:00:54 +0000
+Received: from mout.kundenserver.de ([212.227.17.24])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgD5b-0007KV-Ve
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 20:00:49 +0000
+Received: from mail-qk1-f177.google.com ([209.85.222.177]) by
+ mrelayeu.kundenserver.de (mreue106 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1MxEYY-1in9Ws0YcS-00xdPH for <linux-arm-kernel@lists.infradead.org>; Tue,
+ 02 Jun 2020 22:00:42 +0200
+Received: by mail-qk1-f177.google.com with SMTP id n141so13848530qke.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 02 Jun 2020 13:00:41 -0700 (PDT)
+X-Gm-Message-State: AOAM531xo8ypiyeIoZeeOD8cI46aQvvSmJk0di59/MDuzg3qZAGCg4gQ
+ HpJ/4nvK7+9rJbokW5YHcsjg491+RKsvJPFI6bU=
+X-Google-Smtp-Source: ABdhPJyB5+r7g3bHdXBxRdOOYP+7Rw0T2HuVg/Rbf+3oEj8ADNCBgrexKnNOpu+oGkSnzC4SnXDxD46Jw/blC+iUP8E=
+X-Received: by 2002:ae9:c10d:: with SMTP id z13mr24759360qki.3.1591128040882; 
+ Tue, 02 Jun 2020 13:00:40 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200513140031.25633-5-lars.povlsen@microchip.com>
-X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
+References: <1583603819-9651-1-git-send-email-santosh.shilimkar@oracle.com>
+ <8750635a-37de-f4d0-08b1-16e904be2de7@oracle.com>
+In-Reply-To: <8750635a-37de-f4d0-08b1-16e904be2de7@oracle.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 2 Jun 2020 22:00:24 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1v7V=980HasrQ8t96mLG3wHWW1SXwbXDL5o=F1oFd-Fg@mail.gmail.com>
+Message-ID: <CAK8P3a1v7V=980HasrQ8t96mLG3wHWW1SXwbXDL5o=F1oFd-Fg@mail.gmail.com>
+Subject: Re: [GIT PULL] ARM: Keystone DTS updates for 5.7
+To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+X-Provags-ID: V03:K1:z9n9WmKZOR3E9RzzxhRee1/YGvsKqd3ItGsobDoW/XQELWefBLq
+ BQNITQ1ja2tsTWj/0XA0fldjXn4muNBRql9hhGnXSglSxp1EK6dSp7MCIN386rPwb2mdSsa
+ goQ+7FmVSq1QoTOMWlOCj9wXDGn34SjqEQ05eJLujzS7al+DlrFlEJBVY6b6O82rt2eWJJ0
+ P3I53ssFLbWQsExHXW5IQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:dQxbP4ET4Gc=:H+ULwNUpNylq6tmU7fHuIY
+ GbPLTWOXlylI5KyjEic+3BNEmnID/7SnI7mbsu0f2HBcUoFvT5fDJOB/mSkoiVDhxhTNZSzf5
+ 9jsGn6JRb7IFae2Om5Ker19EDt5HIGQzt7LgfKef5J2EfuZOBEJlos3I21fGdVEVGzkBrV0vt
+ SqoWDNFdGyxkDMVFKn4nrF6wZxOJKQhLlwG2j6KTxSQ/V71F4pAEADrrqkRZXjM8uW0dlU0h+
+ 5YCLJ6w7blKZcDxJI9ad92qXPNd4gdSTOvTiRYFFuGIV+5AasU3fuyL8QvgSIvjRQt7kHIJj7
+ 5M0omOFsNzgA5MqorjDeo/hsJjPbQ08lXUbkB5lWbrBJ7HGxy4izK67JNnzDR9b9ZGwfeZOyZ
+ 0RXyveWfiYld5J25LRccB1Eo2Y28hKa7PFpVFt3i2m81gibkFVGqR7IEB3PDIWW8sVBr7pg+x
+ nnUIFhzv5g3wsce7kkWiRg+Yuw5Gt28qlBY9G2zQNETQUGYj3/Lrc/bAoSDyha+PfWV81IMv7
+ 0dAejAFvFmx8SmDy0jq8csNqMWeeK6Kvjh9ZybDatRoXph8AnzO1TAkpdl8ULhRETwhv1Ojni
+ lYvmzhZFqFnZDXUPJqBqfOszcpnVtH8ybIXOU2RxfwrucQ+OE6gwMiAIMhpxwPkEje7YV8PeV
+ XsSp7F0kli3UdsHKhHoO7Aa0Pc0K0gdrQBsFq3PrLGAZSE6U2fzvspmNqY3DdTpOTCc45R4BE
+ ezgnbXTE77G+IW/L3x43A1agJdlCeBXPA509ioyIVuEIbrIyNnCC6hLMbcpha8WLCBRpIVDDR
+ mWJUDDgab3Beobx9/BTs1VmeexjetPk3HncwndezbKkAPKDxo0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_124929_687977_0FB1CFA4 
-X-CRM114-Status: GOOD (  19.15  )
+X-CRM114-CacheID: sfid-20200602_130048_306420_03ACAE8C 
+X-CRM114-Status: GOOD (  19.75  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.24 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.24 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,147 +88,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Mark Brown <broonie@kernel.org>, linux-kernel@vger.kernel.org,
- Serge Semin <fancer.lancer@gmail.com>, linux-spi@vger.kernel.org,
- SoC Team <soc@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Olof Johansson <olof@lixom.net>, arm-soc <arm@kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Kevin Hilman <khilman@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 04:00:25PM +0200, Lars Povlsen wrote:
-> This add DT bindings for the Microsemi/Microchip SPI controller used
-> in various SoC's. It describes the "mscc,ocelot-spi" and
-> "mscc,jaguar2-spi" bindings.
+On Tue, Jun 2, 2020 at 5:14 PM <santosh.shilimkar@oracle.com> wrote:
+>
+> Hi Arnd, Olof,
+>
+> On 3/7/20 9:56 AM, Santosh Shilimkar wrote:
+> > The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
+> >
+> >    Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
+> >
+> > are available in the git repository at:
+> >
+> >    git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/keystone_dts_for_5.7
+> >
+> > for you to fetch changes up to 7856488bd83b0182548a84d05c07326321ae6138:
+> >
+> >    ARM: dts: keystone-k2g-evm: add HDMI video support (2020-03-07 09:47:24 -0800)
+> >
+> > ----------------------------------------------------------------
+> > ARM: Keystone DTS updates for 5.7
+> >
+> > Add display support for K2G EVM Board
+> >
+> > ----------------------------------------------------------------
+> > Jyri Sarha (2):
+> >        ARM: dts: keystone-k2g: Add DSS node
+> >        ARM: dts: keystone-k2g-evm: add HDMI video support
+> >
+> >   arch/arm/boot/dts/keystone-k2g-evm.dts | 101 +++++++++++++++++++++++++++++++++
+> >   arch/arm/boot/dts/keystone-k2g.dtsi    |  22 +++++++
+> >   2 files changed, 123 insertions(+)
+> >
+> Looks like this pull request wasn't picked. Can you please check
+> in case am missing something.
 
-As I see it, there is no need in this patch at all. Current DT binding file
-describes the MSCC version of the DW APB SSI IP pretty well. You can add an
-example to the DT schema though with "mscc,ocelot-spi" or "mscc,jaguar2-spi"
-compatible string and additional registers range. 
+I pulled it now, thanks for double-checking!
 
--Sergey
+The problem here was that the soc@kernel.org address was not on Cc, so
+the pull request did not end up in patchwork. I try to also look for other
+pull requests sent to the arm@kernel.org address, but it's much less reliable.
 
-> 
-> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
-> ---
->  .../bindings/spi/mscc,ocelot-spi.yaml         | 60 +++++++++++++++++++
->  .../bindings/spi/snps,dw-apb-ssi.txt          |  7 +--
->  MAINTAINERS                                   |  1 +
->  3 files changed, 63 insertions(+), 5 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/spi/mscc,ocelot-spi.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/spi/mscc,ocelot-spi.yaml b/Documentation/devicetree/bindings/spi/mscc,ocelot-spi.yaml
-> new file mode 100644
-> index 0000000000000..a3ac0fa576553
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/spi/mscc,ocelot-spi.yaml
-> @@ -0,0 +1,60 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/spi/mscc,ocelot-spi.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: Microsemi Vcore-III SPI Communication Controller
-> +
-> +maintainers:
-> +  - Alexandre Belloni <alexandre.belloni@bootlin.com>
-> +  - Lars Povlsen <lars.povlsen@microchip.com>
-> +
-> +allOf:
-> +  - $ref: "spi-controller.yaml#"
-> +
-> +description: |
-> +  The Microsemi Vcore-III SPI controller is a general purpose SPI
-> +  controller based upon the Designware SPI controller. It uses an 8
-> +  byte rx/tx fifo.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - mscc,ocelot-spi
-> +      - mscc,jaguar2-spi
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  reg:
-> +    minItems: 2
-> +    items:
-> +      - description: Designware SPI registers
-> +      - description: CS override registers
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  reg-io-width:
-> +    description: |
-> +      The I/O register width (in bytes) implemented by this device.
-> +    items:
-> +       enum: [ 2, 4 ]
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +
-> +examples:
-> +  - |
-> +    spi0: spi@101000 {
-> +      compatible = "mscc,ocelot-spi";
-> +      #address-cells = <1>;
-> +      #size-cells = <0>;
-> +      reg = <0x101000 0x100>, <0x3c 0x18>;
-> +      interrupts = <9>;
-> +      clocks = <&ahb_clk>;
-> +    };
-> diff --git a/Documentation/devicetree/bindings/spi/snps,dw-apb-ssi.txt b/Documentation/devicetree/bindings/spi/snps,dw-apb-ssi.txt
-> index 3ed08ee9feba4..5e1849be7bae5 100644
-> --- a/Documentation/devicetree/bindings/spi/snps,dw-apb-ssi.txt
-> +++ b/Documentation/devicetree/bindings/spi/snps,dw-apb-ssi.txt
-> @@ -1,10 +1,8 @@
->  Synopsys DesignWare AMBA 2.0 Synchronous Serial Interface.
-> 
->  Required properties:
-> -- compatible : "snps,dw-apb-ssi" or "mscc,<soc>-spi", where soc is "ocelot" or
-> -  "jaguar2", or "amazon,alpine-dw-apb-ssi"
-> -- reg : The register base for the controller. For "mscc,<soc>-spi", a second
-> -  register set is required (named ICPU_CFG:SPI_MST)
-> +- compatible : "snps,dw-apb-ssi" or "amazon,alpine-dw-apb-ssi"
-> +- reg : The register base for the controller.
->  - interrupts : One interrupt, used by the controller.
->  - #address-cells : <1>, as required by generic SPI binding.
->  - #size-cells : <0>, also as required by generic SPI binding.
-> @@ -38,4 +36,3 @@ Example:
->  		cs-gpios = <&gpio0 13 0>,
->  			   <&gpio0 14 0>;
->  	};
-> -
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 1db598723a1d8..6472240b8391b 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -11231,6 +11231,7 @@ L:	linux-mips@vger.kernel.org
->  S:	Supported
->  F:	Documentation/devicetree/bindings/mips/mscc.txt
->  F:	Documentation/devicetree/bindings/power/reset/ocelot-reset.txt
-> +F:	Documentation/devicetree/bindings/spi/mscc,ocelot-spi.yaml
->  F:	arch/mips/boot/dts/mscc/
->  F:	arch/mips/configs/generic/board-ocelot.config
->  F:	arch/mips/generic/board-ocelot.c
-> --
-> 2.26.2
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
