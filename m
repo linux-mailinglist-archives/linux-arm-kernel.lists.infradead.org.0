@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 416551EC511
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 00:33:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F03281EC4F5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 00:31:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=MPUD90ZyzCKKvarz8U6SDKHSzYA8eDNWaVRYW/OaglY=; b=TSy5Zaf/ukDNxYvvb6oFvx+9iL
-	8dATBDjs3a4nAt3bhB385iyBt+6vxVb1fyAJ9pY5pLUoJoxkV4+oIAUI5PkoEIEMjGIjo6m7mHSxf
-	OH3dPAZsYhNXQRx/h5KjozqQB+XHAcHhqYvpeyiNL4ZMglEjGuQbmj7Od+hVsDB1ipK1/sUH2BQhB
-	ITXSP5SzCFxSDOEqR+FQOlPC6cQ0p9gc0Ytv752fL7SELyXeeN3OM4cJYRqWDaAh4t7fvCm/coylC
-	HwcjTNd+2AmmR5HLp8HGAE1tbOoE49rXGMWp6yKlWe9f159YYpmVd3xFe9N4ZeiQs7TH30vVo5Dpc
-	H10poJtQ==;
+	bh=CbzCAep8ffMtHwx5f+xX75nwJEBJFiSr7oxaRKsxkMI=; b=nsB4HN+ims9Kor3y4knYKa13+s
+	wCvXpgIGIyuhs6IBkOq578yZulX7uymWg5evtBCMLyedQnQrIY1haGZvt0VZS+SUOSXA7EEht4lZF
+	rsuL8JeJ9ltEH6NGBvnZDxuEf9UTTFgoKO8qx3UNxagMbb2zh55yO2h/Wyqj4Ag/S3PUd8z7w2Sze
+	WUQP/92nM/KT31Q7b/dLuYCF9BjsI5eusdglhY8tC0R9HInMtypUZJyGoxyodmone+m7UUhNeihlf
+	NyZ5Zq0g5Wbnm8h1lgYzHFddzvxWN0B1r5tSmvl7S3dILENXH3xXODbpt7WqLbOF1Zj/XmZMg6e+X
+	/HcLd0rA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgFTQ-0003lc-Jl; Tue, 02 Jun 2020 22:33:32 +0000
+	id 1jgFRn-00024a-38; Tue, 02 Jun 2020 22:31:51 +0000
 Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgFRQ-0001pL-Tn
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 22:31:30 +0000
-Received: from unknown (HELO ironmsg03-sd.qualcomm.com) ([10.53.140.143])
- by alexa-out-sd-02.qualcomm.com with ESMTP; 02 Jun 2020 15:31:23 -0700
+ id 1jgFRM-0001oJ-Op
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 22:31:26 +0000
+Received: from unknown (HELO ironmsg05-sd.qualcomm.com) ([10.53.140.145])
+ by alexa-out-sd-02.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
 Received: from gurus-linux.qualcomm.com ([10.46.162.81])
- by ironmsg03-sd.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
+ by ironmsg05-sd.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
 Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
- id 241304BDA; Tue,  2 Jun 2020 15:31:22 -0700 (PDT)
+ id 2CCB64DF1; Tue,  2 Jun 2020 15:31:22 -0700 (PDT)
 From: Guru Das Srinagesh <gurus@codeaurora.org>
 To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: [PATCH v16 01/11] drm/i915: Use 64-bit division macro
-Date: Tue,  2 Jun 2020 15:31:05 -0700
-Message-Id: <d220cb6bf508a070affb67734d297a9d4c3ab758.1591136989.git.gurus@codeaurora.org>
+Subject: [PATCH v16 02/11] hwmon: pwm-fan: Use 64-bit division macro
+Date: Tue,  2 Jun 2020 15:31:06 -0700
+Message-Id: <f0a2b661910e5079f2ccf843350aa420f62fc027.1591136989.git.gurus@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <cover.1591136989.git.gurus@codeaurora.org>
 References: <cover.1591136989.git.gurus@codeaurora.org>
 In-Reply-To: <cover.1591136989.git.gurus@codeaurora.org>
 References: <cover.1591136989.git.gurus@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_153129_004238_4DAEC04F 
-X-CRM114-Status: GOOD (  11.13  )
+X-CRM114-CacheID: sfid-20200602_153124_825371_4BEAEF31 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -80,30 +80,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the PWM framework is switching struct pwm_state.duty_cycle's
-datatype to u64, prepare for this transition by using DIV_ROUND_UP_ULL
-to handle a 64-bit dividend.
+Since the PWM framework is switching struct pwm_args.period's datatype
+to u64, prepare for this transition by using DIV_ROUND_UP_ULL to handle
+a 64-bit dividend.
 
 Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
-Reviewed-by: Jani Nikula <jani.nikula@intel.com>
-Acked-by: Jani Nikula <jani.nikula@intel.com>
+Acked-by: Guenter Roeck <linux@roeck-us.net>
 ---
- drivers/gpu/drm/i915/display/intel_panel.c | 2 +-
+ drivers/hwmon/pwm-fan.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/i915/display/intel_panel.c b/drivers/gpu/drm/i915/display/intel_panel.c
-index 276f438..81547a0 100644
---- a/drivers/gpu/drm/i915/display/intel_panel.c
-+++ b/drivers/gpu/drm/i915/display/intel_panel.c
-@@ -1920,7 +1920,7 @@ static int pwm_setup_backlight(struct intel_connector *connector,
- 		return retval;
- 	}
+diff --git a/drivers/hwmon/pwm-fan.c b/drivers/hwmon/pwm-fan.c
+index 30b7b3e..17bb642 100644
+--- a/drivers/hwmon/pwm-fan.c
++++ b/drivers/hwmon/pwm-fan.c
+@@ -447,7 +447,7 @@ static int pwm_fan_resume(struct device *dev)
+ 		return 0;
  
--	level = DIV_ROUND_UP(pwm_get_duty_cycle(panel->backlight.pwm) * 100,
-+	level = DIV_ROUND_UP_ULL(pwm_get_duty_cycle(panel->backlight.pwm) * 100,
- 			     CRC_PMIC_PWM_PERIOD_NS);
- 	panel->backlight.level =
- 		intel_panel_compute_brightness(connector, level);
+ 	pwm_get_args(ctx->pwm, &pargs);
+-	duty = DIV_ROUND_UP(ctx->pwm_value * (pargs.period - 1), MAX_PWM);
++	duty = DIV_ROUND_UP_ULL(ctx->pwm_value * (pargs.period - 1), MAX_PWM);
+ 	ret = pwm_config(ctx->pwm, duty, pargs.period);
+ 	if (ret)
+ 		return ret;
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
