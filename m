@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAF381EC103
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 19:35:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43E371EC10A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 19:35:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=I/SqRapyDmMh2t0mewpHET4Zyijx9eBeCVysPgpOxqs=; b=Vovx9c5JqGZ/rT2sf9Wjej2UAd
-	0gGEGll0irq5ICbak3j9f18Nhqv+ViD6mzoiGZTb9yZrydGibL4tAEeU9Idr2uK7vjBXQQZPUmIS+
-	ISkXrG0TGZ1/22s8E0aG3WvyQboAn25MLwjdsBn2r+1MDm4rw6is4tSKjeiDuHi0mn2r/VnX7ryqc
-	njA2PwbSsqyCE50iPJZFMJkqwlQs9sEXRE/yQvVyu5loJY1rew3hP0ZSrEu74V0PuElltZGadNRbz
-	mlEXdmj9Gu5oxlxB8DwWQtiOAG2tBwHm39lVlte+c6iJwwN4zxDNDGHpMCvH2a19JMNyeO1G6l33I
-	LCrZBwKw==;
+	bh=qtWHZC9Z/100Wo5W4MEq8zis4XLLs9NPNsOt7v4Nr84=; b=Hgh4eLIBmnOYlQN7v+DuZClOut
+	oygtJWF5MQQ8P6KLYNv1m9HscfsJtN5Z7kEabq/HHYTJIeX1/nx7YkOVGVDFIpSoOcM3FCzgGZeer
+	iCtTsSc2nH7KPKHpwSaoTfxYA4MYdCt0u44yIqI3aMv5G/Cyta8lOnl+05wl4VCNqK+PUfgS0heoe
+	NtbHaHO6SxDj0If6Q1FweiWnHjLEgPYM2C/7feiEkvAPkxXketCCJ+ki0NA+cTu/dmJVxQ3r0Nl9D
+	qq7DbxcgszTspjyCbxYc2ksSKXTQ/JpvvNZK8wiNPYWHKjypRPwDVnbp5v/ifOuZtdWcxy+oWfrSy
+	6MSiq1mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgAoQ-0007CH-1e; Tue, 02 Jun 2020 17:34:54 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jgApB-0001UK-9J; Tue, 02 Jun 2020 17:35:41 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgAoF-0007Bk-Ee; Tue, 02 Jun 2020 17:34:44 +0000
-Received: by mail-pg1-x542.google.com with SMTP id o6so5392581pgh.2;
- Tue, 02 Jun 2020 10:34:43 -0700 (PDT)
+ id 1jgAp3-0001Tt-1M; Tue, 02 Jun 2020 17:35:34 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id d6so1818967pjs.3;
+ Tue, 02 Jun 2020 10:35:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=cBGTL0Kxil03wrOoJRMt6TMIwoGa3DB2H5rd4f8PV6E=;
- b=sunS1w+poDICRs3zo89HpSDwh6tZFdEEorDFokhLApGSY+eAgsTuY5ihiawbv6LYfl
- 4rqLqsu2lj8JCnVOAzLipxY/W65sW1CSdwjewerypOxhiYVDAS+a8CjuNmQUwr1iwH7B
- BGBXZTs1KGJN54uoh5Zg/X9nMEuoN4WVT8Y5JryUF2scp7ChOguenNmgsdy0zZ3gRoO5
- isOHfjgMT1yroaGBDNLeoWXj0ieyozP3ELXhClVnDLN/aUtG+Ctoq25M+5ncf7m5/uWK
- 2EDjfR7YOERitUp+D6lONcnEkQufGPn8e6lwE+Mpqhv4FIIWci4oT1MQJv0rLFT8NEe/
- yroA==
+ bh=RQz6mXYVQk0BFmm0NO1g36FUQOi7dk9D0LeRLoLDtYo=;
+ b=AzYcFasIXKtOZM1b3NTqulWLRLcNSQNaUgzjQQlZK5GmKi0hH1+Q4la6jARw0v2L/v
+ +hKF3CJbv5WzcdQvCMItIbmcvB2K4LLxLidyFRGk4xjXT2vNZGTjWWnm/6j4tP8H171W
+ 93ocEDoDWXpm3dO71rJgj9Af6CYv1CPi0qcRLe/4fgIIElt+57tYCTJAP9J8K7jKenRo
+ av1NGlUJr4slq3eDum1JrsYWREjE7xS94efsf5Tfen+FHBF7BiGTFKjYXrFnPCcVpvMn
+ K8F3rPvbzYHqtPZGo2PwvcK3SuPKkQrEBNvr6tDb937PNjJ2RUL1Hj+GeYtK33j/jk6D
+ 5WOQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=cBGTL0Kxil03wrOoJRMt6TMIwoGa3DB2H5rd4f8PV6E=;
- b=rGVts/xMUkMRN8CVTBBiPrhm322TY7uxnYrPCdrb4Xj04wNKnZSTKLondEARCrEbVD
- 90xfPTszO1oefxh0uqSOLOHweEnK/5xTySw71bKS/1QwGlb6zpwFwXlCK8PfmF6oBRPY
- +to+mF4mxEzr0JRXmJmYEFoG2LOfV5zG7z7IvXRxfMFk0hg/pyVpLIoGI9475b46ew2e
- Gw/XrcAYUh8RlJagm7vHGr1ZD1nmmfw+4Ji1QW24QY17XOcPK4MmLuzJc+L5WIHXs2Yj
- 3NIXA2/mP8NfAJLHNHeEdNPqAsfjUbhmzfgnYEVBpwx1wNVpQb3hzitE4CiXh6custHA
- R5vw==
-X-Gm-Message-State: AOAM5328PllTFJtj9Y/7xSteB41b45bQHwRt2RWbOMHCHQqSYpgJjyDH
- NCGGVFK4Gv/8zZy1bRgXO/w=
-X-Google-Smtp-Source: ABdhPJxJfcpUCO4Ac0cThh8vLKYp+JQMtsJURxW+S959oJ+ye+zp5ColFIesFxVG+CoWuBPqxri8Kw==
-X-Received: by 2002:a05:6a00:2c5:: with SMTP id
- b5mr4605461pft.41.1591119282604; 
- Tue, 02 Jun 2020 10:34:42 -0700 (PDT)
+ bh=RQz6mXYVQk0BFmm0NO1g36FUQOi7dk9D0LeRLoLDtYo=;
+ b=n6bEO9VpEjHsBwis5jE+vmPGvR3Fk3/pUShoFz97f199l7LlbQIa4ryGVTUIZNv2fl
+ uzMVr3Qe7QVhmqZnjLn035kWAOLYyWmN6+kP1LM0FG/m/YaWmaITgzZjGuWt6VSSie7B
+ lW8wb0u9LPzVuxSJqwSN0DA0EPyGWN+1KElyzYufTEuNmle4bhSZyv2+m9GShYw0P4hb
+ m2NQIfYJCB64cxGiyLLGh4cwB6oQo23+DLDn9ps7c72BFpDIH9TYdyLxGiaXumtL1jOO
+ L19pjXl6GNJZITIBEdlEs2Gk/D0zuNgl62ac7VoAaOdumpw1K5F1tNTY0Kz2Y1TWh7ca
+ QWVA==
+X-Gm-Message-State: AOAM533vkEiAl16rmatbclsNSaI/3koIR6aqEPSUSaybDGMQfbvm0P5h
+ NfoY2dOB+nZ5+SdRNyZPHqM=
+X-Google-Smtp-Source: ABdhPJyxZUgVOr7AzryG3GnqNmUk8BcIDVV/ODBzTnbReFF+boZAxo8pBTq57AHIG4AvTlH7dwUWVg==
+X-Received: by 2002:a17:90b:3691:: with SMTP id
+ mj17mr277416pjb.152.1591119332203; 
+ Tue, 02 Jun 2020 10:35:32 -0700 (PDT)
 Received: from localhost.localdomain ([223.235.152.125])
- by smtp.gmail.com with ESMTPSA id i22sm2864382pfo.92.2020.06.02.10.34.06
+ by smtp.gmail.com with ESMTPSA id i22sm2864382pfo.92.2020.06.02.10.34.42
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 02 Jun 2020 10:34:41 -0700 (PDT)
+ Tue, 02 Jun 2020 10:35:31 -0700 (PDT)
 From: Amit Singh Tomar <amittomer25@gmail.com>
 To: andre.przywara@arm.com, vkoul@kernel.org, afaerber@suse.de,
  manivannan.sadhasivam@linaro.org
-Subject: [PATCH v3 01/10] dmaengine: Actions: get rid of bit fields from dma
- descriptor
-Date: Tue,  2 Jun 2020 23:03:03 +0530
-Message-Id: <1591119192-18538-2-git-send-email-amittomer25@gmail.com>
+Subject: [PATCH v3 02/10] dmaengine: Actions: Add support for S700 DMA engine
+Date: Tue,  2 Jun 2020 23:03:04 +0530
+Message-Id: <1591119192-18538-3-git-send-email-amittomer25@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591119192-18538-1-git-send-email-amittomer25@gmail.com>
 References: <1591119192-18538-1-git-send-email-amittomer25@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_103443_488926_21EDD791 
-X-CRM114-Status: GOOD (  17.64  )
+X-CRM114-CacheID: sfid-20200602_103533_082125_07D9A1FB 
+X-CRM114-Status: GOOD (  18.51  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [amittomer25[at]gmail.com]
@@ -109,177 +108,155 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-At the moment, Driver uses bit fields to describe registers of the DMA
-descriptor structure that makes it less portable and maintainable, and
-Andre suugested(and even sketched important bits for it) to make use of
-array to describe this DMA descriptors instead. It gives the flexibility
-while extending support for other platform such as Actions S700.
+DMA controller present on S700 SoC is compatible with the one on S900
+(as most of registers are same), but it has different DMA descriptor
+structure where registers "fcnt" and "ctrlb" uses different encoding.
 
-This commit removes the "owl_dma_lli_hw" (that includes bit-fields) and
-uses array to describe DMA descriptor.
+For instance, on S900 "fcnt" starts at offset 0x0c and uses upper 12
+bits whereas on S700, it starts at offset 0x1c and uses lower 12 bits.
 
-Suggested-by: Andre Przywara <andre.przywara@arm.com>
+This commit adds support for DMA controller present on S700.
+
 Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
 ---
 Changes since v2:
-	* No change.
+	* No changes.
 Changes since v1:
-        * Defined macro for frame count value.
-        * Introduced llc_hw_flen() from patch 2/9.
-        * Removed the unnecessary line break.
-Changes since rfc:
-        * No change.
+        * Moved llc_hw_flen() to patch 1/9.
+        * provided comments about dma descriptor difference.
+          between S700 and S900.
+Changes since RFC:
+        * Added accessor function to get the frame lenght.
+        * Removed the SoC specific check in IRQ routine.
 ---
- drivers/dma/owl-dma.c | 84 ++++++++++++++++++++++++---------------------------
- 1 file changed, 40 insertions(+), 44 deletions(-)
+ drivers/dma/owl-dma.c | 46 +++++++++++++++++++++++++++++++++++++---------
+ 1 file changed, 37 insertions(+), 9 deletions(-)
 
 diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
-index c683051257fd..dd85c205454e 100644
+index dd85c205454e..17d2fc2d568b 100644
 --- a/drivers/dma/owl-dma.c
 +++ b/drivers/dma/owl-dma.c
-@@ -120,30 +120,21 @@
- #define BIT_FIELD(val, width, shift, newshift)	\
- 		((((val) >> (shift)) & ((BIT(width)) - 1)) << (newshift))
- 
--/**
-- * struct owl_dma_lli_hw - Hardware link list for dma transfer
-- * @next_lli: physical address of the next link list
-- * @saddr: source physical address
-- * @daddr: destination physical address
-- * @flen: frame length
-- * @fcnt: frame count
-- * @src_stride: source stride
-- * @dst_stride: destination stride
-- * @ctrla: dma_mode and linklist ctrl config
-- * @ctrlb: interrupt config
-- * @const_num: data for constant fill
-- */
--struct owl_dma_lli_hw {
--	u32	next_lli;
--	u32	saddr;
--	u32	daddr;
--	u32	flen:20;
--	u32	fcnt:12;
--	u32	src_stride;
--	u32	dst_stride;
--	u32	ctrla;
--	u32	ctrlb;
--	u32	const_num;
-+/* Frame count value is fixed as 1 */
-+#define FCNT_VAL				0x1
-+
-+/* Describe DMA descriptor, hardware link list for dma transfer */
-+enum owl_dmadesc_offsets {
-+	OWL_DMADESC_NEXT_LLI = 0,
-+	OWL_DMADESC_SADDR,
-+	OWL_DMADESC_DADDR,
-+	OWL_DMADESC_FLEN,
-+	OWL_DMADESC_SRC_STRIDE,
-+	OWL_DMADESC_DST_STRIDE,
-+	OWL_DMADESC_CTRLA,
-+	OWL_DMADESC_CTRLB,
-+	OWL_DMADESC_CONST_NUM,
-+	OWL_DMADESC_SIZE
+@@ -137,6 +137,11 @@ enum owl_dmadesc_offsets {
+ 	OWL_DMADESC_SIZE
  };
  
++enum owl_dma_id {
++	S900_DMA,
++	S700_DMA,
++};
++
  /**
-@@ -153,7 +144,7 @@ struct owl_dma_lli_hw {
-  * @node: node for txd's lli_list
+  * struct owl_dma_lli - Link list for dma transfer
+  * @hw: hardware link list
+@@ -203,6 +208,7 @@ struct owl_dma_vchan {
+  * @pchans: array of data for the physical channels
+  * @nr_vchans: the number of physical channels
+  * @vchans: array of data for the physical channels
++ * @devid: device id based on OWL SoC
   */
- struct owl_dma_lli {
--	struct  owl_dma_lli_hw	hw;
-+	u32			hw[OWL_DMADESC_SIZE];
- 	dma_addr_t		phys;
- 	struct list_head	node;
+ struct owl_dma {
+ 	struct dma_device	dma;
+@@ -217,6 +223,7 @@ struct owl_dma {
+ 
+ 	unsigned int		nr_vchans;
+ 	struct owl_dma_vchan	*vchans;
++	enum owl_dma_id		devid;
  };
-@@ -320,6 +311,11 @@ static inline u32 llc_hw_ctrlb(u32 int_ctl)
- 	return ctl;
- }
  
-+static u32 llc_hw_flen(struct owl_dma_lli *lli)
-+{
-+	return lli->hw[OWL_DMADESC_FLEN] & GENMASK(19, 0);
-+}
-+
- static void owl_dma_free_lli(struct owl_dma *od,
- 			     struct owl_dma_lli *lli)
+ static void pchan_update(struct owl_dma_pchan *pchan, u32 reg,
+@@ -306,6 +313,11 @@ static inline u32 llc_hw_ctrlb(u32 int_ctl)
  {
-@@ -351,8 +347,9 @@ static struct owl_dma_lli *owl_dma_add_lli(struct owl_dma_txd *txd,
- 		list_add_tail(&next->node, &txd->lli_list);
+ 	u32 ctl;
  
- 	if (prev) {
--		prev->hw.next_lli = next->phys;
--		prev->hw.ctrla |= llc_hw_ctrla(OWL_DMA_MODE_LME, 0);
-+		prev->hw[OWL_DMADESC_NEXT_LLI] = next->phys;
-+		prev->hw[OWL_DMADESC_CTRLA] |=
-+					llc_hw_ctrla(OWL_DMA_MODE_LME, 0);
- 	}
++	/*
++	 * Irrespective of the SoC, ctrlb value starts filling from
++	 * bit 18.
++	 */
++
+ 	ctl = BIT_FIELD(int_ctl, 7, 0, 18);
  
- 	return next;
-@@ -365,8 +362,7 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
+ 	return ctl;
+@@ -362,6 +374,7 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
  				  struct dma_slave_config *sconfig,
  				  bool is_cyclic)
  {
--	struct owl_dma_lli_hw *hw = &lli->hw;
--	u32 mode;
-+	u32 mode, ctrlb;
++	struct owl_dma *od = to_owl_dma(vchan->vc.chan.device);
+ 	u32 mode, ctrlb;
  
  	mode = OWL_DMA_MODE_PW(0);
- 
-@@ -407,22 +403,22 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
- 		return -EINVAL;
- 	}
- 
--	hw->next_lli = 0; /* One link list by default */
--	hw->saddr = src;
--	hw->daddr = dst;
--
--	hw->fcnt = 1; /* Frame count fixed as 1 */
--	hw->flen = len; /* Max frame length is 1MB */
--	hw->src_stride = 0;
--	hw->dst_stride = 0;
--	hw->ctrla = llc_hw_ctrla(mode,
--				 OWL_DMA_LLC_SAV_LOAD_NEXT |
--				 OWL_DMA_LLC_DAV_LOAD_NEXT);
-+	lli->hw[OWL_DMADESC_CTRLA] = llc_hw_ctrla(mode,
-+						  OWL_DMA_LLC_SAV_LOAD_NEXT |
-+						  OWL_DMA_LLC_DAV_LOAD_NEXT);
- 
- 	if (is_cyclic)
--		hw->ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_BLOCK);
-+		ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_BLOCK);
- 	else
--		hw->ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_SUPER_BLOCK);
-+		ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_SUPER_BLOCK);
+@@ -417,8 +430,18 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
+ 	lli->hw[OWL_DMADESC_DADDR] = dst;
+ 	lli->hw[OWL_DMADESC_SRC_STRIDE] = 0;
+ 	lli->hw[OWL_DMADESC_DST_STRIDE] = 0;
+-	lli->hw[OWL_DMADESC_FLEN] = len | FCNT_VAL << 20;
+-	lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
 +
-+	lli->hw[OWL_DMADESC_NEXT_LLI] = 0;
-+	lli->hw[OWL_DMADESC_SADDR] = src;
-+	lli->hw[OWL_DMADESC_DADDR] = dst;
-+	lli->hw[OWL_DMADESC_SRC_STRIDE] = 0;
-+	lli->hw[OWL_DMADESC_DST_STRIDE] = 0;
-+	lli->hw[OWL_DMADESC_FLEN] = len | FCNT_VAL << 20;
-+	lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
++	/*
++	 * S700 put flen and fcnt at offset 0x0c and 0x1c respectively,
++	 * whereas S900 put flen and fcnt at offset 0x0c.
++	 */
++	if (od->devid == S700_DMA) {
++		lli->hw[OWL_DMADESC_FLEN] = len;
++		lli->hw[OWL_DMADESC_CTRLB] = FCNT_VAL | ctrlb;
++	} else {
++		lli->hw[OWL_DMADESC_FLEN] = len | FCNT_VAL << 20;
++		lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
++	}
  
  	return 0;
  }
-@@ -754,7 +750,7 @@ static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
- 			/* Start from the next active node */
- 			if (lli->phys == next_lli_phy) {
- 				list_for_each_entry(lli, &txd->lli_list, node)
--					bytes += lli->hw.flen;
-+					bytes += llc_hw_flen(lli);
- 				break;
- 			}
- 		}
-@@ -785,7 +781,7 @@ static enum dma_status owl_dma_tx_status(struct dma_chan *chan,
- 	if (vd) {
- 		txd = to_owl_txd(&vd->tx);
- 		list_for_each_entry(lli, &txd->lli_list, node)
--			bytes += lli->hw.flen;
-+			bytes += llc_hw_flen(lli);
- 	} else {
- 		bytes = owl_dma_getbytes_chan(vchan);
- 	}
+@@ -580,7 +603,7 @@ static irqreturn_t owl_dma_interrupt(int irq, void *dev_id)
+ 
+ 		global_irq_pending = dma_readl(od, OWL_DMA_IRQ_PD0);
+ 
+-		if (chan_irq_pending && !(global_irq_pending & BIT(i)))	{
++		if (chan_irq_pending && !(global_irq_pending & BIT(i))) {
+ 			dev_dbg(od->dma.dev,
+ 				"global and channel IRQ pending match err\n");
+ 
+@@ -1038,11 +1061,20 @@ static struct dma_chan *owl_dma_of_xlate(struct of_phandle_args *dma_spec,
+ 	return chan;
+ }
+ 
++static const struct of_device_id owl_dma_match[] = {
++	{ .compatible = "actions,s900-dma", .data = (void *)S900_DMA,},
++	{ .compatible = "actions,s700-dma", .data = (void *)S700_DMA,},
++	{ /* sentinel */ },
++};
++MODULE_DEVICE_TABLE(of, owl_dma_match);
++
+ static int owl_dma_probe(struct platform_device *pdev)
+ {
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct owl_dma *od;
+ 	int ret, i, nr_channels, nr_requests;
++	const struct of_device_id *of_id =
++				of_match_device(owl_dma_match, &pdev->dev);
+ 
+ 	od = devm_kzalloc(&pdev->dev, sizeof(*od), GFP_KERNEL);
+ 	if (!od)
+@@ -1067,6 +1099,8 @@ static int owl_dma_probe(struct platform_device *pdev)
+ 	dev_info(&pdev->dev, "dma-channels %d, dma-requests %d\n",
+ 		 nr_channels, nr_requests);
+ 
++	od->devid = (enum owl_dma_id)of_id->data;
++
+ 	od->nr_pchans = nr_channels;
+ 	od->nr_vchans = nr_requests;
+ 
+@@ -1199,12 +1233,6 @@ static int owl_dma_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
+-static const struct of_device_id owl_dma_match[] = {
+-	{ .compatible = "actions,s900-dma", },
+-	{ /* sentinel */ }
+-};
+-MODULE_DEVICE_TABLE(of, owl_dma_match);
+-
+ static struct platform_driver owl_dma_driver = {
+ 	.probe	= owl_dma_probe,
+ 	.remove	= owl_dma_remove,
 -- 
 2.7.4
 
