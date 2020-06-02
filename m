@@ -2,51 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AD431EBD07
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 15:24:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD1351EBD28
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 15:35:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RKs9rPkT4si17EJxcDoJYD7LF3G92xHhkVBkmflMpHA=; b=W4aFvNSzp2/p/+v4EOzQ0biWB
-	rsELBpsDdHnqOmyVLL5hAr1mClNv5+X5VOUDqBGV4xs0oX8E22n17us799QQEFNEG7Dqlzd4jWr6u
-	nL5Tm4buV7NLxPbaEouiPgqv5G0AF6FzeMrNlLZjUYq4CUvMRJAFYzH9gozwa8oWXu9Ahr97vriXt
-	es7sCJUDdRoT4aOpq8r5MyDN8OQGBCuEMKkEJh92uyyANouqiCi0srsGjlX+Ezwo9JbTHkG2H7Ted
-	VI6xBm+4Gtt419cjLHKaP/SrvWn4mk/H+R8wzwI4g6iXqOos3JSi8Sr100TIFs69nqw6y1cuBd9Tg
-	bZrqpzEqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=YRTJIAxv4A81IcuUTbS4a+8hIp3kiQu9S+2HZm8O1zA=; b=Ugu5m2+n1CTY0SFk3zyEzBP3Gm
+	WA2WOvQHfGT2zIHVBafSt3PROqzm3JY5BQSC/O5FEU6yrQFycffiZ447Qwbnkr8EW4D9i/OaCyh3f
+	bINjuS7otfFDJzAmAFvzjBW2E7iqNb7JFv/Tu10L8jLJogUzXyUElFtBUykJPr06A7SX6/ZqROJZt
+	AybyTX08uFIG1p/LTmzoXtdYJp6CpU2B9gu1IKRhmcfM5XRvCYd7H3rHk4SlWSWXnidt2oPpUsoqC
+	zwR9cg+GQX5dOdw4DuEh+9e+tDO9bt9zlvfDnCbIGR3feoORJ4SDbeFD8Z2Vvx8azcV6FDaXC3lYo
+	2uwdp+dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg6uQ-0007bZ-OX; Tue, 02 Jun 2020 13:24:50 +0000
+	id 1jg74z-0007iY-PB; Tue, 02 Jun 2020 13:35:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg6uJ-0007bB-RW
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 13:24:45 +0000
+ id 1jg74t-0007i8-GV
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 13:35:41 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 58DB41FB;
- Tue,  2 Jun 2020 06:24:42 -0700 (PDT)
-Received: from [10.37.12.77] (unknown [10.37.12.77])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DA5DD3F305;
- Tue,  2 Jun 2020 06:24:37 -0700 (PDT)
-Subject: Re: [PATCH v4 4/5] coresight: etm: perf: Add default sink selection
- to etm perf
-To: mike.leach@linaro.org
-References: <20200526104642.9526-1-mike.leach@linaro.org>
- <20200526104642.9526-5-mike.leach@linaro.org>
- <51fcc1b5-a4ab-04d1-e395-95df9f4745f7@arm.com>
- <CAJ9a7ViUVAttf3-Mb4zVeJ6+Ty=4yxg3MZeGPcGDc0UMVY_Xtg@mail.gmail.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <73ce6741-0361-7443-6714-56e8d64d49e1@arm.com>
-Date: Tue, 2 Jun 2020 14:29:30 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5F721FB;
+ Tue,  2 Jun 2020 06:35:38 -0700 (PDT)
+Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1EA783F305;
+ Tue,  2 Jun 2020 06:35:37 -0700 (PDT)
+References: <20200527151613.16083-1-benjamin.gaignard@st.com>
+ <jhjpnahizkm.mognet@arm.com> <f95ce45f-7a1c-0feb-afa8-203ddb500f2f@st.com>
+User-agent: mu4e 0.9.17; emacs 26.3
+From: Valentin Schneider <valentin.schneider@arm.com>
+To: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Subject: Re: [PATCH] media: stm32-dcmi: Set minimum cpufreq requirement
+In-reply-to: <f95ce45f-7a1c-0feb-afa8-203ddb500f2f@st.com>
+Date: Tue, 02 Jun 2020 14:35:31 +0100
+Message-ID: <jhjo8q1io9o.mognet@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <CAJ9a7ViUVAttf3-Mb4zVeJ6+Ty=4yxg3MZeGPcGDc0UMVY_Xtg@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_062443_976716_A25F4DAF 
-X-CRM114-Status: GOOD (  31.05  )
+X-CRM114-CacheID: sfid-20200602_063539_634349_315ECD70 
+X-CRM114-Status: GOOD (  14.65  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -67,116 +63,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, acme@kernel.org, mathieu.poirier@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
+ "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Hugues FRUCHET <hugues.fruchet@st.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/02/2020 02:12 PM, Mike Leach wrote:
-> Hi Suzuki,
-> 
-> On Tue, 2 Jun 2020 at 12:40, Suzuki K Poulose <suzuki.poulose@arm.com> wrote:
->>
->> On 05/26/2020 11:46 AM, Mike Leach wrote:
->>> Add default sink selection to the perf trace handling in the etm driver.
->>> Uses the select default sink infrastructure to select a sink for the perf
->>> session, if no other sink is specified.
+
+On 02/06/20 12:37, Benjamin GAIGNARD wrote:
+> On 6/2/20 11:31 AM, Valentin Schneider wrote:
+>>> @@ -99,6 +100,8 @@ enum state {
 >>>
->>> Signed-off-by: Mike Leach <mike.leach@linaro.org>
->>
->> This patch looks fine to me as such. But please see below for some
->> discussion on the future support for other configurations.
->>
->>
->>> ---
->>>    .../hwtracing/coresight/coresight-etm-perf.c    | 17 ++++++++++++++---
->>>    1 file changed, 14 insertions(+), 3 deletions(-)
+>>>   #define OVERRUN_ERROR_THRESHOLD	3
 >>>
->>> diff --git a/drivers/hwtracing/coresight/coresight-etm-perf.c b/drivers/hwtracing/coresight/coresight-etm-perf.c
->>> index 84f1dcb69827..1a3169e69bb1 100644
->>> --- a/drivers/hwtracing/coresight/coresight-etm-perf.c
->>> +++ b/drivers/hwtracing/coresight/coresight-etm-perf.c
->>> @@ -226,9 +226,6 @@ static void *etm_setup_aux(struct perf_event *event, void **pages,
->>>                sink = coresight_get_enabled_sink(true);
+>>> +#define DCMI_MIN_FREQ	650000 /* in KHz */
+>>> +
+>> This assumes the handling part is guaranteed to always run on the same CPU
+>> with the same performance profile (regardless of the platform). If that's
+>> not guaranteed, it feels like you'd want this to be configurable in some
+>> way.
+> Yes I could add a st,stm32-dcmi-min-frequency (in KHz) parameter the
+> device tree node.
+>
+
+Something like that - I'm not sure how well this fits with the DT
+landscape, as you could argue it isn't really a description of the
+hardware, more of a description of the performance expectations of the
+software. I won't really argue here.
+
+>>
+>>>   struct dcmi_graph_entity {
+>>>        struct v4l2_async_subdev asd;
+>>>
+>> [...]
+>>> @@ -2020,6 +2042,8 @@ static int dcmi_probe(struct platform_device *pdev)
+>>>                goto err_cleanup;
 >>>        }
 >>>
->>> -     if (!sink)
->>> -             goto err;
->>> -
->>>        mask = &event_data->mask;
->>>
->>>        /*
->>> @@ -253,6 +250,16 @@ static void *etm_setup_aux(struct perf_event *event, void **pages,
->>>                        continue;
->>>                }
->>>
->>> +             /*
->>> +              * No sink provided - look for a default sink for one of the
->>> +              * devices. At present we only support topology where all CPUs
->>> +              * use the same sink [N:1], so only need to find one sink. The
->>> +              * coresight_build_path later will remove any CPU that does not
->>> +              * attach to the sink, or if we have not found a sink.
->>> +              */
->>> +             if (!sink)
->>> +                     sink = coresight_find_default_sink(csdev);
+>>> +	dcmi->policy = cpufreq_cpu_get(0);
 >>> +
->>
->> While we are here, should we remove the "find enabled sink" if the csink
->> is not specified via config. ? That step is problematic, as the user may
->> not remember which sinks were enabled. Also, we can't hit that with
->> perf tool as it prevents any invocation without sink (until this change).
->>
->> So may be this is a good time to get rid of that ?
->>
-> 
-> You are correct - the  'sink = coresight_get_enabled_sink(true);' was
-> dead code until this patch.
-> However - if someone has set up their system using sysfs to enable
-> sinks, then should we not respect that rather than assume they made a
-> mistake?
+>> Ideally you'd want to fetch the policy of the CPU your IRQ (and handling
+>> thread) is affined to; The only compatible DTS I found describes a single
+>> A7, which is somewhat limited in the affinity area...
+> If I move this code just before start streaming and use get_cpu(), would
+> it works ?
+>
 
-If someone really wants to use a specific sink, then they could always
-specify it via the config attribute and it will be honoured. We need not
-carry along this non-intuitive hinting.
+AFAIA streaming_start() is not necessarily executing on the same CPU as the
+one that will handle the interrupt. I was thinking you could use the IRQ's
+effective affinity as a hint of which CPU(s) to boost, i.e. something like:
 
-> 
-> Thinking about N:M topologies mentioned below - one method of handling
-> this is to enable relevant sinks and then let perf trace on any cores
-> that might use them.
-> 
->> Also, we may need to do special handling for cases where there multiple
->> sinks (ETRS) and the cpus in the event mask has different preferred
->> sink. We can defer it for now as we don't claim to support such
->> configurations yet.
-> 
-> Yes - the newer topologies will need some changes - beyond what we are
-> handling here.
-> However - especially for 1:1 -  the best way may be to always use the
-> default sink - as specifying multiple sinks on the perf command line
-> may be problematical.
-> 
->> When we do, we could either :
->>
->> 1) Make sure the event is bound to a single CPU, in which case
->> the sink remains the same for the event.
->>
->> OR
->>
->> 2) All the different "preferred" sinks (ETRs selected by the ETM) have
->> the same capabilitiy. i.e, we can move around the "sink" specific
->> buffers and use them where we end up using.
-> 
-> If here by "capabilities" we are talking about buffer vs system memory
-> type sinks then I agree. We may need in future to limit the search
+---
+    struct cpumask_var_t visited;
+    struct irq_data *d = irq_get_irq_data(irq);
 
-Not necessarily. e.g, if we ever get two different types of system
-memory sinks, (e.g, a global ETR and a dedicate "new" sink for a
-cluster), we can't keep switching between the two sinks depending on how
-they use the buffers. (i.e, direct buffer vs double copy)
+    err = alloc_cpumask_var(visited, GFP_KERNEL);
+    /* ... */
+    for_each_cpu(cpu, irq_data_get_effective_affinity_mask(d)) {
+            /* check if not already spanned */
+            if (cpumask_test_cpu(cpu, visited))
+                    continue;
 
-Suzuki
+            policy = cpufreq_cpu_get(cpu);
+            cpumask_or(visited, visited, policy->cpus);
+            /* do the boost for that policy here */
+            /* ... */
+            cpufreq_cpu_put(policy);
+    }
+---
+
+That of course falls apart when hotplug gets involved, and the effective
+affinity changes... There's irq_set_affinity_notifier() out there, but it
+seems it's only about the affinity, not the effective_affinity, I'm not
+sure how valid it would be to query the effective_affinity in that
+notifier.
+
+> Benjamin
+>>
+>>>        dev_info(&pdev->dev, "Probe done\n");
+>>>
+>>>        platform_set_drvdata(pdev, dcmi);
+>>> @@ -2049,6 +2073,9 @@ static int dcmi_remove(struct platform_device *pdev)
+>>>
+>>>        pm_runtime_disable(&pdev->dev);
+>>>
+>>> +	if (dcmi->policy)
+>>> +		cpufreq_cpu_put(dcmi->policy);
+>>> +
+>>>        v4l2_async_notifier_unregister(&dcmi->notifier);
+>>>        v4l2_async_notifier_cleanup(&dcmi->notifier);
+>>>        media_entity_cleanup(&dcmi->vdev->entity);
 
 _______________________________________________
 linux-arm-kernel mailing list
