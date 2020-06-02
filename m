@@ -2,81 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7E1B1EBB6F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 14:19:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B443F1EBB71
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 14:19:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6c1wpofLUqsemmkxK0PBGs1kNc85b+qE0S+iVH6NWeo=; b=PZCrxDMIaBrixI
-	97i5roA4FgibfeXVUNUlz0O0LAYbtjOOW8IiBxjrFT43dGhRFqNpgGKDlYE2Mpf0UMj8715QapCtU
-	hsQm9oWzycFV0zCPQV0GyRARDkispJ1L23q8ZjeBn3ToZResoIi1dB5Kyznn4lD8e1iQagRXdvUBu
-	izcQkWoxTPoFzqntbOBsU/xd2KzTFUqMP6tSkknNhGJIQ1n8qWPbX5uTtLN3DLb0ZDqIDS1TfGMaS
-	vVNps7x8b9ljsY/vJ2xTFczqKKuV4e4ECu+zSvGl3eJl9EepZsq65XZBEvseDV2aXfTm90b+KlIr/
-	LIFUNOJ62p/HI4hlroNw==;
+	List-Owner; bh=b+iP44yz3tGRfHi4sbA+xYqAO90ypWgeB5NvyqRQDcg=; b=DbZPvAdKs+dZHF
+	8VjhlqVsof0eA+kKNkt/HPd+JfIF5BffnYMncvNfwi6Pi04QEojed8PwrUv+LBM5JGX9Rdx4drFSg
+	o3/9obRfqhY4Zy6ffPNLc8QbgOTXWC/8v4EHN0QW6WyDOP3H50x5+qcSijPHII2t04Hn3mIzS1dF1
+	uCMoSGDiOu/X4W8u0TXkyf9tKiOPoX6qd3ctbt6nsAZTeKt1cY2KM+k7IsYCE864vHrOnBFeYvPRQ
+	7/ZSMmASnT7OffMzt/HcJOoCLtIrYHDBRPeLg7O7bJNX87LjkjGwCCy4sTANEYnwte11LZxCQGrum
+	+1Dt61/TKMFr7SO03Svw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg5sq-0005Mh-Bk; Tue, 02 Jun 2020 12:19:08 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jg5t9-0005Xw-O4; Tue, 02 Jun 2020 12:19:27 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg5sj-0005MK-CB
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 12:19:02 +0000
-Received: by mail-ot1-f67.google.com with SMTP id o13so10707714otl.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jun 2020 05:19:00 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8U9J7axH0X3eOq8QXa7GZDrK15sZ3vWR0+Ed5s8ZVY4=;
- b=IkoOsR+00Zz6CdppRQre+9ZI4Q6qd85AJ6icu6YBLpmDc0NAYSyEifyH1vv9s9kYwn
- i2HJ+3exIsi8t7yN5BJN8jg6UY202NEqobF7QbF+xFBa/tliJTj22AT1Da88jA0lpl2+
- Gq77jkiUPgYdG5805a3PpnGB5viFEXw9zwJ6EvPWiRld94qH58cs/a3lQEgNKhpyFzfN
- tHNV9sMBBmmFBosx3Rlqng4fsUOITKDYugSH5kdUxCfhGeOFk7hdn1IEAr5u5Pmlg5Ky
- t0YlpPCN5WvuxnyQ4NZPOjQWVkq6B/8VomdtCkR+qDKmzywrWE5ADw/YUPk2UgLYqSbh
- wnSw==
-X-Gm-Message-State: AOAM531DhQrVjzAJe3DVEig0dLrNYl/vV1l9NdhxfyjeBFBGRcvDrcYn
- jCCgDU/TXC/caHZISdCZWCsVKQ+tccNEB4ytrLI=
-X-Google-Smtp-Source: ABdhPJxCUVufn0UclL/j03PwgmbW0xMAjRRCPu26IwamOJj0Zaeu4kHWwVoobozYyflNIWwrQbiOzf+rDqC3xTORV48=
-X-Received: by 2002:a05:6830:141a:: with SMTP id
- v26mr8421475otp.250.1591100340012; 
- Tue, 02 Jun 2020 05:19:00 -0700 (PDT)
+ id 1jg5st-0005VK-0p; Tue, 02 Jun 2020 12:19:12 +0000
+X-UUID: 20538f0663ef4e19a01fd01d07374fb6-20200602
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:To:From:Subject:Message-ID;
+ bh=4h8fafRuCGTyIr/VCDupUiRjNszwNbo9UU/ty3wLFYg=; 
+ b=BB6BogdypJebp2/YbfZk+8Pm2yPYmPU/qlQJKVt+/SfUJ1srvKxmfwtE7f7uXs/psdx6V5ThbEQywmEhtk9NoIPq95235ujRejWTgtmH16QQ1vvQn24vKSUNG4WTODUbipnMbSJs1aDCjQs1nxZQKylOrDpc+AMO5fXCmefny+k=;
+X-UUID: 20538f0663ef4e19a01fd01d07374fb6-20200602
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <macpaul.lin@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 379828204; Tue, 02 Jun 2020 04:19:08 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 2 Jun 2020 05:19:03 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 2 Jun 2020 20:19:00 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Tue, 2 Jun 2020 20:19:00 +0800
+Message-ID: <1591100342.23525.8.camel@mtkswgap22>
+Subject: Re: [PATCH] sound: usb: pcm: fix incorrect power state when playing
+ sound after PM_AUTO suspend
+From: Macpaul Lin <macpaul.lin@mediatek.com>
+To: Jaroslav Kysela <perex@perex.cz>, Alexander Tsoy <alexander@tsoy.me>,
+ Johan Hovold <johan@kernel.org>, Hui Wang <hui.wang@canonical.com>, Szabolcs
+ =?UTF-8?Q?Sz=C5=91ke?= <szszoke.code@gmail.com>,
+ <alsa-devel@alsa-project.org>, <linux-usb@vger.kernel.org>, "Mediatek WSD
+ Upstream" <wsd_upstream@mediatek.com>, Macpaul Lin <macpaul.lin@gmail.com>,
+ <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-mediatek@lists.infradead.org>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Takashi Iwai <tiwai@suse.com>
+Date: Tue, 2 Jun 2020 20:19:02 +0800
+In-Reply-To: <1591098821-17910-1-git-send-email-macpaul.lin@mediatek.com>
+References: <linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mediatek@lists.infradead.org>
+ <1591098821-17910-1-git-send-email-macpaul.lin@mediatek.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <20200521081825.1348844-1-rppt@linux.ibm.com>
- <20200521120308.GR1551@shell.armlinux.org.uk>
- <20200521123327.GQ1059226@linux.ibm.com>
- <20200521140745.GS1059226@linux.ibm.com>
- <20200521145020.GS1551@shell.armlinux.org.uk>
-In-Reply-To: <20200521145020.GS1551@shell.armlinux.org.uk>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 2 Jun 2020 14:18:48 +0200
-Message-ID: <CAMuHMdViAcnaPzeD6cS8U-uzjZARGyf0dqaiehevn+DwCNid5Q@mail.gmail.com>
-Subject: Re: [PATCH 0/2] ARM: Allow either FLATMEM or SPARSEMEM on the
- multiplatform build
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+X-TM-SNTS-SMTP: 12C71F8E9B7B63D4DF6727041F40092E70F89D4579A111C8EDEBB373FBDFE0332000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_051901_417020_76EA62E3 
-X-CRM114-Status: GOOD (  16.19  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200602_051911_079300_19A85C1E 
+X-CRM114-Status: GOOD (  21.86  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,54 +93,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- Stephen Boyd <sboyd@kernel.org>, Kevin Cernekee <cernekee@gmail.com>,
- Mike Rapoport <rppt@linux.ibm.com>, Doug Berger <opendmb@gmail.com>,
- Gregory Fong <gregory.0xf0@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+On Tue, 2020-06-02 at 19:53 +0800, Macpaul Lin wrote:
+> This patch fix incorrect power state changed by usb_audio_suspend()
+> when CONFIG_PM is enabled.
+> 
+> After receiving suspend PM message with auto flag, usb_audio_suspend()
+> change card's power state to SNDRV_CTL_POWER_D3hot. Only when the other
+> resume PM message with auto flag can change power state to
+> SNDRV_CTL_POWER_D0 in __usb_audio_resume().
+> 
+> However, when system is not under auto suspend, resume PM message with
+> auto flag might not be able to receive on time which cause the power
+> state was incorrect. At this time, if a player starts to play sound,
+> will cause snd_usb_pcm_open() to access the card and setup_hw_info() will
+> resume the card.
+> 
+> But even the card is back to work and all function normal, the power
+> state is still in SNDRV_CTL_POWER_D3hot. Which cause the infinite loop
+> happened in snd_power_wait() to check the power state. Thus the
+> successive setting ioctl cannot be passed to card.
+> 
+> Hence we suggest to change power state to SNDRV_CTL_POWER_D0 when card
+> has been resumed successfully.
+> 
+> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+> ---
+>  sound/usb/pcm.c |   11 +++++++++++linux-usb@vger.kernel.org,
+>  1 file changed, 11 insertions(+)
+> 
+> diff --git a/sound/usb/pcm.c b/sound/usb/pcm.c
+> index a4e4064..d667ecb 100644
+> --- a/sound/usb/pcm.c
+> +++ b/sound/usb/pcm.c
+> @@ -1322,6 +1322,17 @@ static int setup_hw_info(struct snd_pcm_runtime *runtime, struct snd_usb_substre
+>  	if (err < 0)
+>  		return err;
+>  
+> +	/* fix incorrect power state when resuming by open and later ioctls */
+> +	if (IS_ENABLED(CONFIG_PM) &&
+> +		snd_power_get_state(subs->stream->chip->card)
+> +			== SNDRV_CTL_POWER_D3hot) {
+> +		/* set these variables for power state correction */
+> +		subs->stream->chip->autosuspended = 0;
+> +		subs->stream->chip->num_suspended_intf = 1;
+> +		dev_info(&subs->dev->dev,
+> +			"change power state from D3hot to D0\n");
+> +	}
+> +
+>  	return snd_usb_autoresume(subs->stream->chip);
+>  }
+>  
 
-On Thu, May 21, 2020 at 4:50 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
-> On Thu, May 21, 2020 at 05:07:45PM +0300, Mike Rapoport wrote:
-> > Ah, when either of these patforms will become a part of the
-> > multiplatform build, the only option for multiplatform build will be
-> > sparsemem.
-> > So it would be nice if somebody could check the cost of using sparsemem
-> > vs flatmem, espessially on low end machines.
->
-> Do you think they will become part of multiplatform?
->
-> If they're low-end machines, then adding:
->
-> (a) the additional memory overhead of a multiplatform kernel
-> (b) the additional runtime overhead of the complexities of multiplatform
->     kernels
->
-> is surely an odd thing to do, especially when few really care about
-> these platforms becoming part of a multiplatform kernel, except those
-> who like the idea of multiplat.
+The issue was found on kernel 4.14 (android tree). The test is to add
+debug log in sound/core/init.c to check if the power state is
+SNDRV_CTL_POWER_D3hot.
 
-The fallacy of "multi-platform", again?
+diff --git a/sound/core/init.c b/sound/core/init.c
+index b02a997..a0bee76 100644
+--- a/sound/core/init.c
++++ b/sound/core/init.c
+@@ -1011,6 +1011,8 @@ int snd_power_wait(struct snd_card *card, unsigned
+int power_state)
+ 		if (snd_power_get_state(card) == power_state)
+ 			break;
+ 		set_current_state(TASK_UNINTERRUPTIBLE);
++		pr_info("%s snd_power_get_state[%x]\n", __func__,
++			snd_power_get_state(card));
+ 		schedule_timeout(30 * HZ);
+ 	}
+ 	remove_wait_queue(&card->power_sleep, &wait);
 
-Isn't it a requirement for any new ARM v7-A platforms to be part of
-ARCH_MULTI_V7, even if it's a low-end machine?
+After applied a work around by forcing the power state, pcm related
+ioctl and parameter settings can be set to usb sound card correctly.
+Otherwise a infinite loop will happened in snd_power_wait().
 
-Gr{oetje,eeting}s,
+Here is the origin work around for verifying this power state issue on
+kernel 4.14.
 
-                        Geert
+diff --git a/sound/usb/pcm.c b/sound/usb/pcm.c
+index 933adcd7af81..9acd50dd7155 100644
+--- a/sound/usb/pcm.c
++++ b/sound/usb/pcm.c
+@@ -1274,6 +1274,16 @@ static int setup_hw_info(struct snd_pcm_runtime
+*runtime, struct snd_usb_substre
+ 	if (err < 0)
+ 		return err;
+ 
++	/* avoid incorrect power state when executing IOCTL */
++	if (IS_ENABLED(CONFIG_PM) &&
++		snd_power_get_state(subs->stream->chip->card)
++			== SNDRV_CTL_POWER_D3hot) {
++		dev_info(&subs->dev->dev,
++			"change power state from D3hot to D0\n");
++		snd_power_change_state(subs->stream->chip->card,
++					SNDRV_CTL_POWER_D0);
++	}
++
+ 	param_period_time_if_needed = SNDRV_PCM_HW_PARAM_PERIOD_TIME;
+ 	if (subs->speed == USB_SPEED_FULL)
+ 		/* full speed devices have fixed data packet interval */
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+However, the patch I've send is meant to make sure the power state will
+be corrected before snd_usb_autoresume(), It should be adapt to kernel
+4.14 and later.
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Thanks.
+Macpaul Lin
 
 _______________________________________________
 linux-arm-kernel mailing list
