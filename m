@@ -2,33 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02D0B1EBD77
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 15:59:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C61D1EBD87
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 16:00:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rE3xZIwaDORdN9p1xiRJE2WH7HjfVNIHlJrHemjJgL0=; b=YAhUkhRY19ZvT1
-	eCotFvEXkS2gFtFz2R7I/QwoWz+Hoxrn0UV0CBiDBYLEtDtYnP9hdxNz1FskCL6vI6yPEbVjrWmSL
-	SQr2S/jhKbKqZ0kqZcDX2FbO3OfwWAVpjODfg6n56+y0AcRNc3mPYfd46q9IIkiQazd6dbmIMk1iE
-	LrGiGZmduSMfWpV95LKWITGiO5gwargJFpkMUYXfRnAzKHM/NHmTkCaHm+wl/5B9zXz7gcFjdzjLB
-	ICcWG0FxaS5ne4KtpPTEuQUKiEeA4hxCN9Bj8TKnaV6xplqNNryt7zL55yd/5Ey9RhDzxWCjmRU68
-	fFziG0glFAqAiB10/Ovg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=waTzWK6vLc1lhVMgp1gq7TaccCKewWOsi8cnNqEnzQE=; b=LSQP4aLVvLRmhO
+	GJ5Y5NwwFgizcwSADkvGDv8O4r4D2n0ljY9n4sAweS2qgPrMchaEJKA0mDw46DeqMlSfL31/7HVb3
+	Ekl6OZj9GZSsrJYApPuylCkXb3dddNvN86olKfT+rvC+nZvSDI+NuWYdm0oXDnjfIyf7cwO7zz08q
+	Su7cp81cIOOywKBRr2Ch35kMxaEIFfHf+q8xO+51VtbhZ3PMbIQkdT+tIN3w/Nn057Sac1oD7LsSG
+	sSgX5fa5ewsaEKabiCrW3Z48ljQhKCD7DXXI5aNEWArRYobgvoj+jhE2ZP8KsXEKG6qmuBEmn7qfL
+	B5OXzXhfqF6dU8Le5r2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg7SH-00005s-UJ; Tue, 02 Jun 2020 13:59:49 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jg7T7-0003nE-Ps; Tue, 02 Jun 2020 14:00:41 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg7Rn-00080d-73
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 13:59:21 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id C2DC2D8BB11A073C63A0;
- Tue,  2 Jun 2020 21:59:15 +0800 (CST)
+ id 1jg7Rq-0007yH-Ud
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 13:59:24 +0000
+Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id A2F4C9FFFE30778C5DEF;
+ Tue,  2 Jun 2020 21:59:05 +0800 (CST)
 Received: from DESKTOP-KKJBAGG.china.huawei.com (10.173.220.25) by
  DGGEMS404-HUB.china.huawei.com (10.3.19.204) with Microsoft SMTP Server id
- 14.3.487.0; Tue, 2 Jun 2020 21:59:05 +0800
+ 14.3.487.0; Tue, 2 Jun 2020 21:58:58 +0800
 From: Zhenyu Ye <yezhenyu2@huawei.com>
 To: <catalin.marinas@arm.com>, <peterz@infradead.org>, <mark.rutland@arm.com>, 
  <will@kernel.org>, <aneesh.kumar@linux.ibm.com>,
@@ -37,28 +37,26 @@ To: <catalin.marinas@arm.com>, <peterz@infradead.org>, <mark.rutland@arm.com>,
  <maz@kernel.org>, <suzuki.poulose@arm.com>, <tglx@linutronix.de>,
  <yuzhao@google.com>, <Dave.Martin@arm.com>, <steven.price@arm.com>,
  <broonie@kernel.org>, <guohanjun@huawei.com>
-Subject: [PATCH v4 6/6] arm64: tlb: Set the TTL field in flush_*_tlb_range
-Date: Tue, 2 Jun 2020 21:58:36 +0800
-Message-ID: <20200602135836.1620-7-yezhenyu2@huawei.com>
+Subject: [PATCH v4 0/6] arm64: tlb: add support for TTL feature
+Date: Tue, 2 Jun 2020 21:58:30 +0800
+Message-ID: <20200602135836.1620-1-yezhenyu2@huawei.com>
 X-Mailer: git-send-email 2.22.0.windows.1
-In-Reply-To: <20200602135836.1620-1-yezhenyu2@huawei.com>
-References: <20200602135836.1620-1-yezhenyu2@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.173.220.25]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_065919_420832_889975A9 
-X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-CacheID: sfid-20200602_065923_235243_C1EEF48E 
+X-CRM114-Status: UNSURE (   9.03  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.35 listed in wl.mailspike.net]
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.191 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -83,36 +81,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch implement flush_{pmd|pud}_tlb_range() in arm64 by
-calling __flush_tlb_range() with the corresponding stride and
-tlb_level values.
+In order to reduce the cost of TLB invalidation, ARMv8.4 provides
+the TTL field in TLBI instruction.  The TTL field indicates the
+level of page table walk holding the leaf entry for the address
+being invalidated.  This series provide support for this feature.
 
-Signed-off-by: Zhenyu Ye <yezhenyu2@huawei.com>
----
- arch/arm64/include/asm/pgtable.h | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+When ARMv8.4-TTL is implemented, the operand for TLBIs looks like
+below:
 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 538c85e62f86..bc59814eda64 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -40,6 +40,16 @@ extern void __pmd_error(const char *file, int line, unsigned long val);
- extern void __pud_error(const char *file, int line, unsigned long val);
- extern void __pgd_error(const char *file, int line, unsigned long val);
- 
-+#ifdef CONFIG_TRANSPARENT_HUGEPAGE
-+#define __HAVE_ARCH_FLUSH_PMD_TLB_RANGE
-+
-+/* Set stride and tlb_level in flush_*_tlb_range */
-+#define flush_pmd_tlb_range(vma, addr, end)	\
-+	__flush_tlb_range(vma, addr, end, PMD_SIZE, false, 2)
-+#define flush_pud_tlb_range(vma, addr, end)	\
-+	__flush_tlb_range(vma, addr, end, PUD_SIZE, false, 1)
-+#endif /* CONFIG_TRANSPARENT_HUGEPAGE */
-+
- /*
-  * ZERO_PAGE is a global shared page that is always zero: used
-  * for zero-mapped memory areas etc..
+* +----------+-------+----------------------+
+* |   ASID   |  TTL  |        BADDR         |
+* +----------+-------+----------------------+
+* |63      48|47   44|43                   0|
+
+See patches for details, Thanks.
+
+--
+ChangeList:
+v4:
+implement flush_*_tlb_range only on arm64.
+
+v3:
+minor changes: reduce the indentation levels of __tlbi_level().
+
+v2:
+rebase series on Linux 5.7-rc1 and simplify the code implementation.
+
+v1:
+add support for TTL feature in arm64.
+
+
+Marc Zyngier (2):
+  arm64: Detect the ARMv8.4 TTL feature
+  arm64: Add level-hinted TLB invalidation helper
+
+Peter Zijlstra (Intel) (1):
+  tlb: mmu_gather: add tlb_flush_*_range APIs
+
+Zhenyu Ye (3):
+  arm64: Add tlbi_user_level TLB invalidation helper
+  arm64: tlb: Set the TTL field in flush_tlb_range
+  arm64: tlb: Set the TTL field in flush_*_tlb_range
+
+ arch/arm64/include/asm/cpucaps.h  |  3 +-
+ arch/arm64/include/asm/pgtable.h  | 10 ++++++
+ arch/arm64/include/asm/sysreg.h   |  1 +
+ arch/arm64/include/asm/tlb.h      | 29 +++++++++++++++-
+ arch/arm64/include/asm/tlbflush.h | 54 +++++++++++++++++++++++++-----
+ arch/arm64/kernel/cpufeature.c    | 11 +++++++
+ include/asm-generic/tlb.h         | 55 ++++++++++++++++++++++---------
+ 7 files changed, 138 insertions(+), 25 deletions(-)
+
 -- 
 2.19.1
 
