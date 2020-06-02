@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EBF51EBE30
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 16:32:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 954861EBE32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 16:33:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rRm3UmtJ0d5IDixw8tVgesEBnm8yy9/SLPbBGgfvymE=; b=FMI2KenuFEZMJ2
-	raRnYZ1TLIEJey7BMAqKrvedYUFqmpgwrkQ692OgtGbGxXQuOKG2OM9tEQhl/omdlqBbVzFrCWKYk
-	ravRS6nd9A6Fte1vCQgrlC1DzR7247POx62xy/haovZVG5VIT5G9LgLrVmdoZc/Gj+uD3pzrqABci
-	a8j96ypzJLD/xlOEQVKr/DNaIpIqTZupVzjEgCmy80fcJIutQnDhzokZCq7L2hE/T16TcvscFl8EN
-	nJCIkD5iJaUDu7mYKtduUWcOd5FhIhEZ9zOEuCbLC+n1vUzRDI5wpThlB9XWzjrDQiBE5LG/Hszoi
-	O66wMQv/g302yXSBDbHg==;
+	List-Owner; bh=WcHw4nsN8guVBFOYc6mVu93j5GmbOjEu1iYCvPt9lIU=; b=V9gL549FvsWbKw
+	1yv+Ihe/nI7emugLhwrnqa8sNG/LVEA3EnxvxqeXiEzYbiaKD5kebxDR+WYDvx0gHx1H4FQaOmcJi
+	sy7gaucvVbcCY/74ZeJrldjOPZ3PC9KI+u8W9w9cEPtC2vRZQi97OReAOgsV5AyWGqKzzR1mduGbH
+	0TMoY1SlZhbxcwexObizH9m7KbQJvya1hqkvieCWskNU9cfbi2pI2vygFe4Ruay0A8bOnfFER1cnU
+	AIp1rm0+3MoSbjtkj/xCFGR00MI3FLVs/Vo8qkuPCjIm0/DAfRDMBzfqnfbb1/Fwz0FiOHKpqcMiL
+	ShhpYdaPvIn4/OXhfheQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg7yD-00027b-Um; Tue, 02 Jun 2020 14:32:49 +0000
+	id 1jg7yd-0002ZY-1c; Tue, 02 Jun 2020 14:33:15 +0000
 Received: from relay6-d.mail.gandi.net ([217.70.183.198])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg7wz-00016l-DF; Tue, 02 Jun 2020 14:31:35 +0000
+ id 1jg7x0-000179-Mb; Tue, 02 Jun 2020 14:31:35 +0000
 X-Originating-IP: 91.224.148.103
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 9B934C0014;
- Tue,  2 Jun 2020 14:31:30 +0000 (UTC)
+ by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 1D549C0009;
+ Tue,  2 Jun 2020 14:31:31 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tudor Ambarus <Tudor.Ambarus@microchip.com>,
  <linux-mtd@lists.infradead.org>
-Subject: [PATCH v9 2/9] mtd: spinand: Use nanddev_get_ecc_conf() when relevant
-Date: Tue,  2 Jun 2020 16:31:17 +0200
-Message-Id: <20200602143124.29553-3-miquel.raynal@bootlin.com>
+Subject: [PATCH v9 3/9] mtd: nand: Create a helper to extract the ECC
+ requirements
+Date: Tue,  2 Jun 2020 16:31:18 +0200
+Message-Id: <20200602143124.29553-4-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200602143124.29553-1-miquel.raynal@bootlin.com>
 References: <20200602143124.29553-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_073133_579056_BC5463E9 
-X-CRM114-Status: GOOD (  11.39  )
+X-CRM114-CacheID: sfid-20200602_073134_871157_8C825BCD 
+X-CRM114-Status: UNSURE (   9.03  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -73,78 +75,36 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Instead of accessing ->strength/step_size directly.
+As the structures are still mixed, this helper returns the same as
+nanddev_get_ecc_conf() but this will be fixed in a later change.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- drivers/mtd/nand/spi/core.c     | 6 +++---
- drivers/mtd/nand/spi/macronix.c | 7 ++++---
- drivers/mtd/nand/spi/toshiba.c  | 6 +++---
- 3 files changed, 10 insertions(+), 9 deletions(-)
+ include/linux/mtd/nand.h | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/drivers/mtd/nand/spi/core.c b/drivers/mtd/nand/spi/core.c
-index 6f6ec8aa143d..56019de28a90 100644
---- a/drivers/mtd/nand/spi/core.c
-+++ b/drivers/mtd/nand/spi/core.c
-@@ -419,7 +419,7 @@ static int spinand_check_ecc_status(struct spinand_device *spinand, u8 status)
- 		 * fixed, so let's return the maximum possible value so that
- 		 * wear-leveling layers move the data immediately.
- 		 */
--		return nand->eccreq.strength;
-+		return nanddev_get_ecc_conf(nand)->strength;
+diff --git a/include/linux/mtd/nand.h b/include/linux/mtd/nand.h
+index 7fd0d492073b..e572d1600f63 100644
+--- a/include/linux/mtd/nand.h
++++ b/include/linux/mtd/nand.h
+@@ -522,6 +522,17 @@ nanddev_get_ecc_conf(struct nand_device *nand)
+ 	return &nand->eccreq;
+ }
  
- 	case STATUS_ECC_UNCOR_ERROR:
- 		return -EBADMSG;
-@@ -1091,8 +1091,8 @@ static int spinand_init(struct spinand_device *spinand)
- 	mtd->oobavail = ret;
- 
- 	/* Propagate ECC information to mtd_info */
--	mtd->ecc_strength = nand->eccreq.strength;
--	mtd->ecc_step_size = nand->eccreq.step_size;
-+	mtd->ecc_strength = nanddev_get_ecc_conf(nand)->strength;
-+	mtd->ecc_step_size = nanddev_get_ecc_conf(nand)->step_size;
- 
- 	return 0;
- 
-diff --git a/drivers/mtd/nand/spi/macronix.c b/drivers/mtd/nand/spi/macronix.c
-index 0f900f3aa21a..9ff8debd5994 100644
---- a/drivers/mtd/nand/spi/macronix.c
-+++ b/drivers/mtd/nand/spi/macronix.c
-@@ -84,10 +84,11 @@ static int mx35lf1ge4ab_ecc_get_status(struct spinand_device *spinand,
- 		 * data around if it's not necessary.
- 		 */
- 		if (mx35lf1ge4ab_get_eccsr(spinand, &eccsr))
--			return nand->eccreq.strength;
-+			return nanddev_get_ecc_conf(nand)->strength;
- 
--		if (WARN_ON(eccsr > nand->eccreq.strength || !eccsr))
--			return nand->eccreq.strength;
-+		if (WARN_ON(eccsr > nanddev_get_ecc_conf(nand)->strength ||
-+			    !eccsr))
-+			return nanddev_get_ecc_conf(nand)->strength;
- 
- 		return eccsr;
- 
-diff --git a/drivers/mtd/nand/spi/toshiba.c b/drivers/mtd/nand/spi/toshiba.c
-index bc801d83343e..21fde2875674 100644
---- a/drivers/mtd/nand/spi/toshiba.c
-+++ b/drivers/mtd/nand/spi/toshiba.c
-@@ -90,12 +90,12 @@ static int tx58cxgxsxraix_ecc_get_status(struct spinand_device *spinand,
- 		 * data around if it's not necessary.
- 		 */
- 		if (spi_mem_exec_op(spinand->spimem, &op))
--			return nand->eccreq.strength;
-+			return nanddev_get_ecc_conf(nand)->strength;
- 
- 		mbf >>= 4;
- 
--		if (WARN_ON(mbf > nand->eccreq.strength || !mbf))
--			return nand->eccreq.strength;
-+		if (WARN_ON(mbf > nanddev_get_ecc_conf(nand)->strength || !mbf))
-+			return nanddev_get_ecc_conf(nand)->strength;
- 
- 		return mbf;
- 
++/**
++ * nanddev_get_ecc_requirements() - Extract the ECC requirements from a NAND
++ *                                  device
++ * @nand: NAND device
++ */
++const struct nand_ecc_props *
++nanddev_get_ecc_requirements(struct nand_device *nand)
++{
++	return &nand->eccreq;
++}
++
+ int nanddev_init(struct nand_device *nand, const struct nand_ops *ops,
+ 		 struct module *owner);
+ void nanddev_cleanup(struct nand_device *nand);
 -- 
 2.20.1
 
