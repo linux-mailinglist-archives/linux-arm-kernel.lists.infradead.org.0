@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F03281EC4F5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 00:31:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87FEA1EC516
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 00:34:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CbzCAep8ffMtHwx5f+xX75nwJEBJFiSr7oxaRKsxkMI=; b=nsB4HN+ims9Kor3y4knYKa13+s
-	wCvXpgIGIyuhs6IBkOq578yZulX7uymWg5evtBCMLyedQnQrIY1haGZvt0VZS+SUOSXA7EEht4lZF
-	rsuL8JeJ9ltEH6NGBvnZDxuEf9UTTFgoKO8qx3UNxagMbb2zh55yO2h/Wyqj4Ag/S3PUd8z7w2Sze
-	WUQP/92nM/KT31Q7b/dLuYCF9BjsI5eusdglhY8tC0R9HInMtypUZJyGoxyodmone+m7UUhNeihlf
-	NyZ5Zq0g5Wbnm8h1lgYzHFddzvxWN0B1r5tSmvl7S3dILENXH3xXODbpt7WqLbOF1Zj/XmZMg6e+X
-	/HcLd0rA==;
+	bh=JL5I9lHgbxza6x+uJZKTts9kOYZ0YGDEZ27yyLBeShQ=; b=fq7kePgbKKfE7+GC0O0687U6RI
+	ukWfNU9dFvpj/yWJXNyeaO/6bArdmJu63NoK1OqZUiNXmvX8wQuGvCHe1I0TEndcguTUI7gtacW8c
+	ZllwKaOfLPt12Mc/cOe61QDFg7OVNooaV6kBNiS8eb0HBsUy8zIwEzTopjGWmrbIcZzY7aW+NUDcp
+	W5R0ZMYbYqVpp0TfJnPLfW0nBzFNTf8CZrQOWz3VpCb5QEweARIsd5woSuRH0vhQ4JLEJ5fLPSi6C
+	hlyUBGpbkyLqW23B3ya7Igaj1Q76KA0VKiyUDlrPVcCZbuzzgeZk4/DHO5gtItsXGq8Fw03N2YnnY
+	POzOTO1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgFRn-00024a-38; Tue, 02 Jun 2020 22:31:51 +0000
+	id 1jgFTs-0004Ev-KQ; Tue, 02 Jun 2020 22:34:00 +0000
 Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgFRM-0001oJ-Op
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 22:31:26 +0000
-Received: from unknown (HELO ironmsg05-sd.qualcomm.com) ([10.53.140.145])
- by alexa-out-sd-02.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
+ id 1jgFRS-0001qk-2A
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 22:31:31 +0000
+Received: from unknown (HELO ironmsg01-sd.qualcomm.com) ([10.53.140.141])
+ by alexa-out-sd-02.qualcomm.com with ESMTP; 02 Jun 2020 15:31:23 -0700
 Received: from gurus-linux.qualcomm.com ([10.46.162.81])
- by ironmsg05-sd.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
+ by ironmsg01-sd.qualcomm.com with ESMTP; 02 Jun 2020 15:31:22 -0700
 Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
- id 2CCB64DF1; Tue,  2 Jun 2020 15:31:22 -0700 (PDT)
+ id 43A874D82; Tue,  2 Jun 2020 15:31:22 -0700 (PDT)
 From: Guru Das Srinagesh <gurus@codeaurora.org>
 To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: [PATCH v16 02/11] hwmon: pwm-fan: Use 64-bit division macro
-Date: Tue,  2 Jun 2020 15:31:06 -0700
-Message-Id: <f0a2b661910e5079f2ccf843350aa420f62fc027.1591136989.git.gurus@codeaurora.org>
+Subject: [PATCH v16 03/11] ir-rx51: Use 64-bit division macro
+Date: Tue,  2 Jun 2020 15:31:07 -0700
+Message-Id: <5d7078688787cde0fc38083e30f498dc7b4f5b02.1591136989.git.gurus@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <cover.1591136989.git.gurus@codeaurora.org>
 References: <cover.1591136989.git.gurus@codeaurora.org>
 In-Reply-To: <cover.1591136989.git.gurus@codeaurora.org>
 References: <cover.1591136989.git.gurus@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_153124_825371_4BEAEF31 
-X-CRM114-Status: GOOD (  11.28  )
+X-CRM114-CacheID: sfid-20200602_153130_153057_7A4CABD5 
+X-CRM114-Status: GOOD (  10.99  )
 X-Spam-Score: -2.1 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.1 points)
@@ -80,29 +80,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the PWM framework is switching struct pwm_args.period's datatype
-to u64, prepare for this transition by using DIV_ROUND_UP_ULL to handle
-a 64-bit dividend.
+Since the PWM framework is switching struct pwm_state.period's datatype
+to u64, prepare for this transition by using DIV_ROUND_CLOSEST_ULL to
+handle a 64-bit dividend.
 
 Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
-Acked-by: Guenter Roeck <linux@roeck-us.net>
+Acked-by: Sean Young <sean@mess.org>
 ---
- drivers/hwmon/pwm-fan.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/media/rc/ir-rx51.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/hwmon/pwm-fan.c b/drivers/hwmon/pwm-fan.c
-index 30b7b3e..17bb642 100644
---- a/drivers/hwmon/pwm-fan.c
-+++ b/drivers/hwmon/pwm-fan.c
-@@ -447,7 +447,7 @@ static int pwm_fan_resume(struct device *dev)
- 		return 0;
+diff --git a/drivers/media/rc/ir-rx51.c b/drivers/media/rc/ir-rx51.c
+index 8574eda..9a5dfd7 100644
+--- a/drivers/media/rc/ir-rx51.c
++++ b/drivers/media/rc/ir-rx51.c
+@@ -241,7 +241,8 @@ static int ir_rx51_probe(struct platform_device *dev)
+ 	}
  
- 	pwm_get_args(ctx->pwm, &pargs);
--	duty = DIV_ROUND_UP(ctx->pwm_value * (pargs.period - 1), MAX_PWM);
-+	duty = DIV_ROUND_UP_ULL(ctx->pwm_value * (pargs.period - 1), MAX_PWM);
- 	ret = pwm_config(ctx->pwm, duty, pargs.period);
- 	if (ret)
- 		return ret;
+ 	/* Use default, in case userspace does not set the carrier */
+-	ir_rx51.freq = DIV_ROUND_CLOSEST(pwm_get_period(pwm), NSEC_PER_SEC);
++	ir_rx51.freq = DIV_ROUND_CLOSEST_ULL(pwm_get_period(pwm),
++			NSEC_PER_SEC);
+ 	pwm_put(pwm);
+ 
+ 	hrtimer_init(&ir_rx51.timer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
