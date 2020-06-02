@@ -2,85 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B82411EBC0B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 14:48:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 014F11EBC18
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 14:52:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=g+IDV0Diq5b2zoB0yuPe8Eos1wMxW1Sb+/nGhYTNT7s=; b=NcRjPbu3W5tdQzpONerkeqx8m
-	89N5GQULato7x0GJDL3lg8uTEHutLUuTZEzKjUU4u7UOpIA+cH9NfC7SHU6uWMrOVqubzQp9kYBIM
-	0txx3a8ra2/5Wjy40SSXzDWbnoGbzZz4CvaUbiRBOSaFKZl5A/w/fVMsFQaWQQP413rDSsgIvvoFw
-	v0zan/dYAVebtYXNooPb5E8lX6RLNd21ZNgmy71gUVB9WASILguD/fhVKrtOSZSzFrf1AbDhMoL/g
-	dmri4xyNQ/madcZGvHKTczkxVv+b5Fh8+v+Nyo388jImQVmyALjG1PlviNv+6yB/wcnZtqytGZJUK
-	WwNhFor3w==;
+	 bh=hVvuHP9wG8+Y1dgeHxL38+BxiHhE6DZe7cwAaejyEdc=; b=auq1PLkzBjg7tLyrQNvbu0qaV
+	jChaUD2JOyJzB6scxDNoC91GQt5uBtJbAMZ6qQ1JRjbItnleXpGEfljyUWdZyqIRctnk/gkLbqWof
+	HVkJenYY4F2N99bhyCsFvBv2b1w+Uhs8didtTXY5jCrGGXnF9Lry3X+j59IeLUq/Y0/8wsh5BIEXA
+	JoqWnpNHhKiwuQYEtqxRwAuBV4mrdmiRVKerg9fA0OXnGe0PVeJrAfof89rcFtVrhaIvpgH3dWuqe
+	aZMog9VYhZfwDucjPcKcuIfHVCgJH85LDyiQrML/K3CiB4WuH64AgIhKTOWljFatzsiQ0ojRIbWVy
+	q8aqNC0Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg6LV-0000WO-8h; Tue, 02 Jun 2020 12:48:45 +0000
-Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
+	id 1jg6PO-0003t1-24; Tue, 02 Jun 2020 12:52:46 +0000
+Received: from out2-smtp.messagingengine.com ([66.111.4.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg6LO-0000Vc-CJ
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 12:48:39 +0000
-Received: by mail-ej1-x641.google.com with SMTP id z5so12639588ejb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jun 2020 05:48:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=D8ASqWdJAv4t2zLF3N0AUOlU0jAxJ7ZIdD5NPQNHjtQ=;
- b=q5BiBMm6LBcsZZl6y+QtTB8QMD09UkwOycxWIv8vTm+sOTvKN7AnH4f5Dbb4ihlc0T
- hjZO8PZKG6NCuSHlJQMKMe7adp3yh0QoO+G8PoGz++SYakN6EU/I47tc6LtpGpLLojON
- 349dPRDJttaotizfuNqo2/ktYHgJm6hK18mJtUPkk5ZSnF8BOc2Rv6lQWiuzgXpFm+KD
- X47bmmhC4lr1SiHhb1oCsPpgVI5wETtOUVtKSfSZ3mIQLx+Wm7PqqaXwC6dPN5+bo0Wr
- pIPQY2V1/d7z2tgVw0WjtnlIb17ymUZA3uzua0FOWjqIV5S1bcvKSwhep78wkTC3+PtS
- E7Uw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=D8ASqWdJAv4t2zLF3N0AUOlU0jAxJ7ZIdD5NPQNHjtQ=;
- b=lA+xrQ7uTqvJQUqpwfLq7mTclkFcnaKAJgGyC+Aj4Ibx+zgXkGF/4bvVwuQ1THaMPc
- lypNI/7TGqaB8FUzMeQ3EbdM8nl+g3IgFa8eawVhSGDpnKEEI3bj8f8T8cfVIaPFLE2a
- KKgPU9lbM/VxUEhM7a0369DlMaPW6RI1NuMgEEfLqEiMauwnoT2eXFU5j/biRPS2n5l/
- flDjvK8EPenLxsq4ATo3FirgGNyJQljT+MbZEDPV+nJQiE5mLqgTngKFm1Qzdd2C8dwF
- aVPkNSi3spJ/b+SyukP1X2ZGOcuKm+btD9FGOrF7iNjrpuaHGnQ9MP4G5ye7uKrstDFT
- 3cTQ==
-X-Gm-Message-State: AOAM5306sPNuw0vdbb/jHYCYmjSPiEOFDQXmjDuZYHOwz2QQG86mxWA+
- seWFRyIJFo1p+4YSC+tMr9U=
-X-Google-Smtp-Source: ABdhPJz9TSeTycfAnFGOX7r1nw8BJ3WU0LAiYCUi9qQB1y/48Xus0YdiirnXPJDYCzGQ/fZvyc+wmA==
-X-Received: by 2002:a17:906:77c4:: with SMTP id
- m4mr14353047ejn.246.1591102117237; 
- Tue, 02 Jun 2020 05:48:37 -0700 (PDT)
-Received: from localhost (pd9e51079.dip0.t-ipconnect.de. [217.229.16.121])
- by smtp.gmail.com with ESMTPSA id sa19sm1621550ejb.15.2020.06.02.05.48.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 02 Jun 2020 05:48:35 -0700 (PDT)
-Date: Tue, 2 Jun 2020 14:48:35 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: Re: [PATCH] pwm: imx27: Fix rounding behavior
-Message-ID: <20200602124835.GF3360525@ulmo>
-References: <20200416080245.3203-1-u.kleine-koenig@pengutronix.de>
+ id 1jg6PG-0003rx-Ae; Tue, 02 Jun 2020 12:52:39 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 333E85C0060;
+ Tue,  2 Jun 2020 08:52:30 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Tue, 02 Jun 2020 08:52:30 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm3; bh=WDq+umCpTeMy9k3W0/Wp/zsjIGB
+ wGG2fZVoUDuvc/6I=; b=f45OZi6d+1yiR3+fuUjVx/OffyBQzXpKlPQbYfJ2G3K
+ JbM0gya4DR68naiFqT2uxODNVG5DStLzdE0iZ0Hnzxalrq2wgoa/aOXT4CymRy1o
+ wmlS4dGmwPT3KP/RICQd1ql2qMZepWk1XPNZ3QnD7p3P5wzq618XIg9N+hZsTfNA
+ /Pr3d6A/XzFKIFLxaADMbIIVVCjUC1SV0wuzNUvMN40DDoDN1UIfl07lvtYIpqbC
+ m9WK5McK+v9DLGrh7eQaiL4t8K0EVgAUPABhuctzK69htNR4z3RvbvlyQrKNenkX
+ sshBlFSNkun213PiCHeWnXf9bfPEEPiexjX5dOiOeng==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=WDq+um
+ CpTeMy9k3W0/Wp/zsjIGBwGG2fZVoUDuvc/6I=; b=BV685FeEEZTDO3F+XTXwxI
+ 2oE5GEcg0f7mM0Xy3W9x6iJ4YgMAPeOCwXEhZ/oAKIBLr7G5KoT9O8zlYS/+IX/C
+ njwsrJSZ1aofL9UDyXcM7T69/UBQRoRRoHvgqDD/ZX4m1YMiYQZl8J+97TvvNgXE
+ Wcb5s8xAA3VM25x17aAKG6VCjAKSefFKXAFpdSYYRjFJ7pR8CHGDlz/wlIij4kVP
+ q0nF2WqzdaUFSgDw6+li7l1wnI4tsCwQ34Z3bZ8eCI7d7VaumCmJWJvVZqB5TY0I
+ y31iE0eqEk6RLDbCFQucAqdpR0agta7mzml3QMtrfToY9xQ7uoR8rS9yzzl/YSRA
+ ==
+X-ME-Sender: <xms:jUvWXlA1A9BMkxHHPwcc4ETwV_7JdBoR9eKiZ9o_AMY6HEPeZ-Rh-w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudefjedggeefucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
+ htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
+ gedunecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
+ frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:jUvWXjiv-UD_m6bSp3Zfr5gqBGrPqSSjyQ89beHJzdhD2j5TIEm8qA>
+ <xmx:jUvWXglDvAwYaWpwOw29Sv3u9zzRIvPIAewbDVQzL1JdcawX4c04PQ>
+ <xmx:jUvWXvwMkm_EFZZphIf5wSyET12pg7TUa6yfCaKQsK8SWPpaq4NAXw>
+ <xmx:jkvWXpGO6Kobml1_RcWM6NdXzzn1A0uJKD9e7b3bY8-0559rrtABfA>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 027DA3060FE7;
+ Tue,  2 Jun 2020 08:52:29 -0400 (EDT)
+Date: Tue, 2 Jun 2020 14:52:27 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Eric Anholt <eric@anholt.net>
+Subject: Re: [PATCH v3 015/105] drm/vc4: hvs: Boost the core clock during
+ modeset
+Message-ID: <20200602125227.fe3mt5jnqd6u4pft@gilmour>
+References: <cover.aaf2100bd7da4609f8bcb8216247d4b4e4379639.1590594512.git-series.maxime@cerno.tech>
+ <1aaadf9a5176591c891622cb00b0c50f42e569dc.1590594512.git-series.maxime@cerno.tech>
+ <CADaigPWQdeTd2CGCK-yxq+TAU6xKMVsdZfhSVptn4RSENxpdxg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200416080245.3203-1-u.kleine-koenig@pengutronix.de>
-User-Agent: Mutt/1.13.1 (2019-12-14)
+In-Reply-To: <CADaigPWQdeTd2CGCK-yxq+TAU6xKMVsdZfhSVptn4RSENxpdxg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_054838_419166_8BC2E1C0 
-X-CRM114-Status: GOOD (  12.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200602_055238_503618_125EA222 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.26 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.26 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -88,6 +97,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,67 +109,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0810393904207283486=="
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0443497554330074745=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0810393904207283486==
+--===============0443497554330074745==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="IvGM3kKqwtniy32b"
+	protocol="application/pgp-signature"; boundary="ne6yctwhuf4mmo4i"
 Content-Disposition: inline
 
 
---IvGM3kKqwtniy32b
-Content-Type: text/plain; charset=utf-8
+--ne6yctwhuf4mmo4i
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Apr 16, 2020 at 10:02:45AM +0200, Uwe Kleine-K=C3=B6nig wrote:
-> To not trigger the warnings provided by CONFIG_PWM_DEBUG
+Hi Eric,
+
+On Wed, May 27, 2020 at 09:33:44AM -0700, Eric Anholt wrote:
+> On Wed, May 27, 2020 at 8:49 AM Maxime Ripard <maxime@cerno.tech> wrote:
+> >
+> > In order to prevent timeouts and stalls in the pipeline, the core clock
+> > needs to be maxed at 500MHz during a modeset on the BCM2711.
 >=20
->  - use up-rounding in .get_state()
->  - don't divide by the result of a division
->  - don't use the rounded counter value for the period length to calculate
->    the counter value for the duty cycle
+> Like, the whole system's core clock?
+
+Yep, unfortunately...
+
+> How is it reasonable for some device driver to crank the system's core
+> clock up and back down to some fixed-in-the-driver frequency? Sounds
+> like you need some sort of opp thing here.
+
+That frequency is the minimum rate of that clock. However, since other
+devices have similar requirements (unicam in particular) with different
+minimum requirements, we will switch to setting a minimum rate instead
+of enforcing a particular rate, so that patch would be essentially
+s/clk_set_rate/clk_set_min_rate/.
+
+Would that work for you?
+
 >=20
-> Signed-off-by: Uwe Kleine-K=C3=B6nig <u.kleine-koenig@pengutronix.de>
-> ---
->  drivers/pwm/pwm-imx27.c | 20 ++++++++++----------
->  1 file changed, 10 insertions(+), 10 deletions(-)
+> Patch 13,14 r-b.
 
-Applied, thanks.
+Thanks!
+Maxime
 
-Thierry
-
---IvGM3kKqwtniy32b
+--ne6yctwhuf4mmo4i
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl7WSqMACgkQ3SOs138+
-s6H0Ew//dg1D7NOYsebYUxn1ebbp1eH/F2Xg1HwYxqcR0QKh+xVcdEHbVEVqPkKL
-Fn1HM0l8qe/Und4p8CvS36PyTTGn4X/c3O3+l0wXYvsbTMCwlQctBbcWMvafAgIj
-xcjfweYrjXZUwNM9KYiNIZCASt5pI3lfTbnxp+vLQhnGgkL8ZmZUmBmspVTLsSOy
-yYn50/FlqSFCFWfiFK/WE8UZWo5rAFO5KubXsJKKMipyJuKTa5tumLj8ic30E9g6
-HRHqPuBS/BoIZ4ZzxfgDZo6qyHHvnlFx3ZAXxEFwVGiHj2gy2LH9XpIW/unZLxwq
-kW5ydvr+ynOZhKqWNHP3g2080+tM+nm/G6PUeh4tws85qANHcFYge5HhjF+NDunP
-oI1ZOgIaqBcRnBRooDJ4Zn/JQHmpQ0X4pwJdNeKAR2pFq0wp5w+UeQbNpRMxJho1
-ia+KawFNTWTFCTLFgvzP2GY0yZ+BL5Kx6820khlcQtdq6zqNz0EWS4dJ5pN84VB9
-qkpAOpMiP0Mvx8cnaDdLzEFZ0LAE8wIIlUZvS4xo+PzMglH51F3HzHjYMpJ45rEP
-dlAXS7W2tswYlUK89IrpEdZv5dcT4t1FeXtLRfZF0bv6RUGW35uTUw8sWgvqk3KT
-dkpcXxfpRNkifF63NKULxHq8wrEAbwqZDdYzlVLweJMRpAW+/TI=
-=YRtJ
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXtZLiwAKCRDj7w1vZxhR
+xVPmAP45n0n/bXaKZ1yE75klsmfyLSQrkPVnggB8TOLcoVWvXgEAoQBVPj7GmkAB
+XoSEMSgX4zgK/n0fW6bptMqt4QaM1gc=
+=P3EF
 -----END PGP SIGNATURE-----
 
---IvGM3kKqwtniy32b--
+--ne6yctwhuf4mmo4i--
 
 
---===============0810393904207283486==
+--===============0443497554330074745==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -170,5 +187,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0810393904207283486==--
+--===============0443497554330074745==--
 
