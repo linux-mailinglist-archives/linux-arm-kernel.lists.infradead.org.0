@@ -2,92 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 233D81EC2E3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 21:37:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E120A1EC2F0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 21:39:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YQlmJTEZ1q1nQzPMcMk4fMKTxFYxoUTU5TE3wCFHl/c=; b=L2Zpw7t+lJ5a/X
-	m6iI84rM2tMLgWTletO2LvRhevEuBw8KliQx8KQ9+nceuBF4IWUNE1VtAcABNij05QHZMwT5Bj0Bb
-	TAiCWvMLREzkGTRKtBFS3a8aex8JCvhLYV6r1RQ8JlOu43MPEH9gdurqzMLvKGOCmm15DJGYK0jgv
-	W0tm4qXTFdsnLC/U9kaQ8KYAxGtLknzuqHn0fgiugHsakIu5NgpRKYh2q/RqdwXYdP1uhKEAg6spv
-	6U6S/MsZ2P5247JrXpkCugP1Bl9JBAtkKQb+sJXWnPhV0gphGN02S3kRAVr5Gg5XJsDdmhtWSpX2Q
-	F/JRMLzfB+pXG9E4oYRQ==;
+	List-Owner; bh=8nUT4BPYdpwDkLI88L3imav5vWXRPYJonELnOAsfMpo=; b=VwYDdsle3VG/48
+	bC0372s9T0+X9REsfBbtVXZza5sgReC81vGANR6kMlxmKEYX1wMxNjPjprcc4qOz45CR6QTjmUQdp
+	mNRw9zidlTQIY69phSM4G0bl5wwrh8nIXZcFgUSJNSfldgowulMJi1IHb9CTbo7qvJ0ZghGcjrZJ9
+	LriNoj2f8yU/dqqA0fcPGO/Uw/CBNrQ+8uI0des9tHhImn0btb0wwIgb1NfEOohkq3IJQ8GiIqev0
+	wgIMRWK3leuAeSQVU2Vot2M4ocxNK+nSY2naQOcBDgQ+QBYUsu0WwSHynCoXk20VlzYbkiiwkHoLD
+	WyVMuqE8Lqm6egEOtxgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgCjE-0000db-RE; Tue, 02 Jun 2020 19:37:40 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgCj7-0000ck-Sj
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 19:37:35 +0000
-Received: by mail-pf1-x444.google.com with SMTP id b5so2799845pfp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 02 Jun 2020 12:37:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=bJnC8pb9inJ4WASV7qVCuCabCRcXZDxttLDFcET0dPc=;
- b=Ha/pn0BXsUvRjOzGNc0GJXisWDaYC6hsmIaIt4veiwt/qOBrFIyP91gWdk0MIjL3SP
- CtXg3HDwFvPW9uc6fKiYNh0Rdg8AapVZng26a36EW9Ul23Yk3vMUneyzBf4ON8PFZLOP
- Yni5OWTIjVYNJ55ki+7sCflmTV3aRAX7Okn1Wwj6zv04gZHLuxFaZKb9QIEPfg/R7izY
- v0gGGqsRfp3lhMfXDevaHCmuH/Nu6XiKLLW8HkKoKKGqyqOWF1ZS6dBjcyZbxRRItrSX
- cGa2QzSeSMMclncAx8VzL5FZzWi4q8206AVEcoTiyu4h0vPuwIA97o387htSfu+b20l4
- 6u2A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=bJnC8pb9inJ4WASV7qVCuCabCRcXZDxttLDFcET0dPc=;
- b=DeTqarjpZsEeNcX8K/XR4XYHMTj6B4+F91PKhwKT9B4aqFllSUuduC5NPVvrsaPT5W
- ce39FPRHM686YTzvrkYPd6NW/dAF6vuOq6UU6b5hwbryt406/Gpn44zC3ZlhOCuW9oyb
- //9+XpfSlNWD8TclTPwf4bh1qKyGC8HlpRTJeK/WuhqcSkOX/9P7I9+5nqngveV8TZuu
- qBM42f/kitXbg5ANB0egZynv77bMe0z2cEVtRGI9fS7+o7SnikfURpKyluhRbDMeW0jB
- v4HOhpyzSrw8HRIxAftuMYT42ZvfBsyoRdm3kvWtRSTMrMRQf2JbnRRlsAV/cgIxrtlw
- 2juw==
-X-Gm-Message-State: AOAM530X+XhMB4FHA2zdpbJo7aJAEE3xJq3D4XPh66uGURfLGbvdrQj3
- CZo668rcOyHWCRW9fHVSjn6hEA==
-X-Google-Smtp-Source: ABdhPJy3Abo428EgMH5dNF9Mw8Ft+chYmLJaz1u5kKFL3gpyXhgREJRJ/iH853fmYqj1SDPu5DREaw==
-X-Received: by 2002:a63:4f09:: with SMTP id d9mr24769623pgb.10.1591126652763; 
- Tue, 02 Jun 2020 12:37:32 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id y9sm3105189pjy.56.2020.06.02.12.37.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 02 Jun 2020 12:37:32 -0700 (PDT)
-Date: Tue, 2 Jun 2020 13:37:30 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Suman Anna <s-anna@ti.com>
-Subject: Re: [PATCH v2 1/4] remoteproc: Introduce rproc_of_parse_firmware()
- helper
-Message-ID: <20200602193730.GA29840@xps15>
-References: <20200521001006.2725-1-s-anna@ti.com>
- <20200521001006.2725-2-s-anna@ti.com>
+	id 1jgClB-00017R-Uo; Tue, 02 Jun 2020 19:39:41 +0000
+Received: from mx.baikalchip.com ([94.125.187.42]
+ helo=mail.baikalelectronics.ru)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgCl4-00016O-Eb
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 19:39:36 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id 259968030808;
+ Tue,  2 Jun 2020 19:39:33 +0000 (UTC)
+X-Virus-Scanned: amavisd-new at baikalelectronics.ru
+Received: from mail.baikalelectronics.ru ([127.0.0.1])
+ by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id GjhvlG4R7G07; Tue,  2 Jun 2020 22:39:31 +0300 (MSK)
+Date: Tue, 2 Jun 2020 22:39:31 +0300
+From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+To: Lars Povlsen <lars.povlsen@microchip.com>
+Subject: Re: [PATCH 02/10] spi: dw: Add support for RX sample delay register
+Message-ID: <20200602193931.vl36k3c6uyiaizah@mobilestation>
+References: <20200513140031.25633-1-lars.povlsen@microchip.com>
+ <20200513140031.25633-3-lars.povlsen@microchip.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200521001006.2725-2-s-anna@ti.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200513140031.25633-3-lars.povlsen@microchip.com>
+X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_123733_934209_AECC2148 
-X-CRM114-Status: GOOD (  19.82  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200602_123934_843432_A4B9B882 
+X-CRM114-Status: GOOD (  19.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,83 +63,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, Serge Semin <fancer.lancer@gmail.com>,
+ linux-spi@vger.kernel.org, SoC Team <soc@kernel.org>,
+ Mark Brown <broonie@kernel.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 20, 2020 at 07:10:03PM -0500, Suman Anna wrote:
-> Add a new helper function rproc_of_parse_firmware() to the remoteproc
-> core that can be used by various remoteproc drivers to look up the
-> the "firmware-name" property from a rproc device node. This property
-> is already being used by multiple drivers, so this helper can avoid
-> repeating equivalent code in remoteproc drivers.
+On Wed, May 13, 2020 at 04:00:23PM +0200, Lars Povlsen wrote:
+> This add support for the RX_SAMPLE_DLY register. If enabled in the
+> Designware IP, it allows tuning of the rx data signal by means of an
+> internal rx sample fifo.
 > 
-> Signed-off-by: Suman Anna <s-anna@ti.com>
+> The register is located at offset 0xf0, and if the option is not
+> enabled in the IP, changing the register will have no effect.
+> 
+> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
 > ---
-> v2: New patch
+>  drivers/spi/spi-dw.c | 7 +++++++
+>  drivers/spi/spi-dw.h | 2 ++
+>  2 files changed, 9 insertions(+)
 > 
->  drivers/remoteproc/remoteproc_core.c     | 23 +++++++++++++++++++++++
->  drivers/remoteproc/remoteproc_internal.h |  2 ++
->  2 files changed, 25 insertions(+)
+> diff --git a/drivers/spi/spi-dw.c b/drivers/spi/spi-dw.c
+> index e572eb34a3c1a..32997f28fa5bb 100644
+> --- a/drivers/spi/spi-dw.c
+> +++ b/drivers/spi/spi-dw.c
+> @@ -81,6 +81,9 @@ static ssize_t dw_spi_show_regs(struct file *file, char __user *user_buf,
+>  			"DMATDLR: \t0x%08x\n", dw_readl(dws, DW_SPI_DMATDLR));
+>  	len += scnprintf(buf + len, SPI_REGS_BUFSIZE - len,
+>  			"DMARDLR: \t0x%08x\n", dw_readl(dws, DW_SPI_DMARDLR));
+
+> +	len += scnprintf(buf + len, SPI_REGS_BUFSIZE - len,
+> +			 "RX_SAMPLE_DLY: \t0x%08x\n",
+> +			 dw_readl(dws, DW_SPI_RX_SAMPLE_DLY));
+
+debugfs_reg32 interface is now utilized in the driver to dump the registers
+state. So this will have to be converted to just a new entry in the
+dw_spi_dbgfs_regs array.
+
+>  	len += scnprintf(buf + len, SPI_REGS_BUFSIZE - len,
+>  			"=================================\n");
+> 
+> @@ -315,6 +318,10 @@ static int dw_spi_transfer_one(struct spi_controller *master,
+>  		spi_set_clk(dws, chip->clk_div);
+>  	}
 > 
 
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> +	/* Apply RX sample delay, iff requested (nonzero) */
 
-> diff --git a/drivers/remoteproc/remoteproc_core.c b/drivers/remoteproc/remoteproc_core.c
-> index 9f04c30c4aaf..c458b218d524 100644
-> --- a/drivers/remoteproc/remoteproc_core.c
-> +++ b/drivers/remoteproc/remoteproc_core.c
-> @@ -1034,6 +1034,29 @@ rproc_of_resm_mem_entry_init(struct device *dev, u32 of_resm_idx, size_t len,
->  }
->  EXPORT_SYMBOL(rproc_of_resm_mem_entry_init);
->  
-> +/**
-> + * rproc_of_parse_firmware() - parse and return the firmware-name
-> + * @dev: pointer on device struct representing a rproc
-> + * @index: index to use for the firmware-name retrieval
-> + * @fw_name: pointer to a character string, in which the firmware
-> + *           name is returned on success and unmodified otherwise.
-> + *
-> + * This is an OF helper function that parses a device's DT node for
-> + * the "firmware-name" property and returns the firmware name pointer
-> + * in @fw_name on success.
-> + *
-> + * Return: 0 on success, or an appropriate failure.
-> + */
-> +int rproc_of_parse_firmware(struct device *dev, int index, const char **fw_name)
-> +{
-> +	int ret;
+s/iff/if
+
+> +	if (dws->rx_sample_dly)
+> +		dw_writel(dws, DW_SPI_RX_SAMPLE_DLY, dws->rx_sample_dly);
 > +
-> +	ret = of_property_read_string_index(dev->of_node, "firmware-name",
-> +					    index, fw_name);
-> +	return ret ? ret : 0;
-> +}
-> +EXPORT_SYMBOL(rproc_of_parse_firmware);
-> +
->  /*
->   * A lookup table for resource handlers. The indices are defined in
->   * enum fw_resource_type.
-> diff --git a/drivers/remoteproc/remoteproc_internal.h b/drivers/remoteproc/remoteproc_internal.h
-> index 4ba7cb59d3e8..e5341e91d2fc 100644
-> --- a/drivers/remoteproc/remoteproc_internal.h
-> +++ b/drivers/remoteproc/remoteproc_internal.h
-> @@ -28,6 +28,8 @@ struct rproc_debug_trace {
->  void rproc_release(struct kref *kref);
->  irqreturn_t rproc_vq_interrupt(struct rproc *rproc, int vq_id);
->  void rproc_vdev_release(struct kref *ref);
-> +int rproc_of_parse_firmware(struct device *dev, int index,
-> +			    const char **fw_name);
->  
->  /* from remoteproc_virtio.c */
->  int rproc_add_virtio_dev(struct rproc_vdev *rvdev, int id);
-> -- 
-> 2.26.0
+>  	dws->n_bytes = DIV_ROUND_UP(transfer->bits_per_word, BITS_PER_BYTE);
+>  	dws->dma_width = DIV_ROUND_UP(transfer->bits_per_word, BITS_PER_BYTE);
 > 
+> diff --git a/drivers/spi/spi-dw.h b/drivers/spi/spi-dw.h
+> index 1bf5713e047d3..ed6e47b3f50da 100644
+> --- a/drivers/spi/spi-dw.h
+> +++ b/drivers/spi/spi-dw.h
+> @@ -31,6 +31,7 @@
+>  #define DW_SPI_IDR			0x58
+>  #define DW_SPI_VERSION			0x5c
+>  #define DW_SPI_DR			0x60
+> +#define DW_SPI_RX_SAMPLE_DLY		0xf0
+>  #define DW_SPI_CS_OVERRIDE		0xf4
+> 
+>  /* Bit fields in CTRLR0 */
+> @@ -111,6 +112,7 @@ struct dw_spi {
+> 
+>  	int			cs_override;
+>  	u32			reg_io_width;	/* DR I/O width in bytes */
+
+> +	u8			rx_sample_dly;	/* RX fifo tuning (option) */
+
+This doesn't seem like a good place for this parameter. The sample delay is
+SPI-slave specific. So as I see it, the parameter should be moved to the
+chip_data.
+
+-Sergey
+
+>  	u16			bus_num;
+>  	u16			num_cs;		/* supported slave numbers */
+>  	void (*set_cs)(struct spi_device *spi, bool enable);
+> --
+> 2.26.2
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
