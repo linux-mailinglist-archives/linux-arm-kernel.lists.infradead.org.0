@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 869DE1EB720
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 10:15:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 051A91EB74D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 10:25:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ltpEymmzd5p2x27PGFt8SCH/YNlnTz44yfPnRYBzGuM=; b=TrvHrnkHNAqMDN
-	nUk/8KiRozE91YWMa+0lO89u6GiuUYofRr2oaj/Ch17FzSEu7I2htukMYOGz4hhY+m4Tk5XajY+VI
-	z+vUSbgtju3EYlJtdlCjBgwHSoYQzECTscsygP65kHhYiQy6M0QiU3j5CDb8dmr9Utdo53RsT268x
-	qIHXGY1lHZ9Ft7Sg+TeZ7KSQ5GGYR+vZdkIVx7itPTudE3XhzhPrY7YfUTygEduND0sq2o/sr0MkJ
-	j/GFDIyHEJnrxQEVhHgStfkc0fwKY0fQU0q2VkUnjDGiZv26hy/auGugg1vCNBVtH4w9ylruHbG42
-	CqI073eaJKhUn9K8hx4Q==;
+	List-Owner; bh=jCVpqen6trbsGtKvilPOEOdV1FaaSoIghaqbSBOBhfE=; b=BbKyEU5fb/UwKs
+	wnK3h4mqRvQnI0A3uts9a6n+Y1CpZjDY2Q/jNnSYqy6aUjZjx4YjfmP+7EiEWbV6k4BkFLYwSNt/r
+	ISRCR9mO7S4ryilQLv5RTl+MwqQYYXBNulCUrUDSfJ3pO/zp5roRj5QI53ptzxOOxc1NyU/I34Q7e
+	1xBNuA2N2dDhQKPmZJEXK00oCuaadOkEmUc+0BpPNmqvDSgnPa0Dlh8XBpMJZnixsD0o7aEkJQETa
+	yEJyi3lQBvXf9ltB01aBmun5IrZgN8XINfg3Ge0Sw+5aJ0oVHqbEVxulYuwhlOioR4xxOB39ME2kw
+	zEN7E8v3cdBxUlwRkTmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg24t-0006SN-Mj; Tue, 02 Jun 2020 08:15:19 +0000
+	id 1jg2F2-0005Es-0m; Tue, 02 Jun 2020 08:25:48 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg24i-0004z6-Oj; Tue, 02 Jun 2020 08:15:10 +0000
-X-UUID: 1f61be47b7c84ee1a0bf9dc199cbe9a8-20200602
+ id 1jg2EY-0004ye-I3; Tue, 02 Jun 2020 08:25:20 +0000
+X-UUID: 1534da590d414aaeaf5a5b60ce0eac3e-20200602
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=MbF+LRzExa+XY/pBtDs6ophTBP7J5P1UhRlTOBIVSUM=; 
- b=efQKRy60hw1KplC6/kQqXKjW66LqR+aLwMJt0z4mRRe2AMeRx3rmM+pK2/5CNRH9pMm1IgOKlaxbjLuHq/udbLfw5UJxWOX2EQH6ogPsECB31MnJ+uEF6KMQVAEUXRj2Bi6dBJ7cULhsSC1YQTk4zc5TOjGn8mVI+1q7SQyr78k=;
-X-UUID: 1f61be47b7c84ee1a0bf9dc199cbe9a8-20200602
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ bh=L04bYCk8wivAACUMFnflEPSxZwU86UwuPofSNkaCMCU=; 
+ b=jbX9s15LImbS1lMlL4qHc72C4/E7MkqS/qkQri6OS47xtgGtW6E7PrMgmuxo/TvBiI1wfLaXbxVs3fvoNnrdWM+hOCLRKPWQwiTahehaPEqmaPt7aRojDe6CytW4yT0PwniCGciFiCu0K8/X+sninvj15NtsUF5w2jNCXSq+Lg8=;
+X-UUID: 1534da590d414aaeaf5a5b60ce0eac3e-20200602
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <neal.liu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 532629394; Tue, 02 Jun 2020 00:15:02 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 2 Jun 2020 01:15:00 -0700
+ with ESMTP id 1968415831; Tue, 02 Jun 2020 00:25:16 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 2 Jun 2020 01:15:12 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Tue, 2 Jun 2020 16:14:59 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -47,17 +47,18 @@ To: Matt Mackall <mpm@selenic.com>, Herbert Xu <herbert@gondor.apana.org.au>,
  Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
  Sean Wang <sean.wang@kernel.org>, Arnd Bergmann <arnd@arndb.de>, "Greg
  Kroah-Hartman" <gregkh@linuxfoundation.org>
-Subject: [PATCH v6 1/2] dt-bindings: rng: add bindings for sec-rng
-Date: Tue, 2 Jun 2020 16:14:37 +0800
-Message-ID: <1591085678-22764-2-git-send-email-neal.liu@mediatek.com>
+Subject: [PATCH v6 2/2] hwrng: add sec-rng driver
+Date: Tue, 2 Jun 2020 16:14:38 +0800
+Message-ID: <1591085678-22764-3-git-send-email-neal.liu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
 References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 909ABA3B6E64AD00041CC4B3A9BF7D20E656DA2E14FD0DBC349B80906CF174CA2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_011508_845320_5C93CD05 
-X-CRM114-Status: GOOD (  10.70  )
+X-CRM114-CacheID: sfid-20200602_012518_602880_D9150D9A 
+X-CRM114-Status: GOOD (  16.75  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,74 +97,214 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add bindings for ARM TrustZone based Security Random
-Number Generator.
+For security awareness SoCs on ARMv8 with TrustZone enabled,
+peripherals like entropy sources is not accessible from normal world
+(linux) and rather accessible from secure world (HYP/ATF/TEE) only.
+This driver aims to provide a generic interface to Arm Trusted
+Firmware or Hypervisor rng service.
 
 Signed-off-by: Neal Liu <neal.liu@mediatek.com>
 ---
- Documentation/devicetree/bindings/rng/sec-rng.yaml |   53 ++++++++++++++++++++
- 1 file changed, 53 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/rng/sec-rng.yaml
+ drivers/char/hw_random/Kconfig   |   13 ++++
+ drivers/char/hw_random/Makefile  |    1 +
+ drivers/char/hw_random/sec-rng.c |  155 ++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 169 insertions(+)
+ create mode 100644 drivers/char/hw_random/sec-rng.c
 
-diff --git a/Documentation/devicetree/bindings/rng/sec-rng.yaml b/Documentation/devicetree/bindings/rng/sec-rng.yaml
+diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
+index 9bc46da..cb9c8a9 100644
+--- a/drivers/char/hw_random/Kconfig
++++ b/drivers/char/hw_random/Kconfig
+@@ -474,6 +474,19 @@ config HW_RANDOM_KEYSTONE
+ 	help
+ 	  This option enables Keystone's hardware random generator.
+ 
++config HW_RANDOM_SECURE
++	tristate "Arm Security Random Number Generator support"
++	depends on HAVE_ARM_SMCCC || COMPILE_TEST
++	default HW_RANDOM
++	help
++	  This driver provides kernel-side support for the Arm Security
++	  Random Number Generator.
++
++	  To compile this driver as a module, choose M here. the
++	  module will be called sec-rng.
++
++	  If unsure, say Y.
++
+ endif # HW_RANDOM
+ 
+ config UML_RANDOM
+diff --git a/drivers/char/hw_random/Makefile b/drivers/char/hw_random/Makefile
+index a7801b4..04533d1 100644
+--- a/drivers/char/hw_random/Makefile
++++ b/drivers/char/hw_random/Makefile
+@@ -41,3 +41,4 @@ obj-$(CONFIG_HW_RANDOM_S390) += s390-trng.o
+ obj-$(CONFIG_HW_RANDOM_KEYSTONE) += ks-sa-rng.o
+ obj-$(CONFIG_HW_RANDOM_OPTEE) += optee-rng.o
+ obj-$(CONFIG_HW_RANDOM_NPCM) += npcm-rng.o
++obj-$(CONFIG_HW_RANDOM_SECURE) += sec-rng.o
+diff --git a/drivers/char/hw_random/sec-rng.c b/drivers/char/hw_random/sec-rng.c
 new file mode 100644
-index 0000000..7f4ae50
+index 0000000..c6d3872
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/rng/sec-rng.yaml
-@@ -0,0 +1,53 @@
-+# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-+# # Copyright 2020 MediaTek Inc.
-+%YAML 1.2
-+---
-+$id: "http://devicetree.org/schemas/rng/sec-rng.yaml#"
-+$schema: "http://devicetree.org/meta-schemas/core.yaml#"
++++ b/drivers/char/hw_random/sec-rng.c
+@@ -0,0 +1,155 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2020 MediaTek Inc.
++ */
 +
-+title: Security Random Number Generator
++#include <linux/arm-smccc.h>
++#include <linux/hw_random.h>
++#include <linux/module.h>
++#include <linux/of.h>
++#include <linux/platform_device.h>
 +
-+description: |
-+  sec-rng is a security random number generator which provides a generic
-+  interface to get hardware rnd from Secure state. The Secure state can be
-+  Arm Trusted Firmware(ATF), Trusted Execution Environment(TEE), or even
-+  EL2 hypervisor.
++#define SMC_RET_NUM	4
++#define SEC_RND_SIZE	(sizeof(u32) * SMC_RET_NUM)
 +
-+maintainer:
-+  - Neal Liu <neal.liu@mediatek.com>
++#define HWRNG_SMC_FAST_CALL_VAL(func_num) \
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL, ARM_SMCCC_SMC_32, \
++			   ARM_SMCCC_OWNER_SIP, (func_num))
 +
-+properties:
-+  compatible:
-+    enum:
-+      - arm,sec-rng
++#define to_sec_rng(p)	container_of(p, struct sec_rng_priv, rng)
 +
-+  method:
-+    description: The method of calling to Secure state
-+    enum:
-+      - smc
-+      - hvc
++typedef void (sec_rng_fn)(unsigned long, unsigned long, unsigned long,
++			  unsigned long, unsigned long, unsigned long,
++			  unsigned long, unsigned long,
++			  struct arm_smccc_res *);
 +
-+  method-fid:
-+    description: The function number within the SMC and HVC function identifier
-+    maxItems: 1
++struct sec_rng_priv {
++	u16 func_num;
++	sec_rng_fn *rng_fn;
++	struct hwrng rng;
++};
 +
-+  quality:
-+    description: Estimation of true entropy in RNG's bitstream per 1024 bits
-+    maxItems: 1
++/* Simple wrapper functions to be able to use a function pointer */
++static void sec_rng_smc(unsigned long a0, unsigned long a1,
++			unsigned long a2, unsigned long a3,
++			unsigned long a4, unsigned long a5,
++			unsigned long a6, unsigned long a7,
++			struct arm_smccc_res *res)
++{
++	arm_smccc_smc(a0, a1, a2, a3, a4, a5, a6, a7, res);
++}
 +
-+required:
-+  - compatible
-+  - methods
-+  - method-fid
-+  - quality
++static void sec_rng_hvc(unsigned long a0, unsigned long a1,
++			unsigned long a2, unsigned long a3,
++			unsigned long a4, unsigned long a5,
++			unsigned long a6, unsigned long a7,
++			struct arm_smccc_res *res)
++{
++	arm_smccc_hvc(a0, a1, a2, a3, a4, a5, a6, a7, res);
++}
 +
-+additionalProperties: false
++static bool __sec_get_rnd(struct sec_rng_priv *priv, uint32_t *val)
++{
++	struct arm_smccc_res res;
 +
-+examples:
-+  - |
-+    hwrng: hwrng {
-+            compatible = "arm,sec-rng";
-+            method = "smc";
-+            method-fid = /bits/ 16 <0x26a>;
-+            quality = /bits/ 16 <900>;
-+    };
++	priv->rng_fn(HWRNG_SMC_FAST_CALL_VAL(priv->func_num),
++			0, 0, 0, 0, 0, 0, 0, &res);
++
++	if (!res.a0 && !res.a1 && !res.a2 && !res.a3)
++		return false;
++
++	val[0] = res.a0;
++	val[1] = res.a1;
++	val[2] = res.a2;
++	val[3] = res.a3;
++
++	return true;
++}
++
++static int sec_rng_read(struct hwrng *rng, void *buf, size_t max, bool wait)
++{
++	struct sec_rng_priv *priv = to_sec_rng(rng);
++	u32 val[4] = {0};
++	int retval = 0;
++	int i;
++
++	while (max >= SEC_RND_SIZE) {
++		if (!__sec_get_rnd(priv, val))
++			return retval;
++
++		for (i = 0; i < SMC_RET_NUM; i++) {
++			*(u32 *)buf = val[i];
++			buf += sizeof(u32);
++		}
++
++		retval += SEC_RND_SIZE;
++		max -= SEC_RND_SIZE;
++	}
++
++	return retval;
++}
++
++static int sec_rng_probe(struct platform_device *pdev)
++{
++	struct sec_rng_priv *priv;
++	const char *method;
++	int ret;
++
++	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
++	if (!priv)
++		return -ENOMEM;
++
++	if (of_property_read_string(pdev->dev.of_node, "method", &method))
++		return -ENXIO;
++
++	if (!strncmp("smc", method, strlen("smc")))
++		priv->rng_fn = sec_rng_smc;
++	else if (!strncmp("hvc", method, strlen("hvc")))
++		priv->rng_fn = sec_rng_hvc;
++
++	if (IS_ERR(priv->rng_fn)) {
++		dev_err(&pdev->dev, "method %s is not supported\n", method);
++		return -EINVAL;
++	}
++
++	if (of_property_read_u16(pdev->dev.of_node, "method-fid",
++				 &priv->func_num))
++		return -ENXIO;
++
++	if (of_property_read_u16(pdev->dev.of_node, "quality",
++				 &priv->rng.quality))
++		return -ENXIO;
++
++	priv->rng.name = pdev->name;
++	priv->rng.read = sec_rng_read;
++	priv->rng.priv = (unsigned long)&pdev->dev;
++
++	ret = devm_hwrng_register(&pdev->dev, &priv->rng);
++	if (ret) {
++		dev_err(&pdev->dev, "failed to register rng device: %d\n", ret);
++		return ret;
++	}
++
++	return 0;
++}
++
++static const struct of_device_id sec_rng_match[] = {
++	{ .compatible = "arm,sec-rng", },
++	{}
++};
++MODULE_DEVICE_TABLE(of, sec_rng_match);
++
++static struct platform_driver sec_rng_driver = {
++	.probe = sec_rng_probe,
++	.driver = {
++		.name = KBUILD_MODNAME,
++		.owner = THIS_MODULE,
++		.of_match_table = sec_rng_match,
++	},
++};
++
++module_platform_driver(sec_rng_driver);
++
++MODULE_DESCRIPTION("Security Random Number Generator Driver");
++MODULE_AUTHOR("Neal Liu <neal.liu@mediatek.com>");
++MODULE_LICENSE("GPL");
 -- 
 1.7.9.5
 _______________________________________________
