@@ -2,108 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D48F31EC357
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 22:04:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22D011EC36B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 22:06:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dYQF9cDYzJ70FeWl0zA+EqHipcRd401QHNJFCFKVFb4=; b=r5RkJrlAYIGn/PEcAMJ7AobVC
-	Z5tH84ZElQQmC5hv5lw4xnQOSy0xfJIsRH7OwheVhm0dch5xQn94UhEra4NH36oGSbXCZ5saCGi7z
-	jLZXi1bGObB09PoO2g8qs+sh24aVbYttzQrkROYIy01WfBJCQpxfXVAIZNvm58YvdMI7pdZV0rJSI
-	55ELVbPAcH+bMO2QbMBLkHqyhc+1OYu/eeaYVMHi7FNJJrn0S1unl1l+0VPXJ0UzfO7xuETYnHPeY
-	WnMxFA5jY4II9xoFqo37ny12heAH8F/sR/HOFdSch1vqaBHyr5UrQd84KJWKEqZzXvCMKW5+KyjeN
-	xM7keA1Ww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=l/9k/UmM71P2KFfNok0NbdkxSSVZndRFe+9YGJI4zWc=; b=T82uN4Njl2lCZi
+	9rJbVKW3U0OSLjR3wfCsYCCmAPZloaiASiX8Mw2w2ryOh8TDZzWEzHtrm/ObJhGkJOg2xfSwvIL1A
+	n3N/Os+pvM84R4vOZ/OeDVuuSqeqVGuzhkG2IZiep6TX74hEjHbd9GpMKnUr9HNE94MhvrKAD7we4
+	io7ngsMWEIRRbdQ3oC5/Pf8I4YeSCaSALOTNf6h4gJk2una5Q/IwyD1qdCD4CU5Z5Bfk1IPx8AR8I
+	1t5NMYqtxYDHMYA0/4NAD8eQUerxFsfrVSrjwDVPO9fW4dTxbHzjz3/mfqgwxmVa3KwE10l8kYGGE
+	ys572d+KQW8ml4/KLSyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgD8o-00087b-Iu; Tue, 02 Jun 2020 20:04:06 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1jgDBN-0002uf-BN; Tue, 02 Jun 2020 20:06:45 +0000
+Received: from smtp05.smtpout.orange.fr ([80.12.242.127]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgD8e-00086S-Ev
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 20:03:57 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 052JuRST168397;
- Tue, 2 Jun 2020 20:03:50 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=RbXyOEzE6zM8uxomZsRMQBNr7Puu7c5FQsKqs0NUrkg=;
- b=AHutea8/u/8YUuoXhLNd6eGd4ymUEwdDSkWmJxgBV2ShLXEKBymxveywJUuaG+UwFI4I
- ZUATkMYeARyGmDnFOWaqS41aKB5QwoMNkHlOd4ZQyEPpAvOMWLXQZuXFfuuQN3j2M6Ep
- 6HNyJz63SDjn5z7j7yP/9zOBWHqlYWV1YOzRyvZbSIFl7unY3wIcCGAvdv9J2624rtIQ
- 1ip4xblLkxOz9Z2zMtiPo+it3/ywjMFL1dRd9imUzB+fZssRF3ehbt4musq8Qs1D9bOX
- T5OxntrzpYCFwrhjPltNeI20pnWzq/IZUom8lJFPyOAqpirhdkIFTf5jdBFNwQPEKDVu MQ== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by aserp2120.oracle.com with ESMTP id 31bfem5txn-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 02 Jun 2020 20:03:50 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 052Jvw5e065137;
- Tue, 2 Jun 2020 20:03:50 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3020.oracle.com with ESMTP id 31c25pvhyx-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 02 Jun 2020 20:03:50 +0000
-Received: from abhmp0011.oracle.com (abhmp0011.oracle.com [141.146.116.17])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 052K3moi020846;
- Tue, 2 Jun 2020 20:03:49 GMT
-Received: from [10.74.110.208] (/10.74.110.208)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 02 Jun 2020 13:03:48 -0700
-Subject: Re: [GIT PULL] ARM: Keystone DTS updates for 5.7
-To: Arnd Bergmann <arnd@arndb.de>
-References: <1583603819-9651-1-git-send-email-santosh.shilimkar@oracle.com>
- <8750635a-37de-f4d0-08b1-16e904be2de7@oracle.com>
- <CAK8P3a1v7V=980HasrQ8t96mLG3wHWW1SXwbXDL5o=F1oFd-Fg@mail.gmail.com>
-From: santosh.shilimkar@oracle.com
-Organization: Oracle Corporation
-Message-ID: <0853f89a-4a47-f0c3-9a60-6e3bc2ca3323@oracle.com>
-Date: Tue, 2 Jun 2020 13:03:46 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
- Gecko/20100101 Thunderbird/68.8.1
+ id 1jgDBF-0002sD-NT
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 20:06:39 +0000
+Received: from localhost.localdomain ([93.22.133.243]) by mwinf5d52 with ME
+ id mL6V220075FEkrh03L6VEp; Tue, 02 Jun 2020 22:06:32 +0200
+X-ME-Helo: localhost.localdomain
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Tue, 02 Jun 2020 22:06:32 +0200
+X-ME-IP: 93.22.133.243
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
+ stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
+ s.hauer@pengutronix.de, linux-imx@nxp.com, aalonso@freescale.com
+Subject: [PATCH] pinctrl: freescale: imx: Use 'devm_of_iomap()' to avoid a
+ resource leak in case of error in 'imx_pinctrl_probe()'
+Date: Tue,  2 Jun 2020 22:06:26 +0200
+Message-Id: <20200602200626.677981-1-christophe.jaillet@wanadoo.fr>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a1v7V=980HasrQ8t96mLG3wHWW1SXwbXDL5o=F1oFd-Fg@mail.gmail.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9640
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- suspectscore=0 spamscore=0
- malwarescore=0 bulkscore=0 mlxscore=0 phishscore=0 mlxlogscore=999
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2006020146
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9640
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
- suspectscore=0
- mlxlogscore=999 priorityscore=1501 bulkscore=0 phishscore=0 clxscore=1015
- impostorscore=0 adultscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0
- cotscore=-2147483648 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2004280000 definitions=main-2006020146
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_130356_584651_C1476FA3 
-X-CRM114-Status: GOOD (  22.21  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200602_130638_058625_E39964F0 
+X-CRM114-Status: GOOD (  13.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.127 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [141.146.126.78 listed in wl.mailspike.net]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ [80.12.242.127 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,62 +65,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>, arm-soc <arm@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kevin Hilman <khilman@kernel.org>
+Cc: linux-gpio@vger.kernel.org,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ Dan Carpenter <dan.carpenter@oracle.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/2/20 1:00 PM, Arnd Bergmann wrote:
-> On Tue, Jun 2, 2020 at 5:14 PM <santosh.shilimkar@oracle.com> wrote:
->>
->> Hi Arnd, Olof,
->>
->> On 3/7/20 9:56 AM, Santosh Shilimkar wrote:
->>> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
->>>
->>>     Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
->>>
->>> are available in the git repository at:
->>>
->>>     git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/keystone_dts_for_5.7
->>>
->>> for you to fetch changes up to 7856488bd83b0182548a84d05c07326321ae6138:
->>>
->>>     ARM: dts: keystone-k2g-evm: add HDMI video support (2020-03-07 09:47:24 -0800)
->>>
->>> ----------------------------------------------------------------
->>> ARM: Keystone DTS updates for 5.7
->>>
->>> Add display support for K2G EVM Board
->>>
->>> ----------------------------------------------------------------
->>> Jyri Sarha (2):
->>>         ARM: dts: keystone-k2g: Add DSS node
->>>         ARM: dts: keystone-k2g-evm: add HDMI video support
->>>
->>>    arch/arm/boot/dts/keystone-k2g-evm.dts | 101 +++++++++++++++++++++++++++++++++
->>>    arch/arm/boot/dts/keystone-k2g.dtsi    |  22 +++++++
->>>    2 files changed, 123 insertions(+)
->>>
->> Looks like this pull request wasn't picked. Can you please check
->> in case am missing something.
-> 
-> I pulled it now, thanks for double-checking!
-> 
-> The problem here was that the soc@kernel.org address was not on Cc, so
-> the pull request did not end up in patchwork. I try to also look for other
-> pull requests sent to the arm@kernel.org address, but it's much less reliable.
-> 
-Thanks Arnd. I started copying soc@kernel.org as well for pull request
-after Olof's suggestion. This one was sent before that.
+Use 'devm_of_iomap()' instead 'of_iomap()' to avoid a resource leak in
+case of error.
 
-Regards,
-Santosh
+Update the error handling code accordingly.
 
+Fixes: 26d8cde5260b ("pinctrl: freescale: imx: add shared input select reg support")
+Suggested-by: Dan Carpenter <dan.carpenter@oracle.com>
+Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+---
+ drivers/pinctrl/freescale/pinctrl-imx.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/pinctrl/freescale/pinctrl-imx.c b/drivers/pinctrl/freescale/pinctrl-imx.c
+index 1f81569c7ae3..cb7e0f08d2cf 100644
+--- a/drivers/pinctrl/freescale/pinctrl-imx.c
++++ b/drivers/pinctrl/freescale/pinctrl-imx.c
+@@ -824,12 +824,13 @@ int imx_pinctrl_probe(struct platform_device *pdev,
+ 				return -EINVAL;
+ 			}
+ 
+-			ipctl->input_sel_base = of_iomap(np, 0);
++			ipctl->input_sel_base = devm_of_iomap(&pdev->dev, np,
++							      0, NULL);
+ 			of_node_put(np);
+-			if (!ipctl->input_sel_base) {
++			if (IS_ERR(ipctl->input_sel_base)) {
+ 				dev_err(&pdev->dev,
+ 					"iomuxc input select base address not found\n");
+-				return -ENOMEM;
++				return PTR_ERR(ipctl->input_sel_base);
+ 			}
+ 		}
+ 	}
+-- 
+2.25.1
 
 
 _______________________________________________
