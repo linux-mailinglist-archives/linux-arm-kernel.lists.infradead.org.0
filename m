@@ -2,56 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6235E1EC598
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 01:22:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 757681EC5B8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 01:29:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7rSi1ap/iJblZA49P9Ek0Cxk5pSchip/8NUtAEbvHI0=; b=augO5UhEmpggbI
-	OQBTP7wp8V5O2Q3llLTaDeHkIhSd1soqRZPBLmrJ6ETXCemazYRdWzIifR/RpJKCfL2iV1LM/x/J5
-	3hjhQVjEkIZo6liOxYubl3PHm79LOb+zR6Aw4V8lk/TpVE9noq0X/6hsEdY5R5T7WKHeETZCVjOoJ
-	RSFJd0b6DaB11c6CasPNVo2zORZl3QAbog+m754XeYel66tr3h0HCep5mJv9aQGEO72htMXyNTh4z
-	FPDheithBwd1cbfiv084zxigJRa1fUzHNP5axrxGqYJp/KYb4iBpzXvDEjh6PyTcqwheGTS/xkXtK
-	DySJ6jc/19EH5PpyOTxQ==;
+	List-Owner; bh=Xu1aQYbQzS2mXjkNZqREd9GlXVNF3TCnjA4ZvGZnUQE=; b=emebvBrYYSDHEQ
+	fKZXC5NJhdkfxIUw3QNX+i0hzJpoef4Y3MAZipsDSxa90mPeyCx+JmrHhgH1bBw2wwjQ7VNdRLP4B
+	USJS8nxKnCJBx5DsdphvwywQu8RuWFySbqFzuJ+psvmghtJUvw0JF9RsZ8UHwNVB3FzJp1XwuRohL
+	R1IM9+NFODtNPf0dcZ5kJqqmBdoJgpb5bPZtdFyx4IVjffOoi8134/fM2HQVL+/h5XI6SPxDy+rbR
+	LMAEHUTWZ4i9Y6AWXQGXAYbwY67y3Bg43btCvk3MswiyNJRjNNGT0jvHiNtVn75DeSq6wXOdGk9GO
+	rZiN6E3cP3gjNa/K/QaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgGEf-0001ph-Gs; Tue, 02 Jun 2020 23:22:21 +0000
-Received: from ns2.baikalelectronics.ru ([94.125.187.42]
- helo=mail.baikalelectronics.ru)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgGEX-0001ox-RL
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 23:22:16 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mail.baikalelectronics.ru (Postfix) with ESMTP id 8CDE28030808;
- Tue,  2 Jun 2020 23:22:12 +0000 (UTC)
-X-Virus-Scanned: amavisd-new at baikalelectronics.ru
-Received: from mail.baikalelectronics.ru ([127.0.0.1])
- by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id eQiNNmjnFCEr; Wed,  3 Jun 2020 02:22:11 +0300 (MSK)
-Date: Wed, 3 Jun 2020 02:22:10 +0300
-From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-To: Lars Povlsen <lars.povlsen@microchip.com>
-Subject: Re: [PATCH 07/10] spi: spi-dw-mchp: Add Sparx5 support
-Message-ID: <20200602232210.hqlbhx3ox3qsxjoa@mobilestation>
-References: <20200513140031.25633-1-lars.povlsen@microchip.com>
- <20200513140031.25633-8-lars.povlsen@microchip.com>
+	id 1jgGLH-0005Y4-R1; Tue, 02 Jun 2020 23:29:11 +0000
+Received: from perceval.ideasonboard.com ([213.167.242.64])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgGLA-0005Wq-TT; Tue, 02 Jun 2020 23:29:06 +0000
+Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
+ [81.175.216.236])
+ by perceval.ideasonboard.com (Postfix) with ESMTPSA id B9A4F2A4;
+ Wed,  3 Jun 2020 01:28:55 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
+ s=mail; t=1591140535;
+ bh=lXkvj1T0Wpo9a3y6ncv9G8LcEGUh4n2+D7BDgxV7xmQ=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=O+jYNNIuc7Edhz9qSOLPWtjOOspHJR6sOJ1VTxt8mWv7PTUD4KHv7Bi52BjyGkW/r
+ SPcKr1108TkGVpYbGcMD7VIXIU62iM61DoNwRVoD/AdEqW+0hQ9RoWYbslQsQwt1yr
+ +GtD4Yiq4fY+j0DmdUIkbriof9U9ZSvbUBZh1Hwg=
+Date: Wed, 3 Jun 2020 02:28:40 +0300
+From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+To: Emil Velikov <emil.l.velikov@gmail.com>
+Subject: Re: [PATCH 1/7] drm/rockchip: prepare common code for cdns and rk
+ dpi/dp driver
+Message-ID: <20200602232840.GP6547@pendragon.ideasonboard.com>
+References: <cover.1590982881.git.Sandor.yu@nxp.com>
+ <d3d707cf37e7928a839071242c752779061cc094.1590982881.git.Sandor.yu@nxp.com>
+ <CACvgo52NeUSQV5p8+4DkCjpkv12cs8fCkQqy4MFn8pVaorVaHg@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200513140031.25633-8-lars.povlsen@microchip.com>
-X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
+In-Reply-To: <CACvgo52NeUSQV5p8+4DkCjpkv12cs8fCkQqy4MFn8pVaorVaHg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_162214_243720_1B8E003A 
-X-CRM114-Status: GOOD (  25.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200602_162905_099555_C216FD5B 
+X-CRM114-Status: GOOD (  17.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,343 +73,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-kernel@vger.kernel.org, Serge Semin <fancer.lancer@gmail.com>,
- linux-spi@vger.kernel.org, SoC Team <soc@kernel.org>,
- Mark Brown <broonie@kernel.org>,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
+ Heiko =?utf-8?Q?St=C3=BCbner?= <heiko@sntech.de>,
+ Jonas Karlman <jonas@kwiboo.se>, sandor.yu@nxp.com,
+ Neil Armstrong <narmstrong@baylibre.com>, Sandy Huang <hjc@rock-chips.com>,
+ ML dri-devel <dri-devel@lists.freedesktop.org>,
+ "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, NXP Linux Team <linux-imx@nxp.com>,
+ linux-rockchip <linux-rockchip@lists.infradead.org>, dkos@cadence.com,
+ LAKML <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 04:00:28PM +0200, Lars Povlsen wrote:
-> This adds support for the Sparx5 SoC in the spi-dw-mchp SPI controller.
+On Tue, Jun 02, 2020 at 02:55:52PM +0100, Emil Velikov wrote:
+> On Mon, 1 Jun 2020 at 07:29, <sandor.yu@nxp.com> wrote:
+> >
+> > From: Sandor Yu <Sandor.yu@nxp.com>
+> >
+> > - Extracted common fields from cdn_dp_device to a new cdns_mhdp_device
+> >   structure which will be used by two separate drivers later on.
+> > - Moved some datatypes (audio_format, audio_info, vic_pxl_encoding_format,
+> >   video_info) from cdn-dp-core.c to cdn-dp-reg.h.
+> > - Changed prefixes from cdn_dp to cdns_mhdp
+> >     cdn -> cdns to match the other Cadence's drivers
+> >     dp -> mhdp to distinguish it from a "just a DP" as the IP underneath
+> >       this registers map can be a HDMI (which is internally different,
+> >       but the interface for commands, events is pretty much the same).
+> > - Modified cdn-dp-core.c to use the new driver structure and new function
+> >   names.
+> > - writel and readl are replaced by cdns_mhdp_bus_write and
+> >   cdns_mhdp_bus_read.
+> >
+> The high-level idea is great - split, refactor and reuse the existing drivers.
 > 
-> Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
-> Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
-> ---
->  drivers/spi/spi-dw-mchp.c | 211 ++++++++++++++++++++++++++++++++++----
->  1 file changed, 189 insertions(+), 22 deletions(-)
+> Although looking at the patches themselves - they seems to be doing
+> multiple things at once.
+> As indicated by the extensive list in the commit log.
 > 
-> diff --git a/drivers/spi/spi-dw-mchp.c b/drivers/spi/spi-dw-mchp.c
-> index 0828a7616d9ab..3abdd44a550ea 100644
-> --- a/drivers/spi/spi-dw-mchp.c
-> +++ b/drivers/spi/spi-dw-mchp.c
-> @@ -28,21 +28,22 @@
+> I would suggest splitting those up a bit, roughly in line of the
+> itemisation as per the commit message.
 > 
->  #define MAX_CS		4
-> 
-> -#define MSCC_CPU_SYSTEM_CTRL_GENERAL_CTRL	0x24
-> -#define OCELOT_IF_SI_OWNER_OFFSET		4
-> -#define JAGUAR2_IF_SI_OWNER_OFFSET		6
->  #define MSCC_IF_SI_OWNER_MASK			GENMASK(1, 0)
->  #define MSCC_IF_SI_OWNER_SISL			0
->  #define MSCC_IF_SI_OWNER_SIBM			1
->  #define MSCC_IF_SI_OWNER_SIMC			2
-> 
->  #define MSCC_SPI_MST_SW_MODE			0x14
-> -#define MSCC_SPI_MST_SW_MODE_SW_PIN_CTRL_MODE	BIT(13)
-> -#define MSCC_SPI_MST_SW_MODE_SW_SPI_CS(x)	(x << 5)
-> 
->  struct dw_spi_mchp_props {
->  	const char *syscon_name;
-> -	u32 si_owner_bit;
-> +	u32 general_ctrl_off;
-> +	u32 si_owner_bit, si_owner2_bit;
-> +	u32 pinctrl_bit_off;
-> +	u32 cs_bit_off;
-> +	u32 ss_force_ena_off;
-> +	u32 ss_force_val_off;
-> +	u32 bootmaster_cs;
->  };
-> 
->  struct dw_spi_mchp {
-> @@ -53,44 +54,176 @@ struct dw_spi_mchp {
->  	void __iomem			*spi_mst;
->  	const struct dw_spi_mchp_props	*props;
->  	u32				gen_owner;
-> +	u32				if2mask;
->  };
-> 
->  static const struct dw_spi_mchp_props dw_spi_mchp_props_ocelot = {
->  	.syscon_name		= "mscc,ocelot-cpu-syscon",
-> +	.general_ctrl_off	= 0x24,
->  	.si_owner_bit		= 4,
-> +	.pinctrl_bit_off	= 13,
-> +	.cs_bit_off		= 5,
-> +	.bootmaster_cs		= 0,
->  };
-> 
->  static const struct dw_spi_mchp_props dw_spi_mchp_props_jaguar2 = {
->  	.syscon_name		= "mscc,ocelot-cpu-syscon",
-> +	.general_ctrl_off	= 0x24,
->  	.si_owner_bit		= 6,
-> +	.pinctrl_bit_off	= 13,
-> +	.cs_bit_off		= 5,
-> +	.bootmaster_cs		= 0,
-> +};
-> +
-> +static const struct dw_spi_mchp_props dw_spi_mchp_props_sparx5 = {
-> +	.syscon_name		= "microchip,sparx5-cpu-syscon",
-> +	.general_ctrl_off	= 0x88,
-> +	.si_owner_bit		= 6,
-> +	.si_owner2_bit		= 4,
-> +	.ss_force_ena_off	= 0xa4,
-> +	.ss_force_val_off	= 0xa8,
-> +	.bootmaster_cs		= 0,
->  };
-> 
->  /*
-> - * The Designware SPI controller (referred to as master in the documentation)
-> - * automatically deasserts chip select when the tx fifo is empty. The chip
-> - * selects then needs to be either driven as GPIOs or, for the first 4 using the
-> - * the SPI boot controller registers. the final chip select is an OR gate
-> - * between the Designware SPI controller and the SPI boot controller.
-> + * Set the owner of the SPI interface
->   */
-> -static void dw_spi_mchp_set_cs(struct spi_device *spi, bool enable)
-> +static void dw_spi_mchp_set_owner(struct dw_spi_mchp *dwsmchp,
-> +				  const struct dw_spi_mchp_props *props,
-> +				  u8 owner, u8 owner2)
-> +{
-> +	u32 val, msk;
-> +
-> +	val = (owner << props->si_owner_bit);
-> +	msk = (MSCC_IF_SI_OWNER_MASK << props->si_owner_bit);
-> +	if (props->si_owner2_bit) {
-> +		val |= owner2 << props->si_owner2_bit;
-> +		msk |= (MSCC_IF_SI_OWNER_MASK << props->si_owner2_bit);
-> +	}
-> +	if (dwsmchp->gen_owner != val) {
-> +		regmap_update_bits(dwsmchp->syscon, props->general_ctrl_off,
-> +				   msk, val);
-> +		dwsmchp->gen_owner = val;
-> +	}
-> +}
-> +
-> +static void dw_spi_mchp_set_cs_owner(struct dw_spi_mchp *dwsmchp,
-> +				     const struct dw_spi_mchp_props *props,
-> +				     u8 cs, u8 owner)
+> Here is one hand wavy way to chunk this patch:
+>  1) use put_unalligned*
+>  2) 'use local variable dev' style of changes (as seem in cdn_dp_clk_enable)
+>  3) add writel/readl wrappers
+>  4) hookup struct cdns_mhdp_device, keep dp->mhdp detail internal.
+> The cdn-dp-reg.h function names/signatures will stay the same.
+>  5) finalize the helpers - use mhdp directly, rename
+
+I second this, otherwise review is very hard.
+
+> Examples:
+> 4)
+>  static int cdn_dp_mailbox_read(struct cdn_dp_device *dp)
 >  {
-> +	u8 dummy = (owner == MSCC_IF_SI_OWNER_SIBM ?
-> +		    MSCC_IF_SI_OWNER_SIMC : MSCC_IF_SI_OWNER_SIBM);
-> +	if (props->si_owner2_bit && (dwsmchp->if2mask & BIT(cs))) {
-> +		/* SPI2 */
-> +		dw_spi_mchp_set_owner(dwsmchp, props, dummy, owner);
-> +	} else {
-> +		/* SPI1 */
-> +		dw_spi_mchp_set_owner(dwsmchp, props, owner, dummy);
-> +	}
-> +}
-> +
-> +/*
-> + * The Designware SPI controller (referred to as master in the
-> + * documentation) automatically deasserts chip select when the tx fifo
-> + * is empty. The chip selects then needs to be either driven as GPIOs
-> + * or, for the first 4 using the the SPI boot controller
-> + * registers. the final chip select is an OR gate between the
-> + * Designware SPI controller and the SPI boot controller.  nselect is
-> + * an active low signal
-> + */
-> +static void dw_spi_mchp_set_cs(struct spi_device *spi, bool nEnable)
-> +{
-> +	bool enable = !nEnable;	/* This keeps changing in the API... */
->  	struct dw_spi *dws = spi_master_get_devdata(spi->master);
->  	struct dw_spi_mchp *dwsmchp = container_of(dws, struct dw_spi_mchp,
->  						   dws);
-> -	u32 cs = spi->chip_select;
-> +	const struct dw_spi_mchp_props *props = dwsmchp->props;
-> +	u8 cs = spi->chip_select;
+> +"  struct cdns_mhdp_device *mhdp = dp->mhdp;
+>    int val, ret;
 > 
-> -	if (cs < 4) {
-> -		u32 sw_mode = MSCC_SPI_MST_SW_MODE_SW_PIN_CTRL_MODE;
-> +	if (enable)
-> +		dw_spi_mchp_set_cs_owner(dwsmchp, props, cs,
-> +					 MSCC_IF_SI_OWNER_SIMC);
-> 
-> -		if (!enable)
-> -			sw_mode |= MSCC_SPI_MST_SW_MODE_SW_SPI_CS(BIT(cs));
-> +	if (dwsmchp->spi_mst && (cs < MAX_CS)) {
-> +		u32 sw_mode;
-> 
-> +		if (enable)
-> +			sw_mode = BIT(props->pinctrl_bit_off) |
-> +				(BIT(cs) << props->cs_bit_off);
-> +		else
-> +			sw_mode = 0;
->  		writel(sw_mode, dwsmchp->spi_mst + MSCC_SPI_MST_SW_MODE);
-> +	} else if (props->ss_force_ena_off) {
-> +		if (enable) {
-> +			/* Ensure CS toggles, so start off all disabled */
-> +			regmap_write(dwsmchp->syscon, props->ss_force_val_off,
-> +				     ~0);
-> +			/* CS override drive enable */
-> +			regmap_write(dwsmchp->syscon, props->ss_force_ena_off,
-> +				     1);
-> +			/* Allow settle */
-> +			udelay(1);
-> +			/* Now set CSx enabled */
-> +			regmap_write(dwsmchp->syscon, props->ss_force_val_off,
-> +				     ~BIT(cs));
-> +		} else {
-> +			/* CS value */
-> +			regmap_write(dwsmchp->syscon, props->ss_force_val_off,
-> +				     ~0);
-> +			/* CS override drive disable */
-> +			regmap_write(dwsmchp->syscon, props->ss_force_ena_off,
-> +				     0);
-> +		}
->  	}
-> 
-> -	dw_spi_set_cs(spi, enable);
-> +	dw_spi_set_cs(spi, nEnable);
-> +}
-> +
-> +static int dw_mchp_bootmaster_exec_mem_op(struct spi_mem *mem,
-> +					  const struct spi_mem_op *op)
-> +{
-> +	struct spi_device *spi = mem->spi;
-> +	int ret = -ENOTSUPP;
-> +
-
-> +	/* Only reads, addrsize 1..4 */
-> +	if (!op->data.nbytes || !op->addr.nbytes || op->addr.nbytes > 4 ||
-> +	    op->data.dir != SPI_MEM_DATA_IN)
-> +		return ret;
-> +
-> +	/* Only handle (normal+fast) 3/4 bytes read */
-> +	if (op->cmd.opcode != SPINOR_OP_READ &&
-> +	    op->cmd.opcode != SPINOR_OP_READ_FAST &&
-> +	    op->cmd.opcode != SPINOR_OP_READ_4B &&
-> +	    op->cmd.opcode != SPINOR_OP_READ_FAST_4B)
-> +		return ret;
-
-Hm, this part most like belongs to supports_op() callback.
-
-> +
-> +	/* CS0..3, only 16M reach */
-> +	if ((spi->chip_select < MAX_CS) &&
-
-> +	    (op->addr.val + op->data.nbytes) < SZ_16M) {
-
-The driver shouldn't return a failure if more than available data requested.
-Just return the length the driver managed to read.
-
-> +		struct dw_spi *dws = spi_master_get_devdata(spi->master);
-> +		struct dw_spi_mchp *dwsmchp = container_of(dws,
-> +							   struct dw_spi_mchp,
-> +							   dws);
-> +		const struct dw_spi_mchp_props *props = dwsmchp->props;
-> +		u8 __iomem *src = dwsmchp->read_map +
-> +			(spi->chip_select * SZ_16M) + op->addr.val;
-> +
-> +		if (props->bootmaster_cs != spi->chip_select)
-> +			return ret;
-> +
-> +		/* Make boot master owner of SI interface */
-> +		dw_spi_mchp_set_cs_owner(dwsmchp, props, spi->chip_select,
-> +					 MSCC_IF_SI_OWNER_SIBM);
-
-> +		memcpy(op->data.buf.in, src, op->data.nbytes);
-
-So after all it's just memcpy from the directly mapped SPI-flash memory, right?
-Then it's not mem_op, but I supposed it should be implemented by means of the
-dirmap_{create,read,destroy}.
-
--Sergey
-
-> +		ret = op->data.nbytes;
-> +	}
-> +	return ret;
+> -  ret = readx_poll_timeout(readl, dp->regs + MAILBOX_EMPTY_ADDR,
+> +  ret = readx_poll_timeout(readl, mhdp->regs_base + MAILBOX_EMPTY_ADDR,
+> ...
+>    return fancy_readl(dp, MAILBOX0_RD_DATA) & 0xff;
 >  }
 > 
-> +static const struct spi_controller_mem_ops dw_mchp_bootmaster_mem_ops = {
-> +	.exec_op = dw_mchp_bootmaster_exec_mem_op,
-> +};
-> +
->  static int dw_spi_mchp_init(struct platform_device *pdev,
->  			    struct dw_spi *dws,
->  			    struct dw_spi_mchp *dwsmchp,
-> @@ -107,6 +240,18 @@ static int dw_spi_mchp_init(struct platform_device *pdev,
->  		}
->  	}
-> 
-> +	/* See if we have a direct read window */
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 2);
-> +	if (res && resource_size(res) >= (SZ_16M*MAX_CS)) {
-> +		void __iomem *ptr = devm_ioremap_resource(&pdev->dev, res);
-> +
-> +		if (!IS_ERR(ptr)) {
-> +			dwsmchp->read_map = ptr;
-> +			dws->mem_ops = &dw_mchp_bootmaster_mem_ops;
-> +			dev_info(&pdev->dev, "Enabling fast memory operations\n");
-> +		}
-> +	}
-> +
->  	dwsmchp->syscon =
->  		syscon_regmap_lookup_by_compatible(props->syscon_name);
->  	if (IS_ERR(dwsmchp->syscon)) {
-> @@ -119,10 +264,9 @@ static int dw_spi_mchp_init(struct platform_device *pdev,
->  	if (dwsmchp->spi_mst)
->  		writel(0, dwsmchp->spi_mst + MSCC_SPI_MST_SW_MODE);
-> 
-> -	/* Select the owner of the SI interface */
-> -	regmap_update_bits(dwsmchp->syscon, MSCC_CPU_SYSTEM_CTRL_GENERAL_CTRL,
-> -			   MSCC_IF_SI_OWNER_MASK << props->si_owner_bit,
-> -			   MSCC_IF_SI_OWNER_SIMC << props->si_owner_bit);
-> +	/* SPI2 mapping bitmask */
-> +	device_property_read_u32(&pdev->dev, "interface-mapping-mask",
-> +				 &dwsmchp->if2mask);
-> 
->  	dwsmchp->dws.set_cs = dw_spi_mchp_set_cs;
-> 
-> @@ -180,6 +324,27 @@ static int dw_spi_mchp_probe(struct platform_device *pdev)
->  	dws->rx_sample_dly = DIV_ROUND_UP(rx_sample_dly,
->  					  (dws->max_freq / 1000000));
-> 
-> +	if (pdev->dev.of_node) {
-> +		int i;
-> +
-> +		for (i = 0; i < dws->num_cs; i++) {
-> +			int cs_gpio = of_get_named_gpio(pdev->dev.of_node,
-> +					"cs-gpios", i);
-> +
-> +			if (cs_gpio == -EPROBE_DEFER) {
-> +				ret = cs_gpio;
-> +				goto out;
-> +			}
-> +
-> +			if (gpio_is_valid(cs_gpio)) {
-> +				ret = devm_gpio_request(&pdev->dev, cs_gpio,
-> +						dev_name(&pdev->dev));
-> +				if (ret)
-> +					goto out;
-> +			}
-> +		}
-> +	}
-> +
->  	props = device_get_match_data(&pdev->dev);
->  	if (props)
->  		ret = dw_spi_mchp_init(pdev, dws, dwsmchp, props);
-> @@ -213,6 +378,8 @@ static int dw_spi_mchp_remove(struct platform_device *pdev)
->  static const struct of_device_id dw_spi_mchp_of_match[] = {
->  	{ .compatible = "mscc,ocelot-spi", .data = &dw_spi_mchp_props_ocelot},
->  	{ .compatible = "mscc,jaguar2-spi", .data = &dw_spi_mchp_props_jaguar2},
-> +	{ .compatible = "microchip,sparx5-spi",
-> +	  .data = &dw_spi_mchp_props_sparx5},
->  	{ /* end of table */}
->  };
->  MODULE_DEVICE_TABLE(of, dw_spi_mchp_of_match);
-> --
-> 2.26.2
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 5)
+> -static int cdn_dp_mailbox_read(struct cdn_dp_device *dp)
+> +static int mhdp_mailbox_read(struct cdns_mhdp_device *mhdp)
+>  {
+> -  struct cdns_mhdp_device *mhdp = dp->mhdp;
+>    int val, ret;
+> ...
+> -  return fancy_readl(dp, MAILBOX0_RD_DATA) & 0xff;
+> +  return cdns_mhdp_bus_read(mhdp, MAILBOX0_RD_DATA) & 0xff;
+>  }
+
+-- 
+Regards,
+
+Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
