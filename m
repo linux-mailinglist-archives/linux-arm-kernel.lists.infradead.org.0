@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 476271EBF8D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 18:00:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6362C1EBF93
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 18:03:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=s1UbqEPpsW6DXUV+zWeAM927da3O/S0y2swFqmtLh8E=; b=klZ43tNNYJ88pT
-	af8ufXj2QCUYd0VtuPH3lrtKhHPLhzrlzwFEk3EZUjmrYgC5NKWr23yv6T5Jxh8llc7GbgQ55U/0r
-	CCrygA2zXWdfHfUwkZqS6KyTgmcvMxb0Xminy/CzOWOs5KpgczbAF5HuicheebsZ5DHrw3pPuqkq3
-	PtyAA0K+o9oLCKl83pfHFgfXrbrI1lhgZaWgXXthL3GpFh75gAPx3J8LdYcElH9mqa0/aALpN6xww
-	XqLjgs/+vc78jcCn36aifcWJjgZuDE9vSKyY3d8hBo3vq9iKpA57o2jCaJAS/Rg91InkhXwWKxCzc
-	UWAs/xlXVv6afS7fVXlQ==;
+	List-Owner; bh=f4Vas9WeEfdvCBqdmN/CA8jxThC+xkOEUvfRugl9AcI=; b=OArjTktOSxSu4l
+	mq0zDfDhjYOaY3Q2iDfvUcs39nG1LaxYDynvoEU55TJfrs/XzUxPXXhjzj/GXu7gnHy1w7lazmF9D
+	1PYhZk6UzzptogJu9afzh3ViDk7u48Rb34H0ZszXEs0rR081lT7IUF7BFHE/RY2+/M7y61lNnF41/
+	dqMyNbVwseaJ/cILbJ3016dY+SEK1GZSyN3JKxxUZgYjpcoKMPPnThHiIg40EILkbzk/V8rxvDiZ2
+	ss+mbY3xBET+6kkxgXsH3aoKjDk2r/1kJwB5u1HKAb/tYFe/0h3Qx9KiuogRt+T/Yl+3ElLhbPH6U
+	b7AWR7I16NHPOQYFaA2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg9L1-0005na-6R; Tue, 02 Jun 2020 16:00:27 +0000
+	id 1jg9Nz-0006dq-Ne; Tue, 02 Jun 2020 16:03:31 +0000
 Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg9Ku-0005ma-Pu; Tue, 02 Jun 2020 16:00:22 +0000
+ id 1jg9Ns-0006Sy-NA; Tue, 02 Jun 2020 16:03:26 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 6C20C2A1AC0;
- Tue,  2 Jun 2020 17:00:19 +0100 (BST)
-Date: Tue, 2 Jun 2020 18:00:16 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 3A7392A2941;
+ Tue,  2 Jun 2020 17:03:23 +0100 (BST)
+Date: Tue, 2 Jun 2020 18:03:20 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH v9 4/9] mtd: rawnand: Use nanddev_get_ecc_requirements()
- when relevant
-Message-ID: <20200602180016.2adefd73@collabora.com>
-In-Reply-To: <20200602143124.29553-5-miquel.raynal@bootlin.com>
+Subject: Re: [PATCH v9 5/9] mtd: nand: Convert generic NAND bits to use the
+ ECC framework
+Message-ID: <20200602180320.6539adb0@collabora.com>
+In-Reply-To: <20200602143124.29553-6-miquel.raynal@bootlin.com>
 References: <20200602143124.29553-1-miquel.raynal@bootlin.com>
- <20200602143124.29553-5-miquel.raynal@bootlin.com>
+ <20200602143124.29553-6-miquel.raynal@bootlin.com>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_090020_968995_E26F48F3 
-X-CRM114-Status: GOOD (  12.50  )
+X-CRM114-CacheID: sfid-20200602_090324_886913_B1AFFEC1 
+X-CRM114-Status: GOOD (  18.81  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -73,42 +73,88 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  2 Jun 2020 16:31:19 +0200
+On Tue,  2 Jun 2020 16:31:20 +0200
 Miquel Raynal <miquel.raynal@bootlin.com> wrote:
 
-
+> Embed a generic NAND ECC high-level object in the nand_device
+> structure to carry all the ECC engine configuration/data.
+> 
+> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+> ---
+>  drivers/mtd/nand/raw/nand_base.c |  4 +++-
+>  include/linux/mtd/nand.h         | 12 ++++++------
+>  2 files changed, 9 insertions(+), 7 deletions(-)
+> 
 > diff --git a/drivers/mtd/nand/raw/nand_base.c b/drivers/mtd/nand/raw/nand_base.c
-> index 1ce2cbe72e4c..e8e22d79f422 100644
+> index e8e22d79f422..ed0f642be993 100644
 > --- a/drivers/mtd/nand/raw/nand_base.c
 > +++ b/drivers/mtd/nand/raw/nand_base.c
-> @@ -4725,6 +4725,9 @@ static inline bool is_full_id_nand(struct nand_flash_dev *type)
->  static bool find_full_id_nand(struct nand_chip *chip,
->  			      struct nand_flash_dev *type)
->  {
-> +	struct nand_device *base = &chip->base;
-> +	struct nand_ecc_props *requirements =
-> +		(struct nand_ecc_props *)nanddev_get_ecc_requirements(base);
+> @@ -5984,7 +5984,9 @@ static int nand_scan_tail(struct nand_chip *chip)
+>  	/* ECC sanity check: warn if it's too weak */
+>  	if (!nand_ecc_strength_good(chip))
+>  		pr_warn("WARNING: %s: the ECC used on your system (%db/%dB) is too weak compared to the one required by the NAND chip (%db/%dB)\n",
+> -			mtd->name, chip->ecc.strength, chip->ecc.size,
+> +			mtd->name,
+> +			nanddev_get_ecc_conf(&chip->base)->strength,
+> +			nanddev_get_ecc_conf(&chip->base)->step_size,
 
-Ouch, that sounds wrong. How about introducing a
-nanddev_set_ecc_requirements() helper instead? The same applies to all
-places where you have this cast.
+Hm, are you sure all places using chip->ecc.{strength,size} have been
+patched to use nanddev_get_ecc_conf()?
 
+>  			nanddev_get_ecc_requirements(&chip->base)->strength,
+>  			nanddev_get_ecc_requirements(&chip->base)->step_size);
+>  
 > diff --git a/include/linux/mtd/nand.h b/include/linux/mtd/nand.h
-> index e572d1600f63..0b89da54bef2 100644
+> index 0b89da54bef2..668c99c4aaa7 100644
 > --- a/include/linux/mtd/nand.h
 > +++ b/include/linux/mtd/nand.h
-> @@ -527,7 +527,7 @@ nanddev_get_ecc_conf(struct nand_device *nand)
->   *                                  device
->   * @nand: NAND device
->   */
-> -const struct nand_ecc_props *
-> +static inline const struct nand_ecc_props *
->  nanddev_get_ecc_requirements(struct nand_device *nand)
-
-Looks like this should be squashed in patch 2.
-
+> @@ -290,7 +290,7 @@ struct nand_ecc {
+>   * struct nand_device - NAND device
+>   * @mtd: MTD instance attached to the NAND device
+>   * @memorg: memory layout
+> - * @eccreq: ECC requirements
+> + * @ecc: NAND ECC object attached to the NAND device
+>   * @rowconv: position to row address converter
+>   * @bbt: bad block table info
+>   * @ops: NAND operations attached to the NAND device
+> @@ -298,8 +298,8 @@ struct nand_ecc {
+>   * Generic NAND object. Specialized NAND layers (raw NAND, SPI NAND, OneNAND)
+>   * should declare their own NAND object embedding a nand_device struct (that's
+>   * how inheritance is done).
+> - * struct_nand_device->memorg and struct_nand_device->eccreq should be filled
+> - * at device detection time to reflect the NAND device
+> + * struct_nand_device->memorg and struct_nand_device->ecc.requirements should
+> + * be filled at device detection time to reflect the NAND device
+>   * capabilities/requirements. Once this is done nanddev_init() can be called.
+>   * It will take care of converting NAND information into MTD ones, which means
+>   * the specialized NAND layers should never manually tweak
+> @@ -308,7 +308,7 @@ struct nand_ecc {
+>  struct nand_device {
+>  	struct mtd_info mtd;
+>  	struct nand_memory_organization memorg;
+> -	struct nand_ecc_props eccreq;
+> +	struct nand_ecc ecc;
+>  	struct nand_row_converter rowconv;
+>  	struct nand_bbt bbt;
+>  	const struct nand_ops *ops;
+> @@ -519,7 +519,7 @@ nanddev_get_memorg(struct nand_device *nand)
+>  static inline const struct nand_ecc_props *
+>  nanddev_get_ecc_conf(struct nand_device *nand)
 >  {
->  	return &nand->eccreq;
+> -	return &nand->eccreq;
+> +	return &nand->ecc.ctx.conf;
+>  }
+>  
+>  /**
+> @@ -530,7 +530,7 @@ nanddev_get_ecc_conf(struct nand_device *nand)
+>  static inline const struct nand_ecc_props *
+>  nanddev_get_ecc_requirements(struct nand_device *nand)
+>  {
+> -	return &nand->eccreq;
+> +	return &nand->ecc.requirements;
+>  }
+>  
+>  int nanddev_init(struct nand_device *nand, const struct nand_ops *ops,
 
 
 _______________________________________________
