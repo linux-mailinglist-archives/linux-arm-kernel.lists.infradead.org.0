@@ -2,73 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E13C1EB9A4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 12:31:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34B761EB9A6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 12:32:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h5jTek1BZ1H9cyprBk4cUCbLi5WRD8zRX0MmEpbJh0c=; b=eOcvvYf2DUYgOO
-	DzKeg6vQj6A0hJd8Wn5v0X8XSVFYXLFBj39j4Sb0RU2t7CJPHjaFg8qh6q22ZbH+6srrqh48NmFZL
-	jLI08/ielOrifSSDfo/Mp5Udjuu5rhFCck8vClxxrg9GXGf7ucwUip0439X3GDUzmFdKrOpwZ2xi+
-	cFprOnOP4/8KahZKgrZtaKnD499q1i8hyh4qvmiQY/0CdJGUuJiT+Yv2l0lmWjZsZpU/NSG7TZEhJ
-	JDO8NrGFYIPXcT2pjB9E/Bt/TBY/kLn+N4AC8TXHw54Z4Yr9qWSWbWVKCx4T5hX0Ew30TWIjP+89t
-	hrlxc+t+3f1cLtXgYw/w==;
+	List-Owner; bh=gtUFaGt7GobNLvUIrUBE2m4nz/5N5zfjopOH/eORCzc=; b=lF0PivUUzvxIv/
+	oHgOKJp0IoBvrxgVNAqEt7VcQV3a4hTmdP9JuVCBJS1cXlVwRrGJed/T7bnowG0+0xgdq3nQ50XIi
+	6YRzuPCOekr+xAzyflxmLhUPytpRuXDLG8+0R7Irnwmv1MthpwaCy8PUFk+3qMJGCmYcXhe4twss9
+	b2PldKeH/PVPKn87CASpxHxx1QXPRQ2DMf5hn0gViBgNFY2vxBKz14N9iTuUEjZApA0Nyf84jOjzg
+	X4Zq6RVkRbbGbMFZwYC0fEjNIybUb/aFgAhfisZzCEcpUxg350e+tI5G/rmi+PDgEE/3InfDiQXiK
+	zYopm7luehBf/NSfulIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg4Cw-0006F8-Bp; Tue, 02 Jun 2020 10:31:46 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jg4DM-0006Up-UM; Tue, 02 Jun 2020 10:32:12 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg4Cp-0006Dn-3z
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 10:31:41 +0000
-Received: from lhreml710-chm.china.huawei.com (unknown [172.18.7.107])
- by Forcepoint Email with ESMTP id 9DA1C2F3133232790D75;
- Tue,  2 Jun 2020 11:31:32 +0100 (IST)
-Received: from lhreml710-chm.china.huawei.com (10.201.108.61) by
- lhreml710-chm.china.huawei.com (10.201.108.61) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1913.5; Tue, 2 Jun 2020 11:31:29 +0100
-Received: from lhreml710-chm.china.huawei.com ([169.254.81.184]) by
- lhreml710-chm.china.huawei.com ([169.254.81.184]) with mapi id
- 15.01.1913.007; Tue, 2 Jun 2020 11:31:29 +0100
-From: Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: RE: [PATCH v7 21/24] iommu/arm-smmu-v3: Add stall support for
- platform devices
-Thread-Topic: [PATCH v7 21/24] iommu/arm-smmu-v3: Add stall support for
- platform devices
-Thread-Index: AQHWLgezl67to0Fq/kugWrIzT8tlbajDuzCQgAFbKgCAABJrcA==
-Date: Tue, 2 Jun 2020 10:31:29 +0000
-Message-ID: <1517c4d97b5849e6b6d32e7d7ed35289@huawei.com>
-References: <20200519175502.2504091-1-jean-philippe@linaro.org>
- <20200519175502.2504091-22-jean-philippe@linaro.org>
- <4741b6c45d1a43b69041ecb5ce0be0d5@huawei.com>
- <20200602093836.GA1029680@myrica>
-In-Reply-To: <20200602093836.GA1029680@myrica>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.47.94.73]
+ id 1jg4DG-0006U5-Eq
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 10:32:07 +0000
+Received: by mail-wr1-x442.google.com with SMTP id q11so2859341wrp.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 02 Jun 2020 03:32:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=KlmfffW2XSbkYvsmOsNbcsmnYUo/y3iq5oHmPHdTHaQ=;
+ b=ZLlypJ/CuFsSyNV3DN2Ha4SZkMHS0N96qwx4Z0cqHcCC80a08KrXccPQwaKNTCewK/
+ RE71Wz6C4rgZLQKM7/9kHctlMJvVXEGDf9dUKeNKSNWbHjUWvVaWUPMdFVGqE8vkP+uI
+ hgZ3N+OKKn4TXeaEKmJgQ4AXdQS3+WpwtfMNVwaPqtzomZNZzFm2bFlQKBDnvta+sXZr
+ Dfm7LE3j/ujA0UsLldLyz8i7+XdWCTuNtt2KBsHjm+4a62hTTI7hUiiQpciyGLA7VGmP
+ E31at6jtNLz8/Q4WAh2OZHkHFHoTIRCK9KohU0sVdPgeP2WRv+LTCZB4bytSO8azymqJ
+ f9Yw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=KlmfffW2XSbkYvsmOsNbcsmnYUo/y3iq5oHmPHdTHaQ=;
+ b=BavDQHaTVRQzO01dIaTBd5Lw9xTXKcqiF2IFXl0kiRC45Ix/B6jNOg+ezK9iCfgn0N
+ 64tXOww+HOZucY/tEbOqlC/2fOewFTiFo7xlkFslK0Dfr9k97zn/ahOxMfGhe5WUhgQi
+ YuQ5BkdCf+tDod6GC2MMJqaRkacRC/vTh/qheqhPqesA2u/Miz7BUk8Lkch0hUyu0vaK
+ cUnv3B5pjyDYAQS++ewosf4U0hMoz2JWAmC+0dkyr+wTrgj3D2oDIQT6yqxOo8sBWjo0
+ yDSXUbj4mlVLBbVUumDVDPi0ORQE0EebSpxGmUNJzGBDo54eKcSnlc2kOy9WWVJ6/8OZ
+ 7yAQ==
+X-Gm-Message-State: AOAM531YOXm9WUgQFvbF/Tf6SB2NGPauM8LqM2tLi++M4DnVQSnBtA0Q
+ Lz7FuFHDouw1gHxGXfDKWkuG9Q==
+X-Google-Smtp-Source: ABdhPJxpOB9vo7otdW0hRZv3RvFPnuX5BR632FsJOEUd2/IuCmF0m4pQLOBikVssca89fSeFvE3hIw==
+X-Received: by 2002:a5d:4c45:: with SMTP id n5mr26141358wrt.341.1591093924698; 
+ Tue, 02 Jun 2020 03:32:04 -0700 (PDT)
+Received: from dell ([95.147.198.92])
+ by smtp.gmail.com with ESMTPSA id r7sm2886185wmb.32.2020.06.02.03.32.03
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 02 Jun 2020 03:32:03 -0700 (PDT)
+Date: Tue, 2 Jun 2020 11:32:02 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Subject: Re: [PATCH v10] mfd: mt6360: add pmic mt6360 driver
+Message-ID: <20200602103202.GE3714@dell>
+References: <1591070142-7653-1-git-send-email-gene.chen.richtek@gmail.com>
+ <20200602082816.GC3714@dell>
+ <2231bffe-27d1-6aee-4699-77d2f754beef@gmail.com>
 MIME-Version: 1.0
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <2231bffe-27d1-6aee-4699-77d2f754beef@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_033139_308088_5C40E46B 
-X-CRM114-Status: GOOD (  25.98  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200602_033206_503688_98E96AD8 
+X-CRM114-Status: GOOD (  12.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [185.176.76.210 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,185 +99,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "kevin.tian@intel.com" <kevin.tian@intel.com>,
- "fenghua.yu@intel.com" <fenghua.yu@intel.com>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "felix.kuehling@amd.com" <felix.kuehling@amd.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "christian.koenig@amd.com" <christian.koenig@amd.com>,
- "hch@infradead.org" <hch@infradead.org>, "jgg@ziepe.ca" <jgg@ziepe.ca>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "zhangfei.gao@linaro.org" <zhangfei.gao@linaro.org>,
- "will@kernel.org" <will@kernel.org>, "linux-mm@kvack.org" <linux-mm@kvack.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: gene_chen@richtek.com, linux-kernel@vger.kernel.org, cy_huang@richtek.com,
+ linux-mediatek@lists.infradead.org, Gene Chen <gene.chen.richtek@gmail.com>,
+ Wilma.Wu@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ shufan_lee@richtek.com
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jean,
-
-> -----Original Message-----
-> From: linux-arm-kernel [mailto:linux-arm-kernel-bounces@lists.infradead.org]
-> On Behalf Of Jean-Philippe Brucker
-> Sent: 02 June 2020 10:39
-> To: Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>
-> Cc: devicetree@vger.kernel.org; kevin.tian@intel.com; will@kernel.org;
-> fenghua.yu@intel.com; jgg@ziepe.ca; linux-pci@vger.kernel.org;
-> felix.kuehling@amd.com; hch@infradead.org; linux-mm@kvack.org;
-> iommu@lists.linux-foundation.org; catalin.marinas@arm.com;
-> zhangfei.gao@linaro.org; robin.murphy@arm.com;
-> christian.koenig@amd.com; linux-arm-kernel@lists.infradead.org
-> Subject: Re: [PATCH v7 21/24] iommu/arm-smmu-v3: Add stall support for
-> platform devices
-> 
-> Hi Shameer,
-> 
-> On Mon, Jun 01, 2020 at 12:42:15PM +0000, Shameerali Kolothum Thodi
-> wrote:
-> > >  /* IRQ and event handlers */
-> > > +static int arm_smmu_handle_evt(struct arm_smmu_device *smmu, u64
-> > > +*evt) {
-> > > +	int ret;
-> > > +	u32 perm = 0;
-> > > +	struct arm_smmu_master *master;
-> > > +	bool ssid_valid = evt[0] & EVTQ_0_SSV;
-> > > +	u8 type = FIELD_GET(EVTQ_0_ID, evt[0]);
-> > > +	u32 sid = FIELD_GET(EVTQ_0_SID, evt[0]);
-> > > +	struct iommu_fault_event fault_evt = { };
-> > > +	struct iommu_fault *flt = &fault_evt.fault;
-> > > +
-> > > +	/* Stage-2 is always pinned at the moment */
-> > > +	if (evt[1] & EVTQ_1_S2)
-> > > +		return -EFAULT;
-> > > +
-> > > +	master = arm_smmu_find_master(smmu, sid);
-> > > +	if (!master)
-> > > +		return -EINVAL;
-> > > +
-> > > +	if (evt[1] & EVTQ_1_READ)
-> > > +		perm |= IOMMU_FAULT_PERM_READ;
-> > > +	else
-> > > +		perm |= IOMMU_FAULT_PERM_WRITE;
-> > > +
-> > > +	if (evt[1] & EVTQ_1_EXEC)
-> > > +		perm |= IOMMU_FAULT_PERM_EXEC;
-> > > +
-> > > +	if (evt[1] & EVTQ_1_PRIV)
-> > > +		perm |= IOMMU_FAULT_PERM_PRIV;
-> > > +
-> > > +	if (evt[1] & EVTQ_1_STALL) {
-> > > +		flt->type = IOMMU_FAULT_PAGE_REQ;
-> > > +		flt->prm = (struct iommu_fault_page_request) {
-> > > +			.flags = IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE,
-> > > +			.pasid = FIELD_GET(EVTQ_0_SSID, evt[0]),
-> > > +			.grpid = FIELD_GET(EVTQ_1_STAG, evt[1]),
-> > > +			.perm = perm,
-> > > +			.addr = FIELD_GET(EVTQ_2_ADDR, evt[2]),
-> > > +		};
-> > > +
-> >
-> > > +		if (ssid_valid)
-> > > +			flt->prm.flags |=
-> IOMMU_FAULT_PAGE_REQUEST_PASID_VALID;
-> >
-> > Do we need to set this for STALL mode only support? I had an issue
-> > with this being set on a vSVA POC based on our D06 zip device(which is
-> > a "fake " pci dev that supports STALL mode but no PRI). The issue is,
-> > CMDQ_OP_RESUME doesn't have any ssid or SSV params and works on sid
-> and stag only.
-> 
-> I don't understand the problem, arm_smmu_page_response() doesn't set SSID
-> or SSV when sending a CMDQ_OP_RESUME. Could you detail the flow of a stall
-> event and RESUME command in your prototype?  Are you getting issues with
-> the host driver or the guest driver?
-
-The issue is on the host side iommu_page_response(). The flow is something like
-below.
-
-Stall: Host:-
-
-arm_smmu_handle_evt()
-  iommu_report_device_fault()
-    vfio_pci_iommu_dev_fault_handler()
-      
-Stall: Qemu:-
-
-vfio_dma_fault_notifier_handler()
-  inject_faults()
-    smmuv3_inject_faults()
-
-Stall: Guest:-
-
-arm_smmu_handle_evt()
-  iommu_report_device_fault()
-    iommu_queue_iopf
-  ...
-  iopf_handle_group()
-    iopf_handle_single()
-      handle_mm_fault()
-        iopf_complete()
-           iommu_page_response()
-             arm_smmu_page_response()
-               arm_smmu_cmdq_issue_cmd(CMDQ_OP_RESUME)
-
-Resume: Qemu:-
-
-smmuv3_cmdq_consume(SMMU_CMD_RESUME)
-  smmuv3_notify_page_resp()
-    vfio:ioctl(page_response)  --> struct iommu_page_response is filled
-                             with only version, grpid and code.
-
-Resume: Host:-
-  ioctl(page_response)
-    iommu_page_response()  --> fails as the pending req has PASID_VALID flag
-                             set and it checks for a match.
-      arm_smmu_page_response()
-
-Hope the above is clear.
-
-> We do need to forward the SSV flag all the way to the guest driver, so the guest
-> can find the faulting address space using the SSID. Once the guest handled the
-> fault, then we don't send the SSID back to the host as part of the RESUME
-> command.
-
-True, the guest requires SSV flag to handle the page fault. But, as shown in the
-flow above, the issue is on the host side iommu_page_response() where it
-searches for a matching pending req based on pasid. Not sure we can bypass
-that and call arm_smmu_page_response() directly but then have to delete the
-pending req from the list as well.
-
-Please let me know if there is a better way to handle the host side page
-response.
-
-Thanks,
-Shameer
-
-> Thanks,
-> Jean
-> 
-> > Hence, it is difficult for
-> > Qemu SMMUv3 to populate this fields while preparing a page response. I
-> > can see that this flag is being checked in iopf_handle_single() (patch
-> > 04/24) as well. For POC, I used a temp fix[1] to work around this. Please let
-> me know your thoughts.
-> >
-> > Thanks,
-> > Shameer
-> >
-> > 1.
-> > https://github.com/hisilicon/kernel-dev/commit/99ff96146e924055f38d97a
-> > 5897e4becfa378d15
-> >
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCAwMiBKdW4gMjAyMCwgTWF0dGhpYXMgQnJ1Z2dlciB3cm90ZToKCj4gCj4gCj4gT24g
+MDIvMDYvMjAyMCAxMDoyOCwgTGVlIEpvbmVzIHdyb3RlOgo+ID4gT24gVHVlLCAwMiBKdW4gMjAy
+MCwgR2VuZSBDaGVuIHdyb3RlOgo+ID4gCj4gPj4gRnJvbTogR2VuZSBDaGVuIDxnZW5lX2NoZW5A
+cmljaHRlay5jb20+Cj4gPj4KPiA+PiBBZGQgTUZEIGRyaXZlciBmb3IgbXQ2MzYwIHBtaWMgY2hp
+cCBpbmNsdWRlIEJhdHRlcnkgQ2hhcmdlci8KPiA+PiBVU0JfUEQvRmxhc2gsIExFRC9SR0IgYW5k
+IExFRC9MRE8vQnVjawo+ID4+Cj4gPj4gU2lnbmVkLW9mZi1ieTogR2VuZSBDaGVuIDxnZW5lX2No
+ZW5AcmljaHRlay5jb20+Cj4gPj4gU2lnbmVkLW9mZi1ieTogTGVlIEpvbmVzIDxsZWUuam9uZXNA
+bGluYXJvLm9yZz4KPiA+IAo+ID4gSSBkaWQgbm90IHNpZ24gdGhpcyBvZmYuCj4gPiAKPiAKPiBZ
+b3UgYXJlIHJpZ2h0LCB5b3UgcHJvdmlkZWQgeW91ciBBY2tlZC1mb3ItTUZELWJ5IGFuZCB0b29r
+IGFuIGVhcmxpZXIgdmVyc2lvbiBvZgo+IHRoZSBwYXRjaCBbMV0uIEJ1dCBhcyB0aGlzIGRpZG4n
+dCBzaG93IHVwIGluIGxpbnV4LW5leHQgSSBzdXBwb3NlIHlvdSBkcm9wcGVkIGl0Cj4gYWZ0ZXJ3
+YXJkcyBiZWNhdXNlIG9mIGtidWlsZCB0ZXN0IGVycm9ycyAoZGVkdWNpbmcgZnJvbSB0aGUgY2hh
+bmdlcyBsb2cpLgoKSWYgdGhlIGJ1aWxkZXJzIGNhbiBzZWUgaXQsIC1uZXh0IGNhbiBwdWxsIGZy
+b20gaXQuCgpJdCB3YXMgbmV2ZXIgZHJvcHBlZC4KCj4gSSBzdXBwb3NlIGlmIHRoaXMgZXJyb3Jz
+IGFyZSBmaXhlZCBub3csIHdlIHNob3VsZCBiZSBmaW5lIDopCgpJbmRlZWQuICBObyBtb3JlIGJ1
+aWxkIGVycm9ycy4gOikKCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2Vz
+IFRlY2huaWNhbCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBB
+Uk0gU29DcwpGb2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
