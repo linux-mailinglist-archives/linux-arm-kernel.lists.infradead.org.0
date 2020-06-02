@@ -2,72 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 051A91EB74D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 10:25:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 081C01EB734
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 10:18:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jCVpqen6trbsGtKvilPOEOdV1FaaSoIghaqbSBOBhfE=; b=BbKyEU5fb/UwKs
-	wnK3h4mqRvQnI0A3uts9a6n+Y1CpZjDY2Q/jNnSYqy6aUjZjx4YjfmP+7EiEWbV6k4BkFLYwSNt/r
-	ISRCR9mO7S4ryilQLv5RTl+MwqQYYXBNulCUrUDSfJ3pO/zp5roRj5QI53ptzxOOxc1NyU/I34Q7e
-	1xBNuA2N2dDhQKPmZJEXK00oCuaadOkEmUc+0BpPNmqvDSgnPa0Dlh8XBpMJZnixsD0o7aEkJQETa
-	yEJyi3lQBvXf9ltB01aBmun5IrZgN8XINfg3Ge0Sw+5aJ0oVHqbEVxulYuwhlOioR4xxOB39ME2kw
-	zEN7E8v3cdBxUlwRkTmg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=0Lur9kiP8gKhhsS90K75va5KtmKCIzDT1zvF8+ZO3mQ=; b=javCYT3OdEAI/sMgED9Mwuf5UW
+	RlVheRmWsmHJjo2LJHolVdJ95JKng5wFHd1SNAuOlyM4VcPxIdtFsn74u5+rZDWijzSZF3eId0kjU
+	vP+sdVp2FnnrZO51AMGj80rnySXrCtkEoceLeDxvmWaRk/HFZInFHgSof0hn7MaFU3iPAH0k7CdHB
+	CsQff0dnnY5Cnj/1zE5s7Wvz+bvg1eHm03lHto4GgA+SIgJXqcr7h8YggRXrIoGWFmtzN+8OY/hsn
+	pJPMquGBIE3F2x5cnV+LORvsY0nzRzDqjHPjaE4iD7DLygEst02VQV4bw18cRn1VqzQVA4PhGrwLU
+	YPP7veqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg2F2-0005Es-0m; Tue, 02 Jun 2020 08:25:48 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jg28J-0006vF-Eo; Tue, 02 Jun 2020 08:18:51 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg2EY-0004ye-I3; Tue, 02 Jun 2020 08:25:20 +0000
-X-UUID: 1534da590d414aaeaf5a5b60ce0eac3e-20200602
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=L04bYCk8wivAACUMFnflEPSxZwU86UwuPofSNkaCMCU=; 
- b=jbX9s15LImbS1lMlL4qHc72C4/E7MkqS/qkQri6OS47xtgGtW6E7PrMgmuxo/TvBiI1wfLaXbxVs3fvoNnrdWM+hOCLRKPWQwiTahehaPEqmaPt7aRojDe6CytW4yT0PwniCGciFiCu0K8/X+sninvj15NtsUF5w2jNCXSq+Lg8=;
-X-UUID: 1534da590d414aaeaf5a5b60ce0eac3e-20200602
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <neal.liu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1968415831; Tue, 02 Jun 2020 00:25:16 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 2 Jun 2020 01:15:12 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 2 Jun 2020 16:14:59 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Tue, 2 Jun 2020 16:14:58 +0800
-From: Neal Liu <neal.liu@mediatek.com>
-To: Matt Mackall <mpm@selenic.com>, Herbert Xu <herbert@gondor.apana.org.au>, 
- Rob Herring <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Sean Wang <sean.wang@kernel.org>, Arnd Bergmann <arnd@arndb.de>, "Greg
- Kroah-Hartman" <gregkh@linuxfoundation.org>
-Subject: [PATCH v6 2/2] hwrng: add sec-rng driver
-Date: Tue, 2 Jun 2020 16:14:38 +0800
-Message-ID: <1591085678-22764-3-git-send-email-neal.liu@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
-References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
+ id 1jg28C-0006tr-Sa
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 08:18:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1591085925; x=1622621925;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=3qntvJu5hZf6NiiWOF/rC2X4oeQHa+Lu7499eTjv9dQ=;
+ b=e4WBxeXrR+XfOqEwDDrYFq3rEmVb5AP1oZGYcpSR+EsfdlEvaaapkdYS
+ owaf1AWP+ANYp1h5dVrctxNo+0rhX8GVLicJcJ9mvb/w6TTM0ZWjjfEpe
+ /jfjcwJiUEzqp654xVh0w8/1fYx61PXBR23RKWkS8cNwcLrbPTfZkdfwG
+ XaVHB+zYhoZVTdwst6WEmXZmenNORcxXEs8oyUGYeJQhGt9Dv9ZpokJNB
+ rkTnCms4i9Lu/fAV+hyS/8S1f66CryG8OIhBH5xcxIyY5soejWo5wX2wG
+ EoxfjWSMtg7stjkbC+U/g7bNdZ5VPBWssz268dv/3VWzszu73w9nPWpat Q==;
+IronPort-SDR: s5o+IBS6/JNEQ7wKvOXOhREeKVcIIXGYbDHcjkfYBX+4Md5mh2V0jTi/yJ4zR4C2bigz2aXE7v
+ bQ/zdJb9USgfM3zycHBzgTSHso5olRyqpbKltfn1KjWvu0ioDCQYa4Lha3ZrX/8zJf8Yof60Jg
+ v2TJrOvldDzsRi1wLnDaELNo/BL8Qu+Rps1l8Z7SkV1R/rlQj+sgCIysZn7EPkcS1XZGEKusKC
+ RX7TMKlCMA19r11DALUQaakzlb5IbjVNp4DJGLmeaVuTO//xrQJNxiICDqOnH6g12EmMaWycAj
+ jyE=
+X-IronPort-AV: E=Sophos;i="5.73,463,1583218800"; d="scan'208";a="77876474"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 02 Jun 2020 01:18:33 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Tue, 2 Jun 2020 01:18:32 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Tue, 2 Jun 2020 01:18:30 -0700
+References: <20200513140031.25633-1-lars.povlsen@microchip.com>
+ <20200529162130.hsjcde27xhohl6jl@mobilestation>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+Subject: Re: [PATCH 00/10] spi: Adding support for Microchip Sparx5 SoC
+In-Reply-To: <20200529162130.hsjcde27xhohl6jl@mobilestation>
+Date: Tue, 2 Jun 2020 10:18:28 +0200
+Message-ID: <87img9q3sb.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 909ABA3B6E64AD00041CC4B3A9BF7D20E656DA2E14FD0DBC349B80906CF174CA2000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_012518_602880_D9150D9A 
-X-CRM114-Status: GOOD (  16.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200602_011844_936404_98CA3E4D 
+X-CRM114-Status: GOOD (  17.01  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -75,8 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,225 +93,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, wsd_upstream@mediatek.com,
- lkml <linux-kernel@vger.kernel.org>, Crystal Guo <Crystal.Guo@mediatek.com>,
- linux-mediatek@lists.infradead.org, linux-crypto@vger.kernel.org,
- Neal Liu <neal.liu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Serge Semin <fancer.lancer@gmail.com>, linux-spi@vger.kernel.org,
+ SoC Team <soc@kernel.org>, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Microchip Linux
+ Driver Support <UNGLinuxDriver@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For security awareness SoCs on ARMv8 with TrustZone enabled,
-peripherals like entropy sources is not accessible from normal world
-(linux) and rather accessible from secure world (HYP/ATF/TEE) only.
-This driver aims to provide a generic interface to Arm Trusted
-Firmware or Hypervisor rng service.
 
-Signed-off-by: Neal Liu <neal.liu@mediatek.com>
----
- drivers/char/hw_random/Kconfig   |   13 ++++
- drivers/char/hw_random/Makefile  |    1 +
- drivers/char/hw_random/sec-rng.c |  155 ++++++++++++++++++++++++++++++++++++++
- 3 files changed, 169 insertions(+)
- create mode 100644 drivers/char/hw_random/sec-rng.c
+Serge Semin writes:
 
-diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
-index 9bc46da..cb9c8a9 100644
---- a/drivers/char/hw_random/Kconfig
-+++ b/drivers/char/hw_random/Kconfig
-@@ -474,6 +474,19 @@ config HW_RANDOM_KEYSTONE
- 	help
- 	  This option enables Keystone's hardware random generator.
- 
-+config HW_RANDOM_SECURE
-+	tristate "Arm Security Random Number Generator support"
-+	depends on HAVE_ARM_SMCCC || COMPILE_TEST
-+	default HW_RANDOM
-+	help
-+	  This driver provides kernel-side support for the Arm Security
-+	  Random Number Generator.
-+
-+	  To compile this driver as a module, choose M here. the
-+	  module will be called sec-rng.
-+
-+	  If unsure, say Y.
-+
- endif # HW_RANDOM
- 
- config UML_RANDOM
-diff --git a/drivers/char/hw_random/Makefile b/drivers/char/hw_random/Makefile
-index a7801b4..04533d1 100644
---- a/drivers/char/hw_random/Makefile
-+++ b/drivers/char/hw_random/Makefile
-@@ -41,3 +41,4 @@ obj-$(CONFIG_HW_RANDOM_S390) += s390-trng.o
- obj-$(CONFIG_HW_RANDOM_KEYSTONE) += ks-sa-rng.o
- obj-$(CONFIG_HW_RANDOM_OPTEE) += optee-rng.o
- obj-$(CONFIG_HW_RANDOM_NPCM) += npcm-rng.o
-+obj-$(CONFIG_HW_RANDOM_SECURE) += sec-rng.o
-diff --git a/drivers/char/hw_random/sec-rng.c b/drivers/char/hw_random/sec-rng.c
-new file mode 100644
-index 0000000..c6d3872
---- /dev/null
-+++ b/drivers/char/hw_random/sec-rng.c
-@@ -0,0 +1,155 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2020 MediaTek Inc.
-+ */
-+
-+#include <linux/arm-smccc.h>
-+#include <linux/hw_random.h>
-+#include <linux/module.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+
-+#define SMC_RET_NUM	4
-+#define SEC_RND_SIZE	(sizeof(u32) * SMC_RET_NUM)
-+
-+#define HWRNG_SMC_FAST_CALL_VAL(func_num) \
-+	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL, ARM_SMCCC_SMC_32, \
-+			   ARM_SMCCC_OWNER_SIP, (func_num))
-+
-+#define to_sec_rng(p)	container_of(p, struct sec_rng_priv, rng)
-+
-+typedef void (sec_rng_fn)(unsigned long, unsigned long, unsigned long,
-+			  unsigned long, unsigned long, unsigned long,
-+			  unsigned long, unsigned long,
-+			  struct arm_smccc_res *);
-+
-+struct sec_rng_priv {
-+	u16 func_num;
-+	sec_rng_fn *rng_fn;
-+	struct hwrng rng;
-+};
-+
-+/* Simple wrapper functions to be able to use a function pointer */
-+static void sec_rng_smc(unsigned long a0, unsigned long a1,
-+			unsigned long a2, unsigned long a3,
-+			unsigned long a4, unsigned long a5,
-+			unsigned long a6, unsigned long a7,
-+			struct arm_smccc_res *res)
-+{
-+	arm_smccc_smc(a0, a1, a2, a3, a4, a5, a6, a7, res);
-+}
-+
-+static void sec_rng_hvc(unsigned long a0, unsigned long a1,
-+			unsigned long a2, unsigned long a3,
-+			unsigned long a4, unsigned long a5,
-+			unsigned long a6, unsigned long a7,
-+			struct arm_smccc_res *res)
-+{
-+	arm_smccc_hvc(a0, a1, a2, a3, a4, a5, a6, a7, res);
-+}
-+
-+static bool __sec_get_rnd(struct sec_rng_priv *priv, uint32_t *val)
-+{
-+	struct arm_smccc_res res;
-+
-+	priv->rng_fn(HWRNG_SMC_FAST_CALL_VAL(priv->func_num),
-+			0, 0, 0, 0, 0, 0, 0, &res);
-+
-+	if (!res.a0 && !res.a1 && !res.a2 && !res.a3)
-+		return false;
-+
-+	val[0] = res.a0;
-+	val[1] = res.a1;
-+	val[2] = res.a2;
-+	val[3] = res.a3;
-+
-+	return true;
-+}
-+
-+static int sec_rng_read(struct hwrng *rng, void *buf, size_t max, bool wait)
-+{
-+	struct sec_rng_priv *priv = to_sec_rng(rng);
-+	u32 val[4] = {0};
-+	int retval = 0;
-+	int i;
-+
-+	while (max >= SEC_RND_SIZE) {
-+		if (!__sec_get_rnd(priv, val))
-+			return retval;
-+
-+		for (i = 0; i < SMC_RET_NUM; i++) {
-+			*(u32 *)buf = val[i];
-+			buf += sizeof(u32);
-+		}
-+
-+		retval += SEC_RND_SIZE;
-+		max -= SEC_RND_SIZE;
-+	}
-+
-+	return retval;
-+}
-+
-+static int sec_rng_probe(struct platform_device *pdev)
-+{
-+	struct sec_rng_priv *priv;
-+	const char *method;
-+	int ret;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	if (of_property_read_string(pdev->dev.of_node, "method", &method))
-+		return -ENXIO;
-+
-+	if (!strncmp("smc", method, strlen("smc")))
-+		priv->rng_fn = sec_rng_smc;
-+	else if (!strncmp("hvc", method, strlen("hvc")))
-+		priv->rng_fn = sec_rng_hvc;
-+
-+	if (IS_ERR(priv->rng_fn)) {
-+		dev_err(&pdev->dev, "method %s is not supported\n", method);
-+		return -EINVAL;
-+	}
-+
-+	if (of_property_read_u16(pdev->dev.of_node, "method-fid",
-+				 &priv->func_num))
-+		return -ENXIO;
-+
-+	if (of_property_read_u16(pdev->dev.of_node, "quality",
-+				 &priv->rng.quality))
-+		return -ENXIO;
-+
-+	priv->rng.name = pdev->name;
-+	priv->rng.read = sec_rng_read;
-+	priv->rng.priv = (unsigned long)&pdev->dev;
-+
-+	ret = devm_hwrng_register(&pdev->dev, &priv->rng);
-+	if (ret) {
-+		dev_err(&pdev->dev, "failed to register rng device: %d\n", ret);
-+		return ret;
-+	}
-+
-+	return 0;
-+}
-+
-+static const struct of_device_id sec_rng_match[] = {
-+	{ .compatible = "arm,sec-rng", },
-+	{}
-+};
-+MODULE_DEVICE_TABLE(of, sec_rng_match);
-+
-+static struct platform_driver sec_rng_driver = {
-+	.probe = sec_rng_probe,
-+	.driver = {
-+		.name = KBUILD_MODNAME,
-+		.owner = THIS_MODULE,
-+		.of_match_table = sec_rng_match,
-+	},
-+};
-+
-+module_platform_driver(sec_rng_driver);
-+
-+MODULE_DESCRIPTION("Security Random Number Generator Driver");
-+MODULE_AUTHOR("Neal Liu <neal.liu@mediatek.com>");
-+MODULE_LICENSE("GPL");
--- 
-1.7.9.5
+> Hello Lars,
+>
+> On Wed, May 13, 2020 at 04:00:21PM +0200, Lars Povlsen wrote:
+>> This is an add-on series to the main SoC Sparx5 series
+>> (Message-ID: <20200513125532.24585-1-lars.povlsen@microchip.com>).
+>>
+>> The series add support for Sparx5 on top of the existing
+>> ocelot/jaguar2 spi driver.
+>>
+>> It spins off the existing support for the MSCC platforms into a
+>> separate driver, as adding new platforms from the MSCC/Microchip
+>> product lines will further complicate (clutter) the original driver.
+>>
+>> New YAML dt-bindings are provided for the resulting driver.
+>>
+>> It is expected that the DT patches are to be taken directly by the arm-soc
+>> maintainers.
+>
+> Regarding our cooperation. It can be implemented as follows. Since your patchset
+> is less cumbersome than mine and is more ready to be integrated into the generic DW
+> APB SSI code, it would be better to first make it through Mark', Andy' and my reviews
+> to be further merged into the kernel version of the driver. After that I'll have
+> my code altered so it could be applied on top of your patches. When everything
+> is done we'll have a more comprehensive DW APB SSI driver with poll-based
+> PIO operations support, new features like rx-delay, etc.
+>
+
+Hi Serge!
+
+I think I would be able to work on the SPI patches this week. Should I
+base it on the current spi-next or 5.7? Then address the comments and
+send out a new revision?
+
+Thanks for reaching out.
+
+---Lars
+
+> Thank you one more time for the series you've shared with us. Let's see what can
+> be done to improve it...
+>
+> -Sergey
+>
+>>
+>> Lars Povlsen (10):
+>>   spi: dw: Add support for polled operation via no IRQ specified in DT
+>>   spi: dw: Add support for RX sample delay register
+>>   spi: dw: Add support for client driver memory operations
+>>   dt-bindings: spi: Add bindings for spi-dw-mchp
+>>   spi: spi-dw-mmio: Spin off MSCC platforms into spi-dw-mchp
+>>   dt-bindings: spi: spi-dw-mchp: Add Sparx5 support
+>>   spi: spi-dw-mchp: Add Sparx5 support
+>>   arm64: dts: sparx5: Add SPI controller
+>>   arm64: dts: sparx5: Add spi-nor support
+>>   arm64: dts: sparx5: Add spi-nand devices
+>>
+>>  .../bindings/spi/mscc,ocelot-spi.yaml         |  89 ++++
+>>  .../bindings/spi/snps,dw-apb-ssi.txt          |   7 +-
+>>  MAINTAINERS                                   |   2 +
+>>  arch/arm64/boot/dts/microchip/sparx5.dtsi     |  37 ++
+>>  .../boot/dts/microchip/sparx5_pcb125.dts      |  16 +
+>>  .../boot/dts/microchip/sparx5_pcb134.dts      |  22 +
+>>  .../dts/microchip/sparx5_pcb134_board.dtsi    |   9 +
+>>  .../boot/dts/microchip/sparx5_pcb135.dts      |  23 +
+>>  .../dts/microchip/sparx5_pcb135_board.dtsi    |   9 +
+>>  arch/mips/configs/generic/board-ocelot.config |   2 +-
+>>  drivers/spi/Kconfig                           |   7 +
+>>  drivers/spi/Makefile                          |   1 +
+>>  drivers/spi/spi-dw-mchp.c                     | 399 ++++++++++++++++++
+>>  drivers/spi/spi-dw-mmio.c                     |  93 ----
+>>  drivers/spi/spi-dw.c                          |  31 +-
+>>  drivers/spi/spi-dw.h                          |   4 +
+>>  16 files changed, 644 insertions(+), 107 deletions(-)
+>>  create mode 100644 Documentation/devicetree/bindings/spi/mscc,ocelot-spi.yaml
+>>  create mode 100644 drivers/spi/spi-dw-mchp.c
+>>
+>> --
+>> 2.26.2
+>>
+>> _______________________________________________
+>> linux-arm-kernel mailing list
+>> linux-arm-kernel@lists.infradead.org
+>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--
+Lars Povlsen,
+Microchip
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
