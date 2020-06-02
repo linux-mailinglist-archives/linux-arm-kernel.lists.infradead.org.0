@@ -2,95 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 781A51EBED3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 17:14:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43EBC1EBEEC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  2 Jun 2020 17:19:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=11kCA6jbNZu77pxjuWPucYe/G+Y8V2ConcSxiQIkpU0=; b=Ji3lieb+xjmRRsCIGBVYHDpb+
-	4L6xlP6dWbVh+bJtMK3mo/AI/ug4RF9YOzaGnLIsAgoyg7U38HEq62OGYLPa10q2FnJRwGquzSrZ0
-	fdbJccYlFWJ2OyugMejVeKijzhHoMQwf5o5Thi3GwuF8Tx05RS2mrWFmfy+O/ivGYOrfsEcYYiCXq
-	brNsP1SdnkuSTy5dzb9WZON7/SiZ4opQ/0lZRGEqVW6az1olJU3dQwx5mN7pZeuPzYtegPrVKXmYo
-	gQwcVkCpWZdkq1rwtCH7HNB4+pJq6N+Dsix8hG+WhVaRdfcXW+EyROtZzofgZA08GSfmfUY0radI1
-	r0FceXIWA==;
+	 bh=MyJfZaP8JDiw4mXGldY5TYpMdRtJ3YQeMtzPHvH25tY=; b=WgYaY73I/MLCalIpNWCPGTxOc
+	kCrOuTyZrP/VueuxHRt8TzTY5xN9Rgsn3EzePSaUYS5KVLt2AK7X/r+rn54CnNefF6/QCZieDNEeC
+	da3kRirOUghXNrqb1jbbtyZDZHvMRHTF8cKjcfezrL6/A/Y8KS/MmSI4RN3eyw4F0iL2N2UJ4NQf0
+	p+Ab74rHvV4ucRK/FAos+RYr6c4Xwh+AI+gluAt+09ZE7c3KSFvN96Flro4dNwQ0SUNGY06kHGM/b
+	kC9SSPmblKwWGKuLccuWg6bMejCHyGRnartQh/EHXI7QdK4KHE0Fs0OFej3aYab8Tw/j2jmhZoAa6
+	X2P9WKu1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jg8cO-0007Y9-Pp; Tue, 02 Jun 2020 15:14:20 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1jg8h3-0002ZC-ML; Tue, 02 Jun 2020 15:19:09 +0000
+Received: from vern.gendns.com ([98.142.107.122])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jg8cG-0007WF-7F
- for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 15:14:13 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 052F8RBn067493;
- Tue, 2 Jun 2020 15:14:04 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=twSSHzQ0o2SniDDDgsjFjigkpdNI1jvAkB6VRynIq5I=;
- b=w/Q2lTJ6WsVlDYvJ/OSXpdnD2sCZKiktiaiz6dAlQkhXZgGlmjJsrSCes/+cOEaI3tEh
- 6mSgi8hGez4c7nSph7jbzt3ZC6cvZU1m0+3Px3Wro5Qr94TJzQsi5XBuuJMaA2ZMLZM4
- od5O4JFYpHURxF6bTpejNZkwt1G/dX48CtzJvRJvGoHNMFgmCjpHmiUub6aCRU5khOaN
- 0qKdEqRBxmTvqAaaLQ8o7A+YvXuKgzshoTUvMsOqbHIStrer9yY9EGK9gvZuNg4ATwZa
- WFoZAcm6OHRpaGatTspTy2Nxjx2nM4NvUQRPU2z8A+/JSiug89wMhkJHNvDuwg6+J9Oc eg== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by aserp2120.oracle.com with ESMTP id 31bfem4j1w-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 02 Jun 2020 15:14:04 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 052FE1Ao009391;
- Tue, 2 Jun 2020 15:14:04 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3020.oracle.com with ESMTP id 31dju1n35e-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 02 Jun 2020 15:14:03 +0000
-Received: from abhmp0016.oracle.com (abhmp0016.oracle.com [141.146.116.22])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 052FDgOZ016066;
- Tue, 2 Jun 2020 15:13:44 GMT
-Received: from [10.74.110.208] (/10.74.110.208)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 02 Jun 2020 08:13:41 -0700
-Subject: Re: [GIT PULL] ARM: Keystone DTS updates for 5.7
-To: arm@kernel.org, linux-arm-kernel@lists.infradead.org, arnd@arndb.de,
- olof@lixom.net
-References: <1583603819-9651-1-git-send-email-santosh.shilimkar@oracle.com>
-From: santosh.shilimkar@oracle.com
-Organization: Oracle Corporation
-Message-ID: <8750635a-37de-f4d0-08b1-16e904be2de7@oracle.com>
-Date: Tue, 2 Jun 2020 08:13:40 -0700
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:68.0)
- Gecko/20100101 Thunderbird/68.8.1
+ id 1jg8gq-0002IZ-4v
+ for linux-arm-kernel@lists.infradead.org; Tue, 02 Jun 2020 15:18:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=lechnology.com; s=default; h=Content-Transfer-Encoding:Content-Type:
+ In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=fY5IJpcG4taKk/Z1c0/fQ/EvxTolmAQsbeDYBoiR5u0=; b=NtLZtOksQBZaiN/MHofooBohHZ
+ yLz+q25OmAY1J1RyUf0/feKCObejImLWtjna8ZQ0uxzyiM0BFAN0yDX/su6TOIdUcGIecBhnEROeu
+ rKnMT7PBoOjCgJ5vb0Q1/WYMJJsUi2fad3XkcM2aAX+rmw/oQuHeYgFayIW4DHtjZWCjL0C0JdloA
+ EJmFEPCJYbcI0E3MvqUidpxpBsP5vMLJIC0bAfadEuogsfdlzjtG4dLbE1H49nR1ApyieO4qyGQR9
+ awbtgQdycWeGLXshgfJT6uoHQIWbLdvRkNat/h/qg5GQs2Rac1w5nmqgjHRft6HUE3aaBO749uASj
+ s3W/P9fQ==;
+Received: from 108-198-5-147.lightspeed.okcbok.sbcglobal.net
+ ([108.198.5.147]:42134 helo=[192.168.0.134])
+ by vern.gendns.com with esmtpsa (TLS1.2) tls
+ TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (Exim 4.93)
+ (envelope-from <david@lechnology.com>)
+ id 1jg8g5-00049A-Lh; Tue, 02 Jun 2020 11:18:09 -0400
+Subject: Re: [PATCH v2 0/4] Introduce the Counter character device interface
+To: William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Jonathan Cameron <jic23@kernel.org>
+References: <cover.1589654470.git.vilhelm.gray@gmail.com>
+ <20200524172542.31ff6ac7@archlinux> <20200524175439.GA14300@shinobu>
+ <20200531161813.658ffdfb@archlinux> <20200531171351.GA10597@shinobu>
+From: David Lechner <david@lechnology.com>
+Message-ID: <ac473c9a-f9cd-21ae-8f8f-d5181df2c134@lechnology.com>
+Date: Tue, 2 Jun 2020 10:18:07 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1583603819-9651-1-git-send-email-santosh.shilimkar@oracle.com>
+In-Reply-To: <20200531171351.GA10597@shinobu>
 Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9640
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0
- mlxlogscore=999
- phishscore=0 malwarescore=0 mlxscore=0 adultscore=0 bulkscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2004280000 definitions=main-2006020110
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9640
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
- suspectscore=0
- mlxlogscore=999 priorityscore=1501 bulkscore=0 phishscore=0 clxscore=1015
- impostorscore=0 adultscore=0 spamscore=0 mlxscore=0 lowpriorityscore=0
- cotscore=-2147483648 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2004280000 definitions=main-2006020109
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - vern.gendns.com
+X-AntiAbuse: Original Domain - lists.infradead.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - lechnology.com
+X-Get-Message-Sender-Via: vern.gendns.com: authenticated_id:
+ davidmain+lechnology.com/only user confirmed/virtual account not confirmed
+X-Authenticated-Sender: vern.gendns.com: davidmain@lechnology.com
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_081412_354900_3E3638D7 
-X-CRM114-Status: GOOD (  20.27  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200602_081856_314545_BFA55D81 
+X-CRM114-Status: UNSURE (   5.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,9 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [141.146.126.78 listed in wl.mailspike.net]
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,46 +96,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, khilman@kernel.org
+Cc: kamel.bouhara@bootlin.com, gwendal@chromium.org, alexandre.torgue@st.com,
+ linux-iio@vger.kernel.org, patrick.havelange@essensium.com,
+ alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com, syednwaris@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd, Olof,
+On 5/31/20 12:14 PM, William Breathitt Gray wrote:
+> Yielding the following /dev/counter0 memory layout:
+> 
+> +------------+-----------------+------------+-------------------+
+> | Byte 0     | Byte 1 - Byte 8 | Byte 9     | Byte 10 - Byte 17 |
+> +------------+-----------------+------------+-------------------+
+> | Boundary 0 | Count 0         | Boundary 1 | Count 1           |
+> +------------+-----------------+------------+-------------------+
 
-On 3/7/20 9:56 AM, Santosh Shilimkar wrote:
-> The following changes since commit bb6d3fb354c5ee8d6bde2d576eb7220ea09862b9:
-> 
->    Linux 5.6-rc1 (2020-02-09 16:08:48 -0800)
-> 
-> are available in the git repository at:
-> 
->    git://git.kernel.org/pub/scm/linux/kernel/git/ssantosh/linux-keystone.git tags/keystone_dts_for_5.7
-> 
-> for you to fetch changes up to 7856488bd83b0182548a84d05c07326321ae6138:
-> 
->    ARM: dts: keystone-k2g-evm: add HDMI video support (2020-03-07 09:47:24 -0800)
-> 
-> ----------------------------------------------------------------
-> ARM: Keystone DTS updates for 5.7
-> 
-> Add display support for K2G EVM Board
-> 
-> ----------------------------------------------------------------
-> Jyri Sarha (2):
->        ARM: dts: keystone-k2g: Add DSS node
->        ARM: dts: keystone-k2g-evm: add HDMI video support
-> 
->   arch/arm/boot/dts/keystone-k2g-evm.dts | 101 +++++++++++++++++++++++++++++++++
->   arch/arm/boot/dts/keystone-k2g.dtsi    |  22 +++++++
->   2 files changed, 123 insertions(+)
-> 
-Looks like this pull request wasn't picked. Can you please check
-in case am missing something.
-
-Regards,
-Santosh
+A potential pitfall with this sort of packing is that some platforms
+do not support unaligned access, so data would have to be "unpacked"
+before it could be used.
 
 _______________________________________________
 linux-arm-kernel mailing list
