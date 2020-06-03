@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B03F1ED6D5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 21:24:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DC651ED6D3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 21:24:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,47 +11,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=CmoUwlmG0IojcUZnL8HkTzRLXF3585LEWXX/Xwivq7I=; b=fsVBF2t2NO++V6rE2fsg6+vg3k
-	wuv5JcZK/nV+lmN+ZsrP8k9cmcBFAbN5IyWHOtmqunuZYGTmHvcW3liJ1ksTKLRJPEKar1zzVIGf4
-	YCShWbMunbHiKYhq/+Qb3UvwYJqWvOimoEa9raG+ekG4/h9FkhmylkvsTgMLUEGXv/yfb7DkL7+Yf
-	G6s4p94iPcNXl7ya5Le5waiIJs2sX4aMKmmSpxVKatmf830s8L6kWcTHViAXFdzAki2OgvHXSnG3M
-	CeJFJaIHlYDeltTpMWO7RVVZNQALSOWEAZGJkWX3Dc3ke7jEvtKW9yqNS8F/b2dbzcLMSfM5sjhPN
-	5UzTxmig==;
+	bh=H6DiAABrqZSM4uWcAFUw60Z7r/KOf9798eXQ/DARfYU=; b=OxG0WQ75HF2RBi2WHhU8N67FgE
+	Mv6PcJHekPfM/Y3+qkFlKh2OagW47yPRNQlBYPj7DkZuMA6ShaiYMwnpHz+HRCW0RwrjYK8Q2IjUh
+	4iVqvRr8uCDUlWwfxFXORx4cvSeGWXYS1m0QqR1x2r3B7p2n3OYWyfLRu65s0z/4q4xAmEsrvJOb7
+	l3YIMZElPAtJXB7VbWcoTluHUgXemHkyRcGUPpuyiPQodD+IpKDoV+jdjBJQysloKtQn10tz1v7U2
+	gMc5cNnqQ6ajWd4WX/cFQRA6E4MwdgZFVmHZGb5Qv+mTSxZ3gI0vSuQnwQdcOkGYjIiZ12ZfahTYW
+	ZmjySwiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgYzl-0001Qc-Oi; Wed, 03 Jun 2020 19:24:13 +0000
+	id 1jgYzU-0001AZ-VF; Wed, 03 Jun 2020 19:23:56 +0000
 Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgYxU-0007s7-4a; Wed, 03 Jun 2020 19:21:54 +0000
+ id 1jgYxV-0007to-8l; Wed, 03 Jun 2020 19:21:55 +0000
 Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
  [10.75.242.48])
- by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id ECA6D30DD60;
- Wed,  3 Jun 2020 12:21:49 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com ECA6D30DD60
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 8AEC230DD9E;
+ Wed,  3 Jun 2020 12:21:51 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 8AEC230DD9E
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
- s=dkimrelay; t=1591212110;
- bh=DqJ1lrPkpo+wwETwincyBoAPTwPAXLpwicYuxaLaS7c=;
+ s=dkimrelay; t=1591212111;
+ bh=TD+pvEeaAmIZ4gEFvHmv/B24eOz6zs85BaHEGnwgiAs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=o64No50gS5ge4V7FNS6cG0Z3crrQ4sh8hEaDral5iFRPRDkykjuOy5rpAHpirg5uS
- IGK2sA2XUb677MnDSjEtKosOOAeFm+ci7g+sFhXIvc57RbdhI/bq9lJz2vxjkW+3+f
- 3CRArNJMfw+VWhbJORJZujvOL8H9OzcA+7S1uw3c=
+ b=RQV5tdrvcUBpnyjuoGF+lntfzqZTtbU2l2Hq2uEmF/D9XGnGEd7lBX+FSQmVpSVBH
+ SGCZEE8SpCy3Nj83zQ67yJrdKMRzKzSwjOO7YUi6bZgxf0S+1R6/GUaHYR4MPQ2Hh8
+ zQ3PqJOFpvnpY1EibZlC+fcLYXLfES5Yt9hR1SBM=
 Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
  [10.28.16.211])
- by mail-irv-17.broadcom.com (Postfix) with ESMTP id 5632A140069;
- Wed,  3 Jun 2020 12:21:48 -0700 (PDT)
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 006C614008B;
+ Wed,  3 Jun 2020 12:21:49 -0700 (PDT)
 From: Jim Quinlan <james.quinlan@broadcom.com>
 To: linux-pci@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com
-Subject: [PATCH v3 12/13] PCI: brcmstb: Set bus max burst size by chip type
-Date: Wed,  3 Jun 2020 15:20:44 -0400
-Message-Id: <20200603192058.35296-13-james.quinlan@broadcom.com>
+Subject: [PATCH v3 13/13] PCI: brcmstb: Add bcm7211, bcm7216, bcm7445,
+ bcm7278 to match list
+Date: Wed,  3 Jun 2020 15:20:45 -0400
+Message-Id: <20200603192058.35296-14-james.quinlan@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200603192058.35296-1-james.quinlan@broadcom.com>
 References: <20200603192058.35296-1-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_122152_416730_E90B17D9 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20200603_122153_502502_B9EB4AAB 
+X-CRM114-Status: UNSURE (   6.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -85,8 +87,7 @@ Cc: Rob Herring <robh@kernel.org>,
  open list <linux-kernel@vger.kernel.org>,
  Florian Fainelli <f.fainelli@gmail.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>,
- Jim Quinlan <james.quinlan@broadcom.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
@@ -95,70 +96,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jim Quinlan <jquinlan@broadcom.com>
+Now that the support is in place with previous commits, we add several
+chips that use the BrcmSTB driver.
 
-The proper value of the parameter SCB_MAX_BURST_SIZE varies per chip.  The
-2711 family requires 128B whereas other devices can employ 512.  The
-assignment is complicated by the fact that the values for this two-bit
-field have different meanings;
-
-  Value   Type_Generic    Type_7278
-
-     00       Reserved         128B
-     01           128B         256B
-     10           256B         512B
-     11           512B     Reserved
-
-Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
 ---
- drivers/pci/controller/pcie-brcmstb.c | 18 +++++++++++++++---
- 1 file changed, 15 insertions(+), 3 deletions(-)
+ drivers/pci/controller/pcie-brcmstb.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-index 9930419e3ac2..131cf0a51398 100644
+index 131cf0a51398..22dbecb5403c 100644
 --- a/drivers/pci/controller/pcie-brcmstb.c
 +++ b/drivers/pci/controller/pcie-brcmstb.c
-@@ -53,7 +53,7 @@
- #define  PCIE_MISC_MISC_CTRL_SCB_ACCESS_EN_MASK		0x1000
- #define  PCIE_MISC_MISC_CTRL_CFG_READ_UR_MODE_MASK	0x2000
- #define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_MASK	0x300000
--#define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_128		0x0
-+
- #define  PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK		0xf8000000
- #define  PCIE_MISC_MISC_CTRL_SCB1_SIZE_MASK		0x07c00000
- #define  PCIE_MISC_MISC_CTRL_SCB2_SIZE_MASK		0x0000001f
-@@ -848,7 +848,7 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
- 	int num_out_wins = 0;
- 	u16 nlw, cls, lnksta;
- 	int i, ret, memc;
--	u32 tmp, aspm_support;
-+	u32 tmp, burst, aspm_support;
+@@ -1189,6 +1189,10 @@ static int brcm_pcie_remove(struct platform_device *pdev)
  
- 	/* Reset the bridge */
- 	brcm_pcie_bridge_sw_init_set(pcie, 1);
-@@ -864,10 +864,22 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
- 	/* Wait for SerDes to be stable */
- 	usleep_range(100, 200);
- 
-+	/*
-+	 * SCB_MAX_BURST_SIZE is a two bit field.  For GENERIC chips it
-+	 * is encoded as 0=128, 1=256, 2=512, 3=Rsvd, for BCM7278 it
-+	 * is encoded as 0=Rsvd, 1=128, 2=256, 3=512.
-+	 */
-+	if (pcie->type == BCM2711)
-+		burst = 0x0; /* 128B */
-+	else if (pcie->type == BCM7278)
-+		burst = 0x3; /* 512 bytes */
-+	else
-+		burst = 0x2; /* 512 bytes */
-+
- 	/* Set SCB_MAX_BURST_SIZE, CFG_READ_UR_MODE, SCB_ACCESS_EN */
- 	u32p_replace_bits(&tmp, 1, PCIE_MISC_MISC_CTRL_SCB_ACCESS_EN_MASK);
- 	u32p_replace_bits(&tmp, 1, PCIE_MISC_MISC_CTRL_CFG_READ_UR_MODE_MASK);
--	u32p_replace_bits(&tmp, PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_128,
-+	u32p_replace_bits(&tmp, burst,
- 			  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_MASK);
- 	writel(tmp, base + PCIE_MISC_MISC_CTRL);
+ static const struct of_device_id brcm_pcie_match[] = {
+ 	{ .compatible = "brcm,bcm2711-pcie", .data = &bcm2711_cfg },
++	{ .compatible = "brcm,bcm7211-pcie", .data = &generic_cfg },
++	{ .compatible = "brcm,bcm7278-pcie", .data = &bcm7278_cfg },
++	{ .compatible = "brcm,bcm7216-pcie", .data = &bcm7278_cfg },
++	{ .compatible = "brcm,bcm7445-pcie", .data = &generic_cfg },
+ 	{},
+ };
  
 -- 
 2.17.1
