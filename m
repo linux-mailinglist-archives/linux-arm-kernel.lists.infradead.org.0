@@ -2,87 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 882C91ECECF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 13:45:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3D461ECEBF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 13:44:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1VljfxA5L8HUiSv8Nahmn3twUwsKL9d9u51IiO8e2mM=; b=NSXPrCoBDb0X46
-	NlOk1rGjt1OrpQrWfWyMLOSROQPsKSs2PeyhjfqTDnOld1CdJF/v+kZUd/Miw3kBAstBGebVIWYtM
-	29daHht/chBq2F3m8PFAkIHM2SRRBSmMsXWEszfLCgJuFNuJx7zvIQ2grvPkmJGWaTD1Z3r/7HMGb
-	ae+1bGVSq+r5dpFHc+Bfx/ZNr69wZgOVUDwlhn+6KA0I6T6OaLLYlNrDXr3senZP0owHgBef4NkI5
-	GLGk3EYum0iKFh2RWV91NXlLXNe5ww8F/RBCrcq7+3Z/FF4YSSmHvbfXcMcw2g/TxDBEzgCNvUi2J
-	/olhlnh5oiwWwYVtbznQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=co8D/95Vn9m2WPs2KEYPCxxyH3e+C4Q4W8yMG7wpx4o=; b=aHlErgDc6jNIlm
+	81crthwb9krYokcqEcFhTQWYDEHfpNheeu2PWRTE5fBmpPbCDO/dhESk6t1dQ5B5E632FMjV+oxuD
+	Y+nm6rogBDuFTCwtV3bEx8ylGTUFzhiqpjMpVZ+ECC99diyoMQSBf6y35x3c0FemsvLCdwe8yWpUm
+	5yqwfms4jQHen/ScBY7qqPk7yZ/5R853EJR0Kts0g3qqPIb/27O2KxX28pkbIjaO4PViqm66x6YN1
+	KtDgIfo5jf59uMZdkcvATRhReM7WzjTt9oGBsQjPMf3MxltP74bxCaKHixJ0RyDtKWB7E6Z9NUn2f
+	+U5kffF1tSQzc5LTkqww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgRq2-00012i-9N; Wed, 03 Jun 2020 11:45:42 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jgRod-00069G-6d; Wed, 03 Jun 2020 11:44:15 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgRpu-00012C-Cp
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 11:45:36 +0000
-Received: by mail-lf1-x144.google.com with SMTP id d7so1096651lfi.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jun 2020 04:45:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=R6lEVGZYGJxxHN7lE3eo9NqLzCsnQCicun988jWmqf0=;
- b=CcT9D9lZNg/SMdu0oTdh0D/2xb8iHgHFyH7fmH90WYrNn/U+znPsNUWsM5AsKxoBUC
- vVFKe4LUjup9xTgkizKTwyQ0mp3tl+y8Welh9N/GllG4VLXKlxXHjSr9F6k+N7aS+Mdu
- brRhX1nAh2aZFrsppZeJGN+BzJyK3Lq86tRW/+cuA0RgpK9vhrG7icHwQdZTE/6WgEzE
- i9QfGI97QzeIy4v9j5Ft+ogMFQd85zLlT19K8GDYCEQMP+XrX3bHBWhIxegbA2Ze1qk9
- Tp4ZMNmBt1B0C5WbcpAKgxOqrlvbotQ7CtwkSesdW9/OtKZup/VpnJtb/cWiuTEdTFjl
- 3sow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=R6lEVGZYGJxxHN7lE3eo9NqLzCsnQCicun988jWmqf0=;
- b=XtyeEupVnZDCfxeWhiDlEeVvtAC3JDtjN4wpp2/uKJ1YbjxOG7paxqLrvQ9/zMZsDd
- gmvXfwlVvaxtWwx/10PzuI3HC535RObueFVAYqFxMECYYZpPAnhx5GVnvrW0qzL7mbZI
- brEShFxYLzuRBzoeD3glMCeFWcZToXmIJwKOqciH3CWLguw9VjoMqBjJWfCB424Ej+CY
- vdtvYjDQYji+dJCvEhZzOD5akeVfJHSlUzux/vp0A0zQ0MOFL7unQBWJBHvLL9ssF+4v
- vOrt4YBSeG/5WTteW49mNTa4tmgOT9qfMgLTcsHwCsmetu27VnZQywBR9ZmLUooRje8n
- m4PQ==
-X-Gm-Message-State: AOAM533t1g/jP7SZIcD77umPegMNmlcqmjFtXWa7eRdIw2gQprsH+Syr
- k0uqLIaNLcmwp2O0AFI4JY9gOqP0BVHv/d2DUrLLPkql
-X-Google-Smtp-Source: ABdhPJxrRq5dz8jR0pX7TOEXl5+O6MeJ4s3D9zLb2o4VMf6+9QwUKNjv2xRDI0+UrWAaW8w3feNHDUNL6jPLIkqDsJg=
-X-Received: by 2002:ac2:44bb:: with SMTP id c27mr2301161lfm.59.1591184732251; 
- Wed, 03 Jun 2020 04:45:32 -0700 (PDT)
+ id 1jgRoU-00068c-JL; Wed, 03 Jun 2020 11:44:07 +0000
+IronPort-SDR: /6VEfXj00B6sKTUxkuRxkNGHSdz3LjjE/doVqIzpa/kEVY0vuA5/C54nBmxFYe8Qgpoe45k/mF
+ fYd7l/R0iIcQ==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga008.fm.intel.com ([10.253.24.58])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 03 Jun 2020 04:44:05 -0700
+IronPort-SDR: SQKNL+gLtSiTc6qf+JusIm6egTVNaNa5cLQaozU3ofLAe9Stv9rSMoqCEsegeOdxe8hW8LT7pP
+ D1d+2VQCrWug==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,467,1583222400"; d="scan'208";a="258596536"
+Received: from mattu-haswell.fi.intel.com (HELO [10.237.72.170])
+ ([10.237.72.170])
+ by fmsmga008.fm.intel.com with ESMTP; 03 Jun 2020 04:44:03 -0700
+Subject: Re: [PATCH] usb: host: xhci-mtk: avoid runtime suspend when removing
+ hcd
+To: Macpaul Lin <macpaul.lin@mediatek.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+References: <1590726569-28248-1-git-send-email-macpaul.lin@mediatek.com>
+From: Mathias Nyman <mathias.nyman@linux.intel.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mathias.nyman@linux.intel.com; prefer-encrypt=mutual; keydata=
+ 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 fiD/
+Message-ID: <ebd32a2b-c4ba-8891-b13e-f6c641a94276@linux.intel.com>
+Date: Wed, 3 Jun 2020 14:47:01 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <1591107505-6030-1-git-send-email-sumit.garg@linaro.org>
- <1591108981.4253.17.camel@linux.ibm.com>
- <CAFA6WYOoMdLJ2g3gocZBZWdu-7Nfw7LKHnzX8S8FKeC7cuNwYg@mail.gmail.com>
- <CAKrSGQSLKpb8T=H9zUoPP1B6EFrgMTMP3ZX1pEv99JtdPq7H0w@mail.gmail.com>
-In-Reply-To: <CAKrSGQSLKpb8T=H9zUoPP1B6EFrgMTMP3ZX1pEv99JtdPq7H0w@mail.gmail.com>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Wed, 3 Jun 2020 17:15:20 +0530
-Message-ID: <CAFA6WYOFO8YptYp2JrY7nQL0MeM02VLCHvtnxUCEDd5-fb-z+Q@mail.gmail.com>
-Subject: Re: [PATCH v5 0/4] Introduce TEE based Trusted Keys support
-To: Luke Hinds <lhinds@redhat.com>,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+In-Reply-To: <1590726569-28248-1-git-send-email-macpaul.lin@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_044534_442144_709BF3CB 
-X-CRM114-Status: GOOD (  21.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200603_044406_648771_A0EDCE93 
+X-CRM114-Status: GOOD (  14.29  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,113 +118,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
- Daniel Thompson <daniel.thompson@linaro.org>, op-tee@lists.trustedfirmware.org,
- Jonathan Corbet <corbet@lwn.net>, James Bottomley <jejb@linux.ibm.com>,
- Janne Karhunen <janne.karhunen@gmail.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- James Morris <jmorris@namei.org>, Mimi Zohar <zohar@linux.ibm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- David Howells <dhowells@redhat.com>, linux-security-module@vger.kernel.org,
- "open list:ASYMMETRIC KEYS" <keyrings@vger.kernel.org>,
- Markus Wamser <Markus.Wamser@mixed-mode.de>,
- Casey Schaufler <casey@schaufler-ca.com>, linux-integrity@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Serge E. Hallyn" <serge@hallyn.com>
+Cc: Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Macpaul Lin <macpaul.lin@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 3 Jun 2020 at 14:20, Luke Hinds <lhinds@redhat.com> wrote:
->
->
->
-> On Wed, Jun 3, 2020 at 9:08 AM Sumit Garg <sumit.garg@linaro.org> wrote:
->>
->> On Tue, 2 Jun 2020 at 20:14, James Bottomley <jejb@linux.ibm.com> wrote:
->> >
->> > On Tue, 2020-06-02 at 19:48 +0530, Sumit Garg wrote:
->> > > Add support for TEE based trusted keys where TEE provides the
->> > > functionality to seal and unseal trusted keys using hardware unique
->> > > key. Also, this is an alternative in case platform doesn't possess a
->> > > TPM device.
->> >
->> > So here's a meta problem: in the case when the platform possesses both
->> > TEE and TPM  what should it do?
->>
->> IMO, trust source (either a TPM or a TEE) should be unique and
->> carefully chosen as per platform security policy corresponding to a
->> particular threat model.
->>
->> And moreover TEEs have been mostly used in the embedded world where
->> having a hardware TPM is cumbersome given constraints regarding BoM
->> cost and hardware resources.
->>
->> >  Things like this:
->> >
->> > > --- a/security/keys/trusted-keys/trusted_core.c
->> > > +++ b/security/keys/trusted-keys/trusted_core.c
->> > > @@ -25,6 +25,8 @@
->> > >
->> > >  #if defined(CONFIG_TRUSTED_TPM)
->> > >  static struct trusted_key_ops *trusted_key_ops =
->> > > &tpm_trusted_key_ops;
->> > > +#elif defined(CONFIG_TRUSTED_TEE)
->> > > +static struct trusted_key_ops *trusted_key_ops =
->> > > &tee_trusted_key_ops;
->> > >  #else
->> >
->> > Say it's either/or at a Kconfig level: so if you select both TEE and
->> > TPM based trusted keys at compile time, we intall the TPM ops and
->> > ignore the TEE ops, is that right?  Surely this should be runtime
->> > selectable based on what the platform has ...
->>
->> This dynamic selection was already part of v4 patch-set but after
->> objection from Jarrko here [1], I switched to compile time mode
->> instead.
->>
->> [1] https://lkml.org/lkml/2020/6/2/139
->
->
-> Unless I have misunderstood, my concerns about compile time are that distributors will be cornered into releasing kernels with an opinionated selection of either TEE or TPM and any users needing the non default will need to compile their own kernel.
->
+On 29.5.2020 7.29, Macpaul Lin wrote:
+> When runtime suspend was enabled, runtime suspend might happened
+> when xhci is removing hcd. This might cause kernel panic when hcd
+> has been freed but runtime pm suspend related handle need to
+> reference it.
+> 
+> Change-Id: I70a5dc8006207caeecbac6955ce8e5345dcc70e6
+> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+> ---
+>  drivers/usb/host/xhci-mtk.c |    5 +++--
+>  1 file changed, 3 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/usb/host/xhci-mtk.c b/drivers/usb/host/xhci-mtk.c
+> index bfbdb3c..641d24e 100644
+> --- a/drivers/usb/host/xhci-mtk.c
+> +++ b/drivers/usb/host/xhci-mtk.c
+> @@ -587,6 +587,9 @@ static int xhci_mtk_remove(struct platform_device *dev)
+>  	struct xhci_hcd	*xhci = hcd_to_xhci(hcd);
+>  	struct usb_hcd  *shared_hcd = xhci->shared_hcd;
+>  
+> +	pm_runtime_put_sync(&dev->dev);
 
-I echo with your concerns.
+Might runtime suspend here.
+It's a lot better than before, no panic as hcd isn't released, but a bit unnecessary.
 
-Jarrko,
+how about this sequence instead:
+pm_runtime_disable()
+pm_runtime_put_noidle()
 
-If it's fine with you then I can switch back to dynamic approach again
-in the next version.
+> +	pm_runtime_disable(&dev->dev);
+> +
 
--Sumit
-
->>
->>
->> > perhaps it should even be
->> > selectable per key?
->> >
->> > Once it is runtime selectable, what should be selected in the both
->> > case?  Or should we allow the user to decide, if so, how?
->> >
->> > when you pipe a trusted key, I think the subtype (TEE or TPM) should be
->> > part of the piped information, so it loads again seamlessly.  This
->> > would actually be fixed by something like the ASN.1 scheme I'm trying
->> > to upstream, at least for TPM keys, but do TEE keys have a recognized
->> > ASN.1 format?
->> >
->>
->> I guess this is something which we can refine later if there are real
->> platforms that have a particular security requirement to support both
->> TPM and a TEE.
->>
->> -Sumit
->>
->> > James
->> >
->>
->
+-Mathias
 
 _______________________________________________
 linux-arm-kernel mailing list
