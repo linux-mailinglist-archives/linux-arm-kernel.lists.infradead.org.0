@@ -2,86 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A91A1ECA74
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 09:23:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60E1C1ECA8C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 09:29:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:MIME-Version
-	:References:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KXJkpb8H5OIBYutm2DZzZhXOqDvTVTRfIiQwB48BWps=; b=FEXyVc2WCGMXWv
-	ITkUoejBd8USEWrWFeDtYLM2PmlH7mv9SwYXIbayYlY3GjwxWD6Stk5gVNSJRj5nlJdqY3JGQPPP5
-	LBjynHLkPn5odL22MNWVgEcPHbeh2PlpwPU98j3dXWrjPG0WrSEEZREp4sA7QyQ/TcNiKpE9Vk2lu
-	H7TpcGWKJSnpsnET02k+dqsmxkjqycqkle+45fcqQhWkUNAaInSD8YFKoDNU83m6jPojGPJ3a7byp
-	ixV3dLnENQuu7v1CvnSFBy/6SaM1ofYfKu17mZOpMGb93mEsDohdpbt3FJQBhBncM3of6L62v4120
-	vryDwQIedUgLoGxx9ncg==;
+	List-Owner; bh=/mReve4s27azeQ5Gg6gKh7kcRy5y/bnTmuRxVHjnGdM=; b=BPRkewMpI5y39k
+	JQMdok4u29VEWPOlScILc4MrxsVa4+vV21Ikepf8o710s9WwyLkZ6tmygtaJZZafirgYGzhpSSWpC
+	5nax2pZhqk2+RnI+K4j0xMHBE3O65xg5hJD6EniDg8tPO49N0/FquA3BMySpVQtzeEwH2qObuTJoK
+	u3nX8ce/SXwRlBSN5DNw6quuIdm/A+mOOoMAKTsS/ciheA2vETojsBz3QJmQvfE9ssFUDxypYHpMq
+	zegiFUPwfwKTnAGRR9fErq359MM6pn5+6dkLMOdffXDeFnOPsJiiHcTz48+17PFdvTJ2n2c9dHDUt
+	Yf/xoMLg/VxiLPmZmE5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgNjq-000180-PL; Wed, 03 Jun 2020 07:23:02 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jgNpy-0004IU-M7; Wed, 03 Jun 2020 07:29:22 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgNjX-0000w1-L4
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 07:22:45 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 64so1017110pfg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jun 2020 00:22:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:user-agent:in-reply-to:references:mime-version
- :content-transfer-encoding:subject:to:cc:from:message-id;
- bh=Mzj+4P6YyUKaBzY1zA3s1gowMthiSgt2iJhCfK00k6U=;
- b=BI37NIjki97mugGeK1q+0eA7Eji/emfrsOW1ZVQTClNqQnE19bN/1NLfQB6cPnzfIk
- MKYGRayBRabq++g1ta+9aWqvSYrJiSrGtme18cwBnQC7RR0oyh5pt7PqUiAEvSlHZiIQ
- hHQBIQcrDOiNerVjDjUJbOS5YF0kl+D3bVezLHDVNei9ZzRNaIlU+dySK+J50hGDv9O1
- bbcwG2bUdUdU4LDGaCebfuwroDDx2qcFizQWvv51kOy8EVmO0Ok/ylisI2R/MGZWY3Gd
- NfJt/vA6M7DE/AqGOauvk53ennY/56r5jVbvoHUmqALEuKyGl63s628txi8+rvI92pnj
- asvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:user-agent:in-reply-to:references
- :mime-version:content-transfer-encoding:subject:to:cc:from
- :message-id;
- bh=Mzj+4P6YyUKaBzY1zA3s1gowMthiSgt2iJhCfK00k6U=;
- b=UMggpHz7lf7eKSMzt5aI762qFo4VJOBSEwpqGm8qt3WA4Gxr53mczYgVxSt51rztf/
- oAJW9yO4X9/QNWgxs3sLZYf0tKDt1tvyvCPhM+ioTn+kc50xTNiQZM5M+Yzzp2FY1xzZ
- yWEz6Yg84pJ/ZgFEuUxh8YXiKtfpTZxPxQcV53zdPKiu9uqzFqJuaxlF+TxGvS4CW6KZ
- WFGbKZdgLyOTb6Y/F2yMRhZrz58VoBKwPbiyKrGXj2Nnq4lvNQcaunCqt0YcCz3SEUzS
- 6aD2TOYRuQAKCzdqTyWajUVofylSI4SqwuvSuL/ahkbljNjjFeRcBorOqlZbSGyfYRm1
- T8YQ==
-X-Gm-Message-State: AOAM531O4nOvDotHBWYLLJOygknG17G4rveUh50bY4bk7vWpPnK+zFED
- BpGgqGEnQcSWRbVj0M25Husq
-X-Google-Smtp-Source: ABdhPJw0Nlb30CTkhejSyv5b3Dz1LVDkw16PIbLMhaRIvo/aZfuJmqJZ8VUvExleC4lztiNntV6U/w==
-X-Received: by 2002:a17:90a:e2c4:: with SMTP id
- fr4mr4063507pjb.32.1591168962855; 
- Wed, 03 Jun 2020 00:22:42 -0700 (PDT)
-Received: from ?IPv6:2409:4072:6e19:d568:fc3d:9e72:444d:f928?
- ([2409:4072:6e19:d568:fc3d:9e72:444d:f928])
- by smtp.gmail.com with ESMTPSA id ev20sm1500940pjb.8.2020.06.03.00.22.37
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 03 Jun 2020 00:22:41 -0700 (PDT)
-Date: Wed, 03 Jun 2020 12:52:34 +0530
-User-Agent: K-9 Mail for Android
-In-Reply-To: <1591119192-18538-2-git-send-email-amittomer25@gmail.com>
-References: <1591119192-18538-1-git-send-email-amittomer25@gmail.com>
- <1591119192-18538-2-git-send-email-amittomer25@gmail.com>
+ id 1jgNpr-0004HL-6t; Wed, 03 Jun 2020 07:29:16 +0000
+X-UUID: 68f36bbf5ee94faa878b71255c900f2d-20200602
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=uxJ/OyZIhvn8jO7euhdxxdoo6BqLiSJM0zglxbBqOos=; 
+ b=CEt6aRgES19HkCxvzzojs8LYRDsf4UJVp+a2UCrOlilmbI/BJ9L+e5CoG6mCq5ixCZDHQIaqUIueDXroGlcGygPjR0x6ZgRF82VMqtmxQ42zwJrUvXSFxhlIQAOOERT8R6KrbMeGLoZRbjuzOsvDoZDjUGLoVhJABTso3DwAuZY=;
+X-UUID: 68f36bbf5ee94faa878b71255c900f2d-20200602
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 521984248; Tue, 02 Jun 2020 23:29:00 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 3 Jun 2020 00:29:08 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 3 Jun 2020 15:29:02 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 3 Jun 2020 15:29:01 +0800
+Message-ID: <1591169342.4878.9.camel@mtkswgap22>
+Subject: Re: Security Random Number Generator support
+From: Neal Liu <neal.liu@mediatek.com>
+To: Marc Zyngier <maz@misterjones.org>, Julius Werner <jwerner@google.com>,
+ Ard Biesheuvel <ardb@kernel.org>
+Date: Wed, 3 Jun 2020 15:29:02 +0800
+In-Reply-To: <85dfc0142d3879d50c0ba18bcc71e199@misterjones.org>
+References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
+ <CAMj1kXHjAdk5=-uSh_=S9j5cz42zr3h6t+YYGy+obevuQDp0fg@mail.gmail.com>
+ <85dfc0142d3879d50c0ba18bcc71e199@misterjones.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Subject: Re: [PATCH v3 01/10] dmaengine: Actions: get rid of bit fields from
- dma descriptor
-To: Amit Singh Tomar <amittomer25@gmail.com>, andre.przywara@arm.com,
- vkoul@kernel.org, afaerber@suse.de
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Message-ID: <3D3E2940-11E3-4093-8F60-82EB2C11B617@linaro.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_002243_689757_FE9CD209 
-X-CRM114-Status: GOOD (  15.18  )
+X-CRM114-CacheID: sfid-20200603_002915_254003_A5C3EB4E 
+X-CRM114-Status: GOOD (  16.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,6 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,210 +85,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
- cristian.ciocaltea@gmail.com, dmaengine@vger.kernel.org,
- dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED
+ DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>, Greg
+ Kroah-Hartman <gregkh@linuxfoundation.org>, Sean Wang <sean.wang@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ lkml <linux-kernel@vger.kernel.org>, wsd_upstream <wsd_upstream@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>,
+ Linux Crypto
+ Mailing List <linux-crypto@vger.kernel.org>, Matt Mackall <mpm@selenic.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Crystal Guo =?UTF-8?Q?=28=E9=83=AD=E6=99=B6=29?= <Crystal.Guo@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 2 June 2020 11:03:03 PM IST, Amit Singh Tomar <amittomer25@gmail.com> wrote:
->At the moment, Driver uses bit fields to describe registers of the DMA
->descriptor structure that makes it less portable and maintainable, and
->Andre suugested(and even sketched important bits for it) to make use of
->array to describe this DMA descriptors instead. It gives the
->flexibility
->while extending support for other platform such as Actions S700.
->
->This commit removes the "owl_dma_lli_hw" (that includes bit-fields) and
->uses array to describe DMA descriptor.
->
->Suggested-by: Andre Przywara <andre.przywara@arm.com>
->Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
->---
->Changes since v2:
->	* No change.
->Changes since v1:
->        * Defined macro for frame count value.
->        * Introduced llc_hw_flen() from patch 2/9.
->        * Removed the unnecessary line break.
->Changes since rfc:
->        * No change.
->---
->drivers/dma/owl-dma.c | 84
->++++++++++++++++++++++++---------------------------
-> 1 file changed, 40 insertions(+), 44 deletions(-)
->
->diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
->index c683051257fd..dd85c205454e 100644
->--- a/drivers/dma/owl-dma.c
->+++ b/drivers/dma/owl-dma.c
->@@ -120,30 +120,21 @@
-> #define BIT_FIELD(val, width, shift, newshift)	\
-> 		((((val) >> (shift)) & ((BIT(width)) - 1)) << (newshift))
+On Tue, 2020-06-02 at 21:02 +0800, Marc Zyngier wrote:
+> On 2020-06-02 13:14, Ard Biesheuvel wrote:
+> > On Tue, 2 Jun 2020 at 10:15, Neal Liu <neal.liu@mediatek.com> wrote:
+> >> 
+> >> These patch series introduce a security random number generator
+> >> which provides a generic interface to get hardware rnd from Secure
+> >> state. The Secure state can be Arm Trusted Firmware(ATF), Trusted
+> >> Execution Environment(TEE), or even EL2 hypervisor.
+> >> 
+> >> Patch #1..2 adds sec-rng kernel driver for Trustzone based SoCs.
+> >> For security awareness SoCs on ARMv8 with TrustZone enabled,
+> >> peripherals like entropy sources is not accessible from normal world
+> >> (linux) and rather accessible from secure world (HYP/ATF/TEE) only.
+> >> This driver aims to provide a generic interface to Arm Trusted
+> >> Firmware or Hypervisor rng service.
+> >> 
+> >> 
+> >> changes since v1:
+> >> - rename mt67xx-rng to mtk-sec-rng since all MediaTek ARMv8 SoCs can 
+> >> reuse
+> >>   this driver.
+> >>   - refine coding style and unnecessary check.
+> >> 
+> >>   changes since v2:
+> >>   - remove unused comments.
+> >>   - remove redundant variable.
+> >> 
+> >>   changes since v3:
+> >>   - add dt-bindings for MediaTek rng with TrustZone enabled.
+> >>   - revise HWRNG SMC call fid.
+> >> 
+> >>   changes since v4:
+> >>   - move bindings to the arm/firmware directory.
+> >>   - revise driver init flow to check more property.
+> >> 
+> >>   changes since v5:
+> >>   - refactor to more generic security rng driver which
+> >>     is not platform specific.
+> >> 
+> >> *** BLURB HERE ***
+> >> 
+> >> Neal Liu (2):
+> >>   dt-bindings: rng: add bindings for sec-rng
+> >>   hwrng: add sec-rng driver
+> >> 
+> > 
+> > There is no reason to model a SMC call as a driver, and represent it
+> > via a DT node like this.
 > 
->-/**
->- * struct owl_dma_lli_hw - Hardware link list for dma transfer
->- * @next_lli: physical address of the next link list
->- * @saddr: source physical address
->- * @daddr: destination physical address
->- * @flen: frame length
->- * @fcnt: frame count
->- * @src_stride: source stride
->- * @dst_stride: destination stride
->- * @ctrla: dma_mode and linklist ctrl config
->- * @ctrlb: interrupt config
->- * @const_num: data for constant fill
->- */
->-struct owl_dma_lli_hw {
->-	u32	next_lli;
->-	u32	saddr;
->-	u32	daddr;
->-	u32	flen:20;
->-	u32	fcnt:12;
->-	u32	src_stride;
->-	u32	dst_stride;
->-	u32	ctrla;
->-	u32	ctrlb;
->-	u32	const_num;
->+/* Frame count value is fixed as 1 */
->+#define FCNT_VAL				0x1
->+
->+/* Describe DMA descriptor, hardware link list for dma transfer */
+> +1.
+> 
+> > It would be much better if this SMC interface is made truly generic,
+> > and wired into the arch_get_random() interface, which can be used much
+> > earlier.
+> 
+> Wasn't there a plan to standardize a SMC call to rule them all?
+> 
+>          M.
 
-Individual comments for these enums? 
+Could you give us a hint how to make this SMC interface more generic in
+addition to my approach?
+There is no (easy) way to get platform-independent SMC function ID,
+which is why we encode it into device tree, and provide a generic
+driver. In this way, different devices can be mapped and then get
+different function ID internally.
 
->+enum owl_dmadesc_offsets {
->+	OWL_DMADESC_NEXT_LLI = 0,
->+	OWL_DMADESC_SADDR,
->+	OWL_DMADESC_DADDR,
->+	OWL_DMADESC_FLEN,
->+	OWL_DMADESC_SRC_STRIDE,
->+	OWL_DMADESC_DST_STRIDE,
->+	OWL_DMADESC_CTRLA,
->+	OWL_DMADESC_CTRLB,
->+	OWL_DMADESC_CONST_NUM,
->+	OWL_DMADESC_SIZE
-> };
-> 
-> /**
->@@ -153,7 +144,7 @@ struct owl_dma_lli_hw {
->  * @node: node for txd's lli_list
->  */
-> struct owl_dma_lli {
->-	struct  owl_dma_lli_hw	hw;
->+	u32			hw[OWL_DMADESC_SIZE];
-> 	dma_addr_t		phys;
-> 	struct list_head	node;
-> };
->@@ -320,6 +311,11 @@ static inline u32 llc_hw_ctrlb(u32 int_ctl)
-> 	return ctl;
-> }
-> 
->+static u32 llc_hw_flen(struct owl_dma_lli *lli)
->+{
->+	return lli->hw[OWL_DMADESC_FLEN] & GENMASK(19, 0);
->+}
->+
-> static void owl_dma_free_lli(struct owl_dma *od,
-> 			     struct owl_dma_lli *lli)
-> {
->@@ -351,8 +347,9 @@ static struct owl_dma_lli *owl_dma_add_lli(struct
->owl_dma_txd *txd,
-> 		list_add_tail(&next->node, &txd->lli_list);
-> 
-> 	if (prev) {
->-		prev->hw.next_lli = next->phys;
->-		prev->hw.ctrla |= llc_hw_ctrla(OWL_DMA_MODE_LME, 0);
->+		prev->hw[OWL_DMADESC_NEXT_LLI] = next->phys;
->+		prev->hw[OWL_DMADESC_CTRLA] |=
->+					llc_hw_ctrla(OWL_DMA_MODE_LME, 0);
-> 	}
-> 
-> 	return next;
->@@ -365,8 +362,7 @@ static inline int owl_dma_cfg_lli(struct
->owl_dma_vchan *vchan,
-> 				  struct dma_slave_config *sconfig,
-> 				  bool is_cyclic)
-> {
->-	struct owl_dma_lli_hw *hw = &lli->hw;
->-	u32 mode;
->+	u32 mode, ctrlb;
-> 
-> 	mode = OWL_DMA_MODE_PW(0);
-> 
->@@ -407,22 +403,22 @@ static inline int owl_dma_cfg_lli(struct
->owl_dma_vchan *vchan,
-> 		return -EINVAL;
-> 	}
-> 
->-	hw->next_lli = 0; /* One link list by default */
->-	hw->saddr = src;
->-	hw->daddr = dst;
->-
->-	hw->fcnt = 1; /* Frame count fixed as 1 */
->-	hw->flen = len; /* Max frame length is 1MB */
->-	hw->src_stride = 0;
->-	hw->dst_stride = 0;
->-	hw->ctrla = llc_hw_ctrla(mode,
->-				 OWL_DMA_LLC_SAV_LOAD_NEXT |
->-				 OWL_DMA_LLC_DAV_LOAD_NEXT);
->+	lli->hw[OWL_DMADESC_CTRLA] = llc_hw_ctrla(mode,
->+						  OWL_DMA_LLC_SAV_LOAD_NEXT |
->+						  OWL_DMA_LLC_DAV_LOAD_NEXT);
-> 
-> 	if (is_cyclic)
->-		hw->ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_BLOCK);
->+		ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_BLOCK);
-> 	else
->-		hw->ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_SUPER_BLOCK);
->+		ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_SUPER_BLOCK);
->+
->+	lli->hw[OWL_DMADESC_NEXT_LLI] = 0;
-
-Again, please preserve the old comments. 
-
->+	lli->hw[OWL_DMADESC_SADDR] = src;
->+	lli->hw[OWL_DMADESC_DADDR] = dst;
->+	lli->hw[OWL_DMADESC_SRC_STRIDE] = 0;
->+	lli->hw[OWL_DMADESC_DST_STRIDE] = 0;
->+	lli->hw[OWL_DMADESC_FLEN] = len | FCNT_VAL << 20;
-
-Please explain what you're doing here. 
-
-Thanks, 
-Mani
-
->+	lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
-> 
-> 	return 0;
-> }
->@@ -754,7 +750,7 @@ static u32 owl_dma_getbytes_chan(struct
->owl_dma_vchan *vchan)
-> 			/* Start from the next active node */
-> 			if (lli->phys == next_lli_phy) {
-> 				list_for_each_entry(lli, &txd->lli_list, node)
->-					bytes += lli->hw.flen;
->+					bytes += llc_hw_flen(lli);
-> 				break;
-> 			}
-> 		}
->@@ -785,7 +781,7 @@ static enum dma_status owl_dma_tx_status(struct
->dma_chan *chan,
-> 	if (vd) {
-> 		txd = to_owl_txd(&vd->tx);
-> 		list_for_each_entry(lli, &txd->lli_list, node)
->-			bytes += lli->hw.flen;
->+			bytes += llc_hw_flen(lli);
-> 	} else {
-> 		bytes = owl_dma_getbytes_chan(vchan);
-> 	}
-
--- 
-Sent from my Android device with K-9 Mail. Please excuse my brevity.
 
 _______________________________________________
 linux-arm-kernel mailing list
