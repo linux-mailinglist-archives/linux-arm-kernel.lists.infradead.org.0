@@ -2,69 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E81C1ED005
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:43:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 712A21ED00A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:45:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=row6ReI8N1js8GpdOHMjMr0N660uYXpV1o7CBOluR08=; b=bIdEP/BmstK5lI
-	iNBy6hMsZ71jL9dGAtbF1cMTUkxVXmv9qia9r9Og8dSKQyuhGY1geiFUYb+XusKRdcm9eFzon9lh/
-	FZYq8Jseor/JkqZrmbXUwzHfh4rkjarNN1/0QAB5fDNxynnVpMxDptv7wCqOaL+gvb/SnsWpsQABp
-	URYeLkuN3UBPuoxZkMeM9SShJI902pDMwG9omQr78xkF0NU6eHsb5sbmDBYY7xSOP1S7t0pmXGpkg
-	izCujRRQepwDHixre8XVPCq33dO0outiuWioqCCZPJOqnRKRQeVEasF4kY/raGtjrZBafwEqNARR3
-	f4y9HGVLtVjWkvAycCEQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jgT1NYv3SG4Daqu5uixrqb381u4KUU313haKkE1CoNc=; b=XZyC9589jxlPZoVlsyGp6dwmN
+	bxqrq7qLvCTXboChT7+8xNfQh+2WSDWrlkqoz6BVjuLMX7J13BhXdKB2flZx07NNK0KbxfY/aMVYv
+	P1t/ChMbIGHTe4K4JYsHbk2s2BTeC1yRBtSU5wNJv6jf/3h3a4gnHlA4/D5E0+V8J3AKg9pOGZh+w
+	4YzGgbdzcKmDRwTTAvl81jIxSivFQ0J1+XxG5fP2MQCYNEG82Zk06jhRzH97IVrRF8WHXoHrBfXO/
+	u5phszmXpCoPjXjWNq0qif+GOn24dNPzJyWG8SQM+MBRl0aT9eQIYI45RPMABUDCg3n/wdWLWXz0M
+	MdVdaK1fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgSjR-0004Jj-Gk; Wed, 03 Jun 2020 12:42:57 +0000
+	id 1jgSlh-00050f-5T; Wed, 03 Jun 2020 12:45:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgSjI-0004JN-FJ
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:42:50 +0000
-Received: from mail-oi1-f182.google.com (mail-oi1-f182.google.com
- [209.85.167.182])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jgSlQ-0004rl-0B
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:45:01 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0D239207D5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed,  3 Jun 2020 12:42:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9684920678;
+ Wed,  3 Jun 2020 12:44:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591188168;
- bh=nnEkFoJpTsfT0gYt2Rue6eM8XJvsKvi3qxgnureA8Xk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=hJ0YOkw8W6ZiSnv4gAXrj0GUURByIsaMEtXQAH+95gXVlSDx++Y1tATC3AFKTB71r
- PSmqkNC0x9NQSpP2AKA6W9gk1RdJl2leaSqlx3wZuFz0c8socqKDuSuBxTRUGlMF3U
- 5NRkzTREUjYr33gqZTCncZb+ikRY8sm//pYcBVGU=
-Received: by mail-oi1-f182.google.com with SMTP id 25so735720oiy.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jun 2020 05:42:48 -0700 (PDT)
-X-Gm-Message-State: AOAM53274wpDRJyav07izQGxJiTMbrJVcJrHhDsEfjOR6Q3ZK2NAOjjs
- vXQm5pI5LusMob8t40PHSIAlC/xARAwoRID741c=
-X-Google-Smtp-Source: ABdhPJxF+Dymmv3fotK3V01ykq23J/2e35TrIhtpikdeJcEHTVkMW+RGK60yilDvs55uhSczqjk9LD62nkzpJYMxnSw=
-X-Received: by 2002:aca:6144:: with SMTP id v65mr6030162oib.33.1591188167356; 
- Wed, 03 Jun 2020 05:42:47 -0700 (PDT)
+ s=default; t=1591188299;
+ bh=wznEth5LdDyFT2k6Sw+uElZFtO2dV9GyNCqcSvMWmiU=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=TqJZLS5KZ9qZJvkMiMjiz8zauZtj59/mrNXISG8AqBgMaf8/TuF8N+oZrprg8teTI
+ 4UID6E/9spmMnTEyVpOI9wvGbKsF36T3yX1UJtK7385ZNLwGPoz0I+aM7PPH4UnVoB
+ 4R8DDi7tJvwRzWGeYlcOU/FHpmjL9zY+rndY/WeQ=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jgSlO-00HS6q-6J; Wed, 03 Jun 2020 13:44:58 +0100
 MIME-Version: 1.0
-References: <20200603053313.3863761-1-masahiroy@kernel.org>
- <CAMj1kXGk-2pyTZ3yNW14Kk4fvtsNOb7maAHVM2C=vVAjaaFRug@mail.gmail.com>
- <CAK7LNARg70FrTmnuoUiLM6KWxeJ+AeXqgB53GS6sY7z0J+qH6g@mail.gmail.com>
- <CAMj1kXFxmgQ=YzmLNnMO-2gibSGQ1=tXBd07ntqCYYU122zEUw@mail.gmail.com>
- <CAK7LNARLUeuiu3Y1cFqT7550MaF8fnBmMTZxKEG0Cy3vpxVkMQ@mail.gmail.com>
- <CAMj1kXFKuMoYW8Sj=DHeYBSkWyeu+QgP9=fgET83K5D=-DsJ7Q@mail.gmail.com>
- <CAK7LNAR3YqmSWh_GkXdP+2tb83sOpySeXVi-kP=1eehcD5097Q@mail.gmail.com>
- <CAMj1kXHcRuQXPej9_H_jnno516BnuFrPRqzp1+6xN-odckEMJg@mail.gmail.com>
- <CAK7LNAQ_YMfjucip8eFBod1TBMUqGgnYebBeP22dZ4J7ZsFXeg@mail.gmail.com>
-In-Reply-To: <CAK7LNAQ_YMfjucip8eFBod1TBMUqGgnYebBeP22dZ4J7ZsFXeg@mail.gmail.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Wed, 3 Jun 2020 14:42:35 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXGm_3Pf9pjgWcPKvA0=bnVtMqeYGCCQXf9c5Rraqy-1-Q@mail.gmail.com>
-Message-ID: <CAMj1kXGm_3Pf9pjgWcPKvA0=bnVtMqeYGCCQXf9c5Rraqy-1-Q@mail.gmail.com>
-Subject: Re: [PATCH] efi/libstub: refactor Makefile to not use lib-y syntax
-To: Masahiro Yamada <masahiroy@kernel.org>
+Date: Wed, 03 Jun 2020 13:44:58 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Thomas Gleixner <tglx@linutronix.de>
+Subject: Re: [PATCH] irqchip/gic-v3-its: Don't try to move a disabled irq
+In-Reply-To: <87y2p5fatl.fsf@nanos.tec.linutronix.de>
+References: <20200529015501.15771-1-alisaidi@amazon.com>
+ <8c3be990888ecfb7cca9503853dc4aac@kernel.org>
+ <2C4F431F-8140-4C82-B4BD-E51DE618FC08@amazon.com>
+ <20200530174929.7bf6d5d7@why> <eed907d48de84c96e3ceb27c1ed6f622@kernel.org>
+ <37e55e71faf76dc3db76d89c20c1bdfff942e380.camel@amazon.com>
+ <87y2p5fatl.fsf@nanos.tec.linutronix.de>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <d08bd61ffffe59091f6542b4f75292d1@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: tglx@linutronix.de, benh@amazon.com, alisaidi@amazon.com,
+ jason@lakedaemon.net, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dwmw@amazon.co.uk, zeev@amazon.com,
+ zorik@amazon.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_054248_553112_4B9D863D 
-X-CRM114-Status: GOOD (  35.29  )
+X-CRM114-CacheID: sfid-20200603_054500_083731_B0A3B72A 
+X-CRM114-Status: GOOD (  15.91  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,188 +95,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-efi <linux-efi@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Atish Patra <atish.patra@wdc.com>, Arvind Sankar <nivedita@alum.mit.edu>,
- Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "Herrenschmidt, Benjamin" <benh@amazon.com>, jason@lakedaemon.net,
+ "Machulsky, Zorik" <zorik@amazon.com>, linux-kernel@vger.kernel.org, "Saidi,
+ Ali" <alisaidi@amazon.com>, "Zilberman, Zeev" <zeev@amazon.com>, "Woodhouse,
+ David" <dwmw@amazon.co.uk>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 3 Jun 2020 at 13:23, Masahiro Yamada <masahiroy@kernel.org> wrote:
->
-> On Wed, Jun 3, 2020 at 6:16 PM Ard Biesheuvel <ardb@kernel.org> wrote:
-> >
-> > On Wed, 3 Jun 2020 at 11:15, Masahiro Yamada <masahiroy@kernel.org> wrote:
-> > >
-> > > On Wed, Jun 3, 2020 at 6:02 PM Ard Biesheuvel <ardb@kernel.org> wrote:
-> > > >
-> > > > On Wed, 3 Jun 2020 at 10:59, Masahiro Yamada <masahiroy@kernel.org> wrote:
-> > > > >
-> > > > > On Wed, Jun 3, 2020 at 5:45 PM Ard Biesheuvel <ardb@kernel.org> wrote:
-> > > > > >
-> > > > > > On Wed, 3 Jun 2020 at 10:36, Masahiro Yamada <masahiroy@kernel.org> wrote:
-> > > > > > >
-> > > > > > > On Wed, Jun 3, 2020 at 3:45 PM Ard Biesheuvel <ardb@kernel.org> wrote:
-> > > > > > > >
-> > > > > > > > On Wed, 3 Jun 2020 at 07:34, Masahiro Yamada <masahiroy@kernel.org> wrote:
-> > > > > > > > >
-> > > > > > > > > Documentation/kbuild/makefiles.rst says:
-> > > > > > > > >
-> > > > > > > > >   Use of lib-y is normally restricted to `lib/` and `arch/*/lib`.
-> > > > > > > > >
-> > > > > > > > > I want to disallow lib-y outside of them.
-> > > > > > > > >
-> > > > > > > >
-> > > > > > > > Why?
-> > > > > > >
-> > > > > > >
-> > > > > > > Because I plan to remove lib-y entirely at some point.
-> > > > > > >
-> > > > > > > lib-y is not so useful to shrink the image size because:
-> > > > > > >
-> > > > > > >   - An object in lib.a can be omitted only when no symbol
-> > > > > > >     in that object is referenced.  This rarely happens.
-> > > > > > >
-> > > > > > >   -  lib-y objects are often exported by nature
-> > > > > > >      because lib-y is a collection of utility functions.
-> > > > > > >      Even if no in-tree user, we always need to keep them
-> > > > > > >      because EXPORT_SYMBOL() is the interface to modules.
-> > > > > > >
-> > > > > > >
-> > > > > > > When I worked on commit 7273ad2b08f8ac9563579d16a3cf528857b26f49,
-> > > > > > > I made some research.
-> > > > > > >
-> > > > > > > The benefit of lib-y is just 362 byte for x86_64_defconfig.
-> > > > > > > ( Before: 26578002, After: 26578364)
-> > > > > > >
-> > > > > > > My hope is lib-y will be replaced by dead-code elimination or
-> > > > > > > ultimately by LTO.
-> > > > > > >
-> > > > > > > drivers/firmware/efi/libstub/Makefile
-> > > > > > > is the only Makefile that breaks the rule:
-> > > > > > > "Use of lib-y is normally restricted to `lib/` and `arch/*/lib`"
-> > > > > > >
-> > > > > > >
-> > > > > > >
-> > > > > > >
-> > > > > > > >
-> > > > > > > > > Add a custom rule to build lib.a, which is linked to the decompressor
-> > > > > > > > > for ARCH=x86, ARCH=arm.
-> > > > > > > > >
-> > > > > > > > > For ARCH=arm64, use obj-y to link objects to vmlinux in the ordinary
-> > > > > > > > > way.
-> > > > > > > > >
-> > > > > > > >
-> > > > > > > > The code works perfectly fine as is, and I don't see what is
-> > > > > > > > fundamentally wrong with using static libraries outside of lib/ and
-> > > > > > > > arch/*/lib.
-> > > > > > >
-> > > > > > > The intended usage of lib-y is to hook lib.a
-> > > > > > > to scripts/vmlinux.sh via KBUILD_VMLINUX_LIBS.
-> > > > > > >
-> > > > > > > This Makefile is just what you found to work.
-> > > > > > >
-> > > > > > >
-> > > > > > > >
-> > > > > > > > Also, I would like this code to still be incorporated as a static
-> > > > > > > > library into arm64 as well, so that only pieces that are actually
-> > > > > > > > needed are incorporated into the final image.
-> > > > > > >
-> > > > > > > No.
-> > > > > > > It is not working like that because you set
-> > > > > > > lib.a to core-y.
-> > > > > > >
-> > > > > > > All objects in core-y are always linked to vmlinux.
-> > > > > > >
-> > > > > >
-> > > > > > The lib.a file is passed to the linker as a static library, so it will
-> > > > > > only grab what it needs.
-> > > > > >
-> > > > > > For instance, if you build arm64 from mainline today, the
-> > > > > > efi_relocate_kernel will not be in the final image, even though it is
-> > > > > > built as part of libstub
-> > > > >
-> > > > >
-> > > > > I built today's mainline kernel
-> > > > > (d6f9469a03d832dcd17041ed67774ffb5f3e73b3).
-> > > > >
-> > > > >
-> > > > > I see it in vmlinux.
-> > > > >
-> > > > >
-> > > > > $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-  defconfig
-> > > > > $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-  -j24
-> > > > >     ...
-> > > > > $ aarch64-linux-gnu-nm  -n  vmlinux | grep  efi_relocate_kernel
-> > > > > ffff8000114afb90 t __efistub_efi_relocate_kernel
-> > > > >
-> > > >
-> > > > That is strange. I tested this before, and it worked.
-> > > >
-> > > > Did anything change recently in the way the linker is invoked?
-> > >
-> > >
-> > > Nothing recently.
-> > >
-> > > This is obvious result because
-> > > drivers/firmware/efi/libstub/lib.a
-> > > is passed after ----whole-archive flag.
-> > >
-> > >
-> > > I guess the following commit is it,
-> > > but it is already 3 years ago.
-> > >
-> >
-> > Right.
-> >
-> > So that means there is no point at all in using static libraries, no?
-> > Or does --whole-archive still allow duplicate definitions like static
-> > libraries do usually?
->
->
-> --whole-archive literally links the whole of the archive.
-> If there are duplicate definitions, the linking fails
-> due to multiple definition.
-> So, --whole-archive is similar to linking .o files
-> in this regard.
->
->
-> There is a point for arm and x86 because
-> the decompressor link does not use --whole-archive.
->
-> As for arm64, there is no point,
-> but you can pass lib.a after --no-whole-archive
-> by the following patch.
->
-> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-> index 650e1185c190..48a6afa774fc 100644
-> --- a/arch/arm64/Makefile
-> +++ b/arch/arm64/Makefile
-> @@ -145,7 +145,7 @@ export      TEXT_OFFSET
->
->  core-y         += arch/arm64/
->  libs-y         := arch/arm64/lib/ $(libs-y)
-> -core-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
-> +libs-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
->
->  # Default target when executing plain make
->  boot           := arch/arm64/boot
->
->
->
-> Then, _efistub_efi_low_alloc_above
-> and __efistub_efi_relocate_kernel will be dropped.
->
->
-> If you like the static library
-> do you want me to send v2?
->
+On 2020-06-02 21:54, Thomas Gleixner wrote:
+> "Herrenschmidt, Benjamin" <benh@amazon.com> writes:
+>> On Sun, 2020-05-31 at 12:09 +0100, Marc Zyngier wrote:
+>>> > The semantic of activate/deactivate (which maps to started/shutdown
+>>> > in the IRQ code) is that the HW resources for a given interrupt are
+>>> > only committed when the interrupt is activated. Trying to perform
+>>> > actions involving the HW on an interrupt that isn't active cannot be
+>>> > guaranteed to take effect.
+>>> >
+>>> > I'd rather address it in the core code, by preventing set_affinity (and
+>>> > potentially others) to take place when the interrupt is not in the
+>>> > STARTED state. Userspace would get an error, which is perfectly
+>>> > legitimate, and which it already has to deal with it for plenty of
+>>> > other
+>>> > reasons.
+>> 
+>> So I finally found time to dig a bit in there :) Code has changed a 
+>> bit
+>> since last I looked. But I have memories of the startup code messing
+>> around with the affinity, and here it is. In irq_startup() :
+>> 
+>> 
+>> 		switch (__irq_startup_managed(desc, aff, force)) {
+>> 		case IRQ_STARTUP_NORMAL:
+>> 			ret = __irq_startup(desc);
+>> 			irq_setup_affinity(desc);
+>> 			break;
+>> 		case IRQ_STARTUP_MANAGED:
+>> 			irq_do_set_affinity(d, aff, false);
+>> 			ret = __irq_startup(desc);
 
-Yes please
+Grump. Nice catch. In hindsight, this is obvious, as managed interrupts
+may have been allocated to target CPUs that have been hot-plugged off.
+
+>> 			break;
+>> 		case IRQ_STARTUP_ABORT:
+>> 			irqd_set_managed_shutdown(d);
+>> 			return 0;
+>> 
+>> So we have two cases here. Normal and managed.
+>> 
+>> In the managed case, we set the affinity before startup. I feel like 
+>> your
+>> patch might break that or am I missing something ?
+> 
+> It will break stuff because the affinity is not stored in case that the
+> interrupt is not started.
+> 
+> I think we can fix this in the core code but that needs more thought.
+> __irq_can_set_affinity() is definitely the wrong place.
+
+Indeed. I completely missed the above. Back to square one.
+
+Thanks,
+
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
