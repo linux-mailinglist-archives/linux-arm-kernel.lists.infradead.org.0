@@ -2,82 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89FF21ECDE8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 12:58:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E18191ECDF0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 13:00:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gxeo/Q6q7dIeC5gF2TNDsMdgIRdjcnc1XaMK5DB1PlE=; b=PeMjQU/tUXXJcU
-	qdcLXhrku7kY/UPC78DqsZvYuS7nidsIBa6JkgzSK6+bRiAjgmOjJS3bFHs2OrU/3CTSDATOooY6j
-	og/epYJprf/qDCsgXNPIN5dLKJrTXfmO19mtAIAVFdzf6XS1pqxJ1Il5obJKi02wx11zAKJralGeV
-	JMUk0c1CYVC3xpFV7i/Aok7Um6rGc+dExYf6lyqsDjIuEycXoNWL+pfNWRAQHda3c4dJhGtc4DYil
-	JSGIUZgDO3Cg8P5L+WRGY3jjfI79gH4n94s3GNG/DZFEilZGPYy7Me5SbxugDrwXGdWNk+djw04vU
-	2uXXEf9NZQV6jgMdQZpw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=p2PQrsjCbs5kkwYmwxVu3QYF0XEgHBmAAu0mes73DC4=; b=RSLF/pj9E7iUV2132TNRSlSOF
+	0+GVuVDiRSrzFWqHvVxHcxgpui+bUbEHvGDmrwPtvUGqjNApuhYOWs3AeWUEEgyTnp8vxhHRw5C1V
+	S0O9N/WzBDGkygM6bU/1hYCPIP2cuCHmoIXtolYiBcZLX3mOvoHHhAY9GDd5csBgRwxLv7WL3zkMR
+	xTbXj3iFhvHX8zbLNdqsgXfw+U/4Z88jq9BbcXgV0z9vt/4DE4Jv/ydcHQz6n5BLTIxe1kM7WoIkj
+	caC9InT6lJPWf51CuBS0wIPOLXS83px7IF1ra1JmTGWw2xWM3DBjsrz/Uy6k/+33vU4yfIoRqDb5z
+	dtWlmy5tw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgR6c-0007yF-Q5; Wed, 03 Jun 2020 10:58:46 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgR6V-0007x1-SX
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 10:58:41 +0000
-Received: from mail-qk1-f178.google.com ([209.85.222.178]) by
- mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1Mrwnt-1jABQK18q5-00nxqs for <linux-arm-kernel@lists.infradead.org>; Wed,
- 03 Jun 2020 12:58:33 +0200
-Received: by mail-qk1-f178.google.com with SMTP id g28so1657418qkl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jun 2020 03:58:33 -0700 (PDT)
-X-Gm-Message-State: AOAM532IAt37cylzZa4dur/OYCmUx15KF29WKCyn6qJt/SFWN9icDuBH
- MwOzX5bgd5e2IHy6XSdu2yQ9VWvweUaE1yDMc28=
-X-Google-Smtp-Source: ABdhPJwp4BruVv7x5KWHmKJY0GqISo7xEiXCSVQRm9DX9mEfuj1pqEjlD0cOd9acGIKxlDiPqlWzDUxi/5J33dKl6LM=
-X-Received: by 2002:a37:6188:: with SMTP id
- v130mr23821454qkb.138.1591181912135; 
- Wed, 03 Jun 2020 03:58:32 -0700 (PDT)
+	id 1jgR8e-0002JI-DW; Wed, 03 Jun 2020 11:00:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgR8W-0002Ie-Ul
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 11:00:46 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E435B31B;
+ Wed,  3 Jun 2020 04:00:41 -0700 (PDT)
+Received: from [10.57.0.45] (unknown [10.57.0.45])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2DD503F305;
+ Wed,  3 Jun 2020 04:00:40 -0700 (PDT)
+Subject: Re: [RFC 0/2] iommu: arm-smmu: Add support for early direct mappings
+To: Bjorn Andersson <bjorn.andersson@linaro.org>, Will Deacon <will@kernel.org>
+References: <20191209150748.2471814-1-thierry.reding@gmail.com>
+ <20200228025700.GA856087@builder> <20200514193249.GE279327@builder.lan>
+ <CALAqxLVmomdKJCwh=e-PX+8-seDX0RXA81FzmG4sEyJmbXBh9A@mail.gmail.com>
+ <20200527110343.GD11111@willie-the-truck> <20200602063210.GT11847@yoga>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <a1f9ee83-66cd-1f04-3e78-3281b3cafd07@arm.com>
+Date: Wed, 3 Jun 2020 12:00:37 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-References: <20200408160044.2550437-1-arnd@arndb.de>
- <CABOV4+WerpJqsy0-uBPBZfpnDaPn56fn0Zvv1aMUJJSjEqGhAQ@mail.gmail.com>
-In-Reply-To: <CABOV4+WerpJqsy0-uBPBZfpnDaPn56fn0Zvv1aMUJJSjEqGhAQ@mail.gmail.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 3 Jun 2020 12:58:16 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a0ffn2wtWB=bogi78MmW_8ZvNTHneVMicPU7AW+s2tmCA@mail.gmail.com>
-Message-ID: <CAK8P3a0ffn2wtWB=bogi78MmW_8ZvNTHneVMicPU7AW+s2tmCA@mail.gmail.com>
-Subject: Re: [PATCH] [RFC] clk: sprd: fix compile-testing
-To: Chunyan Zhang <zhang.lyra@gmail.com>
-X-Provags-ID: V03:K1:8asQR3SOiNVl3IvyzIRWFlUKXcbLzq8FHjF/mYhPJB4IFxV1TNG
- pBKOWRspF7DuoqccYhW1hiDnqkqUvQwjTpI9CIfCpA8/DIMggDPzj3n/d33Lj1wdIizBGeT
- j9owEu3l5MqwKaNElNwt++RfR4vQbm//BdcfdUI8palmLT2mNxmqPdfFhOD09dPUCOHNFGE
- G54Nta25YoaPXkPdWQXlg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:8eAJxVrMoXk=:yKUIQLbWXkdooq1LCr/qtF
- i78dzfB+k7bmaMwHpGBslba0nvsaMm+FSw9VghoCjDbwyxgeKjEE1ORdkastio16XA68P1SMP
- 8I9DTpOpvoLcT2jc6cZrPdUT6P/EIfZGSNE5RB+N2UjELH41jEXrDB6Xjshkn7B1ItVfLt6Cq
- 2NTu7pVmxiKselbzz/Ff5kptVza2AaDlbfmiylI+B79k9qTdfjLFHZ03ubME9GbqSH+2E6opl
- mF3lK0Z5nlO+SLmsucwOqvXbTocnMrSAZvfW5vfU4uFINw7wI/Qmy8rasJsyvXCoFbncZTMIJ
- ecIqjx2reIqqxwQK2zdUiXV/Ciq41N0eB9d2Zp3K297Tj2keVALXdhrd1n63GgOvvCRnnGSvD
- wy5sFZF70d4ybcJg/XghGVlnzwWQyJwOsCasRMLWybggi2OagFttm8a7R0wSTb08Plon4Yp9T
- npnLmFgdACWnRIKuUKiY2y8fHt8b31GnMlripY8GxWn2nrsucgUlptWmjHMEVdBt5Fb5ZMYZb
- kltEV2xJ8RYbH2rIM8yK6mIVBEPo4UWpoL8tCPZIGk+TtH4RvqgPlEDe2+ptLcRGW25534fdt
- 6YRV+5KRrD4QRRCMcM1kwTr/ipx0Scu11hZ3nNNap3REgEz/9xxxND75L0Ar5VhiK+ml0n2fq
- VhsjKCav9ok7MB/relSt+ucyDi07lrBK6zqxM/I/lVp53YsO/yxYE1GZAyzDxEk3O5jkacL/2
- rGHxGbvkY1t00nEc8+HB3sPvYsm/HMxLksvGYX0R8LHWY3E8FMihJoQDIBpJhFmw2btTG/nXW
- XoqlvmlfMru/o20g9vsi91PwbEqzplFLspggQzR6DtrB0x5Yik=
+In-Reply-To: <20200602063210.GT11847@yoga>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_035840_213501_F835C0F4 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200603_040045_078460_293B0919 
+X-CRM114-Status: GOOD (  26.50  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,32 +66,122 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Michael Turquette <mturquette@baylibre.com>,
- LKML <linux-kernel@vger.kernel.org>, Chunyan Zhang <chunyan.zhang@unisoc.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Will Deacon <will@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ iommu@lists.linux-foundation.org, Thierry Reding <thierry.reding@gmail.com>,
+ John Stultz <john.stultz@linaro.org>, linux-tegra@vger.kernel.org,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 3, 2020 at 11:17 AM Chunyan Zhang <zhang.lyra@gmail.com> wrote:
-> On Thu, Apr 9, 2020 at 2:57 AM Arnd Bergmann <arnd@arndb.de> wrote:
+On 2020-06-02 07:32, Bjorn Andersson wrote:
+> On Wed 27 May 04:03 PDT 2020, Will Deacon wrote:
+> 
+>> Hi John, Bjorn,
+>>
+>> On Tue, May 26, 2020 at 01:34:45PM -0700, John Stultz wrote:
+>>> On Thu, May 14, 2020 at 12:34 PM <bjorn.andersson@linaro.org> wrote:
+>>>>
+>>>> On Thu 27 Feb 18:57 PST 2020, Bjorn Andersson wrote:
+>>>>
+>>>> Rob, Will, we're reaching the point where upstream has enough
+>>>> functionality that this is becoming a critical issue for us.
+>>>>
+>>>> E.g. Lenovo Yoga C630 is lacking this and a single dts patch to boot
+>>>> mainline with display, GPU, WiFi and audio working and the story is
+>>>> similar on several devboards.
+>>>>
+>>>> As previously described, the only thing I want is the stream mapping
+>>>> related to the display controller in place, either with the CB with
+>>>> translation disabled or possibly with a way to specify the framebuffer
+>>>> region (although this turns out to mess things up in the display
+>>>> driver...)
+>>>>
+>>>> I did pick this up again recently and concluded that by omitting the
+>>>> streams for the USB controllers causes an instability issue seen on one
+>>>> of the controller to disappear. So I would prefer if we somehow could
+>>>> have a mechanism to only pick the display streams and the context
+>>>> allocation for this.
+>>>>
+>>>>
+>>>> Can you please share some pointers/insights/wishes for how we can
+>>>> conclude on this subject?
+>>>
+>>> Ping? I just wanted to follow up on this discussion as this small
+>>> series is crucial for booting mainline on the Dragonboard 845c
+>>> devboard. It would be really valuable to be able to get some solution
+>>> upstream so we can test mainline w/o adding additional patches.
+>>
+>> Sorry, it's been insanely busy recently and I haven't had a chance to think
+>> about this on top of everything else. We're also carrying a hack in Android
+>> for you :)
+>>
+> 
+> Thanks for taking the time to get back to us on this!
+> 
+>>> The rest of the db845c series has been moving forward smoothly, but
+>>> this set seems to be very stuck with no visible progress since Dec.
+>>>
+>>> Are there any pointers for what folks would prefer to see?
+>>
+>> I've had a chat with Robin about this. Originally, I was hoping that
+>> people would all work together towards an idyllic future where firmware
+>> would be able to describe arbitrary pre-existing mappings for devices,
+>> irrespective of the IOMMU through which they master and Linux could
+>> inherit this configuration. However, that hasn't materialised (there was
+>> supposed to be an IORT update, but I don't know what happened to that)
+>> and, in actual fact, the problem that you have on db845 is /far/ more
+>> restricted than the general problem.
+>>
+>> Could you please try hacking something along the following lines and see
+>> how you get on? You may need my for-joerg/arm-smmu/updates branch for
+>> all the pieces:
+>>
+>>    1. Use the ->cfg_probe() callback to reserve the SMR/S2CRs you need
+>>       "pinning" and configure for bypass.
+>>
+>>    2. Use the ->def_domain_type() callback to return IOMMU_DOMAIN_IDENTITY
+>>       for the display controller
+>>
+>> I /think/ that's sufficient, but note that it differs from the current
+>> approach because we don't end up reserving a CB -- bypass is configured
+>> in the S2CR instead. Some invalidation might therefore be needed in
+>> ->cfg_probe() after unhooking the CB.
+>>
+>> Thanks, and please yell if you run into problems with this approach.
+>>
+> 
+> This sounded straight forward and cleaner, so I implemented it...
+> 
+> Unfortunately the hypervisor is playing tricks on me when writing to
+> S2CR registers:
+> - TRANS writes lands as requested
+> - BYPASS writes ends up in the register as requested, with type FAULT
+> - FAULT writes are ignored
+> 
+> In other words, the Qualcomm firmware prevents us from relying on
+> marking the relevant streams as BYPASS type.
 
->
-> This patch seems not been applied to next branch? I haven't seen it on
-> linux-next.
-> Arnd, can you please pick it to your tree.
-> In case you need my ack:
-> Acked-by: Chunyan Zhang <chunyan.zhang@unisoc.com>
->
+Sigh... at that point I'm inclined to suggest we give up and stop trying 
+to drive these things with arm-smmu. The XZR thing was bad enough, but 
+if they're not even going to pretend to implement the architecture 
+correctly then I'm not massively keen to continue tying the 
+architectural driver in further knots if innocent things like 
+CONFIG_IOMMU_DEFAULT_PASSTHROUGH are going to unexpectedly and 
+catastrophically fail. We have qcom-iommu for hypervisor-mediated SMMUs, 
+and this new hypervisor behaviour sounds to me more like "qcom-iommu++" 
+with reassignable stream-to-context mappings, rather than a proper Arm 
+SMMU emulation.
 
-Ok, I applied it on the arm/drivers branch now, thanks for following
-up on this!
+> Instead Qualcomm seems to implement "bypass" by setting up stream
+> mapping, of TRANS type, pointing to a context bank without
+> ARM_SMMU_SCTLR_M set.
 
-       Arnd
+...which arm-smmu specifically does not do because it's a silly waste of 
+resources - typically context banks are even scarcer than S2CRs.
+
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
