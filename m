@@ -2,106 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7B0E1ECE29
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 13:21:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B587B1ECE36
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 13:23:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QuIEfeMVSpgsxbyiFFy4RZUIvyFSPpNKDrJI3U2u0B8=; b=qdkdA3ktZMHyQP
-	aBL7pDUs+/DoxmKLdSKTFDkD3Qnsb9hpdJNdgcxCu0GdQZQATSB/KdcAqyKelGStrr8xvKB+aK5Vk
-	l9GyDaYcPJPUeYjfJXaN6XOSjyFZVUtSBrS3FDfjWqw/X8j0HCVh5KD2dS0kgTEP8a+95abkmSIih
-	uzF/18n4oSEECzTFhq6h7kszQFkFkbGyPE26Sg+yah6/MqmWsXSbLePJ+YbIzsGP6ExBBo6RuqFci
-	NIqcT8+gIYqBSonUBhkvNiznqC8fZ8t5KOUuluyYyf3h97EcCbiqfl3pNAlCTKcNhnvLSsNrQN0p1
-	r00LXD+ooaoiI0vZfFfw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3uVj5R7+dzOermEI/t90EZ9n5tRZtDNvh1ZWm05OCPM=; b=cw1kXthXvfG+/b
+	wDR1dPYWlsj07RN3E1V0I7gwTJ4CMQjkR/kWY+9qaExIWH7lR2BWDl95ssrTOZB/PQ/AgtxFUqqjB
+	ZiGuGeuOhA4Q42rwnmdqBn3aAKafbv6SBv7Ez/VrY6FCDoEW25OOW5XkB9dUuuOejPLVeuivsMyv0
+	xMz65Rw47cM6G5A8x9j5jcKWDL1ISDxKc3OUB80NBiVQArAggojYufGmADaza5jOmx0vBbqdp+9U3
+	scdgKWsJAVtCGQnW8jfoeBC/EpslGDUz6phm4te+CfFJ0Ay+KJB4p8Vxf9Qm3tnKxe1gnE1aLLcrr
+	U2FYVSOdC5ua6VbfyQ+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgRSm-0006z2-0B; Wed, 03 Jun 2020 11:21:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgRSd-0006yX-Kr
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 11:21:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6916531B;
- Wed,  3 Jun 2020 04:21:29 -0700 (PDT)
-Received: from [192.168.2.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 43F343F305;
- Wed,  3 Jun 2020 04:21:28 -0700 (PDT)
-Subject: Re: [PATCH v3 04/20] arm64: dts: arm: vexpress: Move fixed devices
- out of bus node
-To: Rob Herring <robh@kernel.org>
-References: <20200513103016.130417-1-andre.przywara@arm.com>
- <20200513103016.130417-5-andre.przywara@arm.com>
- <20200528024810.GA232303@roeck-us.net>
- <48afb8bb-a22a-54df-7751-55b7b84c3c88@arm.com>
- <22687572-becf-7b4e-9759-cfba44677a1d@arm.com>
- <CAL_JsqLgNDd-+rrYD=Y0Hm=NaV7f0NbBFb9uhhYhzM6LjxnXZg@mail.gmail.com>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
- 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
- i4aIXCH3Wv6K
-Organization: ARM Ltd.
-Message-ID: <1d111f40-1702-7ea0-825f-ab08d77353e9@arm.com>
-Date: Wed, 3 Jun 2020 12:20:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+	id 1jgRUZ-0007hR-I1; Wed, 03 Jun 2020 11:23:31 +0000
+Received: from conssluserg-03.nifty.com ([210.131.2.82])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgRUQ-0007gn-CJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 11:23:24 +0000
+Received: from mail-ua1-f52.google.com (mail-ua1-f52.google.com
+ [209.85.222.52]) (authenticated)
+ by conssluserg-03.nifty.com with ESMTP id 053BN72Q023973
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 3 Jun 2020 20:23:08 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com 053BN72Q023973
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1591183388;
+ bh=xjRCifcSCtm0rrzAoDGYByWsSKjvtSoXdERdT8toBEA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=F2d5LUtktqMzfbhWZOP7Lm2J3Hvl0Ltg7C0RSlrjhnowuIIQoQ5sNAzk4pJdUPt4J
+ QX6TiObzeoVq9AiskuvUBVy7/uZGka2XRVtKpU3SGexvBs2s7phSDFQcmihtyPzbqI
+ spy1IqvX++M97ARBlmNVZ0DuHWbi0C5iu7jI3BscFawBbSB0r6ZCXotxi7MxdE/nXc
+ cu3jmQ1bTXg6cD76j4jb7K0vMhKK6hZROmEM23gRRSPk1Rh59vHs9ixxqI9xHuvy8Q
+ PAxsndZLFN3h/kJ2qDXJyeo700LrNAhPJwwHtRLm+KuWDARVup20SKGV+g8xXtmt90
+ refORrn4IwAhw==
+X-Nifty-SrcIP: [209.85.222.52]
+Received: by mail-ua1-f52.google.com with SMTP id r9so721011ual.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jun 2020 04:23:08 -0700 (PDT)
+X-Gm-Message-State: AOAM533TN8//RjihsQU046gIh8ekofP+snkHrxN9hq/WL4pxC474X1Vf
+ 8MHEIjukJSqiFFH21lEK2hHbTZ7HppO+/88kdcc=
+X-Google-Smtp-Source: ABdhPJwM2bnRdGpy1EPn6Efl/rptchM35rdOn8jA4NCkq5d1S8uIE7q2Gpun2IB6EFvGLZVxNpl6kJ0r2Fg7nnWTl1U=
+X-Received: by 2002:a9f:2204:: with SMTP id 4mr21662596uad.40.1591183386891;
+ Wed, 03 Jun 2020 04:23:06 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAL_JsqLgNDd-+rrYD=Y0Hm=NaV7f0NbBFb9uhhYhzM6LjxnXZg@mail.gmail.com>
-Content-Language: en-US
+References: <20200603053313.3863761-1-masahiroy@kernel.org>
+ <CAMj1kXGk-2pyTZ3yNW14Kk4fvtsNOb7maAHVM2C=vVAjaaFRug@mail.gmail.com>
+ <CAK7LNARg70FrTmnuoUiLM6KWxeJ+AeXqgB53GS6sY7z0J+qH6g@mail.gmail.com>
+ <CAMj1kXFxmgQ=YzmLNnMO-2gibSGQ1=tXBd07ntqCYYU122zEUw@mail.gmail.com>
+ <CAK7LNARLUeuiu3Y1cFqT7550MaF8fnBmMTZxKEG0Cy3vpxVkMQ@mail.gmail.com>
+ <CAMj1kXFKuMoYW8Sj=DHeYBSkWyeu+QgP9=fgET83K5D=-DsJ7Q@mail.gmail.com>
+ <CAK7LNAR3YqmSWh_GkXdP+2tb83sOpySeXVi-kP=1eehcD5097Q@mail.gmail.com>
+ <CAMj1kXHcRuQXPej9_H_jnno516BnuFrPRqzp1+6xN-odckEMJg@mail.gmail.com>
+In-Reply-To: <CAMj1kXHcRuQXPej9_H_jnno516BnuFrPRqzp1+6xN-odckEMJg@mail.gmail.com>
+From: Masahiro Yamada <masahiroy@kernel.org>
+Date: Wed, 3 Jun 2020 20:22:29 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQ_YMfjucip8eFBod1TBMUqGgnYebBeP22dZ4J7ZsFXeg@mail.gmail.com>
+Message-ID: <CAK7LNAQ_YMfjucip8eFBod1TBMUqGgnYebBeP22dZ4J7ZsFXeg@mail.gmail.com>
+Subject: Re: [PATCH] efi/libstub: refactor Makefile to not use lib-y syntax
+To: Ard Biesheuvel <ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_042132_265559_279722C3 
-X-CRM114-Status: GOOD (  25.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200603_042322_764610_A7854D4F 
+X-CRM114-Status: GOOD (  29.59  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.82 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -113,85 +89,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Liviu Dudau <liviu.dudau@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Guenter Roeck <linux@roeck-us.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-efi <linux-efi@vger.kernel.org>, Kees Cook <keescook@chromium.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Atish Patra <atish.patra@wdc.com>, Arvind Sankar <nivedita@alum.mit.edu>,
+ Will Deacon <will@kernel.org>, Ingo Molnar <mingo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDIvMDYvMjAyMCAwMDoxMiwgUm9iIEhlcnJpbmcgd3JvdGU6CgpIaSwKCj4gT24gTW9uLCBK
-dW4gMSwgMjAyMCBhdCA0OjE1IEFNIEFuZHLDqSBQcnp5d2FyYSA8YW5kcmUucHJ6eXdhcmFAYXJt
-LmNvbT4gd3JvdGU6Cj4+Cj4+IE9uIDI4LzA1LzIwMjAgMTQ6MzAsIEFuZHLDqSBQcnp5d2FyYSB3
-cm90ZToKPj4KPj4gSGksCj4+Cj4+PiBPbiAyOC8wNS8yMDIwIDAzOjQ4LCBHdWVudGVyIFJvZWNr
-IHdyb3RlOgo+Pj4KPj4+IEhpIEd1ZW50ZXIsCj4+Pgo+Pj4+IE9uIFdlZCwgTWF5IDEzLCAyMDIw
-IGF0IDExOjMwOjAwQU0gKzAxMDAsIEFuZHJlIFByenl3YXJhIHdyb3RlOgo+Pj4+PiBUaGUgZGV2
-aWNldHJlZSBjb21waWxlciBjb21wbGFpbnMgd2hlbiBEVCBub2RlcyB3aXRob3V0IGEgcmVnIHBy
-b3BlcnR5Cj4+Pj4+IGxpdmUgaW5zaWRlIGEgKHNpbXBsZSkgYnVzIG5vZGU6Cj4+Pj4+IFdhcm5p
-bmcgKHNpbXBsZV9idXNfcmVnKTogTm9kZSAvYnVzQDgwMDAwMDAvbW90aGVyYm9hcmQtYnVzL3Jl
-ZmNsazMya2h6Cj4+Pj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgbWlzc2luZyBvciBlbXB0
-eSByZWcvcmFuZ2VzIHByb3BlcnR5Cj4+Pj4+Cj4+Pj4+IE1vdmUgdGhlIGZpeGVkIGNsb2Nrcywg
-dGhlIGZpeGVkIHJlZ3VsYXRvciwgdGhlIGxlZHMgYW5kIHRoZSBjb25maWcgYnVzCj4+Pj4+IHN1
-YnRyZWUgdG8gdGhlIHJvb3Qgbm9kZSwgc2luY2UgdGhleSBkbyBub3QgZGVwZW5kIG9uIGFueSBi
-dXNzZXMuCj4+Pj4+Cj4+Pj4+IFNpZ25lZC1vZmYtYnk6IEFuZHJlIFByenl3YXJhIDxhbmRyZS5w
-cnp5d2FyYUBhcm0uY29tPgo+Pj4+Cj4+Pj4gVGhpcyBwYXRjaCByZXN1bHRzIGluIHRyYWNlYmFj
-a3Mgd2hlbiBib290aW5nIHRoZSB2ZXhwcmVzcy1hMTUgbWFjaGluZQo+Pj4+IHdpdGggdmV4cHJl
-c3MtdjJwLWNhMTUtdGMxIGRldmljZXRyZWUgZmlsZSBpbiBxZW11LiBSZXZlcnRpbmcgaXQgYXMg
-d2VsbAo+Pj4+IGFzIHRoZSBzdWJzZXF1ZW50IHBhdGNoZXMgYWZmZWN0aW5nIHRoZSBzYW1lIGZp
-bGUgKHRvIGF2b2lkIHJldmVydAo+Pj4+IGNvbmZsaWN0cykgZml4ZXMgdGhlIHByb2JsZW0uCj4+
-Pgo+Pj4gTWFueSB0aGFua3MgZm9yIHRoZSBoZWFkcyB1cCEgSSB3YXMgYWJsZSB0byByZXByb2R1
-Y2UgaXQgaGVyZS4gT24gdGhlCj4+PiBmaXJzdCBnbGFuY2UgaXQgbG9va3MgbGlrZSB0aGUgVUFS
-VCBpcyBwcm9iZWQgYmVmb3JlIHRoZSBjbG9ja3Mgbm93LAo+Pj4gYmVjYXVzZSB0aGUgdHJhdmVy
-c2FsIG9mIHRoZSBjaGFuZ2VkIERUIGxlYWRzIHRvIGEgZGlmZmVyZW50IHByb2JlCj4+PiBvcmRl
-ci4gSSB3aWxsIGxvb2sgaW50byBob3cgdG8gZml4IHRoaXMuCj4+Cj4+IFR1cm5lZCBvdXQgdG8g
-YmUgYSBiaXQgbW9yZSBjb21wbGljYXRlZDoKPj4gVGhlIGFybSx2ZXhwcmVzcyxjb25maWctYnVz
-IGRyaXZlciB3YWxrcyB1cCB0aGUgZGV2aWNlIHRyZWUgdG8gZmluZCBhCj4+IGFybSx2ZXhwcmVz
-cyxzaXRlIHByb3BlcnR5IFsxXS4gV2l0aCB0aGlzIHBhdGNoIHRoZSBmaXJzdCBwYXJlbnQgbm9k
-ZQo+PiB3aXRoIHRoYXQgcHJvcGVydHkgaXQgZmluZHMgaXMgbm93IHRoZSByb290IG5vZGUsIHdp
-dGggdGhlIHdyb25nIHNpdGUgSUQKPj4gKDB4ZiBpbnN0ZWFkIG9mIDB4MCkuIFNvIGl0IHF1ZXJp
-ZXMgdGhlIHdyb25nIGNsb2NrcyAodGhvc2UgSURzIGFyZQo+PiBhY3R1YWxseSByZXNlcnZlZCB0
-aGVyZSksIGFuZCBRRU1VIHJlcG9ydHMgYmFjayAiMCIsIGNvbnNlcXVlbnRseSBbMl0uCj4+IEZp
-bmRpbmcgYSBjbG9jayBmcmVxdWVuY3kgaW4gdGhlIHJhbmdlIG9mIFswLCAwXSB3b24ndCBnZXQg
-dmVyeSBmYXIuCj4+Cj4+IFBvc3NpYmxlIHNvbHV0aW9ucyBhcmU6Cj4+IDEpIEp1c3Qga2VlcCB0
-aGUgbWNjIGFuZCBpdHMgY2hpbGRyZW4gYXQgd2hlcmUgaXQgaXMgaW4gbWFpbmxpbmUgcmlnaHQK
-Pj4gbm93LCBzbyAqcGFydGx5KiByZXZlcnRpbmcgdGhpcyBwYXRjaC4gVGhpcyBoYXMgdGhlIHBy
-b2JsZW0gb2Ygc3RpbGwKPj4gcHJvZHVjaW5nIGEgZHRjIHdhcm5pbmcsIHNvIGtpbmQgb2YgZGVm
-ZWF0cyB0aGUgcHVycG9zZSBvZiB0aGlzIHBhdGNoLgo+Pgo+PiAyKSBBZGQgYSAiYXJtLHZleHBy
-ZXNzLHNpdGUgPSA8MD47IiBsaW5lIHRvIHRoZSAibWNjIiBub2RlIGl0c2VsZi4KPj4gV29ya3Ms
-IGJ1dCBsb29rcyBzb21ld2hhdCBkb2RneSwgYXMgdGhlIG1jYyBub2RlIHNob3VsZCByZWFsbHkg
-YmUgYQo+PiBjaGlsZCBvZiB0aGUgbW90aGVyYm9hcmQgbm9kZSwgYW5kIHdlIHNob3VsZCBub3Qg
-aGFjayBhcm91bmQgdGhpcy4KPj4KPj4gMykgRGlnIGRlZXBlciBhbmQgZml4IHRoZSBEVCBpbiBh
-IHdheSB0aGF0IG1ha2VzIGR0YyBoYXBweS4gTWlnaHQKPj4gaW52b2x2ZSAoZHVtbXk/KSByYW5n
-ZXMgb3IgcmVnIHByb3BlcnRpZXMuIE15IGd1dCBmZWVsaW5nIGlzIHRoYXQKPj4gYXJtLHZleHBy
-ZXNzLXN5c3JlZyxmdW5jIHNob3VsZCByZWFsbHkgaGF2ZSBiZWVuICJyZWciIGluIHRoZSBmaXJz
-dAo+PiBwbGFjZSwgYnV0IHRoYXQncyB0b28gbGF0ZSB0byBjaGFuZ2Ugbm93LCBhbnl3YXkuCj4+
-Cj4+IEkgd2lsbCBwb3N0IDIpIGFzIGEgZml4IGlmIDMpIHR1cm5zIG91dCB0byBiZSBub3QgZmVh
-c2libGUuCj4gCj4gSSB3b3VsZCBqdXN0IGRvIDEpLgo+IAo+IFRvIHNvbWUgZXh0ZW50LCB0aGUg
-d2FybmluZ3MgYXJlIGZvciBhdm9pZGluZyBwb29yIGRlc2lnbiBvbiBuZXcKPiBiaW5kaW5ncy4g
-V2UgbmVlZCBhIHdheSB0byBkaXN0aW5ndWlzaCBiZXR3ZWVuIGV4aXN0aW5nIGJvYXJkcyBhbmQg
-bmV3Cj4gb25lcy4gTWF5YmUgZHRzIG5lZWRzIHRvIGxlYXJuIHNvbWUgd2FybmluZyBkaXNhYmxl
-IGFubm90YXRpb25zIG9yIHdlCj4gbmVlZCBwZXIgdGFyZ2V0IHdhcm5pbmcgc2V0dGluZ3MgKERU
-Q19GTEFHU19mb28uZHRiID8pLiBPciBtYXliZSB0aGlzCj4gY2hlY2sgaXMganVzdCB0b28gc3Ry
-aWN0LgoKU28gSSB3YXMgYWx3YXlzIHdvbmRlcmluZyBhYm91dCB0aGlzIGNoZWNrLCBhY3R1YWxs
-eS4gQSBzaW1wbGUtYnVzCmRlc2NyaWJlcyBhIGJ1cyB3aGljaCBpcyBtYXBwZWQgaW50byB0aGUg
-Q1BVIGFkZHJlc3Mgc3BhY2UgKGluIGNvbnRyYXN0CnRvIHNheSBhbiBJMkMgYnVzLCBmb3IgaW5z
-dGFuY2UpLiBTbyBjaGlsZHJlbiBvZiB0aGlzIGJ1cyBub2RlIHR5cGljYWxseQpoYXZlIGEgcmVn
-IHByb3BlcnR5LgoKTm93IGFsc28gdGhvc2Ugc2ltcGxlLWJ1cyBub2RlcyBzZWVtIHRvIGJlIHVz
-ZWQgdG8gbG9naWNhbGx5IGdyb3VwCmhhcmR3YXJlIGluIGEgRFQgKHNlZSB0aGlzICJtb3RoZXJi
-b2FyZCIgbm9kZSBoZXJlKS4gKklmKiB3ZSBnbyB3aXRoCnRoaXMsIHdlIHNob3VsZCBhbHNvIGFs
-bG93IG90aGVyIHN1Ym5vZGVzLCBmb3IgaW5zdGFuY2UgZml4ZWQtY2xvY2tzOgphZnRlciBhbGwg
-dGhlcmUgaXMgcHJvYmFibHkgYW4gYWN0dWFsIGZpeGVkIGNyeXN0YWwgb3NjaWxsYXRvciBvbiB0
-aGUKbW90aGVyYm9hcmQsIHNvIGl0IHdvdWxkIGFsc28gYmVsb25nIGluIHRoZXJlLgpJIHNlZSB0
-aGF0IChhYil1c2luZyBzaW1wbGUtYnVzIGZvciAqanVzdCogZ3JvdXBpbmcgbm9kZXMgaXMgcHJv
-YmFibHkKbm90IGEgZ29vZCBkZXNpZ24sIGJ1dCBJIGRvbid0IHNlZSB3aHkgKmV2ZXJ5KiBjaGls
-ZCBtdXN0IGJlIG1hcHBlZCBpbnRvCnRoZSBhZGRyZXNzIHNwYWNlLgoKTWF5YmUgZHRjJ3Mgc2lt
-cGxlLWJ1cyBjaGVjayBzaG91bGQgaW5kZWVkIGJlIHJlbGF4ZWQsIHRvIGp1c3QgcmVxdWlyZQoq
-YXQgbGVhc3Qgb25lKiBjaGlsZCB3aXRoIGEgcmVnIG9yIHJhbmdlcyBwcm9wZXJ0eSwgYnV0IGFs
-c28gYWxsb3cgb3RoZXIKbm9kZXM/CgpDaGVlcnMsCkFuZHJlCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, Jun 3, 2020 at 6:16 PM Ard Biesheuvel <ardb@kernel.org> wrote:
+>
+> On Wed, 3 Jun 2020 at 11:15, Masahiro Yamada <masahiroy@kernel.org> wrote:
+> >
+> > On Wed, Jun 3, 2020 at 6:02 PM Ard Biesheuvel <ardb@kernel.org> wrote:
+> > >
+> > > On Wed, 3 Jun 2020 at 10:59, Masahiro Yamada <masahiroy@kernel.org> wrote:
+> > > >
+> > > > On Wed, Jun 3, 2020 at 5:45 PM Ard Biesheuvel <ardb@kernel.org> wrote:
+> > > > >
+> > > > > On Wed, 3 Jun 2020 at 10:36, Masahiro Yamada <masahiroy@kernel.org> wrote:
+> > > > > >
+> > > > > > On Wed, Jun 3, 2020 at 3:45 PM Ard Biesheuvel <ardb@kernel.org> wrote:
+> > > > > > >
+> > > > > > > On Wed, 3 Jun 2020 at 07:34, Masahiro Yamada <masahiroy@kernel.org> wrote:
+> > > > > > > >
+> > > > > > > > Documentation/kbuild/makefiles.rst says:
+> > > > > > > >
+> > > > > > > >   Use of lib-y is normally restricted to `lib/` and `arch/*/lib`.
+> > > > > > > >
+> > > > > > > > I want to disallow lib-y outside of them.
+> > > > > > > >
+> > > > > > >
+> > > > > > > Why?
+> > > > > >
+> > > > > >
+> > > > > > Because I plan to remove lib-y entirely at some point.
+> > > > > >
+> > > > > > lib-y is not so useful to shrink the image size because:
+> > > > > >
+> > > > > >   - An object in lib.a can be omitted only when no symbol
+> > > > > >     in that object is referenced.  This rarely happens.
+> > > > > >
+> > > > > >   -  lib-y objects are often exported by nature
+> > > > > >      because lib-y is a collection of utility functions.
+> > > > > >      Even if no in-tree user, we always need to keep them
+> > > > > >      because EXPORT_SYMBOL() is the interface to modules.
+> > > > > >
+> > > > > >
+> > > > > > When I worked on commit 7273ad2b08f8ac9563579d16a3cf528857b26f49,
+> > > > > > I made some research.
+> > > > > >
+> > > > > > The benefit of lib-y is just 362 byte for x86_64_defconfig.
+> > > > > > ( Before: 26578002, After: 26578364)
+> > > > > >
+> > > > > > My hope is lib-y will be replaced by dead-code elimination or
+> > > > > > ultimately by LTO.
+> > > > > >
+> > > > > > drivers/firmware/efi/libstub/Makefile
+> > > > > > is the only Makefile that breaks the rule:
+> > > > > > "Use of lib-y is normally restricted to `lib/` and `arch/*/lib`"
+> > > > > >
+> > > > > >
+> > > > > >
+> > > > > >
+> > > > > > >
+> > > > > > > > Add a custom rule to build lib.a, which is linked to the decompressor
+> > > > > > > > for ARCH=x86, ARCH=arm.
+> > > > > > > >
+> > > > > > > > For ARCH=arm64, use obj-y to link objects to vmlinux in the ordinary
+> > > > > > > > way.
+> > > > > > > >
+> > > > > > >
+> > > > > > > The code works perfectly fine as is, and I don't see what is
+> > > > > > > fundamentally wrong with using static libraries outside of lib/ and
+> > > > > > > arch/*/lib.
+> > > > > >
+> > > > > > The intended usage of lib-y is to hook lib.a
+> > > > > > to scripts/vmlinux.sh via KBUILD_VMLINUX_LIBS.
+> > > > > >
+> > > > > > This Makefile is just what you found to work.
+> > > > > >
+> > > > > >
+> > > > > > >
+> > > > > > > Also, I would like this code to still be incorporated as a static
+> > > > > > > library into arm64 as well, so that only pieces that are actually
+> > > > > > > needed are incorporated into the final image.
+> > > > > >
+> > > > > > No.
+> > > > > > It is not working like that because you set
+> > > > > > lib.a to core-y.
+> > > > > >
+> > > > > > All objects in core-y are always linked to vmlinux.
+> > > > > >
+> > > > >
+> > > > > The lib.a file is passed to the linker as a static library, so it will
+> > > > > only grab what it needs.
+> > > > >
+> > > > > For instance, if you build arm64 from mainline today, the
+> > > > > efi_relocate_kernel will not be in the final image, even though it is
+> > > > > built as part of libstub
+> > > >
+> > > >
+> > > > I built today's mainline kernel
+> > > > (d6f9469a03d832dcd17041ed67774ffb5f3e73b3).
+> > > >
+> > > >
+> > > > I see it in vmlinux.
+> > > >
+> > > >
+> > > > $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-  defconfig
+> > > > $ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-  -j24
+> > > >     ...
+> > > > $ aarch64-linux-gnu-nm  -n  vmlinux | grep  efi_relocate_kernel
+> > > > ffff8000114afb90 t __efistub_efi_relocate_kernel
+> > > >
+> > >
+> > > That is strange. I tested this before, and it worked.
+> > >
+> > > Did anything change recently in the way the linker is invoked?
+> >
+> >
+> > Nothing recently.
+> >
+> > This is obvious result because
+> > drivers/firmware/efi/libstub/lib.a
+> > is passed after ----whole-archive flag.
+> >
+> >
+> > I guess the following commit is it,
+> > but it is already 3 years ago.
+> >
+>
+> Right.
+>
+> So that means there is no point at all in using static libraries, no?
+> Or does --whole-archive still allow duplicate definitions like static
+> libraries do usually?
+
+
+--whole-archive literally links the whole of the archive.
+If there are duplicate definitions, the linking fails
+due to multiple definition.
+So, --whole-archive is similar to linking .o files
+in this regard.
+
+
+There is a point for arm and x86 because
+the decompressor link does not use --whole-archive.
+
+As for arm64, there is no point,
+but you can pass lib.a after --no-whole-archive
+by the following patch.
+
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 650e1185c190..48a6afa774fc 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -145,7 +145,7 @@ export      TEXT_OFFSET
+
+ core-y         += arch/arm64/
+ libs-y         := arch/arm64/lib/ $(libs-y)
+-core-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
++libs-$(CONFIG_EFI_STUB) += $(objtree)/drivers/firmware/efi/libstub/lib.a
+
+ # Default target when executing plain make
+ boot           := arch/arm64/boot
+
+
+
+Then, _efistub_efi_low_alloc_above
+and __efistub_efi_relocate_kernel will be dropped.
+
+
+If you like the static library
+do you want me to send v2?
+
+
+-- 
+Best Regards
+Masahiro Yamada
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
