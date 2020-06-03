@@ -2,77 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 514861ECB11
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 10:08:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E73381ECB6A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 10:24:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q84oi+lnX24QUdpccQLPQv9l7D9rDtAefhAYrqrf5lg=; b=l1Dbqo8UYBVyfb
-	vbghLWNoNzqpfaG2oQLd8szDog0fzlwysOg/1Ij3yFZC0IX07oz4Cp5w+gXU8eEkLjmWrE/L9ePxb
-	YA5wW5FkFPA98D6K2+zmmiBCV57tZg35p+YwgUnHQU6xYHquLpLwKzAM/Vzvgo7/CB/6AhizNStE3
-	xv49p63BSw5AIJ9ejXhih9lqxiSB+/p1D53V94cHKg7V115DUPg8X+ou608npaB8cti7Bnd4Xphbj
-	M7ZDaf/9Cv2fqyvOkUAKDXYczxkzwunmzPGl40QsuUbFwmGOrWqXd7RtD+LABU4uQF9wlld1u8srb
-	K/xp0voOILGDG57CPOdA==;
+	List-Owner; bh=lzpLXqaIB1nL/WFvA785GStVmUJZASq/89UAL5n9oMA=; b=H5DPoue92HKt/z
+	kDw21RfsLtQh1EuS9iFGwz9oxc1rYHqoF4MQaVc0RZaE04J4msh8FpMabLvNUZD8xawCDCiJlF2Tq
+	DEhRXidqjRtCe5dogVoAE8WpMrKF89zwl2UcMXgXZzlt4ShdA1QlNxOrR1gi0aHE74WsHTEabxx+F
+	uTyX1N9/l59sCuGf0hCWd5HSOEyCr0Og6SCbjSoR1nxSSU3ul54bMbSFMt25gcOb0Ir/F/Nj5tTYS
+	B9BMLFv87JPRBn/19LkThBOTKiNfxeyQRYB+CN+iP4OEmtPGGB1yqJq6MRjFdk/Cq5Vo432Zb6PQx
+	7sXvkMNWKxMbTKBdyiFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgORZ-0003cM-PY; Wed, 03 Jun 2020 08:08:13 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jgOhD-0006Xg-JH; Wed, 03 Jun 2020 08:24:23 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgORK-0003ZH-9C
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 08:08:00 +0000
-Received: by mail-lj1-x244.google.com with SMTP id m18so1547967ljo.5
+ id 1jgOh5-0006XJ-Bg
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 08:24:16 +0000
+Received: by mail-wm1-x341.google.com with SMTP id v19so999011wmj.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jun 2020 01:07:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qm1Fufz0OVB6tfCS+0Zsp1jGFDeHl0Qe2Wk3cNVFIjE=;
- b=em6VoVH3kTta5GgGnR4yxb0C9pC1Go/C30Wl2dHtASemgL3MKbw20qcTF6Xp/bqged
- RqOiCSv36QuACxRruwObvBTcwUk07Vmv1pRD7jpaD80GjeML6wGVdnohnXhDpk4O6+vj
- CYcJiJHrTqBZ0vrJitGDSVZcpdMJoTTeyYXQ6IKOQcGDkoR5aMwVFg1dMeW+q79MUbvm
- UM03uTMHvxOc+IDw/fvKIk3IgDSfh7K96pi/PSu+HgDag/sDDXiL0MFQeFJsr7+wOAHd
- jiR0M0thaeIfsT1hu5gedkVkCI75yMeGExpSo9+ia+XoHXJRolqp+4yzG5CkerIzUioR
- nkaw==
+ Wed, 03 Jun 2020 01:24:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=date:from:to:cc:subject:message-id:mail-followup-to:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=qRRViGgr/XMXuK899gyJpd+glkMI9g3TUAqhc5bIdms=;
+ b=diAPk9NzqmTTMCUpwWl/9I43wRC0s9YisBeaJ3i/Ao27NvMQV2tq0o/amb5EsgN5Dc
+ m7UOzOkQ1IcJFbc/rP+zbfrn4e78xzB8fxvBTJwqpUCIS+KXHxZzWv0fJ8aqglCSFuUF
+ PsgSO47gzy0i41trTDnIz8ohkR0xLziwSCsy0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qm1Fufz0OVB6tfCS+0Zsp1jGFDeHl0Qe2Wk3cNVFIjE=;
- b=ccjVDKbvNB2VMbwJaYwaBldkh3+FiC3LL1NB0DLWz8qywthaUmOgjpRRFGkNASeGBV
- n6D0GwuNlAWGo3WybjaJQaCrhk3YK1UYjQbTl6IgGisDcGwi+ZIl3wZlO5QWYJyheZmJ
- 8cbQoRr23CHN4Y7UXPWVoUZogmGmZelbYdXyfyElc3elfKP/u8EsjS5fNwykHzc6lRre
- GvMLQ/aEk+XS3owWaS1J3vp4ZdFHzTMaZgsu6/U2U5sP1two/VBYgCFctF64Pa+k3VGT
- myOiEUl5MlMzK5bI+BHg34eqF8Jiwj3/Zv1gGhqSS9OOQryS4EJVXjxv+jSGVQ7t9xsX
- KLTA==
-X-Gm-Message-State: AOAM53274/5dlXMJiByS+sn4DW9i6+0YHkPlcLuo7x3O1EIlKZhKOvjh
- NxJqESNRuKNOzp7IHno3l5R3wUQR16mf6WU2oxEkZQ==
-X-Google-Smtp-Source: ABdhPJxcPvpE6Kivg7poyIQDKjTdaR1zLLkk4Fmt5UIvp5/hGBWWhPNMg87+/+CuxmPgVa3FetzyOOjx5sQTccuyCM0=
-X-Received: by 2002:a05:651c:1103:: with SMTP id
- d3mr1553238ljo.110.1591171676264; 
- Wed, 03 Jun 2020 01:07:56 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :in-reply-to;
+ bh=qRRViGgr/XMXuK899gyJpd+glkMI9g3TUAqhc5bIdms=;
+ b=FtXcQ7hS0DCQDnDP6Q3T3y0QOHMDh8XDaF0FR6uW84S0t10PlI7WAnsU/lwHJZKNVW
+ MJztwpxporqrfOCCw2vxUHZ+QRWXj44bqYrxhKgGSOYfmUICVK0jUipAmzX/AijIOMHn
+ BdQYdPmuIgKjLpqwGFCwL+naLQpHWOf1wmFjXSUlcYjU4bKuedAUuRNsgk+UxvzH46H/
+ SbPU3ukl75jsxm9PfXGBZHt8+2xduR6KGsE8APY2rkOLr6+iSXRIltdPCh2XqQA3ZYMz
+ YuUy91Yqhkm2m++0qfOvh+1Idvj5iCVqI8RwvLtK8aHXZUVLCOIzf/K5Js0jG+hsYcCr
+ HpbQ==
+X-Gm-Message-State: AOAM531mVi2J6RqHJJcGCYHg8AzHqAmzOXf3RB0bwuHThMpPgPpg/qsR
+ g78FKJfx/nfrv0WtI2BGibo/ag==
+X-Google-Smtp-Source: ABdhPJwF05tJg2U8YAuUBqkP69xy0KO/yd1uPSYB+TFlsp2LQxAA+L8XZMe3ryw0UOWY+kevnffgNw==
+X-Received: by 2002:a05:600c:1:: with SMTP id g1mr7447279wmc.142.1591172653407; 
+ Wed, 03 Jun 2020 01:24:13 -0700 (PDT)
+Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
+ by smtp.gmail.com with ESMTPSA id p10sm2318468wra.78.2020.06.03.01.24.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 03 Jun 2020 01:24:12 -0700 (PDT)
+Date: Wed, 3 Jun 2020 10:24:11 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Jeykumar Sankaran <jsanka@codeaurora.org>
+Subject: Re: [PATCH] drm/connector: notify userspace on hotplug after
+ register complete
+Message-ID: <20200603082411.GI20149@phenom.ffwll.local>
+Mail-Followup-To: Jeykumar Sankaran <jsanka@codeaurora.org>,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Steve Cohen <cohens@codeaurora.org>, seanpaul@chromium.org
+References: <1591155451-10393-1-git-send-email-jsanka@codeaurora.org>
 MIME-Version: 1.0
-References: <1591107505-6030-1-git-send-email-sumit.garg@linaro.org>
- <1591108981.4253.17.camel@linux.ibm.com>
-In-Reply-To: <1591108981.4253.17.camel@linux.ibm.com>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Wed, 3 Jun 2020 13:37:44 +0530
-Message-ID: <CAFA6WYOoMdLJ2g3gocZBZWdu-7Nfw7LKHnzX8S8FKeC7cuNwYg@mail.gmail.com>
-Subject: Re: [PATCH v5 0/4] Introduce TEE based Trusted Keys support
-To: James Bottomley <jejb@linux.ibm.com>
+Content-Disposition: inline
+In-Reply-To: <1591155451-10393-1-git-send-email-jsanka@codeaurora.org>
+X-Operating-System: Linux phenom 5.6.0-1-amd64 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_010758_356948_C3FD20F4 
-X-CRM114-Status: GOOD (  19.21  )
+X-CRM114-CacheID: sfid-20200603_012415_396897_FC4BC6A2 
+X-CRM114-Status: GOOD (  17.99  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -92,90 +100,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
- Daniel Thompson <daniel.thompson@linaro.org>, op-tee@lists.trustedfirmware.org,
- Jonathan Corbet <corbet@lwn.net>, Janne Karhunen <janne.karhunen@gmail.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- James Morris <jmorris@namei.org>, Mimi Zohar <zohar@linux.ibm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
- linux-security-module@vger.kernel.org,
- "open list:ASYMMETRIC KEYS" <keyrings@vger.kernel.org>,
- Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>,
- Markus Wamser <Markus.Wamser@mixed-mode.de>,
- Casey Schaufler <casey@schaufler-ca.com>, linux-integrity@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Serge E. Hallyn" <serge@hallyn.com>
+Cc: linux-arm-kernel@lists.infradead.org, seanpaul@chromium.org,
+ Steve Cohen <cohens@codeaurora.org>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2 Jun 2020 at 20:14, James Bottomley <jejb@linux.ibm.com> wrote:
->
-> On Tue, 2020-06-02 at 19:48 +0530, Sumit Garg wrote:
-> > Add support for TEE based trusted keys where TEE provides the
-> > functionality to seal and unseal trusted keys using hardware unique
-> > key. Also, this is an alternative in case platform doesn't possess a
-> > TPM device.
->
-> So here's a meta problem: in the case when the platform possesses both
-> TEE and TPM  what should it do?
+On Tue, Jun 02, 2020 at 08:37:31PM -0700, Jeykumar Sankaran wrote:
+> drm connector notifies userspace on hotplug event prematurely before
+> late_register and mode_object register completes. This leads to a race
+> between userspace and kernel on updating the IDR list. So, move the
+> notification to end of connector register.
+> 
+> Signed-off-by: Jeykumar Sankaran <jsanka@codeaurora.org>
+> Signed-off-by: Steve Cohen <cohens@codeaurora.org>
 
-IMO, trust source (either a TPM or a TEE) should be unique and
-carefully chosen as per platform security policy corresponding to a
-particular threat model.
+Hm on the unregister side we don't have the race, there we remove
+everything and then send out the uevent. But there the uevent is also
+generated in a separate step, so I wonder whether we shouldn't do the same
+for register for symmetry ...
 
-And moreover TEEs have been mostly used in the embedded world where
-having a hardware TPM is cumbersome given constraints regarding BoM
-cost and hardware resources.
+Anyway this looks good, nice catch, I'll add cc: stable and merge.
+-Daniel
 
->  Things like this:
->
-> > --- a/security/keys/trusted-keys/trusted_core.c
-> > +++ b/security/keys/trusted-keys/trusted_core.c
-> > @@ -25,6 +25,8 @@
-> >
-> >  #if defined(CONFIG_TRUSTED_TPM)
-> >  static struct trusted_key_ops *trusted_key_ops =
-> > &tpm_trusted_key_ops;
-> > +#elif defined(CONFIG_TRUSTED_TEE)
-> > +static struct trusted_key_ops *trusted_key_ops =
-> > &tee_trusted_key_ops;
-> >  #else
->
-> Say it's either/or at a Kconfig level: so if you select both TEE and
-> TPM based trusted keys at compile time, we intall the TPM ops and
-> ignore the TEE ops, is that right?  Surely this should be runtime
-> selectable based on what the platform has ...
+> ---
+>  drivers/gpu/drm/drm_connector.c | 5 +++++
+>  drivers/gpu/drm/drm_sysfs.c     | 3 ---
+>  2 files changed, 5 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/drm_connector.c b/drivers/gpu/drm/drm_connector.c
+> index b1099e1..d877ddc 100644
+> --- a/drivers/gpu/drm/drm_connector.c
+> +++ b/drivers/gpu/drm/drm_connector.c
+> @@ -27,6 +27,7 @@
+>  #include <drm/drm_print.h>
+>  #include <drm/drm_drv.h>
+>  #include <drm/drm_file.h>
+> +#include <drm/drm_sysfs.h>
+>  
+>  #include <linux/uaccess.h>
+>  
+> @@ -523,6 +524,10 @@ int drm_connector_register(struct drm_connector *connector)
+>  	drm_mode_object_register(connector->dev, &connector->base);
+>  
+>  	connector->registration_state = DRM_CONNECTOR_REGISTERED;
+> +
+> +	/* Let userspace know we have a new connector */
+> +	drm_sysfs_hotplug_event(connector->dev);
+> +
+>  	goto unlock;
+>  
+>  err_debugfs:
+> diff --git a/drivers/gpu/drm/drm_sysfs.c b/drivers/gpu/drm/drm_sysfs.c
+> index 939f003..f0336c8 100644
+> --- a/drivers/gpu/drm/drm_sysfs.c
+> +++ b/drivers/gpu/drm/drm_sysfs.c
+> @@ -291,9 +291,6 @@ int drm_sysfs_connector_add(struct drm_connector *connector)
+>  		return PTR_ERR(connector->kdev);
+>  	}
+>  
+> -	/* Let userspace know we have a new connector */
+> -	drm_sysfs_hotplug_event(dev);
+> -
+>  	if (connector->ddc)
+>  		return sysfs_create_link(&connector->kdev->kobj,
+>  				 &connector->ddc->dev.kobj, "ddc");
+> -- 
+> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
+> 
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
-This dynamic selection was already part of v4 patch-set but after
-objection from Jarrko here [1], I switched to compile time mode
-instead.
-
-[1] https://lkml.org/lkml/2020/6/2/139
-
-> perhaps it should even be
-> selectable per key?
->
-> Once it is runtime selectable, what should be selected in the both
-> case?  Or should we allow the user to decide, if so, how?
->
-> when you pipe a trusted key, I think the subtype (TEE or TPM) should be
-> part of the piped information, so it loads again seamlessly.  This
-> would actually be fixed by something like the ASN.1 scheme I'm trying
-> to upstream, at least for TPM keys, but do TEE keys have a recognized
-> ASN.1 format?
->
-
-I guess this is something which we can refine later if there are real
-platforms that have a particular security requirement to support both
-TPM and a TEE.
-
--Sumit
-
-> James
->
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
