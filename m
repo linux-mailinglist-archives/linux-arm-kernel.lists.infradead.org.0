@@ -2,51 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8C031ECF39
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:02:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C1E81ECF84
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:11:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=52nZYzsRZCLTeVSZFC0XAoCKDcpdxoUDaScEMYtw+Hc=; b=QOlMCwibTkYiNWxfk/iCo6og+
-	Yu1OPdP0HhusrOuqByXlCBN1niaC9LWkqnAqj6vJutL7nG1VSikVk5cbMr65JYuIvf4q5FQNMvmYc
-	GOIQWVSVYVRUYAdOsCse2B3zzYaBxqZasnOTsbZ3pFMTg1QIY0gRJpI6GYBykx+V5RblEB2psEqWy
-	LuqxHqDCIILoFPw1hzHZcA1SDQ6/B7JBGIYfT1uP7S8KfaaTV7hyWKhAMiAHpShs1xTkIcjTZOOmW
-	n34cbGIlQ3zh9ChkGnnGt6Uk7n6ShSaaQr0J3RpDig2r/+FTE1D/zyWmB4kanA4v77gaELUyGKfHs
-	Vwnj3lCVQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K3LO88Y3Oml8QjebOcmeHmcvQdEpmW0W9fqQKJfDRkg=; b=ApY1WpY3HwHWSD
+	NrM6AT21d8FtVqIzH+JE+RYHgB6EkrXO0H2i0N05ElLT80CNNubAqeJ7+YRxzspv5a9CODc8/9zIB
+	KCFfCEkj11jrZZRRas1vii+VYxhNtXEzrrC+YcYVatiFKD+z1LKz7FnOZNRtHOHE0bi0Mwr7esIWS
+	N2mKDZa2g5+sf5MGmU7XKE1l0aHFaSe5ukq1O8Icv2/9FChU03IZYqneoRa2mX3oOWCrqgMo/3YF5
+	ce+yAeRY7NTaT4VZBHuK8W6T3DYykA4EvDsU2R/oSpOk4E7DhSsplTnLmItNoBps28NOZTQK95CU3
+	DhykvXHyXhBZ4yi1MC6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgS66-0002pt-Lg; Wed, 03 Jun 2020 12:02:18 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jgSEq-0000Ih-Ef; Wed, 03 Jun 2020 12:11:20 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgS5y-0002oh-WE; Wed, 03 Jun 2020 12:02:13 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id A1BCB2A3958
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Subject: Re: [PATCH v8 04/10] drm: bridge: dw_mipi_dsi: allow bridge daisy
- chaining
-In-Reply-To: <20200602235139.GS6547@pendragon.ideasonboard.com>
-References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
- <20200427081952.3536741-5-adrian.ratiu@collabora.com>
- <20200602235139.GS6547@pendragon.ideasonboard.com>
-Date: Wed, 03 Jun 2020 15:03:11 +0300
-Message-ID: <875zc88igw.fsf@collabora.com>
+ id 1jgSEj-0000Hg-LA
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:11:14 +0000
+Received: by mail-lj1-x241.google.com with SMTP id z9so2356064ljh.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jun 2020 05:11:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YfIwoVqhINbM8JX02JQVBFl5UwDmm1K0R0OAHvfku4E=;
+ b=aWqv3ou5Qov3U3msHumGanAGhQDq5piVnxaH/XWJmipKJsOeWVNQIztptBeNCtMWG6
+ 99b3l7r9pG46qUjWpv+WoQs+yVkeYL+OHYfJzjhbwlgDHanfANKMk5J6k2xrDF0jApcs
+ ITr+QKkVRhH2NduIS0rGnMoa1juq/PSUMUe+/Vobm+ot+3yv1cd8yFBR8RpnGpZzbD/i
+ KGvscj/DzzzJcfsZ/B2RW2XxwxgRgDyru1kGkFLZGIOB4klILxvqMmjRjUexshZjeou7
+ IWTl2Oef6qF/8FD3/+nq6Ege6qhULB4qLz6/BgG3qQflgRe1nkZ+ZiOB0fEUutqZ2TNb
+ CrWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YfIwoVqhINbM8JX02JQVBFl5UwDmm1K0R0OAHvfku4E=;
+ b=j5e7ZoPuy6CoWBbpP+J1tDYDYZ/oJOK2MQKAgdEiWnAW3DlAF22BvW0H7uczHeryMZ
+ 3regDl1KYLyd2clXKoJzTNkw1dg+cwOk48zpBsLCp/zQrsN/XXdGo7vVhHODj+7r58NA
+ PtO7xgEAm5i2AYDKUaSc2jUWWXxRzMOr2qKgK8MLLaI5J3vHO6wAX6vQYKVxAd+chmRs
+ g3cOqRBDWr94lF0fTSMJq4la1ppX4jHIetF4VHx5JH/cIg6+HRqPeEu1GyfoYpNj2j+o
+ 00/z6uGFGmbmbZ0EgDmM6xCXrxCM+QaKcGJbbM4YZWchA3CcZXhmQcoDb9DMiNMfbxcQ
+ 61XQ==
+X-Gm-Message-State: AOAM533nchZSdNT3JfDbeQV4yhu+6bpUoi4+ma2GPGKC9pTwGgL7pPtl
+ LXpurinVd5DwbK4hzIQSzluOaz0sWhUp1ajoJPJ1/g==
+X-Google-Smtp-Source: ABdhPJwGPqax4Ku+Y+HnI5jIvzA/eJkmp5Pc0XM9c3bmnH0a+2++YRcBgL324sT+NutIXiJsU51+xCLtJmEUSqS/sw4=
+X-Received: by 2002:a05:651c:112e:: with SMTP id
+ e14mr1798631ljo.338.1591186270117; 
+ Wed, 03 Jun 2020 05:11:10 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200513145935.22493-1-benjamin.gaignard@st.com>
+ <20200513145935.22493-15-benjamin.gaignard@st.com>
+In-Reply-To: <20200513145935.22493-15-benjamin.gaignard@st.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 3 Jun 2020 14:10:59 +0200
+Message-ID: <CACRpkdYu2As27M60ogUoLfX1z=XZSCSx5qTLwm5ADdf9Jy7HGQ@mail.gmail.com>
+Subject: Re: [PATCH 14/15] dt-bindings: pinctrl: stm32: Add missing interrupts
+ property
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_050211_173848_2AE92FD4 
-X-CRM114-Status: GOOD (  18.03  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200603_051113_723265_C0BE9DF5 
+X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,121 +94,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Andrzej Hajda <a.hajda@samsung.com>, linux-imx@nxp.com,
- linux-rockchip@lists.infradead.org, kernel@collabora.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ Greg KH <gregkh@linuxfoundation.org>, linux-usb <linux-usb@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 03 Jun 2020, Laurent Pinchart 
-<laurent.pinchart@ideasonboard.com> wrote:
-> Hi Adrian, 
+On Wed, May 13, 2020 at 5:00 PM Benjamin Gaignard
+<benjamin.gaignard@st.com> wrote:
 
-Hi Laurent,
-
-> 
-> Thank you for the patch. 
-> 
-> On Mon, Apr 27, 2020 at 11:19:46AM +0300, Adrian Ratiu wrote: 
->> Up until now the assumption was that the synopsis dsi bridge 
->> will directly connect to an encoder provided by the platform 
->> driver, but the current practice for drivers is to leave the 
->> encoder empty via the simple encoder API and add their logic to 
->> their own drm_bridge.   Thus we need an ablility to connect the 
->> DSI bridge to another bridge provided by the platform driver, 
->> so we extend the dw_mipi_dsi bind() API with a new "previous 
->> bridge" arg instead of just hardcoding NULL.   Cc: Laurent 
->> Pinchart <laurent.pinchart@ideasonboard.com> Signed-off-by: 
->> Adrian Ratiu <adrian.ratiu@collabora.com> --- New in v8.  --- 
->>  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c   | 6 ++++-- 
->>  drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c | 2 +- 
->>  include/drm/bridge/dw_mipi_dsi.h                | 5 ++++- 3 
->>  files changed, 9 insertions(+), 4 deletions(-) 
->>  diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c 
->> b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c index 
->> 16fd87055e7b7..140ff40fa1b62 100644 --- 
->> a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c +++ 
->> b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c @@ -1456,11 
->> +1456,13 @@ EXPORT_SYMBOL_GPL(dw_mipi_dsi_remove); 
->>  /* 
->>   * Bind/unbind API, used from platforms based on the component 
->>   framework.  */ 
->> -int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi, struct 
->> drm_encoder *encoder) +int dw_mipi_dsi_bind(struct dw_mipi_dsi 
->> *dsi, +		     struct drm_encoder *encoder, + 
->> struct drm_bridge *prev_bridge) 
->>  { int ret;  
->> -	ret = drm_bridge_attach(encoder, &dsi->bridge, NULL, 0); + 
->> ret = drm_bridge_attach(encoder, &dsi->bridge, prev_bridge, 0); 
-> 
-> Please note that chaining of bridges doesn't work well if 
-> multiple bridges in the chain try to create a connector. This is 
-> why a DRM_BRIDGE_ATTACH_NO_CONNECTOR flag has been added, with a 
-> helper to create a connector for a chain of bridges 
-> (drm_bridge_connector_init()).  This won't play well with the 
-> component framework. I would recommend using the 
-> of_drm_find_bridge() instead in the rockchip driver, and 
-> deprecating dw_mipi_dsi_bind(). 
+> Driver use interrupt-parent field so update the bindings to allow it.
 >
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 
-Thank you for this insight, indeed the bridge dw_mipi_dsi_bind() 
-is clunky and we're making it even more so by possibly 
-re-inventing drm_bridge_connector_init() with it in a way which 
-can't work (well it does work but can lead to those nasty 
-multiple-encoder corner-cases you mention).
+Patch applied.
 
-I'll address this before posting v9, to try to move to 
-of_drm_find_bridge() and remove dw_mipi_dsi_bind().
-
->>  	if (ret) {
->>  		DRM_ERROR("Failed to initialize bridge with drm\n");
->>  		return ret;
->> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
->> index 3feff0c45b3f7..83ef43be78135 100644
->> --- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
->> +++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
->> @@ -929,7 +929,7 @@ static int dw_mipi_dsi_rockchip_bind(struct device *dev,
->>  		return ret;
->>  	}
->>  
->> -	ret = dw_mipi_dsi_bind(dsi->dmd, &dsi->encoder);
->> +	ret = dw_mipi_dsi_bind(dsi->dmd, &dsi->encoder, NULL);
->>  	if (ret) {
->>  		DRM_DEV_ERROR(dev, "Failed to bind: %d\n", ret);
->>  		return ret;
->> diff --git a/include/drm/bridge/dw_mipi_dsi.h b/include/drm/bridge/dw_mipi_dsi.h
->> index b0e390b3288e8..699b3531f5b36 100644
->> --- a/include/drm/bridge/dw_mipi_dsi.h
->> +++ b/include/drm/bridge/dw_mipi_dsi.h
->> @@ -14,6 +14,7 @@
->>  #include <drm/drm_modes.h>
->>  
->>  struct drm_display_mode;
->> +struct drm_bridge;
->>  struct drm_encoder;
->>  struct dw_mipi_dsi;
->>  struct mipi_dsi_device;
->> @@ -62,7 +63,9 @@ struct dw_mipi_dsi *dw_mipi_dsi_probe(struct platform_device *pdev,
->>  				      const struct dw_mipi_dsi_plat_data
->>  				      *plat_data);
->>  void dw_mipi_dsi_remove(struct dw_mipi_dsi *dsi);
->> -int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi, struct drm_encoder *encoder);
->> +int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi,
->> +		     struct drm_encoder *encoder,
->> +		     struct drm_bridge *prev_bridge);
->>  void dw_mipi_dsi_unbind(struct dw_mipi_dsi *dsi);
->>  void dw_mipi_dsi_set_slave(struct dw_mipi_dsi *dsi, struct dw_mipi_dsi *slave);
->>  
->
-> -- 
-> Regards,
->
-> Laurent Pinchart
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
