@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA5081ECFDE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:35:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61FDB1ECFE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:36:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+1J3RUMHWve9PGLc0tuS3PKKls0mdk1B6ZFO9qKxnpo=; b=CP479iXY0jFs2v
-	qQdwOJOa2BUwgX8LlpEzR30IDRavk6DRaFoYn7a/dIvRXqLQLFhZBndCrVeMiA2TXyXdiU7j1KX5q
-	d4tDcQnK5rLTLk+ucqsxwiB3ZaFDzgL3fTW5RrGiugBTyAbIwu/mJwKT3J7xPGJQRSmQNgYBJ5egb
-	Szjp6PIeJ5lSGpH3UpZV3CplZIF1nZvJMGqBzE01qdxSdvod/uxnC+oDjKaK47W/1c7sH1K/msp3J
-	f54HSkf8hcVYqjZ8I2esuuJmUwWOTCw6HbNFyHarZGrqTtG1mmL4cHpMDBNU+YUxiQF4LzqbIC+Cq
-	rvvsOZ9oPAs13uU5b/2Q==;
+	List-Owner; bh=0K/8cpgNwZVBtCd9XuOfc2g4p33svaPDfmXE7M1dpEg=; b=SJ8gqPcYzKSWt8
+	gbJMxYIZYkywXuDYWlwNxyuD+FRXAvjpVB9EyxTOD6lw5MA4aogvZDs+9dam47oSsqF+vsNfqO7wt
+	yZgz8NnIDPS94QFdjOFlicupFHNZeJFhsYLrrLHPNfH7+pDYTVnGH2nvvebyUS9UYdSss+7iavx1Y
+	S1S8yBYBKfJ6llAd8vfux57hEn0MY/20K2rzNniIufkJjR+fT/Fne6fxbv0f22R8TYy0JnQ9XkLbX
+	1LXp7cjKeK1hCEayXNBYFKwwDpdAJrmuJ4ow/DY+TuTtbV6S2/B+LVx7t2S20K0AdnndKZagIpvQE
+	49IS7fBl6XNsXpw7sd0Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgSc0-0006ZS-D1; Wed, 03 Jun 2020 12:35:16 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jgSd6-0000s5-9q; Wed, 03 Jun 2020 12:36:24 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgSbh-0006Z2-30
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:34:58 +0000
-Received: by mail-lj1-x242.google.com with SMTP id n23so2484856ljh.7
+ id 1jgScy-0000rU-S6
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:36:18 +0000
+Received: by mail-lf1-x144.google.com with SMTP id d7so1193570lfi.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jun 2020 05:34:56 -0700 (PDT)
+ Wed, 03 Jun 2020 05:36:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=PI7pydsdlkyMsOD6xUcLp/qzxqU4rnGyfjXgCb9CfWA=;
- b=xfnWQd9oEyAsFzOPGt1mBJdArDRnh2rm2HZKJiiufZ4G3XU4PfqVW12McDu5EdvBVb
- qyfCex95T6C8Tcy86/IPyXEU3S80ASk+HARGYDiI6ViBZrc8pU4AWMn1Jqp8fW1s8W1g
- rRcyu95uIpQjRNQ0t7A8VWRPB0Gjrr7ZjNixzNhSgX334YRru7RYUn5hqcPerbW9I/vk
- IUaQ8XN78CUAtwSMO7xGQaeSOXYyu8EoTuCMR15KHfh8nAVjRMCqTcvKmwNbafE99vnv
- TaEjAvcLgbbAIs3kQ8rZcHoQPOI3s29vSI6VHexaAO6k29daJjUDM2GVsCcOKfV0FEES
- j8/g==
+ :cc; bh=2oyZw0RFpvd7NmXeAe7nEQlUj76DhyhPpaW7s64pjzo=;
+ b=nYbT+KBvLmwkQ6le6OlzAzNOKvT3Jh7p9gr61RHPWHvUzcjcnSFSjWjunQ/a14BwFl
+ RYVXP8Jd6L5c/jA8xnImgA5ldUsdUiYHYpHi7+isWWKHQ5qEaNQW1Vqzix7ErPwjSQ0/
+ PJHJl+YSh+/WG3rXz1W8TWAqLbQ5DdErtdDy7ROGhT603o53dqXT1Jf9y3q+6Mordp9+
+ e283njEu6S6F/edrVG0wwT8uBAv7JnoOe51eiNmVuASPn6I7yuwgMNGBc/kPblXDf4Cq
+ /PeGpvo+3Nqm9MB1MnLI0dWDpEybIlTrf9qaiCDVEBWudLTlwfCbPbAQOMP1aAlSvQ+6
+ fNcg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=PI7pydsdlkyMsOD6xUcLp/qzxqU4rnGyfjXgCb9CfWA=;
- b=ZeNPkRtpFGH3gafp9lO8eonSLsm1MhOMTiJIUj26PdS5bxR7jEFydDNlnFmo4jow+5
- uOp+e/cAfIaxaBXrh6MdCxLdcZWJC8vXKz3a+sh675Txya7+WIHJJ1hFUvd1RyVKFSsH
- ws31bdvHqAh64kW07qF3Uzi/OM9T+3xOywAz7l7z1nEooQ15y9Omu1G5w0mKC96DHmyL
- kbkQxQOXXoWkLQtsmwf2HHxWtBd7PW+WCJpK4Weryj+o3AqgEjXFYeLdYEQzxm3Zihoy
- 8jQYsQCRu8XMtDlTOqh3pkKQQLK7U1Mto4qmk5SqsAYWssI13td+tEHPx/DVFKDBF70d
- 0KzA==
-X-Gm-Message-State: AOAM530qoc7FkuUPWQBvNpFKRYlAwJgdFszNm/3iRankCf9ijspZOSRL
- 8Rw0lhlJxJ/91LUVJEVRXV0DtN0j7F8ZoTDxsXHFJQ==
-X-Google-Smtp-Source: ABdhPJwzUPzaqApWBasR0U8pnoYQewI2Zvey0OigUC/P5cfEYrETfElS5dHa5BQgryE1VDaIwAKQXp5y9hxab/Kb4RY=
-X-Received: by 2002:a2e:350a:: with SMTP id z10mr1926898ljz.104.1591187695709; 
- Wed, 03 Jun 2020 05:34:55 -0700 (PDT)
+ bh=2oyZw0RFpvd7NmXeAe7nEQlUj76DhyhPpaW7s64pjzo=;
+ b=PiBEB3R+lF8uxcXG/S0jKsxoSR+mqwaSf0MfS7OvTfOX0Y0ARAE8k1kI8stQUqL7nK
+ ZusXfeGBrinKrJ8mRIA3fGY9Dy7jtMN1gsxslfRul63AeK3XDjb7RBboSb0Q2ifD6alL
+ Rgdlv7uBTxKBXGSZc8ryRfcpbbis/7FejBnggnBKus/BF7MeoJ842DW0LvKfxUVAflo4
+ pDwIjJzyeTm2DNiohO5tjJRAAyh20e8nEBL8P6KyAhkDPRrO4EKL+lFWk9GBXGtRmEh3
+ Qcp3bGHCcG9utPwH5bbpKS3ykXOVyTmzL9Zj8L+Nd95wt5a7lEBuZJC8LiJMwn4ehFYG
+ 6Big==
+X-Gm-Message-State: AOAM530ojOM1/tC9TE4lfcpo3+L2Ig8WeOfiBiW41LeRtAXzKAzJVH1g
+ XzuwXP1z9zwoe6YKGd69qp3l1/hymkvEyhDf7D7z9A==
+X-Google-Smtp-Source: ABdhPJwCYemYvuXwzTBpyi6T9nzWXhKBePZlC6Fv9LIFM+G4DsxpeTAyg4aaSqPz3ZBzGFeYp/yuKFfOc2jEiOJ7ASU=
+X-Received: by 2002:ac2:562b:: with SMTP id b11mr2394435lff.47.1591187775383; 
+ Wed, 03 Jun 2020 05:36:15 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200530204955.588962-1-christophe.jaillet@wanadoo.fr>
-In-Reply-To: <20200530204955.588962-1-christophe.jaillet@wanadoo.fr>
+References: <20200602200626.677981-1-christophe.jaillet@wanadoo.fr>
+In-Reply-To: <20200602200626.677981-1-christophe.jaillet@wanadoo.fr>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 3 Jun 2020 14:34:44 +0200
-Message-ID: <CACRpkdYR11Gy99N0TPCkNFoBKKQLP2x3JsnH9=_S7mxPXgYKig@mail.gmail.com>
-Subject: Re: [PATCH] pinctrl: freescale: imx: Fix an error handling path in
- 'imx_pinctrl_probe()'
+Date: Wed, 3 Jun 2020 14:36:04 +0200
+Message-ID: <CACRpkdaVcTqPcpf9jgauWEuinJG1aJm-OC7nCfFy=PvBz8UdXg@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: freescale: imx: Use 'devm_of_iomap()' to avoid a
+ resource leak in case of error in 'imx_pinctrl_probe()'
 To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_053457_128456_77FF6C63 
-X-CRM114-Status: GOOD (  12.60  )
+X-CRM114-CacheID: sfid-20200603_053616_908097_A125D168 
+X-CRM114-Status: UNSURE (   9.98  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -91,29 +92,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, kernel-janitors@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Stefan Agner <stefan@agner.ch>, Gary Bisson <gary.bisson@boundarydevices.com>,
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Adrian Alonso <aalonso@freescale.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Stefan Agner <stefan@agner.ch>,
  "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
  NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
+ Dan Carpenter <dan.carpenter@oracle.com>, Shawn Guo <shawnguo@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 30, 2020 at 10:49 PM Christophe JAILLET
+On Tue, Jun 2, 2020 at 10:06 PM Christophe JAILLET
 <christophe.jaillet@wanadoo.fr> wrote:
 
-> 'pinctrl_unregister()' should not be called to undo
-> 'devm_pinctrl_register_and_init()', it is already handled by the framework.
+> Use 'devm_of_iomap()' instead 'of_iomap()' to avoid a resource leak in
+> case of error.
 >
-> This simplifies the error handling paths of the probe function.
-> The 'imx_free_resources()' can be removed as well.
+> Update the error handling code accordingly.
 >
-> Fixes: a51c158bf0f7 ("pinctrl: imx: use radix trees for groups and functions")
+> Fixes: 26d8cde5260b ("pinctrl: freescale: imx: add shared input select reg support")
+> Suggested-by: Dan Carpenter <dan.carpenter@oracle.com>
 > Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 
 Patch applied!
