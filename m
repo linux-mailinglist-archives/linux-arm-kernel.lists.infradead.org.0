@@ -2,93 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 019F71ED110
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 15:43:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A71F1ED175
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 15:52:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=r1wRSjcbr8/knD+0gJDCRh5aAL7Db7I+le+vFeYtze4=; b=b5egB/dSrc4gAl3vBXJVpvrdD
-	6pDWfCHJh84P+uJE4YSodhw3PuStG0G9b4M5KFr8ZVicwTbyworax3mCOG9tcc3Rg46LzD8UJjgnh
-	EEDwzW8Yy2xpkieNb7MHbqQTaK54S7K975ZS5d6r0qQ5iZ/00HOP3T0Dy8TOhd5ZZqIgHSzvNmnQP
-	r+zdipE4uAFDfURARjcCTRDH21Osi8VTEe+PZAbAhn+GiuNTkS3GfUOfjV4Njl7i37+SqRmKa6XSg
-	de3E8ePnx+2Ykz5SBMIFKBe8M/Dhn2iIu48hPSKZNAUYKYFYS8NELnzrRdMNaKmTXBuOAoPOT3Vs5
-	tKGMevpnA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hu+cK6u6iB6GyEcZi1c4F/uVqd7eV95WjlODtEQ8J+w=; b=Mig3+Olu1rxEid
+	EmHgOsmA2DQ0CL3OD06G3M8UWctUbn5g+till9OvRg5PvUotohMIlqWNhmN1gDSwUTPmWQq9FDnvn
+	kVXNKF8lNEO1boo0O50mgAqwKaQPQbMRvBy5O7jMc8Zyul3z8zLrUgcn1kO/t6CKil8FxDDRaXr0/
+	QwfhhuZJOqBmHyvwsFHU0117JB53RSbeM5HUXLe3FlJ1o7Meu6lUEYtpziAmJ4k8dweeTB1PCsiU1
+	x4LgU/aQrj6UnrxELYS5y1k4x12V1V575DEa3IGadi0FdaUaXCczAt0+TxWovQ9xuDdt5WKLiIEMT
+	dlVHo42ooWnOrldUTdzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgTfv-0006Z0-61; Wed, 03 Jun 2020 13:43:23 +0000
-Received: from m43-7.mailgun.net ([69.72.43.7])
+	id 1jgTou-0006jN-MJ; Wed, 03 Jun 2020 13:52:40 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgTfm-0006YV-G9
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 13:43:16 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1591191794; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=gowrDorcMB8/S/lw8VmQ9q/tzijZLKpas7NugxtZK+k=;
- b=DYVsXdCl2x4cyUcFZ07Pop98X0SoIrwf5rggfXVJOi86iI/H6qGc0U+hJ0Xy891igIRC/ApW
- p/2UpnIwUFfZZMc9yNGNp3Q7JQhWr5Qg5bOQbptKciLyW1/fpAx5cVh+E0Wn9X+sPoRoYih3
- 5nzZ9Howw2SSWSPmL/mUiJ/BSNQ=
-X-Mailgun-Sending-Ip: 69.72.43.7
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n13.prod.us-west-2.postgun.com with SMTP id
- 5ed7a8efeca06aba7e4770b1 (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 03 Jun 2020 13:43:11
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id CAFBDC433A0; Wed,  3 Jun 2020 13:43:11 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ id 1jgTmT-0003Dr-QC
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 13:50:13 +0000
+Received: from mail-ot1-f50.google.com (mail-ot1-f50.google.com
+ [209.85.210.50])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id E6128C433C6;
- Wed,  3 Jun 2020 13:43:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D51682081A
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed,  3 Jun 2020 13:50:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591192206;
+ bh=Fj0iOVs08jiwu5naUApH7MvVszFmEVZ9O5OdKBSK/BQ=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=aw0ZPWuz7AiTZUo31l3+FlYCKIl4pFhPfY/Mcm3Wr1kMDSsYj0XX6BKLvYeByhXe8
+ 6+VZYgKROW2r4TX1VaQf/3qOBlLdWhoGe+syDwBJRPaan8SqtRJaBcR53yoZ8nu6xz
+ N/2b2zoqZDxhZZuaeGJSxtS33vonUNGGsY5zdZ0U=
+Received: by mail-ot1-f50.google.com with SMTP id s13so1890864otd.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jun 2020 06:50:06 -0700 (PDT)
+X-Gm-Message-State: AOAM530pInPSfi/9j1tOzykouqSp+E1gtUo943LACOoIHGd68BGqi2wd
+ KiFU0WDwuusfAPkYHf9jcy/Rg5hvvFoPahHrxw==
+X-Google-Smtp-Source: ABdhPJw+nAaODIOdecGluSxYY7HWI8UQEezTU6nVGm356t+p9EGwagFR+l+QCJoqrQqbzEaag6QgdNSqIXSrvH0MQd0=
+X-Received: by 2002:a9d:c29:: with SMTP id 38mr44862otr.107.1591192206147;
+ Wed, 03 Jun 2020 06:50:06 -0700 (PDT)
 MIME-Version: 1.0
-Date: Wed, 03 Jun 2020 19:13:10 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Robin Murphy <robin.murphy@arm.com>, Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH 2/2] coresight: tmc: Add shutdown callback for TMC ETR/ETF
-In-Reply-To: <1a5a6a6d-b86d-df45-cf91-7081e70d88a3@arm.com>
-References: <cover.1590947174.git.saiprakash.ranjan@codeaurora.org>
- <28123d1e19f235f97555ee36a5ed8b52d20cbdea.1590947174.git.saiprakash.ranjan@codeaurora.org>
- <20200601212858.GB24287@xps15>
- <6d759cc28628ea72767c1304883630eb@codeaurora.org>
- <CAJ9a7VhMbdqVBHxEXGYxFkgPnnQqNnDAz=wkHP3s7Ntw0iLmKA@mail.gmail.com>
- <f0357072de96970b641bbd0da98c1d61@codeaurora.org>
- <CAJ9a7Vj9STJw4jBxWU_9wHftj4Q7+k8o1nTc8tr21KjYi0RkpQ@mail.gmail.com>
- <4a09cd2e054836d85f2e024ca4435e91@codeaurora.org>
- <CAJ9a7VgCFeHNbY_9Gwvu6uT9MFBeY=_GCaN4N1dwmm+iNpfJOw@mail.gmail.com>
- <1a5a6a6d-b86d-df45-cf91-7081e70d88a3@arm.com>
-Message-ID: <07851ea3d1abfe60bb6c1761bf19f62f@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+References: <20200513103016.130417-1-andre.przywara@arm.com>
+ <20200513103016.130417-5-andre.przywara@arm.com>
+ <20200528024810.GA232303@roeck-us.net>
+ <48afb8bb-a22a-54df-7751-55b7b84c3c88@arm.com>
+ <22687572-becf-7b4e-9759-cfba44677a1d@arm.com>
+ <CAL_JsqLgNDd-+rrYD=Y0Hm=NaV7f0NbBFb9uhhYhzM6LjxnXZg@mail.gmail.com>
+ <1d111f40-1702-7ea0-825f-ab08d77353e9@arm.com>
+In-Reply-To: <1d111f40-1702-7ea0-825f-ab08d77353e9@arm.com>
+From: Rob Herring <robh@kernel.org>
+Date: Wed, 3 Jun 2020 07:49:54 -0600
+X-Gmail-Original-Message-ID: <CAL_JsqKSH1Oy5yAw463dHuCxnBEgEa0DYR8EK-p=y957h5kNCw@mail.gmail.com>
+Message-ID: <CAL_JsqKSH1Oy5yAw463dHuCxnBEgEa0DYR8EK-p=y957h5kNCw@mail.gmail.com>
+Subject: Re: [PATCH v3 04/20] arm64: dts: arm: vexpress: Move fixed devices
+ out of bus node
+To: =?UTF-8?Q?Andr=C3=A9_Przywara?= <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_064314_850012_201AAC78 
-X-CRM114-Status: GOOD (  23.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200603_065010_209385_B1E4A7AF 
+X-CRM114-Status: GOOD (  33.40  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [69.72.43.7 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [69.72.43.7 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,145 +92,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- Coresight ML <coresight@lists.linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Liviu Dudau <liviu.dudau@arm.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Guenter Roeck <linux@roeck-us.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
-
-On 2020-06-03 19:04, Robin Murphy wrote:
-> On 2020-06-03 14:22, Mike Leach wrote:
->> Hi Sai,
->> 
->> On Wed, 3 Jun 2020 at 13:14, Sai Prakash Ranjan
->> <saiprakash.ranjan@codeaurora.org> wrote:
->>> 
->>> Hi Mike,
->>> 
->>> On 2020-06-03 16:57, Mike Leach wrote:
->>>> Hi,
->>>> 
->>>> On Wed, 3 Jun 2020 at 11:24, Sai Prakash Ranjan
->>>> <saiprakash.ranjan@codeaurora.org> wrote:
->>>>> 
->>>>> Hi Mike,
->>>>> 
->>>>> Thanks again for looking at this.
->>>>> 
->>>>> On 2020-06-03 03:42, Mike Leach wrote:
->>>>> [...]
->>>>> 
->>>>>>> 
->>>>>>> SMMU/IOMMU won't be able to do much here as it is the client's
->>>>>>> responsiblity to
->>>>>>> properly shutdown and SMMU device link just makes sure that
->>>>>>> SMMU(supplier) shutdown is
->>>>>>> called only after its consumers shutdown callbacks are called.
->>>>>> 
->>>>>> I think this use case can be handled slightly differently than the
->>>>>> general requirements for modular CoreSight drivers.
->>>>>> 
->>>>>> What is needed here is a way of stopping the underlying ETR 
->>>>>> hardware
->>>>>> from issuing data to the SMMU, until the entire device has been 
->>>>>> shut
->>>>>> down, in a way that does not remove the driver, breaking existing
->>>>>> references and causing a system crash.
->>>>>> 
->>>>>> We could introduce a new mode to the ETR driver - e.g.
->>>>>> CS_MODE_SHUTDOWN.
->>>>>> 
->>>>>> At the end of the block tmc_shutdown(struct amba_device *adev), 
->>>>>> set
->>>>>> drvdata->mode to CS_MODE_SHUTDOWN & remove the 
->>>>>> coresight_unregister().
->>>>>> This new mode can be used to  prevent the underlying hardware from
->>>>>> being able to restart until the device is re-powered.
->>>>>> 
->>>>>> This mode can be detected in the code that enables / disables the 
->>>>>> ETR
->>>>>> and handled appropriately (updates to tmc_enable_etr_sink and
->>>>>> tmc_disable_etr_sink).
->>>>>> This mode will persist until the device is re-started - but 
->>>>>> because we
->>>>>> are on the device shutdown path this is not an issue.
->>>>>> 
->>>>>> This should leave the CoreSight infrastructure stable until the
->>>>>> drivers are shut down normally as part of the device power down
->>>>>> process.
->>>>>> 
->>>>> 
->>>>> Sounds good to me, but if the coresight_unregister() is the trouble
->>>>> point
->>>>> causing these crashes, then can't we just remove that from
->>>>> tmc_shutdown()
->>>>> callback? This would be like maintaining the same behaviour as now
->>>>> where
->>>>> on reboot/shutdown we basically don't do anything except for 
->>>>> disabling
->>>>> ETR.
->>>> 
->>>> No - the new mode prevents race conditions where the thread shutting
->>>> down the SMMU does the ETR shutdown, but then another thread happens
->>>> to be trying to start trace and restarts the ETR.
->>>> It also prevents the condition Mathieu discussed where a thread 
->>>> might
->>>> be attempting to shutdown trace - this could try to disable the
->>>> hardware again re-releasing resources/ re-flushing and waiting for
->>>> stop.
->>>> 
->>> 
->>> I do not think there will a race between SMMU shutdown and ETR 
->>> shutdown.
->>> Driver core takes care of calling SMMU shutdown after its consumer
->>> shutdown callbacks via device link, otherwise there would already be
->>> bugs in all other client drivers.
->>> 
->> 
->> I am not saying there could be a race between tmc_shutdowm and
->> Smmu_shutdown - there may be a case if the coresight_disable_path
->> sequence is running and gets to the point of disabling the ETR after
->> the SMMU callback has disabled it.
-> 
-> I'm confused now - there is no "SMMU callback", we're talking about
-> the system-wide cleanup from kernel_shutdown_prepare() or
-> kernel_restart_prepare(). As far as I'm aware userspace should be long
-> gone by that point, so although trace may have been left running, the
-> chance of racing against other driver operations seems pretty
-> unlikely.
-> 
-
-As Robin said, it is not SMMU callback but the normal reboot/shutdown
-flow and race is unlikely at that point.
-
-    tmc_shutdown()
-     platform_drv_shutdown()
-       device_shutdown()
-        kernel_restart_prepare()
-         kernel_restart()
-
-If I am not clear enough, first all the consumer shutdown callbacks of 
-SMMU
-are called like above tmc_shutdown() and then we call the 
-arm_smmu_device_shutdown(),
-this ordering is ensured by the device links.
-
-Thanks,
-Sai
-
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCBKdW4gMywgMjAyMCBhdCA1OjIxIEFNIEFuZHLDqSBQcnp5d2FyYSA8YW5kcmUucHJ6
+eXdhcmFAYXJtLmNvbT4gd3JvdGU6Cj4KPiBPbiAwMi8wNi8yMDIwIDAwOjEyLCBSb2IgSGVycmlu
+ZyB3cm90ZToKPgo+IEhpLAo+Cj4gPiBPbiBNb24sIEp1biAxLCAyMDIwIGF0IDQ6MTUgQU0gQW5k
+csOpIFByenl3YXJhIDxhbmRyZS5wcnp5d2FyYUBhcm0uY29tPiB3cm90ZToKPiA+Pgo+ID4+IE9u
+IDI4LzA1LzIwMjAgMTQ6MzAsIEFuZHLDqSBQcnp5d2FyYSB3cm90ZToKPiA+Pgo+ID4+IEhpLAo+
+ID4+Cj4gPj4+IE9uIDI4LzA1LzIwMjAgMDM6NDgsIEd1ZW50ZXIgUm9lY2sgd3JvdGU6Cj4gPj4+
+Cj4gPj4+IEhpIEd1ZW50ZXIsCj4gPj4+Cj4gPj4+PiBPbiBXZWQsIE1heSAxMywgMjAyMCBhdCAx
+MTozMDowMEFNICswMTAwLCBBbmRyZSBQcnp5d2FyYSB3cm90ZToKPiA+Pj4+PiBUaGUgZGV2aWNl
+dHJlZSBjb21waWxlciBjb21wbGFpbnMgd2hlbiBEVCBub2RlcyB3aXRob3V0IGEgcmVnIHByb3Bl
+cnR5Cj4gPj4+Pj4gbGl2ZSBpbnNpZGUgYSAoc2ltcGxlKSBidXMgbm9kZToKPiA+Pj4+PiBXYXJu
+aW5nIChzaW1wbGVfYnVzX3JlZyk6IE5vZGUgL2J1c0A4MDAwMDAwL21vdGhlcmJvYXJkLWJ1cy9y
+ZWZjbGszMmtoego+ID4+Pj4+ICAgICAgICAgICAgICAgICAgICAgICAgICAgbWlzc2luZyBvciBl
+bXB0eSByZWcvcmFuZ2VzIHByb3BlcnR5Cj4gPj4+Pj4KPiA+Pj4+PiBNb3ZlIHRoZSBmaXhlZCBj
+bG9ja3MsIHRoZSBmaXhlZCByZWd1bGF0b3IsIHRoZSBsZWRzIGFuZCB0aGUgY29uZmlnIGJ1cwo+
+ID4+Pj4+IHN1YnRyZWUgdG8gdGhlIHJvb3Qgbm9kZSwgc2luY2UgdGhleSBkbyBub3QgZGVwZW5k
+IG9uIGFueSBidXNzZXMuCj4gPj4+Pj4KPiA+Pj4+PiBTaWduZWQtb2ZmLWJ5OiBBbmRyZSBQcnp5
+d2FyYSA8YW5kcmUucHJ6eXdhcmFAYXJtLmNvbT4KPiA+Pj4+Cj4gPj4+PiBUaGlzIHBhdGNoIHJl
+c3VsdHMgaW4gdHJhY2ViYWNrcyB3aGVuIGJvb3RpbmcgdGhlIHZleHByZXNzLWExNSBtYWNoaW5l
+Cj4gPj4+PiB3aXRoIHZleHByZXNzLXYycC1jYTE1LXRjMSBkZXZpY2V0cmVlIGZpbGUgaW4gcWVt
+dS4gUmV2ZXJ0aW5nIGl0IGFzIHdlbGwKPiA+Pj4+IGFzIHRoZSBzdWJzZXF1ZW50IHBhdGNoZXMg
+YWZmZWN0aW5nIHRoZSBzYW1lIGZpbGUgKHRvIGF2b2lkIHJldmVydAo+ID4+Pj4gY29uZmxpY3Rz
+KSBmaXhlcyB0aGUgcHJvYmxlbS4KPiA+Pj4KPiA+Pj4gTWFueSB0aGFua3MgZm9yIHRoZSBoZWFk
+cyB1cCEgSSB3YXMgYWJsZSB0byByZXByb2R1Y2UgaXQgaGVyZS4gT24gdGhlCj4gPj4+IGZpcnN0
+IGdsYW5jZSBpdCBsb29rcyBsaWtlIHRoZSBVQVJUIGlzIHByb2JlZCBiZWZvcmUgdGhlIGNsb2Nr
+cyBub3csCj4gPj4+IGJlY2F1c2UgdGhlIHRyYXZlcnNhbCBvZiB0aGUgY2hhbmdlZCBEVCBsZWFk
+cyB0byBhIGRpZmZlcmVudCBwcm9iZQo+ID4+PiBvcmRlci4gSSB3aWxsIGxvb2sgaW50byBob3cg
+dG8gZml4IHRoaXMuCj4gPj4KPiA+PiBUdXJuZWQgb3V0IHRvIGJlIGEgYml0IG1vcmUgY29tcGxp
+Y2F0ZWQ6Cj4gPj4gVGhlIGFybSx2ZXhwcmVzcyxjb25maWctYnVzIGRyaXZlciB3YWxrcyB1cCB0
+aGUgZGV2aWNlIHRyZWUgdG8gZmluZCBhCj4gPj4gYXJtLHZleHByZXNzLHNpdGUgcHJvcGVydHkg
+WzFdLiBXaXRoIHRoaXMgcGF0Y2ggdGhlIGZpcnN0IHBhcmVudCBub2RlCj4gPj4gd2l0aCB0aGF0
+IHByb3BlcnR5IGl0IGZpbmRzIGlzIG5vdyB0aGUgcm9vdCBub2RlLCB3aXRoIHRoZSB3cm9uZyBz
+aXRlIElECj4gPj4gKDB4ZiBpbnN0ZWFkIG9mIDB4MCkuIFNvIGl0IHF1ZXJpZXMgdGhlIHdyb25n
+IGNsb2NrcyAodGhvc2UgSURzIGFyZQo+ID4+IGFjdHVhbGx5IHJlc2VydmVkIHRoZXJlKSwgYW5k
+IFFFTVUgcmVwb3J0cyBiYWNrICIwIiwgY29uc2VxdWVudGx5IFsyXS4KPiA+PiBGaW5kaW5nIGEg
+Y2xvY2sgZnJlcXVlbmN5IGluIHRoZSByYW5nZSBvZiBbMCwgMF0gd29uJ3QgZ2V0IHZlcnkgZmFy
+Lgo+ID4+Cj4gPj4gUG9zc2libGUgc29sdXRpb25zIGFyZToKPiA+PiAxKSBKdXN0IGtlZXAgdGhl
+IG1jYyBhbmQgaXRzIGNoaWxkcmVuIGF0IHdoZXJlIGl0IGlzIGluIG1haW5saW5lIHJpZ2h0Cj4g
+Pj4gbm93LCBzbyAqcGFydGx5KiByZXZlcnRpbmcgdGhpcyBwYXRjaC4gVGhpcyBoYXMgdGhlIHBy
+b2JsZW0gb2Ygc3RpbGwKPiA+PiBwcm9kdWNpbmcgYSBkdGMgd2FybmluZywgc28ga2luZCBvZiBk
+ZWZlYXRzIHRoZSBwdXJwb3NlIG9mIHRoaXMgcGF0Y2guCj4gPj4KPiA+PiAyKSBBZGQgYSAiYXJt
+LHZleHByZXNzLHNpdGUgPSA8MD47IiBsaW5lIHRvIHRoZSAibWNjIiBub2RlIGl0c2VsZi4KPiA+
+PiBXb3JrcywgYnV0IGxvb2tzIHNvbWV3aGF0IGRvZGd5LCBhcyB0aGUgbWNjIG5vZGUgc2hvdWxk
+IHJlYWxseSBiZSBhCj4gPj4gY2hpbGQgb2YgdGhlIG1vdGhlcmJvYXJkIG5vZGUsIGFuZCB3ZSBz
+aG91bGQgbm90IGhhY2sgYXJvdW5kIHRoaXMuCj4gPj4KPiA+PiAzKSBEaWcgZGVlcGVyIGFuZCBm
+aXggdGhlIERUIGluIGEgd2F5IHRoYXQgbWFrZXMgZHRjIGhhcHB5LiBNaWdodAo+ID4+IGludm9s
+dmUgKGR1bW15PykgcmFuZ2VzIG9yIHJlZyBwcm9wZXJ0aWVzLiBNeSBndXQgZmVlbGluZyBpcyB0
+aGF0Cj4gPj4gYXJtLHZleHByZXNzLXN5c3JlZyxmdW5jIHNob3VsZCByZWFsbHkgaGF2ZSBiZWVu
+ICJyZWciIGluIHRoZSBmaXJzdAo+ID4+IHBsYWNlLCBidXQgdGhhdCdzIHRvbyBsYXRlIHRvIGNo
+YW5nZSBub3csIGFueXdheS4KPiA+Pgo+ID4+IEkgd2lsbCBwb3N0IDIpIGFzIGEgZml4IGlmIDMp
+IHR1cm5zIG91dCB0byBiZSBub3QgZmVhc2libGUuCj4gPgo+ID4gSSB3b3VsZCBqdXN0IGRvIDEp
+Lgo+ID4KPiA+IFRvIHNvbWUgZXh0ZW50LCB0aGUgd2FybmluZ3MgYXJlIGZvciBhdm9pZGluZyBw
+b29yIGRlc2lnbiBvbiBuZXcKPiA+IGJpbmRpbmdzLiBXZSBuZWVkIGEgd2F5IHRvIGRpc3Rpbmd1
+aXNoIGJldHdlZW4gZXhpc3RpbmcgYm9hcmRzIGFuZCBuZXcKPiA+IG9uZXMuIE1heWJlIGR0cyBu
+ZWVkcyB0byBsZWFybiBzb21lIHdhcm5pbmcgZGlzYWJsZSBhbm5vdGF0aW9ucyBvciB3ZQo+ID4g
+bmVlZCBwZXIgdGFyZ2V0IHdhcm5pbmcgc2V0dGluZ3MgKERUQ19GTEFHU19mb28uZHRiID8pLiBP
+ciBtYXliZSB0aGlzCj4gPiBjaGVjayBpcyBqdXN0IHRvbyBzdHJpY3QuCj4KPiBTbyBJIHdhcyBh
+bHdheXMgd29uZGVyaW5nIGFib3V0IHRoaXMgY2hlY2ssIGFjdHVhbGx5LiBBIHNpbXBsZS1idXMK
+PiBkZXNjcmliZXMgYSBidXMgd2hpY2ggaXMgbWFwcGVkIGludG8gdGhlIENQVSBhZGRyZXNzIHNw
+YWNlIChpbiBjb250cmFzdAo+IHRvIHNheSBhbiBJMkMgYnVzLCBmb3IgaW5zdGFuY2UpLiBTbyBj
+aGlsZHJlbiBvZiB0aGlzIGJ1cyBub2RlIHR5cGljYWxseQo+IGhhdmUgYSByZWcgcHJvcGVydHku
+Cj4KPiBOb3cgYWxzbyB0aG9zZSBzaW1wbGUtYnVzIG5vZGVzIHNlZW0gdG8gYmUgdXNlZCB0byBs
+b2dpY2FsbHkgZ3JvdXAKPiBoYXJkd2FyZSBpbiBhIERUIChzZWUgdGhpcyAibW90aGVyYm9hcmQi
+IG5vZGUgaGVyZSkuICpJZiogd2UgZ28gd2l0aAo+IHRoaXMsIHdlIHNob3VsZCBhbHNvIGFsbG93
+IG90aGVyIHN1Ym5vZGVzLCBmb3IgaW5zdGFuY2UgZml4ZWQtY2xvY2tzOgo+IGFmdGVyIGFsbCB0
+aGVyZSBpcyBwcm9iYWJseSBhbiBhY3R1YWwgZml4ZWQgY3J5c3RhbCBvc2NpbGxhdG9yIG9uIHRo
+ZQo+IG1vdGhlcmJvYXJkLCBzbyBpdCB3b3VsZCBhbHNvIGJlbG9uZyBpbiB0aGVyZS4KClllcywg
+dGhhdCdzIHByb2JhYmx5IHJpZ2h0LiBXZSdkIHdhbnQgdGhpbmdzIGdyb3VwZWQgaWYgdGhpcyB3
+YXMKc29tZXRoaW5nIGFwcGxpZWQgYXMgYW4gb3ZlcmxheS4KCj4gSSBzZWUgdGhhdCAoYWIpdXNp
+bmcgc2ltcGxlLWJ1cyBmb3IgKmp1c3QqIGdyb3VwaW5nIG5vZGVzIGlzIHByb2JhYmx5Cj4gbm90
+IGEgZ29vZCBkZXNpZ24sIGJ1dCBJIGRvbid0IHNlZSB3aHkgKmV2ZXJ5KiBjaGlsZCBtdXN0IGJl
+IG1hcHBlZCBpbnRvCj4gdGhlIGFkZHJlc3Mgc3BhY2UuCj4KPiBNYXliZSBkdGMncyBzaW1wbGUt
+YnVzIGNoZWNrIHNob3VsZCBpbmRlZWQgYmUgcmVsYXhlZCwgdG8ganVzdCByZXF1aXJlCj4gKmF0
+IGxlYXN0IG9uZSogY2hpbGQgd2l0aCBhIHJlZyBvciByYW5nZXMgcHJvcGVydHksIGJ1dCBhbHNv
+IGFsbG93IG90aGVyCj4gbm9kZXM/CgpJdCdzIG1hZGUgeW91IHRoaW5rIGFib3V0IHRoZSBwcm9w
+ZXIgbG9jYXRpb24sIHNvIGl0J3MgYWNjb21wbGlzaGVkCml0cyBnb2FsLiBNYXliZSB0aGlzIGlz
+IG9uZSB0aGF0J3Mgbm90IHdpdGhvdXQgZmFsc2UgcG9zaXRpdmVzLiBJdAp3b3VsZCBiZSBnb29k
+IHRvIGRpc3Rpbmd1aXNoIGJldHdlZW4gd2hhdCdzIGZvciBzdXJlIGEgd2FybmluZyBhbmQKd2hh
+dCdzIG1heWJlIGEgd2FybmluZyBhcyBqdXN0IGJsaW5kbHkgZml4aW5nIHRoZSB3YXJuaW5nIGlz
+IG5vdCB0aGUKYW5zd2VyLgoKUm9iCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
