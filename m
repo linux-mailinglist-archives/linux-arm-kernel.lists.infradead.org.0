@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9710E1ECD8A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 12:28:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA0831ECD8E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 12:29:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8qwsEMK9ovk7WT0Mrs8rk3Zkvi4pLMlzzALUmnagYjw=; b=IjWm4bZTUx+W4fqzfqg+ODDON
-	jktS9bZZgQ4FPpPyVFlURLnKju/qWIPKf+uQ5qd9eGeinCL8LP9T2eCdo7+ZD/tM8YKLp9eysiF7Q
-	Yq/YBU0eu35YM5xXh34Doja4ODuCzylmcqgEDlz704GwvdLtJlZZHuhXhLgqeIMIvet43O8e0l/6d
-	FiM17+KzNGkLlIXs/2VUtlVY0IpdiPBKgKvKKW5gAePamjBJDhIcSKAe/hs+QWdAkW98rszIh/z5N
-	6MbB3aAB7Mw53uZu/jOKGRBu5idtrMYlJaRMNXGMF/bIIvrd6O7Xr95MA6g76u9m1ywx7HuOpOSFX
-	p1bo1r/Cg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=b/RPQ5aiPWOJFD9mZvAP+4zIwH4/wrqVpmJE4ZgdLzA=; b=pLoA505mC3e6GR
+	/L4gQbQtV1C8BdjamAdK9ze+HmIP96GKu+xRUZkzHtHWjnDgnmTwXkr8nHHMODYIfbRQYZWCQCMxx
+	NUH9ZncAhq6/DouQUpZYvBO07tMSvtifccGe4swK83rXPqAMe51IqeIH8+xCyH+M/BXz1jJo48zX5
+	WO91O7ifOaa0gMgowHjobJD3YwIUo87GiA+z3Q6/9V2YHN/s30ss1BZzYRTwA80IGjQFi76mJPiN3
+	bnJrDkzyBSMn/gjQFKQql1olFVH1hJVwdvpnJmmu7LBzb6Ax7PBasfjLiACIMk1gtcFdrd8LxjRUG
+	r5/WZIFlAC//TzHAquOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgQcw-0005ga-TF; Wed, 03 Jun 2020 10:28:06 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgQcn-0005ff-9O; Wed, 03 Jun 2020 10:27:59 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: aratiu) with ESMTPSA id 53CE52A3AC2
-From: Adrian Ratiu <adrian.ratiu@collabora.com>
-To: Emil Velikov <emil.l.velikov@gmail.com>, Adrian Ratiu
- <adrian.ratiu@collabora.com>
-Subject: Re: [Linux-stm32] [PATCH v8 08/10] drm: stm: dw-mipi-dsi: let the
- bridge handle the HW version check
-In-Reply-To: <CACvgo51QyzEa8LFpGq5zjYV-0TifQRtNh4WhMYy8jNtaswxd7Q@mail.gmail.com>
-References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
- <20200427081952.3536741-9-adrian.ratiu@collabora.com>
- <4acc09e8-0610-01f6-b18d-3ffc390c45a3@st.com>
- <87blm387vt.fsf@iwork.i-did-not-set--mail-host-address--so-tickle-me>
- <CACvgo51QyzEa8LFpGq5zjYV-0TifQRtNh4WhMYy8jNtaswxd7Q@mail.gmail.com>
-Date: Wed, 03 Jun 2020 13:28:54 +0300
-Message-ID: <878sh48mu1.fsf@collabora.com>
+	id 1jgQeU-00061j-E9; Wed, 03 Jun 2020 10:29:42 +0000
+Received: from mx.baikalchip.com ([94.125.187.42]
+ helo=mail.baikalelectronics.ru)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgQeK-000610-9G
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 10:29:34 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id 3C623803083B;
+ Wed,  3 Jun 2020 10:29:26 +0000 (UTC)
+X-Virus-Scanned: amavisd-new at baikalelectronics.ru
+Received: from mail.baikalelectronics.ru ([127.0.0.1])
+ by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id BDaQih7ZGqX2; Wed,  3 Jun 2020 13:29:25 +0300 (MSK)
+Date: Wed, 3 Jun 2020 13:29:24 +0300
+From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
+To: kbuild test robot <lkp@intel.com>
+Subject: Re: [soc:baikal/drivers-1 4/5] drivers/bus/bt1-apb.c:330:3: error:
+ implicit declaration of function 'readl'
+Message-ID: <20200603102924.6qnmvjg2tncn3jv3@mobilestation>
+References: <202006030720.Ds2L3QJH%lkp@intel.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <202006030720.Ds2L3QJH%lkp@intel.com>
+X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_032757_492605_39FF8B17 
-X-CRM114-Status: GOOD (  13.55  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200603_032932_501364_8B8AA0AB 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,76 +63,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>,
- Adrian Pop <pop.adrian61@gmail.com>, Jonas Karlman <jonas@kwiboo.se>,
- Philippe CORNU <philippe.cornu@st.com>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Yannick FERTRE <yannick.fertre@st.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
- "kernel@collabora.com" <kernel@collabora.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- Arnaud Ferraris <arnaud.ferraris@collabora.com>,
- "linux-imx@nxp.com" <linux-imx@nxp.com>
+Cc: Arnd Bergmann <arnd@arndb.de>, arm@kernel.org, kbuild-all@lists.01.org,
+ linux-arm-kernel@lists.infradead.org, Serge Semin <fancer.lancer@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 02 Jun 2020, Emil Velikov <emil.l.velikov@gmail.com> 
-wrote:
-> Hi Adrian, 
+On Wed, Jun 03, 2020 at 07:21:26AM +0800, kbuild test robot wrote:
+> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git baikal/drivers-1
+> head:   83ca8b3e8f213f49cc68b5c1fbcf88ebb24671eb
+> commit: 8f93662d8324940e8925a0e492c587dbcf7c7fee [4/5] bus: Add Baikal-T1 APB-bus driver
+> config: sparc64-allyesconfig (attached as .config)
+> compiler: sparc64-linux-gcc (GCC) 9.3.0
+> reproduce (this is a W=1 build):
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         git checkout 8f93662d8324940e8925a0e492c587dbcf7c7fee
+>         # save the attached .config to linux build tree
+>         COMPILER_INSTALL_PATH=$HOME/0day COMPILER=gcc-9.3.0 make.cross ARCH=sparc64 
+> 
 
-Hi Email,
+> If you fix the issue, kindly add following tag as appropriate
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All errors (new ones prefixed by >>, old ones prefixed by <<):
+> 
+> drivers/bus/bt1-apb.c: In function 'inject_error_store':
+> >> drivers/bus/bt1-apb.c:330:3: error: implicit declaration of function 'readl' [-Werror=implicit-function-declaration]
+> 330 |   readl(apb->res);
+> |   ^~~~~
+> cc1: some warnings being treated as errors
+
+That branch lacks of fixup commits available in the for-next and baikal/drivers
+branches. So it is redundant, since it has got only the initial BT1
+APB/AXI commits. Following up fixups haven't been merged in there, which cause
+the warning.
+
+-Sergey
 
 > 
-> On Mon, 1 Jun 2020 at 10:14, Adrian Ratiu 
-> <adrian.ratiu@collabora.com> wrote: 
->> 
->> On Fri, 29 May 2020, Philippe CORNU <philippe.cornu@st.com> 
->> wrote: 
->> > Hi Adrian, and thank you very much for the patchset.  Thank 
->> > you also for having tested it on STM32F769 and STM32MP1. 
->> > Sorry for the late response, Yannick and I will review it as 
->> > soon as possible and we will keep you posted.  Note: Do not 
->> > hesitate to put us in copy for the next version 
->> > (philippe.cornu@st.com, yannick.fertre@st.com) Regards, 
->> > Philippe :-) 
->> 
->> Hi Philippe, 
->> 
->> Thank you very much for your previous and future STM testing, 
->> really appreciate it! I've CC'd Yannick until now but I'll also 
->> CC you sure :) 
->> 
->> It's been over a month since I posted v8 and I was just gearing 
->> up to address all feedback, rebase & retest to prepare v9 but 
->> I'll wait a little longer, no problem, it's no rush. 
->> 
-> Small idea, pardon for joining so late: 
+> vim +/readl +330 drivers/bus/bt1-apb.c
 > 
-> Might be a good idea to add inline comment, why the clocks are 
-> disabled so late.  Effectively a 2 line version of the commit 
-> summary. 
+>    318	
+>    319	static ssize_t inject_error_store(struct device *dev,
+>    320				      struct device_attribute *attr,
+>    321				      const char *data, size_t count)
+>    322	{
+>    323		struct bt1_apb *apb = dev_get_drvdata(dev);
+>    324	
+>    325		/*
+>    326		 * Either dummy read from the unmapped address in the APB IO area
+>    327		 * or manually set the IRQ status.
+>    328		 */
+>    329		if (!strncmp(data, "nodev", 5))
+>  > 330			readl(apb->res);
+>    331		else if (!strncmp(data, "irq", 3))
+>    332			regmap_update_bits(apb->regs, APB_EHB_ISR, APB_EHB_ISR_PENDING,
+>    333					   APB_EHB_ISR_PENDING);
+>    334		else
+>    335			return -EINVAL;
+>    336	
+>    337		return count;
+>    338	}
+>    339	static DEVICE_ATTR_RW(inject_error);
+>    340	
 > 
-> Feel free to make that a separate/follow-up patch.
+> ---
+> 0-DAY CI Kernel Test Service, Intel Corporation
+> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
-Thanks, I'll add the comment to this patch in v9.
 
->
-> -Emil
->
-> _______________________________________________
-> Linux-rockchip mailing list
-> Linux-rockchip@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 linux-arm-kernel mailing list
