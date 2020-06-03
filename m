@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 202781EC6DE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 03:39:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 227381EC720
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 04:09:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ptpSKu97zrI8+EbHQIokxqa5eEcNgJePqGcn9QMEPsI=; b=UyTrUxvy0YRFxnsel9U6pWRzc
-	fH/erSsDrJSC6xCRw5xQASHUIUv58V7SqTtAj4ZGAwRUnbgTzFRdeTwrZIF3sM6ZnFEYkPljtg915
-	wqqe0Hds9V8/VV0Ghk17e09IrANdNQ1voxKSZrVj3TcZ4ti3LyK9JUcrZyhjIGWN04eE1FcjXECHp
-	DrYTt93hXrHubq89ckGLEYcVur/MWOFycF3RXeDAXErZNMpeiOSZZ7ztbC982C8hy7G8XZH+ic+0p
-	sZQ/74Hlvo1UrgJZfYxrRSmOpXMPUj3mxn2vImg/EmRKLu0o0qbEwnz3T9lRTxkpg2CmaumGo/unQ
-	pdTD9ec8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=4svh3+eWeBncx7XQPJD0ZxB98RTcvfdUZJ9QpI11SQQ=; b=uLW
+	I7aTpBPjKjTjd/WR7EY5iRzx+E8rLNwtRElNj8aYkwGmgErGJIJAxxusuHFuFTovkbj/n8BLe6PE8
+	Ja9y25XXk8YcxX7KsefLsuD/puCR5YgGQsOrzOI7DdqjIuRIH+71CKgeZ/B38bs3FBQELE0c8yZGV
+	rb8QmQgJeiz9cGYOa3UZXZJmRyJqyvm3+rshagfH1i7d7RShTmkP9Mcj+D4eumK35caknRo3ZzH2j
+	FcJb5udGF8Y496ZSmh9I2EJZQSfgc++ifBNr/JKClOsC3PTbA5Dx5RGNie4qRPAfYtMXfoi32Xj5d
+	6/bXwxp+oug7Sp+//acy5aIAw96I7Lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgINP-0005RD-Ck; Wed, 03 Jun 2020 01:39:31 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jgIqV-0005Rc-25; Wed, 03 Jun 2020 02:09:35 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgINJ-0005Qg-G1
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 01:39:26 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id A46B814FC0DD979B3531;
- Wed,  3 Jun 2020 09:39:23 +0800 (CST)
-Received: from [127.0.0.1] (10.166.215.204) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.487.0;
- Wed, 3 Jun 2020 09:39:16 +0800
-Subject: Re: [PATCH V2] pinctrl: sirf: add missing put_device() call in
- sirfsoc_gpio_probe()
-To: <linus.walleij@linaro.org>, <baohua@kernel.org>, <yuping.luo@csr.com>,
- <Markus.Elfring@web.de>
-References: <20200603013532.755220-1-yukuai3@huawei.com>
-From: "yukuai (C)" <yukuai3@huawei.com>
-Message-ID: <c68e435a-30f7-c7ba-ec2e-93bcb17d2d26@huawei.com>
-Date: Wed, 3 Jun 2020 09:39:15 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20200603013532.755220-1-yukuai3@huawei.com>
-X-Originating-IP: [10.166.215.204]
-X-CFilter-Loop: Reflected
+ id 1jgIqN-0005Qg-H8
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 02:09:28 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7E4EC20004C;
+ Wed,  3 Jun 2020 04:09:25 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E05B8200025;
+ Wed,  3 Jun 2020 04:09:19 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id B291140296;
+ Wed,  3 Jun 2020 10:09:12 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: aisheng.dong@nxp.com, robh+dt@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux@rempel-privat.de, pandy.gao@nxp.com, wolfram@the-dreams.de,
+ linux-i2c@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH 0/3] Convert i.MX/MXS I2C/LPI2C binding doc to json-schema
+Date: Wed,  3 Jun 2020 09:58:52 +0800
+Message-Id: <1591149535-342-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_183925_683625_80D8DEEC 
-X-CRM114-Status: GOOD (  10.27  )
+X-CRM114-CacheID: sfid-20200602_190927_705305_728E60DA 
+X-CRM114-Status: UNSURE (   5.45  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.32 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,37 +69,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, yi.zhang@huawei.com
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/6/3 9:35, yu kuai wrote:
-> A coccicheck run provided information like the following:
-> 
-> drivers/pinctrl/sirf/pinctrl-sirf.c:798:2-8: ERROR: missing put_device;
-> call of_find_device_by_node on line 792, but without a corresponding
-> object release within this function.
-> 
-> Generated by: scripts/coccinelle/free/put_device.cocci
-> 
-> Thus add a jump target to fix the exception handling for this
-> function implementation.
-> 
-> Fixes: 5130216265f6 ("PINCTRL: SiRF: add GPIO and GPIO irq support in CSR SiRFprimaII")
-> Signed-off-by: yu kuai <yukuai3@huawei.com>
-> ---
->   drivers/pinctrl/sirf/pinctrl-sirf.c | 20 ++++++++++++++------
->   1 file changed, 14 insertions(+), 6 deletions(-)
-Sorry about the missing change log:
+Coverts i.MX/MXS I2C.LPI2C binding doc to json-schema, some examples are
+too old, update them based on latest DT file, also add more compatible
+based on supported SoCs.
 
-Changes in V2:
-  change the variant of commit message suggested by Markus.
+Anson Huang (3):
+  dt-bindings: i2c: Convert imx lpi2c to json-schema
+  dt-bindings: i2c: Convert mxs i2c to json-schema
+  dt-bindings: i2c: Convert imx i2c to json-schema
 
-Best Regards,
-Yu Kuai
+ .../devicetree/bindings/i2c/i2c-imx-lpi2c.txt      |  20 ----
+ .../devicetree/bindings/i2c/i2c-imx-lpi2c.yaml     |  45 ++++++++
+ Documentation/devicetree/bindings/i2c/i2c-imx.txt  |  49 ---------
+ Documentation/devicetree/bindings/i2c/i2c-imx.yaml | 118 +++++++++++++++++++++
+ Documentation/devicetree/bindings/i2c/i2c-mxs.txt  |  25 -----
+ Documentation/devicetree/bindings/i2c/i2c-mxs.yaml |  55 ++++++++++
+ 6 files changed, 218 insertions(+), 94 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.txt
+ create mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.yaml
+ delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx.txt
+ create mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx.yaml
+ delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-mxs.txt
+ create mode 100644 Documentation/devicetree/bindings/i2c/i2c-mxs.yaml
+
+-- 
+2.7.4
 
 
 _______________________________________________
