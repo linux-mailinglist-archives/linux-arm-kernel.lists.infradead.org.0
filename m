@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3861D1ED769
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 22:30:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B7D01ED76E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 22:33:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GuzJndwXoycXzoWJMtohjtrT3fnCdahBE2xsRSy+7OY=; b=aU7GMBmYMSqOxt
-	hIqKZhfYnZZSdZmeZk1s4+4M+BlpxIzQOCJD9EOV8sWOfoHHdtrGzHzyGYrhIt7m6TaMhODpMdGCV
-	cwIcuwN7cOMXBX0r1dLN9TBBslRAXwGrUhxTO3ujEjk0Nz7A5er5cT0SfqUXJW/cRFjPihpTgYhm0
-	PEB5F2vrTu1sF6xWkd9tLo8BNaba4mrAKAjxkeaFH491zDXzXnwM0BptDnlIdHa2fBAUwbfsFpWgm
-	wiUX2XvLBrvlh6s6Zflwb5F4gxdDP0W7Iko3GXqB+qL/802a34R93w1UbVfZvIjqtXwgVP/qNKrnp
-	S5kheIoxVIx5FZjpbieg==;
+	List-Owner; bh=Ho4U8gutgQJ3AD8Q/mlYXgDK/rXfglToaa/uza5V5hU=; b=IHdEuJFlElig+9
+	zv9Vg4KKVYAZeMiQl/cLMTShimpse2rk92EodYSt48G9uF7qJuCcoihFu8p7ZTSPVRIrVwSp7aYFd
+	JVWQmkBg4eXwXIbgtU92asnq6e7ZP4lN2623TQeHsjq+cRZZg72XaPq9gM/JXPPTtpBK5wnYaZ21e
+	3YCW8X20pCUgkdZoGlGPLDU9Xog3CTgDo9RIu4tUN6w3+uAphkU2+Z3egWpwR/h4Scz/c21t8NwJk
+	ICZFt37Mwt33w1tlbmY3d0IK+rR4yVOD0Abp1fXkJk07uHx2aiAJ5w1gsTuhOh0eaacnCZSxD1+B+
+	R61UfI6VnE8aoOIQ7ZLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jga21-0002Yg-Ar; Wed, 03 Jun 2020 20:30:37 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jga4U-0002uw-SF; Wed, 03 Jun 2020 20:33:10 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jga1t-0002YJ-Rg; Wed, 03 Jun 2020 20:30:31 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e1so3779050wrt.5;
- Wed, 03 Jun 2020 13:30:29 -0700 (PDT)
+ id 1jga4O-0002uW-RT; Wed, 03 Jun 2020 20:33:06 +0000
+Received: by mail-pl1-x641.google.com with SMTP id n9so1229934plk.1;
+ Wed, 03 Jun 2020 13:33:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=OfhBlq1v+qBxhvVpDjvVW2/p+pV1658RV/tkt05OUD4=;
- b=HDZKDpFmdo+9kjJsJ7tboIsHHjJLzQj15Uv4VHwgBEVZknxoQsdmeWOdbKZYgFMn9g
- xrbtGCxgupVx9/HdPdZ0+aFoGMiK+a1P4ivg8BHQG6UKZZLaC63OO53lK1Qk8ypZDL+d
- uWGmAS4+StxMlUWTz20jCGZxqbhsB6pkenXTSqydA3oIgLmuvC7szDMGzRnqUSUGxMPx
- 1iK6wQmqBPHQGYkKir6MKP6EAXtuhj6+yAkTiytGuCUmvFFvE6u8Vpf/Ru/kdKK67Mg8
- 8wbHf/ucK7lKVOu23qGrm0aaGN9bAsuBgaCPmnQLeFcHGzyXfKy8L68gyWsjYT26udNn
- qSNg==
+ bh=tKK54s37lQCe/iastVr/8YgFF4Qz2iFi8Ru/giratfc=;
+ b=cKQIjUAAnyVFabLs4fElfG3Cv10Qjq7ZEkJ+YkgCFBYDAf/VKYDrPtEJGWcTwbpzf3
+ k1WrTOyUZU7Z+sfuK0xWmI8Zt6xnLEFwKGl/FiSLYPKkzvJUsWXZibRZ3JjnZeN10k6m
+ ofA1mwaq/6iB2Jo96JCPlDBbCSK3Qj7xdBf5/MhmUpPn2cVycDd0y++a21AaFr+tiCc/
+ fN4MVjiRnicjR18xshg8o1v0Rj5Ye1OU/JivxEHA5GlPyUZc4JkMjuU4xgHuxcyJAWi5
+ 0WVDVd8MBw57vbfs7ZstpWTMWnCjj+BHJz9pwjynbn+eL9sNGezQSjskxN8lK71vzsBn
+ iz5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=OfhBlq1v+qBxhvVpDjvVW2/p+pV1658RV/tkt05OUD4=;
- b=XMCB2COsCiTstsFOCc5FekmGSxMBRS2CP12y6U1jiHhDsQAT5NTpU6QeG6yKghucx3
- d7KaOyaimZD6J5Mr6voukbIuu5jPxlsn57jJ2xjJjIJhGr2Gru0RUc1C8gaLp1mDQ6lc
- wTiZ3V+YgJ9xOsGgWTn4Msw4dd+8rWyYdUuNbdLLD7DEUzG/11gRxjxNSgIA1ktADNZn
- JqCtH198ugKiXJ7HLNUeSkKkRkJDK9bFlxZIyZunlMbu908WPPdGQsalGbD3Og+Ut8Km
- QXp2WTEobSCt73w8QN0m3yu7VK4gkJdyasBbpQBGnb4y8+lLa9RCwFWYZM/1/t79ixZi
- JLPA==
-X-Gm-Message-State: AOAM5323gAU1Y0Gd87U0XIyhPjOcn3vNSCi1NrRSVuIetZAQHevb0IFk
- TI9scu6M3SfKs1qePKH5BRM=
-X-Google-Smtp-Source: ABdhPJz7zfi5NGFalG9KUx50YaJnKaGXX5smeKmLFEVuxH5xNsTGw+zgcEAawu2twIf+CxzBGuJXkw==
-X-Received: by 2002:adf:f64e:: with SMTP id x14mr1124524wrp.426.1591216228168; 
- Wed, 03 Jun 2020 13:30:28 -0700 (PDT)
-Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id
- o10sm4854983wrj.37.2020.06.03.13.30.24
+ bh=tKK54s37lQCe/iastVr/8YgFF4Qz2iFi8Ru/giratfc=;
+ b=t6ABEMIdnm7CCV+t/MzZwRO5F2SSD1nTgP5ANWJzyAGESoi7W16RYY4pr+gGd8CCbL
+ mhNcZTXaBsMAhv2VwU03s5uDLRQtOhDYn1gJFV4nCZ40qsg5p9o9GGnCIaarwC+uCzib
+ PUJZFEoFfWF39tpreEPkZu3CdwaW83+CMGiw5A+BjZoEsuMnnR9++tITxiIQipOJ1zb8
+ UDlzzzg8IVBakr9ZvqiGLqUixE0rVUXuacfjsWCF1uzsLK97F+GluK2HAtYvH6snJS9f
+ 8S3iJ6/Cgbzh7opKLcMDeUNuWLqAxEIrv8mpnhk0/HfLMDZnh353Pq25+vmndZ9m6Qiy
+ 3COg==
+X-Gm-Message-State: AOAM531Jxxepj6pm6J/zSK7rljHM07rSFj4hQTH8nl56LJTTCkQX5hya
+ raoQHLuB92e61Ub3y9Bg9qk=
+X-Google-Smtp-Source: ABdhPJyLkFbq2hs5iJJsfKh7chIJrewBYh8p9pOzBn1RZaK00q+ODcLjjar1be1cKhF/sxx4V04S/Q==
+X-Received: by 2002:a17:902:9a43:: with SMTP id
+ x3mr1496123plv.190.1591216383928; 
+ Wed, 03 Jun 2020 13:33:03 -0700 (PDT)
+Received: from [10.230.188.43] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id 85sm2597077pfz.145.2020.06.03.13.33.02
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 03 Jun 2020 13:30:27 -0700 (PDT)
-Subject: Re: [PATCH v3 07/13] PCI: brcmstb: Add control of rescal reset
+ Wed, 03 Jun 2020 13:33:03 -0700 (PDT)
+Subject: Re: [PATCH v3 10/13] PCI: brcmstb: Set internal memory viewport sizes
 To: Jim Quinlan <james.quinlan@broadcom.com>, linux-pci@vger.kernel.org,
  Christoph Hellwig <hch@lst.de>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  bcm-kernel-feedback-list@broadcom.com
 References: <20200603192058.35296-1-james.quinlan@broadcom.com>
- <20200603192058.35296-8-james.quinlan@broadcom.com>
+ <20200603192058.35296-11-james.quinlan@broadcom.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <3acb94da-e844-a2a9-fa05-755a97158322@gmail.com>
-Date: Wed, 3 Jun 2020 13:30:23 -0700
+Message-ID: <40eda019-21a2-32ae-d0d7-6dc77f9d91f7@gmail.com>
+Date: Wed, 3 Jun 2020 13:33:00 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.8.1
 MIME-Version: 1.0
-In-Reply-To: <20200603192058.35296-8-james.quinlan@broadcom.com>
+In-Reply-To: <20200603192058.35296-11-james.quinlan@broadcom.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_133029_894234_83A94D12 
-X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-CacheID: sfid-20200603_133304_887942_01A85754 
+X-CRM114-Status: UNSURE (   9.66  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -81,7 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,10 +108,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Rob Herring <robh@kernel.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  open list <linux-kernel@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Bjorn Helgaas <bhelgaas@google.com>,
+ <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -122,13 +120,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 6/3/2020 12:20 PM, Jim Quinlan wrote:
-> From: Jim Quinlan <jquinlan@broadcom.com>
+> BrcmSTB PCIe controllers are intimately connected to the memory
+> controller(s) on the SOC.  There is a "viewport" for each memory controller
+> that allows inbound accesses to CPU memory.  Each viewport's size must be
+> set to a power of two, and that size must be equal to or larger than the
+> amount of memory each controller supports.
 > 
-> Some STB chips have a special purpose reset controller named RESCAL (reset
-> calibration).  The PCIe HW can now control RESCAL to start and stop its
-> operation.
-> 
-> Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+> Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
 
 Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
