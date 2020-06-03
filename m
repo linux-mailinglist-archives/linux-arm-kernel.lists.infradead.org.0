@@ -2,89 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA5761ECFB8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:26:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 599711ECFC9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:31:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=g+IGkkmDA19QVftXK0eaNxUYUueD8AmA+QLhRwV9uUQ=; b=kvwgkS8bnHjI1wbTeXiBeMr1d
-	J//N1R9cMqHNojMm9rhH7ZkH+xUEwXVhXZLcmSxbKhCvDf3fHpxSLQd3GN02bo/Irnx9p8a2JHsCA
-	RaI/kRoTv/BsaE3q8+pxeeZWR/zvgqLBRob+hA3Zobik6jiUN4nKirpnEaRf6hmJLrnTfuAp/XENo
-	68N/DVuZrLF+yO4OB6gOJyd5DYZtDFfbv7bMxWAg4rB8K0UKTzRn7lLIEWzRchcxAt3vfmtAB7wP2
-	ajVsyrQMvoYe7UiFTCUnW4AjONGL9rjJynEt5B410G5nscbUB8zn/uBwDPINTEprH5RbUJNpBNPi/
-	XuSOywTDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4qefKxZ/lnIPFxyq0t2ppycBPZIwmCzxLXmi3mGMWFs=; b=Htdj5j8HVWEGzA
+	+eYvFLWW/0UGYexmNLoeHl2Evz/VN9B1XXbjxkLyGSJEO5FpVPYxRkG5u/5hnFk0Uad2mJIAVpjsA
+	4TMHvFblMMCMFdb7POW6ssyEr79MJrdLuZ+IKkwrexR6iM6cTXhjNdD7bfSlcEPgb4UHbtRtyp3aA
+	TJxnC9pVafODKAv8vP/e7umdRkuuMB1na9bsIBs45E38zdz4yslgCanxTHM5bflO22HmPR/Pspqjr
+	VR0svStdIF/YcuPlvgBePaDjcRcDppUzB0u7OGZ3m+x5eZLky9lNqoVCrQGMjKv4SB9PaBLqPaIKW
+	tBAb3WyGjN46HSWx1SoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgSTW-0002G3-Vh; Wed, 03 Jun 2020 12:26:30 +0000
-Received: from m43-7.mailgun.net ([69.72.43.7])
+	id 1jgSYQ-0005B8-KV; Wed, 03 Jun 2020 12:31:34 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgSTP-0002FY-9A
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:26:24 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1591187183; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=KfYEbXwoX+aABDlZlOKRx/sTdh4324Te4XRf5exbMGw=;
- b=C0ILPLNJhSvX+1hvAyySJzBtX2yYUU5e0MIePEEYvecD/UFNXZcN8iVmLAW5pE8ax2i2SC9o
- iER7e3aWU0WMl/3N8H/6ikD84BNZB0j0D/S0Xk2J/v0+KP3OjvQB8sgnCibe/7QwtP3QC78P
- 28lXjNwuLP6AMM0O3eM8odzxh4Q=
-X-Mailgun-Sending-Ip: 69.72.43.7
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n02.prod.us-west-2.postgun.com with SMTP id
- 5ed796ee4c2ebead1368ba8e (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 03 Jun 2020 12:26:22
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 4A18DC43395; Wed,  3 Jun 2020 12:26:22 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id BD91BC433C6;
- Wed,  3 Jun 2020 12:26:21 +0000 (UTC)
+ id 1jgSYI-0005Aa-A7
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:31:27 +0000
+Received: by mail-lj1-x242.google.com with SMTP id m18so2475536ljo.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jun 2020 05:31:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=L1NJYuTKReAQCzwmp21v6oxd6VH6o0/1AXhj3Xbp+FA=;
+ b=GYLRyR3OR2you4gt5Qoe94eTqGpHQxHxJtDqtMFwAwycpFKpORilUHJ+cpxeyB10dZ
+ HZZIncnj4Nc5euIkBmYg91PiCtTZXQoWLM//bJq/8ljVCqKGsEkudebxu1rD/xFge7XX
+ gUcQtcfaYyLClnFKKSzUJFm9UdTCKp09CFDZ/ll0z2c+BjIUHXiTXK0/xIsaBmZFPgzW
+ 5PcPHAb51hM1T8b69zqjgmxhk7njDjDVmtYtpuT0xSkK8+vIbM4iI1M6M5/VlhCf0/Sn
+ 7xxUT6j3nTgizmvd+kLannVm19nUGA+BXHohp50BOfs5E71QhnvSDS02jxYWWK3eWHCv
+ fbxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=L1NJYuTKReAQCzwmp21v6oxd6VH6o0/1AXhj3Xbp+FA=;
+ b=UMd+JpEgn9KHj8o2OWgemiK1emPAO21drqvkm+JVr1uv+Q/uMCajP4thRAkSluaNaA
+ YLO8LGel/i2S7jO+D4mHOgElalA9ATWop0N1TXCYXijP82RXc2cm3xX4zHK3jEPGFQ0+
+ wMI5cHKfY7L1ZVodP71XPE9lCpKSyUtI9VY0RA1H8pZwos5U6cnWFmRshTzb7BSOewVl
+ lYqmyKsXml5YpLFxQUHjOdpogBrsvLw9+FPFTmQTxg21ONhFmq+HV/sQ9maqBf7NIE6H
+ UgDOVPj6iskdr/QR+7w3GBcXLvOeL70Ma4F9FNo/5obrIJcgv2thWocrSSwAuOAv8N3Y
+ 92fg==
+X-Gm-Message-State: AOAM530OVxo0t4+DBoGGiM5uT58nXnNryV0MkQa91vzfhhaGFZNZQgF+
+ zI/JLfMuYaGTOSL/AyVes0+fITYWYfl76TLwLmeVUw==
+X-Google-Smtp-Source: ABdhPJzeYHCrqoAKbg/iXMZc2UHkSMqVGpsvQRy6zx+BK4rdk3W1fxIGP76BKw3wR0/nVnq2bumPP8UA4bGzDwuUJyc=
+X-Received: by 2002:a2e:350a:: with SMTP id z10mr1920234ljz.104.1591187484286; 
+ Wed, 03 Jun 2020 05:31:24 -0700 (PDT)
 MIME-Version: 1.0
-Date: Wed, 03 Jun 2020 17:56:21 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 2/2] coresight: tmc: Add shutdown callback for TMC ETR/ETF
-In-Reply-To: <6c1a4fbd-98cb-a49c-0ced-1318d5d5e7c8@arm.com>
-References: <cover.1590947174.git.saiprakash.ranjan@codeaurora.org>
- <28123d1e19f235f97555ee36a5ed8b52d20cbdea.1590947174.git.saiprakash.ranjan@codeaurora.org>
- <20200601212858.GB24287@xps15>
- <bf7e8ac2-51b2-d9cb-9c4f-c311297accac@arm.com>
- <1549935cf69ac3a006f32eb278821027@codeaurora.org>
- <6c1a4fbd-98cb-a49c-0ced-1318d5d5e7c8@arm.com>
-Message-ID: <7fe5762b5cb8f87e988232922d06c55d@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+References: <20200530201952.585798-1-christophe.jaillet@wanadoo.fr>
+In-Reply-To: <20200530201952.585798-1-christophe.jaillet@wanadoo.fr>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Wed, 3 Jun 2020 14:31:13 +0200
+Message-ID: <CACRpkdYvoe8o8Db1mszfgcHA3XZF7LJ3P1u5pnKOfEfS99F0Ew@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: imxl: Fix an error handling path in
+ 'imx1_pinctrl_core_probe()'
+To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_052623_387149_52B9A434 
-X-CRM114-Status: GOOD (  12.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200603_053126_414004_40341DD3 
+X-CRM114-Status: GOOD (  10.70  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [69.72.43.7 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [69.72.43.7 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,65 +91,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, kernel-janitors@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Stefan Agner <stefan@agner.ch>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Laxman Dewangan <ldewangan@nvidia.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Sascha Hauer <kernel@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
+On Sat, May 30, 2020 at 10:20 PM Christophe JAILLET
+<christophe.jaillet@wanadoo.fr> wrote:
 
-On 2020-06-03 17:51, Robin Murphy wrote:
-> On 2020-06-03 13:00, Sai Prakash Ranjan wrote:
->> Hi Robin, Mathieu
->> 
->> On 2020-06-03 17:07, Robin Murphy wrote:
->>> On 2020-06-01 22:28, Mathieu Poirier wrote:
->>>> That being said I'm sure that dependencies on an IOMMU isn't a 
->>>> problem confined
->>>> to coresight. I am adding Robin Murphy, who added this commit [1], 
->>>> to the thread
->>>> in the hope that he can provide guidance on the right way to do 
->>>> this.
->>> 
->>> Right, it's not specific to CoreSight, and it's not even specific to
->>> IOMMUs really. In short, blame kexec ;)
->>> 
->> 
->> Yes it is not specific to coresight, we are targeting this for all
->> consumers/clients of SMMU(atleast on SC7180 SoC). We have display 
->> throwing
->> NoC/interconnect errors[1] during reboot after SMMU is disabled.
->> This is also not specific to kexec either as you explained here [2] 
->> about
->> a case with display which is exacly what is happening in our system 
->> [1].
-> 
-> Sure, but those instances are begging the question of why the SMMU is
-> disabled at reboot in the first place ;)
-> 
+> When 'pinctrl_register()' has been turned into 'devm_pinctrl_register()',
+> an error handling path has not been updated.
+>
+> Axe a now unneeded 'pinctrl_unregister()'.
+>
+> Fixes: e55e025d1687 ("pinctrl: imxl: Use devm_pinctrl_register() for pinctrl registration")
+> Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 
-That is what happens in SMMU shutdown callback right? It is the 
-reboot/shutdown
-flow.
+Patch applied.
 
-    arm_smmu_device_shutdown()
-     platform_drv_shutdown()
-      device_shutdown()
-       kernel_restart_prepare()
-        kernel_restart()
-
-Thanks,
-Sai
-
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
