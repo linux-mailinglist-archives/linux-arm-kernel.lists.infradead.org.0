@@ -2,50 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D076F1ED852
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 00:03:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58CE71ED864
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 00:06:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SSp2Wixzl8zl6wJDkbnhDqhqk2eZXCFVZsRH41eY6tk=; b=bSVcrb5SSuSckW
-	faFMaj9SiKsL4WHlnJ8KLM8/VvHH/VGxF8B8mq/Gh89dBZMI4TCocHafWtQHKMpKdI/kYkZdEwg5e
-	9srhWGQndqj6mE3Yb+XLQeS1pxIDZI0wBKqifHTBt5GcjJQ5ONhoLHjt8HpsxRke+v/bSTnhG/kTJ
-	mZ7xa3C2rYyy2xLmpJyLhPLU2EXIDwlv2L3z3hhno6lgAgS7RoBA9umWvzW2MlORVD/Gg+oHKM+3a
-	QMIFx00fFeInerM8gUcjDeAZAvkBOXlKhhfvFcAttLSI6z42onYzfpJKCrvUinHvmCV/5QX+loj5X
-	mGMryTxUD8E/58/445HA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HF2XhsisrnMUC+VxwvlR3B9uvKqIdfbsFmxj8UyL/KE=; b=oNsdpjTOrCPmP3
+	0K/JUqn/0xLOfaKx4rUIZOv8Hs0MppQsDEEMdZIfa2aVs1Pq5Aedkq1d3S8OOya4O8l9yLlxIe+rA
+	XbYX9s3YhSRAE5SBI6Rrr7BPxalxZmyuwzW7sKunFFzVggNuYQ7hROAty9TOA1aSuTMSlkDrznQ90
+	/xTHpjpyWPkpPdL5+zZSKSY7EvUGkHDWWK+39NSoflNchRFzs7OGQCzN0g+cdVkXBUHmsPW4EUFk7
+	rk4M1EMXv2uzF/Hp2OMZXyXaRGPlYYD+icazMNm1HM9WNSPB9uaSV8pkfSySQDqrYd6Z6tQnsBrvd
+	RXCsohI92gRW/ZvyQJPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgbTT-0008An-5P; Wed, 03 Jun 2020 22:03:03 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgbTH-00089s-P3
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 22:02:53 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 72D84809C;
- Wed,  3 Jun 2020 22:03:38 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: linux-omap@vger.kernel.org
-Subject: [PATCH] bus: ti-sysc: Increase max softreset wait
-Date: Wed,  3 Jun 2020 15:02:42 -0700
-Message-Id: <20200603220242.24165-1-tony@atomide.com>
-X-Mailer: git-send-email 2.26.2
+	id 1jgbWb-0002d8-Dn; Wed, 03 Jun 2020 22:06:17 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgbWT-0002cD-R7
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 22:06:11 +0000
+Received: by mail-lj1-x244.google.com with SMTP id c11so4773233ljn.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jun 2020 15:06:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kZqWRAwkoZGm0MT0LhnL1ITCWUWQqRFExLfdOqT2sHM=;
+ b=ifeeWNzF4wAPFHd21i1T7hZ+XQ6kUW4qhTa1hOviPEAn2zLRmxrTk+PNyY6YzjnT0W
+ wrZnnAVGSZDC/eVD9dmypYQTNtVP7cklzWMfI8aP1cmBXiCBALQKH6+NOZTaZgRtegxa
+ Jur7UHc1fR6FnuJNg+Df8haSfvODK8uVx5mIDjKH9QZkWiSKhsEe+5K0y4f9tn1dlvBQ
+ hVpSSx3uugyxrCir29UzLvNT3zb41Z2ALoA/SSslvhH5zGTlUpAuVwqZs7JdaF9+dhnl
+ GbGo+7g3eL+Uxl3b6SOexC57gwx1Suz5jvxY0KLHuYBHcBLeTNtFhdDkkjcpv0pRigsT
+ RpVA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kZqWRAwkoZGm0MT0LhnL1ITCWUWQqRFExLfdOqT2sHM=;
+ b=kx00nuJUSQ2Exk80DS/NOLjjXvapzH+3xZHjaHRKLexznvStnKwwSaGsr4ZwJTLq65
+ tFgBv68QNrTppPJRebjVe/hNmFaCOHdD/TXl/gNv1zmStd20BsmAmlkY9v0k+9cDfgmk
+ cH0FWcRoKYh5P8haaZ8g3NHb9b88bVGsNOgxjRZmqQwioDNcV/zVIHEj2plPnYsMvnh7
+ UchMio9kTa/Hdy+1Y+1PQypYjPZHb1Jyfmqnz05BXgxvWG8aWdC39OifMab747D3gOUW
+ z3J2Xun+Q8VhR9PUbHB1j6XhWy/vS8ss0gnMu0IbhEz0ibmoAP928TuYCgm5awMhOPXW
+ uoAg==
+X-Gm-Message-State: AOAM532XRClf/edYzBjOaJBGPwY9FjRhaPM+Pp/74PF5u84tKgPGbk7l
+ czXj9ChLUV3zBtIoxp38OJOidwSl7SN9eRbj9S/cxQ==
+X-Google-Smtp-Source: ABdhPJxVc4P8kuV8rJARiopGCBcGT0QqtREKnWBawX5I9+sY0Q0Qd0KfCLEAs0rplFWBOdvE+GE+YbcX9BpW+DwedR8=
+X-Received: by 2002:a2e:a40f:: with SMTP id p15mr665797ljn.286.1591221967893; 
+ Wed, 03 Jun 2020 15:06:07 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200531073716.593343-1-christophe.jaillet@wanadoo.fr>
+In-Reply-To: <20200531073716.593343-1-christophe.jaillet@wanadoo.fr>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 4 Jun 2020 00:05:56 +0200
+Message-ID: <CACRpkdax2rFLnqY2pBEjfV6GH+wCHOrc4bQ7iYZEzWo=Fmi0NA@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: pxa: pxa2xx: Remove 'pxa2xx_pinctrl_exit()'
+ which is unused and broken
+To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_150251_850198_536EBD41 
-X-CRM114-Status: UNSURE (   7.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200603_150609_910593_FDB85AEE 
+X-CRM114-Status: GOOD (  11.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,42 +91,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>, Dave Gerlach <d-gerlach@ti.com>,
- Keerthy <j-keerthy@ti.com>, Merlijn Wajer <merlijn@wizzup.org>,
- linux-kernel@vger.kernel.org, "Andrew F . Davis" <afd@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Suman Anna <s-anna@ti.com>,
- linux-arm-kernel@lists.infradead.org, Roger Quadros <rogerq@ti.com>
+Cc: kernel-janitors@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Otherwise we can get "OCP softreset timed out" warnings occasionally
-at least for i2c2 on omap4 now that we check the OCP softreset completed
-bit on enable.
+On Sun, May 31, 2020 at 9:37 AM Christophe JAILLET
+<christophe.jaillet@wanadoo.fr> wrote:
 
-Reported-by: Merlijn Wajer <merlijn@wizzup.org>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
----
- drivers/bus/ti-sysc.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> Commit 6d33ee7a0534 ("pinctrl: pxa: Use devm_pinctrl_register() for pinctrl registration")
+> has turned a 'pinctrl_register()' into 'devm_pinctrl_register()' in
+> 'pxa2xx_pinctrl_init()'.
+> However, the corresponding 'pinctrl_unregister()' call in
+> 'pxa2xx_pinctrl_exit()' has not been removed.
+>
+> This is not an issue, because 'pxa2xx_pinctrl_exit()' is unused.
+> Remove it now to avoid some wondering in the future and save a few LoC.
+>
+> Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
 
-diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
---- a/drivers/bus/ti-sysc.c
-+++ b/drivers/bus/ti-sysc.c
-@@ -29,7 +29,7 @@
- 
- #define SOC_FLAG(match, flag)	{ .machine = match, .data = (void *)(flag), }
- 
--#define MAX_MODULE_SOFTRESET_WAIT		10000
-+#define MAX_MODULE_SOFTRESET_WAIT		20000
- 
- enum sysc_soc {
- 	SOC_UNKNOWN,
--- 
-2.26.2
+Patch applied.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
