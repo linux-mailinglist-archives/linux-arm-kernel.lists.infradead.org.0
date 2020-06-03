@@ -2,76 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 672741ECACF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 09:50:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B201E1ECAF8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 10:04:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yPm/a1ZCNGmZ4Z+b3NTHqLCrJDkUG1ZHLRFWIHLThtI=; b=cfMB5knddII9fD
-	w+2TcUfp7DGTLByCpjkBxZRHnd+SrK8e9jCUJVg9GnTQ5Okub+CLZB7+PazmTOQhZgD0E8dModu/6
-	Xi5rTgoEdSItG+9Ebb5DkT8j2f5pHQlve0r2IUgUgluh82cKayFX5h5Th+3oQbn3njt97AhlF6XMI
-	L9UhNCyTFwjGf5d3THrNk/6vrHuUN78thnN2FTrGyQntXAThC4qqIwJ68evDwfQ6cd5ZcZ1h6S8ov
-	eQvKdg98iTr8g5eA34onE0D9qal5zE8zhAyKG52Yvvc671X/KWPlEW8TiFk3Lv8DcAonmSgObnNRu
-	aqndtLqKOxfwF/AWiorw==;
+	List-Owner; bh=oHKdJjzQKq8s2+uHlQo21sGQ45O0U8l8rQMJ+E3cYHc=; b=ae29uR4TQknGr0
+	oGzPOcoAMgOZvKS3pzvcBgSWX9K+Ci7XpOBi1nWkeRO4jvpJl2rCb8ejOG7tiVzUyoiSWJiVnar/x
+	SbK7mXpRvqfK+awDiiC4hX0q6Rk0YhtXnpxkThZTaLDaz9BZFcwDsE9I0nEnWXkCV3aLSSeUsO3WW
+	n8Qg77ZcXrKFVqfEm1Imt171SEcS0t4SiIsNjkFZQyMzkKa+sZZmXs0XVbjUKKmRdssyO5WBMfEa/
+	x9LaqEZFOQPlCShBz98BYxWTJ6Isidqg/aOX+VXQzLtf9pVstWX0/uqtQsB0vBZlGJxzD+F+qYEE2
+	uvTKJgi3rP0LoQrsmMQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgOAQ-0002M8-HI; Wed, 03 Jun 2020 07:50:30 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jgOOA-0000Kp-71; Wed, 03 Jun 2020 08:04:42 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgOAG-0002Lk-M1
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 07:50:22 +0000
-Received: by mail-lf1-x144.google.com with SMTP id c21so706706lfb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jun 2020 00:50:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=RI6iXB0qMqr3xlMnwnNSpUiS3SZYn3+NS4HUs4hvuFk=;
- b=Bv2NGZRkizy50GG012REDa+Ac6WD7Cdlhp9SBQUZne2ONByEmjbrF1ObuaG8BusUuc
- tT4fFF6bOT7sbpGB8srbSU8sAzLauoqfKgAnHEMe+Njoiq8cN8L4/OILOwpNPvXxVoRH
- Pnb1931Hl0DGZD17DmZWdVQg3OicSRvDhOV3hpc3knBMfWL7aYPz7QcGjsOC6+dIYy1Z
- BBA8Nzqwm/A2HE/lLI5xIt/BnG1w3KfdtF35Eoo4b/oIXYE9IQp3jdFlXdXmLTzZjFuK
- x6SKMLDcFQfsamwJtMSktvo/Ma8v/iZmfw/yQqiVXjsUKZjmCLRSvusNarN0vntWMQ8c
- P4bA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=RI6iXB0qMqr3xlMnwnNSpUiS3SZYn3+NS4HUs4hvuFk=;
- b=X4XsqtK2H/ho5dle/5zbp6I9G/q43XGFpZV4ajAcqg6cLznRwi91a92s8LzwB2YnDd
- O13RIK/Cm9eKaMAzpHRhq8GW7C1zKoV4HupGic09rCvtq8/UVJfYjBZWbL683u1Oei8k
- 5zPO+jBO5J++bT6xPmoA7SDKN17qmwPhe43Fwd9bVsTBjE4sDmu4jGiYwFnVnGaKZ0vy
- Qw72STW58xfUVizuyukEgTLMBtTf8Hm/rmHRUlQZUmt10Fa/vm4u9A39bathMRPanfDY
- RD9fu123dkkIVJfVLk2WmZDX2CNTjheVS9ScM+4u4q/Tt1voHS3QRPuG9eD/slzwJI9P
- FwIg==
-X-Gm-Message-State: AOAM533QTQItP2a9CZePRlCv6Kelx7WnYoYAp/rVUIQj0hx8max4vmG0
- c20/YqvBO+daFyTCQnXQ01r59WwU565cIGr2GwzKUA==
-X-Google-Smtp-Source: ABdhPJwQ86B8yTe/9il9L6LnfiUJTL8erQbgj0KU1+oMuQ+QlImP1yxiL4f9rbdAdwNQf8DKbxDu0Dm6tMQQyCoUlhY=
-X-Received: by 2002:a19:5013:: with SMTP id e19mr1725514lfb.95.1591170618304; 
- Wed, 03 Jun 2020 00:50:18 -0700 (PDT)
+ id 1jgONz-0000JO-BD; Wed, 03 Jun 2020 08:04:33 +0000
+X-UUID: 0b9ac466551f46e1bf1b3aeee38c3cd1-20200603
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=07Kpr56aB3PFy6IWckMxSvdLdNklg9y3xgmgR9sXxKc=; 
+ b=rHr5kn9ofuNPAE/oxBhtz2Bn5mwE11DrgVafexCGqE0he1Y5+7YUnEK9U6h+MV4DCUeksNhAbGVLc5bWCzgNZWuRevU81yG70v6gdmtfUfIZI6oxZvFvmG1WQgKsZSQ/YW/9Yp1NmJKb+OQWUUuX9kBCSb4hIC6AzPhFIdjX/f4=;
+X-UUID: 0b9ac466551f46e1bf1b3aeee38c3cd1-20200603
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <neal.liu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 306737306; Wed, 03 Jun 2020 00:04:22 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 3 Jun 2020 00:54:24 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 3 Jun 2020 15:54:16 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 3 Jun 2020 15:54:16 +0800
+Message-ID: <1591170857.19414.5.camel@mtkswgap22>
+Subject: Re: Security Random Number Generator support
+From: Neal Liu <neal.liu@mediatek.com>
+To: Marc Zyngier <maz@kernel.org>
+Date: Wed, 3 Jun 2020 15:54:17 +0800
+In-Reply-To: <fcbe37f6f9cbcde24f9c28bc504f1f0e@kernel.org>
+References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
+ <CAMj1kXHjAdk5=-uSh_=S9j5cz42zr3h6t+YYGy+obevuQDp0fg@mail.gmail.com>
+ <85dfc0142d3879d50c0ba18bcc71e199@misterjones.org>
+ <1591169342.4878.9.camel@mtkswgap22>
+ <fcbe37f6f9cbcde24f9c28bc504f1f0e@kernel.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <20200527151613.16083-1-benjamin.gaignard@st.com>
- <jhjpnahizkm.mognet@arm.com> <f95ce45f-7a1c-0feb-afa8-203ddb500f2f@st.com>
- <jhjo8q1io9o.mognet@arm.com> <1b0ace18-e7f8-0b75-f6fe-968a269626b0@st.com>
-In-Reply-To: <1b0ace18-e7f8-0b75-f6fe-968a269626b0@st.com>
-From: Vincent Guittot <vincent.guittot@linaro.org>
-Date: Wed, 3 Jun 2020 09:50:06 +0200
-Message-ID: <CAKfTPtCbM-w_0VrTB5tsSM5PKRtC44f3sSmAR=U=P3e3KQ+cMw@mail.gmail.com>
-Subject: Re: [PATCH] media: stm32-dcmi: Set minimum cpufreq requirement
-To: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_005020_728711_55897646 
-X-CRM114-Status: GOOD (  24.87  )
+X-CRM114-CacheID: sfid-20200603_010431_393966_D2E8787B 
+X-CRM114-Status: GOOD (  21.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,117 +86,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
- "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Hugues FRUCHET <hugues.fruchet@st.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- Valentin Schneider <valentin.schneider@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE
+ TREE BINDINGS" <devicetree@vger.kernel.org>, Julius Werner <jwerner@google.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>, Greg
+ Kroah-Hartman <gregkh@linuxfoundation.org>, Sean Wang <sean.wang@kernel.org>,
+ lkml <linux-kernel@vger.kernel.org>, wsd_upstream <wsd_upstream@mediatek.com>,
+ Crystal Guo =?UTF-8?Q?=28=E9=83=AD=E6=99=B6=29?= <Crystal.Guo@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Matt Mackall <mpm@selenic.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org, Ard
+ Biesheuvel <ardb@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 3 Jun 2020 at 09:34, Benjamin GAIGNARD <benjamin.gaignard@st.com> wrote:
->
->
->
-> On 6/2/20 3:35 PM, Valentin Schneider wrote:
-> > On 02/06/20 12:37, Benjamin GAIGNARD wrote:
-> >> On 6/2/20 11:31 AM, Valentin Schneider wrote:
-> >>>> @@ -99,6 +100,8 @@ enum state {
-> >>>>
-> >>>>    #define OVERRUN_ERROR_THRESHOLD 3
-> >>>>
-> >>>> +#define DCMI_MIN_FREQ     650000 /* in KHz */
-> >>>> +
-> >>> This assumes the handling part is guaranteed to always run on the same CPU
-> >>> with the same performance profile (regardless of the platform). If that's
-> >>> not guaranteed, it feels like you'd want this to be configurable in some
-> >>> way.
-> >> Yes I could add a st,stm32-dcmi-min-frequency (in KHz) parameter the
-> >> device tree node.
-> >>
-> > Something like that - I'm not sure how well this fits with the DT
-> > landscape, as you could argue it isn't really a description of the
-> > hardware, more of a description of the performance expectations of the
-> > software. I won't really argue here.
-> >
-> >>>>    struct dcmi_graph_entity {
-> >>>>         struct v4l2_async_subdev asd;
-> >>>>
-> >>> [...]
-> >>>> @@ -2020,6 +2042,8 @@ static int dcmi_probe(struct platform_device *pdev)
-> >>>>                 goto err_cleanup;
-> >>>>         }
-> >>>>
-> >>>> +  dcmi->policy = cpufreq_cpu_get(0);
-> >>>> +
-> >>> Ideally you'd want to fetch the policy of the CPU your IRQ (and handling
-> >>> thread) is affined to; The only compatible DTS I found describes a single
-> >>> A7, which is somewhat limited in the affinity area...
-> >> If I move this code just before start streaming and use get_cpu(), would
-> >> it works ?
-> >>
-> > AFAIA streaming_start() is not necessarily executing on the same CPU as the
-> > one that will handle the interrupt. I was thinking you could use the IRQ's
-> > effective affinity as a hint of which CPU(s) to boost, i.e. something like:
-> >
-> > ---
-> >      struct cpumask_var_t visited;
-> >      struct irq_data *d = irq_get_irq_data(irq);
-> >
-> >      err = alloc_cpumask_var(visited, GFP_KERNEL);
-> >      /* ... */
-> >      for_each_cpu(cpu, irq_data_get_effective_affinity_mask(d)) {
-> >              /* check if not already spanned */
-> >              if (cpumask_test_cpu(cpu, visited))
-> >                      continue;
-> >
-> >              policy = cpufreq_cpu_get(cpu);
-> >              cpumask_or(visited, visited, policy->cpus);
-> >              /* do the boost for that policy here */
-> >              /* ... */
-> >              cpufreq_cpu_put(policy);
-> >      }
-> > ---
-> >
-> > That of course falls apart when hotplug gets involved, and the effective
-> > affinity changes... There's irq_set_affinity_notifier() out there, but it
-> > seems it's only about the affinity, not the effective_affinity, I'm not
-> > sure how valid it would be to query the effective_affinity in that
-> > notifier.
-> If I wait to be in the irq it will be too late so I think I will do a
-> loop over all possible CPUs
-> before start the streaming to change the policies.
+On Wed, 2020-06-03 at 08:40 +0100, Marc Zyngier wrote:
+> On 2020-06-03 08:29, Neal Liu wrote:
+> > On Tue, 2020-06-02 at 21:02 +0800, Marc Zyngier wrote:
+> >> On 2020-06-02 13:14, Ard Biesheuvel wrote:
+> >> > On Tue, 2 Jun 2020 at 10:15, Neal Liu <neal.liu@mediatek.com> wrote:
+> >> >>
+> >> >> These patch series introduce a security random number generator
+> >> >> which provides a generic interface to get hardware rnd from Secure
+> >> >> state. The Secure state can be Arm Trusted Firmware(ATF), Trusted
+> >> >> Execution Environment(TEE), or even EL2 hypervisor.
+> >> >>
+> >> >> Patch #1..2 adds sec-rng kernel driver for Trustzone based SoCs.
+> >> >> For security awareness SoCs on ARMv8 with TrustZone enabled,
+> >> >> peripherals like entropy sources is not accessible from normal world
+> >> >> (linux) and rather accessible from secure world (HYP/ATF/TEE) only.
+> >> >> This driver aims to provide a generic interface to Arm Trusted
+> >> >> Firmware or Hypervisor rng service.
+> >> >>
+> >> >>
+> >> >> changes since v1:
+> >> >> - rename mt67xx-rng to mtk-sec-rng since all MediaTek ARMv8 SoCs can
+> >> >> reuse
+> >> >>   this driver.
+> >> >>   - refine coding style and unnecessary check.
+> >> >>
+> >> >>   changes since v2:
+> >> >>   - remove unused comments.
+> >> >>   - remove redundant variable.
+> >> >>
+> >> >>   changes since v3:
+> >> >>   - add dt-bindings for MediaTek rng with TrustZone enabled.
+> >> >>   - revise HWRNG SMC call fid.
+> >> >>
+> >> >>   changes since v4:
+> >> >>   - move bindings to the arm/firmware directory.
+> >> >>   - revise driver init flow to check more property.
+> >> >>
+> >> >>   changes since v5:
+> >> >>   - refactor to more generic security rng driver which
+> >> >>     is not platform specific.
+> >> >>
+> >> >> *** BLURB HERE ***
+> >> >>
+> >> >> Neal Liu (2):
+> >> >>   dt-bindings: rng: add bindings for sec-rng
+> >> >>   hwrng: add sec-rng driver
+> >> >>
+> >> >
+> >> > There is no reason to model a SMC call as a driver, and represent it
+> >> > via a DT node like this.
+> >> 
+> >> +1.
+> >> 
+> >> > It would be much better if this SMC interface is made truly generic,
+> >> > and wired into the arch_get_random() interface, which can be used much
+> >> > earlier.
+> >> 
+> >> Wasn't there a plan to standardize a SMC call to rule them all?
+> >> 
+> >>          M.
+> > 
+> > Could you give us a hint how to make this SMC interface more generic in
+> > addition to my approach?
+> > There is no (easy) way to get platform-independent SMC function ID,
+> > which is why we encode it into device tree, and provide a generic
+> > driver. In this way, different devices can be mapped and then get
+> > different function ID internally.
+> 
+> The idea is simply to have *one* single ID that caters for all
+> implementations, just like we did for PSCI at the time. This
+> requires ARM to edict a standard, which is what I was referring
+> to above.
+> 
+> There is zero benefit in having a platform-dependent ID. It just
+> pointlessly increases complexity, and means we cannot use the RNG
+> before the firmware tables are available (yes, we need it that
+> early).
+> 
+>          M.
 
-Can't you use irq_get_affinity_mask  and loop over it ?
+Do you know which ARM expert could edict this standard?
+Or is there any chance that we can make one? And be reviewed by
+maintainers?
 
-Also You should better use freq_qos_add/remove_request during probe
-and remove of the driver and use freq_qos_update_request in
-dcmi_start/stop_streaming to set/unset your constraint.
-
->
-> >
-> >> Benjamin
-> >>>>         dev_info(&pdev->dev, "Probe done\n");
-> >>>>
-> >>>>         platform_set_drvdata(pdev, dcmi);
-> >>>> @@ -2049,6 +2073,9 @@ static int dcmi_remove(struct platform_device *pdev)
-> >>>>
-> >>>>         pm_runtime_disable(&pdev->dev);
-> >>>>
-> >>>> +  if (dcmi->policy)
-> >>>> +          cpufreq_cpu_put(dcmi->policy);
-> >>>> +
-> >>>>         v4l2_async_notifier_unregister(&dcmi->notifier);
-> >>>>         v4l2_async_notifier_cleanup(&dcmi->notifier);
-> >>>>         media_entity_cleanup(&dcmi->vdev->entity);
 
 _______________________________________________
 linux-arm-kernel mailing list
