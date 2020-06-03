@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D94B91ED5D4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 20:09:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CA9D1ED5E9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 20:12:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RjQfnsCFykgtoFnE2Vw+SbxCub2hH4up8T20duZEzbg=; b=lJvnOs+059OfnJ
-	L3w6eaDXRiNoLNdQ0Z2hcXlEPLg4W7CWJwapf0CP4DWAskX4wTiaFI+bDbR8Xby0OOXP3PS4IOLni
-	81k97iA04s04ziuXyUIMOo7emC/mt5mclqhb/khyB/E1KZUwMmZrPqVhU0HyM0NaK7vUBE+l+mwuj
-	euZxqfnOaPNI/VrJ2/Iiuv5eHb4pqkY16PVJwez5IkPDmYQgJgs9xyaN93kTrLQrZsRtCYBAbGCtD
-	1rhZD+kjYNiW5XcvlSngM+yW0ys2tHf3i+lj5UJ6yzjTKZj7ETs7aSbldohHecMGxziJfnS0W/GRx
-	Okp/N88ZZFLB1QlJtWBg==;
+	List-Owner; bh=XyU1yoG5y+JNeO16TtdcTRbYS4Q1ARbkARddePj3b3k=; b=dWHjBctgcF/AzT
+	q6eZ6TQfAzRUHbyFF/YeoVRWe81K5niM4nHWIjlaemhyUg/ZaxzzbDjLzQe2ewmrTlxbMsfBoCPsP
+	ZjrMF0H3H+7rgrz7KwYpX9aIAUCDCsQRRyDq4zoqv2zghWAlVqirldKqnJ2RowDecjAY2qy7ryR3n
+	X2KkGvroF1OxFSQ6W7Lbh1LL2LZoPvvUphURCD1VoHuVS+kCjK1FfwJfd5UCI1NzYV0ypzUaWXfxv
+	KrXYE60TH7WrdXtAJyvf+W0MIA2KKCM2cD4Yj3Fjhet1IX32eNGuth1oahOCktlrtV4UK4EdsuLbU
+	cxkDfNGVMR9pMD/boqsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgXot-0001La-GB; Wed, 03 Jun 2020 18:08:55 +0000
-Received: from relay10.mail.gandi.net ([217.70.178.230])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgXf2-0005VW-M1; Wed, 03 Jun 2020 17:58:49 +0000
-Received: from localhost.localdomain (unknown [91.224.148.103])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id E1EBE24000E;
- Wed,  3 Jun 2020 17:58:40 +0000 (UTC)
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>,
- <linux-mtd@lists.infradead.org>
-Subject: [PATCH v10 20/20] mtd: rawnand: Use the NAND framework user_conf
- object for ECC flags
-Date: Wed,  3 Jun 2020 19:57:59 +0200
-Message-Id: <20200603175759.19948-21-miquel.raynal@bootlin.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200603175759.19948-1-miquel.raynal@bootlin.com>
-References: <20200603175759.19948-1-miquel.raynal@bootlin.com>
+	id 1jgXs0-0006WG-Il; Wed, 03 Jun 2020 18:12:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgXkp-0004cF-Pg
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 18:04:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0F7AE31B;
+ Wed,  3 Jun 2020 11:04:42 -0700 (PDT)
+Received: from bogus (unknown [10.37.8.135])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ECD343F305;
+ Wed,  3 Jun 2020 11:04:38 -0700 (PDT)
+Date: Wed, 3 Jun 2020 19:04:35 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [RFC] dt-bindings: mailbox: add doorbell support to ARM MHU
+Message-ID: <20200603180435.GB23722@bogus>
+References: <0a50f0cf5593baeb628dc8606c523665e5e2ae6c.1589519600.git.viresh.kumar@linaro.org>
+ <20200528192005.GA494874@bogus>
+ <20200529040758.kneg2j4n3gxh2rfv@vireshk-i7>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200529040758.kneg2j4n3gxh2rfv@vireshk-i7>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_105845_015356_802FE0D3 
-X-CRM114-Status: GOOD (  15.13  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200603_110444_004813_33B3E187 
+X-CRM114-Status: GOOD (  10.59  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.230 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,180 +64,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Julien Su <juliensu@mxic.com.tw>, Miquel Raynal <miquel.raynal@bootlin.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ devicetree@vger.kernel.org, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Instead of storing the ECC flags in chip->ecc.options, use
-nanddev->ecc.user_conf.flags.
+On Fri, May 29, 2020 at 09:37:58AM +0530, Viresh Kumar wrote:
+> On 28-05-20, 13:20, Rob Herring wrote:
+> > Whether Linux
+> > requires serializing mailbox accesses is a separate issue. On that side,
+> > it seems silly to not allow driving the h/w in the most efficient way
+> > possible.
+>
+> That's exactly what we are trying to say. The hardware allows us to
+> write all 32 bits in parallel, without any hardware issues, why
+> shouldn't we do that ? The delay (which Sudeep will find out, he is
+> facing issues with hardware access because of lockdown right now)
 
-There is currently only one to save: NAND_ECC_MAXIMIZE.
+OK, I was able to access the setup today. I couldn't reach a point
+where I can do measurements as the system just became unusable with
+one physical channel instead of 2 virtual channels as in my patches.
 
-Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
----
- drivers/mtd/nand/raw/atmel/nand-controller.c |  3 ++-
- drivers/mtd/nand/raw/denali_pci.c            |  2 +-
- drivers/mtd/nand/raw/nand_base.c             | 14 +++++++-------
- drivers/mtd/nand/raw/sunxi_nand.c            |  3 ++-
- drivers/mtd/nand/raw/tegra_nand.c            |  5 +++--
- include/linux/mtd/rawnand.h                  |  1 -
- 6 files changed, 15 insertions(+), 13 deletions(-)
+My test was simple. Switch to schedutil and read sensors periodically
+via sysfs.
 
-diff --git a/drivers/mtd/nand/raw/atmel/nand-controller.c b/drivers/mtd/nand/raw/atmel/nand-controller.c
-index 08df7f23b859..a594f5efb0a2 100644
---- a/drivers/mtd/nand/raw/atmel/nand-controller.c
-+++ b/drivers/mtd/nand/raw/atmel/nand-controller.c
-@@ -1046,6 +1046,7 @@ static int atmel_nand_pmecc_init(struct nand_chip *chip)
- 	const struct nand_ecc_props *requirements =
- 		nanddev_get_ecc_requirements(&chip->base);
- 	struct mtd_info *mtd = nand_to_mtd(chip);
-+	struct nand_device *nanddev = mtd_to_nanddev(mtd);
- 	struct atmel_nand *nand = to_atmel_nand(chip);
- 	struct atmel_nand_controller *nc;
- 	struct atmel_pmecc_user_req req;
-@@ -1070,7 +1071,7 @@ static int atmel_nand_pmecc_init(struct nand_chip *chip)
- 			chip->ecc.size = val;
- 	}
- 
--	if (chip->ecc.options & NAND_ECC_MAXIMIZE)
-+	if (nanddev->ecc.user_conf.flags & NAND_ECC_MAXIMIZE_STRENGTH)
- 		req.ecc.strength = ATMEL_PMECC_MAXIMIZE_ECC_STRENGTH;
- 	else if (chip->ecc.strength)
- 		req.ecc.strength = chip->ecc.strength;
-diff --git a/drivers/mtd/nand/raw/denali_pci.c b/drivers/mtd/nand/raw/denali_pci.c
-index 2f77ee55e1bf..20c085a30adc 100644
---- a/drivers/mtd/nand/raw/denali_pci.c
-+++ b/drivers/mtd/nand/raw/denali_pci.c
-@@ -100,7 +100,7 @@ static int denali_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
- 		goto out_remove_denali;
- 	}
- 
--	dchip->chip.ecc.options |= NAND_ECC_MAXIMIZE;
-+	dchip->chip.base.ecc.user_conf.flags |= NAND_ECC_MAXIMIZE_STRENGTH;
- 
- 	dchip->nsels = nsels;
- 
-diff --git a/drivers/mtd/nand/raw/nand_base.c b/drivers/mtd/nand/raw/nand_base.c
-index 53e07f25ae65..c0d13f3b308a 100644
---- a/drivers/mtd/nand/raw/nand_base.c
-+++ b/drivers/mtd/nand/raw/nand_base.c
-@@ -4989,9 +4989,6 @@ static int rawnand_dt_init(struct nand_chip *chip)
- 	if (of_get_nand_on_flash_bbt(dn))
- 		chip->bbt_options |= NAND_BBT_USE_FLASH;
- 
--	if (of_property_read_bool(dn, "nand-ecc-maximize"))
--		chip->ecc.options |= NAND_ECC_MAXIMIZE;
--
- 	of_get_nand_ecc_user_config(nand);
- 	of_get_nand_ecc_legacy_user_config(chip);
- 
-@@ -5122,6 +5119,7 @@ static void nand_scan_ident_cleanup(struct nand_chip *chip)
- static int nand_set_ecc_soft_ops(struct nand_chip *chip)
- {
- 	struct mtd_info *mtd = nand_to_mtd(chip);
-+	struct nand_device *nanddev = mtd_to_nanddev(mtd);
- 	struct nand_ecc_ctrl *ecc = &chip->ecc;
- 
- 	if (WARN_ON(ecc->engine_type != NAND_ECC_ENGINE_TYPE_SOFT))
-@@ -5197,7 +5195,7 @@ static int nand_set_ecc_soft_ops(struct nand_chip *chip)
- 		 * used.
- 		 */
- 		if (mtd->ooblayout == nand_get_large_page_ooblayout() &&
--		    ecc->options & NAND_ECC_MAXIMIZE) {
-+		    nanddev->ecc.user_conf.flags & NAND_ECC_MAXIMIZE_STRENGTH) {
- 			int steps, bytes;
- 
- 			/* Always prefer 1k blocks over 512bytes ones */
-@@ -5437,11 +5435,12 @@ nand_maximize_ecc(struct nand_chip *chip,
-  * @caps: ECC engine caps info structure
-  * @oobavail: OOB size that the ECC engine can use
-  *
-- * Choose the ECC configuration according to following logic
-+ * Choose the ECC configuration according to following logic.
-  *
-  * 1. If both ECC step size and ECC strength are already set (usually by DT)
-  *    then check if it is supported by this controller.
-- * 2. If NAND_ECC_MAXIMIZE is set, then select maximum ECC strength.
-+ * 2. If the user provided the nand-ecc-maximize property, then select maximum
-+ *    ECC strength.
-  * 3. Otherwise, try to match the ECC step size and ECC strength closest
-  *    to the chip's requirement. If available OOB size can't fit the chip
-  *    requirement then fallback to the maximum ECC step size and ECC strength.
-@@ -5452,6 +5451,7 @@ int nand_ecc_choose_conf(struct nand_chip *chip,
- 			 const struct nand_ecc_caps *caps, int oobavail)
- {
- 	struct mtd_info *mtd = nand_to_mtd(chip);
-+	struct nand_device *nanddev = mtd_to_nanddev(mtd);
- 
- 	if (WARN_ON(oobavail < 0 || oobavail > mtd->oobsize))
- 		return -EINVAL;
-@@ -5459,7 +5459,7 @@ int nand_ecc_choose_conf(struct nand_chip *chip,
- 	if (chip->ecc.size && chip->ecc.strength)
- 		return nand_check_ecc_caps(chip, caps, oobavail);
- 
--	if (chip->ecc.options & NAND_ECC_MAXIMIZE)
-+	if (nanddev->ecc.user_conf.flags & NAND_ECC_MAXIMIZE_STRENGTH)
- 		return nand_maximize_ecc(chip, caps, oobavail);
- 
- 	if (!nand_match_ecc_req(chip, caps, oobavail))
-diff --git a/drivers/mtd/nand/raw/sunxi_nand.c b/drivers/mtd/nand/raw/sunxi_nand.c
-index 490ba485e939..cbd05cea5bad 100644
---- a/drivers/mtd/nand/raw/sunxi_nand.c
-+++ b/drivers/mtd/nand/raw/sunxi_nand.c
-@@ -1609,12 +1609,13 @@ static int sunxi_nand_hw_ecc_ctrl_init(struct nand_chip *nand,
- 	static const u8 strengths[] = { 16, 24, 28, 32, 40, 48, 56, 60, 64 };
- 	struct sunxi_nfc *nfc = to_sunxi_nfc(nand->controller);
- 	struct mtd_info *mtd = nand_to_mtd(nand);
-+	struct nand_device *nanddev = mtd_to_nanddev(mtd);
- 	struct sunxi_nand_hw_ecc *data;
- 	int nsectors;
- 	int ret;
- 	int i;
- 
--	if (ecc->options & NAND_ECC_MAXIMIZE) {
-+	if (nanddev->ecc.user_conf.flags & NAND_ECC_MAXIMIZE_STRENGTH) {
- 		int bytes;
- 
- 		ecc->size = 1024;
-diff --git a/drivers/mtd/nand/raw/tegra_nand.c b/drivers/mtd/nand/raw/tegra_nand.c
-index fecdb7e8f9e8..5c94ecbf496f 100644
---- a/drivers/mtd/nand/raw/tegra_nand.c
-+++ b/drivers/mtd/nand/raw/tegra_nand.c
-@@ -840,9 +840,10 @@ static int tegra_nand_get_strength(struct nand_chip *chip, const int *strength,
- 				   int strength_len, int bits_per_step,
- 				   int oobsize)
- {
-+	struct nand_device *base = mtd_to_nanddev(nand_to_mtd(chip));
- 	const struct nand_ecc_props *requirements =
--		nanddev_get_ecc_requirements(&chip->base);
--	bool maximize = chip->ecc.options & NAND_ECC_MAXIMIZE;
-+		nanddev_get_ecc_requirements(base);
-+	bool maximize = base->ecc.user_conf.flags & NAND_ECC_MAXIMIZE_STRENGTH;
- 	int i;
- 
- 	/*
-diff --git a/include/linux/mtd/rawnand.h b/include/linux/mtd/rawnand.h
-index 66f69a1d27a5..9d69fa6608ae 100644
---- a/include/linux/mtd/rawnand.h
-+++ b/include/linux/mtd/rawnand.h
-@@ -98,7 +98,6 @@ struct nand_chip;
-  * pages and you want to rely on the default implementation.
-  */
- #define NAND_ECC_GENERIC_ERASED_CHECK	BIT(0)
--#define NAND_ECC_MAXIMIZE		BIT(1)
- 
- /*
-  * Option constants for bizarre disfunctionality and real
--- 
-2.20.1
+ arm-scmi firmware:scmi: message for 1 is not expected!
+ arm-scmi firmware:scmi: timed out in resp(caller: scmi_sensor_reading_get+0xf4/0x120)
+ arm-scmi firmware:scmi: timed out in resp(caller: scmi_sensor_reading_get+0xf4/0x120)
+ arm-scmi firmware:scmi: message for 1 is not expected!
+ arm-scmi firmware:scmi: timed out in resp(caller: scmi_sensor_reading_get+0xf4/0x120)
+ arm-scmi firmware:scmi: message for 1 is not expected!
 
+With trace enabled I can see even cpufreq_set timing out. Sample trace
+output:
+
+       bash-1019  [005]  1149.452340: scmi_xfer_begin:      transfer_id=1537 msg_id=7 protocol_id=19 seq=0 poll=1
+       bash-1019  [005]  1149.452407: scmi_xfer_end:        transfer_id=1537 msg_id=7 protocol_id=19 seq=0 status=0
+       bash-1526  [000]  1149.472553: scmi_xfer_begin:      transfer_id=1538 msg_id=6 protocol_id=21 seq=0 poll=0
+     <idle>-0     [001]  1149.472733: scmi_xfer_begin:      transfer_id=1539 msg_id=7 protocol_id=19 seq=1 poll=1
+     <idle>-0     [001]  1149.472842: scmi_xfer_end:        transfer_id=1539 msg_id=7 protocol_id=19 seq=1 status=-110
+     <idle>-0     [001]  1149.483040: scmi_xfer_begin:      transfer_id=1540 msg_id=7 protocol_id=19 seq=1 poll=1
+     <idle>-0     [001]  1149.483043: scmi_xfer_end:        transfer_id=1540 msg_id=7 protocol_id=19 seq=1 status=0
+    rs:main-543   [003]  1149.493031: scmi_xfer_begin:      transfer_id=1541 msg_id=7 protocol_id=19 seq=1 poll=1
+    rs:main-543   [003]  1149.493047: scmi_xfer_end:        transfer_id=1541 msg_id=7 protocol_id=19 seq=1 status=0
+     <idle>-0     [000]  1149.507033: scmi_xfer_begin:      transfer_id=1542 msg_id=7 protocol_id=19 seq=1 poll=1
+     <idle>-0     [000]  1149.507044: scmi_xfer_end:        transfer_id=1542 msg_id=7 protocol_id=19 seq=1 status=0
+       bash-1526  [000]  1149.516068: scmi_xfer_end:        transfer_id=1538 msg_id=6 protocol_id=21 seq=0 status=-110
+       bash-1526  [000]  1149.516559: scmi_xfer_begin:      transfer_id=1543 msg_id=6 protocol_id=21 seq=0 poll=0
+     <idle>-0     [001]  1149.516729: scmi_xfer_begin:      transfer_id=1544 msg_id=7 protocol_id=19 seq=1 poll=1
+     <idle>-0     [001]  1149.516837: scmi_xfer_end:        transfer_id=1544 msg_id=7 protocol_id=19 seq=1 status=-110
+ksoftirqd/0-9     [000]  1149.519065: scmi_xfer_begin:      transfer_id=1545 msg_id=7 protocol_id=19 seq=1 poll=1
+ksoftirqd/0-9     [000]  1149.519072: scmi_xfer_end:        transfer_id=1545 msg_id=7 protocol_id=19 seq=1 status=0
+     <idle>-0     [001]  1149.526878: scmi_xfer_begin:      transfer_id=1546 msg_id=7 protocol_id=19 seq=1 poll=1
+     <idle>-0     [001]  1149.526882: scmi_xfer_end:        transfer_id=1546 msg_id=7 protocol_id=19 seq=1 status=0
+     <idle>-0     [000]  1149.551119: scmi_xfer_begin:      transfer_id=1547 msg_id=7 protocol_id=19 seq=1 poll=1
+     <idle>-0     [000]  1149.551138: scmi_xfer_end:        transfer_id=1547 msg_id=7 protocol_id=19 seq=1 status=0
+       bash-1526  [000]  1149.560191: scmi_xfer_end:        transfer_id=1543 msg_id=6 protocol_id=21 seq=0 status=-110
+       bash-1526  [000]  1149.560690: scmi_xfer_begin:      transfer_id=1548 msg_id=6 protocol_id=21 seq=0 poll=0
+     <idle>-0     [001]  1149.560859: scmi_xfer_begin:      transfer_id=1549 msg_id=7 protocol_id=19 seq=1 poll=1
+     <idle>-0     [001]  1149.560968: scmi_xfer_end:        transfer_id=1549 msg_id=7 protocol_id=19 seq=1 status=-110
+
+protocol_id=19 is cpufreq and 21 is sensor. This is simplest test and
+I can easily generate more timeouts starting some stress test with DVFS.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
