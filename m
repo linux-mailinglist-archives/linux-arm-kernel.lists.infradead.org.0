@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A5CD1EC8B4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 07:22:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39FE31EC8B2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 07:22:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ePsYZ5TCBEyGRjQ0cK4ErNY8/peunzozpCj0IyItsDY=; b=GZBBKj6HtSWz6q
-	7tpPlEM+JSOXrQSrcTRePIV1zDi2s5kygwjB8mH+jYjtHbmJrP+W5EeJZOYlPcHgcBtKv/M3fHhIO
-	sf4lwEBBVbJRFqGMBSjmKcMWpVOCRjom6u4jkgBybtZ9hrIimp31tNdAr/gCSCW96VOvopLwEWUbU
-	OoK+53tICxKWqmMJ29CDm9jUVzeGTEEUCaAVUY5tfaCm4kfNcdhxTI6s6m9tOjlaj4IXvMTqANXM/
-	HIQ13XOzCEEe5jp/3p9UTCmaPzty64jd8lbjzUx473zxQ47dROueTy2QfJoR8rB6EqUveNNT/PcmO
-	i3GlFuSFuvQZCufcRz/A==;
+	List-Owner; bh=mdQYGOLguUs+bKAynqYTHG7IU0hXqCQwWnNBFh7rsY4=; b=hWGb/6AX6VDrnM
+	Adwzzh8C4gzkRd9Z87lvb/sy7Hsslxt8L0hO607Dzqqxu/gUplTD+jlDMGmWlHX7zcW5OHc6Grz5a
+	jrDPVSvVtRnTvU5wYrcMzDVLMzrcKZBymIxNJHxEzeVeaaWTVaV7AN8kjC0VICuCGqfy6Ndkp9uaw
+	lupw50Hqj+dg4w0DLDGQbBjs0fITW4uE3Vg471kSSHQaFL7KoN0FJvLKoWm2+Rv7GpMFG8wWIpJHZ
+	WiuSkPhaS5Ks06EI1DsDxCNJdzmwb8y7C9wU9+ecY0SleYq0TxiBCIXS4zpBs+ar0g8GX/TVwuXoy
+	FfYZWipb272Ocejb/EoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgLr7-0001d7-9t; Wed, 03 Jun 2020 05:22:25 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jgLqj-0001FY-IU; Wed, 03 Jun 2020 05:22:01 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgLqf-0001FZ-GN
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 05:21:59 +0000
-IronPort-SDR: 1wiwkknEWvwhSYqkB4BelLb2m6sDCyw1kiyCQAdi0X5d5TYn1LbcIYH5twpnmOOhsroAHc/8pf
- GbPJO5KwlB/Q==
+ id 1jgLqc-0001F5-TJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 05:21:56 +0000
+IronPort-SDR: NoEx3vTQMTmq0koERKZVHbYnRrQJKWuYkxNP2tPg1PaWYdH8WrQc5fuqvjSfjSADze3TYSXeaJ
+ 4Twmfyc94Bhg==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 02 Jun 2020 22:21:57 -0700
-IronPort-SDR: 9Fd9DGuOVGxY9jLJoVbZc5I+9kUWwvGIkGJ44ngw18IPHgJwoxEwE5IFthEdluQzaRa0sY3RVl
- SpasLm9SfLRA==
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 02 Jun 2020 22:21:54 -0700
+IronPort-SDR: JwHJ+aiXwvY/8S4qEpPWKokToT+d2njsG3meZ/vKjR9VTD9B/JKMdDrQDaBIV9igMYvbdcWG2G
+ Ba1yB4DC/8XQ==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,467,1583222400"; d="scan'208";a="377984538"
+X-IronPort-AV: E=Sophos;i="5.73,467,1583222400"; d="scan'208";a="257885175"
 Received: from lkp-server01.sh.intel.com (HELO e5a7ad696f24) ([10.239.97.150])
- by fmsmga001.fm.intel.com with ESMTP; 02 Jun 2020 22:21:55 -0700
+ by orsmga007.jf.intel.com with ESMTP; 02 Jun 2020 22:21:52 -0700
 Received: from kbuild by e5a7ad696f24 with local (Exim 4.92)
  (envelope-from <lkp@intel.com>)
- id 1jgLqa-0000Nd-Me; Wed, 03 Jun 2020 05:21:52 +0000
-Date: Wed, 03 Jun 2020 13:21:11 +0800
+ id 1jgLqZ-0000NX-KR; Wed, 03 Jun 2020 05:21:51 +0000
+Date: Wed, 03 Jun 2020 13:21:14 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: [soc:arm/soc] BUILD SUCCESS d2353bad2c1eef7a1228645fbb21e7887c633d12
-Message-ID: <5ed73347.TZq6I7BUwYKjWBKN%lkp@intel.com>
+Subject: [soc:for-next] BUILD SUCCESS 536b63efd215900771a0269e9f457183b2c62a70
+Message-ID: <5ed7334a.y61l5RRk5mtBh7v0%lkp@intel.com>
 User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_222157_570953_BCF388F6 
-X-CRM114-Status: UNSURE (   7.42  )
+X-CRM114-CacheID: sfid-20200602_222154_967778_B23F116E 
+X-CRM114-Status: UNSURE (   6.77  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -3.2 (---)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -56,13 +56,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ high trust [192.55.52.115 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
  1.8 LONGWORDS              Long string of long words
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,13 +77,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  arm/soc
-branch HEAD: d2353bad2c1eef7a1228645fbb21e7887c633d12  ARM: omap2: fix omap5_realtime_timer_init definition
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  for-next
+branch HEAD: 536b63efd215900771a0269e9f457183b2c62a70  soc: document merges
 
 elapsed time: 482m
 
-configs tested: 99
-configs skipped: 10
+configs tested: 101
+configs skipped: 11
 
 The following configs have been built successfully.
 More configs may be tested in the coming days.
@@ -99,6 +96,10 @@ arm64                            allyesconfig
 arm64                               defconfig
 arm64                            allmodconfig
 arm64                             allnoconfig
+sh                 kfr2r09-romimage_defconfig
+arm                          prima2_defconfig
+arc                        nsimosci_defconfig
+m68k                             allyesconfig
 arm                       imx_v4_v5_defconfig
 h8300                     edosk2674_defconfig
 parisc                generic-64bit_defconfig
@@ -121,7 +122,6 @@ sh                          rsk7203_defconfig
 arm                       netwinder_defconfig
 arm                          badge4_defconfig
 mips                  decstation_64_defconfig
-arc                        nsimosci_defconfig
 i386                              allnoconfig
 i386                             allyesconfig
 i386                                defconfig
@@ -134,7 +134,6 @@ m68k                             allmodconfig
 m68k                              allnoconfig
 m68k                           sun3_defconfig
 m68k                                defconfig
-m68k                             allyesconfig
 nios2                               defconfig
 nios2                            allyesconfig
 openrisc                            defconfig
@@ -162,11 +161,11 @@ parisc                            allnoconfig
 parisc                              defconfig
 parisc                           allyesconfig
 parisc                           allmodconfig
-powerpc                             defconfig
 powerpc                          allyesconfig
 powerpc                          rhel-kconfig
 powerpc                          allmodconfig
 powerpc                           allnoconfig
+powerpc                             defconfig
 riscv                            allyesconfig
 riscv                             allnoconfig
 riscv                               defconfig
