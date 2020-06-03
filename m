@@ -2,112 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2D821ECCBA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 11:40:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5755C1ECCA8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 11:37:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=RPZI8PjDylRpaLWTOpOwnOkZ8Lc4RkwpBpCjqJbPjdw=; b=dHF1ritPo6bOjE
-	2OZC6UDU0GUPHteDcQqVHZmysE7F0EshiUjbm5Qw2FcBzdAB36O2PoPtCtoXQayD2Nx9ZyQUugz7N
-	oNvDBmXQT96KQSxANfjc58+SjtjUkJi61EyEujVRzfiw8FHkl6qqwPoFiJlDDnrY0GLsE2NYhdeGv
-	QgoV/jh/tWEjkktlaPKAs2blRmaB+qmESjWtI1zCBv2iXlmpsmqOQPd/C4UMdb0PPE3p1NlNVqsUi
-	tSRk3SL64UJlWzIcrhhsxvX3jy3UOMjcwdnIUgbyhiEr5hMUyzWAL02tVDnqyzmuWBdKWpi79U2lN
-	6RDsJd5LEA8jLcP7aO9w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rWBAjDRERDb3zu3t5aPEP16ZlwxN3a1thyFtN8w5aIM=; b=Pt1LMZaDc3KBcy
+	4QhbkYQeimg7IZmbobbFtJALLRT+9eSEqIpHglF4zK9/ZVyUFfs4eZBvc2/0Uq5ZrSZIFzITqXN85
+	5vK/cnKkwracT6Re11CH1XLTHZ8Ha8mlLxW4uYWIBMgwmMT/hw+PlLbotf3TcBOkNa83D1KN6vj30
+	VNsnpaf4q5JD9d76jnvZjkSVxXpjeicRhk5VNEqfsf3ujE+TL/6jsDkmLrSi48nX8VND8CqgqmfEi
+	qHCCMufHz1A09SaBSzHw5SeMTLfc7uHWwwlsogX7jj7pihnxFEH787Uxe3PRZfhqgFUTVTWhVJrq/
+	vt+24LAdhoR/yP1iWj5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgPsj-0007QQ-Hd; Wed, 03 Jun 2020 09:40:21 +0000
-Received: from mail-eopbgr30087.outbound.protection.outlook.com ([40.107.3.87]
- helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+	id 1jgPpx-0004xP-Tb; Wed, 03 Jun 2020 09:37:29 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgPsW-00064H-MD
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 09:40:10 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=aztJNJL/D2fgvn4taM6gQUOjKEFNU1ctl0ziAjJxc65Y7BH/Um3Q0YO5sqddLvvNA6R1dZ44+8Li05KJrGy744mdlFZGN7h3eHEpXbk29Z7651UVnzYk1/lml9v4YGfK0Ckld0em0avAkOLit01yRyC091KNIGEFIPw1ph8UhqC47LBrNY2736O1bbmeKP+4OSfUhgwMdajxJrPFlGZW/IsQhrRPu4g9AXMf7kjiQaI3IiDYgOA7fyHh8iUfX/xmkRXpCIhsUde6mdUcZs6o1uA4Gq4PYob0p99TqoFlQ1Th4G8JLg6c0iF03ANRN7Ta0LZmmxq0Modab30W4jGuUA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fMEY2ra3VmJNtDhGs/eKIOXbVsOomvkoqWKOLXOIapQ=;
- b=EjD1Wx7bU0RY0UAqHQbBEWCTm/zGBxJ/uQ29EYUZ/3DABSTSPVRhKOX5m6itD5B/p3lefEG+JvmTPlN5BsBeC5J+IEKViOFmkjgPJdKAZEC+JxT1En6deoGu6lsbiRMNjf9pNH57N+C2SaPfX1st14BpNn9A8YSWgsjJvZX49ciMyyGg4ge+yiAgPTqbsBHu8LYzEDqT79zJIwCVhKkC2TYYKuhFVO9zW2V1ezLfV+LK1ParXN5WbDxjjCt8Fu8V6w0P+hlgszUNoph49db+TPBEZNE9XUA3bx+4KTCnQtLKtzW+CNMOU1a+EQtJMuxyCq7KOUSe3tdFYM05RcW6qQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=fMEY2ra3VmJNtDhGs/eKIOXbVsOomvkoqWKOLXOIapQ=;
- b=ACXS2IXLrAqd3BYvstNzD54vVT0ICxUlWzP8ElP5WWU6TlZw75L/n01C2KCnK0b5QQ+IaXdYLynm2thfUY/hX+KOd/FwdnKtpz8b4gK8Xltg92Rx05V7hKsi3OfzPs1RJg6xgcUOPWKgY6f+7YJ0+EH8jfLMG8xXHkBfxXm3x7Q=
-Authentication-Results: kernel.org; dkim=none (message not signed)
- header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
-Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
- by DB6PR0402MB2856.eurprd04.prod.outlook.com (2603:10a6:4:9a::16)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3045.19; Wed, 3 Jun
- 2020 09:40:03 +0000
-Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
- ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
- ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.3066.018; Wed, 3 Jun 2020
- 09:40:03 +0000
-From: peng.fan@nxp.com
-To: shawnguo@kernel.org,
-	s.hauer@pengutronix.de,
-	aisheng.dong@nxp.com
-Subject: [PATCH] soc: imx: scu: use devm_kasprintf
-Date: Wed,  3 Jun 2020 17:29:32 +0800
-Message-Id: <1591176572-9693-1-git-send-email-peng.fan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-ClientProxiedBy: SG2PR02CA0070.apcprd02.prod.outlook.com
- (2603:1096:4:54::34) To DB6PR0402MB2760.eurprd04.prod.outlook.com
- (2603:10a6:4:a1::14)
+ id 1jgPpq-0004YG-Ku; Wed, 03 Jun 2020 09:37:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=RCFP1A+jP0Ejskt3PALHHBHaCjZj9CjOP9H+ZUjtVwM=; b=aFWUUXJqdnK1WDUWqzRKMDXBM
+ 1kVv5yXQAwa2Lb3TmbtSDvvBJ64BRFACoVB+RZ0tgL0YuklkRY/bcQdyJW2P60h1MJeiTlpxi6g9I
+ meZNBHpZMQ8WsKgm4tqAC16EYMcl/NpNGlG4fgZTNJE0RCxca/b0rSHQvJeKrbKnKWv4YWXgf58he
+ yXqLmgHCujl9SFNppMaI9CEPWAtNSvh3A3yBafP64u3ywxSGDLlNuRtysF6aLQd1qGP0SIeIHJT2Y
+ ZI/Lc0+PtL3erv1xuxcT+FQtsMq8POUrUjHA1w7xpnoTb1gNl9uRDIQuJ8AenWbYjQCTLvoKghfki
+ s4pbL54Lg==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:38300)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jgPn9-00058L-4d; Wed, 03 Jun 2020 10:34:35 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jgPmq-0005HW-Su; Wed, 03 Jun 2020 10:34:16 +0100
+Date: Wed, 3 Jun 2020 10:34:16 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: Security Random Number Generator support
+Message-ID: <20200603093416.GY1551@shell.armlinux.org.uk>
+References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
+ <CAMj1kXHjAdk5=-uSh_=S9j5cz42zr3h6t+YYGy+obevuQDp0fg@mail.gmail.com>
+ <85dfc0142d3879d50c0ba18bcc71e199@misterjones.org>
+ <1591169342.4878.9.camel@mtkswgap22>
+ <fcbe37f6f9cbcde24f9c28bc504f1f0e@kernel.org>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from localhost.localdomain (119.31.174.66) by
- SG2PR02CA0070.apcprd02.prod.outlook.com (2603:1096:4:54::34) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3045.25 via Frontend Transport; Wed, 3 Jun 2020 09:40:00 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 968e6474-ad19-4ef5-a439-08d807a21764
-X-MS-TrafficTypeDiagnostic: DB6PR0402MB2856:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <DB6PR0402MB28560A4A78E4B58086F52AA488880@DB6PR0402MB2856.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:324;
-X-Forefront-PRVS: 04238CD941
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 12XAsF9tEZf4nQsGfd+jV9EykKeYnJw/fNUDp0drfiO+fW6ezIKiZawKl/VwD0pk87levIH8YiSYBqQxBiN4Tmj/KrxE96YXj6ItokC/72FXeZrVjnN3jjQazznsH+ci4UCSoNfp1ScPDCrM3S76JA2xrQZaz3hoOSqYe/Hzm+37TGtVB4JvdNAJnXczLDM7HM5NgM2OWtiDOCMf9M32axiMO68gIx34IK/hkdP4zlsUN8iAqL4KQ8p4Inu8beht9BTHbefaWxd5IJmD6RkWAySC4IuoreQgxaApSYVk03y48kVfOihsc/nQ0ACf2+ZxP4keuUs0xOJpS3iDI18DUU1b8F5atx7r/B3CZMscqaijM+s3NepA/SI3zgPWUs/6
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(366004)(346002)(376002)(396003)(39860400002)(136003)(316002)(5660300002)(8936002)(69590400007)(86362001)(83380400001)(6506007)(36756003)(478600001)(52116002)(66556008)(66946007)(8676002)(4326008)(66476007)(6512007)(9686003)(2616005)(186003)(26005)(16526019)(2906002)(956004)(6486002)(6666004);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: LCE4Jv334FGUoRWjfS4gtftsAfbXAfT4aDGgtmNEKOyyHIZzkryruNoMQoc5qB5bt/qF60v7fr2VYqVbI5uITKJFLrgGLx/m2Z7xY0CpMEUye8gfAXeC7TJp2IdtStAHoATq6CqXnDdTZamqyz65lJrwKwkKkPLyUQsOV0sdE3bQuW44KVH5xwTV9Yt6AZe4xuV3mNP6sKOJ2Y9KhiMHPTv6BF2rv6Fu47THrNYt1z5u6g8ITMftWmuR2g4jLhfOnOCQZ0nOkbRPUtBO5POQqrdizan0r4T928bkmxw3Ublj/FbyTHbKSEHb0yk+ekhJYOJ5HwgigKUcR/hkwU9q6ApaJE0V0DPjDI9ivduEt59AD7NYG36D281lI6vArnDUfHOutiuA9ocm0uJvTgVlDOhUqf1761XLs7KX8Ba7HpG3lgUn4fQZ00rW4MJqXrZOKmikMCCt/nMu78sRRm6nblD6YVsusEugVgT6ft2WGMv5LQoeb5c0QngpIKqJgtAO
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 968e6474-ad19-4ef5-a439-08d807a21764
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Jun 2020 09:40:03.4002 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ccq5Biz/yie/NneAkByHNAEBsvDwUTyx+XnNBD6zbkD4f6Z5BoA5snLGyXhCl2qTnU0EFJBAjTMgDAWZPnSwrw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2856
+Content-Disposition: inline
+In-Reply-To: <fcbe37f6f9cbcde24f9c28bc504f1f0e@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_024008_747344_7AEE6B30 
-X-CRM114-Status: UNSURE (   9.86  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200603_023722_687517_F6D0701B 
+X-CRM114-Status: GOOD (  22.81  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.3.87 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.3.87 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -115,7 +78,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,85 +89,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, linux-kernel@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, leonard.crestez@nxp.com,
- festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Julius Werner <jwerner@google.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sean Wang <sean.wang@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
+ wsd_upstream <wsd_upstream@mediatek.com>,
+ Crystal Guo =?utf-8?B?KOmDreaZtik=?= <Crystal.Guo@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, Neal Liu <neal.liu@mediatek.com>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Matt Mackall <mpm@selenic.com>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, Ard Biesheuvel <ardb@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+On Wed, Jun 03, 2020 at 08:40:58AM +0100, Marc Zyngier wrote:
+> On 2020-06-03 08:29, Neal Liu wrote:
+> > On Tue, 2020-06-02 at 21:02 +0800, Marc Zyngier wrote:
+> > > On 2020-06-02 13:14, Ard Biesheuvel wrote:
+> > > > On Tue, 2 Jun 2020 at 10:15, Neal Liu <neal.liu@mediatek.com> wrote:
+> > > >>
+> > > >> These patch series introduce a security random number generator
+> > > >> which provides a generic interface to get hardware rnd from Secure
+> > > >> state. The Secure state can be Arm Trusted Firmware(ATF), Trusted
+> > > >> Execution Environment(TEE), or even EL2 hypervisor.
+> > > >>
+> > > >> Patch #1..2 adds sec-rng kernel driver for Trustzone based SoCs.
+> > > >> For security awareness SoCs on ARMv8 with TrustZone enabled,
+> > > >> peripherals like entropy sources is not accessible from normal world
+> > > >> (linux) and rather accessible from secure world (HYP/ATF/TEE) only.
+> > > >> This driver aims to provide a generic interface to Arm Trusted
+> > > >> Firmware or Hypervisor rng service.
+> > > >>
+> > > >>
+> > > >> changes since v1:
+> > > >> - rename mt67xx-rng to mtk-sec-rng since all MediaTek ARMv8 SoCs can
+> > > >> reuse
+> > > >>   this driver.
+> > > >>   - refine coding style and unnecessary check.
+> > > >>
+> > > >>   changes since v2:
+> > > >>   - remove unused comments.
+> > > >>   - remove redundant variable.
+> > > >>
+> > > >>   changes since v3:
+> > > >>   - add dt-bindings for MediaTek rng with TrustZone enabled.
+> > > >>   - revise HWRNG SMC call fid.
+> > > >>
+> > > >>   changes since v4:
+> > > >>   - move bindings to the arm/firmware directory.
+> > > >>   - revise driver init flow to check more property.
+> > > >>
+> > > >>   changes since v5:
+> > > >>   - refactor to more generic security rng driver which
+> > > >>     is not platform specific.
+> > > >>
+> > > >> *** BLURB HERE ***
+> > > >>
+> > > >> Neal Liu (2):
+> > > >>   dt-bindings: rng: add bindings for sec-rng
+> > > >>   hwrng: add sec-rng driver
+> > > >>
+> > > >
+> > > > There is no reason to model a SMC call as a driver, and represent it
+> > > > via a DT node like this.
+> > > 
+> > > +1.
+> > > 
+> > > > It would be much better if this SMC interface is made truly generic,
+> > > > and wired into the arch_get_random() interface, which can be used much
+> > > > earlier.
+> > > 
+> > > Wasn't there a plan to standardize a SMC call to rule them all?
+> > > 
+> > >          M.
+> > 
+> > Could you give us a hint how to make this SMC interface more generic in
+> > addition to my approach?
+> > There is no (easy) way to get platform-independent SMC function ID,
+> > which is why we encode it into device tree, and provide a generic
+> > driver. In this way, different devices can be mapped and then get
+> > different function ID internally.
+> 
+> The idea is simply to have *one* single ID that caters for all
+> implementations, just like we did for PSCI at the time. This
+> requires ARM to edict a standard, which is what I was referring
+> to above.
 
-Use devm_kasprintf to simplify code
+This sounds all too familiar.
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/soc/imx/soc-imx-scu.c | 37 +++++++++++--------------------------
- 1 file changed, 11 insertions(+), 26 deletions(-)
+This kind of thing is something that ARM have seems to shy away from
+doing - it's a point I brought up many years ago when the whole
+trustzone thing first appeared with its SMC call.  Those around the
+conference table were not interested - ARM seemed to prefer every
+vendor to do off and do their own thing with the SMC interface.
 
-diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
-index 20d37eaeb5f2..92448ca9a6f8 100644
---- a/drivers/soc/imx/soc-imx-scu.c
-+++ b/drivers/soc/imx/soc-imx-scu.c
-@@ -115,43 +115,28 @@ static int imx_scu_soc_probe(struct platform_device *pdev)
- 
- 	/* format soc_id value passed from SCU firmware */
- 	val = id & 0x1f;
--	soc_dev_attr->soc_id = kasprintf(GFP_KERNEL, "0x%x", val);
-+	soc_dev_attr->soc_id = devm_kasprintf(&pdev->dev, GFP_KERNEL, "0x%x", val);
- 	if (!soc_dev_attr->soc_id)
- 		return -ENOMEM;
- 
- 	/* format revision value passed from SCU firmware */
- 	val = (id >> 5) & 0xf;
- 	val = (((val >> 2) + 1) << 4) | (val & 0x3);
--	soc_dev_attr->revision = kasprintf(GFP_KERNEL,
--					   "%d.%d",
--					   (val >> 4) & 0xf,
--					   val & 0xf);
--	if (!soc_dev_attr->revision) {
--		ret = -ENOMEM;
--		goto free_soc_id;
--	}
-+	soc_dev_attr->revision = devm_kasprintf(&pdev->dev, GFP_KERNEL, "%d.%d",
-+						(val >> 4) & 0xf, val & 0xf);
-+	if (!soc_dev_attr->revision)
-+		return -ENOMEM;
- 
--	soc_dev_attr->serial_number = kasprintf(GFP_KERNEL, "%016llX", uid);
--	if (!soc_dev_attr->serial_number) {
--		ret = -ENOMEM;
--		goto free_revision;
--	}
-+	soc_dev_attr->serial_number = devm_kasprintf(&pdev->dev, GFP_KERNEL,
-+						     "%016llX", uid);
-+	if (!soc_dev_attr->serial_number)
-+		return -ENOMEM;
- 
- 	soc_dev = soc_device_register(soc_dev_attr);
--	if (IS_ERR(soc_dev)) {
--		ret = PTR_ERR(soc_dev);
--		goto free_serial_number;
--	}
-+	if (IS_ERR(soc_dev))
-+		return PTR_ERR(soc_dev);
- 
- 	return 0;
--
--free_serial_number:
--	kfree(soc_dev_attr->serial_number);
--free_revision:
--	kfree(soc_dev_attr->revision);
--free_soc_id:
--	kfree(soc_dev_attr->soc_id);
--	return ret;
- }
- 
- static struct platform_driver imx_scu_soc_driver = {
+Then OMAP came along with its SMC interfaces, and so did the pain of
+not having a standardised way to configure the L2C when Linux was
+running in the non-secure world, resulting in stuff like l2c_configure
+etc, where each and every implementation has to supply a function to
+call its platform specific SMC interfaces to configure a piece of
+hardware common across many different platforms.
+
+ARM have seemed reluctant to standardise on stuff like this, so
+unless someone pushes hard for it from inside ARM, I doubt it will
+ever happen.
+
 -- 
-2.16.4
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
