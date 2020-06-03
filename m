@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6C611EC8B3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 07:22:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EA5A1EC8B5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 07:22:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BZ+OS+6GtPU+LBh3/nqu1Zda5wy6sB75wU4/EVOG+ak=; b=UveO31z0b7uOpM
-	GN+N4my74pNM+8YW/mFnnAIESp82BNNgl2dZeq4QIfkC5dLFBCwsgBOdPVy7fR/yqawqAOSE8w/Oz
-	EY0s88vYiGikAOdGZ9lgaZT+iGTeTHMeuHjuc7mz/8ut36K0r3d56tqKul5nAheN24bDH174kqIf+
-	bhuaMepn0efFL30uUnoBBc78FIpiLqqYXe3clQ+PAQpXwxfSyMuq3Hrb8bbsd0E5ZMIk48L58W4s+
-	3BPlQwMnJtjtdjz9UEJfEFxwu4PTaPUjimcwF47jjLxhAgIZX8XTWY/NdxF23LiHB2WfGsjgjDTUY
-	rpz9xi1GOERQsq/VbFTA==;
+	List-Owner; bh=KK9mI+AZj12AVCDum3TFkzY6TiM4tXvY6nkXmxXN+BA=; b=PlzmE9ExQMi6VW
+	t2APSzJ8VYjRMM/sIx4xm/8CH/UeapwrOEUXsc/NlArLjPFVsUKItVdAlGtZZIOmxluTYUroCv5jX
+	DtVjJJ0LE9bJojkeOQfacEh5/AaxvR/8xnzscabiegUZq9iPM1agEefbILCNf7f+a6VOWV7efBFia
+	OmCGUW4T22fMe5B1irrpeXwLZPQh1u6QvbJFsqHkap/kSue00zIdiyYlRbnYEC4Zu/r6q2gOqG2KE
+	yabw5z1IN5aNmS3lc+RlLz1VOW/66HmivJA9Q/t9Jjup5gtTF38hVGQprQjio/ELzDemCaRUhYxO2
+	hj1bnWbENP5fSZcyHviw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgLqw-0001LL-8f; Wed, 03 Jun 2020 05:22:14 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1jgLrV-0001vx-TN; Wed, 03 Jun 2020 05:22:49 +0000
+Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgLqd-0001FH-Rk
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 05:21:57 +0000
-IronPort-SDR: Xg8mxK9U9+RTqzFTTlPps7vZC4Ubek8oIhtwT1tqJUeRpOM1/lfELW892x0lez/Zg8gQRGEeGr
- 1L6eu1bE763g==
+ id 1jgLqj-0001JK-0I
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 05:22:02 +0000
+IronPort-SDR: 0ICCDAyfKnm0LUmfr/OAsFAwDs/RXAkJ9sZoyMVcWd8ZjB+e7z2TVxeWjj+wPxbeXlA9EWZUvR
+ d4BPkgc4CyOg==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 02 Jun 2020 22:21:53 -0700
-IronPort-SDR: I5BhKWrzY4hM5wPB/TTk7PF/ORBb2n8aO+lc5LLWmDU/qWdR3UAipPyc11N8JbWuHvKlowLpwa
- bTcbewOj8Aww==
+Received: from orsmga004.jf.intel.com ([10.7.209.38])
+ by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 02 Jun 2020 22:22:00 -0700
+IronPort-SDR: s5n2Mhz/TGTbIXcaSi2CeP6n1as/ImZGzYPwbjBFQMjsmWuUtd6V06iP7jvAwBLPFCSNH6DIuz
+ Kyc8H8ObVi+w==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,467,1583222400"; d="scan'208";a="470925216"
+X-IronPort-AV: E=Sophos;i="5.73,467,1583222400"; d="scan'208";a="416441695"
 Received: from lkp-server01.sh.intel.com (HELO e5a7ad696f24) ([10.239.97.150])
- by fmsmga006.fm.intel.com with ESMTP; 02 Jun 2020 22:21:51 -0700
+ by orsmga004.jf.intel.com with ESMTP; 02 Jun 2020 22:21:58 -0700
 Received: from kbuild by e5a7ad696f24 with local (Exim 4.92)
  (envelope-from <lkp@intel.com>)
- id 1jgLqZ-0000NU-4I; Wed, 03 Jun 2020 05:21:51 +0000
-Date: Wed, 03 Jun 2020 13:21:05 +0800
+ id 1jgLqd-0000Nf-BP; Wed, 03 Jun 2020 05:21:55 +0000
+Date: Wed, 03 Jun 2020 13:21:08 +0800
 From: kbuild test robot <lkp@intel.com>
 To: Arnd Bergmann <arnd@arndb.de>
-Subject: [soc:baikal/drivers-1] BUILD REGRESSION
- 83ca8b3e8f213f49cc68b5c1fbcf88ebb24671eb
-Message-ID: <5ed73341.aQm1XZ30CcJAqqYn%lkp@intel.com>
+Subject: [soc:arm/dt] BUILD SUCCESS
+ 9ad249abe7b8f6f0d2d876bde860b1c511d71d7b
+Message-ID: <5ed73344.guwJUPQ8BPAQkyhB%lkp@intel.com>
 User-Agent: Heirloom mailx 12.5 6/20/10
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_222155_921157_53D05DDE 
-X-CRM114-Status: UNSURE (   6.53  )
+X-CRM114-CacheID: sfid-20200602_222201_106580_F8297A33 
+X-CRM114-Status: UNSURE (   6.58  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -57,7 +57,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ medium trust [134.134.136.100 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  1.8 LONGWORDS              Long string of long words
@@ -78,23 +78,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  baikal/drivers-1
-branch HEAD: 83ca8b3e8f213f49cc68b5c1fbcf88ebb24671eb  memory: Add Baikal-T1 L2-cache Control Block driver
+tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git  arm/dt
+branch HEAD: 9ad249abe7b8f6f0d2d876bde860b1c511d71d7b  Merge tag 'zynqmp-dt-for-v5.8' of https://github.com/Xilinx/linux-xlnx into arm/dt
 
-Error/Warning in current branch:
+elapsed time: 482m
 
-drivers/bus/bt1-apb.c:330:3: error: implicit declaration of function 'readl' [-Werror=implicit-function-declaration]
+configs tested: 99
+configs skipped: 10
 
-Error/Warning ids grouped by kconfigs:
-
-recent_errors
-`-- sparc64-allyesconfig
-    `-- drivers-bus-bt1-apb.c:error:implicit-declaration-of-function-readl
-
-elapsed time: 8168m
-
-configs tested: 120
-configs skipped: 7
+The following configs have been built successfully.
+More configs may be tested in the coming days.
 
 arm                                 defconfig
 arm                              allyesconfig
@@ -104,20 +97,22 @@ arm64                            allyesconfig
 arm64                               defconfig
 arm64                            allmodconfig
 arm64                             allnoconfig
+arm                       imx_v4_v5_defconfig
+h8300                     edosk2674_defconfig
+parisc                generic-64bit_defconfig
+m68k                         amcore_defconfig
 arm                           corgi_defconfig
 sparc                            allyesconfig
 mips                      bmips_stb_defconfig
 arm                        realview_defconfig
 alpha                               defconfig
-sh                           se7705_defconfig
-sh                          urquell_defconfig
-arm                     eseries_pxa_defconfig
-powerpc                     powernv_defconfig
-m68k                           sun3_defconfig
 arm                          moxart_defconfig
 sh                               j2_defconfig
 sparc64                          allyesconfig
 arm                            mps2_defconfig
+powerpc                          alldefconfig
+mips                        maltaup_defconfig
+mips                        jmr3927_defconfig
 s390                             alldefconfig
 c6x                        evmc6472_defconfig
 sh                          rsk7203_defconfig
@@ -135,6 +130,7 @@ ia64                              allnoconfig
 ia64                             allyesconfig
 m68k                             allmodconfig
 m68k                              allnoconfig
+m68k                           sun3_defconfig
 m68k                                defconfig
 m68k                             allyesconfig
 nios2                               defconfig
@@ -164,50 +160,26 @@ parisc                            allnoconfig
 parisc                              defconfig
 parisc                           allyesconfig
 parisc                           allmodconfig
+powerpc                             defconfig
 powerpc                          allyesconfig
-powerpc                          rhel-kconfig
 powerpc                          allmodconfig
 powerpc                           allnoconfig
-powerpc                             defconfig
-i386                 randconfig-a001-20200602
-i386                 randconfig-a006-20200602
-i386                 randconfig-a002-20200602
-i386                 randconfig-a005-20200602
-i386                 randconfig-a003-20200602
-i386                 randconfig-a004-20200602
-x86_64               randconfig-a011-20200602
-x86_64               randconfig-a016-20200602
-x86_64               randconfig-a013-20200602
-x86_64               randconfig-a012-20200602
-x86_64               randconfig-a014-20200602
-x86_64               randconfig-a015-20200602
-i386                 randconfig-a014-20200602
-i386                 randconfig-a015-20200602
-i386                 randconfig-a011-20200602
-i386                 randconfig-a016-20200602
-i386                 randconfig-a012-20200602
-i386                 randconfig-a013-20200602
-i386                 randconfig-a013-20200529
-i386                 randconfig-a011-20200529
-i386                 randconfig-a012-20200529
-i386                 randconfig-a015-20200529
-i386                 randconfig-a016-20200529
-i386                 randconfig-a014-20200529
+powerpc                          rhel-kconfig
 riscv                            allyesconfig
 riscv                             allnoconfig
 riscv                               defconfig
 riscv                            allmodconfig
-s390                              allnoconfig
-s390                                defconfig
 s390                             allyesconfig
+s390                              allnoconfig
 s390                             allmodconfig
+s390                                defconfig
 sparc                               defconfig
 sparc64                             defconfig
 sparc64                           allnoconfig
 sparc64                          allmodconfig
-um                               allmodconfig
 um                                allnoconfig
 um                                  defconfig
+um                               allmodconfig
 um                               allyesconfig
 x86_64                                   rhel
 x86_64                               rhel-7.6
