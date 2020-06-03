@@ -2,91 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A01871ECA9F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 09:34:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6ADF1ECAB0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 09:39:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ARFcxkr0Ptyk0io2Rx6gMElq7WYb6iminlsmM0Lid6o=; b=fmmOvhsr5bj2vI
-	G2ovafAVMVuwWvKtfXQ8ziP1fPrCNVJaNv4lJ3yGzcg9MMUOIZea9KzPR8CixIq9YNOupC9Lbam5+
-	Jv0J+oHKt1EVyzg/5bU5N4AqcIHqZA6TtiUe31m3UeJQkj+GX4JR7UmVwxbmGbGVRbHBS5U0YmcOq
-	lKsvE8fWWibqkzLMbcBziEQK2++XQhCRDidurJdETZskZvyNQBy9wuYZfSn9x5pwHpoegt7eFi/Z/
-	eWwSe0V4/py5THI8TUIsMIdawdxEJ+Yf2bOYNkLJJQG3a2kgjyFIYZDMtxbEJPtXF5Q/i8LV1DWiK
-	6Dq+sVw3XwHVMXCtGUGg==;
+	List-Owner; bh=pUKFh3R7RaMN2mYKqZL+67CDXldu/baOs3ccFc+hh38=; b=U11DDMXpBoqtXa
+	+yPiUFXWVMDkqTmBb6XUW2II2s50AC/xDmTTgJ0RdD7QhtpdO7eSbxPxvlSCGBPrVP+/PxlRs7z9T
+	FIvQnLseEFeHY+hly/8h1d9hWLSwm5ZZ0sf/e13UIxB9EPLdk1wlvtMIqEazGIATHPJE4lAc41Qi/
+	TlBvN0YyRAo4R2CXVqtQKKUPDq0EiEjea0CCVk9SwzbJmROCcnUM6IS9GNpoA6q8RZ+Oj5IX2ethC
+	FvvwEIGXX3RC3YxLbXs05p/1dnTzGdMt6iCLKnRNrUQWyV+VDmyC+GCFMcCe8V3yTq434Y43UdeAS
+	WfWuHTNzqbOtdiuw9pwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgNuw-0007HA-Bl; Wed, 03 Jun 2020 07:34:30 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jgNzW-0001yq-A8; Wed, 03 Jun 2020 07:39:14 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgNuo-0007Gd-Qe
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 07:34:24 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 0537XPHE021565; Wed, 3 Jun 2020 09:34:14 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=dvyUJs8o6kUEeuCGb8i9PeF6Oa2j1pEYn0SCIXZTWRQ=;
- b=c3dxij/t3E/97u08riL5vamIIH5ZfAApuIY6SKzQUuiL5Yzs2/g+/jkZZRDjLxfAfODO
- ThrOKkihXG0D5qrstMz5PfwfMio7hQM8XRCw+cJhRfqaOrm3+9tTRgkPLQ3j4SKmp7tk
- N8jKJMDPm0pReetQay9AHDKLlUXRf0+e121C704AMjB2kP7ffpPq0cbR4FWm28Bh6DQN
- oIqI0RLJKfJ/rJyyrZztBNvJHy105vw8hGRmwGM/Gh8X6Zb/hHzhevcBnSQ/fpWRdfgN
- OeHWp1dsqsZMuoQ7L7dlv9d7DgITusuxL4uEQhjL3D6jex4UG1I4gX3iiND7zv+mUAbl Mw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31bd8w2vf7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 03 Jun 2020 09:34:14 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id BA70710002A;
- Wed,  3 Jun 2020 09:34:13 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A03D82AE6B2;
- Wed,  3 Jun 2020 09:34:13 +0200 (CEST)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 3 Jun
- 2020 09:34:12 +0200
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Wed, 3 Jun 2020 09:34:13 +0200
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH] media: stm32-dcmi: Set minimum cpufreq requirement
-Thread-Topic: [PATCH] media: stm32-dcmi: Set minimum cpufreq requirement
-Thread-Index: AQHWNDnEPjQ+BLRck0Okhc2Oie/dNajE9yuAgAAjSoCAACDvgIABLWEA
-Date: Wed, 3 Jun 2020 07:34:13 +0000
-Message-ID: <1b0ace18-e7f8-0b75-f6fe-968a269626b0@st.com>
-References: <20200527151613.16083-1-benjamin.gaignard@st.com>
- <jhjpnahizkm.mognet@arm.com> <f95ce45f-7a1c-0feb-afa8-203ddb500f2f@st.com>
- <jhjo8q1io9o.mognet@arm.com>
-In-Reply-To: <jhjo8q1io9o.mognet@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.48]
-Content-ID: <2D00D8D0FB5BE449A19E3E0E430841A6@st.com>
+ id 1jgNzM-0001xg-AG
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 07:39:05 +0000
+Received: by mail-wm1-x342.google.com with SMTP id u26so3880431wmn.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jun 2020 00:39:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=hLQ9Ov0eKr85gKa7olFwe6f0SlVLYGl5nrVG5b+LzPg=;
+ b=BaA7HqoJAJJh2tIRtyNtCnJJ+ARabjO7t5qWHkwfey6v8O/bYqibUoJb7g2lNYfNoZ
+ ifRC05Pi1fFsLS0xec3/ZwWH5HsiqKmSLEV1fLmRpATey18HMYDmWin9n3Lkz4IawUOQ
+ xlEYpZp5UmMhs18ikzeusxNZVkL8Zx3ToEbKvsz7PW6G3ARdQwBq0YY+pC+k6oMkgPG9
+ WS33Jb4rH9VdYT1yaXMb7+k5Kf1kqlPXl8+BOa8wlHnCW3navM5sN6dA2DpyHeZobAy9
+ jaGeJhzWEgaTqAFNlLtfzmz/6tmkY5sIGP7K7i1KqYqmIFqvLzdVzqj+ASM+V0Ps5U09
+ v7mw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=hLQ9Ov0eKr85gKa7olFwe6f0SlVLYGl5nrVG5b+LzPg=;
+ b=rhvZ+SI3rdVL1QcLL3YSJGwuLs0EuwABDmDs9/GwXhDKWyI1lag33VTSFGzWd+t8un
+ 2KyxrOoAIa1jwQI5H6U4WHbXpEmRx9HMwF0hbf4P8cdnLBlv/34pace30X8RWZRF4++Z
+ 8qP3T0v8/2snZe2OyoZ0tYFDw3B0+goB6UEGMLSG/t89tocY6yqQeOSYEImUYGaTFT06
+ /ygYqhBi9WvdBFTxIROOzunQl7KqErXTL6rJ9pt6+ADYhJlEWuvl3oLO995OtqfgtGns
+ Fj5oL+KyGsZGCqlLKMewuFSp9JUFltbVt8D8WCo3FW4qzF8UF4lknWeTjdZJtceDITMp
+ tJFg==
+X-Gm-Message-State: AOAM53121Vyyqb+GBkWgsTB2nSMWv6SLdatU8x2yzPN0rJgzXyUkE8/t
+ o0BbfsmhfdunHNtO78Cszkb/tinhq00=
+X-Google-Smtp-Source: ABdhPJx2CVWTxoCwkjfPm8H6OgQs2Q+1IKumvn68jhcLFzJkSHw/NXJvs00yy3+6Xok2VEhmklRBbQ==
+X-Received: by 2002:a1c:5a0b:: with SMTP id o11mr7245089wmb.74.1591169941832; 
+ Wed, 03 Jun 2020 00:39:01 -0700 (PDT)
+Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id t129sm1796108wmf.41.2020.06.03.00.39.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 03 Jun 2020 00:39:01 -0700 (PDT)
+Date: Wed, 3 Jun 2020 09:38:51 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>
+Subject: Re: [PATCH v7 21/24] iommu/arm-smmu-v3: Add stall support for
+ platform devices
+Message-ID: <20200603073851.GA3198@myrica>
+References: <20200519175502.2504091-1-jean-philippe@linaro.org>
+ <20200519175502.2504091-22-jean-philippe@linaro.org>
+ <4741b6c45d1a43b69041ecb5ce0be0d5@huawei.com>
+ <20200602093836.GA1029680@myrica>
+ <1517c4d97b5849e6b6d32e7d7ed35289@huawei.com>
+ <20200602114611.GB1029680@myrica>
+ <c165fe41230f49baba991f1a416a4739@huawei.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-03_06:2020-06-02,
- 2020-06-03 signatures=0
+Content-Disposition: inline
+In-Reply-To: <c165fe41230f49baba991f1a416a4739@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_003423_309262_2B8D9BD3 
-X-CRM114-Status: GOOD (  24.66  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200603_003904_393537_D36E794E 
+X-CRM114-Status: GOOD (  23.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -107,107 +103,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre TORGUE <alexandre.torgue@st.com>,
- "rjw@rjwysocki.net" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Hugues FRUCHET <hugues.fruchet@st.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "kevin.tian@intel.com" <kevin.tian@intel.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "fenghua.yu@intel.com" <fenghua.yu@intel.com>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "felix.kuehling@amd.com" <felix.kuehling@amd.com>,
+ "hch@infradead.org" <hch@infradead.org>, "jgg@ziepe.ca" <jgg@ziepe.ca>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "linux-mm@kvack.org" <linux-mm@kvack.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "zhangfei.gao@linaro.org" <zhangfei.gao@linaro.org>,
+ "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ "christian.koenig@amd.com" <christian.koenig@amd.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Jun 02, 2020 at 12:12:30PM +0000, Shameerali Kolothum Thodi wrote:
+> > > > > > +		if (ssid_valid)
+> > > > > > +			flt->prm.flags |=
+> > > > IOMMU_FAULT_PAGE_REQUEST_PASID_VALID;
+> > > > >
+> > > > > Do we need to set this for STALL mode only support? I had an issue
+> > > > > with this being set on a vSVA POC based on our D06 zip
+> > > > > device(which is a "fake " pci dev that supports STALL mode but no
+> > > > > PRI). The issue is, CMDQ_OP_RESUME doesn't have any ssid or SSV
+> > > > > params and works on sid
+> > > > and stag only.
+> > > >
+> > > > I don't understand the problem, arm_smmu_page_response() doesn't set
+> > > > SSID or SSV when sending a CMDQ_OP_RESUME. Could you detail the flow
+> > > > of a stall event and RESUME command in your prototype?  Are you
+> > > > getting issues with the host driver or the guest driver?
+> > >
+> > > The issue is on the host side iommu_page_response(). The flow is
+> > > something like below.
+> > >
+> > > Stall: Host:-
+> > >
+> > > arm_smmu_handle_evt()
+> > >   iommu_report_device_fault()
+> > >     vfio_pci_iommu_dev_fault_handler()
+> > >
+> > > Stall: Qemu:-
+> > >
+> > > vfio_dma_fault_notifier_handler()
+> > >   inject_faults()
+> > >     smmuv3_inject_faults()
+> > >
+> > > Stall: Guest:-
+> > >
+> > > arm_smmu_handle_evt()
+> > >   iommu_report_device_fault()
+> > >     iommu_queue_iopf
+> > >   ...
+> > >   iopf_handle_group()
+> > >     iopf_handle_single()
+> > >       handle_mm_fault()
+> > >         iopf_complete()
+> > >            iommu_page_response()
+> > >              arm_smmu_page_response()
+> > >                arm_smmu_cmdq_issue_cmd(CMDQ_OP_RESUME)
+> > >
+> > > Resume: Qemu:-
+> > >
+> > > smmuv3_cmdq_consume(SMMU_CMD_RESUME)
+> > >   smmuv3_notify_page_resp()
+> > >     vfio:ioctl(page_response)  --> struct iommu_page_response is filled
+> > >                              with only version, grpid and code.
+> > >
+> > > Resume: Host:-
+> > >   ioctl(page_response)
+> > >     iommu_page_response()  --> fails as the pending req has PASID_VALID
+> > flag
+> > >                              set and it checks for a match.
+> > 
+> > I believe the fix needs to be here. It's also wrong for PRI since not all PCIe
+> > endpoint require a PASID in the page response. Could you try the attached
+> > patch?
+> 
+> Going through the patch, yes, that will definitely fix the issue. But isn't it better if
+> the request itself indicate whether it expects a response msg with a valid pasid or
+> not? The response msg can come from userspace as well(vSVA) and if for some reason
+> doesn't set it for a req that expects pasid then it should be an error, right? In the temp
+> fix I had, I introduced another flag to indicate the endpoint has PRI support or not and
+> used that to verify the pasid requirement. But for the PRI case you mentioned 
+> above, not sure it is easy to get that information or not. May be I am complicating things
+> here :)
 
+No you're right, we shouldn't send back malformed responses to the SMMU. I
+suppose we can store a flag "PASID required" in the fault and check that
+against the response. If we have to discard the guest's response, then we
+can either fake a response (abort the stall) right away, or wait for the
+response timeout to kick, which will do the same.
 
-On 6/2/20 3:35 PM, Valentin Schneider wrote:
-> On 02/06/20 12:37, Benjamin GAIGNARD wrote:
->> On 6/2/20 11:31 AM, Valentin Schneider wrote:
->>>> @@ -99,6 +100,8 @@ enum state {
->>>>
->>>>    #define OVERRUN_ERROR_THRESHOLD	3
->>>>
->>>> +#define DCMI_MIN_FREQ	650000 /* in KHz */
->>>> +
->>> This assumes the handling part is guaranteed to always run on the same CPU
->>> with the same performance profile (regardless of the platform). If that's
->>> not guaranteed, it feels like you'd want this to be configurable in some
->>> way.
->> Yes I could add a st,stm32-dcmi-min-frequency (in KHz) parameter the
->> device tree node.
->>
-> Something like that - I'm not sure how well this fits with the DT
-> landscape, as you could argue it isn't really a description of the
-> hardware, more of a description of the performance expectations of the
-> software. I won't really argue here.
->
->>>>    struct dcmi_graph_entity {
->>>>         struct v4l2_async_subdev asd;
->>>>
->>> [...]
->>>> @@ -2020,6 +2042,8 @@ static int dcmi_probe(struct platform_device *pdev)
->>>>                 goto err_cleanup;
->>>>         }
->>>>
->>>> +	dcmi->policy = cpufreq_cpu_get(0);
->>>> +
->>> Ideally you'd want to fetch the policy of the CPU your IRQ (and handling
->>> thread) is affined to; The only compatible DTS I found describes a single
->>> A7, which is somewhat limited in the affinity area...
->> If I move this code just before start streaming and use get_cpu(), would
->> it works ?
->>
-> AFAIA streaming_start() is not necessarily executing on the same CPU as the
-> one that will handle the interrupt. I was thinking you could use the IRQ's
-> effective affinity as a hint of which CPU(s) to boost, i.e. something like:
->
-> ---
->      struct cpumask_var_t visited;
->      struct irq_data *d = irq_get_irq_data(irq);
->
->      err = alloc_cpumask_var(visited, GFP_KERNEL);
->      /* ... */
->      for_each_cpu(cpu, irq_data_get_effective_affinity_mask(d)) {
->              /* check if not already spanned */
->              if (cpumask_test_cpu(cpu, visited))
->                      continue;
->
->              policy = cpufreq_cpu_get(cpu);
->              cpumask_or(visited, visited, policy->cpus);
->              /* do the boost for that policy here */
->              /* ... */
->              cpufreq_cpu_put(policy);
->      }
-> ---
->
-> That of course falls apart when hotplug gets involved, and the effective
-> affinity changes... There's irq_set_affinity_notifier() out there, but it
-> seems it's only about the affinity, not the effective_affinity, I'm not
-> sure how valid it would be to query the effective_affinity in that
-> notifier.
-If I wait to be in the irq it will be too late so I think I will do a 
-loop over all possible CPUs
-before start the streaming to change the policies.
+Thanks,
+Jean
 
->
->> Benjamin
->>>>         dev_info(&pdev->dev, "Probe done\n");
->>>>
->>>>         platform_set_drvdata(pdev, dcmi);
->>>> @@ -2049,6 +2073,9 @@ static int dcmi_remove(struct platform_device *pdev)
->>>>
->>>>         pm_runtime_disable(&pdev->dev);
->>>>
->>>> +	if (dcmi->policy)
->>>> +		cpufreq_cpu_put(dcmi->policy);
->>>> +
->>>>         v4l2_async_notifier_unregister(&dcmi->notifier);
->>>>         v4l2_async_notifier_cleanup(&dcmi->notifier);
->>>>         media_entity_cleanup(&dcmi->vdev->entity);
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
