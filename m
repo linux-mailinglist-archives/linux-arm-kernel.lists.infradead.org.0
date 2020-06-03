@@ -2,89 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5555C1ED01D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:47:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 524631ED01F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:47:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7V5JwpizStS72zZVlCmxixS5OkeX3qptoJ9rQ9Py8fU=; b=rWTd2VCF7kwEk6
-	eWtKlkQtym60720azCIsBCnsi/YzxfEw3AM35bWxPjNnlkvesQcm8/LkLVqFQm47vtvarBrtUcF7M
-	EW2gpYl+XEQbaL3co2U3Xa9diNKqswrtfyd+xQzWa77zYyhrfx8G9xz/byf/OWapgScOrR2031CO8
-	OhAemAdEeeh1E2fK4eFG3CctHfnHIOhbNPayoiTH7LMUR1QV6IkJ5lGjiggoIiz3Ad7jfA80gIJTW
-	46luhVe0q5sGbp9iOzV3PdcB0a0dQNyy7bgzc0n3ua59jP9cXKJ4jP9mL7g4kJPaaNnb+SUvFHIfQ
-	ZbE7yBSjK6Dfu7GLLrvA==;
+	List-Owner; bh=Gy/RySV7knz6Mfesf3+sB97prMRlYdQL9uupTCAYvls=; b=MAt4DGbyZLFNGm
+	NtMUvYUGL6S+fNI418PfdoCKCKDmcDL9BV/7KlpFpV/dRF/5EC6F8sbugBXRaUPkIDGC+XAARJX/9
+	nMKseTkCxwXMUrvVYRKA55WwbvsfZ67sYkra/u7w1KYaVQCmNeYn4yUNOocENFNRNw6pnK82KAUL3
+	kTpxB7svrTl0dtwQ+3uMZLP3g/KKKZiBUTwaS0W9u5xr/ah1+DixWx7PdiTXPx3Lbyu/kNLNRnyz1
+	phHpd/EfNBq4DUsMvrsyOGOAf3h7XtVfIHGMt6mo2m1Xso+2ry71uW7N2XYKRAW1f6wkYbt/tOTPw
+	m2Oa/Tf8RfmMLpeZOw5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgSnf-0008JC-G9; Wed, 03 Jun 2020 12:47:19 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jgSo3-0000Ds-CK; Wed, 03 Jun 2020 12:47:43 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgSmf-0007YN-Kv
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:46:19 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 053CgFPm027817; Wed, 3 Jun 2020 14:46:08 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=UV2eXHMfLb4/QtK9KJPbsnZv2k9uIAuEYmQYk8262qk=;
- b=D5TL8kTZweT0eT45TouzWrsmNSNQYw3lM8tr3Fuq6Nxp5UERav2EH9VCq6tbL9ozf5Bl
- bKnOmGIUfMhCeg81kNu2gKBEMsTCX6YDQUYM8uD78GGI1ldssH5Vqw6AVdSziS8QuTWq
- FxUV5ngISBHNK4Wf1o/gJDDegfQ+voW+dJvtmO6BYCIaxX+uvjDXAobmrlgySn8C57vS
- PxdeOn0tyAjMqvza7xlCNPibyVTs/1v4XJUjf88PjNWgqCOH9FqyF64J7ygWhcZAV+Kn
- 3OghT9vW7sPHKVKxgzMSsLqZ5CTiOhtLkHVlt07Bnwk8JuWUWcC7z/1gS7b+KolLLEah gg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31bcy0mp7r-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 03 Jun 2020 14:46:08 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 23E3E100039;
- Wed,  3 Jun 2020 14:46:08 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1752F2CB379;
- Wed,  3 Jun 2020 14:46:08 +0200 (CEST)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 3 Jun 2020 14:46:07
- +0200
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <hugues.fruchet@st.com>, <mchehab@kernel.org>, <mcoquelin.stm32@gmail.com>,
- <alexandre.torgue@st.com>
-Subject: [PATCH v2 3/3] ARM: dts: stm32: Set DCMI frequency requirement for
- stm32mp15x
-Date: Wed, 3 Jun 2020 14:45:59 +0200
-Message-ID: <20200603124559.22652-4-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
-In-Reply-To: <20200603124559.22652-1-benjamin.gaignard@st.com>
-References: <20200603124559.22652-1-benjamin.gaignard@st.com>
-MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE3.st.com
- (10.75.127.9)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
- definitions=2020-06-03_12:2020-06-02,
- 2020-06-03 signatures=0
+ id 1jgSnw-0000D3-20; Wed, 03 Jun 2020 12:47:37 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 8C9F0AE38;
+ Wed,  3 Jun 2020 12:47:35 +0000 (UTC)
+Date: Wed, 03 Jun 2020 14:47:31 +0200
+Message-ID: <s5hr1uwco4c.wl-tiwai@suse.de>
+From: Takashi Iwai <tiwai@suse.de>
+To: Macpaul Lin <macpaul.lin@mediatek.com>
+Subject: Re: [PATCH] sound: usb: pcm: fix incorrect power state when playing
+ sound after PM_AUTO suspend
+In-Reply-To: <1591187964.23525.61.camel@mtkswgap22>
+References: <s5hpnahhbz8.wl-tiwai@suse.de>
+ <1591153515.23525.50.camel@mtkswgap22>
+ <s5heeqwfyti.wl-tiwai@suse.de> <s5hblm0fxl0.wl-tiwai@suse.de>
+ <s5h367cfsga.wl-tiwai@suse.de>
+ <1591187964.23525.61.camel@mtkswgap22>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI/1.14.6 (Maruoka)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 Emacs/25.3
+ (x86_64-suse-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI 1.14.6 - "Maruoka")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_054617_969595_B71F722D 
-X-CRM114-Status: GOOD (  13.20  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200603_054736_385237_0C265BD4 
+X-CRM114-Status: GOOD (  33.22  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,38 +68,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, rjw@rjwysocki.net,
- linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- valentin.schneider@arm.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: alsa-devel@alsa-project.org,
+ Szabolcs =?UTF-8?B?U3rFkWtl?= <szszoke.code@gmail.com>,
+ Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ Takashi Iwai <tiwai@suse.com>, stable@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Hui Wang <hui.wang@canonical.com>,
+ Alexander Tsoy <alexander@tsoy.me>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Johan Hovold <johan@kernel.org>,
+ Jaroslav Kysela <perex@perex.cz>, Macpaul Lin <macpaul.lin@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make sure that CPUs will at least run at 650Mhz when streaming
-sensor frames.
+On Wed, 03 Jun 2020 14:39:24 +0200,
+Macpaul Lin wrote:
+> 
+> On Wed, 2020-06-03 at 10:45 +0200, Takashi Iwai wrote:
+> > On Wed, 03 Jun 2020 08:54:51 +0200,
+> > Takashi Iwai wrote:
+> > > 
+> > > On Wed, 03 Jun 2020 08:28:09 +0200,
+> > > Takashi Iwai wrote:
+> > > > 
+> > > > And, the most suspicious case is the last one,
+> > > > chip->num_suspended-intf.  It means that the device has multiple
+> > > > USB interfaces and they went to suspend, while the resume isn't
+> > > > performed for the all suspended interfaces in return.
+> > > 
+> > > If this is the cause, a patch like below might help.
+> > > It gets/puts the all assigned interfaced instead of only the primary
+> > > one.
+> > 
+> > ... and considering of the problem again, rather the patch below might
+> > be the right answer.  Now the driver tries to remember at which state
+> > it entered into the system-suspend.  Upon resume, in return, when the
+> > state reaches back to that point, set the card state to D0.
+> > 
+> > The previous patch can be applied on the top, too, and it might be
+> > worth to apply both.
+> > 
+> > Let me know if any of those actually helps.
+> > 
+> > 
+> > Takashi
+> 
+> Thanks for your response so quickly.
+> I've just test this patch since it looks like enough for the issue.
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
----
- arch/arm/boot/dts/stm32mp151.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+Good to hear!
 
-diff --git a/arch/arm/boot/dts/stm32mp151.dtsi b/arch/arm/boot/dts/stm32mp151.dtsi
-index 3ea05ba48215..f6d7bf4f8231 100644
---- a/arch/arm/boot/dts/stm32mp151.dtsi
-+++ b/arch/arm/boot/dts/stm32mp151.dtsi
-@@ -1091,6 +1091,7 @@
- 			clock-names = "mclk";
- 			dmas = <&dmamux1 75 0x400 0x0d>;
- 			dma-names = "tx";
-+			st,stm32-dcmi-min-frequency = <650000>;
- 			status = "disabled";
- 		};
- 
--- 
-2.15.0
+> This patch worked since the flag system_suspend will be set at the same
+> time when power state has been changed. I have 2 interface with the head
+> set. But actually the problem happened when primary one is suspended.
 
+Currently the autosuspend is set only to the primary interface; IOW,
+the other interfaces will never get autosuspend, and the another
+suspend-all-intf patch should improve that situation.  But it won't
+fix your actual bug, obviously :)
+
+> So I didn't test the earlier patch "suspend all interface instead of
+> only the primary one."
+
+Could you try it one on top of the last patch?  At least I'd like to
+see whether it causes any regression.
+
+> Will you resend this patch officially later? I think this solution is
+> required to send to stable, too. It's better to have it for other stable
+> kernel versions include android's.
+
+Yes, that's a general bug and worth to be merged quickly.
+I'm going to submit a proper patch soon later.
+
+
+thanks,
+
+Takashi
+
+
+> 
+> > ---
+> > diff --git a/sound/usb/card.c b/sound/usb/card.c
+> > --- a/sound/usb/card.c
+> > +++ b/sound/usb/card.c
+> > @@ -843,9 +843,6 @@ static int usb_audio_suspend(struct usb_interface *intf, pm_message_t message)
+> >  	if (chip == (void *)-1L)
+> >  		return 0;
+> >  
+> > -	chip->autosuspended = !!PMSG_IS_AUTO(message);
+> > -	if (!chip->autosuspended)
+> > -		snd_power_change_state(chip->card, SNDRV_CTL_POWER_D3hot);
+> >  	if (!chip->num_suspended_intf++) {
+> >  		list_for_each_entry(as, &chip->pcm_list, list) {
+> >  			snd_usb_pcm_suspend(as);
+> > @@ -858,6 +855,11 @@ static int usb_audio_suspend(struct usb_interface *intf, pm_message_t message)
+> >  			snd_usb_mixer_suspend(mixer);
+> >  	}
+> >  
+> > +	if (!PMSG_IS_AUTO(message) && !chip->system_suspend) {
+> > +		snd_power_change_state(chip->card, SNDRV_CTL_POWER_D3hot);
+> > +		chip->system_suspend = chip->num_suspended_intf;
+> > +	}
+> > +
+> >  	return 0;
+> >  }
+> >  
+> > @@ -871,10 +873,10 @@ static int __usb_audio_resume(struct usb_interface *intf, bool reset_resume)
+> >  
+> >  	if (chip == (void *)-1L)
+> >  		return 0;
+> > -	if (--chip->num_suspended_intf)
+> > -		return 0;
+> >  
+> >  	atomic_inc(&chip->active); /* avoid autopm */
+> > +	if (chip->num_suspended_intf > 1)
+> > +		goto out;
+> >  
+> >  	list_for_each_entry(as, &chip->pcm_list, list) {
+> >  		err = snd_usb_pcm_resume(as);
+> > @@ -896,9 +898,12 @@ static int __usb_audio_resume(struct usb_interface *intf, bool reset_resume)
+> >  		snd_usbmidi_resume(p);
+> >  	}
+> >  
+> > -	if (!chip->autosuspended)
+> > + out:
+> > +	if (chip->num_suspended_intf == chip->system_suspend) {
+> >  		snd_power_change_state(chip->card, SNDRV_CTL_POWER_D0);
+> > -	chip->autosuspended = 0;
+> > +		chip->system_suspend = 0;
+> > +	}
+> > +	chip->num_suspended_intf--;
+> >  
+> >  err_out:
+> >  	atomic_dec(&chip->active); /* allow autopm after this point */
+> > diff --git a/sound/usb/usbaudio.h b/sound/usb/usbaudio.h
+> > index 1c892c7f14d7..e0ebfb25fbd5 100644
+> > --- a/sound/usb/usbaudio.h
+> > +++ b/sound/usb/usbaudio.h
+> > @@ -26,7 +26,7 @@ struct snd_usb_audio {
+> >  	struct usb_interface *pm_intf;
+> >  	u32 usb_id;
+> >  	struct mutex mutex;
+> > -	unsigned int autosuspended:1;	
+> > +	unsigned int system_suspend;
+> >  	atomic_t active;
+> >  	atomic_t shutdown;
+> >  	atomic_t usage_count;
+> > 
+> > _______________________________________________
+> 
+> Thank you very much!
+> 
+> Best regards,
+> Macpaul Lin
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
