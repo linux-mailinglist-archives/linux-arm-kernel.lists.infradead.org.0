@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B83E31ECC0B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 10:56:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57F721ECC0C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 10:56:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=TUnuzEZR6A8hotFhGG7tgTTasr5GrJiqK84r48YgRHY=; b=WWneoIKVXLdUIBc3cT6oejaABh
-	hj8gcjTzH2kMmhepDBkudojGYNHJD5O425GFtZ/jWGzGw6gr0VEYQrZSqiXyDQH+WFp/hVVuSv149
-	JO0yUgZgxMHV7JG2g1D/EhESPe/+nIFpnXa1n+VkzR4fdhhOsPHjJRs5oYR/s+SoJRr9/GpSW34aW
-	4+UyZaaO0UBjYRw/MX5IZVNpvOWRfx3F9hYUmgT066JvyaRXVzzCZfDJ5TmC10cqS32KC1lk8ZnAM
-	ezZbSQ5jFIuLL8B5AysrqRMNqK2iHPbgmXkotipFqImsmsnAuQTgF2RdAVzKq1iSa7IWjq9Dymjya
-	trNXFJew==;
+	bh=yUvqECkQFFqTgTOzJjOBQc/eQJqAlslidzbTXA2Q9LA=; b=E8F0G4+HE1Wr5WLNUmFw/bJFxu
+	CK5Wl0+OCivnYFsVyL7eYp4ocq7PdN+4/kGmSjGx2PQnbTiXs32tTgHN/s6cB2r1DCTfkqQVD43Mi
+	swGd3TDEsmfdHcRRcsRjV/obfNuOCZYhn+ErnTTQpk0rgKKOZlsMFu2ryKg7R/2RKyjPSCJxt9Pwh
+	Kf438XLjJy7eVSAdDiMjOoPZ91wADnfOzshmtW72eqJFCngvdliNVor6OYKe9wnlWtLJAYyiZT69z
+	2jefDAUh94ZSjj5ALPLMr+h0oaMPEnq49IMUZfneMX5FP/08eDVyF8uoDEk/3RxKVQJno5SsGPyFj
+	bWFuQxCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgPC8-0004DG-J4; Wed, 03 Jun 2020 08:56:20 +0000
+	id 1jgPCM-0004Uq-LC; Wed, 03 Jun 2020 08:56:34 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgPAk-0000gC-3D
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 08:54:55 +0000
+ id 1jgPAl-0000fl-13
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 08:54:56 +0000
 Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
  by mx.socionext.com with ESMTP; 03 Jun 2020 17:54:53 +0900
-Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 593DD60057;
- Wed,  3 Jun 2020 17:54:53 +0900 (JST)
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 02E8860057;
+ Wed,  3 Jun 2020 17:54:54 +0900 (JST)
 Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Wed, 3 Jun 2020 17:54:53 +0900
+ Wed, 3 Jun 2020 17:54:54 +0900
 Received: from plum.e01.socionext.com (unknown [10.213.132.32])
- by kinkan.css.socionext.com (Postfix) with ESMTP id B3EA61A12AD;
- Wed,  3 Jun 2020 17:54:52 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 616C01A12AD;
+ Wed,  3 Jun 2020 17:54:53 +0900 (JST)
 From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 To: Bjorn Helgaas <bhelgaas@google.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
@@ -41,15 +41,16 @@ To: Bjorn Helgaas <bhelgaas@google.com>,
  Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
  Rob Herring <robh+dt@kernel.org>,
  Masahiro Yamada <yamada.masahiro@socionext.com>
-Subject: [PATCH v3 5/6] PCI: uniphier: Add error message when failed to get phy
-Date: Wed,  3 Jun 2020 17:54:40 +0900
-Message-Id: <1591174481-13975-6-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: [PATCH v3 6/6] PCI: uniphier: Use
+ devm_platform_ioremap_resource_byname()
+Date: Wed,  3 Jun 2020 17:54:41 +0900
+Message-Id: <1591174481-13975-7-git-send-email-hayashi.kunihiko@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591174481-13975-1-git-send-email-hayashi.kunihiko@socionext.com>
 References: <1591174481-13975-1-git-send-email-hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_015454_249181_A453558B 
-X-CRM114-Status: GOOD (  15.19  )
+X-CRM114-CacheID: sfid-20200603_015455_216301_91F957D9 
+X-CRM114-Status: GOOD (  14.96  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -79,33 +80,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Even if phy driver doesn't probe, the error message can't be distinguished
-from other errors. This displays error message caused by the phy driver
-explicitly.
+Use devm_platform_ioremap_resource_byname() to simplify the code a bit.
 
 Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 ---
- drivers/pci/controller/dwc/pcie-uniphier.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ drivers/pci/controller/dwc/pcie-uniphier.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/drivers/pci/controller/dwc/pcie-uniphier.c b/drivers/pci/controller/dwc/pcie-uniphier.c
-index ad14e67..3b51561 100644
+index 3b51561..ce47622 100644
 --- a/drivers/pci/controller/dwc/pcie-uniphier.c
 +++ b/drivers/pci/controller/dwc/pcie-uniphier.c
-@@ -466,8 +466,12 @@ static int uniphier_pcie_probe(struct platform_device *pdev)
- 		return PTR_ERR(priv->rst);
+@@ -452,8 +452,7 @@ static int uniphier_pcie_probe(struct platform_device *pdev)
+ 	if (IS_ERR(priv->pci.atu_base))
+ 		priv->pci.atu_base = NULL;
  
- 	priv->phy = devm_phy_optional_get(dev, "pcie-phy");
--	if (IS_ERR(priv->phy))
--		return PTR_ERR(priv->phy);
-+	if (IS_ERR(priv->phy)) {
-+		ret = PTR_ERR(priv->phy);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(dev, "Failed to get phy (%d)\n", ret);
-+		return ret;
-+	}
- 
- 	platform_set_drvdata(pdev, priv);
+-	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "link");
+-	priv->base = devm_ioremap_resource(dev, res);
++	priv->base = devm_platform_ioremap_resource_byname(pdev, "link");
+ 	if (IS_ERR(priv->base))
+ 		return PTR_ERR(priv->base);
  
 -- 
 2.7.4
