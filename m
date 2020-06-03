@@ -2,67 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98F991ED56F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 19:54:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05CB01ED585
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 19:58:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BZZMcAJKUwp0XS7llHs8c6J7lMdIp7DQXMal/0CS1oQ=; b=mjcArhdarS176HFNJraIuF0ay
-	q8VUUpsvsiaS6U+uen4uGyaiGLJWgYQnJO2T/gF/GfrtDeNHa6G3gX9dCCWHsMn2RAtVexN3jmO6J
-	3jKcJymmFfSjLdCJ6A5CkQqkSDWXPwbWJ7E34QKG6TZe+qCdJ5vRqHnIM1PhF2ZywkyRU9+WK8Uiy
-	bvXcD9EwNrXBbQBSPShDL+pdOrkxfEsPRpLqXPMCNcTmhAwWVbhVS2ruq1UYGYmX80PEe3sWH6jjb
-	6loimC1uXQIhqA2w0WOD/eEFhRJkO0EpLC6i4LSZYCjl/zHBZywyq/VmuvI9go4p1DO/uP2iBlFqY
-	96gX/1Agw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=bJ1DovTApupvVB16YhX0jszbIC0FHzg85fJ70kY9wK4=; b=LS4xdSMGFRgPPl
+	TgSzFSsxmugJ+nOZac1/ZbJZnU/8SUaPQfLF3wGjC+dNevMmKMHd0WhATdJkps0e0pKrb/ogW6QGM
+	pxSdg5IkpJ/vEq8qg2lu0VmfQ4NzX8AM6036vgwYYzLeFgSKXL9KxB7eXl+s1jsTu9i7NiBnQPnYI
+	0Pnv+1XUI2XcMWFN7rXJGavILPI4tG3rEV0rDHJbbRtiuipF0ZarkIPMigZfexxBvkUsqsNxprrIx
+	zkxqrzIFEqbVJerhdEZtGrdA7obkcP4HSK7K41Xn5z4oevNJrPvmWOPex7mxjnPoWPUwexlsYVvrL
+	7rM8saLYMQ10dElyLJoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgXay-0001te-OS; Wed, 03 Jun 2020 17:54:32 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jgXeZ-00051N-Ud; Wed, 03 Jun 2020 17:58:15 +0000
+Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgXaq-0001ry-BP
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 17:54:26 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 908822A3B0B
-Subject: Re: [PATCHv2 0/7] Support inhibiting input devices
-To: Hans de Goede <hdegoede@redhat.com>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>
-References: <20200515164943.28480-1-andrzej.p@collabora.com>
- <842b95bb-8391-5806-fe65-be64b02de122@redhat.com>
- <e6030957-97dc-5b04-7855-bc14a78164c8@collabora.com>
- <6d9921fc-5c2f-beda-4dcd-66d6970a22fe@redhat.com>
- <09679de4-75d3-1f29-ec5f-8d42c84273dd@collabora.com>
- <f674ba4f-bd83-0877-c730-5dc6ea09ae4b@redhat.com>
- <2d224833-3a7e-bc7c-af15-1f803f466697@collabora.com>
- <aa2ce2ab-e5bc-9cb4-8b53-c1ef9348b646@redhat.com>
- <20200527063430.GJ89269@dtor-ws>
- <88f939cd-1518-d516-59f2-8f627a6a70d2@collabora.com>
- <20200602175241.GO89269@dtor-ws>
- <82e9f2ab-a16e-51ee-1413-bedf0122026a@collabora.com>
- <8f97d2e1-497a-495d-bc82-f46dbeba440c@redhat.com>
- <fb5bee72-6a75-88aa-8157-75f07c491eeb@collabora.com>
- <681abc14-ef0f-ff15-68ed-944b2f96bdaf@redhat.com>
-From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Message-ID: <025361f4-5b1b-6669-ffa0-a6e8ad43940c@collabora.com>
-Date: Wed, 3 Jun 2020 19:54:16 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jgXeQ-00050a-5h; Wed, 03 Jun 2020 17:58:08 +0000
+Received: from localhost.localdomain (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id AB7EA24000A;
+ Wed,  3 Jun 2020 17:58:00 +0000 (UTC)
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
+ Tudor Ambarus <Tudor.Ambarus@microchip.com>,
+ <linux-mtd@lists.infradead.org>
+Subject: [PATCH v10 00/20] Introduction of the generic ECC framework
+Date: Wed,  3 Jun 2020 19:57:39 +0200
+Message-Id: <20200603175759.19948-1-miquel.raynal@bootlin.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <681abc14-ef0f-ff15-68ed-944b2f96bdaf@redhat.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_105424_657449_1FBF9634 
-X-CRM114-Status: GOOD (  32.87  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200603_105806_485309_A1FE1BAC 
+X-CRM114-Status: GOOD (  12.16  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.230 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,222 +58,169 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nick Dyer <nick@shmanahar.org>, linux-iio@vger.kernel.org,
- Benjamin Tissoires <btissoir@redhat.com>, platform-driver-x86@vger.kernel.org,
- ibm-acpi-devel@lists.sourceforge.net, Laxman Dewangan <ldewangan@nvidia.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, kernel@collabora.com,
- Fabio Estevam <festevam@gmail.com>, linux-samsung-soc@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Jonathan Hunter <jonathanh@nvidia.com>,
- linux-acpi@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, linux-input@vger.kernel.org,
- Len Brown <lenb@kernel.org>, Peter Hutterer <peter.hutterer@redhat.com>,
- Michael Hennerich <michael.hennerich@analog.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
- Vladimir Zapolskiy <vz@mleia.com>, Lars-Peter Clausen <lars@metafoo.de>,
- linux-tegra@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Barry Song <baohua@kernel.org>, Ferruh Yigit <fery@cypress.com>,
- patches@opensource.cirrus.com, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
- Jonathan Cameron <jic23@kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Julien Su <juliensu@mxic.com.tw>, Miquel Raynal <miquel.raynal@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>,
+ Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VyBkbml1IDAzLjA2LjIwMjAgb8KgMTk6MzgsIEhhbnMgZGUgR29lZGUgcGlzemU6Cj4gSGksCj4g
-Cj4gT24gNi8zLzIwIDM6MDcgUE0sIEFuZHJ6ZWogUGlldHJhc2lld2ljeiB3cm90ZToKPj4gSGkg
-SGFucywgaGkgRG1pdHJ5LAo+IAo+IDxzbmlwPgo+IAo+PiBJJ20gdGFraW5nIG9uZSBzdGVwIGJh
-Y2sgYW5kIGxvb2tpbmcgYXQgdGhlIC0+b3BlbigpIGFuZCAtPmNsb3NlKCkKPj4gZHJpdmVyIGNh
-bGxiYWNrcy4gVGhleSBhcmUgY2FsbGVkIGZyb20gaW5wdXRfb3Blbl9kZXZpY2UoKSBhbmQKPj4g
-aW5wdXRfY2xvc2VfZGV2aWNlKCksIHJlc3BlY3RpdmVseToKPj4KPj4gaW5wdXRfb3Blbl9kZXZp
-Y2UoKToKPj4gIlRoaXMgZnVuY3Rpb24gc2hvdWxkIGJlIGNhbGxlZCBieSBpbnB1dCBoYW5kbGVy
-cyB3aGVuIHRoZXkKPj4gd2FudCB0byBzdGFydCByZWNlaXZlIGV2ZW50cyBmcm9tIGdpdmVuIGlu
-cHV0IGRldmljZS4iCj4+Cj4+IC0+b3BlbigpIGNhbGxiYWNrOgo+PiAidGhpcyBtZXRob2QgaXMg
-Y2FsbGVkIHdoZW4gdGhlIHZlcnkgZmlyc3QgdXNlciBjYWxscwo+PiBpbnB1dF9vcGVuX2Rldmlj
-ZSgpLiBUaGUgZHJpdmVyIG11c3QgcHJlcGFyZSB0aGUgZGV2aWNlIHRvIHN0YXJ0Cj4+IGdlbmVy
-YXRpbmcgZXZlbnRzIChzdGFydCBwb2xsaW5nIHRocmVhZCwgcmVxdWVzdCBhbiBJUlEsIHN1Ym1p
-dAo+PiBVUkIsIGV0Yy4pIgo+Pgo+PiBpbnB1dF9jbG9zZV9kZXZpY2UoKToKPj4gIlRoaXMgZnVu
-Y3Rpb24gc2hvdWxkIGJlIGNhbGxlZCBieSBpbnB1dCBoYW5kbGVycyB3aGVuIHRoZXkKPj4gd2Fu
-dCB0byBzdG9wIHJlY2VpdmUgZXZlbnRzIGZyb20gZ2l2ZW4gaW5wdXQgZGV2aWNlLiIKPj4KPj4g
-LT5jbG9zZSgpIGNhbGxiYWNrOgo+PiAidGhpcyBtZXRob2QgaXMgY2FsbGVkIHdoZW4gdGhlIHZl
-cnkgbGFzdCB1c2VyIGNhbGxzCj4+IGlucHV0X2Nsb3NlX2RldmljZSgpIgo+Pgo+PiBJdCBzZWVt
-cyB0byBtZSB0aGF0IHRoZSBjYWxsYmFjayBuYW1lcyBkbyBub3QgcmVmbGVjdCB0aGVpcgo+PiBw
-dXJwb3NlOiB0aGVpciBtZWFuaW5nIGlzIG5vdCB0byAib3BlbiIgb3IgdG8gImNsb3NlIiBidXQg
-dG8KPj4gZ2l2ZSBkcml2ZXJzIGEgY2hhbmNlIHRvIGNvbnRyb2wgd2hlbiB0aGV5IHN0YXJ0IG9y
-IHN0b3AKPj4gcHJvdmlkaW5nIGV2ZW50cyB0byB0aGUgaW5wdXQgY29yZS4KPj4KPj4gV2hhdCB3
-b3VsZCB5b3Ugc2F5IGFib3V0IGNoYW5naW5nIHRoZSBjYWxsYmFja3MnIG5hbWVzPwo+PiBJJ2Qg
-ZW52c2lvbjogLT5wcm92aWRlX2V2ZW50cygpIGluc3RlYWQgb2YgLT5vcGVuKCkgYW5kCj4+IC0+
-c3RvcF9ldmVudHMoKSBpbnN0ZWFkIG9mIC0+Y2xvc2UoKS4gT2YgY291cnNlIGRyaXZlcnMgY2Fu
-Cj4+IGV4cGxvaXQgdGhlIGZhY3Qgb2Yga25vd2luZyB0aGF0IG5vYm9keSB3YW50cyBhbnkgZXZl
-bnRzCj4+IGZyb20gdGhlbSBhbmQgZG8gd2hhdGV2ZXIgdGhleSBjb25zaWRlciBhcHByb3ByaWF0
-ZSwgZm9yCj4+IGV4YW1wbGUgZ28gaW50byBhIGxvdyBwb3dlciBtb2RlIC0gYnV0IHRoZSBsYXR0
-ZXIgaXMgYmV5b25kCj4+IHRoZSBzY29wZSBvZiB0aGUgaW5wdXQgc3Vic3lzdGVtIGFuZCBpcyBk
-cml2ZXItc3BlY2lmaWMuCj4gCj4gSSBkb24ndCBoYXZlIG11Y2ggb2YgYW4gb3BpbmlvbiBvbiBj
-aGFuZ2luZyB0aGUgbmFtZXMsCj4gdG8gbWUgb3Blbi9jbG9zZSBoYXZlIGFsd2F5cyBtZWFucyBz
-dGFydC9zdG9wIHJlY2VpdmluZwo+IGV2ZW50cy4gVGhpcyBmb2xsb3dzIHRoZSBldmVyeXRoaW5n
-IGlzIGEgZmlsZSBwaGlsb3NvcGh5LAo+IGUuZy4geW91IGNhbiBhbHNvIG5vdCByZWFsbHkgIm9w
-ZW4iIGEgc2VyaWFsIHBvcnQsCj4geWV0IG9wZW5pbmcgL2Rldi90dHlTMCB3aWxsIGFjdGl2YXRl
-IHRoZSByZWNlaXZlIElSUQo+IG9mIHRoZSBVQVJULCBldGMuIFNvIG1heWJlIHdlIGp1c3QgbmVl
-ZCB0byBtYWtlIHRoZQo+IGRvY3MgY2xlYXJlciByYXRoZXIgdGhlbiBkbyB0aGUgcmVuYW1lP8Kg
-IERvaW5nIHRoZQo+IHJlbmFtZSBpcyBjZXJ0YWlubHkgZ29pbmcgdG8gY2F1c2UgYSBsb3Qgb2Yg
-Y2h1cm4uCgpSaWdodCwgSSBjYW4gc2VlIG5vdyB0aGF0IHRoZSBzdWdnZXN0aW9uIHRvIGNoYW5n
-ZSBuYW1lcyBpcwp0b28gZmFyIGZldGNoZWQuIChJIGZlZWwgdGhhdCByZWxlYXNlKCkgd291bGQg
-YmUgYmV0dGVyCnRoYW4gY2xvc2UoKSwgdGhvdWdoKS4gQnV0IGl0IGV4cG9zZXMgdGhlIG1lc3Nh
-Z2UgSSB3YW50ZWQgdG8KcGFzcy4KCj4gCj4gQW55d2F5cyBhcyBzYWlkLCBJIGRvbid0IGhhdmUg
-bXVjaCBvZiBhbiBvcGluaW9uLAo+IHNvIEknbGwgbGVhdmUgY29tbWVudGluZyAobW9yZSkgb24g
-dGhpcyB0byBEbWl0cnkuCj4gCj4+IFdpdGggc3VjaCBhIG5hbWluZyBjaGFuZ2UgaW4gbWluZCBs
-ZXQncyBjb25zaWRlciBpbmhpYml0aW5nLgo+PiBXZSB3YW50IHRvIGJlIGFibGUgdG8gY29udHJv
-bCB3aGVuIHRvIGRpc3JlZ2FyZCBldmVudHMgZnJvbQo+PiBhIGdpdmVuIGRldmljZS4gSXQgbWFr
-ZXMgc2Vuc2UgdG8gZG8gaXQgYXQgZGV2aWNlIGxldmVsLCBvdGhlcndpc2UKPj4gc3VjaCBhbiBv
-cGVyYXRpb24gd291bGQgaGF2ZSB0byBiZSBpbnZva2VkIGluIGFsbCBhc3NvY2lhdGVkCj4+IGhh
-bmRsZXJzICh0aG9zZSB0aGF0IGhhdmUgYW4gb3BlbiBoYW5kbGUgYXNzb2NpYXRpbmcgdGhlbSB3
-aXRoCj4+IHRoZSBkZXZpY2UgaW4gcXVlc3Rpb24pLiBCdXQgb2YgY291cnNlIHdlIGNhbiBkbyBi
-ZXR0ZXIgdGhhbgo+PiBtZXJlbHkgaWdub3JpbmcgdGhlIGV2ZW50cyByZWNlaXZlZDogd2UgY2Fu
-IHRlbGwgdGhlIGRyaXZlcnMKPj4gdGhhdCB3ZSBkb24ndCB3YW50IGFueSBldmVudHMgZnJvbSB0
-aGVtLCBhbmQgbGF0ZXIsIGF0IHVuaW5oaWJpdAo+PiB0aW1lLCB0ZWxsIHRoZW0gdG8gc3RhcnQg
-cHJvdmlkaW5nIHRoZSBldmVudHMgYWdhaW4uIENvbmNlcHR1YWxseSwKPj4gdGhlIHR3byBvcGVy
-YXRpb25zIChwcm92aWRlIG9yIGRvbid0IHByb3ZpZGUgZW52ZW50cykgYXJlIGV4YWN0bHkKPj4g
-dGhlIHNhbWUgdGhpbmcgd2Ugd2FudCB0byBiZSBoYXBwZW5pbmcgYXQgaW5wdXRfb3Blbl9kZXZp
-Y2UoKSBhbmQKPj4gaW5wdXRfY2xvc2VfZGV2aWNlKCkgdGltZS4gVG8gbWUsIGNoYW5naW5nIHRo
-ZSBuYW1lcyBvZgo+PiAtPm9wZW4oKSBhbmQgLT5jbG9zZSgpIGV4cG9zZXMgdGhpcyBmYWN0IHZl
-cnkgd2VsbC4KPj4KPj4gQ29uc2VxdWVudGx5LCAtPmluaGliaXQoKSBhbmQgLT51bmluaGliaXQo
-KSB3b24ndCBiZSBuZWVkZWQsCj4+IGFuZCBkcml2ZXJzIHdoaWNoIGFscmVhZHkgaW1wbGVtZW50
-IC0+cHJvdmlkZV9ldmVudHMoKSAoZm9ybWVybHkKPj4gLT5vcGVuKCkpIGFuZCAtPnN0b3BfZXZl
-bnRzKCkgKGZvcm1lcmx5IC0+Y2xvc2UoKSkgd2lsbCByZWNlaXZlCj4+IGZ1bGwgaW5oaWJpdC91
-bmluaGliaXQgc3VwcG9ydCBmb3IgZnJlZSAoc3ViamVjdCB0byBob3cgd2VsbCB0aGV5Cj4+IGlt
-cGxlbWVudCAtPnByb3ZpZGVfZXZlbnRzKCkvLT5zdG9wX2V2ZW50cygpKS4gVW5sZXNzIHdlIGNh
-biBjb21lCj4+IHVwIHdpdGggd2hhdCB0aGUgZHJpdmVycyBtaWdodCBiZSBkb2luZyBvbiB0b3Ag
-b2YgLT5zdG9wX2V2ZW50cygpCj4+IGFuZCAtPnByb3ZpZGVfZXZlbnRzKCkgd2hlbiBpbmhpYml0
-aW5nL3VuaW5oaWJpdGluZywgYnV0IGl0IHNlZW1zCj4+IHRvIG1lIHdlIGNhbid0LiBDYW4gd2U/
-Cj4gCj4gUmlnaHQuIEknbSBoYXBweSB0aGF0IHlvdSd2ZSBjb21lIHRvIHNlZSB0aGF0IGJvdGgg
-b24gb3Blbi9jbG9zZQo+IGFuZCBvbiBpbmhpYml0L3VuaW5oaWJpdCB3ZSB3YW50IHRvICJzdGFy
-dCByZWNlaXZpbmcgZXZlbnRzIiBhbmQKPiAic3RvcCByZWNlaXZpbmcgZXZlbnRzIiwgc28gdGhh
-dCB3ZSBvbmx5IG5lZWQgb25lIHNldCBvZiBjYWxsYmFja3MuCj4gCgpZZWFoLCB0aGF0J3MgbXkg
-Y29uY2x1c2lvbiAtIGF0IGxlYXN0IG9uIGEgY29uY2VwdHVhbCBsZXZlbC4KClRoYXQgc2FpZCwg
-d2hhdCBJIGNhbiBpbWFnaW5lIGlzIGFuIGV4aXN0aW5nIGRyaXZlciAoZS5nLiBlbGFuX2kyYykK
-d2hpY2ggZG9lcyBub3QgaW1wbGVtZW50IG5laXRoZXIgb3BlbigpIG5vciBjbG9zZSgpLCBidXQg
-ZG9lcyBoYXZlCnN1c3BlbmQoKSBhbmQgcmVzdW1lKCkuIFRoZW4gaXQgaXMgbWF5YmUgYSBiaXQg
-ZWFzaWVyIHRvIGFkZCBpbmhpYml0KCkKYW5kIHVuaW5oaWJpdCgpIC90aGV5IHdvdWxkIGJlIHNp
-bWlsYXIgdG8gc3VzcGVuZCBhbmQgcmVzdW1lLyBpbnN0ZWFkCm9mIG9wZW4oKSBhbmQgY2xvc2Uo
-KTogSWYgb25seSBvcGVuKCkgYW5kIGNsb3NlKCkgYXJlIHBvc3NpYmxlLCB0aGVuCnRoZSBwcm9i
-ZSBmdW5jdGlvbiBuZWVkcyB0byBiZSBleHRlbmRlZCB0byAiY2xvc2UiIHRoZSBkZXZpY2UgYmVm
-b3JlIGl0CmdldHMgcmVnaXN0ZXJlZCwgYmVjYXVzZSBmcm9tIHRoZSBtb21lbnQgaXQgaXMgcmVn
-aXN0ZXJlZCBpdCBtaWdodCBiZQpvcGVuZWQgcmlnaHQgYXdheS4gQW5kIHRoZSBkZXZpY2UgbXVz
-dCBiZSBhdmFpbGFibGUgZWFybGllciBkdXJpbmcgdGhlCmNvdXJzZSBvZiBwcm9iZSB0byBxdWVy
-eSBzb21lIHBhcmFtZXRlcnMgdGhyb3VnaCBpMmM6Cgorc3RhdGljIGludCBlbGFuX3JlYWN0aXZh
-dGUoc3RydWN0IGVsYW5fdHBfZGF0YSAqZGF0YSkKK3sKKwlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAm
-ZGF0YS0+Y2xpZW50LT5kZXY7CisJaW50IHJldDsKKworCXJldCA9IGVsYW5fZW5hYmxlX3Bvd2Vy
-KGRhdGEpOworCWlmIChyZXQpCisJCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIHJlc3RvcmUgcG93
-ZXI6ICVkXG4iLCByZXQpOworCisJcmV0ID0gZWxhbl9pbml0aWFsaXplKGRhdGEpOworCWlmIChy
-ZXQpCisJCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIHJlLWluaXRpYWxpemUgdG91Y2hwYWQ6ICVk
-XG4iLCByZXQpOworCisJcmV0dXJuIHJldDsKK30KKworc3RhdGljIGludCBlbGFuX29wZW4oc3Ry
-dWN0IGlucHV0X2RldiAqaW5wdXQpCit7CisJc3RydWN0IGVsYW5fdHBfZGF0YSAqZGF0YSA9IGlu
-cHV0X2dldF9kcnZkYXRhKGlucHV0KTsKKwlzdHJ1Y3QgaTJjX2NsaWVudCAqY2xpZW50ID0gZGF0
-YS0+Y2xpZW50OworCWludCByZXQ7CisKKwlkZXZfZGJnKCZjbGllbnQtPmRldiwgInVuaW5oaWJp
-dGluZ1xuIik7CisKKwlyZXQgPSBtdXRleF9sb2NrX2ludGVycnVwdGlibGUoJmRhdGEtPnN5c2Zz
-X211dGV4KTsKKwlpZiAocmV0KQorCQlyZXR1cm4gcmV0OworCisJcmV0ID0gZWxhbl9yZWFjdGl2
-YXRlKGRhdGEpOworCWlmIChyZXQgPT0gMCkKKwkJZW5hYmxlX2lycShjbGllbnQtPmlycSk7CisK
-KwltdXRleF91bmxvY2soJmRhdGEtPnN5c2ZzX211dGV4KTsKKworCXJldHVybiByZXQ7Cit9CisK
-K3N0YXRpYyBpbnQgZWxhbl9pbmhpYml0KHN0cnVjdCBpbnB1dF9kZXYgKmlucHV0KQoreworCXN0
-cnVjdCBlbGFuX3RwX2RhdGEgKmRhdGEgPSBpbnB1dF9nZXRfZHJ2ZGF0YShpbnB1dCk7CisJc3Ry
-dWN0IGkyY19jbGllbnQgKmNsaWVudCA9IGRhdGEtPmNsaWVudDsKKwlpbnQgcmV0OworCisJZGV2
-X2RiZygmY2xpZW50LT5kZXYsICJjbG9zaW5nXG4iKTsKKworCS8qCisJICogV2UgYXJlIHRha2lu
-ZyB0aGUgbXV0ZXggdG8gbWFrZSBzdXJlIHN5c2ZzIG9wZXJhdGlvbnMgYXJlCisJICogY29tcGxl
-dGUgYmVmb3JlIHdlIGF0dGVtcHQgdG8gYnJpbmcgdGhlIGRldmljZSBpbnRvIGxvd1tlcl0KKwkg
-KiBwb3dlciBtb2RlLgorCSAqLworCXJldCA9IG11dGV4X2xvY2tfaW50ZXJydXB0aWJsZSgmZGF0
-YS0+c3lzZnNfbXV0ZXgpOworCWlmIChyZXQpCisJCXJldHVybiByZXQ7CisKKwlkaXNhYmxlX2ly
-cShjbGllbnQtPmlycSk7CisKKwlyZXQgPSBlbGFuX2Rpc2FibGVfcG93ZXIoZGF0YSk7CisJaWYg
-KHJldCkKKwkJZW5hYmxlX2lycShjbGllbnQtPmlycSk7CisKKwltdXRleF91bmxvY2soJmRhdGEt
-PnN5c2ZzX211dGV4KTsKKworCXJldHVybiByZXQ7Cit9CisKK3N0YXRpYyB2b2lkIGVsYW5fY2xv
-c2Uoc3RydWN0IGlucHV0X2RldiAqaW5wdXQpCit7CisJZWxhbl9pbmhpYml0KGlucHV0KTsKK30K
-KwogIHN0YXRpYyBpbnQgZWxhbl9xdWVyeV9kZXZpY2VfaW5mbyhzdHJ1Y3QgZWxhbl90cF9kYXRh
-ICpkYXRhKQogIHsKICAJaW50IGVycm9yOwogIAl1MTYgaWNfdHlwZTsKCiAgCWVycm9yID0gZGF0
-YS0+b3BzLT5nZXRfdmVyc2lvbihkYXRhLT5jbGllbnQsIGZhbHNlLCAmZGF0YS0+ZndfdmVyc2lv
-bik7CiAgCWlmIChlcnJvcikKICAJCXJldHVybiBlcnJvcjsKCiAgCWVycm9yID0gZGF0YS0+b3Bz
-LT5nZXRfY2hlY2tzdW0oZGF0YS0+Y2xpZW50LCBmYWxzZSwKICAJCQkJCSZkYXRhLT5md19jaGVj
-a3N1bSk7CiAgCWlmIChlcnJvcikKICAJCXJldHVybiBlcnJvcjsKCiAgCWVycm9yID0gZGF0YS0+
-b3BzLT5nZXRfdmVyc2lvbihkYXRhLT5jbGllbnQsIHRydWUsICZkYXRhLT5pYXBfdmVyc2lvbik7
-CiAgCWlmIChlcnJvcikKICAJCXJldHVybiBlcnJvcjsKQEAgLTEwNzEsMzQgKzExNDEsMzYgQEAg
-c3RhdGljIGludCBlbGFuX3NldHVwX3RyYWNrcG9pbnRfaW5wdXRfZGV2aWNlKHN0cnVjdCAKZWxh
-bl90cF9kYXRhICpkYXRhKQoKICBzdGF0aWMgaW50IGVsYW5fc2V0dXBfaW5wdXRfZGV2aWNlKHN0
-cnVjdCBlbGFuX3RwX2RhdGEgKmRhdGEpCiAgewogIAlzdHJ1Y3QgZGV2aWNlICpkZXYgPSAmZGF0
-YS0+Y2xpZW50LT5kZXY7CiAgCXN0cnVjdCBpbnB1dF9kZXYgKmlucHV0OwogIAl1bnNpZ25lZCBp
-bnQgbWF4X3dpZHRoID0gbWF4KGRhdGEtPndpZHRoX3gsIGRhdGEtPndpZHRoX3kpOwogIAl1bnNp
-Z25lZCBpbnQgbWluX3dpZHRoID0gbWluKGRhdGEtPndpZHRoX3gsIGRhdGEtPndpZHRoX3kpOwog
-IAlpbnQgZXJyb3I7CgogIAlpbnB1dCA9IGRldm1faW5wdXRfYWxsb2NhdGVfZGV2aWNlKGRldik7
-CiAgCWlmICghaW5wdXQpCiAgCQlyZXR1cm4gLUVOT01FTTsKCiAgCWlucHV0LT5uYW1lID0gIkVs
-YW4gVG91Y2hwYWQiOwogIAlpbnB1dC0+aWQuYnVzdHlwZSA9IEJVU19JMkM7CiAgCWlucHV0LT5p
-ZC52ZW5kb3IgPSBFTEFOX1ZFTkRPUl9JRDsKICAJaW5wdXQtPmlkLnByb2R1Y3QgPSBkYXRhLT5w
-cm9kdWN0X2lkOworCWlucHV0LT5vcGVuID0gZWxhbl9vcGVuOworCWlucHV0LT5jbG9zZSA9IGVs
-YW5fY2xvc2U7CiAgCWlucHV0X3NldF9kcnZkYXRhKGlucHV0LCBkYXRhKTsKCiAgCWVycm9yID0g
-aW5wdXRfbXRfaW5pdF9zbG90cyhpbnB1dCwgRVRQX01BWF9GSU5HRVJTLAogIAkJCQkgICAgSU5Q
-VVRfTVRfUE9JTlRFUiB8IElOUFVUX01UX0RST1BfVU5VU0VEKTsKICAJaWYgKGVycm9yKSB7CiAg
-CQlkZXZfZXJyKGRldiwgImZhaWxlZCB0byBpbml0aWFsaXplIE1UIHNsb3RzOiAlZFxuIiwgZXJy
-b3IpOwogIAkJcmV0dXJuIGVycm9yOwogIAl9CgogIAlfX3NldF9iaXQoRVZfQUJTLCBpbnB1dC0+
-ZXZiaXQpOwogIAlfX3NldF9iaXQoSU5QVVRfUFJPUF9QT0lOVEVSLCBpbnB1dC0+cHJvcGJpdCk7
-CiAgCWlmIChkYXRhLT5jbGlja3BhZCkgewogIAkJX19zZXRfYml0KElOUFVUX1BST1BfQlVUVE9O
-UEFELCBpbnB1dC0+cHJvcGJpdCk7CiAgCX0gZWxzZSB7CiAgCQlfX3NldF9iaXQoQlROX1JJR0hU
-LCBpbnB1dC0+a2V5Yml0KTsKICAJCWlmIChkYXRhLT5taWRkbGVfYnV0dG9uKQogIAkJCV9fc2V0
-X2JpdChCVE5fTUlERExFLCBpbnB1dC0+a2V5Yml0KTsKQEAgLTEyNTMsMzQgKzEzMjUsNDAgQEAg
-c3RhdGljIGludCBlbGFuX3Byb2JlKHN0cnVjdCBpMmNfY2xpZW50ICpjbGllbnQsCiAgCWlmICgh
-aXJxZmxhZ3MpCiAgCQlpcnFmbGFncyA9IElSUUZfVFJJR0dFUl9GQUxMSU5HOwoKICAJZXJyb3Ig
-PSBkZXZtX3JlcXVlc3RfdGhyZWFkZWRfaXJxKGRldiwgY2xpZW50LT5pcnEsIE5VTEwsIGVsYW5f
-aXNyLAogIAkJCQkJICBpcnFmbGFncyB8IElSUUZfT05FU0hPVCwKICAJCQkJCSAgY2xpZW50LT5u
-YW1lLCBkYXRhKTsKICAJaWYgKGVycm9yKSB7CiAgCQlkZXZfZXJyKGRldiwgImNhbm5vdCByZWdp
-c3RlciBpcnE9JWRcbiIsIGNsaWVudC0+aXJxKTsKICAJCXJldHVybiBlcnJvcjsKICAJfQoKICAJ
-ZXJyb3IgPSBkZXZtX2RldmljZV9hZGRfZ3JvdXBzKGRldiwgZWxhbl9zeXNmc19ncm91cHMpOwog
-IAlpZiAoZXJyb3IpIHsKICAJCWRldl9lcnIoZGV2LCAiZmFpbGVkIHRvIGNyZWF0ZSBzeXNmcyBh
-dHRyaWJ1dGVzOiAlZFxuIiwgZXJyb3IpOwogIAkJcmV0dXJuIGVycm9yOwogIAl9CgorCWVycm9y
-ID0gZWxhbl9pbmhpYml0KGRhdGEtPmlucHV0KTsKKwlpZiAoZXJyb3IpIHsKKwkJZGV2X2Vycihk
-ZXYsICJmYWlsZWQgdG8gaW5oaWJpdCBpbnB1dCBkZXZpY2UgYmVmb3JlIHJlZ2lzdGVyaW5nOiAl
-ZFxuIiwgZXJyb3IpOworCQlyZXR1cm4gZXJyb3I7CisJfQorCiAgCWVycm9yID0gaW5wdXRfcmVn
-aXN0ZXJfZGV2aWNlKGRhdGEtPmlucHV0KTsKICAJaWYgKGVycm9yKSB7CiAgCQlkZXZfZXJyKGRl
-diwgImZhaWxlZCB0byByZWdpc3RlciBpbnB1dCBkZXZpY2U6ICVkXG4iLCBlcnJvcik7CiAgCQly
-ZXR1cm4gZXJyb3I7CiAgCX0KCiAgCWlmIChkYXRhLT50cF9pbnB1dCkgewogIAkJZXJyb3IgPSBp
-bnB1dF9yZWdpc3Rlcl9kZXZpY2UoZGF0YS0+dHBfaW5wdXQpOwogIAkJaWYgKGVycm9yKSB7CiAg
-CQkJZGV2X2VycigmY2xpZW50LT5kZXYsCiAgCQkJCSJmYWlsZWQgdG8gcmVnaXN0ZXIgVHJhY2tQ
-b2ludCBpbnB1dCBkZXZpY2U6ICVkXG4iLAogIAkJCQllcnJvcik7CiAgCQkJcmV0dXJuIGVycm9y
-OwogIAkJfQogIAl9CgogIAkvKgpAQCAtMTI5NCw3MiArMTM3Miw3MSBAQCBzdGF0aWMgaW50IGVs
-YW5fcHJvYmUoc3RydWN0IGkyY19jbGllbnQgKmNsaWVudCwKICB9CgogIHN0YXRpYyBpbnQgX19t
-YXliZV91bnVzZWQgZWxhbl9zdXNwZW5kKHN0cnVjdCBkZXZpY2UgKmRldikKICB7CiAgCXN0cnVj
-dCBpMmNfY2xpZW50ICpjbGllbnQgPSB0b19pMmNfY2xpZW50KGRldik7CiAgCXN0cnVjdCBlbGFu
-X3RwX2RhdGEgKmRhdGEgPSBpMmNfZ2V0X2NsaWVudGRhdGEoY2xpZW50KTsKICAJaW50IHJldDsK
-CiAgCS8qCiAgCSAqIFdlIGFyZSB0YWtpbmcgdGhlIG11dGV4IHRvIG1ha2Ugc3VyZSBzeXNmcyBv
-cGVyYXRpb25zIGFyZQogIAkgKiBjb21wbGV0ZSBiZWZvcmUgd2UgYXR0ZW1wdCB0byBicmluZyB0
-aGUgZGV2aWNlIGludG8gbG93W2VyXQogIAkgKiBwb3dlciBtb2RlLgogIAkgKi8KICAJcmV0ID0g
-bXV0ZXhfbG9ja19pbnRlcnJ1cHRpYmxlKCZkYXRhLT5zeXNmc19tdXRleCk7CiAgCWlmIChyZXQp
-CiAgCQlyZXR1cm4gcmV0OwoKLQlkaXNhYmxlX2lycShjbGllbnQtPmlycSk7CisJbXV0ZXhfbG9j
-aygmZGF0YS0+aW5wdXQtPm11dGV4KTsKKwlpZiAoaW5wdXRfZGV2aWNlX2VuYWJsZWQoZGF0YS0+
-aW5wdXQpKSB7CisJCWRpc2FibGVfaXJxKGNsaWVudC0+aXJxKTsKCi0JaWYgKGRldmljZV9tYXlf
-d2FrZXVwKGRldikpIHsKLQkJcmV0ID0gZWxhbl9zbGVlcChkYXRhKTsKLQkJLyogRW5hYmxlIHdh
-a2UgZnJvbSBJUlEgKi8KLQkJZGF0YS0+aXJxX3dha2UgPSAoZW5hYmxlX2lycV93YWtlKGNsaWVu
-dC0+aXJxKSA9PSAwKTsKLQl9IGVsc2UgewotCQlyZXQgPSBlbGFuX2Rpc2FibGVfcG93ZXIoZGF0
-YSk7CisJCWlmIChkZXZpY2VfbWF5X3dha2V1cChkZXYpKSB7CisJCQlyZXQgPSBlbGFuX3NsZWVw
-KGRhdGEpOworCQkJLyogRW5hYmxlIHdha2UgZnJvbSBJUlEgKi8KKwkJCWRhdGEtPmlycV93YWtl
-ID0gKGVuYWJsZV9pcnFfd2FrZShjbGllbnQtPmlycSkgPT0gMCk7CisJCX0gZWxzZSB7CisJCQly
-ZXQgPSBlbGFuX2Rpc2FibGVfcG93ZXIoZGF0YSk7CisJCX0KICAJfQorCW11dGV4X3VubG9jaygm
-ZGF0YS0+aW5wdXQtPm11dGV4KTsKCiAgCW11dGV4X3VubG9jaygmZGF0YS0+c3lzZnNfbXV0ZXgp
-OwogIAlyZXR1cm4gcmV0OwogIH0KCiAgc3RhdGljIGludCBfX21heWJlX3VudXNlZCBlbGFuX3Jl
-c3VtZShzdHJ1Y3QgZGV2aWNlICpkZXYpCiAgewogIAlzdHJ1Y3QgaTJjX2NsaWVudCAqY2xpZW50
-ID0gdG9faTJjX2NsaWVudChkZXYpOwogIAlzdHJ1Y3QgZWxhbl90cF9kYXRhICpkYXRhID0gaTJj
-X2dldF9jbGllbnRkYXRhKGNsaWVudCk7Ci0JaW50IGVycm9yOworCWludCByZXQgPSAwOwoKLQlp
-ZiAoZGV2aWNlX21heV93YWtldXAoZGV2KSAmJiBkYXRhLT5pcnFfd2FrZSkgewotCQlkaXNhYmxl
-X2lycV93YWtlKGNsaWVudC0+aXJxKTsKLQkJZGF0YS0+aXJxX3dha2UgPSBmYWxzZTsKLQl9CisJ
-bXV0ZXhfbG9jaygmZGF0YS0+aW5wdXQtPm11dGV4KTsKKwlpZiAoaW5wdXRfZGV2aWNlX2VuYWJs
-ZWQoZGF0YS0+aW5wdXQpKSB7CisJCWlmIChkYXRhLT5pcnFfd2FrZSkgeworCQkJZGlzYWJsZV9p
-cnFfd2FrZShjbGllbnQtPmlycSk7CisJCQlkYXRhLT5pcnFfd2FrZSA9IGZhbHNlOworCQl9Cgot
-CWVycm9yID0gZWxhbl9lbmFibGVfcG93ZXIoZGF0YSk7Ci0JaWYgKGVycm9yKSB7Ci0JCWRldl9l
-cnIoZGV2LCAicG93ZXIgdXAgd2hlbiByZXN1bWluZyBmYWlsZWQ6ICVkXG4iLCBlcnJvcik7Ci0J
-CWdvdG8gZXJyOworCQlyZXQgPSBlbGFuX3JlYWN0aXZhdGUoZGF0YSk7CisJCWVuYWJsZV9pcnEo
-ZGF0YS0+Y2xpZW50LT5pcnEpOwogIAl9CisJbXV0ZXhfdW5sb2NrKCZkYXRhLT5pbnB1dC0+bXV0
-ZXgpOwoKLQllcnJvciA9IGVsYW5faW5pdGlhbGl6ZShkYXRhKTsKLQlpZiAoZXJyb3IpCi0JCWRl
-dl9lcnIoZGV2LCAiaW5pdGlhbGl6ZSB3aGVuIHJlc3VtaW5nIGZhaWxlZDogJWRcbiIsIGVycm9y
-KTsKLQotZXJyOgotCWVuYWJsZV9pcnEoZGF0YS0+Y2xpZW50LT5pcnEpOwotCXJldHVybiBlcnJv
-cjsKKwlyZXR1cm4gcmV0OwogIH0KClJlZ2FyZHMsCgpBbmRyemVqCgpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
-bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+After discussing with Boris, he convinced me that the changes should
+be done in another order. That's why first I update the nand_ecc_algo
+enumeration in raw NAND, then I introduce the new bindings and the ECC
+core itself. Only after that, I patch the raw NAND core (and slightly
+SPI-NAND) to share the generic data with the NAND core/ECC framework.
+
+Changes in v10:
+* After reworking the entire series, I only kept 4 patches aside,
+  resending all of them.
+* Fixed typos, updated commit logs as proposed.
+* Introduced nanddev_set_ecc_requirements().
+* Used spaces instead of tabs in an array.
+* Renamed the nand_ecc_is_strong_enough() helper.
+* Dropped the use of the MAXIMIZE flag in denali.c.
+* Renamed this flag MAXIMIZE_STRENGTH.
+* Renamed the of_get_nand_ecc_config*() helpers.
+
+Changes in v9:
+* This time sending the additional patchs, not just the old ones with
+  corrections. v8 should be ignored, sorry for the noise.
+
+Changes in v8:
+* Split "Convert generic NAND bits to ECC framework" into several peaces:
+  > added two helpers
+  > converted SPI-NAND then raw-NAND.
+* Fixed a comment.
+* Used the _ooblayout suffix instead of _layout.
+
+
+Miquel Raynal (20):
+  mtd: rawnand: Add a kernel doc to the ECC algorithm enumeration
+  mtd: rawnand: Rename the ECC algorithm enumeration items
+  mtd: rawnand: Move the nand_ecc_algo enum to the generic NAND layer
+  mtd: nand: Add a NAND page I/O request type
+  dt-bindings: mtd: Document nand-ecc-placement
+  dt-bindings: mtd: Document nand-ecc-engine
+  dt-bindings: mtd: Document boolean NAND ECC properties
+  mtd: nand: Introduce the ECC engine framework
+  mtd: rawnand: Separate the ECC engine type and the ECC byte placement
+  mtd: rawnand: Use the new ECC engine type enumeration
+  mtd: nand: Create a helper to extract the ECC configuration
+  mtd: spinand: Use nanddev_get_ecc_conf() when relevant
+  mtd: nand: Create helpers to set/extract the ECC requirements
+  mtd: rawnand: Use nanddev_get/set_ecc_requirements() when relevant
+  mtd: nand: Use the new generic ECC object
+  mtd: rawnand: Make use of the ECC framework
+  mtd: rawnand: Use the ECC framework OOB layouts
+  mtd: rawnand: Use the ECC framework nand_ecc_is_strong_enough() helper
+  mtd: rawnand: Use the ECC framework user input parsing bits
+  mtd: rawnand: Use the NAND framework user_conf object for ECC flags
+
+ .../bindings/mtd/nand-controller.yaml         |  28 +
+ arch/arm/mach-davinci/board-da830-evm.c       |   2 +-
+ arch/arm/mach-davinci/board-da850-evm.c       |   2 +-
+ arch/arm/mach-davinci/board-dm355-evm.c       |   2 +-
+ arch/arm/mach-davinci/board-dm355-leopard.c   |   3 +-
+ arch/arm/mach-davinci/board-dm365-evm.c       |   2 +-
+ arch/arm/mach-davinci/board-dm644x-evm.c      |   2 +-
+ arch/arm/mach-davinci/board-dm646x-evm.c      |   2 +-
+ arch/arm/mach-davinci/board-mityomapl138.c    |   2 +-
+ arch/arm/mach-davinci/board-neuros-osd2.c     |   2 +-
+ arch/arm/mach-davinci/board-omapl138-hawk.c   |   2 +-
+ arch/arm/mach-s3c24xx/common-smdk.c           |   2 +-
+ arch/arm/mach-s3c24xx/mach-anubis.c           |   2 +-
+ arch/arm/mach-s3c24xx/mach-at2440evb.c        |   2 +-
+ arch/arm/mach-s3c24xx/mach-bast.c             |   2 +-
+ arch/arm/mach-s3c24xx/mach-gta02.c            |   2 +-
+ arch/arm/mach-s3c24xx/mach-jive.c             |   2 +-
+ arch/arm/mach-s3c24xx/mach-mini2440.c         |   2 +-
+ arch/arm/mach-s3c24xx/mach-osiris.c           |   2 +-
+ arch/arm/mach-s3c24xx/mach-qt2410.c           |   2 +-
+ arch/arm/mach-s3c24xx/mach-rx1950.c           |   2 +-
+ arch/arm/mach-s3c24xx/mach-rx3715.c           |   2 +-
+ arch/arm/mach-s3c24xx/mach-vstms.c            |   2 +-
+ arch/arm/mach-s3c64xx/mach-hmt.c              |   2 +-
+ arch/arm/mach-s3c64xx/mach-mini6410.c         |   2 +-
+ arch/arm/mach-s3c64xx/mach-real6410.c         |   2 +-
+ drivers/mtd/nand/Kconfig                      |   8 +
+ drivers/mtd/nand/Makefile                     |   2 +
+ drivers/mtd/nand/ecc.c                        | 484 +++++++++++++++
+ drivers/mtd/nand/raw/Kconfig                  |   1 +
+ drivers/mtd/nand/raw/ams-delta.c              |   4 +-
+ drivers/mtd/nand/raw/arasan-nand-controller.c |  16 +-
+ drivers/mtd/nand/raw/atmel/nand-controller.c  |  31 +-
+ drivers/mtd/nand/raw/au1550nd.c               |   4 +-
+ .../mtd/nand/raw/bcm47xxnflash/ops_bcm4706.c  |   3 +-
+ drivers/mtd/nand/raw/brcmnand/brcmnand.c      |  28 +-
+ .../mtd/nand/raw/cadence-nand-controller.c    |   4 +-
+ drivers/mtd/nand/raw/cafe_nand.c              |   3 +-
+ drivers/mtd/nand/raw/cs553x_nand.c            |   2 +-
+ drivers/mtd/nand/raw/davinci_nand.c           |  38 +-
+ drivers/mtd/nand/raw/denali.c                 |   3 +-
+ drivers/mtd/nand/raw/denali_pci.c             |   2 +-
+ drivers/mtd/nand/raw/diskonchip.c             |   3 +-
+ drivers/mtd/nand/raw/fsl_elbc_nand.c          |  20 +-
+ drivers/mtd/nand/raw/fsl_ifc_nand.c           |  12 +-
+ drivers/mtd/nand/raw/fsl_upm.c                |   4 +-
+ drivers/mtd/nand/raw/fsmc_nand.c              |  14 +-
+ drivers/mtd/nand/raw/gpio.c                   |   4 +-
+ drivers/mtd/nand/raw/gpmi-nand/gpmi-nand.c    |  15 +-
+ drivers/mtd/nand/raw/hisi504_nand.c           |   6 +-
+ .../mtd/nand/raw/ingenic/ingenic_nand_drv.c   |  20 +-
+ drivers/mtd/nand/raw/lpc32xx_mlc.c            |   2 +-
+ drivers/mtd/nand/raw/lpc32xx_slc.c            |   3 +-
+ drivers/mtd/nand/raw/marvell_nand.c           |  35 +-
+ drivers/mtd/nand/raw/meson_nand.c             |   2 +-
+ drivers/mtd/nand/raw/mpc5121_nfc.c            |   4 +-
+ drivers/mtd/nand/raw/mtk_nand.c               |  12 +-
+ drivers/mtd/nand/raw/mxc_nand.c               |  25 +-
+ drivers/mtd/nand/raw/nand_base.c              | 565 +++++++-----------
+ drivers/mtd/nand/raw/nand_esmt.c              |  15 +-
+ drivers/mtd/nand/raw/nand_hynix.c             |  44 +-
+ drivers/mtd/nand/raw/nand_jedec.c             |   9 +-
+ drivers/mtd/nand/raw/nand_micron.c            |  23 +-
+ drivers/mtd/nand/raw/nand_onfi.c              |  17 +-
+ drivers/mtd/nand/raw/nand_samsung.c           |  22 +-
+ drivers/mtd/nand/raw/nand_toshiba.c           |  19 +-
+ drivers/mtd/nand/raw/nandsim.c                |   8 +-
+ drivers/mtd/nand/raw/ndfc.c                   |   2 +-
+ drivers/mtd/nand/raw/omap2.c                  |  22 +-
+ drivers/mtd/nand/raw/orion_nand.c             |   4 +-
+ drivers/mtd/nand/raw/pasemi_nand.c            |   4 +-
+ drivers/mtd/nand/raw/plat_nand.c              |   4 +-
+ drivers/mtd/nand/raw/qcom_nandc.c             |   2 +-
+ drivers/mtd/nand/raw/r852.c                   |   3 +-
+ drivers/mtd/nand/raw/s3c2410.c                |  20 +-
+ drivers/mtd/nand/raw/sh_flctl.c               |   6 +-
+ drivers/mtd/nand/raw/sharpsl.c                |   2 +-
+ drivers/mtd/nand/raw/socrates_nand.c          |   5 +-
+ drivers/mtd/nand/raw/stm32_fmc2_nand.c        |   9 +-
+ drivers/mtd/nand/raw/sunxi_nand.c             |  27 +-
+ drivers/mtd/nand/raw/tango_nand.c             |   4 +-
+ drivers/mtd/nand/raw/tegra_nand.c             |  37 +-
+ drivers/mtd/nand/raw/tmio_nand.c              |   2 +-
+ drivers/mtd/nand/raw/txx9ndfmc.c              |   2 +-
+ drivers/mtd/nand/raw/vf610_nfc.c              |   6 +-
+ drivers/mtd/nand/raw/xway_nand.c              |   4 +-
+ drivers/mtd/nand/spi/core.c                   |  12 +-
+ drivers/mtd/nand/spi/macronix.c               |   7 +-
+ drivers/mtd/nand/spi/toshiba.c                |   6 +-
+ include/linux/mtd/nand.h                      | 188 +++++-
+ include/linux/mtd/rawnand.h                   |  34 +-
+ include/linux/platform_data/mtd-davinci.h     |   9 +-
+ .../linux/platform_data/mtd-nand-s3c2410.h    |   2 +-
+ 93 files changed, 1315 insertions(+), 723 deletions(-)
+ create mode 100644 drivers/mtd/nand/ecc.c
+
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
