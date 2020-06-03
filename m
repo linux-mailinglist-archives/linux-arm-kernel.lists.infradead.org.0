@@ -2,87 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 73D321ECF3B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:02:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8C031ECF39
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 14:02:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References:In-Reply-To:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=enAUz/i3qHFmcAGzZlYCkrNAJuz8xbQVFRrwssDkhgc=; b=ezCKZ/a+lQzyxuup6ZRPCSHfP
-	BC1JO8A3kIdWDIWpgKv8SEVSC7CexWCdSwrn/erXlRZrj+0boIzPMeyuGl0xnPwDj4woA0lmrH2Ds
-	nK7BK/ddPxFHfYh6MN9JX/rxbqDnHtLAg49xwouXVyG/HwEhHjvQytH+Jt2+ddQBDiP2RJXp9NPzt
-	jC5Fp4aJGzJMVOqF62IgGI2e+9sHYIfv/rLpJ055lSTz363EFSFPMmDLX+u5oaBSH9yC8lRWYA7nB
-	6JpKvPbogDFNZLyU0ETayBqVLwz/iYffqcH3/J3gyrsfj8e7KsHPhxRUeaAzFPs52NFsb2VGQOBQf
-	uwBJ6T6cw==;
+	 bh=52nZYzsRZCLTeVSZFC0XAoCKDcpdxoUDaScEMYtw+Hc=; b=QOlMCwibTkYiNWxfk/iCo6og+
+	Yu1OPdP0HhusrOuqByXlCBN1niaC9LWkqnAqj6vJutL7nG1VSikVk5cbMr65JYuIvf4q5FQNMvmYc
+	GOIQWVSVYVRUYAdOsCse2B3zzYaBxqZasnOTsbZ3pFMTg1QIY0gRJpI6GYBykx+V5RblEB2psEqWy
+	LuqxHqDCIILoFPw1hzHZcA1SDQ6/B7JBGIYfT1uP7S8KfaaTV7hyWKhAMiAHpShs1xTkIcjTZOOmW
+	n34cbGIlQ3zh9ChkGnnGt6Uk7n6ShSaaQr0J3RpDig2r/+FTE1D/zyWmB4kanA4v77gaELUyGKfHs
+	Vwnj3lCVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgS6L-00030Q-G1; Wed, 03 Jun 2020 12:02:33 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jgS66-0002pt-Lg; Wed, 03 Jun 2020 12:02:18 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgS61-0002pj-19
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 12:02:18 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1591185737; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=SeSF64gWAAvQHU3nZPOI+yYNnSV/P3R4z/7sHFFTb98=;
- b=AlofzthnhbB57bzHn+Cx+bRkiXdJ/rLdJNrFy+eojMJWMmBohl67g+cXOMiI8dNdugbWBs0H
- 45PnxPKJV7YFc7RFRENbXb6H5VpruQ2g5g4FJoJB1E2ma3l+d1SAeS+nTn2gnVgdoWAwd6mM
- LwxRocW8WCpnPiHXtZMi+bAf5is=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n10.prod.us-east-1.postgun.com with SMTP id
- 5ed790f944a25e005274ed8a (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Wed, 03 Jun 2020 12:00:57
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 424DAC43395; Wed,  3 Jun 2020 12:00:56 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 94B2FC433CA;
- Wed,  3 Jun 2020 12:00:55 +0000 (UTC)
+ id 1jgS5y-0002oh-WE; Wed, 03 Jun 2020 12:02:13 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: aratiu) with ESMTPSA id A1BCB2A3958
+From: Adrian Ratiu <adrian.ratiu@collabora.com>
+To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
+Subject: Re: [PATCH v8 04/10] drm: bridge: dw_mipi_dsi: allow bridge daisy
+ chaining
+In-Reply-To: <20200602235139.GS6547@pendragon.ideasonboard.com>
+References: <20200427081952.3536741-1-adrian.ratiu@collabora.com>
+ <20200427081952.3536741-5-adrian.ratiu@collabora.com>
+ <20200602235139.GS6547@pendragon.ideasonboard.com>
+Date: Wed, 03 Jun 2020 15:03:11 +0300
+Message-ID: <875zc88igw.fsf@collabora.com>
 MIME-Version: 1.0
-Date: Wed, 03 Jun 2020 17:30:55 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH 2/2] coresight: tmc: Add shutdown callback for TMC ETR/ETF
-In-Reply-To: <bf7e8ac2-51b2-d9cb-9c4f-c311297accac@arm.com>
-References: <cover.1590947174.git.saiprakash.ranjan@codeaurora.org>
- <28123d1e19f235f97555ee36a5ed8b52d20cbdea.1590947174.git.saiprakash.ranjan@codeaurora.org>
- <20200601212858.GB24287@xps15>
- <bf7e8ac2-51b2-d9cb-9c4f-c311297accac@arm.com>
-Message-ID: <1549935cf69ac3a006f32eb278821027@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_050217_143349_FA2E2864 
-X-CRM114-Status: GOOD (  16.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200603_050211_173848_2AE92FD4 
+X-CRM114-Status: GOOD (  18.03  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,66 +58,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+Cc: devicetree@vger.kernel.org, Jernej Skrabec <jernej.skrabec@siol.net>,
+ Heiko Stuebner <heiko@sntech.de>, Jonas Karlman <jonas@kwiboo.se>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Andrzej Hajda <a.hajda@samsung.com>, linux-imx@nxp.com,
+ linux-rockchip@lists.infradead.org, kernel@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin, Mathieu
+On Wed, 03 Jun 2020, Laurent Pinchart 
+<laurent.pinchart@ideasonboard.com> wrote:
+> Hi Adrian, 
 
-On 2020-06-03 17:07, Robin Murphy wrote:
-> On 2020-06-01 22:28, Mathieu Poirier wrote:
->> That being said I'm sure that dependencies on an IOMMU isn't a problem 
->> confined
->> to coresight. I am adding Robin Murphy, who added this commit [1], to 
->> the thread
->> in the hope that he can provide guidance on the right way to do this.
+Hi Laurent,
+
 > 
-> Right, it's not specific to CoreSight, and it's not even specific to
-> IOMMUs really. In short, blame kexec ;)
+> Thank you for the patch. 
 > 
-
-Yes it is not specific to coresight, we are targeting this for all
-consumers/clients of SMMU(atleast on SC7180 SoC). We have display 
-throwing
-NoC/interconnect errors[1] during reboot after SMMU is disabled.
-This is also not specific to kexec either as you explained here [2] 
-about
-a case with display which is exacly what is happening in our system [1].
-
-[1] 
-https://lore.kernel.org/lkml/1591009402-681-1-git-send-email-mkrishn@codeaurora.org/
-[2] 
-https://lore.kernel.org/lkml/5858bdac-b7f9-ac26-0c0d-c9653cef841d@arm.com/
-
-> The fundamental thing is that devices should stop any DMA activity at
-> shutdown. For a normal poweroff you can typically get away without
-> doing so, but over kexec, ongoing DMA traffic may corrupt memory in
-> the new kernel (at worst, I think even DMA reads could potentially
-> cause unexpected cache behaviour that might lead to mishaps, given the
-> right combination of memory attributes).
+> On Mon, Apr 27, 2020 at 11:19:46AM +0300, Adrian Ratiu wrote: 
+>> Up until now the assumption was that the synopsis dsi bridge 
+>> will directly connect to an encoder provided by the platform 
+>> driver, but the current practice for drivers is to leave the 
+>> encoder empty via the simple encoder API and add their logic to 
+>> their own drm_bridge.   Thus we need an ablility to connect the 
+>> DSI bridge to another bridge provided by the platform driver, 
+>> so we extend the dw_mipi_dsi bind() API with a new "previous 
+>> bridge" arg instead of just hardcoding NULL.   Cc: Laurent 
+>> Pinchart <laurent.pinchart@ideasonboard.com> Signed-off-by: 
+>> Adrian Ratiu <adrian.ratiu@collabora.com> --- New in v8.  --- 
+>>  drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c   | 6 ++++-- 
+>>  drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c | 2 +- 
+>>  include/drm/bridge/dw_mipi_dsi.h                | 5 ++++- 3 
+>>  files changed, 9 insertions(+), 4 deletions(-) 
+>>  diff --git a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c 
+>> b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c index 
+>> 16fd87055e7b7..140ff40fa1b62 100644 --- 
+>> a/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c +++ 
+>> b/drivers/gpu/drm/bridge/synopsys/dw-mipi-dsi.c @@ -1456,11 
+>> +1456,13 @@ EXPORT_SYMBOL_GPL(dw_mipi_dsi_remove); 
+>>  /* 
+>>   * Bind/unbind API, used from platforms based on the component 
+>>   framework.  */ 
+>> -int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi, struct 
+>> drm_encoder *encoder) +int dw_mipi_dsi_bind(struct dw_mipi_dsi 
+>> *dsi, +		     struct drm_encoder *encoder, + 
+>> struct drm_bridge *prev_bridge) 
+>>  { int ret;  
+>> -	ret = drm_bridge_attach(encoder, &dsi->bridge, NULL, 0); + 
+>> ret = drm_bridge_attach(encoder, &dsi->bridge, prev_bridge, 0); 
 > 
-> IOMMUs merely help to make the situation more serious. For similar
-> kexec reasons, they need to disable any existing translations at
-> shutdown (imagine if the second kernel didn't have an IOMMU driver).
-> And at that point, even the normal poweroff case becomes problematic,
-> because any device DMA that hasn't been shut down beforehand is now
-> not necessarily going benignly to memory as it would in the no-IOMMU
-> case above, but potentially to random physical addresses, with all the
-> hilarity ensuing that you would expect from that.
-> 
+> Please note that chaining of bridges doesn't work well if 
+> multiple bridges in the chain try to create a connector. This is 
+> why a DRM_BRIDGE_ATTACH_NO_CONNECTOR flag has been added, with a 
+> helper to create a connector for a chain of bridges 
+> (drm_bridge_connector_init()).  This won't play well with the 
+> component framework. I would recommend using the 
+> of_drm_find_bridge() instead in the rockchip driver, and 
+> deprecating dw_mipi_dsi_bind(). 
+>
 
-Thanks,
-Sai
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+Thank you for this insight, indeed the bridge dw_mipi_dsi_bind() 
+is clunky and we're making it even more so by possibly 
+re-inventing drm_bridge_connector_init() with it in a way which 
+can't work (well it does work but can lead to those nasty 
+multiple-encoder corner-cases you mention).
+
+I'll address this before posting v9, to try to move to 
+of_drm_find_bridge() and remove dw_mipi_dsi_bind().
+
+>>  	if (ret) {
+>>  		DRM_ERROR("Failed to initialize bridge with drm\n");
+>>  		return ret;
+>> diff --git a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+>> index 3feff0c45b3f7..83ef43be78135 100644
+>> --- a/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+>> +++ b/drivers/gpu/drm/rockchip/dw-mipi-dsi-rockchip.c
+>> @@ -929,7 +929,7 @@ static int dw_mipi_dsi_rockchip_bind(struct device *dev,
+>>  		return ret;
+>>  	}
+>>  
+>> -	ret = dw_mipi_dsi_bind(dsi->dmd, &dsi->encoder);
+>> +	ret = dw_mipi_dsi_bind(dsi->dmd, &dsi->encoder, NULL);
+>>  	if (ret) {
+>>  		DRM_DEV_ERROR(dev, "Failed to bind: %d\n", ret);
+>>  		return ret;
+>> diff --git a/include/drm/bridge/dw_mipi_dsi.h b/include/drm/bridge/dw_mipi_dsi.h
+>> index b0e390b3288e8..699b3531f5b36 100644
+>> --- a/include/drm/bridge/dw_mipi_dsi.h
+>> +++ b/include/drm/bridge/dw_mipi_dsi.h
+>> @@ -14,6 +14,7 @@
+>>  #include <drm/drm_modes.h>
+>>  
+>>  struct drm_display_mode;
+>> +struct drm_bridge;
+>>  struct drm_encoder;
+>>  struct dw_mipi_dsi;
+>>  struct mipi_dsi_device;
+>> @@ -62,7 +63,9 @@ struct dw_mipi_dsi *dw_mipi_dsi_probe(struct platform_device *pdev,
+>>  				      const struct dw_mipi_dsi_plat_data
+>>  				      *plat_data);
+>>  void dw_mipi_dsi_remove(struct dw_mipi_dsi *dsi);
+>> -int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi, struct drm_encoder *encoder);
+>> +int dw_mipi_dsi_bind(struct dw_mipi_dsi *dsi,
+>> +		     struct drm_encoder *encoder,
+>> +		     struct drm_bridge *prev_bridge);
+>>  void dw_mipi_dsi_unbind(struct dw_mipi_dsi *dsi);
+>>  void dw_mipi_dsi_set_slave(struct dw_mipi_dsi *dsi, struct dw_mipi_dsi *slave);
+>>  
+>
+> -- 
+> Regards,
+>
+> Laurent Pinchart
 
 _______________________________________________
 linux-arm-kernel mailing list
