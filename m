@@ -2,76 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF36D1ED31D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 17:14:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4E5C1ED328
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 17:17:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2+nc2USaGkaro7SpQisTPwBlpPIaa/TXGv+l4S/JhrQ=; b=AE9Z2hmSdwHoNq
-	4vdSW6QElm7eXRSM5X9XltrOF2FtTsU90eNu7TSBMDLHL1xWIWdf99lIjj1SOmOlmKGdReSygcC5A
-	ZylwdeHQ/IWpQKjNrY1jOJhzBzZ7XItltLAoJ5xyNDOciJIaz6JL2Y5SZr1CIOvXlw77cbViljQv5
-	RCK4mHKsGs3MYlG96VPMKxaKYBUgY//+6sCzYZ83hmMjdANAdPCVEDL8Aut2C9Pg0MCYEyofwPxK/
-	/OT2I5jd1HHUHGOh2t4jV624tJ2XlDRJmuHr0R9P41fWQRSCgPSsS5sDSw3Dj0PLeMAbNe+cxMdyn
-	7+yQBOb6/A/RlYRGSQAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=APGMYSnTZXZJj3VLdZVJ9Jd3EeKAxjBqaOYCs2IkxvI=; b=pLXXB38zr9+p4d0RvagOZGcP3
+	YjjDUWZkMPXtLnpJte2owboH/IXwuNvT+ZCD/fKrEyWVWDdTmpLm7TZhiLJWNaM69KUzvjeVD2TVK
+	lHqE58SjEAp1MsCEBKwjzQ2Y0KWSV8yGxq5o26B76ZA23jg+J8adqPoKySuYaBaydTZuMcG6RmbZF
+	QxJMUCiQp7BHDQilYscjNTrKtrhvRqvjNbtpGMPfHHkFe2mzBa3XIHAjNZC106ujKDvF5QthZXTmf
+	BEi72aBt3WtNG/yCNtBpC3KcLcVJ4hj+3ClrzNwtFVPkxWfBtRHFPqsGIEXJZFiYnPjxdjgA1aSCj
+	w6syGLZIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgV5c-00031t-1U; Wed, 03 Jun 2020 15:14:00 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jgV8T-00065i-4p; Wed, 03 Jun 2020 15:16:57 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgV5K-0002rp-Q0; Wed, 03 Jun 2020 15:13:44 +0000
-Received: by mail-oi1-f194.google.com with SMTP id 25so1185177oiy.13;
- Wed, 03 Jun 2020 08:13:41 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Cz2BiX6d4n6x62rcneWGjZMN7VkN9rwUibKP2R8rjL8=;
- b=jgylyYZWXHH7p8I4aGOxbD42l9DvJXfX7ARRo4vaAFgoicDX38Uq/y366QtAh4krSZ
- btTPX86EgXfPZuyn/hq9RjBzEObM/ZjVqqNiXj60U9NFaCmZF1+7wm9XFsffur5CV0ms
- xOSYgjTBbgYsCECCXfTNOpFQf80+xIvbaypsaPiVIWvusbikHpXF6QjJxOu1rlzxtVKp
- WzX1/RxRCkZxT2aKvw/P5+1AITnuKBPCpBePZ7DhAorB1LUzwXYGtlsfjloNnNOF0ceE
- 8N8BMTptfWF75PlGEGH6xeA0Aa7tH6Yx5eBRMkX+6aTUR2v+rwZhPt+bHJcnZykEPSVr
- 1tkA==
-X-Gm-Message-State: AOAM530/2DIBr5IEzCEGHTLopYvX4/hdd5GKlCWmKYq6NtqEwpguSUY4
- 9nUwiScGs3OFZSPFskh265lTl98j5GePbhFfPVQ=
-X-Google-Smtp-Source: ABdhPJwl2C6njoLHvec0+7Z+pvFglKeo2x6xe974h+nkdR52l4Zy34+b5UkPp73bI+Pl0F3UJP8s0n7smqKuM+QPGx4=
-X-Received: by 2002:aca:ad88:: with SMTP id w130mr122356oie.103.1591197220440; 
- Wed, 03 Jun 2020 08:13:40 -0700 (PDT)
+ id 1jgV8M-000650-7y
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 15:16:51 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CA17D206E6;
+ Wed,  3 Jun 2020 15:16:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591197409;
+ bh=8vfgBSrae1Sl/Co8GuGiBgYLsvF7HA7YclCM8lPnj00=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=m3jJeo6lRuQ/vrRynASEprCi/bRIUGaRSPi5aAhrtSctPEaYpqEArdFme9bVSBOEJ
+ w4UTYgt9Ysw8WAI1PfQNDp5kCgvW93kVXGqin/tZ0rkMeOAeQJmH6wQ+A1RfXlL5nV
+ mmiINRD+WgMbVywc7EV4SJqSkJ6deRbaX1mIS4sI=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jgV8K-00HUXD-7G; Wed, 03 Jun 2020 16:16:48 +0100
 MIME-Version: 1.0
-References: <20200527095854.21714-1-lukasz.luba@arm.com>
- <20200527095854.21714-5-lukasz.luba@arm.com>
- <d45e5592-8e11-858b-d3a3-2ec9ce1d1f54@linaro.org>
- <7201e161-6952-6e28-4036-bd0f0353ec30@arm.com>
-In-Reply-To: <7201e161-6952-6e28-4036-bd0f0353ec30@arm.com>
-From: "Rafael J. Wysocki" <rafael@kernel.org>
-Date: Wed, 3 Jun 2020 17:13:29 +0200
-Message-ID: <CAJZ5v0jwoNSYOz3nGqNshd=5btsLxOp-di-Dot+cHqAQZEQVRw@mail.gmail.com>
-Subject: Re: [PATCH v8 4/8] PM / EM: add support for other devices than CPUs
- in Energy Model
-To: Lukasz Luba <lukasz.luba@arm.com>
+Date: Wed, 03 Jun 2020 16:16:48 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: "Saidi, Ali" <alisaidi@amazon.com>
+Subject: Re: [PATCH] irqchip/gic-v3-its: Don't try to move a disabled irq
+In-Reply-To: <AE04B507-C5E2-44D2-9190-41E9BE720F9D@amazon.com>
+References: <AE04B507-C5E2-44D2-9190-41E9BE720F9D@amazon.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <622fb6be108e894ee365d6b213535c8b@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: alisaidi@amazon.com, benh@amazon.com, tglx@linutronix.de,
+ jason@lakedaemon.net, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, dwmw@amazon.co.uk, zeev@amazon.com,
+ zorik@amazon.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_081342_939776_29051206 
-X-CRM114-Status: GOOD (  19.75  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200603_081650_305221_F9F5E75C 
+X-CRM114-Status: GOOD (  12.63  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rjwysocki[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,92 +90,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Juri Lelli <juri.lelli@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>, Viresh Kumar <viresh.kumar@linaro.org>,
- Liviu Dudau <liviu.dudau@arm.com>, dri-devel <dri-devel@lists.freedesktop.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Benjamin Segall <bsegall@google.com>, alyssa.rosenzweig@collabora.com,
- Fabio Estevam <festevam@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
- Rob Herring <robh@kernel.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kevin Hilman <khilman@kernel.org>, Andy Gross <agross@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, steven.price@arm.com,
- Chanwoo Choi <cw00.choi@samsung.com>, Ingo Molnar <mingo@redhat.com>,
- dl-linux-imx <linux-imx@nxp.com>, "Zhang, Rui" <rui.zhang@intel.com>,
- Mel Gorman <mgorman@suse.de>, orjan.eide@arm.com,
- Daniel Vetter <daniel@ffwll.ch>, Linux PM <linux-pm@vger.kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Steven Rostedt <rostedt@goodmis.org>,
- "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Linux OMAP Mailing List <linux-omap@vger.kernel.org>,
- Dietmar Eggemann <Dietmar.Eggemann@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- David Airlie <airlied@linux.ie>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- Quentin Perret <qperret@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Randy Dunlap <rdunlap@infradead.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Sascha Hauer <kernel@pengutronix.de>, Sudeep Holla <sudeep.holla@arm.com>,
- patrick.bellasi@matbug.net, Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "Herrenschmidt, Benjamin" <benh@amazon.com>, jason@lakedaemon.net,
+ "Machulsky, Zorik" <zorik@amazon.com>, linux-kernel@vger.kernel.org,
+ "Zilberman, Zeev" <zeev@amazon.com>, linux-arm-kernel@lists.infradead.org,
+ tglx@linutronix.de, "Woodhouse, David" <dwmw@amazon.co.uk>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Jun 2, 2020 at 1:31 PM Lukasz Luba <lukasz.luba@arm.com> wrote:
->
-> Hi Daniel,
->
-> On 6/1/20 10:44 PM, Daniel Lezcano wrote:
-> > On 27/05/2020 11:58, Lukasz Luba wrote:
-> >> Add support for other devices than CPUs. The registration function
-> >> does not require a valid cpumask pointer and is ready to handle new
-> >> devices. Some of the internal structures has been reorganized in order to
-> >> keep consistent view (like removing per_cpu pd pointers).
-> >>
-> >> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
-> >> ---
-> >
-> > [ ... ]
-> >
-> >>   }
-> >>   EXPORT_SYMBOL_GPL(em_register_perf_domain);
-> >> +
-> >> +/**
-> >> + * em_dev_unregister_perf_domain() - Unregister Energy Model (EM) for a device
-> >> + * @dev             : Device for which the EM is registered
-> >> + *
-> >> + * Try to unregister the EM for the specified device (but not a CPU).
-> >> + */
-> >> +void em_dev_unregister_perf_domain(struct device *dev)
-> >> +{
-> >> +    if (IS_ERR_OR_NULL(dev) || !dev->em_pd)
-> >> +            return;
-> >> +
-> >> +    if (_is_cpu_device(dev))
-> >> +            return;
-> >> +
-> >> +    mutex_lock(&em_pd_mutex);
-> >
-> > Is the mutex really needed?
->
-> I just wanted to align this unregister code with register. Since there
-> is debugfs dir lookup and the device's EM existence checks I thought it
-> wouldn't harm just to lock for a while and make sure the registration
-> path is not used. These two paths shouldn't affect each other, but with
-> modules loading/unloading I wanted to play safe.
->
-> I can change it maybe to just dmb() and the end of the function if it's
-> a big performance problem in this unloading path. What do you think?
-
-I would rather leave the mutex locking as is.
-
-However, the question to ask is what exactly may go wrong without that
-locking in place?  Is there any specific race condition that you are
-concerned about?
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjAyMC0wNi0wMiAxOTo0NywgU2FpZGksIEFsaSB3cm90ZToKClsuLi5dCgo+IExvb2tzIGxp
+a2UgdGhlIHg4NiBhcGljIHNldF9hZmZpbml0eSBjYWxsIGV4cGxpY2l0bHkgY2hlY2tzIGZvciBp
+Zgo+IGl04oCZcyBhY3RpdmF0ZWQgaW4gdGhlIG1hbmFnZWQgY2FzZSB3aGljaCBtYWtlcyBzZW5z
+ZSBnaXZlbiB0aGUgY29kZQo+IEJlbiBwb3N0ZWQgYWJvdmU6Cj4gICAgICAgICAgIC8qCj4gICAg
+ICAgICAgICAqIENvcmUgY29kZSBjYW4gY2FsbCBoZXJlIGZvciBpbmFjdGl2ZSBpbnRlcnJ1cHRz
+LiBGb3IgCj4gaW5hY3RpdmUKPiAgICAgICAgICAgICogaW50ZXJydXB0cyB3aGljaCB1c2UgbWFu
+YWdlZCBvciByZXNlcnZhdGlvbiBtb2RlIHRoZXJlIGlzIAo+IG5vCj4gICAgICAgICAgICAqIHBv
+aW50IGluIGdvaW5nIHRocm91Z2ggdGhlIHZlY3RvciBhc3NpZ25tZW50IHJpZ2h0IG5vdyBhcyAK
+PiB0aGUKPiAgICAgICAgICAgICogYWN0aXZhdGlvbiB3aWxsIGFzc2lnbiBhIHZlY3RvciB3aGlj
+aCBmaXRzIHRoZSBkZXN0aW5hdGlvbgo+ICAgICAgICAgICAgKiBjcHVtYXNrLiBMZXQgdGhlIGNv
+cmUgY29kZSBzdG9yZSB0aGUgZGVzdGluYXRpb24gbWFzayBhbmQgCj4gYmUKPiAgICAgICAgICAg
+ICogZG9uZSB3aXRoIGl0Lgo+ICAgICAgICAgICAgKi8KPiAgICAgICAgICAgaWYgKCFpcnFkX2lz
+X2FjdGl2YXRlZChpcnFkKSAmJgo+ICAgICAgICAgICAgICAgKGFwaWNkLT5pc19tYW5hZ2VkIHx8
+IGFwaWNkLT5jYW5fcmVzZXJ2ZSkpCj4gCj4gTXkgb3JpZ2luYWwgcGF0Y2ggc2hvdWxkIGNlcnRh
+aW4gY2hlY2sgYWN0aXZhdGVkIGFuZCBub3QgZGlzYWJsZWQuCj4gV2l0aCB0aGF0IGRvIHlvdSBz
+dGlsbCBoYXZlIHJlc2VydmF0aW9ucyBNYXJjPwoKSSdkIHN0aWxsIHByZWZlciBpdCBpZiB3ZSBj
+b3VsZCBkbyBzb21ldGhpbmcgaW4gY29yZSBjb2RlLCByYXRoZXIKdGhhbiBzcHJlYWRpbmcgdGhl
+c2UgY2hlY2tzIGluIHRoZSBpbmRpdmlkdWFsIGRyaXZlcnMuIElmIHdlIGNhbid0LApmYWlyIGVu
+b3VnaC4gQnV0IGl0IGZlZWxzIGxpa2UgdGhlIGNvcmUgc2V0X2FmZmluaXR5IGZ1bmN0aW9uIGNv
+dWxkCmp1c3QgZG8gdGhlIHNhbWUgdGhpbmcgaW4gYSBzaW5nbGUgcGxhY2UgKGFsdGhvdWdoIHRo
+ZSBzdGFydGVkIHZzCmFjdGl2YXRlZCBpcyB5ZXQgYW5vdGhlciBwaWVjZSBvZiB0aGUgcHV6emxl
+IEkgZGlkbid0IGNvbnNpZGVyLAphbmQgdGhlIElUUyBkb2Vzbid0IG5lZWQgdGhlICJjYW5fcmVz
+ZXJ2ZSIgdGhpbmcpLgoKVGhhbmtzLAoKICAgICAgICAgTS4KLS0gCkphenogaXMgbm90IGRlYWQu
+IEl0IGp1c3Qgc21lbGxzIGZ1bm55Li4uCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFp
+bG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
