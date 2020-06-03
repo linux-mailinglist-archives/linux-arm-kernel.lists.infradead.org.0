@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C6381ED6CF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 21:23:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F33A71ED6D1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 21:23:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,47 +11,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Cjjh6OPfzxYkzO/0Mh5QcAmUOz1RBtDcNr1yBw33idQ=; b=D/muDg25DMwQl2MGZ1rAdgtqoJ
-	ANvTN4wRA+T9BVW6Ca838+W5x/tXNWzrJfP5ZyjWxVmwD1LWT4bzXeQ4/L12BZKqD5R2lD4qXK2VK
-	WQHVeGncRRkHmb4+8EXvalUwxwqboBuB5sUjuGKw0+Wi7Vr9yX8EtPsa9UlDToewh5oeVHBXU0c1S
-	qaM5Lw6LsLqQDPKEEf80k4ex+koto6dC+2X8LsPSYfxOwAreSIVJoDbaLyvQ6iQRWlTIpe807bXTV
-	pUVepupTC/pTUZJLqUVHcuJ3RjmuA+mkiyRnqMkzwKPKgL3wHcrGp0NL0Ky858EZyYhiudH+cEnGP
-	/ZCHizSQ==;
+	bh=25Oq3VHoVZwRvyZNi10yLvPWMNhG57uDrnGkZiGXkX4=; b=PxR3j6EUg0kTgRVFQ1M4dPVPCd
+	Mj9iAZ+MCMOs1oYxSImFEgpXw5s+AA/Z0lbbhd7fLUQOlQe5c4+Q0Id4lIpRf8wlkkpsC0gjpm63T
+	iTp6tIzcCoET9z7S5vvVYazDi3B0xMU4Aq3zTfOPaaPs7DLdUMFdgkGVAwZbRyCIZgOE7bjqx8EgY
+	cpDoXt9kWxAp7RaEifgv/r9SDDSiASuG2o6Y6pOtbuwKg3zBlCU/f2/bq1VLGJXEhqhZdXKq965zv
+	wr0+bMx0GTSUI0pVhRNkNJeHaUSaVmyJvlDxP0UuaEPVMPxfJ6PiTzj0eoyaG+9YH07iaaSKWDiuC
+	fnOBktsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgYyc-0000GW-0m; Wed, 03 Jun 2020 19:23:02 +0000
+	id 1jgYyt-0000dJ-4i; Wed, 03 Jun 2020 19:23:19 +0000
 Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgYx6-0007T3-25; Wed, 03 Jun 2020 19:21:29 +0000
+ id 1jgYxQ-0007pC-Nv; Wed, 03 Jun 2020 19:21:51 +0000
 Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
  [10.75.242.48])
- by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id E55FF30DEC5;
- Wed,  3 Jun 2020 12:21:26 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com E55FF30DEC5
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 9BD4930DA1F;
+ Wed,  3 Jun 2020 12:21:46 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 9BD4930DA1F
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
- s=dkimrelay; t=1591212086;
- bh=+eGweqgyNv5xQqNPdhWRxsMj1hXj6c/U6djA14No064=;
+ s=dkimrelay; t=1591212106;
+ bh=O+33eJKKKzwfVuoOuQlDtjddtvZIu0Ck8i/66RAb/gE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=IHxMKxaXEJuSYA5ID+OoHkyVS3rEtlYcqSc+NFJMF+9n161iLC8x54G10fVuRiKPK
- ceMo2VMK4pgv5zZVMY8bBBTQshUOpX2M69X3C+eIbGUELKSdJUt7Ts3sZXTxCwCwmc
- mwqMaUD7C6UmFmgjQ5TLgZrOcUJKN0EqDBAFfl8s=
+ b=ewLmygEi+sJ1F806IEyUFxRBy86PNcHc5MJUipaixIYo257a7eBotuJPYuGGNaVJF
+ L2GD9JT/KkGhzI6QeIOaHlWvaVaEgx1oCE6M36qCVtdm2VVAnfanEaFMEMVFr1EbnK
+ Esq017xwiOhvPbmPTbKvVHsbJI4l7zQa3QNnh2vs=
 Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
  [10.28.16.211])
- by mail-irv-17.broadcom.com (Postfix) with ESMTP id 3BDEC14008B;
- Wed,  3 Jun 2020 12:21:25 -0700 (PDT)
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 1AF7514008B;
+ Wed,  3 Jun 2020 12:21:45 -0700 (PDT)
 From: Jim Quinlan <james.quinlan@broadcom.com>
 To: linux-pci@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com
-Subject: [PATCH v3 07/13] PCI: brcmstb: Add control of rescal reset
-Date: Wed,  3 Jun 2020 15:20:39 -0400
-Message-Id: <20200603192058.35296-8-james.quinlan@broadcom.com>
+Subject: [PATCH v3 10/13] PCI: brcmstb: Set internal memory viewport sizes
+Date: Wed,  3 Jun 2020 15:20:42 -0400
+Message-Id: <20200603192058.35296-11-james.quinlan@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200603192058.35296-1-james.quinlan@broadcom.com>
 References: <20200603192058.35296-1-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_122128_161522_47F0DFDA 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20200603_122149_211506_6A6F2C82 
+X-CRM114-Status: GOOD (  14.95  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -82,12 +82,10 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Rob Herring <robh@kernel.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jim Quinlan <james.quinlan@broadcom.com>,
  open list <linux-kernel@vger.kernel.org>,
  Florian Fainelli <f.fainelli@gmail.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Philipp Zabel <p.zabel@pengutronix.de>,
- Bjorn Helgaas <bhelgaas@google.com>,
+ <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
@@ -96,158 +94,139 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jim Quinlan <jquinlan@broadcom.com>
+BrcmSTB PCIe controllers are intimately connected to the memory
+controller(s) on the SOC.  There is a "viewport" for each memory controller
+that allows inbound accesses to CPU memory.  Each viewport's size must be
+set to a power of two, and that size must be equal to or larger than the
+amount of memory each controller supports.
 
-Some STB chips have a special purpose reset controller named RESCAL (reset
-calibration).  The PCIe HW can now control RESCAL to start and stop its
-operation.
-
-Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+Signed-off-by: Jim Quinlan <james.quinlan@broadcom.com>
 ---
- drivers/pci/controller/pcie-brcmstb.c | 81 ++++++++++++++++++++++++++-
- 1 file changed, 80 insertions(+), 1 deletion(-)
+ drivers/pci/controller/pcie-brcmstb.c | 67 ++++++++++++++++++++-------
+ 1 file changed, 49 insertions(+), 18 deletions(-)
 
 diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-index 0bcae9eba048..fa356bc149c3 100644
+index fa356bc149c3..338e9ed44230 100644
 --- a/drivers/pci/controller/pcie-brcmstb.c
 +++ b/drivers/pci/controller/pcie-brcmstb.c
-@@ -23,6 +23,7 @@
- #include <linux/of_platform.h>
- #include <linux/pci.h>
- #include <linux/printk.h>
-+#include <linux/reset.h>
- #include <linux/sizes.h>
- #include <linux/slab.h>
- #include <linux/string.h>
-@@ -152,7 +153,17 @@
+@@ -55,6 +55,8 @@
+ #define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_MASK	0x300000
+ #define  PCIE_MISC_MISC_CTRL_MAX_BURST_SIZE_128		0x0
+ #define  PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK		0xf8000000
++#define  PCIE_MISC_MISC_CTRL_SCB1_SIZE_MASK		0x07c00000
++#define  PCIE_MISC_MISC_CTRL_SCB2_SIZE_MASK		0x0000001f
+ 
+ #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO		0x400c
+ #define PCIE_MEM_WIN0_LO(win)	\
+@@ -152,6 +154,7 @@
+ #define SSC_STATUS_OFFSET		0x1
  #define SSC_STATUS_SSC_MASK		0x400
  #define SSC_STATUS_PLL_LOCK_MASK	0x800
++#define PCIE_BRCM_MAX_MEMC		3
  
--#define IDX_ADDR(pcie)	\
-+/* Rescal registers */
-+#define PCIE_DVT_PMU_PCIE_PHY_CTRL				0xc700
-+#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS			0x3
-+#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_DIG_RESET_MASK		0x4
-+#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_DIG_RESET_SHIFT	0x2
-+#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_RESET_MASK		0x2
-+#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_RESET_SHIFT		0x1
-+#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_PWRDN_MASK		0x1
-+#define  PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_PWRDN_SHIFT		0x0
-+
-+#define IDX_ADDR(pcie) \
- 	(pcie->reg_offsets[EXT_CFG_INDEX])
- #define DATA_ADDR(pcie)	\
- 	(pcie->reg_offsets[EXT_CFG_DATA])
-@@ -249,6 +260,7 @@ struct brcm_pcie {
- 	const int		*reg_offsets;
+ /* Rescal registers */
+ #define PCIE_DVT_PMU_PCIE_PHY_CTRL				0xc700
+@@ -261,6 +264,8 @@ struct brcm_pcie {
  	const int		*reg_field_info;
  	enum pcie_type		type;
-+	struct reset_control	*rescal;
+ 	struct reset_control	*rescal;
++	int			num_memc;
++	u64			memc_size[PCIE_BRCM_MAX_MEMC];
  };
  
  /*
-@@ -964,6 +976,47 @@ static void brcm_pcie_enter_l23(struct brcm_pcie *pcie)
- 		dev_err(pcie->dev, "failed to enter low-power link state\n");
- }
+@@ -717,22 +722,40 @@ static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie *pcie,
+ 							u64 *rc_bar2_offset)
+ {
+ 	struct pci_host_bridge *bridge = pci_host_bridge_from_priv(pcie);
+-	struct device *dev = pcie->dev;
+ 	struct resource_entry *entry;
++	struct device *dev = pcie->dev;
++	u64 lowest_pcie_addr = ~(u64)0;
++	int ret, i = 0;
++	u64 size = 0;
  
-+static int brcm_phy_cntl(struct brcm_pcie *pcie, const int start)
-+{
-+	static const u32 shifts[PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS] = {
-+		PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_PWRDN_SHIFT,
-+		PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_RESET_SHIFT,
-+		PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_DIG_RESET_SHIFT,};
-+	static const u32 masks[PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS] = {
-+		PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_PWRDN_MASK,
-+		PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_RESET_MASK,
-+		PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_DIG_RESET_MASK,};
-+	const int beg = start ? 0 : PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS - 1;
-+	const int end = start ? PCIE_DVT_PMU_PCIE_PHY_CTRL_DAST_NFLDS : -1;
-+	u32 tmp, combined_mask = 0;
-+	u32 val = !!start;
-+	void __iomem *base = pcie->base;
-+	int i;
+-	entry = resource_list_first_type(&bridge->dma_ranges, IORESOURCE_MEM);
+-	if (!entry)
+-		return -ENODEV;
++	resource_list_for_each_entry(entry, &bridge->dma_ranges) {
++		u64 pcie_beg = entry->res->start - entry->offset;
+ 
++		size += entry->res->end - entry->res->start + 1;
++		if (pcie_beg < lowest_pcie_addr)
++			lowest_pcie_addr = pcie_beg;
++	}
+ 
+-	/*
+-	 * The controller expects the inbound window offset to be calculated as
+-	 * the difference between PCIe's address space and CPU's. The offset
+-	 * provided by the firmware is calculated the opposite way, so we
+-	 * negate it.
+-	 */
+-	*rc_bar2_offset = -entry->offset;
+-	*rc_bar2_size = 1ULL << fls64(entry->res->end - entry->res->start);
++	ret = of_property_read_variable_u64_array(
++		pcie->np, "brcm,scb-sizes", pcie->memc_size, 1,
++		PCIE_BRCM_MAX_MEMC);
 +
-+	for (i = beg; i != end; start ? i++ : i--) {
-+		tmp = readl(base + PCIE_DVT_PMU_PCIE_PHY_CTRL);
-+		tmp = (tmp & ~masks[i]) | ((val << shifts[i]) & masks[i]);
-+		writel(tmp, base + PCIE_DVT_PMU_PCIE_PHY_CTRL);
-+		usleep_range(50, 200);
-+		combined_mask |= masks[i];
++	if (ret <= 0) {
++		/* Make an educated guess */
++		pcie->num_memc = 1;
++		pcie->memc_size[0] = 1 << fls64(size - 1);
++	} else {
++		pcie->num_memc = ret;
 +	}
 +
-+	tmp = readl(base + PCIE_DVT_PMU_PCIE_PHY_CTRL);
-+	val = start ? combined_mask : 0;
++	/* Each memc is viewed through a "port" that is a power of 2 */
++	for (i = 0, size = 0; i < pcie->num_memc; i++)
++		size += pcie->memc_size[i];
 +
-+	return (tmp & combined_mask) == val ? 0 : -EIO;
-+}
-+
-+static inline int brcm_phy_start(struct brcm_pcie *pcie)
-+{
-+	return pcie->rescal ? brcm_phy_cntl(pcie, 1) : 0;
-+}
-+
-+static inline int brcm_phy_stop(struct brcm_pcie *pcie)
-+{
-+	return pcie->rescal ? brcm_phy_cntl(pcie, 0) : 0;
-+}
-+
- static void brcm_pcie_turn_off(struct brcm_pcie *pcie)
- {
++	/* System memory starts at this address in PCIe-space */
++	*rc_bar2_offset = lowest_pcie_addr;
++	/* The sum of all memc views must also be a power of 2 */
++	*rc_bar2_size = 1ULL << fls64(size - 1);
+ 
+ 	/*
+ 	 * We validate the inbound memory view even though we should trust
+@@ -784,12 +807,11 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
  	void __iomem *base = pcie->base;
-@@ -994,6 +1047,9 @@ static int brcm_pcie_suspend(struct device *dev)
- 	int ret = 0;
+ 	struct device *dev = pcie->dev;
+ 	struct resource_entry *entry;
+-	unsigned int scb_size_val;
+ 	bool ssc_good = false;
+ 	struct resource *res;
+ 	int num_out_wins = 0;
+ 	u16 nlw, cls, lnksta;
+-	int i, ret;
++	int i, ret, memc;
+ 	u32 tmp, aspm_support;
  
- 	brcm_pcie_turn_off(pcie);
-+	ret = brcm_phy_stop(pcie);
-+	if (ret)
-+		dev_err(pcie->dev, "failed to stop phy\n");
- 	clk_disable_unprepare(pcie->clk);
+ 	/* Reset the bridge */
+@@ -825,11 +847,20 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
+ 	writel(upper_32_bits(rc_bar2_offset),
+ 	       base + PCIE_MISC_RC_BAR2_CONFIG_HI);
  
- 	return ret;
-@@ -1009,6 +1065,12 @@ static int brcm_pcie_resume(struct device *dev)
- 	base = pcie->base;
- 	clk_prepare_enable(pcie->clk);
- 
-+	ret = brcm_phy_start(pcie);
-+	if (ret) {
-+		dev_err(pcie->dev, "failed to start phy\n");
-+		return ret;
+-	scb_size_val = rc_bar2_size ?
+-		       ilog2(rc_bar2_size) - 15 : 0xf; /* 0xf is 1GB */
+ 	tmp = readl(base + PCIE_MISC_MISC_CTRL);
+-	u32p_replace_bits(&tmp, scb_size_val,
+-			  PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK);
++	for (memc = 0; memc < pcie->num_memc; memc++) {
++		u32 scb_size_val = ilog2(pcie->memc_size[memc]) - 15;
++
++		if (memc == 0)
++			u32p_replace_bits(&tmp, scb_size_val,
++					  PCIE_MISC_MISC_CTRL_SCB0_SIZE_MASK);
++		else if (memc == 1)
++			u32p_replace_bits(&tmp, scb_size_val,
++					  PCIE_MISC_MISC_CTRL_SCB1_SIZE_MASK);
++		else if (memc == 2)
++			u32p_replace_bits(&tmp, scb_size_val,
++					  PCIE_MISC_MISC_CTRL_SCB2_SIZE_MASK);
 +	}
-+
- 	/* Take bridge out of reset so we can access the SERDES reg */
- 	brcm_pcie_bridge_sw_init_set(pcie, 0);
+ 	writel(tmp, base + PCIE_MISC_MISC_CTRL);
  
-@@ -1035,6 +1097,9 @@ static void __brcm_pcie_remove(struct brcm_pcie *pcie)
- {
- 	brcm_msi_remove(pcie);
- 	brcm_pcie_turn_off(pcie);
-+	if (brcm_phy_stop(pcie))
-+		dev_err(pcie->dev, "failed to stop phy\n");
-+	reset_control_assert(pcie->rescal);
- 	clk_disable_unprepare(pcie->clk);
- }
- 
-@@ -1105,6 +1170,20 @@ static int brcm_pcie_probe(struct platform_device *pdev)
- 		dev_err(&pdev->dev, "could not enable clock\n");
- 		return ret;
- 	}
-+	pcie->rescal = devm_reset_control_get_optional_shared(&pdev->dev,
-+							      "rescal");
-+	if (IS_ERR(pcie->rescal))
-+		return PTR_ERR(pcie->rescal);
-+
-+	ret = reset_control_deassert(pcie->rescal);
-+	if (ret)
-+		dev_err(&pdev->dev, "failed to deassert 'rescal'\n");
-+
-+	ret = brcm_phy_start(pcie);
-+	if (ret) {
-+		dev_err(pcie->dev, "failed to start phy\n");
-+		return ret;
-+	}
- 
- 	ret = brcm_pcie_setup(pcie);
- 	if (ret)
+ 	/*
 -- 
 2.17.1
 
