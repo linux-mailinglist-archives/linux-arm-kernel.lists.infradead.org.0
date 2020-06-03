@@ -2,84 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1054B1ED631
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 20:34:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C82D1ED64D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 20:42:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Z08QR/TI/OFW9m9S8zOOr/+Itq7/egn/Of4QAbQSdag=; b=fLz
-	K448dKtXxA8JHEl2nT8lKb8oqoh75QqwHfFBM+IPCRWzRcVVXcIIWKL39fWnN82TnwkhkDT4lnpw8
-	tkJe1gj0PHzhLd+lzogOoPpfXoKnfcgAXXJRtn2LCIfCX97iQQX6T8iqJ8V+bNVtfIVv6Jh9/Zvar
-	0hqLG33PUJqU6RkM6JbFVgoDJenW7XOQSlDfz9meR86XaYtgnc5w4vG1NzEnDhuG0Q4p+t3jIk2et
-	u5v9oTlHyNbJ46ZLJkNJzmxg4mQqMdChIvgI0YccFFOBN2AEo8dCv9Cqo62n8ScYKGYjlGmYPpqDJ
-	c2XJCMFCstkwUNK9ivd7kAj1vwG0ODA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PKR/0aRiNgOtJCr6n4bsSlUZjEt+qzSlru2Kguw2JPE=; b=Iczg/bW9drqJjH
+	o3XxKmPNhWY5JzFIlym85W7LdixKLxLsjRt6xEY37q/7I/Lgw/CL1pkAVe/BF3MFjMjoY3eDi3d1P
+	q5dzjji7T173F8aQbgdYfqz/DTaXFXwUlsZ5HpOFw67lktY6UeN7q4eWQZGXuJLQmBIZeoSb6jlFT
+	AdJyOG8fw4HunsHoFjM8dURK0U/TooUhbZeOY2aLzpT3gTXezSTPZ8NmP75DbBd6EkKpTDiFFHq86
+	WbutlnMM2ZeOjhZgivrbjuNsOxCSr8mMeAgE12xULalwsaPMWlgMW2N+aZhp72R2Z0liELl0f98P6
+	auEvkgeRJkZtNHDUoAjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgYDh-0002kD-Rt; Wed, 03 Jun 2020 18:34:33 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1jgYLV-0000R0-E4; Wed, 03 Jun 2020 18:42:37 +0000
+Received: from mail-io1-xd2b.google.com ([2607:f8b0:4864:20::d2b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgYDW-0002j8-Os
- for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 18:34:24 +0000
-Received: by mail-io1-xd43.google.com with SMTP id c8so3421232iob.6
+ id 1jgYLO-0000PU-Lr
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 18:42:31 +0000
+Received: by mail-io1-xd2b.google.com with SMTP id c8so3449155iob.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 03 Jun 2020 11:34:22 -0700 (PDT)
+ Wed, 03 Jun 2020 11:42:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=57Tbh/vNYp8Z2Y2yrLwm25NVhHK8l73BmbXVjFnRkLw=;
- b=pUvnbtJgLEQazQZOyd1+rITOwOP5uHA0kod+Y19gDu0JQk7PiZgblEN2KHt/kVaor+
- Xj/rstoCyFcgqvklm8OxJjacZwMeHrWMswXjC2r4F+N0yvvBVwpcaORzBFAcimZhooOj
- uARgG/e0hWj3VjUmyygmuOYpIZZD6ho4pdcy1owLNMG4+LbeRfjIEhaV1AQqbz7KTTgF
- 6PmA/7JMKGcU97C5Myle0WSO4sStNv7+9OIoTbp8lt4wH1PDR36cNVy87NVlnNnniQfZ
- GMaKgxDeHjx/HqBuyrXIUFEz6KrG4lieMtIyfGLmAxXjyXLgSOJbA3i3hYrIrbATAZgW
- qkng==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/ayQQstOIIDAVAm7DUEsy/1EwnXM4OCks6yx7VXAtz0=;
+ b=dd1HIESh9wjeMB2DRzWc+TNFLWLCSZ/CoiLCmo3JmBscQFak1Qq5oY08YE2L90GXH1
+ 2fDZoyLmCNOpFaJGmPaoWBRHdh7x9KNy3zcr7le7XloQTpGztHhmv6uvU8itraWKN2MM
+ zFXSdBavffxBrwb7rSWk4WU80egnSDepHzFonmWiqFp+6CB4gF4hvWDsnCpDni7YsiCw
+ g5VmI3XerxuTnhVsTh+Za3GihjwXClmwwcfwgIVSKSzqg123q/6ldP+D22L7yDa3WzIM
+ Yr/0CEv4pFOfO7aUjaWiaOzh/TyMoreWW9BovBBi6SrhGREC/mRHvAImkkKlRkMJRAJ2
+ eQVw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=57Tbh/vNYp8Z2Y2yrLwm25NVhHK8l73BmbXVjFnRkLw=;
- b=bkXp7i6ESZzrQV9wQHLOS7eOvp8AjRxhhdRSgAirDIhJOhMzMyVIAFpQpANqyPUnJ5
- HWUa+/yfuFq8IdFJ02lqWslD9f1UbYlXdJdsDqefzKdf975x2PvnbpRUtwMCcG+ZvmXK
- RMmsrn++UFXimuWlQIxUnyiS9qM+7V8MSWLaQOW7uWK9G3Zg8kkzaGFvi96HrbIlkEKP
- f0V7bsa/aAgE0VikNmVbFrAm3DqDBuGwo+gbKI39wD/AoCDnuwiuwPyDAOmw6aEJbSnp
- Qb8/XzQKlWyrgQletJlq5QpdZUjUYyjwlwLwQW6qhq+YOBo3FjQt7uUzoZybsiEIfYiK
- zdEQ==
-X-Gm-Message-State: AOAM5330I9FBAHcvFHM4I87AoC8VlOppocaKHVxpoSgiwKbznT6UHgS9
- 7fNX2Tr5WVVun51ilqXrg6Y=
-X-Google-Smtp-Source: ABdhPJxLIWC1I4Cme7nGbQTtDsJkrK6nxiGSfd+zgYibWXQbzGeLUy/MDQWIW9M67LGwWq1uEyshDQ==
-X-Received: by 2002:a5e:8305:: with SMTP id x5mr953041iom.47.1591209262037;
- Wed, 03 Jun 2020 11:34:22 -0700 (PDT)
-Received: from cs-u-kase.dtc.umn.edu (cs-u-kase.cs.umn.edu. [160.94.64.2])
- by smtp.googlemail.com with ESMTPSA id y2sm158589ilg.69.2020.06.03.11.34.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 03 Jun 2020 11:34:21 -0700 (PDT)
-From: Navid Emamdoost <navid.emamdoost@gmail.com>
-To: Dan Williams <dan.j.williams@intel.com>, Vinod Koul <vkoul@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, dmaengine@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] engine: stm32-dma: call pm_runtime_put if pm_runtime_get_sync
- fails
-Date: Wed,  3 Jun 2020 13:34:10 -0500
-Message-Id: <20200603183410.76764-1-navid.emamdoost@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/ayQQstOIIDAVAm7DUEsy/1EwnXM4OCks6yx7VXAtz0=;
+ b=ucPvCC3obCqXsckw+0j0Yhpkg+EuOQl8bOnUsg5d8jevkkAXPR8E+ErhA6SsUytm+w
+ 05VDByICSLroo9eoDxG6PkK+Xr73NQpWbpZpYNku71QPLdimoz0kgsto/kycxPhddb30
+ ZAYFwjwTl/lIiKA5+DtAzA9YecLOi1kUVHegrl6NhNwrqD/NbxrJKbVSOBjbzy421Ymy
+ CyKCnjaeh3WBarqYhY51k1UDXIAX4e48l+ZqNByz5XCVRrptTuejornJRNXrI30zN14c
+ MU3X97n3NUYnP8vPMvlTkUckqfd60Ph6TuM0z95ihD0wWhRI1JdxCenYoW+xATgecrwo
+ JZ3g==
+X-Gm-Message-State: AOAM531MuLF4kMQPGc10TkRAtT7Tb8mSd1TfbNoOz7IeDVW6bQ1Ylu/C
+ 39u6SGRhKdtEAzJ7/ivbi8fJR/XJNqMtbZVN9tdbvg==
+X-Google-Smtp-Source: ABdhPJy9yjqCeCXKJJyrSLwf3jOll6RD3VKatdzC9kRnS4OaxQByAamVPr9nSXVqOHcrBwK1GfHmQzHWsfk9kuBkRSk=
+X-Received: by 2002:a5d:8958:: with SMTP id b24mr999661iot.53.1591209749811;
+ Wed, 03 Jun 2020 11:42:29 -0700 (PDT)
+MIME-Version: 1.0
+References: <0a50f0cf5593baeb628dc8606c523665e5e2ae6c.1589519600.git.viresh.kumar@linaro.org>
+ <20200519012927.GT2165@builder.lan>
+ <20200519034055.hfvifqz442yfduhg@vireshk-i7>
+ <CABb+yY30nmbBUzYG62xGEbrr7107h_Edyq3jKPheZAQ0Cvr9Yg@mail.gmail.com>
+ <20200603183120.GE23722@bogus>
+In-Reply-To: <20200603183120.GE23722@bogus>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Wed, 3 Jun 2020 13:42:18 -0500
+Message-ID: <CABb+yY2KXqRnxqHC-Hs8NsosEPtyTYO4v_b1cCGs9Lphpz_X+A@mail.gmail.com>
+Subject: Re: [RFC] dt-bindings: mailbox: add doorbell support to ARM MHU
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_113422_842125_ABC737A4 
-X-CRM114-Status: GOOD (  11.62  )
+X-CRM114-CacheID: sfid-20200603_114230_718933_14109C68 
+X-CRM114-Status: GOOD (  14.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d2b listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [navid.emamdoost[at]gmail.com]
+ provider [jassisinghbrar[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,54 +96,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Navid Emamdoost <navid.emamdoost@gmail.com>, emamd001@umn.edu, kjlu@umn.edu,
- wu000273@umn.edu, smccaman@umn.edu
-MIME-Version: 1.0
+Cc: Devicetree List <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Calling pm_runtime_get_sync increments the counter even in case of
-failure, causing incorrect ref count. Call pm_runtime_put if
-pm_runtime_get_sync fails.
+On Wed, Jun 3, 2020 at 1:31 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> > >
+> > H/W is actually fine :)   Its just that the driver is written to
+> > _also_ support a platform (my original) that doesn't have shmem and
+> > need to pass data via 32bit registers.
+> > Frankly, I am not against the doorbell mode, I am against implementing
+> > two modes in a driver. If it really helped (note the past tense) the
+> > SCMI, we could implement the driver only in doorbell mode but
+> > unfortunately SCMI would still be _broken_ for non-doorbell
+> > controllers.
+>
+> Should be fine as the specification is designed to work with only shmem
+> for any data transfer and mailbox is just a signal mechanism. I won't
+> be too worried about that.
+>
+Please clarify how it will work on, say again, rockchip platform with shmem.
 
-Signed-off-by: Navid Emamdoost <navid.emamdoost@gmail.com>
----
- drivers/dma/stm32-dma.c | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/dma/stm32-dma.c b/drivers/dma/stm32-dma.c
-index 0ddbaa4b4f0b..0aab86bd97fe 100644
---- a/drivers/dma/stm32-dma.c
-+++ b/drivers/dma/stm32-dma.c
-@@ -1169,8 +1169,10 @@ static int stm32_dma_alloc_chan_resources(struct dma_chan *c)
- 	chan->config_init = false;
- 
- 	ret = pm_runtime_get_sync(dmadev->ddev.dev);
--	if (ret < 0)
-+	if (ret < 0) {
-+		pm_runtime_put(dmadev->ddev.dev);
- 		return ret;
-+	}
- 
- 	ret = stm32_dma_disable_chan(chan);
- 	if (ret < 0)
-@@ -1439,8 +1441,10 @@ static int stm32_dma_suspend(struct device *dev)
- 	int id, ret, scr;
- 
- 	ret = pm_runtime_get_sync(dev);
--	if (ret < 0)
-+	if (ret < 0) {
-+		pm_runtime_put_sync(dev);
- 		return ret;
-+	}
- 
- 	for (id = 0; id < STM32_DMA_MAX_CHANNELS; id++) {
- 		scr = stm32_dma_read(dmadev, STM32_DMA_SCR(id));
--- 
-2.17.1
-
+thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
