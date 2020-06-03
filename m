@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A061B1EC8C2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 07:26:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9739C1EC8C1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 07:26:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RZJe15EyfVIpeZLic4bfAUVGXsAf5/R8TvAXlrtGnxg=; b=vAN
-	M8AgTN3fRuBvSOXOHbyefPUxvOL9F5y7pARR4ntd1cNwgoxG3EQu4H+yNzVCsbDAMmk3LqVf2I/8I
-	/tVEJ2um2cLQnr0hEz6v43QLRz35xFUrBY6Mrd5W1ddJ13HihzydqH0hSc5nbDcC5bI6QjrHS1JLM
-	vYt/1n7dVC6D6csLjqwlkiPGJtDQgoLtxA0C5GX/AHlas/FC01veKZMxAkx3gKFfGimHF6RiOy8ws
-	y1RSI82j7Fo7CfdEv6Usfbp2HXM7diQEJFyiB2pC0u24NIZFjd8R8EK1JG9wpJT9Ndv6HUyrKMAk8
-	hliQnuvnpeJS/mUg3XQxqFAz+PPL0Nw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=O3yqXuU1MgTxC/1v4yhaaJfXVyrAY5hc6W8DpBNIlRE=; b=R9kbFaDdeOC4BzPp2lyAsxKlKY
+	FGq99agwEEjLYM5clGyehF7ZZuc2yKSTSrvTa0siY4Jsj5rkCJuY69C5zjxB0ZB3tbkp3+mH7oAf0
+	GthS6kFbyq60s83OJDv+MMDLXJGQwmzRTss7F0I0ms01uTKqDqV8LebCWtFpwKoKgl828Pxo8edW1
+	O8YrIfKs+mb5QytyVMgwEa/pxLoiUkIibzCFqMbksyXP9Av73l2Ijyi6Q5/jO3sfP/JnTzvxipaIT
+	cMDrMTEH3H44eZQLzpeXwCIVcAWrDlbk4WRZsBDlNWTDfM0s0LKXXC7f2fgkhJBNLu55PlxHdpCbe
+	NC2nvr4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgLv6-00054p-SG; Wed, 03 Jun 2020 05:26:32 +0000
+	id 1jgLuv-0004xP-0l; Wed, 03 Jun 2020 05:26:21 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgLum-0004wM-BW
+ id 1jgLum-0004wN-BU
  for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 05:26:13 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1E23D200D4F;
- Wed,  3 Jun 2020 07:26:10 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 0A148200D77;
+ Wed,  3 Jun 2020 07:26:11 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id ADEFC200D21;
- Wed,  3 Jun 2020 07:26:06 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 98B55200D29;
+ Wed,  3 Jun 2020 07:26:07 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 218E9402E4;
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 00434402E8;
  Wed,  3 Jun 2020 13:26:02 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: jassisinghbrar@gmail.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/3] Handle mailbox clock/power management related issues
-Date: Wed,  3 Jun 2020 13:15:41 +0800
-Message-Id: <1591161344-12885-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 1/3] mailbox: imx: Add context save/restore for suspend/resume
+Date: Wed,  3 Jun 2020 13:15:42 +0800
+Message-Id: <1591161344-12885-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1591161344-12885-1-git-send-email-Anson.Huang@nxp.com>
+References: <1591161344-12885-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200602_222612_535248_0F5786C1 
-X-CRM114-Status: UNSURE (   6.92  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200602_222612_536771_E9027EBD 
+X-CRM114-Status: GOOD (  10.79  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,48 +76,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Current i.MX mailbox driver mainly supports 2 series i.MX SoCs with
-different architecture, one is for i.MX8X platforms with SCU inside,
-the other is for i.MX6/7/8M series without SCU.
+From: Dong Aisheng <aisheng.dong@nxp.com>
 
-For i.MX8X, 2 types of MU are supported, one is for system IPC, such kind
-of MU has no clock/power assignment, they are both controlled by SCU. The
-other is for application, such kind of MU has no clock assignment, but have
-power domain assignment, consumers need to call mailbox APIs to manage MU
-power in runtime;
+For "mem" mode suspend on i.MX8 SoCs, MU settings could be
+lost because its power is off, so save/restore is needed
+for MU settings during suspend/resume. However, the restore
+can ONLY be done when MU settings are actually lost, for the
+scenario of settings NOT lost in "freeze" mode suspend, since
+there could be still IPC going on multiple CPUs, restoring the
+MU settings could overwrite the TIE by mistake and cause system
+freeze, so need to make sure ONLY restore the MU settings when
+it is powered off, Anson fixes this by checking whether restore
+is actually needed when resume.
 
-For i.MX6/7/8M, MU clock or power could be assigned based on different SoCs,
-but all the MUs are for application, consumers need to call mailbox APIs to
-manage MU clock/power in runtime.
+Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/mailbox/imx-mailbox.c | 35 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 35 insertions(+)
 
-For the power management related issue mentioned above, they are as below:
-
-1. clock should be managed in runtime to make sure MU clock/power can be off
-   on i.MX6/7/8M platforms;
-2. ONLY system IPC MU needs to have IRQF_NO_SUSPEND flag set, other application
-   MU no need to have this flag, since the MU clock/power is OFF in noirq
-   suspend phase and if MU interrupt arrives, with IRQF_NO_SUSPEND flag set,
-   the MU ISR will try to access MU register and lead to system hang because
-   of clock/power disabled;
-
-To distinguish these different MU instances, use MU's clock/power assignment
-status to decide whether to save/restore MU context during suspend/resume,
-whether to have IRQF_NO_SUSPEND flag set, etc..
-
-patch #1 is identical with https://patchwork.kernel.org/patch/11581215/, the
-patch #2/#3 depend on #1, so I resend #1 in this series to make them as a whole
-series.
-
-Anson Huang (2):
-  mailbox: imx: Add runtime PM callback to handle MU clocks
-  mailbox: imx: ONLY IPC MU needs IRQF_NO_SUSPEND flag
-
-Dong Aisheng (1):
-  mailbox: imx: Add context save/restore for suspend/resume
-
- drivers/mailbox/imx-mailbox.c | 72 +++++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 69 insertions(+), 3 deletions(-)
-
+diff --git a/drivers/mailbox/imx-mailbox.c b/drivers/mailbox/imx-mailbox.c
+index bd69ecf..da90a8e 100644
+--- a/drivers/mailbox/imx-mailbox.c
++++ b/drivers/mailbox/imx-mailbox.c
+@@ -67,6 +67,8 @@ struct imx_mu_priv {
+ 	struct clk		*clk;
+ 	int			irq;
+ 
++	u32 xcr;
++
+ 	bool			side_b;
+ };
+ 
+@@ -589,12 +591,45 @@ static const struct of_device_id imx_mu_dt_ids[] = {
+ };
+ MODULE_DEVICE_TABLE(of, imx_mu_dt_ids);
+ 
++static int imx_mu_suspend_noirq(struct device *dev)
++{
++	struct imx_mu_priv *priv = dev_get_drvdata(dev);
++
++	priv->xcr = imx_mu_read(priv, priv->dcfg->xCR);
++
++	return 0;
++}
++
++static int imx_mu_resume_noirq(struct device *dev)
++{
++	struct imx_mu_priv *priv = dev_get_drvdata(dev);
++
++	/*
++	 * ONLY restore MU when context lost, the TIE could
++	 * be set during noirq resume as there is MU data
++	 * communication going on, and restore the saved
++	 * value will overwrite the TIE and cause MU data
++	 * send failed, may lead to system freeze. This issue
++	 * is observed by testing freeze mode suspend.
++	 */
++	if (!imx_mu_read(priv, priv->dcfg->xCR))
++		imx_mu_write(priv, priv->xcr, priv->dcfg->xCR);
++
++	return 0;
++}
++
++static const struct dev_pm_ops imx_mu_pm_ops = {
++	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(imx_mu_suspend_noirq,
++				      imx_mu_resume_noirq)
++};
++
+ static struct platform_driver imx_mu_driver = {
+ 	.probe		= imx_mu_probe,
+ 	.remove		= imx_mu_remove,
+ 	.driver = {
+ 		.name	= "imx_mu",
+ 		.of_match_table = imx_mu_dt_ids,
++		.pm = &imx_mu_pm_ops,
+ 	},
+ };
+ module_platform_driver(imx_mu_driver);
 -- 
 2.7.4
 
