@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57EF91ED6B2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 21:21:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B48DF1ED6CA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 21:22:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,47 +11,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=jXZ8TpHyAPfBa4ZGtgT+1rbCqRynYsaPF6e0f43UinI=; b=tsTyqd8EUGPLhn1yRTkeCDRSNU
-	niicasbT4pSASmRur7kpUWiSmC6k87bIIgbiH6AsFu3nKwTq1XiYeG8FRHwjnWsLbdhf/ruScIwXW
-	H+SLaCBcQj1IrpetG/R4qgBUHhbhQ20H49EBDxe9C9Oq9Lw9wdqkCppytZM9fxjoDLhH+8lCxpo1W
-	sXazi9n0EeagqQTBAH1bADz/zQ5GItoFiZAK6YkXwXjqda5j/xmUYqcD36yFMz9l3jfypSp0pV+6g
-	OdGPDcCVqzth/FgBY7wo6/GhoD/+2vPOEFam6TidN9hpOV29nBuJ4yuxNkazOXOGEPKIr/t2OC+lJ
-	kBFCEn4g==;
+	bh=ElbyMjUApt7nR40x0gn+aQK+thZ3b596bv3W9+H00wg=; b=GrYerFXK2ImN7oxvTWVCklPnSE
+	C2TBWlOu84CYyuu7F/PrcDibvw7ogyCer/yaR+rRFGaBiGCn1X2fu31ZZ2djHa1cE5L/5D72gXDte
+	0EYhC8qhNaFZbyiAgw07DMlTT3I86+xlQMG0ChAXlvWoHXwZbxay4meUZ4439TrXyqcD9tZmm+GM5
+	5oLGKYRW2zprt0I8h6zYkWhQ8Pgtt3lD3TBsVy6fzemqEA314VpACAgDpKc2vNrD+9Sw9sRz9I5pk
+	PES/QWnaZzB9oxJkVSwnI9OuL8GDR4o6IH5ISjwyyMNzVMUvUOnjfWq735Qw92HpklSH8tk2hUqbB
+	zQ4txTDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgYxB-0007Q6-HT; Wed, 03 Jun 2020 19:21:33 +0000
+	id 1jgYxj-0007wd-9Y; Wed, 03 Jun 2020 19:22:07 +0000
 Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgYx1-0007Oi-I4; Wed, 03 Jun 2020 19:21:24 +0000
+ id 1jgYx1-0007Og-I5; Wed, 03 Jun 2020 19:21:26 +0000
 Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
  [10.75.242.48])
- by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 342A530DEA0;
- Wed,  3 Jun 2020 12:21:20 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 342A530DEA0
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id D871B30DEB1;
+ Wed,  3 Jun 2020 12:21:21 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com D871B30DEB1
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
- s=dkimrelay; t=1591212080;
- bh=xHVmdwrtES336ZD/pMaNwdQn2MdfztoEcmaxMbZqWYc=;
+ s=dkimrelay; t=1591212081;
+ bh=BVy8DtkdeXBmOOkbeG16lruOXBYUDAPR3V9ijJ0fk9E=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=iEL2a2At3qdIZTMd5Ux7vUowzVMWvEK7LCA0Gi0k04b6EZ4O2vf0g5XSULVKnRjMU
- BVfkjc/XJYaFkWch64c/Icmwp2jlY9PCL28O1GJPwglhL3h+1jlsIT3rzy3P8HF5dg
- 9yhj2PdFtBseQN6ibumQ+Z+p2kmUoBeN/FmjQUmw=
+ b=e9ENYK7cXcZ/ar6XRHESJhA1WdF8Mu3N+4BUNTWx0TZ5oBbXDf03II34/Xg6KUBX2
+ nIQYN7NCHZD3Fy1ze7sixllJVXxNg2wPM4yP4bhO1f3ehtelQGoojbpH0uIkdiuoib
+ 9EAyOH69smyCmRHVFyBjQTrtG+S4/dciV6NutVq4=
 Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
  [10.28.16.211])
- by mail-irv-17.broadcom.com (Postfix) with ESMTP id 917CC14008C;
- Wed,  3 Jun 2020 12:21:18 -0700 (PDT)
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 422D6140069;
+ Wed,  3 Jun 2020 12:21:20 -0700 (PDT)
 From: Jim Quinlan <james.quinlan@broadcom.com>
 To: linux-pci@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com
-Subject: [PATCH v3 03/13] dt-bindings: PCI: Add bindings for more Brcmstb chips
-Date: Wed,  3 Jun 2020 15:20:35 -0400
-Message-Id: <20200603192058.35296-4-james.quinlan@broadcom.com>
+Subject: [PATCH v3 04/13] PCI: brcmstb: Add bcm7278 reigister info
+Date: Wed,  3 Jun 2020 15:20:36 -0400
+Message-Id: <20200603192058.35296-5-james.quinlan@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200603192058.35296-1-james.quinlan@broadcom.com>
 References: <20200603192058.35296-1-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_122123_632455_55BA86E3 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20200603_122123_632460_5E8A9864 
+X-CRM114-Status: GOOD (  12.36  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -80,13 +80,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+Cc: Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
  <linux-rpi-kernel@lists.infradead.org>,
  Jim Quinlan <james.quinlan@broadcom.com>, Bjorn Helgaas <bhelgaas@google.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -96,122 +97,200 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jim Quinlan <jquinlan@broadcom.com>
 
-- Add compatible strings for three more Broadcom STB chips: 7278, 7216,
-  7211 (STB version of RPi4).
-- add new property 'brcm,scb-sizes'
-- add new property 'resets'
-- add new property 'reset-names' for 7216 only
-- allow 'ranges' and 'dma-ranges' to have more than one item and update
-  the example to show this.
+Add in compatibility strings and code for three Broadcom STB chips.  Some
+of the register locations, shifts, and masks are different for certain
+chips, requiring the use of different constants based on of_id.
+
+We would like to add the following at this time to the match list but we
+need to wait until the end of this patchset so that everything works.
+
+    { .compatible = "brcm,bcm7211-pcie", .data = &generic_cfg },
+    { .compatible = "brcm,bcm7278-pcie", .data = &bcm7278_cfg },
+    { .compatible = "brcm,bcm7216-pcie", .data = &bcm7278_cfg },
+    { .compatible = "brcm,bcm7445-pcie", .data = &generic_cfg },
 
 Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
 ---
- .../bindings/pci/brcm,stb-pcie.yaml           | 58 ++++++++++++++++---
- 1 file changed, 51 insertions(+), 7 deletions(-)
+ drivers/pci/controller/pcie-brcmstb.c | 108 +++++++++++++++++++++++---
+ 1 file changed, 96 insertions(+), 12 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-index 8680a0f86c5a..4a012d77513f 100644
---- a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-+++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-@@ -9,12 +9,15 @@ title: Brcmstb PCIe Host Controller Device Tree Bindings
- maintainers:
-   - Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+index 73020b4ff090..7c707e483181 100644
+--- a/drivers/pci/controller/pcie-brcmstb.c
++++ b/drivers/pci/controller/pcie-brcmstb.c
+@@ -120,9 +120,8 @@
+ #define  PCIE_EXT_SLOT_SHIFT				15
+ #define  PCIE_EXT_FUNC_SHIFT				12
  
--allOf:
--  - $ref: /schemas/pci/pci-bus.yaml#
--
- properties:
-   compatible:
--    const: brcm,bcm2711-pcie # The Raspberry Pi 4
-+    items:
-+      - enum:
-+          - brcm,bcm2711-pcie # The Raspberry Pi 4
-+          - brcm,bcm7211-pcie # Broadcom STB version of RPi4
-+          - brcm,bcm7278-pcie # Broadcom 7278 Arm
-+          - brcm,bcm7216-pcie # Broadcom 7216 Arm
-+          - brcm,bcm7445-pcie # Broadcom 7445 Arm
+-#define PCIE_RGR1_SW_INIT_1				0x9210
+ #define  PCIE_RGR1_SW_INIT_1_PERST_MASK			0x1
+-#define  PCIE_RGR1_SW_INIT_1_INIT_MASK			0x2
++#define  PCIE_RGR1_SW_INIT_1_PERST_SHIFT		0x0
  
-   reg:
-     maxItems: 1
-@@ -34,10 +37,12 @@ properties:
-       - const: msi
+ /* PCIe parameters */
+ #define BRCM_NUM_PCIE_OUT_WINS		0x4
+@@ -152,6 +151,76 @@
+ #define SSC_STATUS_SSC_MASK		0x400
+ #define SSC_STATUS_PLL_LOCK_MASK	0x800
  
-   ranges:
--    maxItems: 1
-+    minItems: 1
-+    maxItems: 4
- 
-   dma-ranges:
--    maxItems: 1
-+    minItems: 1
-+    maxItems: 6
- 
-   clocks:
-     maxItems: 1
-@@ -58,8 +63,33 @@ properties:
- 
-   aspm-no-l0s: true
- 
-+  resets:
-+    description: for "brcm,bcm7216-pcie", must be a valid reset
-+      phandle pointing to the RESCAL reset controller provider node.
-+    $ref: "/schemas/types.yaml#/definitions/phandle"
++#define IDX_ADDR(pcie)	\
++	(pcie->reg_offsets[EXT_CFG_INDEX])
++#define DATA_ADDR(pcie)	\
++	(pcie->reg_offsets[EXT_CFG_DATA])
++#define PCIE_RGR1_SW_INIT_1(pcie) \
++	(pcie->reg_offsets[RGR1_SW_INIT_1])
 +
-+  reset-names:
-+    items:
-+      - const: rescal
++enum {
++	RGR1_SW_INIT_1,
++	EXT_CFG_INDEX,
++	EXT_CFG_DATA,
++};
 +
-+  brcm,scb-sizes:
-+    description: u64 giving the 64bit PCIe memory
-+      viewport size of a memory controller.  There may be up to
-+      three controllers, and each size must be a power of two
-+      with a size greater or equal to the amount of memory the
-+      controller supports.  Note that each memory controller
-+      may have two component regions -- base and extended -- so
-+      this information cannot be deduced from the dma-ranges.
++enum {
++	RGR1_SW_INIT_1_INIT_MASK,
++	RGR1_SW_INIT_1_INIT_SHIFT,
++};
 +
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint64-array
-+      - items:
-+          minItems: 1
-+          maxItems: 3
++enum pcie_type {
++	GENERIC,
++	BCM7278,
++	BCM2711,
++};
 +
- required:
-   - reg
-+  - ranges
-   - dma-ranges
-   - "#interrupt-cells"
-   - interrupts
-@@ -68,6 +98,18 @@ required:
-   - interrupt-map
-   - msi-controller
++struct pcie_cfg_data {
++	const int *reg_field_info;
++	const int *offsets;
++	const enum pcie_type type;
++};
++
++static const int pcie_reg_field_info[] = {
++	[RGR1_SW_INIT_1_INIT_MASK] = 0x2,
++	[RGR1_SW_INIT_1_INIT_SHIFT] = 0x1,
++};
++
++static const int pcie_reg_field_info_bcm7278[] = {
++	[RGR1_SW_INIT_1_INIT_MASK] = 0x1,
++	[RGR1_SW_INIT_1_INIT_SHIFT] = 0x0,
++};
++
++static const int pcie_offsets[] = {
++	[RGR1_SW_INIT_1] = 0x9210,
++	[EXT_CFG_INDEX]  = 0x9000,
++	[EXT_CFG_DATA]   = 0x9004,
++};
++
++static const struct pcie_cfg_data generic_cfg = {
++	.reg_field_info	= pcie_reg_field_info,
++	.offsets	= pcie_offsets,
++	.type		= GENERIC,
++};
++
++static const int pcie_offset_bcm7278[] = {
++	[RGR1_SW_INIT_1] = 0xc010,
++	[EXT_CFG_INDEX] = 0x9000,
++	[EXT_CFG_DATA] = 0x9004,
++};
++
++static const struct pcie_cfg_data bcm7278_cfg = {
++	.reg_field_info = pcie_reg_field_info_bcm7278,
++	.offsets	= pcie_offset_bcm7278,
++	.type		= BCM7278,
++};
++
++static const struct pcie_cfg_data bcm2711_cfg = {
++	.reg_field_info	= pcie_reg_field_info,
++	.offsets	= pcie_offsets,
++	.type		= BCM2711,
++};
++
+ struct brcm_msi {
+ 	struct device		*dev;
+ 	void __iomem		*base;
+@@ -176,6 +245,9 @@ struct brcm_pcie {
+ 	int			gen;
+ 	u64			msi_target_addr;
+ 	struct brcm_msi		*msi;
++	const int		*reg_offsets;
++	const int		*reg_field_info;
++	enum pcie_type		type;
+ };
  
-+allOf:
-+  - $ref: /schemas/pci/pci-bus.yaml#
-+  - if:
-+      properties:
-+        compatible:
-+          contains:
-+            const: brcm,bcm7216-pcie
-+    then:
-+      required:
-+        - resets
-+        - reset-names
-+
- unevaluatedProperties: false
+ /*
+@@ -602,20 +674,21 @@ static struct pci_ops brcm_pcie_ops = {
  
- examples:
-@@ -93,7 +135,9 @@ examples:
-                     msi-parent = <&pcie0>;
-                     msi-controller;
-                     ranges = <0x02000000 0x0 0xf8000000 0x6 0x00000000 0x0 0x04000000>;
--                    dma-ranges = <0x02000000 0x0 0x00000000 0x0 0x00000000 0x0 0x80000000>;
-+                    dma-ranges = <0x42000000 0x1 0x00000000 0x0 0x40000000 0x0 0x80000000>,
-+                                 <0x42000000 0x1 0x80000000 0x3 0x00000000 0x0 0x80000000>;
-                     brcm,enable-ssc;
-+                    brcm,scb-sizes =  <0x0000000080000000 0x0000000080000000>;
-             };
-     };
+ static inline void brcm_pcie_bridge_sw_init_set(struct brcm_pcie *pcie, u32 val)
+ {
+-	u32 tmp;
++	u32 tmp, mask =  pcie->reg_field_info[RGR1_SW_INIT_1_INIT_MASK];
++	u32 shift = pcie->reg_field_info[RGR1_SW_INIT_1_INIT_SHIFT];
+ 
+-	tmp = readl(pcie->base + PCIE_RGR1_SW_INIT_1);
+-	u32p_replace_bits(&tmp, val, PCIE_RGR1_SW_INIT_1_INIT_MASK);
+-	writel(tmp, pcie->base + PCIE_RGR1_SW_INIT_1);
++	tmp = readl(pcie->base + PCIE_RGR1_SW_INIT_1(pcie));
++	tmp = (tmp & ~mask) | ((val << shift) & mask);
++	writel(tmp, pcie->base + PCIE_RGR1_SW_INIT_1(pcie));
+ }
+ 
+ static inline void brcm_pcie_perst_set(struct brcm_pcie *pcie, u32 val)
+ {
+ 	u32 tmp;
+ 
+-	tmp = readl(pcie->base + PCIE_RGR1_SW_INIT_1);
++	tmp = readl(pcie->base + PCIE_RGR1_SW_INIT_1(pcie));
+ 	u32p_replace_bits(&tmp, val, PCIE_RGR1_SW_INIT_1_PERST_MASK);
+-	writel(tmp, pcie->base + PCIE_RGR1_SW_INIT_1);
++	writel(tmp, pcie->base + PCIE_RGR1_SW_INIT_1(pcie));
+ }
+ 
+ static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie *pcie,
+@@ -924,10 +997,16 @@ static int brcm_pcie_remove(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
++static const struct of_device_id brcm_pcie_match[] = {
++	{ .compatible = "brcm,bcm2711-pcie", .data = &bcm2711_cfg },
++	{},
++};
++
+ static int brcm_pcie_probe(struct platform_device *pdev)
+ {
+ 	struct device_node *np = pdev->dev.of_node, *msi_np;
+ 	struct pci_host_bridge *bridge;
++	const struct pcie_cfg_data *data;
+ 	struct brcm_pcie *pcie;
+ 	struct pci_bus *child;
+ 	struct resource *res;
+@@ -937,9 +1016,18 @@ static int brcm_pcie_probe(struct platform_device *pdev)
+ 	if (!bridge)
+ 		return -ENOMEM;
+ 
++	data = of_device_get_match_data(&pdev->dev);
++	if (!data) {
++		pr_err("failed to look up compatible string\n");
++		return -EINVAL;
++	}
++
+ 	pcie = pci_host_bridge_priv(bridge);
+ 	pcie->dev = &pdev->dev;
+ 	pcie->np = np;
++	pcie->reg_offsets = data->offsets;
++	pcie->reg_field_info = data->reg_field_info;
++	pcie->type = data->type;
+ 
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	pcie->base = devm_ioremap_resource(&pdev->dev, res);
+@@ -1005,10 +1093,6 @@ static int brcm_pcie_probe(struct platform_device *pdev)
+ 	return ret;
+ }
+ 
+-static const struct of_device_id brcm_pcie_match[] = {
+-	{ .compatible = "brcm,bcm2711-pcie" },
+-	{},
+-};
+ MODULE_DEVICE_TABLE(of, brcm_pcie_match);
+ 
+ static struct platform_driver brcm_pcie_driver = {
 -- 
 2.17.1
 
