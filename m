@@ -2,67 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CFFD1ED74E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 22:24:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95F801ED752
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 22:26:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=H1Sd2V/Z4WZNxJ11mDraqciejNWDdxdltj0w/YdwCgs=; b=gj1XaHsgSYW5qs
-	hYxEYKi6/luF2XSOFXsHSx/IVoTZIZHG9EpFHyKZe2fQ6/McL3m2PJgCtr53cDs6EGUcFXpR/yD2l
-	a17L90/D2dRUAEetjRgGIwwA15ZulBAWqD5svB+Us6UG3iGdjlaSDyBLoGWsRLC8WtrARCIHzZjSW
-	hmpn3ryU8sNMTO4cvyU/Bet8FyRu0cpsOPuJgrXGG1ZLdKA1+RqHDfuMxOJ+8+pTO5pUM6FNGufMV
-	xmZjzMle08yaye3UVYzUTbJBcFr2wp52Cr9wSVOYdth+BJxyLuo0tGwggeMJK54PeRfpvZVylZPQc
-	y/rj/+IZ08Eio98KuKrQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=f3kXwMce5AhIYoN88ilNvxJZ2bDF0as2Ut4A8HEaIaA=; b=Inh2EKod7QC2yCkdtKOACo4Xq
+	izLjqpvy4B6TehI+Uof9v6+PsgycnqlOksMtdXMSHCglxieX1+c87f1xmft0ew/y1b+02gFTXYpuS
+	oVNqn7tcX43g4Nr4TF8hIAd5o5iMQD3o30WPXSd98TQM7TCPw1YdngQgnP8/rF/iVj3Pm0TCprPPa
+	4YduAi8pOIezixWJ76be32uEG8PKfPGtoevhFtgmqLL+HxSFfVjrb8l+S6hTSsTtAci1rWOiDkzF3
+	IWhMyB3CWTqso1vqcAZqZ86XpkdLTcu0QbQPSaZQQeQhQzxPeGzO+a43hsB061U3KzomMgRjo6xU8
+	F6seOX5LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgZwN-0004eW-Ig; Wed, 03 Jun 2020 20:24:47 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgZwH-0004ds-Kl; Wed, 03 Jun 2020 20:24:42 +0000
-Received: from localhost (mobile-166-175-190-200.mycingular.net
- [166.175.190.200])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4CF9320734;
- Wed,  3 Jun 2020 20:24:40 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591215880;
- bh=aSC2B5FOwH/jbhjkwwbA2U3nvwRY/cfyOrIerqmUQNs=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=MnEtRzWw/iwVqJdM8XNSEZR3W1o2W/SiVyK+PNVgMdgyYP+4GTHe322d/sltjhL9O
- 9hAVj5iGCUzUOH6dMBBLwcCJFScUduFRdcmtSV1YsSipf0MrAYWlnkzofpFA87vWYf
- akJfAM9AkwWT++7aDkOalDa/000MJkwGzuMUv6q8=
-Date: Wed, 3 Jun 2020 15:24:38 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Jim Quinlan <james.quinlan@broadcom.com>
-Subject: Re: [PATCH v3 05/13] PCI: brcmstb: Add suspend and resume pm_ops
-Message-ID: <20200603202438.GA946895@bjorn-Precision-5520>
+	id 1jgZxe-0007Ww-Ac; Wed, 03 Jun 2020 20:26:06 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgZxX-0007W5-E2
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 20:26:01 +0000
+Received: from localhost (p5486cfa5.dip0.t-ipconnect.de [84.134.207.165])
+ by pokefinder.org (Postfix) with ESMTPSA id 116E32C1FE2;
+ Wed,  3 Jun 2020 22:25:55 +0200 (CEST)
+Date: Wed, 3 Jun 2020 22:25:53 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Tali Perry <tali.perry1@gmail.com>
+Subject: Re: [PATCH v14 0/3] i2c: npcm7xx: add NPCM i2c controller driver
+Message-ID: <20200603202553.GB7684@kunai>
+References: <20200527200820.47359-1-tali.perry1@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200603192058.35296-6-james.quinlan@broadcom.com>
+In-Reply-To: <20200527200820.47359-1-tali.perry1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_132441_701081_FB07769D 
-X-CRM114-Status: GOOD (  12.92  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200603_132559_620853_8B66C622 
+X-CRM114-Status: GOOD (  10.05  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,54 +55,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- open list <linux-kernel@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>, bcm-kernel-feedback-list@broadcom.com,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Christoph Hellwig <hch@lst.de>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, tmaimon77@gmail.com, yuenn@google.com,
+ avifishman70@gmail.com, venture@google.com, openbmc@lists.ozlabs.org,
+ brendanhiggins@google.com, ofery@google.com, linux-kernel@vger.kernel.org,
+ kfting@nuvoton.com, robh+dt@kernel.org, linux-i2c@vger.kernel.org,
+ kbuild test robot <lkp@intel.com>, andriy.shevchenko@linux.intel.com,
+ linux-arm-kernel@lists.infradead.org, benjaminfair@google.com
+Content-Type: multipart/mixed; boundary="===============8677734481432728168=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 03, 2020 at 03:20:37PM -0400, Jim Quinlan wrote:
-> From: Jim Quinlan <jquinlan@broadcom.com>
-> 
-> Broadcom Set-top (BrcmSTB) boards typically support S2, S3, and S5 suspend
-> and resume.  Now the PCIe driver may do so as well.
-> 
-> Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+
+--===============8677734481432728168==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="DBIVS5p969aUjpLe"
+Content-Disposition: inline
+
+
+--DBIVS5p969aUjpLe
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, May 27, 2020 at 11:08:17PM +0300, Tali Perry wrote:
+> This patch set adds i2c controller support=20
+> for the Nuvoton NPCM Baseboard Management Controller (BMC).
+>=20
+> NPCM7xx includes 16 I2C controllers. This driver operates the controller.
+> This module also includes a slave mode.
+>=20
 > ---
->  drivers/pci/controller/pcie-brcmstb.c | 49 +++++++++++++++++++++++++++
->  1 file changed, 49 insertions(+)
-> 
-> diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-> index 7c707e483181..f444751e247c 100644
-> --- a/drivers/pci/controller/pcie-brcmstb.c
-> +++ b/drivers/pci/controller/pcie-brcmstb.c
-> @@ -979,6 +979,49 @@ static void brcm_pcie_turn_off(struct brcm_pcie *pcie)
->  	brcm_pcie_bridge_sw_init_set(pcie, 1);
->  }
->  
-> +static int brcm_pcie_suspend(struct device *dev)
-> +{
-> +	struct brcm_pcie *pcie = dev_get_drvdata(dev);
-> +	int ret = 0;
-> +
-> +	brcm_pcie_turn_off(pcie);
-> +	clk_disable_unprepare(pcie->clk);
-> +
-> +	return ret;
+> v14 -> v13:
+> 	- Fix yaml example: add missing include.
+> 	- Replace all udelay to usleep_range, except one which is called from
+> 	  irq.
+> 	- Fix compilation error (module_platfrom_init conflict).
+> 	- debugfs counters always updated. Counting till max value,
+> 	  then stop counting.
+> 	- Rename bus-frequency to clock-frequency.
+> 	- Remove unused variables.
 
-No need for "ret".
+I don't have time for a deeper review, but from what I can tell this
+driver is good to go and we can fix things incrementally from now on.
 
-> +}
+Applied to for-next (will go into 5.8), thanks!
+
+
+--DBIVS5p969aUjpLe
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl7YB1EACgkQFA3kzBSg
+KbZmVw//dD5ttj+RhzDcyUcRJ9NMb6dXctKo/EQYXzZfQlKOJqL36iVqKjy8rmFM
+S2F42QY95jaNRdUHEGaFzDazxEUhy7J+07z0XPHk1CrGUDBVVtRf28dsEAXS7UTm
+o8pq67KgL+rr4PcKVd92OnBF0Sdi5d6HlVYah9W7dlnR/crg95cd9JUdwn1THmFw
+/PEmw4XRnYk/+GC4D+hai+W/E86RPpMzCU9YbOCfgnTWC+L7b9W4hS3j9+xtv62V
+HD2GagLUGpBiKENxUSS0NJ7agC31Eea7gi9Gn5P8OfxYr4VtPSagnchKwCoohFbU
+EySi0qXRd5+hWMOjg2DcGqC8mo/FC2ZDSKlLYWiicTgyZjP4vkRpMHqqtwS9u+23
+EFQv0Gy+QjePWEJdjYHP+TxuKw0+2OqMfSr/mkB49sgcKe1Fd7EFlCJbnDmIoZc1
+loO0x9MGK9bl/hlVWUpTorkAJGJygdstxTVk9jFJAEFvUXz6ZNk7HKdb0yOqvZcu
+hRqp1nOCL3fSUjtNPfE3ovaEQBiJO/FcGPf4bSgKycnfeFEbnJy+lYhCvsTV6x6A
+fUy85pKXZad4b51OFi9Hgo+a59ocTopYQRPvAiTcD+e9x2WagmMJCdNjTFsKCUy0
+kprWATccn3TZJ3pSZpqlPX9FvP8u3mZOywM4WXtpX8xvT6qXqys=
+=fEJK
+-----END PGP SIGNATURE-----
+
+--DBIVS5p969aUjpLe--
+
+
+--===============8677734481432728168==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8677734481432728168==--
+
