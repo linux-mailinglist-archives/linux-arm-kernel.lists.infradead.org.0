@@ -2,64 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2BE11ED47D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 18:45:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 060901ED498
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  3 Jun 2020 18:57:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MOczdQ282Y8tBN4yi+GWbfGji384MTqDnFdyoNBOEQ4=; b=Ky5WXK5ORM4koBJrof2k/l5CB
-	GlTKjH2aMRde+uOnQUx2gh7J6oseUJefQUmEniD7h11vMzvpPRNCe39nmF93B7qwoG7Mi0g4JD4Tl
-	zlWGcn3YRl52xg/JOJohUNjR7mdksYC1H4PpsoE2Pxxjb7ewCvuXugpmhh4zRvcoBc3v906rFMJet
-	9ePkBPJqwKy5gxAUBmIQS9Ud0h+waeGjpCoH2oseCc2EnDRxkDidkHW6c2o45ol+xrh8gglK4zEwv
-	aJPX/Sh8Tet5FP/GnRghgZZUxQpmNMRUVKrkyNgJk7kvdL7+8DDoecCKexcQ/fbInxvI61b0KyRFM
-	Z6GdR8Buw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SAvzXl8vmhET5xG0oaPJKUnWp2n5MjHDmliCHkj2tV8=; b=eOBGXuRMw0fOME
+	DuwSWm3kLV0VEpzWRcHhtCrdxJZsJBO6SmtAxJPHiabAx26P8xBLZm5UfMRq1u/Y+I5YGG7UOJ0YA
+	UeZMUk+D0Xap/3sNnogbrheTJpN2qDHmKC4BsO16NTKUiFOMlf+Ow2fYsYmQXxNaQEcHBY34/bEOD
+	siMQuVREydsi4IhkjLyjchkTYqabNsiIewVsyKNqXomKYFgtJh7dx2kZVFbOp8xUwoSUFAn5msOS1
+	d6JyTEKFEhDSQ7s5/6ZtloRORMAZqHGXXoHw6F9WBNr+tXSg/6Gf6JVUhayiElTcB8+RpCH/QlS4T
+	E78zxL+UIR9U2IlZz6og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgWWN-0002gi-RU; Wed, 03 Jun 2020 16:45:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgWWH-0002g8-2k; Wed, 03 Jun 2020 16:45:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5BF0255D;
- Wed,  3 Jun 2020 09:45:35 -0700 (PDT)
-Received: from [10.37.12.87] (unknown [10.37.12.87])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B64873F52E;
- Wed,  3 Jun 2020 09:45:24 -0700 (PDT)
-Subject: Re: [PATCH v8 4/8] PM / EM: add support for other devices than CPUs
- in Energy Model
-To: "Rafael J. Wysocki" <rafael@kernel.org>
-References: <20200527095854.21714-1-lukasz.luba@arm.com>
- <20200527095854.21714-5-lukasz.luba@arm.com>
- <d45e5592-8e11-858b-d3a3-2ec9ce1d1f54@linaro.org>
- <7201e161-6952-6e28-4036-bd0f0353ec30@arm.com>
- <CAJZ5v0jwoNSYOz3nGqNshd=5btsLxOp-di-Dot+cHqAQZEQVRw@mail.gmail.com>
- <d6a0d345-53ef-523c-836d-3bc4ea4c6e66@arm.com>
- <CAJZ5v0iDNH7tZmKsYgW1xp-g3WmOod+Wo-AzJmszXuv_wztwwA@mail.gmail.com>
- <d0894383-1362-fdea-f74c-7dd8ecdc33ca@arm.com>
- <CAJZ5v0jL0+TXDGXaO=WfYg6QM3=B83LLZ90xtc2HtX70jdoiYQ@mail.gmail.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <6693c594-930b-b28e-58d0-f1b28b6eef58@arm.com>
-Date: Wed, 3 Jun 2020 17:45:22 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jgWhP-0000MR-J3; Wed, 03 Jun 2020 16:57:07 +0000
+Received: from mail-il1-x143.google.com ([2607:f8b0:4864:20::143])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgWhJ-0000Ls-6L
+ for linux-arm-kernel@lists.infradead.org; Wed, 03 Jun 2020 16:57:02 +0000
+Received: by mail-il1-x143.google.com with SMTP id h3so3165037ilh.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 03 Jun 2020 09:57:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=juliacomputing-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KQT1mSk5GZAejsG86TNk9V0+f37wlqbJ20Yhgw/mpdQ=;
+ b=ikMGc0vtUJcDbPMcm9sHlaQy6v+9UgeKgDwVp8aGldO90KIg6YELvKjHLpgXmHjgnK
+ Zdph4F7NLsjR64BpFd/RRXi3Pe72kJFb3LxIoMgCTmGJ3aevdThOzGbQmRVyCR+iKvFG
+ ZcM0y4KBNgoBvDnqxkgtya9cgY8fEciPd7buBwArznatxhbBHIk/oeqbK5emxgo7+wkK
+ aBdz7wgAEzybjBG928SmAXEAKGyfvT9QziP6SnVsjOGYTK3uzEL09oqybiJf2x8XRB1S
+ qqrRRCTGZVPFAc5WF5nQyS1p8OpYRrN4WE1UkQmaT4VOtfWgLxv6VvPL2zD7Rme6TtUS
+ EnEw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KQT1mSk5GZAejsG86TNk9V0+f37wlqbJ20Yhgw/mpdQ=;
+ b=tecZpSkXYbMNPPGnYndWrCf12qgoXw/oKRt5a/DtWorG1ClwxLG/XwA7vLP9n1Fi0V
+ YClG93Og8JGTspKbDLGNkuEJMtBQ2I/MXWdBQhUgGlXCrQWJ9j2lbo9WYy8o1QHz+UVK
+ Scu47Z3rWJjcvMboulXhRttQKqeg+PfOdQCcuN5IjRnZyb3RdN988m5BPrx5cg8iFkt3
+ LzGKO3PMBT7b5bmGHIecZc1PNZKqED6iXS/5ht/h12wE8AMoB9p/aIVhVLYXduxbGxM3
+ KBXe/wMh/3itChCGtuyBLsZPuXuO+CQfgNbIdpXuQvSBqA4tzJUD+jfSXVnkLnv1YWzm
+ HnRA==
+X-Gm-Message-State: AOAM53361LiaJWjX59PTnkaDTGU3ktjoa7PXNUHjO8uFCKk4pDY6Bjqp
+ TR2TnyPtU5YodJ33cOaK8VzUAT/Td9cvfS5FgJ52KQ==
+X-Google-Smtp-Source: ABdhPJyHkno5yldGr9+v1MKHFlCKN57QArtAe9koNMdcOi9e1WsgIT/9Z751om+WZdbXL3BHa29oO+amRPLqnYHlYtA=
+X-Received: by 2002:a92:290b:: with SMTP id l11mr437220ilg.145.1591203420134; 
+ Wed, 03 Jun 2020 09:57:00 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAJZ5v0jL0+TXDGXaO=WfYg6QM3=B83LLZ90xtc2HtX70jdoiYQ@mail.gmail.com>
-Content-Language: en-US
+References: <20200603151033.11512-1-will@kernel.org>
+ <20200603151033.11512-2-will@kernel.org>
+ <CABV8kRwrnixNc074-jQhZzeucGHx9_e5FnQmBS=VuL=tFGjY-Q@mail.gmail.com>
+ <20200603155338.GA12036@willie-the-truck>
+In-Reply-To: <20200603155338.GA12036@willie-the-truck>
+From: Keno Fischer <keno@juliacomputing.com>
+Date: Wed, 3 Jun 2020 12:56:24 -0400
+Message-ID: <CABV8kRxSjMY+d+F5aNzq1=5hXhVLGy6TbNLTUsCeSsAncwCzoA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] arm64: Override SPSR.SS when single-stepping is
+ enabled
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_094537_211351_027E63E4 
-X-CRM114-Status: GOOD (  32.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200603_095701_377706_7F1C79EB 
+X-CRM114-Status: GOOD (  16.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,200 +91,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Juri Lelli <juri.lelli@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>, Viresh Kumar <viresh.kumar@linaro.org>,
- Liviu Dudau <liviu.dudau@arm.com>, dri-devel <dri-devel@lists.freedesktop.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Benjamin Segall <bsegall@google.com>, alyssa.rosenzweig@collabora.com,
- Fabio Estevam <festevam@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
- Rob Herring <robh@kernel.org>, Amit Kucheria <amit.kucheria@verdurent.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kevin Hilman <khilman@kernel.org>, Andy Gross <agross@kernel.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, steven.price@arm.com,
- Chanwoo Choi <cw00.choi@samsung.com>, Ingo Molnar <mingo@redhat.com>,
- dl-linux-imx <linux-imx@nxp.com>, "Zhang, Rui" <rui.zhang@intel.com>,
- Mel Gorman <mgorman@suse.de>, orjan.eide@arm.com,
- Daniel Vetter <daniel@ffwll.ch>, Linux PM <linux-pm@vger.kernel.org>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Steven Rostedt <rostedt@goodmis.org>,
- "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Linux OMAP Mailing List <linux-omap@vger.kernel.org>,
- Dietmar Eggemann <Dietmar.Eggemann@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- David Airlie <airlied@linux.ie>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- Quentin Perret <qperret@google.com>, Stephen Boyd <sboyd@kernel.org>,
- Randy Dunlap <rdunlap@infradead.org>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Sascha Hauer <kernel@pengutronix.de>, Sudeep Holla <sudeep.holla@arm.com>,
- patrick.bellasi@matbug.net, Shawn Guo <shawnguo@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Luis Machado <luis.machado@linaro.org>,
+ kernel-team@android.com, stable@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Jun 3, 2020 at 11:53 AM Will Deacon <will@kernel.org> wrote:
+> > However, at the same time as changing this, we should probably make sure
+> > to enable the syscall exit pseudo-singlestep trap (similar issue as the other
+> > patch I had sent for the signal pseudo-singlestep trap), since otherwise
+> > ptracers might get confused about the lack of singlestep trap during a
+> > singlestep -> seccomp -> singlestep path (which would give one trap
+> > less with this patch than before).
+>
+> Hmm, I don't completely follow your example. Please could you spell it
+> out a bit more? I fast-forward the stepping state machine on sigreturn,
+> which I thought would be sufficient. Perhaps you're referring to a variant
+> of the situation mentioned by Mark, which I didn't think could happen
+> with ptrace [2].
 
+Sure suppose we have code like the following:
 
-On 6/3/20 5:22 PM, Rafael J. Wysocki wrote:
-> On Wed, Jun 3, 2020 at 6:12 PM Lukasz Luba <lukasz.luba@arm.com> wrote:
->>
->>
->>
->> On 6/3/20 4:40 PM, Rafael J. Wysocki wrote:
->>> On Wed, Jun 3, 2020 at 5:26 PM Lukasz Luba <lukasz.luba@arm.com> wrote:
->>>>
->>>>
->>>>
->>>> On 6/3/20 4:13 PM, Rafael J. Wysocki wrote:
->>>>> On Tue, Jun 2, 2020 at 1:31 PM Lukasz Luba <lukasz.luba@arm.com> wrote:
->>>>>>
->>>>>> Hi Daniel,
->>>>>>
->>>>>> On 6/1/20 10:44 PM, Daniel Lezcano wrote:
->>>>>>> On 27/05/2020 11:58, Lukasz Luba wrote:
->>>>>>>> Add support for other devices than CPUs. The registration function
->>>>>>>> does not require a valid cpumask pointer and is ready to handle new
->>>>>>>> devices. Some of the internal structures has been reorganized in order to
->>>>>>>> keep consistent view (like removing per_cpu pd pointers).
->>>>>>>>
->>>>>>>> Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
->>>>>>>> ---
->>>>>>>
->>>>>>> [ ... ]
->>>>>>>
->>>>>>>>      }
->>>>>>>>      EXPORT_SYMBOL_GPL(em_register_perf_domain);
->>>>>>>> +
->>>>>>>> +/**
->>>>>>>> + * em_dev_unregister_perf_domain() - Unregister Energy Model (EM) for a device
->>>>>>>> + * @dev             : Device for which the EM is registered
->>>>>>>> + *
->>>>>>>> + * Try to unregister the EM for the specified device (but not a CPU).
->>>>>>>> + */
->>>>>>>> +void em_dev_unregister_perf_domain(struct device *dev)
->>>>>>>> +{
->>>>>>>> +    if (IS_ERR_OR_NULL(dev) || !dev->em_pd)
->>>>>>>> +            return;
->>>>>>>> +
->>>>>>>> +    if (_is_cpu_device(dev))
->>>>>>>> +            return;
->>>>>>>> +
->>>>>>>> +    mutex_lock(&em_pd_mutex);
->>>>>>>
->>>>>>> Is the mutex really needed?
->>>>>>
->>>>>> I just wanted to align this unregister code with register. Since there
->>>>>> is debugfs dir lookup and the device's EM existence checks I thought it
->>>>>> wouldn't harm just to lock for a while and make sure the registration
->>>>>> path is not used. These two paths shouldn't affect each other, but with
->>>>>> modules loading/unloading I wanted to play safe.
->>>>>>
->>>>>> I can change it maybe to just dmb() and the end of the function if it's
->>>>>> a big performance problem in this unloading path. What do you think?
->>>>>
->>>>> I would rather leave the mutex locking as is.
->>>>>
->>>>> However, the question to ask is what exactly may go wrong without that
->>>>> locking in place?  Is there any specific race condition that you are
->>>>> concerned about?
->>>>>
->>>>
->>>> I tried to test this with module loading & unloading with panfrost
->>>> driver and CPU hotplug (which should bail out quickly) and was OK.
->>>> I don't see any particular race. I don't too much about the
->>>> debugfs code, though. That's why I tried to protect from some
->>>> scripts/services which try to re-load the driver.
->>>>
->>>> Apart from that, maybe just this dev->em = NULL to be populated to all
->>>> CPUs, which mutex_unlock synchronizes for free here.
->>>
->>> If it may run concurrently with the registration for the same device,
->>> the locking is necessary, but in that case the !dev->em_pd check needs
->>> to go under the mutex too IMO, or you may end up leaking the pd if the
->>> registration can run between that check and the point at which the
->>> mutex is taken.
->>
->> They don't run concurrently for the same device and users of that EM are
->> already gone.
->> I just wanted to be sure that everything is cleaned and synced properly.
->> Here is some example of the directories under
->> /sys/kernel/debug/energy_model
->> cpu0, cpu4, gpu, dsp, etc
->>
->> The only worry that I had was the debugfs dir name, which is a
->> string from dev_name() and will be the same for the next registration
->> if module is re-loaded.
-> 
-> OK, so that needs to be explained in a comment.
+0x0: svc #0
+0x4: str x0, [x7]
+...
 
-OK, I will add it.
+Then, if there's a seccomp filter active that just does
+SECCOMP_RET_TRACE of everything, right now we get traps:
 
-> 
->> So the 'name' is reused and debugfs_create_dir()
->> and debugfs_remove_recursive() uses this fsnotify, but they are
->> operating under inode_lock/unlock() on the parent dir 'energy_model'.
->> Then there is also this debugfs_lookup() which is slightly different.
->>
->> That's why I put a mutex to separate all registration and unregistration
->> for all devices.
->> It should work without the mutex in unregister path, but I think it does
->> not harm to take
-> 
-> Well, fair enough, but I still think that the !dev->em_pd check should
-> be done under the mutex or it will be confusing.
-> 
->> it just in case and also have the CPU variable sync for free.
-> 
-> I'm not sure what you mean by the last part here?
+<- (ip: 0x0)
+-> PTRACE_SINGLESTEP
+<- (ip: 0x4 - seccomp trap)
+-> PTRACE_SINGLESTEP
+<- SIGTRAP (ip: 0x4 - TRAP_TRACE trap)
+-> PTRACE_SINGLESTEP
+<- SIGTRAP (ip: 0x8 - TRAP_TRACE trap)
 
-The mutex_unlock for me also means dmb() took place. ARM has slightly
-different memory model than x86 and I just wanted to be sure that
-this new values reach memory and become visible to other cores.
-mutex_unlock just guaranties this for me.
+With your proposed patch, we instead get
+<- (ip: 0x0)
+-> PTRACE_SINGLESTEP
+<- (ip: 0x4 - seccomp trap)
+-> PTRACE_SINGLESTEP
+<- SIGTRAP (ip: 0x8 - TRAP_TRACE trap)
 
-> 
->>>
->>> Apart from this your kerneldoc comments might me improved IMO.
->>>
->>> First of all, you can use @dev inside of a kerneldoc (if @dev
->>> represents an argument of the documented function) and that will
->>> produce the right output automatically.
->>
->> OK
->>
->>>
->>> Second, it is better to avoid saying things like "Try to unregister
->>> ..." in kerneldoc comments (the "Try to" part is redundant).  Simply
->>> say "Unregister ..." instead.
->>
->> Good point, thanks, I will use "Unregister ..." then.
->>
->>>
->>> Thanks!
->>>
->>
->> Shell I send a 'resend patch' which changes these @dev and
->> 'unregister' comments?
-> 
-> Yes, please, but see the comments above too.
+This is problematic, because the ptracer may want to inspect the
+result of the syscall instruction. On other architectures, this
+problem is solved with a pseudo-singlestep trap that gets executed
+if you resume from a syscall-entry-like trap with PTRACE_SINGLESTEP.
+See the below patch for the change I'm proposing. There is a slight
+issue with that patch, still: It now makes the x7 issue apply to the
+singlestep trap at exit, so we should do the patch to fix that issue
+before we apply that change (or manually check for this situation
+and issue the pseudo-singlestep trap manually).
 
-Saw it
+My proposed patch below also changes
 
-> 
->> Or wait for you to finish reviewing the other patches and send v9?
-> 
-> That is not necessary, unless you want to make kerneldoc improvements
-> in the other patches.
+<- (ip: 0x0)
+-> PTRACE_SYSCALL
+<- (ip: 0x4 - syscall entry trap)
+-> PTRACE_SINGLESTEP
+<- SIGTRAP (ip: 0x8 - TRAP_TRACE trap)
 
-I will check them, but if they are OKish then I will just resend this
-one.
+to
 
+<- (ip: 0x0)
+-> PTRACE_SYSCALL
+<- (ip: 0x4 - syscall entry trap)
+-> PTRACE_SINGLESTEP
+<- SIGTRAP (ip: 0x4 - pseudo-singlestep exit trap)
+-> PTRACE_SINGLESTEP
+<- SIGTRAP (ip: 0x8 - TRAP_TRACE trap)
 
-Thank you for the review.
+But I consider that a bugfix, since that's how other architectures
+behave and I was going to send in this patch for that reason anyway
+(since this was another one of the aarch64 ptrace quirks we had to
+work around).
 
-Regards,
-Lukasz
+diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+index b3d3005d9515..104cfcf117d0 100644
+--- a/arch/arm64/kernel/ptrace.c
++++ b/arch/arm64/kernel/ptrace.c
+@@ -1820,7 +1820,7 @@ static void tracehook_report_syscall(struct pt_regs *regs,
+        regs->regs[regno] = dir;
+
+        if (dir == PTRACE_SYSCALL_EXIT)
+-               tracehook_report_syscall_exit(regs, 0);
++               tracehook_report_syscall_exit(regs,
+test_thread_flag(TIF_SINGLESTEP));
+        else if (tracehook_report_syscall_entry(regs))
+                forget_syscall(regs);
 
 _______________________________________________
 linux-arm-kernel mailing list
