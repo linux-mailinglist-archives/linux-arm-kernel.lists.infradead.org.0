@@ -2,88 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7212F1EE845
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 18:08:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A09941EE84E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 18:09:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ylBmmiWCPi4QAe8OQ/t0+EoZOvGVJ3EsJLCOUtt9MEo=; b=NJlc3ISptiZmb2vkMKpNM6gAy
-	B4RlSYtms3TDoqB7owPtnsjyF2RktV1c2QV1q2B0pK1YFb9cHXy5bL7lxV25dacvb8kc+4Vy3Iwlq
-	AjPU+vwTfIO369OoqFXxXoowqtlLC7EcjblDum7Ud1RBNdqsfCR471u484Ao06kn5zkOUQMdqfF2j
-	TS85JZXe2cw+6ei9osMuFzN3SbBztlium8GtJiRnl5u1UvoWjh4Z9lSoQmT5CyCrwmOrIuleBTqD7
-	bDlL2mrRpDmLjv72p7G7Lm+H2AoUtCi4IZb+/f1Pb6KIyRB7av/vNUM/WWR89rHgkPrjVTr0cFDWy
-	NUDpsQqUg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CJ07e9/GxF8tDfjUnJhC76O1hiuj8Dd390TojG9hpVA=; b=qDG0Kscq5E5ky1
+	LQNBR7kSpj2Q/GOpzWIsPrD0L4mdWSjbSFztMnWND6tCnIqq8Saq/ItNEdQ7Y/s9NnPusOHtRPvjy
+	+qeF0Kvmj+ur84ueeJXi4GzyWN0UdzZwdHb8K314WtG7I2LlkfRkL4gLuUzvTmN/YTRoXziqZcbdB
+	LkccFRcwTJ8m1xgfuUFgjTiOSx81OKa+3OSHYCR8dN9jvGAih0ttVvgJn6rV4zRAgzfYFgfZQXeRo
+	si8aPiXvnUpls/JYs4U7h9no63G0BL7xh2STnZxi3YV3ZGqqeC02mfnoTI5W9uddiLBpWkjTES9DO
+	x5PhCO/a+xS3cXqUXHbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgsPr-0004eh-E5; Thu, 04 Jun 2020 16:08:27 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jgsQR-0004yH-Me; Thu, 04 Jun 2020 16:09:03 +0000
+Received: from smtprelay0146.hostedemail.com ([216.40.44.146]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgsPR-0004a5-2n
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 16:08:02 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6BFCA2072E;
- Thu,  4 Jun 2020 16:08:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591286880;
- bh=LB1iQXM1cmQa0DCO6aeQhZ9lFdA/gLvV3FcMADdzrHc=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=vyjWov2aHsiM1oF1DSN1Z+D0x09dFGnqKhy5UKKhJgTZcQkHPqVyOOQW+r8oTwMXa
- HGHynti10CP+7KwrwCZ7rFCRcCYstPSliLfN3TJVlccU0j+IEJsRZTd9QBT3R6bDex
- j1+wisTa0zsjBc+XRUwVkoWxZyKQJZsH+fxQiwss=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jgsPO-000IHa-T8; Thu, 04 Jun 2020 17:07:59 +0100
+ id 1jgsQJ-0004xJ-Rx
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 16:08:57 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay06.hostedemail.com (Postfix) with ESMTP id 5DEAF1810F261;
+ Thu,  4 Jun 2020 16:08:49 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2393:2553:2559:2562:2828:3138:3139:3140:3141:3142:3352:3622:3865:3867:3868:3870:3871:3872:3874:4321:5007:10004:10400:10848:11232:11658:11914:12297:12663:12740:12760:12895:13069:13095:13160:13229:13255:13311:13357:13439:14096:14097:14659:21080:21433:21627:21740:21790:30012:30054:30090:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:2, LUA_SUMMARY:none
+X-HE-Tag: joke87_4e0d58826d98
+X-Filterd-Recvd-Size: 2786
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf13.hostedemail.com (Postfix) with ESMTPA;
+ Thu,  4 Jun 2020 16:08:47 +0000 (UTC)
+Message-ID: <0749ac5e3868c6ba50728ced8366bfd86b0b8500.camel@perches.com>
+Subject: Re: [PATCH] pinctrl: pxa: pxa2xx: Remove 'pxa2xx_pinctrl_exit()'
+ which is unused and broken
+From: Joe Perches <joe@perches.com>
+To: Dan Carpenter <dan.carpenter@oracle.com>, Julia Lawall
+ <julia.lawall@inria.fr>
+Date: Thu, 04 Jun 2020 09:08:44 -0700
+In-Reply-To: <20200604123038.GG22511@kadam>
+References: <a2e34c9a-676f-d83f-f395-7428af038c16@wanadoo.fr>
+ <20200601183102.GS30374@kadam>
+ <CACRpkdasbS-4_ZwC-Ucm8tkSUW5tAQdUrXjxHXQ3J0goVYfgHw@mail.gmail.com>
+ <20200604083120.GF22511@kadam>
+ <2aa49a543e6f48a6f428a37b63a06f9149870225.camel@perches.com>
+ <alpine.DEB.2.21.2006041147360.2577@hadrien>
+ <32232229031e02edcc268b1074c9bac44012ee35.camel@perches.com>
+ <alpine.DEB.2.21.2006041228520.2577@hadrien>
+ <10e54ee84bd44171ef329bed9e7e6a946bae61ba.camel@perches.com>
+ <alpine.DEB.2.21.2006041328570.2577@hadrien> <20200604123038.GG22511@kadam>
+User-Agent: Evolution 3.36.2-0ubuntu1 
 MIME-Version: 1.0
-Date: Thu, 04 Jun 2020 17:07:58 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH] arm64: set TEXT_OFFSET to 0x0 in preparation for removing
- it entirely
-In-Reply-To: <CAMj1kXEnJOUSWZTMGCn6cS3OiM9_DpJUj-MekENySf1x6Y1W5g@mail.gmail.com>
-References: <20200415082922.32709-1-ardb@kernel.org>
- <158808120907.217905.4632288691847383619.b4-ty@kernel.org>
- <20200604154141.4983aeaa@why> <20200604150122.GA3650@willie-the-truck>
- <fab4fb9e66fe48d82c9856a7d5839335@kernel.org>
- <CAMj1kXFS8Vvjfpb8HYzRvsaB0j7bs+2V4rXE8DzfNMJxsV3r0g@mail.gmail.com>
- <CAMj1kXEnJOUSWZTMGCn6cS3OiM9_DpJUj-MekENySf1x6Y1W5g@mail.gmail.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <cf7ac1b246b1a21f3a9e67d0fc991188@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: ardb@kernel.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, mark.rutland@arm.com,
- catalin.marinas@arm.com, james.morse@arm.com, suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_090801_184038_F540AFF0 
-X-CRM114-Status: GOOD (  20.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200604_090855_962542_666CBEDD 
+X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.146 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [216.40.44.146 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,75 +87,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, suzuki.poulose@arm.com,
- Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
- Will Deacon <will@kernel.org>,
+Cc: Linus Walleij <linus.walleij@linaro.org>, kernel-janitors@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>, "open list:GPIO
+ SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-06-04 16:48, Ard Biesheuvel wrote:
-> On Thu, 4 Jun 2020 at 17:41, Ard Biesheuvel <ardb@kernel.org> wrote:
->> 
->> On Thu, 4 Jun 2020 at 17:25, Marc Zyngier <maz@kernel.org> wrote:
->> >
->> > On 2020-06-04 16:01, Will Deacon wrote:
->> > > On Thu, Jun 04, 2020 at 03:41:41PM +0100, Marc Zyngier wrote:
->> > >> Hi all,
->> > >>
->> > >> On Tue, 28 Apr 2020 15:49:35 +0100
->> > >> Will Deacon <will@kernel.org> wrote:
->> > >>
->> > >> > On Wed, 15 Apr 2020 10:29:22 +0200, Ard Biesheuvel wrote:
->> > >> > > TEXT_OFFSET on arm64 is a historical artifact from the early days of
->> > >> > > the arm64 port where the boot protocol was basically 'copy this image
->> > >> > > to the base of memory + 512k', giving us 512 KB of guaranteed BSS space
->> > >> > > to put the swapper page tables. When the arm64 port was merged for
->> > >> > > v3.10, the Image header already carried the actual value of TEXT_OFFSET,
->> > >> > > to allow the bootloader to discover it dynamically rather than hardcode
->> > >> > > it to 512 KB.
->> > >> > >
->> > >> > > [...]
->> > >> >
->> > >> > Applied to arm64 (for-next/misc), thanks!
->> > >> >
->> > >> > [1/1] arm64: set TEXT_OFFSET to 0x0 in preparation for removing it entirely
->> > >> >       https://git.kernel.org/arm64/c/cfa7ede20f13
->> > >>
->> > >> This breaks a guest kernel booted with kvmtool (tested on my d05).
->> > >> Reverting it on top of 6929f71e46bd makes it work again. I haven't yet
->> > >> investigated what is happening here though.
->> > >
->> > > Weird, that's a combination I test, just not on d05. Are you using
->> > > defconfig? Can you share your full kvmtool invication please?
->> >
->> > Ah, good point. Not defconfig, but one that allows me to run the same
->> > kernel on my whole zoo[1]. As for the kvmtool invocation, it is pretty
->> > basic:
->> >
->> > lkvm run -m 512 -c 4 -p earlycon -k arch/arm64/boot/Image
->> >
->> 
->> OK, so my suspicions is that your config does not enable
->> CONFIG_RANDOMIZE_BASE, and that kvmtool ignores the text offset value
->> in the header altogether.
+On Thu, 2020-06-04 at 15:30 +0300, Dan Carpenter wrote:
+> On Thu, Jun 04, 2020 at 01:42:12PM +0200, Julia Lawall wrote:
+> > OK, I recall a discussion with Dan where he suggested that some things
+> > that were not actually bug fixes could also merit a Fixes tag.  But it's
+> > probably better if he weighs in directly.
 > 
-> arm/aarch64/include/kvm/kvm-arch.h:#define ARM_KERN_OFFSET(kvm)
-> ((kvm)->cfg.arch.aarch32_guest  ?       \
-> arm/aarch64/include/kvm/kvm-arch.h-                             0x8000
->                          :       \
-> arm/aarch64/include/kvm/kvm-arch.h-                             
-> 0x80000)
+> I generally think Fixes should only be used for "real bug" fixes.
+> 
+> The one exception is when I'm reviewing a patch that fixes an "unused
+> assignment" static checker warning is that I know which commit
+> introduced the warning.  I don't have strong feelings if it's in the
+> Fixes tag or if it's just mentioned in the commit message.
 
-Yeah, nice catch. I'll try and fix the sucker.
+My view is that changes that silence compiler warnings are
+not fixing bugs and that these changes should generally not
+be backported.
 
-Thanks,
+Compiler silencing changes marked as fixes can introduce other
+defects in working code.
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+Backporting patches to stable trees should be conservatively
+rather than liberally applied.
+
+It seems that the actual backport maintainers disagree though.
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
