@@ -2,56 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A84C1EE7EB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:39:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AAA151EE7F6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:42:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6gfGYOP64ZhhB5dscepE0l6CoszIAjOD1I97yDSGQb8=; b=UzT7iIy1s5LKD1
-	tKJg2KEEh/WBf746IQciOLvNMteCWxxb/Xax7/dd29ZIYYHaFjKcboWbltcyPwElssYf4f6cg9ic4
-	YvJAuhrHzfCUN/cU4sgPTTE+KdTqSRYbmzIzNXw9Z6B0ztjijKswMs3WG0OWw02HTE5sUOXpbUtow
-	eBjK+SrA54WKPRkgjtB/jm1lTtFkvfv3XeLZAs1He4//A+B/hyhmtlcVq9ih77poZkGsYOV9yEIau
-	3F/B3gh5GVgV3fDBhzOrGCgptlPWl+GzHfbANyEoFJ0E+IyRP5fHIl2pFOwideLLr5zosR8swdBcF
-	D05O+ZShBzFFnNPOsP2g==;
+	List-Owner; bh=8KKFF84crcA348RLm0AQIZZMXMNDTHYjHZKdGHtYod4=; b=PG7icQoLSVLWRr
+	I/N1ilBbgckxrbct/3/4BqhqeaTZ/IDZVRgmxTBBlInmRpdHJbS3sNrVwERdxu4PFIgkjusOpYGKn
+	7o4yTjrHh2Q2A6G+CVUTrOPOp3hb6oezsDRVfSqAYeSiLXFK0PdHD7iTf0lPWd6SN8F4u3+9XWp/v
+	juXdLHJrpCy9fn++lpDuJtNlGnxLpygxwqAyEfWl7fRGXZOaKI5vcARagPQez0ez1PAIzPmJsLq00
+	oIFkOEeNE3upXgeEg2S2P0Ru7x29gD2cywbxZNmTpW5m9OGqJr81krQGkP3qDjz4QfbclEZuS3SrE
+	bvzngNFGCiCjsrH7fjSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgrxc-0003FC-Sl; Thu, 04 Jun 2020 15:39:16 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgrxU-0003Br-Bn
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:39:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 30DB31FB;
- Thu,  4 Jun 2020 08:39:06 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.9.165])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD38D3F305;
- Thu,  4 Jun 2020 08:39:03 -0700 (PDT)
-Date: Thu, 4 Jun 2020 16:39:00 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 3/3] KVM: arm64: Enforce PtrAuth being disabled if not
- advertized
-Message-ID: <20200604153900.GE75320@C02TD0UTHF1T.local>
-References: <20200604133354.1279412-1-maz@kernel.org>
- <20200604133354.1279412-4-maz@kernel.org>
+	id 1jgs0M-0006Fo-8J; Thu, 04 Jun 2020 15:42:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgs0E-0006FP-6f
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:41:59 +0000
+Received: from mail-oi1-f180.google.com (mail-oi1-f180.google.com
+ [209.85.167.180])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 84C16207F5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  4 Jun 2020 15:41:57 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591285317;
+ bh=pK4FDu7W2yf0eqKYhRyMiWJuadUAIebGFaZQ87At2RM=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=hCehaAqsrAjEf0X3A8xzqVWbbszeuxgDXusBpS8P5ZsAsDH2w3qkyKIQdJdzeco0r
+ 5SK987TG8piqM2l/qEKhmqDg8xmYeiDloeq73L+UigjOFXLR6CGKMh4UEVfJAyIMMn
+ ieNO1Xy135orWEAeSGkQaFZXQxXvRwj6aForWFQA=
+Received: by mail-oi1-f180.google.com with SMTP id d67so5466454oig.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 04 Jun 2020 08:41:57 -0700 (PDT)
+X-Gm-Message-State: AOAM530Jv3tQ2maHxzp6z5afJl88hqHZ9CfmQVZ6J92DAcqLytZSFtH6
+ mfKfad2tnJHNYrc9VPPCzlMEUsYTu5Mlsahsaa4=
+X-Google-Smtp-Source: ABdhPJxpeqw4EYX9MmG08zICZV3coWi/iKvKaf0ZN4tKtm8Rdj7gSWaZsyepiLLydDD3vqMpajFSDvP0wt8Lgm/jZew=
+X-Received: by 2002:aca:b707:: with SMTP id h7mr3694316oif.174.1591285316871; 
+ Thu, 04 Jun 2020 08:41:56 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200604133354.1279412-4-maz@kernel.org>
+References: <20200415082922.32709-1-ardb@kernel.org>
+ <158808120907.217905.4632288691847383619.b4-ty@kernel.org>
+ <20200604154141.4983aeaa@why> <20200604150122.GA3650@willie-the-truck>
+ <fab4fb9e66fe48d82c9856a7d5839335@kernel.org>
+In-Reply-To: <fab4fb9e66fe48d82c9856a7d5839335@kernel.org>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Thu, 4 Jun 2020 17:41:45 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXFS8Vvjfpb8HYzRvsaB0j7bs+2V4rXE8DzfNMJxsV3r0g@mail.gmail.com>
+Message-ID: <CAMj1kXFS8Vvjfpb8HYzRvsaB0j7bs+2V4rXE8DzfNMJxsV3r0g@mail.gmail.com>
+Subject: Re: [PATCH] arm64: set TEXT_OFFSET to 0x0 in preparation for removing
+ it entirely
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_083908_507202_2498DD8E 
-X-CRM114-Status: GOOD (  26.60  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200604_084158_261383_5CE94C62 
+X-CRM114-Status: GOOD (  21.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,121 +89,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, suzuki.poulose@arm.com,
  Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+On Thu, 4 Jun 2020 at 17:25, Marc Zyngier <maz@kernel.org> wrote:
+>
+> On 2020-06-04 16:01, Will Deacon wrote:
+> > On Thu, Jun 04, 2020 at 03:41:41PM +0100, Marc Zyngier wrote:
+> >> Hi all,
+> >>
+> >> On Tue, 28 Apr 2020 15:49:35 +0100
+> >> Will Deacon <will@kernel.org> wrote:
+> >>
+> >> > On Wed, 15 Apr 2020 10:29:22 +0200, Ard Biesheuvel wrote:
+> >> > > TEXT_OFFSET on arm64 is a historical artifact from the early days of
+> >> > > the arm64 port where the boot protocol was basically 'copy this image
+> >> > > to the base of memory + 512k', giving us 512 KB of guaranteed BSS space
+> >> > > to put the swapper page tables. When the arm64 port was merged for
+> >> > > v3.10, the Image header already carried the actual value of TEXT_OFFSET,
+> >> > > to allow the bootloader to discover it dynamically rather than hardcode
+> >> > > it to 512 KB.
+> >> > >
+> >> > > [...]
+> >> >
+> >> > Applied to arm64 (for-next/misc), thanks!
+> >> >
+> >> > [1/1] arm64: set TEXT_OFFSET to 0x0 in preparation for removing it entirely
+> >> >       https://git.kernel.org/arm64/c/cfa7ede20f13
+> >>
+> >> This breaks a guest kernel booted with kvmtool (tested on my d05).
+> >> Reverting it on top of 6929f71e46bd makes it work again. I haven't yet
+> >> investigated what is happening here though.
+> >
+> > Weird, that's a combination I test, just not on d05. Are you using
+> > defconfig? Can you share your full kvmtool invication please?
+>
+> Ah, good point. Not defconfig, but one that allows me to run the same
+> kernel on my whole zoo[1]. As for the kvmtool invocation, it is pretty
+> basic:
+>
+> lkvm run -m 512 -c 4 -p earlycon -k arch/arm64/boot/Image
+>
 
-On Thu, Jun 04, 2020 at 02:33:54PM +0100, Marc Zyngier wrote:
-> Even if we don't expose PtrAuth to a guest, the guest can still
-> write to its SCTIRLE_1 register and set the En{I,D}{A,B} bits
-> and execute PtrAuth instructions from the NOP space. This has
-> the effect of trapping to EL2, and we currently inject an UNDEF.
-
-I think it's worth noting that this is an ill-behaved guest, as those
-bits are RES0 when pointer authentication isn't implemented.
-
-The rationale for RES0/RES1 bits is that new HW can rely on old SW
-programming them with the 0/1 as appropriate, and that old SW that does
-not do so may encounter behaviour which from its PoV is UNPREDICTABLE.
-The SW side of the contract is that you must program them as 0/1 unless
-you know they're allocated with a specific meaning.
-
-With that in mind I think the current behaviour is legitimate: from the
-guest's PoV it's the same as there being a distinct extension which it
-is not aware of where the En{I,D}{A,B} bits means "trap some HINTs to
-EL1".
-
-I don't think that we should attempt to work around broken software here
-unless we absolutely have to, as it only adds complexity for no real
-gain.
-
-Thanks,
-Mark.
-
-> This is definitely the wrong thing to do, as the architecture says
-> that these instructions should behave as NOPs.
-> 
-> Instead, we can simply reset the offending SCTLR_EL1 bits to
-> zero, and resume the guest. It can still observe the SCTLR bits
-> being set and then being cleared by magic, but that's much better
-> than delivering an unexpected extension.
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  arch/arm64/kvm/handle_exit.c | 12 ------------
->  arch/arm64/kvm/hyp/switch.c  | 18 ++++++++++++++++--
->  2 files changed, 16 insertions(+), 14 deletions(-)
-> 
-> diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
-> index 5a02d4c90559..98d8adf6f865 100644
-> --- a/arch/arm64/kvm/handle_exit.c
-> +++ b/arch/arm64/kvm/handle_exit.c
-> @@ -162,17 +162,6 @@ static int handle_sve(struct kvm_vcpu *vcpu, struct kvm_run *run)
->  	return 1;
->  }
->  
-> -/*
-> - * Guest usage of a ptrauth instruction (which the guest EL1 did not turn into
-> - * a NOP). If we get here, it is that we didn't fixup ptrauth on exit, and all
-> - * that we can do is give the guest an UNDEF.
-> - */
-> -static int kvm_handle_ptrauth(struct kvm_vcpu *vcpu, struct kvm_run *run)
-> -{
-> -	kvm_inject_undefined(vcpu);
-> -	return 1;
-> -}
-> -
->  static exit_handle_fn arm_exit_handlers[] = {
->  	[0 ... ESR_ELx_EC_MAX]	= kvm_handle_unknown_ec,
->  	[ESR_ELx_EC_WFx]	= kvm_handle_wfx,
-> @@ -195,7 +184,6 @@ static exit_handle_fn arm_exit_handlers[] = {
->  	[ESR_ELx_EC_BKPT32]	= kvm_handle_guest_debug,
->  	[ESR_ELx_EC_BRK64]	= kvm_handle_guest_debug,
->  	[ESR_ELx_EC_FP_ASIMD]	= handle_no_fpsimd,
-> -	[ESR_ELx_EC_PAC]	= kvm_handle_ptrauth,
->  };
->  
->  static exit_handle_fn kvm_get_exit_handler(struct kvm_vcpu *vcpu)
-> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-> index 2a50b3771c3b..fc09c3dfa466 100644
-> --- a/arch/arm64/kvm/hyp/switch.c
-> +++ b/arch/arm64/kvm/hyp/switch.c
-> @@ -503,8 +503,22 @@ static bool __hyp_text __hyp_handle_ptrauth(struct kvm_vcpu *vcpu)
->  	struct kvm_cpu_context *ctxt;
->  	u64 val;
->  
-> -	if (!vcpu_has_ptrauth(vcpu))
-> -		return false;
-> +	if (!vcpu_has_ptrauth(vcpu)) {
-> +		if (ec != ESR_ELx_EC_PAC)
-> +			return false;
-> +
-> +		/*
-> +		 * Interesting situation: the guest has enabled PtrAuth,
-> +		 * despite KVM not advertising it. Fix SCTLR_El1 on behalf
-> +		 * of the guest (the bits should behave as RES0 anyway).
-> +		 */
-> +		val = read_sysreg_el1(SYS_SCTLR);
-> +		val &= ~(SCTLR_ELx_ENIA | SCTLR_ELx_ENIB |
-> +			 SCTLR_ELx_ENDA | SCTLR_ELx_ENDB);
-> +		write_sysreg_el1(val, SYS_SCTLR);
-> +
-> +		return true;
-> +	}
->  
->  	switch (ec) {
->  	case ESR_ELx_EC_PAC:
-> -- 
-> 2.26.2
-> 
+OK, so my suspicions is that your config does not enable
+CONFIG_RANDOMIZE_BASE, and that kvmtool ignores the text offset value
+in the header altogether.
 
 _______________________________________________
 linux-arm-kernel mailing list
