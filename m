@@ -2,77 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C55A1EE194
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:42:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7AAC1EE1A1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:43:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vf4BjhzWpe3lTcooeU44hOGWFwCrJXGay1rqVvZ8ulw=; b=jKyipp8puN92IL
-	jDhbel0zj0NvaNaUZwnrzax1L+V5BQ17R0XBxgHhRH7ufAfLZ6gceAZh2FIW2utVdTwR8e583SAdY
-	fw7BXGkALyamCJAEQgrwRH+aJp2RpM7vRIXAcDTMny2HNQCPqTbX1GuNuELUUaRXsskNCzfME794E
-	uVkuJwFOOn1cNGPRZ5OdKvUq/cEGfnOoQhUpmgdCxCcOZdpL86ZlmIai/FT+nHZLr0g1PnygBwvpa
-	uv7RcaXk8/QjEOMmcF58kx762ll6HsmOmxLdkmc2sWMBNZ3DHy5wCh0lqd1IhtiXHwq74QzU0sZON
-	ab0UZcRCNLNHi/P1OAEg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=D4ykgy0MB+OaTkrBzwaKtH2XsOuw5gg7Y69tFO9edYk=; b=rDTx1EoXiv1zKVAzqHCRguZ7R
+	jKQJEQMYbJ0FLb2q86f0VKmbM1U1hK7ArtWXvZECLVhT5CWG/KObqqLvomIC68gD8BYEZnFqI6dWF
+	tI2kTDWF+lb20RdRVQ93s7Cw47F2B2QFVnAaptbbkhRJc/zJpjRnuyQu1qtB3NA7E9Uo/GZXwmD4i
+	3m0O0m81dIwWwztI+N/L8tBaOSwMz8Rp+VWHzt1miweCH6HDYb7+V2PLvP4fDQt5V5yM56ofEupmq
+	Tb79kGlzYjJSp5Y1HYRRapumjv6NdSTodglfeUmoAnfWXP8EJBh6atTrsOaTAEiT9MqH5lBa6teqK
+	FwnVIxHWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgmNq-0006OH-2c; Thu, 04 Jun 2020 09:41:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgmNj-0006Nl-9p; Thu, 04 Jun 2020 09:41:52 +0000
-Received: from kernel.org (unknown [87.71.78.142])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F3FDC206C3;
- Thu,  4 Jun 2020 09:41:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591263710;
- bh=1Q3d66uzBYSZVsxgnp/NnELnCNnx2g8D9fS4fWf1tZU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=C4SWVhgke8okNdSNThzzm+pvB0BBxC+L9XfiRpfWwdENE32NTRySuxE9r/7AGBN52
- VQ5bSYln8QHw7vVdtvRzDfqt4APeQDd4kA7Xe8CNmHjvD48410i6h4eSQt1s7mqDXL
- qqxMB94j2dQ/XCuBIdXsQpiPRrpdWdkx5G8lu2ug=
-Date: Thu, 4 Jun 2020 12:41:33 +0300
-From: Mike Rapoport <rppt@kernel.org>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH] arch/{mips,sparc,microblaze,powerpc}: Don't enable
- pagefault/preempt twice
-Message-ID: <20200604094133.GC202650@kernel.org>
-References: <20200518184843.3029640-1-ira.weiny@intel.com>
- <20200519165422.GA5838@roeck-us.net>
- <20200519184031.GB3356843@iweiny-DESK2.sc.intel.com>
- <20200519194215.GA71941@roeck-us.net>
- <20200520051315.GA3660833@iweiny-DESK2.sc.intel.com>
- <d86dba19-4f4b-061e-a2c7-4f037e9e2de2@roeck-us.net>
- <20200521174250.GB176262@iweiny-DESK2.sc.intel.com>
- <20200603135736.e7b5ded0082a81ae6d9067a0@linux-foundation.org>
- <20200603211416.GA1740285@iweiny-DESK2.sc.intel.com>
- <3538c8ad-674e-d310-d870-4ef6888092ed@roeck-us.net>
+	id 1jgmPH-0006ju-Qo; Thu, 04 Jun 2020 09:43:27 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgmP7-0006j6-8z
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 09:43:18 +0000
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 04 Jun 2020 18:43:14 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 4CA2318009F;
+ Thu,  4 Jun 2020 18:43:14 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Thu, 4 Jun 2020 18:43:14 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id E9F061A01BB;
+ Thu,  4 Jun 2020 18:43:12 +0900 (JST)
+Received: from [10.213.31.56] (unknown [10.213.31.56])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id 3637F12041F;
+ Thu,  4 Jun 2020 18:43:12 +0900 (JST)
+Subject: Re: [PATCH v3 1/6] PCI: dwc: Add msi_host_isr() callback
+To: Marc Zyngier <maz@kernel.org>
+References: <1591174481-13975-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1591174481-13975-2-git-send-email-hayashi.kunihiko@socionext.com>
+ <95bb3ffbfab4923854e20266c6b0b098@kernel.org>
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Message-ID: <6926b2da-5d00-b582-7d25-a8a0d7014570@socionext.com>
+Date: Thu, 4 Jun 2020 18:43:11 +0900
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3538c8ad-674e-d310-d870-4ef6888092ed@roeck-us.net>
+In-Reply-To: <95bb3ffbfab4923854e20266c6b0b098@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_024151_384428_DB64AE65 
-X-CRM114-Status: GOOD (  14.25  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200604_024317_435360_E2741C44 
+X-CRM114-Status: GOOD (  23.03  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,121 +70,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, Dan Williams <dan.j.williams@intel.com>,
- Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, Ingo Molnar <mingo@redhat.com>,
- linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
- Borislav Petkov <bp@alien8.de>, Al Viro <viro@zeniv.linux.org.uk>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>, Jingoo Han <jingoohan1@gmail.com>,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 03, 2020 at 04:44:17PM -0700, Guenter Roeck wrote:
-> 
-> sparc32 smp images in next-20200603 still crash for me with a spinlock
-> recursion. s390 images hang early in boot. Several others (alpha, arm64,
-> various ppc) don't even compile. I can run some more bisects over time,
-> but this is becoming a full-time job :-(.
-
-I've been able to bisect s390 hang to commit b614345f52bc ("x86/entry:
-Clarify irq_{enter,exit}_rcu()").
-
-After this commit, lockdep_hardirq_exit() is called twice on s390 (and
-others) - one time in irq_exit_rcu() and another one in irq_exit():
-
-/**
- * irq_exit_rcu() - Exit an interrupt context without updating RCU
- *
- * Also processes softirqs if needed and possible.
- */
-void irq_exit_rcu(void)
-{
-	__irq_exit_rcu();
-	 /* must be last! */
-	lockdep_hardirq_exit();
-}
-
-/**
- * irq_exit - Exit an interrupt context, update RCU and lockdep
- *
- * Also processes softirqs if needed and possible.
- */
-void irq_exit(void)
-{
-	irq_exit_rcu();
-	rcu_irq_exit();
-	 /* must be last! */
-	lockdep_hardirq_exit();
-}
-
-Removing the call in irq_exit() make s390 boot again, and judgung by the
-x86 entry code, the comment /* must be last! */ is stale...
-
-@Peter, @Thomas, can you comment please?
-
-From e51d50ee6f4d1f446decf91c2c67230da14ff82c Mon Sep 17 00:00:00 2001
-From: Mike Rapoport <rppt@linux.ibm.com>
-Date: Thu, 4 Jun 2020 12:37:03 +0300
-Subject: [PATCH] softirq: don't call lockdep_hardirq_exit() twice
-
-After commit b614345f52bc ("x86/entry: Clarify irq_{enter,exit}_rcu()")
-lockdep_hardirq_exit() is called twice on every architecture that uses
-irq_exit(): one time in irq_exit_rcu() and another one in irq_exit().
-
-Remove the extra call in irq_exit().
-
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
----
- kernel/softirq.c | 3 ---
- 1 file changed, 3 deletions(-)
-
-diff --git a/kernel/softirq.c b/kernel/softirq.c
-index a3eb6eba8c41..7523f4ce4c1d 100644
---- a/kernel/softirq.c
-+++ b/kernel/softirq.c
-@@ -427,7 +427,6 @@ static inline void __irq_exit_rcu(void)
- void irq_exit_rcu(void)
- {
- 	__irq_exit_rcu();
--	 /* must be last! */
- 	lockdep_hardirq_exit();
- }
- 
-@@ -440,8 +439,6 @@ void irq_exit(void)
- {
- 	irq_exit_rcu();
- 	rcu_irq_exit();
--	 /* must be last! */
--	lockdep_hardirq_exit();
- }
- 
- /*
--- 
-2.26.2
-
-
-
-> Guenter
-
--- 
-Sincerely yours,
-Mike.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWFyYywKCk9uIDIwMjAvMDYvMDMgMjA6MTUsIE1hcmMgWnluZ2llciB3cm90ZToKPiBPbiAy
+MDIwLTA2LTAzIDA5OjU0LCBLdW5paGlrbyBIYXlhc2hpIHdyb3RlOgo+PiBUaGlzIGFkZHMgbXNp
+X2hvc3RfaXNyKCkgY2FsbGJhY2sgZnVuY3Rpb24gc3VwcG9ydCB0byBkZXNjcmliZQo+PiBTb0Mt
+ZGVwZW5kZW50IHNlcnZpY2UgdHJpZ2dlcmVkIGJ5IE1TSS4KPj4KPj4gRm9yIGV4YW1wbGUsIHdo
+ZW4gQUVSIGludGVycnVwdCBpcyB0cmlnZ2VyZWQgYnkgTVNJLCB0aGUgY2FsbGJhY2sgZnVuY3Rp
+b24KPj4gcmVhZHMgU29DLWRlcGVuZGVudCByZWdpc3RlcnMgYW5kIGRldGVjdHMgdGhhdCB0aGUg
+aW50ZXJydXB0IGlzIGZyb20gQUVSLAo+PiBhbmQgaW52b2tlIEFFUiBpbnRlcnJ1cHRzIHJlbGF0
+ZWQgdG8gTVNJLgo+Pgo+PiBDYzogTWFyYyBaeW5naWVyIDxtYXpAa2VybmVsLm9yZz4KPj4gQ2M6
+IEppbmdvbyBIYW4gPGppbmdvb2hhbjFAZ21haWwuY29tPgo+PiBDYzogR3VzdGF2byBQaW1lbnRl
+bCA8Z3VzdGF2by5waW1lbnRlbEBzeW5vcHN5cy5jb20+Cj4+IFNpZ25lZC1vZmYtYnk6IEt1bmlo
+aWtvIEhheWFzaGkgPGhheWFzaGkua3VuaWhpa29Ac29jaW9uZXh0LmNvbT4KPj4gLS0tCj4+IMKg
+ZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWhvc3QuYyB8IDggKysr
+Ky0tLS0KPj4gwqBkcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9wY2llLWRlc2lnbndhcmUuaMKg
+wqDCoMKgwqAgfCAxICsKPj4gwqAyIGZpbGVzIGNoYW5nZWQsIDUgaW5zZXJ0aW9ucygrKSwgNCBk
+ZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdj
+L3BjaWUtZGVzaWdud2FyZS1ob3N0LmMKPj4gYi9kcml2ZXJzL3BjaS9jb250cm9sbGVyL2R3Yy9w
+Y2llLWRlc2lnbndhcmUtaG9zdC5jCj4+IGluZGV4IDBhNGE1YWEuLjliNjI4YTIgMTAwNjQ0Cj4+
+IC0tLSBhL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaWUtZGVzaWdud2FyZS1ob3N0LmMK
+Pj4gKysrIGIvZHJpdmVycy9wY2kvY29udHJvbGxlci9kd2MvcGNpZS1kZXNpZ253YXJlLWhvc3Qu
+Ywo+PiBAQCAtMTEyLDEzICsxMTIsMTMgQEAgaXJxcmV0dXJuX3QgZHdfaGFuZGxlX21zaV9pcnEo
+c3RydWN0IHBjaWVfcG9ydCAqcHApCj4+IMKgc3RhdGljIHZvaWQgZHdfY2hhaW5lZF9tc2lfaXNy
+KHN0cnVjdCBpcnFfZGVzYyAqZGVzYykKPj4gwqB7Cj4+IMKgwqDCoMKgIHN0cnVjdCBpcnFfY2hp
+cCAqY2hpcCA9IGlycV9kZXNjX2dldF9jaGlwKGRlc2MpOwo+PiAtwqDCoMKgIHN0cnVjdCBwY2ll
+X3BvcnQgKnBwOwo+PiArwqDCoMKgIHN0cnVjdCBwY2llX3BvcnQgKnBwID0gaXJxX2Rlc2NfZ2V0
+X2hhbmRsZXJfZGF0YShkZXNjKTsKPj4KPj4gLcKgwqDCoCBjaGFpbmVkX2lycV9lbnRlcihjaGlw
+LCBkZXNjKTsKPj4gK8KgwqDCoCBpZiAocHAtPm9wcy0+bXNpX2hvc3RfaXNyKQo+PiArwqDCoMKg
+wqDCoMKgwqAgcHAtPm9wcy0+bXNpX2hvc3RfaXNyKHBwKTsKPiAKPiBXaHkgaXMgdGhpcyBjYWxs
+IG91dHNpZGUgb2YgdGhlIGVudGVyL2V4aXQgZ3VhcmRzPwo+IERvIHlvdSBzdGlsbCBuZWVkIHRv
+IGV4ZWN1dGUgdGhlIHN0YW5kYXJkIGhhbmRsZXI/CgpJIGFzc3VtZSB0aGF0IHRoZSBtc2lfaG9z
+dF9pc3IoKSBjb250YWlucyBjaGFpbmVkIGludGVycnVwdHMgaW4KdGhlIHNlY29uZCBwYXRjaCBh
+bmQgbm8gbmVlZCB0byB0cmVhdCBhcyB0aGUgc3RhbmRhcmQgaGFuZGxlciwKc28gdGhpcyBzaG91
+bGQgYmUgY2FsbGVkIGluIHRoZSBndWFyZHMuCkknbGwgbW92ZSB0aGlzIGNhbGwgdG8gdGhlIHRv
+cCBvZiBkd19jaGFpbmVkX21zaV9pc3IoKS4KClRoYW5rIHlvdSwKCi0tLQpCZXN0IFJlZ2FyZHMK
+S3VuaWhpa28gSGF5YXNoaQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
