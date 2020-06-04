@@ -2,69 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3FD31EEE20
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 01:08:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ECA51EEE22
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 01:09:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AKtBIHJlp4sxTx1B1XooB6efFtj4AGUHn8wK4Wgyy8c=; b=RADlsLNR5JECBk
-	hdLlI+pAYbS7Sf3ay7BHZcw82y6XvaSGU5GD/AQagaxeYOENWtj2W/DgRYawGVZoWJfJq2JSYoAyl
-	D0oDQSWdMI+N8qeN4w4Qez6mhlwlBLtV244X25A77xAqg9wvfYDreAjADnBpEUz/NQ5O4spSHelmm
-	3mEsD5nNn2+JCqddvHt8hFGOGZ5HrjMYpjR/rgZacDXxJJSXb11GNJE0Bgaa5EsHafXrsiKyZfxh0
-	mCxPCmHxKoANLp0LqNBRN3IrX9W13SEmY6/C1+bful+7/uyeGpgW+SBv3DOn+JS3mr7K2HDit+UFI
-	w+YRhgdKbo0hKDElJsvQ==;
+	List-Owner; bh=6fppJOrmKBWnJv62LDLKj4I6OMPBWHHb7k2+GUooIVI=; b=ME/qbWuTUMntep
+	IMkAbdWTodz5XDXwt3kXXBU/ZXIQgs5vx3qAFLUw8A59IfgRFsQVhDvQnM2jFP1vM/Qt8tPNJMEyR
+	pn4PaIzbLL5DIdU7wjyT/XGqyogTydhVUR/Bdk56ceK/ZFD4EJZVf3KUsy17/hmKsC5Digp9+9v0G
+	HU19nTuwvGgnuEsX8IIAK4mp/NBjSz7LZOGM4KnMtwJPKXbGVKSlNlkpwBMMCBdJgzw20patlp33X
+	mFWA8F+M9My8GxC6p3dI1cUDIuruwd0+PbLuH1lfqlgMJvTI8eMMjmmtMtTAMfucte236sDMIY4ZW
+	9DdiCR0qOCcuuT/9M7lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgyyK-0007D4-Kp; Thu, 04 Jun 2020 23:08:28 +0000
-Received: from mail-il1-f195.google.com ([209.85.166.195])
+	id 1jgyzS-0007by-RN; Thu, 04 Jun 2020 23:09:38 +0000
+Received: from mail-il1-f194.google.com ([209.85.166.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgyy0-00076t-Ha; Thu, 04 Jun 2020 23:08:09 +0000
-Received: by mail-il1-f195.google.com with SMTP id t8so7757211ilm.7;
- Thu, 04 Jun 2020 16:08:07 -0700 (PDT)
+ id 1jgyzJ-0007bT-7F
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 23:09:30 +0000
+Received: by mail-il1-f194.google.com with SMTP id p5so7767071ile.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 04 Jun 2020 16:09:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=jRy2xtFWKNlAqAVXEHvJHfSiEZWhYR4CV8B2YeBv94Q=;
- b=hNESlPgEFzJ6RerIGB0UB5R66b2Uzv5h+0jeyFs5bN3Wqqst60YTV4nsxFUGe9qa8k
- eDD8QrvztKPd1sF1xYJCsKBQxZ0T03G1Xh3MHWPghQRI/6KI2cLIAwfd0bGBAXXM3nxx
- L2LvcOR9yXZS0+plfUVXLuNhYVwxZOEQTIm8G59trA2jwGM10TqSa0WxYPEhn4MWRaUO
- PnnBrKn9Svteghq1JzNSmRM/DVENnNVWqJT5iGPum06pkdxsNwvRs7l8W7Ak0rzNlmXS
- jqhB+r+UaONwt8z3OkCWE3Qvum+FHz3U1mLRQtjr/nJtxQnFm7ety24WC0VKvXzoNyBn
- aR8Q==
-X-Gm-Message-State: AOAM531xg8a2Hsy6tcDYeNvmghKiZGxeQO0a9L/glJ/rUIBTytteTsl7
- qNJLGQopS/bQw/ir9UkSyg==
-X-Google-Smtp-Source: ABdhPJxBwqg2KjhkMQTT+Bjb8yKCzHP3CMKvZqePsJSASFJh55N1HQlDha382TaJKKuPgN6f4WReOQ==
-X-Received: by 2002:a92:7901:: with SMTP id u1mr6285248ilc.52.1591312086941;
- Thu, 04 Jun 2020 16:08:06 -0700 (PDT)
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=yYPBulhrt5+j3gZ6UOPsWCTsIiSD9443w1u0FFugCwI=;
+ b=NV00Pl93h9imDkImmMUJmvKSsZ/JCzHtT3aYXG1sBofycvNrqXqeMyjOozXibt+V7Z
+ k7DVEcBKMu6mWrn01RZYLMJ+O/Zoi2qMs1lm/7QQ49MlMy3qBBxboHLyYAhpNlL1strp
+ fEsA8xViiTpx/OGmfS2ryuNstcsVSnVcbCxLzQQmB3OCwyiYr8T/Gg5bWLLGyKTOLy84
+ j24qW5VBuFEcGCtBewFrILOtA17kGKFM7iAwIamAd2hgWlkogB89f5kZNZkB7+F66hpL
+ D+lfnFvubiAZv8QaLSs/6VwF8T21WYiLJz2QX6PilgjLcmCmoXLBQz2ny7Ur/qUlTzim
+ H0gw==
+X-Gm-Message-State: AOAM53102EZtzkUkmnb+UGF915PGmh1xKfPGNnRQh/tWGdCfhIugYPlH
+ z4l79KLoG3siV4/uS7gmWQ==
+X-Google-Smtp-Source: ABdhPJz0xvfJ6BAoe8r3FFbzotTCpm3rEqCy3dakyBL+n5Px5TUd4cVn4xkeEp1XOa2Kt3yYWNYdPw==
+X-Received: by 2002:a92:d984:: with SMTP id r4mr6136951iln.302.1591312168185; 
+ Thu, 04 Jun 2020 16:09:28 -0700 (PDT)
 Received: from xps15 ([64.188.179.251])
- by smtp.gmail.com with ESMTPSA id z16sm2022433ilz.64.2020.06.04.16.08.05
+ by smtp.gmail.com with ESMTPSA id v20sm2168407ilc.1.2020.06.04.16.09.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 04 Jun 2020 16:08:05 -0700 (PDT)
-Received: (nullmailer pid 17414 invoked by uid 1000);
- Thu, 04 Jun 2020 23:08:04 -0000
-Date: Thu, 4 Jun 2020 17:08:04 -0600
+ Thu, 04 Jun 2020 16:09:27 -0700 (PDT)
+Received: (nullmailer pid 19307 invoked by uid 1000);
+ Thu, 04 Jun 2020 23:09:26 -0000
+Date: Thu, 4 Jun 2020 17:09:26 -0600
 From: Rob Herring <robh@kernel.org>
-To: Miquel Raynal <miquel.raynal@bootlin.com>
-Subject: Re: [PATCH v10 07/20] dt-bindings: mtd: Document boolean NAND ECC
- properties
-Message-ID: <20200604230804.GA13821@bogus>
-References: <20200603175759.19948-1-miquel.raynal@bootlin.com>
- <20200603175759.19948-8-miquel.raynal@bootlin.com>
+To: Ricardo =?iso-8859-1?Q?Ca=F1uelo?= <ricardo.canuelo@collabora.com>
+Subject: Re: [PATCH v3 4/4] dt-bindings: drm: bridge: adi, adv7511.txt:
+ convert to yaml
+Message-ID: <20200604230926.GA19232@bogus>
+References: <20200601063308.13045-1-ricardo.canuelo@collabora.com>
+ <20200601063308.13045-5-ricardo.canuelo@collabora.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200603175759.19948-8-miquel.raynal@bootlin.com>
+In-Reply-To: <20200601063308.13045-5-ricardo.canuelo@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_160808_580158_D50F537F 
-X-CRM114-Status: GOOD (  16.29  )
+X-CRM114-CacheID: sfid-20200604_160929_259965_9C157ED4 
+X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.194 listed in list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -73,10 +79,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [robherring2[at]gmail.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.166.195 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.166.195 listed in wl.mailspike.net]
+ [209.85.166.194 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -90,64 +94,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <Tudor.Ambarus@microchip.com>, Julien Su <juliensu@mxic.com.tw>,
- Richard Weinberger <richard@nod.at>,
- Boris Brezillon <boris.brezillon@collabora.com>, linux-mtd@lists.infradead.org,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Mason Yang <masonccyang@mxic.com.tw>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: marex@denx.de, devicetree@vger.kernel.org, michal.simek@xilinx.com,
+ xuwei5@hisilicon.com, robh+dt@kernel.org, laurent.pinchart@ideasonboard.com,
+ mcoquelin.stm32@gmail.com, kernel@collabora.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 03, 2020 at 07:57:46PM +0200, Miquel Raynal wrote:
-> Document nand-use-soft-ecc-engine and nand-no-ecc-engine properties.
-> The former is here to force software correction, the latter prevents
-> any correction to happen.
-> 
-> These properties (along with nand-ecc-engine) are supposed to be more
-> accurate than the current nand-ecc-modes wich is very misleading and
-> very often people think it is mandatory while the core should be
-> relied upon to decide which correction to handle.
-> 
-> nand-ecc-mode was already inacurate, but it becomes totally
-> problematic with setups where there are several hardware engines.
-> 
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+On Mon, 01 Jun 2020 08:33:08 +0200, Ricardo Ca=F1uelo wrote:
+> Convert the ADV7511/11w/13/33/35 DT bindings to json-schema. The
+> original binding has been split into two files: adi,adv7511.yaml for
+> ADV7511/11W/13 and adi,adv7533.yaml for ADV7533/35.
+> =
+
+> Signed-off-by: Ricardo Ca=F1uelo <ricardo.canuelo@collabora.com>
 > ---
->  Documentation/devicetree/bindings/mtd/nand-controller.yaml | 6 ++++++
->  1 file changed, 6 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/mtd/nand-controller.yaml b/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-> index 0969d2e6720b..a3750978ebb8 100644
-> --- a/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-> +++ b/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-> @@ -68,6 +68,12 @@ patternProperties:
->            3/ The ECC engine is external, in this case the phandle should
->            reference the specific ECC engine node.
->  
-> +      nand-use-soft-ecc-engine: true
-> +        description: Use a software ECC engine.
+>  .../bindings/display/bridge/adi,adv7511.txt   | 143 -----------
+>  .../bindings/display/bridge/adi,adv7511.yaml  | 231 ++++++++++++++++++
+>  .../bindings/display/bridge/adi,adv7533.yaml  | 175 +++++++++++++
+>  3 files changed, 406 insertions(+), 143 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/display/bridge/adi,=
+adv7511.txt
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/adi,=
+adv7511.yaml
+>  create mode 100644 Documentation/devicetree/bindings/display/bridge/adi,=
+adv7533.yaml
+> =
 
-Humm, I'm surprised this is valid YAML. nand-use-soft-ecc-engine can't 
-be both a boolean and a map (aka schema, aka dict).
 
-nand-use-soft-ecc-engine:
-  type: boolean
-  description: ...
-
-> +
-> +      nand-no-ecc-engine: true
-> +        description: Do not use any ECC correction.
-> +
->        nand-ecc-placement:
->          allOf:
->            - $ref: /schemas/types.yaml#/definitions/string
-> -- 
-> 2.20.1
-> 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
