@@ -2,59 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88DE01EDA92
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 03:43:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 25BF81EDAB0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 03:47:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=BV69Vr/92qq8VfKdV9CyQPDwwm8vMge4rFfihYqqdec=; b=ezJ
-	brX6/qywGH4/07oksgQslF3Kw2PwtAjdjNe+RvIFT5G2OFO1hOW8q5dGBa0MPW3pSimnzVHqVuBvM
-	z2WtQr8rYTrg8QvmthnZFU3HfxGANUKeSUy635Vq3Mu63mdkqQFY0twSHaGj2Zbiq2DmeO7xooxpk
-	7jRxG3xoxGG5ZHYtMLNe3s0Js6ePQ1C/yxAZ3RZNL4Hii0ePGakCIZKa5B7a8PdIYJUhLogBPUaMM
-	jRRbor2wEZNFrUOg7hXZ1vJNxXu8Hfa4nw2pz1OUSwx97OB6LL1SN2HrDGqE7Pyc1G0wzttg76r7f
-	4op/9n/ac35Wm2BtdF4/YFXHyNJLJRQ==;
+	References:List-Owner; bh=OKkpST6qQUte7Xu9l8HvZK9y8YowYqfhJEYBjc/GO2A=; b=UIy
+	6g2dfHBCUnPUYQCSnZjfppvxaMcFZPb+tyuRHtPqh2YX0hqGD+rc4GzAh7A6Fv8zelXaRTUDluwi0
+	uL6rs5UVyKnSItjHUVmNEyP6tKHR6gS0ZSmYIqYt078NW2DUF6fFR4wmKOpqvUcEwlJ2yBU2Bl8qe
+	QWVH73G4A8gFLu9xdN6+W+NMSXPAR4n8DAPYAW9ezufhSHosgxvF5Ivqis78MhKjQJbNZiBlQRwW1
+	3WpPqC8HU33R83ETyfo0G91UvfSEu6490gyo3r3L4A5ggS5ufdWAfs/AB08zB+kUmW4cbx1dluxuC
+	U6sjCDDASA+kyh/E7iqHJo0rpc3IQ3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgev7-0000I8-QL; Thu, 04 Jun 2020 01:43:49 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jgeyb-0003Ww-1G; Thu, 04 Jun 2020 01:47:25 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgev0-0000Gs-Qh
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 01:43:45 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DC0AB1A10D4;
- Thu,  4 Jun 2020 03:43:39 +0200 (CEST)
+ id 1jgeyL-0003TT-Pv
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 01:47:11 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CED362011D0;
+ Thu,  4 Jun 2020 03:47:07 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4A6211A0188;
- Thu,  4 Jun 2020 03:43:34 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id BCCB12011DF;
+ Thu,  4 Jun 2020 03:46:21 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7677940299;
- Thu,  4 Jun 2020 09:43:27 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 08582402A5;
+ Thu,  4 Jun 2020 09:46:14 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
-To: mturquette@baylibre.com, sboyd@kernel.org, robh+dt@kernel.org,
+To: a.zummo@towertech.it, alexandre.belloni@bootlin.com, robh+dt@kernel.org,
  shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
- festevam@gmail.com, aisheng.dong@nxp.com, linux-clk@vger.kernel.org,
+ festevam@gmail.com, stigge@antcom.de, linux-rtc@vger.kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH V2] dt-bindings: clock: Convert imx7ulp clock to json-schema
-Date: Thu,  4 Jun 2020 09:33:07 +0800
-Message-Id: <1591234387-15059-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2] dt-bindings: rtc: Convert imxdi rtc to json-schema
+Date: Thu,  4 Jun 2020 09:35:55 +0800
+Message-Id: <1591234555-15187-1-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_184343_144315_1205515F 
-X-CRM114-Status: GOOD (  11.83  )
+X-CRM114-CacheID: sfid-20200603_184709_974959_C4B4A599 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,364 +76,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX7ULP clock binding to DT schema format using json-schema,
-the original binding doc is actually for two clock modules(SCG and PCC),
-so split it to two binding docs, and the MPLL(mipi PLL) is NOT supposed
-to be in clock module, so remove it from binding doc as well.
+Convert the i.MXDI RTC binding to DT schema format using json-schema
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
 Changes since V1:
 	- add "additionalProperties: false".
 ---
- .../devicetree/bindings/clock/imx7ulp-clock.txt    | 103 ------------------
- .../bindings/clock/imx7ulp-pcc-clock.yaml          | 121 +++++++++++++++++++++
- .../bindings/clock/imx7ulp-scg-clock.yaml          |  99 +++++++++++++++++
- 3 files changed, 220 insertions(+), 103 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
- create mode 100644 Documentation/devicetree/bindings/clock/imx7ulp-pcc-clock.yaml
- create mode 100644 Documentation/devicetree/bindings/clock/imx7ulp-scg-clock.yaml
+ .../devicetree/bindings/rtc/imxdi-rtc.txt          | 20 ----------
+ .../devicetree/bindings/rtc/imxdi-rtc.yaml         | 44 ++++++++++++++++++++++
+ 2 files changed, 44 insertions(+), 20 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/rtc/imxdi-rtc.txt
+ create mode 100644 Documentation/devicetree/bindings/rtc/imxdi-rtc.yaml
 
-diff --git a/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt b/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
+diff --git a/Documentation/devicetree/bindings/rtc/imxdi-rtc.txt b/Documentation/devicetree/bindings/rtc/imxdi-rtc.txt
 deleted file mode 100644
-index 93d89ad..0000000
---- a/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
+index c797bc9..0000000
+--- a/Documentation/devicetree/bindings/rtc/imxdi-rtc.txt
 +++ /dev/null
-@@ -1,103 +0,0 @@
--* Clock bindings for Freescale i.MX7ULP
--
--i.MX7ULP Clock functions are under joint control of the System
--Clock Generation (SCG) modules, Peripheral Clock Control (PCC)
--modules, and Core Mode Controller (CMC)1 blocks
--
--The clocking scheme provides clear separation between M4 domain
--and A7 domain. Except for a few clock sources shared between two
--domains, such as the System Oscillator clock, the Slow IRC (SIRC),
--and and the Fast IRC clock (FIRCLK), clock sources and clock
--management are separated and contained within each domain.
--
--M4 clock management consists of SCG0, PCC0, PCC1, and CMC0 modules.
--A7 clock management consists of SCG1, PCC2, PCC3, and CMC1 modules.
--
--Note: this binding doc is only for A7 clock domain.
--
--System Clock Generation (SCG) modules:
-----------------------------------------------------------------------
--The System Clock Generation (SCG) is responsible for clock generation
--and distribution across this device. Functions performed by the SCG
--include: clock reference selection, generation of clock used to derive
--processor, system, peripheral bus and external memory interface clocks,
--source selection for peripheral clocks and control of power saving
--clock gating mode.
+@@ -1,20 +0,0 @@
+-* i.MX25 Real Time Clock controller
 -
 -Required properties:
+-- compatible: should be: "fsl,imx25-rtc"
+-- reg: physical base address of the controller and length of memory mapped
+-  region.
+-- clocks: should contain the phandle for the rtc clock
+-- interrupts: rtc alarm interrupt
 -
--- compatible:	Should be "fsl,imx7ulp-scg1".
--- reg : 	Should contain registers location and length.
--- #clock-cells:	Should be <1>.
--- clocks:	Should contain the fixed input clocks.
--- clock-names:  Should contain the following clock names:
--		"rosc", "sosc", "sirc", "firc", "upll", "mpll".
+-Optional properties:
+-- interrupts: dryice security violation interrupt (second entry)
 -
--Peripheral Clock Control (PCC) modules:
-----------------------------------------------------------------------
--The Peripheral Clock Control (PCC) is responsible for clock selection,
--optional division and clock gating mode for peripherals in their
--respected power domain
+-Example:
 -
--Required properties:
--- compatible:	Should be one of:
--		  "fsl,imx7ulp-pcc2",
--		  "fsl,imx7ulp-pcc3".
--- reg : 	Should contain registers location and length.
--- #clock-cells:	Should be <1>.
--- clocks:	Should contain the fixed input clocks.
--- clock-names:  Should contain the following clock names:
--		"nic1_bus_clk", "nic1_clk", "ddr_clk", "apll_pfd2",
--		"apll_pfd1", "apll_pfd0", "upll", "sosc_bus_clk",
--		"mpll", "firc_bus_clk", "rosc", "spll_bus_clk";
--
--The clock consumer should specify the desired clock by having the clock
--ID in its "clocks" phandle cell.
--See include/dt-bindings/clock/imx7ulp-clock.h
--for the full list of i.MX7ULP clock IDs of each module.
--
--Examples:
--
--#include <dt-bindings/clock/imx7ulp-clock.h>
--
--scg1: scg1@403e0000 {
--	compatible = "fsl,imx7ulp-scg1;
--	reg = <0x403e0000 0x10000>;
--	clocks = <&rosc>, <&sosc>, <&sirc>,
--		 <&firc>, <&upll>, <&mpll>;
--	clock-names = "rosc", "sosc", "sirc",
--		      "firc", "upll", "mpll";
--	#clock-cells = <1>;
+-rtc@53ffc000 {
+-	compatible = "fsl,imx25-rtc";
+-	reg = <0x53ffc000 0x4000>;
+-	clocks = <&clks 81>;
+-	interrupts = <25 56>;
 -};
--
--pcc2: pcc2@403f0000 {
--	compatible = "fsl,imx7ulp-pcc2";
--	reg = <0x403f0000 0x10000>;
--	#clock-cells = <1>;
--	clocks = <&scg1 IMX7ULP_CLK_NIC1_BUS_DIV>,
--		 <&scg1 IMX7ULP_CLK_NIC1_DIV>,
--		 <&scg1 IMX7ULP_CLK_DDR_DIV>,
--		 <&scg1 IMX7ULP_CLK_APLL_PFD2>,
--		 <&scg1 IMX7ULP_CLK_APLL_PFD1>,
--		 <&scg1 IMX7ULP_CLK_APLL_PFD0>,
--		 <&scg1 IMX7ULP_CLK_UPLL>,
--		 <&scg1 IMX7ULP_CLK_SOSC_BUS_CLK>,
--		 <&scg1 IMX7ULP_CLK_FIRC_BUS_CLK>,
--		 <&scg1 IMX7ULP_CLK_ROSC>,
--		 <&scg1 IMX7ULP_CLK_SPLL_BUS_CLK>;
--	clock-names = "nic1_bus_clk", "nic1_clk", "ddr_clk",
--		      "apll_pfd2", "apll_pfd1", "apll_pfd0",
--		      "upll", "sosc_bus_clk", "mpll",
--		      "firc_bus_clk", "rosc", "spll_bus_clk";
--};
--
--usdhc1: usdhc@40380000 {
--	compatible = "fsl,imx7ulp-usdhc";
--	reg = <0x40380000 0x10000>;
--	interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
--	clocks = <&scg1 IMX7ULP_CLK_NIC1_BUS_DIV>,
--		 <&scg1 IMX7ULP_CLK_NIC1_DIV>,
--		 <&pcc2 IMX7ULP_CLK_USDHC1>;
--	clock-names ="ipg", "ahb", "per";
--	bus-width = <4>;
--};
-diff --git a/Documentation/devicetree/bindings/clock/imx7ulp-pcc-clock.yaml b/Documentation/devicetree/bindings/clock/imx7ulp-pcc-clock.yaml
+diff --git a/Documentation/devicetree/bindings/rtc/imxdi-rtc.yaml b/Documentation/devicetree/bindings/rtc/imxdi-rtc.yaml
 new file mode 100644
-index 0000000..7caf5ce
+index 0000000..06bd737
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/clock/imx7ulp-pcc-clock.yaml
-@@ -0,0 +1,121 @@
++++ b/Documentation/devicetree/bindings/rtc/imxdi-rtc.yaml
+@@ -0,0 +1,44 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/clock/imx7ulp-pcc-clock.yaml#
++$id: http://devicetree.org/schemas/rtc/imxdi-rtc.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Clock bindings for Freescale i.MX7ULP Peripheral Clock Control (PCC) modules
++title: i.MX25 Real Time Clock controller
 +
 +maintainers:
-+  - A.s. Dong <aisheng.dong@nxp.com>
-+
-+description: |
-+  i.MX7ULP Clock functions are under joint control of the System
-+  Clock Generation (SCG) modules, Peripheral Clock Control (PCC)
-+  modules, and Core Mode Controller (CMC)1 blocks
-+
-+  The clocking scheme provides clear separation between M4 domain
-+  and A7 domain. Except for a few clock sources shared between two
-+  domains, such as the System Oscillator clock, the Slow IRC (SIRC),
-+  and and the Fast IRC clock (FIRCLK), clock sources and clock
-+  management are separated and contained within each domain.
-+
-+  M4 clock management consists of SCG0, PCC0, PCC1, and CMC0 modules.
-+  A7 clock management consists of SCG1, PCC2, PCC3, and CMC1 modules.
-+
-+  Note: this binding doc is only for A7 clock domain.
-+
-+  The Peripheral Clock Control (PCC) is responsible for clock selection,
-+  optional division and clock gating mode for peripherals in their
-+  respected power domain.
-+
-+  The clock consumer should specify the desired clock by having the clock
-+  ID in its "clocks" phandle cell.
-+  See include/dt-bindings/clock/imx7ulp-clock.h for the full list of
-+  i.MX7ULP clock IDs of each module.
++  - Roland Stigge <stigge@antcom.de>
 +
 +properties:
 +  compatible:
-+    enum:
-+      - fsl,imx7ulp-pcc2
-+      - fsl,imx7ulp-pcc3
++    const: fsl,imx25-rtc
 +
 +  reg:
 +    maxItems: 1
 +
-+  '#clock-cells':
-+    const: 1
++  interrupts:
++    items:
++      - description: rtc alarm interrupt
++      - description: dryice security violation interrupt
++    minItems: 1
++    maxItems: 2
 +
 +  clocks:
-+    items:
-+      - description: nic1 bus clock
-+      - description: nic1 clock
-+      - description: ddr clock
-+      - description: apll pfd2
-+      - description: apll pfd1
-+      - description: apll pfd0
-+      - description: usb pll
-+      - description: system osc bus clock
-+      - description: fast internal reference clock bus
-+      - description: rtc osc
-+      - description: system pll bus clock
-+
-+  clock-names:
-+    items:
-+      - const: nic1_bus_clk
-+      - const: nic1_clk
-+      - const: ddr_clk
-+      - const: apll_pfd2
-+      - const: apll_pfd1
-+      - const: apll_pfd0
-+      - const: upll
-+      - const: sosc_bus_clk
-+      - const: firc_bus_clk
-+      - const: rosc
-+      - const: spll_bus_clk
++    maxItems: 1
 +
 +required:
 +  - compatible
 +  - reg
-+  - '#clock-cells'
++  - interrupts
 +  - clocks
-+  - clock-names
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    #include <dt-bindings/clock/imx7ulp-clock.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+
-+    clock-controller@403f0000 {
-+        compatible = "fsl,imx7ulp-pcc2";
-+        reg = <0x403f0000 0x10000>;
-+        #clock-cells = <1>;
-+        clocks = <&scg1 IMX7ULP_CLK_NIC1_BUS_DIV>,
-+                 <&scg1 IMX7ULP_CLK_NIC1_DIV>,
-+                 <&scg1 IMX7ULP_CLK_DDR_DIV>,
-+                 <&scg1 IMX7ULP_CLK_APLL_PFD2>,
-+                 <&scg1 IMX7ULP_CLK_APLL_PFD1>,
-+                 <&scg1 IMX7ULP_CLK_APLL_PFD0>,
-+                 <&scg1 IMX7ULP_CLK_UPLL>,
-+                 <&scg1 IMX7ULP_CLK_SOSC_BUS_CLK>,
-+                 <&scg1 IMX7ULP_CLK_FIRC_BUS_CLK>,
-+                 <&scg1 IMX7ULP_CLK_ROSC>,
-+                 <&scg1 IMX7ULP_CLK_SPLL_BUS_CLK>;
-+         clock-names = "nic1_bus_clk", "nic1_clk", "ddr_clk",
-+                       "apll_pfd2", "apll_pfd1", "apll_pfd0",
-+                       "upll", "sosc_bus_clk", "firc_bus_clk",
-+                       "rosc", "spll_bus_clk";
-+    };
-+
-+    mmc@40380000 {
-+        compatible = "fsl,imx7ulp-usdhc";
-+        reg = <0x40380000 0x10000>;
-+        interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
-+        clocks = <&scg1 IMX7ULP_CLK_NIC1_BUS_DIV>,
-+                 <&scg1 IMX7ULP_CLK_NIC1_DIV>,
-+                 <&pcc2 IMX7ULP_CLK_USDHC1>;
-+        clock-names ="ipg", "ahb", "per";
-+        bus-width = <4>;
-+    };
-diff --git a/Documentation/devicetree/bindings/clock/imx7ulp-scg-clock.yaml b/Documentation/devicetree/bindings/clock/imx7ulp-scg-clock.yaml
-new file mode 100644
-index 0000000..ee8efb4
---- /dev/null
-+++ b/Documentation/devicetree/bindings/clock/imx7ulp-scg-clock.yaml
-@@ -0,0 +1,99 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/clock/imx7ulp-scg-clock.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Clock bindings for Freescale i.MX7ULP System Clock Generation (SCG) modules
-+
-+maintainers:
-+  - A.s. Dong <aisheng.dong@nxp.com>
-+
-+description: |
-+  i.MX7ULP Clock functions are under joint control of the System
-+  Clock Generation (SCG) modules, Peripheral Clock Control (PCC)
-+  modules, and Core Mode Controller (CMC)1 blocks
-+
-+  The clocking scheme provides clear separation between M4 domain
-+  and A7 domain. Except for a few clock sources shared between two
-+  domains, such as the System Oscillator clock, the Slow IRC (SIRC),
-+  and and the Fast IRC clock (FIRCLK), clock sources and clock
-+  management are separated and contained within each domain.
-+
-+  M4 clock management consists of SCG0, PCC0, PCC1, and CMC0 modules.
-+  A7 clock management consists of SCG1, PCC2, PCC3, and CMC1 modules.
-+
-+  Note: this binding doc is only for A7 clock domain.
-+
-+  The System Clock Generation (SCG) is responsible for clock generation
-+  and distribution across this device. Functions performed by the SCG
-+  include: clock reference selection, generation of clock used to derive
-+  processor, system, peripheral bus and external memory interface clocks,
-+  source selection for peripheral clocks and control of power saving
-+  clock gating mode.
-+
-+  The clock consumer should specify the desired clock by having the clock
-+  ID in its "clocks" phandle cell.
-+  See include/dt-bindings/clock/imx7ulp-clock.h for the full list of
-+  i.MX7ULP clock IDs of each module.
-+
-+properties:
-+  compatible:
-+    const: fsl,imx7ulp-scg1
-+
-+  reg:
-+    maxItems: 1
-+
-+  '#clock-cells':
-+    const: 1
-+
-+  clocks:
-+    items:
-+      - description: rtc osc
-+      - description: system osc
-+      - description: slow internal reference clock
-+      - description: fast internal reference clock
-+      - description: usb PLL
-+
-+  clock-names:
-+    items:
-+      - const: rosc
-+      - const: sosc
-+      - const: sirc
-+      - const: firc
-+      - const: upll
-+
-+required:
-+  - compatible
-+  - reg
-+  - '#clock-cells'
-+  - clocks
-+  - clock-names
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/imx7ulp-clock.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+
-+    clock-controller@403e0000 {
-+        compatible = "fsl,imx7ulp-scg1";
-+        reg = <0x403e0000 0x10000>;
-+        clocks = <&rosc>, <&sosc>, <&sirc>,
-+                 <&firc>, <&upll>;
-+        clock-names = "rosc", "sosc", "sirc",
-+                      "firc", "upll";
-+        #clock-cells = <1>;
-+    };
-+
-+    mmc@40380000 {
-+        compatible = "fsl,imx7ulp-usdhc";
-+        reg = <0x40380000 0x10000>;
-+        interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
-+        clocks = <&scg1 IMX7ULP_CLK_NIC1_BUS_DIV>,
-+                 <&scg1 IMX7ULP_CLK_NIC1_DIV>,
-+                 <&pcc2 IMX7ULP_CLK_USDHC1>;
-+        clock-names ="ipg", "ahb", "per";
-+        bus-width = <4>;
++    rtc@53ffc000 {
++        compatible = "fsl,imx25-rtc";
++        reg = <0x53ffc000 0x4000>;
++        clocks = <&clks 81>;
++        interrupts = <25>, <56>;
 +    };
 -- 
 2.7.4
