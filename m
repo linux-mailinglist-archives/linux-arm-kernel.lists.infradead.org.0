@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC3241EE0A4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:08:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 230B81EE0A2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:08:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WAewu9y5+yffzw+xRqQV1QGFL02NpnrZ2nr8e3xjPEg=; b=rDxjEcD2xL9VRI
-	g7cU3a9t7DgYMQD+izN7uNt5pyefhrx9bswpQYmrh70AdkcaUGSMxKbmxLEsS9kMSUKoXdApv2VIi
-	hZsckYTHsZWVsn9EG/hh8ryFFNYcP4+TRe8tHn+lAJ1cjZ3nsUcNN5AE6V+9Cz0DyuJc7EOuinQCl
-	FxbXIzWD3ap+KUGAMJPn5A5BlSAKDSbQ28GEUMXAb1VRHpquO2OZosrQWFtJL8oaA3Ix0eRW+x72s
-	YLBUU/n7kpr7Memg8/Gau2F2zLZD3vx0OqLDdzuEEJ8micvB9AKXWcVr6yqQetERzuZYGkhrYRT1B
-	sHzyI0PZ/rYyZaKDpIIw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=BINc/LATIiqvyH0OScmGLEO6ZeoyeS2mr0K2qaNzyM4=; b=fp1es9IJt3YRya
+	dXTDn+oSiDE8jjeHA/KWGqm2615tYEgi/Jsi7Awuu42mJGxjc5J1qarfcZixgZ49EU1eXM4l2+Yvp
+	BTrryGYRE9uTU1N2JkIlDlRMm2fGsf4j5nkEk5oKNj5FAET8n3D0e+z198o+zzWCLfoSF+pvUn34m
+	Pt1reaAumEZu3Vv+CEPvXod+PL7LrHebuDKepj8g84RcpcTLRWe1s1HA9GcUTbZ/AB92NtT75cWM1
+	pu0z8qPby3yLD4BcQUGRalW1LRiktLCzq3+WqKsmmNff35FrE3gB0RAnjJAiLqXhc23voQ+ChRhtz
+	cqguBQ266KwSg9TkgoMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jglrf-00076y-CJ; Thu, 04 Jun 2020 09:08:43 +0000
+	id 1jglrP-0006u2-5f; Thu, 04 Jun 2020 09:08:27 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jglr5-0006pP-MY; Thu, 04 Jun 2020 09:08:10 +0000
-X-UUID: 88083503ed254b499c0453e3be905b69-20200604
+ id 1jglr5-0006pQ-MY; Thu, 04 Jun 2020 09:08:10 +0000
+X-UUID: 0d2763b65e96487ab203f8ee114907a1-20200604
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=dZBa6I/HS2qauAyDcmCVL1X6IL3ygiBUPYAPKFwo7xo=; 
- b=D/hiq+qgyqFn5QCSb/W6XVJbIUCloiFV2dLcW2kGmE9xlVqEroaXLrjQ1kec3IyptCgIxLDyn0KpPnTUl82yV6FBgGYzjBIT1ip1xRuntrpihqDn4ZI8CVrFgBjze3OK/SNVxeWOYeR95qNLwVR0fxtNTgQCEbljrAy0mS7mcYk=;
-X-UUID: 88083503ed254b499c0453e3be905b69-20200604
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=vNTRRvj2mI0CwYUwHIUwitX832SWdGrxETBfN5PZOa0=; 
+ b=qDGdaABw02nWs5Lsv5ac7HkkwZMad4aVr8CSkfUa15SX0ziglfzj2yGwc4W/SOTwL1wgz0QPN5t+XlY3jK0UoW8Obvyt2XNTfgHw1cEtlTJ0uEBwXE6RPxSHB7kHPc46p2ut5RInUAjayGEjnVIDGmIG4DDcOoKnyKP/pfOgWDc=;
+X-UUID: 0d2763b65e96487ab203f8ee114907a1-20200604
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <xia.jiang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1541620013; Thu, 04 Jun 2020 01:07:56 -0800
+ with ESMTP id 1572099063; Thu, 04 Jun 2020 01:07:56 -0800
 Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 4 Jun 2020 02:08:00 -0700
+ 15.0.1497.2; Thu, 4 Jun 2020 02:08:01 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
  mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 4 Jun 2020 17:07:58 +0800
+ 15.0.1497.2; Thu, 4 Jun 2020 17:07:59 +0800
 Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 4 Jun 2020 17:07:56 +0800
+ Transport; Thu, 4 Jun 2020 17:07:58 +0800
 From: Xia Jiang <xia.jiang@mediatek.com>
 To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
  <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
  Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
 Subject: [PATCH RESEND v9 00/18] Add support for mt2701 JPEG ENC support
-Date: Thu, 4 Jun 2020 17:05:34 +0800
-Message-ID: <20200604090553.10861-1-xia.jiang@mediatek.com>
+Date: Thu, 4 Jun 2020 17:05:35 +0800
+Message-ID: <20200604090553.10861-2-xia.jiang@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20200604090553.10861-1-xia.jiang@mediatek.com>
+References: <20200604090553.10861-1-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_020807_758323_2CFD3CFC 
-X-CRM114-Status: UNSURE (   4.40  )
+X-CRM114-CacheID: sfid-20200604_020807_757102_24A29FB6 
+X-CRM114-Status: UNSURE (   4.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -89,8 +91,8 @@ Cc: maoguang.meng@mediatek.com, devicetree@vger.kernel.org,
  mojahsu@chromium.org, srv_heupstream@mediatek.com,
  linux-kernel@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
  senozhatsky@chromium.org, sj.huang@mediatek.com, drinkcat@chromium.org,
- linux-mediatek@lists.infradead.org, linux-media@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, Xia Jiang <xia.jiang@mediatek.com>,
+ linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -330,7 +332,7 @@ Xia Jiang (18):
  .../bindings/media/mediatek-jpeg-encoder.txt  |   37 +
  arch/arm/boot/dts/mt2701.dtsi                 |   13 +
  drivers/media/platform/mtk-jpeg/Makefile      |    5 +-
- .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 1130 ++++++++++++-----
+ .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 1134 ++++++++++++-----
  .../media/platform/mtk-jpeg/mtk_jpeg_core.h   |   66 +-
  .../{mtk_jpeg_hw.c => mtk_jpeg_dec_hw.c}      |   10 +-
  .../{mtk_jpeg_hw.h => mtk_jpeg_dec_hw.h}      |   14 +-
@@ -339,7 +341,7 @@ Xia Jiang (18):
  .../{mtk_jpeg_reg.h => mtk_jpeg_dec_reg.h}    |   19 +-
  .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c |  193 +++
  .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h |  123 ++
- 12 files changed, 1282 insertions(+), 332 deletions(-)
+ 12 files changed, 1284 insertions(+), 334 deletions(-)
  create mode 100644 Documentation/devicetree/bindings/media/mediatek-jpeg-encoder.txt
  rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_hw.c => mtk_jpeg_dec_hw.c} (98%)
  rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_hw.h => mtk_jpeg_dec_hw.h} (89%)
@@ -350,8 +352,7 @@ Xia Jiang (18):
  create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
 
 -- 
-2.18.0 
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
