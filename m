@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E2721EDAFD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 04:00:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17C5F1EDAFE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 04:00:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=+RwKojhCBgy3u8JTf9zT+kGipf6mRYDW/YzmFMH1DTY=; b=bFc
-	95LsVfsdQY2TruaJAba76ICE196tKtE5OVTBm9AzlpTkdctC6vtydBVrYG/XChlx+TZp8Sm8KT+Fb
-	kdvC/SAbk5/Pfj59dmqLhI+K5LUhReoVaZpBY0YFOxEyJcjMh6GUVGzqZ1P+0nwuoD2ZR7aH1U2h5
-	r6F8kIVflu1b1GhgB9nkpzKbDgIb0wFn0dmWji1gtYeWdn69RJdBF8WWk5rXI+VftpNtEnUopv9n5
-	5Yu60KEjynS+pwLMGNvKujIcoMcurffDwaFYXvRfUwVk9VWpLIqKsNH6J+cP+REgR7MOn6bGAdQap
-	8VFKzWh4WlbZDcc2kd1kOBTuBDZEsTQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=UF9UD5c6HSj5Vrn2o/mk61EFpBuMZYf81ASpPm0Awb8=; b=DX7Y5f012KPQS3kn4zryWs4LJG
+	X3hr9E0E94f8m1DGGKunN3yzeU/9+VnE7h6xhBPOXXg6MkxQU00pE/wYXGHTo9/Az0NWaqtpc4Owc
+	Df1vy+x28yCxw57q00zehbUCq2OGi3J6rxB0u1H5LZ4jULV0053v1AMhksm3mzJyvt0wwHVuEPybW
+	ge+iXL2UGAJFZkb7GB1s7TG+S5ZzdvvG4YCIYG4BnaxDn9cO3fmPZXGGwMws1dWlHSf28PGTRUWfr
+	5csDdENktOWTNs9tdUFpN7lepL7ZrZYZQX9XA0U8HxLDfUxjzfm+wMwygdXnwuX6ESAx0ZKKQm94w
+	i2ByQ1wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgfAl-00032a-MZ; Thu, 04 Jun 2020 01:59:59 +0000
+	id 1jgfB7-00039m-3Y; Thu, 04 Jun 2020 02:00:21 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgfAe-00031q-Ig
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 01:59:53 +0000
+ id 1jgfAf-00031r-Ch
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 01:59:55 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F1E431A0191;
- Thu,  4 Jun 2020 03:59:50 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3723F1A10CF;
+ Thu,  4 Jun 2020 03:59:52 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id B6F1C1A016E;
- Thu,  4 Jun 2020 03:59:45 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EFA041A0192;
+ Thu,  4 Jun 2020 03:59:46 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 04E88402B0;
- Thu,  4 Jun 2020 09:59:38 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 3D881402B3;
+ Thu,  4 Jun 2020 09:59:40 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: aisheng.dong@nxp.com, robh+dt@kernel.org, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  linux@rempel-privat.de, wolfram@the-dreams.de, linux-i2c@vger.kernel.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH V2 0/3] Convert i.MX/MXS I2C/LPI2C binding doc to json-schema
-Date: Thu,  4 Jun 2020 09:49:15 +0800
-Message-Id: <1591235358-15516-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH V2 1/3] dt-bindings: i2c: Convert imx lpi2c to json-schema
+Date: Thu,  4 Jun 2020 09:49:16 +0800
+Message-Id: <1591235358-15516-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1591235358-15516-1-git-send-email-Anson.Huang@nxp.com>
+References: <1591235358-15516-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_185952_751782_D9F6EEAF 
-X-CRM114-Status: UNSURE (   6.17  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200603_185953_700922_0AE97538 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -76,31 +78,98 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Coverts i.MX/MXS I2C/LPI2C binding doc to json-schema, some examples are too old,
-update them based on latest DT file, also add more compatible based on supported SoCs.
+Convert the i.MX LPI2C binding to DT schema format using json-schema
 
-Compated to V1, this patch series adds "additionalProperties: false" for each
-binding doc.
-
-Anson Huang (3):
-  dt-bindings: i2c: Convert imx lpi2c to json-schema
-  dt-bindings: i2c: Convert mxs i2c to json-schema
-  dt-bindings: i2c: Convert imx i2c to json-schema
-
- .../devicetree/bindings/i2c/i2c-imx-lpi2c.txt      |  20 ----
- .../devicetree/bindings/i2c/i2c-imx-lpi2c.yaml     |  47 ++++++++
- Documentation/devicetree/bindings/i2c/i2c-imx.txt  |  49 ---------
- Documentation/devicetree/bindings/i2c/i2c-imx.yaml | 119 +++++++++++++++++++++
- Documentation/devicetree/bindings/i2c/i2c-mxs.txt  |  25 -----
- Documentation/devicetree/bindings/i2c/i2c-mxs.yaml |  55 ++++++++++
- 6 files changed, 221 insertions(+), 94 deletions(-)
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V1:
+	- add "additionalProperties: false".
+---
+ .../devicetree/bindings/i2c/i2c-imx-lpi2c.txt      | 20 ---------
+ .../devicetree/bindings/i2c/i2c-imx-lpi2c.yaml     | 47 ++++++++++++++++++++++
+ 2 files changed, 47 insertions(+), 20 deletions(-)
  delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.txt
  create mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.yaml
- delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx.txt
- create mode 100644 Documentation/devicetree/bindings/i2c/i2c-imx.yaml
- delete mode 100644 Documentation/devicetree/bindings/i2c/i2c-mxs.txt
- create mode 100644 Documentation/devicetree/bindings/i2c/i2c-mxs.yaml
 
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.txt b/Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.txt
+deleted file mode 100644
+index f0c072f..0000000
+--- a/Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.txt
++++ /dev/null
+@@ -1,20 +0,0 @@
+-* Freescale Low Power Inter IC (LPI2C) for i.MX
+-
+-Required properties:
+-- compatible :
+-  - "fsl,imx7ulp-lpi2c" for LPI2C compatible with the one integrated on i.MX7ULP soc
+-  - "fsl,imx8qxp-lpi2c" for LPI2C compatible with the one integrated on i.MX8QXP soc
+-  - "fsl,imx8qm-lpi2c" for LPI2C compatible with the one integrated on i.MX8QM soc
+-- reg : address and length of the lpi2c master registers
+-- interrupts : lpi2c interrupt
+-- clocks : lpi2c clock specifier
+-
+-Examples:
+-
+-lpi2c7: lpi2c7@40a50000 {
+-	compatible = "fsl,imx7ulp-lpi2c";
+-	reg = <0x40A50000 0x10000>;
+-	interrupt-parent = <&intc>;
+-	interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
+-	clocks = <&clks IMX7ULP_CLK_LPI2C7>;
+-};
+diff --git a/Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.yaml b/Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.yaml
+new file mode 100644
+index 0000000..ac0bc5d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i2c/i2c-imx-lpi2c.yaml
+@@ -0,0 +1,47 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i2c/i2c-imx-lpi2c.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale Low Power Inter IC (LPI2C) for i.MX
++
++maintainers:
++  - Anson Huang <Anson.Huang@nxp.com>
++
++properties:
++  compatible:
++    enum:
++      - fsl,imx7ulp-lpi2c
++      - fsl,imx8qxp-lpi2c
++      - fsl,imx8qm-lpi2c
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/clock/imx7ulp-clock.h>
++    #include <dt-bindings/interrupt-controller/arm-gic.h>
++
++    lpi2c7@40a50000 {
++        compatible = "fsl,imx7ulp-lpi2c";
++        reg = <0x40A50000 0x10000>;
++        interrupt-parent = <&intc>;
++        interrupts = <GIC_SPI 37 IRQ_TYPE_LEVEL_HIGH>;
++        clocks = <&clks IMX7ULP_CLK_LPI2C7>;
++    };
 -- 
 2.7.4
 
