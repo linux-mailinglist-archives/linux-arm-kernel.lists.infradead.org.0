@@ -2,63 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 850D31EDB12
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 04:06:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C0291EDB2A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 04:24:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=iQgeOflrH9hA7l4qflRyw64AUBlHfPDzaWSQVMADGbc=; b=sMEqAVhFQ48U2smIKL8FplRssB
-	0TKzVKW4QKmg0lI6F2GUlCl1nrR0HMXJkiKz1RmMdd2oZdEWvY2WYVv5cXL60Wk6Aa8aTfh0mpgHI
-	JJbZDKsxAY0PK+QJef2QSKPp1FOj0k66c43bVU9fznAKYHGqHV8Ei1ZWHUIMNSxqOMVSGQX65onCl
-	HafKmSN7HzbK2EQKNhBe/u8nbAowKQPUgSby27o6Ns9pCyUMBRhLYusS7kKnnFFfGLFcGAkoZFwWC
-	l63t0TSKclxkhs2A8sS7Y3kUBJCDmoeBI55pNJZgKTaItlKUONxZVtT0O5b9/q+RI6GRabJFngi4Q
-	clzBoVxA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=u2GVe2ReCMa2iCKMkoYIh3io2yu3Kf61PYAt5i7uCi0=; b=orOdpFyt4ARSYP
+	uiVLfiEPuUdi6O2mDp+S5a+67+7Vm+YGI2jqTU/+AS2OmpFnwvFdWXihOG5aDsmkqobeyHEbmGdOQ
+	bOMKOeBVv9jlk1hwpjioHgosoBZp1xwuG0nZTfSqkiW9m9nsm1jqsBrp939Nuq4J37IMax7Xx7dei
+	STxqaOhNcvG221yYGmdrJLZGwvK6dy+vrlCasfHMHoQ8N3RoCb/+8KT+iGa0Kp30UDdml8ND9kLIb
+	hNKeSPQbc8FYDH9d/DY/+ap7qLIbIMD+YSoI7FWndkesC7KDsglKUE2i0habi3zdek1YtAYZsUaF8
+	O2vLOegfS51Sp5pvDJig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgfHR-0001rR-Ff; Thu, 04 Jun 2020 02:06:53 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jgfYf-0002tu-V6; Thu, 04 Jun 2020 02:24:42 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgfGh-0001Dg-3k
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 02:06:09 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A612520011E;
- Thu,  4 Jun 2020 04:06:05 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 97C5020013B;
- Thu,  4 Jun 2020 04:06:00 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 4EFFF402B0;
- Thu,  4 Jun 2020 10:05:54 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: broonie@kernel.org, robh+dt@kernel.org, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- marex@denx.de, linux-spi@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH V2 3/3] dt-bindings: spi: Convert imx lpspi to json-schema
-Date: Thu,  4 Jun 2020 09:55:31 +0800
-Message-Id: <1591235731-15673-4-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1591235731-15673-1-git-send-email-Anson.Huang@nxp.com>
-References: <1591235731-15673-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jgfYS-0002qn-8Z; Thu, 04 Jun 2020 02:24:30 +0000
+X-UUID: 0aa835c512854012b0825318d361e2d9-20200603
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=S8/G8H4ee2fKmt6XTMkNwIsdSd2Fv/bh/YhgtUNhMjM=; 
+ b=Je1ADiZST8rWUqKWZ6qjIkE3BWFpfEhPY3HJkKVti62K0okykk+iJYL60U9EjGjaScNBojCovZsSQF3WiPPYllE34OvCC4PALDrrKYaUq2ctAwF5/PneKwq0/ArOjreDCIUCusk7R8nucvcSDytBlYsK3IoCoBFzmIgmAFzStKw=;
+X-UUID: 0aa835c512854012b0825318d361e2d9-20200603
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 4828637; Wed, 03 Jun 2020 18:24:16 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 3 Jun 2020 19:16:17 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Thu, 4 Jun 2020 10:16:02 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 4 Jun 2020 10:16:07 +0800
+Message-ID: <1591236845.8804.547.camel@mhfsdcap03>
+Subject: Re: [V9, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: <linus.walleij@linaro.org>
+Date: Thu, 4 Jun 2020 10:14:05 +0800
+In-Reply-To: <20200523084103.31276-3-dongchun.zhu@mediatek.com>
+References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
+ <20200523084103.31276-3-dongchun.zhu@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: 6A34FB1D1640F6C499464C55E91F91B476FD7382CEF258F79FD1FE8DAF5955EA2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_190607_448985_171E90B4 
-X-CRM114-Status: GOOD (  12.16  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200603_192428_322264_3BC8DA3D 
+X-CRM114-Status: GOOD (  14.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,132 +84,226 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: mark.rutland@arm.com, drinkcat@chromium.org,
+ andriy.shevchenko@linux.intel.com, louis.kuo@mediatek.com,
+ srv_heupstream@mediatek.com, devicetree@vger.kernel.org,
+ shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ dongchun.zhu@mediatek.com, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the i.MX LPSPI binding to DT schema format using json-schema
+Hi Tomasz, Sakari, and sirs,
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
-Changes since V1:
-	- add "unevaluatedProperties: false".
----
- .../devicetree/bindings/spi/spi-fsl-lpspi.txt      | 29 ----------
- .../devicetree/bindings/spi/spi-fsl-lpspi.yaml     | 62 ++++++++++++++++++++++
- 2 files changed, 62 insertions(+), 29 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/spi/spi-fsl-lpspi.txt
- create mode 100644 Documentation/devicetree/bindings/spi/spi-fsl-lpspi.yaml
+Could anyone help to review this patch?
 
-diff --git a/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.txt b/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.txt
-deleted file mode 100644
-index e71b81a..0000000
---- a/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.txt
-+++ /dev/null
-@@ -1,29 +0,0 @@
--* Freescale Low Power SPI (LPSPI) for i.MX
--
--Required properties:
--- compatible :
--  - "fsl,imx7ulp-spi" for LPSPI compatible with the one integrated on i.MX7ULP soc
--  - "fsl,imx8qxp-spi" for LPSPI compatible with the one integrated on i.MX8QXP soc
--- reg : address and length of the lpspi master registers
--- interrupt-parent : core interrupt controller
--- interrupts : lpspi interrupt
--- clocks : lpspi clock specifier. Its number and order need to correspond to the
--	   value in clock-names.
--- clock-names : Corresponding to per clock and ipg clock in "clocks"
--		respectively. In i.MX7ULP, it only has per clk, so use CLK_DUMMY
--		to fill the "ipg" blank.
--- spi-slave : spi slave mode support. In slave mode, add this attribute without
--	      value. In master mode, remove it.
--
--Examples:
--
--lpspi2: lpspi@40290000 {
--	compatible = "fsl,imx7ulp-spi";
--	reg = <0x40290000 0x10000>;
--	interrupt-parent = <&intc>;
--	interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
--	clocks = <&clks IMX7ULP_CLK_LPSPI2>,
--		 <&clks IMX7ULP_CLK_DUMMY>;
--	clock-names = "per", "ipg";
--	spi-slave;
--};
-diff --git a/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.yaml b/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.yaml
-new file mode 100644
-index 0000000..8ceb529
---- /dev/null
-+++ b/Documentation/devicetree/bindings/spi/spi-fsl-lpspi.yaml
-@@ -0,0 +1,62 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/spi/spi-fsl-lpspi.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Freescale Low Power SPI (LPSPI) for i.MX
-+
-+maintainers:
-+  - Anson Huang <Anson.Huang@nxp.com>
-+
-+allOf:
-+  - $ref: "/schemas/spi/spi-controller.yaml#"
-+
-+properties:
-+  compatible:
-+    enum:
-+      - fsl,imx7ulp-spi
-+      - fsl,imx8qxp-spi
-+
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: SoC SPI per clock
-+      - description: SoC SPI ipg clock
-+    maxItems: 2
-+
-+  clock-names:
-+    items:
-+      - const: per
-+      - const: ipg
-+    maxItems: 2
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
-+
-+unevaluatedProperties: false
-+
-+examples:
-+  - |
-+    #include <dt-bindings/clock/imx7ulp-clock.h>
-+    #include <dt-bindings/interrupt-controller/arm-gic.h>
-+
-+    spi@40290000 {
-+        compatible = "fsl,imx7ulp-spi";
-+        reg = <0x40290000 0x10000>;
-+        interrupt-parent = <&intc>;
-+        interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
-+        clocks = <&clks IMX7ULP_CLK_LPSPI2>,
-+                 <&clks IMX7ULP_CLK_DUMMY>;
-+        clock-names = "per", "ipg";
-+        spi-slave;
-+    };
--- 
-2.7.4
+On Sat, 2020-05-23 at 16:41 +0800, Dongchun Zhu wrote:
+> Add a V4L2 sub-device driver for OV02A10 image sensor.
+> 
+> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> ---
+>  MAINTAINERS                 |    1 +
+>  drivers/media/i2c/Kconfig   |   13 +
+>  drivers/media/i2c/Makefile  |    1 +
+>  drivers/media/i2c/ov02a10.c | 1025 +++++++++++++++++++++++++++++++++++++++++++
+>  4 files changed, 1040 insertions(+)
+>  create mode 100644 drivers/media/i2c/ov02a10.c
+> 
 
+[snip]
+
+> +static int ov02a10_probe(struct i2c_client *client)
+> +{
+> +	struct device *dev = &client->dev;
+> +	struct ov02a10 *ov02a10;
+> +	unsigned int rotation;
+> +	unsigned int clock_lane_tx_speed;
+> +	unsigned int i;
+> +	int ret;
+> +
+> +	ov02a10 = devm_kzalloc(dev, sizeof(*ov02a10), GFP_KERNEL);
+> +	if (!ov02a10)
+> +		return -ENOMEM;
+> +
+> +	ret = ov02a10_check_hwcfg(dev, ov02a10);
+> +	if (ret) {
+> +		dev_err(dev, "failed to check HW configuration: %d", ret);
+> +		return ret;
+> +	}
+> +
+> +	v4l2_i2c_subdev_init(&ov02a10->subdev, client, &ov02a10_subdev_ops);
+> +	ov02a10->mipi_clock_tx_speed = OV02A10_MIPI_TX_SPEED_DEFAULT;
+> +	ov02a10->fmt.code = MEDIA_BUS_FMT_SBGGR10_1X10;
+> +
+> +	/* Optional indication of physical rotation of sensor */
+> +	ret = fwnode_property_read_u32(dev_fwnode(dev), "rotation", &rotation);
+> +	if (!ret && rotation == 180) {
+> +		ov02a10->upside_down = true;
+> +		ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
+> +	}
+> +
+> +	/* Optional indication of mipi TX speed */
+> +	ret = fwnode_property_read_u32(dev_fwnode(dev), "ovti,mipi-tx-speed",
+> +				       &clock_lane_tx_speed);
+> +
+> +	if (!ret)
+> +		ov02a10->mipi_clock_tx_speed = clock_lane_tx_speed;
+> +
+> +	/* Get system clock (eclk) */
+> +	ov02a10->eclk = devm_clk_get(dev, "eclk");
+> +	if (IS_ERR(ov02a10->eclk)) {
+> +		ret = PTR_ERR(ov02a10->eclk);
+> +		dev_err(dev, "failed to get eclk %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ret = fwnode_property_read_u32(dev_fwnode(dev), "clock-frequency",
+> +				       &ov02a10->eclk_freq);
+> +	if (ret) {
+> +		dev_err(dev, "failed to get eclk frequency\n");
+> +		return ret;
+> +	}
+> +
+> +	ret = clk_set_rate(ov02a10->eclk, ov02a10->eclk_freq);
+> +	if (ret) {
+> +		dev_err(dev, "failed to set eclk frequency (24MHz)\n");
+> +		return ret;
+> +	}
+> +
+> +	if (clk_get_rate(ov02a10->eclk) != OV02A10_ECLK_FREQ) {
+> +		dev_warn(dev, "wrong eclk frequency %d Hz, expected: %d Hz\n",
+> +			 ov02a10->eclk_freq, OV02A10_ECLK_FREQ);
+> +		return -EINVAL;
+> +	}
+> +
+> +	ov02a10->pd_gpio = devm_gpiod_get(dev, "powerdown", GPIOD_OUT_HIGH);
+> +	if (IS_ERR(ov02a10->pd_gpio)) {
+> +		ret = PTR_ERR(ov02a10->pd_gpio);
+> +		dev_err(dev, "failed to get powerdown-gpios %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	ov02a10->n_rst_gpio = devm_gpiod_get(dev, "reset", GPIOD_OUT_LOW);
+> +	if (IS_ERR(ov02a10->n_rst_gpio)) {
+> +		ret = PTR_ERR(ov02a10->n_rst_gpio);
+> +		dev_err(dev, "failed to get reset-gpios %d\n", ret);
+> +		return ret;
+> +	}
+> +
+> +	for (i = 0; i < ARRAY_SIZE(ov02a10_supply_names); i++)
+> +		ov02a10->supplies[i].supply = ov02a10_supply_names[i];
+> +
+> +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(ov02a10_supply_names),
+> +				      ov02a10->supplies);
+> +	if (ret) {
+> +		dev_err(dev, "failed to get regulators\n");
+> +		return ret;
+> +	}
+> +
+> +	mutex_init(&ov02a10->mutex);
+> +	ov02a10->cur_mode = &supported_modes[0];
+> +	ret = ov02a10_initialize_controls(ov02a10);
+> +	if (ret) {
+> +		dev_err(dev, "failed to initialize controls\n");
+> +		goto err_destroy_mutex;
+> +	}
+> +
+> +	ov02a10->subdev.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
+> +	ov02a10->subdev.entity.ops = &ov02a10_subdev_entity_ops;
+> +	ov02a10->subdev.entity.function = MEDIA_ENT_F_CAM_SENSOR;
+> +	ov02a10->pad.flags = MEDIA_PAD_FL_SOURCE;
+> +	ret = media_entity_pads_init(&ov02a10->subdev.entity, 1, &ov02a10->pad);
+> +	if (ret < 0) {
+> +		dev_err(dev, "failed to init entity pads: %d", ret);
+> +		goto err_free_handler;
+> +	}
+> +
+> +	pm_runtime_enable(dev);
+> +	if (!pm_runtime_enabled(dev)) {
+> +		ret = ov02a10_power_on(dev);
+> +		if (ret < 0) {
+> +			dev_err(dev, "failed to power on: %d\n", ret);
+> +			goto err_free_handler;
+> +		}
+> +	}
+> +
+> +	ret = v4l2_async_register_subdev(&ov02a10->subdev);
+> +	if (ret) {
+> +		dev_err(dev, "failed to register V4L2 subdev: %d", ret);
+> +		if (!pm_runtime_enabled(dev))
+> +			ov02a10_power_off(dev);
+> +		goto err_clean_entity;
+> +	}
+
+Tomasz, Sakari, is this ok?
+or coding like this:
+
+ret = v4l2_async_register_subdev(&ov02a10->subdev);
+if (!pm_runtime_enabled(dev))
+	ov02a10_power_off(dev);
+if (ret) {
+	dev_err(dev, "failed to register V4L2 subdev: %d", ret);
+	goto err_clean_entity;
+}
+
+What's your opinions about the change?
+
+> +
+> +	return 0;
+> +
+> +err_clean_entity:
+> +	media_entity_cleanup(&ov02a10->subdev.entity);
+> +err_free_handler:
+> +	v4l2_ctrl_handler_free(ov02a10->subdev.ctrl_handler);
+> +err_destroy_mutex:
+> +	mutex_destroy(&ov02a10->mutex);
+> +
+> +	return ret;
+> +}
+> +
+> +static int ov02a10_remove(struct i2c_client *client)
+> +{
+> +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
+> +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
+> +
+> +	v4l2_async_unregister_subdev(sd);
+> +	media_entity_cleanup(&sd->entity);
+> +	v4l2_ctrl_handler_free(sd->ctrl_handler);
+> +	pm_runtime_disable(&client->dev);
+> +	if (!pm_runtime_status_suspended(&client->dev))
+> +		ov02a10_power_off(&client->dev);
+> +	pm_runtime_set_suspended(&client->dev);
+> +	mutex_destroy(&ov02a10->mutex);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id ov02a10_of_match[] = {
+> +	{ .compatible = "ovti,ov02a10" },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, ov02a10_of_match);
+> +
+> +static struct i2c_driver ov02a10_i2c_driver = {
+> +	.driver = {
+> +		.name = "ov02a10",
+> +		.pm = &ov02a10_pm_ops,
+> +		.of_match_table = ov02a10_of_match,
+> +	},
+> +	.probe_new	= &ov02a10_probe,
+> +	.remove		= &ov02a10_remove,
+> +};
+> +
+> +module_i2c_driver(ov02a10_i2c_driver);
+> +
+> +MODULE_AUTHOR("Dongchun Zhu <dongchun.zhu@mediatek.com>");
+> +MODULE_DESCRIPTION("OmniVision OV02A10 sensor driver");
+> +MODULE_LICENSE("GPL v2");
+> +
 
 _______________________________________________
 linux-arm-kernel mailing list
