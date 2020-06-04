@@ -2,70 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 47A321EE496
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 14:40:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42FF21EE494
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 14:40:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3ubZ+g9Kp9kUaYFObkyoXam2f5TomcrmzDeCzbBemRM=; b=aRCgcjyu6/Hf2J
-	trXEztq++Dk7gglRpGYmNT8TXyf6XNmKKBQ0+33QefB+hwT9DXvAH5rSdavCIPnHm9j+HK0x6e1Kw
-	sLhcjZXHelzLFScCmfJfE50amQdd0Tr4+jc/FZE9800smjYXbdJXFv01lLr0jaYqRMkB1rBaPrYAq
-	JRce1Mudc1q2u4lruCat3hw7XlLXk6XHGOkgnfXLV9t036I97rjvkODMt/DxSktW3M1ahxbOFHaQj
-	NRXsS975xtcJBFKbOgMUIC595KPdBr84+7kdp+7GeB+U12vYC5/sUtr1MMyF2CYiibjcWazB0F8v/
-	cXElzYteZ3j9twCiU0pA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qqlQt9bV20Ge748T3oCg9NiQtlPKiEFMmY4VqWvnvJU=; b=a0sBJ744Ctw4Fy
+	EckOEMcaJMoHhfyw8pOa+Zw8KIomnevLT493PiXz2q/gUl/PpM1rbHwb1/Rl8IcqkXxuxcvGGYu8B
+	FkA+tHMflGzC+L/tFD6hUtKT/lf6kODS3mLQUT+ZIxkteIQ6UYTYO0NSraQTiywnjlaE8cnN/cNvw
+	4vxBautLkywBtFFsrnJ2SjQjN4tVn/fw5QxuLtAvRPzfEs9cvN7vZurzXUU6B4iZvGiRHsufa5+/L
+	z409XJlRqmDZkwkJeW9xWGAaYBD8ApvIkKZILAF6O7p6/Usl7A4+KUNdbLCXCXuR/ZilvrYyhvBvU
+	WgD+gekuWMJ7T4JNQJfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgpAh-00018E-4x; Thu, 04 Jun 2020 12:40:35 +0000
+	id 1jgpAU-00011L-6s; Thu, 04 Jun 2020 12:40:22 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgpAK-0000zm-T4
+ id 1jgpAK-0000tH-T5
  for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 12:40:14 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 054CW6o2027156; Thu, 4 Jun 2020 14:40:05 +0200
+ 054CWUtR006294; Thu, 4 Jun 2020 14:40:06 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=I4QdjFYx39ebfZ/eN0TjEZ+AQQlfm1leEYYrWsoH42c=;
- b=U0qHYui8oJ8onkOeR4YAiuCrypzu/hGpxTvlmJDNwuD9njC3P8Mo2ER3D9zlsSEerodh
- GBlP3d4yNiq7WJnk1AsIGIB2WMe+rEuOYNzL9YiThOnWwe5C7RbJKwkCIpq8igZDMR5V
- Zf2JnNvD1nigzeFITjXldbleai6k6V82ejWcukAgbQTwHCLhAagrEm/PmklT11cRj5Ut
- 2/oieS6fM8xUKiREtIPGrtuq2+ajkAgnEs2fK/38yAPvwA2NMcFbibFnrVaOunlqEdnO
- VcZnAwDNNgUoWhRNWvsvEDZDCuzhK/2Vuoo0kSB0PzEbDrtO9R8EH1hl0xN2iPx8Ax3u Mw== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=zWShjHdtkDP9KEzM3tiXokZkb+o6dSeLDNYRf6d3oDE=;
+ b=R+nb7Y4C+6vJV56wpDtXXRYJR+cfuOq3u00kysalI5XbqnsaAhF5cL8L6zYP3JcDkwJu
+ p0TqGmKozMMcaJLJg+1lWeYDggGWsfo4GEAe5n98i7O8QXpX681HLCrAChFh1m6yl+js
+ vK1qPsPELc0sp8Z2hfPon6zgpnXKR6ju+RZ/MJxb0oLPcRSl/c4W7JJnpwt62UzSF+bW
+ 06b0zkEE1h6EIAM44agyeYy/GbF6ZUaZM9Dfjybyfp6q0mmLtxK7kmX5ERiDxYaWORiR
+ Qm8UOuLn3fr3S/dDYj4A8t8VrpvXN3hQ25eqOy13T9iQ4TmBE3mA+tsifyZ2a3FJdUbd Zw== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31becga082-1
+ by mx07-00178001.pphosted.com with ESMTP id 31ejxauugw-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 04 Jun 2020 14:40:05 +0200
+ Thu, 04 Jun 2020 14:40:06 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 78BF810002A;
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 7E956100039;
  Thu,  4 Jun 2020 14:40:04 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 407D62BE253;
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4A12B2BE254;
  Thu,  4 Jun 2020 14:40:04 +0200 (CEST)
-Received: from localhost (10.75.127.48) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 4 Jun 2020 14:39:34
+Received: from localhost (10.75.127.50) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 4 Jun 2020 14:39:35
  +0200
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <hugues.fruchet@st.com>, <mchehab@kernel.org>, <mcoquelin.stm32@gmail.com>,
  <alexandre.torgue@st.com>
-Subject: [PATCH v3 0/3] DCMI set minimum cpufreq requirement
-Date: Thu, 4 Jun 2020 14:39:29 +0200
-Message-ID: <20200604123932.20512-1-benjamin.gaignard@st.com>
+Subject: [PATCH v3 1/3] dt-bindings: media: stm32-dcmi: Add DCMI min frequency
+ property
+Date: Thu, 4 Jun 2020 14:39:30 +0200
+Message-ID: <20200604123932.20512-2-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20200604123932.20512-1-benjamin.gaignard@st.com>
+References: <20200604123932.20512-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG7NODE2.st.com (10.75.127.20) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG2NODE3.st.com (10.75.127.6) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
  definitions=2020-06-04_10:2020-06-02,
  2020-06-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_054013_453051_1CF26E46 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20200604_054013_467678_5E2B5F22 
+X-CRM114-Status: GOOD (  12.16  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -102,28 +106,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series allow to STM32 camera interface (DCMI) to require a minimum
-frequency to the CPUs before start streaming frames from the sensor.
-The minimum frequency requirement is provided in the devide-tree node.
+Document st,stm32-dcmi-min-frequency property which is used to
+request CPUs minimum frequency when streaming frames.
 
-Setting a minimum frequency for the CPUs is needed to ensure a quick handling
-of the interrupts between two sensor frames and avoid dropping half of them.
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+---
+ Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-version 3:
-- add a cpumask field to track boosted CPUs
-- add irq_affinity_notify callback
-- protect cpumask field with a mutex 
-
-Benjamin Gaignard (3):
-  dt-bindings: media: stm32-dcmi: Add DCMI min frequency property
-  media: stm32-dcmi: Set minimum cpufreq requirement
-  ARM: dts: stm32: Set DCMI frequency requirement for stm32mp15x
-
- .../devicetree/bindings/media/st,stm32-dcmi.yaml   |   8 +
- arch/arm/boot/dts/stm32mp151.dtsi                  |   1 +
- drivers/media/platform/stm32/stm32-dcmi.c          | 187 ++++++++++++++++++++-
- 3 files changed, 188 insertions(+), 8 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml b/Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml
+index 3fe778cb5cc3..05ca85a2411a 100644
+--- a/Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml
++++ b/Documentation/devicetree/bindings/media/st,stm32-dcmi.yaml
+@@ -44,6 +44,13 @@ properties:
+       bindings defined in
+       Documentation/devicetree/bindings/media/video-interfaces.txt.
+ 
++  st,stm32-dcmi-min-frequency:
++    description: DCMI minimum CPUs frequency requirement (in KHz).
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - minimum: 0
++      - default: 0
++
+ required:
+   - compatible
+   - reg
+@@ -71,6 +78,7 @@ examples:
+         clock-names = "mclk";
+         dmas = <&dmamux1 75 0x400 0x0d>;
+         dma-names = "tx";
++        st,stm32-dcmi-min-frequency = <650000>;
+ 
+         port {
+              dcmi_0: endpoint {
 -- 
 2.15.0
 
