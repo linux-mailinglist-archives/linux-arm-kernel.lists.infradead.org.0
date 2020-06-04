@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A50A71EDBEC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 05:47:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 946851EDBED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 05:47:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zRQm1BIAkYA+bgvJ0vhRgKoZkrfTvMNSo6dwG1YB8HI=; b=UElVAx5z3F0TqR0ARos9VI8apl
-	RE8d4CUCiW91fy8NqUY47QZQ8B+b41wxzQ4exlbAZeIBz3pgmiyHtTW+cxKUEqbP/QNt+r5yk9qgr
-	TUZZR6XNVGHSXY+f1I47bs23wZTqc4d21oF7EuL6Nt0M6vLFvm/YDA/rUNItoBJsIVLUFZKmddj+y
-	0XhlWVz7AyaOF7i+05IhVMJ7zZZWMOUyVS6VNhUVMYqOB5J+vtKKJbV9g5fBTV8WtUfvqkUjq6zjS
-	ulLUj3IETz/ifKnjKgJjhxWxR+q5UWZQCw6bipKRow6P/Eoo3ptLTLanID6XADQHJyBdIRe+5lPHO
-	vFqpdGbA==;
+	bh=FTvIdijQIa9WZbkUNPv1TARuDfuLNa/WJD366j1sZ2E=; b=o2ke+IzRcprCW3zJhPvHw57OGZ
+	tS4KJy7808x8G+uK8+0OmbvatnsGgfkbRJUpKhP1l9QTlxOLyBIepj69iXjRMSD5Hmk1ywqzHHIWv
+	lIzugKFVNxk3axN5XoKfeyLG4oeIEnNhefX/B3m+SgVT7nYZ1tJUsBB0tN7pQ8a2AoJ6U0yIA9s4n
+	fSQkhXDstRoExPlTMG3IEO5oKzFkiITLPXmQCcwzTosor8nguN8fz5z/0Si2Idp4NPw9DJ1w2eE+U
+	LgtJvTvKl5OA/xPCsGqSEN2wzvdiBcsfyC3S8OPIPDzA4GUGOYGCXGbS+0o8uHZGiCfb1CQHy7xAJ
+	LsiG5Seg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jggqg-0005ko-Sj; Thu, 04 Jun 2020 03:47:22 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jggqx-0005yv-0T; Thu, 04 Jun 2020 03:47:39 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jggqL-0005ZE-A7; Thu, 04 Jun 2020 03:47:02 +0000
-Received: by mail-pg1-x542.google.com with SMTP id p21so2895570pgm.13;
- Wed, 03 Jun 2020 20:47:01 -0700 (PDT)
+ id 1jggqN-0005Zk-5E; Thu, 04 Jun 2020 03:47:04 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 23so1850650pfw.10;
+ Wed, 03 Jun 2020 20:47:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=NxEaSPQeIOPRkfXUqBGWXS3DhANeE89pJJUJwsIWN6U=;
- b=XMh2NLBLCV1jRAsM/ApPVYMn0b8sSfJSvOD39kjJ1Om9Wed9iwphuhaPW9wZ3rsBHv
- u8UUaLG7LjbGEYX+lAyn6swrDVh9AvFtLNGkHG7klLKXrNclPthMtPF0i2sh2fLO3ys5
- wwT90Pe51q16aPifitePxyi03f77GMxf4NvhwVuaMusm7QLwD7q0iLO+TUj49JVRlbNe
- 6cyzApJCV7abeGs6zUhOHAfrRSSPel6w+A6rfY006mPcSKCANZernfLy0CFifmBw7JAm
- XzUF0f/amIWLBpuMk7lrwlZdWFc2dYJbjwYnxzaY/mSz2cMDGqig2Qns1uSdl28izDXv
- BrJw==
+ bh=ljd1gL0a9YiLaECGRPUeWMWqu+jwE37ussa58cXejzA=;
+ b=KFOe7x6IauMLNFE6HuIGA9laJSc4wQ8x9ZS2Kto1ySLnTDNb85y66ci+0Meqq7qqy/
+ 5K+adi8U+uMY5S2TtJ8ek0N60iZ5UHt8DrBbU9vN/NlexZkaZSrcsT2mK/VbDiNas0Wj
+ 55H9G3/nXOALk9OhppEKn1xUs0OMCg+QZ4kbpUTHnewmfqXsjToNh8rMRwoDdTGGKHZX
+ sj00WxYzUPlGyf7sDohmvVnRDurXAq2pZso/3HiHo7fVNhSX6hEw2N9J5PdlIw378rqu
+ Dt2kAGGlAyb4laYnEodsJ2kr1a9A3bstMmu64hRqIOrRA4bo80PMEwXOLNqBgXzBdAi6
+ EjJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=NxEaSPQeIOPRkfXUqBGWXS3DhANeE89pJJUJwsIWN6U=;
- b=gcClKHkn3Jx0rBBdIvM8245b28pM4PMcG2Xs2afPAeKwslNzA0ySoOKbC3hl5fffK4
- 0DmwqP5MIjRsVcW1WyGC2stBegu7HLFJbP6HZx2usAatP4eRJU9A4XqDqSeATT+X1OyG
- X4Rmc5I521RpajvCeVi7zY1lWU5LqF86j/J//o6B7qimvt2QNjf4hjOBflbUi/I0QB5v
- Me8DxBFXYDSGNrq1y+aKTcsLYdvXt1k7v6lErv+VkJRyHeEr5MGrc53OzW98aJ8d06pi
- +ymeK0ow5GE0ghHqcZF+bZGmmJ3svnVs+37eZAhJ2j8uuLHxBPQ2cg0D8tPJuNHplklz
- h1CQ==
-X-Gm-Message-State: AOAM5338y96BSkOM7Z3ONuDaXmu3f51Q/FjVxX0y/Ph4t2KIYAVSlW/1
- kRq15wv8MLcRd8yUMLkl42M=
-X-Google-Smtp-Source: ABdhPJyuRIpehL8ILBEuAv8MYZ88AthlobDOSBfpKUE+4FSI+ipnlgCRqSzcWpGqCddTssyAUSN10g==
-X-Received: by 2002:a05:6a00:150c:: with SMTP id
- q12mr2251871pfu.270.1591242420517; 
- Wed, 03 Jun 2020 20:47:00 -0700 (PDT)
+ bh=ljd1gL0a9YiLaECGRPUeWMWqu+jwE37ussa58cXejzA=;
+ b=BRfvgpvzdVYAgipkW0AnXrswlxGj/ANhIQLbrpUAdkUiCPWeksldlD3KUZYdyCMBA6
+ rFxrd05ALgTIMLZP0DJKCHSFTFb+3RU7mCT7MqjZvivzbaV8V2us6qBIBYm/hLmyUnZO
+ EEIDRsFa08GkSeh6FYDQzjm3GpVOi+5KvdCPKQt/7Lj2wmD71Z9b6w1fkzXHXjeR04+Z
+ K/H73ptxZV/H1fZlsXd6IzuyXNi879KqyAgoJdBFNBjHE9cK/T8IrehiPevwY/ynqHW9
+ A5EbmPDk4HfIuAHbGsYsVhaEeibDoi1Rjqq3aBedxWE+JsaAcA3UF/O/k7Po//2VibYp
+ 1ukg==
+X-Gm-Message-State: AOAM530fbwZZaRCFAzpgifZ4krYZ/Uk1gcgmx4mYD276kBdNCdqeyrHM
+ kPVPEKNPlEzfTa+HLzmVuIM=
+X-Google-Smtp-Source: ABdhPJwNVk3QpeeMpbblNbwAltfHbm6Ih+XSP+R2DYxvoDZBP0fN/cf2VcALRGiRxP0aHkdT0nmoYA==
+X-Received: by 2002:a62:e703:: with SMTP id s3mr2151197pfh.43.1591242422257;
+ Wed, 03 Jun 2020 20:47:02 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id p19sm3083367pff.116.2020.06.03.20.46.58
+ by smtp.gmail.com with ESMTPSA id p19sm3083367pff.116.2020.06.03.20.47.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 03 Jun 2020 20:46:59 -0700 (PDT)
+ Wed, 03 Jun 2020 20:47:01 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 1/3] dt-bindings: spi: Document bcm2711 and bcm7211 SPI
- compatible
-Date: Wed,  3 Jun 2020 20:46:53 -0700
-Message-Id: <20200604034655.15930-2-f.fainelli@gmail.com>
+Subject: [PATCH 2/3] ARM: dts: bcm2711: Update SPI nodes compatible strings
+Date: Wed,  3 Jun 2020 20:46:54 -0700
+Message-Id: <20200604034655.15930-3-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200604034655.15930-1-f.fainelli@gmail.com>
 References: <20200604034655.15930-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_204701_348877_081D46C0 
-X-CRM114-Status: GOOD (  12.67  )
+X-CRM114-CacheID: sfid-20200603_204703_228473_2687BDC1 
+X-CRM114-Status: GOOD (  11.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -116,30 +114,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The BCM2711 and BCM7211 chips use the BCM2835 SPI controller, but there
-are severl instances of those in the system and they all share the same
-interrupt line. Document specific compatible strings such that the
-driver can take appropriate actions.
+The BCM2711 SoC features 5 SPI controllers which all share the same
+interrupt line, the SPI driver needs to support interrupt sharing,
+therefore use the chip specific compatible string to help with that.
 
 Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- Documentation/devicetree/bindings/spi/brcm,bcm2835-spi.txt | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ arch/arm/boot/dts/bcm2711.dtsi | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/spi/brcm,bcm2835-spi.txt b/Documentation/devicetree/bindings/spi/brcm,bcm2835-spi.txt
-index f11f295c8450..3d55dd64b1be 100644
---- a/Documentation/devicetree/bindings/spi/brcm,bcm2835-spi.txt
-+++ b/Documentation/devicetree/bindings/spi/brcm,bcm2835-spi.txt
-@@ -5,7 +5,8 @@ SPI0, and the other known as the "Universal SPI Master"; part of the
- auxiliary block. This binding applies to the SPI0 controller.
+diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711.dtsi
+index a91cf68e3c4c..9a9ea67fbc2d 100644
+--- a/arch/arm/boot/dts/bcm2711.dtsi
++++ b/arch/arm/boot/dts/bcm2711.dtsi
+@@ -152,7 +152,7 @@
+ 		};
  
- Required properties:
--- compatible: Should be "brcm,bcm2835-spi".
-+- compatible: Should be one of "brcm,bcm2835-spi" for BCM2835/2836/2837 or
-+  "brcm,bcm2711-spi" for BCM2711 or "brcm,bcm7211-spi" for BCM7211.
- - reg: Should contain register location and length.
- - interrupts: Should contain interrupt.
- - clocks: The clock feeding the SPI controller.
+ 		spi3: spi@7e204600 {
+-			compatible = "brcm,bcm2835-spi";
++			compatible = "brcm,bcm2711-spi", "brcm,bcm2835-spi";
+ 			reg = <0x7e204600 0x0200>;
+ 			interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&clocks BCM2835_CLOCK_VPU>;
+@@ -162,7 +162,7 @@
+ 		};
+ 
+ 		spi4: spi@7e204800 {
+-			compatible = "brcm,bcm2835-spi";
++			compatible = "brcm,bcm2711-spi", "brcm,bcm2835-spi";
+ 			reg = <0x7e204800 0x0200>;
+ 			interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&clocks BCM2835_CLOCK_VPU>;
+@@ -172,7 +172,7 @@
+ 		};
+ 
+ 		spi5: spi@7e204a00 {
+-			compatible = "brcm,bcm2835-spi";
++			compatible = "brcm,bcm2711-spi", "brcm,bcm2835-spi";
+ 			reg = <0x7e204a00 0x0200>;
+ 			interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&clocks BCM2835_CLOCK_VPU>;
+@@ -182,7 +182,7 @@
+ 		};
+ 
+ 		spi6: spi@7e204c00 {
+-			compatible = "brcm,bcm2835-spi";
++			compatible = "brcm,bcm2711-spi", "brcm,bcm2835-spi";
+ 			reg = <0x7e204c00 0x0200>;
+ 			interrupts = <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>;
+ 			clocks = <&clocks BCM2835_CLOCK_VPU>;
 -- 
 2.17.1
 
