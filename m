@@ -2,152 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 148AD1ED995
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 01:44:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A786F1ED9CA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 02:02:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W2NG5oTEO7yNee7Fgb5z7XogdbLOw6jEM5mJPbQCx7Q=; b=B8WRVBWPXafpWh
-	uD9ir1pfmNitSZecaWNXvo54pfnBp1plYsOiroo+JKpBgdooR/ts53+ucpcX37iAlVYqm9pvU8kz8
-	IYQbD0gT3TmE48L2pPM85CukqDHMYyai+TFGGdsH0BD5FjPeLZ8f+hnQsIgYpe2+x7eptiIGGGS6i
-	LRB/8EsdgmFXBxp7RajInpNeUZDGk8iaKTfceEsB+1oyDEonlMMB3szLR/E0hwrlU8JD3uucFoG3Z
-	urJIRzBUuJyc97vxYCiikSAITI0yJlE3M+ym/Gv2+DaBpaZfNMEeBcondFvnw08h2CxBtSpHE6jhj
-	ac9yghM2k+eG5BcJ3kEw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=7P1oq/flsqh+TnR7NRe6rBHWRgW1wsZ6sqhSfPIWCdU=; b=JOoc/Z1bipvPGh
+	UI5iHyICrymzCdzHO6BcDgbTfsTe1ZTwtkBVAAS7Q84LdzG058J7MIs01SAIsvIPIWJXXbYUYhKkC
+	mB54VVc4nhQafMxfE3Yw7AZ40XDXvjZEPC09IKFXPwT0MToEOft1pxmdCVltVzHsoXci/e6kbQZku
+	RADi3dkCfW+x0FKZsr8+jqURcltS79/pLbzBHKatLBuh0LdHolTYDsquYMiL1tHpiAKiYUhW/mfCq
+	BP8p8hCPqTJws4pQnYHVxdU6H3LwlDC/TRKx4sK7lTiMwuY0JZ49wTgpGAL/OokJNYU15UR2j1BIy
+	N0SndVY4M5OTkZ49HYGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgd3c-0003tv-99; Wed, 03 Jun 2020 23:44:28 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jgdLL-0007VB-15; Thu, 04 Jun 2020 00:02:47 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgd3W-0003tK-Dh; Wed, 03 Jun 2020 23:44:23 +0000
-Received: by mail-pf1-x444.google.com with SMTP id h185so2512408pfg.2;
- Wed, 03 Jun 2020 16:44:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=iMGuXMVQiv7UgbkPm8eC8kQZAJ0MUYH46WoZTblPmJs=;
- b=sFtYlr5lUu3A+vGlnkzOzGsfgV7sioQD+yk+Mmk5E/GexGkiZRAJqB+eky3fdSL93f
- G7o4uLkkXj7Z7+qLf2TE2JgfAe+8aIgICwrubt6FDAAM+tHXFdZFvmPsRq1S5YcwuiUr
- psmSbBUfdhvw2xxnlebHQO6g8+I79YfDx55Z9QOq6mg3XzuCVEiXBLThMah7SU805t2d
- RkfvineMwYGS92FKhF2NAsqGacZDMca9L6kNCsWqskPbR6qOzvyqkzBarr1BkPDgIzF3
- 5T0QlcNMyD3IXp0PIdtwbHn7eeEx+K0ktwAveUOuJcorua0X762nM9CzfBpUqLE37zY5
- kpZA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=iMGuXMVQiv7UgbkPm8eC8kQZAJ0MUYH46WoZTblPmJs=;
- b=eeeBy8mNm6TrXEwhYNDSmCg3cM7zDndlN/YbB0Jn28oL1X65U5/xksfgq24aA14awp
- jWmRSf8sGj+E1jX35ixUr/dWVR9qV7tWz45I7QtBq9/+BtsN9mmnWW9PmI7PY6ohRIQF
- O0orPSbzEy9DYIWgWYmMvBiD91D36BQiSRf6Bw7HWDqRpLmzwBtrhdzwjT3L0nYtw1+E
- VxxMBn1qWU5GeItBD0fz5g4yyvXxnlyJUCTqrNxoVNOJPwgfspYcl2V/KNqVJTk1wL6w
- PZVV6OdlBu4P/IwyK5KXAKTU8x78VCAhikMgT/ibx/OJ8zs65M+BJXSCHLJm4GUkwaFB
- 7C7A==
-X-Gm-Message-State: AOAM531wWTSIL80l7LV4SGYOLmiHTxoTPW/+HFlUeH90hjO+OoiULxrt
- 6yL3beo+k8o21PJlzkgt1LQ=
-X-Google-Smtp-Source: ABdhPJw5wgn4TYVBgk1wy0xKz4/d6ZcvskV+gi4p7qWrcgOf9aZoL3+wszzBHxawOMQj/gNcix2FnQ==
-X-Received: by 2002:aa7:9d9a:: with SMTP id f26mr1433728pfq.229.1591227861622; 
- Wed, 03 Jun 2020 16:44:21 -0700 (PDT)
-Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id
- d7sm1102423pfh.78.2020.06.03.16.44.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 03 Jun 2020 16:44:20 -0700 (PDT)
-Subject: Re: [PATCH] arch/{mips,sparc,microblaze,powerpc}: Don't enable
- pagefault/preempt twice
-To: Ira Weiny <ira.weiny@intel.com>, Andrew Morton
- <akpm@linux-foundation.org>, Mike Rapoport <rppt@kernel.org>
-References: <20200507150004.1423069-8-ira.weiny@intel.com>
- <20200518184843.3029640-1-ira.weiny@intel.com>
- <20200519165422.GA5838@roeck-us.net>
- <20200519184031.GB3356843@iweiny-DESK2.sc.intel.com>
- <20200519194215.GA71941@roeck-us.net>
- <20200520051315.GA3660833@iweiny-DESK2.sc.intel.com>
- <d86dba19-4f4b-061e-a2c7-4f037e9e2de2@roeck-us.net>
- <20200521174250.GB176262@iweiny-DESK2.sc.intel.com>
- <20200603135736.e7b5ded0082a81ae6d9067a0@linux-foundation.org>
- <20200603211416.GA1740285@iweiny-DESK2.sc.intel.com>
-From: Guenter Roeck <linux@roeck-us.net>
-Autocrypt: addr=linux@roeck-us.net; keydata=
- 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
- mDW4+i+XlNFUPUYMrIKi9joBhu18ssf5i5Q=
-Message-ID: <3538c8ad-674e-d310-d870-4ef6888092ed@roeck-us.net>
-Date: Wed, 3 Jun 2020 16:44:17 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jgdLA-0007SW-Ih; Thu, 04 Jun 2020 00:02:38 +0000
+Received: from localhost (mobile-166-175-190-200.mycingular.net
+ [166.175.190.200])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4D72820738;
+ Thu,  4 Jun 2020 00:02:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591228954;
+ bh=/3H6umELn//UfWpUAQsiZ4/+8lq8t30K7gi9GfxxpIE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=DgSwDscNLVlL95jD6Zn4mCuyZ6nLq/uJ7GBbD2qdgojmmJqjPICtfrt2e7Wq1p7gk
+ DPGfYWpDbqKUpvqcOUQL6rdsF/IWpUBJm2U6IsjO2RgKsgICd4UjulvBRpd0PPjdAJ
+ Av+BugLocMDQ9n/85QFQ12cx3wIdMY90+O6ROm0Q=
+Date: Wed, 3 Jun 2020 19:02:32 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200604000232.GA956503@bjorn-Precision-5520>
 MIME-Version: 1.0
-In-Reply-To: <20200603211416.GA1740285@iweiny-DESK2.sc.intel.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <CAJ2QiJ+fhPWAxZXzHhNFLkHr47e+wTqqz+s5r+utgCP=C6qsjw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_164422_478865_78C2DD5B 
-X-CRM114-Status: GOOD (  15.73  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20200603_170236_659991_137FECE9 
+X-CRM114-Status: GOOD (  52.13  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [groeck7[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [groeck7[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -159,100 +74,255 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Cc: Kuppuswamy Sathyanarayanan <sathyanarayanan.kuppuswamy@linux.intel.com>,
+ Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>,
+ Myron Stowe <myron.stowe@redhat.com>,
+ Vijay Mohan Pandarathil <vijaymohan.pandarathil@hp.com>,
+ Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>, linux-pci@vger.kernel.org,
+ Prabhakar Kushwaha <pkushwaha@marvell.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/3/20 2:14 PM, Ira Weiny wrote:
-> On Wed, Jun 03, 2020 at 01:57:36PM -0700, Andrew Morton wrote:
->> On Thu, 21 May 2020 10:42:50 -0700 Ira Weiny <ira.weiny@intel.com> wrote:
->>
->>>>>
->>>>> Actually it occurs to me that the patch consolidating kmap_prot is odd for
->>>>> sparc 32 bit...
->>>>>
->>>>> Its a long shot but could you try reverting this patch?
->>>>>
->>>>> 4ea7d2419e3f kmap: consolidate kmap_prot definitions
->>>>>
->>>>
->>>> That is not easy to revert, unfortunately, due to several follow-up patches.
->>>
->>> I have gotten your sparc tests to run and they all pass...
->>>
->>> 08:10:34 > ../linux-build-test/rootfs/sparc/run-qemu-sparc.sh 
->>> Build reference: v5.7-rc4-17-g852b6f2edc0f
->>>
->>> Building sparc32:SPARCClassic:nosmp:scsi:hd ... running ......... passed
->>> Building sparc32:SPARCbook:nosmp:scsi:cd ... running ......... passed
->>> Building sparc32:LX:nosmp:noapc:scsi:hd ... running ......... passed
->>> Building sparc32:SS-4:nosmp:initrd ... running ......... passed
->>> Building sparc32:SS-5:nosmp:scsi:hd ... running ......... passed
->>> Building sparc32:SS-10:nosmp:scsi:cd ... running ......... passed
->>> Building sparc32:SS-20:nosmp:scsi:hd ... running ......... passed
->>> Building sparc32:SS-600MP:nosmp:scsi:hd ... running ......... passed
->>> Building sparc32:Voyager:nosmp:noapc:scsi:hd ... running ......... passed
->>> Building sparc32:SS-4:smp:scsi:hd ... running ......... passed
->>> Building sparc32:SS-5:smp:scsi:cd ... running ......... passed
->>> Building sparc32:SS-10:smp:scsi:hd ... running ......... passed
->>> Building sparc32:SS-20:smp:scsi:hd ... running ......... passed
->>> Building sparc32:SS-600MP:smp:scsi:hd ... running ......... passed
->>> Building sparc32:Voyager:smp:noapc:scsi:hd ... running ......... passed
->>>
->>> Is there another test I need to run?
->>
->> This all petered out, but as I understand it, this patchset still might
->> have issues on various architectures.
->>
->> Can folks please provide an update on the testing status?
+On Wed, Jun 03, 2020 at 11:12:48PM +0530, Prabhakar Kushwaha wrote:
+> On Sat, May 30, 2020 at 1:03 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > On Fri, May 29, 2020 at 07:48:10PM +0530, Prabhakar Kushwaha wrote:
+> > > On Thu, May 28, 2020 at 1:48 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > > >
+> > > > On Wed, May 27, 2020 at 05:14:39PM +0530, Prabhakar Kushwaha wrote:
+> > > > > On Fri, May 22, 2020 at 4:19 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > > > > > On Thu, May 21, 2020 at 09:28:20AM +0530, Prabhakar Kushwaha wrote:
+> > > > > > > On Wed, May 20, 2020 at 4:52 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > > > > > > > On Thu, May 14, 2020 at 12:47:02PM +0530, Prabhakar Kushwaha wrote:
+> > > > > > > > > On Wed, May 13, 2020 at 3:33 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+> > > > > > > > > > On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
+> > > > > > > > > > > An SMMU Stream table is created by the primary kernel. This table is
+> > > > > > > > > > > used by the SMMU to perform address translations for device-originated
+> > > > > > > > > > > transactions. Any crash (if happened) launches the kdump kernel which
+> > > > > > > > > > > re-creates the SMMU Stream table. New transactions will be translated
+> > > > > > > > > > > via this new table..
+> > > > > > > > > > >
+> > > > > > > > > > > There are scenarios, where devices are still having old pending
+> > > > > > > > > > > transactions (configured in the primary kernel). These transactions
+> > > > > > > > > > > come in-between Stream table creation and device-driver probe.
+> > > > > > > > > > > As new stream table does not have entry for older transactions,
+> > > > > > > > > > > it will be aborted by SMMU.
+> > > > > > > > > > >
+> > > > > > > > > > > Similar observations were found with PCIe-Intel 82576 Gigabit
+> > > > > > > > > > > Network card. It sends old Memory Read transaction in kdump kernel.
+> > > > > > > > > > > Transactions configured for older Stream table entries, that do not
+> > > > > > > > > > > exist any longer in the new table, will cause a PCIe Completion Abort.
+> > > > > > > > > >
+> > > > > > > > > > That sounds like exactly what we want, doesn't it?
+> > > > > > > > > >
+> > > > > > > > > > Or do you *want* DMA from the previous kernel to complete?  That will
+> > > > > > > > > > read or scribble on something, but maybe that's not terrible as long
+> > > > > > > > > > as it's not memory used by the kdump kernel.
+> > > > > > > > >
+> > > > > > > > > Yes, Abort should happen. But it should happen in context of driver.
+> > > > > > > > > But current abort is happening because of SMMU and no driver/pcie
+> > > > > > > > > setup present at this moment.
+> > > > > > > >
+> > > > > > > > I don't understand what you mean by "in context of driver."  The whole
+> > > > > > > > problem is that we can't control *when* the abort happens, so it may
+> > > > > > > > happen in *any* context.  It may happen when a NIC receives a packet
+> > > > > > > > or at some other unpredictable time.
+> > > > > > > >
+> > > > > > > > > Solution of this issue should be at 2 place
+> > > > > > > > > a) SMMU level: I still believe, this patch has potential to overcome
+> > > > > > > > > issue till finally driver's probe takeover.
+> > > > > > > > > b) Device level: Even if something goes wrong. Driver/device should
+> > > > > > > > > able to recover.
+> > > > > > > > >
+> > > > > > > > > > > Returned PCIe completion abort further leads to AER Errors from APEI
+> > > > > > > > > > > Generic Hardware Error Source (GHES) with completion timeout.
+> > > > > > > > > > > A network device hang is observed even after continuous
+> > > > > > > > > > > reset/recovery from driver, Hence device is no more usable.
+> > > > > > > > > >
+> > > > > > > > > > The fact that the device is no longer usable is definitely a problem.
+> > > > > > > > > > But in principle we *should* be able to recover from these errors.  If
+> > > > > > > > > > we could recover and reliably use the device after the error, that
+> > > > > > > > > > seems like it would be a more robust solution that having to add
+> > > > > > > > > > special cases in every IOMMU driver.
+> > > > > > > > > >
+> > > > > > > > > > If you have details about this sort of error, I'd like to try to fix
+> > > > > > > > > > it because we want to recover from that sort of error in normal
+> > > > > > > > > > (non-crash) situations as well.
+> > > > > > > > > >
+> > > > > > > > > Completion abort case should be gracefully handled.  And device should
+> > > > > > > > > always remain usable.
+> > > > > > > > >
+> > > > > > > > > There are 2 scenario which I am testing with Ethernet card PCIe-Intel
+> > > > > > > > > 82576 Gigabit Network card.
+> > > > > > > > >
+> > > > > > > > > I)  Crash testing using kdump root file system: De-facto scenario
+> > > > > > > > >     -  kdump file system does not have Ethernet driver
+> > > > > > > > >     -  A lot of AER prints [1], making it impossible to work on shell
+> > > > > > > > > of kdump root file system.
+> > > > > > > >
+> > > > > > > > In this case, I think report_error_detected() is deciding that because
+> > > > > > > > the device has no driver, we can't do anything.  The flow is like
+> > > > > > > > this:
+> > > > > > > >
+> > > > > > > >   aer_recover_work_func               # aer_recover_work
+> > > > > > > >     kfifo_get(aer_recover_ring, entry)
+> > > > > > > >     dev = pci_get_domain_bus_and_slot
+> > > > > > > >     cper_print_aer(dev, ...)
+> > > > > > > >       pci_err("AER: aer_status:")
+> > > > > > > >       pci_err("AER:   [14] CmpltTO")
+> > > > > > > >       pci_err("AER: aer_layer=")
+> > > > > > > >     if (AER_NONFATAL)
+> > > > > > > >       pcie_do_recovery(dev, pci_channel_io_normal)
+> > > > > > > >         status = CAN_RECOVER
+> > > > > > > >         pci_walk_bus(report_normal_detected)
+> > > > > > > >           report_error_detected
+> > > > > > > >             if (!dev->driver)
+> > > > > > > >               vote = NO_AER_DRIVER
+> > > > > > > >               pci_info("can't recover (no error_detected callback)")
+> > > > > > > >             *result = merge_result(*, NO_AER_DRIVER)
+> > > > > > > >             # always NO_AER_DRIVER
+> > > > > > > >         status is now NO_AER_DRIVER
+> > > > > > > >
+> > > > > > > > So pcie_do_recovery() does not call .report_mmio_enabled() or .slot_reset(),
+> > > > > > > > and status is not RECOVERED, so it skips .resume().
+> > > > > > > >
+> > > > > > > > I don't remember the history there, but if a device has no driver and
+> > > > > > > > the device generates errors, it seems like we ought to be able to
+> > > > > > > > reset it.
+> > > > > > >
+> > > > > > > But how to reset the device considering there is no driver.
+> > > > > > > Hypothetically, this case should be taken care by PCIe subsystem to
+> > > > > > > perform reset at PCIe level.
+> > > > > >
+> > > > > > I don't understand your question.  The PCI core (not the device
+> > > > > > driver) already does the reset.  When pcie_do_recovery() calls
+> > > > > > reset_link(), all devices on the other side of the link are reset.
+> > > > > >
+> > > > > > > > We should be able to field one (or a few) AER errors, reset the
+> > > > > > > > device, and you should be able to use the shell in the kdump kernel.
+> > > > > > > >
+> > > > > > > here kdump shell is usable only problem is a "lot of AER Errors". One
+> > > > > > > cannot see what they are typing.
+> > > > > >
+> > > > > > Right, that's what I expect.  If the PCI core resets the device, you
+> > > > > > should get just a few AER errors, and they should stop after the
+> > > > > > device is reset.
+> > > > > >
+> > > > > > > > >     -  Note kdump shell allows to use makedumpfile, vmcore-dmesg applications.
+> > > > > > > > >
+> > > > > > > > > II) Crash testing using default root file system: Specific case to
+> > > > > > > > > test Ethernet driver in second kernel
+> > > > > > > > >    -  Default root file system have Ethernet driver
+> > > > > > > > >    -  AER error comes even before the driver probe starts.
+> > > > > > > > >    -  Driver does reset Ethernet card as part of probe but no success.
+> > > > > > > > >    -  AER also tries to recover. but no success.  [2]
+> > > > > > > > >    -  I also tries to remove AER errors by using "pci=noaer" bootargs
+> > > > > > > > > and commenting ghes_handle_aer() from GHES driver..
+> > > > > > > > >           than different set of errors come which also never able to recover [3]
+> > > > > > > > >
+> > > > > > >
+> > > > > > > Please suggest your view on this case. Here driver is preset.
+> > > > > > > (driver/net/ethernet/intel/igb/igb_main.c)
+> > > > > > > In this case AER errors starts even before driver probe starts.
+> > > > > > > After probe, driver does the device reset with no success and even AER
+> > > > > > > recovery does not work.
+> > > > > >
+> > > > > > This case should be the same as the one above.  If we can change the
+> > > > > > PCI core so it can reset the device when there's no driver,  that would
+> > > > > > apply to case I (where there will never be a driver) and to case II
+> > > > > > (where there is no driver now, but a driver will probe the device
+> > > > > > later).
+> > > > >
+> > > > > Does this means change are required in PCI core.
+> > > >
+> > > > Yes, I am suggesting that the PCI core does not do the right thing
+> > > > here.
+> > > >
+> > > > > I tried following changes in pcie_do_recovery() but it did not help.
+> > > > > Same error as before.
+> > > > >
+> > > > > -- a/drivers/pci/pcie/err.c
+> > > > > +++ b/drivers/pci/pcie/err.c
+> > > > >         pci_info(dev, "broadcast resume message\n");
+> > > > >         pci_walk_bus(bus, report_resume, &status);
+> > > > > @@ -203,7 +207,12 @@ pci_ers_result_t pcie_do_recovery(struct pci_dev *dev,
+> > > > >         return status;
+> > > > >
+> > > > >  failed:
+> > > > >         pci_uevent_ers(dev, PCI_ERS_RESULT_DISCONNECT);
+> > > > > +       pci_reset_function(dev);
+> > > > > +       pci_aer_clear_device_status(dev);
+> > > > > +       pci_aer_clear_nonfatal_status(dev);
+> > > >
+> > > > Did you confirm that this resets the devices in question (0000:09:00.0
+> > > > and 0000:09:00.1, I think), and what reset mechanism this uses (FLR,
+> > > > PM, etc)?
+> > >
+> > > Earlier reset  was happening with P2P bridge(0000:00:09.0) this the
+> > > reason no effect. After making following changes,  both devices are
+> > > now getting reset.
+> > > Both devices are using FLR.
+> > >
+> > > diff --git a/drivers/pci/pcie/err.c b/drivers/pci/pcie/err.c
+> > > index 117c0a2b2ba4..26b908f55aef 100644
+> > > --- a/drivers/pci/pcie/err.c
+> > > +++ b/drivers/pci/pcie/err.c
+> > > @@ -66,6 +66,20 @@ static int report_error_detected(struct pci_dev *dev,
+> > >                 if (dev->hdr_type != PCI_HEADER_TYPE_BRIDGE) {
+> > >                         vote = PCI_ERS_RESULT_NO_AER_DRIVER;
+> > >                         pci_info(dev, "can't recover (no
+> > > error_detected callback)\n");
+> > > +
+> > > +                       pci_save_state(dev);
+> > > +                       pci_cfg_access_lock(dev);
+> > > +
+> > > +                       /* Quiesce the device completely */
+> > > +                       pci_write_config_word(dev, PCI_COMMAND,
+> > > +                             PCI_COMMAND_INTX_DISABLE);
+> > > +                       if (!__pci_reset_function_locked(dev)) {
+> > > +                               vote = PCI_ERS_RESULT_RECOVERED;
+> > > +                               pci_info(dev, "recovered via pci level
+> > > reset\n");
+> > > +                       }
+> >
+> > Why do we need to save the state and quiesce the device?  The reset
+> > should disable interrupts anyway.  In this particular case where
+> > there's no driver, I don't think we should have to restore the state.
+> > We maybe should *remove* the device and re-enumerate it after the
+> > reset, but the state from before the reset should be irrelevant.
 > 
-> I believe the tests were failing for Guenter due to another patch set...[1]
-> 
-> My tests with just this series are working.
-> 
->>From my understanding the other failures were unrelated.[2]
-> 
-> 	<quote Mike Rapoport>
-> 	I've checked the patch above on top of the mmots which already has
-> 	Ira's patches and it booted fine. I've used sparc32_defconfig to build
-> 	the kernel and qemu-system-sparc with default machine and CPU.
-> 	</quote>
-> 
-> Mike, am I wrong?  Do you think the kmap() patches are still causing issues?
-> 
+> I tried pci_reset_function_locked without save/restore then I got the
+> synchronous abort during igb_probe (case 2 i.e. with driver). This is
+> 100% reproducible.
+> looks like pci_reset_function_locked is causing PCI configuration
+> space random. Same is mentioned here
+> https://www.kernel.org/doc/html/latest/driver-api/pci/pci.html
 
-For my part, all I can say is that -next is in pretty bad shape right now.
-The summary of my tests says:
+That documentation is poorly worded.  A reset doesn't make the
+contents of config space "random," but of course it sets config space
+registers to their initialization values, including things like the
+device BARs.  After a reset, the device BARs are zero, so it won't
+respond at the address we expect, and I'm sure that's what's causing
+the external abort.
 
-Build results:
-	total: 151 pass: 130 fail: 21
-Qemu test results:
-	total: 430 pass: 375 fail: 55
+So I guess we *do* need to save the state before the reset and restore
+it (either that or enumerate the device from scratch just like we
+would if it had been hot-added).  I'm not really thrilled with trying
+to save the state after the device has already reported an error.  I'd
+rather do it earlier, maybe during enumeration, like in
+pci_init_capabilities().  But I don't understand all the subtleties of
+dev->state_saved, so that requires some legwork.
 
-sparc32 smp images in next-20200603 still crash for me with a spinlock
-recursion. s390 images hang early in boot. Several others (alpha, arm64,
-various ppc) don't even compile. I can run some more bisects over time,
-but this is becoming a full-time job :-(.
+I don't think we should set INTX_DISABLE; the reset will make whatever
+we do with it irrelevant anyway.
 
-Guenter
+Remind me why the pci_cfg_access_lock()?
+
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
