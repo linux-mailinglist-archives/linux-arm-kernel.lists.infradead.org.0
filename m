@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 230B81EE0A2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:08:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0B061EE0A8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:09:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BINc/LATIiqvyH0OScmGLEO6ZeoyeS2mr0K2qaNzyM4=; b=fp1es9IJt3YRya
-	dXTDn+oSiDE8jjeHA/KWGqm2615tYEgi/Jsi7Awuu42mJGxjc5J1qarfcZixgZ49EU1eXM4l2+Yvp
-	BTrryGYRE9uTU1N2JkIlDlRMm2fGsf4j5nkEk5oKNj5FAET8n3D0e+z198o+zzWCLfoSF+pvUn34m
-	Pt1reaAumEZu3Vv+CEPvXod+PL7LrHebuDKepj8g84RcpcTLRWe1s1HA9GcUTbZ/AB92NtT75cWM1
-	pu0z8qPby3yLD4BcQUGRalW1LRiktLCzq3+WqKsmmNff35FrE3gB0RAnjJAiLqXhc23voQ+ChRhtz
-	cqguBQ266KwSg9TkgoMA==;
+	List-Owner; bh=P8yzy8Rue5KsVltnwShrolICgnkN8JFvUEx8zA6oKb4=; b=leO597xZ4sHy0a
+	LXPut8q/Zv79PZxL0a7O6LFj5Rrb1vdiZzpmTiRqqOXgUGVoqPBsq8ylhZ9dmZ8lTXtm57ePBu3iv
+	5Pn1zrZGsgy2EFPj0XbiBazyb6YS8cRUd8RLZaSj7faOUSd72ldRUhG2Sr4prKzt7vqNUoW+8HyIg
+	6Fa+KXtMA3CF4WOYnhiqTzw2AUvmdMwN535SsxWMJixwjkPytgPa3Y8Bzv3G0tVYuwgD2UKELSUTg
+	41gqAUkZdffXAdOpXBf0o1aOUJT/oxiEG9Zz6DdOf+g568tUvP6VOuibUdqqaFclYMqrPtQOUv1WH
+	4aeCI0hKjB1eLoOVaqYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jglrP-0006u2-5f; Thu, 04 Jun 2020 09:08:27 +0000
+	id 1jglsA-0007eI-TP; Thu, 04 Jun 2020 09:09:14 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jglr5-0006pQ-MY; Thu, 04 Jun 2020 09:08:10 +0000
-X-UUID: 0d2763b65e96487ab203f8ee114907a1-20200604
+ id 1jglr8-0006pQ-Ar; Thu, 04 Jun 2020 09:08:11 +0000
+X-UUID: 262f8ee966244971a9f7dfcb9cdc1fb1-20200604
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=vNTRRvj2mI0CwYUwHIUwitX832SWdGrxETBfN5PZOa0=; 
- b=qDGdaABw02nWs5Lsv5ac7HkkwZMad4aVr8CSkfUa15SX0ziglfzj2yGwc4W/SOTwL1wgz0QPN5t+XlY3jK0UoW8Obvyt2XNTfgHw1cEtlTJ0uEBwXE6RPxSHB7kHPc46p2ut5RInUAjayGEjnVIDGmIG4DDcOoKnyKP/pfOgWDc=;
-X-UUID: 0d2763b65e96487ab203f8ee114907a1-20200604
+ bh=uB/eaRDqLP8g/98zHxi4C86lzCa4pVEjbzjzQz34ezU=; 
+ b=uyRTkHPE/GNnwMAKxS0eKaOyTCsHbYK5NORYHfPivck6zGhqZXmLsdD0Qrj46J8kLfw+/yTC94KwBMVeDk/XpN5wDQS9o12NYEYUGXEwOUlMiMcvjmt1/pf1qTf14PXVPn987QDMwaeJgUQw8h4AyMVUwL9Y//Pp2ZqZujDGHA8=;
+X-UUID: 262f8ee966244971a9f7dfcb9cdc1fb1-20200604
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <xia.jiang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1572099063; Thu, 04 Jun 2020 01:07:56 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 4 Jun 2020 02:08:01 -0700
+ with ESMTP id 1856596691; Thu, 04 Jun 2020 01:07:59 -0800
+Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 4 Jun 2020 02:08:02 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 4 Jun 2020 17:07:59 +0800
+ mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 4 Jun 2020 17:08:01 +0800
 Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 4 Jun 2020 17:07:58 +0800
+ Transport; Thu, 4 Jun 2020 17:07:59 +0800
 From: Xia Jiang <xia.jiang@mediatek.com>
 To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
  <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
  Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
-Subject: [PATCH RESEND v9 00/18] Add support for mt2701 JPEG ENC support
-Date: Thu, 4 Jun 2020 17:05:35 +0800
-Message-ID: <20200604090553.10861-2-xia.jiang@mediatek.com>
+Subject: [PATCH RESEND v9 01/18] media: platform: Improve subscribe event flow
+ for bug fixing
+Date: Thu, 4 Jun 2020 17:05:36 +0800
+Message-ID: <20200604090553.10861-3-xia.jiang@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200604090553.10861-1-xia.jiang@mediatek.com>
 References: <20200604090553.10861-1-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_020807_757102_24A29FB6 
-X-CRM114-Status: UNSURE (   4.84  )
+X-CRM114-CacheID: sfid-20200604_020810_403760_56557BDD 
+X-CRM114-Status: UNSURE (   8.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -99,258 +100,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset add support for mt2701 JPEG ENC support.
+Let v4l2_ctrl_subscribe_event() do the job for other types except
+V4L2_EVENT_SOURCE_CHANGE.
 
-This is the compliance test result for jpeg dec and enc.
+Reviewed-by: Tomasz Figa <tfiga@chromium.org>
+Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
+---
+v9: no changes
+---
+ drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-The JPEG dec log:                                           
-------------------------------------------------------------
-v4l2-compliance -d /dev/video0                                                  
-v4l2-compliance SHA: 74377da4f5f3b63203c599d5dd75db6af91fdbb9, 32 bits, 32-bit time_t
-                                                                                
-Compliance test for mtk-jpeg device /dev/video0:                                
-                                                                                
-Driver Info:                                                                    
-        Driver name      : mtk-jpeg                                             
-        Card type        : mtk-jpeg decoder                                     
-        Bus info         : platform:15004000.jpegdec                            
-        Driver version   : 5.7.0                                                
-        Capabilities     : 0x84204000                                           
-                Video Memory-to-Memory Multiplanar                              
-                Streaming                                                       
-                Extended Pix Format                                             
-                Device Capabilities                                             
-        Device Caps      : 0x04204000                                           
-                Video Memory-to-Memory Multiplanar                              
-                Streaming                                                       
-                Extended Pix Format                                             
-        Detected JPEG Decoder                                                   
-                                                                                
-Required ioctls:                                                                
-        test VIDIOC_QUERYCAP: OK                                                
-                                                                                
-Allow for multiple opens:                                                       
-        test second /dev/video0 open: OK                                        
-        test VIDIOC_QUERYCAP: OK                                                
-        test VIDIOC_G/S_PRIORITY: OK                                            
-        test for unlimited opens: OK                                            
-                                                                                
-        test invalid ioctls: OK                                                 
-Debug ioctls:                                                                   
-        test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)                        
-        test VIDIOC_LOG_STATUS: OK (Not Supported)                              
-                                                                                
-Input ioctls:                                                                   
-        test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)               
-        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)                           
-        test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)                          
-        test VIDIOC_ENUMAUDIO: OK (Not Supported)                               
-        test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)                           
-        test VIDIOC_G/S_AUDIO: OK (Not Supported)                               
-        Inputs: 0 Audio Inputs: 0 Tuners: 0                                     
-                                                                                
-Output ioctls:                                                                  
-        test VIDIOC_G/S_MODULATOR: OK (Not Supported)                           
-        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)                           
-        test VIDIOC_ENUMAUDOUT: OK (Not Supported)                              
-        test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)                          
-        test VIDIOC_G/S_AUDOUT: OK (Not Supported)                              
-        Outputs: 0 Audio Outputs: 0 Modulators: 0                               
-                                                                                
-Input/Output configuration ioctls:                                              
-        test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)                      
-        test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)               
-        test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)                          
-        test VIDIOC_G/S_EDID: OK (Not Supported)                                
-                                                                                
-Control ioctls:                                                                 
-        test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK                                
-        test VIDIOC_QUERYCTRL: OK                                               
-        test VIDIOC_G/S_CTRL: OK                                                
-        test VIDIOC_G/S/TRY_EXT_CTRLS: OK                                       
-        test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK (Not Supported)             
-        test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)                            
-        Standard Controls: 0 Private Controls: 0                                
-                                                                                
-Format ioctls:                                                                  
-        test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK                      
-        test VIDIOC_G/S_PARM: OK (Not Supported)                                
-        test VIDIOC_G_FBUF: OK (Not Supported)                                  
-        test VIDIOC_G_FMT: OK                                                   
-        test VIDIOC_TRY_FMT: OK                                                 
-        test VIDIOC_S_FMT: OK                                                   
-        test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)                        
-        test Cropping: OK (Not Supported)                                       
-        test Composing: OK                                                      
-        test Scaling: OK (Not Supported)                                        
-                                                                                
-Codec ioctls:                                                                   
-        test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)                       
-        test VIDIOC_G_ENC_INDEX: OK (Not Supported)                             
-        test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)                       
-                                                                                
-Buffer ioctls:                                                                  
-        test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK                            
-        test VIDIOC_EXPBUF: OK                                                  
-        test Requests: OK (Not Supported)                                       
-                                                                                
-Total for mtk-jpeg device /dev/video0: 45, Succeeded: 45, Failed: 0, Warnings: 0
-------------------------------------------------------------
-                                                            
-The JPEG enc log:                                           
-                                                            
-------------------------------------------------------------
-v4l2-compliance -d /dev/video1                                                                     
-v4l2-compliance SHA: 74377da4f5f3b63203c599d5dd75db6af91fdbb9, 32 bits, 32-bit time_t              
-                                                                                                   
-Compliance test for mtk-jpeg device /dev/video1:                                                   
-                                                                                                   
-Driver Info:                                                                                       
-        Driver name      : mtk-jpeg                                                                
-        Card type        : mtk-jpeg encoder                                                        
-        Bus info         : platform:1500a000.jpegenc                                               
-        Driver version   : 5.7.0                                                                   
-        Capabilities     : 0x84204000                                                              
-                Video Memory-to-Memory Multiplanar                                                 
-                Streaming                                                                          
-                Extended Pix Format                                                                
-                Device Capabilities                                                                
-        Device Caps      : 0x04204000                                                              
-                Video Memory-to-Memory Multiplanar                                                 
-                Streaming                                                                          
-                Extended Pix Format                                                                
-        Detected JPEG Encoder                                                                      
-                                                                                                   
-Required ioctls:                                                                                   
-        test VIDIOC_QUERYCAP: OK                                                                   
-                                                                                                   
-Allow for multiple opens:                                                                          
-        test second /dev/video1 open: OK                                                           
-        test VIDIOC_QUERYCAP: OK                                                                   
-        test VIDIOC_G/S_PRIORITY: OK                                                               
-        test for unlimited opens: OK                                                               
-                                                                                                   
-        test invalid ioctls: OK                                                                    
-Debug ioctls:                                                                                      
-        test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)                                           
-        test VIDIOC_LOG_STATUS: OK (Not Supported)                                                 
-                                                                                                   
-Input ioctls:                                                                                      
-        test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)                                  
-        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)                                              
-        test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)                                             
-        test VIDIOC_ENUMAUDIO: OK (Not Supported)                                                  
-        test VIDIOC_G/S/ENUMINPUT: OK (Not Supported)                                              
-        test VIDIOC_G/S_AUDIO: OK (Not Supported)                                                  
-        Inputs: 0 Audio Inputs: 0 Tuners: 0                                                        
-                                                                                                   
-Output ioctls:                                                                                     
-        test VIDIOC_G/S_MODULATOR: OK (Not Supported)                                              
-        test VIDIOC_G/S_FREQUENCY: OK (Not Supported)                                              
-        test VIDIOC_ENUMAUDOUT: OK (Not Supported)                                                 
-        test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)                                             
-        test VIDIOC_G/S_AUDOUT: OK (Not Supported)                                                 
-        Outputs: 0 Audio Outputs: 0 Modulators: 0                                                  
-                                                                                                   
-Input/Output configuration ioctls:                                                                 
-        test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)                                         
-        test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)                                  
-        test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)                                             
-        test VIDIOC_G/S_EDID: OK (Not Supported)                                                   
-                                                                                                   
-Control ioctls:                                                                                    
-        test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: OK                                                   
-        test VIDIOC_QUERYCTRL: OK                                                                  
-        test VIDIOC_G/S_CTRL: OK                                                                   
-        test VIDIOC_G/S/TRY_EXT_CTRLS: OK                                                          
-        test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK                                                
-        test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)                                               
-        Standard Controls: 4 Private Controls: 0                                                   
-                                                                                                   
-Format ioctls:                                                                                     
-        test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK                                         
-        test VIDIOC_G/S_PARM: OK (Not Supported)                                                   
-        test VIDIOC_G_FBUF: OK (Not Supported)                                                     
-        test VIDIOC_G_FMT: OK                                                                      
-        test VIDIOC_TRY_FMT: OK                                                                    
-        test VIDIOC_S_FMT: OK                                                                      
-        test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)                                           
-        test Cropping: OK                                                                          
-        test Composing: OK (Not Supported)                                                         
-        test Scaling: OK (Not Supported)                                                           
-                                                                                                   
-Codec ioctls:                                                                                      
-        test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)                                          
-        test VIDIOC_G_ENC_INDEX: OK (Not Supported)                                                
-        test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)                                          
-                                                                                                   
-Buffer ioctls:                                                                                     
-        test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK                                               
-        test VIDIOC_EXPBUF: OK                                                                     
-        test Requests: OK (Not Supported)                                                          
-                                                                                                   
-Total for mtk-jpeg device /dev/video1: 45, Succeeded: 45, Failed: 0, Warnings: 0                   
-------------------------------------------------------------
-
-Change compared to v8:                  
--change commit message of patch 02/18                  
--use pm_runtime_put() to replace pm_runtime_put_sync() of patch 05/18              
--add one patch for deletting the resetting hardware flow in the system PM ops     
--use v4l2_m2m_suspend() and v4l2_m2m_resume() to improve the implemention         
- of the system PM ops. This patch(07/18) depends on [RFC,V4,1/4] media:           
- v4l2_mem2mem: add v4l2_m2m_suspend, v4l2_m2m_resume(https://patchwork.kernel.org/patch/11272917/)
--add one patch for cancelling the last frame handling flow                  
--add one patch for deletting zeroing the reserved fields                  
--move changing data type of max/min width/height to patch 10/18                  
--add one patch for renaming existing functions/defines/variables 
-
-Reason for resend:
--delete check.txt in patch 06/18
-
-Xia Jiang (18):
-  media: platform: Improve subscribe event flow for bug fixing
-  media: platform: Improve queue set up flow for bug fixing
-  media: platform: Improve getting and requesting irq flow for bug
-    fixing
-  media: platform: Change the fixed device node number to unfixed value
-  media: platform: Improve power on and power off flow
-  media: platform: Delete the resetting hardware flow in the system PM
-    ops
-  media: platform: Improve the implementation of the system PM ops
-  media: platform: Cancel the last frame handling flow
-  media: platform: Delete zeroing the reserved fields
-  media: platform: Stylistic changes for improving code quality
-  media: platform: Use generic rounding helpers
-  media: platform: Change MTK_JPEG_COMP_MAX macro definition location
-  media: platform: Delete redundant code and add annotation for an enum
-  media: dt-bindings: Add jpeg enc device tree node document
-  arm: dts: mt2701: Add jpeg enc device tree node
-  media: platform: Rename jpeg dec file name
-  media: platform: Rename existing functions/defines/variables
-  media: platform: Add jpeg enc feature
-
- .../bindings/media/mediatek-jpeg-encoder.txt  |   37 +
- arch/arm/boot/dts/mt2701.dtsi                 |   13 +
- drivers/media/platform/mtk-jpeg/Makefile      |    5 +-
- .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 1134 ++++++++++++-----
- .../media/platform/mtk-jpeg/mtk_jpeg_core.h   |   66 +-
- .../{mtk_jpeg_hw.c => mtk_jpeg_dec_hw.c}      |   10 +-
- .../{mtk_jpeg_hw.h => mtk_jpeg_dec_hw.h}      |   14 +-
- ...{mtk_jpeg_parse.c => mtk_jpeg_dec_parse.c} |    2 +-
- ...{mtk_jpeg_parse.h => mtk_jpeg_dec_parse.h} |    2 +-
- .../{mtk_jpeg_reg.h => mtk_jpeg_dec_reg.h}    |   19 +-
- .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c |  193 +++
- .../media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h |  123 ++
- 12 files changed, 1284 insertions(+), 334 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/media/mediatek-jpeg-encoder.txt
- rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_hw.c => mtk_jpeg_dec_hw.c} (98%)
- rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_hw.h => mtk_jpeg_dec_hw.h} (89%)
- rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_parse.c => mtk_jpeg_dec_parse.c} (98%)
- rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_parse.h => mtk_jpeg_dec_parse.h} (92%)
- rename drivers/media/platform/mtk-jpeg/{mtk_jpeg_reg.h => mtk_jpeg_dec_reg.h} (77%)
- create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.c
- create mode 100644 drivers/media/platform/mtk-jpeg/mtk_jpeg_enc_hw.h
-
+diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
+index f82a81a3bdee..4ad4a4b30a0e 100644
+--- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
++++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
+@@ -446,9 +446,9 @@ static int mtk_jpeg_subscribe_event(struct v4l2_fh *fh,
+ 	switch (sub->type) {
+ 	case V4L2_EVENT_SOURCE_CHANGE:
+ 		return v4l2_src_change_event_subscribe(fh, sub);
+-	default:
+-		return -EINVAL;
+ 	}
++
++	return v4l2_ctrl_subscribe_event(fh, sub);
+ }
+ 
+ static int mtk_jpeg_g_selection(struct file *file, void *priv,
 -- 
 2.18.0
 _______________________________________________
