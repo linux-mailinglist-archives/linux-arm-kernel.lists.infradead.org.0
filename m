@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C69D31EE5E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 15:52:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A0661EE5EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 15:52:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h8QjVDvJMZB1LGZH7lbwlQmggkpovJai6xMCM4hkr2o=; b=Ov6xGTUbZYa7Wu
-	q+uCxc2vmoabidGGTKAJ28gA0CkTkn2Z1M73EN1CMlzfD4XV5t/I9Kz4mtPP7ksR7V1+cGSneSrFE
-	dcQ6+NZJx1/mVFvGEExb60sgXnR4Q0pwrrI8HLSQtFQkdGJL/DyBfCluskLt3MHttKTgh09DI6UoC
-	knELFbMxgdmZEgN2ohIL5/MFbq6ZfUwjo17sn5RFrWipIJn91eRCRYrO4QglhLk4D8HUTagY6n9e5
-	WeU1wkz1rDfO56w60MpPrmaBNFZh7NII/GwGJaOGXOldCDz2PI+DNfXnam1adSLXn3ImYAQHVp/jX
-	Ml753dVQLOo4hAm84otw==;
+	List-Owner; bh=38cBAjRdtI3Bm3Bw+HD3Gik4izzzMU98vcWiTxRZ3ko=; b=QC6s8xJbY+0Smk
+	IRL6GOxsbbFmuk/166CDKEsg0pDguhO+1Ut4Cw/5mQ9hpy+nKbyqRSxG1ttHssrUIfdmbp2izvy0t
+	rmoBMA4f8eP/AR3XmGot30Lnzl6hKh3RsLxnzQU7cFUWu3NbWGiq2PRkMwB/LZq+W7LwH2OxMJ/Q8
+	T/dFh9Nc/tkV8Tisv00tZgv8ajPoG6u9dF+5CuVt11jAPffAn9rVqsNJAOP3fyzl+4zybceDt1r2N
+	dEAXXNBaW5/Lrf4ZweOoNTz76/xjVHIv207enU4XZ5xkEdec57g/KidlA5sDqwFAQeghUuxOI0UdG
+	Lpc0KDDSehkXMZ2eYvSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgqI8-0008WD-Ge; Thu, 04 Jun 2020 13:52:20 +0000
-Received: from mail-lf1-f65.google.com ([209.85.167.65])
+	id 1jgqIP-0000LK-E1; Thu, 04 Jun 2020 13:52:37 +0000
+Received: from mail-lj1-f193.google.com ([209.85.208.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgqGz-0007Ok-8S
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 13:51:11 +0000
-Received: by mail-lf1-f65.google.com with SMTP id u16so3638748lfl.8
+ id 1jgqH4-0007UF-Pj
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 13:51:16 +0000
+Received: by mail-lj1-f193.google.com with SMTP id m18so7377032ljo.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jun 2020 06:51:08 -0700 (PDT)
+ Thu, 04 Jun 2020 06:51:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=JQF4gusMMse1t+P2Qqr0GcfguvDdOuRmX3WacGaJBcQ=;
- b=nlkrbOGgxtzFDuc7T3heLW1Yr7wK6myqj9xdX7srYbdUAX820I7ufHPPpnaU5FJlh1
- o3V6UEY4hJgNkCYh7M9W2Zofh3KlRjqV6dK/jWFlj0w6SL33Ng2KkWuB+eNFboFKmYVZ
- uqlCl4qN/cWaIBkvGVJS8ARsvINB4Mh4hno4dkZe7SvJFxKvrDqEmPOnG9f3Ms8u3I76
- 1yliSm08VtQdIjC8sTfdrO8PJDi15l/dKMKwdtIhJRCxoeNGBUn/CP8/YPsvS11gyaoa
- hS9LNhBQy1POPXd7yH85yWt5sRz5i9o6+mwMEkpl5HqHQW993CHujQ9iIS4P3H/7lxTN
- uuQw==
-X-Gm-Message-State: AOAM532ZgMLEJJpHL9+WnvQecXUtq8MXrmmShx4tlxhT3RYYTMbt0Wv+
- KBCkB2L8cPY35V6t+ZXAHrg=
-X-Google-Smtp-Source: ABdhPJxGDD5ukdedXoxuQ27N5jKq1fSsreuCe9q3nAgk5mstTvN2pJQfkeE/l29dSTZfbBg2leMMKA==
-X-Received: by 2002:a05:6512:3214:: with SMTP id
- d20mr2637853lfe.203.1591278666991; 
- Thu, 04 Jun 2020 06:51:06 -0700 (PDT)
+ bh=b54SpJMSTOd6h+DBnk1Lku3f1oWBTa5w9a5vkJqB3fA=;
+ b=lXdRWTfNjmevWmWZcdVu6i3e+JSkM61apS4FLhRE4j/jUXeSOBhl2xPkcak/+CEdeT
+ l7J+PUHKjAqW6vK7IfLmTs4kXRaFcJscXYUfuJ3UcMtQkAH5qqMkCzY/thsKt/LN396H
+ q8W1NS96v/hGahaOoAE+zI2ySNRlCvLXVJ2ZqcA5LtTzfJ6M8NJLoxh5FDP3Z1vm6SSQ
+ 11Iun2Wz0yWEbwlUPdo1NCamOFlqDbc369UlAb8e9hpThb5P0Fb2c5uJGFDdvCQx4Ipy
+ 7FVUpY87CH9WxlM2SAXcgC3XKEpB7MdO6q7lUh4oU1pSbw/JfryVjL8lwgomOLGQNMFK
+ dIOQ==
+X-Gm-Message-State: AOAM532MD9gCPmOhgLfzgAv328Zwuf7gKTAUZbXROU13PY85nK3LJvuU
+ JGycY6bx+yzaBq4UqzgleIU=
+X-Google-Smtp-Source: ABdhPJwJN+QU/v5qwJyKhHL0R8cAYtbe3PO9Gpb/m6COOlcWqK5m8q5guhRTY5qY7edIDaq2chb7lg==
+X-Received: by 2002:a2e:9dd8:: with SMTP id x24mr2410838ljj.304.1591278673307; 
+ Thu, 04 Jun 2020 06:51:13 -0700 (PDT)
 Received: from localhost.localdomain ([185.248.161.177])
- by smtp.gmail.com with ESMTPSA id u16sm1202140lji.58.2020.06.04.06.51.00
+ by smtp.gmail.com with ESMTPSA id u16sm1202140lji.58.2020.06.04.06.51.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 04 Jun 2020 06:51:06 -0700 (PDT)
+ Thu, 04 Jun 2020 06:51:12 -0700 (PDT)
 From: Alexander Popov <alex.popov@linux.com>
 To: Kees Cook <keescook@chromium.org>, Emese Revfy <re.emese@gmail.com>,
  Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
@@ -69,25 +68,26 @@ To: Kees Cook <keescook@chromium.org>, Emese Revfy <re.emese@gmail.com>,
  kernel-hardening@lists.openwall.com, linux-kbuild@vger.kernel.org,
  x86@kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, gcc@gcc.gnu.org
-Subject: [PATCH 4/5] gcc-plugins/stackleak: Don't instrument itself
-Date: Thu,  4 Jun 2020 16:49:56 +0300
-Message-Id: <20200604134957.505389-5-alex.popov@linux.com>
+Subject: [PATCH 5/5] gcc-plugins/stackleak: Don't instrument vgettimeofday.c
+ in arm64 VDSO
+Date: Thu,  4 Jun 2020 16:49:57 +0300
+Message-Id: <20200604134957.505389-6-alex.popov@linux.com>
 X-Mailer: git-send-email 2.25.2
 In-Reply-To: <20200604134957.505389-1-alex.popov@linux.com>
 References: <20200604134957.505389-1-alex.popov@linux.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_065109_662670_AD3EF72D 
-X-CRM114-Status: GOOD (  10.72  )
+X-CRM114-CacheID: sfid-20200604_065114_845352_A2CD3F21 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.65 listed in list.dnswl.org]
+ no trust [209.85.208.193 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.65 listed in wl.mailspike.net]
+ [209.85.208.193 listed in wl.mailspike.net]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [a13xp0p0v88[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -115,27 +115,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need to try instrumenting functions in kernel/stackleak.c.
+Don't try instrumenting functions in arch/arm64/kernel/vdso/vgettimeofday.c.
 Otherwise that can cause issues if the cleanup pass of stackleak gcc plugin
 is disabled.
 
 Signed-off-by: Alexander Popov <alex.popov@linux.com>
 ---
- kernel/Makefile | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/kernel/vdso/Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/kernel/Makefile b/kernel/Makefile
-index 4cb4130ced32..d372134ac9ec 100644
---- a/kernel/Makefile
-+++ b/kernel/Makefile
-@@ -118,6 +118,7 @@ obj-$(CONFIG_RSEQ) += rseq.o
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index 3862cad2410c..9b84cafbd2da 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -32,7 +32,8 @@ UBSAN_SANITIZE			:= n
+ OBJECT_FILES_NON_STANDARD	:= y
+ KCOV_INSTRUMENT			:= n
  
- obj-$(CONFIG_SYSCTL_KUNIT_TEST) += sysctl-test.o
+-CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -fasynchronous-unwind-tables
++CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -fasynchronous-unwind-tables \
++		$(DISABLE_STACKLEAK_PLUGIN)
  
-+CFLAGS_stackleak.o += $(DISABLE_STACKLEAK_PLUGIN)
- obj-$(CONFIG_GCC_PLUGIN_STACKLEAK) += stackleak.o
- KASAN_SANITIZE_stackleak.o := n
- KCOV_INSTRUMENT_stackleak.o := n
+ ifneq ($(c-gettimeofday-y),)
+   CFLAGS_vgettimeofday.o += -include $(c-gettimeofday-y)
 -- 
 2.25.2
 
