@@ -2,58 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2167E1EE69F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 16:27:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38ED51EE6CD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 16:42:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Tzy4ggVAvd9lzuCI+G0Nfy84XG1V/rKJnUaUQYH9I0=; b=GuVm3NiQCHMHBW
-	DpEZkcXYvY4iXMqTmUHgxUHYqs9O5RW+SBgO/I5TPEIQt+hzg+JOo8Gki8u5WXxBEnK4mZJu0SwOH
-	0KIl8MvlrZogbILB5b7EIttq3vX2Q70wFXe08elwRDoKjc4by8R5Y5P6PBsH2Tw9+m56qFnsKYD0D
-	9djAW3UhborbJmzkMRo/iNDIfxLtxrf2eFW/iSK+p20zDkuobK/PmwIPHAV03QWWOwSdvrSoP3lc6
-	DPdkkAjZbCnt/boiMleMIWP3tAuRsls4yHnMTYT4JSCS/US0R15VXKdNKjJhQur+dPdrdTAnxkzRk
-	mCKc+3gP6MeBAAMoY+Qg==;
+	List-Owner; bh=efGEmuPQI79W2y8r01MnU3fr9wBLuRofSVbvHwxYEhw=; b=RewikjI2HozEzx
+	tvrsYFYblBiiH/5glrP5MZODBxoNXVo4efawafFl9tQ5taT/mLf+4R96+SCvIEjCtg4wSrHL3PSsb
+	XJAYu31sFTfoCRjwWfhGsOVmpsW+EGRct1dq6xEORQqZlkcICBozuXvYi2Y2z736mZ1vLWkE1G+GO
+	g3gUX+drtLeP2JohO4IftFgGnttfHxD5NH6Ghm+GGmIyNB+DQUS6oOC2kYadvi6ioA6djYBd5ci8V
+	maFqmJ0H67wQKBFxkG2lBthPvkhvHZP66WNdjZkt2I+yQa/HbcxCcgmZMFr7na0N7Q+i5CEM1BWH0
+	LsxLQjdipCG5hoEiRg0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgqq2-0007wx-QT; Thu, 04 Jun 2020 14:27:22 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgqpv-0007vm-B3
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 14:27:16 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC7EA2B;
- Thu,  4 Jun 2020 07:27:11 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 384F03F305;
- Thu,  4 Jun 2020 07:27:09 -0700 (PDT)
-Date: Thu, 4 Jun 2020 15:27:03 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH 06/12] of/iommu: Make of_map_rid() PCI agnostic
-Message-ID: <20200604142703.GA476@e121166-lin.cambridge.arm.com>
-References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
- <20200521130008.8266-7-lorenzo.pieralisi@arm.com>
- <CAL_JsqK5aiEMAZpqgTmrOq=HPRSFEoQWJrpR2YA0hziEtLMwrg@mail.gmail.com>
+	id 1jgr44-0000Bh-A7; Thu, 04 Jun 2020 14:41:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgr3x-0000Ax-Eo
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 14:41:46 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A3A7D206E6;
+ Thu,  4 Jun 2020 14:41:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591281704;
+ bh=5hDYkKSC1Dy4kl2pO+GirYzLkfIGnDa23RePysKSeNY=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=RiaCgBEdlSCP9Apnmmd8MYJrcFYJBy/Vb3nvk6FRBfEMY4RTcTStGBSCtWIlY/Vmz
+ VuHdq26O2pMms4OyF645+qmkMJ5MnER5CuEfqu275CjyhWMmeonMfI/fKv5uFlsn0R
+ 5H08lNRgXUf8aEQPS3UhSNhx3CfgLPJO8JvTo7L4=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=why) by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jgr3v-000GzT-2y; Thu, 04 Jun 2020 15:41:43 +0100
+Date: Thu, 4 Jun 2020 15:41:41 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH] arm64: set TEXT_OFFSET to 0x0 in preparation for
+ removing it entirely
+Message-ID: <20200604154141.4983aeaa@why>
+In-Reply-To: <158808120907.217905.4632288691847383619.b4-ty@kernel.org>
+References: <20200415082922.32709-1-ardb@kernel.org>
+ <158808120907.217905.4632288691847383619.b4-ty@kernel.org>
+Organization: Approximate
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_JsqK5aiEMAZpqgTmrOq=HPRSFEoQWJrpR2YA0hziEtLMwrg@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: will@kernel.org, ardb@kernel.org,
+ linux-arm-kernel@lists.infradead.org, mark.rutland@arm.com,
+ catalin.marinas@arm.com, james.morse@arm.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_072715_465582_8043E8F7 
-X-CRM114-Status: GOOD (  22.85  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200604_074145_511892_F6DB475D 
+X-CRM114-Status: GOOD (  16.34  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,100 +91,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Diana Craciun <diana.craciun@oss.nxp.com>, Marc Zyngier <maz@kernel.org>,
- Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, linux-acpi@vger.kernel.org,
- Linux IOMMU <iommu@lists.linux-foundation.org>,
- PCI <linux-pci@vger.kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, james.morse@arm.com,
+ linux-arm-kernel@lists.infradead.org, suzuki.poulose@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 04:47:19PM -0600, Rob Herring wrote:
-> On Thu, May 21, 2020 at 7:00 AM Lorenzo Pieralisi
-> <lorenzo.pieralisi@arm.com> wrote:
-> >
-> > There is nothing PCI specific (other than the RID - requester ID)
-> > in the of_map_rid() implementation, so the same function can be
-> > reused for input/output IDs mapping for other busses just as well.
-> >
-> > Rename the RID instances/names to a generic "id" tag and provide
-> > an of_map_rid() wrapper function so that we can leave the existing
-> > (and legitimate) callers unchanged.
-> 
-> It's not all that clear to a casual observer that RID is a PCI thing,
-> so I don't know that keeping it buys much. And there's only 3 callers.
+Hi all,
 
-Yes I agree - I think we can remove the _rid interface.
+On Tue, 28 Apr 2020 15:49:35 +0100
+Will Deacon <will@kernel.org> wrote:
 
-> > No functionality change intended.
-> >
-> > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > Cc: Rob Herring <robh+dt@kernel.org>
-> > Cc: Joerg Roedel <joro@8bytes.org>
-> > Cc: Robin Murphy <robin.murphy@arm.com>
-> > Cc: Marc Zyngier <maz@kernel.org>
-> > ---
-> >  drivers/iommu/of_iommu.c |  2 +-
-> >  drivers/of/base.c        | 42 ++++++++++++++++++++--------------------
-> >  include/linux/of.h       | 17 +++++++++++++++-
-> >  3 files changed, 38 insertions(+), 23 deletions(-)
-> >
-> > diff --git a/drivers/iommu/of_iommu.c b/drivers/iommu/of_iommu.c
-> > index 20738aacac89..ad96b87137d6 100644
-> > --- a/drivers/iommu/of_iommu.c
-> > +++ b/drivers/iommu/of_iommu.c
-> > @@ -145,7 +145,7 @@ static int of_fsl_mc_iommu_init(struct fsl_mc_device *mc_dev,
-> >         struct of_phandle_args iommu_spec = { .args_count = 1 };
-> >         int err;
-> >
-> > -       err = of_map_rid(master_np, mc_dev->icid, "iommu-map",
-> > +       err = of_map_id(master_np, mc_dev->icid, "iommu-map",
+> On Wed, 15 Apr 2020 10:29:22 +0200, Ard Biesheuvel wrote:
+> > TEXT_OFFSET on arm64 is a historical artifact from the early days of
+> > the arm64 port where the boot protocol was basically 'copy this image
+> > to the base of memory + 512k', giving us 512 KB of guaranteed BSS space
+> > to put the swapper page tables. When the arm64 port was merged for
+> > v3.10, the Image header already carried the actual value of TEXT_OFFSET,
+> > to allow the bootloader to discover it dynamically rather than hardcode
+> > it to 512 KB.
+> > 
+> > [...]  
 > 
-> I'm not sure this is an improvement because I'd refactor this function
-> and of_pci_iommu_init() into a single function:
+> Applied to arm64 (for-next/misc), thanks!
 > 
-> of_bus_iommu_init(struct device *dev, struct device_node *np, u32 id)
-> 
-> Then of_pci_iommu_init() becomes:
-> 
-> of_pci_iommu_init()
-> {
->   return of_bus_iommu_init(info->dev, info->np, alias);
-> }
-> 
-> And replace of_fsl_mc_iommu_init call with:
-> err = of_bus_iommu_init(dev, master_np, to_fsl_mc_device(dev)->icid);
+> [1/1] arm64: set TEXT_OFFSET to 0x0 in preparation for removing it entirely
+>       https://git.kernel.org/arm64/c/cfa7ede20f13
 
-I will follow up on this on patch 7.
+This breaks a guest kernel booted with kvmtool (tested on my d05).
+Reverting it on top of 6929f71e46bd makes it work again. I haven't yet
+investigated what is happening here though.
 
-> >                          "iommu-map-mask", &iommu_spec.np,
-> >                          iommu_spec.args);
-> >         if (err)
-> > diff --git a/drivers/of/base.c b/drivers/of/base.c
-> > index ae03b1218b06..e000e17bd602 100644
-> > --- a/drivers/of/base.c
-> > +++ b/drivers/of/base.c
-> > @@ -2201,15 +2201,15 @@ int of_find_last_cache_level(unsigned int cpu)
-> >  }
-> >
-> >  /**
-> > - * of_map_rid - Translate a requester ID through a downstream mapping.
-> > + * of_map_id - Translate a requester ID through a downstream mapping.
-> 
-> Still a requester ID?
+Thanks,
 
-Fixed, thanks.
-
-Lorenzo
+	M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
