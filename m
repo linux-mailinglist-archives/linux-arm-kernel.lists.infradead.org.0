@@ -2,33 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 07F351EE8CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 18:47:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97EBE1EE8EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 18:55:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aUm3Yqyg+PCka+GtU22Ez1xBkNVj3VVwqsmQjSDH+t4=; b=oo+NV45ttgr7Fr
-	aPbccX+tVN/P5c6ddQcFqvxycmOazx/5EbRat1ujmxRRswnu8cvlFM58Wb2pWjxAlXpGXr+X/8wEr
-	RR9JLl7bmfZUHfho055LpYVQwCDmos9YDsjC4bIyPijI7RA7KNOuziai6KBQT8n+9qc8RJF9RnAST
-	CsJ9Ukr6JpBYrdUcyprBbzQp8oM7UMsFEoWoL2IyL7Et8Zsen3E9NPH1MgQmvpEzdNbO66/P5d0MC
-	E5MjYDZ+7xZsKS60RF6W+cA73R0/i/TNtvL8TMghnSQB9D5pwqfZZWFIm8Uk/c7M3xBo4HMC845gD
-	Fbi9uvhN/1cG8sPEBjNA==;
+	List-Owner; bh=W0XXHWtfJKePwJcVD9Rcvgtph4gPZtZyapc0G2KnnAE=; b=FK7JmeIoDVVMHa
+	olEjkj/tR1OZLrVxAflXLBrmgye7Ga9dUR7zIWhGha0alK+hYXs9/7EmVYNO6EgvgqRn8Ci5ZPaNU
+	K6gyvzQAh1kmX7QHCHnnOWMOwJlZaWO/s/oeX0hZk33E00oEul4YUnuzWf99K3kC9tZe1tzdKLFPo
+	U4Q51SA9pXnabRjxNoJUK5f82Vpcy9Cr2EIxFWU8WcT5eqN4CGZSf+WAQBfmMBDKVa943duZLWcgP
+	1tXooiPhgdP3g4yof2WDJaaTcm+08tngkWtmJ8tKrjqLnXxIexan3bfGs7tkRof9yooZBY9flsDp5
+	FoxyG1pesraySyJ3cDcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgt1L-00034R-Q8; Thu, 04 Jun 2020 16:47:11 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1jgt8r-0006lM-GV; Thu, 04 Jun 2020 16:54:57 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgt1E-00033m-JR; Thu, 04 Jun 2020 16:47:06 +0000
+ id 1jgt8j-0006kj-Pt; Thu, 04 Jun 2020 16:54:51 +0000
 Received: from [192.168.1.164] ([37.4.249.202]) by mrelayeu.kundenserver.de
- (mreue011 [212.227.15.167]) with ESMTPSA (Nemesis) id
- 1MQ6C0-1jKySA2XzM-00M4dq; Thu, 04 Jun 2020 18:46:58 +0200
+ (mreue009 [212.227.15.167]) with ESMTPSA (Nemesis) id
+ 1MRmsE-1jWTny32d8-00T9dJ; Thu, 04 Jun 2020 18:54:44 +0200
 Subject: Re: [PATCH 2/3] ARM: dts: bcm2711: Update SPI nodes compatible strings
-To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
+To: Florian Fainelli <f.fainelli@gmail.com>, Lukas Wunner <lukas@wunner.de>
 References: <20200604034655.15930-1-f.fainelli@gmail.com>
  <20200604034655.15930-3-f.fainelli@gmail.com>
+ <20200604042038.jzolu6k7q3d6bsvq@wunner.de>
+ <15c3995e-87de-0f2b-3424-5dd698b181d3@gmail.com>
 From: Stefan Wahren <stefan.wahren@i2se.com>
 Autocrypt: addr=stefan.wahren@i2se.com; keydata=
  LS0tLS1CRUdJTiBQR1AgUFVCTElDIEtFWSBCTE9DSy0tLS0tClZlcnNpb246IEdudVBHIHYy
@@ -160,43 +162,43 @@ Autocrypt: addr=stefan.wahren@i2se.com; keydata=
  VVBnY0pKTmFHWTIKVklEclpRaTROU2lOUTBOSWkrZGp1NGZOTW1DcFFxZzh0YkMzY0FhNnl3
  bTZvUUIxU0JobURYMmUxMWdSbGx1SQpPblRHUEUwSFRvM2w3MmxoYmc9PQo9cVpNVgotLS0t
  LUVORCBQR1AgUFVCTElDIEtFWSBCTE9DSy0tLS0tCg==
-Message-ID: <91e002eb-0b7e-535a-63a5-2f1e33210be0@i2se.com>
-Date: Thu, 4 Jun 2020 18:46:57 +0200
+Message-ID: <2978874a-fe1e-3b07-381d-55dcb00ecca7@i2se.com>
+Date: Thu, 4 Jun 2020 18:54:42 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200604034655.15930-3-f.fainelli@gmail.com>
+In-Reply-To: <15c3995e-87de-0f2b-3424-5dd698b181d3@gmail.com>
 Content-Language: en-US
-X-Provags-ID: V03:K1:A4nwKZABvn0PpqIKraRmZFR0JD8aqD3J8e/hv/s4DSdRnZYcxfa
- a/D+ErnVPBjTWjKeJ4MX4Jdf8RW7Q452mu31jTWs3KzuivZ2OnmfSyOqfWNyXUZWYqj4/5m
- z4bQIQXIUFlPU1bqv8tS0HHW7cHCFTXhidJDaXQ+IxVMZw+CXREM8ijkLPOPT7JS/sQg8Eb
- XUQobNiw0hB1C4DKGBDiA==
+X-Provags-ID: V03:K1:dK23L3xZBA8GB0VzPd1SbXS8zd0W1QwsyZ2u55AIEKCjRGwMYnm
+ GimwKCA5YzTC7HyOyx8k19UcJWocoZ7qX9dNdNDBexqLutLLv+v44JzKTG8pfwvzSfXbB37
+ +Wm7ULGpLYNLLKC2giHX9Sr8rHXXFxlOPq0GBjLGnAHnSjvZUJRwPLkd5h5I/A1RKqA8aDH
+ E1KlbkzPy83+05JIohewA==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:YoSmraglVes=:6k1J92DanjTXQmTpwbmqr6
- sI/UA6hbrORx9Woc/VnovsvtvFeUUX7XdUKrpofELmXTSjC9SA1E2L9+Cwe4l6/06ly0N61n5
- mUV55FkEVVGfSFq9yIVvPBfCu7ZVfLMbilhSM3RHEnmZeZt1rXvb1POXeqAn4qd8C0MF95LGY
- 98yQC3GNVY3gQiDNpdTQdL8ktGs/jrOTMzTpVs4R+mHf88pCk/e893IHXpNDicO5xJYkKIB7x
- BJ1zF4iS+b53tocQXBQ27UuiAFMFwpMzpWIMmwgYrCitfWS9pDKZ1wBMiPFzLWZrUfIvGXL6i
- WkwvQO/k4X16W0rlAh7OU2JF/DVLXjHdkE+MBzFCBf0IxlVkMOaomsun/tclZm4xQKITdEtio
- ZSE3MO+u0anUHbpePEdw7BdfWrGwJhY04q7VO/1PekLBk9nWpFQS9pJZI0bmsYBds8ft3GD+0
- 4MiOdQFaLgs741NMxJxIs30UQc21VspyJ4roZnUZp2WVWtwGEbhY0O/e00tINcGg8qzxsIGdd
- XUIdevtgL0RpLIEmBUHwIwq+yKPjJbNV5lT8rzb4HOAy1kZ9oG+cr5yUUqZOoxyofoSWJ2Fyj
- eQBF+13B0UCv/KmikPhD4HRxiP9HOg/dNm11Eb7NwVI0zaxKC3hDdFh8vMIrX0pk9TPldwZH9
- VdhTVoDNyKkmsAeDN3LDr/8Ogjb7ZXGvGBBYUglqwYh+EyMqjaGMXJ1rp59NVPodFP0CtgNT4
- YKlVVP6xAx7cggkkatwHHb5z2vi/CxigWibJ8NFS5sLZkX1iLROZRdpbLCVpAnGuLy1SRoB41
- IgmPXyH37TeZK22PDdcOQX8fZcJWxjIDLU+YkoyeRdtJSKfeY55pqYRMcY/CRbJZgqfGArQ
+X-UI-Out-Filterresults: notjunk:1;V03:K0:XYTsWQ1s0Bw=:jwOwxeY/T/DqHRuVZtLLAv
+ RxoqMv87x2K6CuXqq/VPBwPxc7WfEsAJcULGqubCXABhv6cTM3RRzN1OPe0UXGeNChPLj4fMQ
+ j48Zi5mroc0bcYRWH6nTO+Br+xVm1HaHUutWBPelA5G7Y5pggQKHmCG8lamD8yZtTUkJFZysC
+ syQE8gdsHcNGpuBWVcIF6/Db70tIaQ87Ib1kw2KQN3h4QP36T1/2vBLyZ+0/tfGWNhBVWHdE3
+ B5uj4OANMlM5kHWqgrZe0ks48jyHGoNJuEGdwtckWeHsgopQ9St8OMgjYY7HfJMEoFPP2QTaW
+ M4NM9cYDMfthc0wKFhr65Sp4ziHYpwbak9/znchgpgBM9bSmuADnzaTm8AFae9zK/qz4B9GDy
+ nz1wrq50vk7YezFhLkwqAAhX/7WYb/dKvPDL5wc/D9y7N/DQyuT27lAdwAbOw1CmjAIqa+rQi
+ DXRQzeQ7JIYfIcgCoSRHx/MZ4d2n+vIshySSP2ttbMwajNpBiyQIOSo/e8JkQojoA0Gqxbq1/
+ PZw+prEo/FntHNp5eFY3mv4RloVGDwvkBfLb1EKDnLOpJvkzq8FXePw1gI1XifL24LiD0PVU5
+ PULgpUp/ZPpDV7IdRMCowcdt6chnh8tdbIjHQOb2mXvqWthzoy9VML3IjAwZfINhQ46uhHnxm
+ 7UHVLaig4gWyyPHqTVt3JSV7Yw6R7/WHOrF48EpHcUl1RMICvcroUnENNP/NOG37zxEf69d13
+ ifjnKAhYM0+zutclefCARDabMcmBe3O/ycZfqbz27Ube55v4DIIi+UPTNtGpfXmGS6CPPaGRN
+ zyjEgvzq9wHTEgQk/aUrohJxpyym6Q5zZTRZO9iZzvsG7k7JBzpFa1qfgVwPoi5+b+Uf1D0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_094704_934020_3C1DDF1F 
-X-CRM114-Status: GOOD (  10.56  )
+X-CRM114-CacheID: sfid-20200604_095450_134816_6A628A34 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
+ no trust [212.227.126.135 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.134 listed in wl.mailspike.net]
+ [212.227.126.135 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -212,7 +214,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  <devicetree@vger.kernel.org>, Scott Branden <sbranden@broadcom.com>,
- lukas@wunner.de, Ray Jui <rjui@broadcom.com>, Mark Brown <broonie@kernel.org>,
+ Ray Jui <rjui@broadcom.com>, Mark Brown <broonie@kernel.org>,
+ linux-kernel@vger.kernel.org,
  "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  Rob Herring <robh+dt@kernel.org>,
@@ -227,21 +230,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Florian,
+Am 04.06.20 um 18:40 schrieb Florian Fainelli:
+>
+> On 6/3/2020 9:20 PM, Lukas Wunner wrote:
+>> On Wed, Jun 03, 2020 at 08:46:54PM -0700, Florian Fainelli wrote:
+>>> The BCM2711 SoC features 5 SPI controllers which all share the same
+>>> interrupt line, the SPI driver needs to support interrupt sharing,
+>>> therefore use the chip specific compatible string to help with that.
+>> You're saying above that the 5 controllers all share the interrupt
+>> but below you're only changing the compatible string of 4 controllers.
+>>
+>> So I assume spi0 still has its own interrupt and only the additional
+>> 4 controllers present on the BCM2711/BCM7211 share their interrupt?
+> Correct, there are 5 instances, but only the 4 that were added for 2711
+> actually share the interrupt line, I will correct that in the next patch
+> version.
 
-Am 04.06.20 um 05:46 schrieb Florian Fainelli:
-> The BCM2711 SoC features 5 SPI controllers which all share the same
-> interrupt line, the SPI driver needs to support interrupt sharing,
-> therefore use the chip specific compatible string to help with that.
+No, all 5 instances uses the same interrupt line. Please see my comment
+before.
 
-the commit message is correct about 5 SPI controllers, but the patch
-only changes 4 ones.
-
-Please add the new compatibles also for &spi (included from
-bcm283x.dtsi) below in this file, which also share interrupt 118.
-
-Thanks
-
+Regards
 
 
 _______________________________________________
