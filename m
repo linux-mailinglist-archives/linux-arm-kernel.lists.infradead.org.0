@@ -2,87 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BF701EE134
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:25:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 427191EE139
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:26:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2HOfaa1N39tXnw19z1NjYH3v7mWdx6HIDlnyW94npFc=; b=nH6nlX28fQqAjG
-	PTBnSRUX42PB/yBGd6e3IvHDxwHWj7vspImR0X814ga2iGRDeKuqR8Q24dxu1FCt/ulugNFAgm6wc
-	Hv9wij6kQcj08+RCzewZEZIeY5cH/My0jLUFCSqK2VWe+S3GE/Zo29L70TQHx/UAle+oyOD2T2xlz
-	B46hFqCxCKlK/XFelzIN7YqzZGPQOiwrp6Bq6wCZlY1qFvVEyK1//NWwECoDiuaWuPmx00SUI/y8H
-	1dc9GVxQRehRYapQNHZ6FktSLn43Ih7xFEbztat1JvDrArW/zyreHbl9KDFpBwkH4V24u95V1fY7Z
-	Tg0DNmAzmak/Cs3NNJ7Q==;
+	List-Owner; bh=N8IQ3hdfAaczrTjEM7tNybi8DFOHAgQj/vBhO/cM4E0=; b=cmNdgtub+t4YGF
+	HGeQGFSlJiVERTYThdEAs+Y9oNn/jFzo+upqoIrfrQqdFhGZeVahEie56HJLbAQ2ae6SbZ9HGYZ+S
+	0WzO/nXvuKkw9EMcYkHatBbH0+KJt5P3xgcX16Qb4ijdRwBUjn6d9Oxaqn+ZCuPKG56lFiZYZhFNb
+	hEDCjLZTmhOLJYZiaU9MrxTUSdwR904dPOyNf4VeU0NOY4Cy0woAqFFogo/kU+/Dkv5u/rswQ9IKd
+	M66iSz6wNeeu63GDk6Yrf1bzm2N0+O7FLXH/L51SQbvLTyOmCMRNj/68oyno5BxTbv2tYxangoCzE
+	En7n50b8Xdfb/9Zwgn7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgm7W-000158-GL; Thu, 04 Jun 2020 09:25:06 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jgm8v-0003mV-8r; Thu, 04 Jun 2020 09:26:33 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgm7M-000149-Ik
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 09:24:58 +0000
-Received: by mail-lj1-x243.google.com with SMTP id y11so4727294ljm.9
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jun 2020 02:24:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qnyGbC+KraKhPFs6XDyK1uq44Dq1rGe/QjTF2xC40sA=;
- b=rF/RqOtFzyxg/j5oucW85JtvXqzyMD1N/U8FxvdTnCaiUtPEQcljzv2w3pQQA9dMmH
- WLGNeysR2K6gU+9krStjcH/RmdUViEmhHFgp/h8TSBFeO1Q4pDtClNqqjA2szCDx2f+7
- Qek++OmeqRqtXBtmdSkMZQ4oYeSK7Gb6G7UiB5NaM0Bh1lVcIsCCD51mWOK2neOrKUvu
- 6pGTY9Bxg8wGJrM/Fz6/N92gzpa9/AypD9oimt/s2qbPqyXVWYmaqr4e+aIzJGdO+Xph
- jeRUgJiLHkLyg+v8oYMZAX5rBYu3p7vAFBHMDe/4qjgb8nrBUP3ZlRO8rRsN5ICJe21i
- WJyA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qnyGbC+KraKhPFs6XDyK1uq44Dq1rGe/QjTF2xC40sA=;
- b=L+Jp8jU15so/ivk+o1hEN0NvZ/28ZyFUqOjT3dXvELxvpTyh+elE/Ms3h212oPIjmp
- kFUrXeJNC0LHutI9gsxNB0pavbHF3ORQw5r9r2HaK+QiazxuMuG0YizheFjq3hYI4Khe
- Dq6jQaq8UTeV5IsjLONWLdGsQPJMTZ6E3EhXpO52kL8BbCuCK5YzOf/GcByEFj24G+3+
- XE7ctw2AAAvvfxFK0FqSYhZ+z/y5VXcIF7629uCfUDbm+HvvZVIBuRKI0cDueUscaDYT
- QZe6tfh0nWzTlauSFeGjXvXpyxduRMey3WC5cTF/aFNf02q1nb/ZtZfX2cZvRsJ6rdrH
- TxSw==
-X-Gm-Message-State: AOAM533gG90xseGzI8qbA5yJUzQeDfx3whMuM/EJjWdbcmuAi8ChuOz8
- PGmRiS/VhTPqerHncjsUD1vFBIxFRc7iCsDv4RJJ7A==
-X-Google-Smtp-Source: ABdhPJz2B0WlQGDZvFcuMb9HHJXpuXHnqPzFYWma2cmxKCC+MnOA7TgBS20spQa12LzqIbbJvYcVvD08Gl6cXc88o9o=
-X-Received: by 2002:a2e:974a:: with SMTP id f10mr1765345ljj.283.1591262688533; 
- Thu, 04 Jun 2020 02:24:48 -0700 (PDT)
+ id 1jgm8n-0003ls-Ks; Thu, 04 Jun 2020 09:26:27 +0000
+IronPort-SDR: pvfznzM5MvMNA/AZJMIV2ftG+rdTnWjsng82wZpL5OB86byaYIqSnKNakG3OVWMUyLb7wAfOfj
+ tjevUHUSiCaA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 04 Jun 2020 02:26:23 -0700
+IronPort-SDR: iLMKRTyDd8MVlIqZB/DE1RmSK17qEEbhZRbs5822lFW5LgFqxmRaxZHWG0EQzqEY7MNrRM1Tfr
+ irPv5g4QKiTQ==
+X-IronPort-AV: E=Sophos;i="5.73,471,1583222400"; d="scan'208";a="294269374"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by fmsmga004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 04 Jun 2020 02:26:18 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id C931820859; Thu,  4 Jun 2020 12:26:16 +0300 (EEST)
+Date: Thu, 4 Jun 2020 12:26:16 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Subject: Re: [V9, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
+Message-ID: <20200604092616.GJ16711@paasikivi.fi.intel.com>
+References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
+ <20200523084103.31276-3-dongchun.zhu@mediatek.com>
+ <1591236845.8804.547.camel@mhfsdcap03>
 MIME-Version: 1.0
-References: <20200412002407.396790-1-linus.walleij@linaro.org>
- <107be5e0-3acd-1bf5-d1dd-e27f796e87d9@gmail.com>
- <CACRpkdZ5Dd92QYtKU8X+HHBFXXWm5m16htZ7vxeMTanxTQ=L1A@mail.gmail.com>
- <25cdd13f-1f95-1ca5-c28b-917538643590@gmail.com>
- <CACRpkdbEhnOfvHEQZ1GbdKuTchfBn1TozeD02NBFJ_YF6WwH=g@mail.gmail.com>
-In-Reply-To: <CACRpkdbEhnOfvHEQZ1GbdKuTchfBn1TozeD02NBFJ_YF6WwH=g@mail.gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 4 Jun 2020 11:24:36 +0200
-Message-ID: <CACRpkdYnXCfUxbd8PxM5N9=xHDi6-55VcmkEzMNpUGR0k5snag@mail.gmail.com>
-Subject: Re: [PATCH 0/5 v2] KASan for ARM
-To: Florian Fainelli <f.fainelli@gmail.com>, Rob Herring <robh@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <1591236845.8804.547.camel@mhfsdcap03>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_022456_624387_851CE4EB 
-X-CRM114-Status: GOOD (  21.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200604_022625_695376_D34A27A5 
+X-CRM114-Status: GOOD (  20.02  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,143 +72,241 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abbott Liu <liuwenliang@huawei.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Ard Biesheuvel <ardb@kernel.org>
+Cc: mark.rutland@arm.com, drinkcat@chromium.org,
+ andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ louis.kuo@mediatek.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 3, 2020 at 10:45 AM Linus Walleij <linus.walleij@linaro.org> wrote:
-> On Mon, Jun 1, 2020 at 6:37 PM Florian Fainelli <f.fainelli@gmail.com> wrote:
->
-> > This branch got me a bit further,
->
-> Thanks, at least we get improvements. :)
->
-> > but still failed to fully initialize
-> > (see attached kasan.log), on another platform with a slightly different
-> > memory map, I ended up getting a different error (kasan2.log).
->
-> I have this error too on a Qualcomm board, it is what I report
-> in the cover letter, that if I load the kernel into 0x40200000
-> this happens but when I load it into 0x50000000 it does not
-> happen.
+Hi Dongchun,
 
-So this is what happens to me, even after I try to de-instrument
-the DT parsing code (maybe I do it all wrong...)
-This is done with that patch:
-https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-integrator.git/commit/?h=kasan-apq8060-test&id=1cd83357f3c35b037400f6ec2547eeff074c578c
+On Thu, Jun 04, 2020 at 10:14:05AM +0800, Dongchun Zhu wrote:
+> Hi Tomasz, Sakari, and sirs,
+> 
+> Could anyone help to review this patch?
+> 
+> On Sat, 2020-05-23 at 16:41 +0800, Dongchun Zhu wrote:
+> > Add a V4L2 sub-device driver for OV02A10 image sensor.
+> > 
+> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > ---
+> >  MAINTAINERS                 |    1 +
+> >  drivers/media/i2c/Kconfig   |   13 +
+> >  drivers/media/i2c/Makefile  |    1 +
+> >  drivers/media/i2c/ov02a10.c | 1025 +++++++++++++++++++++++++++++++++++++++++++
+> >  4 files changed, 1040 insertions(+)
+> >  create mode 100644 drivers/media/i2c/ov02a10.c
+> > 
+> 
+> [snip]
+> 
+> > +static int ov02a10_probe(struct i2c_client *client)
+> > +{
+> > +	struct device *dev = &client->dev;
+> > +	struct ov02a10 *ov02a10;
+> > +	unsigned int rotation;
+> > +	unsigned int clock_lane_tx_speed;
+> > +	unsigned int i;
+> > +	int ret;
+> > +
+> > +	ov02a10 = devm_kzalloc(dev, sizeof(*ov02a10), GFP_KERNEL);
+> > +	if (!ov02a10)
+> > +		return -ENOMEM;
+> > +
+> > +	ret = ov02a10_check_hwcfg(dev, ov02a10);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to check HW configuration: %d", ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	v4l2_i2c_subdev_init(&ov02a10->subdev, client, &ov02a10_subdev_ops);
+> > +	ov02a10->mipi_clock_tx_speed = OV02A10_MIPI_TX_SPEED_DEFAULT;
+> > +	ov02a10->fmt.code = MEDIA_BUS_FMT_SBGGR10_1X10;
+> > +
+> > +	/* Optional indication of physical rotation of sensor */
+> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "rotation", &rotation);
+> > +	if (!ret && rotation == 180) {
+> > +		ov02a10->upside_down = true;
+> > +		ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
+> > +	}
+> > +
+> > +	/* Optional indication of mipi TX speed */
+> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "ovti,mipi-tx-speed",
+> > +				       &clock_lane_tx_speed);
+> > +
+> > +	if (!ret)
+> > +		ov02a10->mipi_clock_tx_speed = clock_lane_tx_speed;
+> > +
+> > +	/* Get system clock (eclk) */
+> > +	ov02a10->eclk = devm_clk_get(dev, "eclk");
+> > +	if (IS_ERR(ov02a10->eclk)) {
+> > +		ret = PTR_ERR(ov02a10->eclk);
+> > +		dev_err(dev, "failed to get eclk %d\n", ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	ret = fwnode_property_read_u32(dev_fwnode(dev), "clock-frequency",
+> > +				       &ov02a10->eclk_freq);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to get eclk frequency\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	ret = clk_set_rate(ov02a10->eclk, ov02a10->eclk_freq);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to set eclk frequency (24MHz)\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	if (clk_get_rate(ov02a10->eclk) != OV02A10_ECLK_FREQ) {
+> > +		dev_warn(dev, "wrong eclk frequency %d Hz, expected: %d Hz\n",
+> > +			 ov02a10->eclk_freq, OV02A10_ECLK_FREQ);
+> > +		return -EINVAL;
+> > +	}
+> > +
+> > +	ov02a10->pd_gpio = devm_gpiod_get(dev, "powerdown", GPIOD_OUT_HIGH);
+> > +	if (IS_ERR(ov02a10->pd_gpio)) {
+> > +		ret = PTR_ERR(ov02a10->pd_gpio);
+> > +		dev_err(dev, "failed to get powerdown-gpios %d\n", ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	ov02a10->n_rst_gpio = devm_gpiod_get(dev, "reset", GPIOD_OUT_LOW);
+> > +	if (IS_ERR(ov02a10->n_rst_gpio)) {
+> > +		ret = PTR_ERR(ov02a10->n_rst_gpio);
+> > +		dev_err(dev, "failed to get reset-gpios %d\n", ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	for (i = 0; i < ARRAY_SIZE(ov02a10_supply_names); i++)
+> > +		ov02a10->supplies[i].supply = ov02a10_supply_names[i];
+> > +
+> > +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(ov02a10_supply_names),
+> > +				      ov02a10->supplies);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to get regulators\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	mutex_init(&ov02a10->mutex);
+> > +	ov02a10->cur_mode = &supported_modes[0];
+> > +	ret = ov02a10_initialize_controls(ov02a10);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to initialize controls\n");
+> > +		goto err_destroy_mutex;
+> > +	}
+> > +
+> > +	ov02a10->subdev.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
+> > +	ov02a10->subdev.entity.ops = &ov02a10_subdev_entity_ops;
+> > +	ov02a10->subdev.entity.function = MEDIA_ENT_F_CAM_SENSOR;
+> > +	ov02a10->pad.flags = MEDIA_PAD_FL_SOURCE;
+> > +	ret = media_entity_pads_init(&ov02a10->subdev.entity, 1, &ov02a10->pad);
+> > +	if (ret < 0) {
+> > +		dev_err(dev, "failed to init entity pads: %d", ret);
+> > +		goto err_free_handler;
+> > +	}
+> > +
+> > +	pm_runtime_enable(dev);
+> > +	if (!pm_runtime_enabled(dev)) {
+> > +		ret = ov02a10_power_on(dev);
+> > +		if (ret < 0) {
+> > +			dev_err(dev, "failed to power on: %d\n", ret);
+> > +			goto err_free_handler;
+> > +		}
+> > +	}
+> > +
+> > +	ret = v4l2_async_register_subdev(&ov02a10->subdev);
+> > +	if (ret) {
+> > +		dev_err(dev, "failed to register V4L2 subdev: %d", ret);
+> > +		if (!pm_runtime_enabled(dev))
+> > +			ov02a10_power_off(dev);
 
-If I boot from physical memory at 0x40200000
-fastboot --base 40200000 --cmdline "console=ttyMSM0,115200,n8" boot zImage
+This should be moved to error handling section below.
 
-kasan: populating shadow for b7040000, b75c0000
-kasan: populating shadow for b8000000, bb000000
-kasan: populating shadow for b6e00000, b7000000
-kasan: Kernel address sanitizer initialized
-8<--- cut here ---
-Unable to handle kernel paging request at virtual address c30050b0
-pgd = (ptrval)
-[c30050b0] *pgd=00000000c
-Internal error: Oops: 5 [#1] PREEMPT SMP ARM
-Modules linked in:c
-CPU: 0 PID: 0 Comm: swapper Not tainted 5.7.0-00011-g1cd83357f3c3 #34
-Hardware name: Generic DT based system
-PC is at fdt_check_header+0x0/0x168
-LR is at __unflatten_device_tree+0x6c/0x338
-pc : [<c08e6968>]    lr : [<c0d698a8>]    psr: 60000093
-sp : c1e03db8  ip : cffffee0  fp : fffff000
-r10: 00000000  r9 : c2646000  r8 : 00000000
-r7 : c30050b0  r6 : c192e9e4  r5 : c19492e8  r4 : c21d7448
-r3 : 00000000  r2 : c2646000  r1 : 00000000  r0 : c30050b0
-(...)
-[<c08e6968>] (fdt_check_header) from [<c192e9e4>]
-(early_init_dt_alloc_memory_arch+0x0/0x64)
-[<c192e9e4>] (early_init_dt_alloc_memory_arch) from [<c1930264>]
-(unflatten_device_tree+0x34/0x44)
-[<c1930264>] (unflatten_device_tree) from [<c1905794>] (setup_arch+0xac4/0xde8)
-[<c1905794>] (setup_arch) from [<c1900b98>] (start_kernel+0xd8/0x634)
-[<c1900b98>] (start_kernel) from [<00000000>] (0x0)
-Code: e3a00020 e12fff1e e3a0001c e12fff1e (e5901000)
-random: get_random_bytes called from print_oops_end_marker+0x38/0x50
-with crng_init=0
----[ end trace 0000000000000000 ]---
-Kernel panic - not syncing: Attempted to kill the idle task!
----[ end Kernel panic - not syncing: Attempted to kill the idle task! ]---
+> > +		goto err_clean_entity;
+> > +	}
+> 
+> Tomasz, Sakari, is this ok?
+> or coding like this:
+> 
+> ret = v4l2_async_register_subdev(&ov02a10->subdev);
+> if (!pm_runtime_enabled(dev))
+> 	ov02a10_power_off(dev);
+> if (ret) {
+> 	dev_err(dev, "failed to register V4L2 subdev: %d", ret);
+> 	goto err_clean_entity;
+> }
+> 
+> What's your opinions about the change?
 
-But if I instead boot from 0x50000000 I just get this lesser error and
-the platform actually comes up:
-fastboot --base 50000000 --cmdline "console=ttyMSM0,115200,n8" boot zImage
+This turns power off if runtime PM is disabled. I'd keep it as-is, as it'd
+require re-implementing what runtime PM is used for now --- and that's not
+a sensor driver's job.
 
-[    0.000000] kasan: populating shadow for b7000000, b9000000
-[    0.000000] kasan: populating shadow for b6e00000, b7000000
-[    0.000000] kasan: Kernel address sanitizer initialized
-[    0.000000] ==================================================================
-[    0.000000] BUG: KASAN: stack-out-of-bounds in
-memblock_alloc_try_nid+0x9c/0xac
-[    0.000000] Write of size 61920 at addr cdbd6e20 by task swapper/0
-[    0.000000]
-[    0.000000] CPU: 0 PID: 0 Comm: swapper Not tainted
-5.7.0-00011-g1cd83357f3c3 #34
-[    0.000000] Hardware name: Generic DT based system
-[    0.000000] [<c0317844>] (unwind_backtrace) from [<c0310544>]
-(show_stack+0x10/0x14)
-[    0.000000] [<c0310544>] (show_stack) from [<c08e6374>]
-(dump_stack+0x80/0x98)
-[    0.000000] [<c08e6374>] (dump_stack) from [<c050eed0>]
-(print_address_description.constprop.3+0x50/0x478)
-[    0.000000] [<c050eed0>] (print_address_description.constprop.3)
-from [<c050f508>] (__kasan_report+0xf0/0x12c)
-[    0.000000] [<c050f508>] (__kasan_report) from [<c050e95c>]
-(kasan_report+0x34/0x3c)
-[    0.000000] [<c050e95c>] (kasan_report) from [<c050fed0>]
-(check_memory_region+0x14c/0x1b0)
-[    0.000000] [<c050fed0>] (check_memory_region) from [<c050e100>]
-(memset+0x20/0x3c)
-[    0.000000] [<c050e100>] (memset) from [<c1918898>]
-(memblock_alloc_try_nid+0x9c/0xac)
-[    0.000000] [<c1918898>] (memblock_alloc_try_nid) from [<c192ea14>]
-(early_init_dt_alloc_memory_arch+0x30/0x64)
-[    0.000000] [<c192ea14>] (early_init_dt_alloc_memory_arch) from
-[<c0d698f0>] (__unflatten_device_tree+0xb4/0x338)
-[    0.000000] [<c0d698f0>] (__unflatten_device_tree) from
-[<c1930264>] (unflatten_device_tree+0x34/0x44)
-[    0.000000] [<c1930264>] (unflatten_device_tree) from [<c1905794>]
-(setup_arch+0xac4/0xde8)
-[    0.000000] [<c1905794>] (setup_arch) from [<c1900b98>]
-(start_kernel+0xd8/0x634)
-[    0.000000] [<c1900b98>] (start_kernel) from [<00000000>] (0x0)
-[    0.000000]
-[    0.000000] The buggy address belongs to the page:
-[    0.000000] page:cffafac0 refcount:1 mapcount:0 mapping:00000000 index:0x0
-[    0.000000] flags: 0x0()
-[    0.000000] raw: 00000000 cffafac4 cffafac4 00000000 00000000
-00000000 ffffffff 00000001
-[    0.000000] page dumped because: kasan: bad access detected
-[    0.000000]
-[    0.000000] Memory state around the buggy address:
-[    0.000000]  cdbe3d00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-[    0.000000]  cdbe3d80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-[    0.000000] >cdbe3e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-[    0.000000]                        ^
-[    0.000000]  cdbe3e80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-[    0.000000]  cdbe3f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-[    0.000000] ==================================================================
+> 
+> > +
+> > +	return 0;
+> > +
+> > +err_clean_entity:
+> > +	media_entity_cleanup(&ov02a10->subdev.entity);
+> > +err_free_handler:
+> > +	v4l2_ctrl_handler_free(ov02a10->subdev.ctrl_handler);
+> > +err_destroy_mutex:
+> > +	mutex_destroy(&ov02a10->mutex);
+> > +
+> > +	return ret;
+> > +}
+> > +
+> > +static int ov02a10_remove(struct i2c_client *client)
+> > +{
+> > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
+> > +	struct ov02a10 *ov02a10 = to_ov02a10(sd);
+> > +
+> > +	v4l2_async_unregister_subdev(sd);
+> > +	media_entity_cleanup(&sd->entity);
+> > +	v4l2_ctrl_handler_free(sd->ctrl_handler);
+> > +	pm_runtime_disable(&client->dev);
+> > +	if (!pm_runtime_status_suspended(&client->dev))
+> > +		ov02a10_power_off(&client->dev);
+> > +	pm_runtime_set_suspended(&client->dev);
+> > +	mutex_destroy(&ov02a10->mutex);
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static const struct of_device_id ov02a10_of_match[] = {
+> > +	{ .compatible = "ovti,ov02a10" },
+> > +	{}
+> > +};
+> > +MODULE_DEVICE_TABLE(of, ov02a10_of_match);
+> > +
+> > +static struct i2c_driver ov02a10_i2c_driver = {
+> > +	.driver = {
+> > +		.name = "ov02a10",
+> > +		.pm = &ov02a10_pm_ops,
+> > +		.of_match_table = ov02a10_of_match,
+> > +	},
+> > +	.probe_new	= &ov02a10_probe,
+> > +	.remove		= &ov02a10_remove,
+> > +};
+> > +
+> > +module_i2c_driver(ov02a10_i2c_driver);
+> > +
+> > +MODULE_AUTHOR("Dongchun Zhu <dongchun.zhu@mediatek.com>");
+> > +MODULE_DESCRIPTION("OmniVision OV02A10 sensor driver");
+> > +MODULE_LICENSE("GPL v2");
+> > +
+> 
 
-There is something really funky going on with how devicetree is unflattened
-in this platform I think, I just need to figure it out.
-
-I do not think it is a KASan bug per se, more of a DT parser issue, like it is
-doing stuff that need to be properly de-instrumented.
-
-Any hints welcome!
-
-Yours,
-Linus Walleij
+-- 
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
