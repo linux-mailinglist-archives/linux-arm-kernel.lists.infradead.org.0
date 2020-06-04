@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 606C41EDE64
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 09:32:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 623D71EDEB2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 09:41:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hHvOf/hyBUuGRrkDrt99gIitcggVB2z4yaioTMjRx78=; b=dAOFceNw+QATF3
-	f9wJJtFSQ1QCxG7QmG7Ckxd35ZBdVUAOKubKGwg3cazO/BycnfEleIOKq/FScc2fIC7TvhIJr6OIA
-	2X9Yjo4EvIMf2HB8Nuxj8kSAOed2BvLdRzN7jy2u/kO5XD95yGAitR9LRPDrTRKFdJ0bIaSaytNXL
-	EpIogkAw3BNUmduOHrjyGMkP4V1/0E1sOOUGuBovL7lZRsKceJhwDcXAIM4zR5t8OQJ4mMsLL2YKz
-	LngpmXWj0OnoR4ZjN5d8zwYrvHT1y2L5dXbc41CjzNu1ZPBdeSEgHbvO3yc+QlHD6MKPXtm/gnile
-	2TV2GLJNJuNgL18JaDmw==;
+	List-Owner; bh=zsUPA1XD4OeYZXIPd4rSxti6P2XEWfvUPfI5Qyfv1kQ=; b=N0JKsY7xQnBjEY
+	inYFw9jD6QaDt4JE7SEJcBJNQ2p16uv3sEcVpzHqLuPaYMyPVAvTICpdk/SDOGcfsvNGNvTk0j7Kr
+	odZQK4RuZR2Tt2cMfLN7pFZk3XbCdiXAOnAMmKv9LKdeLpuk9G/caMYDBjXAJj2c7C8SWBBXCrAFN
+	mPAAMDi+R2g3S/Na9/ATc2DqnglZSEcJ2OgJ6nR1eaPs5sSNDArRVwQswbAU/0dcXRuyLY/+jB9s4
+	VnVAxaoDhAh6IzS49A2C5i3On8OWIFPfrcswtwMaSYNS8O1wgKIYzpINk4U6xbOLmhGpr04RavUSi
+	m47V+/nzZRQJpj/pz+GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgkMf-0007o6-HS; Thu, 04 Jun 2020 07:32:37 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jgkVY-0002HE-RI; Thu, 04 Jun 2020 07:41:49 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgkM6-0007VJ-Mu; Thu, 04 Jun 2020 07:32:05 +0000
-X-UUID: 36bb82c0989f4a37ba025a81a00610d3-20200603
+ id 1jgkTH-00068v-1J; Thu, 04 Jun 2020 07:39:28 +0000
+X-UUID: 0d2fb656bce94ded85178c5ae2cabe07-20200603
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=B/w2ehlpdSMG2o1JAKklslgzvugqL0CKOQBnvbbutuc=; 
- b=Ngsug16108evhC1YXvJ0jSPgV4woQrLHxXxPaXwVnlDOv3NP6ftY75UWK3PZD2u8cD+lBwJ1zVL6YhsxNRznl47tM7h5H0u7uGPYYrtCP2e1TdXmjN1s90mdldJcMJYOi8iCjWEFNpFwGC0SXR+OhY3BOTV9V4+f3QfhzeH9UyU=;
-X-UUID: 36bb82c0989f4a37ba025a81a00610d3-20200603
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=pwxgK1X1XdIdmyvhCdOXj7GI0xWZ4kTcpeu8OdlT4i0=; 
+ b=d7IrjKrSZdACtiz5uqb/LVlVLXI1XsXKtLg2zJeWP2vLiklzFOaejUlOL2Fu27wb9coMbU8ivhhp1FtwtNbHsqHazXuCeOZuuQy/FRyUAnHaALlSygO7s9zncVt1zs/la9jDiGTuQzxE44G0rur1Ld48wVqeozH4Ft6SA1Eu2tQ=;
+X-UUID: 0d2fb656bce94ded85178c5ae2cabe07-20200603
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <xia.jiang@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2053062593; Wed, 03 Jun 2020 23:31:53 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 4 Jun 2020 00:29:24 -0700
+ with ESMTP id 318993044; Wed, 03 Jun 2020 23:39:14 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 4 Jun 2020 00:29:27 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 4 Jun 2020 15:29:23 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 4 Jun 2020 15:29:24 +0800
 Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 4 Jun 2020 15:29:21 +0800
+ Transport; Thu, 4 Jun 2020 15:29:23 +0800
 From: Xia Jiang <xia.jiang@mediatek.com>
 To: Hans Verkuil <hverkuil-cisco@xs4all.nl>, Mauro Carvalho Chehab
  <mchehab+samsung@kernel.org>, Rob Herring <robh+dt@kernel.org>, "Matthias
  Brugger" <matthias.bgg@gmail.com>, Rick Chang <rick.chang@mediatek.com>
-Subject: [PATCH v9 08/18] media: platform: Cancel the last frame handling flow
-Date: Thu, 4 Jun 2020 15:26:58 +0800
-Message-ID: <20200604072708.9468-9-xia.jiang@mediatek.com>
+Subject: [PATCH v9 09/18] media: platform: Delete zeroing the reserved fields
+Date: Thu, 4 Jun 2020 15:26:59 +0800
+Message-ID: <20200604072708.9468-10-xia.jiang@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200604072708.9468-1-xia.jiang@mediatek.com>
 References: <20200604072708.9468-1-xia.jiang@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_003202_753579_1656D87E 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20200604_003927_096541_9CFE7A11 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,77 +99,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need to queue an empty buffer for signaling a last frame,
-because all frames are separate from each other in JPEG.
+Delete zeroing the reserved fields because that the core already
+does it.
 
 Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
 ---
 v9: new patch
 ---
- .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 21 +------------------
- 1 file changed, 1 insertion(+), 20 deletions(-)
+ drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c | 5 -----
+ 1 file changed, 5 deletions(-)
 
 diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-index 49bdbf1c435f..bb4ebce881ee 100644
+index bb4ebce881ee..bd1cc58324c6 100644
 --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
 +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-@@ -55,15 +55,9 @@ static struct mtk_jpeg_fmt mtk_jpeg_formats[] = {
+@@ -198,7 +198,6 @@ static int mtk_jpeg_try_fmt_mplane(struct v4l2_format *f,
+ 	struct mtk_jpeg_dev *jpeg = ctx->jpeg;
+ 	int i;
  
- #define MTK_JPEG_NUM_FORMATS ARRAY_SIZE(mtk_jpeg_formats)
+-	memset(pix_mp->reserved, 0, sizeof(pix_mp->reserved));
+ 	pix_mp->field = V4L2_FIELD_NONE;
  
--enum {
--	MTK_JPEG_BUF_FLAGS_INIT			= 0,
--	MTK_JPEG_BUF_FLAGS_LAST_FRAME		= 1,
--};
--
- struct mtk_jpeg_src_buf {
- 	struct vb2_v4l2_buffer b;
- 	struct list_head list;
--	int flags;
- 	struct mtk_jpeg_dec_param dec_param;
- };
+ 	if (ctx->state != MTK_JPEG_INIT) {
+@@ -217,7 +216,6 @@ static int mtk_jpeg_try_fmt_mplane(struct v4l2_format *f,
+ 					   &pix_mp->height, MTK_JPEG_MIN_HEIGHT,
+ 					   MTK_JPEG_MAX_HEIGHT, 0);
  
-@@ -520,8 +514,6 @@ static int mtk_jpeg_qbuf(struct file *file, void *priv, struct v4l2_buffer *buf)
+-		memset(pfmt->reserved, 0, sizeof(pfmt->reserved));
+ 		pfmt->bytesperline = 0;
+ 		/* Source size must be aligned to 128 */
+ 		pfmt->sizeimage = mtk_jpeg_align(pfmt->sizeimage, 128);
+@@ -237,7 +235,6 @@ static int mtk_jpeg_try_fmt_mplane(struct v4l2_format *f,
+ 		u32 stride = pix_mp->width * fmt->h_sample[i] / 4;
+ 		u32 h = pix_mp->height * fmt->v_sample[i] / 4;
  
- 	vb = vb2_get_buffer(vq, buf->index);
- 	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(vb);
--	jpeg_src_buf->flags = (buf->m.planes[0].bytesused == 0) ?
--		MTK_JPEG_BUF_FLAGS_LAST_FRAME : MTK_JPEG_BUF_FLAGS_INIT;
- end:
- 	return v4l2_m2m_qbuf(file, fh->m2m_ctx, buf);
- }
-@@ -676,10 +668,6 @@ static void mtk_jpeg_buf_queue(struct vb2_buffer *vb)
- 	param = &jpeg_src_buf->dec_param;
- 	memset(param, 0, sizeof(*param));
+-		memset(pfmt->reserved, 0, sizeof(pfmt->reserved));
+ 		pfmt->bytesperline = stride;
+ 		pfmt->sizeimage = stride * h;
+ 	}
+@@ -270,7 +267,6 @@ static int mtk_jpeg_g_fmt_vid_mplane(struct file *file, void *priv,
  
--	if (jpeg_src_buf->flags & MTK_JPEG_BUF_FLAGS_LAST_FRAME) {
--		v4l2_dbg(1, debug, &jpeg->v4l2_dev, "Got eos\n");
--		goto end;
--	}
- 	header_valid = mtk_jpeg_parse(param, (u8 *)vb2_plane_vaddr(vb, 0),
- 				      vb2_get_plane_payload(vb, 0));
- 	if (!header_valid) {
-@@ -792,19 +780,12 @@ static void mtk_jpeg_device_run(void *priv)
- 	struct mtk_jpeg_src_buf *jpeg_src_buf;
- 	struct mtk_jpeg_bs bs;
- 	struct mtk_jpeg_fb fb;
--	int i, ret;
-+	int ret;
+ 	q_data = mtk_jpeg_get_q_data(ctx, f->type);
  
- 	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
- 	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
- 	jpeg_src_buf = mtk_jpeg_vb2_to_srcbuf(&src_buf->vb2_buf);
+-	memset(pix_mp->reserved, 0, sizeof(pix_mp->reserved));
+ 	pix_mp->width = q_data->w;
+ 	pix_mp->height = q_data->h;
+ 	pix_mp->field = V4L2_FIELD_NONE;
+@@ -294,7 +290,6 @@ static int mtk_jpeg_g_fmt_vid_mplane(struct file *file, void *priv,
  
--	if (jpeg_src_buf->flags & MTK_JPEG_BUF_FLAGS_LAST_FRAME) {
--		for (i = 0; i < dst_buf->vb2_buf.num_planes; i++)
--			vb2_set_plane_payload(&dst_buf->vb2_buf, i, 0);
--		buf_state = VB2_BUF_STATE_DONE;
--		goto dec_end;
--	}
--
- 	if (mtk_jpeg_check_resolution_change(ctx, &jpeg_src_buf->dec_param)) {
- 		mtk_jpeg_queue_src_chg_event(ctx);
- 		ctx->state = MTK_JPEG_SOURCE_CHANGE;
+ 		pfmt->bytesperline = q_data->bytesperline[i];
+ 		pfmt->sizeimage = q_data->sizeimage[i];
+-		memset(pfmt->reserved, 0, sizeof(pfmt->reserved));
+ 
+ 		v4l2_dbg(1, debug, &jpeg->v4l2_dev,
+ 			 "plane[%d] bpl=%u, size=%u\n",
 -- 
 2.18.0
 _______________________________________________
