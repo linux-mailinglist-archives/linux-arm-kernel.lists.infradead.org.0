@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CD491EE758
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:06:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DA1A1EE75B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:06:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i52knLlQGKKoGjTqgnDorjMexidltObvpnoR/TWGm2Q=; b=p86UfgN27WBK8x
-	Q7Be/ot55PYnRuCOKPNIg6KMwDpPH4o2XnXl71/hs+n0MJeWyA93WUHgNTYYgi1LUQYj/tk9D4iZa
-	F6fRsMCeuWbujJwziVBa/AObV05w7IBv/Q9KuZoVfrZLxzb/685olBjqi+NzIqOCjD008ZY1Du1zS
-	YVpcQOjlTQIovw0sp88hIYRm3fkmoVYFxwKIOQZDXlDeW4PhcOxBYfAzMKrXSUgMmEaSdNPA/CDG3
-	wfn+cPpcakokXFjSwnD3lo+py2ziFr0DM7mnlP5zqWfS5EimqKCvOL02lPGz4nvnx/6OtJ5FR8qOH
-	wy4pHuVatj4QN1wfqC5g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B/Q//f6i3Cr8uJ16hvC1XcNYhLUsO5TS95jhBiuLw3E=; b=DmksXmC4P1Mvff
+	I4R5L6ntChXY8kWf7sREKAzGBWIdRVh30l+78vC9kXRXQkR4674L71YSLDixOFuLkCdKWLaiSd3mn
+	CgfMh8UOwsOp3Dm5hJt8Gr2rQ3hKV4BkGqqQ5GbuCP1sUOlJ2Brt84+q/GWLV1Fnpty+OpkLr5XQq
+	MNLl2UlEL7p+pgTXabiE1wASPXh9mTWSVL9qwomdJIDVwsbRTXdmSoOETHgJ6C0+1sinMo4jPolAG
+	tLGFEUgTeFUPjjdA37HWihkxKtA2KNzO4yfNUjDytFkvbQnvLMXDT7DMOdqemauUNk/nhQ8uhx+rX
+	x7KyFssBi/9EHXaH/pEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgrRr-0007u4-6W; Thu, 04 Jun 2020 15:06:27 +0000
-Received: from [2601:1c0:6280:3f0:897c:6038:c71d:ecac]
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgrRh-0007rf-MW; Thu, 04 Jun 2020 15:06:17 +0000
-Subject: Re: [PATCH] regulator: mt6360: Add support for MT6360 regulator
-To: Gene Chen <gene.chen.richtek@gmail.com>, matthias.bgg@gmail.com
-References: <1591254387-10304-1-git-send-email-gene.chen.richtek@gmail.com>
-From: Randy Dunlap <rdunlap@infradead.org>
-Message-ID: <4135d264-6758-301a-0f19-ba2f229301c3@infradead.org>
-Date: Thu, 4 Jun 2020 08:06:15 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jgrSG-0008Cs-Hg; Thu, 04 Jun 2020 15:06:52 +0000
+Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
+ Hat Linux)) id 1jgrS7-0008Be-4R; Thu, 04 Jun 2020 15:06:43 +0000
+Date: Thu, 4 Jun 2020 08:06:43 -0700
+From: Christoph Hellwig <hch@infradead.org>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH] iommu/mediatek: Use totalram_pages to setup enable_4GB
+Message-ID: <20200604150643.GA29193@infradead.org>
+References: <20200604080120.2628-1-miles.chen@mediatek.com>
+ <55820901-430b-14c4-9426-7a4991ca0eed@redhat.com>
+ <1591264174.12661.17.camel@mtkswgap22>
+ <f02c8c9d-ed75-6513-f8a9-a2fdbb11b750@redhat.com>
 MIME-Version: 1.0
-In-Reply-To: <1591254387-10304-1-git-send-email-gene.chen.richtek@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <f02c8c9d-ed75-6513-f8a9-a2fdbb11b750@redhat.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,49 +44,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gene_chen@richtek.com, lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
- cy_huang@richtek.com, benjamin.chao@mediatek.com, broonie@kernel.org,
- linux-mediatek@lists.infradead.org, Wilma.Wu@mediatek.com,
- linux-arm-kernel@lists.infradead.org, shufan_lee@richtek.com
+Cc: wsd_upstream@mediatek.com, Joerg Roedel <joro@8bytes.org>,
+ iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
+ Chao Hao <chao.hao@mediatek.com>, Miles Chen <miles.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, yingjoe.chen@mediatek.com,
+ Yong Wu <yong.wu@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 6/4/20 12:06 AM, Gene Chen wrote:
-> diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
-> index f4b72cb..05a3b14 100644
-> --- a/drivers/regulator/Kconfig
-> +++ b/drivers/regulator/Kconfig
-> @@ -680,6 +680,16 @@ config REGULATOR_MT6358
->  	  This driver supports the control of different power rails of device
->  	  through regulator interface.
->  
-> +config REGULATOR_MT6360
-> +	tristate "MT6360 SubPMIC Regulator"
-> +	depends on MFD_MT6360
-> +	select CRC8
-> +	help
-> +	  Say Y here to enable MT6360 regulator support.
-> +	  This is support MT6360 PMIC/LDO part include
+On Thu, Jun 04, 2020 at 01:32:40PM +0200, David Hildenbrand wrote:
+> Just a thought: If memory hotplug is applicable as well, you might
+> either want to always assume data->enable_4GB, or handle memory hotplug
+> events from the memory notifier, when new memory gets onlined (not sure
+> how tricky that is).
 
-	  This supports the MT6300 PMIC/LDO part, which includes
-
-> +	  2-channel buck with Thermal Shutdown and Overlord Protection
-
-	                              is that      Overload  ?
-Yes, it could be Overlord.
-
-> +	  6-channel High PSRR and Low Dropout LDO.
-> +
->  config REGULATOR_MT6380
->  	tristate "MediaTek MT6380 PMIC"
->  	depends on MTK_PMIC_WRAP
-
-
--- 
-~Randy
-
+We probably want a highest_pfn_possible() or similar API instead of
+having drivers poking into random VM internals.
 
 _______________________________________________
 linux-arm-kernel mailing list
