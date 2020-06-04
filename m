@@ -2,77 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C6A41EDD4A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 08:38:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2EE31EDD92
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 08:54:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cDyCJsEb0UHDTUR5QkU3RezMcewqNVX1xPf4lPiFNY0=; b=Q5+X9BPP9544DU
-	Om8pYVCcOR/GHuiZaDFrfw09MOeTvibDZ56fT5ryowuwrEiAcV+QrGpBtWq07Nsv1E4RIPT+8MgS7
-	QBYv0ByKU012ED8nrQNuJczQ9eXfsB9WprbBODRTCkArUMLJ4YPIlHjBFkJn63R5YNu0aZ7hIn17+
-	4/ppbBJRIu7ZfAjLY7zZHPnAU6g6QxkASD5BgFxQnTvY3Zwv7WSKS2sEAcpakvibOYZC3DpXHt+mg
-	kzB0WPuKnTgm2KYSdJWaI7uGm4VEITrYGOwuzan7lxq10QjyIRwaXXShEXt//fXzXQ2wjNlTigUQx
-	auJV05vegHpod+DPuVWw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+HTM8fVjo32QhVBw96Cc9CWcB+q3O4fi7FeBsyeDrUI=; b=IMz
+	P71nlxIxLz9UZ4MGdZVegJmDPH72ozlECrobR+59VxJQgml23zO9pdYTseHRU2IWf2SIfbd+KB28y
+	nq/xcK04Ouya/9ZWxsmkyI5FNNmtsLahibleu7l6FRgXuU1g+WciHljZns7mXGPZUv1OM8V1Rzgev
+	sb3Y8FUuAiAbbqc+Mw7ACOGk742oBkfOwidwCKKxVseeEenm0Wg3N65OnlWGDI6SIJSRTsigQb19l
+	mK+w3E02Hc8mvK820Vb66JN6QIYayk28gUSoK8QtoY07UNxWEiFIWxerOqqFOPCuY+21vTj3pCNpM
+	gxsoPWRxI2dWkPNJ/ihx+YHpFZdvCYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgjVs-00062M-UG; Thu, 04 Jun 2020 06:38:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jgjlM-0006oF-56; Thu, 04 Jun 2020 06:54:04 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgjVl-00061i-Kx; Thu, 04 Jun 2020 06:37:59 +0000
-Received: from kernel.org (unknown [87.71.78.142])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EE6B9206C3;
- Thu,  4 Jun 2020 06:37:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591252677;
- bh=O1a535rP16XFYofg4bMZWQkFl2JLEEYgVYDf/xPj9AA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=JfERwxMXEu2kI9XoIT9dWNXO1rREUwNy4knLypfsDDn3RoK04PQ+VcJ9cU4AiLvZ9
- zgKMGrd4au2WatdA8yMk1LlH6XWepwggHO+6JEHEW8/tg+Uifk/2Ah/6wTBJLxUsMO
- hIlar1DcvGQ6J2i69MlWxGfbGkXBQIZ5oY21iu3Y=
-Date: Thu, 4 Jun 2020 09:37:45 +0300
-From: Mike Rapoport <rppt@kernel.org>
-To: Ira Weiny <ira.weiny@intel.com>
-Subject: Re: [PATCH] arch/{mips,sparc,microblaze,powerpc}: Don't enable
- pagefault/preempt twice
-Message-ID: <20200604063745.GB202650@kernel.org>
-References: <20200519165422.GA5838@roeck-us.net>
- <20200519184031.GB3356843@iweiny-DESK2.sc.intel.com>
- <20200519194215.GA71941@roeck-us.net>
- <20200520051315.GA3660833@iweiny-DESK2.sc.intel.com>
- <d86dba19-4f4b-061e-a2c7-4f037e9e2de2@roeck-us.net>
- <20200521174250.GB176262@iweiny-DESK2.sc.intel.com>
- <20200603135736.e7b5ded0082a81ae6d9067a0@linux-foundation.org>
- <20200603211416.GA1740285@iweiny-DESK2.sc.intel.com>
- <3538c8ad-674e-d310-d870-4ef6888092ed@roeck-us.net>
- <20200604062226.GA1740345@iweiny-DESK2.sc.intel.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200604062226.GA1740345@iweiny-DESK2.sc.intel.com>
+ id 1jgjlD-0006nD-M7
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 06:53:57 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 6539620116D;
+ Thu,  4 Jun 2020 08:53:53 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 55FD2200180;
+ Thu,  4 Jun 2020 08:53:48 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AADBD40299;
+ Thu,  4 Jun 2020 14:53:41 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: dmitry.torokhov@gmail.com, robh+dt@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ gnuiyl@gmail.com, linux-input@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] dt-bindings: input: Convert imx keypad to json-schema
+Date: Thu,  4 Jun 2020 14:43:21 +0800
+Message-Id: <1591253001-6497-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_233757_711073_74170BF9 
-X-CRM114-Status: GOOD (  10.33  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200603_235355_998280_77C78C8E 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,69 +67,180 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- Guenter Roeck <linux@roeck-us.net>, linux-xtensa@linux-xtensa.org,
- Borislav Petkov <bp@alien8.de>, Al Viro <viro@zeniv.linux.org.uk>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 03, 2020 at 11:22:26PM -0700, Ira Weiny wrote:
-> On Wed, Jun 03, 2020 at 04:44:17PM -0700, Guenter Roeck wrote:
-> 
-> With linux-next on sparc I too see the spinlock issue; something like:
-> 
-> ...
-> Starting syslogd: BUG: spinlock recursion on CPU#0, S01syslogd/139
->  lock: 0xf53ef350, .magic: dead4ead, .owner: S01syslogd/139, .owner_cpu: 0
-> CPU: 0 PID: 139 Comm: S01syslogd Not tainted 5.7.0-next-20200603 #1
-> [f0067d00 : 
-> do_raw_spin_lock+0xa8/0xd8 ] 
-> [f00d598c : 
-> copy_page_range+0x328/0x804 ] 
-> [f0025c34 : 
-> dup_mm+0x334/0x434 ] 
-> [f0027198 : 
-> copy_process+0x1248/0x12d4 ] 
-> [f00273b8 : 
-> _do_fork+0x54/0x30c ] 
-> [f00276e4 : 
-> do_fork+0x5c/0x6c ] 
-> [f000de44 : 
-> sparc_do_fork+0x18/0x38 ] 
-> [f000b7f4 : 
-> do_syscall+0x34/0x40 ] 
-> [5010cd4c : 
-> 0x5010cd4c ] 
-> 
-> 
-> I'm going to bisect between there and HEAD.
+Convert the i.MX KEYPAD binding to DT schema format using json-schema
 
-The sparc issue should be fixed by 
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ .../devicetree/bindings/input/imx-keypad.txt       | 53 -------------
+ .../devicetree/bindings/input/imx-keypad.yaml      | 89 ++++++++++++++++++++++
+ 2 files changed, 89 insertions(+), 53 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/input/imx-keypad.txt
+ create mode 100644 Documentation/devicetree/bindings/input/imx-keypad.yaml
 
-https://lore.kernel.org/lkml/20200526173302.377-1-will@kernel.org
- 
-> Ira
-
+diff --git a/Documentation/devicetree/bindings/input/imx-keypad.txt b/Documentation/devicetree/bindings/input/imx-keypad.txt
+deleted file mode 100644
+index 2ebaf7d..0000000
+--- a/Documentation/devicetree/bindings/input/imx-keypad.txt
++++ /dev/null
+@@ -1,53 +0,0 @@
+-* Freescale i.MX Keypad Port(KPP) device tree bindings
+-
+-The KPP is designed to interface with a keypad matrix with 2-point contact
+-or 3-point contact keys. The KPP is designed to simplify the software task
+-of scanning a keypad matrix. The KPP is capable of detecting, debouncing,
+-and decoding one or multiple keys pressed simultaneously on a keypad.
+-
+-Required SoC Specific Properties:
+-- compatible: Should be "fsl,<soc>-kpp".
+-
+-- reg: Physical base address of the KPP and length of memory mapped
+-  region.
+-
+-- interrupts: The KPP interrupt number to the CPU(s).
+-
+-- clocks: The clock provided by the SoC to the KPP. Some SoCs use dummy
+-clock(The clock for the KPP is provided by the SoCs automatically).
+-
+-Required Board Specific Properties:
+-- pinctrl-names: The definition can be found at
+-pinctrl/pinctrl-bindings.txt.
+-
+-- pinctrl-0: The definition can be found at
+-pinctrl/pinctrl-bindings.txt.
+-
+-- linux,keymap: The definition can be found at
+-bindings/input/matrix-keymap.txt.
+-
+-Example:
+-kpp: kpp@73f94000 {
+-	compatible = "fsl,imx51-kpp", "fsl,imx21-kpp";
+-	reg = <0x73f94000 0x4000>;
+-	interrupts = <60>;
+-	clocks = <&clks 0>;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_kpp_1>;
+-	linux,keymap = <0x00000067	/* KEY_UP */
+-			0x0001006c	/* KEY_DOWN */
+-			0x00020072	/* KEY_VOLUMEDOWN */
+-			0x00030066	/* KEY_HOME */
+-			0x0100006a	/* KEY_RIGHT */
+-			0x01010069	/* KEY_LEFT */
+-			0x0102001c	/* KEY_ENTER */
+-			0x01030073	/* KEY_VOLUMEUP */
+-			0x02000040	/* KEY_F6 */
+-			0x02010042	/* KEY_F8 */
+-			0x02020043	/* KEY_F9 */
+-			0x02030044	/* KEY_F10 */
+-			0x0300003b	/* KEY_F1 */
+-			0x0301003c	/* KEY_F2 */
+-			0x0302003d	/* KEY_F3 */
+-			0x03030074>;	/* KEY_POWER */
+-};
+diff --git a/Documentation/devicetree/bindings/input/imx-keypad.yaml b/Documentation/devicetree/bindings/input/imx-keypad.yaml
+new file mode 100644
+index 0000000..a1350cd
+--- /dev/null
++++ b/Documentation/devicetree/bindings/input/imx-keypad.yaml
+@@ -0,0 +1,89 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/input/imx-keypad.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Freescale i.MX Keypad Port(KPP) device tree bindings
++
++maintainers:
++  - Liu Ying <gnuiyl@gmail.com>
++
++description: |
++  The KPP is designed to interface with a keypad matrix with 2-point contact
++  or 3-point contact keys. The KPP is designed to simplify the software task
++  of scanning a keypad matrix. The KPP is capable of detecting, debouncing,
++  and decoding one or multiple keys pressed simultaneously on a keypad.
++
++properties:
++  compatible:
++    oneOf:
++      - const: fsl,imx21-kpp
++      - items:
++          - enum:
++            - fsl,imx25-kpp
++            - fsl,imx27-kpp
++            - fsl,imx31-kpp
++            - fsl,imx35-kpp
++            - fsl,imx51-kpp
++            - fsl,imx53-kpp
++            - fsl,imx50-kpp
++            - fsl,imx6q-kpp
++            - fsl,imx6sx-kpp
++            - fsl,imx6sl-kpp
++            - fsl,imx6sll-kpp
++            - fsl,imx6ul-kpp
++            - fsl,imx7d-kpp
++          - const: fsl,imx21-kpp
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  linux,keymap:
++    $ref: '/schemas/types.yaml#/definitions/uint32-array'
++    description: |
++      An array of packed 1-cell entries containing the equivalent of row,
++      column and linux key-code. The 32-bit big endian cell is packed as:
++      row << 24 | column << 16 | key-code
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++  - linux,keymap
++
++additionalProperties: false
++
++examples:
++  - |
++    keypad@73f94000 {
++        compatible = "fsl,imx51-kpp", "fsl,imx21-kpp";
++        reg = <0x73f94000 0x4000>;
++        interrupts = <60>;
++        clocks = <&clks 0>;
++        pinctrl-names = "default";
++        pinctrl-0 = <&pinctrl_kpp_1>;
++        linux,keymap = <0x00000067	/* KEY_UP */
++                        0x0001006c	/* KEY_DOWN */
++                        0x00020072	/* KEY_VOLUMEDOWN */
++                        0x00030066	/* KEY_HOME */
++                        0x0100006a	/* KEY_RIGHT */
++                        0x01010069	/* KEY_LEFT */
++                        0x0102001c	/* KEY_ENTER */
++                        0x01030073	/* KEY_VOLUMEUP */
++                        0x02000040	/* KEY_F6 */
++                        0x02010042	/* KEY_F8 */
++                        0x02020043	/* KEY_F9 */
++                        0x02030044	/* KEY_F10 */
++                        0x0300003b	/* KEY_F1 */
++                        0x0301003c	/* KEY_F2 */
++                        0x0302003d	/* KEY_F3 */
++                        0x03030074>;	/* KEY_POWER */
++    };
 -- 
-Sincerely yours,
-Mike.
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
