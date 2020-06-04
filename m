@@ -2,97 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB8B41EE7E0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:34:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A84C1EE7EB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:39:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KimCM+7cMS8z6j72yfES0uA5wbc1DMlApVQF0g0/sJQ=; b=VP8uwZiAnem2xavLwb3fk8ELf
-	RonKNrhU5bzSG5WCuWsRv0r1/97RGrhCtLyoEUYrPg0jPVG8zbd0nPw+zKc7rkcvVv6KVG7NBPPjK
-	CAdCwoQTO/YBo51KQVZxB5XwyD1cBHTQEVB05/hrVINXZVU1Gwy4Y8BvKREn1JNmQTIx5ocyb65ng
-	rg5wwCUXsGnlJzNaryrf5dh8ysb0ep70iFdthvf9R2EwfmI6dYm0pJhugtJD9nP7kkC8rdfqWMdGz
-	PoGUjrt6lwJ+BPbh0PqTfC1rxnAtLEAUgvjf3v/XvOF70Gq85Rzj1NsTyBi12XGSiYDpmD/kkqLNW
-	q58bCcPeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6gfGYOP64ZhhB5dscepE0l6CoszIAjOD1I97yDSGQb8=; b=UzT7iIy1s5LKD1
+	tKJg2KEEh/WBf746IQciOLvNMteCWxxb/Xax7/dd29ZIYYHaFjKcboWbltcyPwElssYf4f6cg9ic4
+	YvJAuhrHzfCUN/cU4sgPTTE+KdTqSRYbmzIzNXw9Z6B0ztjijKswMs3WG0OWw02HTE5sUOXpbUtow
+	eBjK+SrA54WKPRkgjtB/jm1lTtFkvfv3XeLZAs1He4//A+B/hyhmtlcVq9ih77poZkGsYOV9yEIau
+	3F/B3gh5GVgV3fDBhzOrGCgptlPWl+GzHfbANyEoFJ0E+IyRP5fHIl2pFOwideLLr5zosR8swdBcF
+	D05O+ZShBzFFnNPOsP2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgrtL-0008V8-IV; Thu, 04 Jun 2020 15:34:51 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgrtC-0008UF-SI
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:34:44 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y17so6584901wrn.11
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jun 2020 08:34:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=D3By0h98qnolfLM0+QRpl2dqCpgdvgnNY+OucjDnKDY=;
- b=vZt0DMCfoJUEXzeTrBICKPyqGfuBe7vx1mxfTRfe7AMZfEO9MgZiR1mPQATjGg7sos
- L2gEppsjZRToGPjruQDj6PgcZ9k1LIUGD0iWIyOtnINMSac6a+7rCj3z4QC4lrZCdKFE
- k2yM8OXoWQeV2IMPxu2sJJA6xUKeMYmYvndml0HnOewX3ksq8F1r9goi9s79mQpwsSIb
- c5mAXaNTKzUmdLKel6x7irCbEI4DTv2oXtv/qN7Oxn1zzp0W/r8QazRbJWdm+blAf/6N
- mqCzGRjWNAgSpkjxibd5bm0M9tIZAW+bPd5JKLWcPAMtTD2J+9FPsJ68L+Qr8Bw98u2/
- uiog==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=D3By0h98qnolfLM0+QRpl2dqCpgdvgnNY+OucjDnKDY=;
- b=cAzSC4BX6xTBQa9TUj/tOwcYrAJJqI9ml1IGVgemy9NCt5z6NE2Lc3sl669ZynOR8r
- 2c6lAWlVvl+s6CjBSn+WuGWz00hQXO+4HFgCwIuJP3U8hNcSWEXFn1rTKsnuxemt/QV5
- ZSFbCF/J1PdIvT0Gh/d8TG5MuVWT3CvV2O46ymscIic3LZIOAf/4gndiuUbBvIr+Fxjt
- tN5t7ZezdDk4wUFCAShlAuKIy0zCPyc1CuyByNGKFgFPkArNoS5lqZRmfGb/SSZDwRk8
- C9tngdDPUEaoVmUBAWRAXB3FitYwaSm6kS22+QI2HGRLRnRkhsqTz/PKN0LEXU4Pb6fL
- LJGg==
-X-Gm-Message-State: AOAM532jNTgjo13RImPyP7/cVsJiqeoidGp6ALwdVvg5OBdFMogHj6+f
- qVlIbtG663BDrOxfLxTlBCy2588+kY4=
-X-Google-Smtp-Source: ABdhPJxfqtpJqbRTF++Qa4Ke2KxsNtWe0xpkNWVokflegjt7JKKLmL/tz6wJQHjKWgmRMZK5uAnt/Q==
-X-Received: by 2002:adf:f0d2:: with SMTP id x18mr4926753wro.250.1591284880431; 
- Thu, 04 Jun 2020 08:34:40 -0700 (PDT)
-Received: from [192.168.8.102] ([194.230.155.251])
- by smtp.gmail.com with ESMTPSA id q1sm7431317wmc.12.2020.06.04.08.34.38
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 04 Jun 2020 08:34:39 -0700 (PDT)
-Subject: Re: [PATCH v3 2/7] documentation for stats_fs
-To: Randy Dunlap <rdunlap@infradead.org>,
- Emanuele Giuseppe Esposito <eesposit@redhat.com>, kvm@vger.kernel.org
-References: <20200526110318.69006-1-eesposit@redhat.com>
- <20200526110318.69006-3-eesposit@redhat.com>
- <c9ddaed1-0efc-650b-6a51-ad5fc431af69@infradead.org>
-From: Emanuele Giuseppe Esposito <e.emanuelegiuseppe@gmail.com>
-Message-ID: <dcaab39e-6cd3-c6cf-1515-7067a8b0ed9f@gmail.com>
-Date: Thu, 4 Jun 2020 17:34:37 +0200
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:68.0)
- Gecko/20100101 Thunderbird/68.8.1
+	id 1jgrxc-0003FC-Sl; Thu, 04 Jun 2020 15:39:16 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgrxU-0003Br-Bn
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:39:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 30DB31FB;
+ Thu,  4 Jun 2020 08:39:06 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.9.165])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BD38D3F305;
+ Thu,  4 Jun 2020 08:39:03 -0700 (PDT)
+Date: Thu, 4 Jun 2020 16:39:00 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 3/3] KVM: arm64: Enforce PtrAuth being disabled if not
+ advertized
+Message-ID: <20200604153900.GE75320@C02TD0UTHF1T.local>
+References: <20200604133354.1279412-1-maz@kernel.org>
+ <20200604133354.1279412-4-maz@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <c9ddaed1-0efc-650b-6a51-ad5fc431af69@infradead.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200604133354.1279412-4-maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_083442_916225_75B0F66F 
-X-CRM114-Status: GOOD (  22.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200604_083908_507202_2498DD8E 
+X-CRM114-Status: GOOD (  26.60  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [e.emanuelegiuseppe[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,164 +63,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-s390@vger.kernel.org, linux-doc@vger.kernel.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, kvm-ppc@vger.kernel.org,
- Jonathan Adams <jwadams@google.com>,
- Christian Borntraeger <borntraeger@de.ibm.com>,
- Alexander Viro <viro@zeniv.linux.org.uk>, David Rientjes <rientjes@google.com>,
- linux-fsdevel@vger.kernel.org, Paolo Bonzini <pbonzini@redhat.com>,
- linux-mips@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org, Jim Mattson <jmattson@google.com>
+Cc: kernel-team@android.com, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Marc,
 
->> +
->> +The STATS_FS_HIDDEN attribute won't affect the aggregation, it will only
->> +block the creation of the files.
-> 
-> Why does HIDDEN block the creation of files?  instead of their visibility?
+On Thu, Jun 04, 2020 at 02:33:54PM +0100, Marc Zyngier wrote:
+> Even if we don't expose PtrAuth to a guest, the guest can still
+> write to its SCTIRLE_1 register and set the En{I,D}{A,B} bits
+> and execute PtrAuth instructions from the NOP space. This has
+> the effect of trapping to EL2, and we currently inject an UNDEF.
 
-The file itself is used to allow the user to view the content of a 
-value. In order to make it hidden, the framework just doesn't create the 
-file.
-The structure is still present and considered in statsfs, however.
+I think it's worth noting that this is an ill-behaved guest, as those
+bits are RES0 when pointer authentication isn't implemented.
 
-Hidden in this case means not visible at all thus not created, not the 
-hidden file concept of dotted files (".filename")
+The rationale for RES0/RES1 bits is that new HW can rely on old SW
+programming them with the 0/1 as appropriate, and that old SW that does
+not do so may encounter behaviour which from its PoV is UNPREDICTABLE.
+The SW side of the contract is that you must program them as 0/1 unless
+you know they're allocated with a specific meaning.
 
-> 
->> +
->> +Add values to parent and child (also here order doesn't matter)::
->> +
->> +        struct kvm *base_ptr = kmalloc(..., sizeof(struct kvm));
->> +        ...
->> +        stats_fs_source_add_values(child_source, kvm_stats, base_ptr, 0);
->> +        stats_fs_source_add_values(parent_source, kvm_stats, NULL, STATS_FS_HIDDEN);
->> +
->> +``child_source`` will be a simple value, since it has a non-NULL base
->> +pointer, while ``parent_source`` will be an aggregate. During the adding
->> +phase, also values can optionally be marked as hidden, so that the folder
->> +and other values can be still shown.
->> +
->> +Of course the same ``struct stats_fs_value`` array can be also passed with a
->> +different base pointer, to represent the same value but in another instance
->> +of the kvm struct.
->> +
->> +Search:
->> +
->> +Fetch a value from the child source, returning the value
->> +pointed by ``(uint64_t *) base_ptr + kvm_stats[0].offset``::
->> +
->> +        uint64_t ret_child, ret_parent;
->> +
->> +        stats_fs_source_get_value(child_source, &kvm_stats[0], &ret_child);
->> +
->> +Fetch an aggregate value, searching all subsources of ``parent_source`` for
->> +the specified ``struct stats_fs_value``::
->> +
->> +        stats_fs_source_get_value(parent_source, &kvm_stats[0], &ret_parent);
->> +
->> +        assert(ret_child == ret_parent); // check expected result
->> +
->> +To make it more interesting, add another child::
->> +
->> +        struct stats_fs_source child_source2 = stats_fs_source_create(0, "child2");
->> +
->> +        stats_fs_source_add_subordinate(parent_source, child_source2);
->> +        // now  the structure is parent -> child1
->> +        //                              -> child2
-> 
-> Is that the same as                 parent -> child1 -> child2
-> ?  It could almost be read as
->                                      parent -> child1
->                                      parent -> child2
+With that in mind I think the current behaviour is legitimate: from the
+guest's PoV it's the same as there being a distinct extension which it
+is not aware of where the En{I,D}{A,B} bits means "trap some HINTs to
+EL1".
 
-No the example in the documentation shows the relationship
-parent -> child1 and
-parent -> child2.
-It's not the same as
-parent -> child1 -> child2.
-In order to do the latter, one would need to do:
+I don't think that we should attempt to work around broken software here
+unless we absolutely have to, as it only adds complexity for no real
+gain.
 
-stats_fs_source_add_subordinate(parent_source, child_source1);
-stats_fs_source_add_subordinate(child_source1, child_source2);
+Thanks,
+Mark.
 
-Hope that this clarifies it.
-
+> This is definitely the wrong thing to do, as the architecture says
+> that these instructions should behave as NOPs.
 > 
-> Whichever it is, can you make it more explicit, please?
+> Instead, we can simply reset the offending SCTLR_EL1 bits to
+> zero, and resume the guest. It can still observe the SCTLR bits
+> being set and then being cleared by magic, but that's much better
+> than delivering an unexpected extension.
 > 
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  arch/arm64/kvm/handle_exit.c | 12 ------------
+>  arch/arm64/kvm/hyp/switch.c  | 18 ++++++++++++++++--
+>  2 files changed, 16 insertions(+), 14 deletions(-)
 > 
->> +
->> +        struct kvm *other_base_ptr = kmalloc(..., sizeof(struct kvm));
->> +        ...
->> +        stats_fs_source_add_values(child_source2, kvm_stats, other_base_ptr, 0);
->> +
->> +Note that other_base_ptr points to another instance of kvm, so the struct
->> +stats_fs_value is the same but the address at which they point is not.
->> +
->> +Now get the aggregate value::
->> +
->> +        uint64_t ret_child, ret_child2, ret_parent;
->> +
->> +        stats_fs_source_get_value(child_source, &kvm_stats[0], &ret_child);
->> +        stats_fs_source_get_value(parent_source, &kvm_stats[0], &ret_parent);
->> +        stats_fs_source_get_value(child_source2, &kvm_stats[0], &ret_child2);
->> +
->> +        assert((ret_child + ret_child2) == ret_parent);
->> +
->> +Cleanup::
->> +
->> +        stats_fs_source_remove_subordinate(parent_source, child_source);
->> +        stats_fs_source_revoke(child_source);
->> +        stats_fs_source_put(child_source);
->> +
->> +        stats_fs_source_remove_subordinate(parent_source, child_source2);
->> +        stats_fs_source_revoke(child_source2);
->> +        stats_fs_source_put(child_source2);
->> +
->> +        stats_fs_source_put(parent_source);
->> +        kfree(other_base_ptr);
->> +        kfree(base_ptr);
->> +
->> +Calling stats_fs_source_revoke is very important, because it will ensure
+> diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
+> index 5a02d4c90559..98d8adf6f865 100644
+> --- a/arch/arm64/kvm/handle_exit.c
+> +++ b/arch/arm64/kvm/handle_exit.c
+> @@ -162,17 +162,6 @@ static int handle_sve(struct kvm_vcpu *vcpu, struct kvm_run *run)
+>  	return 1;
+>  }
+>  
+> -/*
+> - * Guest usage of a ptrauth instruction (which the guest EL1 did not turn into
+> - * a NOP). If we get here, it is that we didn't fixup ptrauth on exit, and all
+> - * that we can do is give the guest an UNDEF.
+> - */
+> -static int kvm_handle_ptrauth(struct kvm_vcpu *vcpu, struct kvm_run *run)
+> -{
+> -	kvm_inject_undefined(vcpu);
+> -	return 1;
+> -}
+> -
+>  static exit_handle_fn arm_exit_handlers[] = {
+>  	[0 ... ESR_ELx_EC_MAX]	= kvm_handle_unknown_ec,
+>  	[ESR_ELx_EC_WFx]	= kvm_handle_wfx,
+> @@ -195,7 +184,6 @@ static exit_handle_fn arm_exit_handlers[] = {
+>  	[ESR_ELx_EC_BKPT32]	= kvm_handle_guest_debug,
+>  	[ESR_ELx_EC_BRK64]	= kvm_handle_guest_debug,
+>  	[ESR_ELx_EC_FP_ASIMD]	= handle_no_fpsimd,
+> -	[ESR_ELx_EC_PAC]	= kvm_handle_ptrauth,
+>  };
+>  
+>  static exit_handle_fn kvm_get_exit_handler(struct kvm_vcpu *vcpu)
+> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+> index 2a50b3771c3b..fc09c3dfa466 100644
+> --- a/arch/arm64/kvm/hyp/switch.c
+> +++ b/arch/arm64/kvm/hyp/switch.c
+> @@ -503,8 +503,22 @@ static bool __hyp_text __hyp_handle_ptrauth(struct kvm_vcpu *vcpu)
+>  	struct kvm_cpu_context *ctxt;
+>  	u64 val;
+>  
+> -	if (!vcpu_has_ptrauth(vcpu))
+> -		return false;
+> +	if (!vcpu_has_ptrauth(vcpu)) {
+> +		if (ec != ESR_ELx_EC_PAC)
+> +			return false;
+> +
+> +		/*
+> +		 * Interesting situation: the guest has enabled PtrAuth,
+> +		 * despite KVM not advertising it. Fix SCTLR_El1 on behalf
+> +		 * of the guest (the bits should behave as RES0 anyway).
+> +		 */
+> +		val = read_sysreg_el1(SYS_SCTLR);
+> +		val &= ~(SCTLR_ELx_ENIA | SCTLR_ELx_ENIB |
+> +			 SCTLR_ELx_ENDA | SCTLR_ELx_ENDB);
+> +		write_sysreg_el1(val, SYS_SCTLR);
+> +
+> +		return true;
+> +	}
+>  
+>  	switch (ec) {
+>  	case ESR_ELx_EC_PAC:
+> -- 
+> 2.26.2
 > 
->             stats_fs_source_revoke()
-> 
->> +that stats_fs will not access the data that were passed to
->> +stats_fs_source_add_value for this source.
->> +
->> +Because open files increase the reference count for a stats_fs_source, the
->> +source can end up living longer than the data that provides the values for
->> +the source.  Calling stats_fs_source_revoke just before the backing data
-> 
->                          stats_fs_source_revoke()
-> 
->> +is freed avoids accesses to freed data structures. The sources will return
->> +0.
->> +
->> +This is not needed for the parent_source, since it just contains
->> +aggregates that would be 0 anyways if no matching child value exist.
->> +
->> +API Documentation
->> +=================
->> +
->> +.. kernel-doc:: include/linux/stats_fs.h
->> +   :export: fs/stats_fs/*.c
->> \ No newline at end of file
-> 
-> Please fix that. ^^^^^
-> 
-> 
-> Thanks for the documentation.
-> 
-
-Thank you for the feedback,
-Emanuele
 
 _______________________________________________
 linux-arm-kernel mailing list
