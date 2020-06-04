@@ -2,58 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03A881EE6EF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 16:50:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32F1F1EE732
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:01:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kHF0ywOdp016BLFR4KdOU2rFzGg7I541Fsu7WPiECa4=; b=egS6lq0PHSXJCF
-	S04a3MsC5CFL6CGnEC1Hs5nqJlLjreaZjZLNzwaDYgBGPk6taF/O2CsCRGow7AX1bsZ1SQ+5UH1+b
-	gDCMSayJNjDJf7jLCtStW5EKMuYYgycZwLzPDQsFvg7IxGmLli0GLezbRWpgkmEjTzaQlRnmo9xou
-	7PooQzCzhg8E+bh8p6gNuJErUrS2GBMC4tkqlh+h3NdRWfjLiAOBXvli1PUwWuJlfyoxAGCA2sQqi
-	kBgte/w4qga25/g83EOt/tsSEPpkrx7cSTIKvTBRCegbzdNcJtWsxfDH3fQpE3EOs142jDJTYvydY
-	0m20GdQWPBSJdaoJvUqQ==;
+	List-Owner; bh=pVvBq6LQCqC10C7X0LuMF2iQMTCqWBqOi/Sbbf8RkHY=; b=kf9v18qeogZ3S0
+	5J+jD/y9usZZlgOMBQFGPUbqxuB3vzDzZuzMSth4rJk/p4Yxl1f/8Jpu27nM40BMhe5mi3j9ZeIg/
+	7/BXXaKlPCPGBN4VLXO8PnGJ9Fn3GlXRG7OJB0kcajYx0AiF0nmJKimuevkKIy5KaVnnCE2Sg0MQ6
+	tdMbl2Z6Kb4YF2Dp1SxrePJOaNhW5O4W5lgvSTx3djsW3NbZ+8AqCzEDBTRZr6zv2+BitOzf1QLni
+	fyRIyz23FD/8taLKqxrA320bwWzqLQm6yXOlg2w7F+6qVbip+A6HjLpSSi++IVAbMdQCq9skZzIxA
+	sjpKyVWrIzrEGEUXz0gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgrCB-0003aQ-I6; Thu, 04 Jun 2020 14:50:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgrBt-0003Zl-Ni
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 14:49:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1C5B62B;
- Thu,  4 Jun 2020 07:49:57 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9ECCE3F305;
- Thu,  4 Jun 2020 07:49:54 -0700 (PDT)
-Date: Thu, 4 Jun 2020 15:49:52 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH 07/12] of/device: Add input id to of_dma_configure()
-Message-ID: <20200604144952.GB476@e121166-lin.cambridge.arm.com>
-References: <20200521130008.8266-1-lorenzo.pieralisi@arm.com>
- <20200521130008.8266-8-lorenzo.pieralisi@arm.com>
- <CAL_JsqJw3wyiUrbd1AekwDc5+uqhHi9BwoB-rYpypUEGNgzCtw@mail.gmail.com>
+	id 1jgrN7-0004Xj-Qq; Thu, 04 Jun 2020 15:01:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgrN2-0004Ws-Ln
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:01:30 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 08A37207D8;
+ Thu,  4 Jun 2020 15:01:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591282888;
+ bh=JskUzilwdGajPNgtR3T9CuqT66ma41UzbaDrRz2jlJM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=VAkcxlodg6uYtYGE0N0ImJcZG16BuNQvLsb+q1ioUHFM94BXMor4MzaZYu2jHyehc
+ ybQfvqA2TnedLG2j/XVN0HoEPJOGReh0UHO3UI1fJdW+WagpMjA4N/9EBQLSPhr6Ng
+ DY/rSuvfK8egnMCVWQsyfErW95lCpUMqzyjmnjgQ=
+Date: Thu, 4 Jun 2020 16:01:23 +0100
+From: Will Deacon <will@kernel.org>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH] arm64: set TEXT_OFFSET to 0x0 in preparation for
+ removing it entirely
+Message-ID: <20200604150122.GA3650@willie-the-truck>
+References: <20200415082922.32709-1-ardb@kernel.org>
+ <158808120907.217905.4632288691847383619.b4-ty@kernel.org>
+ <20200604154141.4983aeaa@why>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAL_JsqJw3wyiUrbd1AekwDc5+uqhHi9BwoB-rYpypUEGNgzCtw@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200604154141.4983aeaa@why>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_074957_858350_39343055 
-X-CRM114-Status: GOOD (  21.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200604_080128_732038_14BA6108 
+X-CRM114-Status: GOOD (  17.22  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,91 +79,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will@kernel.org>, Diana Craciun <diana.craciun@oss.nxp.com>,
- PCI <linux-pci@vger.kernel.org>, Joerg Roedel <joro@8bytes.org>,
- Sudeep Holla <sudeep.holla@arm.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, linux-acpi@vger.kernel.org,
- Linux IOMMU <iommu@lists.linux-foundation.org>, Marc Zyngier <maz@kernel.org>,
- Hanjun Guo <guohanjun@huawei.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Robin Murphy <robin.murphy@arm.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ james.morse@arm.com, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 21, 2020 at 05:02:20PM -0600, Rob Herring wrote:
-> On Thu, May 21, 2020 at 7:00 AM Lorenzo Pieralisi
-> <lorenzo.pieralisi@arm.com> wrote:
-> >
-> > Devices sitting on proprietary busses have a device ID space that
-> > is owned by the respective bus and related firmware bindings. In order
-> > to let the generic OF layer handle the input translations to
-> > an IOMMU id, for such busses the current of_dma_configure() interface
-> > should be extended in order to allow the bus layer to provide the
-> > device input id parameter - that is retrieved/assigned in bus
-> > specific code and firmware.
-> >
-> > Augment of_dma_configure() to add an optional input_id parameter,
-> > leaving current functionality unchanged.
-> >
-> > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > Cc: Rob Herring <robh+dt@kernel.org>
-> > Cc: Robin Murphy <robin.murphy@arm.com>
-> > Cc: Joerg Roedel <joro@8bytes.org>
-> > Cc: Laurentiu Tudor <laurentiu.tudor@nxp.com>
-> > ---
-> >  drivers/bus/fsl-mc/fsl-mc-bus.c |  4 ++-
-> >  drivers/iommu/of_iommu.c        | 53 +++++++++++++++++++++------------
-> >  drivers/of/device.c             |  8 +++--
-> >  include/linux/of_device.h       | 16 ++++++++--
-> >  include/linux/of_iommu.h        |  6 ++--
-> >  5 files changed, 60 insertions(+), 27 deletions(-)
-> >
-> > diff --git a/drivers/bus/fsl-mc/fsl-mc-bus.c b/drivers/bus/fsl-mc/fsl-mc-bus.c
-> > index 40526da5c6a6..8ead3f0238f2 100644
-> > --- a/drivers/bus/fsl-mc/fsl-mc-bus.c
-> > +++ b/drivers/bus/fsl-mc/fsl-mc-bus.c
-> > @@ -118,11 +118,13 @@ static int fsl_mc_bus_uevent(struct device *dev, struct kobj_uevent_env *env)
-> >  static int fsl_mc_dma_configure(struct device *dev)
-> >  {
-> >         struct device *dma_dev = dev;
-> > +       struct fsl_mc_device *mc_dev = to_fsl_mc_device(dev);
-> > +       u32 input_id = mc_dev->icid;
-> >
-> >         while (dev_is_fsl_mc(dma_dev))
-> >                 dma_dev = dma_dev->parent;
-> >
-> > -       return of_dma_configure(dev, dma_dev->of_node, 0);
-> > +       return of_dma_configure_id(dev, dma_dev->of_node, 0, &input_id);
-> >  }
-> >
-> >  static ssize_t modalias_show(struct device *dev, struct device_attribute *attr,
-> > diff --git a/drivers/iommu/of_iommu.c b/drivers/iommu/of_iommu.c
-> > index ad96b87137d6..4516d5bf6cc9 100644
-> > --- a/drivers/iommu/of_iommu.c
-> > +++ b/drivers/iommu/of_iommu.c
-> > @@ -139,25 +139,53 @@ static int of_pci_iommu_init(struct pci_dev *pdev, u16 alias, void *data)
-> >         return err;
-> >  }
-> >
-> > -static int of_fsl_mc_iommu_init(struct fsl_mc_device *mc_dev,
-> > -                               struct device_node *master_np)
-> > +static int of_iommu_configure_dev_id(struct device_node *master_np,
-> > +                                    struct device *dev,
-> > +                                    const u32 *id)
+On Thu, Jun 04, 2020 at 03:41:41PM +0100, Marc Zyngier wrote:
+> Hi all,
 > 
-> Should have read this patch before #6. I guess you could still make
-> of_pci_iommu_init() call
-> of_iommu_configure_dev_id.
+> On Tue, 28 Apr 2020 15:49:35 +0100
+> Will Deacon <will@kernel.org> wrote:
+> 
+> > On Wed, 15 Apr 2020 10:29:22 +0200, Ard Biesheuvel wrote:
+> > > TEXT_OFFSET on arm64 is a historical artifact from the early days of
+> > > the arm64 port where the boot protocol was basically 'copy this image
+> > > to the base of memory + 512k', giving us 512 KB of guaranteed BSS space
+> > > to put the swapper page tables. When the arm64 port was merged for
+> > > v3.10, the Image header already carried the actual value of TEXT_OFFSET,
+> > > to allow the bootloader to discover it dynamically rather than hardcode
+> > > it to 512 KB.
+> > > 
+> > > [...]  
+> > 
+> > Applied to arm64 (for-next/misc), thanks!
+> > 
+> > [1/1] arm64: set TEXT_OFFSET to 0x0 in preparation for removing it entirely
+> >       https://git.kernel.org/arm64/c/cfa7ede20f13
+> 
+> This breaks a guest kernel booted with kvmtool (tested on my d05).
+> Reverting it on top of 6929f71e46bd makes it work again. I haven't yet
+> investigated what is happening here though.
 
-Yes that makes sense, I will update it.
+Weird, that's a combination I test, just not on d05. Are you using
+defconfig? Can you share your full kvmtool invication please?
 
-Thanks,
-Lorenzo
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
