@@ -2,70 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B35121EE792
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:20:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E9F01EE7A4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:23:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3NDNTC0rVMQdyJKZdEHMFhELZpDorY9Ku6Q92i0l52M=; b=ptvOjnXndZeWzH
-	92HIBP/sfAstKA4bOCfQpsf9IvX6lU/kaagQJcflRk0VOwwWqgNiNYh4zmhrrgCPYESZ4nT/fppzx
-	uZSpmEe0/gVyAp9exnbf0DveREC0VcopZoZIwFFaLn2bsDUxfdew2k0VtodFPxO+kMv8PP3G05pt3
-	4EUoLT6ifRkgesLOjEJ/KMmTMUy9VYzkvMqnbJO2HYA6+wS8GywxOgvB7XXh6oKQ1VyUocrPotjyQ
-	VBsYvvO2QVoFK7guXOlNppISY2g9pbTzK+TKjEgvNtAMsHM+hq+n9A3xQ5Ie8ZhCU/14wKOQKJu/M
-	9GTh+skU8m4QtSGPG1XQ==;
+	List-Owner; bh=8+/ol8flsHIgayBVqtTqa4Wadi0RJjxkjYtJ1+mhO8I=; b=tiQTH2v8oZ1+qK
+	OOUBhfjNzjRKBHQwl0+fvacw4TuUapyKkRgPtsooE5AY4R+zA9F+WptanRKvFKDqmBd/hteVYToVr
+	Ys0YX/EEZuouT6m5+nyypP1g1QqwuXbdZ/Pk74wsje5jSenSWtMd8VfxZ5DK3/Kwry+iykqPthNHT
+	iJ4lyCUwPN8LkWnZG5DZzRhNlhWrgJYILYj2zgqrWXl0HIxMOh8peNrWBnb57B0c/V4LpAeHN0RXZ
+	BagqOcHpNI7FsjIQjBW1mld+2WDjYaZcg0RFarlSFmIjuBa/Nukg4vxQhESqd9t7pbF4vXYBAw7tW
+	tOrCtrpxHVdAoDoPeHug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgrfH-0000Tk-0t; Thu, 04 Jun 2020 15:20:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgrf5-0008CJ-IP
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:20:08 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D40D8206E6;
- Thu,  4 Jun 2020 15:20:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591284007;
- bh=w2uxMGuh2+1k7LPoRuxUyCewdA+D0PptbvSog58dJiE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=W+f0x/FEf8ckxVQEj4c9o8Sbp2+VQ4FAQSK+8OHNGhIInSIYdLal8pWCCNaPj+G6V
- 4HfPBpL4h6mXmSMBnKRvcLZHWbD2kv+SvkhdQIXzZwlnHNpXCMrpJCg9WvsZda25/U
- mnPnjW+sbeRpfeHXwCs/6+Pl17xFrsbh45/X29Js=
-Date: Thu, 4 Jun 2020 16:20:02 +0100
-From: Will Deacon <will@kernel.org>
-To: Jordan Crouse <jcrouse@codeaurora.org>
-Subject: Re: [PATCH] iommu/arm-smmu: Mark qcom_smmu_client_of_match as
- possibly unused
-Message-ID: <20200604152002.GC3650@willie-the-truck>
-References: <20200603211507.27756-1-jcrouse@codeaurora.org>
+	id 1jgric-0001f2-BI; Thu, 04 Jun 2020 15:23:46 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgriV-0001eL-5Q
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:23:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 75CFE1FB;
+ Thu,  4 Jun 2020 08:23:38 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.9.165])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3C8D93F305;
+ Thu,  4 Jun 2020 08:23:36 -0700 (PDT)
+Date: Thu, 4 Jun 2020 16:23:33 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 2/3] KVM: arm64: Handle PtrAuth traps early
+Message-ID: <20200604152333.GD75320@C02TD0UTHF1T.local>
+References: <20200604133354.1279412-1-maz@kernel.org>
+ <20200604133354.1279412-3-maz@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200603211507.27756-1-jcrouse@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200604133354.1279412-3-maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_082007_643157_020AD8B9 
-X-CRM114-Status: GOOD (  15.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200604_082339_289581_8FDADF37 
+X-CRM114-Status: GOOD (  25.93  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,47 +62,182 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: kernel-team@android.com, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Jun 03, 2020 at 03:15:07PM -0600, Jordan Crouse wrote:
-> When CONFIG_OF=n of_match_device() gets pre-processed out of existence
-> leaving qcom-smmu_client_of_match unused. Mark it as possibly unused to
-> keep the compiler from warning in that case.
+On Thu, Jun 04, 2020 at 02:33:53PM +0100, Marc Zyngier wrote:
+> The current way we deal with PtrAuth is a bit heavy handed:
 > 
-> Fixes: 0e764a01015d ("iommu/arm-smmu: Allow client devices to select direct mapping")
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Signed-off-by: Jordan Crouse <jcrouse@codeaurora.org>
+> - We forcefully save the host's keys on each vcpu_load()
+> - Handling the PtrAuth trap forces us to go all the way back
+>   to the exit handling code to just set the HCR bits
+> 
+> Overall, this is pretty heavy handed. A better approach would be
+> to handle it the same way we deal with the FPSIMD registers:
+> 
+> - On vcpu_load() disable PtrAuth for the guest
+> - On first use, save the host's keys, enable PtrAuth in the
+>   guest
+> 
+> Crutially, this can happen as a fixup, which is done very early
+> on exit. We can then reenter the guest immediately without
+> leaving the hypervisor role.
+> 
+> Another thing is that it simplify the rest of the host handling:
+> exiting all the way to the host means that the only possible
+> outcome for this trap is to inject an UNDEF.
+> 
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 > ---
-> 
->  drivers/iommu/arm-smmu-qcom.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
-> index cf01d0215a39..063b4388b0ff 100644
-> --- a/drivers/iommu/arm-smmu-qcom.c
-> +++ b/drivers/iommu/arm-smmu-qcom.c
-> @@ -12,7 +12,7 @@ struct qcom_smmu {
->  	struct arm_smmu_device smmu;
->  };
+>  arch/arm64/kvm/arm.c         | 17 +----------
+>  arch/arm64/kvm/handle_exit.c | 17 ++---------
+>  arch/arm64/kvm/hyp/switch.c  | 59 ++++++++++++++++++++++++++++++++++++
+>  arch/arm64/kvm/sys_regs.c    | 13 +++-----
+>  4 files changed, 68 insertions(+), 38 deletions(-)
+
+[...]
+
+> +static bool __hyp_text __hyp_handle_ptrauth(struct kvm_vcpu *vcpu)
+> +{
+> +	u32 sysreg = esr_sys64_to_sysreg(kvm_vcpu_get_hsr(vcpu));
+> +	u32 ec = kvm_vcpu_trap_get_class(vcpu);
+> +	struct kvm_cpu_context *ctxt;
+> +	u64 val;
+> +
+> +	if (!vcpu_has_ptrauth(vcpu))
+> +		return false;
+> +
+> +	switch (ec) {
+> +	case ESR_ELx_EC_PAC:
+> +		break;
+> +	case ESR_ELx_EC_SYS64:
+> +		switch (sysreg) {
+> +		case SYS_APIAKEYLO_EL1:
+> +		case SYS_APIAKEYHI_EL1:
+> +		case SYS_APIBKEYLO_EL1:
+> +		case SYS_APIBKEYHI_EL1:
+> +		case SYS_APDAKEYLO_EL1:
+> +		case SYS_APDAKEYHI_EL1:
+> +		case SYS_APDBKEYLO_EL1:
+> +		case SYS_APDBKEYHI_EL1:
+> +		case SYS_APGAKEYLO_EL1:
+> +		case SYS_APGAKEYHI_EL1:
+> +			break;
+> +		default:
+> +			return false;
+> +		}
+> +		break;
+> +	default:
+> +		return false;
+> +	}
+
+The ESR triage looks correct, but I think it might be clearer split out
+into a helper, since you can avoid the default cases with direct
+returns, and you could avoid the nested switch, e.g.
+
+static inline bool __hyp_text esr_is_ptrauth_trap(u32 esr)
+{
+	u32 ec = ESR_ELx_EC(esr);
+
+	if (ec == ESR_ELx_EC_PAC)
+		return true;
+
+	if (ec != ESR_ELx_EC_SYS64)
+		return false;
+	
+	switch (esr_sys64_to_sysreg(esr)) {
+	case SYS_APIAKEYLO_EL1:
+	case SYS_APIAKEYHI_EL1:
+	case SYS_APIBKEYLO_EL1:
+	case SYS_APIBKEYHI_EL1:
+	case SYS_APDAKEYLO_EL1:
+	case SYS_APDAKEYHI_EL1:
+	case SYS_APDBKEYLO_EL1:
+	case SYS_APDBKEYHI_EL1:
+	case SYS_APGAKEYLO_EL1:
+	case SYS_APGAKEYHI_EL1:
+		return true;
+	}
+
+	return false;
+}
+
+
+> +
+> +	ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
+> +	__ptrauth_save_key(ctxt->sys_regs, APIA);
+> +	__ptrauth_save_key(ctxt->sys_regs, APIB);
+> +	__ptrauth_save_key(ctxt->sys_regs, APDA);
+> +	__ptrauth_save_key(ctxt->sys_regs, APDB);
+> +	__ptrauth_save_key(ctxt->sys_regs, APGA);
+> +
+> +	vcpu_ptrauth_enable(vcpu);
+> +
+> +	val = read_sysreg(hcr_el2);
+> +	val |= (HCR_API | HCR_APK);
+> +	write_sysreg(val, hcr_el2);
+> +
+> +	return true;
+> +}
+> +
+>  /*
+>   * Return true when we were able to fixup the guest exit and should return to
+>   * the guest, false when we should restore the host state and return to the
+> @@ -524,6 +580,9 @@ static bool __hyp_text fixup_guest_exit(struct kvm_vcpu *vcpu, u64 *exit_code)
+>  	if (__hyp_handle_fpsimd(vcpu))
+>  		return true;
 >  
-> -static const struct of_device_id qcom_smmu_client_of_match[] = {
-> +static const struct __maybe_unused of_device_id qcom_smmu_client_of_match[] = {
+> +	if (__hyp_handle_ptrauth(vcpu))
+> +		return true;
+> +
+>  	if (!__populate_fault_info(vcpu))
+>  		return true;
+>  
+> diff --git a/arch/arm64/kvm/sys_regs.c b/arch/arm64/kvm/sys_regs.c
+> index ad1d57501d6d..564995084cf8 100644
+> --- a/arch/arm64/kvm/sys_regs.c
+> +++ b/arch/arm64/kvm/sys_regs.c
+> @@ -1034,16 +1034,13 @@ static bool trap_ptrauth(struct kvm_vcpu *vcpu,
+>  			 struct sys_reg_params *p,
+>  			 const struct sys_reg_desc *rd)
+>  {
+> -	kvm_arm_vcpu_ptrauth_trap(vcpu);
+> -
+>  	/*
+> -	 * Return false for both cases as we never skip the trapped
+> -	 * instruction:
+> -	 *
+> -	 * - Either we re-execute the same key register access instruction
+> -	 *   after enabling ptrauth.
+> -	 * - Or an UNDEF is injected as ptrauth is not supported/enabled.
+> +	 * If we land here, that is because we didn't fixup the access on exit
+> +	 * by allowing the PtrAuth sysregs. The only way this happens is when
+> +	 * the guest does not have PtrAuth support enabled.
+>  	 */
+> +	kvm_inject_undefined(vcpu);
+> +
+>  	return false;
+>  }
+>  
+> -- 
+> 2.26.2
+> 
 
-Yikes, I've never seen that between the 'struct' and the struct name before!
-I'd be inclined to stick it at the end, right before the '='.
+Regardless of the suggestion above, this looks sound to me. I agree that
+it's much nicer to handle this in hyp, and AFAICT the context switch
+should do the right thing, so:
 
-With that:
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 
-Acked-by: Will Deacon <will@kernel.org>
-
-Will
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
