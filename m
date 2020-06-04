@@ -2,94 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 932DE1EE1D0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:50:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3975E1EE1DE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:53:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:References:Message-Id:
-	Date:Subject:Mime-Version:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rVbfLjic0QZYs0IUHl4w+56RaXXsCHSlmzKJJD5TS+8=; b=kdSO4JlmfOd2BN
-	d4h4zEYVPw+j5JErcNaTx5eTYVGhEXrPb5X2D2dcVoeP0O39xb70nLss8z2UUe+7uhrNL/Br8a4vW
-	EeGFzAM99aN8oObpk/BhnpsxFYEvl081pzdumF460Fx5GZvEEKCT75zk6dedSrESi8hTznbKxRA8K
-	C383LnqheP41crbZq3s0jf6PYc9ZxNWT2iBN70vgxv8i6xef3K49Ji9tjCKg6U2r51CWYcHaVcVXG
-	Ih4wxqxDa/II75hwpgLHdENUnK8GpygUnJ+5chkGK0xoJeauTwz2p2+wtBM6nj9f7qyym/RNAtepx
-	4nHX6cQttH7RKf8TwPLg==;
+	List-Owner; bh=nx1DTe6d07ZUCbHu/oN4UXJyTFoEW8srVChUsOMLEN8=; b=f3qV86qnsTl19z
+	fPUSWMoazI1st7IbgYhBs/Q2hH1MGOm/AkTE9Kh2opoYOPBS3R+IuwYq5qvgO6cnJ3eYOhKNMJZvr
+	rPVS3dxbSoppQqk9s5C7xzDuUm1FxmCWJo2QdSL4tqnw6st3+Z5RmuYR69VhbTkdmFI2byzCQq1fR
+	uPJF+wIFBlIVQ7F2w783e6S4LT8hinrgOL6/nZBLyTkaMR9jjvqWaYziPy1IIkNNJoQE1fKeinZIL
+	vC+zKABcRGLn4PtGTXpDcy5Ql3XOHglR3gfI4/JxpWZvatrHbJi1vMD6KKm680BpZyhDczZAfHuqq
+	wvo+BLB/bHUg41Y+ZwzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgmWF-0004kB-9k; Thu, 04 Jun 2020 09:50:39 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1jgmYY-0005VK-F1; Thu, 04 Jun 2020 09:53:02 +0000
+Received: from mail2-relais-roc.national.inria.fr ([192.134.164.83])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgmW2-0004je-MS
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 09:50:27 +0000
-Received: by mail-qk1-x744.google.com with SMTP id g28so5373996qkl.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 04 Jun 2020 02:50:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=content-transfer-encoding:from:mime-version:subject:date:message-id
- :references:cc:in-reply-to:to;
- bh=Kg6vPoyo+bqnNzeJ15v0h+k7UDJ+CL28zwznimZSCUE=;
- b=iTjBd5guz5HISGo2ssTQ3kdQtGEPcHruUrD+LnAE3oz6ejT5z7/X/1k6Lyhf8TKx5b
- ochOdOSIBb3h3Y16Pi6ii3tWoOJc7cfmg89ims3xh6+Jh8IhCFODcDigvdJUGn8PoFjT
- EkTUAsSp67YsNdsVwVT1r5Vu+evKW2mO3OAUqZvAKH38vSPvlDik/Uz5OVTy8vUxXLlw
- M32Z0qFp1SSOkv3GtQlbFiN4KDNE4Nike0Je9+qrq8Pcg7mXbqKBqHyIM6FNfuqeEz2s
- 6n7X6JWYsNnBUTnlr9W/I3IY3mmtryZOuLjZUJqh6MakrvWInHU4vUrvtFma0HR0YPjH
- DA+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:content-transfer-encoding:from:mime-version
- :subject:date:message-id:references:cc:in-reply-to:to;
- bh=Kg6vPoyo+bqnNzeJ15v0h+k7UDJ+CL28zwznimZSCUE=;
- b=D/FrPEOoLP8EMtufoB9ye9UryA5RQ0dyt32qZn1NPMkRLuq6EFvYR/5FCUiFXKrP36
- KF5j/CR7I3ngV+PbU1cuzOrz4YSMncat1cYX2qRFz/lS9ynKFJ+tsF/1TmH0JpaEaSJc
- QlTiEbhdefq1PmDNDRzUXO9PjiHL22WH6eaONpIZABAUAgFGS5k3cB2hX+jv0s6j+HHw
- 5CuYflR9bbsjaM2Ty8F1nRuQXs0H2JQ92zQiPyV3Y4welW6miuXDwo44LGumGR9BrZ3C
- 5fJy+zVO40HRgyzWCakNw9Xuw1jcTHU8mvKWsG/9DAV0STdrOIakmQInEw4erSGT3KPX
- YGTA==
-X-Gm-Message-State: AOAM530xteufiFtXtF5kR0KARvB3ZvP/s24cNEeHWE2QGB/tiDRrs1Xa
- U4w5SVN8xXH9+hnM17CzccuLhQ==
-X-Google-Smtp-Source: ABdhPJxfD/CO+vni4AqlLMUrdeQZhzI4lfqDbPL9gDbqoVSPBGPQonJSf2x+4N4xRGOEhDNSqWev4g==
-X-Received: by 2002:a05:620a:1218:: with SMTP id
- u24mr3544315qkj.422.1591264224746; 
- Thu, 04 Jun 2020 02:50:24 -0700 (PDT)
-Received: from [192.168.1.183] (pool-71-184-117-43.bstnma.fios.verizon.net.
- [71.184.117.43])
- by smtp.gmail.com with ESMTPSA id k20sm4369904qtu.16.2020.06.04.02.50.23
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 04 Jun 2020 02:50:23 -0700 (PDT)
-From: Qian Cai <cai@lca.pw>
-Mime-Version: 1.0 (1.0)
-Subject: Re: [PATCH v4 08/14] powerpc: add support for folded p4d page tables
-Date: Thu, 4 Jun 2020 05:50:23 -0400
-Message-Id: <F85B8F19-D717-411A-AFA8-466A02159F27@lca.pw>
-References: <20200603120522.7646d56a23088416a7d3fc1a@linux-foundation.org>
-In-Reply-To: <20200603120522.7646d56a23088416a7d3fc1a@linux-foundation.org>
-To: Andrew Morton <akpm@linux-foundation.org>
-X-Mailer: iPhone Mail (17F80)
+ id 1jgmYQ-0005Ix-JB
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 09:52:56 +0000
+X-IronPort-AV: E=Sophos;i="5.73,471,1583190000"; d="scan'208";a="452941151"
+Received: from abo-173-121-68.mrs.modulonet.fr (HELO hadrien) ([85.68.121.173])
+ by mail2-relais-roc.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 04 Jun 2020 11:52:17 +0200
+Date: Thu, 4 Jun 2020 11:52:17 +0200 (CEST)
+From: Julia Lawall <julia.lawall@inria.fr>
+X-X-Sender: jll@hadrien
+To: Joe Perches <joe@perches.com>
+Subject: Re: [PATCH] pinctrl: pxa: pxa2xx: Remove 'pxa2xx_pinctrl_exit()'
+ which is unused and broken
+In-Reply-To: <2aa49a543e6f48a6f428a37b63a06f9149870225.camel@perches.com>
+Message-ID: <alpine.DEB.2.21.2006041147360.2577@hadrien>
+References: <20200531073716.593343-1-christophe.jaillet@wanadoo.fr>
+ <87h7vvb1s3.fsf@belgarion.home>
+ <a2e34c9a-676f-d83f-f395-7428af038c16@wanadoo.fr>
+ <20200601183102.GS30374@kadam>
+ <CACRpkdasbS-4_ZwC-Ucm8tkSUW5tAQdUrXjxHXQ3J0goVYfgHw@mail.gmail.com>
+ <20200604083120.GF22511@kadam>
+ <2aa49a543e6f48a6f428a37b63a06f9149870225.camel@perches.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_025026_752945_171BC887 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20200604_025254_910110_D538A11C 
+X-CRM114-Status: GOOD (  23.28  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.7 URIBL_BLACK            Contains an URL listed in the URIBL blacklist
- [URIs: lca.pw]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.134.164.83 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [192.134.164.83 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,27 +70,14 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-sh@vger.kernel.org,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
- Paul Mackerras <paulus@samba.org>, linux-hexagon@vger.kernel.org,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Jonas Bonn <jonas@southpole.se>, linux-arch@vger.kernel.org,
- Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
- Mike Rapoport <rppt@linux.ibm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- uclinux-h8-devel@lists.sourceforge.jp, Fenghua Yu <fenghua.yu@intel.com>,
- Arnd Bergmann <arnd@arndb.de>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- kvm-ppc@vger.kernel.org,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
- Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-kernel@vger.kernel.org,
- James Morse <James.Morse@arm.com>, Michael Ellerman <mpe@ellerman.id.au>,
- nios2-dev@lists.rocketboards.org, linuxppc-dev@lists.ozlabs.org,
- Mike Rapoport <rppt@kernel.org>
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linus Walleij <linus.walleij@linaro.org>, kernel-janitors@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ Dan Carpenter <dan.carpenter@oracle.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -129,16 +85,69 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-> On Jun 3, 2020, at 3:05 PM, Andrew Morton <akpm@linux-foundation.org> wrote:
-> 
-> A bunch of new material just landed in linux-next/powerpc.
-> 
-> The timing is awkward!  I trust this will be going into mainline during
-> this merge window?  If not, please drop it and repull after -rc1.
+On Thu, 4 Jun 2020, Joe Perches wrote:
 
-I have noticed the same pattern over and over again, i.e., many powerpc new material has only shown up in linux-next for only a few days before sending for a pull request to Linus.
+> On Thu, 2020-06-04 at 11:31 +0300, Dan Carpenter wrote:
+> > On Thu, Jun 04, 2020 at 12:08:49AM +0200, Linus Walleij wrote:
+> []
+> > > Fixes means it fixes something that was wrong in that commit.
+> > > That's all. Whether syntactic or semantic or regression or
+> > > serious or not does not matter. It is also not compulsory to
+> > > add it is just helpful.
+> >
+> > Fixes tag should be compulsory for actual bug fixes.  We had a the
+> > Bad Binder exploit last year because commit f5cb779ba163
+> > ("ANDROID: binder: remove waitqueue when thread exits.") had no Fixes
+> > tag and wasn't backported to Android kernels.
+>
+> Fixes tags IMO should be exclusively for actual bug fixes
+> and should be mandatory.
 
-There are absolutely no safe net for this kind of practice. The main problem is that Linus seems totally fine with it.
+I'm not sure that it is always possible to determine the specific commit
+that a patch fixes.  Some bugs are too old.  Some bugs may arise from an
+interaction of issues.  I don't have a concrete example, but I feel uneasy
+about mandator and compulsory.  Neither word is in the proposed text,
+though.
+
+Should Fixes also be used when the change will make it hard to port other
+fixes over it?
+
+julia
+
+>
+> Perhaps:
+> ---
+>  Documentation/process/submitting-patches.rst | 14 ++++++++------
+>  1 file changed, 8 insertions(+), 6 deletions(-)
+>
+> diff --git a/Documentation/process/submitting-patches.rst b/Documentation/process/submitting-patches.rst
+> index 1699b7f8e63a..285a84ae79de 100644
+> --- a/Documentation/process/submitting-patches.rst
+> +++ b/Documentation/process/submitting-patches.rst
+> @@ -636,12 +636,14 @@ idea was not posted in a public forum. That said, if we diligently credit our
+>  idea reporters, they will, hopefully, be inspired to help us again in the
+>  future.
+>
+> -A Fixes: tag indicates that the patch fixes an issue in a previous commit. It
+> -is used to make it easy to determine where a bug originated, which can help
+> -review a bug fix. This tag also assists the stable kernel team in determining
+> -which stable kernel versions should receive your fix. This is the preferred
+> -method for indicating a bug fixed by the patch. See :ref:`describe_changes`
+> -for more details.
+> +A Fixes: tag indicates that the patch fixes a "bug". i.e.: a logic defect or
+> +regression in a previous commit.  A Fixes: tag should not be used to indicate
+> +that a previous commit had some trivial defect in spelling in the commit log or
+> +some whitespace defect.  The Fixes: tag is used to make it easy to determine
+> +where a bug originated, which can help review a bug fix. The Fixes: tag also
+> +assists the stable kernel team in determining which stable kernel versions
+> +should receive your fix. This is the preferred method for indicating a bug is
+> +fixed by the patch.  See :ref:`describe_changes` for more details.
+>
+>  .. _the_canonical_patch_format:
+>
+>
+>
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
