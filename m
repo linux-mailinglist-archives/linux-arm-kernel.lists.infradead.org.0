@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E16AF1EED2B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 23:14:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D1F91EED27
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 23:13:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V/BCMl0/aC/ZBD2lDxkVJaGUbbK7P6SF1wlIWaNNoww=; b=qYeWNysY/U/L5z
-	6OvkvhcOuupJj3Pxyav3OijGnIYmL5kpkE3f6Zmdaa3jTvF602N8bMZuX/VN/P957VIc7P0lJv6qP
-	nz6sX4XGDvppYH3nZOJXqRCoK7eUQhPMmkXL5kq2IXF1bmg4k4/tKB9Ydz1kPMlnYoMO8Wtf+E/tS
-	uufqWcHSL0H5z5I+25m0e5P1JTomc5Q4YiIng26DD77DfhNyMEa+pOh+O1TVxt5f9NiUagwrtqx8n
-	o97975/+Ogk+cer4LTl1ObQICBlyqPPJKaXPR4hSTZb41pW9weQ9ieWHnBDsfvIA91w+VF+t2xgxu
-	IeLVOe2V3hpmvjUnRFeA==;
+	List-Owner; bh=DNuiE8+9tBB+uBqoZGfNkg7+Ek/nFf3xIpDcOS1aoRY=; b=NrziheLXdOZVHL
+	r5E6yLKgq61CVUhaMmZxNrOBz0Ui9VXHMGR1R33ZM50b0HS/2MUY7QBprJvdm+KoWU1SlsucGtVKs
+	ygA9ROrE94sAmSzGLnSSMrdMi/xUi1oJHE2joqFGEYy62rl1tpWpyJIT3XRy+8gyoEhQLE5BWD6VH
+	SMueMO2WaAnLGWJZRMaseoznzNQnJt8D2pNwp3M1VSO5gOfSu2CYdgmHakTNRZv4qvBMfm2XAW/IF
+	OhKShPidyCTGEaaKaqRGLBQyoXLRcNUwmMHDSOwyVhbC16kqI/T7dLJRw0oOJtgkeaERljUgTE3f3
+	CgJdC54V1Srum5Htm5oQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgxBW-0001Gu-Ik; Thu, 04 Jun 2020 21:13:58 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jgxAh-0000An-6r; Thu, 04 Jun 2020 21:13:07 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgx95-0007Fu-A2
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 21:11:29 +0000
+ id 1jgx96-0007H2-Io
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 21:11:31 +0000
 Received: from apollo.fritz.box (unknown
  [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 6EC4F22FEC;
- Thu,  4 Jun 2020 23:11:23 +0200 (CEST)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 351FC22FF5;
+ Thu,  4 Jun 2020 23:11:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1591305083;
+ s=mail2016061301; t=1591305086;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=P765amx+zU7utCaFALSE7pMeVXYJ3s6D40KdmPjCfT0=;
- b=o+vZLnBILoGeGtjkZYEjU3M/+S6xYOToJEX/7gk23eNCLUBCLhENgtkUUAVtsAeRSsDS3L
- leim1CLueSc6cX/lKurHP4QdcyCZaLrqO9rFdEYw41Q2ZZs3Zgmq7WVRxLrB3POPMIBd/i
- 6AG59cvQ4zkLT/G5GUCy2Eyk/vLwlew=
+ bh=RWArDHiolCJTumoboB4Zgi8UNDIKAigY3oAQ9g/838E=;
+ b=t86DPgJS1ouPHWYmgKjzz1Hwh/gN4kps0XfHMTEb1T4pY6q+aq/Q9H5iu7922mgoWXoxkE
+ HaNQaQJHgTcwG00xkom6vyYdLpCdgI/v8NjAOuksMvTNswG2hA5JE6PMYUdOZWVyNIx5oL
+ 67y6fh78UK5pWpQCYdCqNDR90OQmv3Y=
 From: Michael Walle <michael@walle.cc>
 To: linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
  linux-pwm@vger.kernel.org, linux-watchdog@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 08/11] arm64: dts: freescale: sl28: enable sl28cpld
-Date: Thu,  4 Jun 2020 23:10:36 +0200
-Message-Id: <20200604211039.12689-9-michael@walle.cc>
+Subject: [PATCH v4 09/11] arm64: dts: freescale: sl28: map GPIOs to input
+ events
+Date: Thu,  4 Jun 2020 23:10:37 +0200
+Message-Id: <20200604211039.12689-10-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200604211039.12689-1-michael@walle.cc>
 References: <20200604211039.12689-1-michael@walle.cc>
 MIME-Version: 1.0
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_141127_521052_77A072B4 
-X-CRM114-Status: UNSURE (   9.30  )
+X-CRM114-CacheID: sfid-20200604_141128_793087_153FFFEE 
+X-CRM114-Status: UNSURE (   9.71  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -63,7 +64,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -101,133 +103,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the board management controller node.
+Now that we have support for GPIO lines of the SMARC connector, map the
+sleep, power and lid switch signals to the corresponding keys using the
+gpio-keys and gpio-keys-polled drivers. The power and sleep signals have
+dedicated interrupts, thus we use these ones. The lid switch is just
+mapped to a GPIO input and needs polling.
 
 Signed-off-by: Michael Walle <michael@walle.cc>
 ---
- .../freescale/fsl-ls1028a-kontron-sl28.dts    | 102 ++++++++++++++++++
- 1 file changed, 102 insertions(+)
+ .../freescale/fsl-ls1028a-kontron-sl28.dts    | 32 +++++++++++++++++++
+ 1 file changed, 32 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
-index 360b3a168c10..8712fe82727b 100644
+index 8712fe82727b..c4fd99efdbba 100644
 --- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
 +++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28.dts
-@@ -8,6 +8,7 @@
- 
+@@ -9,6 +9,8 @@
  /dts-v1/;
  #include "fsl-ls1028a.dtsi"
-+#include <dt-bindings/interrupt-controller/irq.h>
+ #include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/gpio/gpio.h>
++#include <dt-bindings/input/input.h>
  
  / {
  	model = "Kontron SMARC-sAL28";
-@@ -170,6 +171,107 @@
- 		reg = <0x32>;
+@@ -23,6 +25,36 @@
+ 		spi1 = &dspi2;
  	};
  
-+	sl28cpld@4a {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		compatible = "kontron,sl28cpld-r1";
-+		reg = <0x4a>;
++	buttons0 {
++		compatible = "gpio-keys";
 +
-+		watchdog@4 {
-+			compatible = "kontron,sl28cpld-wdt";
-+			reg = <0x4>;
-+			kontron,assert-wdt-timeout-pin;
++		power-button {
++			interrupts-extended = <&sl28cpld_intc
++					       4 IRQ_TYPE_EDGE_BOTH>;
++			linux,code = <KEY_POWER>;
++			label = "Power";
 +		};
 +
-+		hwmon@b {
-+			compatible = "kontron,sl28cpld-fan";
-+			reg = <0xb>;
-+		};
-+
-+		sl28cpld_pwm0: pwm@c {
-+			#pwm-cells = <2>;
-+			compatible = "kontron,sl28cpld-pwm";
-+			reg = <0xc>;
-+		};
-+
-+		sl28cpld_pwm1: pwm@e {
-+			#pwm-cells = <2>;
-+			compatible = "kontron,sl28cpld-pwm";
-+			reg = <0xe>;
-+		};
-+
-+		sl28cpld_gpio0: gpio@10 {
-+			compatible = "kontron,sl28cpld-gpio";
-+			reg = <0x10>;
-+			interrupts-extended = <&gpio2 6
-+					       IRQ_TYPE_EDGE_FALLING>;
-+
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			gpio-line-names =
-+				"GPIO0_CAM0_PWR_N", "GPIO1_CAM1_PWR_N",
-+				"GPIO2_CAM0_RST_N", "GPIO3_CAM1_RST_N",
-+				"GPIO4_HDA_RST_N", "GPIO5_PWM_OUT",
-+				"GPIO6_TACHIN", "GPIO7";
-+
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+		};
-+
-+		sl28cpld_gpio1: gpio@15 {
-+			compatible = "kontron,sl28cpld-gpio";
-+			reg = <0x15>;
-+			interrupts-extended = <&gpio2 6
-+					       IRQ_TYPE_EDGE_FALLING>;
-+
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			gpio-line-names =
-+				"GPIO8", "GPIO9", "GPIO10", "GPIO11",
-+				"", "", "", "";
-+
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
-+		};
-+
-+		sl28cpld_gpio2: gpio@1a {
-+			compatible = "kontron,sl28cpld-gpo";
-+			reg = <0x1a>;
-+
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			gpio-line-names =
-+				"LCD0 voltage enable",
-+				"LCD0 backlight enable",
-+				"eMMC reset", "LVDS bridge reset",
-+				"LVDS bridge power-down",
-+				"SDIO power enable",
-+				"", "";
-+		};
-+
-+		sl28cpld_gpio3: gpio@1b {
-+			compatible = "kontron,sl28cpld-gpi";
-+			reg = <0x1b>;
-+
-+			gpio-controller;
-+			#gpio-cells = <2>;
-+			gpio-line-names =
-+				"Power button", "Force recovery", "Sleep",
-+				"Battery low", "Lid state", "Charging",
-+				"Charger present", "";
-+		};
-+
-+		sl28cpld_intc: interrupt-controller@1c {
-+			compatible = "kontron,sl28cpld-intc";
-+			reg = <0x1c>;
-+			interrupts-extended = <&gpio2 6
-+					       IRQ_TYPE_EDGE_FALLING>;
-+
-+			interrupt-controller;
-+			#interrupt-cells = <2>;
++		sleep-button {
++			interrupts-extended = <&sl28cpld_intc
++					       5 IRQ_TYPE_EDGE_BOTH>;
++			linux,code = <KEY_SLEEP>;
++			label = "Sleep";
 +		};
 +	};
 +
- 	eeprom@50 {
- 		compatible = "atmel,24c32";
- 		reg = <0x50>;
++	buttons1 {
++		compatible = "gpio-keys-polled";
++		poll-interval = <200>;
++
++		lid-switch {
++			linux,input-type = <EV_SW>;
++			linux,code = <SW_LID>;
++			gpios = <&sl28cpld_gpio3 4 GPIO_ACTIVE_LOW>;
++			label = "Lid";
++		};
++	};
++
+ 	chosen {
+ 		stdout-path = "serial0:115200n8";
+ 	};
 -- 
 2.20.1
 
