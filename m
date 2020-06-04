@@ -2,114 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98FFA1EE0ED
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:11:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD53C1EE103
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 11:17:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nW0BlwaL6vxf9r3qwsJ9yfhaUSAeYswwXYAcuJzh05I=; b=Aql0pw6dA9ofC9
-	8/IfMjqoS0k7qiMYRtgw7YXjRibbUSubYDfUzSIxhZBERIA918k5OJwcApNz5AhFLanMCM6kVsN5I
-	MmdWre/kp/bQavQ8buSSNP/luUZJ+TQT1jyLx95rxQlkzLZu1AQ/Q2QMxm21ArhcyPDPtSyjV65D5
-	QVHOFOR00Jt3l0lrlxBfIn0JmWZUxiLdf/gKjROagv1yowGdhOvufLhcxduRRCu50WKf5UEaf6Q8u
-	etAz0KphFDatuqGBZzbGIg5fCrQ9YM79QnXYVwW9fgaUHZxW341u+trbEyzTdDXXVeKnYAKjmgVz7
-	68Bzj1q3d/XgzZslblLw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9ZRyRNP9SMiZ8bVUyfppiptWfX+R10qtuLFTLpatMr8=; b=iSwcfhpZ1UpgLr
+	C/HNXjyu3FAkrboRbfUotVtlsMqX6CG0AIKFHRzgEBF2Li80WFI4PRu8ZWBhLuuHr7D+PtuXWrKGz
+	Uh75mKWuQhDt3eeUhIFLRNowNxpjIEryKr6ZtIJRiVbcSSRy0HQUgILjynbZHqQx2YrsoXM8oEjIs
+	zXgBAka2WihWPGq10JVzQ7HNeUSUvWqLLtG8PbMwRLe9Jyw4kFIYOSLxv9gqwI/RT/0vh+bNUAbJo
+	B+UZQ1cfShiJy63pzMSFYtDMNxdoP0AAc+8JvsUToplQf0OLHferCoc25FS6lSuEpBcIBtC+jx6Jn
+	clBSfb45z7l8X+6Wznbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jglug-0003sA-6C; Thu, 04 Jun 2020 09:11:50 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1jgm0U-0000wq-GM; Thu, 04 Jun 2020 09:17:50 +0000
+Received: from smtprelay0020.hostedemail.com ([216.40.44.20]
+ helo=smtprelay.hostedemail.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgluZ-0003rd-U9; Thu, 04 Jun 2020 09:11:45 +0000
-IronPort-SDR: RZOafsgmpbNxf8t2Mmy0WlPzgXgyDbZYjpTU6Ss9EEeceQQ95j6O8TOO/562u1SIqDNdEwJYy/
- 1/+D6vZrcTkw==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 04 Jun 2020 02:11:42 -0700
-IronPort-SDR: Bjt1fsQ7QbkytZHScnCfcqKu96M115amcI2jnzZ1/3tv1GgDkHseKssXXvkAz7KSi2a2tM+3yM
- r+DMrpq42fig==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,471,1583222400"; d="scan'208";a="258841168"
-Received: from mattu-haswell.fi.intel.com (HELO [10.237.72.170])
- ([10.237.72.170])
- by fmsmga008.fm.intel.com with ESMTP; 04 Jun 2020 02:11:39 -0700
-Subject: Re: [PATCH v4] usb: host: xhci-mtk: avoid runtime suspend when
- removing hcd
-To: Macpaul Lin <macpaul.lin@mediatek.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Mathias Nyman <mathias.nyman@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matthias Brugger <matthias.bgg@gmail.com>
-References: <1591189767-21988-1-git-send-email-macpaul.lin@mediatek.com>
- <1591239713-5081-1-git-send-email-macpaul.lin@mediatek.com>
-From: Mathias Nyman <mathias.nyman@linux.intel.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=mathias.nyman@linux.intel.com; prefer-encrypt=mutual; keydata=
- mQINBFMB0ccBEADd+nZnZrFDsIjQtclVz6OsqFOQ6k0nQdveiDNeBuwyFYykkBpaGekoHZ6f
- lH4ogPZzQ+pzoJEMlRGXc881BIggKMCMH86fYJGfZKWdfpg9O6mqSxyEuvBHKe9eZCBKPvoC
- L2iwygtO8TcXXSCynvXSeZrOwqAlwnxWNRm4J2ikDck5S5R+Qie0ZLJIfaId1hELofWfuhy+
- tOK0plFR0HgVVp8O7zWYT2ewNcgAzQrRbzidA3LNRfkL7jrzyAxDapuejuK8TMrFQT/wW53e
- uegnXcRJaibJD84RUJt+mJrn5BvZ0MYfyDSc1yHVO+aZcpNr+71yZBQVgVEI/AuEQ0+p9wpt
- O9Wt4zO2KT/R5lq2lSz1MYMJrtfFRKkqC6PsDSB4lGSgl91XbibK5poxrIouVO2g9Jabg04T
- MIPpVUlPme3mkYHLZUsboemRQp5/pxV4HTFR0xNBCmsidBICHOYAepCzNmfLhfo1EW2Uf+t4
- L8IowAaoURKdgcR2ydUXjhACVEA/Ldtp3ftF4hTQ46Qhba/p4MUFtDAQ5yeA5vQVuspiwsqB
- BoL/298+V119JzM998d70Z1clqTc8fiGMXyVnFv92QKShDKyXpiisQn2rrJVWeXEIVoldh6+
- J8M3vTwzetnvIKpoQdSFJ2qxOdQ8iYRtz36WYl7hhT3/hwkHuQARAQABtCdNYXRoaWFzIE55
- bWFuIDxtYXRoaWFzLm55bWFuQGdtYWlsLmNvbT6JAjsEEwECACUCGwMGCwkIBwMCBhUIAgkK
- CwQWAgMBAh4BAheABQJTAeo1AhkBAAoJEFiDn/uYk8VJOdIP/jhA+RpIZ7rdUHFIYkHEKzHw
- tkwrJczGA5TyLgQaI8YTCTPSvdNHU9Rj19mkjhUO/9MKvwfoT2RFYqhkrtk0K92STDaBNXTL
- JIi4IHBqjXOyJ/dPADU0xiRVtCHWkBgjEgR7Wihr7McSdVpgupsaXhbZjXXgtR/N7PE0Wltz
- hAL2GAnMuIeJyXhIdIMLb+uyoydPCzKdH6znfu6Ox76XfGWBCqLBbvqPXvk4oH03jcdt+8UG
- 2nfSeti/To9ANRZIlSKGjddCGMa3xzjtTx9ryf1Xr0MnY5PeyNLexpgHp93sc1BKxKKtYaT0
- lR6p0QEKeaZ70623oB7Sa2Ts4IytqUVxkQKRkJVWeQiPJ/dZYTK5uo15GaVwufuF8VTwnMkC
- 4l5X+NUYNAH1U1bpRtlT40aoLEUhWKAyVdowxW4yGCP3nL5E69tZQQgsag+OnxBa6f88j63u
- wxmOJGNXcwCerkCb+wUPwJzChSifFYmuV5l89LKHgSbv0WHSN9OLkuhJO+I9fsCNvro1Y7dT
- U/yq4aSVzjaqPT3yrnQkzVDxrYT54FLWO1ssFKAOlcfeWzqrT9QNcHIzHMQYf5c03Kyq3yMI
- Xi91hkw2uc/GuA2CZ8dUD3BZhUT1dm0igE9NViE1M7F5lHQONEr7MOCg1hcrkngY62V6vh0f
- RcDeV0ISwlZWuQINBFMB0ccBEACXKmWvojkaG+kh/yipMmqZTrCozsLeGitxJzo5hq9ev31N
- 2XpPGx4AGhpccbco63SygpVN2bOd0W62fJJoxGohtf/g0uVtRSuK43OTstoBPqyY/35+VnAV
- oA5cnfvtdx5kQPIL6LRcxmYKgN4/3+A7ejIxbOrjWFmbWCC+SgX6mzHHBrV0OMki8R+NnrNa
- NkUmMmosi7jBSKdoi9VqDqgQTJF/GftvmaZHqgmVJDWNrCv7UiorhesfIWPt1O/AIk9luxlE
- dHwkx5zkWa9CGYvV6LfP9BznendEoO3qYZ9IcUlW727Le80Q1oh69QnHoI8pODDBBTJvEq1h
- bOWcPm/DsNmDD8Rwr/msRmRyIoxjasFi5WkM/K/pzujICKeUcNGNsDsEDJC5TCmRO/TlvCvm
- 0X+vdfEJRZV6Z+QFBflK1asUz9QHFre5csG8MyVZkwTR9yUiKi3KiqQdaEu+LuDD2CGF5t68
- xEl66Y6mwfyiISkkm3ETA4E8rVZP1rZQBBm83c5kJEDvs0A4zrhKIPTcI1smK+TWbyVyrZ/a
- mGYDrZzpF2N8DfuNSqOQkLHIOL3vuOyx3HPzS05lY3p+IIVmnPOEdZhMsNDIGmVorFyRWa4K
- uYjBP/W3E5p9e6TvDSDzqhLoY1RHfAIadM3I8kEx5wqco67VIgbIHHB9DbRcxQARAQABiQIf
- BBgBAgAJBQJTAdHHAhsMAAoJEFiDn/uYk8VJb7AQAK56tgX8V1Wa6RmZDmZ8dmBC7W8nsMRz
- PcKWiDSMIvTJT5bygMy1lf7gbHXm7fqezRtSfXAXr/OJqSA8LB2LWfThLyuuCvrdNsQNrI+3
- D+hjHJjhW/4185y3EdmwwHcelixPg0X9EF+lHCltV/w29Pv3PiGDkoKxJrnOpnU6jrwiBebz
- eAYBfpSEvrCm4CR4hf+T6MdCs64UzZnNt0nxL8mLCCAGmq1iks9M4bZk+LG36QjCKGh8PDXz
- 9OsnJmCggptClgjTa7pO6040OW76pcVrP2rZrkjo/Ld/gvSc7yMO/m9sIYxLIsR2NDxMNpmE
- q/H7WO+2bRG0vMmsndxpEYS4WnuhKutoTA/goBEhtHu1fg5KC+WYXp9wZyTfeNPrL0L8F3N1
- BCEYefp2JSZ/a355X6r2ROGSRgIIeYjAiSMgGAZMPEVsdvKsYw6BH17hDRzltNyIj5S0dIhb
- Gjynb3sXforM/GVbr4mnuxTdLXQYlj2EJ4O4f0tkLlADT7podzKSlSuZsLi2D+ohKxtP3U/r
- 42i8PBnX2oAV0UIkYk7Oel/3hr0+BP666SnTls9RJuoXc7R5XQVsomqXID6GmjwFQR5Wh/RE
- IJtkiDAsk37cfZ9d1kZ2gCQryTV9lmflSOB6AFZkOLuEVSC5qW8M/s6IGDfYXN12YJaZPptJ fiD/
-Message-ID: <d65bf50c-b1de-ece4-f14d-8f54418108ad@linux.intel.com>
-Date: Thu, 4 Jun 2020 12:14:38 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jgm0L-0000vi-I6
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 09:17:42 +0000
+Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
+ [216.40.38.60])
+ by smtprelay03.hostedemail.com (Postfix) with ESMTP id 7FBE8837F27E;
+ Thu,  4 Jun 2020 09:17:39 +0000 (UTC)
+X-Session-Marker: 6A6F6540706572636865732E636F6D
+X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
+ RULES_HIT:41:355:379:599:968:973:979:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1542:1593:1594:1711:1730:1747:1777:1792:2198:2199:2393:2553:2559:2562:2693:2828:2911:3138:3139:3140:3141:3142:3354:3622:3865:3867:3868:3870:3871:3872:3874:4250:4321:4383:4425:5007:6119:6755:7903:10004:10400:10848:11026:11218:11232:11658:11914:12043:12219:12297:12438:12555:12740:12760:12895:13149:13230:13255:13439:14093:14097:14181:14659:14721:21080:21324:21450:21451:21627:30054:30074:30090:30091,
+ 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
+ DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
+ LFtime:1, LUA_SUMMARY:none
+X-HE-Tag: lock32_040a1d426d96
+X-Filterd-Recvd-Size: 3759
+Received: from XPS-9350.home (unknown [47.151.136.130])
+ (Authenticated sender: joe@perches.com)
+ by omf08.hostedemail.com (Postfix) with ESMTPA;
+ Thu,  4 Jun 2020 09:17:36 +0000 (UTC)
+Message-ID: <2aa49a543e6f48a6f428a37b63a06f9149870225.camel@perches.com>
+Subject: Re: [PATCH] pinctrl: pxa: pxa2xx: Remove 'pxa2xx_pinctrl_exit()'
+ which is unused and broken
+From: Joe Perches <joe@perches.com>
+To: Dan Carpenter <dan.carpenter@oracle.com>, Linus Walleij
+ <linus.walleij@linaro.org>
+Date: Thu, 04 Jun 2020 02:17:35 -0700
+In-Reply-To: <20200604083120.GF22511@kadam>
+References: <20200531073716.593343-1-christophe.jaillet@wanadoo.fr>
+ <87h7vvb1s3.fsf@belgarion.home>
+ <a2e34c9a-676f-d83f-f395-7428af038c16@wanadoo.fr>
+ <20200601183102.GS30374@kadam>
+ <CACRpkdasbS-4_ZwC-Ucm8tkSUW5tAQdUrXjxHXQ3J0goVYfgHw@mail.gmail.com>
+ <20200604083120.GF22511@kadam>
+User-Agent: Evolution 3.36.2-0ubuntu1 
 MIME-Version: 1.0
-In-Reply-To: <1591239713-5081-1-git-send-email-macpaul.lin@mediatek.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_021144_009989_5CDB6BE7 
-X-CRM114-Status: GOOD (  10.34  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200604_021741_658941_294D3547 
+X-CRM114-Status: GOOD (  16.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.40.44.20 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
+ [216.40.44.20 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -122,34 +82,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- stable@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Macpaul Lin <macpaul.lin@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: kernel-janitors@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Haojian Zhuang <haojian.zhuang@gmail.com>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ Daniel Mack <daniel@zonque.org>, Robert Jarzmik <robert.jarzmik@free.fr>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4.6.2020 6.01, Macpaul Lin wrote:
-> When runtime suspend was enabled, runtime suspend might happen
-> when xhci is removing hcd. This might cause kernel panic when hcd
-> has been freed but runtime pm suspend related handle need to
-> reference it.
+On Thu, 2020-06-04 at 11:31 +0300, Dan Carpenter wrote:
+> On Thu, Jun 04, 2020 at 12:08:49AM +0200, Linus Walleij wrote:
+[]
+> > Fixes means it fixes something that was wrong in that commit.
+> > That's all. Whether syntactic or semantic or regression or
+> > serious or not does not matter. It is also not compulsory to
+> > add it is just helpful.
 > 
-> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
-> Reviewed-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> Cc: stable@vger.kernel.org
-> ---
-> Changes for v3:
->   - Replace better sequence for disabling the pm_runtime suspend.
-> Changes for v4:
->   - Thanks for Sergei's review, typo in commit description has been corrected.
-> 
+> Fixes tag should be compulsory for actual bug fixes.  We had a the
+> Bad Binder exploit last year because commit f5cb779ba163
+> ("ANDROID: binder: remove waitqueue when thread exits.") had no Fixes
+> tag and wasn't backported to Android kernels.
 
-Thanks, added to queue
+Fixes tags IMO should be exclusively for actual bug fixes
+and should be mandatory.
 
--Mathias
+Perhaps:
+---
+ Documentation/process/submitting-patches.rst | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+diff --git a/Documentation/process/submitting-patches.rst b/Documentation/process/submitting-patches.rst
+index 1699b7f8e63a..285a84ae79de 100644
+--- a/Documentation/process/submitting-patches.rst
++++ b/Documentation/process/submitting-patches.rst
+@@ -636,12 +636,14 @@ idea was not posted in a public forum. That said, if we diligently credit our
+ idea reporters, they will, hopefully, be inspired to help us again in the
+ future.
+ 
+-A Fixes: tag indicates that the patch fixes an issue in a previous commit. It
+-is used to make it easy to determine where a bug originated, which can help
+-review a bug fix. This tag also assists the stable kernel team in determining
+-which stable kernel versions should receive your fix. This is the preferred
+-method for indicating a bug fixed by the patch. See :ref:`describe_changes`
+-for more details.
++A Fixes: tag indicates that the patch fixes a "bug". i.e.: a logic defect or
++regression in a previous commit.  A Fixes: tag should not be used to indicate
++that a previous commit had some trivial defect in spelling in the commit log or
++some whitespace defect.  The Fixes: tag is used to make it easy to determine
++where a bug originated, which can help review a bug fix. The Fixes: tag also
++assists the stable kernel team in determining which stable kernel versions
++should receive your fix. This is the preferred method for indicating a bug is
++fixed by the patch.  See :ref:`describe_changes` for more details.
+ 
+ .. _the_canonical_patch_format:
+ 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
