@@ -2,60 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49B5F1EED2E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 23:14:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 183AD1EED2F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 23:14:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x5FC2YasIbCVOaDaVtOhjrWtH8BFtJUZU7lB8cRl3gk=; b=Oa6JeU1SSE12Z5
-	MqJbypd4xLt/Uu/BlL8XbS8MAwhXjOa0RY9ED6ayoLRZ9xVcxS/a6BGFThOApdfwt2lpPJhcEiABL
-	l4/S2gt09AsU3wfRuVNxb8ViT/5gaMuedAIGBOmnkHpglkJrGsiOpy5B8XFKWQ8ysmhfo31eyxT2B
-	ImQlOlMWApJz0buXkbadl2uh9Fhmv5bSk6hHV8x7bdTIshkUKaHNfOY8Vmo5bFWEV8FJYbuxvuQhr
-	XLq7L4FWgSeKs6O81jmx0kXXRf8dpplD0z+6mH8p4sLceCG1WsUrzthQfWY8kpUov3eA7ZKSJ/ITQ
-	uM8JTapNeRxYNk4clqmQ==;
+	List-Owner; bh=a/qiTXiWfiI4BBvKr1cniOzklYOLqM+Ovj+cN5L2z1g=; b=KG9r6Rbb6vHapL
+	lFHs0MqIp6bXaRt/MGSxQHxKLO1CtQvC7plaxCZvDnAcKbMTVyyKDPzjjDqZgtZ0MwSfbfRQVKw/F
+	YkAXjHeSqca9W/6FQpYSaQ6fIpJawczX1VMxeiMQVy3WqyLarP1PX/Y5f9xb3i7VkOPsYwdAkDYTM
+	XvJPHPJoxbIPFnphe8/kKnJzD01MqG2VmcCwrgYGT/2+eIZGmB5FMCNzM4U7bYrPVNKXPS6tT56IM
+	G57qJ+S3vxE+76ABi7BXsyQYO3U/wYnW3rdjXa+FrwQ5w4ak2TEhezG2rq1Fh/AfTE4SYydjQ9cXZ
+	q00ms5eCA7BHoFQqqMlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgxBt-0001Yr-JF; Thu, 04 Jun 2020 21:14:21 +0000
+	id 1jgxCD-0001qY-2f; Thu, 04 Jun 2020 21:14:41 +0000
 Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgx97-0007Ii-V5
+ id 1jgx98-0007JY-IT
  for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 21:11:32 +0000
 Received: from apollo.fritz.box (unknown
  [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
  key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
  SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 6D3A72304C;
- Thu,  4 Jun 2020 23:11:27 +0200 (CEST)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 89FA923068;
+ Thu,  4 Jun 2020 23:11:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1591305087;
+ s=mail2016061301; t=1591305089;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=dwzL/H/l0nspsFTq6dZ+dvAaPJmjo1s9jrqa6YkXpsA=;
- b=MuC1lDP2xrVo4uL8n6LDOCmfZaQOK+P4z39tL87mAHoAGG3WHRev65feqv8TEfXp8F5KeH
- /5KuUiBoL/WokH3oYX6uK5pZnOCf7Td9Va0h70ybMJKdnvgw0JfPZPfRY/hvE4D4yoUXOL
- 7Y/KSGInJNS7XX5fETJy+jlePXrCsWk=
+ bh=5ltDxDEQqoNxt8d4SzlK52JEqovfZ9pOb0c+YAdkDG4=;
+ b=B6O/qU/qvinG8mLcaE73rYjL8BIrI4Bb3zq51UxZM5HVKdRDFFsG6lR4AOLwLJKiu/xDYj
+ 6X8txx9kqChdxE0AWXK5/SxvTNAZ6GG5rDPHu1+bYGcf15P/ywR2mAm5PwFMhK+cVQOrVu
+ cop2VJdzEzcHhtpod0O7NywQt3eGMr0=
 From: Michael Walle <michael@walle.cc>
 To: linux-gpio@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-hwmon@vger.kernel.org,
  linux-pwm@vger.kernel.org, linux-watchdog@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 10/11] arm64: dts: freescale: sl28: enable LED support
-Date: Thu,  4 Jun 2020 23:10:38 +0200
-Message-Id: <20200604211039.12689-11-michael@walle.cc>
+Subject: [PATCH v4 11/11] arm64: dts: freescale: sl28: enable fan support
+Date: Thu,  4 Jun 2020 23:10:39 +0200
+Message-Id: <20200604211039.12689-12-michael@walle.cc>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200604211039.12689-1-michael@walle.cc>
 References: <20200604211039.12689-1-michael@walle.cc>
 MIME-Version: 1.0
 X-Spam: Yes
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_141130_230864_333B22A7 
-X-CRM114-Status: GOOD (  10.89  )
+X-CRM114-CacheID: sfid-20200604_141130_826258_74E396AC 
+X-CRM114-Status: UNSURE (   9.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -101,43 +102,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that we have support for GPIO lines of the SMARC connector, enable
-LED support on the KBox A-230-LS. There are two LEDs without fixed
-functions, one is yellow and one is green. Unfortunately, it is just one
-multi-color LED, thus while it is possible to enable both at the same
-time it is hard to tell the difference between "yellow only" and "yellow
-and green".
+Add a pwm-fan mapped to the PWM channel 0 which is connected to the
+fan connector of the carrier.
 
 Signed-off-by: Michael Walle <michael@walle.cc>
 ---
- .../fsl-ls1028a-kontron-kbox-a-230-ls.dts          | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+ .../dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-index 4b4cc6a1573d..49cf4fe05c80 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-kbox-a-230-ls.dts
-@@ -16,6 +16,20 @@
- 	model = "Kontron KBox A-230-LS";
- 	compatible = "kontron,kbox-a-230-ls", "kontron,sl28-var4",
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
+index 0973a6a45217..c45d7b40e374 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-kontron-sl28-var3-ads2.dts
+@@ -15,6 +15,15 @@
+ 	compatible = "kontron,sl28-var3-ads2", "kontron,sl28-var3",
  		     "kontron,sl28", "fsl,ls1028a";
-+
-+	leds {
-+		compatible = "gpio-leds";
-+
-+		user_yellow {
-+			label = "s1914:yellow:user";
-+			gpios = <&sl28cpld_gpio0 0 0>;
-+		};
-+
-+		user_green {
-+			label = "s1914:green:user";
-+			gpios = <&sl28cpld_gpio1 3 0>;
-+		};
-+	};
- };
  
- &enetc_mdio_pf3 {
++	pwm-fan {
++		compatible = "pwm-fan";
++		cooling-min-state = <0>;
++		cooling-max-state = <3>;
++		#cooling-cells = <2>;
++		pwms = <&sl28cpld_pwm0 0 4000000>;
++		cooling-levels = <1 128 192 255>;
++	};
++
+ 	sound {
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
 -- 
 2.20.1
 
