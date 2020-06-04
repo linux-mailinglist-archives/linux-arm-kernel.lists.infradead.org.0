@@ -2,56 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 396661EE749
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:04:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A152F1EE751
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 17:06:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pQT/UnTvqW92OdjOeqklekAshQNtXop09wTASisC4fI=; b=sR5jTvHMPvvm8y
-	4YcgUet0rBuXHO3SwOCzzBLIcfP1ocL2fEDs3b6P5nk5P0VD5O30PZhMg3JZsKaQ6nA4qDJa7XUCJ
-	5zqE7Hb+B9a2oMbyw6kAuq41TTcBOyvgyI+Oj4usloVu6BDKyJStn6uXYEQ1XtjAftHWyQJIvScfL
-	+b+ydtfg6fBve9+fahxflFRW5iig9+GpeLFrIi8+2jy63GKHiyrAJRkVllt2w64OaCy6SH0QybBvu
-	nG1MtZYAPmk/1JXJyOIod5NqNw6Wd9AMhHrP1wOz9tGHsHw+tiCF0c+s56pFb+DPErNAY0uxkU/lj
-	KhQ7ALCvcKGC0VraUIJA==;
+	List-Owner; bh=/5MaM4ZpBQEpKpydxoWVlYrUzv4Sjc/lX/BneyehYV8=; b=Dq9WGXkyL3ASyc
+	4VPgqK45h68xzTLtATFIDS12Ud9yeA5qjZggxypXAqb9fSnAQdGy8cGRX3kiH4dwvhnpve+odBYMk
+	fiUo50abH2E1hKZWg9i9oP7sg70Ce6xz9Cfyg/mTA3w3L/TcYmVtvYthzdO1Ytmu6HS4HWMx0U7qG
+	6wYlRCpJsa+5VtL5vDXabEIRrzQRTmJFEq+U6M770ZlsoEX/N4lHhg3i4gDABrcYvTlP6R39HXwWs
+	N6V7nME67kHtNu+6zjFT2jvj/SoYLlRHQ2cwt2bWvcAoaZ+w1knMegqhNGZW3zdSB088Lg+FUpf9I
+	wdrP/AIcui9UsEkx3Weg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgrQJ-0004yh-2z; Thu, 04 Jun 2020 15:04:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgrQC-0004y6-Ae
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:04:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A52571FB;
- Thu,  4 Jun 2020 08:04:41 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.9.165])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2BA053F305;
- Thu,  4 Jun 2020 08:04:38 -0700 (PDT)
-Date: Thu, 4 Jun 2020 16:04:36 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 1/3] KVM: arm64: Save the host's PtrAuth keys in
- non-preemptible context
-Message-ID: <20200604150436.GC75320@C02TD0UTHF1T.local>
-References: <20200604133354.1279412-1-maz@kernel.org>
- <20200604133354.1279412-2-maz@kernel.org>
+	id 1jgrRY-0007ev-4I; Thu, 04 Jun 2020 15:06:08 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jgrRQ-0007dl-Bk
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 15:06:01 +0000
+Received: by mail-lj1-x242.google.com with SMTP id c17so7694857lji.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 04 Jun 2020 08:05:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=R+rSrnYLVqsdod0ox2SKtnqs+7zx/Hz4GLO8xy+04nE=;
+ b=tiAiD1BqLUtW8rAX1B3Txst9ck1bpANIDb6532CrOzxa8+SYqcQVzMWUIrIqHwfkFH
+ PHnApukstTsgqnDgvZmZZF7f0AkvM5cutsl0XcGi2Pbymm48rAjoDeqUP0rQJufNbjNV
+ U1DTwg8QQcTfmMvRFRaIc/PUvQCShSldTL5qsURtgnTw2mS3pb1YcCtRkFDi9qkdBmbs
+ +w3hI2IMbAuFHS2rWaC6Am5XmtU2osSFlJTcvkeFDjXW3t+Mc804R2xEZJmK3Bg3lazk
+ j1hTv/fbOlKG+IG25Puo8o29RBHnfgg8yktHPNROZW7UkPsslMdeaXUYMod2IAvkYUMH
+ NIhQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=R+rSrnYLVqsdod0ox2SKtnqs+7zx/Hz4GLO8xy+04nE=;
+ b=aHC1kBYABWDUdN6x6kDs1p9soHUmyI1FEPBUBGUcZv1dG1cH+s5B5eYPoF8hNe2yxs
+ ngvxWui6Aiis4ZPJjGXMn5tHZ3WZ1ZJ3Yt5N0ogyD1uF3OAJE0nFPxB4wxmui1NuHxvq
+ RI30B1gY8HXf1vNTOd4XOfV0/LI5fQ6pAqbxug1mmoJ1VwPHaYh4ru4F5jt3DaMEEvhw
+ 87Us73gjkd3augaTdOAz9PIrRWNK+RMCtwRe9XB+w/GucGjhmMq5GO1eZQi1VYHokPCC
+ Qbvr1JpQgmlVJQDJLJ4Jc8GdNkPzswwyhTKOrmMAcgzN8JybGuRtGEP9d0wOPora7NjR
+ Azuw==
+X-Gm-Message-State: AOAM531xmdGJsbw0U+KWBtNgPutjgqcrywCx7v+rICp8qrB+V46HHbMD
+ Szc0mYZUYRIVhYTwWlzWRQa9M8iXrRyA6c+mQhA=
+X-Google-Smtp-Source: ABdhPJym59bLbz+stiI4tSpXC23vh9zz45NG9ccDG3uOprvfDj3mzLXeDS2rNjrYy3cjr00XLkkVPcKs0ltgUoq5nkI=
+X-Received: by 2002:a05:651c:11c7:: with SMTP id
+ z7mr2534360ljo.29.1591283157446; 
+ Thu, 04 Jun 2020 08:05:57 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200604133354.1279412-2-maz@kernel.org>
+References: <20200604134957.505389-1-alex.popov@linux.com>
+ <20200604134957.505389-3-alex.popov@linux.com>
+In-Reply-To: <20200604134957.505389-3-alex.popov@linux.com>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Thu, 4 Jun 2020 17:05:46 +0200
+Message-ID: <CANiq72nfByD5sO0a2G2hKCPtHgOhdYfFaXcK7pHnxXRGRUUjDQ@mail.gmail.com>
+Subject: Re: [PATCH 2/5] gcc-plugins/stackleak: Use asm instrumentation to
+ avoid useless register saving
+To: Alexander Popov <alex.popov@linux.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_080444_452791_C73B653B 
-X-CRM114-Status: GOOD (  21.41  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200604_080600_403615_A02F3C49 
+X-CRM114-Status: GOOD (  11.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [miguel.ojeda.sandonis[at]gmail.com]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,142 +95,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-team@android.com, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, stable@vger.kernel.org,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Kernel Hardening <kernel-hardening@lists.openwall.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Naohiro Aota <naohiro.aota@wdc.com>, Sven Schnelle <svens@stackframe.org>,
+ Masahiro Yamada <masahiroy@kernel.org>,
+ "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
+ Emese Revfy <re.emese@gmail.com>, Iurii Zaikin <yzaikin@google.com>,
+ PaX Team <pageexec@freemail.hu>, Laura Abbott <labbott@redhat.com>,
+ Mathias Krause <minipli@googlemail.com>, Kees Cook <keescook@chromium.org>,
+ Linux Kbuild mailing list <linux-kbuild@vger.kernel.org>,
+ Alexander Monakov <amonakov@ispras.ru>, Michal Marek <michal.lkml@markovi.net>,
+ Thomas Gleixner <tglx@linutronix.de>, Peter Collingbourne <pcc@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, notify@kernel.org,
+ Florian Weimer <fweimer@redhat.com>, gcc@gcc.gnu.org,
+ Brad Spengler <spender@grsecurity.net>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Luis Chamberlain <mcgrof@kernel.org>, Jessica Yu <jeyu@kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Thiago Jung Bauermann <bauerman@linux.ibm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 04, 2020 at 02:33:52PM +0100, Marc Zyngier wrote:
-> When using the PtrAuth feature in a guest, we need to save the host's
-> keys before allowing the guest to program them. For that, we dump
-> them in a per-CPU data structure (the so called host context).
-> 
-> But both call sites that do this are in preemptible context,
-> which may end up in disaster should the vcpu thread get preempted
-> before reentering the guest.
+Hi Alexander,
 
-Yuck!
+On Thu, Jun 4, 2020 at 3:50 PM Alexander Popov <alex.popov@linux.com> wrote:
+>
+> diff --git a/include/linux/compiler_attributes.h b/include/linux/compiler_attributes.h
+> index cdf016596659..522d57ae8532 100644
+> --- a/include/linux/compiler_attributes.h
+> +++ b/include/linux/compiler_attributes.h
+> @@ -41,6 +41,7 @@
+>  # define __GCC4_has_attribute___nonstring__           0
+>  # define __GCC4_has_attribute___no_sanitize_address__ (__GNUC_MINOR__ >= 8)
+>  # define __GCC4_has_attribute___fallthrough__         0
+> +# define __GCC4_has_attribute___no_caller_saved_registers__ 0
+>  #endif
 
-> Instead, save the keys eagerly on each vcpu_load(). This has an
-> increased overhead, but is at least safe.
-> 
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
+Nit: if you do another version, please move it before `noclone` to
+keep the order (`fallthrough` was added in the wrong place).
 
-This looks sound to me given kvm_arch_vcpu_load() is surrounded with
-get_cpu() .. put_cpu() and gets called when the thread is preempted.
+Otherwise don't worry, I will sort it together with `fallthrough` when
+I send a patch.
 
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+> +/*
+> + * Optional: only supported since gcc >= 7
+> + *
+> + *   gcc: https://gcc.gnu.org/onlinedocs/gcc/x86-Function-Attributes.html#index-no_005fcaller_005fsaved_005fregisters-function-attribute_002c-x86
+> + * clang: https://clang.llvm.org/docs/AttributeReference.html#no-caller-saved-registers
+> + */
+> +#if __has_attribute(__no_caller_saved_registers__)
+> +# define __no_caller_saved_registers   __attribute__((__no_caller_saved_registers__))
+> +#else
+> +# define __no_caller_saved_registers
+> +#endif
 
-Thanks,
-Mark.
+Ditto.
 
-> ---
->  arch/arm64/include/asm/kvm_emulate.h |  6 ------
->  arch/arm64/kvm/arm.c                 | 18 +++++++++++++++++-
->  arch/arm64/kvm/handle_exit.c         | 19 ++-----------------
->  3 files changed, 19 insertions(+), 24 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
-> index a30b4eec7cb4..977843e4d5fb 100644
-> --- a/arch/arm64/include/asm/kvm_emulate.h
-> +++ b/arch/arm64/include/asm/kvm_emulate.h
-> @@ -112,12 +112,6 @@ static inline void vcpu_ptrauth_disable(struct kvm_vcpu *vcpu)
->  	vcpu->arch.hcr_el2 &= ~(HCR_API | HCR_APK);
->  }
->  
-> -static inline void vcpu_ptrauth_setup_lazy(struct kvm_vcpu *vcpu)
-> -{
-> -	if (vcpu_has_ptrauth(vcpu))
-> -		vcpu_ptrauth_disable(vcpu);
-> -}
-> -
->  static inline unsigned long vcpu_get_vsesr(struct kvm_vcpu *vcpu)
->  {
->  	return vcpu->arch.vsesr_el2;
-> diff --git a/arch/arm64/kvm/arm.c b/arch/arm64/kvm/arm.c
-> index d6988401c22a..152049c5055d 100644
-> --- a/arch/arm64/kvm/arm.c
-> +++ b/arch/arm64/kvm/arm.c
-> @@ -337,6 +337,12 @@ void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
->  	preempt_enable();
->  }
->  
-> +#define __ptrauth_save_key(regs, key)						\
-> +({										\
-> +	regs[key ## KEYLO_EL1] = read_sysreg_s(SYS_ ## key ## KEYLO_EL1);	\
-> +	regs[key ## KEYHI_EL1] = read_sysreg_s(SYS_ ## key ## KEYHI_EL1);	\
-> +})
-> +
->  void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
->  {
->  	int *last_ran;
-> @@ -370,7 +376,17 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
->  	else
->  		vcpu_set_wfx_traps(vcpu);
->  
-> -	vcpu_ptrauth_setup_lazy(vcpu);
-> +	if (vcpu_has_ptrauth(vcpu)) {
-> +		struct kvm_cpu_context *ctxt = vcpu->arch.host_cpu_context;
-> +
-> +		__ptrauth_save_key(ctxt->sys_regs, APIA);
-> +		__ptrauth_save_key(ctxt->sys_regs, APIB);
-> +		__ptrauth_save_key(ctxt->sys_regs, APDA);
-> +		__ptrauth_save_key(ctxt->sys_regs, APDB);
-> +		__ptrauth_save_key(ctxt->sys_regs, APGA);
-> +
-> +		vcpu_ptrauth_disable(vcpu);
-> +	}
->  }
->  
->  void kvm_arch_vcpu_put(struct kvm_vcpu *vcpu)
-> diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
-> index eb194696ef62..065251efa2e6 100644
-> --- a/arch/arm64/kvm/handle_exit.c
-> +++ b/arch/arm64/kvm/handle_exit.c
-> @@ -162,31 +162,16 @@ static int handle_sve(struct kvm_vcpu *vcpu, struct kvm_run *run)
->  	return 1;
->  }
->  
-> -#define __ptrauth_save_key(regs, key)						\
-> -({										\
-> -	regs[key ## KEYLO_EL1] = read_sysreg_s(SYS_ ## key ## KEYLO_EL1);	\
-> -	regs[key ## KEYHI_EL1] = read_sysreg_s(SYS_ ## key ## KEYHI_EL1);	\
-> -})
-> -
->  /*
->   * Handle the guest trying to use a ptrauth instruction, or trying to access a
->   * ptrauth register.
->   */
->  void kvm_arm_vcpu_ptrauth_trap(struct kvm_vcpu *vcpu)
->  {
-> -	struct kvm_cpu_context *ctxt;
-> -
-> -	if (vcpu_has_ptrauth(vcpu)) {
-> +	if (vcpu_has_ptrauth(vcpu))
->  		vcpu_ptrauth_enable(vcpu);
-> -		ctxt = vcpu->arch.host_cpu_context;
-> -		__ptrauth_save_key(ctxt->sys_regs, APIA);
-> -		__ptrauth_save_key(ctxt->sys_regs, APIB);
-> -		__ptrauth_save_key(ctxt->sys_regs, APDA);
-> -		__ptrauth_save_key(ctxt->sys_regs, APDB);
-> -		__ptrauth_save_key(ctxt->sys_regs, APGA);
-> -	} else {
-> +	else
->  		kvm_inject_undefined(vcpu);
-> -	}
->  }
->  
->  /*
-> -- 
-> 2.26.2
-> 
+Acked-by: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+
+Cheers,
+Miguel
 
 _______________________________________________
 linux-arm-kernel mailing list
