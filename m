@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DB151EE57D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 15:38:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B00171EE582
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 15:40:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BvddKnWHbanqR7QHtkFJQPhCf+mPV7oWXEDJhOpJbbQ=; b=bXS65b8Q+3LeLK
-	CnD983P7mXco7aIbSXHhblDLAwXvP39YlwZCrUh/xtT8M4BdjEIk4oVantAQFtvb3v9s219vKJ5fO
-	a5j8UaNe/B0Ui4wQ4E78yNoPi5Rk3/I/iHxPIeQYOYFqfNZf/SWhuR51VL0Q9TnqvX7oYQgoPbKlU
-	fiFJBROHiFv6oI726LFsYlk5m46GINLp9rRaDgJ3CLK89nUK4QsiKzU9USkIz9nthcXqbE0iSGFXS
-	tmiTrf8q/YlfEDTtRaotBCqrEWUd8z3lQXlNvn2uq4r2s8Rv3W4XVAaWrfw9ikIjC/KNObMnv5dqa
-	5XHjqc+gvPyaL11SniDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=UTeCpgCYZQVyPzQ15vXIzCufOFcmA4ovSZaU75gqUQo=; b=thgYQw2kDMuxiHXS/+Dq/B6+/
+	VOTg4ozCWoreVY0fZUWhXXEGcOIDEtRtli14Y2rbN3F+8M6rJykFRUZpHk1aQvuynmT9W94xAJrFI
+	IlUowRvvIeOG7KqzCg48ArP6Xy8An4YS0h+7ssIE5GPv9o6j+9L3HTdRZZWgEIIRSKzTZIISbRLyv
+	JKEX9dZr9+RGCFIV01LgnO9MQ4ZBxirGvO6ExGfZbj1s8/uJVX8t7SiPD8QAtERIE/hCgTu9MQEaG
+	zrEKqWbaKmnZK/yC/vXEZ++wZlmqF3SE9OA02lC3Z+D+VW2oBg+VlbMeQF/j2yhMieLYl8PyW+bkh
+	4VMHbYzBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgq4H-00048T-U4; Thu, 04 Jun 2020 13:38:01 +0000
+	id 1jgq66-0004ZF-U1; Thu, 04 Jun 2020 13:39:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgq47-00047h-SY
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 13:37:55 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EC6A5206E6;
- Thu,  4 Jun 2020 13:37:49 +0000 (UTC)
+ id 1jgq5y-0004Yl-Od; Thu, 04 Jun 2020 13:39:48 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C2D0B206E6;
+ Thu,  4 Jun 2020 13:39:45 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591277871;
- bh=R78c8kSIeCH+8zefp0d/jSCDkdfqbN44t3yjAp+DSPs=;
+ s=default; t=1591277986;
+ bh=a8wHNkwWkFqf5+XQaD/hLiY3eO+xKNajms4eYM3X5Kg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=C/7uMmH2K7OUr7TOT6iHWDXXbvzSO7p1Arxd9WcxBnBs4qQgkybJaBpvRrPXvRfaZ
- Y88ealtNzAIPbze4JCmM9Op4yQFRTtzgiz1TqDhSU6oBtb62XbJ8gZJ2wAQfKXEmS+
- ieOc45W44uGVW62cmU+GiyvLIzJ1hDQnrBSQd8zk=
-Date: Thu, 4 Jun 2020 14:37:46 +0100
-From: Will Deacon <will@kernel.org>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [RFC PATCH 0/3] firmware: Add support for PSA FF-A interface
-Message-ID: <20200604133746.GA2951@willie-the-truck>
-References: <20200601094512.50509-1-sudeep.holla@arm.com>
+ b=zwdC6HrVD8bGrwrQZZr5uLGot92oYLSbeHZrBiWEVTv3OpEUSA94yK6rIRMaK31xh
+ YDTq6srJeMsUYylPDg27kY820ipoxkJ9+mcY8OSvZIi5E322iSR+zv9unnBeE3MMs3
+ GcFuchpIvNQXNVI7neT42ZSFZWTcZh5dvMK74Xwg=
+Date: Thu, 4 Jun 2020 14:39:43 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Gene Chen <gene.chen.richtek@gmail.com>
+Subject: Re: [PATCH] regulator: mt6360: Add support for MT6360 regulator
+Message-ID: <20200604133943.GE6644@sirena.org.uk>
+References: <1591254387-10304-1-git-send-email-gene.chen.richtek@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200601094512.50509-1-sudeep.holla@arm.com>
+In-Reply-To: <1591254387-10304-1-git-send-email-gene.chen.richtek@gmail.com>
+X-Cookie: VMS version 2.0 ==>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_063751_960780_FC07DF85 
-X-CRM114-Status: GOOD (  33.98  )
+X-CRM114-CacheID: sfid-20200604_063946_836433_2F5288FB 
+X-CRM114-Status: GOOD (  16.54  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,164 +75,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, qwandor@google.com,
- Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, ardb@kernel.org, tabba@google.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: gene_chen@richtek.com, lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
+ cy_huang@richtek.com, benjamin.chao@mediatek.com,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ Wilma.Wu@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ shufan_lee@richtek.com
+Content-Type: multipart/mixed; boundary="===============5884349621322005311=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep, [+Fuad, Andrew and Ard]
 
-(To other interested readers: if you haven't seen it, the FF-A spec is here:
- https://static.docs.arm.com/den0077/a/DEN0077A_PSA_Firmware_Framework_Arm_v8-A_1.0_EAC.pdf
- since this discussion makes no sense without that, and a tiny bit of sense
- with it. It used to be called "SPCI" but it was recently renamed.)
+--===============5884349621322005311==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="WK3l2KTTmXPVedZ6"
+Content-Disposition: inline
 
-On Mon, Jun 01, 2020 at 10:45:09AM +0100, Sudeep Holla wrote:
-> Sorry for posting in the middle of merge window and I must have done
-> this last week itself. This is not the driver I had thought about posting
-> last week. After I started cleaning up and looking at Will's KVM prototype[1]
-> for PSA FF-A (previously known as SPCI),
 
-Yes, I need to do the Big Rename at some point. Joy.
+--WK3l2KTTmXPVedZ6
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> I got more doubts on alignment and dropped huge chunk of interface APIs in
-> the driver in order to keep it simple, and get aligned more with that
-> prototype and avoid scanning lots of code unnecessary.
+On Thu, Jun 04, 2020 at 03:06:27PM +0800, Gene Chen wrote:
 
-You also dropped most of the code, so this doesn't really do anything in
-its current form ;)
+This looks nice and simple, a few fairly small comments below but high
+level it's basically fine.
 
-> Here are few things to clarify:
-> 
-> 1. DT bindings
-> ---------------
-> 	I was initially against adding bindings for Tx/Rx buffers for
-> 	partitions. As per the spec, an endpoint could allocate the
-> 	buffer pair and use the FFA_RXTX_MAP interface to map it with the
-> 	Hypervisor(KVM here). However looking at the prototype and also
-> 	I remember you mentioning that it is not possible to manage buffers
-> 	in that way. Please confirm if you plan to add the buffer details
-> 	fetcthing them through ioctls in KVM and adding them to VM DT nodes
-> 	in KVM userspace. I will update the bindings accordingly.
+> --- /dev/null
+> +++ b/drivers/regulator/mt6360-regulator.c
+> @@ -0,0 +1,571 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2020 MediaTek Inc.
 
-I think it's useful to have a mode of operation where the hypervisor
-allocates the RX/TX buffers and advertises them in the DT. However, we
-can always add this later, so there's no need to have it in the binding
-from the start. Best start as simple as possible, I reckon.
+Please make the entire comment a C++ one so things look more
+intentional.
 
-Setting the static RX/TX buffer allocation aside, why is a DT node needed
-at all for the case where Linux is running purely as an FF-A client? I
-thought everything should be discoverable via FFA_VERSION, FFA_FEATURES,
-FFA_PARTITION_INFO_GET and FFA_ID_GET? That should mean we can get away
-without a binding at all for the client case.
+> +	for (i = 0; i < devdata->num_irq_descs; i++) {
+> +		irq_desc = devdata->irq_descs + i;
+> +		if (unlikely(!irq_desc->name))
+> +			continue;
 
-> 2. Driver
-> ---------
-> a. Support for multiple partitions in a VM
-> ------------------------------------------
-> 	I am not sure if there is need for supporting multiple partitions
-> 	within a VM. It should be possible to do so as I expect to create
-> 	device for each partition entry under arm-psa-ffa devicetree node.
-> 	However, I don't want to assume something that will never be a
-> 	usecase. However I don't think this will change must of the
-> 	abstraction as we need to keep the interface API implementation
-> 	separate to support different partitions on various platforms.
+Do we really need an unlikely here?  This shouldn't be a hot path.
 
-I think Ard has a case for something like this, where a VM actually consists
-of multiple partitions so that S-EL0 services can be provided from NS-EL0.
-However, he probably wants that for a dynamically created VM, so we'd
-need a way to instantiate an FFA namespace for the VM. Maybe that can be
-done entirely in userspace by the VMM...
+> +static int mt6360_regulator_set_mode(
+> +				  struct regulator_dev *rdev, unsigned int mode)
+> +{
 
-> b. SMCCC interface
-> ------------------
-> 	This is something I messed up completely while trying to add
-> 	support for SMCCC v1.2. It now supports x0-x17 as parameter
-> 	registers(input) and return registers(output). I started simple
-> 	with x0-x7 as both input and output as PSA FF-A needs that at
-> 	most. But extending to x0-x17 then became with messy in my
-> 	implementation. That's the reason I dropped it completely
-> 	here and thought of checking it first.
-> 
-> 	Do we need to extend the optimisations that were done to handle
-> 	ARCH_WORKAROUND_{1,2}. Or should be just use a version with x0-x7
-> 	as both input and ouput. Hyper-V guys need full x0-x17 support.
-> 
-> 	I need some guidance as what is the approach preferred ?
+> +	switch (1 << (ffs(mode) - 1)) {
+> +	case REGULATOR_MODE_NORMAL:
 
-I think we can start off with x0-x7 and extend if later if we need to.
+I don't understand why this isn't just a straight switch on mode?
 
-> 3. Partitions
-> -------------
-> 	I am not sure if we have a full define partition that we plan to
-> 	push upstream. Without one, we can have a sample/example partition
-> 	to test all the interface APIs, but is that fine with respect to
-> 	what we want upstream ? Any other thoughts that helps to test the
-> 	driver ?
+> +static unsigned int mt6360_regulator_get_mode(struct regulator_dev *rdev)
+> +{
+> +	const struct mt6360_regulator_desc *desc =
+> +			       (const struct mt6360_regulator_desc *)rdev->desc;
+> +	int shift = ffs(desc->mode_get_mask) - 1, ret;
+> +	unsigned int val = 0;
+> +
+> +	default:
+> +		ret = 0;
+> +	}
 
-I think that's the best you can do for now. We can probably help with
-testing as our stuff gets off the ground.
+If we can't parse a valid value from the hardware then that's an error.
 
-> Sorry for long email and too many questions, but I thought it is easier
-> this way to begin with than throwing huge code implementing loads of APIs
-> with no users(expect example partition) especially that I am posting this
-> during merge window.
+> +static int mt6360_regulator_reg_write(void *context,
+> +				      unsigned int reg, unsigned int val)
+> +{
+> +	struct mt6360_regulator_data *mrd = context;
+> +	u8 chunk[4] = {0};
+> +
+> +	/* chunk 0 ->i2c addr, 1 -> reg_addr, 2 -> reg_val 3-> crc8 */
+> +	chunk[0] = (mrd->i2c->addr & 0x7f) << 1;
+> +	chunk[1] = reg & 0x3f;
+> +	chunk[2] = (u8)val;
+> +	chunk[3] = crc8(mrd->crc8_table, chunk, 3, 0);
+> +	/* also dummy one byte */
+> +	return i2c_smbus_write_i2c_block_data(mrd->i2c, chunk[1], 3, chunk + 2);
+> +}
 
-No problem. Maybe it would help if I described roughly what we were thinking
-of doing for KVM (this is open for discussion, of course):
+Oh, wow - that's a fun I/O interface!
 
- 1. Describe KVM-managed partitions in the DT, along the lines of [1]
- 2. Expose each partition as a file to userspace. E.g.:
+> +static const struct of_device_id __maybe_unused mt6360_regulator_of_id[] = {
+> +	{
+> +		.compatible = "mediatek,mt6360_pmic",
+> +		.data = (void *)&mt6360_pmic_devdata,
+> +	},
+> +	{
+> +		.compatible = "mediatek,mt6360_ldo",
+> +		.data = (void *)&mt6360_ldo_devdata,
+> +	},
+> +	{},
+> +};
+> +MODULE_DEVICE_TABLE(of, mt6360_regulator_of_id);
 
-    /dev/spci/:
+I don't see any DT bindings documentation for this, documentation is
+required for all new bindings.
 
-	self
-	e3a48fa5-dc54-4a8b-898b-bdc4dfeeb7b8
-	49f65057-d002-4ae2-b4ee-d31c7940a13d
+> +	mrd->regmap = devm_regmap_init(&(mrd->i2c->dev),
+> +				       NULL, mrd, devdata->regmap_config);
+> +	if (IS_ERR(mrd->regmap)) {
+> +		dev_err(&pdev->dev, "Failed to register regmap\n");
+> +		return PTR_ERR(mrd->regmap);
+> +	}
 
-    Here, self would be a symlink to the host uuid. The host uuid file
-    would implement FFA_MEM operations using an ioctl(), so you could,
-    for example, share a user buffer with multiple partitions by issuing
-    a MEM_SHARE ioctl() on self, passing the fds for the borrower partitions
-    as arguments. Messaging would be implemented as ioctl()s on the
-    partition uuid files themselves.
+This looks like a MFD so it's surprising to see us defining a regmap at
+this level.  Why are we doing this?
 
- 3. We'll need some (all?) of these patches to unmap memory from the host
-    when necessary:
+--WK3l2KTTmXPVedZ6
+Content-Type: application/pgp-signature; name="signature.asc"
 
-    https://lwn.net/Articles/821215/
+-----BEGIN PGP SIGNATURE-----
 
-    (for nVHE, we'll have a stage-2 for the host so we can unmap there as
-    well)
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7Y+Z8ACgkQJNaLcl1U
+h9DRUgf/Q07BCU3NVKHL/ESM60sLn9muFqxQNcAmFlGBR5bDLKsDToWTKNlTLQuv
+W2REKAvgWpj9dLzCIWOnMEJob8jsw3SSx5fzUNDq+WJLlzhf4MPQkG+/B5kOs7A8
+aCE35WQGvrfMs8zbQmA9VJxUVOHqnyoaUK86E73iUPAWShBSxH2AaVsi1WUqN53g
+LPnVfJ2MvnJLE3z6nmcMof9PXxdA48vrM2Wes0XL3rVUQkuxz9xPKThmtGUUqDoe
+Rx7F5rOP4r8Rq1lT1ac/U1X3AvqMyTK+9jniD9efE6zlLzlquzOjHyMxul1Z6Ok1
+MusCOVNvor+RxHuCDiY2mnZXflShXQ==
+=4cA0
+-----END PGP SIGNATURE-----
 
-For communicating with partitions that are not managed by KVM (e.g. trusted
-applications), it's not clear to me how much of that will be handled in
-kernel or user. I think it would still be worth exposing the partitions as
-files, but perhaps having them root only or just returning -EPERM for the
-ioctl() if a kernel driver has claimed the partition as its own? Ideally,
-FF-A would allow us to transition some of the Trusted OS interfacing code
-out to userspace, but I don't know how realistic that is.
+--WK3l2KTTmXPVedZ6--
 
-Anyway, to enable this, I think we need a clear separation in the kernel
-between the FF-A code and the users: KVM will want to expose things as
-above, but if drivers need to use this stuff as well then they can plug in
-as additional users and we don't have to worry about tripping over the
-RX/TX buffers etc.
 
-What do you think, and do you reckon you can spin a cut-down driver that
-implements the common part of the logic (since I know you've written much
-of this code already)?
-
-Cheers,
-
-Will
-
-[1] https://android-kvm.googlesource.com/linux/+/8632a5723ef106017c4ab57e95d9ce7630d35522%5E%21/#F0
+--===============5884349621322005311==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5884349621322005311==--
+
