@@ -2,78 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58AB91EEA0C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 20:02:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9ADE01EEA1E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  4 Jun 2020 20:13:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cwbpwB8qHzzXNrAc5nbffvHFYjJ6FWsNXde5dBybaek=; b=TnM1/wQFw6IuBj
-	Y9y6WawHS6m+QOG7wdftDrH2fO012IA6ClTEgvBmJaXp3dGjUYF3neR4VJ2xofggX4xEH6cj2PJcm
-	aFWiKBSsfJK/Ushknyv3J1ejzawURCrh+5GvRO0UqIV0f0iX1czsznnJUcp4vEva9bOz7ysomg6lI
-	ipijtVVbvbmk2m/KMJKsBatUJ1E+4+f5yjaAK/lTQrYVD5jYhI9CHnkl152rPEi/l6CpOAkOfC6/k
-	2ExEo5W2FSO5PRX2Syf1Qo8PRHZYQewitoSUoghNCjlckFd1IE0sDfLIlbTWfyIT/s9rf0oz0hty3
-	Iz/fmjo4P7LosnXOGSSw==;
+	List-Owner; bh=/sR/mCI6QL9HAZKjG4sEPVQFOZlMeVGX6PukFWcqr54=; b=Y3W4czxWlGXRVP
+	oKqbZpr6/di+rSvlZ044qj8gzOIlWGTf9gGyLSxh+B7oda4DfXeknyobxdVNVsr8MYPdhOopHrDwn
+	QEg7UGeYtNBZNqE034WQ1vPDTgJHTrriR3Zs4C0NcckjgemscY29bI3ny9LkpAW8KlgoaVw6+mbIl
+	OscUVgIZR+6zW7qZh4C1gJHDMiEVOtl8kjEXSjflh+etv00FM8X/rmnI28m3WbuxkFlWhLs2iSAM+
+	FHwN6qKCL5gyzRIqNCb44OAS3l2z3vqs7+jPdmSJ6pZdV9ElogCfqGhg2m8q0L84I5SGBiVmg57+p
+	lsJwR/wLaxUH3dYNA18g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jguCa-0008OW-0c; Thu, 04 Jun 2020 18:02:52 +0000
-Received: from smtprelay0233.hostedemail.com ([216.40.44.233]
- helo=smtprelay.hostedemail.com)
+	id 1jguMa-0006Kg-47; Thu, 04 Jun 2020 18:13:12 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jguCG-0008FZ-9r
- for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 18:02:33 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay02.hostedemail.com (Postfix) with ESMTP id 99980F4D1E;
- Thu,  4 Jun 2020 18:02:27 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, ,
- RULES_HIT:41:355:379:599:960:973:982:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2393:2553:2559:2562:2828:2892:2911:3138:3139:3140:3141:3142:3354:3622:3865:3866:3867:3868:3870:3871:3872:3874:4321:4425:5007:6119:7903:10004:10400:10848:11232:11658:11914:12297:12663:12679:12740:12760:12895:13069:13095:13255:13311:13357:13439:14096:14097:14659:21080:21433:21451:21627:21790:21939:21987:30054:30075:30090:30091,
- 0, RBL:none, CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none,
- DomainCache:0, MSF:not bulk, SPF:, MSBL:0, DNSBL:none, Custom_rules:0:0:0,
- LFtime:2, LUA_SUMMARY:none
-X-HE-Tag: sugar90_6017dc626d99
-X-Filterd-Recvd-Size: 3603
-Received: from XPS-9350.home (unknown [47.151.136.130])
- (Authenticated sender: joe@perches.com)
- by omf03.hostedemail.com (Postfix) with ESMTPA;
- Thu,  4 Jun 2020 18:02:25 +0000 (UTC)
-Message-ID: <c925d033cf566743a1f6255da7843d1b85451d2f.camel@perches.com>
-Subject: Re: [PATCH] pinctrl: pxa: pxa2xx: Remove 'pxa2xx_pinctrl_exit()'
- which is unused and broken
-From: Joe Perches <joe@perches.com>
-To: Dan Carpenter <dan.carpenter@oracle.com>
-Date: Thu, 04 Jun 2020 11:02:23 -0700
-In-Reply-To: <20200604173500.GI22511@kadam>
-References: <CACRpkdasbS-4_ZwC-Ucm8tkSUW5tAQdUrXjxHXQ3J0goVYfgHw@mail.gmail.com>
- <20200604083120.GF22511@kadam>
- <2aa49a543e6f48a6f428a37b63a06f9149870225.camel@perches.com>
- <alpine.DEB.2.21.2006041147360.2577@hadrien>
- <32232229031e02edcc268b1074c9bac44012ee35.camel@perches.com>
- <alpine.DEB.2.21.2006041228520.2577@hadrien>
- <10e54ee84bd44171ef329bed9e7e6a946bae61ba.camel@perches.com>
- <alpine.DEB.2.21.2006041328570.2577@hadrien> <20200604123038.GG22511@kadam>
- <0749ac5e3868c6ba50728ced8366bfd86b0b8500.camel@perches.com>
- <20200604173500.GI22511@kadam>
-User-Agent: Evolution 3.36.2-0ubuntu1 
+ id 1jguMS-0006KB-PA
+ for linux-arm-kernel@lists.infradead.org; Thu, 04 Jun 2020 18:13:06 +0000
+Received: by mail-lj1-x243.google.com with SMTP id n23so8504126ljh.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 04 Jun 2020 11:13:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FVt4H2yJ2NEAvsqMMNhI8/4Z4reOLSjdXLr6zFeQjOo=;
+ b=gHkkvF2Ls2Ykk1yTr71P6IFnOK5wzAA+kSKFqFb4R4lfvDH7KitjNRVjKqk672AWqM
+ 7ifsRpTktuzU+6E+T9pfzJmBw7thRo6AU4oT0uRBM+nZ2bte47hX06IbNqM39Lt7KOXs
+ 5Sfn4IipqWB89UzZQmrYBZi58fry+Anr516Rc=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FVt4H2yJ2NEAvsqMMNhI8/4Z4reOLSjdXLr6zFeQjOo=;
+ b=Ts8M/RLmEn041nNVgc5xoWa9FE4zumST7VG8Qfw/c95bFolU5DzMWwF3O7TO1AE8gw
+ sHO84ceA0idqXs7PVZBKvh47YEx65SsEVVKa+a6XYtiaUbOGltde3Dba7qmjjwC9VbBM
+ moqxpqnlNhTyoVxkHX3RuZKI484i+7wrSbA2UDMvwJpnkG6sI3y8UGpRx0gqb+K09N0s
+ 3eFucAXJW7YkT5hvANG+79otqle5fGtRR6SsgoJiW+bMddE/GyWGTwdewwuh9eiyrLlX
+ rJQZpaXX0Gow5MKuVkRoxDOvmDdP/jkw9Yzg43g/1tz/vDq2ieZNlwP9/yexB+WdARXA
+ 4oEg==
+X-Gm-Message-State: AOAM5309Di7Xw8/xMb9T8XFf3rStI5D3i7h18ulbnBFpJQVpBDRQjJyf
+ LT+AOvjQp/3bE3T28jew7U0Xk3QpOk6kRA==
+X-Google-Smtp-Source: ABdhPJy3HBgCwTXYDPFUOFVi887JNVO+Nbsg0WUOb8pA3Ng5ef3baAAqdEk++XWJTNz05wMdM+wpnw==
+X-Received: by 2002:a05:651c:120d:: with SMTP id
+ i13mr2562878lja.381.1591294382490; 
+ Thu, 04 Jun 2020 11:13:02 -0700 (PDT)
+Received: from mail-lf1-f50.google.com (mail-lf1-f50.google.com.
+ [209.85.167.50])
+ by smtp.gmail.com with ESMTPSA id n20sm80845lfe.60.2020.06.04.11.13.02
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 04 Jun 2020 11:13:02 -0700 (PDT)
+Received: by mail-lf1-f50.google.com with SMTP id c21so4187117lfb.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 04 Jun 2020 11:13:02 -0700 (PDT)
+X-Received: by 2002:a5d:6750:: with SMTP id l16mr5541154wrw.295.1591293925420; 
+ Thu, 04 Jun 2020 11:05:25 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200523084103.31276-1-dongchun.zhu@mediatek.com>
+ <20200523084103.31276-3-dongchun.zhu@mediatek.com>
+ <1591236845.8804.547.camel@mhfsdcap03>
+ <20200604092616.GJ16711@paasikivi.fi.intel.com>
+In-Reply-To: <20200604092616.GJ16711@paasikivi.fi.intel.com>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Thu, 4 Jun 2020 20:05:12 +0200
+X-Gmail-Original-Message-ID: <CAAFQd5C9fh4Gth+pji0Yp6zh2sVjZukeY6yi+Qb-oCqU465hWg@mail.gmail.com>
+Message-ID: <CAAFQd5C9fh4Gth+pji0Yp6zh2sVjZukeY6yi+Qb-oCqU465hWg@mail.gmail.com>
+Subject: Re: [V9, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_110232_414233_0C7F9FC8 
-X-CRM114-Status: GOOD (  17.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200604_111304_820102_F76CA258 
+X-CRM114-Status: GOOD (  25.44  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.233 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [216.40.44.233 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,67 +104,263 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, kernel-janitors@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Haojian Zhuang <haojian.zhuang@gmail.com>,
- Julia Lawall <julia.lawall@inria.fr>, "open list:GPIO
- SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Robert Jarzmik <robert.jarzmik@free.fr>, Daniel Mack <daniel@zonque.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ linux-devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ =?UTF-8?B?U2hlbmduYW4gV2FuZyAo546L5Zyj55S3KQ==?= <shengnan.wang@mediatek.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>, Louis Kuo <louis.kuo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-06-04 at 20:35 +0300, Dan Carpenter wrote:
-> On Thu, Jun 04, 2020 at 09:08:44AM -0700, Joe Perches wrote:
-> > On Thu, 2020-06-04 at 15:30 +0300, Dan Carpenter wrote:
-> > > On Thu, Jun 04, 2020 at 01:42:12PM +0200, Julia Lawall wrote:
-> > > > OK, I recall a discussion with Dan where he suggested that some things
-> > > > that were not actually bug fixes could also merit a Fixes tag.  But it's
-> > > > probably better if he weighs in directly.
-> > > 
-> > > I generally think Fixes should only be used for "real bug" fixes.
-> > > 
-> > > The one exception is when I'm reviewing a patch that fixes an "unused
-> > > assignment" static checker warning is that I know which commit
-> > > introduced the warning.
+On Thu, Jun 4, 2020 at 11:26 AM Sakari Ailus
+<sakari.ailus@linux.intel.com> wrote:
+>
+> Hi Dongchun,
+>
+> On Thu, Jun 04, 2020 at 10:14:05AM +0800, Dongchun Zhu wrote:
+> > Hi Tomasz, Sakari, and sirs,
+> >
+> > Could anyone help to review this patch?
+> >
+> > On Sat, 2020-05-23 at 16:41 +0800, Dongchun Zhu wrote:
+> > > Add a V4L2 sub-device driver for OV02A10 image sensor.
+> > >
+> > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > ---
+> > >  MAINTAINERS                 |    1 +
+> > >  drivers/media/i2c/Kconfig   |   13 +
+> > >  drivers/media/i2c/Makefile  |    1 +
+> > >  drivers/media/i2c/ov02a10.c | 1025 +++++++++++++++++++++++++++++++++++++++++++
+> > >  4 files changed, 1040 insertions(+)
+> > >  create mode 100644 drivers/media/i2c/ov02a10.c
+> > >
+> >
+> > [snip]
+> >
+> > > +static int ov02a10_probe(struct i2c_client *client)
+> > > +{
+> > > +   struct device *dev = &client->dev;
+> > > +   struct ov02a10 *ov02a10;
+> > > +   unsigned int rotation;
+> > > +   unsigned int clock_lane_tx_speed;
+> > > +   unsigned int i;
+> > > +   int ret;
+> > > +
+> > > +   ov02a10 = devm_kzalloc(dev, sizeof(*ov02a10), GFP_KERNEL);
+> > > +   if (!ov02a10)
+> > > +           return -ENOMEM;
+> > > +
+> > > +   ret = ov02a10_check_hwcfg(dev, ov02a10);
+> > > +   if (ret) {
+> > > +           dev_err(dev, "failed to check HW configuration: %d", ret);
+> > > +           return ret;
+> > > +   }
+> > > +
+> > > +   v4l2_i2c_subdev_init(&ov02a10->subdev, client, &ov02a10_subdev_ops);
+> > > +   ov02a10->mipi_clock_tx_speed = OV02A10_MIPI_TX_SPEED_DEFAULT;
+> > > +   ov02a10->fmt.code = MEDIA_BUS_FMT_SBGGR10_1X10;
+> > > +
+> > > +   /* Optional indication of physical rotation of sensor */
+> > > +   ret = fwnode_property_read_u32(dev_fwnode(dev), "rotation", &rotation);
+> > > +   if (!ret && rotation == 180) {
+> > > +           ov02a10->upside_down = true;
+> > > +           ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
+> > > +   }
+> > > +
+> > > +   /* Optional indication of mipi TX speed */
+> > > +   ret = fwnode_property_read_u32(dev_fwnode(dev), "ovti,mipi-tx-speed",
+> > > +                                  &clock_lane_tx_speed);
+> > > +
+> > > +   if (!ret)
+> > > +           ov02a10->mipi_clock_tx_speed = clock_lane_tx_speed;
+> > > +
+> > > +   /* Get system clock (eclk) */
+> > > +   ov02a10->eclk = devm_clk_get(dev, "eclk");
+> > > +   if (IS_ERR(ov02a10->eclk)) {
+> > > +           ret = PTR_ERR(ov02a10->eclk);
+> > > +           dev_err(dev, "failed to get eclk %d\n", ret);
+> > > +           return ret;
+> > > +   }
+> > > +
+> > > +   ret = fwnode_property_read_u32(dev_fwnode(dev), "clock-frequency",
+> > > +                                  &ov02a10->eclk_freq);
+> > > +   if (ret) {
+> > > +           dev_err(dev, "failed to get eclk frequency\n");
+> > > +           return ret;
+> > > +   }
+> > > +
+> > > +   ret = clk_set_rate(ov02a10->eclk, ov02a10->eclk_freq);
+> > > +   if (ret) {
+> > > +           dev_err(dev, "failed to set eclk frequency (24MHz)\n");
+> > > +           return ret;
+> > > +   }
+> > > +
+> > > +   if (clk_get_rate(ov02a10->eclk) != OV02A10_ECLK_FREQ) {
+> > > +           dev_warn(dev, "wrong eclk frequency %d Hz, expected: %d Hz\n",
+> > > +                    ov02a10->eclk_freq, OV02A10_ECLK_FREQ);
+> > > +           return -EINVAL;
+> > > +   }
+> > > +
+> > > +   ov02a10->pd_gpio = devm_gpiod_get(dev, "powerdown", GPIOD_OUT_HIGH);
+> > > +   if (IS_ERR(ov02a10->pd_gpio)) {
+> > > +           ret = PTR_ERR(ov02a10->pd_gpio);
+> > > +           dev_err(dev, "failed to get powerdown-gpios %d\n", ret);
+> > > +           return ret;
+> > > +   }
+> > > +
+> > > +   ov02a10->n_rst_gpio = devm_gpiod_get(dev, "reset", GPIOD_OUT_LOW);
+> > > +   if (IS_ERR(ov02a10->n_rst_gpio)) {
+> > > +           ret = PTR_ERR(ov02a10->n_rst_gpio);
+> > > +           dev_err(dev, "failed to get reset-gpios %d\n", ret);
+> > > +           return ret;
+> > > +   }
+> > > +
+> > > +   for (i = 0; i < ARRAY_SIZE(ov02a10_supply_names); i++)
+> > > +           ov02a10->supplies[i].supply = ov02a10_supply_names[i];
+> > > +
+> > > +   ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(ov02a10_supply_names),
+> > > +                                 ov02a10->supplies);
+> > > +   if (ret) {
+> > > +           dev_err(dev, "failed to get regulators\n");
+> > > +           return ret;
+> > > +   }
+> > > +
+> > > +   mutex_init(&ov02a10->mutex);
+> > > +   ov02a10->cur_mode = &supported_modes[0];
+> > > +   ret = ov02a10_initialize_controls(ov02a10);
+> > > +   if (ret) {
+> > > +           dev_err(dev, "failed to initialize controls\n");
+> > > +           goto err_destroy_mutex;
+> > > +   }
+> > > +
+> > > +   ov02a10->subdev.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
+> > > +   ov02a10->subdev.entity.ops = &ov02a10_subdev_entity_ops;
+> > > +   ov02a10->subdev.entity.function = MEDIA_ENT_F_CAM_SENSOR;
+> > > +   ov02a10->pad.flags = MEDIA_PAD_FL_SOURCE;
+> > > +   ret = media_entity_pads_init(&ov02a10->subdev.entity, 1, &ov02a10->pad);
+> > > +   if (ret < 0) {
+> > > +           dev_err(dev, "failed to init entity pads: %d", ret);
+> > > +           goto err_free_handler;
+> > > +   }
+> > > +
+> > > +   pm_runtime_enable(dev);
+> > > +   if (!pm_runtime_enabled(dev)) {
+> > > +           ret = ov02a10_power_on(dev);
+> > > +           if (ret < 0) {
+> > > +                   dev_err(dev, "failed to power on: %d\n", ret);
+> > > +                   goto err_free_handler;
+> > > +           }
+> > > +   }
+> > > +
+> > > +   ret = v4l2_async_register_subdev(&ov02a10->subdev);
+> > > +   if (ret) {
+> > > +           dev_err(dev, "failed to register V4L2 subdev: %d", ret);
+> > > +           if (!pm_runtime_enabled(dev))
+> > > +                   ov02a10_power_off(dev);
+>
+> This should be moved to error handling section below.
+>
+> > > +           goto err_clean_entity;
+> > > +   }
+> >
+> > Tomasz, Sakari, is this ok?
+> > or coding like this:
+> >
+> > ret = v4l2_async_register_subdev(&ov02a10->subdev);
+> > if (!pm_runtime_enabled(dev))
+> >       ov02a10_power_off(dev);
+> > if (ret) {
+> >       dev_err(dev, "failed to register V4L2 subdev: %d", ret);
+> >       goto err_clean_entity;
+> > }
+> >
+> > What's your opinions about the change?
+>
+> This turns power off if runtime PM is disabled. I'd keep it as-is, as it'd
+> require re-implementing what runtime PM is used for now --- and that's not
+> a sensor driver's job.
 
-Sometimes those warnings are introduced by new compiler
-versions.
+That and in general I believe the expectations are:
 
-That's why I don't care for -Werror use in Makefiles.
+- runtime PM enabled - powered on only when it has something to do
+- runtime PM disabled - powered on when the driver is bound (probe
+succeeded), powered off when the driver unbinds (remove or probe
+error)
 
-> > > I don't have strong feelings if it's in the
-> > > Fixes tag or if it's just mentioned in the commit message.
-> > 
-> > My view is that changes that silence compiler warnings are
-> > not fixing bugs and that these changes should generally not
-> > be backported.
-> > 
-> The Fixes tag is useful for backports but that's not whole the point of
-> it.  It's also for collecting metrics.
+Best regards,
+Tomasz
 
-Hmm, how are these metrics used?
-
-> Also sometimes we fix the bug
-> before the kernel is released so the Fixes tag means we can automatically
-> ignore those ones when we look at which patches to backport.
-> 
-> I don't care if the "unused assignment" patches use a Fixes tag or just
-> mention the commit.  Either way the information is there for when I
-> review the patch.
-
-Perhaps there could/should be some distinction between
-"real bug" fixes and trivialities like "unused assignment"
-
-Maybe something like:
-	Updates: <commit> ("commit description")
-vs
-	Fixes: <commit> ("commit description")
-
-
+>
+> >
+> > > +
+> > > +   return 0;
+> > > +
+> > > +err_clean_entity:
+> > > +   media_entity_cleanup(&ov02a10->subdev.entity);
+> > > +err_free_handler:
+> > > +   v4l2_ctrl_handler_free(ov02a10->subdev.ctrl_handler);
+> > > +err_destroy_mutex:
+> > > +   mutex_destroy(&ov02a10->mutex);
+> > > +
+> > > +   return ret;
+> > > +}
+> > > +
+> > > +static int ov02a10_remove(struct i2c_client *client)
+> > > +{
+> > > +   struct v4l2_subdev *sd = i2c_get_clientdata(client);
+> > > +   struct ov02a10 *ov02a10 = to_ov02a10(sd);
+> > > +
+> > > +   v4l2_async_unregister_subdev(sd);
+> > > +   media_entity_cleanup(&sd->entity);
+> > > +   v4l2_ctrl_handler_free(sd->ctrl_handler);
+> > > +   pm_runtime_disable(&client->dev);
+> > > +   if (!pm_runtime_status_suspended(&client->dev))
+> > > +           ov02a10_power_off(&client->dev);
+> > > +   pm_runtime_set_suspended(&client->dev);
+> > > +   mutex_destroy(&ov02a10->mutex);
+> > > +
+> > > +   return 0;
+> > > +}
+> > > +
+> > > +static const struct of_device_id ov02a10_of_match[] = {
+> > > +   { .compatible = "ovti,ov02a10" },
+> > > +   {}
+> > > +};
+> > > +MODULE_DEVICE_TABLE(of, ov02a10_of_match);
+> > > +
+> > > +static struct i2c_driver ov02a10_i2c_driver = {
+> > > +   .driver = {
+> > > +           .name = "ov02a10",
+> > > +           .pm = &ov02a10_pm_ops,
+> > > +           .of_match_table = ov02a10_of_match,
+> > > +   },
+> > > +   .probe_new      = &ov02a10_probe,
+> > > +   .remove         = &ov02a10_remove,
+> > > +};
+> > > +
+> > > +module_i2c_driver(ov02a10_i2c_driver);
+> > > +
+> > > +MODULE_AUTHOR("Dongchun Zhu <dongchun.zhu@mediatek.com>");
+> > > +MODULE_DESCRIPTION("OmniVision OV02A10 sensor driver");
+> > > +MODULE_LICENSE("GPL v2");
+> > > +
+> >
+>
+> --
+> Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
