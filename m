@@ -2,65 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1C781EFEC5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 19:27:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC4FF1EFEE7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 19:34:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OIqaFd3ibVWUqBHSD07+yuU69xSDwyRQQyzpze+aSYc=; b=b58ZAUQp2olpI3
-	2bbSIZHvQsbsq0yuXC0o3DMxzqFamj7N09R/oCzuOrYvAQGoe9TKHdUWTiO7VQNTVqAYc7/Fh0CjI
-	6C0ELUa9Zq/2YLebc5ij+5bocUR/ECGIccIC6itdFH06nmPe1olsI0jEhDAgf8GuohCyMCirV/ZDy
-	2RedBAFo945lfhgYwbG9qWFsfnHoANycIMGMC9i+t8/1tybm9VLuvIQ2d9l0Ntrg258o3wAhfe2Ye
-	RhE1EHGW+LjKyAEjtExoWVqKuhY53fF8NBx9Xql8NiUrtgsSPaMZLqwNRlbS4DcPaSQEX5AXAqQX/
-	XBkKHXu+Kb1tkBCnTR0g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=K4f8fyjMtI4mooKlu2Sj/X3NUEmBzOzxjDkHwrLhpsY=; b=MBDZIODIXetULZtdd3gHgPj0gH
+	GUgC31ZuMIszsH5Frl/hxPeBjlkj+mb+eDC11/PmVXZnH2WsRkZ/XFm3cxIGdeG9zJ/FXmbG1lU5x
+	RmO9iqbhzMobykT3w0qsEnpm8/mIDpKKbR+s25nA0r5KRiivS8yTWVv4nkcO/4W2Zk0x6zQq4WCWC
+	bVgIbpBWp0eTGpdIjDsUM7bsUQPS7Dmww8afJseF+qVWyY2tjF4NRrQJhTiyS61Lo8kS/cntcx/bS
+	SywMb2iagxjT+jxFK4mzwTVfGvDXeBgUeGyOhWW66K7mikKboU4dcUB3Euu6d4axCd21/qxFo8JWS
+	c5mt7Sqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhG7X-0001L3-Du; Fri, 05 Jun 2020 17:27:07 +0000
-Received: from mailoutvs62.siol.net ([185.57.226.253] helo=mail.siol.net)
+	id 1jhGEC-0004sO-7S; Fri, 05 Jun 2020 17:34:00 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhG7K-0001Ih-8N
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 17:26:55 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTP id BCFFB521CD6;
- Fri,  5 Jun 2020 19:26:51 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta09.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta09.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id NZgFuvn6mVwb; Fri,  5 Jun 2020 19:26:51 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Postfix) with ESMTPS id 2610A521CDC;
- Fri,  5 Jun 2020 19:26:51 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-194-152-20-232.static.triera.net
- [194.152.20.232]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Postfix) with ESMTPA id B67AB521CD6;
- Fri,  5 Jun 2020 19:26:50 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: paul.kocialkowski@bootlin.com, mripard@kernel.org,
- Nicolas Dufresne <nicolas@ndufresne.ca>
-Subject: Re: [PATCH 1/3] media: uapi: h264: update reference lists
-Date: Fri, 05 Jun 2020 19:26:50 +0200
-Message-ID: <5432050.H6LSVPVxsP@jernej-laptop>
-In-Reply-To: <981458bfa639bbb9dbc7577256fde0a4c6259d53.camel@ndufresne.ca>
-References: <20200604185745.23568-1-jernej.skrabec@siol.net>
- <21efb826506f23d348fa58ca8b29eaca8c9dae55.camel@ndufresne.ca>
- <981458bfa639bbb9dbc7577256fde0a4c6259d53.camel@ndufresne.ca>
-MIME-Version: 1.0
+ id 1jhGDz-0004re-Te
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 17:33:49 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: andrzej.p) with ESMTPSA id 62DAB2A506F
+From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
+ patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
+ platform-driver-x86@vger.kernel.org
+Subject: [PATCH v3 0/7] Support inhibiting input devices
+Date: Fri,  5 Jun 2020 19:33:28 +0200
+Message-Id: <20200605173335.13753-1-andrzej.p@collabora.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200604072853.GP89269@dtor-ws>
+References: <20200604072853.GP89269@dtor-ws>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_102654_454057_DC684C5C 
-X-CRM114-Status: GOOD (  18.36  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200605_103348_219434_3CF71461 
+X-CRM114-Status: GOOD (  11.73  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.253 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,257 +64,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, jonas@kwiboo.se, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, wens@csie.org, hverkuil-cisco@xs4all.nl,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: kernel@collabora.com, Nick Dyer <nick@shmanahar.org>,
+ Laxman Dewangan <ldewangan@nvidia.com>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
+ Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
+ Lars-Peter Clausen <lars@metafoo.de>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Kukjin Kim <kgene@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sylvain Lemieux <slemieux.tyco@gmail.com>,
+ Len Brown <lenb@kernel.org>, Michael Hennerich <michael.hennerich@analog.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
+ Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
+ Barry Song <baohua@kernel.org>, Ferruh Yigit <fery@cypress.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>,
+ Andrzej Pietrasiewicz <andrzej.p@collabora.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
+ Jonathan Cameron <jic23@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dne petek, 05. junij 2020 ob 19:13:24 CEST je Nicolas Dufresne napisal(a):
-> Sorry, missed one thing.
-> =
+Userspace might want to implement a policy to temporarily disregard input
+from certain devices.
 
-> Le vendredi 05 juin 2020 =E0 13:08 -0400, Nicolas Dufresne a =E9crit :
-> > Le jeudi 04 juin 2020 =E0 20:57 +0200, Jernej Skrabec a =E9crit :
-> > > When dealing with with interlaced frames, reference lists must tell if
-> > > each particular reference is meant for top or bottom field. This info
-> > > is currently not provided at all in the H264 related controls.
-> > > =
+An example use case is a convertible laptop, whose keyboard can be folded
+under the screen to create tablet-like experience. The user then must hold
+the laptop in such a way that it is difficult to avoid pressing the keyboard
+keys. It is therefore desirable to temporarily disregard input from the
+keyboard, until it is folded back. This obviously is a policy which should
+be kept out of the kernel, but the kernel must provide suitable means to
+implement such a policy.
 
-> > > Make reference lists hold a structure which will also hold flags along
-> > > index into DPB array. Flags will tell if reference is meant for top or
-> > > bottom field.
-> > > =
+Due to interactions with suspend/resume, a helper has been added for drivers
+to decide if the device is being used or not (PATCH 1/7) and it has been
+applied to relevant drivers (PATCH 2,4,5,6/7).
 
-> > > Currently the only user of these lists is Cedrus which is just compile
-> > > fixed here. Actual usage of newly introduced flags will come in
-> > > following commit.
-> > > =
+PATCH 7/7 adds support for inhibiting input devices.
 
-> > > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > =
+This work is inspired by:
 
-> > This looks like the right approach to me and is extensible if anything
-> > else is needed for MVC and SVC special referencing (at least will be
-> > enough for what H.264 actually supports in this regard).
-> > =
+https://chromium.googlesource.com/chromiumos/third_party/kernel/+/45c2d7bb398f74adfae0017e20b224152fde3822
 
-> > Reviewed-by: Nicolas Dufresne <nicolas.dufresne@collabora.com>
-> > =
+and
 
-> > > ---
-> > > =
+https://chromium.googlesource.com/chromiumos/third_party/kernel/+/4ce0e8a3697edb8fd071110b3af65014512061c7
 
-> > >  .../media/v4l/ext-ctrls-codec.rst             | 40 +++++++++++++++++=
-+-
-> > >  .../staging/media/sunxi/cedrus/cedrus_h264.c  |  6 +--
-> > >  include/media/h264-ctrls.h                    | 12 +++++-
-> > >  3 files changed, 51 insertions(+), 7 deletions(-)
-> > > =
+In this respin the elan_i2c patch is dropped and converting it will be
+addressed later.
 
-> > > diff --git a/Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst
-> > > b/Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst index
-> > > d0d506a444b1..6c36d298db20 100644
-> > > --- a/Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst
-> > > +++ b/Documentation/userspace-api/media/v4l/ext-ctrls-codec.rst
-> > > @@ -1843,10 +1843,10 @@ enum
-> > > v4l2_mpeg_video_h264_hierarchical_coding_type -> > =
+v2..v3:
+- ignored autorepeat events in input_get_disposition() if a key is not
+pressed (Hans)
+- dropped inhibit()/uninhibit() driver callbacks (Hans)
+- split ACPI button patch into taking the lock and using the helper (Rafael)
+- dropped the elan_i2c conversion
+- fixed typos in exynos adc
 
-> > >      * - __u32
-> > >      =
+v1..v2:
+- added input_device_enabled() helper and used it in drivers (Dmitry)
+- the fact of open() and close() being called in inhibit/uninhibit paths has
+been emphasized in the commit message of PATCH 6/7 (Dmitry)
 
-> > >        - ``slice_group_change_cycle``
-> > >        -
-> > > =
+Andrzej Pietrasiewicz (6):
+  Input: add input_device_enabled()
+  Input: use input_device_enabled()
+  ACPI: button: Access input device's users under appropriate mutex
+  ACPI: button: Use input_device_enabled() helper
+  iio: adc: exynos: Use input_device_enabled()
+  platform/x86: thinkpad_acpi: Use input_device_enabled()
 
-> > > -    * - __u8
-> > > +    * - struct :c:type:`v4l2_h264_reference`
-> > > =
+Patrik Fimml (1):
+  Input: Add "inhibited" property
 
-> > >        - ``ref_pic_list0[32]``
-> > >        - Reference picture list after applying the per-slice
-> > >        modifications
-> > > =
-
-> > > -    * - __u8
-> > > +    * - struct :c:type:`v4l2_h264_reference`
-> > > =
-
-> > >        - ``ref_pic_list1[32]``
-> > >        - Reference picture list after applying the per-slice
-> > >        modifications
-> > >      =
-
-> > >      * - __u32
-> > > =
-
-> > > @@ -1926,6 +1926,42 @@ enum
-> > > v4l2_mpeg_video_h264_hierarchical_coding_type -
-> > > =
-
-> > >        - ``chroma_offset[32][2]``
-> > >        -
-> > > =
-
-> > > +``Picture Reference``
-> > > +
-> > > +.. c:type:: v4l2_h264_reference
-> > > +
-> > > +.. cssclass:: longtable
-> > > +
-> > > +.. flat-table:: struct v4l2_h264_reference
-> > > +    :header-rows:  0
-> > > +    :stub-columns: 0
-> > > +    :widths:       1 1 2
-> > > +
-> > > +    * - __u16
-> > > +      - ``flags``
-> > > +      - See :ref:`Picture Reference Flags <h264_reference_flags>`
-> > > +    * - __u8
-> > > +      - ``index``
-> > > +      -
-> > > +
-> > > +.. _h264_reference_flags:
-> > > +
-> > > +``Picture Reference Flags``
-> > > +
-> > > +.. cssclass:: longtable
-> > > +
-> > > +.. flat-table::
-> > > +    :header-rows:  0
-> > > +    :stub-columns: 0
-> > > +    :widths:       1 1 2
-> > > +
-> > > +    * - ``V4L2_H264_REFERENCE_FLAG_TOP_FIELD``
-> > > +      - 0x00000001
-> > > +      -
-> > > +    * - ``V4L2_H264_REFERENCE_FLAG_BOTTOM_FIELD``
-> > > +      - 0x00000002
-> > > +      -
-> > > +
-> > > =
-
-> > >  ``V4L2_CID_MPEG_VIDEO_H264_DECODE_PARAMS (struct)``
-> > >  =
-
-> > >      Specifies the decode parameters (as extracted from the bitstream)
-> > >      for the associated H264 slice data. This includes the necessary
-> > > =
-
-> > > diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c index
-> > > 54ee2aa423e2..cce527bbdf86 100644
-> > > --- a/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > +++ b/drivers/staging/media/sunxi/cedrus/cedrus_h264.c
-> > > @@ -166,8 +166,8 @@ static void cedrus_write_frame_list(struct
-> > > cedrus_ctx *ctx,> > =
-
-> > >  static void _cedrus_write_ref_list(struct cedrus_ctx *ctx,
-> > >  =
-
-> > >  				   struct cedrus_run *run,
-> > > =
-
-> > > -				   const u8 *ref_list, u8 =
-
-num_ref,
-> > > -				   enum cedrus_h264_sram_off =
-
-sram)
-> > > +				   const struct =
-
-v4l2_h264_reference *ref_list,
-> > > +				   u8 num_ref, enum =
-
-cedrus_h264_sram_off sram)
-> > > =
-
-> > >  {
-> > >  =
-
-> > >  	const struct v4l2_ctrl_h264_decode_params *decode =3D
-> > >  	run->h264.decode_params; struct vb2_queue *cap_q;
-> > > =
-
-> > > @@ -188,7 +188,7 @@ static void _cedrus_write_ref_list(struct cedrus_=
-ctx
-> > > *ctx,> > =
-
-> > >  		int buf_idx;
-> > >  		u8 dpb_idx;
-> > > =
-
-> > > -		dpb_idx =3D ref_list[i];
-> > > +		dpb_idx =3D ref_list[i].index;
-> > > =
-
-> > >  		dpb =3D &decode->dpb[dpb_idx];
-> > >  		=
-
-> > >  		if (!(dpb->flags & V4L2_H264_DPB_ENTRY_FLAG_ACTIVE))
-> > > =
-
-> > > diff --git a/include/media/h264-ctrls.h b/include/media/h264-ctrls.h
-> > > index 080fd1293c42..9b1cbc9bc38e 100644
-> > > --- a/include/media/h264-ctrls.h
-> > > +++ b/include/media/h264-ctrls.h
-> > > @@ -140,6 +140,14 @@ struct v4l2_h264_pred_weight_table {
-> > > =
-
-> > >  #define V4L2_H264_SLICE_FLAG_DIRECT_SPATIAL_MV_PRED	0x04
-> > >  #define V4L2_H264_SLICE_FLAG_SP_FOR_SWITCH		0x08
-> > > =
-
-> > > +#define V4L2_H264_REFERENCE_FLAG_TOP_FIELD		0x01
-> > > +#define V4L2_H264_REFERENCE_FLAG_BOTTOM_FIELD		0x02
-> > > +
-> > > +struct v4l2_h264_reference {
-> > > +	__u8 flags;
-> > > +	__u8 index;
-> > > +};
-> > > +
-> > > =
-
-> > >  struct v4l2_ctrl_h264_slice_params {
-> > >  =
-
-> > >  	/* Size in bytes, including header */
-> > >  	__u32 size;
-> > > =
-
-> > > @@ -182,8 +190,8 @@ struct v4l2_ctrl_h264_slice_params {
-> > > =
-
-> > >  	 * Entries on each list are indices into
-> > >  	 * v4l2_ctrl_h264_decode_params.dpb[].
-> > >  	 */
-> =
-
-> This comment needs to be updated or moved inside the structure.
-
-I'll move it in v2.
-
-Best regards,
-Jernej
-
-> =
-
-> > > -	__u8 ref_pic_list0[32];
-> > > -	__u8 ref_pic_list1[32];
-> > > +	struct v4l2_h264_reference ref_pic_list0[32];
-> > > +	struct v4l2_h264_reference ref_pic_list1[32];
-> > > =
-
-> > >  	__u32 flags;
-> > >  =
-
-> > >  };
+ drivers/acpi/button.c                       |   7 +-
+ drivers/iio/adc/exynos_adc.c                |  11 +-
+ drivers/input/input.c                       | 121 +++++++++++++++++++-
+ drivers/input/joystick/xpad.c               |   4 +-
+ drivers/input/keyboard/ep93xx_keypad.c      |   2 +-
+ drivers/input/keyboard/gpio_keys.c          |   4 +-
+ drivers/input/keyboard/imx_keypad.c         |   4 +-
+ drivers/input/keyboard/ipaq-micro-keys.c    |   2 +-
+ drivers/input/keyboard/lpc32xx-keys.c       |   4 +-
+ drivers/input/keyboard/pmic8xxx-keypad.c    |   4 +-
+ drivers/input/keyboard/pxa27x_keypad.c      |   2 +-
+ drivers/input/keyboard/samsung-keypad.c     |   4 +-
+ drivers/input/keyboard/spear-keyboard.c     |   8 +-
+ drivers/input/keyboard/st-keyscan.c         |   4 +-
+ drivers/input/keyboard/tegra-kbc.c          |   4 +-
+ drivers/input/misc/drv260x.c                |   4 +-
+ drivers/input/misc/drv2665.c                |   4 +-
+ drivers/input/misc/drv2667.c                |   4 +-
+ drivers/input/misc/gp2ap002a00f.c           |   4 +-
+ drivers/input/misc/kxtj9.c                  |   4 +-
+ drivers/input/misc/sirfsoc-onkey.c          |   2 +-
+ drivers/input/mouse/navpoint.c              |   4 +-
+ drivers/input/touchscreen/ad7879.c          |   6 +-
+ drivers/input/touchscreen/atmel_mxt_ts.c    |   4 +-
+ drivers/input/touchscreen/auo-pixcir-ts.c   |   8 +-
+ drivers/input/touchscreen/bu21029_ts.c      |   4 +-
+ drivers/input/touchscreen/chipone_icn8318.c |   4 +-
+ drivers/input/touchscreen/cyttsp_core.c     |   4 +-
+ drivers/input/touchscreen/eeti_ts.c         |   4 +-
+ drivers/input/touchscreen/ektf2127.c        |   4 +-
+ drivers/input/touchscreen/imx6ul_tsc.c      |   4 +-
+ drivers/input/touchscreen/ipaq-micro-ts.c   |   2 +-
+ drivers/input/touchscreen/iqs5xx.c          |   4 +-
+ drivers/input/touchscreen/lpc32xx_ts.c      |   4 +-
+ drivers/input/touchscreen/melfas_mip4.c     |   4 +-
+ drivers/input/touchscreen/mms114.c          |   6 +-
+ drivers/input/touchscreen/pixcir_i2c_ts.c   |   8 +-
+ drivers/input/touchscreen/ucb1400_ts.c      |   4 +-
+ drivers/input/touchscreen/wm97xx-core.c     |  14 ++-
+ drivers/input/touchscreen/zforce_ts.c       |   8 +-
+ drivers/platform/x86/thinkpad_acpi.c        |   4 +-
+ include/linux/input.h                       |  14 ++-
+ 42 files changed, 230 insertions(+), 95 deletions(-)
 
 
-
+base-commit: 3d77e6a8804abcc0504c904bd6e5cdf3a5cf8162
+-- 
+2.17.1
 
 
 _______________________________________________
