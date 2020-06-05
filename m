@@ -2,124 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D04F1EF95B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:35:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 36E591EF9FD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 16:09:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=suA8j/eqL/Yzs3kNC0rR6hnsqU7Rimuup3l5lq7dE84=; b=Tkz7YvCxL7Z+1T
-	kcC55Vxo04A2A+W+svGvW63Eub+4IGt1EldCRKOUXEEmG6JEysrFAi42CNOEIgLCI6Nkcy9NisaNo
-	cif9XrH4GeoxFWIc8LI6u2iPf1wmIj1WVWzMJyxLxBWCM3Br+y8fN2JCsJwj2a38cN0LfsBO2Vely
-	vB1YxHob3/3Dhk1NkjcnGDj0w9sEAVl9RY0mawrrAOMjMk3KPqzQ8GUphYPCnm+7nc6z1ry8jH8Vg
-	ceO1kWHSnVXW+dfrxQG9NpOLDt6WJiKhiF35mLv1SWS0Ewx0aWcrMqWq/y1q/0RzId42HKqhZ9fyZ
-	s80IRlkd+ruywQcmSCAA==;
+	List-Owner; bh=pfU/0PoNEfp/H44yXnSDGPtFO6HjOzSpF3Yjw33PFBA=; b=LFXO85o/EdsyRf
+	iLBf6CluZYLcudeUD0zMghMGrbMD5oefmOdAyFCb+YhpfHS9XYWbzM43BIE+lgP1hLPT1SuVw/h9y
+	+pwj0JiF7N32OROmJBmnsU6ZE72GExSK9xOk9wBlf1T9nFFugEdx4k6OmKXoOU64tcRvz7cQ+Ncs4
+	msuWfqzTRogYVFgl22+PwWqRk3cPd8H4pm4zDGVo56/vOiNNUljGgJvjbgvhemNjj/ACb6SaCazxG
+	1C8eonHpXwTGRHHPgMg5g0qW0WT9gRii/OXtZw6mgU3qKu69rN/g3acK4DXgGoNF162aMH1LvTLQV
+	JncrcJvK/YK3KSesUAbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhCVT-0008Fm-Bv; Fri, 05 Jun 2020 13:35:35 +0000
-Received: from mail-vi1eur05on2075.outbound.protection.outlook.com
- ([40.107.21.75] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+	id 1jhD2A-0005Lf-Tw; Fri, 05 Jun 2020 14:09:22 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhCTr-0004oA-Hz
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:33:57 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=nekYxzWirQdF9ghER9K6ZKorXR8QWK5z/TUI9nvBi8rTEvJawHwfW+yFG4HYrmU658MboKYz53bI2yKlfkAdzdsJCfF9BCVyLN7irIJ/zH8BIpQ1POfB/KpIjKsZn6GPfiq3oofCs1xNjlVu/8EvHSAXfJt7Txl10ExRYExY51iQ4a2t6FBTaU2BrcAWiTtJQwk2Di0D/ZeyzvSzeQTLR0nsvFSItXCInPnWAkpsys8paL4q0QCNdenGmAwKhebhj1FZYMZVBCkk5c4ussHripFU8HxMHOcauolXdvDowWvQf6r6pRyqXZ4KEcgtuTh8KPPD8KxqgZJpE5v9p2If2g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PVa9IWELyHni7gn3nuBup0HmNm+xItFbTKwgykt4ySE=;
- b=dhZuvC0nIaukyVNOt6GQawY+J1NQ6FCSBsUxyC41hcKDjbIOQekcWeZcMULITgXWsVVpb/Cnekj3utq7FS/H4yr7khv/1RalTXI6YCAA9laBXH8gWS6fo8ueWLByX30Aq7bv6guigowbJpCLF42DIt4O+NGNGc80rDIlAzhN7b1dq8OmJjfzI+I3R9sh9oSbVsvAb3HNX+8btDMTOi5bxDL3r0bVsQ/Kw5W7WNwN28WIIO644Q7C3fQXc9iFXqanaMSELDcLH9R8xEkLkpFlJ/bOHPTRkYPRSdlJoGpliAzH9b7RMHErlYG6SpJPea4Bea7H3VS16VMp1k1Koc1XtA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PVa9IWELyHni7gn3nuBup0HmNm+xItFbTKwgykt4ySE=;
- b=qOAYA6aebOTk15WeTFxs5DIds4XOvKuWIF6gFO6zVH/tUMIO0Z6ULXtlzZXSiPJNXguo2COHOk8D87RuxBYuXob/ynTuxz/hah0+QVsQ1GRI5GioE3h1x5lH66obglDSjvUEwUvg1vsTUal7fipOH26R0Pf79quMZDvkR30u24w=
-Authentication-Results: arm.com; dkim=none (message not signed)
- header.d=none;arm.com; dmarc=none action=none header.from=nxp.com;
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6720.eurprd04.prod.outlook.com (2603:10a6:803:123::19)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Fri, 5 Jun
- 2020 13:33:49 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3066.019; Fri, 5 Jun 2020
- 13:33:49 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: mark.rutland@arm.com, broonie@kernel.org, robh+dt@kernel.org,
- catalin.marinas@arm.com, vkoul@kernel.org, will.deacon@arm.com,
- shawnguo@kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
- martin.fuzzey@flowbird.group, u.kleine-koenig@pengutronix.de,
- dan.j.williams@intel.com, matthias.schiffer@ew.tq-group.com
-Subject: [PATCH v9 14/14] dmaengine: imx-sdma: add uart rom script
-Date: Sat,  6 Jun 2020 05:32:35 +0800
-Message-Id: <1591392755-19136-15-git-send-email-yibin.gong@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1591392755-19136-1-git-send-email-yibin.gong@nxp.com>
-References: <1591392755-19136-1-git-send-email-yibin.gong@nxp.com>
-X-ClientProxiedBy: SG2PR02CA0048.apcprd02.prod.outlook.com
- (2603:1096:3:18::36) To VE1PR04MB6638.eurprd04.prod.outlook.com
- (2603:10a6:803:119::15)
+ id 1jhD22-0005LJ-Qe
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 14:09:16 +0000
+IronPort-SDR: +pcYmFaUw/9rx/4LHiE+CeDBn0CJmdrFWZqh+4Ez0okveQHFLsfFxfpOkTgaaILk90Tvx6zq9L
+ CH4f4f5k3e4g==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga005.fm.intel.com ([10.253.24.32])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 05 Jun 2020 07:09:14 -0700
+IronPort-SDR: STm5cJBEx3cZwh5EDl1WI2zIniez547qsBBHLm0a+PZkJql6UaV6R0I9F6DqWusAPQO2MUnztk
+ j822dzBvILJQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,476,1583222400"; d="scan'208";a="471924635"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga005.fm.intel.com with ESMTP; 05 Jun 2020 07:09:09 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andy.shevchenko@gmail.com>)
+ id 1jhD1z-00B2nb-Cy; Fri, 05 Jun 2020 17:09:11 +0300
+Date: Fri, 5 Jun 2020 17:09:11 +0300
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH v4 04/11] watchdog: add support for sl28cpld watchdog
+Message-ID: <20200605140911.GO2428291@smile.fi.intel.com>
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-5-michael@walle.cc>
+ <CAHp75VdeD6zDc--R4NPHsiqQerzfNGwUikLN+WHMiZZVsQ8QSA@mail.gmail.com>
+ <8f042c2442852c29519c381833f3d289@walle.cc>
+ <CAHp75VfY0BD4CFu6Thx1wE-U0Zt1q8uTOLxkWTMdFk0MBuhYFQ@mail.gmail.com>
+ <871a4990-5b94-3a17-01d4-74998375f08b@roeck-us.net>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
- SG2PR02CA0048.apcprd02.prod.outlook.com (2603:1096:3:18::36) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3066.20 via Frontend Transport; Fri, 5 Jun 2020 13:33:43 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 7d331578-3d07-42cc-e3a5-08d80955141f
-X-MS-TrafficTypeDiagnostic: VE1PR04MB6720:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR04MB672008A94BB0AF38A529AA0A89860@VE1PR04MB6720.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
-X-Forefront-PRVS: 0425A67DEF
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Eo7bVKCU/jXGjvw7V4qiOgN7U1vKgft3Xp++G3pVuzaQp6KyItQgQ+5+6eV1+lP0mYITaXi+EdNHmd3rdUCqup/gVG7ghzwMF4o7xAHlqdUIr17Bm0MSeE3Q2H3VsaJaKrIBsUY6bKD6eXLbK4rcucDWyUiQZ82fTSoCTwDqLqeLUtjlOtZI0ZqSzy91Fxu7R906Ir3UxOwfInLVF6mEhS7y8fV6pXjgSqIbrIC/jzGukIEgcCcSh2IQabtYzqkX3iD5F/eqU0r69iWsM66C/O21jhpiKAPlfQLlrCYVHjADMMMiWfCdziykio0/i+wPLoVThY4sL5dDMjaYGX/+zWaeCQNWmaMVDogU5h+F9YKGT6MwudYXGBcn2GQ/ZHkD7GPw0jQi6HgqTwPn3cu5csZkFJD0hyGdA1/xsOfiPVEmB7eVmsbY/jnveZfS6o4FdzLR1cKBsPBhn6r67LoATA==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(39860400002)(366004)(346002)(376002)(396003)(136003)(83380400001)(6486002)(4326008)(16526019)(26005)(2906002)(2616005)(956004)(186003)(8936002)(6506007)(52116002)(8676002)(36756003)(66476007)(66946007)(5660300002)(66556008)(7416002)(6666004)(966005)(316002)(478600001)(6512007)(86362001)(921003);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: VYIb/gsymBHULJwBKBPSWJHt+IobXcjM3fvdi/vTXxQSMWEB1M9Q9nWuv3vsQdD9DaAV3faREOA0HOQKfkZ5Q6E2XwunIHdOLXGZcLirPKkjSN/KgRsYhiOicHlrxeUWKdknw9HVLwIi/bpFdu+RV8P5tv8neYlv1OQBtpIVTw7+419i3EJ8qemMsgylg300vxxinD/pagYN2b8egOkwYba3/w1q7XLxTogUrHbn6WC5ttdTLjxfTo8BLU9yBskEmhEFZewbDFjL2znmTQrgkLzi36c0cajLRcAsVAZxnzCb9omNwU52wM7Z2+AVYyZrQXeAXQo/tpkpBstbjNnQJek9mIQkwKS5Uqa7Xh6glG2B5OKAwuMWoFoxxtOiEGrWYnWUsq8H3xm5jHbqcMVRtzGkT6xLN2y22/tresWsIt2+nkwIfvWi9iqMjqHlATUwcNhkJ+XDO955neWmqtJn6RRMCXBhKGEAWC+sFqXZcxo=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 7d331578-3d07-42cc-e3a5-08d80955141f
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2020 13:33:48.9768 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 1UYa1VRpOR6kKVMl8aYn3/3UYgTJ8KI7ApaoOipXnoVP33dOUQKT5vXmCia+/bTnZNHBOfphA+wvFlUx7O9pDg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6720
+Content-Disposition: inline
+In-Reply-To: <871a4990-5b94-3a17-01d4-74998375f08b@roeck-us.net>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_063355_805314_0D49B1D7 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200605_070914_879474_DECDACE5 
+X-CRM114-Status: GOOD (  17.23  )
+X-Spam-Score: -1.8 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-1.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.21.75 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.21.75 listed in wl.mailspike.net]
- 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
+ 1.0 FORGED_GMAIL_RCVD      'From' gmail.com does not match 'Received'
+ headers
+ 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
+ CUSTOM_MED
+ 1.2 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
+ list
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,87 +85,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
- dmaengine@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-pwm@vger.kernel.org, Jean Delvare <jdelvare@suse.com>,
+ linux-watchdog@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Michael Walle <michael@walle.cc>,
+ Mark Brown <broonie@kernel.org>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For the compatibility of NXP internal legacy kernel before 4.19 which
-is based on uart ram script and upstreaming kernel based on uart rom
-script, add both uart ram/rom script in latest sdma firmware. By default
-uart rom script used.
-Besides, add two multi-fifo scripts for SAI/PDM on i.mx8m/8mm and add
-back qspi script miss for v4(i.mx7d/8m/8mm family, but v3 is for i.mx6).
+On Fri, Jun 05, 2020 at 06:52:00AM -0700, Guenter Roeck wrote:
+> On 6/5/20 3:50 AM, Andy Shevchenko wrote:
+> > On Fri, Jun 5, 2020 at 1:24 PM Michael Walle <michael@walle.cc> wrote:
+> >> Am 2020-06-05 10:14, schrieb Andy Shevchenko:
+> >>> On Fri, Jun 5, 2020 at 12:14 AM Michael Walle <michael@walle.cc> wrote:
 
-rom script:
-        uart_2_mcu_addr
-	uartsh_2_mcu_addr /* through spba bus */
-am script:
-	uart_2_mcu_ram_addr
-	uartsh_2_mcu_ram_addr /* through spba bus */
+...
 
-Please get latest sdma firmware from the below and put them into the path
-(/lib/firmware/imx/sdma/):
-https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-/tree/imx/sdma
+> >>>> +static bool nowayout = WATCHDOG_NOWAYOUT;
+> >>>> +module_param(nowayout, bool, 0);
+> >>>> +MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started
+> >>>> (default="
+> >>>> +                               __MODULE_STRING(WATCHDOG_NOWAYOUT)
+> >>>> ")");
+> >>>> +
+> >>>> +static int timeout;
+> >>>> +module_param(timeout, int, 0);
+> >>>> +MODULE_PARM_DESC(timeout, "Initial watchdog timeout in seconds");
+> >>>
+> >>> Guenter ACKed this, but I'm wondering why we still need module
+> >>> parameters...
+> >>
+> >> How would a user change the nowayout or the timeout? For the latter
+> >> there is
+> >> a device tree entry, but thats not easy changable by the user.
+> > 
+> > Yes, it's more question to VIm and Guenter than to you.
+> > 
+> 
+> Has support for providing module parameters with the kernel command line
+> been discontinued/deprecated, or did it run out of favor ? Sorry if I
+> missed that.
 
-Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-Acked-by: Vinod Koul <vkoul@kernel.org>
----
- drivers/dma/imx-sdma.c                     | 4 ++--
- include/linux/platform_data/dma-imx-sdma.h | 8 ++++++--
- 2 files changed, 8 insertions(+), 4 deletions(-)
+Latter according to Greg KH. One of the (plenty) examples [1].
 
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 320104f..2ca7935 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -1718,8 +1718,8 @@ static void sdma_issue_pending(struct dma_chan *chan)
- 
- #define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V1	34
- #define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V2	38
--#define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3	41
--#define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V4	42
-+#define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3	45
-+#define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V4	46
- 
- static void sdma_add_scripts(struct sdma_engine *sdma,
- 		const struct sdma_script_start_addrs *addr)
-diff --git a/include/linux/platform_data/dma-imx-sdma.h b/include/linux/platform_data/dma-imx-sdma.h
-index 30e676b..e12d2e8 100644
---- a/include/linux/platform_data/dma-imx-sdma.h
-+++ b/include/linux/platform_data/dma-imx-sdma.h
-@@ -20,12 +20,12 @@ struct sdma_script_start_addrs {
- 	s32 per_2_firi_addr;
- 	s32 mcu_2_firi_addr;
- 	s32 uart_2_per_addr;
--	s32 uart_2_mcu_addr;
-+	s32 uart_2_mcu_ram_addr;
- 	s32 per_2_app_addr;
- 	s32 mcu_2_app_addr;
- 	s32 per_2_per_addr;
- 	s32 uartsh_2_per_addr;
--	s32 uartsh_2_mcu_addr;
-+	s32 uartsh_2_mcu_ram_addr;
- 	s32 per_2_shp_addr;
- 	s32 mcu_2_shp_addr;
- 	s32 ata_2_mcu_addr;
-@@ -52,6 +52,10 @@ struct sdma_script_start_addrs {
- 	s32 zcanfd_2_mcu_addr;
- 	s32 zqspi_2_mcu_addr;
- 	s32 mcu_2_ecspi_addr;
-+	s32 mcu_2_sai_addr;
-+	s32 sai_2_mcu_addr;
-+	s32 uart_2_mcu_addr;
-+	s32 uartsh_2_mcu_addr;
- 	/* End of v3 array */
- 	s32 mcu_2_zqspi_addr;
- 	/* End of v4 array */
+[1]: https://www.mail-archive.com/driverdev-devel@linuxdriverproject.org/msg96495.html
+
+> nowayout has a configuration default. A module parameter is sometimes
+> provided by drivers to be able to override it. The timeout provided
+> via devicetree or on the command line is only the initial/default
+> timeout, and the watchdog daemon can change it after opening the
+> watchdog device as it sees fit.
+
+Thanks for explanation.
+
 -- 
-2.7.4
+With Best Regards,
+Andy Shevchenko
+
 
 
 _______________________________________________
