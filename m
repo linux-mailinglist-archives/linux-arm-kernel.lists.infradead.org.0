@@ -2,55 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 889211EF7FB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:33:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5A501EF814
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:39:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UgH+Q9huikIfdoASgof3sJwhM/n3tDQn+uqsKrimms8=; b=krH/OPWoW/wUyb
-	FRBni9OGWD47Ei7rmC8omsYQLIEd7wS220Yya0QsnqRvkyJPiN9HHQgOpzjb4azPWna7DKGNcoByS
-	HOapMvJzMuX/Dx2cgEcV7gLqgwWC40KDlBP9vbhhNYwlMeT90KMDp9fV+3WeQo4ewxVLCuzYPzOYT
-	lT+oGatH5180McQcnFUt+UxGFTQMogos208PoNFhvTVnC0Ry2zm2XIPpaFBl7xKdQnRShP4R3E7qy
-	YWeeNTwOjozvR/ccexv2cu3yfI+S7pGCHZ9gpz8QGPrvhwNc0SlJnbrZSuMbk8Fg0uSBVanM1g+7O
-	Tqx06HRugCDrTqhHRsKA==;
+	List-Owner; bh=BFU10Fp59SAdk6lQCW86FkYMqMnGoEIFcVoZcK2J3Bk=; b=M8JFQMlFGE1BNl
+	9gI04/1krPUebwcNuMXWVYdkCVTKHurvAR4uygNgppm2/A8xusk3JftplYcv08lKJe2MrfsLIy4/+
+	zGi/cvkTxR8D9PgoDA0p6ngEd/qi48QAACxzPvNAC456liVa/E8ZG5n/DJXjBGppVaiwtUYp2HGzj
+	tMZqR6nbSREyjst0B2pSLoZ/KBE2ebFRMmii1pTWR7QDZHQlySGOzjZGX3UQyzNvpYaRLOAULJvIE
+	U0DrQn4ATsApXAa/kZ5RoGFLBfZmKdw2iJgLrVVV2qykN5fFPvwVENsw1ZHNauGDj8kkDXDMBCEGU
+	WO6LgxhtDz3gzGg3/xmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhBX9-0003oB-L5; Fri, 05 Jun 2020 12:33:15 +0000
+	id 1jhBdL-0006r1-9i; Fri, 05 Jun 2020 12:39:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhBX2-0003nY-1i
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:33:09 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9B3512070B;
- Fri,  5 Jun 2020 12:33:06 +0000 (UTC)
+ id 1jhBdF-0006qg-81
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:39:34 +0000
+Received: from mail-ot1-f52.google.com (mail-ot1-f52.google.com
+ [209.85.210.52])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B7E772074B
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  5 Jun 2020 12:39:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591360387;
- bh=fTr0sSYh7Hc07ktzO/6Or179HCQ8lKzraRQaQhXE8Wg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pie1bS2elTbUGrWm8eSC8WLLSAUTmcNBqa0+/qVE8K/6XcNU/EnyQwDVOnC6ZCYH7
- i5T3bWJHXjZgm3g1CGa09bkxxL0TU6PYgtRUTBTrV65eJGG69ADOSXV4zmyyPz1GL4
- i6kRtRd+ErupS634w251226PjPBlhNXb8yzY5+fo=
-Date: Fri, 5 Jun 2020 13:33:03 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: Please help to confirm the risk if using TPIDRRO_EL0 to save CPU
- number, thanks.
-Message-ID: <20200605123302.GA19936@willie-the-truck>
-References: <1D289F1E6D91D2489524BBB0B8880A7DA1A39219@dggeml509-mbx.china.huawei.com>
- <20200601070311.GA8601@willie-the-truck>
- <20200605121029.GE5413@sirena.org.uk>
+ s=default; t=1591360772;
+ bh=lrmwQwigYJIHtwdWmFVstgehot+bX/c2F/U0hfdY/IM=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=QG6M0yEUgO4zU7IpPttDpOynCE2wjfhTe5m6uXWYYLkgVKV47L7YOTE7Aux/bOfIZ
+ bBStMpH2yel06iOylz9WVsgYnWbSjWJEIUgDQSb5+8NTm1kjsrE3DnhbijpzKYmTAb
+ SzBA8UmhRYGuOUqY3nraqxj2DSivxZP4pUtVJ4AE=
+Received: by mail-ot1-f52.google.com with SMTP id v17so7493234ote.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 05 Jun 2020 05:39:32 -0700 (PDT)
+X-Gm-Message-State: AOAM533BFlZnVqCupP5fV7A7nKJCTE51B4TARBnAw83Ux8nue31MuUIk
+ pj3vFdcLT7giFvwb8I0x+LlMRPXnvlgFCMVj7jg=
+X-Google-Smtp-Source: ABdhPJxL1vpTKa4SiVHNF4jxlFEr/kwtXV7kNMCaO7IcFlH+CQxPRNa0YigyJ10hiIsizeJtJfVdoSbTavgA+E0IP80=
+X-Received: by 2002:a9d:476:: with SMTP id 109mr7998548otc.77.1591360771988;
+ Fri, 05 Jun 2020 05:39:31 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200605121029.GE5413@sirena.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200605115200.413921-1-ardb@kernel.org>
+ <4498d910-f5cb-8559-afba-34710e9ca730@gmx.de>
+In-Reply-To: <4498d910-f5cb-8559-afba-34710e9ca730@gmx.de>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Fri, 5 Jun 2020 14:39:20 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXHS8AVczRPzySgzkkztD0yT1MXnCyMwmOt=ihZ9Bvo0vQ@mail.gmail.com>
+Message-ID: <CAMj1kXHS8AVczRPzySgzkkztD0yT1MXnCyMwmOt=ihZ9Bvo0vQ@mail.gmail.com>
+Subject: Re: [PATCH] efi/arm: decompressor: deal with HYP mode boot gracefully
+To: Heinrich Schuchardt <xypron.glpk@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_053308_130402_B3A1922E 
-X-CRM114-Status: GOOD (  22.31  )
+X-CRM114-CacheID: sfid-20200605_053933_331838_28B03767 
+X-CRM114-Status: GOOD (  34.83  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,79 +86,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "fujun \(F\)" <oliver.fu@hisilicon.com>,
- Wuxuecheng <wuxuecheng@hisilicon.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "Lixin \(Victor, Kirin\)" <victor.lixin@hisilicon.com>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Marc Zyngier <maz@kernel.org>, linux-efi <linux-efi@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 05, 2020 at 01:10:29PM +0100, Mark Brown wrote:
-> On Mon, Jun 01, 2020 at 08:03:12AM +0100, Will Deacon wrote:
-> > On Fri, May 29, 2020 at 09:03:37AM +0000, Lixin (Victor, Kirin) wrote:
-> =
+On Fri, 5 Jun 2020 at 14:20, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>
+> On 05.06.20 13:52, Ard Biesheuvel wrote:
+> > EFI on ARM only supports short descriptors, and given that it mandates
+> > that the MMU and caches are on, it is implied that booting in HYP mode
+> > is not supported.
+> >
+> > However, implementations of EFI exist (i.e., U-Boot) that ignore this
+> > requirement, which is not entirely unreasonable, given that it does
+> > not make a lot of sense to begin with.
+>
+> Hello Ard,
+>
+> thanks for investigating the differences between EDK2 and U-Boot.
+>
+> What I still do not understand is if there is a bug in U-Boot where
+> U-Boot does not conform to the UEFI specification? In this case I would
+> expect a fix in U-Boot.
+>
 
-> > >    Intel optimized getcpu syscall on Linux/Android system by using vD=
-SO, but
-> > >    ARM doesn't do any optimizations for getcpu syscall.
-> =
+U-Boot violates the EFI spec, yes. The spec is very clear on how the
+MMU is configured, and this rules out booting with the caches off, or
+booting in HYP mode.
 
-> > >    In Apple open source, TPIDRRO_EL0/TPIDRURO is used to save the CPU=
- number,
-> > >    [1]https://opensource.apple.com/source/xnu/xnu-4570.1.46/osfmk/arm=
-/cswitch.s.auto.html
-> =
+However, given that this is the situation today, we still need to deal
+with it on the Linux side.
+In parallel, fixing it in U-boot may be appropriate. However, I think
+the EFI spec is too detailed here - instead of 'booting at the highest
+non-secure privilege mode', it tells you which exact bits to set in
+SCTLR, which seems overzealous to me. In other words, even though it
+violates the letter of the spec, I don't mind dealing with this
+exception in the Linux side, since the requirement is somewhat
+unreasonable to begin with.
 
-> > >    =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0Is there any risk if using TPIDRR=
-O_EL0/TPIDRURO to implement
-> > >    the vDSO for getcpu? Is there any possible to break any ARM ABI? C=
-an you
-> > >    help us to confirm the considerations?
-> =
+> Or is it simply a deficiency of Linux that it does not properly support
+> HYP/EL2 mode on 32-bit ARM?
+>
 
-> > Do you have a use-case for high-performance getcpu() that isn't better
-> > suited to rseq()?
-> =
+No, this is definitely not the fault of Linux.
 
-> I actually have an implementation of this that I'd been waiting for the
-> end of the merge window to post, largely because I first heard of the
-> use of restartable sequences for this after I'd already implemented the
-> vDSO version - this stuff is not as discoverable as one might desire.
-> It doesn't store the CPU ID directly in TPIDRRO but rather uses TPIDDRRO
-> to store the offset of a per-CPU struct in the vDSO data in order to
-> allow for the addition of further data in the future.  I'll post it
-> today for discussion.
-> =
+> Up to now I never experience a problem booting a 32bit board via U-Boot
+> -> GRUB-EFI -> Linux. Where did you have a problem when booting via
+> U-Boot's UEFI implementation and the current Linux kernel?
+>
 
-> The latest version of the Mathieu's glibc integration patches is:
-> =
+I haven't managed to make it fail, but my only 32-bit HYP capable
+platform is QEMU. I am not 100% convinced that the EFI+HYP+U-Boot case
+is rock solid, and I may have gotten lucky with QEMU (which uses
+emulation not virtualization when running at HYP)
 
->     https://lore.kernel.org/lkml/20200527185130.5604-3-mathieu.desnoyers@=
-efficios.com/
-> =
+Do you have any A7/A15 based boards that don't print 'WARNING: Caches
+not enabled' at boot?
 
-> The only things I can see where the vDSO does better are support for the
-> node parameter of getcpu() and the ease of implementation for the users,
-> the restartable sequences code was merged all the way back in v4.18 and
-> it's still not used by any of the libcs as far as I can see.  The node
-> to CPU mapping is static so I'm not sure how exciting that is, it could
-> be looked up separately when processing data if it's important, but the =
+> Does this patch relate to the retirement of KVM on 32 ARM in Linux 5.7
+> 541ad0150ca4 ("arm: Remove 32bit KVM host support")? Without that patch
+> I would have expected Linux to work fine in HYP mode.
+>
 
-> ease of use feels like something.
-> =
+Not really. The code still has to deal with booting at HYP mode,
+regardless of whether it is used in a useful way.
 
-> One important caveat with using TPIDRRO is that if KPTI is active then
-> the KPTI trampoline uses TPIDRRO as a scratch register so unless we can
-> find another register for scratch usage the user would need to give up
-> the protections offered by KPTI or run on future hardware which can use
-> E0PD instead.  This severely limits the usefulness on current systems.
+I suppose simply dropping to SVC in the decompressor might make sense
+as well, given that booting the kernel at HYP doesn't buy you anything
+anymore in the first place. Marc may have some thoughts on that, but
+it is really a separate discussion.
 
-We only trash TPIDRRO on entry, so I think you could repopulate it on every
-exception from userspace and it *should* work with KPTI (famous last words!)
 
-Will
+>
+> >
+> > So let's make sure that we can deal with this condition gracefully.
+> > We already tolerate booting the EFI stub with the caches off (even
+> > though this violates the EFI spec as well), and so we should deal
+> > with HYP mode boot with MMU and caches either on or off.
+> >
+> > - When the MMU and caches are on, we can ignore the HYP stub altogether,
+> >   since we can just use the existing mappings, and just branch into
+> >   the decompressed kernel as usual after disabling MMU and caches.
+> >
+> > - When the MMU and caches are off, we have to drop to SVC mode so that
+> >   we can set up the page tables using short descriptors. In this case,
+> >   we need to install the HYP stub so that we can return to HYP mode
+> >   when handing over to the kernel proper.
+> >
+> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > ---
+> >  arch/arm/boot/compressed/head.S | 29 +++++++++++++++++++++++++++++
+> >  1 file changed, 29 insertions(+)
+> >
+> > diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+> > index c79db44ba128..986db86ba334 100644
+> > --- a/arch/arm/boot/compressed/head.S
+> > +++ b/arch/arm/boot/compressed/head.S
+> > @@ -1436,6 +1436,35 @@ ENTRY(efi_enter_kernel)
+> >               mrc     p15, 0, r0, c1, c0, 0   @ read SCTLR
+> >               tst     r0, #0x1                @ MMU enabled?
+> >               orreq   r4, r4, #1              @ set LSB if not
+> > +#ifdef CONFIG_ARM_VIRT_EXT
+> > +             @
+> > +             @ The EFI spec does not support booting on ARM in HYP mode,
+> > +             @ since it mandates that the MMU and caches are on, with all
+> > +             @ 32-bit addressable DRAM mapped 1:1 using short descriptors.
+> > +             @ While the EDK2 reference implementation adheres to this,
+> > +             @ U-Boot might decide to enter the EFI stub in HYP mode anyway,
+> > +             @ with the MMU and caches either on or off.
+> > +             @ In the former case, we're better off just carrying on using
+> > +             @ the cached 1:1 mapping that the firmware provided, and pretend
+> > +             @ that we are in SVC mode as far as the decompressor is
+> > +             @ concerned. However, if the caches are off, we need to drop
+> > +             @ into SVC mode now, and let the decompressor set up its cached
+> > +             @ 1:1 mapping as usual.
+> > +             @
+> > +             mov     r0, #SVC_MODE
+> > +             msr     spsr_cxsf, r0           @ record that we are in SVC mode
+> > +             bne     1f                      @ skip HYP stub install if MMU is on
+> > +
+> > +             mov     r9, r4                  @ preserve image base
+> > +             bl      __hyp_stub_install      @ returns boot mode in r4
+> > +             cmp     r4, #HYP_MODE           @ did we boot in HYP?
+> > +             bne     1f                      @ skip drop to SVC if we did not
+> > +
+> > +             safe_svcmode_maskall    r0
+> > +             msr     spsr_cxsf, r4           @ record boot mode
+> > +             mov     r4, r9                  @ restore image base
+> > +1:
+> > +#endif
+> >
+> >               mov     r0, r8                  @ DT start
+> >               add     r1, r8, r2              @ DT end
+> >
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
