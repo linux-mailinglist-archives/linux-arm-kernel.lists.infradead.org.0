@@ -2,71 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77F601EF32C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:34:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FCF91EF333
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:35:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1KbvIwpmT7kqHQ6+gLvi/1bm9Fji6Z9dSw+ovpN/tuY=; b=V1Ar0595uVwVoF
-	NTC4NJmFRRAK8W/Ji/M3PCLyieC/+Ai/oWz1qyzQbwU+Nvmhf1ptZ5W7rdKtvEFaD/1u4J3E4MCFQ
-	F/uCdBPH+F42bJ4Lr0mohujmiE/VhVD+S9nFu2ga4LW8OJH1XvwnuvR+Jim3MS9OShKYRyHGCXRp6
-	9EIuZl/nB33shsXMcdD69ir/o07Yi8ZkhXxCI8zOKAorLQ1TuXcMIN9jAiO5h1HVw3C8LkljiEDqE
-	hHu6XJ3RDF9oho4Fx3/4EMye6/WncwUpoRNtYbLwDB1WMy2IXwQ3KOaRHNQykOzn2X6cbDFge7fAF
-	u93FhJa3wjDCYjEz49Ew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1p6TxovejWrVILZMHTpQ89JPbuF9B0xUlzrPej98pA8=; b=smcpEFZNl6kJnL
+	Ibl/nW4LTJi/Nyscr+b/UW8Vzk5FJulv8oihCI3ISQhafwG9xgxm2spabjoMJ/BMZAKKL+deb8dHI
+	hcxb/h4TKn/qWjg+OQ4g2W2AA35j5n5SL6MseXgcIjZchYrxzrhTqwL4kOdSCSR1hmago9NIO4W21
+	ot1HHdWZec8ln//KdC3POnV5IaJjEU0eec2mk7KRJD7Zv2yThyCmP0uMwZBLFMUQngmp9eYacDptG
+	+Mb2ZcQWYYQ7FruJD2cfOArKAuWuTFFivBYbRS//EkrSpeCYKDKvAIMHhUx+eJIycKZXwEa2wyu9q
+	rYrjcfW/wrHFmvzJJCvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh7o9-0003p2-RG; Fri, 05 Jun 2020 08:34:33 +0000
+	id 1jh7ot-0004bz-Te; Fri, 05 Jun 2020 08:35:19 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh7nl-0003eh-51
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 08:34:12 +0000
+ id 1jh7nl-0003ef-8r
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 08:34:13 +0000
 Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 0558WZDe029739; Fri, 5 Jun 2020 10:33:54 +0200
+ 0558Wf3B029843; Fri, 5 Jun 2020 10:33:53 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=N34mf34zyNH9z+LguQ97xJdxyRAZPkEJBPLArQ3FE8Y=;
- b=ffT9jAG9sz9w3RTPQOMBMJyZbOlubEeufw8LbrMAnJ5vJaAuJOlvdx/JtIxBgAnSMaC/
- 7huB9zhrmhe6gZHQQCuaBk3OlXibba5KtGWHE9cqS0JVfEmEUUqXM0F4xFVj8qGWGRQG
- O04XeLP/wajHH2+KW7VSPRb8emz/DyeI6bXxFc6sT9EUxDngXcDs2cs4ioVetA6U7FIq
- L4Rk9B02UPDYy5aoSAqflFSuRl6tjmeEr652yaDTjxsd296oQtnj9UEc8bobUlKrYYln
- /jz/aSKyQAzi9eiT4n0GuMEhSnUO+ZueD9YtntUTgftw/UPE44V+g+IvHqQicKh6Zn4y 5w== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=7+MnleNJkiEaO/P1tUZdrf9rpTSD5jzSpmCxlBfmTnI=;
+ b=giXx+qn2MJVw97M8A3ITV3iPXJykZsf/gyxFedRPDkio8UuQ3+jj59T43IW3jIUSsuUm
+ QMrH51YrYRMMbNPr9IaFKq0uUj7JUvqXLezzmvwiltic2Ad9wrL/1EhBParyMZuBUc/E
+ /GVrMJVbj+HTaKAntn3RoAKZO9oOMrLERnefxSngfrOu2M2bXpyH3cZN0E98EdTrMDt+
+ YT99L6Al9dQjyHnTolgtbfZe+CQ12MzKXO1zlE+GaM6gzzGcbRwMMZpOY1Qg1ziwL5V8
+ GpFiBqFq7ko+hEBhSg8cuUzP5EXMDUhQMW+i1jLOHURzCQn/4hMGZwhWJCw8AKG4CKU5 /w== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 31fasma4f3-1
+ by mx07-00178001.pphosted.com with ESMTP id 31fasma4ex-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 05 Jun 2020 10:33:54 +0200
+ Fri, 05 Jun 2020 10:33:53 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 2DA55100038;
- Fri,  5 Jun 2020 10:33:51 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3D65010002A;
+ Fri,  5 Jun 2020 10:33:52 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1E3F92B21C1;
- Fri,  5 Jun 2020 10:33:51 +0200 (CEST)
-Received: from localhost (10.75.127.46) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 5 Jun 2020 10:33:50
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2C5852B21C0;
+ Fri,  5 Jun 2020 10:33:52 +0200 (CEST)
+Received: from localhost (10.75.127.44) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 5 Jun 2020 10:33:51
  +0200
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <robh+dt@kernel.org>, <mcoquelin.stm32@gmail.com>,
  <alexandre.torgue@st.com>, <linus.walleij@linaro.org>,
  <gregkh@linuxfoundation.org>
-Subject: [PATCH v4 0/5] STM32 ETZPC bus controller
-Date: Fri, 5 Jun 2020 10:33:43 +0200
-Message-ID: <20200605083348.13880-1-benjamin.gaignard@st.com>
+Subject: [PATCH v4 1/5] dt-bindings: bus: Add firewall bindings
+Date: Fri, 5 Jun 2020 10:33:44 +0200
+Message-ID: <20200605083348.13880-2-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
+In-Reply-To: <20200605083348.13880-1-benjamin.gaignard@st.com>
+References: <20200605083348.13880-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.46]
-X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
  definitions=2020-06-05_01:2020-06-04,
  2020-06-05 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_013409_524934_DA00FC2E 
-X-CRM114-Status: GOOD (  12.36  )
+X-CRM114-CacheID: sfid-20200605_013409_604548_6ED585B0 
+X-CRM114-Status: GOOD (  13.80  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -102,57 +105,83 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-STM32 Extended TrustZone Protection controller act like a firewall on the
-platform bus. Depending of its configuration devices could be accessible
-by the TrustZone, the co-processor or the non-secure world. ETZPC
-configuration could evolve at runtime for example to switch a device from
-non-secure world to co-processor.
+Add schemas for firewall consumer and provider.
 
-The series introduce 'firewall' helpers to handle the new devices-tree
-properties. These properties are not dedicated to ETZPC and will be reused
-for STM32 next generation of bus controller.
-
-version 4:
-- use bus API
-
-version 3:
-- add description in firewall consumer bindings
-- add Linus reviewed-by tag
-
-version 2:
-- fix unit name into st,stm32-etzpc.yaml example and DT
-
-
-Benjamin Gaignard (5):
-  dt-bindings: bus: Add firewall bindings
-  bus: stm32: Introduce firewall controller helpers
-  dt-bindings: bus: Add STM32 ETZPC firewall controller
-  bus: stm32: Add stm32 ETZPC firewall bus controller
-  ARM: dts: stm32: Use ETZPC firewall bus
-
- .../bindings/bus/stm32/firewall-consumer.yaml      |  36 +++
- .../bindings/bus/stm32/firewall-provider.yaml      |  18 ++
- .../bindings/bus/stm32/st,stm32-etzpc.yaml         |  46 ++++
- arch/arm/boot/dts/stm32mp151.dtsi                  |   7 +-
- drivers/bus/Kconfig                                |   2 +
- drivers/bus/Makefile                               |   2 +
- drivers/bus/stm32/Kconfig                          |  11 +
- drivers/bus/stm32/Makefile                         |   2 +
- drivers/bus/stm32/firewall.c                       | 251 +++++++++++++++++++++
- drivers/bus/stm32/firewall.h                       |  66 ++++++
- drivers/bus/stm32/stm32-etzpc.c                    | 163 +++++++++++++
- include/dt-bindings/bus/stm32/stm32-etzpc.h        |  90 ++++++++
- 12 files changed, 692 insertions(+), 2 deletions(-)
+Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ .../bindings/bus/stm32/firewall-consumer.yaml      | 36 ++++++++++++++++++++++
+ .../bindings/bus/stm32/firewall-provider.yaml      | 18 +++++++++++
+ 2 files changed, 54 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/bus/stm32/firewall-consumer.yaml
  create mode 100644 Documentation/devicetree/bindings/bus/stm32/firewall-provider.yaml
- create mode 100644 Documentation/devicetree/bindings/bus/stm32/st,stm32-etzpc.yaml
- create mode 100644 drivers/bus/stm32/Kconfig
- create mode 100644 drivers/bus/stm32/Makefile
- create mode 100644 drivers/bus/stm32/firewall.c
- create mode 100644 drivers/bus/stm32/firewall.h
- create mode 100644 drivers/bus/stm32/stm32-etzpc.c
- create mode 100644 include/dt-bindings/bus/stm32/stm32-etzpc.h
 
+diff --git a/Documentation/devicetree/bindings/bus/stm32/firewall-consumer.yaml b/Documentation/devicetree/bindings/bus/stm32/firewall-consumer.yaml
+new file mode 100644
+index 000000000000..d3d76f99b38d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/bus/stm32/firewall-consumer.yaml
+@@ -0,0 +1,36 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/bus/stm32/firewall-consumer.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Common Bus Firewall consumer binding
++
++description: |
++  Firewall properties provide the possible firewall bus controller
++  configurations for a device.
++  Bus firewall controllers are typically used to control if a hardware
++  block can perform read or write operations on bus.
++  The contents of the firewall bus configuration properties are defined by
++  the binding for the individual firewall controller device.
++
++  The first configuration 'firewall-0' or the one named 'default' is
++  applied before probing the device itself.
++
++maintainers:
++  - Benjamin Gaignard <benjamin.gaignard@st.com>
++
++# always select the core schema
++select: true
++
++properties:
++  firewall-0: true
++
++  firewall-names: true
++
++patternProperties:
++  "firewall-[0-9]":
++    $ref: "/schemas/types.yaml#/definitions/phandle-array"
++
++dependencies:
++  firewall-names: [ firewall-0 ]
+diff --git a/Documentation/devicetree/bindings/bus/stm32/firewall-provider.yaml b/Documentation/devicetree/bindings/bus/stm32/firewall-provider.yaml
+new file mode 100644
+index 000000000000..299824c620ea
+--- /dev/null
++++ b/Documentation/devicetree/bindings/bus/stm32/firewall-provider.yaml
+@@ -0,0 +1,18 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/bus/stm32/firewall-provider.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Common Bus Firewall provider binding
++
++maintainers:
++  - Benjamin Gaignard <benjamin.gaignard@st.com>
++
++properties:
++  '#firewall-cells':
++     $ref: /schemas/types.yaml#/definitions/uint32
++     description: Number of cells in a bus firewall specifier
++
++required:
++  - '#firewall-cells'
 -- 
 2.15.0
 
