@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F061F1EF6FE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:05:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3325B1EF704
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:06:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xklw28NqQZt2sEBBd8miU6PwYBLHuvi3Serdp3zO2mo=; b=oQKIp3YUNrsBr4CS9iC5iZcuP
-	t9+jrmY+BMM9ZeDWOcvJmpLoBIUXa4qYrAOE+K93XZp4xxHXwDfwI4kYYA8VtLTCpW215EYXrshmw
-	rilIRR4dbFc7Zy3qqqvleAyxf2KedG00Bbei091v4LcVbVeTdHPYDrVyd8XGq/fFbSDIYiGVY/Tyb
-	WOSLIBbkIUhhljR2HgX3NkIXFSdx/U4nr3Atr6oXUqfU1kMdDW7ue1tjVN/aTXZeP2Vx3BURRPFKy
-	Dd/91gXCOhiGREdcPaNiPUif/inMlBFB0QWRdQ7nGnIH3VlaQffIny+Hj58IWE8aWQNrjLUuC8vK3
-	Ivx6GeYrQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=jSRov2zJBv+v43KuhGlpQp/9/FvUxcpt1QjdWq5tidk=; b=n7e/f0QH8aVApT5xZ8yBl/cbjE
+	KKSFBB9kS8rDp9WSGC6TQ8VQQXwUmDQzM1PorYD8jA7u15MmWuNGsxguc2zQfXUTdz/4S8xOTmftM
+	ra71E4I3vZUzF0p+whQHhN6sP9sj2Cyg/m2hwrGYx8IsjjsVCV3u/xL0t6STs5Vy0TNpPIffzTWpO
+	FOeysRZCpGsNkHgHMEEXz3ietWE9fyI1dtvw5ZijMRyT6Du5u3S6Rwts8BqZpfz5UI3nG+H9rtK2x
+	HomAYqwVmG6GFwbp/Y1mhO/lNF3NNkWB1Bw+9Kb9Gu3D0hwfbQTHhAKH6TXHXLq8Lc2h6x2e3xaFz
+	RzFoa+jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhB65-0007kI-H5; Fri, 05 Jun 2020 12:05:17 +0000
-Received: from mx2.suse.de ([195.135.220.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhB5l-0007jk-HH; Fri, 05 Jun 2020 12:04:59 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 7D510AEBE;
- Fri,  5 Jun 2020 12:04:58 +0000 (UTC)
-Message-ID: <d8be3a45491224e0c91355131a9bcf605f38fb76.camel@suse.de>
-Subject: Re: [PATCH v3 20/25] clk: bcm: rpi: Add an enum for the firmware
- clocks
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Maxime Ripard <maxime@cerno.tech>
-Date: Fri, 05 Jun 2020 14:04:51 +0200
-In-Reply-To: <c56fb0a912fe254416ed5a247e6fb6d79fb604bc.1590594293.git-series.maxime@cerno.tech>
-References: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
- <c56fb0a912fe254416ed5a247e6fb6d79fb604bc.1590594293.git-series.maxime@cerno.tech>
-User-Agent: Evolution 3.36.2 
+	id 1jhB75-00026z-MA; Fri, 05 Jun 2020 12:06:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jhB6w-00026M-2x
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:06:11 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB6C12B;
+ Fri,  5 Jun 2020 05:06:06 -0700 (PDT)
+Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 235B53F305;
+ Fri,  5 Jun 2020 05:06:05 -0700 (PDT)
+References: <20200604123932.20512-1-benjamin.gaignard@st.com>
+ <20200604123932.20512-3-benjamin.gaignard@st.com>
+User-agent: mu4e 0.9.17; emacs 26.3
+From: Valentin Schneider <valentin.schneider@arm.com>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Re: [PATCH v3 2/3] media: stm32-dcmi: Set minimum cpufreq requirement
+In-reply-to: <20200604123932.20512-3-benjamin.gaignard@st.com>
+Date: Fri, 05 Jun 2020 13:05:59 +0100
+Message-ID: <jhj5zc5iuoo.mognet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_050457_866020_DD99ECC0 
-X-CRM114-Status: GOOD (  14.04  )
+X-CRM114-CacheID: sfid-20200605_050610_216998_9CE1B2AA 
+X-CRM114-Status: GOOD (  19.11  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,125 +63,215 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5910368620802783507=="
+Cc: alexandre.torgue@st.com, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, hugues.fruchet@st.com, mchehab@kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5910368620802783507==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-GP9+0KNilneDNEwCxB11"
-
-
---=-GP9+0KNilneDNEwCxB11
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, 2020-05-27 at 17:45 +0200, Maxime Ripard wrote:
-> While the firmware allows us to discover the available clocks, we need to
-> discriminate those clocks to only register the ones meaningful to Linux.
-> The firmware also doesn't provide a clock name, so having a list of the I=
-D
-> will help us to give clocks a proper name later on.
->=20
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+On 04/06/20 13:39, Benjamin Gaignard wrote:
+> Before start streaming set cpufreq minimum frequency requirement.
+> The cpufreq governor will adapt the frequencies and we will have
+> no latency for handling interrupts.
+> The frequency requirement is retrieved from the device-tree node.
+>
+> While streaming be notified if the IRQ affinity change thanks to
+> irq_affinity_notify callback.
+>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 > ---
->  drivers/clk/bcm/clk-raspberrypi.c | 23 +++++++++++++++++++----
->  1 file changed, 19 insertions(+), 4 deletions(-)
->=20
-> diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-
-> raspberrypi.c
-> index 5f4e2d49432f..eebd16040f8a 100644
-> --- a/drivers/clk/bcm/clk-raspberrypi.c
-> +++ b/drivers/clk/bcm/clk-raspberrypi.c
-> @@ -18,7 +18,23 @@
-> =20
->  #include <soc/bcm2835/raspberrypi-firmware.h>
-> =20
-> -#define RPI_FIRMWARE_ARM_CLK_ID		0x00000003
-> +enum rpi_firmware_clk_id {
-> +	RPI_FIRMWARE_EMMC_CLK_ID =3D 1,
-> +	RPI_FIRMWARE_UART_CLK_ID,
-> +	RPI_FIRMWARE_ARM_CLK_ID,
-> +	RPI_FIRMWARE_CORE_CLK_ID,
-> +	RPI_FIRMWARE_V3D_CLK_ID,
-> +	RPI_FIRMWARE_H264_CLK_ID,
-> +	RPI_FIRMWARE_ISP_CLK_ID,
-> +	RPI_FIRMWARE_SDRAM_CLK_ID,
-> +	RPI_FIRMWARE_PIXEL_CLK_ID,
-> +	RPI_FIRMWARE_PWM_CLK_ID,
-> +	RPI_FIRMWARE_HEVC_CLK_ID,
-> +	RPI_FIRMWARE_EMMC2_CLK_ID,
-> +	RPI_FIRMWARE_M2MC_CLK_ID,
-> +	RPI_FIRMWARE_PIXEL_BVB_CLK_ID,
-> +	RPI_FIRMWARE_NUM_CLK_ID,
-> +};
-> =20
->  #define RPI_FIRMWARE_STATE_ENABLE_BIT	BIT(0)
->  #define RPI_FIRMWARE_STATE_WAIT_BIT	BIT(1)
-> @@ -31,8 +47,6 @@
-> =20
->  #define A2W_PLL_FRAC_BITS		20
-> =20
-> -#define NUM_FW_CLKS			16
-> -
->  struct raspberrypi_clk {
->  	struct device *dev;
->  	struct rpi_firmware *firmware;
-> @@ -320,7 +334,8 @@ static int raspberrypi_clk_probe(struct platform_devi=
-ce
-> *pdev)
->  	rpi->firmware =3D firmware;
->  	platform_set_drvdata(pdev, rpi);
-> =20
-> -	clk_data =3D devm_kzalloc(dev, struct_size(clk_data, hws, NUM_FW_CLKS),
-> +	clk_data =3D devm_kzalloc(dev, struct_size(clk_data, hws,
-> +						 RPI_FIRMWARE_NUM_CLK_ID),
+> version 3:
+> - add a cpumask field to track boosted CPUs
+> - add irq_affinity_notify callback
+> - protect cpumask field with a mutex
+>
+>  drivers/media/platform/stm32/stm32-dcmi.c | 187 ++++++++++++++++++++++++++++--
+>  1 file changed, 179 insertions(+), 8 deletions(-)
+>
+> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+> index b8931490b83b..fb6ab09eaff0 100644
+> --- a/drivers/media/platform/stm32/stm32-dcmi.c
+> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
+> +static void dcmi_irq_notifier_notify(struct irq_affinity_notify *notify,
+> +				     const cpumask_t *mask)
+> +{
+> +	struct stm32_dcmi *dcmi = container_of(notify,
+> +					       struct stm32_dcmi,
+> +					       notify);
+> +	struct cpufreq_policy *p;
+> +	int cpu;
+> +
+> +	mutex_lock(&dcmi->freq_lock);
+> +	/*
+> +	 * For all boosted CPUs check if it is still the case
+> +	 * if not remove the request
+> +	 */
+> +	for_each_cpu(cpu, dcmi->boosted) {
+> +		if (cpumask_test_cpu(cpu, mask))
+> +			continue;
+> +
+> +		p = cpufreq_cpu_get(cpu);
+> +		if (!p)
+> +			continue;
+> +
+> +		freq_qos_remove_request(&per_cpu(qos_req, cpu));
+> +		cpumask_andnot(dcmi->boosted, dcmi->boosted, p->cpus);
+> +
+> +		cpufreq_cpu_put(p);
+> +	}
+> +
+> +	/*
+> +	 * For CPUs in the mask check if they are boosted if not add
+> +	 * a request
+> +	 */
+> +	for_each_cpu(cpu, mask) {
+> +		if (cpumask_test_cpu(cpu, dcmi->boosted))
+> +			continue;
+> +
+> +		p = cpufreq_cpu_get(cpu);
+> +		if (!p)
+> +			continue;
+> +
+> +		freq_qos_add_request(&p->constraints, &per_cpu(qos_req, cpu),
+> +				     FREQ_QOS_MIN, dcmi->min_frequency);
+> +		cpumask_or(dcmi->boosted, dcmi->boosted, p->cpus);
+> +		cpufreq_cpu_put(p);
+> +	}
+> +
+> +	mutex_unlock(&dcmi->freq_lock);
 
-nit: you're allocating one structure too many right?
+That looks about right.
 
-Acked-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+> +}
+> +
+> +static void dcmi_irq_notifier_release(struct kref *ref)
+> +{
+> +	/*
+> +	 * This is required by affinity notifier. We don't have anything to
+> +	 * free here.
+> +	 */
+> +}
+> +
+> +static void dcmi_get_cpu_policy(struct stm32_dcmi *dcmi)
+> +{
+> +	struct cpufreq_policy *p;
+> +	int cpu;
+> +
+> +	if (!alloc_cpumask_var(&dcmi->boosted, GFP_KERNEL))
+> +		return;
 
-Regards,
-Nicolas
+I think you want to actually return i.e. -ENOMEM and do cleanups in the
+probe; otherwise you'll silently continue.
 
+> +
+> +	mutex_lock(&dcmi->freq_lock);
+> +
+> +	for_each_cpu(cpu, irq_get_affinity_mask(dcmi->irq)) {
 
---=-GP9+0KNilneDNEwCxB11
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+When I suggested serialization, I was thinking we may want to use the irq's
+desc lock to prevent the affinity from moving under our feet. Something
+like:
 
------BEGIN PGP SIGNATURE-----
+  CPU A                                          CPU B
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7aNOMACgkQlfZmHno8
-x/663Af/Ue9v4O4m3tuVBEUtlVFqdD+i3sT2CM6Kgid7VjNWLvsgN8tbreLEg/kj
-MSPVWTG+XKpO/gk+qom/1tuUTCXYtc69+v/ZeTUfKPr/qhrijdrgwv7MHZx53zUi
-t6ZAFskKADhFQbMXPQQjXzUUwAtSf+RpWGIz2QcLpX6k3KlYkSYcVs2V5l1uxcv6
-xa7cBA3m+CPK2URXdFdyrb1+xCKKL+hWPTI8Sxhb/jST92xsfV3m/nV6x9NaJweI
-tqb7oybKtgK5D8nmpU7Uk5cFMrN/c+TUpgB8fC+j4Wk/laqtNI5MsIC/5oZsnXlq
-JJwitiIAqvtbem36Y5KbsOjGUhW3JQ==
-=ytwt
------END PGP SIGNATURE-----
+  for_each_cpu(cpu, mask)
+    cpu = cpumask_next(cpu, mask)
 
---=-GP9+0KNilneDNEwCxB11--
+    // ...                                       cpumask_copy(desc->irq_common_data.affinity, mask)
 
+    cpu = cpumask_next(cpu, mask)
 
+Now, should that happen, we would still queue the notifier and run it
+shortly after - and since you track which CPUs are boosted, I don't think
+we have any loss of information here.
 
---===============5910368620802783507==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+We may have yet another affinity change while the notifier is still queued;
+but the notifier boilerplate does grab the desc lock, so I think it's all
+good - it wasn't all super obvious so I figured I'd still point it out.
+
+> +		if (cpumask_test_cpu(cpu, dcmi->boosted))
+> +			continue;
+> +
+> +		p = cpufreq_cpu_get(cpu);
+> +		if (!p)
+> +			continue;
+> +
+> +		freq_qos_add_request(&p->constraints, &per_cpu(qos_req, cpu),
+> +				     FREQ_QOS_MIN, FREQ_QOS_MIN_DEFAULT_VALUE);
+> +
+> +		cpumask_or(dcmi->boosted, dcmi->boosted, p->cpus);
+> +
+> +		cpufreq_cpu_put(p);
+> +	}
+> +
+> +	mutex_unlock(&dcmi->freq_lock);
+> +}
+> +
+> +static void dcmi_put_cpu_policy(struct stm32_dcmi *dcmi)
+> +{
+> +	struct cpufreq_policy *p;
+> +	int cpu;
+> +
+> +	mutex_lock(&dcmi->freq_lock);
+> +
+> +	for_each_cpu(cpu, irq_get_affinity_mask(dcmi->irq)) {
+> +		if (!cpumask_test_cpu(cpu, dcmi->boosted))
+> +			continue;
+> +
+> +		p = cpufreq_cpu_get(cpu);
+> +		if (!p)
+> +			continue;
+> +
+> +		freq_qos_remove_request(&per_cpu(qos_req, cpu));
+> +		cpumask_andnot(dcmi->boosted, dcmi->boosted, p->cpus);
+> +
+> +		cpufreq_cpu_put(p);
+> +	}
+> +
+> +	free_cpumask_var(dcmi->boosted);
+> +
+> +	mutex_unlock(&dcmi->freq_lock);
+> +}
+> +
+> +static void dcmi_set_min_frequency(struct stm32_dcmi *dcmi, s32 freq)
+> +{
+> +	struct irq_affinity_notify *notify = &dcmi->notify;
+> +	int cpu;
+> +
+> +	mutex_lock(&dcmi->freq_lock);
+> +
+> +	for_each_cpu(cpu, irq_get_affinity_mask(dcmi->irq)) {
+> +		if (!cpumask_test_cpu(cpu, dcmi->boosted))
+> +			continue;
+> +
+
+If the affinity changed between say .probe() and .start_streaming(), IIUC
+you may skip CPUs here - and even if you initialize the notifier earlier in
+the function (see below), that won't help you.
+
+I think dcmi_irq_notifier_notify() does almost all you want, if it also did
+the QoS update for CPUs that weren't affected by the affinity change, you
+may be able to just do:
+
+   dcmi_irq_notifier_notify(irq_get_affinity_mask(dcmi->irq));
+
+Or something along those lines.
+
+> +		if (!freq_qos_request_active(&per_cpu(qos_req, cpu)))
+> +			continue;
+> +
+> +		freq_qos_update_request(&per_cpu(qos_req, cpu), freq);
+> +	}
+> +
+> +	mutex_unlock(&dcmi->freq_lock);
+> +
+> +	if (freq != FREQ_QOS_MIN_DEFAULT_VALUE) {
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5910368620802783507==--
-
-
