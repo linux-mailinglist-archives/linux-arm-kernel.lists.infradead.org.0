@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA0F11F0293
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:44:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7DF9D1F0295
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:45:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GSMFGjWXXHOph+RjjvpvnhkCGevfa58fVfPffeAZaVI=; b=WkO6SoFBIyQJL9
-	2nMNDBt54Gqye+lJsdC6ioPks0m+urG/Jh3jkMHd0uGFH+aWv3llpdewM9NWjg4r6KEbxyT1hcPVY
-	e5gssBSPVqwzA16qsmEP5q47Z51PfGhqXbX70C1E/g8lWKAK8mU0TnTkafSMACufbt9jQVYpl2/Xp
-	zr67ZhAxPpJwhqu5YipRzq+65PEt9GePRz5vODobkLxwOmuV6lTuPK6czOI54X1xg6y/3Cb3hwPQU
-	n65dJ2hgdKR7y0A9xbvgMV8cKN2KyF4jD15IsbeqgJTtSy8JNvUHYwHBHstd8TfxctUged6FIU+/7
-	m2ABD43QcYsFkAubPF7Q==;
+	List-Owner; bh=x1PL+fFbMhEaqCpcDPyalsCMsjlyKqwzTcS+mFD5exc=; b=kfrxf7uMoC95Aq
+	yXvU1CklHzLjJ+PWlmbH/idyg5wyGdFgjavEhG+aQHGPaAfT+9fGvM3IbWr+++P2i0dzRbDjUupd/
+	B6fxSkP4mfys0qvaePlTK51OthlqL6LxDlNJFLkEkh6Nn3bqcv4hOp/gnMHyYj2o3yATYfkQCSOzK
+	Usvy+AKUN6JWWM23gqh+qnutOyrdXMGxYpWX9YagBLd+8+IA2Vx/ws49kV6oLErZeUgbf5Pi8V964
+	KSc1I6xrdtiS9tnykMh0YtUmMi4HkZxqytgaL7LM7Ce87aihC92cqI7y+ceZ2NSyECnbKIbvodog7
+	Bin/SQMWTA10Ng0UP1RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhK8g-0001Gp-Pv; Fri, 05 Jun 2020 21:44:34 +0000
+	id 1jhK9U-0001p9-FG; Fri, 05 Jun 2020 21:45:24 +0000
 Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhK3a-0002lz-JD
+ id 1jhK3a-0002lv-UL
  for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 21:39:20 +0000
-IronPort-SDR: v99fNHySz1nAx05hnEOSU8nKIBCSU25T9Q3zfJa/Hg+tTj5ls5kBeuwb0N2dOk8kjjtNCKUsSR
- BGM2p+cO7Grw==
+IronPort-SDR: EHVf8MfhT1FW7+zTXW8Fbp1vyGPMxCM9xxZ1WF8I60915FOGeY+Bcfn6ctSA+omf68VAfFHeYP
+ CkEJZpDxx5TQ==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga002.jf.intel.com ([10.7.209.21])
  by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 05 Jun 2020 14:39:08 -0700
-IronPort-SDR: H8FtkyTkq+kfR3GM/MSnkl6Fv5ZNCYmvyGw5Iw2YQz/49QgCjYUqVBtIE3U1lDEulgImpTXOAe
- egrvLr8RD3rQ==
+ 05 Jun 2020 14:39:09 -0700
+IronPort-SDR: drkA71YNAIoK52TQI0JTaHbh7xNi+AMngxAAIFufzVrtFGyLsEpQm9nwP0i0YUnJE70U07WeKt
+ 3iT2kn7Z9Pjg==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,477,1583222400"; d="scan'208";a="287860911"
+X-IronPort-AV: E=Sophos;i="5.73,477,1583222400"; d="scan'208";a="287860914"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.152])
  by orsmga002.jf.intel.com with ESMTP; 05 Jun 2020 14:39:08 -0700
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 15/21] KVM: Move x86's MMU memory cache helpers to common KVM
- code
-Date: Fri,  5 Jun 2020 14:38:47 -0700
-Message-Id: <20200605213853.14959-16-sean.j.christopherson@intel.com>
+Subject: [PATCH 16/21] KVM: arm64: Drop @max param from
+ mmu_topup_memory_cache()
+Date: Fri,  5 Jun 2020 14:38:48 -0700
+Message-Id: <20200605213853.14959-17-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200605213853.14959-1-sean.j.christopherson@intel.com>
 References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_143918_703162_89CFBAB7 
-X-CRM114-Status: GOOD (  11.78  )
+X-CRM114-CacheID: sfid-20200605_143919_010362_8DD9508C 
+X-CRM114-Status: GOOD (  11.11  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -88,172 +88,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move x86's memory cache helpers to common KVM code so that they can be
-reused by arm64 and MIPS in future patches.
+Replace the @max param in mmu_topup_memory_cache() and instead use
+ARRAY_SIZE() to terminate the loop to fill the cache.  This removes a
+BUG_ON() and sets the stage for moving arm64 to the common memory cache
+implementation.
 
-Suggested-by: Christoffer Dall <christoffer.dall@arm.com>
+No functional change intended.
+
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/mmu/mmu.c   | 53 --------------------------------------
- include/linux/kvm_host.h |  7 +++++
- virt/kvm/kvm_main.c      | 55 ++++++++++++++++++++++++++++++++++++++++
- 3 files changed, 62 insertions(+), 53 deletions(-)
+ arch/arm64/kvm/mmu.c | 12 ++++--------
+ 1 file changed, 4 insertions(+), 8 deletions(-)
 
-diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-index b85d3e8e8403..a627437f73fd 100644
---- a/arch/x86/kvm/mmu/mmu.c
-+++ b/arch/x86/kvm/mmu/mmu.c
-@@ -1060,47 +1060,6 @@ static void walk_shadow_page_lockless_end(struct kvm_vcpu *vcpu)
- 	local_irq_enable();
+diff --git a/arch/arm64/kvm/mmu.c b/arch/arm64/kvm/mmu.c
+index a1f6bc70c4e4..9398b66f8a87 100644
+--- a/arch/arm64/kvm/mmu.c
++++ b/arch/arm64/kvm/mmu.c
+@@ -124,15 +124,13 @@ static void stage2_dissolve_pud(struct kvm *kvm, phys_addr_t addr, pud_t *pudp)
+ 	put_page(virt_to_page(pudp));
  }
  
--static inline void *mmu_memory_cache_alloc_obj(struct kvm_mmu_memory_cache *mc,
--					       gfp_t gfp_flags)
--{
--	gfp_flags |= mc->gfp_zero;
--
--	if (mc->kmem_cache)
--		return kmem_cache_alloc(mc->kmem_cache, gfp_flags);
--	else
--		return (void *)__get_free_page(gfp_flags);
--}
--
--static int kvm_mmu_topup_memory_cache(struct kvm_mmu_memory_cache *mc, int min)
--{
--	void *obj;
--
--	if (mc->nobjs >= min)
--		return 0;
--	while (mc->nobjs < ARRAY_SIZE(mc->objects)) {
--		obj = mmu_memory_cache_alloc_obj(mc, GFP_KERNEL_ACCOUNT);
--		if (!obj)
--			return mc->nobjs >= min ? 0 : -ENOMEM;
--		mc->objects[mc->nobjs++] = obj;
--	}
--	return 0;
--}
--
--static int kvm_mmu_memory_cache_nr_free_objects(struct kvm_mmu_memory_cache *mc)
--{
--	return mc->nobjs;
--}
--
--static void kvm_mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc)
--{
--	while (mc->nobjs) {
--		if (mc->kmem_cache)
--			kmem_cache_free(mc->kmem_cache, mc->objects[--mc->nobjs]);
--		else
--			free_page((unsigned long)mc->objects[--mc->nobjs]);
--	}
--}
--
- static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu, bool maybe_indirect)
+-static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache,
+-				  int min, int max)
++static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache, int min)
  {
- 	int r;
-@@ -1132,18 +1091,6 @@ static void mmu_free_memory_caches(struct kvm_vcpu *vcpu)
- 	kvm_mmu_free_memory_cache(&vcpu->arch.mmu_page_header_cache);
- }
+ 	void *page;
  
--static void *kvm_mmu_memory_cache_alloc(struct kvm_mmu_memory_cache *mc)
--{
--	void *p;
--
--	if (WARN_ON(!mc->nobjs))
--		p = mmu_memory_cache_alloc_obj(mc, GFP_ATOMIC | __GFP_ACCOUNT);
--	else
--		p = mc->objects[--mc->nobjs];
--	BUG_ON(!p);
--	return p;
--}
--
- static struct pte_list_desc *mmu_alloc_pte_list_desc(struct kvm_vcpu *vcpu)
- {
- 	return kvm_mmu_memory_cache_alloc(&vcpu->arch.mmu_pte_list_desc_cache);
-diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
-index d38d6b9c24be..802b9e2306f0 100644
---- a/include/linux/kvm_host.h
-+++ b/include/linux/kvm_host.h
-@@ -815,6 +815,13 @@ void kvm_vcpu_on_spin(struct kvm_vcpu *vcpu, bool usermode_vcpu_not_eligible);
- void kvm_flush_remote_tlbs(struct kvm *kvm);
- void kvm_reload_remote_mmus(struct kvm *kvm);
+-	BUG_ON(max > KVM_NR_MEM_OBJS);
+ 	if (cache->nobjs >= min)
+ 		return 0;
+-	while (cache->nobjs < max) {
++	while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
+ 		page = (void *)__get_free_page(GFP_PGTABLE_USER);
+ 		if (!page)
+ 			return -ENOMEM;
+@@ -1356,8 +1354,7 @@ int kvm_phys_addr_ioremap(struct kvm *kvm, phys_addr_t guest_ipa,
+ 			pte = kvm_s2pte_mkwrite(pte);
  
-+#ifdef KVM_ARCH_NR_OBJS_PER_MEMORY_CACHE
-+int kvm_mmu_topup_memory_cache(struct kvm_mmu_memory_cache *mc, int min);
-+int kvm_mmu_memory_cache_nr_free_objects(struct kvm_mmu_memory_cache *mc);
-+void kvm_mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc);
-+void *kvm_mmu_memory_cache_alloc(struct kvm_mmu_memory_cache *mc);
-+#endif
-+
- bool kvm_make_vcpus_request_mask(struct kvm *kvm, unsigned int req,
- 				 struct kvm_vcpu *except,
- 				 unsigned long *vcpu_bitmap, cpumask_var_t tmp);
-diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-index 4db151f6101e..fead5f1d5594 100644
---- a/virt/kvm/kvm_main.c
-+++ b/virt/kvm/kvm_main.c
-@@ -342,6 +342,61 @@ void kvm_reload_remote_mmus(struct kvm *kvm)
- 	kvm_make_all_cpus_request(kvm, KVM_REQ_MMU_RELOAD);
- }
+ 		ret = mmu_topup_memory_cache(&cache,
+-					     kvm_mmu_cache_min_pages(kvm),
+-					     KVM_NR_MEM_OBJS);
++					     kvm_mmu_cache_min_pages(kvm));
+ 		if (ret)
+ 			goto out;
+ 		spin_lock(&kvm->mmu_lock);
+@@ -1737,8 +1734,7 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+ 	up_read(&current->mm->mmap_sem);
  
-+#ifdef KVM_ARCH_NR_OBJS_PER_MEMORY_CACHE
-+static inline void *mmu_memory_cache_alloc_obj(struct kvm_mmu_memory_cache *mc,
-+					       gfp_t gfp_flags)
-+{
-+	gfp_flags |= mc->gfp_zero;
-+
-+	if (mc->kmem_cache)
-+		return kmem_cache_alloc(mc->kmem_cache, gfp_flags);
-+	else
-+		return (void *)__get_free_page(gfp_flags);
-+}
-+
-+int kvm_mmu_topup_memory_cache(struct kvm_mmu_memory_cache *mc, int min)
-+{
-+	void *obj;
-+
-+	if (mc->nobjs >= min)
-+		return 0;
-+	while (mc->nobjs < ARRAY_SIZE(mc->objects)) {
-+		obj = mmu_memory_cache_alloc_obj(mc, GFP_KERNEL_ACCOUNT);
-+		if (!obj)
-+			return mc->nobjs >= min ? 0 : -ENOMEM;
-+		mc->objects[mc->nobjs++] = obj;
-+	}
-+	return 0;
-+}
-+
-+int kvm_mmu_memory_cache_nr_free_objects(struct kvm_mmu_memory_cache *mc)
-+{
-+	return mc->nobjs;
-+}
-+
-+void kvm_mmu_free_memory_cache(struct kvm_mmu_memory_cache *mc)
-+{
-+	while (mc->nobjs) {
-+		if (mc->kmem_cache)
-+			kmem_cache_free(mc->kmem_cache, mc->objects[--mc->nobjs]);
-+		else
-+			free_page((unsigned long)mc->objects[--mc->nobjs]);
-+	}
-+}
-+
-+void *kvm_mmu_memory_cache_alloc(struct kvm_mmu_memory_cache *mc)
-+{
-+	void *p;
-+
-+	if (WARN_ON(!mc->nobjs))
-+		p = mmu_memory_cache_alloc_obj(mc, GFP_ATOMIC | __GFP_ACCOUNT);
-+	else
-+		p = mc->objects[--mc->nobjs];
-+	BUG_ON(!p);
-+	return p;
-+}
-+#endif
-+
- static void kvm_vcpu_init(struct kvm_vcpu *vcpu, struct kvm *kvm, unsigned id)
- {
- 	mutex_init(&vcpu->mutex);
+ 	/* We need minimum second+third level pages */
+-	ret = mmu_topup_memory_cache(memcache, kvm_mmu_cache_min_pages(kvm),
+-				     KVM_NR_MEM_OBJS);
++	ret = mmu_topup_memory_cache(memcache, kvm_mmu_cache_min_pages(kvm));
+ 	if (ret)
+ 		return ret;
+ 
 -- 
 2.26.0
 
