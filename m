@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC4FF1EFEE7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 19:34:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C5251EFEFE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 19:34:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=K4f8fyjMtI4mooKlu2Sj/X3NUEmBzOzxjDkHwrLhpsY=; b=MBDZIODIXetULZtdd3gHgPj0gH
-	GUgC31ZuMIszsH5Frl/hxPeBjlkj+mb+eDC11/PmVXZnH2WsRkZ/XFm3cxIGdeG9zJ/FXmbG1lU5x
-	RmO9iqbhzMobykT3w0qsEnpm8/mIDpKKbR+s25nA0r5KRiivS8yTWVv4nkcO/4W2Zk0x6zQq4WCWC
-	bVgIbpBWp0eTGpdIjDsUM7bsUQPS7Dmww8afJseF+qVWyY2tjF4NRrQJhTiyS61Lo8kS/cntcx/bS
-	SywMb2iagxjT+jxFK4mzwTVfGvDXeBgUeGyOhWW66K7mikKboU4dcUB3Euu6d4axCd21/qxFo8JWS
-	c5mt7Sqw==;
+	bh=HaxSJCo5G3fkZ5ecXRchausm6xPMPKVd/Wn0RNgDCF0=; b=Pbm5S0yYws9YRot/01KnQTTztY
+	a6oMdPNCpzeRi34IQ33xVo/s1Q+iJJ7+VB6ZnmFhlbIKHNBXs8IsPJ/2Qk0+Skdb+KPJHsaKtERnx
+	wJgUE5W2OAnpnQ7USKfAbFyhohh+NsEBe32dMHxZRhg+GuKhW0JZr5ehsiXcKP/n7H86rTkEdU0kt
+	mZ+XiSS4xFMrJKGMEyP4lTqh/JyUrADav7n2vQKzFU+PLyR4Vs/OEdJYX7xpRGpFscuMcEPzvhevG
+	KeyZwQm/SOo7mgzro//QFEsL5jK7T7cQiRU1LPG2Hpwhm2UT6/KsWDKNvdfcAuMSE/qyeCbpWCyKU
+	guGzpkQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhGEC-0004sO-7S; Fri, 05 Jun 2020 17:34:00 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jhGEY-00053z-Jt; Fri, 05 Jun 2020 17:34:22 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhGDz-0004re-Te
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 17:33:49 +0000
+ id 1jhGE1-0004s0-ED
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 17:33:50 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 62DAB2A506F
+ (Authenticated sender: andrzej.p) with ESMTPSA id 15A3D2A5070
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
@@ -33,22 +33,22 @@ To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
  linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
  patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
  platform-driver-x86@vger.kernel.org
-Subject: [PATCH v3 0/7] Support inhibiting input devices
-Date: Fri,  5 Jun 2020 19:33:28 +0200
-Message-Id: <20200605173335.13753-1-andrzej.p@collabora.com>
+Subject: [PATCH v3 1/7] Input: add input_device_enabled()
+Date: Fri,  5 Jun 2020 19:33:29 +0200
+Message-Id: <20200605173335.13753-2-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200604072853.GP89269@dtor-ws>
+In-Reply-To: <20200605173335.13753-1-andrzej.p@collabora.com>
 References: <20200604072853.GP89269@dtor-ws>
+ <20200605173335.13753-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_103348_219434_3CF71461 
-X-CRM114-Status: GOOD (  11.73  )
+X-CRM114-CacheID: sfid-20200605_103349_600373_F9C4266C 
+X-CRM114-Status: UNSURE (   9.65  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -89,104 +89,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Userspace might want to implement a policy to temporarily disregard input
-from certain devices.
+A helper function for drivers to decide if the device is used or not.
+A lockdep check is introduced as inspecting ->users should be done under
+input device's mutex.
 
-An example use case is a convertible laptop, whose keyboard can be folded
-under the screen to create tablet-like experience. The user then must hold
-the laptop in such a way that it is difficult to avoid pressing the keyboard
-keys. It is therefore desirable to temporarily disregard input from the
-keyboard, until it is folded back. This obviously is a policy which should
-be kept out of the kernel, but the kernel must provide suitable means to
-implement such a policy.
+Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
+---
+ drivers/input/input.c | 8 ++++++++
+ include/linux/input.h | 2 ++
+ 2 files changed, 10 insertions(+)
 
-Due to interactions with suspend/resume, a helper has been added for drivers
-to decide if the device is being used or not (PATCH 1/7) and it has been
-applied to relevant drivers (PATCH 2,4,5,6/7).
-
-PATCH 7/7 adds support for inhibiting input devices.
-
-This work is inspired by:
-
-https://chromium.googlesource.com/chromiumos/third_party/kernel/+/45c2d7bb398f74adfae0017e20b224152fde3822
-
-and
-
-https://chromium.googlesource.com/chromiumos/third_party/kernel/+/4ce0e8a3697edb8fd071110b3af65014512061c7
-
-In this respin the elan_i2c patch is dropped and converting it will be
-addressed later.
-
-v2..v3:
-- ignored autorepeat events in input_get_disposition() if a key is not
-pressed (Hans)
-- dropped inhibit()/uninhibit() driver callbacks (Hans)
-- split ACPI button patch into taking the lock and using the helper (Rafael)
-- dropped the elan_i2c conversion
-- fixed typos in exynos adc
-
-v1..v2:
-- added input_device_enabled() helper and used it in drivers (Dmitry)
-- the fact of open() and close() being called in inhibit/uninhibit paths has
-been emphasized in the commit message of PATCH 6/7 (Dmitry)
-
-Andrzej Pietrasiewicz (6):
-  Input: add input_device_enabled()
-  Input: use input_device_enabled()
-  ACPI: button: Access input device's users under appropriate mutex
-  ACPI: button: Use input_device_enabled() helper
-  iio: adc: exynos: Use input_device_enabled()
-  platform/x86: thinkpad_acpi: Use input_device_enabled()
-
-Patrik Fimml (1):
-  Input: Add "inhibited" property
-
- drivers/acpi/button.c                       |   7 +-
- drivers/iio/adc/exynos_adc.c                |  11 +-
- drivers/input/input.c                       | 121 +++++++++++++++++++-
- drivers/input/joystick/xpad.c               |   4 +-
- drivers/input/keyboard/ep93xx_keypad.c      |   2 +-
- drivers/input/keyboard/gpio_keys.c          |   4 +-
- drivers/input/keyboard/imx_keypad.c         |   4 +-
- drivers/input/keyboard/ipaq-micro-keys.c    |   2 +-
- drivers/input/keyboard/lpc32xx-keys.c       |   4 +-
- drivers/input/keyboard/pmic8xxx-keypad.c    |   4 +-
- drivers/input/keyboard/pxa27x_keypad.c      |   2 +-
- drivers/input/keyboard/samsung-keypad.c     |   4 +-
- drivers/input/keyboard/spear-keyboard.c     |   8 +-
- drivers/input/keyboard/st-keyscan.c         |   4 +-
- drivers/input/keyboard/tegra-kbc.c          |   4 +-
- drivers/input/misc/drv260x.c                |   4 +-
- drivers/input/misc/drv2665.c                |   4 +-
- drivers/input/misc/drv2667.c                |   4 +-
- drivers/input/misc/gp2ap002a00f.c           |   4 +-
- drivers/input/misc/kxtj9.c                  |   4 +-
- drivers/input/misc/sirfsoc-onkey.c          |   2 +-
- drivers/input/mouse/navpoint.c              |   4 +-
- drivers/input/touchscreen/ad7879.c          |   6 +-
- drivers/input/touchscreen/atmel_mxt_ts.c    |   4 +-
- drivers/input/touchscreen/auo-pixcir-ts.c   |   8 +-
- drivers/input/touchscreen/bu21029_ts.c      |   4 +-
- drivers/input/touchscreen/chipone_icn8318.c |   4 +-
- drivers/input/touchscreen/cyttsp_core.c     |   4 +-
- drivers/input/touchscreen/eeti_ts.c         |   4 +-
- drivers/input/touchscreen/ektf2127.c        |   4 +-
- drivers/input/touchscreen/imx6ul_tsc.c      |   4 +-
- drivers/input/touchscreen/ipaq-micro-ts.c   |   2 +-
- drivers/input/touchscreen/iqs5xx.c          |   4 +-
- drivers/input/touchscreen/lpc32xx_ts.c      |   4 +-
- drivers/input/touchscreen/melfas_mip4.c     |   4 +-
- drivers/input/touchscreen/mms114.c          |   6 +-
- drivers/input/touchscreen/pixcir_i2c_ts.c   |   8 +-
- drivers/input/touchscreen/ucb1400_ts.c      |   4 +-
- drivers/input/touchscreen/wm97xx-core.c     |  14 ++-
- drivers/input/touchscreen/zforce_ts.c       |   8 +-
- drivers/platform/x86/thinkpad_acpi.c        |   4 +-
- include/linux/input.h                       |  14 ++-
- 42 files changed, 230 insertions(+), 95 deletions(-)
-
-
-base-commit: 3d77e6a8804abcc0504c904bd6e5cdf3a5cf8162
+diff --git a/drivers/input/input.c b/drivers/input/input.c
+index 3cfd2c18eebd..41377bfa142d 100644
+--- a/drivers/input/input.c
++++ b/drivers/input/input.c
+@@ -2127,6 +2127,14 @@ void input_enable_softrepeat(struct input_dev *dev, int delay, int period)
+ }
+ EXPORT_SYMBOL(input_enable_softrepeat);
+ 
++bool input_device_enabled(struct input_dev *dev)
++{
++	lockdep_assert_held(&dev->mutex);
++
++	return dev->users > 0;
++}
++EXPORT_SYMBOL_GPL(input_device_enabled);
++
+ /**
+  * input_register_device - register device with input core
+  * @dev: device to be registered
+diff --git a/include/linux/input.h b/include/linux/input.h
+index 56f2fd32e609..eda4587dba67 100644
+--- a/include/linux/input.h
++++ b/include/linux/input.h
+@@ -502,6 +502,8 @@ bool input_match_device_id(const struct input_dev *dev,
+ 
+ void input_enable_softrepeat(struct input_dev *dev, int delay, int period);
+ 
++bool input_device_enabled(struct input_dev *dev);
++
+ extern struct class input_class;
+ 
+ /**
 -- 
 2.17.1
 
