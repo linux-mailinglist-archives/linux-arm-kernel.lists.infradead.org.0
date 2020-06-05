@@ -2,63 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B9C71EF5AE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 12:49:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4748C1EF5B8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 12:50:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IYPmDqmPvN40kbUxjZp1wCHStUNBKMEAsx8RV2j1jKg=; b=g2z0b28dzXcF06
-	uXbbDpdlGoLp4kVfEecwM0SXpVR2oNqNWaaSMXfCMZc8c9pkUCZPuXipsoBoe9EwF2qOtTdwhmaVL
-	Kvewv5uMq8NcEIWjS5c9drGhZEmBV+qhdcmgcPvqf7ukV4otsG8jA3ljJc6aYIrVh0KWETu7BXfb/
-	F6CdmgEbiH8ePWg/0iXQrnhm1GcwHSedDuY9TqdnZCj7/3GOQlgw4DgVmiIGBP+JQ6JgaDcO2w5WA
-	pH+eh6yMo90uTISofzPWtoELF+YMlIv+d3AffXiRSZC+F19muBAqT6gJk8evJcM8Y7Uf6qFjXEooQ
-	Ium+J7PxIzjeA4K+ySqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tzJG9spfnqNahEWcx7SvCjPV2et9vzrndqPJ+HhG2Kk=; b=Nm25NYEQsf2eYBlCyHmAHYdCl
+	0OJJ5G4lxaIutoFc4lzfP8LcuctoY/v+xkYXUR4xKO4uMOYAAXWDXsKLGNQkJVLKGDwo7Ho5vsMNu
+	ODm0SwffAWHodqW+PEmp/ovJE4nkuJ7pPAoNSGvH/hD4fVY4jkyMP0XXKNQgUqlotN7sQG5gTU4f+
+	RlgUkXYeHwnlGF1+TnyWTWUA2sNeARE0bSpql37KIOy4jsmmCG0vqCPrNE6elxQgFMfrRzdjg9woW
+	Ena78XxjxbzG4Igo7wDgtJretGflvcR5Fy56X5q/aMOiFKq6sJy617ebjZRdeY1aQ2YgUc+Q/MeGf
+	vm9yQcACg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh9us-0002xT-Ep; Fri, 05 Jun 2020 10:49:38 +0000
+	id 1jh9vn-0005ks-EX; Fri, 05 Jun 2020 10:50:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh9ue-0002rn-HZ
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 10:49:26 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
+ id 1jh9vg-0005kE-Fs
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 10:50:29 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6CDDF2075B;
- Fri,  5 Jun 2020 10:49:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A76F020772;
+ Fri,  5 Jun 2020 10:50:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591354163;
- bh=cX/89CjOOUg6jmUBCST7BFjz97+vP7+nBPVaj6RGqsU=;
- h=From:To:Cc:Subject:Date:From;
- b=Yso7p38/qMftqFIRzSlmXy045MEnpGphZK7k3WIKi+17MkTkeKAxQ6YWs+xv4BCRL
- 9LNByglCG8DNWD/Q+Hsuy14JaSAciZMDJyDxu0W0h0bwmhIzhCC2jPwgVYEqpthSfN
- JwQ0Dt5WtlTAKbxIDoubwbPQoEbAXybjhvrPPL0U=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jh9ub-000U0g-QP; Fri, 05 Jun 2020 11:49:22 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: kvmarm@lists.cs.columbia.edu,
-	linux-arm-kernel@lists.infradead.org
-Subject: [kvmtool][PATCH] arm64: Obtain text offset from kernel image
-Date: Fri,  5 Jun 2020 11:49:07 +0100
-Message-Id: <20200605104907.1307967-1-maz@kernel.org>
-X-Mailer: git-send-email 2.26.2
+ s=default; t=1591354228;
+ bh=ZkmdIlShUAFHW0pi3QVcOWNFuQmL8jmheacHFvaENQw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=GLcE760t5aG1mrGcTjrY4oXPhQP87W9f9FHSm2jzdENswX23N78yJytXBV9GNzkbR
+ HeuVUKObU3X3hnvgtT8mG7IFX03o5feVM1EquN4xEo/fghn9zFIRczyA+hbjD+dXba
+ 9nY+/TtMcuy1enmXJQ+j+FTTmmFZ/Qpp2ep9hZCM=
+Date: Fri, 5 Jun 2020 11:50:26 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld
+ management controller
+Message-ID: <20200605105026.GC5413@sirena.org.uk>
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-3-michael@walle.cc>
+ <20200605065709.GD3714@dell>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, will@kernel.org,
- julien.thierry.kdev@gmail.com, ardb@kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200605065709.GD3714@dell>
+X-Cookie: Air is water with holes in it.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_034924_648567_05D25C50 
-X-CRM114-Status: GOOD (  17.94  )
+X-CRM114-CacheID: sfid-20200605_035028_546489_C46FCA67 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,194 +79,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Michael Walle <michael@walle.cc>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Type: multipart/mixed; boundary="===============8351393405076470264=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Recent changes made to Linux 5.8 have outlined that kvmtool
-hardcodes the text offset instead of reading it from the arm64
-image itself.
 
-To address this, import the image header structure into kvmtool
-and do the right thing. 32bit guests are still loaded to their
-usual locations.
+--===============8351393405076470264==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="s9fJI615cBHmzTOP"
+Content-Disposition: inline
 
-Reported-by: Ard Biesheuvel <ardb@kernel.org>
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- Makefile                           |  1 +
- arm/aarch32/include/kvm/kvm-arch.h |  2 +-
- arm/aarch64/include/asm/image.h    | 59 ++++++++++++++++++++++++++++++
- arm/aarch64/include/kvm/kvm-arch.h |  5 +--
- arm/aarch64/kvm.c                  | 30 +++++++++++++++
- arm/kvm.c                          |  2 +-
- 6 files changed, 94 insertions(+), 5 deletions(-)
- create mode 100644 arm/aarch64/include/asm/image.h
- create mode 100644 arm/aarch64/kvm.c
 
-diff --git a/Makefile b/Makefile
-index d27ff38..35bb118 100644
---- a/Makefile
-+++ b/Makefile
-@@ -179,6 +179,7 @@ ifeq ($(ARCH), arm64)
- 	OBJS		+= $(OBJS_ARM_COMMON)
- 	OBJS		+= arm/aarch64/arm-cpu.o
- 	OBJS		+= arm/aarch64/kvm-cpu.o
-+	OBJS		+= arm/aarch64/kvm.o
- 	ARCH_INCLUDE	:= $(HDRS_ARM_COMMON)
- 	ARCH_INCLUDE	+= -Iarm/aarch64/include
- 
-diff --git a/arm/aarch32/include/kvm/kvm-arch.h b/arm/aarch32/include/kvm/kvm-arch.h
-index cd31e72..a772bb1 100644
---- a/arm/aarch32/include/kvm/kvm-arch.h
-+++ b/arm/aarch32/include/kvm/kvm-arch.h
-@@ -1,7 +1,7 @@
- #ifndef KVM__KVM_ARCH_H
- #define KVM__KVM_ARCH_H
- 
--#define ARM_KERN_OFFSET(...)	0x8000
-+#define kvm__arch_get_kern_offset(...)	0x8000
- 
- #define ARM_MAX_MEMORY(...)	ARM_LOMAP_MAX_MEMORY
- 
-diff --git a/arm/aarch64/include/asm/image.h b/arm/aarch64/include/asm/image.h
-new file mode 100644
-index 0000000..c2b1321
---- /dev/null
-+++ b/arm/aarch64/include/asm/image.h
-@@ -0,0 +1,59 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+
-+#ifndef __ASM_IMAGE_H
-+#define __ASM_IMAGE_H
-+
-+#define ARM64_IMAGE_MAGIC	"ARM\x64"
-+
-+#define ARM64_IMAGE_FLAG_BE_SHIFT		0
-+#define ARM64_IMAGE_FLAG_PAGE_SIZE_SHIFT	(ARM64_IMAGE_FLAG_BE_SHIFT + 1)
-+#define ARM64_IMAGE_FLAG_PHYS_BASE_SHIFT \
-+					(ARM64_IMAGE_FLAG_PAGE_SIZE_SHIFT + 2)
-+#define ARM64_IMAGE_FLAG_BE_MASK		0x1
-+#define ARM64_IMAGE_FLAG_PAGE_SIZE_MASK		0x3
-+#define ARM64_IMAGE_FLAG_PHYS_BASE_MASK		0x1
-+
-+#define ARM64_IMAGE_FLAG_LE			0
-+#define ARM64_IMAGE_FLAG_BE			1
-+#define ARM64_IMAGE_FLAG_PAGE_SIZE_4K		1
-+#define ARM64_IMAGE_FLAG_PAGE_SIZE_16K		2
-+#define ARM64_IMAGE_FLAG_PAGE_SIZE_64K		3
-+#define ARM64_IMAGE_FLAG_PHYS_BASE		1
-+
-+#ifndef __ASSEMBLY__
-+
-+#define arm64_image_flag_field(flags, field) \
-+				(((flags) >> field##_SHIFT) & field##_MASK)
-+
-+/*
-+ * struct arm64_image_header - arm64 kernel image header
-+ * See Documentation/arm64/booting.rst for details
-+ *
-+ * @code0:		Executable code, or
-+ *   @mz_header		  alternatively used for part of MZ header
-+ * @code1:		Executable code
-+ * @text_offset:	Image load offset
-+ * @image_size:		Effective Image size
-+ * @flags:		kernel flags
-+ * @reserved:		reserved
-+ * @magic:		Magic number
-+ * @reserved5:		reserved, or
-+ *   @pe_header:	  alternatively used for PE COFF offset
-+ */
-+
-+struct arm64_image_header {
-+	__le32 code0;
-+	__le32 code1;
-+	__le64 text_offset;
-+	__le64 image_size;
-+	__le64 flags;
-+	__le64 res2;
-+	__le64 res3;
-+	__le64 res4;
-+	__le32 magic;
-+	__le32 res5;
-+};
-+
-+#endif /* __ASSEMBLY__ */
-+
-+#endif /* __ASM_IMAGE_H */
-diff --git a/arm/aarch64/include/kvm/kvm-arch.h b/arm/aarch64/include/kvm/kvm-arch.h
-index 9de623a..55ef8ed 100644
---- a/arm/aarch64/include/kvm/kvm-arch.h
-+++ b/arm/aarch64/include/kvm/kvm-arch.h
-@@ -1,9 +1,8 @@
- #ifndef KVM__KVM_ARCH_H
- #define KVM__KVM_ARCH_H
- 
--#define ARM_KERN_OFFSET(kvm)	((kvm)->cfg.arch.aarch32_guest	?	\
--				0x8000				:	\
--				0x80000)
-+struct kvm;
-+unsigned long long kvm__arch_get_kern_offset(struct kvm *kvm, int fd);
- 
- #define ARM_MAX_MEMORY(kvm)	((kvm)->cfg.arch.aarch32_guest	?	\
- 				ARM_LOMAP_MAX_MEMORY		:	\
-diff --git a/arm/aarch64/kvm.c b/arm/aarch64/kvm.c
-new file mode 100644
-index 0000000..ed23ee9
---- /dev/null
-+++ b/arm/aarch64/kvm.c
-@@ -0,0 +1,30 @@
-+#include "kvm/kvm.h"
-+
-+#include <asm/image.h>
-+
-+#include <linux/byteorder.h>
-+
-+unsigned long long kvm__arch_get_kern_offset(struct kvm *kvm, int fd)
-+{
-+	struct arm64_image_header header;
-+	off_t cur_offset;
-+	ssize_t size;
-+
-+	/* the 32bit kernel offset is a well known value */
-+	if (kvm->cfg.arch.aarch32_guest)
-+		return 0x8000;
-+
-+	cur_offset = lseek(fd, 0, SEEK_CUR);
-+	if (cur_offset == (off_t)-1 ||
-+	    lseek(fd, 0, SEEK_SET) == (off_t)-1)
-+		die("Failed to seek in image file");
-+
-+	size = xread(fd, &header, sizeof(header));
-+	if (size < 0 || (size_t)size < sizeof(header))
-+		die("Failed to read kernel image header");
-+
-+	lseek(fd, cur_offset, SEEK_SET);
-+
-+	return le64_to_cpu(header.text_offset);
-+}
-+
-diff --git a/arm/kvm.c b/arm/kvm.c
-index 1f85fc6..5aea18f 100644
---- a/arm/kvm.c
-+++ b/arm/kvm.c
-@@ -103,7 +103,7 @@ bool kvm__arch_load_kernel_image(struct kvm *kvm, int fd_kernel, int fd_initrd,
- 	 */
- 	limit = kvm->ram_start + min(kvm->ram_size, (u64)SZ_256M) - 1;
- 
--	pos = kvm->ram_start + ARM_KERN_OFFSET(kvm);
-+	pos = kvm->ram_start + kvm__arch_get_kern_offset(kvm, fd_kernel);
- 	kvm->arch.kern_guest_start = host_to_guest_flat(kvm, pos);
- 	file_size = read_file(fd_kernel, pos, limit - pos);
- 	if (file_size < 0) {
--- 
-2.26.2
+--s9fJI615cBHmzTOP
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
+On Fri, Jun 05, 2020 at 07:57:09AM +0100, Lee Jones wrote:
+> On Thu, 04 Jun 2020, Michael Walle wrote:
+
+> > +	sl28cpld->regmap = devm_regmap_init_i2c(i2c, &sl28cpld_regmap_config);
+> > +	if (IS_ERR(sl28cpld->regmap))
+> > +		return PTR_ERR(sl28cpld->regmap);
+
+> This is now a shared memory allocator and not an MFD at all.
+
+> I'm clamping down on these type of drivers!
+
+> Please find a better way to accomplish this.
+
+What is the concern with this?  Looking at the patch I'm guessing the
+concern would be that the driver isn't instantiating any MFD children
+and instead requiring them to be put in the DT?
+
+> Potentially using "simple-mfd" and "simple-regmap".
+
+> The former already exists and does what you want.  The latter doesn't
+> yet exist, but could solve your and lots of other contributor's
+> issues.
+
+I have no idea what you are thinking of when you say "simple-regmap" so
+it is difficult to comment.
+
+--s9fJI615cBHmzTOP
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl7aI3EACgkQJNaLcl1U
+h9A7hQf8CDFQ5iLpXTLY4zeynMxyWKwNzkV4jtp9HDi0METL6K488ki/EvosVeJx
+URGVB1pt6HfuZ+wo9eI4viS324oVbqB+OLEP2C2JT9IueDFeFAVv/ZID0FjrKlB8
+3L1IaFXplUYVhcSJGxL+9p6BB2RpY2jKupLmYwudJ2RKDIT/sf011ENofTZR2i/7
+mHJQsYGSN/zKTcrZm9cmx10BOmpL5aSq0hwcOM1qYqPn/tlSs09ErRh1+Tisxg+U
+3ZTBCjG5cDlPj0KIBfoZkJapLQ3YklicCzY2LTKFvP1bxloxYa4iyyy0O5oHdBaK
+vL9TOwYXvPCnUOSIH1toNvcVphaLDg==
+=gwiS
+-----END PGP SIGNATURE-----
+
+--s9fJI615cBHmzTOP--
+
+
+--===============8351393405076470264==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8351393405076470264==--
+
