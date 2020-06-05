@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FB7A1EF2D2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:10:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E9F21EF2E2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:14:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6LpJgFOtzCOMS6H+IzkJFGG3srjB4xnG+1oSN7DPlD0=; b=jpUyCVGMOGrQkP
-	3LNWk0N8iow24eDWaN0abaoVJ2n7snsLaUgkIHg0F/JMlqn56VxEBssDnfH5D20linyu5lZa/31Sh
-	CMoINlrckUjR3NLNiTqi2cEZ8Xuc+DiVoD43u6lV1OIimY3lbOwvKSollki5wBb2MxZovw321y3DN
-	019RD1hFYm3PodTl0PDwA+zwyfxr4El4cfHhne0Vr1TrcOkyME9r+Qdx5lfgxSih8tvGtojs1i558
-	CSkze97S0ZJEJzIlNtDFy3fKdZq/aFKwpFRkJNTMwulcccBJTxhLc8evFZMRR4kDRxUdpU3P0wSlD
-	9uh0LI7+Az7dUiBRRM6g==;
+	List-Owner; bh=9YUhyTu+MDdFbWlUD4jVqpn5bQo35WTpfaQq5UQaCXI=; b=Qn7IfQ4y+r9YSF
+	CzLLUspoPU69vkiacGlJIjHe0W8io+FmnN3stWZ9Yx0ygmCDTdNaEoLb+AFZxi4xgJSySuzfHbrpJ
+	lwU/9flbJE/F32FpQp2F1Cl2wHOODvnLkGVSf7vUC94LvS+b6U1JpGRhk94pFQl01LN75DoVJpL98
+	42oqSD0H/qn6W4QMstX1O42sHHgZnxbYE2TvnKi7c7HokPIBGZoQZR5F4vDq/K/tD6PJSmqhdaIFi
+	guihaQApD0vw0bx0mPjyNMmWBV/rXcvzLakeFDKV0S5GsmmWZEzeP5r/Q75Oi71AY8GjZ6RtUtX1/
+	GqxtgY1Y3CRcta1vJ5Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh7QV-0004dx-UK; Fri, 05 Jun 2020 08:10:09 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jh7Uw-0007rj-LW; Fri, 05 Jun 2020 08:14:42 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh7QF-0004c7-9V; Fri, 05 Jun 2020 08:09:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=xTC03c+VN1v9oPdUo2yGRbRXi+/1BHiQCVEdadEW0B0=; b=wBe35UXKkNUxuKRFJWItlkvuD
- 1XY++1q2yh1Zdn8E9bM44XF0UXOTbnrgJPyyFkMCF+P4VJYeq+HpcJrBCctVCNZHX/QflI8PUFqtB
- eZVzlHFtFLAMWyyURO+ZOuWjWW2UT6JYXUsEuLKMJ9qbhzww3ib7kkkI1fJmq070czJ/cCNCfTdtc
- 86LNj7hzaz4ANgBd2UcVJ/DlxPycd45pLpZ+iVRHYTIIhttw+53TPqf/dL2Ynv8/juj15jvwn3A7S
- 5jRRS8YLk88zzyi7ZU5mxkYkidghFxHNQohGA2yHxTA2VLGXaTvLNOXzek+UAYiFZxKhE4g3JDHDX
- ldCDaZPKQ==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:49608)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jh7Pb-0001ay-Ky; Fri, 05 Jun 2020 09:09:11 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jh7PW-0007IR-1u; Fri, 05 Jun 2020 09:09:06 +0100
-Date: Fri, 5 Jun 2020 09:09:06 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Neal Liu <neal.liu@mediatek.com>
-Subject: Re: Security Random Number Generator support
-Message-ID: <20200605080905.GF1551@shell.armlinux.org.uk>
-References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
- <CAMj1kXHjAdk5=-uSh_=S9j5cz42zr3h6t+YYGy+obevuQDp0fg@mail.gmail.com>
- <85dfc0142d3879d50c0ba18bcc71e199@misterjones.org>
- <1591169342.4878.9.camel@mtkswgap22>
- <fcbe37f6f9cbcde24f9c28bc504f1f0e@kernel.org>
- <20200603093416.GY1551@shell.armlinux.org.uk>
- <1591341543.19510.4.camel@mtkswgap22>
+ id 1jh7Uo-0007qs-Um
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 08:14:36 +0000
+Received: by mail-pl1-x644.google.com with SMTP id bg4so3349278plb.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 05 Jun 2020 01:14:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dep05XtC6CuktEauurS07Sy6QGbgqiv3E+ii3Ovb+Ls=;
+ b=DtPDLU5uvgVYNSLmyiKoOVclyfKzq/LadYhfYsydWTd6wNLn9WXOeNCQZ1eiRcsqpR
+ eM+UfKM607A27ZS4k9+lPQo7wLpshrnQmdyy6M0YBnJNJB92lKYWsICiQ2QqDFyV2uuP
+ mVmeaA7d2/jp9aUsu3rYaJnq2Nl9XtTb+Cm6x0hdWWSGxryrnI8gdVK8Ek+iQH8lpXnM
+ sWKr4BOYZ/6PfVnuj1aa8yhI82S6X9Ifg9IgmLIIGZx3FhgRgITl0KKSBScv8VHg7Y2J
+ iSbdP8PDzD4ZGltMHRLeHWEdsWOCm5HZzz7yODflx/bVmvni10eBB/Q6H+cMfcwqURca
+ LIKQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dep05XtC6CuktEauurS07Sy6QGbgqiv3E+ii3Ovb+Ls=;
+ b=twW0Ld+uOUV6+EDa9MBrTRSzo+turUDKjhkyOQy8BLkB7SH1sVBdeOSYV2WA4Chztr
+ nDn6AbNzF1kDbNsmYeydi7XlYyfWIRQG/POEyccLrd/754/cOTk9MX6r64H1GMW8FT3I
+ KXzPHv/Uf91X8SMR7GwgZHIWqLzsOF+9haNc1hsERVEVdscvYN1WxUkm5OyiK4ZnK2l7
+ PTSo1/bwIPLQK5FZ9u0UtLpYQc+XQHdJvqCw28lwfIJHsvIv8g2IrFCRG4FuT4BA+KZv
+ QWeadcJOHoSNsm5ZJeYiEyqGXcDbSylqQdEIXZBlIkS/rsKxZAwIRJqkhALd0+6YZ7OK
+ aiGw==
+X-Gm-Message-State: AOAM530g1IqjpcNTM27Ft5N+HHc85uChqCSV52koA0JmhXjEPvTxaFCL
+ ke4T7tUDfoosvS7x57mHqG86FQ/hyvaqNnWwejE=
+X-Google-Smtp-Source: ABdhPJy6V7rCbEiJe15C6DeQ4diyGwP3W+IH+3LGFcotcY4Lzpv76z0aCO0s2xeMP6Sc/HpdiVeb+XHZ7d/jwbWAe/g=
+X-Received: by 2002:a17:90a:ac05:: with SMTP id
+ o5mr1713137pjq.228.1591344873732; 
+ Fri, 05 Jun 2020 01:14:33 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1591341543.19510.4.camel@mtkswgap22>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-5-michael@walle.cc>
+In-Reply-To: <20200604211039.12689-5-michael@walle.cc>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Fri, 5 Jun 2020 11:14:17 +0300
+Message-ID: <CAHp75VdeD6zDc--R4NPHsiqQerzfNGwUikLN+WHMiZZVsQ8QSA@mail.gmail.com>
+Subject: Re: [PATCH v4 04/11] watchdog: add support for sl28cpld watchdog
+To: Michael Walle <michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_010951_333269_7B6F06A0 
-X-CRM114-Status: GOOD (  13.52  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200605_011435_009697_740D79CE 
+X-CRM114-Status: GOOD (  13.79  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -91,51 +94,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Julius Werner <jwerner@google.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- Marc Zyngier <maz@kernel.org>, Matt Mackall <mpm@selenic.com>,
- Sean Wang <sean.wang@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
- wsd_upstream <wsd_upstream@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Crystal Guo =?utf-8?B?KOmDreaZtik=?= <Crystal.Guo@mediatek.com>,
- Ard Biesheuvel <ardb@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 05, 2020 at 03:19:03PM +0800, Neal Liu wrote:
-> On Wed, 2020-06-03 at 17:34 +0800, Russell King - ARM Linux admin wrote:
-> > This kind of thing is something that ARM have seems to shy away from
-> > doing - it's a point I brought up many years ago when the whole
-> > trustzone thing first appeared with its SMC call.  Those around the
-> > conference table were not interested - ARM seemed to prefer every
-> > vendor to do off and do their own thing with the SMC interface.
-> 
-> Does that mean it make sense to model a sec-rng driver, and get each
-> vendor's SMC function id by DT node?
+On Fri, Jun 5, 2020 at 12:14 AM Michael Walle <michael@walle.cc> wrote:
+>
+> Add support for the watchdog of the sl28cpld board management
+> controller. This is part of a multi-function device driver.
 
-_If_ vendors have already gone off and decided to use different SMC
-function IDs for this, while keeping the rest of the SMC interface
-the same, then the choice has already been made.
+...
 
-I know on 32-bit that some of the secure world implementations can't
-be changed; they're burnt into the ROM. I believe on 64-bit that isn't
-the case, which makes it easier to standardise.
+> +#include <linux/of_device.h>
 
-Do you have visibility of how this SMC is implemented in the secure
-side?  Is it in ATF, and is it done as a vendor hack or is there an
-element of generic implementation to it?  Has it been submitted
-upstream to the main ATF repository?
+Didn't find a user of this.
+
+...
+
+> +static bool nowayout = WATCHDOG_NOWAYOUT;
+> +module_param(nowayout, bool, 0);
+> +MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
+> +                               __MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
+> +
+> +static int timeout;
+> +module_param(timeout, int, 0);
+> +MODULE_PARM_DESC(timeout, "Initial watchdog timeout in seconds");
+
+Guenter ACKed this, but I'm wondering why we still need module parameters...
+
+...
+
+> +       int ret;
+> +
+> +       ret = regmap_read(wdt->regmap, wdt->offset + WDT_COUNT, &val);
+> +
+> +       return (ret < 0) ? 0 : val;
+
+Besides extra parentheses and questionable ' < 0' part, the following
+would look better I think
+
+ret = ...
+if (ret)
+  return 0;
+
+return val;
+
+...
+
+> +       int ret;
+> +
+> +       ret = regmap_write(wdt->regmap, wdt->offset + WDT_TIMEOUT, timeout);
+> +       if (!ret)
+> +               wdd->timeout = timeout;
+> +
+> +       return ret;
+
+Similar story here:
+
+ret = ...
+if (ret)
+  return ret;
+
+wdd->... = ...
+return 0;
+
+...
+
+> +       ret = regmap_read(wdt->regmap, wdt->offset + WDT_CTRL, &status);
+
+> +       if (ret < 0)
+
+What ' < 0' means? Do we have some positive return values?
+Ditto for all your code.
+
+> +               return ret;
+
+...
+
+> +       if (status & WDT_CTRL_EN) {
+> +               sl28cpld_wdt_start(wdd);
+
+> +               set_bit(WDOG_HW_RUNNING, &wdd->status);
+
+Do you need atomic op here? Why?
+
+> +       }
+
+...
+
+> +static const struct of_device_id sl28cpld_wdt_of_match[] = {
+> +       { .compatible = "kontron,sl28cpld-wdt" },
+
+> +       {},
+
+No comma.
+
+> +};
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
