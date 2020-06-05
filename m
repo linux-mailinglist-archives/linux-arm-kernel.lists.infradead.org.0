@@ -2,60 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23FF11F0373
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jun 2020 01:19:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADB761F03AF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jun 2020 01:54:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=xIbj9330DMsfriIhP5R+m/nVrBvHsDmHD/LQTyed3B0=; b=SYC+32Dz68OWzO
-	Iy6PzsEddaLtaXHwzd/6vLH4oamG6ir3Qn/3ubLO2MoURZBh0FWilWQktjgGFNbhULzqhDnKRGEJy
-	hTZY9im0E/YGgYShCxflVgEbAud9LWxQkdwEUhTbslzn4uCYn1a7SnPyjDoE/y6FS1+6AFBSl+PMD
-	CT2/MVYhiMpVT7dzZskk3s6wK/czPa88NKR/UnJRmNh7PSJ962fOhtYIefHGWQvgZirDozibRTmzL
-	y+tXuUwFPUz1K6i/gpoKy7rkLU25tHIOz7gUVc69Vy7xVZx6DyvNmS0kI7PJ2XJJgJNCDHhFSrQHu
-	4MiEuVpFHiercDc4nVBA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k4fYaorCd52gRG6PKsGDMZNBkF4tgQHZryWXTSF5pOk=; b=QE6xG4zdoTrnDO
+	Tc1V0OLxAwK05vFaZOa8ib2fXVEuDXSTtJNyuMgBh5xANgKkkLbMKQ+y7jcsyddPKq5hIqX0Q82sv
+	LMpf1N9ekGjrE3BQ0gHIQkv1WaM4U+AUx0cDatoMvA6b40SWPGDnK23rcQ3855nFBCV44jPNjbz09
+	btBTUo2L0yRmZNPkFkCgeLv6HQ+/l9fNhmNUyHP5n6AeaXke7+fa7tBErfGAmega2/AZ7yCpK00ry
+	9wvdyS47C1rupPqIG2ByGSoKR76X6FWX4YQAyo/HHZC6bzlsVWcYyhtZOcx359RVeObPt3PBKjQW+
+	uZOcLlbklCKtWCP9kKVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhLcR-000425-Qx; Fri, 05 Jun 2020 23:19:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jhMAj-000826-Qo; Fri, 05 Jun 2020 23:54:49 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhLcJ-00041X-62
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 23:19:16 +0000
-Received: from localhost (mobile-166-175-190-200.mycingular.net
- [166.175.190.200])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B1CC7207D0;
- Fri,  5 Jun 2020 23:19:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591399152;
- bh=pxsClvnIPBaS8ODkk62CMx4DJx6gcP1jIo9ANMgure4=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=cWVCuuhZEXopJ/fy8/HaCu7gj+qdiUHK7yyWdnF7I+g00606Q27D/lHhs2F+KUUbI
- qPalWOJ7gwNYAzD0Zb2lhQotEE4HBkdYrzhA669gi2oRrAkyKg2JRbaRxC86n+xjd9
- CZzarVVqj34lwCRUNnhR0Wkc6VA4FmF+zD+p5VbA=
-Date: Fri, 5 Jun 2020 18:19:09 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Zhangfei Gao <zhangfei.gao@linaro.org>
-Subject: Re: [PATCH 0/2] Introduce PCI_FIXUP_IOMMU
-Message-ID: <20200605231909.GA1155454@bjorn-Precision-5520>
+ id 1jhMAb-00080t-6G
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 23:54:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=USt2sdJct6z8UZHsPCAARNSZemWwo+p3AbzLJl1NmdM=; b=njFtWvgjKG0GQDA+KD2jRxd7U
+ TmVwzps63HvnrwdrPlfQGTudZZDlqibn5huBKxuLsqP7IgsYXwjAd82w1SPVYtBjj1uTWXba7nD40
+ fp8zJxyI556YTC96KDYPjI/jaMiokKuQCkOyUwFETFWXIaGyo1s5SpA7GHfzeDORgmn8NZGg7o1UG
+ g9nhJzW9mJc4wut3cbW57nh5Zu/oqntwhfJY9hEGTm1dkn4r+wt+6QwuI9YkXITaEmHOaRLSALFf/
+ Mb9XpdNLWmrpMzYJsrEk55ZCDx8SVDgOLq33RBNh93hAzMMdi4jylJF1R+Yu7eZwWe1RGDl9fv8w8
+ Yb+eV2u5w==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:39380)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jhM9q-0003HZ-9p; Sat, 06 Jun 2020 00:53:54 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jhM9f-0007tx-Ig; Sat, 06 Jun 2020 00:53:43 +0100
+Date: Sat, 6 Jun 2020 00:53:43 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Olof Johansson <olof@lixom.net>, Jon Nettleton <jon@solid-run.com>,
+ Theodore Ts'o <tytso@mit.edu>, Andreas Dilger <adilger.kernel@dilger.ca>
+Subject: Re: [PATCHv9 00/12] PCI: Recode Mobiveil driver and add PCIe Gen4
+ driver for NXP Layerscape SoCs
+Message-ID: <20200605235343.GG1605@shell.armlinux.org.uk>
+References: <20191120034451.30102-1-Zhiqiang.Hou@nxp.com>
+ <CAOesGMjAQSfx1WZr6b1kNX=Exipj_f4X_f39Db7AxXr4xG4Tkg@mail.gmail.com>
+ <DB8PR04MB6747DA8E1480DCF3EFF67C9284500@DB8PR04MB6747.eurprd04.prod.outlook.com>
+ <20200110153347.GA29372@e121166-lin.cambridge.arm.com>
+ <CAOesGMj9X1c7eJ4gX2QWXSNszPkRn68E4pkrSCxKMYJG7JHwsg@mail.gmail.com>
+ <DB8PR04MB67473114B315FBCC97D0C6F9841D0@DB8PR04MB6747.eurprd04.prod.outlook.com>
+ <CAOesGMieMXHWBO_p9YJXWWneC47g+TGDt9SVfvnp5tShj5gbPw@mail.gmail.com>
+ <20200210152257.GD25745@shell.armlinux.org.uk>
+ <20200229095550.GX25745@shell.armlinux.org.uk>
+ <20200229110456.GY25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <779f4044-cf6a-b0d3-916f-0274450c07d3@linaro.org>
+In-Reply-To: <20200229110456.GY25745@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_161915_263845_F2ABE487 
-X-CRM114-Status: GOOD (  23.02  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200605_165441_602281_FF318809 
+X-CRM114-Status: GOOD (  27.30  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -63,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,64 +97,277 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jean-philippe <jean-philippe@linaro.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
- linux-pci@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Joerg Roedel <joro@8bytes.org>, Hanjun Guo <guohanjun@huawei.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, linux-acpi@vger.kernel.org,
- Wangzhou <wangzhou1@hisilicon.com>, linux-crypto@vger.kernel.org,
- Sudeep Holla <sudeep.holla@arm.com>, Bjorn Helgaas <bhelgaas@google.com>,
- kenneth-lee-2012@foxmail.com, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "arnd@arndb.de" <arnd@arndb.de>,
+ "m.karthikeyan@mobiveil.co.in" <m.karthikeyan@mobiveil.co.in>,
+ "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
+ "Z.q. Hou" <zhiqiang.hou@nxp.com>,
+ "l.subrahmanya@mobiveil.co.in" <l.subrahmanya@mobiveil.co.in>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
+ Xiaowei Bao <xiaowei.bao@nxp.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "bhelgaas@google.com" <bhelgaas@google.com>,
+ "andrew.murray@arm.com" <andrew.murray@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBKdW4gMDQsIDIwMjAgYXQgMDk6MzM6MDdQTSArMDgwMCwgWmhhbmdmZWkgR2FvIHdy
-b3RlOgo+IE9uIDIwMjAvNi8yIOS4iuWNiDE6NDEsIEJqb3JuIEhlbGdhYXMgd3JvdGU6Cj4gPiBP
-biBUaHUsIE1heSAyOCwgMjAyMCBhdCAwOTozMzo0NEFNICswMjAwLCBKb2VyZyBSb2VkZWwgd3Jv
-dGU6Cj4gPiA+IE9uIFdlZCwgTWF5IDI3LCAyMDIwIGF0IDAxOjE4OjQyUE0gLTA1MDAsIEJqb3Ju
-IEhlbGdhYXMgd3JvdGU6Cj4gPiA+ID4gSXMgdGhpcyBzbG93ZG93biBzaWduaWZpY2FudD8gIFdl
-IGFscmVhZHkgaXRlcmF0ZSBvdmVyIGV2ZXJ5IGRldmljZQo+ID4gPiA+IHdoZW4gYXBwbHlpbmcg
-UENJX0ZJWFVQX0ZJTkFMIHF1aXJrcywgc28gaWYgd2UgdXNlZCB0aGUgZXhpc3RpbmcKPiA+ID4g
-PiBQQ0lfRklYVVBfRklOQUwsIHdlIHdvdWxkbid0IGJlIGFkZGluZyBhIG5ldyBsb29wLiAgV2Ug
-d291bGQgb25seSBiZQo+ID4gPiA+IGFkZGluZyB0d28gbW9yZSBpdGVyYXRpb25zIHRvIHRoZSBs
-b29wIGluIHBjaV9kb19maXh1cHMoKSB0aGF0IHRyaWVzCj4gPiA+ID4gdG8gbWF0Y2ggcXVpcmtz
-IGFnYWluc3QgdGhlIGN1cnJlbnQgZGV2aWNlLiAgSSBkb3VidCB0aGF0IHdvdWxkIGJlIGEKPiA+
-ID4gPiBtZWFzdXJhYmxlIHNsb3dkb3duLgo+ID4gPiBJIGRvbid0IGtub3cgaG93IHNpZ25pZmlj
-YW50IGl0IGlzLCBidXQgSSByZW1lbWJlciBwZW9wbGUgY29tcGxhaW5pbmcKPiA+ID4gYWJvdXQg
-YWRkaW5nIG5ldyBQQ0kgcXVpcmtzIGJlY2F1c2UgaXQgdGFrZXMgdG9vIGxvbmcgZm9yIHRoZW0g
-dG8gcnVuCj4gPiA+IHRoZW0gYWxsLiBUaGF0IHdhcyBpbiB0aGUgZGlzY3Vzc2lvbiBhYm91dCB0
-aGUgcXVpcmsgZGlzYWJsaW5nIEFUUyBvbgo+ID4gPiBBTUQgU3RvbmV5IHN5c3RlbXMuCj4gPiA+
-IAo+ID4gPiBTbyBpdCBwcm9iYWJseSBkZXBlbmRzIG9uIGhvdyBtYW55IFBDSSBkZXZpY2VzIGFy
-ZSBpbiB0aGUgc3lzdGVtIHdoZXRoZXIKPiA+ID4gaXQgY2F1c2VzIGFueSBtZWFzdXJlYWJsZSBz
-bG93ZG93bi4KPiA+IEkgZm91bmQgdGhpcyBbMV0gZnJvbSBQYXVsIE1lbnplbCwgd2hpY2ggd2Fz
-IGEgc2xvd2Rvd24gY2F1c2VkIGJ5Cj4gPiBxdWlya191c2JfZWFybHlfaGFuZG9mZigpLiAgSSB0
-aGluayB0aGUgcmVhbCBwcm9ibGVtIGlzIGluZGl2aWR1YWwKPiA+IHF1aXJrcyB0aGF0IHRha2Ug
-YSBsb25nIHRpbWUuCj4gPiAKPiA+IFRoZSBQQ0lfRklYVVBfSU9NTVUgdGhpbmdzIHdlJ3JlIHRh
-bGtpbmcgYWJvdXQgc2hvdWxkIGJlIGZhc3QsIGFuZCBvZgo+ID4gY291cnNlLCB0aGV5J3JlIG9u
-bHkgcnVuIGZvciBtYXRjaGluZyBkZXZpY2VzIGFueXdheS4gIFNvIEknZCByYXRoZXIKPiA+IGtl
-ZXAgdGhlbSBhcyBQQ0lfRklYVVBfRklOQUwgdGhhbiBhZGQgYSB3aG9sZSBuZXcgcGhhc2UuCj4g
-PiAKPiBUaGFua3MgQmpvcm4gZm9yIHRha2luZyB0aW1lIGZvciB0aGlzLgo+IElmIHNvLCBpdCB3
-b3VsZCBiZSBtdWNoIHNpbXBsZXIuCj4gCj4gKysrIGIvZHJpdmVycy9pb21tdS9pb21tdS5jCj4g
-QEAgLTI0MTgsNiArMjQxOCwxMCBAQCBpbnQgaW9tbXVfZndzcGVjX2luaXQoc3RydWN0IGRldmlj
-ZSAqZGV2LCBzdHJ1Y3QKPiBmd25vZGVfaGFuZGxlICppb21tdV9md25vZGUsCj4gwqDCoMKgwqDC
-oMKgwqAgZndzcGVjLT5pb21tdV9md25vZGUgPSBpb21tdV9md25vZGU7Cj4gwqDCoMKgwqDCoMKg
-wqAgZndzcGVjLT5vcHMgPSBvcHM7Cj4gwqDCoMKgwqDCoMKgwqAgZGV2X2lvbW11X2Z3c3BlY19z
-ZXQoZGV2LCBmd3NwZWMpOwo+ICsKPiArwqDCoMKgwqDCoMKgIGlmIChkZXZfaXNfcGNpKGRldikp
-Cj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcGNpX2ZpeHVwX2RldmljZShwY2lfZml4
-dXBfZmluYWwsIHRvX3BjaV9kZXYoZGV2KSk7Cj4gKwo+IAo+IFRoZW4gcGNpX2ZpeHVwX2ZpbmFs
-IHdpbGwgYmUgY2FsbGVkIHR3aWNlLCB0aGUgZmlyc3QgaW4gcGNpX2J1c19hZGRfZGV2aWNlLgo+
-IEhlcmUgaW4gaW9tbXVfZndzcGVjX2luaXQgaXMgdGhlIHNlY29uZCB0aW1lLCBzcGVjaWZpY2Fs
-bHkgZm9yIGlvbW11X2Z3c3BlYy4KPiBXaWxsIHNlbmQgdGhpcyB3aGVuIDUuOC1yYzEgaXMgb3Bl
-bi4KCldhaXQsIHRoaXMgd2hvbGUgZml4dXAgYXBwcm9hY2ggc2VlbXMgd3JvbmcgdG8gbWUuICBO
-byBtYXR0ZXIgaG93IHlvdQpkbyB0aGUgZml4dXAsIGl0J3Mgc3RpbGwgYSBmaXh1cCwgd2hpY2gg
-bWVhbnMgaXQgcmVxdWlyZXMgb25nb2luZwptYWludGVuYW5jZS4gIFN1cmVseSB3ZSBkb24ndCB3
-YW50IHRvIGhhdmUgdG8gYWRkIHRoZSBWZW5kb3IvRGV2aWNlIElECmZvciBldmVyeSBuZXcgQU1C
-QSBkZXZpY2UgdGhhdCBjb21lcyBhbG9uZywgZG8gd2U/CgpCam9ybgoKX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
-bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Sat, Feb 29, 2020 at 11:04:56AM +0000, Russell King - ARM Linux admin wrote:
+> Adding Ted and Andreas...
+> 
+> Here's the debugfs -n "id" output for dpkg.status.5.gz (which is fine,
+> and probably a similar size):
+> 
+> debugfs:  id <917527>
+> 0000  a481 0000 30ff 0300 bd8e 475e bd77 4f5e  ....0.....G^.wO^
+> 0020  29ca 345e 0000 0000 0000 0100 0002 0000  ).4^............
+> 0040  0000 0800 0100 0000 0af3 0100 0400 0000  ................
+> 0060  0000 0000 0000 0000 4000 0000 8087 3800  ........@.....8.
+> 0100  0000 0000 0000 0000 0000 0000 0000 0000  ................
+> *
+> 0140  0000 0000 c40b 4c0a 0000 0000 0000 0000  ......L.........
+> 0160  0000 0000 0000 0000 0000 0000 3884 0000  ............8...
+> 0200  2000 95f2 44b8 bdc9 a4d2 9883 c861 dc92   ...D........a..
+> 0220  bd31 4a5e ecc5 260c 0000 0000 0000 0000  .1J^..&.........
+> 0240  0000 0000 0000 0000 0000 0000 0000 0000  ................
+> *
+> 
+> and for the affected inode:
+> debugfs:  id <917524>
+> 0000  a481 0000 30ff 0300 3d3d 465e bd77 4f5e  ....0...==F^.wO^
+> 0020  29ca 345e 0000 0000 0000 0100 0002 0000  ).4^............
+> 0040  0000 0800 0100 0000 0af3 0100 0400 0000  ................
+> 0060  0000 0000 0000 0000 4000 0000 c088 3800  ........@.....8.
+> 0100  0000 0000 0000 0000 0000 0000 0000 0000  ................
+> *
+> 0140  0000 0000 5fc4 cfb4 0000 0000 0000 0000  ...._...........
+> 0160  0000 0000 0000 0000 0000 0000 af23 0000  .............#..
+> 0200  2000 1cc3 ac95 c9c8 a4d2 9883 583e addf   ...........X>..
+> 0220  3de0 485e b04d 7151 0000 0000 0000 0000  =.H^.MqQ........
+> 0240  0000 0000 0000 0000 0000 0000 0000 0000  ................
+> *
+> 
+> and "stat" output:
+> debugfs:  stat <917527>
+> Inode: 917527   Type: regular    Mode:  0644   Flags: 0x80000
+> Generation: 172755908    Version: 0x00000000:00000001
+> User:     0   Group:     0   Project:     0   Size: 261936
+> File ACL: 0
+> Links: 1   Blockcount: 512
+> Fragment:  Address: 0    Number: 0    Size: 0
+>  ctime: 0x5e4f77bd:c9bdb844 -- Fri Feb 21 06:25:01 2020
+>  atime: 0x5e478ebd:92dc61c8 -- Sat Feb 15 06:25:01 2020
+>  mtime: 0x5e34ca29:8398d2a4 -- Sat Feb  1 00:45:29 2020
+> crtime: 0x5e4a31bd:0c26c5ec -- Mon Feb 17 06:25:01 2020
+> Size of extra inode fields: 32
+> Inode checksum: 0xf2958438
+> EXTENTS:
+> (0-63):3704704-3704767
+> debugfs:  stat <917524>
+> Inode: 917524   Type: regular    Mode:  0644   Flags: 0x80000
+> Generation: 3033515103    Version: 0x00000000:00000001
+> User:     0   Group:     0   Project:     0   Size: 261936
+> File ACL: 0
+> Links: 1   Blockcount: 512
+> Fragment:  Address: 0    Number: 0    Size: 0
+>  ctime: 0x5e4f77bd:c8c995ac -- Fri Feb 21 06:25:01 2020
+>  atime: 0x5e463d3d:dfad3e58 -- Fri Feb 14 06:25:01 2020
+>  mtime: 0x5e34ca29:8398d2a4 -- Sat Feb  1 00:45:29 2020
+> crtime: 0x5e48e03d:51714db0 -- Sun Feb 16 06:25:01 2020
+> Size of extra inode fields: 32
+> Inode checksum: 0xc31c23af
+> EXTENTS:
+> (0-63):3705024-3705087
+> 
+> When using sif (set_inode_info) to re-set the UID to 0 on this (so
+> provoke the checksum to be updated):
+> 
+> debugfs:  id <917524>
+> 0000  a481 0000 30ff 0300 3d3d 465e bd77 4f5e  ....0...==F^.wO^
+> 0020  29ca 345e 0000 0000 0000 0100 0002 0000  ).4^............
+> 0040  0000 0800 0100 0000 0af3 0100 0400 0000  ................
+> 0060  0000 0000 0000 0000 4000 0000 c088 3800  ........@.....8.
+> 0100  0000 0000 0000 0000 0000 0000 0000 0000  ................
+> *
+> 0140  0000 0000 5fc4 cfb4 0000 0000 0000 0000  ...._...........
+> 0160  0000 0000 0000 0000 0000 0000 b61f 0000  ................
+>                                     ^^^^
+> 0200  2000 aa15 ac95 c9c8 a4d2 9883 583e addf   ...........X>..
+>            ^^^^
+> 0220  3de0 485e b04d 7151 0000 0000 0000 0000  =.H^.MqQ........
+> 0240  0000 0000 0000 0000 0000 0000 0000 0000  ................
+> *
+> 
+> The values with "^^^^" are the checksum, which are the only values
+> that have changed here - the checksum is now 0x15aa1fb6 rather than
+> 0xc31c23af.
+> 
+> With that changed, running e2fsck -n on the filesystem results in a
+> pass:
+> 
+> root@cex7:~# e2fsck -n /dev/nvme0n1p2
+> e2fsck 1.44.5 (15-Dec-2018)
+> Warning: skipping journal recovery because doing a read-only filesystem check.
+> /dev/nvme0n1p2 contains a file system with errors, check forced.
+> Pass 1: Checking inodes, blocks, and sizes
+> Pass 2: Checking directory structure
+> Pass 3: Checking directory connectivity
+> Pass 4: Checking reference counts
+> Pass 5: Checking group summary information
+> /dev/nvme0n1p2: 121163/2097152 files (0.1% non-contiguous), 1349227/8388608 blocks
+> 
+> and the file now appears to be intact (being a gzip file, gzip verifies
+> that the contents are now as it expects.)
+> 
+> So, it looks like the _only_ issue is that the checksum on the inode
+> became invalid, which seems to suggest that it *isn't* a NVMe nor PCIe
+> issue.
+> 
+> I wonder whether the journal would contain anything useful, but I don't
+> know how to use debugfs to find that out - while I can dump the journal,
+> I'd need to know which block contains the inode, and then work out where
+> in the journal that block was going to be written.  If that would help,
+> let me know ASAP as I'll hold off rebooting the platform for a while
+> (which means the filesystem will remain as-is - and yes, I have the
+> debugfs file for e2undo to put stuff back.)  Maybe it's possible to pull
+> the block number out of the e2undo file?
+> 
+> tune2fs says:
+> 
+> Checksum type:            crc32c
+> Checksum:                 0x682f91b9
+> 
+> I guess this is what is used to checksum the inodes?  If so, it's using
+> the kernel's crc32c-generic driver (according to /proc/crypto).
+> 
+> Could it be a race condition, or some problem that's specific to the
+> ARM64 kernel that's provoking this corruption?
+
+Hi,
+
+The corruption has returned this evening:
+
+[25094.614718] EXT4-fs error (device nvme0n1p2): ext4_lookup:1707: inode #271688: comm mandb: iget: checksum invalid
+[25094.623781] Aborting journal on device nvme0n1p2-8.
+[25094.627419] EXT4-fs (nvme0n1p2): Remounting filesystem read-only
+[25094.628206] EXT4-fs error (device nvme0n1p2):
+ext4_journal_check_start:83: Detected aborted journal
+root@cex7:[~]:<506> debugfs /dev/nvme0n1p2
+debugfs 1.44.5 (15-Dec-2018)
+debugfs:  id <271688>
+0000  a481 0000 f108 0000 2518 fd5d 2518 fd5d  ........%..]%..]
+0020  9f49 715c 0000 0000 0000 0100 0800 0000  .Iq\............
+0040  0000 0800 0100 0000 0af3 0100 0400 0000  ................
+0060  0000 0000 0000 0000 0100 0000 ed19 1100  ................
+0100  0000 0000 0000 0000 0000 0000 0000 0000  ................
+*
+0140  0000 0000 b42f 4f06 0000 0000 0000 0000  ...../O.........
+0160  0000 0000 0000 0000 0000 0000 c9cf 0000  ................
+0200  2000 8d83 086d bebf 0000 0000 086d bebf   ....m.......m..
+0220  2518 fd5d 086d bebf 0000 0000 0000 0000  %..].m..........
+0240  0000 0000 0000 0000 0000 0000 0000 0000  ................
+*
+
+debugfs:  stat <271688>
+Inode: 271688   Type: regular    Mode:  0644   Flags: 0x80000
+Generation: 105852852    Version: 0x00000000:00000001
+User:     0   Group:     0   Project:     0   Size: 2289
+File ACL: 0
+Links: 1   Blockcount: 8
+Fragment:  Address: 0    Number: 0    Size: 0
+ ctime: 0x5dfd1825:bfbe6d08 -- Fri Dec 20 18:51:17 2019
+ atime: 0x5dfd1825:bfbe6d08 -- Fri Dec 20 18:51:17 2019
+ mtime: 0x5c71499f:00000000 -- Sat Feb 23 13:24:47 2019
+ crtime: 0x5dfd1825:bfbe6d08 -- Fri Dec 20 18:51:17 2019
+Size of extra inode fields: 32
+Inode checksum: 0x838dcfc9
+EXTENTS:
+(0):1120749
+debugfs:
+root@cex7:[~]:<509> e2fsck -n /dev/nvme0n1p2
+e2fsck 1.44.5 (15-Dec-2018)
+Warning: skipping journal recovery because doing a read-only filesystem check.
+/dev/nvme0n1p2 contains a file system with errors, check forced.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/dev/nvme0n1p2: 147476/2097152 files (0.1% non-contiguous), 1542719/8388608 blocks
+
+This time, the machine has not been powered down for a very long time,
+although I've booted 5.7 (plus the additional patches including several
+workarounds in the PCIe driver so my Mellanox card works) on it earlier
+today. I did notice that debian decided to run a fsck on the filesystem
+at reboot, which is a little weird as it's ext4, and found nothing wrong.
+
+Hmm, I just tried:
+
+root@cex7:[~]:<514> hdparm -f /dev/nvme0n1p2
+root@cex7:[~]:<515> hdparm -f /dev/nvme0n1
+root@cex7:[~]:<517> e2fsck -n /dev/nvme0n1p2
+e2fsck 1.44.5 (15-Dec-2018)
+Warning: skipping journal recovery because doing a read-only filesystem
+check.
+/dev/nvme0n1p2 contains a file system with errors, check forced.
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Entry 'mainlog.2.gz' in /var/log/exim4 (917613) has deleted/unused inode 922603.  Clear? no
+
+Entry 'mainlog.2.gz' in /var/log/exim4 (917613) has an incorrect filetype (was 1, should be 0).
+Fix? no
+
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Unattached inode 920748
+Connect to /lost+found? no
+
+Pass 5: Checking group summary information
+Block bitmap differences:  +(9259--9280) -3703011 -3703044 -3703053 +3736187 -3827722 -3830272 +3906363 +3911697 +3911699 +3911701 +3911703 +3913228
+Fix? no
+
+Free blocks count wrong for group #113 (12615, counted=12606).
+Fix? no
+
+Free blocks count wrong (6845889, counted=6845880).
+Fix? no
+
+Inode bitmap differences: Group 112 inode bitmap does not match checksum.
+IGNORED.
+Block bitmap differences: Group 113 block bitmap does not match checksum.
+IGNORED.
+
+/dev/nvme0n1p2: ********** WARNING: Filesystem still has errors **********
+
+/dev/nvme0n1p2: 147476/2097152 files (0.1% non-contiguous), 1542719/8388608 blocks
+
+which looks less good, and is likely to be e2fsck reading off the media
+rather than using what was in the kernel cache.  However, still nothing
+for the offending inode, who's raw data remains unchanged from what I've
+quoted above from debugfs.
+
+It /seems/ to be pointing at the data on the media changing, possibly
+buggy firmware on the nvme (ADATA SX8200PNP) drive, maybe? Or maybe
+undiscovered bugs in the Mobiveil PCIe hardware corrupting transfers
+to the nvme?
+
+The problem is, this is rather undebuggable as it happens so rarely. :(
+
+I'm becoming very discouraged to touch nvme ever again by this, as this
+is my first and only experience of that technology.  I'm considering
+getting some conventional SATA HDDs and junking nvme on the basis of
+it being an unreliable technology.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
