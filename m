@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B2E11EF8CF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:19:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BDD661EF8D1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:20:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8retFmqVTCTPoqjXpxEuzTnJgD0PrdT4G4OUOL7YtHA=; b=OTpEsiR1ZRS5Y0
-	2Ah7HK0/CefGbfxQGV4G5odqWpwfNzp/lBlzS99glwZOP+WMJaK51YG28nOjxqpzD1QQTRR/Nd7rx
-	TWOXEVirNB/c8+O6RQaGr+GdqjlmVwYqw6C+q3Y+wGHB2fwKXwptp2+bDnKOgz7Zn5CJLTg/t8LrS
-	/wi4+hY5fTVuA0Unl9dKRhLWj4XBMMEc+X9ibkNeZobFqzEYvS7pT7BnJS8r3/76Jix9s4UrLW3Nv
-	TqNpGmA+dj2Dd81bxffB4ZwDmxRTsv0TzZKtDHVA3WK7sGNYTl0+RU9aDty+d8W8O7eZmADJZpLmK
-	5Zlq/d5WVcVUeyDV8D5w==;
+	List-Owner; bh=jz7SK2argdgJuOble3nglwQtusHAhk8vEf6mks/WtUc=; b=MZNvMWu+gRHJfo
+	w4tu5r2C+mWvzYuSzxOhxMP6tG9n7GzfEM30XgvexQuMYn0k3qamwRfF1EWFTcT04GIWbf9GFR1l8
+	Q+ZEtnwDGEbfPWVicS9dt3GgwyVSf2RFdl+MJLBT3s7T82KwvKGXmvdnDksCJgEe+O1MH/I+IhoR4
+	dSIImGjT7gEl5IviLxShkgVNC8BCHQwtizr3Duk5OJ+w+kdzR5Q0eCRfDB37fRoUetiWHk4qot0IL
+	QPtrWfIQgcIrGGSRrGWzlnsoGmy3vXWDtPFQu0nd3iHZH68WLSLvc0d0oOZJoNGK+b6Axp/IdeuA2
+	EEqF5ji/pqLvhGx2mGxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhCGD-0002gF-61; Fri, 05 Jun 2020 13:19:49 +0000
+	id 1jhCGb-0002vo-Rw; Fri, 05 Jun 2020 13:20:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhCFF-0001zb-Q5
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:18:51 +0000
+ id 1jhCFI-00023a-0w
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:18:53 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A23F3206E6;
- Fri,  5 Jun 2020 13:18:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1C2E02067B;
+ Fri,  5 Jun 2020 13:18:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591363129;
- bh=iPssJmSp+Kp0nUy4lU4dQ6cYBwra3RuOzpDl2L+d1Ys=;
+ s=default; t=1591363131;
+ bh=eeLGS2Ob+vqXgTRq2Bp7pW9jTvXCa6SMu6lcPFzwprU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=L90ZdWI9fqE888FrKc2cxOzwp6Hc/bNdPVDKxrYrcgHW5sJls8N65WYxUp8eA+PvT
- WH0vqoo8Wp3nWiWFmfpbERrlHsucOTkIFzfYe+XzQZMhZpKt9sAZ5D5BQeGpzVGJQu
- DXqHY3FJoF3oux3EOGzwD9AiVPFAb8uu94HZt7MI=
+ b=maFrPBLORDef7L1iOwJbK22plN7z9QKx0chV1sjI41dxZav/kUFiuvZP5AsK8EzQH
+ 8Q25Yt5egUFg+QVtRvAwhTPddcTvFQFvkcRjdzBeM8S59zKXWx3pjwEpWuWioDnE+r
+ rg+MZrqs2Sh4tc1o8qGKJ3ptSeN32tFM9DJ/za3U=
 From: Mark Brown <broonie@kernel.org>
 To: Will Deacon <will@kernel.org>,
 	Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH 3/5] arm64: vdso: Initialise the per-CPU vDSO data
-Date: Fri,  5 Jun 2020 14:11:29 +0100
-Message-Id: <20200605131131.16491-4-broonie@kernel.org>
+Subject: [PATCH 4/5] arm64: vdso: Add getcpu() implementation
+Date: Fri,  5 Jun 2020 14:11:30 +0100
+Message-Id: <20200605131131.16491-5-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200605131131.16491-1-broonie@kernel.org>
 References: <20200605131131.16491-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_061849_864153_C0ADC080 
-X-CRM114-Status: GOOD (  11.32  )
+X-CRM114-CacheID: sfid-20200605_061852_193188_65FB3D0C 
+X-CRM114-Status: GOOD (  13.40  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,74 +84,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Register with the CPU hotplug system to initialise the per-CPU data for
-getcpu().
+Some applications, especially trace ones, benefit from avoiding the syscall
+overhead on getcpu() calls so provide a vDSO implementation of it.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/kernel/vdso.c | 28 ++++++++++++++++++++++++++++
- 1 file changed, 28 insertions(+)
+ arch/arm64/kernel/vdso/Makefile   |  2 +-
+ arch/arm64/kernel/vdso/vdso.lds.S |  1 +
+ arch/arm64/kernel/vdso/vgetcpu.c  | 48 +++++++++++++++++++++++++++++++
+ 3 files changed, 50 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm64/kernel/vdso/vgetcpu.c
 
-diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
-index ea5e18e37371..9e5d12ce7de9 100644
---- a/arch/arm64/kernel/vdso.c
-+++ b/arch/arm64/kernel/vdso.c
-@@ -9,6 +9,7 @@
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index 279b1b9fb956..4ba2a159dd7c 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -11,7 +11,7 @@
+ ARCH_REL_TYPE_ABS := R_AARCH64_JUMP_SLOT|R_AARCH64_GLOB_DAT|R_AARCH64_ABS64
+ include $(srctree)/lib/vdso/Makefile
  
- #include <linux/cache.h>
- #include <linux/clocksource.h>
-+#include <linux/cpuhotplug.h>
- #include <linux/elf.h>
- #include <linux/err.h>
- #include <linux/errno.h>
-@@ -18,6 +19,7 @@
- #include <linux/sched.h>
- #include <linux/signal.h>
- #include <linux/slab.h>
-+#include <linux/smp.h>
- #include <linux/timekeeper_internal.h>
- #include <linux/vmalloc.h>
- #include <vdso/datapage.h>
-@@ -363,6 +365,26 @@ int aarch32_setup_additional_pages(struct linux_binprm *bprm, int uses_interp)
+-obj-vdso := vgettimeofday.o note.o sigreturn.o
++obj-vdso := vgettimeofday.o note.o sigreturn.o vgetcpu.o
+ 
+ # Build rules
+ targets := $(obj-vdso) vdso.so vdso.so.dbg
+diff --git a/arch/arm64/kernel/vdso/vdso.lds.S b/arch/arm64/kernel/vdso/vdso.lds.S
+index 7ad2d3a0cd48..c2fd94f14b94 100644
+--- a/arch/arm64/kernel/vdso/vdso.lds.S
++++ b/arch/arm64/kernel/vdso/vdso.lds.S
+@@ -77,6 +77,7 @@ VERSION
+ 		__kernel_gettimeofday;
+ 		__kernel_clock_gettime;
+ 		__kernel_clock_getres;
++		__kernel_getcpu;
+ 	local: *;
+ 	};
  }
- #endif /* CONFIG_COMPAT */
- 
-+static void vdso_cpu_init(void *p)
+diff --git a/arch/arm64/kernel/vdso/vgetcpu.c b/arch/arm64/kernel/vdso/vgetcpu.c
+new file mode 100644
+index 000000000000..e8972e561e08
+--- /dev/null
++++ b/arch/arm64/kernel/vdso/vgetcpu.c
+@@ -0,0 +1,48 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * ARM64 userspace implementations of getcpu()
++ *
++ * Copyright (C) 2020 ARM Limited
++ *
++ */
++
++#include <asm/unistd.h>
++#include <asm/vdso/datapage.h>
++
++struct getcpucache;
++
++static __always_inline
++int getcpu_fallback(unsigned int *_cpu, unsigned int *_node,
++		    struct getcpucache *_c)
 +{
-+	struct arm64_vdso_data *data = (struct arm64_vdso_data *)vdso_data;
-+	unsigned int cpu;
++	register unsigned int *cpu asm("x0") = _cpu;
++	register unsigned int *node asm("x1") = _node;
++	register struct getcpucache *c asm("x2") = _c;
++	register long ret asm ("x0");
++	register long nr asm("x8") = __NR_getcpu;
 +
-+	if (vdso_cpu_offset()) {
-+		cpu = smp_processor_id();
++	asm volatile(
++	"       svc #0\n"
++	: "=r" (ret)
++	: "r" (cpu), "r" (node), "r" (c), "r" (nr)
++	: "memory");
 +
-+		data->cpu_data[cpu].cpu = cpu;
-+		data->cpu_data[cpu].node = cpu_to_node(cpu);
++	return ret;
++}
++
++int __kernel_getcpu(unsigned int *cpu, unsigned int *node,
++		    struct getcpucache *c)
++{
++	struct vdso_cpu_data *cpu_data = __vdso_cpu_data();
++
++	if (cpu_data) {
++		if (cpu)
++			*cpu = cpu_data->cpu;
++		if (node)
++			*node = cpu_data->node;
++
++		return 0;
 +	}
++
++	return getcpu_fallback(cpu, node, c);
 +}
-+
-+static int vdso_cpu_online(unsigned int cpu)
-+{
-+	smp_call_function_single(cpu, vdso_cpu_init, NULL, 1);
-+
-+	return 0;
-+}
-+
- static int vdso_mremap(const struct vm_special_mapping *sm,
- 		struct vm_area_struct *new_vma)
- {
-@@ -389,6 +411,12 @@ static int __init vdso_init(void)
- 	vdso_info[VDSO_ABI_AA64].dm = &aarch64_vdso_maps[AA64_MAP_VVAR];
- 	vdso_info[VDSO_ABI_AA64].cm = &aarch64_vdso_maps[AA64_MAP_VDSO];
- 
-+	/*
-+	 * Initialize per-CPU data, callback runs for all current and
-+	 * future CPUs.
-+	 */
-+	cpuhp_setup_state(CPUHP_AP_ONLINE_DYN, "vdso", vdso_cpu_online, NULL);
-+
- 	return __vdso_init(VDSO_ABI_AA64);
- }
- arch_initcall(vdso_init);
 -- 
 2.20.1
 
