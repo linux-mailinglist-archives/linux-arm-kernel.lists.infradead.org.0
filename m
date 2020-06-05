@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 639281EF756
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:27:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 410BE1EF757
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:27:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=PKGsSLrW1+A5a4O0ID/41yxfrj0aMjDMQfYnJzL4x3Y=; b=pkohjojz5jQwfV
-	SLtZJWKplhpDaTAUjIEvRWZihZHczrNiznDB0uLI8PvOLcXtnFDXzWYTadZaDL99PHIf9h+X1QLuQ
-	DnB4XvRyIIDby8pHNsRhR22JcTlQU4Fs9dMcCdq/VwL6CqusliPVtvSiLMUrOWYNJyu2kdaLrFG7S
-	rAR3K6dUfDcAY5o/rHqJcU07p0vJW1+9Ts+lwVivsO9HIBM8fASECDitgSQoUjf+hK9s7A2j6ExiH
-	D5CO77evZVmPdHx2L6i7RT+FBGMLDN4qd/m0SbwioMoNX6yaAShCtx+BlRa/WhceHHF2GsIh7cXID
-	F90WNO4Tyhmu9DnDMkgg==;
+	List-Owner; bh=H/sgH4PhFS70wRWLdbkAFw+mSVFrOBN6wnDjx+BwvAs=; b=eTn4/yct4xiLii
+	UK1r/FLGmC7vuyZaTmSVPnN87gs1kj4hPsmFxlkwYkDw0jSTJruJA0P9M8hEvcaj8KPJPxDahF7e0
+	SaughDMSd1TWdBkCj6kPySysWieyA8VNY3CLS3Qn+54rlkHL0yU5MtMrBXzLrQrzoxOSbs5cXl5uH
+	2pQvKkwIRx542zqDV60+dpJKrJKzuL2dFIPr1LKbalhZtUFB7WdCt4gNePn+2uymSm/S6+lHzX1dM
+	ihAa9vypVA8U+CU5uqVrMxb5sdVHP0dKAIXvHQ/99TKvdMvLsiEmcoaQPx9PuEFO5UwKwuU0YYNe6
+	wTUL/Ag1JG6NQobtd4ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhBRN-0008Cc-Og; Fri, 05 Jun 2020 12:27:17 +0000
+	id 1jhBRi-00005m-MK; Fri, 05 Jun 2020 12:27:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhBQV-0007ZF-CY
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:26:25 +0000
+ id 1jhBQd-0007hL-Pq
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:26:33 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 99C55207D3;
- Fri,  5 Jun 2020 12:26:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 178E1207D5;
+ Fri,  5 Jun 2020 12:26:30 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591359982;
- bh=fJO8fHnBcnDtUp6PCEnbtaSTCLAD7BEUJgnPM31buks=;
+ s=default; t=1591359990;
+ bh=sXl+Ns5JOxqJylekxpc8ie6/U3eKfS139lWdkI5jD24=;
  h=From:To:Cc:Subject:Date:From;
- b=ENO4Ow9zbjA9Ybt36+vkd/nYbuvwbX4UnAE3bVWT4y1qzunFLDyaJ6A9tjVpAJXa6
- jK1AnVBBlLN6ICiUZ12cGu2nmNN0FfG2+xBn60/L1m63AKuIl2pmznPObcqdIFwVHl
- dFtZLzgERZeoaDDbXs9DEkPKU2kOzd7qUmmC9W7o=
+ b=iA7U3/rt2hwBaF2UX9iu1aSOCOcGXWzguDdaKakle2C2UdcyleRInJNl9IHnOp73t
+ RDsEZqrZwEetQQkEbw6goPaCLse5D6qnnDGv96gMGnuiJ02ot70utwuHy9hrNfJqvg
+ L+tXTC9/VQ/NTBcr/VYTqzSsUvKf3mDXQy9bBYoQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 1/6] ARM: 8977/1: ptrace: Fix mask for thumb
+Subject: [PATCH AUTOSEL 4.4 1/3] ARM: 8977/1: ptrace: Fix mask for thumb
  breakpoint hook
-Date: Fri,  5 Jun 2020 08:26:15 -0400
-Message-Id: <20200605122620.2882962-1-sashal@kernel.org>
+Date: Fri,  5 Jun 2020 08:26:26 -0400
+Message-Id: <20200605122629.2883065-1-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_052623_568895_D81CEE51 
+X-CRM114-CacheID: sfid-20200605_052631_924705_B06A1126 
 X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -117,7 +117,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/kernel/ptrace.c b/arch/arm/kernel/ptrace.c
-index ae738a6319f6..364985c96a92 100644
+index d54c53b7ab63..711d854ea13a 100644
 --- a/arch/arm/kernel/ptrace.c
 +++ b/arch/arm/kernel/ptrace.c
 @@ -227,8 +227,8 @@ static struct undef_hook arm_break_hook = {
