@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A00B1F028E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:44:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C31F1F0281
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:44:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XDRJKIE3qOKO0DLe4aLI246b5ECrv6KcJ7WOcx6ILlM=; b=Z9Ed6N3rB1+dz6
-	J9Utr2Hkc3wvwUF5lhZDmQJ3tVW5c8lPh+mYRcmQaZNR3sbnuiU3q4w0BsevZNmmUJ7xAc5IuoEzJ
-	NNHQMAlmQjnW1AC/InQVs1CTZD5fI5MfLKkuVyKEHlK2oda/HkoWvHG8j8XWAOR1GK5gs/ldK3tvj
-	pr4+wMxQGL81zQWqV8WjJsIHBbj0YIR/Op64jIClZX1ta5H2oHowj5w0Q+o8QJmxQo9WxJKHT8d24
-	iGdAIVTpOhRrgEReYKLU9O7M3gtkYN/nq9ayIxbwgk2/K5LThtqCN+ryvhagn7egFk2h0TfGhvAOg
-	upEqA75+aCtai4oXKcVA==;
+	List-Owner; bh=BQ07DNzl1KOGWK2F113svrDiBKZGq+EBYnKVjIdrlnk=; b=VT8JH9U9HTCfGk
+	P9NHQ7xYiLKpN8MSNhtJAYohkU3mrProL2qO0W6iZjwV29gctw0abapnofGtuwcXWtEigof+BV9iT
+	ae/hMr1eY5DJ/4pjrl5rfxZUqvgMg51mTv4p2OQMLR9kxv5eWYfVCDVkdHzJY4voka2FjSKUQuN3m
+	g6bLY1WgmcUipRd7/8IsWVKkhPV12XikV220TNCvUDAFTECJTt/UghBRToAAemeVXr2LJUQDQvSPW
+	GjvWhz+rtUrXonMVleUQ+E0WkAou9IZXAX1GjKFl5oFuO+53tU2TSg9VtUPaoNqhLz0g/W0Yc5OXh
+	x9XLVOST+7StFZ6znskQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhK8K-00013P-Vp; Fri, 05 Jun 2020 21:44:12 +0000
+	id 1jhK87-0000m2-Et; Fri, 05 Jun 2020 21:43:59 +0000
 Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhK3Y-0002mq-KT
+ id 1jhK3Y-0002lz-Oj
  for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 21:39:18 +0000
-IronPort-SDR: Bif3huF3++E52Jgxb8jW5raQCHBnHO4+yfON64xyrZ8/IDCqY87ympYdL0LIxjQj2RnmvDuiWv
- kwUrGioTzeCA==
+IronPort-SDR: 1UhS3OuRKSpbt7qpsDwKC8OZXjRNHWU2Yet8Z/wX45blALTDyiPHyo91Vx4SUayZ7e2GDqMLus
+ MlopZtd20UKQ==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga002.jf.intel.com ([10.7.209.21])
  by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
  05 Jun 2020 14:39:08 -0700
-IronPort-SDR: I7BwiRnb6qWgFO7BpcC5Xe5lAqmxnRsI1qmZGEZxMZw6goAYfu74oYxKINf/llsyqxunF210uj
- a9IwlvttJxJQ==
+IronPort-SDR: ZZaZ6F/6BihmuvqApCfYZnPy0xhRSZJVb+TdFXwVrCd9yEoEPD+XPiqtGxrIPcIEmkPWmu+182
+ 4NUl5HJGXo4g==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,477,1583222400"; d="scan'208";a="287860895"
+X-IronPort-AV: E=Sophos;i="5.73,477,1583222400"; d="scan'208";a="287860898"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.152])
  by orsmga002.jf.intel.com with ESMTP; 05 Jun 2020 14:39:08 -0700
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 10/21] KVM: x86/mmu: Make __GFP_ZERO a property of the memory
- cache
-Date: Fri,  5 Jun 2020 14:38:42 -0700
-Message-Id: <20200605213853.14959-11-sean.j.christopherson@intel.com>
+Subject: [PATCH 11/21] KVM: x86/mmu: Zero allocate shadow pages (outside of
+ mmu_lock)
+Date: Fri,  5 Jun 2020 14:38:43 -0700
+Message-Id: <20200605213853.14959-12-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200605213853.14959-1-sean.j.christopherson@intel.com>
 References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_143916_720429_9D13A033 
-X-CRM114-Status: GOOD (  12.44  )
+X-CRM114-CacheID: sfid-20200605_143916_823820_A80FF91B 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -88,60 +88,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a gfp_zero flag to 'struct kvm_mmu_memory_cache' and use it to
-control __GFP_ZERO instead of hardcoding a call to kmem_cache_zalloc().
-A future patch needs such a flag for the __get_free_page() path, as
-gfn arrays do not need/want the allocator to zero the memory.  Convert
-the kmem_cache paths to __GFP_ZERO now so as to avoid a weird and
-inconsistent API in the future.
+Set __GFP_ZERO for the shadow page memory cache and drop the explicit
+clear_page() from kvm_mmu_get_page().  This moves the cost of zeroing a
+page to the allocation time of the physical page, i.e. when topping up
+the memory caches, and thus avoids having to zero out an entire page
+while holding mmu_lock.
 
-No functional change intended.
-
+Cc: Peter Feiner <pfeiner@google.com>
+Cc: Peter Shier <pshier@google.com>
+Cc: Junaid Shahid <junaids@google.com>
+Cc: Jim Mattson <jmattson@google.com>
+Suggested-by: Ben Gardon <bgardon@google.com>
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/include/asm/kvm_host.h | 1 +
- arch/x86/kvm/mmu/mmu.c          | 7 ++++++-
- 2 files changed, 7 insertions(+), 1 deletion(-)
+ arch/x86/kvm/mmu/mmu.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/arch/x86/include/asm/kvm_host.h b/arch/x86/include/asm/kvm_host.h
-index e7a427547557..fb99e6776e27 100644
---- a/arch/x86/include/asm/kvm_host.h
-+++ b/arch/x86/include/asm/kvm_host.h
-@@ -251,6 +251,7 @@ struct kvm_kernel_irq_routing_entry;
-  */
- struct kvm_mmu_memory_cache {
- 	int nobjs;
-+	gfp_t gfp_zero;
- 	struct kmem_cache *kmem_cache;
- 	void *objects[KVM_NR_MEM_OBJS];
- };
 diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-index d245acece3cd..6b0ec9060786 100644
+index 6b0ec9060786..a8f8eebf67df 100644
 --- a/arch/x86/kvm/mmu/mmu.c
 +++ b/arch/x86/kvm/mmu/mmu.c
-@@ -1063,8 +1063,10 @@ static void walk_shadow_page_lockless_end(struct kvm_vcpu *vcpu)
- static inline void *mmu_memory_cache_alloc_obj(struct kvm_mmu_memory_cache *mc,
- 					       gfp_t gfp_flags)
- {
-+	gfp_flags |= mc->gfp_zero;
-+
- 	if (mc->kmem_cache)
--		return kmem_cache_zalloc(mc->kmem_cache, gfp_flags);
-+		return kmem_cache_alloc(mc->kmem_cache, gfp_flags);
- 	else
- 		return (void *)__get_free_page(gfp_flags);
- }
-@@ -5680,7 +5682,10 @@ int kvm_mmu_create(struct kvm_vcpu *vcpu)
- 	int ret;
+@@ -2545,7 +2545,6 @@ static struct kvm_mmu_page *kvm_mmu_get_page(struct kvm_vcpu *vcpu,
+ 		if (level > PG_LEVEL_4K && need_sync)
+ 			flush |= kvm_sync_pages(vcpu, gfn, &invalid_list);
+ 	}
+-	clear_page(sp->spt);
+ 	trace_kvm_mmu_get_page(sp, true);
  
- 	vcpu->arch.mmu_pte_list_desc_cache.kmem_cache = pte_list_desc_cache;
-+	vcpu->arch.mmu_pte_list_desc_cache.gfp_zero = __GFP_ZERO;
-+
+ 	kvm_mmu_flush_or_zap(vcpu, &invalid_list, false, flush);
+@@ -5687,6 +5686,8 @@ int kvm_mmu_create(struct kvm_vcpu *vcpu)
  	vcpu->arch.mmu_page_header_cache.kmem_cache = mmu_page_header_cache;
-+	vcpu->arch.mmu_page_header_cache.gfp_zero = __GFP_ZERO;
+ 	vcpu->arch.mmu_page_header_cache.gfp_zero = __GFP_ZERO;
  
++	vcpu->arch.mmu_shadow_page_cache.gfp_zero = __GFP_ZERO;
++
  	vcpu->arch.mmu = &vcpu->arch.root_mmu;
  	vcpu->arch.walk_mmu = &vcpu->arch.root_mmu;
+ 
 -- 
 2.26.0
 
