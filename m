@@ -2,61 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1EFAB1EEF51
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 04:10:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A296C1EEF52
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 04:11:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NbT/+R6UgKGS5ecrfd3xMTTq7XUraAulP0T7R39dspY=; b=VT+RrgX1Z3SsF9
-	Dg18pmWNEzlHDU6UCJu3W0gykMMskA5eEhBLo+mZPud4/EmNPdUr+u94l36Fv4rtusg5Lu2J53LSN
-	APVLVQSS31zWLps5f6LoFpSPpDHHlMfSEW4An3KyfzDaIFNhwj0uv3g6SAAUg1PUm/RBhxcJb/tbA
-	md/q1MfIyHQDdyvFMA+G4Ke1skTTBuLIyDlm2hfIlrBOCyWSeRXURB7odnP0bV7ZoJL/rzC5YM5Cw
-	aBPpELF+TwxFG5ufsnfekK3mKQdHS0M9i90foaJ5AAyypbfsP0Zohd/FDNMu+Hk8JoYBZdhMhjtBX
-	EsrNIVmOd4IGbBN8bf8A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YxamQG+qZ7GZMY9nBdV+dtC+jEPtD4pMqf5lprdj3wM=; b=AbTegjLqAEV9ME
+	8xvY3g50J+qM49n8b3Dy9JrZUKUT8PBigviXk0slxEzhyVT2usKw0mc3qljRIG561Fnv6Ef9wKOW1
+	NXVHS8sxsgbAxcKxU3olW0VTsiQ0w09XIrPL5hBXX3oflAuG/I+IUgX8rBU580pLs3Piv9MLGoY7B
+	RxzQgPodHfgEinArKqR/UouxylFa33meVUtiJcYa4bR7BofffsaPDhNqnjf+YsWxRSdSoO1ZhQFMx
+	0GSR6mZpUQjccs2UXPMoFuiECQuek+gOeUp1oG8wXuuDRPyJ0IjbQNSDXE49ZDugyuQfx6/CKRDuE
+	tpI0RXCiTsCCl8xri+Ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh1oc-0003NN-Fn; Fri, 05 Jun 2020 02:10:38 +0000
-Received: from mail-eopbgr50070.outbound.protection.outlook.com ([40.107.5.70]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1jh1oq-0003Vi-QB; Fri, 05 Jun 2020 02:10:52 +0000
+Received: from mail-vi1eur05on2049.outbound.protection.outlook.com
+ ([40.107.21.49] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh1oV-0003Mp-Pd
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 02:10:33 +0000
+ id 1jh1ob-0003P2-9N
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 02:10:38 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=OQZYvXjweuQjZvNzYFLg1vZyr4UP8r4xtoZFnHI6LT7SyT/sEvdSc74939rVhUta3D6kzuZToapLP8ooeUVlHkJIytTL4WyC0ehtEFniOjeQojnxaKdMHzt7vX8IJroxcuc5K/j/D3YkzlZ1v1dY0pA6f68RhjeR1sMxsgwek54sUvD3B4ML6LxkcF4mXFIy48hWW78EuM5ZsPMKau7/HGdwIypS+M3++ANaHo+qtYe75t40zxamW73Kz5ZKyVnKc+fLN0fuab0XfUJP3Zcd0llqHuK4COAKrFbQKmdN3HpiHLSS83Hnbb7wZW1PKgGcHLfVAZmK1G2AU9F3prnGaA==
+ b=PE4sO/mYPu6mQN1cuW/3PAo6mxwva1ju/x4g/mVOtICfWrZNEtbEQ9cP0MpzD1y4F4hMDhLxkhnLllw0SdTy3tK8yMTC48W7LFv0U+HY7mvu0mo5tH+7Gy5TyfJFR9yClCqMBqrixqO+xPHcerpllrDcbLCtRlEviBfEWTudkOxuJx5ZrGXLExnONmOWMkJvHv1G+hWTk96NbTnMMTeoOP1Cf1mKbf732byj5z1TR0JTvJpuklZMqSDXKmOpgh/whwWGxqZjWBO6j90IIKtys17YZLTGfRHY3ch/uFAGM75Jj59bf+XNojZrcp/LZKo2Y/N25mYU3bd/6JvGqdb1Lw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=A/hQy3gTaNgnhXCXllfbB8ZGToJ4h85FMaa5f8Qr8RE=;
- b=arzmTuoxuWOXh0AG8u8tSDhfrzmxjueWr/sQtGMmVUr/Bfc4FqKUHgEQHL4XxnBVaYVUL0BANRsFO1RtURtBy3yacco2sZT0VGmBKpYdgfq0ZcEgqwTpoZ7wBQXCytiRTiH50NuRHbMX+4lgdsxMzigQBnAZsgLmgwTNSEemz0aprEkwA4awebxhrs4NNvhMqTVpRAadC9tIl8+ABQbHlATB+riboUb+e7nqD2fgjKcWplNFoS4BEi3mcXwjgBqodFYO8lfZ4kARvncF3t+rL6dsStQ9lnO1O9X44dJgrnFPZPvW/GsaQ8vIl9cafnoS323jVWVz5+S3uzz5t6lbHg==
+ bh=K8k7NXNuGefdlSKiqskM6lVCF/mKipaKJjqtQnfYlFU=;
+ b=gjUQYF4WtUklqlTFYSCvdq9Uvf1TZCjoXGAfcmgZeQJzsVgUS8kXiQhjdWqUH0ApOj9Hml2r2P8AwEzFRc6WNUPJxiGl49fkQikvtHgm3becvzDr7Q3JASE7zKJ51F9T1FBPPhuFFKIP/PBk0gRgutrEqSyVwGVGFIPzm2Ae+hlXSA1S7bUC2AqmRqPeSKjXXLsrEQRQTlsleSLatAGHT5cRltYVHaJD/PQaLs+JN/vnGRmJCVbQsAZVd1DfWXtL3wiGZ4798vrSEpJHpXM/rQpl0AntoYXp3SXQjnMpSkg+rCE5R8DK3nyWHN+07fxsm8fqNeP/uhkKsKBLhzss2w==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=A/hQy3gTaNgnhXCXllfbB8ZGToJ4h85FMaa5f8Qr8RE=;
- b=b/rKbnO7os2aOMh8POBpC8+jkgXOUy50BsC9DxCc639FpBQzCE+IW8YaGJJ2fKzozz00xUMPpcsW3XG9xb5nUEdH22X/jsdSQarThIVurXTFSqXMG6Drc6gjgkBrWW5t2snj2DtZUNCVayyRW32LUylZjqTHSMO7UQO5MByqsYE=
+ bh=K8k7NXNuGefdlSKiqskM6lVCF/mKipaKJjqtQnfYlFU=;
+ b=k8I/NGDhu78xDUmyDc+VDZvr15mFiwe/+KQPNalJvyxCiFciozgHrG8eE8UBmh2/rDd2K42ROdHCOxkTQ+nPv8VnLrKINPx6byWXC2QLsNVmqx1aPSqzHRElBAeQEBkUr9E5B10zd2zjdu57pNSaAiEHObjUfq1gf6JDIjNcbxo=
 Authentication-Results: kernel.org; dkim=none (message not signed)
  header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
 Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
  by DB6PR0402MB2696.eurprd04.prod.outlook.com (2603:10a6:4:a1::12)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.18; Fri, 5 Jun
- 2020 02:10:28 +0000
+ 2020 02:10:34 +0000
 Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
  ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
  ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.3066.018; Fri, 5 Jun 2020
- 02:10:28 +0000
+ 02:10:34 +0000
 From: peng.fan@nxp.com
 To: shawnguo@kernel.org,
 	s.hauer@pengutronix.de,
 	aisheng.dong@nxp.com
-Subject: [PATCH V3 0/3] firmware: imx: fix/update cm4 and add resource check 
-Date: Fri,  5 Jun 2020 09:59:29 +0800
-Message-Id: <1591322372-3793-1-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V3 1/3] firmware: imx: scu-pd: fix cm40 power domain
+Date: Fri,  5 Jun 2020 09:59:30 +0800
+Message-Id: <1591322372-3793-2-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1591322372-3793-1-git-send-email-peng.fan@nxp.com>
+References: <1591322372-3793-1-git-send-email-peng.fan@nxp.com>
 X-ClientProxiedBy: SGAP274CA0014.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b6::26)
  To DB6PR0402MB2760.eurprd04.prod.outlook.com
  (2603:10a6:4:a1::14)
@@ -65,47 +67,47 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from localhost.localdomain (119.31.174.66) by
  SGAP274CA0014.SGPP274.PROD.OUTLOOK.COM (2603:1096:4:b6::26) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3066.18 via Frontend Transport; Fri, 5 Jun 2020 02:10:23 +0000
+ 15.20.3066.18 via Frontend Transport; Fri, 5 Jun 2020 02:10:29 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 8995f4b1-60c7-408b-9f0c-08d808f59de5
+X-MS-Office365-Filtering-Correlation-Id: 2a282068-1813-4f24-0e72-08d808f5a180
 X-MS-TrafficTypeDiagnostic: DB6PR0402MB2696:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <DB6PR0402MB2696D75F48850A82D7A3103188860@DB6PR0402MB2696.eurprd04.prod.outlook.com>
+X-Microsoft-Antispam-PRVS: <DB6PR0402MB269619A7933CCDF71FFEFC3388860@DB6PR0402MB2696.eurprd04.prod.outlook.com>
 X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
 X-Forefront-PRVS: 0425A67DEF
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: klcd5G1N9Hnt2Va5cYthIch31DmliLbvjzb60ETEDROvYEg5Ub35Vh+N69UroW/0x371bJKtdw8OBnnTCBaoBRodvnl/NlKQ+7U4iVLPRgG2qzzLy7+TbOB5C9ynd10Ol0FxcKN1J5PP42WSdaR9PKa4I90QK/W8xvL6NfYEIYDn/fgwqrCgv+93PqxpZ5O2tP2L0OLZJgPGsJnWp9EkFw/V4VIZW/okFJHoh6pyGOobmK853Vrx9YpsVD3LtaPl3+YUOQHx4Xa8GX5t5Z942EJhehiG+5JSejfU+mCzBw8rZk6zBAr6jwBTltyighJVj5ES5u8Jvalj96tzE1rtdUUawrL3ypvrdTSiSc8Jiwj65onDuvJuK9SSeVpTg+krood4EMmgi5Ysf57V/z+hroxJpF+AuTRD1JNigr7aqkUGa1jPcxxvWNDob1e1DKAdcEfi65K9hqQC8ldZ+4EmWQ==
+X-Microsoft-Antispam-Message-Info: 6FRgfYgxBh86zpRKoA0l2A/5OzS/UyU9zo9tcbPKmqywEHzGJ50ZCWjQaA3Wyy7Pf2uLkHmgRHPXz65tySQ0cEvocp9T1ZkFSe6zwjGSxMz4bvGI1T91CAtvsnbaZaBIg7sjGaSRu7E3b6CeLMBcpq7QB/NyJd1xeu9cDpMaxoUx0CfF74mrS4nasVphaPSEJ3bawi27cpKhU/jlQuZZGannggY6lQybA1NIC5PxM3DDIXOYPVU+BAuzpygN0bVHfV3WgdOYbeRAsCySqwO6TAZRrez5+D9QMn2Vkq6fIA/Q0lLKrxnaJfkNnqlWgCPTQAoWURlNXuouPREU7oE6gkx2TMj32FOL7aTseM1U6FFpah51KHFdOtIYmQYn/g+S
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(346002)(376002)(136003)(39860400002)(396003)(366004)(86362001)(83380400001)(6506007)(52116002)(478600001)(4743002)(66556008)(66946007)(8676002)(9686003)(66476007)(6512007)(8936002)(2906002)(4744005)(186003)(36756003)(2616005)(966005)(6486002)(956004)(4326008)(15650500001)(69590400007)(16526019)(26005)(5660300002)(316002);
+ SFS:(4636009)(346002)(376002)(136003)(39860400002)(396003)(366004)(86362001)(83380400001)(6506007)(52116002)(478600001)(66556008)(66946007)(8676002)(9686003)(66476007)(6512007)(8936002)(2906002)(186003)(36756003)(2616005)(6486002)(956004)(4326008)(69590400007)(16526019)(6666004)(26005)(5660300002)(316002);
  DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: pGbnuTCqjKXtHwv9D0RN1YaVU2b4Drj36CvZDBDJQN2TClNx+vAyx8qToXZbB1fg9oithWhBSwnL1miDJ0fYOhc2fGgN7zmkFwvgkmANG8udJlKeMFGplMfTv9gMR94Bx/1Y5mWOhfJgSv8+be329/bp409dGmonl9htdAeMtKHiCp0+Vy41NyZ6y6HzEdCQSLIrd9TyLhCBz5MzbwZiAp3W2Sfx0fnBtsUWtfTv3i9y5hLMUM2bH4REXY0qHWbx7WLkv7VX5LwjhwPLTAIFDvkfEDrMPnSoWLMSPAv2MTy5vcmMWx2jOWOGiSoGX/9vauPvuORpHwtJmmGkvXuTxfLNPuk1A3rnAMzLnIgVmco5jlv3VDFDvpN44yjRsDA987bWeBhTDb/m2lTbDoZWods2P/HurkWE2Y3eMcuaiiyhocjLEiTKGKCB0MtFiLUmqI022SChiOcMWrlcNW9pJb95LFTVT9avmAdSxT33BZs=
+X-MS-Exchange-AntiSpam-MessageData: tsus6vvc03SksAP/GrjwZ1GFwVc1smztOG3j5Ued8uz8c7YWCLrCiC+18reJcPn8YgNwK/z7Hxl0v/3n0hzzR0MVblZ7fqc4/JwTBQiO8YRa6ug1NKyOWyvYhPf5AQjX9lruqJ9wH1EuzNcKPXi1CNdw+HiGRcj7hLCNmfnJYlnJiK6/VnbJPQ1aVP7v5ipP24HB91C7bhIAcipBdoWNIddo0PA9YSKTrxbrpnaopmPyo5h4l30Wnv7nrd2MLet0sUs0l2ic62DNMtoBUiZPdcuDJ91BnFK7P5IMH4QFzztjNvyakn1/deZhaErNXZZyb9nFsVT6hVWz00863HpoIoaU0ASZzK7ylnSYqsAwBBnByBDd6F9cqDHFwB2+prfC44lBvMcIMbv+NlKOrhR5TwinrfUIxsEdbSrKi4xMHMDXHIJA9mp9TDXX4NrshWYhJiWlhKZB1Z1J9td2ZvN8j3wXqme9S2mngsyEb5blRK0=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8995f4b1-60c7-408b-9f0c-08d808f59de5
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2020 02:10:28.6284 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2a282068-1813-4f24-0e72-08d808f5a180
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2020 02:10:34.6847 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: WxQoTLl0GLQkn6nBoU0YQQGb/JsI5ClGS++D3dohD3gy2g6Piw5wN2tn50lvoiHlGhBXaqnqfflTVMt78kQQaw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 61168j//I8Z8yhv58IdebimRvYpji6IcplBc48q2v6KeZleQHRlsWwdv+OqLk8dVx/Q5VIyMoG9Z0N/LcZ5biA==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2696
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_191031_830716_AB964ACC 
-X-CRM114-Status: UNSURE (   8.16  )
+X-CRM114-CacheID: sfid-20200604_191037_335215_5133D93E 
+X-CRM114-Status: UNSURE (   9.53  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.70 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.21.49 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.5.70 listed in wl.mailspike.net]
+ [40.107.21.49 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -139,36 +141,31 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-V3:
- Fix comments
- Add R-b tag
+The postfix needs to be false. Alought compiler use 0 for postfix now,
+and take start_from as 0, it is better we add explicit false to postfix.
 
-V2:
- Add R-b tag
- Drop patch 3/4 from V1
- Add comments and update Copyright for patch 2/3
- keep code consistency in Patch 3/3
+Fixes: 705dcca91d0a("firmware: imx: scu-pd: add power domain for I2C and INTMUX in CM40 SS")
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+---
+ drivers/firmware/imx/scu-pd.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-V1:
- https://patchwork.kernel.org/cover/11505045/
-
-Fix cm40 power domain, update to add more cm4 resources
-Add resource owner check, to not register if not owned by Linux.
-
-Peng Fan (3):
-  firmware: imx: scu-pd: fix cm40 power domain
-  firmware: imx: add resource management api
-  firmware: imx: scu-pd: add more cm4 resources
-
- drivers/firmware/imx/Makefile       |  2 +-
- drivers/firmware/imx/rm.c           | 45 ++++++++++++++++++++++++
- drivers/firmware/imx/scu-pd.c       | 14 ++++++--
- include/linux/firmware/imx/sci.h    |  1 +
- include/linux/firmware/imx/svc/rm.h | 69 +++++++++++++++++++++++++++++++++++++
- 5 files changed, 128 insertions(+), 3 deletions(-)
- create mode 100644 drivers/firmware/imx/rm.c
- create mode 100644 include/linux/firmware/imx/svc/rm.h
-
+diff --git a/drivers/firmware/imx/scu-pd.c b/drivers/firmware/imx/scu-pd.c
+index fb5523aa16ee..d1b313fa7b96 100644
+--- a/drivers/firmware/imx/scu-pd.c
++++ b/drivers/firmware/imx/scu-pd.c
+@@ -167,8 +167,8 @@ static const struct imx_sc_pd_range imx8qxp_scu_pd_ranges[] = {
+ 	{ "dc0-pll", IMX_SC_R_DC_0_PLL_0, 2, true, 0 },
+ 
+ 	/* CM40 SS */
+-	{ "cm40_i2c", IMX_SC_R_M4_0_I2C, 1, 0 },
+-	{ "cm40_intmux", IMX_SC_R_M4_0_INTMUX, 1, 0 },
++	{ "cm40_i2c", IMX_SC_R_M4_0_I2C, 1, false, 0 },
++	{ "cm40_intmux", IMX_SC_R_M4_0_INTMUX, 1, false, 0 },
+ };
+ 
+ static const struct imx_sc_pd_soc imx8qxp_scu_pd = {
 -- 
 2.16.4
 
