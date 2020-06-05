@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDD661EF8D1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:20:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85E9B1EF8D2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:20:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jz7SK2argdgJuOble3nglwQtusHAhk8vEf6mks/WtUc=; b=MZNvMWu+gRHJfo
-	w4tu5r2C+mWvzYuSzxOhxMP6tG9n7GzfEM30XgvexQuMYn0k3qamwRfF1EWFTcT04GIWbf9GFR1l8
-	Q+ZEtnwDGEbfPWVicS9dt3GgwyVSf2RFdl+MJLBT3s7T82KwvKGXmvdnDksCJgEe+O1MH/I+IhoR4
-	dSIImGjT7gEl5IviLxShkgVNC8BCHQwtizr3Duk5OJ+w+kdzR5Q0eCRfDB37fRoUetiWHk4qot0IL
-	QPtrWfIQgcIrGGSRrGWzlnsoGmy3vXWDtPFQu0nd3iHZH68WLSLvc0d0oOZJoNGK+b6Axp/IdeuA2
-	EEqF5ji/pqLvhGx2mGxg==;
+	List-Owner; bh=iazzj6qQknBqvGTDa6ibaHhJM+eybwLtubizeT7t7Rs=; b=ti4CmUsK7Zld4e
+	Yxn0WFS/fqe7JgqGYOVvmFLs1hXWr8YEke+Hud0gxdLlVj05W1AkiWykUroJ29BBYvkXIXXsZz7cL
+	LeCrX7c90c1hFVSD5xfx5Qr5uvXAMs/F8POKAZxzZ0gPH9Sw3inhyBOChyY7o5CNgv1fIS2jr71ng
+	J0Wlu+47wosQaGEHb7Mx0W4jdzZmImaFzY2oDEPgt4x4DIk8PggPjQ/5cqGSa1NgFrFmD7hegWRgD
+	UqQ49an8q27eEWAe/buR0PLF7bixK27jywrZiRjiE9JMm4Qcg8Feeelyj2Bdz7rPmtLyF96y4bGOR
+	/lbzgxXC2riNB+gJ+UwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhCGb-0002vo-Rw; Fri, 05 Jun 2020 13:20:13 +0000
+	id 1jhCGn-0005CI-VT; Fri, 05 Jun 2020 13:20:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhCFI-00023a-0w
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:18:53 +0000
+ id 1jhCFK-00026P-LX
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:18:56 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1C2E02067B;
- Fri,  5 Jun 2020 13:18:50 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8EE84206E6;
+ Fri,  5 Jun 2020 13:18:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591363131;
- bh=eeLGS2Ob+vqXgTRq2Bp7pW9jTvXCa6SMu6lcPFzwprU=;
+ s=default; t=1591363134;
+ bh=Qm1D4s+M/mO7mwIKm4XuWbPwM6fNbujUhQSw8qCmPVo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=maFrPBLORDef7L1iOwJbK22plN7z9QKx0chV1sjI41dxZav/kUFiuvZP5AsK8EzQH
- 8Q25Yt5egUFg+QVtRvAwhTPddcTvFQFvkcRjdzBeM8S59zKXWx3pjwEpWuWioDnE+r
- rg+MZrqs2Sh4tc1o8qGKJ3ptSeN32tFM9DJ/za3U=
+ b=grcAgPx6zgVuBnultaVik5WDrGGtrCZoVM9En1mJlwNt86C9WRCX2a0GaKIGQC7nS
+ 0QjDmPX6BEevOdF4tUCJNJJiebXqxsFKXmUWVsK6JHLKq/ZPCFwI9EcqLfcri2kDqm
+ /z3SJNRZihMDLvfHgyyxzyG/YGCMYD9wgdjVCRUk=
 From: Mark Brown <broonie@kernel.org>
 To: Will Deacon <will@kernel.org>,
 	Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH 4/5] arm64: vdso: Add getcpu() implementation
-Date: Fri,  5 Jun 2020 14:11:30 +0100
-Message-Id: <20200605131131.16491-5-broonie@kernel.org>
+Subject: [PATCH 5/5] selftests: vdso: Support arm64 in getcpu() test
+Date: Fri,  5 Jun 2020 14:11:31 +0100
+Message-Id: <20200605131131.16491-6-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200605131131.16491-1-broonie@kernel.org>
 References: <20200605131131.16491-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_061852_193188_65FB3D0C 
-X-CRM114-Status: GOOD (  13.40  )
+X-CRM114-CacheID: sfid-20200605_061855_013871_684DC87A 
+X-CRM114-Status: GOOD (  10.49  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,96 +84,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some applications, especially trace ones, benefit from avoiding the syscall
-overhead on getcpu() calls so provide a vDSO implementation of it.
+arm64 exports the vDSO ABI with a version of LINUX_2.6.39 and symbols
+prefixed with __kernel rather than __vdso. Update the getcpu() test to
+handle this.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/kernel/vdso/Makefile   |  2 +-
- arch/arm64/kernel/vdso/vdso.lds.S |  1 +
- arch/arm64/kernel/vdso/vgetcpu.c  | 48 +++++++++++++++++++++++++++++++
- 3 files changed, 50 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm64/kernel/vdso/vgetcpu.c
+ tools/testing/selftests/vDSO/vdso_test_getcpu.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index 279b1b9fb956..4ba2a159dd7c 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -11,7 +11,7 @@
- ARCH_REL_TYPE_ABS := R_AARCH64_JUMP_SLOT|R_AARCH64_GLOB_DAT|R_AARCH64_ABS64
- include $(srctree)/lib/vdso/Makefile
+diff --git a/tools/testing/selftests/vDSO/vdso_test_getcpu.c b/tools/testing/selftests/vDSO/vdso_test_getcpu.c
+index fc25ede131b8..4aeb65012b81 100644
+--- a/tools/testing/selftests/vDSO/vdso_test_getcpu.c
++++ b/tools/testing/selftests/vDSO/vdso_test_getcpu.c
+@@ -14,8 +14,18 @@
+ #include "../kselftest.h"
+ #include "parse_vdso.h"
  
--obj-vdso := vgettimeofday.o note.o sigreturn.o
-+obj-vdso := vgettimeofday.o note.o sigreturn.o vgetcpu.o
- 
- # Build rules
- targets := $(obj-vdso) vdso.so vdso.so.dbg
-diff --git a/arch/arm64/kernel/vdso/vdso.lds.S b/arch/arm64/kernel/vdso/vdso.lds.S
-index 7ad2d3a0cd48..c2fd94f14b94 100644
---- a/arch/arm64/kernel/vdso/vdso.lds.S
-+++ b/arch/arm64/kernel/vdso/vdso.lds.S
-@@ -77,6 +77,7 @@ VERSION
- 		__kernel_gettimeofday;
- 		__kernel_clock_gettime;
- 		__kernel_clock_getres;
-+		__kernel_getcpu;
- 	local: *;
- 	};
- }
-diff --git a/arch/arm64/kernel/vdso/vgetcpu.c b/arch/arm64/kernel/vdso/vgetcpu.c
-new file mode 100644
-index 000000000000..e8972e561e08
---- /dev/null
-+++ b/arch/arm64/kernel/vdso/vgetcpu.c
-@@ -0,0 +1,48 @@
-+// SPDX-License-Identifier: GPL-2.0
 +/*
-+ * ARM64 userspace implementations of getcpu()
-+ *
-+ * Copyright (C) 2020 ARM Limited
-+ *
++ * ARM64's vDSO exports its getcpu() implementation with a different
++ * name and version from other architectures, so we need to handle it
++ * as a special case.
 + */
-+
-+#include <asm/unistd.h>
-+#include <asm/vdso/datapage.h>
-+
-+struct getcpucache;
-+
-+static __always_inline
-+int getcpu_fallback(unsigned int *_cpu, unsigned int *_node,
-+		    struct getcpucache *_c)
-+{
-+	register unsigned int *cpu asm("x0") = _cpu;
-+	register unsigned int *node asm("x1") = _node;
-+	register struct getcpucache *c asm("x2") = _c;
-+	register long ret asm ("x0");
-+	register long nr asm("x8") = __NR_getcpu;
-+
-+	asm volatile(
-+	"       svc #0\n"
-+	: "=r" (ret)
-+	: "r" (cpu), "r" (node), "r" (c), "r" (nr)
-+	: "memory");
-+
-+	return ret;
-+}
-+
-+int __kernel_getcpu(unsigned int *cpu, unsigned int *node,
-+		    struct getcpucache *c)
-+{
-+	struct vdso_cpu_data *cpu_data = __vdso_cpu_data();
-+
-+	if (cpu_data) {
-+		if (cpu)
-+			*cpu = cpu_data->cpu;
-+		if (node)
-+			*node = cpu_data->node;
-+
-+		return 0;
-+	}
-+
-+	return getcpu_fallback(cpu, node, c);
-+}
++#if defined(__aarch64__)
++const char *version = "LINUX_2.6.39";
++const char *name = "__kernel_getcpu";
++#else
+ const char *version = "LINUX_2.6";
+ const char *name = "__vdso_getcpu";
++#endif
+ 
+ struct getcpu_cache;
+ typedef long (*getcpu_t)(unsigned int *, unsigned int *,
 -- 
 2.20.1
 
