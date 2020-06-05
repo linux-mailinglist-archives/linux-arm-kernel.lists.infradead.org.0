@@ -2,66 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C43D31F0091
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 21:50:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46D9C1F00C1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 22:07:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3FpUznKGWcXtMxwG/dGhLU+7DPUi8wSzJgv2334xvSM=; b=ODmUOk5pu3UtV9
-	J/S+FUkrUWJS+Xuo81+ujhcWqB7wkxbHIoZxGd1WwVQ6cOL2ke/dLoWOzng1vA4Mh8o2oq7jRh0nf
-	U+MjYRFSfKKGDQiAO+J/VxidAwAKQcXIXkSdK/np9/0K/g+UkMT5NrcXCbRu5ilXToE+fNxZvffIo
-	zektI/WZO0WKzVSa8FkLymWSpQhoHQZY9keVyQNs55/zTsV9zQlyxulS6GfDeczIxQlFQun0AtsU6
-	R6V75yF997L4I1wsPvw3yp9xROapnhA6aOKbl2+N4d58zKixvL9yFvVyfpf36W6uncxg3S3xR7nc9
-	11VIP+mc3JgLkzZ5L4eA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fQM/C06H1tixaxsDfL7r3mrZVOwibAEhziZqcV+IAgY=; b=KohM0SamXRyF4iDjC0btNDevD
+	rmpLyroZNuioVIa9us9jSkYrNSb1ay8MK4u/LPEP4EJmMDOqxTQLZeytsdzzoWpXWysZwY6RY+Ooc
+	7yTKQifItyDfzOOFlzzRhuh21LWi2+b4Vpx9r7QtJGaRaOWdj0xBMbBioqHAK9+1TrJl7yueGgYWC
+	YWiaveU9WejIjN5e+PbJAq8UcYmxAQ4wobp/EPkW0ibEmUX49tU8pQzbJXApunBp7spIY4xpR46n9
+	AsqWflz9xBP1QH96l51j0MTTDV4AexJ2BURr+Rwa/L4opnX+gwbDntfniALgpQlAlp7YG87JUAjqD
+	JW+0CBXqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhIM8-00045j-LW; Fri, 05 Jun 2020 19:50:20 +0000
-Received: from rere.qmqm.pl ([91.227.64.183])
+	id 1jhId0-0005zu-FC; Fri, 05 Jun 2020 20:07:46 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhILz-0002qy-O7
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 19:50:13 +0000
-Received: from remote.user (localhost [127.0.0.1])
- by rere.qmqm.pl (Postfix) with ESMTPSA id 49dtXG0LfBz4D;
- Fri,  5 Jun 2020 21:49:49 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rere.qmqm.pl; s=1;
- t=1591386603; bh=nw6ZPbzMEGEU3ympvmvF/EBnKh28J/TObnDHFEogcNM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZQGk/WcmQdG+yyITewmCzwmMOtBeMJF66LJXev36YPIF5HrC5ZHZ2yLz3vJylFOY2
- WT3VOkjF3kAcjfTkMR4gxIzFUE/sY5FqXj8AFOnZJ4Tr6DOXWsqghWyoTnW+bmLd7W
- jwf7lDWpwE9H61I5VhaqXwCJeCG+3Lg1TEqxk1KZ6vhl2INRouIoCb0udoubFJKGQI
- IsEim/o9vF8TNZ0H+HPzCDx+zT08J5O7Oou9dsj0/dTuOSTcvd1399RdkvL5g6/Eot
- j+wtjmvTFf8Ae7wTPa5xvRXyXIACc/X1FvT/PQI7a7lj4fzSUFS7z0POvlS/mwXhVU
- JIdjeHtEOaibA==
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.102.2 at mail
-Date: Fri, 5 Jun 2020 21:49:48 +0200
-From: =?iso-8859-2?Q?Micha=B3_Miros=B3aw?= <mirq-linux@rere.qmqm.pl>
-To: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-Subject: Re: [PATCH v3 5/7] iio: adc: exynos: Use input_device_enabled()
-Message-ID: <20200605194948.GC9553@qmqm.qmqm.pl>
-References: <20200604072853.GP89269@dtor-ws>
- <20200605173335.13753-1-andrzej.p@collabora.com>
- <20200605173335.13753-6-andrzej.p@collabora.com>
+ id 1jhIct-0005z4-OF
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 20:07:41 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id C7B7222FEB;
+ Fri,  5 Jun 2020 22:07:36 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1591387657;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=A4yi/Grhaf0w4jjGNDMnsTZ5HJKkIfL4Ymq6vlFIb8I=;
+ b=OuBQyumVx9fvWq152YNCm2zk5nOR6UzVoQFWmfvSoHap0daT70FokziRiSbd6uS36mmPq6
+ G+e8cV1FzWm9bwj7zpeF8fVaVmGgJnv9KD/GT5DtDfSlaIe9MSW8xvNitMyQkuNc0sFibr
+ gIo1iXnMpABriffMl0K69T6+nevu00I=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200605173335.13753-6-andrzej.p@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Fri, 05 Jun 2020 22:07:36 +0200
+From: Michael Walle <michael@walle.cc>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld management
+ controller
+In-Reply-To: <20200605105026.GC5413@sirena.org.uk>
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-3-michael@walle.cc> <20200605065709.GD3714@dell>
+ <20200605105026.GC5413@sirena.org.uk>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <c5632bfab3956265e90fc2fb6c0b3cae@walle.cc>
+X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_125011_977420_1DB7EF92 
-X-CRM114-Status: GOOD (  11.91  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200605_130739_950235_0123A869 
+X-CRM114-Status: GOOD (  19.49  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,92 +82,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@collabora.com, Nick Dyer <nick@shmanahar.org>,
- linux-iio@vger.kernel.org, platform-driver-x86@vger.kernel.org,
- ibm-acpi-devel@lists.sourceforge.net, Laxman Dewangan <ldewangan@nvidia.com>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>,
- Peter Hutterer <peter.hutterer@redhat.com>, Fabio Estevam <festevam@gmail.com>,
- linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>, linux-acpi@vger.kernel.org,
- Kukjin Kim <kgene@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- linux-input@vger.kernel.org, Len Brown <lenb@kernel.org>,
- Michael Hennerich <michael.hennerich@analog.com>, linux-pm@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Sylvain Lemieux <slemieux.tyco@gmail.com>,
- Henrique de Moraes Holschuh <ibm-acpi@hmh.eng.br>,
- Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
- Lars-Peter Clausen <lars@metafoo.de>, linux-tegra@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Barry Song <baohua@kernel.org>,
- Ferruh Yigit <fery@cypress.com>, patches@opensource.cirrus.com,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- Thierry Reding <thierry.reding@gmail.com>, Sangwon Jee <jeesw@melfas.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Hartmut Knaack <knaack.h@gmx.de>, Shawn Guo <shawnguo@kernel.org>,
- Jonathan Cameron <jic23@kernel.org>
-Content-Type: text/plain; charset="iso-8859-2"
-Content-Transfer-Encoding: quoted-printable
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 05, 2020 at 07:33:33PM +0200, Andrzej Pietrasiewicz wrote:
-> A new helper is available, so use it. Inspecting 'users' member of
-> input_dev requires taking device's mutex.
-> =
+Hi,
 
-> Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
-> ---
->  drivers/iio/adc/exynos_adc.c | 11 +++++++++--
->  1 file changed, 9 insertions(+), 2 deletions(-)
-> =
+Am 2020-06-05 12:50, schrieb Mark Brown:
+> On Fri, Jun 05, 2020 at 07:57:09AM +0100, Lee Jones wrote:
+>> On Thu, 04 Jun 2020, Michael Walle wrote:
+> 
+>> > +	sl28cpld->regmap = devm_regmap_init_i2c(i2c, &sl28cpld_regmap_config);
+>> > +	if (IS_ERR(sl28cpld->regmap))
+>> > +		return PTR_ERR(sl28cpld->regmap);
+> 
+>> This is now a shared memory allocator and not an MFD at all.
+> 
+>> I'm clamping down on these type of drivers!
+> 
+>> Please find a better way to accomplish this.
+> 
+> What is the concern with this?  Looking at the patch I'm guessing the
+> concern would be that the driver isn't instantiating any MFD children
+> and instead requiring them to be put in the DT?
+> 
+>> Potentially using "simple-mfd" and "simple-regmap".
+> 
+>> The former already exists and does what you want.  The latter doesn't
+>> yet exist, but could solve your and lots of other contributor's
+>> issues.
+> 
+> I have no idea what you are thinking of when you say "simple-regmap" so
+> it is difficult to comment.
 
-> diff --git a/drivers/iio/adc/exynos_adc.c b/drivers/iio/adc/exynos_adc.c
-> index 22131a677445..294715bafe25 100644
-> --- a/drivers/iio/adc/exynos_adc.c
-> +++ b/drivers/iio/adc/exynos_adc.c
-> @@ -630,10 +630,13 @@ static irqreturn_t exynos_ts_isr(int irq, void *dev=
-_id)
->  	struct exynos_adc *info =3D dev_id;
->  	struct iio_dev *dev =3D dev_get_drvdata(info->dev);
->  	u32 x, y;
-> -	bool pressed;
-> +	bool pressed, cont;
->  	int ret;
->  =
+I guess, Lee is suggesting to be able to create a regmap instance via
+device tree (and populate its child nodes?). Like
+   compatible = "syscon", "simple-mfd";
+but for any regmap, not just MMIO.
 
-> -	while (info->input->users) {
-> +	mutex_lock(&info->input->mutex);
-> +	cont =3D input_device_enabled(info->input);
-> +	mutex_unlock(&info->input->mutex);
-> +	while (cont) {
->  		ret =3D exynos_read_s3c64xx_ts(dev, &x, &y);
->  		if (ret =3D=3D -ETIMEDOUT)
->  			break;
-> @@ -651,6 +654,10 @@ static irqreturn_t exynos_ts_isr(int irq, void *dev_=
-id)
->  		input_sync(info->input);
->  =
+But, there is more in my driver:
+  (1) there is a version check
+  (2) there is another function for which there is no suitable linux
+      subsystem I'm aware of and thus which I'd like to us sysfs
+      attributes for: This controller supports 16 non-volatile
+      configuration bits. (this is still TBD)
 
->  		usleep_range(1000, 1100);
-> +
-> +		mutex_lock(&info->input->mutex);
-> +		cont =3D input_device_enabled(info->input);
-> +		mutex_unlock(&info->input->mutex);
->  	}
+I don't see what is different between this driver and for example the
+gateworks-gsc.c. Just that mine doesn't use a global register set, but
+local offsets and a base for each component. From a hardware
+perspective its one device behind an I2C address providing different
+functions across multiple driver subsystems.
 
-The mutex doesn't really protect anything here, but I would nevertheless
-suggest this sequence instead:
+Actually, I've tried to remove the devm_of_platform_populate() and
+instead added the "simple-mfd" to my mfd node:
+  compatible = "kontron,sl28cpld-r1", "simple-mfd";
 
-lock()
-while (test) {
-	unlock()
-	...
-	lock()
-}
-unlock()
+I guess that doesn't work because the device is below the i2c bus?
 
-Best Regards,
-Micha=B3 Miros=B3aw
+-- 
+-michael
 
 _______________________________________________
 linux-arm-kernel mailing list
