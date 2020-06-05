@@ -2,67 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C55031EF6C6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 13:51:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B3CC1EF6CF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 13:52:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=y2r/18as3mdjYmjouI14uWKEH+SVxQwd0/e5MBzVpq8=; b=SHhy28HnDjF27V4KtpqgV9ReN
-	T0lFSk1cQev2lGckQZ5uq3iMhXN0ku9liv0rpQjw1UzAzqchfwGrHwjdvBR0mODQWzyFqhi0FCViw
-	nG3Q3al3ek8VdqeTI+7BgLjgQGUXRMcl7DpdtPIaX9F4A2d6g5JOBINHNThY5jBiF2/4pkSSjKuIG
-	Hb9NNSSB1uK/ra0tC7ur+gjiIC//NnAMjUVsxdjj5Ua9B2UCAJRSAqS9CIWpPdmzyn2ZaiVfJdXgQ
-	jm08hiKNacMLmd3CgU4EL1v9vOnzJ3EVy9WFfpQB1MuRFS3rn0Au1FSZE2WCnCGjvvotvy3tOdZKu
-	C3KoLPI3A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QdCs7o/wzK440q9ScFr9ye+L32sITdm5g8DqaLoLqCg=; b=qwpSDxWKbEBjeJ
+	EQMVsXrhJ9KP3iNmSDItTA1TIbG7aW/FS4WCYB1R5U0MP3sM7dt9k1KlOcbyooC8NRUSTfNnTjG28
+	1YyxC1D2rexnJxBrslJs12QnifWnMFrYKLDMKaTHy1ABskRekpuNjCa2MoRGFPoZ006w4O4zSKSmM
+	3Mr5Nr8K5h7HdN33JiJmrG/q8sbYC3xxos14dgaQhvYPGpmq/lNASKKLQqT6A899HgW4Rf8fBZ9t4
+	G2CBkMMMqb/6zMC8G8kK5lYPSwN7jVa+I/YlUPOy0A7ORFWwpfNx9k2aAufZ3zKGBMmo5g8/ceJFr
+	6/+YYJgqIoPaeDhd7jXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhAsX-0000xj-Ry; Fri, 05 Jun 2020 11:51:17 +0000
-Received: from ssl.serverraum.org ([176.9.125.105])
+	id 1jhAtT-0001Fp-L2; Fri, 05 Jun 2020 11:52:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhAsR-0000xG-Af
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 11:51:12 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jhAtM-0001FU-Rq
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 11:52:10 +0000
+Received: from localhost.localdomain
+ (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 726BF22FEC;
- Fri,  5 Jun 2020 13:51:09 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1591357869;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=/ER+pXew699aFz9lRU/UtY269UriM4m1gHDqBzilNF0=;
- b=WOTqL1q5lVzt+KkEj2owI4A1lqxulU6qjVgnX7Fgolv/1VHdSWTe5qwcdYnZRfLQ2I7sHo
- 1EUptsptx9N4EuPomc09TB5DOJoQNPkRGpLSCB/Ur9LH8PQiLUnhh+iLM7hAcyB7Q9jxZH
- VBka4JiutxAQHctV0rsFn+jcdze1zKQ=
+ by mail.kernel.org (Postfix) with ESMTPSA id A28952063A;
+ Fri,  5 Jun 2020 11:52:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591357927;
+ bh=9gkhKOjy2h7vbwv5PwKaL3fvJoy5px21Yf6PJcY4edo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=io/0z295FcP3sYkbkD99oa10o3FmjmvCFlswXn4VqG1r3vLLxfwsuZ/lwfDD50pnv
+ 7BJ9BWjX8yVjhr9/bS6bZEHIc2fhcQX8yprmBaSTSIVRrR75L6yEh/QO90mPSHM1Ad
+ dfSXRj9XH2zN0M9flcua/y+oAN3SVkK1Fe/vqfNk=
+From: Ard Biesheuvel <ardb@kernel.org>
+To: linux-efi@vger.kernel.org
+Subject: [PATCH] efi/arm: decompressor: deal with HYP mode boot gracefully
+Date: Fri,  5 Jun 2020 13:52:00 +0200
+Message-Id: <20200605115200.413921-1-ardb@kernel.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Date: Fri, 05 Jun 2020 13:51:09 +0200
-From: Michael Walle <michael@walle.cc>
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld management
- controller
-In-Reply-To: <CAHp75Vf00w_UUvXULVd=OgSVM+p_pmNMJRPVnf8GNZW10c_j5w@mail.gmail.com>
-References: <20200604211039.12689-1-michael@walle.cc>
- <20200604211039.12689-3-michael@walle.cc>
- <CAHp75Vd-R3yqhq88-whY6vdDhESpzvFCsbi-ygSTjfXfUzOrtg@mail.gmail.com>
- <8ed988b3e0bc48ea9219d0847c1b1b8e@walle.cc>
- <CAHp75Vf00w_UUvXULVd=OgSVM+p_pmNMJRPVnf8GNZW10c_j5w@mail.gmail.com>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <dd0e4cedd004768d1090766d6eeff10a@walle.cc>
-X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_045111_513943_D00E30B5 
-X-CRM114-Status: GOOD (  17.13  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200605_045208_919177_57F0F02A 
+X-CRM114-Status: GOOD (  14.77  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [176.9.125.105 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -72,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,89 +74,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Ard Biesheuvel <ardb@kernel.org>, maz@kernel.org, linux@armlinux.org.uk,
+ linux-arm-kernel@lists.infradead.org, xypron.glpk@gmx.de
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 2020-06-05 12:48, schrieb Andy Shevchenko:
-> On Fri, Jun 5, 2020 at 1:09 PM Michael Walle <michael@walle.cc> wrote:
->> Am 2020-06-05 10:01, schrieb Andy Shevchenko:
->> > On Fri, Jun 5, 2020 at 12:16 AM Michael Walle <michael@walle.cc> wrote:
-> 
-> ...
-> 
->> >> +       bool "Kontron sl28 core driver"
->> >> +       depends on I2C=y
->> >
->> > Why not module?
->> 
->> There are users of the interupt lines provided by the interrupt
->> controller.
->> For example, the gpio-button driver. If this is compiled into the 
->> kernel
->> (which it is by default in the arm64 defconfig), probing will fail
->> because
->> the interrupt is not found. Is there a better way for that? I guess 
->> the
->> same
->> is true for the GPIO driver.
-> 
-> And GPIO nicely handles this via deferred probe mechanism. Why it
-> can't be used here?
-> So, we really need to have a strong argument to limit module nowadays
-> to be only builtin.
+EFI on ARM only supports short descriptors, and given that it mandates
+that the MMU and caches are on, it is implied that booting in HYP mode
+is not supported.
 
-Was that a question for me? TBH thats how other interrupt drivers doing
-it for now. And it would be the users who need to be fixed, right? Or
-even the platform code? Because it will complain with
+However, implementations of EFI exist (i.e., U-Boot) that ignore this
+requirement, which is not entirely unreasonable, given that it does
+not make a lot of sense to begin with.
 
-[    2.962990] irq: no irq domain found for interrupt-controller@1c !
-[    2.975762] gpio-keys buttons0: Found button without gpio or irq
-[    2.981872] gpio-keys: probe of buttons0 failed with error -22
+So let's make sure that we can deal with this condition gracefully.
+We already tolerate booting the EFI stub with the caches off (even
+though this violates the EFI spec as well), and so we should deal
+with HYP mode boot with MMU and caches either on or off.
 
->> >> +       depends on OF
->> >
->> > I didn't find an evidence this is needed.
-> 
->> >> +#include <linux/of_platform.h>
->> >
->> > No evidence of user of this.
->> > I think you meant mod_devicetable.h.
->> 
->> devm_of_platform_populate(), so I need CONFIG_OF, too right?
-> 
-> Ah, this explains header, thanks!
-> But it doesn't explain depends OF.
-> 
-> So, perhaps,
-> 
-> depends OF || COMPILE_TEST will be more informative, i.e.
-> tells "okay, this driver can be compiled w/o OF, but won't be 
-> functional".
+- When the MMU and caches are on, we can ignore the HYP stub altogether,
+  since we can just use the existing mappings, and just branch into
+  the decompressed kernel as usual after disabling MMU and caches.
 
-ok
+- When the MMU and caches are off, we have to drop to SVC mode so that
+  we can set up the page tables using short descriptors. In this case,
+  we need to install the HYP stub so that we can return to HYP mode
+  when handing over to the kernel proper.
 
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ arch/arm/boot/compressed/head.S | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
 
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index c79db44ba128..986db86ba334 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -1436,6 +1436,35 @@ ENTRY(efi_enter_kernel)
+ 		mrc	p15, 0, r0, c1, c0, 0	@ read SCTLR
+ 		tst	r0, #0x1		@ MMU enabled?
+ 		orreq	r4, r4, #1		@ set LSB if not
++#ifdef CONFIG_ARM_VIRT_EXT
++		@
++		@ The EFI spec does not support booting on ARM in HYP mode,
++		@ since it mandates that the MMU and caches are on, with all
++		@ 32-bit addressable DRAM mapped 1:1 using short descriptors.
++		@ While the EDK2 reference implementation adheres to this,
++		@ U-Boot might decide to enter the EFI stub in HYP mode anyway,
++		@ with the MMU and caches either on or off.
++		@ In the former case, we're better off just carrying on using
++		@ the cached 1:1 mapping that the firmware provided, and pretend
++		@ that we are in SVC mode as far as the decompressor is
++		@ concerned. However, if the caches are off, we need to drop
++		@ into SVC mode now, and let the decompressor set up its cached
++		@ 1:1 mapping as usual.
++		@
++		mov	r0, #SVC_MODE
++		msr	spsr_cxsf, r0		@ record that we are in SVC mode
++		bne	1f			@ skip HYP stub install if MMU is on
++
++		mov	r9, r4			@ preserve image base
++		bl	__hyp_stub_install	@ returns boot mode in r4
++		cmp	r4, #HYP_MODE		@ did we boot in HYP?
++		bne	1f			@ skip drop to SVC if we did not
++
++		safe_svcmode_maskall	r0
++		msr	spsr_cxsf, r4		@ record boot mode
++		mov	r4, r9			@ restore image base
++1:
++#endif
+ 
+ 		mov	r0, r8			@ DT start
+ 		add	r1, r8, r2		@ DT end
 -- 
--michael
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
