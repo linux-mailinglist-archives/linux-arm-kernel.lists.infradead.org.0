@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 802D51EFF21
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 19:35:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5F2B1EFF22
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 19:35:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3kmuPUfTLwvUUzltD+6aaBRcX2+DOU6pU6h0xijc8ro=; b=XD2PwpLaUVIoYBNtT84Dcs0Adn
-	6Jep/Y8ppVT0idd/IcbpF1H1zUyD6+tb+FwwawsIwrCxJCMgtm5WP299AK8VED6lSdgXtO2VS6wVs
-	TrbEgLDKnJhidFMSAhMy6UE6Yq6W/7grlWKeUVqGzoKp50oSrWP8k/cF+yPhqp6hVh9h0E4JC4xe4
-	UuUH2nYARjao3LTBpgUhE6E9nH7DGyZ0ngD0An1Xam5PXlOjuMTBDNwBnvdaM04xFEz9up5mTR9sJ
-	gnbXWaHLzt434ijT0i4xXPwf20/IL1C2ag1qviA2VcEEwEkPStvqAxIzZE4qFAwJYEY9E0iRvh0cJ
-	nwMR95AA==;
+	bh=JagFUCZFtM68OsyNT5x/uTVeOLiJvd4v24Y9ZruZxaY=; b=V8IU/kHv7C2tqCQQPkwAWAdlJw
+	M1TQjR8tAQkuivQwtkuxfW7/UWGBfEpYOr6qXAcyZ/qG+qANbpd3k28+dOfUR4IT89v+t/YiX1KkR
+	4aLFJbdsV3jUn92N000FfhCDuYk3lrAHOEnEmREGpoNMaBsy8+7RAsq+CItGegi1EbF5FtV3fJVXk
+	aKXnaSkRlVYCVvjWA/20rcipgavL4oUDDryE9kbHR3XhCQ2ZsQuZwcDKuPiXwCPVopnIvAXO0yjR/
+	ttphFTjn/Ah+TS4VxwechbjDUT+fMnML4O900RUh2KJhhRt7YyKAD4ju2sJjKu+psVRsxckbQ9p5L
+	fJToMY/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhGFW-0005oP-27; Fri, 05 Jun 2020 17:35:22 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jhGFn-0008Sa-FF; Fri, 05 Jun 2020 17:35:39 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhGE6-0004us-VI
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 17:33:56 +0000
+ id 1jhGE8-0004xH-Dp
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 17:33:57 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id E9D2F2A5086
+ (Authenticated sender: andrzej.p) with ESMTPSA id AFFDA2A5089
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
@@ -33,21 +33,24 @@ To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
  linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
  patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
  platform-driver-x86@vger.kernel.org
-Subject: [PATCH v3 4/7] ACPI: button: Use input_device_enabled() helper
-Date: Fri,  5 Jun 2020 19:33:32 +0200
-Message-Id: <20200605173335.13753-5-andrzej.p@collabora.com>
+Subject: [PATCH v3 5/7] iio: adc: exynos: Use input_device_enabled()
+Date: Fri,  5 Jun 2020 19:33:33 +0200
+Message-Id: <20200605173335.13753-6-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200605173335.13753-1-andrzej.p@collabora.com>
 References: <20200604072853.GP89269@dtor-ws>
  <20200605173335.13753-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_103355_176966_47F1869E 
-X-CRM114-Status: GOOD (  11.74  )
+X-CRM114-CacheID: sfid-20200605_103356_602947_D2522E0B 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -88,35 +91,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A new helper is available, so use it.
+A new helper is available, so use it. Inspecting 'users' member of
+input_dev requires taking device's mutex.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/acpi/button.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/iio/adc/exynos_adc.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/acpi/button.c b/drivers/acpi/button.c
-index ff7ab291f678..4deb2b48d03c 100644
---- a/drivers/acpi/button.c
-+++ b/drivers/acpi/button.c
-@@ -411,7 +411,7 @@ static void acpi_button_notify(struct acpi_device *device, u32 event)
- 		input = button->input;
- 		if (button->type == ACPI_BUTTON_TYPE_LID) {
- 			mutex_lock(&button->input->mutex);
--			users = button->input->users;
-+			users = input_device_enabled(button->input);
- 			mutex_unlock(&button->input->mutex);
- 			if (users)
- 				acpi_lid_update_state(device, true);
-@@ -460,7 +460,7 @@ static int acpi_button_resume(struct device *dev)
+diff --git a/drivers/iio/adc/exynos_adc.c b/drivers/iio/adc/exynos_adc.c
+index 22131a677445..294715bafe25 100644
+--- a/drivers/iio/adc/exynos_adc.c
++++ b/drivers/iio/adc/exynos_adc.c
+@@ -630,10 +630,13 @@ static irqreturn_t exynos_ts_isr(int irq, void *dev_id)
+ 	struct exynos_adc *info = dev_id;
+ 	struct iio_dev *dev = dev_get_drvdata(info->dev);
+ 	u32 x, y;
+-	bool pressed;
++	bool pressed, cont;
+ 	int ret;
  
- 	button->suspended = false;
- 	mutex_lock(&input->mutex);
--	if (button->type == ACPI_BUTTON_TYPE_LID && input->users) {
-+	if (button->type == ACPI_BUTTON_TYPE_LID && input_device_enabled(input)) {
- 		button->last_state = !!acpi_lid_evaluate_state(device);
- 		button->last_time = ktime_get();
- 		acpi_lid_initialize_state(device);
+-	while (info->input->users) {
++	mutex_lock(&info->input->mutex);
++	cont = input_device_enabled(info->input);
++	mutex_unlock(&info->input->mutex);
++	while (cont) {
+ 		ret = exynos_read_s3c64xx_ts(dev, &x, &y);
+ 		if (ret == -ETIMEDOUT)
+ 			break;
+@@ -651,6 +654,10 @@ static irqreturn_t exynos_ts_isr(int irq, void *dev_id)
+ 		input_sync(info->input);
+ 
+ 		usleep_range(1000, 1100);
++
++		mutex_lock(&info->input->mutex);
++		cont = input_device_enabled(info->input);
++		mutex_unlock(&info->input->mutex);
+ 	}
+ 
+ 	writel(0, ADC_V1_CLRINTPNDNUP(info->regs));
 -- 
 2.17.1
 
