@@ -2,63 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7D501EF3B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 11:09:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85E1E1EF418
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 11:28:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EMUsA4KC8m74TfvnKFsXAYnhQlcGHIVyTu2JyDbgwPQ=; b=Mp0YMdHFOy1OI3mxpuw3VkW/T
-	7xcgtDlKZcXpRPFXXePPIPcymR+NUR8btxBm49TTyOrxEcfLOzsGlkeWQtI7cifVaHeuLwWV+QTeW
-	GuVMyxSpr2cKoVehFF785/7tIfZIhQIY7tOwOnN9/hWS8vnHLJzehbhr9gn7nnWQpK5T3vW9EIP6o
-	qjA7UrFhgl7gbZYC/dL30sxf15Z1wI8QoZTOLrJtUkgU1AOJ4SCFOFA+xSxmeQzHQiHlURLpN4yk/
-	1ErcC1Uvw2D9ElEDQHl/JkxTuWxCjixBt/xbAYWaYT+Lon8mlMWd765GCTarPhI+eysUWSk76AQD8
-	R6lkmZvIQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AwFBJQqno9tLGsMHp7gaLPQ52368oMU5mlfUzxdZ374=; b=CgQXtXNnMZseTb
+	X3GJO2xEDjMoVag8WlaoT1OeZ0UzKIsemRYtqaM69LMTsE+Q8pr4kYsoXUGtlToV7kaztpIyJHP7x
+	P9VwSqn8hrEzzOdkA6E73r0VvNptXO8TYtdCGdJltdk3dojymaoAZvjEQPu2MaKt2M0WfTo+0KKRv
+	VzvWuZKNzCLg+sgimtuWhawQGNWhnJPvq1E/86ay9F5jvns8CkfvDf5xdvfRWZTnNwYv5wlX0XyMr
+	XpP+EXmbaM51wCPIf6mycA87Y6aL1mL01/PVd4ZtA0679sc6F+EUUUJh4teD3YMZXm3IcEW8MlNlG
+	ji+sAG5sA8xrLhI5VPdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh8LW-00025d-Ic; Fri, 05 Jun 2020 09:09:02 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jh8eA-0005tM-VK; Fri, 05 Jun 2020 09:28:18 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh8LP-000247-Jn
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 09:08:57 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id E38BE8A2349040B75B79;
- Fri,  5 Jun 2020 17:08:48 +0800 (CST)
-Received: from [127.0.0.1] (10.166.215.204) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0;
- Fri, 5 Jun 2020 17:08:38 +0800
-Subject: Re: [PATCH] ARM: imx6: add missing put_device() call in
- imx6q_suspend_init()
-To: Markus Elfring <Markus.Elfring@web.de>, <kernel@pengutronix.de>,
- <linux-arm-kernel@lists.infradead.org>, <linux-imx@nxp.com>
-References: <cf810c93-297c-c02c-9bba-8c3d097b8e31@web.de>
-From: "yukuai (C)" <yukuai3@huawei.com>
-Message-ID: <2ab2cc9f-c720-75ca-e20c-0e4236ff45fd@huawei.com>
-Date: Fri, 5 Jun 2020 17:08:37 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1jh8dz-0005rO-MW; Fri, 05 Jun 2020 09:28:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=JD+f68C2xsdIda1o1WPqknMCkMS5OJ8axT7mWVbzTRo=; b=GWG19R4tIHcgtyxteX9uf10fE
+ Z7WE2epE/MSItPTXR+xqspTQxH6YYeuyf77a9K8BzhLG1DnAAZcNcrtSQjXOoXrxOnxcz1mjFw40K
+ nSHrepHcaoQaIO8hUwaFq3LV7fOPwfekVShU8hky0XpzRdL4JR35CYeaVsIeRIxQh+OhQOmzBtgjj
+ JXUyZR1FY1SjUc+B5VpL5f96FdupwBcPTPSGW97+WWiTO0OD/KYX25FWsC82Jpmaj51svWJyJgK4h
+ uRsnY2W0Pyr8ypDvkUme5dMS8gpKoiSGoAFv9PNjSB/7k1PvVIpQZZAh/eMLnMzcPbsvhP+Ah7akZ
+ mbIqw9Ujw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:49630)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jh8dR-0001kC-TS; Fri, 05 Jun 2020 10:27:34 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jh8dC-0007LF-Q0; Fri, 05 Jun 2020 10:27:18 +0100
+Date: Fri, 5 Jun 2020 10:27:18 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Neal Liu <neal.liu@mediatek.com>
+Subject: Re: Security Random Number Generator support
+Message-ID: <20200605092718.GH1551@shell.armlinux.org.uk>
+References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
+ <CAMj1kXHjAdk5=-uSh_=S9j5cz42zr3h6t+YYGy+obevuQDp0fg@mail.gmail.com>
+ <85dfc0142d3879d50c0ba18bcc71e199@misterjones.org>
+ <1591169342.4878.9.camel@mtkswgap22>
+ <fcbe37f6f9cbcde24f9c28bc504f1f0e@kernel.org>
+ <20200603093416.GY1551@shell.armlinux.org.uk>
+ <1591341543.19510.4.camel@mtkswgap22>
+ <20200605080905.GF1551@shell.armlinux.org.uk>
+ <1591347582.21704.9.camel@mtkswgap22>
 MIME-Version: 1.0
-In-Reply-To: <cf810c93-297c-c02c-9bba-8c3d097b8e31@web.de>
-X-Originating-IP: [10.166.215.204]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <1591347582.21704.9.camel@mtkswgap22>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_020855_809444_1412C8EF 
-X-CRM114-Status: UNSURE (   9.09  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200605_022807_738268_4DDE41EC 
+X-CRM114-Status: GOOD (  21.17  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.191 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,42 +93,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anson Huang <Anson.Huang@nxp.com>, Yi Zhang <yi.zhang@huawei.com>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- kernel-janitors@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- LKML <linux-kernel@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Julius Werner <jwerner@google.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>,
+ Marc Zyngier <maz@kernel.org>, Matt Mackall <mpm@selenic.com>,
+ Sean Wang <sean.wang@kernel.org>, lkml <linux-kernel@vger.kernel.org>,
+ wsd_upstream <wsd_upstream@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Crystal Guo =?utf-8?B?KOmDreaZtik=?= <Crystal.Guo@mediatek.com>,
+ Ard Biesheuvel <ardb@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/6/5 3:07, Markus Elfring wrote:
->> if of_find_device_by_node() succeed, imx6q_suspend_init() doesn't have a
->> corresponding put_device(). Thus add a jump target to fix the exception
->> handling for this function implementation.
+On Fri, Jun 05, 2020 at 04:59:42PM +0800, Neal Liu wrote:
+> On Fri, 2020-06-05 at 09:09 +0100, Russell King - ARM Linux admin wrote:
+> > On Fri, Jun 05, 2020 at 03:19:03PM +0800, Neal Liu wrote:
+> > > On Wed, 2020-06-03 at 17:34 +0800, Russell King - ARM Linux admin wrote:
+> > > > This kind of thing is something that ARM have seems to shy away from
+> > > > doing - it's a point I brought up many years ago when the whole
+> > > > trustzone thing first appeared with its SMC call.  Those around the
+> > > > conference table were not interested - ARM seemed to prefer every
+> > > > vendor to do off and do their own thing with the SMC interface.
+> > > 
+> > > Does that mean it make sense to model a sec-rng driver, and get each
+> > > vendor's SMC function id by DT node?
+> > 
+> > _If_ vendors have already gone off and decided to use different SMC
+> > function IDs for this, while keeping the rest of the SMC interface
+> > the same, then the choice has already been made.
+> > 
+> > I know on 32-bit that some of the secure world implementations can't
+> > be changed; they're burnt into the ROM. I believe on 64-bit that isn't
+> > the case, which makes it easier to standardise.
+> > 
+> > Do you have visibility of how this SMC is implemented in the secure
+> > side?  Is it in ATF, and is it done as a vendor hack or is there an
+> > element of generic implementation to it?  Has it been submitted
+> > upstream to the main ATF repository?
+> > 
 > 
-> Do you find a previous update suggestion useful?
-> 
-> ARM: imx6: Add missing put_device() call in imx6q_suspend_init()
-> https://lore.kernel.org/linux-arm-kernel/5acd7308-f6e1-4b1e-c744-bb2e5fdca1be@web.de/
-> https://lore.kernel.org/patchwork/patch/1151158/
-> https://lkml.org/lkml/2019/11/9/125
+> Take MediaTek as an example, some SoCs are implemented in ATF, some of
+> them are implemented in TEE. We have no plan to make generic
+> implementation in "secure world".
 
-Hi, Markus
+I think you have your answer right there - by _not_ making the API
+generic and giving no motivation to use it, different vendors are
+going to do different things (maybe even with a different API as well)
+so there's no point the kernel driver pretending to be a generic
+driver. If the driver isn't going to be generic, I see little point in
+the SMC function number being in DT.
 
-It is useful indeed. Although I didn't run cocci script, since it can 
-produce too many false result which is hard to filter out.
+I think that as a _whole_ is a big mistake - there should be a generic
+kernel driver for this, and there should be a standardised interface to
+it through firmware.  So, I would encourage you to try to get it
+accepted one way or another amongst vendors as a standardised
+interface.
 
-BTW, I see you haver done the work already, I guess I won't send any 
-patches related to 'missing put_device after of_find_device_by_node()'. 
-Any idea why these pathes didn't get applied ?
-
-Best regards,
-Yu Kuai
-
-
-
-
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC for 0.8m (est. 1762m) line in suburbia: sync at 13.1Mbps down 424kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
