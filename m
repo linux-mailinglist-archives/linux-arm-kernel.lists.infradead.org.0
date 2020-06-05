@@ -2,99 +2,136 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0AF21EFC46
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:13:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91D631EFC49
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:14:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=E2BXThX6qFTm54L0cglF5iJc/wmr9d5kDIbFCj/SJks=; b=XHkqNxeVUa43HVv1u3au4IFHa
-	d0V3TrD7Rzn95eF8hhpaX++mM7dlgQvX39Xca+gE0Fddo2UpuvRbLHpRB285XMxaVcxkVgn158LdI
-	LwQ3a99mThvR4jKII3dgCcjlyFi0U2pOlUwE8mGm3fk3PJYCblW0A595H81r15X0Y4JjZEZ0fV33Y
-	CFrwTOLQMoBDgyS0QNf4VHFdp4/f53MJWjFbEQu/wB1kOZ+KwUwPlaw83TFN5th8n6GsOUJmuWHmY
-	F6Jqo35VU7PFV945bDOPetFsa3cczbC5/bkByUfsw7NVSvyvWwTYsA2C0hUPsMziJISdNxZb/7Kr7
-	Q2l2o8IFg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HGQ7Lrwu8KW2bXHPoNFxFuRRVCdV536XChheMFV7eRk=; b=Cm+10VFUPjQTQx
+	rwfiRuVR1X0hE/E4BVsMmM6pU0tW/vfhwOlGXSW5fEDCTVHBi/Qv6GnzrhNBfOLka4pzszaTyeNI7
+	CEGOlHaSzZi8uxHhFPOTJhE5q7AauU3Usx0oZXMyoRPhZHkOErR83b2ll3bcB5gGK/OmTfByq0Iv+
+	31Bbms4VaDdu0RIN6Er7nOPGRa5BTO/ySB/zCBI2/oojliogtBaWsVtOnq1pVTU4pj0Y08SIOrgR0
+	xEtcycacZL6jLwc1ffhsmVZzbkxHzdc0akNZzMFVNV1KC6vYZu1B/jPxMcl0LoUUQZuZAx3NSPQy1
+	yJQ+tinZD4CXU+bq9+Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhE2G-0007AE-P3; Fri, 05 Jun 2020 15:13:32 +0000
-Received: from wnew4-smtp.messagingengine.com ([64.147.123.18])
+	id 1jhE3A-0007Xc-Dy; Fri, 05 Jun 2020 15:14:28 +0000
+Received: from mout.gmx.net ([212.227.17.22])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhE29-00079L-Ks
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:13:27 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id DBB138E7;
- Fri,  5 Jun 2020 11:13:11 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Fri, 05 Jun 2020 11:13:12 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=VbpvAVCUnsPFSpK3oSSzAp0uVqp
- GePbm13cRTcImBvI=; b=jEHhHx9BX/kWeienCimDjVFn8kxZA9a0xz4mCXIMQkT
- kimz89OdtBb22YkYSKmFbhCOtylqDGUWQk5zA7gBV8No/y0NrajZow4An1pJ/3/x
- oIwAC9ic6oZSAyE9q+jui4mbMkzfk6IqrQwvlTTEQ5bR5yTPtJECFGZkCweacrNy
- UHCexwhmK3GtqVGWwk1ek308TNz3TyOekpL0z7c8dTXJAXN++w1X07J6ir3dasPS
- 3PtKk9lX2j7nV/R1fES1niXKbau5DO42I9NJpDpRHwcV3Z7IBV8FtnccxQbkb61s
- 1MmvYx1Mx1zzCE2QZlgjdMpkuigH39M3Pk9LyFfiR1Q==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=VbpvAV
- CUnsPFSpK3oSSzAp0uVqpGePbm13cRTcImBvI=; b=OphJkDRAM94t6mGOS3+LGx
- 1ZF+30KNo0Gv1pI8V1cVuY/Dy+bAt+/JZxfk1QeprT9uIp4DdEY2zEqQlw0OU9Mf
- g7H1x24ackvUhNn3T7IFcKeessqgYK/BnvFenPSB2QJtg4HCifV5zzKWxyHg8xki
- LXQOq/T0QaUetcjYuMoo2Zqpjk9SoVOCo3T8StZvFLWj0a1RDRUBxo5nRya4MB0P
- iFNVs2vgFq/awLTkCiAhFKM80mxRvPVz1YWCrqLtQVNAanHTv+qXqYwfyXb4k+h7
- 3QaBGVWe55x09tdRg4QjqNugMolAKVHWHyB17mPY0Z9D0PdYVW4m1FqG9ie5B2Iw
- ==
-X-ME-Sender: <xms:BGHaXszE6jCQt3UqXhv_rpK-h5ydbx5e0K9fIODa1lbA1h2fcZDzBQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudegfedgjeefucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkfhggtggujgesghdtre
- ertddtjeenucfhrhhomhepofgrgihimhgvucftihhprghrugcuoehmrgigihhmvgestggv
- rhhnohdrthgvtghhqeenucggtffrrghtthgvrhhnpeeutdfgjeeuudehvefgvedvtedtud
- elfffgffekledtffekgedukeejueevieegudenucfkphepledtrdekledrieekrdejieen
- ucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigih
- hmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:BGHaXgQvy1wn6p2e7o7S_OSWeDCmx6eR30VwmPn-7YK9mu6AjtMw7g>
- <xmx:BGHaXuX00NXX5LGAMEHvRqjEQRNG5vXJM8YYYT4N2NXYV0QwhG7O-A>
- <xmx:BGHaXqhv_WNqjpCMLG7pt29jUj990Xa3yBofV98mw_NMD960Q-jUlQ>
- <xmx:B2HaXi5JEQDk4McYhDkEso2_BbUpevJz_UdJNorqTGnvu3K4X4urb4p-_N0>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id F2F973280059;
- Fri,  5 Jun 2020 11:13:07 -0400 (EDT)
-Date: Fri, 5 Jun 2020 17:13:06 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: wens <wens@csie.org>, =?utf-8?B?5p2O5oms6Z+s?= <frank@allwinnertech.com>,
- "linus.walleij" <linus.walleij@linaro.org>
-Subject: Re: =?utf-8?B?5Zue5aSN77yaW1BBVENIIDIvNF0gcGluY3RybA==?=
- =?utf-8?Q?=3A?= sunxi: add support for the Allwinner A100 pin controller
-Message-ID: <20200605151306.kqmyj673kux4sbaa@gilmour.lan>
-References: <20200522030743.10204-1-frank@allwinnertech.com>
- <20200522030743.10204-3-frank@allwinnertech.com>
- <20200522152803.twvfvuhd6ztunvll@gilmour.lan>
- <8c7a8eeb-f4ea-4df7-b381-5aeab6dd170a.frank@allwinnertech.com>
+ id 1jhE2y-0007Wk-Q5
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:14:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1591370052;
+ bh=iF8RLtxHp4hCNQUfAtO7WDqjaLTBwATiO0NZf3f2ZZI=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=Rb7/bdsiUXNqPou7B0ASpRtSp+OO3/JdBQe5MbH7D1iMavw5+faitigB4oCuySJMX
+ 1PCJqj24m9Z2LnBezfkuixjp0a0KMhY02QfmX8DPi2kvA0w/BKLYErB6mAPTKf3SZh
+ yloHjPQFJ6fUjavHnCIcdvb2oZ1MZJ90D4Z8vYIU=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.123.70] ([88.152.145.75]) by mail.gmx.com (mrgmx105
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1M4JmT-1jhV1p2aAL-000Mpz; Fri, 05
+ Jun 2020 17:14:12 +0200
+Subject: Re: [PATCH] efi/arm: decompressor: deal with HYP mode boot gracefully
+To: Ard Biesheuvel <ardb@kernel.org>
+References: <20200605115200.413921-1-ardb@kernel.org>
+ <4498d910-f5cb-8559-afba-34710e9ca730@gmx.de>
+ <CAMj1kXHS8AVczRPzySgzkkztD0yT1MXnCyMwmOt=ihZ9Bvo0vQ@mail.gmail.com>
+ <589478fe-14a6-a921-3fdf-ae527e14b945@gmx.de>
+ <CAMj1kXHwWwGyX1ijk-qjuV10p0Zr6sAYeAntx+iDVHp-tVaNwg@mail.gmail.com>
+From: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Autocrypt: addr=xypron.glpk@gmx.de; prefer-encrypt=mutual; keydata=
+ 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 Eg==
+Message-ID: <99692142-0ee1-37a7-582e-56c38b2ef3d8@gmx.de>
+Date: Fri, 5 Jun 2020 17:14:09 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-In-Reply-To: <8c7a8eeb-f4ea-4df7-b381-5aeab6dd170a.frank@allwinnertech.com>
+In-Reply-To: <CAMj1kXHwWwGyX1ijk-qjuV10p0Zr6sAYeAntx+iDVHp-tVaNwg@mail.gmail.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:ZipPCLiaBh+FMmx9pGildUw47TNTi6DNz+Tdf4gnnM2kzKqffbf
+ Zrw3Ue1Cs7hyIoh3gobYwmlBy6IGmrKHgJrHgUt//1spnnZe+fXGk+64DbwfVqPKElORqT2
+ G/qnqxCBkKUxQzpvuV+6W3zXGCBMshXum4OpaGAM1tikfJf/IXVpO9x11j+mK1MYTE+Uu+1
+ 3oeMb5Pq5vpJm9M0VrQNg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:z4/toiyEcWM=:OsHZxNmF4yJcy4mGHmDkWm
+ BD9B9hRCCq6WPXokbYWd77TtHYJdQ/DcOp9eOfBiTQ1GQWRLzr9FoyNUfNmLxEjDqPhIMRRqa
+ 02cEIM11QYQAYDduthHqAF6gfePYl5b+whkOJIozANp3OAxAwmmQ3mQWvZmmWCwcVeq3HAj+t
+ JKJPA10njZaT4K0zU2UONadUo7dsxreloHU7LantTG3GiD+oNF3BYTBDzWR73PzKJC56deth6
+ PoOhRc65tC+v3gtm/YH7c6YxFClxmoVLsYpctsbJCJh5xP6V0eB3EDYg+7jeT7sWAyXYc0bd5
+ LUXuS64NFF1WdbHpZtvUje8Kb6Sd/YKUMURZ5YSHYofOzpVz/olwnPyiMfquHEnWJmxGO1wdX
+ HHtTxUQYw3ahZ2FWSL13WUxAgDlRItqCHGw/wwz4jRBkKncf2ihHbt9G/IBpvytqlvmElTzZM
+ lKrUKxebwl3L6jc5j/we+3YeAjJrVLpyBULGxKHWnXEIQxlogRl2dEkqEMQ3ABnKbMx38Iyeb
+ OUII5YwsEH6yo2JC1VoHS9nuM3mJrbriMGYJITCrN2eQ0B/dB/eoK6JD0JbjEVUYdtoIkt6Zr
+ G62Fca/WVD0aLW9LaBU9xAS5j0FBzYRemqXZKWH+5Hkufs2I9C7JeKfnTCqW0J/ChEj0BYY6f
+ Q9kybCuTLRHUQ4+zgW26gxdDRv+BZACjoJ21kpafCFzbeUt/9AnubUXP6U3hQZOJ1plp94m7y
+ ELM4jCxbtHuIaMROeCb6hZGJbhLAVJEZ/qtmXoAVUeK6cx1sdSZGT2Y/OsgOOtP641kwNko1q
+ /j2OGGS7pESFYDORQ1SznCKY6OqaJriZQMSeMt/VgWztxg9nrIeq8lcTcNKLelaZkGGn8OpNJ
+ h8E0a2YUU5jSvr10tlGFjQVCKdpL2V08qQlVtDZFQCZn0RSzLa45wDiObsqh5MJ712ACdfyIB
+ 6M2iukkzGLHTRVHCLNJbc4MG+nImRcNhyZn8LcyLosK/F28AAfB/jGlKoz1GPAej0VEbAMiDN
+ WOQpS2f59V2GEu16SjwzSXqhMvMvUnLHVnbNgi4eu8VlNGNGfSJRVlmd+iKF/yLWtoy/SXZ+L
+ s0+WYrYCpncD34tlRD5eOiisvX8FroWmhkTKvP/SsclflQ57be6Cs1H4Kgyu3F8deYA2DRs9A
+ yc3+gMAfgvwwL+VlM9KtJN3QJFaFaQpm5UjYSDxFaVLqefJWHS0WtPKoGrty30pxbaH8kdiBK
+ SjyngtvHRu8khHZDR
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_081325_722359_F3476E6D 
-X-CRM114-Status: GOOD (  15.92  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200605_081419_669710_7993BFEE 
+X-CRM114-Status: GOOD (  18.94  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.18 listed in list.dnswl.org]
+ low trust [212.227.17.22 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.22 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [xypron.glpk[at]gmx.de]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,127 +145,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- linux-gpio <linux-gpio@vger.kernel.org>, sboyd <sboyd@kernel.org>,
- mturquette <mturquette@baylibre.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- "tiny.windzz" <tiny.windzz@gmail.com>, robh+dt <robh+dt@kernel.org>,
- =?utf-8?B?6buE54OB55Sf?= <huangshuosheng@allwinnertech.com>,
- "p.zabel" <p.zabel@pengutronix.de>, linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============0227344876642591181=="
+Cc: Marc Zyngier <maz@kernel.org>, linux-efi <linux-efi@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 05.06.20 16:57, Ard Biesheuvel wrote:
+> On Fri, 5 Jun 2020 at 16:54, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>>
+>> On 05.06.20 14:39, Ard Biesheuvel wrote:
+>>> On Fri, 5 Jun 2020 at 14:20, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>>>>
+>>>> On 05.06.20 13:52, Ard Biesheuvel wrote:
+>>>>> EFI on ARM only supports short descriptors, and given that it mandates
+>>>>> that the MMU and caches are on, it is implied that booting in HYP mode
+>>>>> is not supported.
+>>>>>
+>>>>> However, implementations of EFI exist (i.e., U-Boot) that ignore this
+>>>>> requirement, which is not entirely unreasonable, given that it does
+>>>>> not make a lot of sense to begin with.
+>>>>
+>>>> Hello Ard,
+>>>>
+>>>> thanks for investigating the differences between EDK2 and U-Boot.
+>>>>
+>>>> What I still do not understand is if there is a bug in U-Boot where
+>>>> U-Boot does not conform to the UEFI specification? In this case I would
+>>>> expect a fix in U-Boot.
+>>>>
+>>>
+>>> U-Boot violates the EFI spec, yes. The spec is very clear on how the
+>>> MMU is configured, and this rules out booting with the caches off, or
+>>> booting in HYP mode.
+>>>
+>>> However, given that this is the situation today, we still need to deal
+>>> with it on the Linux side.
+>>> In parallel, fixing it in U-boot may be appropriate. However, I think
+>>> the EFI spec is too detailed here - instead of 'booting at the highest
+>>> non-secure privilege mode', it tells you which exact bits to set in
+>>> SCTLR, which seems overzealous to me. In other words, even though it
+>>> violates the letter of the spec, I don't mind dealing with this
+>>> exception in the Linux side, since the requirement is somewhat
+>>> unreasonable to begin with.
+>>>
+>>>> Or is it simply a deficiency of Linux that it does not properly support
+>>>> HYP/EL2 mode on 32-bit ARM?
+>>>>
+>>>
+>>> No, this is definitely not the fault of Linux.
+>>>
+>>>> Up to now I never experience a problem booting a 32bit board via U-Boot
+>>>> -> GRUB-EFI -> Linux. Where did you have a problem when booting via
+>>>> U-Boot's UEFI implementation and the current Linux kernel?
+>>>>
+>>>
+>>> I haven't managed to make it fail, but my only 32-bit HYP capable
+>>> platform is QEMU. I am not 100% convinced that the EFI+HYP+U-Boot case
+>>> is rock solid, and I may have gotten lucky with QEMU (which uses
+>>> emulation not virtualization when running at HYP)
+>>>
+>>> Do you have any A7/A15 based boards that don't print 'WARNING: Caches
+>>> not enabled' at boot?
+>>
+>> Hello Ard,
+>>
+>> I have no board that prints this. Where did you actually see this output?
+>>
+>
+> In U-boot
+>
+> arch/arm/lib/cache.c: * Default implementation of enable_caches()
+> arch/arm/lib/cache.c- * Real implementation should be in platform code
+> arch/arm/lib/cache.c- */
+> arch/arm/lib/cache.c:__weak void enable_caches(void)
+> arch/arm/lib/cache.c-{
+> arch/arm/lib/cache.c-   puts("WARNING: Caches not enabled\n");
+> arch/arm/lib/cache.c-}
+> arch/arm/lib/cache.c-
+>
+> The QEMU port does not override that routine. This may be the reason
+> it doesn't work for me under KVM, but only under emulation.
+>
+>> The string "Caches not enabled" does not exist in Linux next-20200505
+>> according to "git grep -n 'ache not enabled'".
+>>
+>> Here is some sample output for an Orange Pi PC with a quad core
+>> Allwinner H3 Soc. "ARMv7 Processor rev 5 (v7l)" according to
+>> /proc/cpuinfo, compatible to "arm,cortex-a7" according to the device tree.
+>>
+>> $ uname -m
+>> Linux orangepi-pc 5.6.0-2-armmp-lpae #1 SMP Debian 5.6.14-1 (2020-05-23)
+>> armv7l GNU/Linux
+>>
+>
+> Could you check whether it boots in HYP mode?
+>
+> [    0.381460] CPU: All CPU(s) started in SVC mode.
+>
+> vs
+>
+> [    0.135626] CPU: All CPU(s) started in HYP mode.
+>
+>
+> ?
+>
 
---===============0227344876642591181==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="zkd5ahwpreyajhe3"
-Content-Disposition: inline
+Booted via GRUB-EFI:
 
+sudo dmesg -H | grep 'started in'
+[  +0.000017] CPU: All CPU(s) started in HYP mode.
 
---zkd5ahwpreyajhe3
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Booted via Linux stub:
 
-Hi Frank,
+$ sudo dmesg -H | grep 'started in'
+[  +0.000016] CPU: All CPU(s) started in HYP mode.
 
-On Wed, Jun 03, 2020 at 05:44:36PM +0800, =E6=9D=8E=E6=89=AC=E9=9F=AC wrote:
-> >> + SUNXI_PIN(SUNXI_PINCTRL_PIN(F, 0),
-> >> +  SUNXI_FUNCTION(0x0, "gpio_in"),
-> >> +  SUNXI_FUNCTION(0x1, "gpio_out"),
-> >> +  SUNXI_FUNCTION(0x2, "mmc0"),  /* D1 */
-> >> +  SUNXI_FUNCTION(0x3, "jtag"),  /* MS1 */
-> >> +  SUNXI_FUNCTION(0x4, "jtag"),  /* MS_GPU */
-> >
-> >We should use another name here, since the code will just pick the first=
- one and
-> >ignore the second. What about jtag-gpu?
->=20
-> The underscores are used in front, so changing it to jtag_gpu may be more=
- consistent.
+Best regards
 
-Yep, that makes sense
+Heinrich
 
-> >> + SUNXI_PIN(SUNXI_PINCTRL_PIN(B, 7),
-> >> +  SUNXI_FUNCTION(0x0, "gpio_in"),
-> >> +  SUNXI_FUNCTION(0x1, "gpio_out"),
-> >> +  SUNXI_FUNCTION(0x2, "spdif"),  /* DIN */
-> >> +  SUNXI_FUNCTION(0x3, "i2s0"),  /* DOUT0 */
-> >> +  SUNXI_FUNCTION(0x4, "i2s0"),  /* DIN1 */
-> >
-> >I guess the second one would be i2s1?
->=20
-> No, each i2s may have many inputs and outputs.=20
->=20
->  SUNXI_PIN(SUNXI_PINCTRL_PIN(H, 19),
->      SUNXI_FUNCTION(0x0, "gpio_in"),
->               SUNXI_FUNCTION(0x1, "gpio_out"),
->               SUNXI_FUNCTION(0x2, "cir0"),          /* IN */
->               SUNXI_FUNCTION(0x3, "i2s3_dout3"),       /* DOUT3 */
->               SUNXI_FUNCTION(0x4, "i2s3_din3"),       /* DIN3 */
->               SUNXI_FUNCTION(0x5, "ledc"),
->               SUNXI_FUNCTION_IRQ_BANK(0x6, 6, 19)),
->=20
-> Considering that the same pin has multiple same functions,=20
-> so add a suffix, like i2s3_dout3 and i2s3_din3?  =20
->=20
-> Or specify muxsel in the device tree may be another solution.
-
-Having muxsel is not really an option. We have two sets of bindings to
-maintain already, adding a third one would make it fairly hard to
-maintain. And the second binding we support is the generic pinctrl
-binding, so I'm not really sure why we would want to move away from
-that.
-
-And I'm not really fond of having a suffix either. It kind of breaks the
-consistency we had so far, and ideally I'd like to keep that.
-
-Chen-Yu, Linus? Any input on that one?
-
-> >> + SUNXI_PIN(SUNXI_PINCTRL_PIN(H, 2),
-> >> +  SUNXI_FUNCTION(0x0, "gpio_in"),
-> >> +  SUNXI_FUNCTION(0x1, "gpio_out"),
-> >> +  SUNXI_FUNCTION(0x2, "i2c1"),  /* SCK */
-> >> +  SUNXI_FUNCTION(0x3, "cpu"),  /* CUR_W */
-> >
-> >What is "cpu" supposed to be?
->=20
-> As far as I know, this is a function that has never been used.
-> The hardware guy said that it can be used to control the CPU to reduce th=
-e current.
-
-Ok. Do we really need to add it right now if we don't really know what
-it's going to be used for?
-
-Thanks!
-Maxime
-
---zkd5ahwpreyajhe3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXtphAgAKCRDj7w1vZxhR
-xcOpAP9hPMQZE8RjquYSY0OYJtT3YHX6GtIBD2qqFYRYTe/y5AEA/ArnzVS22UCR
-AAiE1kWBxSfADLmvwqJuQ7ofyhPp/AE=
-=FjvJ
------END PGP SIGNATURE-----
-
---zkd5ahwpreyajhe3--
-
-
---===============0227344876642591181==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0227344876642591181==--
-
