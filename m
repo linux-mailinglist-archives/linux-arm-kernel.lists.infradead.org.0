@@ -2,66 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63E471F023F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:42:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8868B1F029C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0a2FsrhU1QHTC28CyWydljJ27D3AzU3cWzpKVuJuBf8=; b=hbdSisVYQSxNEg
-	viG3XcXGRZtfcXLUCQQp3PJyk+X044sZplG0CAoEjjSbcJEou/Yogt1kuzDMHEvimeNq3jTDbtKNI
-	sFzMIhSbTko60F6c1s5SIe8QYuMSarLISqNqbKoj2Y49NnmD/QB82ujoMEGH7Mrb3E4KAQ7sf6+A6
-	05H1tCBs944xr2UZxWZBz7TtPPQoODHQRiD+xpoDl56ngioWZUI3FzWDiTwC2owv1bPeMC3Orn+7q
-	77nsWew4lHC4+YNNH/qnwzZ5IxdyKE0DbrwS2DvDiuz5eeCMNzLvflMWyl5kQUQZOq+NjWWgkpso2
-	mdblJvAlX4y6h2al/uag==;
+	List-Owner; bh=aDPR+hFBSP4AOrD80hL7dLmYlYz9kC8mJCHpuFfKH6E=; b=fVqQImn0rdfgBJ
+	lS4hYqMfZDN9uDrkqQcv1T36Yjln7bhwt7wM/C+nGnu90S8Oo49Rx7q5/YE5NC4sfGgXeo1EF1t0D
+	6JkfIDg0MV/hrhLUElBq4Uy2Fqpnxyeej19U5kQIAErya2RFejmcHDDfY22XMREIh11aOsA/VjcrG
+	euOVB4nLcDOxFxLLhLB3xW0pKsYjl0E7B2XpWAiaSOhtj2ZgjGFFwT3QnD7uzO+PSrc6fSu50nyOh
+	sNXQtZZCE1EyGvWM8Wj4qwW0B24FBIFAa3jpGhWNfM+IDuHWBjhsnddffJOPcoPwgVFZqVHrbLZxk
+	Ric6Vn2HRnK+Yw8WyuMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhK6O-0007e4-3V; Fri, 05 Jun 2020 21:42:12 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jhKAH-0004ww-9n; Fri, 05 Jun 2020 21:46:13 +0000
+Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhK3U-0002oI-MZ
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 21:39:14 +0000
-IronPort-SDR: xG8GBW2x3tuXYUgzeWNqPSqPICWU7eMACBAeN8ewa8HjHVesjJtUs8AmNC7Ta3PZPj2PNilYmW
- P+qPz1M8un1w==
+ id 1jhK3c-0002lz-Uq
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 21:39:22 +0000
+IronPort-SDR: SyZp5z47nfclRYDe28l0lcW58cSHNOsZqfuaSZDx5EehxaOw3B9u+9kH22dIEfbNg+Vjf7C7F/
+ NNVQxeq4Xv+Q==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
  05 Jun 2020 14:39:09 -0700
-IronPort-SDR: UApdX2pDl3fRM1vKBYmeGIGSCrbxLOiz1oEqh+Z4ZPPvw2XH7q+LtyxLP9QuO8zoRrUvjzDuhE
- dQCt5cOpa0dw==
+IronPort-SDR: 8+chlxCv2Iiw0FRzpi/racOfGh0tTL72IXLBgkdDtWhh1E5XaZPXbggd1oE4Xq4iC2Vzisvs/o
+ zv6IEJ9/Di8g==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,477,1583222400"; d="scan'208";a="287860925"
+X-IronPort-AV: E=Sophos;i="5.73,477,1583222400"; d="scan'208";a="287860928"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.152])
  by orsmga002.jf.intel.com with ESMTP; 05 Jun 2020 14:39:09 -0700
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 19/21] KVM: MIPS: Drop @max param from mmu_topup_memory_cache()
-Date: Fri,  5 Jun 2020 14:38:51 -0700
-Message-Id: <20200605213853.14959-20-sean.j.christopherson@intel.com>
+Subject: [PATCH 20/21] KVM: MIPS: Account pages used for GPA page tables
+Date: Fri,  5 Jun 2020 14:38:52 -0700
+Message-Id: <20200605213853.14959-21-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200605213853.14959-1-sean.j.christopherson@intel.com>
 References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_143912_877904_379B9E6C 
-X-CRM114-Status: GOOD (  11.18  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200605_143921_035356_E463DE61 
+X-CRM114-Status: GOOD (  12.58  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,60 +87,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace the @max param in mmu_topup_memory_cache() and instead use
-ARRAY_SIZE() to terminate the loop to fill the cache.  This removes a
-BUG_ON() and sets the stage for moving MIPS to the common memory cache
-implementation.
-
-No functional change intended.
+Use GFP_KERNEL_ACCOUNT instead of GFP_KERNEL when allocating pages for
+the the GPA page tables.  The primary motivation for accounting the
+allocations is to align with the common KVM memory cache helpers in
+preparation for moving to the common implementation in a future patch.
+The actual accounting is a bonus side effect.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/mips/kvm/mmu.c | 12 ++++--------
- 1 file changed, 4 insertions(+), 8 deletions(-)
+ arch/mips/kvm/mmu.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/mips/kvm/mmu.c b/arch/mips/kvm/mmu.c
-index 7dad7a293eae..94562c54b930 100644
+index 94562c54b930..41a4a063a730 100644
 --- a/arch/mips/kvm/mmu.c
 +++ b/arch/mips/kvm/mmu.c
-@@ -25,15 +25,13 @@
- #define KVM_MMU_CACHE_MIN_PAGES 2
- #endif
- 
--static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache,
--				  int min, int max)
-+static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache, int min)
- {
- 	void *page;
- 
--	BUG_ON(max > KVM_NR_MEM_OBJS);
+@@ -32,7 +32,7 @@ static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *cache, int min)
  	if (cache->nobjs >= min)
  		return 0;
--	while (cache->nobjs < max) {
-+	while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
- 		page = (void *)__get_free_page(GFP_KERNEL);
+ 	while (cache->nobjs < ARRAY_SIZE(cache->objects)) {
+-		page = (void *)__get_free_page(GFP_KERNEL);
++		page = (void *)__get_free_page(GFP_KERNEL_ACCOUNT);
  		if (!page)
  			return -ENOMEM;
-@@ -711,8 +709,7 @@ static int kvm_mips_map_page(struct kvm_vcpu *vcpu, unsigned long gpa,
- 		goto out;
- 
- 	/* We need a minimum of cached pages ready for page table creation */
--	err = mmu_topup_memory_cache(memcache, KVM_MMU_CACHE_MIN_PAGES,
--				     KVM_NR_MEM_OBJS);
-+	err = mmu_topup_memory_cache(memcache, KVM_MMU_CACHE_MIN_PAGES);
- 	if (err)
- 		goto out;
- 
-@@ -796,8 +793,7 @@ static pte_t *kvm_trap_emul_pte_for_gva(struct kvm_vcpu *vcpu,
- 	int ret;
- 
- 	/* We need a minimum of cached pages ready for page table creation */
--	ret = mmu_topup_memory_cache(memcache, KVM_MMU_CACHE_MIN_PAGES,
--				     KVM_NR_MEM_OBJS);
-+	ret = mmu_topup_memory_cache(memcache, KVM_MMU_CACHE_MIN_PAGES);
- 	if (ret)
- 		return NULL;
- 
+ 		cache->objects[cache->nobjs++] = page;
 -- 
 2.26.0
 
