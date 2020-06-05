@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C3231EF4BE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 11:56:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3F371EF4BD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 11:56:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=linE1U9MB2oGCBGgrMuBUrDCJsawPAw5lvF9Ek016oM=; b=RPoE9pWmUgCujw
-	Hdf3rri/DL4iT692lfGEMwCl8e4pSwZNxtYIVI8bKBq15ZWFv9le5drRd69D28Zz3xU1NdS09wu6y
-	oadbqoTQx8zxUwMVXdy4uitMk8w6fWgJ4ODAi56i0mjkdnn8kETw6QhcOaZh0ZcdWiF+y/n9i9+qL
-	fRGEH/aurT111ttVbG2erfZJz0l6pvvxTHDr/abNQ6Lm43m3JaN3pOV1f366tfRHt5wGPr3+aPSna
-	CFQsLspqFJvXH9GNO1b2AMEhzhZvVuehz4Y+a01qAdct3lowAwM+1F4wLvvIUjUK/OZymOzIYhnJy
-	Mj7fA2o3ZM3WkpQrf14A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+mdTT8BAJVaaWL9Nj+OPx4KEnKQ3iq3oiwtDr6sbl5M=; b=iKqqnKzu1iF5vB
+	G5vEJsrksMFmR8KYauUNCr2At0Ff9o9AUwkNJB7uLl0gRFix5qZhTbPjuwFhYMA+qvIvYqRDTFobR
+	I/K6LkLCy39zJ+ME0OfyxNpE20b+deCk6UIRwr9CtFiQfv8dIA9wt3xz2sKlP3QZL9kF08T9DZCry
+	U5rriQLpjw5ofnM5QyqeUWTbVdIjVPUduRok33UutP1bmII6Avz++C7KZ5wA1a88YjvquUtcyNTRC
+	djed0x6/ZAIHpGvOBx2P0jbywdJYxq6Lcm25hv7weX0s50ydGXXmJ5a6AbZrRgNt2gORrjHZ8whQf
+	1ImaAYYzjrBURdiullLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh95N-0001dp-Qw; Fri, 05 Jun 2020 09:56:25 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jh957-0001Wx-Vn; Fri, 05 Jun 2020 09:56:09 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh94z-0001V2-5p; Fri, 05 Jun 2020 09:56:03 +0000
-X-UUID: fa5fbccea17948daa9c8e48402264977-20200605
+ id 1jh94z-0001V3-VA; Fri, 05 Jun 2020 09:56:03 +0000
+X-UUID: 25c206d166fc4840a4c920ca2cd844c2-20200605
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=0zI7CVoALCkpFWkgGGj1AbfVE36QPtMcgdNgl75YRMo=; 
- b=cXcIEIsqrnB6Rr8oAwIuCJtu9hryZbshnsvBjGe5LPrLEVJ5WKnWdHRo1GMetj2b/dFjP4QeLCJMvQwkRaOWCnPFWlG8GHdU13iB4Rf0g1LPyVj0hoJmf384UyBvgMQLojAQNfP/4y5fly96WiXnR9xMl9wHpJwgL77GSusvuWM=;
-X-UUID: fa5fbccea17948daa9c8e48402264977-20200605
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=aftpXunH1eDQjPXFO8QI2IEzKcVO0kd6k1ZnXlRllyc=; 
+ b=q5kzpTKE1GnRrlfGC5KCRFDhLvUfLRl0CYVPAWH2+mWbTHODnekQlMoGXww0khiUM15wKDDM287u4OxakLmQgsuVEQmkq7YsM0FQ6+/zG0ubtxVBC9DsI7LUF/RYnk9fqSgUZoxgAXtN2pKTCxncYiMqGsnreTrpvdtOmP0XuCI=;
+X-UUID: 25c206d166fc4840a4c920ca2cd844c2-20200605
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <jiaxin.yu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1535086018; Fri, 05 Jun 2020 01:55:51 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 5 Jun 2020 02:55:55 -0700
+ with ESMTP id 1767239972; Fri, 05 Jun 2020 01:55:52 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 5 Jun 2020 02:55:54 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 5 Jun 2020 17:55:49 +0800
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 5 Jun 2020 17:55:52 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 5 Jun 2020 17:55:50 +0800
+ Transport; Fri, 5 Jun 2020 17:55:51 +0800
 From: Jiaxin Yu <jiaxin.yu@mediatek.com>
 To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <tiwai@suse.com>,
  <matthias.bgg@gmail.com>, <hariprasad.kelam@gmail.com>
-Subject: [v2, 1/2] ASoC: mediatek: mt6358: support DMIC one-wire mode
-Date: Fri, 5 Jun 2020 17:53:44 +0800
-Message-ID: <1591350825-18152-1-git-send-email-jiaxin.yu@mediatek.com>
+Subject: [v2, 2/2] ASoC: dt-bindings: mediatek: mt6358: add dmic-mode property
+Date: Fri, 5 Jun 2020 17:53:45 +0800
+Message-ID: <1591350825-18152-2-git-send-email-jiaxin.yu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1591350825-18152-1-git-send-email-jiaxin.yu@mediatek.com>
+References: <1591350825-18152-1-git-send-email-jiaxin.yu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 069F9BBDD4B821B89F92B59CD0BC2631142D0F22892B0205B49D61B390E5C21F2000:8
+X-TM-SNTS-SMTP: DA84537A393A2A092512B040C0A414505375F5DBD6BEBB53201491E8557FD55F2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_025601_225856_BD9624F0 
-X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-CacheID: sfid-20200605_025602_001507_0EB41F17 
+X-CRM114-Status: UNSURE (   5.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -94,68 +96,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Supports DMIC one-wire mode. Uses a DT property "dmic-mode" to select.
+Adds dmic-mode property and updates example.
 
 Signed-off-by: Jiaxin Yu <jiaxin.yu@mediatek.com>
 ---
- sound/soc/codecs/mt6358.c | 23 ++++++++++++++++++++++-
- 1 file changed, 22 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/sound/mt6358.txt | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/sound/soc/codecs/mt6358.c b/sound/soc/codecs/mt6358.c
-index 1b830ea..1f39d59 100644
---- a/sound/soc/codecs/mt6358.c
-+++ b/sound/soc/codecs/mt6358.c
-@@ -95,6 +95,8 @@ struct mt6358_priv {
- 	struct regulator *avdd_reg;
+diff --git a/Documentation/devicetree/bindings/sound/mt6358.txt b/Documentation/devicetree/bindings/sound/mt6358.txt
+index 5465730..59a73ff 100644
+--- a/Documentation/devicetree/bindings/sound/mt6358.txt
++++ b/Documentation/devicetree/bindings/sound/mt6358.txt
+@@ -10,9 +10,15 @@ Required properties:
+ - compatible : "mediatek,mt6358-sound".
+ - Avdd-supply : power source of AVDD
  
- 	int wov_enabled;
++Optional properties:
++- mediatek,dmic-mode : Indicates how many data pins are used to transmit two
++	channels of PDM signal. 0 means two wires, 1 means one wire. Default
++	value is 0.
 +
-+	unsigned int dmic_one_wire_mode;
+ Example:
+ 
+ mt6358_snd {
+ 	compatible = "mediatek,mt6358-sound";
+ 	Avdd-supply = <&mt6358_vaud28_reg>;
++	mediatek,dmic-mode = <0>;
  };
- 
- int mt6358_set_mtkaif_protocol(struct snd_soc_component *cmpnt,
-@@ -1831,7 +1833,10 @@ static int mt6358_dmic_enable(struct mt6358_priv *priv)
- 	mt6358_mtkaif_tx_enable(priv);
- 
- 	/* UL dmic setting */
--	regmap_write(priv->regmap, MT6358_AFE_UL_SRC_CON0_H, 0x0080);
-+	if (priv->dmic_one_wire_mode)
-+		regmap_write(priv->regmap, MT6358_AFE_UL_SRC_CON0_H, 0x0400);
-+	else
-+		regmap_write(priv->regmap, MT6358_AFE_UL_SRC_CON0_H, 0x0080);
- 
- 	/* UL turn on */
- 	regmap_write(priv->regmap, MT6358_AFE_UL_SRC_CON0_L, 0x0003);
-@@ -2426,6 +2431,20 @@ static int mt6358_codec_probe(struct snd_soc_component *cmpnt)
- 	.num_dapm_routes = ARRAY_SIZE(mt6358_dapm_routes),
- };
- 
-+static void mt6358_parse_dt(struct mt6358_priv *priv)
-+{
-+	int ret;
-+	struct device *dev = priv->dev;
-+
-+	ret = of_property_read_u32(dev->of_node, "mediatek,dmic-mode",
-+				   &priv->dmic_one_wire_mode);
-+	if (ret) {
-+		dev_warn(priv->dev, "%s() failed to read dmic-mode\n",
-+			 __func__);
-+		priv->dmic_one_wire_mode = 0;
-+	}
-+}
-+
- static int mt6358_platform_driver_probe(struct platform_device *pdev)
- {
- 	struct mt6358_priv *priv;
-@@ -2445,6 +2464,8 @@ static int mt6358_platform_driver_probe(struct platform_device *pdev)
- 	if (IS_ERR(priv->regmap))
- 		return PTR_ERR(priv->regmap);
- 
-+	mt6358_parse_dt(priv);
-+
- 	dev_info(priv->dev, "%s(), dev name %s\n",
- 		 __func__, dev_name(&pdev->dev));
- 
 -- 
 1.8.1.1.dirty
 _______________________________________________
