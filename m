@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E9871F019D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:27:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29BCA1F01B1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:28:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,47 +11,47 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6RVgKRXMbnlQ89TIn3l6poyFk4yd8+CJLCQ3QZv5mS4=; b=p0L05auk1sCoBWZiWpoOfeZLTC
-	GK79tfm/HfyX+PJGjdk4/rCu0MuBYYhfp1Ah91WhWkR5D/DRXGxi1k7Po7QJU4XUxGjUB06xLNn34
-	6q2zRvZMNpFboN7iN65/qJEajhKeiM7uUtSQkK41Uv/csHo9XGX3rmOhFn3oVahp0mD3zfHJgY/F1
-	Kvp/aajYFjGwxy8nj6V7vw15b7r6zDuuifjbhVnKnuYMks2qMKqFzq3UdmgZIeVQILEIV6/EWcBZi
-	5PMUn0aBbsjYEaIsqqlkR+1PVfzXmrE0Q5D+GfvLWlqtgmwZJzTy0w1/3/pPTWlyJ/ASlPK6W4/Ng
-	x4zRPKcQ==;
+	bh=+dmjRmMp0KUeF2rjeBUabfcvhHr/tjg9rOfGYdN2aG0=; b=lNQgQ5RCEE53Crh+Mt5uF7bz4s
+	0OQLNTiD2RxAid3ky09IFltVsjJ7bSYQQeAAYrg6d+lZSRPWj9iYkBJ5irM0hhwLvOI7Bci98sbZH
+	M4TisymB2rHUSfaoXThI+1IGx45S0qlTra02qWtoYE5Dh34gLm40LtV1q4H3DDwZIbMv7q3OKUOOV
+	WwDrFe7QhXtHH00+H4tuxN+XxNjcCcNmCh2FQESazHPBQoUOYy4jnMOCXzT8PiD1kykyWtgW7PYLy
+	CPHk86PweOeluLlv0F6GcUezXtXvqdys+gE2KJzpOoup1trh75Hv6tpFBCfkkwJlayaRHLj5V3bfB
+	szhhYbmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhJsL-0002lF-N8; Fri, 05 Jun 2020 21:27:41 +0000
+	id 1jhJt7-0003OR-Hw; Fri, 05 Jun 2020 21:28:29 +0000
 Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhJs5-0002jA-3j; Fri, 05 Jun 2020 21:27:26 +0000
+ id 1jhJs5-0002jy-HR; Fri, 05 Jun 2020 21:27:28 +0000
 Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
  [10.75.242.48])
- by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 081E330D7C5;
- Fri,  5 Jun 2020 14:27:23 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 081E330D7C5
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 9370F30D7E5;
+ Fri,  5 Jun 2020 14:27:24 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 9370F30D7E5
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
- s=dkimrelay; t=1591392443;
- bh=dbYd+PsdUAPE42K+29fEsyx7D8npbEvEeKGqpcr24Ac=;
+ s=dkimrelay; t=1591392444;
+ bh=msforknhSPdfZTMqq1P4dps5nzFDkH/vRnYPWKP4EY0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bMIJbJybnHAsYM7tIaeuhD6TMSwMEYBXY+f5UcJamWMBGVmDeJ6Fgsk3xbatIDjwo
- a+C5KqwjtAna9GViCGkGtC5S+xj82p1YGH9Jwyj7jvtr+H/JGsmDTcQGN2fvpxHKqg
- n3O04igo4LrArbKInAT2oDuS81yLEw1KlN3zpKNI=
+ b=v0+4fki/VJMYJkIY5iL1DSdhNaXe2SQkr2DBuybpkGPvkv/STHmnNy1XImxeX5N/D
+ ikHiwlEyELqT3lmvMQWANr4xZQ0bdwUyWBOJae+OzoL8/6geI+jzr88SToNXalRifg
+ WSUvBkpVtjA5421K4Mo9s2/BDSqlOzD4FMJbUph8=
 Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
  [10.28.16.211])
- by mail-irv-17.broadcom.com (Postfix) with ESMTP id 7842614008C;
- Fri,  5 Jun 2020 14:27:21 -0700 (PDT)
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 0F43014008B;
+ Fri,  5 Jun 2020 14:27:22 -0700 (PDT)
 From: Jim Quinlan <james.quinlan@broadcom.com>
 To: linux-pci@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com
-Subject: [PATCH v4 05/12] PCI: brcmstb: Add suspend and resume pm_ops
-Date: Fri,  5 Jun 2020 17:26:45 -0400
-Message-Id: <20200605212706.7361-6-james.quinlan@broadcom.com>
+Subject: [PATCH v4 06/12] PCI: brcmstb: Add bcm7278 PERST support
+Date: Fri,  5 Jun 2020 17:26:46 -0400
+Message-Id: <20200605212706.7361-7-james.quinlan@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200605212706.7361-1-james.quinlan@broadcom.com>
 References: <20200605212706.7361-1-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_142725_208303_F913D2DB 
-X-CRM114-Status: UNSURE (   9.08  )
+X-CRM114-CacheID: sfid-20200605_142725_601650_40B9E714 
+X-CRM114-Status: UNSURE (   9.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -98,86 +98,51 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jim Quinlan <jquinlan@broadcom.com>
 
-Broadcom Set-top (BrcmSTB) boards typically support S2, S3, and S5 suspend
-and resume.  Now the PCIe driver may do so as well.
+The PERST bit was moved to a different register in 7278-type STB chips.  In
+addition, the polarity of the bit was also changed; for other chips writing
+a 1 specified assert; for 7278-type chips, writing a 0 specifies assert.
+
+Signal-wise, PERST is an asserted-low signal.
 
 Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 ---
- drivers/pci/controller/pcie-brcmstb.c | 48 +++++++++++++++++++++++++++
- 1 file changed, 48 insertions(+)
+ drivers/pci/controller/pcie-brcmstb.c | 15 ++++++++++++---
+ 1 file changed, 12 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-index 7c707e483181..69d49d675b4a 100644
+index 69d49d675b4a..532ea9c9cf89 100644
 --- a/drivers/pci/controller/pcie-brcmstb.c
 +++ b/drivers/pci/controller/pcie-brcmstb.c
-@@ -979,6 +979,48 @@ static void brcm_pcie_turn_off(struct brcm_pcie *pcie)
- 	brcm_pcie_bridge_sw_init_set(pcie, 1);
+@@ -81,6 +81,7 @@
+ 
+ #define PCIE_MISC_PCIE_CTRL				0x4064
+ #define  PCIE_MISC_PCIE_CTRL_PCIE_L23_REQUEST_MASK	0x1
++#define PCIE_MISC_PCIE_CTRL_PCIE_PERSTB_MASK		0x4
+ 
+ #define PCIE_MISC_PCIE_STATUS				0x4068
+ #define  PCIE_MISC_PCIE_STATUS_PCIE_PORT_MASK		0x80
+@@ -686,9 +687,17 @@ static inline void brcm_pcie_perst_set(struct brcm_pcie *pcie, u32 val)
+ {
+ 	u32 tmp;
+ 
+-	tmp = readl(pcie->base + PCIE_RGR1_SW_INIT_1(pcie));
+-	u32p_replace_bits(&tmp, val, PCIE_RGR1_SW_INIT_1_PERST_MASK);
+-	writel(tmp, pcie->base + PCIE_RGR1_SW_INIT_1(pcie));
++	if (pcie->type == BCM7278) {
++		/* Perst bit has moved and assert value is 0 */
++		tmp = readl(pcie->base + PCIE_MISC_PCIE_CTRL);
++		u32p_replace_bits(&tmp,
++				  !val, PCIE_MISC_PCIE_CTRL_PCIE_PERSTB_MASK);
++		writel(tmp, pcie->base +  PCIE_MISC_PCIE_CTRL);
++	} else {
++		tmp = readl(pcie->base + PCIE_RGR1_SW_INIT_1(pcie));
++		u32p_replace_bits(&tmp, val, PCIE_RGR1_SW_INIT_1_PERST_MASK);
++		writel(tmp, pcie->base + PCIE_RGR1_SW_INIT_1(pcie));
++	}
  }
  
-+static int brcm_pcie_suspend(struct device *dev)
-+{
-+	struct brcm_pcie *pcie = dev_get_drvdata(dev);
-+
-+	brcm_pcie_turn_off(pcie);
-+	clk_disable_unprepare(pcie->clk);
-+
-+	return 0;
-+}
-+
-+static int brcm_pcie_resume(struct device *dev)
-+{
-+	struct brcm_pcie *pcie = dev_get_drvdata(dev);
-+	void __iomem *base;
-+	u32 tmp;
-+	int ret;
-+
-+	base = pcie->base;
-+	clk_prepare_enable(pcie->clk);
-+
-+	/* Take bridge out of reset so we can access the SERDES reg */
-+	brcm_pcie_bridge_sw_init_set(pcie, 0);
-+
-+	/* SERDES_IDDQ = 0 */
-+	tmp = readl(base + PCIE_MISC_HARD_PCIE_HARD_DEBUG);
-+	u32p_replace_bits(&tmp, 0,
-+			  PCIE_MISC_HARD_PCIE_HARD_DEBUG_SERDES_IDDQ_MASK);
-+	writel(tmp, base + PCIE_MISC_HARD_PCIE_HARD_DEBUG);
-+
-+	/* wait for serdes to be stable */
-+	udelay(100);
-+
-+	ret = brcm_pcie_setup(pcie);
-+	if (ret)
-+		return ret;
-+
-+	if (pcie->msi)
-+		brcm_msi_set_regs(pcie->msi);
-+
-+	return 0;
-+}
-+
- static void __brcm_pcie_remove(struct brcm_pcie *pcie)
- {
- 	brcm_msi_remove(pcie);
-@@ -1095,12 +1137,18 @@ static int brcm_pcie_probe(struct platform_device *pdev)
- 
- MODULE_DEVICE_TABLE(of, brcm_pcie_match);
- 
-+static const struct dev_pm_ops brcm_pcie_pm_ops = {
-+	.suspend_noirq = brcm_pcie_suspend,
-+	.resume_noirq = brcm_pcie_resume,
-+};
-+
- static struct platform_driver brcm_pcie_driver = {
- 	.probe = brcm_pcie_probe,
- 	.remove = brcm_pcie_remove,
- 	.driver = {
- 		.name = "brcm-pcie",
- 		.of_match_table = brcm_pcie_match,
-+		.pm = &brcm_pcie_pm_ops,
- 	},
- };
- module_platform_driver(brcm_pcie_driver);
+ static inline int brcm_pcie_get_rc_bar2_size_and_offset(struct brcm_pcie *pcie,
 -- 
 2.17.1
 
