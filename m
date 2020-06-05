@@ -2,61 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B3C81EF4FB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 12:06:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28D371EF507
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 12:09:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=rFn5OzXNue3SloVNQPcsxpnTPJfSBlcWKfWAvgfWJJk=; b=IuThyIxR0Z8mEY
-	N2V5tmyMgs3jgvY95dSgjWU5Ug8FgUB/TJ7wADX/rHGtRKC1rwuJlPDvXD0h2+M4n3As9X76udFvP
-	gF/j0fEud2isFnpgHni1WY6Nd0ClKwJs0qe8QIKOnaazu61a3L+FUMMJZSvjV8gv4+YH0PlOqingd
-	acse1CL8Nd4Y9prEPqACfRH6lxF1bJ6ZPxTuCStcffcsg+BXHo08WfWOhu2MANbERJjDUf/qpkE2k
-	QxsSNvmDi5SnsbuFDNS6hKha4PPdDlQjo5cf67z5xB7CBZocqbw6aydnTf2b0iOzGKtA8YdHq+RZb
-	USrAI590bIKBF68RmP7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6j/p6fyrFC18Rb9UJSVBjGDNU2Iv+/CimsdEY1gy1DI=; b=bLSTkZ+Rn7t+KXd0j19xeLRn3
+	p3lF6028tgLwwXDEGgwNJUcr8uOJxUGa3LsJHl6dlhVk41eCC1+DAc5P6wpv1+5JK4LVwZPr1oZaE
+	nNKOU1IlD2EA+NRtz6+KMiLAQ0gB/ApKlXg+SHJgKiMpuorHUXx4hq00TtywZXKMqQTeNNllPy7HY
+	sf+R3BXf33H4VbKO5bQtF7b/Abt0zEwCb9eVmnwBfXu54CD9FoS4jiEulQHNMyFyGOjhv4HyZt83X
+	QgaCmxe3wH6GTyOAtuJZGoBQPdVTqbY8qVrmw6a9LNp7NPY3iyvVIkzGXZOvVsg9t/GSPHOwdVqEQ
+	a1HgQgiuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh9FR-0000b2-Pj; Fri, 05 Jun 2020 10:06:49 +0000
-Received: from segapp02.wistron.com ([103.200.3.19] helo=segapp03.wistron.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh9FB-0000T3-Hd
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 10:06:35 +0000
-Received: from EXCHAPP04.whq.wistron (unverified [10.37.38.27]) by 
- TWNHUMSW4.wistron.com (Clearswift SMTPRS 5.6.0) with ESMTP id 
- <Tdf921276e5c0a816729a0@TWNHUMSW4.wistron.com>; Fri, 5 Jun 2020 
- 18:06:30 +0800
-Received: from EXCHAPP03.whq.wistron (10.37.38.26) by EXCHAPP04.whq.wistron 
- (10.37.38.27) with Microsoft SMTP Server 
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 
- 15.1.1913.5; Fri, 5 Jun 2020 18:06:29 +0800
-Received: from gitserver.wistron.com (10.37.38.233) by EXCHAPP03.whq.wistron 
- (10.37.38.26) with Microsoft SMTP Server id 15.1.1913.5 via Frontend
- Transport; Fri, 5 Jun 2020 18:06:29 +0800
-From: Ben Pai <Ben_Pai@wistron.com>
-To: <joel@jms.id.au>, <devicetree@vger.kernel.org>, 
- <linux-arm-kernel@lists.infradead.org>, 
- <linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v1 2/2] ARM: dts: aspeed: mihawk: Add 8 tmp401 thermal sensor
-Date: Fri, 5 Jun 2020 18:06:28 +0800
-Message-ID: <20200605100628.14807-1-Ben_Pai@wistron.com>
-X-Mailer: git-send-email 2.17.1
+	id 1jh9Hw-0001CT-OY; Fri, 05 Jun 2020 10:09:24 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jh9Hp-0001Bk-Rp
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 10:09:19 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id C88EF22EE4;
+ Fri,  5 Jun 2020 12:09:15 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1591351756;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=MsgwKzto2IoOJjvjTzGrigwCXuk4v4Z5kvEN1IzyNVY=;
+ b=YOz7DoaZopOBIiCVRhTaDmoHMSotqFUD1klTT5xzP/DYKwRApaTqVpxiFqUj62wQlkCeso
+ rmShm/jyM0iW0HJQFp/yx0Rrr4/4YkFrd+I1dZGiEUATTJIfds6yt2ig9EK80aeePTx5yV
+ JdQmMvjA6eyQ/Ls2P9eum9CkF6m0QN0=
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: DDB9BC0458D24F053680539219F4C8D39E075093F38EDD5C6560CD8C1B8894672000:8
+Date: Fri, 05 Jun 2020 12:09:15 +0200
+From: Michael Walle <michael@walle.cc>
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld management
+ controller
+In-Reply-To: <CAHp75Vd-R3yqhq88-whY6vdDhESpzvFCsbi-ygSTjfXfUzOrtg@mail.gmail.com>
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-3-michael@walle.cc>
+ <CAHp75Vd-R3yqhq88-whY6vdDhESpzvFCsbi-ygSTjfXfUzOrtg@mail.gmail.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <8ed988b3e0bc48ea9219d0847c1b1b8e@walle.cc>
+X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_030633_872640_9AA3C2CC 
-X-CRM114-Status: UNSURE (   5.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200605_030918_050592_22D9D254 
+X-CRM114-Status: GOOD (  16.21  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [103.200.3.19 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,126 +81,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ben Pai <Ben_Pai@wistron.com>, claire_ku@wistron.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Ben Pai <Ben_Pai@wistron.com>
----
- arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts | 40 +++++++++++++++++++++
- 1 file changed, 40 insertions(+)
+Hi Andy,
 
-diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
-index 25ffe65fbdc0..5bf1f13dda3b 100644
---- a/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
-+++ b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
-@@ -834,6 +834,11 @@
- 					line-name = "smbus0";
- 				};
- 			};
-+
-+			tmp431@4c {
-+				compatible = "ti,tmp401";
-+				reg = <0x4c>;
-+			};
- 		};
- 
- 		bus9_mux232: i2c@1 {
-@@ -854,6 +859,11 @@
- 					line-name = "smbus1";
- 				};
- 			};
-+
-+			tmp431@4c {
-+				compatible = "ti,tmp401";
-+				reg = <0x4c>;
-+			};
- 		};
- 
- 		bus9_mux233: i2c@2 {
-@@ -897,6 +907,11 @@
- 					line-name = "smbus2";
- 				};
- 			};
-+
-+			tmp431@4c {
-+				compatible = "ti,tmp401";
-+				reg = <0x4c>;
-+			};
- 		};
- 
- 		bus9_mux236: i2c@1 {
-@@ -917,6 +932,11 @@
- 					line-name = "smbus3";
- 				};
- 			};
-+
-+			tmp431@4c {
-+				compatible = "ti,tmp401";
-+				reg = <0x4c>;
-+			};
- 		};
- 
- 		bus9_mux237: i2c@2 {
-@@ -979,6 +999,11 @@
- 					line-name = "smbus4";
- 				};
- 			};
-+
-+			tmp431@4c {
-+				compatible = "ti,tmp401";
-+				reg = <0x4c>;
-+			};
- 		};
- 
- 		bus10_mux240: i2c@1 {
-@@ -999,6 +1024,11 @@
- 					line-name = "smbus5";
- 				};
- 			};
-+
-+			tmp431@4c {
-+				compatible = "ti,tmp401";
-+				reg = <0x4c>;
-+			};
- 		};
- 
- 		bus10_mux241: i2c@2 {
-@@ -1042,6 +1072,11 @@
- 					line-name = "smbus6";
- 				};
- 			};
-+
-+			tmp431@4c {
-+				compatible = "ti,tmp401";
-+				reg = <0x4c>;
-+			};
- 		};
- 
- 		bus10_mux244: i2c@1 {
-@@ -1062,6 +1097,11 @@
- 					line-name = "smbus7";
- 				};
- 			};
-+
-+			tmp431@4c {
-+				compatible = "ti,tmp401";
-+				reg = <0x4c>;
-+			};
- 		};
- 
- 		bus10_mux245: i2c@2 {
+Am 2020-06-05 10:01, schrieb Andy Shevchenko:
+> On Fri, Jun 5, 2020 at 12:16 AM Michael Walle <michael@walle.cc> wrote:
+>> 
+>> Add the core support for the board management controller found on the
+>> SMARC-sAL28 board. It consists of the following functions:
+>>  - watchdog
+>>  - GPIO controller
+>>  - PWM controller
+>>  - fan sensor
+>>  - interrupt controller
+>> 
+>> At the moment, this controller is used on the Kontron SMARC-sAL28 
+>> board.
+>> 
+>> Please note that the MFD driver is defined as bool in the Kconfig
+>> because the next patch will add interrupt support.
+> 
+> ...
+> 
+>> +config MFD_SL28CPLD
+>> +       bool "Kontron sl28 core driver"
+>> +       depends on I2C=y
+> 
+> Why not module?
+
+There are users of the interupt lines provided by the interrupt 
+controller.
+For example, the gpio-button driver. If this is compiled into the kernel
+(which it is by default in the arm64 defconfig), probing will fail 
+because
+the interrupt is not found. Is there a better way for that? I guess the 
+same
+is true for the GPIO driver.
+
+> 
+>> +       depends on OF
+> 
+> I didn't find an evidence this is needed.
+
+see below.
+
+> 
+> No Compile Test?
+
+ok
+
+>> +       select REGMAP_I2C
+>> +       select MFD_CORE
+> 
+> ...
+> 
+>> +#include <linux/of_platform.h>
+> 
+> No evidence of user of this.
+> I think you meant mod_devicetable.h.
+
+devm_of_platform_populate(), so I need CONFIG_OF, too right?
+
+
+>> +static struct i2c_driver sl28cpld_driver = {
+>> +       .probe_new = sl28cpld_probe,
+>> +       .driver = {
+>> +               .name = "sl28cpld",
+>> +               .of_match_table = of_match_ptr(sl28cpld_of_match),
+> 
+> Drop of_match_ptr(). It has a little sense in this context (depends 
+> OF).
+> It will have a little sense even if you drop depends OF b/c you will
+> introduce a compiler warning.
+
+ok
+
+> 
+>> +       },
+>> +};
+
 -- 
-2.17.1
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-This email contains confidential or legally privileged information and is for the sole use of its intended recipient. 
-Any unauthorized review, use, copying or distribution of this email or the content of this email is strictly prohibited.
-If you are not the intended recipient, you may reply to the sender and should delete this e-mail immediately.
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+-michael
 
 _______________________________________________
 linux-arm-kernel mailing list
