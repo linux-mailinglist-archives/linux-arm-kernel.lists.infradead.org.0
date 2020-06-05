@@ -2,81 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0D511EF2AA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:03:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17CD21EF2B5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:06:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XeoSPNTRArML0sZBllEuyRm+d9MYF/7EoBbQXF2P0fA=; b=tbbwtS/S0CtJqk
-	KyjCHDrFDNys/pRoxoQA7Nw9Zg+BUnToc7M7dFSo81jX4HRMOhygcIZyFWmEC+Qll5T/V+orhYFLo
-	0SUibt3d52pGnqJ621DVv32HZtKkd70LTWBX1osqI+OhWluqOQoe4O0voFoM5yj+JB48OIXh8b82M
-	kHMgSR0U+/9BoffDJk+m+omg6sTXl1cDfiTETv8x4DERfv5/tN+TKIvSGTotof9h882v7C+zVvn7K
-	3BcrieHf5cSH/Ua07uK4RFHcphJ5kN4MdtJcfzhjNMytpPO73GYHdopl1eOpCV0EuGQqbhYoi2ej6
-	DGB+xVZKhEoWSiroQGaw==;
+	List-Owner; bh=9LdXIhtqQggrweie7EcVLJ3e/1jXNiYKKjipXzZeVqU=; b=R0lLeatEncU9/I
+	qOC756BplkTxS87z/DuRFpRC5C1x6ojoDS1uiaVPwnfNWwigu/AORFoNHOCnLDpZu3emaG75Hlf4n
+	7JVg9t7OVMV2EviqTl+yBx4o34KsMaipd2R52GLganfHU7zgmGneam9P+y65JyPH85HAZ0HJb08S2
+	9WYNinCAPegUzsNYhNBO/8lS4wUHlD6xXTZDey40gYfqkPdwoIV3GQo0i/or+4hCZi9qxjFpChuBa
+	UF0v3qypn520ZHw5m3C23Ee2Pwo2u0sGhzaatZMTYqeDbtSHK8WbOMLuKjSbKQZ2c8XyBXxmEtK8N
+	ksiENBmwj1qdslvzQhDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh7Jy-0000rC-3F; Fri, 05 Jun 2020 08:03:22 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jh7N4-0003q9-3j; Fri, 05 Jun 2020 08:06:34 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh7Jq-0000qo-Jb
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 08:03:15 +0000
-Received: by mail-pf1-x444.google.com with SMTP id j1so4399465pfe.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jun 2020 01:03:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UHwub92QAXzXijZjt4YnToucQrRKEkeW4WsAEf/TOL4=;
- b=T8Yqt6jKBgrcWFcSffwTEeC/DOrsly6hcsf69VAlxmTs1ZkOehtZHCN7riSnT3gjwT
- pwfj5PueFKNhmJk8jDfM+NXKjSrQU9zgXAekkgppiNN9ds0DBn6vPZiVykL3SXkqMCfF
- uL46/XNSmQuoB0SX1CzXwIik9VoRrLwTmb3o8z9ycl2M6IJZOGG9O7zkDv2PUN1u18x2
- AZV+346+RapXYzcm6fPw9qK0LGn48ACHQgw9vVntQS1+xnurdH9xdl8iMUZ76J9HYm+u
- Zo02L+Rpnc4wLLdQxU7tY7UXyXdl/1q6194tmsMtvV/DYRLv+TjWstktsFCKcnboAKMI
- +CBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UHwub92QAXzXijZjt4YnToucQrRKEkeW4WsAEf/TOL4=;
- b=L/lSQddmuh2MoIvkYDCZz+8FolozRPb2ha29VOIi6wOm1F4f41LUfvhijTE9lfwn7s
- eMInGgSClav3K5g5v55jKfagGO5MT+BIQ0VUcGyJm1JAyB/a2RZiWrWVaduI5coC5gl6
- b85w/fMBCejbXkFPE+af3zJdzF90NKbNlsNq4ejAtI69yWfyF9ACXD58g5p0Ec3pFawm
- W9PiB7AcT90oJRvl/kYGtJN142ZO9fYfUCYD1uwum2rsfS/0bkhPpVY2Gexo1ViHsJwr
- ekpdhs4rRH7qMLvSciv72ydfLFOhiDDAEMbh321PNYhIrgKzs2OtqGBRcfoxAHSKsoxp
- y4wA==
-X-Gm-Message-State: AOAM530JgtpjfLnMgyTrJzOZr7A/7PpI+qYWxAHGAXUAwslouZbnIFqw
- 8xP9qxU4Zn+8b25FcvE81v/97m5lgD9IbI6NoBI=
-X-Google-Smtp-Source: ABdhPJw2VSZ6DRFi00rf7DMs7d0yVlBq9BqobpT3xUZu+XAE5n8q6rYFKa5+khR6g8c2wjiKOciXdvfUo1oI3CLEiLw=
-X-Received: by 2002:a63:ff52:: with SMTP id s18mr8530984pgk.203.1591344190940; 
- Fri, 05 Jun 2020 01:03:10 -0700 (PDT)
+ id 1jh7Ms-0003ow-35; Fri, 05 Jun 2020 08:06:23 +0000
+X-UUID: 80938bfd12a1476e8161a0db336f0b59-20200605
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=JPwMS253KWO9wyEuaU8F+mAJwhd2XFkcAArD4gWyjuw=; 
+ b=r84M9kbMkAHdhmQ99Ju87LXZPXvyM8eeiUPZyAXXuEDyW7usHpd04ANJ8O4kncROlA0GKAptwjnmCO4nHMXd+qzvcrqLRVtetOswOslkLSyk85r6WJBEmRIWICLVLJndCJcAQt7/zs/5Mfa8diQseoE5IldVP02D+KZfR1PvUsk=;
+X-UUID: 80938bfd12a1476e8161a0db336f0b59-20200605
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <xia.jiang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1922363982; Fri, 05 Jun 2020 00:06:10 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 5 Jun 2020 01:06:13 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Fri, 5 Jun 2020 16:06:09 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 5 Jun 2020 16:06:09 +0800
+Message-ID: <1591344245.32607.10.camel@mhfsdcap03>
+Subject: Re: [PATCH v8 08/14] media: platform: Change case for improving
+ code quality
+From: Xia Jiang <xia.jiang@mediatek.com>
+To: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+Date: Fri, 5 Jun 2020 16:04:05 +0800
+In-Reply-To: <4b8cc41e-5171-0d48-f588-96e4212ab22c@xs4all.nl>
+References: <20200403094033.8288-1-xia.jiang@mediatek.com>
+ <20200403094033.8288-9-xia.jiang@mediatek.com>
+ <4b8cc41e-5171-0d48-f588-96e4212ab22c@xs4all.nl>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20200604211039.12689-1-michael@walle.cc>
- <20200604211039.12689-3-michael@walle.cc>
- <CAHp75Vd-R3yqhq88-whY6vdDhESpzvFCsbi-ygSTjfXfUzOrtg@mail.gmail.com>
-In-Reply-To: <CAHp75Vd-R3yqhq88-whY6vdDhESpzvFCsbi-ygSTjfXfUzOrtg@mail.gmail.com>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Fri, 5 Jun 2020 11:02:54 +0300
-Message-ID: <CAHp75VfKtt7ZnVdE+n7JjGH-MXsOch-GNZpbv5r780a=VsgZXQ@mail.gmail.com>
-Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld management
- controller
-To: Michael Walle <michael@walle.cc>
+X-TM-SNTS-SMTP: BC553A6124CC156816443CD8FFFB780032B7C78833E4223FA7C71AEB92EE0B6A2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_010314_645195_0E3F998C 
-X-CRM114-Status: GOOD (  11.84  )
+X-CRM114-CacheID: sfid-20200605_010622_140700_7EF8D2A5 
+X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -84,6 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,47 +87,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: drinkcat@chromium.org, devicetree@vger.kernel.org, mojahsu@chromium.org,
+ srv_heupstream@mediatek.com, Rick Chang <rick.chang@mediatek.com>,
+ senozhatsky@chromium.org, linux-kernel@vger.kernel.org,
+ Tomasz Figa <tfiga@chromium.org>, maoguang.meng@mediatek.com,
+ Matthias Brugger <matthias.bgg@gmail.com>, sj.huang@mediatek.com,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 5, 2020 at 11:01 AM Andy Shevchenko
-<andy.shevchenko@gmail.com> wrote:
-> On Fri, Jun 5, 2020 at 12:16 AM Michael Walle <michael@walle.cc> wrote:
-
-...
-
-> > Please note that the MFD driver is defined as bool in the Kconfig
-> > because the next patch will add interrupt support.
-
-> > +       bool "Kontron sl28 core driver"
-> > +       depends on I2C=y
->
-> Why not module?
-
-To be clear, I have read above, but it didn't shed a light.
-
--- 
-With Best Regards,
-Andy Shevchenko
+On Mon, 2020-05-11 at 10:37 +0200, Hans Verkuil wrote:
+> On 03/04/2020 11:40, Xia Jiang wrote:
+> > Change register offset hex numberals from upercase to lowercase.
+> 
+> Typos:
+> 
+> numberals -> numerals
+> 
+> upercase -> uppercase
+Done.
+> 
+> Regards,
+> 
+> 	Hans
+> 
+> > 
+> > Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
+> > ---
+> > v8: no changes
+> > ---
+> >  drivers/media/platform/mtk-jpeg/mtk_jpeg_reg.h | 18 +++++++++---------
+> >  1 file changed, 9 insertions(+), 9 deletions(-)
+> > 
+> > diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_reg.h b/drivers/media/platform/mtk-jpeg/mtk_jpeg_reg.h
+> > index 94db04e9cdb6..2945da842dfa 100644
+> > --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_reg.h
+> > +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_reg.h
+> > @@ -20,29 +20,29 @@
+> >  #define BIT_INQST_MASK_ALLIRQ		0x37
+> >  
+> >  #define JPGDEC_REG_RESET		0x0090
+> > -#define JPGDEC_REG_BRZ_FACTOR		0x00F8
+> > -#define JPGDEC_REG_DU_NUM		0x00FC
+> > +#define JPGDEC_REG_BRZ_FACTOR		0x00f8
+> > +#define JPGDEC_REG_DU_NUM		0x00fc
+> >  #define JPGDEC_REG_DEST_ADDR0_Y		0x0140
+> >  #define JPGDEC_REG_DEST_ADDR0_U		0x0144
+> >  #define JPGDEC_REG_DEST_ADDR0_V		0x0148
+> > -#define JPGDEC_REG_DEST_ADDR1_Y		0x014C
+> > +#define JPGDEC_REG_DEST_ADDR1_Y		0x014c
+> >  #define JPGDEC_REG_DEST_ADDR1_U		0x0150
+> >  #define JPGDEC_REG_DEST_ADDR1_V		0x0154
+> >  #define JPGDEC_REG_STRIDE_Y		0x0158
+> > -#define JPGDEC_REG_STRIDE_UV		0x015C
+> > +#define JPGDEC_REG_STRIDE_UV		0x015c
+> >  #define JPGDEC_REG_IMG_STRIDE_Y		0x0160
+> >  #define JPGDEC_REG_IMG_STRIDE_UV	0x0164
+> > -#define JPGDEC_REG_WDMA_CTRL		0x016C
+> > +#define JPGDEC_REG_WDMA_CTRL		0x016c
+> >  #define JPGDEC_REG_PAUSE_MCU_NUM	0x0170
+> > -#define JPGDEC_REG_OPERATION_MODE	0x017C
+> > +#define JPGDEC_REG_OPERATION_MODE	0x017c
+> >  #define JPGDEC_REG_FILE_ADDR		0x0200
+> > -#define JPGDEC_REG_COMP_ID		0x020C
+> > +#define JPGDEC_REG_COMP_ID		0x020c
+> >  #define JPGDEC_REG_TOTAL_MCU_NUM	0x0210
+> >  #define JPGDEC_REG_COMP0_DATA_UNIT_NUM	0x0224
+> > -#define JPGDEC_REG_DU_CTRL		0x023C
+> > +#define JPGDEC_REG_DU_CTRL		0x023c
+> >  #define JPGDEC_REG_TRIG			0x0240
+> >  #define JPGDEC_REG_FILE_BRP		0x0248
+> > -#define JPGDEC_REG_FILE_TOTAL_SIZE	0x024C
+> > +#define JPGDEC_REG_FILE_TOTAL_SIZE	0x024c
+> >  #define JPGDEC_REG_QT_ID		0x0270
+> >  #define JPGDEC_REG_INTERRUPT_STATUS	0x0274
+> >  #define JPGDEC_REG_STATUS		0x0278
+> > 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
