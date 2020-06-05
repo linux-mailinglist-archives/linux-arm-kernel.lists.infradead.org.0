@@ -2,87 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22B911EF43D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 11:32:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 312C51EF442
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 11:33:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IVs//4Xwzfy1PLTJj2eSoUEIAukUqa1HDnedUTh0RXE=; b=YZ6EELJrXgYAxp
-	iuKY1wxyljaAWo4pTDOy1uLJHYFjSZ6Au8tgb65xybJYnxloNxC/iZVGkc9f+aH3B1An8Min0fedj
-	30Mh2+/XMlT6ZrXbU2SBG+bkQ03iEosAIAq//6sD9P4RCuF/hFoyt64PXDurtMn3ouEDdiZ8BDPMP
-	XS2WvOs8NuD0oE+7vljKTd9DFCykfzUo+oiEjGeK1KJLShax3iNJUfz/18LHaHoyRPWt/qY0xtdBU
-	oXX34R7d7tMkLq8x09LNCw2yMIaCqgFVi63bnEHm82cISCToDkP5osTzUsIjGFakyV12lSGMWmbf7
-	ppCbmtFl8twbfGjxwxNw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OQVL7gOMHvNZeyLJvjFgrI1BkzcMtPnz96qxH8gODyA=; b=sz/ZtQZVrDRazg
+	Hwq5VDsQRYxxpBpekvB2HXjKGOvlZCnNvm2dNtqqmyFyEaL4mENsogrXEsqm64S4h9dY/zHQjwP2r
+	L+YDLueiyYZuvDT/l0GnhX1gznMwo5hxVKIYO2LxW9vi1CBPpRjuqqGLiCykM6sQ5eW6CVA8xWXJd
+	xniX/7o2Rla6g8zR1Tqz3ACLw9wNK3Tmdu7ieglRovOj97g87P/ERVYErqj6X4t/ckmDDNw4F12io
+	b+wLokQwPSK5Yub/CU7p9+zmj1s5+mEywzlsnUrA04VJBweuBzIKugW9aX6mYok3yrLaCcfZ1c/l8
+	toEvd++eTPvwE80Ekbmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh8iT-0000mO-Vu; Fri, 05 Jun 2020 09:32:45 +0000
-Received: from mail-ed1-x52b.google.com ([2a00:1450:4864:20::52b])
+	id 1jh8j3-00019v-NT; Fri, 05 Jun 2020 09:33:21 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh8iL-0000lp-W8
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 09:32:40 +0000
-Received: by mail-ed1-x52b.google.com with SMTP id c35so6942914edf.5
+ id 1jh8iw-00019J-90
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 09:33:15 +0000
+Received: by mail-pg1-x543.google.com with SMTP id t7so4899001pgt.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jun 2020 02:32:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=rug-nl.20150623.gappssmtp.com; s=20150623;
- h=to:from:subject:message-id:date:user-agent:mime-version
- :content-language:content-transfer-encoding;
- bh=T3Bg7ih5C34KEB2wMNXCGxLy44OTWnsMFJQewjOKcXI=;
- b=MQZ2Fo+IYHms39+23C+E0yL97mdOVcdqstPdeErrIagK1pgJXgF013q1TlowO8iLtH
- kFO1PgQykQHPnj94nkvNx8fK5V96563EwSEEETk8K7nW0/fq8DYoOqrDBxTX6qN0C/9J
- q5dmZsJEY2jtVnETR3Zu/1qqE+X3r/5lVPA1xJsANcMFZOSjnifuelPCA78OaB/o71Ej
- UxwrU2rk+cvJ2Z9LTDtQC5PeqKMPUr7Q6dtajif40ufUIYC309M/TbIiftoqSBv1JXev
- 710k1Hp9x8iGA2W/KsgRBb+qoh7t/12xPvmSSBc2blvSJZ4K4Iv9WboRuyckQfLeR4sH
- +26g==
+ Fri, 05 Jun 2020 02:33:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=IXcPHC51fCcVubrTICi/8ebQ3LHbBGFqVc4ZlvkcGy8=;
+ b=YY5yU3cQ7x2nYhcyU6Irjiwac0T1X3r4FA1BzcjEXvTmKD8XF7ewfdDBsQMHyN6KxU
+ cFdoRSQTl6THjHaN6iKdCqC0BT18oxYCTH1YobDoSbpGlkOC//8qTUR/rPRRlZVdI64f
+ OsHkkqSlteKDL1f350r6Fe5Pb++laI5jkOJrF1Unn+FgfPyT5Gjit60bsEK9pPRGQ5DE
+ DWn0f7KJp4ITvNVp9DaJtvu9QE8n38UOX22FxiXTySRqmj0VfkLbLpPs32+gcJm8HHyK
+ TYxEPno36gqsfr6zFF1meSgq4MVTmwMPfHKo8WGVimW9hJWAdQTht0tModHLZnQB7XHA
+ UroA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:to:from:subject:message-id:date:user-agent
- :mime-version:content-language:content-transfer-encoding;
- bh=T3Bg7ih5C34KEB2wMNXCGxLy44OTWnsMFJQewjOKcXI=;
- b=NT8VPBt3u6/DBVvha/usMAYJ8bw3McQg+ulD8HTKMhc2JtnO76aV4urR9hGK+oEDL+
- 4ABvVuW+a2s4qi2ojyGOWV1qAl9W2k0Zo5v3mRqW2E3TsrGaO9tBWEH4ahViYDzdegUZ
- WV0p0xU48a9eF+Kv21QBzKQQsOiF1t9Zwbq0jR3FRR3HLZ4toKZqzzmrTtrlXfFGJ07a
- aIxGUqbUO8J0WZuu6cKKw1q0IlrB8FILn+zSaY/JBZWesXDMMrZoiVYJzhxcf28Wk4MN
- BSwHpZdA/ZJ0ZWfKRIYpGPcZi2w0YWmiK3ehkxOuDxqH76fvtYvjngzveyr4EsLTKIO4
- ot2A==
-X-Gm-Message-State: AOAM531LqXELexOkJhkEst1U/zDXj8PRrmjHgOROgizQe4EYH2DTx6Hk
- 830btf25ljHoBbe9791FIinRNmfKyPY=
-X-Google-Smtp-Source: ABdhPJybEJe08Q8neS/a6S6adX6wXpiVH4dRWxtMHw20cQtA7r1f0ycuosbxHqUGfpCI5NabsoNWGw==
-X-Received: by 2002:a50:fb92:: with SMTP id e18mr8057010edq.135.1591349550645; 
- Fri, 05 Jun 2020 02:32:30 -0700 (PDT)
-Received: from ?IPv6:2001:1c01:420a:8c00:acf0:c5c3:cf12:1bb3?
- (2001-1c01-420a-8c00-acf0-c5c3-cf12-1bb3.cable.dynamic.v6.ziggo.nl.
- [2001:1c01:420a:8c00:acf0:c5c3:cf12:1bb3])
- by smtp.gmail.com with ESMTPSA id o13sm3867133ejb.46.2020.06.05.02.32.29
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 05 Jun 2020 02:32:30 -0700 (PDT)
-To: linux-arm-kernel@lists.infradead.org
-From: Sietse Achterop <s.achterop@rug.nl>
-Subject: How to use FIQ on rpi zero? (second try)
-Message-ID: <b7266980-eb8d-6614-7b43-9f2dd794208e@rug.nl>
-Date: Fri, 5 Jun 2020 11:32:29 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=IXcPHC51fCcVubrTICi/8ebQ3LHbBGFqVc4ZlvkcGy8=;
+ b=R4TUyCTq63bBEg6XG5p//lDASr/xWhxlAfASeaC3BUT3Ue9kqTD/xbkp2u75I1EmiR
+ xFfTybXPctUhDLsquTA3HSteKxQv/3Qxcu/E6+sMh+AuO1X17FotjBYIUYyM+g6ocJCp
+ ulemvJR9K6eSGB7txyeMRtAkDufrkhfPE40tfLupcOhqBIwgaMsuK9ody5DEOp/C0yVa
+ sHQKccJNktEkyHZV6FLdW4WMz8Qnp651+8FFkTcNL8dmyTF2TVxBUjowwNvvgZNBa0Wi
+ 1OngMlcOku6hr2fS6tYmNevBvyTJnHGkQCmTVyzJFxasWJtLL0UazRPrD2FmzESGWVDh
+ WfPw==
+X-Gm-Message-State: AOAM532RN87n0w+BjdGmOOw6NhK+3yrzLGDHTdork2MxTWZQ8ow4Y6Gy
+ BpZIzYyI+eXtXwT+49EF6diAx8MzlUZ1xbL87dJA+DGqmOE=
+X-Google-Smtp-Source: ABdhPJxCu8hwG7M1JMYjjsO26eVAr+iHUb43Qkau67/BBHaGfF/MkvOzKWjclyCpz87HPx9T6XGE3cH7uyJ1d2IAzAk=
+X-Received: by 2002:a63:305:: with SMTP id 5mr8367725pgd.74.1591349593472;
+ Fri, 05 Jun 2020 02:33:13 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-6-michael@walle.cc>
+ <20200605084915.GE3714@dell>
+In-Reply-To: <20200605084915.GE3714@dell>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Fri, 5 Jun 2020 12:33:01 +0300
+Message-ID: <CAHp75VfTAasC319uXz82dDufdnTGFhTnzJPXknk2+w-rnFfXTg@mail.gmail.com>
+Subject: Re: [PATCH v4 05/11] pwm: add support for sl28cpld PWM controller
+To: Lee Jones <lee.jones@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_023238_096663_05CCF419 
-X-CRM114-Status: GOOD (  13.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200605_023314_319551_2BB7369B 
+X-CRM114-Status: GOOD (  12.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:52b listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -96,100 +94,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Michael Walle <michael@walle.cc>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Jun 5, 2020 at 11:51 AM Lee Jones <lee.jones@linaro.org> wrote:
+> On Thu, 04 Jun 2020, Michael Walle wrote:
 
-Hello List,
+...
 
-I'm having trouble with using FIQ interrupts with the ARM timer on raspberypi zero, (BCM2835 chip).
-I created a kernel module, and the test version of this driver can be found in
+> > +     cycle = state->duty_cycle * config->max_duty_cycle;
+> > +     do_div(cycle, state->period);
+>
+> Forgive my ignorance (I'm new here!), but what are these 2 lines
+> doing?  Here we are multiplying the current duty_cycle with the
+> maximum value, then dividing by the period.
+>
+> So in the case of PWM_MODE_1KHZ with a 50% duty cycle, you'd have:
+>
+>    (500000 * 0x20[16]) / 1000000 = [0x10]16
+>
+> Thus, the above gives as a proportional representation of the maximum
+> valid value for placement into the cycle control register(s), right?
+>
+> Either way (whether I'm correct or not), I think it would be nice to
+> mention this in a comment.  Maybe even clarify with a simple example.
 
-   https://github.com/SietseAchterop/Batradio/blob/master/batradio_module/fiqtest_4.c
+IIRC PWM has a helper for that (to calc period based on PWM state and
+new duty cycle %).
 
-I made sure that FIQ is not used by USB by adding
-    dwc_otg.fiq_fsm_enable=0 dwc_otg.fiq_enable=0 dwc_otg.nak_holdoff=0
-to cmdline.txt in /boot
-
-I first tried to use the regular sequence of functions to use.
-In the init function:
-   claim_fiq, set_fiq_regs, enable_fiq
-In the exit function
-   disable_fiq, release_fiq.
-
-But I cannot find which iqr number to use, e.g. using irq_of_parse_and_map
-I tried several values. 0, 64, but nothing works.
-So instead of enable/disable I directly set the timer interrupt via the IRQFIQ register.
-
-This works, a bit.
-The fiq_handler only resets the ARM timer, increments a timer and toggles a LED.
-I see the timer counting, the fiq being called.
-But the rpi fairly quickly crashes.
-In the, sometimes, 10 seconds that it runs I see the led flashing very irregular.
-
-What is wrong here?
-Has the irregularity something to do with suspend/resume?
-Please find below the relevant snippets from the init and exit function of the driver.
-And also the fiq_handler.
-
-    Thanks in advance,
-        Sietse
-
-====== init_bat
-       .....
-   // directly set ARM timer registers
-   TIMCNTR = 0x0000000;   // stop timer
-   TIMLOAD = 100000-1;    // load value
-   TIMCINT = 0;           // clear interrupt
-
-   ret = claim_fiq(&bat_fh);
-   if (ret) {
-     printk("batradio: claim_fiq failed.\n");
-     return ret;
-   }
-   
-   set_fiq_handler(&batradio_handler, &batradio_handler_end - &batradio_handler);
-
-   regs.ARM_r8  = (long)gpiospi;
-   regs.ARM_r9  = (long)irqtimer;
-   regs.ARM_r10 = (long)0;
-   set_fiq_regs(&regs);
-
-   TIMCNTR = 0x000000A2;   // start timer with interrupt, 23 bit counter
-   IRQFIQ = 0xC0;         // timer interrupt to fiq directly via register
-   //enable_fiq(64);
-       ....
-
-======  exit_bat
-	....
-   IRQFIQ  = 0x00;
-   TIMCNTR = 0x003E0000;
-   //disable_fiq(64);
-         ....
-	
-======  batradio fiq handler
-	.text
-	.global batradio_handler
-	.global batradio_handler_end
-
-batradio_handler:
-	stmdb sp!, {r6-r7}
-	mov  r6, #0
-	str r6, [r9, #0x40C]	// TIMCINT = 0 // clear interrupt
-
-	mov r7, #0x2000		// 1 << CNVST
-	add r10, r10, #1
-	ands r6, r10, #0x0001	// set toggle speed
-	bne off
-	str r7, [r8, #40]	// led on
-	ldmia sp!, {r6-r7}
-	subs pc, lr, #4
-off:	str r7, [r8, #28]	// led off
-	ldmia sp!, {r6-r7}
-	subs pc, lr, #4
-batradio_handler_end:
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
