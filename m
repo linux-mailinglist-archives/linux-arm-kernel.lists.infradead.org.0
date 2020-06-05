@@ -2,62 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EA561EF8E5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:23:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A80481EF96A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:38:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8UDi/7HZYmcU/MZxeO35VpVFSE81se5De2h76sCA+kc=; b=bWX+iSPzORmvBkUckSR9uMPr2
-	lIV6fyI7XOKnoSZcc6A0z6ZfKMLTRMrn7EeGrKUn/oGSUmLFgY6U57T6fmKCe1tgcsKdBnSEdEH+R
-	AFG60UXP/LOyHPzfbE+qZv/36Qk93/iRbsMgtE271ZWU/CZZXpVRfXMUpsJY35BelXyAQVTc++yVb
-	ZDuj8uFfGrIwGzEeBcWw+KHnLAn44ljN8cOzXM+wZ50Su8RdT9KPSmOXCj8cSr628u5QccpwPPoVW
-	QB0sbBeaednLFba4uDLmX85C1yjmdnERxLx6Lm19slKygFT4v8NoHdSCA2gM9/JSb1J46bocoiweO
-	Mp3We14QQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bLgQlfldB4G2OAbiqhvthPweFKdSeFSCDyxlNw+rCEs=; b=GFNwc7QkizVetc
+	rFDiH1ha2ISX63eu9dZN9UQQNQ9OBxUF93sLLMrEa6Xfb0+AAE2ZEupDXE6+oV0xN2BC1WUd/fJpZ
+	KfhCezIiW70Fhm+C333VeOVHqQRWE7XtFYiA8V7Zy647ZAKm9RVuyIS5C+19PPtfCuVo1CRG4tsHL
+	dG0YKHiNvSnGGjSqOhTgwRERayyEmWMMlTPvI2fGlRiPDwn+LCjshXctRsgmpBB8TzAX1aCum7Cec
+	iulriezKewiYV1lbabCcFv5rRlAD/ulIoGOSpmEOMY0zH8LMJg4PscrjdCO+KK7mlwja8rZEZpWxL
+	8cDNu0/vIOcexpaUL5Cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhCK7-0006Il-7y; Fri, 05 Jun 2020 13:23:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhCJu-0006ID-DM
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:23:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F84331B;
- Fri,  5 Jun 2020 06:23:36 -0700 (PDT)
-Received: from [10.57.10.23] (unknown [10.57.10.23])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 28FEE3F305;
- Fri,  5 Jun 2020 06:23:34 -0700 (PDT)
-Subject: Re: Please help to confirm the risk if using TPIDRRO_EL0 to save CPU
- number, thanks.
-To: Will Deacon <will@kernel.org>
-References: <1D289F1E6D91D2489524BBB0B8880A7DA1A39219@dggeml509-mbx.china.huawei.com>
- <20200601070311.GA8601@willie-the-truck>
- <20200605121029.GE5413@sirena.org.uk>
- <20200605123302.GA19936@willie-the-truck>
- <a46ddb53-2226-c9c3-bf3f-0fcc5d924b1e@arm.com>
- <20200605130251.GB20441@willie-the-truck>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <c2cf6fb1-6776-4b4b-eaa9-c07ddddcdab7@arm.com>
-Date: Fri, 5 Jun 2020 14:23:32 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jhCY9-00025w-8j; Fri, 05 Jun 2020 13:38:21 +0000
+Received: from mga02.intel.com ([134.134.136.20])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jhCXj-0001sw-QG; Fri, 05 Jun 2020 13:37:57 +0000
+IronPort-SDR: A4Pr9ha1bVg4jvim7c69tE4dbAFfRpj9hiWapMrGazrBQd/27un9biOmNYwnf7ocw+e60JoHea
+ 95nXL8bkskFw==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 05 Jun 2020 06:37:54 -0700
+IronPort-SDR: sEuqSwtS1beAn9U/dor4KFif5mC7H1OQoHPNSGTgH1eIhuIxgbPQgzhOO1jlDprNegKarlDQyT
+ nnX93WLEycyA==
+X-IronPort-AV: E=Sophos;i="5.73,476,1583222400"; d="scan'208";a="445895020"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by orsmga005-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 05 Jun 2020 06:37:50 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 0C3BC205D2; Fri,  5 Jun 2020 16:37:48 +0300 (EEST)
+Date: Fri, 5 Jun 2020 16:37:47 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Subject: Re: [V7, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
+Message-ID: <20200605133747.GU16711@paasikivi.fi.intel.com>
+References: <20200605105412.18813-1-dongchun.zhu@mediatek.com>
+ <20200605105412.18813-3-dongchun.zhu@mediatek.com>
+ <20200605121459.GS16711@paasikivi.fi.intel.com>
+ <20200605130212.GA6303@chromium.org>
 MIME-Version: 1.0
-In-Reply-To: <20200605130251.GB20441@willie-the-truck>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20200605130212.GA6303@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_062338_537442_BA4B2819 
-X-CRM114-Status: GOOD (  20.05  )
+X-CRM114-CacheID: sfid-20200605_063755_913579_0FC8ECDA 
+X-CRM114-Status: GOOD (  16.25  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [134.134.136.20 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.20 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,74 +76,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "fujun \(F\)" <oliver.fu@hisilicon.com>, Mark Brown <broonie@kernel.org>,
- Wuxuecheng <wuxuecheng@hisilicon.com>, "Lixin \(Victor,
- Kirin\)" <victor.lixin@hisilicon.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, drinkcat@chromium.org,
+ andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, bgolaszewski@baylibre.com, sj.huang@mediatek.com,
+ robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>, louis.kuo@mediatek.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wNi0wNSAxNDowMiwgV2lsbCBEZWFjb24gd3JvdGU6Cj4gT24gRnJpLCBKdW4gMDUs
-IDIwMjAgYXQgMDE6NTg6MzlQTSArMDEwMCwgUm9iaW4gTXVycGh5IHdyb3RlOgo+PiBPbiAyMDIw
-LTA2LTA1IDEzOjMzLCBXaWxsIERlYWNvbiB3cm90ZToKPj4+IE9uIEZyaSwgSnVuIDA1LCAyMDIw
-IGF0IDAxOjEwOjI5UE0gKzAxMDAsIE1hcmsgQnJvd24gd3JvdGU6Cj4+Pj4gT24gTW9uLCBKdW4g
-MDEsIDIwMjAgYXQgMDg6MDM6MTJBTSArMDEwMCwgV2lsbCBEZWFjb24gd3JvdGU6Cj4+Pj4+IE9u
-IEZyaSwgTWF5IDI5LCAyMDIwIGF0IDA5OjAzOjM3QU0gKzAwMDAsIExpeGluIChWaWN0b3IsIEtp
-cmluKSB3cm90ZToKPj4+Pgo+Pj4+Pj4gICAgICBJbnRlbCBvcHRpbWl6ZWQgZ2V0Y3B1IHN5c2Nh
-bGwgb24gTGludXgvQW5kcm9pZCBzeXN0ZW0gYnkgdXNpbmcgdkRTTywgYnV0Cj4+Pj4+PiAgICAg
-IEFSTSBkb2Vzbid0IGRvIGFueSBvcHRpbWl6YXRpb25zIGZvciBnZXRjcHUgc3lzY2FsbC4KPj4+
-Pgo+Pj4+Pj4gICAgICBJbiBBcHBsZSBvcGVuIHNvdXJjZSwgVFBJRFJST19FTDAvVFBJRFJVUk8g
-aXMgdXNlZCB0byBzYXZlIHRoZSBDUFUgbnVtYmVyLAo+Pj4+Pj4gICAgICBbMV1odHRwczovL29w
-ZW5zb3VyY2UuYXBwbGUuY29tL3NvdXJjZS94bnUveG51LTQ1NzAuMS40Ni9vc2Ztay9hcm0vY3N3
-aXRjaC5zLmF1dG8uaHRtbAo+Pj4+Cj4+Pj4+PiAgICAgIMOvwr/CvcOvwr/CvcOvwr/CvcOvwr/C
-vcOvwr/CvcOvwr/CvcOvwr/CvcOvwr/CvcOvwr/CvcOvwr/CvcOvwr/CvUlzIHRoZXJlIGFueSBy
-aXNrIGlmIHVzaW5nIFRQSURSUk9fRUwwL1RQSURSVVJPIHRvIGltcGxlbWVudAo+Pj4+Pj4gICAg
-ICB0aGUgdkRTTyBmb3IgZ2V0Y3B1PyBJcyB0aGVyZSBhbnkgcG9zc2libGUgdG8gYnJlYWsgYW55
-IEFSTSBBQkk/IENhbiB5b3UKPj4+Pj4+ICAgICAgaGVscCB1cyB0byBjb25maXJtIHRoZSBjb25z
-aWRlcmF0aW9ucz8KPj4+Pgo+Pj4+PiBEbyB5b3UgaGF2ZSBhIHVzZS1jYXNlIGZvciBoaWdoLXBl
-cmZvcm1hbmNlIGdldGNwdSgpIHRoYXQgaXNuJ3QgYmV0dGVyCj4+Pj4+IHN1aXRlZCB0byByc2Vx
-KCk/Cj4+Pj4KPj4+PiBJIGFjdHVhbGx5IGhhdmUgYW4gaW1wbGVtZW50YXRpb24gb2YgdGhpcyB0
-aGF0IEknZCBiZWVuIHdhaXRpbmcgZm9yIHRoZQo+Pj4+IGVuZCBvZiB0aGUgbWVyZ2Ugd2luZG93
-IHRvIHBvc3QsIGxhcmdlbHkgYmVjYXVzZSBJIGZpcnN0IGhlYXJkIG9mIHRoZQo+Pj4+IHVzZSBv
-ZiByZXN0YXJ0YWJsZSBzZXF1ZW5jZXMgZm9yIHRoaXMgYWZ0ZXIgSSdkIGFscmVhZHkgaW1wbGVt
-ZW50ZWQgdGhlCj4+Pj4gdkRTTyB2ZXJzaW9uIC0gdGhpcyBzdHVmZiBpcyBub3QgYXMgZGlzY292
-ZXJhYmxlIGFzIG9uZSBtaWdodCBkZXNpcmUuCj4+Pj4gSXQgZG9lc24ndCBzdG9yZSB0aGUgQ1BV
-IElEIGRpcmVjdGx5IGluIFRQSURSUk8gYnV0IHJhdGhlciB1c2VzIFRQSUREUlJPCj4+Pj4gdG8g
-c3RvcmUgdGhlIG9mZnNldCBvZiBhIHBlci1DUFUgc3RydWN0IGluIHRoZSB2RFNPIGRhdGEgaW4g
-b3JkZXIgdG8KPj4+PiBhbGxvdyBmb3IgdGhlIGFkZGl0aW9uIG9mIGZ1cnRoZXIgZGF0YSBpbiB0
-aGUgZnV0dXJlLiAgSSdsbCBwb3N0IGl0Cj4+Pj4gdG9kYXkgZm9yIGRpc2N1c3Npb24uCj4+Pj4K
-Pj4+PiBUaGUgbGF0ZXN0IHZlcnNpb24gb2YgdGhlIE1hdGhpZXUncyBnbGliYyBpbnRlZ3JhdGlv
-biBwYXRjaGVzIGlzOgo+Pj4+Cj4+Pj4gICAgICAgaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGtt
-bC8yMDIwMDUyNzE4NTEzMC41NjA0LTMtbWF0aGlldS5kZXNub3llcnNAZWZmaWNpb3MuY29tLwo+
-Pj4+Cj4+Pj4gVGhlIG9ubHkgdGhpbmdzIEkgY2FuIHNlZSB3aGVyZSB0aGUgdkRTTyBkb2VzIGJl
-dHRlciBhcmUgc3VwcG9ydCBmb3IgdGhlCj4+Pj4gbm9kZSBwYXJhbWV0ZXIgb2YgZ2V0Y3B1KCkg
-YW5kIHRoZSBlYXNlIG9mIGltcGxlbWVudGF0aW9uIGZvciB0aGUgdXNlcnMsCj4+Pj4gdGhlIHJl
-c3RhcnRhYmxlIHNlcXVlbmNlcyBjb2RlIHdhcyBtZXJnZWQgYWxsIHRoZSB3YXkgYmFjayBpbiB2
-NC4xOCBhbmQKPj4+PiBpdCdzIHN0aWxsIG5vdCB1c2VkIGJ5IGFueSBvZiB0aGUgbGliY3MgYXMg
-ZmFyIGFzIEkgY2FuIHNlZS4gIFRoZSBub2RlCj4+Pj4gdG8gQ1BVIG1hcHBpbmcgaXMgc3RhdGlj
-IHNvIEknbSBub3Qgc3VyZSBob3cgZXhjaXRpbmcgdGhhdCBpcywgaXQgY291bGQKPj4+PiBiZSBs
-b29rZWQgdXAgc2VwYXJhdGVseSB3aGVuIHByb2Nlc3NpbmcgZGF0YSBpZiBpdCdzIGltcG9ydGFu
-dCwgYnV0IHRoZQo+Pj4+IGVhc2Ugb2YgdXNlIGZlZWxzIGxpa2Ugc29tZXRoaW5nLgo+Pj4+Cj4+
-Pj4gT25lIGltcG9ydGFudCBjYXZlYXQgd2l0aCB1c2luZyBUUElEUlJPIGlzIHRoYXQgaWYgS1BU
-SSBpcyBhY3RpdmUgdGhlbgo+Pj4+IHRoZSBLUFRJIHRyYW1wb2xpbmUgdXNlcyBUUElEUlJPIGFz
-IGEgc2NyYXRjaCByZWdpc3RlciBzbyB1bmxlc3Mgd2UgY2FuCj4+Pj4gZmluZCBhbm90aGVyIHJl
-Z2lzdGVyIGZvciBzY3JhdGNoIHVzYWdlIHRoZSB1c2VyIHdvdWxkIG5lZWQgdG8gZ2l2ZSB1cAo+
-Pj4+IHRoZSBwcm90ZWN0aW9ucyBvZmZlcmVkIGJ5IEtQVEkgb3IgcnVuIG9uIGZ1dHVyZSBoYXJk
-d2FyZSB3aGljaCBjYW4gdXNlCj4+Pj4gRTBQRCBpbnN0ZWFkLiAgVGhpcyBzZXZlcmVseSBsaW1p
-dHMgdGhlIHVzZWZ1bG5lc3Mgb24gY3VycmVudCBzeXN0ZW1zLgo+Pj4KPj4+IFdlIG9ubHkgdHJh
-c2ggVFBJRFJSTyBvbiBlbnRyeSwgc28gSSB0aGluayB5b3UgY291bGQgcmVwb3B1bGF0ZSBpdCBv
-biBldmVyeQo+Pj4gZXhjZXB0aW9uIGZyb20gdXNlcnNwYWNlIGFuZCBpdCAqc2hvdWxkKiB3b3Jr
-IHdpdGggS1BUSSAoZmFtb3VzIGxhc3Qgd29yZHMhKQo+Pgo+PiBJcyB0aGF0IG5vdCBhbHJlYWR5
-IHRoZSBjYXNlIGdpdmVuIHRoYXQgd2Uga2VlcCBUTFMgZ3ViYmlucyBpbiB0aGVyZSBmb3IKPj4g
-Y29tcGF0IHRhc2tzPwo+IAo+IE5vOyB3ZSBvbmx5IHRyYXNoIFRQSURSUk8gZm9yIDY0LWJpdCB0
-YXNrcy4gMzItYml0IHRhc2tzIGhhdmUgbG9hZHMgb2YKPiBmcmVlIHJlZ2lzdGVycyA6RAoKRGVy
-cCwgSSB0aG91Z2h0IHRoYXQgd2FzIG9uZSB0aGF0IHdlIGFsd2F5cyByZXdyb3RlIHNvbWV3aGVy
-ZSBpbiB0aGUgCmV4Y2VwdGlvbiByZXR1cm4gcGF0aCwgYnV0IEkgbXVzdCBoYXZlIGdvdCBtdWRk
-bGVkIHVwIHdpdGggQ09OVEVYVElEUiAKKHdoaWNoIHVwb24gZG91YmxlLWNoZWNraW5nLCBJIHNl
-ZSB3ZSAncmVzdG9yZScgZnJvbSBpdHNlbGYsIHNvIEkgZGlkbid0IApldmVuIHJlbWVtYmVyIHRo
-YXQgcXVpdGUgcmlnaHQuLi4pCgpSb2Jpbi4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Jun 05, 2020 at 01:02:12PM +0000, Tomasz Figa wrote:
+> On Fri, Jun 05, 2020 at 03:14:59PM +0300, Sakari Ailus wrote:
+> > Hi Dongchun,
+> > 
+> > Thank you for the update.
+> > 
+> > On Fri, Jun 05, 2020 at 06:54:12PM +0800, Dongchun Zhu wrote:
+> > > Add a V4L2 sub-device driver for DW9768 voice coil motor, providing
+> > > control to set the desired focus via IIC serial interface.
+> > > 
+> > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > ---
+> > >  MAINTAINERS                |   1 +
+> > >  drivers/media/i2c/Kconfig  |  13 ++
+> > >  drivers/media/i2c/Makefile |   1 +
+> > >  drivers/media/i2c/dw9768.c | 566 +++++++++++++++++++++++++++++++++++++++++++++
+> > >  4 files changed, 581 insertions(+)
+> > >  create mode 100644 drivers/media/i2c/dw9768.c
+> [snip]
+> > > +static int dw9768_runtime_suspend(struct device *dev)
+> > > +{
+> > > +	struct i2c_client *client = to_i2c_client(dev);
+> > > +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
+> > > +	struct dw9768 *dw9768 = sd_to_dw9768(sd);
+> > > +
+> > > +	dw9768_release(dw9768);
+> > > +	regulator_bulk_disable(ARRAY_SIZE(dw9768_supply_names),
+> > > +			       dw9768->supplies);
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > > +static int dw9768_runtime_resume(struct device *dev)
+> > 
+> > __maybe_unused for this and the suspend callback.
+> >
+> 
+> These are always used. If runtime PM is disabled, they are called
+> explicitly in probe and remove.
+
+Ah, right. Thanks for pointing that out.
+
+-- 
+Sakari Ailus
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
