@@ -2,85 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2DA21F00CE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 22:13:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEBA21F0175
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:19:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qyzJHwLOg8ltefhrKNXaYNaMUtVMFDDne4B+UmcUS9k=; b=SS2BAWfxgYGmnz
-	54AINPWj8J9O2KvZ0pCV2vpQ02gpDibrV0UY700Rg8Pd8J3lwSyhcWsiYYyXTruD5t43QGTDEg8Fh
-	eK4I2djclsZwJzjM3dMEhT7EJOXbaniGX2BUPu3jaOTn0Utq1qSHasf3UX142LnDcXiTG0tVOvJlU
-	KPDVArlmv9lKAZOhiF8Op+xvdOIwT8Oxb7XkFJmtjuqew3MgI+lHrdpzdb7N93dX39hLwbDU9eDDV
-	BXRUpSDgBMwLhV1LtzLbGojaksfWI0eB/A2vh15pBaFvoKS8YyPJZPnPC0TT46fBHwOw/xq9Zr85f
-	wuXbI5XYq6YMjiV4m/7g==;
+	List-Owner; bh=vAgPTd+rbZciMVqU3n6iziAkQtlh6SCqYTlSmIlwOQU=; b=d7eokVjFsUG+yK
+	Uj2ATmnwHUzQl6qrRvKVCTifPhl/TEQpr6/5ufSejRtoG3S2PO8azgXgGMPJkfqYlan5Pfalkz06s
+	tY61rctw09UQ+W9puj9Ld+PJEXCFUJhaaeXsP/XG12FO4dYNUKafhE6hwqsXRvgOcUvjOhaXgd/kF
+	2pj2YVsEIDf2U8DeGsxi50qOvhTplwcMets/igdN5Mr0Qf//gElHcxYSa6JzPwbtUdVZnltzkgK4s
+	9hxjN82wqSmTn9AzuYOYh7OOWS29Wt0odYju7UdWX6ITRz6CadrJUDTo5G9Jk9d8KTu6Kqmw5A1qy
+	JNsRPWpI3QqQgIPAlBKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhIiZ-0000lB-RV; Fri, 05 Jun 2020 20:13:31 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
+	id 1jhJkW-0005RO-Pn; Fri, 05 Jun 2020 21:19:36 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhIiS-0000kh-L7
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 20:13:26 +0000
-Received: by mail-il1-x141.google.com with SMTP id h3so10847470ilh.13
+ id 1jhJkO-0005Qe-Eb
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 21:19:31 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id a45so3614318pje.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jun 2020 13:13:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=juliacomputing-com.20150623.gappssmtp.com; s=20150623;
+ Fri, 05 Jun 2020 14:19:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=fbtDa8Hyyhb6x5b5d5Nx0md1ru2BL65F2mqxRZhzXcQ=;
- b=UPRZ8iwg4vJd9gFsssWF5r7eJkNYGMKa39Ce0NJgJrH93DYP3cFgVjNlnCJvjSLR2H
- XeD9gT1iwoMRSjC7T/FjW3oud60hqKst9ypMRdJ0W8Vjl13eqk01QCwt59aq4RlYJjwn
- +x/sRbbHWppkoxprZfFaSnJydZhw5iwFSrRfU9qhaB7XaE9SqELsuUjAcjqYNfzbM/5q
- ic5DmMDUZ8J31SATAhHDs5mfs9wEVwzk9JL7/SwnTNfLAipq/BXo4CfOzRUHq4OgJMrL
- mOSXTEA88+hwlGjRxYNlVKlx3OfdtHCjsT6P/apLGQbVE3YIJnmVNnWCwoRlEpJvGirX
- /V2w==
+ :cc; bh=wpIJ/pCsCHfvMrUjgnLtjwLHPcHaPzmZRezwzKb361g=;
+ b=D9uEVO9pBGBuM5rac9wGkOcr0GyHQpJh+pyiTwwl4iR+n8MT0M8tnX76R8O3Erohyt
+ EgCEGnv4Mz82lsf7a9akAwu34HW2vqe7iywOWhpUtUkLfpZmBZfDKKpeROyYLIz/Q/9a
+ rVVTBUC8cb7ary8XzT2Axnq/WuPSe3OfTb+cx54B1Sd0kslAc3h6S2iBStuNex94GU7b
+ mDrIor/QDPWPPok3o1LPVI9hc+jsBy3DbeNpEIKujOSXLRYqUlg9Yzqck5pY8r5bnHMx
+ KahFrX/fv73aD5HFjXluO9dCAmxd4zhpoKXGu/oj1o/ZfE0bEOXanH6mfuhV60ZDBRI6
+ dWIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=fbtDa8Hyyhb6x5b5d5Nx0md1ru2BL65F2mqxRZhzXcQ=;
- b=lelFR/r/dZZS8aPh8XJXvw/HmFqq1DtMeyuQaa1PmL/hQ0sgC1gPQch/AtNbBu0rj2
- hRYZEHRApKO1r1MQsd1rjL9Gdazp2VWHjCCHF2Y5gzt2SuomLApKVQFOjXYgW3aUT9QJ
- UuA5u0Tx01uWZ8NOgGJKWHsr2m5wd0lNqwB8ueRs96/358grw53eQjWto3j5sxeZtEnH
- pWB31OxGqqshv2HVuLzGBxhaaUx6DfLQawvnavX4jGbHfvAdEJbPiWKERYXaeFqhy2Xq
- nLS5AG0BeM6oq4UyO4Orv6zdHl/rwTECDpxqyTVHZ7FN4YmCHgpYubD6iy86oBPdVEnT
- qEmg==
-X-Gm-Message-State: AOAM531azJoI/dQody6lqNkxWO7MRtGo+/YppfOKC9NlI97remgH4LYK
- q4kaJdTUHC8bpN1ZlsmdToTvSsbInQ6QK/9Rq+X11A==
-X-Google-Smtp-Source: ABdhPJyjLCEG+Zcai/fC8YoM9b8CwgLkdW9GJ8hGiOc8kYIzmZLMT2Z4UEw+ncol7Kyv2UMR2h6KfLFrz8boRdsMtv8=
-X-Received: by 2002:a92:d1d0:: with SMTP id u16mr9998422ilg.2.1591388001139;
- Fri, 05 Jun 2020 13:13:21 -0700 (PDT)
+ bh=wpIJ/pCsCHfvMrUjgnLtjwLHPcHaPzmZRezwzKb361g=;
+ b=GJSg+Ni7rEOX+cKXJQt6WVRVMqFyiXpaaEtbvqCSe5aBCtInYGAtDYf6IiworRDyC+
+ CxmOq0lB8eKpZWXWiT48B2DFa/OcSVsHCOI840wwYRIc/DPAyEOPLkwtWEMJ3NaXg3lA
+ x2FS5FelUStK0aDZrhW7/HAra1fNj6uSDB24ZA19zDQIMdbHV74KBKb3OczD3KkIOstv
+ q6eqEfgWQgBKvaT/ZyCBK7ijwEkii5r0WHIllvedmggAb7TQeepI5arz6x/HfwXL24Di
+ GZXlddbJnoVxjykIK+u6LVphMUbqEiVWEfjCaLf8nIl0q/o/gOtf7E1IWu11C7YE8oc8
+ QIxQ==
+X-Gm-Message-State: AOAM531Rm+M7yXQEvYX55QrAK2/B7VmoGvTR4Dxai6dw7KA7almaFwF1
+ mwNo22kGB8L1pMJAS8ebydCOnNyVgBVY8dTvTNc=
+X-Google-Smtp-Source: ABdhPJxXNB8ca/IQamWPxX4c7rhF1Ss/vRoiBGn2rbgdaO/EsyN0ZDTBvKrDVxNQzxgEJDIyY06sXaaxVufze1JWhZE=
+X-Received: by 2002:a17:90a:1704:: with SMTP id
+ z4mr4991653pjd.181.1591391967317; 
+ Fri, 05 Jun 2020 14:19:27 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200603151033.11512-1-will@kernel.org>
- <20200603151033.11512-2-will@kernel.org>
- <CABV8kRwrnixNc074-jQhZzeucGHx9_e5FnQmBS=VuL=tFGjY-Q@mail.gmail.com>
- <20200603155338.GA12036@willie-the-truck>
- <CABV8kRxSjMY+d+F5aNzq1=5hXhVLGy6TbNLTUsCeSsAncwCzoA@mail.gmail.com>
- <20200604083210.GC30155@willie-the-truck>
- <fdce5355-8a85-7bdc-0fba-a2a6c08cb0b8@linaro.org>
-In-Reply-To: <fdce5355-8a85-7bdc-0fba-a2a6c08cb0b8@linaro.org>
-From: Keno Fischer <keno@juliacomputing.com>
-Date: Fri, 5 Jun 2020 16:12:45 -0400
-Message-ID: <CABV8kRxVHWcQ-RS1Xjt557Lzc=GpDxF_HHURRM6LNBdZevdtJg@mail.gmail.com>
-Subject: Re: [PATCH 1/2] arm64: Override SPSR.SS when single-stepping is
- enabled
-To: Luis Machado <luis.machado@linaro.org>
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-7-michael@walle.cc>
+ <CAHp75VfRhL1f-XD=PMbqd3BLeJQzQMFAupSzqAvx0g7-X_2VhQ@mail.gmail.com>
+ <216db3154b46bd80202873df055bb3f3@walle.cc>
+ <20200605131525.GK2428291@smile.fi.intel.com>
+ <bf587fc3f907d58609a0ea3d65cd5b37@walle.cc>
+In-Reply-To: <bf587fc3f907d58609a0ea3d65cd5b37@walle.cc>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Sat, 6 Jun 2020 00:19:10 +0300
+Message-ID: <CAHp75Vcqv8rdqfBdttLb2vgj12AOUAOFK+ya7MZtRT+0_U+rYA@mail.gmail.com>
+Subject: Re: [PATCH v4 06/11] gpio: add support for the sl28cpld GPIO
+ controller
+To: Michael Walle <michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_131324_892433_CDB330B0 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200605_141929_677246_2A0D0741 
+X-CRM114-Status: GOOD (  15.48  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -94,35 +99,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, kernel-team@android.com,
- Will Deacon <will@kernel.org>, stable@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Luis,
+On Fri, Jun 5, 2020 at 9:44 PM Michael Walle <michael@walle.cc> wrote:
+> Am 2020-06-05 15:15, schrieb Andy Shevchenko:
+> > On Fri, Jun 05, 2020 at 02:42:53PM +0200, Michael Walle wrote:
+> >> Am 2020-06-05 14:00, schrieb Andy Shevchenko:
+> >> > On Fri, Jun 5, 2020 at 12:14 AM Michael Walle <michael@walle.cc> wrote:
 
-On Fri, Jun 5, 2020 at 12:50 AM Luis Machado <luis.machado@linaro.org> wrote:
+...
+
+> >> > > +       if (irq_support &&
+> >> >
+> >> > Why do you need this flag? Can't simple IRQ number be sufficient?
+> >>
+> >> I want to make sure, the is no misconfiguration. Eg. only GPIO
+> >> flavors which has irq_support set, have the additional interrupt
+> >> registers.
+> >
+> > In gpio-dwapb, for example, we simple check two things: a) hardware
+> > limitation
+> > (if IRQ is assigned to a proper port) and b) if there is any IRQ comes
+> > from DT,
+> > ACPI, etc.
 >
-> 1 - x86-64 seems to get an extra SIGSTOP when we single-step over the
-> vfork syscall, though this doesn't seem to do any harm.
+> I can't follow you here. irq_support is like your (a); or the
+> "pp->idx == 0" in your example.
 
-Is it possible that on arm64 you attached to the original tracee using
-PTRACE_SEIZE, but used some other method on x86-64?
-That would explain this difference.
+And you have type already. Why do you need to duplicate it? Moreover,
+is it protection from wrong type to have interrupts?
 
-> 2 - This is the one that throws GDB off. In the last single-step
-> request, arm64 gets a SIGCHLD instead of the SIGTRAP x86-64 gets.
+You can move this all stuff under corresponding switch-case.
 
-I believe this is ok. The timing of SIGCHLD is not guaranteed, so it's allowed
-to pre-empt the single step. I have seen some differences in signal delivery
-order on arm64, but I believe it just comes down to scheduling and performance
-differences between the systems, since these interactions are a bit racy.
+> >> > > +           device_property_read_bool(&pdev->dev,
+> >> > > "interrupt-controller")) {
+> >> > > +               irq = platform_get_irq(pdev, 0);
+> >> > > +               if (irq < 0)
+> >> > > +                       return irq;
+> >> > > +
+> >> > > +               ret = sl28cpld_gpio_irq_init(&pdev->dev, gpio, regmap,
+> >> > > +                                            base, irq);
+> >> > > +               if (ret)
+> >> > > +                       return ret;
+> >> > > +
+> >> > > +               config.irq_domain =
+> >> > > regmap_irq_get_domain(gpio->irq_data);
 
 
-Keno
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
