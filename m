@@ -2,87 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E9F21EF2E2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:14:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAF4C1EF2F4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:16:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9YUhyTu+MDdFbWlUD4jVqpn5bQo35WTpfaQq5UQaCXI=; b=Qn7IfQ4y+r9YSF
-	CzLLUspoPU69vkiacGlJIjHe0W8io+FmnN3stWZ9Yx0ygmCDTdNaEoLb+AFZxi4xgJSySuzfHbrpJ
-	lwU/9flbJE/F32FpQp2F1Cl2wHOODvnLkGVSf7vUC94LvS+b6U1JpGRhk94pFQl01LN75DoVJpL98
-	42oqSD0H/qn6W4QMstX1O42sHHgZnxbYE2TvnKi7c7HokPIBGZoQZR5F4vDq/K/tD6PJSmqhdaIFi
-	guihaQApD0vw0bx0mPjyNMmWBV/rXcvzLakeFDKV0S5GsmmWZEzeP5r/Q75Oi71AY8GjZ6RtUtX1/
-	GqxtgY1Y3CRcta1vJ5Pg==;
+	List-Owner; bh=XT7OwjHq/ElMgpWz6138P9Ro6ipXCJ5G4pMaoimv0t0=; b=XEPS76ZsmrwEIR
+	QawhSxwBSjXqU2p7Dy3Tv94Kkgwg9rjENYiLn2RykLTD8wnlCUaOnYUg4QaLjNxLSmjxpOW1VGz6L
+	21xPF7SDlaMlmSsntupaA1ZN3JEZSAgjLFliDDMuyCVk5K3LSa7CEkh53EZwwPS0pNn67o8ZC1rHs
+	+RpATOs+vVafNCrgQQq3ox/Rns0fRG7e9mx6QQSUkeQ3dKDZ4mi9d9C13oANoZhUSrVJgBg+uwkdt
+	I7hEu/zNqe9LThvDxHdsZHpfkbxDeE5oS/y9ebqXqw2mJmz1yfMqK5GQ5HjpWiGuvMfarEMw7hHtl
+	T9PUtQtFuZ1ECabXf3VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh7Uw-0007rj-LW; Fri, 05 Jun 2020 08:14:42 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jh7WU-0002JB-Rb; Fri, 05 Jun 2020 08:16:18 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh7Uo-0007qs-Um
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 08:14:36 +0000
-Received: by mail-pl1-x644.google.com with SMTP id bg4so3349278plb.3
+ id 1jh7WN-0002Ik-Nq
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 08:16:12 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id 5so2412283pjd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jun 2020 01:14:34 -0700 (PDT)
+ Fri, 05 Jun 2020 01:16:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dep05XtC6CuktEauurS07Sy6QGbgqiv3E+ii3Ovb+Ls=;
- b=DtPDLU5uvgVYNSLmyiKoOVclyfKzq/LadYhfYsydWTd6wNLn9WXOeNCQZ1eiRcsqpR
- eM+UfKM607A27ZS4k9+lPQo7wLpshrnQmdyy6M0YBnJNJB92lKYWsICiQ2QqDFyV2uuP
- mVmeaA7d2/jp9aUsu3rYaJnq2Nl9XtTb+Cm6x0hdWWSGxryrnI8gdVK8Ek+iQH8lpXnM
- sWKr4BOYZ/6PfVnuj1aa8yhI82S6X9Ifg9IgmLIIGZx3FhgRgITl0KKSBScv8VHg7Y2J
- iSbdP8PDzD4ZGltMHRLeHWEdsWOCm5HZzz7yODflx/bVmvni10eBB/Q6H+cMfcwqURca
- LIKQ==
+ :cc; bh=kXdVxsGQNpOmqOgFOL5sHVJSy+udx7MLTpgYocPDlMI=;
+ b=CmWf+Q1LPKkZFcz/UUCEbKgiD4xwszew0h0vP1mFw1Sri5IdNxgZoMooG8JO0czgk6
+ atcXFR84tLy0cvzPKI1nKeJQl/vjaYcYzjMDSAFElp+J7NDj3DshbpW/Rhz5NrrC7aYS
+ O2YT8xyZueQZsiPAZTU0ehVKvGYNpyJSsnWfcrrkGPazVl716JM4yAUWpHi2ZHkCdZEY
+ 10SeHCEghYnDA5rb2wk5xvQvGg4u/RGKrojjyJ2MeuMhogLguXaZuVi7sJnnMxLgrvG6
+ oNepqfXmK4Hl6cDCyeYIch7viNWooW+94utqoB6gZ2sMx+YGxt2qmVONoin9lNo4LhWK
+ g2EQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=dep05XtC6CuktEauurS07Sy6QGbgqiv3E+ii3Ovb+Ls=;
- b=twW0Ld+uOUV6+EDa9MBrTRSzo+turUDKjhkyOQy8BLkB7SH1sVBdeOSYV2WA4Chztr
- nDn6AbNzF1kDbNsmYeydi7XlYyfWIRQG/POEyccLrd/754/cOTk9MX6r64H1GMW8FT3I
- KXzPHv/Uf91X8SMR7GwgZHIWqLzsOF+9haNc1hsERVEVdscvYN1WxUkm5OyiK4ZnK2l7
- PTSo1/bwIPLQK5FZ9u0UtLpYQc+XQHdJvqCw28lwfIJHsvIv8g2IrFCRG4FuT4BA+KZv
- QWeadcJOHoSNsm5ZJeYiEyqGXcDbSylqQdEIXZBlIkS/rsKxZAwIRJqkhALd0+6YZ7OK
- aiGw==
-X-Gm-Message-State: AOAM530g1IqjpcNTM27Ft5N+HHc85uChqCSV52koA0JmhXjEPvTxaFCL
- ke4T7tUDfoosvS7x57mHqG86FQ/hyvaqNnWwejE=
-X-Google-Smtp-Source: ABdhPJy6V7rCbEiJe15C6DeQ4diyGwP3W+IH+3LGFcotcY4Lzpv76z0aCO0s2xeMP6Sc/HpdiVeb+XHZ7d/jwbWAe/g=
-X-Received: by 2002:a17:90a:ac05:: with SMTP id
- o5mr1713137pjq.228.1591344873732; 
- Fri, 05 Jun 2020 01:14:33 -0700 (PDT)
+ bh=kXdVxsGQNpOmqOgFOL5sHVJSy+udx7MLTpgYocPDlMI=;
+ b=bIPHIDResT70lq26QT3OWxFmFoYRMdZ2G7/qrg2PMOoc8GoGFVKwpHSBpkqNpcKZEk
+ Ek1hh5n56VyGh4TSSvuO+FcIST7k8GUii+gFpOmDew8as5/NB4oVeOH44/y0ajtbVDrA
+ 7bjGzxORjPOgrKRopzayPanTODDZmIQvA4A/4e8dHdk2vBBvNoJyqbocH3JKmZThqDxQ
+ oozdAubEVJ3tKUQyH+DJCuQ2kNIAJP+Iv4IAEsD16fU/aXxEiLw2fYaImmgyFtsrxBJ7
+ SFO5d/1RKPgXirD7eNfUPGVnKt+p9uHXBb+BJ2mWHX/+X522hAkYdAoKYFtTgTk9YHtP
+ D10A==
+X-Gm-Message-State: AOAM530zP0+3BxPpkqJ/OPFeZ9pkZ8mVFqd9yt8M9FIzaYxWGrf72bvA
+ M51Lbc7SCkGHFz63JwopWyhLGPHFytcq6lugX00=
+X-Google-Smtp-Source: ABdhPJy3i2DiYiciOYsCGwbkuo32YvAjkeb6+tWaO1KQxza8n48SGhUI9qlNJgafRWk9Ki7WXIN2lLq/PTS+WyN/su0=
+X-Received: by 2002:a17:902:b206:: with SMTP id
+ t6mr8185421plr.262.1591344970979; 
+ Fri, 05 Jun 2020 01:16:10 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200604211039.12689-1-michael@walle.cc>
- <20200604211039.12689-5-michael@walle.cc>
-In-Reply-To: <20200604211039.12689-5-michael@walle.cc>
+ <20200604211039.12689-6-michael@walle.cc>
+In-Reply-To: <20200604211039.12689-6-michael@walle.cc>
 From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Fri, 5 Jun 2020 11:14:17 +0300
-Message-ID: <CAHp75VdeD6zDc--R4NPHsiqQerzfNGwUikLN+WHMiZZVsQ8QSA@mail.gmail.com>
-Subject: Re: [PATCH v4 04/11] watchdog: add support for sl28cpld watchdog
+Date: Fri, 5 Jun 2020 11:15:54 +0300
+Message-ID: <CAHp75VdMSoj2+jKkA=oais2QAWBmvgzE6PLJdm6rebooubLCcw@mail.gmail.com>
+Subject: Re: [PATCH v4 05/11] pwm: add support for sl28cpld PWM controller
 To: Michael Walle <michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_011435_009697_740D79CE 
-X-CRM114-Status: GOOD (  13.79  )
+X-CRM114-CacheID: sfid-20200605_011611_771003_AE7C0579 
+X-CRM114-Status: UNSURE (   8.77  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [andy.shevchenko[at]gmail.com]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -116,98 +117,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 5, 2020 at 12:14 AM Michael Walle <michael@walle.cc> wrote:
+On Fri, Jun 5, 2020 at 12:16 AM Michael Walle <michael@walle.cc> wrote:
 >
-> Add support for the watchdog of the sl28cpld board management
+> Add support for the PWM controller of the sl28cpld board management
 > controller. This is part of a multi-function device driver.
+>
+> The controller has one PWM channel and can just generate four distinct
+> frequencies.
 
-...
-
-> +#include <linux/of_device.h>
-
-Didn't find a user of this.
-
-...
-
-> +static bool nowayout = WATCHDOG_NOWAYOUT;
-> +module_param(nowayout, bool, 0);
-> +MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
-> +                               __MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
-> +
-> +static int timeout;
-> +module_param(timeout, int, 0);
-> +MODULE_PARM_DESC(timeout, "Initial watchdog timeout in seconds");
-
-Guenter ACKed this, but I'm wondering why we still need module parameters...
-
-...
-
-> +       int ret;
-> +
-> +       ret = regmap_read(wdt->regmap, wdt->offset + WDT_COUNT, &val);
-> +
-> +       return (ret < 0) ? 0 : val;
-
-Besides extra parentheses and questionable ' < 0' part, the following
-would look better I think
-
-ret = ...
-if (ret)
-  return 0;
-
-return val;
-
-...
-
-> +       int ret;
-> +
-> +       ret = regmap_write(wdt->regmap, wdt->offset + WDT_TIMEOUT, timeout);
-> +       if (!ret)
-> +               wdd->timeout = timeout;
-> +
-> +       return ret;
-
-Similar story here:
-
-ret = ...
-if (ret)
-  return ret;
-
-wdd->... = ...
-return 0;
-
-...
-
-> +       ret = regmap_read(wdt->regmap, wdt->offset + WDT_CTRL, &status);
-
-> +       if (ret < 0)
-
-What ' < 0' means? Do we have some positive return values?
-Ditto for all your code.
-
-> +               return ret;
-
-...
-
-> +       if (status & WDT_CTRL_EN) {
-> +               sl28cpld_wdt_start(wdd);
-
-> +               set_bit(WDOG_HW_RUNNING, &wdd->status);
-
-Do you need atomic op here? Why?
-
-> +       }
-
-...
-
-> +static const struct of_device_id sl28cpld_wdt_of_match[] = {
-> +       { .compatible = "kontron,sl28cpld-wdt" },
-
-> +       {},
-
-No comma.
-
-> +};
+So same comments (extra comma, cargo cult headers, etc) are applied
+here and perhaps to all other patches in the series.
 
 -- 
 With Best Regards,
