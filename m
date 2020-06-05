@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0F0C1EF965
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:37:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58B341EF969
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:38:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5tUog8zDu/rVVp4KEh9DUcW+Iz7I0zuPfgbC2DGXHlE=; b=Cflax4nWKnH9bU
-	KJso3MWi9XZA1aJ9K7fjY72DiKwkLcP/V4DJ3mvAovta9dQ5TfxAs5Z+EygWSNGVwzKP+b/mHY4md
-	aIopDsM7BEIvTszIunIyFoN1mKHSprUW52VLw+7U0BrDBGYV5AjrPug16mTclCzNGw50UlOQtAilM
-	8yXl7CUvrMZA7jjUjH3mJKICUETzOcVojeHNb6CLfU/oSQ24k1ODIBGbaUn6ZFcdz9B3iP5ayf1eM
-	jKPe3jC5AhTktcmlKmaiig4sCbhXh7ORdhJJ7zeMiSxZqO5YeQdTxx+BOvTk3S6j+zzFrXo63iojK
-	eA4dGjFOAV4JstONNQuA==;
+	List-Owner; bh=DWwDDQsQfqKPYaz6ntnoHYCgYluQGqfSfMyIskQeShU=; b=qcHdBi1G1Nv3YH
+	JgviXdMgDE3I2RI6PJLor5AYoHIImLBsyee6GzXrW0TYdL7A1xZLgfHb90C3PROHun1C18kZfv+SI
+	G7E9VGooi3jYjlfGTi0i86Q8M+8c1N7QyUOYn+4RVVUxDY8bMC/yR9whHra0phKjKzRslByEaxxs8
+	VyN6IBbNCuKrxh50rO1stb3evDn6bZoec4lfACMUtbhOlbFNIg9j9Xvf7BtnisAbj3RM49IfuPVrK
+	0n3BeTsu3Emw2z9QkCHIhTpEajR5UsPite/4hV8sjNp/6TVd6tA9yu4yVtj6hfZz3SnA9yBU34XCz
+	tLg2EEaD+pXEWig3q4KA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhCXX-0001Tk-EL; Fri, 05 Jun 2020 13:37:43 +0000
+	id 1jhCXq-0001kM-Nr; Fri, 05 Jun 2020 13:38:02 +0000
 Received: from mail-am6eur05on2063.outbound.protection.outlook.com
  ([40.107.22.63] helo=EUR05-AM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhCUB-0004wx-M8
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:34:17 +0000
+ id 1jhCUD-0004wx-PL
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:34:19 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=J951Hl5a7RYMsEyCKFoA09lDY5uCNL+nRzJx7AnG548xlO4SfBjaxAEB+Q5yUdcsXCb2epjEjBIL8/SgQ+vI5G9RjT9VkWslH26qVZ5OpaUjxpPAu8wBUgTWDS4fJEmgGHDaqHZPOMhoJCfGOy2bUIR9cRMxAYHsyh5uHbzI5cbR9F6XD8dKg0k2axLP5FNdfQBmjdxa4ume0viTiPCxTeT/WTYw9uNvOYy3kRIoz9hwf+Ui82cR7/tOKSYOMWUYn1zG4TYBzn3wDRNaFkjBApJGUeW9MV4HiJTBhxMZg/SCQaI1PwQ4ru7wJdY4cWYUP4BI+T3PuKozoJXk8lA4og==
+ b=TNl3aDAlsZLKaVT/1AbyjE6LmLeC/HTdCrMEPYXWaPO3d7FZPABSzGErxwAaCYF2glKP8EhE9RfRHe/oU16Hq9tlBV1qOqiN+IPnnamcj3n/bL5j3mJpDbRkG+I3+OokIU6jQmySnv35bxgU5Imo0J6C16wqgHOxXscCBcAV8pZTNzhcePm2vDwRoMkEkW5MGsS1hUJsMvQXiR3mW/VQlgVxyaJA/83xBCsh9E9VvijVzmYP6yvcUGdGYzWdcLFtdPauLViDRG1GY/ezXpO4Xg/8T06nYeDTksP2WvUiLAc+tzddEHZdDS/qDSzEwoJ12JOqhahH/2hzNNqtJ9iW+w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sZvU3VGhVcTeYxe4fB6geATT0prKN/x1vEpROhK8pVc=;
- b=b/F1ul/ImScl8Pz52QNi6WKrBONu1eayQa+uId0wS8k43ipRKk2OJZUBrklH8XoIQcSJgVQJ/ou2BwP95NSyQwgTIbnIiSmkbDYWyhfizE4pXjwVnwhRbFMD+oKNJM8qByfpINOD6Szx6BxPtTDP0F0y1UlVmaY6vSO/pMTNhHzn+5LdcO5bzK/ykXF7yOqiLCubqcEatXnwHafid+g3KjerFMQovvEzXMRzfOUoSOPX9Ei9cGQWc5dmNZS4Fw4NKYi3Yxf4qKAUg8/UytLv59HRSp2qm4lpu4weN1BjQ3ia6fynQxA4CLf3Wckm9eh+PamxDRbvPTiIBxPEheWkOg==
+ bh=mFbDanBWSu2S5nbk4C4ogbtxHYjU/2zcsNJWbhy/sHo=;
+ b=JsTXWjFU/CDCu/BBz5iazwZmOjdoXZmrVYWUbedULAT3XixlR7Dw9Ic8CRf/sxnW7rWS8H1BE+5f2JMyivz7cMtbhFd9h+b4fsn8/Kmx8TjaXz+Uzt/7k2exnAvTI0oyiHS6k6Yy3BlfHNxo4PWXRzYCsevqCNTIMMWggb9HNwsqW6SprKkyXga126Lcbix++stJJWj2DvqcT8Bl6ASnfa5S7Bu8DVEMJlfIySf+EIvLE6JJWLR6/EuwvuziH9K1vcZz7zmHYpCstqMbs1rXN1IujeXrfX8Hv/l8U0fQXnCZw/THeWF8mVRNRdNpoCRZgKbx5XDWz3okZiJ23GK7MQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=sZvU3VGhVcTeYxe4fB6geATT0prKN/x1vEpROhK8pVc=;
- b=sGaeKmBSySTEZ8Hsjz0xegJHiGBSXNP5DqFBzkuWfTAyp/x+/WoMOC+qOqjYE6P2XF6WmXJqPQAhxEtZHaaYiZIE9OjQF9INJTPGh2WytqAkIhsJJXIn0m5rCBPJGk7O0wzTZ0iTYq6WQCdpP9l43o+vHd/Am7JlHxRwDgpjJOE=
+ bh=mFbDanBWSu2S5nbk4C4ogbtxHYjU/2zcsNJWbhy/sHo=;
+ b=jMBGgsSFGH3dKBOjOYOzZd/2uLe9aicdEyV1Y17RJZsprNnyCwOsmoIWM7zj9TkhJRHJGmVLCVjrr8rD2a25FrxW/oHFhL7wnm4iagBkpGvFXLY9i17aDgSm0Wv5T0Qiny0XUnY7lZN6F4gzI8JObD2QfVg3ApB6XoYbju9q4uY=
 Authentication-Results: arm.com; dkim=none (message not signed)
  header.d=none;arm.com; dmarc=none action=none header.from=nxp.com;
 Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
  by VE1PR04MB6702.eurprd04.prod.outlook.com (2603:10a6:803:123::13)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Fri, 5 Jun
- 2020 13:33:37 +0000
+ 2020 13:33:43 +0000
 Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
  ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
  ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3066.019; Fri, 5 Jun 2020
- 13:33:37 +0000
+ 13:33:42 +0000
 From: Robin Gong <yibin.gong@nxp.com>
 To: mark.rutland@arm.com, broonie@kernel.org, robh+dt@kernel.org,
  catalin.marinas@arm.com, vkoul@kernel.org, will.deacon@arm.com,
  shawnguo@kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
  martin.fuzzey@flowbird.group, u.kleine-koenig@pengutronix.de,
  dan.j.williams@intel.com, matthias.schiffer@ew.tq-group.com
-Subject: [PATCH v9 12/14] dma: imx-sdma: add i.mx6ul compatible name
-Date: Sat,  6 Jun 2020 05:32:33 +0800
-Message-Id: <1591392755-19136-13-git-send-email-yibin.gong@nxp.com>
+Subject: [PATCH v9 13/14] dmaengine: imx-sdma: fix ecspi1 rx dma not work on
+ i.mx8mm
+Date: Sat,  6 Jun 2020 05:32:34 +0800
+Message-Id: <1591392755-19136-14-git-send-email-yibin.gong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591392755-19136-1-git-send-email-yibin.gong@nxp.com>
 References: <1591392755-19136-1-git-send-email-yibin.gong@nxp.com>
@@ -69,38 +70,37 @@ X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
  SG2PR02CA0048.apcprd02.prod.outlook.com (2603:1096:3:18::36) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.3066.20 via Frontend Transport; Fri, 5 Jun 2020 13:33:31 +0000
+ 15.20.3066.20 via Frontend Transport; Fri, 5 Jun 2020 13:33:37 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 2d976aaa-fc0a-4e32-4b29-08d809550ce7
+X-MS-Office365-Filtering-Correlation-Id: ac8b82b9-490a-4fec-1952-08d809551087
 X-MS-TrafficTypeDiagnostic: VE1PR04MB6702:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR04MB67026C02F4CA39770B95014189860@VE1PR04MB6702.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:632;
+X-Microsoft-Antispam-PRVS: <VE1PR04MB6702D325C9DAEC116F32F6CF89860@VE1PR04MB6702.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
 X-Forefront-PRVS: 0425A67DEF
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: WYupjjCT/Gvj0QzY2soJ+taTFRGuSxe2NPhvqG39YQlWtBYm2nVqNq8UQQIsPVUgGenBieAJDeCEpCvbxkmKIJfXBgnRq9wRGHpMEa+1XpG/ScayBKv5T3M2XgEX6qmP02d2/08tG6vZWpQUDp8Y/OcsxSo00wALfoZJ6ovzPDPfFxmnQEDQI6iasdOxcBkpkFzgxzERc8ZAaxxrhXCJXKaDx8iK2vn+yv0Tta/uO9qdhsfQqX1AoieHGeFzeYqRs1w0GMjeWSTrr+8e4VE75OKjm8aOfQHOH5q67D7M6W2tk8OdX04AW7wktTmQxfvzO25hND8SsPsGKoeeaJjDsuYlHOMxBV4erdrGlX46N8E=
+X-Microsoft-Antispam-Message-Info: jFaxfL3B9aADHaFoV0TOJBH+1WJOCem+bKG5t8sb+kZ8WLRiPguZ0IKF1czvIzO/mPUS8GLp+mfBuMEVLgSfrCP3Z20Hk9YVU5eXf7MXM9KXciiYft4V8yBHKeT3EyTVH7m8mtmqbj1entOsraQ9oji7tMfi3zBKAuljk9mloFMxIvz0yJFPtkzy3Dk5Pj5B45ou5RiKiDOdgvQsMVIQef4zPb7svIL4H52C4P7R4tO8acCkpyhoBXRNLhxnuQNQwNk0QQQUloHl9+j7Xv4rzKNSvlJAwojlUjwUWsHhXZzFuAENUDqJHamO56MihFS82xQg/QVFM/M8PYSUBS0cdv4eisA+fMc+beI/NqzG0Gy1O8HHNinAfjBdkP0LCFA8
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(39860400002)(346002)(376002)(396003)(136003)(366004)(6486002)(52116002)(2906002)(316002)(4326008)(6506007)(5660300002)(26005)(66946007)(2616005)(956004)(478600001)(66556008)(186003)(8676002)(16526019)(7416002)(6512007)(36756003)(8936002)(4744005)(86362001)(66476007)(921003);
+ SFS:(4636009)(39860400002)(346002)(376002)(396003)(136003)(366004)(6486002)(52116002)(2906002)(316002)(4326008)(6506007)(5660300002)(26005)(66946007)(2616005)(956004)(478600001)(66556008)(186003)(8676002)(16526019)(7416002)(6512007)(6666004)(36756003)(8936002)(83380400001)(86362001)(66476007)(921003);
  DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: ZesHDUctftUhK5BDxTcHVAZ6wRdB6MiwkkanWON1BDXqDoj9/vOjsgz/g0LjajtAIkmQgyS8hQOQ7b3vpcVcpQOfB0CiHCa8OCBdsMM5iCPnG6qJhAeipHl8W0VYtxLLxKdx3dP53J73mYWalGsNWdVRjzTshtV/SlgM40SfqHk36tzwDGGCDGh56gjloiOjWgkRuVjlYlzzn1qLvggLJypJwJ4FOPh7Agm1ak1gwKBu+Dl5etETbm19zh27IZletF/vx+C73FZDYpgOCX3g+T9uSdM87SU2B6j+KBW1+mNb7V/SxRKrDeLHZkH4gGtVkEYvsjZUwMGr5SQP2Dul/+dQ+h5MocX0EJn87ewx4YRmE31p4rcVeCREVAB3GA7tosxglWqLC94tGZKZQ4qg8BbXTyc40PKYwbiLFuwQZsLNdze+mTPFBD48didUYZv184/+Igr3uq48EYs4Zsqr31p4GB2bv9458FLWIKX2yjo=
+X-MS-Exchange-AntiSpam-MessageData: lBhQzpxPR1zW+DOvOrb4IZBn0eHk5pAN1Ku0JhUG8gEh9kwmL45C6MDjViu6pgL8NWsu3vs9GqpQUURpOhF+JpIEegvQaDRDnSG0juvY12O+7R51nh3WHHB0FgTTP5OfmMNerykmJTIIlzsqXYXhro9VkWy1L1nEEb/OXlB9/uPGiMQS+MS5A6RtXJDt3lWChsOw7KGLfK+6pvDZequBR+uMJwL2SA0zFLTxtFcOfH0sCSgBxp97NUhn9Yg2qUuzhnU8l41+dQ4xOz9CQqPZbWvA0inpykbnfkbsmaZlqDpHj0Z12LkUK/JOeV/LIy0/Aw5uUOIxNW/5N/0uv2it43tUhS0Ojb+anuy+TqpqGpwXcsIoGtcGm4b/NcT8VhIy9+M+o+JoyLkE4m8NaNwAfpCEnyuyeQFyn4HB5DeCBcUn2gysHgI/sWsT9wE+pKXXJuY6EzuWNiKUubjyLOM/aPLGsYvf+TpCLgg1bzDfBxA=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2d976aaa-fc0a-4e32-4b29-08d809550ce7
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2020 13:33:37.0087 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ac8b82b9-490a-4fec-1952-08d809551087
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jun 2020 13:33:42.9193 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: LAz48s4sQJD9QfNU1D8Xcb2j5rr0+e8tWBuTrh8gIf52Tw/v2tJbAJTO0UuCecQ63zFy/MInmEXZV9dvhyNovw==
+X-MS-Exchange-CrossTenant-UserPrincipalName: 6ddBNYyWI//Ys1bOYJDTBoNKsxug0pXYKQjPqiBOq1tBgBX849BALsjPZ43CX/uACkhwk8cnswLpXpB8FPyRtw==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6702
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_063415_744087_705A2156 
-X-CRM114-Status: UNSURE (   7.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200605_063417_864943_C53E469E 
+X-CRM114-Status: GOOD (  11.62  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -139,26 +139,62 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add i.mx6ul compatible name in binding doc.
+Because the number of ecspi1 rx event on i.mx8mm is 0, the condition
+check ignore such special case without dma channel enabled, which caused
+ecspi1 rx works failed. Actually, no need to check event_id0/event_id1
+and replace checking 'event_id1' with 'DMA_DEV_TO_DEV', so that configure
+event_id1 only in case DEV_TO_DEV.
 
 Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
+Acked-by: Vinod Koul <vkoul@kernel.org>
 ---
- Documentation/devicetree/bindings/dma/fsl-imx-sdma.txt | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/dma/imx-sdma.c | 18 ++++++++----------
+ 1 file changed, 8 insertions(+), 10 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/dma/fsl-imx-sdma.txt b/Documentation/devicetree/bindings/dma/fsl-imx-sdma.txt
-index c9e9740..12c316f 100644
---- a/Documentation/devicetree/bindings/dma/fsl-imx-sdma.txt
-+++ b/Documentation/devicetree/bindings/dma/fsl-imx-sdma.txt
-@@ -9,6 +9,7 @@ Required properties:
-       "fsl,imx53-sdma"
-       "fsl,imx6q-sdma"
-       "fsl,imx7d-sdma"
-+      "fsl,imx6ul-sdma"
-       "fsl,imx8mq-sdma"
-       "fsl,imx8mm-sdma"
-       "fsl,imx8mn-sdma"
+diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+index be86ae8..320104f 100644
+--- a/drivers/dma/imx-sdma.c
++++ b/drivers/dma/imx-sdma.c
+@@ -1183,7 +1183,7 @@ static int sdma_config_channel(struct dma_chan *chan)
+ 	if ((sdmac->peripheral_type != IMX_DMATYPE_MEMORY) &&
+ 			(sdmac->peripheral_type != IMX_DMATYPE_DSP)) {
+ 		/* Handle multiple event channels differently */
+-		if (sdmac->event_id1) {
++		if (sdmac->direction == DMA_DEV_TO_DEV) {
+ 			if (sdmac->peripheral_type == IMX_DMATYPE_ASRC_SP ||
+ 			    sdmac->peripheral_type == IMX_DMATYPE_ASRC)
+ 				sdma_set_watermarklevel_for_p2p(sdmac);
+@@ -1351,9 +1351,9 @@ static void sdma_free_chan_resources(struct dma_chan *chan)
+ 
+ 	sdma_channel_synchronize(chan);
+ 
+-	if (sdmac->event_id0 >= 0)
+-		sdma_event_disable(sdmac, sdmac->event_id0);
+-	if (sdmac->event_id1)
++	sdma_event_disable(sdmac, sdmac->event_id0);
++
++	if (sdmac->direction == DMA_DEV_TO_DEV)
+ 		sdma_event_disable(sdmac, sdmac->event_id1);
+ 
+ 	sdmac->event_id0 = 0;
+@@ -1651,13 +1651,11 @@ static int sdma_config(struct dma_chan *chan,
+ 	memcpy(&sdmac->slave_config, dmaengine_cfg, sizeof(*dmaengine_cfg));
+ 
+ 	/* Set ENBLn earlier to make sure dma request triggered after that */
+-	if (sdmac->event_id0 >= 0) {
+-		if (sdmac->event_id0 >= sdmac->sdma->drvdata->num_events)
+-			return -EINVAL;
+-		sdma_event_enable(sdmac, sdmac->event_id0);
+-	}
++	if (sdmac->event_id0 >= sdmac->sdma->drvdata->num_events)
++		return -EINVAL;
++	sdma_event_enable(sdmac, sdmac->event_id0);
+ 
+-	if (sdmac->event_id1) {
++	if (sdmac->direction == DMA_DEV_TO_DEV) {
+ 		if (sdmac->event_id1 >= sdmac->sdma->drvdata->num_events)
+ 			return -EINVAL;
+ 		sdma_event_enable(sdmac, sdmac->event_id1);
 -- 
 2.7.4
 
