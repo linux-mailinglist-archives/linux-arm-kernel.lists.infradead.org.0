@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D9381EF8CC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:18:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFA661EF8CD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:19:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=0057PM4KIfHLFquqGeZtwKDHBOYzp0RFywIhYeCsZEQ=; b=dk/0gIRbTV27EP
-	hUQEZTRUm2OghU9VC+kRm4JJF964G/y/ly9nSz0BY6ryDWBtSWkNwxjsVwGMSskmE4EPj5q73vde4
-	1okdss4O2CKyOxZrMm0hDOAo2T/Zcg9/uDGlzwKx/UZRRz9M7c5yHuYw0gSV8NFCJ/SHJBG3rGpS1
-	A2KbMFKmf2U5h2Bm4C3KNVmaYdvh205oErkQGgNC3B5Kx7NlC35qBLTABGU+SjOhiVADseBLAjOlo
-	TEzwjDtJRSeKkkSYOOR+Z1qnK5fQha1vZlBCP4occLarxiMZGFb8FQKr6iyv7RptbK5WPYK4O2rbt
-	d8j8MHs/y19HwTJFwgUQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SFguc9YvBSc1RgsxQivx04xgR4U6JgCGyPCTwqZ/Irc=; b=FpeRuJVEn0ku3P
+	fa6EfRw19nVBVoFiJXhtNOjbQdbnWxjD9sW5+1sCmAutcph9ifS7tldwU3PkvWZHkTDCib+d68MSE
+	WZyOcybhJNlwDDswUxWD+jC9+Mmjihi6Nz0cbGcOumIYudEDIoI2GjeK+Mvm5jgTGg3dYlK3AwrFX
+	rK6CM0SLsMWiK7OrkywIWq3o5m5cjF64FP2LhxJS0j5TkWFWTToD78fJeYpR9deewMqkIFlRhmYiN
+	ADhdLD9jFm8L0EfL/E0Mj9ev8uD7vZ4gGOWhuLba66dEKBMt+7zsF7WeuepgNc9lL57DKd5xlZiyv
+	z6kLBvMOuqkQV27bT49A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhCFH-0001ub-Pf; Fri, 05 Jun 2020 13:18:51 +0000
+	id 1jhCFW-00024z-Ff; Fri, 05 Jun 2020 13:19:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhCF8-0001tm-0h
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:18:43 +0000
+ id 1jhCFA-0001uK-FI
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:18:45 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 230382067B;
- Fri,  5 Jun 2020 13:18:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AE328206DB;
+ Fri,  5 Jun 2020 13:18:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591363121;
- bh=E8zd1k6lBfh5hIPxsN+yGGvhFntauwXqOH2qSc+8OZs=;
- h=From:To:Cc:Subject:Date:From;
- b=dsehpjipT9kRadH9vpuX2x9bB2RzPipHtTjY39kJjrKcVGyYdGMD+GicGsXVuDIpT
- vVOiO9+6anGy9UeKbKG6cVwOQ9RgeATahOztbS7J5L6xWQ+dRJU2+VXKZHq4RqxTMl
- 9BxBCqdu4W5bvYwdr8sp/N8DyGCdIP3cEVBzza4k=
+ s=default; t=1591363124;
+ bh=oI8DhZG9Ga1dZhRQARhgXjRNn7929rR+4ykoYjhNGG4=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=RSbb4yxeAo7d8wq9R2t/WeIh6fgg79ToxNORF0EoFqL72G5FGQhgMwb51pcxi62xb
+ 6UelS3K/BpE2Pc68YgnK6ydEvGTet6h6JIP+GNMfSAJFRUfB70t7EFkQPCnzW52FUn
+ m81kHLkZb8+iWnFGwfYTm9Mwqw9DDh21XY2eTCr8=
 From: Mark Brown <broonie@kernel.org>
 To: Will Deacon <will@kernel.org>,
 	Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH 0/5] arm64: vdso: getcpu() support
-Date: Fri,  5 Jun 2020 14:11:26 +0100
-Message-Id: <20200605131131.16491-1-broonie@kernel.org>
+Subject: [PATCH 1/5] arm64: vdso: Provide a define when building the vDSO
+Date: Fri,  5 Jun 2020 14:11:27 +0100
+Message-Id: <20200605131131.16491-2-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200605131131.16491-1-broonie@kernel.org>
+References: <20200605131131.16491-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_061842_101796_9DE02CE9 
-X-CRM114-Status: GOOD (  17.00  )
+X-CRM114-CacheID: sfid-20200605_061844_527597_0CD8CFEB 
+X-CRM114-Status: GOOD (  10.75  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,65 +84,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some applications, especially tracing ones, benefit from avoiding the
-syscall overhead for getcpu() so it is common for architectures to have
-vDSO implementations. Add one for arm64, using TPIDRRO_EL0 to pass a
-pointer to per-CPU data rather than just store the immediate value in
-order to allow for future extensibility.
+Provide a define identifying if code is being built for the vDSO to help
+with writing headers that are shared between the kernel and the vDSO.
 
-It is questionable if something TPIDRRO_EL0 based is worthwhile at all
-on current kernels, since v4.18 we have had support for restartable
-sequences which can be used to provide a sched_getcpu() implementation
-with generally better performance than the vDSO approach on
-architectures which have that[1].  Work is ongoing to implement this for
-glibc:
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ arch/arm64/kernel/vdso/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-    https://lore.kernel.org/lkml/20200527185130.5604-3-mathieu.desnoyers@efficios.com/
-
-but is not yet merged and will need similar work for other userspaces.
-The main advantages for the vDSO implementation are the node parameter
-(though this is a static mapping to CPU number so could be looked up
-separately when processing data if it's needed, it shouldn't need to be
-in the hot path) and ease of implementation for users.  
-
-This is currently not compatible with KPTI due to what Will suggests is
-a misunderstanding on my part about the use of TPIDRRO_EL0 by the KPTI
-trampoline, since this posting is mainly for discussion of the approach
-as a whole and Will only just mentioned this that's not been addressed
-here.
-
-Since we currently only have a single data page for the vDSO this will
-also only currently work for lower numbered CPUs, this restriction will
-be addressed separately.
-
-There is some overlap with an in flight patch series from Andrei Vagin
-supporting time namespaces in the vDSO, there shouldn't be a fundamental
-issue integrating the two serieses.
-
-This builds on work done by Kristina Martsenko some time ago but is a
-new implementation.
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=d7822b1e24f2df5df98c76f0e94a5416349ff759
-
-Mark Brown (5):
-  arm64: vdso: Provide a define when building the vDSO
-  arm64: vdso: Add per-CPU data
-  arm64: vdso: Initialise the per-CPU vDSO data
-  arm64: vdso: Add getcpu() implementation
-  selftests: vdso: Support arm64 in getcpu() test
-
- arch/arm64/include/asm/processor.h            | 12 +----
- arch/arm64/include/asm/vdso/datapage.h        | 54 +++++++++++++++++++
- arch/arm64/kernel/process.c                   | 26 ++++++++-
- arch/arm64/kernel/vdso.c                      | 33 +++++++++++-
- arch/arm64/kernel/vdso/Makefile               |  4 +-
- arch/arm64/kernel/vdso/vdso.lds.S             |  1 +
- arch/arm64/kernel/vdso/vgetcpu.c              | 48 +++++++++++++++++
- .../testing/selftests/vDSO/vdso_test_getcpu.c | 10 ++++
- 8 files changed, 172 insertions(+), 16 deletions(-)
- create mode 100644 arch/arm64/include/asm/vdso/datapage.h
- create mode 100644 arch/arm64/kernel/vdso/vgetcpu.c
-
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index 556d424c6f52..279b1b9fb956 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -27,7 +27,7 @@ ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 --hash-style=sysv \
+ 		-Bsymbolic --eh-frame-hdr --build-id -n $(btildflags-y) -T
+ 
+ ccflags-y := -fno-common -fno-builtin -fno-stack-protector -ffixed-x18
+-ccflags-y += -DDISABLE_BRANCH_PROFILING
++ccflags-y += -DDISABLE_BRANCH_PROFILING -D__VDSO__
+ 
+ CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os $(CC_FLAGS_SCS)
+ KBUILD_CFLAGS			+= $(DISABLE_LTO)
 -- 
 2.20.1
 
