@@ -2,90 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF6611EFC9C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:37:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CE6A1EFCAD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:40:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=au6NngJbKwELcfQQnxvpWAu8JIZY9Tev0bTNrJHzSXg=; b=Zj1LDMAVL/sssY
-	M7B8WC3HDtT3MVBx3jhGH8UPDEP8ePufJKc30uoZBVTvlbaiFFXiKVCmw9+OHjozvVZBNiSnvEFCH
-	cik+Beyb4+tZDvV7c712HCaBtSsajwNecokJbKJY5+ij6t07g7Uu+Iw6fYOTL+JlHmkQXDFION9+h
-	5ENkLu5Y7spJN2nQ9tvo82jqzzRphWxMoYhiu5DaVlIgJ+ypA5Y1bF+aMK2i3nxh1k38R2O2ALs0d
-	bj5Pjr0Od+C+R2AwxsD4sJxusn95tFb5CC1JqVe627juFE6UOXxshsoPmQEQQCpwK0TIHtc01+db7
-	LvCah9MCA0pj0ZxUjxKA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=9rT2OP9mbLmrRSNhuq/VHK4FEPbKihvFDbKOlffX9hY=; b=ZItdjvO+rwFBcNOE0rvUOpXINH
+	FuL/850byGlUc1sRYTrYRQAOf8OE6+juixfqFCptHdrHkkvs9bo8QyraBUypDUMUdg4xwxdGoGAIO
+	mnhmJoNB8yJUdvaEUNv1m+dTG6Juw+lrm/vd/5kgx05F4Mj1/I2u8JLvwikCL3zNxOnDvNjMn19Zb
+	TVmM0VsNGjaUozo6W1UqwAF+xi72tyq+N4lqp+fiW9R0ui2HcwP0s8+MDZcjZMdqSQpc3KfLGkKQF
+	SXZyWa/zL6bTgTrOYX0CPkITdiwrG2wOuc76Fv60Bo4fYloP0TMkvEM5zqhudW/8zL31PugSlGif8
+	SHMOs1NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhEPO-0006us-LR; Fri, 05 Jun 2020 15:37:26 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhEPF-0006tL-Mt
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:37:19 +0000
-Received: by mail-qk1-x744.google.com with SMTP id v79so10048440qkb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jun 2020 08:37:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=ndufresne-ca.20150623.gappssmtp.com; s=20150623;
- h=message-id:subject:from:to:cc:date:in-reply-to:references
- :user-agent:mime-version:content-transfer-encoding;
- bh=6dIRalDKukNHz3swE/kQj/FCPxkqgYRrJWqT5xc0928=;
- b=Ws/vknZem3s0dSVcrFTtK798SXVRdP/M5djs99ILMOwUF3cYzeW1g9WXvvvNqkBz1c
- 2s0fX+GDycNfAm1Zk8aKEYTel3pvPQNw3TvZ5lSnSFJD/GaPBDFpDBlOSrfC+dS0GJpY
- g1vQRbXfD0Bc8xzezZKeS8KF7wzKj4OHElgffB0AmLr4Bt866+sOb0ZW6wtN5r0LwPNl
- tNBN4Icemp1Xad2Osx0yClhDGcvW8Ou6RoZmZlMTARp+a2j4iKY7VaS7pbLDFSIgLvs3
- Ptj6JycT1S8cCe5/dq3TPnQKZK0nn67ia33gCcb8kvvPpd7R2zQ54A7OvbsFobVpromX
- sqtg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
- :references:user-agent:mime-version:content-transfer-encoding;
- bh=6dIRalDKukNHz3swE/kQj/FCPxkqgYRrJWqT5xc0928=;
- b=gkEM0Q47MXdONhnbfWnztL2IpruhOm94COTFnK2WxpnMxrx/DIO6lw+APOKZq4jSEG
- LJSJLwrLOfSn3ii/JREVl7KIVMb28wyFM2OVyHpJq/LRf86lzNp6NfJWzt/qpz5sgDV1
- cXw8xkK3ta5dXQcaQOxkzHYv79hrPESUbgLDuWTN3wGOQzQTVJvWcsXjWu4Z5zh9PDDI
- UayUmKdYSVESFfNVsyo0kPPNoBMcuns2E3Xja4VHXkNB8p3XYWS5IsXjPrOuNB6g4C8W
- BGxTivyhawllXh3V1evUuiUjuYTOz/j3w9ndjAbOunuqWT9KbxL9ITOuMhhVztZr3maM
- e80g==
-X-Gm-Message-State: AOAM531zxlaGtO8ZuGQ3ME5mpJjBXKwN8x1No0Vgtk4vOwEDre/buoWU
- yebljOXUxuKZ9jCxIdViIKe59A==
-X-Google-Smtp-Source: ABdhPJwSva/8aulW2zIjT1mFgpKBNkLomhs6UlAbs0vzaebZnojmGDUsgoBL6g8XrramHpl+0a0UVg==
-X-Received: by 2002:a37:8ec3:: with SMTP id
- q186mr10814060qkd.231.1591371435604; 
- Fri, 05 Jun 2020 08:37:15 -0700 (PDT)
-Received: from skullcanyon ([192.222.193.21])
- by smtp.gmail.com with ESMTPSA id h5sm67524qkk.108.2020.06.05.08.37.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 05 Jun 2020 08:37:14 -0700 (PDT)
-Message-ID: <6be2b7794c469a434befc2f71f83cf918f4e1b4b.camel@ndufresne.ca>
-Subject: Re: [PATCH 1/5] media: videodev2: add Compressed Framebuffer pixel
- formats
-From: Nicolas Dufresne <nicolas@ndufresne.ca>
-To: Neil Armstrong <narmstrong@baylibre.com>, hverkuil-cisco@xs4all.nl
-Date: Fri, 05 Jun 2020 11:37:13 -0400
-In-Reply-To: <02aa06fd8397b77c9a75d3a8399cb55d3b4d39c1.camel@ndufresne.ca>
-References: <20200604135317.9235-1-narmstrong@baylibre.com>
- <20200604135317.9235-2-narmstrong@baylibre.com>
- <02aa06fd8397b77c9a75d3a8399cb55d3b4d39c1.camel@ndufresne.ca>
-User-Agent: Evolution 3.36.2 (3.36.2-1.fc32) 
+	id 1jhESA-0007V9-6y; Fri, 05 Jun 2020 15:40:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jhERp-0007UL-E3
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:39:59 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C67E31B;
+ Fri,  5 Jun 2020 08:39:55 -0700 (PDT)
+Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EC4873F305;
+ Fri,  5 Jun 2020 08:39:53 -0700 (PDT)
+References: <20200605130519.4184-1-benjamin.gaignard@st.com>
+ <20200605130519.4184-3-benjamin.gaignard@st.com>
+User-agent: mu4e 0.9.17; emacs 26.3
+From: Valentin Schneider <valentin.schneider@arm.com>
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
+Subject: Re: [PATCH v4 2/3] media: stm32-dcmi: Set minimum cpufreq requirement
+In-reply-to: <20200605130519.4184-3-benjamin.gaignard@st.com>
+Date: Fri, 05 Jun 2020 16:39:51 +0100
+Message-ID: <jhj3679iks8.mognet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_083717_745479_E57668F3 
-X-CRM114-Status: GOOD (  23.71  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200605_083957_562001_3DB1AAAA 
+X-CRM114-Status: GOOD (  20.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,100 +63,289 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Jourdan <mjourdan@baylibre.com>, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+Cc: alexandre.torgue@st.com, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, hugues.fruchet@st.com, mchehab@kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
  linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TGUgdmVuZHJlZGkgMDUganVpbiAyMDIwIMOgIDExOjM1IC0wNDAwLCBOaWNvbGFzIER1ZnJlc25l
-IGEgw6ljcml0IDoKPiBMZSBqZXVkaSAwNCBqdWluIDIwMjAgw6AgMTU6NTMgKzAyMDAsIE5laWwg
-QXJtc3Ryb25nIGEgw6ljcml0IDoKPiA+IEZyb206IE1heGltZSBKb3VyZGFuIDxtam91cmRhbkBi
-YXlsaWJyZS5jb20+Cj4gPiAKPiA+IEFkZCB0d28gZ2VuZXJpYyBDb21wcmVzc2VkIEZyYW1lYnVm
-ZmVyIHBpeGVsIGZvcm1hdHMgdG8gYmUgdXNlZAo+ID4gd2l0aCBhIG1vZGlmaWVyIHdoZW4gaW1w
-b3J0ZWQgYmFjayBpbiBhbm90aGVyIHN1YnN5c3RlbSBsaWtlIERSTS9LTVMuCj4gPiAKPiA+IFRo
-ZXNlIHBpeGVsIGZvcm1hdHMgcmVwcmVzZW50cyBnZW5lcmljIDhiaXRzIGFuZCAxMGJpdHMgY29t
-cHJlc3NlZCBidWZmZXJzCj4gPiB3aXRoIGEgdmVuZG9yIHNwZWNpZmljIGxheW91dC4KPiA+IAo+
-ID4gVGhlc2UgYXJlIGFsaWduZWQgd2l0aCB0aGUgRFJNX0ZPUk1BVF9ZVVY0MjBfOEJJVCBhbmQg
-RFJNX0ZPUk1BVF9ZVVY0MjBfMTBCSVQKPiA+IHVzZWQgdG8gZGVzY3JpYmUgdGhlIHVuZGVybHlp
-bmcgY29tcHJlc3NlZCBidWZmZXJzIHVzZWQgZm9yIEFSTSBGcmFtZWJ1ZmZlcgo+ID4gQ29tcHJl
-c3Npb24uIEluIHRoZSBBbWxvZ2ljIGNhc2UsIHRoZSBjb21wcmVzc2lvbiBpcyBkaWZmZXJlbnQg
-YnV0IHRoZQo+ID4gdW5kZXJseWluZyBidWZmZXIgY29tcG9uZW50cyBpcyB0aGUgc2FtZS4KPiA+
-IAo+ID4gU2lnbmVkLW9mZi1ieTogTWF4aW1lIEpvdXJkYW4gPG1qb3VyZGFuQGJheWxpYnJlLmNv
-bT4KPiA+IFNpZ25lZC1vZmYtYnk6IE5laWwgQXJtc3Ryb25nIDxuYXJtc3Ryb25nQGJheWxpYnJl
-LmNvbT4KPiA+IC0tLQo+ID4gIGRyaXZlcnMvbWVkaWEvdjRsMi1jb3JlL3Y0bDItaW9jdGwuYyB8
-IDIgKysKPiA+ICBpbmNsdWRlL3VhcGkvbGludXgvdmlkZW9kZXYyLmggICAgICAgfCA5ICsrKysr
-KysrKwo+ID4gIDIgZmlsZXMgY2hhbmdlZCwgMTEgaW5zZXJ0aW9ucygrKQo+ID4gCj4gPiBkaWZm
-IC0tZ2l0IGEvZHJpdmVycy9tZWRpYS92NGwyLWNvcmUvdjRsMi1pb2N0bC5jIGIvZHJpdmVycy9t
-ZWRpYS92NGwyLWNvcmUvdjRsMi1pb2N0bC5jCj4gPiBpbmRleCAyMzIyZjA4YTk4YmUuLjhmMTRh
-ZGZkNWJjNSAxMDA2NDQKPiA+IC0tLSBhL2RyaXZlcnMvbWVkaWEvdjRsMi1jb3JlL3Y0bDItaW9j
-dGwuYwo+ID4gKysrIGIvZHJpdmVycy9tZWRpYS92NGwyLWNvcmUvdjRsMi1pb2N0bC5jCj4gPiBA
-QCAtMTQ0Nyw2ICsxNDQ3LDggQEAgc3RhdGljIHZvaWQgdjRsX2ZpbGxfZm10ZGVzYyhzdHJ1Y3Qg
-djRsMl9mbXRkZXNjICpmbXQpCj4gPiAgCQljYXNlIFY0TDJfUElYX0ZNVF9TNUNfVVlWWV9KUEc6
-CWRlc2NyID0gIlM1QzczTVggaW50ZXJsZWF2ZWQgVVlWWS9KUEVHIjsgYnJlYWs7Cj4gPiAgCQlj
-YXNlIFY0TDJfUElYX0ZNVF9NVDIxQzoJZGVzY3IgPSAiTWVkaWF0ZWsgQ29tcHJlc3NlZCBGb3Jt
-YXQiOyBicmVhazsKPiA+ICAJCWNhc2UgVjRMMl9QSVhfRk1UX1NVTlhJX1RJTEVEX05WMTI6IGRl
-c2NyID0gIlN1bnhpIFRpbGVkIE5WMTIgRm9ybWF0IjsgYnJlYWs7Cj4gPiArCQljYXNlIFY0TDJf
-UElYX0ZNVF9ZVVY0MjBfOEJJVDoJZGVzY3IgPSAiQ29tcHJlc3NlZCBZVVYgNDoyOjAgOC1iaXQg
-Rm9ybWF0IjsgYnJlYWs7Cj4gPiArCQljYXNlIFY0TDJfUElYX0ZNVF9ZVVY0MjBfMTBCSVQ6CWRl
-c2NyID0gIkNvbXByZXNzZWQgWVVWIDQ6MjowIDEwLWJpdCBGb3JtYXQiOyBicmVhazsKPiAKPiBX
-aGVuIEkgcmVhZCB0aGUgRFJNIGRvY3VtZW50YXRpb24gWzBdLCBJJ20gcmVhZGluZyB0aGF0IFlV
-VjQyMF84QklUCj4gZGVmaW5pdGlvbiBtYXRjaGVzIFY0TDJfUElYX0ZNVF9ZVlU0MjAgYW5kIFY0
-TDJfUElYX0ZNVF9ZVlU0MjBNIGZ1bGx5Lgo+IEluIGZhY3QsIG9uIERSTSBzaWRlLCB0byByZXBy
-ZXNlbnQgdGhhdCBmb3JtYXQgeW91IHdhbnQgdG8gZXhwb3NlIGhlcmUsCj4gdGhleSB3aWxsIHN0
-cmljdGx5IGNvbWJpbmUgdGhpcyBnZW5lcmljIGZvcm1hdCAoZG9jdW1lbnRlZCB1bi0KPiBjb21w
-cmVzc2VkKSB3aXRoIGEgbW9kaWZpZXIgZ2VuZXJhdGVkIHdpdGggdGhlIG1hY3JvCj4gRFJNX0ZP
-Uk1BVF9NT0RfQVJNX0FGQkMoKikuIEFuZCBvbmx5IHRoZSBjb21iaW5hdGlvbiByZXByZXNlbnQg
-YSB1bmlxdWUKPiBhbmQgc2hhcmUtYWJsZSBmb3JtYXQuCgpbMF0gaHR0cHM6Ly93d3cua2VybmVs
-Lm9yZy9kb2MvaHRtbC92NS41LXJjMS9ncHUvYWZiYy5odG1sCgo+IAo+IEluIGFic2VuY2Ugb2Yg
-bW9kaWZpZXIgaW4gVjRMMiBBUEksIHRoaXMgY29tcHJlc3NlZCBmb3JtYXQgc2hvdWxkIGJlCj4g
-bmFtZWQgYWNjb3JkaW5nbHkgdG8gdGhlIGNvbXByZXNzZWQgYWxnb3JpdGhtIHVzZWQgKHNvbWV0
-aGluZyBsaWtlCj4gRk1UX1lVVjQyMF84QklUX0FNTF9GQkMpLiBTbyBJIGJlbGlldmUgdGhlc2Ug
-Zm9ybWF0IG5hbWUgY2Fubm90IGJlCj4gY29waWVkIGFzLWlzIGxpa2UgdGhpcywgYXMgdGhleSBj
-YW4gb25seSBpbnRyb2R1Y2UgbW9yZSBhbWJpZ3VpdHkgaW4KPiB0aGUgYWxyZWFkeSBxdWl0ZSBo
-YXJkIHRvIGZvbGxvdyBuYW1pbmcgb2YgcGl4ZWwgZm9ybWF0cy4gSW4gZmFjdCwgaXQKPiBpcyB2
-ZXJ5IGNvbW1vbiB0byBzZWUgbXVsdGlwbGUgZGlmZmVyZW50IHZlbmRvciBjb21wcmVzc2lvbnMg
-b24gdGhlCj4gc2FtZSBTb0MsIHNvIEkgZG9uJ3QgcmVhbGx5IGJlbGlldmUgYSAiZ2VuZXJpYyIg
-Y29tcHJlc3NlZCBmb3JtYXQgbWFrZQo+IHNlbnNlLiBUbyBzaXRlIG9uZSwgdGhlIElNWDhNLCB3
-aGljaCBnb3QgVmVycmlzaWxsaWNvbi9WaXZhbnRlIERFQzQwMAo+IG9uIHRoZSBHUFUsIGFuZCB0
-aGUgSGFudHJvIEcyIGNvbXByZXNzaW9uIGZvcm1hdC4gQm90aCB3aWxsIGFwcGx5IHRvCj4gTlYx
-MiBjbGFzcyBvZiBmb3JtYXQgc28gaW4gRFJNIHRoZXkgd291bGQgYmUgTlYxMiArIG1vZGlmaWVy
-LCBhbmQgdGhlCj4gY29tYmluYXRpb24gZm9ybXMgdGhlIHVuaXF1ZSBmb3JtYXQuIE5vdywgaW4g
-dGVybSBvZiBzaGFyaW5nLCB0aGV5IG11c3QKPiBiZSBkaWZmZXJpZW50ZWQgYnkgdXNlcnNwYWNl
-LCBhcyBzdXBwb3J0IGZvciBjb21wcmVzc2lvbi9kZWNvbXByZXNzaW9uCj4gaXMgaGV0ZXJvZ2Vu
-ZW91cyAoaW4gdGhhdCBjYXNlIHRoZSBHUFUgZG9lcyBub3Qgc3VwcG9ydCBIYW50cm8gRzIKPiBk
-ZWNvbXByZXNzaW9uIG9yIGNvbXByZXNzaW9uLCBhbmQgdGhlIFZQVSBkb2VzIG5vdCBzdXBwb3J0
-IERFQzQwMCkuCj4gCj4gSSdsbCByZW1pbmQgdGhhdCB0aGUgbW9kaWZpZXIgaW1wbGVtZW50YXRp
-b24gaGFzIGdyZWF0IHZhbHVlIGFuZCBpcwo+IG11Y2ggbW9yZSBzY2FsYWJsZSB0aGVuIHRoZSBj
-dXJyZW50IFY0TDIgYXBwcm9hY2guIFRoZXJlIGhhcyBiZWVuIHNvbWUKPiBlYXJseSBwcm9wb3Nh
-bCBmb3IgdGhpcywgbWF5YmUgaXQncyB0aW1lIHRvIHByaW9yaXRpemUgYmVjYXVzZSB0aGlzCj4g
-bGlzdCB3aWxsIHN0YXJ0cyBncm93aW5nIHdpdGggaHVuZHJlZCBvciBldmVuIHRob3VzYW5kcyBv
-ciBmb3JtYXQsCj4gd2hpY2ggaXMgY2xlYXJseSBpbmRpY2F0ZWQgYnkgdGhlIGluY3JlYXNlIG9m
-IG1vZGlmaWVyIGdlbmVyYXRvciBtYWNybwo+IG9uIHRoZSBEUk0gc2lkZS4KPiAKPiA+ICAJCWRl
-ZmF1bHQ6Cj4gPiAgCQkJaWYgKGZtdC0+ZGVzY3JpcHRpb25bMF0pCj4gPiAgCQkJCXJldHVybjsK
-PiA+IGRpZmYgLS1naXQgYS9pbmNsdWRlL3VhcGkvbGludXgvdmlkZW9kZXYyLmggYi9pbmNsdWRl
-L3VhcGkvbGludXgvdmlkZW9kZXYyLmgKPiA+IGluZGV4IGMzYTFjZjFjNTA3Zi4uOTBiOTk0OWFj
-YjhhIDEwMDY0NAo+ID4gLS0tIGEvaW5jbHVkZS91YXBpL2xpbnV4L3ZpZGVvZGV2Mi5oCj4gPiAr
-KysgYi9pbmNsdWRlL3VhcGkvbGludXgvdmlkZW9kZXYyLmgKPiA+IEBAIC03MDUsNiArNzA1LDE1
-IEBAIHN0cnVjdCB2NGwyX3BpeF9mb3JtYXQgewo+ID4gICNkZWZpbmUgVjRMMl9QSVhfRk1UX0ZX
-SFQgICAgIHY0bDJfZm91cmNjKCdGJywgJ1cnLCAnSCcsICdUJykgLyogRmFzdCBXYWxzaCBIYWRh
-bWFyZCBUcmFuc2Zvcm0gKHZpY29kZWMpICovCj4gPiAgI2RlZmluZSBWNEwyX1BJWF9GTVRfRldI
-VF9TVEFURUxFU1MgICAgIHY0bDJfZm91cmNjKCdTJywgJ0YnLCAnVycsICdIJykgLyogU3RhdGVs
-ZXNzIEZXSFQgKHZpY29kZWMpICovCj4gPiAgCj4gPiArLyoKPiA+ICsgKiBDb21wcmVzc2VkIEx1
-bWluYW5jZStDaHJvbWluYW5jZSBtZXRhLWZvcm1hdHMKPiA+ICsgKiBJbiB0aGVzZSBmb3JtYXRz
-LCB0aGUgY29tcG9uZW50IG9yZGVyaW5nIGlzIHNwZWNpZmllZCAoWSwgZm9sbG93ZWQgYnkgVQo+
-ID4gKyAqIHRoZW4gViksIGJ1dCB0aGUgZXhhY3QgTGluZWFyIGxheW91dCBpcyB1bmRlZmluZWQu
-Cj4gPiArICogVGhlc2UgZm9ybWF0cyBjYW4gb25seSBiZSB1c2VkIHdpdGggYSBub24tTGluZWFy
-IG1vZGlmaWVyLgo+ID4gKyAqLwo+ID4gKyNkZWZpbmUgVjRMMl9QSVhfRk1UX1lVVjQyMF84QklU
-CXY0bDJfZm91cmNjKCdZJywgJ1UnLCAnMCcsICc4JykgLyogMS1wbGFuZSBZVVYgNDoyOjAgOC1i
-aXQgKi8KPiA+ICsjZGVmaW5lIFY0TDJfUElYX0ZNVF9ZVVY0MjBfMTBCSVQJdjRsMl9mb3VyY2Mo
-J1knLCAnVScsICcxJywgJzAnKSAvKiAxLXBsYW5lIFlVViA0OjI6MCAxMC1iaXQgKi8KPiA+ICsK
-PiA+ICAvKiAgVmVuZG9yLXNwZWNpZmljIGZvcm1hdHMgICAqLwo+ID4gICNkZWZpbmUgVjRMMl9Q
-SVhfRk1UX0NQSUExICAgIHY0bDJfZm91cmNjKCdDJywgJ1AnLCAnSScsICdBJykgLyogY3BpYTEg
-WVVWICovCj4gPiAgI2RlZmluZSBWNEwyX1BJWF9GTVRfV05WQSAgICAgdjRsMl9mb3VyY2MoJ1cn
-LCAnTicsICdWJywgJ0EnKSAvKiBXaW5ub3YgaHcgY29tcHJlc3MgKi8KCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+
+On 05/06/20 14:05, Benjamin Gaignard wrote:
+> Before start streaming set cpufreq minimum frequency requirement.
+> The cpufreq governor will adapt the frequencies and we will have
+> no latency for handling interrupts.
+> The frequency requirement is retrieved from the device-tree node.
+>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+
+It's all quite nicer without the dcmi_{get, put}_cpu_policy() functions!
+Sadly I was overzealous in trimming my previous reply, and I also trimmed
+some of my own comments, sorry about that.
+
+I've added the MIA comments down below, and with those taken into account:
+
+(for the IRQ affinity part):
+Reviewed-by: Valentin Schneider <valentin.schneider@arm.com>
+
+> ---
+> version 4:
+> - simplify irq affinity handling by using only dcmi_irq_notifier_notify()
+>
+>  drivers/media/platform/stm32/stm32-dcmi.c | 122 ++++++++++++++++++++++++++++--
+>  1 file changed, 114 insertions(+), 8 deletions(-)
+>
+> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
+> index b8931490b83b..c2389776a958 100644
+> --- a/drivers/media/platform/stm32/stm32-dcmi.c
+> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
+> @@ -13,10 +13,13 @@
+>
+>  #include <linux/clk.h>
+>  #include <linux/completion.h>
+> +#include <linux/cpufreq.h>
+> +#include <linux/cpumask.h>
+>  #include <linux/delay.h>
+>  #include <linux/dmaengine.h>
+>  #include <linux/init.h>
+>  #include <linux/interrupt.h>
+> +#include <linux/irq.h>
+>  #include <linux/kernel.h>
+>  #include <linux/module.h>
+>  #include <linux/of.h>
+> @@ -99,6 +102,8 @@ enum state {
+>
+>  #define OVERRUN_ERROR_THRESHOLD	3
+>
+> +static DEFINE_PER_CPU(struct freq_qos_request, qos_req);
+> +
+>  struct dcmi_graph_entity {
+>       struct v4l2_async_subdev asd;
+>
+> @@ -133,6 +138,7 @@ struct stm32_dcmi {
+>       struct resource			*res;
+>       struct reset_control		*rstc;
+>       int				sequence;
+> +	int				irq;
+>       struct list_head		buffers;
+>       struct dcmi_buf			*active;
+>
+> @@ -173,6 +179,10 @@ struct stm32_dcmi {
+>       struct media_device		mdev;
+>       struct media_pad		vid_cap_pad;
+>       struct media_pipeline		pipeline;
+> +
+> +	u32				min_frequency;
+> +	cpumask_var_t			boosted;
+> +	struct irq_affinity_notify	notify;
+>  };
+>
+>  static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
+> @@ -722,6 +732,90 @@ static void dcmi_pipeline_stop(struct stm32_dcmi *dcmi)
+>       dcmi_pipeline_s_stream(dcmi, 0);
+>  }
+>
+> +static void dcmi_get_min_frequency(struct stm32_dcmi *dcmi)
+> +{
+> +	struct device_node *np = dcmi->mdev.dev->of_node;
+> +
+> +	dcmi->min_frequency = FREQ_QOS_MIN_DEFAULT_VALUE;
+> +
+> +	of_property_read_u32(np, "st,stm32-dcmi-min-frequency",
+> +			     &dcmi->min_frequency);
+> +}
+> +
+> +static void dcmi_irq_notifier_notify(struct irq_affinity_notify *notify,
+> +				     const cpumask_t *mask)
+> +{
+> +	struct stm32_dcmi *dcmi = container_of(notify,
+> +					       struct stm32_dcmi,
+> +					       notify);
+> +	struct cpufreq_policy *p;
+> +	int cpu;
+> +
+> +	/*
+> +	 * For all boosted CPUs check if it is still the case
+> +	 * if not remove the request
+> +	 */
+> +	for_each_cpu(cpu, dcmi->boosted) {
+> +		if (cpumask_test_cpu(cpu, mask))
+> +			continue;
+> +
+> +		p = cpufreq_cpu_get(cpu);
+> +		if (!p)
+> +			continue;
+> +
+> +		freq_qos_remove_request(&per_cpu(qos_req, cpu));
+> +		cpumask_andnot(dcmi->boosted, dcmi->boosted, p->cpus);
+> +
+> +		cpufreq_cpu_put(p);
+> +	}
+> +
+> +	/*
+> +	 * For CPUs in the mask check if they are boosted if not add
+> +	 * a request
+> +	 */
+> +	for_each_cpu(cpu, mask) {
+> +		if (cpumask_test_cpu(cpu, dcmi->boosted))
+> +			continue;
+> +
+> +		p = cpufreq_cpu_get(cpu);
+> +		if (!p)
+> +			continue;
+> +
+> +		freq_qos_add_request(&p->constraints, &per_cpu(qos_req, cpu),
+> +				     FREQ_QOS_MIN, dcmi->min_frequency);
+> +		cpumask_or(dcmi->boosted, dcmi->boosted, p->cpus);
+> +		cpufreq_cpu_put(p);
+> +	}
+> +}
+> +
+> +static void dcmi_irq_notifier_release(struct kref *ref)
+> +{
+> +	/*
+> +	 * This is required by affinity notifier. We don't have anything to
+> +	 * free here.
+> +	 */
+> +}
+> +
+> +static void dcmi_set_min_frequency(struct stm32_dcmi *dcmi, s32 freq)
+> +{
+> +	struct irq_affinity_notify *notify = &dcmi->notify;
+> +
+> +	if (freq) {
+> +		dcmi_irq_notifier_notify(notify,
+> +					 irq_get_affinity_mask(dcmi->irq));
+> +
+> +		notify->notify = dcmi_irq_notifier_notify;
+> +		notify->release = dcmi_irq_notifier_release;
+
+Couldn't we set these at probe time?
+
+> +		irq_set_affinity_notifier(dcmi->irq, notify);
+
+I think you also want to do that before calling into
+dcmi_irq_notifier_notify(), in case the affinity changes in the middle of
+it (which wouldn't be detected because the notifier wouldn't be registered
+at that point). And because of that, you'd have to reinstore the
+mutex.
+
+Again, that was supposed to be in my previous email, sorry :(
+
+> +	} else {
+> +		struct cpumask clear;
+> +
+> +		irq_set_affinity_notifier(dcmi->irq, NULL);
+> +		cpumask_clear(&clear);
+> +		dcmi_irq_notifier_notify(notify, &clear);
+> +	}
+> +}
+> +
+>  static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
+>  {
+>       struct stm32_dcmi *dcmi = vb2_get_drv_priv(vq);
+> @@ -736,11 +830,13 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
+>               goto err_release_buffers;
+>       }
+>
+> +	dcmi_set_min_frequency(dcmi, dcmi->min_frequency);
+> +
+>       ret = media_pipeline_start(&dcmi->vdev->entity, &dcmi->pipeline);
+>       if (ret < 0) {
+>               dev_err(dcmi->dev, "%s: Failed to start streaming, media pipeline start error (%d)\n",
+>                       __func__, ret);
+> -		goto err_pm_put;
+> +		goto err_drop_qos;
+>       }
+>
+>       ret = dcmi_pipeline_start(dcmi);
+> @@ -835,7 +931,8 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
+>  err_media_pipeline_stop:
+>       media_pipeline_stop(&dcmi->vdev->entity);
+>
+> -err_pm_put:
+> +err_drop_qos:
+> +	dcmi_set_min_frequency(dcmi, FREQ_QOS_MIN_DEFAULT_VALUE);
+>       pm_runtime_put(dcmi->dev);
+>
+>  err_release_buffers:
+> @@ -863,6 +960,8 @@ static void dcmi_stop_streaming(struct vb2_queue *vq)
+>
+>       media_pipeline_stop(&dcmi->vdev->entity);
+>
+> +	dcmi_set_min_frequency(dcmi, FREQ_QOS_MIN_DEFAULT_VALUE);
+> +
+>       spin_lock_irq(&dcmi->irqlock);
+>
+>       /* Disable interruptions */
+> @@ -1838,7 +1937,6 @@ static int dcmi_probe(struct platform_device *pdev)
+>       struct vb2_queue *q;
+>       struct dma_chan *chan;
+>       struct clk *mclk;
+> -	int irq;
+>       int ret = 0;
+>
+>       match = of_match_device(of_match_ptr(stm32_dcmi_of_match), &pdev->dev);
+> @@ -1879,9 +1977,9 @@ static int dcmi_probe(struct platform_device *pdev)
+>       dcmi->bus.bus_width = ep.bus.parallel.bus_width;
+>       dcmi->bus.data_shift = ep.bus.parallel.data_shift;
+>
+> -	irq = platform_get_irq(pdev, 0);
+> -	if (irq <= 0)
+> -		return irq ? irq : -ENXIO;
+> +	dcmi->irq = platform_get_irq(pdev, 0);
+> +	if (dcmi->irq <= 0)
+> +		return dcmi->irq ? dcmi->irq : -ENXIO;
+>
+>       dcmi->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>       if (!dcmi->res) {
+> @@ -1895,11 +1993,12 @@ static int dcmi_probe(struct platform_device *pdev)
+>               return PTR_ERR(dcmi->regs);
+>       }
+>
+> -	ret = devm_request_threaded_irq(&pdev->dev, irq, dcmi_irq_callback,
+> +	ret = devm_request_threaded_irq(&pdev->dev, dcmi->irq,
+> +					dcmi_irq_callback,
+>                                       dcmi_irq_thread, IRQF_ONESHOT,
+>                                       dev_name(&pdev->dev), dcmi);
+>       if (ret) {
+> -		dev_err(&pdev->dev, "Unable to request irq %d\n", irq);
+> +		dev_err(&pdev->dev, "Unable to request irq %d\n", dcmi->irq);
+>               return ret;
+>       }
+>
+> @@ -1930,6 +2029,9 @@ static int dcmi_probe(struct platform_device *pdev)
+>       dcmi->state = STOPPED;
+>       dcmi->dma_chan = chan;
+>
+> +	if (!alloc_cpumask_var(&dcmi->boosted, GFP_KERNEL))
+> +		return -ENODEV;
+> +
+>       q = &dcmi->queue;
+>
+>       dcmi->v4l2_dev.mdev = &dcmi->mdev;
+> @@ -2022,6 +2124,8 @@ static int dcmi_probe(struct platform_device *pdev)
+>
+>       dev_info(&pdev->dev, "Probe done\n");
+>
+> +	dcmi_get_min_frequency(dcmi);
+> +
+>       platform_set_drvdata(pdev, dcmi);
+>
+>       pm_runtime_enable(&pdev->dev);
+> @@ -2049,6 +2153,8 @@ static int dcmi_remove(struct platform_device *pdev)
+>
+>       pm_runtime_disable(&pdev->dev);
+>
+> +	free_cpumask_var(dcmi->boosted);
+> +
+>       v4l2_async_notifier_unregister(&dcmi->notifier);
+>       v4l2_async_notifier_cleanup(&dcmi->notifier);
+>       media_entity_cleanup(&dcmi->vdev->entity);
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
