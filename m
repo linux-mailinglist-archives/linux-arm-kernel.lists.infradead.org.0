@@ -2,89 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF8121EFC5B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:18:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0AFD1EFC61
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dP+3+S5JbSCSNy5bTzXcZ4pw2aEpM8y0LdkHPPDic1s=; b=U9mI2ljU2CApycMnuIZAsn67q
-	Oj4X13WaG8uZijBvOkxaN10fiVilbu7ErciNt2Xaqn2x2qZsOjQqjSbAV+qsT921DWkvwZ21RgSvY
-	Cv41P5ekTUKS1BvWXZdFl5ee7L8SvruF4Bj8Fscw3t5gwcDBe0/LqBU32Pn7USNtSqLequGjp8tvr
-	PypEJ5CBEeiTroXMYsSWtvpMQyk6bunIoV4b9aQetBA4aCE/ld4xsmLZxb4RPBMaUFLVGEKOjUJaS
-	Rg+cOzn7YhJugNQAgypC/IEBC0qBIIhiroEx2jxbC5mLX0ifW3h+gx3zs0E6C9k5FAWIOB+ni1M+2
-	OTGVz4iYw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=G6saKviPy5RSYT6xg5FQQifNrh+GgO6L6RIC9J/B7K0=; b=a810s7DG9ACc8Z
+	4WX/gDJpODJyJqQTGA+hF49/uycY6stjEiPqcv8ICU8GNam70pmZVHHwAr0GNZMjesFdiuS7Y6wfn
+	gNz1RPBYicVXz6wAe2tqZ31mG2CubiCVAyNlwUY6zKhamQNcxa+LoAemV71iWAO2mANQGh4DdTVgq
+	0QuZTAz2BhJb30jo9Q7zDPsV6lgP57fNGPScF0AJTItE2/d/4dhHn6vU6u8znXaS7tAgWiRShX85d
+	4nH3WuIGScrPh/n68v6ZPdsOk786bG9ixjcPJcRhC0AVMRFYhLXBggG2v8eT4o4a6X1OYd49eF9K/
+	Eh8ZTBB6+fFEqfVGuY8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhE6v-0002ZT-MS; Fri, 05 Jun 2020 15:18:21 +0000
-Received: from wnew4-smtp.messagingengine.com ([64.147.123.18])
+	id 1jhE7r-0002ub-1V; Fri, 05 Jun 2020 15:19:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhE6p-0002Yx-M2; Fri, 05 Jun 2020 15:18:16 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 1B2636C7;
- Fri,  5 Jun 2020 11:18:14 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Fri, 05 Jun 2020 11:18:14 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm3; bh=eDXBvR6YBBtfhuiC0E7a3EHj/Ym
- N6ySkgO12Cpj2Nrw=; b=ExN7CqWrg4jyViAfCa+fhX2rn1O70zwpNpT8K2nymCT
- EuTVoVh9M//JKOtrBcux+WH0wuXC8PziL8fNrzpSYTpyRE2wef7A4T0PnafZpjud
- 6sN3kEk4DoSg3t9Y8mnsNgaT8x1mF+fwcOQl7syJlyahtXCmIbndzuSAKNT+FxBs
- 1cvp4M5CWvtPKzQjvmEcBK40/5fMlaEXeZ12+KTQEpcRukiquUZIuvF/J0dV4azf
- 7IkhOjzRYHRM8bm24gnasbK95WWj0gIZWErDzl4NNfVDCl9ZKJCMIMdxxFwCVrxf
- 0t5vWIQwi3/8NXvVfgnZ0LFbKE0L3ckwIQtqFCzn6Fg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=eDXBvR
- 6YBBtfhuiC0E7a3EHj/YmN6ySkgO12Cpj2Nrw=; b=F0SyF/JMN+D6e7CqCPOP8K
- 6avtHMvP25wWVwrKG5TCReTrYZ3fDN2pHRRntboqsU9Ga54gNOPT3nZVxQQMCYdk
- 2aB8dJcV2gykE3hO8WIXSLj0x3VzvNaR66QhRbjKhNGYGT7g5xwACa7XD0tNlblp
- uHmki7hCqRI45kd2mFgN8KmpY8ZGuM1uDEGtlW8k1Jr7LjmdXHNBWZantFQsk0YA
- rH7hRjfm1lnRi2epqsx4zxHIhI18Mbyr3ZIlYxIUzDY9d4GgVC+NUarxm3Fk+Tvq
- FbDtnDDMZ0rUQFamzs49qJ4+qf2wsYKqX3H5rOlw0uwfMUvhvjeHSAqjh4gAHRFw
- ==
-X-ME-Sender: <xms:NGLaXsqg53A4vXafdJw4pq_lA7qt40tpwRF8q4-tc0E1SUULdOQmdA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrudegfedgjeehucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuggftrfgrth
- htvghrnhepleekgeehhfdutdeljefgleejffehfffgieejhffgueefhfdtveetgeehieeh
- gedunecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenuc
- frrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:NGLaXioOQ9sTvkE8t2fbvYnoB0Xdmszj0f2VF6Phs5vc2DkgVxKx2g>
- <xmx:NGLaXhMcXwxl2_nKkYrgvE1SLyP_jqHsdtXwd4bNpkxWdr6SjKT2SQ>
- <xmx:NGLaXj5yH1gEu92lw8JY84PtauSDbXcZZBVvgtet0WogpEJQhdQadg>
- <xmx:NWLaXlsvqfIBPxsHWFF7JELiV3ds3aGkrB2r5WzrUyP-TK4b56pJuQhRsR8>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id F39FF3280065;
- Fri,  5 Jun 2020 11:18:11 -0400 (EDT)
-Date: Fri, 5 Jun 2020 17:18:10 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Frank Lee <frank@allwinnertech.com>
-Subject: Re: [PATCH 1/2] mmc: sunxi-mmc: do not hide address in sunxi_mmc_irq()
-Message-ID: <20200605151810.vmgnnzp7cadfwsu5@gilmour.lan>
-References: <20200605125545.31974-1-frank@allwinnertech.com>
+ id 1jhE7k-0002uA-FY
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:19:13 +0000
+Received: from mail-oo1-f41.google.com (mail-oo1-f41.google.com
+ [209.85.161.41])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 085A42070B
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  5 Jun 2020 15:19:12 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1591370352;
+ bh=9WmSeuRHgQwAJNNulbHNb7RyPD/3uPrszoLjgoO41mY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=jwo3eGOi2AOK8/sULWtW2ycHp5nmTj8lsKA7/klzogf/NlnvZEOnq6BPNZpSG7xTq
+ J+bYKRo00ree0oSyPRu643UvIOtYDorSdjXpsL/5TGxvqZlDhO6RIxgTOVoZf2YrDp
+ Zqr6w+SnJEssiICZnS54Jj3yqEBsRddp9VarW7eo=
+Received: by mail-oo1-f41.google.com with SMTP id z145so2041717ooa.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 05 Jun 2020 08:19:12 -0700 (PDT)
+X-Gm-Message-State: AOAM532NZZz0KsB7Ixd4Xh+138nUx8H+LlO4IKEqqT2K5S0nKh9Innx+
+ WFvAJwKHmrS/gQoiT0jaPWPTAUT2EWWU/f5GHJo=
+X-Google-Smtp-Source: ABdhPJzIF6F0yNuqc2zeYzx9vPVUMd3Z12kppxt5a/u1eOlquy0OrNBzbPZGqVJBES/41v4nC951faePQTZzwf9L11w=
+X-Received: by 2002:a4a:6812:: with SMTP id p18mr8061722ooc.45.1591370351306; 
+ Fri, 05 Jun 2020 08:19:11 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200605125545.31974-1-frank@allwinnertech.com>
+References: <20200605115200.413921-1-ardb@kernel.org>
+ <4498d910-f5cb-8559-afba-34710e9ca730@gmx.de>
+ <CAMj1kXHS8AVczRPzySgzkkztD0yT1MXnCyMwmOt=ihZ9Bvo0vQ@mail.gmail.com>
+ <589478fe-14a6-a921-3fdf-ae527e14b945@gmx.de>
+ <CAMj1kXHwWwGyX1ijk-qjuV10p0Zr6sAYeAntx+iDVHp-tVaNwg@mail.gmail.com>
+ <99692142-0ee1-37a7-582e-56c38b2ef3d8@gmx.de>
+In-Reply-To: <99692142-0ee1-37a7-582e-56c38b2ef3d8@gmx.de>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Fri, 5 Jun 2020 17:18:59 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXG7XKNr5ascgk1GdhucVHb=euJ5xyBX2E65o2ejrOqnGg@mail.gmail.com>
+Message-ID: <CAMj1kXG7XKNr5ascgk1GdhucVHb=euJ5xyBX2E65o2ejrOqnGg@mail.gmail.com>
+Subject: Re: [PATCH] efi/arm: decompressor: deal with HYP mode boot gracefully
+To: Heinrich Schuchardt <xypron.glpk@gmx.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_081815_760538_95EA42AB 
-X-CRM114-Status: UNSURE (   7.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200605_081912_556816_DE587F36 
+X-CRM114-Status: GOOD (  27.04  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.18 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -92,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,70 +90,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marex@denx.de, ulf.hansson@linaro.org, tiny.windzz@gmail.com,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org, rmfrfs@gmail.com,
- wens@csie.org, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, matthias.bgg@gmail.com,
- chaotian.jing@mediatek.com
-Content-Type: multipart/mixed; boundary="===============0696852361726775728=="
+Cc: Marc Zyngier <maz@kernel.org>, linux-efi <linux-efi@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, 5 Jun 2020 at 17:14, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>
+> On 05.06.20 16:57, Ard Biesheuvel wrote:
+> > On Fri, 5 Jun 2020 at 16:54, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+> >>
+> >> On 05.06.20 14:39, Ard Biesheuvel wrote:
+> >>> On Fri, 5 Jun 2020 at 14:20, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+> >>>>
+> >>>> On 05.06.20 13:52, Ard Biesheuvel wrote:
+> >>>>> EFI on ARM only supports short descriptors, and given that it mandates
+> >>>>> that the MMU and caches are on, it is implied that booting in HYP mode
+> >>>>> is not supported.
+> >>>>>
+> >>>>> However, implementations of EFI exist (i.e., U-Boot) that ignore this
+> >>>>> requirement, which is not entirely unreasonable, given that it does
+> >>>>> not make a lot of sense to begin with.
+> >>>>
+> >>>> Hello Ard,
+> >>>>
+> >>>> thanks for investigating the differences between EDK2 and U-Boot.
+> >>>>
+> >>>> What I still do not understand is if there is a bug in U-Boot where
+> >>>> U-Boot does not conform to the UEFI specification? In this case I would
+> >>>> expect a fix in U-Boot.
+> >>>>
+> >>>
+> >>> U-Boot violates the EFI spec, yes. The spec is very clear on how the
+> >>> MMU is configured, and this rules out booting with the caches off, or
+> >>> booting in HYP mode.
+> >>>
+> >>> However, given that this is the situation today, we still need to deal
+> >>> with it on the Linux side.
+> >>> In parallel, fixing it in U-boot may be appropriate. However, I think
+> >>> the EFI spec is too detailed here - instead of 'booting at the highest
+> >>> non-secure privilege mode', it tells you which exact bits to set in
+> >>> SCTLR, which seems overzealous to me. In other words, even though it
+> >>> violates the letter of the spec, I don't mind dealing with this
+> >>> exception in the Linux side, since the requirement is somewhat
+> >>> unreasonable to begin with.
+> >>>
+> >>>> Or is it simply a deficiency of Linux that it does not properly support
+> >>>> HYP/EL2 mode on 32-bit ARM?
+> >>>>
+> >>>
+> >>> No, this is definitely not the fault of Linux.
+> >>>
+> >>>> Up to now I never experience a problem booting a 32bit board via U-Boot
+> >>>> -> GRUB-EFI -> Linux. Where did you have a problem when booting via
+> >>>> U-Boot's UEFI implementation and the current Linux kernel?
+> >>>>
+> >>>
+> >>> I haven't managed to make it fail, but my only 32-bit HYP capable
+> >>> platform is QEMU. I am not 100% convinced that the EFI+HYP+U-Boot case
+> >>> is rock solid, and I may have gotten lucky with QEMU (which uses
+> >>> emulation not virtualization when running at HYP)
+> >>>
+> >>> Do you have any A7/A15 based boards that don't print 'WARNING: Caches
+> >>> not enabled' at boot?
+> >>
+> >> Hello Ard,
+> >>
+> >> I have no board that prints this. Where did you actually see this output?
+> >>
+> >
+> > In U-boot
+> >
+> > arch/arm/lib/cache.c: * Default implementation of enable_caches()
+> > arch/arm/lib/cache.c- * Real implementation should be in platform code
+> > arch/arm/lib/cache.c- */
+> > arch/arm/lib/cache.c:__weak void enable_caches(void)
+> > arch/arm/lib/cache.c-{
+> > arch/arm/lib/cache.c-   puts("WARNING: Caches not enabled\n");
+> > arch/arm/lib/cache.c-}
+> > arch/arm/lib/cache.c-
+> >
+> > The QEMU port does not override that routine. This may be the reason
+> > it doesn't work for me under KVM, but only under emulation.
+> >
+> >> The string "Caches not enabled" does not exist in Linux next-20200505
+> >> according to "git grep -n 'ache not enabled'".
+> >>
+> >> Here is some sample output for an Orange Pi PC with a quad core
+> >> Allwinner H3 Soc. "ARMv7 Processor rev 5 (v7l)" according to
+> >> /proc/cpuinfo, compatible to "arm,cortex-a7" according to the device tree.
+> >>
+> >> $ uname -m
+> >> Linux orangepi-pc 5.6.0-2-armmp-lpae #1 SMP Debian 5.6.14-1 (2020-05-23)
+> >> armv7l GNU/Linux
+> >>
+> >
+> > Could you check whether it boots in HYP mode?
+> >
+> > [    0.381460] CPU: All CPU(s) started in SVC mode.
+> >
+> > vs
+> >
+> > [    0.135626] CPU: All CPU(s) started in HYP mode.
+> >
+> >
+> > ?
+> >
+>
+> Booted via GRUB-EFI:
+>
+> sudo dmesg -H | grep 'started in'
+> [  +0.000017] CPU: All CPU(s) started in HYP mode.
+>
+> Booted via Linux stub:
+>
+> $ sudo dmesg -H | grep 'started in'
+> [  +0.000016] CPU: All CPU(s) started in HYP mode.
+>
 
---===============0696852361726775728==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="lqyrkswqzjhc3pkq"
-Content-Disposition: inline
+Thanks
 
-
---lqyrkswqzjhc3pkq
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Fri, Jun 05, 2020 at 08:55:44PM +0800, Frank Lee wrote:
-> From: Yangtao Li <tiny.windzz@gmail.com>
->=20
-> Using %px to show the actual address in sunxi_mmc_irq()
-> to help us to debug issue.
->=20
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
-> Signed-off-by: Frank Lee <frank@allwinnertech.com>
-
-I'm fairly sure this hash is on purpose, and both the commit log of the
-%px introduction (ad67b74d2469) and the checkpatch message are pretty
-explicit about it.
-
-What issue were you trying to solve here?
-
-Maxime
-
---lqyrkswqzjhc3pkq
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXtpiMgAKCRDj7w1vZxhR
-xX8tAQCtvLK2kLjK9ek6BhW0HKPRmxoCrg3HRrnR7yKGjtdBLgD/Ru2M3MqS1iws
-hyuU+IoR9fzMA4nBd/Rq7FQ104ypeQQ=
-=VGny
------END PGP SIGNATURE-----
-
---lqyrkswqzjhc3pkq--
-
-
---===============0696852361726775728==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Which uboot config is that? Which version of enable_caches() does it use?
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0696852361726775728==--
-
