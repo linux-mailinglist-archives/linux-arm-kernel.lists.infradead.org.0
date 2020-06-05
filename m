@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 410BE1EF757
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:27:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 889211EF7FB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:33:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=H/sgH4PhFS70wRWLdbkAFw+mSVFrOBN6wnDjx+BwvAs=; b=eTn4/yct4xiLii
-	UK1r/FLGmC7vuyZaTmSVPnN87gs1kj4hPsmFxlkwYkDw0jSTJruJA0P9M8hEvcaj8KPJPxDahF7e0
-	SaughDMSd1TWdBkCj6kPySysWieyA8VNY3CLS3Qn+54rlkHL0yU5MtMrBXzLrQrzoxOSbs5cXl5uH
-	2pQvKkwIRx542zqDV60+dpJKrJKzuL2dFIPr1LKbalhZtUFB7WdCt4gNePn+2uymSm/S6+lHzX1dM
-	ihAa9vypVA8U+CU5uqVrMxb5sdVHP0dKAIXvHQ/99TKvdMvLsiEmcoaQPx9PuEFO5UwKwuU0YYNe6
-	wTUL/Ag1JG6NQobtd4ng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UgH+Q9huikIfdoASgof3sJwhM/n3tDQn+uqsKrimms8=; b=krH/OPWoW/wUyb
+	FRBni9OGWD47Ei7rmC8omsYQLIEd7wS220Yya0QsnqRvkyJPiN9HHQgOpzjb4azPWna7DKGNcoByS
+	HOapMvJzMuX/Dx2cgEcV7gLqgwWC40KDlBP9vbhhNYwlMeT90KMDp9fV+3WeQo4ewxVLCuzYPzOYT
+	lT+oGatH5180McQcnFUt+UxGFTQMogos208PoNFhvTVnC0Ry2zm2XIPpaFBl7xKdQnRShP4R3E7qy
+	YWeeNTwOjozvR/ccexv2cu3yfI+S7pGCHZ9gpz8QGPrvhwNc0SlJnbrZSuMbk8Fg0uSBVanM1g+7O
+	Tqx06HRugCDrTqhHRsKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhBRi-00005m-MK; Fri, 05 Jun 2020 12:27:38 +0000
+	id 1jhBX9-0003oB-L5; Fri, 05 Jun 2020 12:33:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhBQd-0007hL-Pq
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:26:33 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 178E1207D5;
- Fri,  5 Jun 2020 12:26:30 +0000 (UTC)
+ id 1jhBX2-0003nY-1i
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:33:09 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9B3512070B;
+ Fri,  5 Jun 2020 12:33:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591359990;
- bh=sXl+Ns5JOxqJylekxpc8ie6/U3eKfS139lWdkI5jD24=;
- h=From:To:Cc:Subject:Date:From;
- b=iA7U3/rt2hwBaF2UX9iu1aSOCOcGXWzguDdaKakle2C2UdcyleRInJNl9IHnOp73t
- RDsEZqrZwEetQQkEbw6goPaCLse5D6qnnDGv96gMGnuiJ02ot70utwuHy9hrNfJqvg
- L+tXTC9/VQ/NTBcr/VYTqzSsUvKf3mDXQy9bBYoQ=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.4 1/3] ARM: 8977/1: ptrace: Fix mask for thumb
- breakpoint hook
-Date: Fri,  5 Jun 2020 08:26:26 -0400
-Message-Id: <20200605122629.2883065-1-sashal@kernel.org>
-X-Mailer: git-send-email 2.25.1
+ s=default; t=1591360387;
+ bh=fTr0sSYh7Hc07ktzO/6Or179HCQ8lKzraRQaQhXE8Wg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=pie1bS2elTbUGrWm8eSC8WLLSAUTmcNBqa0+/qVE8K/6XcNU/EnyQwDVOnC6ZCYH7
+ i5T3bWJHXjZgm3g1CGa09bkxxL0TU6PYgtRUTBTrV65eJGG69ADOSXV4zmyyPz1GL4
+ i6kRtRd+ErupS634w251226PjPBlhNXb8yzY5+fo=
+Date: Fri, 5 Jun 2020 13:33:03 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: Please help to confirm the risk if using TPIDRRO_EL0 to save CPU
+ number, thanks.
+Message-ID: <20200605123302.GA19936@willie-the-truck>
+References: <1D289F1E6D91D2489524BBB0B8880A7DA1A39219@dggeml509-mbx.china.huawei.com>
+ <20200601070311.GA8601@willie-the-truck>
+ <20200605121029.GE5413@sirena.org.uk>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <20200605121029.GE5413@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_052631_924705_B06A1126 
-X-CRM114-Status: GOOD (  11.19  )
+X-CRM114-CacheID: sfid-20200605_053308_130402_B3A1922E 
+X-CRM114-Status: GOOD (  22.31  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,62 +79,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
- Fredrik Strupe <fredrik@strupe.net>, Oleg Nesterov <oleg@redhat.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "fujun \(F\)" <oliver.fu@hisilicon.com>,
+ Wuxuecheng <wuxuecheng@hisilicon.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "Lixin \(Victor, Kirin\)" <victor.lixin@hisilicon.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fredrik Strupe <fredrik@strupe.net>
+On Fri, Jun 05, 2020 at 01:10:29PM +0100, Mark Brown wrote:
+> On Mon, Jun 01, 2020 at 08:03:12AM +0100, Will Deacon wrote:
+> > On Fri, May 29, 2020 at 09:03:37AM +0000, Lixin (Victor, Kirin) wrote:
+> =
 
-[ Upstream commit 3866f217aaa81bf7165c7f27362eee5d7919c496 ]
+> > >    Intel optimized getcpu syscall on Linux/Android system by using vD=
+SO, but
+> > >    ARM doesn't do any optimizations for getcpu syscall.
+> =
 
-call_undef_hook() in traps.c applies the same instr_mask for both 16-bit
-and 32-bit thumb instructions. If instr_mask then is only 16 bits wide
-(0xffff as opposed to 0xffffffff), the first half-word of 32-bit thumb
-instructions will be masked out. This makes the function match 32-bit
-thumb instructions where the second half-word is equal to instr_val,
-regardless of the first half-word.
+> > >    In Apple open source, TPIDRRO_EL0/TPIDRURO is used to save the CPU=
+ number,
+> > >    [1]https://opensource.apple.com/source/xnu/xnu-4570.1.46/osfmk/arm=
+/cswitch.s.auto.html
+> =
 
-The result in this case is that all undefined 32-bit thumb instructions
-with the second half-word equal to 0xde01 (udf #1) work as breakpoints
-and will raise a SIGTRAP instead of a SIGILL, instead of just the one
-intended 16-bit instruction. An example of such an instruction is
-0xeaa0de01, which is unallocated according to Arm ARM and should raise a
-SIGILL, but instead raises a SIGTRAP.
+> > >    =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0Is there any risk if using TPIDRR=
+O_EL0/TPIDRURO to implement
+> > >    the vDSO for getcpu? Is there any possible to break any ARM ABI? C=
+an you
+> > >    help us to confirm the considerations?
+> =
 
-This patch fixes the issue by setting all the bits in instr_mask, which
-will still match the intended 16-bit thumb instruction (where the
-upper half is always 0), but not any 32-bit thumb instructions.
+> > Do you have a use-case for high-performance getcpu() that isn't better
+> > suited to rseq()?
+> =
 
-Cc: Oleg Nesterov <oleg@redhat.com>
-Signed-off-by: Fredrik Strupe <fredrik@strupe.net>
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm/kernel/ptrace.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+> I actually have an implementation of this that I'd been waiting for the
+> end of the merge window to post, largely because I first heard of the
+> use of restartable sequences for this after I'd already implemented the
+> vDSO version - this stuff is not as discoverable as one might desire.
+> It doesn't store the CPU ID directly in TPIDRRO but rather uses TPIDDRRO
+> to store the offset of a per-CPU struct in the vDSO data in order to
+> allow for the addition of further data in the future.  I'll post it
+> today for discussion.
+> =
 
-diff --git a/arch/arm/kernel/ptrace.c b/arch/arm/kernel/ptrace.c
-index d54c53b7ab63..711d854ea13a 100644
---- a/arch/arm/kernel/ptrace.c
-+++ b/arch/arm/kernel/ptrace.c
-@@ -227,8 +227,8 @@ static struct undef_hook arm_break_hook = {
- };
- 
- static struct undef_hook thumb_break_hook = {
--	.instr_mask	= 0xffff,
--	.instr_val	= 0xde01,
-+	.instr_mask	= 0xffffffff,
-+	.instr_val	= 0x0000de01,
- 	.cpsr_mask	= PSR_T_BIT,
- 	.cpsr_val	= PSR_T_BIT,
- 	.fn		= break_trap,
--- 
-2.25.1
+> The latest version of the Mathieu's glibc integration patches is:
+> =
 
+>     https://lore.kernel.org/lkml/20200527185130.5604-3-mathieu.desnoyers@=
+efficios.com/
+> =
+
+> The only things I can see where the vDSO does better are support for the
+> node parameter of getcpu() and the ease of implementation for the users,
+> the restartable sequences code was merged all the way back in v4.18 and
+> it's still not used by any of the libcs as far as I can see.  The node
+> to CPU mapping is static so I'm not sure how exciting that is, it could
+> be looked up separately when processing data if it's important, but the =
+
+> ease of use feels like something.
+> =
+
+> One important caveat with using TPIDRRO is that if KPTI is active then
+> the KPTI trampoline uses TPIDRRO as a scratch register so unless we can
+> find another register for scratch usage the user would need to give up
+> the protections offered by KPTI or run on future hardware which can use
+> E0PD instead.  This severely limits the usefulness on current systems.
+
+We only trash TPIDRRO on entry, so I think you could repopulate it on every
+exception from userspace and it *should* work with KPTI (famous last words!)
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
