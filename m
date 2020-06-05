@@ -2,91 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0F491EF351
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:46:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98B791EF35A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:47:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1OfEGj8Kw4lxZ87BDuLEB/R0MEihtWhQ+uvSt7MHOIQ=; b=bqK1kFN8S9/p+1
-	xemHBORCHfRGvMGP9tv+VwmKACwoGqGFbAvujrWRdS54RFNERUedio/fiyJWkbqbImHs73eJpnd1X
-	nK1/W3YHRX3nZYEt9zrPz2/z5s6e4qrp2CSIrPu7n0QCLopFQ+2WFULWBKX7CRafQoRcqVVrAbR0c
-	u4+qvb+LtgMedn6DpLqTewrn5Iq4fYuf3/Hg5wcYbEJ6C+1prnA5Bxy0f7CYbnXDSL7nkaK80guuM
-	K6quVq5QalY4UvMSnZooVjMbCjP2kCqgg1CRokqipB0AjRYO1kyxh+xJM9ddP6XYg5Qzv9pxtTM4u
-	3yLAAL0vFdxHSDTbUq5A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Wev+/pltbHYTqe7m/NpEZipR72K4PhqZ/qaquZVGMN8=; b=tZQXai/s9xRb0/As+k4yXh7+S
+	JzwfMHGfwwKaxPM61cM35hl3AitNVkjK4GI77E01EXoT5wOiqc9wZ97q2p1mcpU1TBs5TPGlt+95t
+	INe1q0rsYO5vHJKY6DH+LEVQf8qRIIJwsx/UtVu2MNfmRzWqWCeKEViy2U739AuLohbDHZwJ/aoAr
+	S8z5rJXjOf9r9cG1px+aHd0feJ1l+QFYh0AX2NnxZaznZ0Yr/aDTWtv6NPO8HonK/+sHdnTXaSCSK
+	Fxs0AHqg7JrIHBiZPF8uJ4AMCIhLtgfLpzVPY2OrQTlcnhNuYDyzGsHBlMx9bNwkIH8aMELSqKW14
+	Ge2fD5WDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh7zF-0005om-9E; Fri, 05 Jun 2020 08:46:01 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
+	id 1jh80Q-0006EJ-6Y; Fri, 05 Jun 2020 08:47:14 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh7z5-0005nX-C9
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 08:45:53 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id m18so2031952vkk.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jun 2020 01:45:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=endlessm-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=+jBFtxmml2UF+SqNxby8rCTJfROuy18HbtkfW0zgYb0=;
- b=Orors8UnFs80EJIYP/KDavj+8S/RsPvJBh7SCISTksRVf7f4rAH/P560wXs2u/J6az
- pLlDexOhDBMkt79w0+ofS3+f4xcnBuNUhq+c++wVjsKLE1jc5jzPMaU0ntxEv+VzpJOW
- vf8JZ3z/GSdXQ73Dm2tMH7Uo3c+Gq7BR3tCL+JQ+cN4dWgw5MjGAhxYtxejR0Prd6iY+
- 6ZZkJcm1wr02Z6nmkyy0QuByc8wAJurm3MPsvINFpfalEBb4ZT0kmHOLA4rt4yqs3noY
- 8LqBEZLRANgp5WuxTDJkI3EjW/LX6Dr9+1sGkp9NrHS5iOhMpbnO8xzAXaW0orSU4N+3
- p7ng==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=+jBFtxmml2UF+SqNxby8rCTJfROuy18HbtkfW0zgYb0=;
- b=kaqsURdyOsoj6FzrFV9yBRGNvdV05Zeee5b5lhBmnsY6afjiek1BLG2/I+W51L0f+g
- mZO1wflH5G5OV8DwOnTBJy79roFi7VKWPUgyVWZUFkPuUHBcaAFOUxZLl4fRRCBQyVBV
- lA4JFMun3r4bsJmmVWOJ6KrfipeAxFTuWkz94UnLLPFkOSJBOgM+r7l9Sd5SowUe2IKP
- yC8J65zN70Vp5e3/2UUBoWdQNQYwgzwGnPBWucS5rZFhkWXf/A2j7GWeld+Im8qrmlwC
- CF6iHjBWiVBYOoXOszxL76bG3REBOmjRuh2vO4ZiDw2s+71uM1g11co1ZmFE6PHAgTiW
- HWzw==
-X-Gm-Message-State: AOAM531QpE9YaKRoGncZa269n47GM53N8iE3rbz3FwImoGC8v3OKCYz+
- xF4oTZS7mXi+s90fqJs3f89zE5MzgALbl99HSr6DpxiGL6DoKw==
-X-Google-Smtp-Source: ABdhPJzmvRHbvh3nZTnE3simXC96ekcS+Ch2AtnIE3Svbty3w/cPWX4iVpb084QbaBYoV7z9md14B6vaSVk2SSa/NyY=
-X-Received: by 2002:a1f:cf03:: with SMTP id f3mr6271662vkg.72.1591346749358;
- Fri, 05 Jun 2020 01:45:49 -0700 (PDT)
+ id 1jh80H-0006Di-8w; Fri, 05 Jun 2020 08:47:07 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 796BAACD0;
+ Fri,  5 Jun 2020 08:47:05 +0000 (UTC)
+Message-ID: <f728f55fe6266718b5041b6f3b1864a673991129.camel@suse.de>
+Subject: Re: [PATCH v2] spi: bcm2835: Enable shared interrupt support
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
+Date: Fri, 05 Jun 2020 10:46:57 +0200
+In-Reply-To: <20200604212819.715-1-f.fainelli@gmail.com>
+References: <20200604212819.715-1-f.fainelli@gmail.com>
+User-Agent: Evolution 3.36.2 
 MIME-Version: 1.0
-References: <CAPpJ_efvtVzb_hvoVOeaePh7UdE13wOiiGaDBH38cToB-yhkUg@mail.gmail.com>
- <20200507172158.cybtakpo6cxv6wcs@gilmour.lan>
- <CAPpJ_efxenmSXt2OXkhkQ1jDJ59tyWBDUvmpyOB-bfPMDENQZg@mail.gmail.com>
- <CAPpJ_ed9TMJjN8xS1_3saf5obQhULJSLNgQSAFxgiWM2QX9A7Q@mail.gmail.com>
- <20200526102018.kznh6aglpkqlp6en@gilmour.lan>
- <CAD8Lp467DiYWLwH6T1Jeq-uyN4VEuef-gGWw0_bBTtmSPr00Ag@mail.gmail.com>
- <20200527091335.7wc3uy67lbz7j4di@gilmour.lan>
- <CAD8Lp45ucK-yZ5G_DrUVA7rnxo58UF1LPUy65w2PCOcSxKx_Sg@mail.gmail.com>
- <20200528073055.znutrhkryzu3grrl@gilmour.lan>
- <CAPpJ_ec1KRwUrHGVVZrReaDPz4iga-Nvj5H652-tTKmkXL=Xmg@mail.gmail.com>
- <20200602110442.2ceuymhwuomvjj6i@gilmour>
-In-Reply-To: <20200602110442.2ceuymhwuomvjj6i@gilmour>
-From: Jian-Hong Pan <jian-hong@endlessm.com>
-Date: Fri, 5 Jun 2020 16:44:51 +0800
-Message-ID: <CAPpJ_eePgLxO5URB3V5aeNMvBHOp+vXrW=+6SnVt4mB9J8oR+Q@mail.gmail.com>
-Subject: Re: [PATCH v2 00/91] drm/vc4: Support BCM2711 Display Pipelin
-To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_014551_472376_8B147DBE 
-X-CRM114-Status: GOOD (  20.88  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200605_014705_611363_28F530B6 
+X-CRM114-Status: GOOD (  26.70  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,129 +61,233 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- devicetree <devicetree@vger.kernel.org>,
- Linux Kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Daniel Drake <drake@endlessm.com>,
- Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org,
- Linux Upstreaming Team <linux@endlessm.com>, linux-clk@vger.kernel.org,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, linux-i2c@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:OPEN FIRMWARE AND
+ FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Scott Branden <sbranden@broadcom.com>, lukas@wunner.de,
+ Ray Jui <rjui@broadcom.com>, Mark Brown <broonie@kernel.org>,
+ "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
+ <bcm-kernel-feedback-list@broadcom.com>, "moderated list:BROADCOM
+ BCM2711/BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
+ Martin Sperl <kernel@martin.sperl.org>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============6912648187180028447=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-TWF4aW1lIFJpcGFyZCA8bWF4aW1lQGNlcm5vLnRlY2g+IOaWvCAyMDIw5bm0NuaciDLml6Ug6YCx
-5LqMIOS4i+WNiDc6MDTlr6vpgZPvvJoKPgo+IEhpLAo+Cj4gT24gTW9uLCBKdW4gMDEsIDIwMjAg
-YXQgMDM6NTg6MjZQTSArMDgwMCwgSmlhbi1Ib25nIFBhbiB3cm90ZToKPiA+IE1heGltZSBSaXBh
-cmQgPG1heGltZUBjZXJuby50ZWNoPiDmlrwgMjAyMOW5tDXmnIgyOOaXpSDpgLHlm5sg5LiL5Y2I
-MzozMOWvq+mBk++8mgo+ID4gPgo+ID4gPiBIaSBEYW5pZWwsCj4gPiA+Cj4gPiA+IE9uIFdlZCwg
-TWF5IDI3LCAyMDIwIGF0IDA1OjE1OjEyUE0gKzA4MDAsIERhbmllbCBEcmFrZSB3cm90ZToKPiA+
-ID4gPiBPbiBXZWQsIE1heSAyNywgMjAyMCBhdCA1OjEzIFBNIE1heGltZSBSaXBhcmQgPG1heGlt
-ZUBjZXJuby50ZWNoPiB3cm90ZToKPiA+ID4gPiA+IEknbSBhYm91dCB0byBzZW5kIGEgdjMgdG9k
-YXkgb3IgdG9tb3Jyb3csIEkgY2FuIENjIHlvdSAoYW5kIEppYW4tSG9uZykgaWYgeW91Cj4gPiA+
-ID4gPiB3YW50Lgo+ID4gPiA+Cj4gPiA+ID4gVGhhdCB3b3VsZCBiZSBncmVhdCwgYWx0aG91Z2gg
-Z2l2ZW4gdGhlIHBvdGVudGlhbGx5IGluY29uc2lzdGVudAo+ID4gPiA+IHJlc3VsdHMgd2UndmUg
-YmVlbiBzZWVpbmcgc28gZmFyIGl0IHdvdWxkIGJlIGdyZWF0IGlmIHlvdSBjb3VsZAo+ID4gPiA+
-IGFkZGl0aW9uYWxseSBwdXNoIGEgZ2l0IGJyYW5jaCBzb21ld2hlcmUuCj4gPiA+ID4gVGhhdCB3
-YXkgd2UgY2FuIGhhdmUgaGlnaGVyIGNvbmZpZGVuY2UgdGhhdCB3ZSBhcmUgYXBwbHlpbmcgZXhh
-Y3RseQo+ID4gPiA+IHRoZSBzYW1lIHBhdGNoZXMgdG8gdGhlIHNhbWUgYmFzZSBldGMuCj4gPiA+
-Cj4gPiA+IFNvIEkgc2VudCBhIG5ldyBpdGVyYXRpb24geWVzdGVyZGF5LCBhbmQgb2YgY291cnNl
-IGZvcmdvdCB0byBjYyB5b3UuLi4gU29ycnkgZm9yCj4gPiA+IHRoYXQuCj4gPiA+Cj4gPiA+IEkn
-dmUgcHVzaGVkIG15IGN1cnJlbnQgYnJhbmNoIGhlcmU6Cj4gPiA+IGh0dHBzOi8vZ2l0Lmtlcm5l
-bC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L21yaXBhcmQvbGludXguZ2l0L2xvZy8/aD1y
-cGk0LWttcwo+ID4KPiA+IFRoYW5rcyB0byBNYXhpbWUhCj4gPgo+ID4gSSBoYXZlIHRyaWVkIHlv
-dXIgcmVwb3NpdG9yeSBvbiBicmFuY2ggcnBpNC1rbXMuICBUaGUgRFJNIFZDNCBpcyB1c2VkIQo+
-ID4gQnV0IGdvdCBzb21lIGlzc3VlczoKPiA+IDEuIFNvbWUgd2VpcmQgZXJyb3IgbWVzc2FnZSBp
-biBkbWVzZy4gIE5vdCBzdXJlIGl0IGlzIHJlbGF0ZWQsIG9yIG5vdAo+ID4gWyAgICA1LjIxOTMy
-MV0gW2RybTp2YzVfaGRtaV9pbml0X3Jlc291cmNlc10gKkVSUk9SKiBGYWlsZWQgdG8gZ2V0Cj4g
-PiBIRE1JIHN0YXRlIG1hY2hpbmUgY2xvY2sKPiA+IGh0dHBzOi8vZ2lzdC5naXRodWIuY29tL3N0
-YXJuaWdodC8zZjMxN2RjYTEyMTA2NWEzNjFjZjA4ZTkxMjI1ZTM4OQo+Cj4gVGhhdCdzIGEgZGVm
-ZXJyZWQgcHJvYmluZy4gVGhlIGZpcnN0IHRpbWUgdGhlIEhETUkgZHJpdmVyIGlzIGJlaW5nCj4g
-cHJvYmVkLCB0aGUgZmlybXdhcmUgY2xvY2sgZHJpdmVyIGhhcyBub3QgYmVlbiBwcm9iZWQgeWV0
-LiBJdCdzIG1ha2luZwo+IGFub3RoZXIgYXR0ZW1wdCBsYXRlciBvbiwgd2hpY2ggc3VjY2VlZHMu
-Cj4KPiA+IDIuIFRoZSBzY3JlZW4gZmxhc2hlcyBzdWRkZW5seSBzb21ldGltZXMuCgpJIGFwcGVu
-ZCBkcm0uZGVidWc9MHgzIHRvIGJvb3QgY29tbWFuZC4gIFdoZW5ldmVyLCB0aGUgc2NyZWVuIGZs
-YXNoZXMsCkkgbm90aWNlIHRoZSBsb2dzIGxpa2UgdGhpczoKCkp1biAwMSAxNToyMjo0MCBlbmRs
-ZXNzIGtlcm5lbDogW2RybTpkcm1fY2FsY190aW1lc3RhbXBpbmdfY29uc3RhbnRzXQpjcnRjIDY0
-OiBod21vZGU6IGh0b3RhbCAyMjAwLCB2dG90YWwgMTEyNSwgdmRpc3BsYXkgMTA4MApKdW4gMDEg
-MTU6MjI6NDAgZW5kbGVzcyBrZXJuZWw6IFtkcm06ZHJtX2NhbGNfdGltZXN0YW1waW5nX2NvbnN0
-YW50c10KY3J0YyA2NDogY2xvY2sgMTQ4NTAwIGtIeiBmcmFtZWR1ciAxNjY2NjY2NiBsaW5lZHVy
-IDE0ODE0Ckp1biAwMSAxNToyMjo0MCBlbmRsZXNzIGtlcm5lbDogW2RybTpkcm1fdmJsYW5rX2Vu
-YWJsZV0gZW5hYmxpbmcKdmJsYW5rIG9uIGNydGMgMywgcmV0OiAwCkp1biAwMSAxNToyMjo0MCBl
-bmRsZXNzIGtlcm5lbDogW2RybTpkcm1fbW9kZV9vYmplY3RfcHV0LnBhcnQuMF0gT0JKIElEOiAx
-NTkgKDIpCkp1biAwMSAxNToyMjo0MCBlbmRsZXNzIGtlcm5lbDogW2RybTpkcm1fbW9kZV9vYmpl
-Y3RfcHV0LnBhcnQuMF0gT0JKIElEOiAxNTQgKDEpCkp1biAwMSAxNToyMjo0MCBlbmRsZXNzIGtl
-cm5lbDogW2RybTp2YmxhbmtfZGlzYWJsZV9mbl0gZGlzYWJsaW5nCnZibGFuayBvbiBjcnRjIDMK
-SnVuIDAxIDE1OjIyOjQyIGVuZGxlc3Mga2VybmVsOiBbZHJtOmRybV9pb2N0bF0gcGlkPTU4NCwg
-ZGV2PTB4ZTIwMCwKYXV0aD0xLCBEUk1fSU9DVExfTU9ERV9DVVJTT1IKSnVuIDAxIDE1OjIyOjQy
-IGVuZGxlc3Mga2VybmVsOiBbZHJtOmRybV9pb2N0bF0gcGlkPTU4NCwgZGV2PTB4ZTIwMCwKYXV0
-aD0xLCBEUk1fSU9DVExfTU9ERV9DVVJTT1IyCkp1biAwMSAxNToyMjo0MiBlbmRsZXNzIGtlcm5l
-bDogW2RybTpkcm1fbW9kZV9vYmplY3RfZ2V0XSBPQkogSUQ6IDE1OSAoMSkKSnVuIDAxIDE1OjIy
-OjQyIGVuZGxlc3Mga2VybmVsOiBbZHJtOmRybV9tb2RlX29iamVjdF9nZXRdIE9CSiBJRDogMTU0
-ICgxKQpKdW4gMDEgMTU6MjI6NDIgZW5kbGVzcyBrZXJuZWw6IFtkcm06ZHJtX2NhbGNfdGltZXN0
-YW1waW5nX2NvbnN0YW50c10KY3J0YyA2NDogaHdtb2RlOiBodG90YWwgMjIwMCwgdnRvdGFsIDEx
-MjUsIHZkaXNwbGF5IDEwODAKSnVuIDAxIDE1OjIyOjQyIGVuZGxlc3Mga2VybmVsOiBbZHJtOmRy
-bV9jYWxjX3RpbWVzdGFtcGluZ19jb25zdGFudHNdCmNydGMgNjQ6IGNsb2NrIDE0ODUwMCBrSHog
-ZnJhbWVkdXIgMTY2NjY2NjYgbGluZWR1ciAxNDgxNApKdW4gMDEgMTU6MjI6NDIgZW5kbGVzcyBr
-ZXJuZWw6IFtkcm06ZHJtX3ZibGFua19lbmFibGVdIGVuYWJsaW5nCnZibGFuayBvbiBjcnRjIDMs
-IHJldDogMApKdW4gMDEgMTU6MjI6NDIgZW5kbGVzcyBrZXJuZWw6IFtkcm06ZHJtX21vZGVfb2Jq
-ZWN0X3B1dC5wYXJ0LjBdIE9CSiBJRDogMTU5ICgyKQpKdW4gMDEgMTU6MjI6NDIgZW5kbGVzcyBr
-ZXJuZWw6IFtkcm06ZHJtX21vZGVfb2JqZWN0X3B1dC5wYXJ0LjBdIE9CSiBJRDogMTU0ICgyKQoK
-SGVyZSBpcyB0aGUgZnVsbCBsb2cKaHR0cHM6Ly9naXN0LmdpdGh1Yi5jb20vc3Rhcm5pZ2h0Lzg1
-ZDY0MTgxOTgzOWVkZGM3YTU1Y2E3MTczOTkwYTU2Cgo+ID4gMy4gVGhlIGhpZ2hlciByZXNvbHV0
-aW9ucywgbGlrZSAxOTIweDEwODAgLi4uIGFyZSBsb3N0IGFmdGVyIGhvdAo+ID4gcmUtcGx1ZyBI
-RE1JIGNhYmxlIChIRE1JMCkKCkkgc2hvdWxkIGV4cGxhaW4gdGhpcyBpbiBtb3JlIGRldGFpbC4g
-IEhlcmUgYXJlIHRoZSBzdGVwcyB0byByZXByb2R1Y2UKdGhpcyBpc3N1ZToKMS4gQmVmb3JlIHVu
-cGx1ZyB0aGUgSERNSSBjYWJsZSBmcm9tIEhETUkwIHBvcnQuCiQgeHJhbmRyClNjcmVlbiAwOiBt
-aW5pbXVtIDMyMCB4IDIwMCwgY3VycmVudCAxOTIwIHggMTA4MCwgbWF4aW11bSAyMDQ4IHggMjA0
-OApIRE1JLTEgY29ubmVjdGVkIHByaW1hcnkgMTkyMHgxMDgwKzArMCAobm9ybWFsIGxlZnQgaW52
-ZXJ0ZWQgcmlnaHQgeApheGlzIHkgYXhpcykgNTIxbW0geCAyOTNtbQogICAxOTIweDEwODAgICAg
-IDYwLjAwKisgIDUwLjAwICAgIDU5Ljk0CiAgIDE5MjB4MTA4MGkgICAgNjAuMDAgICAgNTAuMDAg
-ICAgNTkuOTQKICAgMTY4MHgxMDUwICAgICA1OS44OAogICAxMjgweDEwMjQgICAgIDc1LjAyICAg
-IDYwLjAyCiAgIDE0NDB4OTAwICAgICAgNTkuOTAKICAgMTI4MHg5NjAgICAgICA2MC4wMAogICAx
-MTUyeDg2NCAgICAgIDc1LjAwCiAgIDEyODB4NzIwICAgICAgNjAuMDAgICAgNTAuMDAgICAgNTku
-OTQKICAgMTQ0MHg1NzYgICAgICA1MC4wMAogICAxMDI0eDc2OCAgICAgIDc1LjAzICAgIDcwLjA3
-ICAgIDYwLjAwCiAgIDE0NDB4NDgwICAgICAgNjAuMDAgICAgNTkuOTQKICAgODMyeDYyNCAgICAg
-ICA3NC41NQogICA4MDB4NjAwICAgICAgIDcyLjE5ICAgIDc1LjAwICAgIDYwLjMyICAgIDU2LjI1
-CiAgIDcyMHg1NzYgICAgICAgNTAuMDAKICAgNzIweDQ4MCAgICAgICA2MC4wMCAgICA1OS45NAog
-ICA2NDB4NDgwICAgICAgIDc1LjAwICAgIDcyLjgxICAgIDY2LjY3ICAgIDYwLjAwICAgIDU5Ljk0
-CiAgIDcyMHg0MDAgICAgICAgNzAuMDgKSERNSS0yIGRpc2Nvbm5lY3RlZCAobm9ybWFsIGxlZnQg
-aW52ZXJ0ZWQgcmlnaHQgeCBheGlzIHkgYXhpcykKCjIuIFVucGx1ZyB0aGUgSERNSSBjYWJsZSBm
-cm9tIEhETUkwIHBvcnQuCjMuIFBsdWcgdGhlIEhETUkgY2FibGUgdG8gKipIRE1JMSoqIHBvcnQu
-CiQgeHJhbmRyClNjcmVlbiAwOiBtaW5pbXVtIDMyMCB4IDIwMCwgY3VycmVudCAxOTIwIHggMTA4
-MCwgbWF4aW11bSAyMDQ4IHggMjA0OApIRE1JLTEgZGlzY29ubmVjdGVkIChub3JtYWwgbGVmdCBp
-bnZlcnRlZCByaWdodCB4IGF4aXMgeSBheGlzKQpIRE1JLTIgY29ubmVjdGVkIHByaW1hcnkgMTky
-MHgxMDgwKzArMCAobm9ybWFsIGxlZnQgaW52ZXJ0ZWQgcmlnaHQgeApheGlzIHkgYXhpcykgNTIx
-bW0geCAyOTNtbQogICAxOTIweDEwODAgICAgIDYwLjAwKisgIDUwLjAwICAgIDU5Ljk0CiAgIDE5
-MjB4MTA4MGkgICAgNjAuMDAgICAgNTAuMDAgICAgNTkuOTQKICAgMTY4MHgxMDUwICAgICA1OS44
-OAogICAxMjgweDEwMjQgICAgIDc1LjAyICAgIDYwLjAyCiAgIDE0NDB4OTAwICAgICAgNTkuOTAK
-ICAgMTI4MHg5NjAgICAgICA2MC4wMAogICAxMTUyeDg2NCAgICAgIDc1LjAwCiAgIDEyODB4NzIw
-ICAgICAgNjAuMDAgICAgNTAuMDAgICAgNTkuOTQKICAgMTQ0MHg1NzYgICAgICA1MC4wMAogICAx
-MDI0eDc2OCAgICAgIDc1LjAzICAgIDcwLjA3ICAgIDYwLjAwCiAgIDE0NDB4NDgwICAgICAgNjAu
-MDAgICAgNTkuOTQKICAgODMyeDYyNCAgICAgICA3NC41NQogICA4MDB4NjAwICAgICAgIDcyLjE5
-ICAgIDc1LjAwICAgIDYwLjMyICAgIDU2LjI1CiAgIDcyMHg1NzYgICAgICAgNTAuMDAKICAgNzIw
-eDQ4MCAgICAgICA2MC4wMCAgICA1OS45NAogICA2NDB4NDgwICAgICAgIDc1LjAwICAgIDcyLjgx
-ICAgIDY2LjY3ICAgIDYwLjAwICAgIDU5Ljk0CiAgIDcyMHg0MDAgICAgICAgNzAuMDgKCjQuIFVu
-cGx1ZyB0aGUgSERNSSBjYWJsZSBmcm9tICoqSERNSTEqKiBwb3J0Lgo1LiBQbHVnIHRoZSBIRE1J
-IGNhYmxlIGJhY2sgdG8gSERNSTAgcG9ydC4KJCB4cmFuZHIKU2NyZWVuIDA6IG1pbmltdW0gMzIw
-IHggMjAwLCBjdXJyZW50IDEzNjggeCA3NjgsIG1heGltdW0gMjA0OCB4IDIwNDgKSERNSS0xIGNv
-bm5lY3RlZCBwcmltYXJ5IDEzNjh4NzY4KzArMCAobm9ybWFsIGxlZnQgaW52ZXJ0ZWQgcmlnaHQg
-eApheGlzIHkgYXhpcykgMG1tIHggMG1tCiAgIDEzNjh4NzY4ICAgICAgNTkuODgqCiAgIDEzNjB4
-NzY4ICAgICAgNTkuODAKICAgMTI4MHg4MDAgICAgICA1OS44MQogICAxMTUyeDg2NCAgICAgIDYw
-LjAwCiAgIDEyODB4NzIwICAgICAgNTkuODYKICAgMTAyNHg3NjggICAgICA2MC4wMAogICAxMDI0
-eDU3NiAgICAgIDU5LjkwCiAgIDk2MHg1NDAgICAgICAgNTkuNjMKICAgODAweDYwMCAgICAgICA2
-MC4zMgogICA4MDB4NDUwICAgICAgIDU5LjgyCiAgIDcwMHg0NTAgICAgICAgNTkuODgKICAgNjQw
-eDQ4MCAgICAgICA1OS45NAogICA2ODR4Mzg0ICAgICAgIDU5Ljg4ICAgIDU5Ljg1CiAgIDY4MHgz
-ODQgICAgICAgNTkuODAgICAgNTkuOTYKICAgNjQweDQwMCAgICAgICA1OS44OCAgICA1OS45OAog
-ICA1NzZ4NDMyICAgICAgIDYwLjA2CiAgIDY0MHgzNjAgICAgICAgNTkuODYgICAgNTkuODMKICAg
-NTEyeDM4NCAgICAgICA2MC4wMAogICA1MTJ4Mjg4ICAgICAgIDYwLjAwICAgIDU5LjkyCiAgIDQ4
-MHgyNzAgICAgICAgNTkuNjMgICAgNTkuODIKICAgNDAweDMwMCAgICAgICA2MC4zMgogICAzMjB4
-MjQwICAgICAgIDYwLjA1CkhETUktMiBkaXNjb25uZWN0ZWQgKG5vcm1hbCBsZWZ0IGludmVydGVk
-IHJpZ2h0IHggYXhpcyB5IGF4aXMpCgpKaWFuLUhvbmcgUGFuCgo+IEknbSBub3Qgc3VyZSBvbiBo
-b3cgdG8gZXhhY3RseSByZXByb2R1Y2UgdGhvc2UgaXNzdWVzIChvciB3aGF0IHRoZXkgYXJlKQo+
-IHRob3VnaCwgY2FuIHlvdSBleHBhbmQgb24gdGhpcz8KPgo+IE1heGltZQoKX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
-aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
-cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+--===============6912648187180028447==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-mEv3c87MBb44GSiC5RXV"
+
+
+--=-mEv3c87MBb44GSiC5RXV
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Florian,
+Thanks for taking over this!
+
+On Thu, 2020-06-04 at 14:28 -0700, Florian Fainelli wrote:
+> The 4 SPI controller instances added in BCM2711 and BCM7211 SoCs (SPI3,
+> SPI4, SPI5 and SPI6) share the same interrupt line with SPI0.
+
+I think this isn't 100% correct. SPI0 has its own interrupt, but SPI[3-6] s=
+hare
+the same interrupt.
+
+> For the BCM2835 case which is deemed performance critical, we would like
+> to continue using an interrupt handler which does not have the extra
+> comparison on BCM2835_SPI_CS_INTR.
+>=20
+> To support that requirement the common interrupt handling code between
+> the shared and non-shared interrupt paths is split into a
+> bcm2835_spi_interrupt_common() and both bcm2835_spi_interrupt() as well
+> as bcm2835_spi_shared_interrupt() make use of it.
+>=20
+> During probe, we determine if there is at least another instance of this
+> SPI controller, and if there is, then we install a shared interrupt
+> handler.
+
+As there was pushback to use a different compatible string for an otherwise
+identical IP, I think it's a good compromise.
+
+>=20
+> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+> ---
+> Changes in v2:
+>=20
+> - identify other available SPI nodes to determine if we need to set-up
+>   interrupt sharing. This needs to happen for the very first instance
+>   since we cannot know for the first instance whether interrupt sharing
+>   is needed or not.
+>=20
+>  drivers/spi/spi-bcm2835.c | 61 ++++++++++++++++++++++++++++++++-------
+>  1 file changed, 50 insertions(+), 11 deletions(-)
+>=20
+> diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
+> index 237bd306c268..0288b5b3de1e 100644
+> --- a/drivers/spi/spi-bcm2835.c
+> +++ b/drivers/spi/spi-bcm2835.c
+> @@ -361,11 +361,10 @@ static void bcm2835_spi_reset_hw(struct spi_control=
+ler
+> *ctlr)
+>  	bcm2835_wr(bs, BCM2835_SPI_DLEN, 0);
+>  }
+> =20
+> -static irqreturn_t bcm2835_spi_interrupt(int irq, void *dev_id)
+> +static inline irqreturn_t bcm2835_spi_interrupt_common(struct spi_contro=
+ller
+> *ctlr,
+> +						       u32 cs)
+
+Keep in mind the new 100 character limit.
+
+>  {
+> -	struct spi_controller *ctlr =3D dev_id;
+>  	struct bcm2835_spi *bs =3D spi_controller_get_devdata(ctlr);
+> -	u32 cs =3D bcm2835_rd(bs, BCM2835_SPI_CS);
+> =20
+>  	/*
+>  	 * An interrupt is signaled either if DONE is set (TX FIFO empty)
+> @@ -394,6 +393,27 @@ static irqreturn_t bcm2835_spi_interrupt(int irq, vo=
+id
+> *dev_id)
+>  	return IRQ_HANDLED;
+>  }
+> =20
+> +static irqreturn_t bcm2835_spi_interrupt(int irq, void *dev_id)
+> +{
+> +	struct spi_controller *ctlr =3D dev_id;
+> +	struct bcm2835_spi *bs =3D spi_controller_get_devdata(ctlr);
+> +	u32 cs =3D bcm2835_rd(bs, BCM2835_SPI_CS);
+> +
+> +	return bcm2835_spi_interrupt_common(ctlr, cs);
+> +}
+> +
+> +static irqreturn_t bcm2835_spi_shared_interrupt(int irq, void *dev_id)
+> +{
+> +	struct spi_controller *ctlr =3D dev_id;
+> +	struct bcm2835_spi *bs =3D spi_controller_get_devdata(ctlr);
+> +	u32 cs =3D bcm2835_rd(bs, BCM2835_SPI_CS);
+> +
+> +	if (!(cs & BCM2835_SPI_CS_INTR))
+> +		return IRQ_NONE;
+> +
+> +	return bcm2835_spi_interrupt_common(ctlr, cs);
+> +}
+> +
+>  static int bcm2835_spi_transfer_one_irq(struct spi_controller *ctlr,
+>  					struct spi_device *spi,
+>  					struct spi_transfer *tfr,
+> @@ -1287,12 +1307,37 @@ static int bcm2835_spi_setup(struct spi_device *s=
+pi)
+>  	return 0;
+>  }
+> =20
+> +static const struct of_device_id bcm2835_spi_match[] =3D {
+> +	{ .compatible =3D "brcm,bcm2835-spi", },
+> +	{}
+> +};
+> +MODULE_DEVICE_TABLE(of, bcm2835_spi_match);
+> +
+>  static int bcm2835_spi_probe(struct platform_device *pdev)
+>  {
+> +	irq_handler_t bcm2835_spi_isr_func =3D bcm2835_spi_interrupt;
+>  	struct spi_controller *ctlr;
+> +	unsigned long flags =3D 0;
+> +	struct device_node *dn;
+>  	struct bcm2835_spi *bs;
+>  	int err;
+> =20
+> +	/* On BCM2711 there can be multiple SPI controllers enabled sharing the
+> +	 * same interrupt line, but we also want to minimize the overhead if
+> +	 * there is no need to support interrupt sharing. If we find at least
+> +	 * another available instane (not counting the one we are probed from),
+
+"instance"
+
+> +	 * then we assume that interrupt sharing is necessary.
+> +	 */
+> +	for_each_compatible_node(dn, NULL, bcm2835_spi_match[0].compatible) {
+> +		err =3D of_device_is_available(dn) && dn !=3D pdev->dev.of_node;
+
+nit: maybe err is not the ideal variable name here.
+
+> +		of_node_put(dn);
+> +		if (err) {
+> +			flags =3D IRQF_SHARED;
+> +			bcm2835_spi_isr_func =3D bcm2835_spi_shared_interrupt;
+> +			break;
+> +		}
+> +	}
+> +
+>  	ctlr =3D spi_alloc_master(&pdev->dev, ALIGN(sizeof(*bs),
+>  						  dma_get_cache_alignment()));
+>  	if (!ctlr)
+> @@ -1344,8 +1389,8 @@ static int bcm2835_spi_probe(struct platform_device
+> *pdev)
+>  	bcm2835_wr(bs, BCM2835_SPI_CS,
+>  		   BCM2835_SPI_CS_CLEAR_RX | BCM2835_SPI_CS_CLEAR_TX);
+> =20
+> -	err =3D devm_request_irq(&pdev->dev, bs->irq, bcm2835_spi_interrupt, 0,
+> -			       dev_name(&pdev->dev), ctlr);
+> +	err =3D devm_request_irq(&pdev->dev, bs->irq, bcm2835_spi_isr_func,
+> +			       flags, dev_name(&pdev->dev), ctlr);
+>  	if (err) {
+>  		dev_err(&pdev->dev, "could not request IRQ: %d\n", err);
+>  		goto out_dma_release;
+> @@ -1400,12 +1445,6 @@ static void bcm2835_spi_shutdown(struct platform_d=
+evice
+> *pdev)
+>  		dev_err(&pdev->dev, "failed to shutdown\n");
+>  }
+> =20
+> -static const struct of_device_id bcm2835_spi_match[] =3D {
+> -	{ .compatible =3D "brcm,bcm2835-spi", },
+> -	{}
+> -};
+> -MODULE_DEVICE_TABLE(of, bcm2835_spi_match);
+> -
+>  static struct platform_driver bcm2835_spi_driver =3D {
+>  	.driver		=3D {
+>  		.name		=3D DRV_NAME,
+
+
+--=-mEv3c87MBb44GSiC5RXV
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7aBoIACgkQlfZmHno8
+x/76iQf/YhcuGS7sdr9nlK7KZasWwzVQMm4sUpwC4aTP2ok0f8XY2omANTcOMXPi
+boV38p9L8EZnRCGxPJH5gcd+P+mzq7E36L0CmhXh0llna9Y0PCDNRiAun7xax26+
+AdZ5CP5pxseRYL/hvDKGiErbDAaygtPFdxvo9u034SYQyQTnP5J8YxjTX0V0TTVz
+NWPslb+n33JCLVrkFhoIsxr2sgW/dFJTaZ3V1/Bzj5Lktz4dw16ro4tCX86I4ltO
+NlvwGVykL6qjn+j0dOvnx6JvHoI5ScPqzkCDXDwQJekTzitTIdiaD2e70AZZ1B+q
+S0WCbZgciVz5xKBJn1sx5kPtsVZwng==
+=mzr5
+-----END PGP SIGNATURE-----
+
+--=-mEv3c87MBb44GSiC5RXV--
+
+
+
+--===============6912648187180028447==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6912648187180028447==--
+
+
