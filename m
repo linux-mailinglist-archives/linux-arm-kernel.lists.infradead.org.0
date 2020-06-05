@@ -2,61 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 582D11EF0C1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 06:57:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9B091EF0DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 07:24:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z9xDxyN70ExM7cEcrAZEhiQXUgcc8bC4ALRpE/+pbfk=; b=jmXmCyHCfPT6YI
-	zNaip1wFmO0qrpYEHflqXs9A1wUw95/vDHVAl8AozmqcT8xZ142sWM06TVIRPMeqkpbW/tMRjKOAb
-	Po0OHxY1du5d8HOeYSTWBPpWDBFVLkmBnmezkIWyZ8Mcvnyx+DJFtATs7a42NT6cHEbe/E4/DC/zp
-	h2d32loe73PCAfaerl6ZZ24E9TyZ330SQXi7t0k56+W0naeS8GtgOO3DWZu7YlqEeOx1YiVdZs4yG
-	FSl1ttmde540pXL3pOOaNXiD5W9+OGAw4Z/GBUUeFm0JkhUZBmeFvEtaHuEdFNN7geXectLkFOsRR
-	lcUXhpYG2aMbQ46hcTvQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=J6JyDEsOrFDOzh3g/oNmzRRm0HD8KSUMhuELdibrfAQ=; b=jXa9emXVBFrwM2
+	vzs2HWwsQEHs+yutQbaGCC+SNh6bvF1EvAqoPXRPG7UMdqATJwHowffIHhLbhrVRFZ1D29Q3Gjw8u
+	NtG7d8l1mXx/fEicOocLLb13rwr9ebn+m6YZ066DstSRpsIJaskWaFoBkDQ1LYaIYGNINyYoGyRSJ
+	6HOTJVX1Xe1h+du8mtmExFTmhwPNf/MqzNn0OfSH7SmxBiu3nEcZU0qD0G4qBtpIE0lxKlq22ThKd
+	t/8Bqj/ON2pGP926VnsE7+CHAN2A+A6KKzc2z9/gnPKyNu6l96kP7zbDKKDlj4cwB1rnePO+yg7QE
+	5iT2G0kkHYvtxxLJ9pgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh4Pe-0002kA-Cz; Fri, 05 Jun 2020 04:57:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh4PV-0002jC-Nv
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 04:56:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 00B832B;
- Thu,  4 Jun 2020 21:56:51 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.7])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 65DA43F6CF;
- Thu,  4 Jun 2020 21:56:48 -0700 (PDT)
-Date: Fri, 5 Jun 2020 05:56:45 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jassi Brar <jassisinghbrar@gmail.com>
-Subject: Re: [RFC] dt-bindings: mailbox: add doorbell support to ARM MHU
-Message-ID: <20200605045645.GD12397@bogus>
-References: <0a50f0cf5593baeb628dc8606c523665e5e2ae6c.1589519600.git.viresh.kumar@linaro.org>
- <20200528192005.GA494874@bogus>
- <20200529040758.kneg2j4n3gxh2rfv@vireshk-i7>
- <20200603180435.GB23722@bogus>
- <CABb+yY0cW1GZHVmwEr19JRdJTmsAxw9uq83QV_aq-tdPJO5_Fg@mail.gmail.com>
- <20200604092052.GD8814@bogus>
- <CABb+yY27Ngb0C-onkU2qyt=uKgG4iVrcv8hGkC+anypQbTRA1w@mail.gmail.com>
+	id 1jh4qB-0008V0-NC; Fri, 05 Jun 2020 05:24:27 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jh4q2-0008TK-Fv
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 05:24:20 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 440F65EA5DFB85F80713;
+ Fri,  5 Jun 2020 13:24:01 +0800 (CST)
+Received: from DESKTOP-8RFUVS3.china.huawei.com (10.173.222.27) by
+ DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
+ 14.3.487.0; Fri, 5 Jun 2020 13:23:51 +0800
+From: Zenghui Yu <yuzenghui@huawei.com>
+To: <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <kvmarm@lists.cs.columbia.edu>
+Subject: [PATCH] irqchip/gic-v4.1: Use readx_poll_timeout_atomic() to fix
+ sleep in atomic
+Date: Fri, 5 Jun 2020 13:23:45 +0800
+Message-ID: <20200605052345.1494-1-yuzenghui@huawei.com>
+X-Mailer: git-send-email 2.23.0.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABb+yY27Ngb0C-onkU2qyt=uKgG4iVrcv8hGkC+anypQbTRA1w@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_215653_864215_DE4E7A27 
-X-CRM114-Status: GOOD (  25.58  )
+X-CRM114-CacheID: sfid-20200604_222418_699205_D8DC97BD 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.32 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,109 +67,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Devicetree List <devicetree@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: jason@lakedaemon.net, maz@kernel.org, wangjingyi11@huawei.com,
+ Zenghui Yu <yuzenghui@huawei.com>, wanghaibin.wang@huawei.com,
+ tglx@linutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Jun 04, 2020 at 10:15:55AM -0500, Jassi Brar wrote:
-> On Thu, Jun 4, 2020 at 4:20 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > On Wed, Jun 03, 2020 at 01:32:42PM -0500, Jassi Brar wrote:
-> > > On Wed, Jun 3, 2020 at 1:04 PM Sudeep Holla <sudeep.holla@arm.com> wrote:
-> > > >
-> > > > On Fri, May 29, 2020 at 09:37:58AM +0530, Viresh Kumar wrote:
-> > > > > On 28-05-20, 13:20, Rob Herring wrote:
-> > > > > > Whether Linux
-> > > > > > requires serializing mailbox accesses is a separate issue. On that side,
-> > > > > > it seems silly to not allow driving the h/w in the most efficient way
-> > > > > > possible.
-> > > > >
-> > > > > That's exactly what we are trying to say. The hardware allows us to
-> > > > > write all 32 bits in parallel, without any hardware issues, why
-> > > > > shouldn't we do that ? The delay (which Sudeep will find out, he is
-> > > > > facing issues with hardware access because of lockdown right now)
-> > > >
-> > > > OK, I was able to access the setup today. I couldn't reach a point
-> > > > where I can do measurements as the system just became unusable with
-> > > > one physical channel instead of 2 virtual channels as in my patches.
-> > > >
-> > > > My test was simple. Switch to schedutil and read sensors periodically
-> > > > via sysfs.
-> > > >
-> > > >  arm-scmi firmware:scmi: message for 1 is not expected!
-> > > >
-> > > This sounds like you are not serialising requests on a shared channel.
-> > > Can you please also share the patch?
-> >
-> > OK, I did try with a small patch initially and then realised we must hit
-> > issue with mainline as is. Tried and the behaviour is exact same. All
-> > I did is removed my patches and use bit[0] as the signal. It doesn't
-> > matter as writes to the register are now serialised. Oh, the above
-> > message comes when OS times out in advance while firmware continues to
-> > process the old request and respond.
-> >
-> > The trace I sent gives much better view of what's going on.
-> >
-> BTW, you didn't even share 'good' vs 'bad' log for me to actually see
-> if the api lacks.
->
-> Let us look closely ...
->
->  >>    bash-1019  [005]  1149.452340: scmi_xfer_begin:
-> transfer_id=1537 msg_id=7 protocol_id=19 seq=0 poll=1
->  >>    bash-1019  [005]  1149.452407: scmi_xfer_end:
-> transfer_id=1537 msg_id=7 protocol_id=19 seq=0 status=0
-> >
-> This round trip took  67usecs.  (log shows some at even 3usecs)
-> That includes mailbox api overhead, memcpy and the time taken by
-> remote to respond.
+readx_poll_timeout() can sleep if @sleep_us is specified by the caller,
+and is therefore unsafe to be used inside the atomic context, which is
+this case when we use it to poll the GICR_VPENDBASER.Dirty bit in
+irq_set_vcpu_affinity() callback.
 
-This is DVFS request which firmware acknowledges quickly and expected
-to at most 100us.
+Let's convert to its atomic version instead which helps to get the v4.1
+board back to life!
 
-> So the api is definitely capable of much faster transfers than you require.
->
+Fixes: 96806229ca03 ("irqchip/gic-v4.1: Add support for VPENDBASER's Dirty+Valid signaling")
+Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+---
+ drivers/irqchip/irq-gic-v3-its.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-I am not complaining about that. The delay is mostly due to the load on
-the mailbox and parallelising helps is the focus here.
+diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
+index cd685f521c77..6a5a87fc4601 100644
+--- a/drivers/irqchip/irq-gic-v3-its.c
++++ b/drivers/irqchip/irq-gic-v3-its.c
+@@ -3797,10 +3797,10 @@ static void its_wait_vpt_parse_complete(void)
+ 	if (!gic_rdists->has_vpend_valid_dirty)
+ 		return;
+ 
+-	WARN_ON_ONCE(readq_relaxed_poll_timeout(vlpi_base + GICR_VPENDBASER,
+-						val,
+-						!(val & GICR_VPENDBASER_Dirty),
+-						10, 500));
++	WARN_ON_ONCE(readq_relaxed_poll_timeout_atomic(vlpi_base + GICR_VPENDBASER,
++						       val,
++						       !(val & GICR_VPENDBASER_Dirty),
++						       10, 500));
+ }
+ 
+ static void its_vpe_schedule(struct its_vpe *vpe)
+-- 
+2.19.1
 
-> >>     bash-1526  [000]  1149.472553: scmi_xfer_begin:      transfer_id=1538 msg_id=6 protocol_id=21 seq=0 poll=0
-> >>      <idle>-0     [001]  1149.472733: scmi_xfer_begin:      transfer_id=1539 msg_id=7 protocol_id=19 seq=1 poll=1
-> >
-> Here another request is started before the first is finished.
-
-Ah, the prints are when the client requested. It is not when the mailbox
-started it. So this just indicates the beginning of the transfer from the
-client. I must have mentioned that earlier. Some request timeout before
-being picked up by mailbox if the previous request is not acknowledge
-quickly. E.g. Say a sensor command started which may take upto 1ms,
-almost 5-6 DVFS request after that will timeout.
-
-> If you want this to work you have to serialise access to the single
-> physical channel and/or run the remote firmware in asynchronous mode -
-> that is, the firmware ack the bit as soon as it sees and starts
-> working in the background, so that we return in ~3usec always, while
-> the data returns whenever it is ready.
-
-Yes it does that for few requests like DVFS while it uses synchronous
-mode for few others. While ideally I agree everything in asynchronous
-most is better, I don't know there may be reasons for such design. Also
-the solution given is to use different bits as independent channels
-which hardware allows. Anyways it's open source SCP project[1].
-
---
-Regards,
-Sudeep
-
-[1] https://github.com/ARM-software/SCP-firmware
 
 _______________________________________________
 linux-arm-kernel mailing list
