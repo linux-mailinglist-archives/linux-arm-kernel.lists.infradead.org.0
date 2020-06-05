@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6AF71EF4F3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 12:06:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B3C81EF4FB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 12:06:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oyHPg/mWoYHZTz/o/GbZAqX1UfSCXO3gMZIUnAP+iEM=; b=MZ3suc0hpnDLsa
-	1bXyGj7uWRfsiwAh/5zR2wjnc1WWbQEj4TeHGevSd7QIL9QJ4xzRrWAyFo/mM7kIQkuitHbKZl917
-	OjbyfDjQY5Kh4G3FxVG6z25Y9BDcwUN7p9iAmP/YzHNl68/lcR4hgpL/5js8dsIPg/yvoHOav9Sfh
-	hvZxBq28qk1j8u14yoiDC9rO0LRAMjfMPsdL/z/MygwCJ5Rc+NDI/VM9PKn+LtfUYv0KcpfQETDtL
-	MnEg70WOqnIgXo9Y9YFysmp8UsarexBB4ahUpP/NbhUI653YJnDZoQw0H9xg7gvYFrd0e63NCzh2y
-	zBwjh57xWKfqr4xBy6lw==;
+	List-Owner; bh=rFn5OzXNue3SloVNQPcsxpnTPJfSBlcWKfWAvgfWJJk=; b=IuThyIxR0Z8mEY
+	N2V5tmyMgs3jgvY95dSgjWU5Ug8FgUB/TJ7wADX/rHGtRKC1rwuJlPDvXD0h2+M4n3As9X76udFvP
+	gF/j0fEud2isFnpgHni1WY6Nd0ClKwJs0qe8QIKOnaazu61a3L+FUMMJZSvjV8gv4+YH0PlOqingd
+	acse1CL8Nd4Y9prEPqACfRH6lxF1bJ6ZPxTuCStcffcsg+BXHo08WfWOhu2MANbERJjDUf/qpkE2k
+	QxsSNvmDi5SnsbuFDNS6hKha4PPdDlQjo5cf67z5xB7CBZocqbw6aydnTf2b0iOzGKtA8YdHq+RZb
+	USrAI590bIKBF68RmP7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh9FE-0000T4-IR; Fri, 05 Jun 2020 10:06:36 +0000
+	id 1jh9FR-0000b2-Pj; Fri, 05 Jun 2020 10:06:49 +0000
 Received: from segapp02.wistron.com ([103.200.3.19] helo=segapp03.wistron.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh9F8-0000QG-5z
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 10:06:32 +0000
-Received: from EXCHAPP02.whq.wistron (unverified [10.37.38.25]) by 
+ id 1jh9FB-0000T3-Hd
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 10:06:35 +0000
+Received: from EXCHAPP04.whq.wistron (unverified [10.37.38.27]) by 
  TWNHUMSW4.wistron.com (Clearswift SMTPRS 5.6.0) with ESMTP id 
- <Tdf9212466fc0a816729a0@TWNHUMSW4.wistron.com>; Fri, 5 Jun 2020 
- 18:06:18 +0800
-Received: from EXCHAPP03.whq.wistron (10.37.38.26) by EXCHAPP02.whq.wistron 
- (10.37.38.25) with Microsoft SMTP Server 
+ <Tdf921276e5c0a816729a0@TWNHUMSW4.wistron.com>; Fri, 5 Jun 2020 
+ 18:06:30 +0800
+Received: from EXCHAPP03.whq.wistron (10.37.38.26) by EXCHAPP04.whq.wistron 
+ (10.37.38.27) with Microsoft SMTP Server 
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 
- 15.1.1913.5; Fri, 5 Jun 2020 18:06:17 +0800
+ 15.1.1913.5; Fri, 5 Jun 2020 18:06:29 +0800
 Received: from gitserver.wistron.com (10.37.38.233) by EXCHAPP03.whq.wistron 
  (10.37.38.26) with Microsoft SMTP Server id 15.1.1913.5 via Frontend
- Transport; Fri, 5 Jun 2020 18:06:17 +0800
+ Transport; Fri, 5 Jun 2020 18:06:29 +0800
 From: Ben Pai <Ben_Pai@wistron.com>
 To: <joel@jms.id.au>, <devicetree@vger.kernel.org>, 
  <linux-arm-kernel@lists.infradead.org>, 
  <linux-aspeed@lists.ozlabs.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH v1 1/2] ARM: dts: aspeed: mihawk: IO expander uses TCA9554
- driver
-Date: Fri, 5 Jun 2020 18:06:14 +0800
-Message-ID: <20200605100614.14726-1-Ben_Pai@wistron.com>
+Subject: [PATCH v1 2/2] ARM: dts: aspeed: mihawk: Add 8 tmp401 thermal sensor
+Date: Fri, 5 Jun 2020 18:06:28 +0800
+Message-ID: <20200605100628.14807-1-Ben_Pai@wistron.com>
 X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 046AADC4E7378F668BD1404E8B899BEBBB327568BE24F0CF5C33F311765E568B2000:8
+X-TM-SNTS-SMTP: DDB9BC0458D24F053680539219F4C8D39E075093F38EDD5C6560CD8C1B8894672000:8
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_030630_498027_433DE57E 
-X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-CacheID: sfid-20200605_030633_872640_9AA3C2CC 
+X-CRM114-Status: UNSURE (   5.80  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -75,177 +74,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Set smbus_en of IO expander to 1 in order to be able to read sensor.
-
 Signed-off-by: Ben Pai <Ben_Pai@wistron.com>
 ---
- arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts | 112 ++++++++++++++++++++
- 1 file changed, 112 insertions(+)
+ arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts | 40 +++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
 
 diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
-index eac6ed2bbc67..25ffe65fbdc0 100644
+index 25ffe65fbdc0..5bf1f13dda3b 100644
 --- a/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
 +++ b/arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
-@@ -820,12 +820,40 @@
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <0>;
+@@ -834,6 +834,11 @@
+ 					line-name = "smbus0";
+ 				};
+ 			};
 +
-+			tca9554@39 {
-+				compatible = "ti,tca9554";
-+				reg = <0x39>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+
-+				smbus0 {
-+					gpio-hog;
-+					gpios = <4 GPIO_ACTIVE_HIGH>;
-+					output-high;
-+					line-name = "smbus0";
-+				};
++			tmp431@4c {
++				compatible = "ti,tmp401";
++				reg = <0x4c>;
 +			};
  		};
  
  		bus9_mux232: i2c@1 {
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <1>;
+@@ -854,6 +859,11 @@
+ 					line-name = "smbus1";
+ 				};
+ 			};
 +
-+			tca9554@39 {
-+				compatible = "ti,tca9554";
-+				reg = <0x39>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+
-+				smbus1 {
-+					gpio-hog;
-+					gpios = <4 GPIO_ACTIVE_HIGH>;
-+					output-high;
-+					line-name = "smbus1";
-+				};
++			tmp431@4c {
++				compatible = "ti,tmp401";
++				reg = <0x4c>;
 +			};
  		};
  
  		bus9_mux233: i2c@2 {
-@@ -855,12 +883,40 @@
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <0>;
+@@ -897,6 +907,11 @@
+ 					line-name = "smbus2";
+ 				};
+ 			};
 +
-+			tca9554@39 {
-+				compatible = "ti,tca9554";
-+				reg = <0x39>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+
-+				smbus2 {
-+					gpio-hog;
-+					gpios = <4 GPIO_ACTIVE_HIGH>;
-+					output-high;
-+					line-name = "smbus2";
-+				};
++			tmp431@4c {
++				compatible = "ti,tmp401";
++				reg = <0x4c>;
 +			};
  		};
  
  		bus9_mux236: i2c@1 {
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <1>;
+@@ -917,6 +932,11 @@
+ 					line-name = "smbus3";
+ 				};
+ 			};
 +
-+			tca9554@39 {
-+				compatible = "ti,tca9554";
-+				reg = <0x39>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+
-+				smbus3 {
-+					gpio-hog;
-+					gpios = <4 GPIO_ACTIVE_HIGH>;
-+					output-high;
-+					line-name = "smbus3";
-+				};
++			tmp431@4c {
++				compatible = "ti,tmp401";
++				reg = <0x4c>;
 +			};
  		};
  
  		bus9_mux237: i2c@2 {
-@@ -909,12 +965,40 @@
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <0>;
+@@ -979,6 +999,11 @@
+ 					line-name = "smbus4";
+ 				};
+ 			};
 +
-+			tca9554@39 {
-+				compatible = "ti,tca9554";
-+				reg = <0x39>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+
-+				smbus4 {
-+					gpio-hog;
-+					gpios = <4 GPIO_ACTIVE_HIGH>;
-+					output-high;
-+					line-name = "smbus4";
-+				};
++			tmp431@4c {
++				compatible = "ti,tmp401";
++				reg = <0x4c>;
 +			};
  		};
  
  		bus10_mux240: i2c@1 {
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <1>;
+@@ -999,6 +1024,11 @@
+ 					line-name = "smbus5";
+ 				};
+ 			};
 +
-+			tca9554@39 {
-+				compatible = "ti,tca9554";
-+				reg = <0x39>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+
-+				smbus5 {
-+					gpio-hog;
-+					gpios = <4 GPIO_ACTIVE_HIGH>;
-+					output-high;
-+					line-name = "smbus5";
-+				};
++			tmp431@4c {
++				compatible = "ti,tmp401";
++				reg = <0x4c>;
 +			};
  		};
  
  		bus10_mux241: i2c@2 {
-@@ -944,12 +1028,40 @@
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <0>;
+@@ -1042,6 +1072,11 @@
+ 					line-name = "smbus6";
+ 				};
+ 			};
 +
-+			tca9554@39 {
-+				compatible = "ti,tca9554";
-+				reg = <0x39>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+
-+				smbus6 {
-+					gpio-hog;
-+					gpios = <4 GPIO_ACTIVE_HIGH>;
-+					output-high;
-+					line-name = "smbus6";
-+				};
++			tmp431@4c {
++				compatible = "ti,tmp401";
++				reg = <0x4c>;
 +			};
  		};
  
  		bus10_mux244: i2c@1 {
- 			#address-cells = <1>;
- 			#size-cells = <0>;
- 			reg = <1>;
+@@ -1062,6 +1097,11 @@
+ 					line-name = "smbus7";
+ 				};
+ 			};
 +
-+			tca9554@39 {
-+				compatible = "ti,tca9554";
-+				reg = <0x39>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+
-+				smbus7 {
-+					gpio-hog;
-+					gpios = <4 GPIO_ACTIVE_HIGH>;
-+					output-high;
-+					line-name = "smbus7";
-+				};
++			tmp431@4c {
++				compatible = "ti,tmp401";
++				reg = <0x4c>;
 +			};
  		};
  
