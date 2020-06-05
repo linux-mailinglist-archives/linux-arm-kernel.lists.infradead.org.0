@@ -2,53 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C4CF1F01B5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:29:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6A121F01AF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:28:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=i/NHXi0wxNjrO+cPC3Wi1QrDbshXEx3mBq4iZBECaXc=; b=kQb
-	6QCMJgTFxZLYYfn2uqoo/0+Iw3Jss7pcI5AAbRq9ILH5GMVy2ZmMb/HC6KZwyBh4tJs34q28euQ+d
-	PJIKkbE1fr/ku+y2EProj/1JFtGVmW/Nc89c1xaWIMHFx5Re60Y3OSnB4kuQaTIwkn7to/gmoBgv1
-	xIX0G4D2tsXXTGipZBk1GSkTV7IBzV5wZg+xqI7bXf57sllXdpOvspaYFnD8qcBjFXuSajWpnQjsQ
-	b7o4IS98usAWggYS0SuQxg9h+5kAXUXdNb2kgSQKG0kq6hwnhAFWsnSbJj8Y9P3j7A/cet3UrxlLY
-	AImNMTd30pzsPoCrKarjEYiB2YbU1jA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=jXZ8TpHyAPfBa4ZGtgT+1rbCqRynYsaPF6e0f43UinI=; b=RgWgX60aFEwT2eHiY/z5ZJl69x
+	VTmPzTSxRDF5XB8m4bqUguOgW6KiMZ0goDM9pTQOlfLoysPCANjBK00aWd/oyyY76dcA3rv34+TOL
+	NaA65KT87K9tOqiRt4fg6Qtt3HwGurtdru0Dd0YwSgN4Klg2pvESmm0dAbGomxsPVcYW9568PzbWY
+	/ObVSQrvr7l18G18Zk1iQD/q8hgbrRLNlb9BLtRw5HFkD2WOP2Zm5DI06IlDcsdfzvcDurRhB3i3C
+	aNCQcRL9e0RzVFAp4GJCePhD+PfoWUYo7V5nUaRZaMzPOv3MEjJ3627M2p6p03tLEAHLeanFeo1eA
+	tuQ8gRYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhJtc-0003qm-HW; Fri, 05 Jun 2020 21:29:00 +0000
+	id 1jhJsn-00034L-2k; Fri, 05 Jun 2020 21:28:09 +0000
 Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhJs5-0002j9-3c; Fri, 05 Jun 2020 21:27:28 +0000
+ id 1jhJs5-0002j8-3b; Fri, 05 Jun 2020 21:27:26 +0000
 Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
  [10.75.242.48])
- by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 6323F30D861;
- Fri,  5 Jun 2020 14:27:15 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 6323F30D861
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id D240E30CFDD;
+ Fri,  5 Jun 2020 14:27:19 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com D240E30CFDD
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
- s=dkimrelay; t=1591392435;
- bh=X1W5SBPglzGt+7ug7Z7PzaYs1FBERzpHlpxJDJ5NWW8=;
- h=From:To:Cc:Subject:Date:From;
- b=Yb7tCCTq3tEKqFK78fQleMf0F7oKo2GNKiGeJff4TJ8HjbO4U5hKMcBn5a/50b9QL
- ASYiSDzdEAdFQtERUZgBWiULuxpC0aChlTLqu6cf55XS6z7yAfcc69QKiYMK0Af9yd
- IC6UDRFn5YTpfAE57XQgz5wCaInS2sD8nKRoPv6w=
+ s=dkimrelay; t=1591392439;
+ bh=xHVmdwrtES336ZD/pMaNwdQn2MdfztoEcmaxMbZqWYc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=Uyub99dsEdwI3bm001CAosFYB7VHqYJSwTs3D9Bu3gDQfJu8N8cYpJ3qkkgz8Bsyd
+ TngJkLzHslJ6/JVUOaHS8/ekpLJv9hasoRE9DRKMkwgEOXGRgINEFqwjmxXotxeRD1
+ uguzld5lcIOMQ+9DRTE1FWX/5MBncshksix+j6Is=
 Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
  [10.28.16.211])
- by mail-irv-17.broadcom.com (Postfix) with ESMTP id C1CD7140069;
- Fri,  5 Jun 2020 14:27:11 -0700 (PDT)
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 4DB53140069;
+ Fri,  5 Jun 2020 14:27:18 -0700 (PDT)
 From: Jim Quinlan <james.quinlan@broadcom.com>
 To: linux-pci@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  bcm-kernel-feedback-list@broadcom.com, james.quinlan@broadcom.com
-Subject: [PATCH v4 00/12] PCI: brcmstb: enable PCIe for STB chips
-Date: Fri,  5 Jun 2020 17:26:40 -0400
-Message-Id: <20200605212706.7361-1-james.quinlan@broadcom.com>
+Subject: [PATCH v4 03/12] dt-bindings: PCI: Add bindings for more Brcmstb chips
+Date: Fri,  5 Jun 2020 17:26:43 -0400
+Message-Id: <20200605212706.7361-4-james.quinlan@broadcom.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200605212706.7361-1-james.quinlan@broadcom.com>
+References: <20200605212706.7361-1-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_142725_209329_5A13C31A 
-X-CRM114-Status: GOOD (  13.01  )
+X-CRM114-CacheID: sfid-20200605_142725_202617_46539B42 
+X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -77,182 +81,138 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, Oliver Neukum <oneukum@suse.com>,
- "open list:SUPERH" <linux-sh@vger.kernel.org>,
- "open list:REMOTE PROCESSOR REMOTEPROC SUBSYSTEM"
- <linux-remoteproc@vger.kernel.org>,
- "open list:DRM DRIVERS FOR ALLWINNER A10" <dri-devel@lists.freedesktop.org>,
- "open list:LIBATA SUBSYSTEM Serial and Parallel ATA drivers"
- <linux-ide@vger.kernel.org>, Julien Grall <julien.grall@arm.com>,
- "H. Peter Anvin" <hpa@zytor.com>,
- "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
- Rob Herring <robh@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Saravana Kannan <saravanak@google.com>,
- "Rafael J. Wysocki" <rafael.j.wysocki@intel.com>,
- "open list:ACPI FOR ARM64 ACPI/arm64" <linux-acpi@vger.kernel.org>,
- Alan Stern <stern@rowland.harvard.edu>,
- David Kershner <david.kershner@unisys.com>,
- "open list:ALLWINNER A10 CSI DRIVER" <linux-media@vger.kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE"
- <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Hans de Goede <hdegoede@redhat.com>,
- Mark Brown <broonie@kernel.org>,
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
  <linux-rpi-kernel@lists.infradead.org>,
- Dan Williams <dan.j.williams@intel.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- "moderated list:ARM PORT" <linux-arm-kernel@lists.infradead.org>,
- Jens Axboe <axboe@kernel.dk>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "open list:USB SUBSYSTEM" <linux-usb@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:IOMMU DRIVERS" <iommu@lists.linux-foundation.org>,
- Stefano Stabellini <sstabellini@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>
+ Jim Quinlan <james.quinlan@broadcom.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Jim Quinlan <jquinlan@broadcom.com>
 
-v4:
-  Commit "device core: Introduce multiple dma pfn offsets"
-  -- of_dma_get_range() does not take a dev param but instead
-     takes two "out" params: map and map_size.  We do this so
-     that the code that parses dma-ranges is separate from
-     the code that modifies 'dev'.   (Nicolas)
-  -- the separate case of having a single pfn offset has
-     been removed and is now processed by going through the
-     map array. (Nicolas)
-  -- move attach_uniform_dma_pfn_offset() from of/address.c to
-     dma/mapping.c so that it does not depend on CONFIG_OF. (Nicolas)
-  -- devm_kcalloc => devm_kzalloc (DanC)
-  -- add/fix assignment to dev->dma_pfn_offset_map for func
-     attach_uniform_dma_pfn_offset() (DanC, Nicolas)
-  -- s/struct dma_pfn_offset_region/struct bus_dma_region/ (Nicolas)
-  -- s/attach_uniform_dma_pfn_offset/dma_attach_uniform_pfn_offset/
-  -- s/attach_dma_pfn_offset_map/dma_attach_pfn_offset_map/
-  -- More use of PFN_{PHYS,DOWN,UP}. (AndyS)
-  Commit "of: Include a dev param in of_dma_get_range()"
-  -- this commit was sqaushed with "device core: Introduce ..."
+- Add compatible strings for three more Broadcom STB chips: 7278, 7216,
+  7211 (STB version of RPi4).
+- add new property 'brcm,scb-sizes'
+- add new property 'resets'
+- add new property 'reset-names' for 7216 only
+- allow 'ranges' and 'dma-ranges' to have more than one item and update
+  the example to show this.
 
-v3:
-  Commit "device core: Introduce multiple dma pfn offsets"
-  Commit "arm: dma-mapping: Invoke dma offset func if needed"
-  -- The above two commits have been squashed.  More importantly,
-     the code has been modified so that the functionality for
-     multiple pfn offsets subsumes the use of dev->dma_pfn_offset.
-     In fact, dma_pfn_offset is removed and supplanted by
-     dma_pfn_offset_map, which is a pointer to an array.  The
-     more common case of a uniform offset is now handled as
-     a map with a single entry, while cases requiring multiple
-     pfn offsets use a map with multiple entries.  Code paths
-     that used to do this:
+Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+---
+ .../bindings/pci/brcm,stb-pcie.yaml           | 58 ++++++++++++++++---
+ 1 file changed, 51 insertions(+), 7 deletions(-)
 
-         dev->dma_pfn_offset = mydrivers_pfn_offset;
-
-     have been changed to do this:
-
-         attach_uniform_dma_pfn_offset(dev, pfn_offset);
-
-  Commit "dt-bindings: PCI: Add bindings for more Brcmstb chips"
-  -- Add if/then clause for required props: resets, reset-names (RobH)
-  -- Change compatible list from const to enum (RobH)
-  -- Change list of u32-tuples to u64 (RobH)
-
-  Commit "of: Include a dev param in of_dma_get_range()"
-  -- modify of/unittests.c to add NULL param in of_dma_get_range() call.
-
-  Commit "device core: Add ability to handle multiple dma offsets"
-  -- align comment in device.h (AndyS).
-  -- s/cpu_beg/cpu_start/ and s/dma_beg/dma_start/ in struct
-     dma_pfn_offset_region (AndyS).
-
-v2:
-Commit: "device core: Add ability to handle multiple dma offsets"
-  o Added helper func attach_dma_pfn_offset_map() in address.c (Chistoph)
-  o Helpers funcs added to __phys_to_dma() & __dma_to_phys() (Christoph)
-  o Added warning when multiple offsets are needed and !DMA_PFN_OFFSET_MAP
-  o dev->dma_pfn_map => dev->dma_pfn_offset_map
-  o s/frm/from/ for dma_pfn_offset_frm_{phys,dma}_addr() (Christoph)
-  o In device.h: s/const void */const struct dma_pfn_offset_region */
-  o removed 'unlikely' from unlikely(dev->dma_pfn_offset_map) since
-    guarded by CONFIG_DMA_PFN_OFFSET_MAP (Christoph)
-  o Since dev->dma_pfn_offset is copied in usb/core/{usb,message}.c, now
-    dev->dma_pfn_offset_map is copied as well.
-  o Merged two of the DMA commits into one (Christoph).
-
-Commit "arm: dma-mapping: Invoke dma offset func if needed":
-  o Use helper functions instead of #if CONFIG_DMA_PFN_OFFSET
-
-Other commits' changes:
-  o Removed need for carrying of_id var in priv (Nicolas)
-  o Commit message rewordings (Bjorn)
-  o Commit log messages filled to 75 chars (Bjorn)
-  o devm_reset_control_get_shared())
-    => devm_reset_control_get_optional_shared (Philipp)
-  o Add call to reset_control_assert() in PCIe remove routines (Philipp)
-
-v1:
-This patchset expands the usefulness of the Broadcom Settop Box PCIe
-controller by building upon the PCIe driver used currently by the
-Raspbery Pi.  Other forms of this patchset were submitted by me years
-ago and not accepted; the major sticking point was the code required
-for the DMA remapping needed for the PCIe driver to work [1].
-
-There have been many changes to the DMA and OF subsystems since that
-time, making a cleaner and less intrusive patchset possible.  This
-patchset implements a generalization of "dev->dma_pfn_offset", except
-that instead of a single scalar offset it provides for multiple
-offsets via a function which depends upon the "dma-ranges" property of
-the PCIe host controller.  This is required for proper functionality
-of the BrcmSTB PCIe controller and possibly some other devices.
-
-[1] https://lore.kernel.org/linux-arm-kernel/1516058925-46522-5-git-send-email-jim2101024@gmail.com/
-
-Jim Quinlan (12):
-  PCI: brcmstb: PCIE_BRCMSTB depends on ARCH_BRCMSTB
-  ata: ahci_brcm: Fix use of BCM7216 reset controller
-  dt-bindings: PCI: Add bindings for more Brcmstb chips
-  PCI: brcmstb: Add bcm7278 register info
-  PCI: brcmstb: Add suspend and resume pm_ops
-  PCI: brcmstb: Add bcm7278 PERST support
-  PCI: brcmstb: Add control of rescal reset
-  device core: Introduce multiple dma pfn offsets
-  PCI: brcmstb: Set internal memory viewport sizes
-  PCI: brcmstb: Accommodate MSI for older chips
-  PCI: brcmstb: Set bus max burst size by chip type
-  PCI: brcmstb: Add bcm7211, bcm7216, bcm7445, bcm7278 to match list
-
- .../bindings/pci/brcm,stb-pcie.yaml           |  58 ++-
- arch/arm/include/asm/dma-mapping.h            |   9 +-
- arch/arm/mach-keystone/keystone.c             |   9 +-
- arch/sh/drivers/pci/pcie-sh7786.c             |   3 +-
- arch/sh/kernel/dma-coherent.c                 |  14 +-
- arch/x86/pci/sta2x11-fixup.c                  |   7 +-
- drivers/acpi/arm64/iort.c                     |   5 +-
- drivers/ata/ahci_brcm.c                       |  14 +-
- drivers/gpu/drm/sun4i/sun4i_backend.c         |   5 +-
- drivers/iommu/io-pgtable-arm.c                |   2 +-
- .../platform/sunxi/sun4i-csi/sun4i_csi.c      |   5 +-
- .../platform/sunxi/sun6i-csi/sun6i_csi.c      |   4 +-
- drivers/of/address.c                          |  72 +++-
- drivers/of/device.c                           |  19 +-
- drivers/of/of_private.h                       |  11 +-
- drivers/of/unittest.c                         |   8 +-
- drivers/pci/controller/Kconfig                |   3 +-
- drivers/pci/controller/pcie-brcmstb.c         | 408 +++++++++++++++---
- drivers/remoteproc/remoteproc_core.c          |   2 +-
- .../staging/media/sunxi/cedrus/cedrus_hw.c    |   7 +-
- drivers/usb/core/message.c                    |   4 +-
- drivers/usb/core/usb.c                        |   2 +-
- include/linux/device.h                        |   4 +-
- include/linux/dma-direct.h                    |  16 +-
- include/linux/dma-mapping.h                   |  38 ++
- kernel/dma/coherent.c                         |  11 +-
- kernel/dma/mapping.c                          |  38 ++
- 27 files changed, 647 insertions(+), 131 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+index 8680a0f86c5a..4a012d77513f 100644
+--- a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
+@@ -9,12 +9,15 @@ title: Brcmstb PCIe Host Controller Device Tree Bindings
+ maintainers:
+   - Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+ 
+-allOf:
+-  - $ref: /schemas/pci/pci-bus.yaml#
+-
+ properties:
+   compatible:
+-    const: brcm,bcm2711-pcie # The Raspberry Pi 4
++    items:
++      - enum:
++          - brcm,bcm2711-pcie # The Raspberry Pi 4
++          - brcm,bcm7211-pcie # Broadcom STB version of RPi4
++          - brcm,bcm7278-pcie # Broadcom 7278 Arm
++          - brcm,bcm7216-pcie # Broadcom 7216 Arm
++          - brcm,bcm7445-pcie # Broadcom 7445 Arm
+ 
+   reg:
+     maxItems: 1
+@@ -34,10 +37,12 @@ properties:
+       - const: msi
+ 
+   ranges:
+-    maxItems: 1
++    minItems: 1
++    maxItems: 4
+ 
+   dma-ranges:
+-    maxItems: 1
++    minItems: 1
++    maxItems: 6
+ 
+   clocks:
+     maxItems: 1
+@@ -58,8 +63,33 @@ properties:
+ 
+   aspm-no-l0s: true
+ 
++  resets:
++    description: for "brcm,bcm7216-pcie", must be a valid reset
++      phandle pointing to the RESCAL reset controller provider node.
++    $ref: "/schemas/types.yaml#/definitions/phandle"
++
++  reset-names:
++    items:
++      - const: rescal
++
++  brcm,scb-sizes:
++    description: u64 giving the 64bit PCIe memory
++      viewport size of a memory controller.  There may be up to
++      three controllers, and each size must be a power of two
++      with a size greater or equal to the amount of memory the
++      controller supports.  Note that each memory controller
++      may have two component regions -- base and extended -- so
++      this information cannot be deduced from the dma-ranges.
++
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint64-array
++      - items:
++          minItems: 1
++          maxItems: 3
++
+ required:
+   - reg
++  - ranges
+   - dma-ranges
+   - "#interrupt-cells"
+   - interrupts
+@@ -68,6 +98,18 @@ required:
+   - interrupt-map
+   - msi-controller
+ 
++allOf:
++  - $ref: /schemas/pci/pci-bus.yaml#
++  - if:
++      properties:
++        compatible:
++          contains:
++            const: brcm,bcm7216-pcie
++    then:
++      required:
++        - resets
++        - reset-names
++
+ unevaluatedProperties: false
+ 
+ examples:
+@@ -93,7 +135,9 @@ examples:
+                     msi-parent = <&pcie0>;
+                     msi-controller;
+                     ranges = <0x02000000 0x0 0xf8000000 0x6 0x00000000 0x0 0x04000000>;
+-                    dma-ranges = <0x02000000 0x0 0x00000000 0x0 0x00000000 0x0 0x80000000>;
++                    dma-ranges = <0x42000000 0x1 0x00000000 0x0 0x40000000 0x0 0x80000000>,
++                                 <0x42000000 0x1 0x80000000 0x3 0x00000000 0x0 0x80000000>;
+                     brcm,enable-ssc;
++                    brcm,scb-sizes =  <0x0000000080000000 0x0000000080000000>;
+             };
+     };
 -- 
 2.17.1
 
