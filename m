@@ -2,81 +2,152 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7E561EFD6B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 18:19:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7AE481EFE16
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 18:34:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1hhI95PUmj5Jz2NI5mB9lUOdCuVP2DoKTDxmbvfU5ck=; b=B78TvIMYNeT5Bm
-	YptXFeF5FO3FGmG+I1LuD6rh/pE8HuogFN0Ly05LOoNwa/56ptGD+Eq7fUkKuTneUI3zLu8ho6VJ0
-	KguCmihhtXZLBEqJ/TJLiSwB1cyTQ1+dBidEHBgvnIzYeumWTS8yqoZQEjJi9qdgOI/S/87xbXhaA
-	5ehKEHU/bx+rz2EUvFRByrzuh3G+aiqPM8Plqz97QsNMiYO4CRbjQ8bsPxzgwJZqIjSXgz4wuWgcR
-	cLd5pj0UVsyeoCsHd5rqZ52wwuFGl93PoheGZBhADlbj0RNVnG7FTRCM2Y/Ox8Yqb/BW2HAwS7R7D
-	54njhDkv3BGM3qKKMZnw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tJALht5sEXowOwumxBf9kAg0CZplfnzw3cthHjn7k0k=; b=F7O6yGDat7P1mc
+	uM6SGQl+oMofgCF/bLykvimVbw42baiYYzLI9CIHXALkSSmKIxSQQ5lCegYFJwn95Mrbvs03arOLx
+	fg1/FG80cxLHoRd3WdSfIWOKXFzV8cjJPLcQ0twgGc+xNAjXE2p3TzUF31QOV+TXw0HXZiBFW4onP
+	c39hSkeE8LUMVHDn20ue4vz5v14AkxJCRxpLGlpEldnpNdaV+ACKpMk4CUI7xKNqR7uZsmzNTtt2I
+	E9lIdjxFqsuLih0/YBgbOFDcj7DIu/W94y50s3uhAQ+lI45FHAQxv5hsUu93rFzVsmQ5sZz+tbOKw
+	EwIaorumB/rjNpRIJRYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhF3g-0007gd-GW; Fri, 05 Jun 2020 16:19:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jhFIv-0001JN-Cg; Fri, 05 Jun 2020 16:34:49 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhF3a-0007gB-4L
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 16:18:59 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 985CB206DB;
- Fri,  5 Jun 2020 16:18:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591373937;
- bh=paJXf48AWQH6tw11YLkNIpuHunscwji3xlYKrNSY0oo=;
- h=From:To:Cc:Subject:Date:From;
- b=Qw60EwTzazbCTcePt+nm7ifIpHUNoIxiUj2mmFBkwGDmtc3RNXQuLeGnFhtfSD6H/
- KGeyiVDYs0Cmx/cIVyQ8nzbE4iWSn/EkqeGk3ePL3mTYMXlHdOzuFkkHX9+a8I1X7L
- WuIwLjVGJPwOvsP4HtcuxWjk8wBt3x9iZCO3h6ug=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jhF3Y-000YzD-2R; Fri, 05 Jun 2020 17:18:56 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] KVM: arm64: Remove host_cpu_context member from vcpu structure
-Date: Fri,  5 Jun 2020 17:18:47 +0100
-Message-Id: <20200605161847.1316354-1-maz@kernel.org>
-X-Mailer: git-send-email 2.26.2
+ id 1jhFIn-0001IY-9I
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 16:34:43 +0000
+Received: by mail-pl1-x643.google.com with SMTP id bg4so3850079plb.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 05 Jun 2020 09:34:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=iJmtlF1Fn34skzAHzjUQqZOvSbl81/B3EfHTzE9JIy8=;
+ b=Ct9r7A1nDUiRWsfrgAS4CkunE7SysHfUQnD2fZDBCheg65ij+ycPcCnjbPuk4RMS4C
+ gtIqQ6n4DGRhDRbWbU+CCoAQY7+CgSCExEaKH+QPyo9rMQ54VIFEzchnvMEdTOj3VyGK
+ 6C1/1HJLn5ZNm9cs7ghab4axzm3/2VDXnPlBlxoj7jlVlG6A8WLELAhx11hhJKLpT4DP
+ nzLQEzYnf7Djc8tDaaCrfV0WSPHr5RtjvHWIqtUg8tRBjDawn4abgoW2A1r1WntSSwhq
+ nkleIegA4GFEHxdh31NGOTVyzaeofFQqi2unl6TRwzuh6ItF2Woe4L6Si23SCCi87UNs
+ +I7A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:subject:to:cc:references:from:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=iJmtlF1Fn34skzAHzjUQqZOvSbl81/B3EfHTzE9JIy8=;
+ b=niKB+sFvtNu5XhimBh83McKa6xP8hn3KlDGZW0MyfSJwEyBfjwpfYOoO0zWuh687fY
+ EF+eYYdyWGRisVI0f4Z/h6blDNxsSUYDL7DWs+hkOmuw4Y/K/tCpjs4bNsy85d6sWLG3
+ QW/UHFUBiG0/DdKhrGH1W/6I/rbknMHIv75z1Ijq6QCITUsOrxnExQah3PaI/zCDPu7T
+ /T+skSK2+wVzRtH6df39pkcYGNbOF2ZKq/43md27qcEQYxCg0aTV6BNwOUU6KrICFP58
+ exjKjJQpKERMh7hgN76JCvPIRxYXl54X6DUplBwixUif7YuP9ZP1kq0yVHoss/OPPED7
+ AmQQ==
+X-Gm-Message-State: AOAM530MIYg2ErkfuPQ+LESY4pYlC16tfrDda+ECXb0YSUCDnYI73z+v
+ +DP1pLkI47nP5X0QIcoJpMM=
+X-Google-Smtp-Source: ABdhPJykhVRiplBn+3LpRFZ8/4hP6LcJwdpYIczM/dd0iT6NreCKioxKBSYX584oPxHH+eI6+j0RcA==
+X-Received: by 2002:a17:902:aa0c:: with SMTP id
+ be12mr10842832plb.241.1591374879375; 
+ Fri, 05 Jun 2020 09:34:39 -0700 (PDT)
+Received: from server.roeck-us.net ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id
+ n38sm110717pgm.1.2020.06.05.09.34.36
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 05 Jun 2020 09:34:38 -0700 (PDT)
+Subject: Re: [PATCH v4 04/11] watchdog: add support for sl28cpld watchdog
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-5-michael@walle.cc>
+ <CAHp75VdeD6zDc--R4NPHsiqQerzfNGwUikLN+WHMiZZVsQ8QSA@mail.gmail.com>
+ <8f042c2442852c29519c381833f3d289@walle.cc>
+ <CAHp75VfY0BD4CFu6Thx1wE-U0Zt1q8uTOLxkWTMdFk0MBuhYFQ@mail.gmail.com>
+ <871a4990-5b94-3a17-01d4-74998375f08b@roeck-us.net>
+ <20200605140911.GO2428291@smile.fi.intel.com>
+ <20200605150542.GA254229@roeck-us.net>
+ <CAHp75VduUG=XkvyZwdZDNqBh3KE67MWZWgqBN67fN6StAa469w@mail.gmail.com>
+From: Guenter Roeck <linux@roeck-us.net>
+Autocrypt: addr=linux@roeck-us.net; keydata=
+ xsFNBE6H1WcBEACu6jIcw5kZ5dGeJ7E7B2uweQR/4FGxH10/H1O1+ApmcQ9i87XdZQiB9cpN
+ RYHA7RCEK2dh6dDccykQk3bC90xXMPg+O3R+C/SkwcnUak1UZaeK/SwQbq/t0tkMzYDRxfJ7
+ nyFiKxUehbNF3r9qlJgPqONwX5vJy4/GvDHdddSCxV41P/ejsZ8PykxyJs98UWhF54tGRWFl
+ 7i1xvaDB9lN5WTLRKSO7wICuLiSz5WZHXMkyF4d+/O5ll7yz/o/JxK5vO/sduYDIlFTvBZDh
+ gzaEtNf5tQjsjG4io8E0Yq0ViobLkS2RTNZT8ICq/Jmvl0SpbHRvYwa2DhNsK0YjHFQBB0FX
+ IdhdUEzNefcNcYvqigJpdICoP2e4yJSyflHFO4dr0OrdnGLe1Zi/8Xo/2+M1dSSEt196rXaC
+ kwu2KgIgmkRBb3cp2vIBBIIowU8W3qC1+w+RdMUrZxKGWJ3juwcgveJlzMpMZNyM1jobSXZ0
+ VHGMNJ3MwXlrEFPXaYJgibcg6brM6wGfX/LBvc/haWw4yO24lT5eitm4UBdIy9pKkKmHHh7s
+ jfZJkB5fWKVdoCv/omy6UyH6ykLOPFugl+hVL2Prf8xrXuZe1CMS7ID9Lc8FaL1ROIN/W8Vk
+ BIsJMaWOhks//7d92Uf3EArDlDShwR2+D+AMon8NULuLBHiEUQARAQABzTJHdWVudGVyIFJv
+ ZWNrIChMaW51eCBhY2NvdW50KSA8bGludXhAcm9lY2stdXMubmV0PsLBgQQTAQIAKwIbAwYL
+ CQgHAwIGFQgCCQoLBBYCAwECHgECF4ACGQEFAlVcphcFCRmg06EACgkQyx8mb86fmYFg0RAA
+ nzXJzuPkLJaOmSIzPAqqnutACchT/meCOgMEpS5oLf6xn5ySZkl23OxuhpMZTVX+49c9pvBx
+ hpvl5bCWFu5qC1jC2eWRYU+aZZE4sxMaAGeWenQJsiG9lP8wkfCJP3ockNu0ZXXAXwIbY1O1
+ c+l11zQkZw89zNgWgKobKzrDMBFOYtAh0pAInZ9TSn7oA4Ctejouo5wUugmk8MrDtUVXmEA9
+ 7f9fgKYSwl/H7dfKKsS1bDOpyJlqhEAH94BHJdK/b1tzwJCFAXFhMlmlbYEk8kWjcxQgDWMu
+ GAthQzSuAyhqyZwFcOlMCNbAcTSQawSo3B9yM9mHJne5RrAbVz4TWLnEaX8gA5xK3uCNCeyI
+ sqYuzA4OzcMwnnTASvzsGZoYHTFP3DQwf2nzxD6yBGCfwNGIYfS0i8YN8XcBgEcDFMWpOQhT
+ Pu3HeztMnF3HXrc0t7e5rDW9zCh3k2PA6D2NV4fews9KDFhLlTfCVzf0PS1dRVVWM+4jVl6l
+ HRIAgWp+2/f8dx5vPc4Ycp4IsZN0l1h9uT7qm1KTwz+sSl1zOqKD/BpfGNZfLRRxrXthvvY8
+ BltcuZ4+PGFTcRkMytUbMDFMF9Cjd2W9dXD35PEtvj8wnEyzIos8bbgtLrGTv/SYhmPpahJA
+ l8hPhYvmAvpOmusUUyB30StsHIU2LLccUPPOwU0ETofVZwEQALlLbQeBDTDbwQYrj0gbx3bq
+ 7kpKABxN2MqeuqGr02DpS9883d/t7ontxasXoEz2GTioevvRmllJlPQERVxM8gQoNg22twF7
+ pB/zsrIjxkE9heE4wYfN1AyzT+AxgYN6f8hVQ7Nrc9XgZZe+8IkuW/Nf64KzNJXnSH4u6nJM
+ J2+Dt274YoFcXR1nG76Q259mKwzbCukKbd6piL+VsT/qBrLhZe9Ivbjq5WMdkQKnP7gYKCAi
+ pNVJC4enWfivZsYupMd9qn7Uv/oCZDYoBTdMSBUblaLMwlcjnPpOYK5rfHvC4opxl+P/Vzyz
+ 6WC2TLkPtKvYvXmdsI6rnEI4Uucg0Au/Ulg7aqqKhzGPIbVaL+U0Wk82nz6hz+WP2ggTrY1w
+ ZlPlRt8WM9w6WfLf2j+PuGklj37m+KvaOEfLsF1v464dSpy1tQVHhhp8LFTxh/6RWkRIR2uF
+ I4v3Xu/k5D0LhaZHpQ4C+xKsQxpTGuYh2tnRaRL14YMW1dlI3HfeB2gj7Yc8XdHh9vkpPyuT
+ nY/ZsFbnvBtiw7GchKKri2gDhRb2QNNDyBnQn5mRFw7CyuFclAksOdV/sdpQnYlYcRQWOUGY
+ HhQ5eqTRZjm9z+qQe/T0HQpmiPTqQcIaG/edgKVTUjITfA7AJMKLQHgp04Vylb+G6jocnQQX
+ JqvvP09whbqrABEBAAHCwWUEGAECAA8CGwwFAlVcpi8FCRmg08MACgkQyx8mb86fmYHNRQ/+
+ J0OZsBYP4leJvQF8lx9zif+v4ZY/6C9tTcUv/KNAE5leyrD4IKbnV4PnbrVhjq861it/zRQW
+ cFpWQszZyWRwNPWUUz7ejmm9lAwPbr8xWT4qMSA43VKQ7ZCeTQJ4TC8kjqtcbw41SjkjrcTG
+ wF52zFO4bOWyovVAPncvV9eGA/vtnd3xEZXQiSt91kBSqK28yjxAqK/c3G6i7IX2rg6pzgqh
+ hiH3/1qM2M/LSuqAv0Rwrt/k+pZXE+B4Ud42hwmMr0TfhNxG+X7YKvjKC+SjPjqp0CaztQ0H
+ nsDLSLElVROxCd9m8CAUuHplgmR3seYCOrT4jriMFBtKNPtj2EE4DNV4s7k0Zy+6iRQ8G8ng
+ QjsSqYJx8iAR8JRB7Gm2rQOMv8lSRdjva++GT0VLXtHULdlzg8VjDnFZ3lfz5PWEOeIMk7Rj
+ trjv82EZtrhLuLjHRCaG50OOm0hwPSk1J64R8O3HjSLdertmw7eyAYOo4RuWJguYMg5DRnBk
+ WkRwrSuCn7UG+qVWZeKEsFKFOkynOs3pVbcbq1pxbhk3TRWCGRU5JolI4ohy/7JV1TVbjiDI
+ HP/aVnm6NC8of26P40Pg8EdAhajZnHHjA7FrJXsy3cyIGqvg9os4rNkUWmrCfLLsZDHD8FnU
+ mDW4+i+XlNFUPUYMrIKi9joBhu18ssf5i5Q=
+Message-ID: <450ce146-bf9a-130a-78e5-4bcabf1b7063@roeck-us.net>
+Date: Fri, 5 Jun 2020 09:34:35 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com, mark.rutland@arm.com,
- kernel-team@android.com, ascull@google.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <CAHp75VduUG=XkvyZwdZDNqBh3KE67MWZWgqBN67fN6StAa469w@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_091858_217831_AF046D3E 
-X-CRM114-Status: GOOD (  15.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200605_093441_327228_C8E3BE86 
+X-CRM114-Status: GOOD (  17.22  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [groeck7[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [groeck7[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,203 +159,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, James Morse <james.morse@arm.com>,
- Andrew Scull <ascull@google.com>, kernel-team@android.com,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <u.kleine-koenig@pengutronix.de>,
+ linux-pwm@vger.kernel.org, Jean Delvare <jdelvare@suse.com>,
+ linux-watchdog@vger.kernel.org,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Michael Walle <michael@walle.cc>,
+ Mark Brown <broonie@kernel.org>, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For very long, we have kept this pointer back to the per-cpu
-host state, despite having working per-cpu accessors at EL2
-for some time now.
+On 6/5/20 9:04 AM, Andy Shevchenko wrote:
+> On Fri, Jun 5, 2020 at 6:05 PM Guenter Roeck <linux@roeck-us.net> wrote:
+>> On Fri, Jun 05, 2020 at 05:09:11PM +0300, Andy Shevchenko wrote:
+>>> On Fri, Jun 05, 2020 at 06:52:00AM -0700, Guenter Roeck wrote:
+>>>> On 6/5/20 3:50 AM, Andy Shevchenko wrote:
+>>>>> On Fri, Jun 5, 2020 at 1:24 PM Michael Walle <michael@walle.cc> wrote:
+>>>>>> Am 2020-06-05 10:14, schrieb Andy Shevchenko:
+>>>>>>> On Fri, Jun 5, 2020 at 12:14 AM Michael Walle <michael@walle.cc> wrote:
+>>>
+>>> ...
+>>>
+>>>>>>>> +static bool nowayout = WATCHDOG_NOWAYOUT;
+>>>>>>>> +module_param(nowayout, bool, 0);
+>>>>>>>> +MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started
+>>>>>>>> (default="
+>>>>>>>> +                               __MODULE_STRING(WATCHDOG_NOWAYOUT)
+>>>>>>>> ")");
+>>>>>>>> +
+>>>>>>>> +static int timeout;
+>>>>>>>> +module_param(timeout, int, 0);
+>>>>>>>> +MODULE_PARM_DESC(timeout, "Initial watchdog timeout in seconds");
+>>>>>>>
+>>>>>>> Guenter ACKed this, but I'm wondering why we still need module
+>>>>>>> parameters...
+>>>>>>
+>>>>>> How would a user change the nowayout or the timeout? For the latter
+>>>>>> there is
+>>>>>> a device tree entry, but thats not easy changable by the user.
+>>>>>
+>>>>> Yes, it's more question to VIm and Guenter than to you.
+>>>>>
+>>>>
+>>>> Has support for providing module parameters with the kernel command line
+>>>> been discontinued/deprecated, or did it run out of favor ? Sorry if I
+>>>> missed that.
+>>>
+>>> Latter according to Greg KH. One of the (plenty) examples [1].
+>>>
+>>> [1]: https://www.mail-archive.com/driverdev-devel@linuxdriverproject.org/msg96495.html
+>>>
+>> What is the suggested replacement ?
+> 
+> In some mails he suggested to use sysfs.
+> 
 
-Recent investigations have shown that this pointer is easy
-to abuse in preemptible context, which is a sure sign that
-it would better be gone. Not to mention that a per-cpu
-pointer is faster to access at all times.
+Using sysfs specifically to defeat "nowayout" would defeat
+its purpose, which is specifically to disable the possibility
+to stop the watchdog. Using a module parameter (or rather boot
+time parameter) is a bit different since that has to be done
+consciously and is only valid for a given boot. The same is
+true for the timeout parameter. If one can wait for sysfs (or
+userspace) to be active, one can as well use the watchdog
+daemon to update the timeout. The use case for the module
+/ command line parameter or sysfs based timeout is to be
+able to set it _before_ userspace is active.
 
-Reported-by: Andrew Scull <ascull@google.com>
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
-This patch goes on top of the PtrAuth rework that I have previously
-posted, and make sures it is harder to fall into the same trap.
+So sysfs is not really an alternative.
 
- arch/arm64/include/asm/kvm_host.h | 3 ---
- arch/arm64/kvm/arm.c              | 3 ---
- arch/arm64/kvm/hyp/debug-sr.c     | 4 ++--
- arch/arm64/kvm/hyp/switch.c       | 6 +++---
- arch/arm64/kvm/hyp/sysreg-sr.c    | 6 ++++--
- arch/arm64/kvm/pmu.c              | 8 ++------
- 6 files changed, 11 insertions(+), 19 deletions(-)
-
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index 59029e90b557..ada1faa92211 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -284,9 +284,6 @@ struct kvm_vcpu_arch {
- 	struct kvm_guest_debug_arch vcpu_debug_state;
- 	struct kvm_guest_debug_arch external_debug_state;
- 
--	/* Pointer to host CPU context */
--	struct kvm_cpu_context *host_cpu_context;
--
- 	struct thread_info *host_thread_info;	/* hyp VA */
- 	struct user_fpsimd_state *host_fpsimd_state;	/* hyp VA */
- 
-diff --git a/arch/arm64/kvm/arm.c b/arch/arm64/kvm/arm.c
-index 14b747266607..6ddaa23ef346 100644
---- a/arch/arm64/kvm/arm.c
-+++ b/arch/arm64/kvm/arm.c
-@@ -340,10 +340,8 @@ void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
- void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
- {
- 	int *last_ran;
--	kvm_host_data_t *cpu_data;
- 
- 	last_ran = this_cpu_ptr(vcpu->kvm->arch.last_vcpu_ran);
--	cpu_data = this_cpu_ptr(&kvm_host_data);
- 
- 	/*
- 	 * We might get preempted before the vCPU actually runs, but
-@@ -355,7 +353,6 @@ void kvm_arch_vcpu_load(struct kvm_vcpu *vcpu, int cpu)
- 	}
- 
- 	vcpu->cpu = cpu;
--	vcpu->arch.host_cpu_context = &cpu_data->host_ctxt;
- 
- 	kvm_vgic_load(vcpu);
- 	kvm_timer_vcpu_load(vcpu);
-diff --git a/arch/arm64/kvm/hyp/debug-sr.c b/arch/arm64/kvm/hyp/debug-sr.c
-index 0fc9872a1467..e95af204fec7 100644
---- a/arch/arm64/kvm/hyp/debug-sr.c
-+++ b/arch/arm64/kvm/hyp/debug-sr.c
-@@ -185,7 +185,7 @@ void __hyp_text __debug_switch_to_guest(struct kvm_vcpu *vcpu)
- 	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
- 		return;
- 
--	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-+	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
- 	guest_ctxt = &vcpu->arch.ctxt;
- 	host_dbg = &vcpu->arch.host_debug_state.regs;
- 	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
-@@ -207,7 +207,7 @@ void __hyp_text __debug_switch_to_host(struct kvm_vcpu *vcpu)
- 	if (!(vcpu->arch.flags & KVM_ARM64_DEBUG_DIRTY))
- 		return;
- 
--	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-+	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
- 	guest_ctxt = &vcpu->arch.ctxt;
- 	host_dbg = &vcpu->arch.host_debug_state.regs;
- 	guest_dbg = kern_hyp_va(vcpu->arch.debug_ptr);
-diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-index fc09c3dfa466..fc671426c14b 100644
---- a/arch/arm64/kvm/hyp/switch.c
-+++ b/arch/arm64/kvm/hyp/switch.c
-@@ -544,7 +544,7 @@ static bool __hyp_text __hyp_handle_ptrauth(struct kvm_vcpu *vcpu)
- 		return false;
- 	}
- 
--	ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-+	ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
- 	__ptrauth_save_key(ctxt->sys_regs, APIA);
- 	__ptrauth_save_key(ctxt->sys_regs, APIB);
- 	__ptrauth_save_key(ctxt->sys_regs, APDA);
-@@ -715,7 +715,7 @@ static int __kvm_vcpu_run_vhe(struct kvm_vcpu *vcpu)
- 	struct kvm_cpu_context *guest_ctxt;
- 	u64 exit_code;
- 
--	host_ctxt = vcpu->arch.host_cpu_context;
-+	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
- 	host_ctxt->__hyp_running_vcpu = vcpu;
- 	guest_ctxt = &vcpu->arch.ctxt;
- 
-@@ -820,7 +820,7 @@ int __hyp_text __kvm_vcpu_run_nvhe(struct kvm_vcpu *vcpu)
- 
- 	vcpu = kern_hyp_va(vcpu);
- 
--	host_ctxt = kern_hyp_va(vcpu->arch.host_cpu_context);
-+	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
- 	host_ctxt->__hyp_running_vcpu = vcpu;
- 	guest_ctxt = &vcpu->arch.ctxt;
- 
-diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-index 6d2df9fe0b5d..143d7b7358f2 100644
---- a/arch/arm64/kvm/hyp/sysreg-sr.c
-+++ b/arch/arm64/kvm/hyp/sysreg-sr.c
-@@ -265,12 +265,13 @@ void __hyp_text __sysreg32_restore_state(struct kvm_vcpu *vcpu)
-  */
- void kvm_vcpu_load_sysregs(struct kvm_vcpu *vcpu)
- {
--	struct kvm_cpu_context *host_ctxt = vcpu->arch.host_cpu_context;
- 	struct kvm_cpu_context *guest_ctxt = &vcpu->arch.ctxt;
-+	struct kvm_cpu_context *host_ctxt;
- 
- 	if (!has_vhe())
- 		return;
- 
-+	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
- 	__sysreg_save_user_state(host_ctxt);
- 
- 	/*
-@@ -301,12 +302,13 @@ void kvm_vcpu_load_sysregs(struct kvm_vcpu *vcpu)
-  */
- void kvm_vcpu_put_sysregs(struct kvm_vcpu *vcpu)
- {
--	struct kvm_cpu_context *host_ctxt = vcpu->arch.host_cpu_context;
- 	struct kvm_cpu_context *guest_ctxt = &vcpu->arch.ctxt;
-+	struct kvm_cpu_context *host_ctxt;
- 
- 	if (!has_vhe())
- 		return;
- 
-+	host_ctxt = &__hyp_this_cpu_ptr(kvm_host_data)->host_ctxt;
- 	deactivate_traps_vhe_put();
- 
- 	__sysreg_save_el1_state(guest_ctxt);
-diff --git a/arch/arm64/kvm/pmu.c b/arch/arm64/kvm/pmu.c
-index e71d00bb5271..ebf8509b418b 100644
---- a/arch/arm64/kvm/pmu.c
-+++ b/arch/arm64/kvm/pmu.c
-@@ -163,15 +163,13 @@ static void kvm_vcpu_pmu_disable_el0(unsigned long events)
-  */
- void kvm_vcpu_pmu_restore_guest(struct kvm_vcpu *vcpu)
- {
--	struct kvm_cpu_context *host_ctxt;
- 	struct kvm_host_data *host;
- 	u32 events_guest, events_host;
- 
- 	if (!has_vhe())
- 		return;
- 
--	host_ctxt = vcpu->arch.host_cpu_context;
--	host = container_of(host_ctxt, struct kvm_host_data, host_ctxt);
-+	host = __hyp_this_cpu_ptr(kvm_host_data);
- 	events_guest = host->pmu_events.events_guest;
- 	events_host = host->pmu_events.events_host;
- 
-@@ -184,15 +182,13 @@ void kvm_vcpu_pmu_restore_guest(struct kvm_vcpu *vcpu)
-  */
- void kvm_vcpu_pmu_restore_host(struct kvm_vcpu *vcpu)
- {
--	struct kvm_cpu_context *host_ctxt;
- 	struct kvm_host_data *host;
- 	u32 events_guest, events_host;
- 
- 	if (!has_vhe())
- 		return;
- 
--	host_ctxt = vcpu->arch.host_cpu_context;
--	host = container_of(host_ctxt, struct kvm_host_data, host_ctxt);
-+	host = __hyp_this_cpu_ptr(kvm_host_data);
- 	events_guest = host->pmu_events.events_guest;
- 	events_host = host->pmu_events.events_host;
- 
--- 
-2.26.2
-
+Guenter
 
 _______________________________________________
 linux-arm-kernel mailing list
