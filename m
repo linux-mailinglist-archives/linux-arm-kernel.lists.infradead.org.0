@@ -2,64 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 434DD1EF88B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:03:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 781AF1EF899
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 15:05:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Iv/mh9zK2aQD4beVL78Ytsl8mZxq55o8EP0M2n5I47o=; b=M8IyP6CBIjq8ms
-	rblvhm/xeYqz2nn0HOYo0t+ew4X+WUmb4QKz0UXeg+qXO4ouljzMzM18a7qjRk8mD2lhkI5B6AZdI
-	APCS0IQ5sjs26+Hln8U9CCGztPurSIhH1gUpLakI9vqxobHwCydOdP/cAllwnYnwZNCPUmRx2zePz
-	tZs9xREB4z6XucWBEvRs58HMhv2JX5Hyw2b7jFN3O2aSOVYXaJJXpQ0Y3IRuJtTZMDkPI9aOJX4S1
-	SmIO/2CXRXUzu3YINpO/mY1UaXhrrnThya1nqKXX7vsGUMV02n7+zTrcvxzgGAZi8eqvG3Mjy0NJb
-	1mES7ADzQs3znG52Optg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=0ksIcomKEUKkjVynK5Cr6qWfNUC0zEciTj1DL8ENUqI=; b=qhYRO9xTvSdpVu
+	410NlTuEKAyJ10th9a1bsFxF3t+nt28wzl9ToVkCC7NRsFHvZGFf2N9gUuTURlf82Xu2ytmEVCQSF
+	9mjdrpBwDMAN2QtU9yK3oXPE554qTMcrqcsPD+rp7hamoyo2cuL1J4k2ApwPMwVMbeIOQmGlMKE+y
+	oJVq87hgmtxNzXv0DxxSqvlbSRDBtKYFw7T0H7x7/as4dUuptJl0WgbcNXnrr1XgBFbJQI7FBPmaf
+	5ihVGqsi9hW4pP6sGMd6x+1lamnGcXPAb8F3pxQFC0nUuvd66CYI7mEtbFkKJysk/R1Cc7Zciq0/F
+	NjHZ6ixKDkhAoXpeOLxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhC05-0007dx-BU; Fri, 05 Jun 2020 13:03:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jhC2W-0002HC-UU; Fri, 05 Jun 2020 13:05:40 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhBzt-0007dT-SJ
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:02:59 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E06C7206E6;
- Fri,  5 Jun 2020 13:02:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591362176;
- bh=d0mqLPHPl/CqHHShruLRsKnlEALjzbCX18cP7dI7Fh0=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=H/wa6rV0nVAMHYHAuwT9zPOguWfWfOHUqT3NVLiBof0soVEOF8iUSKnOlCJ7+2sdI
- 0JD4UpLS4xISC2hR9HIiK1GB/KljNK5vyAHx0Cepj2gWFY07W1IRC8lbrqoqRkkdbQ
- LBWcEfN60vw+yF7PvASuA23oSrhlDcqUvdwNPR/E=
-Date: Fri, 5 Jun 2020 14:02:52 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: Please help to confirm the risk if using TPIDRRO_EL0 to save CPU
- number, thanks.
-Message-ID: <20200605130251.GB20441@willie-the-truck>
-References: <1D289F1E6D91D2489524BBB0B8880A7DA1A39219@dggeml509-mbx.china.huawei.com>
- <20200601070311.GA8601@willie-the-truck>
- <20200605121029.GE5413@sirena.org.uk>
- <20200605123302.GA19936@willie-the-truck>
- <a46ddb53-2226-c9c3-bf3f-0fcc5d924b1e@arm.com>
+ id 1jhC2L-0002Fz-CH
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 13:05:31 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 055D2RnM005857; Fri, 5 Jun 2020 15:05:22 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=8N3eVj4nAPochlinsyGa/KTizCaO/PHeruM6iKW/aDc=;
+ b=SLS407qU1Z9F+tF6q5vFRFJR785CroSIa1H4SlRTUAq1DcayxdSrZILrWXbQvkSs38as
+ t4BhMYV2SEcX97GziY6PhSm9leR3QDIQAi1rUPHO0B6PEY7t2zLWMP9OWTeOYGoLDp6J
+ A1vkrJhJjTzfrXze2kPk0DgOOSdtNCGx71Mn8x4RNLykjeyvKsJZTcj6zpir65+5RQu3
+ GC29ctnlyt4vw2TEx7qzJ/0qH5BMIRcWIgep/5nDXGw4ZYemdk3OcW1bC1cUzaTi1sw9
+ TL+fuoQL2jboRji1sapVjuS14HJ1voCn/af6zC4LQ49o850gcYm81Njn/YiIr8r+jIET Tw== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 31fasmbkcp-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Fri, 05 Jun 2020 15:05:22 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id EA26A100034;
+ Fri,  5 Jun 2020 15:05:21 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B435B2C50BF;
+ Fri,  5 Jun 2020 15:05:21 +0200 (CEST)
+Received: from localhost (10.75.127.47) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Fri, 5 Jun 2020 15:05:21
+ +0200
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <hugues.fruchet@st.com>, <mchehab@kernel.org>, <mcoquelin.stm32@gmail.com>,
+ <alexandre.torgue@st.com>
+Subject: [PATCH v4 0/3] DCMI set minimum cpufreq requirement
+Date: Fri, 5 Jun 2020 15:05:16 +0200
+Message-ID: <20200605130519.4184-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a46ddb53-2226-c9c3-bf3f-0fcc5d924b1e@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG5NODE1.st.com (10.75.127.13) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.687
+ definitions=2020-06-05_04:2020-06-04,
+ 2020-06-05 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_060257_955003_EDD159D9 
-X-CRM114-Status: GOOD (  25.35  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200605_060529_857206_1657C4E9 
+X-CRM114-Status: GOOD (  11.38  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -69,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,102 +93,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "fujun \(F\)" <oliver.fu@hisilicon.com>, Mark Brown <broonie@kernel.org>,
- Wuxuecheng <wuxuecheng@hisilicon.com>, "Lixin \(Victor,
- Kirin\)" <victor.lixin@hisilicon.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Benjamin Gaignard <benjamin.gaignard@st.com>, rjw@rjwysocki.net,
+ linux-kernel@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ valentin.schneider@arm.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 05, 2020 at 01:58:39PM +0100, Robin Murphy wrote:
-> On 2020-06-05 13:33, Will Deacon wrote:
-> > On Fri, Jun 05, 2020 at 01:10:29PM +0100, Mark Brown wrote:
-> > > On Mon, Jun 01, 2020 at 08:03:12AM +0100, Will Deacon wrote:
-> > > > On Fri, May 29, 2020 at 09:03:37AM +0000, Lixin (Victor, Kirin) wro=
-te:
-> > > =
+This series allow to STM32 camera interface (DCMI) to require a minimum
+frequency to the CPUs before start streaming frames from the sensor.
+The minimum frequency requirement is provided in the devide-tree node.
 
-> > > > >     Intel optimized getcpu syscall on Linux/Android system by usi=
-ng vDSO, but
-> > > > >     ARM doesn't do any optimizations for getcpu syscall.
-> > > =
+Setting a minimum frequency for the CPUs is needed to ensure a quick handling
+of the interrupts between two sensor frames and avoid dropping half of them.
 
-> > > > >     In Apple open source, TPIDRRO_EL0/TPIDRURO is used to save th=
-e CPU number,
-> > > > >     [1]https://opensource.apple.com/source/xnu/xnu-4570.1.46/osfm=
-k/arm/cswitch.s.auto.html
-> > > =
+version 4:
+- simplify irq affinity handling by using only dcmi_irq_notifier_notify() 
 
-> > > > >     =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0Is there any risk if using T=
-PIDRRO_EL0/TPIDRURO to implement
-> > > > >     the vDSO for getcpu? Is there any possible to break any ARM A=
-BI? Can you
-> > > > >     help us to confirm the considerations?
-> > > =
+version 3:
+- add a cpumask field to track boosted CPUs
+- add irq_affinity_notify callback
+- protect cpumask field with a mutex 
 
-> > > > Do you have a use-case for high-performance getcpu() that isn't bet=
-ter
-> > > > suited to rseq()?
-> > > =
+Benjamin Gaignard (3):
+  dt-bindings: media: stm32-dcmi: Add DCMI min frequency property
+  media: stm32-dcmi: Set minimum cpufreq requirement
+  ARM: dts: stm32: Set DCMI frequency requirement for stm32mp15x
 
-> > > I actually have an implementation of this that I'd been waiting for t=
-he
-> > > end of the merge window to post, largely because I first heard of the
-> > > use of restartable sequences for this after I'd already implemented t=
-he
-> > > vDSO version - this stuff is not as discoverable as one might desire.
-> > > It doesn't store the CPU ID directly in TPIDRRO but rather uses TPIDD=
-RRO
-> > > to store the offset of a per-CPU struct in the vDSO data in order to
-> > > allow for the addition of further data in the future.  I'll post it
-> > > today for discussion.
-> > > =
+ .../devicetree/bindings/media/st,stm32-dcmi.yaml   |   8 ++
+ arch/arm/boot/dts/stm32mp151.dtsi                  |   1 +
+ drivers/media/platform/stm32/stm32-dcmi.c          | 122 +++++++++++++++++++--
+ 3 files changed, 123 insertions(+), 8 deletions(-)
 
-> > > The latest version of the Mathieu's glibc integration patches is:
-> > > =
+-- 
+2.15.0
 
-> > >      https://lore.kernel.org/lkml/20200527185130.5604-3-mathieu.desno=
-yers@efficios.com/
-> > > =
-
-> > > The only things I can see where the vDSO does better are support for =
-the
-> > > node parameter of getcpu() and the ease of implementation for the use=
-rs,
-> > > the restartable sequences code was merged all the way back in v4.18 a=
-nd
-> > > it's still not used by any of the libcs as far as I can see.  The node
-> > > to CPU mapping is static so I'm not sure how exciting that is, it cou=
-ld
-> > > be looked up separately when processing data if it's important, but t=
-he
-> > > ease of use feels like something.
-> > > =
-
-> > > One important caveat with using TPIDRRO is that if KPTI is active then
-> > > the KPTI trampoline uses TPIDRRO as a scratch register so unless we c=
-an
-> > > find another register for scratch usage the user would need to give up
-> > > the protections offered by KPTI or run on future hardware which can u=
-se
-> > > E0PD instead.  This severely limits the usefulness on current systems.
-> > =
-
-> > We only trash TPIDRRO on entry, so I think you could repopulate it on e=
-very
-> > exception from userspace and it *should* work with KPTI (famous last wo=
-rds!)
-> =
-
-> Is that not already the case given that we keep TLS gubbins in there for
-> compat tasks?
-
-No; we only trash TPIDRRO for 64-bit tasks. 32-bit tasks have loads of
-free registers :D
-
-Will
 
 _______________________________________________
 linux-arm-kernel mailing list
