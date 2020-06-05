@@ -2,55 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BF181EF839
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:46:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6D0B1EF83C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:47:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iz0hJyU0El8YXsKzHy+sxIc23LSzTD2SJN9MZg+0t7E=; b=FvL/ifR0xjMqFjwI6Mo/CmHCs
-	T4efsptONOPRFKiZD5XzK9iNPANRiJz8wafhxzTSmwI9xtgSDZKVIK1g9YQoOV91B70RQuAVcMMKD
-	LI16QOk9SxeaYdcdVXGGYcNQUo1nUPcmmgkVb2CtFo1hS3HFKhs5sqeVgq2qGzXfk74oXqThrAyrF
-	4XSZsf0qEBI0eqKqtB9eYYYPSJoQSOnH6N87RguOLU8KDqlfEO8eRpy6fQoAyTiTVPLz52p84f9mR
-	kaZ+hj0loLS55yKVoNlhVUPfDxfvlgvrtntjJviqKVMieS31/a7cmtRjfDMC55End9vgPHH8WxJFR
-	FBWtF3HUg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WuWE8L8gReojRnIzN1AjCNK64IqBMx4vbJAX8udrye0=; b=cyuLi86HqWN6Qt
+	quUP0vZmbw2teUSQNF5cSo1J4483RkynsLfa0bxlswSXt6NvOjE0dP07RZkB5AgWORqPzS321iubU
+	z5eVG4uZ3WEhNbuiAwTgDMYn+LPwQdebQByKJHxA70gP5+W9j/nDF6pluRVK6itK3UMKT4WhEfIiM
+	GhzIQHGmN4mH9NqWWJH7Fp5LYbemNWQzcv/6sv4Kza/LOVou09lwtwFcZ76r6Ih4qqAuZqAzSVOdB
+	VI3BgdUmzys2M/QWmKkEdZu41qIA11CJ6KhindwAYJsnOnX7twWlZoG4cnX3rJjDBW93nvj92N1M6
+	T/BHNhjwqvVthKlwu3xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhBjY-0004H8-Sn; Fri, 05 Jun 2020 12:46:04 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jhBkP-0004gj-24; Fri, 05 Jun 2020 12:46:57 +0000
+Received: from mga07.intel.com ([134.134.136.100])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhBjP-0004GV-B6; Fri, 05 Jun 2020 12:45:57 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id CC71FAAC3;
- Fri,  5 Jun 2020 12:45:56 +0000 (UTC)
-Message-ID: <a8741e98ce8ef4522def822e830de7d8b4a4604a.camel@suse.de>
-Subject: Re: [PATCH v3 21/25] clk: bcm: rpi: Discover the firmware clocks
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Maxime Ripard <maxime@cerno.tech>
-Date: Fri, 05 Jun 2020 14:45:50 +0200
-In-Reply-To: <d3791b14fceec639085ff427e934852f275e348c.1590594293.git-series.maxime@cerno.tech>
-References: <cover.662a8d401787ef33780d91252a352de91dc4be10.1590594293.git-series.maxime@cerno.tech>
- <d3791b14fceec639085ff427e934852f275e348c.1590594293.git-series.maxime@cerno.tech>
-User-Agent: Evolution 3.36.2 
+ id 1jhBkD-0004fa-VY; Fri, 05 Jun 2020 12:46:51 +0000
+IronPort-SDR: DM1qkh8sRjeteUBTck8VLTnKl1uuBp8M/ABn/NXCms3oWp4yEII491t1RGuJgk9qpZYBu0sT3y
+ 8QmKuD22LgyQ==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 05 Jun 2020 05:46:45 -0700
+IronPort-SDR: r/oJX8fhNmc8e/bISoUrjyeoU9guHWxK+HVaeG11SzZWS7YbfeGTMiJ95UKT4qtI63FTHd0jO8
+ yFEOq6VRqCWQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,476,1583222400"; d="scan'208";a="269755373"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga003.jf.intel.com with ESMTP; 05 Jun 2020 05:46:41 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jhBkB-00B1rI-FV; Fri, 05 Jun 2020 15:46:43 +0300
+Date: Fri, 5 Jun 2020 15:46:43 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Subject: Re: [V7, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
+Message-ID: <20200605124643.GG2428291@smile.fi.intel.com>
+References: <20200605105412.18813-1-dongchun.zhu@mediatek.com>
+ <20200605105412.18813-3-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200605105412.18813-3-dongchun.zhu@mediatek.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_054555_680009_58B2FE47 
-X-CRM114-Status: GOOD (  29.57  )
+X-CRM114-CacheID: sfid-20200605_054650_215660_3741FA33 
+X-CRM114-Status: GOOD (  11.60  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [134.134.136.100 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,426 +72,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1694165782082457735=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
+ louis.kuo@mediatek.com, srv_heupstream@mediatek.com, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Jun 05, 2020 at 06:54:12PM +0800, Dongchun Zhu wrote:
+> Add a V4L2 sub-device driver for DW9768 voice coil motor, providing
+> control to set the desired focus via IIC serial interface.
 
---===============1694165782082457735==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-5IzPRWEO3GJqGzz4Q08d"
+...
 
+> +config VIDEO_DW9768
+> +	tristate "DW9768 lens voice coil support"
+> +	depends on I2C && VIDEO_V4L2
 
---=-5IzPRWEO3GJqGzz4Q08d
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+No compile test?
 
-Hi Maxime,
+> +	depends on PM
 
-On Wed, 2020-05-27 at 17:45 +0200, Maxime Ripard wrote:
-> The RaspberryPi4 firmware actually exposes more clocks than are currently
-> handled by the driver and we will need to change some of them directly
-> based on the pixel rate for the display related clocks, or the load for t=
-he
-> GPU.
->=20
-> Since the firmware implements DVFS, this rate change can have a number of
-> side-effects, including adjusting the various PLL voltages or the PLL
-> parents. The firmware also implements thermal throttling, so even some
-> thermal pressure can change those parameters behind Linux back.
->=20
-> DVFS is currently implemented on the arm, core, h264, v3d, isp and hevc
-> clocks, so updating any of them using the MMIO driver (and thus behind th=
-e
-> firmware's back) can lead to troubles, the arm clock obviously being the
-> most problematic.
->=20
-> In order to make Linux play as nice as possible with those constraints, i=
-t
-> makes sense to rely on the firmware clocks as much as possible. However,
-> the firmware doesn't seem to provide some equivalents to their MMIO
-> counterparts, so we can't really replace that driver entirely.
->=20
-> Fortunately, the firmware has an interface to discover the clocks it
-> exposes.
->=20
-> Let's use it to discover, register the clocks in the clocks framework and
-> then expose them through the device tree for consumers to use them.
->=20
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Reviewed-by: Stephen Boyd <sboyd@kernel.org>
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
->  drivers/clk/bcm/clk-raspberrypi.c          | 151 ++++++++++++++++++++--
->  include/soc/bcm2835/raspberrypi-firmware.h |   5 +-
->  2 files changed, 144 insertions(+), 12 deletions(-)
->=20
-> diff --git a/drivers/clk/bcm/clk-raspberrypi.c b/drivers/clk/bcm/clk-
-> raspberrypi.c
-> index eebd16040f8a..8d3acf3ee053 100644
-> --- a/drivers/clk/bcm/clk-raspberrypi.c
-> +++ b/drivers/clk/bcm/clk-raspberrypi.c
-> @@ -296,6 +296,142 @@ static struct clk_hw
-> *raspberrypi_register_pllb_arm(struct raspberrypi_clk *rpi)
->  	return &raspberrypi_clk_pllb_arm.hw;
->  }
-> =20
-> +static int raspberrypi_fw_dumb_determine_rate(struct clk_hw *hw,
-> +					      struct clk_rate_request *req)
+This is very strange dependency for ordinary driver.
+
+> +	select MEDIA_CONTROLLER
+> +	select VIDEO_V4L2_SUBDEV_API
+> +	select V4L2_FWNODE
+
+...
+
+> +/*
+> + * DW9768 requires waiting time (delay time) of t_OPR after power-up,
+> + * or in the case of PD reset taking place.
+> + */
+> +#define DW9768_T_OPR_US				1000
+> +#define DW9768_Tvib_MS_BASE10			(64 - 1)
+> +#define DW9768_AAC_MODE_DEFAULT			2
+
+> +#define DW9768_AAC_TIME_DEFAULT			0x20
+
+Hex? Why not decimal?
+
+> +#define DW9768_CLOCK_PRE_SCALE_DEFAULT		1
+
+...
+
+> +static int dw9768_mod_reg(struct dw9768 *dw9768, u8 reg, u8 mask, u8 val)
 > +{
-> +	/*
-> +	 * The firmware will do the rounding but that isn't part of
-> +	 * the interface with the firmware, so we just do our best
-> +	 * here.
-> +	 */
-> +	req->rate =3D clamp(req->rate, req->min_rate, req->max_rate);
-> +	return 0;
-> +}
-> +
-> +static const struct clk_ops raspberrypi_firmware_clk_ops =3D {
-> +	.is_prepared	=3D raspberrypi_fw_is_prepared,
-> +	.recalc_rate	=3D raspberrypi_fw_get_rate,
-> +	.determine_rate	=3D raspberrypi_fw_dumb_determine_rate,
-> +	.set_rate	=3D raspberrypi_fw_set_rate,
-> +};
-> +
-> +static struct clk_hw *raspberrypi_clk_register(struct raspberrypi_clk *r=
-pi,
-> +					       unsigned int parent,
-> +					       unsigned int id)
-> +{
-> +	struct raspberrypi_clk_data *data;
-> +	struct clk_init_data init =3D {};
-> +	u32 min_rate, max_rate;
+> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
 > +	int ret;
 > +
-> +	if (id =3D=3D RPI_FIRMWARE_ARM_CLK_ID) {
-> +		struct clk_hw *hw;
+> +	ret = i2c_smbus_read_byte_data(client, reg);
+> +	if (ret < 0)
+> +		return ret;
 > +
-> +		hw =3D raspberrypi_register_pllb(rpi);
-> +		if (IS_ERR(hw)) {
-> +			dev_err(rpi->dev, "Failed to initialize pllb, %ld\n",
-> +				PTR_ERR(hw));
-> +			return hw;
-> +		}
-> +
-> +		return raspberrypi_register_pllb_arm(rpi);
-> +	}
-> +
-> +	data =3D devm_kzalloc(rpi->dev, sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return ERR_PTR(-ENOMEM);
-> +	data->rpi =3D rpi;
-> +	data->id =3D id;
-> +
-> +	init.name =3D devm_kasprintf(rpi->dev, GFP_KERNEL, "fw-clk-%u", id);
-> +	init.ops =3D &raspberrypi_firmware_clk_ops;
-> +	init.flags =3D CLK_GET_RATE_NOCACHE;
-> +
-> +	data->hw.init =3D &init;
-> +
-> +	ret =3D raspberrypi_clock_property(rpi->firmware, data,
-> +					 RPI_FIRMWARE_GET_MIN_CLOCK_RATE,
-> +					 &min_rate);
-> +	if (ret) {
-> +		dev_err(rpi->dev, "Failed to get clock %d min freq: %d",
-> +			id, ret);
-> +		return ERR_PTR(ret);
-> +	}
-> +
-> +	ret =3D raspberrypi_clock_property(rpi->firmware, data,
-> +					 RPI_FIRMWARE_GET_MAX_CLOCK_RATE,
-> +					 &max_rate);
-> +	if (ret) {
-> +		dev_err(rpi->dev, "Failed to get clock %d max freq: %d\n",
-> +			id, ret);
-> +		return ERR_PTR(ret);
-> +	}
-> +
-> +	dev_info(rpi->dev, "Clock %d frequency range: min %u, max %u\n",
-> +		 id, min_rate, max_rate);
 
-This outputs:
+> +	val = ((unsigned char)ret & ~mask) | (val & mask);
 
-[    9.071965] raspberrypi-clk soc:firmware:clocks: Clock arm frequency ran=
-ge: min 600000000, max 1500000000
-[    9.086115] raspberrypi-clk soc:firmware:clocks: Clock core frequency ra=
-nge: min 200000000, max 500000000
-[    9.102418] raspberrypi-clk soc:firmware:clocks: Clock v3d frequency ran=
-ge: min 250000000, max 500000000
-[    9.120260] raspberrypi-clk soc:firmware:clocks: Clock m2mc frequency ra=
-nge: min 0, max 600000000
-
-I think, arm aside, it's pretty useless. I'd either print it only for arm o=
-r
-drop it altogether.
+This cast is weird.
 
 > +
-> +	ret =3D devm_clk_hw_register(rpi->dev, &data->hw);
-> +	if (ret)
-> +		return ERR_PTR(ret);
+> +	return i2c_smbus_write_byte_data(client, reg, val);
+> +}
+
+...
+
+> +			dev_err(&client->dev, "%s I2C failure: %d",
+> +				__func__, ret);
+
+One line?
+
+...
+
+> +static int dw9768_release(struct dw9768 *dw9768)
+> +{
+> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
+> +	u32 move_delay_us = dw9768_cal_move_delay(dw9768->aac_mode,
+> +						  dw9768->clock_presc,
+> +						  dw9768->aac_timing) / 100;
+> +	int ret, val;
 > +
-> +	clk_hw_set_rate_range(&data->hw, min_rate, max_rate);
-> +
-> +	if (id =3D=3D RPI_FIRMWARE_ARM_CLK_ID) {
-> +		ret =3D devm_clk_hw_register_clkdev(rpi->dev, &data->hw,
-> +						  NULL, "cpu0");
+> +	val = round_down(dw9768->focus->val, DW9768_MOVE_STEPS);
+> +	for ( ; val >= 0; val -= DW9768_MOVE_STEPS) {
+> +		ret = dw9768_set_dac(dw9768, val);
 > +		if (ret) {
-> +			dev_err(rpi->dev, "Failed to initialize clkdev\n");
-> +			return ERR_PTR(ret);
+> +			dev_err(&client->dev, "I2C write fail: %d", ret);
+> +			return ret;
 > +		}
+> +		usleep_range(move_delay_us, move_delay_us + 1000);
 > +	}
-> +
-> +	return &data->hw;
-> +}
-> +
-> +static int raspberrypi_discover_clocks(struct raspberrypi_clk *rpi,
-> +				       struct clk_hw_onecell_data *data)
-> +{
-> +	struct rpi_firmware_get_clocks_response *clks;
-> +	int ret;
-> +
-> +	clks =3D devm_kcalloc(rpi->dev,
-> +			    sizeof(*clks), RPI_FIRMWARE_NUM_CLK_ID,
-> +			    GFP_KERNEL);
-> +	if (!clks)
-> +		return -ENOMEM;
-> +
-> +	ret =3D rpi_firmware_property(rpi->firmware, RPI_FIRMWARE_GET_CLOCKS,
-> +				    clks,
-> +				    sizeof(*clks) * RPI_FIRMWARE_NUM_CLK_ID);
-> +	if (ret)
-> +		return ret;
-> +
-> +	while (clks->id) {
-> +		struct clk_hw *hw;
-> +
-> +		switch (clks->id) {
-> +		case RPI_FIRMWARE_ARM_CLK_ID:
-> +		case RPI_FIRMWARE_CORE_CLK_ID:
-> +		case RPI_FIRMWARE_M2MC_CLK_ID:
-> +		case RPI_FIRMWARE_V3D_CLK_ID:
-> +			hw =3D raspberrypi_clk_register(rpi, clks->parent,
-> +						      clks->id);
-> +			if (IS_ERR(hw))
-> +				return PTR_ERR(hw);
-> +
-> +			data->hws[clks->id] =3D hw;
-> +			data->num =3D clks->id + 1;
-> +			fallthrough;
-> +
-> +		default:
-> +			clks++;
-> +			break;
-> +		}
-> +	}
-> +
+
+
+It will look more naturally in the multiplier kind of value.
+
+	unsigned int steps = DIV_ROUND_UP(...);
+
+	while (steps--) {
+		...(..., steps * ..._MOVE_STEPS);
+		...
+	}
+
+but double check arithmetics.
+
 > +	return 0;
 > +}
-> +
->  static int raspberrypi_clk_probe(struct platform_device *pdev)
->  {
->  	struct clk_hw_onecell_data *clk_data;
-> @@ -303,7 +439,6 @@ static int raspberrypi_clk_probe(struct platform_devi=
-ce
-> *pdev)
->  	struct device *dev =3D &pdev->dev;
->  	struct rpi_firmware *firmware;
->  	struct raspberrypi_clk *rpi;
-> -	struct clk_hw *hw;
->  	int ret;
-> =20
->  	/*
-> @@ -340,17 +475,9 @@ static int raspberrypi_clk_probe(struct platform_dev=
-ice
-> *pdev)
->  	if (!clk_data)
->  		return -ENOMEM;
-> =20
-> -	hw =3D raspberrypi_register_pllb(rpi);
-> -	if (IS_ERR(hw)) {
-> -		dev_err(dev, "Failed to initialize pllb, %ld\n", PTR_ERR(hw));
-> -		return PTR_ERR(hw);
-> -	}
-> -
-> -	hw =3D raspberrypi_register_pllb_arm(rpi);
-> -	if (IS_ERR(hw))
-> -		return PTR_ERR(hw);
-> -	clk_data->hws[RPI_FIRMWARE_ARM_CLK_ID] =3D hw;
-> -	clk_data->num =3D RPI_FIRMWARE_ARM_CLK_ID + 1;
-> +	ret =3D raspberrypi_discover_clocks(rpi, clk_data);
-> +	if (ret)
-> +		return ret;
-> =20
->  	ret =3D devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get,
->  					  clk_data);
-> diff --git a/include/soc/bcm2835/raspberrypi-firmware.h
-> b/include/soc/bcm2835/raspberrypi-firmware.h
-> index 3025aca3c358..1c48f8269eab 100644
-> --- a/include/soc/bcm2835/raspberrypi-firmware.h
-> +++ b/include/soc/bcm2835/raspberrypi-firmware.h
-> @@ -136,6 +136,11 @@ enum rpi_firmware_property_tag {
->  	RPI_FIRMWARE_GET_DMA_CHANNELS =3D                       0x00060001,
->  };
-> =20
-> +struct rpi_firmware_get_clocks_response {
-> +	__le32 parent;
-> +	__le32 id;
-> +};
-> +
-
-As per other firmware consumer drivers, this should be moved into
-clk-raspberrypi.c. Also I'd switch to using u32. It's pretty clear this wil=
-l be
-used only on this platform, so no need to worry about endianness (also comm=
-on
-practice among rpi firmware consumer drivers).
-
->  #if IS_ENABLED(CONFIG_RASPBERRYPI_FIRMWARE)
->  int rpi_firmware_property(struct rpi_firmware *fw,
->  			  u32 tag, void *data, size_t len);
-
-Here's the clk_summary output:
-
-                                 enable  prepare  protect                  =
-              duty
-   clock                          count    count    count        rate   acc=
-uracy phase  cycle
----------------------------------------------------------------------------=
-------------------
- fw-clk-m2mc                          0        0        0   149984992      =
-    0     0  50000
- fw-clk-v3d                           0        0        0   250000000      =
-    0     0  50000
- fw-clk-core                          0        0        0   200000000      =
-    0     0  50000
- fw-clk-arm                           0        0        0  1500000000      =
-    0     0  50000
- otg                                  0        0        0   480000000      =
-    0     0  50000
- osc                                  2        2        2    54000000      =
-    0     0  50000
-    tsens                             0        0        0     3375000      =
-    0     0  50000
-    otp                               0        0        0    13500000      =
-    0     0  50000
-    timer                             0        0        0     1000000      =
-    0     0  50000
-    plld                              1        1        1  2999999988      =
-    0     0  50000
-       plld_dsi1                      0        0        0    11718750      =
-    0     0  50000
-       plld_dsi0                      0        0        0    11718750      =
-    0     0  50000
-       plld_per                       5        5        4   749999997      =
-    0     0  50000
-          pwm                         1        1        1     9999999      =
-    0     0  50000
-          emmc2                       1        1        1    99999999      =
-    0     0  50000
-          emmc                        1        1        1   249999999      =
-    0     0  50000
-          uart                        1        1        1    47999999      =
-    0     0  50000
-       plld_core                      0        0        0   599999998      =
-    0     0  50000
-    pllc                              1        1        1  3000000091      =
-    0     0  50000
-       pllc_per                       0        0        0   600000019      =
-    0     0  50000
-       pllc_core2                     0        0        0    11718751      =
-    0     0  50000
-       pllc_core1                     0        0        0    11718751      =
-    0     0  50000
-       pllc_core0                     1        1        1  1000000031      =
-    0     0  50000
-          vpu                         5        5        2   200000006      =
-    0     0  50000
-             fe804000.i2c_div         1        1        1       99901      =
-    0     0  50000
-             fe205000.i2c_div         1        1        1       99901      =
-    0     0  50000
-             aux_spi2                 0        0        0   200000006      =
-    0     0  50000
-             aux_spi1                 0        0        0   200000006      =
-    0     0  50000
-             aux_uart                 1        1        0   200000006      =
-    0     0  50000
-             peri_image               0        0        0   200000006      =
-    0     0  50000
-    pllb                              0        0        0  2999999988      =
-    0     0  50000
-       pllb_arm                       0        0        0   599999998      =
-    0     0  50000
-    plla                              0        0        0  2999999988      =
-    0     0  50000
-       plla_ccp2                      0        0        0    11718750      =
-    0     0  50000
-       plla_dsi0                      0        0        0    11718750      =
-    0     0  50000
-       plla_per                       0        0        0    11718750      =
-    0     0  50000
-       plla_core                      0        0        0   499999998      =
-    0     0  50000
-          h264                        0        0        0   249999999      =
-    0     0  50000
-          isp                         0        0        0   249999999      =
-    0     0  50000
-          v3d                         0        0        0   249999999      =
-    0     0  50000
-[...]
-
-arm clocks don't match. CCF is caching the mmio version of the clocks, I th=
-ink
-we need to add CLK_GET_RATE_NOCACHE to every clock that's being handled by
-firmware.
-
-Otherwise I verified that cpufreq registers/behaves as expected.
-
-Regards,
-Nicolas
 
 
---=-5IzPRWEO3GJqGzz4Q08d
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+Also it seems we need to have writex_poll_timeout() implementation (see
+iopoll.h).
 
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7aPn4ACgkQlfZmHno8
-x/50Ugf/dMn9kXMTiH9HmlPWJiQ0BVr0ax4b6Zu+DA/Imtf030FK5Z0kBemOjS+b
-ZL9Ke/A/GOxJI6LrqClt2UOykYMkzzVB7G1Fcqjg/MR8Qaqk++RaoPOjF7jsbDBQ
-xiSOY5v0GiUV71jYyjaG/Gdk1Eg4iYuCYm0VOG48hjn085EbrVW5xdal8O+5/EsW
-3auS+uMH9bOMHG8aG6q5WgmNx7udEXH864xI22MBGY4DqavooXNJaEWy/PVIMIZ4
-uv4YTOyCE80zNlpALFRUyFCoGvqdSej2PRHAwK93RpPzDGa2ILXN2h9274bO7mVF
-ESuO10krZg4z6oZ73yrjh9D2i01TMQ==
-=BvX2
------END PGP SIGNATURE-----
-
---=-5IzPRWEO3GJqGzz4Q08d--
+-- 
+With Best Regards,
+Andy Shevchenko
 
 
-
---===============1694165782082457735==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1694165782082457735==--
-
-
