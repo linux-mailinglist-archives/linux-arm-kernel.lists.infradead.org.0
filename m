@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 898CA1F0213
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:40:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F056E1F022C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 23:41:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tVAI53aoVyRE4R577IVfgu7EYK/0FSgWr6VMVxwE+8A=; b=qkwtlQj5KnyVHM
-	zvG7ZUTAY0ZV+dSudnhr83lLnfagOYMDDSoH0hMi1SuGgna+Nn6gSIJh4ACa8g5+FlVzPeY4IphsC
-	IHodF/Q8D/LjvsXMs1Rv1/0oRWr8qEk2+EP19ghGAJ+fvkLauRgRO2myLtMAElzj9+nRvaQglaSo9
-	5CGj3Lk6KkB4k2bmetjid7B4LSGBaU0PluLvCeVVKkGyqv33B/fxmAblbo61ARV9nOGVjG0Jjhm3G
-	+Dyb4jGkcjLQcx03QxzeOEtW0Tad8kU60XxlP2J3AGr/WQ2xghmnZTKx2R6YZDZ78kQ4AB1tUipiq
-	wGgGEpXh2zEuAow4ZKdA==;
+	List-Owner; bh=eAoEu40zKdpxsw9B6OLDu9g5CFjBlRHO02JDk+Zatvk=; b=bhgZx1CpM0q73Y
+	wZvByVqFVl9DOpk4+L8NrqWxOQnTc4GJWf0Y7YOxy+1x1bnIEZNmkXpLW+x4GhIvfM0sXpeMo13+o
+	EFlcAOGzG0gnvMSh3HjVS/OBoEySyNuFI9Jzuxtnf5/njRc4N4yl9JwYWxECHpjaC7I3lHUaSLADy
+	SZPOut9Ev4KVfzYBWhKE1Uk4M0X0q5oa2r35SQuJG/GdIAoJEw5zF3gvPXJRlJLD4k991Nw4o8R8W
+	raAz3AiNCORSf1VR7uJ1/WvHArmmBdhkcWFfXRdIJrGGwkgmHyZE+xfJw58KZ1IzUhfbRjeX2zYl9
+	qL94DKdSdsKTbU6GVmkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhK4k-0005D2-NV; Fri, 05 Jun 2020 21:40:30 +0000
+	id 1jhK5r-00075W-1p; Fri, 05 Jun 2020 21:41:39 +0000
 Received: from mga17.intel.com ([192.55.52.151])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhK3S-0002lv-Sg
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 21:39:12 +0000
-IronPort-SDR: 27uuodUt6y9C73lvXnIDUP4MyKQkHI/GubHa0DxGuW1qiOFFpOXSMVHD3XLhPn1PuHIGqRe1/Y
- 9bCRhNOedtXg==
+ id 1jhK3U-0002lz-AB
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 21:39:14 +0000
+IronPort-SDR: GYCxHtskTuuXVy5UDojJgnShJLFCVwbmGn/E4r4JApgk8HuNjjMw2FqY2JDwmAV8ukXNj0QRVT
+ 9Vb6qPGGjfOQ==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
 Received: from orsmga002.jf.intel.com ([10.7.209.21])
  by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
  05 Jun 2020 14:39:08 -0700
-IronPort-SDR: QsmbfClzyf8D/ICjb7dDyC1MYIA7FZOgNpuwJmABrVoK4JXXrioxZ9474jHd7ZQQ7Li6SBtZbe
- e6i3ypJcbYaw==
+IronPort-SDR: /DIB9oiqYI2Fg3zD1AVI7xOqUEPZThNOBLFZjDo1clHWgdOMBdzQcqRgIJ9S8j4GwRp7A7TrVS
+ UbqM0qM5y0jg==
 X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,477,1583222400"; d="scan'208";a="287860877"
+X-IronPort-AV: E=Sophos;i="5.73,477,1583222400"; d="scan'208";a="287860880"
 Received: from sjchrist-coffee.jf.intel.com ([10.54.74.152])
  by orsmga002.jf.intel.com with ESMTP; 05 Jun 2020 14:39:07 -0700
 From: Sean Christopherson <sean.j.christopherson@intel.com>
 To: Marc Zyngier <maz@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
  Christian Borntraeger <borntraeger@de.ibm.com>,
  Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 04/21] KVM: x86/mmu: Remove superfluous gotos from
- mmu_topup_memory_caches()
-Date: Fri,  5 Jun 2020 14:38:36 -0700
-Message-Id: <20200605213853.14959-5-sean.j.christopherson@intel.com>
+Subject: [PATCH 05/21] KVM: x86/mmu: Try to avoid crashing KVM if a MMU memory
+ cache is empty
+Date: Fri,  5 Jun 2020 14:38:37 -0700
+Message-Id: <20200605213853.14959-6-sean.j.christopherson@intel.com>
 X-Mailer: git-send-email 2.26.0
 In-Reply-To: <20200605213853.14959-1-sean.j.christopherson@intel.com>
 References: <20200605213853.14959-1-sean.j.christopherson@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_143910_954159_1B45DEE0 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20200605_143912_378704_625715D0 
+X-CRM114-Status: GOOD (  11.45  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -88,37 +88,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Return errors directly from mmu_topup_memory_caches() instead of
-branching to a label that does the same.
-
-No functional change intended.
+Attempt to allocate a new object instead of crashing KVM (and likely the
+kernel) if a memory cache is unexpectedly empty.  Use GFP_ATOMIC for the
+allocation as the caches are used while holding mmu_lock.  The immediate
+BUG_ON() makes the code unnecessarily explosive and led to confusing
+minimums being used in the past, e.g. allocating 4 objects where 1 would
+suffice.
 
 Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
 ---
- arch/x86/kvm/mmu/mmu.c | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
+ arch/x86/kvm/mmu/mmu.c | 21 +++++++++++++++------
+ 1 file changed, 15 insertions(+), 6 deletions(-)
 
 diff --git a/arch/x86/kvm/mmu/mmu.c b/arch/x86/kvm/mmu/mmu.c
-index 36c90f004ef4..ba70de24a5b0 100644
+index ba70de24a5b0..5e773564ab20 100644
 --- a/arch/x86/kvm/mmu/mmu.c
 +++ b/arch/x86/kvm/mmu/mmu.c
-@@ -1100,13 +1100,11 @@ static int mmu_topup_memory_caches(struct kvm_vcpu *vcpu)
- 	r = mmu_topup_memory_cache(&vcpu->arch.mmu_pte_list_desc_cache,
- 				   8 + PTE_PREFETCH_NUM);
- 	if (r)
--		goto out;
-+		return r;
- 	r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_cache, 8);
- 	if (r)
--		goto out;
--	r = mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache, 4);
--out:
--	return r;
-+		return r;
-+	return mmu_topup_memory_cache(&vcpu->arch.mmu_page_header_cache, 4);
+@@ -1060,6 +1060,15 @@ static void walk_shadow_page_lockless_end(struct kvm_vcpu *vcpu)
+ 	local_irq_enable();
  }
  
- static void mmu_free_memory_caches(struct kvm_vcpu *vcpu)
++static inline void *mmu_memory_cache_alloc_obj(struct kvm_mmu_memory_cache *mc,
++					       gfp_t gfp_flags)
++{
++	if (mc->kmem_cache)
++		return kmem_cache_zalloc(mc->kmem_cache, gfp_flags);
++	else
++		return (void *)__get_free_page(gfp_flags);
++}
++
+ static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *mc, int min)
+ {
+ 	void *obj;
+@@ -1067,10 +1076,7 @@ static int mmu_topup_memory_cache(struct kvm_mmu_memory_cache *mc, int min)
+ 	if (mc->nobjs >= min)
+ 		return 0;
+ 	while (mc->nobjs < ARRAY_SIZE(mc->objects)) {
+-		if (mc->kmem_cache)
+-			obj = kmem_cache_zalloc(mc->kmem_cache, GFP_KERNEL_ACCOUNT);
+-		else
+-			obj = (void *)__get_free_page(GFP_KERNEL_ACCOUNT);
++		obj = mmu_memory_cache_alloc_obj(mc, GFP_KERNEL_ACCOUNT);
+ 		if (!obj)
+ 			return mc->nobjs >= min ? 0 : -ENOMEM;
+ 		mc->objects[mc->nobjs++] = obj;
+@@ -1118,8 +1124,11 @@ static void *mmu_memory_cache_alloc(struct kvm_mmu_memory_cache *mc)
+ {
+ 	void *p;
+ 
+-	BUG_ON(!mc->nobjs);
+-	p = mc->objects[--mc->nobjs];
++	if (WARN_ON(!mc->nobjs))
++		p = mmu_memory_cache_alloc_obj(mc, GFP_ATOMIC | __GFP_ACCOUNT);
++	else
++		p = mc->objects[--mc->nobjs];
++	BUG_ON(!p);
+ 	return p;
+ }
+ 
 -- 
 2.26.0
 
