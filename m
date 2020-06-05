@@ -2,79 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23D8B1EF12B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 08:05:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4533F1EF129
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 08:05:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lXunqv1AV3V1nsK+rMFJSqiGHeDZgxLEPd3nGDsnxv8=; b=AyumClhhFsTp+M
-	4r7a/iJU2Jl5DmKUkvYXcO1lHYZDujQFYvn0gO4VBA9wmNuIYUTaBsNiVfXTR/w2Y5VfPcCSU5Y/W
-	fRli/2BT//m6aYNVXMHlWS8aVWBEON1SXuk1kmSJwL/SQleAuRpgx4Nx5yioNlhk1L3BcONo+n1jg
-	F9exGXbNajqKE5LoGH3SDVLci87dEiEZvg+DnhuIKMjzkJEbxI1R8HMnqlNZHfZj8BFyJat2DLzdK
-	BeoAcutBo9Ju5ic1BDgkjT0N3vjhanZjcATIH5w5wJZZH3ihHOEP++4NmVJXZMXjRonoPGUjk1os5
-	46KXacWS4GY8ZksuGH5g==;
+	List-Owner; bh=fBjLaz3Q3Ewhoh9NkIZIHuHxdtaghOumMtQSFbFaR1I=; b=CDYQH6ZZYDxcxF
+	uN21VEC/4nOw49Fz8LwDXp2Kry9FmjuVQCJdlltvbtM317TsXCy0nesOctZqVEk1uddgAm04p+J1T
+	AA9MnFVXxVVzQYmRQ5iZdBxeeVzttU9AfyTYJSxLWcbykE/o6hsOI1Yb4UUwkYdpH5D1DJ7mOUfqc
+	YKLQFlVnbZbPXiP4mszQ5w5pfw9E0llhWEB9Cl9itAdwfjwLQTMdYhy/xejDR36dMWR3HFOKSTsZF
+	hxdi5c6aK3vZ4dSYCvUQ1qd0ANwDfK74WSz7a4qMtGBFyiVOtU6T0MSWxvhOeUP9Khl5KRFROxM9k
+	WaB4Fd4pnugJw6n9GcUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh5U3-0001sO-MK; Fri, 05 Jun 2020 06:05:39 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jh5Tj-0007aa-I7; Fri, 05 Jun 2020 06:05:19 +0000
+Received: from szxga01-in.huawei.com ([45.249.212.187] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh5Tm-0001p6-5R; Fri, 05 Jun 2020 06:05:24 +0000
-X-UUID: 21f5842ebd5c446f93652317d12ae062-20200604
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=NswnMBEYCB0ATqA+z8ftWgQH27FC9O8GRg7nuiNH9lw=; 
- b=ZSzwOxeVGLQC7llW/m8kKGil0p405CRXv6I+Jnt87x1FcQ82xIa3bertIlbSbQ5BIJoss4Po7WE3XpSo++lUYqXueEkRpyyPj5mSnuzz+UbQkNgFMc3UVx+dDqAtTcdD21pKtK9FPuhq9HAd9PqUYGOMcHHFrz66GGj7qBfLCMY=;
-X-UUID: 21f5842ebd5c446f93652317d12ae062-20200604
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <xia.jiang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1440447240; Thu, 04 Jun 2020 22:05:09 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 4 Jun 2020 23:05:10 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Fri, 5 Jun 2020 14:05:07 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 5 Jun 2020 14:05:04 +0800
-Message-ID: <1591336981.31802.3.camel@mhfsdcap03>
-Subject: Re: [PATCH v8 05/14] media: platform: Improve power on and power
- off flow
-From: Xia Jiang <xia.jiang@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Fri, 5 Jun 2020 14:03:01 +0800
-In-Reply-To: <20200521152253.GE209565@chromium.org>
-References: <20200403094033.8288-1-xia.jiang@mediatek.com>
- <20200403094033.8288-6-xia.jiang@mediatek.com>
- <20200521152253.GE209565@chromium.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jh5TL-0007UV-4r
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 06:04:57 +0000
+Received: from dggemi402-hub.china.huawei.com (unknown [172.30.72.56])
+ by Forcepoint Email with ESMTP id 3647AF0A6493C43752CF;
+ Fri,  5 Jun 2020 14:04:42 +0800 (CST)
+Received: from DGGEMI525-MBS.china.huawei.com ([169.254.6.10]) by
+ dggemi402-hub.china.huawei.com ([10.3.17.135]) with mapi id 14.03.0487.000;
+ Fri, 5 Jun 2020 14:04:32 +0800
+From: "Song Bao Hua (Barry Song)" <song.bao.hua@hisilicon.com>
+To: Dan Carpenter <dan.carpenter@oracle.com>, "kbuild@lists.01.org"
+ <kbuild@lists.01.org>, "hch@lst.de" <hch@lst.de>, "m.szyprowski@samsung.com"
+ <m.szyprowski@samsung.com>, "robin.murphy@arm.com" <robin.murphy@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>
+Subject: RE: [PATCH 1/3] dma-direct: provide the ability to reserve per-numa
+ CMA
+Thread-Topic: [PATCH 1/3] dma-direct: provide the ability to reserve
+ per-numa CMA
+Thread-Index: AQHWOVDkjt//8Ixq2UKuAS4YcS/rw6jH0AqAgAG65oA=
+Date: Fri, 5 Jun 2020 06:04:31 +0000
+Message-ID: <B926444035E5E2439431908E3842AFD24E0011@DGGEMI525-MBS.china.huawei.com>
+References: <20200603024231.61748-2-song.bao.hua@hisilicon.com>
+ <20200604113631.GP30374@kadam>
+In-Reply-To: <20200604113631.GP30374@kadam>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.126.201.128]
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: D4D85237458B3F37009A20C7C482D59AA2A1276C3CD07436513B69A34E50B8692000:8
-X-MTK: N
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_230522_212360_CFDFDAA8 
-X-CRM114-Status: GOOD (  18.63  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200604_230455_378185_49EF3942 
+X-CRM114-Status: GOOD (  12.06  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.187 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,117 +74,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, devicetree@vger.kernel.org, mojahsu@chromium.org,
- srv_heupstream@mediatek.com, Rick Chang <rick.chang@mediatek.com>,
- senozhatsky@chromium.org, linux-kernel@vger.kernel.org,
- maoguang.meng@mediatek.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- sj.huang@mediatek.com, Rob Herring <robh+dt@kernel.org>, Matthias
- Brugger <matthias.bgg@gmail.com>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- linux-mediatek@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: "kbuild-all@lists.01.org" <kbuild-all@lists.01.org>,
+ "lkp@intel.com" <lkp@intel.com>, John Garry <john.garry@huawei.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linuxarm <linuxarm@huawei.com>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ Jonathan Cameron <jonathan.cameron@huawei.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Dan Carpenter <error27@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-05-21 at 15:22 +0000, Tomasz Figa wrote:
-> Hi Xia,
+
+
+> -----Original Message-----
+> From: Dan Carpenter [mailto:dan.carpenter@oracle.com]
+> Sent: Thursday, June 4, 2020 11:37 PM
+> To: kbuild@lists.01.org; Song Bao Hua (Barry Song)
+> <song.bao.hua@hisilicon.com>; hch@lst.de; m.szyprowski@samsung.com;
+> robin.murphy@arm.com; catalin.marinas@arm.com
+> Cc: lkp@intel.com; Dan Carpenter <error27@gmail.com>;
+> kbuild-all@lists.01.org; iommu@lists.linux-foundation.org;
+> linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Linuxarm
+> <linuxarm@huawei.com>; Jonathan Cameron
+> <jonathan.cameron@huawei.com>; John Garry <john.garry@huawei.com>
+> Subject: Re: [PATCH 1/3] dma-direct: provide the ability to reserve per-numa
+> CMA
 > 
-> On Fri, Apr 03, 2020 at 05:40:24PM +0800, Xia Jiang wrote:
-> > Call pm_runtime_get_sync() before starting a frame and then
-> > pm_runtime_put() after completing it. This can save power for the time
-> > between processing two frames.
-> > 
-> > Signed-off-by: Xia Jiang <xia.jiang@mediatek.com>
-> > ---
-> >  .../media/platform/mtk-jpeg/mtk_jpeg_core.c   | 27 +++++--------------
-> >  1 file changed, 6 insertions(+), 21 deletions(-)
-> > 
+> Hi Barry,
 > 
-> Thank you for the patch. Please see my comments inline.
+> url:
+> https://github.com/0day-ci/linux/commits/Barry-Song/support-per-numa-CM
+> A-for-ARM-server/20200603-104821
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+> for-next/core
+> config: x86_64-randconfig-m001-20200603 (attached as .config)
+> compiler: gcc-9 (Debian 9.3.0-13) 9.3.0
 > 
-> > diff --git a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-> > index a536fa95b3d6..dd5cadd101ef 100644
-> > --- a/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-> > +++ b/drivers/media/platform/mtk-jpeg/mtk_jpeg_core.c
-> > @@ -710,23 +710,6 @@ static struct vb2_v4l2_buffer *mtk_jpeg_buf_remove(struct mtk_jpeg_ctx *ctx,
-> >  		return v4l2_m2m_dst_buf_remove(ctx->fh.m2m_ctx);
-> >  }
-> >  
-> > -static int mtk_jpeg_start_streaming(struct vb2_queue *q, unsigned int count)
-> > -{
-> > -	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-> > -	struct vb2_v4l2_buffer *vb;
-> > -	int ret = 0;
-> > -
-> > -	ret = pm_runtime_get_sync(ctx->jpeg->dev);
-> > -	if (ret < 0)
-> > -		goto err;
-> > -
-> > -	return 0;
-> > -err:
-> > -	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
-> > -		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_QUEUED);
-> > -	return ret;
-> > -}
-> > -
-> >  static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
-> >  {
-> >  	struct mtk_jpeg_ctx *ctx = vb2_get_drv_priv(q);
-> > @@ -751,8 +734,6 @@ static void mtk_jpeg_stop_streaming(struct vb2_queue *q)
-> >  
-> >  	while ((vb = mtk_jpeg_buf_remove(ctx, q->type)))
-> >  		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-> > -
-> > -	pm_runtime_put_sync(ctx->jpeg->dev);
-> >  }
-> >  
-> >  static const struct vb2_ops mtk_jpeg_qops = {
-> > @@ -761,7 +742,6 @@ static const struct vb2_ops mtk_jpeg_qops = {
-> >  	.buf_queue          = mtk_jpeg_buf_queue,
-> >  	.wait_prepare       = vb2_ops_wait_prepare,
-> >  	.wait_finish        = vb2_ops_wait_finish,
-> > -	.start_streaming    = mtk_jpeg_start_streaming,
-> >  	.stop_streaming     = mtk_jpeg_stop_streaming,
-> >  };
-> >  
-> > @@ -812,7 +792,7 @@ static void mtk_jpeg_device_run(void *priv)
-> >  	struct mtk_jpeg_src_buf *jpeg_src_buf;
-> >  	struct mtk_jpeg_bs bs;
-> >  	struct mtk_jpeg_fb fb;
-> > -	int i;
-> > +	int i, ret;
-> >  
-> >  	src_buf = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
-> >  	dst_buf = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> > @@ -832,6 +812,10 @@ static void mtk_jpeg_device_run(void *priv)
-> >  		return;
-> >  	}
-> >  
-> > +	ret = pm_runtime_get_sync(jpeg->dev);
-> > +	if (ret < 0)
-> > +		goto dec_end;
-> > +
-> >  	mtk_jpeg_set_dec_src(ctx, &src_buf->vb2_buf, &bs);
-> >  	if (mtk_jpeg_set_dec_dst(ctx, &jpeg_src_buf->dec_param, &dst_buf->vb2_buf, &fb))
-> >  		goto dec_end;
-> > @@ -957,6 +941,7 @@ static irqreturn_t mtk_jpeg_dec_irq(int irq, void *priv)
-> >  	v4l2_m2m_buf_done(src_buf, buf_state);
-> >  	v4l2_m2m_buf_done(dst_buf, buf_state);
-> >  	v4l2_m2m_job_finish(jpeg->m2m_dev, ctx->fh.m2m_ctx);
-> > +	pm_runtime_put_sync(ctx->jpeg->dev);
+> If you fix the issue, kindly add following tag as appropriate
+> Reported-by: kernel test robot <lkp@intel.com>
+> Reported-by: Dan Carpenter <dan.carpenter@oracle.com>
+
+Dan, thanks! Good catch!
+as this patch has not been in mainline yet, is it correct to add these "reported-by" in patch v2?
+
+Barry
+
 > 
-> The _sync variant explicitly waits until the asynchronous PM operation
-> completes. This is usually undesired, because the CPU stays blocked for
-> no good reason. In this context it is actually a bug, because this is an
-> interrupt handler and it's not allowed to sleep. I wonder why this
-> actually didn't crash in your testing. Please change to the regular
-> pm_runtime_put().
-Done.
+> smatch warnings:
+> kernel/dma/contiguous.c:274 dma_alloc_contiguous() warn: variable
+> dereferenced before check 'dev' (see line 272)
 > 
-> Best regards,
-> Tomasz
+> #
+> https://github.com/0day-ci/linux/commit/adb919e972c1cac3d8b11905d525
+> 8d23d3aac6a4
+> git remote add linux-review https://github.com/0day-ci/linux git remote
+> update linux-review git checkout
+> adb919e972c1cac3d8b11905d5258d23d3aac6a4
+> vim +/dev +274 kernel/dma/contiguous.c
+> 
+> b1d2dc009dece4 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  267  struct page *dma_alloc_contiguous(struct device *dev,
+> size_t size, gfp_t gfp)
+> b1d2dc009dece4 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  268  {
+> 90ae409f9eb3bc kernel/dma/contiguous.c       Christoph Hellwig
+> 2019-08-20  269  	size_t count = size >> PAGE_SHIFT;
+> b1d2dc009dece4 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  270  	struct page *page = NULL;
+> bd2e75633c8012 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  271  	struct cma *cma = NULL;
+> adb919e972c1ca kernel/dma/contiguous.c       Barry Song
+> 2020-06-03 @272  	int nid = dev_to_node(dev);
+> 
+> ^^^ Dereferenced inside function.
+> 
+> bd2e75633c8012 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  273
+> bd2e75633c8012 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23 @274  	if (dev && dev->cma_area)
+> 
+> ^^^ Too late.
+> 
+> bd2e75633c8012 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  275  		cma = dev->cma_area;
+> adb919e972c1ca kernel/dma/contiguous.c       Barry Song
+> 2020-06-03  276  	else if ((nid != NUMA_NO_NODE) &&
+> dma_contiguous_pernuma_area[nid]
+> adb919e972c1ca kernel/dma/contiguous.c       Barry Song
+> 2020-06-03  277  		&& !(gfp & (GFP_DMA | GFP_DMA32)))
+> adb919e972c1ca kernel/dma/contiguous.c       Barry Song
+> 2020-06-03  278  		cma = dma_contiguous_pernuma_area[nid];
+> bd2e75633c8012 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  279  	else if (count > 1)
+> bd2e75633c8012 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  280  		cma = dma_contiguous_default_area;
+> b1d2dc009dece4 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  281
+> b1d2dc009dece4 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  282  	/* CMA can be used only in the context which permits
+> sleeping */
+> b1d2dc009dece4 kernel/dma/contiguous.c       Nicolin Chen
+> 2019-05-23  283  	if (cma && gfpflags_allow_blocking(gfp)) {
+> 
+> ---
+> 0-DAY CI Kernel Test Service, Intel Corporation
+> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
