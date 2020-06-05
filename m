@@ -2,91 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5F281EFCD5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:43:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8411D1EFD10
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:55:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TteEKlz6qvW+UOKm1ej3w5p4ypLXtXp0kIqBdGRUPW8=; b=CuutzEHP9H9Kwn
-	2gWJnSU/vSC3tW4uJJH2bpyaVdEw39TcvkttNqPBkcAVuqCLIdb9oABJmcNmWqtznQArOZFMaXZYI
-	gseReAcW8jSuyp9pebHXOOzBHtTDCgRInzcHgLWJ1QySuFjVA0ClxZDxJhjivl53orAq5yt2jTnnh
-	cyL2GNjqLaiF3+Bwg3Men1ZXnTR4UwrDpRSsV8AQZHjaaMAaaxJ8fVTQCPBD1iXpYTd3mpkCvbvF4
-	UBakFzl9oidbC/Sdq7Tur5wyrtlG7TWoQgQDPP6jrdlyQ5K/ctdvukv/lqlkhkkrw2WNaK3FxO7H6
-	mdKtbTB0gUC26NTKNESA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g9D+kg0VEk5VumG9xG9Z4Ts1dfPVnslPRJByvGUDVc4=; b=CqCbU1gzdmjYL/
+	Sui7p3uCqwBdJaAE60BEpKrLCqdZDhLrTaAJhjOBDpA2ls1UPIViCvTqkt6yuxP7F22mjpUpMGmBP
+	ati3PO7Zny+CderlxEWYI6RNis2hJW2yZbdguMj9awKQw9i/8V9446yL8jE+A+oEp+z8lkOBP9zzz
+	nia7g3dCNrmK8Im7+EsKmPxjgg4Bw9ES4LsxKVIahR5Y//invKeVM5Xffb3kTNNS0riK50V1mhKrZ
+	vupsxY61ZUp7K2A9UCPRV0lPEcmWkJbj2/IH2rsuBc3VBv7KCp3ukdTPtg9cD+RVbf9Mxj6a5rTwF
+	HUDpgiqSe9kzS7Pf29oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhEV3-0002tP-Oe; Fri, 05 Jun 2020 15:43:17 +0000
-Received: from mail-il1-x130.google.com ([2607:f8b0:4864:20::130])
+	id 1jhEgh-0003GF-LC; Fri, 05 Jun 2020 15:55:19 +0000
+Received: from mout.gmx.net ([212.227.17.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhEUs-0002t2-RU
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:43:09 +0000
-Received: by mail-il1-x130.google.com with SMTP id e11so4913489ilr.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jun 2020 08:43:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=G2GB2U7+brpU97z7quDVcgXAtK4rM5dz6gG/Wy3Olog=;
- b=HkFNdaGSceLzbEKT8WldzvKrDeIBzoGGsKRPbyGQrKzhnWdYN2yeXulRIa/JJ8HUEr
- CFoSm/iRg7jQHZ2V/ngd+jE8nj9KOUxe5CNBw9JUkE1fHNfxD069FCGB4RfVCjEvNsWh
- PjSOLaP/dRj/yR6/NBAERl/1/3eo/0/lJw0A0OWZtSbdUB70ZfDMpbuT6zn7FIpi/B5Y
- lg1IaEvHJJ8TIW2pLpfA1H2ACK2cPLfo2Qg1f6e02cs88tId5vsuQ48t3JoACPMTtfVt
- 64GxYPEisVuelP9nLvlZm2OafdGRadzYJ0Ndr+YJ/8WFcKHvGkXOMCW8tELOnijN5WhA
- dY5Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=G2GB2U7+brpU97z7quDVcgXAtK4rM5dz6gG/Wy3Olog=;
- b=lSOnt+FzjtCMKYO4JL2Lb9OeVh84WI79LDY/GWPaN6gqfRqasJmlQeNlNWmVJtUqdz
- sGAAs4tGqmmxO5by0eXQe1nSO5sG7N8QCUEIIKe/hGykBAGJibRAah0O1YOy6HoBHPzQ
- gqneaxmLPEV65+s7i7svlJbNw1hAZnl4+rRXEZoUcAKFRBQpTKNWj3NUDV7+PGFDhBq7
- 0YPbSVBpqUhKGuzqwbtBEn6utoC97kTNvISWbWeXEakSxoAI5CATjx+DftHloHG5a0mA
- qWMc3VwVZ2Y4nryFtMshpNma3x5IFjlv5iALTCj+Ggubm2FO0P44/8Wn48aG0Ui0YwiS
- jnIA==
-X-Gm-Message-State: AOAM5306khSZBS1SynOAmOF55nL4ixx2j9cd5DTWGZvNSaUADXveE5g7
- g9L5NE3tgEkwRKhkzMolZbg7sIW6h89Yh5Kjlfw=
-X-Google-Smtp-Source: ABdhPJzJW5O3DzxX9JUEp0Fq7vO1ZexlwSsEZ5rkVUXSutg5q4mvTIgBUytu0r9dtgLLVLmvp7RCv3/Wi3VyOKOvz8I=
-X-Received: by 2002:a92:5e52:: with SMTP id s79mr8217845ilb.33.1591371785844; 
- Fri, 05 Jun 2020 08:43:05 -0700 (PDT)
+ id 1jhEgY-0002DN-2x
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:55:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1591372503;
+ bh=CeTGO7+gPh229PzL7UNW02OhXccbrVDqNdYRuKwoF9Y=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=V/PT3AS8M13t1y4F7Q2pMbVzO2n/Tcxnf03Yb/ZONbB5GfYPHSbAbOx5wH9pOJ0t8
+ 5t+fPzlDwqemUTtvntkFYwLh4m3QsOaSI50TLRETnPRnL9t5VPISGT6mdKUsefvMkM
+ lBZ64WLpJ9wPQf6E2wCmQjFQ1Zhxk20DPDer1mvo=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.123.70] ([88.152.145.75]) by mail.gmx.com (mrgmx104
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1MsYux-1io1T20dwZ-00txnE; Fri, 05
+ Jun 2020 17:55:03 +0200
+Subject: Re: [PATCH] efi/arm: decompressor: deal with HYP mode boot gracefully
+To: Ard Biesheuvel <ardb@kernel.org>
+References: <20200605115200.413921-1-ardb@kernel.org>
+ <4498d910-f5cb-8559-afba-34710e9ca730@gmx.de>
+ <CAMj1kXHS8AVczRPzySgzkkztD0yT1MXnCyMwmOt=ihZ9Bvo0vQ@mail.gmail.com>
+ <589478fe-14a6-a921-3fdf-ae527e14b945@gmx.de>
+ <CAMj1kXHwWwGyX1ijk-qjuV10p0Zr6sAYeAntx+iDVHp-tVaNwg@mail.gmail.com>
+ <99692142-0ee1-37a7-582e-56c38b2ef3d8@gmx.de>
+ <CAMj1kXG7XKNr5ascgk1GdhucVHb=euJ5xyBX2E65o2ejrOqnGg@mail.gmail.com>
+From: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Autocrypt: addr=xypron.glpk@gmx.de; prefer-encrypt=mutual; keydata=
+ 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 Eg==
+Message-ID: <6d657fcb-2965-4d82-1e27-b87b3fe44dfc@gmx.de>
+Date: Fri, 5 Jun 2020 17:55:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-References: <0a50f0cf5593baeb628dc8606c523665e5e2ae6c.1589519600.git.viresh.kumar@linaro.org>
- <20200528192005.GA494874@bogus> <20200529040758.kneg2j4n3gxh2rfv@vireshk-i7>
- <20200603180435.GB23722@bogus>
- <CABb+yY0cW1GZHVmwEr19JRdJTmsAxw9uq83QV_aq-tdPJO5_Fg@mail.gmail.com>
- <20200604092052.GD8814@bogus>
- <CABb+yY27Ngb0C-onkU2qyt=uKgG4iVrcv8hGkC+anypQbTRA1w@mail.gmail.com>
- <20200605045645.GD12397@bogus>
- <CABb+yY2YZ99NjHYNi0=KLGFDsVUeJmqiJD3E25Chwk-THJV4iw@mail.gmail.com>
- <20200605085830.GA32372@bogus>
-In-Reply-To: <20200605085830.GA32372@bogus>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Fri, 5 Jun 2020 10:42:54 -0500
-Message-ID: <CABb+yY2TR7tuMx6u8yah6mO2GwZ5SWYOO80EQRL-i=ybgn=Wog@mail.gmail.com>
-Subject: Re: [RFC] dt-bindings: mailbox: add doorbell support to ARM MHU
-To: Sudeep Holla <sudeep.holla@arm.com>
+In-Reply-To: <CAMj1kXG7XKNr5ascgk1GdhucVHb=euJ5xyBX2E65o2ejrOqnGg@mail.gmail.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:YWMkN9fjHS1Uk1tmjltiYL3tAv88OKioiY2GBcUsAYmNshwJFxd
+ sZjNH31SngGfXi+VcDrd3wTePZ3/9ejzstCQijBcIBg3EW6kueNZbmPC/egV66mAINGtZtm
+ kbXFRaQc/1QRlV0uajO9KXuJvnxKrvPl+GExIC08TegXtEltdy1Q7HuiGxX8exnycHMQ2ga
+ 250m6XMgQJYkIi9bPeFpA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:w214rVEz/HA=:g+VeXTmVgebr73t1dHqGXq
+ FiSrd3M6e7uuJ/EdMe9Y0xvqplRpYOPS8dF7MCEaEKKKOdnxXLNDtXg/HJOFCxP5+1+ds1AC4
+ 9XE3F51OzIDz+DQVDDv1oUa0YSjeubAyM5tuxOKceb14L9cE4peJzi7dLZzLOlldMmECfE4+Y
+ slRUxrXSxpw+Jqj11VjYuWu/FDubH+3Ae8eRRkwlyVwRml++YNTX7jlzDatoa5cATiCuuBBYa
+ dYbOHwE0bp1YvcY/mbKiq2qDpD/cbTLieVuMg49AUCpZGCl/51E8tJ8z1+jx5GgyVUXVtw6pZ
+ 2ZDD0cHqk+h+mdtbjr+CaRmPPCX+as/KnvjRNTDGr7VQSydZoywdcE3N2SJkpigtu2O8XDfsO
+ tcZBK0GLagy38LFlB9Jf5E/fQWntiBi+4uwM7ev0m44kCSTB24luTkY4BRw9BTAjQb+EjQkEE
+ qdk4E4NECGIeXdQpmMIVSBcAc2WtbVwpy93IYgJ8SG2OLcQIbFVZCSH8dorpZs9iXRyXNnkYs
+ sIUFAccPfGvePjSQgz6TobmGAhfcKd1dqiU8hf+Q//NOJpX8sKEQX6n0hmsVLmAn37ju2QhRa
+ +NJX/GQyIsFVP3Up/zlh8aqVJMv+W6Zj5Dx52d/WVQcS4F9P0G7q13dFtDFuI97AbMm3xvIcg
+ 0+12/l5x9MCZrtY6GQ9VxEWOcGFkmkRcW4DQTzZXtEnhk+7v3p2TRUEGxv0LC/enldnjQhW2X
+ c6JN2XMuxxzdnIXGNrTzdPGj79IqNkCxOMHmAi1pFlYe/Nz8+YjGb2TDn0cyvSrOStcqd/Ir+
+ fKDWVjaoM7IcUpe7PZaO09zer+Ti3QpkrPa2XkqXpDHQpDMXB2wcMgkdL2jDAQc/+4oQoWz03
+ AWq0VBf9fKjDIVNPodkgrxqgO7/vRgxh5H2404rnJYLZxH5NZc+vd+8CQj9lQiOxPwFodvaov
+ 2BVeNC7taBnGGGjH+oKoQtZ18yu4K+tIFkjdz5es9PmlkmMGP00PX9Utmw3KULLpklXMltLUK
+ UUENj2G30pMxTrsO9ei1xo9oeCTUm5JOfR3PPkE5OOSEjcChqxY8jrY+atnGWZKr7C3kB7ymb
+ 4Y2LgovVDSNrdSdVw9OmGxJBHHSjtD7n9wTR4HOytcxwWhQRqqYzHq2cyMENPMnuFvI7OI1pc
+ yNQC5JP/BkGEXziy/JbOtLrVnU41DuYxmNlOXaO58eQlQMhSEay7gDn1JNZck3ksosGck8qzB
+ iDIXIkjJ251jrShLZ
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_084308_569391_EC2E5B2C 
-X-CRM114-Status: GOOD (  19.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200605_085510_478047_0226BDD4 
+X-CRM114-Status: GOOD (  16.88  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:130 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.21 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jassisinghbrar[at]gmail.com]
+ provider [xypron.glpk[at]gmx.de]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -100,67 +147,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Devicetree List <devicetree@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Marc Zyngier <maz@kernel.org>, linux-efi <linux-efi@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 5, 2020 at 3:58 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
->
-> > > > >>     bash-1526  [000]  1149.472553: scmi_xfer_begin:      transfer_id=1538 msg_id=6 protocol_id=21 seq=0 poll=0
-> > > > >>      <idle>-0     [001]  1149.472733: scmi_xfer_begin:      transfer_id=1539 msg_id=7 protocol_id=19 seq=1 poll=1
-> > > > >
-> > > > Here another request is started before the first is finished.
-> > >
-> > > Ah, the prints are when the client requested. It is not when the mailbox
-> > > started it. So this just indicates the beginning of the transfer from the
-> > > client.
-> > >
-> > There maybe condition on a sensor read to finish within 1ms, but there
-> > is no condition for the read to _start_ at this very moment (usually
-> > there are sleeps in the path to sensor requests).
-> >
->
-> Again I wasn't clear. The trace logs are at the point just before calling
-> mbox_send_messages. So any delay in sensor drivers won't get include. It
-> is after the point sensor driver request to read the value and before we
-> send the request via mailbox.
->
-No, you were clear, I wasn't. Let me try again.
+On 05.06.20 17:18, Ard Biesheuvel wrote:
+> On Fri, 5 Jun 2020 at 17:14, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>>
+>> On 05.06.20 16:57, Ard Biesheuvel wrote:
+>>> On Fri, 5 Jun 2020 at 16:54, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>>>>
+>>>> On 05.06.20 14:39, Ard Biesheuvel wrote:
+>>>>> On Fri, 5 Jun 2020 at 14:20, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>>>>>>
+>>>>>> On 05.06.20 13:52, Ard Biesheuvel wrote:
+>>>>>>> EFI on ARM only supports short descriptors, and given that it mandates
+>>>>>>> that the MMU and caches are on, it is implied that booting in HYP mode
+>>>>>>> is not supported.
+>>>>>>>
+>>>>>>> However, implementations of EFI exist (i.e., U-Boot) that ignore this
+>>>>>>> requirement, which is not entirely unreasonable, given that it does
+>>>>>>> not make a lot of sense to begin with.
+>>>>>>
+>>>>>> Hello Ard,
+>>>>>>
+>>>>>> thanks for investigating the differences between EDK2 and U-Boot.
+>>>>>>
+>>>>>> What I still do not understand is if there is a bug in U-Boot where
+>>>>>> U-Boot does not conform to the UEFI specification? In this case I would
+>>>>>> expect a fix in U-Boot.
+>>>>>>
+>>>>>
+>>>>> U-Boot violates the EFI spec, yes. The spec is very clear on how the
+>>>>> MMU is configured, and this rules out booting with the caches off, or
+>>>>> booting in HYP mode.
+>>>>>
+>>>>> However, given that this is the situation today, we still need to deal
+>>>>> with it on the Linux side.
+>>>>> In parallel, fixing it in U-boot may be appropriate. However, I think
+>>>>> the EFI spec is too detailed here - instead of 'booting at the highest
+>>>>> non-secure privilege mode', it tells you which exact bits to set in
+>>>>> SCTLR, which seems overzealous to me. In other words, even though it
+>>>>> violates the letter of the spec, I don't mind dealing with this
+>>>>> exception in the Linux side, since the requirement is somewhat
+>>>>> unreasonable to begin with.
+>>>>>
+>>>>>> Or is it simply a deficiency of Linux that it does not properly support
+>>>>>> HYP/EL2 mode on 32-bit ARM?
+>>>>>>
+>>>>>
+>>>>> No, this is definitely not the fault of Linux.
+>>>>>
+>>>>>> Up to now I never experience a problem booting a 32bit board via U-Boot
+>>>>>> -> GRUB-EFI -> Linux. Where did you have a problem when booting via
+>>>>>> U-Boot's UEFI implementation and the current Linux kernel?
+>>>>>>
+>>>>>
+>>>>> I haven't managed to make it fail, but my only 32-bit HYP capable
+>>>>> platform is QEMU. I am not 100% convinced that the EFI+HYP+U-Boot case
+>>>>> is rock solid, and I may have gotten lucky with QEMU (which uses
+>>>>> emulation not virtualization when running at HYP)
+>>>>>
+>>>>> Do you have any A7/A15 based boards that don't print 'WARNING: Caches
+>>>>> not enabled' at boot?
+>>>>
+>>>> Hello Ard,
+>>>>
+>>>> I have no board that prints this. Where did you actually see this output?
+>>>>
+>>>
+>>> In U-boot
+>>>
+>>> arch/arm/lib/cache.c: * Default implementation of enable_caches()
+>>> arch/arm/lib/cache.c- * Real implementation should be in platform code
+>>> arch/arm/lib/cache.c- */
+>>> arch/arm/lib/cache.c:__weak void enable_caches(void)
+>>> arch/arm/lib/cache.c-{
+>>> arch/arm/lib/cache.c-   puts("WARNING: Caches not enabled\n");
+>>> arch/arm/lib/cache.c-}
+>>> arch/arm/lib/cache.c-
+>>>
+>>> The QEMU port does not override that routine. This may be the reason
+>>> it doesn't work for me under KVM, but only under emulation.
+>>>
+>>>> The string "Caches not enabled" does not exist in Linux next-20200505
+>>>> according to "git grep -n 'ache not enabled'".
+>>>>
+>>>> Here is some sample output for an Orange Pi PC with a quad core
+>>>> Allwinner H3 Soc. "ARMv7 Processor rev 5 (v7l)" according to
+>>>> /proc/cpuinfo, compatible to "arm,cortex-a7" according to the device tree.
 
-Since origin upto scmi_xfer, there can be many forms of sleep like
-schedule/mutexlock etc.... think of some userspace triggering sensor
-or dvfs operation. Linux does not provide real-time guarantees. Even
-if remote (scmi) firmware guarantee RT response, it makes sense to
-timeout a response only after the _request is on the bus_  and not
-when you submit a request to the api (unless you serialise it).
-IOW, start the timeout from  mbox_client.tx_prepare()  when the
-message actually gets on the bus.
 
-
-> > You have shared only 'bad' log without serialising access. Please
-> > share log after serialising access to the channel and the 'good' log
-> > with virtual channels.  That should put the topic to rest.
-> >
+>>>>
+>>>> $ uname -m
+>>>> Linux orangepi-pc 5.6.0-2-armmp-lpae #1 SMP Debian 5.6.14-1 (2020-05-23)
+>>>> armv7l GNU/Linux
+>>>>
+>>>
+>>> Could you check whether it boots in HYP mode?
+>>>
+>>> [    0.381460] CPU: All CPU(s) started in SVC mode.
+>>>
+>>> vs
+>>>
+>>> [    0.135626] CPU: All CPU(s) started in HYP mode.
+>>>
+>>>
+>>> ?
+>>>
+>>
+>> Booted via GRUB-EFI:
+>>
+>> sudo dmesg -H | grep 'started in'
+>> [  +0.000017] CPU: All CPU(s) started in HYP mode.
+>>
+>> Booted via Linux stub:
+>>
+>> $ sudo dmesg -H | grep 'started in'
+>> [  +0.000016] CPU: All CPU(s) started in HYP mode.
+>>
 >
-> I didn't realise that, sorry for missing that earlier. Attached both
-> now, thanks for asking.
+> Thanks
 >
-Interesting logs !  The time taken to complete _successful_ requests
-are arguably better in bad_trace ... there are many <10usec responses
-in bad_trace, while the fastest response in good_trace is  53usec.
-And the requests that 'fail/timeout' are purely the result of not
-serialising them or checkout for timeout at wrong place as explained
-above.
+> Which uboot config is that? Which version of enable_caches() does it use?
+>
 
-thanks.
+orangepi_pc_defconfig
+arch/arm/mach-sunxi/board.c:350:void enable_caches(void)
+
+There has been work on simulating ARMv7 caches on QEMU. But I guess it
+has not been upstreamed.
+
+T. V. Dung, I. Taniguchi and H. Tomiyama, "Cache Simulation for
+Instruction Set Simulator QEMU," 2014 IEEE 12th International Conference
+on Dependable, Autonomic and Secure Computing, Dalian, 2014, pp.
+441-446, doi: 10.1109/DASC.2014.85.
+
+https://ipsj.ixsq.nii.ac.jp/ej/?action=repository_action_common_download&item_id=103050&item_no=1&attribute_id=1&file_no=1
+
+Best regards
+
+Heinrich
 
 _______________________________________________
 linux-arm-kernel mailing list
