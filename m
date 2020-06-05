@@ -2,83 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F6C11EF3B9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 11:10:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7D501EF3B5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 11:09:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fvXUvJ8yH9/0BxyiARjXByFsIFXoBmVrBbbTL9zgvIM=; b=epx42ib/EBwpCe
-	ww8F1o9IM2h0A/cwZXKPT3cnA5EamgyJNS+af+EGHmypzB0eqIBw92BvtC4LX29O/4mpq5QQAir8P
-	BgsLR6z8mcQoTtXhbDaKAsZ+p7NKV+9n/PUshpo93XVa323NcE/hkdm2DGMNPGPMXClBolfkDUCkn
-	oxjqpkccD3BL+Er4syl/VEDqKtOeO+p2OTHH0oME0JStdDmwjaUNTuCjx49gB/JvTBYCjuPDYwt0L
-	jPodklR7ugJGabvvdIvvuo8cEj2bFfc+0qPl+2WFKIuJY1yVdb8LjrNs5dARL5ldBkDh7FyTT1Ndg
-	PSIK/cAV00CTqlZXXNbQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EMUsA4KC8m74TfvnKFsXAYnhQlcGHIVyTu2JyDbgwPQ=; b=Mp0YMdHFOy1OI3mxpuw3VkW/T
+	7xcgtDlKZcXpRPFXXePPIPcymR+NUR8btxBm49TTyOrxEcfLOzsGlkeWQtI7cifVaHeuLwWV+QTeW
+	GuVMyxSpr2cKoVehFF785/7tIfZIhQIY7tOwOnN9/hWS8vnHLJzehbhr9gn7nnWQpK5T3vW9EIP6o
+	qjA7UrFhgl7gbZYC/dL30sxf15Z1wI8QoZTOLrJtUkgU1AOJ4SCFOFA+xSxmeQzHQiHlURLpN4yk/
+	1ErcC1Uvw2D9ElEDQHl/JkxTuWxCjixBt/xbAYWaYT+Lon8mlMWd765GCTarPhI+eysUWSk76AQD8
+	R6lkmZvIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh8Mo-0004rQ-5r; Fri, 05 Jun 2020 09:10:22 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jh8LW-00025d-Ic; Fri, 05 Jun 2020 09:09:02 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh8Me-0004jh-BZ; Fri, 05 Jun 2020 09:10:14 +0000
-X-UUID: c0a01acc12cd45f988df559337340d18-20200605
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=VjXux5WMEXt+SNJUOpjSrCg/TII0W/Rj7aI7a6xVHpE=; 
- b=ls9R6n9IGXDUKqpHS5IXQejgeStm7Hy3+RXWs4hTJ+knZzsD4Aj62NTea3yFMY7uIt/Cx9DNQ051TNBTkashYSbBdUJw9kVVg0KNw/5u0eXPOEut2d+yF3+spTGiZ6k0hKFYz/p2IE3avUG0c/DpU/75Uhtw2dsTCwaVZ+FZ+3g=;
-X-UUID: c0a01acc12cd45f988df559337340d18-20200605
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <neal.liu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 995161006; Fri, 05 Jun 2020 01:10:03 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 5 Jun 2020 02:00:06 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 5 Jun 2020 16:59:42 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 5 Jun 2020 16:59:42 +0800
-Message-ID: <1591347582.21704.9.camel@mtkswgap22>
-Subject: Re: Security Random Number Generator support
-From: Neal Liu <neal.liu@mediatek.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Date: Fri, 5 Jun 2020 16:59:42 +0800
-In-Reply-To: <20200605080905.GF1551@shell.armlinux.org.uk>
-References: <1591085678-22764-1-git-send-email-neal.liu@mediatek.com>
- <CAMj1kXHjAdk5=-uSh_=S9j5cz42zr3h6t+YYGy+obevuQDp0fg@mail.gmail.com>
- <85dfc0142d3879d50c0ba18bcc71e199@misterjones.org>
- <1591169342.4878.9.camel@mtkswgap22>
- <fcbe37f6f9cbcde24f9c28bc504f1f0e@kernel.org>
- <20200603093416.GY1551@shell.armlinux.org.uk>
- <1591341543.19510.4.camel@mtkswgap22>
- <20200605080905.GF1551@shell.armlinux.org.uk>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jh8LP-000247-Jn
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 09:08:57 +0000
+Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id E38BE8A2349040B75B79;
+ Fri,  5 Jun 2020 17:08:48 +0800 (CST)
+Received: from [127.0.0.1] (10.166.215.204) by DGGEMS405-HUB.china.huawei.com
+ (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0;
+ Fri, 5 Jun 2020 17:08:38 +0800
+Subject: Re: [PATCH] ARM: imx6: add missing put_device() call in
+ imx6q_suspend_init()
+To: Markus Elfring <Markus.Elfring@web.de>, <kernel@pengutronix.de>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-imx@nxp.com>
+References: <cf810c93-297c-c02c-9bba-8c3d097b8e31@web.de>
+From: "yukuai (C)" <yukuai3@huawei.com>
+Message-ID: <2ab2cc9f-c720-75ca-e20c-0e4236ff45fd@huawei.com>
+Date: Fri, 5 Jun 2020 17:08:37 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 877F0A62BB37F3A937A5DF7C63E4C12D4C5FEB8F623D563618F2A16D037472AE2000:8
-X-MTK: N
+In-Reply-To: <cf810c93-297c-c02c-9bba-8c3d097b8e31@web.de>
+X-Originating-IP: [10.166.215.204]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_021012_409152_3404245B 
-X-CRM114-Status: GOOD (  15.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200605_020855_809444_1412C8EF 
+X-CRM114-Status: UNSURE (   9.09  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.191 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,61 +70,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED
- DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Julius Werner <jwerner@google.com>, Herbert Xu <herbert@gondor.apana.org.au>,
- Arnd Bergmann <arnd@arndb.de>, Marc Zyngier <maz@kernel.org>,
- Matt Mackall <mpm@selenic.com>, Sean Wang <sean.wang@kernel.org>,
- lkml <linux-kernel@vger.kernel.org>, wsd_upstream <wsd_upstream@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Crystal Guo =?UTF-8?Q?=28=E9=83=AD=E6=99=B6=29?= <Crystal.Guo@mediatek.com>,
- Ard
- Biesheuvel <ardb@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Anson Huang <Anson.Huang@nxp.com>, Yi Zhang <yi.zhang@huawei.com>,
+ Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ kernel-janitors@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ LKML <linux-kernel@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2020-06-05 at 09:09 +0100, Russell King - ARM Linux admin wrote:
-> On Fri, Jun 05, 2020 at 03:19:03PM +0800, Neal Liu wrote:
-> > On Wed, 2020-06-03 at 17:34 +0800, Russell King - ARM Linux admin wrote:
-> > > This kind of thing is something that ARM have seems to shy away from
-> > > doing - it's a point I brought up many years ago when the whole
-> > > trustzone thing first appeared with its SMC call.  Those around the
-> > > conference table were not interested - ARM seemed to prefer every
-> > > vendor to do off and do their own thing with the SMC interface.
-> > 
-> > Does that mean it make sense to model a sec-rng driver, and get each
-> > vendor's SMC function id by DT node?
+On 2020/6/5 3:07, Markus Elfring wrote:
+>> if of_find_device_by_node() succeed, imx6q_suspend_init() doesn't have a
+>> corresponding put_device(). Thus add a jump target to fix the exception
+>> handling for this function implementation.
 > 
-> _If_ vendors have already gone off and decided to use different SMC
-> function IDs for this, while keeping the rest of the SMC interface
-> the same, then the choice has already been made.
+> Do you find a previous update suggestion useful?
 > 
-> I know on 32-bit that some of the secure world implementations can't
-> be changed; they're burnt into the ROM. I believe on 64-bit that isn't
-> the case, which makes it easier to standardise.
-> 
-> Do you have visibility of how this SMC is implemented in the secure
-> side?  Is it in ATF, and is it done as a vendor hack or is there an
-> element of generic implementation to it?  Has it been submitted
-> upstream to the main ATF repository?
-> 
+> ARM: imx6: Add missing put_device() call in imx6q_suspend_init()
+> https://lore.kernel.org/linux-arm-kernel/5acd7308-f6e1-4b1e-c744-bb2e5fdca1be@web.de/
+> https://lore.kernel.org/patchwork/patch/1151158/
+> https://lkml.org/lkml/2019/11/9/125
 
-Take MediaTek as an example, some SoCs are implemented in ATF, some of
-them are implemented in TEE. We have no plan to make generic
-implementation in "secure world".
+Hi, Markus
 
-Due to there must have different implementation in secure world for
-vendors, we plan to provide a generic SMC interface in secure rng kernel
-driver for more flexibility.
+It is useful indeed. Although I didn't run cocci script, since it can 
+produce too many false result which is hard to filter out.
 
-Vendors can decide which "secure world" they want (HYP/ATF/TEE) by
-different smc/hvc and different SMC function IDs in DT node.
+BTW, I see you haver done the work already, I guess I won't send any 
+patches related to 'missing put_device after of_find_device_by_node()'. 
+Any idea why these pathes didn't get applied ?
+
+Best regards,
+Yu Kuai
+
+
+
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
