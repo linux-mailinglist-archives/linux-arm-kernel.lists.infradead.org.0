@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D892E1EFF18
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 19:34:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 802D51EFF21
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 19:35:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,21 +11,21 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=DTVYrXXZNJrn/l1C1aXrPCfT05j4daJLbDh7jMpdA6o=; b=osUz/ss2XUjJeCi904J5u4nbYk
-	sP9iJUhtmWSHoCKun/6V7O40WqXhq9LjkE1a27S3f0XuWcT2nlkKKm4kv9/APVu8o8aYBkln361em
-	ijsyGOSMFg6aWlevei4cf6dqxNlVBT/XitGAoqkHXhp7VR9ZHCP4YxRHFzouRfOdWc3IUk9X6rqIB
-	De455qLiHiFj28RWqSV+lHmgjmAle/2ETWDWvpfQ3gCHSAaJIleTCqFYSBgQKByv2Uu3kxZlV5rmm
-	5zcACOQVRdIW6ZajCFdnHcNqblkVCC8oPP002CeZg5FG3j9ROBvETtk4MMe+bnG8nWDekk6Mbi7J0
-	PoNn6H2Q==;
+	bh=3kmuPUfTLwvUUzltD+6aaBRcX2+DOU6pU6h0xijc8ro=; b=XD2PwpLaUVIoYBNtT84Dcs0Adn
+	6Jep/Y8ppVT0idd/IcbpF1H1zUyD6+tb+FwwawsIwrCxJCMgtm5WP299AK8VED6lSdgXtO2VS6wVs
+	TrbEgLDKnJhidFMSAhMy6UE6Yq6W/7grlWKeUVqGzoKp50oSrWP8k/cF+yPhqp6hVh9h0E4JC4xe4
+	UuUH2nYARjao3LTBpgUhE6E9nH7DGyZ0ngD0An1Xam5PXlOjuMTBDNwBnvdaM04xFEz9up5mTR9sJ
+	gnbXWaHLzt434ijT0i4xXPwf20/IL1C2ag1qviA2VcEEwEkPStvqAxIzZE4qFAwJYEY9E0iRvh0cJ
+	nwMR95AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhGEm-0005LE-A6; Fri, 05 Jun 2020 17:34:36 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jhGFW-0005oP-27; Fri, 05 Jun 2020 17:35:22 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhGE5-0004t6-90
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 17:33:54 +0000
+ id 1jhGE6-0004us-VI
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 17:33:56 +0000
 Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: andrzej.p) with ESMTPSA id 3708F2A5080
+ (Authenticated sender: andrzej.p) with ESMTPSA id E9D2F2A5086
 From: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-iio@vger.kernel.org,
@@ -33,24 +33,21 @@ To: linux-pm@vger.kernel.org, linux-acpi@vger.kernel.org,
  linux-input@vger.kernel.org, linux-tegra@vger.kernel.org,
  patches@opensource.cirrus.com, ibm-acpi-devel@lists.sourceforge.net,
  platform-driver-x86@vger.kernel.org
-Subject: [PATCH v3 3/7] ACPI: button: Access input device's users under
- appropriate mutex
-Date: Fri,  5 Jun 2020 19:33:31 +0200
-Message-Id: <20200605173335.13753-4-andrzej.p@collabora.com>
+Subject: [PATCH v3 4/7] ACPI: button: Use input_device_enabled() helper
+Date: Fri,  5 Jun 2020 19:33:32 +0200
+Message-Id: <20200605173335.13753-5-andrzej.p@collabora.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200605173335.13753-1-andrzej.p@collabora.com>
 References: <20200604072853.GP89269@dtor-ws>
  <20200605173335.13753-1-andrzej.p@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_103353_480134_9AD2826E 
-X-CRM114-Status: GOOD (  10.66  )
+X-CRM114-CacheID: sfid-20200605_103355_176966_47F1869E 
+X-CRM114-Status: GOOD (  11.74  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -91,36 +88,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Inspecting input device's 'users' member should be done under device's
-mutex, so add appropriate invocations.
+A new helper is available, so use it.
 
 Signed-off-by: Andrzej Pietrasiewicz <andrzej.p@collabora.com>
 ---
- drivers/acpi/button.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/acpi/button.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/acpi/button.c b/drivers/acpi/button.c
-index 78cfc70cb320..ff7ab291f678 100644
+index ff7ab291f678..4deb2b48d03c 100644
 --- a/drivers/acpi/button.c
 +++ b/drivers/acpi/button.c
-@@ -456,13 +456,16 @@ static int acpi_button_resume(struct device *dev)
- {
- 	struct acpi_device *device = to_acpi_device(dev);
- 	struct acpi_button *button = acpi_driver_data(device);
-+	struct input_dev *input = button->input;
+@@ -411,7 +411,7 @@ static void acpi_button_notify(struct acpi_device *device, u32 event)
+ 		input = button->input;
+ 		if (button->type == ACPI_BUTTON_TYPE_LID) {
+ 			mutex_lock(&button->input->mutex);
+-			users = button->input->users;
++			users = input_device_enabled(button->input);
+ 			mutex_unlock(&button->input->mutex);
+ 			if (users)
+ 				acpi_lid_update_state(device, true);
+@@ -460,7 +460,7 @@ static int acpi_button_resume(struct device *dev)
  
  	button->suspended = false;
--	if (button->type == ACPI_BUTTON_TYPE_LID && button->input->users) {
-+	mutex_lock(&input->mutex);
-+	if (button->type == ACPI_BUTTON_TYPE_LID && input->users) {
+ 	mutex_lock(&input->mutex);
+-	if (button->type == ACPI_BUTTON_TYPE_LID && input->users) {
++	if (button->type == ACPI_BUTTON_TYPE_LID && input_device_enabled(input)) {
  		button->last_state = !!acpi_lid_evaluate_state(device);
  		button->last_time = ktime_get();
  		acpi_lid_initialize_state(device);
- 	}
-+	mutex_unlock(&input->mutex);
- 	return 0;
- }
- #endif
 -- 
 2.17.1
 
