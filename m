@@ -2,90 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 476F11EF5A9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 12:48:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CFE51EF5AC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 12:49:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O3DEHdar7NX6eiKva/YsHZ6WjsX2Vo6z3YG5sKeb0as=; b=nO2hd9pNA7jKxW
-	GWS9nEJkfmr9y1P0RJljfEqYR9Dxfspy5VuwEI4Q//bcbflIEAfhiRhvW5IbMMO+JTX5sqUdDL2EO
-	9CbtuyD+Nt48U4Ka687CQkWZsq1gg9SgvnYA/14yNo3AZdv4pAtcIVXKrURBQEyYS2JeTacmNblEB
-	Lm99AuMS8ROaDtUZWs7Ur4wKBv/2iGAGAI0vFXTcxMEVdMmRnhDJmyKsDilNFlujOBDXB29jMuOMw
-	BquGUFOrbos+P/m/z7PKB5YaM+xWC6eHD47Gx/wsqgdYP/bGV5MUmxWUjhNF5dwacjEHA2mC2J8fM
-	q+XPeReblJFF3eN8qvtQ==;
+	List-Owner; bh=vA6X5wI7Xg+CeOowyz61As/TnwTc+VnWV2qXIbdE9Bw=; b=KHQLdx5aA7/t8q
+	E0lTdrTrNL/hxxHkUSklr5FWadDjL0C8xzK82m31zyeGkGM0kFIEafm/Z+1feoLidwnRNi3IQfG3f
+	yusytjEfykkg+A1ZZzdylXuhUN4HzHa8GL7lo8efirMnldNA6VpoyxR/9QUrDPijTDxVeGm/SIBKS
+	jMtHBs1DZB+hNpAP+tjKkaTa4U1TjNQXgjOObQIrXkVANBtEJfugoNTsbSpHQCr5Cbxl0O4uCGuMH
+	E75ZmgkRDl1Hy+GYO4RGya3qewsmmR0xxa56ejmlBA+j9lu5TE2VYr5k8qcvpepIfkhhZhl20Xnr1
+	gE6KBbVPm2uh1zPIJmWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh9u3-0002RS-4o; Fri, 05 Jun 2020 10:48:47 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh9tv-0002R6-F1
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 10:48:41 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id b7so3199122pju.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 05 Jun 2020 03:48:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hT5EtYTIJL/7KK1ErJ4XuTZSMU98O4NGYES7BTZShfU=;
- b=gUKniJAYthQYiCeLiJbQxp6vsgIMrYFTG3Tn0ztGQdAgJJ5SIzW9Qq+1WYjhN7yVaR
- dqPLJ6u8EPjvcsgOjNTxo0b6um16kDUcqfOuHSlYC0SJku2U0ceSI9Em09ln4GUbFpph
- kvSRDrMrLoPz0APi14wENlVfArV0pT3I/24PCyUfjYagBh1sTwgvy1kuLA9mVFd7eZ8u
- UCNaiWg/sKwjqaA+PU4vDlTyu64d24et0BTHPfF25369Vb/euo3Q0WtQ4cbeWcZ6S9Uj
- d6X7vp1YGXR6zxgqI4DmlTY86u6lNf5+TOFVpXVzPF2q/ePDeJZABOF3KAJD9Fg23qY/
- +I5g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=hT5EtYTIJL/7KK1ErJ4XuTZSMU98O4NGYES7BTZShfU=;
- b=UuqbPe6maVHdwYtCK/eZfa/g0TN6QU8R3djpbFUQT67ZyQZ8Q2KYgEXxNTZShSKjJP
- IURA9CB7SFeF/RFSKR5aBwbVQJ8OlJxEA8ljqVk/X5UbEhGhslz0GpZdG+U7De7mO9mf
- q7VWhGWfb+qM8IXz6NxfOPocmNR1IjEDUqJxzHs14xx0D77lLhgMVrk6borNocys10UI
- KJO9079SeYxlm2sQ781dk+0dkEahnxwlC/RviWqSwq2983nEFzEVp5Xc93Ifl47Y8yNx
- 1Nar1rYndf3jT4oJ6KQbCO6zQ21ixsBuyh3ZJETfeci1j2kRwf7BG8fmdLmqwUknc2oG
- oeaQ==
-X-Gm-Message-State: AOAM533wPnudAoNIX5rZIUbhNrMmLz3k2hqoUSVCULGSPz0/f0dVWy6k
- djKIsYZXbWn893S+Kv37CZXGlrwtQx36DN35AaA=
-X-Google-Smtp-Source: ABdhPJxJO5Y4Qm5YMH+m2+d6tv9L1OTX95vElklp0iU6q2z5TlX53tziLrdZX6T1mwhQ2rSUj09xKWtdLeKZgYN0Lsw=
-X-Received: by 2002:a17:90a:1704:: with SMTP id
- z4mr2258157pjd.181.1591354118825; 
- Fri, 05 Jun 2020 03:48:38 -0700 (PDT)
+	id 1jh9ud-0002kT-CV; Fri, 05 Jun 2020 10:49:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jh9uQ-0002j0-23
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 10:49:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 617481FB;
+ Fri,  5 Jun 2020 03:49:09 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.11.98])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4E9553F52E;
+ Fri,  5 Jun 2020 03:49:07 -0700 (PDT)
+Date: Fri, 5 Jun 2020 11:49:04 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Andrei Vagin <avagin@gmail.com>
+Subject: Re: [PATCH RESEND v3 0/6] arm64: add the time namespace support
+Message-ID: <20200605104904.GE85498@C02TD0UTHF1T.local>
+References: <20200602180259.76361-1-avagin@gmail.com>
 MIME-Version: 1.0
-References: <20200604211039.12689-1-michael@walle.cc>
- <20200604211039.12689-3-michael@walle.cc>
- <CAHp75Vd-R3yqhq88-whY6vdDhESpzvFCsbi-ygSTjfXfUzOrtg@mail.gmail.com>
- <8ed988b3e0bc48ea9219d0847c1b1b8e@walle.cc>
-In-Reply-To: <8ed988b3e0bc48ea9219d0847c1b1b8e@walle.cc>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Fri, 5 Jun 2020 13:48:27 +0300
-Message-ID: <CAHp75Vf00w_UUvXULVd=OgSVM+p_pmNMJRPVnf8GNZW10c_j5w@mail.gmail.com>
-Subject: Re: [PATCH v4 02/11] mfd: Add support for Kontron sl28cpld management
- controller
-To: Michael Walle <michael@walle.cc>
+Content-Disposition: inline
+In-Reply-To: <20200602180259.76361-1-avagin@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_034839_527072_A91562A3 
-X-CRM114-Status: GOOD (  16.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200605_034914_459089_225FF658 
+X-CRM114-Status: GOOD (  19.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,77 +61,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Mark Brown <broonie@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- linux-hwmon@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
+Cc: Dmitry Safonov <dima@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 5, 2020 at 1:09 PM Michael Walle <michael@walle.cc> wrote:
-> Am 2020-06-05 10:01, schrieb Andy Shevchenko:
-> > On Fri, Jun 5, 2020 at 12:16 AM Michael Walle <michael@walle.cc> wrote:
+Hi Andrei,
 
-...
+As a heads up, in mainline the arm64 vdso code has been refactored since
+v5.7, and this series will need to be rebased atop. Given we're in the
+middle of the merge window, I would suggest waiting until rc1 before
+posting a rebased series.
 
-> >> +       bool "Kontron sl28 core driver"
-> >> +       depends on I2C=y
-> >
-> > Why not module?
->
-> There are users of the interupt lines provided by the interrupt
-> controller.
-> For example, the gpio-button driver. If this is compiled into the kernel
-> (which it is by default in the arm64 defconfig), probing will fail
-> because
-> the interrupt is not found. Is there a better way for that? I guess the
-> same
-> is true for the GPIO driver.
+In the meantime, the relevant patches can be found in arm64's for-next/core
+branch:
 
-And GPIO nicely handles this via deferred probe mechanism. Why it
-can't be used here?
-So, we really need to have a strong argument to limit module nowadays
-to be only builtin.
+git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-next/core
 
-...
+... which was merged into mainline in commit:
 
-> >> +       depends on OF
-> >
-> > I didn't find an evidence this is needed.
+  533b220f7be4e461 ("Merge tag 'arm64-upstream' of git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux")
 
-> >> +#include <linux/of_platform.h>
-> >
-> > No evidence of user of this.
-> > I think you meant mod_devicetable.h.
->
-> devm_of_platform_populate(), so I need CONFIG_OF, too right?
+Thanks,
+Mark.
 
-Ah, this explains header, thanks!
-But it doesn't explain depends OF.
-
-So, perhaps,
-
-depends OF || COMPILE_TEST will be more informative, i.e.
-tells "okay, this driver can be compiled w/o OF, but won't be functional".
-
--- 
-With Best Regards,
-Andy Shevchenko
+On Tue, Jun 02, 2020 at 11:02:53AM -0700, Andrei Vagin wrote:
+> Allocate the time namespace page among VVAR pages and add the logic
+> to handle faults on VVAR properly.
+> 
+> If a task belongs to a time namespace then the VVAR page which contains
+> the system wide VDSO data is replaced with a namespace specific page
+> which has the same layout as the VVAR page. That page has vdso_data->seq
+> set to 1 to enforce the slow path and vdso_data->clock_mode set to
+> VCLOCK_TIMENS to enforce the time namespace handling path.
+> 
+> The extra check in the case that vdso_data->seq is odd, e.g. a concurrent
+> update of the VDSO data is in progress, is not really affecting regular
+> tasks which are not part of a time namespace as the task is spin waiting
+> for the update to finish and vdso_data->seq to become even again.
+> 
+> If a time namespace task hits that code path, it invokes the corresponding
+> time getter function which retrieves the real VVAR page, reads host time
+> and then adds the offset for the requested clock which is stored in the
+> special VVAR page.
+> 
+> v2: Code cleanups suggested by Vincenzo.
+> v3: add a comment in __arch_get_timens_vdso_data.
+> 
+> Reviewed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Dmitry Safonov <dima@arista.com>
+> 
+> v3 on github (if someone prefers `git pull` to `git am`):
+> https://github.com/avagin/linux-task-diag/tree/arm64/timens-v3
+> 
+> Andrei Vagin (6):
+>   arm64/vdso: use the fault callback to map vvar pages
+>   arm64/vdso: Zap vvar pages when switching to a time namespace
+>   arm64/vdso: Add time napespace page
+>   arm64/vdso: Handle faults on timens page
+>   arm64/vdso: Restrict splitting VVAR VMA
+>   arm64: enable time namespace support
+> 
+>  arch/arm64/Kconfig                            |   1 +
+>  .../include/asm/vdso/compat_gettimeofday.h    |  11 ++
+>  arch/arm64/include/asm/vdso/gettimeofday.h    |   8 ++
+>  arch/arm64/kernel/vdso.c                      | 134 ++++++++++++++++--
+>  arch/arm64/kernel/vdso/vdso.lds.S             |   3 +-
+>  arch/arm64/kernel/vdso32/vdso.lds.S           |   3 +-
+>  include/vdso/datapage.h                       |   1 +
+>  7 files changed, 147 insertions(+), 14 deletions(-)
+> 
+> -- 
+> 2.24.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
