@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3480F1EF74D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:26:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEE4E1EF750
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 14:26:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3f2HBfZchtb2701hnLH3iDcf4o+Jbg6U1jZsRQcZ5Ec=; b=q8Pm3VWHrlGPXs
-	LkHkP3BhjhpixbS+4nbkQUgwj07vHAJ4Nlf2t+rGXwD9oF1yh2ZERiigcTQh4DUHhEtqqUImjrOaF
-	17yMlon63f+SKQ9A9XNvgiusGcavYjGKJF9wrh/oUQ/lKx+59NKG1Q+bdL6qMVVogPzX24N6LVz0N
-	z5iLpSJ3zh8hycAz78bOdG6NWIwM7KfmhxGmdkWnwF0CdTBj1ABXs9lgdt6xIubN6ORMWlFnAshOG
-	kTpkKnrkyG2lVb6G8VxjA0Y0k0zOcILbTxFLZZReJb/xYFb6WyaL9jLuOgLeLMT8ZNlI7k81JZjke
-	P8OZDdfFw1z6hWYRsrCw==;
+	List-Owner; bh=N0JwNGKsfI8w9DkEgd8PcfQhuR4IsuFj97mt9n/jdPw=; b=OCKb3Cs5i63Wr3
+	mI0+ua2HeXYafL6T361Z1LpINIUs8sQLaygPmqjLftzJzq74MY5yBk6y8Y+pjKE8Sli2kpSvykPia
+	Gr6LZbvetwrDhWQNrzVH/DLS/w3CdtmohV/Lt8U16Jsm7eSXKVidTcXImwA/ryNuOCSWnEwnmJ4x2
+	ulXwv0k2mgy/kXqqgM5R6SzEiCT2KvUAY5qnprbiHI40as7TlnziRMcd7h6pn+QjSl2t4g6qFa1d1
+	bEZD500zQizpFyS/yvnLbWs1PyxXfiKW19oMDjsTl4vwlj6l2nC7SmSEvCQtkXjZZLQzjHL9p1Ju9
+	AtB2y21ddUJxzSK1LvcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhBQ4-0006qr-H6; Fri, 05 Jun 2020 12:25:56 +0000
+	id 1jhBQK-0007B9-UL; Fri, 05 Jun 2020 12:26:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhBPY-0006br-6j
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:25:25 +0000
+ id 1jhBPs-0006wU-E2
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 12:25:48 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 210A8207D5;
- Fri,  5 Jun 2020 12:25:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A98C820810;
+ Fri,  5 Jun 2020 12:25:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591359923;
- bh=jm6x0RRvrOOaubi6Ix7xcoeaXwJB5qwx91pe4/tNY94=;
+ s=default; t=1591359943;
+ bh=+TEMy27BblOXnMlqgiWZu2b8YQF3RwzOnroYFUg/yFw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=1lkvJca1AnWOFu1AJROaGIlW0WmR4izYgJGm+6k+0RCTiiYAViJjPKVA102jEjFc/
- tKxIwMDdfFsRo/TML8t2EiDB6tRrlaVQmXZtv1ZmtihuwZTtx9KkxO3PBGp7dMfP6+
- ojBB61UUSFhmabKDQ4Zljy8IOhBt6fsoEPmL8VEU=
+ b=LwOWXgNgsupkDtOTntRLYsB+F/VoqVRMB+y6jJYYUSF0E7q6LPbOo5XYC1CIQyvkh
+ aeUk2hH996vffFn3oW37HN3KpXJY2hfoag2lNCPWVgfPku/5wae/opShPXBUUwNgDz
+ uIz9vWjXGHCHssObJ6EGdchzqReAfI6CIQsmr6ro=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 05/17] net: stmmac: enable timestamp snapshot for
- required PTP packets in dwmac v5.10a
-Date: Fri,  5 Jun 2020 08:25:04 -0400
-Message-Id: <20200605122517.2882338-5-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 02/14] ARM: 8977/1: ptrace: Fix mask for thumb
+ breakpoint hook
+Date: Fri,  5 Jun 2020 08:25:28 -0400
+Message-Id: <20200605122540.2882539-2-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200605122517.2882338-1-sashal@kernel.org>
-References: <20200605122517.2882338-1-sashal@kernel.org>
+In-Reply-To: <20200605122540.2882539-1-sashal@kernel.org>
+References: <20200605122540.2882539-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_052524_267377_0FED1CDB 
-X-CRM114-Status: GOOD (  11.43  )
+X-CRM114-CacheID: sfid-20200605_052544_628231_51006638 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,58 +80,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Fugang Duan <fugang.duan@nxp.com>,
- netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>, Russell King <rmk+kernel@armlinux.org.uk>,
+ Fredrik Strupe <fredrik@strupe.net>, Oleg Nesterov <oleg@redhat.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogRnVnYW5nIER1YW4gPGZ1Z2FuZy5kdWFuQG54cC5jb20+CgpbIFVwc3RyZWFtIGNvbW1p
-dCBmMmZiNmI2Mjc1ZWJhOWQzMTI5NTdjYTQ0YzQ4N2JkNzgwZGE2MTY5IF0KCkZvciByeCBmaWx0
-ZXIgJ0hXVFNUQU1QX0ZJTFRFUl9QVFBfVjJfRVZFTlQnLCBpdCBzaG91bGQgYmUKUFRQIHYyLzgw
-Mi5BUzEsIGFueSBsYXllciwgYW55IGtpbmQgb2YgZXZlbnQgcGFja2V0LCBidXQgSFcgb25seQp0
-YWtlIHRpbWVzdGFtcCBzbmFwc2hvdCBmb3IgYmVsb3cgUFRQIG1lc3NhZ2U6IHN5bmMsIFBkZWxh
-eV9yZXEsClBkZWxheV9yZXNwLgoKVGhlbiBpdCBjYXVzZXMgYmVsb3cgaXNzdWUgd2hlbiB0ZXN0
-IEUyRSBjYXNlOgpwdHA0bFsyNDc5LjUzNF06IHBvcnQgMTogcmVjZWl2ZWQgREVMQVlfUkVRIHdp
-dGhvdXQgdGltZXN0YW1wCnB0cDRsWzI0ODEuNDIzXTogcG9ydCAxOiByZWNlaXZlZCBERUxBWV9S
-RVEgd2l0aG91dCB0aW1lc3RhbXAKcHRwNGxbMjQ4MS43NThdOiBwb3J0IDE6IHJlY2VpdmVkIERF
-TEFZX1JFUSB3aXRob3V0IHRpbWVzdGFtcApwdHA0bFsyNDgzLjUyNF06IHBvcnQgMTogcmVjZWl2
-ZWQgREVMQVlfUkVRIHdpdGhvdXQgdGltZXN0YW1wCnB0cDRsWzI0ODQuMjMzXTogcG9ydCAxOiBy
-ZWNlaXZlZCBERUxBWV9SRVEgd2l0aG91dCB0aW1lc3RhbXAKcHRwNGxbMjQ4NS43NTBdOiBwb3J0
-IDE6IHJlY2VpdmVkIERFTEFZX1JFUSB3aXRob3V0IHRpbWVzdGFtcApwdHA0bFsyNDg2Ljg4OF06
-IHBvcnQgMTogcmVjZWl2ZWQgREVMQVlfUkVRIHdpdGhvdXQgdGltZXN0YW1wCnB0cDRsWzI0ODcu
-MjY1XTogcG9ydCAxOiByZWNlaXZlZCBERUxBWV9SRVEgd2l0aG91dCB0aW1lc3RhbXAKcHRwNGxb
-MjQ4Ny4zMTZdOiBwb3J0IDE6IHJlY2VpdmVkIERFTEFZX1JFUSB3aXRob3V0IHRpbWVzdGFtcAoK
-VGltZXN0YW1wIHNuYXBzaG90IGRlcGVuZGVuY3kgb24gcmVnaXN0ZXIgYml0cyBpbiByZWNlaXZl
-ZCBwYXRoOgpTTkFQVFlQU0VMIFRTTVNUUkVOQSBUU0VWTlRFTkEgCVBUUF9NZXNzYWdlcwowMSAg
-ICAgICAgIHggICAgICAgICAwICAgICAgICAgIFNZTkMsIEZvbGxvd19VcCwgRGVsYXlfUmVxLAog
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERlbGF5X1Jlc3AsIFBkZWxheV9SZXEsIFBk
-ZWxheV9SZXNwLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBkZWxheV9SZXNwX0Zv
-bGxvd19VcAowMSAgICAgICAgIDAgICAgICAgICAxICAgICAgICAgIFNZTkMsIFBkZWxheV9SZXEs
-IFBkZWxheV9SZXNwCgpGb3IgZHdtYWMgdjUuMTBhLCBlbmFibGluZyBhbGwgZXZlbnRzIGJ5IHNl
-dHRpbmcgcmVnaXN0ZXIKRFdDX0VRT1NfVElNRV9TVEFNUElOR1tTTkFQVFlQU0VMXSB0byAy4oCZ
-YjAxLCBjbGVhcmluZyBiaXQgW1RTRVZOVEVOQV0KdG8gMOKAmWIwLCB3aGljaCBjYW4gc3VwcG9y
-dCBhbGwgcmVxdWlyZWQgZXZlbnRzLgoKU2lnbmVkLW9mZi1ieTogRnVnYW5nIER1YW4gPGZ1Z2Fu
-Zy5kdWFuQG54cC5jb20+ClNpZ25lZC1vZmYtYnk6IERhdmlkIFMuIE1pbGxlciA8ZGF2ZW1AZGF2
-ZW1sb2Z0Lm5ldD4KU2lnbmVkLW9mZi1ieTogU2FzaGEgTGV2aW4gPHNhc2hhbEBrZXJuZWwub3Jn
-PgotLS0KIGRyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19tYWluLmMg
-fCAzICsrLQogMSBmaWxlIGNoYW5nZWQsIDIgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigtKQoK
-ZGlmZiAtLWdpdCBhL2RyaXZlcnMvbmV0L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19t
-YWluLmMgYi9kcml2ZXJzL25ldC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9zdG1tYWNfbWFpbi5j
-CmluZGV4IGQ1NjQ0NTkyOTBjZS4uYmNiMzkwMTJkMzRkIDEwMDY0NAotLS0gYS9kcml2ZXJzL25l
-dC9ldGhlcm5ldC9zdG1pY3JvL3N0bW1hYy9zdG1tYWNfbWFpbi5jCisrKyBiL2RyaXZlcnMvbmV0
-L2V0aGVybmV0L3N0bWljcm8vc3RtbWFjL3N0bW1hY19tYWluLmMKQEAgLTYzMCw3ICs2MzAsOCBA
-QCBzdGF0aWMgaW50IHN0bW1hY19od3RzdGFtcF9zZXQoc3RydWN0IG5ldF9kZXZpY2UgKmRldiwg
-c3RydWN0IGlmcmVxICppZnIpCiAJCQljb25maWcucnhfZmlsdGVyID0gSFdUU1RBTVBfRklMVEVS
-X1BUUF9WMl9FVkVOVDsKIAkJCXB0cF92MiA9IFBUUF9UQ1JfVFNWRVIyRU5BOwogCQkJc25hcF90
-eXBlX3NlbCA9IFBUUF9UQ1JfU05BUFRZUFNFTF8xOwotCQkJdHNfZXZlbnRfZW4gPSBQVFBfVENS
-X1RTRVZOVEVOQTsKKwkJCWlmIChwcml2LT5zeW5vcHN5c19pZCAhPSBEV01BQ19DT1JFXzVfMTAp
-CisJCQkJdHNfZXZlbnRfZW4gPSBQVFBfVENSX1RTRVZOVEVOQTsKIAkJCXB0cF9vdmVyX2lwdjRf
-dWRwID0gUFRQX1RDUl9UU0lQVjRFTkE7CiAJCQlwdHBfb3Zlcl9pcHY2X3VkcCA9IFBUUF9UQ1Jf
-VFNJUFY2RU5BOwogCQkJcHRwX292ZXJfZXRoZXJuZXQgPSBQVFBfVENSX1RTSVBFTkE7Ci0tIAoy
-LjI1LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
-aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
-ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1hcm0ta2VybmVsCg==
+From: Fredrik Strupe <fredrik@strupe.net>
+
+[ Upstream commit 3866f217aaa81bf7165c7f27362eee5d7919c496 ]
+
+call_undef_hook() in traps.c applies the same instr_mask for both 16-bit
+and 32-bit thumb instructions. If instr_mask then is only 16 bits wide
+(0xffff as opposed to 0xffffffff), the first half-word of 32-bit thumb
+instructions will be masked out. This makes the function match 32-bit
+thumb instructions where the second half-word is equal to instr_val,
+regardless of the first half-word.
+
+The result in this case is that all undefined 32-bit thumb instructions
+with the second half-word equal to 0xde01 (udf #1) work as breakpoints
+and will raise a SIGTRAP instead of a SIGILL, instead of just the one
+intended 16-bit instruction. An example of such an instruction is
+0xeaa0de01, which is unallocated according to Arm ARM and should raise a
+SIGILL, but instead raises a SIGTRAP.
+
+This patch fixes the issue by setting all the bits in instr_mask, which
+will still match the intended 16-bit thumb instruction (where the
+upper half is always 0), but not any 32-bit thumb instructions.
+
+Cc: Oleg Nesterov <oleg@redhat.com>
+Signed-off-by: Fredrik Strupe <fredrik@strupe.net>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ arch/arm/kernel/ptrace.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/kernel/ptrace.c b/arch/arm/kernel/ptrace.c
+index 324352787aea..db9401581cd2 100644
+--- a/arch/arm/kernel/ptrace.c
++++ b/arch/arm/kernel/ptrace.c
+@@ -219,8 +219,8 @@ static struct undef_hook arm_break_hook = {
+ };
+ 
+ static struct undef_hook thumb_break_hook = {
+-	.instr_mask	= 0xffff,
+-	.instr_val	= 0xde01,
++	.instr_mask	= 0xffffffff,
++	.instr_val	= 0x0000de01,
+ 	.cpsr_mask	= PSR_T_BIT,
+ 	.cpsr_val	= PSR_T_BIT,
+ 	.fn		= break_trap,
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
