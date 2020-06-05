@@ -2,54 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98B791EF35A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:47:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 935A21EF368
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 10:49:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Wev+/pltbHYTqe7m/NpEZipR72K4PhqZ/qaquZVGMN8=; b=tZQXai/s9xRb0/As+k4yXh7+S
-	JzwfMHGfwwKaxPM61cM35hl3AitNVkjK4GI77E01EXoT5wOiqc9wZ97q2p1mcpU1TBs5TPGlt+95t
-	INe1q0rsYO5vHJKY6DH+LEVQf8qRIIJwsx/UtVu2MNfmRzWqWCeKEViy2U739AuLohbDHZwJ/aoAr
-	S8z5rJXjOf9r9cG1px+aHd0feJ1l+QFYh0AX2NnxZaznZ0Yr/aDTWtv6NPO8HonK/+sHdnTXaSCSK
-	Fxs0AHqg7JrIHBiZPF8uJ4AMCIhLtgfLpzVPY2OrQTlcnhNuYDyzGsHBlMx9bNwkIH8aMELSqKW14
-	Ge2fD5WDA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LRU367t9oJ5DvmQCXjDQHNwIzODxv4I/w/O+wxYEad0=; b=W7tD+w9xr/J/CQ
+	cW4IPzCkfj/LgZBBdDIS3+KLueiFPlBARJGBRiOaMw9WHFtwQaeRDfCC8EkXeDtwrfNU/O+jUBS7A
+	Kh8nUepeNZ/dfGhW2dG88Ekr+oMUdnpVG5KT0lXrJDNmsO6xR+mDNuLFXp+dbkFthqV3/vAt72cka
+	kExDX/JsURS3XgMaoGla3Ut3/CDT8VVzHjiREWvs9ZaCFzR3nebhYBTL3QvCzgaeWBs/V5NIY29+i
+	qwN2+O+L/KPY6v6QocQoHYZ+YXGxggy6WI8jNuIAcsqn2yMw7DZeZTRfghMyC2iTICuVwCRFuvu7N
+	y8AmUSZ/elvyZoq5U7Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh80Q-0006EJ-6Y; Fri, 05 Jun 2020 08:47:14 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jh82b-0006db-4C; Fri, 05 Jun 2020 08:49:29 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh80H-0006Di-8w; Fri, 05 Jun 2020 08:47:07 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 796BAACD0;
- Fri,  5 Jun 2020 08:47:05 +0000 (UTC)
-Message-ID: <f728f55fe6266718b5041b6f3b1864a673991129.camel@suse.de>
-Subject: Re: [PATCH v2] spi: bcm2835: Enable shared interrupt support
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Florian Fainelli <f.fainelli@gmail.com>, linux-kernel@vger.kernel.org
-Date: Fri, 05 Jun 2020 10:46:57 +0200
-In-Reply-To: <20200604212819.715-1-f.fainelli@gmail.com>
-References: <20200604212819.715-1-f.fainelli@gmail.com>
-User-Agent: Evolution 3.36.2 
+ id 1jh82R-0006d5-SF
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 08:49:23 +0000
+Received: by mail-wm1-x341.google.com with SMTP id l26so7654169wme.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 05 Jun 2020 01:49:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=ShIPEKLtHJNI7EgByJ7TzTteP7weEEoEK5XnGUnAnDA=;
+ b=JHKB7BPtiDQpdqRj4iwj2PaCKo2ZYMwCEXh3GY/NEwFYFSE47qjrQmxrSB7T0iodw6
+ RmMzOO/L8Msz58TpWxpu/ANCKEiUHGO9/amUCaByExYyC/UBu+ANQPXnWnataTsRLNix
+ noronmmlyJ/akaNcxh7RNjTQtVPrDG5zYwQHZKYCxuIvGiMYbl2wO2WwNKj7bO+BZRDy
+ VTU1uipZn/zZ7AeGaRUFx/ZnDlR4XWs6tXLm7o3NZNl0L9nq7dqN2eMCQ21F2xri8uAg
+ nNF/9kpYLeZpM3I9M3QDpLL6TwDnOLzYVcNamQUkqcoCdclagZ4fvhx+DNoGufhzKrib
+ 5y/w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=ShIPEKLtHJNI7EgByJ7TzTteP7weEEoEK5XnGUnAnDA=;
+ b=umlJ5uZxcrxHMdQXZ447pAE3GGjXefRDWYQr77spPKcQumQlYu6p7NSStwM/CBTLkA
+ eM6jPPFQ9a6Rqj3IHZJYcCh5HUHTLUbxHDhfiTeoL/vUJcZjIubaV54qiHqW9tygJgoZ
+ fsiKEDY0AhxtUGVLkFe92Fe4xapsPCe+fKl0qUhRyHZuRCqPTLCXYIq/H1aYP3LTyYhH
+ nc6BgQadGBQFglfh8kjDvtdiM6+S17cmsZtuiBzIVkNkTtezRB1MH8tbZ+Ile3KwdnTU
+ FxInMVeE5UOW/3+cT3fYdrCn/tgNXSKg+N0SNHfoLGWHEgpBPmGlLCjIVKJVAz3Z25sO
+ rJzw==
+X-Gm-Message-State: AOAM5316/ikuue0F6wSgaYDIrsk1CFYSCtsuRTbXy+1OCIDqQPg37Fjt
+ fqD9V4mleGR3wgMgmRpqB4MaiQ==
+X-Google-Smtp-Source: ABdhPJzFLO8h/vvGcmXwgNoyFftB5nfR424h9jxB25M8PSh39Yyc0S54n+rRnjr0KPF2rHImbfY5hg==
+X-Received: by 2002:a7b:cf02:: with SMTP id l2mr1609865wmg.136.1591346958101; 
+ Fri, 05 Jun 2020 01:49:18 -0700 (PDT)
+Received: from dell ([95.147.198.92])
+ by smtp.gmail.com with ESMTPSA id j5sm11113810wrq.39.2020.06.05.01.49.16
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 05 Jun 2020 01:49:17 -0700 (PDT)
+Date: Fri, 5 Jun 2020 09:49:15 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH v4 05/11] pwm: add support for sl28cpld PWM controller
+Message-ID: <20200605084915.GE3714@dell>
+References: <20200604211039.12689-1-michael@walle.cc>
+ <20200604211039.12689-6-michael@walle.cc>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200604211039.12689-6-michael@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_014705_611363_28F530B6 
-X-CRM114-Status: GOOD (  26.70  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200605_014919_951675_58871CF1 
+X-CRM114-Status: GOOD (  32.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,233 +98,199 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND
- FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
- Scott Branden <sbranden@broadcom.com>, lukas@wunner.de,
- Ray Jui <rjui@broadcom.com>, Mark Brown <broonie@kernel.org>,
- "open list:SPI SUBSYSTEM" <linux-spi@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "maintainer:BROADCOM BCM281XX/BCM11XXX/BCM216XX ARM ARCHITE..."
- <bcm-kernel-feedback-list@broadcom.com>, "moderated list:BROADCOM
- BCM2711/BCM2835 ARM ARCHITECTURE" <linux-rpi-kernel@lists.infradead.org>,
- Martin Sperl <kernel@martin.sperl.org>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============6912648187180028447=="
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============6912648187180028447==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-mEv3c87MBb44GSiC5RXV"
-
-
---=-mEv3c87MBb44GSiC5RXV
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-Hi Florian,
-Thanks for taking over this!
-
-On Thu, 2020-06-04 at 14:28 -0700, Florian Fainelli wrote:
-> The 4 SPI controller instances added in BCM2711 and BCM7211 SoCs (SPI3,
-> SPI4, SPI5 and SPI6) share the same interrupt line with SPI0.
-
-I think this isn't 100% correct. SPI0 has its own interrupt, but SPI[3-6] s=
-hare
-the same interrupt.
-
-> For the BCM2835 case which is deemed performance critical, we would like
-> to continue using an interrupt handler which does not have the extra
-> comparison on BCM2835_SPI_CS_INTR.
->=20
-> To support that requirement the common interrupt handling code between
-> the shared and non-shared interrupt paths is split into a
-> bcm2835_spi_interrupt_common() and both bcm2835_spi_interrupt() as well
-> as bcm2835_spi_shared_interrupt() make use of it.
->=20
-> During probe, we determine if there is at least another instance of this
-> SPI controller, and if there is, then we install a shared interrupt
-> handler.
-
-As there was pushback to use a different compatible string for an otherwise
-identical IP, I think it's a good compromise.
-
->=20
-> Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
-> ---
-> Changes in v2:
->=20
-> - identify other available SPI nodes to determine if we need to set-up
->   interrupt sharing. This needs to happen for the very first instance
->   since we cannot know for the first instance whether interrupt sharing
->   is needed or not.
->=20
->  drivers/spi/spi-bcm2835.c | 61 ++++++++++++++++++++++++++++++++-------
->  1 file changed, 50 insertions(+), 11 deletions(-)
->=20
-> diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
-> index 237bd306c268..0288b5b3de1e 100644
-> --- a/drivers/spi/spi-bcm2835.c
-> +++ b/drivers/spi/spi-bcm2835.c
-> @@ -361,11 +361,10 @@ static void bcm2835_spi_reset_hw(struct spi_control=
-ler
-> *ctlr)
->  	bcm2835_wr(bs, BCM2835_SPI_DLEN, 0);
->  }
-> =20
-> -static irqreturn_t bcm2835_spi_interrupt(int irq, void *dev_id)
-> +static inline irqreturn_t bcm2835_spi_interrupt_common(struct spi_contro=
-ller
-> *ctlr,
-> +						       u32 cs)
-
-Keep in mind the new 100 character limit.
-
->  {
-> -	struct spi_controller *ctlr =3D dev_id;
->  	struct bcm2835_spi *bs =3D spi_controller_get_devdata(ctlr);
-> -	u32 cs =3D bcm2835_rd(bs, BCM2835_SPI_CS);
-> =20
->  	/*
->  	 * An interrupt is signaled either if DONE is set (TX FIFO empty)
-> @@ -394,6 +393,27 @@ static irqreturn_t bcm2835_spi_interrupt(int irq, vo=
-id
-> *dev_id)
->  	return IRQ_HANDLED;
->  }
-> =20
-> +static irqreturn_t bcm2835_spi_interrupt(int irq, void *dev_id)
-> +{
-> +	struct spi_controller *ctlr =3D dev_id;
-> +	struct bcm2835_spi *bs =3D spi_controller_get_devdata(ctlr);
-> +	u32 cs =3D bcm2835_rd(bs, BCM2835_SPI_CS);
-> +
-> +	return bcm2835_spi_interrupt_common(ctlr, cs);
-> +}
-> +
-> +static irqreturn_t bcm2835_spi_shared_interrupt(int irq, void *dev_id)
-> +{
-> +	struct spi_controller *ctlr =3D dev_id;
-> +	struct bcm2835_spi *bs =3D spi_controller_get_devdata(ctlr);
-> +	u32 cs =3D bcm2835_rd(bs, BCM2835_SPI_CS);
-> +
-> +	if (!(cs & BCM2835_SPI_CS_INTR))
-> +		return IRQ_NONE;
-> +
-> +	return bcm2835_spi_interrupt_common(ctlr, cs);
-> +}
-> +
->  static int bcm2835_spi_transfer_one_irq(struct spi_controller *ctlr,
->  					struct spi_device *spi,
->  					struct spi_transfer *tfr,
-> @@ -1287,12 +1307,37 @@ static int bcm2835_spi_setup(struct spi_device *s=
-pi)
->  	return 0;
->  }
-> =20
-> +static const struct of_device_id bcm2835_spi_match[] =3D {
-> +	{ .compatible =3D "brcm,bcm2835-spi", },
-> +	{}
-> +};
-> +MODULE_DEVICE_TABLE(of, bcm2835_spi_match);
-> +
->  static int bcm2835_spi_probe(struct platform_device *pdev)
->  {
-> +	irq_handler_t bcm2835_spi_isr_func =3D bcm2835_spi_interrupt;
->  	struct spi_controller *ctlr;
-> +	unsigned long flags =3D 0;
-> +	struct device_node *dn;
->  	struct bcm2835_spi *bs;
->  	int err;
-> =20
-> +	/* On BCM2711 there can be multiple SPI controllers enabled sharing the
-> +	 * same interrupt line, but we also want to minimize the overhead if
-> +	 * there is no need to support interrupt sharing. If we find at least
-> +	 * another available instane (not counting the one we are probed from),
-
-"instance"
-
-> +	 * then we assume that interrupt sharing is necessary.
-> +	 */
-> +	for_each_compatible_node(dn, NULL, bcm2835_spi_match[0].compatible) {
-> +		err =3D of_device_is_available(dn) && dn !=3D pdev->dev.of_node;
-
-nit: maybe err is not the ideal variable name here.
-
-> +		of_node_put(dn);
-> +		if (err) {
-> +			flags =3D IRQF_SHARED;
-> +			bcm2835_spi_isr_func =3D bcm2835_spi_shared_interrupt;
-> +			break;
-> +		}
-> +	}
-> +
->  	ctlr =3D spi_alloc_master(&pdev->dev, ALIGN(sizeof(*bs),
->  						  dma_get_cache_alignment()));
->  	if (!ctlr)
-> @@ -1344,8 +1389,8 @@ static int bcm2835_spi_probe(struct platform_device
-> *pdev)
->  	bcm2835_wr(bs, BCM2835_SPI_CS,
->  		   BCM2835_SPI_CS_CLEAR_RX | BCM2835_SPI_CS_CLEAR_TX);
-> =20
-> -	err =3D devm_request_irq(&pdev->dev, bs->irq, bcm2835_spi_interrupt, 0,
-> -			       dev_name(&pdev->dev), ctlr);
-> +	err =3D devm_request_irq(&pdev->dev, bs->irq, bcm2835_spi_isr_func,
-> +			       flags, dev_name(&pdev->dev), ctlr);
->  	if (err) {
->  		dev_err(&pdev->dev, "could not request IRQ: %d\n", err);
->  		goto out_dma_release;
-> @@ -1400,12 +1445,6 @@ static void bcm2835_spi_shutdown(struct platform_d=
-evice
-> *pdev)
->  		dev_err(&pdev->dev, "failed to shutdown\n");
->  }
-> =20
-> -static const struct of_device_id bcm2835_spi_match[] =3D {
-> -	{ .compatible =3D "brcm,bcm2835-spi", },
-> -	{}
-> -};
-> -MODULE_DEVICE_TABLE(of, bcm2835_spi_match);
-> -
->  static struct platform_driver bcm2835_spi_driver =3D {
->  	.driver		=3D {
->  		.name		=3D DRV_NAME,
-
-
---=-mEv3c87MBb44GSiC5RXV
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl7aBoIACgkQlfZmHno8
-x/76iQf/YhcuGS7sdr9nlK7KZasWwzVQMm4sUpwC4aTP2ok0f8XY2omANTcOMXPi
-boV38p9L8EZnRCGxPJH5gcd+P+mzq7E36L0CmhXh0llna9Y0PCDNRiAun7xax26+
-AdZ5CP5pxseRYL/hvDKGiErbDAaygtPFdxvo9u034SYQyQTnP5J8YxjTX0V0TTVz
-NWPslb+n33JCLVrkFhoIsxr2sgW/dFJTaZ3V1/Bzj5Lktz4dw16ro4tCX86I4ltO
-NlvwGVykL6qjn+j0dOvnx6JvHoI5ScPqzkCDXDwQJekTzitTIdiaD2e70AZZ1B+q
-S0WCbZgciVz5xKBJn1sx5kPtsVZwng==
-=mzr5
------END PGP SIGNATURE-----
-
---=-mEv3c87MBb44GSiC5RXV--
-
-
-
---===============6912648187180028447==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6912648187180028447==--
-
-
+T24gVGh1LCAwNCBKdW4gMjAyMCwgTWljaGFlbCBXYWxsZSB3cm90ZToKCj4gQWRkIHN1cHBvcnQg
+Zm9yIHRoZSBQV00gY29udHJvbGxlciBvZiB0aGUgc2wyOGNwbGQgYm9hcmQgbWFuYWdlbWVudAo+
+IGNvbnRyb2xsZXIuIFRoaXMgaXMgcGFydCBvZiBhIG11bHRpLWZ1bmN0aW9uIGRldmljZSBkcml2
+ZXIuCj4gCj4gVGhlIGNvbnRyb2xsZXIgaGFzIG9uZSBQV00gY2hhbm5lbCBhbmQgY2FuIGp1c3Qg
+Z2VuZXJhdGUgZm91ciBkaXN0aW5jdAo+IGZyZXF1ZW5jaWVzLgo+IAo+IFNpZ25lZC1vZmYtYnk6
+IE1pY2hhZWwgV2FsbGUgPG1pY2hhZWxAd2FsbGUuY2M+Cj4gLS0tCj4gIGRyaXZlcnMvcHdtL0tj
+b25maWcgICAgICAgIHwgIDEwICsrCj4gIGRyaXZlcnMvcHdtL01ha2VmaWxlICAgICAgIHwgICAx
+ICsKPiAgZHJpdmVycy9wd20vcHdtLXNsMjhjcGxkLmMgfCAyMDEgKysrKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKwo+ICAzIGZpbGVzIGNoYW5nZWQsIDIxMiBpbnNlcnRpb25zKCsp
+Cj4gIGNyZWF0ZSBtb2RlIDEwMDY0NCBkcml2ZXJzL3B3bS9wd20tc2wyOGNwbGQuYwo+IAo+IGRp
+ZmYgLS1naXQgYS9kcml2ZXJzL3B3bS9LY29uZmlnIGIvZHJpdmVycy9wd20vS2NvbmZpZwo+IGlu
+ZGV4IGNiOGQ3MzkwNjdkMi4uYTM5MzcxYzExZmY2IDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvcHdt
+L0tjb25maWcKPiArKysgYi9kcml2ZXJzL3B3bS9LY29uZmlnCj4gQEAgLTQzNyw2ICs0MzcsMTYg
+QEAgY29uZmlnIFBXTV9TSUZJVkUKPiAgCSAgVG8gY29tcGlsZSB0aGlzIGRyaXZlciBhcyBhIG1v
+ZHVsZSwgY2hvb3NlIE0gaGVyZTogdGhlIG1vZHVsZQo+ICAJICB3aWxsIGJlIGNhbGxlZCBwd20t
+c2lmaXZlLgo+ICAKPiArY29uZmlnIFBXTV9TTDI4Q1BMRAo+ICsJdHJpc3RhdGUgIktvbnRyb24g
+c2wyOCBQV00gc3VwcG9ydCIKPiArCWRlcGVuZHMgb24gTUZEX1NMMjhDUExECj4gKwloZWxwCj4g
+KwkgIEdlbmVyaWMgUFdNIGZyYW1ld29yayBkcml2ZXIgZm9yIGJvYXJkIG1hbmFnZW1lbnQgY29u
+dHJvbGxlcgo+ICsJICBmb3VuZCBvbiB0aGUgS29udHJvbiBzbDI4IENQTEQuCj4gKwo+ICsJICBU
+byBjb21waWxlIHRoaXMgZHJpdmVyIGFzIGEgbW9kdWxlLCBjaG9vc2UgTSBoZXJlOiB0aGUgbW9k
+dWxlCj4gKwkgIHdpbGwgYmUgY2FsbGVkIHB3bS1zbDI4Y3BsZC4KPiArCj4gIGNvbmZpZyBQV01f
+U1BFQVIKPiAgCXRyaXN0YXRlICJTVE1pY3JvZWxlY3Ryb25pY3MgU1BFQXIgUFdNIHN1cHBvcnQi
+Cj4gIAlkZXBlbmRzIG9uIFBMQVRfU1BFQVIgfHwgQ09NUElMRV9URVNUCj4gZGlmZiAtLWdpdCBh
+L2RyaXZlcnMvcHdtL01ha2VmaWxlIGIvZHJpdmVycy9wd20vTWFrZWZpbGUKPiBpbmRleCBhNTlj
+NzEwZTk4YzcuLmM0Nzk2MjM3MjRlOCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3B3bS9NYWtlZmls
+ZQo+ICsrKyBiL2RyaXZlcnMvcHdtL01ha2VmaWxlCj4gQEAgLTQxLDYgKzQxLDcgQEAgb2JqLSQo
+Q09ORklHX1BXTV9SRU5FU0FTX1RQVSkJKz0gcHdtLXJlbmVzYXMtdHB1Lm8KPiAgb2JqLSQoQ09O
+RklHX1BXTV9ST0NLQ0hJUCkJKz0gcHdtLXJvY2tjaGlwLm8KPiAgb2JqLSQoQ09ORklHX1BXTV9T
+QU1TVU5HKQkrPSBwd20tc2Ftc3VuZy5vCj4gIG9iai0kKENPTkZJR19QV01fU0lGSVZFKQkrPSBw
+d20tc2lmaXZlLm8KPiArb2JqLSQoQ09ORklHX1BXTV9TTDI4Q1BMRCkJKz0gcHdtLXNsMjhjcGxk
+Lm8KPiAgb2JqLSQoQ09ORklHX1BXTV9TUEVBUikJCSs9IHB3bS1zcGVhci5vCj4gIG9iai0kKENP
+TkZJR19QV01fU1BSRCkJCSs9IHB3bS1zcHJkLm8KPiAgb2JqLSQoQ09ORklHX1BXTV9TVEkpCQkr
+PSBwd20tc3RpLm8KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9wd20vcHdtLXNsMjhjcGxkLmMgYi9k
+cml2ZXJzL3B3bS9wd20tc2wyOGNwbGQuYwo+IG5ldyBmaWxlIG1vZGUgMTAwNjQ0Cj4gaW5kZXgg
+MDAwMDAwMDAwMDAwLi5kODIzMDNmNTA5ZjUKPiAtLS0gL2Rldi9udWxsCj4gKysrIGIvZHJpdmVy
+cy9wd20vcHdtLXNsMjhjcGxkLmMKPiBAQCAtMCwwICsxLDIwMSBAQAo+ICsvLyBTUERYLUxpY2Vu
+c2UtSWRlbnRpZmllcjogR1BMLTIuMC1vbmx5Cj4gKy8qCj4gKyAqIHNsMjhjcGxkIFBXTSBkcml2
+ZXIuCj4gKyAqCj4gKyAqIENvcHlyaWdodCAyMDE5IEtvbnRyb24gRXVyb3BlIEdtYkgKClRoaXMg
+aXMgb3V0IG9mIGRhdGUuCgo+ICsgKi8KPiArCj4gKyNpbmNsdWRlIDxsaW51eC9iaXRmaWVsZC5o
+Pgo+ICsjaW5jbHVkZSA8bGludXgva2VybmVsLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9tb2R1bGUu
+aD4KPiArI2luY2x1ZGUgPGxpbnV4L29mX2RldmljZS5oPgo+ICsjaW5jbHVkZSA8bGludXgvcGxh
+dGZvcm1fZGV2aWNlLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9wd20uaD4KPiArI2luY2x1ZGUgPGxp
+bnV4L3JlZ21hcC5oPgo+ICsKPiArLyoKPiArICogUFdNIHRpbWVyIGJsb2NrIHJlZ2lzdGVycy4K
+PiArICovCj4gKyNkZWZpbmUgUFdNX0NUUkwJCTB4MDAKPiArI2RlZmluZSAgIFBXTV9FTkFCTEUJ
+CUJJVCg3KQo+ICsjZGVmaW5lICAgUFdNX01PREVfMjUwSFoJMAo+ICsjZGVmaW5lICAgUFdNX01P
+REVfNTAwSFoJMQo+ICsjZGVmaW5lICAgUFdNX01PREVfMUtIWgkJMgo+ICsjZGVmaW5lICAgUFdN
+X01PREVfMktIWgkJMwo+ICsjZGVmaW5lICAgUFdNX01PREVfTUFTSwkJR0VOTUFTSygxLCAwKQo+
+ICsjZGVmaW5lIFBXTV9DWUNMRQkJMHgwMQo+ICsjZGVmaW5lICAgUFdNX0NZQ0xFX01BWAkJMHg3
+Zgo+ICsKPiArc3RydWN0IHNsMjhjcGxkX3B3bSB7Cj4gKwlzdHJ1Y3QgcHdtX2NoaXAgcHdtX2No
+aXA7Cj4gKwlzdHJ1Y3QgcmVnbWFwICpyZWdtYXA7Cj4gKwl1MzIgb2Zmc2V0Owo+ICt9Owo+ICsK
+PiArc3RydWN0IHNsMjhjcGxkX3B3bV9wZXJpb2RzIHsKPiArCXU4IGN0cmw7Cj4gKwl1bnNpZ25l
+ZCBsb25nIGR1dHlfY3ljbGU7Cj4gK307Cj4gKwo+ICtzdHJ1Y3Qgc2wyOGNwbGRfcHdtX2NvbmZp
+ZyB7Cj4gKwl1bnNpZ25lZCBsb25nIHBlcmlvZF9uczsKPiArCXU4IG1heF9kdXR5X2N5Y2xlOwo+
+ICt9OwoKQWxzbywgaW5zdGVhZCBvZiBoYW5kIHJvbGxpbmcgeW91ciBvd24gc3RydWN0dXJlIGhl
+cmUsIEkgdGhpbmsgaXQKd291bGQgYmUgcHJ1ZGVudCB0byByZS11c2Ugc29tZXRoaW5nIHRoYXQg
+YWxyZWFkeSBleGlzdHMuICBTZWVpbmcgYXMKdGhpcyB3aWxsIGJlIHVzZWQgdG8gZGVzY3JpYmUg
+cG9zc2libGUgc3RhdGUsIHBlcmhhcHMgJ3N0cnVjdApwd21fc3RhdGUnIHdvdWxkIGJlIHN1aXRh
+YmxlIC0gbGVhdmluZyBwb2xhcml0eSBhbmQgZW5hYmxlZAp1bnBvcHVsYXRlZCBvZiBjb3Vyc2Uu
+CgpBaCB3YWl0IChzb3JyeSwgdGhpbmtpbmcgYWxsb3dlZCBhbmQgb24tdGhlLWZseSBoZXJlKSwg
+d2hhdCBpcwptYXhfZHV0eV9jeWNsZSBoZXJlPyAgSSBhc3N1bWUgdGhpcyBkb2VzIG5vdCBoYXZl
+IHRoZSBzYW1lCm1lYW5pbmcvdmFsdWUtdHlwZSBhcyB0aGUgb25lIGluICdzdHJ1Y3QgcHdtX3N0
+YXRlJy4gIFdoYXQgZG9lcwptYXhfZHV0eV9jeWNsZSByZXByZXNlbnQgaW4geW91ciB1c2UtY2Fz
+ZT8KCj4gK3N0YXRpYyBzdHJ1Y3Qgc2wyOGNwbGRfcHdtX2NvbmZpZyBzbDI4Y3BsZF9wd21fY29u
+ZmlnW10gPSB7Cj4gKwlbUFdNX01PREVfMjUwSFpdID0geyAucGVyaW9kX25zID0gNDAwMDAwMCwg
+Lm1heF9kdXR5X2N5Y2xlID0gMHg4MCB9LAo+ICsJW1BXTV9NT0RFXzUwMEhaXSA9IHsgLnBlcmlv
+ZF9ucyA9IDIwMDAwMDAsIC5tYXhfZHV0eV9jeWNsZSA9IDB4NDAgfSwKPiArCVtQV01fTU9ERV8x
+S0haXSA9IHsgLnBlcmlvZF9ucyA9IDEwMDAwMDAsIC5tYXhfZHV0eV9jeWNsZSA9IDB4MjAgfSwK
+PiArCVtQV01fTU9ERV8yS0haXSA9IHsgLnBlcmlvZF9ucyA9ICA1MDAwMDAsIC5tYXhfZHV0eV9j
+eWNsZSA9IDB4MTAgfSwKPiArfTsKClRpbnkgbml0OiBJZiB5b3UgbGluZWQgdGhlc2UgdXAgZnJv
+bSB0aGUgJ3sncyBpdCB3b3VsZCBiZSBlYXNpZXIgdG8Kc2VlL2NvbXBhcmUgdGhlIHBlcmlvZF9u
+cyB2YWx1ZXMgYXQgZmlyc3QgZ2xhbmNlLCByYXRoZXIgdGhhbiBoYXZpbmcKdG8gY291bnQgdGhl
+ICcgJ3MgYW5kICcwJ3MuCgo+ICtzdGF0aWMgaW5saW5lIHN0cnVjdCBzbDI4Y3BsZF9wd20gKnRv
+X3NsMjhjcGxkX3B3bShzdHJ1Y3QgcHdtX2NoaXAgKmNoaXApCj4gK3sKPiArCXJldHVybiBjb250
+YWluZXJfb2YoY2hpcCwgc3RydWN0IHNsMjhjcGxkX3B3bSwgcHdtX2NoaXApOwo+ICt9CgpXaHkg
+bm90IHNhdmUgeW91cnNlbGYgdGhlIHRyb3VibGUgYW5kIGp1c3Q6CgogIHN0cnVjdCBzbDI4Y3Bs
+ZF9wd20gKnB3bSA9IGRldl9nZXRfZHJ2ZGF0YShjaGlwLT5kZXYpOwoKPiArc3RhdGljIHZvaWQg
+c2wyOGNwbGRfcHdtX2dldF9zdGF0ZShzdHJ1Y3QgcHdtX2NoaXAgKmNoaXAsCj4gKwkJCQkgICBz
+dHJ1Y3QgcHdtX2RldmljZSAqcHdtLAo+ICsJCQkJICAgc3RydWN0IHB3bV9zdGF0ZSAqc3RhdGUp
+Cj4gK3sKPiArCXN0cnVjdCBzbDI4Y3BsZF9wd20gKnNwYyA9IHRvX3NsMjhjcGxkX3B3bShjaGlw
+KTsKPiArCXN0YXRpYyBzdHJ1Y3Qgc2wyOGNwbGRfcHdtX2NvbmZpZyAqY29uZmlnOwo+ICsJdW5z
+aWduZWQgaW50IHJlZzsKPiArCXVuc2lnbmVkIGxvbmcgY3ljbGU7CgpXaHkgaXMgdGhpcyAnbG9u
+ZycgaGVyZSBhbmQgJ2xvbmcgbG9uZycgaW4gKl9hcHBseSgpPwoKPiArCXVuc2lnbmVkIGludCBt
+b2RlOwo+ICsKPiArCXJlZ21hcF9yZWFkKHNwYy0+cmVnbWFwLCBzcGMtPm9mZnNldCArIFBXTV9D
+VFJMLCAmcmVnKTsKPiArCj4gKwlzdGF0ZS0+ZW5hYmxlZCA9IHJlZyAmIFBXTV9FTkFCTEU7Cj4g
+Kwo+ICsJbW9kZSA9IEZJRUxEX0dFVChQV01fTU9ERV9NQVNLLCByZWcpOwo+ICsJY29uZmlnID0g
+JnNsMjhjcGxkX3B3bV9jb25maWdbbW9kZV07Cj4gKwlzdGF0ZS0+cGVyaW9kID0gY29uZmlnLT5w
+ZXJpb2RfbnM7Cj4gKwo+ICsJcmVnbWFwX3JlYWQoc3BjLT5yZWdtYXAsIHNwYy0+b2Zmc2V0ICsg
+UFdNX0NZQ0xFLCAmcmVnKTsKPiArCWN5Y2xlID0gcmVnICogY29uZmlnLT5wZXJpb2RfbnM7Cj4g
+KwlzdGF0ZS0+ZHV0eV9jeWNsZSA9IERJVl9ST1VORF9DTE9TRVNUX1VMTChjeWNsZSwKPiArCQkJ
+CQkJICBjb25maWctPm1heF9kdXR5X2N5Y2xlKTsKPiArfQo+ICsKPiArc3RhdGljIGludCBzbDI4
+Y3BsZF9wd21fYXBwbHkoc3RydWN0IHB3bV9jaGlwICpjaGlwLCBzdHJ1Y3QgcHdtX2RldmljZSAq
+cHdtLAo+ICsJCQkgICAgICBjb25zdCBzdHJ1Y3QgcHdtX3N0YXRlICpzdGF0ZSkKPiArewo+ICsJ
+c3RydWN0IHNsMjhjcGxkX3B3bSAqc3BjID0gdG9fc2wyOGNwbGRfcHdtKGNoaXApOwo+ICsJc3Ry
+dWN0IHNsMjhjcGxkX3B3bV9jb25maWcgKmNvbmZpZzsKPiArCXVuc2lnbmVkIGxvbmcgbG9uZyBj
+eWNsZTsKPiArCWludCByZXQ7Cj4gKwlpbnQgbW9kZTsKPiArCXU4IGN0cmw7Cj4gKwo+ICsJLyog
+dXBkYXRlIGNvbmZpZywgZmlyc3Qgc2VhcmNoIGJlc3QgbWF0Y2hpbmcgcGVyaW9kICovCgpQbGVh
+c2UgdXNlIGNvcnJlY3QgZ3JhbW1hciAobGVzcyBmdWxsIHN0b3BzKSBpbiBjb21tZW50cy4KCj4g
+Kwlmb3IgKG1vZGUgPSAwOyBtb2RlIDwgQVJSQVlfU0laRShzbDI4Y3BsZF9wd21fY29uZmlnKTsg
+bW9kZSsrKSB7Cj4gKwkJY29uZmlnID0gJnNsMjhjcGxkX3B3bV9jb25maWdbbW9kZV07Cj4gKwkJ
+aWYgKHN0YXRlLT5wZXJpb2QgPT0gY29uZmlnLT5wZXJpb2RfbnMpCj4gKwkJCWJyZWFrOwo+ICsJ
+fQo+ICsKPiArCWlmIChtb2RlID09IEFSUkFZX1NJWkUoc2wyOGNwbGRfcHdtX2NvbmZpZykpCj4g
+KwkJcmV0dXJuIC1FSU5WQUw7Cj4gKwo+ICsJY3RybCA9IEZJRUxEX1BSRVAoUFdNX01PREVfTUFT
+SywgbW9kZSk7Cj4gKwlpZiAoc3RhdGUtPmVuYWJsZWQpCj4gKwkJY3RybCB8PSBQV01fRU5BQkxF
+Owo+ICsKPiArCWN5Y2xlID0gc3RhdGUtPmR1dHlfY3ljbGUgKiBjb25maWctPm1heF9kdXR5X2N5
+Y2xlOwo+ICsJZG9fZGl2KGN5Y2xlLCBzdGF0ZS0+cGVyaW9kKTsKCkZvcmdpdmUgbXkgaWdub3Jh
+bmNlIChJJ20gbmV3IGhlcmUhKSwgYnV0IHdoYXQgYXJlIHRoZXNlIDIgbGluZXMKZG9pbmc/ICBI
+ZXJlIHdlIGFyZSBtdWx0aXBseWluZyB0aGUgY3VycmVudCBkdXR5X2N5Y2xlIHdpdGggdGhlCm1h
+eGltdW0gdmFsdWUsIHRoZW4gZGl2aWRpbmcgYnkgdGhlIHBlcmlvZC4KClNvIGluIHRoZSBjYXNl
+IG9mIFBXTV9NT0RFXzFLSFogd2l0aCBhIDUwJSBkdXR5IGN5Y2xlLCB5b3UnZCBoYXZlOgoKICAg
+KDUwMDAwMCAqIDB4MjBbMTZdKSAvIDEwMDAwMDAgPSBbMHgxMF0xNgoKVGh1cywgdGhlIGFib3Zl
+IGdpdmVzIGFzIGEgcHJvcG9ydGlvbmFsIHJlcHJlc2VudGF0aW9uIG9mIHRoZSBtYXhpbXVtCnZh
+bGlkIHZhbHVlIGZvciBwbGFjZW1lbnQgaW50byB0aGUgY3ljbGUgY29udHJvbCByZWdpc3Rlcihz
+KSwgcmlnaHQ/CgpFaXRoZXIgd2F5ICh3aGV0aGVyIEknbSBjb3JyZWN0IG9yIG5vdCksIEkgdGhp
+bmsgaXQgd291bGQgYmUgbmljZSB0bwptZW50aW9uIHRoaXMgaW4gYSBjb21tZW50LiAgTWF5YmUg
+ZXZlbiBjbGFyaWZ5IHdpdGggYSBzaW1wbGUgZXhhbXBsZS4KCj4gKwkvKgo+ICsJICogVGhlIGhh
+cmR3YXJlIGRvZXNuJ3QgYWxsb3cgdG8gc2V0IG1heF9kdXR5X2N5Y2xlIGlmIHRoZQo+ICsJICog
+MjUwSHogbW9kZSBpcyBlbmFibGVkLiBCdXQgc2luY2UgdGhpcyBpcyAiYWxsLWhpZ2giIG91dHB1
+dAo+ICsJICoganVzdCB1c2UgdGhlIDUwMEh6IG1vZGUgd2l0aCB0aGUgZHV0eSBjeWNsZSB0byBt
+YXggdmFsdWUuCj4gKwkgKi8KPiArCWlmIChjeWNsZSA9PSBjb25maWctPm1heF9kdXR5X2N5Y2xl
+KSB7Cj4gKwkJY3RybCAmPSB+UFdNX01PREVfTUFTSzsKPiArCQljdHJsIHw9IEZJRUxEX1BSRVAo
+UFdNX01PREVfTUFTSywgUFdNX01PREVfNTAwSFopOwo+ICsJCWN5Y2xlID0gUFdNX0NZQ0xFX01B
+WDsKPiArCX0KClRoaXMgaXMgYmVpbmcgZXhlY3V0ZWQgZXZlbiB3aGVuIDI1MEh6IG1vZGUgaXMg
+bm90IGVuYWJsZWQuCgpJcyB0aGF0IGJ5IGRlc2lnbj8gIElmIHNvLCBpdCBkb2Vzbid0IG1hdGNo
+IHRoZSBjb21tZW50LgoKPiArCXJldCA9IHJlZ21hcF93cml0ZShzcGMtPnJlZ21hcCwgc3BjLT5v
+ZmZzZXQgKyBQV01fQ1RSTCwgY3RybCk7Cj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiByZXQ7Cj4g
+Kwo+ICsJcmV0dXJuIHJlZ21hcF93cml0ZShzcGMtPnJlZ21hcCwgc3BjLT5vZmZzZXQgKyBQV01f
+Q1lDTEUsICh1OCljeWNsZSk7Cj4gK30KPiArCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgcHdtX29w
+cyBzbDI4Y3BsZF9wd21fb3BzID0gewo+ICsJLmFwcGx5ID0gc2wyOGNwbGRfcHdtX2FwcGx5LAo+
+ICsJLmdldF9zdGF0ZSA9IHNsMjhjcGxkX3B3bV9nZXRfc3RhdGUsCj4gKwkub3duZXIgPSBUSElT
+X01PRFVMRSwKPiArfTsKPiArCj4gK3N0YXRpYyBpbnQgc2wyOGNwbGRfcHdtX3Byb2JlKHN0cnVj
+dCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCj4gK3sKPiArCXN0cnVjdCBzbDI4Y3BsZF9wd20gKnB3
+bTsKClRoaXMgaXMgc3VwZXIgY29uZnVzaW5nLiAgSGVyZSB5b3UgY2FsbCBpdCAncHdtJywgYnV0
+IHdoZW4geW91IGJyaW5nCnRoZSBkYXRhIHRvIHRoZSBmb3JlIGZvciBjb25zdW1wdGlvbiwgeW91
+IGNhbGwgaXQgc29tZXRoaW5nIGRpZmZlcmVudAooJ3NwYycpIGZvciBzb21lIHJlYXNvbi4KCklz
+IHRoZXJlIGxvZ2ljIGJlaGluZCB0aGlzPwoKPiArCXN0cnVjdCBwd21fY2hpcCAqY2hpcDsKPiAr
+CWludCByZXQ7Cj4gKwo+ICsJaWYgKCFwZGV2LT5kZXYucGFyZW50KQo+ICsJCXJldHVybiAtRU5P
+REVWOwo+ICsKPiArCXB3bSA9IGRldm1fa3phbGxvYygmcGRldi0+ZGV2LCBzaXplb2YoKnB3bSks
+IEdGUF9LRVJORUwpOwo+ICsJaWYgKCFwd20pCj4gKwkJcmV0dXJuIC1FTk9NRU07Cj4gKwo+ICsJ
+cHdtLT5yZWdtYXAgPSBkZXZfZ2V0X3JlZ21hcChwZGV2LT5kZXYucGFyZW50LCBOVUxMKTsKPiAr
+CWlmICghcHdtLT5yZWdtYXApCj4gKwkJcmV0dXJuIC1FTk9ERVY7Cj4gKwo+ICsJcmV0ID0gZGV2
+aWNlX3Byb3BlcnR5X3JlYWRfdTMyKCZwZGV2LT5kZXYsICJyZWciLCAmcHdtLT5vZmZzZXQpOwoK
+UmVhbGx5PyAgQ2FuIHlvdSB1c2UgdGhlICdyZWcnIHByb3BlcnR5IGluIHRoaXMgd2F5PwoKU2lk
+ZSBxdWVzdGlvbjoKICBEbyBhbnkgb2YgeW91ciBjaGlsZCBhZGRyZXNzIHNwYWNlcyBhY3R1YWxs
+eSBvdmVybGFwL2ludGVyc2VjdD8KCj4gKwlpZiAocmV0KQo+ICsJCXJldHVybiAtRUlOVkFMOwo+
+ICsKPiArCS8qIGluaXRpYWxpemUgc3RydWN0IHB3bV9jaGlwICovCgpQcm9wZXIgZ3JhbW1hciBw
+bGVhc2UuCgo+ICsJY2hpcCA9ICZwd20tPnB3bV9jaGlwOwo+ICsJY2hpcC0+ZGV2ID0gJnBkZXYt
+PmRldjsKPiArCWNoaXAtPm9wcyA9ICZzbDI4Y3BsZF9wd21fb3BzOwo+ICsJY2hpcC0+YmFzZSA9
+IC0xOwo+ICsJY2hpcC0+bnB3bSA9IDE7Cj4gKwo+ICsJcmV0ID0gcHdtY2hpcF9hZGQoJnB3bS0+
+cHdtX2NoaXApOwo+ICsJaWYgKHJldCA8IDApCgpJcyAnPiAwJyBldmVuIHZhbGlkPwoKU3VnZ2Vz
+dCAiIXJldCIgaGVyZSwgYXMgeW91IGhhdmUgZG9uZSBhYm92ZS4KCj4gKwkJcmV0dXJuIHJldDsK
+PiArCj4gKwlwbGF0Zm9ybV9zZXRfZHJ2ZGF0YShwZGV2LCBwd20pOwo+ICsKPiArCXJldHVybiAw
+Owo+ICt9Cj4gKwo+ICtzdGF0aWMgaW50IHNsMjhjcGxkX3B3bV9yZW1vdmUoc3RydWN0IHBsYXRm
+b3JtX2RldmljZSAqcGRldikKPiArewo+ICsJc3RydWN0IHNsMjhjcGxkX3B3bSAqcHdtID0gcGxh
+dGZvcm1fZ2V0X2RydmRhdGEocGRldik7Cj4gKwo+ICsJcmV0dXJuIHB3bWNoaXBfcmVtb3ZlKCZw
+d20tPnB3bV9jaGlwKTsKPiArfQo+ICsKPiArc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2Vf
+aWQgc2wyOGNwbGRfcHdtX29mX21hdGNoW10gPSB7Cj4gKwl7IC5jb21wYXRpYmxlID0gImtvbnRy
+b24sc2wyOGNwbGQtcHdtIiB9LAo+ICsJe30sCj4gK307Cj4gK01PRFVMRV9ERVZJQ0VfVEFCTEUo
+b2YsIHNsMjhjcGxkX3B3bV9vZl9tYXRjaCk7Cj4gKwo+ICtzdGF0aWMgY29uc3Qgc3RydWN0IHBs
+YXRmb3JtX2RldmljZV9pZCBzbDI4Y3BsZF9wd21faWRfdGFibGVbXSA9IHsKPiArCXsic2wyOGNw
+bGQtcHdtIn0sCgpTcGFjZXMgZWl0aGVyIHNpZGUgb2YgdGhlICIncyBwbGVhc2UuCgo+ICsJe30s
+Cj4gK307Cj4gK01PRFVMRV9ERVZJQ0VfVEFCTEUocGxhdGZvcm0sIHNsMjhjcGxkX3B3bV9pZF90
+YWJsZSk7CgpXaGF0IGFyZSB5b3UgdXNpbmcgdGhpcyBmb3I/Cgo+ICtzdGF0aWMgc3RydWN0IHBs
+YXRmb3JtX2RyaXZlciBzbDI4Y3BsZF9wd21fZHJpdmVyID0gewo+ICsJLnByb2JlID0gc2wyOGNw
+bGRfcHdtX3Byb2JlLAo+ICsJLnJlbW92ZQk9IHNsMjhjcGxkX3B3bV9yZW1vdmUsCj4gKwkuaWRf
+dGFibGUgPSBzbDI4Y3BsZF9wd21faWRfdGFibGUsCj4gKwkuZHJpdmVyID0gewo+ICsJCS5uYW1l
+ID0gS0JVSUxEX01PRE5BTUUsCgpQbGVhc2UganVzdCB1c2UgdGhlIHF1b3RlZCBuYW1lIGluIGZ1
+bGwuCgo+ICsJCS5vZl9tYXRjaF90YWJsZSA9IHNsMjhjcGxkX3B3bV9vZl9tYXRjaCwKPiArCX0s
+Cj4gK307Cj4gK21vZHVsZV9wbGF0Zm9ybV9kcml2ZXIoc2wyOGNwbGRfcHdtX2RyaXZlcik7Cj4g
+Kwo+ICtNT0RVTEVfREVTQ1JJUFRJT04oInNsMjhjcGxkIFBXTSBEcml2ZXIiKTsKCiJTTDI4Q1BM
+RCIgPwoKPiArTU9EVUxFX0FVVEhPUigiTWljaGFlbCBXYWxsZSA8bWljaGFlbEB3YWxsZS5jYz4i
+KTsKPiArTU9EVUxFX0xJQ0VOU0UoIkdQTCIpOwoKLS0gCkxlZSBKb25lcyBb5p2O55C85pavXQpM
+aW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ug
+c29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8
+IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
