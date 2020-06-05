@@ -2,56 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CE6A1EFCAD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:40:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5F281EFCD5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  5 Jun 2020 17:43:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=9rT2OP9mbLmrRSNhuq/VHK4FEPbKihvFDbKOlffX9hY=; b=ZItdjvO+rwFBcNOE0rvUOpXINH
-	FuL/850byGlUc1sRYTrYRQAOf8OE6+juixfqFCptHdrHkkvs9bo8QyraBUypDUMUdg4xwxdGoGAIO
-	mnhmJoNB8yJUdvaEUNv1m+dTG6Juw+lrm/vd/5kgx05F4Mj1/I2u8JLvwikCL3zNxOnDvNjMn19Zb
-	TVmM0VsNGjaUozo6W1UqwAF+xi72tyq+N4lqp+fiW9R0ui2HcwP0s8+MDZcjZMdqSQpc3KfLGkKQF
-	SXZyWa/zL6bTgTrOYX0CPkITdiwrG2wOuc76Fv60Bo4fYloP0TMkvEM5zqhudW/8zL31PugSlGif8
-	SHMOs1NQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TteEKlz6qvW+UOKm1ej3w5p4ypLXtXp0kIqBdGRUPW8=; b=CuutzEHP9H9Kwn
+	2gWJnSU/vSC3tW4uJJH2bpyaVdEw39TcvkttNqPBkcAVuqCLIdb9oABJmcNmWqtznQArOZFMaXZYI
+	gseReAcW8jSuyp9pebHXOOzBHtTDCgRInzcHgLWJ1QySuFjVA0ClxZDxJhjivl53orAq5yt2jTnnh
+	cyL2GNjqLaiF3+Bwg3Men1ZXnTR4UwrDpRSsV8AQZHjaaMAaaxJ8fVTQCPBD1iXpYTd3mpkCvbvF4
+	UBakFzl9oidbC/Sdq7Tur5wyrtlG7TWoQgQDPP6jrdlyQ5K/ctdvukv/lqlkhkkrw2WNaK3FxO7H6
+	mdKtbTB0gUC26NTKNESA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhESA-0007V9-6y; Fri, 05 Jun 2020 15:40:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhERp-0007UL-E3
- for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:39:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8C67E31B;
- Fri,  5 Jun 2020 08:39:55 -0700 (PDT)
-Received: from e113632-lin (e113632-lin.cambridge.arm.com [10.1.194.46])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EC4873F305;
- Fri,  5 Jun 2020 08:39:53 -0700 (PDT)
-References: <20200605130519.4184-1-benjamin.gaignard@st.com>
- <20200605130519.4184-3-benjamin.gaignard@st.com>
-User-agent: mu4e 0.9.17; emacs 26.3
-From: Valentin Schneider <valentin.schneider@arm.com>
-To: Benjamin Gaignard <benjamin.gaignard@st.com>
-Subject: Re: [PATCH v4 2/3] media: stm32-dcmi: Set minimum cpufreq requirement
-In-reply-to: <20200605130519.4184-3-benjamin.gaignard@st.com>
-Date: Fri, 05 Jun 2020 16:39:51 +0100
-Message-ID: <jhj3679iks8.mognet@arm.com>
+	id 1jhEV3-0002tP-Oe; Fri, 05 Jun 2020 15:43:17 +0000
+Received: from mail-il1-x130.google.com ([2607:f8b0:4864:20::130])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jhEUs-0002t2-RU
+ for linux-arm-kernel@lists.infradead.org; Fri, 05 Jun 2020 15:43:09 +0000
+Received: by mail-il1-x130.google.com with SMTP id e11so4913489ilr.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 05 Jun 2020 08:43:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=G2GB2U7+brpU97z7quDVcgXAtK4rM5dz6gG/Wy3Olog=;
+ b=HkFNdaGSceLzbEKT8WldzvKrDeIBzoGGsKRPbyGQrKzhnWdYN2yeXulRIa/JJ8HUEr
+ CFoSm/iRg7jQHZ2V/ngd+jE8nj9KOUxe5CNBw9JUkE1fHNfxD069FCGB4RfVCjEvNsWh
+ PjSOLaP/dRj/yR6/NBAERl/1/3eo/0/lJw0A0OWZtSbdUB70ZfDMpbuT6zn7FIpi/B5Y
+ lg1IaEvHJJ8TIW2pLpfA1H2ACK2cPLfo2Qg1f6e02cs88tId5vsuQ48t3JoACPMTtfVt
+ 64GxYPEisVuelP9nLvlZm2OafdGRadzYJ0Ndr+YJ/8WFcKHvGkXOMCW8tELOnijN5WhA
+ dY5Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=G2GB2U7+brpU97z7quDVcgXAtK4rM5dz6gG/Wy3Olog=;
+ b=lSOnt+FzjtCMKYO4JL2Lb9OeVh84WI79LDY/GWPaN6gqfRqasJmlQeNlNWmVJtUqdz
+ sGAAs4tGqmmxO5by0eXQe1nSO5sG7N8QCUEIIKe/hGykBAGJibRAah0O1YOy6HoBHPzQ
+ gqneaxmLPEV65+s7i7svlJbNw1hAZnl4+rRXEZoUcAKFRBQpTKNWj3NUDV7+PGFDhBq7
+ 0YPbSVBpqUhKGuzqwbtBEn6utoC97kTNvISWbWeXEakSxoAI5CATjx+DftHloHG5a0mA
+ qWMc3VwVZ2Y4nryFtMshpNma3x5IFjlv5iALTCj+Ggubm2FO0P44/8Wn48aG0Ui0YwiS
+ jnIA==
+X-Gm-Message-State: AOAM5306khSZBS1SynOAmOF55nL4ixx2j9cd5DTWGZvNSaUADXveE5g7
+ g9L5NE3tgEkwRKhkzMolZbg7sIW6h89Yh5Kjlfw=
+X-Google-Smtp-Source: ABdhPJzJW5O3DzxX9JUEp0Fq7vO1ZexlwSsEZ5rkVUXSutg5q4mvTIgBUytu0r9dtgLLVLmvp7RCv3/Wi3VyOKOvz8I=
+X-Received: by 2002:a92:5e52:: with SMTP id s79mr8217845ilb.33.1591371785844; 
+ Fri, 05 Jun 2020 08:43:05 -0700 (PDT)
 MIME-Version: 1.0
+References: <0a50f0cf5593baeb628dc8606c523665e5e2ae6c.1589519600.git.viresh.kumar@linaro.org>
+ <20200528192005.GA494874@bogus> <20200529040758.kneg2j4n3gxh2rfv@vireshk-i7>
+ <20200603180435.GB23722@bogus>
+ <CABb+yY0cW1GZHVmwEr19JRdJTmsAxw9uq83QV_aq-tdPJO5_Fg@mail.gmail.com>
+ <20200604092052.GD8814@bogus>
+ <CABb+yY27Ngb0C-onkU2qyt=uKgG4iVrcv8hGkC+anypQbTRA1w@mail.gmail.com>
+ <20200605045645.GD12397@bogus>
+ <CABb+yY2YZ99NjHYNi0=KLGFDsVUeJmqiJD3E25Chwk-THJV4iw@mail.gmail.com>
+ <20200605085830.GA32372@bogus>
+In-Reply-To: <20200605085830.GA32372@bogus>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Fri, 5 Jun 2020 10:42:54 -0500
+Message-ID: <CABb+yY2TR7tuMx6u8yah6mO2GwZ5SWYOO80EQRL-i=ybgn=Wog@mail.gmail.com>
+Subject: Re: [RFC] dt-bindings: mailbox: add doorbell support to ARM MHU
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_083957_562001_3DB1AAAA 
-X-CRM114-Status: GOOD (  20.69  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200605_084308_569391_EC2E5B2C 
+X-CRM114-Status: GOOD (  19.02  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:130 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jassisinghbrar[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,287 +100,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, rjw@rjwysocki.net, linux-kernel@vger.kernel.org,
- mcoquelin.stm32@gmail.com, hugues.fruchet@st.com, mchehab@kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Jun 5, 2020 at 3:58 AM Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> > > > >>     bash-1526  [000]  1149.472553: scmi_xfer_begin:      transfer_id=1538 msg_id=6 protocol_id=21 seq=0 poll=0
+> > > > >>      <idle>-0     [001]  1149.472733: scmi_xfer_begin:      transfer_id=1539 msg_id=7 protocol_id=19 seq=1 poll=1
+> > > > >
+> > > > Here another request is started before the first is finished.
+> > >
+> > > Ah, the prints are when the client requested. It is not when the mailbox
+> > > started it. So this just indicates the beginning of the transfer from the
+> > > client.
+> > >
+> > There maybe condition on a sensor read to finish within 1ms, but there
+> > is no condition for the read to _start_ at this very moment (usually
+> > there are sleeps in the path to sensor requests).
+> >
+>
+> Again I wasn't clear. The trace logs are at the point just before calling
+> mbox_send_messages. So any delay in sensor drivers won't get include. It
+> is after the point sensor driver request to read the value and before we
+> send the request via mailbox.
+>
+No, you were clear, I wasn't. Let me try again.
 
-On 05/06/20 14:05, Benjamin Gaignard wrote:
-> Before start streaming set cpufreq minimum frequency requirement.
-> The cpufreq governor will adapt the frequencies and we will have
-> no latency for handling interrupts.
-> The frequency requirement is retrieved from the device-tree node.
->
-> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
+Since origin upto scmi_xfer, there can be many forms of sleep like
+schedule/mutexlock etc.... think of some userspace triggering sensor
+or dvfs operation. Linux does not provide real-time guarantees. Even
+if remote (scmi) firmware guarantee RT response, it makes sense to
+timeout a response only after the _request is on the bus_  and not
+when you submit a request to the api (unless you serialise it).
+IOW, start the timeout from  mbox_client.tx_prepare()  when the
+message actually gets on the bus.
 
-It's all quite nicer without the dcmi_{get, put}_cpu_policy() functions!
-Sadly I was overzealous in trimming my previous reply, and I also trimmed
-some of my own comments, sorry about that.
 
-I've added the MIA comments down below, and with those taken into account:
+> > You have shared only 'bad' log without serialising access. Please
+> > share log after serialising access to the channel and the 'good' log
+> > with virtual channels.  That should put the topic to rest.
+> >
+>
+> I didn't realise that, sorry for missing that earlier. Attached both
+> now, thanks for asking.
+>
+Interesting logs !  The time taken to complete _successful_ requests
+are arguably better in bad_trace ... there are many <10usec responses
+in bad_trace, while the fastest response in good_trace is  53usec.
+And the requests that 'fail/timeout' are purely the result of not
+serialising them or checkout for timeout at wrong place as explained
+above.
 
-(for the IRQ affinity part):
-Reviewed-by: Valentin Schneider <valentin.schneider@arm.com>
-
-> ---
-> version 4:
-> - simplify irq affinity handling by using only dcmi_irq_notifier_notify()
->
->  drivers/media/platform/stm32/stm32-dcmi.c | 122 ++++++++++++++++++++++++++++--
->  1 file changed, 114 insertions(+), 8 deletions(-)
->
-> diff --git a/drivers/media/platform/stm32/stm32-dcmi.c b/drivers/media/platform/stm32/stm32-dcmi.c
-> index b8931490b83b..c2389776a958 100644
-> --- a/drivers/media/platform/stm32/stm32-dcmi.c
-> +++ b/drivers/media/platform/stm32/stm32-dcmi.c
-> @@ -13,10 +13,13 @@
->
->  #include <linux/clk.h>
->  #include <linux/completion.h>
-> +#include <linux/cpufreq.h>
-> +#include <linux/cpumask.h>
->  #include <linux/delay.h>
->  #include <linux/dmaengine.h>
->  #include <linux/init.h>
->  #include <linux/interrupt.h>
-> +#include <linux/irq.h>
->  #include <linux/kernel.h>
->  #include <linux/module.h>
->  #include <linux/of.h>
-> @@ -99,6 +102,8 @@ enum state {
->
->  #define OVERRUN_ERROR_THRESHOLD	3
->
-> +static DEFINE_PER_CPU(struct freq_qos_request, qos_req);
-> +
->  struct dcmi_graph_entity {
->       struct v4l2_async_subdev asd;
->
-> @@ -133,6 +138,7 @@ struct stm32_dcmi {
->       struct resource			*res;
->       struct reset_control		*rstc;
->       int				sequence;
-> +	int				irq;
->       struct list_head		buffers;
->       struct dcmi_buf			*active;
->
-> @@ -173,6 +179,10 @@ struct stm32_dcmi {
->       struct media_device		mdev;
->       struct media_pad		vid_cap_pad;
->       struct media_pipeline		pipeline;
-> +
-> +	u32				min_frequency;
-> +	cpumask_var_t			boosted;
-> +	struct irq_affinity_notify	notify;
->  };
->
->  static inline struct stm32_dcmi *notifier_to_dcmi(struct v4l2_async_notifier *n)
-> @@ -722,6 +732,90 @@ static void dcmi_pipeline_stop(struct stm32_dcmi *dcmi)
->       dcmi_pipeline_s_stream(dcmi, 0);
->  }
->
-> +static void dcmi_get_min_frequency(struct stm32_dcmi *dcmi)
-> +{
-> +	struct device_node *np = dcmi->mdev.dev->of_node;
-> +
-> +	dcmi->min_frequency = FREQ_QOS_MIN_DEFAULT_VALUE;
-> +
-> +	of_property_read_u32(np, "st,stm32-dcmi-min-frequency",
-> +			     &dcmi->min_frequency);
-> +}
-> +
-> +static void dcmi_irq_notifier_notify(struct irq_affinity_notify *notify,
-> +				     const cpumask_t *mask)
-> +{
-> +	struct stm32_dcmi *dcmi = container_of(notify,
-> +					       struct stm32_dcmi,
-> +					       notify);
-> +	struct cpufreq_policy *p;
-> +	int cpu;
-> +
-> +	/*
-> +	 * For all boosted CPUs check if it is still the case
-> +	 * if not remove the request
-> +	 */
-> +	for_each_cpu(cpu, dcmi->boosted) {
-> +		if (cpumask_test_cpu(cpu, mask))
-> +			continue;
-> +
-> +		p = cpufreq_cpu_get(cpu);
-> +		if (!p)
-> +			continue;
-> +
-> +		freq_qos_remove_request(&per_cpu(qos_req, cpu));
-> +		cpumask_andnot(dcmi->boosted, dcmi->boosted, p->cpus);
-> +
-> +		cpufreq_cpu_put(p);
-> +	}
-> +
-> +	/*
-> +	 * For CPUs in the mask check if they are boosted if not add
-> +	 * a request
-> +	 */
-> +	for_each_cpu(cpu, mask) {
-> +		if (cpumask_test_cpu(cpu, dcmi->boosted))
-> +			continue;
-> +
-> +		p = cpufreq_cpu_get(cpu);
-> +		if (!p)
-> +			continue;
-> +
-> +		freq_qos_add_request(&p->constraints, &per_cpu(qos_req, cpu),
-> +				     FREQ_QOS_MIN, dcmi->min_frequency);
-> +		cpumask_or(dcmi->boosted, dcmi->boosted, p->cpus);
-> +		cpufreq_cpu_put(p);
-> +	}
-> +}
-> +
-> +static void dcmi_irq_notifier_release(struct kref *ref)
-> +{
-> +	/*
-> +	 * This is required by affinity notifier. We don't have anything to
-> +	 * free here.
-> +	 */
-> +}
-> +
-> +static void dcmi_set_min_frequency(struct stm32_dcmi *dcmi, s32 freq)
-> +{
-> +	struct irq_affinity_notify *notify = &dcmi->notify;
-> +
-> +	if (freq) {
-> +		dcmi_irq_notifier_notify(notify,
-> +					 irq_get_affinity_mask(dcmi->irq));
-> +
-> +		notify->notify = dcmi_irq_notifier_notify;
-> +		notify->release = dcmi_irq_notifier_release;
-
-Couldn't we set these at probe time?
-
-> +		irq_set_affinity_notifier(dcmi->irq, notify);
-
-I think you also want to do that before calling into
-dcmi_irq_notifier_notify(), in case the affinity changes in the middle of
-it (which wouldn't be detected because the notifier wouldn't be registered
-at that point). And because of that, you'd have to reinstore the
-mutex.
-
-Again, that was supposed to be in my previous email, sorry :(
-
-> +	} else {
-> +		struct cpumask clear;
-> +
-> +		irq_set_affinity_notifier(dcmi->irq, NULL);
-> +		cpumask_clear(&clear);
-> +		dcmi_irq_notifier_notify(notify, &clear);
-> +	}
-> +}
-> +
->  static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->  {
->       struct stm32_dcmi *dcmi = vb2_get_drv_priv(vq);
-> @@ -736,11 +830,13 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->               goto err_release_buffers;
->       }
->
-> +	dcmi_set_min_frequency(dcmi, dcmi->min_frequency);
-> +
->       ret = media_pipeline_start(&dcmi->vdev->entity, &dcmi->pipeline);
->       if (ret < 0) {
->               dev_err(dcmi->dev, "%s: Failed to start streaming, media pipeline start error (%d)\n",
->                       __func__, ret);
-> -		goto err_pm_put;
-> +		goto err_drop_qos;
->       }
->
->       ret = dcmi_pipeline_start(dcmi);
-> @@ -835,7 +931,8 @@ static int dcmi_start_streaming(struct vb2_queue *vq, unsigned int count)
->  err_media_pipeline_stop:
->       media_pipeline_stop(&dcmi->vdev->entity);
->
-> -err_pm_put:
-> +err_drop_qos:
-> +	dcmi_set_min_frequency(dcmi, FREQ_QOS_MIN_DEFAULT_VALUE);
->       pm_runtime_put(dcmi->dev);
->
->  err_release_buffers:
-> @@ -863,6 +960,8 @@ static void dcmi_stop_streaming(struct vb2_queue *vq)
->
->       media_pipeline_stop(&dcmi->vdev->entity);
->
-> +	dcmi_set_min_frequency(dcmi, FREQ_QOS_MIN_DEFAULT_VALUE);
-> +
->       spin_lock_irq(&dcmi->irqlock);
->
->       /* Disable interruptions */
-> @@ -1838,7 +1937,6 @@ static int dcmi_probe(struct platform_device *pdev)
->       struct vb2_queue *q;
->       struct dma_chan *chan;
->       struct clk *mclk;
-> -	int irq;
->       int ret = 0;
->
->       match = of_match_device(of_match_ptr(stm32_dcmi_of_match), &pdev->dev);
-> @@ -1879,9 +1977,9 @@ static int dcmi_probe(struct platform_device *pdev)
->       dcmi->bus.bus_width = ep.bus.parallel.bus_width;
->       dcmi->bus.data_shift = ep.bus.parallel.data_shift;
->
-> -	irq = platform_get_irq(pdev, 0);
-> -	if (irq <= 0)
-> -		return irq ? irq : -ENXIO;
-> +	dcmi->irq = platform_get_irq(pdev, 0);
-> +	if (dcmi->irq <= 0)
-> +		return dcmi->irq ? dcmi->irq : -ENXIO;
->
->       dcmi->res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
->       if (!dcmi->res) {
-> @@ -1895,11 +1993,12 @@ static int dcmi_probe(struct platform_device *pdev)
->               return PTR_ERR(dcmi->regs);
->       }
->
-> -	ret = devm_request_threaded_irq(&pdev->dev, irq, dcmi_irq_callback,
-> +	ret = devm_request_threaded_irq(&pdev->dev, dcmi->irq,
-> +					dcmi_irq_callback,
->                                       dcmi_irq_thread, IRQF_ONESHOT,
->                                       dev_name(&pdev->dev), dcmi);
->       if (ret) {
-> -		dev_err(&pdev->dev, "Unable to request irq %d\n", irq);
-> +		dev_err(&pdev->dev, "Unable to request irq %d\n", dcmi->irq);
->               return ret;
->       }
->
-> @@ -1930,6 +2029,9 @@ static int dcmi_probe(struct platform_device *pdev)
->       dcmi->state = STOPPED;
->       dcmi->dma_chan = chan;
->
-> +	if (!alloc_cpumask_var(&dcmi->boosted, GFP_KERNEL))
-> +		return -ENODEV;
-> +
->       q = &dcmi->queue;
->
->       dcmi->v4l2_dev.mdev = &dcmi->mdev;
-> @@ -2022,6 +2124,8 @@ static int dcmi_probe(struct platform_device *pdev)
->
->       dev_info(&pdev->dev, "Probe done\n");
->
-> +	dcmi_get_min_frequency(dcmi);
-> +
->       platform_set_drvdata(pdev, dcmi);
->
->       pm_runtime_enable(&pdev->dev);
-> @@ -2049,6 +2153,8 @@ static int dcmi_remove(struct platform_device *pdev)
->
->       pm_runtime_disable(&pdev->dev);
->
-> +	free_cpumask_var(dcmi->boosted);
-> +
->       v4l2_async_notifier_unregister(&dcmi->notifier);
->       v4l2_async_notifier_cleanup(&dcmi->notifier);
->       media_entity_cleanup(&dcmi->vdev->entity);
+thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
