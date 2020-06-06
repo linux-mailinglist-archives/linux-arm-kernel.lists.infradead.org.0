@@ -2,93 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A8E5E1F05DC
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jun 2020 10:58:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C9101F05FB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jun 2020 11:51:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gMwPHp+HIoFS8QipO7mJ+vbf5kDVcICAta0KrH3KVzE=; b=qTSjVlj4hSC3FW
-	TqIOyVq5ARFWX40D8rRSxTYb4DAbs7Ls/Wr8NiLH8oqrmcfoxZZuPsq8r+TBUqJNUKd2MLCrmm43r
-	UnsjfRCPH1it2A0IzdG5nFYqJRY5RfTz2kOdQHrCdS7xuqWyOLjhoivQg2LqDi27WfH+kJ4zkTnJa
-	mNutw4tfEJnY1DKT06XWxeX5qSNbNtXekcD1+D2fbX5lldmWurghPqkvDrJh+hLsNGZRU02Q58aXl
-	3y9CUiSDYViF3oKZjen7/gtyQkqEAPDSR5kAkrfDcqdF2AeOYxx9fwkiudLMRrItGXd1dhiNPE/r8
-	NlCCiHCnXCTAHotzxKuw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=/fyMNtERSC0kSSOBVCVyjWkM/KBXwE2U071DC13BB0w=; b=mBw
+	dDCsiCu89rqnb1BRrsMwLLlf+M4vG0PaW9gq3wJiBjPn0U5DTJDvTh/v4e024y/1dealycW2fR87u
+	OAXGnGneE6cszlxrnB6njwxDhnOLZpDepm39dkflQmxVNkOY/oJmrDvzAX5x8k0ZclXxa3IX7dBDz
+	4Rzq0VzdC8zKr2+pLvsmd7QUIKlJP/j3VzK+6OT8WygW4c9gQaOW5A3nYIqc4e+PCLQLiOfDTdEB1
+	b3iEAKtJdT+NP8k5D4zblM69crkaVfYCgTBUVES/G1kG9trmBM65MSHwkiJWodRvmAWZg/fDZE28G
+	DFcbtEtn7qXkdFkMaYVa1nbp7OJuOwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhUey-0003cq-BQ; Sat, 06 Jun 2020 08:58:36 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhUep-0003cS-UT
- for linux-arm-kernel@lists.infradead.org; Sat, 06 Jun 2020 08:58:29 +0000
-Received: by mail-pg1-x542.google.com with SMTP id o8so6309247pgm.7
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 06 Jun 2020 01:58:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=4GQMb8Nb0ppLYW2rE9M0rp7cTPLVnp9iUypsRvJ/Hds=;
- b=jpBr/WGQjriKnX/rNrN6/3ksuCr+B8P+zJ0oF9HUMIXPffbDYMNQdsZtXr22IiOw6l
- BDPBCxWaqCLsmO/Ptb2Ppxaq82RlJtRgRo18hZ7X1BwS5tLIqEawAgWlBd6g9oqnmUDK
- pgMa8jrufS/icSCEgbYxL822M/ddWT/GoS3Ld4gNqvYwrXsFOzn7+u8z3mvPOGod3Vjn
- JDwS+Wroeqe5EGfh2MR3IL08rw4hxkKOhSQzt0CSEk/6Bhj/nP0M4Qs+8dk0mB4D1qVO
- 2aluF+6k1yh2w/ch3MjcqckA69X3b7CHTFSn6rHT022OkctiaB2kVAzUHQuPD0HF88GG
- A4dw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=4GQMb8Nb0ppLYW2rE9M0rp7cTPLVnp9iUypsRvJ/Hds=;
- b=oO3IiV5eBAkJXJjEIRjy8O+LkXjSWWna+8jdNmXNniQQzZvhuFAah0B/sLbwdU7eKP
- SVGIkDX605I8CVg/942uBAlBIVyQ173L6EtnZc8nJmNHtlIXZUJU/CsObpWgasG0qx5+
- FkOL9fwrSPBwgOb0UpbFCSlRqZ5L50rH3iyR75dxPCPG6x5tk4RlEMpvSr/1hWiwzwoQ
- 9VHh3M/uu/49Fh4tcpo8rUFsd1gaeG/Tj0b3OVlLfNKy7RlJYVigDwOZOlY1plQkpmfj
- oPigE30YtQhurHq4nFazexZDUok00L6ma3TCqklgOan5ODml9eASe1OxPinY041O9rZg
- uxEQ==
-X-Gm-Message-State: AOAM533hLpPKKyZsAflYCKjaRdQydhxtmIDm8jGXtCDtyZhoXpnoa7ik
- 1hhXxaAQZc7aur09+2XLTSY=
-X-Google-Smtp-Source: ABdhPJxIYXXnZ1MIaB4lBImX1CnGc3obC46IUhjsWTw/Sl04M2Cn7Ymq+/QSFK/KWCSm6vqkF7cWog==
-X-Received: by 2002:a63:741c:: with SMTP id p28mr12856359pgc.33.1591433904823; 
- Sat, 06 Jun 2020 01:58:24 -0700 (PDT)
-Received: from gmail.com ([2601:600:817f:a132:df3e:521d:99d5:710d])
- by smtp.gmail.com with ESMTPSA id 136sm1796354pfa.152.2020.06.06.01.58.23
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 06 Jun 2020 01:58:23 -0700 (PDT)
-Date: Sat, 6 Jun 2020 01:58:22 -0700
-From: Andrei Vagin <avagin@gmail.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH RESEND v3 0/6] arm64: add the time namespace support
-Message-ID: <20200606085822.GA8351@gmail.com>
-References: <20200602180259.76361-1-avagin@gmail.com>
- <20200605104904.GE85498@C02TD0UTHF1T.local>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200605104904.GE85498@C02TD0UTHF1T.local>
+	id 1jhVU0-00089e-53; Sat, 06 Jun 2020 09:51:20 +0000
+Received: from mail.loongson.cn ([114.242.206.163] helo=loongson.cn)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jhVTY-000838-0l
+ for linux-arm-kernel@lists.infradead.org; Sat, 06 Jun 2020 09:50:53 +0000
+Received: from linux.localdomain (unknown [113.200.148.30])
+ by mail.loongson.cn (Coremail) with SMTP id AQAAf9Dxz2nZZtteMWk+AA--.1096S2;
+ Sat, 06 Jun 2020 17:50:18 +0800 (CST)
+From: Tiezhu Yang <yangtiezhu@loongson.cn>
+To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
+ Marc Zyngier <maz@kernel.org>, Nishanth Menon <nm@ti.com>,
+ Tero Kristo <t-kristo@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Lokesh Vutla <lokeshvutla@ti.com>
+Subject: [PATCH 1/3] irqchip/ti-sci-inta: Remove dead code in
+ ti_sci_inta_set_type()
+Date: Sat,  6 Jun 2020 17:50:15 +0800
+Message-Id: <1591437017-5295-1-git-send-email-yangtiezhu@loongson.cn>
+X-Mailer: git-send-email 2.1.0
+X-CM-TRANSID: AQAAf9Dxz2nZZtteMWk+AA--.1096S2
+X-Coremail-Antispam: 1UD129KBjvdXoWrKrW5try7Ar17tF1kArWDurg_yoWxZFg_u3
+ WjqwnxJrW0gFs8Cr17Kw48ZFy0vay5Ww1vga15tasxtwnagwn5ArW7Xws5AFs3WaykArZ7
+ KrW5Zr18Cr17ujkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUb3kFF20E14v26r4j6ryUM7CY07I20VC2zVCF04k26cxKx2IYs7xG
+ 6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8w
+ A2z4x0Y4vE2Ix0cI8IcVAFwI0_Jr0_JF4l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Gr0_
+ Cr1l84ACjcxK6I8E87Iv67AKxVW8Jr0_Cr1UM28EF7xvwVC2z280aVCY1x0267AKxVW8Jr
+ 0_Cr1UM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj
+ 6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVW8JVWxJwAm72CE4IkC6x0Yz7v_Jr
+ 0_Gr1lF7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI20VAGYxC7M4IIrI8v6xkF7I0E
+ 8cxan2IY04v7MxkIecxEwVAFwVW8uwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbV
+ WUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF
+ 67kF1VAFwI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42
+ IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6rWUJVWrZr1U
+ MIIF0xvEx4A2jsIE14v26r4j6F4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIda
+ VFxhVjvjDU0xZFpf9x0JU4BT5UUUUU=
+X-CM-SenderInfo: p1dqw3xlh2x3gn0dqz5rrqw2lrqou0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200606_015828_007959_37F2486B 
-X-CRM114-Status: UNSURE (   8.65  )
+X-CRM114-CacheID: sfid-20200606_025052_446957_ED9D42DF 
+X-CRM114-Status: UNSURE (   7.38  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [avagin[at]gmail.com]
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,25 +76,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Safonov <dima@arista.com>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+Cc: Xuefeng Li <lixuefeng@loongson.cn>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 05, 2020 at 11:49:04AM +0100, Mark Rutland wrote:
-> Hi Andrei,
-> 
-> As a heads up, in mainline the arm64 vdso code has been refactored since
-> v5.7, and this series will need to be rebased atop. Given we're in the
-> middle of the merge window, I would suggest waiting until rc1 before
-> posting a rebased series.
+In the function ti_sci_inta_set_type(), the statement "return -EINVAL;"
+out of switch case is dead code, remove it.
 
+Signed-off-by: Tiezhu Yang <yangtiezhu@loongson.cn>
+---
+ drivers/irqchip/irq-ti-sci-inta.c | 2 --
+ 1 file changed, 2 deletions(-)
 
-Ok. I will resend this series after rc1. Thanks!
+diff --git a/drivers/irqchip/irq-ti-sci-inta.c b/drivers/irqchip/irq-ti-sci-inta.c
+index 7e3ebf6..c20c9f7 100644
+--- a/drivers/irqchip/irq-ti-sci-inta.c
++++ b/drivers/irqchip/irq-ti-sci-inta.c
+@@ -433,8 +433,6 @@ static int ti_sci_inta_set_type(struct irq_data *data, unsigned int type)
+ 	default:
+ 		return -EINVAL;
+ 	}
+-
+-	return -EINVAL;
+ }
+ 
+ static struct irq_chip ti_sci_inta_irq_chip = {
+-- 
+2.1.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
