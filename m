@@ -2,88 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0109A1F070F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jun 2020 16:40:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4976E1F0744
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jun 2020 17:21:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=3huFj1F+mSDnlhWGlQwXlNuuLNEZxGi7Oy4nayJvo94=; b=XAWrivZg7E0VhI
-	9ybN3x2ae832zBqEAAEd4tRdFKKJyuixr/yr95JT2BkxEpAnJxBa6N7NasEk2x4xoNJMacKOTmGOR
-	89Ae6NPQT7QOyALuA9KcRzz0KN0u9QspdRDaTXq+sr2Bd/4qhKkXMjTwPJ1I3Hn3x4UAfbJrTxHow
-	rmMpKAKcSWS2oyfShP7k9nDJmbofgzKfk4Wbaf7Ts0QcuInRAu1/wEwToXhHfEh0H9p2Kaa9Z9kEG
-	d68tF30XdMdayMntQFOPniDaf1hAPHRwRqoLPqkakPDlEGpsHaybfYQb1wYNDkeBMoEhIt/3ZarBa
-	Xr6ZKybcxG9flHqEoasw==;
+	List-Owner; bh=3XnXjDQYlhiwAI5WA6+2lLxTINKqx+3coiNcG/PKJ00=; b=S0VMqX1rvDFfqD
+	xju6Ce/hlB1XFkU6A04IeCv9MgSYQqGI/okJTH9YluaMBJfSdL+ytBj/bjxcYQ9B5Jk2/GLFPkDmZ
+	cQP05aF/Fe35umUjPjxyoTZA1ReD/qCJ2hsqxIvePlVu7hjE3hLGEM9Tn8ft1PR2H/t5wSo0EWBC2
+	b48zfhHKzXGrYT2Y9J6s7+KS0rtgiHO4nXyJTZZpMS++tjImqOwj8g2SVIsrIBozpx6SUpW4TBuij
+	JapdYNbeh08kZ0YRA2K+tMJyttvprkac6DTEX0hkM6SdGQeuABsesKDnF5WKPzW2lU853iAe6suR+
+	1GaSibpXzxpQtT6GqsQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhZzn-0003K9-8U; Sat, 06 Jun 2020 14:40:27 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jhadK-0005qR-OU; Sat, 06 Jun 2020 15:21:18 +0000
+Received: from mail-eopbgr60048.outbound.protection.outlook.com ([40.107.6.48]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhZzg-0003JC-FN
- for linux-arm-kernel@lists.infradead.org; Sat, 06 Jun 2020 14:40:21 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id q24so4063012pjd.1
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 06 Jun 2020 07:40:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GViXQwsNEwMzcKcJUYZl3xJtNTykxgzCsHdmjAqnXzM=;
- b=U8EF7ZmU68bm6zgAlAT6va0itAw+yn7pqzGaR6lzefVRdBE90I+MY1MyKRGrMdF4J1
- tlz2GtQZQgQTgerWFadVanqNRVkv5QUXj2k8JefG2gE37LpMzpa9W7DbkLvE9Y+YTc8/
- cpdywjazBlA5QQOX8zkupnKCslJ3paREnivZGtOUzF9B0UGVvZ5txtuTdLW71gj3NnH4
- AursxlNtmjwYVBUtlB+jRfFtofhgGHL8ujRgf1Zk1vwrCcoMg+ODHyldb+kmm1xJMBdY
- 3ABVTW0XgITYHSDpPH+T/Db6aitPYIwzSOnyeQacqrOUj8yodlIZPk1sZCWf789oetj2
- yREw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GViXQwsNEwMzcKcJUYZl3xJtNTykxgzCsHdmjAqnXzM=;
- b=WT6RghP355skCJqJq4u73k0/5YaZX1RFh2gtOfaKRmZgZ6Tvk5R4cCvXndh7fCT6pg
- IoknNLxjEFRQ+MuHmFV4CQPZefQrTb2GEQ9vXrFGxs8CWyetdHVXbwGhX9hlupQj6aOe
- WN9tPnDTr8g8zWm92Se5s3FLy2mQHKrCOnEJnnVKYKMIXS+MIybiRQhuc+mDZIJs8pOn
- 8qM24XotWZVSrOr+w4hv0XRdDN17bNU9YJ9d3YnchzhKuJ9REzDcSqyUUMVjqv03lVqM
- SxSPlhyxnBh2kqgMKwBNegEJIz1XTEVW2oessYEhLACCG4+hT+/op2p9SmT9B7Pdiqzh
- g9vQ==
-X-Gm-Message-State: AOAM53104/omptrQ7lL9e99vK+2TNtnMdwBZEzu2uS62U0q+vaHZO8B1
- /gqPS5KNvCmP+hkluYtr3mM=
-X-Google-Smtp-Source: ABdhPJwAZdRXZcOhokbba7h2K+v6sjLwBsq0222yXcaZc3mexqnhURCKrPM8PwjXVsswJo3Wzq92hw==
-X-Received: by 2002:a17:902:bb86:: with SMTP id
- m6mr13971345pls.341.1591454418202; 
- Sat, 06 Jun 2020 07:40:18 -0700 (PDT)
-Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
- by smtp.gmail.com with ESMTPSA id h6sm2511935pfq.214.2020.06.06.07.40.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 06 Jun 2020 07:40:17 -0700 (PDT)
-From: Chuhong Yuan <hslester96@gmail.com>
-To: 
-Subject: [PATCH] serial: mxs-auart: Use devm_ioremap() to fix the missing undo
- bug
-Date: Sat,  6 Jun 2020 22:40:08 +0800
-Message-Id: <20200606144008.2869652-1-hslester96@gmail.com>
-X-Mailer: git-send-email 2.26.2
+ id 1jhadE-0005ik-Mq
+ for linux-arm-kernel@lists.infradead.org; Sat, 06 Jun 2020 15:21:14 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=IYb1sutWPYEoVJSv419dQ7tmaKSDU3fS8tWc3MJqKk96l5bL4ri1OJaOhbZJwyT+WtedaQN35MbHGBUnLEPAnrqJ9m5ZlMrjWGkN32zBj7o2HbEBD76B1CcRQUtxjm/bNfCTYtzLa3YxFeOztpFgqvea4gAXQyUEN0AD2dyVJlOt+NQz6600HzoBnwEMqOoLL61BepEEBoviKmbFNgWVeuWbGcIxXzjL5ZkWNiN0Nwvuhps+ejz5zUfOco8rDaZ8NatuhxS229ZVa97vMWi6hzyehMt/n9q6apDf+aurCbAmasyFlslhmxVK8Ei/r94mHdT+hpYiOnyRv/6HutYU5w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=oZpmqO2oHdeXDFr7hNrHeCQjrrs0RHrCSx5R7z4Nrwo=;
+ b=kn0yvTX5be4n5JwMYpTmqMwxfZIxaklt6w8toU7udOo9QEDtkSlKajc7JtxK/S2SJCRC84+7kf6KYbfdBLOmaVviVXaHXgrMgzpfCkfQ1eYU7lNBLiWzjufrHM1/naL3zF6nzq8CepEfVJNz37M3Q82OypRZZ7kgfKIWJ4DPR64GPvrpyBbnjtnXc10XthKGviLmgKW93ZDjXV8f3LcHTunC3eDF7FrGG89/gHHCfDY3rLyNX+CDG2m5G+y7vLndXzAhXjXqujOPs6ZCg0aLKVvK2OBAVCLItV58wu7aUFSZSO5dS/42ZeF2OcucsewBG9stWDP2sk4KcXOhzOBVAA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=oZpmqO2oHdeXDFr7hNrHeCQjrrs0RHrCSx5R7z4Nrwo=;
+ b=pt06oYzmjk4C2i0xOylLmNvQ/377974IETKzasD1lOFGsSs84qR73qGkRgYiwMQNgQdPbHUTn4cSrl6w28zSGgpcLJW6IAjTatbRPfrwp5lyIDuzmG+cxXx/lMoDbCc0MLjJ8H7Si4X0h+eeS/t1qY3+BW5R22RMB0J9VqYzPBU=
+Authentication-Results: arm.com; dkim=none (message not signed)
+ header.d=none;arm.com; dmarc=none action=none header.from=nxp.com;
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
+ by VE1PR04MB6511.eurprd04.prod.outlook.com (2603:10a6:803:11f::33)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3066.20; Sat, 6 Jun
+ 2020 15:21:05 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::5cc4:23a5:ca17:da7d]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::5cc4:23a5:ca17:da7d%6]) with mapi id 15.20.3066.019; Sat, 6 Jun 2020
+ 15:21:05 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: mark.rutland@arm.com, broonie@kernel.org, robh+dt@kernel.org,
+ catalin.marinas@arm.com, vkoul@kernel.org, will.deacon@arm.com,
+ shawnguo@kernel.org, festevam@gmail.com, s.hauer@pengutronix.de,
+ martin.fuzzey@flowbird.group, u.kleine-koenig@pengutronix.de,
+ dan.j.williams@intel.com, matthias.schiffer@ew.tq-group.com
+Subject: [PATCH v9 RESEND 00/13] add ecspi ERR009165 for i.mx6/7 soc family
+Date: Sun,  7 Jun 2020 07:21:04 +0800
+Message-Id: <1591485677-20533-1-git-send-email-yibin.gong@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: SG2PR04CA0184.apcprd04.prod.outlook.com
+ (2603:1096:4:14::22) To VE1PR04MB6638.eurprd04.prod.outlook.com
+ (2603:10a6:803:119::15)
 MIME-Version: 1.0
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
+ SG2PR04CA0184.apcprd04.prod.outlook.com (2603:1096:4:14::22) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
+ 15.20.3066.18 via Frontend Transport; Sat, 6 Jun 2020 15:21:00 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [119.31.174.66]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 88c68ebb-5007-45c3-a21d-08d80a2d3b03
+X-MS-TrafficTypeDiagnostic: VE1PR04MB6511:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <VE1PR04MB651199B5654AD96618EAD46589870@VE1PR04MB6511.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:3968;
+X-Forefront-PRVS: 04267075BD
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: guoJ+c1s16rmY7C9xICeUn2O+EDCcm03UaZX4bPejGt4z511oy0eudWSRnPjM4qkynUVzllL+0zbGDf+B1ueEh8moZFsPjz4cuR3yWA7lAWfrVekNuDzMvCS0a/+MvUTGnSKqiZuxfkL3kj9+jR7hPSw3YZpkRb8IkvINW2jdevK+y6d1nk+7jLAY5yhxVnPrMqMK6QxRSacnzvLTL1KeSeYyfryP/CLsIaODwXgZ4hetacEsMNcdhbey6wJ/+Czjpzu09uox0Ibsh3M8FHoTppl/ruiT98pP/rA5etBf8+ICoPG65zE33TiTP7zTmIVX5JSQvbGH8YwSZ3PkxiOhAWB1JTisUnQyLBBh8mQbtgFX4RDGY3sClPUqK90nYBK+LRReTgqlHXKvL90BxUoRTfl41RIMxPBsHvm7Ssu0+glEmYD0l/WQESkhQ9Pthi5
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(396003)(136003)(366004)(346002)(39860400002)(376002)(86362001)(5660300002)(66476007)(16526019)(6506007)(66946007)(956004)(2616005)(186003)(36756003)(2906002)(7416002)(316002)(66556008)(4326008)(478600001)(52116002)(26005)(6486002)(966005)(6512007)(8676002)(83380400001)(8936002)(921003);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: cGurvKvXiyo8N/P/U+fj/23Iua+7d3VvxNhl/W7EFpDjH+ggkK3c6tf/aQUu71Vf6ayzlxxgOtVsliBo0zcbxKbAafW4Z+xJS/PEt1X9jG4HXgJ8VM7/c2d1adJGEdiAciRkMkICG3e1UHiRVPQTD7Sz1czJ5uFY8S2vm2CMzzjgioaVS1cFUBGme+j/F9S5tdiBM07A/q+gQ9d9kPQHLRJkJQsmPZ2xDVQiXqTtA+8b1eHiyg74KSMY023F9DuF0OztqKS52tuZCF43sD8MeceHdH/QSd5NoyOBrdndo0s7G9R5tRssmxytndQSI3kOBDDMJ9LRUHs8IOWtUzlYLPlpaGEyJePLwiQGkOce5KDi8HrAIIFnLk5k138LeaWG0dsI5IbO8k1zMiv9r0IrpnA1IB/HnBf/KrtEliRBmKCp55bzjSOWCtZVo0N0M0Ra46yIhwHhOcBh8s9ce0N4U66kRNgltA22xDk4B3t8AHY=
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 88c68ebb-5007-45c3-a21d-08d80a2d3b03
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Jun 2020 15:21:05.5293 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: WFpvAZesSv8XZcs1x0r+SuIVWpvlFDgK6giKNCbFk/2dbQ8K0rLI4LVb0N6DFFu9ob21dNkqAKPZVCfBhPnz2g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6511
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200606_074020_514858_AB263975 
-X-CRM114-Status: GOOD (  11.42  )
-X-Spam-Score: 1.6 (+)
+X-CRM114-CacheID: sfid-20200606_082112_815810_DBD6E15C 
+X-CRM114-Status: GOOD (  14.53  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.6 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
- [list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [202.120.40.82 listed in dnsbl.sorbs.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.6.48 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.6.48 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [hslester96[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [hslester96[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -91,6 +117,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,43 +129,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-serial@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, Chuhong Yuan <hslester96@gmail.com>,
- linux-kernel@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, Jiri Slaby <jslaby@suse.com>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ dmaengine@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This driver calls ioremap() in probe, but it misses calling iounmap() in 
-probe's error handler and remove.
-Replace ioremap() with the devm version to fix it.
+There is ecspi ERR009165 on i.mx6/7 soc family, which cause FIFO
+transfer to be send twice in DMA mode. Please get more information from:
+https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf. The workaround is adding
+new sdma ram script which works in XCH  mode as PIO inside sdma instead
+of SMC mode, meanwhile, 'TX_THRESHOLD' should be 0. The issue should be
+exist on all legacy i.mx6/7 soc family before i.mx6ul.
+NXP fix this design issue from i.mx6ul, so newer chips including i.mx6ul/
+6ull/6sll do not need this workaroud anymore. All other i.mx6/7/8 chips
+still need this workaroud. This patch set add new 'fsl,imx6ul-ecspi'
+for ecspi driver and 'ecspi_fixed' in sdma driver to choose if need errata
+or not.
+The first two reverted patches should be the same issue, though, it
+seems 'fixed' by changing to other shp script. Hope Sean or Sascha could
+have the chance to test this patch set if could fix their issues.
+Besides, enable sdma support for i.mx8mm/8mq and fix ecspi1 not work
+on i.mx8mm because the event id is zero.
 
-Fixes: 47d37d6f94cc ("serial: Add auart driver for i.MX23/28")
-Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
----
- drivers/tty/serial/mxs-auart.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+PS:
+   Please get sdma firmware from below linux-firmware and copy it to your
+local rootfs /lib/firmware/imx/sdma.
+https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/imx/sdma
 
-diff --git a/drivers/tty/serial/mxs-auart.c b/drivers/tty/serial/mxs-auart.c
-index b4f835e7de23..b3e16fd72eaf 100644
---- a/drivers/tty/serial/mxs-auart.c
-+++ b/drivers/tty/serial/mxs-auart.c
-@@ -1679,7 +1679,7 @@ static int mxs_auart_probe(struct platform_device *pdev)
- 	}
- 
- 	s->port.mapbase = r->start;
--	s->port.membase = ioremap(r->start, resource_size(r));
-+	s->port.membase = devm_ioremap(&pdev->dev, r->start, resource_size(r));
- 	if (!s->port.membase) {
- 		ret = -ENOMEM;
- 		goto out_disable_clks;
+v2:
+  1.Add commit log for reverted patches.
+  2.Add comment for 'ecspi_fixed' in sdma driver.
+  3.Add 'fsl,imx6sll-ecspi' compatible instead of 'fsl,imx6ul-ecspi'
+    rather than remove.
+v3:
+  1.Confirm with design team make sure ERR009165 fixed on i.mx6ul/i.mx6ull
+    /i.mx6sll, not fixed on i.mx8m/8mm and other i.mx6/7 legacy chips.
+    Correct dts related dts patch in v2.
+  2.Clean eratta information in binding doc and new 'tx_glitch_fixed' flag
+    in spi-imx driver to state ERR009165 fixed or not.
+  3.Enlarge burst size to fifo size for tx since tx_wml set to 0 in the
+    errata workaroud, thus improve performance as possible.
+v4:
+  1.Add Ack tag from Mark and Vinod
+  2.Remove checking 'event_id1' zero as 'event_id0'.
+v5:
+  1.Add the last patch for compatible with the current uart driver which
+    using rom script, so both uart ram script and rom script supported
+    in latest firmware, by default uart rom script used. UART driver
+    will be broken without this patch.
+v6:
+  1.Resend after rebase the latest next branch.
+  2.Remove below No.13~No.15 patches of v5 because they were mergered.
+  	ARM: dts: imx6ul: add dma support on ecspi
+  	ARM: dts: imx6sll: correct sdma compatible
+  	arm64: defconfig: Enable SDMA on i.mx8mq/8mm
+  3.Revert "dmaengine: imx-sdma: fix context cache" since
+    'context_loaded' removed.
+v7:
+  1.Put the last patch 13/13 'Revert "dmaengine: imx-sdma: fix context
+    cache"' to the ahead of 03/13 'Revert "dmaengine: imx-sdma: refine
+    to load context only once" so that no building waring during comes out
+    during bisect.
+  2.Address Sascha's comments, including eliminating any i.mx6sx in this
+    series, adding new 'is_imx6ul_ecspi()' instead imx in imx51 and taking
+    care SMC bit for PIO.
+  3.Add back missing 'Reviewed-by' tag on 08/15(v5):09/13(v7)
+   'spi: imx: add new i.mx6ul compatible name in binding doc'
+v8:
+  1.remove 0003-Revert-dmaengine-imx-sdma-fix-context-cache.patch and merge
+    it into 04/13 of v7
+  2.add 0005-spi-imx-fallback-to-PIO-if-dma-setup-failure.patch for no any
+    ecspi function broken even if sdma firmware not updated.
+  3.merge 'tx.dst_maxburst' changes in the two continous patches into one
+    patch to avoid confusion.
+  4.fix typo 'duplicated'.
+v9:
+  1. add "spi: imx: add dma_sync_sg_for_device after fallback from dma"
+     to fix the potential issue brought by commit bcd8e7761ec9("spi: imx:
+     fallback to PIO if dma setup failure") which is the only one patch
+     of v8 merged. Thanks Matthias for reporting:
+     https://lore.kernel.org/linux-arm-kernel/5d246dd81607bb6e5cb9af86ad4e53f7a7a99c50.camel@ew.tq-group.com/
+  2. remove 05/13 of v8 "spi: imx:fallback to PIO if dma setup failure"
+     since it's been merged.
+
+Robin Gong (13):
+  spi: imx: add dma_sync_sg_for_device after fallback from dma
+  Revert "ARM: dts: imx6q: Use correct SDMA script for SPI5 core"
+  Revert "ARM: dts: imx6: Use correct SDMA script for SPI cores"
+  Revert "dmaengine: imx-sdma: refine to load context only once"
+  dmaengine: imx-sdma: remove duplicated sdma_load_context
+  dmaengine: imx-sdma: add mcu_2_ecspi script
+  spi: imx: fix ERR009165
+  spi: imx: remove ERR009165 workaround on i.mx6ul
+  spi: imx: add new i.mx6ul compatible name in binding doc
+  dmaengine: imx-sdma: remove ERR009165 on i.mx6ul
+  dma: imx-sdma: add i.mx6ul compatible name
+  dmaengine: imx-sdma: fix ecspi1 rx dma not work on i.mx8mm
+  dmaengine: imx-sdma: add uart rom script
+
+ .../devicetree/bindings/dma/fsl-imx-sdma.txt       |  1 +
+ .../devicetree/bindings/spi/fsl-imx-cspi.txt       |  1 +
+ arch/arm/boot/dts/imx6q.dtsi                       |  2 +-
+ arch/arm/boot/dts/imx6qdl.dtsi                     |  8 +--
+ drivers/dma/imx-sdma.c                             | 67 ++++++++++++--------
+ drivers/spi/spi-imx.c                              | 73 +++++++++++++++++++---
+ include/linux/platform_data/dma-imx-sdma.h         |  8 ++-
+ 7 files changed, 120 insertions(+), 40 deletions(-)
+
 -- 
-2.26.2
+2.7.4
 
 
 _______________________________________________
