@@ -2,61 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C9101F05FB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jun 2020 11:51:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6345E1F05FA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  6 Jun 2020 11:51:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=/fyMNtERSC0kSSOBVCVyjWkM/KBXwE2U071DC13BB0w=; b=mBw
-	dDCsiCu89rqnb1BRrsMwLLlf+M4vG0PaW9gq3wJiBjPn0U5DTJDvTh/v4e024y/1dealycW2fR87u
-	OAXGnGneE6cszlxrnB6njwxDhnOLZpDepm39dkflQmxVNkOY/oJmrDvzAX5x8k0ZclXxa3IX7dBDz
-	4Rzq0VzdC8zKr2+pLvsmd7QUIKlJP/j3VzK+6OT8WygW4c9gQaOW5A3nYIqc4e+PCLQLiOfDTdEB1
-	b3iEAKtJdT+NP8k5D4zblM69crkaVfYCgTBUVES/G1kG9trmBM65MSHwkiJWodRvmAWZg/fDZE28G
-	DFcbtEtn7qXkdFkMaYVa1nbp7OJuOwQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=l6PWdcKvnMi0jeqbXsqQs1f20hx8hDNoQ0GHMnfnitw=; b=nmeHAmPL/o8qMemBW2uF9qERRO
+	Rl2t/vys1V8Vpiu2dwudBiEtSkVp0323swC7s6QPueaM5CZSUXreoujAZG67P5EbU14DtEjuXDy7B
+	RUxQdT0vsPslGdTkeTD7t5I1uPmx19WrAw8F8bC1q++H8s3iM4SKgkEh4NcUsqcsm2GsdE2pZ9KZ4
+	T8O28xqx3gQypVoLseDPhHp6rtyUQV4zl2TswGq1Wj9AT2ZBfhz0kFOXQmCZMnrTF8BIarjHqRMdw
+	RXNWLIhra+1tlmjGezkEjnpAhRCuN0aEFkKBzh4T0vAKaK5Zin0RjXJaGmDJAN84qS1bRpyArkYeZ
+	Dii75s1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhVU0-00089e-53; Sat, 06 Jun 2020 09:51:20 +0000
+	id 1jhVTe-00084u-RW; Sat, 06 Jun 2020 09:50:58 +0000
 Received: from mail.loongson.cn ([114.242.206.163] helo=loongson.cn)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhVTY-000838-0l
+ id 1jhVTY-000839-0n
  for linux-arm-kernel@lists.infradead.org; Sat, 06 Jun 2020 09:50:53 +0000
 Received: from linux.localdomain (unknown [113.200.148.30])
- by mail.loongson.cn (Coremail) with SMTP id AQAAf9Dxz2nZZtteMWk+AA--.1096S2;
+ by mail.loongson.cn (Coremail) with SMTP id AQAAf9Dxz2nZZtteMWk+AA--.1096S3;
  Sat, 06 Jun 2020 17:50:18 +0800 (CST)
 From: Tiezhu Yang <yangtiezhu@loongson.cn>
 To: Thomas Gleixner <tglx@linutronix.de>, Jason Cooper <jason@lakedaemon.net>,
  Marc Zyngier <maz@kernel.org>, Nishanth Menon <nm@ti.com>,
  Tero Kristo <t-kristo@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>,
  Lokesh Vutla <lokeshvutla@ti.com>
-Subject: [PATCH 1/3] irqchip/ti-sci-inta: Remove dead code in
- ti_sci_inta_set_type()
-Date: Sat,  6 Jun 2020 17:50:15 +0800
-Message-Id: <1591437017-5295-1-git-send-email-yangtiezhu@loongson.cn>
+Subject: [PATCH 2/3] irqchip/ti-sci-inta: Fix return value about
+ devm_ioremap_resource()
+Date: Sat,  6 Jun 2020 17:50:16 +0800
+Message-Id: <1591437017-5295-2-git-send-email-yangtiezhu@loongson.cn>
 X-Mailer: git-send-email 2.1.0
-X-CM-TRANSID: AQAAf9Dxz2nZZtteMWk+AA--.1096S2
-X-Coremail-Antispam: 1UD129KBjvdXoWrKrW5try7Ar17tF1kArWDurg_yoWxZFg_u3
- WjqwnxJrW0gFs8Cr17Kw48ZFy0vay5Ww1vga15tasxtwnagwn5ArW7Xws5AFs3WaykArZ7
- KrW5Zr18Cr17ujkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
- 9fnUUIcSsGvfJTRUUUb3kFF20E14v26r4j6ryUM7CY07I20VC2zVCF04k26cxKx2IYs7xG
- 6rWj6s0DM7CIcVAFz4kK6r1j6r18M28lY4IEw2IIxxk0rwA2F7IY1VAKz4vEj48ve4kI8w
- A2z4x0Y4vE2Ix0cI8IcVAFwI0_Jr0_JF4l84ACjcxK6xIIjxv20xvEc7CjxVAFwI0_Gr0_
- Cr1l84ACjcxK6I8E87Iv67AKxVW8Jr0_Cr1UM28EF7xvwVC2z280aVCY1x0267AKxVW8Jr
- 0_Cr1UM2AIxVAIcxkEcVAq07x20xvEncxIr21l5I8CrVACY4xI64kE6c02F40Ex7xfMcIj
- 6xIIjxv20xvE14v26r1j6r18McIj6I8E87Iv67AKxVW8JVWxJwAm72CE4IkC6x0Yz7v_Jr
- 0_Gr1lF7xvr2IYc2Ij64vIr41lF7I21c0EjII2zVCS5cI20VAGYxC7M4IIrI8v6xkF7I0E
- 8cxan2IY04v7MxkIecxEwVAFwVW8uwCF04k20xvY0x0EwIxGrwCFx2IqxVCFs4IE7xkEbV
- WUJVW8JwC20s026c02F40E14v26r1j6r18MI8I3I0E7480Y4vE14v26r106r1rMI8E67AF
- 67kF1VAFwI0_Jw0_GFylIxkGc2Ij64vIr41lIxAIcVC0I7IYx2IY67AKxVWUJVWUCwCI42
- IY6xIIjxv20xvEc7CjxVAFwI0_Jr0_Gr1lIxAIcVCF04k26cxKx2IYs7xG6rWUJVWrZr1U
- MIIF0xvEx4A2jsIE14v26r4j6F4UMIIF0xvEx4A2jsIEc7CjxVAFwI0_Gr0_Gr1UYxBIda
- VFxhVjvjDU0xZFpf9x0JU4BT5UUUUU=
+In-Reply-To: <1591437017-5295-1-git-send-email-yangtiezhu@loongson.cn>
+References: <1591437017-5295-1-git-send-email-yangtiezhu@loongson.cn>
+X-CM-TRANSID: AQAAf9Dxz2nZZtteMWk+AA--.1096S3
+X-Coremail-Antispam: 1UD129KBjvdXoW7JryxCw1kKrWruw1DKF48JFb_yoWDXrg_Ca
+ 1j9an3Kryv9r4DAry8tw4fZFy7tFnYgr1v93y0qa9Iv34UWwn3Cr42vrn5Jws3Ga1ktrZ7
+ KrW3Zr1ayr17CjkaLaAFLSUrUUUUjb8apTn2vfkv8UJUUUU8Yxn0WfASr-VFAUDa7-sFnT
+ 9fnUUIcSsGvfJTRUUUbykFF20E14v26ryj6rWUM7CY07I20VC2zVCF04k26cxKx2IYs7xG
+ 6rWj6s0DM7CIcVAFz4kK6r1j6r18M28IrcIa0xkI8VA2jI8067AKxVWUGwA2048vs2IY02
+ 0Ec7CjxVAFwI0_JFI_Gr1l8cAvFVAK0II2c7xJM28CjxkF64kEwVA0rcxSw2x7M28EF7xv
+ wVC0I7IYx2IY67AKxVWUCVW8JwA2z4x0Y4vE2Ix0cI8IcVCY1x0267AKxVW8JVWxJwA2z4
+ x0Y4vEx4A2jsIE14v26r4UJVWxJr1l84ACjcxK6I8E87Iv6xkF7I0E14v26r4UJVWxJr1l
+ e2I262IYc4CY6c8Ij28IcVAaY2xG8wAqx4xG64xvF2IEw4CE5I8CrVC2j2WlYx0E2Ix0cI
+ 8IcVAFwI0_Jr0_Jr4lYx0Ex4A2jsIE14v26r4j6F4UMcvjeVCFs4IE7xkEbVWUJVW8JwAC
+ jcxG0xvY0x0EwIxGrwACjI8F5VA0II8E6IAqYI8I648v4I1lFIxGxcIEc7CjxVA2Y2ka0x
+ kIwI1lc2xSY4AK67AK6r4fMxAIw28IcxkI7VAKI48JMxC20s026xCaFVCjc4AY6r1j6r4U
+ MI8I3I0E5I8CrVAFwI0_Jr0_Jr4lx2IqxVCjr7xvwVAFwI0_JrI_JrWlx4CE17CEb7AF67
+ AKxVWUtVW8ZwCIc40Y0x0EwIxGrwCI42IY6xIIjxv20xvE14v26r1j6r1xMIIF0xvE2Ix0
+ cI8IcVCY1x0267AKxVW8JVWxJwCI42IY6xAIw20EY4v20xvaj40_Jr0_JF4lIxAIcVC2z2
+ 80aVAFwI0_Gr0_Cr1lIxAIcVC2z280aVCY1x0267AKxVW8JVW8JrUvcSsGvfC2KfnxnUUI
+ 43ZEXa7VUUy89tUUUUU==
 X-CM-SenderInfo: p1dqw3xlh2x3gn0dqz5rrqw2lrqou0/
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200606_025052_446957_ED9D42DF 
-X-CRM114-Status: UNSURE (   7.38  )
+X-CRM114-CacheID: sfid-20200606_025052_447026_9D7AE771 
+X-CRM114-Status: UNSURE (   9.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -84,27 +88,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the function ti_sci_inta_set_type(), the statement "return -EINVAL;"
-out of switch case is dead code, remove it.
+When call function devm_ioremap_resource(), we should use IS_ERR()
+to check the return value and return PTR_ERR() if failed.
 
+Fixes: 9f1463b86c13 ("irqchip/ti-sci-inta: Add support for Interrupt Aggregator driver")
 Signed-off-by: Tiezhu Yang <yangtiezhu@loongson.cn>
 ---
- drivers/irqchip/irq-ti-sci-inta.c | 2 --
- 1 file changed, 2 deletions(-)
+ drivers/irqchip/irq-ti-sci-inta.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/irqchip/irq-ti-sci-inta.c b/drivers/irqchip/irq-ti-sci-inta.c
-index 7e3ebf6..c20c9f7 100644
+index c20c9f7..df1f7fe 100644
 --- a/drivers/irqchip/irq-ti-sci-inta.c
 +++ b/drivers/irqchip/irq-ti-sci-inta.c
-@@ -433,8 +433,6 @@ static int ti_sci_inta_set_type(struct irq_data *data, unsigned int type)
- 	default:
- 		return -EINVAL;
- 	}
--
--	return -EINVAL;
- }
+@@ -570,7 +570,7 @@ static int ti_sci_inta_irq_domain_probe(struct platform_device *pdev)
+ 	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	inta->base = devm_ioremap_resource(dev, res);
+ 	if (IS_ERR(inta->base))
+-		return -ENODEV;
++		return PTR_ERR(inta->base);
  
- static struct irq_chip ti_sci_inta_irq_chip = {
+ 	domain = irq_domain_add_linear(dev_of_node(dev),
+ 				       ti_sci_get_num_resources(inta->vint),
 -- 
 2.1.0
 
