@@ -2,75 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92A5A1F0CFF
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jun 2020 18:31:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F18A1F0D0A
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jun 2020 18:31:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=xoB6uN7UXxU78YT77BBNeKX68kFGOiH0SnWoHFc8/LU=; b=XXr
-	Kk1k7HidiYh9GrlFEGUoGY9Mk0iMLcWmPAgbM19w2oNqxOFTHoFhoJmK0ZVcSBY00Ovjh4Bb3MCFA
-	WrWIayyqFCe3ySy1rd2e0atL0jr3nwA6bDjS2vkNAUV5uO+va71808o2zxEexYv5baklhfVwUcBoB
-	2AwnRGMWkpgpkY5ZANTt10p2pkIy9sfFvtvcskp9htiGJeT8U12khEV4LH17es1hXv9aABx1gIofx
-	n7M89naWlBvoTuF9RA8nzf1+kKqRplZndOHtkCf06UdlLEPpzBTeWJ6EwUGJO7YtaNh4kujtXeMAG
-	N1f0BKOHYIEsN+mJUyoWoc2D0AXTUgw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=n6pOJ5Kb9RXW9Lr7rS3/5T0SDD8pneWFrg/AOREUGtY=; b=eN8/K9Wvs456rOEilw4T3t/2bW
+	RTnAsn0mylL+evyHZwU7qEQTk132KuS2XnNwaGgnzyNA/gnBGx3DHfFrPQNiX5wf4Fb2E6aNXeHlF
+	+7tnxeAr4/ogkjvdhZ1gRc9/GCVOSUd1EV/zbQLb8AzGhpgXCubkQAo6WtkUvsopkU2J7VXX1wQSJ
+	EMQFEW/srColK0b6IqOVB4/31RXuTyR4rDwE1wLyj0Q3QDJwNCrgYWopgfzKiZ3DZGR2aI/0H/bWD
+	ZPawd5xxKteQLF1ej4rrShqr2xi2b17FP3zmmvr4AdAOYh2aFhdauESP+nyamuryvhYqyV6KFFVGs
+	mFVJFBRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhyCD-0006oc-K0; Sun, 07 Jun 2020 16:30:53 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jhyCb-0006y6-QO; Sun, 07 Jun 2020 16:31:17 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhyC4-0006nR-28
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jun 2020 16:30:45 +0000
-Received: by mail-lf1-x144.google.com with SMTP id u16so8733575lfl.8
+ id 1jhyC7-0006oU-Ol
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jun 2020 16:30:49 +0000
+Received: by mail-lf1-x141.google.com with SMTP id z206so8739175lfc.6
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 07 Jun 2020 09:30:43 -0700 (PDT)
+ Sun, 07 Jun 2020 09:30:47 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=+y5hJm0D6r8ReWcb1c3URunictQ0fbWgUuVL/Xt4fvQ=;
- b=DQRY7hCHjakFCewaGH80fZ+QQmDyJyYn4eMcCAgSLqRxm3+ekofpzZf9fOYBuVbsC8
- X7nxCtH4pO3eKLKyPNV/yzgVKEvUdso/Bq/f6hfBr/k0jievSlY0rVLLcGzVQEZuKaOW
- +7RWOiANb0czQLTDAOT8TnRIbugJ+QMl2y/R0zt+C3x2jlyyLL351faa42xHGou8oDe3
- MpZZYDlYq1b//R7HuSYGcLkk2IHtM9YQfOK5Ko5CO5Sq/eHsBLw/TSrUjqbfEpenacKG
- OXM6wkuv5r9Bb+KageC5YremHCxEyLvDcLBQYxoGAJdcvE/3JMiqkyfYX4R3zO8L0mN2
- YSHg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=xeJmQRJvkh8fRKHXAH/W536lRiSffIGCx+R099ed5PQ=;
+ b=cWHbKehKHIDF062O/92MuKOTWDReA/eMg+2MWo7iENt0FzGGlbcQHmhxWZorGSbmAM
+ uc7zGnxHEe1MUmNlY+bGjoJMYJ6MtMyIKDi42imxeId/vOh3PE1qgbEJVCUdbk/ZQlTq
+ BPB2NjB2AWvTlQ0eFu9CzcpTKCowVtbXC/UNqY8R/PzETERaT9zsc+VUAXXaF6zoHUqB
+ G21musHG+MCTXQW9HLMc5rOj4gujqvo0V1Xnga40s8Rjx/sLUD8Jf0a+9VblX/NHDMbP
+ +CfTEdGPe0aKpfM3Zbl3qOk3Tk5BdJLCEW8d4W5NdkVAN/hkC2MLSstUvfCCMFBYtKs9
+ ehMg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=+y5hJm0D6r8ReWcb1c3URunictQ0fbWgUuVL/Xt4fvQ=;
- b=s9L1riqMgTwXHy2OAayY1QQCJLYvJqAf3Ppdel46+581P1G1oALqLjfJmxn5JDXF3d
- 4OoP9DQL3NzR/cbG+VApZbQG3ulW5Ke56bofNNKtZ7z3ulYXXpd5blivxfCd7imSpUX+
- fu9dO1Hv0QEFmOPyvtRgViB733KlevIaWb7YkbfDcO8XpjCrmgIPOCYbrBh9Bj0L8UnS
- xB79qrb/+U6EYv6F4EAERdGVKAtA/0gfjOBgevaJBYZCPbuI76UKmU6YYVByZSosSte6
- FRDj38P1WN5r1uGNebb1DTlbb2w8PE25YTJQle0/KKCYZmGAlAriKOt6LflBe3kH9X86
- 6aQg==
-X-Gm-Message-State: AOAM531JamldSvGpCujCaQlCxcf/c2ynQWVfQ0rE0CbjXbjMWm2ZqNWA
- yMk9pAR7Pf7EIZ0GoB9c0lLNYA==
-X-Google-Smtp-Source: ABdhPJwbd6ocrGy90nxBgIoKoHdiedqsBTsPOS78rRZFoltKfSP8ldDhBfHeukNNqnMIOWNx0q/wTg==
-X-Received: by 2002:a19:4854:: with SMTP id v81mr10303758lfa.189.1591547442109; 
- Sun, 07 Jun 2020 09:30:42 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=xeJmQRJvkh8fRKHXAH/W536lRiSffIGCx+R099ed5PQ=;
+ b=iNjp51t3gYkAwbR6D4G3Sevg2mN+jK0wd5uX8ZNb2XSXrhiWDHE0q/UwAnheBoUPOU
+ J+yaB71VvPR2yHUDq1h2j8GUfLdFDW7/hGGtdy+y69oF/O75fnqMVXDKrauU3N0/paTP
+ 1Pf3Cm4uZernIhLtTE+6p5D3iIPtAxuht4KxYxPrUpwMf++KJ06uASczT0SYo+sj7k48
+ sITWP5RNrQ17VaNSwn2IF01b6SMWOdmYWaZgADWCcTvJLH/+IrJFnNaN21pZGvjOB4JY
+ QKGb9Db8TXiQ+QnT3P2ZJs7MJDFS/H6NIRI68qminq2TEGHFPFSUa64Kftf9Z8xLhlqM
+ t9XQ==
+X-Gm-Message-State: AOAM533ndbMW1y+/NTUgwmAVr6G3Mzx1awZ0yE5r+EDEl6dB8rxivBVp
+ ZXgCes2vyLIYHl4bgd27vY7WNLPMsFlViQ==
+X-Google-Smtp-Source: ABdhPJxth+i63WhQaXwjfVhDSLOI1ZX4ELYq67YtASPe86NC6Fn9Cnu2AFDuq7cDjzyYCb5ga9xmZw==
+X-Received: by 2002:ac2:4d25:: with SMTP id h5mr10414421lfk.87.1591547446112; 
+ Sun, 07 Jun 2020 09:30:46 -0700 (PDT)
 Received: from localhost.localdomain (37-144-159-139.broadband.corbina.ru.
  [37.144.159.139])
- by smtp.googlemail.com with ESMTPSA id l7sm1726511ljj.55.2020.06.07.09.30.40
+ by smtp.googlemail.com with ESMTPSA id l7sm1726511ljj.55.2020.06.07.09.30.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 07 Jun 2020 09:30:41 -0700 (PDT)
+ Sun, 07 Jun 2020 09:30:45 -0700 (PDT)
 From: Andrey Konovalov <andrey.konovalov@linaro.org>
 To: mchehab@kernel.org, sakari.ailus@iki.fi, manivannan.sadhasivam@linaro.org
-Subject: [PATCH v4 00/10] Improvements to IMX290 CMOS driver
-Date: Sun,  7 Jun 2020 19:30:15 +0300
-Message-Id: <20200607163025.8409-1-andrey.konovalov@linaro.org>
+Subject: [PATCH v4 01/10] media: i2c: imx290: set the format before
+ VIDIOC_SUBDEV_G_FMT is called
+Date: Sun,  7 Jun 2020 19:30:16 +0300
+Message-Id: <20200607163025.8409-2-andrey.konovalov@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200607163025.8409-1-andrey.konovalov@linaro.org>
+References: <20200607163025.8409-1-andrey.konovalov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200607_093044_108752_90BAFF6D 
-X-CRM114-Status: GOOD (  16.32  )
+X-CRM114-CacheID: sfid-20200607_093047_869135_8CC3A235 
+X-CRM114-Status: GOOD (  13.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,98 +107,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds improvements to the existing media driver for IMX290
-CMOS sensor from Sony. The major changes are adding 2 lane support,
-configurable link frequency & pixel rate, test pattern generation, and
-RAW12 mode support.
+With the current driver 'media-ctl -p' issued right after the imx290 driver
+is loaded prints:
+pad0: Source
+             [fmt:unknown/0x0]
 
-The link frequency & pixel rate combinations depend on various factors like
-lane count, resolution and image format as per the datasheet.
+The format value of zero is due to the current_format field of the imx290
+struct not being initialized yet.
 
-Also fixes for the following issues in the existing driver are included:
-* the current_format field in the struct imx290 can be used before
-  initialization,
-* the reset signal to IMX290 isn't handled correctly,
-* the bus_type field of v4l2_fwnode_endpoint structure passed as the
-  argument to v4l2_fwnode_endpoint_alloc_parse() function is not
-  initiaized.
+As imx290_entity_init_cfg() calls imx290_set_fmt(), the current_mode field
+is also initialized, so the line which set current_mode to a default value
+in driver's probe() function is no longer needed.
 
-Changes in v4:
+Signed-off-by: Andrey Konovalov <andrey.konovalov@linaro.org>
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ drivers/media/i2c/imx290.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-* The review comments from Sakari and Dave are addressed
-  https://lkml.org/lkml/2020/5/24/294
-  In particular,
-  . HMAX values are included into struct imx290_mode. As the consequence,
-    imx290_modes[] table splitted in two (one for 2-lane configuration,
-    and another for the 4-lane one)
-  . link frequency indexes are kept in struct imx290_mode to
-    avoid using the width field as the key for modes table by
-    imx290_get_link_freq_index(). These are still indexes, not the
-    frequencies themselves: we need a separate tables of the frequencies
-    for the V4L2_CID_LINK_FREQ integer menu control anyway, so the
-    link frequency values should be better kept there (in one place)
-  . imx290_modes_[ptr,num]() and imx290_link_freqs_[ptr,num]() helpers
-    introduced to get rid of repeating lane configuration checks in the code
-  . do_div() is used in imx290_calc_pixel_rate() to fix the build error
-    on 32-bit systems
-  . the check for the link frequencies listed in the device tree is
-    reworked to handle multiple frequencies (vs removing the check entirely
-    in v3)
-  . imx290_enum_frame_size() is not changed since v3: all (of the 2) modes    
-    are supported for all the media codes. So the available modes / frame
-    sizes have no dependency on the media code. The fse->code check in
-    imx290_enum_frame_size() just guards against the codes not supported
-    by the driver at all
-* removed calling imx290_set_data_lanes() from imx290_probe(): the probe()
-  calls imx290_power_on() a bit earlier, and imx290_power_on() sets the
-  number of data lanes
-* FREQ_INDEX_1080P/FREQ_INDEX_720P #define's introduced to make using
-  imx290_link_freq_* tables a bit more error-proof
-* the values in the imx290_link_freq_*[] tables are devided by 2: the
-  previous ones were equal to the data rates which are twice as the link
-  frequency
-
-Changes in v3:
-
-* The review comments from Sakari are addressed
-  https://lkml.org/lkml/2019/12/19/705
-  As a part of those changes:
-  . null ptr checks are added to imx290_set_fmt() so that it can be called
-    early in the probe() function to set the default format, and to
-    initialize imx290->current_mode and imx290->bpp - these last two must be
-    set before imx290_calc_pixel_rate() is called when creating the controls
-  . setting imx290->bpp removed from imx290_write_current_format(). Now this
-    function only writes to the camera sensor registers. The call to
-    imx290_write_current_format() is moved from imx290_set_fmt() back to
-    imx290_start_streaming(): imx290_set_fmt() can be called when the sensor
-    is powered off, and writes to the sensor registers would fail.
-  . in imx290_set_ctrl() in the 12 bpp case the value the BLKLEVEL register
-    is restored to when the test pattern is disabled is made consistent with
-    imx290_12bit_settings[]
-* The "IMX290 sensor driver fixes" patchset included
-  https://patchwork.kernel.org/cover/11407347/
-* Added a patch to set the bus_type field of v4l2_fwnode_endpoint structure
-  before calling v4l2_fwnode_endpoint_alloc_parse()
-
-Andrey Konovalov (4):
-  media: i2c: imx290: set the format before VIDIOC_SUBDEV_G_FMT is
-    called
-  media: i2c: imx290: fix the order of the args in SET_RUNTIME_PM_OPS()
-  media: i2c: imx290: fix reset GPIO pin handling
-  media: i2c: imx290: set bus_type before calling
-    v4l2_fwnode_endpoint_alloc_parse()
-
-Manivannan Sadhasivam (6):
-  media: i2c: imx290: Add support for 2 data lanes
-  media: i2c: imx290: Add configurable link frequency and pixel rate
-  media: i2c: imx290: Add support for test pattern generation
-  media: i2c: imx290: Add RAW12 mode support
-  media: i2c: imx290: Add support to enumerate all frame sizes
-  media: i2c: imx290: Move the settle time delay out of loop
-
- drivers/media/i2c/imx290.c | 404 +++++++++++++++++++++++++++++++------
- 1 file changed, 343 insertions(+), 61 deletions(-)
-
+diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
+index f7678e5a5d87..2d8c38ffe2f0 100644
+--- a/drivers/media/i2c/imx290.c
++++ b/drivers/media/i2c/imx290.c
+@@ -722,9 +722,6 @@ static int imx290_probe(struct i2c_client *client)
+ 		goto free_err;
+ 	}
+ 
+-	/* Set default mode to max resolution */
+-	imx290->current_mode = &imx290_modes[0];
+-
+ 	/* get system clock (xclk) */
+ 	imx290->xclk = devm_clk_get(dev, "xclk");
+ 	if (IS_ERR(imx290->xclk)) {
+@@ -809,6 +806,9 @@ static int imx290_probe(struct i2c_client *client)
+ 		goto free_ctrl;
+ 	}
+ 
++	/* Initialize the frame format (this also sets imx290->current_mode) */
++	imx290_entity_init_cfg(&imx290->sd, NULL);
++
+ 	ret = v4l2_async_register_subdev(&imx290->sd);
+ 	if (ret < 0) {
+ 		dev_err(dev, "Could not register v4l2 device\n");
 -- 
 2.17.1
 
