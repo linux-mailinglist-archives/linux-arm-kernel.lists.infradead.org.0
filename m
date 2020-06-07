@@ -2,90 +2,136 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B36591F0D25
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jun 2020 18:33:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97EEF1F0D57
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jun 2020 19:25:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=D2y1Np60bXQdt/twQMmjxntJPUTL54LS1FncJmfUI1c=; b=X9kuEHrBq5nRUcJyQj2zPkBO5W
-	zOJbBM1fpg4qK+P6cdOU9FNbDcmnur4eHMkwM8ZcQ2vcTeoucs85LsrQZ3IGCpx4oP2TefGdUHPGT
-	tXc9tepdJ/6gqPwwNHVvaPRpMTgvs2fttZA3ap1gjfeNfzPX2taQRS/LuHxxOrDLmSPSut3lMNyVG
-	WyB12v40BX3++a11zAy5smtx3Wi0+6jfSYcItMl4kjwnp1g7bTLDdYhgfmIBpZ35+TkNYacM19VvI
-	CO2DH2h/FA2aGmli9apS2MATkTnbA42f4nMvhviO4Iy1MLlEpSzyYs6D9p2ivvyR3W7n5w5ypeWmZ
-	TyJgTw/A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pdGrglnf/whPEY5JEj+i0coQrfXPrX7DFfS0uyePm78=; b=WTayb2l5C6SxiT
+	ri964rtNcu0Yqd3fxYCQNzBLjefbmqc/xtX5ZzQmex3OSIpPmM9vDW16ViHC+xFCG7UMzi42aO/cU
+	vRfa6olrQPahj9Qfyg6rQ6sLSd0+iS7hRwAyM/jUWWaC6WyGVJezME795b6MdfDtHkyfq7zrFTyKq
+	z58hxWxilh/9wm3TkntJIVUmdgsGx4lUUax4o4BCt1LP5YapGjwP48KIODWh95c+Rt5EGTDtfVxKv
+	i2rRNZ1Sr3AfciaJKG63XRtQLMH6/X5lH3EjYfyHMn8pOnYhUunPKEbV5RWr6F3ncvD9kd5AhbhnJ
+	D3nymB+jxdbZt1JHG7yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhyEt-0000oT-Ot; Sun, 07 Jun 2020 16:33:39 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jhz2U-0004dj-Mo; Sun, 07 Jun 2020 17:24:54 +0000
+Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhyCU-0007D9-Ml
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jun 2020 16:31:13 +0000
-Received: by mail-lj1-x241.google.com with SMTP id e4so17532533ljn.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 07 Jun 2020 09:31:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=dfWTJRln/wUkUezGYMWTWyc7bZ4R2M6yJEVL+/18MoU=;
- b=JhsWDMxQZ1/NcZTwhhTdjBGtnXX8mULfjvyeevpeheQhRviLws+dfkfdQQLxDVl7XV
- kQYSxeIEb3bwXQcd/xxgN7wftXcZhFuWXw1Y3/OSDttBaHgtpHvyJSBjkBxv/NvRCzZY
- OQzXZmRokwALTD+miJSukeoL7BDilVnyKmxe++oZBGg1yJ0sB3YJFTw4X8/2iPRCg2sp
- WvLs6+AEZkY6J2r9jYaLN7UlJuLa7EeEMYBmXiyu65TTLJ7elaktN3aXkEB/JbnBCCRv
- 5gZxFwmw4m1zYZke5l3KcAJ3+E8603d/UBkq2Wh+JRaGFvyVu4nVqHm/7crlEN3x2i43
- d85A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=dfWTJRln/wUkUezGYMWTWyc7bZ4R2M6yJEVL+/18MoU=;
- b=gZc7ow2Jk5DS8Nn0byckWlV/NZX/OKE55hu+cd2C+fVBbXDQ9TA+zQZRMnLydbbCK9
- wPlgMnJ/WM8lRt0Lqw8NwstpR/h3twGI7jopghLQ89JFlJU1kKczX1giYTrbv0zeSTXi
- vqaz64Pb7OlAgpZ1XmKCNq+UGlEeOGs3rTPny2fLXssh7IpquLFWH7FWjLGrTHq1CPel
- 1iJpRi36mTRbO81uKmuDqkwlkPM8DpFUrtqZ8kFjmC1AhAh16xXuCP3Us23Y4920pcIR
- eauiWpS9Ri5GFD9dT3RT2HSXSvWb8M1uZwRzysKunEQLguRArHl2wGsUq/u6j8uYfsdl
- o2IQ==
-X-Gm-Message-State: AOAM532h4gOLgdjwE1JgPb+f/Ybf85+fOpEh3IS/pP9R7NJXhChGJLeO
- /2HybAoQ4N79lT34h7gEm2hakQ==
-X-Google-Smtp-Source: ABdhPJy7RVt9fRqw1XY48kyWG2iJArPS9Cv81DF9HQ1xCb1mlZVeQ5/Ic48+BpzKbmrWsyCDcUCcpw==
-X-Received: by 2002:a2e:7303:: with SMTP id o3mr9826431ljc.100.1591547469072; 
- Sun, 07 Jun 2020 09:31:09 -0700 (PDT)
-Received: from localhost.localdomain (37-144-159-139.broadband.corbina.ru.
- [37.144.159.139])
- by smtp.googlemail.com with ESMTPSA id l7sm1726511ljj.55.2020.06.07.09.31.08
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 07 Jun 2020 09:31:08 -0700 (PDT)
-From: Andrey Konovalov <andrey.konovalov@linaro.org>
-To: mchehab@kernel.org, sakari.ailus@iki.fi, manivannan.sadhasivam@linaro.org
-Subject: [PATCH v4 10/10] media: i2c: imx290: set bus_type before calling
- v4l2_fwnode_endpoint_alloc_parse()
-Date: Sun,  7 Jun 2020 19:30:25 +0300
-Message-Id: <20200607163025.8409-11-andrey.konovalov@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200607163025.8409-1-andrey.konovalov@linaro.org>
-References: <20200607163025.8409-1-andrey.konovalov@linaro.org>
+ id 1jhz2N-0004by-3H
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jun 2020 17:24:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1591550672;
+ bh=prmDdHGznxEpRFD6qAZXytWIpuhGL6ohzpD4KpRxtZs=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=FdvCe4vSfuo0ppSsAdk5B8HC5Frbwgabvyv/fN3MZkE0kuYLmgxw72SoYLa6CbBFY
+ t5st3wyVj/Jzmtz8GdcEi4eL+wRC1F9mooJ7Ld/lNbAM4qg/qew1J7wR5aQKbKFOOk
+ ZgZ0f8RDZpZGUW93a0iWOjwHmL/M2DXKGsgdA+MQ=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.123.51] ([88.152.145.75]) by mail.gmx.com (mrgmx004
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 1MFKKh-1jjtur1GKf-00FoF0; Sun, 07
+ Jun 2020 19:24:32 +0200
+Subject: Re: [PATCH v2 1/2] efi/arm: decompressor: deal with HYP mode boot
+ gracefully
+To: Ard Biesheuvel <ardb@kernel.org>, linux-efi@vger.kernel.org
+References: <20200607135834.898294-1-ardb@kernel.org>
+ <20200607135834.898294-2-ardb@kernel.org>
+From: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Autocrypt: addr=xypron.glpk@gmx.de; prefer-encrypt=mutual; keydata=
+ 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 Eg==
+Message-ID: <96a36110-68e1-89e3-2d59-b16f01abae21@gmx.de>
+Date: Sun, 7 Jun 2020 19:24:29 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
+MIME-Version: 1.0
+In-Reply-To: <20200607135834.898294-2-ardb@kernel.org>
+Content-Language: en-US
+X-Provags-ID: V03:K1:Yl00i5pEvP9g3dZ8sbtpZupknrHAgj6gLzFxvMC/IUpoSRBNcnu
+ PVqj+0BmpN+X38nHN8AYdu/x4X2WmJBlTNrfJvwlyfISCeDuQcRY0xRtP980hW2gGzPEwJv
+ 0EqmFOeoxwnC6WrlF8B114szrVcat2M3Yo/t30MV1V4mLrp7UB/jrEr1QrlkdBBdvpBQ7Bg
+ PUI+D6ADnkBq0x/vuis4Q==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:uFC9UluCpPA=:H3z5/XeJ/k+t/1WRyoFuSQ
+ csA2qDu1QdkNIB/5L3bIvPFT72C6jTJcODCGuQf5e3eZGbb0Y5HP8u/xsGtvrcYC+zuke3P45
+ vBlN2EIbH18qY0ulEfBU4QN6rWct6xHCmTz30AtR0EgXeQZV5tniG1SAtbXyqXQTr2ptScTni
+ I+7CNdJH9Z4ByOPWbDC0/RfqnZB8aLZTwACVw6cTZZDqDoCcjD4Lh4bHAgmjabL98XTNgpnXo
+ sZ7VkrUtS8xrmXmCktSn1UAEEkIvaXm8rU7XUCJUIukocypGiG1927UnbtDmDV2sF1708Vo1q
+ Uxef8DhjrNFHBG211m/ZYpKXNn7FyRtiDKXEelEzvLYE6OPs7SonwMdwsZbiOrG2ON+0LzcYI
+ FGcbEuehWWbzKpGlshYXuXBavy0N9gBZ0wHrznfFUjMiWg4kOAr/DGiu198HIIe4dfIpdtmd1
+ J7NoOO5DC58rJOjhgUa8rOq2PHFI7+w3q/PM4FhgL3f8ZMx2oHVfeh7BQVssA33YageYrCEU0
+ ATxQMF8Aaemo6W7b+VEHClfP/BcvK2ff84SSQYxsvS6RE+rg7r0AIKWDPoZmHDCt0s2B03Qee
+ UKZ05IYG6oe06f9RFgYowxhHh41oIGUonTc8ixmguqNdKIbYT1gcKupiZQ3KSNAOx+y5bdrnC
+ Gh6TyTP5JLrUf4f/6Ql6yJQ9CgEpXZBpuI5XyotT/0I/wouqO5qPzOyFeFUYOyNLV5R+IgG1O
+ PDgCPAFJCO1mAotwJmTizeFKCMdcWH5/BhDoE+YJCHX2KXnwGekveJSAfEPIxfS3uyY1DApIv
+ XU6DYXfiCy06/i1WqEQHCPR/YEPCfoDIv23BpLRJdAaQWkslyey+aAytizB8EGg3x/jr/8ExE
+ rrvFQvIDdiJRR5pBZ5Jz/Qlj1nF1/n+eFBjr7HhM+HOigX1ansX5+rsvlTsVh6LtLtRoAUZkB
+ J04NGeMtdmvNCQuf8Bx8mCq6+6RPOwGAMxfLOAhDxzv1VP3jMnIj9/ncKjOm3MRsup3IjX7mU
+ v0MZLUcE0h9fyVeqWXnziRpdeFJoQtgMWaUHxLpb/jsqhrLHa7phOaJAiCUXEGgutLWSyIevj
+ 4q1ehhX76G8eYlacFITWGJggU/kVW29EJIKVECf4oEdWZNlqySZBljou2uaLmbrjX0X9Yd/kw
+ G1uCZ0PuCg3SAPf63nPQzdOJijmGKcjeVaKZOSPfPM5SCPAmaNDCVKDJv4zeir+v9cw4vrNHI
+ 4mjUo4sgaiuzUNSvR
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200607_093110_917873_F1264231 
-X-CRM114-Status: GOOD (  19.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200607_102447_472559_4DCB4B0C 
+X-CRM114-Status: GOOD (  22.75  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.15.18 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.15.18 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [xypron.glpk[at]gmx.de]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,147 +143,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, c.barrett@framos.com,
- linux-kernel@vger.kernel.org, a.brela@framos.com, peter.griffin@linaro.org,
- Andrey Konovalov <andrey.konovalov@linaro.org>,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-MIME-Version: 1.0
+Cc: maz@kernel.org, Chen-Yu Tsai <wens@csie.org>, linux@armlinux.org.uk,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The bus_type field of v4l2_fwnode_endpoint structure passed as the argument
-to v4l2_fwnode_endpoint_alloc_parse() function must be initiaized.
-Set it to V4L2_MBUS_CSI2_DPHY, and check for -ENXIO which is returned
-when the requested media bus type doesn't match the fwnode.
+On 6/7/20 3:58 PM, Ard Biesheuvel wrote:
+> EFI on ARM only supports short descriptors, and given that it mandates
+> that the MMU and caches are on, it is implied that booting in HYP mode
+> is not supported.
+>
+> However, implementations of EFI exist (i.e., U-Boot) that ignore this
+> requirement, which is not entirely unreasonable, given that it makes
+> HYP mode inaccessible to the operating system.
+>
+> So let's make sure that we can deal with this condition gracefully.
+> We already tolerate booting the EFI stub with the caches off (even
+> though this violates the EFI spec as well), and so we should deal
+> with HYP mode boot with MMU and caches either on or off.
+>
+> - When the MMU and caches are on, we can ignore the HYP stub altogether,
+>   since we can carry on executing at HYP. We do need to ensure that we
+>   disable the MMU at HYP before entering the kernel proper.
+>
+> - When the MMU and caches are off, we have to drop to SVC mode so that
+>   we can set up the page tables using short descriptors. In this case,
+>   we need to install the HYP stub as usual, so that we can return to HYP
+>   mode before handing over to the kernel proper.
 
-Also remove v4l2_fwnode_endpoint field from struct imx290 as it is only
-needed in the probe function: use the local variable for this purpose.
+To me it is still unclear why you need this patch. Please, describe the
+problem this patch fixes.
 
-Signed-off-by: Andrey Konovalov <andrey.konovalov@linaro.org>
----
- drivers/media/i2c/imx290.c | 38 +++++++++++++++++++-------------------
- 1 file changed, 19 insertions(+), 19 deletions(-)
+Is there any device that you cannot boot without the patch?
 
-diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
-index 02001c1b0dfc..9c97830164e9 100644
---- a/drivers/media/i2c/imx290.c
-+++ b/drivers/media/i2c/imx290.c
-@@ -70,7 +70,6 @@ struct imx290 {
- 	u8 bpp;
- 
- 	struct v4l2_subdev sd;
--	struct v4l2_fwnode_endpoint ep;
- 	struct media_pad pad;
- 	struct v4l2_mbus_framefmt current_format;
- 	const struct imx290_mode *current_mode;
-@@ -914,17 +913,18 @@ static const struct media_entity_operations imx290_subdev_entity_ops = {
-  * of MIPI data lanes are mentioned in the device tree, or the value of the
-  * first missing frequency otherwise.
-  */
--static s64 imx290_check_link_freqs(const struct imx290 *imx290)
-+static s64 imx290_check_link_freqs(const struct imx290 *imx290,
-+				   const struct v4l2_fwnode_endpoint *ep)
- {
- 	int i, j;
- 	const s64 *freqs = imx290_link_freqs_ptr(imx290);
- 	int freqs_count = imx290_link_freqs_num(imx290);
- 
- 	for (i = 0; i < freqs_count; i++) {
--		for (j = 0; j < imx290->ep.nr_of_link_frequencies; j++)
--			if (freqs[i] == imx290->ep.link_frequencies[j])
-+		for (j = 0; j < ep->nr_of_link_frequencies; j++)
-+			if (freqs[i] == ep->link_frequencies[j])
- 				break;
--		if (j == imx290->ep.nr_of_link_frequencies)
-+		if (j == ep->nr_of_link_frequencies)
- 			return freqs[i];
- 	}
- 	return 0;
-@@ -934,6 +934,10 @@ static int imx290_probe(struct i2c_client *client)
- {
- 	struct device *dev = &client->dev;
- 	struct fwnode_handle *endpoint;
-+	/* Only CSI2 is supported for now: */
-+	struct v4l2_fwnode_endpoint ep = {
-+		.bus_type = V4L2_MBUS_CSI2_DPHY
-+	};
- 	struct imx290 *imx290;
- 	u32 xclk_freq;
- 	s64 fq;
-@@ -956,15 +960,18 @@ static int imx290_probe(struct i2c_client *client)
- 		return -EINVAL;
- 	}
- 
--	ret = v4l2_fwnode_endpoint_alloc_parse(endpoint, &imx290->ep);
-+	ret = v4l2_fwnode_endpoint_alloc_parse(endpoint, &ep);
- 	fwnode_handle_put(endpoint);
--	if (ret) {
-+	if (ret == -ENXIO) {
-+		dev_err(dev, "Unsupported bus type, should be CSI2\n");
-+		goto free_err;
-+	} else if (ret) {
- 		dev_err(dev, "Parsing endpoint node failed\n");
- 		goto free_err;
- 	}
- 
- 	/* Get number of data lanes */
--	imx290->nlanes = imx290->ep.bus.mipi_csi2.num_data_lanes;
-+	imx290->nlanes = ep.bus.mipi_csi2.num_data_lanes;
- 	if (imx290->nlanes != 2 && imx290->nlanes != 4) {
- 		dev_err(dev, "Invalid data lanes: %d\n", imx290->nlanes);
- 		ret = -EINVAL;
-@@ -973,27 +980,20 @@ static int imx290_probe(struct i2c_client *client)
- 
- 	dev_dbg(dev, "Using %u data lanes\n", imx290->nlanes);
- 
--	if (!imx290->ep.nr_of_link_frequencies) {
-+	if (!ep.nr_of_link_frequencies) {
- 		dev_err(dev, "link-frequency property not found in DT\n");
- 		ret = -EINVAL;
- 		goto free_err;
- 	}
- 
- 	/* Check that link frequences for all the modes are in device tree */
--	fq = imx290_check_link_freqs(imx290);
-+	fq = imx290_check_link_freqs(imx290, &ep);
- 	if (fq) {
- 		dev_err(dev, "Link frequency of %lld is not supported\n", fq);
- 		ret = -EINVAL;
- 		goto free_err;
- 	}
- 
--	/* Only CSI2 is supported for now */
--	if (imx290->ep.bus_type != V4L2_MBUS_CSI2_DPHY) {
--		dev_err(dev, "Unsupported bus type, should be CSI2\n");
--		ret = -EINVAL;
--		goto free_err;
--	}
--
- 	/* get system clock (xclk) */
- 	imx290->xclk = devm_clk_get(dev, "xclk");
- 	if (IS_ERR(imx290->xclk)) {
-@@ -1108,7 +1108,7 @@ static int imx290_probe(struct i2c_client *client)
- 	pm_runtime_enable(dev);
- 	pm_runtime_idle(dev);
- 
--	v4l2_fwnode_endpoint_free(&imx290->ep);
-+	v4l2_fwnode_endpoint_free(&ep);
- 
- 	return 0;
- 
-@@ -1118,7 +1118,7 @@ static int imx290_probe(struct i2c_client *client)
- 	v4l2_ctrl_handler_free(&imx290->ctrls);
- 	mutex_destroy(&imx290->lock);
- free_err:
--	v4l2_fwnode_endpoint_free(&imx290->ep);
-+	v4l2_fwnode_endpoint_free(&ep);
- 
- 	return ret;
- }
--- 
-2.17.1
+>
+> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> ---
+>  arch/arm/boot/compressed/head.S | 61 ++++++++++++++++++++
+>  1 file changed, 61 insertions(+)
+>
+> diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+> index c79db44ba128..3476e85c31e7 100644
+> --- a/arch/arm/boot/compressed/head.S
+> +++ b/arch/arm/boot/compressed/head.S
+> @@ -1410,7 +1410,11 @@ memdump:	mov	r12, r0
+>  __hyp_reentry_vectors:
+>  		W(b)	.			@ reset
+>  		W(b)	.			@ undef
+> +#ifdef CONFIG_EFI_STUB
+> +		W(b)	__enter_kernel_from_hyp	@ hvc from HYP
+> +#else
+>  		W(b)	.			@ svc
+> +#endif
+>  		W(b)	.			@ pabort
+>  		W(b)	.			@ dabort
+>  		W(b)	__enter_kernel		@ hyp
+> @@ -1429,14 +1433,71 @@ __enter_kernel:
+>  reloc_code_end:
+>
+>  #ifdef CONFIG_EFI_STUB
+> +__enter_kernel_from_hyp:
+> +		mrc	p15, 4, r0, c1, c0, 0	@ read HSCTLR
+> +		bic	r0, r0, #0x5		@ disable MMU and caches
+> +		mcr	p15, 4, r0, c1, c0, 0	@ write HSCTLR
+> +		isb
+> +		b	__enter_kernel
+> +
+>  ENTRY(efi_enter_kernel)
+>  		mov	r4, r0			@ preserve image base
+>  		mov	r8, r1			@ preserve DT pointer
+>
+> + ARM(		adrl	r0, call_cache_fn	)
+> + THUMB(		adr	r0, call_cache_fn	)
+> +		adr	r1, 0f			@ clean the region of code we
+> +		bl	cache_clean_flush	@ may run with the MMU off
+> +
+> +#ifdef CONFIG_ARM_VIRT_EXT
+> +		@
+> +		@ The EFI spec does not support booting on ARM in HYP mode,
+> +		@ since it mandates that the MMU and caches are on, with all
+> +		@ 32-bit addressable DRAM mapped 1:1 using short descriptors.
+> +		@
+> +		@ While the EDK2 reference implementation adheres to this,
+> +		@ U-Boot might decide to enter the EFI stub in HYP mode
+> +		@ anyway, with the MMU and caches either on or off.
+> +		@
+> +		mrs	r0, cpsr		@ get the current mode
+> +		msr	spsr_cxsf, r0		@ record boot mode
+> +		and	r0, r0, #MODE_MASK	@ are we running in HYP mode?
+> +		cmp	r0, #HYP_MODE
+> +		bne	.Lefi_svc
+> +
+> +		mrc	p15, 4, r1, c1, c0, 0	@ read HSCTLR
+> +		tst	r1, #0x1		@ MMU enabled at HYP?
+> +		beq	1f
+> +
+> +		@
+> +		@ When running in HYP mode with the caches on, we're better
+> +		@ off just carrying on using the cached 1:1 mapping that the
+> +		@ firmware provided. Set up the HYP vectors so HVC instructions
+> +		@ issued from HYP mode take us to the correct handler code. We
+> +		@ will disable the MMU before jumping to the kernel proper.
+> +		@
+> +		adr	r0, __hyp_reentry_vectors
+> +		mcr	p15, 4, r0, c12, c0, 0	@ set HYP vector base (HVBAR)
+> +		isb
+> +		b	.Lefi_hyp
+> +
+> +		@
+> +		@ When running in HYP mode with the caches off, we need to drop
+> +		@ into SVC mode now, and let the decompressor set up its cached
+> +		@ 1:1 mapping as usual.
+> +		@
+> +1:		mov	r9, r4			@ preserve image base
+> +		bl	__hyp_stub_install	@ install HYP stub vectors
+> +		safe_svcmode_maskall	r1	@ drop to SVC mode
+
+Are you returning to HYP mode somewhere?
+
+What is the effect on PSCI?
+
+The Allwinner/Sunxi boards must be booted in HYP mode to have PSCI
+according to https://linux-sunxi.org/PSCI
+
+Did you test that you still can reboot those boards?
+
+Cc: Chen-Yu Tsai <wens@csie.org>
+    (maintainer ARM/Allwinner sunXi SoC support)
+
+Best regards
+
+Heinrich
+
+> +		orr	r4, r9, #1		@ restore image base and set LSB
+> +		b	.Lefi_hyp
+> +.Lefi_svc:
+> +#endif
+>  		mrc	p15, 0, r0, c1, c0, 0	@ read SCTLR
+>  		tst	r0, #0x1		@ MMU enabled?
+>  		orreq	r4, r4, #1		@ set LSB if not
+>
+> +.Lefi_hyp:
+>  		mov	r0, r8			@ DT start
+>  		add	r1, r8, r2		@ DT end
+>  		bl	cache_clean_flush
+>
 
 
 _______________________________________________
