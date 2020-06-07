@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5264B1F0D14
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jun 2020 18:31:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E97151F0D1F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jun 2020 18:31:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=rIG+4WWOJJksF+yo+iXZk+0Whe6Sa2Pzx+jl1Br0zDw=; b=Kal23dxY9CDzEhqRAxlwhqZiuO
-	Xs5x3EMPorVwNgRUjrjNulcxVD2ZXwZIYsRML2ZyWOpE+dgJtb7PVaNTqZWJjiVrkvFjY9Z48y8L2
-	YAsdjoBQg+85rGyemahkdKPdmYovptnSOTLiTWYYBaRLbi0RCtAlJv20jjGEpZO2mAMNIzUKqnX2b
-	RJ843SRoy0Z5K0ZwcxQf0E/pZtTcSDL06IkkYKXuIQn2t1/WXt4Gg4fgaMlY16QURg5q9ic/33bbQ
-	ILssU9rziPIa9pm0JH4jRR+tXCuiBmQsLSIOCZ/D7j9BwCEzMpbq4LEfbo3wKrXlBtDQuh+fa8LVD
-	46klBWDg==;
+	bh=mDSd/tZ2VKF6gAFeUi3N+xA2TEujoiSiIh2rihcZcC8=; b=Nv8fWB7O7uiS87IzZ35k6RZrfv
+	mNnDiIA9r2xVKn1HcZi2z4bVF45Q7zlxWJFUFFg9ERCKWuHALSperoQgH0UTB3mGuGUtVf08BhJrl
+	1o46+2uFnXAjdCsTeiP53OPDd50kFW/vMfnILdnIf5l0zURmLkpn7hFhkj/qyPU6wgHdWZYQEs8xG
+	4cA1U3/iAsq9VP7XEvis/OeQSvwjg66axZpLgiJfoFcy4xd4NQXTdgN0RclyAqS2eV05KNo7G9A08
+	eixaSmjJ8HNOdFEUNWjaOWFxreANs0AFq+hzeBV70z44hBS/bR6Id9naGNMhEX4o54Zbd1GcYLe9c
+	0Q7OJDEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhyCl-0007Kq-V7; Sun, 07 Jun 2020 16:31:27 +0000
+	id 1jhyD9-0007du-C4; Sun, 07 Jun 2020 16:31:51 +0000
 Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhyCA-0006qh-1l
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jun 2020 16:30:51 +0000
-Received: by mail-lj1-x242.google.com with SMTP id s1so17519355ljo.0
+ id 1jhyCC-0006uH-BE
+ for linux-arm-kernel@lists.infradead.org; Sun, 07 Jun 2020 16:30:54 +0000
+Received: by mail-lj1-x242.google.com with SMTP id c17so17462450lji.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 07 Jun 2020 09:30:49 -0700 (PDT)
+ Sun, 07 Jun 2020 09:30:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ythenNMgCasy/26fjGx9+1WbKj8OM9GaH/NHc6AXhOM=;
- b=aD4r7KAYyBWRL+r3cCNFwandPIp1eaBY0+mJVtAAbLtlNeZCVeWmO4LdP98zGXkx2f
- mWWk3CuksVHnax1r1AAVz5876ez1ow5sbWhBGtJY0DmabUBtHAGnvlt1bxUVFJwk9OLz
- 7X0SneyAfRhAjPkbAtwQ5OMzdMWIBSmbJvkSdy+lvAsyfSJErqbJmvJThSZjFU1KJrCe
- cpuYcZOGcVK3QquNEw3olj2fEPbf6FCVU/qXa6LhWsako84djR1C25QZQWcwdUQSgW8x
- SvqFhDiRFY/zVHG2Bw1dgI24DdE66sH6Hwl+PPj1Wzd/7mBFNJSFnOWgN0q14Jl7jDgy
- ft4A==
+ bh=cA0rxP4uX8r0J5dTgAkrFDikDC5/+iYQEYBegCVDUX8=;
+ b=ASfk4mbizWj5L7lpupyxEymymo/ZPFF5KNCbDMYF6Et1/uJaP800Mfx0DoYPGapzb3
+ hv+HiIqeR8Jmk4vCo83x/+lGNoqGIhXXzuS7cqSUerNNvoyN+x+fG13WxaDOjJb1P7zY
+ Hq00PryzQhJZ5KYXKmAzcJzfwntzokREZ+XswmdY6VcJHEszaNWj2fnnA1Pab+RGwv8b
+ hQxJ7lsbe7/eI/X8X/Vo44h3opbHOiIy5xfS29Vu0NQ7uivA+7aD2UN+EMTD/qlmCC+U
+ ml+/P1OFSTs+7tzsHv2dzm7qCRG1MvFt5+YpubFXKPhydNo/YV+sVDIvl7zNr8I2E3iJ
+ M3vg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ythenNMgCasy/26fjGx9+1WbKj8OM9GaH/NHc6AXhOM=;
- b=M03R6ozTpelc+B1d025/zR8SyHb8MwexGI0I4KULu2wXPwOPHDPMiEmGh5093RisEn
- SxPR9Tp8jKDGMQNS/SwErnBMnsG0e8MeLWo5lceF5+tYJsIdRp8G7ij6FDRMxjBuk1GB
- rk2idBZAbjXvUD7QnwlsExnx6cKYOR2TxDTw1uzV2I06VJ5AtAp3hulHK+8VzVbP6jE+
- 6TGuw6k+ECqN5fbmliOCm6BI7M67jGaULnq0R7PJCAJ4iH+mzKh3U8j545Amlu4idWpS
- x+LYNDJwXIYedHevgGzQuLrCLzYSUJbrjWLi+D2jGmm6Osjkk4G4mFrHRzg9IsWpaaCg
- pR7Q==
-X-Gm-Message-State: AOAM533Qdobo2dposNFmwAox275VWd0+MnN3SNmO0nNtgMmZge6X9dQe
- zTfEl36d0VoiQEQwqkI7qtY4og==
-X-Google-Smtp-Source: ABdhPJztgQw/a4CxBiVGeklrqq34QTqDSxO6rZE1olhTeauKdcDOH+dSCnusoO2D30v2fZFAEdjbEQ==
-X-Received: by 2002:a05:651c:1103:: with SMTP id
- d3mr9651976ljo.110.1591547448299; 
- Sun, 07 Jun 2020 09:30:48 -0700 (PDT)
+ bh=cA0rxP4uX8r0J5dTgAkrFDikDC5/+iYQEYBegCVDUX8=;
+ b=Pw5jNIJSKGaoFMQCuPCzmWpDXjlX1bD5qgq7F83cSOlctYA3JMnuRafsFTPAw+58Yt
+ mVg3zFnB9vJpDztUwwLh/trVynCTy+CLGF7ZRdDY++5n0gg9u1/bH+L4/ksrMUHDOqZF
+ tx+Si3zKV67+eQYFbfrPMYiFwOZayy8UWwTiGFuKs8sfNv23uObRrWBjqWsgvUEnKh2A
+ Ob3eanKwE0uuxuIW+ttPtQc3Sne28XtXIJKyGK7BJdsLCLYpcN2LRI4XzP9Nh6ctD+2Z
+ Tj84GsY2FeBizrauefhIZD3m4oEJ7dTH+DsFnR38Dnfb6rir9+zPLHVcJ7KJ/NngM6i2
+ t0kg==
+X-Gm-Message-State: AOAM533hYqGq78NOIaAss/eK61YJqiouwDJV9G4V8r1c8TnGiHWppntD
+ /3u5XFUGd5+yrOjS9YA3cNVfjg==
+X-Google-Smtp-Source: ABdhPJyjLyOxmRLxqc1IiL0wIQLnC2WD0apwurqLMvIwHjY92oYJs7K6WG3OlmNqcFSoR6JrCrCN7w==
+X-Received: by 2002:a2e:1412:: with SMTP id u18mr9629998ljd.309.1591547450613; 
+ Sun, 07 Jun 2020 09:30:50 -0700 (PDT)
 Received: from localhost.localdomain (37-144-159-139.broadband.corbina.ru.
  [37.144.159.139])
- by smtp.googlemail.com with ESMTPSA id l7sm1726511ljj.55.2020.06.07.09.30.47
+ by smtp.googlemail.com with ESMTPSA id l7sm1726511ljj.55.2020.06.07.09.30.49
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 07 Jun 2020 09:30:47 -0700 (PDT)
+ Sun, 07 Jun 2020 09:30:50 -0700 (PDT)
 From: Andrey Konovalov <andrey.konovalov@linaro.org>
 To: mchehab@kernel.org, sakari.ailus@iki.fi, manivannan.sadhasivam@linaro.org
-Subject: [PATCH v4 02/10] media: i2c: imx290: fix the order of the args in
- SET_RUNTIME_PM_OPS()
-Date: Sun,  7 Jun 2020 19:30:17 +0300
-Message-Id: <20200607163025.8409-3-andrey.konovalov@linaro.org>
+Subject: [PATCH v4 03/10] media: i2c: imx290: fix reset GPIO pin handling
+Date: Sun,  7 Jun 2020 19:30:18 +0300
+Message-Id: <20200607163025.8409-4-andrey.konovalov@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200607163025.8409-1-andrey.konovalov@linaro.org>
 References: <20200607163025.8409-1-andrey.konovalov@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200607_093050_104575_BA32C053 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20200607_093052_452158_441B0668 
+X-CRM114-Status: GOOD (  13.62  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -108,28 +106,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This macro is defined as SET_RUNTIME_PM_OPS(suspend_fn, resume_fn, idle_fn),
-so imx290_power_off must be the 1st arg, and imx290_power_on the 2nd.
+According to https://www.kernel.org/doc/Documentation/gpio/consumer.txt,
+
+- all of the gpiod_set_value_xxx() functions operate with the *logical* value.
+So in imx290_power_on() the reset signal should be cleared/de-asserted with
+gpiod_set_value_cansleep(imx290->rst_gpio, 0), and in imx290_power_off() the
+value of 1 must be used to apply/assert the reset to the sensor. In the device
+tree the reset pin is described as GPIO_ACTIVE_LOW, and gpiod_set_value_xxx()
+functions take this into account,
+
+- when devm_gpiod_get_optional() is called with GPIOD_ASIS, the GPIO is not
+initialized, and the direction must be set later; using a GPIO
+without setting its direction first is illegal and will result in undefined
+behavior. Fix this by using GPIOD_OUT_HIGH instead of GPIOD_ASIS (this asserts
+the reset signal to the sensor initially).
 
 Signed-off-by: Andrey Konovalov <andrey.konovalov@linaro.org>
 Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/media/i2c/imx290.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/media/i2c/imx290.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/media/i2c/imx290.c b/drivers/media/i2c/imx290.c
-index 2d8c38ffe2f0..d0322f9a8856 100644
+index d0322f9a8856..7b1de1f0c8b7 100644
 --- a/drivers/media/i2c/imx290.c
 +++ b/drivers/media/i2c/imx290.c
-@@ -648,7 +648,7 @@ static int imx290_power_off(struct device *dev)
- }
+@@ -628,7 +628,7 @@ static int imx290_power_on(struct device *dev)
+ 	}
  
- static const struct dev_pm_ops imx290_pm_ops = {
--	SET_RUNTIME_PM_OPS(imx290_power_on, imx290_power_off, NULL)
-+	SET_RUNTIME_PM_OPS(imx290_power_off, imx290_power_on, NULL)
- };
+ 	usleep_range(1, 2);
+-	gpiod_set_value_cansleep(imx290->rst_gpio, 1);
++	gpiod_set_value_cansleep(imx290->rst_gpio, 0);
+ 	usleep_range(30000, 31000);
  
- static const struct v4l2_subdev_video_ops imx290_video_ops = {
+ 	return 0;
+@@ -641,7 +641,7 @@ static int imx290_power_off(struct device *dev)
+ 	struct imx290 *imx290 = to_imx290(sd);
+ 
+ 	clk_disable_unprepare(imx290->xclk);
+-	gpiod_set_value_cansleep(imx290->rst_gpio, 0);
++	gpiod_set_value_cansleep(imx290->rst_gpio, 1);
+ 	regulator_bulk_disable(IMX290_NUM_SUPPLIES, imx290->supplies);
+ 
+ 	return 0;
+@@ -757,7 +757,8 @@ static int imx290_probe(struct i2c_client *client)
+ 		goto free_err;
+ 	}
+ 
+-	imx290->rst_gpio = devm_gpiod_get_optional(dev, "reset", GPIOD_ASIS);
++	imx290->rst_gpio = devm_gpiod_get_optional(dev, "reset",
++						   GPIOD_OUT_HIGH);
+ 	if (IS_ERR(imx290->rst_gpio)) {
+ 		dev_err(dev, "Cannot get reset gpio\n");
+ 		ret = PTR_ERR(imx290->rst_gpio);
 -- 
 2.17.1
 
