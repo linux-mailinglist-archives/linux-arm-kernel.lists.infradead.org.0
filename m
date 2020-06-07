@@ -2,94 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34CE01F0FD9
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jun 2020 22:40:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6D431F1002
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  7 Jun 2020 23:29:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=VpLwqHB7wAANMZoAYNboLKZokapVcBu7ikhIf+kRhM0=; b=heGknROyoDd+8aFqCgvW/5KvzD
-	aaReedHJBlDqD0bUk64JJY4kFYbyhqjm0SCa+X6Oap5mCASJxG/zI+6vNYsX+ZsKloDGG7a+s2vRy
-	fad/cObQgMXYqk8HDtibpHgO/7nabZ6XZpZRnmD1nbByZHRlUEvptTynojlvoZsd6gM+dJtVPTaHc
-	CEqCIsJD/3sPeZ79jRae9AELVvHqaZCdRNgjEqsRqz1IXg5R2QJ3Z9x9hKFTQ+KTLHi/OKOYrdfFa
-	vVCMGdpLv7qeN0ct/5hhbK0p60Q86NLGvwzRLF4yeupkObcsAhQzQ6teKlKkXVhNLziYaLEpHi02E
-	qVl2qBig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=FxtXwELdXpwNrLKtxEUElUkqBs/eHkUP226ryzYjfoE=; b=A+5wDmLL/Vta3J
+	56Zowi8K6fFTnjUFiCXFVshsur7EwiKpbc9Gyh9OZ85pLJyOk5sLXnQJg4cx1ydGpUumq4dYJCXaI
+	ITAZ230PzB/nHohEXz6WqOUNICa5YhRXtfa6nemVyO0OC9OlB5R4QrB6ZakN+EfEyLeIy87H0sfTz
+	pOi2T0UIjrY7h1dtesM8V4X82K6+m6uDadPyPOpGTm5LlAWvCE5BvLrvESXnbnHKYWYx2+TR9XRVt
+	p13GwvZHohlcgDLintdBWuT66j5p8W8+S0CMI4nP1l7/37Yo+gcw1nqyF4HuUPB7Asc/ES4dvBmTU
+	2dKNy759jbG+w36XXwEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1ji25a-0001mf-RT; Sun, 07 Jun 2020 20:40:18 +0000
-Received: from mail-ej1-x644.google.com ([2a00:1450:4864:20::644])
+	id 1ji2rB-00070a-Cq; Sun, 07 Jun 2020 21:29:29 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1ji259-0001kV-M5
- for linux-arm-kernel@lists.infradead.org; Sun, 07 Jun 2020 20:39:53 +0000
-Received: by mail-ej1-x644.google.com with SMTP id k11so16001541ejr.9
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 07 Jun 2020 13:39:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=cxAlOko9t8uVXP+cvSgKgh4pcthYDznq/xdMjGJwWF8=;
- b=KdOyqU9ND3HG5d87XzvYCfQ2uByF1009R35nYXeDDMLn3vhVJNmlnwuNBXc0HasUMj
- LyKvjV0OHT0/GFgDE/03M8ppq31jNA/14gxV99DDyqL8qAre2/OHH5LtP6yQKvfznyX2
- LROlH2K/f/dx1Vn/5b4xOX0oA7ArWmNxLbjZ1JVMq+Vnt/1ms3tCRN/hGC71MCrsqjUd
- GIPFEFAU/eZqHJivwmZWwKWtr3PRkJqQ1obBpY+x+MD2ytvfqSzxenTN/wm1iaf4iXcG
- kNiefj+tDTqhRm+1eJYp0/rg7yaWUj0T9E5B1oGeYm2hbTCHEqv2buK6/vOkL0BGK6WX
- fsQA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=cxAlOko9t8uVXP+cvSgKgh4pcthYDznq/xdMjGJwWF8=;
- b=tixw+sjZQJlrvgIvZARcIp2Okx+zvkAytcAMh8ZEUmGFpxHlNsuBP/Sekl2H7AiE5Y
- dp+HU90jac7PuZf2EDWDHeZ8gDe2ghI6iHiOVHBCkcEskSez7wLMz56+5GVnkIqc4r2s
- 9EL2HrjqsTJD2MiUokbj1ZtB6+0+bnwR/8lE/OhLhPBPS0rbOSvJUTB7xPkxPaHezMS+
- xiYhjtLTuRYt+nz2DRo+3i/gYeBM7LoflEy4geokwi5px5f4xq+wggJJ0JMFgipItfrQ
- WBN+FI4bvfm3pO5AtyQHiqaWMwZ8GRlCRceVbZUdG6ng+fdv2x605aE/yJC2rkOgCmhj
- BgxA==
-X-Gm-Message-State: AOAM530nFZGkjrCEIC27fe4A9/h4prQ0DazqMh6xj8yJWdoArQ7lIsrz
- Qgx7eJj0FL8K1vOCCCkfnNvzMQ==
-X-Google-Smtp-Source: ABdhPJxhaSuBhybacMUdhNX3W1cQmnqaVuUYl4vqsJiFOjecWMYGoz4GLI7EUeGpnCcBDZ6WR7g6xQ==
-X-Received: by 2002:a17:906:a387:: with SMTP id
- k7mr19195332ejz.408.1591562389607; 
- Sun, 07 Jun 2020 13:39:49 -0700 (PDT)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id v29sm10754839edb.62.2020.06.07.13.39.48
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 07 Jun 2020 13:39:48 -0700 (PDT)
-References: <20200604171216.60043-1-colin.king@canonical.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Colin King <colin.king@canonical.com>, Liam Girdwood <lgirdwood@gmail.com>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- Takashi Iwai <tiwai@suse.com>, Kevin Hilman <khilman@baylibre.com>,
- alsa-devel@alsa-project.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
-Subject: Re: [PATCH] ASoC: meson: fix memory leak of links if allocation of
- ldata fails
-In-reply-to: <20200604171216.60043-1-colin.king@canonical.com>
-Date: Sun, 07 Jun 2020 22:39:47 +0200
-Message-ID: <1j7dwik3u4.fsf@starbuckisacylon.baylibre.com>
+ id 1ji2r1-0006zO-Sb; Sun, 07 Jun 2020 21:29:21 +0000
+Received: from ip5f5aa64a.dynamic.kabel-deutschland.de ([95.90.166.74]
+ helo=phil.lan)
+ by gloria.sntech.de with esmtpsa (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <heiko@sntech.de>)
+ id 1ji2qs-0008GG-Ts; Sun, 07 Jun 2020 23:29:10 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: linux-rockchip@lists.infradead.org
+Subject: [PATCH] arm64: dts: rockchip: fix rk3368-lion gmac reset gpio
+Date: Sun,  7 Jun 2020 23:29:09 +0200
+Message-Id: <20200607212909.920575-1-heiko@sntech.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200607_133951_773649_22D70F83 
-X-CRM114-Status: GOOD (  13.93  )
+X-CRM114-CacheID: sfid-20200607_142919_923024_7867016F 
+X-CRM114-Status: GOOD (  10.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,68 +55,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
+Cc: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>,
+ klaus.goger@theobroma-systems.com, linux-arm-kernel@lists.infradead.org,
+ christoph.muellner@theobroma-systems.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
 
-On Thu 04 Jun 2020 at 19:12, Colin King <colin.king@canonical.com> wrote:
+The lion gmac node currently uses opposite active-values for the
+gmac phy reset pin. The gpio-declaration uses active-high while the
+separate snps,reset-active-low property marks the pin as active low.
 
-> From: Colin Ian King <colin.king@canonical.com>
->
-> Currently if the allocation of ldata fails the error return path
-> does not kfree the allocated links object.  Fix this by adding
-> an error exit return path that performs the necessary kfree'ing.
->
-> Addresses-Coverity: ("Resource leak")
-> Fixes: 7864a79f37b5 ("ASoC: meson: add axg sound card support")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+While on the kernel side this works ok, other DT users may get
+confused - as seen with uboot right now.
 
-Looks good, Thx
+So bring this in line and make both properties match, similar to the
+other Rockchip board.
 
-Acked-by: Jerome Brunet <jbrunet@baylibre.com>
+Fixes: d99a02bcfa81 ("arm64: dts: rockchip: add RK3368-uQ7 (Lion) SoM")
+Signed-off-by: Heiko Stuebner <heiko.stuebner@theobroma-systems.com>
+---
+ arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> ---
->  sound/soc/meson/meson-card-utils.c | 17 ++++++++++++-----
->  1 file changed, 12 insertions(+), 5 deletions(-)
->
-> diff --git a/sound/soc/meson/meson-card-utils.c b/sound/soc/meson/meson-card-utils.c
-> index 2ca8c98e204f..5a4a91c88734 100644
-> --- a/sound/soc/meson/meson-card-utils.c
-> +++ b/sound/soc/meson/meson-card-utils.c
-> @@ -49,19 +49,26 @@ int meson_card_reallocate_links(struct snd_soc_card *card,
->  	links = krealloc(priv->card.dai_link,
->  			 num_links * sizeof(*priv->card.dai_link),
->  			 GFP_KERNEL | __GFP_ZERO);
-> +	if (!links)
-> +		goto err_links;
-> +
->  	ldata = krealloc(priv->link_data,
->  			 num_links * sizeof(*priv->link_data),
->  			 GFP_KERNEL | __GFP_ZERO);
-> -
-> -	if (!links || !ldata) {
-> -		dev_err(priv->card.dev, "failed to allocate links\n");
-> -		return -ENOMEM;
-> -	}
-> +	if (!ldata)
-> +		goto err_ldata;
->  
->  	priv->card.dai_link = links;
->  	priv->link_data = ldata;
->  	priv->card.num_links = num_links;
->  	return 0;
-> +
-> +err_ldata:
-> +	kfree(links);
-> +err_links:
-> +	dev_err(priv->card.dev, "failed to allocate links\n");
-> +	return -ENOMEM;
-> +
->  }
->  EXPORT_SYMBOL_GPL(meson_card_reallocate_links);
+diff --git a/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi b/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
+index a53de05b5c80..0a137df1ed40 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3368-lion.dtsi
+@@ -157,7 +157,7 @@ &gmac {
+ 	pinctrl-0 = <&rgmii_pins>;
+ 	snps,reset-active-low;
+ 	snps,reset-delays-us = <0 10000 50000>;
+-	snps,reset-gpio = <&gpio3 RK_PB3 GPIO_ACTIVE_HIGH>;
++	snps,reset-gpio = <&gpio3 RK_PB3 GPIO_ACTIVE_LOW>;
+ 	tx_delay = <0x10>;
+ 	rx_delay = <0x10>;
+ 	status = "okay";
+-- 
+2.26.2
 
 
 _______________________________________________
