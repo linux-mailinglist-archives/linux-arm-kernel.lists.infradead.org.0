@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35E3E1F2312
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:13:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C994F1F232D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:13:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5ZXrqHtY2c3+UpTjkYbZXes/JSH/7o6T97D68+xFGC0=; b=fDAwAAMytO0Pi3
-	xE2Mh/PPdFUcyuKK8j/vyrxqhYCdfvVIjSzEHo2ssufRYpAwbERVX+BUoNivxrLj6hGkAbi9C8euj
-	Kjlxv4YoscVYEZszgTlUGLqnQtD5eQZtUnd0v+I9banuS0vBP68IR1up6NUzdoZbvpWso95DJmKuS
-	KVKYIufSW+IqDLI/9j0i4gvZV+3vKLPDb0NlUhNE58KzEKqwWY0iNHQtJkFrIwgBWyWUJS2FDreAO
-	VzNrRMW5173sgmT4q/oG0dtYBfi2IpdHlNYvrN8qE54xrbiGadHzSveOcipdvK7MaQjF4HXxp87gU
-	yAv2zcDRk3HVjJwTtLuA==;
+	List-Owner; bh=tvTpLHC01NO228IxgoOtyr656ENFOSnj6rONQC7mgGI=; b=m3UsgnRYfQrbRL
+	VcusjmhN2sqDV2u8Ll7fzdXrmV3hIyvq8DONNkjmJ9hM8lrpfVsuLUa5vxHy46UaMOrhr7PKQmqx4
+	H3LXvJhITN+nvbIA1Gxz0U8qckTl4NOps7Dyc+07nIui2y6JosK0Dx4H5W62IFcVRM4jouzxaDn/3
+	JPxWTSPzC9LWYsDuEClHPxfoDCY7AS0RFByHOXhvxA5OMAWQ1xgM2ugnxSWB9N68E3bM0cRr5T+bM
+	P+Zy/yp1odFhsV/pSOwAg6HkET1ed+PFHtTaIpK6+QOFUgTnSwp4iNkwDOflaV42zlsLbZbnmhkTi
+	sC0jZPlTV/kafv1sCVIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQwp-00065b-U5; Mon, 08 Jun 2020 23:12:55 +0000
+	id 1jiQxe-0006dp-1f; Mon, 08 Jun 2020 23:13:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQse-0008PY-CO
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:08:38 +0000
+ id 1jiQtD-0000Vh-GS
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:09:16 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBD0920890;
- Mon,  8 Jun 2020 23:08:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F04D020897;
+ Mon,  8 Jun 2020 23:09:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657715;
- bh=lpX2+wur1t1gEsxx2uAp+EdCAOVN3IOjp4QxKK+GMt4=;
+ s=default; t=1591657750;
+ bh=xEbBIEsVZpgZRzeIw0W3nUmh8/Kv6ds/xYH3qeceVGo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=cMFxXh4XMeVV2ADCYMblsHnOVD8Tt3lmB7/dOPaAEoubIf5/QAG8P7TH4gBlAuOVR
- ImrkkZGr3V6b35EcXo2MhJFigkhfeiuK9OTV/aE0ds89JaFxJmWkgQj4cgRSiA/Ywh
- yW93W5prYv0rYMiDVEJuFAaQK80MR9APcY6q8IHQ=
+ b=tZSqn70Cp9zJuTCasokJJ+BSSY9QI8gvgaNvC7S71U+d0qyV9BfoNwYDTo5TodImG
+ cOpEHa6C5d9O/TXCHQnX4aSjQbHSIufjWQpVJnIQzUFKIXjkCu4OgVCCrTD9+LxkPO
+ pRQ4feRAlVy4tDEj8gHB2FxaKN8k8BS8/Y3qvS4w=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 110/274] media: imx: utils: fix media bus format
- enumeration
-Date: Mon,  8 Jun 2020 19:03:23 -0400
-Message-Id: <20200608230607.3361041-110-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 137/274] ARM: 8969/1: decompressor: simplify
+ libfdt builds
+Date: Mon,  8 Jun 2020 19:03:50 -0400
+Message-Id: <20200608230607.3361041-137-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160836_505430_022A2C57 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20200608_160911_647395_08606B79 
+X-CRM114-Status: GOOD (  15.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,136 +80,221 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devel@driverdev.osuosl.org,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Hans Verkuil <hverkuil-cisco@xs4all.nl>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Sasha Levin <sashal@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Philipp Zabel <p.zabel@pengutronix.de>
+From: Masahiro Yamada <masahiroy@kernel.org>
 
-[ Upstream commit 1df2148fdfc036c9350d41ae81b09b3f8897c9b6 ]
+[ Upstream commit 7ae4a78daacf240a8247cde73337dc4b26d253da ]
 
-Iterate over all media bus formats, not just over the first format in
-each imx_media_pixfmt entry.
+Copying source files during the build time may not end up with
+as clean code as expected.
 
-Before:
+lib/fdt*.c simply wrap scripts/dtc/libfdt/fdt*.c, and it works
+nicely. Let's follow this approach for the arm decompressor, too.
 
-  $ v4l2-ctl -d $(media-ctl -e ipu1_csi0) --list-subdev-mbus-codes 0
-  ioctl: VIDIOC_SUBDEV_ENUM_MBUS_CODE (pad=0)
-	0x2006: MEDIA_BUS_FMT_UYVY8_2X8
-	0x2008: MEDIA_BUS_FMT_YUYV8_2X8
-	0x1008: MEDIA_BUS_FMT_RGB565_2X8_LE
-	0x100a: MEDIA_BUS_FMT_RGB888_1X24
-	0x100d: MEDIA_BUS_FMT_ARGB8888_1X32
-	0x3001: MEDIA_BUS_FMT_SBGGR8_1X8
-	0x3013: MEDIA_BUS_FMT_SGBRG8_1X8
-	0x3002: MEDIA_BUS_FMT_SGRBG8_1X8
-	0x3014: MEDIA_BUS_FMT_SRGGB8_1X8
-	0x3007: MEDIA_BUS_FMT_SBGGR10_1X10
-	0x300e: MEDIA_BUS_FMT_SGBRG10_1X10
-	0x300a: MEDIA_BUS_FMT_SGRBG10_1X10
-	0x300f: MEDIA_BUS_FMT_SRGGB10_1X10
-	0x2001: MEDIA_BUS_FMT_Y8_1X8
-	0x200a: MEDIA_BUS_FMT_Y10_1X10
+Add four wrappers, arch/arm/boot/compressed/fdt*.c and remove
+the Makefile messes. Another nice thing is we no longer need to
+maintain the own libfdt_env.h because the decompressor can include
+<linux/libfdt_env.h>.
 
-After:
+There is a subtle problem when generated files are turned into
+check-in files.
 
-  $ v4l2-ctl -d $(media-ctl -e ipu1_csi0) --list-subdev-mbus-codes 0
-  ioctl: VIDIOC_SUBDEV_ENUM_MBUS_CODE (pad=0)
-	0x2006: MEDIA_BUS_FMT_UYVY8_2X8
-	0x200f: MEDIA_BUS_FMT_UYVY8_1X16
-	0x2008: MEDIA_BUS_FMT_YUYV8_2X8
-	0x2011: MEDIA_BUS_FMT_YUYV8_1X16
-	0x1008: MEDIA_BUS_FMT_RGB565_2X8_LE
-	0x100a: MEDIA_BUS_FMT_RGB888_1X24
-	0x100c: MEDIA_BUS_FMT_RGB888_2X12_LE
-	0x100d: MEDIA_BUS_FMT_ARGB8888_1X32
-	0x3001: MEDIA_BUS_FMT_SBGGR8_1X8
-	0x3013: MEDIA_BUS_FMT_SGBRG8_1X8
-	0x3002: MEDIA_BUS_FMT_SGRBG8_1X8
-	0x3014: MEDIA_BUS_FMT_SRGGB8_1X8
-	0x3007: MEDIA_BUS_FMT_SBGGR10_1X10
-	0x3008: MEDIA_BUS_FMT_SBGGR12_1X12
-	0x3019: MEDIA_BUS_FMT_SBGGR14_1X14
-	0x301d: MEDIA_BUS_FMT_SBGGR16_1X16
-	0x300e: MEDIA_BUS_FMT_SGBRG10_1X10
-	0x3010: MEDIA_BUS_FMT_SGBRG12_1X12
-	0x301a: MEDIA_BUS_FMT_SGBRG14_1X14
-	0x301e: MEDIA_BUS_FMT_SGBRG16_1X16
-	0x300a: MEDIA_BUS_FMT_SGRBG10_1X10
-	0x3011: MEDIA_BUS_FMT_SGRBG12_1X12
-	0x301b: MEDIA_BUS_FMT_SGRBG14_1X14
-	0x301f: MEDIA_BUS_FMT_SGRBG16_1X16
-	0x300f: MEDIA_BUS_FMT_SRGGB10_1X10
-	0x3012: MEDIA_BUS_FMT_SRGGB12_1X12
-	0x301c: MEDIA_BUS_FMT_SRGGB14_1X14
-	0x3020: MEDIA_BUS_FMT_SRGGB16_1X16
-	0x2001: MEDIA_BUS_FMT_Y8_1X8
-	0x200a: MEDIA_BUS_FMT_Y10_1X10
-	0x2013: MEDIA_BUS_FMT_Y12_1X12
+When you are doing a rebuild of an existing object tree with O=
+option, there exists stale "shipped" copies that the old Makefile
+implementation created. The build system ends up with compiling the
+stale generated files because Make searches for prerequisites in the
+current directory, i.e. $(objtree) first, and then the directory
+listed in VPATH, i.e. $(srctree).
 
-[laurent.pinchart@ideasonboard.com: Decrement index to replace loop counter k]
-[laurent.pinchart@ideasonboard.com: Return directly from within the loops]
+To mend this issue, I added the following code:
 
-Fixes: e130291212df5 ("[media] media: Add i.MX media core driver")
-Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
-Signed-off-by: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
-Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+  ifdef building_out_of_srctree
+  $(shell rm -f $(addprefix $(obj)/, fdt_rw.c fdt_ro.c fdt_wip.c fdt.c))
+  endif
+
+This will need to stay for a while because "git bisect" crossing this
+commit, otherwise, would result in a build error.
+
+Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/staging/media/imx/imx-media-utils.c | 22 +++++++++++++++------
- 1 file changed, 16 insertions(+), 6 deletions(-)
+ arch/arm/boot/compressed/.gitignore     |  9 ------
+ arch/arm/boot/compressed/Makefile       | 38 ++++++++++---------------
+ arch/arm/boot/compressed/atags_to_fdt.c |  1 +
+ arch/arm/boot/compressed/fdt.c          |  2 ++
+ arch/arm/boot/compressed/fdt_ro.c       |  2 ++
+ arch/arm/boot/compressed/fdt_rw.c       |  2 ++
+ arch/arm/boot/compressed/fdt_wip.c      |  2 ++
+ arch/arm/boot/compressed/libfdt_env.h   | 24 ----------------
+ 8 files changed, 24 insertions(+), 56 deletions(-)
+ create mode 100644 arch/arm/boot/compressed/fdt.c
+ create mode 100644 arch/arm/boot/compressed/fdt_ro.c
+ create mode 100644 arch/arm/boot/compressed/fdt_rw.c
+ create mode 100644 arch/arm/boot/compressed/fdt_wip.c
+ delete mode 100644 arch/arm/boot/compressed/libfdt_env.h
 
-diff --git a/drivers/staging/media/imx/imx-media-utils.c b/drivers/staging/media/imx/imx-media-utils.c
-index 39469031e510..00a71f01786c 100644
---- a/drivers/staging/media/imx/imx-media-utils.c
-+++ b/drivers/staging/media/imx/imx-media-utils.c
-@@ -269,6 +269,7 @@ static int enum_format(u32 *fourcc, u32 *code, u32 index,
- 	for (i = 0; i < ARRAY_SIZE(pixel_formats); i++) {
- 		const struct imx_media_pixfmt *fmt = &pixel_formats[i];
- 		enum codespace_sel fmt_cs_sel;
-+		unsigned int j;
+diff --git a/arch/arm/boot/compressed/.gitignore b/arch/arm/boot/compressed/.gitignore
+index db05c6ef3e31..60606b0f378d 100644
+--- a/arch/arm/boot/compressed/.gitignore
++++ b/arch/arm/boot/compressed/.gitignore
+@@ -7,12 +7,3 @@ hyp-stub.S
+ piggy_data
+ vmlinux
+ vmlinux.lds
+-
+-# borrowed libfdt files
+-fdt.c
+-fdt.h
+-fdt_ro.c
+-fdt_rw.c
+-fdt_wip.c
+-libfdt.h
+-libfdt_internal.h
+diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
+index 9c11e7490292..00602a6fba04 100644
+--- a/arch/arm/boot/compressed/Makefile
++++ b/arch/arm/boot/compressed/Makefile
+@@ -76,29 +76,30 @@ compress-$(CONFIG_KERNEL_LZMA) = lzma
+ compress-$(CONFIG_KERNEL_XZ)   = xzkern
+ compress-$(CONFIG_KERNEL_LZ4)  = lz4
  
- 		fmt_cs_sel = (fmt->cs == IPUV3_COLORSPACE_YUV) ?
- 			CS_SEL_YUV : CS_SEL_RGB;
-@@ -278,15 +279,24 @@ static int enum_format(u32 *fourcc, u32 *code, u32 index,
- 		    (!allow_bayer && fmt->bayer))
- 			continue;
+-# Borrowed libfdt files for the ATAG compatibility mode
+-
+-libfdt		:= fdt_rw.c fdt_ro.c fdt_wip.c fdt.c
+-libfdt_hdrs	:= fdt.h libfdt.h libfdt_internal.h
+-
+-libfdt_objs	:= $(addsuffix .o, $(basename $(libfdt)))
+-
+-$(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
+-	$(call cmd,shipped)
+-
+-$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
+-	$(addprefix $(obj)/,$(libfdt_hdrs))
++libfdt_objs := fdt_rw.o fdt_ro.o fdt_wip.o fdt.o
  
--		if (index == 0) {
--			if (fourcc)
--				*fourcc = fmt->fourcc;
--			if (code)
--				*code = fmt->codes[0];
-+		if (fourcc && index == 0) {
-+			*fourcc = fmt->fourcc;
- 			return 0;
- 		}
+ ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
+ OBJS	+= $(libfdt_objs) atags_to_fdt.o
+ endif
  
--		index--;
-+		if (!code) {
-+			index--;
-+			continue;
-+		}
++# -fstack-protector-strong triggers protection checks in this code,
++# but it is being used too early to link to meaningful stack_chk logic.
++nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
++$(foreach o, $(libfdt_objs) atags_to_fdt.o, \
++	$(eval CFLAGS_$(o) := -I $(srctree)/scripts/dtc/libfdt $(nossp-flags-y)))
 +
-+		for (j = 0; j < ARRAY_SIZE(fmt->codes) && fmt->codes[j]; j++) {
-+			if (index == 0) {
-+				*code = fmt->codes[j];
-+				return 0;
-+			}
++# These were previously generated C files. When you are building the kernel
++# with O=, make sure to remove the stale files in the output tree. Otherwise,
++# the build system wrongly compiles the stale ones.
++ifdef building_out_of_srctree
++$(shell rm -f $(addprefix $(obj)/, fdt_rw.c fdt_ro.c fdt_wip.c fdt.c))
++endif
 +
-+			index--;
-+		}
- 	}
+ targets       := vmlinux vmlinux.lds piggy_data piggy.o \
+ 		 lib1funcs.o ashldi3.o bswapsdi2.o \
+ 		 head.o $(OBJS)
  
- 	return -EINVAL;
+-clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S \
+-		$(libfdt) $(libfdt_hdrs) hyp-stub.S
++clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S hyp-stub.S
+ 
+ KBUILD_CFLAGS += -DDISABLE_BRANCH_PROFILING
+ 
+@@ -107,15 +108,6 @@ ORIG_CFLAGS := $(KBUILD_CFLAGS)
+ KBUILD_CFLAGS = $(subst -pg, , $(ORIG_CFLAGS))
+ endif
+ 
+-# -fstack-protector-strong triggers protection checks in this code,
+-# but it is being used too early to link to meaningful stack_chk logic.
+-nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
+-CFLAGS_atags_to_fdt.o := $(nossp-flags-y)
+-CFLAGS_fdt.o := $(nossp-flags-y)
+-CFLAGS_fdt_ro.o := $(nossp-flags-y)
+-CFLAGS_fdt_rw.o := $(nossp-flags-y)
+-CFLAGS_fdt_wip.o := $(nossp-flags-y)
+-
+ ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin \
+ 	     -I$(obj) $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
+ asflags-y := -DZIMAGE
+diff --git a/arch/arm/boot/compressed/atags_to_fdt.c b/arch/arm/boot/compressed/atags_to_fdt.c
+index 64c49747f8a3..8452753efebe 100644
+--- a/arch/arm/boot/compressed/atags_to_fdt.c
++++ b/arch/arm/boot/compressed/atags_to_fdt.c
+@@ -1,4 +1,5 @@
+ // SPDX-License-Identifier: GPL-2.0
++#include <linux/libfdt_env.h>
+ #include <asm/setup.h>
+ #include <libfdt.h>
+ 
+diff --git a/arch/arm/boot/compressed/fdt.c b/arch/arm/boot/compressed/fdt.c
+new file mode 100644
+index 000000000000..f8ea7a201ab1
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt.c
+@@ -0,0 +1,2 @@
++// SPDX-License-Identifier: GPL-2.0-only
++#include "../../../../lib/fdt.c"
+diff --git a/arch/arm/boot/compressed/fdt_ro.c b/arch/arm/boot/compressed/fdt_ro.c
+new file mode 100644
+index 000000000000..93970a4ad5ae
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt_ro.c
+@@ -0,0 +1,2 @@
++// SPDX-License-Identifier: GPL-2.0-only
++#include "../../../../lib/fdt_ro.c"
+diff --git a/arch/arm/boot/compressed/fdt_rw.c b/arch/arm/boot/compressed/fdt_rw.c
+new file mode 100644
+index 000000000000..f7c6b8b7e01c
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt_rw.c
+@@ -0,0 +1,2 @@
++// SPDX-License-Identifier: GPL-2.0-only
++#include "../../../../lib/fdt_rw.c"
+diff --git a/arch/arm/boot/compressed/fdt_wip.c b/arch/arm/boot/compressed/fdt_wip.c
+new file mode 100644
+index 000000000000..048d2c7a088d
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt_wip.c
+@@ -0,0 +1,2 @@
++// SPDX-License-Identifier: GPL-2.0-only
++#include "../../../../lib/fdt_wip.c"
+diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
+deleted file mode 100644
+index 6a0f1f524466..000000000000
+--- a/arch/arm/boot/compressed/libfdt_env.h
++++ /dev/null
+@@ -1,24 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef _ARM_LIBFDT_ENV_H
+-#define _ARM_LIBFDT_ENV_H
+-
+-#include <linux/limits.h>
+-#include <linux/types.h>
+-#include <linux/string.h>
+-#include <asm/byteorder.h>
+-
+-#define INT32_MAX	S32_MAX
+-#define UINT32_MAX	U32_MAX
+-
+-typedef __be16 fdt16_t;
+-typedef __be32 fdt32_t;
+-typedef __be64 fdt64_t;
+-
+-#define fdt16_to_cpu(x)		be16_to_cpu(x)
+-#define cpu_to_fdt16(x)		cpu_to_be16(x)
+-#define fdt32_to_cpu(x)		be32_to_cpu(x)
+-#define cpu_to_fdt32(x)		cpu_to_be32(x)
+-#define fdt64_to_cpu(x)		be64_to_cpu(x)
+-#define cpu_to_fdt64(x)		cpu_to_be64(x)
+-
+-#endif
 -- 
 2.25.1
 
