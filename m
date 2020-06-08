@@ -2,30 +2,30 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1FED1F1FE4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:28:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46CA31F1FE8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:28:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8DMR9wXCBYnePxkGro8ugfjaPcFxFCFoP7S0yutEaos=; b=HkxH8kRSGgoiQZ
-	8M3PBp7aQAPzkXFiAfeygemhsJuS7J/uyOmPj4iBf4N1vWblySUr6UHD3zcO1BtslvpEKPpA02Tlf
-	YnVzwDlC3Iun7pICk8xxB3biLW5C5kQTsP0NelV0bm0ntRf0UkV2zJrrTgxqmIuAetiovYjnXu0ip
-	Ah/oL7qVxVBC2Dwohlkbg1/k97u5aT9uTFXZ32LoiguP8rO+6l+xGTAlmrzs9czp+rWVpKWgrUDpa
-	BuGe8UatDNt1axks+jo7yegI7OA0RwbV5+feRZIC4Yv05AO/4/kcpQEiCoyASUjCQPFoMW7CQuybQ
-	C681L74J5v+ap1/+9Bzg==;
+	List-Owner; bh=BKjEla5F4KZ0Ky2kqz7OCOdl0ZMHL8+kvSiPubbGK0I=; b=owmHkq7qi3GKGR
+	Xf1h0PcvHYrqqfkcywQwcToYRp9RtOPfO08LsGYGfnAhNXVJqqS/FJnkNnmuVuHpj3BN/hym3rstA
+	P9ZMeoKPXON0Iff09oDOsQoBmpwLnimLG2Jd5Yv0P8j5wjUu7NwPmXXx8ljDwftN07l+HyBSJ73fU
+	f1s1yITYBDGbWxUSJWmeT/pUyqPG1fxrlYMcaGPqBORlVdyE9ZFZAroiXl2ln0s/HzRH85eIIM6V7
+	cdRjKHcosDeDfd8jaQ87+srqbtnJFrH1A0xpcbWHaxmiZ+1OEeUBV3HMA/xAcH+nXJb9bOqBwiYd/
+	FXk3p1mh5/EPr23yWKCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiNRe-00031G-76; Mon, 08 Jun 2020 19:28:30 +0000
+	id 1jiNRx-0003Cx-EP; Mon, 08 Jun 2020 19:28:49 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiNQl-0002FS-DZ; Mon, 08 Jun 2020 19:27:36 +0000
+ id 1jiNQm-0002GK-Hb; Mon, 08 Jun 2020 19:27:37 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 3C2D5AEBB;
- Mon,  8 Jun 2020 19:27:37 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 43A70AEBF;
+ Mon,  8 Jun 2020 19:27:38 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
  robh@kernel.org, mathias.nyman@linux.intel.com,
@@ -34,16 +34,16 @@ To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
  devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
  linux-usb@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: [PATCH 3/9] ARM: dts: bcm2711: Add firmware usb reset node
-Date: Mon,  8 Jun 2020 21:26:55 +0200
-Message-Id: <20200608192701.18355-4-nsaenzjulienne@suse.de>
+Subject: [PATCH 4/9] ARM: dts: bcm2711: Add reset controller to xHCI node
+Date: Mon,  8 Jun 2020 21:26:56 +0200
+Message-Id: <20200608192701.18355-5-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200608192701.18355-1-nsaenzjulienne@suse.de>
 References: <20200608192701.18355-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_122735_597821_2120CDA9 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20200608_122736_737126_E655C68D 
+X-CRM114-Status: GOOD (  11.37  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,30 +74,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that the reset driver exposing Raspberry Pi 4's firmware based USB
-reset routine is available, let's add the device tree node exposing it.
+The chip is hardwired to the board's PCIe bus and needs to be properly
+setup trough a firmware routine after a PCI fundamental reset. Pass the
+reset controller phandle that takes care of triggering the
+initialization to the relevant PCI device.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-index c7f1d97e69bb..47e7c9c14ddf 100644
+index 47e7c9c14ddf..2646c858449f 100644
 --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
 +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-@@ -83,6 +83,11 @@ expgpio: gpio {
- 				  "";
- 		status = "okay";
+@@ -207,6 +207,13 @@ phy1: ethernet-phy@1 {
  	};
-+
-+	usb_reset: usb-reset {
-+		compatible = "raspberrypi,firmware-usb-reset";
-+		#reset-cells = <0>;
-+	};
  };
  
- &gpio {
++&pcie0 {
++	usb@1,0 {
++		reg = <0 0 0 0 0>;
++		resets = <&usb_reset>;
++	};
++};
++
+ /* uart0 communicates with the BT module */
+ &uart0 {
+ 	pinctrl-names = "default";
 -- 
 2.26.2
 
