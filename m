@@ -2,30 +2,30 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 908201F1FEF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:30:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA6711F1FF0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:30:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rEdKiuaIrAQppMvIC5dmRuVYTRhwzISyrS4kQqkltuc=; b=rJMb4oMsM/RAsL
-	ROm4HsJ3wCI9ebFJQPk1qR3wP+SHw+aYlE9FFiLyZIA9n19FKp6gRhjH5c0qVfODuM2gugMfFQisj
-	88JP5AE/dFWYq+acyQ7bx4LTURpbPrkzlJiUTMeSUksqGTSa7kPGe2HThI7ld2DlJZ5RWI63F616p
-	8JHbXDUPG+nq2JkyxTZUR2mUtQql5CaWMoe8yG84JTRY4k5V3aubf7/jf0jw6hr9HxdowP8OxYTQv
-	CREciAasCg2L48Si1lNjVt0f9oHdGWsQeV9Xfb9DoUOKn6vlFjYBPxWUduNWrrJKafGg1Zt22i/mm
-	yv0K4mlstPMcBsideigw==;
+	List-Owner; bh=DWkfZl0FMp2/x9ZxYYISJVoco5O0XdH4to+dWcwE2RE=; b=cFv7D7I4/7c0oK
+	I0FvJf1PDzdxiiTbxtA1/R0OyU2/Dz516YyJmF8mLnIBH+tXP1qAD34dlBpoZhXD8JW87A+/yssAe
+	BV4UfcTpoPKVsxan845p6nFGRicEjXETrzhydYRQEN/Z2flRm0LoNlcNAZUm/P3MNidQWpN7A6fkt
+	RfReY+tXamqq5mYinU6F7QgVsPsVV8cJTXg0g/0NFXq+0sxNGcj40M1iL8EChgcfZaJ6gxthXeC4p
+	G2g+cbwQfW6yi9BC7JdWwHNSnEFzQAsHUX7JVzHMtnnWlqRCG2fVZPYLqBrWR4fEGOfKzvL/1tTqm
+	hJvNAwSWNPnBazZS6TxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiNT0-0004EI-Em; Mon, 08 Jun 2020 19:29:54 +0000
+	id 1jiNTQ-0004Ru-AE; Mon, 08 Jun 2020 19:30:20 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiNQq-0002Ks-Sp; Mon, 08 Jun 2020 19:27:42 +0000
+ id 1jiNQr-0002MT-Vz; Mon, 08 Jun 2020 19:27:43 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 7652DAEBF;
- Mon,  8 Jun 2020 19:27:42 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 86AA3AFFB;
+ Mon,  8 Jun 2020 19:27:43 +0000 (UTC)
 From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
  robh@kernel.org, mathias.nyman@linux.intel.com,
@@ -33,18 +33,18 @@ To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
  linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
  linux-usb@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
-Subject: [PATCH 8/9] Revert "firmware: raspberrypi: Introduce vl805 init
- routine"
-Date: Mon,  8 Jun 2020 21:27:00 +0200
-Message-Id: <20200608192701.18355-9-nsaenzjulienne@suse.de>
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: [PATCH 9/9] Revert "PCI: brcmstb: Wait for Raspberry Pi's firmware
+ when present"
+Date: Mon,  8 Jun 2020 21:27:01 +0200
+Message-Id: <20200608192701.18355-10-nsaenzjulienne@suse.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200608192701.18355-1-nsaenzjulienne@suse.de>
 References: <20200608192701.18355-1-nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_122741_243494_B8D9B126 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20200608_122742_198430_AE57DF3D 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,141 +68,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, tim.gover@raspberrypi.org, helgaas@kernel.org,
- linux-kernel@vger.kernel.org
+Cc: Bjorn Helgaas <bhelgaas@google.com>, tim.gover@raspberrypi.org,
+ helgaas@kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit fbbc5ff3f7f9f4cad562e530ae2cf5d8964fe6d3.
+This reverts commit 44331189f9082c7e659697bbac1747db3def73e7.
 
-The vl805 routine has moved to drivers/reset/reset-raspberrypi-usb.c
+Now that the VL805 init routine is run through a reset controller driver
+the dependencies are being taken care of by the device core. No need to
+do it manually here.
 
 Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 ---
- drivers/firmware/raspberrypi.c             | 61 ----------------------
- include/soc/bcm2835/raspberrypi-firmware.h |  7 ---
- 2 files changed, 68 deletions(-)
+ drivers/pci/controller/pcie-brcmstb.c | 17 -----------------
+ 1 file changed, 17 deletions(-)
 
-diff --git a/drivers/firmware/raspberrypi.c b/drivers/firmware/raspberrypi.c
-index ef8098856a47..a3e85186f8e6 100644
---- a/drivers/firmware/raspberrypi.c
-+++ b/drivers/firmware/raspberrypi.c
-@@ -12,8 +12,6 @@
- #include <linux/of_platform.h>
- #include <linux/platform_device.h>
- #include <linux/slab.h>
--#include <linux/pci.h>
--#include <linux/delay.h>
- #include <soc/bcm2835/raspberrypi-firmware.h>
+diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+index 7730ea845ff2..752f5b331579 100644
+--- a/drivers/pci/controller/pcie-brcmstb.c
++++ b/drivers/pci/controller/pcie-brcmstb.c
+@@ -28,8 +28,6 @@
+ #include <linux/string.h>
+ #include <linux/types.h>
  
- #define MBOX_MSG(chan, data28)		(((data28) & ~0xf) | ((chan) & 0xf))
-@@ -21,8 +19,6 @@
- #define MBOX_DATA28(msg)		((msg) & ~0xf)
- #define MBOX_CHAN_PROPERTY		8
- 
--#define VL805_PCI_CONFIG_VERSION_OFFSET		0x50
+-#include <soc/bcm2835/raspberrypi-firmware.h>
 -
- static struct platform_device *rpi_hwmon;
- static struct platform_device *rpi_clk;
+ #include "../pci.h"
  
-@@ -284,63 +280,6 @@ struct rpi_firmware *rpi_firmware_get(struct device_node *firmware_node)
- }
- EXPORT_SYMBOL_GPL(rpi_firmware_get);
- 
--/*
-- * The Raspberry Pi 4 gets its USB functionality from VL805, a PCIe chip that
-- * implements xHCI. After a PCI reset, VL805's firmware may either be loaded
-- * directly from an EEPROM or, if not present, by the SoC's co-processor,
-- * VideoCore. RPi4's VideoCore OS contains both the non public firmware load
-- * logic and the VL805 firmware blob. This function triggers the aforementioned
-- * process.
-- */
--int rpi_firmware_init_vl805(struct pci_dev *pdev)
--{
+ /* BRCM_PCIE_CAP_REGS - Offset for the mandatory capability config regs */
+@@ -931,26 +929,11 @@ static int brcm_pcie_probe(struct platform_device *pdev)
+ {
+ 	struct device_node *np = pdev->dev.of_node, *msi_np;
+ 	struct pci_host_bridge *bridge;
 -	struct device_node *fw_np;
--	struct rpi_firmware *fw;
--	u32 dev_addr, version;
--	int ret;
--
+ 	struct brcm_pcie *pcie;
+ 	struct pci_bus *child;
+ 	struct resource *res;
+ 	int ret;
+ 
+-	/*
+-	 * We have to wait for Raspberry Pi's firmware interface to be up as a
+-	 * PCI fixup, rpi_firmware_init_vl805(), depends on it. This driver's
+-	 * probe can race with the firmware interface's (see
+-	 * drivers/firmware/raspberrypi.c) and potentially break the PCI fixup.
+-	 */
 -	fw_np = of_find_compatible_node(NULL, NULL,
 -					"raspberrypi,bcm2835-firmware");
--	if (!fw_np)
--		return 0;
--
--	fw = rpi_firmware_get(fw_np);
+-	if (fw_np && !rpi_firmware_get(fw_np)) {
+-		of_node_put(fw_np);
+-		return -EPROBE_DEFER;
+-	}
 -	of_node_put(fw_np);
--	if (!fw)
--		return -ENODEV;
 -
--	/*
--	 * Make sure we don't trigger a firmware load unnecessarily.
--	 *
--	 * If something went wrong with PCI, this whole exercise would be
--	 * futile as VideoCore expects from us a configured PCI bus. Just take
--	 * the faulty version (likely ~0) and let xHCI's registration fail
--	 * further down the line.
--	 */
--	pci_read_config_dword(pdev, VL805_PCI_CONFIG_VERSION_OFFSET, &version);
--	if (version)
--		goto exit;
--
--	dev_addr = pdev->bus->number << 20 | PCI_SLOT(pdev->devfn) << 15 |
--		   PCI_FUNC(pdev->devfn) << 12;
--
--	ret = rpi_firmware_property(fw, RPI_FIRMWARE_NOTIFY_XHCI_RESET,
--				    &dev_addr, sizeof(dev_addr));
--	if (ret)
--		return ret;
--
--	/* Wait for vl805 to startup */
--	usleep_range(200, 1000);
--
--	pci_read_config_dword(pdev, VL805_PCI_CONFIG_VERSION_OFFSET,
--			      &version);
--exit:
--	pci_info(pdev, "VL805 firmware version %08x\n", version);
--
--	return 0;
--}
--EXPORT_SYMBOL_GPL(rpi_firmware_init_vl805);
--
- static const struct of_device_id rpi_firmware_of_match[] = {
- 	{ .compatible = "raspberrypi,bcm2835-firmware", },
- 	{},
-diff --git a/include/soc/bcm2835/raspberrypi-firmware.h b/include/soc/bcm2835/raspberrypi-firmware.h
-index 3025aca3c358..cc9cdbc66403 100644
---- a/include/soc/bcm2835/raspberrypi-firmware.h
-+++ b/include/soc/bcm2835/raspberrypi-firmware.h
-@@ -10,7 +10,6 @@
- #include <linux/of_device.h>
- 
- struct rpi_firmware;
--struct pci_dev;
- 
- enum rpi_firmware_property_status {
- 	RPI_FIRMWARE_STATUS_REQUEST = 0,
-@@ -142,7 +141,6 @@ int rpi_firmware_property(struct rpi_firmware *fw,
- int rpi_firmware_property_list(struct rpi_firmware *fw,
- 			       void *data, size_t tag_size);
- struct rpi_firmware *rpi_firmware_get(struct device_node *firmware_node);
--int rpi_firmware_init_vl805(struct pci_dev *pdev);
- #else
- static inline int rpi_firmware_property(struct rpi_firmware *fw, u32 tag,
- 					void *data, size_t len)
-@@ -160,11 +158,6 @@ static inline struct rpi_firmware *rpi_firmware_get(struct device_node *firmware
- {
- 	return NULL;
- }
--
--static inline int rpi_firmware_init_vl805(struct pci_dev *pdev)
--{
--	return 0;
--}
- #endif
- 
- #endif /* __SOC_RASPBERRY_FIRMWARE_H__ */
+ 	bridge = devm_pci_alloc_host_bridge(&pdev->dev, sizeof(*pcie));
+ 	if (!bridge)
+ 		return -ENOMEM;
 -- 
 2.26.2
 
