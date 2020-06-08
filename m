@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 810A51F266F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:41:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 993251F2673
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:41:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ipUGkvdT4y3iJIFKdUnwLCa8Vh3yrKWwMMsSRzoDtVM=; b=RoW3dJRh+F+X2k
-	yg9cxjkuaw8yBbXw8515H2Ffh51ipcp3fbwOLlFJecHWJTXNy9JBdWGObCapBSwxxUHCKErrHkpLV
-	Zr2TX6Eh5pHcJDED5W76cSxXWYkiDc3QJxgBT58LJvoDHcZDnDsrwJOzu1/m+H16Ghn1SAVUM57py
-	SYH88hrfZR2VmMHq648+/CVCGU6jJSF4Um46d/ID9sphYzB7jsFjeXPPaIEsNNKVbkvI2UF2mICi7
-	DmfjJlO4RRVJQvsbvuexP6YY6PcHnhEbb8t+Sb6tn8uD+u3TF85NXyy5BF7yaNg0TloSZh1xyYxB0
-	U/QQ2Gt0+qgwXR1bYUGQ==;
+	List-Owner; bh=EiRIUdgwWtC1prAbi9VGcqvG+LvUR2BWJuLzZQj3qMw=; b=REdSEmM0nPlGGM
+	xqkMN2pfepKtLd4su5A1TDk046T4upF1lk1O7r4nNq+q7ddBa3qztW71FtDT8KsKy7ZYSVol1ERCz
+	seLZgKypiFGbh8DRfq0piGw0o8UoFZe48ts68hOTbfpp9xwXfr0CCuWrJzqwUx2PmhVIps7q2PUkf
+	hf8leBRrAWBEi18Jkd8aNH3R0UUWzQzXmi1mAGoaOhpsd/oCGmpDzO+kT0hfgE7GUkCrGNPqXcJas
+	YEo3yOVT7MO1FsurBdnF3UCMWp2A7/tkcMV0lVEQpuTedTMBIwaNSdajYRuiOJ8ZFF0GP31w+1jmG
+	uXz/lRjeXRdy6ylvgSGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRNx-0002hD-Cc; Mon, 08 Jun 2020 23:40:57 +0000
+	id 1jiROc-0003Xz-FU; Mon, 08 Jun 2020 23:41:38 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR3Z-0006Cj-9E
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:19:59 +0000
+ id 1jiR3e-0006Hm-MD; Mon, 08 Jun 2020 23:20:02 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 05D122088E;
- Mon,  8 Jun 2020 23:19:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4FE3120870;
+ Mon,  8 Jun 2020 23:19:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658392;
- bh=asa8ONHvLvSLrkUv5RGqx9vJCcv05F7tTMtmQgGoEZs=;
+ s=default; t=1591658398;
+ bh=7vHlbNH5y8voS2cDM4bKwMfkLZfQfTj4TTeCBy55ia8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=fbiKSj3EBiqR5lGUeIAKqSQahNPsXjjuFXA0a7TB3bfIRwSHRp2dADQ/tpmnr/RG4
- dnaL2GUhtDTzGskkxqxqkbCJ6kvgdaelacjUHbIh8psxzwYUmGl9miMgHa97ZifkiO
- RGxsFjv21gEJg7Tkotgz0ObzgCkEHf8EGQ5ECj+s=
+ b=E3XvqYrlHzxxgFx7bhYxb56zfsaI9UPrlC3C+ypYIrGorp6jKSq7vI5HvbmESI2cv
+ SObygjJHSlDYP8dMmag5rL1E8ehUNnZu/Bshd/VQSn5SdFYU9uJex2BiwTwOxf6P4+
+ KSk3A47XdSwo1UGWmhqBBNzQakgO/N1RGwfWpp0o=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 050/175] ARM: 8978/1: mm: make act_mm() respect
- THREAD_SIZE
-Date: Mon,  8 Jun 2020 19:16:43 -0400
-Message-Id: <20200608231848.3366970-50-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 054/175] mmc: meson-mx-sdio: trigger a soft reset
+ after a timeout or CRC error
+Date: Mon,  8 Jun 2020 19:16:47 -0400
+Message-Id: <20200608231848.3366970-54-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608231848.3366970-1-sashal@kernel.org>
 References: <20200608231848.3366970-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_161953_361034_994129D4 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20200608_161959_421575_38FB1138 
+X-CRM114-Status: GOOD (  13.17  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,72 +79,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Russell King <rmk+kernel@armlinux.org.uk>, Ard Biesheuvel <ardb@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-mmc@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org,
+ Tobias Baumann <017623705678@o2online.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Linus Walleij <linus.walleij@linaro.org>
+From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
-[ Upstream commit e1de94380af588bdf6ad6f0cc1f75004c35bc096 ]
+[ Upstream commit 91995b904ec2e44b5c159ac6a5d3f154345a4de7 ]
 
-Recent work with KASan exposed the folling hard-coded bitmask
-in arch/arm/mm/proc-macros.S:
+The vendor driver (from the 3.10 kernel) triggers a soft reset every
+time before starting a new command. While this fixes a problem where
+SDIO cards are not detected at all (because all commands simply
+timed out) this hurts SD card read performance a bit (in my tests
+between 10% to 20%).
 
-  bic     rd, sp, #8128
-  bic     rd, rd, #63
+Trigger a soft reset after we got a CRC error or if the previous command
+timed out (just like the vendor driver from the same 3.10 kernel for the
+newer SDHC controller IP does). This fixes detection of SDIO cards and
+doesn't hurt SD card read performance at the same time.
 
-This forms the bitmask 0x1FFF that is coinciding with
-(PAGE_SIZE << THREAD_SIZE_ORDER) - 1, this code was assuming
-that THREAD_SIZE is always 8K (8192).
+With this patch the initialization of an RTL8723BS SDIO card looks like
+this:
+  req done (CMD52): -110: 00000000 00000000 00000000 00000000
+  clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 21 width 1 timing 0
+  starting CMD0 arg 00000000 flags 000000c0
+  req done (CMD0): 0: 00000000 00000000 00000000 00000000
+  clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 0
+  starting CMD8 arg 000001aa flags 000002f5
+  req done (CMD8): -110: 00000000 00000000 00000000 00000000
+  starting CMD5 arg 00000000 flags 000002e1
+  req done (CMD5): 0: 90ff0000 00000000 00000000 00000000
+  starting CMD5 arg 00200000 flags 000002e1
+  req done (CMD5): 0: 90ff0000 00000000 00000000 00000000
+  starting CMD3 arg 00000000 flags 00000075
+  req done (CMD3): 0: 00010000 00000000 00000000 00000000
+  starting CMD7 arg 00010000 flags 00000015
+  req done (CMD7): 0: 00001e00 00000000 00000000 00000000
+  starting CMD52 arg 00000000 flags 00000195
+  req done (CMD52): 0: 00001032 00000000 00000000 00000000
+  [... more CMD52 omitted ...]
+  clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 2
+  clock 50000000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 2
+  starting CMD52 arg 00000e00 flags 00000195
+  req done (CMD52): 0: 00001000 00000000 00000000 00000000
+  starting CMD52 arg 80000e02 flags 00000195
+  req done (CMD52): 0: 00001002 00000000 00000000 00000000
+  clock 50000000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 4 timing 2
+  starting CMD52 arg 00020000 flags 00000195
+  req done (CMD52): 0: 00001007 00000000 00000000 00000000
+  [... more CMD52 omitted ...]
+  new high speed SDIO card at address 0001
 
-As KASan was increasing THREAD_SIZE_ORDER to 2, I ran into
-this bug.
-
-Fix it by this little oneline suggested by Ard:
-
-  bic     rd, sp, #(THREAD_SIZE - 1) & ~63
-
-Where THREAD_SIZE is defined using THREAD_SIZE_ORDER.
-
-We have to also include <linux/const.h> since the THREAD_SIZE
-expands to use the _AC() macro.
-
-Cc: Ard Biesheuvel <ardb@kernel.org>
-Cc: Florian Fainelli <f.fainelli@gmail.com>
-Suggested-by: Ard Biesheuvel <ardb@kernel.org>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Fixes: ed80a13bb4c4c9 ("mmc: meson-mx-sdio: Add a driver for the Amlogic Meson8 and Meson8b SoCs")
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Link: https://lore.kernel.org/r/20200503222805.2668941-1-martin.blumenstingl@googlemail.com
+Tested-by: Tobias Baumann <017623705678@o2online.de>
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/mm/proc-macros.S | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/mmc/host/meson-mx-sdio.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
-index 5461d589a1e2..60ac7c5999a9 100644
---- a/arch/arm/mm/proc-macros.S
-+++ b/arch/arm/mm/proc-macros.S
-@@ -5,6 +5,7 @@
-  *  VMA_VM_FLAGS
-  *  VM_EXEC
-  */
-+#include <linux/const.h>
- #include <asm/asm-offsets.h>
- #include <asm/thread_info.h>
+diff --git a/drivers/mmc/host/meson-mx-sdio.c b/drivers/mmc/host/meson-mx-sdio.c
+index 999214e8cf2b..360d523132bd 100644
+--- a/drivers/mmc/host/meson-mx-sdio.c
++++ b/drivers/mmc/host/meson-mx-sdio.c
+@@ -246,6 +246,9 @@ static void meson_mx_mmc_request_done(struct meson_mx_mmc_host *host)
  
-@@ -30,7 +31,7 @@
-  * act_mm - get current->active_mm
-  */
- 	.macro	act_mm, rd
--	bic	\rd, sp, #8128
-+	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
- 	bic	\rd, \rd, #63
- 	ldr	\rd, [\rd, #TI_TASK]
- 	.if (TSK_ACTIVE_MM > IMM12_MASK)
+ 	mrq = host->mrq;
+ 
++	if (host->cmd->error)
++		meson_mx_mmc_soft_reset(host);
++
+ 	host->mrq = NULL;
+ 	host->cmd = NULL;
+ 
 -- 
 2.25.1
 
