@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C1CE1F226E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:08:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F22B1F227E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:09:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GKu7O+rUyltxngC9qclXdZwIZqOUA/VBsVdfRTuJIt4=; b=MYA7JXsKAYQ0Jx
-	leiMclMwkMiIj8/SWZeML9Fdm//rEtU9XsCtLVDGUOj2ZlzpHn5bIBd/ho1Xw5p65K3yvIVAb0muD
-	yFCkfqAKOoUEXL7rcpN9N54hqNNla3mgq2yTH1Zzt2vE4DqP7NOt1IxaIcUC8/9PSbDiEYztiSoKJ
-	kD6ACWCWQKai9DfXeTusajfz3wtAUfaszuo2FMXJfxXFxJcEpPoZRc7s2bzf1NHh1Wx7NpW42IjOl
-	wHEtZmMUjqla2wPJ0/zzxxHUHOKILU5CwWF1O2MBGyWxmc4lYFidGIyZJRgPHdlB7WSpEBuHxJpwq
-	6mSf/0C2JwXcKYuMlnvw==;
+	List-Owner; bh=XidIKrT4EZ3mLERMAD/UXE7f7aVMMbwDQrFLd7WCS3c=; b=akUJUIvdY4CVNp
+	ryRp7OJoj4Hd2I0WAwnvEMt5nduY/BH0qpUeWuqVw/J4u1k+8CohgJDy9AEFptkK7Ve/iBFCPU2dl
+	RbGkgS2eLzpHktGFXF9xKkVH0EB1f+lXilRt2+NRMfL4u8/ur1neGWVTqJt5WaFnKijj6GRFayNlB
+	BLV6SH6eGYFDvddsrU1L8xKHGwNVGSVEHrrGdlpp1ri1JmGBdlVCE3GlOjvHKWyGi5Nkbh3Bos9wt
+	S/phVWrisTfTngdzaeV/gbXeW2GnqtFshmC4s4KF+Mn+KtpBXz84PF7qvhNswNfKXCD+br+IcuNrV
+	eJmUL5KzoencgF8WVq2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQsc-00089Y-7d; Mon, 08 Jun 2020 23:08:34 +0000
+	id 1jiQsu-0008Re-Vc; Mon, 08 Jun 2020 23:08:52 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQrA-00071X-Qn; Mon, 08 Jun 2020 23:07:08 +0000
+ id 1jiQrI-00078U-Eu
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:07:19 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D4E9B20801;
- Mon,  8 Jun 2020 23:07:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9E6E520888;
+ Mon,  8 Jun 2020 23:07:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657623;
- bh=T1TFFnuOR8yP9KXZ3SI9ba8JrUEjNEAKKapF2hBhyM8=;
+ s=default; t=1591657631;
+ bh=CnVp9pwpDTm0m2p+hSbXaay1pQhH2Cr6uUvMrwh7L4Q=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LNcUfdbAu+qPxo9Ufa+tE7TZQCgGYeUaoDOC6FDj1G8PdoARt/a1ytmvIDfpcvOCT
- yrsnDjlQpErv7WeqJW2vz1u6XYXuE1HJtWiZuR8W9IeB0DY4hB/v0USCwEBMMXqKCO
- h0269BWE4U5SAhNsytWzTllwocfxoCTMijUsSzFQ=
+ b=asC0ZA2Kf7DQBdLkqrlomrj2p18prOf9rXA/3a50M2saW74UL/sxWig7wuYS/0Trk
+ cj2JzGb8u6WKcAG7IwLwbv2PwcYcx0IvfywyL4gfHw4gR4QyZBjxczCf1hE0GCw887
+ VIojbkv2t5sHzIVeHdN0ameH6FJGoZM2I96Njzbs=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 044/274] mt76: mt7615: fix aid configuration in
- mt7615_mcu_wtbl_generic_tlv
-Date: Mon,  8 Jun 2020 19:02:17 -0400
-Message-Id: <20200608230607.3361041-44-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 050/274] cpuidle: psci: Fixup execution order when
+ entering a domain idle state
+Date: Mon,  8 Jun 2020 19:02:23 -0400
+Message-Id: <20200608230607.3361041-50-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160704_888775_B9DA9AF7 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20200608_160712_609742_8233ED28 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,47 +80,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
- Lorenzo Bianconi <lorenzo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Felix Fietkau <nbd@nbd.name>
+Cc: Sasha Levin <sashal@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-pm@vger.kernel.org, "Rafael J . Wysocki" <rafael.j.wysocki@intel.com>,
+ Lina Iyer <ilina@codeaurora.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Lorenzo Bianconi <lorenzo@kernel.org>
+From: Ulf Hansson <ulf.hansson@linaro.org>
 
-[ Upstream commit fdf433121f82766ff508a6f06665d2aca3e258d5 ]
+[ Upstream commit 8b7ce5e49049ca78c238f03d70569a73da049f32 ]
 
-If the vif is running in station mode the aid will be passed by mac80211
-using bss_conf.aid. Fix aid configuration in mt7615_mcu_wtbl_generic_tlv
+Moving forward, platforms are going to need to execute specific "last-man"
+operations before a domain idle state can be entered. In one way or the
+other, these operations needs to be triggered while walking the
+hierarchical topology via runtime PM and genpd, as it's at that point the
+last-man becomes known.
 
-Fixes: 04b8e65922f6 ("mt76: add mac80211 driver for MT7615 PCIe-based chipsets")
-Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
+Moreover, executing last-man operations needs to be done after the CPU PM
+notifications are sent through cpu_pm_enter(), as otherwise it's likely
+that some notifications would fail. Therefore, let's re-order the sequence
+in psci_enter_domain_idle_state(), so cpu_pm_enter() gets called prior
+pm_runtime_put_sync().
+
+Fixes: ce85aef570df ("cpuidle: psci: Manage runtime PM in the idle path")
+Reported-by: Lina Iyer <ilina@codeaurora.org>
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+Acked-by: Sudeep Holla <sudeep.holla@arm.com>
+Signed-off-by: Rafael J. Wysocki <rafael.j.wysocki@intel.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/mediatek/mt76/mt7615/mcu.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ drivers/cpuidle/cpuidle-psci.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7615/mcu.c
-index 610cfa918c7b..a19fb0cb7794 100644
---- a/drivers/net/wireless/mediatek/mt76/mt7615/mcu.c
-+++ b/drivers/net/wireless/mediatek/mt76/mt7615/mcu.c
-@@ -823,8 +823,11 @@ mt7615_mcu_wtbl_generic_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
- 	generic = (struct wtbl_generic *)tlv;
+diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+index bae9140a65a5..d0fb585073c6 100644
+--- a/drivers/cpuidle/cpuidle-psci.c
++++ b/drivers/cpuidle/cpuidle-psci.c
+@@ -58,6 +58,10 @@ static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
+ 	u32 state;
+ 	int ret;
  
- 	if (sta) {
-+		if (vif->type == NL80211_IFTYPE_STATION)
-+			generic->partial_aid = cpu_to_le16(vif->bss_conf.aid);
-+		else
-+			generic->partial_aid = cpu_to_le16(sta->aid);
- 		memcpy(generic->peer_addr, sta->addr, ETH_ALEN);
--		generic->partial_aid = cpu_to_le16(sta->aid);
- 		generic->muar_idx = mvif->omac_idx;
- 		generic->qos = sta->wme;
- 	} else {
++	ret = cpu_pm_enter();
++	if (ret)
++		return -1;
++
+ 	/* Do runtime PM to manage a hierarchical CPU toplogy. */
+ 	pm_runtime_put_sync_suspend(pd_dev);
+ 
+@@ -65,10 +69,12 @@ static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
+ 	if (!state)
+ 		state = states[idx];
+ 
+-	ret = psci_enter_state(idx, state);
++	ret = psci_cpu_suspend_enter(state) ? -1 : idx;
+ 
+ 	pm_runtime_get_sync(pd_dev);
+ 
++	cpu_pm_exit();
++
+ 	/* Clear the domain state to start fresh when back from idle. */
+ 	psci_set_domain_state(0);
+ 	return ret;
 -- 
 2.25.1
 
