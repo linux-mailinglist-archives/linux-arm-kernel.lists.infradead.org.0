@@ -2,58 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAC3E1F16C4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 12:34:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9723C1F16EA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 12:46:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1zhgV3X8vWSNuStUKDyTn8S1VOPoj4DF5dR26HcDI8s=; b=RZkN0kcj8OCn2f
-	xI/JhQTA0VerUQpmbgoVQAyA+zLM7GTcVYCIXmOwQVRMyzSsH133HovIi9lOVS4sgjABWMiylx312
-	USurza8YKHcIpoe/nQuAdR+aAFFsW04f1RWZXY6XNTuGeZXsAUQcavjrQYlnI4+EyhE1d8cAm68h2
-	phlkCbjlOIUB5RcHIfa1OeitFUJSkdruFRwclGn9QFK8qIfVxN01BrHZxfhyJrWAeIOxKsHxQtvzp
-	E6r7/X0zLSxmTVMEUfgUexfSA6qYquQ9+txGb52s4Y353JKdyFtS+xuc4xHihCYF5dUwXTuGVfshF
-	avTatyz7ZpMTawpHWNjA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+xOhN43FAwXSlUjp89fLJyhw2W4IqxFmAA8xfKVIcl0=; b=TqC/vnyNv3XuPz
+	PFLqJsF+2slhDoEfC/C4kfEE8r47LMnkVLOdhTCKAC5zJNrntYbJLFuFophowzyg7GBaYBZfF3Cs3
+	hIlWYAJszaZDC+58bhOk0AJO89+A7SrttEkn/L6cAWAHljjKjevY9eZAWna5BJ+gDemKLTdaWLO1A
+	AiuaKatVeLFGdF5svzA8P5y6+tBV1idOzepXwhSUWJ+M6JC0IvH44IBDMXZTgvYlF/ph3INCqFhQH
+	qsx9x+s5MGpx8sGTycEXMufLfVhWmHENN1A19dtF+clpY9g0783V8buKeshmXs++CiVkYym9w+zld
+	EPkCB4m+SQYW93j/mlig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiF6h-0001x9-GH; Mon, 08 Jun 2020 10:34:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiF6b-0001wg-2x
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 10:34:14 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6C2E11FB;
- Mon,  8 Jun 2020 03:34:10 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BF0333F73D;
- Mon,  8 Jun 2020 03:34:05 -0700 (PDT)
-Date: Mon, 8 Jun 2020 11:34:00 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] arm64: fpsimd: Added API to manage fpsimd state inside
- kernel
-Message-ID: <20200608103340.GA31466@arm.com>
-References: <CGME20200605073214epcas2p1576f3f90dbcefaad6180f2559ca5980d@epcas2p1.samsung.com>
- <20200605073052.23044-1-wooy88.kim@samsung.com>
- <20200605103705.GD85498@C02TD0UTHF1T.local>
+	id 1jiFIX-0001c3-Fd; Mon, 08 Jun 2020 10:46:33 +0000
+Received: from mout.gmx.net ([212.227.17.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jiFIP-0001ba-RU
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 10:46:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1591613177;
+ bh=sDbMWhrGcpGuBcouFsdLSeCfDg5Y4fjzTI4hxoNFcIs=;
+ h=X-UI-Sender-Class:From:Subject:To:Cc:References:Date:In-Reply-To;
+ b=ThLAreEoSfEQIslURB+/stMJc9q3+2TS6aa31IumK54tudmmeN0mQBdz36ZrnJPsX
+ fmzUgXYRdO3d/fu/qOO/i5gNNe8D/tk9QUzLkn9RfqixlRgREcA162dNyd6Z+N4LHC
+ /7NENWqBBm+pvtktFytL9w52JXkCfidhTQYU1Uok=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.123.51] ([88.152.145.75]) by mail.gmx.com (mrgmx105
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 1Mlf4c-1jHSyw46RW-00ioYb; Mon, 08
+ Jun 2020 12:46:17 +0200
+From: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Subject: Re: [PATCH v2 1/2] efi/arm: decompressor: deal with HYP mode boot
+ gracefully
+To: Ard Biesheuvel <ardb@kernel.org>
+References: <20200607135834.898294-1-ardb@kernel.org>
+ <20200607135834.898294-2-ardb@kernel.org>
+ <96a36110-68e1-89e3-2d59-b16f01abae21@gmx.de>
+ <CAMj1kXG9XTtsyLQ=njM8LPCYCE2tOrrYQtctU_acNAxLfe=5oQ@mail.gmail.com>
+Autocrypt: addr=xypron.glpk@gmx.de; prefer-encrypt=mutual; keydata=
+ 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 Eg==
+Message-ID: <f8a485d2-1e00-1d02-58a4-2e1684bfbfb4@gmx.de>
+Date: Mon, 8 Jun 2020 12:46:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200605103705.GD85498@C02TD0UTHF1T.local>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <CAMj1kXG9XTtsyLQ=njM8LPCYCE2tOrrYQtctU_acNAxLfe=5oQ@mail.gmail.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:Bt25R4+MNx4wI45kBVtVpg/zSdFoGPfxGO9eI7kbO+eMcXjXWyj
+ 4Rj6m71BN6SgNsGs6B0Cgv0GZdrjESgTjhT4EC3v0pujQfGTFO9f1HiiyLAH6Igj/75gnIM
+ 3BuWBH23plgOih5XIp6ZZbhGRiLYI+xgFpqiMmw9Au2FXaPLXZ0BjabdBW/W39exmg23I6d
+ PL0qZVPugx5xgz0d2LMrQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:HZaebPCbB9U=:YSLYdonT84DoMEEc1Ger5o
+ 2NbQ5Sy87Sm9GKlwESRzy5ABNeaIQfyajfCppyUBXeFDlRACQMdFYhltN5d3GL+Oux/XNBnF/
+ LFPVJopIvcvbG2NjoewgAtcKhdk54QYhYVOZ5xkqs0IZukcFvbfjzh6wGUpaJg4GvdkiT7ahd
+ t3PI1o358t3A0Q/nYf2/gs/WUqQ8a5YrhmPIoYAzOx3XlRACjVqkf2ATpWygl9GsLF2gtdGqA
+ 4ZN4y+tn/7CNtlhk3XgXOpkD3d5BnnY6RB8MtR0dt0ton5DB80yZW5wDyv4HfelLAcyBHo8u1
+ 6EydpNJNhNCkuRToDsnLyRPPOq70+RUbe1I+vewqJntI4v7xdfXT1JDv3Pqzkth+rB6ZfEL5e
+ MmONwP/UaqXJOLJ/qznUsK4q5gn0bt67b5CX8JqzNeg0PNGm+1zGHVKK4QJ94j5CCtuxhILpq
+ wA6eaetRaYUJSdP1SUW8Ue0mhlj6ZaUZot6g/YkSOpzhnpZd82RaOjNaD5Z2/XtXA1IohirRw
+ Zekw7pKd/P+0XRAONPFe9rupsLH0mP/EWRs7hFCNOdHd+n0r5vd1cgBu5D4ajZxErYk9CAuOY
+ 7zFYXgY+s3lo0pvQAn8qG0gF52jL9WvSoSJhtFAWLkkGWIUuoO1ve3TseLL5+CtzThwqUxH6c
+ x0a99tp/vyIWvPHdUD9Jd4qeSr8eDcvJ6scHfo88b8+AaHOKg9O7Hj/ElB/gy7RH0qYUkofrv
+ x/XDsaJO3/xwZbUsKx8YuVOlw9U52H5O6foXkdJMzndSpCqIOQyGDgCK5uq0458JWnEK4wDUY
+ r4HBfYZK/tmsk5XYL1Siptrbc6OHx3x3LRuYBlCdQiBvHaFdFGl0pfdejcRE1TJnuUq5Hwjkj
+ tWCD7fm5QalyPNadm+Mi9SzPKmsHIMcZ/50KC/Pjucbyw3zF7cGwa4mS0Epv24c9DCD1AX+zA
+ QE3DlwbQHXra958NU9C9dPWziX0rfalh+1Qu2EMXik29ZEELjTNs183c1cOcjzhqSqH0UntdC
+ xWrJ2UNa5ibfb7g+6xSAmbsWz+sJ/kkfEIdwlGG5wmC/ycz+zNLqnw778FV2NJ+5lurilzMRu
+ R03ErQS2ZwY3vR0u0AS/SQDheDt7BtsHnj1XkSUduyChA5wqno33PoZEiiGJov5lwQPT9g1tr
+ DOyTjd4sU5h9IVPfZBJOgSM4YvMfhrUPGEYaExr4PBTurdanbI6QSGVO7vqOSvwXtcmsocWKn
+ jBJ5rVK9oEu3CmDEA
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_033413_176029_5598B351 
-X-CRM114-Status: GOOD (  19.78  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200608_034626_227513_885A6E1B 
+X-CRM114-Status: GOOD (  32.60  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.21 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [xypron.glpk[at]gmx.de]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.21 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,70 +145,258 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: hk92.kim@samsung.com, Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, yb.song@samsung.com, yj.yim@samsung.com,
- Julien Grall <julien.grall@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- jinsoo37.kim@samsung.com, hyewon.ryu@samsung.com, yhwan.joo@samsung.com,
- Anisse Astier <aastier@freebox.fr>, Marc Zyngier <maz@kernel.org>,
- dongww.kim@samsung.com, Allison Randal <allison@lohutok.net>,
- jihun.kim@samsung.com, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Wooki Min <wooki.min@samsung.com>,
- Wooyeon Kim <wooy88.kim@samsung.com>, junik.lee@samsung.com,
- sgun.bae@samsung.com, Jeongtae Park <jtp.park@samsung.com>,
- kgene.kim@samsung.com, Kristina Martsenko <kristina.martsenko@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Sanghoon Lee <shoon114.lee@samsung.com>,
- linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>,
- Steve Capper <steve.capper@arm.com>, hyeyeon5.shim@samsung.com,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, dh.han@samsung.com
+Cc: Marc Zyngier <maz@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ linux-efi <linux-efi@vger.kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Jun 05, 2020 at 11:37:05AM +0100, Mark Rutland wrote:
-> Hi Wooyeon,
-> 
-> There are a *lot* of people Cc' here, many of whomo will find this
-> irrelevant. Please try to keep the Cc list constrained to a reasonable
-> number of interested parties.
-> 
-> On Fri, Jun 05, 2020 at 04:30:52PM +0900, Wooyeon Kim wrote:
-> > From: Wooki Min <wooki.min@samsung.com>
-> > 
-> >      This is an patch to use FPSIMD register in Kernel space.
-> >      It need to manage to use FPSIMD register without damaging it
-> >      of the user task.
-> >      Following items have been implemented and added.
-> 
-> Please introduce the problem you are trying to solve in more detail. We
-> already have kernel_neon_{begin,end}() for kernel-mode NEON; why is that
-> not sufficient for your needs? Please answer this before considering
-> other details.
-> 
-> What do you want to use this for?
-> 
-> > 
-> >      1. Using FPSIMD in ISR (in_interrupt)
-> > 	It can used __efi_fpsimd_begin/__efi_fpsimd_end
-> > 	which is already implemented.
-> > 	Save fpsimd state before entering ISR,
-> > 	and restore fpsimd state after ISR ends.
-> > 	For use in external kernel module,
-> > 	it is declared as EXPORT_SYMBOL.
-> 
-> This patch adds no in-tree modular users of this, so per the usual
-> conventions, NAK to EXPORT_SYMBOL().
+On 6/8/20 1:08 AM, Ard Biesheuvel wrote:
+> On Sun, 7 Jun 2020 at 19:24, Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
+>>
+>> On 6/7/20 3:58 PM, Ard Biesheuvel wrote:
+>>> EFI on ARM only supports short descriptors, and given that it mandates
+>>> that the MMU and caches are on, it is implied that booting in HYP mode
+>>> is not supported.
+>>>
+>>> However, implementations of EFI exist (i.e., U-Boot) that ignore this
+>>> requirement, which is not entirely unreasonable, given that it makes
+>>> HYP mode inaccessible to the operating system.
+>>>
+>>> So let's make sure that we can deal with this condition gracefully.
+>>> We already tolerate booting the EFI stub with the caches off (even
+>>> though this violates the EFI spec as well), and so we should deal
+>>> with HYP mode boot with MMU and caches either on or off.
+>>>
+>>> - When the MMU and caches are on, we can ignore the HYP stub altogether,
+>>>   since we can carry on executing at HYP. We do need to ensure that we
+>>>   disable the MMU at HYP before entering the kernel proper.
+>>>
+>>> - When the MMU and caches are off, we have to drop to SVC mode so that
+>>>   we can set up the page tables using short descriptors. In this case,
+>>>   we need to install the HYP stub as usual, so that we can return to HYP
+>>>   mode before handing over to the kernel proper.
+>>
+>> To me it is still unclear why you need this patch. Please, describe the
+>> problem this patch fixes.
+>>
+>> Is there any device that you cannot boot without the patch?
+>>
+>
+> The code as it is today is broken, and if it works, it only does so by accident.
+>
+> (There were some recent changes but the old code is broken in a similar way)
+>
+> When we enter via the stub, we used to call cache_off() to disable the
+> caches before calling the decompressor entry point. However, that
+> disables the SVC mode caches, not the HYP mode caches, and so if we
+> enter via EFI at HYP, we will call __hyp_stub_install() with the HYP
+> mod MMU and caches enabled, which is explicitly forbidden (see
+> hyp-stub.S)
+>
+> With the recent change, the EFI entry code doesn't call cache_off()
+> anymore, but that does not remove the problem, it just moves it to the
+> point where we hand over to the kernel proper.
+>
+> The problem is really on the u-boot side, and so we either have to
+> follow the letter of the EFI spec and ban the practice of booting in
+> HYP mode or with the caches off, or we work around this like I do in
+> this patch. Doing nothing is not really an option.
+>
+> If we want EBBR and U-boot as EFI firmware to succeed, we should
+> really fix issues such as these, and not pretend everything is fine
+> when we know it is broken but happens to work on the few boards that
+> we test. This is the reason we have architecture and firmware specs in
+> the first place, and it is really quite unfortunate that we did not
+> catch these u-boot issues before.
+>
+> As I said, I think booting at HYP can be tolerated, since the OS loses
+> access to it otherwise (and maybe we should even update the EFI spec
+> to allow this). But fiddling with the caches like we do should really
+> be avoided (and the GRUB hack really needs to go as well)
+>
+>
+>
+>>>
+>>> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+>>> ---
+>>>  arch/arm/boot/compressed/head.S | 61 ++++++++++++++++++++
+>>>  1 file changed, 61 insertions(+)
+>>>
+>>> diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+>>> index c79db44ba128..3476e85c31e7 100644
+>>> --- a/arch/arm/boot/compressed/head.S
+>>> +++ b/arch/arm/boot/compressed/head.S
+>>> @@ -1410,7 +1410,11 @@ memdump:       mov     r12, r0
+>>>  __hyp_reentry_vectors:
+>>>               W(b)    .                       @ reset
+>>>               W(b)    .                       @ undef
+>>> +#ifdef CONFIG_EFI_STUB
+>>> +             W(b)    __enter_kernel_from_hyp @ hvc from HYP
+>>> +#else
+>>>               W(b)    .                       @ svc
+>>> +#endif
+>>>               W(b)    .                       @ pabort
+>>>               W(b)    .                       @ dabort
+>>>               W(b)    __enter_kernel          @ hyp
+>>> @@ -1429,14 +1433,71 @@ __enter_kernel:
+>>>  reloc_code_end:
+>>>
+>>>  #ifdef CONFIG_EFI_STUB
+>>> +__enter_kernel_from_hyp:
+>>> +             mrc     p15, 4, r0, c1, c0, 0   @ read HSCTLR
+>>> +             bic     r0, r0, #0x5            @ disable MMU and caches
+>>> +             mcr     p15, 4, r0, c1, c0, 0   @ write HSCTLR
+>>> +             isb
+>>> +             b       __enter_kernel
+>>> +
+>>>  ENTRY(efi_enter_kernel)
+>>>               mov     r4, r0                  @ preserve image base
+>>>               mov     r8, r1                  @ preserve DT pointer
+>>>
+>>> + ARM(                adrl    r0, call_cache_fn       )
+>>> + THUMB(              adr     r0, call_cache_fn       )
+>>> +             adr     r1, 0f                  @ clean the region of code we
+>>> +             bl      cache_clean_flush       @ may run with the MMU off
+>>> +
+>>> +#ifdef CONFIG_ARM_VIRT_EXT
+>>> +             @
+>>> +             @ The EFI spec does not support booting on ARM in HYP mode,
+>>> +             @ since it mandates that the MMU and caches are on, with all
+>>> +             @ 32-bit addressable DRAM mapped 1:1 using short descriptors.
+>>> +             @
+>>> +             @ While the EDK2 reference implementation adheres to this,
+>>> +             @ U-Boot might decide to enter the EFI stub in HYP mode
+>>> +             @ anyway, with the MMU and caches either on or off.
+>>> +             @
+>>> +             mrs     r0, cpsr                @ get the current mode
+>>> +             msr     spsr_cxsf, r0           @ record boot mode
+>>> +             and     r0, r0, #MODE_MASK      @ are we running in HYP mode?
+>>> +             cmp     r0, #HYP_MODE
+>>> +             bne     .Lefi_svc
+>>> +
+>>> +             mrc     p15, 4, r1, c1, c0, 0   @ read HSCTLR
+>>> +             tst     r1, #0x1                @ MMU enabled at HYP?
+>>> +             beq     1f
+>>> +
+>>> +             @
+>>> +             @ When running in HYP mode with the caches on, we're better
+>>> +             @ off just carrying on using the cached 1:1 mapping that the
+>>> +             @ firmware provided. Set up the HYP vectors so HVC instructions
+>>> +             @ issued from HYP mode take us to the correct handler code. We
+>>> +             @ will disable the MMU before jumping to the kernel proper.
+>>> +             @
+>>> +             adr     r0, __hyp_reentry_vectors
+>>> +             mcr     p15, 4, r0, c12, c0, 0  @ set HYP vector base (HVBAR)
+>>> +             isb
+>>> +             b       .Lefi_hyp
+>>> +
+>>> +             @
+>>> +             @ When running in HYP mode with the caches off, we need to drop
+>>> +             @ into SVC mode now, and let the decompressor set up its cached
+>>> +             @ 1:1 mapping as usual.
+>>> +             @
+>>> +1:           mov     r9, r4                  @ preserve image base
+>>> +             bl      __hyp_stub_install      @ install HYP stub vectors
+>>> +             safe_svcmode_maskall    r1      @ drop to SVC mode
+>>
+>> Are you returning to HYP mode somewhere?
+>>
+>
+> Yes.
+>
+>> What is the effect on PSCI?
+>>
+>
+> If you boot Linux in HYP then you cannot have PSCI in HYP as well.
+> Linux will take ownership of HYP mode, and remove whatever was there.
+> If you want to run PSCI at HYP, then the OS needs to boot in SVC mode.
+>
+>> The Allwinner/Sunxi boards must be booted in HYP mode to have PSCI
+>> according to https://linux-sunxi.org/PSCI
+>>
+>
+> See above. If PSCI runs in HYP, the OS needs to run at SVC
+>
+>> Did you test that you still can reboot those boards?
+>>
+>
+> No, I don't have such a board.
 
-Ack, this looks supicious.  Can you explain why your usecase _requires_
-FPSIMD in hardirq context?
+Hello Ard,
 
-For now, these functions are strictly for EFI use only and should never
-be used by modules.
+thanks for supplying a branch for testing:
+https://git.kernel.org/pub/scm/linux/kernel/git/ardb/linux.git/log/?h=efi-arm-hyp-mode
 
-Cheers
----Dave
+The OrangePi PC boots fine with this branch. PSCI is enabled. Rebooting
+the system works fine. See log below.
+
+With the patch 2/2 you add an output line for the exceptions level and
+the MMU status. Above you state "We already tolerate booting the EFI
+stub with the caches off." This relates to a workaround in U-Boot
+accomodating old GRUB versions (CONFIG_EFI_GRUB_ARM32_WORKAROUND=y).
+
+Would a further diagnostic line showing if D-cache and I-cache is
+enabled make sense?
+
+Tested-by: Heinrich Schuchardt <xypron.glpk@gmx.de>
+
+Loading Linux 5.7.0-armmp-lpae+ ...
+Loading initial ramdisk ...
+EFI stub: Running in HYP mode with MMU enabled
+EFI stub: Booting Linux Kernel...
+EFI stub: ERROR: Could not determine UEFI Secure Boot status.
+EFI stub: Using DTB from configuration table
+EFI stub: Exiting boot services and installing virtual address map...
+EHCI failed to shut down host controller.
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.7.0-armmp-lpae+ (user@node)
+(arm-linux-gnueabihf-gcc (Debian 9.3.0-13) 9.3.0, GNU ld (GNU Binutils
+for Debian) 2.34) #10 SMP Mon Jun 8 03:44:37 CEST 2020
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7),
+cr=30c5387d
+[    0.000000] CPU: div instructions available: patching division code
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing
+instruction cache
+[    0.000000] OF: fdt: Machine model: Xunlong Orange Pi PC
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] efi: EFI v2.80 by Das U-Boot
+[    0.000000] efi: RTPROP=0x78f30040 SMBIOS=0x78f2a000
+MEMRESERVE=0x6a1fa040
+[    0.000000] cma: Reserved 16 MiB at 0x000000007f000000
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000040000000-0x000000006fffffff]
+[    0.000000]   Normal   empty
+[    0.000000]   HighMem  [mem 0x0000000070000000-0x000000007fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000040000000-0x0000000078f07fff]
+[    0.000000]   node   0: [mem 0x0000000078f08000-0x0000000078f09fff]
+[    0.000000]   node   0: [mem 0x0000000078f0a000-0x0000000078f24fff]
+[    0.000000]   node   0: [mem 0x0000000078f25000-0x0000000078f28fff]
+[    0.000000]   node   0: [mem 0x0000000078f29000-0x0000000078f29fff]
+[    0.000000]   node   0: [mem 0x0000000078f2a000-0x0000000078f2afff]
+[    0.000000]   node   0: [mem 0x0000000078f2b000-0x0000000078f2cfff]
+[    0.000000]   node   0: [mem 0x0000000078f2d000-0x0000000078f2dfff]
+[    0.000000]   node   0: [mem 0x0000000078f2e000-0x0000000078f2ffff]
+[    0.000000]   node   0: [mem 0x0000000078f30000-0x0000000078f32fff]
+[    0.000000]   node   0: [mem 0x0000000078f33000-0x0000000078f33fff]
+[    0.000000]   node   0: [mem 0x0000000078f34000-0x0000000078f34fff]
+[    0.000000]   node   0: [mem 0x0000000078f35000-0x0000000078f35fff]
+[    0.000000]   node   0: [mem 0x0000000078f36000-0x0000000078f36fff]
+[    0.000000]   node   0: [mem 0x0000000078f37000-0x0000000078f38fff]
+[    0.000000]   node   0: [mem 0x0000000078f39000-0x0000000078f3efff]
+[    0.000000]   node   0: [mem 0x0000000078f3f000-0x000000007df65fff]
+[    0.000000]   node   0: [mem 0x000000007df66000-0x000000007df66fff]
+[    0.000000]   node   0: [mem 0x000000007df67000-0x000000007dfb9fff]
+[    0.000000]   node   0: [mem 0x000000007dfba000-0x000000007dfbcfff]
+[    0.000000]   node   0: [mem 0x000000007dfbd000-0x000000007fffffff]
+[    0.000000] Initmem setup node 0 [mem
+0x0000000040000000-0x000000007fffffff]
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: Using PSCI v0.1 Function IDs from DT
 
 _______________________________________________
 linux-arm-kernel mailing list
