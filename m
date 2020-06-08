@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C994F1F232D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:13:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA5871F2330
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:14:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tvTpLHC01NO228IxgoOtyr656ENFOSnj6rONQC7mgGI=; b=m3UsgnRYfQrbRL
-	VcusjmhN2sqDV2u8Ll7fzdXrmV3hIyvq8DONNkjmJ9hM8lrpfVsuLUa5vxHy46UaMOrhr7PKQmqx4
-	H3LXvJhITN+nvbIA1Gxz0U8qckTl4NOps7Dyc+07nIui2y6JosK0Dx4H5W62IFcVRM4jouzxaDn/3
-	JPxWTSPzC9LWYsDuEClHPxfoDCY7AS0RFByHOXhvxA5OMAWQ1xgM2ugnxSWB9N68E3bM0cRr5T+bM
-	P+Zy/yp1odFhsV/pSOwAg6HkET1ed+PFHtTaIpK6+QOFUgTnSwp4iNkwDOflaV42zlsLbZbnmhkTi
-	sC0jZPlTV/kafv1sCVIw==;
+	List-Owner; bh=dJuMl6vhvYSHvIGrmCuw1BUS8H/QsZk5TovbP3QQRSg=; b=sfzUoBWMxlXXK9
+	qawxuxBtJa5lweDCYVJtvRpdd7aRkHQMgE9x8eSfTz90WmeIQarf57R7ngplxSijR7Va0FYK/9X/s
+	c4kkK3il1C0Px4A3ZV+wyA15OrxjGwGntIz4Wn+P6quI+PzAvhLy5dT3i2XvcoJVCzMbl0Pcr7n+7
+	Yib6LM4VGMB9792QpJHGozWSY+UGsv5UtpS7K3lo0RF3v3ZyKte39uaqmDf7KIiru15EYg3Jz7Hrp
+	gp4DK9Lot0w+kCtE7YatNPiMtz6Hup5Tp9b5UQg0Ym6mC1VWzT7oTtZpmflKQ5BRZtiahhTs2i9yf
+	udo4TID5VB7trUXU+Y2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQxe-0006dp-1f; Mon, 08 Jun 2020 23:13:46 +0000
+	id 1jiQxx-00070O-9u; Mon, 08 Jun 2020 23:14:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQtD-0000Vh-GS
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:09:16 +0000
+ id 1jiQtO-0000fF-Ez
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:09:24 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F04D020897;
- Mon,  8 Jun 2020 23:09:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6E61020890;
+ Mon,  8 Jun 2020 23:09:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657750;
- bh=xEbBIEsVZpgZRzeIw0W3nUmh8/Kv6ds/xYH3qeceVGo=;
+ s=default; t=1591657761;
+ bh=KO1X9m7NPmmKUMWAX5wnckaZR418zjtg/BYnrfIAY3Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tZSqn70Cp9zJuTCasokJJ+BSSY9QI8gvgaNvC7S71U+d0qyV9BfoNwYDTo5TodImG
- cOpEHa6C5d9O/TXCHQnX4aSjQbHSIufjWQpVJnIQzUFKIXjkCu4OgVCCrTD9+LxkPO
- pRQ4feRAlVy4tDEj8gHB2FxaKN8k8BS8/Y3qvS4w=
+ b=QqJSJyLYdeazMZgOuSNTXYwUYrKmWGWKaCrGRUbyA1EjimHD+sQxUJAUBVMj0D7kn
+ 1l4d9OwSHu9nUNTeOVO44HQSkpgQS84oJPzFG2nfWtaDdRNxH/uL8Acs+Q0xAqrR3C
+ orVKFegMt+z0dieZWpMpcPIBxXxOsUqitUTiCdT4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 137/274] ARM: 8969/1: decompressor: simplify
- libfdt builds
-Date: Mon,  8 Jun 2020 19:03:50 -0400
-Message-Id: <20200608230607.3361041-137-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 146/274] stmmac: intel: Fix clock handling on
+ error and remove paths
+Date: Mon,  8 Jun 2020 19:03:59 -0400
+Message-Id: <20200608230607.3361041-146-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160911_647395_08606B79 
-X-CRM114-Status: GOOD (  15.61  )
+X-CRM114-CacheID: sfid-20200608_160922_716673_1567AC69 
+X-CRM114-Status: GOOD (  14.28  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,221 +80,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>,
- Russell King <rmk+kernel@armlinux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Voon Weifeng <weifeng.voon@intel.com>,
+ netdev@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Masahiro Yamada <masahiroy@kernel.org>
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 
-[ Upstream commit 7ae4a78daacf240a8247cde73337dc4b26d253da ]
+[ Upstream commit 09f012e64e4b8126ed6f02d0a85a57c3a0465cf9 ]
 
-Copying source files during the build time may not end up with
-as clean code as expected.
+clk_prepare_enable() might fail, we have to check its returned value.
+Besides that we have to call clk_disable_unprepare() on the error and
+remove paths. Do above in the dwmac-intel driver.
 
-lib/fdt*.c simply wrap scripts/dtc/libfdt/fdt*.c, and it works
-nicely. Let's follow this approach for the arm decompressor, too.
+While at it, remove leftover in stmmac_pci and remove unneeded condition
+for NULL-aware clk_unregister_fixed_rate() call.
 
-Add four wrappers, arch/arm/boot/compressed/fdt*.c and remove
-the Makefile messes. Another nice thing is we no longer need to
-maintain the own libfdt_env.h because the decompressor can include
-<linux/libfdt_env.h>.
-
-There is a subtle problem when generated files are turned into
-check-in files.
-
-When you are doing a rebuild of an existing object tree with O=
-option, there exists stale "shipped" copies that the old Makefile
-implementation created. The build system ends up with compiling the
-stale generated files because Make searches for prerequisites in the
-current directory, i.e. $(objtree) first, and then the directory
-listed in VPATH, i.e. $(srctree).
-
-To mend this issue, I added the following code:
-
-  ifdef building_out_of_srctree
-  $(shell rm -f $(addprefix $(obj)/, fdt_rw.c fdt_ro.c fdt_wip.c fdt.c))
-  endif
-
-This will need to stay for a while because "git bisect" crossing this
-commit, otherwise, would result in a build error.
-
-Signed-off-by: Masahiro Yamada <masahiroy@kernel.org>
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+Fixes: 58da0cfa6cf1 ("net: stmmac: create dwmac-intel.c to contain all Intel platform")
+Cc: Voon Weifeng <weifeng.voon@intel.com>
+Signed-off-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/compressed/.gitignore     |  9 ------
- arch/arm/boot/compressed/Makefile       | 38 ++++++++++---------------
- arch/arm/boot/compressed/atags_to_fdt.c |  1 +
- arch/arm/boot/compressed/fdt.c          |  2 ++
- arch/arm/boot/compressed/fdt_ro.c       |  2 ++
- arch/arm/boot/compressed/fdt_rw.c       |  2 ++
- arch/arm/boot/compressed/fdt_wip.c      |  2 ++
- arch/arm/boot/compressed/libfdt_env.h   | 24 ----------------
- 8 files changed, 24 insertions(+), 56 deletions(-)
- create mode 100644 arch/arm/boot/compressed/fdt.c
- create mode 100644 arch/arm/boot/compressed/fdt_ro.c
- create mode 100644 arch/arm/boot/compressed/fdt_rw.c
- create mode 100644 arch/arm/boot/compressed/fdt_wip.c
- delete mode 100644 arch/arm/boot/compressed/libfdt_env.h
+ .../net/ethernet/stmicro/stmmac/dwmac-intel.c | 20 +++++++++++++++----
+ .../net/ethernet/stmicro/stmmac/stmmac_pci.c  |  5 -----
+ 2 files changed, 16 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arm/boot/compressed/.gitignore b/arch/arm/boot/compressed/.gitignore
-index db05c6ef3e31..60606b0f378d 100644
---- a/arch/arm/boot/compressed/.gitignore
-+++ b/arch/arm/boot/compressed/.gitignore
-@@ -7,12 +7,3 @@ hyp-stub.S
- piggy_data
- vmlinux
- vmlinux.lds
--
--# borrowed libfdt files
--fdt.c
--fdt.h
--fdt_ro.c
--fdt_rw.c
--fdt_wip.c
--libfdt.h
--libfdt_internal.h
-diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
-index 9c11e7490292..00602a6fba04 100644
---- a/arch/arm/boot/compressed/Makefile
-+++ b/arch/arm/boot/compressed/Makefile
-@@ -76,29 +76,30 @@ compress-$(CONFIG_KERNEL_LZMA) = lzma
- compress-$(CONFIG_KERNEL_XZ)   = xzkern
- compress-$(CONFIG_KERNEL_LZ4)  = lz4
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
+index 2e4aaedb93f5..d163c4b43da0 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-intel.c
+@@ -252,6 +252,7 @@ static void common_default_data(struct plat_stmmacenet_data *plat)
+ static int intel_mgbe_common_data(struct pci_dev *pdev,
+ 				  struct plat_stmmacenet_data *plat)
+ {
++	int ret;
+ 	int i;
  
--# Borrowed libfdt files for the ATAG compatibility mode
--
--libfdt		:= fdt_rw.c fdt_ro.c fdt_wip.c fdt.c
--libfdt_hdrs	:= fdt.h libfdt.h libfdt_internal.h
--
--libfdt_objs	:= $(addsuffix .o, $(basename $(libfdt)))
--
--$(addprefix $(obj)/,$(libfdt) $(libfdt_hdrs)): $(obj)/%: $(srctree)/scripts/dtc/libfdt/%
--	$(call cmd,shipped)
--
--$(addprefix $(obj)/,$(libfdt_objs) atags_to_fdt.o): \
--	$(addprefix $(obj)/,$(libfdt_hdrs))
-+libfdt_objs := fdt_rw.o fdt_ro.o fdt_wip.o fdt.o
- 
- ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
- OBJS	+= $(libfdt_objs) atags_to_fdt.o
- endif
- 
-+# -fstack-protector-strong triggers protection checks in this code,
-+# but it is being used too early to link to meaningful stack_chk logic.
-+nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
-+$(foreach o, $(libfdt_objs) atags_to_fdt.o, \
-+	$(eval CFLAGS_$(o) := -I $(srctree)/scripts/dtc/libfdt $(nossp-flags-y)))
+ 	plat->clk_csr = 5;
+@@ -324,7 +325,12 @@ static int intel_mgbe_common_data(struct pci_dev *pdev,
+ 		dev_warn(&pdev->dev, "Fail to register stmmac-clk\n");
+ 		plat->stmmac_clk = NULL;
+ 	}
+-	clk_prepare_enable(plat->stmmac_clk);
 +
-+# These were previously generated C files. When you are building the kernel
-+# with O=, make sure to remove the stale files in the output tree. Otherwise,
-+# the build system wrongly compiles the stale ones.
-+ifdef building_out_of_srctree
-+$(shell rm -f $(addprefix $(obj)/, fdt_rw.c fdt_ro.c fdt_wip.c fdt.c))
-+endif
++	ret = clk_prepare_enable(plat->stmmac_clk);
++	if (ret) {
++		clk_unregister_fixed_rate(plat->stmmac_clk);
++		return ret;
++	}
+ 
+ 	/* Set default value for multicast hash bins */
+ 	plat->multicast_filter_bins = HASH_TABLE_SIZE;
+@@ -657,7 +663,13 @@ static int intel_eth_pci_probe(struct pci_dev *pdev,
+ 	res.wol_irq = pdev->irq;
+ 	res.irq = pdev->irq;
+ 
+-	return stmmac_dvr_probe(&pdev->dev, plat, &res);
++	ret = stmmac_dvr_probe(&pdev->dev, plat, &res);
++	if (ret) {
++		clk_disable_unprepare(plat->stmmac_clk);
++		clk_unregister_fixed_rate(plat->stmmac_clk);
++	}
 +
- targets       := vmlinux vmlinux.lds piggy_data piggy.o \
- 		 lib1funcs.o ashldi3.o bswapsdi2.o \
- 		 head.o $(OBJS)
++	return ret;
+ }
  
--clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S \
--		$(libfdt) $(libfdt_hdrs) hyp-stub.S
-+clean-files += piggy_data lib1funcs.S ashldi3.S bswapsdi2.S hyp-stub.S
+ /**
+@@ -675,8 +687,8 @@ static void intel_eth_pci_remove(struct pci_dev *pdev)
  
- KBUILD_CFLAGS += -DDISABLE_BRANCH_PROFILING
+ 	stmmac_dvr_remove(&pdev->dev);
  
-@@ -107,15 +108,6 @@ ORIG_CFLAGS := $(KBUILD_CFLAGS)
- KBUILD_CFLAGS = $(subst -pg, , $(ORIG_CFLAGS))
- endif
+-	if (priv->plat->stmmac_clk)
+-		clk_unregister_fixed_rate(priv->plat->stmmac_clk);
++	clk_disable_unprepare(priv->plat->stmmac_clk);
++	clk_unregister_fixed_rate(priv->plat->stmmac_clk);
  
--# -fstack-protector-strong triggers protection checks in this code,
--# but it is being used too early to link to meaningful stack_chk logic.
--nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
--CFLAGS_atags_to_fdt.o := $(nossp-flags-y)
--CFLAGS_fdt.o := $(nossp-flags-y)
--CFLAGS_fdt_ro.o := $(nossp-flags-y)
--CFLAGS_fdt_rw.o := $(nossp-flags-y)
--CFLAGS_fdt_wip.o := $(nossp-flags-y)
--
- ccflags-y := -fpic $(call cc-option,-mno-single-pic-base,) -fno-builtin \
- 	     -I$(obj) $(DISABLE_ARM_SSP_PER_TASK_PLUGIN)
- asflags-y := -DZIMAGE
-diff --git a/arch/arm/boot/compressed/atags_to_fdt.c b/arch/arm/boot/compressed/atags_to_fdt.c
-index 64c49747f8a3..8452753efebe 100644
---- a/arch/arm/boot/compressed/atags_to_fdt.c
-+++ b/arch/arm/boot/compressed/atags_to_fdt.c
-@@ -1,4 +1,5 @@
- // SPDX-License-Identifier: GPL-2.0
-+#include <linux/libfdt_env.h>
- #include <asm/setup.h>
- #include <libfdt.h>
+ 	for (i = 0; i < PCI_STD_NUM_BARS; i++) {
+ 		if (pci_resource_len(pdev, i) == 0)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
+index 3fb21f7ac9fb..272cb47af9f2 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_pci.c
+@@ -217,15 +217,10 @@ static int stmmac_pci_probe(struct pci_dev *pdev,
+  */
+ static void stmmac_pci_remove(struct pci_dev *pdev)
+ {
+-	struct net_device *ndev = dev_get_drvdata(&pdev->dev);
+-	struct stmmac_priv *priv = netdev_priv(ndev);
+ 	int i;
  
-diff --git a/arch/arm/boot/compressed/fdt.c b/arch/arm/boot/compressed/fdt.c
-new file mode 100644
-index 000000000000..f8ea7a201ab1
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt.c
-@@ -0,0 +1,2 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+#include "../../../../lib/fdt.c"
-diff --git a/arch/arm/boot/compressed/fdt_ro.c b/arch/arm/boot/compressed/fdt_ro.c
-new file mode 100644
-index 000000000000..93970a4ad5ae
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt_ro.c
-@@ -0,0 +1,2 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+#include "../../../../lib/fdt_ro.c"
-diff --git a/arch/arm/boot/compressed/fdt_rw.c b/arch/arm/boot/compressed/fdt_rw.c
-new file mode 100644
-index 000000000000..f7c6b8b7e01c
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt_rw.c
-@@ -0,0 +1,2 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+#include "../../../../lib/fdt_rw.c"
-diff --git a/arch/arm/boot/compressed/fdt_wip.c b/arch/arm/boot/compressed/fdt_wip.c
-new file mode 100644
-index 000000000000..048d2c7a088d
---- /dev/null
-+++ b/arch/arm/boot/compressed/fdt_wip.c
-@@ -0,0 +1,2 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+#include "../../../../lib/fdt_wip.c"
-diff --git a/arch/arm/boot/compressed/libfdt_env.h b/arch/arm/boot/compressed/libfdt_env.h
-deleted file mode 100644
-index 6a0f1f524466..000000000000
---- a/arch/arm/boot/compressed/libfdt_env.h
-+++ /dev/null
-@@ -1,24 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef _ARM_LIBFDT_ENV_H
--#define _ARM_LIBFDT_ENV_H
+ 	stmmac_dvr_remove(&pdev->dev);
+ 
+-	if (priv->plat->stmmac_clk)
+-		clk_unregister_fixed_rate(priv->plat->stmmac_clk);
 -
--#include <linux/limits.h>
--#include <linux/types.h>
--#include <linux/string.h>
--#include <asm/byteorder.h>
--
--#define INT32_MAX	S32_MAX
--#define UINT32_MAX	U32_MAX
--
--typedef __be16 fdt16_t;
--typedef __be32 fdt32_t;
--typedef __be64 fdt64_t;
--
--#define fdt16_to_cpu(x)		be16_to_cpu(x)
--#define cpu_to_fdt16(x)		cpu_to_be16(x)
--#define fdt32_to_cpu(x)		be32_to_cpu(x)
--#define cpu_to_fdt32(x)		cpu_to_be32(x)
--#define fdt64_to_cpu(x)		be64_to_cpu(x)
--#define cpu_to_fdt64(x)		cpu_to_be64(x)
--
--#endif
+ 	for (i = 0; i < PCI_STD_NUM_BARS; i++) {
+ 		if (pci_resource_len(pdev, i) == 0)
+ 			continue;
 -- 
 2.25.1
 
