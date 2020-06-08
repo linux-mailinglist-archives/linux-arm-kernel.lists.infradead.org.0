@@ -2,77 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B05F1F1597
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 11:39:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C00681F15A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 11:41:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=jY8BBZb9FsLnFVKdW5grD11Q4jYCTdVVOjomZthaLFA=; b=XRE
-	6fQ9HpxFO/b+g4rWUH3z08g+KoDxbAVVvGGPrc0KEos9XpxWxxCQ9Q2AqWXXMXddSYKU7ocHyin0C
-	izra6TfDwVrHj0pC2o3BWim+JSTo9IiW+X2XbmkZMFRqrG0BBqiX2JN0BjkSc+TxfXXY3kAYYGhXd
-	MX7lkaMDCwivXwfw4X797TS5N4IkbwwFKRCL4Ffjb8m9spkr782pTUYGnahZO9tJJEqoTvjjLyHtL
-	EmUp53zO5NQJxh9WrC8pcf5yEEpJixiybuHbVvOSQRCCgqqGCyiDanUOgi0z0CsMCucgQswfvX3eB
-	oM6S+y+4yA40Rm+jOzK8T1WWo4vFTkQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KfE3RWSq4phs0h4KUT83oEuaIy7dN/Alh5/a0QmRU0Y=; b=Gf1glmG0D6is5R
+	7tnGUX2Hh0AWAWVmesBgNLYkKTlxK4+zxNEdXiLh70W/dt6vplbl3HqKpvOesovOSjel4cAR9IGw+
+	cJY0C2mz00p8zYBFnze+h/KUpQMv4Gk2S56s9+T7Oz6up7qPi+xi6ig/YaSfj+VfHNrb2zOfmblG8
+	SM5bw3sPzpv9TWxwsJ4iQ425tHmNzB1FDMiQp2b9tO7MCxZeX3lKXSFIq1lRNZDavigxTrzDv09LD
+	KIKxfw3MorS7pdhErapBDWZxAuvkCykXyE2S7VgjcKOeM9glVzkD+qnYw7QaZHQyG+ZCtnQ53f4Kk
+	iFOJbxC6Lml9ISuAD3og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiEFE-0008F6-4r; Mon, 08 Jun 2020 09:39:04 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jiEHE-0002nM-7O; Mon, 08 Jun 2020 09:41:08 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiEF4-0008EO-JW; Mon, 08 Jun 2020 09:38:55 +0000
-Received: by mail-pf1-x441.google.com with SMTP id h185so8306636pfg.2;
- Mon, 08 Jun 2020 02:38:54 -0700 (PDT)
+ id 1jiEH3-0002mb-SD; Mon, 08 Jun 2020 09:40:59 +0000
+Received: by mail-wm1-x341.google.com with SMTP id q25so15828981wmj.0;
+ Mon, 08 Jun 2020 02:40:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=8nFZFr9b1fII+6D0rKTzWsSJAU76ASsrlWrZljZL5Jk=;
- b=UXKeks0pXHxRBTysC/Dt0BNmLfmM0klkVdz12QpU0BFeAKumvbD71rgnaTd4tuoz7l
- Mrwz9oSPeQvdDqY2l2O4dnubnH/EJpYUaE9ZXglhOwOzcOIL+/gQvq2ZzjKntDGy8TLp
- Zir9ueSk4XHrtIHm5ALzLQJMYVuMRg4Ofo2tSo1NGrOVMugSB+1PdI+zZ5wvbCj0KrYT
- WS2KTs+JOusH1Q9nHP2Tpf/mjJ6Tn0pykUpuiqcQeosoK9HKVFvk/7XvMlKcm5ODPujo
- 6e+KbK+RGT6gfHgYvtA2aHtMBpt239ZmMQvp1ue7ugYh0sRyyJ4dzc4sNxKaLivakaFu
- Bn4w==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+F6VpU2DhJ38D1OzhvVOMkYO64zmbpsjhAiXZI8h3vs=;
+ b=iSoehG0/Vz0/hFRBTy05XlPZguWhE683LXK3Skhpl3x5As15/po8UkSHDk2lk6nX8s
+ EmfTIGxZrRzy+4Uca9R+I+lMk+JJxO3pNYIKfGX3M1SHybTaTwQodmZK/e5QQjH3apXb
+ bjYRtAiGQhKAH6ksUDm69xag6askBl3VCWymf/c94eoGYsBLlEsrhMmyU5sJ67PqcxTr
+ gYo6AGAKfXOjpMVuQAcG8+RqQV7WapOqkbXqQCK1NLL4ysw+n/WlrdzAdYYGMFB2iuLt
+ oQKy8A7deCvfHilqoP1TXjVWcSElvG3lhEVBjqOWdLkk/n+7n4+c++GQx9oZ5+w8zVTD
+ 5VbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=8nFZFr9b1fII+6D0rKTzWsSJAU76ASsrlWrZljZL5Jk=;
- b=IMt+hutbjta361AzUF0i8MOqQHDYhtm4gRrQO93uuF+J+gPVsbldhRPFqb+NzaXdpW
- Ne7UfJA7pu5D+Ivwe5OeS3aygzsqOpMd3nmSRWWo6IaSwNQzJk2LG1rbS73flYJ07QHH
- 6a/SeSMazEz+K6KTsWhr/6uWqA15aDlc3/9dsO1bC9jjxOqTdKJW23M8eylREYRYAarz
- 1q9w5MnC2zj5bFrSAdpTuEA11rfpVpWKil//Gefnb+5JJUlw9R0+HOOBPL1HCZ9ZV0j9
- DGcJKSSAnNH38LjymMViYzTOFJiuZIIHNVZmvo3DmXfHq+Mm2L4cRmpn/UMUH5jVqFg5
- na7A==
-X-Gm-Message-State: AOAM532j89SIMJ5xe+5kwl7aAySok+1dSFWY1OpVevcl1B8EuYnX8fRr
- 7QXggvGDY5QlZReguOIvCD0=
-X-Google-Smtp-Source: ABdhPJwbUtaqyDj7BTPatpRYTufbUH1GbiGng6XdEOmxI8JEukNzBV+RjIAaS5544ZUrmOPqjBijzQ==
-X-Received: by 2002:a63:b904:: with SMTP id z4mr20109401pge.25.1591609133685; 
- Mon, 08 Jun 2020 02:38:53 -0700 (PDT)
-Received: from localhost.localdomain ([2402:7500:4dc:9812:acc3:6aae:21fa:62f8])
- by smtp.gmail.com with ESMTPSA id 3sm6608971pfe.85.2020.06.08.02.38.50
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 08 Jun 2020 02:38:53 -0700 (PDT)
-From: Gene Chen <gene.chen.richtek@gmail.com>
-To: lee.jones@linaro.org,
-	matthias.bgg@gmail.com
-Subject: [PATCH] mfd: mt6360: Fix register driver NULL pointer by add driver
- name
-Date: Mon,  8 Jun 2020 17:38:45 +0800
-Message-Id: <1591609125-3761-1-git-send-email-gene.chen.richtek@gmail.com>
-X-Mailer: git-send-email 2.7.4
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=+F6VpU2DhJ38D1OzhvVOMkYO64zmbpsjhAiXZI8h3vs=;
+ b=d8lVZAfUnVnC6BhR0lyeRiY+i0TjpDY4iRyYIUcz8yo5cQHABfmXLJ+sc4erBUVTmQ
+ kVKZT+VTzzpxCXUTyCphps5HCFdHU0FcDXtWcYlitv20Vjj5/029l+hMxv+oPcXcYZit
+ WNMkt0PX7Z4wEAdCDYTae6yyjGTZmR+BoUm3QEw9q8k+eiCzKkIKFi1ntlaCY1nRoj7M
+ Kh1WktM2dKsS6TzK4elOZ7AmpYvR5ThXr4kXjOo2SI6+gdNi7SA0CtDlU0LgPDH3pu6a
+ uXkepyvTPrEeC1O7wYaUoD4XWUC+5qjmBNMkDOQuJGFZc9/sekcGBlb678cybJk2ysKj
+ zARQ==
+X-Gm-Message-State: AOAM530XgvOAizP6IfNrJ7S9y7VQMehk+tAxTejciKCqZdZYYq/b4zYE
+ ooHxkfMewcwnWuWx37YTtcI=
+X-Google-Smtp-Source: ABdhPJwwSZuP+bLORdgzdVpGe4oKaJlyNkuAUhDK5qX4qEIjzSeAk+d6t6RgsEH1l8fS5REb59KWjg==
+X-Received: by 2002:a1c:f401:: with SMTP id z1mr14952827wma.44.1591609256454; 
+ Mon, 08 Jun 2020 02:40:56 -0700 (PDT)
+Received: from skynet.lan (28.red-83-49-61.dynamicip.rima-tde.net.
+ [83.49.61.28])
+ by smtp.gmail.com with ESMTPSA id a3sm22096479wrp.91.2020.06.08.02.40.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 08 Jun 2020 02:40:55 -0700 (PDT)
+From: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
+To: tsbogend@alpha.franken.de, f.fainelli@gmail.com,
+ bcm-kernel-feedback-list@broadcom.com, miquel.raynal@bootlin.com,
+ richard@nod.at, vigneshr@ti.com, jonas.gorski@gmail.com,
+ linus.walleij@linaro.org, linux-mips@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-mtd@lists.infradead.org
+Subject: [PATCH 0/2] mtd: parsers: bcm63xx: simplify CFE detection
+Date: Mon,  8 Jun 2020 11:40:51 +0200
+Message-Id: <20200608094053.3381512-1-noltari@gmail.com>
+X-Mailer: git-send-email 2.26.2
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_023854_640967_E3353CB1 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20200608_024057_910781_C8F0D41E 
+X-CRM114-Status: UNSURE (   6.32  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [gene.chen.richtek[at]gmail.com]
+ provider [noltari[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,71 +101,21 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gene_chen@richtek.com, linux-kernel@vger.kernel.org, cy_huang@richtek.com,
- linux-mediatek@lists.infradead.org, Wilma.Wu@mediatek.com,
- linux-arm-kernel@lists.infradead.org, shufan_lee@richtek.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: =?UTF-8?q?=C3=81lvaro=20Fern=C3=A1ndez=20Rojas?= <noltari@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Gene Chen <gene_chen@richtek.com>
-
-accidentally remove driver name when
-replace probe by probe_new in add mt6360 mfd driver patch v4
-
-[  121.243012] EAX: c2a8bc64 EBX: 00000000 ECX: 00000000 EDX: 00000000
-[  121.243012] ESI: c2a8bc79 EDI: 00000000 EBP: e54bdea8 ESP: e54bdea0
-[  121.243012] DS: 007b ES: 007b FS: 0000 GS: 0000 SS: 0068 EFLAGS: 00010286
-[  121.243012] CR0: 80050033 CR2: 00000000 CR3: 02ec3000 CR4: 000006b0
-[  121.243012] Call Trace:
-[  121.243012]  kset_find_obj+0x3d/0xc0
-[  121.243012]  driver_find+0x16/0x40
-[  121.243012]  driver_register+0x49/0x100
-[  121.243012]  ? i2c_for_each_dev+0x39/0x50
-[  121.243012]  ? __process_new_adapter+0x20/0x20
-[  121.243012]  ? cht_wc_driver_init+0x11/0x11
-[  121.243012]  i2c_register_driver+0x30/0x80
-[  121.243012]  ? intel_lpss_pci_driver_init+0x16/0x16
-[  121.243012]  mt6360_pmu_driver_init+0xf/0x11
-[  121.243012]  do_one_initcall+0x33/0x1a0
-[  121.243012]  ? parse_args+0x1eb/0x3d0
-[  121.243012]  ? __might_sleep+0x31/0x90
-[  121.243012]  ? kernel_init_freeable+0x10a/0x17f
-[  121.243012]  kernel_init_freeable+0x12c/0x17f
-[  121.243012]  ? rest_init+0x110/0x110
-[  121.243012]  kernel_init+0xb/0x100
-[  121.243012]  ? schedule_tail_wrapper+0x9/0xc
-[  121.243012]  ret_from_fork+0x19/0x24
-[  121.243012] Modules linked in:
-[  121.243012] CR2: 0000000000000000
-[  121.243012] random: get_random_bytes called from init_oops_id+0x3a/0x40 with crng_init=0
-[  121.243012] ---[ end trace 38a803400f1a2bee ]---
-[  121.243012] EIP: strcmp+0x11/0x30
-
-Signed-off-by: Gene Chen <gene_chen@richtek.com>
----
- drivers/mfd/mt6360-core.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/mfd/mt6360-core.c b/drivers/mfd/mt6360-core.c
-index db8cdf5..e9cacc2 100644
---- a/drivers/mfd/mt6360-core.c
-+++ b/drivers/mfd/mt6360-core.c
-@@ -412,6 +412,7 @@ MODULE_DEVICE_TABLE(of, mt6360_pmu_of_id);
- 
- static struct i2c_driver mt6360_pmu_driver = {
- 	.driver = {
-+		.name = "mt6360_pmu",
- 		.pm = &mt6360_pmu_pm_ops,
- 		.of_match_table = of_match_ptr(mt6360_pmu_of_id),
- 	},
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SW5zdGVhZCBvZiB0cnlpbmcgdG8gcGFyc2UgQ0ZFIHZlcnNpb24gc3RyaW5nLCB3aGljaCBpcyBj
+dXN0b21pemVkIGJ5IHNvbWUKdmVuZG9ycywgbGV0J3MganVzdCBjaGVjayB0aGF0ICJDRkUxIiB3
+YXMgcGFzc2VkIG9uIGFyZ3VtZW50IDMuCgrDgWx2YXJvIEZlcm7DoW5kZXogUm9qYXMgKDIpOgog
+IE1JUFM6IEJDTTYzeHg6IGFkZCBoZWxwZXIgZnVuY3Rpb24gdG8gZGV0ZWN0IENGRQogIG10ZDog
+cGFyc2VyczogYmNtNjN4eDogc2ltcGxpZnkgQ0ZFIGRldGVjdGlvbgoKIC4uLi9pbmNsdWRlL2Fz
+bS9tYWNoLWJjbTYzeHgvYmNtNjN4eF9ib2FyZC5oICB8ICA2ICsrKysKIGRyaXZlcnMvbXRkL3Bh
+cnNlcnMvYmNtNjN4eHBhcnQuYyAgICAgICAgICAgICB8IDI4ICsrLS0tLS0tLS0tLS0tLS0tLS0K
+IDIgZmlsZXMgY2hhbmdlZCwgOSBpbnNlcnRpb25zKCspLCAyNSBkZWxldGlvbnMoLSkKCi0tIAoy
+LjI2LjIKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
