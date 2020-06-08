@@ -2,67 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 08ABA1F1ADE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 16:21:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 945871F1AEE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 16:24:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2L0o30XdSDdr294P3N+IxySy3hu84oiVZMT4dNICxjI=; b=jLMbLQKVTiOZIz
-	Madq1RBjmmjCsPDYC51DJybN1qMMNXTGjo2uWbbbJeJ4ApczUU2gqJ4MvPoUOMKMup6bxGS1rtt13
-	Zls3MNtJiNOK4dzKLkKTUqYzDNHFdDPjjhDll4eE/4iw6SvXjjZh9lN6ah3kZN1XOYrxgPxdAB5cd
-	Wj9+RsdoKIn1AUFwNJ3DO36VjPvthUsKoOsAgj8p9cKXPDBagFfMbKQxwnq9+vnM3lgmNp4jv9T3m
-	NX9m2fXLfxgFEOf3gr6eORW3jCRKTKq/1NWxXcHBuweQvyEtRGg/fMahMUi0guX5z1Hkb3tk61HAb
-	ohVLWR3TwKdAwWQo1WkQ==;
+	List-Owner; bh=4LMwbjf6HFVewB1t/KDx2mzl4MZxtK0ooc9q8YiEA+g=; b=Q+djZR6fs8r1Y+
+	OvoSsNLZVsbnmkzXCQt+jRWuhQ/5WDnsDssXNTKI1JZOAVav7bbkA2SUFuEKQK07V1y6rXSarlF+k
+	kqpYabpyw/X22G0ijAM6nI5p//NUKTjxmYiZt/X3iNpRgwycfNTuMNUk+qPhXUYjZ6hWH/MnmTnZB
+	UWPVDkBFrciOKKAUvy4bwIcVOKjyaUt88gUYK6Oyn3pZ7ueKfSFyPtrkC0HnD5sZsUlEQ125Gbuhy
+	CpVKKklL4Oxjipr5HH60r3lgrN7hzrUxbkEGe2Ett3pT40ygC2ySTjUbM3VcqIFFJ5Cb4LsZu+OCd
+	/0vIxaFsCVxfuJW6JrFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiIep-0007ZV-Du; Mon, 08 Jun 2020 14:21:47 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1jiIhO-0007yu-M7; Mon, 08 Jun 2020 14:24:26 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiIei-0007Z0-2U
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 14:21:41 +0000
-IronPort-SDR: 0SlpQazigGqyVkMOwbRlHrBM8cetZaWpSnMD5sj1wOQgTTjnwDZxQq+kpESdLCfhdADzN3bAeM
- +wxA+l/oMwhA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga005.fm.intel.com ([10.253.24.32])
- by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 08 Jun 2020 07:21:36 -0700
-IronPort-SDR: An2n2uLm1+vEVTo6++u/T0MtO7wh5mYIxtvGU8viOLBy8ztWPL+oXnPNH06jk73F07F7SbY10b
- RFRftU86oNpw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,487,1583222400"; d="scan'208";a="472704374"
-Received: from pl-dbox.sh.intel.com (HELO intel.com) ([10.239.159.39])
- by fmsmga005.fm.intel.com with ESMTP; 08 Jun 2020 07:21:34 -0700
-Date: Mon, 8 Jun 2020 22:20:53 +0800
-From: Philip Li <philip.li@intel.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [kbuild-all] Re: [PATCH 4/5] arm64: vdso: Add getcpu()
- implementation
-Message-ID: <20200608142053.GA11708@intel.com>
-References: <20200605131131.16491-5-broonie@kernel.org>
- <202006060044.bdshhJta%lkp@intel.com>
- <20200605163508.GJ5413@sirena.org.uk>
- <e1b2f86e-8eef-3266-8c87-93c6660576e8@intel.com>
- <20200608110901.GA4593@sirena.org.uk>
+ id 1jiIhG-0007yM-I0
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 14:24:20 +0000
+Received: by mail-wr1-x444.google.com with SMTP id x13so17625545wrv.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 08 Jun 2020 07:24:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=fIhwy13PVaO5F8p6kg+GqvngU7Ke/x9Dg12+TRbhC9I=;
+ b=CZfPL8w5fOBsBIx+z/oomYpe+rnOnlu08HlfeLxZxWn4DvD8EV1jvidfa2G6obPNXw
+ wcLLWFtkhMqdqFwD6ucKN3p6mzAsg7HanEknR4Sla4G+4jcKzr/fpU1V57aBb/7AYoPw
+ a+qTL3H1zDbkTzdEZSwS+EOshh5JBGPjQ8vruPaNy4+5DBNBZZqQkTMEdK4IxTK5NACU
+ GGIM6BOSbSswTePVvH+wIByXOpNUEHdrrZU7+rCQFlWfiin1e/xF6lbhT4X8YtTuAVEZ
+ Fa5yd03P+4vcSrJt3xaJlQ1FH4O1ETJFfjANj9H1Awd+M9I8eobjJwDd948h9av12Eua
+ cTdw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=fIhwy13PVaO5F8p6kg+GqvngU7Ke/x9Dg12+TRbhC9I=;
+ b=lBfWCV7malf1cdynzdHDLYVGHNID7+xUZshA4bW6rP0KAQmnSMblpoT2ZKlfm8wC7T
+ GW8v4b4vJ0u1s61JBjW6N8bw/oqmG21x0xS/vepG79Ur67RYDZrRkolPcaloKgt02nDK
+ vF1ij6ZGKjzxIBsrBmnWMRQjFvolei8VhKHO1UFltQvIwSvb1ZuUqniw6T27KUvKFWel
+ ZMKl9GcGEqrzfuwLGF9R8nxEXyJTO3yEG6Ckqwnc9TLIp1/ptFkdOgaFh9ldyrKMQ1ba
+ M4n4aLMN33/8LpC33E0wP3VuVyDPexo4PdUwVxGGEVLZmRUnWrlcseQXqf6qWbrFar/7
+ T5Cw==
+X-Gm-Message-State: AOAM531S4aJJTuetikuaoipB3elbUkwCM7eDhwyc0DDtpjWLrINb/p0R
+ 0wFP7wL9l5lhs28Np4TWnQPjuQ==
+X-Google-Smtp-Source: ABdhPJweehatGIr1BA4m4b/1jQsQ1TEclLtHNU4cdgilO6fq2rqBkF/6wa0DUib7fHXp5oiaj3ZdVg==
+X-Received: by 2002:adf:f208:: with SMTP id p8mr21462928wro.388.1591626257005; 
+ Mon, 08 Jun 2020 07:24:17 -0700 (PDT)
+Received: from dell ([95.147.198.92])
+ by smtp.gmail.com with ESMTPSA id o15sm22497715wmm.31.2020.06.08.07.24.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 08 Jun 2020 07:24:15 -0700 (PDT)
+Date: Mon, 8 Jun 2020 15:24:13 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH v3 03/16] mfd: mfd-core: match device tree node against
+ reg property
+Message-ID: <20200608142413.GA4106@dell>
+References: <20200423174543.17161-1-michael@walle.cc>
+ <20200423174543.17161-4-michael@walle.cc>
+ <67e90dafd67c285158c2c6f67f92edb7@walle.cc>
+ <20200515102848.GH271301@dell>
+ <159e68b4ce53630ef906b2fcbca925bd@walle.cc>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200608110901.GA4593@sirena.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <159e68b4ce53630ef906b2fcbca925bd@walle.cc>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_072140_127972_D1782413 
-X-CRM114-Status: GOOD (  15.92  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200608_072418_630088_20AAE2C6 
+X-CRM114-Status: GOOD (  20.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,65 +102,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, kernel test robot <lkp@intel.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Li Zhijian <zhijianx.li@intel.com>,
- Andrei Vagin <avagin@gmail.com>, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, linux-watchdog@vger.kernel.org,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, Jason Cooper <jason@lakedaemon.net>,
+ linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Mark Brown <broonie@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Jun 08, 2020 at 12:09:01PM +0100, Mark Brown wrote:
-> On Mon, Jun 08, 2020 at 03:46:57PM +0800, Li Zhijian wrote:
-> > On 6/6/20 12:35 AM, Mark Brown wrote:
-> =
-
-> > > > arch/arm64/kernel/vdso/vgettimeofday.c:9:5: warning: no previous pr=
-ototype for '__kernel_clock_gettime' [-Wmissing-prototypes]
-> > > > 9 | int __kernel_clock_gettime(clockid_t clock,
-> > > > |     ^~~~~~~~~~~~~~~~~~~~~~
-> =
-
-> > > I'm not seeing this here and what we're doing is in line with the
-> > > existing idiom as can be seen from the __kernel_clock_gettime() code
-> > > flagging the same thing.  Possibly an old/outdated toolchain?
-> =
-
-> > Actually, the origin mail contained 4 warnings,=A0 and only one is *new=
-*, as
-> > the mail mentioned that
-> =
-
-> > > All warnings (new ones prefixed by >>, old ones prefixed by <<):
-> =
-
-> > 0Day/LKP had marked the *new* ones prefixed by '>>'
-> =
-
-> My point here is that all the warnings, both old and new, look spurious
-> and the new warning comes from following the pattern that generates the
-> existing warnings.  I'm not seeing any of those warnings locally or in
-> other build services like KernelCI.
-Thanks Mark for the input. Here the 0-day kernel bot uses W=3D1 to build wh=
-ich
-is mentioned as part of reproduce step.
-
-> reproduce (this is a W=3D1 build):
-
-And we just add FAQ at https://github.com/intel/lkp-tests/wiki/LKP-FAQ#how-=
-is-one-meant-to-act-on-w1-reports-like--wmissing-prototypes
-to explain the the missing-prototypes warning, hope this can provide
-extra information.
-
-Thanks
-
-> _______________________________________________
-> kbuild-all mailing list -- kbuild-all@lists.01.org
-> To unsubscribe send an email to kbuild-all-leave@lists.01.org
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCAyNSBNYXkgMjAyMCwgTWljaGFlbCBXYWxsZSB3cm90ZToKPiBBbSAyMDIwLTA1LTE1
+IDEyOjI4LCBzY2hyaWViIExlZSBKb25lczoKPiA+IE9uIFRodSwgMzAgQXByIDIwMjAsIE1pY2hh
+ZWwgV2FsbGUgd3JvdGU6Cj4gPiAKPiA+ID4gSGkgTGVlLAo+ID4gPiAKPiA+ID4gQW0gMjAyMC0w
+NC0yMyAxOTo0NSwgc2NocmllYiBNaWNoYWVsIFdhbGxlOgo+ID4gPiA+IFRoZXJlIG1pZ2h0IGJl
+IG11bHRpcGxlIGNoaWxkcmVuIHdpdGggdGhlIGRldmljZSB0cmVlIGNvbXBhdGlibGUsIGZvcgo+
+ID4gPiA+IGV4YW1wbGUgaWYgYSBNRkQgaGFzIG11bHRpcGxlIGluc3RhbmNlcyBvZiB0aGUgc2Ft
+ZSBmdW5jdGlvbi4gSW4gdGhpcwo+ID4gPiA+IGNhc2Ugb25seSB0aGUgZmlyc3QgaXMgbWF0Y2hl
+ZCBhbmQgdGhlIG90aGVyIGNoaWxkcmVuIGdldCBhIHdyb25nCj4gPiA+ID4gb2Zfbm9kZSByZWZl
+cmVuY2UuCj4gPiA+ID4gQWRkIGEgbmV3IG9wdGlvbiB0byBtYXRjaCBhbHNvIGFnYWluc3QgdGhl
+IHVuaXQgYWRkcmVzcyBvZiB0aGUgY2hpbGQKPiA+ID4gPiBub2RlLiBBZGRpdG9uYWxseSwgYSBu
+ZXcgaGVscGVyIE9GX01GRF9DRUxMX1JFRyBpcyBhZGRlZC4KClsuLi5dCgo+ID4gPiA+IGRpZmYg
+LS1naXQgYS9pbmNsdWRlL2xpbnV4L21mZC9jb3JlLmggYi9pbmNsdWRlL2xpbnV4L21mZC9jb3Jl
+LmgKPiA+ID4gPiBpbmRleCBkMDFkMTI5OWU0OWQuLmMyYzBhZDZiMTRmMyAxMDA2NDQKPiA+ID4g
+PiAtLS0gYS9pbmNsdWRlL2xpbnV4L21mZC9jb3JlLmgKPiA+ID4gPiArKysgYi9pbmNsdWRlL2xp
+bnV4L21mZC9jb3JlLmgKPiA+ID4gPiBAQCAtMTMsOCArMTMsMTEgQEAKPiA+ID4gPiAgI2luY2x1
+ZGUgPGxpbnV4L3BsYXRmb3JtX2RldmljZS5oPgo+ID4gPiA+Cj4gPiA+ID4gICNkZWZpbmUgTUZE
+X1JFU19TSVpFKGFycikgKHNpemVvZihhcnIpIC8gc2l6ZW9mKHN0cnVjdCByZXNvdXJjZSkpCj4g
+PiA+ID4gKyNkZWZpbmUgTUZEX09GX1JFR19WQUxJRAlCSVQoMzEpCj4gPiAKPiA+IFdoYXQgYWJv
+dXQgNjRiaXQgcGxhdGZvcm1zPwo+IAo+IFRoZSBpZGVhIHdhcyB0byBoYXZlIHRoaXMgYXMgYSBs
+b2dpY2FsIG51bWJlci4gSS5lLiBmb3Igbm93IHlvdSBtYXkgb25seQo+IGhhdmUgb25lIHN1YmRl
+dmljZSBwZXIgdW5pcXVlIGNvbXBhdGlibGUgc3RyaW5nLiBJbiBmYWN0LCBpZiB5b3UgaGF2ZSBh
+Cj4gbG9vayBhdCB0aGUgYWI4NTAwLmMsIHRoZXJlIGFyZSBtdWx0aXBsZSAic3Rlcmljc3Nvbixh
+Yjg1MDAtcHdtIgo+IHN1YmRldmljZXMuIEJ1dCB0aGVyZSBpcyBvbmx5IG9uZSBEVCBub2RlIGZv
+ciBhbGwgdGhyZWUgb2YgaXQuIEkgZ3Vlc3MKPiB0aGlzIHdvcmtzIGFzIGxvbmcgYXMgeW91IGRv
+bid0IHVzZSBwaGFuZGxlcyB0byByZWZlcmVuY2UgdGhlIHB3bSBub2RlCj4gaW4gdGhlIGRldmlj
+ZSB0cmVlLiBPciB5b3UgZG9uJ3Qgd2FudCB0byB1c2UgZGV2aWNlIHRyZWUgcHJvcGVydGllcwo+
+IHBlciBzdWJkZXZpY2UgKGZvciBleGFtcGxlIHRoZSAidGltZW91dC1zZWMiIG9mIGEgd2F0Y2hk
+b2cgZGV2aWNlKS4KClRoaXMgaXMgbm90IGEgZ29vZCBleGFtcGxlLCBhcyB0aGUgInN0ZXJpY3Nz
+b24sYWI4NTAwLXB3bSIgaXMKbGVnaXRpbWF0ZS4gIEhlcmUgd2UgYXJlIHJlZ2lzdGVyaW5nIDMg
+cG90ZW50aWFsIGRldmljZXMsIGJ1dCBvbmx5Cmluc3RhbnRpYXRpbmcgMSBvZiB0aGVtLgoKLS0g
+CkxlZSBKb25lcyBb5p2O55C85pavXQpTZW5pb3IgVGVjaG5pY2FsIExlYWQgLSBEZXZlbG9wZXIg
+U2VydmljZXMKTGluYXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFybSBTb0Nz
+CkZvbGxvdyBMaW5hcm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
