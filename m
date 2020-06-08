@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 79B821F222A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:06:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D21391F222F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:07:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3PsVgksnEPWfaiEVoi9l+HYLv9ZxGEPI73UtLL7O7Ko=; b=o9vht/ideni4w0
-	qwTNhPEgX8kHtFDmRyo1G5b0kWiJKfNgCPvR+LJrs/r69+pSJjWCT3dxhstWkcXz4ixUmT3Xlp/ml
-	QC9STzAcqAmjuOpFpPRsBEQRUIq8yiMuAtxXQq5zH4CdVXMXcuOybCzjrF7S9HU73RSKZzfY+oAYd
-	nwLkr90vrKIKLXVbTRb+aYniJiYjBRcjr3w0NTxq426xSUyhFyeiQo7GUGKG0W9lrvadkSqbAeoiz
-	mffHK9/70ZQXQyybqQM1EGQhvbp7IBrSuHsNgmnbRDJp61+PU98F51O6Ed64Tv1qi/aVxkMXcQUbI
-	EZMaHUu+sr/uTZAFEuew==;
+	List-Owner; bh=MUDVffUb2jFRW52LEozj0Od7krsEdnmRgKVyD2SiT4s=; b=XlV0ALPBPiBbrH
+	Vdx5/CfLEYjOG0V4muV3gO1dULBFOR5NEeeE21CzZMVXSRE5gjkPLkrlLed9XcFOiUW8K/Fg2ehzS
+	XinzFmBhD6fSpv0B+uoROocl96EVd7Rq7cVcGst4axfP11Q9qzA12PrgOw9LPf0sJSVDsVoqOxoxO
+	UJjw3XdLPgvTrblHB3dX9HTSgFJbHLILALgr3hIQ+W1Ugnly6iImha8gQrgv+Mes17woUFm50iLY5
+	mYFjnbiCAm8+uKlJRNez2BRxM2haLvkpUJ0xujZNMlYo422u1JNkWUIo0zm7//kwk/oqvRQT3z83+
+	BNP6l0tHj/0c0W5qUP0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQqs-0006bW-Ct; Mon, 08 Jun 2020 23:06:46 +0000
+	id 1jiQrJ-0006r6-Gf; Mon, 08 Jun 2020 23:07:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQqi-0006Zx-1k
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:06:37 +0000
+ id 1jiQql-0006c9-VL
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:06:41 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D4D3E207C3;
- Mon,  8 Jun 2020 23:06:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9BDC22078C;
+ Mon,  8 Jun 2020 23:06:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657595;
- bh=1Bo6mQ3UXemvfcY+3K6du4CSfs7iEjEpfOdhQeNvJW0=;
+ s=default; t=1591657599;
+ bh=qKFBRQ81UcIuTIqoYgZMaUlWh2lfDV9p7Zr182yEqCk=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=sa9v6HA9KjtrGk9x6r6bvrXPTUW7Ql3ItsrtWESnorKSSlruutG8Hy+up7uRxrWcI
- zNa2/5CgKYlhZOpLXPrZZwr3g0XQsomm8w8XeMpcvyj3sz/4yxSxu8173pn8xD0Mbu
- RbQ8eJVBg+dLH2Y1ESl/mPpHHu3VAAgSmXn/T27w=
+ b=ZHoSNLueWKRyrz7VJJg1kLdM4tsHszdCF1tmjmiU9U7ACp0uKVOFBVpKWSp8smY09
+ m3bQEyTnRlZO7U+EHcW42NJlGspQRySYBBrCi70hcSsHLfKrmr4uTkWHMtjwbkWU1w
+ biCJYns9VMn5rqw7VfTIEITQ5V1fr2IOBXJljvBo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 022/274] arm64/kernel: Fix range on invalidating
- dcache for boot page tables
-Date: Mon,  8 Jun 2020 19:01:55 -0400
-Message-Id: <20200608230607.3361041-22-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 025/274] spi: pxa2xx: Apply CS clk quirk to BXT
+Date: Mon,  8 Jun 2020 19:01:58 -0400
+Message-Id: <20200608230607.3361041-25-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160636_130574_F79FAAD6 
-X-CRM114-Status: GOOD (  14.87  )
+X-CRM114-CacheID: sfid-20200608_160640_039229_AC73AACA 
+X-CRM114-Status: GOOD (  11.56  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,101 +79,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>,
- Gavin Shan <gshan@redhat.com>, linux-arm-kernel@lists.infradead.org,
- Sasha Levin <sashal@kernel.org>
+Cc: Sasha Levin <sashal@kernel.org>,
+ Shobhit Srivastava <shobhit.srivastava@intel.com>,
+ Evan Green <evgreen@chromium.org>, linux-spi@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Gavin Shan <gshan@redhat.com>
+From: Evan Green <evgreen@chromium.org>
 
-[ Upstream commit 9d2d75ede59bc1edd8561f2ee9d4702a5ea0ae30 ]
+[ Upstream commit 6eefaee4f2d366a389da0eb95e524ba82bf358c4 ]
 
-Prior to commit 8eb7e28d4c642c31 ("arm64/mm: move runtime pgds to
-rodata"), idmap_pgd_dir, tramp_pg_dir, reserved_ttbr0, swapper_pg_dir,
-and init_pg_dir were contiguous at the end of the kernel image. The
-maintenance at the end of __create_page_tables assumed these were
-contiguous, and affected everything from the start of idmap_pg_dir
-to the end of init_pg_dir.
+With a couple allies at Intel, and much badgering, I got confirmation
+from Intel that at least BXT suffers from the same SPI chip-select
+issue as Cannonlake (and beyond). The issue being that after going
+through runtime suspend/resume, toggling the chip-select line without
+also sending data does nothing.
 
-That commit moved all but init_pg_dir into the .rodata section, with
-other data placed between idmap_pg_dir and init_pg_dir, but did not
-update the maintenance. Hence the maintenance is performed on much
-more data than necessary (but as the bootloader previously made this
-clean to the PoC there is no functional problem).
+Add the quirk to BXT to briefly toggle dynamic clock gating off and
+on, forcing the fabric to wake up enough to notice the CS register
+change.
 
-As we only alter idmap_pg_dir, and init_pg_dir, we only need to perform
-maintenance for these. As the other dirs are in .rodata, the bootloader
-will have initialised them as expected and cleaned them to the PoC. The
-kernel will initialize them as necessary after enabling the MMU.
-
-This patch reworks the maintenance to only cover the idmap_pg_dir and
-init_pg_dir to avoid this unnecessary work.
-
-Signed-off-by: Gavin Shan <gshan@redhat.com>
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-Link: https://lore.kernel.org/r/20200427235700.112220-1-gshan@redhat.com
-Signed-off-by: Will Deacon <will@kernel.org>
+Signed-off-by: Evan Green <evgreen@chromium.org>
+Cc: Shobhit Srivastava <shobhit.srivastava@intel.com>
+Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Link: https://lore.kernel.org/r/20200427163238.1.Ib1faaabe236e37ea73be9b8dcc6aa034cb3c8804@changeid
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/include/asm/pgtable.h |  1 +
- arch/arm64/kernel/head.S         | 12 +++++++++---
- arch/arm64/kernel/vmlinux.lds.S  |  1 +
- 3 files changed, 11 insertions(+), 3 deletions(-)
+ drivers/spi/spi-pxa2xx.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 538c85e62f86..25f56df7ed9a 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -457,6 +457,7 @@ extern pgd_t init_pg_dir[PTRS_PER_PGD];
- extern pgd_t init_pg_end[];
- extern pgd_t swapper_pg_dir[PTRS_PER_PGD];
- extern pgd_t idmap_pg_dir[PTRS_PER_PGD];
-+extern pgd_t idmap_pg_end[];
- extern pgd_t tramp_pg_dir[PTRS_PER_PGD];
- 
- extern void set_swapper_pgd(pgd_t *pgdp, pgd_t pgd);
-diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index 57a91032b4c2..32f5ecbec0ea 100644
---- a/arch/arm64/kernel/head.S
-+++ b/arch/arm64/kernel/head.S
-@@ -394,13 +394,19 @@ SYM_FUNC_START_LOCAL(__create_page_tables)
- 
- 	/*
- 	 * Since the page tables have been populated with non-cacheable
--	 * accesses (MMU disabled), invalidate the idmap and swapper page
--	 * tables again to remove any speculatively loaded cache lines.
-+	 * accesses (MMU disabled), invalidate those tables again to
-+	 * remove any speculatively loaded cache lines.
- 	 */
-+	dmb	sy
-+
- 	adrp	x0, idmap_pg_dir
-+	adrp	x1, idmap_pg_end
-+	sub	x1, x1, x0
-+	bl	__inval_dcache_area
-+
-+	adrp	x0, init_pg_dir
- 	adrp	x1, init_pg_end
- 	sub	x1, x1, x0
--	dmb	sy
- 	bl	__inval_dcache_area
- 
- 	ret	x28
-diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
-index 497f9675071d..94402aaf5f5c 100644
---- a/arch/arm64/kernel/vmlinux.lds.S
-+++ b/arch/arm64/kernel/vmlinux.lds.S
-@@ -139,6 +139,7 @@ SECTIONS
- 
- 	idmap_pg_dir = .;
- 	. += IDMAP_DIR_SIZE;
-+	idmap_pg_end = .;
- 
- #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
- 	tramp_pg_dir = .;
+diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
+index 73d2a65d0b6e..20dcbd35611a 100644
+--- a/drivers/spi/spi-pxa2xx.c
++++ b/drivers/spi/spi-pxa2xx.c
+@@ -150,6 +150,7 @@ static const struct lpss_config lpss_platforms[] = {
+ 		.tx_threshold_hi = 48,
+ 		.cs_sel_shift = 8,
+ 		.cs_sel_mask = 3 << 8,
++		.cs_clk_stays_gated = true,
+ 	},
+ 	{	/* LPSS_CNL_SSP */
+ 		.offset = 0x200,
 -- 
 2.25.1
 
