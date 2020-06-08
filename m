@@ -2,45 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F0581F27BB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:50:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 298351F27BD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:51:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hPS0Vl7VounBB7aje2OenACKmOUoei8GMSnomkDbRoU=; b=NCOlOixrY39zXG
-	CPxWVxG30SSKXqWnlc6s0h4ggeAeCgBD33Vds9mzRNv9S9MoTgCu3dPdCONtzPyrlAs3j4JDCTQ31
-	usxGMLp18RFEtV+SNZKe5jBHxoNWubmAqlFGbh2/x91sAv/Y+5uKUozvRqU4xwPgRcNOS7UeFoO3d
-	2Ip+/PkAz2eKx1e3US2ONLVcgbgUbmxbBL68ly8E1PORpifxLX8Oqd+uK5kqc5+lwcpA8i1pE8VDh
-	bWtzpE414Gy9BySu49qx2QGutTJb9G6h+DiqdKswT/r0zxKqsZc5H4SW5Wgu0BfP4cpumbaZ3CxSW
-	JuJFK9wtu+IkErGLQnzg==;
+	List-Owner; bh=nUmtDXL+JW5KKDxb9eq+Fny0j4a9KUfuYOw2eKGeees=; b=KIOwxItz6ROz3p
+	oJc3s/cgijmm9ACE95IbQ/NPh3qQKBI06RUtFRu2jJu0ZosDaESRU5d8WcoGy6LowhSpGXsmVf9Ex
+	ioXT4Qgf+GrrFJfUkL6rapaVqqSANfMOwAqM3K5G2y6I4V6C4wQdiU6kLGVihfXDoTFCIGIV4zWV5
+	1lhTGA0jDxkiSPEYWw8JRqqqTzuvhicyLP45rewknwTv69lPoId2be4plTfaFx13eIgm0cskniGc/
+	zlh5cWSscjXwj/45ElKfADwy/Ax6cMV0qDO0XSpYUDSJRiBHNgvrV71eZb/WHpnFrl7RdXX1A0Cne
+	uuf+ZTa6RsLobi3CnfnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRXV-000888-Tt; Mon, 08 Jun 2020 23:50:49 +0000
+	id 1jiRXq-0008Po-E8; Mon, 08 Jun 2020 23:51:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR7l-0003N1-Hm; Mon, 08 Jun 2020 23:24:27 +0000
+ id 1jiR7n-0003QK-Qf; Mon, 08 Jun 2020 23:24:30 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CA99820C09;
- Mon,  8 Jun 2020 23:24:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7F3F12074B;
+ Mon,  8 Jun 2020 23:24:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658652;
- bh=IqCUM9sZg594VtkheaSNPK3OdjQSTv3twTQ/DtdW8k8=;
+ s=default; t=1591658655;
+ bh=F2UQ3f/EJyLX8uuLRDqCa52FwSXPHX2BTvdYFegJOio=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Eqs4ko/ZwLhdCeE2CTzK/RymRNakwWD5+OkYkSD20NLAq5c9UeXn12gXOh4nMA4Kq
- gO9jzBNFVYuY422qcCpqlGmm58iF4TRBCn3eRqQOcoyxtNiiww0uUrtP9GOIFXeay8
- 1fBfOAfLtr068UN0xeKCVNyUzMRhszv5Gms93kRo=
+ b=i9+qSicAo2zEcve4uB7nPflL65Ypx3DeaYT5wZetPTkZ6YfYxg3lRL7DRw2JOepfW
+ T/X/xrlpsypTWY++jM+8dwuV2Yh9+wqAdRENLxSEwKJl3iEAAxTKkvEt8pR3CGbUiH
+ hRb3c208abLzBJO4t8+N5iO3BZNam6PKGq/ENA7c=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 071/106] mt76: avoid rx reorder buffer overflow
-Date: Mon,  8 Jun 2020 19:22:03 -0400
-Message-Id: <20200608232238.3368589-71-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 073/106] net: dsa: mt7530: set CPU port to
+ fallback mode
+Date: Mon,  8 Jun 2020 19:22:05 -0400
+Message-Id: <20200608232238.3368589-73-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608232238.3368589-1-sashal@kernel.org>
 References: <20200608232238.3368589-1-sashal@kernel.org>
@@ -48,9 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162413_615744_2376BD60 
-X-CRM114-Status: UNSURE (   9.27  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200608_162415_922273_897F2D27 
+X-CRM114-Status: GOOD (  12.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,87 +79,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Ryder Lee <ryder.lee@mediatek.com>,
- Chih-Min Chen <chih-min.chen@mediatek.com>, linux-wireless@vger.kernel.org,
- linux-mediatek@lists.infradead.org, netdev@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Felix Fietkau <nbd@nbd.name>
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ netdev@vger.kernel.org, DENG Qingfang <dqfext@gmail.com>,
+ linux-mediatek@lists.infradead.org, "David S . Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ryder Lee <ryder.lee@mediatek.com>
+From: DENG Qingfang <dqfext@gmail.com>
 
-[ Upstream commit 7c4f744d6703757be959f521a7a441bf34745d99 ]
+[ Upstream commit 38152ea37d8bdaffa22603e0a5b5b86cfa8714c9 ]
 
-Enlarge slot to support 11ax 256 BA (256 MPDUs in an AMPDU)
+Currently, setting a bridge's self PVID to other value and deleting
+the default VID 1 renders untagged ports of that VLAN unable to talk to
+the CPU port:
 
-Signed-off-by: Chih-Min Chen <chih-min.chen@mediatek.com>
-Signed-off-by: Ryder Lee <ryder.lee@mediatek.com>
-Signed-off-by: Felix Fietkau <nbd@nbd.name>
+	bridge vlan add dev br0 vid 2 pvid untagged self
+	bridge vlan del dev br0 vid 1 self
+	bridge vlan add dev sw0p0 vid 2 pvid untagged
+	bridge vlan del dev sw0p0 vid 1
+	# br0 cannot send untagged frames out of sw0p0 anymore
+
+That is because the CPU port is set to security mode and its PVID is
+still 1, and untagged frames are dropped due to VLAN member violation.
+
+Set the CPU port to fallback mode so untagged frames can pass through.
+
+Fixes: 83163f7dca56 ("net: dsa: mediatek: add VLAN support for MT7530")
+Signed-off-by: DENG Qingfang <dqfext@gmail.com>
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/wireless/mediatek/mt76/agg-rx.c | 8 ++++----
- drivers/net/wireless/mediatek/mt76/mt76.h   | 6 +++---
- 2 files changed, 7 insertions(+), 7 deletions(-)
+ drivers/net/dsa/mt7530.c | 11 ++++++++---
+ drivers/net/dsa/mt7530.h |  6 ++++++
+ 2 files changed, 14 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/net/wireless/mediatek/mt76/agg-rx.c b/drivers/net/wireless/mediatek/mt76/agg-rx.c
-index 73c8b2805c97..d44d57e6eb27 100644
---- a/drivers/net/wireless/mediatek/mt76/agg-rx.c
-+++ b/drivers/net/wireless/mediatek/mt76/agg-rx.c
-@@ -154,8 +154,8 @@ void mt76_rx_aggr_reorder(struct sk_buff *skb, struct sk_buff_head *frames)
- 	struct ieee80211_sta *sta;
- 	struct mt76_rx_tid *tid;
- 	bool sn_less;
--	u16 seqno, head, size;
--	u8 ackp, idx;
-+	u16 seqno, head, size, idx;
-+	u8 ackp;
+diff --git a/drivers/net/dsa/mt7530.c b/drivers/net/dsa/mt7530.c
+index 8b39a211ecb6..616afd81536a 100644
+--- a/drivers/net/dsa/mt7530.c
++++ b/drivers/net/dsa/mt7530.c
+@@ -860,10 +860,15 @@ mt7530_port_set_vlan_aware(struct dsa_switch *ds, int port)
+ 		   PCR_MATRIX_MASK, PCR_MATRIX(MT7530_ALL_MEMBERS));
  
- 	__skb_queue_tail(frames, skb);
+ 	/* Trapped into security mode allows packet forwarding through VLAN
+-	 * table lookup.
++	 * table lookup. CPU port is set to fallback mode to let untagged
++	 * frames pass through.
+ 	 */
+-	mt7530_rmw(priv, MT7530_PCR_P(port), PCR_PORT_VLAN_MASK,
+-		   MT7530_PORT_SECURITY_MODE);
++	if (dsa_is_cpu_port(ds, port))
++		mt7530_rmw(priv, MT7530_PCR_P(port), PCR_PORT_VLAN_MASK,
++			   MT7530_PORT_FALLBACK_MODE);
++	else
++		mt7530_rmw(priv, MT7530_PCR_P(port), PCR_PORT_VLAN_MASK,
++			   MT7530_PORT_SECURITY_MODE);
  
-@@ -240,7 +240,7 @@ void mt76_rx_aggr_reorder(struct sk_buff *skb, struct sk_buff_head *frames)
- }
+ 	/* Set the port as a user port which is to be able to recognize VID
+ 	 * from incoming packets before fetching entry within the VLAN table.
+diff --git a/drivers/net/dsa/mt7530.h b/drivers/net/dsa/mt7530.h
+index 403adbe5a4b4..101d309ee445 100644
+--- a/drivers/net/dsa/mt7530.h
++++ b/drivers/net/dsa/mt7530.h
+@@ -148,6 +148,12 @@ enum mt7530_port_mode {
+ 	/* Port Matrix Mode: Frames are forwarded by the PCR_MATRIX members. */
+ 	MT7530_PORT_MATRIX_MODE = PORT_VLAN(0),
  
- int mt76_rx_aggr_start(struct mt76_dev *dev, struct mt76_wcid *wcid, u8 tidno,
--		       u16 ssn, u8 size)
-+		       u16 ssn, u16 size)
- {
- 	struct mt76_rx_tid *tid;
- 
-@@ -264,7 +264,7 @@ EXPORT_SYMBOL_GPL(mt76_rx_aggr_start);
- 
- static void mt76_rx_aggr_shutdown(struct mt76_dev *dev, struct mt76_rx_tid *tid)
- {
--	u8 size = tid->size;
-+	u16 size = tid->size;
- 	int i;
- 
- 	cancel_delayed_work(&tid->reorder_work);
-diff --git a/drivers/net/wireless/mediatek/mt76/mt76.h b/drivers/net/wireless/mediatek/mt76/mt76.h
-index 2eab35879163..7b1667ec619e 100644
---- a/drivers/net/wireless/mediatek/mt76/mt76.h
-+++ b/drivers/net/wireless/mediatek/mt76/mt76.h
-@@ -193,8 +193,8 @@ struct mt76_rx_tid {
- 	struct delayed_work reorder_work;
- 
- 	u16 head;
--	u8 size;
--	u8 nframes;
-+	u16 size;
-+	u16 nframes;
- 
- 	u8 started:1, stopped:1, timer_pending:1;
- 
-@@ -537,7 +537,7 @@ int mt76_get_survey(struct ieee80211_hw *hw, int idx,
- void mt76_set_stream_caps(struct mt76_dev *dev, bool vht);
- 
- int mt76_rx_aggr_start(struct mt76_dev *dev, struct mt76_wcid *wcid, u8 tid,
--		       u16 ssn, u8 size);
-+		       u16 ssn, u16 size);
- void mt76_rx_aggr_stop(struct mt76_dev *dev, struct mt76_wcid *wcid, u8 tid);
- 
- void mt76_wcid_key_setup(struct mt76_dev *dev, struct mt76_wcid *wcid,
++	/* Fallback Mode: Forward received frames with ingress ports that do
++	 * not belong to the VLAN member. Frames whose VID is not listed on
++	 * the VLAN table are forwarded by the PCR_MATRIX members.
++	 */
++	MT7530_PORT_FALLBACK_MODE = PORT_VLAN(1),
++
+ 	/* Security Mode: Discard any frame due to ingress membership
+ 	 * violation or VID missed on the VLAN table.
+ 	 */
 -- 
 2.25.1
 
