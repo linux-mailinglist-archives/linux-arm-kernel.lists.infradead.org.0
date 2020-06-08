@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B8D91F2675
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:42:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEC931F267A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:43:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EuIzEoo117iL4xHbBUOCumCoXvXs8fyhuoqz8swTaVY=; b=hXdefHW1wOWCSh
-	bBaVSgT1EGrmJTaaBjC1nItoLvC2EPtm/6ta3ZgRPm5icbFSy0LcAfox7usLYKOoiHKHPXdEWaG8V
-	w2mL0ebMRLUn42zo4h1JsUSeUStKIVDXK0tgetz/aLrPK2MQUuVconHC84zzM8gbTDfAuJUp/c3mI
-	m7ytm6G2YaObgq/ViLnBKBeVS7zN66WKW4yBVpQauOQR11C4ovcxTR2QcnSen0bT1NFPKuObDczIB
-	2TpGMU9LYLLAJNN58SOlo8xqUYt/jokJ1QTwKUA8KihK0t/pVNLSyq87J7E63xedY5IepEUKZ/oGt
-	L5xWu7OeQtGxOw1/E4xA==;
+	List-Owner; bh=zsL8xYKQot6DgQukFQO3fefMu8NQXkJ15T2xU4r5npM=; b=cIGeZFM3F74efT
+	QMfhM8+QRaEQBBWS7luKBBYZYxx7VSDhwsaeagKtKDjDEkySD1qgvO33qSoz0hqU1c96aaNctl/gx
+	HYzw1A4amZHaJ4oAesg+B1akbGypigjkGmOUbhlF9kjjsB24DdgHJPdTJ0odL8WR/nrC9456MBbsu
+	DxndveNIWZ5m1R01JvwhRI3kGMgl4hEmj4oP7ZKw3fV64YBUWkjuJ6mY37OmuSmeAKOyRV1QD41l0
+	hsBX8fKA6fjGTv4rQYvm2ys9gB4rNmCf2+b3Q6BoKOzsDUxjLBsL6aduptu0pwntW/FGlQ1uhne7F
+	qKGxiFcqvxcaPXo3vX6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRP7-0003xq-OY; Mon, 08 Jun 2020 23:42:09 +0000
+	id 1jiRPr-0004hb-Ue; Mon, 08 Jun 2020 23:42:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR47-0000Tt-QR; Mon, 08 Jun 2020 23:20:30 +0000
+ id 1jiR4V-0000mf-Gk
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:21:01 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4EF2320897;
- Mon,  8 Jun 2020 23:20:26 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1ABB92074B;
+ Mon,  8 Jun 2020 23:20:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658427;
- bh=CbDnseCi3WYnIk/nKUsBden8JvPliQjGqjORSKArbAI=;
+ s=default; t=1591658450;
+ bh=0KypZuRVLh5CnTf3n9XrxwjSNFz7AtA/kwAvZBhncx4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GTOY2GNcFEocupJsPAwREWkTugvtgkokHS0JWsyCKgraZXv73YFvXcJoc42wv523R
- uoPcS6Op3k7hxDWKlz+NlSELqL/fHncoXcTiFCHoKcvtQxbKl0DEGbC8ivcJTUJXw3
- uJXWwwOrvaYWEnNXp+TJDNAZLd2TblOJMfzcWP2s=
+ b=WQg6wSPQGQ5NB2dG0iY0fwEx94KvCv5RNcph1w8USPXXWvBXKNwO8lLPOxz6GFmte
+ wlj/NU2KNRwSD0/DzzCIxhgkTAGqS/JloZUWjURtt3UH/rLhSAlQeSJmLl+O4yyALe
+ coOSXzBL56AZe0mBnyJ2rMLxxz+uv11CWf+gr4Q8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 072/175] drm/mediatek: set dpi pin mode to gpio
- low to avoid leakage current
-Date: Mon,  8 Jun 2020 19:17:05 -0400
-Message-Id: <20200608231848.3366970-72-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 092/175] net: lpc-enet: fix error return code in
+ lpc_mii_init()
+Date: Mon,  8 Jun 2020 19:17:25 -0400
+Message-Id: <20200608231848.3366970-92-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608231848.3366970-1-sashal@kernel.org>
 References: <20200608231848.3366970-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162027_901446_9C5673B2 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20200608_162051_600451_FC49FFB9 
+X-CRM114-Status: GOOD (  12.56  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,99 +80,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Jitao Shi <jitao.shi@mediatek.com>, dri-devel@lists.freedesktop.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ Vladimir Zapolskiy <vz@mleia.com>, Wei Yongjun <weiyongjun1@huawei.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jitao Shi <jitao.shi@mediatek.com>
+From: Wei Yongjun <weiyongjun1@huawei.com>
 
-[ Upstream commit 6bd4763fd532cff43f9b15704f324c45a9806f53 ]
+[ Upstream commit 88ec7cb22ddde725ed4ce15991f0bd9dd817fd85 ]
 
-Config dpi pins mode to output and pull low when dpi is disabled.
-Aovid leakage current from some dpi pins (Hsync Vsync DE ... ).
+Fix to return a negative error code from the error handling
+case instead of 0, as done elsewhere in this function.
 
-Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
-Signed-off-by: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Fixes: b7370112f519 ("lpc32xx: Added ethernet driver")
+Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+Acked-by: Vladimir Zapolskiy <vz@mleia.com>
+Signed-off-by: David S. Miller <davem@davemloft.net>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/gpu/drm/mediatek/mtk_dpi.c | 31 ++++++++++++++++++++++++++++++
- 1 file changed, 31 insertions(+)
+ drivers/net/ethernet/nxp/lpc_eth.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_dpi.c b/drivers/gpu/drm/mediatek/mtk_dpi.c
-index be6d95c5ff25..48de07e9059e 100644
---- a/drivers/gpu/drm/mediatek/mtk_dpi.c
-+++ b/drivers/gpu/drm/mediatek/mtk_dpi.c
-@@ -10,7 +10,9 @@
- #include <linux/kernel.h>
- #include <linux/of.h>
- #include <linux/of_device.h>
-+#include <linux/of_gpio.h>
- #include <linux/of_graph.h>
-+#include <linux/pinctrl/consumer.h>
- #include <linux/platform_device.h>
- #include <linux/types.h>
+diff --git a/drivers/net/ethernet/nxp/lpc_eth.c b/drivers/net/ethernet/nxp/lpc_eth.c
+index 544012a67221..1d59ef367a85 100644
+--- a/drivers/net/ethernet/nxp/lpc_eth.c
++++ b/drivers/net/ethernet/nxp/lpc_eth.c
+@@ -815,7 +815,8 @@ static int lpc_mii_init(struct netdata_local *pldat)
+ 	if (mdiobus_register(pldat->mii_bus))
+ 		goto err_out_unregister_bus;
  
-@@ -73,6 +75,9 @@ struct mtk_dpi {
- 	enum mtk_dpi_out_yc_map yc_map;
- 	enum mtk_dpi_out_bit_num bit_num;
- 	enum mtk_dpi_out_channel_swap channel_swap;
-+	struct pinctrl *pinctrl;
-+	struct pinctrl_state *pins_gpio;
-+	struct pinctrl_state *pins_dpi;
- 	int refcount;
- };
+-	if (lpc_mii_probe(pldat->ndev) != 0)
++	err = lpc_mii_probe(pldat->ndev);
++	if (err)
+ 		goto err_out_unregister_bus;
  
-@@ -378,6 +383,9 @@ static void mtk_dpi_power_off(struct mtk_dpi *dpi)
- 	if (--dpi->refcount != 0)
- 		return;
- 
-+	if (dpi->pinctrl && dpi->pins_gpio)
-+		pinctrl_select_state(dpi->pinctrl, dpi->pins_gpio);
-+
- 	mtk_dpi_disable(dpi);
- 	clk_disable_unprepare(dpi->pixel_clk);
- 	clk_disable_unprepare(dpi->engine_clk);
-@@ -402,6 +410,9 @@ static int mtk_dpi_power_on(struct mtk_dpi *dpi)
- 		goto err_pixel;
- 	}
- 
-+	if (dpi->pinctrl && dpi->pins_dpi)
-+		pinctrl_select_state(dpi->pinctrl, dpi->pins_dpi);
-+
- 	mtk_dpi_enable(dpi);
  	return 0;
- 
-@@ -689,6 +700,26 @@ static int mtk_dpi_probe(struct platform_device *pdev)
- 	dpi->dev = dev;
- 	dpi->conf = (struct mtk_dpi_conf *)of_device_get_match_data(dev);
- 
-+	dpi->pinctrl = devm_pinctrl_get(&pdev->dev);
-+	if (IS_ERR(dpi->pinctrl)) {
-+		dpi->pinctrl = NULL;
-+		dev_dbg(&pdev->dev, "Cannot find pinctrl!\n");
-+	}
-+	if (dpi->pinctrl) {
-+		dpi->pins_gpio = pinctrl_lookup_state(dpi->pinctrl, "sleep");
-+		if (IS_ERR(dpi->pins_gpio)) {
-+			dpi->pins_gpio = NULL;
-+			dev_dbg(&pdev->dev, "Cannot find pinctrl idle!\n");
-+		}
-+		if (dpi->pins_gpio)
-+			pinctrl_select_state(dpi->pinctrl, dpi->pins_gpio);
-+
-+		dpi->pins_dpi = pinctrl_lookup_state(dpi->pinctrl, "default");
-+		if (IS_ERR(dpi->pins_dpi)) {
-+			dpi->pins_dpi = NULL;
-+			dev_dbg(&pdev->dev, "Cannot find pinctrl active!\n");
-+		}
-+	}
- 	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
- 	dpi->regs = devm_ioremap_resource(dev, mem);
- 	if (IS_ERR(dpi->regs)) {
 -- 
 2.25.1
 
