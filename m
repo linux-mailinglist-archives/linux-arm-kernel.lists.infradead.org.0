@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F18BA1F243E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:20:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A13C71F2481
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:22:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NDuhibIki7rNQdseTcrJsZx5Yr0y/z3nn06VjXq+HKg=; b=gXJx0QWnIq+A2I
-	nGJuK2NBH66r5DYuifT4My/oIm6/P8Y9N1wRkfKS/Az83n0t40NotEgkXH7Ns1KkigQbdZjUAoOry
-	jDIf3xf8Q4L60qUXFW4OFWajwy6/Lde/WWkYBrX0rkNoM62sXyJC1c3QmPwgZWXeFxPy6WefdC2OL
-	TrB4KVSNtWOt5CgbUy2YA5BHrCZaeJQR05SXYNzO6Bl0BF+0lfjQ8uBB1er/e9eWPMI6va1n4QRHj
-	xxLPNzg2voNJCyKlgh10x1sqvmDaFifC3dgHAlcIp0dKQgjXwc5GB6n2LdQ3Yr/t0kGR93rIlRO2L
-	eoJt9W174lNJa5soLcDQ==;
+	List-Owner; bh=VIXmUjdtYNWaO3jV6vr9xHQULLkBFAuQBPOHRCUn1qs=; b=XapR8K0pKbR7Zm
+	WQOVpZ6vNjm7shlYIsrsjVWw8S1Qpsv+9z5TbmsxTnRnuTe1Xd9JbIJ+uTdoJPkgyUD5YOdyJw0Fg
+	z8paNRByJ3roDx9iDvyxExzZLGmf2EQs7KVn1b8iteK0aiFyTs3pIvIFMBB1EBbmpkXYTyi0d9i7U
+	A2ir5aphXDCTLdVJ5Jg6Ptn1CgbzOmC9VKAcVr35ydHYBLtirbT6GbzjZgV/RQaifwGpj4+Eei5kd
+	04jXuKlXqDsHTAh6LkvOnlNgjsmnH9bnAUjqKCVhR2WiUjyjTAOzzK3muJmGV6XyiQa5Y3HMtEiHq
+	wlOMH9eRVIBEgzfZJ/9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiR4X-0000ZL-LE; Mon, 08 Jun 2020 23:20:53 +0000
+	id 1jiR5i-0001RE-9E; Mon, 08 Jun 2020 23:22:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQuy-0004NM-5c
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:11:02 +0000
+ id 1jiQvW-0004xn-4N
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:11:36 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7260F20E65;
- Mon,  8 Jun 2020 23:10:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B9DBD20897;
+ Mon,  8 Jun 2020 23:11:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657859;
- bh=7McYIa9P3Rh28JO6FRRv8eTfuuEGvhSv6QQoypGjkZ4=;
+ s=default; t=1591657893;
+ bh=J2LPRJU66y4X8KcWE0g+592NbySdoJsVXoYtZI00P5I=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=h5g3+OahlaK5paaudlsHuxazMgq2TiVbGAYLOZQhDW2PCsYSgfcECIY3WGPdfQKXc
- 0cFswUmyNjZNUm9PKleh0Au9atEKhaXffcdeuvtIX/rfmlAaRsZmpTktuakqt97cFO
- Zun57MrGo6auY9G/yRRbEWtHoSVwCuIFosxUzwiY=
+ b=ROP1rxkHmSif6KNnYX1KxXVihi18D7znAeCVKrM4JfqmcpMAO2N5DGoWqSkR+DckI
+ 9bG3th7dla5RoL0AlyciPDYvYRlw+AqeKhvBN1HOydba8dt8EPmEJ1Ce/4CEhdQaSA
+ +FZmqdizTHwRR7Bh7T/2UgUoC5LNoVvtimsm9Kl8=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 222/274] crypto: stm32/crc32 - fix multi-instance
-Date: Mon,  8 Jun 2020 19:05:15 -0400
-Message-Id: <20200608230607.3361041-222-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 248/274] mmc: owl-mmc: Respect the
+ cmd->busy_timeout from the mmc core
+Date: Mon,  8 Jun 2020 19:05:41 -0400
+Message-Id: <20200608230607.3361041-248-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_161100_271482_AA6443B8 
-X-CRM114-Status: GOOD (  13.22  )
+X-CRM114-CacheID: sfid-20200608_161134_274558_7FA04C0E 
+X-CRM114-Status: GOOD (  13.56  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,129 +80,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Nicolas Toromanoff <nicolas.toromanoff@st.com>,
- Herbert Xu <herbert@gondor.apana.org.au>, linux-crypto@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
+ linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nicolas Toromanoff <nicolas.toromanoff@st.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
 
-[ Upstream commit 10b89c43a64eb0d236903b79a3bc9d8f6cbfd9c7 ]
+[ Upstream commit f37ac1ae3ca93d0995553ad9604a25eadfe9406d ]
 
-Ensure CRC algorithm is registered only once in crypto framework when
-there are several instances of CRC devices.
+For commands that doesn't involve to prepare a data transfer, owl-mmc is
+using a fixed 30s response timeout. This is a bit problematic.
 
-Update the CRC device list management to avoid that only the first CRC
-instance is used.
+For some commands it means waiting longer than needed for the completion to
+expire, which may not a big issue, but still. For other commands, like for
+an erase (CMD38) that uses a R1B response, may require longer timeouts than
+30s. In these cases, we may end up treating the command as it failed, while
+it just needed some more time to complete successfully.
 
-Fixes: b51dbe90912a ("crypto: stm32 - Support for STM32 CRC32 crypto module")
+Fix the problem by respecting the cmd->busy_timeout, which is provided by
+the mmc core.
 
-Signed-off-by: Nicolas Toromanoff <nicolas.toromanoff@st.com>
-Signed-off-by: Herbert Xu <herbert@gondor.apana.org.au>
+Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+Link: https://lore.kernel.org/r/20200414161413.3036-8-ulf.hansson@linaro.org
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/crypto/stm32/stm32-crc32.c | 48 ++++++++++++++++++++++--------
- 1 file changed, 36 insertions(+), 12 deletions(-)
+ drivers/mmc/host/owl-mmc.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/crypto/stm32/stm32-crc32.c b/drivers/crypto/stm32/stm32-crc32.c
-index 1c3e411b7acb..10304511f9b4 100644
---- a/drivers/crypto/stm32/stm32-crc32.c
-+++ b/drivers/crypto/stm32/stm32-crc32.c
-@@ -91,16 +91,29 @@ static int stm32_crc_setkey(struct crypto_shash *tfm, const u8 *key,
- 	return 0;
- }
+diff --git a/drivers/mmc/host/owl-mmc.c b/drivers/mmc/host/owl-mmc.c
+index 01ffe51f413d..5e20c099fe03 100644
+--- a/drivers/mmc/host/owl-mmc.c
++++ b/drivers/mmc/host/owl-mmc.c
+@@ -92,6 +92,8 @@
+ #define OWL_SD_STATE_RC16ER		BIT(1)
+ #define OWL_SD_STATE_CRC7ER		BIT(0)
  
--static int stm32_crc_init(struct shash_desc *desc)
-+static struct stm32_crc *stm32_crc_get_next_crc(void)
++#define OWL_CMD_TIMEOUT_MS		30000
++
+ struct owl_mmc_host {
+ 	struct device *dev;
+ 	struct reset_control *reset;
+@@ -172,6 +174,7 @@ static void owl_mmc_send_cmd(struct owl_mmc_host *owl_host,
+ 			     struct mmc_command *cmd,
+ 			     struct mmc_data *data)
  {
--	struct stm32_crc_desc_ctx *ctx = shash_desc_ctx(desc);
--	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
- 	struct stm32_crc *crc;
++	unsigned long timeout;
+ 	u32 mode, state, resp[2];
+ 	u32 cmd_rsp_mask = 0;
  
- 	spin_lock_bh(&crc_list.lock);
- 	crc = list_first_entry(&crc_list.dev_list, struct stm32_crc, list);
-+	if (crc)
-+		list_move_tail(&crc->list, &crc_list.dev_list);
- 	spin_unlock_bh(&crc_list.lock);
+@@ -239,7 +242,10 @@ static void owl_mmc_send_cmd(struct owl_mmc_host *owl_host,
+ 	if (data)
+ 		return;
  
-+	return crc;
-+}
+-	if (!wait_for_completion_timeout(&owl_host->sdc_complete, 30 * HZ)) {
++	timeout = msecs_to_jiffies(cmd->busy_timeout ? cmd->busy_timeout :
++		OWL_CMD_TIMEOUT_MS);
 +
-+static int stm32_crc_init(struct shash_desc *desc)
-+{
-+	struct stm32_crc_desc_ctx *ctx = shash_desc_ctx(desc);
-+	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
-+	struct stm32_crc *crc;
-+
-+	crc = stm32_crc_get_next_crc();
-+	if (!crc)
-+		return -ENODEV;
-+
- 	pm_runtime_get_sync(crc->dev);
- 
- 	/* Reset, set key, poly and configure in bit reverse mode */
-@@ -125,9 +138,9 @@ static int stm32_crc_update(struct shash_desc *desc, const u8 *d8,
- 	struct stm32_crc_ctx *mctx = crypto_shash_ctx(desc->tfm);
- 	struct stm32_crc *crc;
- 
--	spin_lock_bh(&crc_list.lock);
--	crc = list_first_entry(&crc_list.dev_list, struct stm32_crc, list);
--	spin_unlock_bh(&crc_list.lock);
-+	crc = stm32_crc_get_next_crc();
-+	if (!crc)
-+		return -ENODEV;
- 
- 	pm_runtime_get_sync(crc->dev);
- 
-@@ -200,6 +213,8 @@ static int stm32_crc_digest(struct shash_desc *desc, const u8 *data,
- 	return stm32_crc_init(desc) ?: stm32_crc_finup(desc, data, length, out);
- }
- 
-+static unsigned int refcnt;
-+static DEFINE_MUTEX(refcnt_lock);
- static struct shash_alg algs[] = {
- 	/* CRC-32 */
- 	{
-@@ -290,12 +305,18 @@ static int stm32_crc_probe(struct platform_device *pdev)
- 	list_add(&crc->list, &crc_list.dev_list);
- 	spin_unlock(&crc_list.lock);
- 
--	ret = crypto_register_shashes(algs, ARRAY_SIZE(algs));
--	if (ret) {
--		dev_err(dev, "Failed to register\n");
--		clk_disable_unprepare(crc->clk);
--		return ret;
-+	mutex_lock(&refcnt_lock);
-+	if (!refcnt) {
-+		ret = crypto_register_shashes(algs, ARRAY_SIZE(algs));
-+		if (ret) {
-+			mutex_unlock(&refcnt_lock);
-+			dev_err(dev, "Failed to register\n");
-+			clk_disable_unprepare(crc->clk);
-+			return ret;
-+		}
- 	}
-+	refcnt++;
-+	mutex_unlock(&refcnt_lock);
- 
- 	dev_info(dev, "Initialized\n");
- 
-@@ -316,7 +337,10 @@ static int stm32_crc_remove(struct platform_device *pdev)
- 	list_del(&crc->list);
- 	spin_unlock(&crc_list.lock);
- 
--	crypto_unregister_shashes(algs, ARRAY_SIZE(algs));
-+	mutex_lock(&refcnt_lock);
-+	if (!--refcnt)
-+		crypto_unregister_shashes(algs, ARRAY_SIZE(algs));
-+	mutex_unlock(&refcnt_lock);
- 
- 	pm_runtime_disable(crc->dev);
- 	pm_runtime_put_noidle(crc->dev);
++	if (!wait_for_completion_timeout(&owl_host->sdc_complete, timeout)) {
+ 		dev_err(owl_host->dev, "CMD interrupt timeout\n");
+ 		cmd->error = -ETIMEDOUT;
+ 		return;
 -- 
 2.25.1
 
