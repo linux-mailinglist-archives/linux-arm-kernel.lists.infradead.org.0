@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F3FF1F2255
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:08:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0C1CE1F226E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:08:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DU/++y8aC39U5yBiL5qLHn955m8OTxGj8YaG1bN+yQI=; b=N9VCkNgkuEKo94
-	yNJqyZnBfUaZJrmJurtqKwQ7w7GOycc4DNcXbiwdG7WLTbZ+bcHFyzOaiXoPkXTQvLqUmqCC/VC+w
-	22WMT/TE9q5OL9Hz+igKwB1td4AkatmL5SVChhihVp+fDJapCZVy7DIrh29JFRXh6KGDPEyztO1+R
-	RTd3YhSUXTGO93Vm2IbxdXeCbqPlgerp4CC10JdwZV6BbL1lxGN/8YQtB5bWSeWpjNxc9LlKHKIc+
-	sEn8PKPy5g7Jtxz8lTqVVMO5ydcNzY2TL0IK0qQtc8NaEhJ5yH7AjRumqJXOcd+89T9rhXPs9XLoL
-	zyK+JBigVYFzr8faj9Gw==;
+	List-Owner; bh=GKu7O+rUyltxngC9qclXdZwIZqOUA/VBsVdfRTuJIt4=; b=MYA7JXsKAYQ0Jx
+	leiMclMwkMiIj8/SWZeML9Fdm//rEtU9XsCtLVDGUOj2ZlzpHn5bIBd/ho1Xw5p65K3yvIVAb0muD
+	yFCkfqAKOoUEXL7rcpN9N54hqNNla3mgq2yTH1Zzt2vE4DqP7NOt1IxaIcUC8/9PSbDiEYztiSoKJ
+	kD6ACWCWQKai9DfXeTusajfz3wtAUfaszuo2FMXJfxXFxJcEpPoZRc7s2bzf1NHh1Wx7NpW42IjOl
+	wHEtZmMUjqla2wPJ0/zzxxHUHOKILU5CwWF1O2MBGyWxmc4lYFidGIyZJRgPHdlB7WSpEBuHxJpwq
+	6mSf/0C2JwXcKYuMlnvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiQsK-0007sY-SZ; Mon, 08 Jun 2020 23:08:16 +0000
+	id 1jiQsc-00089Y-7d; Mon, 08 Jun 2020 23:08:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiQr6-0006yC-Se
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:07:06 +0000
+ id 1jiQrA-00071X-Qn; Mon, 08 Jun 2020 23:07:08 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 271BA20823;
- Mon,  8 Jun 2020 23:06:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D4E9B20801;
+ Mon,  8 Jun 2020 23:07:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591657620;
- bh=m4xrXkotUS3ZKETk0RvSF7L9HwTMlQwabdrk1sTDb3U=;
+ s=default; t=1591657623;
+ bh=T1TFFnuOR8yP9KXZ3SI9ba8JrUEjNEAKKapF2hBhyM8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=EoJ/gV1Eodkl7IO9V4Jz4R369oX4u/y57UmrMNcfIcB0Yay7je4OQj/b1uU5Dnqk9
- 1025n+2b2Q4rcwPWmJUtrDaD0xjenkQeUx7WJ/DOtlqmQvS+Vex6xCXmGYuJC9i295
- /Hwr+Fk5QqbuIJbaohVB0B9VGbFLbcq7GFxe+new=
+ b=LNcUfdbAu+qPxo9Ufa+tE7TZQCgGYeUaoDOC6FDj1G8PdoARt/a1ytmvIDfpcvOCT
+ yrsnDjlQpErv7WeqJW2vz1u6XYXuE1HJtWiZuR8W9IeB0DY4hB/v0USCwEBMMXqKCO
+ h0269BWE4U5SAhNsytWzTllwocfxoCTMijUsSzFQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.7 041/274] arm64: insn: Fix two bugs in encoding
- 32-bit logical immediates
-Date: Mon,  8 Jun 2020 19:02:14 -0400
-Message-Id: <20200608230607.3361041-41-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.7 044/274] mt76: mt7615: fix aid configuration in
+ mt7615_mcu_wtbl_generic_tlv
+Date: Mon,  8 Jun 2020 19:02:17 -0400
+Message-Id: <20200608230607.3361041-44-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608230607.3361041-1-sashal@kernel.org>
 References: <20200608230607.3361041-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_160701_056684_0A23DA34 
-X-CRM114-Status: GOOD (  15.37  )
+X-CRM114-CacheID: sfid-20200608_160704_888775_B9DA9AF7 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,106 +79,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Luke Nelson <luke.r.nels@gmail.com>,
- Marc Zyngier <maz@kernel.org>, clang-built-linux@googlegroups.com,
- Luke Nelson <lukenels@cs.washington.edu>, linux-arm-kernel@lists.infradead.org,
- Will Deacon <will@kernel.org>, Xi Wang <xi.wang@gmail.com>
+Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Lorenzo Bianconi <lorenzo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Felix Fietkau <nbd@nbd.name>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Luke Nelson <lukenels@cs.washington.edu>
+From: Lorenzo Bianconi <lorenzo@kernel.org>
 
-[ Upstream commit 579d1b3faa3735e781ff74aac0afd598515dbc63 ]
+[ Upstream commit fdf433121f82766ff508a6f06665d2aca3e258d5 ]
 
-This patch fixes two issues present in the current function for encoding
-arm64 logical immediates when using the 32-bit variants of instructions.
+If the vif is running in station mode the aid will be passed by mac80211
+using bss_conf.aid. Fix aid configuration in mt7615_mcu_wtbl_generic_tlv
 
-First, the code does not correctly reject an all-ones 32-bit immediate,
-and returns an undefined instruction encoding.
-
-Second, the code incorrectly rejects some 32-bit immediates that are
-actually encodable as logical immediates. The root cause is that the code
-uses a default mask of 64-bit all-ones, even for 32-bit immediates.
-This causes an issue later on when the default mask is used to fill the
-top bits of the immediate with ones, shown here:
-
-  /*
-   * Pattern: 0..01..10..01..1
-   *
-   * Fill the unused top bits with ones, and check if
-   * the result is a valid immediate (all ones with a
-   * contiguous ranges of zeroes).
-   */
-  imm |= ~mask;
-  if (!range_of_ones(~imm))
-          return AARCH64_BREAK_FAULT;
-
-To see the problem, consider an immediate of the form 0..01..10..01..1,
-where the upper 32 bits are zero, such as 0x80000001. The code checks
-if ~(imm | ~mask) contains a range of ones: the incorrect mask yields
-1..10..01..10..0, which fails the check; the correct mask yields
-0..01..10..0, which succeeds.
-
-The fix for both issues is to generate a correct mask based on the
-instruction immediate size, and use the mask to check for all-ones,
-all-zeroes, and values wider than the mask.
-
-Currently, arch/arm64/kvm/va_layout.c is the only user of this function,
-which uses 64-bit immediates and therefore won't trigger these bugs.
-
-We tested the new code against llvm-mc with all 1,302 encodable 32-bit
-logical immediates and all 5,334 encodable 64-bit logical immediates.
-
-Fixes: ef3935eeebff ("arm64: insn: Add encoder for bitwise operations using literals")
-Suggested-by: Will Deacon <will@kernel.org>
-Co-developed-by: Xi Wang <xi.wang@gmail.com>
-Signed-off-by: Xi Wang <xi.wang@gmail.com>
-Signed-off-by: Luke Nelson <luke.r.nels@gmail.com>
-Reviewed-by: Marc Zyngier <maz@kernel.org>
-Link: https://lore.kernel.org/r/20200508181547.24783-2-luke.r.nels@gmail.com
-Signed-off-by: Will Deacon <will@kernel.org>
+Fixes: 04b8e65922f6 ("mt76: add mac80211 driver for MT7615 PCIe-based chipsets")
+Signed-off-by: Lorenzo Bianconi <lorenzo@kernel.org>
+Signed-off-by: Felix Fietkau <nbd@nbd.name>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/kernel/insn.c | 14 +++++++-------
- 1 file changed, 7 insertions(+), 7 deletions(-)
+ drivers/net/wireless/mediatek/mt76/mt7615/mcu.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
-index 4a9e773a177f..cc2f3d901c91 100644
---- a/arch/arm64/kernel/insn.c
-+++ b/arch/arm64/kernel/insn.c
-@@ -1535,16 +1535,10 @@ static u32 aarch64_encode_immediate(u64 imm,
- 				    u32 insn)
- {
- 	unsigned int immr, imms, n, ones, ror, esz, tmp;
--	u64 mask = ~0UL;
--
--	/* Can't encode full zeroes or full ones */
--	if (!imm || !~imm)
--		return AARCH64_BREAK_FAULT;
-+	u64 mask;
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7615/mcu.c b/drivers/net/wireless/mediatek/mt76/mt7615/mcu.c
+index 610cfa918c7b..a19fb0cb7794 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7615/mcu.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7615/mcu.c
+@@ -823,8 +823,11 @@ mt7615_mcu_wtbl_generic_tlv(struct sk_buff *skb, struct ieee80211_vif *vif,
+ 	generic = (struct wtbl_generic *)tlv;
  
- 	switch (variant) {
- 	case AARCH64_INSN_VARIANT_32BIT:
--		if (upper_32_bits(imm))
--			return AARCH64_BREAK_FAULT;
- 		esz = 32;
- 		break;
- 	case AARCH64_INSN_VARIANT_64BIT:
-@@ -1556,6 +1550,12 @@ static u32 aarch64_encode_immediate(u64 imm,
- 		return AARCH64_BREAK_FAULT;
- 	}
- 
-+	mask = GENMASK(esz - 1, 0);
-+
-+	/* Can't encode full zeroes, full ones, or value wider than the mask */
-+	if (!imm || imm == mask || imm & ~mask)
-+		return AARCH64_BREAK_FAULT;
-+
- 	/*
- 	 * Inverse of Replicate(). Try to spot a repeating pattern
- 	 * with a pow2 stride.
+ 	if (sta) {
++		if (vif->type == NL80211_IFTYPE_STATION)
++			generic->partial_aid = cpu_to_le16(vif->bss_conf.aid);
++		else
++			generic->partial_aid = cpu_to_le16(sta->aid);
+ 		memcpy(generic->peer_addr, sta->addr, ETH_ALEN);
+-		generic->partial_aid = cpu_to_le16(sta->aid);
+ 		generic->muar_idx = mvif->omac_idx;
+ 		generic->qos = sta->wme;
+ 	} else {
 -- 
 2.25.1
 
