@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC7B81F27CD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:54:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAFE01F27F6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:55:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hTj/Cv4IIOTlib2WwuI6Rhni7bPnZHUxh3tYUxbkgkE=; b=LvDDwMYCUZOMaZ
-	Qeo1fYQPxryg72/vic7zSmLdLItNn/Yul+t3Vh04Pz3rgfS1yoWOZtHVRLoV8BwEFhtH2+zj1bFEB
-	Cwb8lNmMQQPo91QnKjPnCPH05DiVj4YgTHcachwcFKi/70dtslS/KaEz2+79qSSrw3gGrMI44uX2E
-	JAkv0SFk+dOmItCFdOf9BULHjUF2/aZugfKeKpyer+bd6rVNBz3klTm3xcmePWSGD9KO/9YnHZNkI
-	VEhy9ruHPNxGkQjCECKdVKTu6+YByVu/SMEvZgsqQHqjpIPIgLvmHrQlCQpp5cH0YOP5uLuzVKv6s
-	wY8Fhc+sUUbO+XxRIT1Q==;
+	List-Owner; bh=G4L3axUFOBr4bjzmIyLH/npbqxJUraF4GVBp0/43CaM=; b=EkN+N/3ypFUp5r
+	OD0p2J/eWniCHrvSYsBVuGkhTcLb/x1iWQg//2gvRt8GUPqMKYAsLRwXE7tLdEs8NxrdKHphVEjpL
+	qRf6OW6UGpuyjVqkh+KoHYMLpfbagiLwUaphFb1ZkyQw8evux5nu7nba+98/p6U2kxnFpvjh5NvmY
+	lWgoiNdTyb9rBdhcvox3/EDdAwWYDuOosYlqQFi7D33R1zMPSNSAPSJi9JUHTbU8MkGiGZXhw2zCF
+	wdCqJ4+YO6BL4lgn5Krdo7ZInwtlHgO0NSDIzpH/TXnr9d+PS/Xsx+IiZtlWSaXJ3+DSU0RrcKewE
+	j+NhQHjNKr+1FgcarvsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRbH-0003A8-R9; Mon, 08 Jun 2020 23:54:43 +0000
+	id 1jiRbo-0003Zh-ID; Mon, 08 Jun 2020 23:55:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiRA1-0007Xc-1G
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:26:35 +0000
+ id 1jiRAO-0007qo-VM
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:27:05 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9766E2076C;
- Mon,  8 Jun 2020 23:26:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A6C2920775;
+ Mon,  8 Jun 2020 23:26:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658792;
- bh=Zl35wCPdR6TlYziZIdihY+3fGlog9FY38U1LOAbiZak=;
+ s=default; t=1591658816;
+ bh=C2yTplfXnz0lDxjv2W+yY3SAan1E8kfM48w4mLwAyDU=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Bfk8H5TmSgDOTmuLLyDWJQ+C5mOYzhiG8Ak8uDS3A7X4P8mQ61SlLuqAkgdObgEU7
- 10tlfPVJB9y5oziENdXPj4A1uV82ICNaPa/Ia2IFUNVTNIXh4Slch2Vmf4yomIpAXM
- +ggAZaRmDdpPzmPpJVlqQAiK3ncllZv01fPo0nL4=
+ b=p/4mw442XFZL75TAEbzJIEFtcMJ0lzTpjaJ2Yi5tW58nMG4K2it/SBoNxlCh8vfit
+ M8o/sUZfL4+/ccC26HpLZM5JtdFWVM7jerDecKpBmu70YJ0QGdgeuAsbC+Z+MwA7ri
+ o3b3D6uroB1Es/zye/tGn0cLlP8p4Gu592b5vCCg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 67/72] mmc: sdhci-esdhc-imx: fix the mask for
- tuning start point
-Date: Mon,  8 Jun 2020 19:24:55 -0400
-Message-Id: <20200608232500.3369581-67-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 12/50] ARM: 8978/1: mm: make act_mm() respect
+ THREAD_SIZE
+Date: Mon,  8 Jun 2020 19:26:02 -0400
+Message-Id: <20200608232640.3370262-12-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200608232500.3369581-1-sashal@kernel.org>
-References: <20200608232500.3369581-1-sashal@kernel.org>
+In-Reply-To: <20200608232640.3370262-1-sashal@kernel.org>
+References: <20200608232640.3370262-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162633_121652_A391625D 
-X-CRM114-Status: GOOD (  11.62  )
+X-CRM114-CacheID: sfid-20200608_162657_055295_5E960853 
+X-CRM114-Status: GOOD (  11.41  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,44 +80,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- linux-mmc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Haibo Chen <haibo.chen@nxp.com>
+Cc: Sasha Levin <sashal@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Haibo Chen <haibo.chen@nxp.com>
+From: Linus Walleij <linus.walleij@linaro.org>
 
-[ Upstream commit 1194be8c949b8190b2882ad8335a5d98aa50c735 ]
+[ Upstream commit e1de94380af588bdf6ad6f0cc1f75004c35bc096 ]
 
-According the RM, the bit[6~0] of register ESDHC_TUNING_CTRL is
-TUNING_START_TAP, bit[7] of this register is to disable the command
-CRC check for standard tuning. So fix it here.
+Recent work with KASan exposed the folling hard-coded bitmask
+in arch/arm/mm/proc-macros.S:
 
-Fixes: d87fc9663688 ("mmc: sdhci-esdhc-imx: support setting tuning start point")
-Signed-off-by: Haibo Chen <haibo.chen@nxp.com>
-Link: https://lore.kernel.org/r/1590488522-9292-1-git-send-email-haibo.chen@nxp.com
-Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+  bic     rd, sp, #8128
+  bic     rd, rd, #63
+
+This forms the bitmask 0x1FFF that is coinciding with
+(PAGE_SIZE << THREAD_SIZE_ORDER) - 1, this code was assuming
+that THREAD_SIZE is always 8K (8192).
+
+As KASan was increasing THREAD_SIZE_ORDER to 2, I ran into
+this bug.
+
+Fix it by this little oneline suggested by Ard:
+
+  bic     rd, sp, #(THREAD_SIZE - 1) & ~63
+
+Where THREAD_SIZE is defined using THREAD_SIZE_ORDER.
+
+We have to also include <linux/const.h> since the THREAD_SIZE
+expands to use the _AC() macro.
+
+Cc: Ard Biesheuvel <ardb@kernel.org>
+Cc: Florian Fainelli <f.fainelli@gmail.com>
+Suggested-by: Ard Biesheuvel <ardb@kernel.org>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/mmc/host/sdhci-esdhc-imx.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/mm/proc-macros.S | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/mmc/host/sdhci-esdhc-imx.c b/drivers/mmc/host/sdhci-esdhc-imx.c
-index 8c0b80a54e4d..6d1ac9443eb2 100644
---- a/drivers/mmc/host/sdhci-esdhc-imx.c
-+++ b/drivers/mmc/host/sdhci-esdhc-imx.c
-@@ -79,7 +79,7 @@
- #define ESDHC_STD_TUNING_EN		(1 << 24)
- /* NOTE: the minimum valid tuning start tap for mx6sl is 1 */
- #define ESDHC_TUNING_START_TAP_DEFAULT	0x1
--#define ESDHC_TUNING_START_TAP_MASK	0xff
-+#define ESDHC_TUNING_START_TAP_MASK	0x7f
- #define ESDHC_TUNING_STEP_MASK		0x00070000
- #define ESDHC_TUNING_STEP_SHIFT		16
+diff --git a/arch/arm/mm/proc-macros.S b/arch/arm/mm/proc-macros.S
+index f8bb65032b79..796e8f675a93 100644
+--- a/arch/arm/mm/proc-macros.S
++++ b/arch/arm/mm/proc-macros.S
+@@ -4,6 +4,7 @@
+  *  VMA_VM_FLAGS
+  *  VM_EXEC
+  */
++#include <linux/const.h>
+ #include <asm/asm-offsets.h>
+ #include <asm/thread_info.h>
  
+@@ -34,7 +35,7 @@
+  * act_mm - get current->active_mm
+  */
+ 	.macro	act_mm, rd
+-	bic	\rd, sp, #8128
++	bic	\rd, sp, #(THREAD_SIZE - 1) & ~63
+ 	bic	\rd, \rd, #63
+ 	ldr	\rd, [\rd, #TI_TASK]
+ 	ldr	\rd, [\rd, #TSK_ACTIVE_MM]
 -- 
 2.25.1
 
