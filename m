@@ -2,82 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20BBF1F18AC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 14:22:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ED581F18C6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 14:31:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9D009GZnU1eLLcXgnQTAm1750Wzxm+gk2HRpidIx2Cw=; b=T+/
-	ke5c8CaoPiFi6TIKNMSs6B0qt36nYKWraLiJlUViecOnywsDqjLqN6htVEvQbxawFjupf+CxmBAR3
-	G025aH7StJckxAcfaqamr7rOI+56HqzI/bPROLy5+ktQ+bejdVHyvPnQFJMggBxrOWHj70ALXZzG6
-	LTNM7lghSjEgTiAcWa2aamyWP5Lbm4aEIq1SEVRS0ElsWtAGCHHj3jFmFmOFgsX3WRHWxGXQYD3Cr
-	ipjkS/owaGAcJgFmt99FSRhX0j8l23W5K08ck0pw8DYs3kEtnq39dHAR9gp/hPDAt/BfSk/WYrbJ6
-	CtlMeuxSUzpJJwZ9zkflnoyV+HbtfIQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=h83BVgmXOxsoG28gTooEwpQ6PM1o63RnMVqdphHSmkA=; b=BH63GzCx0E+KHB
+	MVZmclGosEGay9nB3hkwQSEHwatThNiNx3sxbUvqOw3uQMsE37DUDUFeuV36k0mieDsth/B5uCqx3
+	SBxIrAndp3PAK17FJYfQv+worQoHGDa6chetyX2hAkWmT+1phBDvTU6iRB7rIibWHhbsqtQl4n5uo
+	9QkdfYbP54TeIQJ/ol2qMYxPbdfX33gKLoagXfBees1agjzkRihU+aofaaOqDuK95ZEVb/szeFDki
+	DtY+Ok6B8bjb+Xf+OVRj0TIx6gyoMD5VlFCk13BHx3zaHKFLxXPV37RysPOpbAD533C3hFr1Nn2bv
+	YM4pEs+oau0lqCGMnzKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiGn3-0004C4-FA; Mon, 08 Jun 2020 12:22:09 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jiGvX-0001oO-0Z; Mon, 08 Jun 2020 12:30:55 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiGmx-0004Ba-Bq
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 12:22:04 +0000
-Received: by mail-pg1-x542.google.com with SMTP id o8so8666401pgm.7
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jun 2020 05:22:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=HDxho5qgH/ZNs1hwouSLFAzSS6Ya6IXAFD99ObdyT2U=;
- b=SW8D7gsAlHDtxyd8A/lLyC0s9kXr1vPCLo4wGsWfQOgnAw2y0SomQpam6DVE20cx4G
- pGClR37CIUCmo0HVoo1Aupipewj1E4JYe7uPjhf3wf6fgT9ugod8M3qShjyNg665Aqxl
- xbwTktjbLIN5qbaoyRF4G5HfXrfDfVa19TZWErDO2pWWY8CY4AyUBlfePgjUH0HYOpji
- hzcxlbSeQsmcZjRZ86qZAqeowtgrZYtWX8nHpl7AiN34tIeYpWfCFOu5tWbqWMGASZhK
- dBPuJoDmiANdj2K/F4d4Rk/x4Scw5qBUEm9MyRdXwiLQnZejrRv80JPIjlZuslxF1k5o
- AVWg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=HDxho5qgH/ZNs1hwouSLFAzSS6Ya6IXAFD99ObdyT2U=;
- b=LdTgfhFidXQHL25fZS3+gIEIrTkLxd/d/1B+2KbamKRZcb+ZxgLBJqQt08rfmaBsXP
- +WqDuSkL6fHU8tWeNPPLSDcn+Z4u6qwMXLPXlD+MWrZ/0MKA4Ta2nkvCQxmpr4ek7Fxk
- 3mUSXJujGEJpyog11XDMM9RImDus6BF7VxsWh/3BqfoMl/rYzNdCwtq0/+tAu2ynxrxE
- uXfiqXZ+5p8B3kv8HPipNOHMfNPQysRt438H03BMZ4AXYMM/eM0Ms260MO4+mmDWfyF9
- cIF+mLprQqOpwR/3crw5qDQpDvqSXjIILD0d9x3yqSCPkYVN3qmKr9Bqw4fa02tM+ZCO
- F+PQ==
-X-Gm-Message-State: AOAM533v90NBGNZHX8fGVah1kgPODSxvg1b/coRo9YuGivhgMQ6pFTaU
- kv/VfNTKR9IBs8ZEV54iFsQ=
-X-Google-Smtp-Source: ABdhPJwMhWCzEK/UeGQzspWpga1Pqrnmfx1UaWD/aQi3RYJ9+jsb3BBeRs5aBHPb3r/reQoTC/L+5Q==
-X-Received: by 2002:a62:36c5:: with SMTP id d188mr3677066pfa.120.1591618920957; 
- Mon, 08 Jun 2020 05:22:00 -0700 (PDT)
-Received: from localhost.localdomain ([45.135.186.34])
- by smtp.gmail.com with ESMTPSA id g29sm6975584pfr.47.2020.06.08.05.21.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 08 Jun 2020 05:22:00 -0700 (PDT)
-From: Baolin Wang <baolin.wang7@gmail.com>
-To: ohad@wizery.com,
-	bjorn.andersson@linaro.org
-Subject: [PATCH] hwspinlock: sirf: Remove the redundant 'of_match_ptr'
-Date: Mon,  8 Jun 2020 20:20:28 +0800
-Message-Id: <250d35cb489c3c4c066f7ce256d27f36712a1979.1591618255.git.baolin.wang7@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jiGvP-0001nT-Km
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 12:30:49 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1591619447; x=1623155447;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=DqVy/lhHPIGLZ2gVhB+SkFZeyg+IWDog1e2aJcvmuys=;
+ b=eOf/kH3oDQr/ez7q/V8MId+yHkvwxG2LnJpFvX+k0xXv18PfIjXcIkDS
+ uscb/6HaummuboXqYcDDjWVjkHDpkNJPcMAF5oziTIBclUgY+YXHaIn83
+ eBeqsrJ8ycUdWkIGhPGLieIAl11qQjfx+9TD+4v/WP2o1NE1xZovuFShA
+ KQ3CA0cte2g6G4gHVWAxaV9p3Ay/Ue2WDelV4CUW+qYVbCQvObkya4f4l
+ KEIBNJAt7GyPzP/rTXl+rlIySWmnA1s2kn6/p1YzrTnJxUH4ZJyL8K+67
+ L1IkUdLbnh7G9XcSXJ1MPVIMEnjQyfe+x3mdi4jU8Ao8RF9r8yVaizYvS Q==;
+IronPort-SDR: BrcHFuJ/CQnl0R+wYshXSuibM0g4Hv44Xsj9CFkUwDVQh+f3qllEPIsWKCCnWEPOVK4fTqlzS/
+ VBQv+MUopWl4M1on8o/VU19//2S0q5NG2ttiUNiROeXy3A4knhTuk4NcA2Z5a3RkZLwDLViwDU
+ AtXaPMkH7UNmQ3VjPPe5lCx/QJXeWml2xlcbSSjA26dPupO4VfYZhxJ3I5ZY+4Q/armI/ZOGO8
+ oOBz5R0WgFHfQIGZmg6r4QS+dJX8D6/zuXhzEdaudAeOR5AA77oTieC9Ov0R6soxulLTqMOyDC
+ 4+c=
+X-IronPort-AV: E=Sophos;i="5.73,487,1583218800"; d="scan'208";a="79311433"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 08 Jun 2020 05:30:44 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1847.3; Mon, 8 Jun 2020 05:30:44 -0700
+Received: from soft-dev15.microsemi.net (10.10.115.15) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Mon, 8 Jun 2020 05:30:39 -0700
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: SoC Team <soc@kernel.org>, Arnd Bergmann <arnd@arndb.de>, Stephen Boyd
+ <sboyd@kernel.org>, Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH v2 00/10] Adding support for Microchip Sparx5 SoC
+Date: Mon, 8 Jun 2020 14:30:14 +0200
+Message-ID: <20200608123024.5330-1-lars.povlsen@microchip.com>
+X-Mailer: git-send-email 2.27.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_052203_423397_080E31E7 
-X-CRM114-Status: GOOD (  12.52  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200608_053047_710430_67AF2B47 
+X-CRM114-Status: GOOD (  12.06  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [baolin.wang7[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [baolin.wang7[at]gmail.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -85,6 +79,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [68.232.153.233 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,43 +93,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: baolin.wang7@gmail.com, baohua@kernel.org, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Steen Hegelund <Steen.Hegelund@microchip.com>, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Olof Johansson <olof@lixom.net>, Michael
+ Turquette <mturquette@baylibre.com>, Lars Povlsen <lars.povlsen@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove the the redundant 'of_match_ptr' macro to fix below warning
-when the CONFIG_OF is not selected.
+This patch series adds support for Microchip Sparx5 SoC, the CPU
+system of a advanced, TSN capable gigabit switch. The CPU is an armv8
+x 2 CPU core (A53).
 
-All warnings:
-drivers/hwspinlock/sirf_hwspinlock.c:87:34: warning: unused variable
-'sirf_hwpinlock_ids' [-Wunused-const-variable]
+Although this is an ARM core, it shares some peripherals with the
+Microsemi Ocelot SoC.
 
-Reported-by: kernel test robot <lkp@intel.com>
-Signed-off-by: Baolin Wang <baolin.wang7@gmail.com>
----
- drivers/hwspinlock/sirf_hwspinlock.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+Changes in v2:
+- Misc fixes to bindings/arm/microchip,sparx5.yaml
+- Changed clock driver to platform driver, among other fixes
+- arch/arm64/boot/dts/microchip/sparx5.dtsi:
+ - Added pmu and psci node, using PSCI
+ - Updates to GICv3 register spaces (GICV/GICH)
+ - Updated timer interrupt specifiers
+- pinctrl: ocelot: Fixed symbol clashes from powerpc
+- pinctrl: ocelot: Patches already in next-20200605 have been removed
+    from this series.
 
-diff --git a/drivers/hwspinlock/sirf_hwspinlock.c b/drivers/hwspinlock/sirf_hwspinlock.c
-index 823d3c4f621e..a3f77120bad7 100644
---- a/drivers/hwspinlock/sirf_hwspinlock.c
-+++ b/drivers/hwspinlock/sirf_hwspinlock.c
-@@ -94,7 +94,7 @@ static struct platform_driver sirf_hwspinlock_driver = {
- 	.probe = sirf_hwspinlock_probe,
- 	.driver = {
- 		.name = "atlas7_hwspinlock",
--		.of_match_table = of_match_ptr(sirf_hwpinlock_ids),
-+		.of_match_table = sirf_hwpinlock_ids,
- 	},
- };
- 
--- 
-2.17.1
+Lars Povlsen (10):
+  dt-bindings: arm: sparx5: Add documentation for Microchip Sparx5 SoC
+  arm64: sparx5: Add support for Microchip 2xA53 SoC
+  arm64: dts: sparx5: Add basic cpu support
+  arm64: dts: sparx5: Add pinctrl support
+  pinctrl: ocelot: Add Sparx5 SoC support
+  dt-bindings: clock: sparx5: Add Sparx5 SoC DPLL clock
+  dt-bindings: clock: sparx5: Add bindings include file
+  clk: sparx5: Add Sparx5 SoC DPLL clock driver
+  arm64: dts: sparx5: Add Sparx5 SoC DPLL clock
+  arm64: dts: sparx5: Add i2c devices, i2c muxes
 
+ .../bindings/arm/microchip,sparx5.yaml        |  65 +++
+ .../bindings/clock/microchip,sparx5-dpll.yaml |  52 +++
+ .../devicetree/bindings/mfd/syscon.yaml       |   1 +
+ MAINTAINERS                                   |   9 +
+ arch/arm64/Kconfig.platforms                  |  14 +
+ arch/arm64/boot/dts/Makefile                  |   1 +
+ arch/arm64/boot/dts/microchip/Makefile        |   4 +
+ arch/arm64/boot/dts/microchip/sparx5.dtsi     | 213 +++++++++
+ .../boot/dts/microchip/sparx5_pcb125.dts      |  21 +
+ .../boot/dts/microchip/sparx5_pcb134.dts      |  17 +
+ .../dts/microchip/sparx5_pcb134_board.dtsi    | 252 ++++++++++
+ .../boot/dts/microchip/sparx5_pcb134_emmc.dts |  17 +
+ .../boot/dts/microchip/sparx5_pcb135.dts      |  17 +
+ .../dts/microchip/sparx5_pcb135_board.dtsi    |  92 ++++
+ .../boot/dts/microchip/sparx5_pcb135_emmc.dts |  17 +
+ .../boot/dts/microchip/sparx5_pcb_common.dtsi |  19 +
+ drivers/clk/Makefile                          |   1 +
+ drivers/clk/clk-sparx5.c                      | 312 +++++++++++++
+ drivers/pinctrl/pinctrl-ocelot.c              | 431 +++++++++++++++++-
+ include/dt-bindings/clock/microchip,sparx5.h  |  23 +
+ 20 files changed, 1577 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/microchip,sparx5.yaml
+ create mode 100644 Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
+ create mode 100644 arch/arm64/boot/dts/microchip/Makefile
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5.dtsi
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb125.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134_board.dtsi
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134_emmc.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135_board.dtsi
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135_emmc.dts
+ create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb_common.dtsi
+ create mode 100644 drivers/clk/clk-sparx5.c
+ create mode 100644 include/dt-bindings/clock/microchip,sparx5.h
+
+--
+2.27.0
 
 _______________________________________________
 linux-arm-kernel mailing list
