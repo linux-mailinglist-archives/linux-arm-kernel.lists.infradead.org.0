@@ -2,64 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0E031F1B6D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 16:51:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D3C71F1B3A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 16:44:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Nl6Z7Hi4J7Ht+jbb/AJdVLD7CkP9i326iDiSEXB6BBQ=; b=Z0wvu5JGJSVMsi3iLentkNp55R
-	QnexW4vtVPbO36OSDnZgN+mg3VNK5TJkYCSm1lwub7K38Gr7qzvYUnpWVzae+uS1NxNJYCtj5NM4a
-	UeHK7YstFIHyPAJcHRDLiPxStce2HuSO/gCRKsIC2jBJk5fDJI6h+VjUOoWjR+0OPPGqiV0UKT5hY
-	R6FQWG/p67Iav4BnrALZH6G0hR2E2KGItr4LQNW9t16If89dvBd1dqAgxw/Vhy/+AOeMigvyssWpV
-	MFfqsWe9fN/5IOdpyFduTwxVEJIFNd4rOwS9OcylYnqgrV7aH4b5eqMqQ5HfcNWJtp1FvAd32sYKP
-	rk+pGlLg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=c2Y/HVzUNR0xnY4BVMsfARaBZQvm4+FLtqHq5g4z5QI=; b=HXylhHXM0HiSog
+	e6gVytI+NSYeQ75zL30SbdW9IhtIGXMm8xboo6CFS8nGIeWJ4MMf1qRMaSl3gDgrs+V5zCWudEONs
+	4ZIqp00TdZZId3PK6QT5ATLIUWLLK5BIOMTltNwORUeWXhbtGj8q1T9bM48nmjG3VA100G8GDC3qM
+	O8dwnhsAuBqPUj+bTEc/9HAUznyqOyJq5HHLNXMr0252BcwlGWVRSzUWMAzYIReISprdrCiKVxmBu
+	OtZQcO8zvtGqnfxcbqzkPF2yWgJRhlFQOFR+DTd86Hr4C+FOlvBzR8LSzEh9pkKfgojvJJiSAvdir
+	rq7gaVxXd2cb714c6wXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiJ7a-00078E-Iw; Mon, 08 Jun 2020 14:51:30 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1jiJ1D-000464-Ve; Mon, 08 Jun 2020 14:44:55 +0000
+Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiJ4h-0008Cn-7u
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 14:48:33 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 399411A1097;
- Mon,  8 Jun 2020 16:48:29 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 9F5DA1A10A5;
- Mon,  8 Jun 2020 16:48:24 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2393140307;
- Mon,  8 Jun 2020 22:48:19 +0800 (SGT)
-From: Anson Huang <Anson.Huang@nxp.com>
-To: aisheng.dong@nxp.com, festevam@gmail.com, shawnguo@kernel.org,
- stefan@agner.ch, kernel@pengutronix.de, linus.walleij@linaro.org,
- s.hauer@pengutronix.de, linux-gpio@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V2 9/9] pinctrl: imx8dxl: Support building as module
-Date: Mon,  8 Jun 2020 22:37:36 +0800
-Message-Id: <1591627056-19022-10-git-send-email-Anson.Huang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1591627056-19022-1-git-send-email-Anson.Huang@nxp.com>
-References: <1591627056-19022-1-git-send-email-Anson.Huang@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1jiJ15-00044y-0W
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 14:44:49 +0000
+Received: from T480.siklu.local (unknown [212.29.212.82])
+ by mx.tkos.co.il (Postfix) with ESMTPA id 01B2D44046D;
+ Mon,  8 Jun 2020 17:44:37 +0300 (IDT)
+From: Shmuel Hazan <sh@tkos.co.il>
+To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ Jason Cooper <jason@lakedaemon.net>
+Subject: [RFC PATCH] pci: pci-mvebu: setup BAR0 to internal-regs
+Date: Mon,  8 Jun 2020 17:40:25 +0300
+Message-Id: <20200608144024.1161237-1-sh@tkos.co.il>
+X-Mailer: git-send-email 2.27.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_074831_638749_643F8FCC 
-X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-CacheID: sfid-20200608_074447_282670_0EC67F31 
+X-CRM114-Status: UNSURE (   8.36  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [192.115.133.116 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,62 +58,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-MIME-Version: 1.0
+Cc: Baruch Siach <baruch@tkos.co.il>, linux-pci@vger.kernel.org,
+ Shmuel H <sh@tkos.co.il>, =?UTF-8?q?Marek=20Beh=C3=BAn?= <marek.behun@nic.cz>,
+ Chris ackham <chris.packham@alliedtelesis.co.nz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support building i.MX8DXL pinctrl driver as module.
+From: Shmuel H <sh@tkos.co.il>
 
-Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
----
-No changes.
----
- drivers/pinctrl/freescale/Kconfig           | 2 +-
- drivers/pinctrl/freescale/pinctrl-imx8dxl.c | 9 +++------
- 2 files changed, 4 insertions(+), 7 deletions(-)
+Set the port's BAR0 address to the SOC's internal registers address. By default, this register will point to 0xd0000000, which is not correct.
 
-diff --git a/drivers/pinctrl/freescale/Kconfig b/drivers/pinctrl/freescale/Kconfig
-index 8ab8aa8..18a0f4d 100644
---- a/drivers/pinctrl/freescale/Kconfig
-+++ b/drivers/pinctrl/freescale/Kconfig
-@@ -166,7 +166,7 @@ config PINCTRL_IMX8QXP
- 	  Say Y here to enable the imx8qxp pinctrl driver
+Signed-off-by: Shmuel Hazan <sh@tkos.co.il>
+---
+Sending again since I forgot to include a number of email addresses. 
+
+Without this patch the wil6210 driver fails on interface up as follows:
+
+# ip link set wlan0 up
+[   46.142664] wil6210 0000:01:00.0 wlan0: wil_reset: Use firmware
+<wil6210.fw> + board <wil6210.brd>
+[   48.244216] wil6210 0000:01:00.0 wlan0: wil_wait_for_fw_ready:
+Firmware not ready
+ip: SIOCSIFFLAGS: Device timeout
+
+With this patch, interface up succeeds:
+
+# ip link set wlan0 up
+[   53.632667] wil6210 0000:01:00.0 wlan0: wil_reset: Use firmware
+<wil6210.fw> + board <wil6210.brd>
+[   53.666560] wil6210 0000:01:00.0 wlan0: wmi_evt_ready: FW ver.
+5.2.0.18(SW 18); MAC 40:0e:85:c0:77:5c; 0 MID's
+[   53.676636] wil6210 0000:01:00.0 wlan0: wil_wait_for_fw_ready: FW
+ready after 20 ms. HW version 0x00000002
+[   53.686478] wil6210 0000:01:00.0 wlan0:
+wil_configure_interrupt_moderation: set ITR_TX_CNT_TRSH = 500 usec
+[   53.696191] wil6210 0000:01:00.0 wlan0:
+wil_configure_interrupt_moderation: set ITR_TX_IDL_CNT_TRSH = 13 usec
+[   53.706156] wil6210 0000:01:00.0 wlan0:
+wil_configure_interrupt_moderation: set ITR_RX_CNT_TRSH = 500 usec
+[   53.715855] wil6210 0000:01:00.0 wlan0:
+wil_configure_interrupt_moderation: set ITR_RX_IDL_CNT_TRSH = 13 usec
+[   53.725819] wil6210 0000:01:00.0 wlan0: wil_refresh_fw_capabilities:
+keep_radio_on_during_sleep (0)
+
+Tested on Armada 38x based system.
+
+Another related bit of information is this U-Boot commit:
+
+  https://gitlab.denx.de/u-boot/u-boot/commit/193a1e9f196b7fb7e913a70936c8a49060a1859c
+
+It looks like some other devices are also affected the BAR0
+initialization.
+However, by default, u-boot won't initialize any PCI bus. Which
+will cause the BAR0 register to stay on its default value. 
+
+Any idea what is the right way to initialize BAR0?
+---
+ drivers/pci/controller/pci-mvebu.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/drivers/pci/controller/pci-mvebu.c b/drivers/pci/controller/pci-mvebu.c
+index 153a64676bc9..4a00e1b81b4f 100644
+--- a/drivers/pci/controller/pci-mvebu.c
++++ b/drivers/pci/controller/pci-mvebu.c
+@@ -203,6 +203,11 @@ static void mvebu_pcie_setup_wins(struct mvebu_pcie_port *port)
+ 	mvebu_writel(port, 0, PCIE_BAR_HI_OFF(1));
+ 	mvebu_writel(port, ((size - 1) & 0xffff0000) | 1,
+ 		     PCIE_BAR_CTRL_OFF(1));
++	
++	/* Point BAR0 to the device's internal registers (internal-regs on 
++	 * a38x, orion and more) */
++	mvebu_writel(port, 0xf1000000, PCIE_BAR_LO_OFF(0));
++	mvebu_writel(port, 0, PCIE_BAR_HI_OFF(0));
+ }
  
- config PINCTRL_IMX8DXL
--	bool "IMX8DXL pinctrl driver"
-+	tristate "IMX8DXL pinctrl driver"
- 	depends on IMX_SCU && ARCH_MXC && ARM64
- 	select PINCTRL_IMX_SCU
- 	help
-diff --git a/drivers/pinctrl/freescale/pinctrl-imx8dxl.c b/drivers/pinctrl/freescale/pinctrl-imx8dxl.c
-index 7f32e57..c11fcfb 100644
---- a/drivers/pinctrl/freescale/pinctrl-imx8dxl.c
-+++ b/drivers/pinctrl/freescale/pinctrl-imx8dxl.c
-@@ -165,6 +165,7 @@ static const struct of_device_id imx8dxl_pinctrl_of_match[] = {
- 	{ .compatible = "fsl,imx8dxl-iomuxc", },
- 	{ /* sentinel */ }
- };
-+MODULE_DEVICE_TABLE(of, imx8dxl_pinctrl_of_match);
- 
- static int imx8dxl_pinctrl_probe(struct platform_device *pdev)
- {
-@@ -185,9 +186,5 @@ static struct platform_driver imx8dxl_pinctrl_driver = {
- 	},
- 	.probe = imx8dxl_pinctrl_probe,
- };
--
--static int __init imx8dxl_pinctrl_init(void)
--{
--	return platform_driver_register(&imx8dxl_pinctrl_driver);
--}
--arch_initcall(imx8dxl_pinctrl_init);
-+module_platform_driver(imx8dxl_pinctrl_driver);
-+MODULE_LICENSE("GPL v2");
+ static void mvebu_pcie_setup_hw(struct mvebu_pcie_port *port)
 -- 
-2.7.4
+2.27.0
 
 
 _______________________________________________
