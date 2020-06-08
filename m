@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83A361F19ED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 15:24:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96B7D1F19EE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 15:24:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,30 +11,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=BUe5OMbJOVL5IAT+XwQlHwZ7dSNf0cY8Fy3oRJx2kYg=; b=QoOPdO6p7sJOeMcnzr3HVdyjPT
-	1+76kiTyRjItwA+ztZ06N1lfbrFL0uz9MeqPPA/Ay3CP4d6SqHVpgV5l4RkjD+v+uGkL5ZpoCmzi1
-	l23D6XjKKO5/oOpGrfGsFWEOQNqCVa08y3P9L4o3QpAUHZHnmDBQlqMGeOUi0xF0A5Uxy9GKiKDmB
-	vhytA/+szd6IzQjE3JpfspFuvYjmNrDmvMU5BDTlEATfMX084ykHR/Iz8MqCz3MKF5S4TqNnPIZxp
-	92uWTdCHXIv2nxMzJDtdu3UIKUcbhZNwnCLJVjGnSLTgnHFe2qYBuDid+bHzlYmQkFl3M2C40aS0y
-	akaCgB7g==;
+	bh=u8EJXCaYMPRlW4FhUQJBYBnFPBncRAN/F3Ga3q7pugw=; b=BHIviLoTbnyrbUVWGIY3ufXOKD
+	FRM771ETm2ia82OaNtF53X661GClXS5G8V1fyn/drV1+BzUc594hdl34EHbZiXCH6HWXm3ccdcZRx
+	T9wstQkXzFl/Etuc8LCG0OGqZxl8TA3zHUq6zMFkdbud3spr8FQD76XMq3VGkfcX5r9KHXOS2V+P6
+	VCXRnQqxL9VLFeVqDxNxkpiDEzZNP1QNUumPrvrsq7aE7fmwUmeo1MfRYNXVAEYFip6UC6p6EL8gl
+	WjBVIc08buuwS19oN3CULExgAlWpuQQPUoLCbFeppU3uYm2ZQ7nfjq12+/VJy2i6A5aOsxSQAd0kF
+	BGTRNipg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiHkv-0001do-6F; Mon, 08 Jun 2020 13:24:01 +0000
+	id 1jiHl6-0001tK-Pg; Mon, 08 Jun 2020 13:24:12 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiHkD-00018P-VH
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 13:23:19 +0000
+ id 1jiHkF-0001A2-R6
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 13:23:21 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A74C11A103E;
- Mon,  8 Jun 2020 15:23:16 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 85E6C1A010A;
+ Mon,  8 Jun 2020 15:23:18 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4193C1A1033;
- Mon,  8 Jun 2020 15:23:06 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5AB4A1A0120;
+ Mon,  8 Jun 2020 15:23:08 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AED00402F3;
- Mon,  8 Jun 2020 21:22:53 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E07AB402FB;
+ Mon,  8 Jun 2020 21:22:55 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: linux@armlinux.org.uk, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, mturquette@baylibre.com,
@@ -45,16 +45,16 @@ To: linux@armlinux.org.uk, shawnguo@kernel.org, s.hauer@pengutronix.de,
  daniel.baluta@nxp.com, yuehaibing@huawei.com, sfr@canb.auug.org.au,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-clk@vger.kernel.org
-Subject: [PATCH 2/9] ARM: imx: Select MXC_CLK for ARCH_MXC
-Date: Mon,  8 Jun 2020 21:12:09 +0800
-Message-Id: <1591621936-11886-3-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 3/9] clk: imx: Support building SCU clock driver as module
+Date: Mon,  8 Jun 2020 21:12:10 +0800
+Message-Id: <1591621936-11886-4-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1591621936-11886-1-git-send-email-Anson.Huang@nxp.com>
 References: <1591621936-11886-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_062318_144726_39322D2C 
-X-CRM114-Status: UNSURE (   7.71  )
+X-CRM114-CacheID: sfid-20200608_062320_018434_CF3C58E5 
+X-CRM114-Status: UNSURE (   8.60  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -83,27 +83,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX common clock drivers may support module build, so it is NOT
-selected by default, for ARCH_MXC ARMv7 platforms, need to select
-it manually to make build pass.
+There are more and more requirements of building SoC specific drivers
+as modules, add support for building SCU clock driver as module to meet
+the requirement.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/mach-imx/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/clk/imx/Kconfig   | 2 +-
+ drivers/clk/imx/Makefile  | 5 ++---
+ drivers/clk/imx/clk-scu.c | 5 +++++
+ 3 files changed, 8 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/mach-imx/Kconfig b/arch/arm/mach-imx/Kconfig
-index e7d7b90..47b10d2 100644
---- a/arch/arm/mach-imx/Kconfig
-+++ b/arch/arm/mach-imx/Kconfig
-@@ -4,6 +4,7 @@ menuconfig ARCH_MXC
- 	depends on ARCH_MULTI_V4_V5 || ARCH_MULTI_V6_V7 || ARM_SINGLE_ARMV7M
- 	select ARCH_SUPPORTS_BIG_ENDIAN
- 	select CLKSRC_IMX_GPT
-+	select MXC_CLK
- 	select GENERIC_IRQ_CHIP
- 	select GPIOLIB
- 	select PINCTRL
+diff --git a/drivers/clk/imx/Kconfig b/drivers/clk/imx/Kconfig
+index db0253f..503d6c8 100644
+--- a/drivers/clk/imx/Kconfig
++++ b/drivers/clk/imx/Kconfig
+@@ -5,7 +5,7 @@ config MXC_CLK
+ 	def_bool ARCH_MXC
+ 
+ config MXC_CLK_SCU
+-	bool
++	tristate "IMX SCU clock"
+ 	depends on IMX_SCU
+ 
+ config CLK_IMX8MM
+diff --git a/drivers/clk/imx/Makefile b/drivers/clk/imx/Makefile
+index 928f874..1af8cff 100644
+--- a/drivers/clk/imx/Makefile
++++ b/drivers/clk/imx/Makefile
+@@ -21,9 +21,8 @@ obj-$(CONFIG_MXC_CLK) += \
+ 	clk-sscg-pll.o \
+ 	clk-pll14xx.o
+ 
+-obj-$(CONFIG_MXC_CLK_SCU) += \
+-	clk-scu.o \
+-	clk-lpcg-scu.o
++mxc-clk-scu-objs += clk-scu.o clk-lpcg-scu.o
++obj-$(CONFIG_MXC_CLK_SCU) += mxc-clk-scu.o
+ 
+ obj-$(CONFIG_CLK_IMX8MM) += clk-imx8mm.o
+ obj-$(CONFIG_CLK_IMX8MN) += clk-imx8mn.o
+diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
+index b8b2072..9688981 100644
+--- a/drivers/clk/imx/clk-scu.c
++++ b/drivers/clk/imx/clk-scu.c
+@@ -8,6 +8,7 @@
+ #include <linux/arm-smccc.h>
+ #include <linux/clk-provider.h>
+ #include <linux/err.h>
++#include <linux/module.h>
+ #include <linux/slab.h>
+ 
+ #include "clk-scu.h"
+@@ -132,6 +133,7 @@ int imx_clk_scu_init(void)
+ {
+ 	return imx_scu_get_handle(&ccm_ipc_handle);
+ }
++EXPORT_SYMBOL_GPL(imx_clk_scu_init);
+ 
+ /*
+  * clk_scu_recalc_rate - Get clock rate for a SCU clock
+@@ -387,3 +389,6 @@ struct clk_hw *__imx_clk_scu(const char *name, const char * const *parents,
+ 
+ 	return hw;
+ }
++EXPORT_SYMBOL_GPL(__imx_clk_scu);
++
++MODULE_LICENSE("GPL v2");
 -- 
 2.7.4
 
