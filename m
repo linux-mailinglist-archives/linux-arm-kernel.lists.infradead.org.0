@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51B041F2041
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:44:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E365F1F2051
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 21:51:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=keQjUXLE6v23+U+QQ1s0ZfScf+rXuKRy5HHCvf0cNNk=; b=HSNqE8Q81w6mfH
-	iZE0KvVkIR73A6gjxkCVWp70Jh3Sws4shNQ/W2KauSYZviwyncCSlSw2zAthBZau1TJ6lQHeaMx4K
-	/5cUWUouVn/OyCS6auMceRvGhE+LHm/k619wTqa9Kxocy06DTEzrfKv3oflr4hmPo8ZtELv1FZyoA
-	NQ4j8OUprGkbdyoHslqo13LiSFqs7EGsRbxH1TG8sTrupZn2hR4Cx8L3xDc1QVlHMgACk0buCVutW
-	aQuBH7pxNHIMb6T9lhXSZ0+/qqOPXrYC5XcAKtxrVVj7HqCR3rVYaYKp4reSeRqCY4vNLqPmKLDtC
-	Nlg5N5Rfb1O/0LpXrDXw==;
+	List-Owner; bh=gxH/Ev8A4tuaZPzdvL0V2EItKf8w5DHzGd0iuWokM4E=; b=YJNqzClhjdodmq
+	CqpA3kRVBfsK6Z7AGWFbmaNhWMDcgjd8XYILrn0u7b9eAc+NfIwAGk+j6TVoE6n5MH0BqMftnh03k
+	f8sNv4R/yVZUtgUtyQzqcqHaK+9uwBmfa2QT5bKM6A0IbiaAgWxDpz9v0LqavZcDJeQ2ssJu8JTai
+	KY64sxTJAYDotFIl/kwNPF2pJJZGtG+3xXz58p2eDBIpPmqajOruNoPZxriypjD5Pt00OhFDISfsW
+	Qtzt//IsEiMK4sx/mEux5lHAncrJDXSeYSscixG2VvG8a1Tmpmah5lwp4neejbFMF900G4R2Lvrgf
+	eI3PoHluP8NLVkZgXDNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiNgp-0005cA-M7; Mon, 08 Jun 2020 19:44:11 +0000
+	id 1jiNnf-0002df-BS; Mon, 08 Jun 2020 19:51:15 +0000
 Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiNgV-0005Vt-Dn; Mon, 08 Jun 2020 19:43:53 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x14so18769472wrp.2;
- Mon, 08 Jun 2020 12:43:50 -0700 (PDT)
+ id 1jiNnW-0002dB-Q7; Mon, 08 Jun 2020 19:51:08 +0000
+Received: by mail-wr1-x441.google.com with SMTP id e1so18807647wrt.5;
+ Mon, 08 Jun 2020 12:51:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=eEhDs2ggMl3f7hmWAszT3Wg5EUHjiX8ZgjgQtEPz3Ew=;
- b=SeSuA/P6scbWq1Qmh2zpCSo7IcLTN9rnSoi07mfc7qWyYZK3Q3DYVo1VijgnOfNSdj
- r3vywNV9pCi0Afub1pOlwByjOut9ps2B/DjTMiU5XIHXPtx+bTupvONWl3wUj4GIE7XN
- 7jmRn6U7u8Pw/6rqoy/LtoA1lwlByDxJbr48VQnlu+vjMfCDHjLY9HJJNEbvNCOb1HQq
- TYmx6d3y0qxRkn+koJEEJZLsxEDTZ7IqpiKn8n2+Si8QeluqpJvK+HQ9Jdmp0U6KjUMa
- Kdj9DY+26aXNWHArUb4TSzFok6Mz7H+tkNNgznU8lsMAe76hlbeSdAtfqawe6Y879Sf8
- khgg==
+ bh=o5RsBAa3pHyGyH1Nf7xqWjY4s1FOdQYE7k1GR7WvK+Y=;
+ b=N3vINQBBjDhjwltCTk4vLqaHoCDmpSznY1srZ5V/zbmPxdqlnC+/pmPlQHHoAwIe9B
+ oUaY7MSfZe4RcX5zuaV2XyDtBx1bR9mPWAw7K8PoLXukvY8ImPCBpiGot87xw/RFYKix
+ GLxs4Af3xmFpKolPH1YeZ+Rmw0/ZrgO0S9ioEUI/Tz0SSzVEgZ2UB3KYF9jtXSk/6s7b
+ ip2VxR06bCDpND0T303PPmw3GNmtaFCBLGMH08iyT3g9YBE4QSONyykzMR3Y+qwLSU60
+ fd6immvVGQp9DZJhlGWE7rmFD1svntJnV4yvgdsl+NNBFAWQzIZ2CXJFWPSNtNba4wPR
+ SDjg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=eEhDs2ggMl3f7hmWAszT3Wg5EUHjiX8ZgjgQtEPz3Ew=;
- b=nuqnd4q6juqoe7VRTOLH0YfzPnxQEKMVLog7/1EFShG7MrDKHPuIVeGcEKSzAOPf7s
- 2uLpfMWzMGCW3joyuyxVlBviASEYBsp6IVe+F8VGb/tza59Ss+MlFrr+X4Sn6imKS9gB
- eP3mfzchoFEgP2ddm9xRTSjkYcZHwfXcIQNejLZg8f3bXiofAOANGeI1MxEtA/pB60pL
- tj37HPRiS4yG2LgvRlc5vhAqBxR/UlwRcc6Xj+Acag99DSPDGcq/FckoMmJXoVnG7IzO
- BC9elUeZvrFsDYaoNFB0hEu7a6L6Sy3RuXWtGWoCPX/IQ1u8ElBRQ/1s8899uHSr0de1
- km8A==
-X-Gm-Message-State: AOAM531HzNqEU/Mp4ke8j78+G2cnqqpsAesTMcWKSsCyln/4Y7XYRAb5
- rFiy0EbxUoS12Z4BFLpRZvo=
-X-Google-Smtp-Source: ABdhPJzbDt2pJwcpzdBFvHOLRZ0TDUp8Aq/TBRc5TkHGktIAfaGaZUxUEu/MKNMBoXEBH6K2qQduMg==
-X-Received: by 2002:a5d:4b47:: with SMTP id w7mr385678wrs.234.1591645429157;
- Mon, 08 Jun 2020 12:43:49 -0700 (PDT)
+ bh=o5RsBAa3pHyGyH1Nf7xqWjY4s1FOdQYE7k1GR7WvK+Y=;
+ b=H2uwV4Dmy/+oUjauWl98nrFYkdzbAgtlBMQSg8Ft/Ovlz3xnwb+eajujQml4VEdtTq
+ /FV1/Xa0yU+E4qSHjmXoWPJdYfTcH9sZEt9sm9rpUa6kXmASQISXkPxkgoq/u4jUcDHS
+ r2gTkSeRYTe09oien0dYdL18UcwXHxg1KRPBFnt6YMCVkTndAe+0Jv623XVLE9HqkThZ
+ 8Ib8s6ZeEDDTE3N/nSYO6axuWEyAXvHuVU82jqKNZPiJVoX9PBVi6Rn2siO7yywkHVuZ
+ 321NMxTVLn+Y4lGENi5M4x+uda03X0VSPt8XlszWg15v0dKNWSfcdhHvvBMzmG3g09fY
+ rBrA==
+X-Gm-Message-State: AOAM533LV1wAZFGM+JuG7/M8d+tLe4rRfyyEYYrwHVoeiw8eytFzRqHl
+ NQOxpm2R+7Kuq8bh0lBlgJtGLDic
+X-Google-Smtp-Source: ABdhPJw+Lng+MYT9sFvOIDd5/BQc0mai6p2yW5rVQDkoQhjjOqgKoQROdpu5l2JKcDlSnSwrtuty3Q==
+X-Received: by 2002:adf:b198:: with SMTP id q24mr421481wra.368.1591645865305; 
+ Mon, 08 Jun 2020 12:51:05 -0700 (PDT)
 Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
  by smtp.gmail.com with ESMTPSA id
- t129sm538664wmf.41.2020.06.08.12.43.44
+ s8sm772992wrg.50.2020.06.08.12.51.01
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 08 Jun 2020 12:43:48 -0700 (PDT)
-Subject: Re: [PATCH 5/9] usb: xhci-pci: Add support for reset controllers
+ Mon, 08 Jun 2020 12:51:04 -0700 (PDT)
+Subject: Re: [PATCH 7/9] usb: host: pci-quirks: Bypass xHCI quirks for
+ Raspberry Pi 4
 To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, f.fainelli@gmail.com,
  gregkh@linuxfoundation.org, wahrenst@gmx.net, robh@kernel.org,
  mathias.nyman@linux.intel.com, Eric Anholt <eric@anholt.net>,
  bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
  linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
- Mathias Nyman <mathias.nyman@intel.com>,
- Philipp Zabel <p.zabel@pengutronix.de>
+ Mathias Nyman <mathias.nyman@intel.com>
 References: <20200608192701.18355-1-nsaenzjulienne@suse.de>
- <20200608192701.18355-6-nsaenzjulienne@suse.de>
+ <20200608192701.18355-8-nsaenzjulienne@suse.de>
 From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <5d3200cc-17cc-026f-1dfe-c10ec949f9ad@gmail.com>
-Date: Mon, 8 Jun 2020 12:43:43 -0700
+Message-ID: <6b1084e1-05ca-5321-46fd-7b6f83224a49@gmail.com>
+Date: Mon, 8 Jun 2020 12:50:58 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Firefox/68.0 Thunderbird/68.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200608192701.18355-6-nsaenzjulienne@suse.de>
+In-Reply-To: <20200608192701.18355-8-nsaenzjulienne@suse.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_124351_491562_FDCF3D56 
-X-CRM114-Status: GOOD (  16.87  )
+X-CRM114-CacheID: sfid-20200608_125106_903702_FBF36BAB 
+X-CRM114-Status: GOOD (  14.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -118,52 +118,58 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 6/8/2020 12:26 PM, Nicolas Saenz Julienne wrote:
-> Some atypical users of xhci-pci might need to manually reset their xHCI
-> controller before starting the HCD setup. Check if a reset controller
-> device is available to the PCI bus and trigger a reset.
+> The board doesn't need the quirks to be run, and takes case of its own
+
+(if you have to resubmit) takes care
+
+> initialization trough a reset controller device. So let's bypass it
+
+its quirk.
+
+> quirk.
 > 
 > Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 > ---
->  drivers/usb/host/xhci-pci.c | 9 +++++++++
->  1 file changed, 9 insertions(+)
+>  drivers/usb/host/pci-quirks.c | 12 ++++++++++++
+>  1 file changed, 12 insertions(+)
 > 
-> diff --git a/drivers/usb/host/xhci-pci.c b/drivers/usb/host/xhci-pci.c
-> index ef513c2fb843..45f70facdfcd 100644
-> --- a/drivers/usb/host/xhci-pci.c
-> +++ b/drivers/usb/host/xhci-pci.c
-> @@ -12,6 +12,7 @@
->  #include <linux/slab.h>
->  #include <linux/module.h>
+> diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
+> index 92150ecdb036..4b3be05d1290 100644
+> --- a/drivers/usb/host/pci-quirks.c
+> +++ b/drivers/usb/host/pci-quirks.c
+> @@ -16,6 +16,8 @@
+>  #include <linux/export.h>
 >  #include <linux/acpi.h>
-> +#include <linux/reset.h>
->  
->  #include "xhci.h"
->  #include "xhci-trace.h"
-> @@ -339,6 +340,7 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
->  	struct xhci_hcd *xhci;
->  	struct usb_hcd *hcd;
->  	struct xhci_driver_data *driver_data;
-> +	struct reset_control *reset;
->  
->  	driver_data = (struct xhci_driver_data *)id->driver_data;
->  	if (driver_data && driver_data->quirks & XHCI_RENESAS_FW_QUIRK) {
-> @@ -347,6 +349,13 @@ static int xhci_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
->  			return retval;
->  	}
->  
-> +	reset = devm_reset_control_get(&dev->bus->dev, NULL);
-
-Should not this be devm_reset_control_get_optional()?
-
-> +	if (IS_ERR(reset)) {
-> +		retval = PTR_ERR(reset);
-> +		return retval;
-> +	}
-> +	reset_control_reset(reset);
+>  #include <linux/dmi.h>
+> +#include <linux/of.h>
 > +
->  	/* Prevent runtime suspending between USB-2 and USB-3 initialization */
->  	pm_runtime_get_noresume(&dev->dev);
+>  #include "pci-quirks.h"
+>  #include "xhci-ext-caps.h"
 >  
+> @@ -1248,6 +1250,16 @@ static void quirk_usb_early_handoff(struct pci_dev *pdev)
+>  	 */
+>  	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
+>  		return;
+> +
+> +	/*
+> +	 * Bypass the Raspberry Pi 4 controller xHCI controller, things are
+> +	 * taken care by the board's co-processor.
+
+taken care of by.
+
+With that:
+
+Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+
+> +	 */
+> +	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483 &&
+> +	    of_device_is_compatible(of_get_parent(pdev->bus->dev.of_node),
+> +				    "brcm,bcm2711-pcie"))
+> +		return;
+> +
+>  	if (pdev->class != PCI_CLASS_SERIAL_USB_UHCI &&
+>  			pdev->class != PCI_CLASS_SERIAL_USB_OHCI &&
+>  			pdev->class != PCI_CLASS_SERIAL_USB_EHCI &&
 > 
 
 -- 
