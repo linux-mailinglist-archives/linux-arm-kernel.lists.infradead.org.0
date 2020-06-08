@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ED521F27B1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:49:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5762A1F27B2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:49:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W4/j4otKnnRiqJJIkFhvHjuA/DDFgBgb8g50sg/Mdhs=; b=CLX4tWHePKR+Ii
-	Wdiso57Sa7U2ZixiAl+fG0VZhDDpyxEkQ/WBxAXlIwrDdx5bfe/F5MWfqRJkQzAzPF9Va0vUSU6o1
-	3LIhWJMG0V+OKwtLExV5d05Tj1D+dlZn69n9rtbvn1wtU6d5jU+BWzxv69/T0ysNqhLlHZ1sxq76u
-	oLm4UuaLnelzcjDPrEKpNhk3VTYnh4gqPJYArvsSsyJfa9JqlVgSO/MbG4WUi3CdSHDgr1UJm4/Kf
-	jQaVQXurM/YKeSpso0PsQyRP53gJyjd/GPhLNTypPoQWSxzSXTovuENqVKAr6iyq4zcN7DfCDY5jp
-	OYX0hfN6s945qtrEP4hQ==;
+	List-Owner; bh=z3A6NUmHR4RztbQEvGZQeQCraMv00lElhU3FKstBEVM=; b=CzYWXdNqAD94AV
+	IRK+rpyZWLxRnNuFsezS4UDMJUK1Loir1CsAGz7kmQIeeOSvG7eLKZy4p86RzgQHXC61KPYruUxuS
+	cTCnn6QDp5XC0EZm/ux3rFhVBTwDORFvoOReOR735XZPGaF1HME1szBSRIX7xWMcN1YBL54//RxkF
+	JFqqPYSG+O/1+22mre2IkHdSFuLRpmNOCMwR4PM91hCM/Yv2ema8xfLlFpX088Id7JXlYRTU4W+LX
+	o26ygQvgEh6IR6/K9Pd1wyexRo/r6uoWCHBnCweqbazzOspYLifs9K0KJMQRb/dkZU5myTlFldNpI
+	tTLsZFUg7Mp+O3GKLJOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRVd-0003uO-4d; Mon, 08 Jun 2020 23:48:53 +0000
+	id 1jiRVw-0004Bo-HI; Mon, 08 Jun 2020 23:49:12 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR6n-0002Y5-Ug; Mon, 08 Jun 2020 23:23:16 +0000
+ id 1jiR74-0002m9-98; Mon, 08 Jun 2020 23:23:35 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 011672086A;
- Mon,  8 Jun 2020 23:23:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B9DBB20842;
+ Mon,  8 Jun 2020 23:23:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658592;
- bh=jYmhetrVkNgZTNo37SbeiWGjdac6A+k42aQczdxV2LA=;
+ s=default; t=1591658609;
+ bh=JpyXvZPwGmhcDX7HBvEqn00iZ7V++vRJV0NKykGQJf4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=0uVi0YoBaICQEV3bJq6ljwtnIoJJJBQNH9ElzS7exHaM+6izANrsQQdPZuAYcavKW
- ceF48tZnlvA7G14p2td8m7+zoMNnXTnijBlOmcuYY2d/Sjg30fF/tEVkCXsmwAnQqQ
- QHQFKYw6Sae7BEkSXgqyH0mmNZ7uvQ1VHnMgUA7c=
+ b=bGZ3deS5CSi9ULJyTo2SuhMYTr2BSPG+XVsvahwyVs5Q+wzBDB2Hz5eBddSvQlApv
+ STtUv1vN7u9pOcBo6Rlb+Yk6jTF4PGaPRxebbFDPECnYP4rDJQffyDs7xQfw67HnyI
+ JquoYKifkO8O85ZkaGxPoSvwFv+clxtR4XRdtPSg=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 026/106] mmc: meson-mx-sdio: trigger a soft reset
- after a timeout or CRC error
-Date: Mon,  8 Jun 2020 19:21:18 -0400
-Message-Id: <20200608232238.3368589-26-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 036/106] dt-bindings: display: mediatek: control
+ dpi pins mode to avoid leakage
+Date: Mon,  8 Jun 2020 19:21:28 -0400
+Message-Id: <20200608232238.3368589-36-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608232238.3368589-1-sashal@kernel.org>
 References: <20200608232238.3368589-1-sashal@kernel.org>
@@ -49,8 +49,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_162314_048861_24BD5372 
-X-CRM114-Status: GOOD (  13.17  )
+X-CRM114-CacheID: sfid-20200608_162330_436071_16B491E4 
+X-CRM114-Status: UNSURE (   8.20  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,87 +80,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Ulf Hansson <ulf.hansson@linaro.org>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-mmc@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org,
- Tobias Baumann <017623705678@o2online.de>
+Cc: Sasha Levin <sashal@kernel.org>, Rob Herring <robh@kernel.org>,
+ Jitao Shi <jitao.shi@mediatek.com>, devicetree@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-mediatek@lists.infradead.org,
+ Chun-Kuang Hu <chunkuang.hu@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+From: Jitao Shi <jitao.shi@mediatek.com>
 
-[ Upstream commit 91995b904ec2e44b5c159ac6a5d3f154345a4de7 ]
+[ Upstream commit b0ff9b590733079f7f9453e5976a9dd2630949e3 ]
 
-The vendor driver (from the 3.10 kernel) triggers a soft reset every
-time before starting a new command. While this fixes a problem where
-SDIO cards are not detected at all (because all commands simply
-timed out) this hurts SD card read performance a bit (in my tests
-between 10% to 20%).
+Add property "pinctrl-names" to swap pin mode between gpio and dpi mode.
+Set the dpi pins to gpio mode and output-low to avoid leakage current
+when dpi disabled.
 
-Trigger a soft reset after we got a CRC error or if the previous command
-timed out (just like the vendor driver from the same 3.10 kernel for the
-newer SDHC controller IP does). This fixes detection of SDIO cards and
-doesn't hurt SD card read performance at the same time.
-
-With this patch the initialization of an RTL8723BS SDIO card looks like
-this:
-  req done (CMD52): -110: 00000000 00000000 00000000 00000000
-  clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 21 width 1 timing 0
-  starting CMD0 arg 00000000 flags 000000c0
-  req done (CMD0): 0: 00000000 00000000 00000000 00000000
-  clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 0
-  starting CMD8 arg 000001aa flags 000002f5
-  req done (CMD8): -110: 00000000 00000000 00000000 00000000
-  starting CMD5 arg 00000000 flags 000002e1
-  req done (CMD5): 0: 90ff0000 00000000 00000000 00000000
-  starting CMD5 arg 00200000 flags 000002e1
-  req done (CMD5): 0: 90ff0000 00000000 00000000 00000000
-  starting CMD3 arg 00000000 flags 00000075
-  req done (CMD3): 0: 00010000 00000000 00000000 00000000
-  starting CMD7 arg 00010000 flags 00000015
-  req done (CMD7): 0: 00001e00 00000000 00000000 00000000
-  starting CMD52 arg 00000000 flags 00000195
-  req done (CMD52): 0: 00001032 00000000 00000000 00000000
-  [... more CMD52 omitted ...]
-  clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 2
-  clock 50000000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 2
-  starting CMD52 arg 00000e00 flags 00000195
-  req done (CMD52): 0: 00001000 00000000 00000000 00000000
-  starting CMD52 arg 80000e02 flags 00000195
-  req done (CMD52): 0: 00001002 00000000 00000000 00000000
-  clock 50000000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 4 timing 2
-  starting CMD52 arg 00020000 flags 00000195
-  req done (CMD52): 0: 00001007 00000000 00000000 00000000
-  [... more CMD52 omitted ...]
-  new high speed SDIO card at address 0001
-
-Fixes: ed80a13bb4c4c9 ("mmc: meson-mx-sdio: Add a driver for the Amlogic Meson8 and Meson8b SoCs")
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Link: https://lore.kernel.org/r/20200503222805.2668941-1-martin.blumenstingl@googlemail.com
-Tested-by: Tobias Baumann <017623705678@o2online.de>
-Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+Acked-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Jitao Shi <jitao.shi@mediatek.com>
+Signed-off-by: Chun-Kuang Hu <chunkuang.hu@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/mmc/host/meson-mx-sdio.c | 3 +++
- 1 file changed, 3 insertions(+)
+ .../devicetree/bindings/display/mediatek/mediatek,dpi.txt   | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/drivers/mmc/host/meson-mx-sdio.c b/drivers/mmc/host/meson-mx-sdio.c
-index 1c062473b1c2..27837a794e7b 100644
---- a/drivers/mmc/host/meson-mx-sdio.c
-+++ b/drivers/mmc/host/meson-mx-sdio.c
-@@ -249,6 +249,9 @@ static void meson_mx_mmc_request_done(struct meson_mx_mmc_host *host)
+diff --git a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+index b6a7e7397b8b..b944fe067188 100644
+--- a/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
++++ b/Documentation/devicetree/bindings/display/mediatek/mediatek,dpi.txt
+@@ -16,6 +16,9 @@ Required properties:
+   Documentation/devicetree/bindings/graph.txt. This port should be connected
+   to the input port of an attached HDMI or LVDS encoder chip.
  
- 	mrq = host->mrq;
- 
-+	if (host->cmd->error)
-+		meson_mx_mmc_soft_reset(host);
++Optional properties:
++- pinctrl-names: Contain "default" and "sleep".
 +
- 	host->mrq = NULL;
- 	host->cmd = NULL;
+ Example:
  
+ dpi0: dpi@1401d000 {
+@@ -26,6 +29,9 @@ dpi0: dpi@1401d000 {
+ 		 <&mmsys CLK_MM_DPI_ENGINE>,
+ 		 <&apmixedsys CLK_APMIXED_TVDPLL>;
+ 	clock-names = "pixel", "engine", "pll";
++	pinctrl-names = "default", "sleep";
++	pinctrl-0 = <&dpi_pin_func>;
++	pinctrl-1 = <&dpi_pin_idle>;
+ 
+ 	port {
+ 		dpi0_out: endpoint {
 -- 
 2.25.1
 
