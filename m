@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 711831F2668
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:39:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34C471F266A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  9 Jun 2020 01:39:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HjEgYqd1xsj1+NHkAn3tVEfUZbsSKUnMHD5l4vQT6FM=; b=BoTF2cAVTaIA0j
-	9p8C6gKULFFkCWkK//qWM8zZ9JIR+qY7WZq4xq3u5n6o4RIxjchqSyullQqn4deQrej4mVPMlVCe8
-	/eSpK1ddR0vLXIXPXpEZdUoHfGkGFEF3qRMqmbvS67ZUfAjXmHjKB379Kcy22wLV05zj9yo16CT1D
-	xBF/LAMEEBzIQkCu/9+lAxutosUQDvaWw7i9JzWf12yfLpRsLYdhB6NiEXgiVEk1Tl4WJzlXSEQyh
-	9Jrtldek444eoBdDggdPDkB3yy/J8+UBzlecAebsLroGiwHfaq4b6yAl60k/xgbt+ikt127wHzqRh
-	OCiZc33JlMHTx+xuDUrQ==;
+	List-Owner; bh=fFpQFKlvpsd3PeCVH+WJt2gVuPko9tNoaqRU1ymKtsk=; b=Y6qk1sp5lIp1W4
+	fbY7yjpKO2crb7cGF97QYuvI4xGL7W3Bgac0AGf5VfG7qQcTyU0jgoEXSGNjAuFbE696BMcPT/Y4S
+	9jdJwklw6k/RR73Fudl1fY+0prjYZM4J79eZ14zI5KP2nxuealhpw6GLIN+ci8j83/5NxS1eavsKR
+	EpTkhvsLe3nZaIceiGAiy0aXMvupT30MHl9hZUvI/TmUP1Wxyc7l/n00VBhzg6LFtAzs8UFOhKg54
+	5gko78XSUJqM8En+T8NBCgV+1F7ikZbmC72hDp1ox91XWTZWM6Tfl2KOUhRWgFnnc/SV+5WM8Byb0
+	ZguAHrj7yTl2yGundtdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiRM4-00073M-06; Mon, 08 Jun 2020 23:39:00 +0000
+	id 1jiRMS-0007Or-6N; Mon, 08 Jun 2020 23:39:24 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiR2s-0005Zx-FQ
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:19:13 +0000
+ id 1jiR31-0005gk-2P
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 23:19:22 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 170032085B;
- Mon,  8 Jun 2020 23:19:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B52C920842;
+ Mon,  8 Jun 2020 23:19:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1591658350;
- bh=ye9M/0tVTCzeqMpqUDp2Qo4XygW2XkTFYGKE45wRBAY=;
+ s=default; t=1591658358;
+ bh=q2rVo/aR3JTRBRIML0kZmbB8f0+fBsJ6fAx8XSXDfSQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GrHs514Bjx9wOKPP0Gtk+Sd51/wpNA9isSKbeTQlPwZKulqFPsdDuyPBC20dSLsV1
- fko+Tl083xYr118iRkebxbDpKd7sRxtKliPZYrfrXz/CBhyWa/X1pF0CBNg15oTx6z
- lQ3eQBwrS97A07b5ZJWPg7JpuSNTyQByEFpCr9Dc=
+ b=aa5n72AiMtnCQmsm8//nZX5NDE1rEY+xWIPfflU4XI+iKjlUoVk+HHL11solShQHx
+ c8f9VoLyljD5+7gKiVbc0w1y2l6kfXqshbUe8I8lO5NpBrUO+Bp3FiR22wcmnHI6c9
+ SSHR6wOtvy1W23NVE4iTnxoEZlI1shB50Wc4YYGY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 017/175] spi: pxa2xx: Apply CS clk quirk to BXT
-Date: Mon,  8 Jun 2020 19:16:10 -0400
-Message-Id: <20200608231848.3366970-17-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 024/175] arm64: cacheflush: Fix KGDB trap detection
+Date: Mon,  8 Jun 2020 19:16:17 -0400
+Message-Id: <20200608231848.3366970-24-sashal@kernel.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200608231848.3366970-1-sashal@kernel.org>
 References: <20200608231848.3366970-1-sashal@kernel.org>
@@ -49,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_161910_618147_1ACFB22B 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20200608_161919_168687_22C7041B 
+X-CRM114-Status: GOOD (  13.86  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,52 +80,69 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Sasha Levin <sashal@kernel.org>,
- Shobhit Srivastava <shobhit.srivastava@intel.com>,
- Evan Green <evgreen@chromium.org>, linux-spi@vger.kernel.org,
- Mark Brown <broonie@kernel.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org
+ Daniel Thompson <daniel.thompson@linaro.org>, Will Deacon <will@kernel.org>,
+ Douglas Anderson <dianders@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Evan Green <evgreen@chromium.org>
+From: Daniel Thompson <daniel.thompson@linaro.org>
 
-[ Upstream commit 6eefaee4f2d366a389da0eb95e524ba82bf358c4 ]
+[ Upstream commit ab8ad279ceac4fc78ae4dcf1a26326e05695e537 ]
 
-With a couple allies at Intel, and much badgering, I got confirmation
-from Intel that at least BXT suffers from the same SPI chip-select
-issue as Cannonlake (and beyond). The issue being that after going
-through runtime suspend/resume, toggling the chip-select line without
-also sending data does nothing.
+flush_icache_range() contains a bodge to avoid issuing IPIs when the kgdb
+trap handler is running because issuing IPIs is unsafe (and not needed)
+in this execution context. However the current test, based on
+kgdb_connected is flawed: it both over-matches and under-matches.
 
-Add the quirk to BXT to briefly toggle dynamic clock gating off and
-on, forcing the fabric to wake up enough to notice the CS register
-change.
+The over match occurs because kgdb_connected is set when gdb attaches
+to the stub and remains set during normal running. This is relatively
+harmelss because in almost all cases irq_disabled() will be false.
 
-Signed-off-by: Evan Green <evgreen@chromium.org>
-Cc: Shobhit Srivastava <shobhit.srivastava@intel.com>
-Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Link: https://lore.kernel.org/r/20200427163238.1.Ib1faaabe236e37ea73be9b8dcc6aa034cb3c8804@changeid
-Signed-off-by: Mark Brown <broonie@kernel.org>
+The under match is more serious. When kdb is used instead of kgdb to access
+the debugger then kgdb_connected is not set in all the places that the
+debug core updates sw breakpoints (and hence flushes the icache). This
+can lead to deadlock.
+
+Fix by replacing the ad-hoc check with the proper kgdb macro. This also
+allows us to drop the #ifdef wrapper.
+
+Fixes: 3b8c9f1cdfc5 ("arm64: IPI each CPU after invalidating the I-cache for kernel mappings")
+Signed-off-by: Daniel Thompson <daniel.thompson@linaro.org>
+Reviewed-by: Douglas Anderson <dianders@chromium.org>
+Link: https://lore.kernel.org/r/20200504170518.2959478-1-daniel.thompson@linaro.org
+Signed-off-by: Will Deacon <will@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/spi/spi-pxa2xx.c | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/include/asm/cacheflush.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/spi/spi-pxa2xx.c b/drivers/spi/spi-pxa2xx.c
-index 723145673206..36b837fc7e4b 100644
---- a/drivers/spi/spi-pxa2xx.c
-+++ b/drivers/spi/spi-pxa2xx.c
-@@ -148,6 +148,7 @@ static const struct lpss_config lpss_platforms[] = {
- 		.tx_threshold_hi = 48,
- 		.cs_sel_shift = 8,
- 		.cs_sel_mask = 3 << 8,
-+		.cs_clk_stays_gated = true,
- 	},
- 	{	/* LPSS_CNL_SSP */
- 		.offset = 0x200,
+diff --git a/arch/arm64/include/asm/cacheflush.h b/arch/arm64/include/asm/cacheflush.h
+index 665c78e0665a..3e7dda6f1ab1 100644
+--- a/arch/arm64/include/asm/cacheflush.h
++++ b/arch/arm64/include/asm/cacheflush.h
+@@ -79,7 +79,7 @@ static inline void flush_icache_range(unsigned long start, unsigned long end)
+ 	 * IPI all online CPUs so that they undergo a context synchronization
+ 	 * event and are forced to refetch the new instructions.
+ 	 */
+-#ifdef CONFIG_KGDB
++
+ 	/*
+ 	 * KGDB performs cache maintenance with interrupts disabled, so we
+ 	 * will deadlock trying to IPI the secondary CPUs. In theory, we can
+@@ -89,9 +89,9 @@ static inline void flush_icache_range(unsigned long start, unsigned long end)
+ 	 * the patching operation, so we don't need extra IPIs here anyway.
+ 	 * In which case, add a KGDB-specific bodge and return early.
+ 	 */
+-	if (kgdb_connected && irqs_disabled())
++	if (in_dbg_master())
+ 		return;
+-#endif
++
+ 	kick_all_cpus_sync();
+ }
+ 
 -- 
 2.25.1
 
