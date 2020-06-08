@@ -2,94 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21DC51F1488
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 10:31:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8566F1F14AD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  8 Jun 2020 10:45:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YOGxsr3JQTJxsGj3NpgiB7SiruGPhiMSzHd99ZgW7ag=; b=J5+df+P2rOeF1XdapNFz+ywK+E
-	pQnJPEDLH0nolCV+DnpdpGURomdDMZw4LKloKhTq7k+kl693L5SqR5WVoVWFwgQ9oovY7lpWUPfJc
-	+SPT3k2Xz83Sr1sAU8qKu1+G8+OQYNpYKJ+3+fHYW52lLIEfRjM+ltuxtABVWS0eeJWvYNVoZ5rgM
-	XmBEO1mIUICD3nScEJV7cdelLoUwUlWJ+fSpZL2SckL95akfz5/9JXibJdFfWnJ/mycJkUvx24JL8
-	jbTh/PepgQ3HCrZnOriTnoy7y1va62n59+LrXrmOrUQRwisit1hiUEzcWAbk3DvpsdQp9fF/2xEc0
-	JIyvjemg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=GA3EfR/qlQhEne15qV+m2h7UQGnl1ssP70UmM1qX1SM=; b=Qz3X5NMrri0a44
+	i2dc0Ljc8EJDhgj+HfB4wdqa+n0PS9jAEkPraXPnLBDh+uoA5C+5bshq8j6P9O2E1fpK9WYRxA2fR
+	QM2WpBm80TlPHxV1L8OPgq1JoteeOrc7aKDbagVJJDqhXdVi1RQPJLGAas3OlT0UGGsEnbaSo7jEH
+	OgT3ynVW09giYRcTck1P4++9lANMQY6XA1k8oOOXk4rUZXnFPZl6lVSOy4seTOHHN3A2gXGksv43t
+	v6xbSzGI9wnltkMVA1iXdWMUxr8D9GHpYaqDJUtrcinwVnSgrVPvMnxUWTB0L6e+yGoZXNRzIKQEC
+	jLKk2fbY1hBLhyvaS/Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jiDBl-00043m-Ro; Mon, 08 Jun 2020 08:31:25 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jiDPJ-0006DG-4a; Mon, 08 Jun 2020 08:45:25 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jiDBD-0003hF-Ds
- for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 08:30:52 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id s88so5704005pjb.5
+ id 1jiDP0-00049w-Mg
+ for linux-arm-kernel@lists.infradead.org; Mon, 08 Jun 2020 08:45:09 +0000
+Received: by mail-wr1-x441.google.com with SMTP id e1so16450253wrt.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 08 Jun 2020 01:30:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Sr4O+in7E3S8yGpfVSAumnolrH/mtR4MAGw7n2lSUi4=;
- b=moptvi0DYUIGze0sxGapOFQzHdn34hE207jfRTpbHONsJVGMYclaW933o/av3oG8CG
- Vuv/KoVfx1AI8AGmzrW5DacLpYSDCCa9nfxWdTJwyxWjNDMDYdnICwZh5brGMM8r1ZiT
- OAA9MmaR4rVNiQXY9uRhwIOejfHm/uYYEGMUMgw3dT+TwileefpJNWtOdCYsC45kFOLa
- +DdgPWAS2I6SbIwUspfrAqofBTLRIzBZ2JSR4vR9FnTaCKrDiB0a5aLiuiXW1FhyfV3s
- pIksOg51djhWhTBVsnrpqMjoUtQFLHvgFgzCkrqu48gxnjaStKkSDhCPxHkBhKTk8KyV
- HoWA==
+ Mon, 08 Jun 2020 01:45:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hVI/LKXmUenAikANgxMZ2mka5xmWY6K/t9X8/sizo9k=;
+ b=nOdR02uF9gxHffq36L024aApJfanJ36qvrDfqHocFBNPwBj1zVqUlHv4JTl5tgmCcS
+ 1E5xr4HzpEST/wJ9ei1RIu764lQsxYCzIUYmrsf9OFx7U7lqMaH03Hfarv+KkHn6svmG
+ iO1SlY0zs+QPSQa/mOdjGgXLzFQkxmsGR/1nbEfsHvAPcyoVMSHW3mVZBNFbRy2oP+FV
+ DFQtcL/cI176KwTz8hVX2JVVNo5tDEQ9wxqSef7WKLw/vKsdgvDaYl647p/hcvW8DEpg
+ EDG/M/8EUFJIMPin+EQAWzuvohpoGiMmqPCvLOWThfrZF01SZqB1Aplb2ZBti4cPYGiz
+ 6p8w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=Sr4O+in7E3S8yGpfVSAumnolrH/mtR4MAGw7n2lSUi4=;
- b=OLnVetPQAtaqzyc6KKXDKnJwsZR8MtBGTuOYHlWzKpIWmiQd3Xmzb50JZjPTQuGESM
- l6fu92Qh/dZHzYFqE/hos03h2sqBRGbJ1C9zzJO6cnNO7BMTBIKbWItLuf6Li/KRX/4e
- d0y7ODkV4WO+Xnd+xkaUtw+L2XVB+n5lB2HCgl0t/witn860fDlfmnws99qn187+sLJY
- BWPOa03lEYnV8wUdfWr7F0ZQtvhPjTaOj72zbIK50NyYkBS9h3htpPVMawfDmGtYvHH9
- H9j4VUv4NpPp3yuhbXA12+C22F/t6c/B+biaiR4wFThFNXxAXYlPbIl1EPAullwvC9Sa
- vB4A==
-X-Gm-Message-State: AOAM533cyXAif/TmOL3NgVCSjTbdIVHM3kpS9371xBBbHOXdcc6p8HcU
- B3wXgN2LxP/1ooLVGtYPmek=
-X-Google-Smtp-Source: ABdhPJwWeNEIRHE87XqxZWvoMrcDW/ma0+wwzJWzdrh9mEH1xMwsnwgl+Nww/37mNzaxFJbgWrKhDw==
-X-Received: by 2002:a17:90a:cc5:: with SMTP id
- 5mr15552855pjt.112.1591605050563; 
- Mon, 08 Jun 2020 01:30:50 -0700 (PDT)
-Received: from fmin-OptiPlex-7060.nreal.work ([103.206.191.42])
- by smtp.gmail.com with ESMTPSA id 27sm1210829pjg.19.2020.06.08.01.30.47
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 08 Jun 2020 01:30:50 -0700 (PDT)
-From: dillon.minfei@gmail.com
-To: robh+dt@kernel.org, mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
- linux@armlinux.org.uk, vladimir.murzin@arm.com,
- kstewart@linuxfoundation.org, allison@lohutok.net, info@metux.net,
- tglx@linutronix.de
-Subject: [PATCH 2/2] arm-nommu: Add use_reserved_mem() to check if device
- support reserved memory
-Date: Mon,  8 Jun 2020 16:30:38 +0800
-Message-Id: <1591605038-8682-3-git-send-email-dillon.minfei@gmail.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
-References: <1591605038-8682-1-git-send-email-dillon.minfei@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hVI/LKXmUenAikANgxMZ2mka5xmWY6K/t9X8/sizo9k=;
+ b=JoSlro5gVG4x6b0CC8XJZyZw+00CfBXL+qPhDi2sUsSVzv+wVcKng8mVLOZeb6h5qr
+ wuEtkrPcoRbEeUCMrOvc/v3x1V0Q3HI+64wk2gNkI7UM+41biry0DB7dMvqHPGRkUeUP
+ Z19QYlnLh+grPjnzpd6SsizVnCgfGaVXIkdgntBio0MpdiYMktxtfZMZjegM8Dmu1FUe
+ Crtz9Pex/SPlCQEW4i2iUPl6QPTxMs3QlI2KpZwWeXSw039DEQPpduRDgtlBtHN8KwYn
+ SIWx+sBm2DDBe6erslXcHKeaSIfK1RTp6/86YmHIjaomSdcDtFaIZx0A/nR4/Yr6Ykzz
+ DMPQ==
+X-Gm-Message-State: AOAM533pLEignSDrLPkjhLKGrWNkXU/7RMEu4OI6nPuuR7ZbKCm/qEGO
+ M3fE1zQnpVaF+vTSSNnz05MMVQ==
+X-Google-Smtp-Source: ABdhPJzNz9G3Dmg3Wt11LpS3mqTMRQpQKBSoZCNvuKQYXSIoKruR+1SCjYkdnFetJ9Vz8+g9JMRFDQ==
+X-Received: by 2002:adf:a15c:: with SMTP id r28mr21180984wrr.337.1591605903037; 
+ Mon, 08 Jun 2020 01:45:03 -0700 (PDT)
+Received: from bender.baylibre.local ([2a01:e35:2ec0:82b0:22:5867:d2c6:75f4])
+ by smtp.gmail.com with ESMTPSA id
+ d17sm25031888wrg.75.2020.06.08.01.45.01
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 08 Jun 2020 01:45:01 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: ulf.hansson@linaro.org
+Subject: [PATCH] mmc: meson-gx: limit segments to 1 when dram-access-quirk is
+ needed
+Date: Mon,  8 Jun 2020 10:44:58 +0200
+Message-Id: <20200608084458.32014-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200608_013051_543437_58A05028 
-X-CRM114-Status: GOOD (  13.87  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200608_014506_777044_C6EB0AE7 
+X-CRM114-Status: GOOD (  13.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dillon.minfei[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -102,84 +93,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, dillon min <dillon.minfei@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: Neil Armstrong <narmstrong@baylibre.com>,
+ Christian Hewitt <christianshewitt@gmail.com>, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ Art Nikpal <art@khadas.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: dillon min <dillon.minfei@gmail.com>
+The actual max_segs computation leads to failure while using the broadcom
+sdio brcmfmac/bcmsdh driver, since the driver tries to make usage of scatter
+gather.
 
-Currently, we use dma direct to request coherent memory for driver on armv7m
-platform if 'cacheid' is zero, but dma_direct_can_mmap() is return false,
-dma_direct_mmap() return -ENXIO for CONFIG_MMU undefined platform.
+But with the dram-access-quirk we use a 1,5K SRAM bounce buffer, and the
+max_segs current value of 3 leads to max transfers to 4,5k, which doesn't work.
 
-so we have to back to use 'arm_nommu_dma_ops', add use_reserved_mem() to check
-if device support global or device corherent memory. if yes, then call
-set_dma_ops()
+This patch sets max_segs to 1 to better describe the hardware limitation,
+and fix the SDIO functionnality with the brcmfmac/bcmsdh driver on Amlogic
+G12A/G12B SoCs on boards like SEI510 or Khadas VIM3.
 
-Signed-off-by: dillon min <dillon.minfei@gmail.com>
+Reported-by: Art Nikpal <art@khadas.com>
+Reported-by: Christian Hewitt <christianshewitt@gmail.com>
+Fixes: acdc8e71d9bb ("mmc: meson-gx: add dram-access-quirk")
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm/mm/dma-mapping-nommu.c | 28 +++++++++++++++++++++++++++-
- 1 file changed, 27 insertions(+), 1 deletion(-)
+ drivers/mmc/host/meson-gx-mmc.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/mm/dma-mapping-nommu.c b/arch/arm/mm/dma-mapping-nommu.c
-index 287ef898a55e..e1c213fec152 100644
---- a/arch/arm/mm/dma-mapping-nommu.c
-+++ b/arch/arm/mm/dma-mapping-nommu.c
-@@ -14,6 +14,7 @@
- #include <asm/cacheflush.h>
- #include <asm/outercache.h>
- #include <asm/cp15.h>
-+#include <linux/of.h>
+diff --git a/drivers/mmc/host/meson-gx-mmc.c b/drivers/mmc/host/meson-gx-mmc.c
+index 35400cf2a2e4..cfaf8e7e22ec 100644
+--- a/drivers/mmc/host/meson-gx-mmc.c
++++ b/drivers/mmc/host/meson-gx-mmc.c
+@@ -1143,9 +1143,11 @@ static int meson_mmc_probe(struct platform_device *pdev)
  
- #include "dma.h"
- 
-@@ -188,6 +189,31 @@ const struct dma_map_ops arm_nommu_dma_ops = {
- };
- EXPORT_SYMBOL(arm_nommu_dma_ops);
- 
-+static bool use_reserved_mem(struct device *dev)
-+{
-+	struct device_node *np;
-+
-+	np = of_find_node_by_path("/reserved-memory/linux,dma");
-+
-+	if (np &&
-+		of_device_is_compatible(np, "shared-dma-pool") &&
-+		of_property_read_bool(np, "no-map") &&
-+		of_property_read_bool(np, "linux,dma-default")) {
-+		/* has global corherent mem support */
-+		of_node_put(np);
-+		return true;
-+	}
-+
-+	np = of_parse_phandle(dev->of_node, "memory-region", 0);
-+	if (np) {
-+		/* has dev corherent mem support */
-+		of_node_put(np);
-+		return true;
-+	}
-+
-+	return false;
-+}
-+
- void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
- 			const struct iommu_ops *iommu, bool coherent)
- {
-@@ -206,6 +232,6 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
- 		dev->archdata.dma_coherent = (get_cr() & CR_M) ? coherent : true;
- 	}
- 
--	if (!dev->archdata.dma_coherent)
-+	if (!dev->archdata.dma_coherent || use_reserved_mem(dev))
- 		set_dma_ops(dev, &arm_nommu_dma_ops);
- }
+ 	mmc->caps |= MMC_CAP_CMD23;
+ 	if (host->dram_access_quirk) {
++		/* Limit segments to 1 due to low available sram memory */
++		mmc->max_segs = 1;
+ 		/* Limit to the available sram memory */
+-		mmc->max_segs = SD_EMMC_SRAM_DATA_BUF_LEN / mmc->max_blk_size;
+-		mmc->max_blk_count = mmc->max_segs;
++		mmc->max_blk_count = SD_EMMC_SRAM_DATA_BUF_LEN /
++				     mmc->max_blk_size;
+ 	} else {
+ 		mmc->max_blk_count = CMD_CFG_LENGTH_MASK;
+ 		mmc->max_segs = SD_EMMC_DESC_BUF_LEN /
 -- 
-2.7.4
+2.22.0
 
 
 _______________________________________________
